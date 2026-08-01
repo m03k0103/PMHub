@@ -5,7 +5,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>政策会議ウォッチ | 日本政府 各種会議 資料集約ポータル</title>
-  <meta name="description" content="日本政府各省庁の審議会・分科会・検討会等の更新情報や配布資料（議事次第、議事要旨、議事録、資料）を一箇所に集約・横断検索できる情報収集ポータル" />
+  <meta name="description" content="日本政府各省庁の会議体・分科会・検討会等の更新情報や配布資料（議事次第、議事要旨、議事録、資料）を一箇所に集約・横断検索できる情報収集ポータル" />
   <meta name="keywords" content="政策会議ウォッチ, PMHub, 審議会, 諮問会議, 内閣官房, 内閣府, デジタル庁, 経済産業省, 議事録, 政府配布資料, 報道資料, 政策調査" />
 
   <!-- Fonts -->
@@ -129,7 +129,7 @@
     <div class="container stats-flex">
       <div class="stat-item">
         <span class="stat-value" id="statTrackedCouncils">--</span>
-        <span class="stat-label">監視中 審議会・会議体</span>
+        <span class="stat-label">監視中 会議体</span>
       </div>
       <div class="stat-divider"></div>
       <div class="stat-item">
@@ -164,18 +164,8 @@
               <circle cx="11" cy="11" r="8" />
               <line x1="21" y1="21" x2="16.65" y2="16.65" />
             </svg>
-            <input type="text" id="searchInput" placeholder="審議会名、キーワード、政策課題、配布資料名で横断検索..." autocomplete="off" />
+            <input type="text" id="searchInput" placeholder="会議体名、政策課題、配布資料名で横断検索..." autocomplete="off" />
             <button class="clear-search-btn hidden" id="clearSearchBtn" title="検索クリア">&times;</button>
-          </div>
-
-          <div class="quick-keywords">
-            <span class="quick-label">注目ワード:</span>
-            <button class="keyword-chip" data-keyword="AI">AI・生成AI</button>
-            <button class="keyword-chip" data-keyword="デジタル">デジタル社会</button>
-            <button class="keyword-chip" data-keyword="規制改革">規制改革</button>
-            <button class="keyword-chip" data-keyword="社会保障">社会保障</button>
-            <button class="keyword-chip" data-keyword="脱炭素">GX・脱炭素</button>
-            <button class="keyword-chip" data-keyword="賃上げ">賃上げ・労働</button>
           </div>
         </div>
 
@@ -220,7 +210,7 @@
             <label for="categorySelect">会議種別</label>
             <select id="categorySelect">
               <option value="ALL">すべての会議種別</option>
-              <option value="COUNCIL">審議会・諮問会議</option>
+              <option value="COUNCIL">会議体・諮問会議</option>
               <option value="SUBCOMMITTEE">分科会・部会</option>
               <option value="PANEL">検討会・有識者会議</option>
               <option value="ROUNDTABLE">懇談会・作業部会</option>
@@ -279,7 +269,7 @@
               <circle cx="12" cy="12" r="10" />
               <polyline points="12 6 12 12 16 14" />
             </svg>
-            最新の審議会・会議開催・資料更新タイムライン
+            最新の会議体 開催・資料更新タイムライン
           </h2>
           <div class="sort-controls">
             <label for="sortBySelect">並び替え:</label>
@@ -303,7 +293,7 @@
             <line x1="11" y1="8" x2="11" y2="14" />
             <line x1="8" y1="11" x2="14" y2="11" />
           </svg>
-          <h3>該当する審議会・会議資料が見つかりませんでした</h3>
+          <h3>該当する会議体・資料が見つかりませんでした</h3>
           <p>検索キーワードを短くするか、省庁・期間などの絞り込み条件を緩和してお試しください。</p>
           <button class="btn-primary" id="noResultsResetBtn">条件をクリアして全件表示</button>
         </div>
@@ -322,12 +312,12 @@
               <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
               <path d="M16 3.13a4 4 0 0 1 0 7.75" />
             </svg>
-            トラッキング対象 審議会・諮問会議ディレクトリ
+            トラッキング対象 会議体ディレクトリ
           </h2>
-          <p class="section-subtitle">日本政府各省庁の主要な審議会・有識者会議の一覧。お気に入り（ウォッチ）登録で更新通知を受け取れます。</p>
+          <p class="section-subtitle">日本政府各省庁の主要な会議体の一覧。お気に入り（ウォッチ）登録で更新通知を受け取れます。</p>
         </div>
         <div class="directory-search">
-          <input type="text" id="councilSearchInput" placeholder="審議会名・所管省庁で検索..." />
+          <input type="text" id="councilSearchInput" placeholder="会議体名・所管省庁で検索..." />
         </div>
       </div>
 
@@ -346,30 +336,20 @@
               <line x1="12" y1="20" x2="12" y2="4" />
               <line x1="6" y1="20" x2="6" y2="14" />
             </svg>
-            政策トレンド・審議会開催統計アナリティクス
+            政策トレンド・会議体開催統計アナリティクス
           </h2>
           <p class="section-subtitle">各省庁の会議開催頻度や配布資料数、直近の主要議論テーマのトレンド分析</p>
         </div>
       </div>
 
       <div class="analytics-grid">
-        <div class="chart-card card-glass">
+        <div class="chart-card card-glass full-width">
           <div class="chart-header">
-            <h3>省庁別 審議会・会議開催実績</h3>
+            <h3>省庁別 会議体開催実績</h3>
             <span class="chart-desc">直近の会議開催件数 breakdown</span>
           </div>
           <div class="chart-body">
             <canvas id="ministryChart"></canvas>
-          </div>
-        </div>
-
-        <div class="chart-card card-glass">
-          <div class="chart-header">
-            <h3>注目テーマ・キーワード出現頻度</h3>
-            <span class="chart-desc">アジェンダ・資料題目から抽出</span>
-          </div>
-          <div class="chart-body">
-            <canvas id="keywordChart"></canvas>
           </div>
         </div>
 
@@ -394,9 +374,9 @@
               <polygon
                 points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
             </svg>
-            マイウォッチリスト &amp; アラート購読
+            マイウォッチリスト &amp; RSS連携
           </h2>
-          <p class="section-subtitle">登録した審議会の最新更新・キーワードアラートを一括確認。RSSフィードやデータ連携用URLも生成可能。</p>
+          <p class="section-subtitle">登録した会議体の最新更新を一括確認。RSSフィードやデータ連携用URLも生成可能。</p>
         </div>
       </div>
 
@@ -411,30 +391,19 @@
         </svg>
         <div class="text-sm" style="color: var(--text-primary); line-height: 1.55;">
           <strong>🔒 データ保存・プライバシー保護仕様:</strong>
-          登録されたウォッチリストやキーワードアラート等の個人設定情報は、すべてお客様のブラウザ内（ローカルストレージ）にのみ安全に保存されます。会員登録やログインは不要であり、<strong>運営者や外部サーバーへ関心テーマや閲覧データが送信されることは一切ありません。</strong>
+          登録されたウォッチリスト等の個人設定情報は、すべてお客様のブラウザ内（ローカルストレージ）にのみ安全に保存されます。会員登録やログインは不要であり、<strong>運営者や外部サーバーへ関心テーマや閲覧データが送信されることは一切ありません。</strong>
         </div>
       </div>
 
       <div class="watchlist-content-grid">
         <div class="watchlist-main card-glass">
-          <h3>登録中の審議会 (<span id="watchlistActiveCount">0</span> 件)</h3>
+          <h3>登録中の会議体 (<span id="watchlistActiveCount">0</span> 件)</h3>
           <div class="watchlist-list" id="watchlistItems">
             <!-- Watchlist Items Injection -->
           </div>
         </div>
 
         <div class="watchlist-sidebar">
-          <div class="alert-config-card card-glass">
-            <h3>キーワード追跡アラート</h3>
-            <p class="text-sm">指定したキーワードが審議会資料に含まれた際にハイライト通知します。</p>
-            <div class="keyword-add-form">
-              <input type="text" id="newAlertKeyword" placeholder="例: サイバーセキュリティ, 量子" />
-              <button class="btn-primary" id="addKeywordAlertBtn">追加</button>
-            </div>
-            <div class="alert-keywords-list" id="alertKeywordsList">
-              <!-- Alert keywords chips -->
-            </div>
-          </div>
 
           <div class="rss-export-card card-glass">
             <h3>RSS / API 連携 URL</h3>
@@ -453,7 +422,7 @@
       <div class="about-card card-glass">
         <h2>政策会議ウォッチ (PM-HUB) について</h2>
         <p class="lead-text">
-          「政策会議ウォッチ」は、内閣官房・内閣府・各省庁のウェブサイトに分散して掲載されている審議会、諮問会議、有識者検討会、分科会等の開催情報および配布資料・議事録を一箇所に集約し、一般国民、報道関係者（記者）、研究者・アナリスト向けに透明性と一覧性を提供するオープン情報ポータルです。
+          「政策会議ウォッチ」は、内閣官房・内閣府・各省庁のウェブサイトに分散して掲載されている会議体、諮問会議、有識者検討会、分科会等の開催情報および配布資料・議事録を一箇所に集約し、一般国民、報道関係者（記者）、研究者・アナリスト向けに透明性と一覧性を提供するオープン情報ポータルです。
         </p>
 
         <div class="about-grid">
@@ -465,7 +434,7 @@
             </div>
             <h4>情報収集の課題と目的</h4>
             <p>
-              各省庁の審議会資料は、サイト構造や公開フォーマット（PDF、HTML）が省庁ごとに異なり、タイムリーな把握や過去資料の横断検索に多大な時間と手数がかかっていました。本システムではメタデータを標準化し、数タップで一次資料へアクセス可能にします。
+              各省庁の会議体資料は、サイト構造や公開フォーマット（PDF、HTML）が省庁ごとに異なり、タイムリーな把握や過去資料の横断検索に多大な時間と手数がかかっていました。本システムではメタデータを標準化し、数タップで一次資料へアクセス可能にします。
             </p>
           </div>
 
@@ -509,13 +478,13 @@
             </div>
             <h4>プライバシー・ローカル保存方針</h4>
             <p>
-              本サービスではユーザー登録・ログインは一切不要です。マイウォッチリストや追跡キーワード等の個人設定データは、**すべてご利用中のブラウザ（ローカルストレージ）内のみ**に安全に保存されます。運営者や外部サーバーへデータが送信・収集されることはありません。
+              本サービスではユーザー登録・ログインは一切不要です。マイウォッチリスト等の個人設定データは、**すべてご利用中のブラウザ（ローカルストレージ）内のみ**に安全に保存されます。運営者や外部サーバーへデータが送信・収集されることはありません。
             </p>
           </div>
         </div>
 
         <div class="about-footer-callout">
-          <p>オープンデータ・API・スクレイピング連携に関するお問い合わせ、または追加トラック希望の審議会がございましたら開発チームまでご要望をお寄せください。</p>
+          <p>オープンデータ・API・スクレイピング連携に関するお問い合わせ、または追加トラック希望の会議体がございましたら開発チームまでご要望をお寄せください。</p>
         </div>
       </div>
     </section>

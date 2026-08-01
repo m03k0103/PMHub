@@ -63,9 +63,6 @@ document.addEventListener('DOMContentLoaded', () => {
     // Watchlist
     watchlistActiveCount: document.getElementById('watchlistActiveCount'),
     watchlistItems: document.getElementById('watchlistItems'),
-    newAlertKeyword: document.getElementById('newAlertKeyword'),
-    addKeywordAlertBtn: document.getElementById('addKeywordAlertBtn'),
-    alertKeywordsList: document.getElementById('alertKeywordsList'),
     copyRssBtn: document.getElementById('copyRssBtn'),
     rssUrlInput: document.getElementById('rssUrlInput'),
 
@@ -239,11 +236,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Export Data Button
     el.exportDataBtn.addEventListener('click', exportFilteredData);
-
-    // Watchlist alert keyword addition
-    if (el.addKeywordAlertBtn) {
-      el.addKeywordAlertBtn.addEventListener('click', addAlertKeyword);
-    }
 
     if (el.copyRssBtn) {
       el.copyRssBtn.addEventListener('click', () => {
@@ -643,7 +635,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const watchedList = COUNCILS.filter(c => state.watchedCouncilIds.has(c.id));
     
     if (watchedList.length === 0) {
-      el.watchlistItems.innerHTML = `<p class="text-sm">現在登録中の審議会はありません。「審議会・会議一覧」タブからお気に入りの審議会を追加してください。</p>`;
+      el.watchlistItems.innerHTML = `<p class="text-sm">現在登録中の会議体はありません。「会議体一覧」タブからお気に入りの会議体を追加してください。</p>`;
     } else {
       el.watchlistItems.innerHTML = watchedList.map(c => {
         const minInfo = MINISTRIES[c.ministry] || { name: c.ministry };
@@ -660,38 +652,7 @@ document.addEventListener('DOMContentLoaded', () => {
         `;
       }).join('');
     }
-
-    // Render keyword alert chips
-    renderAlertKeywords();
   }
-
-  function renderAlertKeywords() {
-    el.alertKeywordsList.innerHTML = state.alertKeywords.map(kw => `
-      <span class="keyword-chip active">
-        🔔 ${escapeHtml(kw)}
-        <span style="margin-left:0.3rem; cursor:pointer;" onclick="removeAlertKeyword('${kw}')">&times;</span>
-      </span>
-    `).join('');
-  }
-
-  function addAlertKeyword() {
-    const val = el.newAlertKeyword.value.trim();
-    if (val && !state.alertKeywords.includes(val)) {
-      state.alertKeywords.push(val);
-      localStorage.setItem('pmhub_keywords', JSON.stringify(state.alertKeywords));
-      el.newAlertKeyword.value = '';
-      renderAlertKeywords();
-      renderTimeline();
-      showToast(`「${val}」を追跡アラートキーワードに追加しました`);
-    }
-  }
-
-  window.removeAlertKeyword = function(kw) {
-    state.alertKeywords = state.alertKeywords.filter(k => k !== kw);
-    localStorage.setItem('pmhub_keywords', JSON.stringify(state.alertKeywords));
-    renderAlertKeywords();
-    renderTimeline();
-  };
 
   // --- ANALYTICS CHARTS (CHART.JS) ---
   function renderCharts() {
@@ -729,32 +690,7 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
 
-    // 2. Keyword Frequency Doughnut Chart
-    const tagCounts = {};
-    MEETINGS.forEach(m => {
-      (m.tags || []).forEach(t => {
-        tagCounts[t] = (tagCounts[t] || 0) + 1;
-      });
-    });
 
-    const sortedTags = Object.keys(tagCounts).sort((a, b) => tagCounts[b] - tagCounts[a]).slice(0, 6);
-
-    const ctx2 = document.getElementById('keywordChart').getContext('2d');
-    new Chart(ctx2, {
-      type: 'doughnut',
-      data: {
-        labels: sortedTags,
-        datasets: [{
-          data: sortedTags.map(t => tagCounts[t]),
-          backgroundColor: ['#3b82f6', '#06b6d4', '#10b981', '#f59e0b', '#a855f7', '#f43f5e']
-        }]
-      },
-      options: {
-        responsive: true,
-        maintainAspectRatio: false,
-        plugins: { legend: { position: 'right', labels: { color: '#94a3b8' } } }
-      }
-    });
 
     // 3. Monthly Timeline Activity Line Chart
     const ctx3 = document.getElementById('timelineChart').getContext('2d');
@@ -888,7 +824,7 @@ document.addEventListener('DOMContentLoaded', () => {
     jsonAnchor.remove();
 
     // 2. Export CSV (with UTF-8 BOM for Excel compatibility)
-    const csvHeader = ["開催日", "所管省庁", "審議会名", "会議名", "資料件数", "一次ソースURL", "要約"];
+    const csvHeader = ["開催日", "所管省庁", "会議体名", "会議名", "資料件数", "一次ソースURL", "要約"];
     const csvRows = list.map(m => [
       `"${m.date}"`,
       `"${MINISTRIES[m.ministry]?.name || m.ministry}"`,
