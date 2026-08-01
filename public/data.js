@@ -23,7 +23,6 @@ const MINISTRIES = {
   FSA: { name: '金融庁', kanji: '金融庁', code: 'FSA', color: 'var(--color-fsa)', officialUrl: 'https://www.fsa.go.jp' },
   CAA: { name: '消費者庁', kanji: '消費者庁', code: 'CAA', color: 'var(--color-caa)', officialUrl: 'https://www.caa.go.jp' },
   PPC: { name: '個人情報保護委員会', kanji: '個人情報保護委員会', code: 'PPC', color: 'var(--color-ppc)', officialUrl: 'https://www.ppc.go.jp' },
-  FTC: { name: '公正取引委員会', kanji: '公正取引委員会', code: 'FTC', color: 'var(--color-ftc)', officialUrl: 'https://www.jftc.go.jp' },
   NRA: { name: '原子力規制委員会', kanji: '原子力規制委員会', code: 'NRA', color: 'var(--color-nra)', officialUrl: 'https://www.nra.go.jp' }
 };
 
@@ -291,19 +290,7 @@ const COUNCILS = [
     isWatched: true,
     trackedSince: '2023-04-15'
   },
-  // 20. FTC
-  {
-    id: 'ftc-digital-platform',
-    name: 'デジタル・プラットフォーム競合市場実態調査会',
-    ministry: 'FTC',
-    category: 'PANEL',
-    pastYearCount: 13,
-    description: '巨大IT企業 (Big Tech) に対するスマートフォンOS・アプリストア事前規制、生成AI分野における獨占禁止法上の論点整理。',
-    officialUrl: 'https://www.jftc.go.jp/councils/index.html',
-    isWatched: true,
-    trackedSince: '2022-12-01'
-  },
-  // 21. NRA
+  // 20. NRA
   {
     id: 'nra-teireikai',
     name: '原子力規制委員会 定例会',
@@ -485,34 +472,7 @@ const MEETINGS = [
     hasMinutes: true,
     docCount: 9
   },
-  // 4. FTC
-  {
-    id: 'meet-2026-0724-ftc',
-    councilId: 'ftc-digital-platform',
-    councilName: 'デジタル・プラットフォーム競合市場実態調査会',
-    ministry: 'FTC',
-    category: 'PANEL',
-    title: '第15回 デジタル・プラットフォーム競合市場実態調査会',
-    date: '2026-07-24',
-    updatedAt: '2026-07-24 18:30',
-    location: '公正取引委員会 講堂',
-    summary: 'スマートフォン向け新法（スマホ新法）に基づく指定事業者に対する遵守要件の運用ガイドライン最終案が公表された。アプリストア決済手数料の適正化およびサイドローディング安全規制について討議。',
-    agenda: [
-      '特定スマートフォンソフトウェア指定事業者ガイドライン（案）の審議',
-      '生成AI基盤モデル開発者とアプリ事業者の独占禁止法上の取引実態報告',
-      '欧州DMA（デジタル市場法）の施行状況と我が国独禁法運用の比較分析'
-    ],
-    materials: [
-      { name: '議事次第', type: 'PDF', size: '95 KB', url: 'https://www.jftc.go.jp/houdou/pressrelease/2026/jul/20260724_shidai.pdf', isMinutes: false },
-      { name: '資料1: スマホ新法指針運用ガイドライン案', type: 'PDF', size: '3.6 MB', url: 'https://www.jftc.go.jp/houdou/pressrelease/2026/jul/20260724_shiryou1.pdf', isMinutes: false },
-      { name: '第15回 議事要旨', type: 'PDF', size: '180 KB', url: 'https://www.jftc.go.jp/houdou/pressrelease/2026/jul/20260724_yoshi.pdf', isMinutes: true }
-    ],
-    tags: ['独占禁止法', 'BigTech', 'スマホ新法', '公正取引', 'プラットフォーム'],
-    officialUrl: 'https://www.jftc.go.jp/houdou/pressrelease/2026/jul/260724.html',
-    hasMinutes: true,
-    docCount: 3
-  },
-  // 5. FSA
+  // 4. FSA
   {
     id: 'meet-2026-0721-fsa',
     councilId: 'fsa-kinyu-shingi',
