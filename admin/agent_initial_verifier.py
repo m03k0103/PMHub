@@ -11,7 +11,13 @@ import os
 import json
 import urllib.request
 import re
+import io
 from datetime import datetime
+
+# Windows ターミナルログの文字化け防止 (stdout/stderr を UTF-8 に固定)
+if sys.platform == "win32":
+    sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8', errors='replace')
+    sys.stderr = io.TextIOWrapper(sys.stderr.buffer, encoding='utf-8', errors='replace')
 
 RULES_FILE = os.path.join(os.path.dirname(__file__), "scraping_rules.json")
 

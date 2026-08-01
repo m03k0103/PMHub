@@ -13,6 +13,12 @@ import sys
 import os
 import re
 import urllib.request
+import io
+
+# Windows ターミナルログの文字化け防止 (stdout/stderr を UTF-8 に固定)
+if sys.platform == "win32":
+    sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8', errors='replace')
+    sys.stderr = io.TextIOWrapper(sys.stderr.buffer, encoding='utf-8', errors='replace')
 
 PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
