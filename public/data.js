@@ -394,30 +394,35 @@ const MEETINGS = [
   },
   // 2. DIGITAL
   {
-    id: 'meet-2026-0725-digital',
+    id: 'meet-2025-0512-digital18',
     councilId: 'digital-suishin',
     councilName: 'デジタル社会推進会議',
     ministry: 'DIGITAL',
     category: 'COUNCIL',
-    title: '第18回 デジタル社会推進幹事会',
-    date: '2026-07-25',
-    updatedAt: '2026-07-25 17:00',
-    location: 'デジタル庁 20階 大会議室',
-    summary: 'マイナポータルのUI/UX刷新計画および次世代行政APIの基盤整備仕様が承認された。また、ガバメントクラウドにおけるマルチクラウド化推進と国産クラウド事業者の選定状況に関する中間報告が提出された。',
+    title: '第3回各府省庁DX推進連絡会議・第18回デジタル社会推進会議幹事会合同会議',
+    date: '2025-05-12',
+    updatedAt: '2025-05-12 17:00',
+    location: '中央合同庁舎第4号館 全省庁共用 1208 特別会議室',
+    summary: 'デジタル行財政改革の更なる推進、各府省庁DX推進の依頼事項、人事管理業務のデジタル化・高度化、旅費業務プロセスの改善について審議された。',
     agenda: [
-      '行政手続きの原則オンライン化・完全ペーパーレス化の達成度評価',
-      'ガバメントクラウドの利用実績および2027年度以降の調達方針',
-      'マイナポータルのプッシュ型通知機能拡張に関する基本仕様'
+      'デジタル行財政改革の更なる推進について',
+      '各府省庁DXの更なる効果発現に向けた依頼事項について',
+      '人事管理業務のデジタル化・高度化および旅費業務プロセスの改善について'
     ],
     materials: [
-      { name: '議事次第', type: 'PDF', size: '98 KB', url: 'https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/20260725_01.pdf', isMinutes: false },
-      { name: '資料1: 行政DX推進ロードマップ改定（案）', type: 'PDF', size: '3.1 MB', url: 'https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/20260725_02.pdf', isMinutes: false },
-      { name: '第18回 議事要旨', type: 'PDF', size: '210 KB', url: 'https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/20260725_minutes.pdf', isMinutes: true }
+      { name: '議事次第 (PDF / 53KB)', type: 'PDF', size: '53 KB', url: 'https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/6b76d2f7-8381-4173-9820-623ad9f20b64/88608d98/20250512_meeting_executive_agenda_01.pdf', isMinutes: false },
+      { name: '資料1: デジタル行財政改革の更なる推進について (PDF / 1,000KB)', type: 'PDF', size: '1,000 KB', url: 'https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/6b76d2f7-8381-4173-9820-623ad9f20b64/7108a06f/20250512_meeting_executive_outline_02.pdf', isMinutes: false },
+      { name: '資料2: 各府省庁DXの更なる効果発現に向けた依頼事項について (PDF / 1,930KB)', type: 'PDF', size: '1,930 KB', url: 'https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/6b76d2f7-8381-4173-9820-623ad9f20b64/f95e885a/20250512_meeting_executive_outline_03.pdf', isMinutes: false },
+      { name: '資料3: 人事管理業務のデジタル化・高度化について (PDF / 1,350KB)', type: 'PDF', size: '1,350 KB', url: 'https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/6b76d2f7-8381-4173-9820-623ad9f20b64/a09760b9/20250512_meeting_executive_outline_04.pdf', isMinutes: false },
+      { name: '資料4: 旅費業務プロセスの改善について (PDF / 1,450KB)', type: 'PDF', size: '1,450 KB', url: 'https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/6b76d2f7-8381-4173-9820-623ad9f20b64/73db36c7/20250512_meeting_executive_outline_05.pdf', isMinutes: false },
+      { name: '資料5: 経由調査に関する業務の実態把握の結果 (PDF / 2,200KB)', type: 'PDF', size: '2,200 KB', url: 'https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/6b76d2f7-8381-4173-9820-623ad9f20b64/2623a736/20250512_meeting_executive_outline_06.pdf', isMinutes: false },
+      { name: '資料6: DX推進のための体制整備について (PDF / 1,780KB)', type: 'PDF', size: '1,780 KB', url: 'https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/6b76d2f7-8381-4173-9820-623ad9f20b64/34ee9056/20250512_meeting_executive_outline_07.pdf', isMinutes: false },
+      { name: '第18回 会議公式ページ', type: 'HTML', size: '35 KB', url: 'https://www.digital.go.jp/councils/social-promotion-executive/6b76d2f7-8381-4173-9820-623ad9f20b64', isMinutes: false }
     ],
-    tags: ['デジタル', 'Gov-Cloud', 'マイナンバー', '行政DX', 'API'],
-    officialUrl: 'https://www.digital.go.jp/councils/social-promotion/meetings/20260725',
+    tags: ['デジタル行財政改革', 'Gov-Cloud', '行政DX', 'デジタル庁', '旅費改革'],
+    officialUrl: 'https://www.digital.go.jp/councils/social-promotion-executive/6b76d2f7-8381-4173-9820-623ad9f20b64',
     hasMinutes: true,
-    docCount: 3
+    docCount: 8
   },
   // 3. CFA
   {
