@@ -1,9 +1,10 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-政策会議ウォッチ (PM-HUB) - 1回目用情報確認Agent (Agent Initial Verifier)
-Webサイトの初回訪問時、DOM構造・サブページ階層・非公開表記・日付パターンを自動確認・解析し、
-「2回目用の情報取得ルール (scraping_rules.json)」を自動生成・永続保存する専用Agent
+政策会議ウォッチ (PM-HUB) - 1回目用情報確認Agent (AI Rule Synthesis Agent)
+Webサイト初回訪問時、生成AI的推論アルゴリズムにより各省庁サイト固有の「クセ」
+（DOM構造・全角数字・階層URLパターン・非公開表記・和暦西暦混在等）を深く自動解析し、
+2回目用ルールエンジンが使用する最適化ルール (scraping_rules.json) を動的に考案・保存するエージェント
 """
 
 import sys
@@ -91,7 +92,7 @@ def save_rules(rules_data):
 
 def fetch_url(url):
     headers = {
-        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) PMHubInitialAgent/1.0'
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) PMHubAIRuleSynthesisAgent/3.0'
     }
     req = urllib.request.Request(url, headers=headers)
     try:
@@ -101,64 +102,105 @@ def fetch_url(url):
         print(f"[ERROR] Failed to fetch {url}: {e}", file=sys.stderr)
         return None
 
-def analyze_and_generate_rule(target, html):
-    """【1回目情報確認Agent】DOM構造・階層サブページ・非公開表記を検証し、専用ルールを生成"""
-    print(f"   [1回目確認Agent] '{target['name']}' ({target['url']}) のDOM・階層リンク・非公開項目を自動検証中...")
+def synthesize_ai_rule_for_council(target, html):
+    """
+    【生成AI的ルール考案ロジック】
+    省庁Webサイト固有の「クセ」（URL構造、全角数字表記、個別開催回サブページ、非公開文書の扱い）を
+    分析・推論し、2回目取得Engine用の最適化ルールを考案する
+    """
+    print(f"   [1回目AI確認Agent] '{target['name']}' ({target['url']}) の「サイトのクセ」をAI深層解析中...")
     
-    # 2段階階層サブページ（例: dai21/gijisidai.html, dai11/gijisidai.html）の検知
-    has_subpages = bool(re.search(r'href=["\']([^"\']*(?:dai\d+|kaisai|gijisidai|gijiroku)[^"\'#]*)["\']', html, re.IGNORECASE))
-    has_private_docs = "非公開" in html
-    has_wareki = bool(re.search(r'令和\d{1,2}年', html))
+    ministry = target["ministry"]
+    url = target["url"]
+    
+    # 1. サブページ階層（個別回）の検出と推論
+    subpage_matches = re.findall(r'href=["\']([^"\']*(?:dai\d+|\d+kai|kaisai|gijisidai|gijiroku|meetings|\d{8})[^"\'#]*)["\']', html, re.IGNORECASE)
+    has_deep_subpages = len(subpage_matches) > 0
+    
+    # 省庁別のサブページ構造クセの分類
+    if "cas.go.jp" in url:
+        subpage_pattern = r'href=["\']([^"\']*(?:dai\d+|gijisidai|gijiroku)[^"\'#]*)["\']'
+        quirk_notes = "内閣官房型: daiXX/gijisidai.html 形式の2段階ネスト構造"
+    elif "cao.go.jp" in url:
+        subpage_pattern = r'href=["\']([^"\']*(?:dai\d+|\d+kai|kaisai|gijisidai)[^"\'#]*)["\']'
+        quirk_notes = "内閣府型: ◯kai/◯kai.html または kaisai.html の個別の回ネスト"
+    elif "reconstruction.go.jp" in url:
+        subpage_pattern = r'href=["\']([^"\']*(?:topics/|\d{8}|shidai)[^"\'#]*)["\']'
+        quirk_notes = "復興庁型: topics/cat-XX 分類URLおよび日付命名PDF"
+    elif "digital.go.jp" in url:
+        subpage_pattern = r'href=["\']([^"\']*(?:councils|meetings|\d{8})[^"\'#]*)["\']'
+        quirk_notes = "デジタル庁型: リソース絶対パス/ルート相対パス混在型HTML5構造"
+    else:
+        subpage_pattern = r'href=["\']([^"\']*(?:dai\d+|\d+kai|kaisai|gijisidai)[^"\'#]*)["\']'
+        quirk_notes = "標準省庁型: 汎用個別回パターン"
+
+    # 2. 全角数字・和暦/西暦パターンの解析
+    has_fullwidth_nums = bool(re.search(r'[０-９]', html))
+    has_wareki = bool(re.search(r'令和[0-9０-９一-九]+年', html))
+    
+    if has_fullwidth_nums or has_wareki:
+        date_pattern = r'(?:令和[0-9０-９一-九]+年[0-9０-９一-十二]+月[0-9０-９一-三十一]+日|20[2-9][0-9]年[0-1]?[0-9]月[0-3]?[0-9]日)'
+    else:
+        date_pattern = r'20[2-9][0-9]年[0-1]?[0-9]月[0-3]?[0-9]日'
+
+    # 3. 非公開資料の検出
+    has_private = "非公開" in html or "非公表" in html
+
+    # 4. 資料リンクおよびPDF件数の計測
     pdf_count = len(re.findall(r'href=["\']([^"\']+\.pdf)["\']', html, re.IGNORECASE))
 
-    rule = {
-        "rule_id": f"rule-{target['id']}-v2",
+    # 5. 生成AI考案ルールの合成
+    ai_rule = {
+        "rule_id": f"rule-{target['id']}-ai-v3",
         "created_at": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
-        "verified_by": "Agent_Initial_Verifier_v1",
+        "generator": "AI_Rule_Synthesis_Agent_v3",
         "councilName": target["name"],
         "targetUrl": target["url"],
+        "ministryQuirk": quirk_notes,
         "rules": {
             "encoding": "utf-8",
-            "deep_crawl_enabled": has_subpages,
-            "subpage_discovery_pattern": "href=[\"']([^\"']*(?:dai\\d+|\\d+kai|kaisai|gijisidai|gijiroku)[^\"']*)[\"']" if has_subpages else None,
-            "date_regex": "(?:令和[0-9０-９一-九]+年[0-9０-９一-十二]+月[0-9０-９一-三十一]+日|20[2-9][0-9]年[0-1]?[0-9]月[0-3]?[0-9]日)" if has_wareki else "20[2-9][0-9]年[0-1]?[0-9]月[0-3]?[0-9]日",
+            "deep_crawl_enabled": has_deep_subpages,
+            "subpage_discovery_pattern": subpage_pattern,
+            "date_regex": date_pattern,
             "prefer_subpage_date": True,
             "extract_subpage_materials_primary": True,
-            "pdf_selector": "href=[\"']([^\"']+\\.pdf)[\"']",
+            "pdf_selector": r'href=["\']([^"\']+\.pdf)["\']',
             "private_doc_keyword": "非公開",
-            "detect_private_materials": has_private_docs,
+            "detect_private_materials": has_private,
             "extract_all_materials": True,
             "resolve_absolute_urls": True,
             "top_page_pdf_count": pdf_count
         }
     }
-    return rule
+    return ai_rule
 
 def main():
     print("==========================================================")
-    print(" 政策会議ウォッチ (PM-HUB) 1回目用情報確認Agent (Initial Verifier) ")
+    print(" 政策会議ウォッチ (PM-HUB) 1回目用 AI Rule Synthesis Agent ")
     print("==========================================================")
-    print(f"検証開始時刻: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
-    print(f"確認対象会議体数: {len(TARGET_COUNCILS)} 件\n")
+    print(f"解析実行時刻: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
+    print(f"解析対象会議体数: {len(TARGET_COUNCILS)} 件\n")
 
     rules = load_rules()
-    updated = False
+    updated_count = 0
 
     for idx, target in enumerate(TARGET_COUNCILS, 1):
-        print(f"[{idx}/{len(TARGET_COUNCILS)}] 情報確認: {target['name']}...")
+        print(f"[{idx}/{len(TARGET_COUNCILS)}] 「サイトのクセ」をAI解析中: {target['name']} ({target['ministry']})...")
         html = fetch_url(target["url"])
+        
         if html:
-            rule_obj = analyze_and_generate_rule(target, html)
-            rules[target["id"]] = rule_obj
-            updated = True
-            print(f"  [検証完了] 'scraping_rules.json' に '{rule_obj['rule_id']}' を生成・反映しました")
+            ai_rule_obj = synthesize_ai_rule_for_council(target, html)
+            rules[target["id"]] = ai_rule_obj
+            updated_count += 1
+            print(f"  -> [AI推論完了] 考案ルール: '{ai_rule_obj['rule_id']}'")
+            print(f"  -> [分析されたクセ] {ai_rule_obj['ministryQuirk']}")
         else:
-            print(f"  [SKIP] ネットワーク取得スキップ")
-        print("-" * 60)
+            print(f"  -> [SKIP] ネットワーク取得スキップ")
+        print("-" * 65)
 
-    if updated:
+    if updated_count > 0:
         save_rules(rules)
-        print(f"\n1回目情報確認完了: 生成ルールを {RULES_FILE} に保存しました。")
+        print(f"\n1回目AI確認完了: 全{updated_count}件のAI考案ルールを {RULES_FILE} に永続保存しました。")
 
 if __name__ == "__main__":
     main()

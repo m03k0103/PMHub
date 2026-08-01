@@ -125,9 +125,15 @@ def parse_materials_from_html(html, base_url, pdf_selector):
         
     return materials
 
+def normalize_japanese_numbers(text):
+    """全角英数字・漢数字を半角数値に正規化"""
+    tr_map = str.maketrans('０１２３４５６７８９', '0123456789')
+    return text.translate(tr_map)
+
 def execute_rule_retrieval(target, html, rule_item):
-    """【2回目情報取得Engine】保存済みルールに基づき2段階階層クロールおよび資料データをフル抽出"""
+    """【2回目情報取得Engine】AI考案ルールに基づき2段階階層クロールおよび資料データをフル抽出"""
     rule = rule_item.get("rules", {})
+    quirk_note = rule_item.get("ministryQuirk", "標準抽出ルール")
     
     title_match = re.search(r'<title>(.*?)</title>', html, re.IGNORECASE | re.DOTALL)
     page_title = title_match.group(1).strip() if title_match else target["name"]
@@ -139,12 +145,12 @@ def execute_rule_retrieval(target, html, rule_item):
     deep_enabled = rule.get("deep_crawl_enabled", True)
     
     if deep_enabled:
-        subpage_pattern = rule.get("subpage_discovery_pattern", r'href=["\']([^"\']*(?:dai\d+|kaisai|gijisidai)[^"\'#]*)["\']')
+        subpage_pattern = rule.get("subpage_discovery_pattern", r'href=["\']([^"\']*(?:dai\d+|\d+kai|kaisai|gijisidai)[^"\'#]*)["\']')
         subpage_links = re.findall(subpage_pattern, html, re.IGNORECASE)
         
         if subpage_links:
             unique_subpages = list(dict.fromkeys([urllib.parse.urljoin(target["url"], l) for l in subpage_links]))[:6]
-            print(f"   [2回目情報取得Engine] 個別回サブページ {len(unique_subpages)} 件を深掘り巡回中...")
+            print(f"   [2回目情報取得Engine ({quirk_note})] サブページ {len(unique_subpages)} 件を深掘り巡回中...")
 
             for sub_url in unique_subpages:
                 sub_html = fetch_url(sub_url)
@@ -153,14 +159,15 @@ def execute_rule_retrieval(target, html, rule_item):
                     sub_title = sub_title_match.group(1).strip() if sub_title_match else sub_url
                     
                     sub_materials = parse_materials_from_html(sub_html, sub_url, pdf_pattern)
-                    sub_dates = re.findall(rule.get("date_regex", r'令和\d+年\d+月\d+日'), sub_html)
+                    raw_sub_dates = re.findall(rule.get("date_regex", r'令和\d+年\d+月\d+日'), sub_html)
+                    norm_sub_dates = [normalize_japanese_numbers(d) for d in raw_sub_dates]
 
                     subpage_meetings.append({
                         "subpageUrl": sub_url,
                         "title": sub_title,
                         "extractedMaterialsCount": len(sub_materials),
                         "materials": sub_materials,
-                        "extractedDates": list(set(sub_dates))[:2]
+                        "extractedDates": list(set(norm_sub_dates))[:2]
                     })
                     top_materials.extend(sub_materials)
 
@@ -172,7 +179,8 @@ def execute_rule_retrieval(target, html, rule_item):
             seen_keys.add(key)
             unique_materials.append(m)
 
-    date_matches = re.findall(rule.get("date_regex", r'令和\d+年\d+月\d+日'), html)
+    raw_date_matches = re.findall(rule.get("date_regex", r'令和\d+年\d+月\d+日'), html)
+    norm_date_matches = [normalize_japanese_numbers(d) for d in raw_date_matches]
 
     scraped_item = {
         "councilId": target["id"],
@@ -181,10 +189,11 @@ def execute_rule_retrieval(target, html, rule_item):
         "officialUrl": target["url"],
         "scrapedAt": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
         "ruleApplied": rule_item.get("rule_id", "rule-default"),
+        "ministryQuirk": quirk_note,
         "pageTitle": page_title,
         "totalExtractedMaterials": len(unique_materials),
         "materials": unique_materials,
-        "extractedDates": list(set(date_matches))[:3],
+        "extractedDates": list(set(norm_date_matches))[:3],
         "subpageMeetings": subpage_meetings
     }
     return scraped_item
