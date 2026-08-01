@@ -636,6 +636,9 @@ document.addEventListener('DOMContentLoaded', () => {
     
     if (watchedList.length === 0) {
       el.watchlistItems.innerHTML = `<p class="text-sm">現在登録中の会議体はありません。「会議体一覧」タブからお気に入りの会議体を追加してください。</p>`;
+      if (el.rssUrlInput) {
+        el.rssUrlInput.value = 'https://pm-hub.gov.example/rss/feed.xml';
+      }
     } else {
       el.watchlistItems.innerHTML = watchedList.map(c => {
         const minInfo = MINISTRIES[c.ministry] || { name: c.ministry };
@@ -651,6 +654,11 @@ document.addEventListener('DOMContentLoaded', () => {
           </div>
         `;
       }).join('');
+
+      if (el.rssUrlInput) {
+        const idsArray = Array.from(state.watchedCouncilIds).join(',');
+        el.rssUrlInput.value = `https://pm-hub.gov.example/rss/feed.xml?ids=${encodeURIComponent(idsArray)}`;
+      }
     }
   }
 
