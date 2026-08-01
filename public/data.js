@@ -125,12 +125,12 @@ const COUNCILS = [
   // 6. MOJ
   {
     id: 'moj-hosei-shingi',
-    name: '法制審議会 民法部会',
+    name: '法制審議会',
     ministry: 'MOJ',
-    category: 'SUBCOMMITTEE',
+    category: 'COUNCIL',
     pastYearCount: 9,
-    description: 'デジタル時代の契約法制、共同親権、戸籍の読み仮名法制化、AI生成物の権利関係など民法・刑事法制の改正要綱案を答申。',
-    officialUrl: 'https://www.moj.go.jp/shingi_index.html',
+    description: '民法・会社法・刑事法・各種手続法等の法改正要綱案の答申、および法務大臣からの諮問事項（犯罪被害者支援・会社法制等）を審議。',
+    officialUrl: 'https://www.moj.go.jp/shingi1/shingikai_soukai.html',
     isWatched: true,
     trackedSince: '2022-01-15'
   },
@@ -511,28 +511,35 @@ const MEETINGS = [
   },
   // 6. MOJ
   {
-    id: 'meet-2026-0719-moj',
+    id: 'meet-2026-0615-moj',
     councilId: 'moj-hosei-shingi',
-    councilName: '法制審議会 民法部会',
+    councilName: '法制審議会',
     ministry: 'MOJ',
-    category: 'SUBCOMMITTEE',
-    title: '法制審議会 民法部会 第112回会議',
-    date: '2026-07-19',
-    updatedAt: '2026-07-20 09:30',
-    location: '法務省 2階 大会議室',
-    summary: 'デジタル署名およびスマートコントラクトの法的効力に関する民法上の特例要綱案が取りまとめられた。AIが自動生成した契約の成立時期と無効・取消原因について法制化の基本方針が示された。',
+    category: 'COUNCIL',
+    title: '法制審議会第２０５回会議',
+    date: '2026-06-15',
+    updatedAt: '2026-06-15 17:00',
+    location: '法務省 大会議室',
+    summary: '「犯罪被害者等の刑事手続への関与等の在り方に関する諮問第130号」に関し刑事法（犯罪被害者関係）部会への付託が決定され、会社法制（株式・株主総会等関係）部会における審議経過報告が行われた。',
     agenda: [
-      'デジタル技術を活用した契約法制に関する要綱案（中間整理）',
-      '共同親権施行後の運用ガイドラインおよびADR（紛争解決手続）整備',
-      '戸籍法改定に伴う氏名の読み仮名届出の全国展開状況'
+      '犯罪被害者等の刑事手続への関与等の在り方に関する諮問第１３０号について',
+      '会社法制に関する諮問第１２７号について'
     ],
     materials: [
-      { name: '法制審議会 公式ポータル', type: 'HTML', size: '35 KB', url: 'https://www.moj.go.jp/shingi_index.html', isMinutes: false }
+      { name: '配布資料1: 諮問第１３0号 (PDF)', type: 'PDF', size: '180 KB', url: 'https://www.moj.go.jp/content/001464734.pdf', isMinutes: false },
+      { name: '配布資料2: 「第５次犯罪被害者等基本計画」該当箇所抜粋 (PDF)', type: 'PDF', size: '320 KB', url: 'https://www.moj.go.jp/content/001464735.pdf', isMinutes: false },
+      { name: '配布資料3: 会社法制（株式・株主総会等関係）の見直しに関する中間試案 (PDF)', type: 'PDF', size: '1.8 MB', url: 'https://www.moj.go.jp/content/001464736.pdf', isMinutes: false },
+      { name: '配布資料4: 会社法制（株式・株主総会等関係）の見直しに関する中間試案（概要） (PDF)', type: 'PDF', size: '750 KB', url: 'https://www.moj.go.jp/content/001464743.pdf', isMinutes: false },
+      { name: '配布資料5: 会社法制（株式・株主総会等関係）の見直しに関する中間試案の補足説明 (PDF)', type: 'PDF', size: '1.2 MB', url: 'https://www.moj.go.jp/content/001464738.pdf', isMinutes: false },
+      { name: '会議用資料: 法制審議会委員等名簿 (PDF)', type: 'PDF', size: '160 KB', url: 'https://www.moj.go.jp/content/001464739.pdf', isMinutes: false },
+      { name: '第205回 会議議事録 (PDF版)', type: 'PDF', size: '420 KB', url: 'https://www.moj.go.jp/content/001466596.pdf', isMinutes: true },
+      { name: '第205回 会議議事録 (TXT版)', type: 'TXT', size: '95 KB', url: 'https://www.moj.go.jp/content/001466595.txt', isMinutes: true },
+      { name: '法制審議会第２０５回会議 開催ページ', type: 'HTML', size: '35 KB', url: 'https://www.moj.go.jp/shingi1/shingi03500044_00015.html', isMinutes: false }
     ],
-    tags: ['法制審議会', '民法', '電子契約', '共同親権', '法務省'],
-    officialUrl: 'https://www.moj.go.jp/shingi_index.html',
+    tags: ['法制審議会', '犯罪被害者支援', '会社法', '株主総会', '法務省'],
+    officialUrl: 'https://www.moj.go.jp/shingi1/shingi03500044_00015.html',
     hasMinutes: true,
-    docCount: 1
+    docCount: 9
   },
   // 7. MOD
   {
