@@ -4,7 +4,7 @@
     "councilName": "全世代型社会保障構築会議",
     "ministry": "CAS",
     "officialUrl": "https://www.cas.go.jp/jp/seisaku/zensedai_hosyo/index.html",
-    "scrapedAt": "2026-08-01 16:15:13",
+    "scrapedAt": "2026-08-01 17:11:13",
     "ruleApplied": "rule-cas-zensedai-hosyo-ai-v3",
     "ministryQuirk": "内閣官房型: daiXX/gijisidai.html 形式の2段階ネスト構造",
     "pageTitle": "全世代型社会保障構築会議｜内閣官房ホームページ",
@@ -306,9 +306,9 @@
       }
     ],
     "extractedDates": [
-      "令和4年11月24日",
-      "令和5年11月30日",
-      "令和6年11月15日"
+      "令和4年12月14日",
+      "令和4年12月16日",
+      "令和4年11月24日"
     ],
     "subpageMeetings": [
       {
@@ -391,8 +391,8 @@
           }
         ],
         "extractedDates": [
-          "令和7年6月23日",
-          "令和4年12月16日"
+          "令和4年12月16日",
+          "令和7年6月23日"
         ]
       },
       {
@@ -503,7 +503,7 @@
     "councilName": "中東情勢に関する関係閣僚会議",
     "ministry": "CAS",
     "officialUrl": "https://www.cas.go.jp/jp/seisaku/chyutoujyousei/index.html",
-    "scrapedAt": "2026-08-01 16:15:14",
+    "scrapedAt": "2026-08-01 17:11:14",
     "ruleApplied": "rule-cas-chutou-jyousei-ai-v3",
     "ministryQuirk": "内閣官房型: daiXX/gijisidai.html 形式の2段階ネスト構造",
     "pageTitle": "中東情勢に関する対応｜内閣官房ホームページ",
@@ -907,9 +907,9 @@
       }
     ],
     "extractedDates": [
-      "令和8年6月11日",
-      "令和8年6月2日",
-      "令和8年7月24日"
+      "令和8年4月30日",
+      "令和8年5月12日",
+      "令和8年3月23日"
     ],
     "subpageMeetings": [
       {
@@ -1285,7 +1285,7 @@
     "councilName": "AI戦略会議",
     "ministry": "CAO",
     "officialUrl": "https://www8.cao.go.jp/cstp/ai/ai_senryaku/ai_senryaku.html",
-    "scrapedAt": "2026-08-01 16:15:14",
+    "scrapedAt": "2026-08-01 17:11:14",
     "ruleApplied": "rule-cao-ai-strategy-ai-v3",
     "ministryQuirk": "内閣府型: ◯kai/◯kai.html または kaisai.html の個別の回ネスト",
     "pageTitle": "ＡＩ戦略会議 - 科学技術・イノベーション - 内閣府",
@@ -1438,8 +1438,8 @@
     ],
     "extractedDates": [
       "令和5年6月26日",
-      "令和6年5月22日",
-      "令和5年9月8日"
+      "令和5年12月21日",
+      "令和6年12月26日"
     ],
     "subpageMeetings": [
       {
@@ -1560,16 +1560,16 @@
     "councilName": "規制改革推進会議",
     "ministry": "CAO",
     "officialUrl": "https://www8.cao.go.jp/kisei-kaikaku/index.html",
-    "scrapedAt": "2026-08-01 16:15:14",
+    "scrapedAt": "2026-08-01 17:11:14",
     "ruleApplied": "rule-cao-kisei-kaikaku-ai-v3",
     "ministryQuirk": "内閣府型: ◯kai/◯kai.html または kaisai.html の個別の回ネスト",
     "pageTitle": "規制改革&nbsp;-&nbsp;内閣府",
     "totalExtractedMaterials": 0,
     "materials": [],
     "extractedDates": [
-      "令和7年10月16日",
       "令和8年7月21日",
-      "令和8年7月24日"
+      "令和7年6月10日",
+      "令和7年2月26日"
     ],
     "subpageMeetings": []
   },
@@ -1578,7 +1578,7 @@
     "councilName": "復興推進委員会",
     "ministry": "RA",
     "officialUrl": "https://www.reconstruction.go.jp/topics/cat-11/cat-47/cat-155/cat-156/000813/",
-    "scrapedAt": "2026-08-01 16:15:15",
+    "scrapedAt": "2026-08-01 17:11:14",
     "ruleApplied": "rule-ra-fukko-suishin-ai-v3",
     "ministryQuirk": "復興庁型: topics/cat-XX 分類URLおよび日付命名PDF",
     "pageTitle": "復興推進委員会 | 復興庁",
@@ -1646,9 +1646,9 @@
       }
     ],
     "extractedDates": [
-      "令和8年7月2日",
-      "令和6年3月8日",
-      "令和5年3月3日"
+      "令和2年6月11日",
+      "令和6年8月21日",
+      "令和5年2月27日"
     ],
     "subpageMeetings": [
       {
@@ -1725,8 +1725,8 @@
           }
         ],
         "extractedDates": [
-          "令和8年7月2日",
-          "令和6年3月8日"
+          "令和2年6月11日",
+          "令和6年8月21日"
         ]
       },
       {
@@ -1764,7 +1764,7 @@
     "councilName": "社会保障国民会議",
     "ministry": "CAS",
     "officialUrl": "https://www.cas.go.jp/jp/seisaku/kokuminkaigi/index.html",
-    "scrapedAt": "2026-08-01 16:15:15",
+    "scrapedAt": "2026-08-01 17:11:15",
     "ruleApplied": "rule-cas-kokumin-kaigi-ai-v3",
     "ministryQuirk": "内閣官房型: daiXX/gijisidai.html 形式の2段階ネスト構造",
     "pageTitle": "社会保障国民会議｜内閣官房",
@@ -1940,9 +1940,9 @@
       }
     ],
     "extractedDates": [
-      "令和8年5月15日",
-      "令和8年7月13日",
-      "令和8年4月8日"
+      "令和8年7月22日",
+      "令和8年6月17日",
+      "令和8年4月22日"
     ],
     "subpageMeetings": []
   },
@@ -1951,7 +1951,7 @@
     "councilName": "人工知能戦略本部",
     "ministry": "CAO",
     "officialUrl": "https://www8.cao.go.jp/cstp/ai/ai_hq/kaisai.html",
-    "scrapedAt": "2026-08-01 16:15:15",
+    "scrapedAt": "2026-08-01 17:11:15",
     "ruleApplied": "rule-cao-ai-hq-ai-v3",
     "ministryQuirk": "内閣府型: ◯kai/◯kai.html または kaisai.html の個別の回ネスト",
     "pageTitle": "人工知能戦略本部　開催状況 - 科学技術・イノベーション - 内閣府",
@@ -2068,7 +2068,7 @@
     ],
     "extractedDates": [
       "令和7年12月19日",
-      "令和7年11月21日",
+      "令和8年6月19日",
       "令和7年9月12日"
     ],
     "subpageMeetings": [
@@ -2215,7 +2215,7 @@
     "councilName": "デジタル社会推進会議",
     "ministry": "DIGITAL",
     "officialUrl": "https://www.digital.go.jp/councils/social-promotion",
-    "scrapedAt": "2026-08-01 16:15:16",
+    "scrapedAt": "2026-08-01 17:11:16",
     "ruleApplied": "rule-digital-suishin-ai-v3",
     "ministryQuirk": "デジタル庁型: リソース絶対パス/ルート相対パス混在型HTML5構造",
     "pageTitle": "デジタル社会推進会議｜デジタル庁",
@@ -2404,8 +2404,8 @@
         "extractedMaterialsCount": 0,
         "materials": [],
         "extractedDates": [
-          "2023年2月28日",
-          "令和4年6月7日"
+          "令和5年6月9日",
+          "2023年10月6日"
         ]
       },
       {
@@ -2590,6 +2590,1347 @@
         ],
         "extractedDates": [
           "2024年7月29日"
+        ]
+      }
+    ]
+  },
+  {
+    "councilId": "cfa-kodomo-suishin",
+    "councilName": "こども政策推進会議",
+    "ministry": "CFA",
+    "officialUrl": "https://www.cfa.go.jp/councils/suishinkaigi",
+    "scrapedAt": "2026-08-01 17:11:16",
+    "ruleApplied": "rule-cfa-kodomo-suishin-ai-v3",
+    "ministryQuirk": "こども家庭庁型: /councils/会議名/UUIDハッシュ個別の回URL構造",
+    "pageTitle": "こども政策推進会議｜こども家庭庁",
+    "totalExtractedMaterials": 33,
+    "materials": [
+      {
+        "name": "こども政策推進会議運営要領（PDF／47KB）",
+        "url": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/73229c74-451c-482b-9778-4c2525bb4e0c/62ca697a/20240528-councils-suishinkaigi-01.pdf",
+        "type": "PDF",
+        "isPrivate": false
+      },
+      {
+        "name": "議事次第（PDF／179KB）",
+        "url": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/4c72c8fd-e687-4a9d-ae40-b48448ecc5b2/0398f0eb/20260608_councils_suishinkaigi_4c72c8fd_01.pdf",
+        "type": "PDF",
+        "isPrivate": false
+      },
+      {
+        "name": "資料1　「こどもまんなか実行計画2026」概要（案）（PDF／713KB）",
+        "url": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/4c72c8fd-e687-4a9d-ae40-b48448ecc5b2/5c47bc06/20260608_councils_suishinkaigi_4c72c8fd_05.pdf",
+        "type": "PDF",
+        "isPrivate": false
+      },
+      {
+        "name": "資料2　「こどもの命と安全を徹底的に守る」大臣プロジェクト2026　第1弾『こども・若者 自殺防止総力戦略』について （PDF／534KB）",
+        "url": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/4c72c8fd-e687-4a9d-ae40-b48448ecc5b2/25910313/20260608_councils_suishinkaigi_4c72c8fd_03.pdf",
+        "type": "PDF",
+        "isPrivate": false
+      },
+      {
+        "name": "資料3　こどもまんなか実行計画2026（案）（PDF／1.0MB）",
+        "url": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/4c72c8fd-e687-4a9d-ae40-b48448ecc5b2/f30a7b88/20260608_councils_suishinkaigi_4c72c8fd_07.pdf",
+        "type": "PDF",
+        "isPrivate": false
+      },
+      {
+        "name": "議事要旨（PDF／248KB）",
+        "url": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/4c72c8fd-e687-4a9d-ae40-b48448ecc5b2/469ce15f/20260622_councils_suishinkaigi_4c72c8fd_08.pdf",
+        "type": "PDF",
+        "isPrivate": false
+      },
+      {
+        "name": "議事次第（PDF／35.9KB）",
+        "url": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/75cf51c2-b2b6-4120-955c-bf41d1824937/f614c61a/20250606councils-suishinkaigi-75cf51c2-01.pdf",
+        "type": "PDF",
+        "isPrivate": false
+      },
+      {
+        "name": "資料1　「こどもまんなか実行計画2025」の策定について（PDF／1.0MB）",
+        "url": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/75cf51c2-b2b6-4120-955c-bf41d1824937/c912f1c6/20250606councils-suishinkaigi-75cf51c2-02.pdf",
+        "type": "PDF",
+        "isPrivate": false
+      },
+      {
+        "name": "資料2　こどもまんなか実行計画2025（案） （PDF／2.8MB）",
+        "url": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/75cf51c2-b2b6-4120-955c-bf41d1824937/bd5f161a/20250606councils-suishinkaigi-75cf51c2-04.pdf",
+        "type": "PDF",
+        "isPrivate": false
+      },
+      {
+        "name": "議事要旨（PDF／234KB）",
+        "url": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/75cf51c2-b2b6-4120-955c-bf41d1824937/563512a1/20250610_councils_suishinkaigi_75cf51c2_05.pdf",
+        "type": "PDF",
+        "isPrivate": false
+      },
+      {
+        "name": "議事次第（PDF／89KB）",
+        "url": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/06216a0a-46c6-420b-8f62-755fd485ab8a/8ca7fab4/20240905_councils_suishinkaigi_06216a0a_01.pdf",
+        "type": "PDF",
+        "isPrivate": false
+      },
+      {
+        "name": "資料　「青少年が安全に安心してインターネットを利用できるようにするための施策に関する基本的な計画（第6次）」（案）（PDF／650KB）",
+        "url": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/06216a0a-46c6-420b-8f62-755fd485ab8a/16f23781/20240905_councils_suishinkaigi_06216a0a_02.pdf",
+        "type": "PDF",
+        "isPrivate": false
+      },
+      {
+        "name": "参考資料　「青少年が安全に安心してインターネットを利用できるようにするための施策に関する基本的な計画（第6次）」（案）の概要（PDF／726KB）",
+        "url": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/06216a0a-46c6-420b-8f62-755fd485ab8a/56c6e6ae/20240905_councils_suishinkaigi_06216a0a_03.pdf",
+        "type": "PDF",
+        "isPrivate": false
+      },
+      {
+        "name": "議事次第（PDF／99KB）",
+        "url": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/3bbf70e9-27d7-45dc-b6bb-2a8145d6ba0c/ce5d794a/20240530_councils_suishinkaigi_3bbf70e9_14.pdf",
+        "type": "PDF",
+        "isPrivate": false
+      },
+      {
+        "name": "資料1　　　　こどもまんなか実行計画2024（案）（概要）（PDF／765KB）",
+        "url": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/3bbf70e9-27d7-45dc-b6bb-2a8145d6ba0c/7f5559a7/20240530_councils_suishinkaigi_3bbf70e9_12.pdf",
+        "type": "PDF",
+        "isPrivate": false
+      },
+      {
+        "name": "資料2　　　　こどもまんなか実行計画2024（案）（PDF／1,993KB）",
+        "url": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/3bbf70e9-27d7-45dc-b6bb-2a8145d6ba0c/4541ddf1/20240530_councils_suishinkaigi_3bbf70e9_13.pdf",
+        "type": "PDF",
+        "isPrivate": false
+      },
+      {
+        "name": "参考資料1　　こども大綱（令和5年12月22日閣議決定）（PDF／710KB）",
+        "url": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/3bbf70e9-27d7-45dc-b6bb-2a8145d6ba0c/5f43e2fe/20240530_councils_suishinkaigi_3bbf70e9_01.pdf",
+        "type": "PDF",
+        "isPrivate": false
+      },
+      {
+        "name": "参考資料2　　こどもまんなか実行計画2024の実施に向けた意見書（令和6年5月16日こども家庭審議会）（PDF／320KB）",
+        "url": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/3bbf70e9-27d7-45dc-b6bb-2a8145d6ba0c/8eade6e9/20240530_councils_suishinkaigi_3bbf70e9_02.pdf",
+        "type": "PDF",
+        "isPrivate": false
+      },
+      {
+        "name": "参考資料3　　「こどもまんなか実行計画2024（案）」における「はじめの100か月の育ちビジョン」の関連施策（概要）（PDF／567KB）",
+        "url": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/3bbf70e9-27d7-45dc-b6bb-2a8145d6ba0c/52995a16/20240530_councils_suishinkaigi_3bbf70e9_15.pdf",
+        "type": "PDF",
+        "isPrivate": false
+      },
+      {
+        "name": "参考資料4－1　こども・若者の意見の政策反映に向けたガイドライン概要版（PDF／8.1MB）",
+        "url": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/3bbf70e9-27d7-45dc-b6bb-2a8145d6ba0c/1a1212ba/20240530_councils_suishinkaigi_3bbf70e9_05.pdf",
+        "type": "PDF",
+        "isPrivate": false
+      },
+      {
+        "name": "参考資料4－2　こども若者★いけんぷらす（こども・若者意見反映推進事業）概要（PDF／973KB）",
+        "url": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/3bbf70e9-27d7-45dc-b6bb-2a8145d6ba0c/0be27cb3/20240530_councils_suishinkaigi_3bbf70e9_06.pdf",
+        "type": "PDF",
+        "isPrivate": false
+      },
+      {
+        "name": "参考資料4－3　「こども若者★いけんぷらす」チラシ（PDF／2.5MB）",
+        "url": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/3bbf70e9-27d7-45dc-b6bb-2a8145d6ba0c/b745f291/20240530_councils_suishinkaigi_3bbf70e9_07.pdf",
+        "type": "PDF",
+        "isPrivate": false
+      },
+      {
+        "name": "参考資料5　　　自治体こども計画策定のためのガイドライン概要版（PDF／346KB）",
+        "url": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/3bbf70e9-27d7-45dc-b6bb-2a8145d6ba0c/bc4973b6/20240530_councils_suishinkaigi_3bbf70e9_11.pdf",
+        "type": "PDF",
+        "isPrivate": false
+      },
+      {
+        "name": "議事要旨（PDF／189KB）",
+        "url": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/3bbf70e9-27d7-45dc-b6bb-2a8145d6ba0c/84c47bad/20240610_councils_suishinkaigi_3bbf70e9_16.pdf",
+        "type": "PDF",
+        "isPrivate": false
+      },
+      {
+        "name": "議事次第（PDF／26KB）",
+        "url": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/74de7e9e-4a5e-4a6f-9283-747d536230a3/a50f9f22/20231225_councils_suishinkaigi_1bP4fnMp_00.pdf",
+        "type": "PDF",
+        "isPrivate": false
+      },
+      {
+        "name": "資料1：「こども未来戦略」について（PDF／1,539KB）",
+        "url": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/74de7e9e-4a5e-4a6f-9283-747d536230a3/07109185/20231225_councils_suishinkaigi_1bP4fnMp_01.pdf",
+        "type": "PDF",
+        "isPrivate": false
+      },
+      {
+        "name": "資料2：「全世代型社会保障構築を目指す改革の道筋（改革工程）」について（PDF／738KB）",
+        "url": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/74de7e9e-4a5e-4a6f-9283-747d536230a3/a881a2f0/20231225_councils_suishinkaigi_1bP4fnMp_02.pdf",
+        "type": "PDF",
+        "isPrivate": false
+      },
+      {
+        "name": "資料3：こども大綱（案）等について（概要）（PDF／145KB）",
+        "url": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/74de7e9e-4a5e-4a6f-9283-747d536230a3/4a703eb1/20231225_councils_suishinkaigi_1bP4fnMp_03.pdf",
+        "type": "PDF",
+        "isPrivate": false
+      },
+      {
+        "name": "資料4：こども大綱（案）（PDF／691KB）",
+        "url": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/74de7e9e-4a5e-4a6f-9283-747d536230a3/74bf5ba4/20231225_councils_suishinkaigi_1bP4fnMp_04.pdf",
+        "type": "PDF",
+        "isPrivate": false
+      },
+      {
+        "name": "参考資料1：こども大綱（案）参考資料（PDF／2,200KB）",
+        "url": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/74de7e9e-4a5e-4a6f-9283-747d536230a3/2a7834da/20231225_councils_suishinkaigi_1bP4fnMp_05.pdf",
+        "type": "PDF",
+        "isPrivate": false
+      },
+      {
+        "name": "参考資料2：幼児期までのこどもの育ちに係る基本的なビジョン（案）（PDF／849KB）",
+        "url": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/74de7e9e-4a5e-4a6f-9283-747d536230a3/2a5fbc26/20231225_councils_suishinkaigi_1bP4fnMp_06.pdf",
+        "type": "PDF",
+        "isPrivate": false
+      },
+      {
+        "name": "参考資料3：こどもの居場所づくりに関する指針（案）（PDF／261KB）",
+        "url": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/74de7e9e-4a5e-4a6f-9283-747d536230a3/b5090883/20231225_councils_suishinkaigi_1bP4fnMp_07.pdf",
+        "type": "PDF",
+        "isPrivate": false
+      },
+      {
+        "name": "議事要旨（PDF／224KB）",
+        "url": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/74de7e9e-4a5e-4a6f-9283-747d536230a3/e291c40c/20240110_councils_suishinkaigi_1bP4fnMp_08.pdf",
+        "type": "PDF",
+        "isPrivate": false
+      }
+    ],
+    "extractedDates": [
+      "令和8年6月9日",
+      "令和6年9月9日",
+      "令和5年12月22日"
+    ],
+    "subpageMeetings": [
+      {
+        "subpageUrl": "https://www.cfa.go.jp/councils/suishinkaigi",
+        "title": "こども政策推進会議｜こども家庭庁",
+        "extractedMaterialsCount": 1,
+        "materials": [
+          {
+            "name": "こども政策推進会議運営要領（PDF／47KB）",
+            "url": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/73229c74-451c-482b-9778-4c2525bb4e0c/62ca697a/20240528-councils-suishinkaigi-01.pdf",
+            "type": "PDF",
+            "isPrivate": false
+          }
+        ],
+        "extractedDates": [
+          "令和8年6月9日",
+          "令和6年9月9日"
+        ]
+      },
+      {
+        "subpageUrl": "https://www.cfa.go.jp/councils/suishinkaigi/4c72c8fd",
+        "title": "こども政策推進会議（第6回）｜こども家庭庁",
+        "extractedMaterialsCount": 5,
+        "materials": [
+          {
+            "name": "議事次第（PDF／179KB）",
+            "url": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/4c72c8fd-e687-4a9d-ae40-b48448ecc5b2/0398f0eb/20260608_councils_suishinkaigi_4c72c8fd_01.pdf",
+            "type": "PDF",
+            "isPrivate": false
+          },
+          {
+            "name": "資料1　「こどもまんなか実行計画2026」概要（案）（PDF／713KB）",
+            "url": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/4c72c8fd-e687-4a9d-ae40-b48448ecc5b2/5c47bc06/20260608_councils_suishinkaigi_4c72c8fd_05.pdf",
+            "type": "PDF",
+            "isPrivate": false
+          },
+          {
+            "name": "資料2　「こどもの命と安全を徹底的に守る」大臣プロジェクト2026　第1弾『こども・若者 自殺防止総力戦略』について （PDF／534KB）",
+            "url": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/4c72c8fd-e687-4a9d-ae40-b48448ecc5b2/25910313/20260608_councils_suishinkaigi_4c72c8fd_03.pdf",
+            "type": "PDF",
+            "isPrivate": false
+          },
+          {
+            "name": "資料3　こどもまんなか実行計画2026（案）（PDF／1.0MB）",
+            "url": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/4c72c8fd-e687-4a9d-ae40-b48448ecc5b2/f30a7b88/20260608_councils_suishinkaigi_4c72c8fd_07.pdf",
+            "type": "PDF",
+            "isPrivate": false
+          },
+          {
+            "name": "議事要旨（PDF／248KB）",
+            "url": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/4c72c8fd-e687-4a9d-ae40-b48448ecc5b2/469ce15f/20260622_councils_suishinkaigi_4c72c8fd_08.pdf",
+            "type": "PDF",
+            "isPrivate": false
+          }
+        ],
+        "extractedDates": [
+          "令和8年6月9日"
+        ]
+      },
+      {
+        "subpageUrl": "https://www.cfa.go.jp/councils/suishinkaigi/75cf51c2",
+        "title": "こども政策推進会議（第5回）｜こども家庭庁",
+        "extractedMaterialsCount": 4,
+        "materials": [
+          {
+            "name": "議事次第（PDF／35.9KB）",
+            "url": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/75cf51c2-b2b6-4120-955c-bf41d1824937/f614c61a/20250606councils-suishinkaigi-75cf51c2-01.pdf",
+            "type": "PDF",
+            "isPrivate": false
+          },
+          {
+            "name": "資料1　「こどもまんなか実行計画2025」の策定について（PDF／1.0MB）",
+            "url": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/75cf51c2-b2b6-4120-955c-bf41d1824937/c912f1c6/20250606councils-suishinkaigi-75cf51c2-02.pdf",
+            "type": "PDF",
+            "isPrivate": false
+          },
+          {
+            "name": "資料2　こどもまんなか実行計画2025（案） （PDF／2.8MB）",
+            "url": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/75cf51c2-b2b6-4120-955c-bf41d1824937/bd5f161a/20250606councils-suishinkaigi-75cf51c2-04.pdf",
+            "type": "PDF",
+            "isPrivate": false
+          },
+          {
+            "name": "議事要旨（PDF／234KB）",
+            "url": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/75cf51c2-b2b6-4120-955c-bf41d1824937/563512a1/20250610_councils_suishinkaigi_75cf51c2_05.pdf",
+            "type": "PDF",
+            "isPrivate": false
+          }
+        ],
+        "extractedDates": [
+          "令和7年6月6日"
+        ]
+      },
+      {
+        "subpageUrl": "https://www.cfa.go.jp/councils/suishinkaigi/06216a0a",
+        "title": "こども政策推進会議（第4回）｜こども家庭庁",
+        "extractedMaterialsCount": 3,
+        "materials": [
+          {
+            "name": "議事次第（PDF／89KB）",
+            "url": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/06216a0a-46c6-420b-8f62-755fd485ab8a/8ca7fab4/20240905_councils_suishinkaigi_06216a0a_01.pdf",
+            "type": "PDF",
+            "isPrivate": false
+          },
+          {
+            "name": "資料　「青少年が安全に安心してインターネットを利用できるようにするための施策に関する基本的な計画（第6次）」（案）（PDF／650KB）",
+            "url": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/06216a0a-46c6-420b-8f62-755fd485ab8a/16f23781/20240905_councils_suishinkaigi_06216a0a_02.pdf",
+            "type": "PDF",
+            "isPrivate": false
+          },
+          {
+            "name": "参考資料　「青少年が安全に安心してインターネットを利用できるようにするための施策に関する基本的な計画（第6次）」（案）の概要（PDF／726KB）",
+            "url": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/06216a0a-46c6-420b-8f62-755fd485ab8a/56c6e6ae/20240905_councils_suishinkaigi_06216a0a_03.pdf",
+            "type": "PDF",
+            "isPrivate": false
+          }
+        ],
+        "extractedDates": [
+          "令和6年9月9日"
+        ]
+      },
+      {
+        "subpageUrl": "https://www.cfa.go.jp/councils/suishinkaigi/3bbf70e9",
+        "title": "こども政策推進会議（第3回）｜こども家庭庁",
+        "extractedMaterialsCount": 11,
+        "materials": [
+          {
+            "name": "議事次第（PDF／99KB）",
+            "url": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/3bbf70e9-27d7-45dc-b6bb-2a8145d6ba0c/ce5d794a/20240530_councils_suishinkaigi_3bbf70e9_14.pdf",
+            "type": "PDF",
+            "isPrivate": false
+          },
+          {
+            "name": "資料1　　　　こどもまんなか実行計画2024（案）（概要）（PDF／765KB）",
+            "url": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/3bbf70e9-27d7-45dc-b6bb-2a8145d6ba0c/7f5559a7/20240530_councils_suishinkaigi_3bbf70e9_12.pdf",
+            "type": "PDF",
+            "isPrivate": false
+          },
+          {
+            "name": "資料2　　　　こどもまんなか実行計画2024（案）（PDF／1,993KB）",
+            "url": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/3bbf70e9-27d7-45dc-b6bb-2a8145d6ba0c/4541ddf1/20240530_councils_suishinkaigi_3bbf70e9_13.pdf",
+            "type": "PDF",
+            "isPrivate": false
+          },
+          {
+            "name": "参考資料1　　こども大綱（令和5年12月22日閣議決定）（PDF／710KB）",
+            "url": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/3bbf70e9-27d7-45dc-b6bb-2a8145d6ba0c/5f43e2fe/20240530_councils_suishinkaigi_3bbf70e9_01.pdf",
+            "type": "PDF",
+            "isPrivate": false
+          },
+          {
+            "name": "参考資料2　　こどもまんなか実行計画2024の実施に向けた意見書（令和6年5月16日こども家庭審議会）（PDF／320KB）",
+            "url": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/3bbf70e9-27d7-45dc-b6bb-2a8145d6ba0c/8eade6e9/20240530_councils_suishinkaigi_3bbf70e9_02.pdf",
+            "type": "PDF",
+            "isPrivate": false
+          },
+          {
+            "name": "参考資料3　　「こどもまんなか実行計画2024（案）」における「はじめの100か月の育ちビジョン」の関連施策（概要）（PDF／567KB）",
+            "url": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/3bbf70e9-27d7-45dc-b6bb-2a8145d6ba0c/52995a16/20240530_councils_suishinkaigi_3bbf70e9_15.pdf",
+            "type": "PDF",
+            "isPrivate": false
+          },
+          {
+            "name": "参考資料4－1　こども・若者の意見の政策反映に向けたガイドライン概要版（PDF／8.1MB）",
+            "url": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/3bbf70e9-27d7-45dc-b6bb-2a8145d6ba0c/1a1212ba/20240530_councils_suishinkaigi_3bbf70e9_05.pdf",
+            "type": "PDF",
+            "isPrivate": false
+          },
+          {
+            "name": "参考資料4－2　こども若者★いけんぷらす（こども・若者意見反映推進事業）概要（PDF／973KB）",
+            "url": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/3bbf70e9-27d7-45dc-b6bb-2a8145d6ba0c/0be27cb3/20240530_councils_suishinkaigi_3bbf70e9_06.pdf",
+            "type": "PDF",
+            "isPrivate": false
+          },
+          {
+            "name": "参考資料4－3　「こども若者★いけんぷらす」チラシ（PDF／2.5MB）",
+            "url": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/3bbf70e9-27d7-45dc-b6bb-2a8145d6ba0c/b745f291/20240530_councils_suishinkaigi_3bbf70e9_07.pdf",
+            "type": "PDF",
+            "isPrivate": false
+          },
+          {
+            "name": "参考資料5　　　自治体こども計画策定のためのガイドライン概要版（PDF／346KB）",
+            "url": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/3bbf70e9-27d7-45dc-b6bb-2a8145d6ba0c/bc4973b6/20240530_councils_suishinkaigi_3bbf70e9_11.pdf",
+            "type": "PDF",
+            "isPrivate": false
+          },
+          {
+            "name": "議事要旨（PDF／189KB）",
+            "url": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/3bbf70e9-27d7-45dc-b6bb-2a8145d6ba0c/84c47bad/20240610_councils_suishinkaigi_3bbf70e9_16.pdf",
+            "type": "PDF",
+            "isPrivate": false
+          }
+        ],
+        "extractedDates": [
+          "令和5年12月22日",
+          "令和6年5月16日"
+        ]
+      },
+      {
+        "subpageUrl": "https://www.cfa.go.jp/councils/suishinkaigi/1bP4fnMp/",
+        "title": "こども政策推進会議（第2回）｜こども家庭庁",
+        "extractedMaterialsCount": 9,
+        "materials": [
+          {
+            "name": "議事次第（PDF／26KB）",
+            "url": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/74de7e9e-4a5e-4a6f-9283-747d536230a3/a50f9f22/20231225_councils_suishinkaigi_1bP4fnMp_00.pdf",
+            "type": "PDF",
+            "isPrivate": false
+          },
+          {
+            "name": "資料1：「こども未来戦略」について（PDF／1,539KB）",
+            "url": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/74de7e9e-4a5e-4a6f-9283-747d536230a3/07109185/20231225_councils_suishinkaigi_1bP4fnMp_01.pdf",
+            "type": "PDF",
+            "isPrivate": false
+          },
+          {
+            "name": "資料2：「全世代型社会保障構築を目指す改革の道筋（改革工程）」について（PDF／738KB）",
+            "url": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/74de7e9e-4a5e-4a6f-9283-747d536230a3/a881a2f0/20231225_councils_suishinkaigi_1bP4fnMp_02.pdf",
+            "type": "PDF",
+            "isPrivate": false
+          },
+          {
+            "name": "資料3：こども大綱（案）等について（概要）（PDF／145KB）",
+            "url": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/74de7e9e-4a5e-4a6f-9283-747d536230a3/4a703eb1/20231225_councils_suishinkaigi_1bP4fnMp_03.pdf",
+            "type": "PDF",
+            "isPrivate": false
+          },
+          {
+            "name": "資料4：こども大綱（案）（PDF／691KB）",
+            "url": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/74de7e9e-4a5e-4a6f-9283-747d536230a3/74bf5ba4/20231225_councils_suishinkaigi_1bP4fnMp_04.pdf",
+            "type": "PDF",
+            "isPrivate": false
+          },
+          {
+            "name": "参考資料1：こども大綱（案）参考資料（PDF／2,200KB）",
+            "url": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/74de7e9e-4a5e-4a6f-9283-747d536230a3/2a7834da/20231225_councils_suishinkaigi_1bP4fnMp_05.pdf",
+            "type": "PDF",
+            "isPrivate": false
+          },
+          {
+            "name": "参考資料2：幼児期までのこどもの育ちに係る基本的なビジョン（案）（PDF／849KB）",
+            "url": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/74de7e9e-4a5e-4a6f-9283-747d536230a3/2a5fbc26/20231225_councils_suishinkaigi_1bP4fnMp_06.pdf",
+            "type": "PDF",
+            "isPrivate": false
+          },
+          {
+            "name": "参考資料3：こどもの居場所づくりに関する指針（案）（PDF／261KB）",
+            "url": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/74de7e9e-4a5e-4a6f-9283-747d536230a3/b5090883/20231225_councils_suishinkaigi_1bP4fnMp_07.pdf",
+            "type": "PDF",
+            "isPrivate": false
+          },
+          {
+            "name": "議事要旨（PDF／224KB）",
+            "url": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/74de7e9e-4a5e-4a6f-9283-747d536230a3/e291c40c/20240110_councils_suishinkaigi_1bP4fnMp_08.pdf",
+            "type": "PDF",
+            "isPrivate": false
+          }
+        ],
+        "extractedDates": [
+          "令和5年12月22日"
+        ]
+      }
+    ]
+  },
+  {
+    "councilId": "cfa-kodomo-shingikai",
+    "councilName": "こども家庭審議会",
+    "ministry": "CFA",
+    "officialUrl": "https://www.cfa.go.jp/councils/shingikai",
+    "scrapedAt": "2026-08-01 17:11:17",
+    "ruleApplied": "rule-cfa-kodomo-shingikai-ai-v3",
+    "ministryQuirk": "こども家庭庁型: /councils/会議名/UUIDハッシュ個別の回URL構造",
+    "pageTitle": "こども家庭審議会｜こども家庭庁",
+    "totalExtractedMaterials": 65,
+    "materials": [
+      {
+        "name": "こども家庭審議会運営規則（PDF／56KB）",
+        "url": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/5b7aefcc-c384-4dc1-abc9-8b69b5a904eb/78d00cd8/20230401_councils_shingikai_03.pdf",
+        "type": "PDF",
+        "isPrivate": false
+      },
+      {
+        "name": "こども家庭審議会委員名簿（PDF／124KB）",
+        "url": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/5b7aefcc-c384-4dc1-abc9-8b69b5a904eb/a7dd1f6f/20260605_councils_shingikai_25.pdf",
+        "type": "PDF",
+        "isPrivate": false
+      },
+      {
+        "name": "部会の設置について（PDF／134KB）",
+        "url": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/5b7aefcc-c384-4dc1-abc9-8b69b5a904eb/67aec3e0/20251106_councils_shingikai_22.pdf",
+        "type": "PDF",
+        "isPrivate": false
+      },
+      {
+        "name": "こどもまんなか実行計画2026の策定に向けた意見書（PDF／863KB）",
+        "url": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/5b7aefcc-c384-4dc1-abc9-8b69b5a904eb/7fcb18f4/20260605_councils_shingikai_24.pdf",
+        "type": "PDF",
+        "isPrivate": false
+      },
+      {
+        "name": "こどもまんなか実行計画2025の策定に向けた意見書 （PDF／1.5MB）",
+        "url": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/5b7aefcc-c384-4dc1-abc9-8b69b5a904eb/5b171989/20250417_councils_shingikai_20.pdf",
+        "type": "PDF",
+        "isPrivate": false
+      },
+      {
+        "name": "こどもまんなか実行計画2024の策定に向けて（意見）（PDF／50KB）",
+        "url": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/5b7aefcc-c384-4dc1-abc9-8b69b5a904eb/18773603/20240516_councils_shingikai_14.pdf",
+        "type": "PDF",
+        "isPrivate": false
+      },
+      {
+        "name": "添付1：こどもまんなか実行計画2024の策定に向けて（PDF／2.5MB）",
+        "url": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/5b7aefcc-c384-4dc1-abc9-8b69b5a904eb/330ba8d8/20240528_councils_shingikai_19.pdf",
+        "type": "PDF",
+        "isPrivate": false
+      },
+      {
+        "name": "添付2：こどもまんなか実行計画2024の実施に向けた意見書（PDF／337KB）",
+        "url": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/5b7aefcc-c384-4dc1-abc9-8b69b5a904eb/0374d4f4/20240527_councils_shingikai_18.pdf",
+        "type": "PDF",
+        "isPrivate": false
+      },
+      {
+        "name": "【参考資料】こどもまんなか実行計画2024の策定に向けて（概要）（PDF／298KB）",
+        "url": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/5b7aefcc-c384-4dc1-abc9-8b69b5a904eb/dc815b33/20240516_councils_shingikai_17.pdf",
+        "type": "PDF",
+        "isPrivate": false
+      },
+      {
+        "name": "今後5年程度を見据えたこども施策の基本的な方針と重要事項等 ～こども大綱の策定に向けて～ （答申）（PDF／684KB）",
+        "url": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/5b7aefcc-c384-4dc1-abc9-8b69b5a904eb/e53add23/20231201_councils_shingikai_04.pdf",
+        "type": "PDF",
+        "isPrivate": false
+      },
+      {
+        "name": "今後5年程度を見据えたこども施策の基本的な方針と重要事項等 ～こども大綱の策定に向けて～ （答申）【説明資料】（PDF／548KB）",
+        "url": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/5b7aefcc-c384-4dc1-abc9-8b69b5a904eb/b2fa6c5f/20231201_councils_shingikai_05.pdf",
+        "type": "PDF",
+        "isPrivate": false
+      },
+      {
+        "name": "幼児期までのこどもの育ちに係る基本的なヴィジョン（答申）（PDF／1,681KB）",
+        "url": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/5b7aefcc-c384-4dc1-abc9-8b69b5a904eb/d1a06fea/20231204_councils_shingikai_06.pdf",
+        "type": "PDF",
+        "isPrivate": false
+      },
+      {
+        "name": "幼児期までのこどもの育ちに係る基本的なヴィジョン【概要】（PDF／1,266KB）",
+        "url": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/5b7aefcc-c384-4dc1-abc9-8b69b5a904eb/e32ad117/20231201_councils_shingikai_07.pdf",
+        "type": "PDF",
+        "isPrivate": false
+      },
+      {
+        "name": "こどもの居場所に関する指針（答申）（PDF／534KB）",
+        "url": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/5b7aefcc-c384-4dc1-abc9-8b69b5a904eb/f0446948/20231204_councils_shingikai_08.pdf",
+        "type": "PDF",
+        "isPrivate": false
+      },
+      {
+        "name": "こどもの居場所に関する指針（答申）【概要】（PDF／1,171KB）",
+        "url": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/5b7aefcc-c384-4dc1-abc9-8b69b5a904eb/6abb175d/20231201_councils_shingikai_09.pdf",
+        "type": "PDF",
+        "isPrivate": false
+      },
+      {
+        "name": "こども・若者、子育て当事者等の意見を聴く取組の実施結果及びフィードバックについて（PDF／1,514KB）",
+        "url": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/5b7aefcc-c384-4dc1-abc9-8b69b5a904eb/7df9ca35/20231221_councils_shingikai_09.pdf",
+        "type": "PDF",
+        "isPrivate": false
+      },
+      {
+        "name": "今後5年程度を見据えたこども施策の基本的な方針と重要事項等 ～こども大綱の策定に向けて～ （中間整理）（PDF／1,888KB）",
+        "url": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/5b7aefcc-c384-4dc1-abc9-8b69b5a904eb/cef6268f/20231221_councils_shingikai_10.pdf",
+        "type": "PDF",
+        "isPrivate": false
+      },
+      {
+        "name": "今後5年程度を見据えたこども施策の基本的な方針と重要事項等 ～こども大綱の策定に向けて～ （中間整理）【説明資料】（PDF／2,164KB）",
+        "url": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/5b7aefcc-c384-4dc1-abc9-8b69b5a904eb/6814e7fe/20231221_councils_shingikai_11.pdf",
+        "type": "PDF",
+        "isPrivate": false
+      },
+      {
+        "name": "今後5年程度を見据えたこども施策の基本的な方針と重要事項等 ～こども大綱の策定に向けて～（中間整理）（やさしい版）（PDF／1,038KB）",
+        "url": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/5b7aefcc-c384-4dc1-abc9-8b69b5a904eb/a111b860/20231221_councils_shingikai_12.pdf",
+        "type": "PDF",
+        "isPrivate": false
+      },
+      {
+        "name": "議事次第（PDF／155KB）",
+        "url": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/f1e48c87-1be5-46c9-908d-b6e93dc09f6b/1d9cb810/20260115_councils_shingikai_f1e48c87_06.pdf",
+        "type": "PDF",
+        "isPrivate": false
+      },
+      {
+        "name": "資料1　　　こども家庭審議会 各分科会・部会の調査審議状況について（PDF／563KB）",
+        "url": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/f1e48c87-1be5-46c9-908d-b6e93dc09f6b/69125f20/20260115_councils_shingikai_f1e48c87_01.pdf",
+        "type": "PDF",
+        "isPrivate": false
+      },
+      {
+        "name": "資料2　　　「こどもまんなか実行計画2026」の策定について（案）（PDF／1.4MB）",
+        "url": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/f1e48c87-1be5-46c9-908d-b6e93dc09f6b/56721525/20260115_councils_shingikai_f1e48c87_07.pdf",
+        "type": "PDF",
+        "isPrivate": false
+      },
+      {
+        "name": "資料3　　　令和8年度こども家庭庁当初予算案のポイント（PDF／1.9MB）",
+        "url": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/f1e48c87-1be5-46c9-908d-b6e93dc09f6b/3cfafbf2/20260115_councils_shingikai_f1e48c87_03.pdf",
+        "type": "PDF",
+        "isPrivate": false
+      },
+      {
+        "name": "資料4　　　五十嵐委員提出資料（PDF／207KB）",
+        "url": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/f1e48c87-1be5-46c9-908d-b6e93dc09f6b/7299c5f2/20260115_councils_shingikai_f1e48c87_08.pdf",
+        "type": "PDF",
+        "isPrivate": false
+      },
+      {
+        "name": "資料5　　　倉石委員提出資料（PDF／713KB）",
+        "url": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/f1e48c87-1be5-46c9-908d-b6e93dc09f6b/6b4ed8d3/20260115_councils_shingikai_f1e48c87_09.pdf",
+        "type": "PDF",
+        "isPrivate": false
+      },
+      {
+        "name": "参考資料1　令和8年度こども家庭庁当初予算案主要施策集（PDF／3.3MB）",
+        "url": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/f1e48c87-1be5-46c9-908d-b6e93dc09f6b/964190c4/20260115_councils_shingikai_f1e48c87_04.pdf",
+        "type": "PDF",
+        "isPrivate": false
+      },
+      {
+        "name": "議事録（PDF／579KB）",
+        "url": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/f1e48c87-1be5-46c9-908d-b6e93dc09f6b/2ce7e02c/20260212_councils_shingikai_f1e48c87_10.pdf",
+        "type": "PDF",
+        "isPrivate": false
+      },
+      {
+        "name": "議事次第（PDF／99KB）",
+        "url": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/3ceb48ed-aee1-46ce-82a8-b2d56a8e05a4/3b863f5e/20250425_councils_shingikai_3ceb48ed_00.pdf",
+        "type": "PDF",
+        "isPrivate": false
+      },
+      {
+        "name": "資料1　こども家庭審議会委員名簿（令和7年4月21日現在）（PDF／102KB）",
+        "url": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/3ceb48ed-aee1-46ce-82a8-b2d56a8e05a4/0ea39d68/20250425_councils_shingikai_3ceb48ed_01.pdf",
+        "type": "PDF",
+        "isPrivate": false
+      },
+      {
+        "name": "資料2－1　部会の設置について（案）（PDF／136KB）",
+        "url": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/3ceb48ed-aee1-46ce-82a8-b2d56a8e05a4/74908de4/20250425_councils_shingikai_3ceb48ed_02.pdf",
+        "type": "PDF",
+        "isPrivate": false
+      },
+      {
+        "name": "資料2－2　分科会に属する委員及び部会に属する委員（案）について（PDF／1.2MB）",
+        "url": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/3ceb48ed-aee1-46ce-82a8-b2d56a8e05a4/6a53bdef/20250425_councils_shingikai_3ceb48ed_03.pdf",
+        "type": "PDF",
+        "isPrivate": false
+      },
+      {
+        "name": "資料3　諮問第3号：保育所、認定こども園における保育の内容の基準等の在り方について（PDF／152KB）",
+        "url": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/3ceb48ed-aee1-46ce-82a8-b2d56a8e05a4/2c2a1564/20250425_councils_shingikai_3ceb48ed_04.pdf",
+        "type": "PDF",
+        "isPrivate": false
+      },
+      {
+        "name": "資料4－1　こどもまんなか実行計画2025（素案）（PDF／1.4MB）",
+        "url": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/3ceb48ed-aee1-46ce-82a8-b2d56a8e05a4/0f432c05/20250425_councils_shingikai_3ceb48ed_05.pdf",
+        "type": "PDF",
+        "isPrivate": false
+      },
+      {
+        "name": "資料4－2　こどもまんなか実行計画2025（素案）（概要）（PDF／611KB）",
+        "url": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/3ceb48ed-aee1-46ce-82a8-b2d56a8e05a4/1deb87c8/20250425_councils_shingikai_3ceb48ed_06.pdf",
+        "type": "PDF",
+        "isPrivate": false
+      },
+      {
+        "name": "資料4－3　こどもまんなか実行計画2025の策定に向けた意見書（PDF／1.5MB）",
+        "url": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/3ceb48ed-aee1-46ce-82a8-b2d56a8e05a4/649c6b74/20250425_councils_shingikai_3ceb48ed_07.pdf",
+        "type": "PDF",
+        "isPrivate": false
+      },
+      {
+        "name": "参考資料1　こども家庭庁設置法（抄）（PDF／125KB）",
+        "url": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/3ceb48ed-aee1-46ce-82a8-b2d56a8e05a4/09fb8bb7/20250425_councils_shingikai_3ceb48ed_08.pdf",
+        "type": "PDF",
+        "isPrivate": false
+      },
+      {
+        "name": "参考資料2　こども家庭審議会令（PDF／158KB）",
+        "url": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/3ceb48ed-aee1-46ce-82a8-b2d56a8e05a4/136258ce/20250425_councils_shingikai_3ceb48ed_09.pdf",
+        "type": "PDF",
+        "isPrivate": false
+      },
+      {
+        "name": "参考資料3　こども家庭審議会運営規則（PDF／105KB）",
+        "url": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/3ceb48ed-aee1-46ce-82a8-b2d56a8e05a4/99e2cdc5/20250425_councils_shingikai_3ceb48ed_10.pdf",
+        "type": "PDF",
+        "isPrivate": false
+      },
+      {
+        "name": "参考資料4　こども家庭審議会の今後の運営方針について （PDF／547KB）",
+        "url": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/3ceb48ed-aee1-46ce-82a8-b2d56a8e05a4/e545c791/20250428_councils_shingikai_3ceb48ed_11.pdf",
+        "type": "PDF",
+        "isPrivate": false
+      },
+      {
+        "name": "議事録（PDF／531KB）",
+        "url": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/3ceb48ed-aee1-46ce-82a8-b2d56a8e05a4/ad2aed7f/20250521_councils_shingikai_3ceb48ed_12.pdf",
+        "type": "PDF",
+        "isPrivate": false
+      },
+      {
+        "name": "議事次第（PDF／66KB）",
+        "url": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/63b0c3b5-0d0b-4ba5-a2ba-7666dfa56de3/ee5cb640/20250122_councils_shingikai_63b0c3b5_04.pdf",
+        "type": "PDF",
+        "isPrivate": false
+      },
+      {
+        "name": "資料1　こども家庭審議会の今後の運営方針について（案）（PDF／602KB）",
+        "url": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/63b0c3b5-0d0b-4ba5-a2ba-7666dfa56de3/cd172a99/20250122_councils_shingikai_63b0c3b5_02.pdf",
+        "type": "PDF",
+        "isPrivate": false
+      },
+      {
+        "name": "資料2　「こどもまんなか実行計画2025」の策定について（案）（PDF／224KB）",
+        "url": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/63b0c3b5-0d0b-4ba5-a2ba-7666dfa56de3/31750e10/20250122_councils_shingikai_63b0c3b5_03.pdf",
+        "type": "PDF",
+        "isPrivate": false
+      },
+      {
+        "name": "議事録（PDF／430KB）",
+        "url": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/63b0c3b5-0d0b-4ba5-a2ba-7666dfa56de3/82a0bcf5/20250217_councils_shingikai_63b0c3b5_05.pdf",
+        "type": "PDF",
+        "isPrivate": false
+      },
+      {
+        "name": "議事次第（PDF／43KB）",
+        "url": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/29eba191-a59f-4a08-a4eb-675e1586e5d9/d4c1bb4b/20240126_councils_shingikai_i8ur7TR4_01_0.pdf",
+        "type": "PDF",
+        "isPrivate": false
+      },
+      {
+        "name": "資料1ー1　こども大綱（令和5年12月22日閣議決定）【説明資料】（PDF／6,324KB）",
+        "url": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/29eba191-a59f-4a08-a4eb-675e1586e5d9/b8906475/20240129_councils_shingikai_i8ur7TR4_02.pdf",
+        "type": "PDF",
+        "isPrivate": false
+      },
+      {
+        "name": "資料1ー2　こども大綱本文（PDF／692KB）",
+        "url": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/29eba191-a59f-4a08-a4eb-675e1586e5d9/f5b4b5c4/20240126_councils_shingikai_i8ur7TR4_03_0.pdf",
+        "type": "PDF",
+        "isPrivate": false
+      },
+      {
+        "name": "資料1ー3　幼児期までのこどもの育ちに係る基本的なビジョン（令和5年12月22日閣議決定）（概要）（PDF／424KB）",
+        "url": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/29eba191-a59f-4a08-a4eb-675e1586e5d9/aea7c0dd/20240126_councils_shingikai_i8ur7TR4_04_0.pdf",
+        "type": "PDF",
+        "isPrivate": false
+      },
+      {
+        "name": "資料1ー4　幼児期までのこどもの育ちに係る基本的なビジョン本文（PDF／1,799KB）",
+        "url": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/29eba191-a59f-4a08-a4eb-675e1586e5d9/4077186f/20240126_councils_shingikai_i8ur7TR4_05_0.pdf",
+        "type": "PDF",
+        "isPrivate": false
+      },
+      {
+        "name": "資料1ー5　こどもの居場所づくりに関する指針（令和5年12月22日閣議決定）（概要）（PDF／556KB）",
+        "url": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/29eba191-a59f-4a08-a4eb-675e1586e5d9/51bd595a/20240126_councils_shingikai_i8ur7TR4_06_0.pdf",
+        "type": "PDF",
+        "isPrivate": false
+      },
+      {
+        "name": "資料1ー6　こどもの居場所づくりに関する指針本文（PDF／451KB）",
+        "url": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/29eba191-a59f-4a08-a4eb-675e1586e5d9/53fd6aa6/20240126_councils_shingikai_i8ur7TR4_07_0.pdf",
+        "type": "PDF",
+        "isPrivate": false
+      },
+      {
+        "name": "資料1ー7　こども未来戦略（令和5年12月22日閣議決定）（PDF／889KB）",
+        "url": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/29eba191-a59f-4a08-a4eb-675e1586e5d9/c33ce70b/20240126_councils_shingikai_i8ur7TR4_08_0.pdf",
+        "type": "PDF",
+        "isPrivate": false
+      },
+      {
+        "name": "資料2　こどもまんなか実行計画の策定について（案）（PDF／120KB）",
+        "url": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/29eba191-a59f-4a08-a4eb-675e1586e5d9/d52e6325/20240126_councils_shingikai_i8ur7TR4_09_0.pdf",
+        "type": "PDF",
+        "isPrivate": false
+      },
+      {
+        "name": "参考資料　子ども・子育て支援等分科会提出資料（PDF／1,908KB）",
+        "url": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/29eba191-a59f-4a08-a4eb-675e1586e5d9/3e7c4b02/20240126_councils_shingikai_i8ur7TR4_10_0.pdf",
+        "type": "PDF",
+        "isPrivate": false
+      },
+      {
+        "name": "議事録（PDF／218KB）",
+        "url": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/29eba191-a59f-4a08-a4eb-675e1586e5d9/19750e88/20240219_councils_shingikai_i8ur7TR4_11.pdf",
+        "type": "PDF",
+        "isPrivate": false
+      },
+      {
+        "name": "議事次第（PDF／55KB）",
+        "url": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/12587325-cb55-46f8-9443-c1b84b7341e0/810e9034/20231122_councils_shingikai_R9Kki5hg_00.pdf",
+        "type": "PDF",
+        "isPrivate": false
+      },
+      {
+        "name": "資料1－1：こども・若者、子育て当事者等の意見を聴く取組の実施結果及びフィードバックについて（案）（PDF／1,520KB）",
+        "url": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/12587325-cb55-46f8-9443-c1b84b7341e0/23498e24/20231122_councils_shingikai_R9Kki5hg_01.pdf",
+        "type": "PDF",
+        "isPrivate": false
+      },
+      {
+        "name": "資料1－2：今後5年程度を見据えたこども施策の基本的な方針と重要事項等～こども大綱の策定に向けて～（答申）（案）（PDF／705KB）",
+        "url": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/12587325-cb55-46f8-9443-c1b84b7341e0/ccbe25f1/20231122_councils_shingikai_R9Kki5hg_02.pdf",
+        "type": "PDF",
+        "isPrivate": false
+      },
+      {
+        "name": "資料1－3：今後5年程度を見据えたこども施策の基本的な方針と重要事項等～こども大綱の策定に向けて～（答申）（案）【説明資料】（PDF／549KB）",
+        "url": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/12587325-cb55-46f8-9443-c1b84b7341e0/28589323/20231122_councils_shingikai_R9Kki5hg_03.pdf",
+        "type": "PDF",
+        "isPrivate": false
+      },
+      {
+        "name": "資料2：こども大綱における目標・指標体系の検討状況について（PDF／314KB）",
+        "url": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/12587325-cb55-46f8-9443-c1b84b7341e0/721dcad8/20231122_councils_shingikai_R9Kki5hg_04.pdf",
+        "type": "PDF",
+        "isPrivate": false
+      },
+      {
+        "name": "資料3－1：「幼児期までのこどもの育ちに係る基本的なヴィジョン（仮称）」（答申案）（PDF／913KB）",
+        "url": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/12587325-cb55-46f8-9443-c1b84b7341e0/0e19caee/20231122_councils_shingikai_R9Kki5hg_05.pdf",
+        "type": "PDF",
+        "isPrivate": false
+      },
+      {
+        "name": "資料3－2：「幼児期までのこどもの育ちに係る基本的なヴィジョン（仮称）」（答申案）概要（PDF／426KB）",
+        "url": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/12587325-cb55-46f8-9443-c1b84b7341e0/6084faa3/20231122_councils_shingikai_R9Kki5hg_06.pdf",
+        "type": "PDF",
+        "isPrivate": false
+      },
+      {
+        "name": "資料4－1：こどもの居場所づくりに関する指針（答申案）（PDF／407KB）",
+        "url": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/12587325-cb55-46f8-9443-c1b84b7341e0/b51a65bf/20231122_councils_shingikai_R9Kki5hg_07.pdf",
+        "type": "PDF",
+        "isPrivate": false
+      },
+      {
+        "name": "資料4－2：こどもの居場所づくりに関する指針（答申案）（概要版）（PDF／557KB）",
+        "url": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/12587325-cb55-46f8-9443-c1b84b7341e0/7fb05c71/20231122_councils_shingikai_R9Kki5hg_08.pdf",
+        "type": "PDF",
+        "isPrivate": false
+      },
+      {
+        "name": "議事録（PDF／227KB）",
+        "url": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/12587325-cb55-46f8-9443-c1b84b7341e0/c59da934/20231215_councils_shingikai_R9Kki5hg_09.pdf",
+        "type": "PDF",
+        "isPrivate": false
+      }
+    ],
+    "extractedDates": [
+      "令和5年4月21日",
+      "令和5年9月25日",
+      "令和7年1月23日"
+    ],
+    "subpageMeetings": [
+      {
+        "subpageUrl": "https://www.cfa.go.jp/councils/shingikai",
+        "title": "こども家庭審議会｜こども家庭庁",
+        "extractedMaterialsCount": 19,
+        "materials": [
+          {
+            "name": "こども家庭審議会運営規則（PDF／56KB）",
+            "url": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/5b7aefcc-c384-4dc1-abc9-8b69b5a904eb/78d00cd8/20230401_councils_shingikai_03.pdf",
+            "type": "PDF",
+            "isPrivate": false
+          },
+          {
+            "name": "こども家庭審議会委員名簿（PDF／124KB）",
+            "url": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/5b7aefcc-c384-4dc1-abc9-8b69b5a904eb/a7dd1f6f/20260605_councils_shingikai_25.pdf",
+            "type": "PDF",
+            "isPrivate": false
+          },
+          {
+            "name": "部会の設置について（PDF／134KB）",
+            "url": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/5b7aefcc-c384-4dc1-abc9-8b69b5a904eb/67aec3e0/20251106_councils_shingikai_22.pdf",
+            "type": "PDF",
+            "isPrivate": false
+          },
+          {
+            "name": "こどもまんなか実行計画2026の策定に向けた意見書（PDF／863KB）",
+            "url": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/5b7aefcc-c384-4dc1-abc9-8b69b5a904eb/7fcb18f4/20260605_councils_shingikai_24.pdf",
+            "type": "PDF",
+            "isPrivate": false
+          },
+          {
+            "name": "こどもまんなか実行計画2025の策定に向けた意見書 （PDF／1.5MB）",
+            "url": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/5b7aefcc-c384-4dc1-abc9-8b69b5a904eb/5b171989/20250417_councils_shingikai_20.pdf",
+            "type": "PDF",
+            "isPrivate": false
+          },
+          {
+            "name": "こどもまんなか実行計画2024の策定に向けて（意見）（PDF／50KB）",
+            "url": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/5b7aefcc-c384-4dc1-abc9-8b69b5a904eb/18773603/20240516_councils_shingikai_14.pdf",
+            "type": "PDF",
+            "isPrivate": false
+          },
+          {
+            "name": "添付1：こどもまんなか実行計画2024の策定に向けて（PDF／2.5MB）",
+            "url": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/5b7aefcc-c384-4dc1-abc9-8b69b5a904eb/330ba8d8/20240528_councils_shingikai_19.pdf",
+            "type": "PDF",
+            "isPrivate": false
+          },
+          {
+            "name": "添付2：こどもまんなか実行計画2024の実施に向けた意見書（PDF／337KB）",
+            "url": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/5b7aefcc-c384-4dc1-abc9-8b69b5a904eb/0374d4f4/20240527_councils_shingikai_18.pdf",
+            "type": "PDF",
+            "isPrivate": false
+          },
+          {
+            "name": "【参考資料】こどもまんなか実行計画2024の策定に向けて（概要）（PDF／298KB）",
+            "url": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/5b7aefcc-c384-4dc1-abc9-8b69b5a904eb/dc815b33/20240516_councils_shingikai_17.pdf",
+            "type": "PDF",
+            "isPrivate": false
+          },
+          {
+            "name": "今後5年程度を見据えたこども施策の基本的な方針と重要事項等 ～こども大綱の策定に向けて～ （答申）（PDF／684KB）",
+            "url": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/5b7aefcc-c384-4dc1-abc9-8b69b5a904eb/e53add23/20231201_councils_shingikai_04.pdf",
+            "type": "PDF",
+            "isPrivate": false
+          },
+          {
+            "name": "今後5年程度を見据えたこども施策の基本的な方針と重要事項等 ～こども大綱の策定に向けて～ （答申）【説明資料】（PDF／548KB）",
+            "url": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/5b7aefcc-c384-4dc1-abc9-8b69b5a904eb/b2fa6c5f/20231201_councils_shingikai_05.pdf",
+            "type": "PDF",
+            "isPrivate": false
+          },
+          {
+            "name": "幼児期までのこどもの育ちに係る基本的なヴィジョン（答申）（PDF／1,681KB）",
+            "url": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/5b7aefcc-c384-4dc1-abc9-8b69b5a904eb/d1a06fea/20231204_councils_shingikai_06.pdf",
+            "type": "PDF",
+            "isPrivate": false
+          },
+          {
+            "name": "幼児期までのこどもの育ちに係る基本的なヴィジョン【概要】（PDF／1,266KB）",
+            "url": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/5b7aefcc-c384-4dc1-abc9-8b69b5a904eb/e32ad117/20231201_councils_shingikai_07.pdf",
+            "type": "PDF",
+            "isPrivate": false
+          },
+          {
+            "name": "こどもの居場所に関する指針（答申）（PDF／534KB）",
+            "url": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/5b7aefcc-c384-4dc1-abc9-8b69b5a904eb/f0446948/20231204_councils_shingikai_08.pdf",
+            "type": "PDF",
+            "isPrivate": false
+          },
+          {
+            "name": "こどもの居場所に関する指針（答申）【概要】（PDF／1,171KB）",
+            "url": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/5b7aefcc-c384-4dc1-abc9-8b69b5a904eb/6abb175d/20231201_councils_shingikai_09.pdf",
+            "type": "PDF",
+            "isPrivate": false
+          },
+          {
+            "name": "こども・若者、子育て当事者等の意見を聴く取組の実施結果及びフィードバックについて（PDF／1,514KB）",
+            "url": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/5b7aefcc-c384-4dc1-abc9-8b69b5a904eb/7df9ca35/20231221_councils_shingikai_09.pdf",
+            "type": "PDF",
+            "isPrivate": false
+          },
+          {
+            "name": "今後5年程度を見据えたこども施策の基本的な方針と重要事項等 ～こども大綱の策定に向けて～ （中間整理）（PDF／1,888KB）",
+            "url": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/5b7aefcc-c384-4dc1-abc9-8b69b5a904eb/cef6268f/20231221_councils_shingikai_10.pdf",
+            "type": "PDF",
+            "isPrivate": false
+          },
+          {
+            "name": "今後5年程度を見据えたこども施策の基本的な方針と重要事項等 ～こども大綱の策定に向けて～ （中間整理）【説明資料】（PDF／2,164KB）",
+            "url": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/5b7aefcc-c384-4dc1-abc9-8b69b5a904eb/6814e7fe/20231221_councils_shingikai_11.pdf",
+            "type": "PDF",
+            "isPrivate": false
+          },
+          {
+            "name": "今後5年程度を見据えたこども施策の基本的な方針と重要事項等 ～こども大綱の策定に向けて～（中間整理）（やさしい版）（PDF／1,038KB）",
+            "url": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/5b7aefcc-c384-4dc1-abc9-8b69b5a904eb/a111b860/20231221_councils_shingikai_12.pdf",
+            "type": "PDF",
+            "isPrivate": false
+          }
+        ],
+        "extractedDates": [
+          "令和5年4月21日",
+          "令和5年9月25日"
+        ]
+      },
+      {
+        "subpageUrl": "https://www.cfa.go.jp/councils/shingikai/f1e48c87",
+        "title": "こども家庭審議会（第7回）｜こども家庭庁",
+        "extractedMaterialsCount": 8,
+        "materials": [
+          {
+            "name": "議事次第（PDF／155KB）",
+            "url": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/f1e48c87-1be5-46c9-908d-b6e93dc09f6b/1d9cb810/20260115_councils_shingikai_f1e48c87_06.pdf",
+            "type": "PDF",
+            "isPrivate": false
+          },
+          {
+            "name": "資料1　　　こども家庭審議会 各分科会・部会の調査審議状況について（PDF／563KB）",
+            "url": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/f1e48c87-1be5-46c9-908d-b6e93dc09f6b/69125f20/20260115_councils_shingikai_f1e48c87_01.pdf",
+            "type": "PDF",
+            "isPrivate": false
+          },
+          {
+            "name": "資料2　　　「こどもまんなか実行計画2026」の策定について（案）（PDF／1.4MB）",
+            "url": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/f1e48c87-1be5-46c9-908d-b6e93dc09f6b/56721525/20260115_councils_shingikai_f1e48c87_07.pdf",
+            "type": "PDF",
+            "isPrivate": false
+          },
+          {
+            "name": "資料3　　　令和8年度こども家庭庁当初予算案のポイント（PDF／1.9MB）",
+            "url": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/f1e48c87-1be5-46c9-908d-b6e93dc09f6b/3cfafbf2/20260115_councils_shingikai_f1e48c87_03.pdf",
+            "type": "PDF",
+            "isPrivate": false
+          },
+          {
+            "name": "資料4　　　五十嵐委員提出資料（PDF／207KB）",
+            "url": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/f1e48c87-1be5-46c9-908d-b6e93dc09f6b/7299c5f2/20260115_councils_shingikai_f1e48c87_08.pdf",
+            "type": "PDF",
+            "isPrivate": false
+          },
+          {
+            "name": "資料5　　　倉石委員提出資料（PDF／713KB）",
+            "url": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/f1e48c87-1be5-46c9-908d-b6e93dc09f6b/6b4ed8d3/20260115_councils_shingikai_f1e48c87_09.pdf",
+            "type": "PDF",
+            "isPrivate": false
+          },
+          {
+            "name": "参考資料1　令和8年度こども家庭庁当初予算案主要施策集（PDF／3.3MB）",
+            "url": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/f1e48c87-1be5-46c9-908d-b6e93dc09f6b/964190c4/20260115_councils_shingikai_f1e48c87_04.pdf",
+            "type": "PDF",
+            "isPrivate": false
+          },
+          {
+            "name": "議事録（PDF／579KB）",
+            "url": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/f1e48c87-1be5-46c9-908d-b6e93dc09f6b/2ce7e02c/20260212_councils_shingikai_f1e48c87_10.pdf",
+            "type": "PDF",
+            "isPrivate": false
+          }
+        ],
+        "extractedDates": [
+          "令和8年1月22日"
+        ]
+      },
+      {
+        "subpageUrl": "https://www.cfa.go.jp/councils/shingikai/3ceb48ed",
+        "title": "こども家庭審議会（第6回）｜こども家庭庁",
+        "extractedMaterialsCount": 13,
+        "materials": [
+          {
+            "name": "議事次第（PDF／99KB）",
+            "url": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/3ceb48ed-aee1-46ce-82a8-b2d56a8e05a4/3b863f5e/20250425_councils_shingikai_3ceb48ed_00.pdf",
+            "type": "PDF",
+            "isPrivate": false
+          },
+          {
+            "name": "資料1　こども家庭審議会委員名簿（令和7年4月21日現在）（PDF／102KB）",
+            "url": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/3ceb48ed-aee1-46ce-82a8-b2d56a8e05a4/0ea39d68/20250425_councils_shingikai_3ceb48ed_01.pdf",
+            "type": "PDF",
+            "isPrivate": false
+          },
+          {
+            "name": "資料2－1　部会の設置について（案）（PDF／136KB）",
+            "url": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/3ceb48ed-aee1-46ce-82a8-b2d56a8e05a4/74908de4/20250425_councils_shingikai_3ceb48ed_02.pdf",
+            "type": "PDF",
+            "isPrivate": false
+          },
+          {
+            "name": "資料2－2　分科会に属する委員及び部会に属する委員（案）について（PDF／1.2MB）",
+            "url": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/3ceb48ed-aee1-46ce-82a8-b2d56a8e05a4/6a53bdef/20250425_councils_shingikai_3ceb48ed_03.pdf",
+            "type": "PDF",
+            "isPrivate": false
+          },
+          {
+            "name": "資料3　諮問第3号：保育所、認定こども園における保育の内容の基準等の在り方について（PDF／152KB）",
+            "url": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/3ceb48ed-aee1-46ce-82a8-b2d56a8e05a4/2c2a1564/20250425_councils_shingikai_3ceb48ed_04.pdf",
+            "type": "PDF",
+            "isPrivate": false
+          },
+          {
+            "name": "資料4－1　こどもまんなか実行計画2025（素案）（PDF／1.4MB）",
+            "url": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/3ceb48ed-aee1-46ce-82a8-b2d56a8e05a4/0f432c05/20250425_councils_shingikai_3ceb48ed_05.pdf",
+            "type": "PDF",
+            "isPrivate": false
+          },
+          {
+            "name": "資料4－2　こどもまんなか実行計画2025（素案）（概要）（PDF／611KB）",
+            "url": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/3ceb48ed-aee1-46ce-82a8-b2d56a8e05a4/1deb87c8/20250425_councils_shingikai_3ceb48ed_06.pdf",
+            "type": "PDF",
+            "isPrivate": false
+          },
+          {
+            "name": "資料4－3　こどもまんなか実行計画2025の策定に向けた意見書（PDF／1.5MB）",
+            "url": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/3ceb48ed-aee1-46ce-82a8-b2d56a8e05a4/649c6b74/20250425_councils_shingikai_3ceb48ed_07.pdf",
+            "type": "PDF",
+            "isPrivate": false
+          },
+          {
+            "name": "参考資料1　こども家庭庁設置法（抄）（PDF／125KB）",
+            "url": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/3ceb48ed-aee1-46ce-82a8-b2d56a8e05a4/09fb8bb7/20250425_councils_shingikai_3ceb48ed_08.pdf",
+            "type": "PDF",
+            "isPrivate": false
+          },
+          {
+            "name": "参考資料2　こども家庭審議会令（PDF／158KB）",
+            "url": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/3ceb48ed-aee1-46ce-82a8-b2d56a8e05a4/136258ce/20250425_councils_shingikai_3ceb48ed_09.pdf",
+            "type": "PDF",
+            "isPrivate": false
+          },
+          {
+            "name": "参考資料3　こども家庭審議会運営規則（PDF／105KB）",
+            "url": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/3ceb48ed-aee1-46ce-82a8-b2d56a8e05a4/99e2cdc5/20250425_councils_shingikai_3ceb48ed_10.pdf",
+            "type": "PDF",
+            "isPrivate": false
+          },
+          {
+            "name": "参考資料4　こども家庭審議会の今後の運営方針について （PDF／547KB）",
+            "url": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/3ceb48ed-aee1-46ce-82a8-b2d56a8e05a4/e545c791/20250428_councils_shingikai_3ceb48ed_11.pdf",
+            "type": "PDF",
+            "isPrivate": false
+          },
+          {
+            "name": "議事録（PDF／531KB）",
+            "url": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/3ceb48ed-aee1-46ce-82a8-b2d56a8e05a4/ad2aed7f/20250521_councils_shingikai_3ceb48ed_12.pdf",
+            "type": "PDF",
+            "isPrivate": false
+          }
+        ],
+        "extractedDates": [
+          "令和7年4月21日",
+          "令和7年4月25日"
+        ]
+      },
+      {
+        "subpageUrl": "https://www.cfa.go.jp/councils/shingikai/63b0c3b5",
+        "title": "こども家庭審議会（第5回）｜こども家庭庁",
+        "extractedMaterialsCount": 4,
+        "materials": [
+          {
+            "name": "議事次第（PDF／66KB）",
+            "url": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/63b0c3b5-0d0b-4ba5-a2ba-7666dfa56de3/ee5cb640/20250122_councils_shingikai_63b0c3b5_04.pdf",
+            "type": "PDF",
+            "isPrivate": false
+          },
+          {
+            "name": "資料1　こども家庭審議会の今後の運営方針について（案）（PDF／602KB）",
+            "url": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/63b0c3b5-0d0b-4ba5-a2ba-7666dfa56de3/cd172a99/20250122_councils_shingikai_63b0c3b5_02.pdf",
+            "type": "PDF",
+            "isPrivate": false
+          },
+          {
+            "name": "資料2　「こどもまんなか実行計画2025」の策定について（案）（PDF／224KB）",
+            "url": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/63b0c3b5-0d0b-4ba5-a2ba-7666dfa56de3/31750e10/20250122_councils_shingikai_63b0c3b5_03.pdf",
+            "type": "PDF",
+            "isPrivate": false
+          },
+          {
+            "name": "議事録（PDF／430KB）",
+            "url": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/63b0c3b5-0d0b-4ba5-a2ba-7666dfa56de3/82a0bcf5/20250217_councils_shingikai_63b0c3b5_05.pdf",
+            "type": "PDF",
+            "isPrivate": false
+          }
+        ],
+        "extractedDates": [
+          "令和7年1月23日"
+        ]
+      },
+      {
+        "subpageUrl": "https://www.cfa.go.jp/councils/shingikai/i8ur7TR4/",
+        "title": "こども家庭審議会（第4回）｜こども家庭庁",
+        "extractedMaterialsCount": 11,
+        "materials": [
+          {
+            "name": "議事次第（PDF／43KB）",
+            "url": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/29eba191-a59f-4a08-a4eb-675e1586e5d9/d4c1bb4b/20240126_councils_shingikai_i8ur7TR4_01_0.pdf",
+            "type": "PDF",
+            "isPrivate": false
+          },
+          {
+            "name": "資料1ー1　こども大綱（令和5年12月22日閣議決定）【説明資料】（PDF／6,324KB）",
+            "url": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/29eba191-a59f-4a08-a4eb-675e1586e5d9/b8906475/20240129_councils_shingikai_i8ur7TR4_02.pdf",
+            "type": "PDF",
+            "isPrivate": false
+          },
+          {
+            "name": "資料1ー2　こども大綱本文（PDF／692KB）",
+            "url": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/29eba191-a59f-4a08-a4eb-675e1586e5d9/f5b4b5c4/20240126_councils_shingikai_i8ur7TR4_03_0.pdf",
+            "type": "PDF",
+            "isPrivate": false
+          },
+          {
+            "name": "資料1ー3　幼児期までのこどもの育ちに係る基本的なビジョン（令和5年12月22日閣議決定）（概要）（PDF／424KB）",
+            "url": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/29eba191-a59f-4a08-a4eb-675e1586e5d9/aea7c0dd/20240126_councils_shingikai_i8ur7TR4_04_0.pdf",
+            "type": "PDF",
+            "isPrivate": false
+          },
+          {
+            "name": "資料1ー4　幼児期までのこどもの育ちに係る基本的なビジョン本文（PDF／1,799KB）",
+            "url": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/29eba191-a59f-4a08-a4eb-675e1586e5d9/4077186f/20240126_councils_shingikai_i8ur7TR4_05_0.pdf",
+            "type": "PDF",
+            "isPrivate": false
+          },
+          {
+            "name": "資料1ー5　こどもの居場所づくりに関する指針（令和5年12月22日閣議決定）（概要）（PDF／556KB）",
+            "url": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/29eba191-a59f-4a08-a4eb-675e1586e5d9/51bd595a/20240126_councils_shingikai_i8ur7TR4_06_0.pdf",
+            "type": "PDF",
+            "isPrivate": false
+          },
+          {
+            "name": "資料1ー6　こどもの居場所づくりに関する指針本文（PDF／451KB）",
+            "url": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/29eba191-a59f-4a08-a4eb-675e1586e5d9/53fd6aa6/20240126_councils_shingikai_i8ur7TR4_07_0.pdf",
+            "type": "PDF",
+            "isPrivate": false
+          },
+          {
+            "name": "資料1ー7　こども未来戦略（令和5年12月22日閣議決定）（PDF／889KB）",
+            "url": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/29eba191-a59f-4a08-a4eb-675e1586e5d9/c33ce70b/20240126_councils_shingikai_i8ur7TR4_08_0.pdf",
+            "type": "PDF",
+            "isPrivate": false
+          },
+          {
+            "name": "資料2　こどもまんなか実行計画の策定について（案）（PDF／120KB）",
+            "url": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/29eba191-a59f-4a08-a4eb-675e1586e5d9/d52e6325/20240126_councils_shingikai_i8ur7TR4_09_0.pdf",
+            "type": "PDF",
+            "isPrivate": false
+          },
+          {
+            "name": "参考資料　子ども・子育て支援等分科会提出資料（PDF／1,908KB）",
+            "url": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/29eba191-a59f-4a08-a4eb-675e1586e5d9/3e7c4b02/20240126_councils_shingikai_i8ur7TR4_10_0.pdf",
+            "type": "PDF",
+            "isPrivate": false
+          },
+          {
+            "name": "議事録（PDF／218KB）",
+            "url": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/29eba191-a59f-4a08-a4eb-675e1586e5d9/19750e88/20240219_councils_shingikai_i8ur7TR4_11.pdf",
+            "type": "PDF",
+            "isPrivate": false
+          }
+        ],
+        "extractedDates": [
+          "令和5年12月22日",
+          "令和6年1月29日"
+        ]
+      },
+      {
+        "subpageUrl": "https://www.cfa.go.jp/councils/shingikai/R9Kki5hg/",
+        "title": "こども家庭審議会（第3回）｜こども家庭庁",
+        "extractedMaterialsCount": 10,
+        "materials": [
+          {
+            "name": "議事次第（PDF／55KB）",
+            "url": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/12587325-cb55-46f8-9443-c1b84b7341e0/810e9034/20231122_councils_shingikai_R9Kki5hg_00.pdf",
+            "type": "PDF",
+            "isPrivate": false
+          },
+          {
+            "name": "資料1－1：こども・若者、子育て当事者等の意見を聴く取組の実施結果及びフィードバックについて（案）（PDF／1,520KB）",
+            "url": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/12587325-cb55-46f8-9443-c1b84b7341e0/23498e24/20231122_councils_shingikai_R9Kki5hg_01.pdf",
+            "type": "PDF",
+            "isPrivate": false
+          },
+          {
+            "name": "資料1－2：今後5年程度を見据えたこども施策の基本的な方針と重要事項等～こども大綱の策定に向けて～（答申）（案）（PDF／705KB）",
+            "url": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/12587325-cb55-46f8-9443-c1b84b7341e0/ccbe25f1/20231122_councils_shingikai_R9Kki5hg_02.pdf",
+            "type": "PDF",
+            "isPrivate": false
+          },
+          {
+            "name": "資料1－3：今後5年程度を見据えたこども施策の基本的な方針と重要事項等～こども大綱の策定に向けて～（答申）（案）【説明資料】（PDF／549KB）",
+            "url": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/12587325-cb55-46f8-9443-c1b84b7341e0/28589323/20231122_councils_shingikai_R9Kki5hg_03.pdf",
+            "type": "PDF",
+            "isPrivate": false
+          },
+          {
+            "name": "資料2：こども大綱における目標・指標体系の検討状況について（PDF／314KB）",
+            "url": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/12587325-cb55-46f8-9443-c1b84b7341e0/721dcad8/20231122_councils_shingikai_R9Kki5hg_04.pdf",
+            "type": "PDF",
+            "isPrivate": false
+          },
+          {
+            "name": "資料3－1：「幼児期までのこどもの育ちに係る基本的なヴィジョン（仮称）」（答申案）（PDF／913KB）",
+            "url": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/12587325-cb55-46f8-9443-c1b84b7341e0/0e19caee/20231122_councils_shingikai_R9Kki5hg_05.pdf",
+            "type": "PDF",
+            "isPrivate": false
+          },
+          {
+            "name": "資料3－2：「幼児期までのこどもの育ちに係る基本的なヴィジョン（仮称）」（答申案）概要（PDF／426KB）",
+            "url": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/12587325-cb55-46f8-9443-c1b84b7341e0/6084faa3/20231122_councils_shingikai_R9Kki5hg_06.pdf",
+            "type": "PDF",
+            "isPrivate": false
+          },
+          {
+            "name": "資料4－1：こどもの居場所づくりに関する指針（答申案）（PDF／407KB）",
+            "url": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/12587325-cb55-46f8-9443-c1b84b7341e0/b51a65bf/20231122_councils_shingikai_R9Kki5hg_07.pdf",
+            "type": "PDF",
+            "isPrivate": false
+          },
+          {
+            "name": "資料4－2：こどもの居場所づくりに関する指針（答申案）（概要版）（PDF／557KB）",
+            "url": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/12587325-cb55-46f8-9443-c1b84b7341e0/7fb05c71/20231122_councils_shingikai_R9Kki5hg_08.pdf",
+            "type": "PDF",
+            "isPrivate": false
+          },
+          {
+            "name": "議事録（PDF／227KB）",
+            "url": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/12587325-cb55-46f8-9443-c1b84b7341e0/c59da934/20231215_councils_shingikai_R9Kki5hg_09.pdf",
+            "type": "PDF",
+            "isPrivate": false
+          }
+        ],
+        "extractedDates": [
+          "令和5年11月22日"
         ]
       }
     ]

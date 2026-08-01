@@ -78,13 +78,24 @@ const COUNCILS = [
   },
   // 3. CFA
   {
-    id: 'cfa-kodomo-seisaku',
-    name: 'こども政策審議会',
+    id: 'cfa-kodomo-suishin',
+    name: 'こども政策推進会議',
+    ministry: 'CFA',
+    category: 'COUNCIL',
+    pastYearCount: 6,
+    description: 'こどもまんなか実行計画、こども・若者自殺防止総力戦略、こども施策の基本方針を閣僚級で推進・決定する重要会議。',
+    officialUrl: 'https://www.cfa.go.jp/councils/suishinkaigi',
+    isWatched: true,
+    trackedSince: '2023-04-01'
+  },
+  {
+    id: 'cfa-kodomo-shingikai',
+    name: 'こども家庭審議会',
     ministry: 'CFA',
     category: 'COUNCIL',
     pastYearCount: 12,
-    description: '「こども未来戦略」に基づく少子化対策、児童手当拡充、こども誰でも通園制度、児童虐待防止・貧困対策の中長期計画を審議。',
-    officialUrl: 'https://www.cfa.go.jp/councils/kodomo_seisaku/',
+    description: '「こども未来戦略」に基づく少子化対策、児童手当拡充、こども誰でも通園制度、児童虐待防止・予算案の中長期計画を審議。',
+    officialUrl: 'https://www.cfa.go.jp/councils/shingikai',
     isWatched: true,
     trackedSince: '2023-04-01'
   },
@@ -410,30 +421,64 @@ const MEETINGS = [
   },
   // 3. CFA
   {
-    id: 'meet-2026-0726-cfa',
-    councilId: 'cfa-kodomo-seisaku',
-    councilName: 'こども政策審議会',
+    id: 'meet-2026-0609-suishin',
+    councilId: 'cfa-kodomo-suishin',
+    councilName: 'こども政策推進会議',
     ministry: 'CFA',
     category: 'COUNCIL',
-    title: '第11回 こども政策審議会 総会',
-    date: '2026-07-26',
-    updatedAt: '2026-07-26 16:00',
-    location: 'こども家庭庁 2階 講堂',
-    summary: '「こども加算」の支給実績および「こども誰でも通園制度」の全自治体本格展開に向けたガイドライン改定案が承認された。また、児童虐待防止の早期発見AIシステムの試行結果報告が行われた。',
+    title: '第6回 こども政策推進会議',
+    date: '2026-06-09',
+    updatedAt: '2026-06-09 08:40',
+    location: '首相官邸 4階 大会議室',
+    summary: '「こどもまんなか実行計画2026」概要案および大臣プロジェクト2026第1弾「こども・若者 自殺防止総力戦略」について決定・指示が行われた。',
     agenda: [
-      '「こども未来戦略」進捗状況および2027年度予算要求重点事項',
-      'こども誰でも通園制度のモデル事業成果検証と本格移行手順',
-      '児童相談所におけるデジタルツール活用・AIリスクアセスメント導入'
+      '「こどもまんなか実行計画2026」について',
+      '「こどもの命と安全を徹底的に守る」大臣プロジェクト2026 第1弾『こども・若者 自殺防止総力戦略』について'
     ],
     materials: [
-      { name: '議事次第', type: 'PDF', size: '105 KB', url: 'https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/20260726_shidai.pdf', isMinutes: false },
-      { name: '資料1: こども未来戦略ロードマップ進捗状況報告', type: 'PDF', size: '2.8 MB', url: 'https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/20260726_shiryou1.pdf', isMinutes: false },
-      { name: '第11回 議事要旨', type: 'HTML', size: '42 KB', url: 'https://www.cfa.go.jp/councils/kodomo_seisaku/20260726_yoshi.html', isMinutes: true }
+      { name: '議事次第 (PDF / 179KB)', type: 'PDF', size: '179 KB', url: 'https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/4c72c8fd-e687-4a9d-ae40-b48448ecc5b2/0398f0eb/20260608_councils_suishinkaigi_4c72c8fd_01.pdf', isMinutes: false },
+      { name: '資料1: 「こどもまんなか実行計画2026」概要（案） (PDF / 713KB)', type: 'PDF', size: '713 KB', url: 'https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/4c72c8fd-e687-4a9d-ae40-b48448ecc5b2/5c47bc06/20260608_councils_suishinkaigi_4c72c8fd_05.pdf', isMinutes: false },
+      { name: '資料2: 「こどもの命と安全を徹底的に守る」大臣プロジェクト2026 第1弾『こども・若者 自殺防止総力戦略』について (PDF / 534KB)', type: 'PDF', size: '534 KB', url: 'https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/4c72c8fd-e687-4a9d-ae40-b48448ecc5b2/25910313/20260608_councils_suishinkaigi_4c72c8fd_03.pdf', isMinutes: false },
+      { name: '資料3: こどもまんなか実行計画2026（案） (PDF / 1.0MB)', type: 'PDF', size: '1.0 MB', url: 'https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/4c72c8fd-e687-4a9d-ae40-b48448ecc5b2/f30a7b88/20260608_councils_suishinkaigi_4c72c8fd_07.pdf', isMinutes: false },
+      { name: '議事要旨 (PDF / 248KB)', type: 'PDF', size: '248 KB', url: 'https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/4c72c8fd-e687-4a9d-ae40-b48448ecc5b2/469ce15f/20260622_councils_suishinkaigi_4c72c8fd_08.pdf', isMinutes: true },
+      { name: '第6回 会議公式ページ', type: 'HTML', size: '35 KB', url: 'https://www.cfa.go.jp/councils/suishinkaigi/4c72c8fd', isMinutes: false }
     ],
-    tags: ['少子化対策', 'こども家庭', '児童手当', '保育', '福祉'],
-    officialUrl: 'https://www.cfa.go.jp/councils/kodomo_seisaku/meetings/20260726',
+    tags: ['こども政策推進会議', 'こどもまんなか', '自殺防止', 'こども家庭庁'],
+    officialUrl: 'https://www.cfa.go.jp/councils/suishinkaigi/4c72c8fd',
     hasMinutes: true,
-    docCount: 3
+    docCount: 6
+  },
+  {
+    id: 'meet-2026-0122-shingikai',
+    councilId: 'cfa-kodomo-shingikai',
+    councilName: 'こども家庭審議会',
+    ministry: 'CFA',
+    category: 'COUNCIL',
+    title: '第7回 こども家庭審議会',
+    date: '2026-01-22',
+    updatedAt: '2026-01-22 16:00',
+    location: 'こども家庭庁 14階 共用大会議室',
+    summary: '各分科会・部会の調査審議状況、令和8年度当初予算案のポイントおよび「こどもまんなか実行計画2026」策定について意見交換が行われた。',
+    agenda: [
+      '今後の分科会・部会における調査・審議及びこども家庭庁の最近の取組等について',
+      '「こどもまんなか実行計画2026」の策定について（案）',
+      '令和8年度こども家庭庁当初予算案のポイント'
+    ],
+    materials: [
+      { name: '議事次第 (PDF / 155KB)', type: 'PDF', size: '155 KB', url: 'https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/f1e48c87-1be5-46c9-908d-b6e93dc09f6b/1d9cb810/20260115_councils_shingikai_f1e48c87_06.pdf', isMinutes: false },
+      { name: '資料1: こども家庭審議会 各分科会・部会の調査審議状況について (PDF / 563KB)', type: 'PDF', size: '563 KB', url: 'https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/f1e48c87-1be5-46c9-908d-b6e93dc09f6b/69125f20/20260115_councils_shingikai_f1e48c87_01.pdf', isMinutes: false },
+      { name: '資料2: 「こどもまんなか実行計画2026」の策定について（案） (PDF / 1.4MB)', type: 'PDF', size: '1.4 MB', url: 'https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/f1e48c87-1be5-46c9-908d-b6e93dc09f6b/56721525/20260115_councils_shingikai_f1e48c87_07.pdf', isMinutes: false },
+      { name: '資料3: 令和8年度こども家庭庁当初予算案のポイント (PDF / 1.9MB)', type: 'PDF', size: '1.9 MB', url: 'https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/f1e48c87-1be5-46c9-908d-b6e93dc09f6b/3cfafbf2/20260115_councils_shingikai_f1e48c87_03.pdf', isMinutes: false },
+      { name: '資料4: 五十嵐委員提出資料 (PDF / 207KB)', type: 'PDF', size: '207 KB', url: 'https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/f1e48c87-1be5-46c9-908d-b6e93dc09f6b/7299c5f2/20260115_councils_shingikai_f1e48c87_08.pdf', isMinutes: false },
+      { name: '資料5: 倉石委員提出資料 (PDF / 713KB)', type: 'PDF', size: '713 KB', url: 'https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/f1e48c87-1be5-46c9-908d-b6e93dc09f6b/6b4ed8d3/20260115_councils_shingikai_f1e48c87_09.pdf', isMinutes: false },
+      { name: '参考資料1: 令和8年度こども家庭庁当初予算案主要施策集 (PDF / 3.3MB)', type: 'PDF', size: '3.3 MB', url: 'https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/f1e48c87-1be5-46c9-908d-b6e93dc09f6b/964190c4/20260115_councils_shingikai_f1e48c87_04.pdf', isMinutes: false },
+      { name: '議事録 (PDF / 579KB)', type: 'PDF', size: '579 KB', url: 'https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/f1e48c87-1be5-46c9-908d-b6e93dc09f6b/2ce7e02c/20260212_councils_shingikai_f1e48c87_10.pdf', isMinutes: true },
+      { name: '第7回 会議公式ページ', type: 'HTML', size: '35 KB', url: 'https://www.cfa.go.jp/councils/shingikai/f1e48c87', isMinutes: false }
+    ],
+    tags: ['こども家庭審議会', 'こども家庭庁', '予算案', '実行計画', '福祉'],
+    officialUrl: 'https://www.cfa.go.jp/councils/shingikai/f1e48c87',
+    hasMinutes: true,
+    docCount: 9
   },
   // 4. FTC
   {

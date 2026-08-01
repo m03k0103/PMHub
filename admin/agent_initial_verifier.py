@@ -71,6 +71,18 @@ TARGET_COUNCILS = [
         "ministry": "DIGITAL",
         "name": "デジタル社会推進会議",
         "url": "https://www.digital.go.jp/councils/social-promotion"
+    },
+    {
+        "id": "cfa-kodomo-suishin",
+        "ministry": "CFA",
+        "name": "こども政策推進会議",
+        "url": "https://www.cfa.go.jp/councils/suishinkaigi"
+    },
+    {
+        "id": "cfa-kodomo-shingikai",
+        "ministry": "CFA",
+        "name": "こども家庭審議会",
+        "url": "https://www.cfa.go.jp/councils/shingikai"
     }
 ]
 
@@ -130,6 +142,9 @@ def synthesize_ai_rule_for_council(target, html):
     elif "digital.go.jp" in url:
         subpage_pattern = r'href=["\']([^"\']*(?:councils|meetings|\d{8})[^"\'#]*)["\']'
         quirk_notes = "デジタル庁型: リソース絶対パス/ルート相対パス混在型HTML5構造"
+    elif "cfa.go.jp" in url:
+        subpage_pattern = r'href=["\']([^"\']*(?:councils/[a-z0-9_-]+/[a-f0-9]{8}|councils/[a-z0-9_-]+)[^"\'#]*)["\']'
+        quirk_notes = "こども家庭庁型: /councils/会議名/UUIDハッシュ個別の回URL構造"
     else:
         subpage_pattern = r'href=["\']([^"\']*(?:dai\d+|\d+kai|kaisai|gijisidai)[^"\'#]*)["\']'
         quirk_notes = "標準省庁型: 汎用個別回パターン"

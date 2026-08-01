@@ -71,6 +71,18 @@ CRAWL_TARGETS = [
         "ministry": "DIGITAL",
         "name": "デジタル社会推進会議",
         "url": "https://www.digital.go.jp/councils/social-promotion"
+    },
+    {
+        "id": "cfa-kodomo-suishin",
+        "ministry": "CFA",
+        "name": "こども政策推進会議",
+        "url": "https://www.cfa.go.jp/councils/suishinkaigi"
+    },
+    {
+        "id": "cfa-kodomo-shingikai",
+        "ministry": "CFA",
+        "name": "こども家庭審議会",
+        "url": "https://www.cfa.go.jp/councils/shingikai"
     }
 ]
 
