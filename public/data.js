@@ -127,10 +127,10 @@ const COUNCILS = [
     name: '復興推進委員会',
     ministry: 'RA',
     category: 'COUNCIL',
-    pastYearCount: 4,
+    pastYearCount: 49,
     description: '東日本大震災および能登半島地震等からの復興基本方針、福島国際研究教育機構 (FIREC) の推進構想を討議。',
     officialUrl: 'https://www.reconstruction.go.jp/topics/cat-11/cat-47/cat-155/cat-156/000813/',
-    isWatched: false,
+    isWatched: true,
     trackedSince: '2022-03-01'
   },
   // 5. MIC
@@ -1516,29 +1516,114 @@ const MEETINGS = [
     docCount: 1
   },
   // 13. RA
+  // 13. RA
   {
-    id: 'meet-2026-0625-ra',
+    id: 'meet-ra-fukko-suishin-49th',
     councilId: 'ra-fukko-suishin',
-    councilName: '復興推進会議',
+    councilName: '復興推進委員会',
     ministry: 'RA',
     category: 'COUNCIL',
-    title: '第22回 復興推進会議',
-    date: '2026-06-25',
-    updatedAt: '2026-06-25 14:30',
-    location: '首相官邸 4階 大ホール',
-    summary: '福島第1原発周辺の帰還困難区域における避難指示解除ロードマップおよび、福島国際研究教育機構 (FIREC) の先端研究プロジェクト（ロボティクス・廃炉技術・放射線医学）の進捗が確認された。',
+    title: '復興推進委員会（第49回）',
+    date: '2026-07-02',
+    updatedAt: '2026-07-02 17:00',
+    location: '復興庁 大会議室',
+    summary: '現地調査報告（福島県）、第2期復興・創生期間までの復興施策総括WG報告、東日本大震災からの復興状況と取組について審議され、岩手県・宮城県・福島県の提出資料および議事要旨が公開された。',
     agenda: [
-      '特定帰還居住区域の復興・再生計画の認定状況',
-      '福島国際研究教育機構（FIREC）の研究開発・産業化事業成果報告',
-      '東日本大震災および近年の大規模災害からの復興予算執行状況'
+      '現地調査報告（福島県）について',
+      '第２期復興・創生期間までの復興施策の総括に関するWG報告',
+      '東日本大震災からの復興の状況と取組（岩手県・宮城県・福島県報告）'
     ],
     materials: [
-      { name: '復興推進委員会 公式ポータル', type: 'HTML', size: '35 KB', url: 'https://www.reconstruction.go.jp/topics/cat-11/cat-47/cat-155/cat-156/000813/', isMinutes: false }
+      { name: '議事次第 (PDF)', type: 'PDF', size: '120 KB', url: 'https://www.reconstruction.go.jp/files/user/topics/main-cat7/sub-cat7-2/20260702_00.pdf', isMinutes: false },
+      { name: '議事要旨 (PDF/HTML)', type: 'HTML', size: '32 KB', url: 'https://www.reconstruction.go.jp/topics/cat-11/cat-47/cat-155/202607091551589824/', isMinutes: true },
+      { name: '資料１ 現地調査報告（福島県） (PDF)', type: 'PDF', size: '1.45 MB', url: 'https://www.reconstruction.go.jp/files/user/topics/main-cat7/sub-cat7-2/20260702_01.pdf', isMinutes: false },
+      { name: '参考資料 第２期復興・創生期間までの復興施策の総括に関するWG 報告 (PDF)', type: 'PDF', size: '2.10 MB', url: 'https://www.reconstruction.go.jp/files/user/topics/main-cat7/sub-cat7-2/20260702_02.pdf', isMinutes: false },
+      { name: '資料２ 東日本大震災からの復興の状況と取組 (PDF)', type: 'PDF', size: '3.80 MB', url: 'https://www.reconstruction.go.jp/files/user/topics/main-cat7/sub-cat7-2/20260702_03.pdf', isMinutes: false },
+      { name: '資料３－１ 岩手県資料 (PDF)', type: 'PDF', size: '890 KB', url: 'https://www.reconstruction.go.jp/files/user/topics/main-cat7/sub-cat7-2/20260702_04.pdf', isMinutes: false },
+      { name: '資料３－２ 宮城県資料 (PDF)', type: 'PDF', size: '1.15 MB', url: 'https://www.reconstruction.go.jp/files/user/topics/main-cat7/sub-cat7-2/20260702_05.pdf', isMinutes: false },
+      { name: '資料３－３ 福島県資料 (PDF)', type: 'PDF', size: '1.30 MB', url: 'https://www.reconstruction.go.jp/files/user/topics/main-cat7/sub-cat7-2/20260702_06.pdf', isMinutes: false },
+      { name: '第49回 配布資料ページ', type: 'HTML', size: '35 KB', url: 'https://www.reconstruction.go.jp/topics/cat-11/cat-47/cat-155/cat-156/202606261354249774/', isMinutes: false }
     ],
-    tags: ['復興', '福島', 'FIREC', '防災', '復興庁'],
-    officialUrl: 'https://www.reconstruction.go.jp/topics/cat-11/cat-47/cat-155/cat-156/000813/',
+    tags: ['復興推進委員会', '第49回', '福島県調査', '創生期間総括', '被災3県資料', '議事要旨'],
+    officialUrl: 'https://www.reconstruction.go.jp/topics/cat-11/cat-47/cat-155/cat-156/202606261354249774/',
     hasMinutes: true,
-    docCount: 1
+    docCount: 9
+  },
+  {
+    id: 'meet-ra-fukko-suishin-48th',
+    councilId: 'ra-fukko-suishin',
+    councilName: '復興推進委員会',
+    ministry: 'RA',
+    category: 'COUNCIL',
+    title: '復興推進委員会（第48回）',
+    date: '2025-11-05',
+    updatedAt: '2025-11-05 17:00',
+    location: '復興庁 大会議室',
+    summary: '現地調査報告（岩手県・宮城県）、令和7年版東日本大震災からの復興状況報告案、福島国際研究教育機構 (FIREC) 主務大臣評価（案）および委員会意見について審議され、議事録・要旨が公開された。',
+    agenda: [
+      '現地調査報告（岩手県・宮城県）',
+      '令和７年版東日本大震災からの復興の状況に関する報告案（概要）',
+      '福島国際研究教育機構の主務大臣評価および復興推進委員会意見（案）'
+    ],
+    materials: [
+      { name: '議事次第 (PDF)', type: 'PDF', size: '110 KB', url: 'https://www.reconstruction.go.jp/files/user/topics/main-cat7/sub-cat7-2/20251105_00.pdf', isMinutes: false },
+      { name: '議事要旨 (PDF/HTML)', type: 'HTML', size: '30 KB', url: 'https://www.reconstruction.go.jp/topics/cat-11/cat-47/cat-155/cat-156/202511111106498968/', isMinutes: true },
+      { name: '議事録 (PDF/HTML)', type: 'HTML', size: '45 KB', url: 'https://www.reconstruction.go.jp/topics/cat-11/cat-47/cat-155/cat-156/cat-328/202511180923159034/', isMinutes: true },
+      { name: '資料１－１ 現地調査報告（岩手県） (PDF)', type: 'PDF', size: '1.20 MB', url: 'https://www.reconstruction.go.jp/files/user/topics/main-cat7/sub-cat7-2/20251105_01-1.pdf', isMinutes: false },
+      { name: '資料１－２ 現地調査報告（宮城県） (PDF)', type: 'PDF', size: '1.10 MB', url: 'https://www.reconstruction.go.jp/files/user/topics/main-cat7/sub-cat7-2/20251105_01-2.pdf', isMinutes: false },
+      { name: '資料２ 令和７年版東日本大震災からの復興の状況に関する報告案（概要） (PDF)', type: 'PDF', size: '2.40 MB', url: 'https://www.reconstruction.go.jp/files/user/topics/main-cat7/sub-cat7-2/20251105_02.pdf', isMinutes: false },
+      { name: '資料３－１ 岩手県資料 (PDF)', type: 'PDF', size: '780 KB', url: 'https://www.reconstruction.go.jp/files/user/topics/main-cat7/sub-cat7-2/20251105_03-1.pdf', isMinutes: false },
+      { name: '資料３－２ 宮城県資料 (PDF)', type: 'PDF', size: '950 KB', url: 'https://www.reconstruction.go.jp/files/user/topics/main-cat7/sub-cat7-2/20251105_03-2.pdf', isMinutes: false },
+      { name: '資料３－３ 福島県資料 (PDF)', type: 'PDF', size: '1.05 MB', url: 'https://www.reconstruction.go.jp/files/user/topics/main-cat7/sub-cat7-2/20251105_03-3.pdf', isMinutes: false },
+      { name: '資料４－１ 福島国際研究教育機構の主務大臣評価（案） (PDF)', type: 'PDF', size: '1.60 MB', url: 'https://www.reconstruction.go.jp/files/user/topics/main-cat7/sub-cat7-2/20251105_04-1.pdf', isMinutes: false },
+      { name: '資料４－２ 福島国際研究教育機構（令和６年度実績）の主務大臣評価 (PDF)', type: 'PDF', size: '1.85 MB', url: 'https://www.reconstruction.go.jp/files/user/topics/main-cat7/sub-cat7-2/20251105_04-2.pdf', isMinutes: false },
+      { name: '資料４－３ 福島国際研究教育機構の主務大臣評価（案）における課題 (PDF)', type: 'PDF', size: '650 KB', url: 'https://www.reconstruction.go.jp/files/user/topics/main-cat7/sub-cat7-2/20251105_04-3.pdf', isMinutes: false },
+      { name: '資料４－４ 主務大臣評価に対する復興推進委員会意見（案） (PDF)', type: 'PDF', size: '420 KB', url: 'https://www.reconstruction.go.jp/files/user/topics/main-cat7/sub-cat7-2/20251105_04-4.pdf', isMinutes: false },
+      { name: '参考資料 福島国際研究教育機構の主務大臣評価関係資料 (PDF)', type: 'PDF', size: '1.40 MB', url: 'https://www.reconstruction.go.jp/files/user/topics/main-cat7/sub-cat7-2/20251105_sankou.pdf', isMinutes: false },
+      { name: '第48回 配布資料ページ', type: 'HTML', size: '35 KB', url: 'https://www.reconstruction.go.jp/topics/cat-11/cat-47/cat-155/cat-156/202510291821198910/', isMinutes: false }
+    ],
+    tags: ['復興推進委員会', '第48回', 'FIREC主務大臣評価', '年次復興報告', '議事録'],
+    officialUrl: 'https://www.reconstruction.go.jp/topics/cat-11/cat-47/cat-155/cat-156/202510291821198910/',
+    hasMinutes: true,
+    docCount: 15
+  },
+  {
+    id: 'meet-ra-fukko-suishin-47th',
+    councilId: 'ra-fukko-suishin',
+    councilName: '復興推進委員会',
+    ministry: 'RA',
+    category: 'COUNCIL',
+    title: '復興推進委員会（第47回）',
+    date: '2025-06-13',
+    updatedAt: '2025-06-13 17:00',
+    location: '復興庁 大会議室',
+    summary: '現地調査報告（福島県）、2025年大阪・関西万博における復興庁取組結果、原子力災害被災地域の復興施策現状課題（総括）、および「第2期復興・創生期間」以降の復興基本方針（案）について審議された。',
+    agenda: [
+      '現地調査報告（福島県）',
+      '2025年大阪・関西万博における復興庁の取組結果',
+      '原子力災害被災地域に係る復興施策の現状と課題（総括）',
+      '「第２期復興・創生期間」以降における東日本大震災からの復興の基本方針（案）'
+    ],
+    materials: [
+      { name: '議事次第 (PDF)', type: 'PDF', size: '105 KB', url: 'https://www.reconstruction.go.jp/files/user/topics/main-cat7/sub-cat7-2/20250613_00.pdf', isMinutes: false },
+      { name: '議事要旨 (PDF/HTML)', type: 'HTML', size: '28 KB', url: 'https://www.reconstruction.go.jp/topics/main-cat7/sub-cat7-2/20250630133839.html', isMinutes: true },
+      { name: '議事録 (PDF/HTML)', type: 'HTML', size: '42 KB', url: 'https://www.reconstruction.go.jp/topics/main-cat7/sub-cat7-2/20250630132405.html', isMinutes: true },
+      { name: '資料１ 現地調査報告（福島県） (PDF)', type: 'PDF', size: '1.35 MB', url: 'https://www.reconstruction.go.jp/files/user/topics/main-cat7/sub-cat7-2/20250613_01.pdf', isMinutes: false },
+      { name: '資料２ 2025年大阪・関西万博における復興庁の取組結果 (PDF)', type: 'PDF', size: '2.10 MB', url: 'https://www.reconstruction.go.jp/files/user/topics/main-cat7/sub-cat7-2/20250613_02.pdf', isMinutes: false },
+      { name: '資料３－１ 原子力災害被災地域に係る復興施策の現状と課題（概要） (PDF)', type: 'PDF', size: '1.50 MB', url: 'https://www.reconstruction.go.jp/files/user/topics/main-cat7/sub-cat7-2/20250613_03-1.pdf', isMinutes: false },
+      { name: '資料３－２ 原子力災害被災地域に係る復興施策の現状と課題（本文） (PDF)', type: 'PDF', size: '3.20 MB', url: 'https://www.reconstruction.go.jp/files/user/topics/main-cat7/sub-cat7-2/20250613_03-2.pdf', isMinutes: false },
+      { name: '資料４－１ 「第２期復興・創生期間」以降の復興の基本方針（案）（概要） (PDF)', type: 'PDF', size: '1.80 MB', url: 'https://www.reconstruction.go.jp/files/user/topics/main-cat7/sub-cat7-2/20250613_04-1.pdf', isMinutes: false },
+      { name: '資料４－２ 「第２期復興・創生期間」以降の復興の基本方針（案）（本文） (PDF)', type: 'PDF', size: '2.90 MB', url: 'https://www.reconstruction.go.jp/files/user/topics/main-cat7/sub-cat7-2/20250613_04-2.pdf', isMinutes: false },
+      { name: '資料４－３ 参考資料 (PDF)', type: 'PDF', size: '1.40 MB', url: 'https://www.reconstruction.go.jp/files/user/topics/main-cat7/sub-cat7-2/20250613_04-3.pdf', isMinutes: false },
+      { name: '資料５－１ 岩手県資料 (PDF)', type: 'PDF', size: '820 KB', url: 'https://www.reconstruction.go.jp/files/user/topics/main-cat7/sub-cat7-2/20250613_05-1.pdf', isMinutes: false },
+      { name: '資料５－２ 宮城県資料 (PDF)', type: 'PDF', size: '980 KB', url: 'https://www.reconstruction.go.jp/files/user/topics/main-cat7/sub-cat7-2/20250613_05-2.pdf', isMinutes: false },
+      { name: '資料５－３ 福島県資料 (PDF)', type: 'PDF', size: '1.10 MB', url: 'https://www.reconstruction.go.jp/files/user/topics/main-cat7/sub-cat7-2/20250613_05-3.pdf', isMinutes: false },
+      { name: '第47回 配布資料ページ', type: 'HTML', size: '35 KB', url: 'https://www.reconstruction.go.jp/topics/main-cat7/sub-cat7-2/20250609164826.html', isMinutes: false }
+    ],
+    tags: ['復興推進委員会', '第47回', '基本方針案', '原子力災害復興', '被災3県資料', '議事録'],
+    officialUrl: 'https://www.reconstruction.go.jp/topics/main-cat7/sub-cat7-2/20250609164826.html',
+    hasMinutes: true,
+    docCount: 14
   },
   // 14. CAS & User Requested Council Meetings
   {
