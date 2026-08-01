@@ -2,17 +2,20 @@
 # -*- coding: utf-8 -*-
 """
 政策会議ウォッチ (PM-HUB) - Automated Smoke Test Suite
-Antigravity / Jules によるコード修正後に実行する自動スモークテストスクリプト
 
-【テスト項目】
-1. JavaScript および Python コードの文法エラー (SyntaxError / ブラケット不整合) の自動確認
-2. public/data.js および Webページ内の主要リンク（.go.jp 直リンク等）のリンク切れ (HTTP 404) 確認
+【テスト要件】
+1. 必須：コードの文法エラー (SyntaxError / 括弧の不整合) 自動確認
+2. 必須：追加・変更された URL のみのリンク疎通確認 (HTTP Status 検証)
+3. スキップ：変更のない既存 URL の疎通確認は不要 (テスト高速化・サーバー負荷低減)
 """
 
 import sys
 import os
 import re
 import urllib.request
+import urllib.error
+import subprocess
+import argparse
 import io
 
 # Windows ターミナルログの文字化け防止 (stdout/stderr を UTF-8 に固定)
@@ -31,7 +34,9 @@ def check_syntax_errors():
     files_to_check = [
         os.path.join(PROJECT_ROOT, "public", "data.js"),
         os.path.join(PROJECT_ROOT, "public", "app.js"),
-        os.path.join(PROJECT_ROOT, "admin", "crawler.py")
+        os.path.join(PROJECT_ROOT, "admin", "crawler.py"),
+        os.path.join(PROJECT_ROOT, "admin", "agent_initial_verifier.py"),
+        os.path.join(PROJECT_ROOT, "admin", "smoke_test.py")
     ]
     
     errors_found = 0
@@ -67,36 +72,56 @@ def check_syntax_errors():
 
     return errors_found == 0
 
-def check_link_health():
-    """2. 会議体公式ポータルおよび主要資料リンクのリンク切れを自動検証"""
+def get_added_urls_from_git():
+    """git diff から新規追加・変更された URL を動的に抽出"""
+    added_urls = set()
+    diff_commands = [
+        ["git", "diff", "HEAD", "--", "public/data.js"],
+        ["git", "diff", "HEAD~1", "HEAD", "--", "public/data.js"],
+        ["git", "diff", "--staged", "--", "public/data.js"]
+    ]
+    
+    for cmd in diff_commands:
+        try:
+            output = subprocess.check_output(cmd, cwd=PROJECT_ROOT, stderr=subprocess.DEVNULL, encoding='utf-8', errors='replace')
+            for line in output.splitlines():
+                if line.startswith("+") and not line.startswith("+++"):
+                    found = re.findall(r"https?://[^\s\x22\x27,]+", line)
+                    for u in found:
+                        if "pm-hub.gov.example" not in u and "googleapis.com" not in u:
+                            added_urls.add(u)
+        except Exception:
+            pass
+            
+    return list(added_urls)
+
+def check_link_health(explicit_urls=None, check_all=False):
+    """2. 追加・変更された URL のみのリンク疎通確認"""
     print("\n--------------------------------------------------")
-    print(" [テスト 2/2] 会議体公式ポータル・配布資料 (HTTP Status) リンク検証")
+    print(" [テスト 2/2] リンク疎通確認 (追加・変更 URL のみ対象)")
     print("--------------------------------------------------")
 
-    # Dynamically load officialUrl entries from public/data.js
-    data_js_path = os.path.join(PROJECT_ROOT, "public", "data.js")
-    test_urls = []
-    if os.path.exists(data_js_path):
-        with open(data_js_path, "r", encoding="utf-8") as f:
-            content = f.read()
-        test_urls = re.findall(r"officialUrl:\s*['\"]([^'\"]+)['\"]", content)
-    
-    # Fallback to key portal URLs if data.js is not read
-    if not test_urls:
-        test_urls = [
-            "https://www8.cao.go.jp/cstp/ai/ai_senryaku/ai_senryaku.html",
-            "https://www8.cao.go.jp/kisei-kaikaku/index.html",
-            "https://www.reconstruction.go.jp/topics/cat-11/cat-47/cat-155/cat-156/000813/",
-            "https://www.cas.go.jp/jp/seisaku/chyutoujyousei/index.html",
-            "https://www.cas.go.jp/jp/seisaku/zensedai_hosyo/index.html",
-            "https://www.digital.go.jp/councils/social-promotion-executive",
-            "https://www.cfa.go.jp/councils/suishinkaigi",
-            "https://www.cfa.go.jp/councils/shingikai"
-        ]
+    target_urls = []
+    if explicit_urls:
+        target_urls = explicit_urls
+    elif check_all:
+        data_js_path = os.path.join(PROJECT_ROOT, "public", "data.js")
+        if os.path.exists(data_js_path):
+            with open(data_js_path, "r", encoding="utf-8") as f:
+                content = f.read()
+            target_urls = re.findall(r"https?://[^\s\x22\x27,]+", content)
+            target_urls = [u for u in target_urls if "example" not in u and "googleapis" not in u]
+    else:
+        target_urls = get_added_urls_from_git()
 
-    # Remove duplicates while preserving order
-    unique_urls = list(dict.fromkeys(test_urls))
-    headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36 PMHubSmokeTester/2.0'}
+    unique_urls = list(dict.fromkeys(target_urls))
+
+    if not unique_urls:
+        print("  [SKIP] 変更・追加された新規 URL は検出されませんでした (既存 URL の検証はスキップします)")
+        return True
+
+    print(f"  検出された追加・変更 URL (計 {len(unique_urls)} 件) の疎通確認を実行中...")
+    headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36 PMHubSmokeTester/3.0'}
     broken_links = 0
 
     for url in unique_urls:
@@ -117,16 +142,21 @@ def check_link_health():
             print(f"  [FAIL リンク切れ] {url} -> {e}")
             broken_links += 1
 
-    print(f"\n  検証結果: チェック数 {len(unique_urls)} 件中 リンク切れ {broken_links} 件")
+    print(f"\n  検証結果: 追加・変更 URL {len(unique_urls)} 件中 リンク切れ {broken_links} 件")
     return broken_links == 0
 
 def main():
+    parser = argparse.ArgumentParser(description="PM-HUB Smoke Test Runner")
+    parser.add_argument("--url", nargs="+", help="Explicit URLs to verify")
+    parser.add_argument("--all", action="store_true", help="Check all URLs in data.js")
+    args = parser.parse_args()
+
     print("==================================================")
     print(" 政策会議ウォッチ (PM-HUB) 自動スモークテスト実行 ")
     print("==================================================")
 
     syntax_ok = check_syntax_errors()
-    links_ok = check_link_health()
+    links_ok = check_link_health(explicit_urls=args.url, check_all=args.all)
 
     print("\n==================================================")
     if syntax_ok and links_ok:
