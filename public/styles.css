@@ -1444,3 +1444,24 @@ body {
   font-size: 0.75rem;
 }
 
+/* SITE FOOTER & DATA EXPORT BAR */
+.site-footer {
+  margin-top: 3rem;
+  padding: 1.5rem 0 2.5rem;
+  border-top: 1px solid var(--border-color);
+  background: var(--bg-surface);
+}
+
+.footer-flex {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.footer-info {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+

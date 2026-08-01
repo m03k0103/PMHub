@@ -27,7 +27,7 @@ const MINISTRIES = {
 };
 
 const CATEGORIES = {
-  COUNCIL: '会議体・諮問会議',
+  COUNCIL: '審議会・諮問会議',
   SUBCOMMITTEE: '分科会・部会',
   PANEL: '検討会・有識者会議',
   ROUNDTABLE: '懇談会・作業部会'

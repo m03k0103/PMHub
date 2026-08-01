@@ -113,14 +113,6 @@
             <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
           </svg>
         </button>
-        <button class="btn-export-data" id="exportDataBtn" title="全検索結果をJSON/CSV出力">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
-            <polyline points="7 10 12 15 17 10" />
-            <line x1="12" y1="15" x2="12" y2="3" />
-          </svg>
-          <span>データ出力</span>
-        </button>
       </div>
     </div>
   </header>
@@ -211,7 +203,7 @@
             <label for="categorySelect">会議種別</label>
             <select id="categorySelect">
               <option value="ALL">すべての会議種別</option>
-              <option value="COUNCIL">会議体・諮問会議</option>
+              <option value="COUNCIL">審議会・諮問会議</option>
               <option value="SUBCOMMITTEE">分科会・部会</option>
               <option value="PANEL">検討会・有識者会議</option>
               <option value="ROUNDTABLE">懇談会・作業部会</option>
@@ -368,7 +360,7 @@
             <label for="councilCategorySelect">会議種別</label>
             <select id="councilCategorySelect">
               <option value="ALL">すべての会議種別</option>
-              <option value="COUNCIL">会議体・諮問会議</option>
+              <option value="COUNCIL">審議会・諮問会議</option>
               <option value="SUBCOMMITTEE">分科会・部会</option>
               <option value="PANEL">検討会・有識者会議</option>
               <option value="ROUNDTABLE">懇談会・作業部会</option>
@@ -546,6 +538,25 @@
     </section>
 
   </main>
+
+  <!-- PAGE BOTTOM FOOTER WITH DATA EXPORT -->
+  <footer class="site-footer">
+    <div class="container footer-flex">
+      <div class="footer-info">
+        <span>政策会議ウォッチ (PM-HUB) &bull; 日本政府全21省庁・審議会集約ポータル</span>
+      </div>
+      <div class="footer-actions">
+        <button class="btn-export-data" id="exportDataBtn" title="全検索結果をJSON/CSV出力">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+            <polyline points="7 10 12 15 17 10" />
+            <line x1="12" y1="15" x2="12" y2="3" />
+          </svg>
+          <span>データ出力 (JSON / CSV)</span>
+        </button>
+      </div>
+    </div>
+  </footer>
 
   <!-- DOCUMENT & MEETING DETAIL MODAL -->
   <div class="modal-overlay hidden" id="documentModalOverlay">

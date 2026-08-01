@@ -35,6 +35,7 @@ document.addEventListener('DOMContentLoaded', () => {
     statTrackedCouncils: document.getElementById('statTrackedCouncils'),
     statTotalMeetings: document.getElementById('statTotalMeetings'),
     statTotalDocs: document.getElementById('statTotalDocs'),
+    statLastUpdate: document.getElementById('statLastUpdate'),
     watchlistCount: document.getElementById('watchlistCount'),
 
     // Filter controls
@@ -140,6 +141,17 @@ document.addEventListener('DOMContentLoaded', () => {
     el.watchlistCount.textContent = state.watchedCouncilIds.size;
     if (el.watchlistActiveCount) {
       el.watchlistActiveCount.textContent = state.watchedCouncilIds.size;
+    }
+
+    if (el.statLastUpdate) {
+      const latestMeeting = MEETINGS.reduce((latest, m) => {
+        if (!m.updatedAt) return latest;
+        return (!latest || m.updatedAt > latest.updatedAt) ? m : latest;
+      }, null);
+
+      if (latestMeeting && latestMeeting.updatedAt) {
+        el.statLastUpdate.textContent = latestMeeting.updatedAt;
+      }
     }
   }
 
@@ -524,11 +536,6 @@ document.addEventListener('DOMContentLoaded', () => {
   function createTimelineCardHTML(meeting) {
     const minInfo = MINISTRIES[meeting.ministry] || { name: meeting.ministry, color: '#3b82f6' };
     const categoryName = CATEGORIES[meeting.category] || meeting.category;
-    
-    // Check if contains alert keyword
-    const hasAlertKeyword = state.alertKeywords.some(kw => 
-      meeting.title.includes(kw) || (meeting.summary && meeting.summary.includes(kw))
-    );
 
     const docPillsHTML = (meeting.materials || []).map(doc => `
       <a href="${doc.url}" target="_blank" rel="noopener noreferrer" class="doc-pill" title="${escapeHtml(doc.name)} (${doc.size})">
@@ -547,7 +554,6 @@ document.addEventListener('DOMContentLoaded', () => {
           <div class="card-badges">
             <span class="badge-ministry ${meeting.ministry}">${minInfo.name}</span>
             <span class="badge-category">${categoryName}</span>
-            ${hasAlertKeyword ? `<span class="badge-category" style="background: rgba(239, 68, 68, 0.2); border-color: rgba(239, 68, 68, 0.5); color: #f87171;">🔔 アラート一致</span>` : ''}
           </div>
           <div class="card-date-badge" title="会議の開催年月日">
             <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
