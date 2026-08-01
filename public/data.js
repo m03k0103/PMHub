@@ -803,16 +803,22 @@ const MEETINGS = [
       '介護サービスの基盤整備と生産性向上（ロボット・ICT導入）'
     ],
     materials: [
-      { name: '第21回 議事次第 (PDF)', type: 'PDF', size: '120 KB', url: 'https://www.cas.go.jp/jp/seisaku/zensedai_hosyo/dai21/00_gijisidai.pdf', isMinutes: false },
-      { name: '資料1: 全世代型社会保障推進の基本方針 (PDF)', type: 'PDF', size: '1,240 KB', url: 'https://www.cas.go.jp/jp/seisaku/zensedai_hosyo/dai21/01_siryou1.pdf', isMinutes: false },
-      { name: '資料2: 医療・介護構造改革の進捗 (PDF)', type: 'PDF', size: '890 KB', url: 'https://www.cas.go.jp/jp/seisaku/zensedai_hosyo/dai21/02_siryou2.pdf', isMinutes: false },
-      { name: '第21回 会議開催概要ページ', type: 'HTML', size: '35 KB', url: 'https://www.cas.go.jp/jp/seisaku/zensedai_hosyo/dai21/gijisidai.html', isMinutes: true },
-      { name: '全世代型社会保障構築会議 公式ポータル', type: 'HTML', size: '45 KB', url: 'https://www.cas.go.jp/jp/seisaku/zensedai_hosyo/index.html', isMinutes: false }
+      { name: '議事次第 (PDF / 70KB)', type: 'PDF', size: '70 KB', url: 'https://www.cas.go.jp/jp/seisaku/zensedai_hosyo/dai21/00_gijisidai.pdf', isMinutes: false },
+      { name: '資料1: 医療・介護の構造改革等について (PDF / 1,597KB)', type: 'PDF', size: '1,597 KB', url: 'https://www.cas.go.jp/jp/seisaku/zensedai_hosyo/dai21/01_siryou1.pdf', isMinutes: false },
+      { name: '資料2: 医療提供体制の推進方針について (PDF / 3,130KB)', type: 'PDF', size: '3,130 KB', url: 'https://www.cas.go.jp/jp/seisaku/zensedai_hosyo/dai21/02_siryou2.pdf', isMinutes: false },
+      { name: '資料3: 介護基盤整備・生産性向上について (PDF / 3,816KB)', type: 'PDF', size: '3,816 KB', url: 'https://www.cas.go.jp/jp/seisaku/zensedai_hosyo/dai21/03_siryou3.pdf', isMinutes: false },
+      { name: '資料4: 地域共生社会の構築に向けた施策 (PDF / 3,710KB)', type: 'PDF', size: '3,710 KB', url: 'https://www.cas.go.jp/jp/seisaku/zensedai_hosyo/dai21/04_siryou4.pdf', isMinutes: false },
+      { name: '資料5: 高齢者医療制度の見直しについて (PDF / 836KB)', type: 'PDF', size: '836 KB', url: 'https://www.cas.go.jp/jp/seisaku/zensedai_hosyo/dai21/05_siryou5.pdf', isMinutes: false },
+      { name: '資料6: 地域医療構想の推進について (PDF / 589KB)', type: 'PDF', size: '589 KB', url: 'https://www.cas.go.jp/jp/seisaku/zensedai_hosyo/dai21/06_siryou6.pdf', isMinutes: false },
+      { name: '資料7: 委員提出資料 (PDF / 475KB)', type: 'PDF', size: '475 KB', url: 'https://www.cas.go.jp/jp/seisaku/zensedai_hosyo/dai21/07_siryou7.pdf', isMinutes: false },
+      { name: '参考資料1: 経済財政運営と改革の基本方針2025 (PDF / 1,158KB)', type: 'PDF', size: '1,158 KB', url: 'https://www.cas.go.jp/jp/seisaku/zensedai_hosyo/dai21/08_sankou1.pdf', isMinutes: false },
+      { name: '参考資料2: デジタル田園都市国家構想構想書 (PDF / 884KB)', type: 'PDF', size: '884 KB', url: 'https://www.cas.go.jp/jp/seisaku/zensedai_hosyo/dai21/09_sankou2.pdf', isMinutes: false },
+      { name: '参考資料3: 全世代型社会保障構築会議 報告書 (PDF / 960KB)', type: 'PDF', size: '960 KB', url: 'https://www.cas.go.jp/jp/seisaku/zensedai_hosyo/dai21/10_sankou3.pdf', isMinutes: false }
     ],
     tags: ['社会保障', '医療 reform', '介護', '少子化対策', '内閣官房'],
     officialUrl: 'https://www.cas.go.jp/jp/seisaku/zensedai_hosyo/dai21/gijisidai.html',
     hasMinutes: true,
-    docCount: 5
+    docCount: 11
   },
   {
     id: 'meet-2026-0729-aihq',
