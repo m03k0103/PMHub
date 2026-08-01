@@ -220,15 +220,37 @@ const COUNCILS = [
   },
   // 13. MLIT
   {
-    id: 'mlit-shakai-sihon',
-    name: '社会資本整備審議会 道路分科会',
+    id: 'mlit-shakai-sihon-soukai',
+    name: '社会資本整備審議会',
+    ministry: 'MLIT',
+    category: 'COUNCIL',
+    pastYearCount: 10,
+    description: '大規模水災害対策、気象業務のあり方、未来のインフラ政策、防災・減災・国土強靱化推進方針を答申する国土交通省最高審議機関。',
+    officialUrl: 'https://www.mlit.go.jp/policy/shingikai/s201_shakai01.html',
+    isWatched: true,
+    trackedSince: '2019-02-01'
+  },
+  {
+    id: 'mlit-energy-anzenhosho-wg',
+    name: '社会資本整備審議会環境部会・交通政策審議会環境部会 エネルギー・経済安全保障小委員会',
     ministry: 'MLIT',
     category: 'SUBCOMMITTEE',
-    pastYearCount: 9,
-    description: '高速道路の老朽化修繕、防災・減災国土強靱化計画、自動運転インフラ整備、物流2024年問題に伴うモーダルシフト促進。',
-    officialUrl: 'https://www.mlit.go.jp/policy/shingikai/index.html',
-    isWatched: false,
-    trackedSince: '2022-07-15'
+    pastYearCount: 2,
+    description: '国土交通分野におけるエネルギー脱炭素化および経済安全保障確立に向けた総合戦略を審議。',
+    officialUrl: 'https://www.mlit.go.jp/policy/shingikai/s404_anzenhosho.html',
+    isWatched: true,
+    trackedSince: '2026-07-01'
+  },
+  {
+    id: 'mlit-infra-management-wg',
+    name: '社会資本整備審議会・交通政策審議会技術分科会技術部会 インフラマネジメント戦略小委員会',
+    ministry: 'MLIT',
+    category: 'SUBCOMMITTEE',
+    pastYearCount: 4,
+    description: 'インフラメンテナンスの点検・修繕の効率化、新技術活用、中長期マネジメント方向性を審議。',
+    officialUrl: 'https://www.mlit.go.jp/policy/shingikai/s204_management02.html',
+    isWatched: true,
+    trackedSince: '2026-07-01'
   },
   // 14. MOE
   {
@@ -755,28 +777,103 @@ const MEETINGS = [
   },
   // 9. MLIT
   {
-    id: 'meet-2026-0708-mlit',
-    councilId: 'mlit-shakai-sihon',
-    councilName: '社会資本整備審議会 道路分科会',
+    id: 'meet-mlit-shakai-sihon-10th',
+    councilId: 'mlit-shakai-sihon-soukai',
+    councilName: '社会資本整備審議会',
     ministry: 'MLIT',
-    category: 'SUBCOMMITTEE',
-    title: '第78回 社会資本整備審議会 道路分科会',
-    date: '2026-07-08',
-    updatedAt: '2026-07-08 17:30',
-    location: '国土交通省 10階 共用大会議室',
-    summary: '自動運転レベル4対応トラック専用レーンの新東名高速道路での試行区間拡大計画、および老朽化橋梁・トンネルのインフラモニタリングセンサー義務化方針が決定された。',
+    category: 'COUNCIL',
+    title: '第10回 社会資本整備審議会 総会',
+    date: '2019-02-06',
+    updatedAt: '2019-02-06 18:00',
+    location: '国土交通省 大会議室',
+    summary: '大規模広域豪雨を踏まえた水災害対策のあり方、未来につなげるインフラ政策（案）、防災・減災・国土強靱化緊急対策が審議・決定された。',
     agenda: [
-      '自動運転対応道路インフラ（磁気マーカー・路車間通信）の全国整備計画',
-      '防災・減災、国土強靱化5か年加速化対策の実施状況と達成度',
-      '高速道路料金体系の見直し（深夜割引の完全自動適用）'
+      '大規模広域豪雨を踏まえた水災害対策のあり方について',
+      '2030年の科学技術を見据えた気象業務のあり方について',
+      '未来につなげるインフラ政策（案）およびモビリティサービスの推進'
     ],
     materials: [
-      { name: '社会資本整備審議会 公式ポータル', type: 'HTML', size: '35 KB', url: 'https://www.mlit.go.jp/policy/shingikai/index.html', isMinutes: false }
+      { name: '議事録 (PDF形式：352KB)', type: 'PDF', size: '352 KB', url: 'https://www.mlit.go.jp/common/001282717.pdf', isMinutes: true },
+      { name: '議事要旨', type: 'HTML', size: '25 KB', url: 'https://www.mlit.go.jp/policy/shingikai/sogo01_sg_000033.html', isMinutes: true },
+      { name: '議事次第 (PDF形式：52KB)', type: 'PDF', size: '52 KB', url: 'https://www.mlit.go.jp/common/001273277.pdf', isMinutes: false },
+      { name: '委員名簿 (PDF形式：123KB)', type: 'PDF', size: '123 KB', url: 'https://www.mlit.go.jp/common/001273276.pdf', isMinutes: false },
+      { name: '資料1 大規模広域豪雨を踏まえた水災害対策のあり方 (PDF形式：455KB)', type: 'PDF', size: '455 KB', url: 'https://www.mlit.go.jp/common/001273275.pdf', isMinutes: false },
+      { name: '資料2 2030年の科学技術を見据えた気象業務のあり方 (PDF形式：636KB)', type: 'PDF', size: '636 KB', url: 'https://www.mlit.go.jp/common/001273278.pdf', isMinutes: false },
+      { name: '資料3 国土交通技術行政の基本政策懇談会中間とりまとめ (PDF形式：262KB)', type: 'PDF', size: '262 KB', url: 'https://www.mlit.go.jp/common/001273286.pdf', isMinutes: false },
+      { name: '資料4 未来につなげるインフラ政策（案）1/3 (PDF形式：6.3MB)', type: 'PDF', size: '6.3 MB', url: 'https://www.mlit.go.jp/common/001273285.pdf', isMinutes: false },
+      { name: '資料4 未来につなげるインフラ政策（案）2/3 (PDF形式：7.9MB)', type: 'PDF', size: '7.9 MB', url: 'https://www.mlit.go.jp/common/001273284.pdf', isMinutes: false },
+      { name: '資料4 未来につなげるインフラ政策（案）3/3 (PDF形式：6.5MB)', type: 'PDF', size: '6.5 MB', url: 'https://www.mlit.go.jp/common/001273283.pdf', isMinutes: false },
+      { name: '資料5 防災・減災、国土強靭化のための３か年緊急対策の概要 (PDF形式：220KB)', type: 'PDF', size: '220 KB', url: 'https://www.mlit.go.jp/common/001273288.pdf', isMinutes: false },
+      { name: '資料6 新たなモビリティサービスの推進について (PDF形式：1.2MB)', type: 'PDF', size: '1.2 MB', url: 'https://www.mlit.go.jp/common/001273287.pdf', isMinutes: false },
+      { name: '資料7 社会資本整備、交通政策を巡る課題 (PDF形式：93KB)', type: 'PDF', size: '93 KB', url: 'https://www.mlit.go.jp/common/001273292.pdf', isMinutes: false },
+      { name: '第10回総会 配布資料ページ', type: 'HTML', size: '35 KB', url: 'https://www.mlit.go.jp/policy/shingikai/sogo01_sg_000035.html', isMinutes: false }
     ],
-    tags: ['国土交通', '自動運転', 'インフラ', '国土強靱化', '高速道路'],
-    officialUrl: 'https://www.mlit.go.jp/policy/shingikai/index.html',
+    tags: ['社会資本整備審議会', '第10回総会', '水災害対策', '国土強靱化', '国土交通省'],
+    officialUrl: 'https://www.mlit.go.jp/policy/shingikai/sogo01_sg_000035.html',
     hasMinutes: true,
-    docCount: 1
+    docCount: 14
+  },
+  {
+    id: 'meet-mlit-energy-anzenhosho-1st',
+    councilId: 'mlit-energy-anzenhosho-wg',
+    councilName: '社会資本整備審議会環境部会・交通政策審議会環境部会 エネルギー・経済安全保障小委員会',
+    ministry: 'MLIT',
+    category: 'SUBCOMMITTEE',
+    title: '第１回合同会議 エネルギー・経済安全保障小委員会',
+    date: '2026-07-28',
+    updatedAt: '2026-07-28 17:00',
+    location: '国土交通省 会議室',
+    summary: 'エネルギー・経済安全保障小委員会の設置要領、事務局説明資料および今後の検討スケジュールについて協議された。',
+    agenda: [
+      'エネルギー・経済安全保障小委員会の開催および設置について',
+      'エネルギー・経済安全保障を巡る最近の動向と課題（事務局資料）',
+      '今後の検討スケジュールについて'
+    ],
+    materials: [
+      { name: '議事次第 (PDF形式:64KB)', type: 'PDF', size: '64 KB', url: 'https://www.mlit.go.jp/policy/shingikai/content/002014354.pdf', isMinutes: false },
+      { name: '委員名簿 (PDF形式:70KB)', type: 'PDF', size: '70 KB', url: 'https://www.mlit.go.jp/policy/shingikai/content/002014355.pdf', isMinutes: false },
+      { name: '【資料１】エネルギー・経済安全保障小委員会の開催について (PDF形式:223KB)', type: 'PDF', size: '223 KB', url: 'https://www.mlit.go.jp/policy/shingikai/content/002014356.pdf', isMinutes: false },
+      { name: '【資料２】エネルギー・経済安全保障小委員会 第１回合同会議 事務局資料 (PDF形式:4.3MB)', type: 'PDF', size: '4.3 MB', url: 'https://www.mlit.go.jp/policy/shingikai/content/002014357.pdf', isMinutes: false },
+      { name: '【資料３】今後のスケジュール (PDF形式:300KB)', type: 'PDF', size: '300 KB', url: 'https://www.mlit.go.jp/policy/shingikai/content/002014358.pdf', isMinutes: false },
+      { name: '第1回合同会議 配布資料ページ', type: 'HTML', size: '35 KB', url: 'https://www.mlit.go.jp/policy/shingikai/sogo10_sg_000247.html', isMinutes: false }
+    ],
+    tags: ['エネルギー', '経済安全保障', '環境部会', '脱炭素', '国土交通省'],
+    officialUrl: 'https://www.mlit.go.jp/policy/shingikai/sogo10_sg_000247.html',
+    hasMinutes: true,
+    docCount: 6
+  },
+  {
+    id: 'meet-mlit-infra-management-4th',
+    councilId: 'mlit-infra-management-wg',
+    councilName: 'インフラマネジメント戦略小委員会',
+    ministry: 'MLIT',
+    category: 'SUBCOMMITTEE',
+    title: '第４回 インフラマネジメント戦略小委員会',
+    date: '2026-07-28',
+    updatedAt: '2026-07-28 18:00',
+    location: '国土交通省 会議室',
+    summary: 'インフラメンテナンスに関するこれまでの取組のレビュー、アンケート調査結果、および今後のインフラのマネジメントのあり方（案）について審議された。',
+    agenda: [
+      '前回（第３回委員会）及び委員提出資料よりいただいた主なご意見について',
+      'インフラメンテナンスに関するこれまでの取組のレビュー（概要）',
+      'アンケート調査の結果および今後のインフラのマネジメントのあり方に関する方向性（案）'
+    ],
+    materials: [
+      { name: '議事次第 (PDF形式:95KB)', type: 'PDF', size: '95 KB', url: 'https://www.mlit.go.jp/policy/shingikai/content/002013864.pdf', isMinutes: false },
+      { name: '委員名簿 (PDF形式:75KB)', type: 'PDF', size: '75 KB', url: 'https://www.mlit.go.jp/policy/shingikai/content/002013865.pdf', isMinutes: false },
+      { name: '資料１ 前回（第３回委員会）及び委員提出資料よりいただいた主なご意見について (PDF形式:224KB)', type: 'PDF', size: '224 KB', url: 'https://www.mlit.go.jp/policy/shingikai/content/002013866.pdf', isMinutes: false },
+      { name: '資料２ インフラメンテナンスに関するこれまでの取組のレビュー（概要） (PDF形式:2.7MB)', type: 'PDF', size: '2.7 MB', url: 'https://www.mlit.go.jp/policy/shingikai/content/002013867.pdf', isMinutes: false },
+      { name: '資料３ アンケート調査の結果について (PDF形式:467KB)', type: 'PDF', size: '467 KB', url: 'https://www.mlit.go.jp/policy/shingikai/content/002013868.pdf', isMinutes: false },
+      { name: '資料４ 今後のインフラのマネジメントのあり方に関する方向性（案）について (PDF形式:726KB)', type: 'PDF', size: '726 KB', url: 'https://www.mlit.go.jp/policy/shingikai/content/002013869.pdf', isMinutes: false },
+      { name: '参考資料１ インフラメンテナンスに関するこれまでの取組のレビュー (PDF形式:16.3MB)', type: 'PDF', size: '16.3 MB', url: 'https://www.mlit.go.jp/policy/shingikai/content/002013870.pdf', isMinutes: false },
+      { name: '参考資料２ その他のアンケート結果について (PDF形式:873KB)', type: 'PDF', size: '873 KB', url: 'https://www.mlit.go.jp/policy/shingikai/content/002013871.pdf', isMinutes: false },
+      { name: '参考資料３ アンケート調査質問票 (PDF形式:1.1MB)', type: 'PDF', size: '1.1 MB', url: 'https://www.mlit.go.jp/policy/shingikai/content/002013872.pdf', isMinutes: false },
+      { name: '第４回 配布資料ページ', type: 'HTML', size: '35 KB', url: 'https://www.mlit.go.jp/policy/shingikai/sogo03_sg_000240.html', isMinutes: false }
+    ],
+    tags: ['インフラマネジメント', '第4回', 'インフラ点検', '老朽化修繕', '国土交通省'],
+    officialUrl: 'https://www.mlit.go.jp/policy/shingikai/sogo03_sg_000240.html',
+    hasMinutes: true,
+    docCount: 10
   },
   {
     id: 'meet-2026-0626-chutou11',

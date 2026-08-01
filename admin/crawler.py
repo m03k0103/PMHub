@@ -125,6 +125,24 @@ CRAWL_TARGETS = [
         "ministry": "MAFF",
         "name": "食料・農業・農村政策審議会",
         "url": "https://www.maff.go.jp/j/council/seisaku/"
+    },
+    {
+        "id": "mlit-shakai-sihon-soukai",
+        "ministry": "MLIT",
+        "name": "社会資本整備審議会",
+        "url": "https://www.mlit.go.jp/policy/shingikai/s201_shakai01.html"
+    },
+    {
+        "id": "mlit-energy-anzenhosho-wg",
+        "ministry": "MLIT",
+        "name": "エネルギー・経済安全保障小委員会",
+        "url": "https://www.mlit.go.jp/policy/shingikai/s404_anzenhosho.html"
+    },
+    {
+        "id": "mlit-infra-management-wg",
+        "ministry": "MLIT",
+        "name": "インフラマネジメント戦略小委員会",
+        "url": "https://www.mlit.go.jp/policy/shingikai/s204_management02.html"
     }
 ]
 
