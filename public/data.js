@@ -63,6 +63,18 @@ const COUNCILS = [
     isWatched: true,
     trackedSince: '2022-10-01'
   },
+  // 1.5 CAS
+  {
+    id: 'cas-kokuminkaigi',
+    name: '社会保障国民会議',
+    ministry: 'CAS',
+    category: 'COUNCIL',
+    pastYearCount: 16,
+    description: '医療・介護・年金・少子化対策等の社会保障機能の強化および給付と負担のバランス、持続可能な社会保障制度の構築を審議。',
+    officialUrl: 'https://www.cas.go.jp/jp/seisaku/kokuminkaigi/index.html',
+    isWatched: true,
+    trackedSince: '2022-01-15'
+  },
   // 2. DIGITAL
   {
     id: 'digital-suishin',
@@ -1085,28 +1097,31 @@ const MEETINGS = [
     docCount: 2
   },
   {
-    id: 'meet-2026-0714-kokumin',
+    id: 'meet-2026-0729-kokumin',
     councilId: 'cas-kokumin-kaigi',
     councilName: '社会保障国民会議',
     ministry: 'CAS',
     category: 'COUNCIL',
-    title: '第12回 社会保障国民会議',
-    date: '2026-07-14',
-    updatedAt: '2026-07-14 17:30',
-    location: '内閣官房 講堂',
-    summary: '2040年を見据えた社会保障給付と負担の将来見通し、年金受給開始年齢の柔軟化、高齢者の就労促進と医療費適正化の総合ビジョンが公表された。',
+    title: '社会保障国民会議 中間とりまとめ会議',
+    date: '2026-07-29',
+    updatedAt: '2026-07-29 18:00',
+    location: '首相官邸 大ホール',
+    summary: '2040年を見据えた社会保障給付と負担のバランス、給付付き税額控除の導入イメージ、医療・介護機能強化に関する中間とりまとめ報告書が取りまとめられた。',
     agenda: [
-      '2040年社会保障将来推計と必要財源のシミュレーション結果',
-      '医療・介護従事者の確保と賃上げ支援の実施状況',
-      '国民的合意形成に向けた社会保障改革広報戦略'
+      '社会保障国民会議 中間とりまとめについて',
+      '「給付付き税額控除」のイメージおよび持続可能な社会保障制度の構築',
+      '医療・介護従事者の確保と国民的合意形成'
     ],
     materials: [
-      { name: '社会保障国民会議 公式ポータル', type: 'HTML', size: '55 KB', url: 'https://www.cas.go.jp/jp/seisaku/kokuminkaigi/index.html', isMinutes: true }
+      { name: '中間とりまとめ（社会保障国民会議） (PDF)', type: 'PDF', size: '403 KB', url: 'https://www.cas.go.jp/jp/seisaku/kokuminkaigi/contents/20260729-4/01_siryou1.pdf', isMinutes: false },
+      { name: '「給付付き税額控除」のイメージ（中間とりまとめ） (PDF)', type: 'PDF', size: '915 KB', url: 'https://www.cas.go.jp/jp/seisaku/kokuminkaigi/contents/20260729-4/02_siryou2.pdf', isMinutes: false },
+      { name: '社会保障国民会議 有識者会議 構成員名簿 (PDF)', type: 'PDF', size: '124 KB', url: 'https://www.cas.go.jp/jp/seisaku/kokuminkaigi/doc/members.pdf', isMinutes: false },
+      { name: '社会保障国民会議 公式ポータル', type: 'HTML', size: '55 KB', url: 'https://www.cas.go.jp/jp/seisaku/kokuminkaigi/index.html', isMinutes: false }
     ],
-    tags: ['社会保障', '医療', '年金', '介護', '内閣官房'],
+    tags: ['社会保障', '中間とりまとめ', '給付付き税額控除', '医療・年金', '内閣官房'],
     officialUrl: 'https://www.cas.go.jp/jp/seisaku/kokuminkaigi/index.html',
     hasMinutes: true,
-    docCount: 1
+    docCount: 4
   }
 ];
 

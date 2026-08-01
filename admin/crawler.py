@@ -67,6 +67,12 @@ CRAWL_TARGETS = [
         "url": "https://www8.cao.go.jp/cstp/ai/ai_hq/kaisai.html"
     },
     {
+        "id": "cas-kokumin-kaigi",
+        "ministry": "CAS",
+        "name": "社会保障国民会議",
+        "url": "https://www.cas.go.jp/jp/seisaku/kokuminkaigi/index.html"
+    },
+    {
         "id": "digital-suishin",
         "ministry": "DIGITAL",
         "name": "デジタル社会推進会議幹事会",
