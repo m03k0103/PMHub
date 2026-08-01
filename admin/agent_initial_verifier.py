@@ -46,7 +46,7 @@ TARGET_COUNCILS = [
         "id": "cao-kisei-kaikaku",
         "ministry": "CAO",
         "name": "規制改革推進会議",
-        "url": "https://www8.cao.go.jp/kisei-kaikaku/index.html"
+        "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/meeting.html"
     },
     {
         "id": "ra-fukko-suishin",
