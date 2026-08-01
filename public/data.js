@@ -591,34 +591,58 @@ const MEETINGS = [
     docCount: 4
   },
   {
-    id: 'meet-mod-drastic-reinforcement-latest',
+    id: 'meet-mod-drastic-reinforcement-7th',
     councilId: 'mod-drastic-reinforcement',
     councilName: '防衛力の抜本的強化に関する有識者会議',
     ministry: 'MOD',
     category: 'PANEL',
-    title: '防衛力の抜本的強化に関する有識者会議 報告書・提言',
-    date: '2026-07-15',
-    updatedAt: '2026-07-15 15:00',
+    title: '防衛力の抜本的強化に関する有識者会議（第7回）',
+    date: '2026-03-10',
+    updatedAt: '2026-03-10 17:00',
     location: '防衛省 特別会議室',
-    summary: '防衛力の抜本的強化に向けた提言概要・報告書および第7回会議資料・議事要旨がとりまとめられ公開された。',
+    summary: '第7回会議が開催され、防衛力の抜本的強化の進捗、今後の課題、ならびに防衛基盤強化方策について報告・意見交換が行われた。',
     agenda: [
-      '防衛力の抜本的強化に関する有識者会議 報告書および提言の概要について',
-      '安全保障環境の変化に対応した防衛生産・技術基盤の維持強化'
+      '防衛力の抜本的強化に関する取り組み状況について',
+      '第7回会議資料および議事要旨の確認'
     ],
     materials: [
-      { name: '報告書による提言の概要 (PDF)', type: 'PDF', size: '850 KB', url: 'https://www.mod.go.jp/j/policy/agenda/meeting/drastic-reinforcement/pdf/siryo06_01.pdf', isMinutes: false },
-      { name: '「防衛力の抜本的強化に関する有識者会議」報告書 (PDF)', type: 'PDF', size: '2.4 MB', url: 'https://www.mod.go.jp/j/policy/agenda/meeting/drastic-reinforcement/pdf/siryo06_02.pdf', isMinutes: false },
+      { name: '会議資料 (PDF)', type: 'PDF', size: '1.1 MB', url: 'https://www.mod.go.jp/j/policy/agenda/meeting/drastic-reinforcement/pdf/siryo07_01.pdf', isMinutes: false },
+      { name: '議事要旨 (PDF)', type: 'PDF', size: '340 KB', url: 'https://www.mod.go.jp/j/policy/agenda/meeting/drastic-reinforcement/pdf/siryo07_02.pdf', isMinutes: true },
+      { name: '防衛力の抜本的強化に関する有識者会議 公式ポータル', type: 'HTML', size: '35 KB', url: 'https://www.mod.go.jp/j/policy/agenda/meeting/drastic-reinforcement/index.html', isMinutes: false }
+    ],
+    tags: ['防衛力抜本強化', '有識者会議', '第7回', '安全保障戦略', '防衛省'],
+    officialUrl: 'https://www.mod.go.jp/j/policy/agenda/meeting/drastic-reinforcement/index.html',
+    hasMinutes: true,
+    docCount: 3
+  },
+  {
+    id: 'meet-mod-drastic-reinforcement-6th',
+    councilId: 'mod-drastic-reinforcement',
+    councilName: '防衛力の抜本的強化に関する有識者会議',
+    ministry: 'MOD',
+    category: 'PANEL',
+    title: '防衛力の抜本的強化に関する有識者会議（第6回）',
+    date: '2025-09-19',
+    updatedAt: '2025-09-19 18:00',
+    location: '防衛省 特別会議室',
+    summary: '第6回会議が開催され、防衛力の抜本的強化に関する有識者会議報告書（提言の概要、報告書本編、議事要旨）が取りまとめられた。',
+    agenda: [
+      '「防衛力の抜本的強化に関する有識者会議」報告書について',
+      '報告書による提言の概要および議事要旨のとりまとめ'
+    ],
+    materials: [
+      { name: '会議資料１: 報告書による提言の概要 (PDF)', type: 'PDF', size: '850 KB', url: 'https://www.mod.go.jp/j/policy/agenda/meeting/drastic-reinforcement/pdf/siryo06_01.pdf', isMinutes: false },
+      { name: '会議資料２: 「防衛力の抜本的強化に関する有識者会議」報告書 (PDF)', type: 'PDF', size: '2.4 MB', url: 'https://www.mod.go.jp/j/policy/agenda/meeting/drastic-reinforcement/pdf/siryo06_02.pdf', isMinutes: false },
+      { name: '議事要旨 (PDF)', type: 'PDF', size: '360 KB', url: 'https://www.mod.go.jp/j/policy/agenda/meeting/drastic-reinforcement/pdf/siryo06_03.pdf', isMinutes: true },
       { name: 'Summary of Recommendations [ENG] (PDF)', type: 'PDF', size: '620 KB', url: 'https://www.mod.go.jp/j/policy/agenda/meeting/drastic-reinforcement/pdf/siryo06_01_en.pdf', isMinutes: false },
-      { name: '第7回 会議資料 (PDF)', type: 'PDF', size: '1.1 MB', url: 'https://www.mod.go.jp/j/policy/agenda/meeting/drastic-reinforcement/pdf/siryo07_01.pdf', isMinutes: false },
-      { name: '第7回 議事要旨 (PDF)', type: 'PDF', size: '340 KB', url: 'https://www.mod.go.jp/j/policy/agenda/meeting/drastic-reinforcement/pdf/siryo07_02.pdf', isMinutes: true },
       { name: '開催要綱 (PDF)', type: 'PDF', size: '120 KB', url: 'https://www.mod.go.jp/j/policy/agenda/meeting/drastic-reinforcement/pdf/youkou-01.pdf', isMinutes: false },
       { name: '運営要領 (PDF)', type: 'PDF', size: '110 KB', url: 'https://www.mod.go.jp/j/policy/agenda/meeting/drastic-reinforcement/pdf/youryou-01.pdf', isMinutes: false },
       { name: '防衛力の抜本的強化に関する有識者会議 公式ポータル', type: 'HTML', size: '35 KB', url: 'https://www.mod.go.jp/j/policy/agenda/meeting/drastic-reinforcement/index.html', isMinutes: false }
     ],
-    tags: ['防衛力抜本強化', '有識者会議', '安全保障戦略', '防衛生産基盤', '防衛省'],
+    tags: ['防衛力抜本強化', '有識者会議', '第6回', '報告書', '防衛省'],
     officialUrl: 'https://www.mod.go.jp/j/policy/agenda/meeting/drastic-reinforcement/index.html',
     hasMinutes: true,
-    docCount: 8
+    docCount: 7
   },
   {
     id: 'meet-mod-defense-industry-wg-latest',
