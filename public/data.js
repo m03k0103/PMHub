@@ -232,15 +232,37 @@ const COUNCILS = [
   },
   // 15. MOD
   {
-    id: 'mod-boei-seisan',
-    name: '防衛生産・技術基盤強化有識者会議',
+    id: 'mod-cho-shin',
+    name: '防衛調達審議会',
+    ministry: 'MOD',
+    category: 'COUNCIL',
+    pastYearCount: 198,
+    description: '防衛調達の公平性・透明性の確保および防衛装備品の効率的な調達・契約変更適正審査に関する調査審議。',
+    officialUrl: 'https://www.mod.go.jp/j/policy/agenda/meeting/cho-shin/index.html',
+    isWatched: true,
+    trackedSince: '2022-01-10'
+  },
+  {
+    id: 'mod-drastic-reinforcement',
+    name: '防衛力の抜本的強化に関する有識者会議',
     ministry: 'MOD',
     category: 'PANEL',
-    pastYearCount: 12,
-    description: '防衛装備移転三原則の見直し、先端技術 (AI・ドローン・量子) の防衛応用、国内防衛産業の事業継続支援策を検討。',
-    officialUrl: 'https://www.mod.go.jp/j/approach/agenda/index.html',
+    pastYearCount: 14,
+    description: '国家安全保障戦略に基づき、防衛力の抜本的強化・防衛生産・技術基盤の維持強化に関する提言および有識者議論。',
+    officialUrl: 'https://www.mod.go.jp/j/policy/agenda/meeting/drastic-reinforcement/index.html',
     isWatched: true,
-    trackedSince: '2023-01-10'
+    trackedSince: '2023-01-15'
+  },
+  {
+    id: 'mod-defense-industry-wg',
+    name: '防衛産業ワーキンググループ',
+    ministry: 'MOD',
+    category: 'ROUNDTABLE',
+    pastYearCount: 5,
+    description: '防衛生産・技術基盤の強化、防衛装備品の官民連携・産業基盤育成に向けたワーキンググループ。',
+    officialUrl: 'https://www.mod.go.jp/j/policy/agenda/meeting/defense_industry_wg/index.html',
+    isWatched: true,
+    trackedSince: '2023-05-20'
   },
   // 16. NPA
   {
@@ -543,28 +565,88 @@ const MEETINGS = [
   },
   // 7. MOD
   {
-    id: 'meet-2026-0717-mod',
-    councilId: 'mod-boei-seisan',
-    councilName: '防衛生産・技術基盤強化有識者会議',
+    id: 'meet-mod-cho-shin-latest',
+    councilId: 'mod-cho-shin',
+    councilName: '防衛調達審議会',
     ministry: 'MOD',
-    category: 'PANEL',
-    title: '第9回 防衛生産・技術基盤強化有識者会議',
+    category: 'COUNCIL',
+    title: '防衛調達審議会 令和8年度開催計画および審議事項',
     date: '2026-07-17',
     updatedAt: '2026-07-17 19:00',
-    location: '防衛省 A棟17階 特別会議室',
-    summary: '防衛技術イノベーション機関 (GIDO) の設立準備状況、および民生デュアルユース技術 (AI・無人アセット) の急速装備化に向けたファストトラック調達制度の運用方針が合意された。',
+    location: '防衛省 A棟',
+    summary: '防衛装備品等の調達価格の適正化および契約変更適正審査について審議が行われ、令和8年度開催計画に基づき議事要旨が公開された。',
     agenda: [
-      '防衛技術イノベーション機関の組織構想およびスタートアップ採択スキーム',
-      '防衛装備品の指定サプライチェーン企業に対するサイバーセキュリティ認証',
-      '自衛隊における自立型無人アセット（USV・UAV）の共同開発要領'
+      '令和8年度防衛調達審議会開催計画について',
+      '防衛装備品等の契約変更および調達価格の適正性審査について'
     ],
     materials: [
-      { name: '防衛省 会議・審議会 公式ポータル', type: 'HTML', size: '35 KB', url: 'https://www.mod.go.jp/j/approach/agenda/index.html', isMinutes: false }
+      { name: '令和8年度防衛調達審議会開催計画 (PDF)', type: 'PDF', size: '150 KB', url: 'https://www.mod.go.jp/j/policy/agenda/meeting/cho-shin/giji/pdf/r08_keikaku.pdf', isMinutes: false },
+      { name: '防衛調達審議会議事要旨 第198回 (PDF)', type: 'PDF', size: '280 KB', url: 'https://www.mod.go.jp/j/policy/agenda/meeting/cho-shin/giji/pdf/198.pdf', isMinutes: true },
+      { name: '防衛調達審議会議事要旨 第197回 (PDF)', type: 'PDF', size: '260 KB', url: 'https://www.mod.go.jp/j/policy/agenda/meeting/cho-shin/giji/pdf/197.pdf', isMinutes: true },
+      { name: '防衛調達審議会 公式ポータル', type: 'HTML', size: '35 KB', url: 'https://www.mod.go.jp/j/policy/agenda/meeting/cho-shin/index.html', isMinutes: false }
     ],
-    tags: ['防衛', '安全保障', 'デュアルユース', 'サイバー防衛', '防衛省'],
-    officialUrl: 'https://www.mod.go.jp/j/approach/agenda/index.html',
+    tags: ['防衛調達審議会', '防衛装備品', '調達価格', '契約審査', '防衛省'],
+    officialUrl: 'https://www.mod.go.jp/j/policy/agenda/meeting/cho-shin/index.html',
     hasMinutes: true,
-    docCount: 1
+    docCount: 4
+  },
+  {
+    id: 'meet-mod-drastic-reinforcement-latest',
+    councilId: 'mod-drastic-reinforcement',
+    councilName: '防衛力の抜本的強化に関する有識者会議',
+    ministry: 'MOD',
+    category: 'PANEL',
+    title: '防衛力の抜本的強化に関する有識者会議 報告書・提言',
+    date: '2026-07-15',
+    updatedAt: '2026-07-15 15:00',
+    location: '防衛省 特別会議室',
+    summary: '防衛力の抜本的強化に向けた提言概要・報告書および第7回会議資料・議事要旨がとりまとめられ公開された。',
+    agenda: [
+      '防衛力の抜本的強化に関する有識者会議 報告書および提言の概要について',
+      '安全保障環境の変化に対応した防衛生産・技術基盤の維持強化'
+    ],
+    materials: [
+      { name: '報告書による提言の概要 (PDF)', type: 'PDF', size: '850 KB', url: 'https://www.mod.go.jp/j/policy/agenda/meeting/drastic-reinforcement/pdf/siryo06_01.pdf', isMinutes: false },
+      { name: '「防衛力の抜本的強化に関する有識者会議」報告書 (PDF)', type: 'PDF', size: '2.4 MB', url: 'https://www.mod.go.jp/j/policy/agenda/meeting/drastic-reinforcement/pdf/siryo06_02.pdf', isMinutes: false },
+      { name: 'Summary of Recommendations [ENG] (PDF)', type: 'PDF', size: '620 KB', url: 'https://www.mod.go.jp/j/policy/agenda/meeting/drastic-reinforcement/pdf/siryo06_01_en.pdf', isMinutes: false },
+      { name: '第7回 会議資料 (PDF)', type: 'PDF', size: '1.1 MB', url: 'https://www.mod.go.jp/j/policy/agenda/meeting/drastic-reinforcement/pdf/siryo07_01.pdf', isMinutes: false },
+      { name: '第7回 議事要旨 (PDF)', type: 'PDF', size: '340 KB', url: 'https://www.mod.go.jp/j/policy/agenda/meeting/drastic-reinforcement/pdf/siryo07_02.pdf', isMinutes: true },
+      { name: '開催要綱 (PDF)', type: 'PDF', size: '120 KB', url: 'https://www.mod.go.jp/j/policy/agenda/meeting/drastic-reinforcement/pdf/youkou-01.pdf', isMinutes: false },
+      { name: '運営要領 (PDF)', type: 'PDF', size: '110 KB', url: 'https://www.mod.go.jp/j/policy/agenda/meeting/drastic-reinforcement/pdf/youryou-01.pdf', isMinutes: false },
+      { name: '防衛力の抜本的強化に関する有識者会議 公式ポータル', type: 'HTML', size: '35 KB', url: 'https://www.mod.go.jp/j/policy/agenda/meeting/drastic-reinforcement/index.html', isMinutes: false }
+    ],
+    tags: ['防衛力抜本強化', '有識者会議', '安全保障戦略', '防衛生産基盤', '防衛省'],
+    officialUrl: 'https://www.mod.go.jp/j/policy/agenda/meeting/drastic-reinforcement/index.html',
+    hasMinutes: true,
+    docCount: 8
+  },
+  {
+    id: 'meet-mod-defense-industry-wg-latest',
+    councilId: 'mod-defense-industry-wg',
+    councilName: '防衛産業ワーキンググループ',
+    ministry: 'MOD',
+    category: 'ROUNDTABLE',
+    title: '防衛産業ワーキンググループ 第2回会議',
+    date: '2026-06-20',
+    updatedAt: '2026-06-20 16:30',
+    location: '防衛省 会議室',
+    summary: '防衛産業の基盤強化、装備品等のサプライチェーン維持および官民連携に関する事務局説明資料・議事要旨が協議された。',
+    agenda: [
+      '防衛産業ワーキンググループの開催および運営要領について',
+      '防衛産業基盤育成とサプライチェーン強化に関する事務局説明'
+    ],
+    materials: [
+      { name: '第2回 議事次第 (PDF)', type: 'PDF', size: '95 KB', url: 'https://www.mod.go.jp/j/policy/agenda/meeting/defense_industry_wg/pdf/giji_02.pdf', isMinutes: false },
+      { name: '第2回 事務局説明資料 (PDF)', type: 'PDF', size: '1.6 MB', url: 'https://www.mod.go.jp/j/policy/agenda/meeting/defense_industry_wg/pdf/siryou02_01.pdf', isMinutes: false },
+      { name: '第2回 議事要旨 (PDF)', type: 'PDF', size: '240 KB', url: 'https://www.mod.go.jp/j/policy/agenda/meeting/defense_industry_wg/pdf/giji_yoshi_02.pdf', isMinutes: true },
+      { name: '資料1 防衛産業ワーキンググループの開催について (PDF)', type: 'PDF', size: '180 KB', url: 'https://www.mod.go.jp/j/policy/agenda/meeting/defense_industry_wg/pdf/siryou01_01.pdf', isMinutes: false },
+      { name: '資料2 防衛産業ワーキンググループ運営 (PDF)', type: 'PDF', size: '150 KB', url: 'https://www.mod.go.jp/j/policy/agenda/meeting/defense_industry_wg/pdf/siryou01_02.pdf', isMinutes: false },
+      { name: '防衛産業ワーキンググループ 公式ポータル', type: 'HTML', size: '35 KB', url: 'https://www.mod.go.jp/j/policy/agenda/meeting/defense_industry_wg/index.html', isMinutes: false }
+    ],
+    tags: ['防衛産業WG', '官民連携', 'サプライチェーン', '防衛生産基盤', '防衛省'],
+    officialUrl: 'https://www.mod.go.jp/j/policy/agenda/meeting/defense_industry_wg/index.html',
+    hasMinutes: true,
+    docCount: 6
   },
   // 8. MAFF
   {

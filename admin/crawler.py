@@ -95,6 +95,24 @@ CRAWL_TARGETS = [
         "ministry": "MOJ",
         "name": "法制審議会",
         "url": "https://www.moj.go.jp/shingi1/shingikai_soukai.html"
+    },
+    {
+        "id": "mod-cho-shin",
+        "ministry": "MOD",
+        "name": "防衛調達審議会",
+        "url": "https://www.mod.go.jp/j/policy/agenda/meeting/cho-shin/index.html"
+    },
+    {
+        "id": "mod-drastic-reinforcement",
+        "ministry": "MOD",
+        "name": "防衛力の抜本的強化に関する有識者会議",
+        "url": "https://www.mod.go.jp/j/policy/agenda/meeting/drastic-reinforcement/index.html"
+    },
+    {
+        "id": "mod-defense-industry-wg",
+        "ministry": "MOD",
+        "name": "防衛産業ワーキンググループ",
+        "url": "https://www.mod.go.jp/j/policy/agenda/meeting/defense_industry_wg/index.html"
     }
 ]
 
