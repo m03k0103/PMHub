@@ -59,6 +59,8 @@ document.addEventListener('DOMContentLoaded', () => {
     // Councils
     councilsGrid: document.getElementById('councilsGrid'),
     councilSearchInput: document.getElementById('councilSearchInput'),
+    councilMinistrySelect: document.getElementById('councilMinistrySelect'),
+    councilCategorySelect: document.getElementById('councilCategorySelect'),
 
     // Watchlist
     watchlistActiveCount: document.getElementById('watchlistActiveCount'),
@@ -227,11 +229,15 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     });
 
-    // Councils Directory Search
+    // Councils Directory Search & Filters
     if (el.councilSearchInput) {
-      el.councilSearchInput.addEventListener('input', (e) => {
-        renderCouncilsGrid(e.target.value.trim().toLowerCase());
-      });
+      el.councilSearchInput.addEventListener('input', () => renderCouncilsGrid());
+    }
+    if (el.councilMinistrySelect) {
+      el.councilMinistrySelect.addEventListener('change', () => renderCouncilsGrid());
+    }
+    if (el.councilCategorySelect) {
+      el.councilCategorySelect.addEventListener('change', () => renderCouncilsGrid());
     }
 
     // Export Data Button
@@ -576,14 +582,43 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // --- COUNCILS DIRECTORY ENGINE ---
-  function renderCouncilsGrid(filterQuery = '') {
+  function renderCouncilsGrid() {
+    const searchVal = el.councilSearchInput ? el.councilSearchInput.value.trim().toLowerCase() : '';
+    const ministryVal = el.councilMinistrySelect ? el.councilMinistrySelect.value : 'ALL';
+    const categoryVal = el.councilCategorySelect ? el.councilCategorySelect.value : 'ALL';
+
     const list = COUNCILS.filter(council => {
-      if (!filterQuery) return true;
-      const minName = MINISTRIES[council.ministry]?.name || '';
-      return council.name.toLowerCase().includes(filterQuery) ||
-             minName.toLowerCase().includes(filterQuery) ||
-             council.description.toLowerCase().includes(filterQuery);
+      // 1. Ministry filter
+      if (ministryVal !== 'ALL' && council.ministry !== ministryVal) return false;
+
+      // 2. Category filter
+      if (categoryVal !== 'ALL' && council.category !== categoryVal) return false;
+
+      // 3. Text search filter
+      if (searchVal) {
+        const minName = MINISTRIES[council.ministry]?.name || '';
+        const matchName = council.name.toLowerCase().includes(searchVal);
+        const matchMin = minName.toLowerCase().includes(searchVal);
+        const matchDesc = council.description.toLowerCase().includes(searchVal);
+        if (!matchName && !matchMin && !matchDesc) return false;
+      }
+
+      return true;
     });
+
+    if (list.length === 0) {
+      el.councilsGrid.innerHTML = `
+        <div class="no-results card-glass" style="grid-column: 1 / -1; text-align: center; padding: 2.5rem 1rem;">
+          <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="margin: 0 auto 0.75rem;">
+            <circle cx="11" cy="11" r="8" />
+            <line x1="21" y1="21" x2="16.65" y2="16.65" />
+          </svg>
+          <h3 style="font-weight: 700; color: var(--text-primary);">該当する会議体が見つかりませんでした</h3>
+          <p class="text-sm" style="margin-top: 0.4rem; color: var(--text-muted);">省庁・会議種別などの絞り込み条件を緩和してお試しください。</p>
+        </div>
+      `;
+      return;
+    }
 
     el.councilsGrid.innerHTML = list.map(c => {
       const minInfo = MINISTRIES[c.ministry] || { name: c.ministry };

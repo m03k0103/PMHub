@@ -63,7 +63,7 @@
             <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
             <path d="M16 3.13a4 4 0 0 1 0 7.75" />
           </svg>
-          会議一覧
+          会議体一覧
         </button>
         <button class="nav-tab" data-tab="watchlist">
           <svg class="tab-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
@@ -315,10 +315,65 @@
             </svg>
             会議体一覧
           </h2>
-          <p class="section-subtitle">日本政府の主要な会議体の一覧。お気に入り（ウォッチ）登録で更新通知を受け取れます。</p>
+          <p class="section-subtitle">日本政府各省庁の主要な会議体の一覧。お気に入り（ウォッチ）登録でマイウォッチリストへの集約やRSS連携が可能です。</p>
         </div>
-        <div class="directory-search">
-          <input type="text" id="councilSearchInput" placeholder="会議体名・所管省庁で検索..." />
+      </div>
+
+      <!-- COUNCILS FILTER BAR -->
+      <div class="filter-panel card-glass" style="margin-bottom: 1.5rem;">
+        <div class="filter-primary-row">
+          <div class="search-input-wrapper">
+            <svg class="search-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="11" cy="11" r="8" />
+              <line x1="21" y1="21" x2="16.65" y2="16.65" />
+            </svg>
+            <input type="text" id="councilSearchInput" placeholder="会議体名・所管省庁・概要キーワードで検索..." />
+          </div>
+        </div>
+
+        <div class="filter-secondary-row" style="margin-top: 0.75rem;">
+          <div class="filter-group">
+            <label for="councilMinistrySelect">所管省庁</label>
+            <select id="councilMinistrySelect">
+              <option value="ALL">すべての省庁・行政機関（全21省庁）</option>
+              <optgroup label="府・省">
+                <option value="CAO">内閣府 (CAO)</option>
+                <option value="CAS">内閣官房 (CAS)</option>
+                <option value="DIGITAL">デジタル庁 (DIGITAL)</option>
+                <option value="CFA">こども家庭庁 (CFA)</option>
+                <option value="RA">復興庁 (RA)</option>
+                <option value="MIC">総務省 (MIC)</option>
+                <option value="MOJ">法務省 (MOJ)</option>
+                <option value="MOFA">外務省 (MOFA)</option>
+                <option value="MOF">財務省 (MOF)</option>
+                <option value="MEXT">文部科学省 (MEXT)</option>
+                <option value="MHLW">厚生労働省 (MHLW)</option>
+                <option value="MAFF">農林水産省 (MAFF)</option>
+                <option value="METI">経済産業省 (METI)</option>
+                <option value="MLIT">国土交通省 (MLIT)</option>
+                <option value="MOE">環境省 (MOE)</option>
+                <option value="MOD">防衛省 (MOD)</option>
+              </optgroup>
+              <optgroup label="庁・委員会">
+                <option value="NPA">警察庁 (NPA)</option>
+                <option value="FSA">金融庁 (FSA)</option>
+                <option value="CAA">消費者庁 (CAA)</option>
+                <option value="PPC">個人情報保護委員会 (PPC)</option>
+                <option value="NRA">原子力規制委員会 (NRA)</option>
+              </optgroup>
+            </select>
+          </div>
+
+          <div class="filter-group">
+            <label for="councilCategorySelect">会議種別</label>
+            <select id="councilCategorySelect">
+              <option value="ALL">すべての会議種別</option>
+              <option value="COUNCIL">会議体・諮問会議</option>
+              <option value="SUBCOMMITTEE">分科会・部会</option>
+              <option value="PANEL">検討会・有識者会議</option>
+              <option value="ROUNDTABLE">懇談会・作業部会</option>
+            </select>
+          </div>
         </div>
       </div>
 
