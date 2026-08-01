@@ -803,14 +803,16 @@ const MEETINGS = [
       '介護サービスの基盤整備と生産性向上（ロボット・ICT導入）'
     ],
     materials: [
-      { name: '第21回 全世代型社会保障構築会議 議事録 (PDF)', type: 'PDF', size: '380 KB', url: 'https://www.cas.go.jp/jp/seisaku/zensedai_hosyo/dai21/gijiroku.pdf', isMinutes: true },
-      { name: '第20回 全世代型社会保障構築会議 議事録 (PDF)', type: 'PDF', size: '420 KB', url: 'https://www.cas.go.jp/jp/seisaku/zensedai_hosyo/dai20/gijiroku.pdf', isMinutes: true },
+      { name: '第21回 議事次第 (PDF)', type: 'PDF', size: '120 KB', url: 'https://www.cas.go.jp/jp/seisaku/zensedai_hosyo/dai21/00_gijisidai.pdf', isMinutes: false },
+      { name: '資料1: 全世代型社会保障推進の基本方針 (PDF)', type: 'PDF', size: '1,240 KB', url: 'https://www.cas.go.jp/jp/seisaku/zensedai_hosyo/dai21/01_siryou1.pdf', isMinutes: false },
+      { name: '資料2: 医療・介護構造改革の進捗 (PDF)', type: 'PDF', size: '890 KB', url: 'https://www.cas.go.jp/jp/seisaku/zensedai_hosyo/dai21/02_siryou2.pdf', isMinutes: false },
+      { name: '第21回 会議開催概要ページ', type: 'HTML', size: '35 KB', url: 'https://www.cas.go.jp/jp/seisaku/zensedai_hosyo/dai21/gijisidai.html', isMinutes: true },
       { name: '全世代型社会保障構築会議 公式ポータル', type: 'HTML', size: '45 KB', url: 'https://www.cas.go.jp/jp/seisaku/zensedai_hosyo/index.html', isMinutes: false }
     ],
     tags: ['社会保障', '医療 reform', '介護', '少子化対策', '内閣官房'],
-    officialUrl: 'https://www.cas.go.jp/jp/seisaku/zensedai_hosyo/index.html',
+    officialUrl: 'https://www.cas.go.jp/jp/seisaku/zensedai_hosyo/dai21/gijisidai.html',
     hasMinutes: true,
-    docCount: 3
+    docCount: 5
   },
   {
     id: 'meet-2026-0729-aihq',
