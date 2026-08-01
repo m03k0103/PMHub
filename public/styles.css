@@ -705,12 +705,6 @@ body {
   font-weight: 700;
   line-height: 1.4;
   color: var(--text-primary);
-  cursor: pointer;
-  transition: var(--transition-fast);
-}
-
-.card-title:hover {
-  color: var(--accent-primary);
 }
 
 .card-council-name {

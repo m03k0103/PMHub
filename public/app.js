@@ -403,15 +403,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     el.noResultsState.classList.add('hidden');
     el.timelineFeed.innerHTML = sorted.map(meeting => createTimelineCardHTML(meeting)).join('');
-
-    // Attach click events to dynamic elements
-    sorted.forEach(meeting => {
-      const cardEl = document.getElementById(`meeting-${meeting.id}`);
-      if (cardEl) {
-        const titleBtn = cardEl.querySelector('.card-title');
-        if (titleBtn) titleBtn.addEventListener('click', () => openModal(meeting));
-      }
-    });
   }
 
   function renderActiveFilterTags(count) {
@@ -458,10 +449,19 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   };
 
-  function renderMaterialsAccordionHTML(materials, meetingId) {
+  function renderMaterialsAccordionHTML(materials, meetingId, officialUrl) {
     if (!materials || materials.length === 0) return '';
 
-    const listItems = materials.map(mat => {
+    // 一次ソースと同じ場所へのリンクを除外
+    const filteredMaterials = materials.filter(mat => {
+      if (officialUrl && mat.url === officialUrl) return false;
+      if (mat.name && (mat.name.includes('一次ソース') || mat.name.includes('公式ポータル') || mat.name.includes('公式ページ'))) return false;
+      return true;
+    });
+
+    if (filteredMaterials.length === 0) return '';
+
+    const listItems = filteredMaterials.map(mat => {
       const isPrivate = mat.isPrivate || mat.type === '非公開' || mat.url === '#';
       const icon = isPrivate ? '🔒' : (mat.type === 'PDF' ? '📄' : '🌐');
       
@@ -482,9 +482,6 @@ document.addEventListener('DOMContentLoaded', () => {
               <span class="badge-private">非公開</span>
             ` : `
               <span class="badge-file-size">${mat.size || ''}</span>
-              <a href="${mat.url}" target="_blank" rel="noopener noreferrer" class="btn-secondary btn-sm" style="padding:0.2rem 0.55rem; font-size:0.75rem;">
-                開く ↗
-              </a>
             `}
           </div>
         </li>
@@ -496,7 +493,7 @@ document.addEventListener('DOMContentLoaded', () => {
         <button class="materials-toggle-btn" onclick="toggleMaterialsAccordion('${meetingId}')" type="button">
           <div class="materials-toggle-left">
             <span>📂 公開資料・配布文書を開く</span>
-            <span class="materials-badge-count">${materials.length}件</span>
+            <span class="materials-badge-count">${filteredMaterials.length}件</span>
           </div>
           <span class="toggle-arrow" id="arrow-${meetingId}">▼</span>
         </button>
@@ -566,7 +563,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         ${(state.enableAiSummary && meeting.summary) ? `<div class="card-summary">${escapeHtml(meeting.summary)}</div>` : ''}
 
-        ${renderMaterialsAccordionHTML(meeting.materials, meeting.id)}
+        ${renderMaterialsAccordionHTML(meeting.materials, meeting.id, meeting.officialUrl)}
 
         <div class="card-bottom-row">
           <div class="card-tags">${tagsHTML}</div>
