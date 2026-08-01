@@ -155,6 +155,12 @@ TARGET_COUNCILS = [
         "ministry": "NRA",
         "name": "原子力規制委員会",
         "url": "https://www.nra.go.jp/index.html"
+    },
+    {
+        "id": "cao-space-anpo",
+        "ministry": "CAO",
+        "name": "宇宙政策委員会 宇宙安全保障部会",
+        "url": "https://www8.cao.go.jp/space/comittee/anpo.html"
     }
 ]
 

@@ -53,6 +53,17 @@ const COUNCILS = [
     trackedSince: '2023-05-01'
   },
   {
+    id: 'cao-space-anpo',
+    name: '宇宙政策委員会 宇宙安全保障部会',
+    ministry: 'CAO',
+    category: 'SUBCOMMITTEE',
+    pastYearCount: 6,
+    description: '国家安全保障戦略および宇宙安全保障構想に基づき、防衛宇宙機能の強化、SDA（宇宙状況把握）、宇宙利用の持続性確保を審議。',
+    officialUrl: 'https://www8.cao.go.jp/space/comittee/anpo.html',
+    isWatched: true,
+    trackedSince: '2023-01-10'
+  },
+  {
     id: 'cao-kisei-kaikaku',
     name: '規制改革推進会議',
     ministry: 'CAO',
@@ -434,6 +445,162 @@ const MEETINGS = [
     officialUrl: 'https://www8.cao.go.jp/cstp/ai/ai_senryaku/14kai/14kai.html',
     hasMinutes: true,
     docCount: 5
+  },
+  {
+    id: 'meet-cao-space-anpo-70th',
+    councilId: 'cao-space-anpo',
+    councilName: '宇宙政策委員会 宇宙安全保障部会',
+    ministry: 'CAO',
+    category: 'SUBCOMMITTEE',
+    title: '第70回 宇宙政策委員会 宇宙安全保障部会',
+    date: '2026-07-30',
+    updatedAt: '2026-07-30 18:00',
+    location: '内閣府 宇宙開発戦略推進事務局 会議室',
+    summary: '総務省・外務省の取組進捗、第69回COPUOS参加結果、米宇宙軍予算動向とJ-LEO、成長戦略会議での議論等について審議・報告が行われた。',
+    agenda: [
+      '総務省の取組の進捗状況について',
+      '宇宙空間の持続的かつ安定的な利用の確保に向けた外務省の取組およびCOPUOS参加結果',
+      '米宇宙軍の予算動向と日本へのインプリケーション（J-LEO）および成長戦略会議での議論'
+    ],
+    materials: [
+      { name: '資料1 総務省の取組の進捗状況について (PDF)', type: 'PDF', size: '396 KB', url: 'https://www8.cao.go.jp/space/comittee/27-anpo/anpo-dai70/siryou1.pdf', isMinutes: false },
+      { name: '資料2-1 宇宙空間の持続的かつ安定的な利用の確保に向けた外務省の取組 (PDF)', type: 'PDF', size: '1.5 MB', url: 'https://www8.cao.go.jp/space/comittee/27-anpo/anpo-dai70/siryou2-1.pdf', isMinutes: false },
+      { name: '資料2-2 第６９回国連宇宙空間平和利用委員会（COPUOS）参加結果概要 (PDF)', type: 'PDF', size: '652 KB', url: 'https://www8.cao.go.jp/space/comittee/27-anpo/anpo-dai70/siryou2-2.pdf', isMinutes: false },
+      { name: '資料3 米宇宙軍の予算動向と日本へのインプリケーション（J-LEO）概要 (PDF)', type: 'PDF', size: '975 KB', url: 'https://www8.cao.go.jp/space/comittee/27-anpo/anpo-dai70/siryou3.pdf', isMinutes: false },
+      { name: '資料4 宇宙安全保障分野での取組と期待 (PDF)', type: 'PDF', size: '3.4 MB', url: 'https://www8.cao.go.jp/space/comittee/27-anpo/anpo-dai70/siryou4.pdf', isMinutes: false },
+      { name: '資料5 日本成長戦略会議等における議論について (PDF)', type: 'PDF', size: '2.8 MB', url: 'https://www8.cao.go.jp/space/comittee/27-anpo/anpo-dai70/siryou5.pdf', isMinutes: false },
+      { name: '第70回 配布資料ページ', type: 'HTML', size: '35 KB', url: 'https://www8.cao.go.jp/space/comittee/27-anpo/anpo-dai70/gijisidai.html', isMinutes: false },
+      { name: '宇宙安全保障部会 公式ポータル', type: 'HTML', size: '35 KB', url: 'https://www8.cao.go.jp/space/comittee/anpo.html', isMinutes: false }
+    ],
+    tags: ['宇宙安全保障部会', '第70回', 'J-LEO', 'COPUOS', '内閣府'],
+    officialUrl: 'https://www8.cao.go.jp/space/comittee/27-anpo/anpo-dai70/gijisidai.html',
+    hasMinutes: true,
+    docCount: 8
+  },
+  {
+    id: 'meet-cao-space-anpo-69th',
+    councilId: 'cao-space-anpo',
+    councilName: '宇宙政策委員会 宇宙安全保障部会',
+    ministry: 'CAO',
+    category: 'SUBCOMMITTEE',
+    title: '第69回 宇宙政策委員会 宇宙安全保障部会',
+    date: '2026-05-14',
+    updatedAt: '2026-05-14 18:00',
+    location: '内閣府 会議室',
+    summary: '宇宙安全保障構想の進捗状況および防衛・民間デュアルユース技術の推進について審議され、議事要旨および議事録が公開された。',
+    agenda: [
+      '宇宙安全保障構想に基づく主要施策の推進状況',
+      'SDA（宇宙状況把握）能力強化および国際連携方針'
+    ],
+    materials: [
+      { name: '第69回 議事要旨 (PDF)', type: 'PDF', size: '82 KB', url: 'https://www8.cao.go.jp/space/comittee/27-anpo/anpo-dai69/gijiyousi.pdf', isMinutes: true },
+      { name: '第69回 議事録 (PDF)', type: 'PDF', size: '191 KB', url: 'https://www8.cao.go.jp/space/comittee/27-anpo/anpo-dai69/gijiroku.pdf', isMinutes: true },
+      { name: '第69回 配布資料ページ', type: 'HTML', size: '35 KB', url: 'https://www8.cao.go.jp/space/comittee/27-anpo/anpo-dai69/gijisidai.html', isMinutes: false }
+    ],
+    tags: ['宇宙安全保障部会', '第69回', 'SDA', '議事要旨', '議事録'],
+    officialUrl: 'https://www8.cao.go.jp/space/comittee/27-anpo/anpo-dai69/gijisidai.html',
+    hasMinutes: true,
+    docCount: 3
+  },
+  {
+    id: 'meet-cao-space-anpo-68th',
+    councilId: 'cao-space-anpo',
+    councilName: '宇宙政策委員会 宇宙安全保障部会',
+    ministry: 'CAO',
+    category: 'SUBCOMMITTEE',
+    title: '第68回 宇宙政策委員会 宇宙安全保障部会',
+    date: '2026-03-10',
+    updatedAt: '2026-03-10 18:00',
+    location: '内閣府 会議室',
+    summary: '商業宇宙利用の安全保障上の課題、人工衛星防護に関する検討について審議され、議事要旨および議事録が公開された。',
+    agenda: [
+      '商業宇宙システムの安全保障機能強化に関する討議',
+      '衛星通信・測位インフラの抗たん性向上策'
+    ],
+    materials: [
+      { name: '第68回 議事要旨 (PDF)', type: 'PDF', size: '83 KB', url: 'https://www8.cao.go.jp/space/comittee/27-anpo/anpo-dai68/gijiyousi.pdf', isMinutes: true },
+      { name: '第68回 議事録 (PDF)', type: 'PDF', size: '202 KB', url: 'https://www8.cao.go.jp/space/comittee/27-anpo/anpo-dai68/gijiroku.pdf', isMinutes: true },
+      { name: '第68回 配布資料ページ', type: 'HTML', size: '35 KB', url: 'https://www8.cao.go.jp/space/comittee/27-anpo/anpo-dai68/gijisidai.html', isMinutes: false }
+    ],
+    tags: ['宇宙安全保障部会', '第68回', '衛星防護', '議事要旨', '議事録'],
+    officialUrl: 'https://www8.cao.go.jp/space/comittee/27-anpo/anpo-dai68/gijisidai.html',
+    hasMinutes: true,
+    docCount: 3
+  },
+  {
+    id: 'meet-cao-space-anpo-67th',
+    councilId: 'cao-space-anpo',
+    councilName: '宇宙政策委員会 宇宙安全保障部会',
+    ministry: 'CAO',
+    category: 'SUBCOMMITTEE',
+    title: '第67回 宇宙政策委員会 宇宙安全保障部会',
+    date: '2025-11-25',
+    updatedAt: '2025-11-25 18:00',
+    location: '内閣府 会議室',
+    summary: '宇宙防衛技術の研究開発投資および同盟国との宇宙状況共有体制について審議され、議事要旨および議事録が公開された。',
+    agenda: [
+      '先端宇宙技術の研究開発戦略とデュアルユース推進方針',
+      '宇宙安全保障における多角的一括協議の実施状況'
+    ],
+    materials: [
+      { name: '第67回 議事要旨 (PDF)', type: 'PDF', size: '85 KB', url: 'https://www8.cao.go.jp/space/comittee/27-anpo/anpo-dai67/gijiyousi.pdf', isMinutes: true },
+      { name: '第67回 議事録 (PDF)', type: 'PDF', size: '240 KB', url: 'https://www8.cao.go.jp/space/comittee/27-anpo/anpo-dai67/gijiroku.pdf', isMinutes: true },
+      { name: '第67回 配布資料ページ', type: 'HTML', size: '35 KB', url: 'https://www8.cao.go.jp/space/comittee/27-anpo/anpo-dai67/gijisidai.html', isMinutes: false }
+    ],
+    tags: ['宇宙安全保障部会', '第67回', 'デュアルユース', '議事要旨', '議事録'],
+    officialUrl: 'https://www8.cao.go.jp/space/comittee/27-anpo/anpo-dai67/gijisidai.html',
+    hasMinutes: true,
+    docCount: 3
+  },
+  {
+    id: 'meet-cao-space-anpo-66th',
+    councilId: 'cao-space-anpo',
+    councilName: '宇宙政策委員会 宇宙安全保障部会',
+    ministry: 'CAO',
+    category: 'SUBCOMMITTEE',
+    title: '第66回 宇宙政策委員会 宇宙安全保障部会',
+    date: '2025-10-21',
+    updatedAt: '2025-10-21 18:00',
+    location: '内閣府 会議室',
+    summary: '宇宙アセットの安全確保および宇宙デブリ低減ガイドラインの適用について審議され、議事要旨および議事録が公開された。',
+    agenda: [
+      '宇宙アセット防護のための行動規範策定方針',
+      '宇宙デブリ除去技術と軌道上サービスの推進'
+    ],
+    materials: [
+      { name: '第66回 議事要旨 (PDF)', type: 'PDF', size: '83 KB', url: 'https://www8.cao.go.jp/space/comittee/27-anpo/anpo-dai66/gijiyousi.pdf', isMinutes: true },
+      { name: '第66回 議事録 (PDF)', type: 'PDF', size: '207 KB', url: 'https://www8.cao.go.jp/space/comittee/27-anpo/anpo-dai66/gijiroku.pdf', isMinutes: true },
+      { name: '第66回 配布資料ページ', type: 'HTML', size: '35 KB', url: 'https://www8.cao.go.jp/space/comittee/27-anpo/anpo-dai66/gijisidai.html', isMinutes: false }
+    ],
+    tags: ['宇宙安全保障部会', '第66回', '宇宙デブリ', '議事要旨', '議事録'],
+    officialUrl: 'https://www8.cao.go.jp/space/comittee/27-anpo/anpo-dai66/gijisidai.html',
+    hasMinutes: true,
+    docCount: 3
+  },
+  {
+    id: 'meet-cao-space-anpo-65th',
+    councilId: 'cao-space-anpo',
+    councilName: '宇宙政策委員会 宇宙安全保障部会',
+    ministry: 'CAO',
+    category: 'SUBCOMMITTEE',
+    title: '第65回 宇宙政策委員会 宇宙安全保障部会',
+    date: '2025-07-24',
+    updatedAt: '2025-07-24 18:00',
+    location: '内閣府 会議室',
+    summary: '令和8年度宇宙安全保障関連予算の概算要求方針および宇宙安全保障構想の進捗検証が審議され、議事要旨および議事録が公開された。',
+    agenda: [
+      '令和8年度宇宙安全保障関連予算要求の基本的考え方',
+      '宇宙安全保障構想に基づく年次検証および基本計画への反映'
+    ],
+    materials: [
+      { name: '第65回 議事要旨 (PDF)', type: 'PDF', size: '121 KB', url: 'https://www8.cao.go.jp/space/comittee/27-anpo/anpo-dai65/gijiyousi.pdf', isMinutes: true },
+      { name: '第65回 議事録 (PDF)', type: 'PDF', size: '201 KB', url: 'https://www8.cao.go.jp/space/comittee/27-anpo/anpo-dai65/gijiroku.pdf', isMinutes: true },
+      { name: '第65回 配布資料ページ', type: 'HTML', size: '35 KB', url: 'https://www8.cao.go.jp/space/comittee/27-anpo/anpo-dai65/gijisidai.html', isMinutes: false }
+    ],
+    tags: ['宇宙安全保障部会', '第65回', '予算概算要求', '議事要旨', '議事録'],
+    officialUrl: 'https://www8.cao.go.jp/space/comittee/27-anpo/anpo-dai65/gijisidai.html',
+    hasMinutes: true,
+    docCount: 3
   },
   // 2. DIGITAL
   {
