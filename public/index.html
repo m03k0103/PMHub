@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>政策会議ウォッチ | 日本政府 審議会・諮問会議 資料集約ポータル</title>
+  <meta name="description" content="日本政府各省庁の審議会・分科会・検討会等の更新情報や配布資料（議事次第、議事要旨、議事録、資料）を一箇所に集約・横断検索できる情報収集ポータル" />
+  <meta name="keywords" content="政策会議ウォッチ, PMHub, 審議会, 諮問会議, 内閣官房, 内閣府, デジタル庁, 経済産業省, 議事録, 政府配布資料, 報道資料, 政策調査" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@400;500;700;800&family=JetBrains+Mono:wght@400;500&display=swap"
+    rel="stylesheet">
+
+  <!-- Chart.js for Analytics -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body data-theme="dark">
+
+  <!-- TOP HEADER -->
+  <header class="app-header">
+    <div class="header-container">
+      <div class="brand-logo" id="brandLogo">
+        <div class="logo-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+            <path d="M12 8v4" />
+            <path d="M12 16h.01" />
+          </svg>
+        </div>
+        <div class="logo-text">
+          <span class="product-name">政策会議ウォッチ</span>
+          <span class="product-badge">PM-HUB v1.0 (Public Portal)</span>
+        </div>
+      </div>
+
+      <!-- Main Navigation Tabs -->
+      <nav class="main-nav">
+        <button class="nav-tab active" data-tab="timeline">
+          <svg class="tab-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="2">
+            <circle cx="12" cy="12" r="10" />
+            <polyline points="12 6 12 12 16 14" />
+          </svg>
+          新着タイムライン
+        </button>
+        <button class="nav-tab" data-tab="councils">
+          <svg class="tab-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="2">
+            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+            <circle cx="9" cy="7" r="4" />
+            <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+            <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+          </svg>
+          審議会・会議一覧
+        </button>
+        <button class="nav-tab" data-tab="analytics">
+          <svg class="tab-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="2">
+            <line x1="18" y1="20" x2="18" y2="10" />
+            <line x1="12" y1="20" x2="12" y2="4" />
+            <line x1="6" y1="20" x2="6" y2="14" />
+          </svg>
+          政策トレンド・統計
+        </button>
+        <button class="nav-tab" data-tab="watchlist">
+          <svg class="tab-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="2">
+            <polygon
+              points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+          </svg>
+          ウォッチリスト <span class="badge-count" id="watchlistCount">0</span>
+        </button>
+        <button class="nav-tab" data-tab="about">
+          <svg class="tab-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="2">
+            <circle cx="12" cy="12" r="10" />
+            <line x1="12" y1="16" x2="12" y2="12" />
+            <line x1="12" y1="8" x2="12.01" y2="8" />
+          </svg>
+          仕様・収集方針
+        </button>
+      </nav>
+
+      <!-- Right Header Actions -->
+      <div class="header-actions">
+        <button class="btn-theme-toggle" id="themeToggleBtn" title="ダーク / ライト表示切り替え">
+          <svg class="sun-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="2">
+            <circle cx="12" cy="12" r="5" />
+            <line x1="12" y1="1" x2="12" y2="3" />
+            <line x1="12" y1="21" x2="12" y2="23" />
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
+            <line x1="1" y1="12" x2="3" y2="12" />
+            <line x1="21" y1="12" x2="23" y2="12" />
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
+          </svg>
+          <svg class="moon-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="2">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+          </svg>
+        </button>
+        <button class="btn-export-data" id="exportDataBtn" title="全検索結果をJSON/CSV出力">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+            <polyline points="7 10 12 15 17 10" />
+            <line x1="12" y1="15" x2="12" y2="3" />
+          </svg>
+          <span>データ出力</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO STATS STRIP -->
+  <section class="hero-stats-strip">
+    <div class="container stats-flex">
+      <div class="stat-item">
+        <span class="stat-value" id="statTrackedCouncils">--</span>
+        <span class="stat-label">監視中 審議会・会議体</span>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat-item">
+        <span class="stat-value" id="statTotalMeetings">--</span>
+        <span class="stat-label">集約済み 開催履歴</span>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat-item">
+        <span class="stat-value" id="statTotalDocs">--</span>
+        <span class="stat-label">インデックス配布資料・議事録</span>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat-item">
+        <span class="stat-value text-accent" id="statLastUpdate">今日 11:45</span>
+        <span class="stat-label">最終自動更新時刻</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- MAIN APP CONTAINER -->
+  <main class="app-main container">
+
+    <!-- VIEW 1: TIMELINE VIEW -->
+    <section class="view-panel active" id="viewTimeline">
+
+      <!-- SEARCH & FILTER BAR -->
+      <div class="filter-panel card-glass">
+        <div class="filter-primary-row">
+          <div class="search-input-wrapper">
+            <svg class="search-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="2">
+              <circle cx="11" cy="11" r="8" />
+              <line x1="21" y1="21" x2="16.65" y2="16.65" />
+            </svg>
+            <input type="text" id="searchInput" placeholder="審議会名、キーワード、政策課題、配布資料名で横断検索..." autocomplete="off" />
+            <button class="clear-search-btn hidden" id="clearSearchBtn" title="検索クリア">&times;</button>
+          </div>
+
+          <div class="quick-keywords">
+            <span class="quick-label">注目ワード:</span>
+            <button class="keyword-chip" data-keyword="AI">AI・生成AI</button>
+            <button class="keyword-chip" data-keyword="デジタル">デジタル社会</button>
+            <button class="keyword-chip" data-keyword="規制改革">規制改革</button>
+            <button class="keyword-chip" data-keyword="社会保障">社会保障</button>
+            <button class="keyword-chip" data-keyword="脱炭素">GX・脱炭素</button>
+            <button class="keyword-chip" data-keyword="賃上げ">賃上げ・労働</button>
+          </div>
+        </div>
+
+        <div class="filter-secondary-row">
+          <!-- Ministry Select -->
+          <div class="filter-group">
+            <label for="ministrySelect">所管省庁</label>
+            <select id="ministrySelect">
+              <option value="ALL">すべての省庁・行政機関（全21省庁）</option>
+              <optgroup label="府・省">
+                <option value="CAO">内閣府 (CAO)</option>
+                <option value="CAS">内閣官房 (CAS)</option>
+                <option value="MIC">総務省 (MIC)</option>
+                <option value="MOJ">法務省 (MOJ)</option>
+                <option value="MOFA">外務省 (MOFA)</option>
+                <option value="MOF">財務省 (MOF)</option>
+                <option value="MEXT">文部科学省 (MEXT)</option>
+                <option value="MHLW">厚生労働省 (MHLW)</option>
+                <option value="MAFF">農林水産省 (MAFF)</option>
+                <option value="METI">経済産業省 (METI)</option>
+                <option value="MLIT">国土交通省 (MLIT)</option>
+                <option value="MOE">環境省 (MOE)</option>
+                <option value="MOD">防衛省 (MOD)</option>
+              </optgroup>
+              <optgroup label="庁">
+                <option value="DIGITAL">デジタル庁 (Digital)</option>
+                <option value="CFA">こども家庭庁 (CFA)</option>
+                <option value="CAA">消費者庁 (CAA)</option>
+                <option value="FSA">金融庁 (FSA)</option>
+                <option value="NPA">警察庁 (NPA)</option>
+                <option value="RA">復興庁 (RA)</option>
+              </optgroup>
+              <optgroup label="委員会">
+                <option value="PPC">個人情報保護委員会 (PPC)</option>
+                <option value="FTC">公正取引委員会 (FTC)</option>
+                <option value="NRA">原子力規制委員会 (NRA)</option>
+              </optgroup>
+            </select>
+          </div>
+
+          <!-- Meeting Type Select -->
+          <div class="filter-group">
+            <label for="categorySelect">会議種別</label>
+            <select id="categorySelect">
+              <option value="ALL">すべての会議種別</option>
+              <option value="COUNCIL">審議会・諮問会議</option>
+              <option value="SUBCOMMITTEE">分科会・部会</option>
+              <option value="PANEL">検討会・有識者会議</option>
+              <option value="ROUNDTABLE">懇談会・作業部会</option>
+            </select>
+          </div>
+
+          <!-- Document Type Select -->
+          <div class="filter-group">
+            <label for="docTypeSelect">資料種別</label>
+            <select id="docTypeSelect">
+              <option value="ALL">すべての資料</option>
+              <option value="MINUTES">議事録・要旨あり</option>
+              <option value="MATERIALS">配布資料あり</option>
+              <option value="REPORT">答申・報告書・ガイドライン</option>
+            </select>
+          </div>
+
+          <!-- Date Range Select -->
+          <div class="filter-group">
+            <label for="dateRangeSelect">更新期間</label>
+            <select id="dateRangeSelect">
+              <option value="ALL">全期間</option>
+              <option value="7D">直近 7 日間</option>
+              <option value="30D">直近 30 日間</option>
+              <option value="90D">直近 90 日間</option>
+              <option value="YEAR">今年度 (2026年)</option>
+            </select>
+          </div>
+
+          <!-- Reset Filter Button -->
+          <div class="filter-group filter-actions">
+            <button class="btn-secondary" id="resetFiltersBtn">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M23 4v6h-6" />
+                <path d="M1 20v-6h6" />
+                <path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15" />
+              </svg>
+              条件リセット
+            </button>
+          </div>
+        </div>
+
+        <!-- ACTIVE FILTER TAGS BAR -->
+        <div class="active-filters-bar hidden" id="activeFiltersBar">
+          <span class="active-filters-title">適用中の条件:</span>
+          <div class="active-tags-container" id="activeTagsContainer"></div>
+          <span class="results-count" id="resultsCount">件数: -- 件</span>
+        </div>
+      </div>
+
+      <!-- TIMELINE LIST CONTAINER -->
+      <div class="timeline-container">
+        <div class="section-header">
+          <h2 class="section-title">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="10" />
+              <polyline points="12 6 12 12 16 14" />
+            </svg>
+            最新の審議会・会議開催・資料更新タイムライン
+          </h2>
+          <div class="sort-controls">
+            <label for="sortBySelect">並び替え:</label>
+            <select id="sortBySelect">
+              <option value="NEWEST">開催/更新日 (新しい順)</option>
+              <option value="OLDEST">開催/更新日 (古い順)</option>
+              <option value="DOCS_DESC">資料点数 (多い順)</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="timeline-feed" id="timelineFeed">
+          <!-- Timeline Card Dynamic Injection -->
+        </div>
+
+        <!-- NO RESULTS MESSAGE -->
+        <div class="no-results card-glass hidden" id="noResultsState">
+          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <circle cx="11" cy="11" r="8" />
+            <line x1="21" y1="21" x2="16.65" y2="16.65" />
+            <line x1="11" y1="8" x2="11" y2="14" />
+            <line x1="8" y1="11" x2="14" y2="11" />
+          </svg>
+          <h3>該当する審議会・会議資料が見つかりませんでした</h3>
+          <p>検索キーワードを短くするか、省庁・期間などの絞り込み条件を緩和してお試しください。</p>
+          <button class="btn-primary" id="noResultsResetBtn">条件をクリアして全件表示</button>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- VIEW 2: COUNCILS DIRECTORY -->
+    <section class="view-panel" id="viewCouncils">
+      <div class="section-header">
+        <div>
+          <h2 class="section-title">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+              <circle cx="9" cy="7" r="4" />
+              <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+              <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+            </svg>
+            トラッキング対象 審議会・諮問会議ディレクトリ
+          </h2>
+          <p class="section-subtitle">日本政府各省庁の主要な審議会・有識者会議の一覧。お気に入り（ウォッチ）登録で更新通知を受け取れます。</p>
+        </div>
+        <div class="directory-search">
+          <input type="text" id="councilSearchInput" placeholder="審議会名・所管省庁で検索..." />
+        </div>
+      </div>
+
+      <div class="councils-grid" id="councilsGrid">
+        <!-- Councils Grid Injection -->
+      </div>
+    </section>
+
+    <!-- VIEW 3: ANALYTICS & TRENDS -->
+    <section class="view-panel" id="viewAnalytics">
+      <div class="section-header">
+        <div>
+          <h2 class="section-title">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="18" y1="20" x2="18" y2="10" />
+              <line x1="12" y1="20" x2="12" y2="4" />
+              <line x1="6" y1="20" x2="6" y2="14" />
+            </svg>
+            政策トレンド・審議会開催統計アナリティクス
+          </h2>
+          <p class="section-subtitle">各省庁の会議開催頻度や配布資料数、直近の主要議論テーマのトレンド分析</p>
+        </div>
+      </div>
+
+      <div class="analytics-grid">
+        <div class="chart-card card-glass">
+          <div class="chart-header">
+            <h3>省庁別 審議会・会議開催実績</h3>
+            <span class="chart-desc">直近の会議開催件数 breakdown</span>
+          </div>
+          <div class="chart-body">
+            <canvas id="ministryChart"></canvas>
+          </div>
+        </div>
+
+        <div class="chart-card card-glass">
+          <div class="chart-header">
+            <h3>注目テーマ・キーワード出現頻度</h3>
+            <span class="chart-desc">アジェンダ・資料題目から抽出</span>
+          </div>
+          <div class="chart-body">
+            <canvas id="keywordChart"></canvas>
+          </div>
+        </div>
+
+        <div class="chart-card card-glass full-width">
+          <div class="chart-header">
+            <h3>月別 資料・議事録公開アクティビティ</h3>
+            <span class="chart-desc">時系列における情報公開ペースの推移</span>
+          </div>
+          <div class="chart-body">
+            <canvas id="timelineChart"></canvas>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- VIEW 4: WATCHLIST & ALERTS -->
+    <section class="view-panel" id="viewWatchlist">
+      <div class="section-header">
+        <div>
+          <h2 class="section-title">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polygon
+                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+            </svg>
+            マイウォッチリスト &amp; アラート購読
+          </h2>
+          <p class="section-subtitle">登録した審議会の最新更新・キーワードアラートを一括確認。RSSフィードやデータ連携用URLも生成可能。</p>
+        </div>
+      </div>
+
+      <!-- PRIVACY & LOCALSTORAGE NOTICE -->
+      <div class="privacy-notice-banner"
+        style="background: rgba(59, 130, 246, 0.1); border: 1px solid rgba(59, 130, 246, 0.35); border-radius: var(--radius-md); padding: 0.9rem 1.25rem; margin-bottom: 1.5rem; display: flex; align-items: center; gap: 0.85rem;">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2"
+          style="flex-shrink:0;">
+          <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+          <path d="M12 8v4" />
+          <path d="M12 16h.01" />
+        </svg>
+        <div class="text-sm" style="color: var(--text-primary); line-height: 1.55;">
+          <strong>🔒 データ保存・プライバシー保護仕様:</strong>
+          登録されたウォッチリストやキーワードアラート等の個人設定情報は、すべてお客様のブラウザ内（ローカルストレージ）にのみ安全に保存されます。会員登録やログインは不要であり、<strong>運営者や外部サーバーへ関心テーマや閲覧データが送信されることは一切ありません。</strong>
+        </div>
+      </div>
+
+      <div class="watchlist-content-grid">
+        <div class="watchlist-main card-glass">
+          <h3>登録中の審議会 (<span id="watchlistActiveCount">0</span> 件)</h3>
+          <div class="watchlist-list" id="watchlistItems">
+            <!-- Watchlist Items Injection -->
+          </div>
+        </div>
+
+        <div class="watchlist-sidebar">
+          <div class="alert-config-card card-glass">
+            <h3>キーワード追跡アラート</h3>
+            <p class="text-sm">指定したキーワードが審議会資料に含まれた際にハイライト通知します。</p>
+            <div class="keyword-add-form">
+              <input type="text" id="newAlertKeyword" placeholder="例: サイバーセキュリティ, 量子" />
+              <button class="btn-primary" id="addKeywordAlertBtn">追加</button>
+            </div>
+            <div class="alert-keywords-list" id="alertKeywordsList">
+              <!-- Alert keywords chips -->
+            </div>
+          </div>
+
+          <div class="rss-export-card card-glass">
+            <h3>RSS / API 連携 URL</h3>
+            <p class="text-sm">お手元のRSSリーダーや自動化ツール（Zapier/Slack）で更新情報を受信できます。</p>
+            <div class="rss-url-box">
+              <input type="text" readonly id="rssUrlInput" value="https://pm-hub.gov.example/rss/my-watchlist.xml" />
+              <button class="btn-secondary btn-sm" id="copyRssBtn">URLコピー</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- VIEW 5: ABOUT & METHODOLOGY -->
+    <section class="view-panel" id="viewAbout">
+      <div class="about-card card-glass">
+        <h2>政策会議ウォッチ (PM-HUB) について</h2>
+        <p class="lead-text">
+          「政策会議ウォッチ」は、内閣官房・内閣府・各省庁のウェブサイトに分散して掲載されている審議会、諮問会議、有識者検討会、分科会等の開催情報および配布資料・議事録を一箇所に集約し、一般国民、報道関係者（記者）、研究者・アナリスト向けに透明性と一覧性を提供するオープン情報ポータルです。
+        </p>
+
+        <div class="about-grid">
+          <div class="about-box">
+            <div class="about-box-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z" />
+              </svg>
+            </div>
+            <h4>情報収集の課題と目的</h4>
+            <p>
+              各省庁の審議会資料は、サイト構造や公開フォーマット（PDF、HTML）が省庁ごとに異なり、タイムリーな把握や過去資料の横断検索に多大な時間と手数がかかっていました。本システムではメタデータを標準化し、数タップで一次資料へアクセス可能にします。
+            </p>
+          </div>
+
+          <div class="about-box">
+            <div class="about-box-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path
+                  d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z" />
+                <polyline points="3.27 6.96 12 12.01 20.73 6.96" />
+                <line x1="12" y1="22.08" x2="12" y2="12" />
+              </svg>
+            </div>
+            <h4>データ更新・クローリング仕様</h4>
+            <p>
+              全21省庁および内閣官房の公開Webページを定期クローリングし、AIメタデータ抽出エンジンにより会議回数・議題・配布資料の直リンク・アジェンダを自動インデックス化しています。
+            </p>
+          </div>
+
+          <div class="about-box">
+            <div class="about-box-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+                <polyline points="14 2 14 8 20 8" />
+                <line x1="16" y1="13" x2="8" y2="13" />
+                <line x1="16" y1="17" x2="8" y2="17" />
+                <polyline points="10 9 9 9 8 9" />
+              </svg>
+            </div>
+            <h4>二次利用・報道引用ガイド</h4>
+            <p>
+              集約されたメタデータは学術研究・報道記事・政策分析などの用途で自由にご利用いただけます。配布資料の著作権は各省庁および原著作者に帰属します。各資料カードの「一次ソースリンク」より公式原文を必ずご確認ください。
+            </p>
+          </div>
+
+          <div class="about-box">
+            <div class="about-box-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                <rect x="9" y="8" width="6" height="8" rx="1" />
+              </svg>
+            </div>
+            <h4>プライバシー・ローカル保存方針</h4>
+            <p>
+              本サービスではユーザー登録・ログインは一切不要です。マイウォッチリストや追跡キーワード等の個人設定データは、**すべてご利用中のブラウザ（ローカルストレージ）内のみ**に安全に保存されます。運営者や外部サーバーへデータが送信・収集されることはありません。
+            </p>
+          </div>
+        </div>
+
+        <div class="about-footer-callout">
+          <p>オープンデータ・API・スクレイピング連携に関するお問い合わせ、または追加トラック希望の審議会がございましたら開発チームまでご要望をお寄せください。</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- DOCUMENT & MEETING DETAIL MODAL -->
+  <div class="modal-overlay hidden" id="documentModalOverlay">
+    <div class="modal-card card-glass">
+      <button class="modal-close-btn" id="modalCloseBtn">&times;</button>
+
+      <div class="modal-header">
+        <div class="modal-badges" id="modalBadges"></div>
+        <h2 class="modal-title" id="modalTitle">--</h2>
+        <div class="modal-meta-row">
+          <span id="modalMinistry">--</span> &bull;
+          <span id="modalDate">--</span> &bull;
+          <span id="modalLocation">--</span>
+        </div>
+      </div>
+
+      <div class="modal-body">
+        <!-- AI Executive Summary Box -->
+        <div class="summary-box">
+          <div class="summary-title">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
+            </svg>
+            ポイント解説・AI概要要約
+          </div>
+          <div class="summary-content" id="modalSummary">--</div>
+        </div>
+
+        <!-- Agenda Section -->
+        <div class="modal-section">
+          <h3>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="8" y1="6" x2="21" y2="6" />
+              <line x1="8" y1="12" x2="21" y2="12" />
+              <line x1="8" y1="18" x2="21" y2="18" />
+              <line x1="3" y1="6" x2="3.01" y2="6" />
+              <line x1="3" y1="12" x2="3.01" y2="12" />
+              <line x1="3" y1="18" x2="3.01" y2="18" />
+            </svg>
+            議題・アジェンダ
+          </h3>
+          <ul class="agenda-list" id="modalAgenda"></ul>
+        </div>
+
+        <!-- Documents & Materials Download Section -->
+        <div class="modal-section">
+          <h3>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z" />
+              <polyline points="13 2 13 9 20 9" />
+            </svg>
+            配布資料・議事録・一次リンク
+          </h3>
+          <div class="docs-download-list" id="modalDocsList"></div>
+        </div>
+      </div>
+
+      <div class="modal-footer">
+        <button class="btn-secondary" id="copyCitationBtn">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="9" y="9" width="13" height="13" rx="2" ry="2" />
+            <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" />
+          </svg>
+          引用形式テキストをコピー
+        </button>
+        <a href="#" target="_blank" rel="noopener noreferrer" class="btn-primary" id="modalOfficialLinkBtn">
+          政府公式ウェブサイトで見る
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+            <polyline points="15 3 21 3 21 9" />
+            <line x1="10" y1="14" x2="21" y2="3" />
+          </svg>
+        </a>
+      </div>
+    </div>
+  </div>
+
+
+
+  <!-- TOAST NOTIFICATION CONTAINER -->
+  <div class="toast-container" id="toastContainer"></div>
+
+  <!-- Scripts -->
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+
+</html>

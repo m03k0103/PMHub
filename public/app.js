@@ -1,0 +1,942 @@
+/* ==========================================================================
+   政策会議ウォッチ (PM-HUB) - Main Application Core Logic
+   ========================================================================== */
+
+document.addEventListener('DOMContentLoaded', () => {
+  // --- STATE MANAGEMENT ---
+  const state = {
+    currentTab: 'timeline',
+    searchQuery: '',
+    ministryFilter: 'ALL',
+    categoryFilter: 'ALL',
+    docTypeFilter: 'ALL',
+    dateRangeFilter: 'ALL',
+    sortBy: 'NEWEST',
+    watchedCouncilIds: new Set(JSON.parse(localStorage.getItem('pmhub_watched')) || ['cao-ai-strategy', 'digital-suishin', 'cao-kisei-kaikaku', 'meti-sangyo-kozo', 'mhlw-shakai-hosho', 'mof-zaisei-seido']),
+    alertKeywords: JSON.parse(localStorage.getItem('pmhub_keywords')) || [...INITIAL_ALERT_KEYWORDS],
+    theme: localStorage.getItem('pmhub_theme') || 'light',
+    enableAiSummary: localStorage.getItem('pmhub_enable_ai_summary') === 'true', // Default: false (Token cost control)
+    activeModalMeeting: null,
+    chartsInitialized: false
+  };
+
+  // --- DOM ELEMENTS ---
+  const el = {
+    body: document.body,
+    themeToggleBtn: document.getElementById('themeToggleBtn'),
+    aiSummaryToggleBtn: document.getElementById('aiSummaryToggleBtn'),
+    aiSummaryToggleLabel: document.getElementById('aiSummaryToggleLabel'),
+    exportDataBtn: document.getElementById('exportDataBtn'),
+    navTabs: document.querySelectorAll('.nav-tab'),
+    viewPanels: document.querySelectorAll('.view-panel'),
+    brandLogo: document.getElementById('brandLogo'),
+
+    // Stats
+    statTrackedCouncils: document.getElementById('statTrackedCouncils'),
+    statTotalMeetings: document.getElementById('statTotalMeetings'),
+    statTotalDocs: document.getElementById('statTotalDocs'),
+    watchlistCount: document.getElementById('watchlistCount'),
+
+    // Filter controls
+    searchInput: document.getElementById('searchInput'),
+    clearSearchBtn: document.getElementById('clearSearchBtn'),
+    ministrySelect: document.getElementById('ministrySelect'),
+    categorySelect: document.getElementById('categorySelect'),
+    docTypeSelect: document.getElementById('docTypeSelect'),
+    dateRangeSelect: document.getElementById('dateRangeSelect'),
+    resetFiltersBtn: document.getElementById('resetFiltersBtn'),
+    sortBySelect: document.getElementById('sortBySelect'),
+    keywordChips: document.querySelectorAll('.keyword-chip'),
+    activeFiltersBar: document.getElementById('activeFiltersBar'),
+    activeTagsContainer: document.getElementById('activeTagsContainer'),
+    resultsCount: document.getElementById('resultsCount'),
+
+    // Timeline
+    timelineFeed: document.getElementById('timelineFeed'),
+    noResultsState: document.getElementById('noResultsState'),
+    noResultsResetBtn: document.getElementById('noResultsResetBtn'),
+
+    // Councils
+    councilsGrid: document.getElementById('councilsGrid'),
+    councilSearchInput: document.getElementById('councilSearchInput'),
+
+    // Watchlist
+    watchlistActiveCount: document.getElementById('watchlistActiveCount'),
+    watchlistItems: document.getElementById('watchlistItems'),
+    newAlertKeyword: document.getElementById('newAlertKeyword'),
+    addKeywordAlertBtn: document.getElementById('addKeywordAlertBtn'),
+    alertKeywordsList: document.getElementById('alertKeywordsList'),
+    copyRssBtn: document.getElementById('copyRssBtn'),
+    rssUrlInput: document.getElementById('rssUrlInput'),
+
+    // Modal
+    documentModalOverlay: document.getElementById('documentModalOverlay'),
+    modalCloseBtn: document.getElementById('modalCloseBtn'),
+    modalBadges: document.getElementById('modalBadges'),
+    modalTitle: document.getElementById('modalTitle'),
+    modalMinistry: document.getElementById('modalMinistry'),
+    modalDate: document.getElementById('modalDate'),
+    modalLocation: document.getElementById('modalLocation'),
+    modalSummary: document.getElementById('modalSummary'),
+    modalAgenda: document.getElementById('modalAgenda'),
+    modalDocsList: document.getElementById('modalDocsList'),
+    copyCitationBtn: document.getElementById('copyCitationBtn'),
+    modalOfficialLinkBtn: document.getElementById('modalOfficialLinkBtn'),
+
+    // Toast
+    toastContainer: document.getElementById('toastContainer')
+  };
+
+  // --- INITIALIZATION ---
+  initTheme();
+  updateHeroStats();
+  setupEventListeners();
+  renderTimeline();
+  renderCouncilsGrid();
+  renderWatchlist();
+
+  // --- THEME HANDLER ---
+  function initTheme() {
+    el.body.setAttribute('data-theme', state.theme);
+  }
+
+  function toggleTheme() {
+    state.theme = state.theme === 'dark' ? 'light' : 'dark';
+    el.body.setAttribute('data-theme', state.theme);
+    localStorage.setItem('pmhub_theme', state.theme);
+    showToast(`テーマを${state.theme === 'dark' ? 'ダーク' : 'ライト'}モードに切り替えました`);
+  }
+
+  // --- AI SUMMARY FEATURE FLAG TOGGLE ---
+  function toggleAiSummaryFeature() {
+    state.enableAiSummary = !state.enableAiSummary;
+    localStorage.setItem('pmhub_enable_ai_summary', state.enableAiSummary);
+    updateAiSummaryButtonUI();
+    renderTimeline();
+    showToast(`AI要約表示を ${state.enableAiSummary ? 'ON (有効)' : 'OFF (無効 / Tokenコスト制御)'} に切り替えました`);
+  }
+
+  function updateAiSummaryButtonUI() {
+    if (!el.aiSummaryToggleLabel) return;
+    if (state.enableAiSummary) {
+      el.aiSummaryToggleLabel.textContent = 'AI要約: ON';
+      el.aiSummaryToggleBtn.style.background = 'rgba(16, 185, 129, 0.2)';
+      el.aiSummaryToggleBtn.style.borderColor = '#10b981';
+      el.aiSummaryToggleBtn.style.color = '#10b981';
+    } else {
+      el.aiSummaryToggleLabel.textContent = 'AI要約: OFF';
+      el.aiSummaryToggleBtn.style.background = 'rgba(255, 255, 255, 0.08)';
+      el.aiSummaryToggleBtn.style.borderColor = 'var(--border-color)';
+      el.aiSummaryToggleBtn.style.color = 'var(--text-secondary)';
+    }
+  }
+
+  // --- HERO STATS ---
+  function updateHeroStats() {
+    el.statTrackedCouncils.textContent = COUNCILS.length;
+    el.statTotalMeetings.textContent = MEETINGS.length;
+    
+    const totalDocs = MEETINGS.reduce((sum, m) => sum + (m.materials ? m.materials.length : 0), 0);
+    el.statTotalDocs.textContent = totalDocs;
+    el.watchlistCount.textContent = state.watchedCouncilIds.size;
+    if (el.watchlistActiveCount) {
+      el.watchlistActiveCount.textContent = state.watchedCouncilIds.size;
+    }
+  }
+
+  // --- EVENT LISTENERS ---
+  function setupEventListeners() {
+    // Theme toggle
+    el.themeToggleBtn.addEventListener('click', toggleTheme);
+
+    // AI Summary Feature Flag toggle
+    if (el.aiSummaryToggleBtn) {
+      updateAiSummaryButtonUI();
+      el.aiSummaryToggleBtn.addEventListener('click', toggleAiSummaryFeature);
+    }
+
+    // Brand logo reset
+    el.brandLogo.addEventListener('click', () => {
+      switchTab('timeline');
+      resetFilters();
+    });
+
+    // Navigation Tabs
+    el.navTabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        const tabName = tab.getAttribute('data-tab');
+        switchTab(tabName);
+      });
+    });
+
+    // Search & Filter listeners
+    el.searchInput.addEventListener('input', (e) => {
+      state.searchQuery = e.target.value.trim();
+      el.clearSearchBtn.classList.toggle('hidden', state.searchQuery === '');
+      renderTimeline();
+    });
+
+    el.clearSearchBtn.addEventListener('click', () => {
+      el.searchInput.value = '';
+      state.searchQuery = '';
+      el.clearSearchBtn.classList.add('hidden');
+      renderTimeline();
+    });
+
+    el.ministrySelect.addEventListener('change', (e) => {
+      state.ministryFilter = e.target.value;
+      renderTimeline();
+    });
+
+    el.categorySelect.addEventListener('change', (e) => {
+      state.categoryFilter = e.target.value;
+      renderTimeline();
+    });
+
+    el.docTypeSelect.addEventListener('change', (e) => {
+      state.docTypeFilter = e.target.value;
+      renderTimeline();
+    });
+
+    el.dateRangeSelect.addEventListener('change', (e) => {
+      state.dateRangeFilter = e.target.value;
+      renderTimeline();
+    });
+
+    el.resetFiltersBtn.addEventListener('click', resetFilters);
+    el.noResultsResetBtn.addEventListener('click', resetFilters);
+
+    el.sortBySelect.addEventListener('change', (e) => {
+      state.sortBy = e.target.value;
+      renderTimeline();
+    });
+
+    // Quick Keyword Chips
+    el.keywordChips.forEach(chip => {
+      chip.addEventListener('click', () => {
+        const kw = chip.getAttribute('data-keyword');
+        if (state.searchQuery === kw) {
+          state.searchQuery = '';
+          el.searchInput.value = '';
+          chip.classList.remove('active');
+        } else {
+          state.searchQuery = kw;
+          el.searchInput.value = kw;
+          el.keywordChips.forEach(c => c.classList.remove('active'));
+          chip.classList.add('active');
+        }
+        el.clearSearchBtn.classList.toggle('hidden', state.searchQuery === '');
+        renderTimeline();
+      });
+    });
+
+    // Councils Directory Search
+    if (el.councilSearchInput) {
+      el.councilSearchInput.addEventListener('input', (e) => {
+        renderCouncilsGrid(e.target.value.trim().toLowerCase());
+      });
+    }
+
+    // Export Data Button
+    el.exportDataBtn.addEventListener('click', exportFilteredData);
+
+    // Watchlist alert keyword addition
+    if (el.addKeywordAlertBtn) {
+      el.addKeywordAlertBtn.addEventListener('click', addAlertKeyword);
+    }
+
+    if (el.copyRssBtn) {
+      el.copyRssBtn.addEventListener('click', () => {
+        navigator.clipboard.writeText(el.rssUrlInput.value);
+        showToast('RSS連携URLをクリップボードにコピーしました');
+      });
+    }
+
+    // Modal close listeners
+    el.modalCloseBtn.addEventListener('click', closeModal);
+    el.documentModalOverlay.addEventListener('click', (e) => {
+      if (e.target === el.documentModalOverlay) closeModal();
+    });
+
+    if (el.copyCitationBtn) {
+      el.copyCitationBtn.addEventListener('click', copyCitationText);
+    }
+  }
+
+  // --- TAB SWITCHING ---
+  function switchTab(tabName) {
+    state.currentTab = tabName;
+    
+    el.navTabs.forEach(t => {
+      t.classList.toggle('active', t.getAttribute('data-tab') === tabName);
+    });
+
+    el.viewPanels.forEach(panel => {
+      panel.classList.remove('active');
+    });
+
+    const activePanel = document.getElementById(`view${capitalize(tabName)}`);
+    if (activePanel) {
+      activePanel.classList.add('active');
+    }
+
+    if (tabName === 'analytics' && !state.chartsInitialized) {
+      renderCharts();
+      state.chartsInitialized = true;
+    }
+
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  function capitalize(str) {
+    return str.charAt(0).toUpperCase() + str.slice(1);
+  }
+
+  // --- FILTER & TIMELINE ENGINE ---
+  function resetFilters() {
+    state.searchQuery = '';
+    state.ministryFilter = 'ALL';
+    state.categoryFilter = 'ALL';
+    state.docTypeFilter = 'ALL';
+    state.dateRangeFilter = 'ALL';
+    state.sortBy = 'NEWEST';
+
+    el.searchInput.value = '';
+    el.clearSearchBtn.classList.add('hidden');
+    el.ministrySelect.value = 'ALL';
+    el.categorySelect.value = 'ALL';
+    el.docTypeSelect.value = 'ALL';
+    el.dateRangeSelect.value = 'ALL';
+    el.sortBySelect.value = 'NEWEST';
+
+    el.keywordChips.forEach(c => c.classList.remove('active'));
+
+    renderTimeline();
+    showToast('検索・絞り込み条件をクリアしました');
+  }
+
+  function filterMeetings() {
+    return MEETINGS.filter(meeting => {
+      // Free word search
+      if (state.searchQuery) {
+        const q = state.searchQuery.toLowerCase();
+        const titleMatch = meeting.title.toLowerCase().includes(q);
+        const councilMatch = meeting.councilName.toLowerCase().includes(q);
+        const summaryMatch = meeting.summary ? meeting.summary.toLowerCase().includes(q) : false;
+        const tagMatch = meeting.tags ? meeting.tags.some(t => t.toLowerCase().includes(q)) : false;
+        const agendaMatch = meeting.agenda ? meeting.agenda.some(a => a.toLowerCase().includes(q)) : false;
+        const matMatch = meeting.materials ? meeting.materials.some(m => m.name.toLowerCase().includes(q)) : false;
+
+        if (!titleMatch && !councilMatch && !summaryMatch && !tagMatch && !agendaMatch && !matMatch) {
+          return false;
+        }
+      }
+
+      // Ministry filter
+      if (state.ministryFilter !== 'ALL' && meeting.ministry !== state.ministryFilter) {
+        return false;
+      }
+
+      // Category filter
+      if (state.categoryFilter !== 'ALL' && meeting.category !== state.categoryFilter) {
+        return false;
+      }
+
+      // Doc Type filter
+      if (state.docTypeFilter !== 'ALL') {
+        if (state.docTypeFilter === 'MINUTES' && !meeting.hasMinutes) return false;
+        if (state.docTypeFilter === 'MATERIALS' && (!meeting.materials || meeting.materials.length === 0)) return false;
+        if (state.docTypeFilter === 'REPORT' && (!meeting.tags || !meeting.tags.includes('答申') && !meeting.tags.includes('報告書'))) return false;
+      }
+
+      // Date Range filter
+      if (state.dateRangeFilter !== 'ALL') {
+        const meetingDate = new Date(meeting.date);
+        const now = new Date('2026-08-01');
+        const diffDays = (now - meetingDate) / (1000 * 60 * 60 * 24);
+
+        if (state.dateRangeFilter === '7D' && diffDays > 7) return false;
+        if (state.dateRangeFilter === '30D' && diffDays > 30) return false;
+        if (state.dateRangeFilter === '90D' && diffDays > 90) return false;
+        if (state.dateRangeFilter === 'YEAR' && meetingDate.getFullYear() !== 2026) return false;
+      }
+
+      return true;
+    });
+  }
+
+  function sortMeetings(list) {
+    return list.sort((a, b) => {
+      if (state.sortBy === 'NEWEST') {
+        return new Date(b.date) - new Date(a.date);
+      } else if (state.sortBy === 'OLDEST') {
+        return new Date(a.date) - new Date(b.date);
+      } else if (state.sortBy === 'DOCS_DESC') {
+        return (b.materials ? b.materials.length : 0) - (a.materials ? a.materials.length : 0);
+      }
+      return 0;
+    });
+  }
+
+  function renderTimeline() {
+    const filtered = filterMeetings();
+    const sorted = sortMeetings(filtered);
+
+    // Active Filter Tags Bar update
+    renderActiveFilterTags(filtered.length);
+
+    if (sorted.length === 0) {
+      el.timelineFeed.innerHTML = '';
+      el.noResultsState.classList.remove('hidden');
+      return;
+    }
+
+    el.noResultsState.classList.add('hidden');
+    el.timelineFeed.innerHTML = sorted.map(meeting => createTimelineCardHTML(meeting)).join('');
+
+    // Attach click events to dynamic elements
+    sorted.forEach(meeting => {
+      const cardEl = document.getElementById(`meeting-${meeting.id}`);
+      if (cardEl) {
+        const titleBtn = cardEl.querySelector('.card-title');
+        const detailBtn = cardEl.querySelector('.btn-view-detail');
+        if (titleBtn) titleBtn.addEventListener('click', () => openModal(meeting));
+        if (detailBtn) detailBtn.addEventListener('click', () => openModal(meeting));
+      }
+    });
+  }
+
+  function renderActiveFilterTags(count) {
+    const activeTags = [];
+
+    if (state.searchQuery) activeTags.push({ label: `検索: "${state.searchQuery}"`, key: 'search' });
+    if (state.ministryFilter !== 'ALL') activeTags.push({ label: `省庁: ${MINISTRIES[state.ministryFilter]?.name || state.ministryFilter}`, key: 'ministry' });
+    if (state.categoryFilter !== 'ALL') activeTags.push({ label: `会議種別: ${CATEGORIES[state.categoryFilter]}`, key: 'category' });
+    if (state.docTypeFilter !== 'ALL') activeTags.push({ label: `資料: ${state.docTypeFilter}`, key: 'docType' });
+    if (state.dateRangeFilter !== 'ALL') activeTags.push({ label: `期間: ${state.dateRangeFilter}`, key: 'dateRange' });
+
+    if (activeTags.length > 0) {
+      el.activeFiltersBar.classList.remove('hidden');
+      el.resultsCount.textContent = `ヒット件数: ${count} 件`;
+      el.activeTagsContainer.innerHTML = activeTags.map(tag => `
+        <span class="active-tag">
+          ${escapeHtml(tag.label)}
+          <span class="active-tag-remove" onclick="removeFilterTag('${tag.key}')">&times;</span>
+        </span>
+      `).join('');
+    } else {
+      el.activeFiltersBar.classList.add('hidden');
+    }
+  }
+
+  window.toggleMaterialsAccordion = function(meetingId) {
+    const contentEl = document.getElementById(`materials-content-${meetingId}`);
+    const arrowEl = document.getElementById(`arrow-${meetingId}`);
+    if (!contentEl) return;
+
+    const isHidden = contentEl.classList.contains('hidden');
+    if (isHidden) {
+      contentEl.classList.remove('hidden');
+      if (arrowEl) {
+        arrowEl.textContent = '▲';
+        arrowEl.style.transform = 'rotate(180deg)';
+      }
+    } else {
+      contentEl.classList.add('hidden');
+      if (arrowEl) {
+        arrowEl.textContent = '▼';
+        arrowEl.style.transform = 'rotate(0deg)';
+      }
+    }
+  };
+
+  function renderMaterialsAccordionHTML(materials, meetingId) {
+    if (!materials || materials.length === 0) return '';
+
+    const listItems = materials.map(mat => {
+      const isPrivate = mat.isPrivate || mat.type === '非公開' || mat.url === '#';
+      const icon = isPrivate ? '🔒' : (mat.type === 'PDF' ? '📄' : '🌐');
+      
+      return `
+        <li class="material-item-row">
+          <div class="material-item-left">
+            <span class="material-icon">${icon}</span>
+            ${isPrivate ? `
+              <span class="material-name-link text-muted" style="text-decoration:none;">${escapeHtml(mat.name)}</span>
+            ` : `
+              <a href="${mat.url}" target="_blank" rel="noopener noreferrer" class="material-name-link">
+                ${escapeHtml(mat.name)}
+              </a>
+            `}
+          </div>
+          <div class="material-item-right">
+            ${isPrivate ? `
+              <span class="badge-private">非公開</span>
+            ` : `
+              <span class="badge-file-size">${mat.size || ''}</span>
+              <a href="${mat.url}" target="_blank" rel="noopener noreferrer" class="btn-secondary btn-sm" style="padding:0.2rem 0.55rem; font-size:0.75rem;">
+                開く ↗
+              </a>
+            `}
+          </div>
+        </li>
+      `;
+    }).join('');
+
+    return `
+      <div class="materials-accordion">
+        <button class="materials-toggle-btn" onclick="toggleMaterialsAccordion('${meetingId}')" type="button">
+          <div class="materials-toggle-left">
+            <span>📂 公開資料・配布文書を開く</span>
+            <span class="materials-badge-count">${materials.length}件</span>
+          </div>
+          <span class="toggle-arrow" id="arrow-${meetingId}">▼</span>
+        </button>
+        <div class="materials-collapse-content hidden" id="materials-content-${meetingId}">
+          <ul class="materials-vertical-list">
+            ${listItems}
+          </ul>
+        </div>
+      </div>
+    `;
+  }
+
+  window.removeFilterTag = function(key) {
+    if (key === 'search') {
+      state.searchQuery = '';
+      el.searchInput.value = '';
+      el.clearSearchBtn.classList.add('hidden');
+      el.keywordChips.forEach(c => c.classList.remove('active'));
+    } else if (key === 'ministry') {
+      state.ministryFilter = 'ALL';
+      el.ministrySelect.value = 'ALL';
+    } else if (key === 'category') {
+      state.categoryFilter = 'ALL';
+      el.categorySelect.value = 'ALL';
+    } else if (key === 'docType') {
+      state.docTypeFilter = 'ALL';
+      el.docTypeSelect.value = 'ALL';
+    } else if (key === 'dateRange') {
+      state.dateRangeFilter = 'ALL';
+      el.dateRangeSelect.value = 'ALL';
+    }
+    renderTimeline();
+  };
+
+  function createTimelineCardHTML(meeting) {
+    const minInfo = MINISTRIES[meeting.ministry] || { name: meeting.ministry, color: '#3b82f6' };
+    const categoryName = CATEGORIES[meeting.category] || meeting.category;
+    
+    // Check if contains alert keyword
+    const hasAlertKeyword = state.alertKeywords.some(kw => 
+      meeting.title.includes(kw) || (meeting.summary && meeting.summary.includes(kw))
+    );
+
+    const docPillsHTML = (meeting.materials || []).map(doc => `
+      <a href="${doc.url}" target="_blank" rel="noopener noreferrer" class="doc-pill" title="${escapeHtml(doc.name)} (${doc.size})">
+        <span class="doc-type-icon">${doc.type}</span>
+        <span>${escapeHtml(doc.name)}</span>
+      </a>
+    `).join('');
+
+    const tagsHTML = (meeting.tags || []).map(t => `
+      <span class="tag-item">#${escapeHtml(t)}</span>
+    `).join('');
+
+    return `
+      <article class="timeline-card card-glass" id="meeting-${meeting.id}" style="--card-accent-color: ${minInfo.color}">
+        <div class="card-top-row">
+          <div class="card-badges">
+            <span class="badge-ministry ${meeting.ministry}">${minInfo.name}</span>
+            <span class="badge-category">${categoryName}</span>
+            ${hasAlertKeyword ? `<span class="badge-category" style="background: rgba(239, 68, 68, 0.2); border-color: rgba(239, 68, 68, 0.5); color: #f87171;">🔔 アラート一致</span>` : ''}
+          </div>
+          <div class="card-date-badge" title="会議の開催年月日">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+            <span>開催日: ${meeting.date}</span>
+          </div>
+        </div>
+
+        <div class="card-title-block">
+          <span class="card-council-name">${escapeHtml(meeting.councilName)}</span>
+          <h3 class="card-title">${escapeHtml(meeting.title)}</h3>
+        </div>
+
+        ${(state.enableAiSummary && meeting.summary) ? `<div class="card-summary">${escapeHtml(meeting.summary)}</div>` : ''}
+
+        ${renderMaterialsAccordionHTML(meeting.materials, meeting.id)}
+
+        <div class="card-bottom-row">
+          <div class="card-tags">${tagsHTML}</div>
+          <div class="card-actions">
+            <button class="btn-secondary btn-sm btn-view-detail">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+              アジェンダ・詳細を見る
+            </button>
+            <a href="${meeting.officialUrl}" target="_blank" rel="noopener noreferrer" class="btn-primary btn-sm" title="政府公式ページ">
+              一次ソース
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            </a>
+          </div>
+        </div>
+      </article>
+    `;
+  }
+
+  // --- COUNCILS DIRECTORY ENGINE ---
+  function renderCouncilsGrid(filterQuery = '') {
+    const list = COUNCILS.filter(council => {
+      if (!filterQuery) return true;
+      const minName = MINISTRIES[council.ministry]?.name || '';
+      return council.name.toLowerCase().includes(filterQuery) ||
+             minName.toLowerCase().includes(filterQuery) ||
+             council.description.toLowerCase().includes(filterQuery);
+    });
+
+    el.councilsGrid.innerHTML = list.map(c => {
+      const minInfo = MINISTRIES[c.ministry] || { name: c.ministry };
+      const isWatching = state.watchedCouncilIds.has(c.id);
+      const pastYearCount = c.pastYearCount || MEETINGS.filter(m => m.councilId === c.id).length || 5;
+
+      return `
+        <div class="council-card card-glass">
+          <div>
+            <div class="council-card-header">
+              <span class="badge-ministry ${c.ministry}">${minInfo.name}</span>
+              <button class="btn-watchlist-toggle ${isWatching ? 'watching' : ''}" onclick="toggleWatchlist('${c.id}')">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="${isWatching ? 'currentColor' : 'none'}" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                ${isWatching ? 'ウォッチ中' : 'ウォッチ追跡'}
+              </button>
+            </div>
+            <h3 class="council-card-title" style="margin-top: 0.6rem;">${escapeHtml(c.name)}</h3>
+            <p class="text-sm" style="margin-top: 0.5rem; line-height: 1.5;">${escapeHtml(c.description)}</p>
+          </div>
+          <div class="council-meta" style="margin-top: 1rem; border-top: 1px solid var(--border-color); padding-top: 0.75rem;">
+            <span>過去1年間の開催数: <strong style="color: var(--accent-secondary);">${pastYearCount} 回</strong></span>
+            <a href="${c.officialUrl}" target="_blank" rel="noopener noreferrer" class="text-accent text-sm" style="display:inline-flex; align-items:center; gap:0.2rem; margin-top:0.2rem;">
+              公式トップページ ↗
+            </a>
+          </div>
+        </div>
+      `;
+    }).join('');
+  }
+
+  window.toggleWatchlist = function(councilId) {
+    const council = COUNCILS.find(c => c.id === councilId);
+    if (state.watchedCouncilIds.has(councilId)) {
+      state.watchedCouncilIds.delete(councilId);
+      showToast(`「${council?.name}」をウォッチリストから解除しました`);
+    } else {
+      state.watchedCouncilIds.add(councilId);
+      showToast(`「${council?.name}」をウォッチリストに追加しました ⭐`);
+    }
+
+    localStorage.setItem('pmhub_watched', JSON.stringify(Array.from(state.watchedCouncilIds)));
+    updateHeroStats();
+    renderCouncilsGrid();
+    renderWatchlist();
+  };
+
+  // --- WATCHLIST & ALERTS VIEW ---
+  function renderWatchlist() {
+    const watchedList = COUNCILS.filter(c => state.watchedCouncilIds.has(c.id));
+    
+    if (watchedList.length === 0) {
+      el.watchlistItems.innerHTML = `<p class="text-sm">現在登録中の審議会はありません。「審議会・会議一覧」タブからお気に入りの審議会を追加してください。</p>`;
+    } else {
+      el.watchlistItems.innerHTML = watchedList.map(c => {
+        const minInfo = MINISTRIES[c.ministry] || { name: c.ministry };
+        const pastYearCount = c.pastYearCount || MEETINGS.filter(m => m.councilId === c.id).length || 5;
+        return `
+          <div class="watchlist-item-card">
+            <div>
+              <span class="badge-ministry ${c.ministry}" style="font-size:0.65rem;">${minInfo.name}</span>
+              <h4 style="font-weight:700; margin-top:0.3rem;">${escapeHtml(c.name)}</h4>
+              <span class="text-sm">過去1年間の開催数: <strong>${pastYearCount} 回</strong></span>
+            </div>
+            <button class="btn-secondary btn-sm" onclick="toggleWatchlist('${c.id}')">解除</button>
+          </div>
+        `;
+      }).join('');
+    }
+
+    // Render keyword alert chips
+    renderAlertKeywords();
+  }
+
+  function renderAlertKeywords() {
+    el.alertKeywordsList.innerHTML = state.alertKeywords.map(kw => `
+      <span class="keyword-chip active">
+        🔔 ${escapeHtml(kw)}
+        <span style="margin-left:0.3rem; cursor:pointer;" onclick="removeAlertKeyword('${kw}')">&times;</span>
+      </span>
+    `).join('');
+  }
+
+  function addAlertKeyword() {
+    const val = el.newAlertKeyword.value.trim();
+    if (val && !state.alertKeywords.includes(val)) {
+      state.alertKeywords.push(val);
+      localStorage.setItem('pmhub_keywords', JSON.stringify(state.alertKeywords));
+      el.newAlertKeyword.value = '';
+      renderAlertKeywords();
+      renderTimeline();
+      showToast(`「${val}」を追跡アラートキーワードに追加しました`);
+    }
+  }
+
+  window.removeAlertKeyword = function(kw) {
+    state.alertKeywords = state.alertKeywords.filter(k => k !== kw);
+    localStorage.setItem('pmhub_keywords', JSON.stringify(state.alertKeywords));
+    renderAlertKeywords();
+    renderTimeline();
+  };
+
+  // --- ANALYTICS CHARTS (CHART.JS) ---
+  function renderCharts() {
+    if (typeof Chart === 'undefined') return;
+
+    // 1. Ministry Meetings Bar Chart
+    const ministryCounts = {};
+    Object.keys(MINISTRIES).forEach(k => ministryCounts[k] = 0);
+    MEETINGS.forEach(m => {
+      if (ministryCounts[m.ministry] !== undefined) {
+        ministryCounts[m.ministry]++;
+      }
+    });
+
+    const ctx1 = document.getElementById('ministryChart').getContext('2d');
+    new Chart(ctx1, {
+      type: 'bar',
+      data: {
+        labels: Object.keys(MINISTRIES).map(k => MINISTRIES[k].name),
+        datasets: [{
+          label: '会議開催数 (件)',
+          data: Object.keys(MINISTRIES).map(k => ministryCounts[k]),
+          backgroundColor: ['#a855f7', '#06b6d4', '#10b981', '#f43f5e', '#f59e0b', '#3b82f6', '#ec4899', '#84cc16'],
+          borderRadius: 6
+        }]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: { legend: { display: false } },
+        scales: {
+          y: { beginAtZero: true, grid: { color: 'rgba(255,255,255,0.05)' } },
+          x: { grid: { display: false } }
+        }
+      }
+    });
+
+    // 2. Keyword Frequency Doughnut Chart
+    const tagCounts = {};
+    MEETINGS.forEach(m => {
+      (m.tags || []).forEach(t => {
+        tagCounts[t] = (tagCounts[t] || 0) + 1;
+      });
+    });
+
+    const sortedTags = Object.keys(tagCounts).sort((a, b) => tagCounts[b] - tagCounts[a]).slice(0, 6);
+
+    const ctx2 = document.getElementById('keywordChart').getContext('2d');
+    new Chart(ctx2, {
+      type: 'doughnut',
+      data: {
+        labels: sortedTags,
+        datasets: [{
+          data: sortedTags.map(t => tagCounts[t]),
+          backgroundColor: ['#3b82f6', '#06b6d4', '#10b981', '#f59e0b', '#a855f7', '#f43f5e']
+        }]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: { legend: { position: 'right', labels: { color: '#94a3b8' } } }
+      }
+    });
+
+    // 3. Monthly Timeline Activity Line Chart
+    const ctx3 = document.getElementById('timelineChart').getContext('2d');
+    new Chart(ctx3, {
+      type: 'line',
+      data: {
+        labels: ['2026年2月', '2026年3月', '2026年4月', '2026年5月', '2026年6月', '2026年7月'],
+        datasets: [
+          {
+            label: '公開配布資料数',
+            data: [12, 19, 25, 22, 31, 38],
+            borderColor: '#06b6d4',
+            backgroundColor: 'rgba(6, 182, 212, 0.1)',
+            fill: true,
+            tension: 0.3
+          },
+          {
+            label: '会議開催数',
+            data: [4, 6, 8, 7, 10, 12],
+            borderColor: '#3b82f6',
+            backgroundColor: 'rgba(59, 130, 246, 0.1)',
+            fill: true,
+            tension: 0.3
+          }
+        ]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: { legend: { labels: { color: '#94a3b8' } } },
+        scales: {
+          y: { beginAtZero: true, grid: { color: 'rgba(255,255,255,0.05)' } },
+          x: { grid: { color: 'rgba(255,255,255,0.05)' } }
+        }
+      }
+    });
+  }
+
+  // --- MODAL DIALOG ENGINE ---
+  function openModal(meeting) {
+    state.activeModalMeeting = meeting;
+    const minInfo = MINISTRIES[meeting.ministry] || { name: meeting.ministry };
+
+    el.modalBadges.innerHTML = `
+      <span class="badge-ministry ${meeting.ministry}">${minInfo.name}</span>
+      <span class="badge-category">${CATEGORIES[meeting.category]}</span>
+    `;
+
+    el.modalTitle.textContent = meeting.title;
+    el.modalMinistry.textContent = `所管省庁: ${minInfo.name} (${meeting.councilName})`;
+    el.modalDate.textContent = `📅 開催年月日: ${meeting.date}`;
+    el.modalLocation.textContent = `📍 開催場所: ${meeting.location || 'オンライン / 講堂'}`;
+    
+    // AI Summary Feature Flag check
+    const summaryBox = document.querySelector('.summary-box');
+    if (summaryBox) {
+      if (state.enableAiSummary) {
+        summaryBox.style.display = 'block';
+        el.modalSummary.textContent = meeting.summary || '詳細要約準備中';
+      } else {
+        summaryBox.style.display = 'none';
+      }
+    }
+
+    // Agenda
+    if (meeting.agenda && meeting.agenda.length > 0) {
+      el.modalAgenda.innerHTML = meeting.agenda.map(item => `<li>${escapeHtml(item)}</li>`).join('');
+    } else {
+      el.modalAgenda.innerHTML = '<li>議題情報は登録されていません。</li>';
+    }
+
+    // Documents
+    if (meeting.materials && meeting.materials.length > 0) {
+      el.modalDocsList.innerHTML = meeting.materials.map(doc => {
+        const isPrivate = doc.isPrivate || doc.type === '非公開' || doc.url === '#';
+        if (isPrivate) {
+          return `
+            <div class="doc-download-item" style="opacity: 0.75; cursor: default;">
+              <div>
+                <strong>[非公開] ${escapeHtml(doc.name)}</strong>
+                <span class="text-sm text-muted" style="display:block; margin-top:0.2rem;">※ 提出資料非公開</span>
+              </div>
+              <span class="badge-private">非公開</span>
+            </div>
+          `;
+        }
+        return `
+          <a href="${doc.url}" target="_blank" rel="noopener noreferrer" class="doc-download-item">
+            <div>
+              <strong>[${doc.type}] ${escapeHtml(doc.name)}</strong>
+              <span class="text-sm" style="display:block; margin-top:0.2rem;">ファイルサイズ: ${doc.size}</span>
+            </div>
+            <span class="text-accent text-sm">PDF/HTMLを開く ↗</span>
+          </a>
+        `;
+      }).join('');
+    } else {
+      el.modalDocsList.innerHTML = '<p class="text-sm">資料リンクは現在登録されていません。</p>';
+    }
+
+    el.modalOfficialLinkBtn.href = meeting.officialUrl;
+    el.documentModalOverlay.classList.remove('hidden');
+  }
+
+  function closeModal() {
+    el.documentModalOverlay.classList.add('hidden');
+    state.activeModalMeeting = null;
+  }
+
+  function copyCitationText() {
+    if (!state.activeModalMeeting) return;
+    const m = state.activeModalMeeting;
+    const minName = MINISTRIES[m.ministry]?.name || m.ministry;
+    const citation = `${minName}「${m.title}」（${m.date}開催）政策会議ウォッチ 参照: ${m.officialUrl}`;
+    
+    navigator.clipboard.writeText(citation);
+    showToast('引用形式のテキストをクリップボードにコピーしました 📋');
+  }
+
+  // --- DATA EXPORT ENGINE ---
+  function exportFilteredData() {
+    const list = filterMeetings();
+    
+    // 1. Export JSON
+    const jsonStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(list, null, 2));
+    const jsonAnchor = document.createElement('a');
+    jsonAnchor.setAttribute("href", jsonStr);
+    jsonAnchor.setAttribute("download", `pmhub-meetings-${new Date().toISOString().slice(0,10)}.json`);
+    document.body.appendChild(jsonAnchor);
+    jsonAnchor.click();
+    jsonAnchor.remove();
+
+    // 2. Export CSV (with UTF-8 BOM for Excel compatibility)
+    const csvHeader = ["開催日", "所管省庁", "審議会名", "会議名", "資料件数", "一次ソースURL", "要約"];
+    const csvRows = list.map(m => [
+      `"${m.date}"`,
+      `"${MINISTRIES[m.ministry]?.name || m.ministry}"`,
+      `"${m.councilName.replace(/"/g, '""')}"`,
+      `"${m.title.replace(/"/g, '""')}"`,
+      `"${m.materials ? m.materials.length : 0}"`,
+      `"${m.officialUrl}"`,
+      `"${(m.summary || '').replace(/"/g, '""')}"`
+    ].join(','));
+
+    const csvContent = "\uFEFF" + [csvHeader.join(','), ...csvRows].join('\n');
+    const csvBlob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
+    const csvUrl = URL.createObjectURL(csvBlob);
+    const csvAnchor = document.createElement('a');
+    csvAnchor.setAttribute("href", csvUrl);
+    csvAnchor.setAttribute("download", `pmhub-meetings-${new Date().toISOString().slice(0,10)}.csv`);
+    document.body.appendChild(csvAnchor);
+    csvAnchor.click();
+    csvAnchor.remove();
+
+    showToast(`検索結果 ${list.length} 件を JSON 及び CSV (Excel対応) で出力しました 📊`);
+  }
+
+
+
+  // --- TOAST NOTIFICATIONS ---
+  function showToast(message) {
+    const toast = document.createElement('div');
+    toast.className = 'toast-message';
+    toast.textContent = message;
+    el.toastContainer.appendChild(toast);
+
+    setTimeout(() => {
+      toast.style.opacity = '0';
+      toast.style.transform = 'translateY(10px)';
+      toast.style.transition = '0.3s ease';
+      setTimeout(() => toast.remove(), 300);
+    }, 2800);
+  }
+
+  // Helper function
+  function escapeHtml(str) {
+    if (!str) return '';
+    return str
+      .replace(/&/g, "&amp;")
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;")
+      .replace(/"/g, "&quot;")
+      .replace(/'/g, "&#039;");
+  }
+});
