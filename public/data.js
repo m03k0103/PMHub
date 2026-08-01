@@ -203,7 +203,7 @@ const COUNCILS = [
     pastYearCount: 12,
     description: '食料安全保障、スマート農業・農業DX推進、農林水産物輸出拡大、環境負荷低減型農業 (みどりの食料システム戦略) を策定。',
     officialUrl: 'https://www.maff.go.jp/j/council/seisaku/',
-    isWatched: false,
+    isWatched: true,
     trackedSince: '2022-08-01'
   },
   // 12. METI
@@ -728,28 +728,30 @@ const MEETINGS = [
   },
   // 8. MAFF
   {
-    id: 'meet-2026-0712-maff',
+    id: 'meet-maff-seisaku-49th',
     councilId: 'maff-shokuryo-nogyo',
     councilName: '食料・農業・農村政策審議会',
     ministry: 'MAFF',
     category: 'COUNCIL',
-    title: '食料・農業・農村政策審議会 企画部会（第45回）',
-    date: '2026-07-12',
-    updatedAt: '2026-07-12 16:45',
-    location: '農林水産省 本館7階 第1特別会議室',
-    summary: '改正食料・農業・農村基本法に基づく「食料安全保障指針」およびスマート農業技術導入促進法に基づく融資制度が審議された。気候変動に伴う農産物適応技術の実証成果報告。',
+    title: '第49回 食料・農業・農村政策審議会 総会',
+    date: '2025-10-27',
+    updatedAt: '2025-10-27 18:00',
+    location: '農林水産省 本省7階 第3特別会議室',
+    summary: '第49回総会が開催され、食料・農業・農村基本計画の進捗状況および食料安全保障、スマート農業の推進について審議が行われ、議事録および審議会名簿が公表された。',
     agenda: [
-      '食料自給率目標（カロリーベース）および食料安全保障インディケーター',
-      'スマート農業機械の自動走行・遠隔監視における安全基準改定案',
-      '環境負荷低減型農業（有機農業・バイオマス利用）の面的拡大スキーム'
+      '食料・農業・農村基本計画の検証・評価について',
+      '食料安全保障の強化および環境負荷低減に向けた取り組み'
     ],
     materials: [
+      { name: '第49回 議事録 (PDF)', type: 'PDF', size: '50 KB', url: 'https://www.maff.go.jp/j/council/seisaku/attach/pdf/index-45.pdf', isMinutes: true },
+      { name: '審議会名簿 (PDF)', type: 'PDF', size: '103 KB', url: 'https://www.maff.go.jp/j/council/seisaku/attach/pdf/251027-1.pdf', isMinutes: false },
+      { name: '第49回 配布資料ページ', type: 'HTML', size: '35 KB', url: 'https://www.maff.go.jp/j/council/seisaku/251027.html', isMinutes: false },
       { name: '食料・農業・農村政策審議会 公式ポータル', type: 'HTML', size: '35 KB', url: 'https://www.maff.go.jp/j/council/seisaku/', isMinutes: false }
     ],
-    tags: ['農林水産', '食料安全保障', 'スマート農業', '食料基本法', '環境'],
-    officialUrl: 'https://www.maff.go.jp/j/council/seisaku/',
+    tags: ['食料・農業・農村政策審議会', '第49回', '食料安全保障', '基本計画', '農林水産省'],
+    officialUrl: 'https://www.maff.go.jp/j/council/seisaku/251027.html',
     hasMinutes: true,
-    docCount: 1
+    docCount: 4
   },
   // 9. MLIT
   {

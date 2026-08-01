@@ -119,6 +119,12 @@ TARGET_COUNCILS = [
         "ministry": "MOD",
         "name": "防衛産業ワーキンググループ",
         "url": "https://www.mod.go.jp/j/policy/agenda/meeting/defense_industry_wg/index.html"
+    },
+    {
+        "id": "maff-shokuryo-nogyo",
+        "ministry": "MAFF",
+        "name": "食料・農業・農村政策審議会",
+        "url": "https://www.maff.go.jp/j/council/seisaku/"
     }
 ]
 
