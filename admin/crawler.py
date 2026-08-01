@@ -40,7 +40,7 @@ CRAWL_TARGETS = [
         "id": "cao-ai-strategy",
         "ministry": "CAO",
         "name": "AI戦略会議",
-        "url": "https://www8.cao.go.jp/cstp/ai/"
+        "url": "https://www8.cao.go.jp/cstp/ai/ai_senryaku/ai_senryaku.html"
     },
     {
         "id": "cao-kisei-kaikaku",

@@ -4,7 +4,7 @@
     "councilName": "全世代型社会保障構築会議",
     "ministry": "CAS",
     "officialUrl": "https://www.cas.go.jp/jp/seisaku/zensedai_hosyo/index.html",
-    "scrapedAt": "2026-08-01 16:07:15",
+    "scrapedAt": "2026-08-01 16:12:23",
     "ruleApplied": "rule-cas-zensedai-hosyo-v2",
     "pageTitle": "全世代型社会保障構築会議｜内閣官房ホームページ",
     "totalExtractedMaterials": 49,
@@ -305,9 +305,9 @@
       }
     ],
     "extractedDates": [
-      "令和５年１２月１１日",
-      "令和５年１２月２２日",
-      "令和５年１０月３１日"
+      "令和６年１１月１５日",
+      "令和４年１２月１６日",
+      "令和５年１１月３０日"
     ],
     "subpageMeetings": [
       {
@@ -491,8 +491,8 @@
           }
         ],
         "extractedDates": [
-          "令和６年11月８日",
-          "令和６年１１月１５日"
+          "令和６年１１月１５日",
+          "令和６年11月８日"
         ]
       }
     ]
@@ -502,7 +502,7 @@
     "councilName": "中東情勢に関する関係閣僚会議",
     "ministry": "CAS",
     "officialUrl": "https://www.cas.go.jp/jp/seisaku/chyutoujyousei/index.html",
-    "scrapedAt": "2026-08-01 16:07:16",
+    "scrapedAt": "2026-08-01 16:12:24",
     "ruleApplied": "rule-cas-chutou-jyousei-v2",
     "pageTitle": "中東情勢に関する対応｜内閣官房ホームページ",
     "totalExtractedMaterials": 66,
@@ -905,9 +905,9 @@
       }
     ],
     "extractedDates": [
-      "令和８年５月12日",
-      "令和８年５月２１日",
-      "令和８年６月２６日"
+      "令和８年６月26日",
+      "令和８年５月21日",
+      "令和８年３月24日"
     ],
     "subpageMeetings": [
       {
@@ -1282,123 +1282,117 @@
     "councilId": "cao-ai-strategy",
     "councilName": "AI戦略会議",
     "ministry": "CAO",
-    "officialUrl": "https://www8.cao.go.jp/cstp/ai/",
-    "scrapedAt": "2026-08-01 16:07:17",
+    "officialUrl": "https://www8.cao.go.jp/cstp/ai/ai_senryaku/ai_senryaku.html",
+    "scrapedAt": "2026-08-01 16:12:24",
     "ruleApplied": "rule-cao-ai-strategy-v2",
-    "pageTitle": "AI戦略 - 科学技術・イノベーション - 内閣府",
-    "totalExtractedMaterials": 10,
+    "pageTitle": "ＡＩ戦略会議 - 科学技術・イノベーション - 内閣府",
+    "totalExtractedMaterials": 14,
     "materials": [
       {
-        "name": "AI関連予算の推移（PDF形式：428KB）",
-        "url": "https://www8.cao.go.jp/cstp/ai/yosan_suii.pdf",
+        "name": "議事要旨（PDF形式：322KB）",
+        "url": "https://www8.cao.go.jp/cstp/ai/ai_senryaku/14kai/gijiyoushi.pdf",
         "type": "PDF",
         "isPrivate": false
       },
       {
-        "name": "令和８年度予算（PDF形式：684KB）",
-        "url": "https://www8.cao.go.jp/cstp/ai/yosan_8nendo.pdf",
+        "name": "議事要旨（PDF形式：317KB）",
+        "url": "https://www8.cao.go.jp/cstp/ai/ai_senryaku/13kai/gijiyoushi.pdf",
         "type": "PDF",
         "isPrivate": false
       },
       {
-        "name": "令和７年度補正予算（PDF形式：694KB）",
-        "url": "https://www8.cao.go.jp/cstp/ai/yosan_7nendo_hosei.pdf",
+        "name": "議事要旨（PDF形式：314KB）",
+        "url": "https://www8.cao.go.jp/cstp/ai/ai_senryaku/12kai/gijiyoushi.pdf",
         "type": "PDF",
         "isPrivate": false
       },
       {
-        "name": "令和７年度予算（PDF形式：553KB）",
-        "url": "https://www8.cao.go.jp/cstp/ai/yosan_7nendo.pdf",
+        "name": "議事要旨（PDF形式：330KB）",
+        "url": "https://www8.cao.go.jp/cstp/ai/ai_senryaku/11kai/gijiyoushi.pdf",
         "type": "PDF",
         "isPrivate": false
       },
       {
-        "name": "令和６年度補正予算（PDF形式：547KB）",
-        "url": "https://www8.cao.go.jp/cstp/ai/yosan_6nendo_hosei.pdf",
+        "name": "議事要旨（PDF形式：108KB）",
+        "url": "https://www8.cao.go.jp/cstp/ai/ai_senryaku/10kai/gijiyoushi10kai.pdf",
         "type": "PDF",
         "isPrivate": false
       },
       {
-        "name": "令和６年度予算（PDF形式：546KB）",
-        "url": "https://www8.cao.go.jp/cstp/ai/yosan_6nendo.pdf",
+        "name": "議事要旨（PDF形式：267KB）",
+        "url": "https://www8.cao.go.jp/cstp/ai/ai_senryaku/9kai/gijiyoushi9kai.pdf",
         "type": "PDF",
         "isPrivate": false
       },
       {
-        "name": "令和５年度補正予算（PDF形式：523KB）",
-        "url": "https://www8.cao.go.jp/cstp/ai/yosan_5nendo_hosei.pdf",
+        "name": "議事要旨（PDF形式：112KB）",
+        "url": "https://www8.cao.go.jp/cstp/ai/ai_senryaku/8kai/gijiyoushi8kai.pdf",
         "type": "PDF",
         "isPrivate": false
       },
       {
-        "name": "議事概要（PDF形式：316KB）",
-        "url": "https://www8.cao.go.jp/cstp/ai/ai_hq/5kai/gijigaiyo.pdf",
+        "name": "議事要旨（PDF形式：240KB）",
+        "url": "https://www8.cao.go.jp/cstp/ai/ai_senryaku/7kai/gijiyoushi7kai.pdf",
         "type": "PDF",
         "isPrivate": false
       },
       {
-        "name": "議事概要（PDF形式：312KB）",
-        "url": "https://www8.cao.go.jp/cstp/ai/ai_hq/3kai/gijigaiyo.pdf",
+        "name": "議事要旨（PDF形式：258KB）",
+        "url": "https://www8.cao.go.jp/cstp/ai/ai_senryaku/6kai/gijiyoushi6kai.pdf",
         "type": "PDF",
         "isPrivate": false
       },
       {
-        "name": "議事概要（PDF形式：304KB）",
-        "url": "https://www8.cao.go.jp/cstp/ai/ai_hq/1kai/gijigaiyo.pdf",
+        "name": "議事要旨（PDF形式：259KB）",
+        "url": "https://www8.cao.go.jp/cstp/ai/ai_senryaku/5kai/gijiyoushi5kai.pdf",
+        "type": "PDF",
+        "isPrivate": false
+      },
+      {
+        "name": "議事要旨（PDF形式：267KB）",
+        "url": "https://www8.cao.go.jp/cstp/ai/ai_senryaku/4kai/gijiyoushi4kai.pdf",
+        "type": "PDF",
+        "isPrivate": false
+      },
+      {
+        "name": "議事要旨（PDF形式：220KB）",
+        "url": "https://www8.cao.go.jp/cstp/ai/ai_senryaku/3kai/gijiyoushi3kai.pdf",
+        "type": "PDF",
+        "isPrivate": false
+      },
+      {
+        "name": "議事要旨（PDF形式：294KB）",
+        "url": "https://www8.cao.go.jp/cstp/ai/ai_senryaku/2kai/gijiyoushi2kai.pdf",
+        "type": "PDF",
+        "isPrivate": false
+      },
+      {
+        "name": "議事要旨（PDF形式：299KB）",
+        "url": "https://www8.cao.go.jp/cstp/ai/ai_senryaku/1kai/giji.pdf",
         "type": "PDF",
         "isPrivate": false
       }
     ],
     "extractedDates": [
-      "2026年6月26日",
-      "2026年7月10日",
-      "2026年6月19日"
+      "令和5年5月26日",
+      "令和6年7月19日",
+      "令和7年6月2日"
     ],
-    "subpageMeetings": [
-      {
-        "subpageUrl": "https://www8.cao.go.jp/cstp/ai/ai_hq/kaisai.html",
-        "title": "人工知能戦略本部　開催状況 - 科学技術・イノベーション - 内閣府",
-        "extractedMaterialsCount": 3,
-        "materials": [
-          {
-            "name": "議事概要（PDF形式：316KB）",
-            "url": "https://www8.cao.go.jp/cstp/ai/ai_hq/5kai/gijigaiyo.pdf",
-            "type": "PDF",
-            "isPrivate": false
-          },
-          {
-            "name": "議事概要（PDF形式：312KB）",
-            "url": "https://www8.cao.go.jp/cstp/ai/ai_hq/3kai/gijigaiyo.pdf",
-            "type": "PDF",
-            "isPrivate": false
-          },
-          {
-            "name": "議事概要（PDF形式：304KB）",
-            "url": "https://www8.cao.go.jp/cstp/ai/ai_hq/1kai/gijigaiyo.pdf",
-            "type": "PDF",
-            "isPrivate": false
-          }
-        ],
-        "extractedDates": [
-          "令和8年6月19日",
-          "令和7年11月21日"
-        ]
-      }
-    ]
+    "subpageMeetings": []
   },
   {
     "councilId": "cao-kisei-kaikaku",
     "councilName": "規制改革推進会議",
     "ministry": "CAO",
     "officialUrl": "https://www8.cao.go.jp/kisei-kaikaku/index.html",
-    "scrapedAt": "2026-08-01 16:07:17",
+    "scrapedAt": "2026-08-01 16:12:24",
     "ruleApplied": "rule-cao-kisei-kaikaku-v2",
     "pageTitle": "規制改革&nbsp;-&nbsp;内閣府",
     "totalExtractedMaterials": 0,
     "materials": [],
     "extractedDates": [
-      "令和８年３月30日",
-      "令和８年７月21日",
+      "令和７年６月10日",
+      "令和７年10月16日",
       "令和８年６月30日"
     ],
     "subpageMeetings": []
@@ -1408,7 +1402,7 @@
     "councilName": "復興推進委員会",
     "ministry": "RA",
     "officialUrl": "https://www.reconstruction.go.jp/topics/cat-11/cat-47/cat-155/cat-156/000813/",
-    "scrapedAt": "2026-08-01 16:07:17",
+    "scrapedAt": "2026-08-01 16:12:24",
     "ruleApplied": "rule-ra-fukko-suishin-v2",
     "pageTitle": "復興推進委員会 | 復興庁",
     "totalExtractedMaterials": 10,
@@ -1476,8 +1470,8 @@
     ],
     "extractedDates": [
       "令和３年11月18日",
-      "令和２年11月30日",
-      "令和７年３月６日"
+      "令和７年11月５日",
+      "令和３年３月１日"
     ],
     "subpageMeetings": []
   },
@@ -1486,7 +1480,7 @@
     "councilName": "社会保障国民会議",
     "ministry": "CAS",
     "officialUrl": "https://www.cas.go.jp/jp/seisaku/kokuminkaigi/index.html",
-    "scrapedAt": "2026-08-01 16:07:17",
+    "scrapedAt": "2026-08-01 16:12:24",
     "ruleApplied": "rule-cas-kokumin-kaigi-v2",
     "pageTitle": "社会保障国民会議｜内閣官房",
     "totalExtractedMaterials": 28,
@@ -1661,9 +1655,9 @@
       }
     ],
     "extractedDates": [
-      "令和8年4月24日",
-      "令和8年4月9日",
-      "令和8年5月13日"
+      "令和8年5月20日",
+      "令和8年4月21日",
+      "令和8年5月27日"
     ],
     "subpageMeetings": []
   },
@@ -1672,7 +1666,7 @@
     "councilName": "人工知能戦略本部",
     "ministry": "CAO",
     "officialUrl": "https://www8.cao.go.jp/cstp/ai/ai_hq/kaisai.html",
-    "scrapedAt": "2026-08-01 16:07:17",
+    "scrapedAt": "2026-08-01 16:12:24",
     "ruleApplied": "rule-cao-ai-hq-v2",
     "pageTitle": "人工知能戦略本部　開催状況 - 科学技術・イノベーション - 内閣府",
     "totalExtractedMaterials": 3,
@@ -1698,8 +1692,8 @@
     ],
     "extractedDates": [
       "令和8年6月19日",
-      "令和7年11月21日",
-      "令和８年７月10日"
+      "令和7年9月12日",
+      "令和7年11月21日"
     ],
     "subpageMeetings": []
   },
@@ -1708,7 +1702,7 @@
     "councilName": "デジタル社会推進会議",
     "ministry": "DIGITAL",
     "officialUrl": "https://www.digital.go.jp/councils/social-promotion",
-    "scrapedAt": "2026-08-01 16:07:17",
+    "scrapedAt": "2026-08-01 16:12:24",
     "ruleApplied": "rule-digital-suishin-v2",
     "pageTitle": "デジタル社会推進会議｜デジタル庁",
     "totalExtractedMaterials": 0,

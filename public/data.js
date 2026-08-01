@@ -49,7 +49,7 @@ const COUNCILS = [
     category: 'PANEL',
     pastYearCount: 14,
     description: 'AIの利活用とリスク管理に関する国家戦略、ガバナンスガイドライン、フロンティアAIモデルの安全評価等を討議する有識者会議。',
-    officialUrl: 'https://www8.cao.go.jp/cstp/ai/',
+    officialUrl: 'https://www8.cao.go.jp/cstp/ai/ai_senryaku/ai_senryaku.html',
     isWatched: true,
     trackedSince: '2023-05-01'
   },
@@ -354,29 +354,32 @@ const COUNCILS = [
 const MEETINGS = [
   // 1. CAO
   {
-    id: 'meet-2026-0728-ai',
+    id: 'meet-2025-0602-ai14',
     councilId: 'cao-ai-strategy',
     councilName: 'AI戦略会議',
     ministry: 'CAO',
     category: 'PANEL',
     title: '第14回 AI戦略会議',
-    date: '2026-07-28',
-    updatedAt: '2026-07-28 11:30',
+    date: '2025-06-02',
+    updatedAt: '2025-06-02 18:30',
     location: '中央合同庁舎第8号館 講堂（オンライン併用）',
-    summary: '生成AIの事業者向け「安全評価基準（セーフティベンチマーク）」の最終案が示され、国による実証事業の導入方針が合意された。また、著作権法におけるAI学習と侵害判断の clarified ガイドライン運用状況について報告が行われた。',
+    summary: 'AI法の概要案および今後のAI政策の進め方について審議が行われた。',
     agenda: [
-      'フロンティアAIモデルにおけるセーフティベンチマーク試行評価結果について',
-      'AI事業者向けガバナンスガイドライン（Ver 2.0）改定案の提示',
-      '生成AIと著作権に関する最新の訴訟・権利保護動向の報告'
+      'AI法の概要についての説明および質疑応答',
+      '今後のAI政策の進め方に関する方針議論',
+      '統合イノベーション戦略2025 AIパート（案）の審議'
     ],
     materials: [
-      { name: '第14回 AI戦略会議 議事要旨 (PDF)', type: 'PDF', size: '210 KB', url: 'https://www8.cao.go.jp/cstp/ai/ai_hq/5kai/gijigaiyo.pdf', isMinutes: true },
-      { name: 'AI戦略会議 ポータル・配布資料一覧 (HTML)', type: 'HTML', size: '50 KB', url: 'https://www8.cao.go.jp/cstp/ai/', isMinutes: false }
+      { name: '資料1-1: AI法の概要 (PDF / 442KB)', type: 'PDF', size: '442 KB', url: 'https://www8.cao.go.jp/cstp/ai/ai_senryaku/14kai/shiryou1-1.pdf', isMinutes: false },
+      { name: '資料1-2: 今後のAI政策の進め方 (PDF / 515KB)', type: 'PDF', size: '515 KB', url: 'https://www8.cao.go.jp/cstp/ai/ai_senryaku/14kai/shiryou1-2.pdf', isMinutes: false },
+      { name: '資料2: 統合イノベーション戦略2025AIパート（案）', type: '非公開', size: '-', url: '#', isPrivate: true, isMinutes: false },
+      { name: '参考資料: AI戦略会議 構成員名簿 (PDF / 164KB)', type: 'PDF', size: '164 KB', url: 'https://www8.cao.go.jp/cstp/ai/ai_senryaku/14kai/sankou.pdf', isMinutes: false },
+      { name: '第14回 会議公式ページ', type: 'HTML', size: '35 KB', url: 'https://www8.cao.go.jp/cstp/ai/ai_senryaku/14kai/14kai.html', isMinutes: false }
     ],
-    tags: ['AI', '生成AI', 'ガバナンス', '著作権', 'セーフティ'],
-    officialUrl: 'https://www8.cao.go.jp/cstp/ai/',
+    tags: ['AI', 'AI法', 'AI戦略会議', '統合イノベーション戦略', '内閣府'],
+    officialUrl: 'https://www8.cao.go.jp/cstp/ai/ai_senryaku/14kai/14kai.html',
     hasMinutes: true,
-    docCount: 2
+    docCount: 5
   },
   // 2. DIGITAL
   {
