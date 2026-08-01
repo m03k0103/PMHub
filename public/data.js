@@ -300,13 +300,13 @@ const COUNCILS = [
   },
   // 16. NPA
   {
-    id: 'npa-cyber-keisatsu',
-    name: 'サイバー犯罪・サイバー攻撃対策有識者会議',
+    id: 'npa-seisaku-hyoka-kenkyukai',
+    name: '警察庁政策評価研究会',
     ministry: 'NPA',
     category: 'PANEL',
-    pastYearCount: 6,
-    description: 'ランサムウェア・フィッシング被害対策、暗号資産の不正送金防止、重要インフラ防護および能動的サイバー防御の法的整理。',
-    officialUrl: 'https://www.npa.go.jp/bureau/cyber/index.html',
+    pastYearCount: 42,
+    description: '警察行政の政策評価、警察活動の事後評価・目標達成度検証、有識者からの意見聴取・改善提言を審議。',
+    officialUrl: 'https://www.npa.go.jp/policies/council/index.html',
     isWatched: true,
     trackedSince: '2023-03-15'
   },
@@ -960,28 +960,79 @@ const MEETINGS = [
   },
   // 10. NPA
   {
-    id: 'meet-2026-0704-npa',
-    councilId: 'npa-cyber-keisatsu',
-    councilName: 'サイバー犯罪・サイバー攻撃対策有識者会議',
+    id: 'meet-npa-seisaku-hyoka-42nd',
+    councilId: 'npa-seisaku-hyoka-kenkyukai',
+    councilName: '警察庁政策評価研究会',
     ministry: 'NPA',
     category: 'PANEL',
-    title: '第10回 サイバー犯罪・サイバー攻撃対策有識者会議',
-    date: '2026-07-04',
-    updatedAt: '2026-07-04 18:00',
-    location: '警察庁 グランドプラザ会議室',
-    summary: '警察庁サイバー特別捜査隊による国際共同テイクダウン作戦の成果報告、およびディープフェイク・音声捏造を用いた詐欺手法に対する注意喚起と高度解析システムの配備が議論された。',
+    title: '第42回 警察庁政策評価研究会',
+    date: '2025-07-09',
+    updatedAt: '2025-07-09 18:00',
+    location: '警察庁 会議室',
+    summary: '第42回研究会が開催され、令和6年度警察行政における政策評価施策の実施状況、有識者意見聴取要旨および議事録が公表された。',
     agenda: [
-      'ランサムウェアグループに対する国際刑事警察機構（ICPO）連携の現状',
-      'ディープフェイク動画・音声のフォレンジック解析ツールの全国整備',
-      '暗号資産交換業者に対する不正送金検知・口座凍結要請手順の標準化'
+      '令和6年度警察行政における政策評価の実施状況について',
+      '有識者からの意見聴取および事前・事後評価施策の検証'
     ],
     materials: [
-      { name: '警察庁 サイバー攻撃対策 公式ポータル', type: 'HTML', size: '35 KB', url: 'https://www.npa.go.jp/bureau/cyber/index.html', isMinutes: false }
+      { name: '第42回 議事録 (PDF)', type: 'PDF', size: '220 KB', url: 'https://www.npa.go.jp/policies/evaluation/06kenkyuukai/42/r7_kenkyukai_gijiroku.pdf', isMinutes: true },
+      { name: '意見聴取要旨 (PDF)', type: 'PDF', size: '180 KB', url: 'https://www.npa.go.jp/policies/evaluation/06kenkyuukai/r7_42_ikenyoushi.pdf', isMinutes: true },
+      { name: '警察庁 審議会・検討会等一覧 公式ポータル', type: 'HTML', size: '35 KB', url: 'https://www.npa.go.jp/policies/council/index.html', isMinutes: false }
     ],
-    tags: ['警察庁', 'サイバーセキュリティ', 'ランサムウェア', 'ディープフェイク', '捜査'],
-    officialUrl: 'https://www.npa.go.jp/bureau/cyber/index.html',
+    tags: ['警察庁', '政策評価', '第42回', '意見聴取要旨', '議事録'],
+    officialUrl: 'https://www.npa.go.jp/policies/council/index.html',
     hasMinutes: true,
-    docCount: 1
+    docCount: 3
+  },
+  {
+    id: 'meet-npa-seisaku-hyoka-41st',
+    councilId: 'npa-seisaku-hyoka-kenkyukai',
+    councilName: '警察庁政策評価研究会',
+    ministry: 'NPA',
+    category: 'PANEL',
+    title: '第41回 警察庁政策評価研究会',
+    date: '2024-07-09',
+    updatedAt: '2024-07-09 18:00',
+    location: '警察庁 会議室',
+    summary: '第41回研究会が開催され、令和5年度政策評価結果のレビューおよび有識者による意見聴取要旨、議事録がとりまとめられた。',
+    agenda: [
+      '令和5年度警察政策評価の事後評価結果について',
+      '政策評価手法の改善および有識者意見の反映方針'
+    ],
+    materials: [
+      { name: '第41回 議事録 (PDF)', type: 'PDF', size: '210 KB', url: 'https://www.npa.go.jp/policies/evaluation/06kenkyuukai/r6_kenkyukai_gijiroku.pdf', isMinutes: true },
+      { name: '意見聴取要旨 (PDF)', type: 'PDF', size: '175 KB', url: 'https://www.npa.go.jp/policies/evaluation/06kenkyuukai/41/R6_41_ikenyoushi.pdf', isMinutes: true },
+      { name: '警察庁 審議会・検討会等一覧 公式ポータル', type: 'HTML', size: '35 KB', url: 'https://www.npa.go.jp/policies/council/index.html', isMinutes: false }
+    ],
+    tags: ['警察庁', '政策評価', '第41回', '意見聴取要旨', '議事録'],
+    officialUrl: 'https://www.npa.go.jp/policies/council/index.html',
+    hasMinutes: true,
+    docCount: 3
+  },
+  {
+    id: 'meet-npa-seisaku-hyoka-40th',
+    councilId: 'npa-seisaku-hyoka-kenkyukai',
+    councilName: '警察庁政策評価研究会',
+    ministry: 'NPA',
+    category: 'PANEL',
+    title: '第40回 警察庁政策評価研究会',
+    date: '2023-07-31',
+    updatedAt: '2023-07-31 18:00',
+    location: '警察庁 会議室',
+    summary: '第40回研究会が開催され、治安向上・サイバー対策等に関する政策評価指標の点検、意見聴取要旨および議事録が公表された。',
+    agenda: [
+      '治安対策・サイバー防衛における主要指標の達成状況',
+      '令和4年度政策評価事後評価結果および意見聴取'
+    ],
+    materials: [
+      { name: '第40回 議事録 (PDF)', type: 'PDF', size: '200 KB', url: 'https://www.npa.go.jp/policies/evaluation/06kenkyuukai/40/r5_40_gijiroku.pdf', isMinutes: true },
+      { name: '意見聴取要旨 (PDF)', type: 'PDF', size: '170 KB', url: 'https://www.npa.go.jp/policies/evaluation/R5_ikenyoushi.pdf', isMinutes: true },
+      { name: '警察庁 審議会・検討会等一覧 公式ポータル', type: 'HTML', size: '35 KB', url: 'https://www.npa.go.jp/policies/council/index.html', isMinutes: false }
+    ],
+    tags: ['警察庁', '政策評価', '第40回', '意見聴取要旨', '議事録'],
+    officialUrl: 'https://www.npa.go.jp/policies/council/index.html',
+    hasMinutes: true,
+    docCount: 3
   },
   // 11. NRA
   {

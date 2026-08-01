@@ -143,6 +143,12 @@ TARGET_COUNCILS = [
         "ministry": "MLIT",
         "name": "インフラマネジメント戦略小委員会",
         "url": "https://www.mlit.go.jp/policy/shingikai/s204_management02.html"
+    },
+    {
+        "id": "npa-seisaku-hyoka-kenkyukai",
+        "ministry": "NPA",
+        "name": "警察庁政策評価研究会",
+        "url": "https://www.npa.go.jp/policies/council/index.html"
     }
 ]
 
