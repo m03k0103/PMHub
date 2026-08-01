@@ -5,8 +5,9 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>政策会議ウォッチ | 日本政府 各種会議 資料集約ポータル</title>
-  <meta name="description" content="日本の各省庁の会議体・分科会・検討会等の更新情報や配布資料（議事次第、議事要旨、議事録、資料）を一箇所に集約・横断検索できる情報収集ポータル" />
-  <meta name="keywords" content="政策会議ウォッチ, PMHub, 審議会, 諮問会議, 内閣官房, 内閣府, デジタル庁, 経済産業省, 議事録, 政府配布資料, 報道資料, 政策調査" />
+  <meta name="description"
+    content="PM-HUBでは、各省庁の審議会・検討会等の会議情報をリアルタイムに集約し、配布資料や議事録へのダイレクトリンク、AIによる要約をワンストップで提供する情報収集ポータルです。資料の検索、分析、監視を効率化し、政策決定プロセスの透明性を高めます。" />
+  <meta name="keywords" content="政策会議ウォッチ, PMHub, 審議会, 諮問会議, 議事録, 政府配布資料" />
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -64,6 +65,14 @@
           </svg>
           会議一覧
         </button>
+        <button class="nav-tab" data-tab="watchlist">
+          <svg class="tab-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="2">
+            <polygon
+              points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+          </svg>
+          ウォッチリスト <span class="badge-count" id="watchlistCount">0</span>
+        </button>
         <button class="nav-tab" data-tab="analytics">
           <svg class="tab-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
             stroke-width="2">
@@ -72,14 +81,6 @@
             <line x1="6" y1="20" x2="6" y2="14" />
           </svg>
           統計
-        </button>
-        <button class="nav-tab" data-tab="watchlist">
-          <svg class="tab-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-            stroke-width="2">
-            <polygon
-              points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
-          </svg>
-          ウォッチリスト <span class="badge-count" id="watchlistCount">0</span>
         </button>
         <button class="nav-tab" data-tab="about">
           <svg class="tab-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
@@ -312,9 +313,9 @@
               <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
               <path d="M16 3.13a4 4 0 0 1 0 7.75" />
             </svg>
-            トラッキング対象 会議体ディレクトリ
+            会議体一覧
           </h2>
-          <p class="section-subtitle">日本政府各省庁の主要な会議体の一覧。お気に入り（ウォッチ）登録でマイウォッチリストへの集約やRSS連携が可能です。</p>
+          <p class="section-subtitle">日本政府の主要な会議体の一覧。お気に入り（ウォッチ）登録で更新通知を受け取れます。</p>
         </div>
         <div class="directory-search">
           <input type="text" id="councilSearchInput" placeholder="会議体名・所管省庁で検索..." />
@@ -326,46 +327,7 @@
       </div>
     </section>
 
-    <!-- VIEW 3: ANALYTICS & TRENDS -->
-    <section class="view-panel" id="viewAnalytics">
-      <div class="section-header">
-        <div>
-          <h2 class="section-title">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <line x1="18" y1="20" x2="18" y2="10" />
-              <line x1="12" y1="20" x2="12" y2="4" />
-              <line x1="6" y1="20" x2="6" y2="14" />
-            </svg>
-            政策トレンド・会議体開催統計アナリティクス
-          </h2>
-          <p class="section-subtitle">各省庁の会議開催頻度や配布資料数、直近の主要議論テーマのトレンド分析</p>
-        </div>
-      </div>
-
-      <div class="analytics-grid">
-        <div class="chart-card card-glass full-width">
-          <div class="chart-header">
-            <h3>省庁別 会議体開催実績</h3>
-            <span class="chart-desc">直近の会議開催件数 breakdown</span>
-          </div>
-          <div class="chart-body">
-            <canvas id="ministryChart"></canvas>
-          </div>
-        </div>
-
-        <div class="chart-card card-glass full-width">
-          <div class="chart-header">
-            <h3>月別 資料・議事録公開アクティビティ</h3>
-            <span class="chart-desc">時系列における情報公開ペースの推移</span>
-          </div>
-          <div class="chart-body">
-            <canvas id="timelineChart"></canvas>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- VIEW 4: WATCHLIST & ALERTS -->
+    <!-- VIEW 3: WATCHLIST & ALERTS -->
     <section class="view-panel" id="viewWatchlist">
       <div class="section-header">
         <div>
@@ -417,12 +379,51 @@
       </div>
     </section>
 
+    <!-- VIEW 4: ANALYTICS & TRENDS -->
+    <section class="view-panel" id="viewAnalytics">
+      <div class="section-header">
+        <div>
+          <h2 class="section-title">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="18" y1="20" x2="18" y2="10" />
+              <line x1="12" y1="20" x2="12" y2="4" />
+              <line x1="6" y1="20" x2="6" y2="14" />
+            </svg>
+            統計
+          </h2>
+          <p class="section-subtitle">各省庁の会議開催頻度や配布資料数の分析</p>
+        </div>
+      </div>
+
+      <div class="analytics-grid">
+        <div class="chart-card card-glass full-width">
+          <div class="chart-header">
+            <h3>省庁別 会議体開催実績</h3>
+            <span class="chart-desc">直近の会議開催件数 breakdown</span>
+          </div>
+          <div class="chart-body">
+            <canvas id="ministryChart"></canvas>
+          </div>
+        </div>
+
+        <div class="chart-card card-glass full-width">
+          <div class="chart-header">
+            <h3>月別 資料・議事録公開アクティビティ</h3>
+            <span class="chart-desc">時系列における情報公開ペースの推移</span>
+          </div>
+          <div class="chart-body">
+            <canvas id="timelineChart"></canvas>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- VIEW 5: ABOUT & METHODOLOGY -->
     <section class="view-panel" id="viewAbout">
       <div class="about-card card-glass">
         <h2>政策会議ウォッチ (PM-HUB) について</h2>
         <p class="lead-text">
-          「政策会議ウォッチ」は、内閣官房・内閣府・各省庁のウェブサイトに分散して掲載されている会議体、諮問会議、有識者検討会、分科会等の開催情報および配布資料・議事録を一箇所に集約し、一般国民、報道関係者（記者）、研究者・アナリスト向けに透明性と一覧性を提供するオープン情報ポータルです。
+          「政策会議ウォッチ」は、各省庁のウェブサイトに掲載されている各種会議体（審議会、諮問会議、有識者検討会等）の開催情報および配布資料・議事録を一箇所に集約し、一般国民、報道関係者、関係企業、研究者向けに透明性と一覧性を提供するサイトです。
         </p>
 
         <div class="about-grid">
@@ -476,7 +477,7 @@
                 <rect x="9" y="8" width="6" height="8" rx="1" />
               </svg>
             </div>
-            <h4>プライバシー・ローカル保存方針</h4>
+            <h4>プライバシー方針</h4>
             <p>
               本サービスではユーザー登録・ログインは一切不要です。マイウォッチリスト等の個人設定データは、**すべてご利用中のブラウザ（ローカルストレージ）内のみ**に安全に保存されます。運営者や外部サーバーへデータが送信・収集されることはありません。
             </p>
@@ -484,7 +485,7 @@
         </div>
 
         <div class="about-footer-callout">
-          <p>オープンデータ・API・スクレイピング連携に関するお問い合わせ、または追加トラック希望の会議体がございましたら開発チームまでご要望をお寄せください。</p>
+          ご意見、ご要望、または追加を希望する会議体がございましたら開発チームまでご要望をお寄せください。
         </div>
       </div>
     </section>
