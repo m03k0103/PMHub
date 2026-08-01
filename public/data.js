@@ -787,14 +787,14 @@ const MEETINGS = [
   },
   // 14. CAS & User Requested Council Meetings
   {
-    id: 'meet-2026-0730-zensedai',
+    id: 'meet-2025-0623-zensedai',
     councilId: 'cas-zensedai-hosyo',
     councilName: '全世代型社会保障構築会議',
     ministry: 'CAS',
     category: 'PANEL',
     title: '第21回 全世代型社会保障構築会議',
-    date: '2026-07-30',
-    updatedAt: '2026-07-30 17:00',
+    date: '2025-06-23',
+    updatedAt: '2025-06-23 17:00',
     location: '首相官邸 2階 大ホール',
     summary: '医療・介護の自己負担見直しおよび子支援財源「支援金制度」の具体的な徴収スキームに関する議論の取りまとめ案が提示された。',
     agenda: [
