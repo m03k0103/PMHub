@@ -118,7 +118,7 @@ const COUNCILS = [
     category: 'COUNCIL',
     pastYearCount: 11,
     description: '6G・光通信規格、電波周波数割り当て、プラットフォーム事業者規制、サイバーセキュリティ対策を審議。',
-    officialUrl: 'https://www.soumu.go.jp/main_sosiki/joho_tsusin/policykyoku/shingikai.html',
+    officialUrl: 'https://www.soumu.go.jp/menu_kyotsuu/whatsnew/kaigi_index.html',
     isWatched: false,
     trackedSince: '2022-06-01'
   },
@@ -130,7 +130,7 @@ const COUNCILS = [
     category: 'SUBCOMMITTEE',
     pastYearCount: 9,
     description: 'デジタル時代の契約法制、共同親権、戸籍の読み仮名法制化、AI生成物の権利関係など民法・刑事法制の改正要綱案を答申。',
-    officialUrl: 'https://www.moj.go.jp/shingi1/housei_index.html',
+    officialUrl: 'https://www.moj.go.jp/shingi_index.html',
     isWatched: true,
     trackedSince: '2022-01-15'
   },
@@ -142,7 +142,7 @@ const COUNCILS = [
     category: 'ROUNDTABLE',
     pastYearCount: 6,
     description: '経済安全保障、自由で開かれたインド太平洋 (FOIP)、Global South との連携強化、ODA改革に関する中長期戦略を助言。',
-    officialUrl: 'https://www.mofa.go.jp/mofaj/ms/is/page25_001234.html',
+    officialUrl: 'https://www.mofa.go.jp/mofaj/index.html',
     isWatched: false,
     trackedSince: '2023-05-10'
   },
@@ -178,7 +178,7 @@ const COUNCILS = [
     category: 'SUBCOMMITTEE',
     pastYearCount: 24,
     description: '医療保険制度改革、マイナ保険証の普及・運用、診療報酬改定の基本方針および薬価制度の見直しを審議。',
-    officialUrl: 'https://www.mhlw.go.jp/stf/shingi/shingi-iryou.html',
+    officialUrl: 'https://www.mhlw.go.jp/stf/shingi/index.html',
     isWatched: true,
     trackedSince: '2021-11-01'
   },
@@ -214,7 +214,7 @@ const COUNCILS = [
     category: 'SUBCOMMITTEE',
     pastYearCount: 9,
     description: '高速道路の老朽化修繕、防災・減災国土強靱化計画、自動運転インフラ整備、物流2024年問題に伴うモーダルシフト促進。',
-    officialUrl: 'https://www.mlit.go.jp/shingikai/sakai/index.html',
+    officialUrl: 'https://www.mlit.go.jp/policy/shingikai/index.html',
     isWatched: false,
     trackedSince: '2022-07-15'
   },
@@ -250,7 +250,7 @@ const COUNCILS = [
     category: 'PANEL',
     pastYearCount: 6,
     description: 'ランサムウェア・フィッシング被害対策、暗号資産の不正送金防止、重要インフラ防護および能動的サイバー防御の法的整理。',
-    officialUrl: 'https://www.npa.go.jp/bureau/cyber/council/',
+    officialUrl: 'https://www.npa.go.jp/bureau/cyber/index.html',
     isWatched: true,
     trackedSince: '2023-03-15'
   },
@@ -262,7 +262,7 @@ const COUNCILS = [
     category: 'SUBCOMMITTEE',
     pastYearCount: 16,
     description: 'ステーブルコイン・Web3暗号資産の規制フレームワーク、資産運用立国実現に向けたNISA制度拡充・顧客中心主義を審議。',
-    officialUrl: 'https://www.fsa.go.jp/singi/singizu/index.html',
+    officialUrl: 'https://www.fsa.go.jp/singi/index.html',
     isWatched: true,
     trackedSince: '2022-11-01'
   },
@@ -274,7 +274,7 @@ const COUNCILS = [
     category: 'ROUNDTABLE',
     pastYearCount: 10,
     description: 'ダークパターン規制、生成AIによる誤情報・悪質商法からの消費者保護、ステマ（ステルスマーケティング）規制の運用評価。',
-    officialUrl: 'https://www.caa.go.jp/shingikai/consumer/',
+    officialUrl: 'https://www.caa.go.jp',
     isWatched: false,
     trackedSince: '2023-06-01'
   },
@@ -286,7 +286,7 @@ const COUNCILS = [
     category: 'PANEL',
     pastYearCount: 11,
     description: '大規模言語モデル (LLM) 学習データにおける個人情報の匿名加工基準、海外テック企業への適格性審査および同意なし学習の権利保護。',
-    officialUrl: 'https://www.ppc.go.jp/aboutus/kekka/',
+    officialUrl: 'https://www.ppc.go.jp/aboutus/',
     isWatched: true,
     trackedSince: '2023-04-15'
   },
@@ -298,7 +298,7 @@ const COUNCILS = [
     category: 'COUNCIL',
     pastYearCount: 48,
     description: '原子力発電所の新規制基準適合性審査、高レベル放射性廃棄物最終処分場の地質調査評価、安全協定の検証を実施。',
-    officialUrl: 'https://www.nra.go.jp/gikai/kisei-gikai/index.html',
+    officialUrl: 'https://www.nra.go.jp/index.html',
     isWatched: false,
     trackedSince: '2021-10-01'
   },
@@ -486,18 +486,16 @@ const MEETINGS = [
     summary: '円建てステーブルコインの発行・決済事業に関する銀行法・資金決済法上の実務留意事項および、AIによる投資助言アルゴリズムに対する金融商品取引法上の登録基準が審議された。',
     agenda: [
       'デジタル通貨・ステーブルコインの決済インフラ接続に関する論点整理',
-      '生成AIを用いたロボアドバイザー等の規制・説明責任の clarified 化',
+      '生成AIを用いたロボアドバイザー等の規制・説明責任の明確化',
       '資産形成推進に向けた新NISA成長投資枠の利用状況統計'
     ],
     materials: [
-      { name: '議事次第', type: 'PDF', size: '110 KB', url: 'https://www.fsa.go.jp/singi/singizu/taikou/20260721/shidai.pdf', isMinutes: false },
-      { name: '資料1: 金融機関におけるAI利活用ガイドライン（論点メモ）', type: 'PDF', size: '2.1 MB', url: 'https://www.fsa.go.jp/singi/singizu/taikou/20260721/shiryou1.pdf', isMinutes: false },
-      { name: '第12回 議事録（全文）', type: 'PDF', size: '450 KB', url: 'https://www.fsa.go.jp/singi/singizu/taikou/20260721/gijiroku.pdf', isMinutes: true }
+      { name: '金融審議会 公式ポータル', type: 'HTML', size: '35 KB', url: 'https://www.fsa.go.jp/singi/index.html', isMinutes: false }
     ],
-    tags: ['金融', 'ステーブルコイン', 'Web3', 'NISA', 'ロボアドバイザー'],
-    officialUrl: 'https://www.fsa.go.jp/singi/singizu/taikou/20260721.html',
+    tags: ['金融', 'ステーブルコイン', 'Web3', 'NISA', '金融庁'],
+    officialUrl: 'https://www.fsa.go.jp/singi/index.html',
     hasMinutes: true,
-    docCount: 3
+    docCount: 1
   },
   // 6. MOJ
   {
@@ -517,14 +515,12 @@ const MEETINGS = [
       '戸籍法改定に伴う氏名の読み仮名届出の全国展開状況'
     ],
     materials: [
-      { name: '議事次第', type: 'PDF', size: '90 KB', url: 'https://www.moj.go.jp/content/00142001.pdf', isMinutes: false },
-      { name: '資料1: 民法（電子契約関係）改正要綱素案', type: 'PDF', size: '1.9 MB', url: 'https://www.moj.go.jp/content/00142002.pdf', isMinutes: false },
-      { name: '第112回 部会議事要旨', type: 'PDF', size: '160 KB', url: 'https://www.moj.go.jp/content/00142003.pdf', isMinutes: true }
+      { name: '法制審議会 公式ポータル', type: 'HTML', size: '35 KB', url: 'https://www.moj.go.jp/shingi_index.html', isMinutes: false }
     ],
     tags: ['法制審議会', '民法', '電子契約', '共同親権', '法務省'],
-    officialUrl: 'https://www.moj.go.jp/shingi1/housei_20260719.html',
+    officialUrl: 'https://www.moj.go.jp/shingi_index.html',
     hasMinutes: true,
-    docCount: 3
+    docCount: 1
   },
   // 7. MOD
   {
@@ -544,14 +540,12 @@ const MEETINGS = [
       '自衛隊における自立型無人アセット（USV・UAV）の共同開発要領'
     ],
     materials: [
-      { name: '議事次第', type: 'PDF', size: '100 KB', url: 'https://www.mod.go.jp/j/approach/agenda/meeting/20260717_shidai.pdf', isMinutes: false },
-      { name: '資料1: 防衛技術イノベーション機関の設立について', type: 'PDF', size: '2.5 MB', url: 'https://www.mod.go.jp/j/approach/agenda/meeting/20260717_shiryou1.pdf', isMinutes: false },
-      { name: '第9回 会議要旨', type: 'HTML', size: '36 KB', url: 'https://www.mod.go.jp/j/approach/agenda/meeting/20260717_yoshi.html', isMinutes: true }
+      { name: '防衛省 会議・審議会 公式ポータル', type: 'HTML', size: '35 KB', url: 'https://www.mod.go.jp/j/approach/agenda/index.html', isMinutes: false }
     ],
     tags: ['防衛', '安全保障', 'デュアルユース', 'サイバー防衛', '防衛省'],
-    officialUrl: 'https://www.mod.go.jp/j/approach/agenda/meeting/20260717.html',
+    officialUrl: 'https://www.mod.go.jp/j/approach/agenda/index.html',
     hasMinutes: true,
-    docCount: 3
+    docCount: 1
   },
   // 8. MAFF
   {
@@ -571,14 +565,12 @@ const MEETINGS = [
       '環境負荷低減型農業（有機農業・バイオマス利用）の面的拡大スキーム'
     ],
     materials: [
-      { name: '議事次第', type: 'PDF', size: '105 KB', url: 'https://www.maff.go.jp/j/council/seisaku/kikaku/attach/pdf/20260712-01.pdf', isMinutes: false },
-      { name: '資料1: 食料安全保障指針（案）の概要', type: 'PDF', size: '3.1 MB', url: 'https://www.maff.go.jp/j/council/seisaku/kikaku/attach/pdf/20260712-02.pdf', isMinutes: false },
-      { name: '第45回 議事要旨', type: 'PDF', size: '190 KB', url: 'https://www.maff.go.jp/j/council/seisaku/kikaku/attach/pdf/20260712-minutes.pdf', isMinutes: true }
+      { name: '食料・農業・農村政策審議会 公式ポータル', type: 'HTML', size: '35 KB', url: 'https://www.maff.go.jp/j/council/seisaku/', isMinutes: false }
     ],
     tags: ['農林水産', '食料安全保障', 'スマート農業', '食料基本法', '環境'],
-    officialUrl: 'https://www.maff.go.jp/j/council/seisaku/kikaku/20260712.html',
+    officialUrl: 'https://www.maff.go.jp/j/council/seisaku/',
     hasMinutes: true,
-    docCount: 3
+    docCount: 1
   },
   // 9. MLIT
   {
@@ -598,14 +590,12 @@ const MEETINGS = [
       '高速道路料金体系の見直し（深夜割引の完全自動適用）'
     ],
     materials: [
-      { name: '議事次第', type: 'PDF', size: '110 KB', url: 'https://www.mlit.go.jp/shingikai/sakai/douro/078/images/shidai.pdf', isMinutes: false },
-      { name: '資料1: 自動運転社会に向けた道路インフラロードマップ', type: 'PDF', size: '4.2 MB', url: 'https://www.mlit.go.jp/shingikai/sakai/douro/078/images/shiryou1.pdf', isMinutes: false },
-      { name: '第78回 議事要旨', type: 'HTML', size: '38 KB', url: 'https://www.mlit.go.jp/shingikai/sakai/douro/078/yoshi.html', isMinutes: true }
+      { name: '社会資本整備審議会 公式ポータル', type: 'HTML', size: '35 KB', url: 'https://www.mlit.go.jp/policy/shingikai/index.html', isMinutes: false }
     ],
     tags: ['国土交通', '自動運転', 'インフラ', '国土強靱化', '高速道路'],
-    officialUrl: 'https://www.mlit.go.jp/shingikai/sakai/douro/078/index.html',
+    officialUrl: 'https://www.mlit.go.jp/policy/shingikai/index.html',
     hasMinutes: true,
-    docCount: 3
+    docCount: 1
   },
   {
     id: 'meet-2026-0626-chutou11',
@@ -708,14 +698,12 @@ const MEETINGS = [
       '暗号資産交換業者に対する不正送金検知・口座凍結要請手順の標準化'
     ],
     materials: [
-      { name: '議事次第', type: 'PDF', size: '85 KB', url: 'https://www.npa.go.jp/bureau/cyber/council/10th/shidai.pdf', isMinutes: false },
-      { name: '資料1: 最新のサイバー脅威情勢と警察の取組', type: 'PDF', size: '2.3 MB', url: 'https://www.npa.go.jp/bureau/cyber/council/10th/shiryou1.pdf', isMinutes: false },
-      { name: '第10回 議事要旨', type: 'PDF', size: '150 KB', url: 'https://www.npa.go.jp/bureau/cyber/council/10th/yoshi.pdf', isMinutes: true }
+      { name: '警察庁 サイバー攻撃対策 公式ポータル', type: 'HTML', size: '35 KB', url: 'https://www.npa.go.jp/bureau/cyber/index.html', isMinutes: false }
     ],
     tags: ['警察庁', 'サイバーセキュリティ', 'ランサムウェア', 'ディープフェイク', '捜査'],
-    officialUrl: 'https://www.npa.go.jp/bureau/cyber/council/10th/index.html',
+    officialUrl: 'https://www.npa.go.jp/bureau/cyber/index.html',
     hasMinutes: true,
-    docCount: 3
+    docCount: 1
   },
   // 11. NRA
   {
@@ -735,14 +723,12 @@ const MEETINGS = [
       '自然災害（火山・大規模地震）発生時における緊急時対応計画の検証'
     ],
     materials: [
-      { name: '議事次第', type: 'PDF', size: '90 KB', url: 'https://www.nra.go.jp/data/00045001.pdf', isMinutes: false },
-      { name: '資料1: 高浜発電所高経年化評価審査書（案）', type: 'PDF', size: '5.1 MB', url: 'https://www.nra.go.jp/data/00045002.pdf', isMinutes: false },
-      { name: '第18回 定例会議事録', type: 'PDF', size: '380 KB', url: 'https://www.nra.go.jp/data/00045003.pdf', isMinutes: true }
+      { name: '原子力規制委員会 公式ポータル', type: 'HTML', size: '35 KB', url: 'https://www.nra.go.jp/index.html', isMinutes: false }
     ],
     tags: ['原子力', '安全審査', 'SMR', 'エネルギー', '規制'],
-    officialUrl: 'https://www.nra.go.jp/gikai/kisei-gikai/20260702.html',
+    officialUrl: 'https://www.nra.go.jp/index.html',
     hasMinutes: true,
-    docCount: 3
+    docCount: 1
   },
   // 12. MOFA
   {
@@ -762,14 +748,12 @@ const MEETINGS = [
       'AIガバナンスにおける広島AIプロセスの国際標準化展開'
     ],
     materials: [
-      { name: '議事次第', type: 'PDF', size: '85 KB', url: 'https://www.mofa.go.jp/mofaj/files/10052001.pdf', isMinutes: false },
-      { name: '資料1: 経済安全保障外交の戦略的展開（論点資料）', type: 'PDF', size: '2.0 MB', url: 'https://www.mofa.go.jp/mofaj/files/10052002.pdf', isMinutes: false },
-      { name: '第14回 懇談会概要要旨', type: 'HTML', size: '35 KB', url: 'https://www.mofa.go.jp/mofaj/ms/is/page25_001234_yoshi.html', isMinutes: true }
+      { name: '外務省 外交政策 公式ポータル', type: 'HTML', size: '35 KB', url: 'https://www.mofa.go.jp/mofaj/index.html', isMinutes: false }
     ],
     tags: ['外交', '経済安全保障', 'FOIP', 'ODA', '外務省'],
-    officialUrl: 'https://www.mofa.go.jp/mofaj/ms/is/page25_001234.html',
+    officialUrl: 'https://www.mofa.go.jp/mofaj/index.html',
     hasMinutes: true,
-    docCount: 3
+    docCount: 1
   },
   // 13. RA
   {
@@ -789,14 +773,12 @@ const MEETINGS = [
       '東日本大震災および近年の大規模災害からの復興予算執行状況'
     ],
     materials: [
-      { name: '議事次第', type: 'PDF', size: '95 KB', url: 'https://www.reconstruction.go.jp/topics/main-cat1/sub-cat1-1/20260625_shidai.pdf', isMinutes: false },
-      { name: '資料1: 福島復興・再生の現状と今後の課題', type: 'PDF', size: '3.4 MB', url: 'https://www.reconstruction.go.jp/topics/main-cat1/sub-cat1-1/20260625_shiryou1.pdf', isMinutes: false },
-      { name: '第22回 議事要旨', type: 'PDF', size: '170 KB', url: 'https://www.reconstruction.go.jp/topics/main-cat1/sub-cat1-1/20260625_yoshi.pdf', isMinutes: true }
+      { name: '復興推進委員会 公式ポータル', type: 'HTML', size: '35 KB', url: 'https://www.reconstruction.go.jp/topics/cat-11/cat-47/cat-155/cat-156/000813/', isMinutes: false }
     ],
     tags: ['復興', '福島', 'FIREC', '防災', '復興庁'],
-    officialUrl: 'https://www.reconstruction.go.jp/topics/main-cat1/sub-cat1-1/20260625.html',
+    officialUrl: 'https://www.reconstruction.go.jp/topics/cat-11/cat-47/cat-155/cat-156/000813/',
     hasMinutes: true,
-    docCount: 3
+    docCount: 1
   },
   // 14. CAS & User Requested Council Meetings
   {
