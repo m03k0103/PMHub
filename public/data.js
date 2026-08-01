@@ -565,30 +565,72 @@ const MEETINGS = [
   },
   // 7. MOD
   {
-    id: 'meet-mod-cho-shin-latest',
+    id: 'meet-mod-cho-shin-199th',
     councilId: 'mod-cho-shin',
     councilName: '防衛調達審議会',
     ministry: 'MOD',
     category: 'COUNCIL',
-    title: '防衛調達審議会 令和8年度開催計画および審議事項',
-    date: '2026-07-17',
-    updatedAt: '2026-07-17 19:00',
-    location: '防衛省 A棟',
-    summary: '防衛装備品等の調達価格の適正化および契約変更適正審査について審議が行われ、令和8年度開催計画に基づき議事要旨が公開された。',
+    title: '第199回定例 防衛調達審議会',
+    date: '2026-03-04',
+    updatedAt: '2026-03-04 17:00',
+    location: '防衛省',
+    summary: '第199回定例会議が開催された。（公表資料なし）',
     agenda: [
-      '令和8年度防衛調達審議会開催計画について',
+      '防衛調達審議会 第199回定例会議の開催について'
+    ],
+    materials: [
+      { name: '防衛調達審議会 公式ポータル', type: 'HTML', size: '35 KB', url: 'https://www.mod.go.jp/j/policy/agenda/meeting/cho-shin/index.html', isMinutes: false }
+    ],
+    tags: ['防衛調達審議会', '第199回定例', '防衛装備品', '契約審査', '防衛省'],
+    officialUrl: 'https://www.mod.go.jp/j/policy/agenda/meeting/cho-shin/index.html',
+    hasMinutes: false,
+    docCount: 1
+  },
+  {
+    id: 'meet-mod-cho-shin-198th',
+    councilId: 'mod-cho-shin',
+    councilName: '防衛調達審議会',
+    ministry: 'MOD',
+    category: 'COUNCIL',
+    title: '第198回定例 防衛調達審議会',
+    date: '2025-12-17',
+    updatedAt: '2025-12-17 18:00',
+    location: '防衛省',
+    summary: '第198回定例会議が開催され、防衛装備品等の調達適正化および契約変更適正審査についての審議が行われ、議事要旨が公開された。',
+    agenda: [
       '防衛装備品等の契約変更および調達価格の適正性審査について'
     ],
     materials: [
-      { name: '令和8年度防衛調達審議会開催計画 (PDF)', type: 'PDF', size: '150 KB', url: 'https://www.mod.go.jp/j/policy/agenda/meeting/cho-shin/giji/pdf/r08_keikaku.pdf', isMinutes: false },
-      { name: '防衛調達審議会議事要旨 第198回 (PDF)', type: 'PDF', size: '280 KB', url: 'https://www.mod.go.jp/j/policy/agenda/meeting/cho-shin/giji/pdf/198.pdf', isMinutes: true },
-      { name: '防衛調達審議会議事要旨 第197回 (PDF)', type: 'PDF', size: '260 KB', url: 'https://www.mod.go.jp/j/policy/agenda/meeting/cho-shin/giji/pdf/197.pdf', isMinutes: true },
+      { name: '第198回防衛調達審議会議事要旨 (PDF)', type: 'PDF', size: '280 KB', url: 'https://www.mod.go.jp/j/policy/agenda/meeting/cho-shin/giji/pdf/198.pdf', isMinutes: true },
       { name: '防衛調達審議会 公式ポータル', type: 'HTML', size: '35 KB', url: 'https://www.mod.go.jp/j/policy/agenda/meeting/cho-shin/index.html', isMinutes: false }
     ],
-    tags: ['防衛調達審議会', '防衛装備品', '調達価格', '契約審査', '防衛省'],
+    tags: ['防衛調達審議会', '第198回定例', '防衛装備品', '議事要旨', '防衛省'],
     officialUrl: 'https://www.mod.go.jp/j/policy/agenda/meeting/cho-shin/index.html',
     hasMinutes: true,
-    docCount: 4
+    docCount: 2
+  },
+  {
+    id: 'meet-mod-cho-shin-197th',
+    councilId: 'mod-cho-shin',
+    councilName: '防衛調達審議会',
+    ministry: 'MOD',
+    category: 'COUNCIL',
+    title: '第197回定例 防衛調達審議会',
+    date: '2025-11-19',
+    updatedAt: '2025-11-19 17:30',
+    location: '防衛省',
+    summary: '第197回定例会議が開催され、防衛調達の透明性確保および効率的な調達手続に関する審議が行われ、議事要旨が公開された。',
+    agenda: [
+      '防衛装備品等の調達実績および契約変更審査について'
+    ],
+    materials: [
+      { name: '第197回防衛調達審議会議事要旨 (PDF)', type: 'PDF', size: '260 KB', url: 'https://www.mod.go.jp/j/policy/agenda/meeting/cho-shin/giji/pdf/197.pdf', isMinutes: true },
+      { name: '防衛調達審議会 公式ポータル', type: 'HTML', size: '35 KB', url: 'https://www.mod.go.jp/j/policy/agenda/meeting/cho-shin/index.html', isMinutes: false }
+    ],
+    tags: ['防衛調達審議会', '第197回定例', '防衛装備品', '議事要旨', '防衛省'],
+    officialUrl: 'https://www.mod.go.jp/j/policy/agenda/meeting/cho-shin/index.html',
+    hasMinutes: true,
+    docCount: 2
   },
   {
     id: 'meet-mod-drastic-reinforcement-7th',
