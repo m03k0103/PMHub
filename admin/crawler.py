@@ -69,8 +69,8 @@ CRAWL_TARGETS = [
     {
         "id": "digital-suishin",
         "ministry": "DIGITAL",
-        "name": "デジタル社会推進会議",
-        "url": "https://www.digital.go.jp/councils/social-promotion"
+        "name": "デジタル社会推進会議幹事会",
+        "url": "https://www.digital.go.jp/councils/social-promotion-executive"
     },
     {
         "id": "cfa-kodomo-suishin",

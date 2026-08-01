@@ -4,7 +4,7 @@
     "councilName": "全世代型社会保障構築会議",
     "ministry": "CAS",
     "officialUrl": "https://www.cas.go.jp/jp/seisaku/zensedai_hosyo/index.html",
-    "scrapedAt": "2026-08-01 17:11:13",
+    "scrapedAt": "2026-08-01 17:59:14",
     "ruleApplied": "rule-cas-zensedai-hosyo-ai-v3",
     "ministryQuirk": "内閣官房型: daiXX/gijisidai.html 形式の2段階ネスト構造",
     "pageTitle": "全世代型社会保障構築会議｜内閣官房ホームページ",
@@ -306,9 +306,9 @@
       }
     ],
     "extractedDates": [
+      "令和4年11月11日",
       "令和4年12月14日",
-      "令和4年12月16日",
-      "令和4年11月24日"
+      "令和5年12月22日"
     ],
     "subpageMeetings": [
       {
@@ -503,7 +503,7 @@
     "councilName": "中東情勢に関する関係閣僚会議",
     "ministry": "CAS",
     "officialUrl": "https://www.cas.go.jp/jp/seisaku/chyutoujyousei/index.html",
-    "scrapedAt": "2026-08-01 17:11:14",
+    "scrapedAt": "2026-08-01 17:59:15",
     "ruleApplied": "rule-cas-chutou-jyousei-ai-v3",
     "ministryQuirk": "内閣官房型: daiXX/gijisidai.html 形式の2段階ネスト構造",
     "pageTitle": "中東情勢に関する対応｜内閣官房ホームページ",
@@ -907,9 +907,9 @@
       }
     ],
     "extractedDates": [
-      "令和8年4月30日",
       "令和8年5月12日",
-      "令和8年3月23日"
+      "令和8年6月11日",
+      "令和8年3月24日"
     ],
     "subpageMeetings": [
       {
@@ -1285,7 +1285,7 @@
     "councilName": "AI戦略会議",
     "ministry": "CAO",
     "officialUrl": "https://www8.cao.go.jp/cstp/ai/ai_senryaku/ai_senryaku.html",
-    "scrapedAt": "2026-08-01 17:11:14",
+    "scrapedAt": "2026-08-01 17:59:16",
     "ruleApplied": "rule-cao-ai-strategy-ai-v3",
     "ministryQuirk": "内閣府型: ◯kai/◯kai.html または kaisai.html の個別の回ネスト",
     "pageTitle": "ＡＩ戦略会議 - 科学技術・イノベーション - 内閣府",
@@ -1437,9 +1437,9 @@
       }
     ],
     "extractedDates": [
-      "令和5年6月26日",
-      "令和5年12月21日",
-      "令和6年12月26日"
+      "令和5年5月11日",
+      "令和7年2月4日",
+      "令和6年5月22日"
     ],
     "subpageMeetings": [
       {
@@ -1560,16 +1560,16 @@
     "councilName": "規制改革推進会議",
     "ministry": "CAO",
     "officialUrl": "https://www8.cao.go.jp/kisei-kaikaku/index.html",
-    "scrapedAt": "2026-08-01 17:11:14",
+    "scrapedAt": "2026-08-01 17:59:16",
     "ruleApplied": "rule-cao-kisei-kaikaku-ai-v3",
     "ministryQuirk": "内閣府型: ◯kai/◯kai.html または kaisai.html の個別の回ネスト",
     "pageTitle": "規制改革&nbsp;-&nbsp;内閣府",
     "totalExtractedMaterials": 0,
     "materials": [],
     "extractedDates": [
-      "令和8年7月21日",
       "令和7年6月10日",
-      "令和7年2月26日"
+      "令和7年2月26日",
+      "令和8年6月29日"
     ],
     "subpageMeetings": []
   },
@@ -1578,7 +1578,7 @@
     "councilName": "復興推進委員会",
     "ministry": "RA",
     "officialUrl": "https://www.reconstruction.go.jp/topics/cat-11/cat-47/cat-155/cat-156/000813/",
-    "scrapedAt": "2026-08-01 17:11:14",
+    "scrapedAt": "2026-08-01 17:59:16",
     "ruleApplied": "rule-ra-fukko-suishin-ai-v3",
     "ministryQuirk": "復興庁型: topics/cat-XX 分類URLおよび日付命名PDF",
     "pageTitle": "復興推進委員会 | 復興庁",
@@ -1646,9 +1646,9 @@
       }
     ],
     "extractedDates": [
-      "令和2年6月11日",
-      "令和6年8月21日",
-      "令和5年2月27日"
+      "令和6年3月8日",
+      "令和8年7月2日",
+      "令和2年6月11日"
     ],
     "subpageMeetings": [
       {
@@ -1725,8 +1725,8 @@
           }
         ],
         "extractedDates": [
-          "令和2年6月11日",
-          "令和6年8月21日"
+          "令和6年3月8日",
+          "令和8年7月2日"
         ]
       },
       {
@@ -1764,7 +1764,7 @@
     "councilName": "社会保障国民会議",
     "ministry": "CAS",
     "officialUrl": "https://www.cas.go.jp/jp/seisaku/kokuminkaigi/index.html",
-    "scrapedAt": "2026-08-01 17:11:15",
+    "scrapedAt": "2026-08-01 17:59:16",
     "ruleApplied": "rule-cas-kokumin-kaigi-ai-v3",
     "ministryQuirk": "内閣官房型: daiXX/gijisidai.html 形式の2段階ネスト構造",
     "pageTitle": "社会保障国民会議｜内閣官房",
@@ -1940,9 +1940,9 @@
       }
     ],
     "extractedDates": [
-      "令和8年7月22日",
-      "令和8年6月17日",
-      "令和8年4月22日"
+      "令和8年3月18日",
+      "令和8年4月15日",
+      "令和8年6月17日"
     ],
     "subpageMeetings": []
   },
@@ -1951,7 +1951,7 @@
     "councilName": "人工知能戦略本部",
     "ministry": "CAO",
     "officialUrl": "https://www8.cao.go.jp/cstp/ai/ai_hq/kaisai.html",
-    "scrapedAt": "2026-08-01 17:11:15",
+    "scrapedAt": "2026-08-01 17:59:16",
     "ruleApplied": "rule-cao-ai-hq-ai-v3",
     "ministryQuirk": "内閣府型: ◯kai/◯kai.html または kaisai.html の個別の回ネスト",
     "pageTitle": "人工知能戦略本部　開催状況 - 科学技術・イノベーション - 内閣府",
@@ -2067,9 +2067,9 @@
       }
     ],
     "extractedDates": [
-      "令和7年12月19日",
       "令和8年6月19日",
-      "令和7年9月12日"
+      "令和7年9月12日",
+      "令和8年7月10日"
     ],
     "subpageMeetings": [
       {
@@ -2212,190 +2212,222 @@
   },
   {
     "councilId": "digital-suishin",
-    "councilName": "デジタル社会推進会議",
+    "councilName": "デジタル社会推進会議幹事会",
     "ministry": "DIGITAL",
-    "officialUrl": "https://www.digital.go.jp/councils/social-promotion",
-    "scrapedAt": "2026-08-01 17:11:16",
+    "officialUrl": "https://www.digital.go.jp/councils/social-promotion-executive",
+    "scrapedAt": "2026-08-01 17:59:17",
     "ruleApplied": "rule-digital-suishin-ai-v3",
     "ministryQuirk": "デジタル庁型: リソース絶対パス/ルート相対パス混在型HTML5構造",
-    "pageTitle": "デジタル社会推進会議｜デジタル庁",
-    "totalExtractedMaterials": 26,
+    "pageTitle": "デジタル社会推進会議幹事会｜デジタル庁",
+    "totalExtractedMaterials": 29,
     "materials": [
       {
-        "name": "議事次第（PDF／94KB）",
-        "url": "https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/b1ab9739-cc25-4126-a2d8-e5d00cf809ff/e0142dff/20260721_meeting_promoting_agenda_01.pdf",
+        "name": "デジタル社会推進会議幹事会の開催について（PDF／115KB）",
+        "url": "https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/d2a5bbd2-ae8f-450c-adaa-33979181d26a/9e1f02c1/20230630_meeting_executive_01.pdf",
         "type": "PDF",
         "isPrivate": false
       },
       {
-        "name": "資料1-1：デジタル社会の実現に向けた重点計画（案）概要（PDF／1,166KB）",
-        "url": "https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/b1ab9739-cc25-4126-a2d8-e5d00cf809ff/044417b4/20260721_meeting_promoting_outline_draft_02.pdf",
+        "name": "議事次第（PDF／111KB）",
+        "url": "https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/8b8d1635-cea3-4d36-bb9a-bac732779d1e/c64dc596/20260612_meeting_executive_agenda_01.pdf",
         "type": "PDF",
         "isPrivate": false
       },
       {
-        "name": "資料1-2：デジタル社会の実現に向けた重点計画（案）（PDF／2,599KB）",
-        "url": "https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/b1ab9739-cc25-4126-a2d8-e5d00cf809ff/9fb30246/20260721_meeting_promoting_outline_draft_03.pdf",
+        "name": "資料1-1：行政の進化と革新のための生成AIの調達・利活用に係るガイドライン 2.0版（PDF／1,102KB）",
+        "url": "https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/8b8d1635-cea3-4d36-bb9a-bac732779d1e/5107818b/20260612_meeting_executive_guideline_02.pdf",
         "type": "PDF",
         "isPrivate": false
       },
       {
-        "name": "資料2-1：モビリティ・ロードマップ2026（案）概要（PDF／1,321KB）",
-        "url": "https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/b1ab9739-cc25-4126-a2d8-e5d00cf809ff/32b6b202/20260721_meeting_promoting_outline_draft_04.pdf",
+        "name": "資料1-2：【別紙1】高リスク判定シート 2.0版（PDF／323KB）",
+        "url": "https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/8b8d1635-cea3-4d36-bb9a-bac732779d1e/2ecfc534/20260612_meeting_executive_format_03.pdf",
         "type": "PDF",
         "isPrivate": false
       },
       {
-        "name": "資料2-2：モビリティ・ロードマップ2026（案）（PDF／24,769KB）",
-        "url": "https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/b1ab9739-cc25-4126-a2d8-e5d00cf809ff/607cae40/20260721_meeting_promoting_outline_draft_05.pdf",
+        "name": "資料1-3：【別紙2】生成AIシステム利活用ルールひな形 2.0版（PDF／298KB）",
+        "url": "https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/8b8d1635-cea3-4d36-bb9a-bac732779d1e/4bbb0c33/20260612_meeting_executive_format_04.pdf",
         "type": "PDF",
         "isPrivate": false
       },
       {
-        "name": "資料3：デジタル社会推進会議幹事会の開催について（案）（PDF／146KB）",
-        "url": "https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/b1ab9739-cc25-4126-a2d8-e5d00cf809ff/f6aa1d07/20260721_meeting_promoting_outline_draft_06.pdf",
+        "name": "資料1-4：【別紙3】調達チェックシート（生成AIシステム用）2.0版（PDF／1,311KB）",
+        "url": "https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/8b8d1635-cea3-4d36-bb9a-bac732779d1e/5473f82c/20260612_meeting_executive_format_05.pdf",
         "type": "PDF",
         "isPrivate": false
       },
       {
-        "name": "議事次第（PDF／25KB）",
-        "url": "https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/d6cfdcdd-75e4-460c-9ec0-af4f952e03d5/20210906_meeting_promoting_01.pdf",
+        "name": "資料1-5：【別紙4】契約チェックシート（生成AIシステム用）2.0版（PDF／684KB）",
+        "url": "https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/8b8d1635-cea3-4d36-bb9a-bac732779d1e/b702f880/20260612_meeting_executive_format_06.pdf",
         "type": "PDF",
         "isPrivate": false
       },
       {
-        "name": "資料1 新たな推進体制について（PDF／382KB）",
-        "url": "https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/d6cfdcdd-75e4-460c-9ec0-af4f952e03d5/20210906_meeting_promoting_02.pdf",
+        "name": "資料2：DS-670.1ユーザビリティガイドライン（PDF／8,729KB）",
+        "url": "https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/e2a06143-ed29-4f1d-9c31-0f06fca67afc/a0942cf4/20260612_usability_guidelines.pdf",
         "type": "PDF",
         "isPrivate": false
       },
       {
-        "name": "資料2 デジタル社会推進会議運営要領（案）（PDF／49KB）",
-        "url": "https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/d6cfdcdd-75e4-460c-9ec0-af4f952e03d5/20210906_meeting_promoting_03.pdf",
+        "name": "資料3：デジタル・ガバメント推進標準ガイドライン（改定案）（PDF／2,188KB）",
+        "url": "https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/8b8d1635-cea3-4d36-bb9a-bac732779d1e/2f56cc28/20260612_meeting_executive_comparative_11.pdf",
         "type": "PDF",
         "isPrivate": false
       },
       {
-        "name": "資料3 デジタル社会推進会議幹事会の開催について（案）（PDF／61KB）",
-        "url": "https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/d6cfdcdd-75e4-460c-9ec0-af4f952e03d5/20210906_meeting_promoting_04.pdf",
+        "name": "参考資料1：行政の進化と革新のための生成AIの調達・利活用に係るガイドラインの概要（2.0版）（PDF／1,443KB）",
+        "url": "https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/8b8d1635-cea3-4d36-bb9a-bac732779d1e/a493c7f4/20260612_meeting_executive_guideline_08.pdf",
         "type": "PDF",
         "isPrivate": false
       },
       {
-        "name": "資料4 データ戦略推進ワーキンググループの開催について（案）（PDF／47KB）",
-        "url": "https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/d6cfdcdd-75e4-460c-9ec0-af4f952e03d5/20210906_meeting_promoting_05.pdf",
+        "name": "参考資料2-1：改定のポイント（PDF／534KB）",
+        "url": "https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/8b8d1635-cea3-4d36-bb9a-bac732779d1e/4b14b8ee/20260612_meeting_executive_outline_09.pdf",
         "type": "PDF",
         "isPrivate": false
       },
       {
-        "name": "資料5 今後のデジタル改革の進め方について（PDF／859KB）",
-        "url": "https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/d6cfdcdd-75e4-460c-9ec0-af4f952e03d5/20210906_meeting_promoting_06.pdf",
+        "name": "参考資料2-2：差分票（PDF／351KB）",
+        "url": "https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/8b8d1635-cea3-4d36-bb9a-bac732779d1e/54276b12/20260612_meeting_executive_outline_10.pdf",
         "type": "PDF",
         "isPrivate": false
       },
       {
-        "name": "議事録（PDF／239KB）",
-        "url": "https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/d6cfdcdd-75e4-460c-9ec0-af4f952e03d5/20210906_meeting_promoting_09.pdf",
+        "name": "参考資料3-1：デジタル・ガバメント推進標準ガイドライン（本編）改定（案） 概要（令和7年度）（PDF／598KB）",
+        "url": "https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/8b8d1635-cea3-4d36-bb9a-bac732779d1e/190f2692/20260612_meeting_executive_guideline_07.pdf",
         "type": "PDF",
         "isPrivate": false
       },
       {
-        "name": "参考資料1 これまでのデジタル改革の取組みについて（PDF／917KB）",
-        "url": "https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/d6cfdcdd-75e4-460c-9ec0-af4f952e03d5/20210906_meeting_promoting_07.pdf",
+        "name": "参考資料3-2：デジタル・ガバメント推進標準ガイドライン（改定案）（PDF／2,400KB）",
+        "url": "https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/8b8d1635-cea3-4d36-bb9a-bac732779d1e/a3028188/20260612_meeting_executive_comparative_12.pdf",
         "type": "PDF",
         "isPrivate": false
       },
       {
-        "name": "参考資料2 デジタル社会の実現に向けた重点計画（令和3年（2021年）6月18日閣議決定）（PDF／1,296KB）",
-        "url": "https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/d6cfdcdd-75e4-460c-9ec0-af4f952e03d5/20210906_meeting_promoting_08.pdf",
+        "name": "議事次第（PDF／34KB）",
+        "url": "https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/59abc4a2-e73c-424b-9fd9-a3bb59bb4ef8/20210910_meeting_executive_01.pdf",
         "type": "PDF",
         "isPrivate": false
       },
       {
-        "name": "議事次第（PDF／25KB）",
-        "url": "https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/c3a0ca8a-e07d-4a33-9030-efebdb4e2a9e/20211224_meeting_promoting_00.pdf",
+        "name": "資料1　新たな推進体制について（PDF／208KB）",
+        "url": "https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/59abc4a2-e73c-424b-9fd9-a3bb59bb4ef8/20210910_meeting_executive_02.pdf",
         "type": "PDF",
         "isPrivate": false
       },
       {
-        "name": "資料1-1：デジタル社会の実現に向けた重点計画（案）概要（簡易版）（PDF／289KB）",
-        "url": "https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/c3a0ca8a-e07d-4a33-9030-efebdb4e2a9e/20211224_meeting_promoting_01.pdf",
+        "name": "資料2　デジタル社会推進会議幹事会運営要領（案）（PDF／41KB）",
+        "url": "https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/59abc4a2-e73c-424b-9fd9-a3bb59bb4ef8/20210910_meeting_executive_03.pdf",
         "type": "PDF",
         "isPrivate": false
       },
       {
-        "name": "資料1-2：デジタル社会の実現に向けた重点計画（案）概要（PDF／1,595KB）",
-        "url": "https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/c3a0ca8a-e07d-4a33-9030-efebdb4e2a9e/20211224_meeting_promoting_02.pdf",
+        "name": "資料3　デジタル社会推進会議副幹事会の開催について（案）（PDF／68KB）",
+        "url": "https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/59abc4a2-e73c-424b-9fd9-a3bb59bb4ef8/20210910_meeting_executive_04.pdf",
         "type": "PDF",
         "isPrivate": false
       },
       {
-        "name": "資料1-3：デジタル社会の実現に向けた重点計画（案）（PDF／4,730KB）",
-        "url": "https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/c3a0ca8a-e07d-4a33-9030-efebdb4e2a9e/20211224_meeting_promoting_03.pdf",
+        "name": "資料4　今後のデジタル改革の進め方について（PDF／390KB）",
+        "url": "https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/59abc4a2-e73c-424b-9fd9-a3bb59bb4ef8/20210910_meeting_executive_05.pdf",
         "type": "PDF",
         "isPrivate": false
       },
       {
-        "name": "資料1-4：デジタル社会の実現に向けた重点計画（案）別冊（PDF／3,007KB）",
-        "url": "https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/c3a0ca8a-e07d-4a33-9030-efebdb4e2a9e/20211224_meeting_promoting_04.pdf",
+        "name": "資料5　新重点計画の策定に向けた依頼事項（PDF／53KB）",
+        "url": "https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/59abc4a2-e73c-424b-9fd9-a3bb59bb4ef8/20210910_meeting_executive_06.pdf",
         "type": "PDF",
         "isPrivate": false
       },
       {
-        "name": "資料1-5：デジタル社会の実現に向けた重点計画（案）施策集（別紙）（PDF／910KB）",
-        "url": "https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/c3a0ca8a-e07d-4a33-9030-efebdb4e2a9e/20211224_meeting_promoting_05.pdf",
+        "name": "資料6　情報システムの整備及び管理の基本的な方針の策定について（PDF／301KB）",
+        "url": "https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/59abc4a2-e73c-424b-9fd9-a3bb59bb4ef8/20210910_meeting_executive_07.pdf",
         "type": "PDF",
         "isPrivate": false
       },
       {
-        "name": "資料2-1：デジタル社会推進会議令第4条に基づく運営要領等の改正について（PDF／450KB）",
-        "url": "https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/c3a0ca8a-e07d-4a33-9030-efebdb4e2a9e/20211224_meeting_promoting_06.pdf",
+        "name": "資料7　デジタル・ガバメント推進標準ガイドライン（改定案）（PDF／1,428KB）",
+        "url": "https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/59abc4a2-e73c-424b-9fd9-a3bb59bb4ef8/20210910_meeting_executive_08.pdf",
         "type": "PDF",
         "isPrivate": false
       },
       {
-        "name": "資料2-2：デジタル社会推進会議運営要領（改正案）（PDF／53KB）",
-        "url": "https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/c3a0ca8a-e07d-4a33-9030-efebdb4e2a9e/20211224_meeting_promoting_07.pdf",
+        "name": "資料8　政府情報システムにおけるクラウドサービスの利用に係る基本方針（改定案）（PDF／300KB）",
+        "url": "https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/59abc4a2-e73c-424b-9fd9-a3bb59bb4ef8/20210910_meeting_executive_09.pdf",
         "type": "PDF",
         "isPrivate": false
       },
       {
-        "name": "資料2-3：デジタル社会推進会議幹事会の開催について（改正案）（PDF／67KB）",
-        "url": "https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/c3a0ca8a-e07d-4a33-9030-efebdb4e2a9e/20211224_meeting_promoting_08.pdf",
+        "name": "資料9　政府共通プラットフォーム第二期整備計画（改定案）（PDF／127KB）",
+        "url": "https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/59abc4a2-e73c-424b-9fd9-a3bb59bb4ef8/20210910_meeting_executive_10.pdf",
         "type": "PDF",
         "isPrivate": false
       },
       {
-        "name": "議事録（PDF／145KB）",
-        "url": "https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/c3a0ca8a-e07d-4a33-9030-efebdb4e2a9e/20211224_meeting_promoting_10.pdf",
+        "name": "資料10　デジタル庁におけるコンプライアンス・入札制限の取組について（PDF／313KB）",
+        "url": "https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/59abc4a2-e73c-424b-9fd9-a3bb59bb4ef8/20210910_meeting_executive_11.pdf",
         "type": "PDF",
         "isPrivate": false
       },
       {
-        "name": "参考資料1：デジタル社会推進会議（第1回）議事録（案）（PDF／154KB）",
-        "url": "https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/c3a0ca8a-e07d-4a33-9030-efebdb4e2a9e/20211224_meeting_promoting_09.pdf",
+        "name": "参考資料1　デジタル社会推進会議幹事会の開催について（令和3年9月6日デジタル社会推進会議議長決定）（PDF／66KB）",
+        "url": "https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/59abc4a2-e73c-424b-9fd9-a3bb59bb4ef8/20210910_meeting_executive_12.pdf",
+        "type": "PDF",
+        "isPrivate": false
+      },
+      {
+        "name": "参考資料2　これまでのデジタル改革の取組について（PDF／1,029KB）",
+        "url": "https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/59abc4a2-e73c-424b-9fd9-a3bb59bb4ef8/20210910_meeting_executive_13.pdf",
+        "type": "PDF",
+        "isPrivate": false
+      },
+      {
+        "name": "参考資料3　デジタル社会の実現に向けた重点計画＜概要＞（令和3年6月18日閣議決定）（PDF／1,466KB）",
+        "url": "https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/59abc4a2-e73c-424b-9fd9-a3bb59bb4ef8/20210910_meeting_executive_14.pdf",
+        "type": "PDF",
+        "isPrivate": false
+      },
+      {
+        "name": "参考資料4　政府情報システムの管理等に関する考え方（令和3年9月1日デジタル大臣決定）（PDF／435KB）",
+        "url": "https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/59abc4a2-e73c-424b-9fd9-a3bb59bb4ef8/20210910_meeting_executive_15.pdf",
         "type": "PDF",
         "isPrivate": false
       }
     ],
     "extractedDates": [
-      "2026年7月21日"
+      "2026年6月12日"
     ],
     "subpageMeetings": [
       {
-        "subpageUrl": "https://www.digital.go.jp/councils/social-promotion",
-        "title": "デジタル社会推進会議｜デジタル庁",
-        "extractedMaterialsCount": 0,
-        "materials": [],
+        "subpageUrl": "https://www.digital.go.jp/councils/social-promotion-executive",
+        "title": "デジタル社会推進会議幹事会｜デジタル庁",
+        "extractedMaterialsCount": 1,
+        "materials": [
+          {
+            "name": "デジタル社会推進会議幹事会の開催について（PDF／115KB）",
+            "url": "https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/d2a5bbd2-ae8f-450c-adaa-33979181d26a/9e1f02c1/20230630_meeting_executive_01.pdf",
+            "type": "PDF",
+            "isPrivate": false
+          }
+        ],
         "extractedDates": [
-          "2026年7月21日"
+          "2026年6月12日"
         ]
       },
       {
-        "subpageUrl": "https://www.digital.go.jp/en/councils/social-promotion",
-        "title": "Meeting for the Promotion of a Digital Society｜Digital Agency",
-        "extractedMaterialsCount": 0,
-        "materials": [],
+        "subpageUrl": "https://www.digital.go.jp/en/councils/social-promotion-executive",
+        "title": "Meeting for the Promotion of a Digital Society Executive Board｜Digital Agency",
+        "extractedMaterialsCount": 1,
+        "materials": [
+          {
+            "name": "Meeting for the Promotion of a Digital Society Executive Board Meeting &lpar;PDF &sol; 115 kb&rpar;",
+            "url": "https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/d2a5bbd2-ae8f-450c-adaa-33979181d26a/9e1f02c1/20230630_meeting_executive_01.pdf",
+            "type": "PDF",
+            "isPrivate": false
+          }
+        ],
         "extractedDates": []
       },
       {
@@ -2404,48 +2436,90 @@
         "extractedMaterialsCount": 0,
         "materials": [],
         "extractedDates": [
-          "令和5年6月9日",
-          "2023年10月6日"
+          "2024年6月19日",
+          "令和3年12月24日"
         ]
       },
       {
-        "subpageUrl": "https://www.digital.go.jp/councils/social-promotion/b1ab9739-cc25-4126-a2d8-e5d00cf809ff",
-        "title": "第7回デジタル社会推進会議・書面開催｜デジタル庁",
-        "extractedMaterialsCount": 6,
+        "subpageUrl": "https://www.digital.go.jp/councils/social-promotion-executive/8b8d1635-cea3-4d36-bb9a-bac732779d1e",
+        "title": "第23回デジタル社会推進会議幹事会（令和8年（2026年）6月12日開催）｜デジタル庁",
+        "extractedMaterialsCount": 13,
         "materials": [
           {
-            "name": "議事次第（PDF／94KB）",
-            "url": "https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/b1ab9739-cc25-4126-a2d8-e5d00cf809ff/e0142dff/20260721_meeting_promoting_agenda_01.pdf",
+            "name": "議事次第（PDF／111KB）",
+            "url": "https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/8b8d1635-cea3-4d36-bb9a-bac732779d1e/c64dc596/20260612_meeting_executive_agenda_01.pdf",
             "type": "PDF",
             "isPrivate": false
           },
           {
-            "name": "資料1-1：デジタル社会の実現に向けた重点計画（案）概要（PDF／1,166KB）",
-            "url": "https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/b1ab9739-cc25-4126-a2d8-e5d00cf809ff/044417b4/20260721_meeting_promoting_outline_draft_02.pdf",
+            "name": "資料1-1：行政の進化と革新のための生成AIの調達・利活用に係るガイドライン 2.0版（PDF／1,102KB）",
+            "url": "https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/8b8d1635-cea3-4d36-bb9a-bac732779d1e/5107818b/20260612_meeting_executive_guideline_02.pdf",
             "type": "PDF",
             "isPrivate": false
           },
           {
-            "name": "資料1-2：デジタル社会の実現に向けた重点計画（案）（PDF／2,599KB）",
-            "url": "https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/b1ab9739-cc25-4126-a2d8-e5d00cf809ff/9fb30246/20260721_meeting_promoting_outline_draft_03.pdf",
+            "name": "資料1-2：【別紙1】高リスク判定シート 2.0版（PDF／323KB）",
+            "url": "https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/8b8d1635-cea3-4d36-bb9a-bac732779d1e/2ecfc534/20260612_meeting_executive_format_03.pdf",
             "type": "PDF",
             "isPrivate": false
           },
           {
-            "name": "資料2-1：モビリティ・ロードマップ2026（案）概要（PDF／1,321KB）",
-            "url": "https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/b1ab9739-cc25-4126-a2d8-e5d00cf809ff/32b6b202/20260721_meeting_promoting_outline_draft_04.pdf",
+            "name": "資料1-3：【別紙2】生成AIシステム利活用ルールひな形 2.0版（PDF／298KB）",
+            "url": "https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/8b8d1635-cea3-4d36-bb9a-bac732779d1e/4bbb0c33/20260612_meeting_executive_format_04.pdf",
             "type": "PDF",
             "isPrivate": false
           },
           {
-            "name": "資料2-2：モビリティ・ロードマップ2026（案）（PDF／24,769KB）",
-            "url": "https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/b1ab9739-cc25-4126-a2d8-e5d00cf809ff/607cae40/20260721_meeting_promoting_outline_draft_05.pdf",
+            "name": "資料1-4：【別紙3】調達チェックシート（生成AIシステム用）2.0版（PDF／1,311KB）",
+            "url": "https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/8b8d1635-cea3-4d36-bb9a-bac732779d1e/5473f82c/20260612_meeting_executive_format_05.pdf",
             "type": "PDF",
             "isPrivate": false
           },
           {
-            "name": "資料3：デジタル社会推進会議幹事会の開催について（案）（PDF／146KB）",
-            "url": "https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/b1ab9739-cc25-4126-a2d8-e5d00cf809ff/f6aa1d07/20260721_meeting_promoting_outline_draft_06.pdf",
+            "name": "資料1-5：【別紙4】契約チェックシート（生成AIシステム用）2.0版（PDF／684KB）",
+            "url": "https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/8b8d1635-cea3-4d36-bb9a-bac732779d1e/b702f880/20260612_meeting_executive_format_06.pdf",
+            "type": "PDF",
+            "isPrivate": false
+          },
+          {
+            "name": "資料2：DS-670.1ユーザビリティガイドライン（PDF／8,729KB）",
+            "url": "https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/e2a06143-ed29-4f1d-9c31-0f06fca67afc/a0942cf4/20260612_usability_guidelines.pdf",
+            "type": "PDF",
+            "isPrivate": false
+          },
+          {
+            "name": "資料3：デジタル・ガバメント推進標準ガイドライン（改定案）（PDF／2,188KB）",
+            "url": "https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/8b8d1635-cea3-4d36-bb9a-bac732779d1e/2f56cc28/20260612_meeting_executive_comparative_11.pdf",
+            "type": "PDF",
+            "isPrivate": false
+          },
+          {
+            "name": "参考資料1：行政の進化と革新のための生成AIの調達・利活用に係るガイドラインの概要（2.0版）（PDF／1,443KB）",
+            "url": "https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/8b8d1635-cea3-4d36-bb9a-bac732779d1e/a493c7f4/20260612_meeting_executive_guideline_08.pdf",
+            "type": "PDF",
+            "isPrivate": false
+          },
+          {
+            "name": "参考資料2-1：改定のポイント（PDF／534KB）",
+            "url": "https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/8b8d1635-cea3-4d36-bb9a-bac732779d1e/4b14b8ee/20260612_meeting_executive_outline_09.pdf",
+            "type": "PDF",
+            "isPrivate": false
+          },
+          {
+            "name": "参考資料2-2：差分票（PDF／351KB）",
+            "url": "https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/8b8d1635-cea3-4d36-bb9a-bac732779d1e/54276b12/20260612_meeting_executive_outline_10.pdf",
+            "type": "PDF",
+            "isPrivate": false
+          },
+          {
+            "name": "参考資料3-1：デジタル・ガバメント推進標準ガイドライン（本編）改定（案） 概要（令和7年度）（PDF／598KB）",
+            "url": "https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/8b8d1635-cea3-4d36-bb9a-bac732779d1e/190f2692/20260612_meeting_executive_guideline_07.pdf",
+            "type": "PDF",
+            "isPrivate": false
+          },
+          {
+            "name": "参考資料3-2：デジタル・ガバメント推進標準ガイドライン（改定案）（PDF／2,400KB）",
+            "url": "https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/8b8d1635-cea3-4d36-bb9a-bac732779d1e/a3028188/20260612_meeting_executive_comparative_12.pdf",
             "type": "PDF",
             "isPrivate": false
           }
@@ -2453,143 +2527,111 @@
         "extractedDates": []
       },
       {
-        "subpageUrl": "https://www.digital.go.jp/councils/social-promotion/zvKTxKMK",
-        "title": "第1回デジタル社会推進会議｜デジタル庁",
-        "extractedMaterialsCount": 9,
-        "materials": [
-          {
-            "name": "議事次第（PDF／25KB）",
-            "url": "https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/d6cfdcdd-75e4-460c-9ec0-af4f952e03d5/20210906_meeting_promoting_01.pdf",
-            "type": "PDF",
-            "isPrivate": false
-          },
-          {
-            "name": "資料1 新たな推進体制について（PDF／382KB）",
-            "url": "https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/d6cfdcdd-75e4-460c-9ec0-af4f952e03d5/20210906_meeting_promoting_02.pdf",
-            "type": "PDF",
-            "isPrivate": false
-          },
-          {
-            "name": "資料2 デジタル社会推進会議運営要領（案）（PDF／49KB）",
-            "url": "https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/d6cfdcdd-75e4-460c-9ec0-af4f952e03d5/20210906_meeting_promoting_03.pdf",
-            "type": "PDF",
-            "isPrivate": false
-          },
-          {
-            "name": "資料3 デジタル社会推進会議幹事会の開催について（案）（PDF／61KB）",
-            "url": "https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/d6cfdcdd-75e4-460c-9ec0-af4f952e03d5/20210906_meeting_promoting_04.pdf",
-            "type": "PDF",
-            "isPrivate": false
-          },
-          {
-            "name": "資料4 データ戦略推進ワーキンググループの開催について（案）（PDF／47KB）",
-            "url": "https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/d6cfdcdd-75e4-460c-9ec0-af4f952e03d5/20210906_meeting_promoting_05.pdf",
-            "type": "PDF",
-            "isPrivate": false
-          },
-          {
-            "name": "資料5 今後のデジタル改革の進め方について（PDF／859KB）",
-            "url": "https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/d6cfdcdd-75e4-460c-9ec0-af4f952e03d5/20210906_meeting_promoting_06.pdf",
-            "type": "PDF",
-            "isPrivate": false
-          },
-          {
-            "name": "議事録（PDF／239KB）",
-            "url": "https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/d6cfdcdd-75e4-460c-9ec0-af4f952e03d5/20210906_meeting_promoting_09.pdf",
-            "type": "PDF",
-            "isPrivate": false
-          },
-          {
-            "name": "参考資料1 これまでのデジタル改革の取組みについて（PDF／917KB）",
-            "url": "https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/d6cfdcdd-75e4-460c-9ec0-af4f952e03d5/20210906_meeting_promoting_07.pdf",
-            "type": "PDF",
-            "isPrivate": false
-          },
-          {
-            "name": "参考資料2 デジタル社会の実現に向けた重点計画（令和3年（2021年）6月18日閣議決定）（PDF／1,296KB）",
-            "url": "https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/d6cfdcdd-75e4-460c-9ec0-af4f952e03d5/20210906_meeting_promoting_08.pdf",
-            "type": "PDF",
-            "isPrivate": false
-          }
-        ],
-        "extractedDates": [
-          "2024年7月29日"
-        ]
+        "subpageUrl": "https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/d2a5bbd2-ae8f-450c-adaa-33979181d26a/9e1f02c1/20230630_meeting_executive_01.pdf",
+        "title": "https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/d2a5bbd2-ae8f-450c-adaa-33979181d26a/9e1f02c1/20230630_meeting_executive_01.pdf",
+        "extractedMaterialsCount": 0,
+        "materials": [],
+        "extractedDates": []
       },
       {
-        "subpageUrl": "https://www.digital.go.jp/councils/social-promotion/sccTvFQ1",
-        "title": "第2回デジタル社会推進会議｜デジタル庁",
-        "extractedMaterialsCount": 11,
+        "subpageUrl": "https://www.digital.go.jp/councils/social-promotion-executive/stdbnYdh",
+        "title": "第1回デジタル社会推進会議幹事会｜デジタル庁",
+        "extractedMaterialsCount": 15,
         "materials": [
           {
-            "name": "議事次第（PDF／25KB）",
-            "url": "https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/c3a0ca8a-e07d-4a33-9030-efebdb4e2a9e/20211224_meeting_promoting_00.pdf",
+            "name": "議事次第（PDF／34KB）",
+            "url": "https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/59abc4a2-e73c-424b-9fd9-a3bb59bb4ef8/20210910_meeting_executive_01.pdf",
             "type": "PDF",
             "isPrivate": false
           },
           {
-            "name": "資料1-1：デジタル社会の実現に向けた重点計画（案）概要（簡易版）（PDF／289KB）",
-            "url": "https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/c3a0ca8a-e07d-4a33-9030-efebdb4e2a9e/20211224_meeting_promoting_01.pdf",
+            "name": "資料1　新たな推進体制について（PDF／208KB）",
+            "url": "https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/59abc4a2-e73c-424b-9fd9-a3bb59bb4ef8/20210910_meeting_executive_02.pdf",
             "type": "PDF",
             "isPrivate": false
           },
           {
-            "name": "資料1-2：デジタル社会の実現に向けた重点計画（案）概要（PDF／1,595KB）",
-            "url": "https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/c3a0ca8a-e07d-4a33-9030-efebdb4e2a9e/20211224_meeting_promoting_02.pdf",
+            "name": "資料2　デジタル社会推進会議幹事会運営要領（案）（PDF／41KB）",
+            "url": "https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/59abc4a2-e73c-424b-9fd9-a3bb59bb4ef8/20210910_meeting_executive_03.pdf",
             "type": "PDF",
             "isPrivate": false
           },
           {
-            "name": "資料1-3：デジタル社会の実現に向けた重点計画（案）（PDF／4,730KB）",
-            "url": "https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/c3a0ca8a-e07d-4a33-9030-efebdb4e2a9e/20211224_meeting_promoting_03.pdf",
+            "name": "資料3　デジタル社会推進会議副幹事会の開催について（案）（PDF／68KB）",
+            "url": "https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/59abc4a2-e73c-424b-9fd9-a3bb59bb4ef8/20210910_meeting_executive_04.pdf",
             "type": "PDF",
             "isPrivate": false
           },
           {
-            "name": "資料1-4：デジタル社会の実現に向けた重点計画（案）別冊（PDF／3,007KB）",
-            "url": "https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/c3a0ca8a-e07d-4a33-9030-efebdb4e2a9e/20211224_meeting_promoting_04.pdf",
+            "name": "資料4　今後のデジタル改革の進め方について（PDF／390KB）",
+            "url": "https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/59abc4a2-e73c-424b-9fd9-a3bb59bb4ef8/20210910_meeting_executive_05.pdf",
             "type": "PDF",
             "isPrivate": false
           },
           {
-            "name": "資料1-5：デジタル社会の実現に向けた重点計画（案）施策集（別紙）（PDF／910KB）",
-            "url": "https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/c3a0ca8a-e07d-4a33-9030-efebdb4e2a9e/20211224_meeting_promoting_05.pdf",
+            "name": "資料5　新重点計画の策定に向けた依頼事項（PDF／53KB）",
+            "url": "https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/59abc4a2-e73c-424b-9fd9-a3bb59bb4ef8/20210910_meeting_executive_06.pdf",
             "type": "PDF",
             "isPrivate": false
           },
           {
-            "name": "資料2-1：デジタル社会推進会議令第4条に基づく運営要領等の改正について（PDF／450KB）",
-            "url": "https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/c3a0ca8a-e07d-4a33-9030-efebdb4e2a9e/20211224_meeting_promoting_06.pdf",
+            "name": "資料6　情報システムの整備及び管理の基本的な方針の策定について（PDF／301KB）",
+            "url": "https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/59abc4a2-e73c-424b-9fd9-a3bb59bb4ef8/20210910_meeting_executive_07.pdf",
             "type": "PDF",
             "isPrivate": false
           },
           {
-            "name": "資料2-2：デジタル社会推進会議運営要領（改正案）（PDF／53KB）",
-            "url": "https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/c3a0ca8a-e07d-4a33-9030-efebdb4e2a9e/20211224_meeting_promoting_07.pdf",
+            "name": "資料7　デジタル・ガバメント推進標準ガイドライン（改定案）（PDF／1,428KB）",
+            "url": "https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/59abc4a2-e73c-424b-9fd9-a3bb59bb4ef8/20210910_meeting_executive_08.pdf",
             "type": "PDF",
             "isPrivate": false
           },
           {
-            "name": "資料2-3：デジタル社会推進会議幹事会の開催について（改正案）（PDF／67KB）",
-            "url": "https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/c3a0ca8a-e07d-4a33-9030-efebdb4e2a9e/20211224_meeting_promoting_08.pdf",
+            "name": "資料8　政府情報システムにおけるクラウドサービスの利用に係る基本方針（改定案）（PDF／300KB）",
+            "url": "https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/59abc4a2-e73c-424b-9fd9-a3bb59bb4ef8/20210910_meeting_executive_09.pdf",
             "type": "PDF",
             "isPrivate": false
           },
           {
-            "name": "議事録（PDF／145KB）",
-            "url": "https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/c3a0ca8a-e07d-4a33-9030-efebdb4e2a9e/20211224_meeting_promoting_10.pdf",
+            "name": "資料9　政府共通プラットフォーム第二期整備計画（改定案）（PDF／127KB）",
+            "url": "https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/59abc4a2-e73c-424b-9fd9-a3bb59bb4ef8/20210910_meeting_executive_10.pdf",
             "type": "PDF",
             "isPrivate": false
           },
           {
-            "name": "参考資料1：デジタル社会推進会議（第1回）議事録（案）（PDF／154KB）",
-            "url": "https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/c3a0ca8a-e07d-4a33-9030-efebdb4e2a9e/20211224_meeting_promoting_09.pdf",
+            "name": "資料10　デジタル庁におけるコンプライアンス・入札制限の取組について（PDF／313KB）",
+            "url": "https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/59abc4a2-e73c-424b-9fd9-a3bb59bb4ef8/20210910_meeting_executive_11.pdf",
+            "type": "PDF",
+            "isPrivate": false
+          },
+          {
+            "name": "参考資料1　デジタル社会推進会議幹事会の開催について（令和3年9月6日デジタル社会推進会議議長決定）（PDF／66KB）",
+            "url": "https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/59abc4a2-e73c-424b-9fd9-a3bb59bb4ef8/20210910_meeting_executive_12.pdf",
+            "type": "PDF",
+            "isPrivate": false
+          },
+          {
+            "name": "参考資料2　これまでのデジタル改革の取組について（PDF／1,029KB）",
+            "url": "https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/59abc4a2-e73c-424b-9fd9-a3bb59bb4ef8/20210910_meeting_executive_13.pdf",
+            "type": "PDF",
+            "isPrivate": false
+          },
+          {
+            "name": "参考資料3　デジタル社会の実現に向けた重点計画＜概要＞（令和3年6月18日閣議決定）（PDF／1,466KB）",
+            "url": "https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/59abc4a2-e73c-424b-9fd9-a3bb59bb4ef8/20210910_meeting_executive_14.pdf",
+            "type": "PDF",
+            "isPrivate": false
+          },
+          {
+            "name": "参考資料4　政府情報システムの管理等に関する考え方（令和3年9月1日デジタル大臣決定）（PDF／435KB）",
+            "url": "https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/59abc4a2-e73c-424b-9fd9-a3bb59bb4ef8/20210910_meeting_executive_15.pdf",
             "type": "PDF",
             "isPrivate": false
           }
         ],
         "extractedDates": [
-          "2024年7月29日"
+          "令和3年9月6日",
+          "2024年5月31日"
         ]
       }
     ]
@@ -2599,7 +2641,7 @@
     "councilName": "こども政策推進会議",
     "ministry": "CFA",
     "officialUrl": "https://www.cfa.go.jp/councils/suishinkaigi",
-    "scrapedAt": "2026-08-01 17:11:16",
+    "scrapedAt": "2026-08-01 17:59:20",
     "ruleApplied": "rule-cfa-kodomo-suishin-ai-v3",
     "ministryQuirk": "こども家庭庁型: /councils/会議名/UUIDハッシュ個別の回URL構造",
     "pageTitle": "こども政策推進会議｜こども家庭庁",
@@ -2805,9 +2847,9 @@
       }
     ],
     "extractedDates": [
-      "令和8年6月9日",
-      "令和6年9月9日",
-      "令和5年12月22日"
+      "令和6年5月31日",
+      "令和5年12月22日",
+      "令和6年9月9日"
     ],
     "subpageMeetings": [
       {
@@ -2823,8 +2865,8 @@
           }
         ],
         "extractedDates": [
-          "令和8年6月9日",
-          "令和6年9月9日"
+          "令和6年5月31日",
+          "令和5年12月22日"
         ]
       },
       {
@@ -3002,8 +3044,8 @@
           }
         ],
         "extractedDates": [
-          "令和5年12月22日",
-          "令和6年5月16日"
+          "令和6年5月31日",
+          "令和5年12月22日"
         ]
       },
       {
@@ -3077,7 +3119,7 @@
     "councilName": "こども家庭審議会",
     "ministry": "CFA",
     "officialUrl": "https://www.cfa.go.jp/councils/shingikai",
-    "scrapedAt": "2026-08-01 17:11:17",
+    "scrapedAt": "2026-08-01 17:59:22",
     "ruleApplied": "rule-cfa-kodomo-shingikai-ai-v3",
     "ministryQuirk": "こども家庭庁型: /councils/会議名/UUIDハッシュ個別の回URL構造",
     "pageTitle": "こども家庭審議会｜こども家庭庁",
@@ -3475,9 +3517,9 @@
       }
     ],
     "extractedDates": [
-      "令和5年4月21日",
+      "令和7年4月25日",
       "令和5年9月25日",
-      "令和7年1月23日"
+      "令和7年11月6日"
     ],
     "subpageMeetings": [
       {
@@ -3601,7 +3643,7 @@
           }
         ],
         "extractedDates": [
-          "令和5年4月21日",
+          "令和7年4月25日",
           "令和5年9月25日"
         ]
       },
@@ -3748,8 +3790,8 @@
           }
         ],
         "extractedDates": [
-          "令和7年4月21日",
-          "令和7年4月25日"
+          "令和7年4月25日",
+          "令和7年4月21日"
         ]
       },
       {
@@ -3859,8 +3901,8 @@
           }
         ],
         "extractedDates": [
-          "令和5年12月22日",
-          "令和6年1月29日"
+          "令和6年1月29日",
+          "令和5年12月22日"
         ]
       },
       {

@@ -67,12 +67,12 @@ const COUNCILS = [
   // 2. DIGITAL
   {
     id: 'digital-suishin',
-    name: 'デジタル社会推進会議',
+    name: 'デジタル社会推進会議幹事会',
     ministry: 'DIGITAL',
     category: 'COUNCIL',
-    pastYearCount: 8,
-    description: 'マイナンバー制度、ベース・レジストリ、政府クラウド (Gov-Cloud) および行政DXの推進基本計画を取りまとめる政府全体の意思決定会議。',
-    officialUrl: 'https://www.digital.go.jp/councils/social-promotion',
+    pastYearCount: 23,
+    description: 'マイナンバー制度、ベース・レジストリ、ガバメントクラウド (Gov-Cloud) および行政DXの推進実務を取りまとめる幹事会。',
+    officialUrl: 'https://www.digital.go.jp/councils/social-promotion-executive',
     isWatched: true,
     trackedSince: '2021-09-01'
   },
