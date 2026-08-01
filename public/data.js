@@ -821,30 +821,32 @@ const MEETINGS = [
     docCount: 11
   },
   {
-    id: 'meet-2026-0729-aihq',
+    id: 'meet-2026-0710-aihq',
     councilId: 'cao-ai-hq',
     councilName: '人工知能戦略本部',
     ministry: 'CAO',
     category: 'COUNCIL',
     title: '第5回 人工知能戦略本部 会議',
-    date: '2026-07-29',
-    updatedAt: '2026-07-29 16:30',
+    date: '2026-07-10',
+    updatedAt: '2026-07-10 16:30',
     location: '内閣府 講堂（中央合同庁舎第8号館）',
-    summary: '国家AI安全法案（仮称）の骨子案が可決され、フロンティアAI事業者への安全評価届出義務化およびAI安全研究所 (AISI) の権限強化方針が決定した。',
+    summary: '人工知能基本計画（案）およびバーティカルＡＩ領域別戦略の中間とりまとめ案が提示され、各省庁連携によるAI社会実装方針が決定した。',
     agenda: [
-      'AI安全推進法制の整備に向けた基本方針の可決',
-      '我が国におけるスーパーコンピュータ・AIインフラ整備計画（第2期）',
-      '国際的なAIセーフティ・ネットワーク (AISN) への日本の貢献方針'
+      '人工知能基本計画（案）の審議および決定',
+      'バーティカルＡＩ領域別戦略 中間とりまとめ報告',
+      '我が国におけるAIインフラ整備および安全評価体制の強化'
     ],
     materials: [
-      { name: '第5回 人工知能戦略本部 会議議事概要 (PDF)', type: 'PDF', size: '210 KB', url: 'https://www8.cao.go.jp/cstp/ai/ai_hq/5kai/gijigaiyo.pdf', isMinutes: true },
-      { name: '第3回 人工知能戦略本部 会議議事概要 (PDF)', type: 'PDF', size: '240 KB', url: 'https://www8.cao.go.jp/cstp/ai/ai_hq/3kai/gijigaiyo.pdf', isMinutes: true },
-      { name: '人工知能戦略本部 開催状況公式ページ', type: 'HTML', size: '50 KB', url: 'https://www8.cao.go.jp/cstp/ai/ai_hq/kaisai.html', isMinutes: false }
+      { name: '資料1-1: 人工知能基本計画（案）の概要 (PDF / 576KB)', type: 'PDF', size: '576 KB', url: 'https://www8.cao.go.jp/cstp/ai/ai_hq/5kai/shiryo1_1.pdf', isMinutes: false },
+      { name: '資料1-2: 人工知能基本計画（案） (PDF / 609KB)', type: 'PDF', size: '609 KB', url: 'https://www8.cao.go.jp/cstp/ai/ai_hq/5kai/shiryo1_2.pdf', isMinutes: false },
+      { name: '資料2-1: バーティカルＡＩ領域別戦略 中間とりまとめの概要 (PDF / 422KB)', type: 'PDF', size: '422 KB', url: 'https://www8.cao.go.jp/cstp/ai/ai_hq/5kai/shiryo2_1.pdf', isMinutes: false },
+      { name: '資料2-2: バーティカルＡＩ領域別戦略 中間とりまとめ (PDF / 1,332KB)', type: 'PDF', size: '1,332 KB', url: 'https://www8.cao.go.jp/cstp/ai/ai_hq/5kai/shiryo2_2.pdf', isMinutes: false },
+      { name: '第5回 人工知能戦略本部 会議公式ページ', type: 'HTML', size: '35 KB', url: 'https://www8.cao.go.jp/cstp/ai/ai_hq/5kai/5kai.html', isMinutes: false }
     ],
-    tags: ['AI', '人工知能戦略本部', 'AISI', 'AI法制', '内閣府'],
-    officialUrl: 'https://www8.cao.go.jp/cstp/ai/ai_hq/kaisai.html',
+    tags: ['AI', '人工知能戦略本部', '基本計画', 'バーティカルAI', '内閣府'],
+    officialUrl: 'https://www8.cao.go.jp/cstp/ai/ai_hq/5kai/5kai.html',
     hasMinutes: true,
-    docCount: 3
+    docCount: 5
   },
   {
     id: 'meet-2026-0626-chutou11',

@@ -120,7 +120,7 @@ def analyze_and_generate_rule(target, html):
         "rules": {
             "encoding": "utf-8",
             "deep_crawl_enabled": has_subpages,
-            "subpage_discovery_pattern": "href=[\"']([^\"']*(?:dai\\d+|kaisai|gijisidai|gijiroku)[^\"']*)[\"']" if has_subpages else None,
+            "subpage_discovery_pattern": "href=[\"']([^\"']*(?:dai\\d+|\\d+kai|kaisai|gijisidai|gijiroku)[^\"']*)[\"']" if has_subpages else None,
             "date_regex": "(?:令和[0-9０-９一-九]+年[0-9０-９一-十二]+月[0-9０-９一-三十一]+日|20[2-9][0-9]年[0-1]?[0-9]月[0-3]?[0-9]日)" if has_wareki else "20[2-9][0-9]年[0-1]?[0-9]月[0-3]?[0-9]日",
             "prefer_subpage_date": True,
             "extract_subpage_materials_primary": True,

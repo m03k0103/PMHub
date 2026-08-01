@@ -1,14 +1,14 @@
 {
   "cas-chutou-jyousei": {
     "rule_id": "rule-cas-chutou-jyousei-v2",
-    "created_at": "2026-08-01 15:37:46",
+    "created_at": "2026-08-01 16:07:12",
     "verified_by": "Agent_Initial_Verifier_v1",
     "councilName": "中東情勢に関する関係閣僚会議",
     "targetUrl": "https://www.cas.go.jp/jp/seisaku/chyutoujyousei/index.html",
     "rules": {
       "encoding": "utf-8",
       "deep_crawl_enabled": true,
-      "subpage_discovery_pattern": "href=[\"']([^\"']*(?:dai\\d+|kaisai|gijisidai|gijiroku)[^\"']*)[\"']",
+      "subpage_discovery_pattern": "href=[\"']([^\"']*(?:dai\\d+|\\d+kai|kaisai|gijisidai|gijiroku)[^\"']*)[\"']",
       "date_regex": "(?:令和[0-9０-９一-九]+年[0-9０-９一-十二]+月[0-9０-９一-三十一]+日|20[2-9][0-9]年[0-1]?[0-9]月[0-3]?[0-9]日)",
       "prefer_subpage_date": true,
       "extract_subpage_materials_primary": true,
@@ -22,14 +22,14 @@
   },
   "cao-ai-strategy": {
     "rule_id": "rule-cao-ai-strategy-v2",
-    "created_at": "2026-08-01 15:37:46",
+    "created_at": "2026-08-01 16:07:12",
     "verified_by": "Agent_Initial_Verifier_v1",
     "councilName": "AI戦略会議",
     "targetUrl": "https://www8.cao.go.jp/cstp/ai/",
     "rules": {
       "encoding": "utf-8",
       "deep_crawl_enabled": true,
-      "subpage_discovery_pattern": "href=[\"']([^\"']*(?:dai\\d+|kaisai|gijisidai|gijiroku)[^\"']*)[\"']",
+      "subpage_discovery_pattern": "href=[\"']([^\"']*(?:dai\\d+|\\d+kai|kaisai|gijisidai|gijiroku)[^\"']*)[\"']",
       "date_regex": "(?:令和[0-9０-９一-九]+年[0-9０-９一-十二]+月[0-9０-９一-三十一]+日|20[2-9][0-9]年[0-1]?[0-9]月[0-3]?[0-9]日)",
       "prefer_subpage_date": true,
       "extract_subpage_materials_primary": true,
@@ -43,7 +43,7 @@
   },
   "cao-kisei-kaikaku": {
     "rule_id": "rule-cao-kisei-kaikaku-v2",
-    "created_at": "2026-08-01 15:37:46",
+    "created_at": "2026-08-01 16:07:12",
     "verified_by": "Agent_Initial_Verifier_v1",
     "councilName": "規制改革推進会議",
     "targetUrl": "https://www8.cao.go.jp/kisei-kaikaku/index.html",
@@ -64,7 +64,7 @@
   },
   "ra-fukko-suishin": {
     "rule_id": "rule-ra-fukko-suishin-v2",
-    "created_at": "2026-08-01 15:37:46",
+    "created_at": "2026-08-01 16:07:12",
     "verified_by": "Agent_Initial_Verifier_v1",
     "councilName": "復興推進委員会",
     "targetUrl": "https://www.reconstruction.go.jp/topics/cat-11/cat-47/cat-155/cat-156/000813/",
@@ -85,14 +85,14 @@
   },
   "cas-zensedai-hosyo": {
     "rule_id": "rule-cas-zensedai-hosyo-v2",
-    "created_at": "2026-08-01 15:37:46",
+    "created_at": "2026-08-01 16:07:12",
     "verified_by": "Agent_Initial_Verifier_v1",
     "councilName": "全世代型社会保障構築会議",
     "targetUrl": "https://www.cas.go.jp/jp/seisaku/zensedai_hosyo/index.html",
     "rules": {
       "encoding": "utf-8",
       "deep_crawl_enabled": true,
-      "subpage_discovery_pattern": "href=[\"']([^\"']*(?:dai\\d+|kaisai|gijisidai|gijiroku)[^\"']*)[\"']",
+      "subpage_discovery_pattern": "href=[\"']([^\"']*(?:dai\\d+|\\d+kai|kaisai|gijisidai|gijiroku)[^\"']*)[\"']",
       "date_regex": "(?:令和[0-9０-９一-九]+年[0-9０-９一-十二]+月[0-9０-９一-三十一]+日|20[2-9][0-9]年[0-1]?[0-9]月[0-3]?[0-9]日)",
       "prefer_subpage_date": true,
       "extract_subpage_materials_primary": true,
@@ -106,7 +106,7 @@
   },
   "cas-kokumin-kaigi": {
     "rule_id": "rule-cas-kokumin-kaigi-v2",
-    "created_at": "2026-08-01 15:37:47",
+    "created_at": "2026-08-01 16:07:12",
     "verified_by": "Agent_Initial_Verifier_v1",
     "councilName": "社会保障国民会議",
     "targetUrl": "https://www.cas.go.jp/jp/seisaku/kokuminkaigi/index.html",
@@ -127,7 +127,7 @@
   },
   "cao-ai-hq": {
     "rule_id": "rule-cao-ai-hq-v2",
-    "created_at": "2026-08-01 15:37:47",
+    "created_at": "2026-08-01 16:07:12",
     "verified_by": "Agent_Initial_Verifier_v1",
     "councilName": "人工知能戦略本部",
     "targetUrl": "https://www8.cao.go.jp/cstp/ai/ai_hq/kaisai.html",
@@ -148,7 +148,7 @@
   },
   "digital-suishin": {
     "rule_id": "rule-digital-suishin-v2",
-    "created_at": "2026-08-01 15:37:47",
+    "created_at": "2026-08-01 16:07:12",
     "verified_by": "Agent_Initial_Verifier_v1",
     "councilName": "デジタル社会推進会議",
     "targetUrl": "https://www.digital.go.jp/councils/social-promotion",
