@@ -257,12 +257,12 @@ const COUNCILS = [
   // 17. FSA
   {
     id: 'fsa-kinyu-shingi',
-    name: '金融審議会 金融制度スタディ・グループ',
+    name: '金融審議会',
     ministry: 'FSA',
-    category: 'SUBCOMMITTEE',
+    category: 'COUNCIL',
     pastYearCount: 16,
-    description: 'ステーブルコイン・Web3暗号資産の規制フレームワーク、資産運用立国実現に向けたNISA制度拡充・顧客中心主義を審議。',
-    officialUrl: 'https://www.fsa.go.jp/singi/index.html',
+    description: '金融システムの安定、市場機能の円滑化、地域金融力の強化、暗号資産制度、サステナビリティ開示、ディスクロージャー等の金融行政の重要事項を審議。',
+    officialUrl: 'https://www.fsa.go.jp/singi/singi_kinyu/base_gijiroku.html',
     isWatched: true,
     trackedSince: '2022-11-01'
   },
@@ -474,28 +474,40 @@ const MEETINGS = [
   },
   // 4. FSA
   {
-    id: 'meet-2026-0721-fsa',
+    id: 'meet-2026-0203-fsa',
     councilId: 'fsa-kinyu-shingi',
-    councilName: '金融審議会 金融制度スタディ・グループ',
+    councilName: '金融審議会',
     ministry: 'FSA',
-    category: 'SUBCOMMITTEE',
-    title: '金融審議会 金融制度スタディ・グループ 第12回',
-    date: '2026-07-21',
-    updatedAt: '2026-07-21 17:15',
-    location: '金融庁 9階 901会議室',
-    summary: '円建てステーブルコインの発行・決済事業に関する銀行法・資金決済法上の実務留意事項および、AIによる投資助言アルゴリズムに対する金融商品取引法上の登録基準が審議された。',
+    category: 'COUNCIL',
+    title: '第56回金融審議会総会・第44回金融分科会合同会合',
+    date: '2026-02-03',
+    updatedAt: '2026-02-03 11:30',
+    location: '中央合同庁舎第７号館13階 共用第１特別会議室 及び オンライン形式',
+    summary: '「地域金融力の強化WG」「暗号資産制度WG」「市場制度WG」「サステナビリティ情報の開示と保証のあり方WG」「ディスクロージャーWG」の各報告および答申案が審議・報告された。',
     agenda: [
-      'デジタル通貨・ステーブルコインの決済インフラ接続に関する論点整理',
-      '生成AIを用いたロボアドバイザー等の規制・説明責任の明確化',
-      '資産形成推進に向けた新NISA成長投資枠の利用状況統計'
+      '開会・挨拶',
+      '諮問事項にかかる報告（地域金融・暗号資産・市場制度・サステナビリティ開示・ディスクロージャー）',
+      '討議および報告書の取りまとめ',
+      '閉会'
     ],
     materials: [
-      { name: '金融審議会 公式ポータル', type: 'HTML', size: '35 KB', url: 'https://www.fsa.go.jp/singi/index.html', isMinutes: false }
+      { name: '資料1-1: 説明資料（金融審議会「地域金融力の強化に関するワーキング・グループ」報告） (PDF)', type: 'PDF', size: '1.2 MB', url: 'https://www.fsa.go.jp/singi/singi_kinyu/soukai/siryou/20260203/1-1.pdf', isMinutes: false },
+      { name: '資料1-2: 金融審議会「地域金融力の強化に関するワーキング・グループ」報告 (PDF)', type: 'PDF', size: '2.4 MB', url: 'https://www.fsa.go.jp/singi/singi_kinyu/soukai/siryou/20260203/1-2.pdf', isMinutes: false },
+      { name: '資料2-1: 説明資料（金融審議会「暗号資産制度に関するワーキング・グループ」報告） (PDF)', type: 'PDF', size: '1.5 MB', url: 'https://www.fsa.go.jp/singi/singi_kinyu/soukai/siryou/20260203/2-1.pdf', isMinutes: false },
+      { name: '資料2-2: 金融審議会「暗号資産制度に関するワーキング・グループ」報告 (PDF)', type: 'PDF', size: '3.1 MB', url: 'https://www.fsa.go.jp/singi/singi_kinyu/soukai/siryou/20260203/2-2.pdf', isMinutes: false },
+      { name: '資料3-1: 説明資料（金融審議会「市場制度ワーキング・グループ」報告） (PDF)', type: 'PDF', size: '1.8 MB', url: 'https://www.fsa.go.jp/singi/singi_kinyu/soukai/siryou/20260203/3-1.pdf', isMinutes: false },
+      { name: '資料3-2: 金融審議会「市場制度ワーキング・グループ」報告 (PDF)', type: 'PDF', size: '3.6 MB', url: 'https://www.fsa.go.jp/singi/singi_kinyu/soukai/siryou/20260203/3-2.pdf', isMinutes: false },
+      { name: '資料4-1: 説明資料（金融審議会「サステナビリティ情報の開示と保証のあり方に関するワーキング・グループ」報告） (PDF)', type: 'PDF', size: '1.4 MB', url: 'https://www.fsa.go.jp/singi/singi_kinyu/soukai/siryou/20260203/4-1.pdf', isMinutes: false },
+      { name: '資料4-2: 金融審議会「サステナビリティ情報の開示と保証のあり方に関するワーキング・グループ」報告 (PDF)', type: 'PDF', size: '2.9 MB', url: 'https://www.fsa.go.jp/singi/singi_kinyu/soukai/siryou/20260203/4-2.pdf', isMinutes: false },
+      { name: '資料5-1: 説明資料（金融審議会「ディスクロージャーワーキング・グループ」報告） (PDF)', type: 'PDF', size: '1.1 MB', url: 'https://www.fsa.go.jp/singi/singi_kinyu/soukai/siryou/20260203/5-1.pdf', isMinutes: false },
+      { name: '資料5-2: 金融審議会「ディスクロージャーワーキング・グループ」報告 (PDF)', type: 'PDF', size: '2.2 MB', url: 'https://www.fsa.go.jp/singi/singi_kinyu/soukai/siryou/20260203/5-2.pdf', isMinutes: false },
+      { name: '資料6: 金融審議会委員名簿 (PDF)', type: 'PDF', size: '210 KB', url: 'https://www.fsa.go.jp/singi/singi_kinyu/soukai/siryou/20260203/6.pdf', isMinutes: false },
+      { name: '第56回総会・第44回分科会合同会合 議事次第ページ', type: 'HTML', size: '35 KB', url: 'https://www.fsa.go.jp/singi/singi_kinyu/soukai/siryou/20260203.html', isMinutes: false }
     ],
-    tags: ['金融', 'ステーブルコイン', 'Web3', 'NISA', '金融庁'],
-    officialUrl: 'https://www.fsa.go.jp/singi/index.html',
+    tags: ['金融審議会', '地域金融', '暗号資産', '市場制度', 'サステナビリティ開示', 'ディスクロージャー', '金融庁'],
+    officialUrl: 'https://www.fsa.go.jp/singi/singi_kinyu/soukai/siryou/20260203.html',
     hasMinutes: true,
-    docCount: 1
+    docCount: 12
   },
   // 6. MOJ
   {

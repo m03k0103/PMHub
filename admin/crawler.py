@@ -83,6 +83,12 @@ CRAWL_TARGETS = [
         "ministry": "CFA",
         "name": "こども家庭審議会",
         "url": "https://www.cfa.go.jp/councils/shingikai"
+    },
+    {
+        "id": "fsa-kinyu-shingi",
+        "ministry": "FSA",
+        "name": "金融審議会",
+        "url": "https://www.fsa.go.jp/singi/singi_kinyu/base_gijiroku.html"
     }
 ]
 
