@@ -149,6 +149,12 @@ TARGET_COUNCILS = [
         "ministry": "NPA",
         "name": "警察庁政策評価研究会",
         "url": "https://www.npa.go.jp/policies/council/index.html"
+    },
+    {
+        "id": "nra-teireikai",
+        "ministry": "NRA",
+        "name": "原子力規制委員会",
+        "url": "https://www.nra.go.jp/index.html"
     }
 ]
 

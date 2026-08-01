@@ -349,13 +349,13 @@ const COUNCILS = [
   // 20. NRA
   {
     id: 'nra-teireikai',
-    name: '原子力規制委員会 定例会',
+    name: '原子力規制委員会',
     ministry: 'NRA',
     category: 'COUNCIL',
     pastYearCount: 48,
-    description: '原子力発電所の新規制基準適合性審査、高レベル放射性廃棄物最終処分場の地質調査評価、安全協定の検証を実施。',
+    description: '原子力発電所の新規制基準適合性審査、放射性同位元素等の規制立入検査、廃止措置計画、防災訓練評価等を審議。',
     officialUrl: 'https://www.nra.go.jp/index.html',
-    isWatched: false,
+    isWatched: true,
     trackedSince: '2021-10-01'
   },
   // 22. CAS Councils (User Requested)
@@ -1036,28 +1036,119 @@ const MEETINGS = [
   },
   // 11. NRA
   {
-    id: 'meet-2026-0702-nra',
+    id: 'meet-nra-25th-rinji',
     councilId: 'nra-teireikai',
-    councilName: '原子力規制委員会 定例会',
+    councilName: '原子力規制委員会',
     ministry: 'NRA',
     category: 'COUNCIL',
-    title: '令和8年度 第18回 原子力規制委員会 定例会',
-    date: '2026-07-02',
-    updatedAt: '2026-07-02 15:00',
-    location: '原子力規制委員会 13階 会議室',
-    summary: '高浜原子力発電所の運転期間延長（60年超）に関する高経年化技術評価結果、および次世代革新炉（SMR・高温ガス炉）の安全審査指針骨子案が審議・可決された。',
+    title: '第25回原子力規制委員会 臨時会議',
+    date: '2026-07-29',
+    updatedAt: '2026-07-29 17:00',
+    location: '原子力規制委員会 会議室',
+    summary: '放射性同位元素等の規制に関する法律第43条の2に基づく立入検査の実施方針が可決・審議された。',
     agenda: [
-      '運転期間延長に関する安全審査結果の取りまとめ',
-      '次世代小型モジュール炉 (SMR) の設置許可審査ガイドライン（案）',
-      '自然災害（火山・大規模地震）発生時における緊急時対応計画の検証'
+      '放射性同位元素等の規制に関する法律第43条の2に基づく立入検査の実施について'
     ],
     materials: [
-      { name: '原子力規制委員会 公式ポータル', type: 'HTML', size: '35 KB', url: 'https://www.nra.go.jp/index.html', isMinutes: false }
+      { name: '議事次第', type: 'HTML', size: '20 KB', url: 'https://www.da.nra.go.jp/view/NRA100019551?contents=NRA100019551-004-001', isMinutes: false },
+      { name: '資料1 放射性同位元素等の規制に関する法律第43条の2に基づく立入検査の実施', type: 'HTML', size: '35 KB', url: 'https://www.da.nra.go.jp/view/NRA100019551?contents=NRA100019551-004-002', isMinutes: false },
+      { name: '第25回臨時会議 詳細ページ', type: 'HTML', size: '30 KB', url: 'https://www.da.nra.go.jp/detail/NRA100019551', isMinutes: false }
     ],
-    tags: ['原子力', '安全審査', 'SMR', 'エネルギー', '規制'],
-    officialUrl: 'https://www.nra.go.jp/index.html',
+    tags: ['原子力規制委員会', '第25回臨時会議', '立入検査', '放射性同位元素'],
+    officialUrl: 'https://www.da.nra.go.jp/detail/NRA100019551',
     hasMinutes: true,
-    docCount: 1
+    docCount: 3
+  },
+  {
+    id: 'meet-nra-24th-teirei',
+    councilId: 'nra-teireikai',
+    councilName: '原子力規制委員会',
+    ministry: 'NRA',
+    category: 'COUNCIL',
+    title: '第24回原子力規制委員会',
+    date: '2026-07-29',
+    updatedAt: '2026-07-29 18:00',
+    location: '原子力規制委員会 会議室',
+    summary: '行政事業レビューの講評、廃止措置計画の審査基準改善案、中部電力の不正行為を踏まえた地震動評価プロセスの明確化などが審議された。',
+    agenda: [
+      '令和8年度行政事業レビューの取組に関する外部有識者による講評',
+      '廃止措置計画の審査実績を踏まえた規制基準等の記載の具体化・表現の改善',
+      '中部電力株式会社の不正行為を踏まえた地震動評価プロセスの明確化'
+    ],
+    materials: [
+      { name: '議事次第', type: 'HTML', size: '20 KB', url: 'https://www.da.nra.go.jp/view/NRA100019438?contents=NRA100019438-004-001', isMinutes: false },
+      { name: '資料1 令和8年度行政事業レビューの取組に関する外部有識者による講評', type: 'HTML', size: '35 KB', url: 'https://www.da.nra.go.jp/view/NRA100019438?contents=NRA100019438-004-002', isMinutes: false },
+      { name: '資料2 廃止措置計画の審査実績を踏まえた規制基準等の記載の具体化・表現の改善', type: 'HTML', size: '40 KB', url: 'https://www.da.nra.go.jp/view/NRA100019438?contents=NRA100019438-004-003', isMinutes: false },
+      { name: '資料3 原子力委員会専門部会からの情報提供を踏まえた今後の対応方針', type: 'HTML', size: '25 KB', url: 'https://www.da.nra.go.jp/view/NRA100019438?contents=NRA100019438-004-004', isMinutes: false },
+      { name: '資料4 中部電力株式会社の不正行為を踏まえた地震動評価プロセスの明確化に関する検討の進め方', type: 'HTML', size: '35 KB', url: 'https://www.da.nra.go.jp/view/NRA100019438?contents=NRA100019438-004-005', isMinutes: false },
+      { name: '資料5 原子力規制国際アドバイザーの委嘱', type: 'HTML', size: '20 KB', url: 'https://www.da.nra.go.jp/view/NRA100019438?contents=NRA100019438-004-006', isMinutes: false },
+      { name: '第24回会議 詳細ページ', type: 'HTML', size: '30 KB', url: 'https://www.da.nra.go.jp/detail/NRA100019438', isMinutes: false }
+    ],
+    tags: ['原子力規制委員会', '第24回', '廃止措置', '地震動評価', '行政事業レビュー'],
+    officialUrl: 'https://www.da.nra.go.jp/detail/NRA100019438',
+    hasMinutes: true,
+    docCount: 7
+  },
+  {
+    id: 'meet-nra-bousai-18th',
+    councilId: 'nra-teireikai',
+    councilName: '原子力規制委員会',
+    ministry: 'NRA',
+    category: 'COUNCIL',
+    title: '第18回原子力事業者防災訓練報告会',
+    date: '2026-07-13',
+    updatedAt: '2026-07-13 17:00',
+    location: '原子力規制委員会 会議室',
+    summary: '各原子力事業者が実施した防災訓練の実施結果・評価および緊急時対応手順の改善点に関する第一部・第二部報告が行われた。',
+    agenda: [
+      '第一部 原子力事業者における防災訓練の実施結果報告',
+      '第二部 緊急時対応能力の強化およびシナリオ非提示型訓練の評価'
+    ],
+    materials: [
+      { name: '第一部資料一式', type: 'HTML', size: '45 KB', url: 'https://www.da.nra.go.jp/view/NRA100019191?contents=NRA100019191-002-001', isMinutes: false },
+      { name: '第二部資料一式', type: 'HTML', size: '45 KB', url: 'https://www.da.nra.go.jp/view/NRA100019191?contents=NRA100019191-002-002', isMinutes: false },
+      { name: '第18回報告会 詳細ページ', type: 'HTML', size: '30 KB', url: 'https://www.da.nra.go.jp/detail/NRA100019191', isMinutes: false }
+    ],
+    tags: ['原子力事業者', '防災訓練報告会', '第18回', '緊急時対応'],
+    officialUrl: 'https://www.da.nra.go.jp/detail/NRA100019191',
+    hasMinutes: true,
+    docCount: 3
+  },
+  {
+    id: 'meet-nra-shinsa-1422nd',
+    councilId: 'nra-teireikai',
+    councilName: '原子力規制委員会',
+    ministry: 'NRA',
+    category: 'PANEL',
+    title: '第1422回原子力発電所の新規制基準適合性に係る審査会合',
+    date: '2026-07-28',
+    updatedAt: '2026-07-28 18:00',
+    location: '原子力規制委員会 審査会議室',
+    summary: '関西電力大飯発電所3号炉及び4号炉の使用済樹脂処理設備設置に関する新規制基準適合性（津波・外部衝撃・火災・誤操作防止・放射性廃棄物処理等）の審査が行われた。',
+    agenda: [
+      '大飯発電所3号炉及び4号炉 使用済樹脂処理設備の設置に係る審査会合指摘事項の回答',
+      '設置許可基準規則（第5条、第6条、第7条、第8条、第10条、第11条、第27条、第35条）への適合性'
+    ],
+    materials: [
+      { name: '審査会合開催のお知らせ (PDF)', type: 'PDF', size: '137 KB', url: 'https://www.da.nra.go.jp/view/NRA100019421?contents=NRA100019421-001-001', isMinutes: false },
+      { name: '議事次第 (PDF)', type: 'PDF', size: '182 KB', url: 'https://www.da.nra.go.jp/view/NRA100019421?contents=NRA100019421-002-001', isMinutes: false },
+      { name: '資料1-1 大飯発電所3号炉及び4号炉 ご指摘事項の回答について (PDF)', type: 'PDF', size: '803 KB', url: 'https://www.da.nra.go.jp/view/NRA100019421?contents=NRA100019421-002-002', isMinutes: false },
+      { name: '資料1-2 設置許可基準規則への適合性について (PDF)', type: 'PDF', size: '1.8 MB', url: 'https://www.da.nra.go.jp/view/NRA100019421?contents=NRA100019421-002-003', isMinutes: false },
+      { name: '資料1-3 使用済樹脂処理設備の設置に係る関係性 (PDF)', type: 'PDF', size: '1.9 MB', url: 'https://www.da.nra.go.jp/view/NRA100019421?contents=NRA100019421-002-004', isMinutes: false },
+      { name: '資料1-4 津波による損傷の防止 (PDF)', type: 'PDF', size: '537 KB', url: 'https://www.da.nra.go.jp/view/NRA100019421?contents=NRA100019421-002-005', isMinutes: false },
+      { name: '資料1-5 外部からの衝撃による損傷の防止 (PDF)', type: 'PDF', size: '326 KB', url: 'https://www.da.nra.go.jp/view/NRA100019421?contents=NRA100019421-002-006', isMinutes: false },
+      { name: '資料1-6 人の不法な侵入等の防止 (PDF)', type: 'PDF', size: '206 KB', url: 'https://www.da.nra.go.jp/view/NRA100019421?contents=NRA100019421-002-007', isMinutes: false },
+      { name: '資料1-7 火災による損傷の防止 (PDF)', type: 'PDF', size: '1.7 MB', url: 'https://www.da.nra.go.jp/view/NRA100019421?contents=NRA100019421-002-008', isMinutes: false },
+      { name: '資料1-8 誤操作の防止 (PDF)', type: 'PDF', size: '321 KB', url: 'https://www.da.nra.go.jp/view/NRA100019421?contents=NRA100019421-002-009', isMinutes: false },
+      { name: '資料1-9 安全避難通路等 (PDF)', type: 'PDF', size: '139 KB', url: 'https://www.da.nra.go.jp/view/NRA100019421?contents=NRA100019421-002-010', isMinutes: false },
+      { name: '資料1-10 放射性廃棄物の処理施設 (PDF)', type: 'PDF', size: '2.8 MB', url: 'https://www.da.nra.go.jp/view/NRA100019421?contents=NRA100019421-002-011', isMinutes: false },
+      { name: '資料1-11 通信連絡設備 (PDF)', type: 'PDF', size: '776 KB', url: 'https://www.da.nra.go.jp/view/NRA100019421?contents=NRA100019421-002-012', isMinutes: false },
+      { name: '第1422回審査会合 詳細ページ', type: 'HTML', size: '30 KB', url: 'https://www.da.nra.go.jp/detail/NRA100019421', isMinutes: false }
+    ],
+    tags: ['原子力発電所', '新規制基準適合性', '第1422回審査会合', '大飯発電所', '全安全機能審査'],
+    officialUrl: 'https://www.da.nra.go.jp/detail/NRA100019421',
+    hasMinutes: true,
+    docCount: 14
   },
   // 12. MOFA
   {
