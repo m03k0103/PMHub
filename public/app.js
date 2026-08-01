@@ -150,7 +150,7 @@ document.addEventListener('DOMContentLoaded', () => {
       }, null);
 
       if (latestMeeting && latestMeeting.updatedAt) {
-        el.statLastUpdate.textContent = latestMeeting.updatedAt;
+        el.statLastUpdate.textContent = formatDate(latestMeeting.updatedAt);
       }
     }
   }
@@ -361,8 +361,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
       // Date Range filter
       if (state.dateRangeFilter !== 'ALL') {
-        const meetingDate = new Date(meeting.date);
-        const now = new Date('2026-08-01');
+        const meetingDate = new Date(meeting.date.replace(/-/g, '/'));
+        const now = new Date('2026/08/01');
         const diffDays = (now - meetingDate) / (1000 * 60 * 60 * 24);
 
         if (state.dateRangeFilter === '7D' && diffDays > 7) return false;
@@ -378,9 +378,9 @@ document.addEventListener('DOMContentLoaded', () => {
   function sortMeetings(list) {
     return list.sort((a, b) => {
       if (state.sortBy === 'NEWEST') {
-        return new Date(b.date) - new Date(a.date);
+        return new Date(b.date.replace(/-/g, '/')) - new Date(a.date.replace(/-/g, '/'));
       } else if (state.sortBy === 'OLDEST') {
-        return new Date(a.date) - new Date(b.date);
+        return new Date(a.date.replace(/-/g, '/')) - new Date(b.date.replace(/-/g, '/'));
       } else if (state.sortBy === 'DOCS_DESC') {
         return (b.materials ? b.materials.length : 0) - (a.materials ? a.materials.length : 0);
       }
@@ -492,7 +492,7 @@ document.addEventListener('DOMContentLoaded', () => {
       <div class="materials-accordion">
         <button class="materials-toggle-btn" onclick="toggleMaterialsAccordion('${meetingId}')" type="button">
           <div class="materials-toggle-left">
-            <span>📂 公開資料・配布文書を開く</span>
+            <span>📂 資料リストを開く</span>
             <span class="materials-badge-count">${filteredMaterials.length}件</span>
           </div>
           <span class="toggle-arrow" id="arrow-${meetingId}">▼</span>
@@ -552,7 +552,7 @@ document.addEventListener('DOMContentLoaded', () => {
           </div>
           <div class="card-date-badge" title="会議の開催年月日">
             <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-            <span>開催日: ${meeting.date}</span>
+            <span>開催日: ${formatDate(meeting.date)}</span>
           </div>
         </div>
 
@@ -781,7 +781,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     el.modalTitle.textContent = meeting.title;
     el.modalMinistry.textContent = `所管省庁: ${minInfo.name} (${meeting.councilName})`;
-    el.modalDate.textContent = `📅 開催年月日: ${meeting.date}`;
+    el.modalDate.textContent = `📅 開催年月日: ${formatDate(meeting.date)}`;
     el.modalLocation.textContent = `📍 開催場所: ${meeting.location || 'オンライン / 講堂'}`;
     
     // AI Summary Feature Flag check
@@ -844,7 +844,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!state.activeModalMeeting) return;
     const m = state.activeModalMeeting;
     const minName = MINISTRIES[m.ministry]?.name || m.ministry;
-    const citation = `${minName}「${m.title}」（${m.date}開催）政策会議ウォッチ 参照: ${m.officialUrl}`;
+    const citation = `${minName}「${m.title}」（${formatDate(m.date)}開催）政策会議ウォッチ 参照: ${m.officialUrl}`;
     
     navigator.clipboard.writeText(citation);
     showToast('引用形式のテキストをクリップボードにコピーしました 📋');
@@ -906,6 +906,11 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // Helper function
+  function formatDate(str) {
+    if (!str) return '';
+    return str.replace(/-/g, '/');
+  }
+
   function escapeHtml(str) {
     if (!str) return '';
     return str

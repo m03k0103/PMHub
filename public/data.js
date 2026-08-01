@@ -50,7 +50,7 @@ const COUNCILS = [
     description: 'AIの利活用とリスク管理に関する国家戦略、ガバナンスガイドライン、フロンティアAIモデルの安全評価等を討議する有識者会議。',
     officialUrl: 'https://www8.cao.go.jp/cstp/ai/ai_senryaku/ai_senryaku.html',
     isWatched: true,
-    trackedSince: '2023-05-01'
+    trackedSince: '2023/05/01'
   },
   {
     id: 'cao-space-anpo',
@@ -61,7 +61,7 @@ const COUNCILS = [
     description: '国家安全保障戦略および宇宙安全保障構想に基づき、防衛宇宙機能の強化、SDA（宇宙状況把握）、宇宙利用の持続性確保を審議。',
     officialUrl: 'https://www8.cao.go.jp/space/comittee/anpo.html',
     isWatched: true,
-    trackedSince: '2023-01-10'
+    trackedSince: '2023/01/10'
   },
   {
     id: 'cao-kisei-kaikaku',
@@ -72,7 +72,7 @@ const COUNCILS = [
     description: '経済社会の構造改革を推進するため、各種規制の点検・見直し、スタートアップ・デジタル化の障害除去を答申する内閣府諮問機関。',
     officialUrl: 'https://www8.cao.go.jp/kisei-kaikaku/index.html',
     isWatched: true,
-    trackedSince: '2022-10-01'
+    trackedSince: '2022/10/01'
   },
   // 1.5 CAS
   {
@@ -84,7 +84,7 @@ const COUNCILS = [
     description: '医療・介護・年金・少子化対策等の社会保障機能の強化および給付と負担のバランス、持続可能な社会保障制度の構築を審議。',
     officialUrl: 'https://www.cas.go.jp/jp/seisaku/kokuminkaigi/index.html',
     isWatched: true,
-    trackedSince: '2022-01-15'
+    trackedSince: '2022/01/15'
   },
   // 2. DIGITAL
   {
@@ -96,7 +96,7 @@ const COUNCILS = [
     description: 'マイナンバー制度、ベース・レジストリ、ガバメントクラウド (Gov-Cloud) および行政DXの推進実務を取りまとめる幹事会。',
     officialUrl: 'https://www.digital.go.jp/councils/social-promotion-executive',
     isWatched: true,
-    trackedSince: '2021-09-01'
+    trackedSince: '2021/09/01'
   },
   // 3. CFA
   {
@@ -108,7 +108,7 @@ const COUNCILS = [
     description: 'こどもまんなか実行計画、こども・若者自殺防止総力戦略、こども施策の基本方針を閣僚級で推進・決定する重要会議。',
     officialUrl: 'https://www.cfa.go.jp/councils/suishinkaigi',
     isWatched: true,
-    trackedSince: '2023-04-01'
+    trackedSince: '2023/04/01'
   },
   {
     id: 'cfa-kodomo-shingikai',
@@ -119,7 +119,7 @@ const COUNCILS = [
     description: '「こども未来戦略」に基づく少子化対策、児童手当拡充、こども誰でも通園制度、児童虐待防止・予算案の中長期計画を審議。',
     officialUrl: 'https://www.cfa.go.jp/councils/shingikai',
     isWatched: true,
-    trackedSince: '2023-04-01'
+    trackedSince: '2023/04/01'
   },
   // 4. RA
   {
@@ -131,7 +131,7 @@ const COUNCILS = [
     description: '東日本大震災および能登半島地震等からの復興基本方針、福島国際研究教育機構 (FIREC) の推進構想を討議。',
     officialUrl: 'https://www.reconstruction.go.jp/topics/cat-11/cat-47/cat-155/cat-156/000813/',
     isWatched: true,
-    trackedSince: '2022-03-01'
+    trackedSince: '2022/03/01'
   },
   // 5. MIC
   {
@@ -143,7 +143,7 @@ const COUNCILS = [
     description: '6G・光通信規格、電波周波数割り当て、プラットフォーム事業者規制、サイバーセキュリティ対策を審議。',
     officialUrl: 'https://www.soumu.go.jp/menu_kyotsuu/whatsnew/kaigi_index.html',
     isWatched: false,
-    trackedSince: '2022-06-01'
+    trackedSince: '2022/06/01'
   },
   // 6. MOJ
   {
@@ -155,7 +155,7 @@ const COUNCILS = [
     description: '民法・会社法・刑事法・各種手続法等の法改正要綱案の答申、および法務大臣からの諮問事項（犯罪被害者支援・会社法制等）を審議。',
     officialUrl: 'https://www.moj.go.jp/shingi1/shingikai_soukai.html',
     isWatched: true,
-    trackedSince: '2022-01-15'
+    trackedSince: '2022/01/15'
   },
   // 7. MOFA
   {
@@ -167,7 +167,7 @@ const COUNCILS = [
     description: '経済安全保障、自由で開かれたインド太平洋 (FOIP)、Global South との連携強化、ODA改革に関する中長期戦略を助言。',
     officialUrl: 'https://www.mofa.go.jp/mofaj/index.html',
     isWatched: false,
-    trackedSince: '2023-05-10'
+    trackedSince: '2023/05/10'
   },
   // 8. MOF
   {
@@ -179,7 +179,7 @@ const COUNCILS = [
     description: '国家予算編成における歳出改革、防衛費・社会保障費・公共事業費の効率化と財政健全化目標を審議し「意見書」を取りまとめる。',
     officialUrl: 'https://www.mof.go.jp/about_mof/councils/fiscal_system_council/index.html',
     isWatched: true,
-    trackedSince: '2022-09-01'
+    trackedSince: '2022/09/01'
   },
   // 9. MEXT
   {
@@ -191,7 +191,7 @@ const COUNCILS = [
     description: 'GIGAスクール構想、教員の働き方改革、学習指導要領の改定、生成AIの学校教育利用ガイドラインを策定。',
     officialUrl: 'https://www.mext.go.jp/b_menu/shingi/chukyo/chukyo0/index.htm',
     isWatched: false,
-    trackedSince: '2023-02-01'
+    trackedSince: '2023/02/01'
   },
   // 10. MHLW
   {
@@ -203,7 +203,7 @@ const COUNCILS = [
     description: '医療保険制度改革、マイナ保険証の普及・運用、診療報酬改定の基本方針および薬価制度の見直しを審議。',
     officialUrl: 'https://www.mhlw.go.jp/stf/shingi/index.html',
     isWatched: true,
-    trackedSince: '2021-11-01'
+    trackedSince: '2021/11/01'
   },
   // 11. MAFF
   {
@@ -215,7 +215,7 @@ const COUNCILS = [
     description: '食料安全保障、スマート農業・農業DX推進、農林水産物輸出拡大、環境負荷低減型農業 (みどりの食料システム戦略) を策定。',
     officialUrl: 'https://www.maff.go.jp/j/council/seisaku/',
     isWatched: true,
-    trackedSince: '2022-08-01'
+    trackedSince: '2022/08/01'
   },
   // 12. METI
   {
@@ -227,7 +227,7 @@ const COUNCILS = [
     description: 'GX (グリーン・トランスフォーメーション)、半導体・量子技術の国産化、サプライチェーン強靱化等の経済産業政策の中長期方針を策定。',
     officialUrl: 'https://www.meti.go.jp/shingikai/sankoshin/index.html',
     isWatched: true,
-    trackedSince: '2022-04-01'
+    trackedSince: '2022/04/01'
   },
   // 13. MLIT
   {
@@ -239,7 +239,7 @@ const COUNCILS = [
     description: '大規模水災害対策、気象業務のあり方、未来のインフラ政策、防災・減災・国土強靱化推進方針を答申する国土交通省最高審議機関。',
     officialUrl: 'https://www.mlit.go.jp/policy/shingikai/s201_shakai01.html',
     isWatched: true,
-    trackedSince: '2019-02-01'
+    trackedSince: '2019/02/01'
   },
   {
     id: 'mlit-energy-anzenhosho-wg',
@@ -250,7 +250,7 @@ const COUNCILS = [
     description: '国土交通分野におけるエネルギー脱炭素化および経済安全保障確立に向けた総合戦略を審議。',
     officialUrl: 'https://www.mlit.go.jp/policy/shingikai/s404_anzenhosho.html',
     isWatched: true,
-    trackedSince: '2026-07-01'
+    trackedSince: '2026/07/01'
   },
   {
     id: 'mlit-infra-management-wg',
@@ -261,7 +261,7 @@ const COUNCILS = [
     description: 'インフラメンテナンスの点検・修繕の効率化、新技術活用、中長期マネジメント方向性を審議。',
     officialUrl: 'https://www.mlit.go.jp/policy/shingikai/s204_management02.html',
     isWatched: true,
-    trackedSince: '2026-07-01'
+    trackedSince: '2026/07/01'
   },
   // 14. MOE
   {
@@ -273,7 +273,7 @@ const COUNCILS = [
     description: '2030年・2050年温室効果ガス削減目標 (カーボンプライシング、排出量取引制度) の制度設計および環境アセスメントを審議。',
     officialUrl: 'https://www.env.go.jp/council/06earth/yoshi06.html',
     isWatched: false,
-    trackedSince: '2022-05-01'
+    trackedSince: '2022/05/01'
   },
   // 15. MOD
   {
@@ -285,7 +285,7 @@ const COUNCILS = [
     description: '防衛調達の公平性・透明性の確保および防衛装備品の効率的な調達・契約変更適正審査に関する調査審議。',
     officialUrl: 'https://www.mod.go.jp/j/policy/agenda/meeting/cho-shin/index.html',
     isWatched: true,
-    trackedSince: '2022-01-10'
+    trackedSince: '2022/01/10'
   },
   {
     id: 'mod-drastic-reinforcement',
@@ -296,7 +296,7 @@ const COUNCILS = [
     description: '国家安全保障戦略に基づき、防衛力の抜本的強化・防衛生産・技術基盤の維持強化に関する提言および有識者議論。',
     officialUrl: 'https://www.mod.go.jp/j/policy/agenda/meeting/drastic-reinforcement/index.html',
     isWatched: true,
-    trackedSince: '2023-01-15'
+    trackedSince: '2023/01/15'
   },
   {
     id: 'mod-defense-industry-wg',
@@ -307,7 +307,7 @@ const COUNCILS = [
     description: '防衛生産・技術基盤の強化、防衛装備品の官民連携・産業基盤育成に向けたワーキンググループ。',
     officialUrl: 'https://www.mod.go.jp/j/policy/agenda/meeting/defense_industry_wg/index.html',
     isWatched: true,
-    trackedSince: '2023-05-20'
+    trackedSince: '2023/05/20'
   },
   // 16. NPA
   {
@@ -319,7 +319,7 @@ const COUNCILS = [
     description: '警察行政の政策評価、警察活動の事後評価・目標達成度検証、有識者からの意見聴取・改善提言を審議。',
     officialUrl: 'https://www.npa.go.jp/policies/council/index.html',
     isWatched: true,
-    trackedSince: '2023-03-15'
+    trackedSince: '2023/03/15'
   },
   // 17. FSA
   {
@@ -331,7 +331,7 @@ const COUNCILS = [
     description: '金融システムの安定、市場機能の円滑化、地域金融力の強化、暗号資産制度、サステナビリティ開示、ディスクロージャー等の金融行政の重要事項を審議。',
     officialUrl: 'https://www.fsa.go.jp/singi/singi_kinyu/base_gijiroku.html',
     isWatched: true,
-    trackedSince: '2022-11-01'
+    trackedSince: '2022/11/01'
   },
   // 18. CAA
   {
@@ -343,7 +343,7 @@ const COUNCILS = [
     description: 'ダークパターン規制、生成AIによる誤情報・悪質商法からの消費者保護、ステマ（ステルスマーケティング）規制の運用評価。',
     officialUrl: 'https://www.caa.go.jp',
     isWatched: false,
-    trackedSince: '2023-06-01'
+    trackedSince: '2023/06/01'
   },
   // 19. PPC
   {
@@ -355,7 +355,7 @@ const COUNCILS = [
     description: '大規模言語モデル (LLM) 学習データにおける個人情報の匿名加工基準、海外テック企業への適格性審査および同意なし学習の権利保護。',
     officialUrl: 'https://www.ppc.go.jp/aboutus/',
     isWatched: true,
-    trackedSince: '2023-04-15'
+    trackedSince: '2023/04/15'
   },
   // 20. NRA
   {
@@ -367,7 +367,7 @@ const COUNCILS = [
     description: '原子力発電所の新規制基準適合性審査、放射性同位元素等の規制立入検査、廃止措置計画、防災訓練評価等を審議。',
     officialUrl: 'https://www.nra.go.jp/index.html',
     isWatched: true,
-    trackedSince: '2021-10-01'
+    trackedSince: '2021/10/01'
   },
   // 22. CAS Councils (User Requested)
   {
@@ -379,7 +379,7 @@ const COUNCILS = [
     description: '全世代型社会保障の構築に向け、医療・介護の構造改革、少子化対策、年金改革の具体策を審議・答申する内閣官房会議。',
     officialUrl: 'https://www.cas.go.jp/jp/seisaku/zensedai_hosyo/index.html',
     isWatched: true,
-    trackedSince: '2022-01-10'
+    trackedSince: '2022/01/10'
   },
   {
     id: 'cas-kokumin-kaigi',
@@ -390,7 +390,7 @@ const COUNCILS = [
     description: '持続可能な社会保障制度の確立に向け、安心と信頼の社会保障構造の将来像と財源確保策を議論する国民的会議。',
     officialUrl: 'https://www.cas.go.jp/jp/seisaku/kokuminkaigi/index.html',
     isWatched: true,
-    trackedSince: '2021-08-01'
+    trackedSince: '2021/08/01'
   },
   {
     id: 'cao-ai-hq',
@@ -401,7 +401,7 @@ const COUNCILS = [
     description: '総合科学技術・イノベーション会議 (CSTP) の下、国家全体のAI技術戦略、安全性評価、法整備および国際ルール策定を推進。',
     officialUrl: 'https://www8.cao.go.jp/cstp/ai/ai_hq/kaisai.html',
     isWatched: true,
-    trackedSince: '2023-04-01'
+    trackedSince: '2023/04/01'
   },
   {
     id: 'cas-chutou-jyousei',
@@ -412,7 +412,7 @@ const COUNCILS = [
     description: '中東地域情勢の緊迫化に伴う在留邦人の安全確保、原油・LNG供給体制の安定、および海上交通路の安全対策を迅速に協議する関係閣僚会議。',
     officialUrl: 'https://www.cas.go.jp/jp/seisaku/chyutoujyousei/index.html',
     isWatched: true,
-    trackedSince: '2023-10-10'
+    trackedSince: '2023/10/10'
   }
 ];
 
@@ -425,8 +425,8 @@ const MEETINGS = [
     ministry: 'CAO',
     category: 'PANEL',
     title: '第14回 AI戦略会議',
-    date: '2025-06-02',
-    updatedAt: '2025-06-02 18:30',
+    date: '2025/06/02',
+    updatedAt: '2025/06/02 18:30',
     location: '中央合同庁舎第8号館 講堂（オンライン併用）',
     summary: 'AI法の概要案および今後のAI政策の進め方について審議が行われた。',
     agenda: [
@@ -453,8 +453,8 @@ const MEETINGS = [
     ministry: 'CAO',
     category: 'SUBCOMMITTEE',
     title: '第70回 宇宙政策委員会 宇宙安全保障部会',
-    date: '2026-07-30',
-    updatedAt: '2026-07-30 18:00',
+    date: '2026/07/30',
+    updatedAt: '2026/07/30 18:00',
     location: '内閣府 宇宙開発戦略推進事務局 会議室',
     summary: '総務省・外務省の取組進捗、第69回COPUOS参加結果、米宇宙軍予算動向とJ-LEO、成長戦略会議での議論等について審議・報告が行われた。',
     agenda: [
@@ -484,8 +484,8 @@ const MEETINGS = [
     ministry: 'CAO',
     category: 'SUBCOMMITTEE',
     title: '第69回 宇宙政策委員会 宇宙安全保障部会',
-    date: '2026-05-14',
-    updatedAt: '2026-05-14 18:00',
+    date: '2026/05/14',
+    updatedAt: '2026/05/14 18:00',
     location: '内閣府 会議室',
     summary: '宇宙安全保障構想の進捗状況および防衛・民間デュアルユース技術の推進について審議され、議事要旨および議事録が公開された。',
     agenda: [
@@ -509,8 +509,8 @@ const MEETINGS = [
     ministry: 'CAO',
     category: 'SUBCOMMITTEE',
     title: '第68回 宇宙政策委員会 宇宙安全保障部会',
-    date: '2026-03-10',
-    updatedAt: '2026-03-10 18:00',
+    date: '2026/03/10',
+    updatedAt: '2026/03/10 18:00',
     location: '内閣府 会議室',
     summary: '商業宇宙利用の安全保障上の課題、人工衛星防護に関する検討について審議され、議事要旨および議事録が公開された。',
     agenda: [
@@ -534,8 +534,8 @@ const MEETINGS = [
     ministry: 'CAO',
     category: 'SUBCOMMITTEE',
     title: '第67回 宇宙政策委員会 宇宙安全保障部会',
-    date: '2025-11-25',
-    updatedAt: '2025-11-25 18:00',
+    date: '2025/11/25',
+    updatedAt: '2025/11/25 18:00',
     location: '内閣府 会議室',
     summary: '宇宙防衛技術の研究開発投資および同盟国との宇宙状況共有体制について審議され、議事要旨および議事録が公開された。',
     agenda: [
@@ -559,8 +559,8 @@ const MEETINGS = [
     ministry: 'CAO',
     category: 'SUBCOMMITTEE',
     title: '第66回 宇宙政策委員会 宇宙安全保障部会',
-    date: '2025-10-21',
-    updatedAt: '2025-10-21 18:00',
+    date: '2025/10/21',
+    updatedAt: '2025/10/21 18:00',
     location: '内閣府 会議室',
     summary: '宇宙アセットの安全確保および宇宙デブリ低減ガイドラインの適用について審議され、議事要旨および議事録が公開された。',
     agenda: [
@@ -584,8 +584,8 @@ const MEETINGS = [
     ministry: 'CAO',
     category: 'SUBCOMMITTEE',
     title: '第65回 宇宙政策委員会 宇宙安全保障部会',
-    date: '2025-07-24',
-    updatedAt: '2025-07-24 18:00',
+    date: '2025/07/24',
+    updatedAt: '2025/07/24 18:00',
     location: '内閣府 会議室',
     summary: '令和8年度宇宙安全保障関連予算の概算要求方針および宇宙安全保障構想の進捗検証が審議され、議事要旨および議事録が公開された。',
     agenda: [
@@ -609,8 +609,8 @@ const MEETINGS = [
     ministry: 'CAO',
     category: 'COUNCIL',
     title: '第28回 規制改革推進会議',
-    date: '2026-06-29',
-    updatedAt: '2026-06-29 18:00',
+    date: '2026/06/29',
+    updatedAt: '2026/06/29 18:00',
     location: '内閣府 222特別会議室',
     summary: '規制改革推進に関する答申（案）、AI時代に対応する規制・制度改革の在り方、日本成長戦略の戦略分野に資する規制改革について審議され、議事録および記者会見要旨が公開された。',
     agenda: [
@@ -652,8 +652,8 @@ const MEETINGS = [
     ministry: 'CAO',
     category: 'COUNCIL',
     title: '第27回 規制改革推進会議',
-    date: '2026-02-26',
-    updatedAt: '2026-02-26 18:00',
+    date: '2026/02/26',
+    updatedAt: '2026/02/26 18:00',
     location: '内閣府 会議室',
     summary: '規制改革推進に関する中間答申（案）、規制改革実施計画のフォローアップについて審議され、議事録および記者会見要旨が公開された。',
     agenda: [
@@ -687,8 +687,8 @@ const MEETINGS = [
     ministry: 'CAO',
     category: 'COUNCIL',
     title: '第26回 規制改革推進会議',
-    date: '2025-12-24',
-    updatedAt: '2025-12-24 18:00',
+    date: '2025/12/24',
+    updatedAt: '2025/12/24 18:00',
     location: '内閣府 会議室',
     summary: '規制・制度改革の今後の検討課題、日本成長戦略本部との連携、推進会議の進め方について審議され、議事録および記者会見要旨が公開された。',
     agenda: [
@@ -723,8 +723,8 @@ const MEETINGS = [
     ministry: 'CAO',
     category: 'COUNCIL',
     title: '第25回 規制改革推進会議',
-    date: '2025-10-16',
-    updatedAt: '2025-10-16 18:00',
+    date: '2025/10/16',
+    updatedAt: '2025/10/16 18:00',
     location: '内閣府 会議室',
     summary: '議長・副議長の互選および新委員・専門委員体制の発足が行われ、議事録が公開された。',
     agenda: [
@@ -752,8 +752,8 @@ const MEETINGS = [
     ministry: 'CAO',
     category: 'COUNCIL',
     title: '第24回 規制改革推進会議',
-    date: '2025-10-03',
-    updatedAt: '2025-10-03 18:00',
+    date: '2025/10/03',
+    updatedAt: '2025/10/03 18:00',
     location: '内閣府 会議室',
     summary: '規制・制度改革の更なる発展・深化について審議され、直近1年間の主な取組成果が取りまとめられ、議事録および記者会見要旨が公開された。',
     agenda: [
@@ -783,8 +783,8 @@ const MEETINGS = [
     ministry: 'DIGITAL',
     category: 'COUNCIL',
     title: '第3回各府省庁DX推進連絡会議・第18回デジタル社会推進会議幹事会合同会議',
-    date: '2025-05-12',
-    updatedAt: '2025-05-12 17:00',
+    date: '2025/05/12',
+    updatedAt: '2025/05/12 17:00',
     location: '中央合同庁舎第4号館 全省庁共用 1208 特別会議室',
     summary: 'デジタル行財政改革の更なる推進、各府省庁DX推進の依頼事項、人事管理業務のデジタル化・高度化、旅費業務プロセスの改善について審議された。',
     agenda: [
@@ -815,8 +815,8 @@ const MEETINGS = [
     ministry: 'CFA',
     category: 'COUNCIL',
     title: '第6回 こども政策推進会議',
-    date: '2026-06-09',
-    updatedAt: '2026-06-09 08:40',
+    date: '2026/06/09',
+    updatedAt: '2026/06/09 08:40',
     location: '首相官邸 4階 大会議室',
     summary: '「こどもまんなか実行計画2026」概要案および大臣プロジェクト2026第1弾「こども・若者 自殺防止総力戦略」について決定・指示が行われた。',
     agenda: [
@@ -843,8 +843,8 @@ const MEETINGS = [
     ministry: 'CFA',
     category: 'COUNCIL',
     title: '第7回 こども家庭審議会',
-    date: '2026-01-22',
-    updatedAt: '2026-01-22 16:00',
+    date: '2026/01/22',
+    updatedAt: '2026/01/22 16:00',
     location: 'こども家庭庁 14階 共用大会議室',
     summary: '各分科会・部会の調査審議状況、令和8年度当初予算案のポイントおよび「こどもまんなか実行計画2026」策定について意見交換が行われた。',
     agenda: [
@@ -876,8 +876,8 @@ const MEETINGS = [
     ministry: 'FSA',
     category: 'COUNCIL',
     title: '第56回金融審議会総会・第44回金融分科会合同会合',
-    date: '2026-02-03',
-    updatedAt: '2026-02-03 11:30',
+    date: '2026/02/03',
+    updatedAt: '2026/02/03 11:30',
     location: '中央合同庁舎第７号館13階 共用第１特別会議室 及び オンライン形式',
     summary: '「地域金融力の強化WG」「暗号資産制度WG」「市場制度WG」「サステナビリティ情報の開示と保証のあり方WG」「ディスクロージャーWG」の各報告および答申案が審議・報告された。',
     agenda: [
@@ -913,8 +913,8 @@ const MEETINGS = [
     ministry: 'MOJ',
     category: 'COUNCIL',
     title: '法制審議会第２０５回会議',
-    date: '2026-06-15',
-    updatedAt: '2026-06-15 17:00',
+    date: '2026/06/15',
+    updatedAt: '2026/06/15 17:00',
     location: '法務省 大会議室',
     summary: '「犯罪被害者等の刑事手続への関与等の在り方に関する諮問第130号」に関し刑事法（犯罪被害者関係）部会への付託が決定され、会社法制（株式・株主総会等関係）部会における審議経過報告が行われた。',
     agenda: [
@@ -945,8 +945,8 @@ const MEETINGS = [
     ministry: 'MOD',
     category: 'COUNCIL',
     title: '第199回定例 防衛調達審議会',
-    date: '2026-03-04',
-    updatedAt: '2026-03-04 17:00',
+    date: '2026/03/04',
+    updatedAt: '2026/03/04 17:00',
     location: '防衛省',
     summary: '第199回定例会議が開催された。（公表資料なし）',
     agenda: [
@@ -967,8 +967,8 @@ const MEETINGS = [
     ministry: 'MOD',
     category: 'COUNCIL',
     title: '第198回定例 防衛調達審議会',
-    date: '2025-12-17',
-    updatedAt: '2025-12-17 18:00',
+    date: '2025/12/17',
+    updatedAt: '2025/12/17 18:00',
     location: '防衛省',
     summary: '第198回定例会議が開催され、防衛装備品等の調達適正化および契約変更適正審査についての審議が行われ、議事要旨が公開された。',
     agenda: [
@@ -990,8 +990,8 @@ const MEETINGS = [
     ministry: 'MOD',
     category: 'COUNCIL',
     title: '第197回定例 防衛調達審議会',
-    date: '2025-11-19',
-    updatedAt: '2025-11-19 17:30',
+    date: '2025/11/19',
+    updatedAt: '2025/11/19 17:30',
     location: '防衛省',
     summary: '第197回定例会議が開催され、防衛調達の透明性確保および効率的な調達手続に関する審議が行われ、議事要旨が公開された。',
     agenda: [
@@ -1013,8 +1013,8 @@ const MEETINGS = [
     ministry: 'MOD',
     category: 'PANEL',
     title: '防衛力の抜本的強化に関する有識者会議（第7回）',
-    date: '2026-03-10',
-    updatedAt: '2026-03-10 17:00',
+    date: '2026/03/10',
+    updatedAt: '2026/03/10 17:00',
     location: '防衛省 特別会議室',
     summary: '第7回会議が開催され、防衛力の抜本的強化の進捗、今後の課題、ならびに防衛基盤強化方策について報告・意見交換が行われた。',
     agenda: [
@@ -1038,8 +1038,8 @@ const MEETINGS = [
     ministry: 'MOD',
     category: 'PANEL',
     title: '防衛力の抜本的強化に関する有識者会議（第6回）',
-    date: '2025-09-19',
-    updatedAt: '2025-09-19 18:00',
+    date: '2025/09/19',
+    updatedAt: '2025/09/19 18:00',
     location: '防衛省 特別会議室',
     summary: '第6回会議が開催され、防衛力の抜本的強化に関する有識者会議報告書（提言の概要、報告書本編、議事要旨）が取りまとめられた。',
     agenda: [
@@ -1067,8 +1067,8 @@ const MEETINGS = [
     ministry: 'MOD',
     category: 'ROUNDTABLE',
     title: '防衛産業ワーキンググループ 第2回会議',
-    date: '2026-06-20',
-    updatedAt: '2026-06-20 16:30',
+    date: '2026/06/20',
+    updatedAt: '2026/06/20 16:30',
     location: '防衛省 会議室',
     summary: '防衛産業の基盤強化、装備品等のサプライチェーン維持および官民連携に関する事務局説明資料・議事要旨が協議された。',
     agenda: [
@@ -1096,8 +1096,8 @@ const MEETINGS = [
     ministry: 'MAFF',
     category: 'COUNCIL',
     title: '第49回 食料・農業・農村政策審議会 総会',
-    date: '2025-10-27',
-    updatedAt: '2025-10-27 18:00',
+    date: '2025/10/27',
+    updatedAt: '2025/10/27 18:00',
     location: '農林水産省 本省7階 第3特別会議室',
     summary: '第49回総会が開催され、食料・農業・農村基本計画の進捗状況および食料安全保障、スマート農業の推進について審議が行われ、議事録および審議会名簿が公表された。',
     agenda: [
@@ -1123,8 +1123,8 @@ const MEETINGS = [
     ministry: 'MLIT',
     category: 'COUNCIL',
     title: '第10回 社会資本整備審議会 総会',
-    date: '2019-02-06',
-    updatedAt: '2019-02-06 18:00',
+    date: '2019/02/06',
+    updatedAt: '2019/02/06 18:00',
     location: '国土交通省 大会議室',
     summary: '大規模広域豪雨を踏まえた水災害対策のあり方、未来につなげるインフラ政策（案）、防災・減災・国土強靱化緊急対策が審議・決定された。',
     agenda: [
@@ -1160,8 +1160,8 @@ const MEETINGS = [
     ministry: 'MLIT',
     category: 'SUBCOMMITTEE',
     title: '第１回合同会議 エネルギー・経済安全保障小委員会',
-    date: '2026-07-28',
-    updatedAt: '2026-07-28 17:00',
+    date: '2026/07/28',
+    updatedAt: '2026/07/28 17:00',
     location: '国土交通省 会議室',
     summary: 'エネルギー・経済安全保障小委員会の設置要領、事務局説明資料および今後の検討スケジュールについて協議された。',
     agenda: [
@@ -1189,8 +1189,8 @@ const MEETINGS = [
     ministry: 'MLIT',
     category: 'SUBCOMMITTEE',
     title: '第４回 インフラマネジメント戦略小委員会',
-    date: '2026-07-28',
-    updatedAt: '2026-07-28 18:00',
+    date: '2026/07/28',
+    updatedAt: '2026/07/28 18:00',
     location: '国土交通省 会議室',
     summary: 'インフラメンテナンスに関するこれまでの取組のレビュー、アンケート調査結果、および今後のインフラのマネジメントのあり方（案）について審議された。',
     agenda: [
@@ -1222,8 +1222,8 @@ const MEETINGS = [
     ministry: 'CAS',
     category: 'PANEL',
     title: '中東情勢に関する関係閣僚会議（第11回）',
-    date: '2026-06-26',
-    updatedAt: '2026-06-26 18:00',
+    date: '2026/06/26',
+    updatedAt: '2026/06/26 18:00',
     location: '首相官邸 2階 危機管理センター',
     summary: '中東情勢の緊迫化に伴う日本関係船舶の航行安全確保策、原油・LNG調達体制の安定性評価、および現地邦人保護の手順が確認された。',
     agenda: [
@@ -1257,8 +1257,8 @@ const MEETINGS = [
     ministry: 'CAS',
     category: 'PANEL',
     title: '中東情勢に関する関係閣僚会議（第10回）',
-    date: '2026-06-11',
-    updatedAt: '2026-06-11 17:30',
+    date: '2026/06/11',
+    updatedAt: '2026/06/11 17:30',
     location: '首相官邸 2階 危機管理センター',
     summary: 'ホルムズ海峡周辺の情勢推移、海上自衛隊による情報収集活動、および国家備蓄放出の準備状況について協議が行われた。',
     agenda: [
@@ -1281,8 +1281,8 @@ const MEETINGS = [
     ministry: 'CAS',
     category: 'PANEL',
     title: '中東情勢に関する関係閣僚会議（第9回）',
-    date: '2026-06-02',
-    updatedAt: '2026-06-02 16:00',
+    date: '2026/06/02',
+    updatedAt: '2026/06/02 16:00',
     location: '首相官邸 2階 危機管理センター',
     summary: '現地邦人の安全確保および民間航空便の運航支援手続きについて審議された。',
     agenda: [
@@ -1306,8 +1306,8 @@ const MEETINGS = [
     ministry: 'NPA',
     category: 'PANEL',
     title: '第42回 警察庁政策評価研究会',
-    date: '2025-07-09',
-    updatedAt: '2025-07-09 18:00',
+    date: '2025/07/09',
+    updatedAt: '2025/07/09 18:00',
     location: '警察庁 会議室',
     summary: '第42回研究会が開催され、令和6年度警察行政における政策評価施策の実施状況、有識者意見聴取要旨および議事録が公表された。',
     agenda: [
@@ -1331,8 +1331,8 @@ const MEETINGS = [
     ministry: 'NPA',
     category: 'PANEL',
     title: '第41回 警察庁政策評価研究会',
-    date: '2024-07-09',
-    updatedAt: '2024-07-09 18:00',
+    date: '2024/07/09',
+    updatedAt: '2024/07/09 18:00',
     location: '警察庁 会議室',
     summary: '第41回研究会が開催され、令和5年度政策評価結果のレビューおよび有識者による意見聴取要旨、議事録がとりまとめられた。',
     agenda: [
@@ -1356,8 +1356,8 @@ const MEETINGS = [
     ministry: 'NPA',
     category: 'PANEL',
     title: '第40回 警察庁政策評価研究会',
-    date: '2023-07-31',
-    updatedAt: '2023-07-31 18:00',
+    date: '2023/07/31',
+    updatedAt: '2023/07/31 18:00',
     location: '警察庁 会議室',
     summary: '第40回研究会が開催され、治安向上・サイバー対策等に関する政策評価指標の点検、意見聴取要旨および議事録が公表された。',
     agenda: [
@@ -1382,8 +1382,8 @@ const MEETINGS = [
     ministry: 'NRA',
     category: 'COUNCIL',
     title: '第25回原子力規制委員会 臨時会議',
-    date: '2026-07-29',
-    updatedAt: '2026-07-29 17:00',
+    date: '2026/07/29',
+    updatedAt: '2026/07/29 17:00',
     location: '原子力規制委員会 会議室',
     summary: '放射性同位元素等の規制に関する法律第43条の2に基づく立入検査の実施方針が可決・審議された。',
     agenda: [
@@ -1406,8 +1406,8 @@ const MEETINGS = [
     ministry: 'NRA',
     category: 'COUNCIL',
     title: '第24回原子力規制委員会',
-    date: '2026-07-29',
-    updatedAt: '2026-07-29 18:00',
+    date: '2026/07/29',
+    updatedAt: '2026/07/29 18:00',
     location: '原子力規制委員会 会議室',
     summary: '行政事業レビューの講評、廃止措置計画の審査基準改善案、中部電力の不正行為を踏まえた地震動評価プロセスの明確化などが審議された。',
     agenda: [
@@ -1436,8 +1436,8 @@ const MEETINGS = [
     ministry: 'NRA',
     category: 'COUNCIL',
     title: '第18回原子力事業者防災訓練報告会',
-    date: '2026-07-13',
-    updatedAt: '2026-07-13 17:00',
+    date: '2026/07/13',
+    updatedAt: '2026/07/13 17:00',
     location: '原子力規制委員会 会議室',
     summary: '各原子力事業者が実施した防災訓練の実施結果・評価および緊急時対応手順の改善点に関する第一部・第二部報告が行われた。',
     agenda: [
@@ -1461,8 +1461,8 @@ const MEETINGS = [
     ministry: 'NRA',
     category: 'PANEL',
     title: '第1422回原子力発電所の新規制基準適合性に係る審査会合',
-    date: '2026-07-28',
-    updatedAt: '2026-07-28 18:00',
+    date: '2026/07/28',
+    updatedAt: '2026/07/28 18:00',
     location: '原子力規制委員会 審査会議室',
     summary: '関西電力大飯発電所3号炉及び4号炉の使用済樹脂処理設備設置に関する新規制基準適合性（津波・外部衝撃・火災・誤操作防止・放射性廃棄物処理等）の審査が行われた。',
     agenda: [
@@ -1498,8 +1498,8 @@ const MEETINGS = [
     ministry: 'MOFA',
     category: 'ROUNDTABLE',
     title: '第14回 外交政策有識者懇談会',
-    date: '2026-06-30',
-    updatedAt: '2026-06-30 18:45',
+    date: '2026/06/30',
+    updatedAt: '2026/06/30 18:45',
     location: '外務省 南庁舎3階 特別会議室',
     summary: 'G7サミット成果文書を踏まえた経済安全保障外交戦略、グローバルサウス諸国への技術支援・インフラ投融資 (ODA) の新ガイドラインについて有識者と意見交換を実施。',
     agenda: [
@@ -1524,8 +1524,8 @@ const MEETINGS = [
     ministry: 'RA',
     category: 'COUNCIL',
     title: '復興推進委員会（第49回）',
-    date: '2026-07-02',
-    updatedAt: '2026-07-02 17:00',
+    date: '2026/07/02',
+    updatedAt: '2026/07/02 17:00',
     location: '復興庁 大会議室',
     summary: '現地調査報告（福島県）、第2期復興・創生期間までの復興施策総括WG報告、東日本大震災からの復興状況と取組について審議され、岩手県・宮城県・福島県の提出資料および議事要旨が公開された。',
     agenda: [
@@ -1556,8 +1556,8 @@ const MEETINGS = [
     ministry: 'RA',
     category: 'COUNCIL',
     title: '復興推進委員会（第48回）',
-    date: '2025-11-05',
-    updatedAt: '2025-11-05 17:00',
+    date: '2025/11/05',
+    updatedAt: '2025/11/05 17:00',
     location: '復興庁 大会議室',
     summary: '現地調査報告（岩手県・宮城県）、令和7年版東日本大震災からの復興状況報告案、福島国際研究教育機構 (FIREC) 主務大臣評価（案）および委員会意見について審議され、議事録・要旨が公開された。',
     agenda: [
@@ -1594,8 +1594,8 @@ const MEETINGS = [
     ministry: 'RA',
     category: 'COUNCIL',
     title: '復興推進委員会（第47回）',
-    date: '2025-06-13',
-    updatedAt: '2025-06-13 17:00',
+    date: '2025/06/13',
+    updatedAt: '2025/06/13 17:00',
     location: '復興庁 大会議室',
     summary: '現地調査報告（福島県）、2025年大阪・関西万博における復興庁取組結果、原子力災害被災地域の復興施策現状課題（総括）、および「第2期復興・創生期間」以降の復興基本方針（案）について審議された。',
     agenda: [
@@ -1633,8 +1633,8 @@ const MEETINGS = [
     ministry: 'CAS',
     category: 'PANEL',
     title: '第21回 全世代型社会保障構築会議',
-    date: '2025-06-23',
-    updatedAt: '2025-06-23 17:00',
+    date: '2025/06/23',
+    updatedAt: '2025/06/23 17:00',
     location: '首相官邸 2階 大ホール',
     summary: '医療・介護の自己負担見直しおよび子支援財源「支援金制度」の具体的な徴収スキームに関する議論の取りまとめ案が提示された。',
     agenda: [
@@ -1667,8 +1667,8 @@ const MEETINGS = [
     ministry: 'CAO',
     category: 'COUNCIL',
     title: '第5回 人工知能戦略本部 会議',
-    date: '2026-07-10',
-    updatedAt: '2026-07-10 16:30',
+    date: '2026/07/10',
+    updatedAt: '2026/07/10 16:30',
     location: '内閣府 講堂（中央合同庁舎第8号館）',
     summary: '人工知能基本計画（案）およびバーティカルＡＩ領域別戦略の中間とりまとめ案が提示され、各省庁連携によるAI社会実装方針が決定した。',
     agenda: [
@@ -1695,8 +1695,8 @@ const MEETINGS = [
     ministry: 'CAS',
     category: 'COUNCIL',
     title: '社会保障国民会議 中間とりまとめ会議',
-    date: '2026-07-29',
-    updatedAt: '2026-07-29 18:00',
+    date: '2026/07/29',
+    updatedAt: '2026/07/29 18:00',
     location: '首相官邸 大ホール',
     summary: '2040年を見据えた社会保障給付と負担のバランス、給付付き税額控除の導入イメージ、医療・介護機能強化に関する中間とりまとめ報告書が取りまとめられた。',
     agenda: [
