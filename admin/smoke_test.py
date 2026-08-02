@@ -12,6 +12,7 @@
 import sys
 import os
 import re
+import urllib.parse
 import urllib.request
 import urllib.error
 import subprocess
@@ -133,6 +134,12 @@ def check_link_health(explicit_urls=None, check_all=False):
     broken_links = 0
 
     for url in unique_urls:
+        parsed_url = urllib.parse.urlparse(url)
+        if parsed_url.scheme not in ('http', 'https'):
+            print(f"  [FAIL 無効なスキーム] {url}")
+            broken_links += 1
+            continue
+
         try:
             req = urllib.request.Request(url, headers=headers)
             with urllib.request.urlopen(req, timeout=10) as resp:
