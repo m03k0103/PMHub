@@ -75,12 +75,6 @@ CRAWL_TARGETS = [
         "url": "https://www8.cao.go.jp/cstp/ai/ai_hq/kaisai.html"
     },
     {
-        "id": "cas-kokumin-kaigi",
-        "ministry": "CAS",
-        "name": "社会保障国民会議",
-        "url": "https://www.cas.go.jp/jp/seisaku/kokuminkaigi/index.html"
-    },
-    {
         "id": "digital-suishin",
         "ministry": "DIGITAL",
         "name": "デジタル社会推進会議幹事会",
@@ -228,6 +222,44 @@ def normalize_japanese_numbers(text):
     tr_map = str.maketrans('０１２３４５６７８９', '0123456789')
     return text.translate(tr_map)
 
+def _crawl_subpages(target_url, html, rule, quirk_note, pdf_pattern):
+    """サブページの深掘りクロールロジック"""
+    subpage_meetings = []
+    additional_materials = []
+
+    subpage_pattern = rule.get("subpage_discovery_pattern", r'href=["\']([^"\']*(?:dai\d+|\d+kai|kaisai|gijisidai)[^"\'#]*)["\']')
+    subpage_links = re.findall(subpage_pattern, html, re.IGNORECASE)
+
+    if subpage_links:
+        unique_subpages = list(dict.fromkeys([urllib.parse.urljoin(target_url, l) for l in subpage_links]))[:6]
+        print(f"   [2回目情報取得Engine ({quirk_note})] サブページ {len(unique_subpages)} 件を深掘り巡回中...")
+
+        for sub_url in unique_subpages:
+            parsed_url = urllib.parse.urlparse(sub_url)
+            if parsed_url.scheme not in ('http', 'https'):
+                continue
+
+            sub_html = fetch_url(sub_url)
+            if sub_html:
+                sub_title_match = re.search(r'<title>(.*?)</title>', sub_html, re.IGNORECASE | re.DOTALL)
+                sub_title = sub_title_match.group(1).strip() if sub_title_match else sub_url
+
+                sub_materials = parse_materials_from_html(sub_html, sub_url, pdf_pattern)
+                raw_sub_dates = re.findall(rule.get("date_regex", r'令和\d+年\d+月\d+日'), sub_html)
+                norm_sub_dates = [normalize_japanese_numbers(d) for d in raw_sub_dates]
+
+                subpage_meetings.append({
+                    "subpageUrl": sub_url,
+                    "title": sub_title,
+                    "extractedMaterialsCount": len(sub_materials),
+                    "materials": sub_materials,
+                    "extractedDates": list(set(norm_sub_dates))[:2]
+                })
+                additional_materials.extend(sub_materials)
+
+    return subpage_meetings, additional_materials
+
+
 def execute_rule_retrieval(target, html, rule_item):
     """【2回目情報取得Engine】AI考案ルールに基づき2段階階層クロールおよび資料データをフル抽出"""
     rule = rule_item.get("rules", {})
@@ -243,35 +275,9 @@ def execute_rule_retrieval(target, html, rule_item):
     deep_enabled = rule.get("deep_crawl_enabled", True)
     
     if deep_enabled:
-        subpage_pattern = rule.get("subpage_discovery_pattern", r'href=["\']([^"\']*(?:dai\d+|\d+kai|kaisai|gijisidai)[^"\'#]*)["\']')
-        subpage_links = re.findall(subpage_pattern, html, re.IGNORECASE)
-        
-        if subpage_links:
-            unique_subpages = list(dict.fromkeys([urllib.parse.urljoin(target["url"], l) for l in subpage_links]))[:6]
-            print(f"   [2回目情報取得Engine ({quirk_note})] サブページ {len(unique_subpages)} 件を深掘り巡回中...")
-
-            for sub_url in unique_subpages:
-                parsed_url = urllib.parse.urlparse(sub_url)
-                if parsed_url.scheme not in ('http', 'https'):
-                    continue
-
-                sub_html = fetch_url(sub_url)
-                if sub_html:
-                    sub_title_match = re.search(r'<title>(.*?)</title>', sub_html, re.IGNORECASE | re.DOTALL)
-                    sub_title = sub_title_match.group(1).strip() if sub_title_match else sub_url
-                    
-                    sub_materials = parse_materials_from_html(sub_html, sub_url, pdf_pattern)
-                    raw_sub_dates = re.findall(rule.get("date_regex", r'令和\d+年\d+月\d+日'), sub_html)
-                    norm_sub_dates = [normalize_japanese_numbers(d) for d in raw_sub_dates]
-
-                    subpage_meetings.append({
-                        "subpageUrl": sub_url,
-                        "title": sub_title,
-                        "extractedMaterialsCount": len(sub_materials),
-                        "materials": sub_materials,
-                        "extractedDates": list(set(norm_sub_dates))[:2]
-                    })
-                    top_materials.extend(sub_materials)
+        new_meetings, new_materials = _crawl_subpages(target["url"], html, rule, quirk_note, pdf_pattern)
+        subpage_meetings.extend(new_meetings)
+        top_materials.extend(new_materials)
 
     unique_materials = []
     seen_keys = set()
