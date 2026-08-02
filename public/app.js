@@ -507,7 +507,7 @@ document.addEventListener('DOMContentLoaded', () => {
             ${isPrivate ? `
               <span class="badge-private">非公開</span>
             ` : `
-              <span class="badge-file-size">${mat.size || ''}</span>
+              <span class="badge-file-size">${escapeHtml(mat.size || '')}</span>
             `}
           </div>
         </li>
@@ -1026,7 +1026,6 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
 });
-}
 
 // Helper function
 function formatDate(str) {

@@ -1,34 +1,63 @@
 const test = require('node:test');
 const assert = require('node:assert');
-const { capitalize } = require('./app.js');
+const { escapeHtml, sanitizeUrl, formatDate } = require('./app.js');
 
-test('capitalize utility function', async (t) => {
-  await t.test('should capitalize the first letter of a typical string', () => {
-    assert.strictEqual(capitalize('hello'), 'Hello');
-    assert.strictEqual(capitalize('world'), 'World');
-    assert.strictEqual(capitalize('javascript'), 'Javascript');
+test('sanitizeUrl utility function (Security / XSS prevention)', async (t) => {
+  await t.test('allows safe http and https URLs', () => {
+    assert.strictEqual(sanitizeUrl('https://example.com/doc.pdf'), 'https://example.com/doc.pdf');
+    assert.strictEqual(sanitizeUrl('http://example.com/index.html'), 'http://example.com/index.html');
   });
 
-  await t.test('should not change already capitalized strings', () => {
-    assert.strictEqual(capitalize('Hello'), 'Hello');
-    assert.strictEqual(capitalize('WORLD'), 'WORLD');
+  await t.test('allows safe relative paths, query strings, and anchors', () => {
+    assert.strictEqual(sanitizeUrl('/path/to/resource'), '/path/to/resource');
+    assert.strictEqual(sanitizeUrl('./relative/doc.pdf'), './relative/doc.pdf');
+    assert.strictEqual(sanitizeUrl('?search=test'), '?search=test');
+    assert.strictEqual(sanitizeUrl('#section1'), '#section1');
   });
 
-  await t.test('should handle single character strings', () => {
-    assert.strictEqual(capitalize('a'), 'A');
-    assert.strictEqual(capitalize('Z'), 'Z');
+  await t.test('blocks javascript: URLs and variations', () => {
+    assert.strictEqual(sanitizeUrl('javascript:alert(1)'), '#');
+    assert.strictEqual(sanitizeUrl('JAVASCRIPT:alert(1)'), '#');
+    assert.strictEqual(sanitizeUrl('  javascript:alert(1)  '), '#');
   });
 
-  await t.test('should handle empty strings', () => {
-    assert.strictEqual(capitalize(''), '');
+  await t.test('blocks control character obfuscation in javascript: URLs', () => {
+    assert.strictEqual(sanitizeUrl('java\0script:alert(1)'), '#');
+    assert.strictEqual(sanitizeUrl('java\x01script:alert(1)'), '#');
   });
 
-  await t.test('should return empty string for non-string inputs', () => {
-    assert.strictEqual(capitalize(null), '');
-    assert.strictEqual(capitalize(undefined), '');
-    assert.strictEqual(capitalize(123), '');
-    assert.strictEqual(capitalize({}), '');
-    assert.strictEqual(capitalize([]), '');
-    assert.strictEqual(capitalize(true), '');
+  await t.test('blocks data: and vbscript: URLs', () => {
+    assert.strictEqual(sanitizeUrl('data:text/html;base64,PHNjcmlwdD5hbGVydCgxKTwvc2NyaXB0Pg=='), '#');
+    assert.strictEqual(sanitizeUrl('vbscript:msgbox(1)'), '#');
+  });
+
+  await t.test('returns # for null, undefined, or empty values', () => {
+    assert.strictEqual(sanitizeUrl(null), '#');
+    assert.strictEqual(sanitizeUrl(undefined), '#');
+    assert.strictEqual(sanitizeUrl(''), '#');
+  });
+});
+
+test('escapeHtml utility function', async (t) => {
+  await t.test('escapes HTML special characters', () => {
+    assert.strictEqual(escapeHtml('<script>alert("xss & test")</script>'), '&lt;script&gt;alert(&quot;xss &amp; test&quot;)&lt;/script&gt;');
+    assert.strictEqual(escapeHtml("it's a test"), "it&#039;s a test");
+  });
+
+  await t.test('handles empty or non-string inputs', () => {
+    assert.strictEqual(escapeHtml(''), '');
+    assert.strictEqual(escapeHtml(null), '');
+    assert.strictEqual(escapeHtml(undefined), '');
+  });
+});
+
+test('formatDate utility function', async (t) => {
+  await t.test('replaces dashes with slashes', () => {
+    assert.strictEqual(formatDate('2026-08-02'), '2026/08/02');
+  });
+
+  await t.test('handles empty inputs', () => {
+    assert.strictEqual(formatDate(''), '');
+    assert.strictEqual(formatDate(null), '');
   });
 });
