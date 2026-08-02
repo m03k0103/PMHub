@@ -12,11 +12,11 @@ import os
 import json
 import urllib.request
 import re
-import io
 from datetime import datetime
 
 # Windows ターミナルログの文字化け防止 (chcp 65001 & UTF-8 再構成)
 if sys.platform == "win32":
+    import io
     os.system("chcp 65001 > NUL 2>&1")
     try:
         if hasattr(sys.stdout, 'reconfigure'):
