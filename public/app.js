@@ -87,6 +87,13 @@ document.addEventListener('DOMContentLoaded', () => {
     toastContainer: document.getElementById('toastContainer')
   };
 
+  // --- PRE-COMPUTE MEETING COUNTS ---
+  const meetingCounts = {};
+  for (let i = 0; i < MEETINGS.length; i++) {
+    const cId = MEETINGS[i].councilId;
+    meetingCounts[cId] = (meetingCounts[cId] || 0) + 1;
+  }
+
   // --- INITIALIZATION ---
   initTheme();
   updateHeroStats();
@@ -622,7 +629,7 @@ document.addEventListener('DOMContentLoaded', () => {
     el.councilsGrid.innerHTML = list.map(c => {
       const minInfo = MINISTRIES[c.ministry] || { name: c.ministry };
       const isWatching = state.watchedCouncilIds.has(c.id);
-      const pastYearCount = c.pastYearCount || MEETINGS.filter(m => m.councilId === c.id).length || 5;
+      const pastYearCount = c.pastYearCount || meetingCounts[c.id] || 5;
 
       return `
         <div class="council-card card-glass">
@@ -676,7 +683,7 @@ document.addEventListener('DOMContentLoaded', () => {
     } else {
       el.watchlistItems.innerHTML = watchedList.map(c => {
         const minInfo = MINISTRIES[c.ministry] || { name: c.ministry };
-        const pastYearCount = c.pastYearCount || MEETINGS.filter(m => m.councilId === c.id).length || 5;
+        const pastYearCount = c.pastYearCount || meetingCounts[c.id] || 5;
         return `
           <div class="watchlist-item-card">
             <div>
