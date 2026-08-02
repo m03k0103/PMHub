@@ -472,7 +472,7 @@ document.addEventListener('DOMContentLoaded', () => {
             ${isPrivate ? `
               <span class="material-name-link text-muted" style="text-decoration:none;">${escapeHtml(mat.name)}</span>
             ` : `
-              <a href="${mat.url}" target="_blank" rel="noopener noreferrer" class="material-name-link">
+              <a href="${escapeHtml(sanitizeUrl(mat.url))}" target="_blank" rel="noopener noreferrer" class="material-name-link">
                 ${escapeHtml(mat.name)}
               </a>
             `}
@@ -533,7 +533,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const categoryName = CATEGORIES[meeting.category] || meeting.category;
 
     const docPillsHTML = (meeting.materials || []).map(doc => `
-      <a href="${doc.url}" target="_blank" rel="noopener noreferrer" class="doc-pill" title="${escapeHtml(doc.name)} (${doc.size})">
+      <a href="${escapeHtml(sanitizeUrl(doc.url))}" target="_blank" rel="noopener noreferrer" class="doc-pill" title="${escapeHtml(doc.name)} (${doc.size})">
         <span class="doc-type-icon">${doc.type}</span>
         <span>${escapeHtml(doc.name)}</span>
       </a>
@@ -568,7 +568,7 @@ document.addEventListener('DOMContentLoaded', () => {
         <div class="card-bottom-row">
           <div class="card-tags">${tagsHTML}</div>
           <div class="card-actions">
-            <a href="${meeting.officialUrl}" target="_blank" rel="noopener noreferrer" class="btn-primary btn-sm" title="政府公式ページ">
+            <a href="${escapeHtml(sanitizeUrl(meeting.officialUrl))}" target="_blank" rel="noopener noreferrer" class="btn-primary btn-sm" title="政府公式ページ">
               一次ソース
               <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
             </a>
@@ -637,7 +637,7 @@ document.addEventListener('DOMContentLoaded', () => {
           </div>
           <div class="council-meta" style="margin-top: 1rem; border-top: 1px solid var(--border-color); padding-top: 0.75rem;">
             <span>過去1年間の開催数: <strong style="color: var(--accent-secondary);">${pastYearCount} 回</strong></span>
-            <a href="${c.officialUrl}" target="_blank" rel="noopener noreferrer" class="text-accent text-sm" style="display:inline-flex; align-items:center; gap:0.2rem; margin-top:0.2rem;">
+            <a href="${escapeHtml(sanitizeUrl(c.officialUrl))}" target="_blank" rel="noopener noreferrer" class="text-accent text-sm" style="display:inline-flex; align-items:center; gap:0.2rem; margin-top:0.2rem;">
               公式トップページ ↗
             </a>
           </div>
@@ -818,7 +818,7 @@ document.addEventListener('DOMContentLoaded', () => {
           `;
         }
         return `
-          <a href="${doc.url}" target="_blank" rel="noopener noreferrer" class="doc-download-item">
+          <a href="${escapeHtml(sanitizeUrl(doc.url))}" target="_blank" rel="noopener noreferrer" class="doc-download-item">
             <div>
               <strong>[${doc.type}] ${escapeHtml(doc.name)}</strong>
               <span class="text-sm" style="display:block; margin-top:0.2rem;">ファイルサイズ: ${doc.size}</span>
@@ -831,7 +831,7 @@ document.addEventListener('DOMContentLoaded', () => {
       el.modalDocsList.innerHTML = '<p class="text-sm">資料リンクは現在登録されていません。</p>';
     }
 
-    el.modalOfficialLinkBtn.href = meeting.officialUrl;
+    el.modalOfficialLinkBtn.href = sanitizeUrl(meeting.officialUrl);
     el.documentModalOverlay.classList.remove('hidden');
   }
 
@@ -929,5 +929,24 @@ document.addEventListener('DOMContentLoaded', () => {
       .replace(/>/g, "&gt;")
       .replace(/"/g, "&quot;")
       .replace(/'/g, "&#039;");
+  }
+
+  function sanitizeUrl(url) {
+    if (!url) return '#';
+    url = String(url).trim();
+    // Remove control characters to prevent bypasses
+    const sanitizedUrl = url.replace(/[\u0000-\u001F\u007F-\u009F]/g, '');
+    const lowerUrl = sanitizedUrl.toLowerCase();
+
+    // Whitelist safe protocols and relative paths
+    if (lowerUrl.startsWith('http://') ||
+        lowerUrl.startsWith('https://') ||
+        lowerUrl.startsWith('/') ||
+        lowerUrl.startsWith('.') ||
+        lowerUrl.startsWith('?') ||
+        lowerUrl.startsWith('#')) {
+      return sanitizedUrl;
+    }
+    return '#';
   }
 });
