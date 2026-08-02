@@ -160,25 +160,24 @@ def check_link_health(explicit_urls=None, check_all=False):
     print(f"\n  検証結果: 追加・変更 URL {len(unique_urls)} 件中 リンク切れ {broken_links} 件")
     return broken_links == 0
 
-def run_unit_tests():
-    """3. Node.js ユニットテスト実行"""
+def check_escape_html():
+    """3. JSユーティリティ (escapeHtml) の単体テスト"""
     print("\n--------------------------------------------------")
-    print(" [テスト 3/3] Node.js ユニットテスト実行")
+    print(" [テスト 3/3] JSユーティリティ関数の単体テスト実行")
     print("--------------------------------------------------")
-
-    test_cmd = ["node", "--test", os.path.join(PROJECT_ROOT, "public", "app.test.js")]
     try:
-        result = subprocess.run(test_cmd, capture_output=True, text=True)
+        test_script_path = os.path.join(PROJECT_ROOT, "admin", "test_escapeHtml.js")
+        result = subprocess.run(["node", test_script_path], cwd=PROJECT_ROOT, capture_output=True, text=True)
         if result.returncode == 0:
-            print("  [PASS] ユニットテスト合格")
+            print("  [PASS] escapeHtml 単体テスト通過")
             return True
         else:
-            print("  [FAIL] ユニットテスト失敗")
+            print("  [FAIL] escapeHtml 単体テスト失敗")
             print(result.stdout)
             print(result.stderr)
             return False
     except Exception as e:
-        print(f"  [ERROR] テスト実行に失敗しました: {e}")
+        print(f"  [FAIL] テストスクリプト実行エラー: {e}")
         return False
 
 def main():
@@ -193,10 +192,10 @@ def main():
 
     syntax_ok = check_syntax_errors()
     links_ok = check_link_health(explicit_urls=args.url, check_all=args.all)
-    tests_ok = run_unit_tests()
+    utils_ok = check_escape_html()
 
     print("\n==================================================")
-    if syntax_ok and links_ok and tests_ok:
+    if syntax_ok and links_ok and utils_ok:
         print(" 【結果】全スモークテストに合格しました。修正コードは正常です。")
         sys.exit(0)
     else:

@@ -937,49 +937,47 @@ document.addEventListener('DOMContentLoaded', () => {
     }, 2800);
   }
 
-  // Helper function
-  function formatDate(str) {
-    if (!str) return '';
-    return str.replace(/-/g, '/');
-  }
-
-  function escapeHtml(str) {
-    if (!str) return '';
-    return str
-      .replace(/&/g, "&amp;")
-      .replace(/</g, "&lt;")
-      .replace(/>/g, "&gt;")
-      .replace(/"/g, "&quot;")
-      .replace(/'/g, "&#039;");
-  }
-
-  function sanitizeUrl(url) {
-    if (!url) return '#';
-    url = String(url).trim();
-    // Remove control characters to prevent bypasses
-    const sanitizedUrl = url.replace(/[\u0000-\u001F\u007F-\u009F]/g, '');
-    const lowerUrl = sanitizedUrl.toLowerCase();
-
-    // Whitelist safe protocols and relative paths
-    if (lowerUrl.startsWith('http://') ||
-        lowerUrl.startsWith('https://') ||
-        lowerUrl.startsWith('/') ||
-        lowerUrl.startsWith('.') ||
-        lowerUrl.startsWith('?') ||
-        lowerUrl.startsWith('#')) {
-      return sanitizedUrl;
-    }
-    return '#';
-  }
 });
+
+// Helper function
+function formatDate(str) {
+  if (!str) return '';
+  return str.replace(/-/g, '/');
 }
 
-// --- UTILS EXPORT FOR TESTING ---
-function capitalize(str) {
-  if (typeof str !== 'string' || !str) return '';
-  return str.charAt(0).toUpperCase() + str.slice(1);
+function escapeHtml(str) {
+  if (!str) return '';
+  return str
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#039;");
+}
+
+function sanitizeUrl(url) {
+  if (!url) return '#';
+  url = String(url).trim();
+  // Remove control characters to prevent bypasses
+  const sanitizedUrl = url.replace(/[\u0000-\u001F\u007F-\u009F]/g, '');
+  const lowerUrl = sanitizedUrl.toLowerCase();
+
+  // Whitelist safe protocols and relative paths
+  if (lowerUrl.startsWith('http://') ||
+      lowerUrl.startsWith('https://') ||
+      lowerUrl.startsWith('/') ||
+      lowerUrl.startsWith('.') ||
+      lowerUrl.startsWith('?') ||
+      lowerUrl.startsWith('#')) {
+    return sanitizedUrl;
+  }
+  return '#';
 }
 
 if (typeof module !== 'undefined' && module.exports) {
-  module.exports = { capitalize };
+  module.exports = {
+    formatDate,
+    escapeHtml,
+    sanitizeUrl
+  };
 }
