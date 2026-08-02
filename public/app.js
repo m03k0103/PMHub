@@ -2,7 +2,7 @@
    政策会議ウォッチ (PM-HUB) - Main Application Core Logic
    ========================================================================== */
 
-if (typeof document !== 'undefined') {
+
 document.addEventListener('DOMContentLoaded', () => {
   // --- STATE MANAGEMENT ---
   const state = {
