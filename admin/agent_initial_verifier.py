@@ -183,6 +183,10 @@ def save_rules(rules_data):
         print(f"[ERROR] Failed to save rules: {e}", file=sys.stderr)
 
 def fetch_url(url):
+    parsed_url = urllib.parse.urlparse(url)
+    if parsed_url.scheme not in ("http", "https"):
+        print(f"[ERROR] Invalid scheme: {url}", file=sys.stderr)
+        return None
     headers = {
         'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) PMHubAIRuleSynthesisAgent/3.0'
     }
