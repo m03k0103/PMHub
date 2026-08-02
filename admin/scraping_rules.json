@@ -2968,49 +2968,5 @@
       "resolve_absolute_urls": true,
       "top_page_pdf_count": 8
     }
-  },
-  "cas-pages-4": {
-    "rule_id": "rule-cas-pages-4-ai-v3",
-    "created_at": "2026-08-01 17:59:09",
-    "generator": "AI_Rule_Synthesis_Agent_v3",
-    "councilName": "大雪に関する関係閣僚会議",
-    "targetUrl": "https://www.kantei.go.jp/jp/pages/heavysnow20260121.html",
-    "ministryQuirk": "標準抽出ルール",
-    "rules": {
-      "encoding": "utf-8",
-      "deep_crawl_enabled": true,
-      "subpage_discovery_pattern": "href=[\\\"']([^\\\"']*(?:dai\\d+|\\d+kai|kaisai|gijisidai)[^\\\"'#]*)[\\\"']",
-      "date_regex": "(?:令和[0-9０-９一-九]+年[0-9０-９一-十二]+月[0-9０-９一-三十一]+日|20[2-9][0-9]年[0-1]?[0-9]月[0-3]?[0-9]日)",
-      "prefer_subpage_date": true,
-      "extract_subpage_materials_primary": true,
-      "pdf_selector": "href=[\\\"']([^\\\"']+\\.pdf)[\\\"']",
-      "private_doc_keyword": "非公開",
-      "detect_private_materials": false,
-      "extract_all_materials": true,
-      "resolve_absolute_urls": true,
-      "top_page_pdf_count": 10
-    }
-  },
-  "cas-honbu_setti-8": {
-    "rule_id": "rule-cas-honbu_setti-8-ai-v3",
-    "created_at": "2026-08-01 17:59:09",
-    "generator": "AI_Rule_Synthesis_Agent_v3",
-    "councilName": "緊急災害対策本部",
-    "targetUrl": "https://www.bousai.go.jp/updates/honbu_setti/honbu_setti.html",
-    "ministryQuirk": "標準抽出ルール",
-    "rules": {
-      "encoding": "utf-8",
-      "deep_crawl_enabled": true,
-      "subpage_discovery_pattern": "href=[\\\"']([^\\\"']*(?:dai\\d+|\\d+kai|kaisai|gijisidai)[^\\\"'#]*)[\\\"']",
-      "date_regex": "(?:令和[0-9０-９一-九]+年[0-9０-９一-十二]+月[0-9０-９一-三十一]+日|20[2-9][0-9]年[0-1]?[0-9]月[0-3]?[0-9]日)",
-      "prefer_subpage_date": true,
-      "extract_subpage_materials_primary": true,
-      "pdf_selector": "href=[\\\"']([^\\\"']+\\.pdf)[\\\"']",
-      "private_doc_keyword": "非公開",
-      "detect_private_materials": false,
-      "extract_all_materials": true,
-      "resolve_absolute_urls": true,
-      "top_page_pdf_count": 10
-    }
   }
 }

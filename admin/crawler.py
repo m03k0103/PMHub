@@ -254,12 +254,6 @@ CRAWL_TARGETS = [
         "name": "外国人の受入れ・秩序ある共生社会実現に関する関係閣僚会議幹事会",
         "url": "https://www.cas.go.jp/jp/seisakukaigi/gaikokujinzai/index.html"
     },
-        {
-        "id": "cas-pages-4",
-        "ministry": "CAS",
-        "name": "大雪に関する関係閣僚会議",
-        "url": "https://www.kantei.go.jp/jp/pages/heavysnow20260121.html"
-    },
     {
         "id": "cas-ebola_hemorrhagic_fever_kankeishoutyou-5",
         "ministry": "CAS",
@@ -277,12 +271,6 @@ CRAWL_TARGETS = [
         "ministry": "CAS",
         "name": "海上保安能力強化に関する関係閣僚会議",
         "url": "https://www.cas.go.jp/jp/seisakukaigi/kaihotaisei/"
-    },
-        {
-        "id": "cas-honbu_setti-8",
-        "ministry": "CAS",
-        "name": "緊急災害対策本部",
-        "url": "https://www.bousai.go.jp/updates/honbu_setti/honbu_setti.html"
     },
     {
         "id": "cas-kyuyo-9",

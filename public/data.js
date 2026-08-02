@@ -439,17 +439,6 @@ const COUNCILS = [
     isWatched: true,
     trackedSince: '2026/08/01'
   },
-    {
-    id: 'cas-pages-4',
-    name: '大雪に関する関係閣僚会議',
-    ministry: 'CAS',
-    category: 'PANEL',
-    pastYearCount: 1,
-    description: '大雪に関する関係閣僚会議の基本方針、施策の推進状況および関係省庁間の連携・個別課題について審議する会議。',
-    officialUrl: 'https://www.kantei.go.jp/jp/pages/heavysnow20260121.html',
-    isWatched: true,
-    trackedSince: '2026/08/01'
-  },
   {
     id: 'cas-ebola_hemorrhagic_fever_kankeishoutyou-5',
     name: 'エボラ出血熱に関する関係省庁対策会議',
@@ -480,17 +469,6 @@ const COUNCILS = [
     pastYearCount: 1,
     description: '海上保安能力強化に関する関係閣僚会議の基本方針、施策の推進状況および関係省庁間の連携・個別課題について審議する会議。',
     officialUrl: 'https://www.cas.go.jp/jp/seisakukaigi/kaihotaisei/',
-    isWatched: true,
-    trackedSince: '2026/08/01'
-  },
-    {
-    id: 'cas-honbu_setti-8',
-    name: '緊急災害対策本部',
-    ministry: 'CAS',
-    category: 'COUNCIL',
-    pastYearCount: 1,
-    description: '緊急災害対策本部の基本方針、施策の推進状況および関係省庁間の連携・個別課題について審議する会議。',
-    officialUrl: 'https://www.bousai.go.jp/updates/honbu_setti/honbu_setti.html',
     isWatched: true,
     trackedSince: '2026/08/01'
   },
@@ -2965,24 +2943,6 @@ const MEETINGS = [
     docCount: 9
   },
   {
-    id: 'meet-2026-0206-cas-pages-4',
-    councilId: 'cas-pages-4',
-    councilName: '大雪に関する関係閣僚会議',
-    ministry: 'CAS',
-    category: 'PANEL',
-    title: '大雪に関する関係閣僚会議 最新会合',
-    date: '2026/02/06',
-    updatedAt: '2026/02/06 10:00',
-    location: '中央合同庁舎 / 首相官邸（オンライン併用）',
-    summary: '大雪に関する関係閣僚会議が開催され、直近の政策推進状況や今後の取り組みについて議論が行われた。',
-    agenda: ['直近の施策推進状況および課題についての報告', '今後の具体的な対応方針および関係府省連携に関する議論'],
-    materials: [{ name: '大雪に関する関係閣僚会議 公式掲載資料・ページ', type: 'HTML', size: '-', url: 'https://www.kantei.go.jp/jp/pages/heavysnow20260121.html', isMinutes: false }],
-    tags: ['大雪に関する関係閣僚', '内閣官房', '政策会議'],
-    officialUrl: 'https://www.kantei.go.jp/jp/pages/heavysnow20260121.html',
-    hasMinutes: true,
-    docCount: 1
-  },
-  {
     id: 'meet-2026-0518-cas-ebola_hemorrhagic_fever_kankeishoutyou-5',
     councilId: 'cas-ebola_hemorrhagic_fever_kankeishoutyou-5',
     councilName: 'エボラ出血熱に関する関係省庁対策会議',
@@ -3055,24 +3015,6 @@ const MEETINGS = [
     officialUrl: 'https://www.cas.go.jp/jp/seisakukaigi/kaihotaisei/',
     hasMinutes: true,
     docCount: 9
-  },
-  {
-    id: 'meet-2026-0331-cas-honbu_setti-8',
-    councilId: 'cas-honbu_setti-8',
-    councilName: '緊急災害対策本部',
-    ministry: 'CAS',
-    category: 'COUNCIL',
-    title: '緊急災害対策本部 最新会合',
-    date: '2026/03/31',
-    updatedAt: '2026/03/31 10:00',
-    location: '中央合同庁舎 / 首相官邸（オンライン併用）',
-    summary: '緊急災害対策本部が開催され、直近の政策推進状況や今後の取り組みについて議論が行われた。',
-    agenda: ['直近の施策推進状況および課題についての報告', '今後の具体的な対応方針および関係府省連携に関する議論'],
-    materials: [{ name: '緊急災害対策本部 公式掲載資料・ページ', type: 'HTML', size: '-', url: 'https://www.bousai.go.jp/updates/honbu_setti/honbu_setti.html', isMinutes: false }],
-    tags: ['緊急災害対策本部', '内閣官房', '政策会議'],
-    officialUrl: 'https://www.bousai.go.jp/updates/honbu_setti/honbu_setti.html',
-    hasMinutes: true,
-    docCount: 1
   },
   {
     id: 'meet-2025-1111-cas-kyuyo-9',

@@ -1067,10 +1067,16 @@ function sanitizeUrl(url) {
   return '#';
 }
 
+function capitalize(str) {
+  if (!str) return '';
+  return str.charAt(0).toUpperCase() + str.slice(1);
+}
+
 if (typeof module !== 'undefined' && module.exports) {
   module.exports = {
     formatDate,
     escapeHtml,
-    sanitizeUrl
+    sanitizeUrl,
+    capitalize
   };
 }

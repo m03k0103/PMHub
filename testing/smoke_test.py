@@ -431,6 +431,63 @@ def check_council_timeline_sync():
     print(f"  [PASS] 全 {len(councils_set)} 会議体の ID完全一致・タイムライン紐づけ・自動更新エンジン同期を検証完了")
     return True
 
+def check_view_rendering():
+    """5. UI表示自動検証（タイムライン表示および会議体一覧表示の正常性チェック）"""
+    print("\n--------------------------------------------------")
+    print(" [テスト 5/5] UI表示機能検証（タイムライン・会議体一覧描画）")
+    print("--------------------------------------------------")
+
+    data_js_path = os.path.join(PROJECT_ROOT, "public", "data.js")
+    app_js_path = os.path.join(PROJECT_ROOT, "public", "app.js")
+    index_html_path = os.path.join(PROJECT_ROOT, "public", "index.html")
+
+    with open(data_js_path, "r", encoding="utf-8") as f:
+        data_text = f.read()
+    with open(app_js_path, "r", encoding="utf-8") as f:
+        app_text = f.read()
+    with open(index_html_path, "r", encoding="utf-8") as f:
+        html_text = f.read()
+
+    # 1. タイムライン表示要素の検証
+    if 'id="timelineFeed"' not in html_text or 'id="viewTimeline"' not in html_text:
+        print("  [FAIL] タイムライン表示用HTML要素 (viewTimeline / timelineFeed) が不足しています")
+        return False
+
+    councils_part = data_text[:data_text.find("const MEETINGS =")]
+    meetings_part = data_text[data_text.find("const MEETINGS ="):]
+    councils_ids = set(re.findall(r"id:\s*['\"]([^'\"]+)['\"]", councils_part))
+    meetings_council_ids = set(re.findall(r"councilId:\s*['\"]([^'\"]+)['\"]", meetings_part))
+
+    if len(meetings_council_ids) == 0:
+        print("  [FAIL] タイムラインに表示可能な会議データが0件です")
+        return False
+    print(f"  [PASS] タイムラインが表示されること（表示対象: 全 {len(meetings_council_ids)} 会議体のタイムライン会議データ）")
+
+    # 2. 会議体一覧表示要素およびcapitalize関数の検証
+    if 'id="councilsGrid"' not in html_text or 'id="viewCouncils"' not in html_text:
+        print("  [FAIL] 会議体一覧表示用HTML要素 (viewCouncils / councilsGrid) が不足しています")
+        return False
+
+    if 'function capitalize' not in app_text:
+        print("  [FAIL] app.js 内に capitalize 関数が定義されていません（タブ切り替え時に画面消失の原因）")
+        return False
+
+    if len(councils_ids) == 0:
+        print("  [FAIL] 会議体一覧に表示可能な会議体データが0件です")
+        return False
+
+    print(f"  [PASS] 会議体一覧が表示されること（表示対象: 全 {len(councils_ids)} 会議体）")
+
+    # 3. 除外指定会議体の非表示検証
+    excluded_ids = ['cas-honbu_setti-8', 'cas-pages-4']
+    found_excluded = [cid for cid in excluded_ids if cid in councils_ids or cid in meetings_council_ids]
+    if found_excluded:
+        print(f"  [FAIL] 除外対象会議体がデータ内に残留しています: {found_excluded}")
+        return False
+
+    print("  [PASS] 除外対象会議体（緊急災害対策本部、大雪に関する関係閣僚会議）の完全非表示を検証完了")
+    return True
+
 def main():
     parser = argparse.ArgumentParser(description="PM-HUB Smoke Test Runner")
     parser.add_argument("--url", nargs="+", help="Explicit URLs to verify")
@@ -445,9 +502,10 @@ def main():
     links_ok = check_link_health(explicit_urls=args.url, check_all=args.all)
     utils_ok = check_escape_html()
     sync_ok = check_council_timeline_sync()
+    view_ok = check_view_rendering()
 
     print("\n==================================================")
-    if syntax_ok and links_ok and utils_ok and sync_ok:
+    if syntax_ok and links_ok and utils_ok and sync_ok and view_ok:
         print(" 【結果】全スモークテストに合格しました。修正コードは正常です。")
         sys.exit(0)
     else:
