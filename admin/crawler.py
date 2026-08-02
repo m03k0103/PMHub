@@ -251,6 +251,10 @@ def execute_rule_retrieval(target, html, rule_item):
             print(f"   [2回目情報取得Engine ({quirk_note})] サブページ {len(unique_subpages)} 件を深掘り巡回中...")
 
             for sub_url in unique_subpages:
+                parsed_url = urllib.parse.urlparse(sub_url)
+                if parsed_url.scheme not in ('http', 'https'):
+                    continue
+
                 sub_html = fetch_url(sub_url)
                 if sub_html:
                     sub_title_match = re.search(r'<title>(.*?)</title>', sub_html, re.IGNORECASE | re.DOTALL)
