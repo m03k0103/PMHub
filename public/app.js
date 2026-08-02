@@ -535,6 +535,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const docPillsHTML = (meeting.materials || []).map(doc => `
       <a href="${escapeHtml(sanitizeUrl(doc.url))}" target="_blank" rel="noopener noreferrer" class="doc-pill" title="${escapeHtml(doc.name)} (${doc.size})">
         <span class="doc-type-icon">${doc.type}</span>
+      <a href="${doc.url}" target="_blank" rel="noopener noreferrer" class="doc-pill" title="${escapeHtml(doc.name)} (${escapeHtml(doc.size)})">
+        <span class="doc-type-icon">${escapeHtml(doc.type)}</span>
         <span>${escapeHtml(doc.name)}</span>
       </a>
     `).join('');
@@ -820,8 +822,8 @@ document.addEventListener('DOMContentLoaded', () => {
         return `
           <a href="${escapeHtml(sanitizeUrl(doc.url))}" target="_blank" rel="noopener noreferrer" class="doc-download-item">
             <div>
-              <strong>[${doc.type}] ${escapeHtml(doc.name)}</strong>
-              <span class="text-sm" style="display:block; margin-top:0.2rem;">ファイルサイズ: ${doc.size}</span>
+              <strong>[${escapeHtml(doc.type)}] ${escapeHtml(doc.name)}</strong>
+              <span class="text-sm" style="display:block; margin-top:0.2rem;">ファイルサイズ: ${escapeHtml(doc.size)}</span>
             </div>
             <span class="text-accent text-sm">PDF/HTMLを開く ↗</span>
           </a>
