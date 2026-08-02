@@ -37,7 +37,7 @@ PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 def check_js_syntax(code, file_path=""):
     """JS の文法エラー（カンマ欠落、不整合な文字、要素・プロパティ間カンマ欠落等）を精密検証"""
     import shutil
-    node_cmd = shutil.which("node")
+    node_cmd = shutil.which("node") or (r"D:\Programs\nodejs\node.exe" if os.path.exists(r"D:\Programs\nodejs\node.exe") else None)
     if node_cmd:
         try:
             res = subprocess.run([node_cmd, "--check", file_path], capture_output=True, text=True, encoding='utf-8', errors='replace')
@@ -350,8 +350,10 @@ def check_escape_html():
     print(" [テスト 3/4] JSユーティリティ関数の単体テスト実行")
     print("--------------------------------------------------")
     try:
+        import shutil
+        node_cmd = shutil.which("node") or (r"D:\Programs\nodejs\node.exe" if os.path.exists(r"D:\Programs\nodejs\node.exe") else "node")
         test_script_path = os.path.join(PROJECT_ROOT, "testing", "test_escapeHtml.js")
-        result = subprocess.run(["node", test_script_path], cwd=PROJECT_ROOT, capture_output=True, text=True, encoding='utf-8', errors='replace')
+        result = subprocess.run([node_cmd, test_script_path], cwd=PROJECT_ROOT, capture_output=True, text=True, encoding='utf-8', errors='replace')
         if result.returncode == 0:
             print("  [PASS] escapeHtml 単体テスト通過")
             return True

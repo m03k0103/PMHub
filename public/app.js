@@ -3,6 +3,7 @@
    ========================================================================== */
 
 
+if (typeof document !== 'undefined') {
 document.addEventListener('DOMContentLoaded', () => {
   // --- STATE MANAGEMENT ---
   const state = {
@@ -21,10 +22,13 @@ document.addEventListener('DOMContentLoaded', () => {
     chartsInitialized: false
   };
 
-  // Pre-calculate meeting counts to optimize lookup
-  const meetingCountsByCouncil = new Map();
+  // Pre-group meetings by council ID for O(1) lookups
+  const meetingsByCouncilMap = new Map();
   MEETINGS.forEach(m => {
-    meetingCountsByCouncil.set(m.councilId, (meetingCountsByCouncil.get(m.councilId) || 0) + 1);
+    if (!meetingsByCouncilMap.has(m.councilId)) {
+      meetingsByCouncilMap.set(m.councilId, []);
+    }
+    meetingsByCouncilMap.get(m.councilId).push(m);
   });
 
   // --- DOM ELEMENTS ---
@@ -610,7 +614,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // --- COUNCILS DIRECTORY ENGINE ---
   function getCouncilLatestDate(c) {
-    const councilMeetings = MEETINGS.filter(m => m.councilId === c.id && m.date && m.date !== '-');
+    const councilMeetings = (meetingsByCouncilMap.get(c.id) || []).filter(m => m.date && m.date !== '-');
     let dates = councilMeetings.map(m => m.date.replace(/-/g, '/'));
     if (c.latestDate && c.latestDate !== '-') {
       dates.push(c.latestDate.replace(/-/g, '/'));
@@ -691,7 +695,7 @@ document.addEventListener('DOMContentLoaded', () => {
       return '-';
     }
 
-    const councilMeetings = MEETINGS.filter(m => m.councilId === c.id);
+    const councilMeetings = meetingsByCouncilMap.get(c.id) || [];
     const meetingsWithDates = councilMeetings.filter(m => m.date && m.date !== '-');
 
     if (meetingsWithDates.length > 0) {
@@ -1026,6 +1030,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
 });
+}
 
 // Helper function
 function formatDate(str) {
