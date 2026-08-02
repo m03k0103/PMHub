@@ -40,7 +40,7 @@ def check_js_syntax(code, file_path=""):
     node_cmd = shutil.which("node")
     if node_cmd:
         try:
-            res = subprocess.run([node_cmd, "--check", file_path], capture_output=True, text=True)
+            res = subprocess.run([node_cmd, "--check", file_path], capture_output=True, text=True, encoding='utf-8', errors='replace')
             if res.returncode == 0:
                 return True, "Node.js Syntax OK"
             else:
@@ -351,7 +351,7 @@ def check_escape_html():
     print("--------------------------------------------------")
     try:
         test_script_path = os.path.join(PROJECT_ROOT, "admin", "test_escapeHtml.js")
-        result = subprocess.run(["node", test_script_path], cwd=PROJECT_ROOT, capture_output=True, text=True)
+        result = subprocess.run(["node", test_script_path], cwd=PROJECT_ROOT, capture_output=True, text=True, encoding='utf-8', errors='replace')
         if result.returncode == 0:
             print("  [PASS] escapeHtml 単体テスト通過")
             return True
