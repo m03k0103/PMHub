@@ -200,6 +200,34 @@ def fetch_url(url):
         print(f"[ERROR] Failed to fetch {url}: {e}", file=sys.stderr)
         return None
 
+MINISTRY_QUIRKS = {
+    "cas.go.jp": {
+        "subpage_pattern": r'href=["\']([^"\']*(?:dai\d+|gijisidai|gijiroku)[^"\'#]*)["\']',
+        "quirk_notes": "内閣官房型: daiXX/gijisidai.html 形式の2段階ネスト構造"
+    },
+    "cao.go.jp": {
+        "subpage_pattern": r'href=["\']([^"\']*(?:dai\d+|\d+kai|kaisai|gijisidai)[^"\'#]*)["\']',
+        "quirk_notes": "内閣府型: ◯kai/◯kai.html または kaisai.html の個別の回ネスト"
+    },
+    "reconstruction.go.jp": {
+        "subpage_pattern": r'href=["\']([^"\']*(?:topics/|\d{8}|shidai)[^"\'#]*)["\']',
+        "quirk_notes": "復興庁型: topics/cat-XX 分類URLおよび日付命名PDF"
+    },
+    "digital.go.jp": {
+        "subpage_pattern": r'href=["\']([^"\']*(?:councils|meetings|\d{8})[^"\'#]*)["\']',
+        "quirk_notes": "デジタル庁型: リソース絶対パス/ルート相対パス混在型HTML5構造"
+    },
+    "cfa.go.jp": {
+        "subpage_pattern": r'href=["\']([^"\']*(?:councils/[a-z0-9_-]+/[a-f0-9]{8}|councils/[a-z0-9_-]+)[^"\'#]*)["\']',
+        "quirk_notes": "こども家庭庁型: /councils/会議名/UUIDハッシュ個別の回URL構造"
+    }
+}
+
+DEFAULT_QUIRK = {
+    "subpage_pattern": r'href=["\']([^"\']*(?:dai\d+|\d+kai|kaisai|gijisidai)[^"\'#]*)["\']',
+    "quirk_notes": "標準省庁型: 汎用個別回パターン"
+}
+
 def synthesize_ai_rule_for_council(target, html):
     """
     【生成AI的ルール考案ロジック】
@@ -216,24 +244,14 @@ def synthesize_ai_rule_for_council(target, html):
     has_deep_subpages = len(subpage_matches) > 0
     
     # 省庁別のサブページ構造クセの分類
-    if "cas.go.jp" in url:
-        subpage_pattern = r'href=["\']([^"\']*(?:dai\d+|gijisidai|gijiroku)[^"\'#]*)["\']'
-        quirk_notes = "内閣官房型: daiXX/gijisidai.html 形式の2段階ネスト構造"
-    elif "cao.go.jp" in url:
-        subpage_pattern = r'href=["\']([^"\']*(?:dai\d+|\d+kai|kaisai|gijisidai)[^"\'#]*)["\']'
-        quirk_notes = "内閣府型: ◯kai/◯kai.html または kaisai.html の個別の回ネスト"
-    elif "reconstruction.go.jp" in url:
-        subpage_pattern = r'href=["\']([^"\']*(?:topics/|\d{8}|shidai)[^"\'#]*)["\']'
-        quirk_notes = "復興庁型: topics/cat-XX 分類URLおよび日付命名PDF"
-    elif "digital.go.jp" in url:
-        subpage_pattern = r'href=["\']([^"\']*(?:councils|meetings|\d{8})[^"\'#]*)["\']'
-        quirk_notes = "デジタル庁型: リソース絶対パス/ルート相対パス混在型HTML5構造"
-    elif "cfa.go.jp" in url:
-        subpage_pattern = r'href=["\']([^"\']*(?:councils/[a-z0-9_-]+/[a-f0-9]{8}|councils/[a-z0-9_-]+)[^"\'#]*)["\']'
-        quirk_notes = "こども家庭庁型: /councils/会議名/UUIDハッシュ個別の回URL構造"
-    else:
-        subpage_pattern = r'href=["\']([^"\']*(?:dai\d+|\d+kai|kaisai|gijisidai)[^"\'#]*)["\']'
-        quirk_notes = "標準省庁型: 汎用個別回パターン"
+    quirk_info = DEFAULT_QUIRK
+    for domain, info in MINISTRY_QUIRKS.items():
+        if domain in url:
+            quirk_info = info
+            break
+
+    subpage_pattern = quirk_info["subpage_pattern"]
+    quirk_notes = quirk_info["quirk_notes"]
 
     # 2. 全角数字・和暦/西暦パターンの解析
     has_fullwidth_nums = bool(re.search(r'[０-９]', html))
