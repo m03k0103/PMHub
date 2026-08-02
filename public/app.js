@@ -376,16 +376,26 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   function sortMeetings(list) {
-    return list.sort((a, b) => {
+    const mapped = list.map(item => ({
+      item,
+      time: item.date ? new Date(item.date.replace(/-/g, '/')).getTime() : 0
+    }));
+
+    mapped.sort((a, b) => {
       if (state.sortBy === 'NEWEST') {
-        return new Date(b.date.replace(/-/g, '/')) - new Date(a.date.replace(/-/g, '/'));
+        return b.time - a.time;
       } else if (state.sortBy === 'OLDEST') {
-        return new Date(a.date.replace(/-/g, '/')) - new Date(b.date.replace(/-/g, '/'));
+        return a.time - b.time;
       } else if (state.sortBy === 'DOCS_DESC') {
-        return (b.materials ? b.materials.length : 0) - (a.materials ? a.materials.length : 0);
+        return (b.item.materials ? b.item.materials.length : 0) - (a.item.materials ? a.item.materials.length : 0);
       }
       return 0;
     });
+
+    for (let i = 0; i < list.length; i++) {
+      list[i] = mapped[i].item;
+    }
+    return list;
   }
 
   function renderTimeline() {
