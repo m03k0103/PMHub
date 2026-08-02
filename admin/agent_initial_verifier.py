@@ -254,7 +254,7 @@ TARGET_COUNCILS = [
         "name": "外国人の受入れ・秩序ある共生社会実現に関する関係閣僚会議幹事会",
         "url": "https://www.cas.go.jp/jp/seisakukaigi/gaikokujinzai/index.html"
     },
-    {
+        {
         "id": "cas-pages-4",
         "ministry": "CAS",
         "name": "大雪に関する関係閣僚会議",
@@ -278,7 +278,7 @@ TARGET_COUNCILS = [
         "name": "海上保安能力強化に関する関係閣僚会議",
         "url": "https://www.cas.go.jp/jp/seisakukaigi/kaihotaisei/"
     },
-    {
+        {
         "id": "cas-honbu_setti-8",
         "ministry": "CAS",
         "name": "緊急災害対策本部",
@@ -1017,11 +1017,76 @@ def synthesize_ai_rule_for_council(target, html):
     }
     return ai_rule
 
+def validate_data_js():
+    data_js_path = os.path.join(os.path.dirname(os.path.dirname(__file__)), "public", "data.js")
+    if not os.path.exists(data_js_path):
+        print(f"[FAIL] public/data.js not found at {data_js_path}")
+        sys.exit(1)
+        
+    with open(data_js_path, "r", encoding="utf-8") as f:
+        content = f.read()
+
+    councils_pos = content.find("const COUNCILS = [")
+    meetings_pos = content.find("const MEETINGS = [")
+
+    if councils_pos == -1 or meetings_pos == -1:
+        print("[FAIL] public/data.js: Missing COUNCILS or MEETINGS array declaration!")
+        sys.exit(1)
+
+    councils_str = content[councils_pos:meetings_pos]
+    meetings_str = content[meetings_pos:]
+
+    for name, text in [("COUNCILS", councils_str), ("MEETINGS", meetings_str)]:
+        start = text.find('[')
+        end = text.rfind(']')
+        if start == -1 or end == -1:
+            print(f"[FAIL] public/data.js: Could not find brackets for {name}")
+            sys.exit(1)
+            
+        arr_body = text[start:end+1]
+        
+        # 1. Check brace count
+        open_b = arr_body.count('{')
+        close_b = arr_body.count('}')
+        if open_b != close_b:
+            print(f"[FAIL] public/data.js: Brace count mismatch in {name}! open {{ = {open_b}, close }} = {close_b}")
+            sys.exit(1)
+            
+        # 2. Check bracket count
+        open_k = arr_body.count('[')
+        close_k = arr_body.count(']')
+        if open_k != close_k:
+            print(f"[FAIL] public/data.js: Bracket count mismatch in {name}! open [ = {open_k}, close ] = {close_k}")
+            sys.exit(1)
+
+        # 3. Check brace depth line by line to detect stray closing braces
+        depth = 0
+        for lnum, line in enumerate(text.splitlines(), 1):
+            depth += line.count('{') - line.count('}')
+            if depth < 0:
+                print(f"[FAIL] public/data.js: Negative brace depth at line {lnum} in {name}: {line.strip()}")
+                sys.exit(1)
+
+        # 4. Check for unescaped multiline strings inside single quotes
+        lines = text.splitlines()
+        for lnum, line in enumerate(lines, 1):
+            if line.strip().startswith("//"):
+                continue
+            sq_matches = re.findall(r"(?<!\\)'", line)
+            if len(sq_matches) % 2 != 0:
+                print(f"[FAIL] public/data.js: Unescaped single quote string imbalance in {name} line {lnum}: {line.strip()}")
+                sys.exit(1)
+
+    print("[SUCCESS] public/data.js: Full JS syntax validation passed (braces, brackets, quotes, structural integrity).")
+
 def main():
     print("==========================================================")
     print(" 政策会議ウォッチ (PM-HUB) 1回目用 AI Rule Synthesis Agent ")
     print("==========================================================")
     print(f"解析実行時刻: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
+    print("--- [Pre-Flight Check] public/data.js 構文検証実行中 ---")
+    validate_data_js()
+    print("----------------------------------------------------------")
     print(f"解析対象会議体数: {len(TARGET_COUNCILS)} 件\n")
 
     rules = load_rules()
