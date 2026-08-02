@@ -120,7 +120,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  max-width: 1380px;
+  max-width: 1280px;
   margin: 0 auto;
   padding: 0.8rem 1.5rem;
 }
@@ -1344,6 +1344,19 @@ body {
   padding: 0.15rem 0.55rem;
   border-radius: 9999px;
   font-weight: 700;
+}
+
+.materials-badge-count.no-materials {
+  background: rgba(148, 163, 184, 0.18);
+  color: #cbd5e1; /* WCAG 2.1 AA/AAA 適合コントラスト比 (~6.9:1) */
+  border: 1px solid rgba(148, 163, 184, 0.35);
+  font-weight: 600;
+}
+
+[data-theme="light"] .materials-badge-count.no-materials {
+  background: rgba(100, 116, 139, 0.12);
+  color: #334155; /* WCAG 2.1 AA/AAA 適合コントラスト比 (~9.0:1) */
+  border: 1px solid rgba(100, 116, 139, 0.3);
 }
 
 .toggle-arrow {

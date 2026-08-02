@@ -30,7 +30,7 @@
 
   <!-- TOP HEADER -->
   <header class="app-header">
-    <div class="header-container">
+    <div class="header-container container">
       <div class="brand-logo" id="brandLogo">
         <div class="logo-icon">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
@@ -53,7 +53,7 @@
             <circle cx="12" cy="12" r="10" />
             <polyline points="12 6 12 12 16 14" />
           </svg>
-          新着タイムライン
+          タイムライン
         </button>
         <button class="nav-tab" data-tab="councils">
           <svg class="tab-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
@@ -122,22 +122,22 @@
     <div class="container stats-flex">
       <div class="stat-item">
         <span class="stat-value" id="statTrackedCouncils">--</span>
-        <span class="stat-label">監視中 会議体</span>
+        <span class="stat-label">ウォッチ中 会議体数</span>
       </div>
       <div class="stat-divider"></div>
       <div class="stat-item">
         <span class="stat-value" id="statTotalMeetings">--</span>
-        <span class="stat-label">集約済み 開催履歴</span>
+        <span class="stat-label">会議履歴数</span>
       </div>
       <div class="stat-divider"></div>
       <div class="stat-item">
         <span class="stat-value" id="statTotalDocs">--</span>
-        <span class="stat-label">インデックス配布資料・議事録</span>
+        <span class="stat-label">資料数</span>
       </div>
       <div class="stat-divider"></div>
       <div class="stat-item">
-        <span class="stat-value text-accent" id="statLastUpdate">今日 11:45</span>
-        <span class="stat-label">最終自動更新時刻</span>
+        <span class="stat-value text-accent" id="statLastUpdate">2026/08/02 10:30</span>
+        <span class="stat-label">最終更新時刻</span>
       </div>
     </div>
   </section>
@@ -364,6 +364,15 @@
               <option value="SUBCOMMITTEE">分科会・部会</option>
               <option value="PANEL">検討会・有識者会議</option>
               <option value="ROUNDTABLE">懇談会・作業部会</option>
+            </select>
+          </div>
+
+          <div class="filter-group">
+            <label for="councilSortSelect">並び替え</label>
+            <select id="councilSortSelect">
+              <option value="DATE_DESC" selected>最新順（最新開催日）</option>
+              <option value="NAME_ASC">名前順（五十音順）</option>
+              <option value="MINISTRY_ASC">省庁順</option>
             </select>
           </div>
         </div>

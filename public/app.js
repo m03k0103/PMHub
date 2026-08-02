@@ -69,6 +69,7 @@ document.addEventListener('DOMContentLoaded', () => {
     councilSearchInput: document.getElementById('councilSearchInput'),
     councilMinistrySelect: document.getElementById('councilMinistrySelect'),
     councilCategorySelect: document.getElementById('councilCategorySelect'),
+    councilSortSelect: document.getElementById('councilSortSelect'),
 
     // Watchlist
     watchlistActiveCount: document.getElementById('watchlistActiveCount'),
@@ -158,13 +159,17 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     if (el.statLastUpdate) {
-      const latestMeeting = MEETINGS.reduce((latest, m) => {
-        if (!m.updatedAt) return latest;
-        return (!latest || m.updatedAt > latest.updatedAt) ? m : latest;
-      }, null);
+      if (typeof LAST_CRAWL_TIME !== 'undefined' && LAST_CRAWL_TIME) {
+        el.statLastUpdate.textContent = formatDate(LAST_CRAWL_TIME);
+      } else {
+        const latestMeeting = MEETINGS.reduce((latest, m) => {
+          if (!m.updatedAt) return latest;
+          return (!latest || m.updatedAt > latest.updatedAt) ? m : latest;
+        }, null);
 
-      if (latestMeeting && latestMeeting.updatedAt) {
-        el.statLastUpdate.textContent = formatDate(latestMeeting.updatedAt);
+        if (latestMeeting && latestMeeting.updatedAt) {
+          el.statLastUpdate.textContent = formatDate(latestMeeting.updatedAt);
+        }
       }
     }
   }
@@ -264,6 +269,9 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     if (el.councilCategorySelect) {
       el.councilCategorySelect.addEventListener('change', () => renderCouncilsGrid());
+    }
+    if (el.councilSortSelect) {
+      el.councilSortSelect.addEventListener('change', () => renderCouncilsGrid());
     }
 
     // Export Data Button
@@ -470,18 +478,16 @@ document.addEventListener('DOMContentLoaded', () => {
   };
 
   function renderMaterialsAccordionHTML(materials, meetingId, officialUrl) {
-    if (!materials || materials.length === 0) return '';
-
     // 一次ソースと同じ場所へのリンクを除外
-    const filteredMaterials = materials.filter(mat => {
+    const filteredMaterials = (materials || []).filter(mat => {
       if (officialUrl && mat.url === officialUrl) return false;
       if (mat.name && (mat.name.includes('一次ソース') || mat.name.includes('公式ポータル') || mat.name.includes('公式ページ'))) return false;
       return true;
     });
 
-    if (filteredMaterials.length === 0) return '';
+    const hasMaterials = filteredMaterials.length > 0;
 
-    const listItems = filteredMaterials.map(mat => {
+    const listItems = hasMaterials ? filteredMaterials.map(mat => {
       const isPrivate = mat.isPrivate || mat.type === '非公開' || mat.url === '#';
       const icon = isPrivate ? '🔒' : (mat.type === 'PDF' ? '📄' : '🌐');
       
@@ -506,14 +512,18 @@ document.addEventListener('DOMContentLoaded', () => {
           </div>
         </li>
       `;
-    }).join('');
+    }).join('') : `
+      <li class="material-item-row">
+        <span class="text-muted" style="font-size: 0.85rem;">資料はありません</span>
+      </li>
+    `;
 
     return `
       <div class="materials-accordion">
         <button class="materials-toggle-btn" onclick="toggleMaterialsAccordion('${meetingId}')" type="button">
           <div class="materials-toggle-left">
             <span>📂 資料リストを開く</span>
-            <span class="materials-badge-count">${filteredMaterials.length}件</span>
+            <span class="materials-badge-count ${hasMaterials ? '' : 'no-materials'}">${hasMaterials ? `${filteredMaterials.length}件` : '資料なし'}</span>
           </div>
           <span class="toggle-arrow" id="arrow-${meetingId}">▼</span>
         </button>
@@ -553,9 +563,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const categoryName = CATEGORIES[meeting.category] || meeting.category;
 
     const docPillsHTML = (meeting.materials || []).map(doc => `
-      <a href="${escapeHtml(sanitizeUrl(doc.url))}" target="_blank" rel="noopener noreferrer" class="doc-pill" title="${escapeHtml(doc.name)} (${doc.size})">
-        <span class="doc-type-icon">${doc.type}</span>
-      <a href="${doc.url}" target="_blank" rel="noopener noreferrer" class="doc-pill" title="${escapeHtml(doc.name)} (${escapeHtml(doc.size)})">
+      <a href="${escapeHtml(sanitizeUrl(doc.url))}" target="_blank" rel="noopener noreferrer" class="doc-pill" title="${escapeHtml(doc.name)} (${escapeHtml(doc.size)})">
         <span class="doc-type-icon">${escapeHtml(doc.type)}</span>
         <span>${escapeHtml(doc.name)}</span>
       </a>
@@ -601,10 +609,22 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // --- COUNCILS DIRECTORY ENGINE ---
+  function getCouncilLatestDate(c) {
+    const councilMeetings = MEETINGS.filter(m => m.councilId === c.id && m.date && m.date !== '-');
+    let dates = councilMeetings.map(m => m.date.replace(/-/g, '/'));
+    if (c.latestDate && c.latestDate !== '-') {
+      dates.push(c.latestDate.replace(/-/g, '/'));
+    }
+    if (dates.length === 0) return '-';
+    dates.sort((a, b) => b.localeCompare(a));
+    return dates[0];
+  }
+
   function renderCouncilsGrid() {
     const searchVal = el.councilSearchInput ? el.councilSearchInput.value.trim().toLowerCase() : '';
     const ministryVal = el.councilMinistrySelect ? el.councilMinistrySelect.value : 'ALL';
     const categoryVal = el.councilCategorySelect ? el.councilCategorySelect.value : 'ALL';
+    const sortVal = el.councilSortSelect ? el.councilSortSelect.value : 'DATE_DESC';
 
     const list = COUNCILS.filter(council => {
       // 1. Ministry filter
@@ -625,6 +645,33 @@ document.addEventListener('DOMContentLoaded', () => {
       return true;
     });
 
+    const ministryOrderKeys = Object.keys(MINISTRIES);
+
+    list.sort((a, b) => {
+      if (sortVal === 'DATE_DESC') {
+        const dateA = getCouncilLatestDate(a);
+        const dateB = getCouncilLatestDate(b);
+        if (dateA !== '-' && dateB !== '-') {
+          const cmp = dateB.localeCompare(dateA);
+          if (cmp !== 0) return cmp;
+        } else if (dateA !== '-') {
+          return -1;
+        } else if (dateB !== '-') {
+          return 1;
+        }
+        return a.name.localeCompare(b.name, 'ja');
+      } else if (sortVal === 'NAME_ASC') {
+        return a.name.localeCompare(b.name, 'ja');
+      } else if (sortVal === 'MINISTRY_ASC') {
+        const indexA = ministryOrderKeys.indexOf(a.ministry);
+        const indexB = ministryOrderKeys.indexOf(b.ministry);
+        const minCmp = (indexA !== -1 ? indexA : 999) - (indexB !== -1 ? indexB : 999);
+        if (minCmp !== 0) return minCmp;
+        return a.name.localeCompare(b.name, 'ja');
+      }
+      return 0;
+    });
+
     if (list.length === 0) {
       el.councilsGrid.innerHTML = `
         <div class="no-results card-glass" style="grid-column: 1 / -1; text-align: center; padding: 2.5rem 1rem;">
@@ -639,10 +686,46 @@ document.addEventListener('DOMContentLoaded', () => {
       return;
     }
 
+  function formatPastYearCountDisplay(c) {
+    if (c.pastYearCount === '-' || c.pastYearCount === null || c.hasTopPageDates === false) {
+      return '-';
+    }
+
+    const councilMeetings = MEETINGS.filter(m => m.councilId === c.id);
+    const meetingsWithDates = councilMeetings.filter(m => m.date && m.date !== '-');
+
+    if (meetingsWithDates.length > 0) {
+      const refDate = new Date('2026-08-02T23:59:59');
+      const oneYearAgo = new Date(refDate);
+      oneYearAgo.setFullYear(oneYearAgo.getFullYear() - 1);
+
+      let count = 0;
+      meetingsWithDates.forEach(m => {
+        const d = new Date(m.date.replace(/-/g, '/'));
+        if (!isNaN(d.getTime()) && d >= oneYearAgo && d <= refDate) {
+          count++;
+        }
+      });
+      return `${count} 回`;
+    }
+
+    if (typeof c.pastYearCount === 'number') {
+      return `${c.pastYearCount} 回`;
+    }
+
+    if (typeof c.pastYearCount === 'string') {
+      if (c.pastYearCount === '-') return '-';
+      return c.pastYearCount.includes('回') ? c.pastYearCount : `${c.pastYearCount} 回`;
+    }
+
+    return '-';
+  }
+
     el.councilsGrid.innerHTML = list.map(c => {
       const minInfo = MINISTRIES[c.ministry] || { name: c.ministry };
       const isWatching = state.watchedCouncilIds.has(c.id);
-      const pastYearCount = c.pastYearCount || meetingCountsByCouncil.get(c.id) || 5;
+      const pastYearDisplay = formatPastYearCountDisplay(c);
+      const latestDateDisplay = getCouncilLatestDate(c);
 
       return `
         <div class="council-card card-glass">
@@ -651,17 +734,22 @@ document.addEventListener('DOMContentLoaded', () => {
               <span class="badge-ministry ${c.ministry}">${minInfo.name}</span>
               <button class="btn-watchlist-toggle ${isWatching ? 'watching' : ''}" onclick="toggleWatchlist('${c.id}')">
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="${isWatching ? 'currentColor' : 'none'}" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-                ${isWatching ? 'ウォッチ中' : 'ウォッチ追跡'}
+                ${isWatching ? 'ウォッチ中' : 'ウォッチ'}
               </button>
             </div>
             <h3 class="council-card-title" style="margin-top: 0.6rem;">${escapeHtml(c.name)}</h3>
             <p class="text-sm" style="margin-top: 0.5rem; line-height: 1.5;">${escapeHtml(c.description)}</p>
           </div>
-          <div class="council-meta" style="margin-top: 1rem; border-top: 1px solid var(--border-color); padding-top: 0.75rem;">
-            <span>過去1年間の開催数: <strong style="color: var(--accent-secondary);">${pastYearCount} 回</strong></span>
-            <a href="${escapeHtml(sanitizeUrl(c.officialUrl))}" target="_blank" rel="noopener noreferrer" class="text-accent text-sm" style="display:inline-flex; align-items:center; gap:0.2rem; margin-top:0.2rem;">
-              公式トップページ ↗
-            </a>
+          <div class="council-meta" style="margin-top: 1rem; border-top: 1px solid var(--border-color); padding-top: 0.75rem; display: flex; flex-direction: column; gap: 0.4rem;">
+            <div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.825rem; flex-wrap: wrap; gap: 0.25rem;">
+              <span style="color: var(--text-secondary);">最新開催日: <strong style="color: var(--text-primary); font-weight: 600;">${latestDateDisplay}</strong></span>
+              <span style="color: var(--text-secondary);">過去1年間: <strong style="color: var(--accent-secondary); font-weight: 600;">${pastYearDisplay}</strong></span>
+            </div>
+            <div style="display: flex; justify-content: flex-end; margin-top: 0.2rem;">
+              <a href="${escapeHtml(sanitizeUrl(c.officialUrl))}" target="_blank" rel="noopener noreferrer" class="text-accent text-sm" style="display:inline-flex; align-items:center; gap:0.2rem;">
+                公式トップページ ↗
+              </a>
+            </div>
           </div>
         </div>
       `;
@@ -696,13 +784,13 @@ document.addEventListener('DOMContentLoaded', () => {
     } else {
       el.watchlistItems.innerHTML = watchedList.map(c => {
         const minInfo = MINISTRIES[c.ministry] || { name: c.ministry };
-        const pastYearCount = c.pastYearCount || meetingCountsByCouncil.get(c.id) || 5;
+        const pastYearDisplay = formatPastYearCountDisplay(c);
         return `
           <div class="watchlist-item-card">
             <div>
               <span class="badge-ministry ${c.ministry}" style="font-size:0.65rem;">${minInfo.name}</span>
               <h4 style="font-weight:700; margin-top:0.3rem;">${escapeHtml(c.name)}</h4>
-              <span class="text-sm">過去1年間の開催数: <strong>${pastYearCount} 回</strong></span>
+              <span class="text-sm">過去1年間の開催数: <strong>${pastYearDisplay}</strong></span>
             </div>
             <button class="btn-secondary btn-sm" onclick="toggleWatchlist('${c.id}')">解除</button>
           </div>
@@ -938,6 +1026,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
 });
+}
 
 // Helper function
 function formatDate(str) {
