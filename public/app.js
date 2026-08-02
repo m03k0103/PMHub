@@ -2,6 +2,7 @@
    政策会議ウォッチ (PM-HUB) - Main Application Core Logic
    ========================================================================== */
 
+if (typeof document !== 'undefined') {
 document.addEventListener('DOMContentLoaded', () => {
   // --- STATE MANAGEMENT ---
   const state = {
@@ -296,10 +297,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     window.scrollTo({ top: 0, behavior: 'smooth' });
-  }
-
-  function capitalize(str) {
-    return str.charAt(0).toUpperCase() + str.slice(1);
   }
 
   // --- FILTER & TIMELINE ENGINE ---
@@ -962,3 +959,14 @@ document.addEventListener('DOMContentLoaded', () => {
     return '#';
   }
 });
+}
+
+// --- UTILS EXPORT FOR TESTING ---
+function capitalize(str) {
+  if (typeof str !== 'string' || !str) return '';
+  return str.charAt(0).toUpperCase() + str.slice(1);
+}
+
+if (typeof module !== 'undefined' && module.exports) {
+  module.exports = { capitalize };
+}
