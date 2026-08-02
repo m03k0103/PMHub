@@ -160,6 +160,27 @@ def check_link_health(explicit_urls=None, check_all=False):
     print(f"\n  検証結果: 追加・変更 URL {len(unique_urls)} 件中 リンク切れ {broken_links} 件")
     return broken_links == 0
 
+def run_unit_tests():
+    """3. Node.js ユニットテスト実行"""
+    print("\n--------------------------------------------------")
+    print(" [テスト 3/3] Node.js ユニットテスト実行")
+    print("--------------------------------------------------")
+
+    test_cmd = ["node", "--test", os.path.join(PROJECT_ROOT, "public", "app.test.js")]
+    try:
+        result = subprocess.run(test_cmd, capture_output=True, text=True)
+        if result.returncode == 0:
+            print("  [PASS] ユニットテスト合格")
+            return True
+        else:
+            print("  [FAIL] ユニットテスト失敗")
+            print(result.stdout)
+            print(result.stderr)
+            return False
+    except Exception as e:
+        print(f"  [ERROR] テスト実行に失敗しました: {e}")
+        return False
+
 def main():
     parser = argparse.ArgumentParser(description="PM-HUB Smoke Test Runner")
     parser.add_argument("--url", nargs="+", help="Explicit URLs to verify")
@@ -172,9 +193,10 @@ def main():
 
     syntax_ok = check_syntax_errors()
     links_ok = check_link_health(explicit_urls=args.url, check_all=args.all)
+    tests_ok = run_unit_tests()
 
     print("\n==================================================")
-    if syntax_ok and links_ok:
+    if syntax_ok and links_ok and tests_ok:
         print(" 【結果】全スモークテストに合格しました。修正コードは正常です。")
         sys.exit(0)
     else:
