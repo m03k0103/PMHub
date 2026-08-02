@@ -94,6 +94,13 @@ document.addEventListener('DOMContentLoaded', () => {
     toastContainer: document.getElementById('toastContainer')
   };
 
+  // --- PRE-COMPUTE MEETING COUNTS ---
+  const meetingCounts = {};
+  for (let i = 0; i < MEETINGS.length; i++) {
+    const cId = MEETINGS[i].councilId;
+    meetingCounts[cId] = (meetingCounts[cId] || 0) + 1;
+  }
+
   // --- INITIALIZATION ---
   initTheme();
   updateHeroStats();
