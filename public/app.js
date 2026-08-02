@@ -553,9 +553,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const categoryName = CATEGORIES[meeting.category] || meeting.category;
 
     const docPillsHTML = (meeting.materials || []).map(doc => `
-      <a href="${escapeHtml(sanitizeUrl(doc.url))}" target="_blank" rel="noopener noreferrer" class="doc-pill" title="${escapeHtml(doc.name)} (${doc.size})">
-        <span class="doc-type-icon">${doc.type}</span>
-      <a href="${doc.url}" target="_blank" rel="noopener noreferrer" class="doc-pill" title="${escapeHtml(doc.name)} (${escapeHtml(doc.size)})">
+      <a href="${escapeHtml(sanitizeUrl(doc.url))}" target="_blank" rel="noopener noreferrer" class="doc-pill" title="${escapeHtml(doc.name)} (${escapeHtml(doc.size)})">
         <span class="doc-type-icon">${escapeHtml(doc.type)}</span>
         <span>${escapeHtml(doc.name)}</span>
       </a>
@@ -938,6 +936,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
 });
+}
 
 // Helper function
 function formatDate(str) {
