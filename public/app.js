@@ -2,6 +2,7 @@
    政策会議ウォッチ (PM-HUB) - Main Application Core Logic
    ========================================================================== */
 
+if (typeof document !== 'undefined') {
 document.addEventListener('DOMContentLoaded', () => {
   // --- STATE MANAGEMENT ---
   const state = {
@@ -19,6 +20,12 @@ document.addEventListener('DOMContentLoaded', () => {
     activeModalMeeting: null,
     chartsInitialized: false
   };
+
+  // Pre-calculate meeting counts to optimize lookup
+  const meetingCountsByCouncil = new Map();
+  MEETINGS.forEach(m => {
+    meetingCountsByCouncil.set(m.councilId, (meetingCountsByCouncil.get(m.councilId) || 0) + 1);
+  });
 
   // --- DOM ELEMENTS ---
   const el = {
@@ -305,10 +312,6 @@ document.addEventListener('DOMContentLoaded', () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 
-  function capitalize(str) {
-    return str.charAt(0).toUpperCase() + str.slice(1);
-  }
-
   // --- FILTER & TIMELINE ENGINE ---
   function resetFilters() {
     state.searchQuery = '';
@@ -383,16 +386,26 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   function sortMeetings(list) {
-    return list.sort((a, b) => {
+    const mapped = list.map(item => ({
+      item,
+      time: item.date ? new Date(item.date.replace(/-/g, '/')).getTime() : 0
+    }));
+
+    mapped.sort((a, b) => {
       if (state.sortBy === 'NEWEST') {
-        return new Date(b.date.replace(/-/g, '/')) - new Date(a.date.replace(/-/g, '/'));
+        return b.time - a.time;
       } else if (state.sortBy === 'OLDEST') {
-        return new Date(a.date.replace(/-/g, '/')) - new Date(b.date.replace(/-/g, '/'));
+        return a.time - b.time;
       } else if (state.sortBy === 'DOCS_DESC') {
-        return (b.materials ? b.materials.length : 0) - (a.materials ? a.materials.length : 0);
+        return (b.item.materials ? b.item.materials.length : 0) - (a.item.materials ? a.item.materials.length : 0);
       }
       return 0;
     });
+
+    for (let i = 0; i < list.length; i++) {
+      list[i] = mapped[i].item;
+    }
+    return list;
   }
 
   function renderTimeline() {
@@ -629,7 +642,7 @@ document.addEventListener('DOMContentLoaded', () => {
     el.councilsGrid.innerHTML = list.map(c => {
       const minInfo = MINISTRIES[c.ministry] || { name: c.ministry };
       const isWatching = state.watchedCouncilIds.has(c.id);
-      const pastYearCount = c.pastYearCount || meetingCounts[c.id] || 5;
+      const pastYearCount = c.pastYearCount || meetingCountsByCouncil.get(c.id) || 5;
 
       return `
         <div class="council-card card-glass">
@@ -683,7 +696,7 @@ document.addEventListener('DOMContentLoaded', () => {
     } else {
       el.watchlistItems.innerHTML = watchedList.map(c => {
         const minInfo = MINISTRIES[c.ministry] || { name: c.ministry };
-        const pastYearCount = c.pastYearCount || meetingCounts[c.id] || 5;
+        const pastYearCount = c.pastYearCount || meetingCountsByCouncil.get(c.id) || 5;
         return `
           <div class="watchlist-item-card">
             <div>
@@ -959,3 +972,14 @@ document.addEventListener('DOMContentLoaded', () => {
     return '#';
   }
 });
+}
+
+// --- UTILS EXPORT FOR TESTING ---
+function capitalize(str) {
+  if (typeof str !== 'string' || !str) return '';
+  return str.charAt(0).toUpperCase() + str.slice(1);
+}
+
+if (typeof module !== 'undefined' && module.exports) {
+  module.exports = { capitalize };
+}

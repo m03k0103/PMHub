@@ -1,7 +1,7 @@
 {
   "cas-chutou-jyousei": {
     "rule_id": "rule-cas-chutou-jyousei-ai-v3",
-    "created_at": "2026-08-01 17:59:09",
+    "created_at": "2026-08-02 05:22:41",
     "generator": "AI_Rule_Synthesis_Agent_v3",
     "councilName": "中東情勢に関する関係閣僚会議",
     "targetUrl": "https://www.cas.go.jp/jp/seisaku/chyutoujyousei/index.html",
@@ -23,7 +23,7 @@
   },
   "cao-ai-strategy": {
     "rule_id": "rule-cao-ai-strategy-ai-v3",
-    "created_at": "2026-08-01 17:59:09",
+    "created_at": "2026-08-02 05:22:42",
     "generator": "AI_Rule_Synthesis_Agent_v3",
     "councilName": "AI戦略会議",
     "targetUrl": "https://www8.cao.go.jp/cstp/ai/ai_senryaku/ai_senryaku.html",
@@ -45,29 +45,29 @@
   },
   "cao-kisei-kaikaku": {
     "rule_id": "rule-cao-kisei-kaikaku-ai-v3",
-    "created_at": "2026-08-01 17:59:09",
+    "created_at": "2026-08-02 05:22:44",
     "generator": "AI_Rule_Synthesis_Agent_v3",
     "councilName": "規制改革推進会議",
-    "targetUrl": "https://www8.cao.go.jp/kisei-kaikaku/index.html",
+    "targetUrl": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/meeting.html",
     "ministryQuirk": "内閣府型: ◯kai/◯kai.html または kaisai.html の個別の回ネスト",
     "rules": {
       "encoding": "utf-8",
-      "deep_crawl_enabled": false,
+      "deep_crawl_enabled": true,
       "subpage_discovery_pattern": "href=[\"\\']([^\"\\']*(?:dai\\d+|\\d+kai|kaisai|gijisidai)[^\"\\'#]*)[\"\\']",
       "date_regex": "(?:令和[0-9０-９一-九]+年[0-9０-９一-十二]+月[0-9０-９一-三十一]+日|20[2-9][0-9]年[0-1]?[0-9]月[0-3]?[0-9]日)",
       "prefer_subpage_date": true,
       "extract_subpage_materials_primary": true,
       "pdf_selector": "href=[\"\\']([^\"\\']+\\.pdf)[\"\\']",
       "private_doc_keyword": "非公開",
-      "detect_private_materials": false,
+      "detect_private_materials": true,
       "extract_all_materials": true,
       "resolve_absolute_urls": true,
-      "top_page_pdf_count": 0
+      "top_page_pdf_count": 514
     }
   },
   "ra-fukko-suishin": {
     "rule_id": "rule-ra-fukko-suishin-ai-v3",
-    "created_at": "2026-08-01 17:59:09",
+    "created_at": "2026-08-02 05:22:44",
     "generator": "AI_Rule_Synthesis_Agent_v3",
     "councilName": "復興推進委員会",
     "targetUrl": "https://www.reconstruction.go.jp/topics/cat-11/cat-47/cat-155/cat-156/000813/",
@@ -89,7 +89,7 @@
   },
   "cas-zensedai-hosyo": {
     "rule_id": "rule-cas-zensedai-hosyo-ai-v3",
-    "created_at": "2026-08-01 17:59:09",
+    "created_at": "2026-08-02 05:22:41",
     "generator": "AI_Rule_Synthesis_Agent_v3",
     "councilName": "全世代型社会保障構築会議",
     "targetUrl": "https://www.cas.go.jp/jp/seisaku/zensedai_hosyo/index.html",
@@ -111,7 +111,7 @@
   },
   "cas-kokumin-kaigi": {
     "rule_id": "rule-cas-kokumin-kaigi-ai-v3",
-    "created_at": "2026-08-01 17:59:09",
+    "created_at": "2026-08-02 05:22:47",
     "generator": "AI_Rule_Synthesis_Agent_v3",
     "councilName": "社会保障国民会議",
     "targetUrl": "https://www.cas.go.jp/jp/seisaku/kokuminkaigi/index.html",
@@ -133,7 +133,7 @@
   },
   "cao-ai-hq": {
     "rule_id": "rule-cao-ai-hq-ai-v3",
-    "created_at": "2026-08-01 17:59:09",
+    "created_at": "2026-08-02 05:22:47",
     "generator": "AI_Rule_Synthesis_Agent_v3",
     "councilName": "人工知能戦略本部",
     "targetUrl": "https://www8.cao.go.jp/cstp/ai/ai_hq/kaisai.html",
@@ -155,7 +155,7 @@
   },
   "digital-suishin": {
     "rule_id": "rule-digital-suishin-ai-v3",
-    "created_at": "2026-08-01 17:59:09",
+    "created_at": "2026-08-02 05:22:48",
     "generator": "AI_Rule_Synthesis_Agent_v3",
     "councilName": "デジタル社会推進会議幹事会",
     "targetUrl": "https://www.digital.go.jp/councils/social-promotion-executive",
@@ -177,7 +177,7 @@
   },
   "cfa-kodomo-suishin": {
     "rule_id": "rule-cfa-kodomo-suishin-ai-v3",
-    "created_at": "2026-08-01 17:59:10",
+    "created_at": "2026-08-02 05:22:49",
     "generator": "AI_Rule_Synthesis_Agent_v3",
     "councilName": "こども政策推進会議",
     "targetUrl": "https://www.cfa.go.jp/councils/suishinkaigi",
@@ -199,7 +199,7 @@
   },
   "cfa-kodomo-shingikai": {
     "rule_id": "rule-cfa-kodomo-shingikai-ai-v3",
-    "created_at": "2026-08-01 17:59:10",
+    "created_at": "2026-08-02 05:22:49",
     "generator": "AI_Rule_Synthesis_Agent_v3",
     "councilName": "こども家庭審議会",
     "targetUrl": "https://www.cfa.go.jp/councils/shingikai",
@@ -217,6 +217,270 @@
       "extract_all_materials": true,
       "resolve_absolute_urls": true,
       "top_page_pdf_count": 19
+    }
+  },
+  "fsa-kinyu-shingi": {
+    "rule_id": "rule-fsa-kinyu-shingi-ai-v3",
+    "created_at": "2026-08-02 05:22:50",
+    "generator": "AI_Rule_Synthesis_Agent_v3",
+    "councilName": "金融審議会",
+    "targetUrl": "https://www.fsa.go.jp/singi/singi_kinyu/base_gijiroku.html",
+    "ministryQuirk": "標準省庁型: 汎用個別回パターン",
+    "rules": {
+      "encoding": "utf-8",
+      "deep_crawl_enabled": true,
+      "subpage_discovery_pattern": "href=[\"\\']([^\"\\']*(?:dai\\d+|\\d+kai|kaisai|gijisidai)[^\"\\'#]*)[\"\\']",
+      "date_regex": "(?:令和[0-9０-９一-九]+年[0-9０-９一-十二]+月[0-9０-９一-三十一]+日|20[2-9][0-9]年[0-1]?[0-9]月[0-3]?[0-9]日)",
+      "prefer_subpage_date": true,
+      "extract_subpage_materials_primary": true,
+      "pdf_selector": "href=[\"\\']([^\"\\']+\\.pdf)[\"\\']",
+      "private_doc_keyword": "非公開",
+      "detect_private_materials": false,
+      "extract_all_materials": true,
+      "resolve_absolute_urls": true,
+      "top_page_pdf_count": 0
+    }
+  },
+  "moj-hosei-shingi": {
+    "rule_id": "rule-moj-hosei-shingi-ai-v3",
+    "created_at": "2026-08-02 05:22:51",
+    "generator": "AI_Rule_Synthesis_Agent_v3",
+    "councilName": "法制審議会",
+    "targetUrl": "https://www.moj.go.jp/shingi1/shingikai_soukai.html",
+    "ministryQuirk": "標準省庁型: 汎用個別回パターン",
+    "rules": {
+      "encoding": "utf-8",
+      "deep_crawl_enabled": true,
+      "subpage_discovery_pattern": "href=[\"\\']([^\"\\']*(?:dai\\d+|\\d+kai|kaisai|gijisidai)[^\"\\'#]*)[\"\\']",
+      "date_regex": "(?:令和[0-9０-９一-九]+年[0-9０-９一-十二]+月[0-9０-９一-三十一]+日|20[2-9][0-9]年[0-1]?[0-9]月[0-3]?[0-9]日)",
+      "prefer_subpage_date": true,
+      "extract_subpage_materials_primary": true,
+      "pdf_selector": "href=[\"\\']([^\"\\']+\\.pdf)[\"\\']",
+      "private_doc_keyword": "非公開",
+      "detect_private_materials": false,
+      "extract_all_materials": true,
+      "resolve_absolute_urls": true,
+      "top_page_pdf_count": 1
+    }
+  },
+  "mod-cho-shin": {
+    "rule_id": "rule-mod-cho-shin-ai-v3",
+    "created_at": "2026-08-02 05:22:51",
+    "generator": "AI_Rule_Synthesis_Agent_v3",
+    "councilName": "防衛調達審議会",
+    "targetUrl": "https://www.mod.go.jp/j/policy/agenda/meeting/cho-shin/index.html",
+    "ministryQuirk": "標準省庁型: 汎用個別回パターン",
+    "rules": {
+      "encoding": "utf-8",
+      "deep_crawl_enabled": true,
+      "subpage_discovery_pattern": "href=[\"\\']([^\"\\']*(?:dai\\d+|\\d+kai|kaisai|gijisidai)[^\"\\'#]*)[\"\\']",
+      "date_regex": "(?:令和[0-9０-９一-九]+年[0-9０-９一-十二]+月[0-9０-９一-三十一]+日|20[2-9][0-9]年[0-1]?[0-9]月[0-3]?[0-9]日)",
+      "prefer_subpage_date": true,
+      "extract_subpage_materials_primary": true,
+      "pdf_selector": "href=[\"\\']([^\"\\']+\\.pdf)[\"\\']",
+      "private_doc_keyword": "非公開",
+      "detect_private_materials": false,
+      "extract_all_materials": true,
+      "resolve_absolute_urls": true,
+      "top_page_pdf_count": 79
+    }
+  },
+  "mod-drastic-reinforcement": {
+    "rule_id": "rule-mod-drastic-reinforcement-ai-v3",
+    "created_at": "2026-08-02 05:22:51",
+    "generator": "AI_Rule_Synthesis_Agent_v3",
+    "councilName": "防衛力の抜本的強化に関する有識者会議",
+    "targetUrl": "https://www.mod.go.jp/j/policy/agenda/meeting/drastic-reinforcement/index.html",
+    "ministryQuirk": "標準省庁型: 汎用個別回パターン",
+    "rules": {
+      "encoding": "utf-8",
+      "deep_crawl_enabled": true,
+      "subpage_discovery_pattern": "href=[\"\\']([^\"\\']*(?:dai\\d+|\\d+kai|kaisai|gijisidai)[^\"\\'#]*)[\"\\']",
+      "date_regex": "(?:令和[0-9０-９一-九]+年[0-9０-９一-十二]+月[0-9０-９一-三十一]+日|20[2-9][0-9]年[0-1]?[0-9]月[0-3]?[0-9]日)",
+      "prefer_subpage_date": true,
+      "extract_subpage_materials_primary": true,
+      "pdf_selector": "href=[\"\\']([^\"\\']+\\.pdf)[\"\\']",
+      "private_doc_keyword": "非公開",
+      "detect_private_materials": false,
+      "extract_all_materials": true,
+      "resolve_absolute_urls": true,
+      "top_page_pdf_count": 45
+    }
+  },
+  "mod-defense-industry-wg": {
+    "rule_id": "rule-mod-defense-industry-wg-ai-v3",
+    "created_at": "2026-08-02 05:22:51",
+    "generator": "AI_Rule_Synthesis_Agent_v3",
+    "councilName": "防衛産業ワーキンググループ",
+    "targetUrl": "https://www.mod.go.jp/j/policy/agenda/meeting/defense_industry_wg/index.html",
+    "ministryQuirk": "標準省庁型: 汎用個別回パターン",
+    "rules": {
+      "encoding": "utf-8",
+      "deep_crawl_enabled": false,
+      "subpage_discovery_pattern": "href=[\"\\']([^\"\\']*(?:dai\\d+|\\d+kai|kaisai|gijisidai)[^\"\\'#]*)[\"\\']",
+      "date_regex": "(?:令和[0-9０-９一-九]+年[0-9０-９一-十二]+月[0-9０-９一-三十一]+日|20[2-9][0-9]年[0-1]?[0-9]月[0-3]?[0-9]日)",
+      "prefer_subpage_date": true,
+      "extract_subpage_materials_primary": true,
+      "pdf_selector": "href=[\"\\']([^\"\\']+\\.pdf)[\"\\']",
+      "private_doc_keyword": "非公開",
+      "detect_private_materials": false,
+      "extract_all_materials": true,
+      "resolve_absolute_urls": true,
+      "top_page_pdf_count": 9
+    }
+  },
+  "maff-shokuryo-nogyo": {
+    "rule_id": "rule-maff-shokuryo-nogyo-ai-v3",
+    "created_at": "2026-08-02 05:22:51",
+    "generator": "AI_Rule_Synthesis_Agent_v3",
+    "councilName": "食料・農業・農村政策審議会",
+    "targetUrl": "https://www.maff.go.jp/j/council/seisaku/",
+    "ministryQuirk": "標準省庁型: 汎用個別回パターン",
+    "rules": {
+      "encoding": "utf-8",
+      "deep_crawl_enabled": true,
+      "subpage_discovery_pattern": "href=[\"\\']([^\"\\']*(?:dai\\d+|\\d+kai|kaisai|gijisidai)[^\"\\'#]*)[\"\\']",
+      "date_regex": "(?:令和[0-9０-９一-九]+年[0-9０-９一-十二]+月[0-9０-９一-三十一]+日|20[2-9][0-9]年[0-1]?[0-9]月[0-3]?[0-9]日)",
+      "prefer_subpage_date": true,
+      "extract_subpage_materials_primary": true,
+      "pdf_selector": "href=[\"\\']([^\"\\']+\\.pdf)[\"\\']",
+      "private_doc_keyword": "非公開",
+      "detect_private_materials": false,
+      "extract_all_materials": true,
+      "resolve_absolute_urls": true,
+      "top_page_pdf_count": 62
+    }
+  },
+  "mlit-shakai-sihon-soukai": {
+    "rule_id": "rule-mlit-shakai-sihon-soukai-ai-v3",
+    "created_at": "2026-08-02 05:22:52",
+    "generator": "AI_Rule_Synthesis_Agent_v3",
+    "councilName": "社会資本整備審議会",
+    "targetUrl": "https://www.mlit.go.jp/policy/shingikai/s201_shakai01.html",
+    "ministryQuirk": "標準省庁型: 汎用個別回パターン",
+    "rules": {
+      "encoding": "utf-8",
+      "deep_crawl_enabled": true,
+      "subpage_discovery_pattern": "href=[\"\\']([^\"\\']*(?:dai\\d+|\\d+kai|kaisai|gijisidai)[^\"\\'#]*)[\"\\']",
+      "date_regex": "(?:令和[0-9０-９一-九]+年[0-9０-９一-十二]+月[0-9０-９一-三十一]+日|20[2-9][0-9]年[0-1]?[0-9]月[0-3]?[0-9]日)",
+      "prefer_subpage_date": true,
+      "extract_subpage_materials_primary": true,
+      "pdf_selector": "href=[\"\\']([^\"\\']+\\.pdf)[\"\\']",
+      "private_doc_keyword": "非公開",
+      "detect_private_materials": false,
+      "extract_all_materials": true,
+      "resolve_absolute_urls": true,
+      "top_page_pdf_count": 2
+    }
+  },
+  "mlit-energy-anzenhosho-wg": {
+    "rule_id": "rule-mlit-energy-anzenhosho-wg-ai-v3",
+    "created_at": "2026-08-02 05:22:53",
+    "generator": "AI_Rule_Synthesis_Agent_v3",
+    "councilName": "エネルギー・経済安全保障小委員会",
+    "targetUrl": "https://www.mlit.go.jp/policy/shingikai/s404_anzenhosho.html",
+    "ministryQuirk": "標準省庁型: 汎用個別回パターン",
+    "rules": {
+      "encoding": "utf-8",
+      "deep_crawl_enabled": true,
+      "subpage_discovery_pattern": "href=[\"\\']([^\"\\']*(?:dai\\d+|\\d+kai|kaisai|gijisidai)[^\"\\'#]*)[\"\\']",
+      "date_regex": "(?:令和[0-9０-９一-九]+年[0-9０-９一-十二]+月[0-9０-９一-三十一]+日|20[2-9][0-9]年[0-1]?[0-9]月[0-3]?[0-9]日)",
+      "prefer_subpage_date": true,
+      "extract_subpage_materials_primary": true,
+      "pdf_selector": "href=[\"\\']([^\"\\']+\\.pdf)[\"\\']",
+      "private_doc_keyword": "非公開",
+      "detect_private_materials": false,
+      "extract_all_materials": true,
+      "resolve_absolute_urls": true,
+      "top_page_pdf_count": 0
+    }
+  },
+  "mlit-infra-management-wg": {
+    "rule_id": "rule-mlit-infra-management-wg-ai-v3",
+    "created_at": "2026-08-02 05:22:53",
+    "generator": "AI_Rule_Synthesis_Agent_v3",
+    "councilName": "インフラマネジメント戦略小委員会",
+    "targetUrl": "https://www.mlit.go.jp/policy/shingikai/s204_management02.html",
+    "ministryQuirk": "標準省庁型: 汎用個別回パターン",
+    "rules": {
+      "encoding": "utf-8",
+      "deep_crawl_enabled": true,
+      "subpage_discovery_pattern": "href=[\"\\']([^\"\\']*(?:dai\\d+|\\d+kai|kaisai|gijisidai)[^\"\\'#]*)[\"\\']",
+      "date_regex": "(?:令和[0-9０-９一-九]+年[0-9０-９一-十二]+月[0-9０-９一-三十一]+日|20[2-9][0-9]年[0-1]?[0-9]月[0-3]?[0-9]日)",
+      "prefer_subpage_date": true,
+      "extract_subpage_materials_primary": true,
+      "pdf_selector": "href=[\"\\']([^\"\\']+\\.pdf)[\"\\']",
+      "private_doc_keyword": "非公開",
+      "detect_private_materials": false,
+      "extract_all_materials": true,
+      "resolve_absolute_urls": true,
+      "top_page_pdf_count": 3
+    }
+  },
+  "npa-seisaku-hyoka-kenkyukai": {
+    "rule_id": "rule-npa-seisaku-hyoka-kenkyukai-ai-v3",
+    "created_at": "2026-08-02 05:22:54",
+    "generator": "AI_Rule_Synthesis_Agent_v3",
+    "councilName": "警察庁政策評価研究会",
+    "targetUrl": "https://www.npa.go.jp/policies/council/index.html",
+    "ministryQuirk": "標準省庁型: 汎用個別回パターン",
+    "rules": {
+      "encoding": "utf-8",
+      "deep_crawl_enabled": false,
+      "subpage_discovery_pattern": "href=[\"\\']([^\"\\']*(?:dai\\d+|\\d+kai|kaisai|gijisidai)[^\"\\'#]*)[\"\\']",
+      "date_regex": "20[2-9][0-9]年[0-1]?[0-9]月[0-3]?[0-9]日",
+      "prefer_subpage_date": true,
+      "extract_subpage_materials_primary": true,
+      "pdf_selector": "href=[\"\\']([^\"\\']+\\.pdf)[\"\\']",
+      "private_doc_keyword": "非公開",
+      "detect_private_materials": false,
+      "extract_all_materials": true,
+      "resolve_absolute_urls": true,
+      "top_page_pdf_count": 0
+    }
+  },
+  "nra-teireikai": {
+    "rule_id": "rule-nra-teireikai-ai-v3",
+    "created_at": "2026-08-02 05:22:54",
+    "generator": "AI_Rule_Synthesis_Agent_v3",
+    "councilName": "原子力規制委員会",
+    "targetUrl": "https://www.nra.go.jp/index.html",
+    "ministryQuirk": "標準省庁型: 汎用個別回パターン",
+    "rules": {
+      "encoding": "utf-8",
+      "deep_crawl_enabled": true,
+      "subpage_discovery_pattern": "href=[\"\\']([^\"\\']*(?:dai\\d+|\\d+kai|kaisai|gijisidai)[^\"\\'#]*)[\"\\']",
+      "date_regex": "(?:令和[0-9０-９一-九]+年[0-9０-９一-十二]+月[0-9０-９一-三十一]+日|20[2-9][0-9]年[0-1]?[0-9]月[0-3]?[0-9]日)",
+      "prefer_subpage_date": true,
+      "extract_subpage_materials_primary": true,
+      "pdf_selector": "href=[\"\\']([^\"\\']+\\.pdf)[\"\\']",
+      "private_doc_keyword": "非公開",
+      "detect_private_materials": false,
+      "extract_all_materials": true,
+      "resolve_absolute_urls": true,
+      "top_page_pdf_count": 0
+    }
+  },
+  "cao-space-anpo": {
+    "rule_id": "rule-cao-space-anpo-ai-v3",
+    "created_at": "2026-08-02 05:22:55",
+    "generator": "AI_Rule_Synthesis_Agent_v3",
+    "councilName": "宇宙政策委員会 宇宙安全保障部会",
+    "targetUrl": "https://www8.cao.go.jp/space/comittee/anpo.html",
+    "ministryQuirk": "内閣府型: ◯kai/◯kai.html または kaisai.html の個別の回ネスト",
+    "rules": {
+      "encoding": "utf-8",
+      "deep_crawl_enabled": true,
+      "subpage_discovery_pattern": "href=[\"\\']([^\"\\']*(?:dai\\d+|\\d+kai|kaisai|gijisidai)[^\"\\'#]*)[\"\\']",
+      "date_regex": "(?:令和[0-9０-９一-九]+年[0-9０-９一-十二]+月[0-9０-９一-三十一]+日|20[2-9][0-9]年[0-1]?[0-9]月[0-3]?[0-9]日)",
+      "prefer_subpage_date": true,
+      "extract_subpage_materials_primary": true,
+      "pdf_selector": "href=[\"\\']([^\"\\']+\\.pdf)[\"\\']",
+      "private_doc_keyword": "非公開",
+      "detect_private_materials": false,
+      "extract_all_materials": true,
+      "resolve_absolute_urls": true,
+      "top_page_pdf_count": 135
     }
   }
 }

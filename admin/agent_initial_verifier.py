@@ -12,11 +12,11 @@ import os
 import json
 import urllib.request
 import re
-import io
 from datetime import datetime
 
 # Windows ターミナルログの文字化け防止 (chcp 65001 & UTF-8 再構成)
 if sys.platform == "win32":
+    import io
     os.system("chcp 65001 > NUL 2>&1")
     try:
         if hasattr(sys.stdout, 'reconfigure'):
@@ -73,12 +73,6 @@ TARGET_COUNCILS = [
         "ministry": "CAO",
         "name": "人工知能戦略本部",
         "url": "https://www8.cao.go.jp/cstp/ai/ai_hq/kaisai.html"
-    },
-    {
-        "id": "cas-kokumin-kaigi",
-        "ministry": "CAS",
-        "name": "社会保障国民会議",
-        "url": "https://www.cas.go.jp/jp/seisaku/kokuminkaigi/index.html"
     },
     {
         "id": "digital-suishin",
@@ -228,6 +222,30 @@ DEFAULT_QUIRK = {
     "quirk_notes": "標準省庁型: 汎用個別回パターン"
 }
 
+def detect_deep_subpages(html):
+    subpage_matches = re.findall(r'href=["\']([^"\']*(?:dai\d+|\d+kai|kaisai|gijisidai|gijiroku|meetings|\d{8})[^"\'#]*)["\']', html, re.IGNORECASE)
+    return len(subpage_matches) > 0
+
+def get_ministry_quirk(url):
+    for domain, info in MINISTRY_QUIRKS.items():
+        if domain in url:
+            return info
+    return DEFAULT_QUIRK
+
+def determine_date_pattern(html):
+    has_fullwidth_nums = bool(re.search(r'[０-９]', html))
+    has_wareki = bool(re.search(r'令和[0-9０-９一-九]+年', html))
+
+    if has_fullwidth_nums or has_wareki:
+        return r'(?:令和[0-9０-９一-九]+年[0-9０-９一-十二]+月[0-9０-９一-三十一]+日|20[2-9][0-9]年[0-1]?[0-9]月[0-3]?[0-9]日)'
+    return r'20[2-9][0-9]年[0-1]?[0-9]月[0-3]?[0-9]日'
+
+def check_private_materials(html):
+    return "非公開" in html or "非公表" in html
+
+def count_pdfs(html):
+    return len(re.findall(r'href=["\']([^"\']+\.pdf)["\']', html, re.IGNORECASE))
+
 def synthesize_ai_rule_for_council(target, html):
     """
     【生成AI的ルール考案ロジック】
@@ -240,33 +258,21 @@ def synthesize_ai_rule_for_council(target, html):
     url = target["url"]
     
     # 1. サブページ階層（個別回）の検出と推論
-    subpage_matches = re.findall(r'href=["\']([^"\']*(?:dai\d+|\d+kai|kaisai|gijisidai|gijiroku|meetings|\d{8})[^"\'#]*)["\']', html, re.IGNORECASE)
-    has_deep_subpages = len(subpage_matches) > 0
+    has_deep_subpages = detect_deep_subpages(html)
     
     # 省庁別のサブページ構造クセの分類
-    quirk_info = DEFAULT_QUIRK
-    for domain, info in MINISTRY_QUIRKS.items():
-        if domain in url:
-            quirk_info = info
-            break
-
+    quirk_info = get_ministry_quirk(url)
     subpage_pattern = quirk_info["subpage_pattern"]
     quirk_notes = quirk_info["quirk_notes"]
 
     # 2. 全角数字・和暦/西暦パターンの解析
-    has_fullwidth_nums = bool(re.search(r'[０-９]', html))
-    has_wareki = bool(re.search(r'令和[0-9０-９一-九]+年', html))
-    
-    if has_fullwidth_nums or has_wareki:
-        date_pattern = r'(?:令和[0-9０-９一-九]+年[0-9０-９一-十二]+月[0-9０-９一-三十一]+日|20[2-9][0-9]年[0-1]?[0-9]月[0-3]?[0-9]日)'
-    else:
-        date_pattern = r'20[2-9][0-9]年[0-1]?[0-9]月[0-3]?[0-9]日'
+    date_pattern = determine_date_pattern(html)
 
     # 3. 非公開資料の検出
-    has_private = "非公開" in html or "非公表" in html
+    has_private = check_private_materials(html)
 
     # 4. 資料リンクおよびPDF件数の計測
-    pdf_count = len(re.findall(r'href=["\']([^"\']+\.pdf)["\']', html, re.IGNORECASE))
+    pdf_count = count_pdfs(html)
 
     # 5. 生成AI考案ルールの合成
     ai_rule = {
