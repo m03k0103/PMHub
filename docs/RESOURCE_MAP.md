@@ -19,6 +19,11 @@ PMHub/
 │   ├── scraped_councils_output.json # クローラー最新自動取得ログ・抽出JSONデータ
 │   └── admin_guide.md           # 管理者用 運用マニュアル・Cron/タスクスケジューラ設定ガイド
 │
+├── testing/                     # 【テスト用リソース】自動スモークテスト・単体テスト
+│   ├── smoke_test.py            # 自動スモークテストスイート（構文・リンク・ID同期検証）
+│   ├── test_escapeHtml.js       # セキュリティユーティリティ単体テストスクリプト
+│   └── app.test.js              # フロントエンドロジックユニットテスト
+│
 ├── docs/                        # 【全般ドキュメント】プロジェクト構成・役割説明書
 │   └── RESOURCE_MAP.md          # 本ファイル (リソースファイル役割構成書)
 │

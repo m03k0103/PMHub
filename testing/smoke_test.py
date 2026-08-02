@@ -232,7 +232,7 @@ def check_syntax_errors():
         os.path.join(PROJECT_ROOT, "public", "app.js"),
         os.path.join(PROJECT_ROOT, "admin", "crawler.py"),
         os.path.join(PROJECT_ROOT, "admin", "agent_initial_verifier.py"),
-        os.path.join(PROJECT_ROOT, "admin", "smoke_test.py")
+        os.path.join(PROJECT_ROOT, "testing", "smoke_test.py")
     ]
     
     errors_found = 0
@@ -350,7 +350,7 @@ def check_escape_html():
     print(" [テスト 3/4] JSユーティリティ関数の単体テスト実行")
     print("--------------------------------------------------")
     try:
-        test_script_path = os.path.join(PROJECT_ROOT, "admin", "test_escapeHtml.js")
+        test_script_path = os.path.join(PROJECT_ROOT, "testing", "test_escapeHtml.js")
         result = subprocess.run(["node", test_script_path], cwd=PROJECT_ROOT, capture_output=True, text=True, encoding='utf-8', errors='replace')
         if result.returncode == 0:
             print("  [PASS] escapeHtml 単体テスト通過")
