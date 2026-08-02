@@ -851,6 +851,16 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // --- DATA EXPORT ENGINE ---
+
+  // Helper to prevent CSV Injection (Formula Injection)
+  function sanitizeCsvField(field) {
+    if (typeof field !== 'string') return field;
+    if (field.startsWith('=') || field.startsWith('+') || field.startsWith('-') || field.startsWith('@')) {
+      return "'" + field;
+    }
+    return field;
+  }
+
   function exportFilteredData() {
     const list = filterMeetings();
     
@@ -866,13 +876,13 @@ document.addEventListener('DOMContentLoaded', () => {
     // 2. Export CSV (with UTF-8 BOM for Excel compatibility)
     const csvHeader = ["開催日", "所管省庁", "会議体名", "会議名", "資料件数", "一次ソースURL", "要約"];
     const csvRows = list.map(m => [
-      `"${m.date}"`,
-      `"${MINISTRIES[m.ministry]?.name || m.ministry}"`,
-      `"${m.councilName.replace(/"/g, '""')}"`,
-      `"${m.title.replace(/"/g, '""')}"`,
-      `"${m.materials ? m.materials.length : 0}"`,
-      `"${m.officialUrl}"`,
-      `"${(m.summary || '').replace(/"/g, '""')}"`
+      `"${sanitizeCsvField(m.date)}"`,
+      `"${sanitizeCsvField(MINISTRIES[m.ministry]?.name || m.ministry)}"`,
+      `"${sanitizeCsvField(m.councilName.replace(/"/g, '""'))}"`,
+      `"${sanitizeCsvField(m.title.replace(/"/g, '""'))}"`,
+      `"${sanitizeCsvField(m.materials ? String(m.materials.length) : '0')}"`,
+      `"${sanitizeCsvField(m.officialUrl)}"`,
+      `"${sanitizeCsvField((m.summary || '').replace(/"/g, '""'))}"`
     ].join(','));
 
     const csvContent = "\uFEFF" + [csvHeader.join(','), ...csvRows].join('\n');
