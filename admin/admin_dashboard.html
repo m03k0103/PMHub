@@ -143,6 +143,16 @@ JSON データを読み込み中...
         progressFill.style.width = '0%';
         logs.innerHTML = '';
 
+        if (typeof COUNCILS === 'undefined' || !Array.isArray(COUNCILS)) {
+          const errorLine = document.createElement('div');
+          errorLine.className = 'crawler-log-line';
+          errorLine.style.color = '#ef4444';
+          errorLine.innerHTML = `<span class="crawler-log-time">[ERROR]</span> <span>public/data.js が正常に読み込まれていません。ローカルファイルをブラウザで直接開いている場合、ブラウザのセキュリティ制限 (CORS/ローカルファイル制限) により data.js の読み込みがブロックされている可能性があります。サーバー (serve等) を経由してアクセスしてください。</span>`;
+          logs.appendChild(errorLine);
+          crawlBtn.disabled = false;
+          return;
+        }
+
         const targets = COUNCILS.map(c => {
           const minName = (typeof MINISTRIES !== 'undefined' && MINISTRIES[c.ministry]) ? MINISTRIES[c.ministry].name : c.ministry;
           let domain = 'go.jp';
