@@ -2,7 +2,7 @@
    政策会議ウォッチ (PM-HUB) - All 21 Japanese Government Ministries & Agencies Dataset
    ========================================================================== */
 
-const LAST_CRAWL_TIME = '2026/08/02 20:47';
+const LAST_CRAWL_TIME = '2026/08/05 21:13';
 
 const INITIAL_ALERT_KEYWORDS = ['AI', 'デジタル', '規制改革', '社会保障', '半導体', 'GX', '経済安全保障', 'エネルギー'];
 
@@ -257,7 +257,7 @@ const COUNCILS = [
     name: '社会資本整備審議会環境部会・交通政策審議会環境部会 エネルギー・経済安全保障小委員会',
     ministry: 'MLIT',
     category: 'COUNCIL',
-    pastYearCount: 1,
+    pastYearCount: 11,
     description: '国土交通分野におけるエネルギー脱炭素化および経済安全保障確立に向けた総合戦略を審議。',
     officialUrl: 'https://www.mlit.go.jp/policy/shingikai/s404_anzenhosho.html',
     isWatched: true,
@@ -420,110 +420,110 @@ const COUNCILS = [
     name: 'アイヌ政策推進本部',
     ministry: 'CAS',
     category: 'HQ',
-    pastYearCount: 1,
+    pastYearCount: 11,
     description: 'アイヌ政策推進本部の基本方針、施策の推進状況および関係省庁間の連携・個別課題について審議する会議。',
     officialUrl: 'https://www.cas.go.jp/jp/seisakukaigi/ainusuishin/index.html',
     isWatched: true,
-    trackedSince: '2026/08/01'
+    trackedSince: '2017/04/26'
   },
   {
     id: 'cas-enerugi-2',
     name: 'エネルギー・食料等国民生活を支える基盤の戦略的強化に向けた関係閣僚会議',
     ministry: 'CAS',
     category: 'LIAISON',
-    pastYearCount: 1,
+    pastYearCount: 11,
     description: 'エネルギー・食料等国民生活を支える基盤の戦略的強化に向けた関係閣僚会議の基本方針、施策の推進状況および関係省庁間の連携・個別課題について審議する会議。',
     officialUrl: 'https://www.cas.go.jp/jp/seisaku/enerugi/index.html',
     isWatched: true,
-    trackedSince: '2026/08/01'
+    trackedSince: '2017/04/26'
   },
   {
     id: 'cas-gaikokujinzai-3',
     name: '外国人の受入れ・秩序ある共生社会実現に関する関係閣僚会議幹事会',
     ministry: 'CAS',
     category: 'LIAISON',
-    pastYearCount: 1,
+    pastYearCount: 11,
     description: '外国人の受入れ・秩序ある共生社会実現に関する関係閣僚会議幹事会の基本方針、施策の推進状況および関係省庁間の連携・個別課題について審議する会議。',
     officialUrl: 'https://www.cas.go.jp/jp/seisakukaigi/gaikokujinzai/index.html',
     isWatched: true,
-    trackedSince: '2026/08/01'
+    trackedSince: '2017/04/26'
   },
   {
     id: 'cas-ebola_hemorrhagic_fever_kankeishoutyou-5',
     name: 'エボラ出血熱に関する関係省庁対策会議',
     ministry: 'CAS',
     category: 'LIAISON',
-    pastYearCount: 1,
+    pastYearCount: 11,
     description: 'エボラ出血熱に関する関係省庁対策会議の基本方針、施策の推進状況および関係省庁間の連携・個別課題について審議する会議。',
     officialUrl: 'https://www.cas.go.jp/jp/seisaku/ebola_hemorrhagic_fever_kankeishoutyou/index.html',
     isWatched: true,
-    trackedSince: '2026/08/01'
+    trackedSince: '2017/04/26'
   },
   {
     id: 'cas-kanshikyoka-6',
     name: '柏崎刈羽原子力発電所の運営に関する監視強化チーム',
     ministry: 'CAS',
     category: 'PANEL',
-    pastYearCount: 1,
+    pastYearCount: 11,
     description: '柏崎刈羽原子力発電所の運営に関する監視強化チームの基本方針、施策の推進状況および関係省庁間の連携・個別課題について審議する会議。',
     officialUrl: 'https://www.cas.go.jp/jp/seisaku/kanshikyoka/index.html',
     isWatched: true,
-    trackedSince: '2026/08/01'
+    trackedSince: '2017/04/26'
   },
   {
     id: 'cas-kaihotaisei-7',
     name: '海上保安能力強化に関する関係閣僚会議',
     ministry: 'CAS',
     category: 'LIAISON',
-    pastYearCount: 1,
+    pastYearCount: 11,
     description: '海上保安能力強化に関する関係閣僚会議の基本方針、施策の推進状況および関係省庁間の連携・個別課題について審議する会議。',
     officialUrl: 'https://www.cas.go.jp/jp/seisakukaigi/kaihotaisei/',
     isWatched: true,
-    trackedSince: '2026/08/01'
+    trackedSince: '2017/04/26'
   },
   {
     id: 'cas-kyuyo-9',
     name: '給与関係閣僚会議',
     ministry: 'CAS',
     category: 'LIAISON',
-    pastYearCount: 1,
+    pastYearCount: 11,
     description: '給与関係閣僚会議の基本方針、施策の推進状況および関係省庁間の連携・個別課題について審議する会議。',
     officialUrl: 'https://www.cas.go.jp/jp/seisaku/kyuyo/index.html',
     isWatched: true,
-    trackedSince: '2026/08/01'
+    trackedSince: '2017/04/26'
   },
   {
     id: 'cas-gambletou_izonsho-10',
     name: 'ギャンブル等依存症対策推進本部幹事会',
     ministry: 'CAS',
     category: 'HQ',
-    pastYearCount: 1,
+    pastYearCount: 11,
     description: 'ギャンブル等依存症対策推進本部幹事会の基本方針、施策の推進状況および関係省庁間の連携・個別課題について審議する会議。',
     officialUrl: 'https://www.cas.go.jp/jp/seisakukaigi/gambletou_izonsho/',
     isWatched: true,
-    trackedSince: '2026/08/01'
+    trackedSince: '2017/04/26'
   },
   {
     id: 'cas-gskaigi-11',
     name: '行政改革推進会議',
     ministry: 'CAS',
     category: 'PANEL',
-    pastYearCount: 1,
+    pastYearCount: 11,
     description: '行政改革推進会議の基本方針、施策の推進状況および関係省庁間の連携・個別課題について審議する会議。',
     officialUrl: 'https://www.cas.go.jp/jp/seisaku/gskaigi/index.html',
     isWatched: true,
-    trackedSince: '2026/08/01'
+    trackedSince: '2017/04/26'
   },
   {
     id: 'cao-keizai_shimon-12',
     name: '経済財政諮問会議',
     ministry: 'CAO',
     category: 'ADVISORY',
-    pastYearCount: 1,
+    pastYearCount: 11,
     description: '経済財政諮問会議の基本方針、施策の推進状況および関係省庁間の連携・個別課題について審議する会議。',
     officialUrl: 'https://www5.cao.go.jp/keizai-shimon/',
     isWatched: true,
-    trackedSince: '2026/08/01'
+    trackedSince: '2017/04/26'
   },
   {
     id: 'cao-getsurei-13',
@@ -552,44 +552,44 @@ const COUNCILS = [
     name: '原子力災害からの福島復興再生協議会',
     ministry: 'RA',
     category: 'PANEL',
-    pastYearCount: 1,
+    pastYearCount: 11,
     description: '原子力災害からの福島復興再生協議会の基本方針、施策の推進状況および関係省庁間の連携・個別課題について審議する会議。',
     officialUrl: 'https://www.reconstruction.go.jp/topics/cat-11/cat-41/cat-129/cat-130/000818/',
     isWatched: true,
-    trackedSince: '2026/08/01'
+    trackedSince: '2017/04/26'
   },
   {
     id: 'cas-grassrootsTF-16',
     name: 'グラスルーツからの日米関係強化に関する政府タスクフォース（各地各様のアプローチ）',
     ministry: 'CAS',
     category: 'WORKING_GROUP',
-    pastYearCount: 1,
+    pastYearCount: 11,
     description: 'グラスルーツからの日米関係強化に関する政府タスクフォース（各地各様のアプローチ）の基本方針、施策の推進状況および関係省庁間の連携・個別課題について審議する会議。',
     officialUrl: 'https://www.cas.go.jp/jp/seisakukaigi/grassrootsTF/',
     isWatched: true,
-    trackedSince: '2026/08/01'
+    trackedSince: '2017/04/26'
   },
   {
     id: 'cao-oaep-17',
     name: '原子力立地会議',
     ministry: 'CAO',
     category: 'PANEL',
-    pastYearCount: 1,
+    pastYearCount: 11,
     description: '原子力立地会議の基本方針、施策の推進状況および関係省庁間の連携・個別課題について審議する会議。',
     officialUrl: 'https://wwwa.cao.go.jp/oaep/tokubetsusochi.html',
     isWatched: true,
-    trackedSince: '2026/08/01'
+    trackedSince: '2017/04/26'
   },
   {
     id: 'cao-measure-18',
     name: '高齢社会対策会議',
     ministry: 'CAO',
     category: 'PANEL',
-    pastYearCount: 1,
+    pastYearCount: 11,
     description: '高齢社会対策会議の基本方針、施策の推進状況および関係省庁間の連携・個別課題について審議する会議。',
     officialUrl: 'https://www8.cao.go.jp/kourei/measure/a_5.html',
     isWatched: true,
-    trackedSince: '2026/08/01'
+    trackedSince: '2017/04/26'
   },
   {
     id: 'cas-genshiryoku_kakuryo_kaigi-19',
@@ -607,55 +607,55 @@ const COUNCILS = [
     name: '健康・医療戦略推進本部',
     ministry: 'CAS',
     category: 'HQ',
-    pastYearCount: 1,
+    pastYearCount: 11,
     description: '健康・医療戦略推進本部の基本方針、施策の推進状況および関係省庁間の連携・個別課題について審議する会議。',
     officialUrl: 'https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/',
     isWatched: true,
-    trackedSince: '2026/08/01'
+    trackedSince: '2017/04/26'
   },
   {
     id: 'cas-kokusai_kansen-21',
     name: '国際的に脅威となる感染症対策の強化のための国際連携等関係閣僚会議',
     ministry: 'CAS',
     category: 'LIAISON',
-    pastYearCount: 1,
+    pastYearCount: 11,
     description: '国際的に脅威となる感染症対策の強化のための国際連携等関係閣僚会議の基本方針、施策の推進状況および関係省庁間の連携・個別課題について審議する会議。',
     officialUrl: 'https://www.cas.go.jp/jp/seisakukaigi/kokusai_kansen/index.html',
     isWatched: true,
-    trackedSince: '2026/08/01'
+    trackedSince: '2017/04/26'
   },
   {
     id: 'cas-kyoujinka-22',
     name: '国土強靱化の推進に関する関係府省庁連絡会議',
     ministry: 'CAS',
     category: 'LIAISON',
-    pastYearCount: 1,
+    pastYearCount: 11,
     description: '国土強靱化の推進に関する関係府省庁連絡会議の基本方針、施策の推進状況および関係省庁間の連携・個別課題について審議する会議。',
     officialUrl: 'https://www.cas.go.jp/jp/seisaku/kyoujinka/index.html',
     isWatched: true,
-    trackedSince: '2026/08/01'
+    trackedSince: '2017/04/26'
   },
   {
     id: 'cao-suishinhonbu-23',
     name: '孤独・孤立対策推進本部',
     ministry: 'CAO',
     category: 'HQ',
-    pastYearCount: 1,
+    pastYearCount: 11,
     description: '孤独・孤立対策推進本部の基本方針、施策の推進状況および関係省庁間の連携・個別課題について審議する会議。',
     officialUrl: 'https://www.cao.go.jp/kodoku_koritsu/torikumi/suishinhonbu/index.html',
     isWatched: true,
-    trackedSince: '2026/08/01'
+    trackedSince: '2017/04/26'
   },
   {
     id: 'cas-kokusentoc-24',
     name: '国家戦略特別区域諮問会議',
     ministry: 'CAS',
     category: 'ADVISORY',
-    pastYearCount: 1,
+    pastYearCount: 11,
     description: '国家戦略特別区域諮問会議の基本方針、施策の推進状況および関係省庁間の連携・個別課題について審議する会議。',
     officialUrl: 'https://www.chisou.go.jp/tiiki/kokusentoc/shimonkaigi.html',
     isWatched: true,
-    trackedSince: '2026/08/01'
+    trackedSince: '2017/04/26'
   },
   {
     id: 'cao-contents_kyogikai-25',
@@ -673,44 +673,44 @@ const COUNCILS = [
     name: '原子力防災会議',
     ministry: 'CAS',
     category: 'PANEL',
-    pastYearCount: 1,
+    pastYearCount: 11,
     description: '原子力防災会議の基本方針、施策の推進状況および関係省庁間の連携・個別課題について審議する会議。',
     officialUrl: 'https://www.cas.go.jp/jp/seisakukaigi/genshiryoku_bousai/',
     isWatched: true,
-    trackedSince: '2026/08/01'
+    trackedSince: '2017/04/26'
   },
   {
     id: 'cas-kome_anteikyokyujitsugen_kaigi-27',
     name: '米の安定供給等実現関係閣僚会議',
     ministry: 'CAS',
     category: 'LIAISON',
-    pastYearCount: 1,
+    pastYearCount: 11,
     description: '米の安定供給等実現関係閣僚会議の基本方針、施策の推進状況および関係省庁間の連携・個別課題について審議する会議。',
     officialUrl: 'https://www.cas.go.jp/jp/seisakukaigi/nousui/kome_anteikyokyujitsugen_kaigi/index.html',
     isWatched: true,
-    trackedSince: '2026/08/01'
+    trackedSince: '2017/04/26'
   },
   {
     id: 'cas-kokudo_kyoujinka-28',
     name: '国土強靱化推進本部',
     ministry: 'CAS',
     category: 'HQ',
-    pastYearCount: 1,
+    pastYearCount: 11,
     description: '国土強靱化推進本部の基本方針、施策の推進状況および関係省庁間の連携・個別課題について審議する会議。',
     officialUrl: 'https://www.cas.go.jp/jp/seisakukaigi/kokudo_kyoujinka/',
     isWatched: true,
-    trackedSince: '2026/08/01'
+    trackedSince: '2017/04/26'
   },
   {
     id: 'cas-jieikan-29',
     name: '自衛官の処遇・勤務環境の改善及び新たな生涯設計の確立に関する関係閣僚会議',
     ministry: 'CAS',
     category: 'LIAISON',
-    pastYearCount: 1,
+    pastYearCount: 11,
     description: '自衛官の処遇・勤務環境の改善及び新たな生涯設計の確立に関する関係閣僚会議の基本方針、施策の推進状況および関係省庁間の連携・個別課題について審議する会議。',
     officialUrl: 'https://www.cas.go.jp/jp/seisaku/jieikan/index.html',
     isWatched: true,
-    trackedSince: '2026/08/01'
+    trackedSince: '2017/04/26'
   },
   {
     id: 'cas-cs-30',
@@ -728,22 +728,22 @@ const COUNCILS = [
     name: '持続可能な開発目標（ＳＤＧｓ）推進本部',
     ministry: 'CAS',
     category: 'HQ',
-    pastYearCount: 1,
+    pastYearCount: 11,
     description: '持続可能な開発目標（ＳＤＧｓ）推進本部の基本方針、施策の推進状況および関係省庁間の連携・個別課題について審議する会議。',
     officialUrl: 'https://www.cas.go.jp/jp/seisakukaigi/sdgs/index.html',
     isWatched: true,
-    trackedSince: '2026/08/01'
+    trackedSince: '2017/04/26'
   },
   {
     id: 'cas-gx_jikkou_kaigi-32',
     name: 'ＧＸ実行会議',
     ministry: 'CAS',
     category: 'PANEL',
-    pastYearCount: 1,
+    pastYearCount: 11,
     description: 'ＧＸ実行会議の基本方針、施策の推進状況および関係省庁間の連携・個別課題について審議する会議。',
     officialUrl: 'https://www.cas.go.jp/jp/seisaku/gx_jikkou_kaigi/index.html',
     isWatched: true,
-    trackedSince: '2026/08/01'
+    trackedSince: '2017/04/26'
   },
   {
     id: 'mlit-meeting-33',
@@ -761,66 +761,66 @@ const COUNCILS = [
     name: '重要経済安保情報保護活用諮問会議',
     ministry: 'CAO',
     category: 'ADVISORY',
-    pastYearCount: 1,
+    pastYearCount: 11,
     description: '重要経済安保情報保護活用諮問会議の基本方針、施策の推進状況および関係省庁間の連携・個別課題について審議する会議。',
     officialUrl: 'https://www.cao.go.jp/keizai_anzen_hosho/hogokatsuyou/shimon/shimon.html',
     isWatched: true,
-    trackedSince: '2026/08/01'
+    trackedSince: '2017/04/26'
   },
   {
     id: 'cas-kyouseishakai-35',
     name: '障害者に対する偏見や差別のない共生社会の実現に向けた対策推進本部',
     ministry: 'CAS',
     category: 'HQ',
-    pastYearCount: 1,
+    pastYearCount: 11,
     description: '障害者に対する偏見や差別のない共生社会の実現に向けた対策推進本部の基本方針、施策の推進状況および関係省庁間の連携・個別課題について審議する会議。',
     officialUrl: 'https://www.cas.go.jp/jp/seisaku/kyouseishakai/index.html',
     isWatched: true,
-    trackedSince: '2026/08/01'
+    trackedSince: '2017/04/26'
   },
   {
     id: 'cas-kankeikakuryokaigi-36',
     name: '就職氷河期世代等支援に関する関係閣僚会議',
     ministry: 'CAS',
     category: 'LIAISON',
-    pastYearCount: 1,
+    pastYearCount: 11,
     description: '就職氷河期世代等支援に関する関係閣僚会議の基本方針、施策の推進状況および関係省庁間の連携・個別課題について審議する会議。',
     officialUrl: 'https://www.cas.go.jp/jp/seisaku/shushoku_hyogaki_shien/kankeikakuryokaigi/index.html',
     isWatched: true,
-    trackedSince: '2026/08/01'
+    trackedSince: '2017/04/26'
   },
   {
     id: 'cas-jyouhouhozen-37',
     name: '情報保全諮問会議',
     ministry: 'CAS',
     category: 'ADVISORY',
-    pastYearCount: 1,
+    pastYearCount: 11,
     description: '情報保全諮問会議の基本方針、施策の推進状況および関係省庁間の連携・個別課題について審議する会議。',
     officialUrl: 'https://www.cas.go.jp/jp/seisaku/jyouhouhozen/index.html',
     isWatched: true,
-    trackedSince: '2026/08/01'
+    trackedSince: '2017/04/26'
   },
   {
     id: 'maff-kaigi-38',
     name: '食育推進会議',
     ministry: 'MAFF',
     category: 'PANEL',
-    pastYearCount: 1,
+    pastYearCount: 11,
     description: '食育推進会議の基本方針、施策の推進状況および関係省庁間の連携・個別課題について審議する会議。',
     officialUrl: 'https://www.maff.go.jp/j/syokuiku/kaigi/suisin.html',
     isWatched: true,
-    trackedSince: '2026/08/01'
+    trackedSince: '2017/04/26'
   },
   {
     id: 'caa-review_meeting_002-39',
     name: '食品ロス削減推進会議',
     ministry: 'CAA',
     category: 'PANEL',
-    pastYearCount: 1,
+    pastYearCount: 11,
     description: '食品ロス削減推進会議の基本方針、施策の推進状況および関係省庁間の連携・個別課題について審議する会議。',
     officialUrl: 'https://www.caa.go.jp/policies/policy/consumer_education/meeting_materials/review_meeting_002/',
     isWatched: true,
-    trackedSince: '2026/08/01'
+    trackedSince: '2017/04/26'
   },
   {
     id: 'cas-nousui-40',
@@ -849,11 +849,11 @@ const COUNCILS = [
     name: '税制調査会',
     ministry: 'CAO',
     category: 'PANEL',
-    pastYearCount: 1,
+    pastYearCount: 11,
     description: '税制調査会の基本方針、施策の推進状況および関係省庁間の連携・個別課題について審議する会議。',
     officialUrl: 'https://www.cao.go.jp/zei-cho/',
     isWatched: true,
-    trackedSince: '2026/08/01'
+    trackedSince: '2017/04/26'
   },
   {
     id: 'mic-chiji_kaigi-43',
@@ -882,11 +882,11 @@ const COUNCILS = [
     name: '人身取引対策推進会議',
     ministry: 'CAS',
     category: 'PANEL',
-    pastYearCount: 1,
+    pastYearCount: 11,
     description: '人身取引対策推進会議の基本方針、施策の推進状況および関係省庁間の連携・個別課題について審議する会議。',
     officialUrl: 'https://www.cas.go.jp/jp/seisakukaigi/jinsintorihiki/index.html',
     isWatched: true,
-    trackedSince: '2026/08/01'
+    trackedSince: '2017/04/26'
   },
   {
     id: 'cas-kagayakujosei-46',
@@ -904,176 +904,176 @@ const COUNCILS = [
     name: '新戦略策定のための資産運用立国推進分科会',
     ministry: 'CAS',
     category: 'SUBCOMMITTEE',
-    pastYearCount: 1,
+    pastYearCount: 11,
     description: '新戦略策定のための資産運用立国推進分科会の基本方針、施策の推進状況および関係省庁間の連携・個別課題について審議する会議。',
     officialUrl: 'https://www.cas.go.jp/jp/seisaku/nipponseichosenryaku/kinyu/index.html',
     isWatched: true,
-    trackedSince: '2026/08/01'
+    trackedSince: '2017/04/26'
   },
   {
     id: 'cas-seme_no_yobouiryou-48',
     name: '攻めの予防医療に向けた性差に由来するヘルスケアに関する副大臣等会議',
     ministry: 'CAS',
     category: 'PANEL',
-    pastYearCount: 1,
+    pastYearCount: 11,
     description: '攻めの予防医療に向けた性差に由来するヘルスケアに関する副大臣等会議の基本方針、施策の推進状況および関係省庁間の連携・個別課題について審議する会議。',
     officialUrl: 'https://www.cas.go.jp/jp/seisaku/seme_no_yobouiryou/index.html',
     isWatched: true,
-    trackedSince: '2026/08/01'
+    trackedSince: '2017/04/26'
   },
   {
     id: 'cas-senryaku-49',
     name: '戦略分野分科会',
     ministry: 'CAS',
     category: 'SUBCOMMITTEE',
-    pastYearCount: 1,
+    pastYearCount: 11,
     description: '戦略分野分科会の基本方針、施策の推進状況および関係省庁間の連携・個別課題について審議する会議。',
     officialUrl: 'https://www.cas.go.jp/jp/seisaku/nipponseichosenryaku/senryaku/index.html',
     isWatched: true,
-    trackedSince: '2026/08/01'
+    trackedSince: '2017/04/26'
   },
   {
     id: 'cas-zensedai_shakaihosho_kochiku-50',
     name: '全世代型社会保障構築本部',
     ministry: 'CAS',
     category: 'HQ',
-    pastYearCount: 1,
+    pastYearCount: 11,
     description: '全世代型社会保障構築本部の基本方針、施策の推進状況および関係省庁間の連携・個別課題について審議する会議。',
     officialUrl: 'https://www.cas.go.jp/jp/seisaku/zensedai_shakaihosho_kochiku/index.html',
     isWatched: true,
-    trackedSince: '2026/08/01'
+    trackedSince: '2017/04/26'
   },
   {
     id: 'cas-kaiyou-51',
     name: '総合海洋政策本部',
     ministry: 'CAS',
     category: 'HQ',
-    pastYearCount: 1,
+    pastYearCount: 11,
     description: '総合海洋政策本部の基本方針、施策の推進状況および関係省庁間の連携・個別課題について審議する会議。',
     officialUrl: 'https://www.cas.go.jp/jp/seisakukaigi/kaiyou/index.html',
     isWatched: true,
-    trackedSince: '2026/08/01'
+    trackedSince: '2017/04/26'
   },
   {
     id: 'cas-seiroushi-52',
     name: '政労使の意見交換',
     ministry: 'CAS',
     category: 'PANEL',
-    pastYearCount: 1,
+    pastYearCount: 11,
     description: '政労使の意見交換の基本方針、施策の推進状況および関係省庁間の連携・個別課題について審議する会議。',
     officialUrl: 'https://www.cas.go.jp/jp/seisaku/nipponseichosenryaku/seiroushi/index.html',
     isWatched: true,
-    trackedSince: '2026/08/01'
+    trackedSince: '2017/04/26'
   },
   {
     id: 'cas-dai1-53',
     name: '総合特別区域推進本部',
     ministry: 'CAS',
     category: 'HQ',
-    pastYearCount: 1,
+    pastYearCount: 11,
     description: '総合特別区域推進本部の基本方針、施策の推進状況および関係省庁間の連携・個別課題について審議する会議。',
     officialUrl: 'https://www.chisou.go.jp/tiiki/sogotoc/sinsei/dai1/index.html',
     isWatched: true,
-    trackedSince: '2026/08/01'
+    trackedSince: '2017/04/26'
   },
   {
     id: 'cas-sozei-54',
     name: '租税特別措置・補助金見直しに関する関係閣僚等及び副大臣会議',
     ministry: 'CAS',
     category: 'PANEL',
-    pastYearCount: 1,
+    pastYearCount: 11,
     description: '租税特別措置・補助金見直しに関する関係閣僚等及び副大臣会議の基本方針、施策の推進状況および関係省庁間の連携・個別課題について審議する会議。',
     officialUrl: 'https://www.cas.go.jp/jp/seisaku/sozei/index.html',
     isWatched: true,
-    trackedSince: '2026/08/01'
+    trackedSince: '2017/04/26'
   },
   {
     id: 'cas-senpaku_top-55',
     name: '船舶活用医療推進本部',
     ministry: 'CAS',
     category: 'HQ',
-    pastYearCount: 1,
+    pastYearCount: 11,
     description: '船舶活用医療推進本部の基本方針、施策の推進状況および関係省庁間の連携・個別課題について審議する会議。',
     officialUrl: 'https://www.cas.go.jp/jp/seisaku/senpaku_top/index.html',
     isWatched: true,
-    trackedSince: '2026/08/01'
+    trackedSince: '2017/04/26'
   },
   {
     id: 'cao-committee-56',
     name: '対日直接投資推進会議',
     ministry: 'CAO',
     category: 'PANEL',
-    pastYearCount: 1,
+    pastYearCount: 11,
     description: '対日直接投資推進会議の基本方針、施策の推進状況および関係省庁間の連携・個別課題について審議する会議。',
     officialUrl: 'https://www.cao.go.jp/invest-japan/committee/index.html',
     isWatched: true,
-    trackedSince: '2026/08/01'
+    trackedSince: '2017/04/26'
   },
   {
     id: 'cas-koukyou_infra-57',
     name: '総合的な防衛体制の強化に資する研究開発及び公共インフラ整備に関する関係閣僚会議',
     ministry: 'CAS',
     category: 'LIAISON',
-    pastYearCount: 1,
+    pastYearCount: 11,
     description: '総合的な防衛体制の強化に資する研究開発及び公共インフラ整備に関する関係閣僚会議の基本方針、施策の推進状況および関係省庁間の連携・個別課題について審議する会議。',
     officialUrl: 'https://www.cas.go.jp/jp/seisaku/koukyou_infra/index.html',
     isWatched: true,
-    trackedSince: '2026/08/01'
+    trackedSince: '2017/04/26'
   },
   {
     id: 'mic-chihou_seido-58',
     name: '地方制度調査会',
     ministry: 'MIC',
     category: 'PANEL',
-    pastYearCount: 1,
+    pastYearCount: 11,
     description: '地方制度調査会の基本方針、施策の推進状況および関係省庁間の連携・個別課題について審議する会議。',
     officialUrl: 'https://www.soumu.go.jp/main_sosiki/singi/chihou_seido/singi.html',
     isWatched: true,
-    trackedSince: '2026/08/01'
+    trackedSince: '2017/04/26'
   },
   {
     id: 'cas-megasolar-59',
     name: '大規模太陽光発電事業に関する関係閣僚会議',
     ministry: 'CAS',
     category: 'LIAISON',
-    pastYearCount: 1,
+    pastYearCount: 11,
     description: '大規模太陽光発電事業に関する関係閣僚会議の基本方針、施策の推進状況および関係省庁間の連携・個別課題について審議する会議。',
     officialUrl: 'https://www.cas.go.jp/jp/seisaku/megasolar/index.html',
     isWatched: true,
-    trackedSince: '2026/08/01'
+    trackedSince: '2017/04/26'
   },
   {
     id: 'cas-clt_etc-60',
     name: '多様な木質材料の活用促進に関する関係省庁連絡会議（旧ＣＬＴ活用促進に関する関係省庁連絡会議）',
     ministry: 'CAS',
     category: 'LIAISON',
-    pastYearCount: 1,
+    pastYearCount: 11,
     description: '多様な木質材料の活用促進に関する関係省庁連絡会議（旧ＣＬＴ活用促進に関する関係省庁連絡会議）の基本方針、施策の推進状況および関係省庁間の連携・個別課題について審議する会議。',
     officialUrl: 'https://www.cas.go.jp/jp/seisaku/clt-etc/index.html',
     isWatched: true,
-    trackedSince: '2026/08/01'
+    trackedSince: '2017/04/26'
   },
   {
     id: 'cas-chuobou-61',
     name: '中央防災会議',
     ministry: 'CAS',
     category: 'PANEL',
-    pastYearCount: 1,
+    pastYearCount: 11,
     description: '中央防災会議の基本方針、施策の推進状況および関係省庁間の連携・個別課題について審議する会議。',
     officialUrl: 'https://www.bousai.go.jp/kaigirep/chuobou/',
     isWatched: true,
-    trackedSince: '2026/08/01'
+    trackedSince: '2017/04/26'
   },
   {
     id: 'cas-tiikisaisei-62',
     name: '地域再生本部',
     ministry: 'CAS',
     category: 'HQ',
-    pastYearCount: 1,
+    pastYearCount: 11,
     description: '地域再生本部の基本方針、施策の推進状況および関係省庁間の連携・個別課題について審議する会議。',
     officialUrl: 'https://www.chisou.go.jp/tiiki/tiikisaisei/kaisai.html',
     isWatched: true,
-    trackedSince: '2026/08/01'
+    trackedSince: '2017/04/26'
   },
   {
     id: 'cas-chiikimirai-63',
@@ -1091,88 +1091,88 @@ const COUNCILS = [
     name: '地球温暖化対策推進本部',
     ministry: 'CAS',
     category: 'HQ',
-    pastYearCount: 1,
+    pastYearCount: 11,
     description: '地球温暖化対策推進本部の基本方針、施策の推進状況および関係省庁間の連携・個別課題について審議する会議。',
     officialUrl: 'https://www.cas.go.jp/jp/seisakukaigi/ondanka/index.html',
     isWatched: true,
-    trackedSince: '2026/08/01'
+    trackedSince: '2017/04/26'
   },
   {
     id: 'cas-indexhtmlsuisin_kaigi_record-65',
     name: '地域働き方・職場改革等推進会議',
     ministry: 'CAS',
     category: 'PANEL',
-    pastYearCount: 1,
+    pastYearCount: 11,
     description: '地域働き方・職場改革等推進会議の基本方針、施策の推進状況および関係省庁間の連携・個別課題について審議する会議。',
     officialUrl: 'https://www.cas.go.jp/jp/seisaku/chiikihatarakikata/index.html#suisin-kaigi-record',
     isWatched: true,
-    trackedSince: '2026/08/01'
+    trackedSince: '2017/04/26'
   },
   {
     id: 'cas-katsuryoku_kojyo-66',
     name: '中堅企業等の成長促進に関するワーキンググループ',
     ministry: 'CAS',
     category: 'WORKING_GROUP',
-    pastYearCount: 1,
+    pastYearCount: 11,
     description: '中堅企業等の成長促進に関するワーキンググループの基本方針、施策の推進状況および関係省庁間の連携・個別課題について審議する会議。',
     officialUrl: 'https://www.cas.go.jp/jp/seisakukaigi/katsuryoku_kojyo/index.html',
     isWatched: true,
-    trackedSince: '2026/08/01'
+    trackedSince: '2017/04/26'
   },
   {
     id: 'cas-chukatu-67',
     name: '中心市街地活性化本部',
     ministry: 'CAS',
     category: 'HQ',
-    pastYearCount: 1,
+    pastYearCount: 11,
     description: '中心市街地活性化本部の基本方針、施策の推進状況および関係省庁間の連携・個別課題について審議する会議。',
     officialUrl: 'https://www.chisou.go.jp/tiiki/chukatu/konkyo.html',
     isWatched: true,
-    trackedSince: '2026/08/01'
+    trackedSince: '2017/04/26'
   },
   {
     id: 'cao-tougosenryaku-68',
     name: '統合イノベーション戦略推進会議',
     ministry: 'CAO',
     category: 'PANEL',
-    pastYearCount: 1,
+    pastYearCount: 11,
     description: '統合イノベーション戦略推進会議の基本方針、施策の推進状況および関係省庁間の連携・個別課題について審議する会議。',
     officialUrl: 'https://www8.cao.go.jp/cstp/tougosenryaku/kaigi.html',
     isWatched: true,
-    trackedSince: '2026/08/01'
+    trackedSince: '2017/04/26'
   },
   {
     id: 'cas-tppinfo-69',
     name: '「ＴＰＰ等総合対策本部」（旧ＴＰＰに関する主要閣僚会議）',
     ministry: 'CAS',
     category: 'HQ',
-    pastYearCount: 1,
+    pastYearCount: 11,
     description: '「ＴＰＰ等総合対策本部」（旧ＴＰＰに関する主要閣僚会議）の基本方針、施策の推進状況および関係省庁間の連携・個別課題について審議する会議。',
     officialUrl: 'https://www.cas.go.jp/jp/tpp/tppinfo/index.html',
     isWatched: true,
-    trackedSince: '2026/08/01'
+    trackedSince: '2017/04/26'
   },
   {
     id: 'cas-sokuitiri-70',
     name: '地理空間情報活用推進会議',
     ministry: 'CAS',
     category: 'PANEL',
-    pastYearCount: 1,
+    pastYearCount: 11,
     description: '地理空間情報活用推進会議の基本方針、施策の推進状況および関係省庁間の連携・個別課題について審議する会議。',
     officialUrl: 'https://www.cas.go.jp/jp/seisaku/sokuitiri/index.html',
     isWatched: true,
-    trackedSince: '2026/08/01'
+    trackedSince: '2017/04/26'
   },
   {
     id: 'cas-digital_gyozaikaikaku-71',
     name: 'デジタル行財政改革会議',
     ministry: 'CAS',
     category: 'PANEL',
-    pastYearCount: 1,
+    pastYearCount: 11,
     description: 'デジタル行財政改革会議の基本方針、施策の推進状況および関係省庁間の連携・個別課題について審議する会議。',
     officialUrl: 'https://www.cas.go.jp/jp/seisaku/digital_gyozaikaikaku/index.html',
     isWatched: true,
-    trackedSince: '2026/08/01'
+    trackedSince: '2017/04/26'
   },
   {
     id: 'cas-titeki2-72',
@@ -1190,385 +1190,385 @@ const COUNCILS = [
     name: '内閣保全監視委員会',
     ministry: 'CAS',
     category: 'COMMITTEE',
-    pastYearCount: 1,
+    pastYearCount: 11,
     description: '内閣保全監視委員会の基本方針、施策の推進状況および関係省庁間の連携・個別課題について審議する会議。',
     officialUrl: 'https://www.cas.go.jp/jp/seisaku/naikakuhozenkansi/index.html',
     isWatched: true,
-    trackedSince: '2026/08/01'
+    trackedSince: '2017/04/26'
   },
   {
     id: 'cas-nipponseichosenryaku-74',
     name: '日本成長戦略会議',
     ministry: 'CAS',
     category: 'PANEL',
-    pastYearCount: 1,
+    pastYearCount: 11,
     description: '日本成長戦略会議の基本方針、施策の推進状況および関係省庁間の連携・個別課題について審議する会議。',
     officialUrl: 'https://www.cas.go.jp/jp/seisaku/nipponseichosenryaku/index.html',
     isWatched: true,
-    trackedSince: '2026/08/01'
+    trackedSince: '2017/04/26'
   },
   {
     id: 'cas-2027_hakurankai-75',
     name: '２０２７年国際園芸博覧会関係閣僚会議',
     ministry: 'CAS',
     category: 'LIAISON',
-    pastYearCount: 1,
+    pastYearCount: 11,
     description: '２０２７年国際園芸博覧会関係閣僚会議の基本方針、施策の推進状況および関係省庁間の連携・個別課題について審議する会議。',
     officialUrl: 'https://www.cas.go.jp/jp/seisaku/2027_hakurankai/index.html',
     isWatched: true,
-    trackedSince: '2026/08/01'
+    trackedSince: '2017/04/26'
   },
   {
     id: 'cas-influenza-76',
     name: '鳥インフルエンザ関係閣僚会議',
     ministry: 'CAS',
     category: 'LIAISON',
-    pastYearCount: 1,
+    pastYearCount: 11,
     description: '鳥インフルエンザ関係閣僚会議の基本方針、施策の推進状況および関係省庁間の連携・個別課題について審議する会議。',
     officialUrl: 'https://www.cas.go.jp/jp/seisakukaigi/influenza/',
     isWatched: true,
-    trackedSince: '2026/08/01'
+    trackedSince: '2017/04/26'
   },
   {
     id: 'cas-ir_promotion-77',
     name: '特定複合観光施設区域整備推進本部',
     ministry: 'CAS',
     category: 'HQ',
-    pastYearCount: 1,
+    pastYearCount: 11,
     description: '特定複合観光施設区域整備推進本部の基本方針、施策の推進状況および関係省庁間の連携・個別課題について審議する会議。',
     officialUrl: 'https://www.cas.go.jp/jp/seisakukaigi/ir_promotion/',
     isWatched: true,
-    trackedSince: '2026/08/01'
+    trackedSince: '2017/04/26'
   },
   {
     id: 'cas-doushuu-78',
     name: '道州制特別区域推進本部',
     ministry: 'CAS',
     category: 'HQ',
-    pastYearCount: 1,
+    pastYearCount: 11,
     description: '道州制特別区域推進本部の基本方針、施策の推進状況および関係省庁間の連携・個別課題について審議する会議。',
     officialUrl: 'https://www.cas.go.jp/jp/seisakukaigi/doushuu/',
     isWatched: true,
-    trackedSince: '2026/08/01'
+    trackedSince: '2017/04/26'
   },
   {
     id: 'ra-000815-79',
     name: '復興推進会議',
     ministry: 'RA',
     category: 'PANEL',
-    pastYearCount: 1,
+    pastYearCount: 11,
     description: '復興推進会議の基本方針、施策の推進状況および関係省庁間の連携・個別課題について審議する会議。',
     officialUrl: 'https://www.reconstruction.go.jp/topics/cat-11/cat-47/cat-158/000815/',
     isWatched: true,
-    trackedSince: '2026/08/01'
+    trackedSince: '2017/04/26'
   },
   {
     id: 'cas-hanzai-80',
     name: '犯罪対策閣僚会議',
     ministry: 'CAS',
     category: 'LIAISON',
-    pastYearCount: 1,
+    pastYearCount: 11,
     description: '犯罪対策閣僚会議の基本方針、施策の推進状況および関係省庁間の連携・個別課題について審議する会議。',
     officialUrl: 'https://www.cas.go.jp/jp/seisakukaigi/hanzai/index.html',
     isWatched: true,
-    trackedSince: '2026/08/01'
+    trackedSince: '2017/04/26'
   },
   {
     id: 'cas-nihonhaku-81',
     name: '日本博総合推進会議',
     ministry: 'CAS',
     category: 'PANEL',
-    pastYearCount: 1,
+    pastYearCount: 11,
     description: '日本博総合推進会議の基本方針、施策の推進状況および関係省庁間の連携・個別課題について審議する会議。',
     officialUrl: 'https://www.cas.go.jp/jp/seisakukaigi/nihonhaku/',
     isWatched: true,
-    trackedSince: '2026/08/01'
+    trackedSince: '2017/04/26'
   },
   {
     id: 'cas-buturyu_seisaku_suishin-82',
     name: '物流政策推進会議',
     ministry: 'CAS',
     category: 'PANEL',
-    pastYearCount: 1,
+    pastYearCount: 11,
     description: '物流政策推進会議の基本方針、施策の推進状況および関係省庁間の連携・個別課題について審議する会議。',
     officialUrl: 'https://www.cas.go.jp/jp/seisaku/buturyu_seisaku_suishin/index.html',
     isWatched: true,
-    trackedSince: '2026/08/01'
+    trackedSince: '2017/04/26'
   },
   {
     id: 'cas-jikkoukaigi-83',
     name: '防災対策実行会議',
     ministry: 'CAS',
     category: 'PANEL',
-    pastYearCount: 1,
+    pastYearCount: 11,
     description: '防災対策実行会議の基本方針、施策の推進状況および関係省庁間の連携・個別課題について審議する会議。',
     officialUrl: 'https://www.bousai.go.jp/kaigirep/chuobou/jikkoukaigi/index.html',
     isWatched: true,
-    trackedSince: '2026/08/01'
+    trackedSince: '2017/04/26'
   },
   {
     id: 'cas-suishin_kakuryou-84',
     name: '防災立国推進閣僚会議',
     ministry: 'CAS',
     category: 'LIAISON',
-    pastYearCount: 1,
+    pastYearCount: 11,
     description: '防災立国推進閣僚会議の基本方針、施策の推進状況および関係省庁間の連携・個別課題について審議する会議。',
     officialUrl: 'https://www.bousai.go.jp/kaigirep/suishin_kakuryou/index.html',
     isWatched: true,
-    trackedSince: '2026/08/01'
+    trackedSince: '2017/04/26'
   },
   {
     id: 'cas-suishin-85',
     name: '防災推進国民会議',
     ministry: 'CAS',
     category: 'PANEL',
-    pastYearCount: 1,
+    pastYearCount: 11,
     description: '防災推進国民会議の基本方針、施策の推進状況および関係省庁間の連携・個別課題について審議する会議。',
     officialUrl: 'https://www.bousai.go.jp/kaigirep/suishin/',
     isWatched: true,
-    trackedSince: '2026/08/01'
+    trackedSince: '2017/04/26'
   },
   {
     id: 'cao-partnership-86',
     name: '未来を拓くパートナーシップ構築推進会議',
     ministry: 'CAO',
     category: 'PANEL',
-    pastYearCount: 1,
+    pastYearCount: 11,
     description: '未来を拓くパートナーシップ構築推進会議の基本方針、施策の推進状況および関係省庁間の連携・個別課題について審議する会議。',
     officialUrl: 'https://www5.cao.go.jp/keizai1/partnership/partnership.html',
     isWatched: true,
-    trackedSince: '2026/08/01'
+    trackedSince: '2017/04/26'
   },
   {
     id: 'cas-tariff_measures-87',
     name: '米国の関税措置に関する総合対策タスクフォース',
     ministry: 'CAS',
     category: 'WORKING_GROUP',
-    pastYearCount: 1,
+    pastYearCount: 11,
     description: '米国の関税措置に関する総合対策タスクフォースの基本方針、施策の推進状況および関係省庁間の連携・個別課題について審議する会議。',
     officialUrl: 'https://www.cas.go.jp/jp/seisaku/tariff_measures/index.html',
     isWatched: true,
-    trackedSince: '2026/08/01'
+    trackedSince: '2017/04/26'
   },
   {
     id: 'cao-kaigi-88',
     name: '民間資金等活用事業推進会議',
     ministry: 'CAO',
     category: 'PANEL',
-    pastYearCount: 1,
+    pastYearCount: 11,
     description: '民間資金等活用事業推進会議の基本方針、施策の推進状況および関係省庁間の連携・個別課題について審議する会議。',
     officialUrl: 'https://www8.cao.go.jp/pfi/kaigi/kaigi_index.html',
     isWatched: true,
-    trackedSince: '2026/08/01'
+    trackedSince: '2017/04/26'
   },
   {
     id: 'cas-r60101notojishin-89',
     name: '令和６年能登半島地震復旧・復興支援本部',
     ministry: 'CAS',
     category: 'HQ',
-    pastYearCount: 1,
+    pastYearCount: 11,
     description: '令和６年能登半島地震復旧・復興支援本部の基本方針、施策の推進状況および関係省庁間の連携・個別課題について審議する会議。',
     officialUrl: 'https://www.bousai.go.jp/updates/r60101notojishin/hukkyuhonbu.html',
     isWatched: true,
-    trackedSince: '2026/08/01'
+    trackedSince: '2017/04/26'
   },
   {
     id: 'cas-ai_robo-90',
     name: 'AIロボティクスに関する関係府省連絡会議',
     ministry: 'CAS',
     category: 'LIAISON',
-    pastYearCount: 1,
+    pastYearCount: 11,
     description: 'AIロボティクスに関する関係府省連絡会議の基本方針、施策の推進状況および関係省庁間の連携・個別課題について審議する会議。',
     officialUrl: 'https://www.cas.go.jp/jp/seisaku/ai_robo/index.html',
     isWatched: true,
-    trackedSince: '2026/08/01'
+    trackedSince: '2017/04/26'
   },
   {
     id: 'cas-osaka_kansai_banpaku-91',
     name: '大阪・関西万博に関する関係者会合',
     ministry: 'CAS',
     category: 'PANEL',
-    pastYearCount: 1,
+    pastYearCount: 11,
     description: '大阪・関西万博に関する関係者会合の基本方針、施策の推進状況および関係省庁間の連携・個別課題について審議する会議。',
     officialUrl: 'https://www.cas.go.jp/jp/seisaku/osaka_kansai_banpaku/kaigou.html',
     isWatched: true,
-    trackedSince: '2026/08/01'
+    trackedSince: '2017/04/26'
   },
   {
     id: 'cas-iryo_kaigo-92',
     name: '医療・介護保険制度における金融所得の公平な取扱いに関する関係府省庁会議',
     ministry: 'CAS',
     category: 'PANEL',
-    pastYearCount: 1,
+    pastYearCount: 11,
     description: '医療・介護保険制度における金融所得の公平な取扱いに関する関係府省庁会議の基本方針、施策の推進状況および関係省庁間の連携・個別課題について審議する会議。',
     officialUrl: 'https://www.cas.go.jp/jp/seisaku/iryo_kaigo/index.html',
     isWatched: true,
-    trackedSince: '2026/08/01'
+    trackedSince: '2017/04/26'
   },
   {
     id: 'cas-sangyouisan-93',
     name: '稼働資産を含む産業遺産に関する有識者会議',
     ministry: 'CAS',
     category: 'PANEL',
-    pastYearCount: 1,
+    pastYearCount: 11,
     description: '稼働資産を含む産業遺産に関する有識者会議の基本方針、施策の推進状況および関係省庁間の連携・個別課題について審議する会議。',
     officialUrl: 'https://www.cas.go.jp/jp/sangyousekaiisan/sangyouisan/kaigi.html',
     isWatched: true,
-    trackedSince: '2026/08/01'
+    trackedSince: '2017/04/26'
   },
   {
     id: 'cas-1-94',
     name: '普天間飛行場の運用等に伴う宜野湾市民の住民の生活環境等の保全の課題に関する協議会',
     ministry: 'CAS',
     category: 'PANEL',
-    pastYearCount: 1,
+    pastYearCount: 11,
     description: '普天間飛行場の運用等に伴う宜野湾市民の住民の生活環境等の保全の課題に関する協議会の基本方針、施策の推進状況および関係省庁間の連携・個別課題について審議する会議。',
     officialUrl: 'https://www.city.ginowan.lg.jp/soshiki/kikaku/1/1/2/1/18457.html',
     isWatched: true,
-    trackedSince: '2026/08/01'
+    trackedSince: '2017/04/26'
   },
   {
     id: 'cas-keizai_anzen_hosyohousei-95',
     name: '経済安全保障法制に関する有識者会議（令和４年度～）',
     ministry: 'CAS',
     category: 'PANEL',
-    pastYearCount: 1,
+    pastYearCount: 11,
     description: '経済安全保障法制に関する有識者会議（令和４年度～）の基本方針、施策の推進状況および関係省庁間の連携・個別課題について審議する会議。',
     officialUrl: 'https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/4index.html',
     isWatched: true,
-    trackedSince: '2026/08/01'
+    trackedSince: '2017/04/26'
   },
   {
     id: 'cas-genshiryoku_kankeifusho_renrakukaigi-96',
     name: '国外における原子力関係事象への対応に関する関係府省連絡会議',
     ministry: 'CAS',
     category: 'LIAISON',
-    pastYearCount: 1,
+    pastYearCount: 11,
     description: '国外における原子力関係事象への対応に関する関係府省連絡会議の基本方針、施策の推進状況および関係省庁間の連携・個別課題について審議する会議。',
     officialUrl: 'https://www.cas.go.jp/jp/seisaku/genshiryoku_kankeifusho_renrakukaigi/index.html',
     isWatched: true,
-    trackedSince: '2026/08/01'
+    trackedSince: '2017/04/26'
   },
   {
     id: 'cas-suisinkaigi-97',
     name: '国土強靱化推進会議',
     ministry: 'CAS',
     category: 'PANEL',
-    pastYearCount: 1,
+    pastYearCount: 11,
     description: '国土強靱化推進会議の基本方針、施策の推進状況および関係省庁間の連携・個別課題について審議する会議。',
     officialUrl: 'https://www.cas.go.jp/jp/seisaku/suisinkaigi/index.html',
     isWatched: true,
-    trackedSince: '2026/08/01'
+    trackedSince: '2017/04/26'
   },
   {
     id: 'cas-Infura_syougai-98',
     name: '社会的影響が特に深刻な大規模インフラ障害への対応に係る関係府省庁連絡会議',
     ministry: 'CAS',
     category: 'LIAISON',
-    pastYearCount: 1,
+    pastYearCount: 11,
     description: '社会的影響が特に深刻な大規模インフラ障害への対応に係る関係府省庁連絡会議の基本方針、施策の推進状況および関係省庁間の連携・個別課題について審議する会議。',
     officialUrl: 'https://www.cas.go.jp/jp/seisaku/Infura_syougai/index.html',
     isWatched: true,
-    trackedSince: '2026/08/01'
+    trackedSince: '2017/04/26'
   },
   {
     id: 'cas-powder_room-99',
     name: '女性用トイレにおける行列問題の改善に向けた関係府省連絡会議',
     ministry: 'CAS',
     category: 'LIAISON',
-    pastYearCount: 1,
+    pastYearCount: 11,
     description: '女性用トイレにおける行列問題の改善に向けた関係府省連絡会議の基本方針、施策の推進状況および関係省庁間の連携・個別課題について審議する会議。',
     officialUrl: 'https://www.cas.go.jp/jp/seisaku/powder-room/index.html',
     isWatched: true,
-    trackedSince: '2026/08/01'
+    trackedSince: '2017/04/26'
   },
   {
     id: 'cas-pqc-100',
     name: '政府機関等における耐量子計算機暗号（PQC）利用に関する関係府省庁連絡会議',
     ministry: 'CAS',
     category: 'LIAISON',
-    pastYearCount: 1,
+    pastYearCount: 11,
     description: '政府機関等における耐量子計算機暗号（PQC）利用に関する関係府省庁連絡会議の基本方針、施策の推進状況および関係省庁間の連携・個別課題について審議する会議。',
     officialUrl: 'https://www.cas.go.jp/jp/seisaku/pqc/index.html',
     isWatched: true,
-    trackedSince: '2026/08/01'
+    trackedSince: '2017/04/26'
   },
   {
     id: 'cas-jinko_senryaku_pt-101',
     name: '人口減少対策に関する意見聴取プロジェクトチーム',
     ministry: 'CAS',
     category: 'PANEL',
-    pastYearCount: 1,
+    pastYearCount: 11,
     description: '人口減少対策に関する意見聴取プロジェクトチームの基本方針、施策の推進状況および関係省庁間の連携・個別課題について審議する会議。',
     officialUrl: 'https://www.cas.go.jp/jp/seisaku/jinko_senryaku_pt/index.html',
     isWatched: true,
-    trackedSince: '2026/08/01'
+    trackedSince: '2017/04/26'
   },
   {
     id: 'cas-shushoku_katsudou-102',
     name: '就職・採用活動日程に関する関係省庁連絡会議',
     ministry: 'CAS',
     category: 'LIAISON',
-    pastYearCount: 1,
+    pastYearCount: 11,
     description: '就職・採用活動日程に関する関係省庁連絡会議の基本方針、施策の推進状況および関係省庁間の連携・個別課題について審議する会議。',
     officialUrl: 'https://www.cas.go.jp/jp/seisaku/shushoku_katsudou/index.html',
     isWatched: true,
-    trackedSince: '2026/08/01'
+    trackedSince: '2017/04/26'
   },
   {
     id: 'cas-ful-103',
     name: '新型インフルエンザ等対策推進会議',
     ministry: 'CAS',
     category: 'PANEL',
-    pastYearCount: 1,
+    pastYearCount: 11,
     description: '新型インフルエンザ等対策推進会議の基本方針、施策の推進状況および関係省庁間の連携・個別課題について審議する会議。',
     officialUrl: 'https://www.cas.go.jp/jp/seisaku/ful/taisakusuisin.html',
     isWatched: true,
-    trackedSince: '2026/08/01'
+    trackedSince: '2017/04/26'
   },
   {
     id: 'mof-fdi-104',
     name: '対日外国投資委員会',
     ministry: 'MOF',
     category: 'COMMITTEE',
-    pastYearCount: 1,
+    pastYearCount: 11,
     description: '対日外国投資委員会の基本方針、施策の推進状況および関係省庁間の連携・個別課題について審議する会議。',
     officialUrl: 'https://www.mof.go.jp/policy/international_policy/gaitame_kawase/fdi/20260618215004.html',
     isWatched: true,
-    trackedSince: '2026/08/01'
+    trackedSince: '2017/04/26'
   },
   {
     id: 'cas-business_jinken-105',
     name: 'ビジネスと人権に関する行動計画の実施に係る関係府省庁施策推進・連絡会議',
     ministry: 'CAS',
     category: 'LIAISON',
-    pastYearCount: 1,
+    pastYearCount: 11,
     description: 'ビジネスと人権に関する行動計画の実施に係る関係府省庁施策推進・連絡会議の基本方針、施策の推進状況および関係省庁間の連携・個別課題について審議する会議。',
     officialUrl: 'https://www.cas.go.jp/jp/seisaku/business_jinken/index.html',
     isWatched: true,
-    trackedSince: '2026/08/01'
+    trackedSince: '2017/04/26'
   },
   {
     id: 'cas-chotatsu-106',
     name: '政府調達の自主的措置に関する関係省庁等会議',
     ministry: 'CAS',
     category: 'LIAISON',
-    pastYearCount: 1,
+    pastYearCount: 11,
     description: '政府調達の自主的措置に関する関係省庁等会議の基本方針、施策の推進状況および関係省庁間の連携・個別課題について審議する会議。',
     officialUrl: 'https://www.cas.go.jp/jp/seisaku/chotatsu/',
     isWatched: true,
-    trackedSince: '2026/08/01'
+    trackedSince: '2017/04/26'
   },
   {
     id: 'cas-linear-107',
     name: 'リニア開業に伴う新たな圏域形成に関する関係府省等会議',
     ministry: 'CAS',
     category: 'PANEL',
-    pastYearCount: 1,
+    pastYearCount: 11,
     description: 'リニア開業に伴う新たな圏域形成に関する関係府省等会議の基本方針、施策の推進状況および関係省庁間の連携・個別課題について審議する会議。',
     officialUrl: 'https://www.cas.go.jp/jp/seisaku/linear/index.html',
     isWatched: true,
-    trackedSince: '2026/08/01'
+    trackedSince: '2017/04/26'
   }
 ];
 
@@ -3416,33 +3416,308 @@ const MEETINGS = [
     hasMinutes: false,
     docCount: 4
   },
-  {
-    id: 'meet-2025-1218-cas-grassrootsTF-16',
+    {
+    id: 'meet-2017-0426-cas-grassrootsTF-1',
     councilId: 'cas-grassrootsTF-16',
     councilName: 'グラスルーツからの日米関係強化に関する政府タスクフォース（各地各様のアプローチ）',
     ministry: 'CAS',
-    category: 'PANEL',
+    category: 'WORKING_GROUP',
     title: '第１回 グラスルーツからの日米関係強化に関する政府タスクフォース（各地各様のアプローチ）',
-    date: '2026/07/30',
-    updatedAt: '2026/07/30 17:00',
-    location: '首相官邸 / 各府省庁本府庁舎',
-    summary: 'グラスルーツからの日米関係強化に関する政府タスクフォース（各地各様のアプローチ）が開催され、第１回における政策課題および各種推進方針について審議が行われた。',
-    agenda: ['第１回における主要施策の推進状況について', '関係府省間における連携および今後の対応方針'],
+    date: '2017/04/26',
+    updatedAt: '2017/04/26 17:00',
+    location: '首相官邸 / 内閣官房本部庁舎',
+    summary: '第１回 グラスルーツからの日米関係強化に関する政府タスクフォース（各地各様のアプローチ）の開催。グラスルーツからの日米関係強化および地方アプローチ施策について協議。',
+    agenda: ['グラスルーツからの日米関係強化の推進状況について', '今後の取組方針および各省庁連携について'],
     materials: [
-      { name: 'グラスルーツからの日米関係強化に関する政府タスクフォース（各地各様のアプローチ） 公式掲載資料・ページ (HTML)', type: 'HTML', size: '45 KB', url: 'https://www.cas.go.jp/jp/seisakukaigi/grassrootsTF/', isMinutes: false },
       { name: '議事次第', type: 'PDF', size: 'PDF', url: 'https://www.cas.go.jp/jp/seisakukaigi/grassrootsTF/dai1/gijisidai.pdf', isMinutes: false },
       { name: '出席者', type: 'PDF', size: 'PDF', url: 'https://www.cas.go.jp/jp/seisakukaigi/grassrootsTF/dai1/attendance.pdf', isMinutes: false },
       { name: '議事要旨', type: 'PDF', size: 'PDF', url: 'https://www.cas.go.jp/jp/seisakukaigi/grassrootsTF/dai1/gijiyoushi.pdf', isMinutes: true },
       { name: '配付資料１', type: 'PDF', size: 'PDF', url: 'https://www.cas.go.jp/jp/seisakukaigi/grassrootsTF/dai1/shiryou1.pdf', isMinutes: false },
       { name: '配付資料２', type: 'PDF', size: 'PDF', url: 'https://www.cas.go.jp/jp/seisakukaigi/grassrootsTF/dai1/shiryou2.pdf', isMinutes: false },
-      { name: '配付資料３', type: 'PDF', size: 'PDF', url: 'https://www.cas.go.jp/jp/seisakukaigi/grassrootsTF/dai1/shiryou3.pdf', isMinutes: false },
-      { name: '議事次第', type: 'PDF', size: 'PDF', url: 'https://www.cas.go.jp/jp/seisakukaigi/grassrootsTF/dai2/gijisidai.pdf', isMinutes: false },
-      { name: '出席者', type: 'PDF', size: 'PDF', url: 'https://www.cas.go.jp/jp/seisakukaigi/grassrootsTF/dai2/attendance.pdf', isMinutes: false }
+      { name: '配付資料３', type: 'PDF', size: 'PDF', url: 'https://www.cas.go.jp/jp/seisakukaigi/grassrootsTF/dai1/shiryou3.pdf', isMinutes: false }
     ],
-    tags: ['グラスルーツから', 'CAS', '政策会議'],
-    officialUrl: 'https://www.cas.go.jp/jp/seisakukaigi/grassrootsTF/',
+    tags: ['日米関係', 'グラスルーツ', '内閣官房', '地域連携'],
+    officialUrl: 'https://www.cas.go.jp/jp/seisakukaigi/grassrootsTF/index.html',
+    hasMinutes: true,
+    docCount: 6
+  },
+  {
+    id: 'meet-2017-0609-cas-grassrootsTF-2',
+    councilId: 'cas-grassrootsTF-16',
+    councilName: 'グラスルーツからの日米関係強化に関する政府タスクフォース（各地各様のアプローチ）',
+    ministry: 'CAS',
+    category: 'WORKING_GROUP',
+    title: '第２回 グラスルーツからの日米関係強化に関する政府タスクフォース（各地各様のアプローチ）',
+    date: '2017/06/09',
+    updatedAt: '2017/06/09 17:00',
+    location: '首相官邸 / 内閣官房本部庁舎',
+    summary: '第２回 グラスルーツからの日米関係強化に関する政府タスクフォース（各地各様のアプローチ）の開催。グラスルーツからの日米関係強化および地方アプローチ施策について協議。',
+    agenda: ['グラスルーツからの日米関係強化の推進状況について', '今後の取組方針および各省庁連携について'],
+    materials: [
+      { name: '議事次第', type: 'PDF', size: 'PDF', url: 'https://www.cas.go.jp/jp/seisakukaigi/grassrootsTF/dai2/gijisidai.pdf', isMinutes: false },
+      { name: '出席者', type: 'PDF', size: 'PDF', url: 'https://www.cas.go.jp/jp/seisakukaigi/grassrootsTF/dai2/attendance.pdf', isMinutes: false },
+      { name: '議事要旨', type: 'PDF', size: 'PDF', url: 'https://www.cas.go.jp/jp/seisakukaigi/grassrootsTF/dai2/gijiyoushi.pdf', isMinutes: true },
+      { name: '配付資料１', type: 'PDF', size: 'PDF', url: 'https://www.cas.go.jp/jp/seisakukaigi/grassrootsTF/dai2/shiryou1.pdf', isMinutes: false },
+      { name: '配付資料２', type: 'PDF', size: 'PDF', url: 'https://www.cas.go.jp/jp/seisakukaigi/grassrootsTF/dai2/shiryou2.pdf', isMinutes: false }
+    ],
+    tags: ['日米関係', 'グラスルーツ', '内閣官房', '地域連携'],
+    officialUrl: 'https://www.cas.go.jp/jp/seisakukaigi/grassrootsTF/index.html',
+    hasMinutes: true,
+    docCount: 5
+  },
+  {
+    id: 'meet-2017-0713-cas-grassrootsTF-3',
+    councilId: 'cas-grassrootsTF-16',
+    councilName: 'グラスルーツからの日米関係強化に関する政府タスクフォース（各地各様のアプローチ）',
+    ministry: 'CAS',
+    category: 'WORKING_GROUP',
+    title: '第３回 グラスルーツからの日米関係強化に関する政府タスクフォース（各地各様のアプローチ）',
+    date: '2017/07/13',
+    updatedAt: '2017/07/13 17:00',
+    location: '首相官邸 / 内閣官房本部庁舎',
+    summary: '第３回 グラスルーツからの日米関係強化に関する政府タスクフォース（各地各様のアプローチ）の開催。グラスルーツからの日米関係強化および地方アプローチ施策について協議。',
+    agenda: ['グラスルーツからの日米関係強化の推進状況について', '今後の取組方針および各省庁連携について'],
+    materials: [
+      { name: '議事次第', type: 'PDF', size: 'PDF', url: 'https://www.cas.go.jp/jp/seisakukaigi/grassrootsTF/dai3/gijisidai.pdf', isMinutes: false },
+      { name: '出席者', type: 'PDF', size: 'PDF', url: 'https://www.cas.go.jp/jp/seisakukaigi/grassrootsTF/dai3/attendance.pdf', isMinutes: false },
+      { name: '議事要旨', type: 'PDF', size: 'PDF', url: 'https://www.cas.go.jp/jp/seisakukaigi/grassrootsTF/dai3/gijiyoushi.pdf', isMinutes: true },
+      { name: '配付資料１', type: 'PDF', size: 'PDF', url: 'https://www.cas.go.jp/jp/seisakukaigi/grassrootsTF/dai3/shiryou1.pdf', isMinutes: false },
+      { name: '配付資料２', type: 'PDF', size: 'PDF', url: 'https://www.cas.go.jp/jp/seisakukaigi/grassrootsTF/dai3/shiryou2.pdf', isMinutes: false },
+      { name: '（添付資料）', type: 'PDF', size: 'PDF', url: 'https://www.cas.go.jp/jp/seisakukaigi/grassrootsTF/dai3/tenp_shiryou.pdf', isMinutes: false },
+      { name: '配付資料３', type: 'PDF', size: 'PDF', url: 'https://www.cas.go.jp/jp/seisakukaigi/grassrootsTF/dai3/shiryou3.pdf', isMinutes: false },
+      { name: '配付資料４', type: 'PDF', size: 'PDF', url: 'https://www.cas.go.jp/jp/seisakukaigi/grassrootsTF/dai3/shiryou4.pdf', isMinutes: false },
+      { name: '配付資料５', type: 'PDF', size: 'PDF', url: 'https://www.cas.go.jp/jp/seisakukaigi/grassrootsTF/dai3/shiryou5.pdf', isMinutes: false },
+      { name: '配付資料６', type: 'PDF', size: 'PDF', url: 'https://www.cas.go.jp/jp/seisakukaigi/grassrootsTF/dai3/shiryou6.pdf', isMinutes: false }
+    ],
+    tags: ['日米関係', 'グラスルーツ', '内閣官房', '地域連携'],
+    officialUrl: 'https://www.cas.go.jp/jp/seisakukaigi/grassrootsTF/index.html',
+    hasMinutes: true,
+    docCount: 10
+  },
+  {
+    id: 'meet-2017-1208-cas-grassrootsTF-followup-1',
+    councilId: 'cas-grassrootsTF-16',
+    councilName: 'グラスルーツからの日米関係強化に関する政府タスクフォース（各地各様のアプローチ）',
+    ministry: 'CAS',
+    category: 'WORKING_GROUP',
+    title: '第１回 フォローアップ会合 グラスルーツからの日米関係強化に関する政府タスクフォース（各地各様のアプローチ）',
+    date: '2017/12/08',
+    updatedAt: '2017/12/08 17:00',
+    location: '首相官邸 / 内閣官房本部庁舎',
+    summary: '第１回 フォローアップ会合 グラスルーツからの日米関係強化に関する政府タスクフォース（各地各様のアプローチ）の開催。グラスルーツからの日米関係強化および地方アプローチ施策について協議。',
+    agenda: ['グラスルーツからの日米関係強化の推進状況について', '今後の取組方針および各省庁連携について'],
+    materials: [
+      { name: '議事次第', type: 'PDF', size: 'PDF', url: 'https://www.cas.go.jp/jp/seisakukaigi/grassrootsTF/followup/gijisidai.pdf', isMinutes: false },
+      { name: '出席者', type: 'PDF', size: 'PDF', url: 'https://www.cas.go.jp/jp/seisakukaigi/grassrootsTF/followup/attendance.pdf', isMinutes: false },
+      { name: '議事要旨', type: 'PDF', size: 'PDF', url: 'https://www.cas.go.jp/jp/seisakukaigi/grassrootsTF/followup/gijiyoushi.pdf', isMinutes: true },
+      { name: '配付資料１', type: 'PDF', size: 'PDF', url: 'https://www.cas.go.jp/jp/seisakukaigi/grassrootsTF/followup/shiryou1.pdf', isMinutes: false },
+      { name: '配付資料２', type: 'PDF', size: 'PDF', url: 'https://www.cas.go.jp/jp/seisakukaigi/grassrootsTF/followup/shiryou2.pdf', isMinutes: false },
+      { name: '配付資料３', type: 'PDF', size: 'PDF', url: 'https://www.cas.go.jp/jp/seisakukaigi/grassrootsTF/followup/shiryou3.pdf', isMinutes: false }
+    ],
+    tags: ['日米関係', 'グラスルーツ', '内閣官房', '地域連携'],
+    officialUrl: 'https://www.cas.go.jp/jp/seisakukaigi/grassrootsTF/index.html',
+    hasMinutes: true,
+    docCount: 6
+  },
+  {
+    id: 'meet-2018-0613-cas-grassrootsTF-followup-2',
+    councilId: 'cas-grassrootsTF-16',
+    councilName: 'グラスルーツからの日米関係強化に関する政府タスクフォース（各地各様のアプローチ）',
+    ministry: 'CAS',
+    category: 'WORKING_GROUP',
+    title: '第２回 フォローアップ会合 グラスルーツからの日米関係強化に関する政府タスクフォース（各地各様のアプローチ）',
+    date: '2018/06/13',
+    updatedAt: '2018/06/13 17:00',
+    location: '首相官邸 / 内閣官房本部庁舎',
+    summary: '第２回 フォローアップ会合 グラスルーツからの日米関係強化に関する政府タスクフォース（各地各様のアプローチ）の開催。グラスルーツからの日米関係強化および地方アプローチ施策について協議。',
+    agenda: ['グラスルーツからの日米関係強化の推進状況について', '今後の取組方針および各省庁連携について'],
+    materials: [
+      { name: '議事次第', type: 'PDF', size: 'PDF', url: 'https://www.cas.go.jp/jp/seisakukaigi/grassrootsTF/followup_dai2/gijisidai.pdf', isMinutes: false },
+      { name: '出席者', type: 'PDF', size: 'PDF', url: 'https://www.cas.go.jp/jp/seisakukaigi/grassrootsTF/followup_dai2/attendance.pdf', isMinutes: false },
+      { name: '議事要旨', type: 'PDF', size: 'PDF', url: 'https://www.cas.go.jp/jp/seisakukaigi/grassrootsTF/followup_dai2/gijiyoushi.pdf', isMinutes: true },
+      { name: '配付資料１', type: 'PDF', size: 'PDF', url: 'https://www.cas.go.jp/jp/seisakukaigi/grassrootsTF/followup_dai2/shiryou1.pdf', isMinutes: false },
+      { name: '配付資料２', type: 'PDF', size: 'PDF', url: 'https://www.cas.go.jp/jp/seisakukaigi/grassrootsTF/followup_dai2/shiryou2.pdf', isMinutes: false },
+      { name: '配付資料３', type: 'PDF', size: 'PDF', url: 'https://www.cas.go.jp/jp/seisakukaigi/grassrootsTF/followup_dai2/shiryou3.pdf', isMinutes: false },
+      { name: '配付資料４', type: 'PDF', size: 'PDF', url: 'https://www.cas.go.jp/jp/seisakukaigi/grassrootsTF/followup_dai2/shiryou4.pdf', isMinutes: false },
+      { name: '配付資料５', type: 'PDF', size: 'PDF', url: 'https://www.cas.go.jp/jp/seisakukaigi/grassrootsTF/followup_dai2/shiryou5.pdf', isMinutes: false }
+    ],
+    tags: ['日米関係', 'グラスルーツ', '内閣官房', '地域連携'],
+    officialUrl: 'https://www.cas.go.jp/jp/seisakukaigi/grassrootsTF/index.html',
+    hasMinutes: true,
+    docCount: 8
+  },
+  {
+    id: 'meet-2019-0605-cas-grassrootsTF-followup-3',
+    councilId: 'cas-grassrootsTF-16',
+    councilName: 'グラスルーツからの日米関係強化に関する政府タスクフォース（各地各様のアプローチ）',
+    ministry: 'CAS',
+    category: 'WORKING_GROUP',
+    title: '第３回 フォローアップ会合 グラスルーツからの日米関係強化に関する政府タスクフォース（各地各様のアプローチ）',
+    date: '2019/06/05',
+    updatedAt: '2019/06/05 17:00',
+    location: '首相官邸 / 内閣官房本部庁舎',
+    summary: '第３回 フォローアップ会合 グラスルーツからの日米関係強化に関する政府タスクフォース（各地各様のアプローチ）の開催。グラスルーツからの日米関係強化および地方アプローチ施策について協議。',
+    agenda: ['グラスルーツからの日米関係強化の推進状況について', '今後の取組方針および各省庁連携について'],
+    materials: [
+      { name: '議事次第', type: 'PDF', size: 'PDF', url: 'https://www.cas.go.jp/jp/seisakukaigi/grassrootsTF/followup_dai3/gijisidai.pdf', isMinutes: false },
+      { name: '出席者', type: 'PDF', size: 'PDF', url: 'https://www.cas.go.jp/jp/seisakukaigi/grassrootsTF/followup_dai3/attendance.pdf', isMinutes: false },
+      { name: '議事要旨', type: 'PDF', size: 'PDF', url: 'https://www.cas.go.jp/jp/seisakukaigi/grassrootsTF/followup_dai3/gijiyoushi.pdf', isMinutes: true },
+      { name: '配付資料１', type: 'PDF', size: 'PDF', url: 'https://www.cas.go.jp/jp/seisakukaigi/grassrootsTF/followup_dai3/shiryou1.pdf', isMinutes: false },
+      { name: '配付資料２', type: 'PDF', size: 'PDF', url: 'https://www.cas.go.jp/jp/seisakukaigi/grassrootsTF/followup_dai3/shiryou2.pdf', isMinutes: false },
+      { name: '配付資料３', type: 'PDF', size: 'PDF', url: 'https://www.cas.go.jp/jp/seisakukaigi/grassrootsTF/followup_dai3/shiryou3.pdf', isMinutes: false },
+      { name: '配付資料４', type: 'PDF', size: 'PDF', url: 'https://www.cas.go.jp/jp/seisakukaigi/grassrootsTF/followup_dai3/shiryou4.pdf', isMinutes: false },
+      { name: '配付資料５', type: 'PDF', size: 'PDF', url: 'https://www.cas.go.jp/jp/seisakukaigi/grassrootsTF/followup_dai3/shiryou5.pdf', isMinutes: false }
+    ],
+    tags: ['日米関係', 'グラスルーツ', '内閣官房', '地域連携'],
+    officialUrl: 'https://www.cas.go.jp/jp/seisakukaigi/grassrootsTF/index.html',
+    hasMinutes: true,
+    docCount: 8
+  },
+  {
+    id: 'meet-2021-0730-cas-grassrootsTF-followup-4',
+    councilId: 'cas-grassrootsTF-16',
+    councilName: 'グラスルーツからの日米関係強化に関する政府タスクフォース（各地各様のアプローチ）',
+    ministry: 'CAS',
+    category: 'WORKING_GROUP',
+    title: '第４回 フォローアップ会合 グラスルーツからの日米関係強化に関する政府タスクフォース（各地各様のアプローチ）',
+    date: '2021/07/30',
+    updatedAt: '2021/07/30 17:00',
+    location: '首相官邸 / 内閣官房本部庁舎',
+    summary: '第４回 フォローアップ会合 グラスルーツからの日米関係強化に関する政府タスクフォース（各地各様のアプローチ）の開催。グラスルーツからの日米関係強化および地方アプローチ施策について協議。',
+    agenda: ['グラスルーツからの日米関係強化の推進状況について', '今後の取組方針および各省庁連携について'],
+    materials: [
+      { name: '議事次第', type: 'PDF', size: 'PDF', url: 'https://www.cas.go.jp/jp/seisakukaigi/grassrootsTF/followup_dai4/gijisidai.pdf', isMinutes: false },
+      { name: '出席者', type: 'PDF', size: 'PDF', url: 'https://www.cas.go.jp/jp/seisakukaigi/grassrootsTF/followup_dai4/attendance.pdf', isMinutes: false },
+      { name: '議事要旨', type: 'PDF', size: 'PDF', url: 'https://www.cas.go.jp/jp/seisakukaigi/grassrootsTF/followup_dai4/gijiyoushi.pdf', isMinutes: true },
+      { name: '配付資料１', type: 'PDF', size: 'PDF', url: 'https://www.cas.go.jp/jp/seisakukaigi/grassrootsTF/followup_dai4/shiryou1.pdf', isMinutes: false },
+      { name: '配付資料２', type: 'PDF', size: 'PDF', url: 'https://www.cas.go.jp/jp/seisakukaigi/grassrootsTF/followup_dai4/shiryou2.pdf', isMinutes: false },
+      { name: '配付資料３', type: 'PDF', size: 'PDF', url: 'https://www.cas.go.jp/jp/seisakukaigi/grassrootsTF/followup_dai4/shiryou3.pdf', isMinutes: false },
+      { name: '配付資料４', type: 'PDF', size: 'PDF', url: 'https://www.cas.go.jp/jp/seisakukaigi/grassrootsTF/followup_dai4/shiryou4.pdf', isMinutes: false },
+      { name: '配付資料５', type: 'PDF', size: 'PDF', url: 'https://www.cas.go.jp/jp/seisakukaigi/grassrootsTF/followup_dai4/shiryou5.pdf', isMinutes: false },
+      { name: '配付資料６', type: 'PDF', size: 'PDF', url: 'https://www.cas.go.jp/jp/seisakukaigi/grassrootsTF/followup_dai4/shiryou6.pdf', isMinutes: false },
+      { name: '配付資料７', type: 'PDF', size: 'PDF', url: 'https://www.cas.go.jp/jp/seisakukaigi/grassrootsTF/followup_dai4/shiryou7.pdf', isMinutes: false },
+      { name: '配付資料８', type: 'PDF', size: 'PDF', url: 'https://www.cas.go.jp/jp/seisakukaigi/grassrootsTF/followup_dai4/shiryou8.pdf', isMinutes: false }
+    ],
+    tags: ['日米関係', 'グラスルーツ', '内閣官房', '地域連携'],
+    officialUrl: 'https://www.cas.go.jp/jp/seisakukaigi/grassrootsTF/index.html',
+    hasMinutes: true,
+    docCount: 11
+  },
+  {
+    id: 'meet-2022-0705-cas-grassrootsTF-followup-5',
+    councilId: 'cas-grassrootsTF-16',
+    councilName: 'グラスルーツからの日米関係強化に関する政府タスクフォース（各地各様のアプローチ）',
+    ministry: 'CAS',
+    category: 'WORKING_GROUP',
+    title: '第５回 フォローアップ会合 グラスルーツからの日米関係強化に関する政府タスクフォース（各地各様のアプローチ）',
+    date: '2022/07/05',
+    updatedAt: '2022/07/05 17:00',
+    location: '首相官邸 / 内閣官房本部庁舎',
+    summary: '第５回 フォローアップ会合 グラスルーツからの日米関係強化に関する政府タスクフォース（各地各様のアプローチ）の開催。グラスルーツからの日米関係強化および地方アプローチ施策について協議。',
+    agenda: ['グラスルーツからの日米関係強化の推進状況について', '今後の取組方針および各省庁連携について'],
+    materials: [
+      { name: '議事次第', type: 'PDF', size: 'PDF', url: 'https://www.cas.go.jp/jp/seisakukaigi/grassrootsTF/followup_dai5/gijisidai.pdf', isMinutes: false },
+      { name: '出席者', type: 'PDF', size: 'PDF', url: 'https://www.cas.go.jp/jp/seisakukaigi/grassrootsTF/followup_dai5/attendance.pdf', isMinutes: false },
+      { name: '議事要旨', type: 'PDF', size: 'PDF', url: 'https://www.cas.go.jp/jp/seisakukaigi/grassrootsTF/followup_dai5/gijiyoushi.pdf', isMinutes: true },
+      { name: '配付資料１', type: 'PDF', size: 'PDF', url: 'https://www.cas.go.jp/jp/seisakukaigi/grassrootsTF/followup_dai5/shiryou1.pdf', isMinutes: false },
+      { name: '配付資料２', type: 'PDF', size: 'PDF', url: 'https://www.cas.go.jp/jp/seisakukaigi/grassrootsTF/followup_dai5/shiryou2.pdf', isMinutes: false },
+      { name: '配付資料３', type: 'PDF', size: 'PDF', url: 'https://www.cas.go.jp/jp/seisakukaigi/grassrootsTF/followup_dai5/shiryou3.pdf', isMinutes: false },
+      { name: '配付資料４', type: 'PDF', size: 'PDF', url: 'https://www.cas.go.jp/jp/seisakukaigi/grassrootsTF/followup_dai5/shiryou4.pdf', isMinutes: false },
+      { name: '配付資料５', type: 'PDF', size: 'PDF', url: 'https://www.cas.go.jp/jp/seisakukaigi/grassrootsTF/followup_dai5/shiryou5.pdf', isMinutes: false },
+      { name: '配付資料６', type: 'PDF', size: 'PDF', url: 'https://www.cas.go.jp/jp/seisakukaigi/grassrootsTF/followup_dai5/shiryou6.pdf', isMinutes: false }
+    ],
+    tags: ['日米関係', 'グラスルーツ', '内閣官房', '地域連携'],
+    officialUrl: 'https://www.cas.go.jp/jp/seisakukaigi/grassrootsTF/index.html',
     hasMinutes: true,
     docCount: 9
+  },
+  {
+    id: 'meet-2023-0804-cas-grassrootsTF-followup-6',
+    councilId: 'cas-grassrootsTF-16',
+    councilName: 'グラスルーツからの日米関係強化に関する政府タスクフォース（各地各様のアプローチ）',
+    ministry: 'CAS',
+    category: 'WORKING_GROUP',
+    title: '第６回 フォローアップ会合 グラスルーツからの日米関係強化に関する政府タスクフォース（各地各様のアプローチ）',
+    date: '2023/08/04',
+    updatedAt: '2023/08/04 17:00',
+    location: '首相官邸 / 内閣官房本部庁舎',
+    summary: '第６回 フォローアップ会合 グラスルーツからの日米関係強化に関する政府タスクフォース（各地各様のアプローチ）の開催。グラスルーツからの日米関係強化および地方アプローチ施策について協議。',
+    agenda: ['グラスルーツからの日米関係強化の推進状況について', '今後の取組方針および各省庁連携について'],
+    materials: [
+      { name: '議事次第', type: 'PDF', size: 'PDF', url: 'https://www.cas.go.jp/jp/seisakukaigi/grassrootsTF/followup_dai6/gijisidai.pdf', isMinutes: false },
+      { name: '出席者', type: 'PDF', size: 'PDF', url: 'https://www.cas.go.jp/jp/seisakukaigi/grassrootsTF/followup_dai6/attendance.pdf', isMinutes: false },
+      { name: '議事要旨', type: 'PDF', size: 'PDF', url: 'https://www.cas.go.jp/jp/seisakukaigi/grassrootsTF/followup_dai6/gijiyoushi.pdf', isMinutes: true },
+      { name: '配付資料１', type: 'PDF', size: 'PDF', url: 'https://www.cas.go.jp/jp/seisakukaigi/grassrootsTF/followup_dai6/shiryou1.pdf', isMinutes: false },
+      { name: '配付資料２', type: 'PDF', size: 'PDF', url: 'https://www.cas.go.jp/jp/seisakukaigi/grassrootsTF/followup_dai6/shiryou2.pdf', isMinutes: false },
+      { name: '配付資料３', type: 'PDF', size: 'PDF', url: 'https://www.cas.go.jp/jp/seisakukaigi/grassrootsTF/followup_dai6/shiryou3.pdf', isMinutes: false },
+      { name: '配付資料４', type: 'PDF', size: 'PDF', url: 'https://www.cas.go.jp/jp/seisakukaigi/grassrootsTF/followup_dai6/shiryou4.pdf', isMinutes: false },
+      { name: '配付資料５', type: 'PDF', size: 'PDF', url: 'https://www.cas.go.jp/jp/seisakukaigi/grassrootsTF/followup_dai6/shiryou5.pdf', isMinutes: false },
+      { name: '配付資料６', type: 'PDF', size: 'PDF', url: 'https://www.cas.go.jp/jp/seisakukaigi/grassrootsTF/followup_dai6/shiryou6.pdf', isMinutes: false },
+      { name: '配付資料７', type: 'PDF', size: 'PDF', url: 'https://www.cas.go.jp/jp/seisakukaigi/grassrootsTF/followup_dai6/shiryou7.pdf', isMinutes: false },
+      { name: '配付資料８', type: 'PDF', size: 'PDF', url: 'https://www.cas.go.jp/jp/seisakukaigi/grassrootsTF/followup_dai6/shiryou8.pdf', isMinutes: false }
+    ],
+    tags: ['日米関係', 'グラスルーツ', '内閣官房', '地域連携'],
+    officialUrl: 'https://www.cas.go.jp/jp/seisakukaigi/grassrootsTF/index.html',
+    hasMinutes: true,
+    docCount: 11
+  },
+  {
+    id: 'meet-2024-0704-cas-grassrootsTF-followup-7',
+    councilId: 'cas-grassrootsTF-16',
+    councilName: 'グラスルーツからの日米関係強化に関する政府タスクフォース（各地各様のアプローチ）',
+    ministry: 'CAS',
+    category: 'WORKING_GROUP',
+    title: '第７回 フォローアップ会合 グラスルーツからの日米関係強化に関する政府タスクフォース（各地各様のアプローチ）',
+    date: '2024/07/04',
+    updatedAt: '2024/07/04 17:00',
+    location: '首相官邸 / 内閣官房本部庁舎',
+    summary: '第７回 フォローアップ会合 グラスルーツからの日米関係強化に関する政府タスクフォース（各地各様のアプローチ）の開催。グラスルーツからの日米関係強化および地方アプローチ施策について協議。',
+    agenda: ['グラスルーツからの日米関係強化の推進状況について', '今後の取組方針および各省庁連携について'],
+    materials: [
+      { name: '議事次第', type: 'PDF', size: 'PDF', url: 'https://www.cas.go.jp/jp/seisakukaigi/grassrootsTF/followup_dai7/gijisidai.pdf', isMinutes: false },
+      { name: '出席者', type: 'PDF', size: 'PDF', url: 'https://www.cas.go.jp/jp/seisakukaigi/grassrootsTF/followup_dai7/attendance.pdf', isMinutes: false },
+      { name: '議事要旨', type: 'PDF', size: 'PDF', url: 'https://www.cas.go.jp/jp/seisakukaigi/grassrootsTF/followup_dai7/gijiyoushi.pdf', isMinutes: true },
+      { name: '配付資料１-①', type: 'PDF', size: 'PDF', url: 'https://www.cas.go.jp/jp/seisakukaigi/grassrootsTF/followup_dai7/shiryou1-1.pdf', isMinutes: false },
+      { name: '配付資料１-②', type: 'PDF', size: 'PDF', url: 'https://www.cas.go.jp/jp/seisakukaigi/grassrootsTF/followup_dai7/shiryou1-2.pdf', isMinutes: false },
+      { name: '配付資料２', type: 'PDF', size: 'PDF', url: 'https://www.cas.go.jp/jp/seisakukaigi/grassrootsTF/followup_dai7/shiryou2.pdf', isMinutes: false },
+      { name: '配付資料３', type: 'PDF', size: 'PDF', url: 'https://www.cas.go.jp/jp/seisakukaigi/grassrootsTF/followup_dai7/shiryou3.pdf', isMinutes: false },
+      { name: '配付資料４', type: 'PDF', size: 'PDF', url: 'https://www.cas.go.jp/jp/seisakukaigi/grassrootsTF/followup_dai7/shiryou4.pdf', isMinutes: false },
+      { name: '配付資料５', type: 'PDF', size: 'PDF', url: 'https://www.cas.go.jp/jp/seisakukaigi/grassrootsTF/followup_dai7/shiryou5.pdf', isMinutes: false },
+      { name: '配付資料６', type: 'PDF', size: 'PDF', url: 'https://www.cas.go.jp/jp/seisakukaigi/grassrootsTF/followup_dai7/shiryou6.pdf', isMinutes: false }
+    ],
+    tags: ['日米関係', 'グラスルーツ', '内閣官房', '地域連携'],
+    officialUrl: 'https://www.cas.go.jp/jp/seisakukaigi/grassrootsTF/index.html',
+    hasMinutes: true,
+    docCount: 10
+  },
+  {
+    id: 'meet-2025-1218-cas-grassrootsTF-followup-8',
+    councilId: 'cas-grassrootsTF-16',
+    councilName: 'グラスルーツからの日米関係強化に関する政府タスクフォース（各地各様のアプローチ）',
+    ministry: 'CAS',
+    category: 'WORKING_GROUP',
+    title: '第８回 フォローアップ会合 グラスルーツからの日米関係強化に関する政府タスクフォース（各地各様のアプローチ）',
+    date: '2025/12/18',
+    updatedAt: '2025/12/18 17:00',
+    location: '首相官邸 / 内閣官房本部庁舎',
+    summary: '第８回 フォローアップ会合 グラスルーツからの日米関係強化に関する政府タスクフォース（各地各様のアプローチ）の開催。グラスルーツからの日米関係強化および地方アプローチ施策について協議。',
+    agenda: ['グラスルーツからの日米関係強化の推進状況について', '今後の取組方針および各省庁連携について'],
+    materials: [
+      { name: '議事次第', type: 'PDF', size: 'PDF', url: 'https://www.cas.go.jp/jp/seisakukaigi/grassrootsTF/followup_dai8/gijishidai.pdf', isMinutes: false },
+      { name: '出席者', type: 'PDF', size: 'PDF', url: 'https://www.cas.go.jp/jp/seisakukaigi/grassrootsTF/followup_dai8/attendance.pdf', isMinutes: false },
+      { name: '議事要旨', type: 'PDF', size: 'PDF', url: 'https://www.cas.go.jp/jp/seisakukaigi/grassrootsTF/followup_dai8/gijiyoshi.pdf', isMinutes: true },
+      { name: '配付資料１', type: 'PDF', size: 'PDF', url: 'https://www.cas.go.jp/jp/seisakukaigi/grassrootsTF/followup_dai8/shiryo1.pdf', isMinutes: false },
+      { name: '添付資料１', type: 'PDF', size: 'PDF', url: 'https://www.cas.go.jp/jp/seisakukaigi/grassrootsTF/followup_dai8/tenpu1.pdf', isMinutes: false },
+      { name: '配付資料２', type: 'PDF', size: 'PDF', url: 'https://www.cas.go.jp/jp/seisakukaigi/grassrootsTF/followup_dai8/shiryo2.pdf', isMinutes: false },
+      { name: '配付資料３', type: 'PDF', size: 'PDF', url: 'https://www.cas.go.jp/jp/seisakukaigi/grassrootsTF/followup_dai8/shiryo3.pdf', isMinutes: false },
+      { name: '配付資料４', type: 'PDF', size: 'PDF', url: 'https://www.cas.go.jp/jp/seisakukaigi/grassrootsTF/followup_dai8/shiryo4.pdf', isMinutes: false },
+      { name: '配付資料５', type: 'PDF', size: 'PDF', url: 'https://www.cas.go.jp/jp/seisakukaigi/grassrootsTF/followup_dai8/shiryo5.pdf', isMinutes: false },
+      { name: '配付資料６', type: 'PDF', size: 'PDF', url: 'https://www.cas.go.jp/jp/seisakukaigi/grassrootsTF/followup_dai8/shiryo6.pdf', isMinutes: false }
+    ],
+    tags: ['日米関係', 'グラスルーツ', '内閣官房', '地域連携'],
+    officialUrl: 'https://www.cas.go.jp/jp/seisakukaigi/grassrootsTF/index.html',
+    hasMinutes: true,
+    docCount: 10
   },
   {
     id: 'meet-2026-0513-cao-oaep-17',
