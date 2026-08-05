@@ -1564,7 +1564,6 @@ const COUNCILS = [
 ];
 
 const MEETINGS = [
-  // 1. CAO
   {
     id: 'meet-2025-0602-ai14',
     councilId: 'cao-ai-strategy',
@@ -1922,7 +1921,6 @@ const MEETINGS = [
     hasMinutes: true,
     docCount: 9
   },
-  // 2. DIGITAL
   {
     id: 'meet-2025-0512-digital18',
     councilId: 'digital-suishin',
@@ -1954,7 +1952,6 @@ const MEETINGS = [
     hasMinutes: true,
     docCount: 8
   },
-  // 3. CFA
   {
     id: 'meet-2026-0609-suishin',
     councilId: 'cfa-kodomo-suishin',
@@ -2015,7 +2012,6 @@ const MEETINGS = [
     hasMinutes: true,
     docCount: 9
   },
-  // 4. FSA
   {
     id: 'meet-2026-0203-fsa',
     councilId: 'fsa-kinyu-shingi',
@@ -2052,7 +2048,6 @@ const MEETINGS = [
     hasMinutes: true,
     docCount: 12
   },
-  // 6. MOJ
   {
     id: 'meet-2026-0615-moj',
     councilId: 'moj-hosei-shingi',
@@ -2084,7 +2079,6 @@ const MEETINGS = [
     hasMinutes: true,
     docCount: 9
   },
-  // 7. MOD
   {
     id: 'meet-mod-cho-shin-199th',
     councilId: 'mod-cho-shin',
@@ -2235,7 +2229,6 @@ const MEETINGS = [
     hasMinutes: true,
     docCount: 6
   },
-  // 8. MAFF
   {
     id: 'meet-maff-seisaku-49th',
     councilId: 'maff-shokuryo-nogyo',
@@ -2262,7 +2255,6 @@ const MEETINGS = [
     hasMinutes: true,
     docCount: 4
   },
-  // 9. MLIT
   {
     id: 'meet-mlit-shakai-sihon-10th',
     councilId: 'mlit-shakai-sihon-soukai',
@@ -2445,7 +2437,6 @@ const MEETINGS = [
     hasMinutes: true,
     docCount: 2
   },
-  // 10. NPA
   {
     id: 'meet-npa-seisaku-hyoka-42nd',
     councilId: 'npa-seisaku-hyoka-kenkyukai',
@@ -2521,7 +2512,6 @@ const MEETINGS = [
     hasMinutes: true,
     docCount: 3
   },
-  // 11. NRA
   {
     id: 'meet-nra-25th-rinji',
     councilId: 'nra-teireikai',
@@ -2637,7 +2627,6 @@ const MEETINGS = [
     hasMinutes: true,
     docCount: 14
   },
-  // 12. MOFA
   {
     id: 'meet-2026-0630-mofa',
     councilId: 'mofa-gaiko-seisaku',
@@ -2662,8 +2651,6 @@ const MEETINGS = [
     hasMinutes: true,
     docCount: 1
   },
-  // 13. RA
-  // 13. RA
   {
     id: 'meet-ra-fukko-suishin-49th',
     councilId: 'ra-fukko-suishin',
@@ -2772,7 +2759,6 @@ const MEETINGS = [
     hasMinutes: true,
     docCount: 14
   },
-  // 14. CAS & User Requested Council Meetings
   {
     id: 'meet-2025-0623-zensedai',
     councilId: 'cas-zensedai-hosyo',
@@ -2862,7 +2848,6 @@ const MEETINGS = [
     hasMinutes: true,
     docCount: 4
   },
-  // Added CAS meetings (latest meeting within 1 year)
   {
     id: 'meet-2026-0519-cas-ainusuishin-1',
     councilId: 'cas-ainusuishin-1',
@@ -4871,7 +4856,7 @@ const MEETINGS = [
     hasMinutes: true,
     docCount: 9
   },
-    {
+  {
     id: 'meet-2014-1010-cas-kagayakujosei-1',
     councilId: 'cas-kagayakujosei-46',
     councilName: 'すべての女性が輝く社会づくり本部',
@@ -5202,390 +5187,6 @@ const MEETINGS = [
     officialUrl: 'https://www.cas.go.jp/jp/seisaku/kagayakujosei/dai13/gijisidai.html',
     hasMinutes: true,
     docCount: 6
-  },
-  {
-    id: 'meet-2024-0611-cas-kagayakujosei-14',
-    councilId: 'cas-kagayakujosei-46',
-    councilName: 'すべての女性が輝く社会づくり本部',
-    ministry: 'CAS',
-    category: 'HQ',
-    title: '第14回 すべての女性が輝く社会づくり本部',
-    date: '2024/06/11',
-    updatedAt: '2024/06/11 17:00',
-    location: '首相官邸 / 各府省庁本府庁舎',
-    summary: '第14回すべての女性が輝く社会づくり本部の開催。女性活躍・男女共同参画の重点方針（女性版骨太の方針）および各種推進施策について協議。',
-    agenda: ['第14回における主要施策の推進状況について', '女性活躍・男女共同参画の重点方針の策定について'],
-    materials: [
-      { name: '第14回 議事次第・配付資料 (HTML)', type: 'HTML', size: '45 KB', url: 'https://www.cas.go.jp/jp/seisaku/kagayakujosei/dai14/gijisidai.html', isMinutes: false },
-      { name: '第14回 議事録 (PDF)', type: 'PDF', size: 'PDF', url: 'https://www.cas.go.jp/jp/seisaku/kagayakujosei/dai14/gijiroku.pdf', isMinutes: true },
-      { name: '説明資料（PDF／1,426KB）', type: 'PDF', size: 'PDF', url: 'https://www.cas.go.jp/jp/seisaku/kagayakujosei/dai14/siryou1-1.pdf', isMinutes: false },
-      { name: '女性活躍・男女共同参画の重点方針2024（女性版骨太の方針2024）（案）（PDF／817KB）', type: 'PDF', size: 'PDF', url: 'https://www.cas.go.jp/jp/seisaku/kagayakujosei/dai14/siryou1-2.pdf', isMinutes: false },
-      { name: '女性活躍推進法の施行状況について（PDF／1,141KB）', type: 'PDF', size: 'PDF', url: 'https://www.cas.go.jp/jp/seisaku/kagayakujosei/dai14/siryou2.pdf', isMinutes: false },
-      { name: '各府省等における女性の採用・登用状況について（PDF／741KB）', type: 'PDF', size: 'PDF', url: 'https://www.cas.go.jp/jp/seisaku/kagayakujosei/dai14/sankou1.pdf', isMinutes: false },
-      { name: '公共調達の活用による女性の活躍推進について（PDF／993KB）', type: 'PDF', size: 'PDF', url: 'https://www.cas.go.jp/jp/seisaku/kagayakujosei/dai14/sankou2.pdf', isMinutes: false }
-    ],
-    tags: ['女性活躍', '男女共同参画', '女性版骨太方針', '内閣官房'],
-    officialUrl: 'https://www.cas.go.jp/jp/seisaku/kagayakujosei/dai14/gijisidai.html',
-    hasMinutes: true,
-    docCount: 7
-  },
-  {
-    id: 'meet-2025-0610-cas-kagayakujosei-15',
-    councilId: 'cas-kagayakujosei-46',
-    councilName: 'すべての女性が輝く社会づくり本部',
-    ministry: 'CAS',
-    category: 'HQ',
-    title: '第15回 すべての女性が輝く社会づくり本部',
-    date: '2025/06/10',
-    updatedAt: '2025/06/10 17:00',
-    location: '首相官邸 / 各府省庁本府庁舎',
-    summary: '第15回すべての女性が輝く社会づくり本部の開催。女性活躍・男女共同参画の重点方針（女性版骨太の方針）および各種推進施策について協議。',
-    agenda: ['第15回における主要施策の推進状況について', '女性活躍・男女共同参画の重点方針の策定について'],
-    materials: [
-      { name: '第15回 議事次第・配付資料 (HTML)', type: 'HTML', size: '45 KB', url: 'https://www.cas.go.jp/jp/seisaku/kagayakujosei/dai15/gijisidai.html', isMinutes: false },
-      { name: '第15回 議事録 (PDF)', type: 'PDF', size: 'PDF', url: 'https://www.cas.go.jp/jp/seisaku/kagayakujosei/dai15/gijiroku.pdf', isMinutes: true },
-      { name: '女性活躍・男女共同参画の重点方針2025（女性版骨太の方針2025）説明資料（PDF／1,099KB）', type: 'PDF', size: 'PDF', url: 'https://www.cas.go.jp/jp/seisaku/kagayakujosei/dai15/siryou1-1.pdf', isMinutes: false },
-      { name: '新・女性デジタル人材育成プラン説明資料（PDF／754KB）', type: 'PDF', size: 'PDF', url: 'https://www.cas.go.jp/jp/seisaku/kagayakujosei/dai15/siryou1-2.pdf', isMinutes: false },
-      { name: '女性活躍・男女共同参画の重点方針2025（女性版骨太の方針2025）（案）（PDF／667KB）', type: 'PDF', size: 'PDF', url: 'https://www.cas.go.jp/jp/seisaku/kagayakujosei/dai15/siryou2-1.pdf', isMinutes: false },
-      { name: '新・女性デジタル人材育成プラン（案） （PDF／574KB）', type: 'PDF', size: 'PDF', url: 'https://www.cas.go.jp/jp/seisaku/kagayakujosei/dai15/siryou2-2.pdf', isMinutes: false }
-    ],
-    tags: ['女性活躍', '男女共同参画', '女性版骨太方針', '内閣官房'],
-    officialUrl: 'https://www.cas.go.jp/jp/seisaku/kagayakujosei/dai15/gijisidai.html',
-    hasMinutes: true,
-    docCount: 6
-  },
-    {
-    id: 'meet-2014-1010-cas-kagayakujosei-1',
-    councilId: 'cas-kagayakujosei-46',
-    councilName: 'すべての女性が輝く社会づくり本部',
-    ministry: 'CAS',
-    category: 'HQ',
-    title: '第1回 すべての女性が輝く社会づくり本部',
-    date: '2014/10/10',
-    updatedAt: '2014/10/10 17:00',
-    location: '首相官邸 / 各府省庁本府庁舎',
-    summary: '第1回すべての女性が輝く社会づくり本部の開催。女性活躍・男女共同参画の重点方針（女性版骨太の方針）および各種推進施策について協議。',
-    agenda: ['第1回における主要施策の推進状況について', '女性活躍・男女共同参画の重点方針の策定について'],
-    materials: [
-      { name: '第1回 議事次第・配付資料 (HTML)', type: 'HTML', size: '45 KB', url: 'https://www.cas.go.jp/jp/seisaku/kagayakujosei/dai1/gijisidai.html', isMinutes: false },
-      { name: '第1回 議事要旨 (PDF)', type: 'PDF', size: 'PDF', url: 'https://www.cas.go.jp/jp/seisaku/kagayakujosei/dai1/gijiyousi.pdf', isMinutes: true },
-      { name: 'すべての女性が輝く社会づくり本部運営要領（案）', type: 'PDF', size: 'PDF', url: 'https://www.cas.go.jp/jp/seisaku/kagayakujosei/dai1/siryou1.pdf', isMinutes: false },
-      { name: '「すべての女性が輝く政策パッケージ」（ポイント）', type: 'PDF', size: 'PDF', url: 'https://www.cas.go.jp/jp/seisaku/kagayakujosei/dai1/siryou2_1.pdf', isMinutes: false },
-      { name: '「すべての女性が輝く政策パッケージ」', type: 'PDF', size: 'PDF', url: 'https://www.cas.go.jp/jp/seisaku/kagayakujosei/dai1/siryou2_2.pdf', isMinutes: false },
-      { name: '女性の職業生活における活躍の推進に関する法律案の概要', type: 'PDF', size: 'PDF', url: 'https://www.cas.go.jp/jp/seisaku/kagayakujosei/dai1/siryou3.pdf', isMinutes: false }
-    ],
-    tags: ['女性活躍', '男女共同参画', '女性版骨太方針', '内閣官房'],
-    officialUrl: 'https://www.cas.go.jp/jp/seisaku/kagayakujosei/dai1/gijisidai.html',
-    hasMinutes: true,
-    docCount: 6
-  },
-  {
-    id: 'meet-2015-0626-cas-kagayakujosei-2',
-    councilId: 'cas-kagayakujosei-46',
-    councilName: 'すべての女性が輝く社会づくり本部',
-    ministry: 'CAS',
-    category: 'HQ',
-    title: '第2回 すべての女性が輝く社会づくり本部',
-    date: '2015/06/26',
-    updatedAt: '2015/06/26 17:00',
-    location: '首相官邸 / 各府省庁本府庁舎',
-    summary: '第2回すべての女性が輝く社会づくり本部の開催。女性活躍・男女共同参画の重点方針（女性版骨太の方針）および各種推進施策について協議。',
-    agenda: ['第2回における主要施策の推進状況について', '女性活躍・男女共同参画の重点方針の策定について'],
-    materials: [
-      { name: '第2回 議事次第・配付資料 (HTML)', type: 'HTML', size: '45 KB', url: 'https://www.cas.go.jp/jp/seisaku/kagayakujosei/dai2/gijisidai.html', isMinutes: false },
-      { name: '第2回 議事要旨 (PDF)', type: 'PDF', size: 'PDF', url: 'https://www.cas.go.jp/jp/seisaku/kagayakujosei/dai2/gijiyousi.pdf', isMinutes: true },
-      { name: '女性活躍加速のための重点方針2015（ポイント）', type: 'PDF', size: 'PDF', url: 'https://www.cas.go.jp/jp/seisaku/kagayakujosei/dai2/jyuutengaiyou.pdf', isMinutes: false },
-      { name: '女性活躍加速のための重点方針2015（案）', type: 'PDF', size: 'PDF', url: 'https://www.cas.go.jp/jp/seisaku/kagayakujosei/dai2/jyuutenhousinan2015.pdf', isMinutes: false },
-      { name: '「暮らしの質」向上検討会提言（概要）', type: 'PDF', size: 'PDF', url: 'https://www.cas.go.jp/jp/seisaku/kagayakujosei/dai2/sengengaiyou.pdf', isMinutes: false },
-      { name: '「すべての女性が輝く政策パッケージ」の主な実施状況について', type: 'PDF', size: 'PDF', url: 'https://www.cas.go.jp/jp/seisaku/kagayakujosei/dai2/jissijyoukyou.pdf', isMinutes: false }
-    ],
-    tags: ['女性活躍', '男女共同参画', '女性版骨太方針', '内閣官房'],
-    officialUrl: 'https://www.cas.go.jp/jp/seisaku/kagayakujosei/dai2/gijisidai.html',
-    hasMinutes: true,
-    docCount: 6
-  },
-  {
-    id: 'meet-2015-0925-cas-kagayakujosei-3',
-    councilId: 'cas-kagayakujosei-46',
-    councilName: 'すべての女性が輝く社会づくり本部',
-    ministry: 'CAS',
-    category: 'HQ',
-    title: '第3回 すべての女性が輝く社会づくり本部',
-    date: '2015/09/25',
-    updatedAt: '2015/09/25 17:00',
-    location: '首相官邸 / 各府省庁本府庁舎',
-    summary: '第3回すべての女性が輝く社会づくり本部の開催。女性活躍・男女共同参画の重点方針（女性版骨太の方針）および各種推進施策について協議。',
-    agenda: ['第3回における主要施策の推進状況について', '女性活躍・男女共同参画の重点方針の策定について'],
-    materials: [
-      { name: '第3回 議事次第・配付資料 (HTML)', type: 'HTML', size: '45 KB', url: 'https://www.cas.go.jp/jp/seisaku/kagayakujosei/dai3/gijisidai.html', isMinutes: false },
-      { name: '第3回 議事要旨 (PDF)', type: 'PDF', size: 'PDF', url: 'https://www.cas.go.jp/jp/seisaku/kagayakujosei/dai3/gijiyousi.pdf', isMinutes: true },
-      { name: '第２次安倍内閣発足時からの女性活躍の進捗', type: 'PDF', size: 'PDF', url: 'https://www.cas.go.jp/jp/seisaku/kagayakujosei/dai3/sintyoku.pdf', isMinutes: false },
-      { name: '女性の職業生活における活躍の推進に関する基本方針案の概要', type: 'PDF', size: 'PDF', url: 'https://www.cas.go.jp/jp/seisaku/kagayakujosei/dai3/gaiyou.pdf', isMinutes: false },
-      { name: '女性の職業生活における活躍の推進に関する基本方針案', type: 'PDF', size: 'PDF', url: 'https://www.cas.go.jp/jp/seisaku/kagayakujosei/dai3/honbun.pdf', isMinutes: false },
-      { name: '女性活躍推進法の施行スケジュール（想定）', type: 'PDF', size: 'PDF', url: 'https://www.cas.go.jp/jp/seisaku/kagayakujosei/dai3/schedule.pdf', isMinutes: false },
-      { name: '女性が輝く社会に向けた国際シンポジウム（WAW! 2015）の結果報告', type: 'PDF', size: 'PDF', url: 'https://www.cas.go.jp/jp/seisaku/kagayakujosei/dai3/jigohoukoku.pdf', isMinutes: false },
-      { name: 'ＷＡＷ！ Ｔｏ Ｄｏ 2015', type: 'PDF', size: 'PDF', url: 'https://www.cas.go.jp/jp/seisaku/kagayakujosei/dai3/nihongo.pdf', isMinutes: false },
-      { name: 'UN Women 日本事務所開設', type: 'PDF', size: 'PDF', url: 'https://www.cas.go.jp/jp/seisaku/kagayakujosei/dai3/unwomen.pdf', isMinutes: false },
-      { name: 'サミットにおける女性に関するアジェンダについて', type: 'PDF', size: 'PDF', url: 'https://www.cas.go.jp/jp/seisaku/kagayakujosei/dai3/agenda.pdf', isMinutes: false },
-      { name: '「女性活躍加速のための重点方針2015」に基づく来年度概算要求等の概況＜配付資料＞', type: 'PDF', size: 'PDF', url: 'https://www.cas.go.jp/jp/seisaku/kagayakujosei/dai3/jyuutenhousin.pdf', isMinutes: false }
-    ],
-    tags: ['女性活躍', '男女共同参画', '女性版骨太方針', '内閣官房'],
-    officialUrl: 'https://www.cas.go.jp/jp/seisaku/kagayakujosei/dai3/gijisidai.html',
-    hasMinutes: true,
-    docCount: 11
-  },
-  {
-    id: 'meet-2016-0322-cas-kagayakujosei-4',
-    councilId: 'cas-kagayakujosei-46',
-    councilName: 'すべての女性が輝く社会づくり本部',
-    ministry: 'CAS',
-    category: 'HQ',
-    title: '第4回 すべての女性が輝く社会づくり本部',
-    date: '2016/03/22',
-    updatedAt: '2016/03/22 17:00',
-    location: '首相官邸 / 各府省庁本府庁舎',
-    summary: '第4回すべての女性が輝く社会づくり本部の開催。女性活躍・男女共同参画の重点方針（女性版骨太の方針）および各種推進施策について協議。',
-    agenda: ['第4回における主要施策の推進状況について', '女性活躍・男女共同参画の重点方針の策定について'],
-    materials: [
-      { name: '第4回 議事次第・配付資料 (HTML)', type: 'HTML', size: '45 KB', url: 'https://www.cas.go.jp/jp/seisaku/kagayakujosei/dai4/gijisidai.html', isMinutes: false },
-      { name: '第4回 議事要旨 (PDF)', type: 'PDF', size: 'PDF', url: 'https://www.cas.go.jp/jp/seisaku/kagayakujosei/dai4/gijiyousi.pdf', isMinutes: true },
-      { name: '女性の活躍加速のためのワーク・ライフ・バランス等を推進する企業を公共調達においてより幅広く評価する取組指針案について（説明資料）', type: 'PDF', size: 'PDF', url: 'https://www.cas.go.jp/jp/seisaku/kagayakujosei/dai4/siryou1-1.pdf', isMinutes: false },
-      { name: '女性の活躍推進に向けた公共調達及び補助金の活用に関する取組指針（案）', type: 'PDF', size: 'PDF', url: 'https://www.cas.go.jp/jp/seisaku/kagayakujosei/dai4/siryou1-2.pdf', isMinutes: false }
-    ],
-    tags: ['女性活躍', '男女共同参画', '女性版骨太方針', '内閣官房'],
-    officialUrl: 'https://www.cas.go.jp/jp/seisaku/kagayakujosei/dai4/gijisidai.html',
-    hasMinutes: true,
-    docCount: 4
-  },
-  {
-    id: 'meet-2016-0520-cas-kagayakujosei-5',
-    councilId: 'cas-kagayakujosei-46',
-    councilName: 'すべての女性が輝く社会づくり本部',
-    ministry: 'CAS',
-    category: 'HQ',
-    title: '第5回 すべての女性が輝く社会づくり本部',
-    date: '2016/05/20',
-    updatedAt: '2016/05/20 17:00',
-    location: '首相官邸 / 各府省庁本府庁舎',
-    summary: '第5回すべての女性が輝く社会づくり本部の開催。女性活躍・男女共同参画の重点方針（女性版骨太の方針）および各種推進施策について協議。',
-    agenda: ['第5回における主要施策の推進状況について', '女性活躍・男女共同参画の重点方針の策定について'],
-    materials: [
-      { name: '第5回 議事次第・配付資料 (HTML)', type: 'HTML', size: '45 KB', url: 'https://www.cas.go.jp/jp/seisaku/kagayakujosei/dai5/gijisidai.html', isMinutes: false },
-      { name: '第5回 議事要旨 (PDF)', type: 'PDF', size: 'PDF', url: 'https://www.cas.go.jp/jp/seisaku/kagayakujosei/dai5/gijiyousi.pdf', isMinutes: true },
-      { name: '女性活躍加速のための重点方針2016（概要）', type: 'PDF', size: 'PDF', url: 'https://www.cas.go.jp/jp/seisaku/kagayakujosei/dai5/siryou1_1.pdf', isMinutes: false },
-      { name: '女性活躍加速のための重点方針2016（案）', type: 'PDF', size: 'PDF', url: 'https://www.cas.go.jp/jp/seisaku/kagayakujosei/dai5/siryou1_2.pdf', isMinutes: false },
-      { name: '女性活躍推進法の施行状況について', type: 'PDF', size: 'PDF', url: 'https://www.cas.go.jp/jp/seisaku/kagayakujosei/dai5/siryou2.pdf', isMinutes: false }
-    ],
-    tags: ['女性活躍', '男女共同参画', '女性版骨太方針', '内閣官房'],
-    officialUrl: 'https://www.cas.go.jp/jp/seisaku/kagayakujosei/dai5/gijisidai.html',
-    hasMinutes: true,
-    docCount: 5
-  },
-  {
-    id: 'meet-2017-0606-cas-kagayakujosei-6',
-    councilId: 'cas-kagayakujosei-46',
-    councilName: 'すべての女性が輝く社会づくり本部',
-    ministry: 'CAS',
-    category: 'HQ',
-    title: '第6回 すべての女性が輝く社会づくり本部',
-    date: '2017/06/06',
-    updatedAt: '2017/06/06 17:00',
-    location: '首相官邸 / 各府省庁本府庁舎',
-    summary: '第6回すべての女性が輝く社会づくり本部の開催。女性活躍・男女共同参画の重点方針（女性版骨太の方針）および各種推進施策について協議。',
-    agenda: ['第6回における主要施策の推進状況について', '女性活躍・男女共同参画の重点方針の策定について'],
-    materials: [
-      { name: '第6回 議事次第・配付資料 (HTML)', type: 'HTML', size: '45 KB', url: 'https://www.cas.go.jp/jp/seisaku/kagayakujosei/dai6/gijisidai.html', isMinutes: false },
-      { name: '第6回 議事要旨 (PDF)', type: 'PDF', size: 'PDF', url: 'https://www.cas.go.jp/jp/seisaku/kagayakujosei/dai6/gijiyousi.pdf', isMinutes: true },
-      { name: '女性活躍加速のための重点方針2017（概要）', type: 'PDF', size: 'PDF', url: 'https://www.cas.go.jp/jp/seisaku/kagayakujosei/dai6/siryou1_1.pdf', isMinutes: false },
-      { name: '女性活躍加速のための重点方針2017（案）', type: 'PDF', size: 'PDF', url: 'https://www.cas.go.jp/jp/seisaku/kagayakujosei/dai6/siryou1_2.pdf', isMinutes: false },
-      { name: '女性活躍推進法の施行状況について', type: 'PDF', size: 'PDF', url: 'https://www.cas.go.jp/jp/seisaku/kagayakujosei/dai6/siryou2.pdf', isMinutes: false }
-    ],
-    tags: ['女性活躍', '男女共同参画', '女性版骨太方針', '内閣官房'],
-    officialUrl: 'https://www.cas.go.jp/jp/seisaku/kagayakujosei/dai6/gijisidai.html',
-    hasMinutes: true,
-    docCount: 5
-  },
-  {
-    id: 'meet-2018-0612-cas-kagayakujosei-7',
-    councilId: 'cas-kagayakujosei-46',
-    councilName: 'すべての女性が輝く社会づくり本部',
-    ministry: 'CAS',
-    category: 'HQ',
-    title: '第7回 すべての女性が輝く社会づくり本部',
-    date: '2018/06/12',
-    updatedAt: '2018/06/12 17:00',
-    location: '首相官邸 / 各府省庁本府庁舎',
-    summary: '第7回すべての女性が輝く社会づくり本部の開催。女性活躍・男女共同参画の重点方針（女性版骨太の方針）および各種推進施策について協議。',
-    agenda: ['第7回における主要施策の推進状況について', '女性活躍・男女共同参画の重点方針の策定について'],
-    materials: [
-      { name: '第7回 議事次第・配付資料 (HTML)', type: 'HTML', size: '45 KB', url: 'https://www.cas.go.jp/jp/seisaku/kagayakujosei/dai7/gijisidai.html', isMinutes: false },
-      { name: '第7回 議事要旨 (PDF)', type: 'PDF', size: 'PDF', url: 'https://www.cas.go.jp/jp/seisaku/kagayakujosei/dai7/gijiyousi.pdf', isMinutes: true },
-      { name: '女性活躍加速のための重点方針2018（概要）', type: 'PDF', size: 'PDF', url: 'https://www.cas.go.jp/jp/seisaku/kagayakujosei/dai7/siryou1_1.pdf', isMinutes: false },
-      { name: '女性活躍加速のための重点方針2018（案）', type: 'PDF', size: 'PDF', url: 'https://www.cas.go.jp/jp/seisaku/kagayakujosei/dai7/siryou1_2.pdf', isMinutes: false },
-      { name: 'セクシュアル・ハラスメント対策の強化について～メディア・行政間での事案発生を受けての緊急対策～（案）', type: 'PDF', size: 'PDF', url: 'https://www.cas.go.jp/jp/seisaku/kagayakujosei/dai7/siryou2.pdf', isMinutes: false },
-      { name: '女性活躍推進法の施行状況について', type: 'PDF', size: 'PDF', url: 'https://www.cas.go.jp/jp/seisaku/kagayakujosei/dai7/siryou3.pdf', isMinutes: false },
-      { name: '参考資料', type: 'PDF', size: 'PDF', url: 'https://www.cas.go.jp/jp/seisaku/kagayakujosei/dai7/siryou3_sankou.pdf', isMinutes: false }
-    ],
-    tags: ['女性活躍', '男女共同参画', '女性版骨太方針', '内閣官房'],
-    officialUrl: 'https://www.cas.go.jp/jp/seisaku/kagayakujosei/dai7/gijisidai.html',
-    hasMinutes: true,
-    docCount: 7
-  },
-  {
-    id: 'meet-2019-0618-cas-kagayakujosei-8',
-    councilId: 'cas-kagayakujosei-46',
-    councilName: 'すべての女性が輝く社会づくり本部',
-    ministry: 'CAS',
-    category: 'HQ',
-    title: '第8回 すべての女性が輝く社会づくり本部',
-    date: '2019/06/18',
-    updatedAt: '2019/06/18 17:00',
-    location: '首相官邸 / 各府省庁本府庁舎',
-    summary: '第8回すべての女性が輝く社会づくり本部の開催。女性活躍・男女共同参画の重点方針（女性版骨太の方針）および各種推進施策について協議。',
-    agenda: ['第8回における主要施策の推進状況について', '女性活躍・男女共同参画の重点方針の策定について'],
-    materials: [
-      { name: '第8回 議事次第・配付資料 (HTML)', type: 'HTML', size: '45 KB', url: 'https://www.cas.go.jp/jp/seisaku/kagayakujosei/dai8/gijisidai.html', isMinutes: false },
-      { name: '第8回 議事要旨 (PDF)', type: 'PDF', size: 'PDF', url: 'https://www.cas.go.jp/jp/seisaku/kagayakujosei/dai8/gijiyousi.pdf', isMinutes: true },
-      { name: '女性活躍加速のための重点方針2019（概要）（PDF形式：606KB）', type: 'PDF', size: 'PDF', url: 'https://www.cas.go.jp/jp/seisaku/kagayakujosei/dai8/siryou1_1.pdf', isMinutes: false },
-      { name: '女性活躍加速のための重点方針2019（案）（PDF形式：621KB）', type: 'PDF', size: 'PDF', url: 'https://www.cas.go.jp/jp/seisaku/kagayakujosei/dai8/siryou1_2.pdf', isMinutes: false },
-      { name: '多様な困難に直面する女性に対する支援等に関する関係府省連絡会議の開催について（案）（PDF形式：107KB）', type: 'PDF', size: 'PDF', url: 'https://www.cas.go.jp/jp/seisaku/kagayakujosei/dai8/siryou2.pdf', isMinutes: false },
-      { name: '女性活躍推進法の施行状況及び各府省等の女性活躍状況について（PDF形式：1,070KB）', type: 'PDF', size: 'PDF', url: 'https://www.cas.go.jp/jp/seisaku/kagayakujosei/dai8/siryou3_1.pdf', isMinutes: false },
-      { name: '女性活躍推進法に基づく公共調達に関する取組状況（PDF形式：849KB）', type: 'PDF', size: 'PDF', url: 'https://www.cas.go.jp/jp/seisaku/kagayakujosei/dai8/siryou3_2.pdf', isMinutes: false },
-      { name: '女性活躍推進法に基づく各府省の取組について（PDF形式：489KB）', type: 'PDF', size: 'PDF', url: 'https://www.cas.go.jp/jp/seisaku/kagayakujosei/dai8/siryou_sankou.pdf', isMinutes: false }
-    ],
-    tags: ['女性活躍', '男女共同参画', '女性版骨太方針', '内閣官房'],
-    officialUrl: 'https://www.cas.go.jp/jp/seisaku/kagayakujosei/dai8/gijisidai.html',
-    hasMinutes: true,
-    docCount: 8
-  },
-  {
-    id: 'meet-2020-0701-cas-kagayakujosei-9',
-    councilId: 'cas-kagayakujosei-46',
-    councilName: 'すべての女性が輝く社会づくり本部',
-    ministry: 'CAS',
-    category: 'HQ',
-    title: '第9回 すべての女性が輝く社会づくり本部',
-    date: '2020/07/01',
-    updatedAt: '2020/07/01 17:00',
-    location: '首相官邸 / 各府省庁本府庁舎',
-    summary: '第9回すべての女性が輝く社会づくり本部の開催。女性活躍・男女共同参画の重点方針（女性版骨太の方針）および各種推進施策について協議。',
-    agenda: ['第9回における主要施策の推進状況について', '女性活躍・男女共同参画の重点方針の策定について'],
-    materials: [
-      { name: '第9回 議事次第・配付資料 (HTML)', type: 'HTML', size: '45 KB', url: 'https://www.cas.go.jp/jp/seisaku/kagayakujosei/dai9/gijisidai.html', isMinutes: false },
-      { name: '第9回 議事要旨 (PDF)', type: 'PDF', size: 'PDF', url: 'https://www.cas.go.jp/jp/seisaku/kagayakujosei/dai9/gijiyousi.pdf', isMinutes: true },
-      { name: '「女性活躍加速のための重点方針2020（案）」（概要）（PDF形式／603KB）', type: 'PDF', size: 'PDF', url: 'https://www.cas.go.jp/jp/seisaku/kagayakujosei/dai9/siryou1-1.pdf', isMinutes: false },
-      { name: '「女性活躍加速のための重点方針2020（案）」（本文）（PDF形式／678KB）', type: 'PDF', size: 'PDF', url: 'https://www.cas.go.jp/jp/seisaku/kagayakujosei/dai9/siryou1-2.pdf', isMinutes: false },
-      { name: '概要（PDF形式／809KB）', type: 'PDF', size: 'PDF', url: 'https://www.cas.go.jp/jp/seisaku/kagayakujosei/dai9/siryou1-3-1.pdf', isMinutes: false },
-      { name: '本文（PDF形式／810KB）', type: 'PDF', size: 'PDF', url: 'https://www.cas.go.jp/jp/seisaku/kagayakujosei/dai9/siryou1-3-2.pdf', isMinutes: false },
-      { name: '加藤厚生労働大臣御発言(「女性活躍加速のための重点方針2020」について)（PDF形式／181KB）', type: 'PDF', size: 'PDF', url: 'https://www.cas.go.jp/jp/seisaku/kagayakujosei/dai9/siryou1-4.pdf', isMinutes: false },
-      { name: '女性活躍推進法の施行状況及び各府省等の女性活躍状況について（PDF形式／1,389KB）', type: 'PDF', size: 'PDF', url: 'https://www.cas.go.jp/jp/seisaku/kagayakujosei/dai9/siryou2-1.pdf', isMinutes: false },
-      { name: '女性活躍推進法に基づく公共調達に関する取組状況について（PDF形式／751KB）', type: 'PDF', size: 'PDF', url: 'https://www.cas.go.jp/jp/seisaku/kagayakujosei/dai9/siryou2-2.pdf', isMinutes: false },
-      { name: '女性の活躍推進に向けた公共調達及び補助金の活用に関する取組指針改正(案)の概要について（PDF形式／253KB）', type: 'PDF', size: 'PDF', url: 'https://www.cas.go.jp/jp/seisaku/kagayakujosei/dai9/siryou2-3.pdf', isMinutes: false }
-    ],
-    tags: ['女性活躍', '男女共同参画', '女性版骨太方針', '内閣官房'],
-    officialUrl: 'https://www.cas.go.jp/jp/seisaku/kagayakujosei/dai9/gijisidai.html',
-    hasMinutes: true,
-    docCount: 10
-  },
-  {
-    id: 'meet-2021-0309-cas-kagayakujosei-10',
-    councilId: 'cas-kagayakujosei-46',
-    councilName: 'すべての女性が輝く社会づくり本部',
-    ministry: 'CAS',
-    category: 'HQ',
-    title: '第10回 すべての女性が輝く社会づくり本部',
-    date: '2021/03/09',
-    updatedAt: '2021/03/09 17:00',
-    location: '首相官邸 / 各府省庁本府庁舎',
-    summary: '第10回すべての女性が輝く社会づくり本部の開催。女性活躍・男女共同参画の重点方針（女性版骨太の方針）および各種推進施策について協議。',
-    agenda: ['第10回における主要施策の推進状況について', '女性活躍・男女共同参画の重点方針の策定について'],
-    materials: [
-      { name: '第10回 議事次第・配付資料 (HTML)', type: 'HTML', size: '45 KB', url: 'https://www.cas.go.jp/jp/seisaku/kagayakujosei/dai10/gijisidai.html', isMinutes: false },
-      { name: '第10回 議事録 (PDF)', type: 'PDF', size: 'PDF', url: 'https://www.cas.go.jp/jp/seisaku/kagayakujosei/dai10/gijiroku.pdf', isMinutes: true },
-      { name: '女性活躍・男女共同参画の推進について（PDF／746KB）', type: 'PDF', size: 'PDF', url: 'https://www.cas.go.jp/jp/seisaku/kagayakujosei/dai10/siryou1.pdf', isMinutes: false },
-      { name: '第５次男女共同参画基本計画における女性の登用・採用に関する成果目標一覧（PDF／194KB）', type: 'PDF', size: 'PDF', url: 'https://www.cas.go.jp/jp/seisaku/kagayakujosei/dai10/sankou1.pdf', isMinutes: false }
-    ],
-    tags: ['女性活躍', '男女共同参画', '女性版骨太方針', '内閣官房'],
-    officialUrl: 'https://www.cas.go.jp/jp/seisaku/kagayakujosei/dai10/gijisidai.html',
-    hasMinutes: true,
-    docCount: 4
-  },
-  {
-    id: 'meet-2021-0616-cas-kagayakujosei-11',
-    councilId: 'cas-kagayakujosei-46',
-    councilName: 'すべての女性が輝く社会づくり本部',
-    ministry: 'CAS',
-    category: 'HQ',
-    title: '第11回 すべての女性が輝く社会づくり本部',
-    date: '2021/06/16',
-    updatedAt: '2021/06/16 17:00',
-    location: '首相官邸 / 各府省庁本府庁舎',
-    summary: '第11回すべての女性が輝く社会づくり本部の開催。女性活躍・男女共同参画の重点方針（女性版骨太の方針）および各種推進施策について協議。',
-    agenda: ['第11回における主要施策の推進状況について', '女性活躍・男女共同参画の重点方針の策定について'],
-    materials: [
-      { name: '第11回 議事次第・配付資料 (HTML)', type: 'HTML', size: '45 KB', url: 'https://www.cas.go.jp/jp/seisaku/kagayakujosei/dai11/gijisidai.html', isMinutes: false },
-      { name: '第11回 議事録 (PDF)', type: 'PDF', size: 'PDF', url: 'https://www.cas.go.jp/jp/seisaku/kagayakujosei/dai11/gijiroku_2.pdf', isMinutes: true },
-      { name: '女性活躍・男女共同参画の重点方針２０２１（案）（説明資料）（PDF／989KB）', type: 'PDF', size: 'PDF', url: 'https://www.cas.go.jp/jp/seisaku/kagayakujosei/dai11/siryou1-1.pdf', isMinutes: false },
-      { name: '女性活躍・男女共同参画の重点方針２０２１（案）（PDF／527KB）', type: 'PDF', size: 'PDF', url: 'https://www.cas.go.jp/jp/seisaku/kagayakujosei/dai11/siryou1-2.pdf', isMinutes: false },
-      { name: '各府省等の女性活躍状況及び女性活躍推進法の施行状況について（PDF／1,176KB）', type: 'PDF', size: 'PDF', url: 'https://www.cas.go.jp/jp/seisaku/kagayakujosei/dai11/siryou2-1.pdf', isMinutes: false },
-      { name: '女性活躍推進法に基づく公共調達に関する取組状況について（PDF／1,126KB）', type: 'PDF', size: 'PDF', url: 'https://www.cas.go.jp/jp/seisaku/kagayakujosei/dai11/siryou2-2.pdf', isMinutes: false },
-      { name: '女性活躍の現状と課題（PDF／3,618KB）', type: 'PDF', size: 'PDF', url: 'https://www.cas.go.jp/jp/seisaku/kagayakujosei/dai11/sankou.pdf', isMinutes: false }
-    ],
-    tags: ['女性活躍', '男女共同参画', '女性版骨太方針', '内閣官房'],
-    officialUrl: 'https://www.cas.go.jp/jp/seisaku/kagayakujosei/dai11/gijisidai.html',
-    hasMinutes: true,
-    docCount: 7
-  },
-  {
-    id: 'meet-2022-0603-cas-kagayakujosei-12',
-    councilId: 'cas-kagayakujosei-46',
-    councilName: 'すべての女性が輝く社会づくり本部',
-    ministry: 'CAS',
-    category: 'HQ',
-    title: '第12回 すべての女性が輝く社会づくり本部',
-    date: '2022/06/03',
-    updatedAt: '2022/06/03 17:00',
-    location: '首相官邸 / 各府省庁本府庁舎',
-    summary: '第12回すべての女性が輝く社会づくり本部の開催。女性活躍・男女共同参画の重点方針（女性版骨太の方針）および各種推進施策について協議。',
-    agenda: ['第12回における主要施策の推進状況について', '女性活躍・男女共同参画の重点方針の策定について'],
-    materials: [
-      { name: '第12回 議事次第・配付資料 (HTML)', type: 'HTML', size: '45 KB', url: 'https://www.cas.go.jp/jp/seisaku/kagayakujosei/dai12/gijisidai.html', isMinutes: false },
-      { name: '第12回 議事録 (PDF)', type: 'PDF', size: 'PDF', url: 'https://www.cas.go.jp/jp/seisaku/kagayakujosei/dai12/gijiroku.pdf', isMinutes: true },
-      { name: '説明資料（PDF／1,536KB）', type: 'PDF', size: 'PDF', url: 'https://www.cas.go.jp/jp/seisaku/kagayakujosei/dai12/siryou1.pdf', isMinutes: false },
-      { name: '女性活躍・男女共同参画の重点方針2022（女性版骨太の方針2022）（案）（PDF／509KB）', type: 'PDF', size: 'PDF', url: 'https://www.cas.go.jp/jp/seisaku/kagayakujosei/dai12/siryou2.pdf', isMinutes: false },
-      { name: '各府省等における女性の採用・登用状況について（PDF／419KB）', type: 'PDF', size: 'PDF', url: 'https://www.cas.go.jp/jp/seisaku/kagayakujosei/dai12/sankou1.pdf', isMinutes: false },
-      { name: '女性活躍・男女共同参画の現状と課題（PDF／2,673KB）', type: 'PDF', size: 'PDF', url: 'https://www.cas.go.jp/jp/seisaku/kagayakujosei/dai12/sankou2.pdf', isMinutes: false }
-    ],
-    tags: ['女性活躍', '男女共同参画', '女性版骨太方針', '内閣官房'],
-    officialUrl: 'https://www.cas.go.jp/jp/seisaku/kagayakujosei/dai12/gijisidai.html',
-    hasMinutes: true,
-    docCount: 6
-  },
-  {
-    id: 'meet-2023-0613-cas-kagayakujosei-13',
-    councilId: 'cas-kagayakujosei-46',
-    councilName: 'すべての女性が輝く社会づくり本部',
-    ministry: 'CAS',
-    category: 'HQ',
-    title: '第13回 すべての女性が輝く社会づくり本部',
-    date: '2023/06/13',
-    updatedAt: '2023/06/13 17:00',
-    location: '首相官邸 / 各府省庁本府庁舎',
-    summary: '第13回すべての女性が輝く社会づくり本部の開催。女性活躍・男女共同参画の重点方針（女性版骨太の方針）および各種推進施策について協議。',
-    agenda: ['第13回における主要施策の推進状況について', '女性活躍・男女共同参画の重点方針の策定について'],
-    materials: [
-      { name: '第13回 議事次第・配付資料 (HTML)', type: 'HTML', size: '45 KB', url: 'https://www.cas.go.jp/jp/seisaku/kagayakujosei/dai13/gijisidai.html', isMinutes: false },
-      { name: '第13回 議事録 (PDF)', type: 'PDF', size: 'PDF', url: 'https://www.cas.go.jp/jp/seisaku/kagayakujosei/dai13/gijiroku.pdf', isMinutes: true },
-      { name: '概要資料（PDF／1,352KB）', type: 'PDF', size: 'PDF', url: 'https://www.cas.go.jp/jp/seisaku/kagayakujosei/dai13/siryou1-1.pdf', isMinutes: false },
-      { name: '女性活躍・男女共同参画の重点方針2023（女性版骨太の方針2023）（案）（PDF／531KB）', type: 'PDF', size: 'PDF', url: 'https://www.cas.go.jp/jp/seisaku/kagayakujosei/dai13/siryou1-2.pdf', isMinutes: false },
-      { name: '各府省等における女性の採用・登用状況について（PDF／832KB）', type: 'PDF', size: 'PDF', url: 'https://www.cas.go.jp/jp/seisaku/kagayakujosei/dai13/siryou2-1.pdf', isMinutes: false },
-      { name: '女性活躍推進法に基づく公共調達に関する取組状況について（PDF／1,057KB）', type: 'PDF', size: 'PDF', url: 'https://www.cas.go.jp/jp/seisaku/kagayakujosei/dai13/siryou2-2.pdf', isMinutes: false },
-      { name: '●●●（PDF／●●●KB）', type: 'PDF', size: 'PDF', url: 'https://www.cas.go.jp/jp/seisaku/kagayakujosei/dai13/sankou1.pdf', isMinutes: false }
-    ],
-    tags: ['女性活躍', '男女共同参画', '女性版骨太方針', '内閣官房'],
-    officialUrl: 'https://www.cas.go.jp/jp/seisaku/kagayakujosei/dai13/gijisidai.html',
-    hasMinutes: true,
-    docCount: 7
   },
   {
     id: 'meet-2024-0611-cas-kagayakujosei-14',
@@ -7296,7 +6897,6 @@ const MEETINGS = [
     hasMinutes: true,
     docCount: 9
   },
-  // Added meetings for initial councils
   {
     id: 'meet-2026-0615-moe-chuo-kankyo',
     councilId: 'moe-chuo-kankyo',
@@ -7460,6 +7060,3 @@ const MEETINGS = [
     docCount: 1
   }
 ];
-
-// Initial alert keywords stored in app
-const INITIAL_ALERT_KEYWORDS = ['AI', 'サイバーセキュリティ', '規制改革', '社会保障', '脱炭素', '独占禁止法', '個人情報保護'];

@@ -1065,7 +1065,16 @@ def validate_data_js():
                 print(f"[FAIL] public/data.js: Unescaped single quote string imbalance in {name} line {lnum}: {line.strip()}")
                 sys.exit(1)
 
-    print("[SUCCESS] public/data.js: Full JS syntax validation passed (braces, brackets, quotes, structural integrity).")
+    # 5. Check for duplicate meeting IDs and duplicate Council + Title entries
+    meeting_id_matches = re.findall(r"id:\s*'([^']*)'", meetings_str)
+    seen_m_ids = set()
+    for m_id in meeting_id_matches:
+        if m_id in seen_m_ids:
+            print(f"[FAIL] public/data.js: Duplicate meeting ID detected: '{m_id}'")
+            sys.exit(1)
+        seen_m_ids.add(m_id)
+
+    print("[SUCCESS] public/data.js: Full JS syntax validation passed (braces, brackets, quotes, duplicates, structural integrity).")
 
 def main():
     print("==========================================================")
