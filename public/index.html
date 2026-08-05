@@ -47,23 +47,14 @@
 
       <!-- Main Navigation Tabs -->
       <nav class="main-nav">
-        <button class="nav-tab active" data-tab="timeline">
-          <svg class="tab-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-            stroke-width="2">
-            <circle cx="12" cy="12" r="10" />
-            <polyline points="12 6 12 12 16 14" />
+        <button class="nav-tab active" data-tab="main">
+          <svg class="tab-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="3" y="3" width="7" height="7" />
+            <rect x="14" y="3" width="7" height="7" />
+            <rect x="3" y="14" width="7" height="7" />
+            <rect x="14" y="14" width="7" height="7" />
           </svg>
-          タイムライン
-        </button>
-        <button class="nav-tab" data-tab="councils">
-          <svg class="tab-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-            stroke-width="2">
-            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
-            <circle cx="9" cy="7" r="4" />
-            <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
-            <path d="M16 3.13a4 4 0 0 1 0 7.75" />
-          </svg>
-          会議体一覧
+          会議一覧
         </button>
         <button class="nav-tab" data-tab="watchlist">
           <svg class="tab-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
@@ -145,10 +136,30 @@
   <!-- MAIN APP CONTAINER -->
   <main class="app-main container">
 
-    <!-- VIEW 1: TIMELINE VIEW -->
-    <section class="view-panel active" id="viewTimeline">
+    <!-- VIEW 1: UNIFIED MAIN VIEW -->
+    <section class="view-panel active" id="viewMain">
 
-      <!-- SEARCH & FILTER BAR -->
+      <!-- MODE TOGGLE -->
+      <div class="view-mode-toggle">
+        <button class="mode-btn active" data-mode="BY_COUNCIL" id="modeByCouncilBtn">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="3" y="3" width="7" height="7" />
+            <rect x="14" y="3" width="7" height="7" />
+            <rect x="3" y="14" width="7" height="7" />
+            <rect x="14" y="14" width="7" height="7" />
+          </svg>
+          会議体別
+        </button>
+        <button class="mode-btn" data-mode="BY_DATE" id="modeByDateBtn">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="10" />
+            <polyline points="12 6 12 12 16 14" />
+          </svg>
+          新着順
+        </button>
+      </div>
+
+      <!-- SEARCH & FILTER BAR (shared between modes) -->
       <div class="filter-panel card-glass">
         <div class="filter-primary-row">
           <div class="search-input-wrapper">
@@ -233,6 +244,16 @@
             </select>
           </div>
 
+          <!-- Sort Select -->
+          <div class="filter-group">
+            <label for="sortBySelect">並び替え</label>
+            <select id="sortBySelect">
+              <option value="NEWEST">開催/更新日 (新しい順)</option>
+              <option value="OLDEST">開催/更新日 (古い順)</option>
+              <option value="DOCS_DESC">資料点数 (多い順)</option>
+            </select>
+          </div>
+
           <!-- Reset Filter Button -->
           <div class="filter-group filter-actions">
             <button class="btn-secondary" id="resetFiltersBtn">
@@ -254,136 +275,38 @@
         </div>
       </div>
 
-      <!-- TIMELINE LIST CONTAINER -->
-      <div class="timeline-container">
-        <div class="section-header">
-          <h2 class="section-title">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <circle cx="12" cy="12" r="10" />
-              <polyline points="12 6 12 12 16 14" />
-            </svg>
-            最新の会議体 開催・資料更新タイムライン
-          </h2>
-          <div class="sort-controls">
-            <label for="sortBySelect">並び替え:</label>
-            <select id="sortBySelect">
-              <option value="NEWEST">開催/更新日 (新しい順)</option>
-              <option value="OLDEST">開催/更新日 (古い順)</option>
-              <option value="DOCS_DESC">資料点数 (多い順)</option>
-            </select>
+      <!-- MODE A: BY_COUNCIL VIEW -->
+      <div id="byCouncilView">
+        <div class="councils-accordion-list" id="councilsAccordionList">
+          <!-- Council accordion cards injected here -->
+        </div>
+      </div>
+
+      <!-- MODE B: BY_DATE VIEW (Timeline) -->
+      <div id="byDateView" class="hidden">
+        <div class="timeline-container">
+          <div class="timeline-feed" id="timelineFeed">
+            <!-- Timeline Card Dynamic Injection -->
           </div>
-        </div>
 
-        <div class="timeline-feed" id="timelineFeed">
-          <!-- Timeline Card Dynamic Injection -->
-        </div>
-
-        <!-- NO RESULTS MESSAGE -->
-        <div class="no-results card-glass hidden" id="noResultsState">
-          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-            <circle cx="11" cy="11" r="8" />
-            <line x1="21" y1="21" x2="16.65" y2="16.65" />
-            <line x1="11" y1="8" x2="11" y2="14" />
-            <line x1="8" y1="11" x2="14" y2="11" />
-          </svg>
-          <h3>該当する会議体・資料が見つかりませんでした</h3>
-          <p>検索キーワードを短くするか、省庁・期間などの絞り込み条件を緩和してお試しください。</p>
-          <button class="btn-primary" id="noResultsResetBtn">条件をクリアして全件表示</button>
-        </div>
-      </div>
-
-    </section>
-
-    <!-- VIEW 2: COUNCILS DIRECTORY -->
-    <section class="view-panel" id="viewCouncils">
-      <div class="section-header">
-        <div>
-          <h2 class="section-title">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
-              <circle cx="9" cy="7" r="4" />
-              <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
-              <path d="M16 3.13a4 4 0 0 1 0 7.75" />
-            </svg>
-            会議体一覧
-          </h2>
-          <p class="section-subtitle">日本政府各省庁の主要な会議体の一覧。お気に入り（ウォッチ）登録でマイウォッチリストへの集約やRSS連携が可能です。</p>
-        </div>
-      </div>
-
-      <!-- COUNCILS FILTER BAR -->
-      <div class="filter-panel card-glass" style="margin-bottom: 1.5rem;">
-        <div class="filter-primary-row">
-          <div class="search-input-wrapper">
-            <svg class="search-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <!-- NO RESULTS MESSAGE -->
+          <div class="no-results card-glass hidden" id="noResultsState">
+            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
               <circle cx="11" cy="11" r="8" />
               <line x1="21" y1="21" x2="16.65" y2="16.65" />
+              <line x1="11" y1="8" x2="11" y2="14" />
+              <line x1="8" y1="11" x2="14" y2="11" />
             </svg>
-            <input type="text" id="councilSearchInput" placeholder="会議体名・所管省庁・概要キーワードで検索..." />
-          </div>
-        </div>
-
-        <div class="filter-secondary-row" style="margin-top: 0.75rem;">
-          <div class="filter-group">
-            <label for="councilMinistrySelect">所管省庁</label>
-            <select id="councilMinistrySelect">
-              <option value="ALL">すべての省庁・行政機関（全21省庁）</option>
-              <optgroup label="府・省">
-                <option value="CAO">内閣府 (CAO)</option>
-                <option value="CAS">内閣官房 (CAS)</option>
-                <option value="DIGITAL">デジタル庁 (DIGITAL)</option>
-                <option value="CFA">こども家庭庁 (CFA)</option>
-                <option value="RA">復興庁 (RA)</option>
-                <option value="MIC">総務省 (MIC)</option>
-                <option value="MOJ">法務省 (MOJ)</option>
-                <option value="MOFA">外務省 (MOFA)</option>
-                <option value="MOF">財務省 (MOF)</option>
-                <option value="MEXT">文部科学省 (MEXT)</option>
-                <option value="MHLW">厚生労働省 (MHLW)</option>
-                <option value="MAFF">農林水産省 (MAFF)</option>
-                <option value="METI">経済産業省 (METI)</option>
-                <option value="MLIT">国土交通省 (MLIT)</option>
-                <option value="MOE">環境省 (MOE)</option>
-                <option value="MOD">防衛省 (MOD)</option>
-              </optgroup>
-              <optgroup label="庁・委員会">
-                <option value="NPA">警察庁 (NPA)</option>
-                <option value="FSA">金融庁 (FSA)</option>
-                <option value="CAA">消費者庁 (CAA)</option>
-                <option value="PPC">個人情報保護委員会 (PPC)</option>
-                <option value="NRA">原子力規制委員会 (NRA)</option>
-              </optgroup>
-            </select>
-          </div>
-
-          <div class="filter-group">
-            <label for="councilCategorySelect">会議種別</label>
-            <select id="councilCategorySelect">
-              <option value="ALL">すべての会議種別</option>
-              <option value="COUNCIL">審議会・諮問会議</option>
-              <option value="SUBCOMMITTEE">分科会・部会</option>
-              <option value="PANEL">検討会・有識者会議</option>
-              <option value="ROUNDTABLE">懇談会・作業部会</option>
-            </select>
-          </div>
-
-          <div class="filter-group">
-            <label for="councilSortSelect">並び替え</label>
-            <select id="councilSortSelect">
-              <option value="DATE_DESC" selected>最新順（最新開催日）</option>
-              <option value="NAME_ASC">名前順（五十音順）</option>
-              <option value="MINISTRY_ASC">省庁順</option>
-            </select>
+            <h3>該当する会議体・資料が見つかりませんでした</h3>
+            <p>検索キーワードを短くするか、省庁・期間などの絞り込み条件を緩和してお試しください。</p>
+            <button class="btn-primary" id="noResultsResetBtn">条件をクリアして全件表示</button>
           </div>
         </div>
       </div>
 
-      <div class="councils-grid" id="councilsGrid">
-        <!-- Councils Grid Injection -->
-      </div>
     </section>
 
-    <!-- VIEW 3: WATCHLIST & ALERTS -->
+    <!-- VIEW 2: WATCHLIST & ALERTS -->
     <section class="view-panel" id="viewWatchlist">
       <div class="section-header">
         <div>
@@ -435,7 +358,7 @@
       </div>
     </section>
 
-    <!-- VIEW 4: ANALYTICS & TRENDS -->
+    <!-- VIEW 3: ANALYTICS & TRENDS -->
     <section class="view-panel" id="viewAnalytics">
       <div class="section-header">
         <div>
@@ -474,7 +397,7 @@
       </div>
     </section>
 
-    <!-- VIEW 5: ABOUT & METHODOLOGY -->
+    <!-- VIEW 4: ABOUT & METHODOLOGY -->
     <section class="view-panel" id="viewAbout">
       <div class="about-card card-glass">
         <h2>政策会議ウォッチ (PM-HUB) について</h2>

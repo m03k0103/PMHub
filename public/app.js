@@ -7,7 +7,9 @@ if (typeof document !== 'undefined') {
 document.addEventListener('DOMContentLoaded', () => {
   // --- STATE MANAGEMENT ---
   const state = {
-    currentTab: 'timeline',
+    currentTab: 'main',
+    viewMode: 'BY_COUNCIL',
+    expandedCouncilIds: new Set(),
     searchQuery: '',
     ministryFilter: 'ALL',
     categoryFilter: 'ALL',
@@ -63,17 +65,19 @@ document.addEventListener('DOMContentLoaded', () => {
     activeTagsContainer: document.getElementById('activeTagsContainer'),
     resultsCount: document.getElementById('resultsCount'),
 
-    // Timeline
+    // Mode toggle
+    modeByCouncilBtn: document.getElementById('modeByCouncilBtn'),
+    modeByDateBtn: document.getElementById('modeByDateBtn'),
+    byCouncilView: document.getElementById('byCouncilView'),
+    byDateView: document.getElementById('byDateView'),
+
+    // Timeline (BY_DATE mode)
     timelineFeed: document.getElementById('timelineFeed'),
     noResultsState: document.getElementById('noResultsState'),
     noResultsResetBtn: document.getElementById('noResultsResetBtn'),
 
-    // Councils
-    councilsGrid: document.getElementById('councilsGrid'),
-    councilSearchInput: document.getElementById('councilSearchInput'),
-    councilMinistrySelect: document.getElementById('councilMinistrySelect'),
-    councilCategorySelect: document.getElementById('councilCategorySelect'),
-    councilSortSelect: document.getElementById('councilSortSelect'),
+    // Councils (BY_COUNCIL mode)
+    councilsAccordionList: document.getElementById('councilsAccordionList'),
 
     // Watchlist
     watchlistActiveCount: document.getElementById('watchlistActiveCount'),
@@ -110,8 +114,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initTheme();
   updateHeroStats();
   setupEventListeners();
-  renderTimeline();
-  renderCouncilsGrid();
+  renderMainView();
   renderWatchlist();
 
   // --- THEME HANDLER ---
@@ -131,7 +134,7 @@ document.addEventListener('DOMContentLoaded', () => {
     state.enableAiSummary = !state.enableAiSummary;
     localStorage.setItem('pmhub_enable_ai_summary', state.enableAiSummary);
     updateAiSummaryButtonUI();
-    renderTimeline();
+    renderMainView();
     showToast(`AI要約表示を ${state.enableAiSummary ? 'ON (有効)' : 'OFF (無効 / Tokenコスト制御)'} に切り替えました`);
   }
 
@@ -191,7 +194,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Brand logo reset
     el.brandLogo.addEventListener('click', () => {
-      switchTab('timeline');
+      switchTab('main');
       resetFilters();
     });
 
@@ -207,42 +210,42 @@ document.addEventListener('DOMContentLoaded', () => {
     el.searchInput.addEventListener('input', (e) => {
       state.searchQuery = e.target.value.trim();
       el.clearSearchBtn.classList.toggle('hidden', state.searchQuery === '');
-      renderTimeline();
+      renderMainView();
     });
 
     el.clearSearchBtn.addEventListener('click', () => {
       el.searchInput.value = '';
       state.searchQuery = '';
       el.clearSearchBtn.classList.add('hidden');
-      renderTimeline();
+      renderMainView();
     });
 
     el.ministrySelect.addEventListener('change', (e) => {
       state.ministryFilter = e.target.value;
-      renderTimeline();
+      renderMainView();
     });
 
     el.categorySelect.addEventListener('change', (e) => {
       state.categoryFilter = e.target.value;
-      renderTimeline();
+      renderMainView();
     });
 
     el.docTypeSelect.addEventListener('change', (e) => {
       state.docTypeFilter = e.target.value;
-      renderTimeline();
+      renderMainView();
     });
 
     el.dateRangeSelect.addEventListener('change', (e) => {
       state.dateRangeFilter = e.target.value;
-      renderTimeline();
+      renderMainView();
     });
 
     el.resetFiltersBtn.addEventListener('click', resetFilters);
-    el.noResultsResetBtn.addEventListener('click', resetFilters);
+    if (el.noResultsResetBtn) el.noResultsResetBtn.addEventListener('click', resetFilters);
 
     el.sortBySelect.addEventListener('change', (e) => {
       state.sortBy = e.target.value;
-      renderTimeline();
+      renderMainView();
     });
 
     // Quick Keyword Chips
@@ -260,22 +263,16 @@ document.addEventListener('DOMContentLoaded', () => {
           chip.classList.add('active');
         }
         el.clearSearchBtn.classList.toggle('hidden', state.searchQuery === '');
-        renderTimeline();
+        renderMainView();
       });
     });
 
-    // Councils Directory Search & Filters
-    if (el.councilSearchInput) {
-      el.councilSearchInput.addEventListener('input', () => renderCouncilsGrid());
+    // Mode Toggle Buttons
+    if (el.modeByCouncilBtn) {
+      el.modeByCouncilBtn.addEventListener('click', () => switchViewMode('BY_COUNCIL'));
     }
-    if (el.councilMinistrySelect) {
-      el.councilMinistrySelect.addEventListener('change', () => renderCouncilsGrid());
-    }
-    if (el.councilCategorySelect) {
-      el.councilCategorySelect.addEventListener('change', () => renderCouncilsGrid());
-    }
-    if (el.councilSortSelect) {
-      el.councilSortSelect.addEventListener('change', () => renderCouncilsGrid());
+    if (el.modeByDateBtn) {
+      el.modeByDateBtn.addEventListener('click', () => switchViewMode('BY_DATE'));
     }
 
     // Export Data Button
@@ -324,6 +321,32 @@ document.addEventListener('DOMContentLoaded', () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 
+  // --- VIEW MODE SWITCHING ---
+  function switchViewMode(mode) {
+    if (state.viewMode === mode) return;
+    state.viewMode = mode;
+
+    // Toggle mode buttons
+    if (el.modeByCouncilBtn) el.modeByCouncilBtn.classList.toggle('active', mode === 'BY_COUNCIL');
+    if (el.modeByDateBtn) el.modeByDateBtn.classList.toggle('active', mode === 'BY_DATE');
+
+    // Toggle view containers
+    if (el.byCouncilView) el.byCouncilView.classList.toggle('hidden', mode !== 'BY_COUNCIL');
+    if (el.byDateView) el.byDateView.classList.toggle('hidden', mode !== 'BY_DATE');
+
+    renderMainView();
+  }
+
+  // --- MAIN VIEW DISPATCHER ---
+  function renderMainView() {
+    if (state.viewMode === 'BY_COUNCIL') {
+      renderByCouncilView();
+    } else {
+      renderByDateView();
+    }
+  }
+
+
   // --- FILTER & TIMELINE ENGINE ---
   function resetFilters() {
     state.searchQuery = '';
@@ -343,7 +366,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     el.keywordChips.forEach(c => c.classList.remove('active'));
 
-    renderTimeline();
+    renderMainView();
     showToast('検索・絞り込み条件をクリアしました');
   }
 
@@ -420,7 +443,7 @@ document.addEventListener('DOMContentLoaded', () => {
     return list;
   }
 
-  function renderTimeline() {
+  function renderByDateView() {
     const filtered = filterMeetings();
     const sorted = sortMeetings(filtered);
 
@@ -559,7 +582,7 @@ document.addEventListener('DOMContentLoaded', () => {
       state.dateRangeFilter = 'ALL';
       el.dateRangeSelect.value = 'ALL';
     }
-    renderTimeline();
+    renderMainView();
   };
 
   function createTimelineCardHTML(meeting) {
@@ -612,7 +635,7 @@ document.addEventListener('DOMContentLoaded', () => {
     `;
   }
 
-  // --- COUNCILS DIRECTORY ENGINE ---
+  // --- COUNCILS BY-COUNCIL VIEW ENGINE ---
   function getCouncilLatestDate(c) {
     const councilMeetings = (meetingsByCouncilMap.get(c.id) || []).filter(m => m.date && m.date !== '-');
     let dates = councilMeetings.map(m => m.date.replace(/-/g, '/'));
@@ -624,85 +647,16 @@ document.addEventListener('DOMContentLoaded', () => {
     return dates[0];
   }
 
-  function renderCouncilsGrid() {
-    const searchVal = el.councilSearchInput ? el.councilSearchInput.value.trim().toLowerCase() : '';
-    const ministryVal = el.councilMinistrySelect ? el.councilMinistrySelect.value : 'ALL';
-    const categoryVal = el.councilCategorySelect ? el.councilCategorySelect.value : 'ALL';
-    const sortVal = el.councilSortSelect ? el.councilSortSelect.value : 'DATE_DESC';
-
-    const list = COUNCILS.filter(council => {
-      // 1. Ministry filter
-      if (ministryVal !== 'ALL' && council.ministry !== ministryVal) return false;
-
-      // 2. Category filter
-      if (categoryVal !== 'ALL' && council.category !== categoryVal) return false;
-
-      // 3. Text search filter
-      if (searchVal) {
-        const minName = MINISTRIES[council.ministry]?.name || '';
-        const matchName = council.name.toLowerCase().includes(searchVal);
-        const matchMin = minName.toLowerCase().includes(searchVal);
-        const matchDesc = council.description.toLowerCase().includes(searchVal);
-        if (!matchName && !matchMin && !matchDesc) return false;
-      }
-
-      return true;
-    });
-
-    const ministryOrderKeys = Object.keys(MINISTRIES);
-
-    list.sort((a, b) => {
-      if (sortVal === 'DATE_DESC') {
-        const dateA = getCouncilLatestDate(a);
-        const dateB = getCouncilLatestDate(b);
-        if (dateA !== '-' && dateB !== '-') {
-          const cmp = dateB.localeCompare(dateA);
-          if (cmp !== 0) return cmp;
-        } else if (dateA !== '-') {
-          return -1;
-        } else if (dateB !== '-') {
-          return 1;
-        }
-        return a.name.localeCompare(b.name, 'ja');
-      } else if (sortVal === 'NAME_ASC') {
-        return a.name.localeCompare(b.name, 'ja');
-      } else if (sortVal === 'MINISTRY_ASC') {
-        const indexA = ministryOrderKeys.indexOf(a.ministry);
-        const indexB = ministryOrderKeys.indexOf(b.ministry);
-        const minCmp = (indexA !== -1 ? indexA : 999) - (indexB !== -1 ? indexB : 999);
-        if (minCmp !== 0) return minCmp;
-        return a.name.localeCompare(b.name, 'ja');
-      }
-      return 0;
-    });
-
-    if (list.length === 0) {
-      el.councilsGrid.innerHTML = `
-        <div class="no-results card-glass" style="grid-column: 1 / -1; text-align: center; padding: 2.5rem 1rem;">
-          <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="margin: 0 auto 0.75rem;">
-            <circle cx="11" cy="11" r="8" />
-            <line x1="21" y1="21" x2="16.65" y2="16.65" />
-          </svg>
-          <h3 style="font-weight: 700; color: var(--text-primary);">該当する会議体が見つかりませんでした</h3>
-          <p class="text-sm" style="margin-top: 0.4rem; color: var(--text-muted);">省庁・会議種別などの絞り込み条件を緩和してお試しください。</p>
-        </div>
-      `;
-      return;
-    }
-
   function formatPastYearCountDisplay(c) {
     if (c.pastYearCount === '-' || c.pastYearCount === null || c.hasTopPageDates === false) {
       return '-';
     }
-
     const councilMeetings = meetingsByCouncilMap.get(c.id) || [];
     const meetingsWithDates = councilMeetings.filter(m => m.date && m.date !== '-');
-
     if (meetingsWithDates.length > 0) {
       const refDate = new Date('2026-08-02T23:59:59');
       const oneYearAgo = new Date(refDate);
       oneYearAgo.setFullYear(oneYearAgo.getFullYear() - 1);
-
       let count = 0;
       meetingsWithDates.forEach(m => {
         const d = new Date(m.date.replace(/-/g, '/'));
@@ -712,53 +666,192 @@ document.addEventListener('DOMContentLoaded', () => {
       });
       return `${count} 回`;
     }
-
     if (typeof c.pastYearCount === 'number') {
       return `${c.pastYearCount} 回`;
     }
-
     if (typeof c.pastYearCount === 'string') {
       if (c.pastYearCount === '-') return '-';
       return c.pastYearCount.includes('回') ? c.pastYearCount : `${c.pastYearCount} 回`;
     }
-
     return '-';
   }
 
-    el.councilsGrid.innerHTML = list.map(c => {
+  function filterCouncils() {
+    return COUNCILS.filter(council => {
+      if (state.ministryFilter !== 'ALL' && council.ministry !== state.ministryFilter) return false;
+      if (state.categoryFilter !== 'ALL' && council.category !== state.categoryFilter) return false;
+      if (state.searchQuery) {
+        const q = state.searchQuery.toLowerCase();
+        const minName = MINISTRIES[council.ministry]?.name || '';
+        const matchName = council.name.toLowerCase().includes(q);
+        const matchMin = minName.toLowerCase().includes(q);
+        const matchDesc = council.description.toLowerCase().includes(q);
+        // Also search in meetings of this council
+        const councilMeetings = meetingsByCouncilMap.get(council.id) || [];
+        const matchMeetings = councilMeetings.some(m => {
+          return m.title.toLowerCase().includes(q) ||
+            (m.summary && m.summary.toLowerCase().includes(q)) ||
+            (m.tags && m.tags.some(t => t.toLowerCase().includes(q))) ||
+            (m.materials && m.materials.some(mat => mat.name.toLowerCase().includes(q)));
+        });
+        if (!matchName && !matchMin && !matchDesc && !matchMeetings) return false;
+      }
+      // If doc type filter is set, only show councils that have matching meetings
+      if (state.docTypeFilter !== 'ALL') {
+        const councilMeetings = meetingsByCouncilMap.get(council.id) || [];
+        const hasMatch = councilMeetings.some(m => {
+          if (state.docTypeFilter === 'MINUTES' && m.hasMinutes) return true;
+          if (state.docTypeFilter === 'MATERIALS' && m.materials && m.materials.length > 0) return true;
+          if (state.docTypeFilter === 'REPORT' && m.tags && (m.tags.includes('答申') || m.tags.includes('報告書'))) return true;
+          return false;
+        });
+        if (!hasMatch) return false;
+      }
+      return true;
+    });
+  }
+
+  function renderByCouncilView() {
+    const list = filterCouncils();
+
+    // Sort councils
+    const ministryOrderKeys = Object.keys(MINISTRIES);
+    list.sort((a, b) => {
+      if (state.sortBy === 'NEWEST' || state.sortBy === 'OLDEST') {
+        const dateA = getCouncilLatestDate(a);
+        const dateB = getCouncilLatestDate(b);
+        if (dateA !== '-' && dateB !== '-') {
+          const cmp = state.sortBy === 'NEWEST' ? dateB.localeCompare(dateA) : dateA.localeCompare(dateB);
+          if (cmp !== 0) return cmp;
+        } else if (dateA !== '-') {
+          return state.sortBy === 'NEWEST' ? -1 : 1;
+        } else if (dateB !== '-') {
+          return state.sortBy === 'NEWEST' ? 1 : -1;
+        }
+        return a.name.localeCompare(b.name, 'ja');
+      } else if (state.sortBy === 'DOCS_DESC') {
+        const docsA = (meetingsByCouncilMap.get(a.id) || []).reduce((sum, m) => sum + (m.materials ? m.materials.length : 0), 0);
+        const docsB = (meetingsByCouncilMap.get(b.id) || []).reduce((sum, m) => sum + (m.materials ? m.materials.length : 0), 0);
+        return docsB - docsA;
+      }
+      return 0;
+    });
+
+    // Render active filter tags
+    renderActiveFilterTags(list.length);
+
+    if (!el.councilsAccordionList) return;
+
+    if (list.length === 0) {
+      el.councilsAccordionList.innerHTML = `
+        <div class="councils-no-results card-glass">
+          <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="margin: 0 auto;">
+            <circle cx="11" cy="11" r="8" />
+            <line x1="21" y1="21" x2="16.65" y2="16.65" />
+          </svg>
+          <h3>該当する会議体が見つかりませんでした</h3>
+          <p>省庁・会議種別などの絞り込み条件を緩和してお試しください。</p>
+        </div>
+      `;
+      return;
+    }
+
+    el.councilsAccordionList.innerHTML = list.map(c => {
       const minInfo = MINISTRIES[c.ministry] || { name: c.ministry };
       const isWatching = state.watchedCouncilIds.has(c.id);
       const pastYearDisplay = formatPastYearCountDisplay(c);
       const latestDateDisplay = getCouncilLatestDate(c);
+      const isExpanded = state.expandedCouncilIds.has(c.id);
+      const councilMeetings = (meetingsByCouncilMap.get(c.id) || []).slice().sort((a, b) => {
+        const da = a.date ? a.date.replace(/-/g, '/') : '';
+        const db = b.date ? b.date.replace(/-/g, '/') : '';
+        return db.localeCompare(da);
+      });
+
+      // Filter meetings within council if date range filter is active
+      let filteredMeetings = councilMeetings;
+      if (state.dateRangeFilter !== 'ALL') {
+        filteredMeetings = councilMeetings.filter(m => {
+          const meetingDate = new Date(m.date.replace(/-/g, '/'));
+          const now = new Date('2026/08/01');
+          const diffDays = (now - meetingDate) / (1000 * 60 * 60 * 24);
+          if (state.dateRangeFilter === '7D' && diffDays > 7) return false;
+          if (state.dateRangeFilter === '30D' && diffDays > 30) return false;
+          if (state.dateRangeFilter === '90D' && diffDays > 90) return false;
+          if (state.dateRangeFilter === 'YEAR' && meetingDate.getFullYear() !== 2026) return false;
+          return true;
+        });
+      }
+
+      const meetingsHTML = filteredMeetings.length > 0 ? filteredMeetings.map(m => `
+        <div class="meeting-row">
+          <div class="meeting-row-header">
+            <span class="meeting-row-title">${escapeHtml(m.title)}</span>
+            <span class="meeting-row-date">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+              ${formatDate(m.date)}
+            </span>
+          </div>
+          ${(state.enableAiSummary && m.summary) ? `<div class="meeting-row-summary">${escapeHtml(m.summary)}</div>` : ''}
+          ${renderMaterialsAccordionHTML(m.materials, m.id, m.officialUrl)}
+          <div class="meeting-row-actions">
+            <a href="${escapeHtml(sanitizeUrl(m.officialUrl))}" target="_blank" rel="noopener noreferrer" class="btn-primary btn-sm">
+              一次ソース
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            </a>
+          </div>
+        </div>
+      `).join('') : `<div class="meeting-row-no-data">この期間内の開催記録はありません</div>`;
 
       return `
-        <div class="council-card card-glass">
-          <div>
-            <div class="council-card-header">
-              <span class="badge-ministry ${c.ministry}">${minInfo.name}</span>
-              <button class="btn-watchlist-toggle ${isWatching ? 'watching' : ''}" onclick="toggleWatchlist('${c.id}')">
+        <div class="council-accordion-card ${isExpanded ? 'expanded' : ''}" id="council-card-${c.id}">
+          <div class="council-accordion-header" onclick="toggleCouncilAccordion('${c.id}')">
+            <div class="council-header-left">
+              <div class="council-header-top-row">
+                <span class="badge-ministry ${c.ministry}">${minInfo.name}</span>
+                <span class="badge-category">${CATEGORIES[c.category] || c.category}</span>
+              </div>
+              <span class="council-header-title">${escapeHtml(c.name)}</span>
+              <span class="council-header-desc">${escapeHtml(c.description)}</span>
+            </div>
+            <div class="council-header-right">
+              <div class="council-header-meta">
+                <span>最新開催: <strong>${latestDateDisplay}</strong></span>
+                <span>過去1年: <strong style="color: var(--accent-secondary);">${pastYearDisplay}</strong></span>
+              </div>
+              <span class="council-expand-arrow">▼</span>
+            </div>
+          </div>
+          <div class="council-meetings-body">
+            <div class="council-actions-row">
+              <button class="btn-watchlist-toggle ${isWatching ? 'watching' : ''}" onclick="event.stopPropagation(); toggleWatchlist('${c.id}')">
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="${isWatching ? 'currentColor' : 'none'}" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
                 ${isWatching ? 'ウォッチ中' : 'ウォッチ'}
               </button>
-            </div>
-            <h3 class="council-card-title" style="margin-top: 0.6rem;">${escapeHtml(c.name)}</h3>
-            <p class="text-sm" style="margin-top: 0.5rem; line-height: 1.5;">${escapeHtml(c.description)}</p>
-          </div>
-          <div class="council-meta" style="margin-top: 1rem; border-top: 1px solid var(--border-color); padding-top: 0.75rem; display: flex; flex-direction: column; gap: 0.4rem;">
-            <div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.825rem; flex-wrap: wrap; gap: 0.25rem;">
-              <span style="color: var(--text-secondary);">最新開催日: <strong style="color: var(--text-primary); font-weight: 600;">${latestDateDisplay}</strong></span>
-              <span style="color: var(--text-secondary);">過去1年間: <strong style="color: var(--accent-secondary); font-weight: 600;">${pastYearDisplay}</strong></span>
-            </div>
-            <div style="display: flex; justify-content: flex-end; margin-top: 0.2rem;">
-              <a href="${escapeHtml(sanitizeUrl(c.officialUrl))}" target="_blank" rel="noopener noreferrer" class="text-accent text-sm" style="display:inline-flex; align-items:center; gap:0.2rem;">
+              <a href="${escapeHtml(sanitizeUrl(c.officialUrl))}" target="_blank" rel="noopener noreferrer" class="text-accent text-sm" style="display:inline-flex; align-items:center; gap:0.2rem;" onclick="event.stopPropagation()">
                 公式トップページ ↗
               </a>
+            </div>
+            <div class="council-meetings-list">
+              ${meetingsHTML}
             </div>
           </div>
         </div>
       `;
     }).join('');
   }
+
+  window.toggleCouncilAccordion = function(councilId) {
+    const cardEl = document.getElementById(`council-card-${councilId}`);
+    if (!cardEl) return;
+    if (state.expandedCouncilIds.has(councilId)) {
+      state.expandedCouncilIds.delete(councilId);
+      cardEl.classList.remove('expanded');
+    } else {
+      state.expandedCouncilIds.add(councilId);
+      cardEl.classList.add('expanded');
+    }
+  };
 
   window.toggleWatchlist = function(councilId) {
     const council = COUNCILS.find(c => c.id === councilId);
@@ -772,16 +865,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
     localStorage.setItem('pmhub_watched', JSON.stringify(Array.from(state.watchedCouncilIds)));
     updateHeroStats();
-    renderCouncilsGrid();
+    renderMainView();
     renderWatchlist();
   };
+
 
   // --- WATCHLIST & ALERTS VIEW ---
   function renderWatchlist() {
     const watchedList = COUNCILS.filter(c => state.watchedCouncilIds.has(c.id));
     
     if (watchedList.length === 0) {
-      el.watchlistItems.innerHTML = `<p class="text-sm">現在登録中の会議体はありません。「会議体一覧」タブからお気に入りの会議体を追加してください。</p>`;
+      el.watchlistItems.innerHTML = `<p class="text-sm">現在登録中の会議体はありません。「会議一覧」の会議体別ビューからお気に入りの会議体を追加してください。</p>`;
       if (el.rssUrlInput) {
         el.rssUrlInput.value = 'https://pm-hub.gov.example/rss/feed.xml';
       }
