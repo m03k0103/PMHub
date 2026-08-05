@@ -1,7 +1,7 @@
 {
   "cas-chutou-jyousei": {
     "rule_id": "rule-cas-chutou-jyousei-ai-v3",
-    "created_at": "2026-08-05 12:58:37",
+    "created_at": "2026-08-05 14:40:57",
     "generator": "AI_Rule_Synthesis_Agent_v3",
     "councilName": "中東情勢に関する関係閣僚会議",
     "targetUrl": "https://www.cas.go.jp/jp/seisaku/chyutoujyousei/index.html",
@@ -23,7 +23,7 @@
   },
   "cao-ai-strategy": {
     "rule_id": "rule-cao-ai-strategy-ai-v3",
-    "created_at": "2026-08-05 12:58:33",
+    "created_at": "2026-08-05 14:40:47",
     "generator": "AI_Rule_Synthesis_Agent_v3",
     "councilName": "AI戦略会議",
     "targetUrl": "https://www8.cao.go.jp/cstp/ai/ai_senryaku/ai_senryaku.html",
@@ -45,7 +45,7 @@
   },
   "cao-kisei-kaikaku": {
     "rule_id": "rule-cao-kisei-kaikaku-ai-v3",
-    "created_at": "2026-08-05 12:58:33",
+    "created_at": "2026-08-05 14:40:53",
     "generator": "AI_Rule_Synthesis_Agent_v3",
     "councilName": "規制改革推進会議",
     "targetUrl": "https://www8.cao.go.jp/kisei-kaikaku/index.html",
@@ -67,7 +67,7 @@
   },
   "ra-fukko-suishin": {
     "rule_id": "rule-ra-fukko-suishin-ai-v3",
-    "created_at": "2026-08-05 12:58:34",
+    "created_at": "2026-08-05 14:40:54",
     "generator": "AI_Rule_Synthesis_Agent_v3",
     "councilName": "復興推進委員会",
     "targetUrl": "https://www.reconstruction.go.jp/topics/cat-11/cat-47/cat-155/cat-156/000813/",
@@ -89,7 +89,7 @@
   },
   "cas-zensedai-hosyo": {
     "rule_id": "rule-cas-zensedai-hosyo-ai-v3",
-    "created_at": "2026-08-05 12:58:37",
+    "created_at": "2026-08-05 14:40:57",
     "generator": "AI_Rule_Synthesis_Agent_v3",
     "councilName": "全世代型社会保障構築会議",
     "targetUrl": "https://www.cas.go.jp/jp/seisaku/zensedai_hosyo/index.html",
@@ -111,7 +111,7 @@
   },
   "cas-kokumin-kaigi": {
     "rule_id": "rule-cas-kokumin-kaigi-ai-v3",
-    "created_at": "2026-08-05 12:58:37",
+    "created_at": "2026-08-05 14:40:57",
     "generator": "AI_Rule_Synthesis_Agent_v3",
     "councilName": "社会保障国民会議",
     "targetUrl": "https://www.cas.go.jp/jp/seisaku/kokuminkaigi/index.html",
@@ -133,7 +133,7 @@
   },
   "cao-ai-hq": {
     "rule_id": "rule-cao-ai-hq-ai-v3",
-    "created_at": "2026-08-05 12:58:37",
+    "created_at": "2026-08-05 14:40:57",
     "generator": "AI_Rule_Synthesis_Agent_v3",
     "councilName": "人工知能戦略本部",
     "targetUrl": "https://www8.cao.go.jp/cstp/ai/ai_hq/kaisai.html",
@@ -155,7 +155,7 @@
   },
   "digital-suishin": {
     "rule_id": "rule-digital-suishin-ai-v3",
-    "created_at": "2026-08-05 12:58:34",
+    "created_at": "2026-08-05 14:40:53",
     "generator": "AI_Rule_Synthesis_Agent_v3",
     "councilName": "デジタル社会推進会議幹事会",
     "targetUrl": "https://www.digital.go.jp/councils/social-promotion-executive",
@@ -177,7 +177,7 @@
   },
   "cfa-kodomo-suishin": {
     "rule_id": "rule-cfa-kodomo-suishin-ai-v3",
-    "created_at": "2026-08-05 12:58:34",
+    "created_at": "2026-08-05 14:40:54",
     "generator": "AI_Rule_Synthesis_Agent_v3",
     "councilName": "こども政策推進会議",
     "targetUrl": "https://www.cfa.go.jp/councils/suishinkaigi",
@@ -199,7 +199,7 @@
   },
   "cfa-kodomo-shingikai": {
     "rule_id": "rule-cfa-kodomo-shingikai-ai-v3",
-    "created_at": "2026-08-05 12:58:34",
+    "created_at": "2026-08-05 14:40:54",
     "generator": "AI_Rule_Synthesis_Agent_v3",
     "councilName": "こども家庭審議会",
     "targetUrl": "https://www.cfa.go.jp/councils/shingikai",
@@ -221,7 +221,7 @@
   },
   "fsa-kinyu-shingi": {
     "rule_id": "rule-fsa-kinyu-shingi-ai-v3",
-    "created_at": "2026-08-05 12:58:36",
+    "created_at": "2026-08-05 14:40:56",
     "generator": "AI_Rule_Synthesis_Agent_v3",
     "councilName": "金融審議会",
     "targetUrl": "https://www.fsa.go.jp/singi/singi_kinyu/base_gijiroku.html",
@@ -243,7 +243,7 @@
   },
   "moj-hosei-shingi": {
     "rule_id": "rule-moj-hosei-shingi-ai-v3",
-    "created_at": "2026-08-05 12:58:34",
+    "created_at": "2026-08-05 14:40:54",
     "generator": "AI_Rule_Synthesis_Agent_v3",
     "councilName": "法制審議会",
     "targetUrl": "https://www.moj.go.jp/shingi1/shingikai_soukai.html",
@@ -265,7 +265,7 @@
   },
   "mod-cho-shin": {
     "rule_id": "rule-mod-cho-shin-ai-v3",
-    "created_at": "2026-08-05 12:58:35",
+    "created_at": "2026-08-05 14:40:55",
     "generator": "AI_Rule_Synthesis_Agent_v3",
     "councilName": "防衛調達審議会",
     "targetUrl": "https://www.mod.go.jp/j/policy/agenda/meeting/cho-shin/index.html",
@@ -287,7 +287,7 @@
   },
   "mod-drastic-reinforcement": {
     "rule_id": "rule-mod-drastic-reinforcement-ai-v3",
-    "created_at": "2026-08-05 12:58:35",
+    "created_at": "2026-08-05 14:40:55",
     "generator": "AI_Rule_Synthesis_Agent_v3",
     "councilName": "防衛力の抜本的強化に関する有識者会議",
     "targetUrl": "https://www.mod.go.jp/j/policy/agenda/meeting/drastic-reinforcement/index.html",
@@ -309,7 +309,7 @@
   },
   "mod-defense-industry-wg": {
     "rule_id": "rule-mod-defense-industry-wg-ai-v3",
-    "created_at": "2026-08-05 12:58:35",
+    "created_at": "2026-08-05 14:40:55",
     "generator": "AI_Rule_Synthesis_Agent_v3",
     "councilName": "防衛産業ワーキンググループ",
     "targetUrl": "https://www.mod.go.jp/j/policy/agenda/meeting/defense_industry_wg/index.html",
@@ -331,7 +331,7 @@
   },
   "maff-shokuryo-nogyo": {
     "rule_id": "rule-maff-shokuryo-nogyo-ai-v3",
-    "created_at": "2026-08-05 12:58:35",
+    "created_at": "2026-08-05 14:40:55",
     "generator": "AI_Rule_Synthesis_Agent_v3",
     "councilName": "食料・農業・農村政策審議会",
     "targetUrl": "https://www.maff.go.jp/j/council/seisaku/",
@@ -353,7 +353,7 @@
   },
   "mlit-shakai-sihon-soukai": {
     "rule_id": "rule-mlit-shakai-sihon-soukai-ai-v3",
-    "created_at": "2026-08-05 12:58:35",
+    "created_at": "2026-08-05 14:40:55",
     "generator": "AI_Rule_Synthesis_Agent_v3",
     "councilName": "社会資本整備審議会",
     "targetUrl": "https://www.mlit.go.jp/policy/shingikai/s201_shakai01.html",
@@ -375,7 +375,7 @@
   },
   "mlit-energy-anzenhosho-wg": {
     "rule_id": "rule-mlit-energy-anzenhosho-wg-ai-v3",
-    "created_at": "2026-08-05 12:58:35",
+    "created_at": "2026-08-05 14:40:55",
     "generator": "AI_Rule_Synthesis_Agent_v3",
     "councilName": "社会資本整備審議会環境部会・交通政策審議会環境部会 エネルギー・経済安全保障小委員会",
     "targetUrl": "https://www.mlit.go.jp/policy/shingikai/s404_anzenhosho.html",
@@ -397,7 +397,7 @@
   },
   "mlit-infra-management-wg": {
     "rule_id": "rule-mlit-infra-management-wg-ai-v3",
-    "created_at": "2026-08-05 12:58:35",
+    "created_at": "2026-08-05 14:40:55",
     "generator": "AI_Rule_Synthesis_Agent_v3",
     "councilName": "社会資本整備審議会・交通政策審議会技術分科会技術部会 インフラマネジメント戦略小委員会",
     "targetUrl": "https://www.mlit.go.jp/policy/shingikai/s204_management02.html",
@@ -419,7 +419,7 @@
   },
   "npa-seisaku-hyoka-kenkyukai": {
     "rule_id": "rule-npa-seisaku-hyoka-kenkyukai-ai-v3",
-    "created_at": "2026-08-05 12:58:35",
+    "created_at": "2026-08-05 14:40:56",
     "generator": "AI_Rule_Synthesis_Agent_v3",
     "councilName": "警察庁政策評価研究会",
     "targetUrl": "https://www.npa.go.jp/policies/council/index.html",
@@ -441,7 +441,7 @@
   },
   "nra-teireikai": {
     "rule_id": "rule-nra-teireikai-ai-v3",
-    "created_at": "2026-08-05 12:58:37",
+    "created_at": "2026-08-05 14:40:57",
     "generator": "AI_Rule_Synthesis_Agent_v3",
     "councilName": "原子力規制委員会",
     "targetUrl": "https://www.nra.go.jp/index.html",
@@ -463,7 +463,7 @@
   },
   "cao-space-anpo": {
     "rule_id": "rule-cao-space-anpo-ai-v3",
-    "created_at": "2026-08-05 12:58:33",
+    "created_at": "2026-08-05 14:40:53",
     "generator": "AI_Rule_Synthesis_Agent_v3",
     "councilName": "宇宙政策委員会 宇宙安全保障部会",
     "targetUrl": "https://www8.cao.go.jp/space/comittee/anpo.html",
@@ -485,7 +485,7 @@
   },
   "cas-chiikimirai-63": {
     "rule_id": "rule-cas-chiikimirai-63-ai-v3",
-    "created_at": "2026-08-05 12:58:45",
+    "created_at": "2026-08-05 14:41:06",
     "generator": "AI_Rule_Synthesis_Agent_v3",
     "councilName": "地域未来戦略本部",
     "targetUrl": "https://www.cas.go.jp/jp/seisaku/chiikimirai/index.html",
@@ -507,7 +507,7 @@
   },
   "cas-hanzai-80": {
     "rule_id": "rule-cas-hanzai-80-ai-v3",
-    "created_at": "2026-08-05 12:58:48",
+    "created_at": "2026-08-05 14:41:09",
     "generator": "AI_Rule_Synthesis_Agent_v3",
     "councilName": "犯罪対策閣僚会議",
     "targetUrl": "https://www.cas.go.jp/jp/seisakukaigi/hanzai/index.html",
@@ -529,7 +529,7 @@
   },
   "mic-joho-tsushin": {
     "rule_id": "rule-mic-joho-tsushin-ai-v3",
-    "created_at": "2026-08-05 12:58:34",
+    "created_at": "2026-08-05 14:40:54",
     "generator": "AI_Rule_Synthesis_Agent_v3",
     "councilName": "情報通信審議会 情報通信政策部会",
     "targetUrl": "https://www.soumu.go.jp/menu_kyotsuu/whatsnew/kaigi_index.html",
@@ -551,7 +551,7 @@
   },
   "mof-zaisei-seido": {
     "rule_id": "rule-mof-zaisei-seido-ai-v3",
-    "created_at": "2026-08-05 12:58:34",
+    "created_at": "2026-08-05 14:40:54",
     "generator": "AI_Rule_Synthesis_Agent_v3",
     "councilName": "財政制度等審議会 財政制度分科会",
     "targetUrl": "https://www.mof.go.jp/about_mof/councils/fiscal_system_council/index.html",
@@ -573,7 +573,7 @@
   },
   "mext-chuo-kyoiku": {
     "rule_id": "rule-mext-chuo-kyoiku-ai-v3",
-    "created_at": "2026-08-05 12:58:34",
+    "created_at": "2026-08-05 14:40:54",
     "generator": "AI_Rule_Synthesis_Agent_v3",
     "councilName": "中央教育審議会 初等中等教育分科会",
     "targetUrl": "https://www.mext.go.jp/b_menu/shingi/chukyo/chukyo0/index.htm",
@@ -595,7 +595,7 @@
   },
   "mhlw-shakai-hosho": {
     "rule_id": "rule-mhlw-shakai-hosho-ai-v3",
-    "created_at": "2026-08-05 12:58:34",
+    "created_at": "2026-08-05 14:40:55",
     "generator": "AI_Rule_Synthesis_Agent_v3",
     "councilName": "社会保障審議会 医療保険部会",
     "targetUrl": "https://www.mhlw.go.jp/stf/shingi/index.html",
@@ -617,7 +617,7 @@
   },
   "meti-sangyo-kozo": {
     "rule_id": "rule-meti-sangyo-kozo-ai-v3",
-    "created_at": "2026-08-05 12:58:35",
+    "created_at": "2026-08-05 14:40:55",
     "generator": "AI_Rule_Synthesis_Agent_v3",
     "councilName": "産業構造審議会 新産業構造部会",
     "targetUrl": "https://www.meti.go.jp/shingikai/sankoshin/index.html",
@@ -639,7 +639,7 @@
   },
   "moe-chuo-kankyo": {
     "rule_id": "rule-moe-chuo-kankyo-ai-v3",
-    "created_at": "2026-08-05 12:58:35",
+    "created_at": "2026-08-05 14:40:55",
     "generator": "AI_Rule_Synthesis_Agent_v3",
     "councilName": "中央環境審議会 地球環境部会",
     "targetUrl": "https://www.env.go.jp/council/06earth/yoshi06.html",
@@ -661,7 +661,7 @@
   },
   "caa-shohisha-seisaku": {
     "rule_id": "rule-caa-shohisha-seisaku-ai-v3",
-    "created_at": "2026-08-05 12:58:36",
+    "created_at": "2026-08-05 14:40:56",
     "generator": "AI_Rule_Synthesis_Agent_v3",
     "councilName": "消費者委員会 生成AI・消費者問題作業部会",
     "targetUrl": "https://www.caa.go.jp",
@@ -683,7 +683,7 @@
   },
   "ppc-ai-privacy": {
     "rule_id": "rule-ppc-ai-privacy-ai-v3",
-    "created_at": "2026-08-05 12:58:36",
+    "created_at": "2026-08-05 14:40:57",
     "generator": "AI_Rule_Synthesis_Agent_v3",
     "councilName": "生成AIと個人情報保護に関する専門委員会",
     "targetUrl": "https://www.ppc.go.jp/aboutus/",
@@ -705,7 +705,7 @@
   },
   "cas-ainusuishin-1": {
     "rule_id": "rule-cas-ainusuishin-1-ai-v3",
-    "created_at": "2026-08-05 12:58:37",
+    "created_at": "2026-08-05 14:40:57",
     "generator": "AI_Rule_Synthesis_Agent_v3",
     "councilName": "アイヌ政策推進本部",
     "targetUrl": "https://www.cas.go.jp/jp/seisakukaigi/ainusuishin/index.html",
@@ -727,7 +727,7 @@
   },
   "cas-enerugi-2": {
     "rule_id": "rule-cas-enerugi-2-ai-v3",
-    "created_at": "2026-08-05 12:58:37",
+    "created_at": "2026-08-05 14:40:57",
     "generator": "AI_Rule_Synthesis_Agent_v3",
     "councilName": "エネルギー・食料等国民生活を支える基盤の戦略的強化に向けた関係閣僚会議",
     "targetUrl": "https://www.cas.go.jp/jp/seisaku/enerugi/index.html",
@@ -749,7 +749,7 @@
   },
   "cas-gaikokujinzai-3": {
     "rule_id": "rule-cas-gaikokujinzai-3-ai-v3",
-    "created_at": "2026-08-05 12:58:37",
+    "created_at": "2026-08-05 14:40:58",
     "generator": "AI_Rule_Synthesis_Agent_v3",
     "councilName": "外国人の受入れ・秩序ある共生社会実現に関する関係閣僚会議幹事会",
     "targetUrl": "https://www.cas.go.jp/jp/seisakukaigi/gaikokujinzai/index.html",
@@ -771,7 +771,7 @@
   },
   "cas-ebola_hemorrhagic_fever_kankeishoutyou-5": {
     "rule_id": "rule-cas-ebola_hemorrhagic_fever_kankeishoutyou-5-ai-v3",
-    "created_at": "2026-08-05 12:58:38",
+    "created_at": "2026-08-05 14:40:58",
     "generator": "AI_Rule_Synthesis_Agent_v3",
     "councilName": "エボラ出血熱に関する関係省庁対策会議",
     "targetUrl": "https://www.cas.go.jp/jp/seisaku/ebola_hemorrhagic_fever_kankeishoutyou/index.html",
@@ -793,7 +793,7 @@
   },
   "cas-kanshikyoka-6": {
     "rule_id": "rule-cas-kanshikyoka-6-ai-v3",
-    "created_at": "2026-08-05 12:58:38",
+    "created_at": "2026-08-05 14:40:58",
     "generator": "AI_Rule_Synthesis_Agent_v3",
     "councilName": "柏崎刈羽原子力発電所の運営に関する監視強化チーム",
     "targetUrl": "https://www.cas.go.jp/jp/seisaku/kanshikyoka/index.html",
@@ -815,7 +815,7 @@
   },
   "cas-kaihotaisei-7": {
     "rule_id": "rule-cas-kaihotaisei-7-ai-v3",
-    "created_at": "2026-08-05 12:58:38",
+    "created_at": "2026-08-05 14:40:58",
     "generator": "AI_Rule_Synthesis_Agent_v3",
     "councilName": "海上保安能力強化に関する関係閣僚会議",
     "targetUrl": "https://www.cas.go.jp/jp/seisakukaigi/kaihotaisei/",
@@ -837,7 +837,7 @@
   },
   "cas-kyuyo-9": {
     "rule_id": "rule-cas-kyuyo-9-ai-v3",
-    "created_at": "2026-08-05 12:58:38",
+    "created_at": "2026-08-05 14:40:58",
     "generator": "AI_Rule_Synthesis_Agent_v3",
     "councilName": "給与関係閣僚会議",
     "targetUrl": "https://www.cas.go.jp/jp/seisaku/kyuyo/index.html",
@@ -859,7 +859,7 @@
   },
   "cas-gambletou_izonsho-10": {
     "rule_id": "rule-cas-gambletou_izonsho-10-ai-v3",
-    "created_at": "2026-08-05 12:58:38",
+    "created_at": "2026-08-05 14:40:59",
     "generator": "AI_Rule_Synthesis_Agent_v3",
     "councilName": "ギャンブル等依存症対策推進本部幹事会",
     "targetUrl": "https://www.cas.go.jp/jp/seisakukaigi/gambletou_izonsho/",
@@ -881,7 +881,7 @@
   },
   "cas-gskaigi-11": {
     "rule_id": "rule-cas-gskaigi-11-ai-v3",
-    "created_at": "2026-08-05 12:58:38",
+    "created_at": "2026-08-05 14:40:59",
     "generator": "AI_Rule_Synthesis_Agent_v3",
     "councilName": "行政改革推進会議",
     "targetUrl": "https://www.cas.go.jp/jp/seisaku/gskaigi/index.html",
@@ -903,7 +903,7 @@
   },
   "cao-keizai_shimon-12": {
     "rule_id": "rule-cao-keizai_shimon-12-ai-v3",
-    "created_at": "2026-08-05 12:58:39",
+    "created_at": "2026-08-05 14:40:59",
     "generator": "AI_Rule_Synthesis_Agent_v3",
     "councilName": "経済財政諮問会議",
     "targetUrl": "https://www5.cao.go.jp/keizai-shimon/",
@@ -925,7 +925,7 @@
   },
   "cao-getsurei-13": {
     "rule_id": "rule-cao-getsurei-13-ai-v3",
-    "created_at": "2026-08-05 12:58:39",
+    "created_at": "2026-08-05 14:40:59",
     "generator": "AI_Rule_Synthesis_Agent_v3",
     "councilName": "月例経済報告等に関する関係閣僚会議",
     "targetUrl": "https://www5.cao.go.jp/keizai3/getsurei/getsurei-index.html",
@@ -947,7 +947,7 @@
   },
   "cas-kumahigai_taisaku-14": {
     "rule_id": "rule-cas-kumahigai_taisaku-14-ai-v3",
-    "created_at": "2026-08-05 12:58:39",
+    "created_at": "2026-08-05 14:40:59",
     "generator": "AI_Rule_Synthesis_Agent_v3",
     "councilName": "クマ被害対策等に関する関係閣僚会議",
     "targetUrl": "https://www.cas.go.jp/jp/seisaku/kumahigai_taisaku/index.html",
@@ -969,7 +969,7 @@
   },
   "ra-000818-15": {
     "rule_id": "rule-ra-000818-15-ai-v3",
-    "created_at": "2026-08-05 12:58:39",
+    "created_at": "2026-08-05 14:40:59",
     "generator": "AI_Rule_Synthesis_Agent_v3",
     "councilName": "原子力災害からの福島復興再生協議会",
     "targetUrl": "https://www.reconstruction.go.jp/topics/cat-11/cat-41/cat-129/cat-130/000818/",
@@ -991,7 +991,7 @@
   },
   "cas-grassrootsTF-16": {
     "rule_id": "rule-cas-grassrootsTF-16-ai-v3",
-    "created_at": "2026-08-05 12:58:39",
+    "created_at": "2026-08-05 14:40:59",
     "generator": "AI_Rule_Synthesis_Agent_v3",
     "councilName": "グラスルーツからの日米関係強化に関する政府タスクフォース（各地各様のアプローチ）",
     "targetUrl": "https://www.cas.go.jp/jp/seisakukaigi/grassrootsTF/",
@@ -1013,7 +1013,7 @@
   },
   "cao-oaep-17": {
     "rule_id": "rule-cao-oaep-17-ai-v3",
-    "created_at": "2026-08-05 12:58:39",
+    "created_at": "2026-08-05 14:41:00",
     "generator": "AI_Rule_Synthesis_Agent_v3",
     "councilName": "原子力立地会議",
     "targetUrl": "https://wwwa.cao.go.jp/oaep/tokubetsusochi.html",
@@ -1035,7 +1035,7 @@
   },
   "cao-measure-18": {
     "rule_id": "rule-cao-measure-18-ai-v3",
-    "created_at": "2026-08-05 12:58:39",
+    "created_at": "2026-08-05 14:41:00",
     "generator": "AI_Rule_Synthesis_Agent_v3",
     "councilName": "高齢社会対策会議",
     "targetUrl": "https://www8.cao.go.jp/kourei/measure/a_5.html",
@@ -1057,7 +1057,7 @@
   },
   "cas-genshiryoku_kakuryo_kaigi-19": {
     "rule_id": "rule-cas-genshiryoku_kakuryo_kaigi-19-ai-v3",
-    "created_at": "2026-08-05 12:58:40",
+    "created_at": "2026-08-05 14:41:00",
     "generator": "AI_Rule_Synthesis_Agent_v3",
     "councilName": "原子力関係閣僚会議",
     "targetUrl": "https://www.cas.go.jp/jp/seisaku/genshiryoku_kakuryo_kaigi/",
@@ -1079,7 +1079,7 @@
   },
   "cas-kenkouiryou-20": {
     "rule_id": "rule-cas-kenkouiryou-20-ai-v3",
-    "created_at": "2026-08-05 12:58:40",
+    "created_at": "2026-08-05 14:41:00",
     "generator": "AI_Rule_Synthesis_Agent_v3",
     "councilName": "健康・医療戦略推進本部",
     "targetUrl": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/",
@@ -1101,7 +1101,7 @@
   },
   "cas-kokusai_kansen-21": {
     "rule_id": "rule-cas-kokusai_kansen-21-ai-v3",
-    "created_at": "2026-08-05 12:58:40",
+    "created_at": "2026-08-05 14:41:00",
     "generator": "AI_Rule_Synthesis_Agent_v3",
     "councilName": "国際的に脅威となる感染症対策の強化のための国際連携等関係閣僚会議",
     "targetUrl": "https://www.cas.go.jp/jp/seisakukaigi/kokusai_kansen/index.html",
@@ -1123,7 +1123,7 @@
   },
   "cas-kyoujinka-22": {
     "rule_id": "rule-cas-kyoujinka-22-ai-v3",
-    "created_at": "2026-08-05 12:58:40",
+    "created_at": "2026-08-05 14:41:00",
     "generator": "AI_Rule_Synthesis_Agent_v3",
     "councilName": "国土強靱化の推進に関する関係府省庁連絡会議",
     "targetUrl": "https://www.cas.go.jp/jp/seisaku/kyoujinka/index.html",
@@ -1145,7 +1145,7 @@
   },
   "cao-suishinhonbu-23": {
     "rule_id": "rule-cao-suishinhonbu-23-ai-v3",
-    "created_at": "2026-08-05 12:58:40",
+    "created_at": "2026-08-05 14:41:00",
     "generator": "AI_Rule_Synthesis_Agent_v3",
     "councilName": "孤独・孤立対策推進本部",
     "targetUrl": "https://www.cao.go.jp/kodoku_koritsu/torikumi/suishinhonbu/index.html",
@@ -1167,7 +1167,7 @@
   },
   "cas-kokusentoc-24": {
     "rule_id": "rule-cas-kokusentoc-24-ai-v3",
-    "created_at": "2026-08-05 12:58:40",
+    "created_at": "2026-08-05 14:41:01",
     "generator": "AI_Rule_Synthesis_Agent_v3",
     "councilName": "国家戦略特別区域諮問会議",
     "targetUrl": "https://www.chisou.go.jp/tiiki/kokusentoc/shimonkaigi.html",
@@ -1189,7 +1189,7 @@
   },
   "cao-contents_kyogikai-25": {
     "rule_id": "rule-cao-contents_kyogikai-25-ai-v3",
-    "created_at": "2026-08-05 12:58:40",
+    "created_at": "2026-08-05 14:41:01",
     "generator": "AI_Rule_Synthesis_Agent_v3",
     "councilName": "コンテンツ産業官民協議会",
     "targetUrl": "https://www.cao.go.jp/chizai/contents_kyogikai/index.html",
@@ -1211,7 +1211,7 @@
   },
   "cas-genshiryoku_bousai-26": {
     "rule_id": "rule-cas-genshiryoku_bousai-26-ai-v3",
-    "created_at": "2026-08-05 12:58:41",
+    "created_at": "2026-08-05 14:41:01",
     "generator": "AI_Rule_Synthesis_Agent_v3",
     "councilName": "原子力防災会議",
     "targetUrl": "https://www.cas.go.jp/jp/seisakukaigi/genshiryoku_bousai/",
@@ -1233,7 +1233,7 @@
   },
   "cas-kome_anteikyokyujitsugen_kaigi-27": {
     "rule_id": "rule-cas-kome_anteikyokyujitsugen_kaigi-27-ai-v3",
-    "created_at": "2026-08-05 12:58:41",
+    "created_at": "2026-08-05 14:41:01",
     "generator": "AI_Rule_Synthesis_Agent_v3",
     "councilName": "米の安定供給等実現関係閣僚会議",
     "targetUrl": "https://www.cas.go.jp/jp/seisakukaigi/nousui/kome_anteikyokyujitsugen_kaigi/index.html",
@@ -1255,7 +1255,7 @@
   },
   "cas-kokudo_kyoujinka-28": {
     "rule_id": "rule-cas-kokudo_kyoujinka-28-ai-v3",
-    "created_at": "2026-08-05 12:58:41",
+    "created_at": "2026-08-05 14:41:01",
     "generator": "AI_Rule_Synthesis_Agent_v3",
     "councilName": "国土強靱化推進本部",
     "targetUrl": "https://www.cas.go.jp/jp/seisakukaigi/kokudo_kyoujinka/",
@@ -1277,7 +1277,7 @@
   },
   "cas-jieikan-29": {
     "rule_id": "rule-cas-jieikan-29-ai-v3",
-    "created_at": "2026-08-05 12:58:41",
+    "created_at": "2026-08-05 14:41:02",
     "generator": "AI_Rule_Synthesis_Agent_v3",
     "councilName": "自衛官の処遇・勤務環境の改善及び新たな生涯設計の確立に関する関係閣僚会議",
     "targetUrl": "https://www.cas.go.jp/jp/seisaku/jieikan/index.html",
@@ -1299,7 +1299,7 @@
   },
   "cas-cs-30": {
     "rule_id": "rule-cas-cs-30-ai-v3",
-    "created_at": "2026-08-05 12:58:41",
+    "created_at": "2026-08-05 14:41:02",
     "generator": "AI_Rule_Synthesis_Agent_v3",
     "councilName": "サイバーセキュリティ戦略本部",
     "targetUrl": "https://www.cyber.go.jp/council/cs/index.html",
@@ -1321,7 +1321,7 @@
   },
   "cas-sdgs-31": {
     "rule_id": "rule-cas-sdgs-31-ai-v3",
-    "created_at": "2026-08-05 12:58:42",
+    "created_at": "2026-08-05 14:41:02",
     "generator": "AI_Rule_Synthesis_Agent_v3",
     "councilName": "持続可能な開発目標（ＳＤＧｓ）推進本部",
     "targetUrl": "https://www.cas.go.jp/jp/seisakukaigi/sdgs/index.html",
@@ -1343,7 +1343,7 @@
   },
   "cas-gx_jikkou_kaigi-32": {
     "rule_id": "rule-cas-gx_jikkou_kaigi-32-ai-v3",
-    "created_at": "2026-08-05 12:58:42",
+    "created_at": "2026-08-05 14:41:02",
     "generator": "AI_Rule_Synthesis_Agent_v3",
     "councilName": "ＧＸ実行会議",
     "targetUrl": "https://www.cas.go.jp/jp/seisaku/gx_jikkou_kaigi/index.html",
@@ -1365,7 +1365,7 @@
   },
   "mlit-meeting-33": {
     "rule_id": "rule-mlit-meeting-33-ai-v3",
-    "created_at": "2026-08-05 12:58:42",
+    "created_at": "2026-08-05 14:41:02",
     "generator": "AI_Rule_Synthesis_Agent_v3",
     "councilName": "自転車活用推進本部",
     "targetUrl": "https://www.mlit.go.jp/road/bicycleuse/meeting/index.html",
@@ -1387,7 +1387,7 @@
   },
   "cao-shimon-34": {
     "rule_id": "rule-cao-shimon-34-ai-v3",
-    "created_at": "2026-08-05 12:58:42",
+    "created_at": "2026-08-05 14:41:02",
     "generator": "AI_Rule_Synthesis_Agent_v3",
     "councilName": "重要経済安保情報保護活用諮問会議",
     "targetUrl": "https://www.cao.go.jp/keizai_anzen_hosho/hogokatsuyou/shimon/shimon.html",
@@ -1409,7 +1409,7 @@
   },
   "cas-kyouseishakai-35": {
     "rule_id": "rule-cas-kyouseishakai-35-ai-v3",
-    "created_at": "2026-08-05 12:58:42",
+    "created_at": "2026-08-05 14:41:02",
     "generator": "AI_Rule_Synthesis_Agent_v3",
     "councilName": "障害者に対する偏見や差別のない共生社会の実現に向けた対策推進本部",
     "targetUrl": "https://www.cas.go.jp/jp/seisaku/kyouseishakai/index.html",
@@ -1431,7 +1431,7 @@
   },
   "cas-kankeikakuryokaigi-36": {
     "rule_id": "rule-cas-kankeikakuryokaigi-36-ai-v3",
-    "created_at": "2026-08-05 12:58:42",
+    "created_at": "2026-08-05 14:41:03",
     "generator": "AI_Rule_Synthesis_Agent_v3",
     "councilName": "就職氷河期世代等支援に関する関係閣僚会議",
     "targetUrl": "https://www.cas.go.jp/jp/seisaku/shushoku_hyogaki_shien/kankeikakuryokaigi/index.html",
@@ -1453,7 +1453,7 @@
   },
   "cas-jyouhouhozen-37": {
     "rule_id": "rule-cas-jyouhouhozen-37-ai-v3",
-    "created_at": "2026-08-05 12:58:42",
+    "created_at": "2026-08-05 14:41:03",
     "generator": "AI_Rule_Synthesis_Agent_v3",
     "councilName": "情報保全諮問会議",
     "targetUrl": "https://www.cas.go.jp/jp/seisaku/jyouhouhozen/index.html",
@@ -1475,7 +1475,7 @@
   },
   "maff-kaigi-38": {
     "rule_id": "rule-maff-kaigi-38-ai-v3",
-    "created_at": "2026-08-05 12:58:42",
+    "created_at": "2026-08-05 14:41:03",
     "generator": "AI_Rule_Synthesis_Agent_v3",
     "councilName": "食育推進会議",
     "targetUrl": "https://www.maff.go.jp/j/syokuiku/kaigi/suisin.html",
@@ -1497,7 +1497,7 @@
   },
   "caa-review_meeting_002-39": {
     "rule_id": "rule-caa-review_meeting_002-39-ai-v3",
-    "created_at": "2026-08-05 12:58:43",
+    "created_at": "2026-08-05 14:41:03",
     "generator": "AI_Rule_Synthesis_Agent_v3",
     "councilName": "食品ロス削減推進会議",
     "targetUrl": "https://www.caa.go.jp/policies/policy/consumer_education/meeting_materials/review_meeting_002/",
@@ -1519,7 +1519,7 @@
   },
   "cas-nousui-40": {
     "rule_id": "rule-cas-nousui-40-ai-v3",
-    "created_at": "2026-08-05 12:58:43",
+    "created_at": "2026-08-05 14:41:03",
     "generator": "AI_Rule_Synthesis_Agent_v3",
     "councilName": "食料安定供給・農林水産業基盤強化本部",
     "targetUrl": "https://www.cas.go.jp/jp/seisakukaigi/nousui/index.html",
@@ -1541,7 +1541,7 @@
   },
   "cas-jinko_senryaku-41": {
     "rule_id": "rule-cas-jinko_senryaku-41-ai-v3",
-    "created_at": "2026-08-05 12:58:43",
+    "created_at": "2026-08-05 14:41:03",
     "generator": "AI_Rule_Synthesis_Agent_v3",
     "councilName": "人口戦略本部",
     "targetUrl": "https://www.cas.go.jp/jp/seisaku/jinko_senryaku/index.html",
@@ -1563,7 +1563,7 @@
   },
   "cao-zei_cho-42": {
     "rule_id": "rule-cao-zei_cho-42-ai-v3",
-    "created_at": "2026-08-05 12:58:43",
+    "created_at": "2026-08-05 14:41:03",
     "generator": "AI_Rule_Synthesis_Agent_v3",
     "councilName": "税制調査会",
     "targetUrl": "https://www.cao.go.jp/zei-cho/",
@@ -1585,7 +1585,7 @@
   },
   "mic-chiji_kaigi-43": {
     "rule_id": "rule-mic-chiji_kaigi-43-ai-v3",
-    "created_at": "2026-08-05 12:58:43",
+    "created_at": "2026-08-05 14:41:03",
     "generator": "AI_Rule_Synthesis_Agent_v3",
     "councilName": "全国都道府県知事会議（政府主催）",
     "targetUrl": "https://www.soumu.go.jp/main_sosiki/singi/chiji_kaigi/index.html",
@@ -1607,7 +1607,7 @@
   },
   "cao-cstp-44": {
     "rule_id": "rule-cao-cstp-44-ai-v3",
-    "created_at": "2026-08-05 12:58:43",
+    "created_at": "2026-08-05 14:41:03",
     "generator": "AI_Rule_Synthesis_Agent_v3",
     "councilName": "総合科学技術・イノベーション会議",
     "targetUrl": "https://www8.cao.go.jp/cstp/",
@@ -1629,7 +1629,7 @@
   },
   "cas-jinsintorihiki-45": {
     "rule_id": "rule-cas-jinsintorihiki-45-ai-v3",
-    "created_at": "2026-08-05 12:58:43",
+    "created_at": "2026-08-05 14:41:04",
     "generator": "AI_Rule_Synthesis_Agent_v3",
     "councilName": "人身取引対策推進会議",
     "targetUrl": "https://www.cas.go.jp/jp/seisakukaigi/jinsintorihiki/index.html",
@@ -1651,7 +1651,7 @@
   },
   "cas-kagayakujosei-46": {
     "rule_id": "rule-cas-kagayakujosei-46-ai-v3",
-    "created_at": "2026-08-05 12:58:43",
+    "created_at": "2026-08-05 14:41:04",
     "generator": "AI_Rule_Synthesis_Agent_v3",
     "councilName": "すべての女性が輝く社会づくり本部",
     "targetUrl": "https://www.cas.go.jp/jp/seisaku/kagayakujosei/index.html",
@@ -1673,7 +1673,7 @@
   },
   "cas-kinyu-47": {
     "rule_id": "rule-cas-kinyu-47-ai-v3",
-    "created_at": "2026-08-05 12:58:43",
+    "created_at": "2026-08-05 14:41:04",
     "generator": "AI_Rule_Synthesis_Agent_v3",
     "councilName": "新戦略策定のための資産運用立国推進分科会",
     "targetUrl": "https://www.cas.go.jp/jp/seisaku/nipponseichosenryaku/kinyu/index.html",
@@ -1695,7 +1695,7 @@
   },
   "cas-seme_no_yobouiryou-48": {
     "rule_id": "rule-cas-seme_no_yobouiryou-48-ai-v3",
-    "created_at": "2026-08-05 12:58:44",
+    "created_at": "2026-08-05 14:41:04",
     "generator": "AI_Rule_Synthesis_Agent_v3",
     "councilName": "攻めの予防医療に向けた性差に由来するヘルスケアに関する副大臣等会議",
     "targetUrl": "https://www.cas.go.jp/jp/seisaku/seme_no_yobouiryou/index.html",
@@ -1717,7 +1717,7 @@
   },
   "cas-senryaku-49": {
     "rule_id": "rule-cas-senryaku-49-ai-v3",
-    "created_at": "2026-08-05 12:58:44",
+    "created_at": "2026-08-05 14:41:04",
     "generator": "AI_Rule_Synthesis_Agent_v3",
     "councilName": "戦略分野分科会",
     "targetUrl": "https://www.cas.go.jp/jp/seisaku/nipponseichosenryaku/senryaku/index.html",
@@ -1739,7 +1739,7 @@
   },
   "cas-zensedai_shakaihosho_kochiku-50": {
     "rule_id": "rule-cas-zensedai_shakaihosho_kochiku-50-ai-v3",
-    "created_at": "2026-08-05 12:58:44",
+    "created_at": "2026-08-05 14:41:04",
     "generator": "AI_Rule_Synthesis_Agent_v3",
     "councilName": "全世代型社会保障構築本部",
     "targetUrl": "https://www.cas.go.jp/jp/seisaku/zensedai_shakaihosho_kochiku/index.html",
@@ -1761,7 +1761,7 @@
   },
   "cas-kaiyou-51": {
     "rule_id": "rule-cas-kaiyou-51-ai-v3",
-    "created_at": "2026-08-05 12:58:44",
+    "created_at": "2026-08-05 14:41:04",
     "generator": "AI_Rule_Synthesis_Agent_v3",
     "councilName": "総合海洋政策本部",
     "targetUrl": "https://www.cas.go.jp/jp/seisakukaigi/kaiyou/index.html",
@@ -1783,7 +1783,7 @@
   },
   "cas-seiroushi-52": {
     "rule_id": "rule-cas-seiroushi-52-ai-v3",
-    "created_at": "2026-08-05 12:58:44",
+    "created_at": "2026-08-05 14:41:04",
     "generator": "AI_Rule_Synthesis_Agent_v3",
     "councilName": "政労使の意見交換",
     "targetUrl": "https://www.cas.go.jp/jp/seisaku/nipponseichosenryaku/seiroushi/index.html",
@@ -1805,7 +1805,7 @@
   },
   "cas-dai1-53": {
     "rule_id": "rule-cas-dai1-53-ai-v3",
-    "created_at": "2026-08-05 12:58:44",
+    "created_at": "2026-08-05 14:41:05",
     "generator": "AI_Rule_Synthesis_Agent_v3",
     "councilName": "総合特別区域推進本部",
     "targetUrl": "https://www.chisou.go.jp/tiiki/sogotoc/sinsei/dai1/index.html",
@@ -1827,7 +1827,7 @@
   },
   "cas-sozei-54": {
     "rule_id": "rule-cas-sozei-54-ai-v3",
-    "created_at": "2026-08-05 12:58:44",
+    "created_at": "2026-08-05 14:41:05",
     "generator": "AI_Rule_Synthesis_Agent_v3",
     "councilName": "租税特別措置・補助金見直しに関する関係閣僚等及び副大臣会議",
     "targetUrl": "https://www.cas.go.jp/jp/seisaku/sozei/index.html",
@@ -1849,7 +1849,7 @@
   },
   "cas-senpaku_top-55": {
     "rule_id": "rule-cas-senpaku_top-55-ai-v3",
-    "created_at": "2026-08-05 12:58:45",
+    "created_at": "2026-08-05 14:41:05",
     "generator": "AI_Rule_Synthesis_Agent_v3",
     "councilName": "船舶活用医療推進本部",
     "targetUrl": "https://www.cas.go.jp/jp/seisaku/senpaku_top/index.html",
@@ -1871,7 +1871,7 @@
   },
   "cao-committee-56": {
     "rule_id": "rule-cao-committee-56-ai-v3",
-    "created_at": "2026-08-05 12:58:45",
+    "created_at": "2026-08-05 14:41:05",
     "generator": "AI_Rule_Synthesis_Agent_v3",
     "councilName": "対日直接投資推進会議",
     "targetUrl": "https://www.cao.go.jp/invest-japan/committee/index.html",
@@ -1893,7 +1893,7 @@
   },
   "cas-koukyou_infra-57": {
     "rule_id": "rule-cas-koukyou_infra-57-ai-v3",
-    "created_at": "2026-08-05 12:58:45",
+    "created_at": "2026-08-05 14:41:05",
     "generator": "AI_Rule_Synthesis_Agent_v3",
     "councilName": "総合的な防衛体制の強化に資する研究開発及び公共インフラ整備に関する関係閣僚会議",
     "targetUrl": "https://www.cas.go.jp/jp/seisaku/koukyou_infra/index.html",
@@ -1915,7 +1915,7 @@
   },
   "mic-chihou_seido-58": {
     "rule_id": "rule-mic-chihou_seido-58-ai-v3",
-    "created_at": "2026-08-05 12:58:45",
+    "created_at": "2026-08-05 14:41:05",
     "generator": "AI_Rule_Synthesis_Agent_v3",
     "councilName": "地方制度調査会",
     "targetUrl": "https://www.soumu.go.jp/main_sosiki/singi/chihou_seido/singi.html",
@@ -1937,7 +1937,7 @@
   },
   "cas-megasolar-59": {
     "rule_id": "rule-cas-megasolar-59-ai-v3",
-    "created_at": "2026-08-05 12:58:45",
+    "created_at": "2026-08-05 14:41:05",
     "generator": "AI_Rule_Synthesis_Agent_v3",
     "councilName": "大規模太陽光発電事業に関する関係閣僚会議",
     "targetUrl": "https://www.cas.go.jp/jp/seisaku/megasolar/index.html",
@@ -1959,7 +1959,7 @@
   },
   "cas-clt_etc-60": {
     "rule_id": "rule-cas-clt_etc-60-ai-v3",
-    "created_at": "2026-08-05 12:58:45",
+    "created_at": "2026-08-05 14:41:05",
     "generator": "AI_Rule_Synthesis_Agent_v3",
     "councilName": "多様な木質材料の活用促進に関する関係省庁連絡会議（旧ＣＬＴ活用促進に関する関係省庁連絡会議）",
     "targetUrl": "https://www.cas.go.jp/jp/seisaku/clt-etc/index.html",
@@ -1981,7 +1981,7 @@
   },
   "cas-chuobou-61": {
     "rule_id": "rule-cas-chuobou-61-ai-v3",
-    "created_at": "2026-08-05 12:58:45",
+    "created_at": "2026-08-05 14:41:06",
     "generator": "AI_Rule_Synthesis_Agent_v3",
     "councilName": "中央防災会議",
     "targetUrl": "https://www.bousai.go.jp/kaigirep/chuobou/",
@@ -2003,7 +2003,7 @@
   },
   "cas-tiikisaisei-62": {
     "rule_id": "rule-cas-tiikisaisei-62-ai-v3",
-    "created_at": "2026-08-05 12:58:45",
+    "created_at": "2026-08-05 14:41:06",
     "generator": "AI_Rule_Synthesis_Agent_v3",
     "councilName": "地域再生本部",
     "targetUrl": "https://www.chisou.go.jp/tiiki/tiikisaisei/kaisai.html",
@@ -2025,7 +2025,7 @@
   },
   "cas-ondanka-64": {
     "rule_id": "rule-cas-ondanka-64-ai-v3",
-    "created_at": "2026-08-05 12:58:45",
+    "created_at": "2026-08-05 14:41:06",
     "generator": "AI_Rule_Synthesis_Agent_v3",
     "councilName": "地球温暖化対策推進本部",
     "targetUrl": "https://www.cas.go.jp/jp/seisakukaigi/ondanka/index.html",
@@ -2047,7 +2047,7 @@
   },
   "cas-indexhtmlsuisin_kaigi_record-65": {
     "rule_id": "rule-cas-indexhtmlsuisin_kaigi_record-65-ai-v3",
-    "created_at": "2026-08-05 12:58:46",
+    "created_at": "2026-08-05 14:41:06",
     "generator": "AI_Rule_Synthesis_Agent_v3",
     "councilName": "地域働き方・職場改革等推進会議",
     "targetUrl": "https://www.cas.go.jp/jp/seisaku/chiikihatarakikata/index.html#suisin-kaigi-record",
@@ -2069,7 +2069,7 @@
   },
   "cas-katsuryoku_kojyo-66": {
     "rule_id": "rule-cas-katsuryoku_kojyo-66-ai-v3",
-    "created_at": "2026-08-05 12:58:46",
+    "created_at": "2026-08-05 14:41:06",
     "generator": "AI_Rule_Synthesis_Agent_v3",
     "councilName": "中堅企業等の成長促進に関するワーキンググループ",
     "targetUrl": "https://www.cas.go.jp/jp/seisakukaigi/katsuryoku_kojyo/index.html",
@@ -2091,7 +2091,7 @@
   },
   "cas-chukatu-67": {
     "rule_id": "rule-cas-chukatu-67-ai-v3",
-    "created_at": "2026-08-05 12:58:46",
+    "created_at": "2026-08-05 14:41:06",
     "generator": "AI_Rule_Synthesis_Agent_v3",
     "councilName": "中心市街地活性化本部",
     "targetUrl": "https://www.chisou.go.jp/tiiki/chukatu/konkyo.html",
@@ -2113,7 +2113,7 @@
   },
   "cao-tougosenryaku-68": {
     "rule_id": "rule-cao-tougosenryaku-68-ai-v3",
-    "created_at": "2026-08-05 12:58:46",
+    "created_at": "2026-08-05 14:41:06",
     "generator": "AI_Rule_Synthesis_Agent_v3",
     "councilName": "統合イノベーション戦略推進会議",
     "targetUrl": "https://www8.cao.go.jp/cstp/tougosenryaku/kaigi.html",
@@ -2135,7 +2135,7 @@
   },
   "cas-tppinfo-69": {
     "rule_id": "rule-cas-tppinfo-69-ai-v3",
-    "created_at": "2026-08-05 12:58:46",
+    "created_at": "2026-08-05 14:41:06",
     "generator": "AI_Rule_Synthesis_Agent_v3",
     "councilName": "「ＴＰＰ等総合対策本部」（旧ＴＰＰに関する主要閣僚会議）",
     "targetUrl": "https://www.cas.go.jp/jp/tpp/tppinfo/index.html",
@@ -2157,7 +2157,7 @@
   },
   "cas-sokuitiri-70": {
     "rule_id": "rule-cas-sokuitiri-70-ai-v3",
-    "created_at": "2026-08-05 12:58:46",
+    "created_at": "2026-08-05 14:41:07",
     "generator": "AI_Rule_Synthesis_Agent_v3",
     "councilName": "地理空間情報活用推進会議",
     "targetUrl": "https://www.cas.go.jp/jp/seisaku/sokuitiri/index.html",
@@ -2179,7 +2179,7 @@
   },
   "cas-digital_gyozaikaikaku-71": {
     "rule_id": "rule-cas-digital_gyozaikaikaku-71-ai-v3",
-    "created_at": "2026-08-05 12:58:46",
+    "created_at": "2026-08-05 14:41:07",
     "generator": "AI_Rule_Synthesis_Agent_v3",
     "councilName": "デジタル行財政改革会議",
     "targetUrl": "https://www.cas.go.jp/jp/seisaku/digital_gyozaikaikaku/index.html",
@@ -2201,7 +2201,7 @@
   },
   "cas-titeki2-72": {
     "rule_id": "rule-cas-titeki2-72-ai-v3",
-    "created_at": "2026-08-05 12:58:47",
+    "created_at": "2026-08-05 14:41:07",
     "generator": "AI_Rule_Synthesis_Agent_v3",
     "councilName": "知的財産戦略本部",
     "targetUrl": "https://www.cas.go.jp/jp/seisakukaigi/titeki2/",
@@ -2223,7 +2223,7 @@
   },
   "cas-naikakuhozenkansi-73": {
     "rule_id": "rule-cas-naikakuhozenkansi-73-ai-v3",
-    "created_at": "2026-08-05 12:58:47",
+    "created_at": "2026-08-05 14:41:07",
     "generator": "AI_Rule_Synthesis_Agent_v3",
     "councilName": "内閣保全監視委員会",
     "targetUrl": "https://www.cas.go.jp/jp/seisaku/naikakuhozenkansi/index.html",
@@ -2245,7 +2245,7 @@
   },
   "cas-nipponseichosenryaku-74": {
     "rule_id": "rule-cas-nipponseichosenryaku-74-ai-v3",
-    "created_at": "2026-08-05 12:58:47",
+    "created_at": "2026-08-05 14:41:07",
     "generator": "AI_Rule_Synthesis_Agent_v3",
     "councilName": "日本成長戦略会議",
     "targetUrl": "https://www.cas.go.jp/jp/seisaku/nipponseichosenryaku/index.html",
@@ -2267,7 +2267,7 @@
   },
   "cas-2027_hakurankai-75": {
     "rule_id": "rule-cas-2027_hakurankai-75-ai-v3",
-    "created_at": "2026-08-05 12:58:47",
+    "created_at": "2026-08-05 14:41:08",
     "generator": "AI_Rule_Synthesis_Agent_v3",
     "councilName": "２０２７年国際園芸博覧会関係閣僚会議",
     "targetUrl": "https://www.cas.go.jp/jp/seisaku/2027_hakurankai/index.html",
@@ -2289,7 +2289,7 @@
   },
   "cas-influenza-76": {
     "rule_id": "rule-cas-influenza-76-ai-v3",
-    "created_at": "2026-08-05 12:58:47",
+    "created_at": "2026-08-05 14:41:08",
     "generator": "AI_Rule_Synthesis_Agent_v3",
     "councilName": "鳥インフルエンザ関係閣僚会議",
     "targetUrl": "https://www.cas.go.jp/jp/seisakukaigi/influenza/",
@@ -2311,7 +2311,7 @@
   },
   "cas-ir_promotion-77": {
     "rule_id": "rule-cas-ir_promotion-77-ai-v3",
-    "created_at": "2026-08-05 12:58:48",
+    "created_at": "2026-08-05 14:41:08",
     "generator": "AI_Rule_Synthesis_Agent_v3",
     "councilName": "特定複合観光施設区域整備推進本部",
     "targetUrl": "https://www.cas.go.jp/jp/seisakukaigi/ir_promotion/",
@@ -2333,7 +2333,7 @@
   },
   "cas-doushuu-78": {
     "rule_id": "rule-cas-doushuu-78-ai-v3",
-    "created_at": "2026-08-05 12:58:48",
+    "created_at": "2026-08-05 14:41:08",
     "generator": "AI_Rule_Synthesis_Agent_v3",
     "councilName": "道州制特別区域推進本部",
     "targetUrl": "https://www.cas.go.jp/jp/seisakukaigi/doushuu/",
@@ -2355,7 +2355,7 @@
   },
   "ra-000815-79": {
     "rule_id": "rule-ra-000815-79-ai-v3",
-    "created_at": "2026-08-05 12:58:48",
+    "created_at": "2026-08-05 14:41:08",
     "generator": "AI_Rule_Synthesis_Agent_v3",
     "councilName": "復興推進会議",
     "targetUrl": "https://www.reconstruction.go.jp/topics/cat-11/cat-47/cat-158/000815/",
@@ -2377,7 +2377,7 @@
   },
   "cas-nihonhaku-81": {
     "rule_id": "rule-cas-nihonhaku-81-ai-v3",
-    "created_at": "2026-08-05 12:58:48",
+    "created_at": "2026-08-05 14:41:09",
     "generator": "AI_Rule_Synthesis_Agent_v3",
     "councilName": "日本博総合推進会議",
     "targetUrl": "https://www.cas.go.jp/jp/seisakukaigi/nihonhaku/",
@@ -2399,7 +2399,7 @@
   },
   "cas-buturyu_seisaku_suishin-82": {
     "rule_id": "rule-cas-buturyu_seisaku_suishin-82-ai-v3",
-    "created_at": "2026-08-05 12:58:49",
+    "created_at": "2026-08-05 14:41:09",
     "generator": "AI_Rule_Synthesis_Agent_v3",
     "councilName": "物流政策推進会議",
     "targetUrl": "https://www.cas.go.jp/jp/seisaku/buturyu_seisaku_suishin/index.html",
@@ -2421,7 +2421,7 @@
   },
   "cas-jikkoukaigi-83": {
     "rule_id": "rule-cas-jikkoukaigi-83-ai-v3",
-    "created_at": "2026-08-05 12:58:49",
+    "created_at": "2026-08-05 14:41:09",
     "generator": "AI_Rule_Synthesis_Agent_v3",
     "councilName": "防災対策実行会議",
     "targetUrl": "https://www.bousai.go.jp/kaigirep/chuobou/jikkoukaigi/index.html",
@@ -2443,7 +2443,7 @@
   },
   "cas-suishin_kakuryou-84": {
     "rule_id": "rule-cas-suishin_kakuryou-84-ai-v3",
-    "created_at": "2026-08-05 12:58:49",
+    "created_at": "2026-08-05 14:41:09",
     "generator": "AI_Rule_Synthesis_Agent_v3",
     "councilName": "防災立国推進閣僚会議",
     "targetUrl": "https://www.bousai.go.jp/kaigirep/suishin_kakuryou/index.html",
@@ -2465,7 +2465,7 @@
   },
   "cas-suishin-85": {
     "rule_id": "rule-cas-suishin-85-ai-v3",
-    "created_at": "2026-08-05 12:58:49",
+    "created_at": "2026-08-05 14:41:09",
     "generator": "AI_Rule_Synthesis_Agent_v3",
     "councilName": "防災推進国民会議",
     "targetUrl": "https://www.bousai.go.jp/kaigirep/suishin/",
@@ -2487,7 +2487,7 @@
   },
   "cao-partnership-86": {
     "rule_id": "rule-cao-partnership-86-ai-v3",
-    "created_at": "2026-08-05 12:58:49",
+    "created_at": "2026-08-05 14:41:09",
     "generator": "AI_Rule_Synthesis_Agent_v3",
     "councilName": "未来を拓くパートナーシップ構築推進会議",
     "targetUrl": "https://www5.cao.go.jp/keizai1/partnership/partnership.html",
@@ -2509,7 +2509,7 @@
   },
   "cas-tariff_measures-87": {
     "rule_id": "rule-cas-tariff_measures-87-ai-v3",
-    "created_at": "2026-08-05 12:58:49",
+    "created_at": "2026-08-05 14:41:10",
     "generator": "AI_Rule_Synthesis_Agent_v3",
     "councilName": "米国の関税措置に関する総合対策タスクフォース",
     "targetUrl": "https://www.cas.go.jp/jp/seisaku/tariff_measures/index.html",
@@ -2531,7 +2531,7 @@
   },
   "cao-kaigi-88": {
     "rule_id": "rule-cao-kaigi-88-ai-v3",
-    "created_at": "2026-08-05 12:58:49",
+    "created_at": "2026-08-05 14:41:10",
     "generator": "AI_Rule_Synthesis_Agent_v3",
     "councilName": "民間資金等活用事業推進会議",
     "targetUrl": "https://www8.cao.go.jp/pfi/kaigi/kaigi_index.html",
@@ -2553,7 +2553,7 @@
   },
   "cas-r60101notojishin-89": {
     "rule_id": "rule-cas-r60101notojishin-89-ai-v3",
-    "created_at": "2026-08-05 12:58:49",
+    "created_at": "2026-08-05 14:41:10",
     "generator": "AI_Rule_Synthesis_Agent_v3",
     "councilName": "令和６年能登半島地震復旧・復興支援本部",
     "targetUrl": "https://www.bousai.go.jp/updates/r60101notojishin/hukkyuhonbu.html",
@@ -2575,7 +2575,7 @@
   },
   "cas-ai_robo-90": {
     "rule_id": "rule-cas-ai_robo-90-ai-v3",
-    "created_at": "2026-08-05 12:58:49",
+    "created_at": "2026-08-05 14:41:10",
     "generator": "AI_Rule_Synthesis_Agent_v3",
     "councilName": "AIロボティクスに関する関係府省連絡会議",
     "targetUrl": "https://www.cas.go.jp/jp/seisaku/ai_robo/index.html",
@@ -2597,7 +2597,7 @@
   },
   "cas-osaka_kansai_banpaku-91": {
     "rule_id": "rule-cas-osaka_kansai_banpaku-91-ai-v3",
-    "created_at": "2026-08-05 12:58:49",
+    "created_at": "2026-08-05 14:41:10",
     "generator": "AI_Rule_Synthesis_Agent_v3",
     "councilName": "大阪・関西万博に関する関係者会合",
     "targetUrl": "https://www.cas.go.jp/jp/seisaku/osaka_kansai_banpaku/kaigou.html",
@@ -2619,7 +2619,7 @@
   },
   "cas-iryo_kaigo-92": {
     "rule_id": "rule-cas-iryo_kaigo-92-ai-v3",
-    "created_at": "2026-08-05 12:58:49",
+    "created_at": "2026-08-05 14:41:10",
     "generator": "AI_Rule_Synthesis_Agent_v3",
     "councilName": "医療・介護保険制度における金融所得の公平な取扱いに関する関係府省庁会議",
     "targetUrl": "https://www.cas.go.jp/jp/seisaku/iryo_kaigo/index.html",
@@ -2641,7 +2641,7 @@
   },
   "cas-sangyouisan-93": {
     "rule_id": "rule-cas-sangyouisan-93-ai-v3",
-    "created_at": "2026-08-05 12:58:50",
+    "created_at": "2026-08-05 14:41:10",
     "generator": "AI_Rule_Synthesis_Agent_v3",
     "councilName": "稼働資産を含む産業遺産に関する有識者会議",
     "targetUrl": "https://www.cas.go.jp/jp/sangyousekaiisan/sangyouisan/kaigi.html",
@@ -2663,7 +2663,7 @@
   },
   "cas-1-94": {
     "rule_id": "rule-cas-1-94-ai-v3",
-    "created_at": "2026-08-05 12:58:50",
+    "created_at": "2026-08-05 14:41:11",
     "generator": "AI_Rule_Synthesis_Agent_v3",
     "councilName": "普天間飛行場の運用等に伴う宜野湾市民の住民の生活環境等の保全の課題に関する協議会",
     "targetUrl": "https://www.city.ginowan.lg.jp/soshiki/kikaku/1/1/2/1/18457.html",
@@ -2685,7 +2685,7 @@
   },
   "cas-keizai_anzen_hosyohousei-95": {
     "rule_id": "rule-cas-keizai_anzen_hosyohousei-95-ai-v3",
-    "created_at": "2026-08-05 12:58:50",
+    "created_at": "2026-08-05 14:41:11",
     "generator": "AI_Rule_Synthesis_Agent_v3",
     "councilName": "経済安全保障法制に関する有識者会議（令和４年度～）",
     "targetUrl": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/4index.html",
@@ -2707,7 +2707,7 @@
   },
   "cas-genshiryoku_kankeifusho_renrakukaigi-96": {
     "rule_id": "rule-cas-genshiryoku_kankeifusho_renrakukaigi-96-ai-v3",
-    "created_at": "2026-08-05 12:58:50",
+    "created_at": "2026-08-05 14:41:11",
     "generator": "AI_Rule_Synthesis_Agent_v3",
     "councilName": "国外における原子力関係事象への対応に関する関係府省連絡会議",
     "targetUrl": "https://www.cas.go.jp/jp/seisaku/genshiryoku_kankeifusho_renrakukaigi/index.html",
@@ -2729,7 +2729,7 @@
   },
   "cas-suisinkaigi-97": {
     "rule_id": "rule-cas-suisinkaigi-97-ai-v3",
-    "created_at": "2026-08-05 12:58:50",
+    "created_at": "2026-08-05 14:41:11",
     "generator": "AI_Rule_Synthesis_Agent_v3",
     "councilName": "国土強靱化推進会議",
     "targetUrl": "https://www.cas.go.jp/jp/seisaku/suisinkaigi/index.html",
@@ -2751,7 +2751,7 @@
   },
   "cas-Infura_syougai-98": {
     "rule_id": "rule-cas-Infura_syougai-98-ai-v3",
-    "created_at": "2026-08-05 12:58:51",
+    "created_at": "2026-08-05 14:41:11",
     "generator": "AI_Rule_Synthesis_Agent_v3",
     "councilName": "社会的影響が特に深刻な大規模インフラ障害への対応に係る関係府省庁連絡会議",
     "targetUrl": "https://www.cas.go.jp/jp/seisaku/Infura_syougai/index.html",
@@ -2773,7 +2773,7 @@
   },
   "cas-powder_room-99": {
     "rule_id": "rule-cas-powder_room-99-ai-v3",
-    "created_at": "2026-08-05 12:58:51",
+    "created_at": "2026-08-05 14:41:11",
     "generator": "AI_Rule_Synthesis_Agent_v3",
     "councilName": "女性用トイレにおける行列問題の改善に向けた関係府省連絡会議",
     "targetUrl": "https://www.cas.go.jp/jp/seisaku/powder-room/index.html",
@@ -2795,7 +2795,7 @@
   },
   "cas-pqc-100": {
     "rule_id": "rule-cas-pqc-100-ai-v3",
-    "created_at": "2026-08-05 12:58:51",
+    "created_at": "2026-08-05 14:41:12",
     "generator": "AI_Rule_Synthesis_Agent_v3",
     "councilName": "政府機関等における耐量子計算機暗号（PQC）利用に関する関係府省庁連絡会議",
     "targetUrl": "https://www.cas.go.jp/jp/seisaku/pqc/index.html",
@@ -2817,7 +2817,7 @@
   },
   "cas-jinko_senryaku_pt-101": {
     "rule_id": "rule-cas-jinko_senryaku_pt-101-ai-v3",
-    "created_at": "2026-08-05 12:58:51",
+    "created_at": "2026-08-05 14:41:12",
     "generator": "AI_Rule_Synthesis_Agent_v3",
     "councilName": "人口減少対策に関する意見聴取プロジェクトチーム",
     "targetUrl": "https://www.cas.go.jp/jp/seisaku/jinko_senryaku_pt/index.html",
@@ -2839,7 +2839,7 @@
   },
   "cas-shushoku_katsudou-102": {
     "rule_id": "rule-cas-shushoku_katsudou-102-ai-v3",
-    "created_at": "2026-08-05 12:58:51",
+    "created_at": "2026-08-05 14:41:12",
     "generator": "AI_Rule_Synthesis_Agent_v3",
     "councilName": "就職・採用活動日程に関する関係省庁連絡会議",
     "targetUrl": "https://www.cas.go.jp/jp/seisaku/shushoku_katsudou/index.html",
@@ -2861,7 +2861,7 @@
   },
   "cas-ful-103": {
     "rule_id": "rule-cas-ful-103-ai-v3",
-    "created_at": "2026-08-05 12:58:51",
+    "created_at": "2026-08-05 14:41:12",
     "generator": "AI_Rule_Synthesis_Agent_v3",
     "councilName": "新型インフルエンザ等対策推進会議",
     "targetUrl": "https://www.cas.go.jp/jp/seisaku/ful/taisakusuisin.html",
@@ -2883,7 +2883,7 @@
   },
   "mof-fdi-104": {
     "rule_id": "rule-mof-fdi-104-ai-v3",
-    "created_at": "2026-08-05 12:58:52",
+    "created_at": "2026-08-05 14:41:12",
     "generator": "AI_Rule_Synthesis_Agent_v3",
     "councilName": "対日外国投資委員会",
     "targetUrl": "https://www.mof.go.jp/policy/international_policy/gaitame_kawase/fdi/20260618215004.html",
@@ -2905,7 +2905,7 @@
   },
   "cas-business_jinken-105": {
     "rule_id": "rule-cas-business_jinken-105-ai-v3",
-    "created_at": "2026-08-05 12:58:52",
+    "created_at": "2026-08-05 14:41:12",
     "generator": "AI_Rule_Synthesis_Agent_v3",
     "councilName": "ビジネスと人権に関する行動計画の実施に係る関係府省庁施策推進・連絡会議",
     "targetUrl": "https://www.cas.go.jp/jp/seisaku/business_jinken/index.html",
@@ -2927,7 +2927,7 @@
   },
   "cas-chotatsu-106": {
     "rule_id": "rule-cas-chotatsu-106-ai-v3",
-    "created_at": "2026-08-05 12:58:52",
+    "created_at": "2026-08-05 14:41:13",
     "generator": "AI_Rule_Synthesis_Agent_v3",
     "councilName": "政府調達の自主的措置に関する関係省庁等会議",
     "targetUrl": "https://www.cas.go.jp/jp/seisaku/chotatsu/",
@@ -2949,7 +2949,7 @@
   },
   "cas-linear-107": {
     "rule_id": "rule-cas-linear-107-ai-v3",
-    "created_at": "2026-08-05 12:58:52",
+    "created_at": "2026-08-05 14:41:13",
     "generator": "AI_Rule_Synthesis_Agent_v3",
     "councilName": "リニア開業に伴う新たな圏域形成に関する関係府省等会議",
     "targetUrl": "https://www.cas.go.jp/jp/seisaku/linear/index.html",
