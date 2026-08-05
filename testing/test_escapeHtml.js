@@ -2,13 +2,13 @@ const path = require('path');
 
 function runTests() {
   console.log("--------------------------------------------------");
-  console.log(" [テスト 3/3] public/app.js Security Utility Test (escapeHtml & sanitizeUrl)");
+  console.log(" [テスト 3/3] docs/app.js Security Utility Test (escapeHtml & sanitizeUrl)");
   console.log("--------------------------------------------------");
 
   // Mock global objects necessary to load app.js in Node environment
   global.document = { addEventListener: () => {} };
 
-  const appJsPath = path.join(__dirname, '..', 'public', 'app.js');
+  const appJsPath = path.join(__dirname, '..', 'docs', 'app.js');
   let escapeHtml, sanitizeUrl;
 
   try {

@@ -1006,9 +1006,9 @@ def synthesize_ai_rule_for_council(target, html):
     return ai_rule
 
 def validate_data_js():
-    data_js_path = os.path.join(os.path.dirname(os.path.dirname(__file__)), "public", "data.js")
+    data_js_path = os.path.join(os.path.dirname(os.path.dirname(__file__)), "docs", "data.js")
     if not os.path.exists(data_js_path):
-        print(f"[FAIL] public/data.js not found at {data_js_path}")
+        print(f"[FAIL] docs/data.js not found at {data_js_path}")
         sys.exit(1)
         
     with open(data_js_path, "r", encoding="utf-8") as f:
@@ -1018,7 +1018,7 @@ def validate_data_js():
     meetings_pos = content.find("const MEETINGS = [")
 
     if councils_pos == -1 or meetings_pos == -1:
-        print("[FAIL] public/data.js: Missing COUNCILS or MEETINGS array declaration!")
+        print("[FAIL] docs/data.js: Missing COUNCILS or MEETINGS array declaration!")
         sys.exit(1)
 
     councils_str = content[councils_pos:meetings_pos]
@@ -1028,7 +1028,7 @@ def validate_data_js():
         start = text.find('[')
         end = text.rfind(']')
         if start == -1 or end == -1:
-            print(f"[FAIL] public/data.js: Could not find brackets for {name}")
+            print(f"[FAIL] docs/data.js: Could not find brackets for {name}")
             sys.exit(1)
             
         arr_body = text[start:end+1]
@@ -1037,14 +1037,14 @@ def validate_data_js():
         open_b = arr_body.count('{')
         close_b = arr_body.count('}')
         if open_b != close_b:
-            print(f"[FAIL] public/data.js: Brace count mismatch in {name}! open {{ = {open_b}, close }} = {close_b}")
+            print(f"[FAIL] docs/data.js: Brace count mismatch in {name}! open {{ = {open_b}, close }} = {close_b}")
             sys.exit(1)
             
         # 2. Check bracket count
         open_k = arr_body.count('[')
         close_k = arr_body.count(']')
         if open_k != close_k:
-            print(f"[FAIL] public/data.js: Bracket count mismatch in {name}! open [ = {open_k}, close ] = {close_k}")
+            print(f"[FAIL] docs/data.js: Bracket count mismatch in {name}! open [ = {open_k}, close ] = {close_k}")
             sys.exit(1)
 
         # 3. Check brace depth line by line to detect stray closing braces
@@ -1052,7 +1052,7 @@ def validate_data_js():
         for lnum, line in enumerate(text.splitlines(), 1):
             depth += line.count('{') - line.count('}')
             if depth < 0:
-                print(f"[FAIL] public/data.js: Negative brace depth at line {lnum} in {name}: {line.strip()}")
+                print(f"[FAIL] docs/data.js: Negative brace depth at line {lnum} in {name}: {line.strip()}")
                 sys.exit(1)
 
         # 4. Check for unescaped multiline strings inside single quotes
@@ -1062,7 +1062,7 @@ def validate_data_js():
                 continue
             sq_matches = re.findall(r"(?<!\\)'", line)
             if len(sq_matches) % 2 != 0:
-                print(f"[FAIL] public/data.js: Unescaped single quote string imbalance in {name} line {lnum}: {line.strip()}")
+                print(f"[FAIL] docs/data.js: Unescaped single quote string imbalance in {name} line {lnum}: {line.strip()}")
                 sys.exit(1)
 
     # 5. Check for duplicate meeting IDs and duplicate Council + Title entries
@@ -1070,13 +1070,13 @@ def validate_data_js():
     seen_m_ids = set()
     for m_id in meeting_id_matches:
         if m_id in seen_m_ids:
-            print(f"[FAIL] public/data.js: Duplicate meeting ID detected: '{m_id}'")
+            print(f"[FAIL] docs/data.js: Duplicate meeting ID detected: '{m_id}'")
             sys.exit(1)
         seen_m_ids.add(m_id)
 
     # 6. Node.js Runtime Check: Verify data.js and app.js load without ReferenceError / SyntaxError
     import subprocess
-    app_js_path = os.path.join(os.path.dirname(os.path.dirname(__file__)), "public", "app.js")
+    app_js_path = os.path.join(os.path.dirname(os.path.dirname(__file__)), "docs", "app.js")
     data_js_json = json.dumps(data_js_path)
     app_js_json = json.dumps(app_js_path)
     node_test_script = f"""
@@ -1127,14 +1127,14 @@ try {{
     except Exception as e:
         print(f"[WARN] Node.js test skipped: {e}")
 
-    print("[SUCCESS] public/data.js: Full JS syntax validation passed (braces, brackets, quotes, duplicates, runtime execution).")
+    print("[SUCCESS] docs/data.js: Full JS syntax validation passed (braces, brackets, quotes, duplicates, runtime execution).")
 
 def main():
     print("==========================================================")
     print(" 政策会議ウォッチ (PM-HUB) 1回目用 AI Rule Synthesis Agent ")
     print("==========================================================")
     print(f"解析実行時刻: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
-    print("--- [Pre-Flight Check] public/data.js 構文検証実行中 ---")
+    print("--- [Pre-Flight Check] docs/data.js 構文検証実行中 ---")
     validate_data_js()
     print("----------------------------------------------------------")
     print(f"解析対象会議体数: {len(TARGET_COUNCILS)} 件\n")

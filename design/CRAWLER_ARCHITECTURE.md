@@ -27,7 +27,7 @@
 ┌─────────────────────────────────────────────────────────────────┐
 │  抽出結果データベース                                            │
 │  ├─ admin/scraped_councils_output.json (実行ログ・中間データ)    │
-│  └─ public/data.js (公開ポータル用 構造化データ)                 │
+│  └─ docs/data.js (公開ポータル用 構造化データ)                   │
 └─────────────────────────────────────────────────────────────────┘
 ```
 
@@ -94,8 +94,8 @@ Webページ内でリンクされている配布資料（議事次第、議事�
 1. **管理用ログ出力 ([admin/scraped_councils_output.json](file:///d:/dev/PMHub/admin/scraped_councils_output.json))**:
    巡回日時、全対象サイトの接続結果 (200 OK件数)、抽出された資料PDFの全リストをJSON形式で記録します。
 
-2. **公開ポータルへの同期 ([public/data.js](file:///d:/dev/PMHub/public/data.js))**:
-   検証完了後、`public/data.js` の `MEETINGS` 配列へメタデータが組み込まれ、検索・フィルター・エクスポート機能ですぐに利用可能になります。
+2. **公開ポータルへの同期 ([docs/data.js](file:///d:/dev/PMHub/docs/data.js))**:
+    検証完了後、`docs/data.js` の `MEETINGS` 配列へメタデータが組み込まれ、検索・フィルター・エクスポート機能ですぐに利用可能になります。
 
 ---
 

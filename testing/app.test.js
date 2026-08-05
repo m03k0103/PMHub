@@ -1,6 +1,6 @@
 const test = require('node:test');
 const assert = require('node:assert');
-const { escapeHtml, sanitizeUrl, formatDate } = require('../public/app.js');
+const { escapeHtml, sanitizeUrl, formatDate } = require('../docs/app.js');
 
 test('sanitizeUrl utility function (Security / XSS prevention)', async (t) => {
   await t.test('allows safe http and https URLs', () => {

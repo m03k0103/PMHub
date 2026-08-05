@@ -1,11 +1,11 @@
 # 政策会議ウォッチ (Policy Meeting Hub / PMHub)
 
 日本の政策会議・審議会・有識者会議の公開情報を、横断検索しやすい形で集約する静的Webポータルです。
-フロントエンドは `public/` 配下のみで完結し、管理用クローラーと運用ドキュメントは `admin/` / `docs/` に分離しています。
+フロントエンドは `docs/` 配下のみで完結し、管理用クローラーと運用ドキュメントは `admin/` / `design/` に分離しています。
 
 ## 機能概要
 
-### 公開ポータル (`public/`)
+### 公開ポータル (`docs/`)
 - 会議一覧を 2 モードで表示
 	- 会議体別 (`BY_COUNCIL`)
 	- 会議別タイムライン (`BY_DATE`)
@@ -30,7 +30,7 @@
 PMHub/
 ├── package.json
 ├── README.md
-├── public/
+├── docs/
 │   ├── index.html
 │   ├── styles.css
 │   ├── data.js
@@ -43,7 +43,7 @@ PMHub/
 │   ├── crawler.py
 │   ├── scraped_councils_output.json
 │   └── scraping_rules.json
-├── docs/
+├── design/
 │   ├── CRAWLER_ARCHITECTURE.md
 │   └── RESOURCE_MAP.md
 └── testing/
@@ -64,10 +64,10 @@ npm install
 
 ### 2) 公開ポータルを起動
 
-ビルドは不要です。`public/` を静的配信してください。
+ビルドは不要です。`docs/` を静的配信してください。
 
 ```bash
-cd public
+cd docs
 python -m http.server 8000
 ```
 
@@ -103,24 +103,24 @@ python crawler.py
 ```
 
 2. 生成された `admin/scraped_councils_output.json` を確認
-3. 必要に応じて `public/data.js` へ反映（会議データ・更新時刻）
+3. 必要に応じて `docs/data.js` へ反映（会議データ・更新時刻）
 4. `testing/smoke_test.py` と Node.js テストを実行
 5. 問題なければ公開
 
 詳細は以下を参照してください。
 - `admin/admin_guide.md`
 - `admin/agent_crawl_guide.md`
-- `docs/CRAWLER_ARCHITECTURE.md`
-- `docs/RESOURCE_MAP.md`
+- `design/CRAWLER_ARCHITECTURE.md`
+- `design/RESOURCE_MAP.md`
 
 ## 公開・セキュリティ方針
 
-- Web公開対象は `public/` のみ
+- Web公開対象は `docs/` のみ
 - `admin/` は非公開領域として分離
 - 外部リンクは `sanitizeUrl` を通す
 - 描画文字列は `escapeHtml` を通す
 
 ## 補足
 
-- データは `public/data.js` 内の `COUNCILS` / `MEETINGS` を参照して描画されます。
+- データは `docs/data.js` 内の `COUNCILS` / `MEETINGS` を参照して描画されます。
 - 最終クロール時刻は `LAST_CRAWL_TIME` を優先表示します。

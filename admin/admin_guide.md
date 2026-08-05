@@ -41,8 +41,8 @@ python crawler.py
 ## 🔒 セキュリティとアクセス制御方針
 
 1. **Web公開範囲**:
-   - 一般公開するWebサーバー（Nginx / Apache / Cloudflare Pages / AWS S3等）のドキュメントルートには、**`public/` ディレクトリ配下のみ**を公開設定してください。
+   - 一般公開するWebサーバー（Nginx / Apache / Cloudflare Pages / AWS S3等）のドキュメントルートには、**`docs/` ディレクトリ配下のみ**を公開設定してください。
    - `admin/` ディレクトリはWebアクセス不能な非公開領域として隔離します。
 
 2. **データ反映手順**:
-   - クローラーが最新情報を検出した場合、パース結果を確認し、`public/data.js` の `MEETINGS` 配列へ追加更新を行います。
+   - クローラーが最新情報を検出した場合、パース結果を確認し、`docs/data.js` の `MEETINGS` 配列へ追加更新を行います。

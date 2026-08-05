@@ -8,7 +8,7 @@
 
 ```
 PMHub/
-├── public/                      # 【一般公開用】エンドユーザー向けポータルWebアプリケーション
+├── docs/                        # 【一般公開用】エンドユーザー向けポータルWebアプリケーション
 │   ├── index.html               # 公開ポータルメインHTML構造・UIレイアウト
 │   ├── styles.css               # 全21省庁対応デザインシステム・CSSスタイル
 │   ├── data.js                  # 審議会・会議配布資料データベース (構造化オブジェクト)
@@ -24,7 +24,7 @@ PMHub/
 │   ├── test_escapeHtml.js       # セキュリティユーティリティ単体テストスクリプト
 │   └── app.test.js              # フロントエンドロジックユニットテスト
 │
-├── docs/                        # 【全般ドキュメント】プロジェクト構成・役割説明書
+├── design/                      # 【全般ドキュメント】プロジェクト構成・役割説明書
 │   └── RESOURCE_MAP.md          # 本ファイル (リソースファイル役割構成書)
 │
 └── README.md                    # プロジェクト総合ガイド・クイックスタート
@@ -32,16 +32,16 @@ PMHub/
 
 ---
 
-## 🌐 1. 一般公開用リソース (`public/`)
+## 🌐 1. 一般公開用リソース (`docs/`)
 
 一般国民・報道関係者（記者）・研究者等のエンドユーザーがWebブラウザで直接閲覧・利用する静的・動的リソース群です。サーバー側の動的コード実行を必要とせず、高いセキュリティと高速性を確保します。
 
 | ファイルパス | 区分 | 対象ユーザー | 主な役割・機能 |
 | :--- | :--- | :--- | :--- |
-| [public/index.html](file:///d:/dev/PMHub/public/index.html) | 一般公開 | 全ユーザー | サイト全体のDOM構造、レスポンシブヘッダー、検索・フィルターバー、タイムライン表示領域、審議会ディレクトリ、アナリティクス、ウォッチリスト、詳細ダイアログのUI定義。 |
-| [public/styles.css](file:///d:/dev/PMHub/public/styles.css) | 一般公開 | 全ユーザー | 全21省庁・内閣官房の固有カラーバッジ、ダーク/ライト表示モード、ガラスモルフィズムUI、レスポンシブデザイン、開催日ハイライトバッジのスタイリング。 |
-| [public/data.js](file:///d:/dev/PMHub/public/data.js) | 一般公開 | 全ユーザー | 全21省庁および内閣官房・内閣府の審議会・会議配布資料メタデータ（会議名、開催日、200 OK実存PDF直リンク、アジェンダ、タグ）の公開用インデックスデータ。 |
-| [public/app.js](file:///d:/dev/PMHub/public/app.js) | 一般公開 | 全ユーザー | リアルタイムキーワード検索、省庁・種別多次元フィルター、ソート、Chart.js統計グラフ描画、マイウォッチリスト管理、Excel対応UTF-8 BOM付CSV/JSONデータ一括出力、AI要約 Feature Flag（ON/OFF切替）。 |
+| [docs/index.html](file:///d:/dev/PMHub/docs/index.html) | 一般公開 | 全ユーザー | サイト全体のDOM構造、レスポンシブヘッダー、検索・フィルターバー、タイムライン表示領域、審議会ディレクトリ、アナリティクス、ウォッチリスト、詳細ダイアログのUI定義。 |
+| [docs/styles.css](file:///d:/dev/PMHub/docs/styles.css) | 一般公開 | 全ユーザー | 全21省庁・内閣官房の固有カラーバッジ、ダーク/ライト表示モード、ガラスモルフィズムUI、レスポンシブデザイン、開催日ハイライトバッジのスタイリング。 |
+| [docs/data.js](file:///d:/dev/PMHub/docs/data.js) | 一般公開 | 全ユーザー | 全21省庁および内閣官房・内閣府の審議会・会議配布資料メタデータ（会議名、開催日、200 OK実存PDF直リンク、アジェンダ、タグ）の公開用インデックスデータ。 |
+| [docs/app.js](file:///d:/dev/PMHub/docs/app.js) | 一般公開 | 全ユーザー | リアルタイムキーワード検索、省庁・種別多次元フィルター、ソート、Chart.js統計グラフ描画、マイウォッチリスト管理、Excel対応UTF-8 BOM付CSV/JSONデータ一括出力、AI要約 Feature Flag（ON/OFF切替）。 |
 
 ---
 
@@ -58,12 +58,12 @@ PMHub/
 
 ---
 
-## 📖 3. 総合ドキュメント (`docs/` / Root)
+## 📖 3. 総合ドキュメント (`design/` / Root)
 
 | ファイルパス | 区分 | 主な内容 |
 | :--- | :--- | :--- |
-| [docs/RESOURCE_MAP.md](file:///d:/dev/PMHub/docs/RESOURCE_MAP.md) | 全般 | 各リソースファイルの役割・権限区分・ディレクトリ構成の全容説明書（本ドキュメント）。 |
-| [docs/CRAWLER_ARCHITECTURE.md](file:///d:/dev/PMHub/docs/CRAWLER_ARCHITECTURE.md) | 全般 | Webクローラーの動作原理、HTTPリクエスト・文字コード判定・和暦/西暦正規表現抽出・絶対URL復元ロジックの詳細仕様書。 |
+| [design/RESOURCE_MAP.md](file:///d:/dev/PMHub/design/RESOURCE_MAP.md) | 全般 | 各リソースファイルの役割・権限区分・ディレクトリ構成の全容説明書（本ドキュメント）。 |
+| [design/CRAWLER_ARCHITECTURE.md](file:///d:/dev/PMHub/design/CRAWLER_ARCHITECTURE.md) | 全般 | Webクローラーの動作原理、HTTPリクエスト・文字コード判定・和暦/西暦正規表現抽出・絶対URL復元ロジックの詳細仕様書。 |
 | [README.md](file:///d:/dev/PMHub/README.md) | 全般 | プロジェクトの全体目的、全21省庁＋内閣官房のカバー範囲、起動方法、機能一覧。 |
 
 ---
@@ -71,8 +71,8 @@ PMHub/
 ## 🔒 セキュリティおよび保守運用ガイドライン
 
 1. **アクセス制限とファイル分離**:
-   - `public/` ディレクトリ配下のファイルのみを Web サーバー（Nginx / Apache / S3 等）のドキュメントルートとして公開します。
+   - `docs/` ディレクトリ配下のファイルのみを Web サーバー（Nginx / Apache / S3 等）のドキュメントルートとして公開します。
    - `admin/` ディレクトリはWeb非公開領域とし、サーバー内部のバッチ処理（Cron等）または管理者用ローカル環境でのみ実行します。
 
 2. **データ同期フロー**:
-   - 管理者環境で `admin/crawler.py` を実行 ➔ `admin/scraped_councils_output.json` を生成 ➔ 内容を検証の上、`public/data.js` へ反映して公開します。
+   - 管理者環境で `admin/crawler.py` を実行 ➔ `admin/scraped_councils_output.json` を生成 ➔ 内容を検証の上、`docs/data.js` へ反映して公開します。

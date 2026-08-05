@@ -1,12 +1,12 @@
 # 政策会議ウォッチ (PM-HUB) - AIエージェント クロール実行標準作業手順書 (Agent Crawl Guide)
 
-本書は、AIエージェント（Antigravity Agent）が政府各府省庁の審議会・政策会議ウェブサイトをクロールし、`public/data.js` および `admin/scraping_rules.json` を更新・保守する際に必ず参照し遵守すべき標準手順書です。
+本書は、AIエージェント（Antigravity Agent）が政府各府省庁の審議会・政策会議ウェブサイトをクロールし、`docs/data.js` および `admin/scraping_rules.json` を更新・保守する際に必ず参照し遵守すべき標準手順書です。
 
 ---
 
 ## 1. 目的と基本規則 (Core Mandates)
 
-1. **データ構造の整合性確保**: `public/data.js` の `COUNCILS` および `MEETINGS` 配列のデータ構造・構文エラー（SyntaxError）を100%防止する。
+1. **データ構造の整合性確保**: `docs/data.js` の `COUNCILS` および `MEETINGS` 配列のデータ構造・構文エラー（SyntaxError）を100%防止する。
 2. **回数表記の明確化**: 会議タイトルは原則「最新会合」などの汎用表記を避け、「`第X回`」または「`令和Y年第Z回`」と具体回数を明記する。
 3. **非公表資料の完全記録**: 一次ソースページ内に【非公表】・【非公開】として掲載されている資料も漏れなく `materials` 配列に記録し、閲覧者に存在を示す。
 4. **除外対象会議体の再追加防止**: ユーザー指示により除外された会議体（`cas-honbu_setti-8`: 緊急災害対策本部、`cas-pages-4`: 大雪に関する関係閣僚会議 等）はクロール対象から完全に除外し、`data.js` へ復元・再追加しない。
@@ -40,8 +40,8 @@
   { name: '資料2: ◯◯省提出資料【非公表】', type: 'HTML', size: '非公表', url: 'https://.../subpage.html', isMinutes: false }
   ```
 
-### Step 4: `public/data.js` の安全な更新規則 (CRITICAL)
-`public/data.js` 編集時の禁止事項およびフォーマット規定：
+### Step 4: `docs/data.js` の安全な更新規則 (CRITICAL)
+`docs/data.js` 編集時の禁止事項およびフォーマット規定：
 1. **オブジェクトキーはアンクォート (Unquoted)**:
    * 正: `councilId: '...'`, `officialUrl: '...'`
    * 誤: `'councilId': '...'`

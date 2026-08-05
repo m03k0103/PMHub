@@ -1076,7 +1076,7 @@ def load_councils_from_data_js():
     import json
     import os
     project_root = os.path.dirname(os.path.dirname(__file__))
-    data_js_path = os.path.join(project_root, "public", "data.js")
+    data_js_path = os.path.join(project_root, "docs", "data.js")
     if not os.path.exists(data_js_path):
         return []
     node_script = f"""
@@ -1119,7 +1119,7 @@ def main():
     dynamic_targets = load_councils_from_data_js()
     if dynamic_targets:
         CRAWL_TARGETS = dynamic_targets
-        print(f"[INFO] public/data.js から {len(CRAWL_TARGETS)} 件の会議体を動的に読み込みました。")
+        print(f"[INFO] docs/data.js から {len(CRAWL_TARGETS)} 件の会議体を動的に読み込みました。")
     else:
         print(f"[INFO] 静的な CRAWL_TARGETS ({len(CRAWL_TARGETS)} 件) を使用します。")
 
@@ -1163,9 +1163,9 @@ def main():
     with open(output_filename, "w", encoding="utf-8") as f:
         json.dump(results, f, ensure_ascii=False, indent=2)
 
-    # public/data.js の LAST_CRAWL_TIME を最新のクロール実行時刻に自動更新
+    # docs/data.js の LAST_CRAWL_TIME を最新のクロール実行時刻に自動更新
     project_root = os.path.dirname(os.path.dirname(__file__))
-    data_js_path = os.path.join(project_root, "public", "data.js")
+    data_js_path = os.path.join(project_root, "docs", "data.js")
     if os.path.exists(data_js_path):
         now_str = datetime.now().strftime("%Y/%m/%d %H:%M")
         with open(data_js_path, "r", encoding="utf-8") as f:
@@ -1178,7 +1178,7 @@ def main():
             )
             with open(data_js_path, "w", encoding="utf-8") as f:
                 f.write(updated_content)
-            print(f"[更新成功] public/data.js の LAST_CRAWL_TIME を '{now_str}' に更新しました。")
+            print(f"[更新成功] docs/data.js の LAST_CRAWL_TIME を '{now_str}' に更新しました。")
 
     print(f"\nデータ取得完了: 結果を {output_filename} に保存しました。")
 

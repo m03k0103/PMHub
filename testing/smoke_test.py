@@ -228,8 +228,8 @@ def check_syntax_errors():
     print("--------------------------------------------------")
     
     files_to_check = [
-        os.path.join(PROJECT_ROOT, "public", "data.js"),
-        os.path.join(PROJECT_ROOT, "public", "app.js"),
+        os.path.join(PROJECT_ROOT, "docs", "data.js"),
+        os.path.join(PROJECT_ROOT, "docs", "app.js"),
         os.path.join(PROJECT_ROOT, "admin", "crawler.py"),
         os.path.join(PROJECT_ROOT, "admin", "agent_initial_verifier.py"),
         os.path.join(PROJECT_ROOT, "testing", "smoke_test.py")
@@ -269,9 +269,9 @@ def get_added_urls_from_git():
     """git diff から新規追加・変更された URL を動的に抽出"""
     added_urls = set()
     diff_commands = [
-        ["git", "diff", "HEAD", "--", "public/data.js"],
-        ["git", "diff", "HEAD~1", "HEAD", "--", "public/data.js"],
-        ["git", "diff", "--staged", "--", "public/data.js"]
+        ["git", "diff", "HEAD", "--", "docs/data.js"],
+        ["git", "diff", "HEAD~1", "HEAD", "--", "docs/data.js"],
+        ["git", "diff", "--staged", "--", "docs/data.js"]
     ]
     
     for cmd in diff_commands:
@@ -298,7 +298,7 @@ def check_link_health(explicit_urls=None, check_all=False):
     if explicit_urls:
         target_urls = explicit_urls
     elif check_all:
-        data_js_path = os.path.join(PROJECT_ROOT, "public", "data.js")
+        data_js_path = os.path.join(PROJECT_ROOT, "docs", "data.js")
         if os.path.exists(data_js_path):
             with open(data_js_path, "r", encoding="utf-8") as f:
                 content = f.read()
@@ -375,7 +375,7 @@ def check_council_timeline_sync():
     print(" [テスト 4/4] 会議体・タイムライン・自動クローラー ID完全一致検証")
     print("--------------------------------------------------")
 
-    data_js_path = os.path.join(PROJECT_ROOT, "public", "data.js")
+    data_js_path = os.path.join(PROJECT_ROOT, "docs", "data.js")
     crawler_py_path = os.path.join(PROJECT_ROOT, "admin", "crawler.py")
     verifier_py_path = os.path.join(PROJECT_ROOT, "admin", "agent_initial_verifier.py")
 
@@ -437,9 +437,9 @@ def check_view_rendering():
     print(" [テスト 5/5] UI表示機能検証（タイムライン・会議体一覧描画）")
     print("--------------------------------------------------")
 
-    data_js_path = os.path.join(PROJECT_ROOT, "public", "data.js")
-    app_js_path = os.path.join(PROJECT_ROOT, "public", "app.js")
-    index_html_path = os.path.join(PROJECT_ROOT, "public", "index.html")
+    data_js_path = os.path.join(PROJECT_ROOT, "docs", "data.js")
+    app_js_path = os.path.join(PROJECT_ROOT, "docs", "app.js")
+    index_html_path = os.path.join(PROJECT_ROOT, "docs", "index.html")
 
     with open(data_js_path, "r", encoding="utf-8") as f:
         data_text = f.read()
