@@ -15,6 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
     categoryFilter: 'ALL',
     docTypeFilter: 'ALL',
     dateRangeFilter: 'ALL',
+    watchlistOnly: false,
     sortBy: 'NEWEST',
     watchedCouncilIds: new Set(JSON.parse(localStorage.getItem('pmhub_watched')) || ['cao-ai-strategy', 'digital-suishin', 'cao-kisei-kaikaku', 'meti-sangyo-kozo', 'mhlw-shakai-hosho', 'mof-zaisei-seido']),
     alertKeywords: JSON.parse(localStorage.getItem('pmhub_keywords')) || (typeof INITIAL_ALERT_KEYWORDS !== 'undefined' ? [...INITIAL_ALERT_KEYWORDS] : ['AI', 'デジタル', '規制改革', '社会保障', 'GX', '経済安全保障']),
@@ -58,6 +59,8 @@ document.addEventListener('DOMContentLoaded', () => {
     categorySelect: document.getElementById('categorySelect'),
     docTypeSelect: document.getElementById('docTypeSelect'),
     dateRangeSelect: document.getElementById('dateRangeSelect'),
+    watchlistFilterBtn: document.getElementById('watchlistFilterBtn'),
+    watchlistFilterBadge: document.getElementById('watchlistFilterBadge'),
     resetFiltersBtn: document.getElementById('resetFiltersBtn'),
     sortBySelect: document.getElementById('sortBySelect'),
     keywordChips: document.querySelectorAll('.keyword-chip'),
@@ -119,11 +122,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // --- THEME HANDLER ---
   function initTheme() {
+    document.documentElement.setAttribute('data-theme', state.theme);
     el.body.setAttribute('data-theme', state.theme);
   }
 
   function toggleTheme() {
     state.theme = state.theme === 'dark' ? 'light' : 'dark';
+    document.documentElement.setAttribute('data-theme', state.theme);
     el.body.setAttribute('data-theme', state.theme);
     localStorage.setItem('pmhub_theme', state.theme);
     showToast(`テーマを${state.theme === 'dark' ? 'ダーク' : 'ライト'}モードに切り替えました`);
@@ -163,6 +168,9 @@ document.addEventListener('DOMContentLoaded', () => {
     el.watchlistCount.textContent = state.watchedCouncilIds.size;
     if (el.watchlistActiveCount) {
       el.watchlistActiveCount.textContent = state.watchedCouncilIds.size;
+    }
+    if (el.watchlistFilterBadge) {
+      el.watchlistFilterBadge.textContent = state.watchedCouncilIds.size;
     }
 
     if (el.statLastUpdate) {
@@ -242,6 +250,24 @@ document.addEventListener('DOMContentLoaded', () => {
 
     el.resetFiltersBtn.addEventListener('click', resetFilters);
     if (el.noResultsResetBtn) el.noResultsResetBtn.addEventListener('click', resetFilters);
+
+    if (el.watchlistFilterBtn) {
+      el.watchlistFilterBtn.addEventListener('click', () => {
+        state.watchlistOnly = !state.watchlistOnly;
+        if (state.watchlistOnly) {
+          el.watchlistFilterBtn.classList.add('active');
+          if (state.watchedCouncilIds.size === 0) {
+            showToast('現在ウォッチ中の会議体がありません。「ウォッチ」ボタンで会議体を登録してください');
+          } else {
+            showToast(`ウォッチ対象 (${state.watchedCouncilIds.size}件) に絞り込みました ⭐`);
+          }
+        } else {
+          el.watchlistFilterBtn.classList.remove('active');
+          showToast('全件表示に戻しました');
+        }
+        renderMainView();
+      });
+    }
 
     el.sortBySelect.addEventListener('change', (e) => {
       state.sortBy = e.target.value;
@@ -354,6 +380,7 @@ document.addEventListener('DOMContentLoaded', () => {
     state.categoryFilter = 'ALL';
     state.docTypeFilter = 'ALL';
     state.dateRangeFilter = 'ALL';
+    state.watchlistOnly = false;
     state.sortBy = 'NEWEST';
 
     el.searchInput.value = '';
@@ -364,6 +391,10 @@ document.addEventListener('DOMContentLoaded', () => {
     el.dateRangeSelect.value = 'ALL';
     el.sortBySelect.value = 'NEWEST';
 
+    if (el.watchlistFilterBtn) {
+      el.watchlistFilterBtn.classList.remove('active');
+    }
+
     el.keywordChips.forEach(c => c.classList.remove('active'));
 
     renderMainView();
@@ -372,6 +403,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function filterMeetings() {
     return MEETINGS.filter(meeting => {
+      // Watchlist filter
+      if (state.watchlistOnly && !state.watchedCouncilIds.has(meeting.councilId)) {
+        return false;
+      }
+
       // Free word search
       if (state.searchQuery) {
         const q = state.searchQuery.toLowerCase();
@@ -464,6 +500,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const activeTags = [];
 
     if (state.searchQuery) activeTags.push({ label: `検索: "${state.searchQuery}"`, key: 'search' });
+    if (state.watchlistOnly) activeTags.push({ label: '⭐ ウォッチ対象のみ', key: 'watchlistOnly' });
     if (state.ministryFilter !== 'ALL') activeTags.push({ label: `省庁: ${MINISTRIES[state.ministryFilter]?.name || state.ministryFilter}`, key: 'ministry' });
     if (state.categoryFilter !== 'ALL') activeTags.push({ label: `会議種別: ${CATEGORIES[state.categoryFilter]}`, key: 'category' });
     if (state.docTypeFilter !== 'ALL') activeTags.push({ label: `資料: ${state.docTypeFilter}`, key: 'docType' });
@@ -581,6 +618,9 @@ document.addEventListener('DOMContentLoaded', () => {
     } else if (key === 'dateRange') {
       state.dateRangeFilter = 'ALL';
       el.dateRangeSelect.value = 'ALL';
+    } else if (key === 'watchlistOnly') {
+      state.watchlistOnly = false;
+      if (el.watchlistFilterBtn) el.watchlistFilterBtn.classList.remove('active');
     }
     renderMainView();
   };
@@ -678,6 +718,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function filterCouncils() {
     return COUNCILS.filter(council => {
+      if (state.watchlistOnly && !state.watchedCouncilIds.has(council.id)) return false;
       if (state.ministryFilter !== 'ALL' && council.ministry !== state.ministryFilter) return false;
       if (state.categoryFilter !== 'ALL' && council.category !== state.categoryFilter) return false;
       if (state.searchQuery) {
@@ -808,6 +849,10 @@ document.addEventListener('DOMContentLoaded', () => {
           <div class="council-accordion-header" onclick="toggleCouncilAccordion('${c.id}')">
             <div class="council-header-left">
               <div class="council-header-top-row">
+                <button class="btn-watchlist-toggle ${isWatching ? 'watching' : ''}" onclick="event.stopPropagation(); toggleWatchlist('${c.id}')">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="${isWatching ? 'currentColor' : 'none'}" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                  ${isWatching ? 'ウォッチ中' : 'ウォッチ'}
+                </button>
                 <span class="badge-ministry ${c.ministry}">${minInfo.name}</span>
                 <span class="badge-category">${CATEGORIES[c.category] || c.category}</span>
               </div>
@@ -824,10 +869,6 @@ document.addEventListener('DOMContentLoaded', () => {
           </div>
           <div class="council-meetings-body">
             <div class="council-actions-row">
-              <button class="btn-watchlist-toggle ${isWatching ? 'watching' : ''}" onclick="event.stopPropagation(); toggleWatchlist('${c.id}')">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="${isWatching ? 'currentColor' : 'none'}" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-                ${isWatching ? 'ウォッチ中' : 'ウォッチ'}
-              </button>
               <a href="${escapeHtml(sanitizeUrl(c.officialUrl))}" target="_blank" rel="noopener noreferrer" class="text-accent text-sm" style="display:inline-flex; align-items:center; gap:0.2rem;" onclick="event.stopPropagation()">
                 公式トップページ ↗
               </a>

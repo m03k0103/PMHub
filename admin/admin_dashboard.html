@@ -143,15 +143,18 @@ JSON データを読み込み中...
         progressFill.style.width = '0%';
         logs.innerHTML = '';
 
-        const targets = [
-          '内閣官房: 全世代型社会保障構築会議 (cas.go.jp)',
-          '内閣官房: 社会保障国民会議 (cas.go.jp)',
-          '内閣府: 人工知能戦略本部 (cao.go.jp)',
-          '内閣官房: 中東情勢に関する関係閣僚会議 (cas.go.jp)',
-          'デジタル庁: デジタル社会推進会議 (digital.go.jp)'
-        ];
+        const targets = COUNCILS.map(c => {
+          const minName = (typeof MINISTRIES !== 'undefined' && MINISTRIES[c.ministry]) ? MINISTRIES[c.ministry].name : c.ministry;
+          let domain = 'go.jp';
+          try {
+            const urlObj = new URL(c.officialUrl);
+            domain = urlObj.hostname;
+          } catch(e) {}
+          return `${minName}: ${c.name} (${domain})`;
+        });
 
         let idx = 0;
+        const intervalTime = Math.max(20, Math.min(400, 3000 / targets.length));
         const interval = setInterval(() => {
           if (idx < targets.length) {
             idx++;
@@ -168,7 +171,7 @@ JSON データを読み込み中...
             crawlBtn.disabled = false;
             alert('全省庁のWebクローリング・インデックス同期が正常に完了しました！');
           }
-        }, 700);
+        }, intervalTime);
       });
     });
   </script>

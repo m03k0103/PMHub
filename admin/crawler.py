@@ -1071,7 +1071,58 @@ def execute_rule_retrieval(target, html, rule_item):
     }
     return scraped_item
 
+def load_councils_from_data_js():
+    import subprocess
+    import json
+    import os
+    project_root = os.path.dirname(os.path.dirname(__file__))
+    data_js_path = os.path.join(project_root, "public", "data.js")
+    if not os.path.exists(data_js_path):
+        return []
+    node_script = f"""
+const fs = require('fs');
+const vm = require('vm');
+try {{
+    const dataCode = fs.readFileSync({json.dumps(data_js_path)}, 'utf-8');
+    const context = {{}};
+    vm.createContext(context);
+    vm.runInContext(dataCode, context);
+    if (context.COUNCILS) {{
+        console.log(JSON.stringify(context.COUNCILS));
+    }} else {{
+        console.log("[]");
+    }}
+}} catch (err) {{
+    console.error(err);
+    process.exit(1);
+}}
+"""
+    try:
+        proc = subprocess.run(["node", "-e", node_script], capture_output=True, text=True, encoding='utf-8')
+        if proc.returncode == 0:
+            councils = json.loads(proc.stdout.strip())
+            targets = []
+            for c in councils:
+                targets.append({
+                    "id": c.get("id"),
+                    "ministry": c.get("ministry"),
+                    "name": c.get("name"),
+                    "url": c.get("officialUrl")
+                })
+            return targets
+    except Exception as e:
+        print(f"[WARN] Failed to load dynamically from data.js: {e}")
+    return []
+
 def main():
+    global CRAWL_TARGETS
+    dynamic_targets = load_councils_from_data_js()
+    if dynamic_targets:
+        CRAWL_TARGETS = dynamic_targets
+        print(f"[INFO] public/data.js から {len(CRAWL_TARGETS)} 件の会議体を動的に読み込みました。")
+    else:
+        print(f"[INFO] 静的な CRAWL_TARGETS ({len(CRAWL_TARGETS)} 件) を使用します。")
+
     print("==========================================================")
     print(" 政策会議ウォッチ (PM-HUB) 2回目用情報取得Engine ")
     print("==========================================================")

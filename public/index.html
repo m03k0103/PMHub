@@ -24,9 +24,15 @@
 
   <!-- Custom Styles -->
   <link rel="stylesheet" href="styles.css" />
+  <script>
+    (function() {
+      var t = localStorage.getItem('pmhub_theme') || 'light';
+      document.documentElement.setAttribute('data-theme', t);
+    })();
+  </script>
 </head>
 
-<body data-theme="dark">
+<body>
 
   <!-- TOP HEADER -->
   <header class="app-header">
@@ -155,7 +161,7 @@
             <circle cx="12" cy="12" r="10" />
             <polyline points="12 6 12 12 16 14" />
           </svg>
-          新着順
+          会議別
         </button>
       </div>
 
@@ -214,10 +220,17 @@
             <label for="categorySelect">会議種別</label>
             <select id="categorySelect">
               <option value="ALL">すべての会議種別</option>
-              <option value="COUNCIL">審議会・諮問会議</option>
-              <option value="SUBCOMMITTEE">分科会・部会</option>
-              <option value="PANEL">検討会・有識者会議</option>
-              <option value="ROUNDTABLE">懇談会・作業部会</option>
+              <option value="LIAISON">関係閣僚会議</option>
+              <option value="COUNCIL">審議会</option>
+              <option value="ADVISORY">諮問会議</option>
+              <option value="HQ">推進本部</option>
+              <option value="COMMITTEE">委員会</option>
+              <option value="SUBCOMMITTEE">分科会</option>
+              <option value="SECTION">部会</option>
+              <option value="PANEL">有識者会議</option>
+              <option value="STUDY">検討会</option>
+              <option value="ROUNDTABLE">懇談会</option>
+              <option value="WORKING_GROUP">作業部会</option>
             </select>
           </div>
 
@@ -252,6 +265,17 @@
               <option value="OLDEST">開催/更新日 (古い順)</option>
               <option value="DOCS_DESC">資料点数 (多い順)</option>
             </select>
+          </div>
+
+          <!-- Watchlist Filter Button -->
+          <div class="filter-group filter-actions">
+            <button class="btn-secondary btn-watchlist-filter" id="watchlistFilterBtn" type="button" title="ウォッチ登録した会議体のみに絞り込み">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+              </svg>
+              <span>ウォッチ対象のみ</span>
+              <span class="watchlist-badge-count" id="watchlistFilterBadge">0</span>
+            </button>
           </div>
 
           <!-- Reset Filter Button -->

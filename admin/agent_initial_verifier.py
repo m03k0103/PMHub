@@ -1098,6 +1098,7 @@ const mockElem = () => ({{
     style: {{}}
 }});
 const document = {{
+    documentElement: mockElem(),
     body: mockElem(),
     addEventListener: (evt, cb) => {{ if (evt === 'DOMContentLoaded') cb(); }},
     getElementById: () => mockElem(),
