@@ -4,7 +4,7 @@
     "councilName": "AI戦略会議",
     "ministry": "CAO",
     "officialUrl": "https://www8.cao.go.jp/cstp/ai/ai_senryaku/ai_senryaku.html",
-    "scrapedAt": "2026-08-02 20:45:26",
+    "scrapedAt": "2026-08-05 21:11:24",
     "ruleApplied": "rule-cao-ai-strategy-ai-v3",
     "ministryQuirk": "内閣府型: ◯kai/◯kai.html または kaisai.html の個別の回ネスト",
     "pageTitle": "ＡＩ戦略会議 - 科学技術・イノベーション - 内閣府",
@@ -158,10 +158,10 @@
       }
     ],
     "extractedDates": [
-      "令和6年4月19日",
-      "令和5年12月21日",
-      "令和5年5月11日",
+      "令和6年12月26日",
+      "令和7年2月4日",
       "令和5年11月7日",
+      "令和6年8月2日",
       "令和5年5月26日"
     ],
     "subpageMeetings": [
@@ -283,7 +283,7 @@
     "councilName": "宇宙政策委員会 宇宙安全保障部会",
     "ministry": "CAO",
     "officialUrl": "https://www8.cao.go.jp/space/comittee/anpo.html",
-    "scrapedAt": "2026-08-02 20:45:26",
+    "scrapedAt": "2026-08-05 21:11:24",
     "ruleApplied": "rule-cao-space-anpo-ai-v3",
     "ministryQuirk": "内閣府型: ◯kai/◯kai.html または kaisai.html の個別の回ネスト",
     "pageTitle": "宇宙安全保障部会 : 宇宙政策 - 内閣府",
@@ -1253,11 +1253,11 @@
       }
     ],
     "extractedDates": [
-      "令和3年4月26日",
-      "令和4年11月14日",
-      "令和7年3月14日",
-      "令和7年10月21日",
-      "令和6年11月20日"
+      "令和2年10月12日",
+      "令和4年3月14日",
+      "令和7年5月12日",
+      "令和5年5月22日",
+      "令和4年9月29日"
     ],
     "subpageMeetings": [
       {
@@ -1468,7 +1468,7 @@
     "councilName": "規制改革推進会議",
     "ministry": "CAO",
     "officialUrl": "https://www8.cao.go.jp/kisei-kaikaku/index.html",
-    "scrapedAt": "2026-08-02 20:45:26",
+    "scrapedAt": "2026-08-05 21:11:24",
     "ruleApplied": "rule-cao-kisei-kaikaku-ai-v3",
     "ministryQuirk": "内閣府型: ◯kai/◯kai.html または kaisai.html の個別の回ネスト",
     "pageTitle": "規制改革&nbsp;-&nbsp;内閣府",
@@ -1477,11 +1477,11 @@
     "totalExtractedMaterials": 0,
     "materials": [],
     "extractedDates": [
-      "令和7年5月28日",
-      "令和8年6月30日",
-      "令和7年10月16日",
+      "令和7年6月10日",
       "令和8年7月24日",
-      "令和8年7月21日"
+      "令和8年7月21日",
+      "令和7年10月16日",
+      "令和7年5月28日"
     ],
     "subpageMeetings": []
   },
@@ -1490,7 +1490,7 @@
     "councilName": "復興推進委員会",
     "ministry": "RA",
     "officialUrl": "https://www.reconstruction.go.jp/topics/cat-11/cat-47/cat-155/cat-156/000813/",
-    "scrapedAt": "2026-08-02 20:45:27",
+    "scrapedAt": "2026-08-05 21:11:25",
     "ruleApplied": "rule-ra-fukko-suishin-ai-v3",
     "ministryQuirk": "復興庁型: topics/cat-XX 分類URLおよび日付命名PDF",
     "pageTitle": "復興推進委員会 | 復興庁",
@@ -1560,11 +1560,11 @@
       }
     ],
     "extractedDates": [
-      "令和5年6月19日",
-      "令和4年6月6日",
       "令和6年3月8日",
-      "令和7年6月13日",
-      "令和6年12月23日"
+      "令和7年11月15日",
+      "令和8年7月2日",
+      "令和5年11月22日",
+      "令和5年3月3日"
     ],
     "subpageMeetings": [
       {
@@ -1641,8 +1641,8 @@
           }
         ],
         "extractedDates": [
-          "令和5年6月19日",
-          "令和4年6月6日"
+          "令和6年3月8日",
+          "令和7年11月15日"
         ]
       },
       {
@@ -1680,13 +1680,13 @@
     "councilName": "社会保障国民会議",
     "ministry": "CAS",
     "officialUrl": "https://www.cas.go.jp/jp/seisaku/kokuminkaigi/index.html",
-    "scrapedAt": "2026-08-02 20:45:27",
+    "scrapedAt": "2026-08-05 21:11:25",
     "ruleApplied": "rule-cas-kokumin-kaigi-ai-v3",
     "ministryQuirk": "内閣官房型: daiXX/gijisidai.html 形式の2段階ネスト構造",
     "pageTitle": "社会保障国民会議｜内閣官房",
-    "pastYearCount": 29,
+    "pastYearCount": 30,
     "hasTopPageDates": true,
-    "totalExtractedMaterials": 28,
+    "totalExtractedMaterials": 34,
     "materials": [
       {
         "name": "中間とりまとめ（社会保障国民会議（令和8年7月29日））（PDF／403KB）",
@@ -1697,6 +1697,24 @@
       {
         "name": "「給付付き税額控除」のイメージ（中間とりまとめ）（PDF／915KB）",
         "url": "https://www.cas.go.jp/jp/seisaku/kokuminkaigi/contents/20260729-4/02_siryou2.pdf",
+        "type": "PDF",
+        "isPrivate": false
+      },
+      {
+        "name": "「給付付き税額控除」の制度導入の基本方針（令和８年８月５日閣議決定）（PDF／788KB）",
+        "url": "https://www.cas.go.jp/jp/seisaku/kokuminkaigi/contents/20260805/01_siryou1.pdf",
+        "type": "PDF",
+        "isPrivate": false
+      },
+      {
+        "name": "参考資料１（PDF／954KB）",
+        "url": "https://www.cas.go.jp/jp/seisaku/kokuminkaigi/contents/20260805/02_siryou2.pdf",
+        "type": "PDF",
+        "isPrivate": false
+      },
+      {
+        "name": "参考資料２（PDF／696KB）",
+        "url": "https://www.cas.go.jp/jp/seisaku/kokuminkaigi/contents/20260805/03_siryou3.pdf",
         "type": "PDF",
         "isPrivate": false
       },
@@ -1815,6 +1833,24 @@
         "isPrivate": false
       },
       {
+        "name": "議事要旨（PDF／296KB）",
+        "url": "https://www.cas.go.jp/jp/seisaku/kokuminkaigi/contents/20260716/minutes.pdf",
+        "type": "PDF",
+        "isPrivate": false
+      },
+      {
+        "name": "議事要旨（PDF／320KB）",
+        "url": "https://www.cas.go.jp/jp/seisaku/kokuminkaigi/contents/20260722/minutes.pdf",
+        "type": "PDF",
+        "isPrivate": false
+      },
+      {
+        "name": "議事要旨（PDF／272KB）",
+        "url": "https://www.cas.go.jp/jp/seisaku/kokuminkaigi/contents/20260727/minutes.pdf",
+        "type": "PDF",
+        "isPrivate": false
+      },
+      {
         "name": "議事要旨（PDF／404KB）",
         "url": "https://www.cas.go.jp/jp/seisaku/kokuminkaigi/contents/20260324/minutes.pdf",
         "type": "PDF",
@@ -1858,11 +1894,11 @@
       }
     ],
     "extractedDates": [
-      "令和8年4月9日",
-      "令和8年4月15日",
       "令和8年4月24日",
-      "令和8年3月24日",
-      "令和8年5月20日"
+      "令和8年7月16日",
+      "令和8年4月21日",
+      "令和8年6月3日",
+      "令和8年4月28日"
     ],
     "subpageMeetings": []
   },
@@ -1871,7 +1907,7 @@
     "councilName": "人工知能戦略本部",
     "ministry": "CAO",
     "officialUrl": "https://www8.cao.go.jp/cstp/ai/ai_hq/kaisai.html",
-    "scrapedAt": "2026-08-02 20:45:27",
+    "scrapedAt": "2026-08-05 21:11:25",
     "ruleApplied": "rule-cao-ai-hq-ai-v3",
     "ministryQuirk": "内閣府型: ◯kai/◯kai.html または kaisai.html の個別の回ネスト",
     "pageTitle": "人工知能戦略本部　開催状況 - 科学技術・イノベーション - 内閣府",
@@ -1989,8 +2025,8 @@
       }
     ],
     "extractedDates": [
-      "令和8年6月19日",
       "令和7年9月12日",
+      "令和8年6月19日",
       "令和7年12月19日",
       "令和8年7月10日",
       "令和7年11月21日"
@@ -2139,7 +2175,7 @@
     "councilName": "デジタル社会推進会議幹事会",
     "ministry": "DIGITAL",
     "officialUrl": "https://www.digital.go.jp/councils/social-promotion-executive",
-    "scrapedAt": "2026-08-02 20:45:28",
+    "scrapedAt": "2026-08-05 21:11:27",
     "ruleApplied": "rule-digital-suishin-ai-v3",
     "ministryQuirk": "デジタル庁型: リソース絶対パス/ルート相対パス混在型HTML5構造",
     "pageTitle": "デジタル社会推進会議幹事会｜デジタル庁",
@@ -2362,8 +2398,8 @@
         "extractedMaterialsCount": 0,
         "materials": [],
         "extractedDates": [
-          "令和3年9月1日",
-          "令和4年7月29日"
+          "令和4年6月7日",
+          "2026年4月27日"
         ]
       },
       {
@@ -2556,8 +2592,8 @@
           }
         ],
         "extractedDates": [
-          "令和3年9月1日",
-          "2024年5月31日"
+          "令和3年6月18日",
+          "令和3年9月6日"
         ]
       }
     ]
@@ -2567,7 +2603,7 @@
     "councilName": "こども政策推進会議",
     "ministry": "CFA",
     "officialUrl": "https://www.cfa.go.jp/councils/suishinkaigi",
-    "scrapedAt": "2026-08-02 20:45:28",
+    "scrapedAt": "2026-08-05 21:11:28",
     "ruleApplied": "rule-cfa-kodomo-suishin-ai-v3",
     "ministryQuirk": "こども家庭庁型: /councils/会議名/UUIDハッシュ個別の回URL構造",
     "pageTitle": "こども政策推進会議｜こども家庭庁",
@@ -2775,11 +2811,11 @@
       }
     ],
     "extractedDates": [
+      "令和7年6月6日",
       "令和5年12月22日",
-      "令和8年6月9日",
       "令和6年5月31日",
       "令和6年9月9日",
-      "令和7年6月6日"
+      "令和8年6月9日"
     ],
     "subpageMeetings": [
       {
@@ -2795,8 +2831,8 @@
           }
         ],
         "extractedDates": [
-          "令和5年12月22日",
-          "令和8年6月9日"
+          "令和7年6月6日",
+          "令和5年12月22日"
         ]
       },
       {
@@ -2975,7 +3011,7 @@
         ],
         "extractedDates": [
           "令和5年12月22日",
-          "令和6年5月16日"
+          "令和6年5月31日"
         ]
       },
       {
@@ -3049,7 +3085,7 @@
     "councilName": "こども家庭審議会",
     "ministry": "CFA",
     "officialUrl": "https://www.cfa.go.jp/councils/shingikai",
-    "scrapedAt": "2026-08-02 20:45:29",
+    "scrapedAt": "2026-08-05 21:11:32",
     "ruleApplied": "rule-cfa-kodomo-shingikai-ai-v3",
     "ministryQuirk": "こども家庭庁型: /councils/会議名/UUIDハッシュ個別の回URL構造",
     "pageTitle": "こども家庭審議会｜こども家庭庁",
@@ -3449,11 +3485,11 @@
       }
     ],
     "extractedDates": [
-      "令和5年11月22日",
       "令和5年9月25日",
-      "令和5年4月21日",
+      "令和7年4月25日",
+      "令和7年1月23日",
       "令和8年1月22日",
-      "令和7年4月25日"
+      "令和5年11月22日"
     ],
     "subpageMeetings": [
       {
@@ -3577,8 +3613,8 @@
           }
         ],
         "extractedDates": [
-          "令和5年11月22日",
-          "令和5年9月25日"
+          "令和5年9月25日",
+          "令和7年4月25日"
         ]
       },
       {
@@ -3916,7 +3952,7 @@
     "councilName": "復興推進委員会",
     "ministry": "RA",
     "officialUrl": "https://www.reconstruction.go.jp/topics/cat-11/cat-47/cat-155/cat-156/000813/",
-    "scrapedAt": "2026-08-02 20:45:29",
+    "scrapedAt": "2026-08-05 21:11:33",
     "ruleApplied": "rule-ra-fukko-suishin-ai-v3",
     "ministryQuirk": "復興庁型: topics/cat-XX 分類URLおよび日付命名PDF",
     "pageTitle": "復興推進委員会 | 復興庁",
@@ -3986,11 +4022,11 @@
       }
     ],
     "extractedDates": [
-      "令和5年6月19日",
-      "令和4年6月6日",
       "令和6年3月8日",
-      "令和7年6月13日",
-      "令和6年12月23日"
+      "令和7年11月15日",
+      "令和8年7月2日",
+      "令和5年11月22日",
+      "令和5年3月3日"
     ],
     "subpageMeetings": [
       {
@@ -4067,8 +4103,8 @@
           }
         ],
         "extractedDates": [
-          "令和5年6月19日",
-          "令和4年6月6日"
+          "令和6年3月8日",
+          "令和7年11月15日"
         ]
       },
       {
@@ -4106,14 +4142,20 @@
     "councilName": "情報通信審議会 情報通信政策部会",
     "ministry": "MIC",
     "officialUrl": "https://www.soumu.go.jp/menu_kyotsuu/whatsnew/kaigi_index.html",
-    "scrapedAt": "2026-08-02 20:45:30",
+    "scrapedAt": "2026-08-05 21:11:33",
     "ruleApplied": "rule-mic-joho-tsushin-ai-v3",
     "ministryQuirk": "標準省庁型: 汎用個別回パターン",
     "pageTitle": "ȁbcꗗ",
     "pastYearCount": "-",
     "hasTopPageDates": false,
-    "totalExtractedMaterials": 8,
+    "totalExtractedMaterials": 9,
     "materials": [
+      {
+        "name": "cv|",
+        "url": "https://www.soumu.go.jp/main_content/001085349.pdf",
+        "type": "PDF",
+        "isPrivate": false
+      },
       {
         "name": "cv|",
         "url": "https://www.soumu.go.jp/main_content/001084493.pdf",
@@ -4165,6 +4207,27 @@
     ],
     "extractedDates": [],
     "subpageMeetings": [
+      {
+        "subpageUrl": "https://www.soumu.go.jp/main_sosiki/joho_tsusin/policyreports/joho_tsusin/kaisai/02kiban16_04000955.html",
+        "title": "ȁbʐMRcbʐMRc@ʐMZpȉ@dgpψi68jJÈē",
+        "extractedMaterialsCount": 0,
+        "materials": [],
+        "extractedDates": []
+      },
+      {
+        "subpageUrl": "https://www.soumu.go.jp/main_sosiki/joho_tsusin/policyreports/denpa_kanri/kaisai/02kiban01_04000327.html",
+        "title": "ȁbdgėRcbdgėRci1159jc",
+        "extractedMaterialsCount": 1,
+        "materials": [
+          {
+            "name": "cv|",
+            "url": "https://www.soumu.go.jp/main_content/001085349.pdf",
+            "type": "PDF",
+            "isPrivate": false
+          }
+        ],
+        "extractedDates": []
+      },
       {
         "subpageUrl": "https://www.soumu.go.jp/main_sosiki/kenkyu/miraishakaiomisueta/05_kaisai.html",
         "title": "ȁb ЉlƃfW^̊֌W݂̍Ɋւ錤b ЉlƃfW^̊֌W݂̍Ɋւ錤i5jJÈē",
@@ -4243,20 +4306,6 @@
           }
         ],
         "extractedDates": []
-      },
-      {
-        "subpageUrl": "https://www.soumu.go.jp/main_sosiki/joho_tsusin/policyreports/joho_tsusin/kaisai/02kiban16_04000954.html",
-        "title": "ȁbʐMRcbʐMRc@ʐMZpȉ@dgpψ@CISPR@DƔǁi10jJÈē",
-        "extractedMaterialsCount": 0,
-        "materials": [],
-        "extractedDates": []
-      },
-      {
-        "subpageUrl": "https://www.soumu.go.jp/main_sosiki/joho_tsusin/policyreports/joho_tsusin/kaisai/02kiban16_04000953.html",
-        "title": "ȁbʐMRcbʐMRc@ʐMZpȉ@dgpψ@CISPR@AƔǁi26jJÈē",
-        "extractedMaterialsCount": 0,
-        "materials": [],
-        "extractedDates": []
       }
     ]
   },
@@ -4265,7 +4314,7 @@
     "councilName": "法制審議会",
     "ministry": "MOJ",
     "officialUrl": "https://www.moj.go.jp/shingi1/shingikai_soukai.html",
-    "scrapedAt": "2026-08-02 20:45:30",
+    "scrapedAt": "2026-08-05 21:11:33",
     "ruleApplied": "rule-moj-hosei-shingi-ai-v3",
     "ministryQuirk": "標準省庁型: 汎用個別回パターン",
     "pageTitle": "法務省：法制審議会 - 総会",
@@ -4281,11 +4330,11 @@
       }
     ],
     "extractedDates": [
-      "令和3年5月20日",
-      "令和2年10月29日",
-      "令和7年9月18日",
-      "令和4年1月17日",
-      "令和3年9月16日"
+      "令和4年2月14日",
+      "令和2年2月21日",
+      "令和8年6月15日",
+      "令和4年9月12日",
+      "令和8年2月12日"
     ],
     "subpageMeetings": []
   },
@@ -4294,7 +4343,7 @@
     "councilName": "財政制度等審議会 財政制度分科会",
     "ministry": "MOF",
     "officialUrl": "https://www.mof.go.jp/about_mof/councils/fiscal_system_council/index.html",
-    "scrapedAt": "2026-08-02 20:45:30",
+    "scrapedAt": "2026-08-05 21:11:33",
     "ruleApplied": "rule-mof-zaisei-seido-ai-v3",
     "ministryQuirk": "標準省庁型: 汎用個別回パターン",
     "pageTitle": "財政制度等審議会 : 財務省",
@@ -4310,7 +4359,7 @@
     "councilName": "中央教育審議会 初等中等教育分科会",
     "ministry": "MEXT",
     "officialUrl": "https://www.mext.go.jp/b_menu/shingi/chukyo/chukyo0/index.htm",
-    "scrapedAt": "2026-08-02 20:45:31",
+    "scrapedAt": "2026-08-05 21:11:34",
     "ruleApplied": "rule-mext-chuo-kyoiku-ai-v3",
     "ministryQuirk": "標準省庁型: 汎用個別回パターン",
     "pageTitle": "中央教育審議会：文部科学省",
@@ -4319,10 +4368,10 @@
     "totalExtractedMaterials": 0,
     "materials": [],
     "extractedDates": [
-      "令和7年3月17日",
-      "令和7年11月13日",
+      "令和7年10月24日",
+      "令和8年7月16日",
       "令和8年6月11日",
-      "令和6年12月25日",
+      "令和7年11月13日",
       "令和8年2月5日"
     ],
     "subpageMeetings": [
@@ -4342,8 +4391,8 @@
         "extractedMaterialsCount": 0,
         "materials": [],
         "extractedDates": [
-          "令和7年3月17日",
-          "令和7年3月10日"
+          "令和7年3月10日",
+          "令和7年3月17日"
         ]
       },
       {
@@ -4372,8 +4421,8 @@
         "extractedMaterialsCount": 0,
         "materials": [],
         "extractedDates": [
-          "令和6年8月21日",
-          "令和6年8月27日"
+          "令和6年8月27日",
+          "令和6年8月21日"
         ]
       }
     ]
@@ -4383,7 +4432,7 @@
     "councilName": "社会保障審議会 医療保険部会",
     "ministry": "MHLW",
     "officialUrl": "https://www.mhlw.go.jp/stf/shingi/index.html",
-    "scrapedAt": "2026-08-02 20:45:31",
+    "scrapedAt": "2026-08-05 21:11:35",
     "ruleApplied": "rule-mhlw-shakai-hosho-ai-v3",
     "ministryQuirk": "標準省庁型: 汎用個別回パターン",
     "pageTitle": "審議会・研究会等 ｜厚生労働省",
@@ -4392,8 +4441,8 @@
     "totalExtractedMaterials": 0,
     "materials": [],
     "extractedDates": [
-      "令和6年6月17日",
-      "令和6年6月10日"
+      "令和6年6月10日",
+      "令和6年6月17日"
     ],
     "subpageMeetings": []
   },
@@ -4402,7 +4451,7 @@
     "councilName": "食料・農業・農村政策審議会",
     "ministry": "MAFF",
     "officialUrl": "https://www.maff.go.jp/j/council/seisaku/",
-    "scrapedAt": "2026-08-02 20:45:32",
+    "scrapedAt": "2026-08-05 21:11:36",
     "ruleApplied": "rule-maff-shokuryo-nogyo-ai-v3",
     "ministryQuirk": "標準省庁型: 汎用個別回パターン",
     "pageTitle": "食料・農業・農村政策審議会：農林水産省",
@@ -4784,11 +4833,11 @@
       }
     ],
     "extractedDates": [
-      "令和6年7月9日",
-      "令和4年7月1日",
+      "令和6年8月29日",
+      "令和4年9月29日",
       "令和5年5月26日",
-      "令和5年7月6日",
-      "令和7年10月27日"
+      "令和3年7月16日",
+      "令和7年3月27日"
     ],
     "subpageMeetings": [
       {
@@ -4840,7 +4889,7 @@
     "councilName": "産業構造審議会 新産業構造部会",
     "ministry": "METI",
     "officialUrl": "https://www.meti.go.jp/shingikai/sankoshin/index.html",
-    "scrapedAt": "2026-08-02 20:45:32",
+    "scrapedAt": "2026-08-05 21:11:36",
     "ruleApplied": "rule-meti-sangyo-kozo-ai-v3",
     "ministryQuirk": "標準省庁型: 汎用個別回パターン",
     "pageTitle": "産業構造審議会 （METI/経済産業省）",
@@ -4858,7 +4907,7 @@
     "councilName": "社会資本整備審議会",
     "ministry": "MLIT",
     "officialUrl": "https://www.mlit.go.jp/policy/shingikai/s201_shakai01.html",
-    "scrapedAt": "2026-08-02 20:45:32",
+    "scrapedAt": "2026-08-05 21:11:36",
     "ruleApplied": "rule-mlit-shakai-sihon-soukai-ai-v3",
     "ministryQuirk": "標準省庁型: 汎用個別回パターン",
     "pageTitle": "社会資本整備審議会：社会資本整備審議会 - 国土交通省",
@@ -4895,7 +4944,7 @@
     "councilName": "社会資本整備審議会環境部会・交通政策審議会環境部会 エネルギー・経済安全保障小委員会",
     "ministry": "MLIT",
     "officialUrl": "https://www.mlit.go.jp/policy/shingikai/s404_anzenhosho.html",
-    "scrapedAt": "2026-08-02 20:45:33",
+    "scrapedAt": "2026-08-05 21:11:37",
     "ruleApplied": "rule-mlit-energy-anzenhosho-wg-ai-v3",
     "ministryQuirk": "標準省庁型: 汎用個別回パターン",
     "pageTitle": "審議会・委員会等：エネルギー・経済安全保障小委員会 - 国土交通省",
@@ -4904,9 +4953,9 @@
     "totalExtractedMaterials": 0,
     "materials": [],
     "extractedDates": [
-      "2026年7月17日",
+      "2026年7月27日",
       "2026年7月29日",
-      "2026年7月27日"
+      "2026年7月17日"
     ],
     "subpageMeetings": [
       {
@@ -4930,7 +4979,7 @@
     "councilName": "社会資本整備審議会・交通政策審議会技術分科会技術部会 インフラマネジメント戦略小委員会",
     "ministry": "MLIT",
     "officialUrl": "https://www.mlit.go.jp/policy/shingikai/s204_management02.html",
-    "scrapedAt": "2026-08-02 20:45:33",
+    "scrapedAt": "2026-08-05 21:11:37",
     "ruleApplied": "rule-mlit-infra-management-wg-ai-v3",
     "ministryQuirk": "標準省庁型: 汎用個別回パターン",
     "pageTitle": "審議会・委員会等：社会資本整備審議会・交通政策審議会技術分科会技術部会インフラマネジメント戦略小委員会 - 国土交通省",
@@ -4960,8 +5009,8 @@
     "extractedDates": [
       "2026年2月26日",
       "2026年1月30日",
-      "2026年7月28日",
-      "2026年4月16日"
+      "2026年4月16日",
+      "2026年7月28日"
     ],
     "subpageMeetings": []
   },
@@ -4970,7 +5019,7 @@
     "councilName": "中央環境審議会 地球環境部会",
     "ministry": "MOE",
     "officialUrl": "https://www.env.go.jp/council/06earth/yoshi06.html",
-    "scrapedAt": "2026-08-02 20:45:33",
+    "scrapedAt": "2026-08-05 21:11:37",
     "ruleApplied": "rule-moe-chuo-kankyo-ai-v3",
     "ministryQuirk": "標準省庁型: 汎用個別回パターン",
     "pageTitle": "地球環境部会 | 環境省",
@@ -4979,11 +5028,11 @@
     "totalExtractedMaterials": 0,
     "materials": [],
     "extractedDates": [
-      "令和6年2月14日",
-      "令和5年1月26日",
-      "令和4年6月28日",
       "令和7年12月15日",
-      "令和4年1月26日"
+      "令和5年1月26日",
+      "令和3年9月30日",
+      "令和6年2月14日",
+      "令和4年6月28日"
     ],
     "subpageMeetings": []
   },
@@ -4992,7 +5041,7 @@
     "councilName": "防衛調達審議会",
     "ministry": "MOD",
     "officialUrl": "https://www.mod.go.jp/j/policy/agenda/meeting/cho-shin/index.html",
-    "scrapedAt": "2026-08-02 20:45:33",
+    "scrapedAt": "2026-08-05 21:11:37",
     "ruleApplied": "rule-mod-cho-shin-ai-v3",
     "ministryQuirk": "標準省庁型: 汎用個別回パターン",
     "pageTitle": "防衛省・自衛隊：防衛調達審議会",
@@ -5486,7 +5535,7 @@
     "councilName": "防衛力の抜本的強化に関する有識者会議",
     "ministry": "MOD",
     "officialUrl": "https://www.mod.go.jp/j/policy/agenda/meeting/drastic-reinforcement/index.html",
-    "scrapedAt": "2026-08-02 20:45:33",
+    "scrapedAt": "2026-08-05 21:11:37",
     "ruleApplied": "rule-mod-drastic-reinforcement-ai-v3",
     "ministryQuirk": "標準省庁型: 汎用個別回パターン",
     "pageTitle": "防衛省・自衛隊：防衛力の抜本的強化に関する有識者会議",
@@ -5724,11 +5773,11 @@
       }
     ],
     "extractedDates": [
-      "2026年5月14日",
-      "令和7年9月19日",
-      "令和7年4月1日",
-      "令和4年12月16日",
-      "令和6年10月18日"
+      "令和7年7月1日",
+      "令和8年4月1日",
+      "令和6年8月2日",
+      "令和6年8月30日",
+      "2026年5月14日"
     ],
     "subpageMeetings": []
   },
@@ -5737,7 +5786,7 @@
     "councilName": "防衛産業ワーキンググループ",
     "ministry": "MOD",
     "officialUrl": "https://www.mod.go.jp/j/policy/agenda/meeting/defense_industry_wg/index.html",
-    "scrapedAt": "2026-08-02 20:45:33",
+    "scrapedAt": "2026-08-05 21:11:37",
     "ruleApplied": "rule-mod-defense-industry-wg-ai-v3",
     "ministryQuirk": "標準省庁型: 汎用個別回パターン",
     "pageTitle": "防衛省・自衛隊：防衛産業ワーキンググループ",
@@ -5802,9 +5851,9 @@
     ],
     "extractedDates": [
       "令和8年2月20日",
-      "令和8年4月16日",
       "令和8年5月20日",
-      "2026年5月20日"
+      "2026年5月20日",
+      "令和8年4月16日"
     ],
     "subpageMeetings": []
   },
@@ -5813,7 +5862,7 @@
     "councilName": "警察庁政策評価研究会",
     "ministry": "NPA",
     "officialUrl": "https://www.npa.go.jp/policies/council/index.html",
-    "scrapedAt": "2026-08-02 20:45:33",
+    "scrapedAt": "2026-08-05 21:11:37",
     "ruleApplied": "rule-npa-seisaku-hyoka-kenkyukai-ai-v3",
     "ministryQuirk": "標準省庁型: 汎用個別回パターン",
     "pageTitle": "警察庁審議会等台帳　報告書等・議事要旨｜警察庁Webサイト",
@@ -5829,7 +5878,7 @@
     "councilName": "金融審議会",
     "ministry": "FSA",
     "officialUrl": "https://www.fsa.go.jp/singi/singi_kinyu/base_gijiroku.html",
-    "scrapedAt": "2026-08-02 20:45:34",
+    "scrapedAt": "2026-08-05 21:11:38",
     "ruleApplied": "rule-fsa-kinyu-shingi-ai-v3",
     "ministryQuirk": "標準省庁型: 汎用個別回パターン",
     "pageTitle": "議事録・資料等 ： 金融庁",
@@ -5917,11 +5966,11 @@
       }
     ],
     "extractedDates": [
-      "令和3年2月8日",
+      "令和7年2月19日",
+      "令和6年8月26日",
+      "令和4年1月31日",
       "令和3年11月22日",
-      "令和7年6月25日",
-      "令和5年3月2日",
-      "令和3年9月13日"
+      "令和2年2月17日"
     ],
     "subpageMeetings": [
       {
@@ -6053,20 +6102,20 @@
     "councilName": "消費者委員会 生成AI・消費者問題作業部会",
     "ministry": "CAA",
     "officialUrl": "https://www.caa.go.jp",
-    "scrapedAt": "2026-08-02 20:45:34",
+    "scrapedAt": "2026-08-05 21:11:38",
     "ruleApplied": "rule-caa-shohisha-seisaku-ai-v3",
     "ministryQuirk": "標準省庁型: 汎用個別回パターン",
     "pageTitle": "消費者庁ウェブサイト",
-    "pastYearCount": 9,
+    "pastYearCount": 7,
     "hasTopPageDates": true,
     "totalExtractedMaterials": 0,
     "materials": [],
     "extractedDates": [
-      "2026年07月30日",
-      "令和8年6月30日",
-      "2026年7月24日",
+      "2026年08月04日",
       "2026年07月31日",
-      "2026年6月25日"
+      "2026年8月4日",
+      "2025年1月16日",
+      "2026年7月24日"
     ],
     "subpageMeetings": []
   },
@@ -6075,7 +6124,7 @@
     "councilName": "生成AIと個人情報保護に関する専門委員会",
     "ministry": "PPC",
     "officialUrl": "https://www.ppc.go.jp/aboutus/",
-    "scrapedAt": "2026-08-02 20:45:35",
+    "scrapedAt": "2026-08-05 21:11:40",
     "ruleApplied": "rule-ppc-ai-privacy-ai-v3",
     "ministryQuirk": "標準省庁型: 汎用個別回パターン",
     "pageTitle": "委員会について ｜個人情報保護委員会",
@@ -6158,8 +6207,8 @@
           }
         ],
         "extractedDates": [
-          "令和8年4月7日",
-          "令和8年7月17日"
+          "令和8年7月31日",
+          "令和8年4月7日"
         ]
       },
       {
@@ -6202,8 +6251,8 @@
           }
         ],
         "extractedDates": [
-          "令和8年4月7日",
-          "令和8年7月17日"
+          "令和8年7月31日",
+          "令和8年4月7日"
         ]
       }
     ]
@@ -6213,29 +6262,40 @@
     "councilName": "原子力規制委員会",
     "ministry": "NRA",
     "officialUrl": "https://www.nra.go.jp/index.html",
-    "scrapedAt": "2026-08-02 20:45:35",
+    "scrapedAt": "2026-08-05 21:11:41",
     "ruleApplied": "rule-nra-teireikai-ai-v3",
     "ministryQuirk": "標準省庁型: 汎用個別回パターン",
     "pageTitle": "原子力規制委員会トップページ",
-    "pastYearCount": 5,
+    "pastYearCount": 7,
     "hasTopPageDates": true,
     "totalExtractedMaterials": 0,
     "materials": [],
     "extractedDates": [
+      "2026年08月19日",
       "令和8年6月19日",
-      "2026年7月31日",
-      "2026年03月11日",
-      "2026年7月29日",
-      "令和8年3月11日"
+      "2026年7月30日",
+      "2026年8月4日",
+      "2026年03月11日"
     ],
-    "subpageMeetings": []
+    "subpageMeetings": [
+      {
+        "subpageUrl": "https://www.nra.go.jp/procedure/shinkoku/tyousa_kaisai.html",
+        "title": "第80回原子力施設安全情報申告調査委員会開催結果の公表｜原子力規制委員会",
+        "extractedMaterialsCount": 0,
+        "materials": [],
+        "extractedDates": [
+          "令和8年7月31日",
+          "令和8年6月16日"
+        ]
+      }
+    ]
   },
   {
     "councilId": "cas-zensedai-hosyo",
     "councilName": "全世代型社会保障構築会議",
     "ministry": "CAS",
     "officialUrl": "https://www.cas.go.jp/jp/seisaku/zensedai_hosyo/index.html",
-    "scrapedAt": "2026-08-02 20:45:36",
+    "scrapedAt": "2026-08-05 21:11:42",
     "ruleApplied": "rule-cas-zensedai-hosyo-ai-v3",
     "ministryQuirk": "内閣官房型: daiXX/gijisidai.html 形式の2段階ネスト構造",
     "pageTitle": "全世代型社会保障構築会議｜内閣官房ホームページ",
@@ -6539,11 +6599,11 @@
       }
     ],
     "extractedDates": [
-      "令和5年12月22日",
+      "令和5年12月11日",
       "令和6年11月15日",
-      "令和4年12月14日",
-      "令和4年12月16日",
-      "令和5年10月31日"
+      "令和5年12月22日",
+      "令和5年10月31日",
+      "令和5年11月30日"
     ],
     "subpageMeetings": [
       {
@@ -6738,13 +6798,13 @@
     "councilName": "社会保障国民会議",
     "ministry": "CAS",
     "officialUrl": "https://www.cas.go.jp/jp/seisaku/kokuminkaigi/index.html",
-    "scrapedAt": "2026-08-02 20:45:37",
+    "scrapedAt": "2026-08-05 21:11:42",
     "ruleApplied": "rule-cas-kokumin-kaigi-ai-v3",
     "ministryQuirk": "内閣官房型: daiXX/gijisidai.html 形式の2段階ネスト構造",
     "pageTitle": "社会保障国民会議｜内閣官房",
-    "pastYearCount": 29,
+    "pastYearCount": 30,
     "hasTopPageDates": true,
-    "totalExtractedMaterials": 28,
+    "totalExtractedMaterials": 34,
     "materials": [
       {
         "name": "中間とりまとめ（社会保障国民会議（令和8年7月29日））（PDF／403KB）",
@@ -6755,6 +6815,24 @@
       {
         "name": "「給付付き税額控除」のイメージ（中間とりまとめ）（PDF／915KB）",
         "url": "https://www.cas.go.jp/jp/seisaku/kokuminkaigi/contents/20260729-4/02_siryou2.pdf",
+        "type": "PDF",
+        "isPrivate": false
+      },
+      {
+        "name": "「給付付き税額控除」の制度導入の基本方針（令和８年８月５日閣議決定）（PDF／788KB）",
+        "url": "https://www.cas.go.jp/jp/seisaku/kokuminkaigi/contents/20260805/01_siryou1.pdf",
+        "type": "PDF",
+        "isPrivate": false
+      },
+      {
+        "name": "参考資料１（PDF／954KB）",
+        "url": "https://www.cas.go.jp/jp/seisaku/kokuminkaigi/contents/20260805/02_siryou2.pdf",
+        "type": "PDF",
+        "isPrivate": false
+      },
+      {
+        "name": "参考資料２（PDF／696KB）",
+        "url": "https://www.cas.go.jp/jp/seisaku/kokuminkaigi/contents/20260805/03_siryou3.pdf",
         "type": "PDF",
         "isPrivate": false
       },
@@ -6873,6 +6951,24 @@
         "isPrivate": false
       },
       {
+        "name": "議事要旨（PDF／296KB）",
+        "url": "https://www.cas.go.jp/jp/seisaku/kokuminkaigi/contents/20260716/minutes.pdf",
+        "type": "PDF",
+        "isPrivate": false
+      },
+      {
+        "name": "議事要旨（PDF／320KB）",
+        "url": "https://www.cas.go.jp/jp/seisaku/kokuminkaigi/contents/20260722/minutes.pdf",
+        "type": "PDF",
+        "isPrivate": false
+      },
+      {
+        "name": "議事要旨（PDF／272KB）",
+        "url": "https://www.cas.go.jp/jp/seisaku/kokuminkaigi/contents/20260727/minutes.pdf",
+        "type": "PDF",
+        "isPrivate": false
+      },
+      {
         "name": "議事要旨（PDF／404KB）",
         "url": "https://www.cas.go.jp/jp/seisaku/kokuminkaigi/contents/20260324/minutes.pdf",
         "type": "PDF",
@@ -6916,11 +7012,11 @@
       }
     ],
     "extractedDates": [
-      "令和8年4月9日",
-      "令和8年4月15日",
       "令和8年4月24日",
-      "令和8年3月24日",
-      "令和8年5月20日"
+      "令和8年7月16日",
+      "令和8年4月21日",
+      "令和8年6月3日",
+      "令和8年4月28日"
     ],
     "subpageMeetings": []
   },
@@ -6929,7 +7025,7 @@
     "councilName": "人工知能戦略本部",
     "ministry": "CAO",
     "officialUrl": "https://www8.cao.go.jp/cstp/ai/ai_hq/kaisai.html",
-    "scrapedAt": "2026-08-02 20:45:37",
+    "scrapedAt": "2026-08-05 21:11:42",
     "ruleApplied": "rule-cao-ai-hq-ai-v3",
     "ministryQuirk": "内閣府型: ◯kai/◯kai.html または kaisai.html の個別の回ネスト",
     "pageTitle": "人工知能戦略本部　開催状況 - 科学技術・イノベーション - 内閣府",
@@ -7047,8 +7143,8 @@
       }
     ],
     "extractedDates": [
-      "令和8年6月19日",
       "令和7年9月12日",
+      "令和8年6月19日",
       "令和7年12月19日",
       "令和8年7月10日",
       "令和7年11月21日"
@@ -7197,7 +7293,7 @@
     "councilName": "中東情勢に関する関係閣僚会議",
     "ministry": "CAS",
     "officialUrl": "https://www.cas.go.jp/jp/seisaku/chyutoujyousei/index.html",
-    "scrapedAt": "2026-08-02 20:45:38",
+    "scrapedAt": "2026-08-05 21:11:43",
     "ruleApplied": "rule-cas-chutou-jyousei-ai-v3",
     "ministryQuirk": "内閣官房型: daiXX/gijisidai.html 形式の2段階ネスト構造",
     "pageTitle": "中東情勢に関する対応｜内閣官房ホームページ",
@@ -7603,11 +7699,11 @@
       }
     ],
     "extractedDates": [
-      "令和8年6月2日",
-      "令和8年4月16日",
-      "令和8年4月9日",
       "令和8年4月24日",
-      "令和8年6月11日"
+      "令和8年4月30日",
+      "令和8年6月11日",
+      "令和8年4月9日",
+      "令和8年7月24日"
     ],
     "subpageMeetings": [
       {
@@ -7983,7 +8079,7 @@
     "councilName": "アイヌ政策推進本部",
     "ministry": "CAS",
     "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/ainusuishin/index.html",
-    "scrapedAt": "2026-08-02 20:45:40",
+    "scrapedAt": "2026-08-05 21:11:44",
     "ruleApplied": "rule-cas-ainusuishin-1-ai-v3",
     "ministryQuirk": "内閣官房型: daiXX/gijisidai.html 形式の2段階ネスト構造",
     "pageTitle": "アイヌ政策推進会議",
@@ -8521,11 +8617,11 @@
       }
     ],
     "extractedDates": [
-      "令和2年4月7日",
+      "令和7年12月13日",
+      "令和7年2月28日",
       "令和5年7月7日",
-      "令和4年10月12日",
-      "令和4年11月1日",
-      "令和2年4月29日"
+      "令和4年7月13日",
+      "令和2年2月17日"
     ],
     "subpageMeetings": [
       {
@@ -8679,7 +8775,7 @@
     "councilName": "エネルギー・食料等国民生活を支える基盤の戦略的強化に向けた関係閣僚会議",
     "ministry": "CAS",
     "officialUrl": "https://www.cas.go.jp/jp/seisaku/enerugi/index.html",
-    "scrapedAt": "2026-08-02 20:45:40",
+    "scrapedAt": "2026-08-05 21:11:45",
     "ruleApplied": "rule-cas-enerugi-2-ai-v3",
     "ministryQuirk": "内閣官房型: daiXX/gijisidai.html 形式の2段階ネスト構造",
     "pageTitle": "エネルギー・食料等国民生活を支える基盤の戦略的強化に向けた関係閣僚会議",
@@ -8700,7 +8796,7 @@
         "isPrivate": false
       },
       {
-        "name": "議事要旨（PDF／250KB）",
+        "name": "議事要旨（PDF／258KB）",
         "url": "https://www.cas.go.jp/jp/seisaku/enerugi/dai2/gijiyousi.pdf",
         "type": "PDF",
         "isPrivate": false
@@ -8796,6 +8892,13 @@
         "extractedDates": [
           "令和8年7月31日"
         ]
+      },
+      {
+        "subpageUrl": "https://www.cas.go.jp/jp/seisaku/enerugi/dai2/gijiyousi.pdf",
+        "title": "https://www.cas.go.jp/jp/seisaku/enerugi/dai2/gijiyousi.pdf",
+        "extractedMaterialsCount": 0,
+        "materials": [],
+        "extractedDates": []
       }
     ]
   },
@@ -8804,7 +8907,7 @@
     "councilName": "外国人の受入れ・秩序ある共生社会実現に関する関係閣僚会議幹事会",
     "ministry": "CAS",
     "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/gaikokujinzai/index.html",
-    "scrapedAt": "2026-08-02 20:45:42",
+    "scrapedAt": "2026-08-05 21:11:46",
     "ruleApplied": "rule-cas-gaikokujinzai-3-ai-v3",
     "ministryQuirk": "内閣官房型: daiXX/gijisidai.html 形式の2段階ネスト構造",
     "pageTitle": "Ol̎E鋤ЉɊւ֌Wtc",
@@ -9127,33 +9230,11 @@
     ]
   },
   {
-    "councilId": "cas-pages-4",
-    "councilName": "大雪に関する関係閣僚会議",
-    "ministry": "CAS",
-    "officialUrl": "https://www.kantei.go.jp/jp/pages/heavysnow20260121.html",
-    "scrapedAt": "2026-08-02 20:45:42",
-    "ruleApplied": "rule-cas-pages-4-ai-v3",
-    "ministryQuirk": "標準省庁型: 汎用個別回パターン",
-    "pageTitle": "令和８年１月２１日からの大雪について | 首相官邸ホームページ",
-    "pastYearCount": 12,
-    "hasTopPageDates": true,
-    "totalExtractedMaterials": 0,
-    "materials": [],
-    "extractedDates": [
-      "令和8年1月29日",
-      "令和8年1月22日",
-      "令和8年1月20日",
-      "令和8年2月2日",
-      "令和8年1月19日"
-    ],
-    "subpageMeetings": []
-  },
-  {
     "councilId": "cas-ebola_hemorrhagic_fever_kankeishoutyou-5",
     "councilName": "エボラ出血熱に関する関係省庁対策会議",
     "ministry": "CAS",
     "officialUrl": "https://www.cas.go.jp/jp/seisaku/ebola_hemorrhagic_fever_kankeishoutyou/index.html",
-    "scrapedAt": "2026-08-02 20:45:43",
+    "scrapedAt": "2026-08-05 21:11:47",
     "ruleApplied": "rule-cas-ebola_hemorrhagic_fever_kankeishoutyou-5-ai-v3",
     "ministryQuirk": "内閣官房型: daiXX/gijisidai.html 形式の2段階ネスト構造",
     "pageTitle": "エボラ出血熱に関する関係省庁対策会議｜内閣官房ホームページ",
@@ -9218,7 +9299,7 @@
     "councilName": "柏崎刈羽原子力発電所の運営に関する監視強化チーム",
     "ministry": "CAS",
     "officialUrl": "https://www.cas.go.jp/jp/seisaku/kanshikyoka/index.html",
-    "scrapedAt": "2026-08-02 20:45:43",
+    "scrapedAt": "2026-08-05 21:11:48",
     "ruleApplied": "rule-cas-kanshikyoka-6-ai-v3",
     "ministryQuirk": "内閣官房型: daiXX/gijisidai.html 形式の2段階ネスト構造",
     "pageTitle": "柏崎刈羽原子力発電所の運営に関する監視強化チーム｜内閣官房ホームページ",
@@ -9279,7 +9360,7 @@
     "councilName": "海上保安能力強化に関する関係閣僚会議",
     "ministry": "CAS",
     "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/kaihotaisei/",
-    "scrapedAt": "2026-08-02 20:45:45",
+    "scrapedAt": "2026-08-05 21:11:49",
     "ruleApplied": "rule-cas-kaihotaisei-7-ai-v3",
     "ministryQuirk": "内閣官房型: daiXX/gijisidai.html 形式の2段階ネスト構造",
     "pageTitle": "Cۈ\\͋Ɋւ֌Wtc",
@@ -9521,29 +9602,11 @@
     ]
   },
   {
-    "councilId": "cas-honbu_setti-8",
-    "councilName": "緊急災害対策本部",
-    "ministry": "CAS",
-    "officialUrl": "https://www.bousai.go.jp/updates/honbu_setti/honbu_setti.html",
-    "scrapedAt": "2026-08-02 20:45:45",
-    "ruleApplied": "rule-cas-honbu_setti-8-ai-v3",
-    "ministryQuirk": "標準省庁型: 汎用個別回パターン",
-    "pageTitle": "緊急災害対策本部、非常災害対策本部及び特定災害対策本部の設置状況 : 防災情報のページ - 内閣府",
-    "pastYearCount": 1,
-    "hasTopPageDates": true,
-    "totalExtractedMaterials": 0,
-    "materials": [],
-    "extractedDates": [
-      "令和8年3月31日"
-    ],
-    "subpageMeetings": []
-  },
-  {
     "councilId": "cas-kyuyo-9",
     "councilName": "給与関係閣僚会議",
     "ministry": "CAS",
     "officialUrl": "https://www.cas.go.jp/jp/seisaku/kyuyo/index.html",
-    "scrapedAt": "2026-08-02 20:45:45",
+    "scrapedAt": "2026-08-05 21:11:50",
     "ruleApplied": "rule-cas-kyuyo-9-ai-v3",
     "ministryQuirk": "内閣官房型: daiXX/gijisidai.html 形式の2段階ネスト構造",
     "pageTitle": "給与関係閣僚会議｜内閣官房ホームページ",
@@ -9646,11 +9709,11 @@
     "councilName": "ギャンブル等依存症対策推進本部幹事会",
     "ministry": "CAS",
     "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/gambletou_izonsho/",
-    "scrapedAt": "2026-08-02 20:45:46",
+    "scrapedAt": "2026-08-05 21:11:51",
     "ruleApplied": "rule-cas-gambletou_izonsho-10-ai-v3",
     "ministryQuirk": "内閣官房型: daiXX/gijisidai.html 形式の2段階ネスト構造",
     "pageTitle": "ギャンブル等依存症対策推進本部",
-    "pastYearCount": 3,
+    "pastYearCount": 2,
     "hasTopPageDates": true,
     "totalExtractedMaterials": 72,
     "materials": [
@@ -10088,11 +10151,11 @@
       }
     ],
     "extractedDates": [
-      "令和7年4月24日",
-      "令和5年3月29日",
-      "令和7年3月21日",
-      "2026年7月27日",
-      "2025年6月12日"
+      "令和3年6月23日",
+      "令和4年2月4日",
+      "令和3年11月11日",
+      "令和5年9月4日",
+      "令和4年4月25日"
     ],
     "subpageMeetings": [
       {
@@ -10274,7 +10337,7 @@
     "councilName": "行政改革推進会議",
     "ministry": "CAS",
     "officialUrl": "https://www.cas.go.jp/jp/seisaku/gskaigi/index.html",
-    "scrapedAt": "2026-08-02 20:45:48",
+    "scrapedAt": "2026-08-05 21:11:52",
     "ruleApplied": "rule-cas-gskaigi-11-ai-v3",
     "ministryQuirk": "内閣官房型: daiXX/gijisidai.html 形式の2段階ネスト構造",
     "pageTitle": "行政改革推進会議｜内閣官房ホームページ",
@@ -10434,11 +10497,11 @@
       }
     ],
     "extractedDates": [
-      "令和8年1月27日",
+      "令和8年2月17日",
       "令和8年1月28日",
       "令和8年7月30日",
-      "令和8年2月17日",
-      "令和8年3月31日"
+      "令和8年1月27日",
+      "令和8年1月20日"
     ],
     "subpageMeetings": [
       {
@@ -10579,7 +10642,7 @@
     "councilName": "経済財政諮問会議",
     "ministry": "CAO",
     "officialUrl": "https://www5.cao.go.jp/keizai-shimon/",
-    "scrapedAt": "2026-08-02 20:45:48",
+    "scrapedAt": "2026-08-05 21:11:52",
     "ruleApplied": "rule-cao-keizai_shimon-12-ai-v3",
     "ministryQuirk": "内閣府型: ◯kai/◯kai.html または kaisai.html の個別の回ネスト",
     "pageTitle": "経済財政諮問会議 : 経済財政政策 - 内閣府",
@@ -10643,11 +10706,11 @@
       }
     ],
     "extractedDates": [
-      "2026年7月8日",
-      "2026年7月29日",
+      "2026年7月30日",
       "2026年7月21日",
-      "2026年7月17日",
-      "2026年7月30日"
+      "2026年8月4日",
+      "2026年7月24日",
+      "2026年7月17日"
     ],
     "subpageMeetings": [
       {
@@ -10671,7 +10734,7 @@
     "councilName": "月例経済報告等に関する関係閣僚会議",
     "ministry": "CAO",
     "officialUrl": "https://www5.cao.go.jp/keizai3/getsurei/getsurei-index.html",
-    "scrapedAt": "2026-08-02 20:45:49",
+    "scrapedAt": "2026-08-05 21:11:53",
     "ruleApplied": "rule-cao-getsurei-13-ai-v3",
     "ministryQuirk": "内閣府型: ◯kai/◯kai.html または kaisai.html の個別の回ネスト",
     "pageTitle": "月例経済報告 - 内閣府",
@@ -11455,10 +11518,10 @@
       }
     ],
     "extractedDates": [
+      "令和8年7月30日",
       "令和8年7月10日",
       "令和8年7月27日",
-      "令和8年6月12日",
-      "令和8年7月30日"
+      "令和8年6月12日"
     ],
     "subpageMeetings": [
       {
@@ -11510,7 +11573,7 @@
     "councilName": "クマ被害対策等に関する関係閣僚会議",
     "ministry": "CAS",
     "officialUrl": "https://www.cas.go.jp/jp/seisaku/kumahigai_taisaku/index.html",
-    "scrapedAt": "2026-08-02 20:45:51",
+    "scrapedAt": "2026-08-05 21:11:54",
     "ruleApplied": "rule-cas-kumahigai_taisaku-14-ai-v3",
     "ministryQuirk": "内閣官房型: daiXX/gijisidai.html 形式の2段階ネスト構造",
     "pageTitle": "クマ被害対策等に関する関係閣僚会議",
@@ -11543,7 +11606,7 @@
         "isPrivate": false
       },
       {
-        "name": "議事録（PDF／●●KB）",
+        "name": "議事録（PDF／305KB）",
         "url": "https://www.cas.go.jp/jp/seisaku/kumahigai_taisaku/dai5/gijiroku.pdf",
         "type": "PDF",
         "isPrivate": false
@@ -11629,8 +11692,8 @@
     ],
     "extractedDates": [
       "令和8年3月27日",
-      "令和7年11月14日",
-      "令和7年10月30日"
+      "令和7年10月30日",
+      "令和7年11月14日"
     ],
     "subpageMeetings": [
       {
@@ -11751,7 +11814,7 @@
     "councilName": "原子力災害からの福島復興再生協議会",
     "ministry": "RA",
     "officialUrl": "https://www.reconstruction.go.jp/topics/cat-11/cat-41/cat-129/cat-130/000818/",
-    "scrapedAt": "2026-08-02 20:45:51",
+    "scrapedAt": "2026-08-05 21:11:55",
     "ruleApplied": "rule-ra-000818-15-ai-v3",
     "ministryQuirk": "復興庁型: topics/cat-XX 分類URLおよび日付命名PDF",
     "pageTitle": "原子力災害からの福島復興再生協議会 | 復興庁",
@@ -11781,9 +11844,9 @@
     "extractedDates": [
       "令和7年2月24日",
       "令和5年8月28日",
-      "令和3年8月5日",
-      "令和2年8月30日",
-      "令和2年2月24日"
+      "令和3年2月21日",
+      "令和8年3月29日",
+      "令和8年7月27日"
     ],
     "subpageMeetings": [
       {
@@ -11857,7 +11920,7 @@
     "councilName": "グラスルーツからの日米関係強化に関する政府タスクフォース（各地各様のアプローチ）",
     "ministry": "CAS",
     "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/grassrootsTF/",
-    "scrapedAt": "2026-08-02 20:45:53",
+    "scrapedAt": "2026-08-05 21:11:56",
     "ruleApplied": "rule-cas-grassrootsTF-16-ai-v3",
     "ministryQuirk": "内閣官房型: daiXX/gijisidai.html 形式の2段階ネスト構造",
     "pageTitle": "グラスルーツからの日米関係強化に関する政府タスクフォース（各地各様のアプローチ）",
@@ -12443,9 +12506,9 @@
       }
     ],
     "extractedDates": [
-      "令和3年7月30日",
       "令和6年7月4日",
       "令和4年7月5日",
+      "令和3年7月30日",
       "令和5年8月4日",
       "令和7年12月18日"
     ],
@@ -12499,7 +12562,7 @@
     "councilName": "原子力立地会議",
     "ministry": "CAO",
     "officialUrl": "https://wwwa.cao.go.jp/oaep/tokubetsusochi.html",
-    "scrapedAt": "2026-08-02 20:45:53",
+    "scrapedAt": "2026-08-05 21:11:56",
     "ruleApplied": "rule-cao-oaep-17-ai-v3",
     "ministryQuirk": "内閣府型: ◯kai/◯kai.html または kaisai.html の個別の回ネスト",
     "pageTitle": "「原子力発電施設等立地地域の振興に関する特別措置法」について｜原子力政策担当室 ‐ 内閣府",
@@ -12752,7 +12815,7 @@
     "councilName": "高齢社会対策会議",
     "ministry": "CAO",
     "officialUrl": "https://www8.cao.go.jp/kourei/measure/a_5.html",
-    "scrapedAt": "2026-08-02 20:45:53",
+    "scrapedAt": "2026-08-05 21:11:56",
     "ruleApplied": "rule-cao-measure-18-ai-v3",
     "ministryQuirk": "内閣府型: ◯kai/◯kai.html または kaisai.html の個別の回ネスト",
     "pageTitle": "高齢社会対策会議 - 内閣府",
@@ -12768,11 +12831,11 @@
       }
     ],
     "extractedDates": [
-      "令和8年6月11日",
-      "令和4年6月8日",
-      "令和5年6月9日",
       "令和6年9月13日",
-      "令和2年7月17日"
+      "令和4年6月8日",
+      "令和8年6月11日",
+      "令和6年2月13日",
+      "令和6年6月19日"
     ],
     "subpageMeetings": []
   },
@@ -12781,7 +12844,7 @@
     "councilName": "原子力関係閣僚会議",
     "ministry": "CAS",
     "officialUrl": "https://www.cas.go.jp/jp/seisaku/genshiryoku_kakuryo_kaigi/",
-    "scrapedAt": "2026-08-02 20:45:54",
+    "scrapedAt": "2026-08-05 21:11:57",
     "ruleApplied": "rule-cas-genshiryoku_kakuryo_kaigi-19-ai-v3",
     "ministryQuirk": "内閣官房型: daiXX/gijisidai.html 形式の2段階ネスト構造",
     "pageTitle": "原子力関係閣僚会議",
@@ -13007,8 +13070,8 @@
       }
     ],
     "extractedDates": [
-      "令和8年7月31日",
-      "令和5年4月28日"
+      "令和5年4月28日",
+      "令和8年7月31日"
     ],
     "subpageMeetings": [
       {
@@ -13141,7 +13204,7 @@
     "councilName": "健康・医療戦略推進本部",
     "ministry": "CAS",
     "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/",
-    "scrapedAt": "2026-08-02 20:45:56",
+    "scrapedAt": "2026-08-05 21:11:58",
     "ruleApplied": "rule-cas-kenkouiryou-20-ai-v3",
     "ministryQuirk": "内閣官房型: daiXX/gijisidai.html 形式の2段階ネスト構造",
     "pageTitle": "健康・医療戦略推進本部",
@@ -13901,11 +13964,11 @@
       }
     ],
     "extractedDates": [
-      "令和2年11月2日",
-      "令和4年9月6日",
-      "令和3年5月18日",
-      "令和4年12月27日",
-      "令和4年7月11日"
+      "令和8年5月5日",
+      "令和8年7月24日",
+      "令和5年12月18日",
+      "令和3年12月3日",
+      "令和2年10月19日"
     ],
     "subpageMeetings": [
       {
@@ -14239,8 +14302,8 @@
           }
         ],
         "extractedDates": [
-          "2026年7月17日",
-          "2026年6月3日"
+          "2026年6月3日",
+          "2026年7月17日"
         ]
       },
       {
@@ -14360,7 +14423,7 @@
     "councilName": "国際的に脅威となる感染症対策の強化のための国際連携等関係閣僚会議",
     "ministry": "CAS",
     "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/kokusai_kansen/index.html",
-    "scrapedAt": "2026-08-02 20:45:57",
+    "scrapedAt": "2026-08-05 21:11:59",
     "ruleApplied": "rule-cas-kokusai_kansen-21-ai-v3",
     "ministryQuirk": "内閣官房型: daiXX/gijisidai.html 形式の2段階ネスト構造",
     "pageTitle": "国際的に脅威となる感染症対策の強化のための国際連携等関係閣僚会議",
@@ -14838,11 +14901,11 @@
       }
     ],
     "extractedDates": [
-      "令和3年7月14日",
-      "令和5年4月7日",
-      "令和4年3月31日",
+      "令和6年3月8日",
       "令和4年10月24日",
-      "令和6年3月29日"
+      "令和6年3月29日",
+      "令和4年3月31日",
+      "令和4年12月22日"
     ],
     "subpageMeetings": [
       {
@@ -15116,7 +15179,7 @@
     "councilName": "国土強靱化の推進に関する関係府省庁連絡会議",
     "ministry": "CAS",
     "officialUrl": "https://www.cas.go.jp/jp/seisaku/kyoujinka/index.html",
-    "scrapedAt": "2026-08-02 20:45:58",
+    "scrapedAt": "2026-08-05 21:12:00",
     "ruleApplied": "rule-cas-kyoujinka-22-ai-v3",
     "ministryQuirk": "内閣官房型: daiXX/gijisidai.html 形式の2段階ネスト構造",
     "pageTitle": "国土強靱化の推進に関する関係府省庁連絡会議｜内閣官房ホームページ",
@@ -15589,9 +15652,9 @@
     ],
     "extractedDates": [
       "令和6年1月23日",
-      "令和6年2月14日",
       "令和4年8月2日",
       "令和2年8月28日",
+      "令和6年2月14日",
       "令和3年1月19日"
     ],
     "subpageMeetings": [
@@ -15836,7 +15899,7 @@
     "councilName": "孤独・孤立対策推進本部",
     "ministry": "CAO",
     "officialUrl": "https://www.cao.go.jp/kodoku_koritsu/torikumi/suishinhonbu/index.html",
-    "scrapedAt": "2026-08-02 20:45:59",
+    "scrapedAt": "2026-08-05 21:12:01",
     "ruleApplied": "rule-cao-suishinhonbu-23-ai-v3",
     "ministryQuirk": "内閣府型: ◯kai/◯kai.html または kaisai.html の個別の回ネスト",
     "pageTitle": "孤独・孤立対策推進本部 - 内閣府",
@@ -15949,9 +16012,9 @@
     ],
     "extractedDates": [
       "令和7年5月27日",
+      "令和6年4月19日",
       "令和8年7月10日",
-      "令和6年6月11日",
-      "令和6年4月19日"
+      "令和6年6月11日"
     ],
     "subpageMeetings": [
       {
@@ -16057,7 +16120,7 @@
     "councilName": "国家戦略特別区域諮問会議",
     "ministry": "CAS",
     "officialUrl": "https://www.chisou.go.jp/tiiki/kokusentoc/shimonkaigi.html",
-    "scrapedAt": "2026-08-02 20:46:00",
+    "scrapedAt": "2026-08-05 21:12:02",
     "ruleApplied": "rule-cas-kokusentoc-24-ai-v3",
     "ministryQuirk": "標準省庁型: 汎用個別回パターン",
     "pageTitle": "国家戦略特別区域諮問会議",
@@ -17603,11 +17666,11 @@
       }
     ],
     "extractedDates": [
-      "令和5年12月26日",
+      "令和3年6月17日",
+      "令和8年7月9日",
       "令和4年6月13日",
-      "令和2年9月14日",
-      "令和5年6月28日",
-      "令和2年6月10日"
+      "令和7年6月10日",
+      "令和5年10月20日"
     ],
     "subpageMeetings": [
       {
@@ -17737,7 +17800,7 @@
     "councilName": "コンテンツ産業官民協議会",
     "ministry": "CAO",
     "officialUrl": "https://www.cao.go.jp/chizai/contents_kyogikai/index.html",
-    "scrapedAt": "2026-08-02 20:46:00",
+    "scrapedAt": "2026-08-05 21:12:02",
     "ruleApplied": "rule-cao-contents_kyogikai-25-ai-v3",
     "ministryQuirk": "内閣府型: ◯kai/◯kai.html または kaisai.html の個別の回ネスト",
     "pageTitle": "コンテンツ産業官民協議会 - 内閣府",
@@ -18036,7 +18099,7 @@
     "councilName": "原子力防災会議",
     "ministry": "CAS",
     "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/genshiryoku_bousai/",
-    "scrapedAt": "2026-08-02 20:46:01",
+    "scrapedAt": "2026-08-05 21:12:03",
     "ruleApplied": "rule-cas-genshiryoku_bousai-26-ai-v3",
     "ministryQuirk": "内閣官房型: daiXX/gijisidai.html 形式の2段階ネスト構造",
     "pageTitle": "q͖hЉc",
@@ -18950,7 +19013,7 @@
     "councilName": "米の安定供給等実現関係閣僚会議",
     "ministry": "CAS",
     "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/nousui/kome_anteikyokyujitsugen_kaigi/index.html",
-    "scrapedAt": "2026-08-02 20:46:03",
+    "scrapedAt": "2026-08-05 21:12:04",
     "ruleApplied": "rule-cas-kome_anteikyokyujitsugen_kaigi-27-ai-v3",
     "ministryQuirk": "内閣官房型: daiXX/gijisidai.html 形式の2段階ネスト構造",
     "pageTitle": "Ă̈苟֌Wtc",
@@ -19145,7 +19208,7 @@
     "councilName": "国土強靱化推進本部",
     "ministry": "CAS",
     "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/kokudo_kyoujinka/",
-    "scrapedAt": "2026-08-02 20:46:04",
+    "scrapedAt": "2026-08-05 21:12:05",
     "ruleApplied": "rule-cas-kokudo_kyoujinka-28-ai-v3",
     "ministryQuirk": "内閣官房型: daiXX/gijisidai.html 形式の2段階ネスト構造",
     "pageTitle": "yՉi{",
@@ -19539,7 +19602,7 @@
     "councilName": "自衛官の処遇・勤務環境の改善及び新たな生涯設計の確立に関する関係閣僚会議",
     "ministry": "CAS",
     "officialUrl": "https://www.cas.go.jp/jp/seisaku/jieikan/index.html",
-    "scrapedAt": "2026-08-02 20:46:05",
+    "scrapedAt": "2026-08-05 21:12:06",
     "ruleApplied": "rule-cas-jieikan-29-ai-v3",
     "ministryQuirk": "内閣官房型: daiXX/gijisidai.html 形式の2段階ネスト構造",
     "pageTitle": "自衛官の処遇・勤務環境の改善及び新たな生涯設計の確立に関する関係閣僚会議",
@@ -19633,9 +19696,9 @@
       }
     ],
     "extractedDates": [
-      "令和6年11月26日",
       "令和6年10月25日",
       "令和6年12月20日",
+      "令和6年11月26日",
       "令和7年12月22日"
     ],
     "subpageMeetings": [
@@ -19727,7 +19790,7 @@
     "councilName": "サイバーセキュリティ戦略本部",
     "ministry": "CAS",
     "officialUrl": "https://www.cyber.go.jp/council/cs/index.html",
-    "scrapedAt": "2026-08-02 20:46:05",
+    "scrapedAt": "2026-08-05 21:12:06",
     "ruleApplied": "rule-cas-cs-30-ai-v3",
     "ministryQuirk": "標準省庁型: 汎用個別回パターン",
     "pageTitle": "会議 - 国家サイバー統括室",
@@ -20193,11 +20256,11 @@
       }
     ],
     "extractedDates": [
-      "令和8年3月24日",
       "令和8年7月31日",
       "令和7年7月1日",
-      "令和7年12月23日",
-      "令和8年2月6日"
+      "令和8年3月24日",
+      "令和8年2月6日",
+      "令和8年6月23日"
     ],
     "subpageMeetings": []
   },
@@ -20206,7 +20269,7 @@
     "councilName": "持続可能な開発目標（ＳＤＧｓ）推進本部",
     "ministry": "CAS",
     "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/sdgs/index.html",
-    "scrapedAt": "2026-08-02 20:46:06",
+    "scrapedAt": "2026-08-05 21:12:07",
     "ruleApplied": "rule-cas-sdgs-31-ai-v3",
     "ministryQuirk": "内閣官房型: daiXX/gijisidai.html 形式の2段階ネスト構造",
     "pageTitle": "持続可能な開発目標（SDGs）推進本部",
@@ -20558,11 +20621,11 @@
       }
     ],
     "extractedDates": [
-      "令和6年5月21日",
+      "令和5年12月19日",
+      "令和2年11月27日",
       "令和3年6月4日",
-      "令和2年7月30日",
-      "令和4年5月13日",
-      "令和3年12月24日"
+      "令和5年9月8日",
+      "令和8年1月16日"
     ],
     "subpageMeetings": [
       {
@@ -20716,7 +20779,7 @@
     "councilName": "ＧＸ実行会議",
     "ministry": "CAS",
     "officialUrl": "https://www.cas.go.jp/jp/seisaku/gx_jikkou_kaigi/index.html",
-    "scrapedAt": "2026-08-02 20:46:08",
+    "scrapedAt": "2026-08-05 21:12:08",
     "ruleApplied": "rule-cas-gx_jikkou_kaigi-32-ai-v3",
     "ministryQuirk": "内閣官房型: daiXX/gijisidai.html 形式の2段階ネスト構造",
     "pageTitle": "GX実行会議｜内閣官房ホームページ",
@@ -21140,11 +21203,11 @@
       }
     ],
     "extractedDates": [
-      "令和7年2月18日",
-      "令和5年7月28日",
-      "令和4年10月26日",
       "令和6年12月26日",
-      "令和5年2月10日"
+      "令和5年7月28日",
+      "令和4年12月22日",
+      "令和5年12月15日",
+      "令和8年4月1日"
     ],
     "subpageMeetings": [
       {
@@ -21455,7 +21518,7 @@
     "councilName": "自転車活用推進本部",
     "ministry": "MLIT",
     "officialUrl": "https://www.mlit.go.jp/road/bicycleuse/meeting/index.html",
-    "scrapedAt": "2026-08-02 20:46:08",
+    "scrapedAt": "2026-08-05 21:12:08",
     "ruleApplied": "rule-mlit-meeting-33-ai-v3",
     "ministryQuirk": "標準省庁型: 汎用個別回パターン",
     "pageTitle": "道路：自転車活用推進本部会合 - 国土交通省",
@@ -21559,7 +21622,7 @@
     "councilName": "重要経済安保情報保護活用諮問会議",
     "ministry": "CAO",
     "officialUrl": "https://www.cao.go.jp/keizai_anzen_hosho/hogokatsuyou/shimon/shimon.html",
-    "scrapedAt": "2026-08-02 20:46:08",
+    "scrapedAt": "2026-08-05 21:12:08",
     "ruleApplied": "rule-cao-shimon-34-ai-v3",
     "ministryQuirk": "内閣府型: ◯kai/◯kai.html または kaisai.html の個別の回ネスト",
     "pageTitle": "重要経済安保情報保護活用諮問会議 - 内閣府",
@@ -21780,10 +21843,10 @@
     ],
     "extractedDates": [
       "令和6年8月29日",
-      "令和6年11月26日",
-      "令和8年6月8日",
       "令和7年1月22日",
-      "令和6年6月26日"
+      "令和8年6月8日",
+      "令和6年7月31日",
+      "令和6年9月12日"
     ],
     "subpageMeetings": []
   },
@@ -21792,7 +21855,7 @@
     "councilName": "障害者に対する偏見や差別のない共生社会の実現に向けた対策推進本部",
     "ministry": "CAS",
     "officialUrl": "https://www.cas.go.jp/jp/seisaku/kyouseishakai/index.html",
-    "scrapedAt": "2026-08-02 20:46:09",
+    "scrapedAt": "2026-08-05 21:12:10",
     "ruleApplied": "rule-cas-kyouseishakai-35-ai-v3",
     "ministryQuirk": "内閣官房型: daiXX/gijisidai.html 形式の2段階ネスト構造",
     "pageTitle": "障害者に対する偏見や差別のない共生社会の実現に向けた対策推進本部｜内閣官房ホームページ",
@@ -21970,11 +22033,11 @@
       }
     ],
     "extractedDates": [
+      "令和6年11月20日",
+      "令和6年11月13日",
       "令和8年6月4日",
-      "令和6年7月26日",
-      "令和6年12月27日",
-      "令和6年12月24日",
-      "令和6年10月21日"
+      "令和6年10月21日",
+      "令和6年7月26日"
     ],
     "subpageMeetings": [
       {
@@ -22026,7 +22089,7 @@
     "councilName": "就職氷河期世代等支援に関する関係閣僚会議",
     "ministry": "CAS",
     "officialUrl": "https://www.cas.go.jp/jp/seisaku/shushoku_hyogaki_shien/kankeikakuryokaigi/index.html",
-    "scrapedAt": "2026-08-02 20:46:10",
+    "scrapedAt": "2026-08-05 21:12:11",
     "ruleApplied": "rule-cas-kankeikakuryokaigi-36-ai-v3",
     "ministryQuirk": "内閣官房型: daiXX/gijisidai.html 形式の2段階ネスト構造",
     "pageTitle": "就職氷河期世代等支援に関する関係閣僚会議｜内閣官房ホームページ",
@@ -22385,7 +22448,7 @@
     "councilName": "情報保全諮問会議",
     "ministry": "CAS",
     "officialUrl": "https://www.cas.go.jp/jp/seisaku/jyouhouhozen/index.html",
-    "scrapedAt": "2026-08-02 20:46:11",
+    "scrapedAt": "2026-08-05 21:12:12",
     "ruleApplied": "rule-cas-jyouhouhozen-37-ai-v3",
     "ministryQuirk": "内閣官房型: daiXX/gijisidai.html 形式の2段階ネスト構造",
     "pageTitle": "情報保全諮問会議｜内閣官房ホームページ",
@@ -23175,10 +23238,10 @@
       }
     ],
     "extractedDates": [
-      "令和8年6月1日",
-      "令和6年5月15日",
       "令和4年5月18日",
-      "令和2年5月22日",
+      "令和6年5月15日",
+      "令和8年6月1日",
+      "令和3年5月20日",
       "令和5年5月15日"
     ],
     "subpageMeetings": [
@@ -23231,7 +23294,7 @@
     "councilName": "食育推進会議",
     "ministry": "MAFF",
     "officialUrl": "https://www.maff.go.jp/j/syokuiku/kaigi/suisin.html",
-    "scrapedAt": "2026-08-02 20:46:12",
+    "scrapedAt": "2026-08-05 21:12:12",
     "ruleApplied": "rule-maff-kaigi-38-ai-v3",
     "ministryQuirk": "標準省庁型: 汎用個別回パターン",
     "pageTitle": "食育推進会議・食育推進評価専門委員会等：農林水産省",
@@ -23253,11 +23316,11 @@
       }
     ],
     "extractedDates": [
-      "令和7年12月8日",
-      "令和6年9月20日",
-      "令和3年9月29日",
-      "令和5年9月29日",
-      "令和2年3月25日"
+      "令和5年3月20日",
+      "令和2年10月1日",
+      "令和2年8月18日",
+      "令和3年11月9日",
+      "令和7年12月8日"
     ],
     "subpageMeetings": []
   },
@@ -23266,7 +23329,7 @@
     "councilName": "食品ロス削減推進会議",
     "ministry": "CAA",
     "officialUrl": "https://www.caa.go.jp/policies/policy/consumer_education/meeting_materials/review_meeting_002/",
-    "scrapedAt": "2026-08-02 20:46:12",
+    "scrapedAt": "2026-08-05 21:12:12",
     "ruleApplied": "rule-caa-review_meeting_002-39-ai-v3",
     "ministryQuirk": "標準省庁型: 汎用個別回パターン",
     "pageTitle": "食品ロス削減推進会議 | 消費者庁",
@@ -23275,11 +23338,11 @@
     "totalExtractedMaterials": 0,
     "materials": [],
     "extractedDates": [
-      "2023年12月22日",
-      "2023年07月07日",
+      "2023年10月13日",
       "2021年09月28日",
-      "2024年07月02日",
-      "2023年10月13日"
+      "2026年03月02日",
+      "2020年02月19日",
+      "2022年02月25日"
     ],
     "subpageMeetings": []
   },
@@ -23288,7 +23351,7 @@
     "councilName": "食料安定供給・農林水産業基盤強化本部",
     "ministry": "CAS",
     "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/nousui/index.html",
-    "scrapedAt": "2026-08-02 20:46:12",
+    "scrapedAt": "2026-08-05 21:12:12",
     "ruleApplied": "rule-cas-nousui-40-ai-v3",
     "ministryQuirk": "内閣官房型: daiXX/gijisidai.html 形式の2段階ネスト構造",
     "pageTitle": "H苟E_ѐYƊՋ{",
@@ -23773,7 +23836,7 @@
     "councilName": "人口戦略本部",
     "ministry": "CAS",
     "officialUrl": "https://www.cas.go.jp/jp/seisaku/jinko_senryaku/index.html",
-    "scrapedAt": "2026-08-02 20:46:12",
+    "scrapedAt": "2026-08-05 21:12:13",
     "ruleApplied": "rule-cas-jinko_senryaku-41-ai-v3",
     "ministryQuirk": "内閣官房型: daiXX/gijisidai.html 形式の2段階ネスト構造",
     "pageTitle": "人口戦略本部｜内閣官房ホームページ",
@@ -23807,9 +23870,9 @@
       }
     ],
     "extractedDates": [
+      "令和7年11月18日",
       "令和8年1月16日",
-      "令和8年6月29日",
-      "令和7年11月18日"
+      "令和8年6月29日"
     ],
     "subpageMeetings": [
       {
@@ -23826,7 +23889,7 @@
     "councilName": "税制調査会",
     "ministry": "CAO",
     "officialUrl": "https://www.cao.go.jp/zei-cho/",
-    "scrapedAt": "2026-08-02 20:46:13",
+    "scrapedAt": "2026-08-05 21:12:13",
     "ruleApplied": "rule-cao-zei_cho-42-ai-v3",
     "ministryQuirk": "内閣府型: ◯kai/◯kai.html または kaisai.html の個別の回ネスト",
     "pageTitle": "税制調査会 - 内閣府",
@@ -23902,11 +23965,11 @@
       }
     ],
     "extractedDates": [
-      "2025年7月1日",
-      "2026年1月26日",
-      "2025年7月7日",
+      "2025年6月20日",
       "2025年11月13日",
-      "2026年1月16日"
+      "2025年7月1日",
+      "2026年1月9日",
+      "2025年6月24日"
     ],
     "subpageMeetings": [
       {
@@ -24022,7 +24085,7 @@
     "councilName": "全国都道府県知事会議（政府主催）",
     "ministry": "MIC",
     "officialUrl": "https://www.soumu.go.jp/main_sosiki/singi/chiji_kaigi/index.html",
-    "scrapedAt": "2026-08-02 20:46:13",
+    "scrapedAt": "2026-08-05 21:12:13",
     "ruleApplied": "rule-mic-chiji_kaigi-43-ai-v3",
     "ministryQuirk": "標準省庁型: 汎用個別回パターン",
     "pageTitle": "ȁbSs{mc({Áj",
@@ -24038,20 +24101,20 @@
     "councilName": "総合科学技術・イノベーション会議",
     "ministry": "CAO",
     "officialUrl": "https://www8.cao.go.jp/cstp/",
-    "scrapedAt": "2026-08-02 20:46:13",
+    "scrapedAt": "2026-08-05 21:12:13",
     "ruleApplied": "rule-cao-cstp-44-ai-v3",
     "ministryQuirk": "内閣府型: ◯kai/◯kai.html または kaisai.html の個別の回ネスト",
     "pageTitle": "総合科学技術・イノベーション会議 - 内閣府",
-    "pastYearCount": 27,
+    "pastYearCount": 28,
     "hasTopPageDates": true,
     "totalExtractedMaterials": 0,
     "materials": [],
     "extractedDates": [
-      "2026年3月27日",
+      "2026年6月30日",
       "2026年5月22日",
-      "2026年3月18日",
-      "2025年11月28日",
-      "2026年7月31日"
+      "2026年1月22日",
+      "2026年3月27日",
+      "2025年11月28日"
     ],
     "subpageMeetings": [
       {
@@ -24060,8 +24123,18 @@
         "extractedMaterialsCount": 0,
         "materials": [],
         "extractedDates": [
-          "2026年7月22日",
-          "2023年11月7日"
+          "2024年2月21日",
+          "2025年4月14日"
+        ]
+      },
+      {
+        "subpageUrl": "https://www8.cao.go.jp/cstp/kaisaiannai/2026/20260807brige_wg.html",
+        "title": "研究開発とSociety 5.0との橋渡しプログラム（BRIDGE）制度中間評価ワーキンググループ（第３回） - 内閣府",
+        "extractedMaterialsCount": 0,
+        "materials": [],
+        "extractedDates": [
+          "令和8年8月7日",
+          "令和8年8月3日"
         ]
       },
       {
@@ -24091,7 +24164,7 @@
     "councilName": "人身取引対策推進会議",
     "ministry": "CAS",
     "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/jinsintorihiki/index.html",
-    "scrapedAt": "2026-08-02 20:46:14",
+    "scrapedAt": "2026-08-05 21:12:14",
     "ruleApplied": "rule-cas-jinsintorihiki-45-ai-v3",
     "ministryQuirk": "内閣官房型: daiXX/gijisidai.html 形式の2段階ネスト構造",
     "pageTitle": "lg΍ic",
@@ -24565,7 +24638,7 @@
     "councilName": "すべての女性が輝く社会づくり本部",
     "ministry": "CAS",
     "officialUrl": "https://www.cas.go.jp/jp/seisaku/kagayakujosei/index.html",
-    "scrapedAt": "2026-08-02 20:46:16",
+    "scrapedAt": "2026-08-05 21:12:15",
     "ruleApplied": "rule-cas-kagayakujosei-46-ai-v3",
     "ministryQuirk": "内閣官房型: daiXX/gijisidai.html 形式の2段階ネスト構造",
     "pageTitle": "すべての女性が輝く社会づくり本部｜内閣官房ホームページ",
@@ -24934,7 +25007,7 @@
     "councilName": "新戦略策定のための資産運用立国推進分科会",
     "ministry": "CAS",
     "officialUrl": "https://www.cas.go.jp/jp/seisaku/nipponseichosenryaku/kinyu/index.html",
-    "scrapedAt": "2026-08-02 20:46:17",
+    "scrapedAt": "2026-08-05 21:12:16",
     "ruleApplied": "rule-cas-kinyu-47-ai-v3",
     "ministryQuirk": "内閣官房型: daiXX/gijisidai.html 形式の2段階ネスト構造",
     "pageTitle": "新戦略策定のための資産運用立国推進分科会｜内閣官房ホームページ",
@@ -25161,9 +25234,9 @@
     ],
     "extractedDates": [
       "令和6年2月27日",
-      "令和8年7月21日",
       "令和4年11月28日",
-      "令和5年12月13日"
+      "令和5年12月13日",
+      "令和8年7月21日"
     ],
     "subpageMeetings": [
       {
@@ -25339,7 +25412,7 @@
     "councilName": "攻めの予防医療に向けた性差に由来するヘルスケアに関する副大臣等会議",
     "ministry": "CAS",
     "officialUrl": "https://www.cas.go.jp/jp/seisaku/seme_no_yobouiryou/index.html",
-    "scrapedAt": "2026-08-02 20:46:18",
+    "scrapedAt": "2026-08-05 21:12:18",
     "ruleApplied": "rule-cas-seme_no_yobouiryou-48-ai-v3",
     "ministryQuirk": "内閣官房型: daiXX/gijisidai.html 形式の2段階ネスト構造",
     "pageTitle": "攻めの予防医療に向けた性差に由来するヘルスケアに関する副大臣等会議",
@@ -25605,7 +25678,7 @@
     "councilName": "戦略分野分科会",
     "ministry": "CAS",
     "officialUrl": "https://www.cas.go.jp/jp/seisaku/nipponseichosenryaku/senryaku/index.html",
-    "scrapedAt": "2026-08-02 20:46:20",
+    "scrapedAt": "2026-08-05 21:12:19",
     "ruleApplied": "rule-cas-senryaku-49-ai-v3",
     "ministryQuirk": "内閣官房型: daiXX/gijisidai.html 形式の2段階ネスト構造",
     "pageTitle": "戦略分野分科会｜内閣官房ホームページ",
@@ -25764,7 +25837,7 @@
     "councilName": "全世代型社会保障構築本部",
     "ministry": "CAS",
     "officialUrl": "https://www.cas.go.jp/jp/seisaku/zensedai_shakaihosho_kochiku/index.html",
-    "scrapedAt": "2026-08-02 20:46:21",
+    "scrapedAt": "2026-08-05 21:12:20",
     "ruleApplied": "rule-cas-zensedai_shakaihosho_kochiku-50-ai-v3",
     "ministryQuirk": "内閣官房型: daiXX/gijisidai.html 形式の2段階ネスト構造",
     "pageTitle": "全世代型社会保障構築本部｜内閣官房ホームページ",
@@ -25998,9 +26071,9 @@
     "extractedDates": [
       "令和5年12月22日",
       "令和4年12月23日",
-      "令和7年11月17日",
       "令和4年12月16日",
-      "令和4年11月24日"
+      "令和4年11月24日",
+      "令和7年11月17日"
     ],
     "subpageMeetings": [
       {
@@ -26214,7 +26287,7 @@
     "councilName": "総合海洋政策本部",
     "ministry": "CAS",
     "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/kaiyou/index.html",
-    "scrapedAt": "2026-08-02 20:46:21",
+    "scrapedAt": "2026-08-05 21:12:20",
     "ruleApplied": "rule-cas-kaiyou-51-ai-v3",
     "ministryQuirk": "内閣官房型: daiXX/gijisidai.html 形式の2段階ネスト構造",
     "pageTitle": "総合海洋政策本部",
@@ -26356,7 +26429,7 @@
     "councilName": "政労使の意見交換",
     "ministry": "CAS",
     "officialUrl": "https://www.cas.go.jp/jp/seisaku/nipponseichosenryaku/seiroushi/index.html",
-    "scrapedAt": "2026-08-02 20:46:22",
+    "scrapedAt": "2026-08-05 21:12:21",
     "ruleApplied": "rule-cas-seiroushi-52-ai-v3",
     "ministryQuirk": "内閣官房型: daiXX/gijisidai.html 形式の2段階ネスト構造",
     "pageTitle": "政労使の意見交換｜内閣官房ホームページ",
@@ -26510,8 +26583,8 @@
       }
     ],
     "extractedDates": [
-      "令和7年11月4日",
-      "令和7年11月25日"
+      "令和7年11月25日",
+      "令和7年11月4日"
     ],
     "subpageMeetings": [
       {
@@ -26685,7 +26758,7 @@
     "councilName": "総合特別区域推進本部",
     "ministry": "CAS",
     "officialUrl": "https://www.chisou.go.jp/tiiki/sogotoc/sinsei/dai1/index.html",
-    "scrapedAt": "2026-08-02 20:46:22",
+    "scrapedAt": "2026-08-05 21:12:21",
     "ruleApplied": "rule-cas-dai1-53-ai-v3",
     "ministryQuirk": "標準省庁型: 汎用個別回パターン",
     "pageTitle": "総合特別区域推進本部",
@@ -26821,11 +26894,11 @@
       }
     ],
     "extractedDates": [
-      "令和2年3月23日",
-      "令和8年3月24日",
       "令和3年3月19日",
-      "令和6年3月19日",
-      "令和3年12月10日"
+      "令和7年6月19日",
+      "令和2年3月23日",
+      "令和3年12月10日",
+      "令和8年3月24日"
     ],
     "subpageMeetings": []
   },
@@ -26834,7 +26907,7 @@
     "councilName": "租税特別措置・補助金見直しに関する関係閣僚等及び副大臣会議",
     "ministry": "CAS",
     "officialUrl": "https://www.cas.go.jp/jp/seisaku/sozei/index.html",
-    "scrapedAt": "2026-08-02 20:46:23",
+    "scrapedAt": "2026-08-05 21:12:22",
     "ruleApplied": "rule-cas-sozei-54-ai-v3",
     "ministryQuirk": "内閣官房型: daiXX/gijisidai.html 形式の2段階ネスト構造",
     "pageTitle": "租税特別措置・補助金見直し担当室",
@@ -27014,7 +27087,7 @@
     "councilName": "船舶活用医療推進本部",
     "ministry": "CAS",
     "officialUrl": "https://www.cas.go.jp/jp/seisaku/senpaku_top/index.html",
-    "scrapedAt": "2026-08-02 20:46:24",
+    "scrapedAt": "2026-08-05 21:12:23",
     "ruleApplied": "rule-cas-senpaku_top-55-ai-v3",
     "ministryQuirk": "内閣官房型: daiXX/gijisidai.html 形式の2段階ネスト構造",
     "pageTitle": "船舶活用医療｜内閣官房ホームページ",
@@ -27078,11 +27151,11 @@
       }
     ],
     "extractedDates": [
-      "令和6年7月9日",
+      "令和7年3月18日",
       "令和6年6月1日",
-      "令和7年3月31日",
-      "令和7年12月23日",
-      "令和7年12月22日"
+      "令和7年12月22日",
+      "令和8年1月7日",
+      "令和6年7月9日"
     ],
     "subpageMeetings": [
       {
@@ -27164,7 +27237,7 @@
     "councilName": "対日直接投資推進会議",
     "ministry": "CAO",
     "officialUrl": "https://www.cao.go.jp/invest-japan/committee/index.html",
-    "scrapedAt": "2026-08-02 20:46:24",
+    "scrapedAt": "2026-08-05 21:12:23",
     "ruleApplied": "rule-cao-committee-56-ai-v3",
     "ministryQuirk": "内閣府型: ◯kai/◯kai.html または kaisai.html の個別の回ネスト",
     "pageTitle": "対日直接投資推進会議｜INVEST JAPAN - 内閣府",
@@ -27546,11 +27619,11 @@
       }
     ],
     "extractedDates": [
-      "令和7年4月30日",
-      "令和6年4月10日",
+      "令和8年7月2日",
+      "令和4年10月13日",
       "令和2年10月26日",
-      "令和4年5月13日",
-      "令和4年3月30日"
+      "令和4年9月28日",
+      "令和6年4月10日"
     ],
     "subpageMeetings": []
   },
@@ -27559,7 +27632,7 @@
     "councilName": "総合的な防衛体制の強化に資する研究開発及び公共インフラ整備に関する関係閣僚会議",
     "ministry": "CAS",
     "officialUrl": "https://www.cas.go.jp/jp/seisaku/koukyou_infra/index.html",
-    "scrapedAt": "2026-08-02 20:46:25",
+    "scrapedAt": "2026-08-05 21:12:24",
     "ruleApplied": "rule-cas-koukyou_infra-57-ai-v3",
     "ministryQuirk": "内閣官房型: daiXX/gijisidai.html 形式の2段階ネスト構造",
     "pageTitle": "総合的な防衛体制の強化に資する研究開発及び公共インフラ整備に関する関係閣僚会議",
@@ -27719,11 +27792,11 @@
       }
     ],
     "extractedDates": [
-      "令和5年12月22日",
-      "令和5年12月18日",
-      "令和6年12月27日",
       "令和6年12月20日",
-      "令和7年12月26日"
+      "令和5年12月22日",
+      "令和7年12月26日",
+      "令和5年12月18日",
+      "令和6年12月27日"
     ],
     "subpageMeetings": [
       {
@@ -27769,8 +27842,8 @@
           }
         ],
         "extractedDates": [
-          "令和5年8月25日",
-          "令和4年12月16日"
+          "令和4年12月16日",
+          "令和5年8月25日"
         ]
       },
       {
@@ -27817,8 +27890,8 @@
           }
         ],
         "extractedDates": [
-          "令和5年12月18日",
-          "令和5年12月7日"
+          "令和5年12月7日",
+          "令和5年12月18日"
         ]
       },
       {
@@ -27864,7 +27937,7 @@
     "councilName": "地方制度調査会",
     "ministry": "MIC",
     "officialUrl": "https://www.soumu.go.jp/main_sosiki/singi/chihou_seido/singi.html",
-    "scrapedAt": "2026-08-02 20:46:25",
+    "scrapedAt": "2026-08-05 21:12:24",
     "ruleApplied": "rule-mic-chihou_seido-58-ai-v3",
     "ministryQuirk": "標準省庁型: 汎用個別回パターン",
     "pageTitle": "ȁbnx",
@@ -27947,7 +28020,7 @@
     "councilName": "大規模太陽光発電事業に関する関係閣僚会議",
     "ministry": "CAS",
     "officialUrl": "https://www.cas.go.jp/jp/seisaku/megasolar/index.html",
-    "scrapedAt": "2026-08-02 20:46:26",
+    "scrapedAt": "2026-08-05 21:12:24",
     "ruleApplied": "rule-cas-megasolar-59-ai-v3",
     "ministryQuirk": "内閣官房型: daiXX/gijisidai.html 形式の2段階ネスト構造",
     "pageTitle": "大規模太陽光発電事業に関する関係閣僚会議",
@@ -28038,7 +28111,7 @@
     "councilName": "多様な木質材料の活用促進に関する関係省庁連絡会議（旧ＣＬＴ活用促進に関する関係省庁連絡会議）",
     "ministry": "CAS",
     "officialUrl": "https://www.cas.go.jp/jp/seisaku/clt-etc/index.html",
-    "scrapedAt": "2026-08-02 20:46:27",
+    "scrapedAt": "2026-08-05 21:12:26",
     "ruleApplied": "rule-cas-clt_etc-60-ai-v3",
     "ministryQuirk": "内閣官房型: daiXX/gijisidai.html 形式の2段階ネスト構造",
     "pageTitle": "多様な木質材料の活用促進に関する関係省庁連絡会議",
@@ -28300,11 +28373,11 @@
       }
     ],
     "extractedDates": [
-      "令和2年11月12日",
-      "令和2年12月18日",
-      "令和7年10月16日",
       "令和7年10月28日",
-      "令和2年11月17日"
+      "令和8年5月28日",
+      "令和2年11月12日",
+      "令和6年11月29日",
+      "令和2年12月18日"
     ],
     "subpageMeetings": [
       {
@@ -28503,7 +28576,7 @@
     "councilName": "中央防災会議",
     "ministry": "CAS",
     "officialUrl": "https://www.bousai.go.jp/kaigirep/chuobou/",
-    "scrapedAt": "2026-08-02 20:46:27",
+    "scrapedAt": "2026-08-05 21:12:26",
     "ruleApplied": "rule-cas-chuobou-61-ai-v3",
     "ministryQuirk": "標準省庁型: 汎用個別回パターン",
     "pageTitle": "中央防災会議 : 防災情報のページ - 内閣府",
@@ -28512,18 +28585,18 @@
     "totalExtractedMaterials": 1,
     "materials": [
       {
-        "name": "委員名簿（令和8年6月19日） (PDF形式：215.0KB)",
+        "name": "委員名簿（令和8年6月19日） (PDF形式：218.0KB)",
         "url": "https://www.bousai.go.jp/kaigirep/chuobou/pdf/meibo.pdf",
         "type": "PDF",
         "isPrivate": false
       }
     ],
     "extractedDates": [
-      "令和8年6月19日",
-      "令和6年6月28日",
-      "令和3年5月25日",
       "令和7年7月1日",
-      "令和8年7月14日"
+      "令和4年9月30日",
+      "令和8年6月19日",
+      "令和8年7月14日",
+      "令和3年5月25日"
     ],
     "subpageMeetings": []
   },
@@ -28532,7 +28605,7 @@
     "councilName": "地域再生本部",
     "ministry": "CAS",
     "officialUrl": "https://www.chisou.go.jp/tiiki/tiikisaisei/kaisai.html",
-    "scrapedAt": "2026-08-02 20:46:28",
+    "scrapedAt": "2026-08-05 21:12:27",
     "ruleApplied": "rule-cas-tiikisaisei-62-ai-v3",
     "ministryQuirk": "標準省庁型: 汎用個別回パターン",
     "pageTitle": "地域再生本部　開催状況 - 地方創生推進事務局",
@@ -28758,11 +28831,11 @@
       }
     ],
     "extractedDates": [
-      "令和2年3月31日",
-      "令和4年4月27日",
-      "令和8年3月24日",
       "令和3年3月19日",
-      "令和6年3月19日"
+      "令和6年8月30日",
+      "令和4年4月27日",
+      "令和6年5月17日",
+      "令和8年3月24日"
     ],
     "subpageMeetings": [
       {
@@ -29036,7 +29109,7 @@
     "councilName": "地域未来戦略本部",
     "ministry": "CAS",
     "officialUrl": "https://www.cas.go.jp/jp/seisaku/chiikimirai/index.html",
-    "scrapedAt": "2026-08-02 20:46:29",
+    "scrapedAt": "2026-08-05 21:12:28",
     "ruleApplied": "rule-cas-chiikimirai-63-ai-v3",
     "ministryQuirk": "内閣官房型: daiXX/gijisidai.html 形式の2段階ネスト構造",
     "pageTitle": "地域未来戦略本部",
@@ -29099,7 +29172,7 @@
         "isPrivate": false
       },
       {
-        "name": "議事要旨（PDF／xxxKB）",
+        "name": "議事要旨（PDF／289KB）",
         "url": "https://www.cas.go.jp/jp/seisaku/chiikimirai/kankei_fukudaijin/dai5/gijigaiyo.pdf",
         "type": "PDF",
         "isPrivate": false
@@ -29226,11 +29299,11 @@
       }
     ],
     "extractedDates": [
-      "令和8年6月24日",
+      "令和7年12月22日",
       "令和8年7月21日",
-      "令和7年12月23日",
       "令和7年11月11日",
-      "令和7年12月22日"
+      "令和8年6月24日",
+      "令和7年12月23日"
     ],
     "subpageMeetings": [
       {
@@ -29270,8 +29343,8 @@
           }
         ],
         "extractedDates": [
-          "令和7年11月11日",
-          "令和7年12月4日"
+          "令和7年12月4日",
+          "令和7年11月11日"
         ]
       },
       {
@@ -29380,7 +29453,7 @@
     "councilName": "地球温暖化対策推進本部",
     "ministry": "CAS",
     "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/ondanka/index.html",
-    "scrapedAt": "2026-08-02 20:46:31",
+    "scrapedAt": "2026-08-05 21:12:29",
     "ruleApplied": "rule-cas-ondanka-64-ai-v3",
     "ministryQuirk": "内閣官房型: daiXX/gijisidai.html 形式の2段階ネスト構造",
     "pageTitle": "ng΍i{",
@@ -29407,8 +29480,8 @@
         "isPrivate": false
       },
       {
-        "name": "ng΍i{̊JÂɂāiߘaTNUROꕔjiPDF^118KBj",
-        "url": "https://www.cas.go.jp/jp/seisakukaigi/ondanka/kaisai/dai36/siryou_230630.pdf",
+        "name": "ng΍i{̊JÂɂāiߘaVNXPXꕔjiPDF^115KBj",
+        "url": "https://www.cas.go.jp/jp/seisakukaigi/ondanka/kaisai/dai36/shiryo_250919.pdf",
         "type": "PDF",
         "isPrivate": false
       },
@@ -29425,8 +29498,8 @@
         "isPrivate": false
       },
       {
-        "name": "2023Nxɂng΍v̐i󋵁iPDF^8,873KBj",
-        "url": "https://www.cas.go.jp/jp/seisakukaigi/ondanka/2023/2023_sinchoku.pdf",
+        "name": "2024Nxɂng΍v̐i󋵁iPDF^8,912KBj",
+        "url": "https://www.cas.go.jp/jp/seisakukaigi/ondanka/2024/2024_shinchoku.pdf",
         "type": "PDF",
         "isPrivate": false
       },
@@ -29617,8 +29690,8 @@
         "extractedDates": []
       },
       {
-        "subpageUrl": "https://www.cas.go.jp/jp/seisakukaigi/ondanka/kaisai/dai36/siryou_230630.pdf",
-        "title": "https://www.cas.go.jp/jp/seisakukaigi/ondanka/kaisai/dai36/siryou_230630.pdf",
+        "subpageUrl": "https://www.cas.go.jp/jp/seisakukaigi/ondanka/kaisai/dai36/shiryo_250919.pdf",
+        "title": "https://www.cas.go.jp/jp/seisakukaigi/ondanka/kaisai/dai36/shiryo_250919.pdf",
         "extractedMaterialsCount": 0,
         "materials": [],
         "extractedDates": []
@@ -29644,7 +29717,7 @@
     "councilName": "地域働き方・職場改革等推進会議",
     "ministry": "CAS",
     "officialUrl": "https://www.cas.go.jp/jp/seisaku/chiikihatarakikata/index.html#suisin-kaigi-record",
-    "scrapedAt": "2026-08-02 20:46:31",
+    "scrapedAt": "2026-08-05 21:12:29",
     "ruleApplied": "rule-cas-indexhtmlsuisin_kaigi_record-65-ai-v3",
     "ministryQuirk": "内閣官房型: daiXX/gijisidai.html 形式の2段階ネスト構造",
     "pageTitle": "地域働き方・職場改革等の推進｜内閣官房",
@@ -29924,11 +29997,11 @@
       }
     ],
     "extractedDates": [
-      "令和8年1月27日",
-      "令和7年5月28日",
-      "令和7年5月29日",
-      "令和8年3月30日",
-      "令和7年5月14日"
+      "令和7年6月19日",
+      "令和7年6月17日",
+      "令和8年4月28日",
+      "令和8年7月21日",
+      "令和7年5月28日"
     ],
     "subpageMeetings": []
   },
@@ -29937,7 +30010,7 @@
     "councilName": "中堅企業等の成長促進に関するワーキンググループ",
     "ministry": "CAS",
     "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/katsuryoku_kojyo/index.html",
-    "scrapedAt": "2026-08-02 20:46:32",
+    "scrapedAt": "2026-08-05 21:12:30",
     "ruleApplied": "rule-cas-katsuryoku_kojyo-66-ai-v3",
     "ministryQuirk": "内閣官房型: daiXX/gijisidai.html 形式の2段階ネスト構造",
     "pageTitle": "ƁEƁEK͎Ǝ҂̊͌̂߂̊֌WȒAc",
@@ -30417,7 +30490,7 @@
     "councilName": "中心市街地活性化本部",
     "ministry": "CAS",
     "officialUrl": "https://www.chisou.go.jp/tiiki/chukatu/konkyo.html",
-    "scrapedAt": "2026-08-02 20:46:33",
+    "scrapedAt": "2026-08-05 21:12:31",
     "ruleApplied": "rule-cas-chukatu-67-ai-v3",
     "ministryQuirk": "標準省庁型: 汎用個別回パターン",
     "pageTitle": "中心市街地活性化本部　根拠・構成員 - 地方創生推進事務局",
@@ -30678,7 +30751,7 @@
     "councilName": "統合イノベーション戦略推進会議",
     "ministry": "CAO",
     "officialUrl": "https://www8.cao.go.jp/cstp/tougosenryaku/kaigi.html",
-    "scrapedAt": "2026-08-02 20:46:33",
+    "scrapedAt": "2026-08-05 21:12:32",
     "ruleApplied": "rule-cao-tougosenryaku-68-ai-v3",
     "ministryQuirk": "内閣府型: ◯kai/◯kai.html または kaisai.html の個別の回ネスト",
     "pageTitle": "統合イノベーション戦略推進会議 - 科学技術・イノベーション - 内閣府",
@@ -31114,11 +31187,11 @@
       }
     ],
     "extractedDates": [
-      "令和3年1月19日",
+      "令和6年6月3日",
+      "令和5年8月28日",
       "令和8年7月14日",
-      "令和7年9月1日",
-      "令和6年2月16日",
-      "令和5年8月28日"
+      "令和7年2月21日",
+      "令和2年6月26日"
     ],
     "subpageMeetings": [
       {
@@ -31269,7 +31342,7 @@
     "councilName": "「ＴＰＰ等総合対策本部」（旧ＴＰＰに関する主要閣僚会議）",
     "ministry": "CAS",
     "officialUrl": "https://www.cas.go.jp/jp/tpp/tppinfo/index.html",
-    "scrapedAt": "2026-08-02 20:46:33",
+    "scrapedAt": "2026-08-05 21:12:32",
     "ruleApplied": "rule-cas-tppinfo-69-ai-v3",
     "ministryQuirk": "内閣官房型: daiXX/gijisidai.html 形式の2段階ネスト構造",
     "pageTitle": "環太平洋パートナーシップ（ＴＰＰ）｜TPP等・米国関税措置総合対策本部事務局",
@@ -31278,11 +31351,11 @@
     "totalExtractedMaterials": 0,
     "materials": [],
     "extractedDates": [
-      "2026年6月24日",
-      "2026年6月25日",
       "2026年6月26日",
+      "2026年6月30日",
+      "2026年6月24日",
       "2026年7月28日",
-      "2026年6月30日"
+      "2026年6月25日"
     ],
     "subpageMeetings": []
   },
@@ -31291,7 +31364,7 @@
     "councilName": "地理空間情報活用推進会議",
     "ministry": "CAS",
     "officialUrl": "https://www.cas.go.jp/jp/seisaku/sokuitiri/index.html",
-    "scrapedAt": "2026-08-02 20:46:34",
+    "scrapedAt": "2026-08-05 21:12:32",
     "ruleApplied": "rule-cas-sokuitiri-70-ai-v3",
     "ministryQuirk": "内閣官房型: daiXX/gijisidai.html 形式の2段階ネスト構造",
     "pageTitle": "地理空間情報活用推進会議／地理空間情報活用推進室｜内閣官房ホームページ",
@@ -31451,11 +31524,11 @@
       }
     ],
     "extractedDates": [
-      "令和5年5月23日",
-      "令和7年6月11日",
+      "令和4年5月24日",
       "令和8年6月5日",
-      "令和7年5月19日",
-      "令和5年3月17日"
+      "令和8年1月22日",
+      "令和5年7月31日",
+      "令和4年6月10日"
     ],
     "subpageMeetings": [
       {
@@ -31512,13 +31585,13 @@
     "councilName": "デジタル行財政改革会議",
     "ministry": "CAS",
     "officialUrl": "https://www.cas.go.jp/jp/seisaku/digital_gyozaikaikaku/index.html",
-    "scrapedAt": "2026-08-02 20:46:35",
+    "scrapedAt": "2026-08-05 21:12:34",
     "ruleApplied": "rule-cas-digital_gyozaikaikaku-71-ai-v3",
     "ministryQuirk": "内閣官房型: daiXX/gijisidai.html 形式の2段階ネスト構造",
     "pageTitle": "デジタル行財政改革会議｜内閣官房ホームページ",
     "pastYearCount": 25,
     "hasTopPageDates": true,
-    "totalExtractedMaterials": 146,
+    "totalExtractedMaterials": 147,
     "materials": [
       {
         "name": "開催根拠（PDF／118KB）",
@@ -32073,6 +32146,12 @@
         "isPrivate": false
       },
       {
+        "name": "議事要旨（397KB）",
+        "url": "https://www.cas.go.jp/jp/seisaku/digital_gyozaikaikaku/pdf/kakusyoDX5_gaiyou.pdf",
+        "type": "PDF",
+        "isPrivate": false
+      },
+      {
         "name": "行政データにおける機械可読性に関するルール（PDF／1,348KB）",
         "url": "https://www.cas.go.jp/jp/seisaku/digital_gyozaikaikaku/pdf/gyouseidata_rule.pdf",
         "type": "PDF",
@@ -32398,11 +32477,11 @@
       }
     ],
     "extractedDates": [
-      "令和7年1月21日",
-      "令和8年1月27日",
-      "令和6年7月10日",
-      "令和8年7月13日",
-      "令和7年12月2日"
+      "令和6年10月24日",
+      "令和5年10月23日",
+      "令和7年6月2日",
+      "令和7年5月12日",
+      "令和6年5月23日"
     ],
     "subpageMeetings": [
       {
@@ -32679,7 +32758,7 @@
     "councilName": "知的財産戦略本部",
     "ministry": "CAS",
     "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/titeki2/",
-    "scrapedAt": "2026-08-02 20:46:37",
+    "scrapedAt": "2026-08-05 21:12:35",
     "ruleApplied": "rule-cas-titeki2-72-ai-v3",
     "ministryQuirk": "内閣官房型: daiXX/gijisidai.html 形式の2段階ネスト構造",
     "pageTitle": "知的財産戦略本部",
@@ -33637,11 +33716,11 @@
       }
     ],
     "extractedDates": [
-      "令和7年8月25日",
-      "令和8年8月25日",
       "令和6年11月15日",
+      "令和7年8月25日",
+      "令和6年8月26日",
       "令和5年8月25日",
-      "令和6年8月26日"
+      "令和8年8月25日"
     ],
     "subpageMeetings": [
       {
@@ -33849,7 +33928,7 @@
     "councilName": "内閣保全監視委員会",
     "ministry": "CAS",
     "officialUrl": "https://www.cas.go.jp/jp/seisaku/naikakuhozenkansi/index.html",
-    "scrapedAt": "2026-08-02 20:46:38",
+    "scrapedAt": "2026-08-05 21:12:36",
     "ruleApplied": "rule-cas-naikakuhozenkansi-73-ai-v3",
     "ministryQuirk": "内閣官房型: daiXX/gijisidai.html 形式の2段階ネスト構造",
     "pageTitle": "内閣保全監視委員会｜内閣官房ホームページ",
@@ -33858,14 +33937,14 @@
     "totalExtractedMaterials": 88,
     "materials": [
       {
-        "name": "内閣保全監視委員会の設置根拠（PDF／175KB）",
-        "url": "https://www.cas.go.jp/jp/seisaku/naikakuhozenkansi/pdf/konkyo.pdf",
+        "name": "内閣保全監視委員会の設置根拠（PDF／54KB）",
+        "url": "https://www.cas.go.jp/jp/seisaku/naikakuhozenkansi/pdf/konkyo_r8.pdf",
         "type": "PDF",
         "isPrivate": false
       },
       {
-        "name": "内閣保全監視委員会の構成等について（PDF／55KB）",
-        "url": "https://www.cas.go.jp/jp/seisaku/naikakuhozenkansi/pdf/kousei.pdf",
+        "name": "内閣保全監視委員会の構成等について（PDF／53KB）",
+        "url": "https://www.cas.go.jp/jp/seisaku/naikakuhozenkansi/pdf/kousei_r8.pdf",
         "type": "PDF",
         "isPrivate": false
       },
@@ -34387,11 +34466,11 @@
       }
     ],
     "extractedDates": [
-      "令和5年5月8日",
       "令和7年5月27日",
-      "令和8年5月25日",
+      "令和6年5月8日",
       "令和3年5月13日",
-      "令和6年5月8日"
+      "令和4年5月11日",
+      "令和2年5月14日"
     ],
     "subpageMeetings": [
       {
@@ -34400,14 +34479,14 @@
         "extractedMaterialsCount": 88,
         "materials": [
           {
-            "name": "内閣保全監視委員会の設置根拠（PDF／175KB）",
-            "url": "https://www.cas.go.jp/jp/seisaku/naikakuhozenkansi/pdf/konkyo.pdf",
+            "name": "内閣保全監視委員会の設置根拠（PDF／54KB）",
+            "url": "https://www.cas.go.jp/jp/seisaku/naikakuhozenkansi/pdf/konkyo_r8.pdf",
             "type": "PDF",
             "isPrivate": false
           },
           {
-            "name": "内閣保全監視委員会の構成等について（PDF／55KB）",
-            "url": "https://www.cas.go.jp/jp/seisaku/naikakuhozenkansi/pdf/kousei.pdf",
+            "name": "内閣保全監視委員会の構成等について（PDF／53KB）",
+            "url": "https://www.cas.go.jp/jp/seisaku/naikakuhozenkansi/pdf/kousei_r8.pdf",
             "type": "PDF",
             "isPrivate": false
           },
@@ -34929,8 +35008,8 @@
           }
         ],
         "extractedDates": [
-          "令和5年5月8日",
-          "令和7年5月27日"
+          "令和7年5月27日",
+          "令和6年5月8日"
         ]
       },
       {
@@ -34939,14 +35018,14 @@
         "extractedMaterialsCount": 88,
         "materials": [
           {
-            "name": "内閣保全監視委員会の設置根拠（PDF／175KB）",
-            "url": "https://www.cas.go.jp/jp/seisaku/naikakuhozenkansi/pdf/konkyo.pdf",
+            "name": "内閣保全監視委員会の設置根拠（PDF／54KB）",
+            "url": "https://www.cas.go.jp/jp/seisaku/naikakuhozenkansi/pdf/konkyo_r8.pdf",
             "type": "PDF",
             "isPrivate": false
           },
           {
-            "name": "内閣保全監視委員会の構成等について（PDF／55KB）",
-            "url": "https://www.cas.go.jp/jp/seisaku/naikakuhozenkansi/pdf/kousei.pdf",
+            "name": "内閣保全監視委員会の構成等について（PDF／53KB）",
+            "url": "https://www.cas.go.jp/jp/seisaku/naikakuhozenkansi/pdf/kousei_r8.pdf",
             "type": "PDF",
             "isPrivate": false
           },
@@ -35468,8 +35547,8 @@
           }
         ],
         "extractedDates": [
-          "令和5年5月8日",
-          "令和7年5月27日"
+          "令和7年5月27日",
+          "令和6年5月8日"
         ]
       },
       {
@@ -35478,14 +35557,14 @@
         "extractedMaterialsCount": 88,
         "materials": [
           {
-            "name": "内閣保全監視委員会の設置根拠（PDF／175KB）",
-            "url": "https://www.cas.go.jp/jp/seisaku/naikakuhozenkansi/pdf/konkyo.pdf",
+            "name": "内閣保全監視委員会の設置根拠（PDF／54KB）",
+            "url": "https://www.cas.go.jp/jp/seisaku/naikakuhozenkansi/pdf/konkyo_r8.pdf",
             "type": "PDF",
             "isPrivate": false
           },
           {
-            "name": "内閣保全監視委員会の構成等について（PDF／55KB）",
-            "url": "https://www.cas.go.jp/jp/seisaku/naikakuhozenkansi/pdf/kousei.pdf",
+            "name": "内閣保全監視委員会の構成等について（PDF／53KB）",
+            "url": "https://www.cas.go.jp/jp/seisaku/naikakuhozenkansi/pdf/kousei_r8.pdf",
             "type": "PDF",
             "isPrivate": false
           },
@@ -36007,8 +36086,8 @@
           }
         ],
         "extractedDates": [
-          "令和5年5月8日",
-          "令和7年5月27日"
+          "令和7年5月27日",
+          "令和6年5月8日"
         ]
       },
       {
@@ -36017,14 +36096,14 @@
         "extractedMaterialsCount": 88,
         "materials": [
           {
-            "name": "内閣保全監視委員会の設置根拠（PDF／175KB）",
-            "url": "https://www.cas.go.jp/jp/seisaku/naikakuhozenkansi/pdf/konkyo.pdf",
+            "name": "内閣保全監視委員会の設置根拠（PDF／54KB）",
+            "url": "https://www.cas.go.jp/jp/seisaku/naikakuhozenkansi/pdf/konkyo_r8.pdf",
             "type": "PDF",
             "isPrivate": false
           },
           {
-            "name": "内閣保全監視委員会の構成等について（PDF／55KB）",
-            "url": "https://www.cas.go.jp/jp/seisaku/naikakuhozenkansi/pdf/kousei.pdf",
+            "name": "内閣保全監視委員会の構成等について（PDF／53KB）",
+            "url": "https://www.cas.go.jp/jp/seisaku/naikakuhozenkansi/pdf/kousei_r8.pdf",
             "type": "PDF",
             "isPrivate": false
           },
@@ -36546,8 +36625,8 @@
           }
         ],
         "extractedDates": [
-          "令和5年5月8日",
-          "令和7年5月27日"
+          "令和7年5月27日",
+          "令和6年5月8日"
         ]
       },
       {
@@ -36556,14 +36635,14 @@
         "extractedMaterialsCount": 88,
         "materials": [
           {
-            "name": "内閣保全監視委員会の設置根拠（PDF／175KB）",
-            "url": "https://www.cas.go.jp/jp/seisaku/naikakuhozenkansi/pdf/konkyo.pdf",
+            "name": "内閣保全監視委員会の設置根拠（PDF／54KB）",
+            "url": "https://www.cas.go.jp/jp/seisaku/naikakuhozenkansi/pdf/konkyo_r8.pdf",
             "type": "PDF",
             "isPrivate": false
           },
           {
-            "name": "内閣保全監視委員会の構成等について（PDF／55KB）",
-            "url": "https://www.cas.go.jp/jp/seisaku/naikakuhozenkansi/pdf/kousei.pdf",
+            "name": "内閣保全監視委員会の構成等について（PDF／53KB）",
+            "url": "https://www.cas.go.jp/jp/seisaku/naikakuhozenkansi/pdf/kousei_r8.pdf",
             "type": "PDF",
             "isPrivate": false
           },
@@ -37085,8 +37164,8 @@
           }
         ],
         "extractedDates": [
-          "令和5年5月8日",
-          "令和7年5月27日"
+          "令和7年5月27日",
+          "令和6年5月8日"
         ]
       },
       {
@@ -37095,14 +37174,14 @@
         "extractedMaterialsCount": 88,
         "materials": [
           {
-            "name": "内閣保全監視委員会の設置根拠（PDF／175KB）",
-            "url": "https://www.cas.go.jp/jp/seisaku/naikakuhozenkansi/pdf/konkyo.pdf",
+            "name": "内閣保全監視委員会の設置根拠（PDF／54KB）",
+            "url": "https://www.cas.go.jp/jp/seisaku/naikakuhozenkansi/pdf/konkyo_r8.pdf",
             "type": "PDF",
             "isPrivate": false
           },
           {
-            "name": "内閣保全監視委員会の構成等について（PDF／55KB）",
-            "url": "https://www.cas.go.jp/jp/seisaku/naikakuhozenkansi/pdf/kousei.pdf",
+            "name": "内閣保全監視委員会の構成等について（PDF／53KB）",
+            "url": "https://www.cas.go.jp/jp/seisaku/naikakuhozenkansi/pdf/kousei_r8.pdf",
             "type": "PDF",
             "isPrivate": false
           },
@@ -37624,8 +37703,8 @@
           }
         ],
         "extractedDates": [
-          "令和5年5月8日",
-          "令和7年5月27日"
+          "令和7年5月27日",
+          "令和6年5月8日"
         ]
       }
     ]
@@ -37635,7 +37714,7 @@
     "councilName": "日本成長戦略会議",
     "ministry": "CAS",
     "officialUrl": "https://www.cas.go.jp/jp/seisaku/nipponseichosenryaku/index.html",
-    "scrapedAt": "2026-08-02 20:46:39",
+    "scrapedAt": "2026-08-05 21:12:37",
     "ruleApplied": "rule-cas-nipponseichosenryaku-74-ai-v3",
     "ministryQuirk": "内閣官房型: daiXX/gijisidai.html 形式の2段階ネスト構造",
     "pageTitle": "日本成長戦略本部／日本成長戦略会議｜内閣官房ホームページ",
@@ -37927,11 +38006,11 @@
       }
     ],
     "extractedDates": [
-      "令和7年11月5日",
-      "令和7年11月4日",
-      "令和7年12月24日",
+      "令和7年11月10日",
       "令和8年7月21日",
-      "令和7年11月10日"
+      "令和7年11月5日",
+      "令和7年12月24日",
+      "令和7年11月4日"
     ],
     "subpageMeetings": [
       {
@@ -38161,7 +38240,7 @@
     "councilName": "２０２７年国際園芸博覧会関係閣僚会議",
     "ministry": "CAS",
     "officialUrl": "https://www.cas.go.jp/jp/seisaku/2027_hakurankai/index.html",
-    "scrapedAt": "2026-08-02 20:46:40",
+    "scrapedAt": "2026-08-05 21:12:38",
     "ruleApplied": "rule-cas-2027_hakurankai-75-ai-v3",
     "ministryQuirk": "内閣官房型: daiXX/gijisidai.html 形式の2段階ネスト構造",
     "pageTitle": "２０２７年国際園芸博覧会関係閣僚会議｜内閣官房ホームページ",
@@ -38291,10 +38370,10 @@
       }
     ],
     "extractedDates": [
-      "令和5年8月31日",
-      "令和8年3月19日",
       "令和5年4月28日",
-      "令和7年12月5日"
+      "令和7年12月5日",
+      "令和8年3月19日",
+      "令和5年8月31日"
     ],
     "subpageMeetings": [
       {
@@ -38430,7 +38509,7 @@
     "councilName": "鳥インフルエンザ関係閣僚会議",
     "ministry": "CAS",
     "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/influenza/",
-    "scrapedAt": "2026-08-02 20:46:40",
+    "scrapedAt": "2026-08-05 21:12:38",
     "ruleApplied": "rule-cas-influenza-76-ai-v3",
     "ministryQuirk": "内閣官房型: daiXX/gijisidai.html 形式の2段階ネスト構造",
     "pageTitle": "鳥インフルエンザ関係閣僚会議",
@@ -38602,11 +38681,11 @@
       }
     ],
     "extractedDates": [
-      "令和7年11月2日",
-      "令和8年1月27日",
+      "令和7年12月25日",
+      "令和8年1月22日",
       "令和8年1月13日",
-      "令和7年11月9日",
-      "令和7年11月22日"
+      "令和8年4月22日",
+      "令和8年2月21日"
     ],
     "subpageMeetings": []
   },
@@ -38615,7 +38694,7 @@
     "councilName": "特定複合観光施設区域整備推進本部",
     "ministry": "CAS",
     "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/ir_promotion/",
-    "scrapedAt": "2026-08-02 20:46:42",
+    "scrapedAt": "2026-08-05 21:12:40",
     "ruleApplied": "rule-cas-ir_promotion-77-ai-v3",
     "ministryQuirk": "内閣官房型: daiXX/gijisidai.html 形式の2段階ネスト構造",
     "pageTitle": "特定複合観光施設区域整備推進本部",
@@ -38920,7 +38999,7 @@
     "councilName": "道州制特別区域推進本部",
     "ministry": "CAS",
     "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/doushuu/",
-    "scrapedAt": "2026-08-02 20:46:42",
+    "scrapedAt": "2026-08-05 21:12:40",
     "ruleApplied": "rule-cas-doushuu-78-ai-v3",
     "ministryQuirk": "内閣官房型: daiXX/gijisidai.html 形式の2段階ネスト構造",
     "pageTitle": "Bʋ搄i{",
@@ -39195,7 +39274,7 @@
     "councilName": "復興推進会議",
     "ministry": "RA",
     "officialUrl": "https://www.reconstruction.go.jp/topics/cat-11/cat-47/cat-158/000815/",
-    "scrapedAt": "2026-08-02 20:46:43",
+    "scrapedAt": "2026-08-05 21:12:40",
     "ruleApplied": "rule-ra-000815-79-ai-v3",
     "ministryQuirk": "復興庁型: topics/cat-XX 分類URLおよび日付命名PDF",
     "pageTitle": "復興推進会議 | 復興庁",
@@ -39204,11 +39283,11 @@
     "totalExtractedMaterials": 0,
     "materials": [],
     "extractedDates": [
-      "令和4年12月27日",
-      "令和2年3月10日",
-      "令和5年9月29日",
-      "令和5年3月22日",
-      "令和7年6月20日"
+      "令和3年3月9日",
+      "令和2年12月18日",
+      "令和7年11月18日",
+      "令和3年10月15日",
+      "令和2年3月10日"
     ],
     "subpageMeetings": [
       {
@@ -39224,8 +39303,8 @@
         "extractedMaterialsCount": 0,
         "materials": [],
         "extractedDates": [
-          "令和4年12月27日",
-          "令和2年3月10日"
+          "令和3年3月9日",
+          "令和2年12月18日"
         ]
       },
       {
@@ -39263,7 +39342,7 @@
     "councilName": "犯罪対策閣僚会議",
     "ministry": "CAS",
     "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/hanzai/index.html",
-    "scrapedAt": "2026-08-02 20:46:43",
+    "scrapedAt": "2026-08-05 21:12:40",
     "ruleApplied": "rule-cas-hanzai-80-ai-v3",
     "ministryQuirk": "内閣官房型: daiXX/gijisidai.html 形式の2段階ネスト構造",
     "pageTitle": "ƍߑ΍tc",
@@ -39652,7 +39731,7 @@
     "councilName": "日本博総合推進会議",
     "ministry": "CAS",
     "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/nihonhaku/",
-    "scrapedAt": "2026-08-02 20:46:45",
+    "scrapedAt": "2026-08-05 21:12:42",
     "ruleApplied": "rule-cas-nihonhaku-81-ai-v3",
     "ministryQuirk": "内閣官房型: daiXX/gijisidai.html 形式の2段階ネスト構造",
     "pageTitle": "日本博総合推進会議",
@@ -39780,7 +39859,7 @@
     "councilName": "物流政策推進会議",
     "ministry": "CAS",
     "officialUrl": "https://www.cas.go.jp/jp/seisaku/buturyu_seisaku_suishin/index.html",
-    "scrapedAt": "2026-08-02 20:46:46",
+    "scrapedAt": "2026-08-05 21:12:43",
     "ruleApplied": "rule-cas-buturyu_seisaku_suishin-82-ai-v3",
     "ministryQuirk": "内閣官房型: daiXX/gijisidai.html 形式の2段階ネスト構造",
     "pageTitle": "物流政策推進会議｜内閣官房ホームページ",
@@ -39880,9 +39959,9 @@
       }
     ],
     "extractedDates": [
-      "令和8年7月10日",
       "令和8年3月27日",
-      "令和5年3月31日"
+      "令和5年3月31日",
+      "令和8年7月10日"
     ],
     "subpageMeetings": [
       {
@@ -39992,7 +40071,7 @@
     "councilName": "防災対策実行会議",
     "ministry": "CAS",
     "officialUrl": "https://www.bousai.go.jp/kaigirep/chuobou/jikkoukaigi/index.html",
-    "scrapedAt": "2026-08-02 20:46:46",
+    "scrapedAt": "2026-08-05 21:12:44",
     "ruleApplied": "rule-cas-jikkoukaigi-83-ai-v3",
     "ministryQuirk": "標準省庁型: 汎用個別回パターン",
     "pageTitle": "中央防災会議・防災対策実行会議について : 防災情報のページ - 内閣府",
@@ -40008,10 +40087,10 @@
       }
     ],
     "extractedDates": [
-      "令和3年3月29日",
       "令和7年10月21日",
-      "令和2年4月21日",
       "令和4年9月20日",
+      "令和2年4月21日",
+      "令和4年3月29日",
       "令和3年2月9日"
     ],
     "subpageMeetings": []
@@ -40021,7 +40100,7 @@
     "councilName": "防災立国推進閣僚会議",
     "ministry": "CAS",
     "officialUrl": "https://www.bousai.go.jp/kaigirep/suishin_kakuryou/index.html",
-    "scrapedAt": "2026-08-02 20:46:50",
+    "scrapedAt": "2026-08-05 21:12:46",
     "ruleApplied": "rule-cas-suishin_kakuryou-84-ai-v3",
     "ministryQuirk": "標準省庁型: 汎用個別回パターン",
     "pageTitle": "防災立国推進閣僚会議 : 防災情報のページ - 内閣府",
@@ -40079,10 +40158,10 @@
       }
     ],
     "extractedDates": [
+      "令和7年9月2日",
       "令和7年12月26日",
       "令和7年6月6日",
-      "令和6年12月20日",
-      "令和7年9月2日"
+      "令和6年12月20日"
     ],
     "subpageMeetings": [
       {
@@ -40120,7 +40199,7 @@
     "councilName": "防災推進国民会議",
     "ministry": "CAS",
     "officialUrl": "https://www.bousai.go.jp/kaigirep/suishin/",
-    "scrapedAt": "2026-08-02 20:46:51",
+    "scrapedAt": "2026-08-05 21:12:47",
     "ruleApplied": "rule-cas-suishin-85-ai-v3",
     "ministryQuirk": "標準省庁型: 汎用個別回パターン",
     "pageTitle": "防災推進国民会議 : 防災情報のページ - 内閣府",
@@ -40484,11 +40563,11 @@
       }
     ],
     "extractedDates": [
-      "令和4年12月14日",
       "令和6年12月19日",
-      "令和5年12月20日",
+      "令和4年12月14日",
+      "令和2年12月15日",
       "令和3年12月23日",
-      "令和2年12月15日"
+      "令和5年12月20日"
     ],
     "subpageMeetings": [
       {
@@ -40896,7 +40975,7 @@
     "councilName": "未来を拓くパートナーシップ構築推進会議",
     "ministry": "CAO",
     "officialUrl": "https://www5.cao.go.jp/keizai1/partnership/partnership.html",
-    "scrapedAt": "2026-08-02 20:46:51",
+    "scrapedAt": "2026-08-05 21:12:47",
     "ruleApplied": "rule-cao-partnership-86-ai-v3",
     "ministryQuirk": "内閣府型: ◯kai/◯kai.html または kaisai.html の個別の回ネスト",
     "pageTitle": "未来を拓くパートナーシップ構築推進会議 : 経済財政政策 - 内閣府",
@@ -40954,11 +41033,11 @@
       }
     ],
     "extractedDates": [
-      "令和5年12月21日",
-      "令和2年5月18日",
-      "令和7年12月15日",
       "令和4年10月11日",
-      "令和7年2月21日"
+      "令和7年12月15日",
+      "令和2年11月18日",
+      "令和5年12月21日",
+      "令和2年5月18日"
     ],
     "subpageMeetings": []
   },
@@ -40967,7 +41046,7 @@
     "councilName": "米国の関税措置に関する総合対策タスクフォース",
     "ministry": "CAS",
     "officialUrl": "https://www.cas.go.jp/jp/seisaku/tariff_measures/index.html",
-    "scrapedAt": "2026-08-02 20:46:52",
+    "scrapedAt": "2026-08-05 21:12:48",
     "ruleApplied": "rule-cas-tariff_measures-87-ai-v3",
     "ministryQuirk": "内閣官房型: daiXX/gijisidai.html 形式の2段階ネスト構造",
     "pageTitle": "米国の関税措置に関する総合対策本部｜内閣官房ホームページ",
@@ -41146,10 +41225,10 @@
     ],
     "extractedDates": [
       "令和7年5月27日",
-      "令和8年4月3日",
+      "令和7年7月25日",
       "令和7年4月25日",
-      "令和7年9月9日",
-      "令和7年4月11日"
+      "令和7年7月8日",
+      "令和7年9月9日"
     ],
     "subpageMeetings": [
       {
@@ -41218,8 +41297,8 @@
           }
         ],
         "extractedDates": [
-          "令和7年4月11日",
-          "令和7年4月8日"
+          "令和7年4月8日",
+          "令和7年4月11日"
         ]
       },
       {
@@ -41271,7 +41350,7 @@
     "councilName": "民間資金等活用事業推進会議",
     "ministry": "CAO",
     "officialUrl": "https://www8.cao.go.jp/pfi/kaigi/kaigi_index.html",
-    "scrapedAt": "2026-08-02 20:46:52",
+    "scrapedAt": "2026-08-05 21:12:49",
     "ruleApplied": "rule-cao-kaigi-88-ai-v3",
     "ministryQuirk": "内閣府型: ◯kai/◯kai.html または kaisai.html の個別の回ネスト",
     "pageTitle": "PFI推進会議 : 民間資金等活用事業推進室（PPP/PFI推進室） - 内閣府",
@@ -41551,11 +41630,11 @@
       }
     ],
     "extractedDates": [
-      "令和8年6月11日",
-      "令和5年6月2日",
-      "令和2年7月17日",
       "令和6年6月3日",
-      "令和7年6月4日"
+      "令和8年6月11日",
+      "令和7年6月4日",
+      "令和4年6月3日",
+      "令和3年6月18日"
     ],
     "subpageMeetings": [
       {
@@ -41895,7 +41974,7 @@
     "councilName": "令和６年能登半島地震復旧・復興支援本部",
     "ministry": "CAS",
     "officialUrl": "https://www.bousai.go.jp/updates/r60101notojishin/hukkyuhonbu.html",
-    "scrapedAt": "2026-08-02 20:46:53",
+    "scrapedAt": "2026-08-05 21:12:49",
     "ruleApplied": "rule-cas-r60101notojishin-89-ai-v3",
     "ministryQuirk": "標準省庁型: 汎用個別回パターン",
     "pageTitle": "復旧・復興支援本部 : 防災情報のページ - 内閣府",
@@ -42073,11 +42152,11 @@
       }
     ],
     "extractedDates": [
-      "令和6年12月3日",
-      "令和6年6月28日",
-      "令和6年2月16日",
-      "令和6年5月31日",
-      "令和6年4月23日"
+      "令和6年2月1日",
+      "令和7年2月28日",
+      "令和7年6月6日",
+      "令和6年8月26日",
+      "令和6年6月10日"
     ],
     "subpageMeetings": [
       {
@@ -42094,7 +42173,7 @@
     "councilName": "AIロボティクスに関する関係府省連絡会議",
     "ministry": "CAS",
     "officialUrl": "https://www.cas.go.jp/jp/seisaku/ai_robo/index.html",
-    "scrapedAt": "2026-08-02 20:46:54",
+    "scrapedAt": "2026-08-05 21:12:50",
     "ruleApplied": "rule-cas-ai_robo-90-ai-v3",
     "ministryQuirk": "内閣官房型: daiXX/gijisidai.html 形式の2段階ネスト構造",
     "pageTitle": "AIロボティクスに関する関係府省連絡会議",
@@ -42272,8 +42351,8 @@
       }
     ],
     "extractedDates": [
-      "令和8年3月26日",
-      "令和8年5月27日"
+      "令和8年5月27日",
+      "令和8年3月26日"
     ],
     "subpageMeetings": [
       {
@@ -42379,7 +42458,7 @@
     "councilName": "大阪・関西万博に関する関係者会合",
     "ministry": "CAS",
     "officialUrl": "https://www.cas.go.jp/jp/seisaku/osaka_kansai_banpaku/kaigou.html",
-    "scrapedAt": "2026-08-02 20:46:55",
+    "scrapedAt": "2026-08-05 21:12:51",
     "ruleApplied": "rule-cas-osaka_kansai_banpaku-91-ai-v3",
     "ministryQuirk": "内閣官房型: daiXX/gijisidai.html 形式の2段階ネスト構造",
     "pageTitle": "大阪・関西万博に関する関係者会合｜内閣官房ホームページ",
@@ -42446,7 +42525,7 @@
     "councilName": "医療・介護保険制度における金融所得の公平な取扱いに関する関係府省庁会議",
     "ministry": "CAS",
     "officialUrl": "https://www.cas.go.jp/jp/seisaku/iryo_kaigo/index.html",
-    "scrapedAt": "2026-08-02 20:46:55",
+    "scrapedAt": "2026-08-05 21:12:51",
     "ruleApplied": "rule-cas-iryo_kaigo-92-ai-v3",
     "ministryQuirk": "内閣官房型: daiXX/gijisidai.html 形式の2段階ネスト構造",
     "pageTitle": "医療・介護保険制度における金融所得の公平な取扱いに関する関係府省庁会議｜内閣官房ホームページ",
@@ -42498,7 +42577,7 @@
     "councilName": "稼働資産を含む産業遺産に関する有識者会議",
     "ministry": "CAS",
     "officialUrl": "https://www.cas.go.jp/jp/sangyousekaiisan/sangyouisan/kaigi.html",
-    "scrapedAt": "2026-08-02 20:46:56",
+    "scrapedAt": "2026-08-05 21:12:52",
     "ruleApplied": "rule-cas-sangyouisan-93-ai-v3",
     "ministryQuirk": "内閣官房型: daiXX/gijisidai.html 形式の2段階ネスト構造",
     "pageTitle": "稼働資産を含む産業遺産に関する有識者会議｜内閣官房ホームページ",
@@ -42583,11 +42662,11 @@
     "councilName": "普天間飛行場の運用等に伴う宜野湾市民の住民の生活環境等の保全の課題に関する協議会",
     "ministry": "CAS",
     "officialUrl": "https://www.city.ginowan.lg.jp/soshiki/kikaku/1/1/2/1/18457.html",
-    "scrapedAt": "2026-08-02 20:46:57",
+    "scrapedAt": "2026-08-05 21:12:53",
     "ruleApplied": "rule-cas-1-94-ai-v3",
     "ministryQuirk": "標準省庁型: 汎用個別回パターン",
     "pageTitle": "普天間飛行場の運用等に伴う宜野湾市の住民の生活環境等の保全の課題に関する協議会／宜野湾市",
-    "pastYearCount": 1,
+    "pastYearCount": 0,
     "hasTopPageDates": true,
     "totalExtractedMaterials": 1,
     "materials": [
@@ -42599,8 +42678,8 @@
       }
     ],
     "extractedDates": [
-      "2025年08月05日",
-      "令和7年6月17日"
+      "令和7年6月17日",
+      "2025年08月05日"
     ],
     "subpageMeetings": []
   },
@@ -42609,7 +42688,7 @@
     "councilName": "経済安全保障法制に関する有識者会議（令和４年度～）",
     "ministry": "CAS",
     "officialUrl": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/4index.html",
-    "scrapedAt": "2026-08-02 20:46:58",
+    "scrapedAt": "2026-08-05 21:12:54",
     "ruleApplied": "rule-cas-keizai_anzen_hosyohousei-95-ai-v3",
     "ministryQuirk": "内閣官房型: daiXX/gijisidai.html 形式の2段階ネスト構造",
     "pageTitle": "経済安全保障法制に関する有識者会議（令和４年度～）｜内閣官房ホームページ",
@@ -43585,11 +43664,11 @@
       }
     ],
     "extractedDates": [
-      "令和7年12月16日",
+      "令和4年9月12日",
+      "令和4年7月25日",
       "令和8年7月24日",
-      "令和7年11月14日",
-      "令和6年12月24日",
-      "令和4年9月12日"
+      "令和7年12月16日",
+      "令和4年11月16日"
     ],
     "subpageMeetings": [
       {
@@ -43641,7 +43720,7 @@
     "councilName": "国外における原子力関係事象への対応に関する関係府省連絡会議",
     "ministry": "CAS",
     "officialUrl": "https://www.cas.go.jp/jp/seisaku/genshiryoku_kankeifusho_renrakukaigi/index.html",
-    "scrapedAt": "2026-08-02 20:46:58",
+    "scrapedAt": "2026-08-05 21:12:54",
     "ruleApplied": "rule-cas-genshiryoku_kankeifusho_renrakukaigi-96-ai-v3",
     "ministryQuirk": "内閣官房型: daiXX/gijisidai.html 形式の2段階ネスト構造",
     "pageTitle": "国外における原子力関係事象への対応に関する関係府省連絡会議｜内閣官房ホームページ",
@@ -43723,11 +43802,11 @@
       }
     ],
     "extractedDates": [
+      "令和8年6月22日",
       "令和8年6月4日",
       "令和8年6月9日",
-      "令和8年6月15日",
-      "令和8年6月22日",
-      "令和8年6月17日"
+      "令和8年6月17日",
+      "令和8年6月15日"
     ],
     "subpageMeetings": []
   },
@@ -43736,7 +43815,7 @@
     "councilName": "国土強靱化推進会議",
     "ministry": "CAS",
     "officialUrl": "https://www.cas.go.jp/jp/seisaku/suisinkaigi/index.html",
-    "scrapedAt": "2026-08-02 20:47:00",
+    "scrapedAt": "2026-08-05 21:12:56",
     "ruleApplied": "rule-cas-suisinkaigi-97-ai-v3",
     "ministryQuirk": "内閣官房型: daiXX/gijisidai.html 形式の2段階ネスト構造",
     "pageTitle": "国土強靱化推進会議",
@@ -44914,7 +44993,7 @@
     "councilName": "社会的影響が特に深刻な大規模インフラ障害への対応に係る関係府省庁連絡会議",
     "ministry": "CAS",
     "officialUrl": "https://www.cas.go.jp/jp/seisaku/Infura_syougai/index.html",
-    "scrapedAt": "2026-08-02 20:47:01",
+    "scrapedAt": "2026-08-05 21:12:57",
     "ruleApplied": "rule-cas-Infura_syougai-98-ai-v3",
     "ministryQuirk": "内閣官房型: daiXX/gijisidai.html 形式の2段階ネスト構造",
     "pageTitle": "社会的影響が特に深刻な大規模インフラ障害への対応に係る関係府省庁連絡会議",
@@ -45038,10 +45117,10 @@
       }
     ],
     "extractedDates": [
-      "令和8年4月28日",
+      "令和7年6月30日",
       "令和7年2月28日",
       "令和7年2月10日",
-      "令和7年6月30日"
+      "令和8年4月28日"
     ],
     "subpageMeetings": [
       {
@@ -45148,7 +45227,7 @@
     "councilName": "女性用トイレにおける行列問題の改善に向けた関係府省連絡会議",
     "ministry": "CAS",
     "officialUrl": "https://www.cas.go.jp/jp/seisaku/powder-room/index.html",
-    "scrapedAt": "2026-08-02 20:47:02",
+    "scrapedAt": "2026-08-05 21:12:58",
     "ruleApplied": "rule-cas-powder_room-99-ai-v3",
     "ministryQuirk": "内閣官房型: daiXX/gijisidai.html 形式の2段階ネスト構造",
     "pageTitle": "女性用トイレにおける行列問題の改善に向けた関係府省連絡会議｜内閣官房ホームページ",
@@ -45398,7 +45477,7 @@
     "councilName": "政府機関等における耐量子計算機暗号（PQC）利用に関する関係府省庁連絡会議",
     "ministry": "CAS",
     "officialUrl": "https://www.cas.go.jp/jp/seisaku/pqc/index.html",
-    "scrapedAt": "2026-08-02 20:47:03",
+    "scrapedAt": "2026-08-05 21:12:59",
     "ruleApplied": "rule-cas-pqc-100-ai-v3",
     "ministryQuirk": "内閣官房型: daiXX/gijisidai.html 形式の2段階ネスト構造",
     "pageTitle": "政府機関等における耐量子計算機暗号（PQC）利用に関する関係府省庁連絡会議",
@@ -45552,8 +45631,8 @@
       }
     ],
     "extractedDates": [
-      "令和7年11月12日",
-      "令和7年11月19日"
+      "令和7年11月19日",
+      "令和7年11月12日"
     ],
     "subpageMeetings": [
       {
@@ -45692,7 +45771,7 @@
     "councilName": "人口減少対策に関する意見聴取プロジェクトチーム",
     "ministry": "CAS",
     "officialUrl": "https://www.cas.go.jp/jp/seisaku/jinko_senryaku_pt/index.html",
-    "scrapedAt": "2026-08-02 20:47:04",
+    "scrapedAt": "2026-08-05 21:12:59",
     "ruleApplied": "rule-cas-jinko_senryaku_pt-101-ai-v3",
     "ministryQuirk": "内閣官房型: daiXX/gijisidai.html 形式の2段階ネスト構造",
     "pageTitle": "人口減少対策に関する意見聴取プロジェクトチーム｜内閣官房ホームページ",
@@ -45727,9 +45806,9 @@
     ],
     "extractedDates": [
       "令和8年4月7日",
-      "令和8年1月22日",
       "令和8年3月10日",
-      "令和8年3月25日"
+      "令和8年3月25日",
+      "令和8年1月22日"
     ],
     "subpageMeetings": []
   },
@@ -45738,7 +45817,7 @@
     "councilName": "就職・採用活動日程に関する関係省庁連絡会議",
     "ministry": "CAS",
     "officialUrl": "https://www.cas.go.jp/jp/seisaku/shushoku_katsudou/index.html",
-    "scrapedAt": "2026-08-02 20:47:05",
+    "scrapedAt": "2026-08-05 21:13:00",
     "ruleApplied": "rule-cas-shushoku_katsudou-102-ai-v3",
     "ministryQuirk": "内閣官房型: daiXX/gijisidai.html 形式の2段階ネスト構造",
     "pageTitle": "就職・採用活動日程に関する関係省庁連絡会議｜内閣官房ホームページ",
@@ -46198,7 +46277,7 @@
     "councilName": "新型インフルエンザ等対策推進会議",
     "ministry": "CAS",
     "officialUrl": "https://www.cas.go.jp/jp/seisaku/ful/taisakusuisin.html",
-    "scrapedAt": "2026-08-02 20:47:06",
+    "scrapedAt": "2026-08-05 21:13:02",
     "ruleApplied": "rule-cas-ful-103-ai-v3",
     "ministryQuirk": "内閣官房型: daiXX/gijisidai.html 形式の2段階ネスト構造",
     "pageTitle": "新型インフルエンザ等対策推進会議｜内閣官房ホームページ",
@@ -47697,10 +47776,10 @@
     ],
     "extractedDates": [
       "令和3年4月8日",
-      "令和4年11月24日",
-      "令和7年4月21日",
-      "令和3年11月16日",
-      "令和3年4月23日"
+      "令和4年4月27日",
+      "令和3年8月5日",
+      "令和4年2月25日",
+      "令和5年10月4日"
     ],
     "subpageMeetings": [
       {
@@ -48002,7 +48081,7 @@
     "councilName": "対日外国投資委員会",
     "ministry": "MOF",
     "officialUrl": "https://www.mof.go.jp/policy/international_policy/gaitame_kawase/fdi/20260618215004.html",
-    "scrapedAt": "2026-08-02 20:47:06",
+    "scrapedAt": "2026-08-05 21:13:02",
     "ruleApplied": "rule-mof-fdi-104-ai-v3",
     "ministryQuirk": "標準省庁型: 汎用個別回パターン",
     "pageTitle": "対日外国投資委員会（JFIC：Japan Foreign Investment Committee） : 財務省",
@@ -48039,7 +48118,7 @@
     "councilName": "ビジネスと人権に関する行動計画の実施に係る関係府省庁施策推進・連絡会議",
     "ministry": "CAS",
     "officialUrl": "https://www.cas.go.jp/jp/seisaku/business_jinken/index.html",
-    "scrapedAt": "2026-08-02 20:47:08",
+    "scrapedAt": "2026-08-05 21:13:03",
     "ruleApplied": "rule-cas-business_jinken-105-ai-v3",
     "ministryQuirk": "内閣官房型: daiXX/gijisidai.html 形式の2段階ネスト構造",
     "pageTitle": "ビジネスと人権に関する行動計画の実施に係る関係府省庁施策推進・連絡会議｜内閣官房ホームページ",
@@ -48391,10 +48470,10 @@
       }
     ],
     "extractedDates": [
-      "令和7年5月28日",
-      "令和4年2月15日",
-      "令和3年12月24日",
-      "令和7年12月24日",
+      "令和5年5月31日",
+      "令和4年2月4日",
+      "令和6年12月16日",
+      "令和7年9月29日",
       "令和8年3月27日"
     ],
     "subpageMeetings": [
@@ -48447,7 +48526,7 @@
     "councilName": "政府調達の自主的措置に関する関係省庁等会議",
     "ministry": "CAS",
     "officialUrl": "https://www.cas.go.jp/jp/seisaku/chotatsu/",
-    "scrapedAt": "2026-08-02 20:47:09",
+    "scrapedAt": "2026-08-05 21:13:05",
     "ruleApplied": "rule-cas-chotatsu-106-ai-v3",
     "ministryQuirk": "内閣官房型: daiXX/gijisidai.html 形式の2段階ネスト構造",
     "pageTitle": "政府調達の自主的措置に関する関係省庁等会議｜内閣官房ホームページ",
@@ -48644,10 +48723,10 @@
     ],
     "extractedDates": [
       "令和10年3月31日",
-      "令和8年6月30日",
+      "令和8年4月1日",
+      "令和6年4月1日",
       "令和2年12月22日",
-      "令和5年12月25日",
-      "令和8年3月31日"
+      "令和7年11月25日"
     ],
     "subpageMeetings": [
       {
@@ -48813,7 +48892,7 @@
     "councilName": "リニア開業に伴う新たな圏域形成に関する関係府省等会議",
     "ministry": "CAS",
     "officialUrl": "https://www.cas.go.jp/jp/seisaku/linear/index.html",
-    "scrapedAt": "2026-08-02 20:47:10",
+    "scrapedAt": "2026-08-05 21:13:06",
     "ruleApplied": "rule-cas-linear-107-ai-v3",
     "ministryQuirk": "内閣官房型: daiXX/gijisidai.html 形式の2段階ネスト構造",
     "pageTitle": "リニア開業に伴う新たな圏域形成に関する関係府省等会議｜内閣官房ホームページ",
