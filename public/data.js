@@ -4,6 +4,8 @@
 
 const LAST_CRAWL_TIME = '2026/08/02 20:47';
 
+const INITIAL_ALERT_KEYWORDS = ['AI', 'デジタル', '規制改革', '社会保障', '半導体', 'GX', '経済安全保障', 'エネルギー'];
+
 const MINISTRIES = {
   CAO: { name: '内閣府', kanji: '内閣府', code: 'CAO', color: 'var(--color-cao)', officialUrl: 'https://www.cao.go.jp' },
   CAS: { name: '内閣官房', kanji: '内閣官房', code: 'CAS', color: 'var(--color-cas)', officialUrl: 'https://www.cas.go.jp' },

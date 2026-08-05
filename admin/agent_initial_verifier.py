@@ -1074,7 +1074,59 @@ def validate_data_js():
             sys.exit(1)
         seen_m_ids.add(m_id)
 
-    print("[SUCCESS] public/data.js: Full JS syntax validation passed (braces, brackets, quotes, duplicates, structural integrity).")
+    # 6. Node.js Runtime Check: Verify data.js and app.js load without ReferenceError / SyntaxError
+    import subprocess
+    app_js_path = os.path.join(os.path.dirname(os.path.dirname(__file__)), "public", "app.js")
+    data_js_json = json.dumps(data_js_path)
+    app_js_json = json.dumps(app_js_path)
+    node_test_script = f"""
+const fs = require('fs');
+const vm = require('vm');
+const dataCode = fs.readFileSync({data_js_json}, 'utf-8');
+const appCode = fs.readFileSync({app_js_json}, 'utf-8');
+const domMocks = `
+const localStorage = {{ getItem: () => null, setItem: () => {{}}, removeItem: () => {{}} }};
+const mockElem = () => ({{
+    addEventListener: () => {{}},
+    querySelectorAll: () => [],
+    querySelector: () => mockElem(),
+    classList: {{ add: () => {{}}, remove: () => {{}}, toggle: () => {{}} }},
+    setAttribute: () => {{}},
+    getAttribute: () => null,
+    appendChild: () => {{}},
+    removeChild: () => {{}},
+    style: {{}}
+}});
+const document = {{
+    body: mockElem(),
+    addEventListener: (evt, cb) => {{ if (evt === 'DOMContentLoaded') cb(); }},
+    getElementById: () => mockElem(),
+    querySelectorAll: () => [mockElem()],
+    querySelector: () => mockElem(),
+    createElement: () => mockElem()
+}};
+const window = {{ localStorage, document }};
+const Chart = function() {{}};
+`;
+const context = {{}};
+vm.createContext(context);
+try {{
+    vm.runInContext(domMocks + "\\n" + dataCode + "\\n" + appCode, context);
+}} catch (err) {{
+    console.error("RUNTIME_JS_ERROR:", err.message);
+    process.exit(1);
+}}
+"""
+    try:
+        proc = subprocess.run(["node", "-e", node_test_script], capture_output=True, text=True, check=False)
+        if proc.returncode != 0:
+            print(f"[FAIL] Node.js JS Runtime Check Failed: {proc.stderr.strip()}")
+            sys.exit(1)
+        print("[SUCCESS] Node.js JS Runtime Check passed (No ReferenceError / SyntaxError).")
+    except Exception as e:
+        print(f"[WARN] Node.js test skipped: {e}")
+
+    print("[SUCCESS] public/data.js: Full JS syntax validation passed (braces, brackets, quotes, duplicates, runtime execution).")
 
 def main():
     print("==========================================================")

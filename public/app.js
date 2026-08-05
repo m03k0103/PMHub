@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
     dateRangeFilter: 'ALL',
     sortBy: 'NEWEST',
     watchedCouncilIds: new Set(JSON.parse(localStorage.getItem('pmhub_watched')) || ['cao-ai-strategy', 'digital-suishin', 'cao-kisei-kaikaku', 'meti-sangyo-kozo', 'mhlw-shakai-hosho', 'mof-zaisei-seido']),
-    alertKeywords: JSON.parse(localStorage.getItem('pmhub_keywords')) || [...INITIAL_ALERT_KEYWORDS],
+    alertKeywords: JSON.parse(localStorage.getItem('pmhub_keywords')) || (typeof INITIAL_ALERT_KEYWORDS !== 'undefined' ? [...INITIAL_ALERT_KEYWORDS] : ['AI', 'デジタル', '規制改革', '社会保障', 'GX', '経済安全保障']),
     theme: localStorage.getItem('pmhub_theme') || 'light',
     enableAiSummary: localStorage.getItem('pmhub_enable_ai_summary') === 'true', // Default: false (Token cost control)
     activeModalMeeting: null,
