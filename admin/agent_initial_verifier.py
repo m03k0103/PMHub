@@ -866,6 +866,289 @@ TARGET_COUNCILS = [
         "name": "リニア開業に伴う新たな圏域形成に関する関係府省等会議",
         "url": "https://www.cas.go.jp/jp/seisaku/linear/index.html"
     }
+,
+    {
+        "id": "cas-atarashii-sihon-107",
+        "name": "新しい資本主義実現会議",
+        "ministry": "CAS",
+        "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/index.html"
+    },
+    {
+        "id": "cas-roumuhi-tenka-108",
+        "name": "労務費の適切な転嫁のための関係省庁連絡会議",
+        "ministry": "CAS",
+        "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/index.html"
+    },
+    {
+        "id": "cao-kisei-chiiki-wg-109",
+        "name": "規制改革推進会議 地域活性化・人手不足対応WG",
+        "ministry": "CAO",
+        "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/meeting.html"
+    },
+    {
+        "id": "cao-kisei-iryou-wg-110",
+        "name": "規制改革推進会議 健康・医療・介護WG",
+        "ministry": "CAO",
+        "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/meeting.html"
+    },
+    {
+        "id": "cao-kisei-hatarakikata-wg-111",
+        "name": "規制改革推進会議 働き方・人への投資WG",
+        "ministry": "CAO",
+        "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/meeting.html"
+    },
+    {
+        "id": "cao-kisei-digital-ai-wg-112",
+        "name": "規制改革推進会議 デジタル・AI WG",
+        "ministry": "CAO",
+        "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/meeting.html"
+    },
+    {
+        "id": "cao-kisei-startup-wg-113",
+        "name": "規制改革推進会議 スタートアップ・イノベーション促進WG",
+        "ministry": "CAO",
+        "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/meeting.html"
+    },
+    {
+        "id": "cao-kisei-gx-subwg-114",
+        "name": "規制改革推進会議 GX・サステナビリティサブWG",
+        "ministry": "CAO",
+        "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/meeting.html"
+    },
+    {
+        "id": "fsc-honkaigi-115",
+        "name": "食品安全委員会 (本会議)",
+        "ministry": "FSC",
+        "url": "https://www.fsc.go.jp/iinkai/"
+    },
+    {
+        "id": "fsc-kikaku-116",
+        "name": "企画等専門調査会",
+        "ministry": "FSC",
+        "url": "https://www.fsc.go.jp/senmon/kikaku/"
+    },
+    {
+        "id": "fsc-tenkabutu-117",
+        "name": "添加物専門調査会",
+        "ministry": "FSC",
+        "url": "https://www.fsc.go.jp/senmon/tenkabutu/"
+    },
+    {
+        "id": "fsc-nouyaku-118",
+        "name": "農薬専門調査会",
+        "ministry": "FSC",
+        "url": "https://www.fsc.go.jp/senmon/nouyaku/"
+    },
+    {
+        "id": "npsc-teirei-119",
+        "name": "国家公安委員会 定例会議",
+        "ministry": "NPSC",
+        "url": "https://www.npsc.go.jp/activity/index.html"
+    },
+    {
+        "id": "mic-joho-tsusin-121",
+        "name": "情報通信審議会",
+        "ministry": "MIC",
+        "url": "https://www.soumu.go.jp/main_sosiki/joho_tsusin/eng/council/index.html"
+    },
+    {
+        "id": "mic-chizai-122",
+        "name": "地方財政審議会",
+        "ministry": "MIC",
+        "url": "https://www.soumu.go.jp/main_sosiki/singi/chizai/index.html"
+    },
+    {
+        "id": "moj-housei-soukai-123",
+        "name": "法制審議会 総会",
+        "ministry": "MOJ",
+        "url": "https://www.moj.go.jp/shingikai/shingikai_housei.html"
+    },
+    {
+        "id": "moj-housei-seishoku-124",
+        "name": "法制審議会 生殖補助医療関連親子法制部会",
+        "ministry": "MOJ",
+        "url": "https://www.moj.go.jp/shingikai/shingikai_seishoku.html"
+    },
+    {
+        "id": "moj-housei-kaisha-125",
+        "name": "法制審議会 会社法制（株式・株主総会等関係）部会",
+        "ministry": "MOJ",
+        "url": "https://www.moj.go.jp/shingikai/shingikai_kaisha.html"
+    },
+    {
+        "id": "moj-housei-keiji-126",
+        "name": "法制審議会 刑事法（犯罪被害者関係）部会",
+        "ministry": "MOJ",
+        "url": "https://www.moj.go.jp/shingikai/shingikai_keiji.html"
+    },
+    {
+        "id": "mofa-kaigai-kouryushingi-127",
+        "name": "海外交流審議会",
+        "ministry": "MOFA",
+        "url": "https://www.mofa.go.jp/mofaj/annai/shingi/kaigai.html"
+    },
+    {
+        "id": "mof-customs-appeal-129",
+        "name": "関税等ふん争審査会",
+        "ministry": "MOF",
+        "url": "https://www.mof.go.jp/about_mof/councils/customs_appeal/index.html"
+    },
+    {
+        "id": "mext-chukyo-130",
+        "name": "中央教育審議会",
+        "ministry": "MEXT",
+        "url": "https://www.mext.go.jp/b_menu/shingi/chukyo/index.htm"
+    },
+    {
+        "id": "mext-gijyutu-131",
+        "name": "科学技術・学術審議会",
+        "ministry": "MEXT",
+        "url": "https://www.mext.go.jp/b_menu/shingi/gijyutu/index.htm"
+    },
+    {
+        "id": "mhlw-hosho-toukei-132",
+        "name": "社会保障審議会 統計分科会",
+        "ministry": "MHLW",
+        "url": "https://www.mhlw.go.jp/stf/shingi/shingi-hosho_toukei.html"
+    },
+    {
+        "id": "mhlw-hosho-shippei-133",
+        "name": "社会保障審議会 疾病、傷害及び死因分類部会",
+        "ministry": "MHLW",
+        "url": "https://www.mhlw.go.jp/stf/shingi/shingi-hosho_shippei.html"
+    },
+    {
+        "id": "mhlw-hosho-shiinsentaku-134",
+        "name": "社会保障審議会 死因選択検討ワーキンググループ",
+        "ministry": "MHLW",
+        "url": "https://www.mhlw.go.jp/stf/shingi/shingi-hosho_shiinsentaku.html"
+    },
+    {
+        "id": "mhlw-hosho-iryou-135",
+        "name": "社会保障審議会 医療分科会",
+        "ministry": "MHLW",
+        "url": "https://www.mhlw.go.jp/stf/shingi/shingi-hosho_iryou.html"
+    },
+    {
+        "id": "mhlw-hosho-kaigo-136",
+        "name": "社会保障審議会 介護給付費分科会",
+        "ministry": "MHLW",
+        "url": "https://www.mhlw.go.jp/stf/shingi/shingi-hosho_kaigo.html"
+    },
+    {
+        "id": "mhlw-hosho-fukushi-137",
+        "name": "社会保障審議会 福祉部会",
+        "ministry": "MHLW",
+        "url": "https://www.mhlw.go.jp/stf/shingi/shingi-hosho_fukushi.html"
+    },
+    {
+        "id": "mhlw-hosho-seikatsu-138",
+        "name": "社会保障審議会 生活保護基準部会",
+        "ministry": "MHLW",
+        "url": "https://www.mhlw.go.jp/stf/shingi/shingi-hosho_seikatsu.html"
+    },
+    {
+        "id": "mhlw-hosho-jidou-139",
+        "name": "社会保障審議会 児童部会",
+        "ministry": "MHLW",
+        "url": "https://www.mhlw.go.jp/stf/shingi/shingi-hosho_jidou.html"
+    },
+    {
+        "id": "mhlw-hosho-jidoukan-140",
+        "name": "社会保障審議会 児童館のあり方に関する検討ワーキンググループ",
+        "ministry": "MHLW",
+        "url": "https://www.mhlw.go.jp/stf/shingi/shingi-hosho_jidoukan.html"
+    },
+    {
+        "id": "mhlw-hosho-shikinunyou-141",
+        "name": "社会保障審議会 資金運用部会",
+        "ministry": "MHLW",
+        "url": "https://www.mhlw.go.jp/stf/shingi/shingi-hosho_shikinunyou.html"
+    },
+    {
+        "id": "mhlw-hosho-kaigohoken-142",
+        "name": "社会保障審議会 介護保険部会",
+        "ministry": "MHLW",
+        "url": "https://www.mhlw.go.jp/stf/shingi/shingi-hosho_kaigohoken.html"
+    },
+    {
+        "id": "mhlw-hosho-shouni-143",
+        "name": "社会保障審議会 小児慢性特定疾病対策部会",
+        "ministry": "MHLW",
+        "url": "https://www.mhlw.go.jp/stf/shingi/shingi-hosho_shouni.html"
+    },
+    {
+        "id": "mhlw-kousei-kansenshou-144",
+        "name": "厚生科学審議会 感染症部会",
+        "ministry": "MHLW",
+        "url": "https://www.mhlw.go.jp/stf/shingi/shingi-kousei_kansenshou.html"
+    },
+    {
+        "id": "mhlw-kousei-influ-145",
+        "name": "厚生科学審議会 新型インフルエンザ対策に関する小委員会",
+        "ministry": "MHLW",
+        "url": "https://www.mhlw.go.jp/stf/shingi/shingi-kousei_influ.html"
+    },
+    {
+        "id": "mhlw-rousei-roudoujouken-146",
+        "name": "労働政策審議会 労働条件分科会",
+        "ministry": "MHLW",
+        "url": "https://www.mhlw.go.jp/stf/shingi/shingi-rousei_roudoujouken.html"
+    },
+    {
+        "id": "mhlw-rousei-anzeneisei-147",
+        "name": "労働政策審議会 安全衛生分科会",
+        "ministry": "MHLW",
+        "url": "https://www.mhlw.go.jp/stf/shingi/shingi-rousei_anzeneisei.html"
+    },
+    {
+        "id": "meti-sankoushin-148",
+        "name": "産業構造審議会",
+        "ministry": "METI",
+        "url": "https://www.meti.go.jp/shingikai/sankoushin/index.html"
+    },
+    {
+        "id": "meti-ax-skill-wg-149",
+        "name": "AX時代におけるスキルのあり方検討ワーキンググループ",
+        "ministry": "METI",
+        "url": "https://www.meti.go.jp/shingikai/mono_info_service/society_digital/ax_skill/index.html"
+    },
+    {
+        "id": "mlit-kokudo-150",
+        "name": "国土審議会",
+        "ministry": "MLIT",
+        "url": "https://www.mlit.go.jp/policy/shingikai/s01_kokudo01.html"
+    },
+    {
+        "id": "mlit-koutsu-151",
+        "name": "交通政策審議会",
+        "ministry": "MLIT",
+        "url": "https://www.mlit.go.jp/policy/shingikai/s30_koutsu01.html"
+    },
+    {
+        "id": "mlit-unyu-152",
+        "name": "運輸審議会",
+        "ministry": "MLIT",
+        "url": "https://www.mlit.go.jp/policy/shingikai/s40_unyu01.html"
+    },
+    {
+        "id": "mlit-chuou-kensetsu-153",
+        "name": "中央建設業審議会",
+        "ministry": "MLIT",
+        "url": "https://www.mlit.go.jp/policy/shingikai/s50_chuou01.html"
+    },
+    {
+        "id": "moe-chuo-kankyo-154",
+        "name": "中央環境審議会",
+        "ministry": "MOE",
+        "url": "https://www.env.go.jp/council/index.html"
+    },
+    {
+        "id": "mod-shisetsu-155",
+        "name": "防衛施設中央審議会",
+        "ministry": "MOD",
+        "url": "https://www.mod.go.jp/j/approach/agenda/meeting/shisetsu/index.html"
+    }
 ]
 
 def load_rules():

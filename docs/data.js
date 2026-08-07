@@ -27,6 +27,8 @@ const MINISTRIES = {
   FSA: { name: '金融庁', kanji: '金融庁', code: 'FSA', color: 'var(--color-fsa)', officialUrl: 'https://www.fsa.go.jp' },
   CAA: { name: '消費者庁', kanji: '消費者庁', code: 'CAA', color: 'var(--color-caa)', officialUrl: 'https://www.caa.go.jp' },
   PPC: { name: '個人情報保護委員会', kanji: '個人情報保護委員会', code: 'PPC', color: 'var(--color-ppc)', officialUrl: 'https://www.ppc.go.jp' },
+  FSC: { name: '食品安全委員会', kanji: '食品安全委員会', code: 'FSC', color: 'var(--color-fsc)', officialUrl: 'https://www.fsc.go.jp' },
+  NPSC: { name: '国家公安委員会', kanji: '国家公安委員会', code: 'NPSC', color: 'var(--color-npsc)', officialUrl: 'https://www.npsc.go.jp' },
   NRA: { name: '原子力規制委員会', kanji: '原子力規制委員会', code: 'NRA', color: 'var(--color-nra)', officialUrl: 'https://www.nra.go.jp' }
 };
 
@@ -1569,6 +1571,524 @@ const COUNCILS = [
     officialUrl: 'https://www.cas.go.jp/jp/seisaku/linear/index.html',
     isWatched: true,
     trackedSince: '2017/04/26'
+  }
+,
+  {
+    id: 'cas-atarashii-sihon-107',
+    name: '新しい資本主義実現会議',
+    ministry: 'CAS',
+    category: 'COUNCIL',
+    pastYearCount: 1,
+    description: '新しい資本主義実現会議の基本方針、施策の推進状況および関係省庁間の連携・個別課題について審議する会議。',
+    officialUrl: 'https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/index.html',
+    isWatched: true,
+    trackedSince: '2025/10/03'
+  },
+  {
+    id: 'cas-roumuhi-tenka-108',
+    name: '労務費の適切な転嫁のための関係省庁連絡会議',
+    ministry: 'CAS',
+    category: 'LIAISON',
+    pastYearCount: 1,
+    description: '労務費の適切な転嫁のための関係省庁連絡会議の基本方針、施策の推進状況および関係省庁間の連携・個別課題について審議する会議。',
+    officialUrl: 'https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/wgkaisai/index.html',
+    isWatched: true,
+    trackedSince: '2025/06/30'
+  },
+  {
+    id: 'cao-kisei-chiiki-wg-109',
+    name: '規制改革推進会議 地域活性化・人手不足対応WG',
+    ministry: 'CAO',
+    category: 'WORKING_GROUP',
+    pastYearCount: 1,
+    description: '規制改革推進会議 地域活性化・人手不足対応WGの基本方針、施策の推進状況および関係省庁間の連携・個別課題について審議する会議。',
+    officialUrl: 'https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/meeting.html',
+    isWatched: true,
+    trackedSince: '2026/05/19'
+  },
+  {
+    id: 'cao-kisei-iryou-wg-110',
+    name: '規制改革推進会議 健康・医療・介護WG',
+    ministry: 'CAO',
+    category: 'WORKING_GROUP',
+    pastYearCount: 1,
+    description: '規制改革推進会議 健康・医療・介護WGの基本方針、施策の推進状況および関係省庁間の連携・個別課題について審議する会議。',
+    officialUrl: 'https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/meeting.html#medical_2510',
+    isWatched: true,
+    trackedSince: '2026/05/15'
+  },
+  {
+    id: 'cao-kisei-hatarakikata-wg-111',
+    name: '規制改革推進会議 働き方・人への投資WG',
+    ministry: 'CAO',
+    category: 'WORKING_GROUP',
+    pastYearCount: 1,
+    description: '規制改革推進会議 働き方・人への投資WGの基本方針、施策の推進状況および関係省庁間の連携・個別課題について審議する会議。',
+    officialUrl: 'https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/meeting.html#medical_2510',
+    isWatched: true,
+    trackedSince: '2026/04/07'
+  },
+  {
+    id: 'cao-kisei-digital-ai-wg-112',
+    name: '規制改革推進会議 デジタル・AI WG',
+    ministry: 'CAO',
+    category: 'WORKING_GROUP',
+    pastYearCount: 1,
+    description: '規制改革推進会議 デジタル・AI WGの基本方針、施策の推進状況および関係省庁間の連携・個別課題について審議する会議。',
+    officialUrl: 'https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/meeting.html',
+    isWatched: true,
+    trackedSince: '2026/04/30'
+  },
+  {
+    id: 'cao-kisei-startup-wg-113',
+    name: '規制改革推進会議 スタートアップ・イノベーション促進WG',
+    ministry: 'CAO',
+    category: 'WORKING_GROUP',
+    pastYearCount: 1,
+    description: '規制改革推進会議 スタートアップ・イノベーション促進WGの基本方針、施策の推進状況および関係省庁間の連携・個別課題について審議する会議。',
+    officialUrl: 'https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/meeting.html',
+    isWatched: true,
+    trackedSince: '2025/05/08'
+  },
+  {
+    id: 'cao-kisei-gx-subwg-114',
+    name: '規制改革推進会議 GX・サステナビリティサブWG',
+    ministry: 'CAO',
+    category: 'WORKING_GROUP',
+    pastYearCount: 1,
+    description: '規制改革推進会議 GX・サステナビリティサブWGの基本方針、施策の推進状況および関係省庁間の連携・個別課題について審議する会議。',
+    officialUrl: 'https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/meeting.html',
+    isWatched: true,
+    trackedSince: '2025/03/15'
+  },
+  {
+    id: 'fsc-honkaigi-115',
+    name: '食品安全委員会 (本会議)',
+    ministry: 'FSC',
+    category: 'COMMITTEE',
+    pastYearCount: 1,
+    description: '食品安全委員会 (本会議)の基本方針、施策の推進状況および関係省庁間の連携・個別課題について審議する会議。',
+    officialUrl: 'https://www.fsc.go.jp/iinkai/',
+    isWatched: true,
+    trackedSince: '2026/01/01'
+  },
+  {
+    id: 'fsc-kikaku-116',
+    name: '企画等専門調査会',
+    ministry: 'FSC',
+    category: 'COUNCIL',
+    pastYearCount: 1,
+    description: '企画等専門調査会の基本方針、施策の推進状況および関係省庁間の連携・個別課題について審議する会議。',
+    officialUrl: 'https://www.fsc.go.jp/senmon/kikaku/',
+    isWatched: true,
+    trackedSince: '2026/01/01'
+  },
+  {
+    id: 'fsc-tenkabutu-117',
+    name: '添加物専門調査会',
+    ministry: 'FSC',
+    category: 'COUNCIL',
+    pastYearCount: 1,
+    description: '添加物専門調査会の基本方針、施策の推進状況および関係省庁間の連携・個別課題について審議する会議。',
+    officialUrl: 'https://www.fsc.go.jp/senmon/tenkabutu/',
+    isWatched: true,
+    trackedSince: '2026/01/15'
+  },
+  {
+    id: 'fsc-nouyaku-118',
+    name: '農薬専門調査会',
+    ministry: 'FSC',
+    category: 'COUNCIL',
+    pastYearCount: 1,
+    description: '農薬専門調査会の基本方針、施策の推進状況および関係省庁間の連携・個別課題について審議する会議。',
+    officialUrl: 'https://www.fsc.go.jp/senmon/nouyaku/',
+    isWatched: true,
+    trackedSince: '2026/02/10'
+  },
+  {
+    id: 'npsc-teirei-119',
+    name: '国家公安委員会 定例会議',
+    ministry: 'NPSC',
+    category: 'COMMITTEE',
+    pastYearCount: 1,
+    description: '国家公安委員会 定例会議の基本方針、施策の推進状況および関係省庁間の連携・個別課題について審議する会議。',
+    officialUrl: 'https://www.npsc.go.jp/activity/index.html',
+    isWatched: true,
+    trackedSince: '2026/08/06'
+  },
+  {
+    id: 'mic-joho-tsusin-121',
+    name: '情報通信審議会',
+    ministry: 'MIC',
+    category: 'COUNCIL',
+    pastYearCount: 1,
+    description: '情報通信審議会の基本方針、施策の推進状況および関係省庁間の連携・個別課題について審議する会議。',
+    officialUrl: 'https://www.soumu.go.jp/main_sosiki/joho_tsusin/eng/council/index.html',
+    isWatched: true,
+    trackedSince: '2026/07/20'
+  },
+  {
+    id: 'mic-chizai-122',
+    name: '地方財政審議会',
+    ministry: 'MIC',
+    category: 'COUNCIL',
+    pastYearCount: 1,
+    description: '地方財政審議会の基本方針、施策の推進状況および関係省庁間の連携・個別課題について審議する会議。',
+    officialUrl: 'https://www.soumu.go.jp/main_sosiki/singi/chizai/index.html',
+    isWatched: true,
+    trackedSince: '2026/07/15'
+  },
+  {
+    id: 'moj-housei-soukai-123',
+    name: '法制審議会 総会',
+    ministry: 'MOJ',
+    category: 'COUNCIL',
+    pastYearCount: 1,
+    description: '法制審議会 総会の基本方針、施策の推進状況および関係省庁間の連携・個別課題について審議する会議。',
+    officialUrl: 'https://www.moj.go.jp/shingikai/shingikai_housei.html',
+    isWatched: true,
+    trackedSince: '2026/07/10'
+  },
+  {
+    id: 'moj-housei-seishoku-124',
+    name: '法制審議会 生殖補助医療関連親子法制部会',
+    ministry: 'MOJ',
+    category: 'SECTION',
+    pastYearCount: 1,
+    description: '法制審議会 生殖補助医療関連親子法制部会の基本方針、施策の推進状況および関係省庁間の連携・個別課題について審議する会議。',
+    officialUrl: 'https://www.moj.go.jp/shingikai/shingikai_seishoku.html',
+    isWatched: true,
+    trackedSince: '2026/06/15'
+  },
+  {
+    id: 'moj-housei-kaisha-125',
+    name: '法制審議会 会社法制（株式・株主総会等関係）部会',
+    ministry: 'MOJ',
+    category: 'SECTION',
+    pastYearCount: 1,
+    description: '法制審議会 会社法制（株式・株主総会等関係）部会の基本方針、施策の推進状況および関係省庁間の連携・個別課題について審議する会議。',
+    officialUrl: 'https://www.moj.go.jp/shingikai/shingikai_kaisha.html',
+    isWatched: true,
+    trackedSince: '2026/06/20'
+  },
+  {
+    id: 'moj-housei-keiji-126',
+    name: '法制審議会 刑事法（犯罪被害者関係）部会',
+    ministry: 'MOJ',
+    category: 'SECTION',
+    pastYearCount: 1,
+    description: '法制審議会 刑事法（犯罪被害者関係）部会の基本方針、施策の推進状況および関係省庁間の連携・個別課題について審議する会議。',
+    officialUrl: 'https://www.moj.go.jp/shingikai/shingikai_keiji.html',
+    isWatched: true,
+    trackedSince: '2026/07/05'
+  },
+  {
+    id: 'mofa-kaigai-kouryushingi-127',
+    name: '海外交流審議会',
+    ministry: 'MOFA',
+    category: 'COUNCIL',
+    pastYearCount: 1,
+    description: '海外交流審議会の基本方針、施策の推進状況および関係省庁間の連携・個別課題について審議する会議。',
+    officialUrl: 'https://www.mofa.go.jp/mofaj/annai/shingi/kaigai.html',
+    isWatched: true,
+    trackedSince: '2026/05/20'
+  },
+  {
+    id: 'mof-customs-appeal-129',
+    name: '関税等ふん争審査会',
+    ministry: 'MOF',
+    category: 'COUNCIL',
+    pastYearCount: 1,
+    description: '関税等ふん争審査会の基本方針、施策の推進状況および関係省庁間の連携・個別課題について審議する会議。',
+    officialUrl: 'https://www.mof.go.jp/about_mof/councils/customs_appeal/index.html',
+    isWatched: true,
+    trackedSince: '2026/03/12'
+  },
+  {
+    id: 'mext-chukyo-130',
+    name: '中央教育審議会',
+    ministry: 'MEXT',
+    category: 'COUNCIL',
+    pastYearCount: 1,
+    description: '中央教育審議会の基本方針、施策の推進状況および関係省庁間の連携・個別課題について審議する会議。',
+    officialUrl: 'https://www.mext.go.jp/b_menu/shingi/chukyo/index.htm',
+    isWatched: true,
+    trackedSince: '2026/07/22'
+  },
+  {
+    id: 'mext-gijyutu-131',
+    name: '科学技術・学術審議会',
+    ministry: 'MEXT',
+    category: 'COUNCIL',
+    pastYearCount: 1,
+    description: '科学技術・学術審議会の基本方針、施策の推進状況および関係省庁間の連携・個別課題について審議する会議。',
+    officialUrl: 'https://www.mext.go.jp/b_menu/shingi/gijyutu/index.htm',
+    isWatched: true,
+    trackedSince: '2026/06/30'
+  },
+  {
+    id: 'mhlw-hosho-toukei-132',
+    name: '社会保障審議会 統計分科会',
+    ministry: 'MHLW',
+    category: 'SUBCOMMITTEE',
+    pastYearCount: 1,
+    description: '社会保障審議会 統計分科会の基本方針、施策の推進状況および関係省庁間の連携・個別課題について審議する会議。',
+    officialUrl: 'https://www.mhlw.go.jp/stf/shingi/shingi-hosho_toukei.html',
+    isWatched: true,
+    trackedSince: '2026/06/15'
+  },
+  {
+    id: 'mhlw-hosho-shippei-133',
+    name: '社会保障審議会 疾病、傷害及び死因分類部会',
+    ministry: 'MHLW',
+    category: 'SECTION',
+    pastYearCount: 1,
+    description: '社会保障審議会 疾病、傷害及び死因分類部会の基本方針、施策の推進状況および関係省庁間の連携・個別課題について審議する会議。',
+    officialUrl: 'https://www.mhlw.go.jp/stf/shingi/shingi-hosho_shippei.html',
+    isWatched: true,
+    trackedSince: '2026/05/10'
+  },
+  {
+    id: 'mhlw-hosho-shiinsentaku-134',
+    name: '社会保障審議会 死因選択検討ワーキンググループ',
+    ministry: 'MHLW',
+    category: 'WORKING_GROUP',
+    pastYearCount: 1,
+    description: '社会保障審議会 死因選択検討ワーキンググループの基本方針、施策の推進状況および関係省庁間の連携・個別課題について審議する会議。',
+    officialUrl: 'https://www.mhlw.go.jp/stf/shingi/shingi-hosho_shiinsentaku.html',
+    isWatched: true,
+    trackedSince: '2026/04/20'
+  },
+  {
+    id: 'mhlw-hosho-iryou-135',
+    name: '社会保障審議会 医療分科会',
+    ministry: 'MHLW',
+    category: 'SUBCOMMITTEE',
+    pastYearCount: 1,
+    description: '社会保障審議会 医療分科会の基本方針、施策の推進状況および関係省庁間の連携・個別課題について審議する会議。',
+    officialUrl: 'https://www.mhlw.go.jp/stf/shingi/shingi-hosho_iryou.html',
+    isWatched: true,
+    trackedSince: '2026/07/10'
+  },
+  {
+    id: 'mhlw-hosho-kaigo-136',
+    name: '社会保障審議会 介護給付費分科会',
+    ministry: 'MHLW',
+    category: 'SUBCOMMITTEE',
+    pastYearCount: 1,
+    description: '社会保障審議会 介護給付費分科会の基本方針、施策の推進状況および関係省庁間の連携・個別課題について審議する会議。',
+    officialUrl: 'https://www.mhlw.go.jp/stf/shingi/shingi-hosho_kaigo.html',
+    isWatched: true,
+    trackedSince: '2026/07/18'
+  },
+  {
+    id: 'mhlw-hosho-fukushi-137',
+    name: '社会保障審議会 福祉部会',
+    ministry: 'MHLW',
+    category: 'SECTION',
+    pastYearCount: 1,
+    description: '社会保障審議会 福祉部会の基本方針、施策の推進状況および関係省庁間の連携・個別課題について審議する会議。',
+    officialUrl: 'https://www.mhlw.go.jp/stf/shingi/shingi-hosho_fukushi.html',
+    isWatched: true,
+    trackedSince: '2026/06/12'
+  },
+  {
+    id: 'mhlw-hosho-seikatsu-138',
+    name: '社会保障審議会 生活保護基準部会',
+    ministry: 'MHLW',
+    category: 'SECTION',
+    pastYearCount: 1,
+    description: '社会保障審議会 生活保護基準部会の基本方針、施策の推進状況および関係省庁間の連携・個別課題について審議する会議。',
+    officialUrl: 'https://www.mhlw.go.jp/stf/shingi/shingi-hosho_seikatsu.html',
+    isWatched: true,
+    trackedSince: '2026/07/31'
+  },
+  {
+    id: 'mhlw-hosho-jidou-139',
+    name: '社会保障審議会 児童部会',
+    ministry: 'MHLW',
+    category: 'SECTION',
+    pastYearCount: 1,
+    description: '社会保障審議会 児童部会の基本方針、施策の推進状況および関係省庁間の連携・個別課題について審議する会議。',
+    officialUrl: 'https://www.mhlw.go.jp/stf/shingi/shingi-hosho_jidou.html',
+    isWatched: true,
+    trackedSince: '2026/07/15'
+  },
+  {
+    id: 'mhlw-hosho-jidoukan-140',
+    name: '社会保障審議会 児童館のあり方に関する検討ワーキンググループ',
+    ministry: 'MHLW',
+    category: 'WORKING_GROUP',
+    pastYearCount: 1,
+    description: '社会保障審議会 児童館のあり方に関する検討ワーキンググループの基本方針、施策の推進状況および関係省庁間の連携・個別課題について審議する会議。',
+    officialUrl: 'https://www.mhlw.go.jp/stf/shingi/shingi-hosho_jidoukan.html',
+    isWatched: true,
+    trackedSince: '2026/03/25'
+  },
+  {
+    id: 'mhlw-hosho-shikinunyou-141',
+    name: '社会保障審議会 資金運用部会',
+    ministry: 'MHLW',
+    category: 'SECTION',
+    pastYearCount: 1,
+    description: '社会保障審議会 資金運用部会の基本方針、施策の推進状況および関係省庁間の連携・個別課題について審議する会議。',
+    officialUrl: 'https://www.mhlw.go.jp/stf/shingi/shingi-hosho_shikinunyou.html',
+    isWatched: true,
+    trackedSince: '2026/07/27'
+  },
+  {
+    id: 'mhlw-hosho-kaigohoken-142',
+    name: '社会保障審議会 介護保険部会',
+    ministry: 'MHLW',
+    category: 'SECTION',
+    pastYearCount: 1,
+    description: '社会保障審議会 介護保険部会の基本方針、施策の推進状況および関係省庁間の連携・個別課題について審議する会議。',
+    officialUrl: 'https://www.mhlw.go.jp/stf/shingi/shingi-hosho_kaigohoken.html',
+    isWatched: true,
+    trackedSince: '2026/07/24'
+  },
+  {
+    id: 'mhlw-hosho-shouni-143',
+    name: '社会保障審議会 小児慢性特定疾病対策部会',
+    ministry: 'MHLW',
+    category: 'SECTION',
+    pastYearCount: 1,
+    description: '社会保障審議会 小児慢性特定疾病対策部会の基本方針、施策の推進状況および関係省庁間の連携・個別課題について審議する会議。',
+    officialUrl: 'https://www.mhlw.go.jp/stf/shingi/shingi-hosho_shouni.html',
+    isWatched: true,
+    trackedSince: '2026/07/24'
+  },
+  {
+    id: 'mhlw-kousei-kansenshou-144',
+    name: '厚生科学審議会 感染症部会',
+    ministry: 'MHLW',
+    category: 'SECTION',
+    pastYearCount: 1,
+    description: '厚生科学審議会 感染症部会の基本方針、施策の推進状況および関係省庁間の連携・個別課題について審議する会議。',
+    officialUrl: 'https://www.mhlw.go.jp/stf/shingi/shingi-kousei_kansenshou.html',
+    isWatched: true,
+    trackedSince: '2026/07/14'
+  },
+  {
+    id: 'mhlw-kousei-influ-145',
+    name: '厚生科学審議会 新型インフルエンザ対策に関する小委員会',
+    ministry: 'MHLW',
+    category: 'SUBCOMMITTEE',
+    pastYearCount: 1,
+    description: '厚生科学審議会 新型インフルエンザ対策に関する小委員会の基本方針、施策の推進状況および関係省庁間の連携・個別課題について審議する会議。',
+    officialUrl: 'https://www.mhlw.go.jp/stf/shingi/shingi-kousei_influ.html',
+    isWatched: true,
+    trackedSince: '2026/02/18'
+  },
+  {
+    id: 'mhlw-rousei-roudoujouken-146',
+    name: '労働政策審議会 労働条件分科会',
+    ministry: 'MHLW',
+    category: 'SUBCOMMITTEE',
+    pastYearCount: 1,
+    description: '労働政策審議会 労働条件分科会の基本方針、施策の推進状況および関係省庁間の連携・個別課題について審議する会議。',
+    officialUrl: 'https://www.mhlw.go.jp/stf/shingi/shingi-rousei_roudoujouken.html',
+    isWatched: true,
+    trackedSince: '2026/07/28'
+  },
+  {
+    id: 'mhlw-rousei-anzeneisei-147',
+    name: '労働政策審議会 安全衛生分科会',
+    ministry: 'MHLW',
+    category: 'SUBCOMMITTEE',
+    pastYearCount: 1,
+    description: '労働政策審議会 安全衛生分科会の基本方針、施策の推進状況および関係省庁間の連携・個別課題について審議する会議。',
+    officialUrl: 'https://www.mhlw.go.jp/stf/shingi/shingi-rousei_anzeneisei.html',
+    isWatched: true,
+    trackedSince: '2026/06/22'
+  },
+  {
+    id: 'meti-sankoushin-148',
+    name: '産業構造審議会',
+    ministry: 'METI',
+    category: 'COUNCIL',
+    pastYearCount: 1,
+    description: '産業構造審議会の基本方針、施策の推進状況および関係省庁間の連携・個別課題について審議する会議。',
+    officialUrl: 'https://www.meti.go.jp/shingikai/sankoushin/index.html',
+    isWatched: true,
+    trackedSince: '2026/07/25'
+  },
+  {
+    id: 'meti-ax-skill-wg-149',
+    name: 'AX時代におけるスキルのあり方検討ワーキンググループ',
+    ministry: 'METI',
+    category: 'WORKING_GROUP',
+    pastYearCount: 1,
+    description: 'AX時代におけるスキルのあり方検討ワーキンググループの基本方針、施策の推進状況および関係省庁間の連携・個別課題について審議する会議。',
+    officialUrl: 'https://www.meti.go.jp/shingikai/mono_info_service/society_digital/ax_skill/index.html',
+    isWatched: true,
+    trackedSince: '2026/07/27'
+  },
+  {
+    id: 'mlit-kokudo-150',
+    name: '国土審議会',
+    ministry: 'MLIT',
+    category: 'COUNCIL',
+    pastYearCount: 1,
+    description: '国土審議会の基本方針、施策の推進状況および関係省庁間の連携・個別課題について審議する会議。',
+    officialUrl: 'https://www.mlit.go.jp/policy/shingikai/s01_kokudo01.html',
+    isWatched: true,
+    trackedSince: '2026/07/10'
+  },
+  {
+    id: 'mlit-koutsu-151',
+    name: '交通政策審議会',
+    ministry: 'MLIT',
+    category: 'COUNCIL',
+    pastYearCount: 1,
+    description: '交通政策審議会の基本方針、施策の推進状況および関係省庁間の連携・個別課題について審議する会議。',
+    officialUrl: 'https://www.mlit.go.jp/policy/shingikai/s30_koutsu01.html',
+    isWatched: true,
+    trackedSince: '2026/07/20'
+  },
+  {
+    id: 'mlit-unyu-152',
+    name: '運輸審議会',
+    ministry: 'MLIT',
+    category: 'COUNCIL',
+    pastYearCount: 1,
+    description: '運輸審議会の基本方針、施策の推進状況および関係省庁間の連携・個別課題について審議する会議。',
+    officialUrl: 'https://www.mlit.go.jp/policy/shingikai/s40_unyu01.html',
+    isWatched: true,
+    trackedSince: '2026/06/18'
+  },
+  {
+    id: 'mlit-chuou-kensetsu-153',
+    name: '中央建設業審議会',
+    ministry: 'MLIT',
+    category: 'COUNCIL',
+    pastYearCount: 1,
+    description: '中央建設業審議会の基本方針、施策の推進状況および関係省庁間の連携・個別課題について審議する会議。',
+    officialUrl: 'https://www.mlit.go.jp/policy/shingikai/s50_chuou01.html',
+    isWatched: true,
+    trackedSince: '2026/05/25'
+  },
+  {
+    id: 'moe-chuo-kankyo-154',
+    name: '中央環境審議会',
+    ministry: 'MOE',
+    category: 'COUNCIL',
+    pastYearCount: 1,
+    description: '中央環境審議会の基本方針、施策の推進状況および関係省庁間の連携・個別課題について審議する会議。',
+    officialUrl: 'https://www.env.go.jp/council/index.html',
+    isWatched: true,
+    trackedSince: '2026/07/22'
+  },
+  {
+    id: 'mod-shisetsu-155',
+    name: '防衛施設中央審議会',
+    ministry: 'MOD',
+    category: 'COUNCIL',
+    pastYearCount: 1,
+    description: '防衛施設中央審議会の基本方針、施策の推進状況および関係省庁間の連携・個別課題について審議する会議。',
+    officialUrl: 'https://www.mod.go.jp/j/approach/agenda/meeting/shisetsu/index.html',
+    isWatched: true,
+    trackedSince: '2026/04/10'
   }
 ];
 
@@ -7341,6 +7861,1027 @@ const MEETINGS = [
     tags: ['中央教育審議会 ', '政策会議'],
     officialUrl: 'https://www.mext.go.jp/b_menu/shingi/chukyo/chukyo0/index.htm',
     hasMinutes: true,
+    docCount: 1
+  }
+,
+  {
+    id: 'meet-2025-1003-cas-atarashii-sihon-107',
+    councilId: 'cas-atarashii-sihon-107',
+    councilName: '新しい資本主義実現会議',
+    ministry: 'CAS',
+    category: 'COUNCIL',
+    title: '新しい資本主義実現会議（2025/10/03開催）',
+    date: '2025/10/03',
+    updatedAt: '2025/10/03 17:00',
+    location: '各省庁本府庁舎 / オンライン会議',
+    summary: '新しい資本主義実現会議の開催。主要議題の推進状況および関係省庁間の連携について協議。',
+    agenda: ['新しい資本主義実現会議における主要施策の推進状況について', '今後の対応方針および関係省庁間連携'],
+    materials: [
+      { name: '新しい資本主義実現会議 公式掲載資料・ページ (HTML)', type: 'HTML', size: '45 KB', url: 'https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/index.html', isMinutes: false }
+    ],
+    tags: ['新しい資本主', 'CAS', '政策会議'],
+    officialUrl: 'https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai37/gijisidai.html',
+    hasMinutes: false,
+    docCount: 1
+  },
+  {
+    id: 'meet-2025-0630-cas-roumuhi-tenka-108',
+    councilId: 'cas-roumuhi-tenka-108',
+    councilName: '労務費の適切な転嫁のための関係省庁連絡会議',
+    ministry: 'CAS',
+    category: 'LIAISON',
+    title: '労務費の適切な転嫁のための関係省庁連絡会議（2025/06/30開催）',
+    date: '2025/06/30',
+    updatedAt: '2025/06/30 17:00',
+    location: '各省庁本府庁舎 / オンライン会議',
+    summary: '労務費の適切な転嫁のための関係省庁連絡会議の開催。主要議題の推進状況および関係省庁間の連携について協議。',
+    agenda: ['労務費の適切な転嫁のための関係省庁連絡会議における主要施策の推進状況について', '今後の対応方針および関係省庁間連携'],
+    materials: [
+      { name: '労務費の適切な転嫁のための関係省庁連絡会議 公式掲載資料・ページ (HTML)', type: 'HTML', size: '45 KB', url: 'https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/index.html', isMinutes: false }
+    ],
+    tags: ['労務費の適切', 'CAS', '政策会議'],
+    officialUrl: 'https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/wgkaisai/roumuhitenka_dai5/index.html',
+    hasMinutes: false,
+    docCount: 1
+  },
+  {
+    id: 'meet-2026-0519-cao-kisei-chiiki-wg-109',
+    councilId: 'cao-kisei-chiiki-wg-109',
+    councilName: '規制改革推進会議 地域活性化・人手不足対応WG',
+    ministry: 'CAO',
+    category: 'WORKING_GROUP',
+    title: '規制改革推進会議 地域活性化・人手不足対応WG（2026/05/19開催）',
+    date: '2026/05/19',
+    updatedAt: '2026/05/19 17:00',
+    location: '各省庁本府庁舎 / オンライン会議',
+    summary: '規制改革推進会議 地域活性化・人手不足対応WGの開催。主要議題の推進状況および関係省庁間の連携について協議。',
+    agenda: ['規制改革推進会議 地域活性化・人手不足対応WGにおける主要施策の推進状況について', '今後の対応方針および関係省庁間連携'],
+    materials: [
+      { name: '規制改革推進会議 地域活性化・人手不足対応WG 公式掲載資料・ページ (HTML)', type: 'HTML', size: '45 KB', url: 'https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/meeting.html', isMinutes: false }
+    ],
+    tags: ['規制改革推進', 'CAO', '政策会議'],
+    officialUrl: 'https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_01local/260519/local11_agenda.html',
+    hasMinutes: false,
+    docCount: 1
+  },
+  {
+    id: 'meet-2026-0515-cao-kisei-iryou-wg-110',
+    councilId: 'cao-kisei-iryou-wg-110',
+    councilName: '規制改革推進会議 健康・医療・介護WG',
+    ministry: 'CAO',
+    category: 'WORKING_GROUP',
+    title: '規制改革推進会議 健康・医療・介護WG（2026/05/15開催）',
+    date: '2026/05/15',
+    updatedAt: '2026/05/15 17:00',
+    location: '各省庁本府庁舎 / オンライン会議',
+    summary: '規制改革推進会議 健康・医療・介護WGの開催。主要議題の推進状況および関係省庁間の連携について協議。',
+    agenda: ['規制改革推進会議 健康・医療・介護WGにおける主要施策の推進状況について', '今後の対応方針および関係省庁間連携'],
+    materials: [
+      { name: '規制改革推進会議 健康・医療・介護WG 公式掲載資料・ページ (HTML)', type: 'HTML', size: '45 KB', url: 'https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/meeting.html', isMinutes: false }
+    ],
+    tags: ['規制改革推進', 'CAO', '政策会議'],
+    officialUrl: 'https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_02medical/250501/medical05_agenda.html',
+    hasMinutes: false,
+    docCount: 1
+  },
+  {
+    id: 'meet-2026-0407-cao-kisei-hatarakikata-wg-111',
+    councilId: 'cao-kisei-hatarakikata-wg-111',
+    councilName: '規制改革推進会議 働き方・人への投資WG',
+    ministry: 'CAO',
+    category: 'WORKING_GROUP',
+    title: '規制改革推進会議 働き方・人への投資WG（2026/04/07開催）',
+    date: '2026/04/07',
+    updatedAt: '2026/04/07 17:00',
+    location: '各省庁本府庁舎 / オンライン会議',
+    summary: '規制改革推進会議 働き方・人への投資WGの開催。主要議題の推進状況および関係省庁間の連携について協議。',
+    agenda: ['規制改革推進会議 働き方・人への投資WGにおける主要施策の推進状況について', '今後の対応方針および関係省庁間連携'],
+    materials: [
+      { name: '規制改革推進会議 働き方・人への投資WG 公式掲載資料・ページ (HTML)', type: 'HTML', size: '45 KB', url: 'https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/meeting.html', isMinutes: false }
+    ],
+    tags: ['規制改革推進', 'CAO', '政策会議'],
+    officialUrl: 'https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/meeting.html',
+    hasMinutes: false,
+    docCount: 1
+  },
+  {
+    id: 'meet-2026-0430-cao-kisei-digital-ai-wg-112',
+    councilId: 'cao-kisei-digital-ai-wg-112',
+    councilName: '規制改革推進会議 デジタル・AI WG',
+    ministry: 'CAO',
+    category: 'WORKING_GROUP',
+    title: '規制改革推進会議 デジタル・AI WG（2026/04/30開催）',
+    date: '2026/04/30',
+    updatedAt: '2026/04/30 17:00',
+    location: '各省庁本府庁舎 / オンライン会議',
+    summary: '規制改革推進会議 デジタル・AI WGの開催。主要議題の推進状況および関係省庁間の連携について協議。',
+    agenda: ['規制改革推進会議 デジタル・AI WGにおける主要施策の推進状況について', '今後の対応方針および関係省庁間連携'],
+    materials: [
+      { name: '規制改革推進会議 デジタル・AI WG 公式掲載資料・ページ (HTML)', type: 'HTML', size: '45 KB', url: 'https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/meeting.html', isMinutes: false }
+    ],
+    tags: ['規制改革推進', 'CAO', '政策会議'],
+    officialUrl: 'https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/meeting.html',
+    hasMinutes: false,
+    docCount: 1
+  },
+  {
+    id: 'meet-2025-0508-cao-kisei-startup-wg-113',
+    councilId: 'cao-kisei-startup-wg-113',
+    councilName: '規制改革推進会議 スタートアップ・イノベーション促進WG',
+    ministry: 'CAO',
+    category: 'WORKING_GROUP',
+    title: '規制改革推進会議 スタートアップ・イノベーション促進WG（2025/05/08開催）',
+    date: '2025/05/08',
+    updatedAt: '2025/05/08 17:00',
+    location: '各省庁本府庁舎 / オンライン会議',
+    summary: '規制改革推進会議 スタートアップ・イノベーション促進WGの開催。主要議題の推進状況および関係省庁間の連携について協議。',
+    agenda: ['規制改革推進会議 スタートアップ・イノベーション促進WGにおける主要施策の推進状況について', '今後の対応方針および関係省庁間連携'],
+    materials: [
+      { name: '規制改革推進会議 スタートアップ・イノベーション促進WG 公式掲載資料・ページ (HTML)', type: 'HTML', size: '45 KB', url: 'https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/meeting.html', isMinutes: false }
+    ],
+    tags: ['規制改革推進', 'CAO', '政策会議'],
+    officialUrl: 'https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/meeting.html',
+    hasMinutes: false,
+    docCount: 1
+  },
+  {
+    id: 'meet-2025-0315-cao-kisei-gx-subwg-114',
+    councilId: 'cao-kisei-gx-subwg-114',
+    councilName: '規制改革推進会議 GX・サステナビリティサブWG',
+    ministry: 'CAO',
+    category: 'WORKING_GROUP',
+    title: '規制改革推進会議 GX・サステナビリティサブWG（2025/03/15開催）',
+    date: '2025/03/15',
+    updatedAt: '2025/03/15 17:00',
+    location: '各省庁本府庁舎 / オンライン会議',
+    summary: '規制改革推進会議 GX・サステナビリティサブWGの開催。主要議題の推進状況および関係省庁間の連携について協議。',
+    agenda: ['規制改革推進会議 GX・サステナビリティサブWGにおける主要施策の推進状況について', '今後の対応方針および関係省庁間連携'],
+    materials: [
+      { name: '規制改革推進会議 GX・サステナビリティサブWG 公式掲載資料・ページ (HTML)', type: 'HTML', size: '45 KB', url: 'https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/meeting.html', isMinutes: false }
+    ],
+    tags: ['規制改革推進', 'CAO', '政策会議'],
+    officialUrl: 'https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/meeting.html',
+    hasMinutes: false,
+    docCount: 1
+  },
+  {
+    id: 'meet-2026-0101-fsc-honkaigi-115',
+    councilId: 'fsc-honkaigi-115',
+    councilName: '食品安全委員会 (本会議)',
+    ministry: 'FSC',
+    category: 'COMMITTEE',
+    title: '食品安全委員会 (本会議)（2026/01/01開催）',
+    date: '2026/01/01',
+    updatedAt: '2026/01/01 17:00',
+    location: '各省庁本府庁舎 / オンライン会議',
+    summary: '食品安全委員会 (本会議)の開催。主要議題の推進状況および関係省庁間の連携について協議。',
+    agenda: ['食品安全委員会 (本会議)における主要施策の推進状況について', '今後の対応方針および関係省庁間連携'],
+    materials: [
+      { name: '食品安全委員会 (本会議) 公式掲載資料・ページ (HTML)', type: 'HTML', size: '45 KB', url: 'https://www.fsc.go.jp/iinkai/', isMinutes: false }
+    ],
+    tags: ['食品安全委員', 'FSC', '政策会議'],
+    officialUrl: 'https://www.fsc.go.jp/iinkai/',
+    hasMinutes: false,
+    docCount: 1
+  },
+  {
+    id: 'meet-2026-0101-fsc-kikaku-116',
+    councilId: 'fsc-kikaku-116',
+    councilName: '企画等専門調査会',
+    ministry: 'FSC',
+    category: 'COUNCIL',
+    title: '企画等専門調査会（2026/01/01開催）',
+    date: '2026/01/01',
+    updatedAt: '2026/01/01 17:00',
+    location: '各省庁本府庁舎 / オンライン会議',
+    summary: '企画等専門調査会の開催。主要議題の推進状況および関係省庁間の連携について協議。',
+    agenda: ['企画等専門調査会における主要施策の推進状況について', '今後の対応方針および関係省庁間連携'],
+    materials: [
+      { name: '企画等専門調査会 公式掲載資料・ページ (HTML)', type: 'HTML', size: '45 KB', url: 'https://www.fsc.go.jp/senmon/kikaku/', isMinutes: false }
+    ],
+    tags: ['企画等専門調', 'FSC', '政策会議'],
+    officialUrl: 'https://www.fsc.go.jp/senmon/kikaku/',
+    hasMinutes: false,
+    docCount: 1
+  },
+  {
+    id: 'meet-2026-0115-fsc-tenkabutu-117',
+    councilId: 'fsc-tenkabutu-117',
+    councilName: '添加物専門調査会',
+    ministry: 'FSC',
+    category: 'COUNCIL',
+    title: '添加物専門調査会（2026/01/15開催）',
+    date: '2026/01/15',
+    updatedAt: '2026/01/15 17:00',
+    location: '各省庁本府庁舎 / オンライン会議',
+    summary: '添加物専門調査会の開催。主要議題の推進状況および関係省庁間の連携について協議。',
+    agenda: ['添加物専門調査会における主要施策の推進状況について', '今後の対応方針および関係省庁間連携'],
+    materials: [
+      { name: '添加物専門調査会 公式掲載資料・ページ (HTML)', type: 'HTML', size: '45 KB', url: 'https://www.fsc.go.jp/senmon/tenkabutu/', isMinutes: false }
+    ],
+    tags: ['添加物専門調', 'FSC', '政策会議'],
+    officialUrl: 'https://www.fsc.go.jp/senmon/tenkabutu/',
+    hasMinutes: false,
+    docCount: 1
+  },
+  {
+    id: 'meet-2026-0210-fsc-nouyaku-118',
+    councilId: 'fsc-nouyaku-118',
+    councilName: '農薬専門調査会',
+    ministry: 'FSC',
+    category: 'COUNCIL',
+    title: '農薬専門調査会（2026/02/10開催）',
+    date: '2026/02/10',
+    updatedAt: '2026/02/10 17:00',
+    location: '各省庁本府庁舎 / オンライン会議',
+    summary: '農薬専門調査会の開催。主要議題の推進状況および関係省庁間の連携について協議。',
+    agenda: ['農薬専門調査会における主要施策の推進状況について', '今後の対応方針および関係省庁間連携'],
+    materials: [
+      { name: '農薬専門調査会 公式掲載資料・ページ (HTML)', type: 'HTML', size: '45 KB', url: 'https://www.fsc.go.jp/senmon/nouyaku/', isMinutes: false }
+    ],
+    tags: ['農薬専門調査', 'FSC', '政策会議'],
+    officialUrl: 'https://www.fsc.go.jp/senmon/nouyaku/',
+    hasMinutes: false,
+    docCount: 1
+  },
+  {
+    id: 'meet-2026-0806-npsc-teirei-119',
+    councilId: 'npsc-teirei-119',
+    councilName: '国家公安委員会 定例会議',
+    ministry: 'NPSC',
+    category: 'COMMITTEE',
+    title: '国家公安委員会 定例会議（2026/08/06開催）',
+    date: '2026/08/06',
+    updatedAt: '2026/08/06 17:00',
+    location: '各省庁本府庁舎 / オンライン会議',
+    summary: '国家公安委員会 定例会議の開催。主要議題の推進状況および関係省庁間の連携について協議。',
+    agenda: ['国家公安委員会 定例会議における主要施策の推進状況について', '今後の対応方針および関係省庁間連携'],
+    materials: [
+      { name: '国家公安委員会 定例会議 公式掲載資料・ページ (HTML)', type: 'HTML', size: '45 KB', url: 'https://www.npsc.go.jp/activity/index.html', isMinutes: false }
+    ],
+    tags: ['国家公安委員', 'NPSC', '政策会議'],
+    officialUrl: 'https://www.npsc.go.jp/activity/index.html',
+    hasMinutes: false,
+    docCount: 1
+  },
+  {
+    id: 'meet-2026-0625-fsa-kinyu-shingi',
+    councilId: 'fsa-kinyu-shingi',
+    councilName: '金融審議会',
+    ministry: 'FSA',
+    category: 'COUNCIL',
+    title: '金融審議会（2026/06/25開催）',
+    date: '2026/06/25',
+    updatedAt: '2026/06/25 17:00',
+    location: '各省庁本府庁舎 / オンライン会議',
+    summary: '金融審議会の開催。主要議題の推進状況および関係省庁間の連携について協議。',
+    agenda: ['金融審議会における主要施策の推進状況について', '今後の対応方針および関係省庁間連携'],
+    materials: [
+      { name: '金融審議会 公式掲載資料・ページ (HTML)', type: 'HTML', size: '45 KB', url: 'https://www.fsa.go.jp/singi/singi_kinyu/index.html', isMinutes: false }
+    ],
+    tags: ['金融審議会', 'FSA', '政策会議'],
+    officialUrl: 'https://www.fsa.go.jp/singi/singi_kinyu/index.html',
+    hasMinutes: false,
+    docCount: 1
+  },
+  {
+    id: 'meet-2026-0720-mic-joho-tsusin-121',
+    councilId: 'mic-joho-tsusin-121',
+    councilName: '情報通信審議会',
+    ministry: 'MIC',
+    category: 'COUNCIL',
+    title: '情報通信審議会（2026/07/20開催）',
+    date: '2026/07/20',
+    updatedAt: '2026/07/20 17:00',
+    location: '各省庁本府庁舎 / オンライン会議',
+    summary: '情報通信審議会の開催。主要議題の推進状況および関係省庁間の連携について協議。',
+    agenda: ['情報通信審議会における主要施策の推進状況について', '今後の対応方針および関係省庁間連携'],
+    materials: [
+      { name: '情報通信審議会 公式掲載資料・ページ (HTML)', type: 'HTML', size: '45 KB', url: 'https://www.soumu.go.jp/main_sosiki/joho_tsusin/eng/council/index.html', isMinutes: false }
+    ],
+    tags: ['情報通信審議', 'MIC', '政策会議'],
+    officialUrl: 'https://www.soumu.go.jp/main_sosiki/joho_tsusin/eng/council/index.html',
+    hasMinutes: false,
+    docCount: 1
+  },
+  {
+    id: 'meet-2026-0715-mic-chizai-122',
+    councilId: 'mic-chizai-122',
+    councilName: '地方財政審議会',
+    ministry: 'MIC',
+    category: 'COUNCIL',
+    title: '地方財政審議会（2026/07/15開催）',
+    date: '2026/07/15',
+    updatedAt: '2026/07/15 17:00',
+    location: '各省庁本府庁舎 / オンライン会議',
+    summary: '地方財政審議会の開催。主要議題の推進状況および関係省庁間の連携について協議。',
+    agenda: ['地方財政審議会における主要施策の推進状況について', '今後の対応方針および関係省庁間連携'],
+    materials: [
+      { name: '地方財政審議会 公式掲載資料・ページ (HTML)', type: 'HTML', size: '45 KB', url: 'https://www.soumu.go.jp/main_sosiki/singi/chizai/index.html', isMinutes: false }
+    ],
+    tags: ['地方財政審議', 'MIC', '政策会議'],
+    officialUrl: 'https://www.soumu.go.jp/main_sosiki/singi/chizai/index.html',
+    hasMinutes: false,
+    docCount: 1
+  },
+  {
+    id: 'meet-2026-0710-moj-housei-soukai-123',
+    councilId: 'moj-housei-soukai-123',
+    councilName: '法制審議会 総会',
+    ministry: 'MOJ',
+    category: 'COUNCIL',
+    title: '法制審議会 総会（2026/07/10開催）',
+    date: '2026/07/10',
+    updatedAt: '2026/07/10 17:00',
+    location: '各省庁本府庁舎 / オンライン会議',
+    summary: '法制審議会 総会の開催。主要議題の推進状況および関係省庁間の連携について協議。',
+    agenda: ['法制審議会 総会における主要施策の推進状況について', '今後の対応方針および関係省庁間連携'],
+    materials: [
+      { name: '法制審議会 総会 公式掲載資料・ページ (HTML)', type: 'HTML', size: '45 KB', url: 'https://www.moj.go.jp/shingikai/shingikai_housei.html', isMinutes: false }
+    ],
+    tags: ['法制審議会 ', 'MOJ', '政策会議'],
+    officialUrl: 'https://www.moj.go.jp/shingikai/shingikai_housei.html',
+    hasMinutes: false,
+    docCount: 1
+  },
+  {
+    id: 'meet-2026-0615-moj-housei-seishoku-124',
+    councilId: 'moj-housei-seishoku-124',
+    councilName: '法制審議会 生殖補助医療関連親子法制部会',
+    ministry: 'MOJ',
+    category: 'SECTION',
+    title: '法制審議会 生殖補助医療関連親子法制部会（2026/06/15開催）',
+    date: '2026/06/15',
+    updatedAt: '2026/06/15 17:00',
+    location: '各省庁本府庁舎 / オンライン会議',
+    summary: '法制審議会 生殖補助医療関連親子法制部会の開催。主要議題の推進状況および関係省庁間の連携について協議。',
+    agenda: ['法制審議会 生殖補助医療関連親子法制部会における主要施策の推進状況について', '今後の対応方針および関係省庁間連携'],
+    materials: [
+      { name: '法制審議会 生殖補助医療関連親子法制部会 公式掲載資料・ページ (HTML)', type: 'HTML', size: '45 KB', url: 'https://www.moj.go.jp/shingikai/shingikai_seishoku.html', isMinutes: false }
+    ],
+    tags: ['法制審議会 ', 'MOJ', '政策会議'],
+    officialUrl: 'https://www.moj.go.jp/shingikai/shingikai_seishoku.html',
+    hasMinutes: false,
+    docCount: 1
+  },
+  {
+    id: 'meet-2026-0620-moj-housei-kaisha-125',
+    councilId: 'moj-housei-kaisha-125',
+    councilName: '法制審議会 会社法制（株式・株主総会等関係）部会',
+    ministry: 'MOJ',
+    category: 'SECTION',
+    title: '法制審議会 会社法制（株式・株主総会等関係）部会（2026/06/20開催）',
+    date: '2026/06/20',
+    updatedAt: '2026/06/20 17:00',
+    location: '各省庁本府庁舎 / オンライン会議',
+    summary: '法制審議会 会社法制（株式・株主総会等関係）部会の開催。主要議題の推進状況および関係省庁間の連携について協議。',
+    agenda: ['法制審議会 会社法制（株式・株主総会等関係）部会における主要施策の推進状況について', '今後の対応方針および関係省庁間連携'],
+    materials: [
+      { name: '法制審議会 会社法制（株式・株主総会等関係）部会 公式掲載資料・ページ (HTML)', type: 'HTML', size: '45 KB', url: 'https://www.moj.go.jp/shingikai/shingikai_kaisha.html', isMinutes: false }
+    ],
+    tags: ['法制審議会 ', 'MOJ', '政策会議'],
+    officialUrl: 'https://www.moj.go.jp/shingikai/shingikai_kaisha.html',
+    hasMinutes: false,
+    docCount: 1
+  },
+  {
+    id: 'meet-2026-0705-moj-housei-keiji-126',
+    councilId: 'moj-housei-keiji-126',
+    councilName: '法制審議会 刑事法（犯罪被害者関係）部会',
+    ministry: 'MOJ',
+    category: 'SECTION',
+    title: '法制審議会 刑事法（犯罪被害者関係）部会（2026/07/05開催）',
+    date: '2026/07/05',
+    updatedAt: '2026/07/05 17:00',
+    location: '各省庁本府庁舎 / オンライン会議',
+    summary: '法制審議会 刑事法（犯罪被害者関係）部会の開催。主要議題の推進状況および関係省庁間の連携について協議。',
+    agenda: ['法制審議会 刑事法（犯罪被害者関係）部会における主要施策の推進状況について', '今後の対応方針および関係省庁間連携'],
+    materials: [
+      { name: '法制審議会 刑事法（犯罪被害者関係）部会 公式掲載資料・ページ (HTML)', type: 'HTML', size: '45 KB', url: 'https://www.moj.go.jp/shingikai/shingikai_keiji.html', isMinutes: false }
+    ],
+    tags: ['法制審議会 ', 'MOJ', '政策会議'],
+    officialUrl: 'https://www.moj.go.jp/shingikai/shingikai_keiji.html',
+    hasMinutes: false,
+    docCount: 1
+  },
+  {
+    id: 'meet-2026-0520-mofa-kaigai-kouryushingi-127',
+    councilId: 'mofa-kaigai-kouryushingi-127',
+    councilName: '海外交流審議会',
+    ministry: 'MOFA',
+    category: 'COUNCIL',
+    title: '海外交流審議会（2026/05/20開催）',
+    date: '2026/05/20',
+    updatedAt: '2026/05/20 17:00',
+    location: '各省庁本府庁舎 / オンライン会議',
+    summary: '海外交流審議会の開催。主要議題の推進状況および関係省庁間の連携について協議。',
+    agenda: ['海外交流審議会における主要施策の推進状況について', '今後の対応方針および関係省庁間連携'],
+    materials: [
+      { name: '海外交流審議会 公式掲載資料・ページ (HTML)', type: 'HTML', size: '45 KB', url: 'https://www.mofa.go.jp/mofaj/annai/shingi/kaigai.html', isMinutes: false }
+    ],
+    tags: ['海外交流審議', 'MOFA', '政策会議'],
+    officialUrl: 'https://www.mofa.go.jp/mofaj/annai/shingi/kaigai.html',
+    hasMinutes: false,
+    docCount: 1
+  },
+  {
+    id: 'meet-2021-0407-mof-zaisei-seido',
+    councilId: 'mof-zaisei-seido',
+    councilName: '財政制度等審議会',
+    ministry: 'MOF',
+    category: 'COUNCIL',
+    title: '財政制度等審議会（2021/04/07開催）',
+    date: '2021/04/07',
+    updatedAt: '2021/04/07 17:00',
+    location: '各省庁本府庁舎 / オンライン会議',
+    summary: '財政制度等審議会の開催。主要議題の推進状況および関係省庁間の連携について協議。',
+    agenda: ['財政制度等審議会における主要施策の推進状況について', '今後の対応方針および関係省庁間連携'],
+    materials: [
+      { name: '財政制度等審議会 公式掲載資料・ページ (HTML)', type: 'HTML', size: '45 KB', url: 'https://www.mof.go.jp/about_mof/councils/fiscal_system_council/index.html', isMinutes: false }
+    ],
+    tags: ['財政制度等審', 'MOF', '政策会議'],
+    officialUrl: 'https://www.mof.go.jp/about_mof/councils/fiscal_system_council/index.html',
+    hasMinutes: false,
+    docCount: 1
+  },
+  {
+    id: 'meet-2026-0312-mof-customs-appeal-129',
+    councilId: 'mof-customs-appeal-129',
+    councilName: '関税等ふん争審査会',
+    ministry: 'MOF',
+    category: 'COUNCIL',
+    title: '関税等ふん争審査会（2026/03/12開催）',
+    date: '2026/03/12',
+    updatedAt: '2026/03/12 17:00',
+    location: '各省庁本府庁舎 / オンライン会議',
+    summary: '関税等ふん争審査会の開催。主要議題の推進状況および関係省庁間の連携について協議。',
+    agenda: ['関税等ふん争審査会における主要施策の推進状況について', '今後の対応方針および関係省庁間連携'],
+    materials: [
+      { name: '関税等ふん争審査会 公式掲載資料・ページ (HTML)', type: 'HTML', size: '45 KB', url: 'https://www.mof.go.jp/about_mof/councils/customs_appeal/index.html', isMinutes: false }
+    ],
+    tags: ['関税等ふん争', 'MOF', '政策会議'],
+    officialUrl: 'https://www.mof.go.jp/about_mof/councils/customs_appeal/index.html',
+    hasMinutes: false,
+    docCount: 1
+  },
+  {
+    id: 'meet-2026-0722-mext-chukyo-130',
+    councilId: 'mext-chukyo-130',
+    councilName: '中央教育審議会',
+    ministry: 'MEXT',
+    category: 'COUNCIL',
+    title: '中央教育審議会（2026/07/22開催）',
+    date: '2026/07/22',
+    updatedAt: '2026/07/22 17:00',
+    location: '各省庁本府庁舎 / オンライン会議',
+    summary: '中央教育審議会の開催。主要議題の推進状況および関係省庁間の連携について協議。',
+    agenda: ['中央教育審議会における主要施策の推進状況について', '今後の対応方針および関係省庁間連携'],
+    materials: [
+      { name: '中央教育審議会 公式掲載資料・ページ (HTML)', type: 'HTML', size: '45 KB', url: 'https://www.mext.go.jp/b_menu/shingi/chukyo/index.htm', isMinutes: false }
+    ],
+    tags: ['中央教育審議', 'MEXT', '政策会議'],
+    officialUrl: 'https://www.mext.go.jp/b_menu/shingi/chukyo/index.htm',
+    hasMinutes: false,
+    docCount: 1
+  },
+  {
+    id: 'meet-2026-0630-mext-gijyutu-131',
+    councilId: 'mext-gijyutu-131',
+    councilName: '科学技術・学術審議会',
+    ministry: 'MEXT',
+    category: 'COUNCIL',
+    title: '科学技術・学術審議会（2026/06/30開催）',
+    date: '2026/06/30',
+    updatedAt: '2026/06/30 17:00',
+    location: '各省庁本府庁舎 / オンライン会議',
+    summary: '科学技術・学術審議会の開催。主要議題の推進状況および関係省庁間の連携について協議。',
+    agenda: ['科学技術・学術審議会における主要施策の推進状況について', '今後の対応方針および関係省庁間連携'],
+    materials: [
+      { name: '科学技術・学術審議会 公式掲載資料・ページ (HTML)', type: 'HTML', size: '45 KB', url: 'https://www.mext.go.jp/b_menu/shingi/gijyutu/index.htm', isMinutes: false }
+    ],
+    tags: ['科学技術・学', 'MEXT', '政策会議'],
+    officialUrl: 'https://www.mext.go.jp/b_menu/shingi/gijyutu/index.htm',
+    hasMinutes: false,
+    docCount: 1
+  },
+  {
+    id: 'meet-2026-0615-mhlw-hosho-toukei-132',
+    councilId: 'mhlw-hosho-toukei-132',
+    councilName: '社会保障審議会 統計分科会',
+    ministry: 'MHLW',
+    category: 'SUBCOMMITTEE',
+    title: '社会保障審議会 統計分科会（2026/06/15開催）',
+    date: '2026/06/15',
+    updatedAt: '2026/06/15 17:00',
+    location: '各省庁本府庁舎 / オンライン会議',
+    summary: '社会保障審議会 統計分科会の開催。主要議題の推進状況および関係省庁間の連携について協議。',
+    agenda: ['社会保障審議会 統計分科会における主要施策の推進状況について', '今後の対応方針および関係省庁間連携'],
+    materials: [
+      { name: '社会保障審議会 統計分科会 公式掲載資料・ページ (HTML)', type: 'HTML', size: '45 KB', url: 'https://www.mhlw.go.jp/stf/shingi/shingi-hosho_toukei.html', isMinutes: false }
+    ],
+    tags: ['社会保障審議', 'MHLW', '政策会議'],
+    officialUrl: 'https://www.mhlw.go.jp/stf/shingi/shingi-hosho_toukei.html',
+    hasMinutes: false,
+    docCount: 1
+  },
+  {
+    id: 'meet-2026-0510-mhlw-hosho-shippei-133',
+    councilId: 'mhlw-hosho-shippei-133',
+    councilName: '社会保障審議会 疾病、傷害及び死因分類部会',
+    ministry: 'MHLW',
+    category: 'SECTION',
+    title: '社会保障審議会 疾病、傷害及び死因分類部会（2026/05/10開催）',
+    date: '2026/05/10',
+    updatedAt: '2026/05/10 17:00',
+    location: '各省庁本府庁舎 / オンライン会議',
+    summary: '社会保障審議会 疾病、傷害及び死因分類部会の開催。主要議題の推進状況および関係省庁間の連携について協議。',
+    agenda: ['社会保障審議会 疾病、傷害及び死因分類部会における主要施策の推進状況について', '今後の対応方針および関係省庁間連携'],
+    materials: [
+      { name: '社会保障審議会 疾病、傷害及び死因分類部会 公式掲載資料・ページ (HTML)', type: 'HTML', size: '45 KB', url: 'https://www.mhlw.go.jp/stf/shingi/shingi-hosho_shippei.html', isMinutes: false }
+    ],
+    tags: ['社会保障審議', 'MHLW', '政策会議'],
+    officialUrl: 'https://www.mhlw.go.jp/stf/shingi/shingi-hosho_shippei.html',
+    hasMinutes: false,
+    docCount: 1
+  },
+  {
+    id: 'meet-2026-0420-mhlw-hosho-shiinsentaku-134',
+    councilId: 'mhlw-hosho-shiinsentaku-134',
+    councilName: '社会保障審議会 死因選択検討ワーキンググループ',
+    ministry: 'MHLW',
+    category: 'WORKING_GROUP',
+    title: '社会保障審議会 死因選択検討ワーキンググループ（2026/04/20開催）',
+    date: '2026/04/20',
+    updatedAt: '2026/04/20 17:00',
+    location: '各省庁本府庁舎 / オンライン会議',
+    summary: '社会保障審議会 死因選択検討ワーキンググループの開催。主要議題の推進状況および関係省庁間の連携について協議。',
+    agenda: ['社会保障審議会 死因選択検討ワーキンググループにおける主要施策の推進状況について', '今後の対応方針および関係省庁間連携'],
+    materials: [
+      { name: '社会保障審議会 死因選択検討ワーキンググループ 公式掲載資料・ページ (HTML)', type: 'HTML', size: '45 KB', url: 'https://www.mhlw.go.jp/stf/shingi/shingi-hosho_shiinsentaku.html', isMinutes: false }
+    ],
+    tags: ['社会保障審議', 'MHLW', '政策会議'],
+    officialUrl: 'https://www.mhlw.go.jp/stf/shingi/shingi-hosho_shiinsentaku.html',
+    hasMinutes: false,
+    docCount: 1
+  },
+  {
+    id: 'meet-2026-0710-mhlw-hosho-iryou-135',
+    councilId: 'mhlw-hosho-iryou-135',
+    councilName: '社会保障審議会 医療分科会',
+    ministry: 'MHLW',
+    category: 'SUBCOMMITTEE',
+    title: '社会保障審議会 医療分科会（2026/07/10開催）',
+    date: '2026/07/10',
+    updatedAt: '2026/07/10 17:00',
+    location: '各省庁本府庁舎 / オンライン会議',
+    summary: '社会保障審議会 医療分科会の開催。主要議題の推進状況および関係省庁間の連携について協議。',
+    agenda: ['社会保障審議会 医療分科会における主要施策の推進状況について', '今後の対応方針および関係省庁間連携'],
+    materials: [
+      { name: '社会保障審議会 医療分科会 公式掲載資料・ページ (HTML)', type: 'HTML', size: '45 KB', url: 'https://www.mhlw.go.jp/stf/shingi/shingi-hosho_iryou.html', isMinutes: false }
+    ],
+    tags: ['社会保障審議', 'MHLW', '政策会議'],
+    officialUrl: 'https://www.mhlw.go.jp/stf/shingi/shingi-hosho_iryou.html',
+    hasMinutes: false,
+    docCount: 1
+  },
+  {
+    id: 'meet-2026-0718-mhlw-hosho-kaigo-136',
+    councilId: 'mhlw-hosho-kaigo-136',
+    councilName: '社会保障審議会 介護給付費分科会',
+    ministry: 'MHLW',
+    category: 'SUBCOMMITTEE',
+    title: '社会保障審議会 介護給付費分科会（2026/07/18開催）',
+    date: '2026/07/18',
+    updatedAt: '2026/07/18 17:00',
+    location: '各省庁本府庁舎 / オンライン会議',
+    summary: '社会保障審議会 介護給付費分科会の開催。主要議題の推進状況および関係省庁間の連携について協議。',
+    agenda: ['社会保障審議会 介護給付費分科会における主要施策の推進状況について', '今後の対応方針および関係省庁間連携'],
+    materials: [
+      { name: '社会保障審議会 介護給付費分科会 公式掲載資料・ページ (HTML)', type: 'HTML', size: '45 KB', url: 'https://www.mhlw.go.jp/stf/shingi/shingi-hosho_kaigo.html', isMinutes: false }
+    ],
+    tags: ['社会保障審議', 'MHLW', '政策会議'],
+    officialUrl: 'https://www.mhlw.go.jp/stf/shingi/shingi-hosho_kaigo.html',
+    hasMinutes: false,
+    docCount: 1
+  },
+  {
+    id: 'meet-2026-0612-mhlw-hosho-fukushi-137',
+    councilId: 'mhlw-hosho-fukushi-137',
+    councilName: '社会保障審議会 福祉部会',
+    ministry: 'MHLW',
+    category: 'SECTION',
+    title: '社会保障審議会 福祉部会（2026/06/12開催）',
+    date: '2026/06/12',
+    updatedAt: '2026/06/12 17:00',
+    location: '各省庁本府庁舎 / オンライン会議',
+    summary: '社会保障審議会 福祉部会の開催。主要議題の推進状況および関係省庁間の連携について協議。',
+    agenda: ['社会保障審議会 福祉部会における主要施策の推進状況について', '今後の対応方針および関係省庁間連携'],
+    materials: [
+      { name: '社会保障審議会 福祉部会 公式掲載資料・ページ (HTML)', type: 'HTML', size: '45 KB', url: 'https://www.mhlw.go.jp/stf/shingi/shingi-hosho_fukushi.html', isMinutes: false }
+    ],
+    tags: ['社会保障審議', 'MHLW', '政策会議'],
+    officialUrl: 'https://www.mhlw.go.jp/stf/shingi/shingi-hosho_fukushi.html',
+    hasMinutes: false,
+    docCount: 1
+  },
+  {
+    id: 'meet-2026-0731-mhlw-hosho-seikatsu-138',
+    councilId: 'mhlw-hosho-seikatsu-138',
+    councilName: '社会保障審議会 生活保護基準部会',
+    ministry: 'MHLW',
+    category: 'SECTION',
+    title: '社会保障審議会 生活保護基準部会（2026/07/31開催）',
+    date: '2026/07/31',
+    updatedAt: '2026/07/31 17:00',
+    location: '各省庁本府庁舎 / オンライン会議',
+    summary: '社会保障審議会 生活保護基準部会の開催。主要議題の推進状況および関係省庁間の連携について協議。',
+    agenda: ['社会保障審議会 生活保護基準部会における主要施策の推進状況について', '今後の対応方針および関係省庁間連携'],
+    materials: [
+      { name: '社会保障審議会 生活保護基準部会 公式掲載資料・ページ (HTML)', type: 'HTML', size: '45 KB', url: 'https://www.mhlw.go.jp/stf/shingi/shingi-hosho_seikatsu.html', isMinutes: false }
+    ],
+    tags: ['社会保障審議', 'MHLW', '政策会議'],
+    officialUrl: 'https://www.mhlw.go.jp/stf/shingi/shingi-hosho_seikatsu.html',
+    hasMinutes: false,
+    docCount: 1
+  },
+  {
+    id: 'meet-2026-0715-mhlw-hosho-jidou-139',
+    councilId: 'mhlw-hosho-jidou-139',
+    councilName: '社会保障審議会 児童部会',
+    ministry: 'MHLW',
+    category: 'SECTION',
+    title: '社会保障審議会 児童部会（2026/07/15開催）',
+    date: '2026/07/15',
+    updatedAt: '2026/07/15 17:00',
+    location: '各省庁本府庁舎 / オンライン会議',
+    summary: '社会保障審議会 児童部会の開催。主要議題の推進状況および関係省庁間の連携について協議。',
+    agenda: ['社会保障審議会 児童部会における主要施策の推進状況について', '今後の対応方針および関係省庁間連携'],
+    materials: [
+      { name: '社会保障審議会 児童部会 公式掲載資料・ページ (HTML)', type: 'HTML', size: '45 KB', url: 'https://www.mhlw.go.jp/stf/shingi/shingi-hosho_jidou.html', isMinutes: false }
+    ],
+    tags: ['社会保障審議', 'MHLW', '政策会議'],
+    officialUrl: 'https://www.mhlw.go.jp/stf/shingi/shingi-hosho_jidou.html',
+    hasMinutes: false,
+    docCount: 1
+  },
+  {
+    id: 'meet-2026-0325-mhlw-hosho-jidoukan-140',
+    councilId: 'mhlw-hosho-jidoukan-140',
+    councilName: '社会保障審議会 児童館のあり方に関する検討ワーキンググループ',
+    ministry: 'MHLW',
+    category: 'WORKING_GROUP',
+    title: '社会保障審議会 児童館のあり方に関する検討ワーキンググループ（2026/03/25開催）',
+    date: '2026/03/25',
+    updatedAt: '2026/03/25 17:00',
+    location: '各省庁本府庁舎 / オンライン会議',
+    summary: '社会保障審議会 児童館のあり方に関する検討ワーキンググループの開催。主要議題の推進状況および関係省庁間の連携について協議。',
+    agenda: ['社会保障審議会 児童館のあり方に関する検討ワーキンググループにおける主要施策の推進状況について', '今後の対応方針および関係省庁間連携'],
+    materials: [
+      { name: '社会保障審議会 児童館のあり方に関する検討ワーキンググループ 公式掲載資料・ページ (HTML)', type: 'HTML', size: '45 KB', url: 'https://www.mhlw.go.jp/stf/shingi/shingi-hosho_jidoukan.html', isMinutes: false }
+    ],
+    tags: ['社会保障審議', 'MHLW', '政策会議'],
+    officialUrl: 'https://www.mhlw.go.jp/stf/shingi/shingi-hosho_jidoukan.html',
+    hasMinutes: false,
+    docCount: 1
+  },
+  {
+    id: 'meet-2026-0727-mhlw-hosho-shikinunyou-141',
+    councilId: 'mhlw-hosho-shikinunyou-141',
+    councilName: '社会保障審議会 資金運用部会',
+    ministry: 'MHLW',
+    category: 'SECTION',
+    title: '社会保障審議会 資金運用部会（2026/07/27開催）',
+    date: '2026/07/27',
+    updatedAt: '2026/07/27 17:00',
+    location: '各省庁本府庁舎 / オンライン会議',
+    summary: '社会保障審議会 資金運用部会の開催。主要議題の推進状況および関係省庁間の連携について協議。',
+    agenda: ['社会保障審議会 資金運用部会における主要施策の推進状況について', '今後の対応方針および関係省庁間連携'],
+    materials: [
+      { name: '社会保障審議会 資金運用部会 公式掲載資料・ページ (HTML)', type: 'HTML', size: '45 KB', url: 'https://www.mhlw.go.jp/stf/shingi/shingi-hosho_shikinunyou.html', isMinutes: false }
+    ],
+    tags: ['社会保障審議', 'MHLW', '政策会議'],
+    officialUrl: 'https://www.mhlw.go.jp/stf/shingi/shingi-hosho_shikinunyou.html',
+    hasMinutes: false,
+    docCount: 1
+  },
+  {
+    id: 'meet-2026-0724-mhlw-hosho-kaigohoken-142',
+    councilId: 'mhlw-hosho-kaigohoken-142',
+    councilName: '社会保障審議会 介護保険部会',
+    ministry: 'MHLW',
+    category: 'SECTION',
+    title: '社会保障審議会 介護保険部会（2026/07/24開催）',
+    date: '2026/07/24',
+    updatedAt: '2026/07/24 17:00',
+    location: '各省庁本府庁舎 / オンライン会議',
+    summary: '社会保障審議会 介護保険部会の開催。主要議題の推進状況および関係省庁間の連携について協議。',
+    agenda: ['社会保障審議会 介護保険部会における主要施策の推進状況について', '今後の対応方針および関係省庁間連携'],
+    materials: [
+      { name: '社会保障審議会 介護保険部会 公式掲載資料・ページ (HTML)', type: 'HTML', size: '45 KB', url: 'https://www.mhlw.go.jp/stf/shingi/shingi-hosho_kaigohoken.html', isMinutes: false }
+    ],
+    tags: ['社会保障審議', 'MHLW', '政策会議'],
+    officialUrl: 'https://www.mhlw.go.jp/stf/shingi/shingi-hosho_kaigohoken.html',
+    hasMinutes: false,
+    docCount: 1
+  },
+  {
+    id: 'meet-2026-0724-mhlw-hosho-shouni-143',
+    councilId: 'mhlw-hosho-shouni-143',
+    councilName: '社会保障審議会 小児慢性特定疾病対策部会',
+    ministry: 'MHLW',
+    category: 'SECTION',
+    title: '社会保障審議会 小児慢性特定疾病対策部会（2026/07/24開催）',
+    date: '2026/07/24',
+    updatedAt: '2026/07/24 17:00',
+    location: '各省庁本府庁舎 / オンライン会議',
+    summary: '社会保障審議会 小児慢性特定疾病対策部会の開催。主要議題の推進状況および関係省庁間の連携について協議。',
+    agenda: ['社会保障審議会 小児慢性特定疾病対策部会における主要施策の推進状況について', '今後の対応方針および関係省庁間連携'],
+    materials: [
+      { name: '社会保障審議会 小児慢性特定疾病対策部会 公式掲載資料・ページ (HTML)', type: 'HTML', size: '45 KB', url: 'https://www.mhlw.go.jp/stf/shingi/shingi-hosho_shouni.html', isMinutes: false }
+    ],
+    tags: ['社会保障審議', 'MHLW', '政策会議'],
+    officialUrl: 'https://www.mhlw.go.jp/stf/shingi/shingi-hosho_shouni.html',
+    hasMinutes: false,
+    docCount: 1
+  },
+  {
+    id: 'meet-2026-0714-mhlw-kousei-kansenshou-144',
+    councilId: 'mhlw-kousei-kansenshou-144',
+    councilName: '厚生科学審議会 感染症部会',
+    ministry: 'MHLW',
+    category: 'SECTION',
+    title: '厚生科学審議会 感染症部会（2026/07/14開催）',
+    date: '2026/07/14',
+    updatedAt: '2026/07/14 17:00',
+    location: '各省庁本府庁舎 / オンライン会議',
+    summary: '厚生科学審議会 感染症部会の開催。主要議題の推進状況および関係省庁間の連携について協議。',
+    agenda: ['厚生科学審議会 感染症部会における主要施策の推進状況について', '今後の対応方針および関係省庁間連携'],
+    materials: [
+      { name: '厚生科学審議会 感染症部会 公式掲載資料・ページ (HTML)', type: 'HTML', size: '45 KB', url: 'https://www.mhlw.go.jp/stf/shingi/shingi-kousei_kansenshou.html', isMinutes: false }
+    ],
+    tags: ['厚生科学審議', 'MHLW', '政策会議'],
+    officialUrl: 'https://www.mhlw.go.jp/stf/shingi/shingi-kousei_kansenshou.html',
+    hasMinutes: false,
+    docCount: 1
+  },
+  {
+    id: 'meet-2026-0218-mhlw-kousei-influ-145',
+    councilId: 'mhlw-kousei-influ-145',
+    councilName: '厚生科学審議会 新型インフルエンザ対策に関する小委員会',
+    ministry: 'MHLW',
+    category: 'SUBCOMMITTEE',
+    title: '厚生科学審議会 新型インフルエンザ対策に関する小委員会（2026/02/18開催）',
+    date: '2026/02/18',
+    updatedAt: '2026/02/18 17:00',
+    location: '各省庁本府庁舎 / オンライン会議',
+    summary: '厚生科学審議会 新型インフルエンザ対策に関する小委員会の開催。主要議題の推進状況および関係省庁間の連携について協議。',
+    agenda: ['厚生科学審議会 新型インフルエンザ対策に関する小委員会における主要施策の推進状況について', '今後の対応方針および関係省庁間連携'],
+    materials: [
+      { name: '厚生科学審議会 新型インフルエンザ対策に関する小委員会 公式掲載資料・ページ (HTML)', type: 'HTML', size: '45 KB', url: 'https://www.mhlw.go.jp/stf/shingi/shingi-kousei_influ.html', isMinutes: false }
+    ],
+    tags: ['厚生科学審議', 'MHLW', '政策会議'],
+    officialUrl: 'https://www.mhlw.go.jp/stf/shingi/shingi-kousei_influ.html',
+    hasMinutes: false,
+    docCount: 1
+  },
+  {
+    id: 'meet-2026-0728-mhlw-rousei-roudoujouken-146',
+    councilId: 'mhlw-rousei-roudoujouken-146',
+    councilName: '労働政策審議会 労働条件分科会',
+    ministry: 'MHLW',
+    category: 'SUBCOMMITTEE',
+    title: '労働政策審議会 労働条件分科会（2026/07/28開催）',
+    date: '2026/07/28',
+    updatedAt: '2026/07/28 17:00',
+    location: '各省庁本府庁舎 / オンライン会議',
+    summary: '労働政策審議会 労働条件分科会の開催。主要議題の推進状況および関係省庁間の連携について協議。',
+    agenda: ['労働政策審議会 労働条件分科会における主要施策の推進状況について', '今後の対応方針および関係省庁間連携'],
+    materials: [
+      { name: '労働政策審議会 労働条件分科会 公式掲載資料・ページ (HTML)', type: 'HTML', size: '45 KB', url: 'https://www.mhlw.go.jp/stf/shingi/shingi-rousei_roudoujouken.html', isMinutes: false }
+    ],
+    tags: ['労働政策審議', 'MHLW', '政策会議'],
+    officialUrl: 'https://www.mhlw.go.jp/stf/shingi/shingi-rousei_roudoujouken.html',
+    hasMinutes: false,
+    docCount: 1
+  },
+  {
+    id: 'meet-2026-0622-mhlw-rousei-anzeneisei-147',
+    councilId: 'mhlw-rousei-anzeneisei-147',
+    councilName: '労働政策審議会 安全衛生分科会',
+    ministry: 'MHLW',
+    category: 'SUBCOMMITTEE',
+    title: '労働政策審議会 安全衛生分科会（2026/06/22開催）',
+    date: '2026/06/22',
+    updatedAt: '2026/06/22 17:00',
+    location: '各省庁本府庁舎 / オンライン会議',
+    summary: '労働政策審議会 安全衛生分科会の開催。主要議題の推進状況および関係省庁間の連携について協議。',
+    agenda: ['労働政策審議会 安全衛生分科会における主要施策の推進状況について', '今後の対応方針および関係省庁間連携'],
+    materials: [
+      { name: '労働政策審議会 安全衛生分科会 公式掲載資料・ページ (HTML)', type: 'HTML', size: '45 KB', url: 'https://www.mhlw.go.jp/stf/shingi/shingi-rousei_anzeneisei.html', isMinutes: false }
+    ],
+    tags: ['労働政策審議', 'MHLW', '政策会議'],
+    officialUrl: 'https://www.mhlw.go.jp/stf/shingi/shingi-rousei_anzeneisei.html',
+    hasMinutes: false,
+    docCount: 1
+  },
+  {
+    id: 'meet-2026-0716-maff-shokuryo-nogyo',
+    councilId: 'maff-shokuryo-nogyo',
+    councilName: '食料・農業・農村政策審議会',
+    ministry: 'MAFF',
+    category: 'COUNCIL',
+    title: '食料・農業・農村政策審議会（2026/07/16開催）',
+    date: '2026/07/16',
+    updatedAt: '2026/07/16 17:00',
+    location: '各省庁本府庁舎 / オンライン会議',
+    summary: '食料・農業・農村政策審議会の開催。主要議題の推進状況および関係省庁間の連携について協議。',
+    agenda: ['食料・農業・農村政策審議会における主要施策の推進状況について', '今後の対応方針および関係省庁間連携'],
+    materials: [
+      { name: '食料・農業・農村政策審議会 公式掲載資料・ページ (HTML)', type: 'HTML', size: '45 KB', url: 'https://www.maff.go.jp/j/council/seisaku/index.html', isMinutes: false }
+    ],
+    tags: ['食料・農業・', 'MAFF', '政策会議'],
+    officialUrl: 'https://www.maff.go.jp/j/council/seisaku/index.html',
+    hasMinutes: false,
+    docCount: 1
+  },
+  {
+    id: 'meet-2026-0725-meti-sankoushin-148',
+    councilId: 'meti-sankoushin-148',
+    councilName: '産業構造審議会',
+    ministry: 'METI',
+    category: 'COUNCIL',
+    title: '産業構造審議会（2026/07/25開催）',
+    date: '2026/07/25',
+    updatedAt: '2026/07/25 17:00',
+    location: '各省庁本府庁舎 / オンライン会議',
+    summary: '産業構造審議会の開催。主要議題の推進状況および関係省庁間の連携について協議。',
+    agenda: ['産業構造審議会における主要施策の推進状況について', '今後の対応方針および関係省庁間連携'],
+    materials: [
+      { name: '産業構造審議会 公式掲載資料・ページ (HTML)', type: 'HTML', size: '45 KB', url: 'https://www.meti.go.jp/shingikai/sankoushin/index.html', isMinutes: false }
+    ],
+    tags: ['産業構造審議', 'METI', '政策会議'],
+    officialUrl: 'https://www.meti.go.jp/shingikai/sankoushin/index.html',
+    hasMinutes: false,
+    docCount: 1
+  },
+  {
+    id: 'meet-2026-0727-meti-ax-skill-wg-149',
+    councilId: 'meti-ax-skill-wg-149',
+    councilName: 'AX時代におけるスキルのあり方検討ワーキンググループ',
+    ministry: 'METI',
+    category: 'WORKING_GROUP',
+    title: 'AX時代におけるスキルのあり方検討ワーキンググループ（2026/07/27開催）',
+    date: '2026/07/27',
+    updatedAt: '2026/07/27 17:00',
+    location: '各省庁本府庁舎 / オンライン会議',
+    summary: 'AX時代におけるスキルのあり方検討ワーキンググループの開催。主要議題の推進状況および関係省庁間の連携について協議。',
+    agenda: ['AX時代におけるスキルのあり方検討ワーキンググループにおける主要施策の推進状況について', '今後の対応方針および関係省庁間連携'],
+    materials: [
+      { name: 'AX時代におけるスキルのあり方検討ワーキンググループ 公式掲載資料・ページ (HTML)', type: 'HTML', size: '45 KB', url: 'https://www.meti.go.jp/shingikai/mono_info_service/society_digital/ax_skill/index.html', isMinutes: false }
+    ],
+    tags: ['AX時代にお', 'METI', '政策会議'],
+    officialUrl: 'https://www.meti.go.jp/shingikai/mono_info_service/society_digital/ax_skill/index.html',
+    hasMinutes: false,
+    docCount: 1
+  },
+  {
+    id: 'meet-2026-0710-mlit-kokudo-150',
+    councilId: 'mlit-kokudo-150',
+    councilName: '国土審議会',
+    ministry: 'MLIT',
+    category: 'COUNCIL',
+    title: '国土審議会（2026/07/10開催）',
+    date: '2026/07/10',
+    updatedAt: '2026/07/10 17:00',
+    location: '各省庁本府庁舎 / オンライン会議',
+    summary: '国土審議会の開催。主要議題の推進状況および関係省庁間の連携について協議。',
+    agenda: ['国土審議会における主要施策の推進状況について', '今後の対応方針および関係省庁間連携'],
+    materials: [
+      { name: '国土審議会 公式掲載資料・ページ (HTML)', type: 'HTML', size: '45 KB', url: 'https://www.mlit.go.jp/policy/shingikai/s01_kokudo01.html', isMinutes: false }
+    ],
+    tags: ['国土審議会', 'MLIT', '政策会議'],
+    officialUrl: 'https://www.mlit.go.jp/policy/shingikai/s01_kokudo01.html',
+    hasMinutes: false,
+    docCount: 1
+  },
+  {
+    id: 'meet-2026-0715-mlit-shakai-sihon-soukai',
+    councilId: 'mlit-shakai-sihon-soukai',
+    councilName: '社会資本整備審議会',
+    ministry: 'MLIT',
+    category: 'COUNCIL',
+    title: '社会資本整備審議会（2026/07/15開催）',
+    date: '2026/07/15',
+    updatedAt: '2026/07/15 17:00',
+    location: '各省庁本府庁舎 / オンライン会議',
+    summary: '社会資本整備審議会の開催。主要議題の推進状況および関係省庁間の連携について協議。',
+    agenda: ['社会資本整備審議会における主要施策の推進状況について', '今後の対応方針および関係省庁間連携'],
+    materials: [
+      { name: '社会資本整備審議会 公式掲載資料・ページ (HTML)', type: 'HTML', size: '45 KB', url: 'https://www.mlit.go.jp/policy/shingikai/s20_shakai01.html', isMinutes: false }
+    ],
+    tags: ['社会資本整備', 'MLIT', '政策会議'],
+    officialUrl: 'https://www.mlit.go.jp/policy/shingikai/s20_shakai01.html',
+    hasMinutes: false,
+    docCount: 1
+  },
+  {
+    id: 'meet-2026-0720-mlit-koutsu-151',
+    councilId: 'mlit-koutsu-151',
+    councilName: '交通政策審議会',
+    ministry: 'MLIT',
+    category: 'COUNCIL',
+    title: '交通政策審議会（2026/07/20開催）',
+    date: '2026/07/20',
+    updatedAt: '2026/07/20 17:00',
+    location: '各省庁本府庁舎 / オンライン会議',
+    summary: '交通政策審議会の開催。主要議題の推進状況および関係省庁間の連携について協議。',
+    agenda: ['交通政策審議会における主要施策の推進状況について', '今後の対応方針および関係省庁間連携'],
+    materials: [
+      { name: '交通政策審議会 公式掲載資料・ページ (HTML)', type: 'HTML', size: '45 KB', url: 'https://www.mlit.go.jp/policy/shingikai/s30_koutsu01.html', isMinutes: false }
+    ],
+    tags: ['交通政策審議', 'MLIT', '政策会議'],
+    officialUrl: 'https://www.mlit.go.jp/policy/shingikai/s30_koutsu01.html',
+    hasMinutes: false,
+    docCount: 1
+  },
+  {
+    id: 'meet-2026-0618-mlit-unyu-152',
+    councilId: 'mlit-unyu-152',
+    councilName: '運輸審議会',
+    ministry: 'MLIT',
+    category: 'COUNCIL',
+    title: '運輸審議会（2026/06/18開催）',
+    date: '2026/06/18',
+    updatedAt: '2026/06/18 17:00',
+    location: '各省庁本府庁舎 / オンライン会議',
+    summary: '運輸審議会の開催。主要議題の推進状況および関係省庁間の連携について協議。',
+    agenda: ['運輸審議会における主要施策の推進状況について', '今後の対応方針および関係省庁間連携'],
+    materials: [
+      { name: '運輸審議会 公式掲載資料・ページ (HTML)', type: 'HTML', size: '45 KB', url: 'https://www.mlit.go.jp/policy/shingikai/s40_unyu01.html', isMinutes: false }
+    ],
+    tags: ['運輸審議会', 'MLIT', '政策会議'],
+    officialUrl: 'https://www.mlit.go.jp/policy/shingikai/s40_unyu01.html',
+    hasMinutes: false,
+    docCount: 1
+  },
+  {
+    id: 'meet-2026-0525-mlit-chuou-kensetsu-153',
+    councilId: 'mlit-chuou-kensetsu-153',
+    councilName: '中央建設業審議会',
+    ministry: 'MLIT',
+    category: 'COUNCIL',
+    title: '中央建設業審議会（2026/05/25開催）',
+    date: '2026/05/25',
+    updatedAt: '2026/05/25 17:00',
+    location: '各省庁本府庁舎 / オンライン会議',
+    summary: '中央建設業審議会の開催。主要議題の推進状況および関係省庁間の連携について協議。',
+    agenda: ['中央建設業審議会における主要施策の推進状況について', '今後の対応方針および関係省庁間連携'],
+    materials: [
+      { name: '中央建設業審議会 公式掲載資料・ページ (HTML)', type: 'HTML', size: '45 KB', url: 'https://www.mlit.go.jp/policy/shingikai/s50_chuou01.html', isMinutes: false }
+    ],
+    tags: ['中央建設業審', 'MLIT', '政策会議'],
+    officialUrl: 'https://www.mlit.go.jp/policy/shingikai/s50_chuou01.html',
+    hasMinutes: false,
+    docCount: 1
+  },
+  {
+    id: 'meet-2026-0722-moe-chuo-kankyo-154',
+    councilId: 'moe-chuo-kankyo-154',
+    councilName: '中央環境審議会',
+    ministry: 'MOE',
+    category: 'COUNCIL',
+    title: '中央環境審議会（2026/07/22開催）',
+    date: '2026/07/22',
+    updatedAt: '2026/07/22 17:00',
+    location: '各省庁本府庁舎 / オンライン会議',
+    summary: '中央環境審議会の開催。主要議題の推進状況および関係省庁間の連携について協議。',
+    agenda: ['中央環境審議会における主要施策の推進状況について', '今後の対応方針および関係省庁間連携'],
+    materials: [
+      { name: '中央環境審議会 公式掲載資料・ページ (HTML)', type: 'HTML', size: '45 KB', url: 'https://www.env.go.jp/council/index.html', isMinutes: false }
+    ],
+    tags: ['中央環境審議', 'MOE', '政策会議'],
+    officialUrl: 'https://www.env.go.jp/council/index.html',
+    hasMinutes: false,
+    docCount: 1
+  },
+  {
+    id: 'meet-2026-0410-mod-shisetsu-155',
+    councilId: 'mod-shisetsu-155',
+    councilName: '防衛施設中央審議会',
+    ministry: 'MOD',
+    category: 'COUNCIL',
+    title: '防衛施設中央審議会（2026/04/10開催）',
+    date: '2026/04/10',
+    updatedAt: '2026/04/10 17:00',
+    location: '各省庁本府庁舎 / オンライン会議',
+    summary: '防衛施設中央審議会の開催。主要議題の推進状況および関係省庁間の連携について協議。',
+    agenda: ['防衛施設中央審議会における主要施策の推進状況について', '今後の対応方針および関係省庁間連携'],
+    materials: [
+      { name: '防衛施設中央審議会 公式掲載資料・ページ (HTML)', type: 'HTML', size: '45 KB', url: 'https://www.mod.go.jp/j/approach/agenda/meeting/shisetsu/index.html', isMinutes: false }
+    ],
+    tags: ['防衛施設中央', 'MOD', '政策会議'],
+    officialUrl: 'https://www.mod.go.jp/j/approach/agenda/meeting/shisetsu/index.html',
+    hasMinutes: false,
     docCount: 1
   }
 ];
