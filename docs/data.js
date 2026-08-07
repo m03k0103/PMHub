@@ -1591,7 +1591,7 @@ const COUNCILS = [
     category: 'LIAISON',
     pastYearCount: 1,
     description: '労務費の適切な転嫁のための関係省庁連絡会議の基本方針、施策の推進状況および関係省庁間の連携・個別課題について審議する会議。',
-    officialUrl: 'https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/index.html',
+    officialUrl: 'https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/wgkaisai/index.html',
     isWatched: true,
     trackedSince: '2025/06/30'
   },
@@ -1613,7 +1613,7 @@ const COUNCILS = [
     category: 'WORKING_GROUP',
     pastYearCount: 1,
     description: '規制改革推進会議 健康・医療・介護WGの基本方針、施策の推進状況および関係省庁間の連携・個別課題について審議する会議。',
-    officialUrl: 'https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/meeting.html',
+    officialUrl: 'https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/meeting.html#medical_2510',
     isWatched: true,
     trackedSince: '2026/05/15'
   },
@@ -1624,7 +1624,7 @@ const COUNCILS = [
     category: 'WORKING_GROUP',
     pastYearCount: 1,
     description: '規制改革推進会議 働き方・人への投資WGの基本方針、施策の推進状況および関係省庁間の連携・個別課題について審議する会議。',
-    officialUrl: 'https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/meeting.html',
+    officialUrl: 'https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/meeting.html#medical_2510',
     isWatched: true,
     trackedSince: '2026/04/07'
   },
@@ -7880,7 +7880,7 @@ const MEETINGS = [
       { name: '新しい資本主義実現会議 公式掲載資料・ページ (HTML)', type: 'HTML', size: '45 KB', url: 'https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/index.html', isMinutes: false }
     ],
     tags: ['新しい資本主', 'CAS', '政策会議'],
-    officialUrl: 'https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/index.html',
+    officialUrl: 'https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai37/gijisidai.html',
     hasMinutes: false,
     docCount: 1
   },
@@ -7900,7 +7900,7 @@ const MEETINGS = [
       { name: '労務費の適切な転嫁のための関係省庁連絡会議 公式掲載資料・ページ (HTML)', type: 'HTML', size: '45 KB', url: 'https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/index.html', isMinutes: false }
     ],
     tags: ['労務費の適切', 'CAS', '政策会議'],
-    officialUrl: 'https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/index.html',
+    officialUrl: 'https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/wgkaisai/roumuhitenka_dai5/index.html',
     hasMinutes: false,
     docCount: 1
   },
@@ -7920,7 +7920,7 @@ const MEETINGS = [
       { name: '規制改革推進会議 地域活性化・人手不足対応WG 公式掲載資料・ページ (HTML)', type: 'HTML', size: '45 KB', url: 'https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/meeting.html', isMinutes: false }
     ],
     tags: ['規制改革推進', 'CAO', '政策会議'],
-    officialUrl: 'https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/meeting.html',
+    officialUrl: 'https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_01local/260519/local11_agenda.html',
     hasMinutes: false,
     docCount: 1
   },
@@ -7940,7 +7940,7 @@ const MEETINGS = [
       { name: '規制改革推進会議 健康・医療・介護WG 公式掲載資料・ページ (HTML)', type: 'HTML', size: '45 KB', url: 'https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/meeting.html', isMinutes: false }
     ],
     tags: ['規制改革推進', 'CAO', '政策会議'],
-    officialUrl: 'https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/meeting.html',
+    officialUrl: 'https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_02medical/250501/medical05_agenda.html',
     hasMinutes: false,
     docCount: 1
   },
