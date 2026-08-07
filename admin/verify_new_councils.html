@@ -323,7 +323,7 @@
     <div class="bulk-actions">
       <button class="btn-bulk check-urls" id="btnCheckUrls">🔗 URL一括疎通チェック</button>
       <button class="btn-bulk approve-all" id="btnApproveAll">✅ 未レビューを全て承認</button>
-      <button class="btn-bulk export-json" id="btnExportJson">📥 検証結果をJSONエクスポート</button>
+      <button class="btn-bulk export-json" id="btnExportJson">📥 承認済みをJSONエクスポート</button>
     </div>
 
     <!-- ── Filters ── -->
@@ -348,8 +348,20 @@
   <script>
   document.addEventListener('DOMContentLoaded', () => {
     // ─── Identify New Councils ───
-    // New councils added from gemini-code-1786056287125.txt have IDs matching this list
-    const NEW_COUNCIL_IDS = [
+    // Dynamic detection: councils with isNew flag, OR matching known IDs
+    // Finalized (approved+exported) councils are stored in localStorage and hidden
+    const STORAGE_KEY_FINALIZED = 'pmhub_verified_council_ids';
+    const STORAGE_KEY_STATE = 'pmhub_verify_state';
+
+    function getFinalizedIds() {
+      try { return JSON.parse(localStorage.getItem(STORAGE_KEY_FINALIZED) || '[]'); } catch(e) { return []; }
+    }
+    function saveFinalizedIds(ids) {
+      localStorage.setItem(STORAGE_KEY_FINALIZED, JSON.stringify(ids));
+    }
+
+    // Known IDs from batch import (fallback for councils without isNew flag)
+    const KNOWN_NEW_IDS = [
       'cas-atarashii-sihon-107','cas-roumuhi-tenka-108',
       'cao-kisei-chiiki-wg-109','cao-kisei-iryou-wg-110','cao-kisei-hatarakikata-wg-111',
       'cao-kisei-digital-ai-wg-112','cao-kisei-startup-wg-113','cao-kisei-gx-subwg-114',
@@ -370,7 +382,8 @@
       'mlit-kokudo-150','mlit-koutsu-151','mlit-unyu-152','mlit-chuou-kensetsu-153',
       'moe-chuo-kankyo-154','mod-shisetsu-155'
     ];
-    const newIdSet = new Set(NEW_COUNCIL_IDS);
+    const knownIdSet = new Set(KNOWN_NEW_IDS);
+    const finalizedSet = new Set(getFinalizedIds());
 
     // Safely access globals from data.js
     const councils  = (typeof COUNCILS !== 'undefined' && Array.isArray(COUNCILS)) ? COUNCILS : [];
@@ -378,8 +391,10 @@
     const ministries = (typeof MINISTRIES !== 'undefined') ? MINISTRIES : {};
     const categories = (typeof CATEGORIES !== 'undefined') ? CATEGORIES : {};
 
-    // Filter to new councils only
-    const newCouncils = councils.filter(c => newIdSet.has(c.id));
+    // Filter to new councils: isNew flag OR known IDs, MINUS already finalized
+    const newCouncils = councils.filter(c =>
+      (c.isNew === true || knownIdSet.has(c.id)) && !finalizedSet.has(c.id)
+    );
     // Map meetings by councilId
     const meetingMap = {};
     meetings.forEach(m => { if (!meetingMap[m.councilId]) meetingMap[m.councilId] = []; meetingMap[m.councilId].push(m); });
@@ -579,12 +594,13 @@
           actionButtons = `<button class="btn-revert" onclick="setVerdict('${c.id}', null)">↩ 取消</button>`;
         }
 
-        const globalIdx = NEW_COUNCIL_IDS.indexOf(c.id) + 1;
+        const globalIdx = i + 1;
+        const totalCount = newCouncils.length;
 
         return `<div class="council-card ${verdictClass}" style="--card-accent: ${accentColor}; animation-delay: ${i * 0.03}s;" id="card-${c.id}">
           <div class="card-top">
             <div class="card-title-area">
-              <div class="card-idx">#${globalIdx} / ${NEW_COUNCIL_IDS.length}</div>
+              <div class="card-idx">#${globalIdx} / ${totalCount}</div>
               <div class="card-name">${c.name}</div>
               <div class="card-id">ID: ${c.id}</div>
             </div>
@@ -734,12 +750,20 @@
       renderCards();
     });
 
-    // ─── Export JSON (AI Agent-Actionable Format) ───
+    // ─── Export JSON (AI Agent-Actionable Format) ── APPROVED ONLY ───
     document.getElementById('btnExportJson').addEventListener('click', () => {
-      // Build corrections array: explicit instructions for AI Agent to apply to data.js
+      // Only export approved councils
+      const approvedCouncils = newCouncils.filter(c => verdicts[c.id] && verdicts[c.id].verdict === 'approved');
+
+      if (approvedCouncils.length === 0) {
+        alert('承認済みの会議体がありません。先に会議体を承認してください。');
+        return;
+      }
+
+      // Build corrections array from approved councils only
       const corrections = [];
 
-      newCouncils.forEach(c => {
+      approvedCouncils.forEach(c => {
         const v = verdicts[c.id];
 
         // Council-level officialUrl correction
@@ -771,27 +795,9 @@
             });
           }
         });
-
-        // If council is rejected, add a remove instruction
-        if (v.verdict === 'rejected') {
-          corrections.push({
-            action: 'remove',
-            target: 'COUNCILS',
-            targetId: c.id,
-            reason: v.notes || 'Rejected by admin review'
-          });
-          cMeetings.forEach(m => {
-            corrections.push({
-              action: 'remove',
-              target: 'MEETINGS',
-              targetId: m.id,
-              reason: `Parent council ${c.id} was rejected`
-            });
-          });
-        }
       });
 
-      // Build full report
+      // Build full report (approved only)
       const report = {
         _format: 'pmhub-verification-report-v2',
         _description: 'AI Agent向け検証レポート。corrections配列の各エントリをdocs/data.jsに適用してください。',
@@ -803,16 +809,16 @@
         exportedAt: new Date().toISOString(),
         targetFile: 'docs/data.js',
         summary: {
-          totalNewCouncils: newCouncils.length,
-          approved: Object.values(verdicts).filter(v => v.verdict === 'approved').length,
-          rejected: Object.values(verdicts).filter(v => v.verdict === 'rejected').length,
-          pending:  Object.values(verdicts).filter(v => v.verdict === null).length,
-          urlCorrected: Object.values(verdicts).filter(v => v.correctedUrl && v.correctedUrl.trim() !== '').length,
-          meetingUrlCorrected: Object.values(meetingUrlCorrections).filter(v => v && v.trim() !== '').length,
+          totalApproved: approvedCouncils.length,
+          urlCorrected: approvedCouncils.filter(c => verdicts[c.id].correctedUrl && verdicts[c.id].correctedUrl.trim() !== '').length,
+          meetingUrlCorrected: approvedCouncils.reduce((acc, c) => {
+            const cMeetings = meetingMap[c.id] || [];
+            return acc + cMeetings.filter(m => meetingUrlCorrections[m.id] && meetingUrlCorrections[m.id].trim() !== '').length;
+          }, 0),
           totalCorrections: corrections.length
         },
         corrections: corrections,
-        councils: newCouncils.map(c => {
+        councils: approvedCouncils.map(c => {
           const cMeetings = meetingMap[c.id] || [];
           return {
             id: c.id,
@@ -822,7 +828,7 @@
             officialUrl: c.officialUrl,
             correctedUrl: verdicts[c.id].correctedUrl || null,
             trackedSince: c.trackedSince,
-            verdict: verdicts[c.id].verdict || 'pending',
+            verdict: 'approved',
             notes: verdicts[c.id].notes,
             urlStatus: urlStatus[c.id] || 'unchecked',
             meetings: cMeetings.map(m => {
@@ -850,6 +856,23 @@
       a.download = `verification_report_${new Date().toISOString().slice(0,10)}.json`;
       a.click();
       URL.revokeObjectURL(url);
+
+      // After export, finalize: persist approved IDs to localStorage so they disappear
+      const currentFinalized = getFinalizedIds();
+      const newlyFinalized = approvedCouncils.map(c => c.id);
+      const merged = [...new Set([...currentFinalized, ...newlyFinalized])];
+      saveFinalizedIds(merged);
+
+      // Remove approved councils from the live list
+      const approvedIdSet = new Set(newlyFinalized);
+      for (let i = newCouncils.length - 1; i >= 0; i--) {
+        if (approvedIdSet.has(newCouncils[i].id)) {
+          delete verdicts[newCouncils[i].id];
+          newCouncils.splice(i, 1);
+        }
+      }
+      renderCards();
+      alert(`${newlyFinalized.length} 件の承認済み会議体をエクスポートし、検証リストから削除しました。`);
     });
 
     // ─── Filter Listeners ───
