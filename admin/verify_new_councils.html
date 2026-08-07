@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>政策会議ウォッチ | 新規会議体 検証ページ</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/svg+xml" href="../docs/favicon.svg" />
+  <link rel="stylesheet" href="../docs/styles.css" />
+  <style>
+    /* ── Page Layout ── */
+    .verify-container { max-width: 1320px; margin: 2rem auto; padding: 0 1.5rem; }
+
+    /* ── Summary Cards ── */
+    .summary-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem; margin-bottom: 1.75rem;
+    }
+    .summary-stat {
+      background: var(--bg-card); border: 1px solid var(--border-color-strong);
+      border-radius: var(--radius-lg); padding: 1.25rem 1.5rem;
+      display: flex; flex-direction: column; gap: 0.35rem;
+      backdrop-filter: blur(12px);
+    }
+    .summary-stat .stat-label { font-size: 0.78rem; color: var(--text-muted); font-weight: 600; text-transform: uppercase; letter-spacing: 0.04em; }
+    .summary-stat .stat-value { font-size: 1.75rem; font-weight: 800; }
+    .summary-stat .stat-value.total { color: #3b82f6; }
+    .summary-stat .stat-value.approved { color: #10b981; }
+    .summary-stat .stat-value.rejected { color: #ef4444; }
+    .summary-stat .stat-value.pending  { color: #f59e0b; }
+    .summary-stat .stat-value.url-ok   { color: #06b6d4; }
+
+    /* ── Filter Bar ── */
+    .filter-bar {
+      display: flex; gap: 0.75rem; flex-wrap: wrap; align-items: center;
+      margin-bottom: 1.5rem; padding: 1rem 1.25rem;
+      background: var(--bg-card); border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg); backdrop-filter: blur(12px);
+    }
+    .filter-bar input, .filter-bar select {
+      background: var(--bg-input); border: 1px solid var(--border-color-strong);
+      border-radius: var(--radius-md); padding: 0.5rem 0.85rem;
+      color: var(--text-primary); font-size: 0.85rem; font-family: inherit;
+    }
+    .filter-bar input { flex: 1; min-width: 200px; }
+    .filter-bar select { min-width: 140px; }
+
+    /* ── Council Cards ── */
+    .council-card {
+      background: var(--bg-card); border: 1px solid var(--border-color-strong);
+      border-radius: var(--radius-lg); padding: 1.5rem;
+      margin-bottom: 1rem; transition: all var(--transition-normal);
+      position: relative; overflow: hidden;
+    }
+    .council-card::before {
+      content: ''; position: absolute; left: 0; top: 0; bottom: 0;
+      width: 4px; border-radius: 4px 0 0 4px;
+      background: var(--card-accent, #3b82f6);
+    }
+    .council-card:hover { border-color: var(--accent-primary); transform: translateY(-1px); box-shadow: var(--shadow-card); }
+    .council-card.verdict-approved { border-color: rgba(16, 185, 129, 0.5); }
+    .council-card.verdict-approved::before { background: #10b981; }
+    .council-card.verdict-rejected { border-color: rgba(239, 68, 68, 0.4); opacity: 0.6; }
+    .council-card.verdict-rejected::before { background: #ef4444; }
+
+    .card-top { display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem; flex-wrap: wrap; }
+    .card-title-area { flex: 1; min-width: 0; }
+    .card-idx { font-size: 0.72rem; font-weight: 700; color: var(--text-muted); margin-bottom: 0.25rem; font-family: 'JetBrains Mono', monospace; }
+    .card-name { font-size: 1.1rem; font-weight: 700; color: var(--text-primary); word-break: break-all; }
+    .card-id   { font-size: 0.78rem; font-family: 'JetBrains Mono', monospace; color: var(--text-muted); margin-top: 0.2rem; }
+
+    .card-actions { display: flex; gap: 0.5rem; flex-shrink: 0; align-items: center; }
+
+    .card-meta { display: flex; flex-wrap: wrap; gap: 0.6rem 1.25rem; margin-top: 0.85rem; }
+    .meta-chip {
+      display: inline-flex; align-items: center; gap: 0.35rem;
+      font-size: 0.78rem; color: var(--text-secondary); padding: 0.25rem 0.65rem;
+      background: rgba(255,255,255,0.05); border-radius: var(--radius-full);
+      border: 1px solid var(--border-color);
+    }
+    .meta-chip .chip-icon { font-size: 0.85rem; }
+    .meta-chip a { color: inherit; text-decoration: none; }
+    .meta-chip a:hover { color: var(--accent-primary); text-decoration: underline; }
+
+    .category-badge {
+      font-size: 0.72rem; font-weight: 700; padding: 0.18rem 0.55rem;
+      border-radius: var(--radius-full); display: inline-block;
+    }
+    .cat-COUNCIL       { background: rgba(59,130,246,0.18); color: #60a5fa; border: 1px solid rgba(59,130,246,0.3); }
+    .cat-WORKING_GROUP { background: rgba(168,85,247,0.18); color: #c084fc; border: 1px solid rgba(168,85,247,0.3); }
+    .cat-SECTION        { background: rgba(245,158,11,0.18); color: #fbbf24; border: 1px solid rgba(245,158,11,0.3); }
+    .cat-SUBCOMMITTEE   { background: rgba(6,182,212,0.18); color: #22d3ee; border: 1px solid rgba(6,182,212,0.3); }
+    .cat-LIAISON        { background: rgba(244,63,94,0.18); color: #fb7185; border: 1px solid rgba(244,63,94,0.3); }
+    .cat-HQ             { background: rgba(16,185,129,0.18); color: #34d399; border: 1px solid rgba(16,185,129,0.3); }
+    .cat-COMMITTEE      { background: rgba(100,116,139,0.18); color: #94a3b8; border: 1px solid rgba(100,116,139,0.3); }
+    .cat-ADVISORY       { background: rgba(234,179,8,0.18); color: #facc15; border: 1px solid rgba(234,179,8,0.3); }
+    .cat-PANEL          { background: rgba(139,92,246,0.18); color: #a78bfa; border: 1px solid rgba(139,92,246,0.3); }
+    .cat-STUDY          { background: rgba(34,197,94,0.18); color: #4ade80; border: 1px solid rgba(34,197,94,0.3); }
+    .cat-ROUNDTABLE     { background: rgba(236,72,153,0.18); color: #f472b6; border: 1px solid rgba(236,72,153,0.3); }
+
+    /* URL Check */
+    .url-status { display: inline-flex; align-items: center; gap: 0.3rem; font-size: 0.72rem; font-weight: 600; padding: 0.15rem 0.5rem; border-radius: var(--radius-full); }
+    .url-status.checking { color: #94a3b8; background: rgba(148,163,184,0.15); }
+    .url-status.ok       { color: #10b981; background: rgba(16,185,129,0.15); }
+    .url-status.error    { color: #ef4444; background: rgba(239,68,68,0.15); }
+
+    /* Buttons */
+    .btn-approve, .btn-reject, .btn-revert {
+      font-size: 0.78rem; font-weight: 700; padding: 0.35rem 0.75rem;
+      border-radius: var(--radius-md); cursor: pointer; border: 1px solid;
+      transition: all var(--transition-fast); font-family: inherit;
+    }
+    .btn-approve { background: rgba(16,185,129,0.15); color: #10b981; border-color: rgba(16,185,129,0.4); }
+    .btn-approve:hover { background: rgba(16,185,129,0.3); }
+    .btn-reject  { background: rgba(239,68,68,0.1); color: #ef4444; border-color: rgba(239,68,68,0.3); }
+    .btn-reject:hover { background: rgba(239,68,68,0.25); }
+    .btn-revert  { background: rgba(245,158,11,0.1); color: #f59e0b; border-color: rgba(245,158,11,0.3); }
+    .btn-revert:hover { background: rgba(245,158,11,0.25); }
+
+    .btn-bulk {
+      font-size: 0.85rem; font-weight: 700; padding: 0.55rem 1.1rem;
+      border-radius: var(--radius-md); cursor: pointer; border: 1px solid;
+      transition: all var(--transition-fast); font-family: inherit;
+    }
+    .btn-bulk.approve-all { background: rgba(16,185,129,0.15); color: #10b981; border-color: rgba(16,185,129,0.4); }
+    .btn-bulk.approve-all:hover { background: rgba(16,185,129,0.3); }
+    .btn-bulk.export-json { background: rgba(59,130,246,0.12); color: #3b82f6; border-color: rgba(59,130,246,0.3); }
+    .btn-bulk.export-json:hover { background: rgba(59,130,246,0.25); }
+    .btn-bulk.check-urls { background: rgba(6,182,212,0.12); color: #06b6d4; border-color: rgba(6,182,212,0.3); }
+    .btn-bulk.check-urls:hover { background: rgba(6,182,212,0.25); }
+
+    .bulk-actions { display: flex; gap: 0.75rem; flex-wrap: wrap; margin-bottom: 1.5rem; }
+
+    /* Meeting preview */
+    .meeting-preview {
+      margin-top: 0.85rem; padding: 0.75rem 1rem;
+      background: rgba(0,0,0,0.2); border-radius: var(--radius-md);
+      border: 1px solid var(--border-color); font-size: 0.82rem;
+    }
+    .meeting-preview .mp-label { font-weight: 600; color: var(--text-muted); font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.04em; margin-bottom: 0.35rem; }
+    .meeting-preview .mp-row { display: flex; gap: 0.5rem; align-items: baseline; color: var(--text-secondary); margin-top: 0.2rem; }
+    .meeting-preview .mp-key { font-weight: 600; color: var(--text-muted); min-width: 60px; }
+
+    /* Notes input */
+    .notes-area {
+      margin-top: 0.65rem; width: 100%; background: var(--bg-input);
+      border: 1px solid var(--border-color); border-radius: var(--radius-md);
+      padding: 0.45rem 0.65rem; font-size: 0.8rem; color: var(--text-primary);
+      font-family: inherit; resize: vertical; min-height: 36px;
+    }
+    .notes-area::placeholder { color: var(--text-muted); }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .card-top { flex-direction: column; }
+      .card-actions { width: 100%; justify-content: flex-end; }
+      .summary-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    /* Empty state */
+    .empty-state { text-align: center; padding: 3rem 1rem; color: var(--text-muted); }
+    .empty-state svg { margin-bottom: 1rem; opacity: 0.4; }
+
+    /* Fade-in animation */
+    .council-card { animation: fadeSlideIn 0.3s ease forwards; opacity: 0; }
+    @keyframes fadeSlideIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+  </style>
+</head>
+<body data-theme="dark">
+
+  <header class="app-header">
+    <div class="header-container">
+      <div class="brand-logo">
+        <div class="logo-icon" style="background: linear-gradient(135deg, #f59e0b, #d97706);">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+        </div>
+        <div class="logo-text">
+          <span class="product-name">新規会議体 検証レビュー</span>
+          <span class="product-badge" style="color:#f59e0b;">ADMIN VERIFICATION v1.0</span>
+        </div>
+      </div>
+      <div class="header-actions">
+        <a href="admin_dashboard.html" class="btn-secondary" style="font-size:0.82rem;">
+          ← 管理コンソールに戻る
+        </a>
+        <a href="../docs/index.html" target="_blank" class="btn-secondary" style="font-size:0.82rem;">
+          一般ポータル ↗
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main class="verify-container">
+
+    <!-- ── Summary Stats ── -->
+    <section class="summary-grid" id="summaryGrid">
+      <div class="summary-stat"><span class="stat-label">新規追加</span><span class="stat-value total" id="statTotal">—</span></div>
+      <div class="summary-stat"><span class="stat-label">承認済み</span><span class="stat-value approved" id="statApproved">0</span></div>
+      <div class="summary-stat"><span class="stat-label">却下</span><span class="stat-value rejected" id="statRejected">0</span></div>
+      <div class="summary-stat"><span class="stat-label">未レビュー</span><span class="stat-value pending" id="statPending">—</span></div>
+      <div class="summary-stat"><span class="stat-label">URL 疎通OK</span><span class="stat-value url-ok" id="statUrlOk">—</span></div>
+    </section>
+
+    <!-- ── Bulk Actions ── -->
+    <div class="bulk-actions">
+      <button class="btn-bulk check-urls" id="btnCheckUrls">🔗 URL一括疎通チェック</button>
+      <button class="btn-bulk approve-all" id="btnApproveAll">✅ 未レビューを全て承認</button>
+      <button class="btn-bulk export-json" id="btnExportJson">📥 検証結果をJSONエクスポート</button>
+    </div>
+
+    <!-- ── Filters ── -->
+    <div class="filter-bar">
+      <input type="text" id="filterSearch" placeholder="🔍 会議体名・ID・省庁で検索…" />
+      <select id="filterMinistry"><option value="">全省庁</option></select>
+      <select id="filterCategory"><option value="">全カテゴリ</option></select>
+      <select id="filterVerdict">
+        <option value="">全ステータス</option>
+        <option value="pending">未レビュー</option>
+        <option value="approved">承認済み</option>
+        <option value="rejected">却下</option>
+      </select>
+    </div>
+
+    <!-- ── Council List ── -->
+    <div id="councilList"></div>
+
+  </main>
+
+  <script src="../docs/data.js"></script>
+  <script>
+  document.addEventListener('DOMContentLoaded', () => {
+    // ─── Identify New Councils ───
+    // New councils added from gemini-code-1786056287125.txt have IDs matching this list
+    const NEW_COUNCIL_IDS = [
+      'cas-atarashii-sihon-107','cas-roumuhi-tenka-108',
+      'cao-kisei-chiiki-wg-109','cao-kisei-iryou-wg-110','cao-kisei-hatarakikata-wg-111',
+      'cao-kisei-digital-ai-wg-112','cao-kisei-startup-wg-113','cao-kisei-gx-subwg-114',
+      'fsc-honkaigi-115','fsc-kikaku-116','fsc-tenkabutu-117','fsc-nouyaku-118',
+      'npsc-teirei-119','fsa-kinyu-shingi-120',
+      'mic-joho-tsusin-121','mic-chizai-122',
+      'moj-housei-soukai-123','moj-housei-seishoku-124','moj-housei-kaisha-125','moj-housei-keiji-126',
+      'mofa-kaigai-kouryushingi-127',
+      'mof-zaisei-seido-128','mof-customs-appeal-129',
+      'mext-chukyo-130','mext-gijyutu-131',
+      'mhlw-hosho-toukei-132','mhlw-hosho-shippei-133','mhlw-hosho-shiinsentaku-134',
+      'mhlw-hosho-iryou-135','mhlw-hosho-kaigo-136','mhlw-hosho-fukushi-137',
+      'mhlw-hosho-seikatsu-138','mhlw-hosho-jidou-139','mhlw-hosho-jidoukan-140',
+      'mhlw-hosho-shikinunyou-141','mhlw-hosho-kaigohoken-142','mhlw-hosho-shouni-143',
+      'mhlw-kousei-kansenshou-144','mhlw-kousei-influ-145',
+      'mhlw-rousei-roudoujouken-146','mhlw-rousei-anzeneisei-147',
+      'meti-sankoushin-148','meti-ax-skill-wg-149',
+      'mlit-kokudo-150','mlit-koutsu-151','mlit-unyu-152','mlit-chuou-kensetsu-153',
+      'moe-chuo-kankyo-154','mod-shisetsu-155'
+    ];
+    const newIdSet = new Set(NEW_COUNCIL_IDS);
+
+    // Safely access globals from data.js
+    const councils  = (typeof COUNCILS !== 'undefined' && Array.isArray(COUNCILS)) ? COUNCILS : [];
+    const meetings  = (typeof MEETINGS !== 'undefined' && Array.isArray(MEETINGS)) ? MEETINGS : [];
+    const ministries = (typeof MINISTRIES !== 'undefined') ? MINISTRIES : {};
+    const categories = (typeof CATEGORIES !== 'undefined') ? CATEGORIES : {};
+
+    // Filter to new councils only
+    const newCouncils = councils.filter(c => newIdSet.has(c.id));
+    // Map meetings by councilId
+    const meetingMap = {};
+    meetings.forEach(m => { if (!meetingMap[m.councilId]) meetingMap[m.councilId] = []; meetingMap[m.councilId].push(m); });
+
+    // ─── State ───
+    const verdicts = {}; // councilId -> { verdict: 'approved'|'rejected'|null, notes: '' }
+    const urlStatus = {}; // councilId -> 'checking'|'ok'|'error'
+    newCouncils.forEach(c => { verdicts[c.id] = { verdict: null, notes: '' }; });
+
+    // ─── Populate Filters ───
+    const ministrySet = new Set(newCouncils.map(c => c.ministry));
+    const categorySet = new Set(newCouncils.map(c => c.category));
+    const filterMinistry = document.getElementById('filterMinistry');
+    const filterCategory = document.getElementById('filterCategory');
+    ministrySet.forEach(code => {
+      const name = ministries[code] ? ministries[code].name : code;
+      filterMinistry.innerHTML += `<option value="${code}">${name} (${code})</option>`;
+    });
+    categorySet.forEach(cat => {
+      const label = categories[cat] || cat;
+      filterCategory.innerHTML += `<option value="${cat}">${label}</option>`;
+    });
+
+    // ─── Rendering ───
+    const listEl = document.getElementById('councilList');
+
+    function getMinistryColor(code) {
+      const colorMap = {
+        CAO:'#a855f7', CAS:'#4f46e5', CAO:'#a855f7', DIGITAL:'#06b6d4', CFA:'#ec4899',
+        MIC:'#f43f5e', MOJ:'#64748b', MOFA:'#0284c7', MOF:'#3b82f6', MEXT:'#d946ef',
+        MHLW:'#f59e0b', MAFF:'#16a34a', METI:'#10b981', MLIT:'#0d9488', MOE:'#84cc16',
+        MOD:'#475569', NPA:'#1e3a8a', FSA:'#2563eb', FSC:'#f97316', NPSC:'#64748b',
+        CAA:'#f97316', PPC:'#0891b2', NRA:'#dc2626'
+      };
+      return colorMap[code] || '#3b82f6';
+    }
+
+    function renderCards() {
+      const searchTerm = document.getElementById('filterSearch').value.toLowerCase();
+      const fMinistry  = document.getElementById('filterMinistry').value;
+      const fCategory  = document.getElementById('filterCategory').value;
+      const fVerdict   = document.getElementById('filterVerdict').value;
+
+      let filtered = newCouncils.filter(c => {
+        const minName = ministries[c.ministry] ? ministries[c.ministry].name : c.ministry;
+        const text = `${c.name} ${c.id} ${minName} ${c.ministry}`.toLowerCase();
+        if (searchTerm && !text.includes(searchTerm)) return false;
+        if (fMinistry && c.ministry !== fMinistry) return false;
+        if (fCategory && c.category !== fCategory) return false;
+        if (fVerdict) {
+          const v = verdicts[c.id].verdict;
+          if (fVerdict === 'pending' && v !== null) return false;
+          if (fVerdict === 'approved' && v !== 'approved') return false;
+          if (fVerdict === 'rejected' && v !== 'rejected') return false;
+        }
+        return true;
+      });
+
+      if (filtered.length === 0) {
+        listEl.innerHTML = `<div class="empty-state">
+          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          <p>該当する会議体がありません</p>
+        </div>`;
+        return;
+      }
+
+      listEl.innerHTML = filtered.map((c, i) => {
+        const v = verdicts[c.id];
+        const verdictClass = v.verdict ? `verdict-${v.verdict}` : '';
+        const minName = ministries[c.ministry] ? ministries[c.ministry].name : c.ministry;
+        const catLabel = categories[c.category] || c.category;
+        const cMeetings = meetingMap[c.id] || [];
+        const latestMeeting = cMeetings.sort((a, b) => b.date.localeCompare(a.date))[0];
+        const uStatus = urlStatus[c.id];
+        const accentColor = getMinistryColor(c.ministry);
+
+        let urlBadge = '';
+        if (uStatus === 'checking') urlBadge = '<span class="url-status checking">⏳ 確認中…</span>';
+        else if (uStatus === 'ok')   urlBadge = '<span class="url-status ok">✓ 疎通OK</span>';
+        else if (uStatus === 'error') urlBadge = '<span class="url-status error">✗ エラー</span>';
+
+        let meetingHtml = '';
+        if (latestMeeting) {
+          meetingHtml = `<div class="meeting-preview">
+            <div class="mp-label">📋 最新会議データ</div>
+            <div class="mp-row"><span class="mp-key">日付:</span> ${latestMeeting.date}</div>
+            <div class="mp-row"><span class="mp-key">タイトル:</span> ${latestMeeting.title}</div>
+            <div class="mp-row"><span class="mp-key">資料数:</span> ${latestMeeting.docCount} 件</div>
+          </div>`;
+        }
+
+        let actionButtons = '';
+        if (v.verdict === null) {
+          actionButtons = `
+            <button class="btn-approve" onclick="setVerdict('${c.id}','approved')">✓ 承認</button>
+            <button class="btn-reject" onclick="setVerdict('${c.id}','rejected')">✗ 却下</button>`;
+        } else {
+          actionButtons = `<button class="btn-revert" onclick="setVerdict('${c.id}', null)">↩ 取消</button>`;
+        }
+
+        const globalIdx = NEW_COUNCIL_IDS.indexOf(c.id) + 1;
+
+        return `<div class="council-card ${verdictClass}" style="--card-accent: ${accentColor}; animation-delay: ${i * 0.03}s;" id="card-${c.id}">
+          <div class="card-top">
+            <div class="card-title-area">
+              <div class="card-idx">#${globalIdx} / ${NEW_COUNCIL_IDS.length}</div>
+              <div class="card-name">${c.name}</div>
+              <div class="card-id">ID: ${c.id}</div>
+            </div>
+            <div class="card-actions">${actionButtons}</div>
+          </div>
+          <div class="card-meta">
+            <span class="meta-chip"><span class="chip-icon">🏛</span> ${minName} (${c.ministry})</span>
+            <span class="category-badge cat-${c.category}">${catLabel}</span>
+            <span class="meta-chip"><span class="chip-icon">🔗</span> <a href="${c.officialUrl}" target="_blank" rel="noopener">${truncateUrl(c.officialUrl, 55)}</a> ${urlBadge}</span>
+            <span class="meta-chip"><span class="chip-icon">📅</span> ${c.trackedSince || '—'}</span>
+          </div>
+          ${meetingHtml}
+          <textarea class="notes-area" placeholder="検証メモ（任意）…" onchange="setNotes('${c.id}', this.value)">${v.notes}</textarea>
+        </div>`;
+      }).join('');
+
+      updateStats();
+    }
+
+    function truncateUrl(url, max) {
+      if (url.length <= max) return url;
+      return url.substring(0, max) + '…';
+    }
+
+    // ─── Verdict Handling ───
+    window.setVerdict = function(id, verdict) {
+      verdicts[id].verdict = verdict;
+      renderCards();
+    };
+    window.setNotes = function(id, text) {
+      verdicts[id].notes = text;
+    };
+
+    // ─── Stats ───
+    function updateStats() {
+      const total = newCouncils.length;
+      const approved = Object.values(verdicts).filter(v => v.verdict === 'approved').length;
+      const rejected = Object.values(verdicts).filter(v => v.verdict === 'rejected').length;
+      const pending  = total - approved - rejected;
+      const urlOk    = Object.values(urlStatus).filter(s => s === 'ok').length;
+
+      document.getElementById('statTotal').textContent = total;
+      document.getElementById('statApproved').textContent = approved;
+      document.getElementById('statRejected').textContent = rejected;
+      document.getElementById('statPending').textContent = pending;
+      document.getElementById('statUrlOk').textContent = `${urlOk} / ${total}`;
+    }
+
+    // ─── URL Liveness Check ───
+    async function checkUrl(council) {
+      urlStatus[council.id] = 'checking';
+      renderCards();
+      try {
+        // Use fetch with no-cors mode; we can only detect network-level failures
+        const controller = new AbortController();
+        const timeoutId = setTimeout(() => controller.abort(), 8000);
+        const res = await fetch(council.officialUrl, { mode: 'no-cors', signal: controller.signal });
+        clearTimeout(timeoutId);
+        // no-cors always returns opaque response, so reaching here means network is OK
+        urlStatus[council.id] = 'ok';
+      } catch (e) {
+        urlStatus[council.id] = 'error';
+      }
+      renderCards();
+    }
+
+    document.getElementById('btnCheckUrls').addEventListener('click', async () => {
+      const btn = document.getElementById('btnCheckUrls');
+      btn.disabled = true;
+      btn.textContent = '🔗 チェック実行中…';
+      // Run checks in batches of 5 to avoid flooding
+      for (let i = 0; i < newCouncils.length; i += 5) {
+        const batch = newCouncils.slice(i, i + 5);
+        await Promise.all(batch.map(c => checkUrl(c)));
+      }
+      btn.disabled = false;
+      btn.textContent = '🔗 URL一括疎通チェック';
+    });
+
+    // ─── Bulk Approve ───
+    document.getElementById('btnApproveAll').addEventListener('click', () => {
+      const pending = newCouncils.filter(c => verdicts[c.id].verdict === null);
+      if (pending.length === 0) { alert('未レビューの会議体はありません。'); return; }
+      if (!confirm(`未レビューの ${pending.length} 件を全て承認しますか？`)) return;
+      pending.forEach(c => { verdicts[c.id].verdict = 'approved'; });
+      renderCards();
+    });
+
+    // ─── Export JSON ───
+    document.getElementById('btnExportJson').addEventListener('click', () => {
+      const report = {
+        exportedAt: new Date().toISOString(),
+        totalNewCouncils: newCouncils.length,
+        summary: {
+          approved: Object.values(verdicts).filter(v => v.verdict === 'approved').length,
+          rejected: Object.values(verdicts).filter(v => v.verdict === 'rejected').length,
+          pending:  Object.values(verdicts).filter(v => v.verdict === null).length
+        },
+        councils: newCouncils.map(c => ({
+          id: c.id,
+          name: c.name,
+          ministry: c.ministry,
+          category: c.category,
+          officialUrl: c.officialUrl,
+          trackedSince: c.trackedSince,
+          verdict: verdicts[c.id].verdict || 'pending',
+          notes: verdicts[c.id].notes,
+          urlStatus: urlStatus[c.id] || 'unchecked'
+        }))
+      };
+      const blob = new Blob([JSON.stringify(report, null, 2)], { type: 'application/json' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = `verification_report_${new Date().toISOString().slice(0,10)}.json`;
+      a.click();
+      URL.revokeObjectURL(url);
+    });
+
+    // ─── Filter Listeners ───
+    document.getElementById('filterSearch').addEventListener('input', renderCards);
+    document.getElementById('filterMinistry').addEventListener('change', renderCards);
+    document.getElementById('filterCategory').addEventListener('change', renderCards);
+    document.getElementById('filterVerdict').addEventListener('change', renderCards);
+
+    // ─── Init ───
+    renderCards();
+  });
+  </script>
+</body>
+</html>
