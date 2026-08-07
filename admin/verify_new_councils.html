@@ -157,7 +157,7 @@
     .url-correction .uc-row {
       display: flex; gap: 0.5rem; align-items: center;
     }
-    .url-correction input {
+    .url-correction input, .meeting-url-row input {
       flex: 1; background: var(--bg-input); border: 1px solid var(--border-color-strong);
       border-radius: var(--radius-md); padding: 0.4rem 0.7rem;
       color: var(--text-primary); font-size: 0.82rem; font-family: 'JetBrains Mono', monospace;
@@ -171,12 +171,46 @@
       white-space: nowrap; transition: all var(--transition-fast);
     }
     .btn-open-url:hover { background: rgba(59,130,246,0.25); }
-    .uc-diff {
+    .uc-diff, .mu-diff {
       margin-top: 0.3rem; font-size: 0.72rem;
       font-family: 'JetBrains Mono', monospace;
     }
-    .uc-diff .old-url { color: #ef4444; text-decoration: line-through; opacity: 0.7; }
-    .uc-diff .new-url { color: #10b981; }
+    .uc-diff .old-url, .mu-diff .old-url { color: #ef4444; text-decoration: line-through; opacity: 0.7; }
+    .uc-diff .new-url, .mu-diff .new-url { color: #10b981; }
+
+    /* Meeting URL rows */
+    .meetings-urls-panel {
+      margin-top: 0.7rem; padding: 0.7rem 0.9rem;
+      background: rgba(16,185,129,0.04); border: 1px solid rgba(16,185,129,0.15);
+      border-radius: var(--radius-md);
+    }
+    .meetings-urls-panel .mu-label {
+      font-size: 0.72rem; font-weight: 700; color: #34d399;
+      text-transform: uppercase; letter-spacing: 0.04em; margin-bottom: 0.5rem;
+      display: flex; align-items: center; gap: 0.35rem;
+    }
+    .meeting-url-row {
+      padding: 0.5rem 0; border-bottom: 1px solid rgba(255,255,255,0.04);
+    }
+    .meeting-url-row:last-child { border-bottom: none; }
+    .meeting-url-row .mu-meeting-title {
+      font-size: 0.75rem; font-weight: 600; color: var(--text-secondary); margin-bottom: 0.3rem;
+      display: flex; align-items: center; gap: 0.4rem;
+    }
+    .meeting-url-row .mu-meeting-title .mu-date {
+      font-family: 'JetBrains Mono', monospace; color: var(--text-muted); font-size: 0.7rem;
+    }
+    .meeting-url-row .mu-meeting-title .mu-id {
+      font-family: 'JetBrains Mono', monospace; color: var(--text-muted); font-size: 0.65rem;
+    }
+    .meeting-url-row .mu-current {
+      font-size: 0.7rem; color: var(--text-muted); margin-bottom: 0.25rem;
+      font-family: 'JetBrains Mono', monospace; word-break: break-all;
+    }
+    .meeting-url-row .mu-current a { color: var(--text-muted); text-decoration: none; }
+    .meeting-url-row .mu-current a:hover { color: #60a5fa; text-decoration: underline; }
+    .meeting-url-row .uc-row { display: flex; gap: 0.5rem; align-items: center; }
+    .meeting-url-row input.has-value { border-color: rgba(16,185,129,0.5); background: rgba(16,185,129,0.05); }
 
     /* Materials panel */
     .materials-panel {
@@ -354,6 +388,7 @@
     const verdicts = {}; // councilId -> { verdict: 'approved'|'rejected'|null, notes: '', correctedUrl: '' }
     const urlStatus = {}; // councilId -> 'checking'|'ok'|'error'
     const matStatus = {}; // "councilId::matUrl" -> 'checking'|'ok'|'error'
+    const meetingUrlCorrections = {}; // meetingId -> correctedUrl string
     newCouncils.forEach(c => { verdicts[c.id] = { verdict: null, notes: '', correctedUrl: '' }; });
 
     // ─── Populate Filters ───
@@ -429,18 +464,7 @@
         else if (uStatus === 'ok')   urlBadge = '<span class="url-status ok">✓ 疎通OK</span>';
         else if (uStatus === 'error') urlBadge = '<span class="url-status error">✗ エラー</span>';
 
-        // Meeting preview
-        let meetingHtml = '';
-        if (latestMeeting) {
-          meetingHtml = `<div class="meeting-preview">
-            <div class="mp-label">📋 最新会議データ</div>
-            <div class="mp-row"><span class="mp-key">日付:</span> ${latestMeeting.date}</div>
-            <div class="mp-row"><span class="mp-key">タイトル:</span> ${latestMeeting.title}</div>
-            <div class="mp-row"><span class="mp-key">資料数:</span> ${latestMeeting.docCount} 件</div>
-          </div>`;
-        }
-
-        // URL Correction input
+        // URL Correction input (council top page)
         const correctedVal = v.correctedUrl || '';
         const hasCorrection = correctedVal.trim() !== '';
         let diffHtml = '';
@@ -451,7 +475,7 @@
           </div>`;
         }
         const urlCorrectionHtml = `<div class="url-correction">
-          <div class="uc-label">✏️ 正しいトップページURL</div>
+          <div class="uc-label">✏️ 会議体トップページURL</div>
           <div class="uc-row">
             <input type="url" value="${escAttr(correctedVal)}" placeholder="${escAttr(c.officialUrl)}（変更不要ならそのまま）"
               class="${hasCorrection ? 'has-value' : ''}" id="url-input-${c.id}"
@@ -460,6 +484,42 @@
           </div>
           ${diffHtml}
         </div>`;
+
+        // Per-meeting URL display + correction
+        let meetingUrlsHtml = '';
+        if (sortedMeetings.length > 0) {
+          const meetingRows = sortedMeetings.map(m => {
+            const mCorrected = meetingUrlCorrections[m.id] || '';
+            const mHasCorr = mCorrected.trim() !== '';
+            let mDiff = '';
+            if (mHasCorr) {
+              mDiff = `<div class="mu-diff">
+                <div class="old-url">− ${escHtml(m.officialUrl)}</div>
+                <div class="new-url">+ ${escHtml(mCorrected)}</div>
+              </div>`;
+            }
+            return `<div class="meeting-url-row">
+              <div class="mu-meeting-title">
+                <span class="mu-date">${m.date}</span>
+                <span>${escHtml(m.title)}</span>
+                <span class="mu-id">${m.id}</span>
+              </div>
+              <div class="mu-current">現在: <a href="${escAttr(m.officialUrl)}" target="_blank" rel="noopener">${truncateUrl(m.officialUrl, 70)}</a></div>
+              <div class="uc-row">
+                <input type="url" value="${escAttr(mCorrected)}" placeholder="正しいURL（変更不要なら空欄）"
+                  class="${mHasCorr ? 'has-value' : ''}"
+                  oninput="setCorrectedMeetingUrl('${m.id}', this.value)" />
+                <button class="btn-open-url" onclick="openMeetingUrl('${m.id}')">開く ↗</button>
+              </div>
+              ${mDiff}
+            </div>`;
+          }).join('');
+
+          meetingUrlsHtml = `<div class="meetings-urls-panel">
+            <div class="mu-label">📋 個別会議ページURL（${sortedMeetings.length}件）</div>
+            ${meetingRows}
+          </div>`;
+        }
 
         // Materials panel — collect all materials from all meetings of this council
         const allMats = [];
@@ -537,7 +597,7 @@
             <span class="meta-chip"><span class="chip-icon">📅</span> ${c.trackedSince || '—'}</span>
           </div>
           ${urlCorrectionHtml}
-          ${meetingHtml}
+          ${meetingUrlsHtml}
           ${matsHtml}
           <textarea class="notes-area" placeholder="検証メモ（任意）…" onchange="setNotes('${c.id}', this.value)">${v.notes}</textarea>
         </div>`;
@@ -567,10 +627,9 @@
     };
     window.setCorrectedUrl = function(id, url) {
       verdicts[id].correctedUrl = url.trim();
-      // Update diff display without full re-render (to keep cursor position)
       const card = document.getElementById('card-' + id);
       if (card) {
-        const input = card.querySelector('input[type=url]');
+        const input = card.querySelector('.url-correction input[type=url]');
         if (input) input.classList.toggle('has-value', url.trim() !== '');
       }
     };
@@ -578,6 +637,15 @@
       const corrected = verdicts[id].correctedUrl;
       const council = newCouncils.find(c => c.id === id);
       const url = corrected || (council ? council.officialUrl : '');
+      if (url) window.open(url, '_blank');
+    };
+    window.setCorrectedMeetingUrl = function(meetingId, url) {
+      meetingUrlCorrections[meetingId] = url.trim();
+    };
+    window.openMeetingUrl = function(meetingId) {
+      const corrected = meetingUrlCorrections[meetingId];
+      const m = meetings.find(x => x.id === meetingId);
+      const url = corrected || (m ? m.officialUrl : '');
       if (url) window.open(url, '_blank');
     };
 
@@ -666,26 +734,86 @@
       renderCards();
     });
 
-    // ─── Export JSON ───
+    // ─── Export JSON (AI Agent-Actionable Format) ───
     document.getElementById('btnExportJson').addEventListener('click', () => {
+      // Build corrections array: explicit instructions for AI Agent to apply to data.js
+      const corrections = [];
+
+      newCouncils.forEach(c => {
+        const v = verdicts[c.id];
+
+        // Council-level officialUrl correction
+        if (v.correctedUrl && v.correctedUrl.trim() !== '') {
+          corrections.push({
+            action: 'update_field',
+            target: 'COUNCILS',
+            targetId: c.id,
+            field: 'officialUrl',
+            oldValue: c.officialUrl,
+            newValue: v.correctedUrl.trim(),
+            reason: 'Admin corrected council top page URL'
+          });
+        }
+
+        // Meeting-level officialUrl corrections
+        const cMeetings = meetingMap[c.id] || [];
+        cMeetings.forEach(m => {
+          const mCorr = meetingUrlCorrections[m.id];
+          if (mCorr && mCorr.trim() !== '') {
+            corrections.push({
+              action: 'update_field',
+              target: 'MEETINGS',
+              targetId: m.id,
+              field: 'officialUrl',
+              oldValue: m.officialUrl,
+              newValue: mCorr.trim(),
+              reason: `Admin corrected meeting page URL for ${m.id}`
+            });
+          }
+        });
+
+        // If council is rejected, add a remove instruction
+        if (v.verdict === 'rejected') {
+          corrections.push({
+            action: 'remove',
+            target: 'COUNCILS',
+            targetId: c.id,
+            reason: v.notes || 'Rejected by admin review'
+          });
+          cMeetings.forEach(m => {
+            corrections.push({
+              action: 'remove',
+              target: 'MEETINGS',
+              targetId: m.id,
+              reason: `Parent council ${c.id} was rejected`
+            });
+          });
+        }
+      });
+
+      // Build full report
       const report = {
+        _format: 'pmhub-verification-report-v2',
+        _description: 'AI Agent向け検証レポート。corrections配列の各エントリをdocs/data.jsに適用してください。',
+        _instructions: [
+          'action=update_field: COUNCILS or MEETINGS 配列内のtargetIdのオブジェクトのfieldをnewValueに書き換える',
+          'action=remove: COUNCILS or MEETINGS 配列からtargetIdのオブジェクトを削除する',
+          'targetFile: docs/data.js'
+        ],
         exportedAt: new Date().toISOString(),
-        totalNewCouncils: newCouncils.length,
+        targetFile: 'docs/data.js',
         summary: {
+          totalNewCouncils: newCouncils.length,
           approved: Object.values(verdicts).filter(v => v.verdict === 'approved').length,
           rejected: Object.values(verdicts).filter(v => v.verdict === 'rejected').length,
           pending:  Object.values(verdicts).filter(v => v.verdict === null).length,
-          urlCorrected: Object.values(verdicts).filter(v => v.correctedUrl && v.correctedUrl.trim() !== '').length
+          urlCorrected: Object.values(verdicts).filter(v => v.correctedUrl && v.correctedUrl.trim() !== '').length,
+          meetingUrlCorrected: Object.values(meetingUrlCorrections).filter(v => v && v.trim() !== '').length,
+          totalCorrections: corrections.length
         },
+        corrections: corrections,
         councils: newCouncils.map(c => {
           const cMeetings = meetingMap[c.id] || [];
-          const allMats = [];
-          cMeetings.forEach(m => {
-            if (m.materials) m.materials.forEach(mat => {
-              const key = c.id + '::' + mat.url;
-              allMats.push({ name: mat.name, type: mat.type, url: mat.url, status: matStatus[key] || 'unchecked' });
-            });
-          });
           return {
             id: c.id,
             name: c.name,
@@ -697,7 +825,21 @@
             verdict: verdicts[c.id].verdict || 'pending',
             notes: verdicts[c.id].notes,
             urlStatus: urlStatus[c.id] || 'unchecked',
-            materials: allMats
+            meetings: cMeetings.map(m => {
+              const allMats = [];
+              if (m.materials) m.materials.forEach(mat => {
+                const key = c.id + '::' + mat.url;
+                allMats.push({ name: mat.name, type: mat.type, url: mat.url, status: matStatus[key] || 'unchecked' });
+              });
+              return {
+                id: m.id,
+                title: m.title,
+                date: m.date,
+                officialUrl: m.officialUrl,
+                correctedUrl: meetingUrlCorrections[m.id] || null,
+                materials: allMats
+              };
+            })
           };
         })
       };
