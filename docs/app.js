@@ -654,8 +654,18 @@ document.addEventListener('DOMContentLoaded', () => {
         </div>
 
         <div class="card-title-block">
-          <span class="card-council-name">${escapeHtml(meeting.councilName)}</span>
-          <h3 class="card-title">${escapeHtml(meeting.title)}</h3>
+          <span class="card-council-name">
+            ${escapeHtml(meeting.councilName)}
+            <a href="${escapeHtml(sanitizeUrl(meeting.officialUrl))}" target="_blank" rel="noopener noreferrer" class="inline-link-icon" title="公式トップページを開く" onclick="event.stopPropagation();">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            </a>
+          </span>
+          <h3 class="card-title">
+            ${escapeHtml(meeting.title)}
+            <a href="${escapeHtml(sanitizeUrl(meeting.officialUrl))}" target="_blank" rel="noopener noreferrer" class="inline-link-icon" title="一次ソースを開く">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            </a>
+          </h3>
         </div>
 
         ${(state.enableAiSummary && meeting.summary) ? `<div class="card-summary">${escapeHtml(meeting.summary)}</div>` : ''}
@@ -664,12 +674,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
         <div class="card-bottom-row">
           <div class="card-tags">${tagsHTML}</div>
-          <div class="card-actions">
-            <a href="${escapeHtml(sanitizeUrl(meeting.officialUrl))}" target="_blank" rel="noopener noreferrer" class="btn-primary btn-sm" title="政府公式ページ">
-              一次ソース
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-            </a>
-          </div>
         </div>
       </article>
     `;
@@ -827,7 +831,12 @@ document.addEventListener('DOMContentLoaded', () => {
       const meetingsHTML = filteredMeetings.length > 0 ? filteredMeetings.map(m => `
         <div class="meeting-row">
           <div class="meeting-row-header">
-            <span class="meeting-row-title">${escapeHtml(m.title)}</span>
+            <span class="meeting-row-title">
+              ${escapeHtml(m.title)}
+              <a href="${escapeHtml(sanitizeUrl(m.officialUrl))}" target="_blank" rel="noopener noreferrer" class="inline-link-icon" title="一次ソースを開く" onclick="event.stopPropagation();">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+              </a>
+            </span>
             <span class="meeting-row-date">
               <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
               ${formatDate(m.date)}
@@ -835,12 +844,6 @@ document.addEventListener('DOMContentLoaded', () => {
           </div>
           ${(state.enableAiSummary && m.summary) ? `<div class="meeting-row-summary">${escapeHtml(m.summary)}</div>` : ''}
           ${renderMaterialsAccordionHTML(m.materials, m.id, m.officialUrl)}
-          <div class="meeting-row-actions">
-            <a href="${escapeHtml(sanitizeUrl(m.officialUrl))}" target="_blank" rel="noopener noreferrer" class="btn-primary btn-sm">
-              一次ソース
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-            </a>
-          </div>
         </div>
       `).join('') : `<div class="meeting-row-no-data">この期間内の開催記録はありません</div>`;
 
@@ -849,14 +852,19 @@ document.addEventListener('DOMContentLoaded', () => {
           <div class="council-accordion-header" onclick="toggleCouncilAccordion('${c.id}')">
             <div class="council-header-left">
               <div class="council-header-top-row">
-                <button class="btn-watchlist-toggle ${isWatching ? 'watching' : ''}" onclick="event.stopPropagation(); toggleWatchlist('${c.id}')">
+                <span class="badge-ministry ${c.ministry}">${minInfo.name}</span>
+                <span class="badge-category">${CATEGORIES[c.category] || c.category}</span>
+                <button class="btn-watchlist-toggle ${isWatching ? 'watching' : ''}" style="margin-left: auto;" onclick="event.stopPropagation(); toggleWatchlist('${c.id}')">
                   <svg width="14" height="14" viewBox="0 0 24 24" fill="${isWatching ? 'currentColor' : 'none'}" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
                   ${isWatching ? 'ウォッチ中' : 'ウォッチ'}
                 </button>
-                <span class="badge-ministry ${c.ministry}">${minInfo.name}</span>
-                <span class="badge-category">${CATEGORIES[c.category] || c.category}</span>
               </div>
-              <span class="council-header-title">${escapeHtml(c.name)}</span>
+              <span class="council-header-title">
+                ${escapeHtml(c.name)}
+                <a href="${escapeHtml(sanitizeUrl(c.officialUrl))}" target="_blank" rel="noopener noreferrer" class="inline-link-icon" title="公式トップページを開く" onclick="event.stopPropagation();">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                </a>
+              </span>
               <span class="council-header-desc">${escapeHtml(c.description)}</span>
             </div>
             <div class="council-header-right">
@@ -868,11 +876,6 @@ document.addEventListener('DOMContentLoaded', () => {
             </div>
           </div>
           <div class="council-meetings-body">
-            <div class="council-actions-row">
-              <a href="${escapeHtml(sanitizeUrl(c.officialUrl))}" target="_blank" rel="noopener noreferrer" class="text-accent text-sm" style="display:inline-flex; align-items:center; gap:0.2rem;" onclick="event.stopPropagation()">
-                公式トップページ ↗
-              </a>
-            </div>
             <div class="council-meetings-list">
               ${meetingsHTML}
             </div>

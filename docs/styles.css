@@ -911,6 +911,25 @@ body {
   color: #facc15;
 }
 
+/* Inline External Link Icons */
+.inline-link-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--accent-primary);
+  margin-left: 0.35rem;
+  vertical-align: middle;
+  transition: color 0.15s ease, opacity 0.15s ease, transform 0.15s ease;
+  opacity: 0.85;
+  text-decoration: none;
+}
+
+.inline-link-icon:hover {
+  color: var(--accent-secondary);
+  opacity: 1;
+  transform: translateY(-1px);
+}
+
 .council-meta {
   font-size: 0.8rem;
   color: var(--text-muted);
