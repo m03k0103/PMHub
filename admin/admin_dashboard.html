@@ -715,6 +715,27 @@ JSON データを読み込み中...
       }
     });
 
+    window.integrateDiscoveredCouncils = function(newCouncilsList) {
+      if (!newCouncilsList || !newCouncilsList.length) return 0;
+      const currentIds = new Set(allCouncils.map(c => c.id));
+      let addedCount = 0;
+      newCouncilsList.forEach(dc => {
+        if (!currentIds.has(dc.id)) {
+          dc.isNew = true;
+          allCouncils.push(dc);
+          currentIds.add(dc.id);
+          verdicts[dc.id] = { verdict: null, notes: '', correctedUrl: '' };
+          addedCount++;
+        }
+      });
+      saveSavedDiscovered(allCouncils.filter(c => c.isNew && !baseCouncils.some(bc => bc.id === c.id)));
+      saveSavedVerdicts(verdicts);
+      if (typeof populateFilterDropdowns === 'function') populateFilterDropdowns();
+      if (typeof renderCards === 'function') renderCards();
+      return addedCount;
+    };
+    const integrateDiscoveredCouncils = window.integrateDiscoveredCouncils;
+
     function normalizeVerdict(item, defaultV) {
       if (!item) return { verdict: defaultV, notes: '', correctedUrl: '' };
       if (typeof item === 'string') return { verdict: item, notes: '', correctedUrl: '' };
@@ -2056,33 +2077,7 @@ JSON データを読み込み中...
 
     loadKeywordConfig();
 
-    window.integrateDiscoveredCouncils = function(newCouncilsList) {
-      if (!newCouncilsList || !newCouncilsList.length) return 0;
-      if (typeof allCouncils === 'undefined') window.allCouncils = [];
-      const currentIds = new Set(allCouncils.map(c => c.id));
-      let addedCount = 0;
-      newCouncilsList.forEach(dc => {
-        if (!currentIds.has(dc.id)) {
-          dc.isNew = true;
-          allCouncils.push(dc);
-          currentIds.add(dc.id);
-          if (typeof verdicts !== 'undefined') {
-            verdicts[dc.id] = { verdict: null, notes: '', correctedUrl: '' };
-          }
-          addedCount++;
-        }
-      });
-      if (typeof saveSavedDiscovered === 'function' && typeof baseCouncils !== 'undefined') {
-        saveSavedDiscovered(allCouncils.filter(c => c.isNew && !baseCouncils.some(bc => bc.id === c.id)));
-      }
-      if (typeof saveSavedVerdicts === 'function' && typeof verdicts !== 'undefined') {
-        saveSavedVerdicts(verdicts);
-      }
-      if (typeof populateFilterDropdowns === 'function') populateFilterDropdowns();
-      if (typeof renderCards === 'function') renderCards();
-      return addedCount;
-    };
-    const integrateDiscoveredCouncils = window.integrateDiscoveredCouncils;
+    
 
     
 
