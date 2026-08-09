@@ -479,6 +479,11 @@ JSON データを読み込み中...
           <option value="has_docs">資料あり</option>
           <option value="no_docs">資料なし</option>
         </select>
+        <select id="filterMeetingsUrlStatus">
+          <option value="">全疎通状態</option>
+          <option value="error">⚠️ 資料疎通NG (エラー)</option>
+          <option value="ok">✓ 資料疎通OK</option>
+        </select>
         <div id="filterMeetingsResultBadge" style="margin-left: auto; font-size: 0.82rem; font-weight: 700; color: var(--accent-primary); background: rgba(59,130,246,0.12); padding: 0.4rem 0.8rem; border-radius: var(--radius-md); border: 1px solid rgba(59,130,246,0.25);">
           表示中: 会議 0 件 / 資料 0 件
         </div>
@@ -519,6 +524,13 @@ JSON データを読み込み中...
           <option value="pending">未レビュー</option>
           <option value="approved">承認済み</option>
           <option value="rejected">却下</option>
+        </select>
+        <select id="filterUrlStatus">
+          <option value="">全URL疎通状態</option>
+          <option value="error">⚠️ 疎通NG (エラー)</option>
+          <option value="ok">✓ 疎通OK</option>
+          <option value="checking">⏳ 確認中</option>
+          <option value="unverified">未検証</option>
         </select>
         <div id="filterResultBadge" style="margin-left: auto; font-size: 0.82rem; font-weight: 700; color: var(--accent-primary); background: rgba(59,130,246,0.12); padding: 0.4rem 0.8rem; border-radius: var(--radius-md); border: 1px solid rgba(59,130,246,0.25);">
           表示中: 会議体 0 件
@@ -673,6 +685,7 @@ JSON データを読み込み中...
       const fMinistry  = document.getElementById('filterMeetingsMinistry') ? document.getElementById('filterMeetingsMinistry').value : '';
       const fCategory  = document.getElementById('filterMeetingsCategory') ? document.getElementById('filterMeetingsCategory').value : '';
       const fDocType   = document.getElementById('filterMeetingsDocType') ? document.getElementById('filterMeetingsDocType').value : '';
+      const fUrlStatus = document.getElementById('filterMeetingsUrlStatus') ? document.getElementById('filterMeetingsUrlStatus').value : '';
 
       let filtered = meetings.filter(m => {
         const minName = ministries[m.ministry] ? ministries[m.ministry].name : m.ministry;
@@ -683,6 +696,14 @@ JSON データを読み込み中...
         if (fCategory && m.category !== fCategory) return false;
         if (fDocType === 'has_docs' && (!m.materials || m.materials.length === 0)) return false;
         if (fDocType === 'no_docs' && m.materials && m.materials.length > 0) return false;
+        if (fUrlStatus) {
+          const mMats = m.materials || [];
+          const hasTargetStatus = mMats.some(mat => {
+            const matKey = m.councilId + '::' + mat.url;
+            return matStatus[matKey] === fUrlStatus;
+          });
+          if (!hasTargetStatus) return false;
+        }
         return true;
       });
 
@@ -731,8 +752,8 @@ JSON データを読み込み中...
             const ms = matStatus[matKey];
             let msBadge = '<span class="url-status" style="color:var(--text-muted);font-size:0.65rem;">未検証</span>';
             if (ms === 'checking') msBadge = '<span class="url-status checking">⏳</span>';
-            else if (ms === 'ok') msBadge = '<span class="url-status ok">✓</span>';
-            else if (ms === 'error') msBadge = '<span class="url-status error">✗</span>';
+            else if (ms === 'ok') msBadge = '<span class="url-status ok">✓ OK</span>';
+            else if (ms === 'error') msBadge = '<span class="url-status error">✗ NG (エラー)</span>';
             const typeClass = mat.type === 'PDF' ? 'mat-type-pdf' : mat.type === 'HTML' ? 'mat-type-html' : 'mat-type-other';
 
             return `<tr>
@@ -797,6 +818,7 @@ JSON データを読み込み中...
       const fMinistry  = document.getElementById('filterMinistry').value;
       const fCategory  = document.getElementById('filterCategory').value;
       const fVerdict   = document.getElementById('filterVerdict').value;
+      const fUrlStatus = document.getElementById('filterUrlStatus') ? document.getElementById('filterUrlStatus').value : '';
 
       let filtered = allCouncils.filter(c => {
         const minName = ministries[c.ministry] ? ministries[c.ministry].name : c.ministry;
@@ -810,6 +832,14 @@ JSON データを読み込み中...
           if (fVerdict === 'pending' && v !== null && v !== 'pending') return false;
           if (fVerdict === 'approved' && v !== 'approved') return false;
           if (fVerdict === 'rejected' && v !== 'rejected') return false;
+        }
+        if (fUrlStatus) {
+          const st = urlStatus[c.id] || 'unverified';
+          if (fUrlStatus === 'unverified') {
+            if (st && st !== 'unverified') return false;
+          } else {
+            if (st !== fUrlStatus) return false;
+          }
         }
         return true;
       });
@@ -1082,6 +1112,13 @@ JSON データを読み込み中...
     if (document.getElementById('filterMeetingsMinistry')) document.getElementById('filterMeetingsMinistry').addEventListener('change', renderMeetingsList);
     if (document.getElementById('filterMeetingsCategory')) document.getElementById('filterMeetingsCategory').addEventListener('change', renderMeetingsList);
     if (document.getElementById('filterMeetingsDocType')) document.getElementById('filterMeetingsDocType').addEventListener('change', renderMeetingsList);
+    if (document.getElementById('filterMeetingsUrlStatus')) document.getElementById('filterMeetingsUrlStatus').addEventListener('change', renderMeetingsList);
+
+    if (document.getElementById('filterSearch')) document.getElementById('filterSearch').addEventListener('input', renderCards);
+    if (document.getElementById('filterMinistry')) document.getElementById('filterMinistry').addEventListener('change', renderCards);
+    if (document.getElementById('filterCategory')) document.getElementById('filterCategory').addEventListener('change', renderCards);
+    if (document.getElementById('filterVerdict')) document.getElementById('filterVerdict').addEventListener('change', renderCards);
+    if (document.getElementById('filterUrlStatus')) document.getElementById('filterUrlStatus').addEventListener('change', renderCards);
 
     function truncateUrl(url, max) {
       if (!url) return '';
