@@ -309,10 +309,10 @@
   <main class="verify-container">
 
     <div class="tabs-nav">
-      <button class="tab-btn active" onclick="switchTab('tab-crawler', this)">⚡ 自動巡回 ＆ システム設定</button>
-      <button class="tab-btn" onclick="switchTab('tab-meetings', this)">📋 会議データ管理</button>
-      <button class="tab-btn" onclick="switchTab('tab-councils', this)">🔍 会議体データ管理</button>
-      <button class="tab-btn" onclick="switchTab('tab-ministries', this)">🏛 省庁メタデータ管理</button>
+      <button class="tab-btn active" onclick="if(window.switchTab){ window.switchTab('tab-crawler', this); }">⚡ 自動巡回 ＆ システム設定</button>
+      <button class="tab-btn" onclick="if(window.switchTab){ window.switchTab('tab-meetings', this); }">📋 会議データ管理</button>
+      <button class="tab-btn" onclick="if(window.switchTab){ window.switchTab('tab-councils', this); }">🔍 会議体データ管理</button>
+      <button class="tab-btn" onclick="if(window.switchTab){ window.switchTab('tab-ministries', this); }">🏛 省庁メタデータ管理</button>
     </div>
 
     <!-- ── TAB 1: 自動巡回 ＆ システム設定 ── -->
@@ -554,6 +554,28 @@ JSON データを読み込み中...
 
   <script src="../docs/data.js"></script>
   <script>
+  // ─── Global Navigation Engine ───
+  window.switchTab = function(tabId, btn) {
+    document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
+    document.querySelectorAll('.tab-btn').forEach(el => el.classList.remove('active'));
+    const content = document.getElementById(tabId);
+    if (content) content.classList.add('active');
+
+    let targetBtn = btn;
+    if (!targetBtn) {
+      document.querySelectorAll('.tab-btn').forEach(b => {
+        const attr = b.getAttribute('onclick') || '';
+        if (attr.includes(tabId)) {
+          targetBtn = b;
+        }
+      });
+    }
+    if (targetBtn) targetBtn.classList.add('active');
+    if (window.history && window.history.replaceState) {
+      window.history.replaceState(null, null, `#${tabId.replace('tab-', '')}`);
+    }
+  };
+  const switchTab = window.switchTab;
   // ─── 1. Council Discovery Engine (Global scope definition) ───
   let isRunningDiscovery = false;
     window.startDiscovery = async function() {
@@ -1475,28 +1497,6 @@ JSON データを読み込み中...
       document.getElementById('statUrlOk').textContent = `${urlOk} / ${total}`;
       document.getElementById('statCorrected').textContent = corrected;
     }
-
-    // ─── Tabs Navigation ───
-    function switchTab(tabId, btn) {
-      document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
-      document.querySelectorAll('.tab-btn').forEach(el => el.classList.remove('active'));
-      const content = document.getElementById(tabId);
-      if (content) content.classList.add('active');
-
-      let targetBtn = btn;
-      if (!targetBtn) {
-        document.querySelectorAll('.tab-btn').forEach(b => {
-          if (b.getAttribute('onclick') && b.getAttribute('onclick').includes(tabId)) {
-            targetBtn = b;
-          }
-        });
-      }
-      if (targetBtn) targetBtn.classList.add('active');
-      if (history.replaceState) {
-        history.replaceState(null, null, `#${tabId.replace('tab-', '')}`);
-      }
-    }
-    window.switchTab = switchTab;
 
     const initHash = (window.location.hash || '').replace('#', '');
     if (initHash === 'ministries') switchTab('tab-ministries');
