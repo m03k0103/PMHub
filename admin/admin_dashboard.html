@@ -1968,27 +1968,33 @@ JSON データを読み込み中...
       isRunningDiscovery = true;
 
       const btn = document.getElementById('btnStartDiscovery');
+      const fillEl = document.getElementById('discoveryProgressFill');
+      const logsEl = document.getElementById('discoveryTerminalLogs');
+      const summaryEl = document.getElementById('discoverySummaryBar');
+      const resultCountEl = document.getElementById('discoveryResultCount');
+
       if (btn) {
         btn.disabled = true;
         btn.textContent = '⏳ 検出巡回中 (アクセス検証中)…';
       }
 
-      discoveryProgressFill.style.width = '0%';
-      discoveryTerminalLogs.innerHTML = '';
-      discoverySummaryBar.style.display = 'none';
+      if (fillEl) fillEl.style.width = '0%';
+      if (logsEl) logsEl.innerHTML = '';
+      if (summaryEl) summaryEl.style.display = 'none';
 
       const logLine = (msg, time = new Date().toTimeString().slice(0,8)) => {
+        if (!logsEl) return;
         const line = document.createElement('div');
         line.className = 'crawler-log-line';
         line.innerHTML = `<span class="crawler-log-time" style="color:#60a5fa;">[${time}]</span> <span>${msg}</span>`;
-        discoveryTerminalLogs.appendChild(line);
-        discoveryTerminalLogs.scrollTop = discoveryTerminalLogs.scrollHeight;
+        logsEl.appendChild(line);
+        logsEl.scrollTop = logsEl.scrollHeight;
       };
 
       logLine('全省庁の審議会等一覧ページ (councilsUrls) の巡回を開始します...');
 
       try {
-        discoveryProgressFill.style.width = '20%';
+        if (fillEl) fillEl.style.width = '20%';
         logLine('サーバー側ディスカバリーエンジン (discover_councils.py) に接続中...');
         logLine('各審議会等ページに実アクセスし、リダイレクト後の最終正規URLを検証しています...');
 
@@ -1996,7 +2002,7 @@ JSON データを読み込み中...
         const pulseInterval = setInterval(() => {
           if (pulsePct < 85) {
             pulsePct += 5;
-            discoveryProgressFill.style.width = pulsePct + '%';
+            if (fillEl) fillEl.style.width = pulsePct + '%';
           }
         }, 1500);
 
@@ -2004,7 +2010,7 @@ JSON データを読み込み中...
         clearInterval(pulseInterval);
 
         if (res.ok) {
-          discoveryProgressFill.style.width = '100%';
+          if (fillEl) fillEl.style.width = '100%';
           const result = await res.json();
           const discovered = result.councils || [];
           logLine(`✅ ディスカバリー完了: 合計 ${discovered.length} 件の新規会議体（正規URL）を検出しました`);
@@ -2017,8 +2023,8 @@ JSON データを読み込み中...
           }
 
           const addedCount = integrateDiscoveredCouncils(discovered);
-          discoverySummaryBar.style.display = 'flex';
-          discoveryResultCount.textContent = `✨ 新規会議体 ${discovered.length} 件を検出しました！（未レビューとして追加: ${addedCount} 件）`;
+          if (summaryEl) summaryEl.style.display = 'flex';
+          if (resultCountEl) resultCountEl.textContent = `✨ 新規会議体 ${discovered.length} 件を検出しました！（未レビューとして追加: ${addedCount} 件）`;
           return;
         } else {
           logLine('[WARN] サーバー側でエラー応答が返されました。フォールバック処理に移行します。');
@@ -2043,11 +2049,11 @@ JSON データを読み込み中...
           const m = ministries[code];
           idx++;
           const pct = Math.round((idx / targetMinistries.length) * 100);
-          discoveryProgressFill.style.width = pct + '%';
+          if (fillEl) fillEl.style.width = pct + '%';
           logLine(`[${pct}%] 省庁ページ巡回完了: ${m.name} (${code}) - 審議会URL ${m.councilsUrls.length} 件`);
         } else {
           clearInterval(interval);
-          discoveryProgressFill.style.width = '100%';
+          if (fillEl) fillEl.style.width = '100%';
           logLine('全省庁の審議会一覧巡回が完了しました。');
           if (btn) {
             btn.disabled = false;
