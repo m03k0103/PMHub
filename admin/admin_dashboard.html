@@ -836,11 +836,11 @@ JSON データを読み込み中...
     const categories = (typeof CATEGORIES !== 'undefined') ? CATEGORIES : {};
 
     // Combine baseCouncils and discoveredCouncils
-    let allCouncils = [...baseCouncils];
+    let allCouncils = [...baseCouncils].filter(c => c && c.id);
     const discoveredFromStorage = getSavedDiscovered();
     const existingIdSet = new Set(allCouncils.map(c => c.id));
     discoveredFromStorage.forEach(dc => {
-      if (!existingIdSet.has(dc.id)) {
+      if (dc && dc.id && !existingIdSet.has(dc.id)) {
         allCouncils.push(dc); window.allCouncils = allCouncils;
         existingIdSet.add(dc.id);
       }
@@ -851,7 +851,7 @@ JSON データを読み込み中...
       const currentIds = new Set(allCouncils.map(c => c.id));
       let addedCount = 0;
       newCouncilsList.forEach(dc => {
-        if (!currentIds.has(dc.id)) {
+        if (dc && dc.id && !currentIds.has(dc.id)) {
           dc.isNew = true;
           allCouncils.push(dc); window.allCouncils = allCouncils;
           currentIds.add(dc.id);
@@ -910,21 +910,21 @@ JSON データを読み込み中...
       const filterMeetingsCategory = document.getElementById('filterMeetingsCategory');
       const kwMinistrySelect = document.getElementById('kwMinistrySelect');
 
-      filterMinistry.innerHTML = '<option value="">全省庁</option>';
+      if (filterMinistry) filterMinistry.innerHTML = '<option value="">全省庁</option>';
       if (filterMeetingsMinistry) filterMeetingsMinistry.innerHTML = '<option value="">全省庁</option>';
-      kwMinistrySelect.innerHTML = '<option value="">省庁を選択...</option>';
+      if (kwMinistrySelect) kwMinistrySelect.innerHTML = '<option value="">省庁を選択...</option>';
       ministrySet.forEach(code => {
         const name = ministries[code] ? ministries[code].name : code;
-        filterMinistry.innerHTML += `<option value="${code}">${name} (${code})</option>`;
+        if (filterMinistry) filterMinistry.innerHTML += `<option value="${code}">${name} (${code})</option>`;
         if (filterMeetingsMinistry) filterMeetingsMinistry.innerHTML += `<option value="${code}">${name} (${code})</option>`;
-        kwMinistrySelect.innerHTML += `<option value="${code}">${name} (${code})</option>`;
+        if (kwMinistrySelect) kwMinistrySelect.innerHTML += `<option value="${code}">${name} (${code})</option>`;
       });
 
-      filterCategory.innerHTML = '<option value="">全カテゴリ</option>';
+      if (filterCategory) filterCategory.innerHTML = '<option value="">全カテゴリ</option>';
       if (filterMeetingsCategory) filterMeetingsCategory.innerHTML = '<option value="">全カテゴリ</option>';
       categorySet.forEach(cat => {
         const label = categories[cat] || cat;
-        filterCategory.innerHTML += `<option value="${cat}">${label}</option>`;
+        if (filterCategory) filterCategory.innerHTML += `<option value="${cat}">${label}</option>`;
         if (filterMeetingsCategory) filterMeetingsCategory.innerHTML += `<option value="${cat}">${label}</option>`;
       });
     }
@@ -978,10 +978,15 @@ JSON データを読み込み中...
       const totalAllDocs = meetings.reduce((sum, m) => sum + (m.materials ? m.materials.length : 0), 0);
       const correctedCount = Object.values(meetingUrlCorrections).filter(url => url && url.trim() !== '').length;
 
-      document.getElementById('statMeetingsTotal').textContent = meetings.length;
-      document.getElementById('statMeetingsDocsTotal').textContent = `${totalAllDocs} 点`;
-      document.getElementById('statMeetingsFiltered').textContent = `${filtered.length} 件 / ${totalDocs} 点`;
-      document.getElementById('statMeetingsCorrected').textContent = correctedCount;
+      const statMeetingsTotal = document.getElementById('statMeetingsTotal');
+      const statMeetingsDocsTotal = document.getElementById('statMeetingsDocsTotal');
+      const statMeetingsFiltered = document.getElementById('statMeetingsFiltered');
+      const statMeetingsCorrected = document.getElementById('statMeetingsCorrected');
+      
+      if (statMeetingsTotal) statMeetingsTotal.textContent = meetings.length;
+      if (statMeetingsDocsTotal) statMeetingsDocsTotal.textContent = `${totalAllDocs} 点`;
+      if (statMeetingsFiltered) statMeetingsFiltered.textContent = `${filtered.length} 件 / ${totalDocs} 点`;
+      if (statMeetingsCorrected) statMeetingsCorrected.textContent = correctedCount;
 
       const badge = document.getElementById('filterMeetingsResultBadge');
       if (badge) {
@@ -1083,11 +1088,19 @@ JSON データを読み込み中...
     function renderCards() {
       window.allCouncils = allCouncils;
       window.renderCards = renderCards;
-      const searchTerm = document.getElementById('filterSearch').value.toLowerCase();
-      const fMinistry  = document.getElementById('filterMinistry').value;
-      const fCategory  = document.getElementById('filterCategory').value;
-      const fVerdict   = document.getElementById('filterVerdict').value;
-      const fUrlStatus = document.getElementById('filterUrlStatus') ? document.getElementById('filterUrlStatus').value : '';
+      const lEl = document.getElementById('councilList');
+      if (!lEl) return;
+      const sEl = document.getElementById('filterSearch');
+      const mEl = document.getElementById('filterMinistry');
+      const cEl = document.getElementById('filterCategory');
+      const vEl = document.getElementById('filterVerdict');
+      const uEl = document.getElementById('filterUrlStatus');
+      
+      const searchTerm = sEl ? sEl.value.toLowerCase() : '';
+      const fMinistry  = mEl ? mEl.value : '';
+      const fCategory  = cEl ? cEl.value : '';
+      const fVerdict   = vEl ? vEl.value : '';
+      const fUrlStatus = uEl ? uEl.value : '';
 
       let filtered = allCouncils.filter(c => {
         const minName = ministries[c.ministry] ? ministries[c.ministry].name : c.ministry;
@@ -1536,6 +1549,7 @@ JSON データを読み込み中...
     function renderMinistryList() {
       window.renderMinistryList = renderMinistryList;
       const container = document.getElementById('ministryListContainer');
+      if (!container) return;
       const codes = Object.keys(ministries).sort();
       let html = `<table class="ministry-table">
         <thead>
