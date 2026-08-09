@@ -330,7 +330,7 @@
               全48省庁の「審議会等ページURL」を自動巡回し、未登録の会議体名称およびトップページURLを自動抽出・検出します。
             </p>
           </div>
-          <button class="btn-crawler btn-bulk approve-all" id="btnStartDiscovery" style="font-size: 1rem; padding: 0.75rem 1.5rem; background: rgba(59,130,246,0.15); color: #60a5fa; border-color: rgba(59,130,246,0.4);">
+          <button class="btn-crawler btn-bulk approve-all" id="btnStartDiscovery" onclick="startDiscovery()" style="font-size: 1rem; padding: 0.75rem 1.5rem; background: rgba(59,130,246,0.15); color: #60a5fa; border-color: rgba(59,130,246,0.4);">
             ⚡ 新規会議体の検出巡回を実行 (Python API)
           </button>
         </div>
@@ -1962,8 +1962,17 @@ JSON データを読み込み中...
       return addedCount;
     }
 
-    btnStartDiscovery.addEventListener('click', async () => {
-      btnStartDiscovery.disabled = true;
+    let isRunningDiscovery = false;
+    window.startDiscovery = async function() {
+      if (isRunningDiscovery) return;
+      isRunningDiscovery = true;
+
+      const btn = document.getElementById('btnStartDiscovery');
+      if (btn) {
+        btn.disabled = true;
+        btn.textContent = '⏳ 検出巡回中 (アクセス検証中)…';
+      }
+
       discoveryProgressFill.style.width = '0%';
       discoveryTerminalLogs.innerHTML = '';
       discoverySummaryBar.style.display = 'none';
@@ -1978,19 +1987,30 @@ JSON データを読み込み中...
 
       logLine('全省庁の審議会等一覧ページ (councilsUrls) の巡回を開始します...');
 
-      // 1. Try local server API
       try {
-        discoveryProgressFill.style.width = '30%';
-        logLine('サーバー側ディスカバリーエンジン (discover_councils.py) を実行中...');
+        discoveryProgressFill.style.width = '20%';
+        logLine('サーバー側ディスカバリーエンジン (discover_councils.py) に接続中...');
+        logLine('各審議会等ページに実アクセスし、リダイレクト後の最終正規URLを検証しています...');
+
+        let pulsePct = 20;
+        const pulseInterval = setInterval(() => {
+          if (pulsePct < 85) {
+            pulsePct += 5;
+            discoveryProgressFill.style.width = pulsePct + '%';
+          }
+        }, 1500);
+
         const res = await fetch('/api/run-discovery', { method: 'POST' });
+        clearInterval(pulseInterval);
+
         if (res.ok) {
           discoveryProgressFill.style.width = '100%';
           const result = await res.json();
           const discovered = result.councils || [];
-          logLine(`ディスカバリー完了: ${discovered.length} 件の会議体を検出`);
-          
+          logLine(`✅ ディスカバリー完了: 合計 ${discovered.length} 件の新規会議体（正規URL）を検出しました`);
+
           discovered.slice(0, 15).forEach(c => {
-            logLine(`✨ [検出] ${c.id}: ${c.name} (${c.ministry}) - ${c.officialUrl}`);
+            logLine(`✨ [新規検出] ${c.id}: ${c.name} (${c.ministry}) -> ${c.officialUrl}`);
           });
           if (discovered.length > 15) {
             logLine(`...他 ${discovered.length - 15} 件の会議体を検出`);
@@ -1999,13 +2019,22 @@ JSON データを読み込み中...
           const addedCount = integrateDiscoveredCouncils(discovered);
           discoverySummaryBar.style.display = 'flex';
           discoveryResultCount.textContent = `✨ 新規会議体 ${discovered.length} 件を検出しました！（未レビューとして追加: ${addedCount} 件）`;
-          btnStartDiscovery.disabled = false;
           return;
+        } else {
+          logLine('[WARN] サーバー側でエラー応答が返されました。フォールバック処理に移行します。');
         }
-      } catch(e) {}
+      } catch(e) {
+        logLine(`[WARN] ローカルサーバーAPI接続エラー: ${e}`);
+      } finally {
+        isRunningDiscovery = false;
+        if (btn) {
+          btn.disabled = false;
+          btn.textContent = '⚡ 新規会議体の検出巡回を実行 (Python API)';
+        }
+      }
 
       // 2. Client-side simulation fallback if server is not running
-      logLine('[WARN] ローカルサーバーAPI未接続。ブラウザ直接巡回シミュレーションを実行します...');
+      logLine('[WARN] ブラウザ直接巡回シミュレーションを実行します...');
       const targetMinistries = Object.keys(ministries).filter(k => ministries[k].hasCouncils !== false && ministries[k].councilsUrls && ministries[k].councilsUrls.length);
       let idx = 0;
       const interval = setInterval(() => {
@@ -2020,10 +2049,17 @@ JSON データを読み込み中...
           clearInterval(interval);
           discoveryProgressFill.style.width = '100%';
           logLine('全省庁の審議会一覧巡回が完了しました。');
-          btnStartDiscovery.disabled = false;
+          if (btn) {
+            btn.disabled = false;
+            btn.textContent = '⚡ 新規会議体の検出巡回を実行 (Python API)';
+          }
         }
       }, 80);
-    });
+    };
+
+    if (btnStartDiscovery) {
+      btnStartDiscovery.addEventListener('click', window.startDiscovery);
+    }
 
     // ─── 2. Meeting Crawler Logic (Tab 1 Block 2) ───
     const crawlBtn = document.getElementById('adminStartCrawlBtn');
