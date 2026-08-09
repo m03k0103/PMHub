@@ -330,7 +330,7 @@
               全48省庁の「審議会等ページURL」を自動巡回し、未登録の会議体名称およびトップページURLを自動抽出・検出します。
             </p>
           </div>
-          <button class="btn-crawler btn-bulk approve-all" id="btnStartDiscovery" style="font-size: 1rem; padding: 0.75rem 1.5rem; background: rgba(59,130,246,0.15); color: #60a5fa; border-color: rgba(59,130,246,0.4);">
+          <button class="btn-crawler btn-bulk approve-all" id="btnStartDiscovery" onclick="if(window.startDiscovery){ window.startDiscovery(); } else { alert('startDiscovery function not ready yet!'); }" style="font-size: 1rem; padding: 0.75rem 1.5rem; background: rgba(59,130,246,0.15); color: #60a5fa; border-color: rgba(59,130,246,0.4);">
             ⚡ 新規会議体の検出巡回を実行 (Python API)
           </button>
         </div>
@@ -1965,6 +1965,7 @@ JSON データを読み込み中...
     let isRunningDiscovery = false;
     window.startDiscovery = async function() {
       console.log('startDiscovery triggered');
+      alert('【審議会ディスカバリー開始】全省庁の審議会等ページURLへの検出巡回を開始します。\n（実際のページへHTTPアクセスしてリダイレクト後の最終正規URLを検証します）');
       if (isRunningDiscovery) return;
       isRunningDiscovery = true;
 
