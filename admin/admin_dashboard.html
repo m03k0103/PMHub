@@ -948,7 +948,11 @@ JSON データを読み込み中...
       }
     };
 
+    let isSavingMeetingUrlsDirect = false;
     window.saveMeetingUrlsDirectToDataJs = async function() {
+      if (isSavingMeetingUrlsDirect) return;
+      isSavingMeetingUrlsDirect = true;
+      try {
       const corrections = [];
       Object.keys(meetingUrlCorrections).forEach(mId => {
         const corrUrl = meetingUrlCorrections[mId];
@@ -1033,7 +1037,7 @@ JSON データを読み込み中...
           alert('docs/data.js に直接反映・更新しました！');
           return;
         } catch (err) {
-          if (err.name === 'AbortError') return;
+          if (err.name === 'AbortError' || err.name === 'NotAllowedError' || err.name === 'SecurityError') return;
         }
       }
 
@@ -1043,6 +1047,9 @@ JSON データを読み込み中...
         alert('【サーバー保存エラー】localhost:8000 への保存処理が完了できませんでした。\nローカルサーバー (py admin/server.py) が正常に起動しているかご確認ください。\n\nバックアップとしてJSONを出力しました。');
       } else {
         alert('file:// 直開きのブラウザ制限によりファイル直接上書きが制限されているため、JSONを出力しました。\n\nターミナルで以下を実行すると data.js に反映できます：\npy admin/apply_report.py admin/meeting_urls_updates_*.json');
+      }
+      } finally {
+        isSavingMeetingUrlsDirect = false;
       }
     };
 
@@ -1397,7 +1404,7 @@ JSON データを読み込み中...
           alert(`保存が完了しました: ${handle.name}`);
           return;
         } catch (err) {
-          if (err.name === 'AbortError') return;
+          if (err.name === 'AbortError' || err.name === 'NotAllowedError' || err.name === 'SecurityError') return;
           console.warn('showSaveFilePicker failed, fallback to direct download:', err);
         }
       }
@@ -1443,7 +1450,11 @@ JSON データを読み込み中...
       await saveJsonFile(report, `ministry_updates_${new Date().toISOString().split('T')[0]}.json`);
     };
 
+    let isSavingMinistryDirect = false;
     window.saveDirectToDataJs = async function() {
+      if (isSavingMinistryDirect) return;
+      isSavingMinistryDirect = true;
+      try {
       const updates = Object.keys(ministryUpdates);
       if (updates.length === 0) {
         alert('変更された省庁データはありません。');
@@ -1526,7 +1537,7 @@ JSON データを読み込み中...
           alert('docs/data.js に直接反映・更新しました！');
           return;
         } catch (err) {
-          if (err.name === 'AbortError') return;
+          if (err.name === 'AbortError' || err.name === 'NotAllowedError' || err.name === 'SecurityError') return;
         }
       }
 
@@ -1536,6 +1547,9 @@ JSON データを読み込み中...
         alert('【サーバー保存エラー】localhost:8000 への保存処理が完了できませんでした。\nローカルサーバー (py admin/server.py) が正常に起動しているかご確認ください。\n\nバックアップとしてJSONを出力しました。');
       } else {
         alert('file:// 直開きのブラウザ制限によりファイル直接上書きが制限されているため、JSONを出力しました。\n\nターミナルで以下を実行すると data.js に反映できます：\npy admin/apply_report.py admin/ministry_updates_*.json');
+      }
+      } finally {
+        isSavingMinistryDirect = false;
       }
     };
 
@@ -1592,7 +1606,14 @@ JSON データを読み込み中...
     });
 
     // ─── Save Council to data.js (including new discovered councils) ───
+    let isSavingCouncilDirect = false;
     window.saveCouncilDirectToDataJs = async function() {
+      if (isSavingCouncilDirect) return;
+      isSavingCouncilDirect = true;
+      const btn = document.getElementById('btnSaveCouncilDirect');
+      let origText = '';
+      if (btn) { origText = btn.textContent; btn.disabled = true; btn.textContent = '💾 保存中…'; }
+      try {
       const approvedCouncils = allCouncils.filter(c => verdicts[c.id] && verdicts[c.id].verdict === 'approved');
       const corrections = [];
 
@@ -1730,7 +1751,7 @@ JSON データを読み込み中...
           alert('docs/data.js に直接反映・更新しました！');
           return;
         } catch (err) {
-          if (err.name === 'AbortError') return;
+          if (err.name === 'AbortError' || err.name === 'NotAllowedError' || err.name === 'SecurityError') return;
         }
       }
 
@@ -1740,6 +1761,10 @@ JSON データを読み込み中...
         alert('【サーバー保存エラー】localhost:8000 への保存処理が完了できませんでした。\nローカルサーバー (py admin/server.py) が正常に起動しているかご確認ください。\n\nバックアップとしてJSONを出力しました。');
       } else {
         alert('file:// 直開きのブラウザ制限によりファイル直接上書きが制限されているため、JSONを出力しました。\n\nターミナルで以下を実行すると data.js に反映できます：\npy admin/apply_report.py admin/verification_report_*.json');
+      }
+      } finally {
+        isSavingCouncilDirect = false;
+        if (btn) { btn.disabled = false; btn.textContent = origText || '💾 docs/data.js に直接反映'; }
       }
     };
 
