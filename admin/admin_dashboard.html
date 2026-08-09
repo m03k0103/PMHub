@@ -617,7 +617,7 @@ JSON データを読み込み中...
             logLine(`...他 ${discovered.length - 15} 件の会議体を検出`);
           }
 
-          const addedCount = integrateDiscoveredCouncils(discovered);
+          const addedCount = (window.integrateDiscoveredCouncils || integrateDiscoveredCouncils)(discovered);
           if (summaryEl) summaryEl.style.display = 'flex';
           if (resultCountEl) resultCountEl.textContent = `✨ 新規会議体 ${discovered.length} 件を検出しました！（未レビューとして追加: ${addedCount} 件）`;
           return;
@@ -1247,7 +1247,17 @@ JSON データを読み込み中...
       if (!verdicts[id]) verdicts[id] = { verdict: null, notes: '', correctedUrl: '' };
       verdicts[id].verdict = verdict;
       saveSavedVerdicts(verdicts);
-      renderCards();
+      // サーバー上の最新ディスカバリーデータ (discovered_councils.json) の非同期自動統合
+    fetch('/api/discovered-councils')
+      .then(res => res.ok ? res.json() : null)
+      .then(data => {
+        if (data && data.councils && Array.isArray(data.councils)) {
+          window.integrateDiscoveredCouncils(data.councils);
+        }
+      })
+      .catch(err => console.warn('Discovered councils auto load notice:', err));
+
+    renderCards();
     };
     window.setNotes = function(id, text) {
       if (!verdicts[id]) verdicts[id] = { verdict: null, notes: '', correctedUrl: '' };
@@ -2046,8 +2056,9 @@ JSON データを読み込み中...
 
     loadKeywordConfig();
 
-    function integrateDiscoveredCouncils(newCouncilsList) {
-      if (!newCouncilsList || !newCouncilsList.length) return;
+    window.integrateDiscoveredCouncils = function(newCouncilsList) {
+      if (!newCouncilsList || !newCouncilsList.length) return 0;
+      if (typeof allCouncils === 'undefined') window.allCouncils = [];
       const currentIds = new Set(allCouncils.map(c => c.id));
       let addedCount = 0;
       newCouncilsList.forEach(dc => {
@@ -2055,16 +2066,23 @@ JSON データを読み込み中...
           dc.isNew = true;
           allCouncils.push(dc);
           currentIds.add(dc.id);
-          verdicts[dc.id] = { verdict: null, notes: '', correctedUrl: '' };
+          if (typeof verdicts !== 'undefined') {
+            verdicts[dc.id] = { verdict: null, notes: '', correctedUrl: '' };
+          }
           addedCount++;
         }
       });
-      saveSavedDiscovered(allCouncils.filter(c => c.isNew && !baseCouncils.some(bc => bc.id === c.id)));
-      saveSavedVerdicts(verdicts);
-      populateFilterDropdowns();
-      renderCards();
+      if (typeof saveSavedDiscovered === 'function' && typeof baseCouncils !== 'undefined') {
+        saveSavedDiscovered(allCouncils.filter(c => c.isNew && !baseCouncils.some(bc => bc.id === c.id)));
+      }
+      if (typeof saveSavedVerdicts === 'function' && typeof verdicts !== 'undefined') {
+        saveSavedVerdicts(verdicts);
+      }
+      if (typeof populateFilterDropdowns === 'function') populateFilterDropdowns();
+      if (typeof renderCards === 'function') renderCards();
       return addedCount;
-    }
+    };
+    const integrateDiscoveredCouncils = window.integrateDiscoveredCouncils;
 
     
 
