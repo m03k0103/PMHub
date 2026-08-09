@@ -2,7 +2,8 @@
 # -*- coding: utf-8 -*-
 """
 政策会議ウォッチ (PM-HUB) - 審議会・会議体ディスカバリーエンジン (Council Discovery Engine)
-省庁の審議会等一覧ページURL (councilsUrls) を巡回し、新規会議体の名称およびトップページURLを自動抽出・検出する。
+省庁の審議会等一覧ページURL (councilsUrls) を巡回し、そこに含まれるすべての会議体（本体、部会、分科会、検討会等）の
+実際の個別のトップページURLへHTTPアクセスして「最終的な正規URL」を特定し、独立した会議体レコードとして自動検出・登録する。
 """
 
 import sys
@@ -42,8 +43,8 @@ def load_keywords():
         except Exception as e:
             print(f"[WARN] キーワード設定の読み込みエラー: {e}", file=sys.stderr)
     return {
-        "commonKeywords": ["審議会", "検討会", "委員会", "部会", "分科会", "懇談会", "ワーキンググループ", "WG", "研究会", "プロジェクトチーム", "タスクフォース", "円卓会議", "会議"],
-        "commonExcludeKeywords": ["過去", "名簿", "委員名簿", "議事録", "議事要旨", "資料一覧", "配付資料", "法令", "設置根拠", "傍聴", "更新履歴", "PDF", "Excel"],
+        "commonKeywords": ["審議会", "検討会", "委員会", "部会", "分科会", "懇談会", "ワーキンググループ", "WG", "研究会", "プロジェクトチーム", "タスクフォース", "有識者会議", "本部", "推進会議", "円卓会議", "会議"],
+        "commonExcludeKeywords": ["過去", "名簿", "委員名簿", "議事録", "議事要旨", "資料一覧", "配付資料", "法令", "設置根拠", "傍聴", "更新履歴", "PDF", "Excel", "プライバシーポリシー"],
         "ministryAddKeywords": {},
         "ministryExcludeKeywords": {}
     }
@@ -57,18 +58,15 @@ def parse_data_js():
     with open(DATA_JS_PATH, "r", encoding="utf-8") as f:
         content = f.read()
 
-    # MINISTRIES の抽出 (簡易正規表現)
+    # MINISTRIES の抽出
     ministries = {}
     m_match = re.search(r"const MINISTRIES = (\{[\s\S]*?\n\};)", content)
     if m_match:
         m_str = m_match.group(1).rstrip(";").strip()
-        # JSONに近づける置換
-        m_json_str = re.sub(r"(\w+):", r'"\1":', m_str)
-        m_json_str = m_json_str.replace("'", '"')
+        m_json_str = re.sub(r"(\w+):", r'"\1":', m_str).replace("'", '"')
         try:
             ministries = json.loads(m_json_str)
         except Exception:
-            # フォールバック: 各省庁キーを手動抽出
             for block in re.finditer(r"(\w+):\s*\{([^}]+)\}", content):
                 k = block.group(1)
                 body = block.group(2)
@@ -91,8 +89,7 @@ def parse_data_js():
     c_match = re.search(r"const COUNCILS = (\[[\s\S]*?\n\];)", content)
     if c_match:
         c_str = c_match.group(1).rstrip(";").strip()
-        c_json_str = re.sub(r"(\w+):", r'"\1":', c_str)
-        c_json_str = c_json_str.replace("'", '"')
+        c_json_str = re.sub(r"(\w+):", r'"\1":', c_str).replace("'", '"')
         try:
             councils = json.loads(c_json_str)
         except Exception:
@@ -106,8 +103,11 @@ def parse_data_js():
 
     return ministries, councils
 
-def fetch_html(url):
-    """指定URLのHTMLを取得する（User-Agent付与、タイムアウト12秒）"""
+def fetch_page_and_final_url(url):
+    """
+    指定URLへ実際にHTTPアクセスし、転送（リダイレクト）を追跡して
+    「最終的な正規URL」およびHTMLテキストを取得する。
+    """
     req = urllib.request.Request(
         url,
         headers={
@@ -115,25 +115,29 @@ def fetch_html(url):
         }
     )
     try:
-        with urllib.request.urlopen(req, timeout=12) as res:
+        with urllib.request.urlopen(req, timeout=10) as res:
+            final_url = res.geturl()  # リダイレクト後の最終正規URL
             charset = res.headers.get_content_charset() or "utf-8"
             html_bytes = res.read()
+            html_text = ""
             try:
-                return html_bytes.decode(charset, errors="replace")
+                html_text = html_bytes.decode(charset, errors="replace")
             except Exception:
-                # cp932/shift_jis フォールバック
                 for enc in ["shift_jis", "cp932", "euc-jp"]:
                     try:
-                        return html_bytes.decode(enc)
+                        html_text = html_bytes.decode(enc)
+                        break
                     except Exception:
                         pass
-                return html_bytes.decode("utf-8", errors="ignore")
+                if not html_text:
+                    html_text = html_bytes.decode("utf-8", errors="ignore")
+            return html_text, final_url
     except Exception as e:
         print(f"   [HTTP ERROR] {url}: {e}")
-        return None
+        return None, url
 
 def normalize_url(url):
-    """URLの末尾スラッシュやフラグメントを除去して正規化"""
+    """URLの末尾スラッシュやフラグメント(#)を除去して正規化"""
     if not url:
         return ""
     p = urllib.parse.urlparse(url)
@@ -141,11 +145,10 @@ def normalize_url(url):
     return f"{p.scheme}://{p.netloc}{clean_path}"
 
 def get_max_seq(councils):
-    """既存COUNCILSから最大のID連番を取得する"""
+    """既存COUNCILSから最大のID連番を取得する (例: cao-184 -> 184)"""
     max_num = 183
     for c in councils:
         cid = c.get("id", "")
-        # 末尾の数字を抽出
         num_m = re.search(r"-(\d+)$", cid)
         if num_m:
             try:
@@ -159,6 +162,7 @@ def get_max_seq(councils):
 def run_discovery():
     print("=" * 70)
     print("【PM-HUB】省庁 審議会・会議体ディスカバリー巡回 開始")
+    print("（審議会等ページにアクセスし、全会議体を個別の正規URLで独立検出します）")
     print(f"実行時刻: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
     print("=" * 70)
 
@@ -191,15 +195,15 @@ def run_discovery():
         exc_kw = min_exc_kw.get(min_code, []) + common_excludes
         target_kw = common_keywords + add_kw
 
-        print(f"▶ [{min_code}] {min_name} (審議会ページURL: {len(councils_urls)} 件)")
+        print(f"▶ [{min_code}] {min_name} (審議会一覧ページ: {len(councils_urls)} 件)")
 
         for page_url in councils_urls:
             page_url = page_url.strip()
             if not page_url or not page_url.startswith("http"):
                 continue
 
-            print(f"   [GET] 巡回: {page_url}")
-            html = fetch_html(page_url)
+            print(f"   [GET] 審議会等一覧ページ巡回: {page_url}")
+            html, final_page_url = fetch_page_and_final_url(page_url)
             if not html:
                 continue
 
@@ -216,11 +220,10 @@ def run_discovery():
                 if not link_text or len(link_text) < 3 or len(link_text) > 100:
                     continue
 
-                # アンカーリンクやjavascriptの除外
                 if href.startswith("#") or href.startswith("javascript:") or href.startswith("mailto:"):
                     continue
 
-                # キーワード照合（追加・共通キーワードのいずれかを含む）
+                # キーワード照合（「審議会」「分科会」「部会」「検討会」などを検知）
                 has_match = any(kw in link_text for kw in target_kw)
                 if not has_match:
                     continue
@@ -230,20 +233,29 @@ def run_discovery():
                 if is_excluded:
                     continue
 
-                # 絶対URLへ変換
-                abs_url = urllib.parse.urljoin(page_url, href)
-                norm_abs_url = normalize_url(abs_url)
+                # 絶対URLに変換
+                abs_url = urllib.parse.urljoin(final_page_url, href)
 
-                # PDF/Excel/画像などのファイル直リンクは会議体トップURLではないため除外
+                # PDF/Excel/画像などのドキュメント直リンクは除外
                 if re.search(r"\.(pdf|docx?|xlsx?|pptx?|jpe?g|png|gif|zip)$", abs_url, re.I):
                     continue
 
-                # 既に登録済みのURLまたは名前かチェック
-                if norm_abs_url in existing_urls or link_text in existing_names:
+                # 会議体ページへ実際にアクセスして最終的な正規URL（リダイレクト後）を特定
+                _, final_council_url = fetch_page_and_final_url(abs_url)
+                if not final_council_url:
+                    final_council_url = abs_url
+
+                norm_final_url = normalize_url(final_council_url)
+
+                # 重複判定: 既に登録済みの正規URLまたは同名（年度記載なしの完全同名）かチェック
+                is_year_specific = bool(re.search(r"(令和|平成|\b20\d{2}年?|\bR\d{1,2}\b)", link_text, re.I))
+                if norm_final_url in existing_urls:
+                    continue
+                if not is_year_specific and link_text in existing_names:
                     continue
 
                 # 今回のクロール内での重複チェック
-                key_pair = (min_code, link_text, norm_abs_url)
+                key_pair = (min_code, link_text, norm_final_url)
                 if key_pair in seen_in_this_run:
                     continue
                 seen_in_this_run.add(key_pair)
@@ -263,7 +275,7 @@ def run_discovery():
                 elif "本部" in link_text or "推進会議" in link_text:
                     category = "HQ"
 
-                # 採番: {ministry_lower}-{seq} (例: cao-184)
+                # 採番規則: 省庁コード小文字 + 連番 (例: cao-184, mhlw-185)
                 council_id = f"{min_code.lower()}-{next_seq}"
                 next_seq += 1
 
@@ -272,7 +284,7 @@ def run_discovery():
                     "name": link_text,
                     "ministry": min_code,
                     "category": category,
-                    "officialUrl": abs_url,
+                    "officialUrl": final_council_url,
                     "isNew": True,
                     "trackedSince": datetime.now().strftime("%Y-%m-%d"),
                     "sourcePageUrl": page_url
@@ -280,13 +292,13 @@ def run_discovery():
 
                 discovered_list.append(council_item)
                 found_count_in_page += 1
-                print(f"      ✨ [新規検出] {council_id}: {link_text}")
-                print(f"         URL: {abs_url}")
+                print(f"      ✨ [新規会議体検出] {council_id}: {link_text}")
+                print(f"         正規URL: {final_council_url}")
 
             print(f"   -> 検出数: {found_count_in_page} 件")
 
     print("\n" + "=" * 70)
-    print(f"ディスカバリー巡回完了: 合計 {len(discovered_list)} 件の新規会議体を検出しました。")
+    print(f"ディスカバリー巡回完了: 合計 {len(discovered_list)} 件の新規会議体レコードを作成しました。")
     print("=" * 70)
 
     # 結果JSONの保存
