@@ -1050,20 +1050,32 @@ JSON データを読み込み中...
     document.getElementById('btnCheckAllMeetingMats').addEventListener('click', async () => {
       const btn = document.getElementById('btnCheckAllMeetingMats');
       btn.disabled = true;
-      btn.textContent = '🔗 全会議資料チェック中…';
       const allUrls = [];
       meetings.forEach(m => {
         if (m.materials) {
           m.materials.forEach(mat => allUrls.push({ councilId: m.councilId, url: mat.url }));
         }
       });
-      for (let i = 0; i < allUrls.length; i += 4) {
-        const batch = allUrls.slice(i, i + 4);
-        await Promise.all(batch.map(item => checkSingleMat(item.councilId, item.url)));
+      const total = allUrls.length;
+      let completed = 0;
+      btn.textContent = `🔗 資料チェック中 (0 / ${total} 件)…`;
+
+      try {
+        const batchSize = 12;
+        for (let i = 0; i < total; i += batchSize) {
+          const batch = allUrls.slice(i, i + batchSize);
+          await Promise.all(batch.map(item => checkSingleMat(item.councilId, item.url, true)));
+          completed += batch.length;
+          btn.textContent = `🔗 資料チェック中 (${Math.min(completed, total)} / ${total} 件)…`;
+          renderMeetingsList();
+        }
+      } catch (err) {
+        console.error('Meetings Materials Check Error:', err);
+      } finally {
+        btn.disabled = false;
+        btn.textContent = '🔗 全会議の資料を一括疎通チェック';
         renderMeetingsList();
       }
-      btn.disabled = false;
-      btn.textContent = '🔗 全会議の資料を一括疎通チェック';
     });
 
     if (document.getElementById('filterMeetingsSearch')) document.getElementById('filterMeetingsSearch').addEventListener('input', renderMeetingsList);
@@ -1120,19 +1132,20 @@ JSON データを読み込み中...
       if (url) window.open(url, '_blank');
     };
 
-    async function checkSingleMat(councilId, matUrl) {
+    async function checkSingleMat(councilId, matUrl, skipRender = false) {
       const key = councilId + '::' + matUrl;
       matStatus[key] = 'checking';
-      renderCards();
+      if (!skipRender) { renderCards(); renderMeetingsList(); }
       try {
         const ctrl = new AbortController();
-        const tid = setTimeout(() => ctrl.abort(), 8000);
+        const tid = setTimeout(() => ctrl.abort(), 3500);
         await fetch(matUrl, { mode: 'no-cors', signal: ctrl.signal });
         clearTimeout(tid);
         matStatus[key] = 'ok';
       } catch (e) {
         matStatus[key] = 'error';
       }
+      if (!skipRender) { renderCards(); renderMeetingsList(); }
     }
     window.checkMaterials = async function(councilId) {
       const cMeetings = meetingMap[councilId] || [];
@@ -1492,31 +1505,44 @@ JSON データを読み込み中...
     renderMinistryList();
 
     // ─── URL Liveness Check ───
-    async function checkUrl(council) {
+    async function checkUrl(council, skipRender = false) {
       urlStatus[council.id] = 'checking';
-      renderCards();
+      if (!skipRender) renderCards();
       try {
         const controller = new AbortController();
-        const timeoutId = setTimeout(() => controller.abort(), 8000);
-        const res = await fetch(council.officialUrl, { mode: 'no-cors', signal: controller.signal });
+        const timeoutId = setTimeout(() => controller.abort(), 3500);
+        await fetch(council.officialUrl, { mode: 'no-cors', signal: controller.signal });
         clearTimeout(timeoutId);
         urlStatus[council.id] = 'ok';
       } catch (e) {
         urlStatus[council.id] = 'error';
       }
-      renderCards();
+      if (!skipRender) renderCards();
     }
 
     document.getElementById('btnCheckUrls').addEventListener('click', async () => {
       const btn = document.getElementById('btnCheckUrls');
       btn.disabled = true;
-      btn.textContent = '🔗 チェック実行中…';
-      for (let i = 0; i < allCouncils.length; i += 5) {
-        const batch = allCouncils.slice(i, i + 5);
-        await Promise.all(batch.map(c => checkUrl(c)));
+      const total = allCouncils.length;
+      let completed = 0;
+      btn.textContent = `🔗 チェック中 (0 / ${total} 件)…`;
+
+      try {
+        const batchSize = 10;
+        for (let i = 0; i < total; i += batchSize) {
+          const batch = allCouncils.slice(i, i + batchSize);
+          await Promise.all(batch.map(c => checkUrl(c, true)));
+          completed += batch.length;
+          btn.textContent = `🔗 チェック中 (${Math.min(completed, total)} / ${total} 件)…`;
+          renderCards();
+        }
+      } catch (err) {
+        console.error('URL Check Error:', err);
+      } finally {
+        btn.disabled = false;
+        btn.textContent = '🔗 URL一括疎通チェック';
+        renderCards();
       }
-      btn.disabled = false;
-      btn.textContent = '🔗 URL一括疎通チェック';
     });
 
     document.getElementById('btnApproveAll').addEventListener('click', () => {
