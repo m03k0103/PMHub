@@ -1701,6 +1701,13 @@ JSON データを読み込み中...
     async function checkUrl(council, skipRender = false) {
       urlStatus[council.id] = 'checking';
       if (!skipRender) renderCards();
+      
+      if (!council.officialUrl) {
+        urlStatus[council.id] = 'error';
+        if (!skipRender) renderCards();
+        return;
+      }
+
       try {
         const controller = new AbortController();
         const timeoutId = setTimeout(() => controller.abort(), 3500);
@@ -1708,6 +1715,7 @@ JSON データを読み込み中...
         clearTimeout(timeoutId);
         urlStatus[council.id] = 'ok';
       } catch (e) {
+        console.warn(`URL Check failed for ${council.id} (${council.officialUrl}):`, e);
         urlStatus[council.id] = 'error';
       }
       if (!skipRender) renderCards();
@@ -1719,22 +1727,34 @@ JSON データを読み込み中...
       const total = allCouncils.length;
       let completed = 0;
       btn.textContent = `🔗 チェック中 (0 / ${total} 件)…`;
+      console.log(`Starting URL check for ${total} councils...`);
 
       try {
         const batchSize = 10;
         for (let i = 0; i < total; i += batchSize) {
           const batch = allCouncils.slice(i, i + batchSize);
-          await Promise.all(batch.map(c => checkUrl(c, true)));
+          console.log(`Checking batch ${i} to ${i + batch.length} / ${total}`);
+          
+          // Promise.allSettled を使用してどれかがクラッシュしても他が完了するのを待つ
+          await Promise.allSettled(batch.map(c => checkUrl(c, true)));
+          
           completed += batch.length;
           btn.textContent = `🔗 チェック中 (${Math.min(completed, total)} / ${total} 件)…`;
-          renderCards();
+          
+          // renderCards でエラーが起きても止まらないようにする
+          try {
+            renderCards();
+          } catch(re) {
+            console.error('renderCards error during url check:', re);
+          }
         }
+        console.log('URL check completed successfully.');
       } catch (err) {
         console.error('URL Check Error:', err);
       } finally {
         btn.disabled = false;
         btn.textContent = '🔗 URL一括疎通チェック';
-        renderCards();
+        try { renderCards(); } catch(e){}
       }
     });
 
