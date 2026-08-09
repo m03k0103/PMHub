@@ -108,7 +108,7 @@ const COUNCILS = [
     category: 'COUNCIL',
     pastYearCount: 22,
     description: '経済社会の構造改革を推進するため、各種規制の点検・見直し、スタートアップ・デジタル化の障害除去を答申する内閣府諮問機関。',
-    officialUrl: 'https://www8.cao.go.jp/kisei-kaikaku/index.html',
+    officialUrl: 'https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/meeting.html',
     isWatched: true,
     trackedSince: '2022/10/01'
   },
@@ -1649,7 +1649,7 @@ const COUNCILS = [
     category: 'WORKING_GROUP',
     pastYearCount: 1,
     description: '規制改革推進会議 働き方・人への投資WGの基本方針、施策の推進状況および関係省庁間の連携・個別課題について審議する会議。',
-    officialUrl: 'https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/meeting.html#medical_2510',
+    officialUrl: 'https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/meeting.html#human_2510',
     isWatched: true,
     trackedSince: '2026/04/07'
   },
@@ -1660,7 +1660,7 @@ const COUNCILS = [
     category: 'WORKING_GROUP',
     pastYearCount: 1,
     description: '規制改革推進会議 デジタル・AI WGの基本方針、施策の推進状況および関係省庁間の連携・個別課題について審議する会議。',
-    officialUrl: 'https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/meeting.html',
+    officialUrl: 'https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/meeting.html#ai_2510',
     isWatched: true,
     trackedSince: '2026/04/30'
   },
@@ -1671,7 +1671,7 @@ const COUNCILS = [
     category: 'WORKING_GROUP',
     pastYearCount: 1,
     description: '規制改革推進会議 スタートアップ・イノベーション促進WGの基本方針、施策の推進状況および関係省庁間の連携・個別課題について審議する会議。',
-    officialUrl: 'https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/meeting.html',
+    officialUrl: 'https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/meeting.html#startup_2510',
     isWatched: true,
     trackedSince: '2025/05/08'
   },
@@ -1682,7 +1682,7 @@ const COUNCILS = [
     category: 'WORKING_GROUP',
     pastYearCount: 1,
     description: '規制改革推進会議 GX・サステナビリティサブWGの基本方針、施策の推進状況および関係省庁間の連携・個別課題について審議する会議。',
-    officialUrl: 'https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/meeting.html',
+    officialUrl: 'https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/meeting.html#gx_2510',
     isWatched: true,
     trackedSince: '2025/03/15'
   },
@@ -1693,7 +1693,7 @@ const COUNCILS = [
     category: 'COMMITTEE',
     pastYearCount: 1,
     description: '食品安全委員会 (本会議)の基本方針、施策の推進状況および関係省庁間の連携・個別課題について審議する会議。',
-    officialUrl: 'https://www.fsc.go.jp/iinkai/',
+    officialUrl: 'https://www.fsc.go.jp/iinkai_annai/jisseki.html',
     isWatched: true,
     trackedSince: '2026/01/01'
   },
@@ -1704,7 +1704,7 @@ const COUNCILS = [
     category: 'COUNCIL',
     pastYearCount: 1,
     description: '企画等専門調査会の基本方針、施策の推進状況および関係省庁間の連携・個別課題について審議する会議。',
-    officialUrl: 'https://www.fsc.go.jp/senmon/kikaku/',
+    officialUrl: 'https://www.fsc.go.jp/senmon/kikaku_tou/',
     isWatched: true,
     trackedSince: '2026/01/01'
   },
@@ -1737,7 +1737,7 @@ const COUNCILS = [
     category: 'COMMITTEE',
     pastYearCount: 1,
     description: '国家公安委員会 定例会議の基本方針、施策の推進状況および関係省庁間の連携・個別課題について審議する会議。',
-    officialUrl: 'https://www.npsc.go.jp/activity/index.html',
+    officialUrl: 'https://www.npsc.go.jp/act/',
     isWatched: true,
     trackedSince: '2026/08/06'
   },
@@ -1748,7 +1748,7 @@ const COUNCILS = [
     category: 'COUNCIL',
     pastYearCount: 1,
     description: '情報通信審議会の基本方針、施策の推進状況および関係省庁間の連携・個別課題について審議する会議。',
-    officialUrl: 'https://www.soumu.go.jp/main_sosiki/joho_tsusin/eng/council/index.html',
+    officialUrl: 'https://www.soumu.go.jp/main_sosiki/joho_tsusin/policyreports/joho_tsusin/sokai/soukai_index.html',
     isWatched: true,
     trackedSince: '2026/07/20'
   },
@@ -1759,7 +1759,7 @@ const COUNCILS = [
     category: 'COUNCIL',
     pastYearCount: 1,
     description: '地方財政審議会の基本方針、施策の推進状況および関係省庁間の連携・個別課題について審議する会議。',
-    officialUrl: 'https://www.soumu.go.jp/main_sosiki/singi/chizai/index.html',
+    officialUrl: 'https://www.soumu.go.jp/main_sosiki/singi/chizai/singi.html',
     isWatched: true,
     trackedSince: '2026/07/15'
   },
@@ -2089,7 +2089,7 @@ const COUNCILS = [
     category: 'COUNCIL',
     pastYearCount: 1,
     description: '中央建設業審議会の基本方針、施策の推進状況および関係省庁間の連携・個別課題について審議する会議。',
-    officialUrl: 'https://www.mlit.go.jp/policy/shingikai/s50_chuou01.html',
+    officialUrl: 'https://www.mlit.go.jp/policy/shingikai/s501_chuokensetsugyo01.html',
     isWatched: true,
     trackedSince: '2026/05/25'
   },
@@ -2100,7 +2100,7 @@ const COUNCILS = [
     category: 'COUNCIL',
     pastYearCount: 1,
     description: '中央環境審議会の基本方針、施策の推進状況および関係省庁間の連携・個別課題について審議する会議。',
-    officialUrl: 'https://www.env.go.jp/council/index.html',
+    officialUrl: 'https://www.env.go.jp/council/01chuo/yoshi01.html',
     isWatched: true,
     trackedSince: '2026/07/22'
   },
@@ -2111,7 +2111,7 @@ const COUNCILS = [
     category: 'COUNCIL',
     pastYearCount: 1,
     description: '防衛施設中央審議会の基本方針、施策の推進状況および関係省庁間の連携・個別課題について審議する会議。',
-    officialUrl: 'https://www.mod.go.jp/j/approach/agenda/meeting/shisetsu/index.html',
+    officialUrl: 'https://www.mod.go.jp/j/policy/agenda/meeting/shi-chu/index.html',
     isWatched: true,
     trackedSince: '2026/04/10'
   }

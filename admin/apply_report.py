@@ -107,7 +107,8 @@ def apply_report(json_path, data_js_path=None):
                         elif isinstance(v, (int, float)):
                             c_formatted += f"    {k}: {v},\n"
                         else:
-                            c_formatted += f"    {k}: {json.dumps(v, ensure_ascii=False).replace('\"', \"'")},\n"
+                            val_json = json.dumps(v, ensure_ascii=False).replace('"', "'")
+                            c_formatted += f"    {k}: {val_json},\n"
                     c_formatted = c_formatted.rstrip(",\n") + "\n  },\n];"
                     
                     # COUNCILS の末尾 '];' の直前に挿入
