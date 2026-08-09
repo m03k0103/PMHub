@@ -330,7 +330,7 @@
               全48省庁の「審議会等ページURL」を自動巡回し、未登録の会議体名称およびトップページURLを自動抽出・検出します。
             </p>
           </div>
-          <button class="btn-crawler btn-bulk approve-all" id="btnStartDiscovery" onclick="startDiscovery()" style="font-size: 1rem; padding: 0.75rem 1.5rem; background: rgba(59,130,246,0.15); color: #60a5fa; border-color: rgba(59,130,246,0.4);">
+          <button class="btn-crawler btn-bulk approve-all" id="btnStartDiscovery" style="font-size: 1rem; padding: 0.75rem 1.5rem; background: rgba(59,130,246,0.15); color: #60a5fa; border-color: rgba(59,130,246,0.4);">
             ⚡ 新規会議体の検出巡回を実行 (Python API)
           </button>
         </div>
@@ -2064,11 +2064,16 @@ JSON データを読み込み中...
       }, 80);
     };
 
-    if (btnStartDiscovery) {
-      btnStartDiscovery.onclick = function(e) {
+    const discoveryBtnTarget = document.getElementById('btnStartDiscovery');
+    if (discoveryBtnTarget) {
+      discoveryBtnTarget.onclick = function(e) {
         if (e) e.preventDefault();
         window.startDiscovery();
       };
+      discoveryBtnTarget.addEventListener('click', function(e) {
+        if (e) e.preventDefault();
+        window.startDiscovery();
+      });
     }
 
     // ─── 2. Meeting Crawler Logic (Tab 1 Block 2) ───
