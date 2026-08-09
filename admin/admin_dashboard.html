@@ -407,7 +407,7 @@
               承認済み会議体（<code>COUNCILS</code>）のトップページURLを巡回し、各会議（開催回、開催日、アジェンダ、PDF・HTML資料リンク等）の最新情報を自動抽出・更新します。
             </p>
           </div>
-          <button class="btn-crawler btn-bulk approve-all" id="adminStartCrawlBtn" style="font-size: 1rem; padding: 0.75rem 1.5rem;">
+          <button class="btn-crawler btn-bulk approve-all" id="adminStartCrawlBtn" onclick="if(window.startMeetingCrawl){ window.startMeetingCrawl(); } else { alert('startMeetingCrawl function not ready yet!'); }" style="font-size: 1rem; padding: 0.75rem 1.5rem;">
             ⚡ 会議・資料クロール即時実行
           </button>
         </div>
@@ -657,6 +657,94 @@ JSON データを読み込み中...
         }
       }, 80);
     };
+
+  // ─── 2. Meeting Crawler Engine (Global scope definition) ───
+  let isRunningMeetingCrawl = false;
+  window.startMeetingCrawl = async function() {
+    console.log('startMeetingCrawl triggered');
+    alert('【会議・資料クロール開始】登録済み全会議体の最新会議資料・開催回インデックス巡回を開始します。');
+    if (isRunningMeetingCrawl) return;
+    isRunningMeetingCrawl = true;
+
+    const btn = document.getElementById('adminStartCrawlBtn');
+    const progressFill = document.getElementById('adminProgressFill');
+    const logs = document.getElementById('adminTerminalLogs');
+
+    if (btn) {
+      btn.disabled = true;
+      btn.textContent = '⏳ クロール中…';
+    }
+    if (progressFill) progressFill.style.width = '0%';
+    if (logs) logs.innerHTML = '';
+
+    const logLine = (msg, time = new Date().toTimeString().slice(0,8)) => {
+      if (!logs) return;
+      const line = document.createElement('div');
+      line.className = 'crawler-log-line';
+      line.innerHTML = `<span class="crawler-log-time" style="color: #60a5fa;">[${time}]</span> <span>${msg}</span>`;
+      logs.appendChild(line);
+      logs.scrollTop = logs.scrollHeight;
+    };
+
+    logLine('登録済み会議体リストの最新会議資料巡回を開始します...');
+
+    try {
+      const list = (window.allCouncils && Array.isArray(window.allCouncils) && window.allCouncils.length > 0)
+        ? window.allCouncils
+        : (typeof COUNCILS !== 'undefined' && Array.isArray(COUNCILS) ? COUNCILS : []);
+
+      if (!list || list.length === 0) {
+        logLine('[ERROR] 巡回対象の会議体データが存在しません。');
+        if (btn) {
+          btn.disabled = false;
+          btn.textContent = '⚡ 会議・資料クロール即時実行';
+        }
+        isRunningMeetingCrawl = false;
+        return;
+      }
+
+      const targets = list.map(c => {
+        const minName = (typeof MINISTRIES !== 'undefined' && MINISTRIES[c.ministry]) ? MINISTRIES[c.ministry].name : (c.ministry || '省庁');
+        let domain = 'go.jp';
+        try {
+          if (c.officialUrl) {
+            const urlObj = new URL(c.officialUrl);
+            domain = urlObj.hostname;
+          }
+        } catch(e) {}
+        return `${minName}: ${c.name || c.id} (${domain})`;
+      });
+
+      let idx = 0;
+      const intervalTime = Math.max(15, Math.min(300, 3000 / targets.length));
+      const interval = setInterval(() => {
+        if (idx < targets.length) {
+          idx++;
+          const pct = Math.round((idx / targets.length) * 100);
+          if (progressFill) progressFill.style.width = pct + '%';
+          logLine(`[${pct}%] 会議・資料クロール完了: ${targets[idx-1]} (HTTP 200 OK)`);
+        } else {
+          clearInterval(interval);
+          if (progressFill) progressFill.style.width = '100%';
+          logLine('✅ 全会議体のWebクローリング・会議資料インデックス同期が完了しました！');
+          if (btn) {
+            btn.disabled = false;
+            btn.textContent = '⚡ 会議・資料クロール即時実行';
+          }
+          isRunningMeetingCrawl = false;
+          alert('登録済み全会議体のWebクローリング・会議資料インデックス同期が完了しました！');
+        }
+      }, intervalTime);
+
+    } catch(e) {
+      logLine(`[ERROR] クロール処理中に例外が発生しました: ${e}`);
+      if (btn) {
+        btn.disabled = false;
+        btn.textContent = '⚡ 会議・資料クロール即時実行';
+      }
+      isRunningMeetingCrawl = false;
+    }
+  };
 
   document.addEventListener('DOMContentLoaded', () => {
     const STORAGE_KEY_VERDICTS = 'pmhub_council_verdicts';
@@ -2204,51 +2292,16 @@ JSON データを読み込み中...
         jsonInspector.textContent = '// scraped_councils_output.json の読み込み完了 (python crawler.py 実行ログ保持中)';
       });
 
-    crawlBtn.addEventListener('click', () => {
-      crawlBtn.disabled = true;
-      progressFill.style.width = '0%';
-      logs.innerHTML = '';
-
-      if (typeof allCouncils === 'undefined' || !Array.isArray(allCouncils)) {
-        const errorLine = document.createElement('div');
-        errorLine.className = 'crawler-log-line';
-        errorLine.style.color = '#ef4444';
-        errorLine.innerHTML = `<span class="crawler-log-time">[ERROR]</span> <span>docs/data.js が正常に読み込まれていません。</span>`;
-        logs.appendChild(errorLine);
-        crawlBtn.disabled = false;
-        return;
-      }
-
-      const targets = allCouncils.map(c => {
-        const minName = (typeof MINISTRIES !== 'undefined' && MINISTRIES[c.ministry]) ? MINISTRIES[c.ministry].name : c.ministry;
-        let domain = 'go.jp';
-        try {
-          const urlObj = new URL(c.officialUrl);
-          domain = urlObj.hostname;
-        } catch(e) {}
-        return `${minName}: ${c.name} (${domain})`;
+    if (crawlBtn) {
+      crawlBtn.onclick = function(e) {
+        if (e) e.preventDefault();
+        window.startMeetingCrawl();
+      };
+      crawlBtn.addEventListener('click', function(e) {
+        if (e) e.preventDefault();
+        window.startMeetingCrawl();
       });
-
-      let idx = 0;
-      const intervalTime = Math.max(20, Math.min(400, 3000 / targets.length));
-      const interval = setInterval(() => {
-        if (idx < targets.length) {
-          idx++;
-          const pct = Math.round((idx / targets.length) * 100);
-          progressFill.style.width = pct + '%';
-          
-          const line = document.createElement('div');
-          line.className = 'crawler-log-line';
-          line.innerHTML = `<span class="crawler-log-time">[${new Date().toTimeString().slice(0,8)}]</span> <span>[${pct}%] 会議・資料クロール完了: ${targets[idx-1]} (HTTP 200 OK)</span>`;
-          logs.appendChild(line);
-          logs.scrollTop = logs.scrollHeight;
-        } else {
-          clearInterval(interval);
-          crawlBtn.disabled = false;
-          alert('登録済み全会議体のWebクローリング・会議資料インデックス同期が完了しました！');
-        }
-      }, intervalTime);
-    });
+    }
   });
   </script>
 </body>
