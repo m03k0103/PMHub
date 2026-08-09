@@ -1964,6 +1964,7 @@ JSON データを読み込み中...
 
     let isRunningDiscovery = false;
     window.startDiscovery = async function() {
+      console.log('startDiscovery triggered');
       if (isRunningDiscovery) return;
       isRunningDiscovery = true;
 
@@ -2064,7 +2065,10 @@ JSON データを読み込み中...
     };
 
     if (btnStartDiscovery) {
-      btnStartDiscovery.addEventListener('click', window.startDiscovery);
+      btnStartDiscovery.onclick = function(e) {
+        if (e) e.preventDefault();
+        window.startDiscovery();
+      };
     }
 
     // ─── 2. Meeting Crawler Logic (Tab 1 Block 2) ───
