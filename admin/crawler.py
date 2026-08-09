@@ -14,6 +14,7 @@ import urllib.parse
 import re
 import io
 from datetime import datetime, timedelta
+from bs4 import BeautifulSoup
 
 # Windows ターミナルログの文字化け防止 (chcp 65001 & UTF-8 再構成)
 if sys.platform == "win32":
@@ -1181,19 +1182,27 @@ def parse_materials_from_html(html, base_url, pdf_selector):
     """HTMLから全配布資料（公開PDFおよび非公開資料）を抽出"""
     materials = []
     
-    pdf_matches = re.findall(r'<a[^>]*href=["\']([^"\']+\.pdf)["\'][^>]*>(.*?)</a>', html, re.IGNORECASE | re.DOTALL)
-    for pdf_url, link_text in pdf_matches:
-        clean_name = re.sub(r'<[^>]+>', '', link_text).strip()
-        if not clean_name:
-            clean_name = os.path.basename(pdf_url)
-        abs_url = urllib.parse.urljoin(base_url, pdf_url)
-        materials.append({
-            "name": clean_name,
-            "url": abs_url,
-            "type": "PDF",
-            "isPrivate": False
-        })
-        
+    soup = BeautifulSoup(html, 'html.parser')
+    
+    # 1. Base URL consideration
+    base_tag = soup.find('base', href=True)
+    if base_tag:
+        base_url = urllib.parse.urljoin(base_url, base_tag['href'])
+    
+    # Extract PDF links
+    for a_tag in soup.find_all('a', href=True):
+        href = a_tag['href']
+        if href.lower().endswith('.pdf'):
+            link_text = a_tag.get_text(strip=True)
+            clean_name = link_text if link_text else os.path.basename(href)
+            abs_url = urllib.parse.urljoin(base_url, href)
+            materials.append({
+                "name": clean_name,
+                "url": abs_url,
+                "type": "PDF",
+                "isPrivate": False
+            })
+            
     private_lines = re.findall(r'(資料\d+[\s\:\：]*[^\n<]+(?:非公開)[^\n<]*)', html)
     for p_text in private_lines:
         clean_p_text = re.sub(r'<[^>]+>', '', p_text).strip()
@@ -1217,22 +1226,31 @@ def _crawl_subpages(target_url, html, rule, quirk_note, pdf_pattern):
     additional_materials = []
     all_extracted_dates = []
 
+    soup = BeautifulSoup(html, 'html.parser')
+    base_tag = soup.find('base', href=True)
+    page_base_url = urllib.parse.urljoin(target_url, base_tag['href']) if base_tag else target_url
+
     subpage_pattern = rule.get("subpage_discovery_pattern", r'href=["\']([^"\']*(?:dai\d+|\d+kai|kaisai|gijisidai)[^"\'#]*)["\']')
     subpage_links = re.findall(subpage_pattern, html, re.IGNORECASE)
 
     if subpage_links:
-        unique_subpages = list(dict.fromkeys([urllib.parse.urljoin(target_url, l) for l in subpage_links]))[:6]
+        unique_subpages = list(dict.fromkeys([urllib.parse.urljoin(page_base_url, l) for l in subpage_links]))[:6]
         print(f"   [2回目情報取得Engine ({quirk_note})] サブページ {len(unique_subpages)} 件を深掘り巡回中...")
 
         for sub_url in unique_subpages:
             parsed_url = urllib.parse.urlparse(sub_url)
             if parsed_url.scheme not in ('http', 'https'):
                 continue
+            if sub_url.lower().endswith('.pdf'):
+                continue
 
             sub_html = fetch_url(sub_url)
             if sub_html:
-                sub_title_match = re.search(r'<title>(.*?)</title>', sub_html, re.IGNORECASE | re.DOTALL)
-                sub_title = sub_title_match.group(1).strip() if sub_title_match else sub_url
+                try:
+                    sub_soup = BeautifulSoup(sub_html, 'html.parser')
+                    sub_title = sub_soup.title.string.strip() if sub_soup.title and sub_soup.title.string else sub_url
+                except Exception:
+                    sub_title = sub_url
 
                 sub_materials = parse_materials_from_html(sub_html, sub_url, pdf_pattern)
                 raw_sub_dates = re.findall(rule.get("date_regex", r'(?:令和|平成)\d+年\d+月\d+日|\d{4}年\d+月\d+日|\d{4}[/-]\d+[/-]\d+'), sub_html)

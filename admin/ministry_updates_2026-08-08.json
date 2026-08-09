@@ -1,0 +1,129 @@
+{
+  "_format": "pmhub-verification-report-v2",
+  "_description": "省庁データ更新",
+  "exportedAt": "2026-08-08T14:44:35.198Z",
+  "targetFile": "docs/data.js",
+  "corrections": [
+    {
+      "action": "update_field",
+      "target": "MINISTRIES",
+      "targetId": "ISA",
+      "field": "officialUrl",
+      "oldValue": "https://www.moj.go.jp/isa/index.html",
+      "newValue": "https://www.moj.go.jp/isa/",
+      "reason": "Admin corrected ministry officialUrl"
+    },
+    {
+      "action": "update_field",
+      "target": "MINISTRIES",
+      "targetId": "ISA",
+      "field": "councilsUrls",
+      "oldValue": [],
+      "newValue": [
+        "https://www.moj.go.jp/isa/policies/conference/seisaku_index.html"
+      ],
+      "reason": "Admin updated councilsUrls"
+    },
+    {
+      "action": "update_field",
+      "target": "MINISTRIES",
+      "targetId": "FSA",
+      "field": "councilsUrls",
+      "oldValue": [],
+      "newValue": [
+        "https://www.fsa.go.jp/singi/"
+      ],
+      "reason": "Admin updated councilsUrls"
+    },
+    {
+      "action": "update_field",
+      "target": "MINISTRIES",
+      "targetId": "FSC",
+      "field": "councilsUrls",
+      "oldValue": [],
+      "newValue": [
+        "https://www.fsc.go.jp/iinkai_annai/"
+      ],
+      "reason": "Admin updated councilsUrls"
+    },
+    {
+      "action": "update_field",
+      "target": "MINISTRIES",
+      "targetId": "JCG",
+      "field": "hasCouncils",
+      "oldValue": true,
+      "newValue": false,
+      "reason": "Admin toggled hasCouncils"
+    },
+    {
+      "action": "update_field",
+      "target": "MINISTRIES",
+      "targetId": "JCRC",
+      "field": "councilsUrls",
+      "oldValue": [],
+      "newValue": [
+        "https://www.jcrc.go.jp/activity/holding.html"
+      ],
+      "reason": "Admin updated councilsUrls"
+    },
+    {
+      "action": "update_field",
+      "target": "MINISTRIES",
+      "targetId": "JFA",
+      "field": "councilsUrls",
+      "oldValue": [],
+      "newValue": [
+        "https://www.jfa.maff.go.jp/j/council/",
+        "https://www.jfa.maff.go.jp/j/study/"
+      ],
+      "reason": "Admin updated councilsUrls"
+    },
+    {
+      "action": "update_field",
+      "target": "MINISTRIES",
+      "targetId": "JFTC",
+      "field": "hasCouncils",
+      "oldValue": true,
+      "newValue": false,
+      "reason": "Admin toggled hasCouncils"
+    },
+    {
+      "action": "update_field",
+      "target": "MINISTRIES",
+      "targetId": "JINJI",
+      "field": "hasCouncils",
+      "oldValue": true,
+      "newValue": false,
+      "reason": "Admin toggled hasCouncils"
+    },
+    {
+      "action": "update_field",
+      "target": "MINISTRIES",
+      "targetId": "JMA",
+      "field": "hasCouncils",
+      "oldValue": true,
+      "newValue": false,
+      "reason": "Admin toggled hasCouncils"
+    },
+    {
+      "action": "update_field",
+      "target": "MINISTRIES",
+      "targetId": "JPO",
+      "field": "hasCouncils",
+      "oldValue": true,
+      "newValue": false,
+      "reason": "Admin toggled hasCouncils"
+    },
+    {
+      "action": "update_field",
+      "target": "MINISTRIES",
+      "targetId": "JSA",
+      "field": "councilsUrls",
+      "oldValue": [],
+      "newValue": [
+        "https://www.mext.go.jp/sports/b_menu/shingi/"
+      ],
+      "reason": "Admin updated councilsUrls"
+    }
+  ]
+}

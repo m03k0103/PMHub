@@ -1,0 +1,1441 @@
+{
+  "_format": "pmhub-verification-report-v2",
+  "_description": "AI Agent向け検証レポート。corrections配列の各エントリをdocs/data.jsに適用してください。",
+  "_instructions": [
+    "action=update_field: COUNCILS or MEETINGS 配列内のtargetIdのオブジェクトのfieldをnewValueに書き換える",
+    "action=remove: COUNCILS or MEETINGS 配列からtargetIdのオブジェクトを削除する",
+    "targetFile: docs/data.js"
+  ],
+  "exportedAt": "2026-08-07T10:37:59.004Z",
+  "targetFile": "docs/data.js",
+  "summary": {
+    "totalNewCouncils": 47,
+    "approved": 4,
+    "rejected": 0,
+    "pending": 43,
+    "urlCorrected": 2,
+    "meetingUrlCorrected": 4,
+    "totalCorrections": 6
+  },
+  "corrections": [
+    {
+      "action": "update_field",
+      "target": "MEETINGS",
+      "targetId": "meet-2025-1003-cas-atarashii-sihon-107",
+      "field": "officialUrl",
+      "oldValue": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/index.html",
+      "newValue": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai37/gijisidai.html",
+      "reason": "Admin corrected meeting page URL for meet-2025-1003-cas-atarashii-sihon-107"
+    },
+    {
+      "action": "update_field",
+      "target": "COUNCILS",
+      "targetId": "cas-roumuhi-tenka-108",
+      "field": "officialUrl",
+      "oldValue": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/index.html",
+      "newValue": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/wgkaisai/index.html",
+      "reason": "Admin corrected council top page URL"
+    },
+    {
+      "action": "update_field",
+      "target": "MEETINGS",
+      "targetId": "meet-2025-0630-cas-roumuhi-tenka-108",
+      "field": "officialUrl",
+      "oldValue": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/index.html",
+      "newValue": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/wgkaisai/roumuhitenka_dai5/index.html",
+      "reason": "Admin corrected meeting page URL for meet-2025-0630-cas-roumuhi-tenka-108"
+    },
+    {
+      "action": "update_field",
+      "target": "MEETINGS",
+      "targetId": "meet-2026-0519-cao-kisei-chiiki-wg-109",
+      "field": "officialUrl",
+      "oldValue": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/meeting.html",
+      "newValue": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_01local/260519/local11_agenda.html",
+      "reason": "Admin corrected meeting page URL for meet-2026-0519-cao-kisei-chiiki-wg-109"
+    },
+    {
+      "action": "update_field",
+      "target": "COUNCILS",
+      "targetId": "cao-kisei-iryou-wg-110",
+      "field": "officialUrl",
+      "oldValue": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/meeting.html",
+      "newValue": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/meeting.html#medical_2510",
+      "reason": "Admin corrected council top page URL"
+    },
+    {
+      "action": "update_field",
+      "target": "MEETINGS",
+      "targetId": "meet-2026-0515-cao-kisei-iryou-wg-110",
+      "field": "officialUrl",
+      "oldValue": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/meeting.html",
+      "newValue": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_02medical/250501/medical05_agenda.html",
+      "reason": "Admin corrected meeting page URL for meet-2026-0515-cao-kisei-iryou-wg-110"
+    }
+  ],
+  "councils": [
+    {
+      "id": "cas-atarashii-sihon-107",
+      "name": "新しい資本主義実現会議",
+      "ministry": "CAS",
+      "category": "COUNCIL",
+      "officialUrl": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/index.html",
+      "correctedUrl": null,
+      "trackedSince": "2025/10/03",
+      "verdict": "approved",
+      "notes": "",
+      "urlStatus": "unchecked",
+      "meetings": [
+        {
+          "id": "meet-2025-1003-cas-atarashii-sihon-107",
+          "title": "新しい資本主義実現会議（2025/10/03開催）",
+          "date": "2025/10/03",
+          "officialUrl": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/index.html",
+          "correctedUrl": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai37/gijisidai.html",
+          "materials": [
+            {
+              "name": "新しい資本主義実現会議 公式掲載資料・ページ (HTML)",
+              "type": "HTML",
+              "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/index.html",
+              "status": "unchecked"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "cas-roumuhi-tenka-108",
+      "name": "労務費の適切な転嫁のための関係省庁連絡会議",
+      "ministry": "CAS",
+      "category": "LIAISON",
+      "officialUrl": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/index.html",
+      "correctedUrl": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/wgkaisai/index.html",
+      "trackedSince": "2025/06/30",
+      "verdict": "approved",
+      "notes": "",
+      "urlStatus": "unchecked",
+      "meetings": [
+        {
+          "id": "meet-2025-0630-cas-roumuhi-tenka-108",
+          "title": "労務費の適切な転嫁のための関係省庁連絡会議（2025/06/30開催）",
+          "date": "2025/06/30",
+          "officialUrl": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/index.html",
+          "correctedUrl": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/wgkaisai/roumuhitenka_dai5/index.html",
+          "materials": [
+            {
+              "name": "労務費の適切な転嫁のための関係省庁連絡会議 公式掲載資料・ページ (HTML)",
+              "type": "HTML",
+              "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/index.html",
+              "status": "unchecked"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "cao-kisei-chiiki-wg-109",
+      "name": "規制改革推進会議 地域活性化・人手不足対応WG",
+      "ministry": "CAO",
+      "category": "WORKING_GROUP",
+      "officialUrl": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/meeting.html",
+      "correctedUrl": null,
+      "trackedSince": "2026/05/19",
+      "verdict": "approved",
+      "notes": "",
+      "urlStatus": "unchecked",
+      "meetings": [
+        {
+          "id": "meet-2026-0519-cao-kisei-chiiki-wg-109",
+          "title": "規制改革推進会議 地域活性化・人手不足対応WG（2026/05/19開催）",
+          "date": "2026/05/19",
+          "officialUrl": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/meeting.html",
+          "correctedUrl": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_01local/260519/local11_agenda.html",
+          "materials": [
+            {
+              "name": "規制改革推進会議 地域活性化・人手不足対応WG 公式掲載資料・ページ (HTML)",
+              "type": "HTML",
+              "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/meeting.html",
+              "status": "unchecked"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "cao-kisei-iryou-wg-110",
+      "name": "規制改革推進会議 健康・医療・介護WG",
+      "ministry": "CAO",
+      "category": "WORKING_GROUP",
+      "officialUrl": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/meeting.html",
+      "correctedUrl": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/meeting.html#medical_2510",
+      "trackedSince": "2026/05/15",
+      "verdict": "approved",
+      "notes": "",
+      "urlStatus": "unchecked",
+      "meetings": [
+        {
+          "id": "meet-2026-0515-cao-kisei-iryou-wg-110",
+          "title": "規制改革推進会議 健康・医療・介護WG（2026/05/15開催）",
+          "date": "2026/05/15",
+          "officialUrl": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/meeting.html",
+          "correctedUrl": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_02medical/250501/medical05_agenda.html",
+          "materials": [
+            {
+              "name": "規制改革推進会議 健康・医療・介護WG 公式掲載資料・ページ (HTML)",
+              "type": "HTML",
+              "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/meeting.html",
+              "status": "unchecked"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "cao-kisei-hatarakikata-wg-111",
+      "name": "規制改革推進会議 働き方・人への投資WG",
+      "ministry": "CAO",
+      "category": "WORKING_GROUP",
+      "officialUrl": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/meeting.html",
+      "correctedUrl": null,
+      "trackedSince": "2026/04/07",
+      "verdict": "pending",
+      "notes": "",
+      "urlStatus": "unchecked",
+      "meetings": [
+        {
+          "id": "meet-2026-0407-cao-kisei-hatarakikata-wg-111",
+          "title": "規制改革推進会議 働き方・人への投資WG（2026/04/07開催）",
+          "date": "2026/04/07",
+          "officialUrl": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/meeting.html",
+          "correctedUrl": null,
+          "materials": [
+            {
+              "name": "規制改革推進会議 働き方・人への投資WG 公式掲載資料・ページ (HTML)",
+              "type": "HTML",
+              "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/meeting.html",
+              "status": "unchecked"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "cao-kisei-digital-ai-wg-112",
+      "name": "規制改革推進会議 デジタル・AI WG",
+      "ministry": "CAO",
+      "category": "WORKING_GROUP",
+      "officialUrl": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/meeting.html",
+      "correctedUrl": null,
+      "trackedSince": "2026/04/30",
+      "verdict": "pending",
+      "notes": "",
+      "urlStatus": "unchecked",
+      "meetings": [
+        {
+          "id": "meet-2026-0430-cao-kisei-digital-ai-wg-112",
+          "title": "規制改革推進会議 デジタル・AI WG（2026/04/30開催）",
+          "date": "2026/04/30",
+          "officialUrl": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/meeting.html",
+          "correctedUrl": null,
+          "materials": [
+            {
+              "name": "規制改革推進会議 デジタル・AI WG 公式掲載資料・ページ (HTML)",
+              "type": "HTML",
+              "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/meeting.html",
+              "status": "unchecked"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "cao-kisei-startup-wg-113",
+      "name": "規制改革推進会議 スタートアップ・イノベーション促進WG",
+      "ministry": "CAO",
+      "category": "WORKING_GROUP",
+      "officialUrl": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/meeting.html",
+      "correctedUrl": null,
+      "trackedSince": "2025/05/08",
+      "verdict": "pending",
+      "notes": "",
+      "urlStatus": "unchecked",
+      "meetings": [
+        {
+          "id": "meet-2025-0508-cao-kisei-startup-wg-113",
+          "title": "規制改革推進会議 スタートアップ・イノベーション促進WG（2025/05/08開催）",
+          "date": "2025/05/08",
+          "officialUrl": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/meeting.html",
+          "correctedUrl": null,
+          "materials": [
+            {
+              "name": "規制改革推進会議 スタートアップ・イノベーション促進WG 公式掲載資料・ページ (HTML)",
+              "type": "HTML",
+              "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/meeting.html",
+              "status": "unchecked"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "cao-kisei-gx-subwg-114",
+      "name": "規制改革推進会議 GX・サステナビリティサブWG",
+      "ministry": "CAO",
+      "category": "WORKING_GROUP",
+      "officialUrl": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/meeting.html",
+      "correctedUrl": null,
+      "trackedSince": "2025/03/15",
+      "verdict": "pending",
+      "notes": "",
+      "urlStatus": "unchecked",
+      "meetings": [
+        {
+          "id": "meet-2025-0315-cao-kisei-gx-subwg-114",
+          "title": "規制改革推進会議 GX・サステナビリティサブWG（2025/03/15開催）",
+          "date": "2025/03/15",
+          "officialUrl": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/meeting.html",
+          "correctedUrl": null,
+          "materials": [
+            {
+              "name": "規制改革推進会議 GX・サステナビリティサブWG 公式掲載資料・ページ (HTML)",
+              "type": "HTML",
+              "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/meeting.html",
+              "status": "unchecked"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "fsc-honkaigi-115",
+      "name": "食品安全委員会 (本会議)",
+      "ministry": "FSC",
+      "category": "COMMITTEE",
+      "officialUrl": "https://www.fsc.go.jp/iinkai/",
+      "correctedUrl": null,
+      "trackedSince": "2026/01/01",
+      "verdict": "pending",
+      "notes": "",
+      "urlStatus": "unchecked",
+      "meetings": [
+        {
+          "id": "meet-2026-0101-fsc-honkaigi-115",
+          "title": "食品安全委員会 (本会議)（2026/01/01開催）",
+          "date": "2026/01/01",
+          "officialUrl": "https://www.fsc.go.jp/iinkai/",
+          "correctedUrl": null,
+          "materials": [
+            {
+              "name": "食品安全委員会 (本会議) 公式掲載資料・ページ (HTML)",
+              "type": "HTML",
+              "url": "https://www.fsc.go.jp/iinkai/",
+              "status": "unchecked"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "fsc-kikaku-116",
+      "name": "企画等専門調査会",
+      "ministry": "FSC",
+      "category": "COUNCIL",
+      "officialUrl": "https://www.fsc.go.jp/senmon/kikaku/",
+      "correctedUrl": null,
+      "trackedSince": "2026/01/01",
+      "verdict": "pending",
+      "notes": "",
+      "urlStatus": "unchecked",
+      "meetings": [
+        {
+          "id": "meet-2026-0101-fsc-kikaku-116",
+          "title": "企画等専門調査会（2026/01/01開催）",
+          "date": "2026/01/01",
+          "officialUrl": "https://www.fsc.go.jp/senmon/kikaku/",
+          "correctedUrl": null,
+          "materials": [
+            {
+              "name": "企画等専門調査会 公式掲載資料・ページ (HTML)",
+              "type": "HTML",
+              "url": "https://www.fsc.go.jp/senmon/kikaku/",
+              "status": "unchecked"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "fsc-tenkabutu-117",
+      "name": "添加物専門調査会",
+      "ministry": "FSC",
+      "category": "COUNCIL",
+      "officialUrl": "https://www.fsc.go.jp/senmon/tenkabutu/",
+      "correctedUrl": null,
+      "trackedSince": "2026/01/15",
+      "verdict": "pending",
+      "notes": "",
+      "urlStatus": "unchecked",
+      "meetings": [
+        {
+          "id": "meet-2026-0115-fsc-tenkabutu-117",
+          "title": "添加物専門調査会（2026/01/15開催）",
+          "date": "2026/01/15",
+          "officialUrl": "https://www.fsc.go.jp/senmon/tenkabutu/",
+          "correctedUrl": null,
+          "materials": [
+            {
+              "name": "添加物専門調査会 公式掲載資料・ページ (HTML)",
+              "type": "HTML",
+              "url": "https://www.fsc.go.jp/senmon/tenkabutu/",
+              "status": "unchecked"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "fsc-nouyaku-118",
+      "name": "農薬専門調査会",
+      "ministry": "FSC",
+      "category": "COUNCIL",
+      "officialUrl": "https://www.fsc.go.jp/senmon/nouyaku/",
+      "correctedUrl": null,
+      "trackedSince": "2026/02/10",
+      "verdict": "pending",
+      "notes": "",
+      "urlStatus": "unchecked",
+      "meetings": [
+        {
+          "id": "meet-2026-0210-fsc-nouyaku-118",
+          "title": "農薬専門調査会（2026/02/10開催）",
+          "date": "2026/02/10",
+          "officialUrl": "https://www.fsc.go.jp/senmon/nouyaku/",
+          "correctedUrl": null,
+          "materials": [
+            {
+              "name": "農薬専門調査会 公式掲載資料・ページ (HTML)",
+              "type": "HTML",
+              "url": "https://www.fsc.go.jp/senmon/nouyaku/",
+              "status": "unchecked"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "npsc-teirei-119",
+      "name": "国家公安委員会 定例会議",
+      "ministry": "NPSC",
+      "category": "COMMITTEE",
+      "officialUrl": "https://www.npsc.go.jp/activity/index.html",
+      "correctedUrl": null,
+      "trackedSince": "2026/08/06",
+      "verdict": "pending",
+      "notes": "",
+      "urlStatus": "unchecked",
+      "meetings": [
+        {
+          "id": "meet-2026-0806-npsc-teirei-119",
+          "title": "国家公安委員会 定例会議（2026/08/06開催）",
+          "date": "2026/08/06",
+          "officialUrl": "https://www.npsc.go.jp/activity/index.html",
+          "correctedUrl": null,
+          "materials": [
+            {
+              "name": "国家公安委員会 定例会議 公式掲載資料・ページ (HTML)",
+              "type": "HTML",
+              "url": "https://www.npsc.go.jp/activity/index.html",
+              "status": "unchecked"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "mic-joho-tsusin-121",
+      "name": "情報通信審議会",
+      "ministry": "MIC",
+      "category": "COUNCIL",
+      "officialUrl": "https://www.soumu.go.jp/main_sosiki/joho_tsusin/eng/council/index.html",
+      "correctedUrl": null,
+      "trackedSince": "2026/07/20",
+      "verdict": "pending",
+      "notes": "",
+      "urlStatus": "unchecked",
+      "meetings": [
+        {
+          "id": "meet-2026-0720-mic-joho-tsusin-121",
+          "title": "情報通信審議会（2026/07/20開催）",
+          "date": "2026/07/20",
+          "officialUrl": "https://www.soumu.go.jp/main_sosiki/joho_tsusin/eng/council/index.html",
+          "correctedUrl": null,
+          "materials": [
+            {
+              "name": "情報通信審議会 公式掲載資料・ページ (HTML)",
+              "type": "HTML",
+              "url": "https://www.soumu.go.jp/main_sosiki/joho_tsusin/eng/council/index.html",
+              "status": "unchecked"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "mic-chizai-122",
+      "name": "地方財政審議会",
+      "ministry": "MIC",
+      "category": "COUNCIL",
+      "officialUrl": "https://www.soumu.go.jp/main_sosiki/singi/chizai/index.html",
+      "correctedUrl": null,
+      "trackedSince": "2026/07/15",
+      "verdict": "pending",
+      "notes": "",
+      "urlStatus": "unchecked",
+      "meetings": [
+        {
+          "id": "meet-2026-0715-mic-chizai-122",
+          "title": "地方財政審議会（2026/07/15開催）",
+          "date": "2026/07/15",
+          "officialUrl": "https://www.soumu.go.jp/main_sosiki/singi/chizai/index.html",
+          "correctedUrl": null,
+          "materials": [
+            {
+              "name": "地方財政審議会 公式掲載資料・ページ (HTML)",
+              "type": "HTML",
+              "url": "https://www.soumu.go.jp/main_sosiki/singi/chizai/index.html",
+              "status": "unchecked"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "moj-housei-soukai-123",
+      "name": "法制審議会 総会",
+      "ministry": "MOJ",
+      "category": "COUNCIL",
+      "officialUrl": "https://www.moj.go.jp/shingikai/shingikai_housei.html",
+      "correctedUrl": null,
+      "trackedSince": "2026/07/10",
+      "verdict": "pending",
+      "notes": "",
+      "urlStatus": "unchecked",
+      "meetings": [
+        {
+          "id": "meet-2026-0710-moj-housei-soukai-123",
+          "title": "法制審議会 総会（2026/07/10開催）",
+          "date": "2026/07/10",
+          "officialUrl": "https://www.moj.go.jp/shingikai/shingikai_housei.html",
+          "correctedUrl": null,
+          "materials": [
+            {
+              "name": "法制審議会 総会 公式掲載資料・ページ (HTML)",
+              "type": "HTML",
+              "url": "https://www.moj.go.jp/shingikai/shingikai_housei.html",
+              "status": "unchecked"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "moj-housei-seishoku-124",
+      "name": "法制審議会 生殖補助医療関連親子法制部会",
+      "ministry": "MOJ",
+      "category": "SECTION",
+      "officialUrl": "https://www.moj.go.jp/shingikai/shingikai_seishoku.html",
+      "correctedUrl": null,
+      "trackedSince": "2026/06/15",
+      "verdict": "pending",
+      "notes": "",
+      "urlStatus": "unchecked",
+      "meetings": [
+        {
+          "id": "meet-2026-0615-moj-housei-seishoku-124",
+          "title": "法制審議会 生殖補助医療関連親子法制部会（2026/06/15開催）",
+          "date": "2026/06/15",
+          "officialUrl": "https://www.moj.go.jp/shingikai/shingikai_seishoku.html",
+          "correctedUrl": null,
+          "materials": [
+            {
+              "name": "法制審議会 生殖補助医療関連親子法制部会 公式掲載資料・ページ (HTML)",
+              "type": "HTML",
+              "url": "https://www.moj.go.jp/shingikai/shingikai_seishoku.html",
+              "status": "unchecked"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "moj-housei-kaisha-125",
+      "name": "法制審議会 会社法制（株式・株主総会等関係）部会",
+      "ministry": "MOJ",
+      "category": "SECTION",
+      "officialUrl": "https://www.moj.go.jp/shingikai/shingikai_kaisha.html",
+      "correctedUrl": null,
+      "trackedSince": "2026/06/20",
+      "verdict": "pending",
+      "notes": "",
+      "urlStatus": "unchecked",
+      "meetings": [
+        {
+          "id": "meet-2026-0620-moj-housei-kaisha-125",
+          "title": "法制審議会 会社法制（株式・株主総会等関係）部会（2026/06/20開催）",
+          "date": "2026/06/20",
+          "officialUrl": "https://www.moj.go.jp/shingikai/shingikai_kaisha.html",
+          "correctedUrl": null,
+          "materials": [
+            {
+              "name": "法制審議会 会社法制（株式・株主総会等関係）部会 公式掲載資料・ページ (HTML)",
+              "type": "HTML",
+              "url": "https://www.moj.go.jp/shingikai/shingikai_kaisha.html",
+              "status": "unchecked"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "moj-housei-keiji-126",
+      "name": "法制審議会 刑事法（犯罪被害者関係）部会",
+      "ministry": "MOJ",
+      "category": "SECTION",
+      "officialUrl": "https://www.moj.go.jp/shingikai/shingikai_keiji.html",
+      "correctedUrl": null,
+      "trackedSince": "2026/07/05",
+      "verdict": "pending",
+      "notes": "",
+      "urlStatus": "unchecked",
+      "meetings": [
+        {
+          "id": "meet-2026-0705-moj-housei-keiji-126",
+          "title": "法制審議会 刑事法（犯罪被害者関係）部会（2026/07/05開催）",
+          "date": "2026/07/05",
+          "officialUrl": "https://www.moj.go.jp/shingikai/shingikai_keiji.html",
+          "correctedUrl": null,
+          "materials": [
+            {
+              "name": "法制審議会 刑事法（犯罪被害者関係）部会 公式掲載資料・ページ (HTML)",
+              "type": "HTML",
+              "url": "https://www.moj.go.jp/shingikai/shingikai_keiji.html",
+              "status": "unchecked"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "mofa-kaigai-kouryushingi-127",
+      "name": "海外交流審議会",
+      "ministry": "MOFA",
+      "category": "COUNCIL",
+      "officialUrl": "https://www.mofa.go.jp/mofaj/annai/shingi/kaigai.html",
+      "correctedUrl": null,
+      "trackedSince": "2026/05/20",
+      "verdict": "pending",
+      "notes": "",
+      "urlStatus": "unchecked",
+      "meetings": [
+        {
+          "id": "meet-2026-0520-mofa-kaigai-kouryushingi-127",
+          "title": "海外交流審議会（2026/05/20開催）",
+          "date": "2026/05/20",
+          "officialUrl": "https://www.mofa.go.jp/mofaj/annai/shingi/kaigai.html",
+          "correctedUrl": null,
+          "materials": [
+            {
+              "name": "海外交流審議会 公式掲載資料・ページ (HTML)",
+              "type": "HTML",
+              "url": "https://www.mofa.go.jp/mofaj/annai/shingi/kaigai.html",
+              "status": "unchecked"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "mof-customs-appeal-129",
+      "name": "関税等ふん争審査会",
+      "ministry": "MOF",
+      "category": "COUNCIL",
+      "officialUrl": "https://www.mof.go.jp/about_mof/councils/customs_appeal/index.html",
+      "correctedUrl": null,
+      "trackedSince": "2026/03/12",
+      "verdict": "pending",
+      "notes": "",
+      "urlStatus": "unchecked",
+      "meetings": [
+        {
+          "id": "meet-2026-0312-mof-customs-appeal-129",
+          "title": "関税等ふん争審査会（2026/03/12開催）",
+          "date": "2026/03/12",
+          "officialUrl": "https://www.mof.go.jp/about_mof/councils/customs_appeal/index.html",
+          "correctedUrl": null,
+          "materials": [
+            {
+              "name": "関税等ふん争審査会 公式掲載資料・ページ (HTML)",
+              "type": "HTML",
+              "url": "https://www.mof.go.jp/about_mof/councils/customs_appeal/index.html",
+              "status": "unchecked"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "mext-chukyo-130",
+      "name": "中央教育審議会",
+      "ministry": "MEXT",
+      "category": "COUNCIL",
+      "officialUrl": "https://www.mext.go.jp/b_menu/shingi/chukyo/index.htm",
+      "correctedUrl": null,
+      "trackedSince": "2026/07/22",
+      "verdict": "pending",
+      "notes": "",
+      "urlStatus": "unchecked",
+      "meetings": [
+        {
+          "id": "meet-2026-0722-mext-chukyo-130",
+          "title": "中央教育審議会（2026/07/22開催）",
+          "date": "2026/07/22",
+          "officialUrl": "https://www.mext.go.jp/b_menu/shingi/chukyo/index.htm",
+          "correctedUrl": null,
+          "materials": [
+            {
+              "name": "中央教育審議会 公式掲載資料・ページ (HTML)",
+              "type": "HTML",
+              "url": "https://www.mext.go.jp/b_menu/shingi/chukyo/index.htm",
+              "status": "unchecked"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "mext-gijyutu-131",
+      "name": "科学技術・学術審議会",
+      "ministry": "MEXT",
+      "category": "COUNCIL",
+      "officialUrl": "https://www.mext.go.jp/b_menu/shingi/gijyutu/index.htm",
+      "correctedUrl": null,
+      "trackedSince": "2026/06/30",
+      "verdict": "pending",
+      "notes": "",
+      "urlStatus": "unchecked",
+      "meetings": [
+        {
+          "id": "meet-2026-0630-mext-gijyutu-131",
+          "title": "科学技術・学術審議会（2026/06/30開催）",
+          "date": "2026/06/30",
+          "officialUrl": "https://www.mext.go.jp/b_menu/shingi/gijyutu/index.htm",
+          "correctedUrl": null,
+          "materials": [
+            {
+              "name": "科学技術・学術審議会 公式掲載資料・ページ (HTML)",
+              "type": "HTML",
+              "url": "https://www.mext.go.jp/b_menu/shingi/gijyutu/index.htm",
+              "status": "unchecked"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "mhlw-hosho-toukei-132",
+      "name": "社会保障審議会 統計分科会",
+      "ministry": "MHLW",
+      "category": "SUBCOMMITTEE",
+      "officialUrl": "https://www.mhlw.go.jp/stf/shingi/shingi-hosho_toukei.html",
+      "correctedUrl": null,
+      "trackedSince": "2026/06/15",
+      "verdict": "pending",
+      "notes": "",
+      "urlStatus": "unchecked",
+      "meetings": [
+        {
+          "id": "meet-2026-0615-mhlw-hosho-toukei-132",
+          "title": "社会保障審議会 統計分科会（2026/06/15開催）",
+          "date": "2026/06/15",
+          "officialUrl": "https://www.mhlw.go.jp/stf/shingi/shingi-hosho_toukei.html",
+          "correctedUrl": null,
+          "materials": [
+            {
+              "name": "社会保障審議会 統計分科会 公式掲載資料・ページ (HTML)",
+              "type": "HTML",
+              "url": "https://www.mhlw.go.jp/stf/shingi/shingi-hosho_toukei.html",
+              "status": "unchecked"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "mhlw-hosho-shippei-133",
+      "name": "社会保障審議会 疾病、傷害及び死因分類部会",
+      "ministry": "MHLW",
+      "category": "SECTION",
+      "officialUrl": "https://www.mhlw.go.jp/stf/shingi/shingi-hosho_shippei.html",
+      "correctedUrl": null,
+      "trackedSince": "2026/05/10",
+      "verdict": "pending",
+      "notes": "",
+      "urlStatus": "unchecked",
+      "meetings": [
+        {
+          "id": "meet-2026-0510-mhlw-hosho-shippei-133",
+          "title": "社会保障審議会 疾病、傷害及び死因分類部会（2026/05/10開催）",
+          "date": "2026/05/10",
+          "officialUrl": "https://www.mhlw.go.jp/stf/shingi/shingi-hosho_shippei.html",
+          "correctedUrl": null,
+          "materials": [
+            {
+              "name": "社会保障審議会 疾病、傷害及び死因分類部会 公式掲載資料・ページ (HTML)",
+              "type": "HTML",
+              "url": "https://www.mhlw.go.jp/stf/shingi/shingi-hosho_shippei.html",
+              "status": "unchecked"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "mhlw-hosho-shiinsentaku-134",
+      "name": "社会保障審議会 死因選択検討ワーキンググループ",
+      "ministry": "MHLW",
+      "category": "WORKING_GROUP",
+      "officialUrl": "https://www.mhlw.go.jp/stf/shingi/shingi-hosho_shiinsentaku.html",
+      "correctedUrl": null,
+      "trackedSince": "2026/04/20",
+      "verdict": "pending",
+      "notes": "",
+      "urlStatus": "unchecked",
+      "meetings": [
+        {
+          "id": "meet-2026-0420-mhlw-hosho-shiinsentaku-134",
+          "title": "社会保障審議会 死因選択検討ワーキンググループ（2026/04/20開催）",
+          "date": "2026/04/20",
+          "officialUrl": "https://www.mhlw.go.jp/stf/shingi/shingi-hosho_shiinsentaku.html",
+          "correctedUrl": null,
+          "materials": [
+            {
+              "name": "社会保障審議会 死因選択検討ワーキンググループ 公式掲載資料・ページ (HTML)",
+              "type": "HTML",
+              "url": "https://www.mhlw.go.jp/stf/shingi/shingi-hosho_shiinsentaku.html",
+              "status": "unchecked"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "mhlw-hosho-iryou-135",
+      "name": "社会保障審議会 医療分科会",
+      "ministry": "MHLW",
+      "category": "SUBCOMMITTEE",
+      "officialUrl": "https://www.mhlw.go.jp/stf/shingi/shingi-hosho_iryou.html",
+      "correctedUrl": null,
+      "trackedSince": "2026/07/10",
+      "verdict": "pending",
+      "notes": "",
+      "urlStatus": "unchecked",
+      "meetings": [
+        {
+          "id": "meet-2026-0710-mhlw-hosho-iryou-135",
+          "title": "社会保障審議会 医療分科会（2026/07/10開催）",
+          "date": "2026/07/10",
+          "officialUrl": "https://www.mhlw.go.jp/stf/shingi/shingi-hosho_iryou.html",
+          "correctedUrl": null,
+          "materials": [
+            {
+              "name": "社会保障審議会 医療分科会 公式掲載資料・ページ (HTML)",
+              "type": "HTML",
+              "url": "https://www.mhlw.go.jp/stf/shingi/shingi-hosho_iryou.html",
+              "status": "unchecked"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "mhlw-hosho-kaigo-136",
+      "name": "社会保障審議会 介護給付費分科会",
+      "ministry": "MHLW",
+      "category": "SUBCOMMITTEE",
+      "officialUrl": "https://www.mhlw.go.jp/stf/shingi/shingi-hosho_kaigo.html",
+      "correctedUrl": null,
+      "trackedSince": "2026/07/18",
+      "verdict": "pending",
+      "notes": "",
+      "urlStatus": "unchecked",
+      "meetings": [
+        {
+          "id": "meet-2026-0718-mhlw-hosho-kaigo-136",
+          "title": "社会保障審議会 介護給付費分科会（2026/07/18開催）",
+          "date": "2026/07/18",
+          "officialUrl": "https://www.mhlw.go.jp/stf/shingi/shingi-hosho_kaigo.html",
+          "correctedUrl": null,
+          "materials": [
+            {
+              "name": "社会保障審議会 介護給付費分科会 公式掲載資料・ページ (HTML)",
+              "type": "HTML",
+              "url": "https://www.mhlw.go.jp/stf/shingi/shingi-hosho_kaigo.html",
+              "status": "unchecked"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "mhlw-hosho-fukushi-137",
+      "name": "社会保障審議会 福祉部会",
+      "ministry": "MHLW",
+      "category": "SECTION",
+      "officialUrl": "https://www.mhlw.go.jp/stf/shingi/shingi-hosho_fukushi.html",
+      "correctedUrl": null,
+      "trackedSince": "2026/06/12",
+      "verdict": "pending",
+      "notes": "",
+      "urlStatus": "unchecked",
+      "meetings": [
+        {
+          "id": "meet-2026-0612-mhlw-hosho-fukushi-137",
+          "title": "社会保障審議会 福祉部会（2026/06/12開催）",
+          "date": "2026/06/12",
+          "officialUrl": "https://www.mhlw.go.jp/stf/shingi/shingi-hosho_fukushi.html",
+          "correctedUrl": null,
+          "materials": [
+            {
+              "name": "社会保障審議会 福祉部会 公式掲載資料・ページ (HTML)",
+              "type": "HTML",
+              "url": "https://www.mhlw.go.jp/stf/shingi/shingi-hosho_fukushi.html",
+              "status": "unchecked"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "mhlw-hosho-seikatsu-138",
+      "name": "社会保障審議会 生活保護基準部会",
+      "ministry": "MHLW",
+      "category": "SECTION",
+      "officialUrl": "https://www.mhlw.go.jp/stf/shingi/shingi-hosho_seikatsu.html",
+      "correctedUrl": null,
+      "trackedSince": "2026/07/31",
+      "verdict": "pending",
+      "notes": "",
+      "urlStatus": "unchecked",
+      "meetings": [
+        {
+          "id": "meet-2026-0731-mhlw-hosho-seikatsu-138",
+          "title": "社会保障審議会 生活保護基準部会（2026/07/31開催）",
+          "date": "2026/07/31",
+          "officialUrl": "https://www.mhlw.go.jp/stf/shingi/shingi-hosho_seikatsu.html",
+          "correctedUrl": null,
+          "materials": [
+            {
+              "name": "社会保障審議会 生活保護基準部会 公式掲載資料・ページ (HTML)",
+              "type": "HTML",
+              "url": "https://www.mhlw.go.jp/stf/shingi/shingi-hosho_seikatsu.html",
+              "status": "unchecked"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "mhlw-hosho-jidou-139",
+      "name": "社会保障審議会 児童部会",
+      "ministry": "MHLW",
+      "category": "SECTION",
+      "officialUrl": "https://www.mhlw.go.jp/stf/shingi/shingi-hosho_jidou.html",
+      "correctedUrl": null,
+      "trackedSince": "2026/07/15",
+      "verdict": "pending",
+      "notes": "",
+      "urlStatus": "unchecked",
+      "meetings": [
+        {
+          "id": "meet-2026-0715-mhlw-hosho-jidou-139",
+          "title": "社会保障審議会 児童部会（2026/07/15開催）",
+          "date": "2026/07/15",
+          "officialUrl": "https://www.mhlw.go.jp/stf/shingi/shingi-hosho_jidou.html",
+          "correctedUrl": null,
+          "materials": [
+            {
+              "name": "社会保障審議会 児童部会 公式掲載資料・ページ (HTML)",
+              "type": "HTML",
+              "url": "https://www.mhlw.go.jp/stf/shingi/shingi-hosho_jidou.html",
+              "status": "unchecked"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "mhlw-hosho-jidoukan-140",
+      "name": "社会保障審議会 児童館のあり方に関する検討ワーキンググループ",
+      "ministry": "MHLW",
+      "category": "WORKING_GROUP",
+      "officialUrl": "https://www.mhlw.go.jp/stf/shingi/shingi-hosho_jidoukan.html",
+      "correctedUrl": null,
+      "trackedSince": "2026/03/25",
+      "verdict": "pending",
+      "notes": "",
+      "urlStatus": "unchecked",
+      "meetings": [
+        {
+          "id": "meet-2026-0325-mhlw-hosho-jidoukan-140",
+          "title": "社会保障審議会 児童館のあり方に関する検討ワーキンググループ（2026/03/25開催）",
+          "date": "2026/03/25",
+          "officialUrl": "https://www.mhlw.go.jp/stf/shingi/shingi-hosho_jidoukan.html",
+          "correctedUrl": null,
+          "materials": [
+            {
+              "name": "社会保障審議会 児童館のあり方に関する検討ワーキンググループ 公式掲載資料・ページ (HTML)",
+              "type": "HTML",
+              "url": "https://www.mhlw.go.jp/stf/shingi/shingi-hosho_jidoukan.html",
+              "status": "unchecked"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "mhlw-hosho-shikinunyou-141",
+      "name": "社会保障審議会 資金運用部会",
+      "ministry": "MHLW",
+      "category": "SECTION",
+      "officialUrl": "https://www.mhlw.go.jp/stf/shingi/shingi-hosho_shikinunyou.html",
+      "correctedUrl": null,
+      "trackedSince": "2026/07/27",
+      "verdict": "pending",
+      "notes": "",
+      "urlStatus": "unchecked",
+      "meetings": [
+        {
+          "id": "meet-2026-0727-mhlw-hosho-shikinunyou-141",
+          "title": "社会保障審議会 資金運用部会（2026/07/27開催）",
+          "date": "2026/07/27",
+          "officialUrl": "https://www.mhlw.go.jp/stf/shingi/shingi-hosho_shikinunyou.html",
+          "correctedUrl": null,
+          "materials": [
+            {
+              "name": "社会保障審議会 資金運用部会 公式掲載資料・ページ (HTML)",
+              "type": "HTML",
+              "url": "https://www.mhlw.go.jp/stf/shingi/shingi-hosho_shikinunyou.html",
+              "status": "unchecked"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "mhlw-hosho-kaigohoken-142",
+      "name": "社会保障審議会 介護保険部会",
+      "ministry": "MHLW",
+      "category": "SECTION",
+      "officialUrl": "https://www.mhlw.go.jp/stf/shingi/shingi-hosho_kaigohoken.html",
+      "correctedUrl": null,
+      "trackedSince": "2026/07/24",
+      "verdict": "pending",
+      "notes": "",
+      "urlStatus": "unchecked",
+      "meetings": [
+        {
+          "id": "meet-2026-0724-mhlw-hosho-kaigohoken-142",
+          "title": "社会保障審議会 介護保険部会（2026/07/24開催）",
+          "date": "2026/07/24",
+          "officialUrl": "https://www.mhlw.go.jp/stf/shingi/shingi-hosho_kaigohoken.html",
+          "correctedUrl": null,
+          "materials": [
+            {
+              "name": "社会保障審議会 介護保険部会 公式掲載資料・ページ (HTML)",
+              "type": "HTML",
+              "url": "https://www.mhlw.go.jp/stf/shingi/shingi-hosho_kaigohoken.html",
+              "status": "unchecked"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "mhlw-hosho-shouni-143",
+      "name": "社会保障審議会 小児慢性特定疾病対策部会",
+      "ministry": "MHLW",
+      "category": "SECTION",
+      "officialUrl": "https://www.mhlw.go.jp/stf/shingi/shingi-hosho_shouni.html",
+      "correctedUrl": null,
+      "trackedSince": "2026/07/24",
+      "verdict": "pending",
+      "notes": "",
+      "urlStatus": "unchecked",
+      "meetings": [
+        {
+          "id": "meet-2026-0724-mhlw-hosho-shouni-143",
+          "title": "社会保障審議会 小児慢性特定疾病対策部会（2026/07/24開催）",
+          "date": "2026/07/24",
+          "officialUrl": "https://www.mhlw.go.jp/stf/shingi/shingi-hosho_shouni.html",
+          "correctedUrl": null,
+          "materials": [
+            {
+              "name": "社会保障審議会 小児慢性特定疾病対策部会 公式掲載資料・ページ (HTML)",
+              "type": "HTML",
+              "url": "https://www.mhlw.go.jp/stf/shingi/shingi-hosho_shouni.html",
+              "status": "unchecked"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "mhlw-kousei-kansenshou-144",
+      "name": "厚生科学審議会 感染症部会",
+      "ministry": "MHLW",
+      "category": "SECTION",
+      "officialUrl": "https://www.mhlw.go.jp/stf/shingi/shingi-kousei_kansenshou.html",
+      "correctedUrl": null,
+      "trackedSince": "2026/07/14",
+      "verdict": "pending",
+      "notes": "",
+      "urlStatus": "unchecked",
+      "meetings": [
+        {
+          "id": "meet-2026-0714-mhlw-kousei-kansenshou-144",
+          "title": "厚生科学審議会 感染症部会（2026/07/14開催）",
+          "date": "2026/07/14",
+          "officialUrl": "https://www.mhlw.go.jp/stf/shingi/shingi-kousei_kansenshou.html",
+          "correctedUrl": null,
+          "materials": [
+            {
+              "name": "厚生科学審議会 感染症部会 公式掲載資料・ページ (HTML)",
+              "type": "HTML",
+              "url": "https://www.mhlw.go.jp/stf/shingi/shingi-kousei_kansenshou.html",
+              "status": "unchecked"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "mhlw-kousei-influ-145",
+      "name": "厚生科学審議会 新型インフルエンザ対策に関する小委員会",
+      "ministry": "MHLW",
+      "category": "SUBCOMMITTEE",
+      "officialUrl": "https://www.mhlw.go.jp/stf/shingi/shingi-kousei_influ.html",
+      "correctedUrl": null,
+      "trackedSince": "2026/02/18",
+      "verdict": "pending",
+      "notes": "",
+      "urlStatus": "unchecked",
+      "meetings": [
+        {
+          "id": "meet-2026-0218-mhlw-kousei-influ-145",
+          "title": "厚生科学審議会 新型インフルエンザ対策に関する小委員会（2026/02/18開催）",
+          "date": "2026/02/18",
+          "officialUrl": "https://www.mhlw.go.jp/stf/shingi/shingi-kousei_influ.html",
+          "correctedUrl": null,
+          "materials": [
+            {
+              "name": "厚生科学審議会 新型インフルエンザ対策に関する小委員会 公式掲載資料・ページ (HTML)",
+              "type": "HTML",
+              "url": "https://www.mhlw.go.jp/stf/shingi/shingi-kousei_influ.html",
+              "status": "unchecked"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "mhlw-rousei-roudoujouken-146",
+      "name": "労働政策審議会 労働条件分科会",
+      "ministry": "MHLW",
+      "category": "SUBCOMMITTEE",
+      "officialUrl": "https://www.mhlw.go.jp/stf/shingi/shingi-rousei_roudoujouken.html",
+      "correctedUrl": null,
+      "trackedSince": "2026/07/28",
+      "verdict": "pending",
+      "notes": "",
+      "urlStatus": "unchecked",
+      "meetings": [
+        {
+          "id": "meet-2026-0728-mhlw-rousei-roudoujouken-146",
+          "title": "労働政策審議会 労働条件分科会（2026/07/28開催）",
+          "date": "2026/07/28",
+          "officialUrl": "https://www.mhlw.go.jp/stf/shingi/shingi-rousei_roudoujouken.html",
+          "correctedUrl": null,
+          "materials": [
+            {
+              "name": "労働政策審議会 労働条件分科会 公式掲載資料・ページ (HTML)",
+              "type": "HTML",
+              "url": "https://www.mhlw.go.jp/stf/shingi/shingi-rousei_roudoujouken.html",
+              "status": "unchecked"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "mhlw-rousei-anzeneisei-147",
+      "name": "労働政策審議会 安全衛生分科会",
+      "ministry": "MHLW",
+      "category": "SUBCOMMITTEE",
+      "officialUrl": "https://www.mhlw.go.jp/stf/shingi/shingi-rousei_anzeneisei.html",
+      "correctedUrl": null,
+      "trackedSince": "2026/06/22",
+      "verdict": "pending",
+      "notes": "",
+      "urlStatus": "unchecked",
+      "meetings": [
+        {
+          "id": "meet-2026-0622-mhlw-rousei-anzeneisei-147",
+          "title": "労働政策審議会 安全衛生分科会（2026/06/22開催）",
+          "date": "2026/06/22",
+          "officialUrl": "https://www.mhlw.go.jp/stf/shingi/shingi-rousei_anzeneisei.html",
+          "correctedUrl": null,
+          "materials": [
+            {
+              "name": "労働政策審議会 安全衛生分科会 公式掲載資料・ページ (HTML)",
+              "type": "HTML",
+              "url": "https://www.mhlw.go.jp/stf/shingi/shingi-rousei_anzeneisei.html",
+              "status": "unchecked"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "meti-sankoushin-148",
+      "name": "産業構造審議会",
+      "ministry": "METI",
+      "category": "COUNCIL",
+      "officialUrl": "https://www.meti.go.jp/shingikai/sankoushin/index.html",
+      "correctedUrl": null,
+      "trackedSince": "2026/07/25",
+      "verdict": "pending",
+      "notes": "",
+      "urlStatus": "unchecked",
+      "meetings": [
+        {
+          "id": "meet-2026-0725-meti-sankoushin-148",
+          "title": "産業構造審議会（2026/07/25開催）",
+          "date": "2026/07/25",
+          "officialUrl": "https://www.meti.go.jp/shingikai/sankoushin/index.html",
+          "correctedUrl": null,
+          "materials": [
+            {
+              "name": "産業構造審議会 公式掲載資料・ページ (HTML)",
+              "type": "HTML",
+              "url": "https://www.meti.go.jp/shingikai/sankoushin/index.html",
+              "status": "unchecked"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "meti-ax-skill-wg-149",
+      "name": "AX時代におけるスキルのあり方検討ワーキンググループ",
+      "ministry": "METI",
+      "category": "WORKING_GROUP",
+      "officialUrl": "https://www.meti.go.jp/shingikai/mono_info_service/society_digital/ax_skill/index.html",
+      "correctedUrl": null,
+      "trackedSince": "2026/07/27",
+      "verdict": "pending",
+      "notes": "",
+      "urlStatus": "unchecked",
+      "meetings": [
+        {
+          "id": "meet-2026-0727-meti-ax-skill-wg-149",
+          "title": "AX時代におけるスキルのあり方検討ワーキンググループ（2026/07/27開催）",
+          "date": "2026/07/27",
+          "officialUrl": "https://www.meti.go.jp/shingikai/mono_info_service/society_digital/ax_skill/index.html",
+          "correctedUrl": null,
+          "materials": [
+            {
+              "name": "AX時代におけるスキルのあり方検討ワーキンググループ 公式掲載資料・ページ (HTML)",
+              "type": "HTML",
+              "url": "https://www.meti.go.jp/shingikai/mono_info_service/society_digital/ax_skill/index.html",
+              "status": "unchecked"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "mlit-kokudo-150",
+      "name": "国土審議会",
+      "ministry": "MLIT",
+      "category": "COUNCIL",
+      "officialUrl": "https://www.mlit.go.jp/policy/shingikai/s01_kokudo01.html",
+      "correctedUrl": null,
+      "trackedSince": "2026/07/10",
+      "verdict": "pending",
+      "notes": "",
+      "urlStatus": "unchecked",
+      "meetings": [
+        {
+          "id": "meet-2026-0710-mlit-kokudo-150",
+          "title": "国土審議会（2026/07/10開催）",
+          "date": "2026/07/10",
+          "officialUrl": "https://www.mlit.go.jp/policy/shingikai/s01_kokudo01.html",
+          "correctedUrl": null,
+          "materials": [
+            {
+              "name": "国土審議会 公式掲載資料・ページ (HTML)",
+              "type": "HTML",
+              "url": "https://www.mlit.go.jp/policy/shingikai/s01_kokudo01.html",
+              "status": "unchecked"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "mlit-koutsu-151",
+      "name": "交通政策審議会",
+      "ministry": "MLIT",
+      "category": "COUNCIL",
+      "officialUrl": "https://www.mlit.go.jp/policy/shingikai/s30_koutsu01.html",
+      "correctedUrl": null,
+      "trackedSince": "2026/07/20",
+      "verdict": "pending",
+      "notes": "",
+      "urlStatus": "unchecked",
+      "meetings": [
+        {
+          "id": "meet-2026-0720-mlit-koutsu-151",
+          "title": "交通政策審議会（2026/07/20開催）",
+          "date": "2026/07/20",
+          "officialUrl": "https://www.mlit.go.jp/policy/shingikai/s30_koutsu01.html",
+          "correctedUrl": null,
+          "materials": [
+            {
+              "name": "交通政策審議会 公式掲載資料・ページ (HTML)",
+              "type": "HTML",
+              "url": "https://www.mlit.go.jp/policy/shingikai/s30_koutsu01.html",
+              "status": "unchecked"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "mlit-unyu-152",
+      "name": "運輸審議会",
+      "ministry": "MLIT",
+      "category": "COUNCIL",
+      "officialUrl": "https://www.mlit.go.jp/policy/shingikai/s40_unyu01.html",
+      "correctedUrl": null,
+      "trackedSince": "2026/06/18",
+      "verdict": "pending",
+      "notes": "",
+      "urlStatus": "unchecked",
+      "meetings": [
+        {
+          "id": "meet-2026-0618-mlit-unyu-152",
+          "title": "運輸審議会（2026/06/18開催）",
+          "date": "2026/06/18",
+          "officialUrl": "https://www.mlit.go.jp/policy/shingikai/s40_unyu01.html",
+          "correctedUrl": null,
+          "materials": [
+            {
+              "name": "運輸審議会 公式掲載資料・ページ (HTML)",
+              "type": "HTML",
+              "url": "https://www.mlit.go.jp/policy/shingikai/s40_unyu01.html",
+              "status": "unchecked"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "mlit-chuou-kensetsu-153",
+      "name": "中央建設業審議会",
+      "ministry": "MLIT",
+      "category": "COUNCIL",
+      "officialUrl": "https://www.mlit.go.jp/policy/shingikai/s50_chuou01.html",
+      "correctedUrl": null,
+      "trackedSince": "2026/05/25",
+      "verdict": "pending",
+      "notes": "",
+      "urlStatus": "unchecked",
+      "meetings": [
+        {
+          "id": "meet-2026-0525-mlit-chuou-kensetsu-153",
+          "title": "中央建設業審議会（2026/05/25開催）",
+          "date": "2026/05/25",
+          "officialUrl": "https://www.mlit.go.jp/policy/shingikai/s50_chuou01.html",
+          "correctedUrl": null,
+          "materials": [
+            {
+              "name": "中央建設業審議会 公式掲載資料・ページ (HTML)",
+              "type": "HTML",
+              "url": "https://www.mlit.go.jp/policy/shingikai/s50_chuou01.html",
+              "status": "unchecked"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "moe-chuo-kankyo-154",
+      "name": "中央環境審議会",
+      "ministry": "MOE",
+      "category": "COUNCIL",
+      "officialUrl": "https://www.env.go.jp/council/index.html",
+      "correctedUrl": null,
+      "trackedSince": "2026/07/22",
+      "verdict": "pending",
+      "notes": "",
+      "urlStatus": "unchecked",
+      "meetings": [
+        {
+          "id": "meet-2026-0722-moe-chuo-kankyo-154",
+          "title": "中央環境審議会（2026/07/22開催）",
+          "date": "2026/07/22",
+          "officialUrl": "https://www.env.go.jp/council/index.html",
+          "correctedUrl": null,
+          "materials": [
+            {
+              "name": "中央環境審議会 公式掲載資料・ページ (HTML)",
+              "type": "HTML",
+              "url": "https://www.env.go.jp/council/index.html",
+              "status": "unchecked"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "mod-shisetsu-155",
+      "name": "防衛施設中央審議会",
+      "ministry": "MOD",
+      "category": "COUNCIL",
+      "officialUrl": "https://www.mod.go.jp/j/approach/agenda/meeting/shisetsu/index.html",
+      "correctedUrl": null,
+      "trackedSince": "2026/04/10",
+      "verdict": "pending",
+      "notes": "",
+      "urlStatus": "unchecked",
+      "meetings": [
+        {
+          "id": "meet-2026-0410-mod-shisetsu-155",
+          "title": "防衛施設中央審議会（2026/04/10開催）",
+          "date": "2026/04/10",
+          "officialUrl": "https://www.mod.go.jp/j/approach/agenda/meeting/shisetsu/index.html",
+          "correctedUrl": null,
+          "materials": [
+            {
+              "name": "防衛施設中央審議会 公式掲載資料・ページ (HTML)",
+              "type": "HTML",
+              "url": "https://www.mod.go.jp/j/approach/agenda/meeting/shisetsu/index.html",
+              "status": "unchecked"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

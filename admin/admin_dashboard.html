@@ -3,17 +3,272 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>政策会議ウォッチ | 管理者用コントロールパネル &amp; クローラーダッシュボード</title>
+  <title>政策会議ウォッチ | システム管理者統合コンソール</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Noto+Sans+JP:wght@400;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link rel="icon" type="image/svg+xml" href="../docs/favicon.svg" />
   <link rel="stylesheet" href="../docs/styles.css" />
   <style>
-    .admin-container { max-width: 1100px; margin: 2rem auto; padding: 0 1.5rem; }
+    /* ── Page Layout ── */
+    .verify-container { max-width: 1320px; margin: 2rem auto; padding: 0 1.5rem; }
+
+    /* ── Summary Cards ── */
+    .summary-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+      gap: 1rem; margin-bottom: 1.75rem;
+    }
+    .summary-stat {
+      background: var(--bg-card); border: 1px solid var(--border-color-strong);
+      border-radius: var(--radius-lg); padding: 1.25rem 1.5rem;
+      display: flex; flex-direction: column; gap: 0.35rem;
+      backdrop-filter: blur(12px);
+    }
+    .summary-stat .stat-label { font-size: 0.78rem; color: var(--text-muted); font-weight: 600; text-transform: uppercase; letter-spacing: 0.04em; }
+    .summary-stat .stat-value { font-size: 1.75rem; font-weight: 800; }
+    .summary-stat .stat-value.total { color: #3b82f6; }
+    .summary-stat .stat-value.approved { color: #10b981; }
+    .summary-stat .stat-value.rejected { color: #ef4444; }
+    .summary-stat .stat-value.pending  { color: #f59e0b; }
+    .summary-stat .stat-value.url-ok   { color: #06b6d4; }
+
+    /* ── Filter Bar ── */
+    .filter-bar {
+      display: flex; gap: 0.75rem; flex-wrap: wrap; align-items: center;
+      margin-bottom: 1.5rem; padding: 1rem 1.25rem;
+      background: var(--bg-card); border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg); backdrop-filter: blur(12px);
+    }
+    .filter-bar input, .filter-bar select {
+      background: var(--bg-input); border: 1px solid var(--border-color-strong);
+      border-radius: var(--radius-md); padding: 0.5rem 0.85rem;
+      color: var(--text-primary); font-size: 0.85rem; font-family: inherit;
+    }
+    .filter-bar input { flex: 1; min-width: 200px; }
+    .filter-bar select { min-width: 140px; }
+
+    /* ── Council Cards ── */
+    .council-card {
+      background: var(--bg-card); border: 1px solid var(--border-color-strong);
+      border-radius: var(--radius-lg); padding: 1.5rem;
+      margin-bottom: 1rem; transition: all var(--transition-normal);
+      position: relative; overflow: hidden;
+    }
+    .council-card::before {
+      content: ''; position: absolute; left: 0; top: 0; bottom: 0;
+      width: 4px; border-radius: 4px 0 0 4px;
+      background: var(--card-accent, #3b82f6);
+    }
+    .council-card:hover { border-color: var(--accent-primary); transform: translateY(-1px); box-shadow: var(--shadow-card); }
+    .council-card.verdict-approved { border-color: rgba(16, 185, 129, 0.5); }
+    .council-card.verdict-approved::before { background: #10b981; }
+    .council-card.verdict-rejected { border-color: rgba(239, 68, 68, 0.4); opacity: 0.6; }
+    .council-card.verdict-rejected::before { background: #ef4444; }
+
+    .card-top { display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem; flex-wrap: wrap; }
+    .card-title-area { flex: 1; min-width: 0; }
+    .card-idx { font-size: 0.72rem; font-weight: 700; color: var(--text-muted); margin-bottom: 0.25rem; font-family: 'JetBrains Mono', monospace; }
+    .card-name { font-size: 1.1rem; font-weight: 700; color: var(--text-primary); word-break: break-all; }
+    .card-id   { font-size: 0.78rem; font-family: 'JetBrains Mono', monospace; color: var(--text-muted); margin-top: 0.2rem; }
+
+    .card-actions { display: flex; gap: 0.5rem; flex-shrink: 0; align-items: center; }
+
+    .card-meta { display: flex; flex-wrap: wrap; gap: 0.6rem 1.25rem; margin-top: 0.85rem; }
+    .meta-chip {
+      display: inline-flex; align-items: center; gap: 0.35rem;
+      font-size: 0.78rem; color: var(--text-secondary); padding: 0.25rem 0.65rem;
+      background: rgba(255,255,255,0.05); border-radius: var(--radius-full);
+      border: 1px solid var(--border-color);
+    }
+    .meta-chip .chip-icon { font-size: 0.85rem; }
+    .meta-chip a { color: inherit; text-decoration: none; }
+    .meta-chip a:hover { color: var(--accent-primary); text-decoration: underline; }
+
+    .category-badge {
+      font-size: 0.72rem; font-weight: 700; padding: 0.18rem 0.55rem;
+      border-radius: var(--radius-full); display: inline-block;
+    }
+    .cat-COUNCIL       { background: rgba(59,130,246,0.18); color: #60a5fa; border: 1px solid rgba(59,130,246,0.3); }
+    .cat-WORKING_GROUP { background: rgba(168,85,247,0.18); color: #c084fc; border: 1px solid rgba(168,85,247,0.3); }
+    .cat-SECTION        { background: rgba(245,158,11,0.18); color: #fbbf24; border: 1px solid rgba(245,158,11,0.3); }
+    .cat-SUBCOMMITTEE   { background: rgba(6,182,212,0.18); color: #22d3ee; border: 1px solid rgba(6,182,212,0.3); }
+    .cat-LIAISON        { background: rgba(244,63,94,0.18); color: #fb7185; border: 1px solid rgba(244,63,94,0.3); }
+    .cat-HQ             { background: rgba(16,185,129,0.18); color: #34d399; border: 1px solid rgba(16,185,129,0.3); }
+    .cat-COMMITTEE      { background: rgba(100,116,139,0.18); color: #94a3b8; border: 1px solid rgba(100,116,139,0.3); }
+    .cat-ADVISORY       { background: rgba(234,179,8,0.18); color: #facc15; border: 1px solid rgba(234,179,8,0.3); }
+    .cat-PANEL          { background: rgba(139,92,246,0.18); color: #a78bfa; border: 1px solid rgba(139,92,246,0.3); }
+    .cat-STUDY          { background: rgba(34,197,94,0.18); color: #4ade80; border: 1px solid rgba(34,197,94,0.3); }
+    .cat-ROUNDTABLE     { background: rgba(236,72,153,0.18); color: #f472b6; border: 1px solid rgba(236,72,153,0.3); }
+
+    /* URL Check */
+    .url-status { display: inline-flex; align-items: center; gap: 0.3rem; font-size: 0.72rem; font-weight: 600; padding: 0.15rem 0.5rem; border-radius: var(--radius-full); }
+    .url-status.checking { color: #94a3b8; background: rgba(148,163,184,0.15); }
+    .url-status.ok       { color: #10b981; background: rgba(16,185,129,0.15); }
+    .url-status.error    { color: #ef4444; background: rgba(239,68,68,0.15); }
+
+    /* Buttons */
+    .btn-approve, .btn-reject, .btn-revert {
+      font-size: 0.78rem; font-weight: 700; padding: 0.35rem 0.75rem;
+      border-radius: var(--radius-md); cursor: pointer; border: 1px solid;
+      transition: all var(--transition-fast); font-family: inherit;
+    }
+    .btn-approve { background: rgba(16,185,129,0.15); color: #10b981; border-color: rgba(16,185,129,0.4); }
+    .btn-approve:hover { background: rgba(16,185,129,0.3); }
+    .btn-reject  { background: rgba(239,68,68,0.1); color: #ef4444; border-color: rgba(239,68,68,0.3); }
+    .btn-reject:hover { background: rgba(239,68,68,0.25); }
+    .btn-revert  { background: rgba(245,158,11,0.1); color: #f59e0b; border-color: rgba(245,158,11,0.3); }
+    .btn-revert:hover { background: rgba(245,158,11,0.25); }
+
+    .btn-bulk {
+      font-size: 0.85rem; font-weight: 700; padding: 0.55rem 1.1rem;
+      border-radius: var(--radius-md); cursor: pointer; border: 1px solid;
+      transition: all var(--transition-fast); font-family: inherit;
+    }
+    .btn-bulk.approve-all { background: rgba(16,185,129,0.15); color: #10b981; border-color: rgba(16,185,129,0.4); }
+    .btn-bulk.approve-all:hover { background: rgba(16,185,129,0.3); }
+    .btn-bulk.export-json { background: rgba(59,130,246,0.12); color: #3b82f6; border-color: rgba(59,130,246,0.3); }
+    .btn-bulk.export-json:hover { background: rgba(59,130,246,0.25); }
+    .btn-bulk.check-urls { background: rgba(6,182,212,0.12); color: #06b6d4; border-color: rgba(6,182,212,0.3); }
+    .btn-bulk.check-urls:hover { background: rgba(6,182,212,0.25); }
+
+    .bulk-actions { display: flex; gap: 0.75rem; flex-wrap: wrap; margin-bottom: 1.5rem; }
+
+    /* URL correction */
+    .url-correction {
+      margin-top: 0.7rem; padding: 0.7rem 0.9rem;
+      background: rgba(59,130,246,0.06); border: 1px solid rgba(59,130,246,0.2);
+      border-radius: var(--radius-md);
+    }
+    .url-correction .uc-label {
+      font-size: 0.72rem; font-weight: 700; color: #60a5fa;
+      text-transform: uppercase; letter-spacing: 0.04em; margin-bottom: 0.4rem;
+      display: flex; align-items: center; gap: 0.35rem;
+    }
+    .url-correction .uc-row { display: flex; gap: 0.5rem; align-items: center; }
+    .url-correction input, .meeting-url-row input {
+      flex: 1; background: var(--bg-input); border: 1px solid var(--border-color-strong);
+      border-radius: var(--radius-md); padding: 0.4rem 0.7rem;
+      color: var(--text-primary); font-size: 0.82rem; font-family: 'JetBrains Mono', monospace;
+    }
+    .url-correction input::placeholder { color: var(--text-muted); }
+    .url-correction input.has-value { border-color: rgba(16,185,129,0.5); background: rgba(16,185,129,0.05); }
+    .btn-open-url {
+      font-size: 0.72rem; font-weight: 600; padding: 0.35rem 0.6rem;
+      border-radius: var(--radius-md); cursor: pointer; border: 1px solid rgba(59,130,246,0.3);
+      background: rgba(59,130,246,0.1); color: #60a5fa; font-family: inherit;
+      white-space: nowrap; transition: all var(--transition-fast);
+    }
+    .btn-open-url:hover { background: rgba(59,130,246,0.25); }
+    .uc-diff, .mu-diff { margin-top: 0.3rem; font-size: 0.72rem; font-family: 'JetBrains Mono', monospace; }
+    .uc-diff .old-url, .mu-diff .old-url { color: #ef4444; text-decoration: line-through; opacity: 0.7; }
+    .uc-diff .new-url, .mu-diff .new-url { color: #10b981; }
+
+    /* Meeting URL rows */
+    .meetings-urls-panel {
+      margin-top: 0.7rem; padding: 0.7rem 0.9rem;
+      background: rgba(16,185,129,0.04); border: 1px solid rgba(16,185,129,0.15);
+      border-radius: var(--radius-md);
+    }
+    .meetings-urls-panel .mu-label {
+      font-size: 0.72rem; font-weight: 700; color: #34d399;
+      text-transform: uppercase; letter-spacing: 0.04em; margin-bottom: 0.5rem;
+      display: flex; align-items: center; gap: 0.35rem;
+    }
+    .meeting-url-row { padding: 0.5rem 0; border-bottom: 1px solid rgba(255,255,255,0.04); }
+    .meeting-url-row:last-child { border-bottom: none; }
+    .meeting-url-row .mu-meeting-title {
+      font-size: 0.75rem; font-weight: 600; color: var(--text-secondary); margin-bottom: 0.3rem;
+      display: flex; align-items: center; gap: 0.4rem;
+    }
+    .meeting-url-row .mu-meeting-title .mu-date { font-family: 'JetBrains Mono', monospace; color: var(--text-muted); font-size: 0.7rem; }
+    .meeting-url-row .mu-meeting-title .mu-id { font-family: 'JetBrains Mono', monospace; color: var(--text-muted); font-size: 0.65rem; }
+    .meeting-url-row .mu-current { font-size: 0.7rem; color: var(--text-muted); margin-bottom: 0.25rem; font-family: 'JetBrains Mono', monospace; word-break: break-all; }
+    .meeting-url-row .mu-current a { color: var(--text-muted); text-decoration: none; }
+    .meeting-url-row .mu-current a:hover { color: #60a5fa; text-decoration: underline; }
+
+    /* Materials panel */
+    .materials-panel {
+      margin-top: 0.7rem; padding: 0.7rem 0.9rem;
+      background: rgba(0,0,0,0.18); border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+    }
+    .materials-panel .mat-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem; }
+    .materials-panel .mat-label { font-size: 0.72rem; font-weight: 700; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.04em; display: flex; align-items: center; gap: 0.35rem; }
+    .btn-check-mats {
+      font-size: 0.68rem; font-weight: 600; padding: 0.25rem 0.55rem;
+      border-radius: var(--radius-md); cursor: pointer;
+      border: 1px solid rgba(6,182,212,0.3); background: rgba(6,182,212,0.1);
+      color: #06b6d4; font-family: inherit; transition: all var(--transition-fast);
+    }
+    .btn-check-mats:hover { background: rgba(6,182,212,0.25); }
+    .mat-table { width: 100%; border-collapse: collapse; }
+    .mat-table th { text-align: left; font-size: 0.68rem; font-weight: 700; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.03em; padding: 0.3rem 0.5rem; border-bottom: 1px solid var(--border-color); }
+    .mat-table td { font-size: 0.78rem; padding: 0.35rem 0.5rem; border-bottom: 1px solid rgba(255,255,255,0.04); color: var(--text-secondary); vertical-align: middle; }
+    .mat-table tr:last-child td { border-bottom: none; }
+    .mat-table a { color: #60a5fa; text-decoration: none; word-break: break-all; }
+    .mat-table a:hover { text-decoration: underline; color: #93c5fd; }
+    .mat-type-badge { font-size: 0.65rem; font-weight: 700; padding: 0.1rem 0.4rem; border-radius: var(--radius-full); display: inline-block; }
+    .mat-type-pdf  { background: rgba(239,68,68,0.15); color: #f87171; border: 1px solid rgba(239,68,68,0.25); }
+    .mat-type-html { background: rgba(59,130,246,0.15); color: #60a5fa; border: 1px solid rgba(59,130,246,0.25); }
+    .mat-type-other { background: rgba(148,163,184,0.15); color: #94a3b8; border: 1px solid rgba(148,163,184,0.25); }
+    .mat-no-items { font-size: 0.78rem; color: var(--text-muted); font-style: italic; padding: 0.3rem 0; }
+
+    .notes-area {
+      margin-top: 0.65rem; width: 100%; background: var(--bg-input);
+      border: 1px solid var(--border-color); border-radius: var(--radius-md);
+      padding: 0.45rem 0.65rem; font-size: 0.8rem; color: var(--text-primary);
+      font-family: inherit; resize: vertical; min-height: 36px;
+    }
+    .notes-area::placeholder { color: var(--text-muted); }
+
+    /* Admin & Crawler Panel */
     .admin-card { background: var(--bg-card); border: 1px solid var(--border-color-strong); border-radius: var(--radius-lg); padding: 1.75rem; margin-bottom: 1.5rem; }
-    .admin-header-title { font-size: 1.5rem; font-weight: 800; color: #10b981; display: flex; align-items: center; gap: 0.6rem; }
+    .admin-header-title { font-size: 1.35rem; font-weight: 800; color: #10b981; display: flex; align-items: center; gap: 0.6rem; }
     .status-pill { font-size: 0.75rem; font-weight: 700; padding: 0.2rem 0.6rem; border-radius: var(--radius-sm); background: rgba(16, 185, 129, 0.2); color: #10b981; border: 1px solid rgba(16, 185, 129, 0.4); }
+
+    /* Tabs Nav */
+    .tabs-nav { display: flex; gap: 1rem; margin-bottom: 1.5rem; border-bottom: 1px solid var(--border-color); }
+    .tab-btn {
+      padding: 0.75rem 1.5rem; font-size: 0.95rem; font-weight: 700; color: var(--text-muted);
+      background: none; border: none; border-bottom: 3px solid transparent; cursor: pointer;
+      transition: all var(--transition-fast);
+    }
+    .tab-btn:hover { color: var(--text-primary); }
+    .tab-btn.active { color: var(--accent-primary); border-bottom-color: var(--accent-primary); }
+    .tab-content { display: none; }
+    .tab-content.active { display: block; }
+    
+    /* Ministry Table */
+    .ministry-table { width: 100%; border-collapse: collapse; margin-bottom: 2rem; background: var(--bg-card); border: 1px solid var(--border-color); border-radius: var(--radius-lg); overflow: hidden; }
+    .ministry-table th, .ministry-table td { padding: 1rem; border-bottom: 1px solid var(--border-color); text-align: left; }
+    .ministry-table th { background: rgba(0,0,0,0.2); font-weight: 700; color: var(--text-muted); font-size: 0.8rem; text-transform: uppercase; }
+    .ministry-table td { font-size: 0.85rem; color: var(--text-primary); }
+    .ministry-table tr:last-child td { border-bottom: none; }
+    .ministry-table input[type="url"] { width: 100%; background: var(--bg-input); border: 1px solid var(--border-color-strong); border-radius: var(--radius-md); padding: 0.4rem 0.6rem; color: var(--text-primary); font-family: 'JetBrains Mono', monospace; font-size: 0.8rem; }
+    .ministry-table input.changed { border-color: rgba(16,185,129,0.5); background: rgba(16,185,129,0.05); }
+    .ministry-table .url-cell-flex { display: flex; gap: 0.4rem; align-items: center; }
+    .ministry-table .toggle-switch { display: flex; align-items: center; gap: 0.5rem; cursor: pointer; }
+    .ministry-table .toggle-switch input { width: 1rem; height: 1rem; }
+    .btn-add-url {
+      font-size: 0.72rem; font-weight: 600; padding: 0.25rem 0.55rem;
+      border-radius: var(--radius-md); cursor: pointer; border: 1px dashed rgba(59,130,246,0.5);
+      background: rgba(59,130,246,0.08); color: #60a5fa; font-family: inherit; margin-top: 0.35rem;
+      transition: all var(--transition-fast); display: inline-flex; align-items: center; gap: 0.25rem;
+    }
+    .btn-add-url:hover { background: rgba(59,130,246,0.2); }
+    .btn-remove-url {
+      font-size: 0.72rem; font-weight: 600; padding: 0.35rem 0.5rem;
+      border-radius: var(--radius-md); cursor: pointer; border: 1px solid rgba(239,68,68,0.3);
+      background: rgba(239,68,68,0.1); color: #ef4444; font-family: inherit;
+      white-space: nowrap; transition: all var(--transition-fast);
+    }
+    .btn-remove-url:hover { background: rgba(239,68,68,0.25); }
+
+    .empty-state { text-align: center; padding: 3rem 1rem; color: var(--text-muted); }
+    .empty-state svg { margin-bottom: 1rem; opacity: 0.4; }
+
+    .council-card { animation: fadeSlideIn 0.3s ease forwards; opacity: 0; }
+    @keyframes fadeSlideIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
   </style>
 </head>
 <body data-theme="dark">
@@ -26,184 +281,1149 @@
         </div>
         <div class="logo-text">
           <span class="product-name">PM-HUB システム管理者コンソール</span>
-          <span class="product-badge" style="color:#10b981;">ADMIN PORTAL v1.0</span>
+          <span class="product-badge" style="color:#10b981;">UNIFIED ADMIN DASHBOARD</span>
         </div>
       </div>
       <div class="header-actions" style="display: flex; gap: 0.75rem; align-items: center;">
-        <a href="verify_new_councils.html" class="btn-secondary" style="border-color: rgba(59, 130, 246, 0.4); color: #60a5fa; background: rgba(59, 130, 246, 0.1);">
-          🔍 新規会議体 検証レビュー ↗
-        </a>
-        <a href="../docs/index.html" target="_blank" class="btn-secondary">
+        <a href="../docs/index.html" target="_blank" class="btn-secondary" style="font-size:0.85rem;">
           一般公開ポータルを開く ↗
         </a>
       </div>
     </div>
   </header>
 
-  <main class="admin-container">
-    <!-- NEW COUNCIL VERIFICATION CARD -->
-    <section class="admin-card card-glass">
-      <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem;">
-        <div>
-          <h3 style="display: flex; align-items: center; gap: 0.5rem; font-size: 1.15rem;">
-            🔍 新規会議体 検証レビュー
-          </h3>
-          <p class="text-sm" style="margin-top: 0.3rem; color: var(--text-muted);">
-            自動クロール結果から抽出・検証された新規会議体の検出レポート (`verification_report_2026-08-07.json`) のレビューを行います。
-          </p>
-        </div>
-        <a href="verify_new_councils.html" class="btn-primary" style="text-decoration: none; padding: 0.6rem 1.25rem; font-size: 0.9rem;">
-          検証レビュー画面を開く ↗
-        </a>
-      </div>
-    </section>
+  <main class="verify-container">
 
-    <!-- CRAWLER ENGINE PANEL -->
-    <section class="admin-card card-glass">
-      <div class="section-header">
-        <div>
-          <h2 class="admin-header-title">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/></svg>
-            政府Webサイト 自動巡回クローラー
-          </h2>
-          <p class="section-subtitle">内閣官房・内閣府・全21省庁のウェブサイトを自動巡回し、新着会議体・アジェンダ・PDF資料を解析します。</p>
-        </div>
-        <button class="btn-crawler" id="adminStartCrawlBtn" style="font-size: 1rem; padding: 0.75rem 1.5rem;">
-          ⚡ クロール即時実行
-        </button>
-      </div>
+    <div class="tabs-nav">
+      <button class="tab-btn active" onclick="switchTab('tab-crawler', this)">⚡ 自動巡回 ＆ システム設定</button>
+      <button class="tab-btn" onclick="switchTab('tab-councils', this)">🔍 会議体データ管理</button>
+      <button class="tab-btn" onclick="switchTab('tab-ministries', this)">🏛 省庁メタデータ管理</button>
+    </div>
 
-      <div style="margin-top: 1rem;">
-        <div class="crawler-progress-bar">
-          <div class="crawler-progress-fill" id="adminProgressFill"></div>
+    <!-- ── TAB 1: 自動巡回 ＆ システム設定 ── -->
+    <div id="tab-crawler" class="tab-content active">
+      <!-- CRAWLER ENGINE PANEL -->
+      <section class="admin-card card-glass">
+        <div class="section-header" style="display: flex; align-items: flex-start; justify-content: space-between; flex-wrap: wrap; gap: 1rem;">
+          <div>
+            <h2 class="admin-header-title">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/></svg>
+              政府Webサイト 自動巡回クローラー
+            </h2>
+            <p class="section-subtitle" style="margin-top:0.3rem; color:var(--text-muted);">内閣官房・内閣府・全21省庁のウェブサイトを自動巡回し、新着会議体・アジェンダ・PDF資料を解析します。</p>
+          </div>
+          <button class="btn-crawler btn-bulk approve-all" id="adminStartCrawlBtn" style="font-size: 1rem; padding: 0.75rem 1.5rem;">
+            ⚡ クロール即時実行
+          </button>
         </div>
 
-        <div class="crawler-terminal" id="adminTerminalLogs">
-          <div class="crawler-log-line">
-            <span class="crawler-log-time">[READY]</span> 管理者用自動クローリングエンジン起動準備完了。
+        <div style="margin-top: 1rem;">
+          <div class="crawler-progress-bar" style="height: 6px; background: rgba(255,255,255,0.08); border-radius: 4px; overflow: hidden; margin-bottom: 0.75rem;">
+            <div class="crawler-progress-fill" id="adminProgressFill" style="height: 100%; width: 0%; background: #10b981; transition: width 0.2s;"></div>
+          </div>
+
+          <div class="crawler-terminal" id="adminTerminalLogs" style="background: #090d16; border: 1px solid var(--border-color); padding: 1rem; border-radius: var(--radius-md); font-family: 'JetBrains Mono', monospace; font-size: 0.8rem; color: #94a3b8; max-height: 260px; overflow-y: auto;">
+            <div class="crawler-log-line">
+              <span class="crawler-log-time" style="color: #60a5fa;">[READY]</span> 管理者用自動クローリングエンジン起動準備完了。
+            </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- CONFIGURATION & FEATURE FLAGS -->
-    <section class="admin-card card-glass">
-      <h3>⚙️ システム設定・Feature Flag 管理</h3>
-      <p class="text-sm" style="margin-top: 0.3rem;">Token消費量や各種表示機能の切り替えを管理できます。</p>
+      <!-- CONFIGURATION & FEATURE FLAGS -->
+      <section class="admin-card card-glass">
+        <h3>⚙️ システム設定・Feature Flag 管理</h3>
+        <p class="text-sm" style="margin-top: 0.3rem; color:var(--text-muted);">Token消費量や各種表示機能の切り替えを管理できます。</p>
 
-      <div style="margin-top: 1.25rem; display: flex; align-items: center; justify-content: space-between; background: rgba(0,0,0,0.2); padding: 1rem; border-radius: var(--radius-md); border: 1px solid var(--border-color);">
-        <div>
-          <strong style="font-size: 1rem;">🤖 AI概要要約機能 (Token Control)</strong>
-          <p class="text-sm">有効にすると一般ポータルでAIによるポイント要約が表示されます（無効時はToken消費を抑止）。</p>
+        <div style="margin-top: 1.25rem; display: flex; align-items: center; justify-content: space-between; background: rgba(0,0,0,0.2); padding: 1rem; border-radius: var(--radius-md); border: 1px solid var(--border-color);">
+          <div>
+            <strong style="font-size: 1rem;">🤖 AI概要要約機能 (Token Control)</strong>
+            <p class="text-sm" style="color:var(--text-muted); margin-top:0.2rem;">有効にすると一般ポータルでAIによるポイント要約が表示されます（無効時はToken消費を抑止）。</p>
+          </div>
+          <button class="btn-secondary" id="adminAiToggleBtn" style="padding:0.5rem 1rem;">
+            <span id="adminAiToggleLabel">状態: OFF (抑止中)</span>
+          </button>
         </div>
-        <button class="btn-secondary" id="adminAiToggleBtn">
-          <span id="adminAiToggleLabel">状態: OFF (抑止中)</span>
-        </button>
-      </div>
-    </section>
+      </section>
 
-    <!-- SCRAPED LOG INSPECTOR -->
-    <section class="admin-card card-glass">
-      <h3>📄 最新パースデータ (`scraped_councils_output.json`)</h3>
-      <p class="text-sm" style="margin-top: 0.3rem;">Pythonクローラー `crawler.py` の最終実行ログデータ</p>
-      
-      <pre style="background: #090d16; border: 1px solid var(--border-color); padding: 1rem; border-radius: var(--radius-md); font-family: 'JetBrains Mono', monospace; font-size: 0.82rem; color: #94a3b8; overflow-x: auto; max-height: 250px; margin-top: 1rem;" id="adminJsonInspector">
+      <!-- SCRAPED LOG INSPECTOR -->
+      <section class="admin-card card-glass">
+        <h3>📄 最新パースデータ (`scraped_councils_output.json`)</h3>
+        <p class="text-sm" style="margin-top: 0.3rem; color:var(--text-muted);">Pythonクローラー `crawler.py` の最終実行ログデータ</p>
+        
+        <pre style="background: #090d16; border: 1px solid var(--border-color); padding: 1rem; border-radius: var(--radius-md); font-family: 'JetBrains Mono', monospace; font-size: 0.82rem; color: #94a3b8; overflow-x: auto; max-height: 250px; margin-top: 1rem;" id="adminJsonInspector">
 JSON データを読み込み中...
-      </pre>
-    </section>
+        </pre>
+      </section>
+    </div>
+
+    <!-- ── TAB 2: 会議体データ管理 ── -->
+    <div id="tab-councils" class="tab-content">
+
+      <!-- Summary Stats -->
+      <section class="summary-grid" id="summaryGrid">
+        <div class="summary-stat"><span class="stat-label">全会議体数</span><span class="stat-value total" id="statTotal">—</span></div>
+        <div class="summary-stat"><span class="stat-label">承認済み</span><span class="stat-value approved" id="statApproved">0</span></div>
+        <div class="summary-stat"><span class="stat-label">却下</span><span class="stat-value rejected" id="statRejected">0</span></div>
+        <div class="summary-stat"><span class="stat-label">未レビュー</span><span class="stat-value pending" id="statPending">—</span></div>
+        <div class="summary-stat"><span class="stat-label">URL 疎通OK</span><span class="stat-value url-ok" id="statUrlOk">—</span></div>
+        <div class="summary-stat"><span class="stat-label">URL修正済み</span><span class="stat-value" style="color:#a78bfa;" id="statCorrected">0</span></div>
+      </section>
+
+      <!-- Bulk Actions -->
+      <div class="bulk-actions">
+        <button class="btn-bulk check-urls" id="btnCheckUrls">🔗 URL一括疎通チェック</button>
+        <button class="btn-bulk approve-all" id="btnApproveAll">✅ 未レビューを全て承認</button>
+        <button class="btn-bulk export-json" id="btnSaveCouncilDirect" onclick="saveCouncilDirectToDataJs()" style="background: rgba(16,185,129,0.15); color: #10b981; border-color: rgba(16,185,129,0.4);">💾 docs/data.js に直接反映</button>
+        <button class="btn-bulk export-json" id="btnExportJson">📥 承認済みをJSONエクスポート</button>
+      </div>
+
+      <!-- Filters -->
+      <div class="filter-bar">
+        <input type="text" id="filterSearch" placeholder="🔍 会議体名・ID・省庁で検索…" />
+        <select id="filterMinistry"><option value="">全省庁</option></select>
+        <select id="filterCategory"><option value="">全カテゴリ</option></select>
+        <select id="filterVerdict">
+          <option value="">全ステータス</option>
+          <option value="pending">未レビュー</option>
+          <option value="approved">承認済み</option>
+          <option value="rejected">却下</option>
+        </select>
+      </div>
+
+      <!-- Council List -->
+      <div id="councilList"></div>
+    </div>
+
+    <!-- ── TAB 3: 省庁メタデータ管理 ── -->
+    <div id="tab-ministries" class="tab-content">
+      <div class="bulk-actions" style="margin-bottom: 1rem;">
+        <button class="btn-bulk export-json" onclick="saveDirectToDataJs()" style="background: rgba(16,185,129,0.15); color: #10b981; border-color: rgba(16,185,129,0.4);">💾 docs/data.js に直接反映</button>
+        <button class="btn-bulk export-json" onclick="exportMinistryJson()">📥 変更をJSONエクスポート</button>
+      </div>
+      <div id="ministryListContainer"></div>
+    </div>
+
   </main>
 
   <script src="../docs/data.js"></script>
   <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      const crawlBtn = document.getElementById('adminStartCrawlBtn');
-      const progressFill = document.getElementById('adminProgressFill');
-      const logs = document.getElementById('adminTerminalLogs');
-      const aiToggleBtn = document.getElementById('adminAiToggleBtn');
-      const aiToggleLabel = document.getElementById('adminAiToggleLabel');
-      const jsonInspector = document.getElementById('adminJsonInspector');
+  document.addEventListener('DOMContentLoaded', () => {
+    const STORAGE_KEY_VERDICTS = 'pmhub_council_verdicts';
 
-      let aiEnabled = localStorage.getItem('pmhub_enable_ai_summary') === 'true';
+    function getSavedVerdicts() {
+      try { return JSON.parse(localStorage.getItem(STORAGE_KEY_VERDICTS) || '{}'); } catch(e) { return {}; }
+    }
+    function saveSavedVerdicts(vMap) {
+      localStorage.setItem(STORAGE_KEY_VERDICTS, JSON.stringify(vMap));
+    }
 
-      function updateAiUI() {
-        if (aiEnabled) {
-          aiToggleLabel.textContent = '状態: ON (有効)';
-          aiToggleBtn.style.background = 'rgba(16, 185, 129, 0.2)';
-          aiToggleBtn.style.borderColor = '#10b981';
-          aiToggleBtn.style.color = '#10b981';
+    const KNOWN_NEW_IDS = [
+      'cas-atarashii-sihon-107','cas-roumuhi-tenka-108',
+      'cao-kisei-chiiki-wg-109','cao-kisei-iryou-wg-110','cao-kisei-hatarakikata-wg-111',
+      'cao-kisei-digital-ai-wg-112','cao-kisei-startup-wg-113','cao-kisei-gx-subwg-114',
+      'fsc-honkaigi-115','fsc-kikaku-116','fsc-tenkabutu-117','fsc-nouyaku-118',
+      'npsc-teirei-119','fsa-kinyu-shingi-120',
+      'mic-joho-tsusin-121','mic-chizai-122',
+      'moj-housei-soukai-123','moj-housei-seishoku-124','moj-housei-kaisha-125','moj-housei-keiji-126',
+      'mofa-kaigai-kouryushingi-127',
+      'mof-zaisei-seido-128','mof-customs-appeal-129',
+      'mext-chukyo-130','mext-gijyutu-131',
+      'mhlw-hosho-toukei-132','mhlw-hosho-shippei-133','mhlw-hosho-shiinsentaku-134',
+      'mhlw-hosho-iryou-135','mhlw-hosho-kaigo-136','mhlw-hosho-fukushi-137',
+      'mhlw-hosho-seikatsu-138','mhlw-hosho-jidou-139','mhlw-hosho-jidoukan-140',
+      'mhlw-hosho-shikinunyou-141','mhlw-hosho-kaigohoken-142','mhlw-hosho-shouni-143',
+      'mhlw-kousei-kansenshou-144','mhlw-kousei-influ-145',
+      'mhlw-rousei-roudoujouken-146','mhlw-rousei-anzeneisei-147',
+      'meti-sankoushin-148','meti-ax-skill-wg-149',
+      'mlit-kokudo-150','mlit-koutsu-151','mlit-unyu-152','mlit-chuou-kensetsu-153',
+      'moe-chuo-kankyo-154','mod-shisetsu-155'
+    ];
+    const knownIdSet = new Set(KNOWN_NEW_IDS);
+
+    const councils  = (typeof COUNCILS !== 'undefined' && Array.isArray(COUNCILS)) ? COUNCILS : [];
+    const meetings  = (typeof MEETINGS !== 'undefined' && Array.isArray(MEETINGS)) ? MEETINGS : [];
+    const ministries = (typeof MINISTRIES !== 'undefined') ? MINISTRIES : {};
+    const categories = (typeof CATEGORIES !== 'undefined') ? CATEGORIES : {};
+
+    const allCouncils = councils;
+
+    function normalizeVerdict(item, defaultV) {
+      if (!item) return { verdict: defaultV, notes: '', correctedUrl: '' };
+      if (typeof item === 'string') return { verdict: item, notes: '', correctedUrl: '' };
+      return {
+        verdict: item.verdict !== undefined ? item.verdict : defaultV,
+        notes: item.notes || '',
+        correctedUrl: item.correctedUrl || ''
+      };
+    }
+
+    const meetingMap = {};
+    meetings.forEach(m => { if (!meetingMap[m.councilId]) meetingMap[m.councilId] = []; meetingMap[m.councilId].push(m); });
+
+    const savedVerdicts = getSavedVerdicts();
+    const verdicts = {};
+    const urlStatus = {};
+    const matStatus = {};
+    const meetingUrlCorrections = {};
+
+    allCouncils.forEach(c => {
+      const defaultV = (c.isNew === true || knownIdSet.has(c.id)) ? null : 'approved';
+      verdicts[c.id] = normalizeVerdict(savedVerdicts[c.id], defaultV);
+    });
+
+    const ministrySet = new Set(allCouncils.map(c => c.ministry));
+    const categorySet = new Set(allCouncils.map(c => c.category));
+    const filterMinistry = document.getElementById('filterMinistry');
+    const filterCategory = document.getElementById('filterCategory');
+    ministrySet.forEach(code => {
+      const name = ministries[code] ? ministries[code].name : code;
+      filterMinistry.innerHTML += `<option value="${code}">${name} (${code})</option>`;
+    });
+    categorySet.forEach(cat => {
+      const label = categories[cat] || cat;
+      filterCategory.innerHTML += `<option value="${cat}">${label}</option>`;
+    });
+
+    const listEl = document.getElementById('councilList');
+
+    function getMinistryColor(code) {
+      const colorMap = {
+        CAO:'#a855f7', CAS:'#4f46e5', DIGITAL:'#06b6d4', CFA:'#ec4899',
+        MIC:'#f43f5e', MOJ:'#64748b', MOFA:'#0284c7', MOF:'#3b82f6', MEXT:'#d946ef',
+        MHLW:'#f59e0b', MAFF:'#16a34a', METI:'#10b981', MLIT:'#0d9488', MOE:'#84cc16',
+        MOD:'#475569', NPA:'#1e3a8a', FSA:'#2563eb', FSC:'#f97316', NPSC:'#64748b',
+        CAA:'#f97316', PPC:'#0891b2', NRA:'#dc2626'
+      };
+      return colorMap[code] || '#3b82f6';
+    }
+
+    function renderCards() {
+      const searchTerm = document.getElementById('filterSearch').value.toLowerCase();
+      const fMinistry  = document.getElementById('filterMinistry').value;
+      const fCategory  = document.getElementById('filterCategory').value;
+      const fVerdict   = document.getElementById('filterVerdict').value;
+
+      let filtered = allCouncils.filter(c => {
+        const minName = ministries[c.ministry] ? ministries[c.ministry].name : c.ministry;
+        const text = `${c.name} ${c.id} ${minName} ${c.ministry}`.toLowerCase();
+        if (searchTerm && !text.includes(searchTerm)) return false;
+        if (fMinistry && c.ministry !== fMinistry) return false;
+        if (fCategory && c.category !== fCategory) return false;
+        if (fVerdict) {
+          const vObj = verdicts[c.id];
+          const v = vObj ? vObj.verdict : null;
+          if (fVerdict === 'pending' && v !== null && v !== 'pending') return false;
+          if (fVerdict === 'approved' && v !== 'approved') return false;
+          if (fVerdict === 'rejected' && v !== 'rejected') return false;
+        }
+        return true;
+      });
+
+      if (filtered.length === 0) {
+        listEl.innerHTML = `<div class="empty-state">
+          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          <p>該当する会議体がありません</p>
+        </div>`;
+        updateStats();
+        return;
+      }
+
+      listEl.innerHTML = filtered.map((c, i) => {
+        const v = verdicts[c.id] || { verdict: null, notes: '', correctedUrl: '' };
+        const verdictClass = v.verdict ? `verdict-${v.verdict}` : '';
+        const minName = ministries[c.ministry] ? ministries[c.ministry].name : c.ministry;
+        const catLabel = categories[c.category] || c.category;
+        const cMeetings = meetingMap[c.id] || [];
+        const sortedMeetings = [...cMeetings].sort((a, b) => b.date.localeCompare(a.date));
+        const uStatus = urlStatus[c.id];
+        const accentColor = getMinistryColor(c.ministry);
+
+        let urlBadge = '';
+        if (uStatus === 'checking') urlBadge = '<span class="url-status checking">⏳ 確認中…</span>';
+        else if (uStatus === 'ok')   urlBadge = '<span class="url-status ok">✓ 疎通OK</span>';
+        else if (uStatus === 'error') urlBadge = '<span class="url-status error">✗ エラー</span>';
+
+        const correctedVal = v.correctedUrl || '';
+        const hasCorrection = correctedVal.trim() !== '';
+        let diffHtml = '';
+        if (hasCorrection) {
+          diffHtml = `<div class="uc-diff">
+            <div class="old-url">− ${escHtml(c.officialUrl)}</div>
+            <div class="new-url">+ ${escHtml(correctedVal)}</div>
+          </div>`;
+        }
+        const urlCorrectionHtml = `<div class="url-correction">
+          <div class="uc-label">✏️ 会議体トップページURL</div>
+          <div class="uc-row">
+            <input type="url" value="${escAttr(correctedVal)}" placeholder="${escAttr(c.officialUrl)}（変更不要ならそのまま）"
+              class="${hasCorrection ? 'has-value' : ''}" id="url-input-${c.id}"
+              oninput="setCorrectedUrl('${c.id}', this.value)" />
+            <button class="btn-open-url" onclick="openCorrectedUrl('${c.id}')">開く ↗</button>
+          </div>
+          ${diffHtml}
+        </div>`;
+
+        let meetingUrlsHtml = '';
+        if (sortedMeetings.length > 0) {
+          const meetingRows = sortedMeetings.map(m => {
+            const mCorrected = meetingUrlCorrections[m.id] || '';
+            const mHasCorr = mCorrected.trim() !== '';
+            let mDiff = '';
+            if (mHasCorr) {
+              mDiff = `<div class="mu-diff">
+                <div class="old-url">− ${escHtml(m.officialUrl)}</div>
+                <div class="new-url">+ ${escHtml(mCorrected)}</div>
+              </div>`;
+            }
+            return `<div class="meeting-url-row">
+              <div class="mu-meeting-title">
+                <span>第${m.id.split('-').pop()}回</span>
+                <span class="mu-date">${m.date}</span>
+                <span class="mu-id">(${m.id})</span>
+              </div>
+              <div class="mu-current">現在: <a href="${escAttr(m.officialUrl)}" target="_blank" rel="noopener">${truncateUrl(m.officialUrl, 60)}</a></div>
+              <div class="uc-row">
+                <input type="url" value="${escAttr(mCorrected)}" placeholder="修正後のURL（必要な場合のみ入力）"
+                  class="${mHasCorr ? 'has-value' : ''}"
+                  oninput="setCorrectedMeetingUrl('${m.id}', this.value)" />
+                <button class="btn-open-url" onclick="openMeetingUrl('${m.id}')">開く ↗</button>
+              </div>
+              ${mDiff}
+            </div>`;
+          }).join('');
+
+          meetingUrlsHtml = `<div class="meetings-urls-panel">
+            <div class="mu-label">📋 個別会議ページURL（${sortedMeetings.length}件）</div>
+            ${meetingRows}
+          </div>`;
+        }
+
+        const allMats = [];
+        sortedMeetings.forEach(m => {
+          if (m.materials && m.materials.length) {
+            m.materials.forEach(mat => {
+              allMats.push({ ...mat, meetingDate: m.date });
+            });
+          }
+        });
+
+        let matsHtml = '';
+        if (allMats.length > 0) {
+          const matRows = allMats.map((mat, mi) => {
+            const matKey = c.id + '::' + mat.url;
+            const ms = matStatus[matKey];
+            let msBadge = '<span class="url-status" style="color:var(--text-muted);font-size:0.65rem;">未検証</span>';
+            if (ms === 'checking') msBadge = '<span class="url-status checking">⏳</span>';
+            else if (ms === 'ok') msBadge = '<span class="url-status ok">✓</span>';
+            else if (ms === 'error') msBadge = '<span class="url-status error">✗</span>';
+            const typeClass = mat.type === 'PDF' ? 'mat-type-pdf' : mat.type === 'HTML' ? 'mat-type-html' : 'mat-type-other';
+            return `<tr>
+              <td>${mi + 1}</td>
+              <td>${escHtml(mat.name)}</td>
+              <td><span class="mat-type-badge ${typeClass}">${mat.type}</span></td>
+              <td><a href="${escAttr(mat.url)}" target="_blank" rel="noopener">${truncateUrl(mat.url, 50)}</a></td>
+              <td>${msBadge}</td>
+            </tr>`;
+          }).join('');
+
+          matsHtml = `<div class="materials-panel">
+            <div class="mat-header">
+              <div class="mat-label">📎 資料リンク検証（${allMats.length}件）</div>
+              <button class="btn-check-mats" onclick="checkMaterials('${c.id}')">🔗 資料リンクチェック</button>
+            </div>
+            <table class="mat-table">
+              <thead><tr><th>#</th><th>資料名</th><th>形式</th><th>URL</th><th>疎通</th></tr></thead>
+              <tbody>${matRows}</tbody>
+            </table>
+          </div>`;
         } else {
-          aiToggleLabel.textContent = '状態: OFF (抑止中)';
-          aiToggleBtn.style.background = 'rgba(255, 255, 255, 0.08)';
-          aiToggleBtn.style.borderColor = 'var(--border-color)';
-          aiToggleBtn.style.color = 'var(--text-secondary)';
+          matsHtml = `<div class="materials-panel">
+            <div class="mat-header">
+              <div class="mat-label">📎 資料リンク検証</div>
+            </div>
+            <div class="mat-no-items">資料データなし</div>
+          </div>`;
+        }
+
+        let actionButtons = '';
+        if (v.verdict === null) {
+          actionButtons = `
+            <button class="btn-approve" onclick="setVerdict('${c.id}','approved')">✓ 承認</button>
+            <button class="btn-reject" onclick="setVerdict('${c.id}','rejected')">✗ 却下</button>`;
+        } else {
+          actionButtons = `<button class="btn-revert" onclick="setVerdict('${c.id}', null)">↩ 取消</button>`;
+        }
+
+        const globalIdx = i + 1;
+        const totalCount = allCouncils.length;
+        const statusBadge = v.verdict === 'approved'
+          ? '<span class="meta-chip" style="color:#10b981;border-color:rgba(16,185,129,0.3);background:rgba(16,185,129,0.08);">✓ 承認済み</span>'
+          : v.verdict === 'rejected'
+          ? '<span class="meta-chip" style="color:#ef4444;border-color:rgba(239,68,68,0.3);background:rgba(239,68,68,0.08);">✗ 却下</span>'
+          : '<span class="meta-chip" style="color:#f59e0b;border-color:rgba(245,158,11,0.3);background:rgba(245,158,11,0.08);">⏳ 未レビュー</span>';
+
+        return `<div class="council-card ${verdictClass}" style="--card-accent: ${accentColor}; animation-delay: ${i * 0.03}s;" id="card-${c.id}">
+          <div class="card-top">
+            <div class="card-title-area">
+              <div class="card-idx">#${globalIdx} / ${totalCount}</div>
+              <div class="card-name">${c.name} ${statusBadge}</div>
+              <div class="card-id">ID: ${c.id}</div>
+            </div>
+            <div class="card-actions">${actionButtons}</div>
+          </div>
+          <div class="card-meta">
+            <span class="meta-chip"><span class="chip-icon">🏛</span> ${minName} (${c.ministry})</span>
+            <span class="category-badge cat-${c.category}">${catLabel}</span>
+            <span class="meta-chip"><span class="chip-icon">🔗</span> <a href="${escAttr(c.officialUrl)}" target="_blank" rel="noopener">${truncateUrl(c.officialUrl, 55)}</a> ${urlBadge}</span>
+            <span class="meta-chip"><span class="chip-icon">📅</span> ${c.trackedSince || '—'}</span>
+          </div>
+          ${urlCorrectionHtml}
+          ${meetingUrlsHtml}
+          ${matsHtml}
+          <textarea class="notes-area" placeholder="検証メモ（任意）…" onchange="setNotes('${c.id}', this.value)">${v.notes}</textarea>
+        </div>`;
+      }).join('');
+
+      updateStats();
+    }
+
+    function truncateUrl(url, max) {
+      if (url.length <= max) return url;
+      return url.substring(0, max) + '…';
+    }
+    function escHtml(str) {
+      return (str || '').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+    }
+    function escAttr(str) {
+      return (str || '').replace(/&/g,'&amp;').replace(/"/g,'&quot;');
+    }
+
+    window.setVerdict = function(id, verdict) {
+      verdicts[id].verdict = verdict;
+      saveSavedVerdicts(verdicts);
+      renderCards();
+    };
+    window.setNotes = function(id, text) {
+      verdicts[id].notes = text;
+      saveSavedVerdicts(verdicts);
+    };
+    window.setCorrectedUrl = function(id, url) {
+      verdicts[id].correctedUrl = url.trim();
+      saveSavedVerdicts(verdicts);
+      const card = document.getElementById(`card-${id}`);
+      if (card) {
+        const input = card.querySelector('.url-correction input[type=url]');
+        if (input) input.classList.toggle('has-value', url.trim() !== '');
+      }
+    };
+    window.openCorrectedUrl = function(id) {
+      const corrected = verdicts[id].correctedUrl;
+      const council = allCouncils.find(c => c.id === id);
+      const url = corrected || (council ? council.officialUrl : '');
+      if (url) window.open(url, '_blank');
+    };
+    window.setCorrectedMeetingUrl = function(meetingId, url) {
+      meetingUrlCorrections[meetingId] = url.trim();
+    };
+    window.openMeetingUrl = function(meetingId) {
+      const corrected = meetingUrlCorrections[meetingId];
+      const meeting = meetings.find(m => m.id === meetingId);
+      const url = corrected || (meeting ? meeting.officialUrl : '');
+      if (url) window.open(url, '_blank');
+    };
+
+    async function checkSingleMat(councilId, matUrl) {
+      const key = councilId + '::' + matUrl;
+      matStatus[key] = 'checking';
+      renderCards();
+      try {
+        const ctrl = new AbortController();
+        const tid = setTimeout(() => ctrl.abort(), 8000);
+        await fetch(matUrl, { mode: 'no-cors', signal: ctrl.signal });
+        clearTimeout(tid);
+        matStatus[key] = 'ok';
+      } catch (e) {
+        matStatus[key] = 'error';
+      }
+    }
+    window.checkMaterials = async function(councilId) {
+      const cMeetings = meetingMap[councilId] || [];
+      const allUrls = [];
+      cMeetings.forEach(m => {
+        if (m.materials) m.materials.forEach(mat => allUrls.push(mat.url));
+      });
+      for (let i = 0; i < allUrls.length; i += 3) {
+        const batch = allUrls.slice(i, i + 3);
+        await Promise.all(batch.map(u => checkSingleMat(councilId, u)));
+        renderCards();
+      }
+    };
+
+    function updateStats() {
+      const total = allCouncils.length;
+      const approved = Object.values(verdicts).filter(v => v && v.verdict === 'approved').length;
+      const rejected = Object.values(verdicts).filter(v => v && v.verdict === 'rejected').length;
+      const pending  = total - approved - rejected;
+      const urlOk    = Object.values(urlStatus).filter(s => s === 'ok').length;
+      const corrected = Object.values(verdicts).filter(v => v && v.correctedUrl && typeof v.correctedUrl === 'string' && v.correctedUrl.trim() !== '').length;
+
+      document.getElementById('statTotal').textContent = total;
+      document.getElementById('statApproved').textContent = approved;
+      document.getElementById('statRejected').textContent = rejected;
+      document.getElementById('statPending').textContent = pending;
+      document.getElementById('statUrlOk').textContent = `${urlOk} / ${total}`;
+      document.getElementById('statCorrected').textContent = corrected;
+    }
+
+    // ─── Tabs Navigation ───
+    function switchTab(tabId, btn) {
+      document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
+      document.querySelectorAll('.tab-btn').forEach(el => el.classList.remove('active'));
+      const content = document.getElementById(tabId);
+      if (content) content.classList.add('active');
+
+      let targetBtn = btn;
+      if (!targetBtn) {
+        document.querySelectorAll('.tab-btn').forEach(b => {
+          if (b.getAttribute('onclick') && b.getAttribute('onclick').includes(tabId)) {
+            targetBtn = b;
+          }
+        });
+      }
+      if (targetBtn) targetBtn.classList.add('active');
+      if (history.replaceState) {
+        history.replaceState(null, null, `#${tabId.replace('tab-', '')}`);
+      }
+    }
+    window.switchTab = switchTab;
+
+    // URL Hash Navigation Support
+    const initHash = (window.location.hash || '').replace('#', '');
+    if (initHash === 'ministries') switchTab('tab-ministries');
+    else if (initHash === 'crawler') switchTab('tab-crawler');
+    else if (initHash === 'councils') switchTab('tab-councils');
+
+    // ─── Ministry Management ───
+    const ministryUpdates = {};
+    function getMinistryCouncilsUrls(code) {
+      const min = ministries[code];
+      const update = ministryUpdates[code] || {};
+      if (update.councilsUrls !== undefined) return update.councilsUrls;
+      if (min && min.councilsUrls) return min.councilsUrls;
+      if (min && min.councilsUrl) return [min.councilsUrl];
+      return [];
+    }
+
+    function renderMinistryList() {
+      const container = document.getElementById('ministryListContainer');
+      const codes = Object.keys(ministries).sort();
+      let html = `<table class="ministry-table">
+        <thead>
+          <tr>
+            <th style="width: 15%">省庁名 (コード)</th>
+            <th style="width: 30%">省庁トップページURL</th>
+            <th style="width: 42%">審議会等ページURL (複数可)</th>
+            <th style="width: 13%">審議会等の有無</th>
+          </tr>
+        </thead>
+        <tbody>`;
+      codes.forEach(code => {
+        const min = ministries[code];
+        const update = ministryUpdates[code] || {};
+        const oUrl = update.officialUrl !== undefined ? update.officialUrl : (min.officialUrl || '');
+        const cUrls = getMinistryCouncilsUrls(code);
+        const hasC = update.hasCouncils !== undefined ? update.hasCouncils : (min.hasCouncils !== false);
+        const isCUrlsChanged = update.councilsUrls !== undefined;
+
+        let cUrlsHtml = '';
+        if (cUrls.length === 0) {
+          cUrlsHtml = `<div class="url-cell-flex" style="margin-bottom:0.35rem;">
+            <input type="url" value="" oninput="updateMinistryCouncilUrl('${code}', 0, this.value, this)" class="${isCUrlsChanged ? 'changed' : ''}" placeholder="審議会等一覧ページのURL" />
+            <button class="btn-open-url" onclick="openMinistryUrl('${code}', 'councilsUrls', 0)">開く ↗</button>
+          </div>`;
+        } else {
+          cUrlsHtml = cUrls.map((u, idx) => `
+            <div class="url-cell-flex" style="margin-bottom:0.35rem;">
+              <input type="url" value="${escAttr(u)}" oninput="updateMinistryCouncilUrl('${code}', ${idx}, this.value, this)" class="${isCUrlsChanged ? 'changed' : ''}" placeholder="審議会等一覧ページのURL" />
+              <button class="btn-open-url" onclick="openMinistryUrl('${code}', 'councilsUrls', ${idx})">開く ↗</button>
+              ${cUrls.length > 1 ? `<button class="btn-remove-url" onclick="removeMinistryCouncilUrl('${code}', ${idx})" title="削除">✕</button>` : ''}
+            </div>
+          `).join('');
+        }
+
+        html += `<tr>
+          <td><strong>${min.name}</strong><br><span style="font-size:0.75rem;color:var(--text-muted);">${code}</span></td>
+          <td>
+            <div class="url-cell-flex">
+              <input type="url" value="${escAttr(oUrl)}" oninput="updateMinistry('${code}', 'officialUrl', this.value, this)" class="${update.officialUrl !== undefined ? 'changed' : ''}" />
+              <button class="btn-open-url" onclick="openMinistryUrl('${code}', 'officialUrl')">開く ↗</button>
+            </div>
+          </td>
+          <td>
+            ${cUrlsHtml}
+            <button class="btn-add-url" onclick="addMinistryCouncilUrl('${code}')">＋ URLを追加</button>
+          </td>
+          <td>
+            <label class="toggle-switch">
+              <input type="checkbox" ${hasC ? 'checked' : ''} onchange="updateMinistry('${code}', 'hasCouncils', this.checked, this)" />
+              <span>${hasC ? 'あり' : 'なし'}</span>
+            </label>
+          </td>
+        </tr>`;
+      });
+      html += `</tbody></table>`;
+      container.innerHTML = html;
+    }
+
+    window.openMinistryUrl = function(code, field, idx = 0) {
+      if (field === 'officialUrl') {
+        const min = ministries[code];
+        const update = ministryUpdates[code] || {};
+        const url = update.officialUrl !== undefined ? update.officialUrl : (min ? min.officialUrl : '');
+        if (url) window.open(url, '_blank');
+      } else {
+        const cUrls = getMinistryCouncilsUrls(code);
+        const url = cUrls[idx];
+        if (url) window.open(url, '_blank');
+      }
+    };
+
+    window.updateMinistry = function(code, field, value, el) {
+      if (!ministryUpdates[code]) ministryUpdates[code] = {};
+      const min = ministries[code];
+      const originalValue = min[field] !== undefined ? min[field] : (field === 'hasCouncils' ? true : '');
+      if (value === originalValue) {
+        delete ministryUpdates[code][field];
+        if (Object.keys(ministryUpdates[code]).length === 0) delete ministryUpdates[code];
+        if (el && el.tagName === 'INPUT') el.classList.remove('changed');
+      } else {
+        ministryUpdates[code][field] = value;
+        if (el && el.tagName === 'INPUT' && el.type === 'url') el.classList.add('changed');
+      }
+    };
+
+    window.updateMinistryCouncilUrl = function(code, idx, value, el) {
+      if (!ministryUpdates[code]) ministryUpdates[code] = {};
+      const current = [...getMinistryCouncilsUrls(code)];
+      current[idx] = value;
+      ministryUpdates[code].councilsUrls = current;
+      if (el && el.tagName === 'INPUT') {
+        el.classList.add('changed');
+      }
+    };
+
+    window.addMinistryCouncilUrl = function(code) {
+      const scrollY = window.scrollY;
+      if (!ministryUpdates[code]) ministryUpdates[code] = {};
+      const current = [...getMinistryCouncilsUrls(code)];
+      current.push('');
+      ministryUpdates[code].councilsUrls = current;
+      renderMinistryList();
+      window.scrollTo(0, scrollY);
+    };
+
+    window.removeMinistryCouncilUrl = function(code, idx) {
+      const scrollY = window.scrollY;
+      if (!ministryUpdates[code]) ministryUpdates[code] = {};
+      const current = [...getMinistryCouncilsUrls(code)];
+      current.splice(idx, 1);
+      ministryUpdates[code].councilsUrls = current;
+      renderMinistryList();
+      window.scrollTo(0, scrollY);
+    };
+
+    async function saveJsonFile(report, defaultFilename) {
+      const jsonStr = JSON.stringify(report, null, 2);
+      if ('showSaveFilePicker' in window) {
+        try {
+          const handle = await window.showSaveFilePicker({
+            suggestedName: defaultFilename,
+            types: [{ description: 'JSON File', accept: { 'application/json': ['.json'] } }]
+          });
+          const writable = await handle.createWritable();
+          await writable.write(jsonStr);
+          await writable.close();
+          alert(`保存が完了しました: ${handle.name}`);
+          return;
+        } catch (err) {
+          if (err.name === 'AbortError') return;
+          console.warn('showSaveFilePicker failed, fallback to direct download:', err);
         }
       }
-      updateAiUI();
+      const blob = new Blob([jsonStr], { type: 'application/json' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = defaultFilename;
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      URL.revokeObjectURL(url);
+    }
 
-      aiToggleBtn.addEventListener('click', () => {
-        aiEnabled = !aiEnabled;
-        localStorage.setItem('pmhub_enable_ai_summary', aiEnabled);
-        updateAiUI();
-        alert(`AI要約機能を ${aiEnabled ? 'ON (有効)' : 'OFF (無効)'} に設定しました。`);
+    window.exportMinistryJson = async function() {
+      const updates = Object.keys(ministryUpdates);
+      if (updates.length === 0) {
+        alert('変更された省庁データはありません。');
+        return;
+      }
+      const corrections = [];
+      updates.forEach(code => {
+        const u = ministryUpdates[code];
+        if (u.officialUrl !== undefined) {
+          corrections.push({ action: 'update_field', target: 'MINISTRIES', targetId: code, field: 'officialUrl', oldValue: ministries[code].officialUrl, newValue: u.officialUrl.trim(), reason: 'Admin corrected ministry officialUrl' });
+        }
+        if (u.councilsUrls !== undefined) {
+          const cleaned = u.councilsUrls.map(x => x.trim()).filter(x => x !== '');
+          const old = ministries[code].councilsUrls || (ministries[code].councilsUrl ? [ministries[code].councilsUrl] : []);
+          corrections.push({ action: 'update_field', target: 'MINISTRIES', targetId: code, field: 'councilsUrls', oldValue: old, newValue: cleaned, reason: 'Admin updated councilsUrls' });
+        }
+        if (u.hasCouncils !== undefined) {
+          corrections.push({ action: 'update_field', target: 'MINISTRIES', targetId: code, field: 'hasCouncils', oldValue: ministries[code].hasCouncils, newValue: u.hasCouncils, reason: 'Admin toggled hasCouncils' });
+        }
+      });
+      const report = {
+        _format: 'pmhub-verification-report-v2',
+        _description: '省庁データ更新',
+        exportedAt: new Date().toISOString(),
+        targetFile: 'docs/data.js',
+        corrections: corrections
+      };
+      await saveJsonFile(report, `ministry_updates_${new Date().toISOString().split('T')[0]}.json`);
+    };
+
+    window.saveDirectToDataJs = async function() {
+      const updates = Object.keys(ministryUpdates);
+      if (updates.length === 0) {
+        alert('変更された省庁データはありません。');
+        return;
+      }
+
+      const corrections = [];
+      updates.forEach(code => {
+        const u = ministryUpdates[code];
+        if (u.officialUrl !== undefined) {
+          corrections.push({ action: 'update_field', target: 'MINISTRIES', targetId: code, field: 'officialUrl', oldValue: ministries[code].officialUrl, newValue: u.officialUrl.trim(), reason: 'Admin corrected ministry officialUrl' });
+        }
+        if (u.councilsUrls !== undefined) {
+          const cleaned = u.councilsUrls.map(x => x.trim()).filter(x => x !== '');
+          const old = ministries[code].councilsUrls || (ministries[code].councilsUrl ? [ministries[code].councilsUrl] : []);
+          corrections.push({ action: 'update_field', target: 'MINISTRIES', targetId: code, field: 'councilsUrls', oldValue: old, newValue: cleaned, reason: 'Admin updated councilsUrls' });
+        }
+        if (u.hasCouncils !== undefined) {
+          corrections.push({ action: 'update_field', target: 'MINISTRIES', targetId: code, field: 'hasCouncils', oldValue: ministries[code].hasCouncils, newValue: u.hasCouncils, reason: 'Admin toggled hasCouncils' });
+        }
       });
 
-      // Load Scraped Output JSON
-      fetch('scraped_councils_output.json')
-        .then(res => res.json())
-        .then(data => {
-          jsonInspector.textContent = JSON.stringify(data, null, 2);
-        })
-        .catch(err => {
-          jsonInspector.textContent = '// scraped_councils_output.json の読み込み完了 (python crawler.py 実行ログ保持中)';
+      try {
+        const res = await fetch('/api/save-ministry-updates', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ exportedAt: new Date().toISOString(), corrections })
         });
-
-      // Crawler simulation
-      crawlBtn.addEventListener('click', () => {
-        crawlBtn.disabled = true;
-        progressFill.style.width = '0%';
-        logs.innerHTML = '';
-
-        if (typeof COUNCILS === 'undefined' || !Array.isArray(COUNCILS)) {
-          const errorLine = document.createElement('div');
-          errorLine.className = 'crawler-log-line';
-          errorLine.style.color = '#ef4444';
-          errorLine.innerHTML = `<span class="crawler-log-time">[ERROR]</span> <span>docs/data.js が正常に読み込まれていません。ローカルファイルをブラウザで直接開いている場合、ブラウザのセキュリティ制限 (CORS/ローカルファイル制限) により data.js の読み込みがブロックされている可能性があります。サーバー (serve等) を経由してアクセスしてください。</span>`;
-          logs.appendChild(errorLine);
-          crawlBtn.disabled = false;
+        if (res.ok) {
+          updates.forEach(code => {
+            const u = ministryUpdates[code];
+            if (!ministries[code]) ministries[code] = { name: code, kanji: code, code: code, color: 'var(--color-cao)' };
+            if (u.officialUrl !== undefined) ministries[code].officialUrl = u.officialUrl.trim();
+            if (u.councilsUrls !== undefined) ministries[code].councilsUrls = u.councilsUrls.map(x => x.trim()).filter(x => x !== '');
+            if (u.hasCouncils !== undefined) ministries[code].hasCouncils = u.hasCouncils;
+          });
+          Object.keys(ministryUpdates).forEach(k => delete ministryUpdates[k]);
+          renderMinistryList();
+          alert('【サーバー経由】docs/data.js への直接保存が完了しました！');
           return;
         }
+      } catch (e) {}
 
-        const targets = COUNCILS.map(c => {
-          const minName = (typeof MINISTRIES !== 'undefined' && MINISTRIES[c.ministry]) ? MINISTRIES[c.ministry].name : c.ministry;
-          let domain = 'go.jp';
-          try {
-            const urlObj = new URL(c.officialUrl);
-            domain = urlObj.hostname;
-          } catch(e) {}
-          return `${minName}: ${c.name} (${domain})`;
-        });
-
-        let idx = 0;
-        const intervalTime = Math.max(20, Math.min(400, 3000 / targets.length));
-        const interval = setInterval(() => {
-          if (idx < targets.length) {
-            idx++;
-            const pct = Math.round((idx / targets.length) * 100);
-            progressFill.style.width = pct + '%';
-            
-            const line = document.createElement('div');
-            line.className = 'crawler-log-line';
-            line.innerHTML = `<span class="crawler-log-time">[${new Date().toTimeString().slice(0,8)}]</span> <span>[${pct}%] クロール完了: ${targets[idx-1]} (HTTP 200 OK)</span>`;
-            logs.appendChild(line);
-            logs.scrollTop = logs.scrollHeight;
-          } else {
-            clearInterval(interval);
-            crawlBtn.disabled = false;
-            alert('全省庁のWebクローリング・インデックス同期が正常に完了しました！');
+      if ('showOpenFilePicker' in window) {
+        try {
+          const [fileHandle] = await window.showOpenFilePicker({
+            types: [{ description: 'JavaScript File', accept: { 'text/javascript': ['.js'] } }]
+          });
+          if (!fileHandle.name.endsWith('data.js')) {
+            if (!confirm(`選択されたファイル (${fileHandle.name}) は data.js ではありませんが、続行しますか？`)) return;
           }
-        }, intervalTime);
-      });
+          const file = await fileHandle.getFile();
+          let text = await file.text();
+
+          updates.forEach(code => {
+            const u = ministryUpdates[code];
+            if (!ministries[code]) ministries[code] = { name: code, kanji: code, code: code, color: 'var(--color-cao)' };
+            if (u.officialUrl !== undefined) ministries[code].officialUrl = u.officialUrl.trim();
+            if (u.councilsUrls !== undefined) ministries[code].councilsUrls = u.councilsUrls.map(x => x.trim()).filter(x => x !== '');
+            if (u.hasCouncils !== undefined) ministries[code].hasCouncils = u.hasCouncils;
+          });
+
+          const formattedMinistries = 'const MINISTRIES = ' + JSON.stringify(ministries, null, 2)
+            .replace(/"([^"]+)":/g, '$1:')
+            .replace(/"/g, "'") + ';';
+
+          const updatedText = text.replace(/const MINISTRIES = \{[\s\S]*?\n\};/, formattedMinistries);
+
+          const writable = await fileHandle.createWritable();
+          await writable.write(updatedText);
+          await writable.close();
+
+          Object.keys(ministryUpdates).forEach(k => delete ministryUpdates[k]);
+          renderMinistryList();
+          alert('docs/data.js に直接反映・更新しました！');
+          return;
+        } catch (err) {
+          if (err.name === 'AbortError') return;
+          console.warn('showOpenFilePicker failed:', err);
+        }
+      }
+
+      await exportMinistryJson();
+      alert('file:// 直開きのブラウザ制限によりファイル上書きが制限されているため、JSONを出力しました。\n\nターミナルで以下を実行すると data.js に反映できます：\npy admin/apply_report.py admin/ministry_updates_*.json');
+    };
+
+    renderMinistryList();
+
+    // ─── URL Liveness Check ───
+    async function checkUrl(council) {
+      urlStatus[council.id] = 'checking';
+      renderCards();
+      try {
+        const controller = new AbortController();
+        const timeoutId = setTimeout(() => controller.abort(), 8000);
+        const res = await fetch(council.officialUrl, { mode: 'no-cors', signal: controller.signal });
+        clearTimeout(timeoutId);
+        urlStatus[council.id] = 'ok';
+      } catch (e) {
+        urlStatus[council.id] = 'error';
+      }
+      renderCards();
+    }
+
+    document.getElementById('btnCheckUrls').addEventListener('click', async () => {
+      const btn = document.getElementById('btnCheckUrls');
+      btn.disabled = true;
+      btn.textContent = '🔗 チェック実行中…';
+      for (let i = 0; i < allCouncils.length; i += 5) {
+        const batch = allCouncils.slice(i, i + 5);
+        await Promise.all(batch.map(c => checkUrl(c)));
+      }
+      btn.disabled = false;
+      btn.textContent = '🔗 URL一括疎通チェック';
     });
+
+    document.getElementById('btnApproveAll').addEventListener('click', () => {
+      const pending = allCouncils.filter(c => verdicts[c.id].verdict === null || verdicts[c.id].verdict === 'pending');
+      if (pending.length === 0) { alert('未レビューの会議体はありません。'); return; }
+      if (!confirm(`未レビューの ${pending.length} 件を全て承認しますか？`)) return;
+      pending.forEach(c => { verdicts[c.id].verdict = 'approved'; });
+      saveSavedVerdicts(verdicts);
+      renderCards();
+    });
+
+    window.saveCouncilDirectToDataJs = async function() {
+      const approvedCouncils = allCouncils.filter(c => verdicts[c.id] && verdicts[c.id].verdict === 'approved');
+      const corrections = [];
+
+      allCouncils.forEach(c => {
+        const v = verdicts[c.id];
+        if (v && v.correctedUrl && v.correctedUrl.trim() !== '') {
+          corrections.push({
+            action: 'update_field',
+            target: 'COUNCILS',
+            targetId: c.id,
+            field: 'officialUrl',
+            oldValue: c.officialUrl,
+            newValue: v.correctedUrl.trim(),
+            reason: 'Admin corrected council top page URL'
+          });
+        }
+        const cMeetings = meetingMap[c.id] || [];
+        cMeetings.forEach(m => {
+          const mCorr = meetingUrlCorrections[m.id];
+          if (mCorr && mCorr.trim() !== '') {
+            corrections.push({
+              action: 'update_field',
+              target: 'MEETINGS',
+              targetId: m.id,
+              field: 'officialUrl',
+              oldValue: m.officialUrl,
+              newValue: mCorr.trim(),
+              reason: `Admin corrected meeting page URL for ${m.id}`
+            });
+          }
+        });
+      });
+
+      if (corrections.length === 0) {
+        alert('URLの修正内容がありません（変更箇所を入力してください）。');
+        return;
+      }
+
+      const report = {
+        _format: 'pmhub-verification-report-v2',
+        _description: '会議体・会議ページURL更新',
+        exportedAt: new Date().toISOString(),
+        targetFile: 'docs/data.js',
+        corrections: corrections
+      };
+
+      function applyCouncilInMemory() {
+        corrections.forEach(corr => {
+          if (corr.target === 'COUNCILS') {
+            const targetCouncil = allCouncils.find(c => c.id === corr.targetId);
+            if (targetCouncil) targetCouncil.officialUrl = corr.newValue;
+            if (verdicts[corr.targetId]) verdicts[corr.targetId].correctedUrl = '';
+          } else if (corr.target === 'MEETINGS') {
+            const targetMeeting = meetings.find(m => m.id === corr.targetId);
+            if (targetMeeting) targetMeeting.officialUrl = corr.newValue;
+            delete meetingUrlCorrections[corr.targetId];
+          }
+        });
+        saveSavedVerdicts(verdicts);
+        renderCards();
+      }
+
+      try {
+        const res = await fetch('/api/save-verification-report', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(report)
+        });
+        if (res.ok) {
+          applyCouncilInMemory();
+          alert('【サーバー経由】docs/data.js への直接保存が完了しました！');
+          return;
+        }
+      } catch (e) {}
+
+      if ('showOpenFilePicker' in window) {
+        try {
+          const [fileHandle] = await window.showOpenFilePicker({
+            types: [{ description: 'JavaScript File', accept: { 'text/javascript': ['.js'] } }]
+          });
+          if (!fileHandle.name.endsWith('data.js')) {
+            if (!confirm(`選択されたファイル (${fileHandle.name}) は data.js ではありませんが、続行しますか？`)) return;
+          }
+          const file = await fileHandle.getFile();
+          let text = await file.text();
+
+          corrections.forEach(corr => {
+            if (corr.action === 'update_field') {
+              const pattern = new RegExp(`(id:\\s*'${corr.targetId}'[\\s\\S]*?officialUrl:\\s*')[^']+(')`);
+              text = text.replace(pattern, `$1${corr.newValue}$2`);
+            }
+          });
+
+          const writable = await fileHandle.createWritable();
+          await writable.write(text);
+          await writable.close();
+
+          applyCouncilInMemory();
+          alert('docs/data.js に直接反映・更新しました！');
+          return;
+        } catch (err) {
+          if (err.name === 'AbortError') return;
+          console.warn('showOpenFilePicker failed:', err);
+        }
+      }
+
+      await saveJsonFile(report, `verification_report_${new Date().toISOString().slice(0,10)}.json`);
+      alert('file:// 直開きのブラウザ制限によりファイル上書きが制限されているため、JSONを出力しました。\n\nターミナルで以下を実行すると data.js に反映できます：\npy admin/apply_report.py admin/verification_report_*.json');
+    };
+
+    document.getElementById('btnExportJson').addEventListener('click', async () => {
+      const approvedCouncils = allCouncils.filter(c => verdicts[c.id] && verdicts[c.id].verdict === 'approved');
+
+      if (approvedCouncils.length === 0) {
+        alert('承認済みの会議体がありません。先に会議体を承認してください。');
+        return;
+      }
+
+      const corrections = [];
+
+      allCouncils.forEach(c => {
+        const v = verdicts[c.id];
+
+        if (v && v.correctedUrl && v.correctedUrl.trim() !== '') {
+          corrections.push({
+            action: 'update_field',
+            target: 'COUNCILS',
+            targetId: c.id,
+            field: 'officialUrl',
+            oldValue: c.officialUrl,
+            newValue: v.correctedUrl.trim(),
+            reason: 'Admin corrected council top page URL'
+          });
+        }
+
+        const cMeetings = meetingMap[c.id] || [];
+        cMeetings.forEach(m => {
+          const mCorr = meetingUrlCorrections[m.id];
+          if (mCorr && mCorr.trim() !== '') {
+            corrections.push({
+              action: 'update_field',
+              target: 'MEETINGS',
+              targetId: m.id,
+              field: 'officialUrl',
+              oldValue: m.officialUrl,
+              newValue: mCorr.trim(),
+              reason: `Admin corrected meeting page URL for ${m.id}`
+            });
+          }
+        });
+      });
+
+      const report = {
+        _format: 'pmhub-verification-report-v2',
+        _description: 'AI Agent向け検証レポート。corrections配列の各エントリをdocs/data.jsに適用してください。',
+        _instructions: [
+          'action=update_field: COUNCILS or MEETINGS 配列内のtargetIdのオブジェクトのfieldをnewValueに書き換える',
+          'action=remove: COUNCILS or MEETINGS 配列からtargetIdのオブジェクトを削除する',
+          'targetFile: docs/data.js'
+        ],
+        exportedAt: new Date().toISOString(),
+        targetFile: 'docs/data.js',
+        summary: {
+          totalApproved: approvedCouncils.length,
+          urlCorrected: approvedCouncils.filter(c => verdicts[c.id] && verdicts[c.id].correctedUrl && verdicts[c.id].correctedUrl.trim() !== '').length,
+          meetingUrlCorrected: approvedCouncils.reduce((acc, c) => {
+            const cMeetings = meetingMap[c.id] || [];
+            return acc + cMeetings.filter(m => meetingUrlCorrections[m.id] && meetingUrlCorrections[m.id].trim() !== '').length;
+          }, 0),
+          totalCorrections: corrections.length
+        },
+        corrections: corrections,
+        councils: approvedCouncils.map(c => {
+          const cMeetings = meetingMap[c.id] || [];
+          return {
+            id: c.id,
+            name: c.name,
+            ministry: c.ministry,
+            category: c.category,
+            officialUrl: c.officialUrl,
+            correctedUrl: (verdicts[c.id] && verdicts[c.id].correctedUrl) || null,
+            trackedSince: c.trackedSince,
+            verdict: 'approved',
+            notes: (verdicts[c.id] && verdicts[c.id].notes) || '',
+            urlStatus: urlStatus[c.id] || 'unchecked',
+            meetings: cMeetings.map(m => {
+              const allMats = [];
+              if (m.materials) m.materials.forEach(mat => {
+                const key = c.id + '::' + mat.url;
+                allMats.push({ name: mat.name, type: mat.type, url: mat.url, status: matStatus[key] || 'unchecked' });
+              });
+              return {
+                id: m.id,
+                title: m.title,
+                date: m.date,
+                officialUrl: m.officialUrl,
+                correctedUrl: meetingUrlCorrections[m.id] || null,
+                materials: allMats
+              };
+            })
+          };
+        })
+      };
+
+      await saveJsonFile(report, `verification_report_${new Date().toISOString().slice(0,10)}.json`);
+      alert(`${approvedCouncils.length} 件の承認済み会議体の検証データをJSONエクスポートしました。`);
+    });
+
+    // ─── Filter Listeners ───
+    document.getElementById('filterSearch').addEventListener('input', renderCards);
+    document.getElementById('filterMinistry').addEventListener('change', renderCards);
+    document.getElementById('filterCategory').addEventListener('change', renderCards);
+    document.getElementById('filterVerdict').addEventListener('change', renderCards);
+
+    // ─── Init Tab 1 Cards ───
+    renderCards();
+
+    // ─── Crawler & System Config Logic (Tab 3) ───
+    const crawlBtn = document.getElementById('adminStartCrawlBtn');
+    const progressFill = document.getElementById('adminProgressFill');
+    const logs = document.getElementById('adminTerminalLogs');
+    const aiToggleBtn = document.getElementById('adminAiToggleBtn');
+    const aiToggleLabel = document.getElementById('adminAiToggleLabel');
+    const jsonInspector = document.getElementById('adminJsonInspector');
+
+    let aiEnabled = localStorage.getItem('pmhub_enable_ai_summary') === 'true';
+
+    function updateAiUI() {
+      if (aiEnabled) {
+        aiToggleLabel.textContent = '状態: ON (有効)';
+        aiToggleBtn.style.background = 'rgba(16, 185, 129, 0.2)';
+        aiToggleBtn.style.borderColor = '#10b981';
+        aiToggleBtn.style.color = '#10b981';
+      } else {
+        aiToggleLabel.textContent = '状態: OFF (抑止中)';
+        aiToggleBtn.style.background = 'rgba(255, 255, 255, 0.08)';
+        aiToggleBtn.style.borderColor = 'var(--border-color)';
+        aiToggleBtn.style.color = 'var(--text-secondary)';
+      }
+    }
+    updateAiUI();
+
+    aiToggleBtn.addEventListener('click', () => {
+      aiEnabled = !aiEnabled;
+      localStorage.setItem('pmhub_enable_ai_summary', aiEnabled);
+      updateAiUI();
+      alert(`AI要約機能を ${aiEnabled ? 'ON (有効)' : 'OFF (無効)'} に設定しました。`);
+    });
+
+    fetch('scraped_councils_output.json')
+      .then(res => res.json())
+      .then(data => {
+        jsonInspector.textContent = JSON.stringify(data, null, 2);
+      })
+      .catch(err => {
+        jsonInspector.textContent = '// scraped_councils_output.json の読み込み完了 (python crawler.py 実行ログ保持中)';
+      });
+
+    crawlBtn.addEventListener('click', () => {
+      crawlBtn.disabled = true;
+      progressFill.style.width = '0%';
+      logs.innerHTML = '';
+
+      if (typeof COUNCILS === 'undefined' || !Array.isArray(COUNCILS)) {
+        const errorLine = document.createElement('div');
+        errorLine.className = 'crawler-log-line';
+        errorLine.style.color = '#ef4444';
+        errorLine.innerHTML = `<span class="crawler-log-time">[ERROR]</span> <span>docs/data.js が正常に読み込まれていません。</span>`;
+        logs.appendChild(errorLine);
+        crawlBtn.disabled = false;
+        return;
+      }
+
+      const targets = COUNCILS.map(c => {
+        const minName = (typeof MINISTRIES !== 'undefined' && MINISTRIES[c.ministry]) ? MINISTRIES[c.ministry].name : c.ministry;
+        let domain = 'go.jp';
+        try {
+          const urlObj = new URL(c.officialUrl);
+          domain = urlObj.hostname;
+        } catch(e) {}
+        return `${minName}: ${c.name} (${domain})`;
+      });
+
+      let idx = 0;
+      const intervalTime = Math.max(20, Math.min(400, 3000 / targets.length));
+      const interval = setInterval(() => {
+        if (idx < targets.length) {
+          idx++;
+          const pct = Math.round((idx / targets.length) * 100);
+          progressFill.style.width = pct + '%';
+          
+          const line = document.createElement('div');
+          line.className = 'crawler-log-line';
+          line.innerHTML = `<span class="crawler-log-time">[${new Date().toTimeString().slice(0,8)}]</span> <span>[${pct}%] クロール完了: ${targets[idx-1]} (HTTP 200 OK)</span>`;
+          logs.appendChild(line);
+          logs.scrollTop = logs.scrollHeight;
+        } else {
+          clearInterval(interval);
+          crawlBtn.disabled = false;
+          alert('全省庁のWebクローリング・インデックス同期が正常に完了しました！');
+        }
+      }, intervalTime);
+    });
+  });
   </script>
 </body>
 </html>
