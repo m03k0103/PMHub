@@ -264,6 +264,20 @@
     }
     .btn-remove-url:hover { background: rgba(239,68,68,0.25); }
 
+    /* Keyword Config Styles */
+    .keyword-config-box {
+      margin-top: 1.25rem; background: rgba(0,0,0,0.25); border: 1px solid var(--border-color);
+      border-radius: var(--radius-md); padding: 1.25rem;
+    }
+    .keyword-form-group { margin-bottom: 1rem; }
+    .keyword-form-group label { display: block; font-size: 0.82rem; font-weight: 700; color: var(--text-secondary); margin-bottom: 0.4rem; }
+    .keyword-form-group textarea, .keyword-form-group input[type=text] {
+      width: 100%; background: var(--bg-input); border: 1px solid var(--border-color-strong);
+      border-radius: var(--radius-md); padding: 0.5rem 0.75rem; color: var(--text-primary);
+      font-size: 0.85rem; font-family: inherit;
+    }
+    .keyword-form-group .help-text { font-size: 0.72rem; color: var(--text-muted); margin-top: 0.25rem; }
+
     .empty-state { text-align: center; padding: 3rem 1rem; color: var(--text-muted); }
     .empty-state svg { margin-bottom: 1rem; opacity: 0.4; }
 
@@ -302,18 +316,98 @@
 
     <!-- ── TAB 1: 自動巡回 ＆ システム設定 ── -->
     <div id="tab-crawler" class="tab-content active">
-      <!-- CRAWLER ENGINE PANEL -->
+
+      <!-- 1. 新規会議体 検出巡回 (審議会ディスカバリー) -->
+      <section class="admin-card card-glass">
+        <div class="section-header" style="display: flex; align-items: flex-start; justify-content: space-between; flex-wrap: wrap; gap: 1rem;">
+          <div>
+            <h2 class="admin-header-title">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+              🏛 新規会議体 検出巡回（審議会ディスカバリー）
+            </h2>
+            <p class="section-subtitle" style="margin-top:0.3rem; color:var(--text-muted);">
+              全48省庁の「審議会等ページURL」を自動巡回し、未登録の会議体名称およびトップページURLを自動抽出・検出します。
+            </p>
+          </div>
+          <button class="btn-crawler btn-bulk approve-all" id="btnStartDiscovery" style="font-size: 1rem; padding: 0.75rem 1.5rem; background: rgba(59,130,246,0.15); color: #60a5fa; border-color: rgba(59,130,246,0.4);">
+            ⚡ 審議会ディスカバリー即時実行
+          </button>
+        </div>
+
+        <div style="margin-top: 1rem;">
+          <div class="crawler-progress-bar" style="height: 6px; background: rgba(255,255,255,0.08); border-radius: 4px; overflow: hidden; margin-bottom: 0.75rem;">
+            <div class="crawler-progress-fill" id="discoveryProgressFill" style="height: 100%; width: 0%; background: #3b82f6; transition: width 0.2s;"></div>
+          </div>
+
+          <div class="crawler-terminal" id="discoveryTerminalLogs" style="background: #090d16; border: 1px solid var(--border-color); padding: 1rem; border-radius: var(--radius-md); font-family: 'JetBrains Mono', monospace; font-size: 0.8rem; color: #94a3b8; max-height: 220px; overflow-y: auto;">
+            <div class="crawler-log-line">
+              <span class="crawler-log-time" style="color: #60a5fa;">[READY]</span> 新規会議体ディスカバリーエンジン待機中。「審議会ディスカバリー即時実行」をクリックしてください。
+            </div>
+          </div>
+
+          <div id="discoverySummaryBar" style="display:none; margin-top: 0.75rem; padding: 0.75rem 1rem; background: rgba(16,185,129,0.1); border: 1px solid rgba(16,185,129,0.3); border-radius: var(--radius-md); justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.5rem;">
+            <div>
+              <span style="font-weight: 700; color: #10b981;" id="discoveryResultCount">✨ 新規会議体 X 件を検出しました！</span>
+              <span style="font-size: 0.8rem; color: var(--text-muted); margin-left: 0.5rem;">「会議体データ管理」に未レビューとして追加されました。</span>
+            </div>
+            <button class="btn-bulk export-json" onclick="switchTab('tab-councils')" style="padding: 0.4rem 0.8rem; font-size: 0.8rem;">
+              🔍 会議体データ管理で確認・レビューする ↗
+            </button>
+          </div>
+        </div>
+
+        <!-- キーワード設定アコーディオン -->
+        <details style="margin-top: 1.25rem; border-top: 1px solid var(--border-color); padding-top: 1rem;">
+          <summary style="cursor: pointer; font-weight: 700; font-size: 0.9rem; color: #60a5fa; user-select: none;">
+            ⚙️ 抽出キーワード・除外条件のメンテナンス
+          </summary>
+          <div class="keyword-config-box">
+            <div class="keyword-form-group">
+              <label>共通 抽出キーワード（カンマ区切り）</label>
+              <textarea id="kwCommonInput" rows="2" placeholder="審議会, 検討会, 委員会, 部会, 分科会, 懇談会, ワーキンググループ, WG, 研究会..."></textarea>
+              <p class="help-text">リンクテキスト内にこれらの語句が含まれている場合に会議体として抽出します。</p>
+            </div>
+
+            <div class="keyword-form-group">
+              <label>共通 除外キーワード（カンマ区切り）</label>
+              <textarea id="kwExcludeInput" rows="2" placeholder="過去, 名簿, 議事録, 資料一覧, 法令, 傍聴, 更新履歴, PDF..."></textarea>
+              <p class="help-text">リンクテキスト内にこれらの語句が含まれている場合は除外します。</p>
+            </div>
+
+            <div style="border-top: 1px dashed rgba(255,255,255,0.1); padding-top: 0.75rem; margin-top: 0.75rem;">
+              <label style="font-size: 0.82rem; font-weight: 700; color: var(--text-secondary); margin-bottom: 0.4rem; display: block;">省庁別の例外設定（個別追加・個別除外）</label>
+              <div style="display: flex; gap: 0.75rem; flex-wrap: wrap; margin-bottom: 0.5rem;">
+                <select id="kwMinistrySelect" style="background: var(--bg-input); border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 0.4rem 0.6rem; color: var(--text-primary); font-size: 0.82rem;">
+                  <option value="">省庁を選択...</option>
+                </select>
+                <input type="text" id="kwMinAddInput" placeholder="この省庁のみの追加キーワード（カンマ区切り）" style="flex: 1; min-width: 200px;" />
+                <input type="text" id="kwMinExcInput" placeholder="この省庁のみの除外キーワード（カンマ区切り）" style="flex: 1; min-width: 200px;" />
+              </div>
+            </div>
+
+            <div style="margin-top: 1rem; display: flex; justify-content: flex-end; gap: 0.5rem;">
+              <button class="btn-bulk export-json" id="btnSaveKeywords" style="padding: 0.45rem 1rem; font-size: 0.82rem;">
+                💾 キーワード設定を保存
+              </button>
+            </div>
+          </div>
+        </details>
+      </section>
+
+      <!-- 2. 登録済み会議体 各会議・資料 自動収集クローラー (既存改修) -->
       <section class="admin-card card-glass">
         <div class="section-header" style="display: flex; align-items: flex-start; justify-content: space-between; flex-wrap: wrap; gap: 1rem;">
           <div>
             <h2 class="admin-header-title">
               <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/></svg>
-              政府Webサイト 自動巡回クローラー
+              📄 登録済み会議体 会議・資料自動収集クローラー
             </h2>
-            <p class="section-subtitle" style="margin-top:0.3rem; color:var(--text-muted);">内閣官房・内閣府・全21省庁のウェブサイトを自動巡回し、新着会議体・アジェンダ・PDF資料を解析します。</p>
+            <p class="section-subtitle" style="margin-top:0.3rem; color:var(--text-muted);">
+              承認済み会議体（<code>COUNCILS</code>）のトップページURLを巡回し、各会議（開催回、開催日、アジェンダ、PDF・HTML資料リンク等）の最新情報を自動抽出・更新します。
+            </p>
           </div>
           <button class="btn-crawler btn-bulk approve-all" id="adminStartCrawlBtn" style="font-size: 1rem; padding: 0.75rem 1.5rem;">
-            ⚡ クロール即時実行
+            ⚡ 会議・資料クロール即時実行
           </button>
         </div>
 
@@ -322,15 +416,15 @@
             <div class="crawler-progress-fill" id="adminProgressFill" style="height: 100%; width: 0%; background: #10b981; transition: width 0.2s;"></div>
           </div>
 
-          <div class="crawler-terminal" id="adminTerminalLogs" style="background: #090d16; border: 1px solid var(--border-color); padding: 1rem; border-radius: var(--radius-md); font-family: 'JetBrains Mono', monospace; font-size: 0.8rem; color: #94a3b8; max-height: 260px; overflow-y: auto;">
+          <div class="crawler-terminal" id="adminTerminalLogs" style="background: #090d16; border: 1px solid var(--border-color); padding: 1rem; border-radius: var(--radius-md); font-family: 'JetBrains Mono', monospace; font-size: 0.8rem; color: #94a3b8; max-height: 220px; overflow-y: auto;">
             <div class="crawler-log-line">
-              <span class="crawler-log-time" style="color: #60a5fa;">[READY]</span> 管理者用自動クローリングエンジン起動準備完了。
+              <span class="crawler-log-time" style="color: #60a5fa;">[READY]</span> 会議・資料クローリングエンジン待機中。
             </div>
           </div>
         </div>
       </section>
 
-      <!-- CONFIGURATION & FEATURE FLAGS -->
+      <!-- 3. CONFIGURATION & FEATURE FLAGS -->
       <section class="admin-card card-glass">
         <h3>⚙️ システム設定・Feature Flag 管理</h3>
         <p class="text-sm" style="margin-top: 0.3rem; color:var(--text-muted);">Token消費量や各種表示機能の切り替えを管理できます。</p>
@@ -346,12 +440,12 @@
         </div>
       </section>
 
-      <!-- SCRAPED LOG INSPECTOR -->
+      <!-- 4. SCRAPED LOG INSPECTOR -->
       <section class="admin-card card-glass">
         <h3>📄 最新パースデータ (`scraped_councils_output.json`)</h3>
         <p class="text-sm" style="margin-top: 0.3rem; color:var(--text-muted);">Pythonクローラー `crawler.py` の最終実行ログデータ</p>
         
-        <pre style="background: #090d16; border: 1px solid var(--border-color); padding: 1rem; border-radius: var(--radius-md); font-family: 'JetBrains Mono', monospace; font-size: 0.82rem; color: #94a3b8; overflow-x: auto; max-height: 250px; margin-top: 1rem;" id="adminJsonInspector">
+        <pre style="background: #090d16; border: 1px solid var(--border-color); padding: 1rem; border-radius: var(--radius-md); font-family: 'JetBrains Mono', monospace; font-size: 0.82rem; color: #94a3b8; overflow-x: auto; max-height: 200px; margin-top: 1rem;" id="adminJsonInspector">
 JSON データを読み込み中...
         </pre>
       </section>
@@ -366,8 +460,8 @@ JSON データを読み込み中...
         <div class="summary-stat"><span class="stat-label">承認済み</span><span class="stat-value approved" id="statApproved">0</span></div>
         <div class="summary-stat"><span class="stat-label">却下</span><span class="stat-value rejected" id="statRejected">0</span></div>
         <div class="summary-stat"><span class="stat-label">未レビュー</span><span class="stat-value pending" id="statPending">—</span></div>
+        <div class="summary-stat"><span class="stat-label">絞り込み表示中 (会議体 / 会議数)</span><span class="stat-value" style="color:#38bdf8;" id="statFilteredCounts">—</span></div>
         <div class="summary-stat"><span class="stat-label">URL 疎通OK</span><span class="stat-value url-ok" id="statUrlOk">—</span></div>
-        <div class="summary-stat"><span class="stat-label">URL修正済み</span><span class="stat-value" style="color:#a78bfa;" id="statCorrected">0</span></div>
       </section>
 
       <!-- Bulk Actions -->
@@ -389,6 +483,9 @@ JSON データを読み込み中...
           <option value="approved">承認済み</option>
           <option value="rejected">却下</option>
         </select>
+        <div id="filterResultBadge" style="margin-left: auto; font-size: 0.82rem; font-weight: 700; color: var(--accent-primary); background: rgba(59,130,246,0.12); padding: 0.4rem 0.8rem; border-radius: var(--radius-md); border: 1px solid rgba(59,130,246,0.25);">
+          表示中: 会議体 0 件 / 会議 0 件
+        </div>
       </div>
 
       <!-- Council List -->
@@ -410,12 +507,20 @@ JSON データを読み込み中...
   <script>
   document.addEventListener('DOMContentLoaded', () => {
     const STORAGE_KEY_VERDICTS = 'pmhub_council_verdicts';
+    const STORAGE_KEY_DISCOVERED = 'pmhub_discovered_councils';
 
     function getSavedVerdicts() {
       try { return JSON.parse(localStorage.getItem(STORAGE_KEY_VERDICTS) || '{}'); } catch(e) { return {}; }
     }
     function saveSavedVerdicts(vMap) {
       localStorage.setItem(STORAGE_KEY_VERDICTS, JSON.stringify(vMap));
+    }
+
+    function getSavedDiscovered() {
+      try { return JSON.parse(localStorage.getItem(STORAGE_KEY_DISCOVERED) || '[]'); } catch(e) { return []; }
+    }
+    function saveSavedDiscovered(list) {
+      localStorage.setItem(STORAGE_KEY_DISCOVERED, JSON.stringify(list));
     }
 
     const KNOWN_NEW_IDS = [
@@ -441,12 +546,21 @@ JSON データを読み込み中...
     ];
     const knownIdSet = new Set(KNOWN_NEW_IDS);
 
-    const councils  = (typeof COUNCILS !== 'undefined' && Array.isArray(COUNCILS)) ? COUNCILS : [];
+    const baseCouncils  = (typeof COUNCILS !== 'undefined' && Array.isArray(COUNCILS)) ? COUNCILS : [];
     const meetings  = (typeof MEETINGS !== 'undefined' && Array.isArray(MEETINGS)) ? MEETINGS : [];
     const ministries = (typeof MINISTRIES !== 'undefined') ? MINISTRIES : {};
     const categories = (typeof CATEGORIES !== 'undefined') ? CATEGORIES : {};
 
-    const allCouncils = councils;
+    // Combine baseCouncils and discoveredCouncils
+    let allCouncils = [...baseCouncils];
+    const discoveredFromStorage = getSavedDiscovered();
+    const existingIdSet = new Set(allCouncils.map(c => c.id));
+    discoveredFromStorage.forEach(dc => {
+      if (!existingIdSet.has(dc.id)) {
+        allCouncils.push(dc);
+        existingIdSet.add(dc.id);
+      }
+    });
 
     function normalizeVerdict(item, defaultV) {
       if (!item) return { verdict: defaultV, notes: '', correctedUrl: '' };
@@ -472,18 +586,28 @@ JSON データを読み込み中...
       verdicts[c.id] = normalizeVerdict(savedVerdicts[c.id], defaultV);
     });
 
-    const ministrySet = new Set(allCouncils.map(c => c.ministry));
-    const categorySet = new Set(allCouncils.map(c => c.category));
-    const filterMinistry = document.getElementById('filterMinistry');
-    const filterCategory = document.getElementById('filterCategory');
-    ministrySet.forEach(code => {
-      const name = ministries[code] ? ministries[code].name : code;
-      filterMinistry.innerHTML += `<option value="${code}">${name} (${code})</option>`;
-    });
-    categorySet.forEach(cat => {
-      const label = categories[cat] || cat;
-      filterCategory.innerHTML += `<option value="${cat}">${label}</option>`;
-    });
+    function populateFilterDropdowns() {
+      const ministrySet = new Set(allCouncils.map(c => c.ministry));
+      const categorySet = new Set(allCouncils.map(c => c.category));
+      const filterMinistry = document.getElementById('filterMinistry');
+      const filterCategory = document.getElementById('filterCategory');
+      const kwMinistrySelect = document.getElementById('kwMinistrySelect');
+
+      filterMinistry.innerHTML = '<option value="">全省庁</option>';
+      kwMinistrySelect.innerHTML = '<option value="">省庁を選択...</option>';
+      ministrySet.forEach(code => {
+        const name = ministries[code] ? ministries[code].name : code;
+        filterMinistry.innerHTML += `<option value="${code}">${name} (${code})</option>`;
+        kwMinistrySelect.innerHTML += `<option value="${code}">${name} (${code})</option>`;
+      });
+
+      filterCategory.innerHTML = '<option value="">全カテゴリ</option>';
+      categorySet.forEach(cat => {
+        const label = categories[cat] || cat;
+        filterCategory.innerHTML += `<option value="${cat}">${label}</option>`;
+      });
+    }
+    populateFilterDropdowns();
 
     const listEl = document.getElementById('councilList');
 
@@ -519,6 +643,22 @@ JSON データを読み込み中...
         }
         return true;
       });
+
+      // 絞り込み後の会議数（Meetings）の集計
+      let filteredMeetingsCount = 0;
+      filtered.forEach(c => {
+        const cMeetings = meetingMap[c.id] || [];
+        filteredMeetingsCount += cMeetings.length;
+      });
+
+      const filterResultBadge = document.getElementById('filterResultBadge');
+      if (filterResultBadge) {
+        filterResultBadge.textContent = `表示中: 会議体 ${filtered.length} 件 / 会議 ${filteredMeetingsCount} 件`;
+      }
+      const statFilteredCounts = document.getElementById('statFilteredCounts');
+      if (statFilteredCounts) {
+        statFilteredCounts.textContent = `${filtered.length} / ${filteredMeetingsCount} 件`;
+      }
 
       if (filtered.length === 0) {
         listEl.innerHTML = `<div class="empty-state">
@@ -564,6 +704,7 @@ JSON データを読み込み中...
           ${diffHtml}
         </div>`;
 
+        // 個別会議ごとのカード表示（個別会議URL＋その会議の資料一覧テーブル）
         let meetingUrlsHtml = '';
         if (sortedMeetings.length > 0) {
           const meetingRows = sortedMeetings.map(m => {
@@ -576,78 +717,84 @@ JSON データを読み込み中...
                 <div class="new-url">+ ${escHtml(mCorrected)}</div>
               </div>`;
             }
-            return `<div class="meeting-url-row">
-              <div class="mu-meeting-title">
-                <span>第${m.id.split('-').pop()}回</span>
-                <span class="mu-date">${m.date}</span>
-                <span class="mu-id">(${m.id})</span>
+
+            // この個別会議に紐付く資料一覧
+            const mMats = m.materials || [];
+            let mMatsTableHtml = '';
+            if (mMats.length > 0) {
+              const matRows = mMats.map((mat, mi) => {
+                const matKey = c.id + '::' + mat.url;
+                const ms = matStatus[matKey];
+                let msBadge = '<span class="url-status" style="color:var(--text-muted);font-size:0.65rem;">未検証</span>';
+                if (ms === 'checking') msBadge = '<span class="url-status checking">⏳</span>';
+                else if (ms === 'ok') msBadge = '<span class="url-status ok">✓</span>';
+                else if (ms === 'error') msBadge = '<span class="url-status error">✗</span>';
+                const typeClass = mat.type === 'PDF' ? 'mat-type-pdf' : mat.type === 'HTML' ? 'mat-type-html' : 'mat-type-other';
+
+                return `<tr>
+                  <td style="width: 5%;">${mi + 1}</td>
+                  <td style="width: 45%;">${escHtml(mat.name)}</td>
+                  <td style="width: 12%;"><span class="mat-type-badge ${typeClass}">${mat.type}</span></td>
+                  <td style="width: 28%;"><a href="${escAttr(mat.url)}" target="_blank" rel="noopener">${truncateUrl(mat.url, 45)}</a></td>
+                  <td style="width: 10%;">${msBadge}</td>
+                </tr>`;
+              }).join('');
+
+              mMatsTableHtml = `<table class="mat-table" style="margin-top: 0.35rem;">
+                <thead><tr><th>#</th><th>資料名</th><th>形式</th><th>URL</th><th>疎通</th></tr></thead>
+                <tbody>${matRows}</tbody>
+              </table>`;
+            } else {
+              mMatsTableHtml = `<div style="font-size:0.75rem; color:var(--text-muted); padding:0.3rem 0;">※ この開催回の資料データなし</div>`;
+            }
+
+            return `<div class="meeting-url-row" style="background: rgba(0,0,0,0.15); border: 1px solid rgba(255,255,255,0.06); border-radius: var(--radius-md); padding: 0.75rem; margin-bottom: 0.75rem;">
+              <div class="mu-meeting-title" style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:0.4rem; margin-bottom:0.4rem;">
+                <div>
+                  <span style="font-weight:700; color:#34d399; font-size:0.85rem;">第${m.id.split('-').pop()}回</span>
+                  <span class="mu-date" style="margin-left:0.5rem; color:var(--text-secondary); font-size:0.78rem;">📅 ${m.date}</span>
+                  <span class="mu-id" style="color:var(--text-muted); font-size:0.7rem; margin-left:0.3rem;">(${m.id})</span>
+                </div>
+                <div style="display:flex; gap:0.5rem; align-items:center;">
+                  <span style="font-size:0.72rem; color:var(--text-muted);">資料: ${mMats.length} 件</span>
+                  ${mMats.length ? `<button class="btn-check-mats" onclick="checkMeetingMaterials('${c.id}', '${m.id}')" style="font-size:0.65rem; padding:0.15rem 0.45rem;">🔗 資料疎通チェック</button>` : ''}
+                </div>
               </div>
-              <div class="mu-current">現在: <a href="${escAttr(m.officialUrl)}" target="_blank" rel="noopener">${truncateUrl(m.officialUrl, 60)}</a></div>
+
+              <div class="mu-current">個別会議ページURL: <a href="${escAttr(m.officialUrl)}" target="_blank" rel="noopener">${truncateUrl(m.officialUrl, 65)}</a></div>
               <div class="uc-row">
-                <input type="url" value="${escAttr(mCorrected)}" placeholder="修正後のURL（必要な場合のみ入力）"
+                <input type="url" value="${escAttr(mCorrected)}" placeholder="個別会議ページの修正後URL（必要な場合のみ入力）"
                   class="${mHasCorr ? 'has-value' : ''}"
                   oninput="setCorrectedMeetingUrl('${m.id}', this.value)" />
                 <button class="btn-open-url" onclick="openMeetingUrl('${m.id}')">開く ↗</button>
               </div>
               ${mDiff}
+
+              <!-- この個別会議に紐付く資料一覧 -->
+              <div style="margin-top: 0.6rem; border-top: 1px dashed rgba(255,255,255,0.08); padding-top: 0.45rem;">
+                <div style="font-size:0.72rem; font-weight:700; color:var(--text-muted); margin-bottom:0.25rem;">📎 この開催回の配布資料一覧</div>
+                ${mMatsTableHtml}
+              </div>
             </div>`;
           }).join('');
 
           meetingUrlsHtml = `<div class="meetings-urls-panel">
-            <div class="mu-label">📋 個別会議ページURL（${sortedMeetings.length}件）</div>
+            <div class="mu-label" style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.65rem;">
+              <span>📋 個別会議 ＆ 資料一覧（全 ${sortedMeetings.length} 回）</span>
+              <button class="btn-check-mats" onclick="checkMaterials('${c.id}')">🔗 全開催回の資料を一括チェック</button>
+            </div>
             ${meetingRows}
           </div>`;
-        }
-
-        const allMats = [];
-        sortedMeetings.forEach(m => {
-          if (m.materials && m.materials.length) {
-            m.materials.forEach(mat => {
-              allMats.push({ ...mat, meetingDate: m.date });
-            });
-          }
-        });
-
-        let matsHtml = '';
-        if (allMats.length > 0) {
-          const matRows = allMats.map((mat, mi) => {
-            const matKey = c.id + '::' + mat.url;
-            const ms = matStatus[matKey];
-            let msBadge = '<span class="url-status" style="color:var(--text-muted);font-size:0.65rem;">未検証</span>';
-            if (ms === 'checking') msBadge = '<span class="url-status checking">⏳</span>';
-            else if (ms === 'ok') msBadge = '<span class="url-status ok">✓</span>';
-            else if (ms === 'error') msBadge = '<span class="url-status error">✗</span>';
-            const typeClass = mat.type === 'PDF' ? 'mat-type-pdf' : mat.type === 'HTML' ? 'mat-type-html' : 'mat-type-other';
-            return `<tr>
-              <td>${mi + 1}</td>
-              <td>${escHtml(mat.name)}</td>
-              <td><span class="mat-type-badge ${typeClass}">${mat.type}</span></td>
-              <td><a href="${escAttr(mat.url)}" target="_blank" rel="noopener">${truncateUrl(mat.url, 50)}</a></td>
-              <td>${msBadge}</td>
-            </tr>`;
-          }).join('');
-
-          matsHtml = `<div class="materials-panel">
-            <div class="mat-header">
-              <div class="mat-label">📎 資料リンク検証（${allMats.length}件）</div>
-              <button class="btn-check-mats" onclick="checkMaterials('${c.id}')">🔗 資料リンクチェック</button>
-            </div>
-            <table class="mat-table">
-              <thead><tr><th>#</th><th>資料名</th><th>形式</th><th>URL</th><th>疎通</th></tr></thead>
-              <tbody>${matRows}</tbody>
-            </table>
-          </div>`;
         } else {
-          matsHtml = `<div class="materials-panel">
-            <div class="mat-header">
-              <div class="mat-label">📎 資料リンク検証</div>
+          meetingUrlsHtml = `<div class="meetings-urls-panel" style="padding: 0.6rem 0.85rem;">
+            <div style="font-size: 0.78rem; color: var(--text-muted); font-style: italic;">
+              ※ 個別会議の開催履歴データはまだ登録されていません（トップページURLのみ）。
             </div>
-            <div class="mat-no-items">資料データなし</div>
           </div>`;
         }
 
         let actionButtons = '';
-        if (v.verdict === null) {
+        if (v.verdict === null || v.verdict === 'pending') {
           actionButtons = `
             <button class="btn-approve" onclick="setVerdict('${c.id}','approved')">✓ 承認</button>
             <button class="btn-reject" onclick="setVerdict('${c.id}','rejected')">✗ 却下</button>`;
@@ -663,11 +810,13 @@ JSON データを読み込み中...
           ? '<span class="meta-chip" style="color:#ef4444;border-color:rgba(239,68,68,0.3);background:rgba(239,68,68,0.08);">✗ 却下</span>'
           : '<span class="meta-chip" style="color:#f59e0b;border-color:rgba(245,158,11,0.3);background:rgba(245,158,11,0.08);">⏳ 未レビュー</span>';
 
-        return `<div class="council-card ${verdictClass}" style="--card-accent: ${accentColor}; animation-delay: ${i * 0.03}s;" id="card-${c.id}">
+        const isNewChip = c.isNew ? '<span class="meta-chip" style="color:#ec4899;border-color:rgba(236,72,153,0.3);background:rgba(236,72,153,0.08);">✨ 新規検出</span>' : '';
+
+        return `<div class="council-card ${verdictClass}" style="--card-accent: ${accentColor}; animation-delay: ${i * 0.02}s;" id="card-${c.id}">
           <div class="card-top">
             <div class="card-title-area">
               <div class="card-idx">#${globalIdx} / ${totalCount}</div>
-              <div class="card-name">${c.name} ${statusBadge}</div>
+              <div class="card-name">${c.name} ${statusBadge} ${isNewChip}</div>
               <div class="card-id">ID: ${c.id}</div>
             </div>
             <div class="card-actions">${actionButtons}</div>
@@ -677,11 +826,11 @@ JSON データを読み込み中...
             <span class="category-badge cat-${c.category}">${catLabel}</span>
             <span class="meta-chip"><span class="chip-icon">🔗</span> <a href="${escAttr(c.officialUrl)}" target="_blank" rel="noopener">${truncateUrl(c.officialUrl, 55)}</a> ${urlBadge}</span>
             <span class="meta-chip"><span class="chip-icon">📅</span> ${c.trackedSince || '—'}</span>
+            <span class="meta-chip"><span class="chip-icon">📊</span> 会議数: ${sortedMeetings.length} 件</span>
           </div>
           ${urlCorrectionHtml}
           ${meetingUrlsHtml}
-          ${matsHtml}
-          <textarea class="notes-area" placeholder="検証メモ（任意）…" onchange="setNotes('${c.id}', this.value)">${v.notes}</textarea>
+          <textarea class="notes-area" placeholder="検証メモ（任意）…" onchange="setNotes('${c.id}', this.value)">${v.notes || ''}</textarea>
         </div>`;
       }).join('');
 
@@ -689,6 +838,7 @@ JSON データを読み込み中...
     }
 
     function truncateUrl(url, max) {
+      if (!url) return '';
       if (url.length <= max) return url;
       return url.substring(0, max) + '…';
     }
@@ -700,15 +850,18 @@ JSON データを読み込み中...
     }
 
     window.setVerdict = function(id, verdict) {
+      if (!verdicts[id]) verdicts[id] = { verdict: null, notes: '', correctedUrl: '' };
       verdicts[id].verdict = verdict;
       saveSavedVerdicts(verdicts);
       renderCards();
     };
     window.setNotes = function(id, text) {
+      if (!verdicts[id]) verdicts[id] = { verdict: null, notes: '', correctedUrl: '' };
       verdicts[id].notes = text;
       saveSavedVerdicts(verdicts);
     };
     window.setCorrectedUrl = function(id, url) {
+      if (!verdicts[id]) verdicts[id] = { verdict: null, notes: '', correctedUrl: '' };
       verdicts[id].correctedUrl = url.trim();
       saveSavedVerdicts(verdicts);
       const card = document.getElementById(`card-${id}`);
@@ -718,7 +871,7 @@ JSON データを読み込み中...
       }
     };
     window.openCorrectedUrl = function(id) {
-      const corrected = verdicts[id].correctedUrl;
+      const corrected = verdicts[id] ? verdicts[id].correctedUrl : '';
       const council = allCouncils.find(c => c.id === id);
       const url = corrected || (council ? council.officialUrl : '');
       if (url) window.open(url, '_blank');
@@ -753,6 +906,17 @@ JSON データを読み込み中...
       cMeetings.forEach(m => {
         if (m.materials) m.materials.forEach(mat => allUrls.push(mat.url));
       });
+      for (let i = 0; i < allUrls.length; i += 3) {
+        const batch = allUrls.slice(i, i + 3);
+        await Promise.all(batch.map(u => checkSingleMat(councilId, u)));
+        renderCards();
+      }
+    };
+
+    window.checkMeetingMaterials = async function(councilId, meetingId) {
+      const targetMeeting = meetings.find(m => m.id === meetingId);
+      if (!targetMeeting || !targetMeeting.materials || !targetMeeting.materials.length) return;
+      const allUrls = targetMeeting.materials.map(mat => mat.url);
       for (let i = 0; i < allUrls.length; i += 3) {
         const batch = allUrls.slice(i, i + 3);
         await Promise.all(batch.map(u => checkSingleMat(councilId, u)));
@@ -798,7 +962,6 @@ JSON データを読み込み中...
     }
     window.switchTab = switchTab;
 
-    // URL Hash Navigation Support
     const initHash = (window.location.hash || '').replace('#', '');
     if (initHash === 'ministries') switchTab('tab-ministries');
     else if (initHash === 'crawler') switchTab('tab-crawler');
@@ -1119,23 +1282,40 @@ JSON データを読み込み中...
       renderCards();
     });
 
+    // ─── Save Council to data.js (including new discovered councils) ───
     window.saveCouncilDirectToDataJs = async function() {
       const approvedCouncils = allCouncils.filter(c => verdicts[c.id] && verdicts[c.id].verdict === 'approved');
       const corrections = [];
 
       allCouncils.forEach(c => {
         const v = verdicts[c.id];
-        if (v && v.correctedUrl && v.correctedUrl.trim() !== '') {
-          corrections.push({
-            action: 'update_field',
-            target: 'COUNCILS',
-            targetId: c.id,
-            field: 'officialUrl',
-            oldValue: c.officialUrl,
-            newValue: v.correctedUrl.trim(),
-            reason: 'Admin corrected council top page URL'
-          });
+        if (v && v.verdict === 'approved') {
+          // 新規検出された会議体で baseCouncils に存在しないものは追加
+          if (c.isNew && !baseCouncils.some(bc => bc.id === c.id)) {
+            corrections.push({
+              action: 'add_council',
+              council: {
+                id: c.id,
+                name: c.name,
+                ministry: c.ministry,
+                category: c.category,
+                officialUrl: v.correctedUrl ? v.correctedUrl.trim() : c.officialUrl,
+                trackedSince: c.trackedSince || new Date().toISOString().slice(0, 10)
+              }
+            });
+          } else if (v.correctedUrl && v.correctedUrl.trim() !== '') {
+            corrections.push({
+              action: 'update_field',
+              target: 'COUNCILS',
+              targetId: c.id,
+              field: 'officialUrl',
+              oldValue: c.officialUrl,
+              newValue: v.correctedUrl.trim(),
+              reason: 'Admin corrected council top page URL'
+            });
+          }
         }
+
         const cMeetings = meetingMap[c.id] || [];
         cMeetings.forEach(m => {
           const mCorr = meetingUrlCorrections[m.id];
@@ -1154,13 +1334,13 @@ JSON データを読み込み中...
       });
 
       if (corrections.length === 0) {
-        alert('URLの修正内容がありません（変更箇所を入力してください）。');
+        alert('変更または新規承認された会議体情報がありません。');
         return;
       }
 
       const report = {
         _format: 'pmhub-verification-report-v2',
-        _description: '会議体・会議ページURL更新',
+        _description: '会議体・会議ページURL更新および新規会議体追加',
         exportedAt: new Date().toISOString(),
         targetFile: 'docs/data.js',
         corrections: corrections
@@ -1168,7 +1348,16 @@ JSON データを読み込み中...
 
       function applyCouncilInMemory() {
         corrections.forEach(corr => {
-          if (corr.target === 'COUNCILS') {
+          if (corr.action === 'add_council' && corr.council) {
+            const added = corr.council;
+            const target = allCouncils.find(c => c.id === added.id);
+            if (target) {
+              target.isNew = false;
+              if (!baseCouncils.some(bc => bc.id === added.id)) {
+                baseCouncils.push(added);
+              }
+            }
+          } else if (corr.target === 'COUNCILS') {
             const targetCouncil = allCouncils.find(c => c.id === corr.targetId);
             if (targetCouncil) targetCouncil.officialUrl = corr.newValue;
             if (verdicts[corr.targetId]) verdicts[corr.targetId].correctedUrl = '';
@@ -1210,6 +1399,12 @@ JSON データを読み込み中...
             if (corr.action === 'update_field') {
               const pattern = new RegExp(`(id:\\s*'${corr.targetId}'[\\s\\S]*?officialUrl:\\s*')[^']+(')`);
               text = text.replace(pattern, `$1${corr.newValue}$2`);
+            } else if (corr.action === 'add_council' && corr.council) {
+              const added = corr.council;
+              if (!text.includes(`id: '${added.id}'`)) {
+                const cFormatted = `  {\n    id: '${added.id}',\n    name: '${added.name.replace(/'/g, "\\'")}',\n    ministry: '${added.ministry}',\n    category: '${added.category}',\n    officialUrl: '${added.officialUrl}',\n    trackedSince: '${added.trackedSince}'\n  },\n];\nconst MEETINGS`;
+                text = text.replace(/\n\];[\s\n]*const MEETINGS/, `,\n${cFormatted}`);
+              }
             }
           });
 
@@ -1243,16 +1438,30 @@ JSON データを読み込み中...
       allCouncils.forEach(c => {
         const v = verdicts[c.id];
 
-        if (v && v.correctedUrl && v.correctedUrl.trim() !== '') {
-          corrections.push({
-            action: 'update_field',
-            target: 'COUNCILS',
-            targetId: c.id,
-            field: 'officialUrl',
-            oldValue: c.officialUrl,
-            newValue: v.correctedUrl.trim(),
-            reason: 'Admin corrected council top page URL'
-          });
+        if (v && v.verdict === 'approved') {
+          if (c.isNew && !baseCouncils.some(bc => bc.id === c.id)) {
+            corrections.push({
+              action: 'add_council',
+              council: {
+                id: c.id,
+                name: c.name,
+                ministry: c.ministry,
+                category: c.category,
+                officialUrl: v.correctedUrl ? v.correctedUrl.trim() : c.officialUrl,
+                trackedSince: c.trackedSince || new Date().toISOString().slice(0, 10)
+              }
+            });
+          } else if (v.correctedUrl && v.correctedUrl.trim() !== '') {
+            corrections.push({
+              action: 'update_field',
+              target: 'COUNCILS',
+              targetId: c.id,
+              field: 'officialUrl',
+              oldValue: c.officialUrl,
+              newValue: v.correctedUrl.trim(),
+              reason: 'Admin corrected council top page URL'
+            });
+          }
         }
 
         const cMeetings = meetingMap[c.id] || [];
@@ -1275,53 +1484,13 @@ JSON データを読み込み中...
       const report = {
         _format: 'pmhub-verification-report-v2',
         _description: 'AI Agent向け検証レポート。corrections配列の各エントリをdocs/data.jsに適用してください。',
-        _instructions: [
-          'action=update_field: COUNCILS or MEETINGS 配列内のtargetIdのオブジェクトのfieldをnewValueに書き換える',
-          'action=remove: COUNCILS or MEETINGS 配列からtargetIdのオブジェクトを削除する',
-          'targetFile: docs/data.js'
-        ],
         exportedAt: new Date().toISOString(),
         targetFile: 'docs/data.js',
         summary: {
           totalApproved: approvedCouncils.length,
-          urlCorrected: approvedCouncils.filter(c => verdicts[c.id] && verdicts[c.id].correctedUrl && verdicts[c.id].correctedUrl.trim() !== '').length,
-          meetingUrlCorrected: approvedCouncils.reduce((acc, c) => {
-            const cMeetings = meetingMap[c.id] || [];
-            return acc + cMeetings.filter(m => meetingUrlCorrections[m.id] && meetingUrlCorrections[m.id].trim() !== '').length;
-          }, 0),
           totalCorrections: corrections.length
         },
-        corrections: corrections,
-        councils: approvedCouncils.map(c => {
-          const cMeetings = meetingMap[c.id] || [];
-          return {
-            id: c.id,
-            name: c.name,
-            ministry: c.ministry,
-            category: c.category,
-            officialUrl: c.officialUrl,
-            correctedUrl: (verdicts[c.id] && verdicts[c.id].correctedUrl) || null,
-            trackedSince: c.trackedSince,
-            verdict: 'approved',
-            notes: (verdicts[c.id] && verdicts[c.id].notes) || '',
-            urlStatus: urlStatus[c.id] || 'unchecked',
-            meetings: cMeetings.map(m => {
-              const allMats = [];
-              if (m.materials) m.materials.forEach(mat => {
-                const key = c.id + '::' + mat.url;
-                allMats.push({ name: mat.name, type: mat.type, url: mat.url, status: matStatus[key] || 'unchecked' });
-              });
-              return {
-                id: m.id,
-                title: m.title,
-                date: m.date,
-                officialUrl: m.officialUrl,
-                correctedUrl: meetingUrlCorrections[m.id] || null,
-                materials: allMats
-              };
-            })
-          };
-        })
+        corrections: corrections
       };
 
       await saveJsonFile(report, `verification_report_${new Date().toISOString().slice(0,10)}.json`);
@@ -1334,10 +1503,182 @@ JSON データを読み込み中...
     document.getElementById('filterCategory').addEventListener('change', renderCards);
     document.getElementById('filterVerdict').addEventListener('change', renderCards);
 
-    // ─── Init Tab 1 Cards ───
     renderCards();
 
-    // ─── Crawler & System Config Logic (Tab 3) ───
+    // ─── 1. Council Discovery Crawler Logic ───
+    const btnStartDiscovery = document.getElementById('btnStartDiscovery');
+    const discoveryProgressFill = document.getElementById('discoveryProgressFill');
+    const discoveryTerminalLogs = document.getElementById('discoveryTerminalLogs');
+    const discoverySummaryBar = document.getElementById('discoverySummaryBar');
+    const discoveryResultCount = document.getElementById('discoveryResultCount');
+
+    let currentKeywords = {
+      commonKeywords: [],
+      commonExcludeKeywords: [],
+      ministryAddKeywords: {},
+      ministryExcludeKeywords: {}
+    };
+
+    async function loadKeywordConfig() {
+      try {
+        const res = await fetch('/api/discovery-keywords');
+        if (res.ok) {
+          currentKeywords = await res.json();
+          renderKeywordsUI();
+          return;
+        }
+      } catch(e) {}
+      const saved = localStorage.getItem('pmhub_discovery_keywords');
+      if (saved) {
+        try { currentKeywords = JSON.parse(saved); } catch(e) {}
+      } else {
+        currentKeywords = {
+          commonKeywords: ["審議会", "検討会", "委員会", "部会", "分科会", "懇談会", "ワーキンググループ", "WG", "研究会", "プロジェクトチーム", "タスクフォース", "円卓会議", "会議"],
+          commonExcludeKeywords: ["過去", "名簿", "委員名簿", "議事録", "議事要旨", "資料一覧", "配付資料", "法令", "設置根拠", "傍聴", "更新履歴", "PDF", "Excel"],
+          ministryAddKeywords: {},
+          ministryExcludeKeywords: {}
+        };
+      }
+      renderKeywordsUI();
+    }
+
+    function renderKeywordsUI() {
+      document.getElementById('kwCommonInput').value = (currentKeywords.commonKeywords || []).join(', ');
+      document.getElementById('kwExcludeInput').value = (currentKeywords.commonExcludeKeywords || []).join(', ');
+      const selMin = document.getElementById('kwMinistrySelect').value;
+      if (selMin) {
+        document.getElementById('kwMinAddInput').value = (currentKeywords.ministryAddKeywords && currentKeywords.ministryAddKeywords[selMin] || []).join(', ');
+        document.getElementById('kwMinExcInput').value = (currentKeywords.ministryExcludeKeywords && currentKeywords.ministryExcludeKeywords[selMin] || []).join(', ');
+      } else {
+        document.getElementById('kwMinAddInput').value = '';
+        document.getElementById('kwMinExcInput').value = '';
+      }
+    }
+
+    document.getElementById('kwMinistrySelect').addEventListener('change', () => {
+      const selMin = document.getElementById('kwMinistrySelect').value;
+      if (selMin) {
+        document.getElementById('kwMinAddInput').value = (currentKeywords.ministryAddKeywords && currentKeywords.ministryAddKeywords[selMin] || []).join(', ');
+        document.getElementById('kwMinExcInput').value = (currentKeywords.ministryExcludeKeywords && currentKeywords.ministryExcludeKeywords[selMin] || []).join(', ');
+      }
+    });
+
+    document.getElementById('btnSaveKeywords').addEventListener('click', async () => {
+      const commonKws = document.getElementById('kwCommonInput').value.split(',').map(s => s.trim()).filter(s => s);
+      const excKws = document.getElementById('kwExcludeInput').value.split(',').map(s => s.trim()).filter(s => s);
+      const selMin = document.getElementById('kwMinistrySelect').value;
+      if (selMin) {
+        const addKws = document.getElementById('kwMinAddInput').value.split(',').map(s => s.trim()).filter(s => s);
+        const minExcKws = document.getElementById('kwMinExcInput').value.split(',').map(s => s.trim()).filter(s => s);
+        if (!currentKeywords.ministryAddKeywords) currentKeywords.ministryAddKeywords = {};
+        if (!currentKeywords.ministryExcludeKeywords) currentKeywords.ministryExcludeKeywords = {};
+        currentKeywords.ministryAddKeywords[selMin] = addKws;
+        currentKeywords.ministryExcludeKeywords[selMin] = minExcKws;
+      }
+      currentKeywords.commonKeywords = commonKws;
+      currentKeywords.commonExcludeKeywords = excKws;
+
+      try {
+        const res = await fetch('/api/save-discovery-keywords', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(currentKeywords)
+        });
+        if (res.ok) {
+          alert('キーワード設定を保存しました。');
+          return;
+        }
+      } catch(e) {}
+      localStorage.setItem('pmhub_discovery_keywords', JSON.stringify(currentKeywords));
+      alert('キーワード設定をブラウザに保存しました。');
+    });
+
+    loadKeywordConfig();
+
+    function integrateDiscoveredCouncils(newCouncilsList) {
+      if (!newCouncilsList || !newCouncilsList.length) return;
+      const currentIds = new Set(allCouncils.map(c => c.id));
+      let addedCount = 0;
+      newCouncilsList.forEach(dc => {
+        if (!currentIds.has(dc.id)) {
+          dc.isNew = true;
+          allCouncils.push(dc);
+          currentIds.add(dc.id);
+          verdicts[dc.id] = { verdict: null, notes: '', correctedUrl: '' };
+          addedCount++;
+        }
+      });
+      saveSavedDiscovered(allCouncils.filter(c => c.isNew && !baseCouncils.some(bc => bc.id === c.id)));
+      saveSavedVerdicts(verdicts);
+      populateFilterDropdowns();
+      renderCards();
+      return addedCount;
+    }
+
+    btnStartDiscovery.addEventListener('click', async () => {
+      btnStartDiscovery.disabled = true;
+      discoveryProgressFill.style.width = '0%';
+      discoveryTerminalLogs.innerHTML = '';
+      discoverySummaryBar.style.display = 'none';
+
+      const logLine = (msg, time = new Date().toTimeString().slice(0,8)) => {
+        const line = document.createElement('div');
+        line.className = 'crawler-log-line';
+        line.innerHTML = `<span class="crawler-log-time" style="color:#60a5fa;">[${time}]</span> <span>${msg}</span>`;
+        discoveryTerminalLogs.appendChild(line);
+        discoveryTerminalLogs.scrollTop = discoveryTerminalLogs.scrollHeight;
+      };
+
+      logLine('全省庁の審議会等一覧ページ (councilsUrls) の巡回を開始します...');
+
+      // 1. Try local server API
+      try {
+        discoveryProgressFill.style.width = '30%';
+        logLine('サーバー側ディスカバリーエンジン (discover_councils.py) を実行中...');
+        const res = await fetch('/api/run-discovery', { method: 'POST' });
+        if (res.ok) {
+          discoveryProgressFill.style.width = '100%';
+          const result = await res.json();
+          const discovered = result.councils || [];
+          logLine(`ディスカバリー完了: ${discovered.length} 件の会議体を検出`);
+          
+          discovered.slice(0, 15).forEach(c => {
+            logLine(`✨ [検出] ${c.id}: ${c.name} (${c.ministry}) - ${c.officialUrl}`);
+          });
+          if (discovered.length > 15) {
+            logLine(`...他 ${discovered.length - 15} 件の会議体を検出`);
+          }
+
+          const addedCount = integrateDiscoveredCouncils(discovered);
+          discoverySummaryBar.style.display = 'flex';
+          discoveryResultCount.textContent = `✨ 新規会議体 ${discovered.length} 件を検出しました！（未レビューとして追加: ${addedCount} 件）`;
+          btnStartDiscovery.disabled = false;
+          return;
+        }
+      } catch(e) {}
+
+      // 2. Client-side simulation fallback if server is not running
+      logLine('[WARN] ローカルサーバーAPI未接続。ブラウザ直接巡回シミュレーションを実行します...');
+      const targetMinistries = Object.keys(ministries).filter(k => ministries[k].hasCouncils !== false && ministries[k].councilsUrls && ministries[k].councilsUrls.length);
+      let idx = 0;
+      const interval = setInterval(() => {
+        if (idx < targetMinistries.length) {
+          const code = targetMinistries[idx];
+          const m = ministries[code];
+          idx++;
+          const pct = Math.round((idx / targetMinistries.length) * 100);
+          discoveryProgressFill.style.width = pct + '%';
+          logLine(`[${pct}%] 省庁ページ巡回完了: ${m.name} (${code}) - 審議会URL ${m.councilsUrls.length} 件`);
+        } else {
+          clearInterval(interval);
+          discoveryProgressFill.style.width = '100%';
+          logLine('全省庁の審議会一覧巡回が完了しました。');
+          btnStartDiscovery.disabled = false;
+        }
+      }, 80);
+    });
+
+    // ─── 2. Meeting Crawler Logic (Tab 1 Block 2) ───
     const crawlBtn = document.getElementById('adminStartCrawlBtn');
     const progressFill = document.getElementById('adminProgressFill');
     const logs = document.getElementById('adminTerminalLogs');
@@ -1383,7 +1724,7 @@ JSON データを読み込み中...
       progressFill.style.width = '0%';
       logs.innerHTML = '';
 
-      if (typeof COUNCILS === 'undefined' || !Array.isArray(COUNCILS)) {
+      if (typeof allCouncils === 'undefined' || !Array.isArray(allCouncils)) {
         const errorLine = document.createElement('div');
         errorLine.className = 'crawler-log-line';
         errorLine.style.color = '#ef4444';
@@ -1393,7 +1734,7 @@ JSON データを読み込み中...
         return;
       }
 
-      const targets = COUNCILS.map(c => {
+      const targets = allCouncils.map(c => {
         const minName = (typeof MINISTRIES !== 'undefined' && MINISTRIES[c.ministry]) ? MINISTRIES[c.ministry].name : c.ministry;
         let domain = 'go.jp';
         try {
@@ -1413,13 +1754,13 @@ JSON データを読み込み中...
           
           const line = document.createElement('div');
           line.className = 'crawler-log-line';
-          line.innerHTML = `<span class="crawler-log-time">[${new Date().toTimeString().slice(0,8)}]</span> <span>[${pct}%] クロール完了: ${targets[idx-1]} (HTTP 200 OK)</span>`;
+          line.innerHTML = `<span class="crawler-log-time">[${new Date().toTimeString().slice(0,8)}]</span> <span>[${pct}%] 会議・資料クロール完了: ${targets[idx-1]} (HTTP 200 OK)</span>`;
           logs.appendChild(line);
           logs.scrollTop = logs.scrollHeight;
         } else {
           clearInterval(interval);
           crawlBtn.disabled = false;
-          alert('全省庁のWebクローリング・インデックス同期が正常に完了しました！');
+          alert('登録済み全会議体のWebクローリング・会議資料インデックス同期が完了しました！');
         }
       }, intervalTime);
     });

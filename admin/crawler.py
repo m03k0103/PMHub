@@ -30,15 +30,40 @@ if sys.platform == "win32":
         pass
 
 RULES_FILE = os.path.join(os.path.dirname(__file__), "scraping_rules.json")
+DATA_JS_FILE = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "docs", "data.js"))
 
-# クロール対象の政府審議会・会議体URLリスト
-CRAWL_TARGETS = [
-    {
-        "id": "cao-ai-strategy",
-        "ministry": "CAO",
-        "name": "AI戦略会議",
-        "url": "https://www8.cao.go.jp/cstp/ai/ai_senryaku/ai_senryaku.html"
-    },
+def load_councils_from_data_js():
+    """docs/data.js から登録済みの全会議体 (COUNCILS) を動的に読み込む"""
+    councils = []
+    if os.path.exists(DATA_JS_FILE):
+        try:
+            with open(DATA_JS_FILE, "r", encoding="utf-8") as f:
+                content = f.read()
+            c_match = re.search(r"const COUNCILS = (\[[\s\S]*?\n\];)", content)
+            if c_match:
+                c_str = c_match.group(1).rstrip(";").strip()
+                c_json = re.sub(r"(\w+):", r'"\1":', c_str).replace("'", '"')
+                raw_councils = json.loads(c_json)
+                for item in raw_councils:
+                    if item.get("officialUrl"):
+                        councils.append({
+                            "id": item.get("id"),
+                            "ministry": item.get("ministry"),
+                            "name": item.get("name"),
+                            "url": item.get("officialUrl")
+                        })
+        except Exception as e:
+            print(f"[WARN] data.js からの会議体動的読み込みにフォールバック: {e}", file=sys.stderr)
+            with open(DATA_JS_FILE, "r", encoding="utf-8") as f:
+                content = f.read()
+            for m in re.finditer(r"\{\s*id:\s*'([^']+)'[\s\S]*?name:\s*'([^']+)'[\s\S]*?ministry:\s*'([^']+)'[\s\S]*?officialUrl:\s*'([^']+)'", content):
+                councils.append({
+                    "id": m.group(1),
+                    "name": m.group(2),
+                    "ministry": m.group(3),
+                    "url": m.group(4)
+                })
+    return councils
     {
         "id": "cao-space-anpo",
         "ministry": "CAO",

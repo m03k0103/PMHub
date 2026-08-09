@@ -92,6 +92,31 @@ def apply_report(json_path, data_js_path=None):
                 else:
                     print(f"Warning: {target} item {target_id} not found in data.js")
 
+        elif action == "add_council":
+            new_item = corr.get("council")
+            if new_item and new_item.get("id"):
+                c_id = new_item["id"]
+                # 既に存在するかチェック
+                if f"id: '{c_id}'" not in content and f'id: "{c_id}"' not in content:
+                    c_formatted = "  {\n"
+                    for k, v in new_item.items():
+                        if isinstance(v, str):
+                            c_formatted += f"    {k}: '{v}',\n"
+                        elif isinstance(v, bool):
+                            c_formatted += f"    {k}: {'true' if v else 'false'},\n"
+                        elif isinstance(v, (int, float)):
+                            c_formatted += f"    {k}: {v},\n"
+                        else:
+                            c_formatted += f"    {k}: {json.dumps(v, ensure_ascii=False).replace('\"', \"'")},\n"
+                    c_formatted = c_formatted.rstrip(",\n") + "\n  },\n];"
+                    
+                    # COUNCILS の末尾 '];' の直前に挿入
+                    c_end_pattern = re.compile(r"(\n\];[\s\n]*const MEETINGS)")
+                    if c_end_pattern.search(content):
+                        content = c_end_pattern.sub(f",\n{c_formatted[:-3]}\n];\nconst MEETINGS", content)
+                        applied_count += 1
+                        print(f"Added new Council: {c_id} ({new_item.get('name')})")
+
     with open(data_js_path, "w", encoding="utf-8") as f:
         f.write(content)
 
