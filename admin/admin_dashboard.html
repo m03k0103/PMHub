@@ -1285,7 +1285,22 @@ JSON データを読み込み中...
     window.setVerdict = function(id, verdict) {
       if (!verdicts[id]) verdicts[id] = { verdict: null, notes: '', correctedUrl: '' };
       verdicts[id].verdict = verdict;
-      saveSavedVerdicts(verdicts);renderCards();
+      saveSavedVerdicts(verdicts);
+      
+      const card = document.getElementById(`card-${id}`);
+      if (card) {
+        card.classList.remove('verdict-approved', 'verdict-rejected');
+        if (verdict) card.classList.add(`verdict-${verdict}`);
+        
+        const radios = card.querySelectorAll(`input[name="verdict-${id}"]`);
+        radios.forEach(r => { r.checked = (r.value === verdict); });
+
+        const filterV = document.getElementById('filterVerdict');
+        if (filterV && filterV.value === 'pending' && verdict !== null && verdict !== 'pending') {
+          card.style.display = 'none';
+        }
+      }
+      if (typeof updateStats === 'function') updateStats();
     };
     window.setNotes = function(id, text) {
       if (!verdicts[id]) verdicts[id] = { verdict: null, notes: '', correctedUrl: '' };
@@ -1762,9 +1777,37 @@ JSON データを読み込み中...
       const pending = allCouncils.filter(c => verdicts[c.id].verdict === null || verdicts[c.id].verdict === 'pending');
       if (pending.length === 0) { alert('未レビューの会議体はありません。'); return; }
       if (!confirm(`未レビューの ${pending.length} 件を全て承認しますか？`)) return;
-      pending.forEach(c => { verdicts[c.id].verdict = 'approved'; });
-      saveSavedVerdicts(verdicts);
-      renderCards();
+      
+      const btn = document.getElementById('btnApproveAll');
+      const originalText = btn.textContent;
+      btn.textContent = '🔄 処理中...';
+      btn.disabled = true;
+
+      // requestAnimationFrame でUI描画をブロックしないようにする
+      requestAnimationFrame(() => {
+        pending.forEach(c => {
+          if (!verdicts[c.id]) verdicts[c.id] = { verdict: null, notes: '', correctedUrl: '' };
+          verdicts[c.id].verdict = 'approved';
+          
+          const card = document.getElementById(`card-${c.id}`);
+          if (card) {
+            card.classList.remove('verdict-approved', 'verdict-rejected');
+            card.classList.add('verdict-approved');
+            const radios = card.querySelectorAll(`input[name="verdict-${c.id}"]`);
+            radios.forEach(r => { r.checked = (r.value === 'approved'); });
+            
+            const filterV = document.getElementById('filterVerdict');
+            if (filterV && filterV.value === 'pending') {
+              card.style.display = 'none';
+            }
+          }
+        });
+        saveSavedVerdicts(verdicts);
+        if (typeof updateStats === 'function') updateStats();
+        
+        btn.textContent = originalText;
+        btn.disabled = false;
+      });
     });
 
     // ─── Save Council to data.js (including new discovered councils) ───
