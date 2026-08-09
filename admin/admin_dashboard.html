@@ -666,14 +666,22 @@ JSON データを読み込み中...
       try { return JSON.parse(localStorage.getItem(STORAGE_KEY_VERDICTS) || '{}'); } catch(e) { return {}; }
     }
     function saveSavedVerdicts(vMap) {
-      localStorage.setItem(STORAGE_KEY_VERDICTS, JSON.stringify(vMap));
+      try {
+        localStorage.setItem(STORAGE_KEY_VERDICTS, JSON.stringify(vMap));
+      } catch(e) {
+        console.warn('localStorage save failed (Verdicts). Quota exceeded?', e);
+      }
     }
 
     function getSavedDiscovered() {
       try { return JSON.parse(localStorage.getItem(STORAGE_KEY_DISCOVERED) || '[]'); } catch(e) { return []; }
     }
     function saveSavedDiscovered(list) {
-      localStorage.setItem(STORAGE_KEY_DISCOVERED, JSON.stringify(list));
+      try {
+        localStorage.setItem(STORAGE_KEY_DISCOVERED, JSON.stringify(list));
+      } catch(e) {
+        console.warn('localStorage save failed (Discovered). Quota exceeded?', e);
+      }
     }
 
     const KNOWN_NEW_IDS = [
@@ -759,6 +767,16 @@ JSON データを読み込み中...
       const defaultV = (c.isNew === true || knownIdSet.has(c.id)) ? null : 'approved';
       verdicts[c.id] = normalizeVerdict(savedVerdicts[c.id], defaultV);
     });
+
+    // サーバー上の最新ディスカバリーデータ (discovered_councils.json) の非同期自動統合 (初期ロード時)
+    fetch('/api/discovered-councils')
+      .then(res => res.ok ? res.json() : null)
+      .then(data => {
+        if (data && data.councils && Array.isArray(data.councils)) {
+          window.integrateDiscoveredCouncils(data.councils);
+        }
+      })
+      .catch(err => console.warn('Discovered councils auto load notice:', err));
 
     function populateFilterDropdowns() {
       const ministrySet = new Set(allCouncils.map(c => c.ministry));
@@ -1267,18 +1285,7 @@ JSON データを読み込み中...
     window.setVerdict = function(id, verdict) {
       if (!verdicts[id]) verdicts[id] = { verdict: null, notes: '', correctedUrl: '' };
       verdicts[id].verdict = verdict;
-      saveSavedVerdicts(verdicts);
-      // サーバー上の最新ディスカバリーデータ (discovered_councils.json) の非同期自動統合
-    fetch('/api/discovered-councils')
-      .then(res => res.ok ? res.json() : null)
-      .then(data => {
-        if (data && data.councils && Array.isArray(data.councils)) {
-          window.integrateDiscoveredCouncils(data.councils);
-        }
-      })
-      .catch(err => console.warn('Discovered councils auto load notice:', err));
-
-    renderCards();
+      saveSavedVerdicts(verdicts);renderCards();
     };
     window.setNotes = function(id, text) {
       if (!verdicts[id]) verdicts[id] = { verdict: null, notes: '', correctedUrl: '' };
