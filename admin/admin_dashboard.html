@@ -574,6 +574,19 @@ JSON データを読み込み中...
     if (window.history && window.history.replaceState) {
       window.history.replaceState(null, null, `#${tabId.replace('tab-', '')}`);
     }
+
+    // タブ表示切替時に各画面のデータ描画処理を実行
+    try {
+      if (tabId === 'tab-councils') {
+        if (typeof window.renderCards === 'function') window.renderCards();
+      } else if (tabId === 'tab-meetings') {
+        if (typeof window.renderMeetingsList === 'function') window.renderMeetingsList();
+      } else if (tabId === 'tab-ministries') {
+        if (typeof window.renderMinistryList === 'function') window.renderMinistryList();
+      }
+    } catch(e) {
+      console.warn('Tab render notice:', e);
+    }
   };
   const switchTab = window.switchTab;
   // ─── 1. Council Discovery Engine (Global scope definition) ───
@@ -828,7 +841,7 @@ JSON データを読み込み中...
     const existingIdSet = new Set(allCouncils.map(c => c.id));
     discoveredFromStorage.forEach(dc => {
       if (!existingIdSet.has(dc.id)) {
-        allCouncils.push(dc);
+        allCouncils.push(dc); window.allCouncils = allCouncils;
         existingIdSet.add(dc.id);
       }
     });
@@ -840,7 +853,7 @@ JSON データを読み込み中...
       newCouncilsList.forEach(dc => {
         if (!currentIds.has(dc.id)) {
           dc.isNew = true;
-          allCouncils.push(dc);
+          allCouncils.push(dc); window.allCouncils = allCouncils;
           currentIds.add(dc.id);
           verdicts[dc.id] = { verdict: null, notes: '', correctedUrl: '' };
           addedCount++;
@@ -933,6 +946,7 @@ JSON データを読み込み中...
 
     // ─── Render Meetings Management (TAB 2) ───
     function renderMeetingsList() {
+      window.renderMeetingsList = renderMeetingsList;
       if (!meetingsListEl) return;
       const searchTerm = (document.getElementById('filterMeetingsSearch') ? document.getElementById('filterMeetingsSearch').value : '').toLowerCase();
       const fMinistry  = document.getElementById('filterMeetingsMinistry') ? document.getElementById('filterMeetingsMinistry').value : '';
@@ -1067,6 +1081,8 @@ JSON データを読み込み中...
 
     // ─── Render Councils Management (TAB 3) ───
     function renderCards() {
+      window.allCouncils = allCouncils;
+      window.renderCards = renderCards;
       const searchTerm = document.getElementById('filterSearch').value.toLowerCase();
       const fMinistry  = document.getElementById('filterMinistry').value;
       const fCategory  = document.getElementById('filterCategory').value;
@@ -1518,6 +1534,7 @@ JSON データを読み込み中...
     }
 
     function renderMinistryList() {
+      window.renderMinistryList = renderMinistryList;
       const container = document.getElementById('ministryListContainer');
       const codes = Object.keys(ministries).sort();
       let html = `<table class="ministry-table">
@@ -2302,6 +2319,11 @@ JSON データを読み込み中...
         window.startMeetingCrawl();
       });
     }
+
+    // 全タブの初回データ一括描画を確実に実行
+    if (typeof renderCards === 'function') renderCards();
+    if (typeof renderMeetingsList === 'function') renderMeetingsList();
+    if (typeof renderMinistryList === 'function') renderMinistryList();
   });
   </script>
 </body>
