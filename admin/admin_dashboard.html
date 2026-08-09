@@ -1708,7 +1708,11 @@ JSON データを読み込み中...
           body: JSON.stringify(report)
         });
         if (res.ok) {
-          applyCouncilInMemory();
+          try {
+            applyCouncilInMemory();
+          } catch(errMem) {
+            console.warn('applyCouncilInMemory warning:', errMem);
+          }
           alert('【サーバー経由】docs/data.js への直接保存が完了しました！');
           return;
         } else {
