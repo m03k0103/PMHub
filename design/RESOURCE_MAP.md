@@ -15,8 +15,12 @@ PMHub/
 │   └── app.js                   # フロントエンドSPAロジック (検索・フィルター・エクスポート・要約ON/OFF)
 │
 ├── admin/                       # 【管理者向け】データ自動更新・システム運用管理ツール
+│   ├── admin_dashboard.html     # 管理者向け統合ダッシュボード（ディスカバリー・クロール実行・データ検証UI）
 │   ├── crawler.py               # 政府Webサイト自動巡回・PDF解析Pythonクローラー
+│   ├── discover_councils.py     # 新規会議体自動検出スクリプト（ディスカバリーエンジン）
 │   ├── scraped_councils_output.json # クローラー最新自動取得ログ・抽出JSONデータ
+│   ├── discovered_councils.json # 自動検出された新規会議体リスト
+│   ├── sync_crawler_data.py     # 自動同期スクリプト（JSONを `docs/data.js` へ反映・構文検査）
 │   └── admin_guide.md           # 管理者用 運用マニュアル・Cron/タスクスケジューラ設定ガイド
 │
 ├── testing/                     # 【テスト用リソース】自動スモークテスト・単体テスト
@@ -51,9 +55,12 @@ PMHub/
 
 | ファイルパス | 区分 | 対象ユーザー | 主な役割・機能 |
 | :--- | :--- | :--- | :--- |
-| [admin/admin_dashboard.html](file:///d:/dev/PMHub/admin/admin_dashboard.html) | 管理者用 | システム運用者 | 管理者用コントロールパネル。Webクローラーの即時UI実行、AI要約 Feature Flag (ON/OFF) 切り替え、JSONパースログの確認。 |
-| [admin/crawler.py](file:///d:/dev/PMHub/admin/crawler.py) | 管理者用 | システム運用者 | 内閣官房（全世代型社会保障構築会議、社会保障国民会議、中東情勢関係閣僚会議）や内閣府（人工知能戦略本部）等の政府Webサイトを自動訪問し、開催日・PDF直リンクを抽出するPythonスクリプト。 |
-| [admin/scraped_councils_output.json](file:///d:/dev/PMHub/admin/scraped_councils_output.json) | 管理者用 | システム運用者 | `crawler.py` の実行によってリアルタイム生成されるパース結果データ。各Webページの取得ステータス (200 OK)、タイトル、PDF件数、抽出日付が保存されます。 |
+| [admin/admin_dashboard.html](file:///d:/dev/PMHub/admin/admin_dashboard.html) | 管理者用 | システム運用者 | タブ切り替え式統合ダッシュボード。新規会議体の検証（承認・却下）、Webクローラーの即時UI実行、AI要約 Feature Flag (ON/OFF) 切り替えなど。 |
+| [admin/crawler.py](file:///d:/dev/PMHub/admin/crawler.py) | 管理者用 | システム運用者 | 政府Webサイトを自動訪問し、開催日・PDF直リンクを抽出するPythonクローラー。 |
+| [admin/discover_councils.py](file:///d:/dev/PMHub/admin/discover_councils.py) | 管理者用 | システム運用者 | `discovery_keywords.json` に基づき、新規の審議会等一覧を自動検出するスクリプト。 |
+| [admin/scraped_councils_output.json](file:///d:/dev/PMHub/admin/scraped_councils_output.json) | 管理者用 | システム運用者 | `crawler.py` の実行によってリアルタイム生成されるパース結果データ。 |
+| [admin/discovered_councils.json](file:///d:/dev/PMHub/admin/discovered_councils.json) | 管理者用 | システム運用者 | `discover_councils.py` によって検出された新規会議体データ。 |
+| [admin/sync_crawler_data.py](file:///d:/dev/PMHub/admin/sync_crawler_data.py) | 管理者用 | システム運用者 | JSONデータを `docs/data.js` へ安全にマージし、Node.jsで自動構文テストを行う同期スクリプト。 |
 | [admin/admin_guide.md](file:///d:/dev/PMHub/admin/admin_guide.md) | 管理者用 | システム運用者 | 定期自動巡回（Windowsタスクスケジューラ / Linux Cron）の構築手順、エラーハンドリング、新規審議会の追加方法を記載した運用仕様書。 |
 
 ---

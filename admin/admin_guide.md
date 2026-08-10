@@ -8,9 +8,11 @@
 
 | ファイル | 説明 |
 | :--- | :--- |
-| [admin_dashboard.html](file:///d:/dev/PMHub/admin/admin_dashboard.html) | 管理者用コントロールパネル（Webクローラー即時実行UI、AI要約ON/OFF設定、JSONパースログ閲覧） |
-| [crawler.py](file:///d:/dev/PMHub/admin/crawler.py) | 内閣官房・内閣府・デジタル庁等の政府Webサイトを巡回するPythonスクリプト |
+| [admin_dashboard.html](file:///d:/dev/PMHub/admin/admin_dashboard.html) | 管理者向け統合ダッシュボード（会議体ディスカバリー、クローラー即時実行UI、データ管理・承認UI） |
+| [crawler.py](file:///d:/dev/PMHub/admin/crawler.py) | 政府Webサイトを巡回するPythonスクリプト |
 | [scraped_councils_output.json](file:///d:/dev/PMHub/admin/scraped_councils_output.json) | クローラー実行時に生成される自動取得データ（パース結果） |
+| [discover_councils.py](file:///d:/dev/PMHub/admin/discover_councils.py) | 新規会議体を自動検出するディスカバリーエンジン |
+| [sync_crawler_data.py](file:///d:/dev/PMHub/admin/sync_crawler_data.py) | クローラー結果を `docs/data.js` に自動同期し構文検証を行うスクリプト |
 | [admin_guide.md](file:///d:/dev/PMHub/admin/admin_guide.md) | 本運用マニュアル |
 
 ---
@@ -44,5 +46,6 @@ python crawler.py
    - 一般公開するWebサーバー（Nginx / Apache / Cloudflare Pages / AWS S3等）のドキュメントルートには、**`docs/` ディレクトリ配下のみ**を公開設定してください。
    - `admin/` ディレクトリはWebアクセス不能な非公開領域として隔離します。
 
-2. **データ反映手順**:
-   - クローラーが最新情報を検出した場合、パース結果を確認し、`docs/data.js` の `MEETINGS` 配列へ追加更新を行います。
+   - クローラーが最新情報を検出した場合、抽出結果が `scraped_councils_output.json` に保存されます。
+   - `python sync_crawler_data.py` を実行して、パース結果を自動で `docs/data.js` の `MEETINGS` 配列へ追加更新します。同スクリプトは自動でJS構文の検証も行います。
+   - その後、管理ダッシュボード (`admin_dashboard.html`) 上で表示エラー等がないか確認します。

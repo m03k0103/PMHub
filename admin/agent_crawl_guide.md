@@ -41,16 +41,21 @@
   ```
 
 ### Step 4: `docs/data.js` の安全な更新規則 (CRITICAL)
-`docs/data.js` 編集時の禁止事項およびフォーマット規定：
-1. **オブジェクトキーはアンクォート (Unquoted)**:
-   * 正: `councilId: '...'`, `officialUrl: '...'`
-   * 誤: `'councilId': '...'`
-2. **文字列値はシングルクォート (Single Quotes)**:
-   * 正: `title: '第2回 コンテンツ産業官民協議会'`
-3. **文字列内の生改行（`\n`）絶対禁止**:
-   * 資料名や概要が複数行にわたる場合、必ず1行の文字列へ結合・整形する。
-4. **波括弧・角括弧の数と深度の一致**:
-   * 置換時の残骸（孤立した `},` や `]`）を残さない。
+クローラー（`crawler.py`）が生成した `scraped_councils_output.json` のデータを `docs/data.js` へ反映させる際、手動での追記は極力避け、以下の自動同期スクリプトを使用します。
+
+```bash
+python admin/sync_crawler_data.py
+```
+このスクリプトは以下の処理を自動で行います。
+1. JSONからの安全なデータ抽出と変換
+2. 波括弧・角括弧の整合性や末尾カンマの自動補完
+3. 追加後の Node.js を使った構文バリデーションテスト（SyntaxError 検査）
+
+もし手動でパッチを当てる場合は、以下の禁止事項を厳守してください：
+1. **オブジェクトキーはアンクォート (Unquoted)** (例: `councilId: '...'`)
+2. **文字列値はシングルクォート (Single Quotes)** (例: `title: '第2回...'`)
+3. **文字列内の生改行（`\n`）絶対禁止**
+4. **波括弧・角括弧の数と深度の一致**
 
 ### Step 5: `admin/scraping_rules.json` への同期
 新規会議体の追加やサイト構造の変更があった場合、AIルール生成ロジックにより `scraping_rules.json` の該当エントリーを最新状態に更新・保存する。
@@ -58,6 +63,7 @@
 ### Step 6: テスト＆検証スクリプトの実行 (`Pre-Flight Check`)
 ターミナルより以下の検証スクリプトを実行し、エラーが 0件 であることを確認する：
 ```bash
+python admin/sync_crawler_data.py
 python admin/agent_initial_verifier.py
 ```
 
@@ -66,11 +72,10 @@ python admin/agent_initial_verifier.py
 ## 3. トラブルシューティング＆再発防止チェックリスト
 
 * **現象: Web画面でデータが表示されなくなった**
-  1. `python admin/agent_initial_verifier.py` を実行。
-  2. `validate_data_js()` の出力ログを確認：
-     * `Brace count mismatch` -> 波括弧 `{` `}` の不一致（孤立した `},` の消し忘れ）。
-     * `Unescaped single quote string imbalance` -> 文字列内の生改行または単一引用符のエスケープ漏れ。
-  3. `scratch/validate_js_ast.py` および `scratch/find_exact_brace_error.py` を使用して該当行番号を即座に特定・修正する。
+  1. `docs/data.js` の構文エラーが原因である可能性が高いです。
+  2. `python admin/sync_crawler_data.py` または `node -e "require('./docs/data.js')"` を実行して出力ログを確認します。
+     * `Unexpected token '{'` 等のエラーが出た場合、波括弧の不一致やカンマの欠落が発生しています。
+  3. テキストエディタまたは `git checkout` で復元し、正しい JSON(JS) フォーマットでマージし直します。
 
 ---
 **本ガイドラインは次回以降のクロール・データ更新作業時にエージェントが自動参照して実行すること。**

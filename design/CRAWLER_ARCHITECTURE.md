@@ -26,6 +26,7 @@
                                ▼
 ┌─────────────────────────────────────────────────────────────────┐
 │  抽出結果データベース                                            │
+│  ├─ admin/discovered_councils.json (新規会議体自動検出ログ)      │
 │  ├─ admin/scraped_councils_output.json (実行ログ・中間データ)    │
 │  └─ docs/data.js (公開ポータル用 構造化データ)                   │
 └─────────────────────────────────────────────────────────────────┘
@@ -35,8 +36,9 @@
 
 ## ⚙️ 2. クローリングの具体的なステップと仕組み
 
-### Step 1: ターゲット構成の定義 (`CRAWL_TARGETS`)
-[admin/crawler.py](file:///d:/dev/PMHub/admin/crawler.py) の `CRAWL_TARGETS` 配列にて、巡回対象の省庁コード (`CAO`, `CAS`, `DIGITAL` 等)、会議体名、公式URLを集中管理しています。
+### Step 1: ターゲット構成の定義 (`CRAWL_TARGETS` / `discovery_keywords.json`)
+既知の会議体は [admin/crawler.py](file:///d:/dev/PMHub/admin/crawler.py) の `CRAWL_TARGETS` 配列にて、巡回対象の省庁コード (`CAO`, `CAS`, `DIGITAL` 等)、会議体名、公式URLを集中管理しています。
+また、未知の会議体は [admin/discover_councils.py](file:///d:/dev/PMHub/admin/discover_councils.py) が各省庁の「審議会等一覧ページ」を巡回し、自動検出します。
 
 ```python
 CRAWL_TARGETS = [
@@ -94,8 +96,8 @@ Webページ内でリンクされている配布資料（議事次第、議事�
 1. **管理用ログ出力 ([admin/scraped_councils_output.json](file:///d:/dev/PMHub/admin/scraped_councils_output.json))**:
    巡回日時、全対象サイトの接続結果 (200 OK件数)、抽出された資料PDFの全リストをJSON形式で記録します。
 
-2. **公開ポータルへの同期 ([docs/data.js](file:///d:/dev/PMHub/docs/data.js))**:
-    検証完了後、`docs/data.js` の `MEETINGS` 配列へメタデータが組み込まれ、検索・フィルター・エクスポート機能ですぐに利用可能になります。
+2. **公開ポータルへの自動同期 ([admin/sync_crawler_data.py](file:///d:/dev/PMHub/admin/sync_crawler_data.py))**:
+    `sync_crawler_data.py` スクリプトにより `scraped_councils_output.json` のデータを `docs/data.js` へ安全に自動結合します。結合後、Node.jsを用いた自動構文検査が走るため、データ破損（SyntaxError等）を未然に防ぎます。同期されたデータは検索・フィルター・エクスポート機能ですぐに利用可能になります。
 
 ---
 

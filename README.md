@@ -20,9 +20,12 @@
 
 ### 管理者ツール (`admin/`)
 - `crawler.py`: 政府サイトを巡回し、抽出結果を `scraped_councils_output.json` に出力
+- `discover_councils.py`: 新規会議体を自動検出し、`discovered_councils.json` に出力
+- `sync_crawler_data.py`: クローラーの出力結果を `docs/data.js` に自動同期・構文検証
 - `agent_initial_verifier.py`: クロール/データ反映前後の検証補助
 - `scraping_rules.json`: クロール抽出ルール定義
-- `admin_dashboard.html`: 管理者向けUI（補助用途）
+- `discovery_keywords.json`: 新規会議体発見用の検索キーワード定義
+- `admin_dashboard.html`: 管理者向け統合ダッシュボード（会議体ディスカバリー、クローラー実行、データ管理）
 
 ## ディレクトリ構成
 
@@ -41,8 +44,12 @@ PMHub/
 │   ├── agent_crawl_guide.md
 │   ├── agent_initial_verifier.py
 │   ├── crawler.py
+│   ├── discover_councils.py
+│   ├── discovered_councils.json
+│   ├── discovery_keywords.json
 │   ├── scraped_councils_output.json
-│   └── scraping_rules.json
+│   ├── scraping_rules.json
+│   └── sync_crawler_data.py
 ├── design/
 │   ├── CRAWLER_ARCHITECTURE.md
 │   └── RESOURCE_MAP.md
@@ -95,17 +102,24 @@ python testing/smoke_test.py
 
 ## データ更新フロー（運用）
 
-1. クローラー実行
+1. 新規会議体ディスカバリー (オプション)
+
+```bash
+cd admin
+python discover_councils.py
+```
+
+2. クローラー実行
 
 ```bash
 cd admin
 python crawler.py
 ```
 
-2. 生成された `admin/scraped_councils_output.json` を確認
-3. 必要に応じて `docs/data.js` へ反映（会議データ・更新時刻）
-4. `testing/smoke_test.py` と Node.js テストを実行
-5. 問題なければ公開
+3. 生成された `admin/scraped_councils_output.json` を確認
+4. `admin/sync_crawler_data.py` を実行し `docs/data.js` に自動反映・検証
+5. `testing/smoke_test.py` と Node.js テストを実行
+6. 問題なければ公開
 
 詳細は以下を参照してください。
 - `admin/admin_guide.md`
