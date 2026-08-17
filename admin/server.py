@@ -9,8 +9,9 @@ from discover_councils import run_discovery
 
 PORT = 8000
 BASE_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
+DATA_JSON_FILE = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "docs", "data.json"))
 KEYWORDS_FILE = os.path.join(os.path.dirname(__file__), "discovery_keywords.json")
-DISCOVERED_FILE = os.path.join(os.path.dirname(__file__), "discovered_councils.json")
+CRAWLER_CONFIG_FILE = os.path.join(os.path.dirname(__file__), "crawler_config.json")
 
 class CustomHandler(http.server.SimpleHTTPRequestHandler):
     def __init__(self, *args, **kwargs):
@@ -36,11 +37,21 @@ class CustomHandler(http.server.SimpleHTTPRequestHandler):
             self.send_response(200)
             self.send_header('Content-Type', 'application/json; charset=utf-8')
             self.end_headers()
-            if os.path.exists(DISCOVERED_FILE):
-                with open(DISCOVERED_FILE, "r", encoding="utf-8") as f:
-                    self.wfile.write(f.read().encode('utf-8'))
+            if os.path.exists(DATA_JSON_FILE):
+                with open(DATA_JSON_FILE, "r", encoding="utf-8") as f:
+                    data = json.load(f)
+                    self.wfile.write(json.dumps({"councils": data.get("discoveredCouncils", [])}).encode('utf-8'))
             else:
                 self.wfile.write(json.dumps({"councils": []}).encode('utf-8'))
+        elif self.path == "/api/get-crawler-config":
+            self.send_response(200)
+            self.send_header('Content-Type', 'application/json; charset=utf-8')
+            self.end_headers()
+            if os.path.exists(CRAWLER_CONFIG_FILE):
+                with open(CRAWLER_CONFIG_FILE, "r", encoding="utf-8") as f:
+                    self.wfile.write(f.read().encode('utf-8'))
+            else:
+                self.wfile.write(json.dumps({"llm_mode": True}).encode('utf-8'))
         else:
             super().do_GET()
 
@@ -89,6 +100,23 @@ class CustomHandler(http.server.SimpleHTTPRequestHandler):
                 self.send_header('Content-Type', 'application/json; charset=utf-8')
                 self.end_headers()
                 self.wfile.write(json.dumps({"status": "ok", "message": "Keywords updated"}).encode('utf-8'))
+            except Exception as e:
+                self.send_response(500)
+                self.send_header('Content-Type', 'application/json; charset=utf-8')
+                self.end_headers()
+                self.wfile.write(json.dumps({"status": "error", "message": str(e)}).encode('utf-8'))
+
+        elif self.path == "/api/save-crawler-config":
+            content_length = int(self.headers.get('Content-Length', 0))
+            post_data = self.rfile.read(content_length)
+            try:
+                data = json.loads(post_data.decode('utf-8'))
+                with open(CRAWLER_CONFIG_FILE, "w", encoding="utf-8") as f:
+                    json.dump(data, f, ensure_ascii=False, indent=2)
+                self.send_response(200)
+                self.send_header('Content-Type', 'application/json; charset=utf-8')
+                self.end_headers()
+                self.wfile.write(json.dumps({"status": "ok", "message": "Crawler config updated"}).encode('utf-8'))
             except Exception as e:
                 self.send_response(500)
                 self.send_header('Content-Type', 'application/json; charset=utf-8')

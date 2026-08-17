@@ -31,9 +31,8 @@ if sys.platform == "win32":
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 PROJECT_ROOT = os.path.dirname(BASE_DIR)
-DATA_JS_PATH = os.path.join(PROJECT_ROOT, "docs", "data.js")
+DATA_JSON_PATH = os.path.join(PROJECT_ROOT, "docs", "data.json")
 KEYWORDS_FILE = os.path.join(BASE_DIR, "discovery_keywords.json")
-DISCOVERED_OUTPUT_FILE = os.path.join(BASE_DIR, "discovered_councils.json")
 
 def load_keywords():
     if os.path.exists(KEYWORDS_FILE):
@@ -49,59 +48,21 @@ def load_keywords():
         "ministryExcludeKeywords": {}
     }
 
-def parse_data_js():
-    """docs/data.js から MINISTRIES と COUNCILS のデータを抽出する"""
-    if not os.path.exists(DATA_JS_PATH):
-        print(f"[ERROR] {DATA_JS_PATH} が見つかりません。", file=sys.stderr)
+def parse_data_json():
+    """docs/data.json から MINISTRIES と COUNCILS のデータを抽出する"""
+    if not os.path.exists(DATA_JSON_PATH):
+        print(f"[ERROR] {DATA_JSON_PATH} が見つかりません。", file=sys.stderr)
         return {}, []
 
-    with open(DATA_JS_PATH, "r", encoding="utf-8") as f:
-        content = f.read()
-
-    # MINISTRIES の抽出
-    ministries = {}
-    m_match = re.search(r"const MINISTRIES = (\{[\s\S]*?\n\};)", content)
-    if m_match:
-        m_str = m_match.group(1).rstrip(";").strip()
-        m_json_str = re.sub(r"(\w+):", r'"\1":', m_str).replace("'", '"')
-        try:
-            ministries = json.loads(m_json_str)
-        except Exception:
-            for block in re.finditer(r"(\w+):\s*\{([^}]+)\}", content):
-                k = block.group(1)
-                body = block.group(2)
-                name_m = re.search(r"name:\s*'([^']+)'", body)
-                official_m = re.search(r"officialUrl:\s*'([^']+)'", body)
-                has_m = re.search(r"hasCouncils:\s*(true|false)", body)
-                urls_m = re.search(r"councilsUrls:\s*\[([\s\S]*?)\]", body)
-                urls = []
-                if urls_m:
-                    urls = [u.strip().strip("'\"") for u in urls_m.group(1).split(",") if u.strip()]
-                ministries[k] = {
-                    "name": name_m.group(1) if name_m else k,
-                    "officialUrl": official_m.group(1) if official_m else "",
-                    "hasCouncils": has_m.group(1) != "false" if has_m else True,
-                    "councilsUrls": urls
-                }
-
-    # COUNCILS の抽出
-    councils = []
-    c_match = re.search(r"const COUNCILS = (\[[\s\S]*?\n\];)", content)
-    if c_match:
-        c_str = c_match.group(1).rstrip(";").strip()
-        c_json_str = re.sub(r"(\w+):", r'"\1":', c_str).replace("'", '"')
-        try:
-            councils = json.loads(c_json_str)
-        except Exception:
-            for item in re.finditer(r"\{\s*id:\s*'([^']+)'[\s\S]*?name:\s*'([^']+)'[\s\S]*?ministry:\s*'([^']+)'[\s\S]*?officialUrl:\s*'([^']+)'", content):
-                councils.append({
-                    "id": item.group(1),
-                    "name": item.group(2),
-                    "ministry": item.group(3),
-                    "officialUrl": item.group(4)
-                })
-
-    return ministries, councils
+    try:
+        with open(DATA_JSON_PATH, "r", encoding="utf-8") as f:
+            data = json.load(f)
+            ministries = data.get("ministries", {})
+            councils = data.get("councils", [])
+            return ministries, councils
+    except Exception as e:
+        print(f"[ERROR] failed to parse data.json: {e}", file=sys.stderr)
+        return {}, []
 
 def fetch_page_and_final_url(url):
     """
@@ -135,6 +96,14 @@ def fetch_page_and_final_url(url):
     except Exception as e:
         print(f"   [HTTP ERROR] {url}: {e}")
         return None, url
+
+def clean_council_name(name):
+    """「第X回」や日付プレフィックス、末尾の「配布資料」などを除去して親会議体名を抽出"""
+    name = re.sub(r'^(令和\d+年\d+月\d+日開催|令和\d+年\d+月\d+日|令和\d+年|平成\d+年|\b\d{4}年\d+月\d+日開催?)\s*', '', name)
+    name = re.sub(r'^(第[0-9０-９一-九]+回|第[0-9０-９一-九]+回\s*)\s*', '', name)
+    name = re.sub(r'^(令和\d+年\s*第[0-9０-９一-九]+回|平成\d+年\s*第[0-9０-９一-九]+回)\s*', '', name)
+    name = re.sub(r'\s*(配布資料|取りまとめ.*|について|開催概要|議事要旨|議事録)$', '', name)
+    return name.strip()
 
 def normalize_url(url):
     """URLの末尾スラッシュやフラグメント(#)を除去して正規化"""
@@ -172,7 +141,7 @@ def run_discovery():
     min_add_kw = keywords_cfg.get("ministryAddKeywords", {})
     min_exc_kw = keywords_cfg.get("ministryExcludeKeywords", {})
 
-    ministries, existing_councils = parse_data_js()
+    ministries, existing_councils = parse_data_json()
     print(f"登録済み省庁数: {len(ministries)} 組織, 既存会議体数: {len(existing_councils)} 件\n")
 
     # 既存の会議体URLと名前のセット（重複判定用）
@@ -247,15 +216,20 @@ def run_discovery():
 
                 norm_final_url = normalize_url(final_council_url)
 
-                # 重複判定: 既に登録済みの正規URLまたは同名（年度記載なしの完全同名）かチェック
-                is_year_specific = bool(re.search(r"(令和|平成|\b20\d{2}年?|\bR\d{1,2}\b)", link_text, re.I))
+                # 会議体名の正規化（「第X回」などの個別の開催回名が含まれる場合は親会議体名を抽出）
+                is_meeting_pattern = bool(re.search(r'(第[0-9０-９一-九]+回|令和\d+年|\d{4}年\d+月\d+日)', link_text))
+                target_council_name = clean_council_name(link_text) if is_meeting_pattern else link_text
+                if not target_council_name:
+                    target_council_name = link_text
+
+                # 重複判定: 既に登録済みの正規URLまたは同名かチェック
                 if norm_final_url in existing_urls:
                     continue
-                if not is_year_specific and link_text in existing_names:
+                if target_council_name in existing_names:
                     continue
 
                 # 今回のクロール内での重複チェック
-                key_pair = (min_code, link_text, norm_final_url)
+                key_pair = (min_code, target_council_name)
                 if key_pair in seen_in_this_run:
                     continue
                 seen_in_this_run.add(key_pair)
@@ -281,10 +255,10 @@ def run_discovery():
 
                 council_item = {
                     "id": council_id,
-                    "name": link_text,
+                    "name": target_council_name,
                     "ministry": min_code,
                     "category": category,
-                    "officialUrl": final_council_url,
+                    "officialUrl": final_council_url if not is_meeting_pattern else page_url,
                     "isNew": True,
                     "trackedSince": datetime.now().strftime("%Y-%m-%d"),
                     "sourcePageUrl": page_url
@@ -301,15 +275,31 @@ def run_discovery():
     print(f"ディスカバリー巡回完了: 合計 {len(discovered_list)} 件の新規会議体レコードを作成しました。")
     print("=" * 70)
 
-    # 結果JSONの保存
-    with open(DISCOVERED_OUTPUT_FILE, "w", encoding="utf-8") as f:
-        json.dump({
-            "crawledAt": datetime.now().isoformat(),
-            "totalDiscovered": len(discovered_list),
-            "councils": discovered_list
-        }, f, ensure_ascii=False, indent=2)
-
-    print(f"結果を {DISCOVERED_OUTPUT_FILE} に保存しました。")
+    # 結果JSONの保存 (data.jsonのdiscoveredCouncilsを更新)
+    if os.path.exists(DATA_JSON_PATH):
+        try:
+            with open(DATA_JSON_PATH, "r", encoding="utf-8") as f:
+                data = json.load(f)
+            
+            existing_discovered = data.get("discoveredCouncils", [])
+            existing_dict = {c.get("id"): c for c in existing_discovered if c.get("id")}
+            
+            for new_c in discovered_list:
+                cid = new_c.get("id")
+                if cid in existing_dict:
+                    new_c["status"] = existing_dict[cid].get("status", "pending")
+                else:
+                    new_c["status"] = "pending"
+                existing_dict[cid] = new_c
+            
+            data["discoveredCouncils"] = list(existing_dict.values())
+            
+            with open(DATA_JSON_PATH, "w", encoding="utf-8") as f:
+                json.dump(data, f, ensure_ascii=False, indent=2)
+                
+            print(f"結果を data.json の discoveredCouncils に保存しました。")
+        except Exception as e:
+            print(f"[ERROR] data.json の更新に失敗しました: {e}")
     return discovered_list
 
 if __name__ == "__main__":

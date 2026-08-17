@@ -28,7 +28,7 @@ if sys.platform == "win32":
     except Exception:
         pass
 
-RULES_FILE = os.path.join(os.path.dirname(__file__), "scraping_rules.json")
+DATA_JSON_PATH = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "docs", "data.json"))
 
 # クロール対象の政府審議会・会議体URLリスト
 TARGET_COUNCILS = [
@@ -1152,20 +1152,29 @@ TARGET_COUNCILS = [
 ]
 
 def load_rules():
-    if os.path.exists(RULES_FILE):
+    if os.path.exists(DATA_JSON_PATH):
         try:
-            with open(RULES_FILE, "r", encoding="utf-8") as f:
-                return json.load(f)
+            with open(DATA_JSON_PATH, "r", encoding="utf-8") as f:
+                data = json.load(f)
+                return data.get("scrapingRules", {})
         except Exception:
             pass
     return {}
 
 def save_rules(rules_data):
-    try:
-        with open(RULES_FILE, "w", encoding="utf-8") as f:
-            json.dump(rules_data, f, ensure_ascii=False, indent=2)
-    except Exception as e:
-        print(f"[ERROR] Failed to save rules: {e}", file=sys.stderr)
+    if os.path.exists(DATA_JSON_PATH):
+        try:
+            with open(DATA_JSON_PATH, "r", encoding="utf-8") as f:
+                data = json.load(f)
+            
+            data["scrapingRules"] = rules_data
+            
+            with open(DATA_JSON_PATH, "w", encoding="utf-8") as f:
+                json.dump(data, f, ensure_ascii=False, indent=2)
+        except Exception as e:
+            print(f"[ERROR] Failed to save rules to data.json: {e}", file=sys.stderr)
+    else:
+        print(f"[ERROR] {DATA_JSON_PATH} not found.", file=sys.stderr)
 
 def fetch_url(url):
     parsed_url = urllib.parse.urlparse(url)
@@ -1441,7 +1450,7 @@ def main():
 
     if updated_count > 0:
         save_rules(rules)
-        print(f"\n1回目AI確認完了: 全{updated_count}件のAI考案ルールを {RULES_FILE} に永続保存しました。")
+        print(f"\n1回目AI確認完了: 全{updated_count}件のAI考案ルールを data.json の scrapingRules に永続保存しました。")
 
 if __name__ == "__main__":
     main()

@@ -15,6 +15,18 @@ import re
 import io
 from datetime import datetime, timedelta
 from bs4 import BeautifulSoup
+import google.generativeai as genai
+
+API_KEY = os.environ.get("GEMINI_API_KEY")
+if API_KEY:
+    genai.configure(api_key=API_KEY)
+    try:
+        model = genai.GenerativeModel('gemini-3.6-flash')
+    except Exception as e:
+        print(f"Failed to initialize Gemini model: {e}")
+        model = None
+else:
+    model = None
 
 # Windows ターミナルログの文字化け防止 (chcp 65001 & UTF-8 再構成)
 if sys.platform == "win32":
@@ -29,21 +41,28 @@ if sys.platform == "win32":
     except Exception:
         pass
 
-RULES_FILE = os.path.join(os.path.dirname(__file__), "scraping_rules.json")
-DATA_JS_FILE = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "docs", "data.js"))
 
-def load_councils_from_data_js():
-    """docs/data.js から登録済みの全会議体 (COUNCILS) を動的に読み込む"""
-    councils = []
-    if os.path.exists(DATA_JS_FILE):
+DATA_JSON_FILE = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "docs", "data.json"))
+CRAWLER_CONFIG_FILE = os.path.join(os.path.dirname(__file__), "crawler_config.json")
+
+def load_crawler_config():
+    if os.path.exists(CRAWLER_CONFIG_FILE):
         try:
-            with open(DATA_JS_FILE, "r", encoding="utf-8") as f:
-                content = f.read()
-            c_match = re.search(r"const COUNCILS = (\[[\s\S]*?\n\];)", content)
-            if c_match:
-                c_str = c_match.group(1).rstrip(";").strip()
-                c_json = re.sub(r"(\w+):", r'"\1":', c_str).replace("'", '"')
-                raw_councils = json.loads(c_json)
+            with open(CRAWLER_CONFIG_FILE, "r", encoding="utf-8") as f:
+                config = json.load(f)
+                return config.get("llm_mode", True)
+        except Exception:
+            pass
+    return True
+
+def load_councils_from_data_json():
+    """docs/data.json から登録済みの全会議体 (COUNCILS) を読み込む"""
+    councils = []
+    if os.path.exists(DATA_JSON_FILE):
+        try:
+            with open(DATA_JSON_FILE, "r", encoding="utf-8") as f:
+                data = json.load(f)
+                raw_councils = data.get("councils", [])
                 for item in raw_councils:
                     if item.get("officialUrl"):
                         councils.append({
@@ -53,26 +72,18 @@ def load_councils_from_data_js():
                             "url": item.get("officialUrl")
                         })
         except Exception as e:
-            print(f"[WARN] data.js からの会議体動的読み込みにフォールバック: {e}", file=sys.stderr)
-            with open(DATA_JS_FILE, "r", encoding="utf-8") as f:
-                content = f.read()
-            for m in re.finditer(r"\{\s*id:\s*'([^']+)'[\s\S]*?name:\s*'([^']+)'[\s\S]*?ministry:\s*'([^']+)'[\s\S]*?officialUrl:\s*'([^']+)'", content):
-                councils.append({
-                    "id": m.group(1),
-                    "name": m.group(2),
-                    "ministry": m.group(3),
-                    "url": m.group(4)
-                })
+            print(f"[WARN] data.json 読み込み失敗: {e}", file=sys.stderr)
     return councils
 
 def load_scraping_rules():
-    """2回目用情報取得ルール (scraping_rules.json) を読み込む"""
-    if os.path.exists(RULES_FILE):
+    """docs/data.json の scrapingRules キーからスクレイピングルールを読み込む"""
+    if os.path.exists(DATA_JSON_FILE):
         try:
-            with open(RULES_FILE, "r", encoding="utf-8") as f:
-                return json.load(f)
+            with open(DATA_JSON_FILE, "r", encoding="utf-8") as f:
+                data = json.load(f)
+                return data.get("scrapingRules", {})
         except Exception as e:
-            print(f"[WARN] Failed to load scraping_rules.json: {e}", file=sys.stderr)
+            print(f"[WARN] Failed to load scrapingRules from data.json: {e}", file=sys.stderr)
     return {}
 
 def fetch_url(url):
@@ -232,40 +243,96 @@ def calculate_past_year_count(extracted_dates, ref_date=None):
     unique_past_year_dates = set([dt.strftime('%Y-%m-%d') for dt in parsed_dates if one_year_ago <= dt <= ref_date])
     return len(unique_past_year_dates), True
 
-def execute_rule_retrieval(target, html, rule_item):
-    """【2回目情報取得Engine】AI考案ルールに基づき2段階階層クロールおよび資料データをフル抽出"""
+def extract_via_llm(url, html, target_name):
+    if not model:
+        print("[WARN] LLM model not initialized. Skipping LLM extraction.")
+        return [], []
+        
+    soup = BeautifulSoup(html, 'html.parser')
+    for script in soup(["script", "style"]):
+        script.extract()
+    body_text = soup.get_text(separator=' ', strip=True)
+    body_text = re.sub(r'\s+', ' ', body_text)[:5000] # Limit tokens
+    
+    prompt = f"""
+以下の官公庁会議（{target_name}）のウェブページの内容から、配付資料のリストと開催日を抽出してください。
+URL: {url}
+
+必ず以下のJSONスキーマに従って出力してください。Markdownコードブロックは含めないでください。
+{{
+  "materials": [
+    {{"name": "資料名", "url": "資料のURL"}}
+  ],
+  "extractedDates": [
+    "2023-12-01", "2024-01-15" (日付の配列、YYYY-MM-DD形式、和暦は西暦に変換)
+  ]
+}}
+
+本文:
+{body_text}
+"""
+    try:
+        response = model.generate_content(prompt)
+        result_text = response.text.strip()
+        if result_text.startswith("```json"): result_text = result_text[7:]
+        if result_text.startswith("```"): result_text = result_text[3:]
+        if result_text.endswith("```"): result_text = result_text[:-3]
+        
+        data = json.loads(result_text.strip())
+        materials = data.get("materials", [])
+        
+        # fix relative urls
+        for m in materials:
+            if m.get("url") and not m["url"].startswith("http"):
+                m["url"] = urllib.parse.urljoin(url, m["url"])
+                
+        return materials, data.get("extractedDates", [])
+    except Exception as e:
+        print(f"[ERROR] LLM Extraction failed: {e}")
+        return [], []
+
+def execute_rule_retrieval(target, html, rule_item, use_llm=True):
+    """2回目情報取得Engine"""
     rule = rule_item.get("rules", {})
     quirk_note = rule_item.get("ministryQuirk", "標準抽出ルール")
     
     title_match = re.search(r'<title>(.*?)</title>', html, re.IGNORECASE | re.DOTALL)
     page_title = title_match.group(1).strip() if title_match else target["name"]
 
-    pdf_pattern = rule.get("pdf_selector", r'href=["\']([^"\']+\.pdf)["\']')
-    top_materials = parse_materials_from_html(html, target["url"], pdf_pattern)
-
-    subpage_meetings = []
-    deep_enabled = rule.get("deep_crawl_enabled", True)
-    all_extracted_dates = []
-    
-    if deep_enabled:
-        new_meetings, new_materials, new_dates = _crawl_subpages(target["url"], html, rule, quirk_note, pdf_pattern)
-        subpage_meetings.extend(new_meetings)
-        top_materials.extend(new_materials)
-        all_extracted_dates.extend(new_dates)
-
     unique_materials = []
-    seen_keys = set()
-    for m in top_materials:
-        key = m["url"] if m["url"] != "#" else m["name"]
-        if key not in seen_keys:
-            seen_keys.add(key)
-            unique_materials.append(m)
+    norm_date_matches = []
+    subpage_meetings = []
+    
+    if use_llm:
+        print("   [LLM Extraction Mode] Extracting data using Gemini API...")
+        materials, dates = extract_via_llm(target["url"], html, target["name"])
+        unique_materials = materials
+        norm_date_matches = dates
+    else:
+        pdf_pattern = rule.get("pdf_selector", r'href=["\']([^"\']+\.pdf)["\']')
+        top_materials = parse_materials_from_html(html, target["url"], pdf_pattern)
+        
+        deep_enabled = rule.get("deep_crawl_enabled", True)
+        all_extracted_dates = []
+        
+        if deep_enabled:
+            new_meetings, new_materials, new_dates = _crawl_subpages(target["url"], html, rule, quirk_note, pdf_pattern)
+            subpage_meetings.extend(new_meetings)
+            top_materials.extend(new_materials)
+            all_extracted_dates.extend(new_dates)
 
-    raw_date_matches = re.findall(rule.get("date_regex", r'(?:令和|平成)\d+年\d+月\d+日|\d{4}年\d+月\d+日|\d{4}[/-]\d+[/-]\d+'), html)
-    norm_date_matches = [normalize_japanese_numbers(d) for d in raw_date_matches]
-    all_extracted_dates.extend(norm_date_matches)
+        seen_keys = set()
+        for m in top_materials:
+            key = m["url"] if m["url"] != "#" else m["name"]
+            if key not in seen_keys:
+                seen_keys.add(key)
+                unique_materials.append(m)
 
-    past_year_count, has_top_page_dates = calculate_past_year_count(all_extracted_dates)
+        raw_date_matches = re.findall(rule.get("date_regex", r'(?:令和|平成)\d+年\d+月\d+日|\d{4}年\d+月\d+日|\d{4}[/-]\d+[/-]\d+'), html)
+        norm_date_matches = [normalize_japanese_numbers(d) for d in raw_date_matches]
+        all_extracted_dates.extend(norm_date_matches)
+
+    past_year_count, has_top_page_dates = calculate_past_year_count(norm_date_matches)
 
     scraped_item = {
         "councilId": target["id"],
@@ -285,68 +352,25 @@ def execute_rule_retrieval(target, html, rule_item):
     }
     return scraped_item
 
-def load_councils_from_data_js():
-    import subprocess
-    import json
-    import os
-    project_root = os.path.dirname(os.path.dirname(__file__))
-    data_js_path = os.path.join(project_root, "docs", "data.js")
-    if not os.path.exists(data_js_path):
-        return []
-    node_script = f"""
-const fs = require('fs');
-const vm = require('vm');
-try {{
-    const dataCode = fs.readFileSync({json.dumps(data_js_path)}, 'utf-8');
-    const context = {{}};
-    vm.createContext(context);
-    vm.runInContext(dataCode, context);
-    if (context.COUNCILS) {{
-        console.log(JSON.stringify(context.COUNCILS));
-    }} else {{
-        console.log("[]");
-    }}
-}} catch (err) {{
-    console.error(err);
-    process.exit(1);
-}}
-"""
-    try:
-        proc = subprocess.run(["node", "-e", node_script], capture_output=True, text=True, encoding='utf-8')
-        if proc.returncode == 0:
-            councils = json.loads(proc.stdout.strip())
-            targets = []
-            for c in councils:
-                targets.append({
-                    "id": c.get("id"),
-                    "ministry": c.get("ministry"),
-                    "name": c.get("name"),
-                    "url": c.get("officialUrl")
-                })
-            return targets
-    except Exception as e:
-        print(f"[WARN] Failed to load dynamically from data.js: {e}")
-    return []
-
 def main():
     global CRAWL_TARGETS
-    dynamic_targets = load_councils_from_data_js()
+    dynamic_targets = load_councils_from_data_json()
     if dynamic_targets:
         CRAWL_TARGETS = dynamic_targets
-        print(f"[INFO] docs/data.js から {len(CRAWL_TARGETS)} 件の会議体を動的に読み込みました。")
+        print(f"[INFO] docs/data.json から {len(CRAWL_TARGETS)} 件の会議体を動的に読み込みました。")
     else:
-        print(f"[INFO] 静的な CRAWL_TARGETS ({len(CRAWL_TARGETS)} 件) を使用します。")
+        CRAWL_TARGETS = []
+        print(f"[INFO] 会議体データが見つかりません。")
 
+    use_llm = load_crawler_config()
     print("==========================================================")
-    print(" 政策会議ウォッチ (PM-HUB) 2回目用情報取得Engine ")
+    print(" 政策会議ウォッチ (PM-HUB) クローラー")
     print("==========================================================")
+    print(f"抽出モード: {'LLM抽出 (Gemini API)' if use_llm else '既存ルール (Heuristic)'}")
     print(f"取得実行時刻: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
     print(f"対象会議体数: {len(CRAWL_TARGETS)} 件\n")
 
     rules = load_scraping_rules()
-    if not rules:
-        print("[WARN] 'scraping_rules.json' が見つかりません。先に agent_initial_verifier.py を実行してください。", file=sys.stderr)
-
     results = []
 
     for idx, target in enumerate(CRAWL_TARGETS, 1):
@@ -357,14 +381,10 @@ def main():
             c_id = target["id"]
             rule_obj = rules.get(c_id, {
                 "rule_id": "rule-fallback-v1",
-                "rules": {
-                    "pdf_selector": r'href=["\']([^"\']+\.pdf)["\']',
-                    "date_regex": r'令和\d+年\d+月\d+日'
-                }
+                "rules": {}
             })
-            print(f"   [2回目ルール適用] '{rule_obj.get('rule_id')}' に基づき全自動データ抽出")
-
-            item = execute_rule_retrieval(target, html, rule_obj)
+            
+            item = execute_rule_retrieval(target, html, rule_obj, use_llm=use_llm)
             results.append(item)
             
             print(f"  -> [200 OK] タイトル: {item['pageTitle']}")
@@ -377,22 +397,18 @@ def main():
     with open(output_filename, "w", encoding="utf-8") as f:
         json.dump(results, f, ensure_ascii=False, indent=2)
 
-    # docs/data.js の LAST_CRAWL_TIME を最新のクロール実行時刻に自動更新
-    project_root = os.path.dirname(os.path.dirname(__file__))
-    data_js_path = os.path.join(project_root, "docs", "data.js")
-    if os.path.exists(data_js_path):
-        now_str = datetime.now().strftime("%Y/%m/%d %H:%M")
-        with open(data_js_path, "r", encoding="utf-8") as f:
-            content = f.read()
-        if "const LAST_CRAWL_TIME =" in content:
-            updated_content = re.sub(
-                r"const LAST_CRAWL_TIME = '[^']*';",
-                f"const LAST_CRAWL_TIME = '{now_str}';",
-                content
-            )
-            with open(data_js_path, "w", encoding="utf-8") as f:
-                f.write(updated_content)
-            print(f"[更新成功] docs/data.js の LAST_CRAWL_TIME を '{now_str}' に更新しました。")
+    # タイムスタンプのみ更新
+    now_str = datetime.now().strftime("%Y/%m/%d %H:%M")
+    if os.path.exists(DATA_JSON_FILE):
+        try:
+            with open(DATA_JSON_FILE, "r", encoding="utf-8") as f:
+                data = json.load(f)
+            data["last_crawl_time"] = now_str
+            with open(DATA_JSON_FILE, "w", encoding="utf-8") as f:
+                json.dump(data, f, ensure_ascii=False, indent=2)
+            print(f"[更新成功] docs/data.json の last_crawl_time を '{now_str}' に更新しました。")
+        except Exception as e:
+            print(f"[WARN] data.json 更新失敗: {e}")
 
     print(f"\nデータ取得完了: 結果を {output_filename} に保存しました。")
 
