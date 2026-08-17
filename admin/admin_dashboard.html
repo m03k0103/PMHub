@@ -453,6 +453,57 @@
           </button>
         </div>
       </section>
+
+      <!-- 3.6. CRAWL STATUS DASHBOARD -->
+      <section class="admin-card card-glass" style="margin-top: 1.5rem;">
+        <style>
+          .crawl-error-item {
+            padding: 0.75rem;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+          }
+          .crawl-error-item:last-child {
+            border-bottom: none;
+          }
+          .crawl-error-title {
+            font-weight: 600;
+            font-size: 0.95rem;
+            color: var(--text-primary);
+          }
+          .crawl-error-meta {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            margin-top: 0.2rem;
+          }
+          .crawl-error-reason {
+            font-size: 0.85rem;
+            color: #ef4444;
+            margin-top: 0.4rem;
+            background: rgba(239, 68, 68, 0.1);
+            padding: 0.4rem;
+            border-radius: 4px;
+          }
+        </style>
+        <h3>📊 クロールステータス ダッシュボード</h3>
+        <p class="text-sm" style="margin-top: 0.3rem; color:var(--text-muted);">各会議体の最新クロール結果・ステータス状況</p>
+        
+        <div class="summary-grid" style="margin-top: 1.25rem;" id="crawlStatusSummary">
+          <div class="summary-stat"><span class="stat-label">🟢 成功 (Success)</span><span class="stat-value" style="color:#10b981;" id="statCrawlSuccess">0</span></div>
+          <div class="summary-stat"><span class="stat-label">🟡 部分成功 (Partial)</span><span class="stat-value" style="color:#f59e0b;" id="statCrawlPartial">0</span></div>
+          <div class="summary-stat"><span class="stat-label">🔴 失敗 (Failed)</span><span class="stat-value" style="color:#ef4444;" id="statCrawlFailed">0</span></div>
+          <div class="summary-stat"><span class="stat-label">⚪ 未実行 (Never)</span><span class="stat-value" style="color:#94a3b8;" id="statCrawlNever">0</span></div>
+        </div>
+
+        <div style="margin-top: 1.5rem;">
+          <button id="toggleCrawlErrorList" class="btn-secondary" style="width: 100%; display: flex; justify-content: space-between; align-items: center; padding: 0.75rem 1rem;">
+            <span>⚠️ 失敗・未実行の会議体一覧を表示</span>
+            <svg id="toggleCrawlErrorIcon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div id="crawlErrorListContainer" style="display: none; margin-top: 1rem; max-height: 400px; overflow-y: auto; background: rgba(0,0,0,0.2); border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 0.5rem;">
+            <!-- Rendered via JS -->
+          </div>
+        </div>
+      </section>
+
       <!-- 4. SCRAPED LOG INSPECTOR -->
       <section class="admin-card card-glass">
         <h3>📄 最新パースデータ (`scraped_councils_output.json`)</h3>
@@ -2566,6 +2617,78 @@ JSON データを読み込み中...
         window.startMeetingCrawl();
       });
     }
+
+    // ─── 3. Crawl Status Dashboard ───
+    function renderCrawlStatusDashboard() {
+      if (!window.COUNCILS || !Array.isArray(window.COUNCILS)) return;
+      
+      let successCount = 0;
+      let partialCount = 0;
+      let failedCount = 0;
+      let neverCount = 0;
+      
+      const errorList = [];
+      
+      window.COUNCILS.forEach(council => {
+        const status = council.crawlStatus || { result: 'never' };
+        
+        if (status.result === 'success') {
+          successCount++;
+        } else if (status.result === 'partial') {
+          partialCount++;
+        } else if (status.result === 'failed') {
+          failedCount++;
+          errorList.push({ council, status });
+        } else {
+          neverCount++;
+          errorList.push({ council, status: { result: 'never', lastAttempt: '未取得', failureReason: 'クロール未実行' } });
+        }
+      });
+      
+      const elSuccess = document.getElementById('statCrawlSuccess');
+      if (elSuccess) elSuccess.textContent = successCount;
+      const elPartial = document.getElementById('statCrawlPartial');
+      if (elPartial) elPartial.textContent = partialCount;
+      const elFailed = document.getElementById('statCrawlFailed');
+      if (elFailed) elFailed.textContent = failedCount;
+      const elNever = document.getElementById('statCrawlNever');
+      if (elNever) elNever.textContent = neverCount;
+      
+      const container = document.getElementById('crawlErrorListContainer');
+      if (container) {
+        if (errorList.length === 0) {
+          container.innerHTML = '<div style="padding: 1rem; text-align: center; color: var(--text-muted);">失敗・未実行の会議体はありません。</div>';
+        } else {
+          container.innerHTML = errorList.map(item => {
+            const failuresCount = item.status.consecutiveFailures ? ` (連続失敗: ${item.status.consecutiveFailures}回)` : '';
+            return `
+              <div class="crawl-error-item">
+                <div class="crawl-error-title">${item.council.name}</div>
+                <div class="crawl-error-meta">🏢 ${item.council.ministry} | 🕒 最終試行: ${item.status.lastAttempt || '未取得'}${failuresCount}</div>
+                <div class="crawl-error-reason">⚠️ ${item.status.failureReason || '原因不明'}</div>
+              </div>
+            `;
+          }).join('');
+        }
+      }
+    }
+    
+    const toggleErrorBtn = document.getElementById('toggleCrawlErrorList');
+    const toggleErrorIcon = document.getElementById('toggleCrawlErrorIcon');
+    const errorContainer = document.getElementById('crawlErrorListContainer');
+    if (toggleErrorBtn && errorContainer && toggleErrorIcon) {
+      toggleErrorBtn.addEventListener('click', () => {
+        if (errorContainer.style.display === 'none') {
+          errorContainer.style.display = 'block';
+          toggleErrorIcon.innerHTML = '<polyline points="18 15 12 9 6 15"/>';
+        } else {
+          errorContainer.style.display = 'none';
+          toggleErrorIcon.innerHTML = '<polyline points="6 9 12 15 18 9"/>';
+        }
+      });
+    }
+
+    renderCrawlStatusDashboard();
 
     // 全タブの初回データ一括描画を確実に実行
     if (typeof renderCards === 'function') renderCards();

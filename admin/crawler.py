@@ -243,16 +243,53 @@ def calculate_past_year_count(extracted_dates, ref_date=None):
     unique_past_year_dates = set([dt.strftime('%Y-%m-%d') for dt in parsed_dates if one_year_ago <= dt <= ref_date])
     return len(unique_past_year_dates), True
 
-def extract_via_llm(url, html, target_name):
+def discover_subpage_links(html, base_url):
+    """トップページHTMLから会議の個別ページへのリンクを発見する"""
+    soup = BeautifulSoup(html, 'html.parser')
+    base_tag = soup.find('base', href=True)
+    if base_tag:
+        base_url = urllib.parse.urljoin(base_url, base_tag['href'])
+
+    # 会議サブページのパターン (dai1, 1kai, kaisai, gijisidai, etc.)
+    subpage_pattern = re.compile(
+        r'(?:dai\d+|\d+kai|kaisai|gijisidai|gijiroku|kaigi|meeting|shiryo)',
+        re.IGNORECASE
+    )
+    
+    candidates = []
+    seen = set()
+    for a_tag in soup.find_all('a', href=True):
+        href = a_tag['href']
+        if href.startswith('#') or href.startswith('javascript:'):
+            continue
+        if href.lower().endswith('.pdf'):
+            continue
+        abs_url = urllib.parse.urljoin(base_url, href)
+        parsed = urllib.parse.urlparse(abs_url)
+        if parsed.scheme not in ('http', 'https'):
+            continue
+        # 同一ドメインのみ
+        base_domain = urllib.parse.urlparse(base_url).netloc
+        if parsed.netloc != base_domain:
+            continue
+        if abs_url in seen or abs_url == base_url:
+            continue
+        if subpage_pattern.search(href):
+            seen.add(abs_url)
+            candidates.append(abs_url)
+    
+    return candidates[:8]  # 最大8サブページ
+
+def extract_via_llm_single(url, html, target_name):
+    """単一ページに対してLLM抽出を実行する"""
     if not model:
-        print("[WARN] LLM model not initialized. Skipping LLM extraction.")
         return [], []
         
     soup = BeautifulSoup(html, 'html.parser')
     for script in soup(["script", "style"]):
         script.extract()
     body_text = soup.get_text(separator=' ', strip=True)
-    body_text = re.sub(r'\s+', ' ', body_text)[:5000] # Limit tokens
+    body_text = re.sub(r'\s+', ' ', body_text)[:5000]
     
     prompt = f"""
 以下の官公庁会議（{target_name}）のウェブページの内容から、配付資料のリストと開催日を抽出してください。
@@ -281,18 +318,49 @@ URL: {url}
         data = json.loads(result_text.strip())
         materials = data.get("materials", [])
         
-        # fix relative urls
         for m in materials:
             if m.get("url") and not m["url"].startswith("http"):
                 m["url"] = urllib.parse.urljoin(url, m["url"])
                 
         return materials, data.get("extractedDates", [])
     except Exception as e:
-        print(f"[ERROR] LLM Extraction failed: {e}")
+        print(f"[ERROR] LLM Extraction failed for {url}: {e}")
         return [], []
 
+def extract_via_llm(target_url, html, target_name):
+    """LLM抽出（トップページ + サブページ巡回）"""
+    if not model:
+        print("[WARN] LLM model not initialized. Skipping LLM extraction.")
+        return [], []
+    
+    # Step 1: トップページ抽出
+    all_materials, all_dates = extract_via_llm_single(target_url, html, target_name)
+    
+    # Step 2: サブページ発見・巡回
+    subpage_urls = discover_subpage_links(html, target_url)
+    if subpage_urls:
+        print(f"   [LLM Subpage Crawl] {len(subpage_urls)} 件のサブページを巡回中...")
+        for sub_url in subpage_urls:
+            sub_html = fetch_url(sub_url)
+            if sub_html:
+                sub_materials, sub_dates = extract_via_llm_single(sub_url, sub_html, target_name)
+                all_materials.extend(sub_materials)
+                all_dates.extend(sub_dates)
+    
+    # 重複排除
+    seen_urls = set()
+    unique_materials = []
+    for m in all_materials:
+        key = m.get("url", m.get("name", ""))
+        if key not in seen_urls:
+            seen_urls.add(key)
+            unique_materials.append(m)
+    
+    unique_dates = list(set(all_dates))
+    return unique_materials, unique_dates
+
 def execute_rule_retrieval(target, html, rule_item, use_llm=True):
-    """2回目情報取得Engine"""
+    """多段フォールバック情報取得Engine (LLM → ルール → 失敗記録)"""
     rule = rule_item.get("rules", {})
     quirk_note = rule_item.get("ministryQuirk", "標準抽出ルール")
     
@@ -302,13 +370,23 @@ def execute_rule_retrieval(target, html, rule_item, use_llm=True):
     unique_materials = []
     norm_date_matches = []
     subpage_meetings = []
+    extraction_method = "none"
     
+    # Stage 1: LLM抽出（サブページ巡回込み）
     if use_llm:
-        print("   [LLM Extraction Mode] Extracting data using Gemini API...")
+        print("   [Stage 1] LLM Extraction (Gemini API + サブページ巡回)...")
         materials, dates = extract_via_llm(target["url"], html, target["name"])
-        unique_materials = materials
-        norm_date_matches = dates
-    else:
+        if materials or dates:
+            unique_materials = materials
+            norm_date_matches = dates
+            extraction_method = "llm"
+            print(f"   [Stage 1 OK] LLM抽出成功: 資料 {len(materials)} 件, 日付 {len(dates)} 件")
+        else:
+            print(f"   [Stage 1 EMPTY] LLM抽出結果が0件 → Stage 2 (既存ルール) にフォールバック")
+    
+    # Stage 2: 既存ルール抽出（LLMが失敗した場合 or LLM無効の場合）
+    if not unique_materials and not norm_date_matches:
+        print(f"   [Stage 2] 既存ルール抽出 (rule: {rule_item.get('rule_id', 'fallback')})...")
         pdf_pattern = rule.get("pdf_selector", r'href=["\']([^"\']+\.pdf)["\']')
         top_materials = parse_materials_from_html(html, target["url"], pdf_pattern)
         
@@ -331,8 +409,23 @@ def execute_rule_retrieval(target, html, rule_item, use_llm=True):
         raw_date_matches = re.findall(rule.get("date_regex", r'(?:令和|平成)\d+年\d+月\d+日|\d{4}年\d+月\d+日|\d{4}[/-]\d+[/-]\d+'), html)
         norm_date_matches = [normalize_japanese_numbers(d) for d in raw_date_matches]
         all_extracted_dates.extend(norm_date_matches)
+        
+        if unique_materials or norm_date_matches:
+            extraction_method = "rule"
+            print(f"   [Stage 2 OK] ルール抽出成功: 資料 {len(unique_materials)} 件, 日付 {len(norm_date_matches)} 件")
+        else:
+            extraction_method = "none"
+            print(f"   [Stage 2 EMPTY] ルール抽出も0件 → 取得失敗として記録")
 
     past_year_count, has_top_page_dates = calculate_past_year_count(norm_date_matches)
+
+    # 抽出結果の判定
+    if unique_materials and norm_date_matches:
+        crawl_result = "success"
+    elif unique_materials or norm_date_matches:
+        crawl_result = "partial"
+    else:
+        crawl_result = "failed"
 
     scraped_item = {
         "councilId": target["id"],
@@ -341,6 +434,8 @@ def execute_rule_retrieval(target, html, rule_item, use_llm=True):
         "officialUrl": target["url"],
         "scrapedAt": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
         "ruleApplied": rule_item.get("rule_id", "rule-default"),
+        "extractionMethod": extraction_method,
+        "crawlResult": crawl_result,
         "ministryQuirk": quirk_note,
         "pageTitle": page_title,
         "pastYearCount": past_year_count,
@@ -351,6 +446,37 @@ def execute_rule_retrieval(target, html, rule_item, use_llm=True):
         "subpageMeetings": subpage_meetings
     }
     return scraped_item
+
+def update_crawl_status(data, council_id, scraped_item, failure_reason=None):
+    """data.json の councils 配列内の該当会議体に crawlStatus を記録する"""
+    for council in data.get("councils", []):
+        if council.get("id") == council_id:
+            prev_status = council.get("crawlStatus", {})
+            prev_failures = prev_status.get("consecutiveFailures", 0)
+            
+            if scraped_item is None:
+                # fetch自体が失敗
+                council["crawlStatus"] = {
+                    "lastAttempt": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
+                    "result": "failed",
+                    "extractionMethod": "none",
+                    "materialsCount": 0,
+                    "datesCount": 0,
+                    "failureReason": failure_reason or "Fetch failed",
+                    "consecutiveFailures": prev_failures + 1
+                }
+            else:
+                result = scraped_item.get("crawlResult", "failed")
+                council["crawlStatus"] = {
+                    "lastAttempt": scraped_item.get("scrapedAt", ""),
+                    "result": result,
+                    "extractionMethod": scraped_item.get("extractionMethod", "none"),
+                    "materialsCount": scraped_item.get("totalExtractedMaterials", 0),
+                    "datesCount": len(scraped_item.get("extractedDates", [])),
+                    "failureReason": "" if result != "failed" else "Both LLM and rule extraction returned 0 results",
+                    "consecutiveFailures": 0 if result != "failed" else prev_failures + 1
+                }
+            break
 
 def main():
     global CRAWL_TARGETS
@@ -366,12 +492,19 @@ def main():
     print("==========================================================")
     print(" 政策会議ウォッチ (PM-HUB) クローラー")
     print("==========================================================")
-    print(f"抽出モード: {'LLM抽出 (Gemini API)' if use_llm else '既存ルール (Heuristic)'}")
+    print(f"抽出モード: {'LLM抽出 (Gemini API) + フォールバック' if use_llm else '既存ルール (Heuristic)'}")
     print(f"取得実行時刻: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
     print(f"対象会議体数: {len(CRAWL_TARGETS)} 件\n")
 
+    # data.json をまるごと読み込み（ステータス更新用）
+    data = {}
+    if os.path.exists(DATA_JSON_FILE):
+        with open(DATA_JSON_FILE, "r", encoding="utf-8") as f:
+            data = json.load(f)
+
     rules = load_scraping_rules()
     results = []
+    stats = {"success": 0, "partial": 0, "failed": 0, "fetch_error": 0}
 
     for idx, target in enumerate(CRAWL_TARGETS, 1):
         print(f"[{idx}/{len(CRAWL_TARGETS)}] HTTP GET: {target['name']} ({target['url']})...")
@@ -387,30 +520,45 @@ def main():
             item = execute_rule_retrieval(target, html, rule_obj, use_llm=use_llm)
             results.append(item)
             
-            print(f"  -> [200 OK] タイトル: {item['pageTitle']}")
-            print(f"  -> [データ抽出成功] 総抽出資料数: {item['totalExtractedMaterials']} 件, 検出日付: {item['extractedDates']}")
+            cr = item.get("crawlResult", "failed")
+            stats[cr] = stats.get(cr, 0) + 1
+            
+            status_icon = {"success": "🟢", "partial": "🟡", "failed": "🔴"}.get(cr, "⚪")
+            print(f"  -> {status_icon} [{cr.upper()}] タイトル: {item['pageTitle']}")
+            print(f"  -> 資料: {item['totalExtractedMaterials']} 件, 日付: {item['extractedDates']}, 抽出方法: {item['extractionMethod']}")
+            
+            update_crawl_status(data, target["id"], item)
         else:
-            print(f"  -> [SKIP] ネットワーク取得スキップ")
+            stats["fetch_error"] += 1
+            print(f"  -> 🔴 [FETCH ERROR] ネットワーク取得失敗")
+            update_crawl_status(data, target["id"], None, "Network fetch failed")
         print("-" * 65)
+
+    # サマリー表示
+    print(f"\n{'='*60}")
+    print(f" クロール結果サマリー")
+    print(f"{'='*60}")
+    print(f"  🟢 成功 (success):  {stats['success']} 件")
+    print(f"  🟡 部分成功 (partial): {stats['partial']} 件")
+    print(f"  🔴 失敗 (failed):   {stats['failed']} 件")
+    print(f"  🔴 取得エラー:      {stats['fetch_error']} 件")
+    print(f"{'='*60}")
 
     output_filename = os.path.join(os.path.dirname(__file__), "scraped_councils_output.json")
     with open(output_filename, "w", encoding="utf-8") as f:
         json.dump(results, f, ensure_ascii=False, indent=2)
 
-    # タイムスタンプのみ更新
+    # data.json にクロールステータスとタイムスタンプを保存
     now_str = datetime.now().strftime("%Y/%m/%d %H:%M")
-    if os.path.exists(DATA_JSON_FILE):
-        try:
-            with open(DATA_JSON_FILE, "r", encoding="utf-8") as f:
-                data = json.load(f)
-            data["last_crawl_time"] = now_str
-            with open(DATA_JSON_FILE, "w", encoding="utf-8") as f:
-                json.dump(data, f, ensure_ascii=False, indent=2)
-            print(f"[更新成功] docs/data.json の last_crawl_time を '{now_str}' に更新しました。")
-        except Exception as e:
-            print(f"[WARN] data.json 更新失敗: {e}")
+    data["lastCrawlTime"] = now_str
+    try:
+        with open(DATA_JSON_FILE, "w", encoding="utf-8") as f:
+            json.dump(data, f, ensure_ascii=False, indent=2)
+        print(f"[更新成功] docs/data.json にクロールステータスと lastCrawlTime を保存しました。")
+    except Exception as e:
+        print(f"[WARN] data.json 更新失敗: {e}")
 
-    print(f"\nデータ取得完了: 結果を {output_filename} に保存しました。")
+    print(f"データ取得完了: 結果を {output_filename} に保存しました。")
 
 if __name__ == "__main__":
     main()
