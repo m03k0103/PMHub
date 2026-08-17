@@ -128,12 +128,20 @@ def get_max_seq(councils):
                 pass
     return max_num
 
-def run_discovery():
-    print("=" * 70)
-    print("【PM-HUB】省庁 審議会・会議体ディスカバリー巡回 開始")
-    print("（審議会等ページにアクセスし、全会議体を個別の正規URLで独立検出します）")
-    print(f"実行時刻: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
-    print("=" * 70)
+def run_discovery(progress_callback=None):
+    def emit(msg, data=None):
+        print(msg)
+        if progress_callback:
+            try:
+                progress_callback(msg, data)
+            except Exception:
+                pass
+
+    emit("=" * 70)
+    emit("【PM-HUB】省庁 審議会・会議体ディスカバリー巡回 開始")
+    emit("（審議会等ページにアクセスし、全会議体を個別の正規URLで独立検出します）")
+    emit(f"実行時刻: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
+    emit("=" * 70)
 
     keywords_cfg = load_keywords()
     common_keywords = keywords_cfg.get("commonKeywords", [])
@@ -142,7 +150,7 @@ def run_discovery():
     min_exc_kw = keywords_cfg.get("ministryExcludeKeywords", {})
 
     ministries, existing_councils = parse_data_json()
-    print(f"登録済み省庁数: {len(ministries)} 組織, 既存会議体数: {len(existing_councils)} 件\n")
+    emit(f"登録済み省庁数: {len(ministries)} 組織, 既存会議体数: {len(existing_councils)} 件\n")
 
     # 既存の会議体URLと名前のセット（重複判定用）
     existing_urls = {normalize_url(c.get("officialUrl", "")) for c in existing_councils if c.get("officialUrl")}
@@ -162,16 +170,43 @@ def run_discovery():
 
         add_kw = min_add_kw.get(min_code, [])
         exc_kw = min_exc_kw.get(min_code, []) + common_excludes
+    total_ministries = len([m for m in ministries.values() if m.get("hasCouncils", True) and m.get("councilsUrls")])
+    current_min_idx = 0
+
+    for min_code, min_info in sorted(ministries.items()):
+        min_name = min_info.get("name", min_code)
+        has_councils = min_info.get("hasCouncils", True)
+        councils_urls = min_info.get("councilsUrls", [])
+
+        if not has_councils or not councils_urls:
+            continue
+
+        current_min_idx += 1
+        pct = int((current_min_idx / max(total_ministries, 1)) * 90)
+
+        add_kw = min_add_kw.get(min_code, [])
+        exc_kw = min_exc_kw.get(min_code, []) + common_excludes
         target_kw = common_keywords + add_kw
 
-        print(f"▶ [{min_code}] {min_name} (審議会一覧ページ: {len(councils_urls)} 件)")
+        emit(f"▶ [{current_min_idx}/{total_ministries}] [{min_code}] {min_name} (審議会一覧: {len(councils_urls)} 件)", {
+            "type": "ministry_start",
+            "ministry": min_code,
+            "ministryName": min_name,
+            "progress": pct,
+            "current": current_min_idx,
+            "total": total_ministries
+        })
 
         for page_url in councils_urls:
             page_url = page_url.strip()
             if not page_url or not page_url.startswith("http"):
                 continue
 
-            print(f"   [GET] 審議会等一覧ページ巡回: {page_url}")
+            emit(f"   [GET] 審議会等一覧ページ巡回: {page_url}", {
+                "type": "page_fetch",
+                "url": page_url,
+                "ministry": min_code
+            })
             html, final_page_url = fetch_page_and_final_url(page_url)
             if not html:
                 continue
@@ -266,14 +301,16 @@ def run_discovery():
 
                 discovered_list.append(council_item)
                 found_count_in_page += 1
-                print(f"      ✨ [新規会議体検出] {council_id}: {link_text}")
-                print(f"         正規URL: {final_council_url}")
+                emit(f"      ✨ [新規会議体検出] {council_id}: {link_text} -> {final_council_url}", {
+                    "type": "council_discovered",
+                    "council": council_item
+                })
 
-            print(f"   -> 検出数: {found_count_in_page} 件")
+            emit(f"   -> 検出数: {found_count_in_page} 件")
 
-    print("\n" + "=" * 70)
-    print(f"ディスカバリー巡回完了: 合計 {len(discovered_list)} 件の新規会議体レコードを作成しました。")
-    print("=" * 70)
+    emit("\n" + "=" * 70)
+    emit(f"ディスカバリー巡回完了: 合計 {len(discovered_list)} 件の新規会議体レコードを作成しました。")
+    emit("=" * 70)
 
     # 結果JSONの保存 (data.jsonのdiscoveredCouncilsを更新)
     if os.path.exists(DATA_JSON_PATH):
