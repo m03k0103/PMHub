@@ -658,10 +658,9 @@ JSON データを読み込み中...
   // ─── 1. Council Discovery Engine (Global scope definition) ───
   let isRunningDiscovery = false;
     window.startDiscovery = async function() {
-      console.log('startDiscovery triggered');
-      alert('【審議会ディスカバリー開始】全省庁の審議会等ページURLへの検出巡回を開始します。\n（実際のページへHTTPアクセスしてリダイレクト後の最終正規URLを検証します）');
       if (isRunningDiscovery) return;
       isRunningDiscovery = true;
+      alert('【審議会ディスカバリー開始】全省庁の審議会等ページURLへの検出巡回を開始します。\n（実際のページへHTTPアクセスしてリダイレクト後の最終正規URLを検証します）');
 
       const btn = document.getElementById('btnStartDiscovery');
       const fillEl = document.getElementById('discoveryProgressFill');
@@ -782,10 +781,9 @@ JSON データを読み込み中...
   // ─── 2. Meeting Crawler Engine (Global scope definition) ───
   let isRunningMeetingCrawl = false;
   window.startMeetingCrawl = async function() {
-    console.log('startMeetingCrawl triggered');
-    alert('【会議・資料クロール開始】登録済み全会議体の最新会議資料・開催回インデックス巡回を開始します。');
     if (isRunningMeetingCrawl) return;
     isRunningMeetingCrawl = true;
+    alert('【会議・資料クロール開始】登録済み全会議体の最新会議資料・開催回インデックス巡回を開始します。');
 
     const btn = document.getElementById('adminStartCrawlBtn');
     const progressFill = document.getElementById('adminProgressFill');
@@ -2522,18 +2520,6 @@ JSON データを読み込み中...
     
 
     
-
-    const discoveryBtnTarget = document.getElementById('btnStartDiscovery');
-    if (discoveryBtnTarget) {
-      discoveryBtnTarget.onclick = function(e) {
-        if (e) e.preventDefault();
-        window.startDiscovery();
-      };
-      discoveryBtnTarget.addEventListener('click', function(e) {
-        if (e) e.preventDefault();
-        window.startDiscovery();
-      });
-    }
 
     // ─── 2. Meeting Crawler Logic (Tab 1 Block 2) ───
     const crawlBtn = document.getElementById('adminStartCrawlBtn');
