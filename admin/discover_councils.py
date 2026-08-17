@@ -160,16 +160,6 @@ def run_discovery(progress_callback=None):
     discovered_list = []
     seen_in_this_run = set()
 
-    for min_code, min_info in sorted(ministries.items()):
-        min_name = min_info.get("name", min_code)
-        has_councils = min_info.get("hasCouncils", True)
-        councils_urls = min_info.get("councilsUrls", [])
-
-        if not has_councils or not councils_urls:
-            continue
-
-        add_kw = min_add_kw.get(min_code, [])
-        exc_kw = min_exc_kw.get(min_code, []) + common_excludes
     total_ministries = len([m for m in ministries.values() if m.get("hasCouncils", True) and m.get("councilsUrls")])
     current_min_idx = 0
 
