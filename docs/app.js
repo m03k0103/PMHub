@@ -4,7 +4,29 @@
 
 
 if (typeof document !== 'undefined') {
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', async () => {
+  try {
+    const res = await fetch(`data.json?t=${new Date().getTime()}`);
+    if (!res.ok) throw new Error('Failed to load data.json');
+    const data = await res.json();
+    window.COUNCILS = data.councils || [];
+    window.MEETINGS = data.meetings || [];
+    window.MINISTRIES = data.ministries || {};
+    window.CATEGORIES = data.categories || {};
+    window.DOC_TYPES = data.docTypes || {};
+    window.INITIAL_ALERT_KEYWORDS = data.initialAlertKeywords || [];
+    window.LAST_CRAWL_TIME = data.lastCrawlTime || '';
+  } catch(e) {
+    console.error('Data loading error:', e);
+    window.COUNCILS = [];
+    window.MEETINGS = [];
+    window.MINISTRIES = {};
+    window.CATEGORIES = {};
+    window.DOC_TYPES = {};
+    window.INITIAL_ALERT_KEYWORDS = [];
+    window.LAST_CRAWL_TIME = '';
+  }
+
   // --- STATE MANAGEMENT ---
   const state = {
     currentTab: 'main',

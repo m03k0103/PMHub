@@ -1,19 +1,18 @@
 import json
 import os
 import sys
-import re
 
-def apply_report(json_path, data_js_path=None):
+def apply_report(json_path, data_json_path=None):
     if not os.path.exists(json_path):
         print(f"Error: {json_path} does not exist.")
         return False
 
-    if not data_js_path:
+    if not data_json_path:
         base_dir = os.path.dirname(os.path.abspath(__file__))
-        data_js_path = os.path.abspath(os.path.join(base_dir, "..", "docs", "data.js"))
+        data_json_path = os.path.abspath(os.path.join(base_dir, "..", "docs", "data.json"))
 
-    if not os.path.exists(data_js_path):
-        print(f"Error: {data_js_path} does not exist.")
+    if not os.path.exists(data_json_path):
+        print(f"Error: {data_json_path} does not exist.")
         return False
 
     with open(json_path, "r", encoding="utf-8") as f:
@@ -24,8 +23,16 @@ def apply_report(json_path, data_js_path=None):
         print("No corrections found in JSON.")
         return True
 
-    with open(data_js_path, "r", encoding="utf-8") as f:
-        content = f.read()
+    with open(data_json_path, "r", encoding="utf-8") as f:
+        try:
+            data = json.load(f)
+        except json.JSONDecodeError as e:
+            print(f"Error parsing data.json: {e}")
+            return False
+
+    councils = data.get("councils", [])
+    meetings = data.get("meetings", [])
+    ministries = data.get("ministries", {})
 
     applied_count = 0
     for corr in corrections:
@@ -36,98 +43,74 @@ def apply_report(json_path, data_js_path=None):
         new_val = corr.get("newValue")
 
         if action == "update_field":
-            val_str = json.dumps(new_val, ensure_ascii=False).replace('"', "'") if isinstance(new_val, (str, list, bool)) else str(new_val)
-            if isinstance(new_val, bool):
-                val_str = "true" if new_val else "false"
-
             if target == "MINISTRIES":
-                pattern = re.compile(rf"({re.escape(target_id)}:\s*\{{[\s\S]*?\}})")
-                match = pattern.search(content)
-                if match:
-                    block = match.group(1)
-                    if field in ("councilsUrls", "councilsUrl"):
-                        field_pattern = re.compile(r"(councilsUrls:\s*\[[\s\S]*?\]|councilsUrl:\s*'[^']*'|councilsUrls:\s*[^,\n}]+)")
-                        if field_pattern.search(block):
-                            new_block = field_pattern.sub(f"councilsUrls: {val_str}", block)
-                        else:
-                            new_block = block.rstrip("} \t\n") + f", councilsUrls: {val_str} }}"
-                    elif field == "officialUrl":
-                        field_pattern = re.compile(r"(officialUrl:\s*'[^']*'|officialUrl:\s*[^,\n}]+)")
-                        if field_pattern.search(block):
-                            new_block = field_pattern.sub(f"officialUrl: {val_str}", block)
-                        else:
-                            new_block = block.rstrip("} \t\n") + f", officialUrl: {val_str} }}"
-                    elif field == "hasCouncils":
-                        field_pattern = re.compile(r"(hasCouncils:\s*(true|false))")
-                        if field_pattern.search(block):
-                            new_block = field_pattern.sub(f"hasCouncils: {val_str}", block)
-                        else:
-                            new_block = block.rstrip("} \t\n") + f", hasCouncils: {val_str} }}"
-                    else:
-                        field_pattern = re.compile(rf"({re.escape(field)}:\s*)[^,\n}}]+")
-                        if field_pattern.search(block):
-                            new_block = field_pattern.sub(rf"\g<1>{val_str}", block)
-                        else:
-                            new_block = block.rstrip("} \t\n") + f", {field}: {val_str} }}"
-
-                    content = content.replace(block, new_block)
+                if target_id in ministries:
+                    ministries[target_id][field] = new_val
                     applied_count += 1
                     print(f"Applied MINISTRIES.{target_id}.{field} -> {new_val}")
                 else:
-                    print(f"Warning: Ministry {target_id} not found in data.js")
+                    print(f"Warning: Ministry {target_id} not found")
 
-            elif target in ("COUNCILS", "MEETINGS"):
-                pattern = re.compile(rf"(id:\s*'{re.escape(target_id)}'[\s\S]*?\n\s*\}})")
-                match = pattern.search(content)
-                if match:
-                    block = match.group(1)
-                    field_pattern = re.compile(rf"({re.escape(field)}:\s*)[^,\n}}]+")
-                    if field_pattern.search(block):
-                        new_block = field_pattern.sub(rf"\g<1>{val_str}", block)
-                    else:
-                        new_block = block.rstrip("} \t\n") + f", {field}: {val_str} }}"
-                    content = content.replace(block, new_block)
+            elif target == "COUNCILS":
+                found = False
+                for c in councils:
+                    if c.get("id") == target_id:
+                        c[field] = new_val
+                        applied_count += 1
+                        print(f"Applied COUNCILS.{target_id}.{field} -> {new_val}")
+                        found = True
+                        break
+                if not found:
+                    print(f"Warning: COUNCILS item {target_id} not found")
+
+            elif target == "MEETINGS":
+                found = False
+                for m in meetings:
+                    if m.get("id") == target_id:
+                        m[field] = new_val
+                        applied_count += 1
+                        print(f"Applied MEETINGS.{target_id}.{field} -> {new_val}")
+                        found = True
+                        break
+                if not found:
+                    print(f"Warning: MEETINGS item {target_id} not found")
+
+        elif action == "remove_council":
+            target_id = corr.get("targetId")
+            if target_id:
+                initial_len = len(councils)
+                councils[:] = [c for c in councils if c.get("id") != target_id]
+                if len(councils) < initial_len:
                     applied_count += 1
-                    print(f"Applied {target}.{target_id}.{field} -> {new_val}")
+                    print(f"Removed council {target_id}")
                 else:
-                    print(f"Warning: {target} item {target_id} not found in data.js")
+                    print(f"Warning: Council {target_id} to remove not found")
 
         elif action == "add_council":
-            new_item = corr.get("council")
-            if new_item and new_item.get("id"):
-                c_id = new_item["id"]
-                # 既に存在するかチェック
-                if f"id: '{c_id}'" not in content and f'id: "{c_id}"' not in content:
-                    c_formatted = "  {\n"
-                    for k, v in new_item.items():
-                        if isinstance(v, str):
-                            c_formatted += f"    {k}: '{v}',\n"
-                        elif isinstance(v, bool):
-                            c_formatted += f"    {k}: {'true' if v else 'false'},\n"
-                        elif isinstance(v, (int, float)):
-                            c_formatted += f"    {k}: {v},\n"
-                        else:
-                            val_json = json.dumps(v, ensure_ascii=False).replace('"', "'")
-                            c_formatted += f"    {k}: {val_json},\n"
-                    c_formatted = c_formatted.rstrip(",\n") + "\n  },\n];"
-                    
-                    # COUNCILS の末尾 '];' の直前に挿入
-                    c_end_pattern = re.compile(r"(\n\];[\s\n]*const MEETINGS)")
-                    if c_end_pattern.search(content):
-                        content = c_end_pattern.sub(f",\n{c_formatted[:-3]}\n];\nconst MEETINGS", content)
-                        applied_count += 1
-                        print(f"Added new Council: {c_id} ({new_item.get('name')})")
+            council = corr.get("council")
+            if council and isinstance(council, dict):
+                c_id = council.get("id")
+                # Remove isNew if present
+                council.pop("isNew", None)
+                if not any(c.get("id") == c_id for c in councils):
+                    councils.append(council)
+                    applied_count += 1
+                    print(f"Added new council: {c_id}")
+                else:
+                    print(f"Warning: Council {c_id} already exists")
 
-    with open(data_js_path, "w", encoding="utf-8") as f:
-        f.write(content)
+    # Save back to data.json
+    with open(data_json_path, "w", encoding="utf-8") as f:
+        json.dump(data, f, ensure_ascii=False, indent=2)
 
-    print(f"Successfully applied {applied_count} correction(s) to {data_js_path}")
+    print(f"\nReport applied. {applied_count} out of {len(corrections)} changes saved to data.json")
     return True
 
 if __name__ == "__main__":
     if len(sys.argv) < 2:
-        print("Usage: python apply_report.py <path_to_json_report>")
+        print("Usage: python apply_report.py <path_to_report.json> [path_to_data.json]")
         sys.exit(1)
     
-    json_file = sys.argv[1]
-    apply_report(json_file)
+    json_path = sys.argv[1]
+    data_json_path = sys.argv[2] if len(sys.argv) > 2 else None
+    apply_report(json_path, data_json_path)

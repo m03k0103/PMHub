@@ -404,7 +404,7 @@
               📄 登録済み会議体 会議・資料自動収集クローラー
             </h2>
             <p class="section-subtitle" style="margin-top:0.3rem; color:var(--text-muted);">
-              承認済み会議体（<code>COUNCILS</code>）のトップページURLを巡回し、各会議（開催回、開催日、アジェンダ、PDF・HTML資料リンク等）の最新情報を自動抽出・更新します。
+              承認済会議体（<code>COUNCILS</code>）のトップページURLを巡回し、各会議（開催回、開催日、アジェンダ、PDF・HTML資料リンク等）の最新情報を自動抽出・更新します。
             </p>
           </div>
           <button class="btn-crawler btn-bulk approve-all" id="adminStartCrawlBtn" onclick="if(window.startMeetingCrawl){ window.startMeetingCrawl(); } else { alert('startMeetingCrawl function not ready yet!'); }" style="font-size: 1rem; padding: 0.75rem 1.5rem;">
@@ -441,6 +441,69 @@
         </div>
       </section>
 
+      <!-- 3.5. LLM EXTRACTION TOGGLE -->
+      <section class="admin-card card-glass" style="margin-top: 1.5rem;">
+        <div style="display: flex; justify-content: space-between; align-items: center;">
+          <div>
+            <strong style="font-size: 1rem;">🧠 クローラー全件LLM抽出モード</strong>
+            <p class="text-sm" style="color:var(--text-muted); margin-top:0.2rem;">有効にすると、既存ルール（正規表現等）の代わりにGemini APIを使って高精度に全件情報を抽出します（推奨）。</p>
+          </div>
+          <button class="btn-secondary" id="adminLlmToggleBtn" style="padding:0.5rem 1rem;">
+            <span id="adminLlmToggleLabel">状態: 読込中...</span>
+          </button>
+        </div>
+      </section>
+
+      <!-- 3.6. CRAWL STATUS DASHBOARD -->
+      <section class="admin-card card-glass" style="margin-top: 1.5rem;">
+        <style>
+          .crawl-error-item {
+            padding: 0.75rem;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+          }
+          .crawl-error-item:last-child {
+            border-bottom: none;
+          }
+          .crawl-error-title {
+            font-weight: 600;
+            font-size: 0.95rem;
+            color: var(--text-primary);
+          }
+          .crawl-error-meta {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            margin-top: 0.2rem;
+          }
+          .crawl-error-reason {
+            font-size: 0.85rem;
+            color: #ef4444;
+            margin-top: 0.4rem;
+            background: rgba(239, 68, 68, 0.1);
+            padding: 0.4rem;
+            border-radius: 4px;
+          }
+        </style>
+        <h3>📊 クロールステータス ダッシュボード</h3>
+        <p class="text-sm" style="margin-top: 0.3rem; color:var(--text-muted);">各会議体の最新クロール結果・ステータス状況</p>
+        
+        <div class="summary-grid" style="margin-top: 1.25rem;" id="crawlStatusSummary">
+          <div class="summary-stat"><span class="stat-label">🟢 成功 (Success)</span><span class="stat-value" style="color:#10b981;" id="statCrawlSuccess">0</span></div>
+          <div class="summary-stat"><span class="stat-label">🟡 部分成功 (Partial)</span><span class="stat-value" style="color:#f59e0b;" id="statCrawlPartial">0</span></div>
+          <div class="summary-stat"><span class="stat-label">🔴 失敗 (Failed)</span><span class="stat-value" style="color:#ef4444;" id="statCrawlFailed">0</span></div>
+          <div class="summary-stat"><span class="stat-label">⚪ 未実行 (Never)</span><span class="stat-value" style="color:#94a3b8;" id="statCrawlNever">0</span></div>
+        </div>
+
+        <div style="margin-top: 1.5rem;">
+          <button id="toggleCrawlErrorList" class="btn-secondary" style="width: 100%; display: flex; justify-content: space-between; align-items: center; padding: 0.75rem 1rem;">
+            <span>⚠️ 失敗・未実行の会議体一覧を表示</span>
+            <svg id="toggleCrawlErrorIcon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div id="crawlErrorListContainer" style="display: none; margin-top: 1rem; max-height: 400px; overflow-y: auto; background: rgba(0,0,0,0.2); border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 0.5rem;">
+            <!-- Rendered via JS -->
+          </div>
+        </div>
+      </section>
+
       <!-- 4. SCRAPED LOG INSPECTOR -->
       <section class="admin-card card-glass">
         <h3>📄 最新パースデータ (`scraped_councils_output.json`)</h3>
@@ -465,7 +528,7 @@ JSON データを読み込み中...
       <!-- Meetings Bulk Actions -->
       <div class="bulk-actions">
         <button class="btn-bulk check-urls" id="btnCheckAllMeetingMats">🔗 全会議の資料を一括疎通チェック</button>
-        <button class="btn-bulk export-json" onclick="saveMeetingUrlsDirectToDataJs()" style="background: rgba(16,185,129,0.15); color: #10b981; border-color: rgba(16,185,129,0.4);">💾 docs/data.js に直接反映</button>
+        <button class="btn-bulk export-json" onclick="saveMeetingUrlsDirectToDataJs()" style="background: rgba(16,185,129,0.15); color: #10b981; border-color: rgba(16,185,129,0.4);">💾 docs/data.json に直接反映</button>
         <button class="btn-bulk export-json" id="btnExportMeetingsJson">📥 変更をJSONエクスポート</button>
       </div>
 
@@ -499,7 +562,7 @@ JSON データを読み込み中...
       <!-- Summary Stats -->
       <section class="summary-grid" id="summaryGrid">
         <div class="summary-stat"><span class="stat-label">全会議体数</span><span class="stat-value total" id="statTotal">—</span></div>
-        <div class="summary-stat"><span class="stat-label">承認済み</span><span class="stat-value approved" id="statApproved">0</span></div>
+        <div class="summary-stat"><span class="stat-label">承認済</span><span class="stat-value approved" id="statApproved">0</span></div>
         <div class="summary-stat"><span class="stat-label">却下</span><span class="stat-value rejected" id="statRejected">0</span></div>
         <div class="summary-stat"><span class="stat-label">未レビュー</span><span class="stat-value pending" id="statPending">—</span></div>
         <div class="summary-stat"><span class="stat-label">絞り込み表示中</span><span class="stat-value" style="color:#38bdf8;" id="statFilteredCounts">—</span></div>
@@ -508,11 +571,14 @@ JSON データを読み込み中...
 
       <!-- Bulk Actions -->
       <div class="bulk-actions">
+        <button class="btn-bulk check-urls" id="btnLoadAiReport" style="background: rgba(163,230,53,0.15); color: #a3e635; border-color: rgba(163,230,53,0.4);">🤖 AIの自動判定をロードする</button>
         <button class="btn-bulk check-urls" id="btnCheckUrls">🔗 URL一括疎通チェック</button>
         <button class="btn-bulk approve-all" id="btnApproveAll">✅ 未レビューを全て承認</button>
-        <button class="btn-bulk export-json" id="btnSaveCouncilDirect" onclick="saveCouncilDirectToDataJs()" style="background: rgba(16,185,129,0.15); color: #10b981; border-color: rgba(16,185,129,0.4);">💾 docs/data.js に直接反映</button>
-        <button class="btn-bulk export-json" id="btnExportJson">📥 承認済みをJSONエクスポート</button>
+        <button class="btn-bulk export-json" id="btnSaveCouncilDirect" onclick="saveCouncilDirectToDataJs()" style="background: rgba(16,185,129,0.15); color: #10b981; border-color: rgba(16,185,129,0.4);">💾 docs/data.json に直接反映</button>
+        <button class="btn-bulk export-json" id="btnExportJson">📥 承認済をJSONエクスポート</button>
       </div>
+
+      <div id="discrepancyAlertBanner" style="display:none; margin: 1rem 0; padding: 0.75rem 1rem; background: rgba(245,158,11,0.12); border: 1px solid rgba(245,158,11,0.4); border-radius: 8px; color: #f59e0b; font-size: 0.9rem;"></div>
 
       <!-- Filters -->
       <div class="filter-bar">
@@ -522,7 +588,7 @@ JSON データを読み込み中...
         <select id="filterVerdict">
           <option value="">全ステータス</option>
           <option value="pending">未レビュー</option>
-          <option value="approved">承認済み</option>
+          <option value="approved">承認済</option>
           <option value="rejected">却下</option>
         </select>
         <select id="filterUrlStatus">
@@ -544,7 +610,7 @@ JSON データを読み込み中...
     <!-- ── TAB 4: 省庁メタデータ管理 ── -->
     <div id="tab-ministries" class="tab-content">
       <div class="bulk-actions" style="margin-bottom: 1rem;">
-        <button class="btn-bulk export-json" onclick="saveDirectToDataJs()" style="background: rgba(16,185,129,0.15); color: #10b981; border-color: rgba(16,185,129,0.4);">💾 docs/data.js に直接反映</button>
+        <button class="btn-bulk export-json" onclick="saveDirectToDataJs()" style="background: rgba(16,185,129,0.15); color: #10b981; border-color: rgba(16,185,129,0.4);">💾 docs/data.json に直接反映</button>
         <button class="btn-bulk export-json" onclick="exportMinistryJson()">📥 変更をJSONエクスポート</button>
       </div>
       <div id="ministryListContainer"></div>
@@ -552,7 +618,7 @@ JSON データを読み込み中...
 
   </main>
 
-  <script src="../docs/data.js"></script>
+
   <script>
   // ─── Global Navigation Engine ───
   window.switchTab = function(tabId, btn) {
@@ -592,10 +658,9 @@ JSON データを読み込み中...
   // ─── 1. Council Discovery Engine (Global scope definition) ───
   let isRunningDiscovery = false;
     window.startDiscovery = async function() {
-      console.log('startDiscovery triggered');
-      alert('【審議会ディスカバリー開始】全省庁の審議会等ページURLへの検出巡回を開始します。\n（実際のページへHTTPアクセスしてリダイレクト後の最終正規URLを検証します）');
       if (isRunningDiscovery) return;
       isRunningDiscovery = true;
+      alert('【審議会ディスカバリー開始】全省庁の審議会等ページURLへの検出巡回を開始します。\n（実際のページへHTTPアクセスしてリダイレクト後の最終正規URLを検証します）');
 
       const btn = document.getElementById('btnStartDiscovery');
       const fillEl = document.getElementById('discoveryProgressFill');
@@ -624,40 +689,60 @@ JSON データを読み込み中...
       logLine('全省庁の審議会等一覧ページ (councilsUrls) の巡回を開始します...');
 
       try {
-        if (fillEl) fillEl.style.width = '20%';
-        logLine('サーバー側ディスカバリーエンジン (discover_councils.py) に接続中...');
-        logLine('各審議会等ページに実アクセスし、リダイレクト後の最終正規URLを検証しています...');
+        if (fillEl) fillEl.style.width = '5%';
+        logLine('サーバー側ディスカバリーエンジン (discover_councils.py) を開始中...');
 
-        let pulsePct = 20;
-        const pulseInterval = setInterval(() => {
-          if (pulsePct < 85) {
-            pulsePct += 5;
-            if (fillEl) fillEl.style.width = pulsePct + '%';
+        const startRes = await fetch('/api/run-discovery', { method: 'POST' });
+        if (!startRes.ok) {
+          throw new Error('ディスカバリー開始リクエストに失敗しました');
+        }
+
+        let logOffset = 0;
+        let isDone = false;
+
+        while (!isDone) {
+          await new Promise(r => setTimeout(r, 600));
+          try {
+            const statusRes = await fetch(`/api/discovery-status?since=${logOffset}`);
+            if (statusRes.ok) {
+              const statusData = await statusRes.json();
+
+              // プログレスバー更新
+              if (fillEl && statusData.progress !== undefined) {
+                fillEl.style.width = `${Math.max(5, statusData.progress)}%`;
+              }
+
+              // 新着ログを出力
+              if (statusData.logs && statusData.logs.length > 0) {
+                statusData.logs.forEach(line => logLine(line));
+                logOffset = statusData.totalLogs || (logOffset + statusData.logs.length);
+              }
+
+              // ボタンテキストに進捗を表示
+              if (btn && statusData.current_idx && statusData.total_ministries) {
+                btn.textContent = `⏳ 検出巡回中 [${statusData.current_idx}/${statusData.total_ministries} 省庁] (検出: ${statusData.discovered_count}件)…`;
+              }
+
+              // 完了判定
+              if (!statusData.running) {
+                isDone = true;
+                if (statusData.error) {
+                  logLine(`[ERROR] ディスカバリーエラー: ${statusData.error}`);
+                } else {
+                  if (fillEl) fillEl.style.width = '100%';
+                  const discovered = statusData.result || [];
+                  logLine(`✅ ディスカバリー完了: 合計 ${discovered.length} 件の新規会議体（正規URL）を検出・保存しました`);
+
+                  const addedCount = (window.integrateDiscoveredCouncils || integrateDiscoveredCouncils)(discovered);
+                  if (summaryEl) summaryEl.style.display = 'flex';
+                  if (resultCountEl) resultCountEl.textContent = `✨ 新規会議体 ${discovered.length} 件を検出しました！（未レビューとして追加: ${addedCount} 件）`;
+                }
+                return;
+              }
+            }
+          } catch (pollErr) {
+            console.warn('Status poll error:', pollErr);
           }
-        }, 1500);
-
-        const res = await fetch('/api/run-discovery', { method: 'POST' });
-        clearInterval(pulseInterval);
-
-        if (res.ok) {
-          if (fillEl) fillEl.style.width = '100%';
-          const result = await res.json();
-          const discovered = result.councils || [];
-          logLine(`✅ ディスカバリー完了: 合計 ${discovered.length} 件の新規会議体（正規URL）を検出しました`);
-
-          discovered.slice(0, 15).forEach(c => {
-            logLine(`✨ [新規検出] ${c.id}: ${c.name} (${c.ministry}) -> ${c.officialUrl}`);
-          });
-          if (discovered.length > 15) {
-            logLine(`...他 ${discovered.length - 15} 件の会議体を検出`);
-          }
-
-          const addedCount = (window.integrateDiscoveredCouncils || integrateDiscoveredCouncils)(discovered);
-          if (summaryEl) summaryEl.style.display = 'flex';
-          if (resultCountEl) resultCountEl.textContent = `✨ 新規会議体 ${discovered.length} 件を検出しました！（未レビューとして追加: ${addedCount} 件）`;
-          return;
-        } else {
-          logLine('[WARN] サーバー側でエラー応答が返されました。フォールバック処理に移行します。');
         }
       } catch(e) {
         logLine(`[WARN] ローカルサーバーAPI接続エラー: ${e}`);
@@ -696,10 +781,9 @@ JSON データを読み込み中...
   // ─── 2. Meeting Crawler Engine (Global scope definition) ───
   let isRunningMeetingCrawl = false;
   window.startMeetingCrawl = async function() {
-    console.log('startMeetingCrawl triggered');
-    alert('【会議・資料クロール開始】登録済み全会議体の最新会議資料・開催回インデックス巡回を開始します。');
     if (isRunningMeetingCrawl) return;
     isRunningMeetingCrawl = true;
+    alert('【会議・資料クロール開始】登録済み全会議体の最新会議資料・開催回インデックス巡回を開始します。');
 
     const btn = document.getElementById('adminStartCrawlBtn');
     const progressFill = document.getElementById('adminProgressFill');
@@ -781,7 +865,29 @@ JSON データを読み込み中...
     }
   };
 
-  document.addEventListener('DOMContentLoaded', () => {
+  document.addEventListener('DOMContentLoaded', async () => {
+    try {
+      const res = await fetch(`../docs/data.json?t=${new Date().getTime()}`);
+      if (!res.ok) throw new Error('Failed to load data.json');
+      const data = await res.json();
+      window.COUNCILS = data.councils || [];
+      window.MEETINGS = data.meetings || [];
+      window.MINISTRIES = data.ministries || {};
+      window.CATEGORIES = data.categories || {};
+      window.DOC_TYPES = data.docTypes || {};
+      window.INITIAL_ALERT_KEYWORDS = data.initialAlertKeywords || [];
+      window.LAST_CRAWL_TIME = data.lastCrawlTime || '';
+    } catch(e) {
+      console.error('Data loading error:', e);
+      window.COUNCILS = [];
+      window.MEETINGS = [];
+      window.MINISTRIES = {};
+      window.CATEGORIES = {};
+      window.DOC_TYPES = {};
+      window.INITIAL_ALERT_KEYWORDS = [];
+      window.LAST_CRAWL_TIME = '';
+    }
+
     const STORAGE_KEY_VERDICTS = 'pmhub_council_verdicts';
     const STORAGE_KEY_DISCOVERED = 'pmhub_discovered_councils';
 
@@ -797,7 +903,12 @@ JSON データを読み込み中...
     }
 
     function getSavedDiscovered() {
-      try { return JSON.parse(localStorage.getItem(STORAGE_KEY_DISCOVERED) || '[]'); } catch(e) { return []; }
+      try {
+        const parsed = JSON.parse(localStorage.getItem(STORAGE_KEY_DISCOVERED) || '[]');
+        if (Array.isArray(parsed)) return parsed;
+        if (parsed && Array.isArray(parsed.councils)) return parsed.councils;
+        return [];
+      } catch(e) { return []; }
     }
     function saveSavedDiscovered(list) {
       try {
@@ -830,21 +941,23 @@ JSON データを読み込み中...
     ];
     const knownIdSet = new Set(KNOWN_NEW_IDS);
 
-    const baseCouncils  = (typeof COUNCILS !== 'undefined' && Array.isArray(COUNCILS)) ? COUNCILS : [];
-    const meetings  = (typeof MEETINGS !== 'undefined' && Array.isArray(MEETINGS)) ? MEETINGS : [];
-    const ministries = (typeof MINISTRIES !== 'undefined') ? MINISTRIES : {};
-    const categories = (typeof CATEGORIES !== 'undefined') ? CATEGORIES : {};
+    const baseCouncils  = (window.COUNCILS && Array.isArray(window.COUNCILS)) ? window.COUNCILS : [];
+    const meetings  = (window.MEETINGS && Array.isArray(window.MEETINGS)) ? window.MEETINGS : [];
+    const ministries = window.MINISTRIES || {};
+    const categories = window.CATEGORIES || {};
 
     // Combine baseCouncils and discoveredCouncils
     let allCouncils = [...baseCouncils].filter(c => c && c.id);
     const discoveredFromStorage = getSavedDiscovered();
     const existingIdSet = new Set(allCouncils.map(c => c.id));
-    discoveredFromStorage.forEach(dc => {
-      if (dc && dc.id && !existingIdSet.has(dc.id)) {
-        allCouncils.push(dc); window.allCouncils = allCouncils;
-        existingIdSet.add(dc.id);
-      }
-    });
+    if (Array.isArray(discoveredFromStorage)) {
+      discoveredFromStorage.forEach(dc => {
+        if (dc && dc.id && !existingIdSet.has(dc.id)) {
+          allCouncils.push(dc); window.allCouncils = allCouncils;
+          existingIdSet.add(dc.id);
+        }
+      });
+    }
 
     window.integrateDiscoveredCouncils = function(newCouncilsList) {
       if (!newCouncilsList || !newCouncilsList.length) return 0;
@@ -891,15 +1004,20 @@ JSON データを読み込み中...
       verdicts[c.id] = normalizeVerdict(savedVerdicts[c.id], defaultV);
     });
 
-    // サーバー上の最新ディスカバリーデータ (discovered_councils.json) の非同期自動統合 (初期ロード時)
-    fetch('/api/discovered-councils')
-      .then(res => res.ok ? res.json() : null)
-      .then(data => {
-        if (data && data.councils && Array.isArray(data.councils)) {
-          window.integrateDiscoveredCouncils(data.councils);
+    // サーバー上の最新ディスカバリーデータ (data.json の discoveredCouncils) の非同期自動統合
+    const loadDiscoveredCouncils = async () => {
+      try {
+        const res = await fetch('/api/discovered-councils');
+        if (res.ok) {
+          const data = await res.json();
+          const list = data.councils || (Array.isArray(data) ? data : []);
+          if (list.length > 0) window.integrateDiscoveredCouncils(list);
         }
-      })
-      .catch(err => console.warn('Discovered councils auto load notice:', err));
+      } catch (e) {
+        console.warn('Discovered councils load error:', e);
+      }
+    };
+    loadDiscoveredCouncils();
 
     function populateFilterDropdowns() {
       const ministrySet = new Set(allCouncils.map(c => c.ministry));
@@ -1088,8 +1206,8 @@ JSON データを読み込み中...
     function renderCards() {
       window.allCouncils = allCouncils;
       window.renderCards = renderCards;
-      const lEl = document.getElementById('councilList');
-      if (!lEl) return;
+      const listEl = document.getElementById('councilList');
+      if (!listEl) return;
       const sEl = document.getElementById('filterSearch');
       const mEl = document.getElementById('filterMinistry');
       const cEl = document.getElementById('filterCategory');
@@ -1168,7 +1286,7 @@ JSON データを読み込み中...
           </div>`;
         }
         const urlCorrectionHtml = `<div class="url-correction">
-          <div class="uc-label">✏️ 会議体トップページURL</div>
+          <div class="uc-label">🔗 会議体URL</div>
           <div class="uc-row">
             <input type="url" value="${escAttr(correctedVal)}" placeholder="${escAttr(c.officialUrl)}（変更不要ならそのまま）"
               class="${hasCorrection ? 'has-value' : ''}" id="url-input-${c.id}"
@@ -1176,6 +1294,26 @@ JSON データを読み込み中...
             <button class="btn-open-url" onclick="openCorrectedUrl('${c.id}')">開く ↗</button>
           </div>
           ${diffHtml}
+        </div>`;
+
+        const correctedNameVal = v.correctedName || '';
+        const displayName = (correctedNameVal.trim() !== '') ? correctedNameVal.trim() : c.name;
+        const hasNameCorrection = correctedNameVal.trim() !== '' && correctedNameVal.trim() !== c.name;
+        let nameDiffHtml = '';
+        if (hasNameCorrection) {
+          nameDiffHtml = `<div class="uc-diff">
+            <div class="old-url">− ${escHtml(c.name)}</div>
+            <div class="new-url">+ ${escHtml(correctedNameVal)}</div>
+          </div>`;
+        }
+        const nameCorrectionHtml = `<div class="url-correction" style="margin-bottom:0.6rem;">
+          <div class="uc-label">✏️ 会議体名称の修正</div>
+          <div class="uc-row">
+            <input type="text" value="${escAttr(correctedNameVal)}" placeholder="${escAttr(c.name)}（名称変更が必要な場合に入力）"
+              class="${hasNameCorrection ? 'has-value' : ''}" id="name-input-${c.id}"
+              oninput="setCorrectedName('${c.id}', this.value)" />
+          </div>
+          ${nameDiffHtml}
         </div>`;
 
         let actionButtons = '';
@@ -1190,7 +1328,7 @@ JSON データを読み込み中...
         const globalIdx = i + 1;
         const totalCount = allCouncils.length;
         const statusBadge = v.verdict === 'approved'
-          ? '<span class="meta-chip" style="color:#10b981;border-color:rgba(16,185,129,0.3);background:rgba(16,185,129,0.08);">✓ 承認済み</span>'
+          ? '<span class="meta-chip" style="color:#10b981;border-color:rgba(16,185,129,0.3);background:rgba(16,185,129,0.08);">✓ 承認済</span>'
           : v.verdict === 'rejected'
           ? '<span class="meta-chip" style="color:#ef4444;border-color:rgba(239,68,68,0.3);background:rgba(239,68,68,0.08);">✗ 却下</span>'
           : '<span class="meta-chip" style="color:#f59e0b;border-color:rgba(245,158,11,0.3);background:rgba(245,158,11,0.08);">⏳ 未レビュー</span>';
@@ -1201,7 +1339,7 @@ JSON データを読み込み中...
           <div class="card-top">
             <div class="card-title-area">
               <div class="card-idx">#${globalIdx} / ${totalCount}</div>
-              <div class="card-name">${c.name} ${statusBadge} ${isNewChip}</div>
+              <div class="card-name">${escHtml(displayName)} ${statusBadge} ${isNewChip} ${hasNameCorrection ? '<span class="meta-chip" style="color:#38bdf8;border-color:rgba(56,189,248,0.3);background:rgba(56,189,248,0.08);">✏️ 名称修正あり</span>' : ''}</div>
               <div class="card-id">ID: ${c.id}</div>
             </div>
             <div class="card-actions">${actionButtons}</div>
@@ -1213,6 +1351,7 @@ JSON データを読み込み中...
             <span class="meta-chip"><span class="chip-icon">📅</span> ${c.trackedSince || '—'}</span>
             <span class="meta-chip" style="cursor:pointer;" onclick="jumpToMeetingList('${c.id}')"><span class="chip-icon">📋</span> 会議数: ${cMeetings.length} 件 ↗</span>
           </div>
+          ${nameCorrectionHtml}
           ${urlCorrectionHtml}
           <textarea class="notes-area" placeholder="検証メモ（任意）…" onchange="setNotes('${c.id}', this.value)">${v.notes || ''}</textarea>
         </div>`;
@@ -1261,7 +1400,7 @@ JSON データを読み込み中...
         _format: 'pmhub-verification-report-v2',
         _description: '個別会議URL更新',
         exportedAt: new Date().toISOString(),
-        targetFile: 'docs/data.js',
+        targetFile: 'docs/data.json',
         corrections: corrections
       };
 
@@ -1278,7 +1417,7 @@ JSON データを読み込み中...
             delete meetingUrlCorrections[corr.targetId];
           });
           renderMeetingsList();
-          alert('【サーバー経由】docs/data.js への会議URL保存が完了しました！');
+          alert('【サーバー経由】docs/data.json への会議URL保存が完了しました！');
           return;
         } else {
           const errData = await res.json().catch(() => ({}));
@@ -1293,8 +1432,8 @@ JSON データを読み込み中...
           const [fileHandle] = await window.showOpenFilePicker({
             types: [{ description: 'JavaScript File', accept: { 'text/javascript': ['.js'] } }]
           });
-          if (!fileHandle.name.endsWith('data.js')) {
-            if (!confirm(`選択されたファイル (${fileHandle.name}) は data.js ではありませんが、続行しますか？`)) return;
+          if (!fileHandle.name.endsWith('data.json')) {
+            if (!confirm(`選択されたファイル (${fileHandle.name}) は data.json ではありませんが、続行しますか？`)) return;
           }
           const file = await fileHandle.getFile();
           let text = await file.text();
@@ -1316,7 +1455,7 @@ JSON データを読み込み中...
             delete meetingUrlCorrections[corr.targetId];
           });
           renderMeetingsList();
-          alert('docs/data.js に直接反映・更新しました！');
+          alert('docs/data.json に直接反映・更新しました！');
           return;
         } catch (err) {
           if (err.name === 'AbortError' || err.name === 'NotAllowedError' || err.name === 'SecurityError') return;
@@ -1360,7 +1499,7 @@ JSON データを読み込み中...
         _format: 'pmhub-verification-report-v2',
         _description: '個別会議URL更新',
         exportedAt: new Date().toISOString(),
-        targetFile: 'docs/data.js',
+        targetFile: 'docs/data.json',
         corrections: corrections
       };
       await saveJsonFile(report, `meeting_urls_updates_${new Date().toISOString().slice(0,10)}.json`);
@@ -1426,20 +1565,11 @@ JSON データを読み込み中...
       verdicts[id].verdict = verdict;
       saveSavedVerdicts(verdicts);
       
-      const card = document.getElementById(`card-${id}`);
-      if (card) {
-        card.classList.remove('verdict-approved', 'verdict-rejected');
-        if (verdict) card.classList.add(`verdict-${verdict}`);
-        
-        const radios = card.querySelectorAll(`input[name="verdict-${id}"]`);
-        radios.forEach(r => { r.checked = (r.value === verdict); });
-
-        const filterV = document.getElementById('filterVerdict');
-        if (filterV && filterV.value === 'pending' && verdict !== null && verdict !== 'pending') {
-          card.style.display = 'none';
-        }
+      try {
+        renderCards();
+      } catch(e) {
+        console.error('renderCards error in setVerdict:', e);
       }
-      if (typeof updateStats === 'function') updateStats();
     };
     window.setNotes = function(id, text) {
       if (!verdicts[id]) verdicts[id] = { verdict: null, notes: '', correctedUrl: '' };
@@ -1447,13 +1577,25 @@ JSON データを読み込み中...
       saveSavedVerdicts(verdicts);
     };
     window.setCorrectedUrl = function(id, url) {
-      if (!verdicts[id]) verdicts[id] = { verdict: null, notes: '', correctedUrl: '' };
+      if (!verdicts[id]) verdicts[id] = { verdict: null, notes: '', correctedUrl: '', correctedName: '' };
       verdicts[id].correctedUrl = url.trim();
       saveSavedVerdicts(verdicts);
       const card = document.getElementById(`card-${id}`);
       if (card) {
         const input = card.querySelector('.url-correction input[type=url]');
         if (input) input.classList.toggle('has-value', url.trim() !== '');
+      }
+    };
+    window.setCorrectedName = function(id, name) {
+      if (!verdicts[id]) verdicts[id] = { verdict: null, notes: '', correctedUrl: '', correctedName: '' };
+      verdicts[id].correctedName = name.trim();
+      saveSavedVerdicts(verdicts);
+      const card = document.getElementById(`card-${id}`);
+      if (card) {
+        const input = card.querySelector('#name-input-' + id);
+        const council = allCouncils.find(c => c.id === id);
+        const originalName = council ? council.name : '';
+        if (input) input.classList.toggle('has-value', name.trim() !== '' && name.trim() !== originalName);
       }
     };
     window.openCorrectedUrl = function(id) {
@@ -1524,10 +1666,42 @@ JSON データを読み込み中...
       document.getElementById('statRejected').textContent = rejected;
       document.getElementById('statPending').textContent = pending;
       document.getElementById('statUrlOk').textContent = `${urlOk} / ${total}`;
-      document.getElementById('statCorrected').textContent = corrected;
+      const statCorrectedEl = document.getElementById('statCorrected');
+      if (statCorrectedEl) statCorrectedEl.textContent = corrected;
+      window.updateStats = updateStats;
+
+      // デバッグ・自動検出: 本番 baseCouncils のうち非承認状態 (rejected または null/pending) のものを特定
+      const unapprovedBaseCouncils = baseCouncils.filter(bc => {
+        const v = verdicts[bc.id];
+        return !v || v.verdict !== 'approved';
+      });
+
+      const bannerEl = document.getElementById('discrepancyAlertBanner');
+      if (bannerEl) {
+        let debugStr = `【デバッグ情報】baseCouncils件数: ${baseCouncils.length}件, allCouncils件数: ${allCouncils.length}件, statApproved: ${approved}件。`;
+        
+        if (unapprovedBaseCouncils.length > 0) {
+          const itemsList = unapprovedBaseCouncils.map(c => {
+            const st = (verdicts[c.id] && verdicts[c.id].verdict === 'rejected') ? '【却下】' : '【未レビュー】';
+            return `<b>${st} ${escHtml(c.name)}</b> (ID: <code>${c.id}</code>)`;
+          }).join(', ');
+          
+          bannerEl.style.display = 'block';
+          bannerEl.style.background = 'rgba(245,158,11,0.12)';
+          bannerEl.style.borderColor = 'rgba(245,158,11,0.4)';
+          bannerEl.style.color = '#f59e0b';
+          bannerEl.innerHTML = `⚠️ <b>公開データとの不一致検出:</b> 本番データ中 ${unapprovedBaseCouncils.length} 件が非承認状態です。<br/>該当会議体: ${itemsList}<br/>${debugStr}`;
+        } else {
+          bannerEl.style.display = 'block';
+          bannerEl.style.background = 'rgba(16,185,129,0.12)';
+          bannerEl.style.borderColor = 'rgba(16,185,129,0.4)';
+          bannerEl.style.color = '#10b981';
+          bannerEl.innerHTML = `✅ <b>不一致なし:</b> すべての baseCouncils が承認済です。<br/>${debugStr}`;
+        }
+      }
     }
 
-    const initHash = (window.location.hash || '').replace('#', '');
+    const initHash = (window.location && window.location.hash ? window.location.hash : '').replace('#', '');
     if (initHash === 'ministries') switchTab('tab-ministries');
     else if (initHash === 'meetings') switchTab('tab-meetings');
     else if (initHash === 'councils') switchTab('tab-councils');
@@ -1720,7 +1894,7 @@ JSON データを読み込み中...
         _format: 'pmhub-verification-report-v2',
         _description: '省庁データ更新',
         exportedAt: new Date().toISOString(),
-        targetFile: 'docs/data.js',
+        targetFile: 'docs/data.json',
         corrections: corrections
       };
       await saveJsonFile(report, `ministry_updates_${new Date().toISOString().split('T')[0]}.json`);
@@ -1769,7 +1943,7 @@ JSON データを読み込み中...
           });
           Object.keys(ministryUpdates).forEach(k => delete ministryUpdates[k]);
           renderMinistryList();
-          alert('【サーバー経由】docs/data.js への直接保存が完了しました！');
+          alert('【サーバー経由】docs/data.json への直接保存が完了しました！');
           return;
         } else {
           const errData = await res.json().catch(() => ({}));
@@ -1784,8 +1958,8 @@ JSON データを読み込み中...
           const [fileHandle] = await window.showOpenFilePicker({
             types: [{ description: 'JavaScript File', accept: { 'text/javascript': ['.js'] } }]
           });
-          if (!fileHandle.name.endsWith('data.js')) {
-            if (!confirm(`選択されたファイル (${fileHandle.name}) は data.js ではありませんが、続行しますか？`)) return;
+          if (!fileHandle.name.endsWith('data.json')) {
+            if (!confirm(`選択されたファイル (${fileHandle.name}) は data.json ではありませんが、続行しますか？`)) return;
           }
           const file = await fileHandle.getFile();
           let text = await file.text();
@@ -1810,7 +1984,7 @@ JSON データを読み込み中...
 
           Object.keys(ministryUpdates).forEach(k => delete ministryUpdates[k]);
           renderMinistryList();
-          alert('docs/data.js に直接反映・更新しました！');
+          alert('docs/data.json に直接反映・更新しました！');
           return;
         } catch (err) {
           if (err.name === 'AbortError' || err.name === 'NotAllowedError' || err.name === 'SecurityError') return;
@@ -1892,6 +2066,39 @@ JSON データを読み込み中...
       }
     });
 
+    document.getElementById('btnLoadAiReport').addEventListener('click', async () => {
+      const btn = document.getElementById('btnLoadAiReport');
+      btn.disabled = true;
+      btn.textContent = '🤖 読み込み中...';
+      try {
+        const response = await fetch('ai_verification_report.json');
+        if (!response.ok) throw new Error('Report not found');
+        const reportData = await response.json();
+        
+        let updateCount = 0;
+        for (const [cId, aiResult] of Object.entries(reportData)) {
+          if (!verdicts[cId]) verdicts[cId] = { verdict: null, notes: '', correctedUrl: '' };
+          // 既に手動判定済みの場合は上書きしない
+          if (verdicts[cId].verdict === 'approved' || verdicts[cId].verdict === 'rejected') continue;
+          
+          if (aiResult.verdict === 'approved' || aiResult.verdict === 'rejected') {
+            verdicts[cId].verdict = aiResult.verdict;
+            verdicts[cId].notes = `[AI判定] ${aiResult.reason || ''}`;
+            updateCount++;
+          }
+        }
+        
+        alert(`AIによる判定結果を ${updateCount} 件ロードしました。`);
+        renderCards();
+      } catch (err) {
+        console.error('Failed to load AI report:', err);
+        alert('AIの判定結果 (ai_verification_report.json) の読み込みに失敗しました。先にバックエンドで python ai_autonomous_verifier.py を実行してください。');
+      } finally {
+        btn.disabled = false;
+        btn.textContent = '🤖 AIの自動判定をロードする';
+      }
+    });
+
     document.getElementById('btnApproveAll').addEventListener('click', () => {
       const pending = allCouncils.filter(c => verdicts[c.id].verdict === null || verdicts[c.id].verdict === 'pending');
       if (pending.length === 0) { alert('未レビューの会議体はありません。'); return; }
@@ -1944,30 +2151,52 @@ JSON データを読み込み中...
       allCouncils.forEach(c => {
         const v = verdicts[c.id];
         if (v && v.verdict === 'approved') {
+          const finalName = (v.correctedName && v.correctedName.trim() !== '') ? v.correctedName.trim() : c.name;
+          const finalUrl = (v.correctedUrl && v.correctedUrl.trim() !== '') ? v.correctedUrl.trim() : c.officialUrl;
+
           // 新規検出された会議体で baseCouncils に存在しないものは追加
           if (c.isNew && !baseCouncils.some(bc => bc.id === c.id)) {
             corrections.push({
               action: 'add_council',
               council: {
                 id: c.id,
-                name: c.name,
+                name: finalName,
                 ministry: c.ministry,
                 category: c.category,
-                officialUrl: v.correctedUrl ? v.correctedUrl.trim() : c.officialUrl,
+                officialUrl: finalUrl,
                 trackedSince: c.trackedSince || new Date().toISOString().slice(0, 10)
               }
             });
-          } else if (v.correctedUrl && v.correctedUrl.trim() !== '') {
-            corrections.push({
-              action: 'update_field',
-              target: 'COUNCILS',
-              targetId: c.id,
-              field: 'officialUrl',
-              oldValue: c.officialUrl,
-              newValue: v.correctedUrl.trim(),
-              reason: 'Admin corrected council top page URL'
-            });
+          } else {
+            if (v.correctedUrl && v.correctedUrl.trim() !== '') {
+              corrections.push({
+                action: 'update_field',
+                target: 'COUNCILS',
+                targetId: c.id,
+                field: 'officialUrl',
+                oldValue: c.officialUrl,
+                newValue: v.correctedUrl.trim(),
+                reason: 'Admin corrected council top page URL'
+              });
+            }
+            if (v.correctedName && v.correctedName.trim() !== '' && v.correctedName.trim() !== c.name) {
+              corrections.push({
+                action: 'update_field',
+                target: 'COUNCILS',
+                targetId: c.id,
+                field: 'name',
+                oldValue: c.name,
+                newValue: v.correctedName.trim(),
+                reason: 'Admin corrected council name'
+              });
+            }
           }
+        } else if (v && v.verdict === 'rejected' && baseCouncils.some(bc => bc.id === c.id)) {
+          corrections.push({
+            action: 'remove_council',
+            targetId: c.id,
+            reason: 'Admin rejected council'
+          });
         }
 
         const cMeetings = meetingMap[c.id] || [];
@@ -1996,7 +2225,7 @@ JSON データを読み込み中...
         _format: 'pmhub-verification-report-v2',
         _description: '会議体・会議ページURL更新および新規会議体追加',
         exportedAt: new Date().toISOString(),
-        targetFile: 'docs/data.js',
+        targetFile: 'docs/data.json',
         corrections: corrections
       };
 
@@ -2037,7 +2266,7 @@ JSON データを読み込み中...
           } catch(errMem) {
             console.warn('applyCouncilInMemory warning:', errMem);
           }
-          alert('【サーバー経由】docs/data.js への直接保存が完了しました！');
+          alert('【サーバー経由】docs/data.json への直接保存が完了しました！');
           return;
         } else {
           const errData = await res.json().catch(() => ({}));
@@ -2052,8 +2281,8 @@ JSON データを読み込み中...
           const [fileHandle] = await window.showOpenFilePicker({
             types: [{ description: 'JavaScript File', accept: { 'text/javascript': ['.js'] } }]
           });
-          if (!fileHandle.name.endsWith('data.js')) {
-            if (!confirm(`選択されたファイル (${fileHandle.name}) は data.js ではありませんが、続行しますか？`)) return;
+          if (!fileHandle.name.endsWith('data.json')) {
+            if (!confirm(`選択されたファイル (${fileHandle.name}) は data.json ではありませんが、続行しますか？`)) return;
           }
           const file = await fileHandle.getFile();
           let text = await file.text();
@@ -2076,7 +2305,7 @@ JSON データを読み込み中...
           await writable.close();
 
           applyCouncilInMemory();
-          alert('docs/data.js に直接反映・更新しました！');
+          alert('docs/data.json に直接反映・更新しました！');
           return;
         } catch (err) {
           if (err.name === 'AbortError' || err.name === 'NotAllowedError' || err.name === 'SecurityError') return;
@@ -2092,7 +2321,7 @@ JSON データを読み込み中...
       }
       } finally {
         isSavingCouncilDirect = false;
-        if (btn) { btn.disabled = false; btn.textContent = origText || '💾 docs/data.js に直接反映'; }
+        if (btn) { btn.disabled = false; btn.textContent = origText || '💾 docs/data.json に直接反映'; }
       }
     };
 
@@ -2100,7 +2329,7 @@ JSON データを読み込み中...
       const approvedCouncils = allCouncils.filter(c => verdicts[c.id] && verdicts[c.id].verdict === 'approved');
 
       if (approvedCouncils.length === 0) {
-        alert('承認済みの会議体がありません。先に会議体を承認してください。');
+        alert('承認済の会議体がありません。先に会議体を承認してください。');
         return;
       }
 
@@ -2110,29 +2339,51 @@ JSON データを読み込み中...
         const v = verdicts[c.id];
 
         if (v && v.verdict === 'approved') {
+          const finalName = (v.correctedName && v.correctedName.trim() !== '') ? v.correctedName.trim() : c.name;
+          const finalUrl = (v.correctedUrl && v.correctedUrl.trim() !== '') ? v.correctedUrl.trim() : c.officialUrl;
+
           if (c.isNew && !baseCouncils.some(bc => bc.id === c.id)) {
             corrections.push({
               action: 'add_council',
               council: {
                 id: c.id,
-                name: c.name,
+                name: finalName,
                 ministry: c.ministry,
                 category: c.category,
-                officialUrl: v.correctedUrl ? v.correctedUrl.trim() : c.officialUrl,
+                officialUrl: finalUrl,
                 trackedSince: c.trackedSince || new Date().toISOString().slice(0, 10)
               }
             });
-          } else if (v.correctedUrl && v.correctedUrl.trim() !== '') {
-            corrections.push({
-              action: 'update_field',
-              target: 'COUNCILS',
-              targetId: c.id,
-              field: 'officialUrl',
-              oldValue: c.officialUrl,
-              newValue: v.correctedUrl.trim(),
-              reason: 'Admin corrected council top page URL'
-            });
+          } else {
+            if (v.correctedUrl && v.correctedUrl.trim() !== '') {
+              corrections.push({
+                action: 'update_field',
+                target: 'COUNCILS',
+                targetId: c.id,
+                field: 'officialUrl',
+                oldValue: c.officialUrl,
+                newValue: v.correctedUrl.trim(),
+                reason: 'Admin corrected council top page URL'
+              });
+            }
+            if (v.correctedName && v.correctedName.trim() !== '' && v.correctedName.trim() !== c.name) {
+              corrections.push({
+                action: 'update_field',
+                target: 'COUNCILS',
+                targetId: c.id,
+                field: 'name',
+                oldValue: c.name,
+                newValue: v.correctedName.trim(),
+                reason: 'Admin corrected council name'
+              });
+            }
           }
+        } else if (v && v.verdict === 'rejected' && baseCouncils.some(bc => bc.id === c.id)) {
+          corrections.push({
+            action: 'remove_council',
+            targetId: c.id,
+            reason: 'Admin rejected council'
+          });
         }
 
         const cMeetings = meetingMap[c.id] || [];
@@ -2154,9 +2405,9 @@ JSON データを読み込み中...
 
       const report = {
         _format: 'pmhub-verification-report-v2',
-        _description: 'AI Agent向け検証レポート。corrections配列の各エントリをdocs/data.jsに適用してください。',
+        _description: 'AI Agent向け検証レポート。corrections配列の各エントリをdocs/data.jsonに適用してください。',
         exportedAt: new Date().toISOString(),
-        targetFile: 'docs/data.js',
+        targetFile: 'docs/data.json',
         summary: {
           totalApproved: approvedCouncils.length,
           totalCorrections: corrections.length
@@ -2165,7 +2416,7 @@ JSON データを読み込み中...
       };
 
       await saveJsonFile(report, `verification_report_${new Date().toISOString().slice(0,10)}.json`);
-      alert(`${approvedCouncils.length} 件の承認済み会議体の検証データをJSONエクスポートしました。`);
+      alert(`${approvedCouncils.length} 件の承認済会議体の検証データをJSONエクスポートしました。`);
     });
 
     // ─── Filter Listeners ───
@@ -2270,18 +2521,6 @@ JSON データを読み込み中...
 
     
 
-    const discoveryBtnTarget = document.getElementById('btnStartDiscovery');
-    if (discoveryBtnTarget) {
-      discoveryBtnTarget.onclick = function(e) {
-        if (e) e.preventDefault();
-        window.startDiscovery();
-      };
-      discoveryBtnTarget.addEventListener('click', function(e) {
-        if (e) e.preventDefault();
-        window.startDiscovery();
-      });
-    }
-
     // ─── 2. Meeting Crawler Logic (Tab 1 Block 2) ───
     const crawlBtn = document.getElementById('adminStartCrawlBtn');
     const progressFill = document.getElementById('adminProgressFill');
@@ -2314,6 +2553,57 @@ JSON データを読み込み中...
       alert(`AI要約機能を ${aiEnabled ? 'ON (有効)' : 'OFF (無効)'} に設定しました。`);
     });
 
+    const llmToggleBtn = document.getElementById('adminLlmToggleBtn');
+    const llmToggleLabel = document.getElementById('adminLlmToggleLabel');
+    let llmEnabled = true; // Default
+
+    async function loadLlmConfig() {
+      try {
+        const res = await fetch('/api/get-crawler-config');
+        if (res.ok) {
+          const config = await res.json();
+          llmEnabled = config.llm_mode !== false; // true unless explicitly false
+        }
+      } catch (e) {
+        console.warn('Could not load crawler config', e);
+      }
+      updateLlmUI();
+    }
+
+    function updateLlmUI() {
+      if (llmEnabled) {
+        llmToggleLabel.textContent = '状態: ON (LLM抽出)';
+        llmToggleBtn.style.background = 'rgba(16, 185, 129, 0.2)';
+        llmToggleBtn.style.borderColor = '#10b981';
+        llmToggleBtn.style.color = '#10b981';
+      } else {
+        llmToggleLabel.textContent = '状態: OFF (既存ルール抽出)';
+        llmToggleBtn.style.background = 'rgba(255, 255, 255, 0.08)';
+        llmToggleBtn.style.borderColor = 'var(--border-color)';
+        llmToggleBtn.style.color = 'var(--text-secondary)';
+      }
+    }
+
+    llmToggleBtn.addEventListener('click', async () => {
+      llmEnabled = !llmEnabled;
+      updateLlmUI();
+      try {
+        const res = await fetch('/api/save-crawler-config', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ llm_mode: llmEnabled })
+        });
+        if (!res.ok) throw new Error('Network error');
+        alert(`LLM抽出モードを ${llmEnabled ? 'ON' : 'OFF'} に設定しました。次回クローラー実行時から適用されます。`);
+      } catch (e) {
+        alert('設定の保存に失敗しました。ローカルサーバーが起動しているか確認してください。');
+        llmEnabled = !llmEnabled; // rollback
+        updateLlmUI();
+      }
+    });
+
+    loadLlmConfig();
+
     fetch('scraped_councils_output.json')
       .then(res => res.json())
       .then(data => {
@@ -2333,6 +2623,78 @@ JSON データを読み込み中...
         window.startMeetingCrawl();
       });
     }
+
+    // ─── 3. Crawl Status Dashboard ───
+    function renderCrawlStatusDashboard() {
+      if (!window.COUNCILS || !Array.isArray(window.COUNCILS)) return;
+      
+      let successCount = 0;
+      let partialCount = 0;
+      let failedCount = 0;
+      let neverCount = 0;
+      
+      const errorList = [];
+      
+      window.COUNCILS.forEach(council => {
+        const status = council.crawlStatus || { result: 'never' };
+        
+        if (status.result === 'success') {
+          successCount++;
+        } else if (status.result === 'partial') {
+          partialCount++;
+        } else if (status.result === 'failed') {
+          failedCount++;
+          errorList.push({ council, status });
+        } else {
+          neverCount++;
+          errorList.push({ council, status: { result: 'never', lastAttempt: '未取得', failureReason: 'クロール未実行' } });
+        }
+      });
+      
+      const elSuccess = document.getElementById('statCrawlSuccess');
+      if (elSuccess) elSuccess.textContent = successCount;
+      const elPartial = document.getElementById('statCrawlPartial');
+      if (elPartial) elPartial.textContent = partialCount;
+      const elFailed = document.getElementById('statCrawlFailed');
+      if (elFailed) elFailed.textContent = failedCount;
+      const elNever = document.getElementById('statCrawlNever');
+      if (elNever) elNever.textContent = neverCount;
+      
+      const container = document.getElementById('crawlErrorListContainer');
+      if (container) {
+        if (errorList.length === 0) {
+          container.innerHTML = '<div style="padding: 1rem; text-align: center; color: var(--text-muted);">失敗・未実行の会議体はありません。</div>';
+        } else {
+          container.innerHTML = errorList.map(item => {
+            const failuresCount = item.status.consecutiveFailures ? ` (連続失敗: ${item.status.consecutiveFailures}回)` : '';
+            return `
+              <div class="crawl-error-item">
+                <div class="crawl-error-title">${item.council.name}</div>
+                <div class="crawl-error-meta">🏢 ${item.council.ministry} | 🕒 最終試行: ${item.status.lastAttempt || '未取得'}${failuresCount}</div>
+                <div class="crawl-error-reason">⚠️ ${item.status.failureReason || '原因不明'}</div>
+              </div>
+            `;
+          }).join('');
+        }
+      }
+    }
+    
+    const toggleErrorBtn = document.getElementById('toggleCrawlErrorList');
+    const toggleErrorIcon = document.getElementById('toggleCrawlErrorIcon');
+    const errorContainer = document.getElementById('crawlErrorListContainer');
+    if (toggleErrorBtn && errorContainer && toggleErrorIcon) {
+      toggleErrorBtn.addEventListener('click', () => {
+        if (errorContainer.style.display === 'none') {
+          errorContainer.style.display = 'block';
+          toggleErrorIcon.innerHTML = '<polyline points="18 15 12 9 6 15"/>';
+        } else {
+          errorContainer.style.display = 'none';
+          toggleErrorIcon.innerHTML = '<polyline points="6 9 12 15 18 9"/>';
+        }
+      });
+    }
+
+    renderCrawlStatusDashboard();
 
     // 全タブの初回データ一括描画を確実に実行
     if (typeof renderCards === 'function') renderCards();
