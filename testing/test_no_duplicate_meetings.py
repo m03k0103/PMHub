@@ -105,6 +105,12 @@ def run_test():
     bad_dates = [m.get('date') for m in meetings if not re.match(r'^\d{4}/\d{2}/\d{2}$', m.get('date', ''))]
     if bad_dates:
         errors.append(f"Invalid date formats found ({len(bad_dates)} items): {bad_dates[:5]}")
+
+    # 6. Check for auto-extracted generic titles
+    bad_titles = [m.get('title') for m in meetings if any(w in m.get('title', '') for w in ['自動抽出', '最新資料 (', '直近会合', '最新会合'])]
+    if bad_titles:
+        errors.append(f"Generic/auto-extracted meeting titles found ({len(bad_titles)} items): {bad_titles[:5]}")
+
         
     if errors:
         print(f"FAILED: {len(errors)} validation errors found:")
