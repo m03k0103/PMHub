@@ -413,8 +413,8 @@
       "ministry": "CAS",
       "category": "HQ",
       "pastYearCount": 0,
-      "description": "ギャンブル等依存症対策推進本部幹事会の基本方針、施策の推進状況および関係省庁間の連携・個別課題について審議する会議。",
-      "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/gambletou_izonsho/",
+      "description": "ギャンブル等依存症対策推進本部に置かれる幹事会。関係府省庁間の実務的調整及び基本計画の推進を行う。",
+      "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/gambletou_izonsho/index.html",
       "isWatched": true,
       "trackedSince": "2017/04/26"
     },
@@ -2748,6 +2748,16 @@
       "description": "〒100-8927 東京都千代田区霞が関2-1-2（地図）電話番号03-5253-5111(代表)法人番号：9000012020003",
       "officialUrl": "https://www.fdma.go.jp/singi_kento/kento/post-66.html",
       "pastYearCount": 1,
+      "isWatched": false
+    },
+    {
+      "id": "cas-gambletou_izonsho-honbu",
+      "name": "ギャンブル等依存症対策推進本部",
+      "ministry": "CAS",
+      "category": "HQ",
+      "description": "ギャンブル等依存症対策基本法に基づき設置された推進本部。基本計画の策定及び関係施策の総合的推進を行う。",
+      "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/gambletou_izonsho/index.html",
+      "pastYearCount": 0,
       "isWatched": false
     }
   ],
@@ -80981,12 +80991,66 @@
       "docCount": 0
     },
     {
-      "id": "meet-2025-03-21-cas-gambletou_izonsho-10-dai6",
+      "id": "meet-2025-03-21-cas-gambletou_izonsho-10-dai3",
       "councilId": "cas-gambletou_izonsho-10",
       "councilName": "ギャンブル等依存症対策推進本部幹事会",
       "ministry": "CAS",
       "category": "HQ",
-      "title": "第6回 ギャンブル等依存症対策推進本部幹事会",
+      "title": "第3回 ギャンブル等依存症対策推進本部幹事会",
+      "date": "2025/03/21",
+      "updatedAt": "2025/03/21 17:00",
+      "location": "総理大臣官邸 / 各府省庁本庁舎",
+      "summary": "第3回 ギャンブル等依存症対策推進本部幹事会の開催（令和7年3月21日）。ギャンブル等依存症対策推進基本計画の推進及び関係府省庁間の実務的調整が行われた。",
+      "agenda": [
+        "ギャンブル等依存症対策推進基本計画（PDF／1,175KB）"
+      ],
+      "materials": [
+        {
+          "name": "第3回 議事要旨 (PDF)",
+          "type": "PDF",
+          "size": "PDF",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/gambletou_izonsho/kanjikai_dai3/gijiyousi.pdf",
+          "isMinutes": true
+        },
+        {
+          "name": "議事次第（PDF／92KB）",
+          "type": "PDF",
+          "size": "PDF",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/gambletou_izonsho/kanjikai_dai3/gijisidai.pdf",
+          "isMinutes": false
+        },
+        {
+          "name": "ギャンブル等依存症対策推進基本計画【概要】（PDF／447KB）",
+          "type": "PDF",
+          "size": "PDF",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/gambletou_izonsho/kanjikai_dai3/sankou1.pdf",
+          "isMinutes": true
+        },
+        {
+          "name": "ギャンブル等依存症対策推進基本計画（PDF／1,175KB）",
+          "type": "PDF",
+          "size": "PDF",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/gambletou_izonsho/kanjikai_dai3/sankou2.pdf",
+          "isMinutes": false
+        }
+      ],
+      "tags": [
+        "ギャンブル等依存症対策推進本部幹事会",
+        "CAS",
+        "内閣官房",
+        "幹事会"
+      ],
+      "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/gambletou_izonsho/kanjikai_dai3/siryou.html",
+      "hasMinutes": true,
+      "docCount": 4
+    },
+    {
+      "id": "meet-2025-03-21-cas-gambletou_izonsho-honbu-dai6",
+      "councilId": "cas-gambletou_izonsho-honbu",
+      "councilName": "ギャンブル等依存症対策推進本部",
+      "ministry": "CAS",
+      "category": "HQ",
+      "title": "第6回 ギャンブル等依存症対策推進本部",
       "date": "2025/03/21",
       "updatedAt": "2025/03/21 17:00",
       "location": "持ち回り開催",
@@ -81027,10 +81091,9 @@
         }
       ],
       "tags": [
-        "ギャンブル等依存症対策推進本部幹事会",
+        "ギャンブル等依存症対策推進本部",
         "CAS",
-        "内閣官房",
-        "第6回"
+        "内閣官房"
       ],
       "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/gambletou_izonsho/dai6/siryou.html",
       "hasMinutes": false,
@@ -113428,12 +113491,12 @@
       "docCount": 11
     },
     {
-      "id": "meet-2022-03-24-cas-gambletou_izonsho-10-dai5",
-      "councilId": "cas-gambletou_izonsho-10",
-      "councilName": "ギャンブル等依存症対策推進本部幹事会",
+      "id": "meet-2022-03-24-cas-gambletou_izonsho-honbu-dai5",
+      "councilId": "cas-gambletou_izonsho-honbu",
+      "councilName": "ギャンブル等依存症対策推進本部",
       "ministry": "CAS",
       "category": "HQ",
-      "title": "第5回 ギャンブル等依存症対策推進本部幹事会",
+      "title": "第5回 ギャンブル等依存症対策推進本部",
       "date": "2022/03/24",
       "updatedAt": "2022/03/24 17:00",
       "location": "持ち回り開催",
@@ -113466,10 +113529,9 @@
         }
       ],
       "tags": [
-        "ギャンブル等依存症対策推進本部幹事会",
+        "ギャンブル等依存症対策推進本部",
         "CAS",
-        "内閣官房",
-        "第5回"
+        "内閣官房"
       ],
       "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/gambletou_izonsho/dai5/siryou.html",
       "hasMinutes": true,
@@ -116872,12 +116934,12 @@
       "docCount": 11
     },
     {
-      "id": "meet-2021-07-30-cas-gambletou_izonsho-10-dai4",
-      "councilId": "cas-gambletou_izonsho-10",
-      "councilName": "ギャンブル等依存症対策推進本部幹事会",
+      "id": "meet-2021-07-30-cas-gambletou_izonsho-honbu-dai4",
+      "councilId": "cas-gambletou_izonsho-honbu",
+      "councilName": "ギャンブル等依存症対策推進本部",
       "ministry": "CAS",
       "category": "HQ",
-      "title": "第4回 ギャンブル等依存症対策推進本部幹事会",
+      "title": "第4回 ギャンブル等依存症対策推進本部",
       "date": "2021/07/30",
       "updatedAt": "2021/07/30 17:00",
       "location": "持ち回り開催",
@@ -116895,10 +116957,9 @@
         }
       ],
       "tags": [
-        "ギャンブル等依存症対策推進本部幹事会",
+        "ギャンブル等依存症対策推進本部",
         "CAS",
-        "内閣官房",
-        "第4回"
+        "内閣官房"
       ],
       "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/gambletou_izonsho/dai4/siryou.html",
       "hasMinutes": false,
@@ -119134,12 +119195,12 @@
       "docCount": 7
     },
     {
-      "id": "meet-2021-06-23-cas-gambletou_izonsho-10-dai3",
-      "councilId": "cas-gambletou_izonsho-10",
-      "councilName": "ギャンブル等依存症対策推進本部幹事会",
+      "id": "meet-2021-06-23-cas-gambletou_izonsho-honbu-dai3",
+      "councilId": "cas-gambletou_izonsho-honbu",
+      "councilName": "ギャンブル等依存症対策推進本部",
       "ministry": "CAS",
       "category": "HQ",
-      "title": "第3回 ギャンブル等依存症対策推進本部幹事会",
+      "title": "第3回 ギャンブル等依存症対策推進本部",
       "date": "2021/06/23",
       "updatedAt": "2021/06/23 17:00",
       "location": "持ち回り開催",
@@ -119158,10 +119219,9 @@
         }
       ],
       "tags": [
-        "ギャンブル等依存症対策推進本部幹事会",
+        "ギャンブル等依存症対策推進本部",
         "CAS",
-        "内閣官房",
-        "第3回"
+        "内閣官房"
       ],
       "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/gambletou_izonsho/dai3/siryou.html",
       "hasMinutes": true,
@@ -127200,12 +127260,12 @@
       "docCount": 8
     },
     {
-      "id": "meet-2019-04-19-cas-gambletou_izonsho-10-dai2",
-      "councilId": "cas-gambletou_izonsho-10",
-      "councilName": "ギャンブル等依存症対策推進本部幹事会",
+      "id": "meet-2019-04-19-cas-gambletou_izonsho-honbu-dai2",
+      "councilId": "cas-gambletou_izonsho-honbu",
+      "councilName": "ギャンブル等依存症対策推進本部",
       "ministry": "CAS",
       "category": "HQ",
-      "title": "第2回 ギャンブル等依存症対策推進本部幹事会",
+      "title": "第2回 ギャンブル等依存症対策推進本部",
       "date": "2019/04/19",
       "updatedAt": "2019/04/19 17:00",
       "location": "総理大臣官邸 / 各府省庁本庁舎",
@@ -127295,14 +127355,111 @@
         }
       ],
       "tags": [
-        "ギャンブル等依存症対策推進本部幹事会",
+        "ギャンブル等依存症対策推進本部",
         "CAS",
-        "内閣官房",
-        "第2回"
+        "内閣官房"
       ],
       "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/gambletou_izonsho/dai2/siryou.html",
       "hasMinutes": true,
       "docCount": 11
+    },
+    {
+      "id": "meet-2019-04-18-cas-gambletou_izonsho-10-dai2",
+      "councilId": "cas-gambletou_izonsho-10",
+      "councilName": "ギャンブル等依存症対策推進本部幹事会",
+      "ministry": "CAS",
+      "category": "HQ",
+      "title": "第2回 ギャンブル等依存症対策推進本部幹事会",
+      "date": "2019/04/18",
+      "updatedAt": "2019/04/18 17:00",
+      "location": "総理大臣官邸 / 各府省庁本庁舎",
+      "summary": "第2回 ギャンブル等依存症対策推進本部幹事会の開催（平成31年4月18日）。ギャンブル等依存症対策推進基本計画の推進及び関係府省庁間の実務的調整が行われた。",
+      "agenda": [
+        "ギャンブル等依存症対策推進基本計画（案）（PDF／1,537KB）",
+        "ギャンブル等依存症対策推進本部の後援等名義の使用について（案）（PDF／48KB）",
+        "ギャンブル等依存症対策基本法（平成30年法律第74号）（PDF／198KB）"
+      ],
+      "materials": [
+        {
+          "name": "第2回 議事要旨 (PDF)",
+          "type": "PDF",
+          "size": "PDF",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/gambletou_izonsho/kanjikai_dai2/gijiyousi.pdf",
+          "isMinutes": true
+        },
+        {
+          "name": "議事次第（PDF／44KB）",
+          "type": "PDF",
+          "size": "PDF",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/gambletou_izonsho/kanjikai_dai2/gijisidai.pdf",
+          "isMinutes": false
+        },
+        {
+          "name": "ギャンブル等依存症対策推進基本計画（案）【概要】（PDF／176KB）",
+          "type": "PDF",
+          "size": "PDF",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/gambletou_izonsho/kanjikai_dai2/siryou1.pdf",
+          "isMinutes": true
+        },
+        {
+          "name": "ギャンブル等依存症対策推進基本計画（案）（PDF／1,537KB）",
+          "type": "PDF",
+          "size": "PDF",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/gambletou_izonsho/kanjikai_dai2/siryou2.pdf",
+          "isMinutes": false
+        },
+        {
+          "name": "ギャンブル等依存症対策推進本部の後援等名義の使用について（案）（PDF／48KB）",
+          "type": "PDF",
+          "size": "PDF",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/gambletou_izonsho/kanjikai_dai2/siryou3.pdf",
+          "isMinutes": false
+        },
+        {
+          "name": "ギャンブル等依存症対策基本法（平成30年法律第74号）【概要】（PDF／257KB）",
+          "type": "PDF",
+          "size": "PDF",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/gambletou_izonsho/kanjikai_dai2/sankou1.pdf",
+          "isMinutes": true
+        },
+        {
+          "name": "ギャンブル等依存症対策基本法（平成30年法律第74号）（PDF／198KB）",
+          "type": "PDF",
+          "size": "PDF",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/gambletou_izonsho/kanjikai_dai2/sankou2.pdf",
+          "isMinutes": false
+        },
+        {
+          "name": "参議院内閣委員会附帯決議（PDF／87KB）",
+          "type": "PDF",
+          "size": "PDF",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/gambletou_izonsho/kanjikai_dai2/sankou3.pdf",
+          "isMinutes": false
+        },
+        {
+          "name": "ギャンブル等依存症対策推進本部令（平成30年政令第286号）（PDF／64KB）",
+          "type": "PDF",
+          "size": "PDF",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/gambletou_izonsho/kanjikai_dai2/sankou4.pdf",
+          "isMinutes": false
+        },
+        {
+          "name": "ギャンブル等依存症対策推進関係者会議 名簿（PDF／82KB）",
+          "type": "PDF",
+          "size": "PDF",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/gambletou_izonsho/kanjikai_dai2/sankou5.pdf",
+          "isMinutes": false
+        }
+      ],
+      "tags": [
+        "ギャンブル等依存症対策推進本部幹事会",
+        "CAS",
+        "内閣官房",
+        "幹事会"
+      ],
+      "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/gambletou_izonsho/kanjikai_dai2/siryou.html",
+      "hasMinutes": true,
+      "docCount": 10
     },
     {
       "id": "meet-2019-02-14-cas-kokusentoc-24-dai38",
@@ -127656,6 +127813,90 @@
       "docCount": 13
     },
     {
+      "id": "meet-2018-10-24-cas-gambletou_izonsho-10-dai1",
+      "councilId": "cas-gambletou_izonsho-10",
+      "councilName": "ギャンブル等依存症対策推進本部幹事会",
+      "ministry": "CAS",
+      "category": "HQ",
+      "title": "第1回 ギャンブル等依存症対策推進本部幹事会",
+      "date": "2018/10/24",
+      "updatedAt": "2018/10/24 17:00",
+      "location": "総理大臣官邸 / 各府省庁本庁舎",
+      "summary": "第1回 ギャンブル等依存症対策推進本部幹事会の開催（平成30年10月24日）。ギャンブル等依存症対策推進基本計画の推進及び関係府省庁間の実務的調整が行われた。",
+      "agenda": [
+        "ギャンブル等依存症対策推進本部幹事会の開催について（PDF／87KB）",
+        "今後の進め方（PDF／97KB）",
+        "ギャンブル等依存症対策基本法（平成30年法律第74号）（PDF／202KB）"
+      ],
+      "materials": [
+        {
+          "name": "第1回 議事要旨 (PDF)",
+          "type": "PDF",
+          "size": "PDF",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/gambletou_izonsho/kanjikai_dai1/gijiyousi.pdf",
+          "isMinutes": true
+        },
+        {
+          "name": "議事次第（PDF／96KB）",
+          "type": "PDF",
+          "size": "PDF",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/gambletou_izonsho/kanjikai_dai1/gijisidai.pdf",
+          "isMinutes": false
+        },
+        {
+          "name": "ギャンブル等依存症対策推進本部幹事会の開催について（PDF／87KB）",
+          "type": "PDF",
+          "size": "PDF",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/gambletou_izonsho/kanjikai_dai1/siryou1.pdf",
+          "isMinutes": false
+        },
+        {
+          "name": "今後の進め方（PDF／97KB）",
+          "type": "PDF",
+          "size": "PDF",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/gambletou_izonsho/kanjikai_dai1/siryou2.pdf",
+          "isMinutes": false
+        },
+        {
+          "name": "ギャンブル等依存症対策基本法（平成30年法律第74号）【概要】（PDF／117KB）",
+          "type": "PDF",
+          "size": "PDF",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/gambletou_izonsho/kanjikai_dai1/sankou1.pdf",
+          "isMinutes": true
+        },
+        {
+          "name": "ギャンブル等依存症対策基本法（平成30年法律第74号）（PDF／202KB）",
+          "type": "PDF",
+          "size": "PDF",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/gambletou_izonsho/kanjikai_dai1/sankou2.pdf",
+          "isMinutes": false
+        },
+        {
+          "name": "参議院内閣委員会附帯決議（PDF／81KB）",
+          "type": "PDF",
+          "size": "PDF",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/gambletou_izonsho/kanjikai_dai1/sankou3.pdf",
+          "isMinutes": false
+        },
+        {
+          "name": "ギャンブル等依存症対策推進本部令（平成30年政令第286号）（PDF／67KB）",
+          "type": "PDF",
+          "size": "PDF",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/gambletou_izonsho/kanjikai_dai1/sankou4.pdf",
+          "isMinutes": false
+        }
+      ],
+      "tags": [
+        "ギャンブル等依存症対策推進本部幹事会",
+        "CAS",
+        "内閣官房",
+        "幹事会"
+      ],
+      "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/gambletou_izonsho/kanjikai_dai1/siryou.html",
+      "hasMinutes": true,
+      "docCount": 8
+    },
+    {
       "id": "meet-2018-10-23-cas-kokusentoc-24-dai36",
       "councilId": "cas-kokusentoc-24",
       "councilName": "国家戦略特別区域諮問会議",
@@ -127754,12 +127995,12 @@
       "docCount": 10
     },
     {
-      "id": "meet-2018-10-19-cas-gambletou_izonsho-10-dai1",
-      "councilId": "cas-gambletou_izonsho-10",
-      "councilName": "ギャンブル等依存症対策推進本部幹事会",
+      "id": "meet-2018-10-19-cas-gambletou_izonsho-honbu-dai1",
+      "councilId": "cas-gambletou_izonsho-honbu",
+      "councilName": "ギャンブル等依存症対策推進本部",
       "ministry": "CAS",
       "category": "HQ",
-      "title": "第1回 ギャンブル等依存症対策推進本部幹事会",
+      "title": "第1回 ギャンブル等依存症対策推進本部",
       "date": "2018/10/19",
       "updatedAt": "2018/10/19 17:00",
       "location": "総理大臣官邸 / 各府省庁本庁舎",
@@ -127842,10 +128083,9 @@
         }
       ],
       "tags": [
-        "ギャンブル等依存症対策推進本部幹事会",
+        "ギャンブル等依存症対策推進本部",
         "CAS",
-        "内閣官房",
-        "第1回"
+        "内閣官房"
       ],
       "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/gambletou_izonsho/dai1/siryou.html",
       "hasMinutes": true,
