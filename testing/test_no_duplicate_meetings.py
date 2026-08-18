@@ -34,17 +34,22 @@ def extract_round_and_type(title, council_name=""):
     t_norm = to_halfwidth(title)
     
     sub_type = ""
+    fy_m = re.search(r'(令和\d+年度|平成\d+年度|令和\d+年|平成\d+年)', t_norm)
+    if fy_m and fy_m.group(1) not in council_name:
+        sub_type += fy_m.group(1)
+
     if 'フォローアップ' in t_norm:
-        sub_type = "フォローアップ会合"
+        sub_type += "_フォローアップ会合"
     elif '幹事会' in t_norm and '幹事会' not in council_name:
-        sub_type = "幹事会"
+        sub_type += "_幹事会"
     elif ('ワーキンググループ' in t_norm or ' WG' in t_norm) and ('WG' not in council_name and 'ワーキンググループ' not in council_name):
-        sub_type = "WG"
+        sub_type += "_WG"
     elif '分科会' in t_norm and '分科会' not in council_name:
-        sub_type = "分科会"
+        sub_type += "_分科会"
 
     m = re.search(r'第\s*(\d+)\s*回', t_norm)
     return (int(m.group(1)), sub_type) if m else (None, "")
+
 
 def run_test():
     base_dir = os.path.dirname(os.path.abspath(__file__))
