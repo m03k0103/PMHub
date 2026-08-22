@@ -83,6 +83,16 @@ class CustomHandler(http.server.SimpleHTTPRequestHandler):
                     self.wfile.write(json.dumps({"councils": data.get("discoveredCouncils", [])}).encode('utf-8'))
             else:
                 self.wfile.write(json.dumps({"councils": []}).encode('utf-8'))
+        elif self.path == "/api/verification-report":
+            self.send_response(200)
+            self.send_header('Content-Type', 'application/json; charset=utf-8')
+            self.end_headers()
+            rep_file = os.path.join(BASE_DIR, "ai_verification_report.json")
+            if os.path.exists(rep_file):
+                with open(rep_file, "r", encoding="utf-8") as f:
+                    self.wfile.write(f.read().encode('utf-8'))
+            else:
+                self.wfile.write(json.dumps({}).encode('utf-8'))
         elif self.path == "/api/get-crawler-config":
             self.send_response(200)
             self.send_header('Content-Type', 'application/json; charset=utf-8')
