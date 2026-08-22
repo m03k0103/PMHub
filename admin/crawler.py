@@ -103,7 +103,7 @@ def fetch_url(url):
         return None
 
 def parse_materials_from_html(html, base_url, pdf_selector):
-    """HTMLから全配布資料（公開PDFおよび非公開資料）を抽出"""
+    """HTMLから全配布資料（公開PDFおよび非公開資料）を抽出（ポータルや一覧ページ等のノイズは除外）"""
     materials = []
     
     soup = BeautifulSoup(html, 'html.parser')
@@ -120,6 +120,11 @@ def parse_materials_from_html(html, base_url, pdf_selector):
             link_text = a_tag.get_text(strip=True)
             clean_name = link_text if link_text else os.path.basename(href)
             abs_url = urllib.parse.urljoin(base_url, href)
+            
+            # ポータルや一覧、一次ソースリンクを除外
+            if abs_url == base_url or any(k in clean_name for k in ['公式ポータル', '公式ページ', '公式情報ポータル', '審議会・検討会等一覧', '公式掲載資料・ページ']):
+                continue
+                
             materials.append({
                 "name": clean_name,
                 "url": abs_url,
@@ -478,6 +483,127 @@ def update_crawl_status(data, council_id, scraped_item, failure_reason=None):
                 }
             break
 
+def extract_session_numbers(text):
+    if not text:
+        return set()
+    nums = set()
+    matches = re.findall(r'第(\d+)回', text)
+    for m in matches:
+        nums.add(int(m))
+    matches_dai = re.findall(r'dai(\d+)', text, re.IGNORECASE)
+    for m in matches_dai:
+        nums.add(int(m))
+    matches_slash = re.findall(r'[/_](\d{1,3})(?:[_.]|pdf|giji)', text, re.IGNORECASE)
+    for m in matches_slash:
+        nums.add(int(m))
+    return nums
+
+def extract_years(text):
+    if not text:
+        return set()
+    years = set()
+    reiwa = re.findall(r'令和([元\d]+)年', text)
+    for r in reiwa:
+        val = 1 if r == '元' else int(r)
+        years.add(2018 + val)
+    heisei = re.findall(r'平成([元\d]+)年', text)
+    for h in heisei:
+        val = 1 if h == '元' else int(h)
+        years.add(1988 + val)
+    western = re.findall(r'20\d\d', text)
+    for w in western:
+        years.add(int(w))
+    r_file = re.findall(r'[/_]r0?(\d+)', text, re.IGNORECASE)
+    for rf in r_file:
+        years.add(2018 + int(rf))
+    h_file = re.findall(r'[/_]h0?(\d+)', text, re.IGNORECASE)
+    for hf in h_file:
+        years.add(1988 + int(hf))
+    return years
+
+def deduplicate_data_materials(data):
+    """docs/data.json の会議（MEETINGS）に紐づく資料リンクの重複を排除し、正確な回へ一意に再配分する"""
+    from collections import defaultdict
+    meetings = data.get("meetings", [])
+    councils = {c["id"]: c for c in data.get("councils", [])}
+
+    council_meetings = defaultdict(list)
+    for m in meetings:
+        c_id = m.get("councilId")
+        if c_id:
+            council_meetings[c_id].append(m)
+
+    removed_cross_dup = 0
+    removed_portal = 0
+
+    for c_id, m_list in council_meetings.items():
+        c_info = councils.get(c_id, {})
+        c_url = c_info.get("url", "").strip()
+
+        # 1. ポータル・公式ページ・一覧ページの資料リンクを除外
+        for m in m_list:
+            clean_mats = []
+            for mat in m.get("materials", []):
+                url = mat.get("url", "").strip()
+                name = mat.get("name", "").strip()
+                if (c_url and url == c_url) or any(k in name for k in ["公式ポータル", "公式ページ", "公式情報ポータル", "審議会・検討会等一覧", "公式掲載資料・ページ"]):
+                    removed_portal += 1
+                    continue
+                clean_mats.append(mat)
+            m["materials"] = clean_mats
+
+        # 2. 会議体内の複数開催回に重複して紐づいている同一資料URLの解消
+        url_to_instances = defaultdict(list)
+        for m in m_list:
+            for mat in m.get("materials", []):
+                url = mat.get("url", "").strip()
+                if url and url != "#":
+                    url_to_instances[url].append((m, mat))
+
+        for url, insts in url_to_instances.items():
+            if len(insts) <= 1:
+                continue
+
+            scored_candidates = []
+            for m, mat in insts:
+                score = 0
+                m_title = m.get("title", "")
+                m_id = m.get("id", "")
+                mat_name = mat.get("name", "")
+
+                m_sessions = extract_session_numbers(m_title + " " + m_id)
+                mat_sessions = extract_session_numbers(mat_name + " " + url)
+
+                common_sessions = m_sessions.intersection(mat_sessions)
+                if common_sessions:
+                    score += 100 * len(common_sessions)
+
+                m_years = extract_years(m.get("date", "") + " " + m_title)
+                mat_years = extract_years(mat_name + " " + url)
+                common_years = m_years.intersection(mat_years)
+                if common_years:
+                    score += 10 * len(common_years)
+
+                if re.search(r'第\d+回', m_title):
+                    score += 5
+
+                m_date = m.get("date", "")
+                if m_date and not m_date.startswith("1312") and not m_date.startswith("2026/08/09"):
+                    score += 2
+
+                scored_candidates.append((score, m, mat))
+
+            scored_candidates.sort(key=lambda x: x[0], reverse=True)
+            best_m = scored_candidates[0][1]
+
+            for score, m, mat in scored_candidates:
+                if m["id"] != best_m["id"]:
+                    m["materials"] = [x for x in m["materials"] if x.get("url") != url]
+                    removed_cross_dup += 1
+
+    if removed_cross_dup > 0 or removed_portal > 0:
+        print(f"[重複排除] 会議間重複資料 {removed_cross_dup} 件、ポータルリンク {removed_portal} 件を自動整理しました。")
+
 def main():
     global CRAWL_TARGETS
     dynamic_targets = load_councils_from_data_json()
@@ -547,6 +673,9 @@ def main():
     output_filename = os.path.join(os.path.dirname(__file__), "scraped_councils_output.json")
     with open(output_filename, "w", encoding="utf-8") as f:
         json.dump(results, f, ensure_ascii=False, indent=2)
+
+    # 全体データに対して資料リンクの重複排除・正規化を実施
+    deduplicate_data_materials(data)
 
     # data.json にクロールステータスとタイムスタンプを保存
     now_str = datetime.now().strftime("%Y/%m/%d %H:%M")

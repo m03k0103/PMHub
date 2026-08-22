@@ -542,9 +542,24 @@ document.addEventListener('DOMContentLoaded', async () => {
     }
   }
 
-  window.toggleMaterialsAccordion = function(meetingId) {
-    const contentEl = document.getElementById(`materials-content-${meetingId}`);
-    const arrowEl = document.getElementById(`arrow-${meetingId}`);
+  window.toggleMaterialsAccordion = function(btnOrMeetingId, optionalMeetingId) {
+    let accordionEl = null;
+    let meetingId = optionalMeetingId;
+
+    if (btnOrMeetingId && typeof btnOrMeetingId === 'object' && btnOrMeetingId.closest) {
+      accordionEl = btnOrMeetingId.closest('.materials-accordion');
+    } else if (typeof btnOrMeetingId === 'string') {
+      meetingId = btnOrMeetingId;
+      const content = document.getElementById(`materials-content-${meetingId}`);
+      if (content) {
+        accordionEl = content.closest('.materials-accordion');
+      }
+    }
+
+    if (!accordionEl) return;
+
+    const contentEl = accordionEl.querySelector('.materials-collapse-content');
+    const arrowEl = accordionEl.querySelector('.toggle-arrow');
     if (!contentEl) return;
 
     const isHidden = contentEl.classList.contains('hidden');
@@ -599,14 +614,14 @@ document.addEventListener('DOMContentLoaded', async () => {
         </li>
       `;
     }).join('') : `
-      <li class="material-item-row">
-        <span class="text-muted" style="font-size: 0.85rem;">資料はありません</span>
+      <li class="material-item-empty">
+        <span class="text-muted">配付資料はありません</span>
       </li>
     `;
 
     return `
       <div class="materials-accordion">
-        <button class="materials-toggle-btn" onclick="toggleMaterialsAccordion('${meetingId}')" type="button">
+        <button class="materials-toggle-btn" onclick="toggleMaterialsAccordion(this, '${meetingId}')" type="button">
           <div class="materials-toggle-left">
             <span>📂 資料リストを開く</span>
             <span class="materials-badge-count ${hasMaterials ? '' : 'no-materials'}">${hasMaterials ? `${filteredMaterials.length}件` : '資料なし'}</span>
