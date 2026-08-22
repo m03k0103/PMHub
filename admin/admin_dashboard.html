@@ -964,12 +964,19 @@ JSON データを読み込み中...
       const currentIds = new Set(allCouncils.map(c => c.id));
       let addedCount = 0;
       newCouncilsList.forEach(dc => {
-        if (dc && dc.id && !currentIds.has(dc.id)) {
-          dc.isNew = true;
-          allCouncils.push(dc); window.allCouncils = allCouncils;
-          currentIds.add(dc.id);
-          verdicts[dc.id] = { verdict: null, notes: '', correctedUrl: '' };
-          addedCount++;
+        if (dc && dc.id) {
+          const aiVerdict = (dc.status === 'approved' || dc.status === 'rejected') ? dc.status : null;
+          const aiReason = dc.aiReason || '';
+
+          if (!currentIds.has(dc.id)) {
+            dc.isNew = true;
+            allCouncils.push(dc); window.allCouncils = allCouncils;
+            currentIds.add(dc.id);
+            verdicts[dc.id] = { verdict: aiVerdict, notes: aiReason, correctedUrl: '' };
+            addedCount++;
+          } else if (aiVerdict && (!verdicts[dc.id] || verdicts[dc.id].verdict === null || verdicts[dc.id].verdict === 'pending')) {
+            verdicts[dc.id] = { verdict: aiVerdict, notes: aiReason, correctedUrl: verdicts[dc.id]?.correctedUrl || '' };
+          }
         }
       });
       saveSavedDiscovered(allCouncils.filter(c => c.isNew && !baseCouncils.some(bc => bc.id === c.id)));
@@ -1000,8 +1007,12 @@ JSON データを読み込み中...
     const meetingUrlCorrections = {};
 
     allCouncils.forEach(c => {
-      const defaultV = (c.isNew === true || knownIdSet.has(c.id)) ? null : 'approved';
-      verdicts[c.id] = normalizeVerdict(savedVerdicts[c.id], defaultV);
+      let defaultV = (c.isNew === true || knownIdSet.has(c.id)) ? null : 'approved';
+      if (c.status === 'approved' || c.status === 'rejected') defaultV = c.status;
+      const initialNotes = c.aiReason || '';
+      const norm = normalizeVerdict(savedVerdicts[c.id], defaultV);
+      if (!norm.notes && initialNotes) norm.notes = initialNotes;
+      verdicts[c.id] = norm;
     });
 
     // サーバー上の最新ディスカバリーデータ (data.json の discoveredCouncils) の非同期自動統合
