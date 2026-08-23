@@ -128,6 +128,46 @@ document.addEventListener('DOMContentLoaded', async () => {
     toastContainer: document.getElementById('toastContainer')
   };
 
+  // --- DYNAMICALLY POPULATE MINISTRY SELECT ---
+  function populateMinistrySelect() {
+    if (!el.ministrySelect || !window.MINISTRIES) return;
+    el.ministrySelect.innerHTML = '<option value="ALL">すべての省庁・行政機関</option>';
+    
+    const groups = {
+      '府・省': [],
+      '庁': [],
+      '委員会': [],
+      'その他': []
+    };
+    
+    Object.values(window.MINISTRIES).forEach(min => {
+      if (min.name.endsWith('府') || min.name.endsWith('省')) {
+        groups['府・省'].push(min);
+      } else if (min.name.endsWith('庁')) {
+        groups['庁'].push(min);
+      } else if (min.name.endsWith('委員会')) {
+        groups['委員会'].push(min);
+      } else {
+        groups['その他'].push(min);
+      }
+    });
+    
+    ['府・省', '庁', '委員会', 'その他'].forEach(groupName => {
+      if (groups[groupName].length === 0) return;
+      const optgroup = document.createElement('optgroup');
+      optgroup.label = groupName;
+      groups[groupName].forEach(min => {
+        const opt = document.createElement('option');
+        opt.value = min.code;
+        opt.textContent = `${min.name} (${min.code})`;
+        optgroup.appendChild(opt);
+      });
+      el.ministrySelect.appendChild(optgroup);
+    });
+  }
+  populateMinistrySelect();
+
+
   // --- PRE-COMPUTE MEETING COUNTS ---
   const meetingCounts = {};
   for (let i = 0; i < MEETINGS.length; i++) {
