@@ -172,6 +172,23 @@ def run_discovery(progress_callback=None):
     ministries, existing_councils = parse_data_json()
     emit(f"登録済み省庁数: {len(ministries)} 組織, 既存会議体数: {len(existing_councils)} 件\n")
 
+    # 却下済み会議体データの読み込み（再検出・再登録をブロック）
+    rejected_file = os.path.join(BASE_DIR, "rejected_councils.json")
+    rejected_urls = set()
+    rejected_names = set()
+    if os.path.exists(rejected_file):
+        try:
+            with open(rejected_file, "r", encoding="utf-8") as rf:
+                rejected_data = json.load(rf)
+                for rc in rejected_data:
+                    if rc.get("officialUrl"):
+                        rejected_urls.add(normalize_url(rc.get("officialUrl")))
+                    if rc.get("name"):
+                        rejected_names.add(rc.get("name").strip())
+            emit(f"却下済み会議体除外リスト: {len(rejected_data)} 件をロードしました（巡回検出対象外として除外）")
+        except Exception as e:
+            print(f"[WARN] Failed to load rejected_councils.json: {e}")
+
     # 既存の会議体URLと名前のセット（重複判定用）
     existing_urls = {normalize_url(c.get("officialUrl", "")) for c in existing_councils if c.get("officialUrl")}
     existing_names = {c.get("name", "").strip() for c in existing_councils if c.get("name")}
@@ -271,6 +288,10 @@ def run_discovery(progress_callback=None):
                 if norm_final_url in existing_urls:
                     continue
                 if target_council_name in existing_names:
+                    continue
+
+                # 却下済み会議体の除外判定
+                if norm_final_url in rejected_urls or target_council_name in rejected_names:
                     continue
 
                 # 今回のクロール内での重複チェック

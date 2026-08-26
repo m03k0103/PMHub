@@ -56,17 +56,35 @@ def load_crawler_config():
     return True
 
 def load_councils_from_data_json():
-    """docs/data.json から登録済みの全会議体 (COUNCILS) を読み込む"""
+    """docs/data.json から登録済みの全会議体 (COUNCILS) を読み込む（却下済み会議体はクロール対象外）"""
     councils = []
+    
+    # 却下済みIDセットの読み込み
+    rejected_ids = set()
+    rejected_file = os.path.join(os.path.dirname(__file__), "rejected_councils.json")
+    if os.path.exists(rejected_file):
+        try:
+            with open(rejected_file, "r", encoding="utf-8") as rf:
+                rejected_data = json.load(rf)
+                for rc in rejected_data:
+                    if rc.get("id"):
+                        rejected_ids.add(rc.get("id"))
+            print(f"[INFO] 却下済み会議体 {len(rejected_ids)} 件をクロール対象から除外します。")
+        except Exception as e:
+            print(f"[WARN] failed to load rejected_councils.json: {e}", file=sys.stderr)
+
     if os.path.exists(DATA_JSON_FILE):
         try:
             with open(DATA_JSON_FILE, "r", encoding="utf-8") as f:
                 data = json.load(f)
                 raw_councils = data.get("councils", [])
                 for item in raw_councils:
+                    cid = item.get("id")
+                    if cid in rejected_ids:
+                        continue
                     if item.get("officialUrl"):
                         councils.append({
-                            "id": item.get("id"),
+                            "id": cid,
                             "ministry": item.get("ministry"),
                             "name": item.get("name"),
                             "url": item.get("officialUrl")

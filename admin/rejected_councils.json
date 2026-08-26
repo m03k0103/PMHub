@@ -1,0 +1,2162 @@
+[
+  {
+    "id": "anre-197",
+    "name": "審議会・予算",
+    "ministry": "ANRE",
+    "category": "COUNCIL",
+    "officialUrl": "https://www.enecho.meti.go.jp/committee/index.html",
+    "sourcePageUrl": "https://www.enecho.meti.go.jp/committee/council/",
+    "rejectedAt": "2026-08-25",
+    "reason": "AI判定: 会議体本体ではなく共通インデックス・ポータル（審議会・予算）のため却下"
+  },
+  {
+    "id": "anre-199",
+    "name": "省エネルギー・新エネルギー分科会",
+    "ministry": "ANRE",
+    "category": "SUBCOMMITTEE",
+    "officialUrl": "https://www.meti.go.jp/shingikai/enecho/#syoene_shinene",
+    "sourcePageUrl": "https://www.enecho.meti.go.jp/committee/council/",
+    "rejectedAt": "2026-08-25",
+    "reason": "AI判定: 登録済み会議体（省エネルギー・新エネルギー分科会）と重複しているため却下"
+  },
+  {
+    "id": "anre-200",
+    "name": "資源・燃料分科会",
+    "ministry": "ANRE",
+    "category": "SUBCOMMITTEE",
+    "officialUrl": "https://www.meti.go.jp/shingikai/enecho/#shigen_nenryo",
+    "sourcePageUrl": "https://www.enecho.meti.go.jp/committee/council/",
+    "rejectedAt": "2026-08-25",
+    "reason": "AI判定: 登録済み会議体（資源・燃料分科会）と重複しているため却下"
+  },
+  {
+    "id": "anre-201",
+    "name": "電力・ガス事業分科会",
+    "ministry": "ANRE",
+    "category": "SUBCOMMITTEE",
+    "officialUrl": "https://www.meti.go.jp/shingikai/enecho/#denryoku_gasu",
+    "sourcePageUrl": "https://www.enecho.meti.go.jp/committee/council/",
+    "rejectedAt": "2026-08-25",
+    "reason": "AI判定: 登録済み会議体（電力・ガス事業分科会）と重複しているため却下"
+  },
+  {
+    "id": "anre-202",
+    "name": "調達価格等算定委員会",
+    "ministry": "ANRE",
+    "category": "COMMITTEE",
+    "officialUrl": "https://www.meti.go.jp/shingikai/santeii/",
+    "sourcePageUrl": "https://www.enecho.meti.go.jp/committee/council/",
+    "rejectedAt": "2026-08-25",
+    "reason": "AI判定: 登録済み会議体（調達価格等算定委員会）と重複しているため却下"
+  },
+  {
+    "id": "anre-203",
+    "name": "エネルギー情勢懇談会",
+    "ministry": "ANRE",
+    "category": "STUDY",
+    "officialUrl": "https://www.enecho.meti.go.jp/committee/studygroup/#ene_situation",
+    "sourcePageUrl": "https://www.enecho.meti.go.jp/committee/council/",
+    "rejectedAt": "2026-08-25",
+    "reason": "AI判定: 登録済み会議体（エネルギー情勢懇談会）と重複しているため却下"
+  },
+  {
+    "id": "anre-205",
+    "name": "経済産業省「審議会・研究会」（国立国会図書館WARP）",
+    "ministry": "ANRE",
+    "category": "STUDY",
+    "officialUrl": "http://warp.da.ndl.go.jp/info:ndljp/pid/11181294/www.meti.go.jp/committee/",
+    "sourcePageUrl": "https://www.enecho.meti.go.jp/committee/council/",
+    "rejectedAt": "2026-08-25",
+    "reason": "AI判定: 国立国会図書館WARPアーカイブ（過去保管データ）のため却下"
+  },
+  {
+    "id": "caa-207",
+    "name": "消費者庁発足以前の情報・発足経緯 (旧国民生活局・消費者行政推進会議)",
+    "ministry": "CAA",
+    "category": "HQ",
+    "officialUrl": "https://www.caa.go.jp/about_us/about/ago/",
+    "sourcePageUrl": "https://www.caa.go.jp/policies/council/",
+    "rejectedAt": "2026-08-25",
+    "reason": "AI判定: 登録済み会議体（消費者庁発足以前の情報・発足経緯 (旧国民生活局・消費者行政推進会議)）と重複しているため却下"
+  },
+  {
+    "id": "cao-225",
+    "name": "経済社会構造に関する有識者会議",
+    "ministry": "CAO",
+    "category": "COUNCIL",
+    "officialUrl": "https://www5.cao.go.jp/keizai2/keizai-syakai/k-s-kouzou/k-s-kouzou.html",
+    "sourcePageUrl": "https://www.cao.go.jp/council.html",
+    "rejectedAt": "2026-08-25",
+    "reason": "AI判定: HTTPエラー 404（アクセス不可）のため却下"
+  },
+  {
+    "id": "cao-226",
+    "name": "経済の好循環実現に向けた政労使会議（首相官邸）",
+    "ministry": "CAO",
+    "category": "COUNCIL",
+    "officialUrl": "http://www.kantei.go.jp/jp/singi/seirousi/",
+    "sourcePageUrl": "https://www.cao.go.jp/council.html",
+    "rejectedAt": "2026-08-25",
+    "reason": "AI判定: HTTPエラー 404（アクセス不可）のため却下"
+  },
+  {
+    "id": "cao-235",
+    "name": "サイバー対処能力強化法の施行等に関する有識者会議",
+    "ministry": "CAO",
+    "category": "COUNCIL",
+    "officialUrl": "https://www.cyber.go.jp/council/cyber_anzen_hosyo/index.html",
+    "sourcePageUrl": "https://www.cao.go.jp/council.html",
+    "rejectedAt": "2026-08-25",
+    "reason": "AI判定: HTTPエラー 404（アクセス不可）のため却下"
+  },
+  {
+    "id": "cao-263",
+    "name": "経済の好循環実現に向けた政労使会議（首相官邸）（国立国会図書館インターネット資料収集保存事業",
+    "ministry": "CAO",
+    "category": "COUNCIL",
+    "officialUrl": "https://warp.ndl.go.jp/web/20220104092035/https://www.kantei.go.jp/jp/singi/seirousi/index.html",
+    "sourcePageUrl": "https://www.cao.go.jp/council.html",
+    "rejectedAt": "2026-08-25",
+    "reason": "AI判定: 国立国会図書館WARPアーカイブ（過去保管データ）のため却下"
+  },
+  {
+    "id": "cao-269",
+    "name": "災害対策法制のあり方に関する研究会",
+    "ministry": "CAO",
+    "category": "STUDY",
+    "officialUrl": "https://www.bousai.go.jp/kaigirep/kenkyu/saigaitaisakuhousei/index.html",
+    "sourcePageUrl": "https://www.cao.go.jp/council.html",
+    "rejectedAt": "2026-08-25",
+    "reason": "AI判定: 登録済み会議体（災害対策法制のあり方に関する研究会）と重複しているため却下"
+  },
+  {
+    "id": "cao-270",
+    "name": "再生エネルギー等に関する規制等の総点検タスクフォース",
+    "ministry": "CAO",
+    "category": "COUNCIL",
+    "officialUrl": "https://www8.cao.go.jp/kisei-kaikaku/kisei/conference/energy/e_index.html",
+    "sourcePageUrl": "https://www.cao.go.jp/council.html",
+    "rejectedAt": "2026-08-25",
+    "reason": "AI判定: 登録済み会議体（再生エネルギー等に関する規制等の総点検タスクフォース）と重複しているため却下"
+  },
+  {
+    "id": "cao-271",
+    "name": "死因究明等推進会議（国立国会図書館インターネット資料収集保存事業",
+    "ministry": "CAO",
+    "category": "HQ",
+    "officialUrl": "https://warp.ndl.go.jp/web/20200411000000/www8.cao.go.jp/kyuumei/meeting/kaisai.html",
+    "sourcePageUrl": "https://www.cao.go.jp/council.html",
+    "rejectedAt": "2026-08-25",
+    "reason": "AI判定: 国立国会図書館WARPアーカイブ（過去保管データ）のため却下"
+  },
+  {
+    "id": "cao-272",
+    "name": "仕事と生活の調和推進官民トップ会議（国立国会図書館インターネット資料収集保存事業",
+    "ministry": "CAO",
+    "category": "COUNCIL",
+    "officialUrl": "https://warp.ndl.go.jp/web/20250801132100/https://wwwa.cao.go.jp/wlb/government/top/index.html",
+    "sourcePageUrl": "https://www.cao.go.jp/council.html",
+    "rejectedAt": "2026-08-25",
+    "reason": "AI判定: 国立国会図書館WARPアーカイブ（過去保管データ）のため却下"
+  },
+  {
+    "id": "cao-275",
+    "name": "成年後見制度利用促進委員会（国立国会図書館インターネット資料収集保存事業",
+    "ministry": "CAO",
+    "category": "COMMITTEE",
+    "officialUrl": "https://warp.ndl.go.jp/web/20190510000000/www.cao.go.jp/seinenkouken/iinkai/index.html",
+    "sourcePageUrl": "https://www.cao.go.jp/council.html",
+    "rejectedAt": "2026-08-25",
+    "reason": "AI判定: 国立国会図書館WARPアーカイブ（過去保管データ）のため却下"
+  },
+  {
+    "id": "cao-276",
+    "name": "成年後見制度利用促進会議（国立国会図書館インターネット資料収集保存事業",
+    "ministry": "CAO",
+    "category": "COUNCIL",
+    "officialUrl": "https://warp.ndl.go.jp/web/20190510000000/www.cao.go.jp/seinenkouken/kaigi/index.html",
+    "sourcePageUrl": "https://www.cao.go.jp/council.html",
+    "rejectedAt": "2026-08-25",
+    "reason": "AI判定: 国立国会図書館WARPアーカイブ（過去保管データ）のため却下"
+  },
+  {
+    "id": "cao-279",
+    "name": "地方分権推進委員会（国立国会図書館インターネット資料収集保存事業",
+    "ministry": "CAO",
+    "category": "COMMITTEE",
+    "officialUrl": "https://warp.ndl.go.jp/web/20140206000000/www8.cao.go.jp/bunken/bunken-iinkai/index-bu.html",
+    "sourcePageUrl": "https://www.cao.go.jp/council.html",
+    "rejectedAt": "2026-08-25",
+    "reason": "AI判定: 国立国会図書館WARPアーカイブ（過去保管データ）のため却下"
+  },
+  {
+    "id": "cao-280",
+    "name": "地方分権改革推進会議（国立国会図書館インターネット資料収集保存事業",
+    "ministry": "CAO",
+    "category": "HQ",
+    "officialUrl": "https://warp.ndl.go.jp/web/20140206000000/www8.cao.go.jp/bunken/honkaigi.html",
+    "sourcePageUrl": "https://www.cao.go.jp/council.html",
+    "rejectedAt": "2026-08-25",
+    "reason": "AI判定: 国立国会図書館WARPアーカイブ（過去保管データ）のため却下"
+  },
+  {
+    "id": "cao-281",
+    "name": "地方分権改革推進委員会（国立国会図書館インターネット資料収集保存事業",
+    "ministry": "CAO",
+    "category": "COMMITTEE",
+    "officialUrl": "https://warp.ndl.go.jp/web/20140206000000/www.cao.go.jp/bunken-kaikaku/iinkai/kaisai/kaisai-index.html",
+    "sourcePageUrl": "https://www.cao.go.jp/council.html",
+    "rejectedAt": "2026-08-25",
+    "reason": "AI判定: 国立国会図書館WARPアーカイブ（過去保管データ）のため却下"
+  },
+  {
+    "id": "cao-287",
+    "name": "内閣府独立行政法人評価委員会 （国立国会図書館インターネット資料収集保存事業",
+    "ministry": "CAO",
+    "category": "COMMITTEE",
+    "officialUrl": "https://warp.ndl.go.jp/web/20250814000000/www8.cao.go.jp/hyouka/dokuritsu/index.html",
+    "sourcePageUrl": "https://www.cao.go.jp/council.html",
+    "rejectedAt": "2026-08-25",
+    "reason": "AI判定: 国立国会図書館WARPアーカイブ（過去保管データ）のため却下"
+  },
+  {
+    "id": "cao-288",
+    "name": "日系定住外国人施策推進会議（国立国会図書館インターネット資料収集保存事業",
+    "ministry": "CAO",
+    "category": "HQ",
+    "officialUrl": "https://warp.ndl.go.jp/web/20180910000000/www8.cao.go.jp/teiju/kaigi/index.html",
+    "sourcePageUrl": "https://www.cao.go.jp/council.html",
+    "rejectedAt": "2026-08-25",
+    "reason": "AI判定: 国立国会図書館WARPアーカイブ（過去保管データ）のため却下"
+  },
+  {
+    "id": "cao-291",
+    "name": "バリアフリー・ユニバーサルデザインに関する関係閣僚会議（国立国会図書館インターネット資料収集保存事業",
+    "ministry": "CAO",
+    "category": "COUNCIL",
+    "officialUrl": "https://warp.ndl.go.jp/web/20210201173651/https://www8.cao.go.jp/souki/barrier-free/kaisai_joukyou.html",
+    "sourcePageUrl": "https://www.cao.go.jp/council.html",
+    "rejectedAt": "2026-08-25",
+    "reason": "AI判定: 国立国会図書館WARPアーカイブ（過去保管データ）のため却下"
+  },
+  {
+    "id": "cao-294",
+    "name": "不動産・インフラ投資市場活性化方策に関する有識者会議",
+    "ministry": "CAO",
+    "category": "COUNCIL",
+    "officialUrl": "https://www5.cao.go.jp/keizai2/keizai-syakai/re-infra-invest/re-infra-invest.html",
+    "sourcePageUrl": "https://www.cao.go.jp/council.html",
+    "rejectedAt": "2026-08-25",
+    "reason": "AI判定: HTTPエラー 404（アクセス不可）のため却下"
+  },
+  {
+    "id": "cas-298",
+    "name": "アフリカ経済戦略会議",
+    "ministry": "CAS",
+    "category": "COUNCIL",
+    "officialUrl": "https://www.mofa.go.jp/mofaj/afr/af2/pageit_000001_02190.html",
+    "sourcePageUrl": "https://www.cas.go.jp/jp/seisakukaigi/",
+    "rejectedAt": "2026-08-25",
+    "reason": "AI判定: HTTPエラー 403（アクセス不可）のため却下"
+  },
+  {
+    "id": "cas-306",
+    "name": "カウンターインテリジェンス推進会議",
+    "ministry": "CAS",
+    "category": "HQ",
+    "officialUrl": "https://www.cas.go.jp/jp/seisaku/counterintelligence/index.html",
+    "sourcePageUrl": "https://www.cas.go.jp/jp/seisakukaigi/",
+    "rejectedAt": "2026-08-25",
+    "reason": "AI判定: 登録済み会議体（カウンターインテリジェンス推進会議）と重複しているため却下"
+  },
+  {
+    "id": "cas-307",
+    "name": "花粉症に関する関係閣僚会議",
+    "ministry": "CAS",
+    "category": "COUNCIL",
+    "officialUrl": "https://www.cas.go.jp/jp/seisaku/kafun/index.html",
+    "sourcePageUrl": "https://www.cas.go.jp/jp/seisakukaigi/",
+    "rejectedAt": "2026-08-25",
+    "reason": "AI判定: 登録済み会議体（花粉症に関する関係閣僚会議）と重複しているため却下"
+  },
+  {
+    "id": "cas-329",
+    "name": "省エネルギー・省資源対策推進会議",
+    "ministry": "CAS",
+    "category": "HQ",
+    "officialUrl": "https://warp.ndl.go.jp/web/20130405143523/http://www8.cao.go.jp/souki/energy/index_ene.html",
+    "sourcePageUrl": "https://www.cas.go.jp/jp/seisakukaigi/",
+    "rejectedAt": "2026-08-25",
+    "reason": "AI判定: 国立国会図書館WARPアーカイブ（過去保管データ）のため却下"
+  },
+  {
+    "id": "jfa-588",
+    "name": "審議会",
+    "ministry": "JFA",
+    "category": "COUNCIL",
+    "officialUrl": "https://www.jfa.maff.go.jp/j/council/index.html",
+    "sourcePageUrl": "https://www.jfa.maff.go.jp/j/council/",
+    "rejectedAt": "2026-08-25",
+    "reason": "AI判定: 会議体本体ではなく共通インデックス・ポータル（審議会）のため却下"
+  },
+  {
+    "id": "jfa-591",
+    "name": "独立行政法人評価委員会 水産分科会",
+    "ministry": "JFA",
+    "category": "SUBCOMMITTEE",
+    "officialUrl": "https://warp.ndl.go.jp/info:ndljp/pid/11257150/www.jfa.maff.go.jp/j/council/dokuho/index.html",
+    "sourcePageUrl": "https://www.jfa.maff.go.jp/j/council/",
+    "rejectedAt": "2026-08-25",
+    "reason": "AI判定: 国立国会図書館WARPアーカイブ（過去保管データ）のため却下"
+  },
+  {
+    "id": "jfa-596",
+    "name": "水産業の成長産業化を推進するための試験・研究等を効果的に実施するための国立研究開発法人 水産研究・教育機構の研究体制のあり方に関する検討会",
+    "ministry": "JFA",
+    "category": "STUDY",
+    "officialUrl": "https://www.jfa.maff.go.jp/j/study/kenkyusidoka/kikoarikata.html",
+    "sourcePageUrl": "https://www.jfa.maff.go.jp/j/study/",
+    "rejectedAt": "2026-08-25",
+    "reason": "AI判定: HTTPエラー 403（アクセス不可）のため却下"
+  },
+  {
+    "id": "jfa-602",
+    "name": "新たな生活様式に対応した水産物消費拡大検討会",
+    "ministry": "JFA",
+    "category": "STUDY",
+    "officialUrl": "https://www.jfa.maff.go.jp/j/study/syouhi_kakudai.html",
+    "sourcePageUrl": "https://www.jfa.maff.go.jp/j/study/",
+    "rejectedAt": "2026-08-25",
+    "reason": "AI判定: HTTPエラー 403（アクセス不可）のため却下"
+  },
+  {
+    "id": "jfa-605",
+    "name": "第8次栽培漁業基本方針検討会",
+    "ministry": "JFA",
+    "category": "STUDY",
+    "officialUrl": "https://www.jfa.maff.go.jp/j/study/saibai8_kentokai.html",
+    "sourcePageUrl": "https://www.jfa.maff.go.jp/j/study/",
+    "rejectedAt": "2026-08-25",
+    "reason": "AI判定: HTTPエラー 403（アクセス不可）のため却下"
+  },
+  {
+    "id": "maff-650",
+    "name": "審議会",
+    "ministry": "MAFF",
+    "category": "COUNCIL",
+    "officialUrl": "https://www.maff.go.jp/j/council/index.html",
+    "sourcePageUrl": "https://www.maff.go.jp/j/council/",
+    "rejectedAt": "2026-08-25",
+    "reason": "AI判定: 会議体本体ではなく共通インデックス・ポータル（審議会）のため却下"
+  },
+  {
+    "id": "maff-683",
+    "name": "養鶏・鶏卵行政に関する検証委員会",
+    "ministry": "MAFF",
+    "category": "COMMITTEE",
+    "officialUrl": "https://www.maff.go.jp/j/study/kensyouiinnkai/index.html",
+    "sourcePageUrl": "https://www.maff.go.jp/j/study/",
+    "rejectedAt": "2026-08-25",
+    "reason": "AI判定: HTTPエラー 403（アクセス不可）のため却下"
+  },
+  {
+    "id": "maff-696",
+    "name": "植物新品種の保護・活用に関する懇談会［外部リンク］",
+    "ministry": "MAFF",
+    "category": "STUDY",
+    "officialUrl": "https://warp.ndl.go.jp/web/20161014000000/www.maff.go.jp/j/study/shokbutu_hogo/index.html",
+    "sourcePageUrl": "https://www.maff.go.jp/j/study/",
+    "rejectedAt": "2026-08-25",
+    "reason": "AI判定: 国立国会図書館WARPアーカイブ（過去保管データ）のため却下"
+  },
+  {
+    "id": "maff-702",
+    "name": "収入保険制度の検討等に関する有識者会議（外部リンク）",
+    "ministry": "MAFF",
+    "category": "COUNCIL",
+    "officialUrl": "https://warp.ndl.go.jp/web/20171022000000/www.maff.go.jp/j/study/syunyu_kento/syunyu_kento.html",
+    "sourcePageUrl": "https://www.maff.go.jp/j/study/",
+    "rejectedAt": "2026-08-25",
+    "reason": "AI判定: 国立国会図書館WARPアーカイブ（過去保管データ）のため却下"
+  },
+  {
+    "id": "mext-721",
+    "name": "宇宙開発委員会（2012年7月12日廃止）の一覧を見る",
+    "ministry": "MEXT",
+    "category": "COMMITTEE",
+    "officialUrl": "https://warp.ndl.go.jp/web/20190611000000/www.mext.go.jp/b_menu/shingi/uchuu/index.htm",
+    "sourcePageUrl": "https://www.mext.go.jp/b_menu/shingi/main_b5.htm",
+    "rejectedAt": "2026-08-25",
+    "reason": "AI判定: 国立国会図書館WARPアーカイブ（過去保管データ）のため却下"
+  },
+  {
+    "id": "mext-722",
+    "name": "独立行政法人評価委員会（2015年3月31日廃止）の一覧を見る",
+    "ministry": "MEXT",
+    "category": "COMMITTEE",
+    "officialUrl": "https://warp.ndl.go.jp/web/20190611000000/www.mext.go.jp/b_menu/shingi/dokuritu/index.htm",
+    "sourcePageUrl": "https://www.mext.go.jp/b_menu/shingi/main_b5.htm",
+    "rejectedAt": "2026-08-25",
+    "reason": "AI判定: 国立国会図書館WARPアーカイブ（過去保管データ）のため却下"
+  },
+  {
+    "id": "mext-723",
+    "name": "9月30日までの調査研究協力者会議等（スポーツ・青少年）",
+    "ministry": "MEXT",
+    "category": "COUNCIL",
+    "officialUrl": "https://warp.ndl.go.jp/web/20190611000000/www.mext.go.jp/b_menu/shingi/chousa/sports/index.htm",
+    "sourcePageUrl": "https://www.mext.go.jp/b_menu/shingi/main_b5.htm",
+    "rejectedAt": "2026-08-25",
+    "reason": "AI判定: 国立国会図書館WARPアーカイブ（過去保管データ）のため却下"
+  },
+  {
+    "id": "mext-724",
+    "name": "度以前までの調査研究協力者会議等（文化）",
+    "ministry": "MEXT",
+    "category": "COUNCIL",
+    "officialUrl": "https://warp.ndl.go.jp/web/20190611000000/www.mext.go.jp/b_menu/shingi/chousa/bunka/index.htm",
+    "sourcePageUrl": "https://www.mext.go.jp/b_menu/shingi/main_b5.htm",
+    "rejectedAt": "2026-08-25",
+    "reason": "AI判定: 国立国会図書館WARPアーカイブ（過去保管データ）のため却下"
+  },
+  {
+    "id": "mof-1155",
+    "name": "財政融資資金貸付金の証券化に関する実務検討会【国立国会図書館へリンク】",
+    "ministry": "MOF",
+    "category": "STUDY",
+    "officialUrl": "https://warp.ndl.go.jp/web/20190106000000/www.mof.go.jp/about_mof/councils/shoukenkajitsumu/index.html",
+    "sourcePageUrl": "https://www.mof.go.jp/about_mof/councils/",
+    "rejectedAt": "2026-08-25",
+    "reason": "AI判定: 国立国会図書館WARPアーカイブ（過去保管データ）のため却下"
+  },
+  {
+    "id": "mof-1156",
+    "name": "財政融資資金の貸付金の証券化等についての検討会【国立国会図書館へリンク】",
+    "ministry": "MOF",
+    "category": "STUDY",
+    "officialUrl": "https://warp.ndl.go.jp/web/20190106000000/www.mof.go.jp/about_mof/councils/shoukenka/index.html",
+    "sourcePageUrl": "https://www.mof.go.jp/about_mof/councils/",
+    "rejectedAt": "2026-08-25",
+    "reason": "AI判定: 国立国会図書館WARPアーカイブ（過去保管データ）のため却下"
+  },
+  {
+    "id": "moj-1169",
+    "name": "審議会",
+    "ministry": "MOJ",
+    "category": "COUNCIL",
+    "officialUrl": "https://www.moj.go.jp/shingikai_index.html",
+    "sourcePageUrl": "https://www.moj.go.jp/shingikai_index.html",
+    "rejectedAt": "2026-08-25",
+    "reason": "AI判定: 会議体本体ではなく共通インデックス・ポータル（審議会）のため却下"
+  },
+  {
+    "id": "rinya-1280",
+    "name": "木材需給会議",
+    "ministry": "RINYA",
+    "category": "COUNCIL",
+    "officialUrl": "https://warp.ndl.go.jp/web/20240306000000/www.rinya.maff.go.jp/j/riyou/jyukyuu/index.html",
+    "sourcePageUrl": "https://www.rinya.maff.go.jp/j/kouhou/singikai.html",
+    "rejectedAt": "2026-08-25",
+    "reason": "AI判定: 国立国会図書館WARPアーカイブ（過去保管データ）のため却下"
+  },
+  {
+    "id": "rinya-1282",
+    "name": "独立行政法人評価委員会林野分科会",
+    "ministry": "RINYA",
+    "category": "SUBCOMMITTEE",
+    "officialUrl": "https://www.rinya.maff.go.jp/j/ken_sidou/iinkai/index.html",
+    "sourcePageUrl": "https://www.rinya.maff.go.jp/j/kouhou/singikai.html",
+    "rejectedAt": "2026-08-25",
+    "reason": "AI判定: HTTPエラー 403（アクセス不可）のため却下"
+  },
+  {
+    "id": "rinya-1286",
+    "name": "森林保険制度に関する検討会",
+    "ministry": "RINYA",
+    "category": "STUDY",
+    "officialUrl": "https://warp.ndl.go.jp/web/20150508000000/www.rinya.maff.go.jp/j/keikaku/hoken/kentou.html",
+    "sourcePageUrl": "https://www.rinya.maff.go.jp/j/kouhou/singikai.html",
+    "rejectedAt": "2026-08-25",
+    "reason": "AI判定: 国立国会図書館WARPアーカイブ（過去保管データ）のため却下"
+  },
+  {
+    "id": "rinya-1287",
+    "name": "東日本大震災に係る海岸防災林の再生に関する検討会",
+    "ministry": "RINYA",
+    "category": "STUDY",
+    "officialUrl": "https://warp.ndl.go.jp/web/20130209000000/www.rinya.maff.go.jp/j/tisan/tisan/kentou.html",
+    "sourcePageUrl": "https://www.rinya.maff.go.jp/j/kouhou/singikai.html",
+    "rejectedAt": "2026-08-25",
+    "reason": "AI判定: 国立国会図書館WARPアーカイブ（過去保管データ）のため却下"
+  },
+  {
+    "id": "rinya-1288",
+    "name": "木質バイオマスのエネルギー利用に関する検討会",
+    "ministry": "RINYA",
+    "category": "STUDY",
+    "officialUrl": "https://warp.ndl.go.jp/web/20110706000000/www.rinya.maff.go.jp/j/riyou/biomass/kentou.html",
+    "sourcePageUrl": "https://www.rinya.maff.go.jp/j/kouhou/singikai.html",
+    "rejectedAt": "2026-08-25",
+    "reason": "AI判定: 国立国会図書館WARPアーカイブ（過去保管データ）のため却下"
+  },
+  {
+    "id": "rinya-1293",
+    "name": "新たな森林・林業・木材産業分野の研究・技術開発戦略の策定のための検討会",
+    "ministry": "RINYA",
+    "category": "STUDY",
+    "officialUrl": "https://warp.ndl.go.jp/web/20150508000000/www.rinya.maff.go.jp/j/ken_sidou/ikusyu/senryaku_kentou/index.html",
+    "sourcePageUrl": "https://www.rinya.maff.go.jp/j/kouhou/singikai.html",
+    "rejectedAt": "2026-08-25",
+    "reason": "AI判定: 国立国会図書館WARPアーカイブ（過去保管データ）のため却下"
+  },
+  {
+    "id": "rinya-1295",
+    "name": "農林水産省政策評価会林野庁専門部会",
+    "ministry": "RINYA",
+    "category": "SECTION",
+    "officialUrl": "https://warp.ndl.go.jp/web/20110706000000/www.rinya.maff.go.jp/j/kikaku/hyouka/bukai/index.html",
+    "sourcePageUrl": "https://www.rinya.maff.go.jp/j/kouhou/singikai.html",
+    "rejectedAt": "2026-08-25",
+    "reason": "AI判定: 国立国会図書館WARPアーカイブ（過去保管データ）のため却下"
+  },
+  {
+    "id": "rinya-1296",
+    "name": "木材利用促進及び木材需給会議",
+    "ministry": "RINYA",
+    "category": "COUNCIL",
+    "officialUrl": "https://warp.ndl.go.jp/web/20131106000000/www.rinya.maff.go.jp/j/riyou/soumu/jyukyuu.html",
+    "sourcePageUrl": "https://www.rinya.maff.go.jp/j/kouhou/singikai.html",
+    "rejectedAt": "2026-08-25",
+    "reason": "AI判定: 国立国会図書館WARPアーカイブ（過去保管データ）のため却下"
+  },
+  {
+    "id": "rinya-1297",
+    "name": "林業公社の経営対策等に関する検討会",
+    "ministry": "RINYA",
+    "category": "STUDY",
+    "officialUrl": "https://warp.ndl.go.jp/web/20120922000000/www.rinya.maff.go.jp/j/kanbatu/kousya/kentou_kai.html",
+    "sourcePageUrl": "https://www.rinya.maff.go.jp/j/kouhou/singikai.html",
+    "rejectedAt": "2026-08-25",
+    "reason": "AI判定: 国立国会図書館WARPアーカイブ（過去保管データ）のため却下"
+  },
+  {
+    "id": "rinya-1298",
+    "name": "森林における生物多様性保全の推進方策検討会",
+    "ministry": "RINYA",
+    "category": "STUDY",
+    "officialUrl": "https://warp.ndl.go.jp/web/20150508000000/www.rinya.maff.go.jp/j/sin_riyou/tayousei/tayousei.html",
+    "sourcePageUrl": "https://www.rinya.maff.go.jp/j/kouhou/singikai.html",
+    "rejectedAt": "2026-08-25",
+    "reason": "AI判定: 国立国会図書館WARPアーカイブ（過去保管データ）のため却下"
+  },
+  {
+    "id": "rinya-1302",
+    "name": "木材利用に係る環境貢献度の「見える化」検討会",
+    "ministry": "RINYA",
+    "category": "STUDY",
+    "officialUrl": "https://warp.ndl.go.jp/web/20110527000000/www.rinya.maff.go.jp/j/riyou/mieruka/top.html",
+    "sourcePageUrl": "https://www.rinya.maff.go.jp/j/kouhou/singikai.html",
+    "rejectedAt": "2026-08-25",
+    "reason": "AI判定: 国立国会図書館WARPアーカイブ（過去保管データ）のため却下"
+  },
+  {
+    "id": "rinya-1303",
+    "name": "木材需給対策中央会議",
+    "ministry": "RINYA",
+    "category": "COUNCIL",
+    "officialUrl": "https://warp.ndl.go.jp/web/20131106000000/www.rinya.maff.go.jp/j/riyou/soumu/jyukyuu0.html",
+    "sourcePageUrl": "https://www.rinya.maff.go.jp/j/kouhou/singikai.html",
+    "rejectedAt": "2026-08-25",
+    "reason": "AI判定: 国立国会図書館WARPアーカイブ（過去保管データ）のため却下"
+  },
+  {
+    "id": "smea-1397",
+    "name": "中小企業の経営資源集約化等に関する検討会",
+    "ministry": "SMEA",
+    "category": "STUDY",
+    "officialUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/shigenshuyaku/2021/210428torimatome.pdf?0512",
+    "sourcePageUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/index.html",
+    "rejectedAt": "2026-08-25",
+    "reason": "AI判定: 会議体Webページではなく単体ファイル直リンクのため却下"
+  },
+  {
+    "id": "meti-1699",
+    "name": "林業・木質バイオマス発電の成長産業化に向けた研究会",
+    "ministry": "METI",
+    "category": "STUDY",
+    "officialUrl": "https://www.meti.go.jp/shingikai/energy_environment/biomass_hatsuden/index.html",
+    "sourcePageUrl": "https://www.meti.go.jp/shingikai/energy_environment/",
+    "rejectedAt": "2026-08-25",
+    "reason": "AI判定: HTTPエラー 403（アクセス不可）のため却下"
+  },
+  {
+    "id": "meti-1720",
+    "name": "スマートメーター制度検討会",
+    "ministry": "METI",
+    "category": "STUDY",
+    "officialUrl": "https://www.meti.go.jp/shingikai/energy_environment/smart_meter/index.html",
+    "sourcePageUrl": "https://www.meti.go.jp/shingikai/energy_environment/",
+    "rejectedAt": "2026-08-25",
+    "reason": "AI判定: HTTPエラー 403（アクセス不可）のため却下"
+  },
+  {
+    "id": "anre-1770",
+    "name": "林業・木質バイオマス発電の成長産業化に向けた研究会",
+    "ministry": "ANRE",
+    "category": "STUDY",
+    "officialUrl": "https://www.meti.go.jp/shingikai/energy_environment/biomass_hatsuden/index.html",
+    "sourcePageUrl": "https://www.meti.go.jp/shingikai/energy_environment/",
+    "rejectedAt": "2026-08-25",
+    "reason": "AI判定: HTTPエラー 403（アクセス不可）のため却下"
+  },
+  {
+    "id": "anre-1778",
+    "name": "CCS長期ロードマップ検討会",
+    "ministry": "ANRE",
+    "category": "STUDY",
+    "officialUrl": "https://www.meti.go.jp/shingikai/energy_environment/ccs_choki_roadmap/index.html",
+    "sourcePageUrl": "https://www.meti.go.jp/shingikai/energy_environment/",
+    "rejectedAt": "2026-08-25",
+    "reason": "AI判定: HTTPステータス 202（正常アクセス不可）のため却下"
+  },
+  {
+    "id": "anre-1782",
+    "name": "2050年カーボンニュートラルに向けた若手有識者研究会",
+    "ministry": "ANRE",
+    "category": "STUDY",
+    "officialUrl": "https://www.meti.go.jp/shingikai/energy_environment/2050_carbon_neutral/index.html",
+    "sourcePageUrl": "https://www.meti.go.jp/shingikai/energy_environment/",
+    "rejectedAt": "2026-08-25",
+    "reason": "AI判定: HTTPステータス 202（正常アクセス不可）のため却下"
+  },
+  {
+    "id": "anre-1784",
+    "name": "GX実現に向けたカーボンフットプリント活⽤に関する研究会",
+    "ministry": "ANRE",
+    "category": "STUDY",
+    "officialUrl": "https://www.meti.go.jp/shingikai/energy_environment/gx_carbon_footprint/index.html",
+    "sourcePageUrl": "https://www.meti.go.jp/shingikai/energy_environment/",
+    "rejectedAt": "2026-08-25",
+    "reason": "AI判定: HTTPステータス 202（正常アクセス不可）のため却下"
+  },
+  {
+    "id": "anre-1786",
+    "name": "サプライチェーン全体でのカーボンニュートラルに向けたカーボンフットプリントの算定・検証等に関する検討会",
+    "ministry": "ANRE",
+    "category": "STUDY",
+    "officialUrl": "https://www.meti.go.jp/shingikai/energy_environment/carbon_footprint/index.html",
+    "sourcePageUrl": "https://www.meti.go.jp/shingikai/energy_environment/",
+    "rejectedAt": "2026-08-25",
+    "reason": "AI判定: HTTPステータス 202（正常アクセス不可）のため却下"
+  },
+  {
+    "id": "anre-1788",
+    "name": "スマートメーター制度検討会",
+    "ministry": "ANRE",
+    "category": "STUDY",
+    "officialUrl": "https://www.meti.go.jp/shingikai/energy_environment/smart_meter/index.html",
+    "sourcePageUrl": "https://www.meti.go.jp/shingikai/energy_environment/",
+    "rejectedAt": "2026-08-25",
+    "reason": "AI判定: HTTPエラー 403（アクセス不可）のため却下"
+  },
+  {
+    "id": "smea-2803",
+    "name": "審議会",
+    "ministry": "SMEA",
+    "category": "COUNCIL",
+    "officialUrl": "https://www.chusho.meti.go.jp/koukai/shingikai/",
+    "sourcePageUrl": "https://www.chusho.meti.go.jp/koukai/shingikai/",
+    "rejectedAt": "2026-08-25",
+    "reason": "AI判定: 会議体本体ではなく共通インデックス・ポータル（審議会）のため却下"
+  },
+  {
+    "id": "anre-1736",
+    "name": "審議会・予算",
+    "ministry": "ANRE",
+    "category": "COUNCIL",
+    "officialUrl": "https://www.enecho.meti.go.jp/committee/index.html",
+    "sourcePageUrl": "https://www.enecho.meti.go.jp/committee/council/",
+    "rejectedAt": "2026-08-25",
+    "reason": "AI判定: 会議体本体ではなく共通インデックス・ポータル（審議会・予算）のため却下"
+  },
+  {
+    "id": "anre-1737",
+    "name": "省エネルギー・新エネルギー分科会",
+    "ministry": "ANRE",
+    "category": "SUBCOMMITTEE",
+    "officialUrl": "https://www.meti.go.jp/shingikai/enecho/#syoene_shinene",
+    "sourcePageUrl": "https://www.enecho.meti.go.jp/committee/council/",
+    "rejectedAt": "2026-08-25",
+    "reason": "AI判定: 登録済み会議体（省エネルギー・新エネルギー分科会）と重複しているため却下"
+  },
+  {
+    "id": "anre-1738",
+    "name": "資源・燃料分科会",
+    "ministry": "ANRE",
+    "category": "SUBCOMMITTEE",
+    "officialUrl": "https://www.meti.go.jp/shingikai/enecho/#shigen_nenryo",
+    "sourcePageUrl": "https://www.enecho.meti.go.jp/committee/council/",
+    "rejectedAt": "2026-08-25",
+    "reason": "AI判定: 登録済み会議体（資源・燃料分科会）と重複しているため却下"
+  },
+  {
+    "id": "anre-1739",
+    "name": "電力・ガス事業分科会",
+    "ministry": "ANRE",
+    "category": "SUBCOMMITTEE",
+    "officialUrl": "https://www.meti.go.jp/shingikai/enecho/#denryoku_gasu",
+    "sourcePageUrl": "https://www.enecho.meti.go.jp/committee/council/",
+    "rejectedAt": "2026-08-25",
+    "reason": "AI判定: 登録済み会議体（電力・ガス事業分科会）と重複しているため却下"
+  },
+  {
+    "id": "anre-1740",
+    "name": "調達価格等算定委員会",
+    "ministry": "ANRE",
+    "category": "COMMITTEE",
+    "officialUrl": "https://www.meti.go.jp/shingikai/santeii/",
+    "sourcePageUrl": "https://www.enecho.meti.go.jp/committee/council/",
+    "rejectedAt": "2026-08-25",
+    "reason": "AI判定: 登録済み会議体（調達価格等算定委員会）と重複しているため却下"
+  },
+  {
+    "id": "anre-1741",
+    "name": "エネルギー情勢懇談会",
+    "ministry": "ANRE",
+    "category": "STUDY",
+    "officialUrl": "https://www.enecho.meti.go.jp/committee/studygroup/#ene_situation",
+    "sourcePageUrl": "https://www.enecho.meti.go.jp/committee/council/",
+    "rejectedAt": "2026-08-25",
+    "reason": "AI判定: 登録済み会議体（エネルギー情勢懇談会）と重複しているため却下"
+  },
+  {
+    "id": "anre-1743",
+    "name": "経済産業省「審議会・研究会」（国立国会図書館WARP）",
+    "ministry": "ANRE",
+    "category": "STUDY",
+    "officialUrl": "https://warp.ndl.go.jp/web/20181113000000/www.meti.go.jp/committee",
+    "sourcePageUrl": "https://www.enecho.meti.go.jp/committee/council/",
+    "rejectedAt": "2026-08-25",
+    "reason": "AI判定: 国立国会図書館WARPアーカイブ（過去保管データ）のため却下"
+  },
+  {
+    "id": "caa-1797",
+    "name": "消費者庁発足以前の情報・発足経緯 (旧国民生活局・消費者行政推進会議)",
+    "ministry": "CAA",
+    "category": "HQ",
+    "officialUrl": "https://www.caa.go.jp/about_us/about/ago/",
+    "sourcePageUrl": "https://www.caa.go.jp/policies/council/",
+    "rejectedAt": "2026-08-25",
+    "reason": "AI判定: 登録済み会議体（消費者庁発足以前の情報・発足経緯 (旧国民生活局・消費者行政推進会議)）と重複しているため却下"
+  },
+  {
+    "id": "cao-1815",
+    "name": "経済社会構造に関する有識者会議",
+    "ministry": "CAO",
+    "category": "COUNCIL",
+    "officialUrl": "https://www5.cao.go.jp/keizai2/keizai-syakai/k-s-kouzou/k-s-kouzou.html",
+    "sourcePageUrl": "https://www.cao.go.jp/council.html",
+    "rejectedAt": "2026-08-25",
+    "reason": "AI判定: HTTPエラー 404（アクセス不可）のため却下"
+  },
+  {
+    "id": "cao-1816",
+    "name": "経済の好循環実現に向けた政労使会議（首相官邸）",
+    "ministry": "CAO",
+    "category": "COUNCIL",
+    "officialUrl": "http://www.kantei.go.jp/jp/singi/seirousi/",
+    "sourcePageUrl": "https://www.cao.go.jp/council.html",
+    "rejectedAt": "2026-08-25",
+    "reason": "AI判定: HTTPエラー 404（アクセス不可）のため却下"
+  },
+  {
+    "id": "cao-1825",
+    "name": "サイバー対処能力強化法の施行等に関する有識者会議",
+    "ministry": "CAO",
+    "category": "COUNCIL",
+    "officialUrl": "https://www.cyber.go.jp/council/cyber_anzen_hosyo/index.html",
+    "sourcePageUrl": "https://www.cao.go.jp/council.html",
+    "rejectedAt": "2026-08-25",
+    "reason": "AI判定: HTTPエラー 404（アクセス不可）のため却下"
+  },
+  {
+    "id": "cao-1853",
+    "name": "経済の好循環実現に向けた政労使会議（首相官邸）（最終開催日：平成27年6月18日）（国立国会図書館インターネット資料収集保存事業（WARP）",
+    "ministry": "CAO",
+    "category": "COUNCIL",
+    "officialUrl": "https://warp.ndl.go.jp/web/20220104092035/https://www.kantei.go.jp/jp/singi/seirousi/index.html",
+    "sourcePageUrl": "https://www.cao.go.jp/council.html",
+    "rejectedAt": "2026-08-25",
+    "reason": "AI判定: 国立国会図書館WARPアーカイブ（過去保管データ）のため却下"
+  },
+  {
+    "id": "cao-1859",
+    "name": "災害対策法制のあり方に関する研究会（最終開催日：平成23年12月6日）",
+    "ministry": "CAO",
+    "category": "STUDY",
+    "officialUrl": "https://www.bousai.go.jp/kaigirep/kenkyu/saigaitaisakuhousei/index.html",
+    "sourcePageUrl": "https://www.cao.go.jp/council.html",
+    "rejectedAt": "2026-08-25",
+    "reason": "AI判定: 登録済み会議体（災害対策法制のあり方に関する研究会（最終開催日：平成23年12月6日））と重複しているため却下"
+  },
+  {
+    "id": "cao-1860",
+    "name": "再生エネルギー等に関する規制等の総点検タスクフォース（最終開催日：令和６年３月22日）",
+    "ministry": "CAO",
+    "category": "COUNCIL",
+    "officialUrl": "https://www.cao.go.jp/council.html",
+    "sourcePageUrl": "https://www.cao.go.jp/council.html",
+    "rejectedAt": "2026-08-25",
+    "reason": "AI判定: 登録済み会議体（再生エネルギー等に関する規制等の総点検タスクフォース（最終開催日：令和６年３月22日））と重複しているため却下"
+  },
+  {
+    "id": "cao-1861",
+    "name": "死因究明等推進会議（最終開催日：平成26年6月10日）（国立国会図書館インターネット資料収集保存事業（WARP））",
+    "ministry": "CAO",
+    "category": "HQ",
+    "officialUrl": "https://warp.ndl.go.jp/web/20200411000000/www8.cao.go.jp/kyuumei/meeting/kaisai.html",
+    "sourcePageUrl": "https://www.cao.go.jp/council.html",
+    "rejectedAt": "2026-08-25",
+    "reason": "AI判定: 国立国会図書館WARPアーカイブ（過去保管データ）のため却下"
+  },
+  {
+    "id": "cao-1862",
+    "name": "仕事と生活の調和推進官民トップ会議（最終開催日：平成28年3月7日）（国立国会図書館インターネット資料収集保存事業（WARP））",
+    "ministry": "CAO",
+    "category": "COUNCIL",
+    "officialUrl": "https://warp.ndl.go.jp/web/20250801132100/https://wwwa.cao.go.jp/wlb/government/top/index.html",
+    "sourcePageUrl": "https://www.cao.go.jp/council.html",
+    "rejectedAt": "2026-08-25",
+    "reason": "AI判定: 国立国会図書館WARPアーカイブ（過去保管データ）のため却下"
+  },
+  {
+    "id": "cao-1865",
+    "name": "成年後見制度利用促進委員会（最終開催日：平成29年12月1日）（国立国会図書館インターネット資料収集保存事業（WARP））",
+    "ministry": "CAO",
+    "category": "COMMITTEE",
+    "officialUrl": "https://warp.ndl.go.jp/web/20190510000000/www.cao.go.jp/seinenkouken/iinkai/index.html",
+    "sourcePageUrl": "https://www.cao.go.jp/council.html",
+    "rejectedAt": "2026-08-25",
+    "reason": "AI判定: 国立国会図書館WARPアーカイブ（過去保管データ）のため却下"
+  },
+  {
+    "id": "cao-1866",
+    "name": "成年後見制度利用促進会議（最終開催日：平成29年3月24日）（国立国会図書館インターネット資料収集保存事業（WARP））",
+    "ministry": "CAO",
+    "category": "COUNCIL",
+    "officialUrl": "https://warp.ndl.go.jp/web/20190510000000/www.cao.go.jp/seinenkouken/kaigi/index.html",
+    "sourcePageUrl": "https://www.cao.go.jp/council.html",
+    "rejectedAt": "2026-08-25",
+    "reason": "AI判定: 国立国会図書館WARPアーカイブ（過去保管データ）のため却下"
+  },
+  {
+    "id": "cao-1869",
+    "name": "地方分権推進委員会（最終開催日：平成13年6月11日）（国立国会図書館インターネット資料収集保存事業（WARP））",
+    "ministry": "CAO",
+    "category": "COMMITTEE",
+    "officialUrl": "https://warp.ndl.go.jp/web/20140206000000/www8.cao.go.jp/bunken/bunken-iinkai/index-bu.html",
+    "sourcePageUrl": "https://www.cao.go.jp/council.html",
+    "rejectedAt": "2026-08-25",
+    "reason": "AI判定: 国立国会図書館WARPアーカイブ（過去保管データ）のため却下"
+  },
+  {
+    "id": "cao-1870",
+    "name": "地方分権改革推進会議（最終開催日：平成16年5月12日）（国立国会図書館インターネット資料収集保存事業（WARP））",
+    "ministry": "CAO",
+    "category": "HQ",
+    "officialUrl": "https://warp.ndl.go.jp/web/20140206000000/www8.cao.go.jp/bunken/honkaigi.html",
+    "sourcePageUrl": "https://www.cao.go.jp/council.html",
+    "rejectedAt": "2026-08-25",
+    "reason": "AI判定: 国立国会図書館WARPアーカイブ（過去保管データ）のため却下"
+  },
+  {
+    "id": "cao-1871",
+    "name": "地方分権改革推進委員会（最終開催日：平成22年3月19日）（国立国会図書館インターネット資料収集保存事業（WARP））",
+    "ministry": "CAO",
+    "category": "COMMITTEE",
+    "officialUrl": "https://warp.ndl.go.jp/web/20140206000000/www.cao.go.jp/bunken-kaikaku/iinkai/kaisai/kaisai-index.html",
+    "sourcePageUrl": "https://www.cao.go.jp/council.html",
+    "rejectedAt": "2026-08-25",
+    "reason": "AI判定: 国立国会図書館WARPアーカイブ（過去保管データ）のため却下"
+  },
+  {
+    "id": "cao-1877",
+    "name": "内閣府独立行政法人評価委員会（最終開催日：平成27年3月20日） （国立国会図書館インターネット資料収集保存事業（WARP）ホームページに移動します）",
+    "ministry": "CAO",
+    "category": "COMMITTEE",
+    "officialUrl": "https://warp.ndl.go.jp/web/20250814000000/www8.cao.go.jp/hyouka/dokuritsu/index.html",
+    "sourcePageUrl": "https://www.cao.go.jp/council.html",
+    "rejectedAt": "2026-08-25",
+    "reason": "AI判定: 国立国会図書館WARPアーカイブ（過去保管データ）のため却下"
+  },
+  {
+    "id": "cao-1878",
+    "name": "日系定住外国人施策推進会議（最終開催日：平成30年6月12日）（国立国会図書館インターネット資料収集保存事業（WARP））",
+    "ministry": "CAO",
+    "category": "HQ",
+    "officialUrl": "https://warp.ndl.go.jp/web/20180910000000/www8.cao.go.jp/teiju/kaigi/index.html",
+    "sourcePageUrl": "https://www.cao.go.jp/council.html",
+    "rejectedAt": "2026-08-25",
+    "reason": "AI判定: 国立国会図書館WARPアーカイブ（過去保管データ）のため却下"
+  },
+  {
+    "id": "cao-1881",
+    "name": "バリアフリー・ユニバーサルデザインに関する関係閣僚会議（最終開催日：平成29年4月3日）（国立国会図書館インターネット資料収集保存事業（WARP））",
+    "ministry": "CAO",
+    "category": "COUNCIL",
+    "officialUrl": "https://warp.ndl.go.jp/web/20210201173651/https://www8.cao.go.jp/souki/barrier-free/kaisai_joukyou.html",
+    "sourcePageUrl": "https://www.cao.go.jp/council.html",
+    "rejectedAt": "2026-08-25",
+    "reason": "AI判定: 国立国会図書館WARPアーカイブ（過去保管データ）のため却下"
+  },
+  {
+    "id": "cao-1884",
+    "name": "不動産・インフラ投資市場活性化方策に関する有識者会議（最終開催日：平成24年12月3日）",
+    "ministry": "CAO",
+    "category": "COUNCIL",
+    "officialUrl": "https://www5.cao.go.jp/keizai2/keizai-syakai/re-infra-invest/re-infra-invest.html",
+    "sourcePageUrl": "https://www.cao.go.jp/council.html",
+    "rejectedAt": "2026-08-25",
+    "reason": "AI判定: HTTPエラー 404（アクセス不可）のため却下"
+  },
+  {
+    "id": "cas-1888",
+    "name": "アフリカ経済戦略会議",
+    "ministry": "CAS",
+    "category": "COUNCIL",
+    "officialUrl": "https://www.mofa.go.jp/mofaj/afr/af2/pageit_000001_02190.html",
+    "sourcePageUrl": "https://www.cas.go.jp/jp/seisakukaigi/",
+    "rejectedAt": "2026-08-25",
+    "reason": "AI判定: HTTPエラー 403（アクセス不可）のため却下"
+  },
+  {
+    "id": "cas-1896",
+    "name": "カウンターインテリジェンス推進会議",
+    "ministry": "CAS",
+    "category": "HQ",
+    "officialUrl": "https://www.cas.go.jp/jp/seisaku/counterintelligence/index.html",
+    "sourcePageUrl": "https://www.cas.go.jp/jp/seisakukaigi/",
+    "rejectedAt": "2026-08-25",
+    "reason": "AI判定: 登録済み会議体（カウンターインテリジェンス推進会議）と重複しているため却下"
+  },
+  {
+    "id": "cas-1897",
+    "name": "花粉症に関する関係閣僚会議",
+    "ministry": "CAS",
+    "category": "COUNCIL",
+    "officialUrl": "https://www.cas.go.jp/jp/seisaku/kafun/index.html",
+    "sourcePageUrl": "https://www.cas.go.jp/jp/seisakukaigi/",
+    "rejectedAt": "2026-08-25",
+    "reason": "AI判定: 登録済み会議体（花粉症に関する関係閣僚会議）と重複しているため却下"
+  },
+  {
+    "id": "cas-1919",
+    "name": "省エネルギー・省資源対策推進会議",
+    "ministry": "CAS",
+    "category": "HQ",
+    "officialUrl": "https://warp.ndl.go.jp/web/20130405143523/http://www8.cao.go.jp/souki/energy/index_ene.html",
+    "sourcePageUrl": "https://www.cas.go.jp/jp/seisakukaigi/",
+    "rejectedAt": "2026-08-25",
+    "reason": "AI判定: 国立国会図書館WARPアーカイブ（過去保管データ）のため却下"
+  },
+  {
+    "id": "fdma-2034",
+    "name": "審議会・検討会等",
+    "ministry": "FDMA",
+    "category": "STUDY",
+    "officialUrl": "https://www.fdma.go.jp/singi_kento",
+    "sourcePageUrl": "https://www.fdma.go.jp/singi_kento",
+    "rejectedAt": "2026-08-25",
+    "reason": "AI判定: 会議体本体ではなく共通インデックス・ポータル（審議会・検討会等）のため却下"
+  },
+  {
+    "id": "fdma-2035",
+    "name": "審議会",
+    "ministry": "FDMA",
+    "category": "COUNCIL",
+    "officialUrl": "https://www.fdma.go.jp/singi_kento#firefighting",
+    "sourcePageUrl": "https://www.fdma.go.jp/singi_kento",
+    "rejectedAt": "2026-08-25",
+    "reason": "AI判定: 会議体本体ではなく共通インデックス・ポータル（審議会）のため却下"
+  },
+  {
+    "id": "fdma-2036",
+    "name": "検討会等",
+    "ministry": "FDMA",
+    "category": "STUDY",
+    "officialUrl": "https://www.fdma.go.jp/singi_kento#examination",
+    "sourcePageUrl": "https://www.fdma.go.jp/singi_kento",
+    "rejectedAt": "2026-08-25",
+    "reason": "AI判定: 会議体本体ではなく共通インデックス・ポータル（検討会等）のため却下"
+  },
+  {
+    "id": "jfa-2172",
+    "name": "審議会",
+    "ministry": "JFA",
+    "category": "COUNCIL",
+    "officialUrl": "https://www.jfa.maff.go.jp/j/council/index.html",
+    "sourcePageUrl": "https://www.jfa.maff.go.jp/j/council/",
+    "rejectedAt": "2026-08-25",
+    "reason": "AI判定: 会議体本体ではなく共通インデックス・ポータル（審議会）のため却下"
+  },
+  {
+    "id": "jfa-2173",
+    "name": "検討会等",
+    "ministry": "JFA",
+    "category": "STUDY",
+    "officialUrl": "https://www.jfa.maff.go.jp/j/study/index.html",
+    "sourcePageUrl": "https://www.jfa.maff.go.jp/j/council/",
+    "rejectedAt": "2026-08-25",
+    "reason": "AI判定: 会議体本体ではなく共通インデックス・ポータル（検討会等）のため却下"
+  },
+  {
+    "id": "jfa-2175",
+    "name": "独立行政法人評価委員会 水産分科会",
+    "ministry": "JFA",
+    "category": "SUBCOMMITTEE",
+    "officialUrl": "https://warp.ndl.go.jp/web/20190402000000/www.jfa.maff.go.jp/j/council/dokuho/index.html",
+    "sourcePageUrl": "https://www.jfa.maff.go.jp/j/council/",
+    "rejectedAt": "2026-08-25",
+    "reason": "AI判定: 国立国会図書館WARPアーカイブ（過去保管データ）のため却下"
+  },
+  {
+    "id": "jfa-2180",
+    "name": "水産業の成長産業化を推進するための試験・研究等を効果的に実施するための国立研究開発法人 水産研究・教育機構の研究体制のあり方に関する検討会",
+    "ministry": "JFA",
+    "category": "STUDY",
+    "officialUrl": "https://www.jfa.maff.go.jp/j/study/kenkyusidoka/kikoarikata.html",
+    "sourcePageUrl": "https://www.jfa.maff.go.jp/j/study/",
+    "rejectedAt": "2026-08-25",
+    "reason": "AI判定: HTTPエラー 403（アクセス不可）のため却下"
+  },
+  {
+    "id": "jfa-2186",
+    "name": "新たな生活様式に対応した水産物消費拡大検討会",
+    "ministry": "JFA",
+    "category": "STUDY",
+    "officialUrl": "https://www.jfa.maff.go.jp/j/study/syouhi_kakudai.html",
+    "sourcePageUrl": "https://www.jfa.maff.go.jp/j/study/",
+    "rejectedAt": "2026-08-25",
+    "reason": "AI判定: HTTPエラー 403（アクセス不可）のため却下"
+  },
+  {
+    "id": "jfa-2189",
+    "name": "第8次栽培漁業基本方針検討会",
+    "ministry": "JFA",
+    "category": "STUDY",
+    "officialUrl": "https://www.jfa.maff.go.jp/j/study/saibai8_kentokai.html",
+    "sourcePageUrl": "https://www.jfa.maff.go.jp/j/study/",
+    "rejectedAt": "2026-08-25",
+    "reason": "AI判定: HTTPエラー 403（アクセス不可）のため却下"
+  },
+  {
+    "id": "maff-2234",
+    "name": "審議会",
+    "ministry": "MAFF",
+    "category": "COUNCIL",
+    "officialUrl": "https://www.maff.go.jp/j/council/index.html",
+    "sourcePageUrl": "https://www.maff.go.jp/j/council/",
+    "rejectedAt": "2026-08-25",
+    "reason": "AI判定: 会議体本体ではなく共通インデックス・ポータル（審議会）のため却下"
+  },
+  {
+    "id": "maff-2267",
+    "name": "養鶏・鶏卵行政に関する検証委員会",
+    "ministry": "MAFF",
+    "category": "COMMITTEE",
+    "officialUrl": "https://www.maff.go.jp/j/study/kensyouiinnkai/index.html",
+    "sourcePageUrl": "https://www.maff.go.jp/j/study/",
+    "rejectedAt": "2026-08-25",
+    "reason": "AI判定: HTTPエラー 403（アクセス不可）のため却下"
+  },
+  {
+    "id": "maff-2280",
+    "name": "植物新品種の保護・活用に関する懇談会［外部リンク］",
+    "ministry": "MAFF",
+    "category": "STUDY",
+    "officialUrl": "https://warp.ndl.go.jp/web/20161014000000/www.maff.go.jp/j/study/shokbutu_hogo/index.html",
+    "sourcePageUrl": "https://www.maff.go.jp/j/study/",
+    "rejectedAt": "2026-08-25",
+    "reason": "AI判定: 国立国会図書館WARPアーカイブ（過去保管データ）のため却下"
+  },
+  {
+    "id": "maff-2286",
+    "name": "収入保険制度の検討等に関する有識者会議（外部リンク）",
+    "ministry": "MAFF",
+    "category": "COUNCIL",
+    "officialUrl": "https://warp.ndl.go.jp/web/20171022000000/www.maff.go.jp/j/study/syunyu_kento/syunyu_kento.html",
+    "sourcePageUrl": "https://www.maff.go.jp/j/study/",
+    "rejectedAt": "2026-08-25",
+    "reason": "AI判定: 国立国会図書館WARPアーカイブ（過去保管データ）のため却下"
+  },
+  {
+    "id": "mext-2305",
+    "name": "宇宙開発委員会（2012年（平成24年）7月12日廃止）の一覧を見る",
+    "ministry": "MEXT",
+    "category": "COMMITTEE",
+    "officialUrl": "https://warp.ndl.go.jp/web/20190611000000/www.mext.go.jp/b_menu/shingi/uchuu/index.htm",
+    "sourcePageUrl": "https://www.mext.go.jp/b_menu/shingi/main_b5.htm",
+    "rejectedAt": "2026-08-25",
+    "reason": "AI判定: 国立国会図書館WARPアーカイブ（過去保管データ）のため却下"
+  },
+  {
+    "id": "mext-2306",
+    "name": "独立行政法人評価委員会（2015年（平成27年）3月31日廃止）の一覧を見る",
+    "ministry": "MEXT",
+    "category": "COMMITTEE",
+    "officialUrl": "https://warp.ndl.go.jp/web/20190611000000/www.mext.go.jp/b_menu/shingi/dokuritu/index.htm",
+    "sourcePageUrl": "https://www.mext.go.jp/b_menu/shingi/main_b5.htm",
+    "rejectedAt": "2026-08-25",
+    "reason": "AI判定: 国立国会図書館WARPアーカイブ（過去保管データ）のため却下"
+  },
+  {
+    "id": "mext-2307",
+    "name": "平成27年9月30日までの調査研究協力者会議等（スポーツ・青少年）について",
+    "ministry": "MEXT",
+    "category": "COUNCIL",
+    "officialUrl": "https://warp.ndl.go.jp/web/20190611000000/www.mext.go.jp/b_menu/shingi/chousa/sports/index.htm",
+    "sourcePageUrl": "https://www.mext.go.jp/b_menu/shingi/main_b5.htm",
+    "rejectedAt": "2026-08-25",
+    "reason": "AI判定: 国立国会図書館WARPアーカイブ（過去保管データ）のため却下"
+  },
+  {
+    "id": "mext-2308",
+    "name": "平成18年度以前までの調査研究協力者会議等（文化）について",
+    "ministry": "MEXT",
+    "category": "COUNCIL",
+    "officialUrl": "https://warp.ndl.go.jp/web/20190611000000/www.mext.go.jp/b_menu/shingi/chousa/bunka/index.htm",
+    "sourcePageUrl": "https://www.mext.go.jp/b_menu/shingi/main_b5.htm",
+    "rejectedAt": "2026-08-25",
+    "reason": "AI判定: 国立国会図書館WARPアーカイブ（過去保管データ）のため却下"
+  },
+  {
+    "id": "mof-2722",
+    "name": "財政融資資金貸付金の証券化に関する実務検討会【国立国会図書館へリンク】",
+    "ministry": "MOF",
+    "category": "STUDY",
+    "officialUrl": "https://warp.ndl.go.jp/web/20190106000000/www.mof.go.jp/about_mof/councils/shoukenkajitsumu/index.html",
+    "sourcePageUrl": "https://www.mof.go.jp/about_mof/councils/",
+    "rejectedAt": "2026-08-25",
+    "reason": "AI判定: 国立国会図書館WARPアーカイブ（過去保管データ）のため却下"
+  },
+  {
+    "id": "mof-2723",
+    "name": "財政融資資金の貸付金の証券化等についての検討会【国立国会図書館へリンク】",
+    "ministry": "MOF",
+    "category": "STUDY",
+    "officialUrl": "https://warp.ndl.go.jp/web/20190106000000/www.mof.go.jp/about_mof/councils/shoukenka/index.html",
+    "sourcePageUrl": "https://www.mof.go.jp/about_mof/councils/",
+    "rejectedAt": "2026-08-25",
+    "reason": "AI判定: 国立国会図書館WARPアーカイブ（過去保管データ）のため却下"
+  },
+  {
+    "id": "moj-2736",
+    "name": "審議会",
+    "ministry": "MOJ",
+    "category": "COUNCIL",
+    "officialUrl": "https://www.moj.go.jp/shingikai_index.html",
+    "sourcePageUrl": "https://www.moj.go.jp/shingikai_index.html",
+    "rejectedAt": "2026-08-25",
+    "reason": "AI判定: 会議体本体ではなく共通インデックス・ポータル（審議会）のため却下"
+  },
+  {
+    "id": "moj-2741",
+    "name": "検討会等",
+    "ministry": "MOJ",
+    "category": "STUDY",
+    "officialUrl": "https://www.moj.go.jp/kentoukai_index.html",
+    "sourcePageUrl": "https://www.moj.go.jp/kentoukai_index.html",
+    "rejectedAt": "2026-08-25",
+    "reason": "AI判定: 会議体本体ではなく共通インデックス・ポータル（検討会等）のため却下"
+  },
+  {
+    "id": "nra-2767",
+    "name": "審議会等",
+    "ministry": "NRA",
+    "category": "COUNCIL",
+    "officialUrl": "https://www.da.nra.go.jp/search?fuse=1&f.gi=M003_004&f.gi=M003_005&f.gi=M003_006&f.gi=M003_007&f.gi=M003_008&f.gi=M003_009&f.gi=M003_010&f.gi=M003_011&f.gi=M003_012&f.gi=M003_194&f.gi=M003_195",
+    "sourcePageUrl": "https://www.nra.go.jp/Selection/meeting_index.html",
+    "rejectedAt": "2026-08-25",
+    "reason": "AI判定: 会議体本体ではなく共通インデックス・ポータル（審議会等）のため却下"
+  },
+  {
+    "id": "ppc-2833",
+    "name": "個人情報保護委員会は令和７年11月25日に庁舎を移転しました。",
+    "ministry": "PPC",
+    "category": "COMMITTEE",
+    "officialUrl": "https://www.ppc.go.jp/enforcement/minutes/",
+    "sourcePageUrl": "https://www.ppc.go.jp/enforcement/minutes/",
+    "rejectedAt": "2026-08-25",
+    "reason": "AI判定: 登録済み会議体（個人情報保護委員会は令和７年11月25日に庁舎を移転しました。）と重複しているため却下"
+  },
+  {
+    "id": "rinya-2834",
+    "name": "審議会等",
+    "ministry": "RINYA",
+    "category": "COUNCIL",
+    "officialUrl": "https://www.rinya.maff.go.jp/j/kouhou/singikai.html",
+    "sourcePageUrl": "https://www.rinya.maff.go.jp/j/kouhou/singikai.html",
+    "rejectedAt": "2026-08-25",
+    "reason": "AI判定: 会議体本体ではなく共通インデックス・ポータル（審議会等）のため却下"
+  },
+  {
+    "id": "rinya-2837",
+    "name": "木材需給会議",
+    "ministry": "RINYA",
+    "category": "COUNCIL",
+    "officialUrl": "https://warp.ndl.go.jp/web/20240306000000/www.rinya.maff.go.jp/j/riyou/jyukyuu/index.html",
+    "sourcePageUrl": "https://www.rinya.maff.go.jp/j/kouhou/singikai.html",
+    "rejectedAt": "2026-08-25",
+    "reason": "AI判定: 国立国会図書館WARPアーカイブ（過去保管データ）のため却下"
+  },
+  {
+    "id": "rinya-2841",
+    "name": "森林保険制度に関する検討会",
+    "ministry": "RINYA",
+    "category": "STUDY",
+    "officialUrl": "https://warp.ndl.go.jp/web/20150508000000/www.rinya.maff.go.jp/j/keikaku/hoken/kentou.html",
+    "sourcePageUrl": "https://www.rinya.maff.go.jp/j/kouhou/singikai.html",
+    "rejectedAt": "2026-08-25",
+    "reason": "AI判定: 国立国会図書館WARPアーカイブ（過去保管データ）のため却下"
+  },
+  {
+    "id": "rinya-2842",
+    "name": "東日本大震災に係る海岸防災林の再生に関する検討会",
+    "ministry": "RINYA",
+    "category": "STUDY",
+    "officialUrl": "https://warp.ndl.go.jp/web/20130209000000/www.rinya.maff.go.jp/j/tisan/tisan/kentou.html",
+    "sourcePageUrl": "https://www.rinya.maff.go.jp/j/kouhou/singikai.html",
+    "rejectedAt": "2026-08-25",
+    "reason": "AI判定: 国立国会図書館WARPアーカイブ（過去保管データ）のため却下"
+  },
+  {
+    "id": "rinya-2843",
+    "name": "木質バイオマスのエネルギー利用に関する検討会",
+    "ministry": "RINYA",
+    "category": "STUDY",
+    "officialUrl": "https://warp.ndl.go.jp/web/20110706000000/www.rinya.maff.go.jp/j/riyou/biomass/kentou.html",
+    "sourcePageUrl": "https://www.rinya.maff.go.jp/j/kouhou/singikai.html",
+    "rejectedAt": "2026-08-25",
+    "reason": "AI判定: 国立国会図書館WARPアーカイブ（過去保管データ）のため却下"
+  },
+  {
+    "id": "rinya-2846",
+    "name": "新たな森林・林業・木材産業分野の研究・技術開発戦略の策定のための検討会",
+    "ministry": "RINYA",
+    "category": "STUDY",
+    "officialUrl": "https://warp.ndl.go.jp/web/20150508000000/www.rinya.maff.go.jp/j/ken_sidou/ikusyu/senryaku_kentou/index.html",
+    "sourcePageUrl": "https://www.rinya.maff.go.jp/j/kouhou/singikai.html",
+    "rejectedAt": "2026-08-25",
+    "reason": "AI判定: 国立国会図書館WARPアーカイブ（過去保管データ）のため却下"
+  },
+  {
+    "id": "rinya-2847",
+    "name": "農林水産省政策評価会林野庁専門部会",
+    "ministry": "RINYA",
+    "category": "SECTION",
+    "officialUrl": "https://warp.ndl.go.jp/web/20110706000000/www.rinya.maff.go.jp/j/kikaku/hyouka/bukai/index.html",
+    "sourcePageUrl": "https://www.rinya.maff.go.jp/j/kouhou/singikai.html",
+    "rejectedAt": "2026-08-25",
+    "reason": "AI判定: 国立国会図書館WARPアーカイブ（過去保管データ）のため却下"
+  },
+  {
+    "id": "rinya-2848",
+    "name": "木材利用促進及び木材需給会議",
+    "ministry": "RINYA",
+    "category": "COUNCIL",
+    "officialUrl": "https://warp.ndl.go.jp/web/20131106000000/www.rinya.maff.go.jp/j/riyou/soumu/jyukyuu.html",
+    "sourcePageUrl": "https://www.rinya.maff.go.jp/j/kouhou/singikai.html",
+    "rejectedAt": "2026-08-25",
+    "reason": "AI判定: 国立国会図書館WARPアーカイブ（過去保管データ）のため却下"
+  },
+  {
+    "id": "rinya-2849",
+    "name": "林業公社の経営対策等に関する検討会",
+    "ministry": "RINYA",
+    "category": "STUDY",
+    "officialUrl": "https://warp.ndl.go.jp/web/20120922000000/www.rinya.maff.go.jp/j/kanbatu/kousya/kentou_kai.html",
+    "sourcePageUrl": "https://www.rinya.maff.go.jp/j/kouhou/singikai.html",
+    "rejectedAt": "2026-08-25",
+    "reason": "AI判定: 国立国会図書館WARPアーカイブ（過去保管データ）のため却下"
+  },
+  {
+    "id": "rinya-2850",
+    "name": "森林における生物多様性保全の推進方策検討会",
+    "ministry": "RINYA",
+    "category": "STUDY",
+    "officialUrl": "https://warp.ndl.go.jp/web/20150508000000/www.rinya.maff.go.jp/j/sin_riyou/tayousei/tayousei.html",
+    "sourcePageUrl": "https://www.rinya.maff.go.jp/j/kouhou/singikai.html",
+    "rejectedAt": "2026-08-25",
+    "reason": "AI判定: 国立国会図書館WARPアーカイブ（過去保管データ）のため却下"
+  },
+  {
+    "id": "rinya-2851",
+    "name": "木材利用に係る環境貢献度の「見える化」検討会",
+    "ministry": "RINYA",
+    "category": "STUDY",
+    "officialUrl": "https://warp.ndl.go.jp/web/20110527000000/www.rinya.maff.go.jp/j/riyou/mieruka/top.html",
+    "sourcePageUrl": "https://www.rinya.maff.go.jp/j/kouhou/singikai.html",
+    "rejectedAt": "2026-08-25",
+    "reason": "AI判定: 国立国会図書館WARPアーカイブ（過去保管データ）のため却下"
+  },
+  {
+    "id": "rinya-2852",
+    "name": "木材需給対策中央会議",
+    "ministry": "RINYA",
+    "category": "COUNCIL",
+    "officialUrl": "https://warp.ndl.go.jp/web/20131106000000/www.rinya.maff.go.jp/j/riyou/soumu/jyukyuu0.html",
+    "sourcePageUrl": "https://www.rinya.maff.go.jp/j/kouhou/singikai.html",
+    "rejectedAt": "2026-08-25",
+    "reason": "AI判定: 国立国会図書館WARPアーカイブ（過去保管データ）のため却下"
+  },
+  {
+    "id": "smea-2854",
+    "name": "審議会・研究会",
+    "ministry": "SMEA",
+    "category": "STUDY",
+    "officialUrl": "https://www.chusho.meti.go.jp/kai/index.html",
+    "sourcePageUrl": "https://www.chusho.meti.go.jp/koukai/shingikai/",
+    "rejectedAt": "2026-08-25",
+    "reason": "AI判定: HTTPステータス 202（正常アクセス不可）のため却下"
+  },
+  {
+    "id": "smea-2855",
+    "name": "審議会(2013年7月1日～2021年8月31日開催分)",
+    "ministry": "SMEA",
+    "category": "COUNCIL",
+    "officialUrl": "https://www.chusho.meti.go.jp/koukai/shingikai/",
+    "sourcePageUrl": "https://www.chusho.meti.go.jp/koukai/shingikai/",
+    "rejectedAt": "2026-08-25",
+    "reason": "AI判定: HTTPステータス 202（正常アクセス不可）のため却下"
+  },
+  {
+    "id": "smea-2856",
+    "name": "審議会(2013年6月30日以前分)",
+    "ministry": "SMEA",
+    "category": "COUNCIL",
+    "officialUrl": "https://www.chusho.meti.go.jp/koukai/shingikai/",
+    "sourcePageUrl": "https://www.chusho.meti.go.jp/koukai/shingikai/",
+    "rejectedAt": "2026-08-25",
+    "reason": "AI判定: HTTPステータス 202（正常アクセス不可）のため却下"
+  },
+  {
+    "id": "smea-2857",
+    "name": "ローカル・ゼブラ・エコシステムの構築に向けた社会的インパクト評価の活用実践に関する研究会",
+    "ministry": "SMEA",
+    "category": "STUDY",
+    "officialUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/index.html",
+    "sourcePageUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/index.html",
+    "rejectedAt": "2026-08-25",
+    "reason": "AI判定: 登録済み会議体（ローカル・ゼブラ・エコシステムの構築に向けた社会的インパクト評価の活用実践に関する研究会）と重複しているため却下"
+  },
+  {
+    "id": "smea-2858",
+    "name": "地域の社会課題解決促進に向けたエコシステム研究会",
+    "ministry": "SMEA",
+    "category": "STUDY",
+    "officialUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/index.html",
+    "sourcePageUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/index.html",
+    "rejectedAt": "2026-08-25",
+    "reason": "AI判定: 登録済み会議体（地域の社会課題解決促進に向けたエコシステム研究会）と重複しているため却下"
+  },
+  {
+    "id": "smea-2859",
+    "name": "価値創造企業に関する賢人会議",
+    "ministry": "SMEA",
+    "category": "COUNCIL",
+    "officialUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/index.html",
+    "sourcePageUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/index.html",
+    "rejectedAt": "2026-08-25",
+    "reason": "AI判定: 登録済み会議体（価値創造企業に関する賢人会議）と重複しているため却下"
+  },
+  {
+    "id": "smea-2860",
+    "name": "企業取引研究会",
+    "ministry": "SMEA",
+    "category": "STUDY",
+    "officialUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/index.html",
+    "sourcePageUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/index.html",
+    "rejectedAt": "2026-08-25",
+    "reason": "AI判定: 登録済み会議体（企業取引研究会）と重複しているため却下"
+  },
+  {
+    "id": "smea-2861",
+    "name": "知的財産取引適正化ワーキンググループ 報告書",
+    "ministry": "SMEA",
+    "category": "WORKING_GROUP",
+    "officialUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/chizaitorihiki_wg/report/260313report.html",
+    "sourcePageUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/index.html",
+    "rejectedAt": "2026-08-25",
+    "reason": "AI判定: HTTPステータス 202（正常アクセス不可）のため却下"
+  },
+  {
+    "id": "smea-2862",
+    "name": "知的財産取引適正化ワーキンググループ",
+    "ministry": "SMEA",
+    "category": "WORKING_GROUP",
+    "officialUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/index.html",
+    "sourcePageUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/index.html",
+    "rejectedAt": "2026-08-25",
+    "reason": "AI判定: 登録済み会議体（知的財産取引適正化ワーキンググループ）と重複しているため却下"
+  },
+  {
+    "id": "smea-2863",
+    "name": "約束手形をはじめとする支払条件の改善に向けた検討会",
+    "ministry": "SMEA",
+    "category": "STUDY",
+    "officialUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/index.html",
+    "sourcePageUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/index.html",
+    "rejectedAt": "2026-08-25",
+    "reason": "AI判定: 登録済み会議体（約束手形をはじめとする支払条件の改善に向けた検討会）と重複しているため却下"
+  },
+  {
+    "id": "smea-2864",
+    "name": "知的財産取引検討会",
+    "ministry": "SMEA",
+    "category": "STUDY",
+    "officialUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/index.html",
+    "sourcePageUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/index.html",
+    "rejectedAt": "2026-08-25",
+    "reason": "AI判定: 登録済み会議体（知的財産取引検討会）と重複しているため却下"
+  },
+  {
+    "id": "smea-2865",
+    "name": "地域の経営支援力強化に向けたよろず支援拠点のあり方検討会 報告書",
+    "ministry": "SMEA",
+    "category": "STUDY",
+    "officialUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/yorozu/report/250331report.html",
+    "sourcePageUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/index.html",
+    "rejectedAt": "2026-08-25",
+    "reason": "AI判定: HTTPステータス 202（正常アクセス不可）のため却下"
+  },
+  {
+    "id": "smea-2866",
+    "name": "地域の経営支援力強化に向けたよろず支援拠点のあり方検討会",
+    "ministry": "SMEA",
+    "category": "STUDY",
+    "officialUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/index.html",
+    "sourcePageUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/index.html",
+    "rejectedAt": "2026-08-25",
+    "reason": "AI判定: 登録済み会議体（地域の経営支援力強化に向けたよろず支援拠点のあり方検討会）と重複しているため却下"
+  },
+  {
+    "id": "smea-2867",
+    "name": "事業協同組合等の余裕金運用に関する検討会",
+    "ministry": "SMEA",
+    "category": "STUDY",
+    "officialUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/index.html",
+    "sourcePageUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/index.html",
+    "rejectedAt": "2026-08-25",
+    "reason": "AI判定: 登録済み会議体（事業協同組合等の余裕金運用に関する検討会）と重複しているため却下"
+  },
+  {
+    "id": "smea-2868",
+    "name": "中小企業・小規模事業者の人材マネジメントに関する研究会",
+    "ministry": "SMEA",
+    "category": "STUDY",
+    "officialUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/index.html",
+    "sourcePageUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/index.html",
+    "rejectedAt": "2026-08-25",
+    "reason": "AI判定: 登録済み会議体（中小企業・小規模事業者の人材マネジメントに関する研究会）と重複しているため却下"
+  },
+  {
+    "id": "smea-2869",
+    "name": "中小企業・小規模事業者の人材戦略に関する有識者検討会",
+    "ministry": "SMEA",
+    "category": "STUDY",
+    "officialUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/index.html",
+    "sourcePageUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/index.html",
+    "rejectedAt": "2026-08-25",
+    "reason": "AI判定: 登録済み会議体（中小企業・小規模事業者の人材戦略に関する有識者検討会）と重複しているため却下"
+  },
+  {
+    "id": "smea-2870",
+    "name": "中小企業・小規模事業者のデータ利活用に関する検討委員会",
+    "ministry": "SMEA",
+    "category": "COMMITTEE",
+    "officialUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/index.html",
+    "sourcePageUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/index.html",
+    "rejectedAt": "2026-08-25",
+    "reason": "AI判定: 登録済み会議体（中小企業・小規模事業者のデータ利活用に関する検討委員会）と重複しているため却下"
+  },
+  {
+    "id": "smea-2871",
+    "name": "「小規模事業者の『稼ぐ力』の強化に向けた諸課題に関する検討会」の中間とりまとめを公表します",
+    "ministry": "SMEA",
+    "category": "STUDY",
+    "officialUrl": "https://www.meti.go.jp/press/2026/05/20260522003/20260522003.html",
+    "sourcePageUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/index.html",
+    "rejectedAt": "2026-08-25",
+    "reason": "AI判定: HTTPステータス 202（正常アクセス不可）のため却下"
+  },
+  {
+    "id": "smea-2872",
+    "name": "小規模事業者の「稼ぐ力」の強化に向けた諸課題に関する検討会",
+    "ministry": "SMEA",
+    "category": "STUDY",
+    "officialUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/index.html",
+    "sourcePageUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/index.html",
+    "rejectedAt": "2026-08-25",
+    "reason": "AI判定: 登録済み会議体（小規模事業者の「稼ぐ力」の強化に向けた諸課題に関する検討会）と重複しているため却下"
+  },
+  {
+    "id": "smea-2873",
+    "name": "“ちいさな企業”発展会議",
+    "ministry": "SMEA",
+    "category": "COUNCIL",
+    "officialUrl": "https://www.chusho.meti.go.jp/seicho/schedule.html",
+    "sourcePageUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/index.html",
+    "rejectedAt": "2026-08-25",
+    "reason": "AI判定: HTTPステータス 202（正常アクセス不可）のため却下"
+  },
+  {
+    "id": "smea-2874",
+    "name": "中小企業の経営資源集約化等に関する検討会",
+    "ministry": "SMEA",
+    "category": "STUDY",
+    "officialUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/index.html",
+    "sourcePageUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/index.html",
+    "rejectedAt": "2026-08-25",
+    "reason": "AI判定: 登録済み会議体（中小企業の経営資源集約化等に関する検討会）と重複しているため却下"
+  },
+  {
+    "id": "smea-2875",
+    "name": "中小企業の経営資源集約化等に関する検討会 取りまとめ(4,664KB)",
+    "ministry": "SMEA",
+    "category": "STUDY",
+    "officialUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/shigenshuyaku/2021/210428torimatome.pdf?0512",
+    "sourcePageUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/index.html",
+    "rejectedAt": "2026-08-25",
+    "reason": "AI判定: 会議体Webページではなく単体ファイル直リンクのため却下"
+  },
+  {
+    "id": "smea-2876",
+    "name": "中小企業の経営資源集約化等に関する検討会 取りまとめ概要(782KB)",
+    "ministry": "SMEA",
+    "category": "STUDY",
+    "officialUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/shigenshuyaku/2021/210428shigenshuyaku02.pdf?0512",
+    "sourcePageUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/index.html",
+    "rejectedAt": "2026-08-25",
+    "reason": "AI判定: 会議体Webページではなく単体ファイル直リンクのため却下"
+  },
+  {
+    "id": "smea-2877",
+    "name": "中小企業の事業承継・M&Aに関する検討会",
+    "ministry": "SMEA",
+    "category": "STUDY",
+    "officialUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/index.html",
+    "sourcePageUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/index.html",
+    "rejectedAt": "2026-08-25",
+    "reason": "AI判定: 登録済み会議体（中小企業の事業承継・M&Aに関する検討会）と重複しているため却下"
+  },
+  {
+    "id": "smea-2878",
+    "name": "中小企業の親族内承継に関する検討会",
+    "ministry": "SMEA",
+    "category": "STUDY",
+    "officialUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/index.html",
+    "sourcePageUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/index.html",
+    "rejectedAt": "2026-08-25",
+    "reason": "AI判定: 登録済み会議体（中小企業の親族内承継に関する検討会）と重複しているため却下"
+  },
+  {
+    "id": "smea-2879",
+    "name": "中小M&A市場の改革に向けた検討会",
+    "ministry": "SMEA",
+    "category": "STUDY",
+    "officialUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/index.html",
+    "sourcePageUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/index.html",
+    "rejectedAt": "2026-08-25",
+    "reason": "AI判定: 登録済み会議体（中小M&A市場の改革に向けた検討会）と重複しているため却下"
+  },
+  {
+    "id": "smea-2880",
+    "name": "中小M&Aガイドライン見直し検討小委員会",
+    "ministry": "SMEA",
+    "category": "COMMITTEE",
+    "officialUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/index.html",
+    "sourcePageUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/index.html",
+    "rejectedAt": "2026-08-25",
+    "reason": "AI判定: 登録済み会議体（中小M&Aガイドライン見直し検討小委員会）と重複しているため却下"
+  },
+  {
+    "id": "smea-2881",
+    "name": "「事業引継ぎガイドライン」改訂検討会",
+    "ministry": "SMEA",
+    "category": "STUDY",
+    "officialUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/index.html",
+    "sourcePageUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/index.html",
+    "rejectedAt": "2026-08-25",
+    "reason": "AI判定: 登録済み会議体（「事業引継ぎガイドライン」改訂検討会）と重複しているため却下"
+  },
+  {
+    "id": "smea-2882",
+    "name": "イノベーション・プロデュース推進会議",
+    "ministry": "SMEA",
+    "category": "HQ",
+    "officialUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/index.html",
+    "sourcePageUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/index.html",
+    "rejectedAt": "2026-08-25",
+    "reason": "AI判定: 登録済み会議体（イノベーション・プロデュース推進会議）と重複しているため却下"
+  },
+  {
+    "id": "smea-2883",
+    "name": "イノベーション・プロデューサーガイドライン策定委員会",
+    "ministry": "SMEA",
+    "category": "COMMITTEE",
+    "officialUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/index.html",
+    "sourcePageUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/index.html",
+    "rejectedAt": "2026-08-25",
+    "reason": "AI判定: 登録済み会議体（イノベーション・プロデューサーガイドライン策定委員会）と重複しているため却下"
+  },
+  {
+    "id": "smea-2884",
+    "name": "中小企業の成長のためのイノベーション研究会",
+    "ministry": "SMEA",
+    "category": "STUDY",
+    "officialUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/index.html",
+    "sourcePageUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/index.html",
+    "rejectedAt": "2026-08-25",
+    "reason": "AI判定: 登録済み会議体（中小企業の成長のためのイノベーション研究会）と重複しているため却下"
+  },
+  {
+    "id": "smea-2885",
+    "name": "中小企業のイノベーションの在り方に関する有識者検討会",
+    "ministry": "SMEA",
+    "category": "STUDY",
+    "officialUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/index.html",
+    "sourcePageUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/index.html",
+    "rejectedAt": "2026-08-25",
+    "reason": "AI判定: 登録済み会議体（中小企業のイノベーションの在り方に関する有識者検討会）と重複しているため却下"
+  },
+  {
+    "id": "smea-2886",
+    "name": "令和元年",
+    "ministry": "SMEA",
+    "category": "STUDY",
+    "officialUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/index.html",
+    "sourcePageUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/index.html",
+    "rejectedAt": "2026-08-25",
+    "reason": "AI判定: 登録済み会議体（令和元年）と重複しているため却下"
+  },
+  {
+    "id": "smea-2887",
+    "name": "令和元年 特別編 スマートSME(中小企業)研究会 配布資料",
+    "ministry": "SMEA",
+    "category": "STUDY",
+    "officialUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/smartsme/190724smartsme.html",
+    "sourcePageUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/index.html",
+    "rejectedAt": "2026-08-25",
+    "reason": "AI判定: HTTPステータス 202（正常アクセス不可）のため却下"
+  },
+  {
+    "id": "smea-2888",
+    "name": "スマートSME(中小企業)研究会",
+    "ministry": "SMEA",
+    "category": "STUDY",
+    "officialUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/index.html",
+    "sourcePageUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/index.html",
+    "rejectedAt": "2026-08-25",
+    "reason": "AI判定: 登録済み会議体（スマートSME(中小企業)研究会）と重複しているため却下"
+  },
+  {
+    "id": "smea-2889",
+    "name": "日本版ＳＢＩＲ制度の見直しに向けた検討会",
+    "ministry": "SMEA",
+    "category": "STUDY",
+    "officialUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/index.html",
+    "sourcePageUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/index.html",
+    "rejectedAt": "2026-08-25",
+    "reason": "AI判定: 登録済み会議体（日本版ＳＢＩＲ制度の見直しに向けた検討会）と重複しているため却下"
+  },
+  {
+    "id": "smea-2890",
+    "name": "(書面審議) 「戦略的基盤技術高度化支援事業」研究資金制度プログラム中間評価検討会",
+    "ministry": "SMEA",
+    "category": "STUDY",
+    "officialUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/index.html",
+    "sourcePageUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/index.html",
+    "rejectedAt": "2026-08-25",
+    "reason": "AI判定: 登録済み会議体（(書面審議) 「戦略的基盤技術高度化支援事業」研究資金制度プログラム中間評価検討会）と重複しているため却下"
+  },
+  {
+    "id": "smea-2891",
+    "name": "「戦略的基盤技術高度化支援事業」研究資金制度プログラム中間評価検討会",
+    "ministry": "SMEA",
+    "category": "STUDY",
+    "officialUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/index.html",
+    "sourcePageUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/index.html",
+    "rejectedAt": "2026-08-25",
+    "reason": "AI判定: 登録済み会議体（「戦略的基盤技術高度化支援事業」研究資金制度プログラム中間評価検討会）と重複しているため却下"
+  },
+  {
+    "id": "smea-2892",
+    "name": "NPOなど新たな事業・雇用の担い手に関する研究会",
+    "ministry": "SMEA",
+    "category": "STUDY",
+    "officialUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/index.html",
+    "sourcePageUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/index.html",
+    "rejectedAt": "2026-08-25",
+    "reason": "AI判定: 登録済み会議体（NPOなど新たな事業・雇用の担い手に関する研究会）と重複しているため却下"
+  },
+  {
+    "id": "smea-2893",
+    "name": "伴走支援の在り方検討会",
+    "ministry": "SMEA",
+    "category": "STUDY",
+    "officialUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/index.html",
+    "sourcePageUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/index.html",
+    "rejectedAt": "2026-08-25",
+    "reason": "AI判定: 登録済み会議体（伴走支援の在り方検討会）と重複しているため却下"
+  },
+  {
+    "id": "smea-2894",
+    "name": "中小企業人材マネジメント研究会",
+    "ministry": "SMEA",
+    "category": "STUDY",
+    "officialUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/index.html",
+    "sourcePageUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/index.html",
+    "rejectedAt": "2026-08-25",
+    "reason": "AI判定: 登録済み会議体（中小企業人材マネジメント研究会）と重複しているため却下"
+  },
+  {
+    "id": "smea-2895",
+    "name": "我が国産業における人材力強化に向けた研究会",
+    "ministry": "SMEA",
+    "category": "STUDY",
+    "officialUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/index.html",
+    "sourcePageUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/index.html",
+    "rejectedAt": "2026-08-25",
+    "reason": "AI判定: 登録済み会議体（我が国産業における人材力強化に向けた研究会）と重複しているため却下"
+  },
+  {
+    "id": "smea-2896",
+    "name": "中小企業・小規模事業者の長時間労働是正・生産性向上と人材確保に関するワーキンググループ",
+    "ministry": "SMEA",
+    "category": "WORKING_GROUP",
+    "officialUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/index.html",
+    "sourcePageUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/index.html",
+    "rejectedAt": "2026-08-25",
+    "reason": "AI判定: 登録済み会議体（中小企業・小規模事業者の長時間労働是正・生産性向上と人材確保に関するワーキンググループ）と重複しているため却下"
+  },
+  {
+    "id": "smea-2897",
+    "name": "中小企業・小規模事業者・スタートアップ等における中核人材の確保・活用促進に向けた検討ワーキング・グループ(中核人材確保WG)",
+    "ministry": "SMEA",
+    "category": "WORKING_GROUP",
+    "officialUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/index.html",
+    "sourcePageUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/index.html",
+    "rejectedAt": "2026-08-25",
+    "reason": "AI判定: 登録済み会議体（中小企業・小規模事業者・スタートアップ等における中核人材の確保・活用促進に向けた検討ワーキング・グループ(中核人材確保WG)）と重複しているため却下"
+  },
+  {
+    "id": "smea-2898",
+    "name": "中小企業・小規模事業者の働き方改革・人手不足対応に関する検討会",
+    "ministry": "SMEA",
+    "category": "STUDY",
+    "officialUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/index.html",
+    "sourcePageUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/index.html",
+    "rejectedAt": "2026-08-25",
+    "reason": "AI判定: 登録済み会議体（中小企業・小規模事業者の働き方改革・人手不足対応に関する検討会）と重複しているため却下"
+  },
+  {
+    "id": "smea-2899",
+    "name": "中小企業・小規模事業者の人手不足対応研究会",
+    "ministry": "SMEA",
+    "category": "STUDY",
+    "officialUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/index.html",
+    "sourcePageUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/index.html",
+    "rejectedAt": "2026-08-25",
+    "reason": "AI判定: 登録済み会議体（中小企業・小規模事業者の人手不足対応研究会）と重複しているため却下"
+  },
+  {
+    "id": "smea-2900",
+    "name": "中小企業事業継続力強化計画制度研究会",
+    "ministry": "SMEA",
+    "category": "STUDY",
+    "officialUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/index.html",
+    "sourcePageUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/index.html",
+    "rejectedAt": "2026-08-25",
+    "reason": "AI判定: 登録済み会議体（中小企業事業継続力強化計画制度研究会）と重複しているため却下"
+  },
+  {
+    "id": "smea-2901",
+    "name": "中小企業の災害対応の強化に関する研究会",
+    "ministry": "SMEA",
+    "category": "STUDY",
+    "officialUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/index.html",
+    "sourcePageUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/index.html",
+    "rejectedAt": "2026-08-25",
+    "reason": "AI判定: 登録済み会議体（中小企業の災害対応の強化に関する研究会）と重複しているため却下"
+  },
+  {
+    "id": "smea-2902",
+    "name": "中小企業強靱化研究会",
+    "ministry": "SMEA",
+    "category": "STUDY",
+    "officialUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/index.html",
+    "sourcePageUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/index.html",
+    "rejectedAt": "2026-08-25",
+    "reason": "AI判定: 登録済み会議体（中小企業強靱化研究会）と重複しているため却下"
+  },
+  {
+    "id": "smea-2903",
+    "name": "中小企業強靱化研究会 中間取りまとめ",
+    "ministry": "SMEA",
+    "category": "STUDY",
+    "officialUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/kyoujin/190131torimatome.html",
+    "sourcePageUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/index.html",
+    "rejectedAt": "2026-08-25",
+    "reason": "AI判定: HTTPステータス 202（正常アクセス不可）のため却下"
+  },
+  {
+    "id": "smea-2904",
+    "name": "中小エクイティ・ファイナンスに係るガバナンス検討会",
+    "ministry": "SMEA",
+    "category": "STUDY",
+    "officialUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/index.html",
+    "sourcePageUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/index.html",
+    "rejectedAt": "2026-08-25",
+    "reason": "AI判定: 登録済み会議体（中小エクイティ・ファイナンスに係るガバナンス検討会）と重複しているため却下"
+  },
+  {
+    "id": "smea-2905",
+    "name": "中小PMI促進戦略検討会",
+    "ministry": "SMEA",
+    "category": "STUDY",
+    "officialUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/index.html",
+    "sourcePageUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/index.html",
+    "rejectedAt": "2026-08-25",
+    "reason": "AI判定: 登録済み会議体（中小PMI促進戦略検討会）と重複しているため却下"
+  },
+  {
+    "id": "smea-2906",
+    "name": "中小PMIガイドライン策定小委員会",
+    "ministry": "SMEA",
+    "category": "COMMITTEE",
+    "officialUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/index.html",
+    "sourcePageUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/index.html",
+    "rejectedAt": "2026-08-25",
+    "reason": "AI判定: 登録済み会議体（中小PMIガイドライン策定小委員会）と重複しているため却下"
+  },
+  {
+    "id": "smea-2907",
+    "name": "事業承継ガイドライン改訂検討会",
+    "ministry": "SMEA",
+    "category": "STUDY",
+    "officialUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/index.html",
+    "sourcePageUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/index.html",
+    "rejectedAt": "2026-08-25",
+    "reason": "AI判定: 登録済み会議体（事業承継ガイドライン改訂検討会）と重複しているため却下"
+  },
+  {
+    "id": "smea-2908",
+    "name": "事業承継ガイドライン改訂小委員会",
+    "ministry": "SMEA",
+    "category": "COMMITTEE",
+    "officialUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/index.html",
+    "sourcePageUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/index.html",
+    "rejectedAt": "2026-08-25",
+    "reason": "AI判定: 登録済み会議体（事業承継ガイドライン改訂小委員会）と重複しているため却下"
+  },
+  {
+    "id": "smea-2909",
+    "name": "事業承継を中心とする事業活性化に関する検討会",
+    "ministry": "SMEA",
+    "category": "STUDY",
+    "officialUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/index.html",
+    "sourcePageUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/index.html",
+    "rejectedAt": "2026-08-25",
+    "reason": "AI判定: 登録済み会議体（事業承継を中心とする事業活性化に関する検討会）と重複しているため却下"
+  },
+  {
+    "id": "smea-2910",
+    "name": "平成26年 事業承継を中心とする事業活性化に関する検討会 中間報告について",
+    "ministry": "SMEA",
+    "category": "STUDY",
+    "officialUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/jigyousyoukei/140724torimatome.html",
+    "sourcePageUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/index.html",
+    "rejectedAt": "2026-08-25",
+    "reason": "AI判定: HTTPステータス 202（正常アクセス不可）のため却下"
+  },
+  {
+    "id": "smea-2911",
+    "name": "「地域の持続的成長に向けた創業政策のあり方検討会」の取りまとめ報告書を公表します",
+    "ministry": "SMEA",
+    "category": "STUDY",
+    "officialUrl": "https://www.meti.go.jp/press/2026/04/20260421002/20260421002.html",
+    "sourcePageUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/index.html",
+    "rejectedAt": "2026-08-25",
+    "reason": "AI判定: HTTPステータス 202（正常アクセス不可）のため却下"
+  },
+  {
+    "id": "smea-2912",
+    "name": "地域の持続的成長に向けた創業政策のあり方検討会",
+    "ministry": "SMEA",
+    "category": "STUDY",
+    "officialUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/index.html",
+    "sourcePageUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/index.html",
+    "rejectedAt": "2026-08-25",
+    "reason": "AI判定: 登録済み会議体（地域の持続的成長に向けた創業政策のあり方検討会）と重複しているため却下"
+  },
+  {
+    "id": "smea-2913",
+    "name": "兼業・副業を通じた創業・新事業創出に関する研究会",
+    "ministry": "SMEA",
+    "category": "STUDY",
+    "officialUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/index.html",
+    "sourcePageUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/index.html",
+    "rejectedAt": "2026-08-25",
+    "reason": "AI判定: 登録済み会議体（兼業・副業を通じた創業・新事業創出に関する研究会）と重複しているため却下"
+  },
+  {
+    "id": "smea-2914",
+    "name": "新たな商店街政策の在り方検討会",
+    "ministry": "SMEA",
+    "category": "STUDY",
+    "officialUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/index.html",
+    "sourcePageUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/index.html",
+    "rejectedAt": "2026-08-25",
+    "reason": "AI判定: 登録済み会議体（新たな商店街政策の在り方検討会）と重複しているため却下"
+  },
+  {
+    "id": "smea-2915",
+    "name": "中小企業における事業再生支援のあり方検討会",
+    "ministry": "SMEA",
+    "category": "STUDY",
+    "officialUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/index.html",
+    "sourcePageUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/index.html",
+    "rejectedAt": "2026-08-25",
+    "reason": "AI判定: 登録済み会議体（中小企業における事業再生支援のあり方検討会）と重複しているため却下"
+  },
+  {
+    "id": "smea-2916",
+    "name": "円滑な事業再生等に向けたモニタリングの高度化に関する研究会",
+    "ministry": "SMEA",
+    "category": "STUDY",
+    "officialUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/index.html",
+    "sourcePageUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/index.html",
+    "rejectedAt": "2026-08-25",
+    "reason": "AI判定: 登録済み会議体（円滑な事業再生等に向けたモニタリングの高度化に関する研究会）と重複しているため却下"
+  },
+  {
+    "id": "smea-2917",
+    "name": "中小企業収益力改善支援研究会",
+    "ministry": "SMEA",
+    "category": "STUDY",
+    "officialUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/index.html",
+    "sourcePageUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/index.html",
+    "rejectedAt": "2026-08-25",
+    "reason": "AI判定: 登録済み会議体（中小企業収益力改善支援研究会）と重複しているため却下"
+  },
+  {
+    "id": "smea-2918",
+    "name": "商工中金改革の状況検討会",
+    "ministry": "SMEA",
+    "category": "STUDY",
+    "officialUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/index.html",
+    "sourcePageUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/index.html",
+    "rejectedAt": "2026-08-25",
+    "reason": "AI判定: 登録済み会議体（商工中金改革の状況検討会）と重複しているため却下"
+  },
+  {
+    "id": "smea-2919",
+    "name": "新たなビジネスモデルを踏まえた商工中金の在り方検討会",
+    "ministry": "SMEA",
+    "category": "STUDY",
+    "officialUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/index.html",
+    "sourcePageUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/index.html",
+    "rejectedAt": "2026-08-25",
+    "reason": "AI判定: 登録済み会議体（新たなビジネスモデルを踏まえた商工中金の在り方検討会）と重複しているため却下"
+  },
+  {
+    "id": "smea-2920",
+    "name": "商工中金の経営及び危機対応業務に関する評価委員会 報告書について",
+    "ministry": "SMEA",
+    "category": "COMMITTEE",
+    "officialUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/syokoutyukinkikitaiou/220803report.html",
+    "sourcePageUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/index.html",
+    "rejectedAt": "2026-08-25",
+    "reason": "AI判定: HTTPステータス 202（正常アクセス不可）のため却下"
+  },
+  {
+    "id": "smea-2921",
+    "name": "商工中金の経営及び危機対応業務に関する評価委員会",
+    "ministry": "SMEA",
+    "category": "COMMITTEE",
+    "officialUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/index.html",
+    "sourcePageUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/index.html",
+    "rejectedAt": "2026-08-25",
+    "reason": "AI判定: 登録済み会議体（商工中金の経営及び危機対応業務に関する評価委員会）と重複しているため却下"
+  },
+  {
+    "id": "smea-2922",
+    "name": "商工中金の在り方検討会",
+    "ministry": "SMEA",
+    "category": "STUDY",
+    "officialUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/index.html",
+    "sourcePageUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/index.html",
+    "rejectedAt": "2026-08-25",
+    "reason": "AI判定: 登録済み会議体（商工中金の在り方検討会）と重複しているため却下"
+  },
+  {
+    "id": "smea-2923",
+    "name": "金融EDIにおける商流情報等のあり方検討会議",
+    "ministry": "SMEA",
+    "category": "STUDY",
+    "officialUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/index.html",
+    "sourcePageUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/index.html",
+    "rejectedAt": "2026-08-25",
+    "reason": "AI判定: 登録済み会議体（金融EDIにおける商流情報等のあり方検討会議）と重複しているため却下"
+  },
+  {
+    "id": "smea-2924",
+    "name": "中小企業における個人保証等の在り方研究会",
+    "ministry": "SMEA",
+    "category": "STUDY",
+    "officialUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/kojinhosho/index.html",
+    "sourcePageUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/index.html",
+    "rejectedAt": "2026-08-25",
+    "reason": "AI判定: HTTPステータス 202（正常アクセス不可）のため却下"
+  },
+  {
+    "id": "smea-2925",
+    "name": "知識サポート・経営改革プラットフォーム研究会",
+    "ministry": "SMEA",
+    "category": "STUDY",
+    "officialUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/index.html",
+    "sourcePageUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/index.html",
+    "rejectedAt": "2026-08-25",
+    "reason": "AI判定: 登録済み会議体（知識サポート・経営改革プラットフォーム研究会）と重複しているため却下"
+  },
+  {
+    "id": "smea-2926",
+    "name": "“日本の未来”応援会議～小さな企業が日本を変える～(“ちいさな企業”)未来会議",
+    "ministry": "SMEA",
+    "category": "COUNCIL",
+    "officialUrl": "https://www.chusho.meti.go.jp/miraikaigi/index.html",
+    "sourcePageUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/index.html",
+    "rejectedAt": "2026-08-25",
+    "reason": "AI判定: HTTPステータス 202（正常アクセス不可）のため却下"
+  },
+  {
+    "id": "smea-2927",
+    "name": "中小企業の会計に関する研究会 中間報告書について",
+    "ministry": "SMEA",
+    "category": "STUDY",
+    "officialUrl": "https://www.chusho.meti.go.jp/zaimu/kaikei/2010/100930InterimReport.html",
+    "sourcePageUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/index.html",
+    "rejectedAt": "2026-08-25",
+    "reason": "AI判定: HTTPステータス 202（正常アクセス不可）のため却下"
+  },
+  {
+    "id": "smea-2928",
+    "name": "中小企業の会計に関する研究会",
+    "ministry": "SMEA",
+    "category": "STUDY",
+    "officialUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/index.html",
+    "sourcePageUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/index.html",
+    "rejectedAt": "2026-08-25",
+    "reason": "AI判定: 登録済み会議体（中小企業の会計に関する研究会）と重複しているため却下"
+  },
+  {
+    "id": "smea-2929",
+    "name": "中小企業海外展開支援会議",
+    "ministry": "SMEA",
+    "category": "COUNCIL",
+    "officialUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/index.html",
+    "sourcePageUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/index.html",
+    "rejectedAt": "2026-08-25",
+    "reason": "AI判定: 登録済み会議体（中小企業海外展開支援会議）と重複しているため却下"
+  },
+  {
+    "id": "smea-2930",
+    "name": "中小企業憲章に関する研究会",
+    "ministry": "SMEA",
+    "category": "STUDY",
+    "officialUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/index.html",
+    "sourcePageUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/index.html",
+    "rejectedAt": "2026-08-25",
+    "reason": "AI判定: 登録済み会議体（中小企業憲章に関する研究会）と重複しているため却下"
+  },
+  {
+    "id": "smea-2931",
+    "name": "中小企業再生の今後の政策的課題に関する研究会",
+    "ministry": "SMEA",
+    "category": "STUDY",
+    "officialUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/index.html",
+    "sourcePageUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/index.html",
+    "rejectedAt": "2026-08-25",
+    "reason": "AI判定: 登録済み会議体（中小企業再生の今後の政策的課題に関する研究会）と重複しているため却下"
+  },
+  {
+    "id": "smea-2932",
+    "name": "中小企業再生の今後の政策的課題に関する研究会 開催について",
+    "ministry": "SMEA",
+    "category": "STUDY",
+    "officialUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/kenkyu/2006/060913saisei_kenkyuu_shushi.html",
+    "sourcePageUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/index.html",
+    "rejectedAt": "2026-08-25",
+    "reason": "AI判定: HTTPステータス 202（正常アクセス不可）のため却下"
+  },
+  {
+    "id": "smea-2933",
+    "name": "新しい中小企業金融研究会 報告書について",
+    "ministry": "SMEA",
+    "category": "STUDY",
+    "officialUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/kenkyu/2006/060725kinyu_kenkyuu_houkokusho.html",
+    "sourcePageUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/index.html",
+    "rejectedAt": "2026-08-25",
+    "reason": "AI判定: HTTPステータス 202（正常アクセス不可）のため却下"
+  },
+  {
+    "id": "smea-2934",
+    "name": "新しい中小企業金融研究会",
+    "ministry": "SMEA",
+    "category": "STUDY",
+    "officialUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/index.html",
+    "sourcePageUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/index.html",
+    "rejectedAt": "2026-08-25",
+    "reason": "AI判定: 登録済み会議体（新しい中小企業金融研究会）と重複しているため却下"
+  },
+  {
+    "id": "smea-2935",
+    "name": "新しい中小企業金融研究会 開催について",
+    "ministry": "SMEA",
+    "category": "STUDY",
+    "officialUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/kenkyu/2006/060414kinyu_kenkyuu_shushi.html",
+    "sourcePageUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/index.html",
+    "rejectedAt": "2026-08-25",
+    "reason": "AI判定: HTTPステータス 202（正常アクセス不可）のため却下"
+  },
+  {
+    "id": "smea-2936",
+    "name": "中小企業金融の多様化と円滑化に向けた具体策に関する研究会",
+    "ministry": "SMEA",
+    "category": "STUDY",
+    "officialUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/kenkyu/2003/030509kinyu_tayouka.html",
+    "sourcePageUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/index.html",
+    "rejectedAt": "2026-08-25",
+    "reason": "AI判定: HTTPステータス 202（正常アクセス不可）のため却下"
+  },
+  {
+    "id": "smea-2937",
+    "name": "中小企業基盤技術研究会 全文",
+    "ministry": "SMEA",
+    "category": "STUDY",
+    "officialUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/kenkyu/h12_06mono.html",
+    "sourcePageUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/index.html",
+    "rejectedAt": "2026-08-25",
+    "reason": "AI判定: HTTPステータス 202（正常アクセス不可）のため却下"
+  },
+  {
+    "id": "maff-2229",
+    "name": "植物新品種の保護・活用に関する懇談会［外部リンク］",
+    "ministry": "MAFF",
+    "category": "STUDY",
+    "officialUrl": "https://warp.ndl.go.jp/info:ndljp/pid/10205286/www.maff.go.jp/j/study/shokbutu_hogo/index.html",
+    "sourcePageUrl": "https://www.maff.go.jp/j/study/",
+    "rejectedAt": "2026-08-26",
+    "reason": "Admin rejected council"
+  }
+]

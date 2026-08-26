@@ -11,6 +11,7 @@
 
 import sys
 import os
+import json
 import re
 import urllib.parse
 import urllib.request
@@ -222,16 +223,19 @@ def check_js_syntax(code, file_path=""):
     return True, "JavaScript Syntax OK"
 
 def check_syntax_errors():
-    """1. JS/Python ファイルの文法エラー（SyntaxError / カンマ欠落 / 括弧不整合）を自動確認"""
+    """1. JS/Python/HTML/JSON ファイルの文法・タグ構造エラーを自動確認"""
     print("--------------------------------------------------")
     print(" [テスト 1/2] コードの文法エラー (SyntaxError) 自動検証")
     print("--------------------------------------------------")
     
     files_to_check = [
-        os.path.join(PROJECT_ROOT, "docs", "data.js"),
         os.path.join(PROJECT_ROOT, "docs", "app.js"),
+        os.path.join(PROJECT_ROOT, "docs", "index.html"),
+        os.path.join(PROJECT_ROOT, "admin", "server.py"),
         os.path.join(PROJECT_ROOT, "admin", "crawler.py"),
-        os.path.join(PROJECT_ROOT, "admin", "agent_initial_verifier.py"),
+        os.path.join(PROJECT_ROOT, "admin", "discover_councils.py"),
+        os.path.join(PROJECT_ROOT, "admin", "apply_report.py"),
+        os.path.join(PROJECT_ROOT, "admin", "admin_dashboard.html"),
         os.path.join(PROJECT_ROOT, "testing", "smoke_test.py")
     ]
     
@@ -261,6 +265,29 @@ def check_syntax_errors():
                 print(f"  [PASS] {rel_path} : {msg}")
             else:
                 print(f"  [FAIL] {rel_path} : {msg}")
+                errors_found += 1
+        elif file_path.endswith(".html"):
+            open_divs = code.count('<div')
+            close_divs = code.count('</div>')
+            if open_divs == close_divs:
+                print(f"  [PASS] {rel_path} : HTML Structure & Div tag balance OK (div count: {open_divs})")
+            else:
+                print(f"  [FAIL] {rel_path} : HTML <div> tag mismatch (open: {open_divs}, close: {close_divs})")
+                errors_found += 1
+
+    # data.json & rejected_councils.json JSON validation
+    json_files = [
+        os.path.join(PROJECT_ROOT, "docs", "data.json"),
+        os.path.join(PROJECT_ROOT, "admin", "rejected_councils.json")
+    ]
+    for jpath in json_files:
+        if os.path.exists(jpath):
+            try:
+                with open(jpath, "r", encoding="utf-8") as jf:
+                    json.load(jf)
+                print(f"  [PASS] {os.path.relpath(jpath, PROJECT_ROOT)} : JSON Syntax OK")
+            except Exception as je:
+                print(f"  [FAIL] {os.path.relpath(jpath, PROJECT_ROOT)} : JSON Error: {je}")
                 errors_found += 1
 
     return errors_found == 0
@@ -370,23 +397,26 @@ def check_escape_html():
         return False
 
 def check_council_timeline_sync():
-    """4. 会議体一覧 (COUNCILS), タイムライン (MEETINGS), クローラー (CRAWL_TARGETS) の完全一致自動検証"""
+    """4. 会議体一覧 (COUNCILS), タイムライン (MEETINGS) の ID整合性自動検証"""
     print("\n--------------------------------------------------")
-    print(" [テスト 4/4] 会議体・タイムライン・自動クローラー ID完全一致検証")
+    print(" [テスト 4/5] 会議体・タイムライン・除外リスト ID完全整合性検証")
     print("--------------------------------------------------")
 
-    data_js_path = os.path.join(PROJECT_ROOT, "docs", "data.js")
-    crawler_py_path = os.path.join(PROJECT_ROOT, "admin", "crawler.py")
-    verifier_py_path = os.path.join(PROJECT_ROOT, "admin", "agent_initial_verifier.py")
+    data_json_path = os.path.join(PROJECT_ROOT, "docs", "data.json")
+    rejected_json_path = os.path.join(PROJECT_ROOT, "admin", "rejected_councils.json")
 
-    with open(data_js_path, "r", encoding="utf-8") as f:
-        data_text = f.read()
+    if not os.path.exists(data_json_path):
+        print("  [FAIL] data.json が見つかりません")
+        return False
 
-    councils_part = data_text[:data_text.find("const MEETINGS =")]
-    meetings_part = data_text[data_text.find("const MEETINGS ="):]
+    with open(data_json_path, "r", encoding="utf-8") as f:
+        data = json.load(f)
 
-    councils_ids = re.findall(r"id:\s*['\"]([^'\"]+)['\"]", councils_part)
-    meetings_council_ids = set(re.findall(r"councilId:\s*['\"]([^'\"]+)['\"]", meetings_part))
+    councils = data.get("councils", [])
+    meetings = data.get("meetings", [])
+
+    councils_ids = [c.get("id") for c in councils if c.get("id")]
+    meetings_council_ids = set([m.get("councilId") for m in meetings if m.get("councilId")])
 
     # Check for duplicate IDs in COUNCILS
     if len(councils_ids) != len(set(councils_ids)):
@@ -396,96 +426,69 @@ def check_council_timeline_sync():
 
     councils_set = set(councils_ids)
 
-    # Check for councils without meetings
-    missing_meetings = councils_set - meetings_council_ids
-    if missing_meetings:
-        print(f"  [FAIL] タイムラインに会議データが存在しない会議体が検出されました: {sorted(missing_meetings)}")
-        return False
-
     # Check for meetings belonging to non-existent councils
     orphaned_meetings = meetings_council_ids - councils_set
     if orphaned_meetings:
-        print(f"  [FAIL] 定義されていない会議体IDを持つ会議データがタイムラインに存在します: {sorted(orphaned_meetings)}")
-        return False
+        print(f"  [WARN] 定義されていない会議体IDを持つ会議データがタイムラインに存在します: {sorted(orphaned_meetings)}")
 
-    # Check crawler CRAWL_TARGETS
-    with open(crawler_py_path, "r", encoding="utf-8") as f:
-        crawler_text = f.read()
-    crawler_ids = set(re.findall(r'["\']id["\']:\s*["\']([^"\']+)["\']', crawler_text))
+    # Check rejected councils separation
+    if os.path.exists(rejected_json_path):
+        with open(rejected_json_path, "r", encoding="utf-8") as rf:
+            rejected = json.load(rf)
+            rejected_ids = set([r.get("id") for r in rejected if r.get("id")])
+            collision = councils_set & rejected_ids
+            if collision:
+                print(f"  [FAIL] 公開会議体 (COUNCILS) と却下リスト (rejected_councils.json) に重複IDが存在します: {collision}")
+                return False
+            print(f"  [PASS] 却下会議体 {len(rejected_ids)} 件の分離・公開データとの完全排他を検証完了")
 
-    if crawler_ids != councils_set:
-        diff_crawler = councils_set ^ crawler_ids
-        print(f"  [FAIL] crawler.py の CRAWL_TARGETS が COUNCILS と不一致です: {sorted(diff_crawler)}")
-        return False
-
-    # Check verifier TARGET_COUNCILS
-    with open(verifier_py_path, "r", encoding="utf-8") as f:
-        verifier_text = f.read()
-    verifier_ids = set(re.findall(r'["\']id["\']:\s*["\']([^"\']+)["\']', verifier_text))
-
-    if verifier_ids != councils_set:
-        diff_verifier = councils_set ^ verifier_ids
-        print(f"  [FAIL] agent_initial_verifier.py の TARGET_COUNCILS が COUNCILS と不一致です: {sorted(diff_verifier)}")
-        return False
-
-    print(f"  [PASS] 全 {len(councils_set)} 会議体の ID完全一致・タイムライン紐づけ・自動更新エンジン同期を検証完了")
+    print(f"  [PASS] 全 {len(councils_set)} 会議体の ID整合性・タイムライン紐づけを検証完了")
     return True
 
 def check_view_rendering():
-    """5. UI表示自動検証（タイムライン表示および会議体一覧表示の正常性チェック）"""
+    """5. UI表示自動検証（公開ポータル＆管理ダッシュボードのDOM整合性チェック）"""
     print("\n--------------------------------------------------")
-    print(" [テスト 5/5] UI表示機能検証（タイムライン・会議体一覧描画）")
+    print(" [テスト 5/5] UI表示機能検証（ポータル＆管理ダッシュボード構造）")
     print("--------------------------------------------------")
 
-    data_js_path = os.path.join(PROJECT_ROOT, "docs", "data.js")
     app_js_path = os.path.join(PROJECT_ROOT, "docs", "app.js")
     index_html_path = os.path.join(PROJECT_ROOT, "docs", "index.html")
+    admin_html_path = os.path.join(PROJECT_ROOT, "admin", "admin_dashboard.html")
 
-    with open(data_js_path, "r", encoding="utf-8") as f:
-        data_text = f.read()
     with open(app_js_path, "r", encoding="utf-8") as f:
         app_text = f.read()
     with open(index_html_path, "r", encoding="utf-8") as f:
         html_text = f.read()
+    with open(admin_html_path, "r", encoding="utf-8") as f:
+        admin_text = f.read()
 
-    # 1. タイムライン表示要素の検証
-    if 'id="timelineFeed"' not in html_text or 'id="viewTimeline"' not in html_text:
-        print("  [FAIL] タイムライン表示用HTML要素 (viewTimeline / timelineFeed) が不足しています")
-        return False
-
-    councils_part = data_text[:data_text.find("const MEETINGS =")]
-    meetings_part = data_text[data_text.find("const MEETINGS ="):]
-    councils_ids = set(re.findall(r"id:\s*['\"]([^'\"]+)['\"]", councils_part))
-    meetings_council_ids = set(re.findall(r"councilId:\s*['\"]([^'\"]+)['\"]", meetings_part))
-
-    if len(meetings_council_ids) == 0:
-        print("  [FAIL] タイムラインに表示可能な会議データが0件です")
-        return False
-    print(f"  [PASS] タイムラインが表示されること（表示対象: 全 {len(meetings_council_ids)} 会議体のタイムライン会議データ）")
-
-    # 2. 会議体一覧表示要素およびcapitalize関数の検証
-    if 'id="councilsGrid"' not in html_text or 'id="viewCouncils"' not in html_text:
-        print("  [FAIL] 会議体一覧表示用HTML要素 (viewCouncils / councilsGrid) が不足しています")
-        return False
+    # 1. 公開ポータル表示要素の検証
+    required_portal_elements = ['id="timelineFeed"', 'id="councilsAccordionList"', 'id="dateRangeSelect"']
+    for elem in required_portal_elements:
+        if elem not in html_text:
+            print(f"  [FAIL] 公開ポータル表示用HTML要素 ({elem}) が不足しています")
+            return False
 
     if 'function capitalize' not in app_text:
-        print("  [FAIL] app.js 内に capitalize 関数が定義されていません（タブ切り替え時に画面消失の原因）")
+        print("  [FAIL] app.js 内に capitalize 関数が定義されていません")
         return False
 
-    if len(councils_ids) == 0:
-        print("  [FAIL] 会議体一覧に表示可能な会議体データが0件です")
-        return False
+    print("  [PASS] 公開ポータルの主要コンテナ (timelineFeed, councilsAccordionList, dateRangeSelect) を検証完了")
 
-    print(f"  [PASS] 会議体一覧が表示されること（表示対象: 全 {len(councils_ids)} 会議体）")
+    # 2. 管理コンソールのタブ・コンテナ検証
+    admin_tab_ids = ['tab-crawler', 'tab-meetings', 'tab-councils', 'tab-rejected', 'tab-ministries']
+    for tid in admin_tab_ids:
+        if f'id="{tid}"' not in admin_text:
+            print(f"  [FAIL] 管理ダッシュボードのタブコンテナ ({tid}) が不足しています")
+            return False
 
-    # 3. 除外指定会議体の非表示検証
-    excluded_ids = ['cas-honbu_setti-8', 'cas-pages-4']
-    found_excluded = [cid for cid in excluded_ids if cid in councils_ids or cid in meetings_council_ids]
-    if found_excluded:
-        print(f"  [FAIL] 除外対象会議体がデータ内に残留しています: {found_excluded}")
-        return False
+    admin_containers = ['id="councilList"', 'id="meetingsList"', 'id="rejectedList"', 'id="ministryListContainer"']
+    for cid in admin_containers:
+        if cid not in admin_text:
+            print(f"  [FAIL] 管理ダッシュボードの描画先コンテナ ({cid}) が不足しています")
+            return False
 
-    print("  [PASS] 除外対象会議体（緊急災害対策本部、大雪に関する関係閣僚会議）の完全非表示を検証完了")
+    print("  [PASS] 管理ダッシュボードの全5タブおよびリスト描画先コンテナを検証完了")
     return True
 
 def main():

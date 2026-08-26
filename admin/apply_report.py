@@ -90,14 +90,48 @@ def apply_report(json_path, data_json_path=None):
                 if not found:
                     print(f"Warning: MEETINGS item {target_id} not found")
 
-        elif action == "remove_council":
+        elif action == "remove_council" or action == "reject_council":
             target_id = corr.get("targetId")
             if target_id:
+                # 削除対象の会議体情報を取得
+                target_council = next((c for c in councils if c.get("id") == target_id), None)
+                if not target_council:
+                    # discoveredCouncils からも探す
+                    target_council = next((c for c in data.get("discoveredCouncils", []) if c.get("id") == target_id), None)
+
                 initial_len = len(councils)
                 councils[:] = [c for c in councils if c.get("id") != target_id]
-                if len(councils) < initial_len:
+                if len(councils) < initial_len or target_council:
                     applied_count += 1
                     print(f"Removed council {target_id}")
+
+                    # rejected_councils.json に記録・保存
+                    try:
+                        base_dir = os.path.dirname(os.path.abspath(__file__))
+                        rejected_file = os.path.join(base_dir, "rejected_councils.json")
+                        rejected_list = []
+                        if os.path.exists(rejected_file):
+                            with open(rejected_file, "r", encoding="utf-8") as rf:
+                                rejected_list = json.load(rf)
+
+                        # 重複追加の防止
+                        if not any(rc.get("id") == target_id for rc in rejected_list):
+                            rej_item = {
+                                "id": target_id,
+                                "name": target_council.get("name") if target_council else target_id,
+                                "ministry": target_council.get("ministry") if target_council else "",
+                                "category": target_council.get("category", "COUNCIL") if target_council else "COUNCIL",
+                                "officialUrl": target_council.get("officialUrl") if target_council else "",
+                                "sourcePageUrl": target_council.get("sourcePageUrl", "") if target_council else "",
+                                "rejectedAt": corr.get("rejectedAt") or "2026-08-25",
+                                "reason": corr.get("reason") or "Admin rejected council"
+                            }
+                            rejected_list.append(rej_item)
+                            with open(rejected_file, "w", encoding="utf-8") as wf:
+                                json.dump(rejected_list, wf, ensure_ascii=False, indent=2)
+                            print(f"Saved rejected council {target_id} to rejected_councils.json")
+                    except Exception as err:
+                        print(f"Warning: Failed to update rejected_councils.json: {err}")
                 else:
                     print(f"Warning: Council {target_id} to remove not found")
 
