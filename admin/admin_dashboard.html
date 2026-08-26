@@ -950,27 +950,7 @@ JSON データを読み込み中...
       }
     }
 
-    const KNOWN_NEW_IDS = [
-      'cas-atarashii-sihon-107','cas-roumuhi-tenka-108',
-      'cao-kisei-chiiki-wg-109','cao-kisei-iryou-wg-110','cao-kisei-hatarakikata-wg-111',
-      'cao-kisei-digital-ai-wg-112','cao-kisei-startup-wg-113','cao-kisei-gx-subwg-114',
-      'fsc-honkaigi-115','fsc-kikaku-116','fsc-tenkabutu-117','fsc-nouyaku-118',
-      'npsc-teirei-119','fsa-kinyu-shingi-120',
-      'mic-joho-tsusin-121','mic-chizai-122',
-      'moj-housei-soukai-123','moj-housei-seishoku-124','moj-housei-kaisha-125','moj-housei-keiji-126',
-      'mofa-kaigai-kouryushingi-127',
-      'mof-zaisei-seido-128','mof-customs-appeal-129',
-      'mext-chukyo-130','mext-gijyutu-131',
-      'mhlw-hosho-toukei-132','mhlw-hosho-shippei-133','mhlw-hosho-shiinsentaku-134',
-      'mhlw-hosho-iryou-135','mhlw-hosho-kaigo-136','mhlw-hosho-fukushi-137',
-      'mhlw-hosho-seikatsu-138','mhlw-hosho-jidou-139','mhlw-hosho-jidoukan-140',
-      'mhlw-hosho-shikinunyou-141','mhlw-hosho-kaigohoken-142','mhlw-hosho-shouni-143',
-      'mhlw-kousei-kansenshou-144','mhlw-kousei-influ-145',
-      'mhlw-rousei-roudoujouken-146','mhlw-rousei-anzeneisei-147',
-      'meti-sankoushin-148','meti-ax-skill-wg-149',
-      'mlit-kokudo-150','mlit-koutsu-151','mlit-unyu-152','mlit-chuou-kensetsu-153',
-      'moe-chuo-kankyo-154','mod-shisetsu-155'
-    ];
+    const KNOWN_NEW_IDS = [];
     const knownIdSet = new Set(KNOWN_NEW_IDS);
 
     const baseCouncils  = (window.COUNCILS && Array.isArray(window.COUNCILS)) ? window.COUNCILS : [];
@@ -1039,10 +1019,15 @@ JSON データを読み込み中...
     const meetingUrlCorrections = {};
 
     allCouncils.forEach(c => {
-      let defaultV = (c.isNew === true || knownIdSet.has(c.id)) ? null : 'approved';
+      const isBase = baseCouncils.some(bc => bc.id === c.id);
+      let defaultV = isBase ? 'approved' : ((c.isNew === true || knownIdSet.has(c.id)) ? null : 'approved');
       if (c.status === 'approved' || c.status === 'rejected') defaultV = c.status;
       const initialNotes = c.aiReason || '';
       const norm = normalizeVerdict(savedVerdicts[c.id], defaultV);
+      // 本番公開データ (baseCouncils) は原則承認済みとして同期
+      if (isBase && norm.verdict !== 'approved') {
+        norm.verdict = 'approved';
+      }
       if (!norm.notes && initialNotes) norm.notes = initialNotes;
       verdicts[c.id] = norm;
     });
