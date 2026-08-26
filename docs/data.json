@@ -5158,6 +5158,595 @@
       "officialUrl": "https://www.cas.go.jp/jp/seisaku/pqc/index.html",
       "pastYearCount": 0,
       "isWatched": true
+    },
+    {
+      "id": "smea-kigyo-torihiki",
+      "name": "企業取引研究会",
+      "ministry": "SMEA",
+      "category": "STUDY",
+      "description": "中小企業庁に設置された研究会。大企業と中小企業間の取引適正化や価格転嫁、下請代金支払等の取引環境改善に向けた課題を検討する。",
+      "officialUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/index.html",
+      "pastYearCount": 0
+    },
+    {
+      "id": "smea-chizai-torihiki-wg",
+      "name": "知的財産取引適正化ワーキンググループ",
+      "ministry": "SMEA",
+      "category": "WORKING_GROUP",
+      "description": "中小企業庁・特許庁の下に設置されたワーキンググループ。中小企業の保有するノウハウ・知財の無償開示や無断利用を防ぎ、公正な知財取引慣行を確立するための指針等を検討する。",
+      "officialUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/chizaitorihiki_wg/report/260313report.html",
+      "pastYearCount": 2
+    },
+    {
+      "id": "smea-shiharai-kaizen",
+      "name": "約束手形をはじめとする支払条件の改善に向けた検討会",
+      "ministry": "SMEA",
+      "category": "STUDY",
+      "description": "約束手形の利用廃止やサイト短縮、電子記録債権への移行など、下請中小企業の資金繰り円滑化に向けた支払条件の改善策を検討する。",
+      "officialUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/index.html",
+      "pastYearCount": 0
+    },
+    {
+      "id": "smea-keiei-bansou",
+      "name": "経営力再構築伴走支援推進協議会",
+      "ministry": "SMEA",
+      "category": "STUDY",
+      "description": "中小企業の経営力再構築に向けた伴走型支援の普及・高度化を推進するための協議会。",
+      "officialUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/index.html",
+      "pastYearCount": 0
+    },
+    {
+      "id": "smea-kinyu-edi",
+      "name": "金融EDIにおける商流情報等のあり方検討会議",
+      "ministry": "SMEA",
+      "category": "STUDY",
+      "description": "全銀EDIシステム（ZEDI）等を活用した金融EDIの普及と中小企業の受発注・決済業務の効率化について検討を行う。",
+      "officialUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/index.html",
+      "pastYearCount": 0
+    },
+    {
+      "id": "smea-chusho-kenshou",
+      "name": "中小企業憲章に関する研究会",
+      "ministry": "SMEA",
+      "category": "STUDY",
+      "description": "中小企業憲章の理念や基本方針、中小企業政策の基本構想について調査審議を行う。",
+      "officialUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/index.html",
+      "pastYearCount": 0
+    },
+    {
+      "id": "smea-kaikei-kenkyukai",
+      "name": "中小企業の会計に関する研究会",
+      "ministry": "SMEA",
+      "category": "STUDY",
+      "description": "中小企業の財務経営力強化や会計基準（中小会計要領等）の普及に向けた検討を行う。",
+      "officialUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/index.html",
+      "pastYearCount": 0
+    },
+    {
+      "id": "smea-chishiki-support",
+      "name": "知識サポート・経営改革プラットフォーム研究会",
+      "ministry": "SMEA",
+      "category": "STUDY",
+      "description": "中小企業の経営改革を支える知識プラットフォームの構築・運用を検討する。",
+      "officialUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/index.html",
+      "pastYearCount": 0
+    },
+    {
+      "id": "smea-kaigai-tenkai",
+      "name": "中小企業海外展開支援会議",
+      "ministry": "SMEA",
+      "category": "STUDY",
+      "description": "中小企業の海外販路開拓や輸出拡大に向けた支援体制・施策を検討する。",
+      "officialUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/index.html",
+      "pastYearCount": 0
+    },
+    {
+      "id": "smea-atarashii-kinyu",
+      "name": "新しい中小企業金融研究会",
+      "ministry": "SMEA",
+      "category": "STUDY",
+      "description": "事業性評価や新たな資金調達手法、中小企業金融の円滑化に向けた課題を検討する。",
+      "officialUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/index.html",
+      "pastYearCount": 0
+    },
+    {
+      "id": "smea-saisei-kadai",
+      "name": "中小企業再生の今後の政策的課題に関する研究会",
+      "ministry": "SMEA",
+      "category": "STUDY",
+      "description": "中小企業の事業再生・再チャレンジ支援に係る制度的・実務的課題を検討する。",
+      "officialUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/index.html",
+      "pastYearCount": 0
+    },
+    {
+      "id": "npsc-teirei-119",
+      "name": "国家公安委員会 定例会議",
+      "ministry": "NPSC",
+      "category": "COMMITTEE",
+      "description": "国家公安委員会 定例会議に関する調査審議・検討を行う。",
+      "officialUrl": "https://www.npsc.go.jp/activity/index.html",
+      "pastYearCount": 1,
+      "isWatched": true
+    },
+    {
+      "id": "mhlw-hosho-seikatsu-138",
+      "name": "社会保障審議会 生活保護基準部会",
+      "ministry": "MHLW",
+      "category": "SECTION",
+      "description": "社会保障審議会 生活保護基準部会に関する調査審議・検討を行う。",
+      "officialUrl": "https://www.mhlw.go.jp/stf/shingi/shingi-hosho_seikatsu.html",
+      "pastYearCount": 1,
+      "isWatched": true
+    },
+    {
+      "id": "mhlw-rousei-roudoujouken-146",
+      "name": "労働政策審議会 労働条件分科会",
+      "ministry": "MHLW",
+      "category": "SUBCOMMITTEE",
+      "description": "労働政策審議会 労働条件分科会に関する調査審議・検討を行う。",
+      "officialUrl": "https://www.mhlw.go.jp/stf/shingi/shingi-rousei_roudoujouken.html",
+      "pastYearCount": 1,
+      "isWatched": true
+    },
+    {
+      "id": "meti-ax-skill-wg-149",
+      "name": "AX時代におけるスキルのあり方検討ワーキンググループ",
+      "ministry": "METI",
+      "category": "WORKING_GROUP",
+      "description": "AX時代におけるスキルのあり方検討ワーキンググループに関する調査審議・検討を行う。",
+      "officialUrl": "https://www.meti.go.jp/shingikai/mono_info_service/society_digital/ax_skill/index.html",
+      "pastYearCount": 1,
+      "isWatched": true
+    },
+    {
+      "id": "mhlw-hosho-shikinunyou-141",
+      "name": "社会保障審議会 資金運用部会",
+      "ministry": "MHLW",
+      "category": "SECTION",
+      "description": "社会保障審議会 資金運用部会に関する調査審議・検討を行う。",
+      "officialUrl": "https://www.mhlw.go.jp/stf/shingi/shingi-hosho_shikinunyou.html",
+      "pastYearCount": 1,
+      "isWatched": true
+    },
+    {
+      "id": "meti-sankoushin-148",
+      "name": "産業構造審議会",
+      "ministry": "METI",
+      "category": "COMMITTEE",
+      "description": "産業構造審議会に関する調査審議・検討を行う。",
+      "officialUrl": "https://www.meti.go.jp/shingikai/sankoushin/index.html",
+      "pastYearCount": 1,
+      "isWatched": true
+    },
+    {
+      "id": "mhlw-hosho-kaigohoken-142",
+      "name": "社会保障審議会 介護保険部会",
+      "ministry": "MHLW",
+      "category": "SECTION",
+      "description": "社会保障審議会 介護保険部会に関する調査審議・検討を行う。",
+      "officialUrl": "https://www.mhlw.go.jp/stf/shingi/shingi-hosho_kaigohoken.html",
+      "pastYearCount": 1,
+      "isWatched": true
+    },
+    {
+      "id": "mhlw-hosho-shouni-143",
+      "name": "社会保障審議会 小児慢性特定疾病対策部会",
+      "ministry": "MHLW",
+      "category": "SECTION",
+      "description": "社会保障審議会 小児慢性特定疾病対策部会に関する調査審議・検討を行う。",
+      "officialUrl": "https://www.mhlw.go.jp/stf/shingi/shingi-hosho_shouni.html",
+      "pastYearCount": 1,
+      "isWatched": true
+    },
+    {
+      "id": "mext-chukyo-130",
+      "name": "中央教育審議会",
+      "ministry": "MEXT",
+      "category": "COMMITTEE",
+      "description": "中央教育審議会に関する調査審議・検討を行う。",
+      "officialUrl": "https://www.mext.go.jp/b_menu/shingi/chukyo/index.htm",
+      "pastYearCount": 1,
+      "isWatched": true
+    },
+    {
+      "id": "moe-chuo-kankyo-154",
+      "name": "中央環境審議会",
+      "ministry": "MOENV",
+      "category": "COMMITTEE",
+      "description": "中央環境審議会に関する調査審議・検討を行う。",
+      "officialUrl": "https://www.env.go.jp/council/index.html",
+      "pastYearCount": 1,
+      "isWatched": true
+    },
+    {
+      "id": "mic-joho-tsusin-121",
+      "name": "情報通信審議会",
+      "ministry": "MIC",
+      "category": "COMMITTEE",
+      "description": "情報通信審議会に関する調査審議・検討を行う。",
+      "officialUrl": "https://www.soumu.go.jp/main_sosiki/joho_tsusin/eng/council/index.html",
+      "pastYearCount": 1,
+      "isWatched": true
+    },
+    {
+      "id": "mlit-koutsu-151",
+      "name": "交通政策審議会",
+      "ministry": "MLIT",
+      "category": "COMMITTEE",
+      "description": "交通政策審議会に関する調査審議・検討を行う。",
+      "officialUrl": "https://www.mlit.go.jp/policy/shingikai/s30_koutsu01.html",
+      "pastYearCount": 1,
+      "isWatched": true
+    },
+    {
+      "id": "mhlw-hosho-kaigo-136",
+      "name": "社会保障審議会 介護給付費分科会",
+      "ministry": "MHLW",
+      "category": "SUBCOMMITTEE",
+      "description": "社会保障審議会 介護給付費分科会に関する調査審議・検討を行う。",
+      "officialUrl": "https://www.mhlw.go.jp/stf/shingi/shingi-hosho_kaigo.html",
+      "pastYearCount": 1,
+      "isWatched": true
+    },
+    {
+      "id": "mhlw-hosho-jidou-139",
+      "name": "社会保障審議会 児童部会",
+      "ministry": "MHLW",
+      "category": "SECTION",
+      "description": "社会保障審議会 児童部会に関する調査審議・検討を行う。",
+      "officialUrl": "https://www.mhlw.go.jp/stf/shingi/shingi-hosho_jidou.html",
+      "pastYearCount": 1,
+      "isWatched": true
+    },
+    {
+      "id": "mic-chizai-122",
+      "name": "地方財政審議会",
+      "ministry": "MIC",
+      "category": "COMMITTEE",
+      "description": "地方財政審議会に関する調査審議・検討を行う。",
+      "officialUrl": "https://www.soumu.go.jp/main_sosiki/singi/chizai/index.html",
+      "pastYearCount": 1,
+      "isWatched": true
+    },
+    {
+      "id": "mhlw-kousei-kansenshou-144",
+      "name": "厚生科学審議会 感染症部会",
+      "ministry": "MHLW",
+      "category": "SECTION",
+      "description": "厚生科学審議会 感染症部会に関する調査審議・検討を行う。",
+      "officialUrl": "https://www.mhlw.go.jp/stf/shingi/shingi-kousei_kansenshou.html",
+      "pastYearCount": 1,
+      "isWatched": true
+    },
+    {
+      "id": "mhlw-hosho-iryou-135",
+      "name": "社会保障審議会 医療分科会",
+      "ministry": "MHLW",
+      "category": "SUBCOMMITTEE",
+      "description": "社会保障審議会 医療分科会に関する調査審議・検討を行う。",
+      "officialUrl": "https://www.mhlw.go.jp/stf/shingi/shingi-hosho_iryou.html",
+      "pastYearCount": 1,
+      "isWatched": true
+    },
+    {
+      "id": "mlit-kokudo-150",
+      "name": "国土審議会",
+      "ministry": "MLIT",
+      "category": "COMMITTEE",
+      "description": "国土審議会に関する調査審議・検討を行う。",
+      "officialUrl": "https://www.mlit.go.jp/policy/shingikai/s01_kokudo01.html",
+      "pastYearCount": 1,
+      "isWatched": true
+    },
+    {
+      "id": "moj-housei-soukai-123",
+      "name": "法制審議会 総会",
+      "ministry": "MOJ",
+      "category": "COMMITTEE",
+      "description": "法制審議会 総会に関する調査審議・検討を行う。",
+      "officialUrl": "https://www.moj.go.jp/shingikai/shingikai_housei.html",
+      "pastYearCount": 1,
+      "isWatched": true
+    },
+    {
+      "id": "moj-housei-keiji-126",
+      "name": "法制審議会 刑事法（犯罪被害者関係）部会",
+      "ministry": "MOJ",
+      "category": "SECTION",
+      "description": "法制審議会 刑事法（犯罪被害者関係）部会に関する調査審議・検討を行う。",
+      "officialUrl": "https://www.moj.go.jp/shingikai/shingikai_keiji.html",
+      "pastYearCount": 1,
+      "isWatched": true
+    },
+    {
+      "id": "mext-gijyutu-131",
+      "name": "科学技術・学術審議会",
+      "ministry": "MEXT",
+      "category": "COMMITTEE",
+      "description": "科学技術・学術審議会に関する調査審議・検討を行う。",
+      "officialUrl": "https://www.mext.go.jp/b_menu/shingi/gijyutu/index.htm",
+      "pastYearCount": 1,
+      "isWatched": true
+    },
+    {
+      "id": "mofa-gaiko-seisaku",
+      "name": "mofa-gaiko-seisaku",
+      "ministry": "MOFA",
+      "category": "COUNCIL",
+      "description": "mofa-gaiko-seisakuに関する調査審議・検討を行う。",
+      "officialUrl": "https://www.mofa.go.jp/mofaj/index.html",
+      "pastYearCount": 1,
+      "isWatched": true
+    },
+    {
+      "id": "mhlw-rousei-anzeneisei-147",
+      "name": "労働政策審議会 安全衛生分科会",
+      "ministry": "MHLW",
+      "category": "SUBCOMMITTEE",
+      "description": "労働政策審議会 安全衛生分科会に関する調査審議・検討を行う。",
+      "officialUrl": "https://www.mhlw.go.jp/stf/shingi/shingi-rousei_anzeneisei.html",
+      "pastYearCount": 1,
+      "isWatched": true
+    },
+    {
+      "id": "moj-housei-kaisha-125",
+      "name": "法制審議会 会社法制（株式・株主総会等関係）部会",
+      "ministry": "MOJ",
+      "category": "SECTION",
+      "description": "法制審議会 会社法制（株式・株主総会等関係）部会に関する調査審議・検討を行う。",
+      "officialUrl": "https://www.moj.go.jp/shingikai/shingikai_kaisha.html",
+      "pastYearCount": 1,
+      "isWatched": true
+    },
+    {
+      "id": "mlit-unyu-152",
+      "name": "運輸審議会",
+      "ministry": "MLIT",
+      "category": "COMMITTEE",
+      "description": "運輸審議会に関する調査審議・検討を行う。",
+      "officialUrl": "https://www.mlit.go.jp/policy/shingikai/s40_unyu01.html",
+      "pastYearCount": 1,
+      "isWatched": true
+    },
+    {
+      "id": "mhlw-hosho-toukei-132",
+      "name": "社会保障審議会 統計分科会",
+      "ministry": "MHLW",
+      "category": "SUBCOMMITTEE",
+      "description": "社会保障審議会 統計分科会に関する調査審議・検討を行う。",
+      "officialUrl": "https://www.mhlw.go.jp/stf/shingi/shingi-hosho_toukei.html",
+      "pastYearCount": 1,
+      "isWatched": true
+    },
+    {
+      "id": "moj-housei-seishoku-124",
+      "name": "法制審議会 生殖補助医療関連親子法制部会",
+      "ministry": "MOJ",
+      "category": "SECTION",
+      "description": "法制審議会 生殖補助医療関連親子法制部会に関する調査審議・検討を行う。",
+      "officialUrl": "https://www.moj.go.jp/shingikai/shingikai_seishoku.html",
+      "pastYearCount": 1,
+      "isWatched": true
+    },
+    {
+      "id": "mhlw-hosho-fukushi-137",
+      "name": "社会保障審議会 福祉部会",
+      "ministry": "MHLW",
+      "category": "SECTION",
+      "description": "社会保障審議会 福祉部会に関する調査審議・検討を行う。",
+      "officialUrl": "https://www.mhlw.go.jp/stf/shingi/shingi-hosho_fukushi.html",
+      "pastYearCount": 1,
+      "isWatched": true
+    },
+    {
+      "id": "mlit-chuou-kensetsu-153",
+      "name": "中央建設業審議会",
+      "ministry": "MLIT",
+      "category": "COMMITTEE",
+      "description": "中央建設業審議会に関する調査審議・検討を行う。",
+      "officialUrl": "https://www.mlit.go.jp/policy/shingikai/s50_chuou01.html",
+      "pastYearCount": 1,
+      "isWatched": true
+    },
+    {
+      "id": "mofa-kaigai-kouryushingi-127",
+      "name": "海外交流審議会",
+      "ministry": "MOFA",
+      "category": "COMMITTEE",
+      "description": "海外交流審議会に関する調査審議・検討を行う。",
+      "officialUrl": "https://www.mofa.go.jp/mofaj/annai/shingi/kaigai.html",
+      "pastYearCount": 1,
+      "isWatched": true
+    },
+    {
+      "id": "cao-kisei-chiiki-wg-109",
+      "name": "規制改革推進会議 地域活性化・人手不足対応WG",
+      "ministry": "CAO",
+      "category": "WORKING_GROUP",
+      "description": "規制改革推進会議 地域活性化・人手不足対応WGに関する調査審議・検討を行う。",
+      "officialUrl": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_01local/260519/local11_agenda.html",
+      "pastYearCount": 1,
+      "isWatched": true
+    },
+    {
+      "id": "cao-kisei-iryou-wg-110",
+      "name": "規制改革推進会議 健康・医療・介護WG",
+      "ministry": "CAO",
+      "category": "WORKING_GROUP",
+      "description": "規制改革推進会議 健康・医療・介護WGに関する調査審議・検討を行う。",
+      "officialUrl": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_02medical/250501/medical05_agenda.html",
+      "pastYearCount": 1,
+      "isWatched": true
+    },
+    {
+      "id": "mhlw-hosho-shippei-133",
+      "name": "社会保障審議会 疾病、傷害及び死因分類部会",
+      "ministry": "MHLW",
+      "category": "SECTION",
+      "description": "社会保障審議会 疾病、傷害及び死因分類部会に関する調査審議・検討を行う。",
+      "officialUrl": "https://www.mhlw.go.jp/stf/shingi/shingi-hosho_shippei.html",
+      "pastYearCount": 1,
+      "isWatched": true
+    },
+    {
+      "id": "cao-kisei-digital-ai-wg-112",
+      "name": "規制改革推進会議 デジタル・AI WG",
+      "ministry": "CAO",
+      "category": "WORKING_GROUP",
+      "description": "規制改革推進会議 デジタル・AI WGに関する調査審議・検討を行う。",
+      "officialUrl": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/meeting.html",
+      "pastYearCount": 1,
+      "isWatched": true
+    },
+    {
+      "id": "mhlw-hosho-shiinsentaku-134",
+      "name": "社会保障審議会 死因選択検討ワーキンググループ",
+      "ministry": "MHLW",
+      "category": "WORKING_GROUP",
+      "description": "社会保障審議会 死因選択検討ワーキンググループに関する調査審議・検討を行う。",
+      "officialUrl": "https://www.mhlw.go.jp/stf/shingi/shingi-hosho_shiinsentaku.html",
+      "pastYearCount": 1,
+      "isWatched": true
+    },
+    {
+      "id": "mod-shisetsu-155",
+      "name": "防衛施設中央審議会",
+      "ministry": "MOD",
+      "category": "COMMITTEE",
+      "description": "防衛施設中央審議会に関する調査審議・検討を行う。",
+      "officialUrl": "https://www.mod.go.jp/j/approach/agenda/meeting/shisetsu/index.html",
+      "pastYearCount": 1,
+      "isWatched": true
+    },
+    {
+      "id": "cao-kisei-hatarakikata-wg-111",
+      "name": "規制改革推進会議 働き方・人への投資WG",
+      "ministry": "CAO",
+      "category": "WORKING_GROUP",
+      "description": "規制改革推進会議 働き方・人への投資WGに関する調査審議・検討を行う。",
+      "officialUrl": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/meeting.html",
+      "pastYearCount": 1,
+      "isWatched": true
+    },
+    {
+      "id": "mhlw-hosho-jidoukan-140",
+      "name": "社会保障審議会 児童館のあり方に関する検討ワーキンググループ",
+      "ministry": "MHLW",
+      "category": "WORKING_GROUP",
+      "description": "社会保障審議会 児童館のあり方に関する検討ワーキンググループに関する調査審議・検討を行う。",
+      "officialUrl": "https://www.mhlw.go.jp/stf/shingi/shingi-hosho_jidoukan.html",
+      "pastYearCount": 1,
+      "isWatched": true
+    },
+    {
+      "id": "mof-customs-appeal-129",
+      "name": "関税等ふん争審査会",
+      "ministry": "MOF",
+      "category": "COUNCIL",
+      "description": "関税等ふん争審査会に関する調査審議・検討を行う。",
+      "officialUrl": "https://www.mof.go.jp/about_mof/councils/customs_appeal/index.html",
+      "pastYearCount": 1,
+      "isWatched": true
+    },
+    {
+      "id": "mhlw-kousei-influ-145",
+      "name": "厚生科学審議会 新型インフルエンザ対策に関する小委員会",
+      "ministry": "MHLW",
+      "category": "COMMITTEE",
+      "description": "厚生科学審議会 新型インフルエンザ対策に関する小委員会に関する調査審議・検討を行う。",
+      "officialUrl": "https://www.mhlw.go.jp/stf/shingi/shingi-kousei_influ.html",
+      "pastYearCount": 1,
+      "isWatched": true
+    },
+    {
+      "id": "fsc-tenkabutu-117",
+      "name": "添加物専門調査会",
+      "ministry": "CAO",
+      "category": "COUNCIL",
+      "description": "添加物専門調査会に関する調査審議・検討を行う。",
+      "officialUrl": "https://www.fsc.go.jp/senmon/tenkabutu/",
+      "pastYearCount": 1,
+      "isWatched": true
+    },
+    {
+      "id": "fsc-honkaigi-115",
+      "name": "食品安全委員会 (本会議)",
+      "ministry": "CAO",
+      "category": "COMMITTEE",
+      "description": "食品安全委員会 (本会議)に関する調査審議・検討を行う。",
+      "officialUrl": "https://www.fsc.go.jp/iinkai/",
+      "pastYearCount": 1,
+      "isWatched": true
+    },
+    {
+      "id": "fsc-kikaku-116",
+      "name": "企画等専門調査会",
+      "ministry": "CAO",
+      "category": "COUNCIL",
+      "description": "企画等専門調査会に関する調査審議・検討を行う。",
+      "officialUrl": "https://www.fsc.go.jp/senmon/kikaku/",
+      "pastYearCount": 1,
+      "isWatched": true
+    },
+    {
+      "id": "ra-000815-79",
+      "name": "ra-000815-79",
+      "ministry": "RA",
+      "category": "COUNCIL",
+      "description": "ra-000815-79に関する調査審議・検討を行う。",
+      "officialUrl": "https://www.reconstruction.go.jp/topics/cat-11/cat-47/cat-158/000815/",
+      "pastYearCount": 1,
+      "isWatched": true
+    },
+    {
+      "id": "cas-atarashii-sihon-107",
+      "name": "cas-atarashii-sihon-107",
+      "ministry": "CAS",
+      "category": "COUNCIL",
+      "description": "cas-atarashii-sihon-107に関する調査審議・検討を行う。",
+      "officialUrl": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai37/gijisidai.html",
+      "pastYearCount": 1,
+      "isWatched": true
+    },
+    {
+      "id": "cas-roumuhi-tenka-108",
+      "name": "cas-roumuhi-tenka-108",
+      "ministry": "CAS",
+      "category": "COUNCIL",
+      "description": "cas-roumuhi-tenka-108に関する調査審議・検討を行う。",
+      "officialUrl": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/honbu/dai5/gijisidai.html",
+      "pastYearCount": 0,
+      "isWatched": true
+    },
+    {
+      "id": "fsc-nouyaku-118",
+      "name": "fsc-nouyaku-118",
+      "ministry": "CAO",
+      "category": "COUNCIL",
+      "description": "fsc-nouyaku-118に関する調査審議・検討を行う。",
+      "officialUrl": "https://www.fsc.go.jp/senmon/nouyaku/nou_dai5_senmon_susa_index.html",
+      "pastYearCount": 0,
+      "isWatched": true
+    },
+    {
+      "id": "cao-kisei-startup-wg-113",
+      "name": "規制改革推進会議 スタートアップ・イノベーション促進WG",
+      "ministry": "CAO",
+      "category": "WORKING_GROUP",
+      "description": "規制改革推進会議 スタートアップ・イノベーション促進WGに関する調査審議・検討を行う。",
+      "officialUrl": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/meeting.html",
+      "pastYearCount": 0,
+      "isWatched": true
+    },
+    {
+      "id": "cao-kisei-gx-subwg-114",
+      "name": "規制改革推進会議 GX・サステナビリティサブWG",
+      "ministry": "CAO",
+      "category": "WORKING_GROUP",
+      "description": "規制改革推進会議 GX・サステナビリティサブWGに関する調査審議・検討を行う。",
+      "officialUrl": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/meeting.html",
+      "pastYearCount": 0,
+      "isWatched": true
     }
   ],
   "meetings": [
@@ -23340,6 +23929,89 @@
       "docCount": 4
     },
     {
+      "id": "meet-2026-03-13-smea-chizai-torihiki-wg-dai1",
+      "councilId": "smea-chizai-torihiki-wg",
+      "councilName": "知的財産取引適正化ワーキンググループ",
+      "ministry": "SMEA",
+      "category": "WORKING_GROUP",
+      "title": "第1回 知的財産取引適正化ワーキンググループ",
+      "date": "2026/03/13",
+      "updatedAt": "2026/03/13 17:00",
+      "location": "中小企業庁 / Web会議",
+      "summary": "知的財産取引適正化ワーキンググループ（第1回）の開催。配付資料および議事概要。",
+      "agenda": [
+        "知的財産取引適正化ワーキンググループにおける検討・審議"
+      ],
+      "materials": [
+        {
+          "name": "知的財産取引適正化ワーキンググループ 報告書",
+          "type": "HTML",
+          "size": "-",
+          "url": "https://www.chusho.meti.go.jp/koukai/kenkyukai/chizaitorihiki_wg/report/260313report.html",
+          "isMinutes": false
+        },
+        {
+          "name": "第1回 知的財産取引適正化ワーキンググループ 配布資料",
+          "type": "HTML",
+          "size": "-",
+          "url": "https://www.chusho.meti.go.jp/koukai/kenkyukai/chizaitorihiki_wg/001/001.html",
+          "isMinutes": false
+        },
+        {
+          "name": "第1回 知的財産取引適正化ワーキンググループ 議事要旨(18KB) (PDF)",
+          "type": "PDF",
+          "size": "PDF",
+          "url": "https://www.chusho.meti.go.jp/koukai/kenkyukai/chizaitorihiki_wg/001/gy.pdf",
+          "isMinutes": true
+        },
+        {
+          "name": "第1回 知的財産取引適正化ワーキンググループ 議事録(319KB) (PDF)",
+          "type": "PDF",
+          "size": "PDF",
+          "url": "https://www.chusho.meti.go.jp/koukai/kenkyukai/chizaitorihiki_wg/001/gijiroku.pdf",
+          "isMinutes": true
+        },
+        {
+          "name": "ホーム",
+          "type": "HTML",
+          "size": "-",
+          "url": "https://www.chusho.meti.go.jp/",
+          "isMinutes": false
+        },
+        {
+          "name": "議事次第 (PDF)",
+          "type": "PDF",
+          "size": "PDF",
+          "url": "https://www.chusho.meti.go.jp/koukai/kenkyukai/chizaitorihiki_wg/001/giji.pdf",
+          "isMinutes": true
+        },
+        {
+          "name": "【資料1】開催要領 (PDF)",
+          "type": "PDF",
+          "size": "PDF",
+          "url": "https://www.chusho.meti.go.jp/koukai/kenkyukai/chizaitorihiki_wg/001/001.pdf",
+          "isMinutes": false
+        },
+        {
+          "name": "【資料2】事務局資料 (PDF)",
+          "type": "PDF",
+          "size": "PDF",
+          "url": "https://www.chusho.meti.go.jp/koukai/kenkyukai/chizaitorihiki_wg/001/002.pdf",
+          "isMinutes": false
+        }
+      ],
+      "tags": [
+        "知的財産取引適正化ワーキンググループ",
+        "中小企業庁",
+        "SMEA",
+        "研究会",
+        "検討会"
+      ],
+      "officialUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/chizaitorihiki_wg/001/001.html",
+      "hasMinutes": true,
+      "docCount": 8
+    },
+    {
       "id": "meet-2026-0312-mof-customs-appeal-129",
       "councilId": "mof-customs-appeal-129",
       "councilName": "mof-customs-appeal-129",
@@ -37084,6 +37756,110 @@
       "docCount": 8
     },
     {
+      "id": "meet-2025-11-14-smea-chizai-torihiki-wg-dai2",
+      "councilId": "smea-chizai-torihiki-wg",
+      "councilName": "知的財産取引適正化ワーキンググループ",
+      "ministry": "SMEA",
+      "category": "WORKING_GROUP",
+      "title": "第2回 知的財産取引適正化ワーキンググループ",
+      "date": "2025/11/14",
+      "updatedAt": "2025/11/14 17:00",
+      "location": "中小企業庁 / Web会議",
+      "summary": "知的財産取引適正化ワーキンググループ（第2回）の開催。配付資料および議事概要。",
+      "agenda": [
+        "知的財産取引適正化ワーキンググループにおける検討・審議"
+      ],
+      "materials": [
+        {
+          "name": "第2回 知的財産取引適正化ワーキンググループ 配布資料",
+          "type": "HTML",
+          "size": "-",
+          "url": "https://www.chusho.meti.go.jp/koukai/kenkyukai/chizaitorihiki_wg/002/002.html",
+          "isMinutes": false
+        },
+        {
+          "name": "第2回 知的財産取引適正化ワーキンググループ 議事要旨(256KB) (PDF)",
+          "type": "PDF",
+          "size": "PDF",
+          "url": "https://www.chusho.meti.go.jp/koukai/kenkyukai/chizaitorihiki_wg/002/gy.pdf",
+          "isMinutes": true
+        },
+        {
+          "name": "第2回 知的財産取引適正化ワーキンググループ 議事録(394KB) (PDF)",
+          "type": "PDF",
+          "size": "PDF",
+          "url": "https://www.chusho.meti.go.jp/koukai/kenkyukai/chizaitorihiki_wg/002/gijiroku.pdf",
+          "isMinutes": true
+        },
+        {
+          "name": "ホーム",
+          "type": "HTML",
+          "size": "-",
+          "url": "https://www.chusho.meti.go.jp/",
+          "isMinutes": false
+        },
+        {
+          "name": "議事次第 (PDF)",
+          "type": "PDF",
+          "size": "PDF",
+          "url": "https://www.chusho.meti.go.jp/koukai/kenkyukai/chizaitorihiki_wg/002/giji.pdf",
+          "isMinutes": true
+        },
+        {
+          "name": "【資料1】委員名簿 (PDF)",
+          "type": "PDF",
+          "size": "PDF",
+          "url": "https://www.chusho.meti.go.jp/koukai/kenkyukai/chizaitorihiki_wg/002/001.pdf",
+          "isMinutes": false
+        },
+        {
+          "name": "【資料2】事務局資料 (PDF)",
+          "type": "PDF",
+          "size": "PDF",
+          "url": "https://www.chusho.meti.go.jp/koukai/kenkyukai/chizaitorihiki_wg/002/002.pdf",
+          "isMinutes": false
+        },
+        {
+          "name": "【参考資料1】調査結果集（概要） (PDF)",
+          "type": "PDF",
+          "size": "PDF",
+          "url": "https://www.chusho.meti.go.jp/koukai/kenkyukai/chizaitorihiki_wg/002/s001.pdf",
+          "isMinutes": false
+        },
+        {
+          "name": "【参考資料2】スタートアップとの事業連携及びスタートアップへの出資に関する指針 (PDF)",
+          "type": "PDF",
+          "size": "PDF",
+          "url": "https://www.chusho.meti.go.jp/koukai/kenkyukai/chizaitorihiki_wg/002/s002.pdf",
+          "isMinutes": false
+        },
+        {
+          "name": "【参考資料3】スタートアップとの事業連携及びスタートアップへの出資に関する指針ガイドブック (PDF)",
+          "type": "PDF",
+          "size": "PDF",
+          "url": "https://www.chusho.meti.go.jp/koukai/kenkyukai/chizaitorihiki_wg/002/s003.pdf",
+          "isMinutes": false
+        },
+        {
+          "name": "【参考資料4】知的財産取引に関するガイドライン・関連資料抜粋 (PDF)",
+          "type": "PDF",
+          "size": "PDF",
+          "url": "https://www.chusho.meti.go.jp/koukai/kenkyukai/chizaitorihiki_wg/002/s004.pdf",
+          "isMinutes": false
+        }
+      ],
+      "tags": [
+        "知的財産取引適正化ワーキンググループ",
+        "中小企業庁",
+        "SMEA",
+        "研究会",
+        "検討会"
+      ],
+      "officialUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/chizaitorihiki_wg/002/002.html",
+      "hasMinutes": true,
+      "docCount": 11
+    },
+    {
       "id": "meet-2025-11-13-cao-zei_cho-42-dai4",
       "councilId": "cao-zei_cho-42",
       "councilName": "税制調査会",
@@ -45176,6 +45952,82 @@
       "officialUrl": "https://www.chisou.go.jp/tiiki/kokusentoc/dai65/shiryou.html",
       "hasMinutes": true,
       "docCount": 9
+    },
+    {
+      "id": "meet-2024-12-17-smea-kigyo-torihiki-dai6",
+      "councilId": "smea-kigyo-torihiki",
+      "councilName": "企業取引研究会",
+      "ministry": "SMEA",
+      "category": "STUDY",
+      "title": "第6回 企業取引研究会",
+      "date": "2024/12/17",
+      "updatedAt": "2024/12/17 17:00",
+      "location": "中小企業庁 / Web会議",
+      "summary": "企業取引研究会（第6回）の開催。配付資料および議事概要。",
+      "agenda": [
+        "企業取引研究会における検討・審議"
+      ],
+      "materials": [
+        {
+          "name": "第6回 企業取引研究会 配布資料",
+          "type": "HTML",
+          "size": "-",
+          "url": "https://www.chusho.meti.go.jp/koukai/kenkyukai/kigyo_torihiki/006/006.html",
+          "isMinutes": false
+        },
+        {
+          "name": "第6回 企業取引研究会 議事録(459KB) (PDF)",
+          "type": "PDF",
+          "size": "PDF",
+          "url": "https://www.chusho.meti.go.jp/koukai/kenkyukai/kigyo_torihiki/006/gijiroku.pdf",
+          "isMinutes": true
+        },
+        {
+          "name": "第6回 企業取引研究会 議事要旨(192KB) (PDF)",
+          "type": "PDF",
+          "size": "PDF",
+          "url": "https://www.chusho.meti.go.jp/koukai/kenkyukai/kigyo_torihiki/006/gy.pdf",
+          "isMinutes": true
+        },
+        {
+          "name": "ホーム",
+          "type": "HTML",
+          "size": "-",
+          "url": "https://www.chusho.meti.go.jp/",
+          "isMinutes": false
+        },
+        {
+          "name": "議事次第 (PDF)",
+          "type": "PDF",
+          "size": "PDF",
+          "url": "https://www.chusho.meti.go.jp/koukai/kenkyukai/kigyo_torihiki/006/giji.pdf",
+          "isMinutes": true
+        },
+        {
+          "name": "資料　事務局資料（企業取引研究会報告書案） (PDF)",
+          "type": "PDF",
+          "size": "PDF",
+          "url": "https://www.chusho.meti.go.jp/koukai/kenkyukai/kigyo_torihiki/006/001.pdf",
+          "isMinutes": false
+        },
+        {
+          "name": "別添　資料編 (PDF)",
+          "type": "PDF",
+          "size": "PDF",
+          "url": "https://www.chusho.meti.go.jp/koukai/kenkyukai/kigyo_torihiki/006/002.pdf",
+          "isMinutes": false
+        }
+      ],
+      "tags": [
+        "企業取引研究会",
+        "中小企業庁",
+        "SMEA",
+        "研究会",
+        "検討会"
+      ],
+      "officialUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/kigyo_torihiki/006/006.html",
+      "hasMinutes": true,
+      "docCount": 7
     },
     {
       "id": "meet-2024-12-13-cao-kisei-chiiki-wg-109",
@@ -66876,6 +67728,82 @@
       "docCount": 6
     },
     {
+      "id": "meet-2024-11-26-smea-kigyo-torihiki-dai5",
+      "councilId": "smea-kigyo-torihiki",
+      "councilName": "企業取引研究会",
+      "ministry": "SMEA",
+      "category": "STUDY",
+      "title": "第5回 企業取引研究会",
+      "date": "2024/11/26",
+      "updatedAt": "2024/11/26 17:00",
+      "location": "中小企業庁 / Web会議",
+      "summary": "企業取引研究会（第5回）の開催。配付資料および議事概要。",
+      "agenda": [
+        "企業取引研究会における検討・審議"
+      ],
+      "materials": [
+        {
+          "name": "第5回 企業取引研究会 配布資料",
+          "type": "HTML",
+          "size": "-",
+          "url": "https://www.chusho.meti.go.jp/koukai/kenkyukai/kigyo_torihiki/r7_005/005.html",
+          "isMinutes": false
+        },
+        {
+          "name": "第5回 企業取引研究会 配布資料",
+          "type": "HTML",
+          "size": "-",
+          "url": "https://www.chusho.meti.go.jp/koukai/kenkyukai/kigyo_torihiki/005/005.html",
+          "isMinutes": false
+        },
+        {
+          "name": "第5回 企業取引研究会 議事録(340KB) (PDF)",
+          "type": "PDF",
+          "size": "PDF",
+          "url": "https://www.chusho.meti.go.jp/koukai/kenkyukai/kigyo_torihiki/005/gijiroku.pdf",
+          "isMinutes": true
+        },
+        {
+          "name": "第5回 企業取引研究会 議事要旨(193KB) (PDF)",
+          "type": "PDF",
+          "size": "PDF",
+          "url": "https://www.chusho.meti.go.jp/koukai/kenkyukai/kigyo_torihiki/005/gy.pdf",
+          "isMinutes": true
+        },
+        {
+          "name": "ホーム",
+          "type": "HTML",
+          "size": "-",
+          "url": "https://www.chusho.meti.go.jp/",
+          "isMinutes": false
+        },
+        {
+          "name": "議事次第 (PDF)",
+          "type": "PDF",
+          "size": "PDF",
+          "url": "https://www.chusho.meti.go.jp/koukai/kenkyukai/kigyo_torihiki/005/giji.pdf",
+          "isMinutes": true
+        },
+        {
+          "name": "【資料1】事務局資料 (PDF)",
+          "type": "PDF",
+          "size": "PDF",
+          "url": "https://www.chusho.meti.go.jp/koukai/kenkyukai/kigyo_torihiki/005/001.pdf",
+          "isMinutes": false
+        }
+      ],
+      "tags": [
+        "企業取引研究会",
+        "中小企業庁",
+        "SMEA",
+        "研究会",
+        "検討会"
+      ],
+      "officialUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/kigyo_torihiki/005/005.html",
+      "hasMinutes": true,
+      "docCount": 7
+    },
+    {
       "id": "meet-2024-11-22-fdma-kento-149-令和6年度-dai1",
       "councilId": "fdma-kento-149",
       "councilName": "輪島市大規模火災を踏まえた消防防災対策のあり方に関する検討会",
@@ -68470,6 +69398,103 @@
       "docCount": 4
     },
     {
+      "id": "meet-2024-10-24-smea-kigyo-torihiki-dai4",
+      "councilId": "smea-kigyo-torihiki",
+      "councilName": "企業取引研究会",
+      "ministry": "SMEA",
+      "category": "STUDY",
+      "title": "第4回 企業取引研究会",
+      "date": "2024/10/24",
+      "updatedAt": "2024/10/24 17:00",
+      "location": "中小企業庁 / Web会議",
+      "summary": "企業取引研究会（第4回）の開催。配付資料および議事概要。",
+      "agenda": [
+        "企業取引研究会における検討・審議"
+      ],
+      "materials": [
+        {
+          "name": "第4回 企業取引研究会 配布資料",
+          "type": "HTML",
+          "size": "-",
+          "url": "https://www.chusho.meti.go.jp/koukai/kenkyukai/kigyo_torihiki/r7_004/004.html",
+          "isMinutes": false
+        },
+        {
+          "name": "第4回 企業取引研究会 議事要旨(244KB) (PDF)",
+          "type": "PDF",
+          "size": "PDF",
+          "url": "https://www.chusho.meti.go.jp/koukai/kenkyukai/kigyo_torihiki/r7_004/gy.pdf",
+          "isMinutes": true
+        },
+        {
+          "name": "第4回 企業取引研究会 議事録(379KB) (PDF)",
+          "type": "PDF",
+          "size": "PDF",
+          "url": "https://www.chusho.meti.go.jp/koukai/kenkyukai/kigyo_torihiki/r7_004/gijiroku.pdf",
+          "isMinutes": true
+        },
+        {
+          "name": "第4回 企業取引研究会 配布資料",
+          "type": "HTML",
+          "size": "-",
+          "url": "https://www.chusho.meti.go.jp/koukai/kenkyukai/kigyo_torihiki/004/004.html",
+          "isMinutes": false
+        },
+        {
+          "name": "第4回 企業取引研究会 議事録(547KB) (PDF)",
+          "type": "PDF",
+          "size": "PDF",
+          "url": "https://www.chusho.meti.go.jp/koukai/kenkyukai/kigyo_torihiki/004/gijiroku.pdf",
+          "isMinutes": true
+        },
+        {
+          "name": "第4回 企業取引研究会 議事要旨(217KB) (PDF)",
+          "type": "PDF",
+          "size": "PDF",
+          "url": "https://www.chusho.meti.go.jp/koukai/kenkyukai/kigyo_torihiki/004/gy.pdf",
+          "isMinutes": true
+        },
+        {
+          "name": "ホーム",
+          "type": "HTML",
+          "size": "-",
+          "url": "https://www.chusho.meti.go.jp/",
+          "isMinutes": false
+        },
+        {
+          "name": "議事次第 (PDF)",
+          "type": "PDF",
+          "size": "PDF",
+          "url": "https://www.chusho.meti.go.jp/koukai/kenkyukai/kigyo_torihiki/004/giji.pdf",
+          "isMinutes": true
+        },
+        {
+          "name": "【資料1】事務局資料 (PDF)",
+          "type": "PDF",
+          "size": "PDF",
+          "url": "https://www.chusho.meti.go.jp/koukai/kenkyukai/kigyo_torihiki/004/001.pdf",
+          "isMinutes": false
+        },
+        {
+          "name": "【資料2】日本商工会議所 提出資料 (PDF)",
+          "type": "PDF",
+          "size": "PDF",
+          "url": "https://www.chusho.meti.go.jp/koukai/kenkyukai/kigyo_torihiki/004/002.pdf",
+          "isMinutes": false
+        }
+      ],
+      "tags": [
+        "企業取引研究会",
+        "中小企業庁",
+        "SMEA",
+        "研究会",
+        "検討会"
+      ],
+      "officialUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/kigyo_torihiki/004/004.html",
+      "hasMinutes": true,
+      "docCount": 10
+    },
+    {
       "id": "meet-2024-10-22-mof-zaiseiseido-bunkakai",
       "councilId": "mof-zaiseiseido-bunkakai",
       "councilName": "財政制度等審議会 財政制度分科会",
@@ -68640,6 +69665,103 @@
       "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/nousui/kome_anteikyokyujitsugen_kaigi/dai2/shiryo.pdf",
       "hasMinutes": true,
       "docCount": 4
+    },
+    {
+      "id": "meet-2024-10-07-smea-kigyo-torihiki-dai3",
+      "councilId": "smea-kigyo-torihiki",
+      "councilName": "企業取引研究会",
+      "ministry": "SMEA",
+      "category": "STUDY",
+      "title": "第3回 企業取引研究会",
+      "date": "2024/10/07",
+      "updatedAt": "2024/10/07 17:00",
+      "location": "中小企業庁 / Web会議",
+      "summary": "企業取引研究会（第3回）の開催。配付資料および議事概要。",
+      "agenda": [
+        "企業取引研究会における検討・審議"
+      ],
+      "materials": [
+        {
+          "name": "第3回 企業取引研究会 配布資料",
+          "type": "HTML",
+          "size": "-",
+          "url": "https://www.chusho.meti.go.jp/koukai/kenkyukai/kigyo_torihiki/r7_003/003.html",
+          "isMinutes": false
+        },
+        {
+          "name": "第3回 企業取引研究会 議事要旨(201KB) (PDF)",
+          "type": "PDF",
+          "size": "PDF",
+          "url": "https://www.chusho.meti.go.jp/koukai/kenkyukai/kigyo_torihiki/r7_003/gy.pdf",
+          "isMinutes": true
+        },
+        {
+          "name": "第3回 企業取引研究会 議事録(41KB) (PDF)",
+          "type": "PDF",
+          "size": "PDF",
+          "url": "https://www.chusho.meti.go.jp/koukai/kenkyukai/kigyo_torihiki/r7_003/gijiroku.pdf",
+          "isMinutes": true
+        },
+        {
+          "name": "第3回 企業取引研究会 配布資料",
+          "type": "HTML",
+          "size": "-",
+          "url": "https://www.chusho.meti.go.jp/koukai/kenkyukai/kigyo_torihiki/003/003.html",
+          "isMinutes": false
+        },
+        {
+          "name": "第3回 企業取引研究会 議事録(345KB) (PDF)",
+          "type": "PDF",
+          "size": "PDF",
+          "url": "https://www.chusho.meti.go.jp/koukai/kenkyukai/kigyo_torihiki/003/gijiroku.pdf",
+          "isMinutes": true
+        },
+        {
+          "name": "第3回 企業取引研究会 議事要旨(258KB) (PDF)",
+          "type": "PDF",
+          "size": "PDF",
+          "url": "https://www.chusho.meti.go.jp/koukai/kenkyukai/kigyo_torihiki/003/gy.pdf",
+          "isMinutes": true
+        },
+        {
+          "name": "ホーム",
+          "type": "HTML",
+          "size": "-",
+          "url": "https://www.chusho.meti.go.jp/",
+          "isMinutes": false
+        },
+        {
+          "name": "議事次第 (PDF)",
+          "type": "PDF",
+          "size": "PDF",
+          "url": "https://www.chusho.meti.go.jp/koukai/kenkyukai/kigyo_torihiki/003/giji.pdf",
+          "isMinutes": true
+        },
+        {
+          "name": "【資料1】事務局資料（① 物流に係る優越的地位の濫用規制の在り方、② 執行に係る省庁間の連携の在り方） (PDF)",
+          "type": "PDF",
+          "size": "PDF",
+          "url": "https://www.chusho.meti.go.jp/koukai/kenkyukai/kigyo_torihiki/003/001.pdf",
+          "isMinutes": false
+        },
+        {
+          "name": "【資料2】国土交通省 物流・自動車局貨物流通事業課 提出資料 (PDF)",
+          "type": "PDF",
+          "size": "PDF",
+          "url": "https://www.chusho.meti.go.jp/koukai/kenkyukai/kigyo_torihiki/003/002.pdf",
+          "isMinutes": false
+        }
+      ],
+      "tags": [
+        "企業取引研究会",
+        "中小企業庁",
+        "SMEA",
+        "研究会",
+        "検討会"
+      ],
+      "officialUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/kigyo_torihiki/003/003.html",
+      "hasMinutes": true,
+      "docCount": 10
     },
     {
       "id": "meet-2024-09-09-cas-linear-107-dai2",
@@ -69320,6 +70442,117 @@
       "officialUrl": "https://www.cas.go.jp/jp/seisaku/kyouseishakai/suisinhonbu_dai1/gijisidai.txt",
       "hasMinutes": false,
       "docCount": 5
+    },
+    {
+      "id": "meet-2024-07-22-smea-kigyo-torihiki-dai1",
+      "councilId": "smea-kigyo-torihiki",
+      "councilName": "企業取引研究会",
+      "ministry": "SMEA",
+      "category": "STUDY",
+      "title": "第1回 企業取引研究会",
+      "date": "2024/07/22",
+      "updatedAt": "2024/07/22 17:00",
+      "location": "中小企業庁 / Web会議",
+      "summary": "企業取引研究会（第1回）の開催。配付資料および議事概要。",
+      "agenda": [
+        "企業取引研究会における検討・審議"
+      ],
+      "materials": [
+        {
+          "name": "第1回 企業取引研究会 配布資料",
+          "type": "HTML",
+          "size": "-",
+          "url": "https://www.chusho.meti.go.jp/koukai/kenkyukai/kigyo_torihiki/r7_001/001.html",
+          "isMinutes": false
+        },
+        {
+          "name": "第1回 企業取引研究会 議事要旨(22KB)",
+          "type": "HTML",
+          "size": "-",
+          "url": "https://www.chusho.meti.go.jp/koukai/kenkyukai/kigyo_torihiki/r7_001/gy.pdff",
+          "isMinutes": true
+        },
+        {
+          "name": "第1回 企業取引研究会 議事録(329KB) (PDF)",
+          "type": "PDF",
+          "size": "PDF",
+          "url": "https://www.chusho.meti.go.jp/koukai/kenkyukai/kigyo_torihiki/r7_001/gijiroku.pdf",
+          "isMinutes": true
+        },
+        {
+          "name": "第1回 企業取引研究会 配布資料",
+          "type": "HTML",
+          "size": "-",
+          "url": "https://www.chusho.meti.go.jp/koukai/kenkyukai/kigyo_torihiki/001/001.html",
+          "isMinutes": false
+        },
+        {
+          "name": "第1回 企業取引研究会 議事録(354KB) (PDF)",
+          "type": "PDF",
+          "size": "PDF",
+          "url": "https://www.chusho.meti.go.jp/koukai/kenkyukai/kigyo_torihiki/001/gijiroku.pdf",
+          "isMinutes": true
+        },
+        {
+          "name": "下請法の改正に向けて、「企業取引研究会」を開催します(122KB) (PDF)",
+          "type": "PDF",
+          "size": "PDF",
+          "url": "https://www.chusho.meti.go.jp/koukai/kenkyukai/kigyo_torihiki/240719.pdf",
+          "isMinutes": false
+        },
+        {
+          "name": "ホーム",
+          "type": "HTML",
+          "size": "-",
+          "url": "https://www.chusho.meti.go.jp/",
+          "isMinutes": false
+        },
+        {
+          "name": "議事次第 (PDF)",
+          "type": "PDF",
+          "size": "PDF",
+          "url": "https://www.chusho.meti.go.jp/koukai/kenkyukai/kigyo_torihiki/001/giji.pdf",
+          "isMinutes": true
+        },
+        {
+          "name": "【資料1】開催要領 (PDF)",
+          "type": "PDF",
+          "size": "PDF",
+          "url": "https://www.chusho.meti.go.jp/koukai/kenkyukai/kigyo_torihiki/001/001.pdf",
+          "isMinutes": false
+        },
+        {
+          "name": "【資料2】優越的地位の濫用規制について（独占禁止法・下請法）御説明資料 (PDF)",
+          "type": "PDF",
+          "size": "PDF",
+          "url": "https://www.chusho.meti.go.jp/koukai/kenkyukai/kigyo_torihiki/001/002.pdf",
+          "isMinutes": false
+        },
+        {
+          "name": "【資料3】円滑な価格転嫁のための取引環境の整備について (PDF)",
+          "type": "PDF",
+          "size": "PDF",
+          "url": "https://www.chusho.meti.go.jp/koukai/kenkyukai/kigyo_torihiki/001/003.pdf",
+          "isMinutes": false
+        },
+        {
+          "name": "【参考】「経済財政運営と改革の基本方針2024～政策ファイル～」（令和6年6月21 日閣議決定）（抜粋）及び「新しい資本主義のグランドデザイン及び実行計画\n    2024 年改訂版」（令和 6年6月21 日閣議決定）（抜粋） (PDF)",
+          "type": "PDF",
+          "size": "PDF",
+          "url": "https://www.chusho.meti.go.jp/koukai/kenkyukai/kigyo_torihiki/001/s001.pdf",
+          "isMinutes": false
+        }
+      ],
+      "tags": [
+        "企業取引研究会",
+        "中小企業庁",
+        "SMEA",
+        "研究会",
+        "検討会"
+      ],
+      "officialUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/kigyo_torihiki/001/001.html",
+      "hasMinutes": true,
+      "docCount": 12
     },
     {
       "id": "meet-2024-07-18-fdma-kento-180-令和6年度-dai1",
@@ -75377,6 +76610,481 @@
       "officialUrl": "https://www.cas.go.jp/jp/seisaku/linear/dai1/siryou1.pdf",
       "hasMinutes": true,
       "docCount": 14
+    },
+    {
+      "id": "meet-2024-01-15-smea-kigyo-torihiki-dai2",
+      "councilId": "smea-kigyo-torihiki",
+      "councilName": "企業取引研究会",
+      "ministry": "SMEA",
+      "category": "STUDY",
+      "title": "第2回 企業取引研究会",
+      "date": "2024/01/15",
+      "updatedAt": "2024/01/15 17:00",
+      "location": "中小企業庁 / Web会議",
+      "summary": "企業取引研究会（第2回）の開催。配付資料および議事概要。",
+      "agenda": [
+        "企業取引研究会における検討・審議"
+      ],
+      "materials": [
+        {
+          "name": "第2回 企業取引研究会 配布資料",
+          "type": "HTML",
+          "size": "-",
+          "url": "https://www.chusho.meti.go.jp/koukai/kenkyukai/kigyo_torihiki/r7_002/002.html",
+          "isMinutes": false
+        },
+        {
+          "name": "第2回 企業取引研究会 議事要旨(151KB) (PDF)",
+          "type": "PDF",
+          "size": "PDF",
+          "url": "https://www.chusho.meti.go.jp/koukai/kenkyukai/kigyo_torihiki/r7_002/gy.pdf",
+          "isMinutes": true
+        },
+        {
+          "name": "第2回 企業取引研究会 議事録(413KB) (PDF)",
+          "type": "PDF",
+          "size": "PDF",
+          "url": "https://www.chusho.meti.go.jp/koukai/kenkyukai/kigyo_torihiki/r7_002/gijiroku.pdf",
+          "isMinutes": true
+        },
+        {
+          "name": "第2回 企業取引研究会 配布資料",
+          "type": "HTML",
+          "size": "-",
+          "url": "https://www.chusho.meti.go.jp/koukai/kenkyukai/kigyo_torihiki/002/002.html",
+          "isMinutes": false
+        },
+        {
+          "name": "第2回 企業取引研究会 議事録(358KB) (PDF)",
+          "type": "PDF",
+          "size": "PDF",
+          "url": "https://www.chusho.meti.go.jp/koukai/kenkyukai/kigyo_torihiki/002/gijiroku.pdf",
+          "isMinutes": true
+        },
+        {
+          "name": "第2回 企業取引研究会 議事要旨(327KB) (PDF)",
+          "type": "PDF",
+          "size": "PDF",
+          "url": "https://www.chusho.meti.go.jp/koukai/kenkyukai/kigyo_torihiki/002/gy.pdf",
+          "isMinutes": true
+        },
+        {
+          "name": "ホーム",
+          "type": "HTML",
+          "size": "-",
+          "url": "https://www.chusho.meti.go.jp/",
+          "isMinutes": false
+        },
+        {
+          "name": "議事次第 (PDF)",
+          "type": "PDF",
+          "size": "PDF",
+          "url": "https://www.chusho.meti.go.jp/koukai/kenkyukai/kigyo_torihiki/002/giji.pdf",
+          "isMinutes": true
+        },
+        {
+          "name": "【資料1】事務局説明資料 (PDF)",
+          "type": "PDF",
+          "size": "PDF",
+          "url": "https://www.chusho.meti.go.jp/koukai/kenkyukai/kigyo_torihiki/002/001.pdf",
+          "isMinutes": false
+        },
+        {
+          "name": "【資料2】一般社団法人全国銀行協会提出資料 (PDF)",
+          "type": "PDF",
+          "size": "PDF",
+          "url": "https://www.chusho.meti.go.jp/koukai/kenkyukai/kigyo_torihiki/002/002.pdf",
+          "isMinutes": false
+        }
+      ],
+      "tags": [
+        "企業取引研究会",
+        "中小企業庁",
+        "SMEA",
+        "研究会",
+        "検討会"
+      ],
+      "officialUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/kigyo_torihiki/002/002.html",
+      "hasMinutes": true,
+      "docCount": 10
+    },
+    {
+      "id": "meet-2024-01-15-smea-chizai-torihiki-wg-dai3",
+      "councilId": "smea-chizai-torihiki-wg",
+      "councilName": "知的財産取引適正化ワーキンググループ",
+      "ministry": "SMEA",
+      "category": "WORKING_GROUP",
+      "title": "第3回 知的財産取引適正化ワーキンググループ",
+      "date": "2024/01/15",
+      "updatedAt": "2024/01/15 17:00",
+      "location": "中小企業庁 / Web会議",
+      "summary": "知的財産取引適正化ワーキンググループ（第3回）の開催。配付資料および議事概要。",
+      "agenda": [
+        "知的財産取引適正化ワーキンググループにおける検討・審議"
+      ],
+      "materials": [
+        {
+          "name": "第3回 知的財産取引適正化ワーキンググループ 配布資料",
+          "type": "HTML",
+          "size": "-",
+          "url": "https://www.chusho.meti.go.jp/koukai/kenkyukai/chizaitorihiki_wg/003/003.html",
+          "isMinutes": false
+        },
+        {
+          "name": "第3回 知的財産取引適正化ワーキンググループ 議事要旨(215KB) (PDF)",
+          "type": "PDF",
+          "size": "PDF",
+          "url": "https://www.chusho.meti.go.jp/koukai/kenkyukai/chizaitorihiki_wg/003/gy.pdf",
+          "isMinutes": true
+        },
+        {
+          "name": "第3回 知的財産取引適正化ワーキンググループ 議事録(491KB) (PDF)",
+          "type": "PDF",
+          "size": "PDF",
+          "url": "https://www.chusho.meti.go.jp/koukai/kenkyukai/chizaitorihiki_wg/003/gijiroku.pdf",
+          "isMinutes": true
+        },
+        {
+          "name": "ホーム",
+          "type": "HTML",
+          "size": "-",
+          "url": "https://www.chusho.meti.go.jp/",
+          "isMinutes": false
+        },
+        {
+          "name": "議事次第 (PDF)",
+          "type": "PDF",
+          "size": "PDF",
+          "url": "https://www.chusho.meti.go.jp/koukai/kenkyukai/chizaitorihiki_wg/003/giji.pdf",
+          "isMinutes": true
+        },
+        {
+          "name": "【資料1】委員名簿 (PDF)",
+          "type": "PDF",
+          "size": "PDF",
+          "url": "https://www.chusho.meti.go.jp/koukai/kenkyukai/chizaitorihiki_wg/003/001.pdf",
+          "isMinutes": false
+        }
+      ],
+      "tags": [
+        "知的財産取引適正化ワーキンググループ",
+        "中小企業庁",
+        "SMEA",
+        "研究会",
+        "検討会"
+      ],
+      "officialUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/chizaitorihiki_wg/003/003.html",
+      "hasMinutes": true,
+      "docCount": 6
+    },
+    {
+      "id": "meet-2024-01-15-smea-chizai-torihiki-wg-dai4",
+      "councilId": "smea-chizai-torihiki-wg",
+      "councilName": "知的財産取引適正化ワーキンググループ",
+      "ministry": "SMEA",
+      "category": "WORKING_GROUP",
+      "title": "第4回 知的財産取引適正化ワーキンググループ",
+      "date": "2024/01/15",
+      "updatedAt": "2024/01/15 17:00",
+      "location": "中小企業庁 / Web会議",
+      "summary": "知的財産取引適正化ワーキンググループ（第4回）の開催。配付資料および議事概要。",
+      "agenda": [
+        "知的財産取引適正化ワーキンググループにおける検討・審議"
+      ],
+      "materials": [
+        {
+          "name": "第4回 知的財産取引適正化ワーキンググループ 配布資料",
+          "type": "HTML",
+          "size": "-",
+          "url": "https://www.chusho.meti.go.jp/koukai/kenkyukai/chizaitorihiki_wg/004/004.html",
+          "isMinutes": false
+        },
+        {
+          "name": "第4回 知的財産取引適正化ワーキンググループ 議事要旨(188KB) (PDF)",
+          "type": "PDF",
+          "size": "PDF",
+          "url": "https://www.chusho.meti.go.jp/koukai/kenkyukai/chizaitorihiki_wg/004/gy.pdf",
+          "isMinutes": true
+        },
+        {
+          "name": "第4回 知的財産取引適正化ワーキンググループ 議事録(412KB) (PDF)",
+          "type": "PDF",
+          "size": "PDF",
+          "url": "https://www.chusho.meti.go.jp/koukai/kenkyukai/chizaitorihiki_wg/004/gijiroku.pdf",
+          "isMinutes": true
+        },
+        {
+          "name": "ホーム",
+          "type": "HTML",
+          "size": "-",
+          "url": "https://www.chusho.meti.go.jp/",
+          "isMinutes": false
+        },
+        {
+          "name": "議事次第 (PDF)",
+          "type": "PDF",
+          "size": "PDF",
+          "url": "https://www.chusho.meti.go.jp/koukai/kenkyukai/chizaitorihiki_wg/004/giji.pdf",
+          "isMinutes": true
+        },
+        {
+          "name": "【資料1】委員名簿 (PDF)",
+          "type": "PDF",
+          "size": "PDF",
+          "url": "https://www.chusho.meti.go.jp/koukai/kenkyukai/chizaitorihiki_wg/004/001.pdf",
+          "isMinutes": false
+        },
+        {
+          "name": "【資料2-1】知的財産権・ノウハウ・データを対象とした優越的地位の濫用行為等に関する実態調査報告書（案） (PDF)",
+          "type": "PDF",
+          "size": "PDF",
+          "url": "https://www.chusho.meti.go.jp/koukai/kenkyukai/chizaitorihiki_wg/004/002_1.pdf",
+          "isMinutes": false
+        },
+        {
+          "name": "【資料2-2】知的財産権・ノウハウ・データを対象とした優越的地位の濫用行為等に関する実態調査報告書（概要） (PDF)",
+          "type": "PDF",
+          "size": "PDF",
+          "url": "https://www.chusho.meti.go.jp/koukai/kenkyukai/chizaitorihiki_wg/004/002_2.pdf",
+          "isMinutes": false
+        },
+        {
+          "name": "【資料2-3】知的財産権・ノウハウ・データを対象とした優越的地位の濫用行為等に関する実態調査報告書（ポイント） (PDF)",
+          "type": "PDF",
+          "size": "PDF",
+          "url": "https://www.chusho.meti.go.jp/koukai/kenkyukai/chizaitorihiki_wg/004/002_3.pdf",
+          "isMinutes": false
+        },
+        {
+          "name": "【資料3】知的財産取引適正化ワーキンググループ　報告書（案） (PDF)",
+          "type": "PDF",
+          "size": "PDF",
+          "url": "https://www.chusho.meti.go.jp/koukai/kenkyukai/chizaitorihiki_wg/004/003.pdf",
+          "isMinutes": false
+        }
+      ],
+      "tags": [
+        "知的財産取引適正化ワーキンググループ",
+        "中小企業庁",
+        "SMEA",
+        "研究会",
+        "検討会"
+      ],
+      "officialUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/chizaitorihiki_wg/004/004.html",
+      "hasMinutes": true,
+      "docCount": 10
+    },
+    {
+      "id": "meet-2024-01-15-smea-keiei-bansou-dai1",
+      "councilId": "smea-keiei-bansou",
+      "councilName": "経営力再構築伴走支援推進協議会",
+      "ministry": "SMEA",
+      "category": "STUDY",
+      "title": "第1回 経営力再構築伴走支援推進協議会",
+      "date": "2024/01/15",
+      "updatedAt": "2024/01/15 17:00",
+      "location": "中小企業庁 / Web会議",
+      "summary": "経営力再構築伴走支援推進協議会（第1回）の開催。配付資料および議事概要。",
+      "agenda": [
+        "経営力再構築伴走支援推進協議会における検討・審議"
+      ],
+      "materials": [
+        {
+          "name": "第1回 経営力再構築伴走支援推進協議会 配布資料",
+          "type": "HTML",
+          "size": "-",
+          "url": "https://www.chusho.meti.go.jp/koukai/kenkyukai/keiei_bansou/001.html",
+          "isMinutes": false
+        },
+        {
+          "name": "第1回 経営力再構築伴走支援推進協議会 議事要旨(180KB) (PDF)",
+          "type": "PDF",
+          "size": "PDF",
+          "url": "https://www.chusho.meti.go.jp/koukai/kenkyukai/keiei_bansou/001_gy.pdf",
+          "isMinutes": true
+        }
+      ],
+      "tags": [
+        "経営力再構築伴走支援推進協議会",
+        "中小企業庁",
+        "SMEA",
+        "研究会",
+        "検討会"
+      ],
+      "officialUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/keiei_bansou/001.html",
+      "hasMinutes": true,
+      "docCount": 2
+    },
+    {
+      "id": "meet-2024-01-15-smea-keiei-bansou-dai2",
+      "councilId": "smea-keiei-bansou",
+      "councilName": "経営力再構築伴走支援推進協議会",
+      "ministry": "SMEA",
+      "category": "STUDY",
+      "title": "第2回 経営力再構築伴走支援推進協議会",
+      "date": "2024/01/15",
+      "updatedAt": "2024/01/15 17:00",
+      "location": "中小企業庁 / Web会議",
+      "summary": "経営力再構築伴走支援推進協議会（第2回）の開催。配付資料および議事概要。",
+      "agenda": [
+        "経営力再構築伴走支援推進協議会における検討・審議"
+      ],
+      "materials": [
+        {
+          "name": "第2回 経営力再構築伴走支援推進協議会 配布資料",
+          "type": "HTML",
+          "size": "-",
+          "url": "https://www.chusho.meti.go.jp/koukai/kenkyukai/keiei_bansou/002.html",
+          "isMinutes": false
+        },
+        {
+          "name": "第2回 経営力再構築伴走支援推進協議会 議事要旨(82KB) (PDF)",
+          "type": "PDF",
+          "size": "PDF",
+          "url": "https://www.chusho.meti.go.jp/koukai/kenkyukai/keiei_bansou/002_gy.pdf",
+          "isMinutes": true
+        }
+      ],
+      "tags": [
+        "経営力再構築伴走支援推進協議会",
+        "中小企業庁",
+        "SMEA",
+        "研究会",
+        "検討会"
+      ],
+      "officialUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/keiei_bansou/002.html",
+      "hasMinutes": true,
+      "docCount": 2
+    },
+    {
+      "id": "meet-2024-01-15-smea-keiei-bansou-dai3",
+      "councilId": "smea-keiei-bansou",
+      "councilName": "経営力再構築伴走支援推進協議会",
+      "ministry": "SMEA",
+      "category": "STUDY",
+      "title": "第3回 経営力再構築伴走支援推進協議会",
+      "date": "2024/01/15",
+      "updatedAt": "2024/01/15 17:00",
+      "location": "中小企業庁 / Web会議",
+      "summary": "経営力再構築伴走支援推進協議会（第3回）の開催。配付資料および議事概要。",
+      "agenda": [
+        "経営力再構築伴走支援推進協議会における検討・審議"
+      ],
+      "materials": [
+        {
+          "name": "第3回 経営力再構築伴走支援推進協議会 配布資料",
+          "type": "HTML",
+          "size": "-",
+          "url": "https://www.chusho.meti.go.jp/koukai/kenkyukai/keiei_bansou/003.html",
+          "isMinutes": false
+        },
+        {
+          "name": "第3回 経営力再構築伴走支援推進協議会 議事要旨(90KB) (PDF)",
+          "type": "PDF",
+          "size": "PDF",
+          "url": "https://www.chusho.meti.go.jp/koukai/kenkyukai/keiei_bansou/003_gy.pdf",
+          "isMinutes": true
+        }
+      ],
+      "tags": [
+        "経営力再構築伴走支援推進協議会",
+        "中小企業庁",
+        "SMEA",
+        "研究会",
+        "検討会"
+      ],
+      "officialUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/keiei_bansou/003.html",
+      "hasMinutes": true,
+      "docCount": 2
+    },
+    {
+      "id": "meet-2024-01-15-smea-keiei-bansou-dai4",
+      "councilId": "smea-keiei-bansou",
+      "councilName": "経営力再構築伴走支援推進協議会",
+      "ministry": "SMEA",
+      "category": "STUDY",
+      "title": "第4回 経営力再構築伴走支援推進協議会",
+      "date": "2024/01/15",
+      "updatedAt": "2024/01/15 17:00",
+      "location": "中小企業庁 / Web会議",
+      "summary": "経営力再構築伴走支援推進協議会（第4回）の開催。配付資料および議事概要。",
+      "agenda": [
+        "経営力再構築伴走支援推進協議会における検討・審議"
+      ],
+      "materials": [
+        {
+          "name": "第4回 経営力再構築伴走支援推進協議会 配布資料",
+          "type": "HTML",
+          "size": "-",
+          "url": "https://www.chusho.meti.go.jp/koukai/kenkyukai/keiei_bansou/004.html",
+          "isMinutes": false
+        },
+        {
+          "name": "第4回 経営力再構築伴走支援推進協議会 議事要旨(85KB) (PDF)",
+          "type": "PDF",
+          "size": "PDF",
+          "url": "https://www.chusho.meti.go.jp/koukai/kenkyukai/keiei_bansou/004_gy.pdf",
+          "isMinutes": true
+        }
+      ],
+      "tags": [
+        "経営力再構築伴走支援推進協議会",
+        "中小企業庁",
+        "SMEA",
+        "研究会",
+        "検討会"
+      ],
+      "officialUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/keiei_bansou/004.html",
+      "hasMinutes": true,
+      "docCount": 2
+    },
+    {
+      "id": "meet-2024-01-15-smea-chishiki-support-dai4",
+      "councilId": "smea-chishiki-support",
+      "councilName": "知識サポート・経営改革プラットフォーム研究会",
+      "ministry": "SMEA",
+      "category": "STUDY",
+      "title": "第4回 知識サポート・経営改革プラットフォーム研究会",
+      "date": "2024/01/15",
+      "updatedAt": "2024/01/15 17:00",
+      "location": "中小企業庁 / Web会議",
+      "summary": "知識サポート・経営改革プラットフォーム研究会（第4回）の開催。配付資料および議事概要。",
+      "agenda": [
+        "知識サポート・経営改革プラットフォーム研究会における検討・審議"
+      ],
+      "materials": [
+        {
+          "name": "第4回 知識サポート・経営改革プラットフォーム研究会 議事概要 (PDF)",
+          "type": "PDF",
+          "size": "PDF",
+          "url": "https://www.chusho.meti.go.jp/koukai/kenkyukai/chishiki/0125Chisiki-1.pdf",
+          "isMinutes": true
+        },
+        {
+          "name": "第4回 知識サポート・経営改革プラットフォーム研究会 報告書 (PDF)",
+          "type": "PDF",
+          "size": "PDF",
+          "url": "https://www.chusho.meti.go.jp/koukai/kenkyukai/chishiki/0125Chisiki-2.pdf",
+          "isMinutes": false
+        },
+        {
+          "name": "第4回 知識サポート・経営改革プラットフォーム研究会 参考資料 (PDF)",
+          "type": "PDF",
+          "size": "PDF",
+          "url": "https://www.chusho.meti.go.jp/koukai/kenkyukai/chishiki/0125Chisiki-3.pdf",
+          "isMinutes": false
+        }
+      ],
+      "tags": [
+        "知識サポート・経営改革プラットフォーム研究会",
+        "中小企業庁",
+        "SMEA",
+        "研究会",
+        "検討会"
+      ],
+      "officialUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/chishiki/0125Chisiki-1.pdf",
+      "hasMinutes": true,
+      "docCount": 3
     },
     {
       "id": "meet-2023-12-27-cas-nousui-40-dai6",
@@ -104764,6 +106472,103 @@
       "docCount": 13
     },
     {
+      "id": "meet-2021-03-15-smea-shiharai-kaizen-dai1",
+      "councilId": "smea-shiharai-kaizen",
+      "councilName": "約束手形をはじめとする支払条件の改善に向けた検討会",
+      "ministry": "SMEA",
+      "category": "STUDY",
+      "title": "第1回 約束手形をはじめとする支払条件の改善に向けた検討会",
+      "date": "2021/03/15",
+      "updatedAt": "2021/03/15 17:00",
+      "location": "中小企業庁 / Web会議",
+      "summary": "約束手形をはじめとする支払条件の改善に向けた検討会（第1回）の開催。配付資料および議事概要。",
+      "agenda": [
+        "約束手形をはじめとする支払条件の改善に向けた検討会における検討・審議"
+      ],
+      "materials": [
+        {
+          "name": "約束手形をはじめとする支払条件の改善に向けた検討会 報告書 (PDF)",
+          "type": "PDF",
+          "size": "PDF",
+          "url": "https://www.chusho.meti.go.jp/koukai/kenkyukai/shiharaikaizen/2021/210315shiharaikaizen_report.pdf",
+          "isMinutes": false
+        },
+        {
+          "name": "第1回 約束手形をはじめとする支払条件の改善に向けた検討会 配布資料",
+          "type": "HTML",
+          "size": "-",
+          "url": "https://www.chusho.meti.go.jp/koukai/kenkyukai/shiharaikaizen/200731shiharaikaizen.html",
+          "isMinutes": false
+        },
+        {
+          "name": "第1回 約束手形をはじめとする支払条件の改善に向けた検討会 議事要旨 (PDF)",
+          "type": "PDF",
+          "size": "PDF",
+          "url": "https://www.chusho.meti.go.jp/koukai/kenkyukai/shiharaikaizen/2020/200731shiharaikaizen_gy.pdf",
+          "isMinutes": true
+        },
+        {
+          "name": "資料1 議事次第(PDF形式：121KB)",
+          "type": "PDF",
+          "size": "PDF",
+          "url": "https://www.chusho.meti.go.jp/koukai/kenkyukai/shiharaikaizen/2020/200731shiharaikaizen01.pdf",
+          "isMinutes": true
+        },
+        {
+          "name": "資料2 開催要綱（案）(PDF形式：183KB)",
+          "type": "PDF",
+          "size": "PDF",
+          "url": "https://www.chusho.meti.go.jp/koukai/kenkyukai/shiharaikaizen/2020/200731shiharaikaizen02.pdf",
+          "isMinutes": false
+        },
+        {
+          "name": "資料3 構成員（案）(PDF形式：121KB)",
+          "type": "PDF",
+          "size": "PDF",
+          "url": "https://www.chusho.meti.go.jp/koukai/kenkyukai/shiharaikaizen/2020/200731shiharaikaizen03.pdf",
+          "isMinutes": false
+        },
+        {
+          "name": "資料4 支払条件の改善に向けた取組及び課題について(PDF形式：2,575KB)",
+          "type": "PDF",
+          "size": "PDF",
+          "url": "https://www.chusho.meti.go.jp/koukai/kenkyukai/shiharaikaizen/2020/200731shiharaikaizen04.pdf",
+          "isMinutes": false
+        },
+        {
+          "name": "資料5 検討会のスケジュール案(PDF形式：201KB)",
+          "type": "PDF",
+          "size": "PDF",
+          "url": "https://www.chusho.meti.go.jp/koukai/kenkyukai/shiharaikaizen/2020/200731shiharaikaizen05.pdf",
+          "isMinutes": false
+        },
+        {
+          "name": "参考資料1：一般社団法人全国銀行協会説明資料「手形・小切手機能の電子化に関する検討会報告書」(PDF形式：3,265KB)",
+          "type": "PDF",
+          "size": "PDF",
+          "url": "https://www.chusho.meti.go.jp/koukai/kenkyukai/shiharaikaizen/2020/200731shiharaikaizen_s01.pdf",
+          "isMinutes": false
+        },
+        {
+          "name": "参考資料2： 株式会社システム・ファイナンス説明資料(PDF形式：534KB)",
+          "type": "PDF",
+          "size": "PDF",
+          "url": "https://www.chusho.meti.go.jp/koukai/kenkyukai/shiharaikaizen/2020/200731shiharaikaizen_s02.pdf",
+          "isMinutes": false
+        }
+      ],
+      "tags": [
+        "約束手形をはじめとする支払条件の改善に向けた検討会",
+        "中小企業庁",
+        "SMEA",
+        "研究会",
+        "検討会"
+      ],
+      "officialUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/shiharaikaizen/200731shiharaikaizen.html",
+      "hasMinutes": true,
+      "docCount": 10
+    },
+    {
       "id": "meet-2021-03-10-fdma-kento-94-令和2年度-dai1",
       "councilId": "fdma-kento-94",
       "councilName": "火災危険性を有するおそれのある物質等に関する調査検討会",
@@ -105603,6 +107408,40 @@
       "docCount": 8
     },
     {
+      "id": "meet-2021-02-19-smea-shiharai-kaizen-dai6",
+      "councilId": "smea-shiharai-kaizen",
+      "councilName": "約束手形をはじめとする支払条件の改善に向けた検討会",
+      "ministry": "SMEA",
+      "category": "STUDY",
+      "title": "第6回 約束手形をはじめとする支払条件の改善に向けた検討会",
+      "date": "2021/02/19",
+      "updatedAt": "2021/02/19 17:00",
+      "location": "中小企業庁 / Web会議",
+      "summary": "約束手形をはじめとする支払条件の改善に向けた検討会（第6回）の開催。配付資料および議事概要。",
+      "agenda": [
+        "約束手形をはじめとする支払条件の改善に向けた検討会における検討・審議"
+      ],
+      "materials": [
+        {
+          "name": "第6回 約束手形をはじめとする支払条件の改善に向けた検討会 配布資料",
+          "type": "HTML",
+          "size": "-",
+          "url": "https://www.chusho.meti.go.jp/koukai/kenkyukai/shiharaikaizen/210219shiharaikaizen.html",
+          "isMinutes": false
+        }
+      ],
+      "tags": [
+        "約束手形をはじめとする支払条件の改善に向けた検討会",
+        "中小企業庁",
+        "SMEA",
+        "研究会",
+        "検討会"
+      ],
+      "officialUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/shiharaikaizen/210219shiharaikaizen.html",
+      "hasMinutes": false,
+      "docCount": 1
+    },
+    {
       "id": "meet-2021-01-25-fdma-kento-54-令和2年度-dai1",
       "councilId": "fdma-kento-54",
       "councilName": "消防防災ヘリコプター操縦士の乗務要件・訓練審査プログラムに関する検討会",
@@ -106068,6 +107907,47 @@
       "officialUrl": "https://www.chisou.go.jp/tiiki/kokusentoc/dai48/shiryou.html",
       "hasMinutes": true,
       "docCount": 18
+    },
+    {
+      "id": "meet-2020-12-21-smea-shiharai-kaizen-dai5",
+      "councilId": "smea-shiharai-kaizen",
+      "councilName": "約束手形をはじめとする支払条件の改善に向けた検討会",
+      "ministry": "SMEA",
+      "category": "STUDY",
+      "title": "第5回 約束手形をはじめとする支払条件の改善に向けた検討会",
+      "date": "2020/12/21",
+      "updatedAt": "2020/12/21 17:00",
+      "location": "中小企業庁 / Web会議",
+      "summary": "約束手形をはじめとする支払条件の改善に向けた検討会（第5回）の開催。配付資料および議事概要。",
+      "agenda": [
+        "約束手形をはじめとする支払条件の改善に向けた検討会における検討・審議"
+      ],
+      "materials": [
+        {
+          "name": "第5回 約束手形をはじめとする支払条件の改善に向けた検討会 配布資料",
+          "type": "HTML",
+          "size": "-",
+          "url": "https://www.chusho.meti.go.jp/koukai/kenkyukai/shiharaikaizen/201221shiharaikaizen.html",
+          "isMinutes": false
+        },
+        {
+          "name": "第5回 約束手形をはじめとする支払条件の改善に向けた検討会 議事要旨 (PDF)",
+          "type": "PDF",
+          "size": "PDF",
+          "url": "https://www.chusho.meti.go.jp/koukai/kenkyukai/shiharaikaizen/2020/201221shiharaikaizen_gy.pdf",
+          "isMinutes": true
+        }
+      ],
+      "tags": [
+        "約束手形をはじめとする支払条件の改善に向けた検討会",
+        "中小企業庁",
+        "SMEA",
+        "研究会",
+        "検討会"
+      ],
+      "officialUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/shiharaikaizen/201221shiharaikaizen.html",
+      "hasMinutes": true,
+      "docCount": 2
     },
     {
       "id": "meet-2020-12-18-cas-clt_etc-60-dai2",
@@ -106716,6 +108596,82 @@
       "docCount": 14
     },
     {
+      "id": "meet-2020-11-16-smea-shiharai-kaizen-dai4",
+      "councilId": "smea-shiharai-kaizen",
+      "councilName": "約束手形をはじめとする支払条件の改善に向けた検討会",
+      "ministry": "SMEA",
+      "category": "STUDY",
+      "title": "第4回 約束手形をはじめとする支払条件の改善に向けた検討会",
+      "date": "2020/11/16",
+      "updatedAt": "2020/11/16 17:00",
+      "location": "中小企業庁 / Web会議",
+      "summary": "約束手形をはじめとする支払条件の改善に向けた検討会（第4回）の開催。配付資料および議事概要。",
+      "agenda": [
+        "約束手形をはじめとする支払条件の改善に向けた検討会における検討・審議"
+      ],
+      "materials": [
+        {
+          "name": "第4回 約束手形をはじめとする支払条件の改善に向けた検討会 配布資料",
+          "type": "HTML",
+          "size": "-",
+          "url": "https://www.chusho.meti.go.jp/koukai/kenkyukai/shiharaikaizen/201116shiharaikaizen.html",
+          "isMinutes": false
+        },
+        {
+          "name": "第4回 約束手形をはじめとする支払条件の改善に向けた検討会 議事要旨 (PDF)",
+          "type": "PDF",
+          "size": "PDF",
+          "url": "https://www.chusho.meti.go.jp/koukai/kenkyukai/shiharaikaizen/2020/201116shiharaikaizen_gy.pdf",
+          "isMinutes": true
+        },
+        {
+          "name": "資料1 議事次第(PDF形式：116KB)",
+          "type": "PDF",
+          "size": "PDF",
+          "url": "https://www.chusho.meti.go.jp/koukai/kenkyukai/shiharaikaizen/2020/201116shiharaikaizen01.pdf",
+          "isMinutes": true
+        },
+        {
+          "name": "資料2 委員名簿(PDF形式：184KB)",
+          "type": "PDF",
+          "size": "PDF",
+          "url": "https://www.chusho.meti.go.jp/koukai/kenkyukai/shiharaikaizen/2020/201116shiharaikaizen02.pdf",
+          "isMinutes": false
+        },
+        {
+          "name": "資料3 約束手形に関する論点について(PDF形式：7,734KB)",
+          "type": "PDF",
+          "size": "PDF",
+          "url": "https://www.chusho.meti.go.jp/koukai/kenkyukai/shiharaikaizen/2020/201116shiharaikaizen03.pdf",
+          "isMinutes": false
+        },
+        {
+          "name": "資料4 一般社団法人全国銀行協会説明資料(PDF形式：4,695KB)",
+          "type": "PDF",
+          "size": "PDF",
+          "url": "https://www.chusho.meti.go.jp/koukai/kenkyukai/shiharaikaizen/2020/201116shiharaikaizen04.pdf",
+          "isMinutes": false
+        },
+        {
+          "name": "資料6 ＯＧＵ－Ｔｅｃｈｓ株式会社説明資料(PDF形式：3,022KB)",
+          "type": "PDF",
+          "size": "PDF",
+          "url": "https://www.chusho.meti.go.jp/koukai/kenkyukai/shiharaikaizen/2020/201116shiharaikaizen06.pdf",
+          "isMinutes": false
+        }
+      ],
+      "tags": [
+        "約束手形をはじめとする支払条件の改善に向けた検討会",
+        "中小企業庁",
+        "SMEA",
+        "研究会",
+        "検討会"
+      ],
+      "officialUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/shiharaikaizen/201116shiharaikaizen.html",
+      "hasMinutes": true,
+      "docCount": 7
+    },
+    {
       "id": "meet-2020-10-22-cas-kokusentoc-24-dai47",
       "councilId": "cas-kokusentoc-24",
       "councilName": "国家戦略特別区域諮問会議",
@@ -106898,6 +108854,130 @@
       "officialUrl": "https://www.chisou.go.jp/tiiki/kokusentoc/dai46/shiryou.html",
       "hasMinutes": true,
       "docCount": 6
+    },
+    {
+      "id": "meet-2020-09-14-smea-shiharai-kaizen-dai3",
+      "councilId": "smea-shiharai-kaizen",
+      "councilName": "約束手形をはじめとする支払条件の改善に向けた検討会",
+      "ministry": "SMEA",
+      "category": "STUDY",
+      "title": "第3回 約束手形をはじめとする支払条件の改善に向けた検討会",
+      "date": "2020/09/14",
+      "updatedAt": "2020/09/14 17:00",
+      "location": "中小企業庁 / Web会議",
+      "summary": "約束手形をはじめとする支払条件の改善に向けた検討会（第3回）の開催。配付資料および議事概要。",
+      "agenda": [
+        "約束手形をはじめとする支払条件の改善に向けた検討会における検討・審議"
+      ],
+      "materials": [
+        {
+          "name": "第3回 約束手形をはじめとする支払条件の改善に向けた検討会 配布資料",
+          "type": "HTML",
+          "size": "-",
+          "url": "https://www.chusho.meti.go.jp/koukai/kenkyukai/shiharaikaizen/200914shiharaikaizen.html",
+          "isMinutes": false
+        },
+        {
+          "name": "第3回 約束手形をはじめとする支払条件の改善に向けた検討会 議事要旨 (PDF)",
+          "type": "PDF",
+          "size": "PDF",
+          "url": "https://www.chusho.meti.go.jp/koukai/kenkyukai/shiharaikaizen/2020/200914shiharaikaizen_gy.pdf",
+          "isMinutes": true
+        },
+        {
+          "name": "資料1 議事次第(PDF形式：109KB)",
+          "type": "PDF",
+          "size": "PDF",
+          "url": "https://www.chusho.meti.go.jp/koukai/kenkyukai/shiharaikaizen/2020/200914shiharaikaizen01.pdf",
+          "isMinutes": true
+        },
+        {
+          "name": "資料2 委員名簿(PDF形式：187KB)",
+          "type": "PDF",
+          "size": "PDF",
+          "url": "https://www.chusho.meti.go.jp/koukai/kenkyukai/shiharaikaizen/2020/200914shiharaikaizen02.pdf",
+          "isMinutes": false
+        },
+        {
+          "name": "資料3 約束手形に関する論点について(PDF形式：2,012KB)",
+          "type": "PDF",
+          "size": "PDF",
+          "url": "https://www.chusho.meti.go.jp/koukai/kenkyukai/shiharaikaizen/2020/200914shiharaikaizen03.pdf",
+          "isMinutes": false
+        }
+      ],
+      "tags": [
+        "約束手形をはじめとする支払条件の改善に向けた検討会",
+        "中小企業庁",
+        "SMEA",
+        "研究会",
+        "検討会"
+      ],
+      "officialUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/shiharaikaizen/200914shiharaikaizen.html",
+      "hasMinutes": true,
+      "docCount": 5
+    },
+    {
+      "id": "meet-2020-08-19-smea-shiharai-kaizen-dai2",
+      "councilId": "smea-shiharai-kaizen",
+      "councilName": "約束手形をはじめとする支払条件の改善に向けた検討会",
+      "ministry": "SMEA",
+      "category": "STUDY",
+      "title": "第2回 約束手形をはじめとする支払条件の改善に向けた検討会",
+      "date": "2020/08/19",
+      "updatedAt": "2020/08/19 17:00",
+      "location": "中小企業庁 / Web会議",
+      "summary": "約束手形をはじめとする支払条件の改善に向けた検討会（第2回）の開催。配付資料および議事概要。",
+      "agenda": [
+        "約束手形をはじめとする支払条件の改善に向けた検討会における検討・審議"
+      ],
+      "materials": [
+        {
+          "name": "第2回 約束手形をはじめとする支払条件の改善に向けた検討会 配布資料",
+          "type": "HTML",
+          "size": "-",
+          "url": "https://www.chusho.meti.go.jp/koukai/kenkyukai/shiharaikaizen/200819shiharaikaizen.html",
+          "isMinutes": false
+        },
+        {
+          "name": "第2回 約束手形をはじめとする支払条件の改善に向けた検討会 議事要旨 (PDF)",
+          "type": "PDF",
+          "size": "PDF",
+          "url": "https://www.chusho.meti.go.jp/koukai/kenkyukai/shiharaikaizen/2020/200819shiharaikaizen_gy.pdf",
+          "isMinutes": true
+        },
+        {
+          "name": "資料1 議事次第(PDF形式：114KB)",
+          "type": "PDF",
+          "size": "PDF",
+          "url": "https://www.chusho.meti.go.jp/koukai/kenkyukai/shiharaikaizen/2020/200819shiharaikaizen01.pdf",
+          "isMinutes": true
+        },
+        {
+          "name": "資料2 参加者名簿(PDF形式：192KB)",
+          "type": "PDF",
+          "size": "PDF",
+          "url": "https://www.chusho.meti.go.jp/koukai/kenkyukai/shiharaikaizen/2020/200819shiharaikaizen02.pdf",
+          "isMinutes": false
+        },
+        {
+          "name": "資料3 約束手形に関する論点について(PDF形式：2,668KB)",
+          "type": "PDF",
+          "size": "PDF",
+          "url": "https://www.chusho.meti.go.jp/koukai/kenkyukai/shiharaikaizen/2020/200819shiharaikaizen03.pdf",
+          "isMinutes": false
+        }
+      ],
+      "tags": [
+        "約束手形をはじめとする支払条件の改善に向けた検討会",
+        "中小企業庁",
+        "SMEA",
+        "研究会",
+        "検討会"
+      ],
+      "officialUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/shiharaikaizen/200819shiharaikaizen.html",
+      "hasMinutes": true,
+      "docCount": 5
     },
     {
       "id": "meet-2020-07-01-cas-kagayakujosei-46-dai9",
@@ -115088,6 +117168,47 @@
       "docCount": 15
     },
     {
+      "id": "meet-2017-03-02-smea-kinyu-edi-dai5",
+      "councilId": "smea-kinyu-edi",
+      "councilName": "金融EDIにおける商流情報等のあり方検討会議",
+      "ministry": "SMEA",
+      "category": "STUDY",
+      "title": "第5回 金融EDIにおける商流情報等のあり方検討会議",
+      "date": "2017/03/02",
+      "updatedAt": "2017/03/02 17:00",
+      "location": "中小企業庁 / Web会議",
+      "summary": "金融EDIにおける商流情報等のあり方検討会議（第5回）の開催。配付資料および議事概要。",
+      "agenda": [
+        "金融EDIにおける商流情報等のあり方検討会議における検討・審議"
+      ],
+      "materials": [
+        {
+          "name": "第5回 金融EDIにおける商流情報等のあり方検討会議 配布資料",
+          "type": "HTML",
+          "size": "-",
+          "url": "https://www.chusho.meti.go.jp/koukai/kenkyukai/kinyuedi/170302kinyuedi.html",
+          "isMinutes": false
+        },
+        {
+          "name": "第5回 金融EDIにおける商流情報等のあり方検討会議 議事要旨",
+          "type": "HTML",
+          "size": "-",
+          "url": "https://www.chusho.meti.go.jp/koukai/kenkyukai/kinyuedi/2017/170302kinyuedigy.html",
+          "isMinutes": true
+        }
+      ],
+      "tags": [
+        "金融EDIにおける商流情報等のあり方検討会議",
+        "中小企業庁",
+        "SMEA",
+        "研究会",
+        "検討会"
+      ],
+      "officialUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/kinyuedi/170302kinyuedi.html",
+      "hasMinutes": true,
+      "docCount": 2
+    },
+    {
       "id": "meet-2017-02-21-cas-kokusentoc-24-dai28",
       "councilId": "cas-kokusentoc-24",
       "councilName": "国家戦略特別区域諮問会議",
@@ -115551,6 +117672,47 @@
       "docCount": 15
     },
     {
+      "id": "meet-2016-12-08-smea-kinyu-edi-dai4",
+      "councilId": "smea-kinyu-edi",
+      "councilName": "金融EDIにおける商流情報等のあり方検討会議",
+      "ministry": "SMEA",
+      "category": "STUDY",
+      "title": "第4回 金融EDIにおける商流情報等のあり方検討会議",
+      "date": "2016/12/08",
+      "updatedAt": "2016/12/08 17:00",
+      "location": "中小企業庁 / Web会議",
+      "summary": "金融EDIにおける商流情報等のあり方検討会議（第4回）の開催。配付資料および議事概要。",
+      "agenda": [
+        "金融EDIにおける商流情報等のあり方検討会議における検討・審議"
+      ],
+      "materials": [
+        {
+          "name": "第4回 金融EDIにおける商流情報等のあり方検討会議 配布資料",
+          "type": "HTML",
+          "size": "-",
+          "url": "https://www.chusho.meti.go.jp/koukai/kenkyukai/kinyuedi/161208kinyuedi.html",
+          "isMinutes": false
+        },
+        {
+          "name": "第4回 金融EDIにおける商流情報等のあり方検討会議 議事要旨",
+          "type": "HTML",
+          "size": "-",
+          "url": "https://www.chusho.meti.go.jp/koukai/kenkyukai/kinyuedi/2016/161208kinyuedigy.html",
+          "isMinutes": true
+        }
+      ],
+      "tags": [
+        "金融EDIにおける商流情報等のあり方検討会議",
+        "中小企業庁",
+        "SMEA",
+        "研究会",
+        "検討会"
+      ],
+      "officialUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/kinyuedi/161208kinyuedi.html",
+      "hasMinutes": true,
+      "docCount": 2
+    },
+    {
       "id": "meet-2016-11-11-cas-sdgs-31-dai2",
       "councilId": "cas-sdgs-31",
       "councilName": "持続可能な開発目標（ＳＤＧｓ）推進本部",
@@ -115744,6 +117906,47 @@
       "officialUrl": "https://www.chisou.go.jp/tiiki/kokusentoc/dai25/shiryou.html",
       "hasMinutes": true,
       "docCount": 14
+    },
+    {
+      "id": "meet-2016-11-01-smea-kinyu-edi-dai3",
+      "councilId": "smea-kinyu-edi",
+      "councilName": "金融EDIにおける商流情報等のあり方検討会議",
+      "ministry": "SMEA",
+      "category": "STUDY",
+      "title": "第3回 金融EDIにおける商流情報等のあり方検討会議",
+      "date": "2016/11/01",
+      "updatedAt": "2016/11/01 17:00",
+      "location": "中小企業庁 / Web会議",
+      "summary": "金融EDIにおける商流情報等のあり方検討会議（第3回）の開催。配付資料および議事概要。",
+      "agenda": [
+        "金融EDIにおける商流情報等のあり方検討会議における検討・審議"
+      ],
+      "materials": [
+        {
+          "name": "第3回 金融EDIにおける商流情報等のあり方検討会議 配布資料",
+          "type": "HTML",
+          "size": "-",
+          "url": "https://www.chusho.meti.go.jp/koukai/kenkyukai/kinyuedi/161101kinyuedi.html",
+          "isMinutes": false
+        },
+        {
+          "name": "第3回 金融EDIにおける商流情報等のあり方検討会議 議事要旨",
+          "type": "HTML",
+          "size": "-",
+          "url": "https://www.chusho.meti.go.jp/koukai/kenkyukai/kinyuedi/2016/161101kinyuedigy.html",
+          "isMinutes": true
+        }
+      ],
+      "tags": [
+        "金融EDIにおける商流情報等のあり方検討会議",
+        "中小企業庁",
+        "SMEA",
+        "研究会",
+        "検討会"
+      ],
+      "officialUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/kinyuedi/161101kinyuedi.html",
+      "hasMinutes": true,
+      "docCount": 2
     },
     {
       "id": "meet-2016-10-20-cas-suishin-85",
@@ -116165,6 +118368,47 @@
       "docCount": 12
     },
     {
+      "id": "meet-2016-09-27-smea-kinyu-edi-dai2",
+      "councilId": "smea-kinyu-edi",
+      "councilName": "金融EDIにおける商流情報等のあり方検討会議",
+      "ministry": "SMEA",
+      "category": "STUDY",
+      "title": "第2回 金融EDIにおける商流情報等のあり方検討会議",
+      "date": "2016/09/27",
+      "updatedAt": "2016/09/27 17:00",
+      "location": "中小企業庁 / Web会議",
+      "summary": "金融EDIにおける商流情報等のあり方検討会議（第2回）の開催。配付資料および議事概要。",
+      "agenda": [
+        "金融EDIにおける商流情報等のあり方検討会議における検討・審議"
+      ],
+      "materials": [
+        {
+          "name": "第2回 金融EDIにおける商流情報等のあり方検討会議 配布資料",
+          "type": "HTML",
+          "size": "-",
+          "url": "https://www.chusho.meti.go.jp/koukai/kenkyukai/kinyuedi/160927kinyuedi.html",
+          "isMinutes": false
+        },
+        {
+          "name": "第2回 金融EDIにおける商流情報等のあり方検討会議 議事要旨",
+          "type": "HTML",
+          "size": "-",
+          "url": "https://www.chusho.meti.go.jp/koukai/kenkyukai/kinyuedi/2016/160927kinyuedigy.html",
+          "isMinutes": true
+        }
+      ],
+      "tags": [
+        "金融EDIにおける商流情報等のあり方検討会議",
+        "中小企業庁",
+        "SMEA",
+        "研究会",
+        "検討会"
+      ],
+      "officialUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/kinyuedi/160927kinyuedi.html",
+      "hasMinutes": true,
+      "docCount": 2
+    },
+    {
       "id": "meet-2016-09-21-cas-genshiryoku-kakuryo-kaigi-dai5",
       "councilId": "cas-genshiryoku-kakuryo-kaigi",
       "councilName": "原子力関係閣僚会議",
@@ -116346,6 +118590,47 @@
       "officialUrl": "https://www.chisou.go.jp/tiiki/kokusentoc/dai23/shiryou.html",
       "hasMinutes": true,
       "docCount": 13
+    },
+    {
+      "id": "meet-2016-08-04-smea-kinyu-edi-dai1",
+      "councilId": "smea-kinyu-edi",
+      "councilName": "金融EDIにおける商流情報等のあり方検討会議",
+      "ministry": "SMEA",
+      "category": "STUDY",
+      "title": "第1回 金融EDIにおける商流情報等のあり方検討会議",
+      "date": "2016/08/04",
+      "updatedAt": "2016/08/04 17:00",
+      "location": "中小企業庁 / Web会議",
+      "summary": "金融EDIにおける商流情報等のあり方検討会議（第1回）の開催。配付資料および議事概要。",
+      "agenda": [
+        "金融EDIにおける商流情報等のあり方検討会議における検討・審議"
+      ],
+      "materials": [
+        {
+          "name": "第1回 金融EDIにおける商流情報等のあり方検討会議 配布資料",
+          "type": "HTML",
+          "size": "-",
+          "url": "https://www.chusho.meti.go.jp/koukai/kenkyukai/kinyuedi/160804kinyuedi.html",
+          "isMinutes": false
+        },
+        {
+          "name": "第1回 金融EDIにおける商流情報等のあり方検討会議 議事概要(214KB) (PDF)",
+          "type": "PDF",
+          "size": "PDF",
+          "url": "https://www.chusho.meti.go.jp/koukai/kenkyukai/kinyuedi/2016/160804kinyuedigy.pdf",
+          "isMinutes": true
+        }
+      ],
+      "tags": [
+        "金融EDIにおける商流情報等のあり方検討会議",
+        "中小企業庁",
+        "SMEA",
+        "研究会",
+        "検討会"
+      ],
+      "officialUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/kinyuedi/160804kinyuedi.html",
+      "hasMinutes": true,
+      "docCount": 2
     },
     {
       "id": "meet-2016-06-16-cas-chotatsu-106-dai3",
@@ -119894,6 +122179,81 @@
       "docCount": 6
     },
     {
+      "id": "meet-2012-12-04-smea-chishiki-support-dai3",
+      "councilId": "smea-chishiki-support",
+      "councilName": "知識サポート・経営改革プラットフォーム研究会",
+      "ministry": "SMEA",
+      "category": "STUDY",
+      "title": "第3回 知識サポート・経営改革プラットフォーム研究会",
+      "date": "2012/12/04",
+      "updatedAt": "2012/12/04 17:00",
+      "location": "中小企業庁 / Web会議",
+      "summary": "知識サポート・経営改革プラットフォーム研究会（第3回）の開催。配付資料および議事概要。",
+      "agenda": [
+        "知識サポート・経営改革プラットフォーム研究会における検討・審議"
+      ],
+      "materials": [
+        {
+          "name": "第3回 知識サポート・経営改革プラットフォーム研究会 配布資料",
+          "type": "HTML",
+          "size": "-",
+          "url": "https://www.chusho.meti.go.jp/koukai/kenkyukai/chishiki/2012/1204HS.html",
+          "isMinutes": false
+        }
+      ],
+      "tags": [
+        "知識サポート・経営改革プラットフォーム研究会",
+        "中小企業庁",
+        "SMEA",
+        "研究会",
+        "検討会"
+      ],
+      "officialUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/chishiki/2012/1204HS.html",
+      "hasMinutes": false,
+      "docCount": 1
+    },
+    {
+      "id": "meet-2012-10-26-smea-chishiki-support-dai2",
+      "councilId": "smea-chishiki-support",
+      "councilName": "知識サポート・経営改革プラットフォーム研究会",
+      "ministry": "SMEA",
+      "category": "STUDY",
+      "title": "第2回 知識サポート・経営改革プラットフォーム研究会",
+      "date": "2012/10/26",
+      "updatedAt": "2012/10/26 17:00",
+      "location": "中小企業庁 / Web会議",
+      "summary": "知識サポート・経営改革プラットフォーム研究会（第2回）の開催。配付資料および議事概要。",
+      "agenda": [
+        "知識サポート・経営改革プラットフォーム研究会における検討・審議"
+      ],
+      "materials": [
+        {
+          "name": "第2回 知識サポート・経営改革プラットフォーム研究会 議事概要 (PDF)",
+          "type": "PDF",
+          "size": "PDF",
+          "url": "https://www.chusho.meti.go.jp/koukai/kenkyukai/chishiki/2012/download/1026PFGaiyou.pdf",
+          "isMinutes": true
+        },
+        {
+          "name": "第2回 知識サポート・経営改革プラットフォーム研究会 配布資料",
+          "type": "HTML",
+          "size": "-",
+          "url": "https://www.chusho.meti.go.jp/koukai/kenkyukai/chishiki/2012/1026HS.html",
+          "isMinutes": false
+        }
+      ],
+      "tags": [
+        "知識サポート・経営改革プラットフォーム研究会",
+        "中小企業庁",
+        "SMEA",
+        "研究会",
+        "検討会"
+      ],
+      "officialUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/chishiki/2012/1026HS.html",
+      "hasMinutes": true,
+      "docCount": 2
+    },
+    {
       "id": "meet-2012-10-19-cas-genshiryoku_bousai-26-dai1",
       "councilId": "cas-genshiryoku_bousai-26",
       "councilName": "原子力防災会議",
@@ -119996,6 +122356,115 @@
       "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/genshiryoku_bousai/dai01/siryou.html",
       "hasMinutes": false,
       "docCount": 11
+    },
+    {
+      "id": "meet-2012-09-28-smea-chishiki-support-dai1",
+      "councilId": "smea-chishiki-support",
+      "councilName": "知識サポート・経営改革プラットフォーム研究会",
+      "ministry": "SMEA",
+      "category": "STUDY",
+      "title": "第1回 知識サポート・経営改革プラットフォーム研究会",
+      "date": "2012/09/28",
+      "updatedAt": "2012/09/28 17:00",
+      "location": "中小企業庁 / Web会議",
+      "summary": "知識サポート・経営改革プラットフォーム研究会（第1回）の開催。配付資料および議事概要。",
+      "agenda": [
+        "知識サポート・経営改革プラットフォーム研究会における検討・審議"
+      ],
+      "materials": [
+        {
+          "name": "第1回 知識サポート・経営改革プラットフォーム研究会 議事要旨",
+          "type": "HTML",
+          "size": "-",
+          "url": "https://www.chusho.meti.go.jp/koukai/kenkyukai/chishiki/120928GY.html",
+          "isMinutes": true
+        },
+        {
+          "name": "第1回 知識サポート・経営改革プラットフォーム研究会 配布資料",
+          "type": "HTML",
+          "size": "-",
+          "url": "https://www.chusho.meti.go.jp/koukai/kenkyukai/chishiki/120928HS.html",
+          "isMinutes": false
+        }
+      ],
+      "tags": [
+        "知識サポート・経営改革プラットフォーム研究会",
+        "中小企業庁",
+        "SMEA",
+        "研究会",
+        "検討会"
+      ],
+      "officialUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/chishiki/120928HS.html",
+      "hasMinutes": true,
+      "docCount": 2
+    },
+    {
+      "id": "meet-2012-03-09-smea-kaigai-tenkai-dai4",
+      "councilId": "smea-kaigai-tenkai",
+      "councilName": "中小企業海外展開支援会議",
+      "ministry": "SMEA",
+      "category": "STUDY",
+      "title": "第4回 中小企業海外展開支援会議",
+      "date": "2012/03/09",
+      "updatedAt": "2012/03/09 17:00",
+      "location": "中小企業庁 / Web会議",
+      "summary": "中小企業海外展開支援会議（第4回）の開催。配付資料および議事概要。",
+      "agenda": [
+        "中小企業海外展開支援会議における検討・審議"
+      ],
+      "materials": [
+        {
+          "name": "第4回 中小企業海外展開支援会議 配布資料",
+          "type": "HTML",
+          "size": "-",
+          "url": "https://www.chusho.meti.go.jp/koukai/kenkyukai/kaigai/120309HS.html",
+          "isMinutes": false
+        }
+      ],
+      "tags": [
+        "中小企業海外展開支援会議",
+        "中小企業庁",
+        "SMEA",
+        "研究会",
+        "検討会"
+      ],
+      "officialUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/kaigai/120309HS.html",
+      "hasMinutes": false,
+      "docCount": 1
+    },
+    {
+      "id": "meet-2011-06-24-smea-kaigai-tenkai-dai3",
+      "councilId": "smea-kaigai-tenkai",
+      "councilName": "中小企業海外展開支援会議",
+      "ministry": "SMEA",
+      "category": "STUDY",
+      "title": "第3回 中小企業海外展開支援会議",
+      "date": "2011/06/24",
+      "updatedAt": "2011/06/24 17:00",
+      "location": "中小企業庁 / Web会議",
+      "summary": "中小企業海外展開支援会議（第3回）の開催。配付資料および議事概要。",
+      "agenda": [
+        "中小企業海外展開支援会議における検討・審議"
+      ],
+      "materials": [
+        {
+          "name": "第3回 中小企業海外展開支援会議 配布資料",
+          "type": "HTML",
+          "size": "-",
+          "url": "https://www.chusho.meti.go.jp/koukai/kenkyukai/kaigai/110624HS.html",
+          "isMinutes": false
+        }
+      ],
+      "tags": [
+        "中小企業海外展開支援会議",
+        "中小企業庁",
+        "SMEA",
+        "研究会",
+        "検討会"
+      ],
+      "officialUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/kaigai/110624HS.html",
+      "hasMinutes": false,
+      "docCount": 1
     },
     {
       "id": "meet-2011-04-06-cas-hanzai-80",
@@ -120457,6 +122926,628 @@
       "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/hanzai/index.html",
       "hasMinutes": false,
       "docCount": 62
+    },
+    {
+      "id": "meet-2011-02-02-smea-kaigai-tenkai-dai2",
+      "councilId": "smea-kaigai-tenkai",
+      "councilName": "中小企業海外展開支援会議",
+      "ministry": "SMEA",
+      "category": "STUDY",
+      "title": "第2回 中小企業海外展開支援会議",
+      "date": "2011/02/02",
+      "updatedAt": "2011/02/02 17:00",
+      "location": "中小企業庁 / Web会議",
+      "summary": "中小企業海外展開支援会議（第2回）の開催。配付資料および議事概要。",
+      "agenda": [
+        "中小企業海外展開支援会議における検討・審議"
+      ],
+      "materials": [
+        {
+          "name": "第2回 中小企業海外展開支援会議 配布資料",
+          "type": "HTML",
+          "size": "-",
+          "url": "https://www.chusho.meti.go.jp/koukai/kenkyukai/kaigai/110202HS.html",
+          "isMinutes": false
+        }
+      ],
+      "tags": [
+        "中小企業海外展開支援会議",
+        "中小企業庁",
+        "SMEA",
+        "研究会",
+        "検討会"
+      ],
+      "officialUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/kaigai/110202HS.html",
+      "hasMinutes": false,
+      "docCount": 1
+    },
+    {
+      "id": "meet-2010-10-05-smea-kaigai-tenkai-dai1",
+      "councilId": "smea-kaigai-tenkai",
+      "councilName": "中小企業海外展開支援会議",
+      "ministry": "SMEA",
+      "category": "STUDY",
+      "title": "第1回 中小企業海外展開支援会議",
+      "date": "2010/10/05",
+      "updatedAt": "2010/10/05 17:00",
+      "location": "中小企業庁 / Web会議",
+      "summary": "中小企業海外展開支援会議（第1回）の開催。配付資料および議事概要。",
+      "agenda": [
+        "中小企業海外展開支援会議における検討・審議"
+      ],
+      "materials": [
+        {
+          "name": "第1回 中小企業海外展開支援会議 配布資料",
+          "type": "HTML",
+          "size": "-",
+          "url": "https://www.chusho.meti.go.jp/koukai/kenkyukai/kaigai/101005HS.html",
+          "isMinutes": false
+        }
+      ],
+      "tags": [
+        "中小企業海外展開支援会議",
+        "中小企業庁",
+        "SMEA",
+        "研究会",
+        "検討会"
+      ],
+      "officialUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/kaigai/101005HS.html",
+      "hasMinutes": false,
+      "docCount": 1
+    },
+    {
+      "id": "meet-2010-09-30-smea-kaikei-kenkyukai-dai1",
+      "councilId": "smea-kaikei-kenkyukai",
+      "councilName": "中小企業の会計に関する研究会",
+      "ministry": "SMEA",
+      "category": "STUDY",
+      "title": "第1回 中小企業の会計に関する研究会",
+      "date": "2010/09/30",
+      "updatedAt": "2010/09/30 17:00",
+      "location": "中小企業庁 / Web会議",
+      "summary": "中小企業の会計に関する研究会（第1回）の開催。配付資料および議事概要。",
+      "agenda": [
+        "中小企業の会計に関する研究会における検討・審議"
+      ],
+      "materials": [
+        {
+          "name": "中小企業の会計に関する研究会 中間報告書について",
+          "type": "HTML",
+          "size": "-",
+          "url": "https://www.chusho.meti.go.jp/zaimu/kaikei/2010/100930InterimReport.html",
+          "isMinutes": false
+        },
+        {
+          "name": "第1回 中小企業の会計に関する研究会 配布資料",
+          "type": "HTML",
+          "size": "-",
+          "url": "https://www.chusho.meti.go.jp/koukai/kenkyukai/kaikei/100215HS.html",
+          "isMinutes": false
+        },
+        {
+          "name": "第1回 中小企業の会計に関する研究会 議事要旨",
+          "type": "HTML",
+          "size": "-",
+          "url": "https://www.chusho.meti.go.jp/koukai/kenkyukai/kaikei/100215GY.html",
+          "isMinutes": true
+        },
+        {
+          "name": "中小企業の会計に関する研究会 概要 (PDF)",
+          "type": "PDF",
+          "size": "PDF",
+          "url": "https://www.chusho.meti.go.jp/koukai/kenkyukai/kenkyu/2002/download/020628kaikei_houkoku_gaiyou.pdf",
+          "isMinutes": false
+        },
+        {
+          "name": "中小企業の会計に関する研究会 報告書 (PDF)",
+          "type": "PDF",
+          "size": "PDF",
+          "url": "https://www.chusho.meti.go.jp/koukai/kenkyukai/kenkyu/2002/download/020628kaikei_houkoku.pdf",
+          "isMinutes": false
+        }
+      ],
+      "tags": [
+        "中小企業の会計に関する研究会",
+        "中小企業庁",
+        "SMEA",
+        "研究会",
+        "検討会"
+      ],
+      "officialUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/kaikei/100215HS.html",
+      "hasMinutes": true,
+      "docCount": 5
+    },
+    {
+      "id": "meet-2010-09-17-smea-kaikei-kenkyukai-dai7",
+      "councilId": "smea-kaikei-kenkyukai",
+      "councilName": "中小企業の会計に関する研究会",
+      "ministry": "SMEA",
+      "category": "STUDY",
+      "title": "第7回 中小企業の会計に関する研究会",
+      "date": "2010/09/17",
+      "updatedAt": "2010/09/17 17:00",
+      "location": "中小企業庁 / Web会議",
+      "summary": "中小企業の会計に関する研究会（第7回）の開催。配付資料および議事概要。",
+      "agenda": [
+        "中小企業の会計に関する研究会における検討・審議"
+      ],
+      "materials": [
+        {
+          "name": "第7回 中小企業の会計に関する研究会 配布資料",
+          "type": "HTML",
+          "size": "-",
+          "url": "https://www.chusho.meti.go.jp/koukai/kenkyukai/kaikei/100917HS.html",
+          "isMinutes": false
+        },
+        {
+          "name": "第7回 中小企業の会計に関する研究会 議事要旨",
+          "type": "HTML",
+          "size": "-",
+          "url": "https://www.chusho.meti.go.jp/koukai/kenkyukai/kaikei/100917GY.html",
+          "isMinutes": true
+        }
+      ],
+      "tags": [
+        "中小企業の会計に関する研究会",
+        "中小企業庁",
+        "SMEA",
+        "研究会",
+        "検討会"
+      ],
+      "officialUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/kaikei/100917HS.html",
+      "hasMinutes": true,
+      "docCount": 2
+    },
+    {
+      "id": "meet-2010-07-29-smea-kaikei-kenkyukai-dai6",
+      "councilId": "smea-kaikei-kenkyukai",
+      "councilName": "中小企業の会計に関する研究会",
+      "ministry": "SMEA",
+      "category": "STUDY",
+      "title": "第6回 中小企業の会計に関する研究会",
+      "date": "2010/07/29",
+      "updatedAt": "2010/07/29 17:00",
+      "location": "中小企業庁 / Web会議",
+      "summary": "中小企業の会計に関する研究会（第6回）の開催。配付資料および議事概要。",
+      "agenda": [
+        "中小企業の会計に関する研究会における検討・審議"
+      ],
+      "materials": [
+        {
+          "name": "第6回 中小企業の会計に関する研究会 配布資料",
+          "type": "HTML",
+          "size": "-",
+          "url": "https://www.chusho.meti.go.jp/koukai/kenkyukai/kaikei/100729HS.html",
+          "isMinutes": false
+        },
+        {
+          "name": "第6回 中小企業の会計に関する研究会 議事要旨",
+          "type": "HTML",
+          "size": "-",
+          "url": "https://www.chusho.meti.go.jp/koukai/kenkyukai/kaikei/100729GY.html",
+          "isMinutes": true
+        }
+      ],
+      "tags": [
+        "中小企業の会計に関する研究会",
+        "中小企業庁",
+        "SMEA",
+        "研究会",
+        "検討会"
+      ],
+      "officialUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/kaikei/100729HS.html",
+      "hasMinutes": true,
+      "docCount": 2
+    },
+    {
+      "id": "meet-2010-06-17-smea-kaikei-kenkyukai-dai5",
+      "councilId": "smea-kaikei-kenkyukai",
+      "councilName": "中小企業の会計に関する研究会",
+      "ministry": "SMEA",
+      "category": "STUDY",
+      "title": "第5回 中小企業の会計に関する研究会",
+      "date": "2010/06/17",
+      "updatedAt": "2010/06/17 17:00",
+      "location": "中小企業庁 / Web会議",
+      "summary": "中小企業の会計に関する研究会（第5回）の開催。配付資料および議事概要。",
+      "agenda": [
+        "中小企業の会計に関する研究会における検討・審議"
+      ],
+      "materials": [
+        {
+          "name": "第5回 中小企業の会計に関する研究会 配布資料",
+          "type": "HTML",
+          "size": "-",
+          "url": "https://www.chusho.meti.go.jp/koukai/kenkyukai/kaikei/100617HS.html",
+          "isMinutes": false
+        },
+        {
+          "name": "第5回 中小企業の会計に関する研究会 議事要旨",
+          "type": "HTML",
+          "size": "-",
+          "url": "https://www.chusho.meti.go.jp/koukai/kenkyukai/kaikei/100617GY.html",
+          "isMinutes": true
+        }
+      ],
+      "tags": [
+        "中小企業の会計に関する研究会",
+        "中小企業庁",
+        "SMEA",
+        "研究会",
+        "検討会"
+      ],
+      "officialUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/kaikei/100617HS.html",
+      "hasMinutes": true,
+      "docCount": 2
+    },
+    {
+      "id": "meet-2010-05-28-smea-chusho-kenshou-dai6",
+      "councilId": "smea-chusho-kenshou",
+      "councilName": "中小企業憲章に関する研究会",
+      "ministry": "SMEA",
+      "category": "STUDY",
+      "title": "第6回 中小企業憲章に関する研究会",
+      "date": "2010/05/28",
+      "updatedAt": "2010/05/28 17:00",
+      "location": "中小企業庁 / Web会議",
+      "summary": "中小企業憲章に関する研究会（第6回）の開催。配付資料および議事概要。",
+      "agenda": [
+        "中小企業憲章に関する研究会における検討・審議"
+      ],
+      "materials": [
+        {
+          "name": "第6回 中小企業憲章に関する研究会 配布資料",
+          "type": "HTML",
+          "size": "-",
+          "url": "https://www.chusho.meti.go.jp/koukai/kenkyukai/2010/100528HS.html",
+          "isMinutes": false
+        },
+        {
+          "name": "第6回 中小企業憲章に関する研究会 議事概要",
+          "type": "HTML",
+          "size": "-",
+          "url": "https://www.chusho.meti.go.jp/koukai/kenkyukai/2010/100528kaisai_gaiyou.html",
+          "isMinutes": true
+        }
+      ],
+      "tags": [
+        "中小企業憲章に関する研究会",
+        "中小企業庁",
+        "SMEA",
+        "研究会",
+        "検討会"
+      ],
+      "officialUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/2010/100528HS.html",
+      "hasMinutes": true,
+      "docCount": 2
+    },
+    {
+      "id": "meet-2010-05-18-smea-kaikei-kenkyukai-dai4",
+      "councilId": "smea-kaikei-kenkyukai",
+      "councilName": "中小企業の会計に関する研究会",
+      "ministry": "SMEA",
+      "category": "STUDY",
+      "title": "第4回 中小企業の会計に関する研究会",
+      "date": "2010/05/18",
+      "updatedAt": "2010/05/18 17:00",
+      "location": "中小企業庁 / Web会議",
+      "summary": "中小企業の会計に関する研究会（第4回）の開催。配付資料および議事概要。",
+      "agenda": [
+        "中小企業の会計に関する研究会における検討・審議"
+      ],
+      "materials": [
+        {
+          "name": "第4回 中小企業の会計に関する研究会 配布資料",
+          "type": "HTML",
+          "size": "-",
+          "url": "https://www.chusho.meti.go.jp/koukai/kenkyukai/kaikei/100518HS.html",
+          "isMinutes": false
+        },
+        {
+          "name": "第4回 中小企業の会計に関する研究会 議事要旨",
+          "type": "HTML",
+          "size": "-",
+          "url": "https://www.chusho.meti.go.jp/koukai/kenkyukai/kaikei/100518GY.html",
+          "isMinutes": true
+        }
+      ],
+      "tags": [
+        "中小企業の会計に関する研究会",
+        "中小企業庁",
+        "SMEA",
+        "研究会",
+        "検討会"
+      ],
+      "officialUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/kaikei/100518HS.html",
+      "hasMinutes": true,
+      "docCount": 2
+    },
+    {
+      "id": "meet-2010-04-13-smea-chusho-kenshou-dai5",
+      "councilId": "smea-chusho-kenshou",
+      "councilName": "中小企業憲章に関する研究会",
+      "ministry": "SMEA",
+      "category": "STUDY",
+      "title": "第5回 中小企業憲章に関する研究会",
+      "date": "2010/04/13",
+      "updatedAt": "2010/04/13 17:00",
+      "location": "中小企業庁 / Web会議",
+      "summary": "中小企業憲章に関する研究会（第5回）の開催。配付資料および議事概要。",
+      "agenda": [
+        "中小企業憲章に関する研究会における検討・審議"
+      ],
+      "materials": [
+        {
+          "name": "第5回 中小企業憲章に関する研究会 配布資料",
+          "type": "HTML",
+          "size": "-",
+          "url": "https://www.chusho.meti.go.jp/koukai/kenkyukai/2010/100413HS.html",
+          "isMinutes": false
+        },
+        {
+          "name": "第5回 中小企業憲章に関する研究会 議事概要",
+          "type": "HTML",
+          "size": "-",
+          "url": "https://www.chusho.meti.go.jp/koukai/kenkyukai/2010/100413kaisai_gaiyou.html",
+          "isMinutes": true
+        }
+      ],
+      "tags": [
+        "中小企業憲章に関する研究会",
+        "中小企業庁",
+        "SMEA",
+        "研究会",
+        "検討会"
+      ],
+      "officialUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/2010/100413HS.html",
+      "hasMinutes": true,
+      "docCount": 2
+    },
+    {
+      "id": "meet-2010-04-05-smea-chusho-kenshou-dai4",
+      "councilId": "smea-chusho-kenshou",
+      "councilName": "中小企業憲章に関する研究会",
+      "ministry": "SMEA",
+      "category": "STUDY",
+      "title": "第4回 中小企業憲章に関する研究会",
+      "date": "2010/04/05",
+      "updatedAt": "2010/04/05 17:00",
+      "location": "中小企業庁 / Web会議",
+      "summary": "中小企業憲章に関する研究会（第4回）の開催。配付資料および議事概要。",
+      "agenda": [
+        "中小企業憲章に関する研究会における検討・審議"
+      ],
+      "materials": [
+        {
+          "name": "第4回 中小企業憲章に関する研究会 配布資料",
+          "type": "HTML",
+          "size": "-",
+          "url": "https://www.chusho.meti.go.jp/koukai/kenkyukai/2010/100405HS.html",
+          "isMinutes": false
+        },
+        {
+          "name": "第4回 中小企業憲章に関する研究会 議事概要",
+          "type": "HTML",
+          "size": "-",
+          "url": "https://www.chusho.meti.go.jp/koukai/kenkyukai/2010/100405kaisai_gaiyou.html",
+          "isMinutes": true
+        }
+      ],
+      "tags": [
+        "中小企業憲章に関する研究会",
+        "中小企業庁",
+        "SMEA",
+        "研究会",
+        "検討会"
+      ],
+      "officialUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/2010/100405HS.html",
+      "hasMinutes": true,
+      "docCount": 2
+    },
+    {
+      "id": "meet-2010-04-02-smea-kaikei-kenkyukai-dai3",
+      "councilId": "smea-kaikei-kenkyukai",
+      "councilName": "中小企業の会計に関する研究会",
+      "ministry": "SMEA",
+      "category": "STUDY",
+      "title": "第3回 中小企業の会計に関する研究会",
+      "date": "2010/04/02",
+      "updatedAt": "2010/04/02 17:00",
+      "location": "中小企業庁 / Web会議",
+      "summary": "中小企業の会計に関する研究会（第3回）の開催。配付資料および議事概要。",
+      "agenda": [
+        "中小企業の会計に関する研究会における検討・審議"
+      ],
+      "materials": [
+        {
+          "name": "第3回 中小企業の会計に関する研究会 配布資料",
+          "type": "HTML",
+          "size": "-",
+          "url": "https://www.chusho.meti.go.jp/koukai/kenkyukai/kaikei/100402HS.html",
+          "isMinutes": false
+        },
+        {
+          "name": "第3回 中小企業の会計に関する研究会 議事要旨",
+          "type": "HTML",
+          "size": "-",
+          "url": "https://www.chusho.meti.go.jp/koukai/kenkyukai/kaikei/100402GY.html",
+          "isMinutes": true
+        }
+      ],
+      "tags": [
+        "中小企業の会計に関する研究会",
+        "中小企業庁",
+        "SMEA",
+        "研究会",
+        "検討会"
+      ],
+      "officialUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/kaikei/100402HS.html",
+      "hasMinutes": true,
+      "docCount": 2
+    },
+    {
+      "id": "meet-2010-03-12-smea-kaikei-kenkyukai-dai2",
+      "councilId": "smea-kaikei-kenkyukai",
+      "councilName": "中小企業の会計に関する研究会",
+      "ministry": "SMEA",
+      "category": "STUDY",
+      "title": "第2回 中小企業の会計に関する研究会",
+      "date": "2010/03/12",
+      "updatedAt": "2010/03/12 17:00",
+      "location": "中小企業庁 / Web会議",
+      "summary": "中小企業の会計に関する研究会（第2回）の開催。配付資料および議事概要。",
+      "agenda": [
+        "中小企業の会計に関する研究会における検討・審議"
+      ],
+      "materials": [
+        {
+          "name": "第2回 中小企業の会計に関する研究会 配布資料",
+          "type": "HTML",
+          "size": "-",
+          "url": "https://www.chusho.meti.go.jp/koukai/kenkyukai/kaikei/100312HS.html",
+          "isMinutes": false
+        },
+        {
+          "name": "第2回 中小企業の会計に関する研究会 議事要旨",
+          "type": "HTML",
+          "size": "-",
+          "url": "https://www.chusho.meti.go.jp/koukai/kenkyukai/kaikei/100312GY.html",
+          "isMinutes": true
+        }
+      ],
+      "tags": [
+        "中小企業の会計に関する研究会",
+        "中小企業庁",
+        "SMEA",
+        "研究会",
+        "検討会"
+      ],
+      "officialUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/kaikei/100312HS.html",
+      "hasMinutes": true,
+      "docCount": 2
+    },
+    {
+      "id": "meet-2010-03-12-smea-chusho-kenshou-dai3",
+      "councilId": "smea-chusho-kenshou",
+      "councilName": "中小企業憲章に関する研究会",
+      "ministry": "SMEA",
+      "category": "STUDY",
+      "title": "第3回 中小企業憲章に関する研究会",
+      "date": "2010/03/12",
+      "updatedAt": "2010/03/12 17:00",
+      "location": "中小企業庁 / Web会議",
+      "summary": "中小企業憲章に関する研究会（第3回）の開催。配付資料および議事概要。",
+      "agenda": [
+        "中小企業憲章に関する研究会における検討・審議"
+      ],
+      "materials": [
+        {
+          "name": "第3回 中小企業憲章に関する研究会 配布資料",
+          "type": "HTML",
+          "size": "-",
+          "url": "https://www.chusho.meti.go.jp/koukai/kenkyukai/2010/100312HS.html",
+          "isMinutes": false
+        },
+        {
+          "name": "第3回 中小企業憲章に関する研究会 議事概要",
+          "type": "HTML",
+          "size": "-",
+          "url": "https://www.chusho.meti.go.jp/koukai/kenkyukai/2010/100312kaisai_gaiyou.html",
+          "isMinutes": true
+        }
+      ],
+      "tags": [
+        "中小企業憲章に関する研究会",
+        "中小企業庁",
+        "SMEA",
+        "研究会",
+        "検討会"
+      ],
+      "officialUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/2010/100312HS.html",
+      "hasMinutes": true,
+      "docCount": 2
+    },
+    {
+      "id": "meet-2010-02-23-smea-chusho-kenshou-dai2",
+      "councilId": "smea-chusho-kenshou",
+      "councilName": "中小企業憲章に関する研究会",
+      "ministry": "SMEA",
+      "category": "STUDY",
+      "title": "第2回 中小企業憲章に関する研究会",
+      "date": "2010/02/23",
+      "updatedAt": "2010/02/23 17:00",
+      "location": "中小企業庁 / Web会議",
+      "summary": "中小企業憲章に関する研究会（第2回）の開催。配付資料および議事概要。",
+      "agenda": [
+        "中小企業憲章に関する研究会における検討・審議"
+      ],
+      "materials": [
+        {
+          "name": "第2回 中小企業憲章に関する研究会 配布資料",
+          "type": "HTML",
+          "size": "-",
+          "url": "https://www.chusho.meti.go.jp/koukai/kenkyukai/2010/100223HS.html",
+          "isMinutes": false
+        },
+        {
+          "name": "第2回 中小企業憲章に関する研究会 議事概要",
+          "type": "HTML",
+          "size": "-",
+          "url": "https://www.chusho.meti.go.jp/koukai/kenkyukai/2010/100223kaisai_gaiyou.html",
+          "isMinutes": true
+        }
+      ],
+      "tags": [
+        "中小企業憲章に関する研究会",
+        "中小企業庁",
+        "SMEA",
+        "研究会",
+        "検討会"
+      ],
+      "officialUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/2010/100223HS.html",
+      "hasMinutes": true,
+      "docCount": 2
+    },
+    {
+      "id": "meet-2010-02-03-smea-chusho-kenshou-dai1",
+      "councilId": "smea-chusho-kenshou",
+      "councilName": "中小企業憲章に関する研究会",
+      "ministry": "SMEA",
+      "category": "STUDY",
+      "title": "第1回 中小企業憲章に関する研究会",
+      "date": "2010/02/03",
+      "updatedAt": "2010/02/03 17:00",
+      "location": "中小企業庁 / Web会議",
+      "summary": "中小企業憲章に関する研究会（第1回）の開催。配付資料および議事概要。",
+      "agenda": [
+        "中小企業憲章に関する研究会における検討・審議"
+      ],
+      "materials": [
+        {
+          "name": "第1回 中小企業憲章に関する研究会 配布資料",
+          "type": "HTML",
+          "size": "-",
+          "url": "https://www.chusho.meti.go.jp/koukai/kenkyukai/2010/100203HS.html",
+          "isMinutes": false
+        },
+        {
+          "name": "第1回 中小企業憲章に関する研究会 議事概要",
+          "type": "HTML",
+          "size": "-",
+          "url": "https://www.chusho.meti.go.jp/koukai/kenkyukai/2010/100203kaisai_gaiyou.html",
+          "isMinutes": true
+        }
+      ],
+      "tags": [
+        "中小企業憲章に関する研究会",
+        "中小企業庁",
+        "SMEA",
+        "研究会",
+        "検討会"
+      ],
+      "officialUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/2010/100203HS.html",
+      "hasMinutes": true,
+      "docCount": 2
     },
     {
       "id": "meet-2009-03-30-cas-tiikisaisei-62-dai10",
@@ -121161,6 +124252,40 @@
       "docCount": 62
     },
     {
+      "id": "meet-2007-02-28-smea-saisei-kadai-dai5",
+      "councilId": "smea-saisei-kadai",
+      "councilName": "中小企業再生の今後の政策的課題に関する研究会",
+      "ministry": "SMEA",
+      "category": "STUDY",
+      "title": "第5回 中小企業再生の今後の政策的課題に関する研究会",
+      "date": "2007/02/28",
+      "updatedAt": "2007/02/28 17:00",
+      "location": "中小企業庁 / Web会議",
+      "summary": "中小企業再生の今後の政策的課題に関する研究会（第5回）の開催。配付資料および議事概要。",
+      "agenda": [
+        "中小企業再生の今後の政策的課題に関する研究会における検討・審議"
+      ],
+      "materials": [
+        {
+          "name": "中小企業再生の今後の政策的課題に関する研究会 第5回議事概要",
+          "type": "HTML",
+          "size": "-",
+          "url": "https://www.chusho.meti.go.jp/koukai/kenkyukai/kenkyu/2007/070228saisei_kenkyuu5_gijigaiyou.html",
+          "isMinutes": true
+        }
+      ],
+      "tags": [
+        "中小企業再生の今後の政策的課題に関する研究会",
+        "中小企業庁",
+        "SMEA",
+        "研究会",
+        "検討会"
+      ],
+      "officialUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/kenkyu/2007/070228saisei_kenkyuu5_gijigaiyou.html",
+      "hasMinutes": true,
+      "docCount": 1
+    },
+    {
       "id": "meet-2007-01-26-cas-doushuu-78",
       "councilId": "cas-doushuu-78",
       "councilName": "道州制特別区域推進本部",
@@ -121431,6 +124556,333 @@
       "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/doushuu/",
       "hasMinutes": false,
       "docCount": 43
+    },
+    {
+      "id": "meet-2007-01-16-smea-saisei-kadai-dai4",
+      "councilId": "smea-saisei-kadai",
+      "councilName": "中小企業再生の今後の政策的課題に関する研究会",
+      "ministry": "SMEA",
+      "category": "STUDY",
+      "title": "第4回 中小企業再生の今後の政策的課題に関する研究会",
+      "date": "2007/01/16",
+      "updatedAt": "2007/01/16 17:00",
+      "location": "中小企業庁 / Web会議",
+      "summary": "中小企業再生の今後の政策的課題に関する研究会（第4回）の開催。配付資料および議事概要。",
+      "agenda": [
+        "中小企業再生の今後の政策的課題に関する研究会における検討・審議"
+      ],
+      "materials": [
+        {
+          "name": "中小企業再生の今後の政策的課題に関する研究会 第4回議事概要",
+          "type": "HTML",
+          "size": "-",
+          "url": "https://www.chusho.meti.go.jp/koukai/kenkyukai/kenkyu/2007/070116saisei_kenkyuu4_gijigaiyou.html",
+          "isMinutes": true
+        }
+      ],
+      "tags": [
+        "中小企業再生の今後の政策的課題に関する研究会",
+        "中小企業庁",
+        "SMEA",
+        "研究会",
+        "検討会"
+      ],
+      "officialUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/kenkyu/2007/070116saisei_kenkyuu4_gijigaiyou.html",
+      "hasMinutes": true,
+      "docCount": 1
+    },
+    {
+      "id": "meet-2006-12-01-smea-saisei-kadai-dai3",
+      "councilId": "smea-saisei-kadai",
+      "councilName": "中小企業再生の今後の政策的課題に関する研究会",
+      "ministry": "SMEA",
+      "category": "STUDY",
+      "title": "第3回 中小企業再生の今後の政策的課題に関する研究会",
+      "date": "2006/12/01",
+      "updatedAt": "2006/12/01 17:00",
+      "location": "中小企業庁 / Web会議",
+      "summary": "中小企業再生の今後の政策的課題に関する研究会（第3回）の開催。配付資料および議事概要。",
+      "agenda": [
+        "中小企業再生の今後の政策的課題に関する研究会における検討・審議"
+      ],
+      "materials": [
+        {
+          "name": "中小企業再生の今後の政策的課題に関する研究会 第3回議事概要",
+          "type": "HTML",
+          "size": "-",
+          "url": "https://www.chusho.meti.go.jp/koukai/kenkyukai/kenkyu/2006/061201saisei_kenkyuu2_gijigaiyou.html",
+          "isMinutes": true
+        }
+      ],
+      "tags": [
+        "中小企業再生の今後の政策的課題に関する研究会",
+        "中小企業庁",
+        "SMEA",
+        "研究会",
+        "検討会"
+      ],
+      "officialUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/kenkyu/2006/061201saisei_kenkyuu2_gijigaiyou.html",
+      "hasMinutes": true,
+      "docCount": 1
+    },
+    {
+      "id": "meet-2006-11-16-smea-saisei-kadai-dai2",
+      "councilId": "smea-saisei-kadai",
+      "councilName": "中小企業再生の今後の政策的課題に関する研究会",
+      "ministry": "SMEA",
+      "category": "STUDY",
+      "title": "第2回 中小企業再生の今後の政策的課題に関する研究会",
+      "date": "2006/11/16",
+      "updatedAt": "2006/11/16 17:00",
+      "location": "中小企業庁 / Web会議",
+      "summary": "中小企業再生の今後の政策的課題に関する研究会（第2回）の開催。配付資料および議事概要。",
+      "agenda": [
+        "中小企業再生の今後の政策的課題に関する研究会における検討・審議"
+      ],
+      "materials": [
+        {
+          "name": "中小企業再生の今後の政策的課題に関する研究会 第2回議事概要",
+          "type": "HTML",
+          "size": "-",
+          "url": "https://www.chusho.meti.go.jp/koukai/kenkyukai/kenkyu/2006/061116saisei_kenkyuu2_gijigaiyou.html",
+          "isMinutes": true
+        }
+      ],
+      "tags": [
+        "中小企業再生の今後の政策的課題に関する研究会",
+        "中小企業庁",
+        "SMEA",
+        "研究会",
+        "検討会"
+      ],
+      "officialUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/kenkyu/2006/061116saisei_kenkyuu2_gijigaiyou.html",
+      "hasMinutes": true,
+      "docCount": 1
+    },
+    {
+      "id": "meet-2006-09-13-smea-saisei-kadai-dai1",
+      "councilId": "smea-saisei-kadai",
+      "councilName": "中小企業再生の今後の政策的課題に関する研究会",
+      "ministry": "SMEA",
+      "category": "STUDY",
+      "title": "第1回 中小企業再生の今後の政策的課題に関する研究会",
+      "date": "2006/09/13",
+      "updatedAt": "2006/09/13 17:00",
+      "location": "中小企業庁 / Web会議",
+      "summary": "中小企業再生の今後の政策的課題に関する研究会（第1回）の開催。配付資料および議事概要。",
+      "agenda": [
+        "中小企業再生の今後の政策的課題に関する研究会における検討・審議"
+      ],
+      "materials": [
+        {
+          "name": "中小企業再生の今後の政策的課題に関する研究会 第1回議事概要",
+          "type": "HTML",
+          "size": "-",
+          "url": "https://www.chusho.meti.go.jp/koukai/kenkyukai/kenkyu/2006/060913saisei_kenkyuu1_gijigaiyou.html",
+          "isMinutes": true
+        },
+        {
+          "name": "中小企業再生の今後の政策的課題に関する研究会 開催について",
+          "type": "HTML",
+          "size": "-",
+          "url": "https://www.chusho.meti.go.jp/koukai/kenkyukai/kenkyu/2006/060913saisei_kenkyuu_shushi.html",
+          "isMinutes": false
+        }
+      ],
+      "tags": [
+        "中小企業再生の今後の政策的課題に関する研究会",
+        "中小企業庁",
+        "SMEA",
+        "研究会",
+        "検討会"
+      ],
+      "officialUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/kenkyu/2006/060913saisei_kenkyuu1_gijigaiyou.html",
+      "hasMinutes": true,
+      "docCount": 2
+    },
+    {
+      "id": "meet-2006-07-25-smea-atarashii-kinyu-dai1",
+      "councilId": "smea-atarashii-kinyu",
+      "councilName": "新しい中小企業金融研究会",
+      "ministry": "SMEA",
+      "category": "STUDY",
+      "title": "第1回 新しい中小企業金融研究会",
+      "date": "2006/07/25",
+      "updatedAt": "2006/07/25 17:00",
+      "location": "中小企業庁 / Web会議",
+      "summary": "新しい中小企業金融研究会（第1回）の開催。配付資料および議事概要。",
+      "agenda": [
+        "新しい中小企業金融研究会における検討・審議"
+      ],
+      "materials": [
+        {
+          "name": "新しい中小企業金融研究会 報告書について",
+          "type": "HTML",
+          "size": "-",
+          "url": "https://www.chusho.meti.go.jp/koukai/kenkyukai/kenkyu/2006/060725kinyu_kenkyuu_houkokusho.html",
+          "isMinutes": false
+        },
+        {
+          "name": "新しい中小企業金融研究会 第1回議事概要",
+          "type": "HTML",
+          "size": "-",
+          "url": "https://www.chusho.meti.go.jp/koukai/kenkyukai/kenkyu/2006/060414kinyu_kenkyuu1_gijigaiyou.html",
+          "isMinutes": true
+        },
+        {
+          "name": "新しい中小企業金融研究会 開催について",
+          "type": "HTML",
+          "size": "-",
+          "url": "https://www.chusho.meti.go.jp/koukai/kenkyukai/kenkyu/2006/060414kinyu_kenkyuu_shushi.html",
+          "isMinutes": false
+        }
+      ],
+      "tags": [
+        "新しい中小企業金融研究会",
+        "中小企業庁",
+        "SMEA",
+        "研究会",
+        "検討会"
+      ],
+      "officialUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/kenkyu/2006/060725kinyu_kenkyuu_houkokusho.html",
+      "hasMinutes": true,
+      "docCount": 3
+    },
+    {
+      "id": "meet-2006-07-24-smea-atarashii-kinyu-dai5",
+      "councilId": "smea-atarashii-kinyu",
+      "councilName": "新しい中小企業金融研究会",
+      "ministry": "SMEA",
+      "category": "STUDY",
+      "title": "第5回 新しい中小企業金融研究会",
+      "date": "2006/07/24",
+      "updatedAt": "2006/07/24 17:00",
+      "location": "中小企業庁 / Web会議",
+      "summary": "新しい中小企業金融研究会（第5回）の開催。配付資料および議事概要。",
+      "agenda": [
+        "新しい中小企業金融研究会における検討・審議"
+      ],
+      "materials": [
+        {
+          "name": "新しい中小企業金融研究会 第5回議事概要",
+          "type": "HTML",
+          "size": "-",
+          "url": "https://www.chusho.meti.go.jp/koukai/kenkyukai/kenkyu/2006/060724kinyu_kenkyuu5_gijigaiyou.html",
+          "isMinutes": true
+        }
+      ],
+      "tags": [
+        "新しい中小企業金融研究会",
+        "中小企業庁",
+        "SMEA",
+        "研究会",
+        "検討会"
+      ],
+      "officialUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/kenkyu/2006/060724kinyu_kenkyuu5_gijigaiyou.html",
+      "hasMinutes": true,
+      "docCount": 1
+    },
+    {
+      "id": "meet-2006-06-29-smea-atarashii-kinyu-dai4",
+      "councilId": "smea-atarashii-kinyu",
+      "councilName": "新しい中小企業金融研究会",
+      "ministry": "SMEA",
+      "category": "STUDY",
+      "title": "第4回 新しい中小企業金融研究会",
+      "date": "2006/06/29",
+      "updatedAt": "2006/06/29 17:00",
+      "location": "中小企業庁 / Web会議",
+      "summary": "新しい中小企業金融研究会（第4回）の開催。配付資料および議事概要。",
+      "agenda": [
+        "新しい中小企業金融研究会における検討・審議"
+      ],
+      "materials": [
+        {
+          "name": "新しい中小企業金融研究会 第4回議事概要",
+          "type": "HTML",
+          "size": "-",
+          "url": "https://www.chusho.meti.go.jp/koukai/kenkyukai/kenkyu/2006/060629kinyu_kenkyuu4_gijigaiyou.html",
+          "isMinutes": true
+        }
+      ],
+      "tags": [
+        "新しい中小企業金融研究会",
+        "中小企業庁",
+        "SMEA",
+        "研究会",
+        "検討会"
+      ],
+      "officialUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/kenkyu/2006/060629kinyu_kenkyuu4_gijigaiyou.html",
+      "hasMinutes": true,
+      "docCount": 1
+    },
+    {
+      "id": "meet-2006-06-02-smea-atarashii-kinyu-dai3",
+      "councilId": "smea-atarashii-kinyu",
+      "councilName": "新しい中小企業金融研究会",
+      "ministry": "SMEA",
+      "category": "STUDY",
+      "title": "第3回 新しい中小企業金融研究会",
+      "date": "2006/06/02",
+      "updatedAt": "2006/06/02 17:00",
+      "location": "中小企業庁 / Web会議",
+      "summary": "新しい中小企業金融研究会（第3回）の開催。配付資料および議事概要。",
+      "agenda": [
+        "新しい中小企業金融研究会における検討・審議"
+      ],
+      "materials": [
+        {
+          "name": "新しい中小企業金融研究会 第3回議事概要",
+          "type": "HTML",
+          "size": "-",
+          "url": "https://www.chusho.meti.go.jp/koukai/kenkyukai/kenkyu/2006/060602kinyu_kenkyuu3_gijigaiyou.html",
+          "isMinutes": true
+        }
+      ],
+      "tags": [
+        "新しい中小企業金融研究会",
+        "中小企業庁",
+        "SMEA",
+        "研究会",
+        "検討会"
+      ],
+      "officialUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/kenkyu/2006/060602kinyu_kenkyuu3_gijigaiyou.html",
+      "hasMinutes": true,
+      "docCount": 1
+    },
+    {
+      "id": "meet-2006-05-24-smea-atarashii-kinyu-dai2",
+      "councilId": "smea-atarashii-kinyu",
+      "councilName": "新しい中小企業金融研究会",
+      "ministry": "SMEA",
+      "category": "STUDY",
+      "title": "第2回 新しい中小企業金融研究会",
+      "date": "2006/05/24",
+      "updatedAt": "2006/05/24 17:00",
+      "location": "中小企業庁 / Web会議",
+      "summary": "新しい中小企業金融研究会（第2回）の開催。配付資料および議事概要。",
+      "agenda": [
+        "新しい中小企業金融研究会における検討・審議"
+      ],
+      "materials": [
+        {
+          "name": "新しい中小企業金融研究会 第2回議事概要",
+          "type": "HTML",
+          "size": "-",
+          "url": "https://www.chusho.meti.go.jp/koukai/kenkyukai/kenkyu/2006/060524kinyu_kenkyuu2_gijigaiyou.html",
+          "isMinutes": true
+        }
+      ],
+      "tags": [
+        "新しい中小企業金融研究会",
+        "中小企業庁",
+        "SMEA",
+        "研究会",
+        "検討会"
+      ],
+      "officialUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/kenkyu/2006/060524kinyu_kenkyuu2_gijigaiyou.html",
+      "hasMinutes": true,
+      "docCount": 1
     },
     {
       "id": "meet-2006-01-26-fsa-kinyu-shingi-dai2",
@@ -133304,17 +136756,6 @@
       "aiReason": "AI判定: SMEA所管の公式検討会/研究会ページであることを確認（承認）"
     },
     {
-      "id": "smea-1341",
-      "name": "知的財産取引適正化ワーキンググループ",
-      "ministry": "SMEA",
-      "category": "WORKING_GROUP",
-      "officialUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/chizaitorihiki_wg/report/260313report.html",
-      "sourcePageUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/index.html",
-      "trackedSince": "2026-08-09",
-      "status": "approved",
-      "aiReason": "AI判定: SMEA所管の公式ワーキンググループページであることを確認（承認）"
-    },
-    {
       "id": "smea-1366",
       "name": "地域の経営支援力強化に向けたよろず支援拠点のあり方検討会",
       "ministry": "SMEA",
@@ -133434,39 +136875,6 @@
       "trackedSince": "2026-08-09",
       "status": "approved",
       "aiReason": "AI判定: SMEA所管の公式審議会/検討会ページであることを確認（承認）"
-    },
-    {
-      "id": "smea-1621",
-      "name": "中小企業の会計に関する研究会 中間",
-      "ministry": "SMEA",
-      "category": "STUDY",
-      "officialUrl": "https://www.chusho.meti.go.jp/zaimu/kaikei/2010/100930InterimReport.html",
-      "sourcePageUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/index.html",
-      "trackedSince": "2026-08-09",
-      "status": "approved",
-      "aiReason": "AI判定: SMEA所管の公式検討会/研究会ページであることを確認（承認）"
-    },
-    {
-      "id": "smea-1650",
-      "name": "中小企業再生の今後の政策的課題に関する研究会",
-      "ministry": "SMEA",
-      "category": "STUDY",
-      "officialUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/kenkyu/2006/060913saisei_kenkyuu_shushi.html",
-      "sourcePageUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/index.html",
-      "trackedSince": "2026-08-09",
-      "status": "approved",
-      "aiReason": "AI判定: SMEA所管の公式検討会/研究会ページであることを確認（承認）"
-    },
-    {
-      "id": "smea-1651",
-      "name": "新しい中小企業金融研究会",
-      "ministry": "SMEA",
-      "category": "STUDY",
-      "officialUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/kenkyu/2006/060725kinyu_kenkyuu_houkokusho.html",
-      "sourcePageUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/index.html",
-      "trackedSince": "2026-08-09",
-      "status": "approved",
-      "aiReason": "AI判定: SMEA所管の公式検討会/研究会ページであることを確認（承認）"
     },
     {
       "id": "smea-1658",
@@ -147755,54 +151163,6 @@
       "aiReason": "AI判定: 登録済み会議体（価値創造企業に関する賢人会議）と重複しているため却下"
     },
     {
-      "id": "smea-2860",
-      "name": "企業取引研究会",
-      "ministry": "SMEA",
-      "category": "STUDY",
-      "officialUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/index.html",
-      "isNew": true,
-      "trackedSince": "2026-08-22",
-      "sourcePageUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/index.html",
-      "status": "rejected",
-      "aiReason": "AI判定: 登録済み会議体（企業取引研究会）と重複しているため却下"
-    },
-    {
-      "id": "smea-2861",
-      "name": "知的財産取引適正化ワーキンググループ 報告書",
-      "ministry": "SMEA",
-      "category": "WORKING_GROUP",
-      "officialUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/chizaitorihiki_wg/report/260313report.html",
-      "isNew": true,
-      "trackedSince": "2026-08-22",
-      "sourcePageUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/index.html",
-      "status": "rejected",
-      "aiReason": "AI判定: HTTPステータス 202（正常アクセス不可）のため却下"
-    },
-    {
-      "id": "smea-2862",
-      "name": "知的財産取引適正化ワーキンググループ",
-      "ministry": "SMEA",
-      "category": "WORKING_GROUP",
-      "officialUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/index.html",
-      "isNew": true,
-      "trackedSince": "2026-08-22",
-      "sourcePageUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/index.html",
-      "status": "rejected",
-      "aiReason": "AI判定: 登録済み会議体（知的財産取引適正化ワーキンググループ）と重複しているため却下"
-    },
-    {
-      "id": "smea-2863",
-      "name": "約束手形をはじめとする支払条件の改善に向けた検討会",
-      "ministry": "SMEA",
-      "category": "STUDY",
-      "officialUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/index.html",
-      "isNew": true,
-      "trackedSince": "2026-08-22",
-      "sourcePageUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/index.html",
-      "status": "rejected",
-      "aiReason": "AI判定: 登録済み会議体（約束手形をはじめとする支払条件の改善に向けた検討会）と重複しているため却下"
-    },
-    {
       "id": "smea-2864",
       "name": "知的財産取引検討会",
       "ministry": "SMEA",
@@ -148511,18 +151871,6 @@
       "aiReason": "AI判定: 登録済み会議体（商工中金の在り方検討会）と重複しているため却下"
     },
     {
-      "id": "smea-2923",
-      "name": "金融EDIにおける商流情報等のあり方検討会議",
-      "ministry": "SMEA",
-      "category": "STUDY",
-      "officialUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/index.html",
-      "isNew": true,
-      "trackedSince": "2026-08-22",
-      "sourcePageUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/index.html",
-      "status": "rejected",
-      "aiReason": "AI判定: 登録済み会議体（金融EDIにおける商流情報等のあり方検討会議）と重複しているため却下"
-    },
-    {
       "id": "smea-2924",
       "name": "中小企業における個人保証等の在り方研究会",
       "ministry": "SMEA",
@@ -148535,131 +151883,11 @@
       "aiReason": "AI判定: HTTPステータス 202（正常アクセス不可）のため却下"
     },
     {
-      "id": "smea-2925",
-      "name": "知識サポート・経営改革プラットフォーム研究会",
-      "ministry": "SMEA",
-      "category": "STUDY",
-      "officialUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/index.html",
-      "isNew": true,
-      "trackedSince": "2026-08-22",
-      "sourcePageUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/index.html",
-      "status": "rejected",
-      "aiReason": "AI判定: 登録済み会議体（知識サポート・経営改革プラットフォーム研究会）と重複しているため却下"
-    },
-    {
       "id": "smea-2926",
       "name": "“日本の未来”応援会議～小さな企業が日本を変える～(“ちいさな企業”)未来会議",
       "ministry": "SMEA",
       "category": "COUNCIL",
       "officialUrl": "https://www.chusho.meti.go.jp/miraikaigi/index.html",
-      "isNew": true,
-      "trackedSince": "2026-08-22",
-      "sourcePageUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/index.html",
-      "status": "rejected",
-      "aiReason": "AI判定: HTTPステータス 202（正常アクセス不可）のため却下"
-    },
-    {
-      "id": "smea-2927",
-      "name": "中小企業の会計に関する研究会 中間報告書について",
-      "ministry": "SMEA",
-      "category": "STUDY",
-      "officialUrl": "https://www.chusho.meti.go.jp/zaimu/kaikei/2010/100930InterimReport.html",
-      "isNew": true,
-      "trackedSince": "2026-08-22",
-      "sourcePageUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/index.html",
-      "status": "rejected",
-      "aiReason": "AI判定: HTTPステータス 202（正常アクセス不可）のため却下"
-    },
-    {
-      "id": "smea-2928",
-      "name": "中小企業の会計に関する研究会",
-      "ministry": "SMEA",
-      "category": "STUDY",
-      "officialUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/index.html",
-      "isNew": true,
-      "trackedSince": "2026-08-22",
-      "sourcePageUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/index.html",
-      "status": "rejected",
-      "aiReason": "AI判定: 登録済み会議体（中小企業の会計に関する研究会）と重複しているため却下"
-    },
-    {
-      "id": "smea-2929",
-      "name": "中小企業海外展開支援会議",
-      "ministry": "SMEA",
-      "category": "COUNCIL",
-      "officialUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/index.html",
-      "isNew": true,
-      "trackedSince": "2026-08-22",
-      "sourcePageUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/index.html",
-      "status": "rejected",
-      "aiReason": "AI判定: 登録済み会議体（中小企業海外展開支援会議）と重複しているため却下"
-    },
-    {
-      "id": "smea-2930",
-      "name": "中小企業憲章に関する研究会",
-      "ministry": "SMEA",
-      "category": "STUDY",
-      "officialUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/index.html",
-      "isNew": true,
-      "trackedSince": "2026-08-22",
-      "sourcePageUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/index.html",
-      "status": "rejected",
-      "aiReason": "AI判定: 登録済み会議体（中小企業憲章に関する研究会）と重複しているため却下"
-    },
-    {
-      "id": "smea-2931",
-      "name": "中小企業再生の今後の政策的課題に関する研究会",
-      "ministry": "SMEA",
-      "category": "STUDY",
-      "officialUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/index.html",
-      "isNew": true,
-      "trackedSince": "2026-08-22",
-      "sourcePageUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/index.html",
-      "status": "rejected",
-      "aiReason": "AI判定: 登録済み会議体（中小企業再生の今後の政策的課題に関する研究会）と重複しているため却下"
-    },
-    {
-      "id": "smea-2932",
-      "name": "中小企業再生の今後の政策的課題に関する研究会 開催について",
-      "ministry": "SMEA",
-      "category": "STUDY",
-      "officialUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/kenkyu/2006/060913saisei_kenkyuu_shushi.html",
-      "isNew": true,
-      "trackedSince": "2026-08-22",
-      "sourcePageUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/index.html",
-      "status": "rejected",
-      "aiReason": "AI判定: HTTPステータス 202（正常アクセス不可）のため却下"
-    },
-    {
-      "id": "smea-2933",
-      "name": "新しい中小企業金融研究会 報告書について",
-      "ministry": "SMEA",
-      "category": "STUDY",
-      "officialUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/kenkyu/2006/060725kinyu_kenkyuu_houkokusho.html",
-      "isNew": true,
-      "trackedSince": "2026-08-22",
-      "sourcePageUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/index.html",
-      "status": "rejected",
-      "aiReason": "AI判定: HTTPステータス 202（正常アクセス不可）のため却下"
-    },
-    {
-      "id": "smea-2934",
-      "name": "新しい中小企業金融研究会",
-      "ministry": "SMEA",
-      "category": "STUDY",
-      "officialUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/index.html",
-      "isNew": true,
-      "trackedSince": "2026-08-22",
-      "sourcePageUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/index.html",
-      "status": "rejected",
-      "aiReason": "AI判定: 登録済み会議体（新しい中小企業金融研究会）と重複しているため却下"
-    },
-    {
-      "id": "smea-2935",
-      "name": "新しい中小企業金融研究会 開催について",
-      "ministry": "SMEA",
-      "category": "STUDY",
-      "officialUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/kenkyu/2006/060414kinyu_kenkyuu_shushi.html",
       "isNew": true,
       "trackedSince": "2026-08-22",
       "sourcePageUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/index.html",
