@@ -36,7 +36,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     ministryFilter: 'ALL',
     categoryFilter: 'ALL',
     docTypeFilter: 'ALL',
-    dateRangeFilter: 'ALL',
+    dateRangeFilter: 'PAST_YEAR',
     watchlistOnly: false,
     sortBy: 'NEWEST',
     watchedCouncilIds: new Set(JSON.parse(localStorage.getItem('pmhub_watched')) || ['cao-ai-strategy', 'digital-suishin', 'cao-kisei-kaikaku', 'meti-sangyo-kozo', 'mhlw-shakai-hosho', 'mof-zaisei-seido']),
@@ -230,9 +230,6 @@ document.addEventListener('DOMContentLoaded', async () => {
     el.watchlistCount.textContent = state.watchedCouncilIds.size;
     if (el.watchlistActiveCount) {
       el.watchlistActiveCount.textContent = state.watchedCouncilIds.size;
-    }
-    if (el.watchlistFilterBadge) {
-      el.watchlistFilterBadge.textContent = state.watchedCouncilIds.size;
     }
 
     if (el.statLastUpdate) {
@@ -463,6 +460,42 @@ document.addEventListener('DOMContentLoaded', async () => {
     showToast('検索・絞り込み条件をクリアしました');
   }
 
+  // --- DATE REFERENCE & PAST YEAR HELPERS ---
+  function getReferenceDate() {
+    // データの最終クロール日時または現在時刻を基準日とする
+    if (typeof LAST_CRAWL_TIME !== 'undefined' && LAST_CRAWL_TIME) {
+      const d = new Date(LAST_CRAWL_TIME.replace(/-/g, '/'));
+      if (!isNaN(d.getTime())) return d;
+    }
+    return new Date();
+  }
+
+  function getCouncilPastYearCount(council) {
+    const councilMeetings = meetingsByCouncilMap.get(council.id) || [];
+    const meetingsWithDates = councilMeetings.filter(m => m.date && m.date !== '-');
+    if (meetingsWithDates.length > 0) {
+      const refDate = getReferenceDate();
+      const oneYearAgo = new Date(refDate);
+      oneYearAgo.setFullYear(oneYearAgo.getFullYear() - 1);
+      let count = 0;
+      meetingsWithDates.forEach(m => {
+        const d = new Date(m.date.replace(/-/g, '/'));
+        if (!isNaN(d.getTime()) && d >= oneYearAgo && d <= refDate) {
+          count++;
+        }
+      });
+      return count;
+    }
+    if (typeof council.pastYearCount === 'number') {
+      return council.pastYearCount;
+    }
+    if (typeof council.pastYearCount === 'string') {
+      const parsed = parseInt(council.pastYearCount.replace(/[^0-9]/g, ''), 10);
+      return !isNaN(parsed) ? parsed : 0;
+    }
+    return 0;
+  }
+
   function filterMeetings() {
     return MEETINGS.filter(meeting => {
       // Watchlist filter
@@ -504,14 +537,17 @@ document.addEventListener('DOMContentLoaded', async () => {
 
       // Date Range filter
       if (state.dateRangeFilter !== 'ALL') {
+        if (!meeting.date || meeting.date === '-') return false;
         const meetingDate = new Date(meeting.date.replace(/-/g, '/'));
-        const now = new Date('2026/08/01');
-        const diffDays = (now - meetingDate) / (1000 * 60 * 60 * 24);
+        if (isNaN(meetingDate.getTime())) return false;
+        const refDate = getReferenceDate();
+        const diffDays = (refDate - meetingDate) / (1000 * 60 * 60 * 24);
 
-        if (state.dateRangeFilter === '7D' && diffDays > 7) return false;
-        if (state.dateRangeFilter === '30D' && diffDays > 30) return false;
-        if (state.dateRangeFilter === '90D' && diffDays > 90) return false;
-        if (state.dateRangeFilter === 'YEAR' && meetingDate.getFullYear() !== 2026) return false;
+        if (state.dateRangeFilter === '7D' && (diffDays < 0 || diffDays > 7)) return false;
+        if (state.dateRangeFilter === '30D' && (diffDays < 0 || diffDays > 30)) return false;
+        if (state.dateRangeFilter === '90D' && (diffDays < 0 || diffDays > 90)) return false;
+        if (state.dateRangeFilter === 'PAST_YEAR' && (diffDays < 0 || diffDays > 365)) return false;
+        if (state.dateRangeFilter === 'YEAR' && meetingDate.getFullYear() !== refDate.getFullYear()) return false;
       }
 
       return true;
@@ -566,7 +602,16 @@ document.addEventListener('DOMContentLoaded', async () => {
     if (state.ministryFilter !== 'ALL') activeTags.push({ label: `省庁: ${MINISTRIES[state.ministryFilter]?.name || state.ministryFilter}`, key: 'ministry' });
     if (state.categoryFilter !== 'ALL') activeTags.push({ label: `会議種別: ${CATEGORIES[state.categoryFilter]}`, key: 'category' });
     if (state.docTypeFilter !== 'ALL') activeTags.push({ label: `資料: ${state.docTypeFilter}`, key: 'docType' });
-    if (state.dateRangeFilter !== 'ALL') activeTags.push({ label: `期間: ${state.dateRangeFilter}`, key: 'dateRange' });
+    if (state.dateRangeFilter !== 'ALL') {
+      const dateLabels = {
+        'PAST_YEAR': '過去1年間に開催',
+        '7D': '直近7日間',
+        '30D': '直近30日間',
+        '90D': '直近90日間',
+        'YEAR': '今年度 (2026年)'
+      };
+      activeTags.push({ label: `期間: ${dateLabels[state.dateRangeFilter] || state.dateRangeFilter}`, key: 'dateRange' });
+    }
 
     if (activeTags.length > 0) {
       el.activeFiltersBar.classList.remove('hidden');
@@ -772,29 +817,8 @@ document.addEventListener('DOMContentLoaded', async () => {
     if (c.pastYearCount === '-' || c.pastYearCount === null || c.hasTopPageDates === false) {
       return '-';
     }
-    const councilMeetings = meetingsByCouncilMap.get(c.id) || [];
-    const meetingsWithDates = councilMeetings.filter(m => m.date && m.date !== '-');
-    if (meetingsWithDates.length > 0) {
-      const refDate = new Date('2026-08-02T23:59:59');
-      const oneYearAgo = new Date(refDate);
-      oneYearAgo.setFullYear(oneYearAgo.getFullYear() - 1);
-      let count = 0;
-      meetingsWithDates.forEach(m => {
-        const d = new Date(m.date.replace(/-/g, '/'));
-        if (!isNaN(d.getTime()) && d >= oneYearAgo && d <= refDate) {
-          count++;
-        }
-      });
-      return `${count} 回`;
-    }
-    if (typeof c.pastYearCount === 'number') {
-      return `${c.pastYearCount} 回`;
-    }
-    if (typeof c.pastYearCount === 'string') {
-      if (c.pastYearCount === '-') return '-';
-      return c.pastYearCount.includes('回') ? c.pastYearCount : `${c.pastYearCount} 回`;
-    }
-    return '-';
+    const count = getCouncilPastYearCount(c);
+    return `${count} 回`;
   }
 
   function filterCouncils() {
@@ -802,12 +826,36 @@ document.addEventListener('DOMContentLoaded', async () => {
       if (state.watchlistOnly && !state.watchedCouncilIds.has(council.id)) return false;
       if (state.ministryFilter !== 'ALL' && council.ministry !== state.ministryFilter) return false;
       if (state.categoryFilter !== 'ALL' && council.category !== state.categoryFilter) return false;
+
+      // 開催期間フィルタ（過去1年間に1回以上開催等）
+      if (state.dateRangeFilter !== 'ALL') {
+        if (state.dateRangeFilter === 'PAST_YEAR') {
+          const pastYearCount = getCouncilPastYearCount(council);
+          if (pastYearCount <= 0) return false;
+        } else {
+          const councilMeetings = meetingsByCouncilMap.get(council.id) || [];
+          const refDate = getReferenceDate();
+          const hasMatchingMeeting = councilMeetings.some(m => {
+            if (!m.date || m.date === '-') return false;
+            const md = new Date(m.date.replace(/-/g, '/'));
+            if (isNaN(md.getTime())) return false;
+            const diffDays = (refDate - md) / (1000 * 60 * 60 * 24);
+            if (state.dateRangeFilter === '7D') return diffDays >= 0 && diffDays <= 7;
+            if (state.dateRangeFilter === '30D') return diffDays >= 0 && diffDays <= 30;
+            if (state.dateRangeFilter === '90D') return diffDays >= 0 && diffDays <= 90;
+            if (state.dateRangeFilter === 'YEAR') return md.getFullYear() === refDate.getFullYear();
+            return true;
+          });
+          if (!hasMatchingMeeting) return false;
+        }
+      }
+
       if (state.searchQuery) {
         const q = state.searchQuery.toLowerCase();
         const minName = MINISTRIES[council.ministry]?.name || '';
         const matchName = council.name.toLowerCase().includes(q);
         const matchMin = minName.toLowerCase().includes(q);
-        const matchDesc = council.description.toLowerCase().includes(q);
+        const matchDesc = (council.description || '').toLowerCase().includes(q);
         // Also search in meetings of this council
         const councilMeetings = meetingsByCouncilMap.get(council.id) || [];
         const matchMeetings = councilMeetings.some(m => {
@@ -872,7 +920,7 @@ document.addEventListener('DOMContentLoaded', async () => {
             <line x1="21" y1="21" x2="16.65" y2="16.65" />
           </svg>
           <h3>該当する会議体が見つかりませんでした</h3>
-          <p>省庁・会議種別などの絞り込み条件を緩和してお試しください。</p>
+          <p>開催期間や省庁・会議種別などの絞り込み条件を緩和してお試しください。</p>
         </div>
       `;
       return;
@@ -893,14 +941,17 @@ document.addEventListener('DOMContentLoaded', async () => {
       // Filter meetings within council if date range filter is active
       let filteredMeetings = councilMeetings;
       if (state.dateRangeFilter !== 'ALL') {
+        const refDate = getReferenceDate();
         filteredMeetings = councilMeetings.filter(m => {
+          if (!m.date || m.date === '-') return false;
           const meetingDate = new Date(m.date.replace(/-/g, '/'));
-          const now = new Date('2026/08/01');
-          const diffDays = (now - meetingDate) / (1000 * 60 * 60 * 24);
-          if (state.dateRangeFilter === '7D' && diffDays > 7) return false;
-          if (state.dateRangeFilter === '30D' && diffDays > 30) return false;
-          if (state.dateRangeFilter === '90D' && diffDays > 90) return false;
-          if (state.dateRangeFilter === 'YEAR' && meetingDate.getFullYear() !== 2026) return false;
+          if (isNaN(meetingDate.getTime())) return false;
+          const diffDays = (refDate - meetingDate) / (1000 * 60 * 60 * 24);
+          if (state.dateRangeFilter === '7D' && (diffDays < 0 || diffDays > 7)) return false;
+          if (state.dateRangeFilter === '30D' && (diffDays < 0 || diffDays > 30)) return false;
+          if (state.dateRangeFilter === '90D' && (diffDays < 0 || diffDays > 90)) return false;
+          if (state.dateRangeFilter === 'PAST_YEAR' && (diffDays < 0 || diffDays > 365)) return false;
+          if (state.dateRangeFilter === 'YEAR' && meetingDate.getFullYear() !== refDate.getFullYear()) return false;
           return true;
         });
       }

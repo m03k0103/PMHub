@@ -93,6 +93,16 @@ class CustomHandler(http.server.SimpleHTTPRequestHandler):
                     self.wfile.write(f.read().encode('utf-8'))
             else:
                 self.wfile.write(json.dumps({}).encode('utf-8'))
+        elif self.path == "/api/rejected-councils":
+            self.send_response(200)
+            self.send_header('Content-Type', 'application/json; charset=utf-8')
+            self.end_headers()
+            rej_file = os.path.join(os.path.dirname(__file__), "rejected_councils.json")
+            if os.path.exists(rej_file):
+                with open(rej_file, "r", encoding="utf-8") as f:
+                    self.wfile.write(f.read().encode('utf-8'))
+            else:
+                self.wfile.write(json.dumps([]).encode('utf-8'))
         elif self.path == "/api/get-crawler-config":
             self.send_response(200)
             self.send_header('Content-Type', 'application/json; charset=utf-8')
@@ -191,6 +201,24 @@ class CustomHandler(http.server.SimpleHTTPRequestHandler):
                 self.send_header('Content-Type', 'application/json; charset=utf-8')
                 self.end_headers()
                 self.wfile.write(json.dumps({"status": "ok", "message": "Crawler config updated"}).encode('utf-8'))
+            except Exception as e:
+                self.send_response(500)
+                self.send_header('Content-Type', 'application/json; charset=utf-8')
+                self.end_headers()
+                self.wfile.write(json.dumps({"status": "error", "message": str(e)}).encode('utf-8'))
+
+        elif self.path == "/api/save-rejected-councils":
+            content_length = int(self.headers.get('Content-Length', 0))
+            post_data = self.rfile.read(content_length)
+            try:
+                data = json.loads(post_data.decode('utf-8'))
+                rej_file = os.path.join(os.path.dirname(__file__), "rejected_councils.json")
+                with open(rej_file, "w", encoding="utf-8") as f:
+                    json.dump(data, f, ensure_ascii=False, indent=2)
+                self.send_response(200)
+                self.send_header('Content-Type', 'application/json; charset=utf-8')
+                self.end_headers()
+                self.wfile.write(json.dumps({"status": "ok", "message": "Rejected councils updated"}).encode('utf-8'))
             except Exception as e:
                 self.send_response(500)
                 self.send_header('Content-Type', 'application/json; charset=utf-8')

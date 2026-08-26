@@ -19,13 +19,14 @@
 - URLサニタイズ / HTMLエスケープによるXSS対策ユーティリティ
 
 ### 管理者ツール (`admin/`)
-- `crawler.py`: 政府サイトを巡回し、抽出結果を `scraped_councils_output.json` に出力
-- `discover_councils.py`: 新規会議体を自動検出し、`discovered_councils.json` に出力
-- `sync_crawler_data.py`: クローラーの出力結果を `docs/data.js` に自動同期・構文検証
-- `agent_initial_verifier.py`: クロール/データ反映前後の検証補助
-- `scraping_rules.json`: クロール抽出ルール定義
-- `discovery_keywords.json`: 新規会議体発見用の検索キーワード定義
 - `admin_dashboard.html`: 管理者向け統合ダッシュボード（会議体ディスカバリー、クローラー実行、データ管理）
+- `server.py`: 管理ダッシュボード用ローカルサーバー（API、データ保存）
+- `start.bat`: 管理サーバー＆ダッシュボード ワンクリック起動バッチ
+- `crawler.py`: 政府サイトを巡回し、抽出結果を `scraped_councils_output.json` に出力
+- `discover_councils.py`: 新規会議体を自動検出
+- `apply_report.py`: 検証レポートを `docs/data.json` に適用
+- `rejected_councils.json`: 却下・除外会議体リスト
+- `agent_crawl_guide.md`: AIエージェント用 クロール・データ更新作業手順書
 
 ## ディレクトリ構成
 
@@ -33,30 +34,30 @@
 PMHub/
 ├── package.json
 ├── README.md
+├── AGENTS.md
 ├── docs/
 │   ├── index.html
 │   ├── styles.css
-│   ├── data.js
+│   ├── data.json
 │   └── app.js
 ├── admin/
 │   ├── admin_dashboard.html
-│   ├── admin_guide.md
+│   ├── server.py
+│   ├── start.bat
 │   ├── agent_crawl_guide.md
-│   ├── agent_initial_verifier.py
 │   ├── crawler.py
 │   ├── discover_councils.py
-│   ├── discovered_councils.json
-│   ├── discovery_keywords.json
+│   ├── rejected_councils.json
 │   ├── scraped_councils_output.json
-│   ├── scraping_rules.json
-│   └── sync_crawler_data.py
-├── design/
+│   └── apply_report.py
+├── guide/
+│   ├── admin_guide.md
 │   ├── CRAWLER_ARCHITECTURE.md
 │   └── RESOURCE_MAP.md
 └── testing/
     ├── app.test.js
     ├── smoke_test.py
-    └── test_escapeHtml.js
+    └── test_no_duplicate_meetings.py
 ```
 
 ## セットアップ
@@ -86,7 +87,6 @@ python -m http.server 8000
 
 ```bash
 node --test testing/app.test.js
-node testing/test_escapeHtml.js
 ```
 
 ### Python スモークテスト
@@ -96,9 +96,9 @@ python testing/smoke_test.py
 ```
 
 `smoke_test.py` では主に以下を確認します。
-- JS/Python の構文エラー検出
+- JS/HTML/Python/JSON の構文エラー検出・DOM整合性検査
 - 変更URL中心の疎通確認
-- データ同期整合性チェック
+- 会議体ID同期・データ整合性・全5タブコンテナ検査
 
 ## データ更新フロー（運用）
 
@@ -117,15 +117,16 @@ python crawler.py
 ```
 
 3. 生成された `admin/scraped_councils_output.json` を確認
-4. `admin/sync_crawler_data.py` を実行し `docs/data.js` に自動反映・検証
+4. 管理ダッシュボード (`admin_dashboard.html`) または `apply_report.py` で `docs/data.json` に反映
 5. `testing/smoke_test.py` と Node.js テストを実行
 6. 問題なければ公開
 
 詳細は以下を参照してください。
-- `admin/admin_guide.md`
+- `guide/admin_guide.md`
+- `guide/CRAWLER_ARCHITECTURE.md`
+- `guide/RESOURCE_MAP.md`
+- `AGENTS.md`
 - `admin/agent_crawl_guide.md`
-- `design/CRAWLER_ARCHITECTURE.md`
-- `design/RESOURCE_MAP.md`
 
 ## 公開・セキュリティ方針
 
@@ -136,5 +137,5 @@ python crawler.py
 
 ## 補足
 
-- データは `docs/data.js` 内の `COUNCILS` / `MEETINGS` を参照して描画されます。
-- 最終クロール時刻は `LAST_CRAWL_TIME` を優先表示します。
+- データは `docs/data.json` 内の `councils` / `meetings` を参照して描画されます。
+- 最終クロール時刻は `lastCrawlTime` を優先表示します。

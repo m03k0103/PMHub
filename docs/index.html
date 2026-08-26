@@ -250,8 +250,9 @@
 
           <!-- Date Range Select -->
           <div class="filter-group">
-            <label for="dateRangeSelect">更新期間</label>
+            <label for="dateRangeSelect">開催・更新期間</label>
             <select id="dateRangeSelect">
+              <option value="PAST_YEAR" selected>過去1年間に開催（デフォルト）</option>
               <option value="ALL">全期間</option>
               <option value="7D">直近 7 日間</option>
               <option value="30D">直近 30 日間</option>
@@ -277,7 +278,6 @@
                 <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
               </svg>
               <span>ウォッチ対象のみ</span>
-              <span class="watchlist-badge-count" id="watchlistFilterBadge">0</span>
             </button>
           </div>
 

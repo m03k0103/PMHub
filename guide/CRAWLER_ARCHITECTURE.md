@@ -26,9 +26,9 @@
                                ▼
 ┌─────────────────────────────────────────────────────────────────┐
 │  抽出結果データベース                                            │
-│  ├─ admin/discovered_councils.json (新規会議体自動検出ログ)      │
-│  ├─ admin/scraped_councils_output.json (実行ログ・中間データ)    │
-│  └─ docs/data.js (公開ポータル用 構造化データ)                   │
+│  ├─ docs/data.json (審議会・会議・ルール・ディスカバリー単一DB)  │
+│  ├─ admin/rejected_councils.json (却下・除外会議体リスト)        │
+│  └─ admin/scraped_councils_output.json (実行ログ・中間データ)    │
 └─────────────────────────────────────────────────────────────────┘
 ```
 
@@ -36,27 +36,9 @@
 
 ## ⚙️ 2. クローリングの具体的なステップと仕組み
 
-### Step 1: ターゲット構成の定義 (`CRAWL_TARGETS` / `discovery_keywords.json`)
-既知の会議体は [admin/crawler.py](file:///d:/dev/PMHub/admin/crawler.py) の `CRAWL_TARGETS` 配列にて、巡回対象の省庁コード (`CAO`, `CAS`, `DIGITAL` 等)、会議体名、公式URLを集中管理しています。
+### Step 1: ターゲット構成の定義 (`COUNCILS` / `scrapingRules`)
+既知の会議体は [docs/data.json](file:///d:/dev/PMHub/docs/data.json) の `councils` 配列および `scrapingRules` にて、巡回対象の省庁コード (`CAO`, `CAS`, `DIGITAL` 等)、会議体名、公式URL、抽出ルールを集中管理しています。
 また、未知の会議体は [admin/discover_councils.py](file:///d:/dev/PMHub/admin/discover_councils.py) が各省庁の「審議会等一覧ページ」を巡回し、自動検出します。
-
-```python
-CRAWL_TARGETS = [
-    {
-        "id": "cas-zensedai-hosyo",
-        "ministry": "CAS",
-        "name": "全世代型社会保障構築会議",
-        "url": "https://www.cas.go.jp/jp/seisaku/zensedai_hosyo/index.html"
-    },
-    {
-        "id": "cao-ai-hq",
-        "ministry": "CAO",
-        "name": "人工知能戦略本部",
-        "url": "https://www8.cao.go.jp/cstp/ai/ai_hq/kaisai.html"
-    },
-    ...
-]
-```
 
 ---
 
@@ -96,8 +78,8 @@ Webページ内でリンクされている配布資料（議事次第、議事�
 1. **管理用ログ出力 ([admin/scraped_councils_output.json](file:///d:/dev/PMHub/admin/scraped_councils_output.json))**:
    巡回日時、全対象サイトの接続結果 (200 OK件数)、抽出された資料PDFの全リストをJSON形式で記録します。
 
-2. **公開ポータルへの自動同期 ([admin/sync_crawler_data.py](file:///d:/dev/PMHub/admin/sync_crawler_data.py))**:
-    `sync_crawler_data.py` スクリプトにより `scraped_councils_output.json` のデータを `docs/data.js` へ安全に自動結合します。結合後、Node.jsを用いた自動構文検査が走るため、データ破損（SyntaxError等）を未然に防ぎます。同期されたデータは検索・フィルター・エクスポート機能ですぐに利用可能になります。
+2. **公開ポータルへの自動同期**:
+   抽出されたデータは管理ダッシュボード経由または検証スクリプトにより `docs/data.json` へ安全に反映されます。反映後、自動テスト（`smoke_test.py` 等）が走るため、データ破損を未然に防ぎます。
 
 ---
 
@@ -113,5 +95,5 @@ Webページ内でリンクされている配布資料（議事次第、議事�
 
 ## 🤖 4. 自動化（タスクスケジューラ・Cron）の手順
 
-管理者端末またはバッチサーバーで定時自動巡回を行う手順は [admin/admin_guide.md](file:///d:/dev/PMHub/admin/admin_guide.md) に記載されています。
+管理者端末またはバッチサーバーで定時自動巡回を行う手順は [guide/admin_guide.md](file:///d:/dev/PMHub/guide/admin_guide.md) に記載されています。
 管理者専用コントロールパネル ([admin/admin_dashboard.html](file:///d:/dev/PMHub/admin/admin_dashboard.html)) からもボタン1つで即時実行が可能です。
