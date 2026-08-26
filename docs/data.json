@@ -3149,24 +3149,6 @@
       }
     },
     {
-      "id": "mof-1139",
-      "name": "関税分科会",
-      "ministry": "MOF",
-      "category": "SUBCOMMITTEE",
-      "officialUrl": "https://www.mof.go.jp/about_mof/councils/customs_disatisfaction_review/sub-customs_old/outline/index.html",
-      "trackedSince": "2026-08-09",
-      "pastYearCount": 0,
-      "crawlStatus": {
-        "lastAttempt": "2026-08-22 10:09:33",
-        "result": "partial",
-        "extractionMethod": "rule",
-        "materialsCount": 0,
-        "datesCount": 1,
-        "failureReason": "",
-        "consecutiveFailures": 0
-      }
-    },
-    {
       "id": "mof-1140",
       "name": "輸入映画部会",
       "ministry": "MOF",
@@ -3180,24 +3162,6 @@
         "extractionMethod": "rule",
         "materialsCount": 0,
         "datesCount": 1,
-        "failureReason": "",
-        "consecutiveFailures": 0
-      }
-    },
-    {
-      "id": "mof-1141",
-      "name": "税制調査会",
-      "ministry": "MOF",
-      "category": "COUNCIL",
-      "officialUrl": "https://www.cao.go.jp/zei-cho/gijiroku/index.html",
-      "trackedSince": "2026-08-09",
-      "pastYearCount": 0,
-      "crawlStatus": {
-        "lastAttempt": "2026-08-22 10:09:34",
-        "result": "partial",
-        "extractionMethod": "rule",
-        "materialsCount": 0,
-        "datesCount": 5,
         "failureReason": "",
         "consecutiveFailures": 0
       }
@@ -3460,24 +3424,6 @@
       "ministry": "SMEA",
       "category": "COMMITTEE",
       "officialUrl": "https://www.chusho.meti.go.jp/koukai/shingikai/torihikimondai/index.html",
-      "trackedSince": "2026-08-09",
-      "pastYearCount": 0,
-      "crawlStatus": {
-        "lastAttempt": "2026-08-22 10:09:43",
-        "result": "failed",
-        "extractionMethod": "none",
-        "materialsCount": 0,
-        "datesCount": 0,
-        "failureReason": "Network fetch failed",
-        "consecutiveFailures": 1
-      }
-    },
-    {
-      "id": "smea-1312",
-      "name": "中小企業政策審議会",
-      "ministry": "SMEA",
-      "category": "COUNCIL",
-      "officialUrl": "https://www.chusho.meti.go.jp/koukai/shingikai/soukai/index.html",
       "trackedSince": "2026-08-09",
       "pastYearCount": 0,
       "crawlStatus": {
@@ -3932,25 +3878,6 @@
         "result": "success",
         "extractionMethod": "rule",
         "materialsCount": 29,
-        "datesCount": 5,
-        "failureReason": "",
-        "consecutiveFailures": 0
-      }
-    },
-    {
-      "id": "fdma-kento-84",
-      "name": "危険物施設の長期使用に係る調査検討会",
-      "ministry": "FDMA",
-      "category": "STUDY",
-      "description": "〒100-8927 東京都千代田区霞が関2-1-2（地図）電話番号03-5253-5111(代表)法人番号：9000012020003",
-      "officialUrl": "https://www.fdma.go.jp/singi_kento/kento/post-84.html",
-      "pastYearCount": 0,
-      "isWatched": false,
-      "crawlStatus": {
-        "lastAttempt": "2026-08-22 10:09:52",
-        "result": "success",
-        "extractionMethod": "rule",
-        "materialsCount": 8,
         "datesCount": 5,
         "failureReason": "",
         "consecutiveFailures": 0
@@ -5171,105 +5098,6 @@
         "failureReason": "",
         "consecutiveFailures": 0
       }
-    },
-    {
-      "id": "anre-199",
-      "name": "省エネルギー・新エネルギー分科会",
-      "ministry": "ANRE",
-      "category": "SUBCOMMITTEE",
-      "officialUrl": "https://www.meti.go.jp/shingikai/enecho/shoene_shinene/index.html",
-      "trackedSince": "2026-08-09",
-      "pastYearCount": 0
-    },
-    {
-      "id": "anre-200",
-      "name": "資源・燃料分科会",
-      "ministry": "ANRE",
-      "category": "SUBCOMMITTEE",
-      "officialUrl": "https://www.meti.go.jp/shingikai/enecho/shigen_nenryo/index.html",
-      "trackedSince": "2026-08-09",
-      "pastYearCount": 0
-    },
-    {
-      "id": "anre-201",
-      "name": "電力・ガス事業分科会",
-      "ministry": "ANRE",
-      "category": "SUBCOMMITTEE",
-      "officialUrl": "https://www.meti.go.jp/shingikai/enecho/denryoku_gas/index.html",
-      "trackedSince": "2026-08-09",
-      "pastYearCount": 0
-    },
-    {
-      "id": "anre-202",
-      "name": "調達価格等算定委員会",
-      "ministry": "ANRE",
-      "category": "COMMITTEE",
-      "officialUrl": "https://www.meti.go.jp/shingikai/santeii/",
-      "trackedSince": "2026-08-09",
-      "pastYearCount": 0
-    },
-    {
-      "id": "anre-203",
-      "name": "エネルギー情勢懇談会",
-      "ministry": "ANRE",
-      "category": "STUDY",
-      "officialUrl": "https://www.enecho.meti.go.jp/committee/studygroup/#ene_situation",
-      "trackedSince": "2026-08-09",
-      "pastYearCount": 0
-    },
-    {
-      "id": "caa-207",
-      "name": "国民生活審議会（消費者庁発足以前）",
-      "ministry": "CAA",
-      "category": "HQ",
-      "officialUrl": "https://www.caa.go.jp/about_us/about/ago/",
-      "trackedSince": "2026-08-09",
-      "pastYearCount": 0
-    },
-    {
-      "id": "cao-269",
-      "name": "災害対策法制のあり方に関する研究会（最終開催日：平成23年12月6日）",
-      "ministry": "CAO",
-      "category": "STUDY",
-      "officialUrl": "https://www.bousai.go.jp/kaigirep/kenkyu/saigaitaisakuhousei/index.html",
-      "trackedSince": "2026-08-09",
-      "pastYearCount": 0
-    },
-    {
-      "id": "cao-270",
-      "name": "再生エネルギー等に関する規制等の総点検タスクフォース（最終開催日：令和６年３月22日）",
-      "ministry": "CAO",
-      "category": "COUNCIL",
-      "officialUrl": "https://www8.cao.go.jp/kisei-kaikaku/kisei/conference/energy/e_index.html",
-      "trackedSince": "2026-08-09",
-      "pastYearCount": 0
-    },
-    {
-      "id": "cas-306",
-      "name": "カウンターインテリジェンス推進会議",
-      "ministry": "CAS",
-      "category": "HQ",
-      "officialUrl": "https://www.cas.go.jp/jp/seisaku/counterintelligence/index.html",
-      "trackedSince": "2026-08-09",
-      "pastYearCount": 0
-    },
-    {
-      "id": "cas-307",
-      "name": "花粉症に関する関係閣僚会議",
-      "ministry": "CAS",
-      "category": "COUNCIL",
-      "officialUrl": "https://www.cas.go.jp/jp/seisaku/kafun/index.html",
-      "trackedSince": "2026-08-09",
-      "pastYearCount": 0
-    },
-    {
-      "id": "fdma-446",
-      "name": "消防審議会",
-      "ministry": "FDMA",
-      "category": "COUNCIL",
-      "officialUrl": "https://www.fdma.go.jp/singi_kento/singi/",
-      "trackedSince": "2026-08-09",
-      "pastYearCount": 0
     },
     {
       "id": "cao-cstp-bridge-wg",
@@ -102416,7 +102244,7 @@
     },
     {
       "id": "meet-2021-07-26-fdma-kento-84",
-      "councilId": "fdma-kento-84",
+      "councilId": "fdma-kento-43",
       "councilName": "危険物施設の長期使用に係る調査検討会",
       "ministry": "FDMA",
       "category": "STUDY",
