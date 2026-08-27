@@ -517,12 +517,18 @@ def execute_rule_retrieval(target, html, rule_item, use_llm=True):
     return scraped_item
 
 def update_crawl_status(data, council_id, scraped_item, failure_reason=None):
-    """data.json の councils 配列内の該当会議体に crawlStatus を記録する"""
+    """data.json の councils 配列内の該当会議体に crawlStatus を記録する。
+    manualLock: true が設定された会議体はクロールステータスのみ更新し、
+    officialUrl / name / description 等のコアフィールドを上書きしない。"""
     for council in data.get("councils", []):
         if council.get("id") == council_id:
+            is_locked = council.get("manualLock", False)
+            if is_locked:
+                print(f"  [\U0001F512 LOCKED] {council_id}: manualLock が設定されています。crawlStatus のみ更新します（コアフィールドは保護済み）。")
+
             prev_status = council.get("crawlStatus", {})
             prev_failures = prev_status.get("consecutiveFailures", 0)
-            
+
             if scraped_item is None:
                 # fetch自体が失敗
                 council["crawlStatus"] = {
@@ -532,7 +538,8 @@ def update_crawl_status(data, council_id, scraped_item, failure_reason=None):
                     "materialsCount": 0,
                     "datesCount": 0,
                     "failureReason": failure_reason or "Fetch failed",
-                    "consecutiveFailures": prev_failures + 1
+                    "consecutiveFailures": prev_failures + 1,
+                    "manualLockActive": is_locked
                 }
             else:
                 result = scraped_item.get("crawlResult", "failed")
@@ -543,7 +550,8 @@ def update_crawl_status(data, council_id, scraped_item, failure_reason=None):
                     "materialsCount": scraped_item.get("totalExtractedMaterials", 0),
                     "datesCount": len(scraped_item.get("extractedDates", [])),
                     "failureReason": "" if result != "failed" else "Both LLM and rule extraction returned 0 results",
-                    "consecutiveFailures": 0 if result != "failed" else prev_failures + 1
+                    "consecutiveFailures": 0 if result != "failed" else prev_failures + 1,
+                    "manualLockActive": is_locked
                 }
             break
 
@@ -619,9 +627,15 @@ def deduplicate_data_materials(data):
         # 2. 会議体内の複数開催回に重複して紐づいている同一資料URLの解消
         url_to_instances = defaultdict(list)
         for m in m_list:
+            # manualLock: true の会議はそのまま保護（重複排除・移動対象外）
+            if m.get("manualLock", False):
+                continue
             for mat in m.get("materials", []):
                 url = mat.get("url", "").strip()
                 if url and url != "#":
+                    # manualLock: true の個別資料も除外
+                    if mat.get("manualLock", False):
+                        continue
                     url_to_instances[url].append((m, mat))
 
         for url, insts in url_to_instances.items():

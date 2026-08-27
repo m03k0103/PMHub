@@ -64,6 +64,22 @@
     .council-card.verdict-approved::before { background: #10b981; }
     .council-card.verdict-rejected { border-color: rgba(239, 68, 68, 0.4); opacity: 0.6; }
     .council-card.verdict-rejected::before { background: #ef4444; }
+    .council-card.manual-locked { border-color: rgba(251, 191, 36, 0.5); }
+    .council-card.manual-locked::before { background: #f59e0b; }
+
+    .btn-lock {
+      padding: 0.4rem 0.75rem; border-radius: var(--radius-md); font-size: 0.8rem;
+      font-weight: 600; cursor: pointer; border: 1px solid rgba(251,191,36,0.4);
+      background: rgba(251,191,36,0.12); color: #fbbf24; transition: all var(--transition-normal);
+    }
+    .btn-lock:hover { background: rgba(251,191,36,0.25); border-color: #fbbf24; }
+    .btn-unlock {
+      padding: 0.4rem 0.75rem; border-radius: var(--radius-md); font-size: 0.8rem;
+      font-weight: 600; cursor: pointer; border: 1px solid rgba(100,116,139,0.4);
+      background: rgba(100,116,139,0.12); color: #94a3b8; transition: all var(--transition-normal);
+    }
+    .btn-unlock:hover { background: rgba(100,116,139,0.25); border-color: #94a3b8; }
+
 
     .card-top { display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem; flex-wrap: wrap; }
     .card-title-area { flex: 1; min-width: 0; }
@@ -1382,6 +1398,12 @@ JSON データを読み込み中...
           actionButtons = `<button class="btn-revert" onclick="setVerdict('${c.id}', null)">↩ 取消</button>`;
         }
 
+        const isManualLocked = c.manualLock === true;
+        const lockBtn = isManualLocked
+          ? `<button class="btn-unlock" onclick="toggleManualLock('${c.id}', false)" title="クロール保護を解除する">🔓 保護解除</button>`
+          : `<button class="btn-lock" onclick="toggleManualLock('${c.id}', true)" title="クロール上書きを禁止する">🔒 手動保護</button>`;
+        actionButtons += lockBtn;
+
         const globalIdx = i + 1;
         const totalCount = allCouncils.length;
         const statusBadge = v.verdict === 'approved'
@@ -1391,12 +1413,14 @@ JSON データを読み込み中...
           : '<span class="meta-chip" style="color:#f59e0b;border-color:rgba(245,158,11,0.3);background:rgba(245,158,11,0.08);">⏳ 未レビュー</span>';
 
         const isNewChip = c.isNew ? '<span class="meta-chip" style="color:#ec4899;border-color:rgba(236,72,153,0.3);background:rgba(236,72,153,0.08);">✨ 新規検出</span>' : '';
+        const lockBadge = isManualLocked ? '<span class="meta-chip" style="color:#fbbf24;border-color:rgba(251,191,36,0.3);background:rgba(251,191,36,0.08);">🔒 手動保護中</span>' : '';
+        const lockedClass = isManualLocked ? 'manual-locked' : '';
 
-        return `<div class="council-card ${verdictClass}" style="--card-accent: ${accentColor}; animation-delay: ${i * 0.02}s;" id="card-${c.id}">
+        return `<div class="council-card ${verdictClass} ${lockedClass}" style="--card-accent: ${accentColor}; animation-delay: ${i * 0.02}s;" id="card-${c.id}">
           <div class="card-top">
             <div class="card-title-area">
               <div class="card-idx">#${globalIdx} / ${totalCount}</div>
-              <div class="card-name">${escHtml(displayName)} ${statusBadge} ${isNewChip} ${hasNameCorrection ? '<span class="meta-chip" style="color:#38bdf8;border-color:rgba(56,189,248,0.3);background:rgba(56,189,248,0.08);">✏️ 名称修正あり</span>' : ''}</div>
+              <div class="card-name">${escHtml(displayName)} ${statusBadge} ${isNewChip} ${lockBadge} ${hasNameCorrection ? '<span class="meta-chip" style="color:#38bdf8;border-color:rgba(56,189,248,0.3);background:rgba(56,189,248,0.08);">✏️ 名称修正あり</span>' : ''}</div>
               <div class="card-id">ID: ${c.id}</div>
             </div>
             <div class="card-actions">${actionButtons}</div>
@@ -1417,7 +1441,35 @@ JSON データを読み込み中...
       updateStats();
     }
 
+
+    window.toggleManualLock = async function(councilId, lockValue) {
+      try {
+        const res = await fetch('/api/toggle-manual-lock', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ id: councilId, type: 'council', manualLock: lockValue })
+        });
+        if (res.ok) {
+          // Update in-memory council data
+          const c = allCouncils.find(x => x.id === councilId);
+          if (c) c.manualLock = lockValue;
+          renderCards();
+          console.log(`[manualLock] ${councilId} -> ${lockValue}`);
+        } else {
+          const err = await res.json().catch(() => ({}));
+          alert(`manualLock 変更失敗: ${err.message || 'Unknown error'}`);
+        }
+      } catch(e) {
+        // サーバーが起動していない場合はローカルのみ更新
+        const c = allCouncils.find(x => x.id === councilId);
+        if (c) c.manualLock = lockValue;
+        renderCards();
+        console.warn('[toggleManualLock] Server unavailable, local-only update. Changes will not persist to data.json until server is running.', e);
+      }
+    };
+
     window.jumpToMeetingList = function(councilId) {
+
       switchTab('tab-meetings');
       const searchInput = document.getElementById('filterMeetingsSearch');
       if (searchInput) {

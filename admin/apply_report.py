@@ -70,6 +70,10 @@ def apply_report(json_path, data_json_path=None):
                 found = False
                 for c in councils:
                     if c.get("id") == target_id:
+                        if c.get("manualLock", False):
+                            print(f"[SKIP] COUNCILS.{target_id}.{field}: manualLock が設定されています（上書きスキップ）。解除するには manualLock: false を設定してください。")
+                            found = True
+                            break
                         c[field] = new_val
                         applied_count += 1
                         print(f"Applied COUNCILS.{target_id}.{field} -> {new_val}")
@@ -82,6 +86,10 @@ def apply_report(json_path, data_json_path=None):
                 found = False
                 for m in meetings:
                     if m.get("id") == target_id:
+                        if m.get("manualLock", False):
+                            print(f"[SKIP] MEETINGS.{target_id}.{field}: manualLock が設定されています（上書きスキップ）。解除するには manualLock: false を設定してください。")
+                            found = True
+                            break
                         m[field] = new_val
                         applied_count += 1
                         print(f"Applied MEETINGS.{target_id}.{field} -> {new_val}")

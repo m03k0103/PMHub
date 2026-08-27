@@ -377,8 +377,54 @@ class CustomHandler(http.server.SimpleHTTPRequestHandler):
             self.send_header('Content-Type', 'application/json; charset=utf-8')
             self.end_headers()
             self.wfile.write(json.dumps({"status": "started", "message": "Discovery started in background"}).encode('utf-8'))
+        elif self.path == "/api/toggle-manual-lock":
+            content_length = int(self.headers.get('Content-Length', 0))
+            post_data = self.rfile.read(content_length)
+            try:
+                payload = json.loads(post_data.decode('utf-8'))
+                target_id = payload.get("id")
+                target_type = payload.get("type", "council")  # "council" or "meeting"
+                lock_value = payload.get("manualLock", True)
+
+                if not target_id:
+                    raise ValueError("ID is required")
+
+                if os.path.exists(DATA_JSON_FILE):
+                    with open(DATA_JSON_FILE, "r", encoding="utf-8") as df:
+                        data = json.load(df)
+
+                    if target_type == "council":
+                        for c in data.get("councils", []):
+                            if c.get("id") == target_id:
+                                c["manualLock"] = lock_value
+                                break
+                    elif target_type == "meeting":
+                        for m in data.get("meetings", []):
+                            if m.get("id") == target_id:
+                                m["manualLock"] = lock_value
+                                for mat in m.get("materials", []):
+                                    mat["manualLock"] = lock_value
+                                break
+
+                    with open(DATA_JSON_FILE, "w", encoding="utf-8") as df:
+                        json.dump(data, df, ensure_ascii=False, indent=2)
+
+                self.send_response(200)
+                self.send_header('Content-Type', 'application/json; charset=utf-8')
+                self.end_headers()
+                self.wfile.write(json.dumps({
+                    "status": "ok",
+                    "message": f"{target_type} {target_id} manualLock set to {lock_value}"
+                }).encode('utf-8'))
+            except Exception as e:
+                self.send_response(500)
+                self.send_header('Content-Type', 'application/json; charset=utf-8')
+                self.end_headers()
+                self.wfile.write(json.dumps({"status": "error", "message": str(e)}).encode('utf-8'))
+
         else:
             self.send_error(404)
+
 
 if __name__ == "__main__":
     print(f"Starting PM-Hub Local Admin Server at http://localhost:{PORT}")
