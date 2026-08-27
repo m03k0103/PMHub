@@ -41,8 +41,13 @@
    - 会議資料は中間ナビゲーションリンクではなく、各回の「提出資料」「配付資料」ページを辿り、末端のPDF/HTMLリンクを直接取得して登録する。
    - 会議への公式リンク（`officialUrl`）は、各回の「議事次第」「提出資料」等の個別ページURLを設定する。
 
-4. **文字化け防止の徹底**
+4. **手動登録・修正データの保護原則（`manualLock`）**
+   - エージェントまたは人間が手動で追加・修正した会議体（`councils`）、会議回（`meetings`）、資料（`materials`）には、クローラーによる上書きや削除を防止するため必ず `"manualLock": true` を設定する。
+   - `manualLock: true` のレコードは、クローラー（`crawler.py`）の重複排除・再配分処理や `apply_report.py` による自動上書きから除外され、保護される。
+
+5. **文字化け防止の徹底**
    - 日本語行政サイトのスクレイピング時は、`Shift_JIS` / `CP932` / `EUC-JP` / `UTF-8` のエンコーディング自動判定を厳格に行い、文字化けを徹底排除する。
 
-5. **自動テストによる整合性検証**
-   - データ更新後は、必ず [`testing/test_no_duplicate_meetings.py`](file:///d:/dev/PMHub/testing/test_no_duplicate_meetings.py) および [`testing/smoke_test.py`](file:///d:/dev/PMHub/testing/smoke_test.py) による検証テストを実行し、重複やエラーが0件であることを確認する。
+6. **自動テストによる整合性検証**
+   - データ更新後は、必ず [`testing/test_no_duplicate_meetings.py`](file:///d:/dev/PMHub/testing/test_no_duplicate_meetings.py)、[`testing/test_crawler_regression.py`](file:///d:/dev/PMHub/testing/test_crawler_regression.py)、および [`testing/smoke_test.py`](file:///d:/dev/PMHub/testing/smoke_test.py) による検証テストを実行し、重複・破損・回帰エラーが0件であることを確認する。
+

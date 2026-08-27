@@ -491,6 +491,31 @@ def check_view_rendering():
     print("  [PASS] 管理ダッシュボードの全5タブおよびリスト描画先コンテナを検証完了")
     return True
 
+def check_crawler_regression():
+    """クローラーの手動保護回帰テストを実行"""
+    print("\n--------------------------------------------------")
+    print(" [テスト 6/6] クローラー手動データ保護回帰テスト")
+    print("--------------------------------------------------")
+    test_script = os.path.join(PROJECT_ROOT, "testing", "test_crawler_regression.py")
+    if not os.path.exists(test_script):
+        print("  [SKIP] test_crawler_regression.py が見つかりません")
+        return True
+
+    res = subprocess.run([sys.executable, test_script], capture_output=True, text=True, encoding='utf-8', errors='replace')
+    if res.returncode == 0:
+        print("  [PASS] 手動保護データ (manualLock) の非破壊性・クローラー回帰テスト合格")
+        return True
+    else:
+        print("  [FAIL] クローラー回帰テストでエラーが検出されました:")
+        for line in res.stdout.splitlines():
+            if line.strip():
+                print(f"    {line}")
+        if res.stderr:
+            for line in res.stderr.splitlines():
+                if line.strip():
+                    print(f"    {line}")
+        return False
+
 def main():
     parser = argparse.ArgumentParser(description="PM-HUB Smoke Test Runner")
     parser.add_argument("--url", nargs="+", help="Explicit URLs to verify")
@@ -506,9 +531,10 @@ def main():
     utils_ok = check_escape_html()
     sync_ok = check_council_timeline_sync()
     view_ok = check_view_rendering()
+    crawler_ok = check_crawler_regression()
 
     print("\n==================================================")
-    if syntax_ok and links_ok and utils_ok and sync_ok and view_ok:
+    if syntax_ok and links_ok and utils_ok and sync_ok and view_ok and crawler_ok:
         print(" 【結果】全スモークテストに合格しました。修正コードは正常です。")
         sys.exit(0)
     else:
@@ -517,4 +543,5 @@ def main():
 
 if __name__ == "__main__":
     main()
+
 
