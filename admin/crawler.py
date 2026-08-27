@@ -43,13 +43,13 @@ if sys.platform == "win32":
 
 
 DATA_JSON_FILE = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "docs", "data.json"))
-CRAWLER_CONFIG_FILE = os.path.join(os.path.dirname(__file__), "crawler_config.json")
 
 def load_crawler_config():
-    if os.path.exists(CRAWLER_CONFIG_FILE):
+    if os.path.exists(DATA_JSON_FILE):
         try:
-            with open(CRAWLER_CONFIG_FILE, "r", encoding="utf-8") as f:
-                config = json.load(f)
+            with open(DATA_JSON_FILE, "r", encoding="utf-8") as f:
+                data = json.load(f)
+                config = data.get("crawlerConfig", {})
                 return config.get("llm_mode", True)
         except Exception:
             pass
@@ -734,24 +734,20 @@ def main():
     print(f"  🔴 取得エラー:      {stats['fetch_error']} 件")
     print(f"{'='*60}")
 
-    output_filename = os.path.join(os.path.dirname(__file__), "scraped_councils_output.json")
-    with open(output_filename, "w", encoding="utf-8") as f:
-        json.dump(results, f, ensure_ascii=False, indent=2)
-
     # 全体データに対して資料リンクの重複排除・正規化を実施
     deduplicate_data_materials(data)
 
-    # data.json にクロールステータスとタイムスタンプを保存
+    # data.json にクロールステータスとタイムスタンプを直接保存
     now_str = datetime.now().strftime("%Y/%m/%d %H:%M")
     data["lastCrawlTime"] = now_str
     try:
         with open(DATA_JSON_FILE, "w", encoding="utf-8") as f:
             json.dump(data, f, ensure_ascii=False, indent=2)
-        print(f"[更新成功] docs/data.json にクロールステータスと lastCrawlTime を保存しました。")
+        print(f"[更新成功] docs/data.json にクロール結果・ステータスと lastCrawlTime を保存しました。")
     except Exception as e:
         print(f"[WARN] data.json 更新失敗: {e}")
 
-    print(f"データ取得完了: 結果を {output_filename} に保存しました。")
+    print(f"データ取得完了: 結果を docs/data.json に直接反映しました。")
 
 if __name__ == "__main__":
     main()

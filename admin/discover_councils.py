@@ -32,13 +32,14 @@ if sys.platform == "win32":
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 PROJECT_ROOT = os.path.dirname(BASE_DIR)
 DATA_JSON_PATH = os.path.join(PROJECT_ROOT, "docs", "data.json")
-KEYWORDS_FILE = os.path.join(BASE_DIR, "discovery_keywords.json")
 
 def load_keywords():
-    if os.path.exists(KEYWORDS_FILE):
+    if os.path.exists(DATA_JSON_PATH):
         try:
-            with open(KEYWORDS_FILE, "r", encoding="utf-8") as f:
-                return json.load(f)
+            with open(DATA_JSON_PATH, "r", encoding="utf-8") as f:
+                data = json.load(f)
+                if "discoveryKeywords" in data:
+                    return data["discoveryKeywords"]
         except Exception as e:
             print(f"[WARN] キーワード設定の読み込みエラー: {e}", file=sys.stderr)
     return {

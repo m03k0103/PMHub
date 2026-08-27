@@ -22,7 +22,7 @@
 - `admin_dashboard.html`: 管理者向け統合ダッシュボード（会議体ディスカバリー、クローラー実行、データ管理）
 - `server.py`: 管理ダッシュボード用ローカルサーバー（API、データ保存）
 - `start.bat`: 管理サーバー＆ダッシュボード ワンクリック起動バッチ
-- `crawler.py`: 政府サイトを巡回し、抽出結果を `scraped_councils_output.json` に出力
+- `crawler.py`: 政府サイトを巡回し、抽出結果を `docs/data.json` に直接反映
 - `discover_councils.py`: 新規会議体を自動検出
 - `apply_report.py`: 検証レポートを `docs/data.json` に適用
 - `rejected_councils.json`: 却下・除外会議体リスト
@@ -48,7 +48,6 @@ PMHub/
 │   ├── crawler.py
 │   ├── discover_councils.py
 │   ├── rejected_councils.json
-│   ├── scraped_councils_output.json
 │   └── apply_report.py
 ├── guide/
 │   ├── admin_guide.md
@@ -116,10 +115,9 @@ cd admin
 python crawler.py
 ```
 
-3. 生成された `admin/scraped_councils_output.json` を確認
-4. 管理ダッシュボード (`admin_dashboard.html`) または `apply_report.py` で `docs/data.json` に反映
-5. `testing/smoke_test.py` と Node.js テストを実行
-6. 問題なければ公開
+3. クロール結果は `docs/data.json` に直接安全に反映・保存されます
+4. `testing/smoke_test.py` と Node.js テストを実行
+5. 問題なければコミット・公開
 
 詳細は以下を参照してください。
 - `guide/admin_guide.md`

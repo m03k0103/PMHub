@@ -22,8 +22,7 @@ PMHub/
 │   ├── discover_councils.py     # 新規会議体自動検出スクリプト（ディスカバリーエンジン）
 │   ├── apply_report.py          # 検証レポート適用スクリプト
 │   ├── agent_crawl_guide.md     # AIエージェント用 クロール・データ更新作業手順書
-│   ├── rejected_councils.json   # 却下・クロール除外会議体リスト
-│   └── scraped_councils_output.json # クローラー最新自動取得ログ・抽出JSONデータ
+│   └── rejected_councils.json   # 却下・クロール除外会議体リスト
 │
 ├── testing/                     # 【テスト用リソース】自動スモークテスト・単体テスト
 │   ├── smoke_test.py            # 自動スモークテストスイート（構文・リンク・ID同期・タブ検証）
@@ -50,7 +49,7 @@ PMHub/
 | :--- | :--- | :--- | :--- |
 | [docs/index.html](file:///d:/dev/PMHub/docs/index.html) | 一般公開 | 全ユーザー | サイト全体のDOM構造、レスポンシブヘッダー、検索・フィルターバー、タイムライン表示領域、審議会ディレクトリ、アナリティクス、ウォッチリスト、詳細ダイアログのUI定義。 |
 | [docs/styles.css](file:///d:/dev/PMHub/docs/styles.css) | 一般公開 | 全ユーザー | 全21省庁・内閣官房の固有カラーバッジ、ダーク/ライト表示モード、ガラスモルフィズムUI、レスポンシブデザイン、開催日ハイライトバッジのスタイリング。 |
-| [docs/data.json](file:///d:/dev/PMHub/docs/data.json) | 一般公開 | 全ユーザー | 全21省庁および内閣官房・内閣府の審議会・会議配布資料メタデータ（会議名、開催日、200 OK実存PDF直リンク、アジェンダ、タグ）の公開用データベース。 |
+| [docs/data.json](file:///d:/dev/PMHub/docs/data.json) | 一般公開 | 全ユーザー | **システム唯一のマスターデータベース**。全21省庁および内閣官房・内閣府の審議会・会議配布資料メタデータ、スクレイピング設定、ディスカバリー設定等を集約。 |
 | [docs/app.js](file:///d:/dev/PMHub/docs/app.js) | 一般公開 | 全ユーザー | リアルタイムキーワード検索、省庁・種別多次元フィルター、ソート、Chart.js統計グラフ描画、マイウォッチリスト管理、Excel対応UTF-8 BOM付CSV/JSONデータ一括出力、AI要約 Feature Flag（ON/OFF切替）。 |
 
 ---
@@ -64,10 +63,9 @@ PMHub/
 | [admin/admin_dashboard.html](file:///d:/dev/PMHub/admin/admin_dashboard.html) | 管理者用 | システム運用者 | タブ切り替え式統合ダッシュボード。新規会議体の検証（承認・却下）、Webクローラーの即時UI実行、AI要約 Feature Flag (ON/OFF) 切り替えなど。 |
 | [admin/server.py](file:///d:/dev/PMHub/admin/server.py) | 管理者用 | システム運用者 | 管理ダッシュボード用ローカルサーバー（API、データ永続化、クローラー進捗通知）。 |
 | [admin/start.bat](file:///d:/dev/PMHub/admin/start.bat) | 管理者用 | システム運用者 | 管理サーバーとダッシュボードをワンクリックで起動するWindowsバッチファイル。 |
-| [admin/crawler.py](file:///d:/dev/PMHub/admin/crawler.py) | 管理者用 | システム運用者 | 政府Webサイトを自動訪問し、開催日・PDF直リンクを抽出するPythonクローラー。 |
+| [admin/crawler.py](file:///d:/dev/PMHub/admin/crawler.py) | 管理者用 | システム運用者 | 政府Webサイトを自動訪問し、開催日・PDF直リンクを抽出して `docs/data.json` を直接更新するPythonクローラー。 |
 | [admin/discover_councils.py](file:///d:/dev/PMHub/admin/discover_councils.py) | 管理者用 | システム運用者 | 各省庁の審議会等一覧ページを巡回し、新規の審議会等を自動検出するスクリプト。 |
-| [admin/scraped_councils_output.json](file:///d:/dev/PMHub/admin/scraped_councils_output.json) | 管理者用 | システム運用者 | `crawler.py` の実行によってリアルタイム生成されるパース結果データ。 |
-| [admin/rejected_councils.json](file:///d:/dev/PMHub/admin/rejected_councils.json) | 管理者用 | システム運用者 | 管理者によって却下・クロール除外された会議体リスト。 |
+| [admin/rejected_councils.json](file:///d:/dev/PMHub/admin/rejected_councils.json) | 管理者用 | システム運用者 | 管理者によって却下・クロール除外された会議体リスト（隔離データ）。 |
 | [admin/apply_report.py](file:///d:/dev/PMHub/admin/apply_report.py) | 管理者用 | システム運用者 | 検証レポートの内容を `docs/data.json` に安全に適用するスクリプト。 |
 | [admin/agent_crawl_guide.md](file:///d:/dev/PMHub/admin/agent_crawl_guide.md) | エージェント用 | AIエージェント | AIエージェント専用のクロール・データ更新作業標準手順書。 |
 
@@ -92,4 +90,4 @@ PMHub/
    - `admin/` ディレクトリはWeb非公開領域とし、サーバー内部のバッチ処理（Cron等）または管理者用ローカル環境でのみ実行します。
 
 2. **データ同期フロー**:
-   - 管理者環境で `admin/crawler.py` を実行 ➔ `admin/scraped_councils_output.json` を生成 ➔ 内容を検証の上、`docs/data.json` へ反映して公開します。
+   - 管理者環境で `admin/crawler.py` を実行 ➔ `docs/data.json` を直接更新 ➔ 検証テスト（`testing/smoke_test.py`）を実行して公開します。

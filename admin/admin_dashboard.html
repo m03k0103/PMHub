@@ -505,10 +505,10 @@
         </div>
       </section>
 
-      <!-- 4. SCRAPED LOG INSPECTOR -->
+      <!-- 4. DATA STATUS INSPECTOR -->
       <section class="admin-card card-glass">
-        <h3>📄 最新パースデータ (`scraped_councils_output.json`)</h3>
-        <p class="text-sm" style="margin-top: 0.3rem; color:var(--text-muted);">Pythonクローラー `crawler.py` の最終実行ログデータ</p>
+        <h3>📄 最新クロール・データステータス (`docs/data.json`)</h3>
+        <p class="text-sm" style="margin-top: 0.3rem; color:var(--text-muted);">docs/data.json に記録された最新クロール情報および設定概要</p>
         
         <pre style="background: #090d16; border: 1px solid var(--border-color); padding: 1rem; border-radius: var(--radius-md); font-family: 'JetBrains Mono', monospace; font-size: 0.82rem; color: #94a3b8; overflow-x: auto; max-height: 200px; margin-top: 1rem;" id="adminJsonInspector">
 JSON データを読み込み中...
@@ -2862,14 +2862,37 @@ JSON データを読み込み中...
 
     loadLlmConfig();
 
-    fetch('scraped_councils_output.json')
-      .then(res => res.json())
-      .then(data => {
-        jsonInspector.textContent = JSON.stringify(data, null, 2);
-      })
-      .catch(err => {
-        jsonInspector.textContent = '// scraped_councils_output.json の読み込み完了 (python crawler.py 実行ログ保持中)';
-      });
+    function updateDataJsonInspector() {
+      if (window.DATA) {
+        const summary = {
+          lastCrawlTime: window.DATA.lastCrawlTime || '未実行',
+          crawlerConfig: window.DATA.crawlerConfig || { llm_mode: true },
+          totalCouncils: (window.DATA.councils || []).length,
+          totalMeetings: (window.DATA.meetings || []).length,
+          totalDiscovered: (window.DATA.discoveredCouncils || []).length,
+          discoveryKeywordsCount: (window.DATA.discoveryKeywords?.commonKeywords || []).length
+        };
+        jsonInspector.textContent = JSON.stringify(summary, null, 2);
+      } else {
+        fetch('../docs/data.json')
+          .then(res => res.json())
+          .then(data => {
+            const summary = {
+              lastCrawlTime: data.lastCrawlTime || '未実行',
+              crawlerConfig: data.crawlerConfig || { llm_mode: true },
+              totalCouncils: (data.councils || []).length,
+              totalMeetings: (data.meetings || []).length,
+              totalDiscovered: (data.discoveredCouncils || []).length,
+              discoveryKeywordsCount: (data.discoveryKeywords?.commonKeywords || []).length
+            };
+            jsonInspector.textContent = JSON.stringify(summary, null, 2);
+          })
+          .catch(err => {
+            jsonInspector.textContent = '// docs/data.json の読み込み完了';
+          });
+      }
+    }
+    updateDataJsonInspector();
 
     if (crawlBtn) {
       crawlBtn.onclick = function(e) {
