@@ -225,6 +225,121 @@ class CustomHandler(http.server.SimpleHTTPRequestHandler):
                 self.end_headers()
                 self.wfile.write(json.dumps({"status": "error", "message": str(e)}).encode('utf-8'))
 
+        elif self.path == "/api/reject-council":
+            content_length = int(self.headers.get('Content-Length', 0))
+            post_data = self.rfile.read(content_length)
+            try:
+                payload = json.loads(post_data.decode('utf-8'))
+                target_id = payload.get("id")
+                reason = payload.get("reason", "Admin rejected council")
+                council_obj = payload.get("council")
+
+                if not target_id:
+                    raise ValueError("Council ID is required")
+
+                rej_file = os.path.join(os.path.dirname(__file__), "rejected_councils.json")
+                rejected_list = []
+                if os.path.exists(rej_file):
+                    with open(rej_file, "r", encoding="utf-8") as rf:
+                        rejected_list = json.load(rf)
+
+                target_council = council_obj
+                if os.path.exists(DATA_JSON_FILE):
+                    with open(DATA_JSON_FILE, "r", encoding="utf-8") as df:
+                        data = json.load(df)
+                    
+                    councils = data.get("councils", [])
+                    discovered = data.get("discoveredCouncils", [])
+
+                    c_idx = next((i for i, c in enumerate(councils) if c.get("id") == target_id), None)
+                    if c_idx is not None:
+                        target_council = councils.pop(c_idx)
+                    
+                    d_idx = next((i for i, c in enumerate(discovered) if c.get("id") == target_id), None)
+                    if d_idx is not None:
+                        if not target_council:
+                            target_council = discovered[d_idx]
+                        discovered.pop(d_idx)
+
+                    with open(DATA_JSON_FILE, "w", encoding="utf-8") as df:
+                        json.dump(data, df, ensure_ascii=False, indent=2)
+
+                if not any(rc.get("id") == target_id for rc in rejected_list):
+                    rej_item = {
+                        "id": target_id,
+                        "name": target_council.get("name") if target_council else target_id,
+                        "ministry": target_council.get("ministry") if target_council else "",
+                        "category": target_council.get("category", "COUNCIL") if target_council else "COUNCIL",
+                        "officialUrl": target_council.get("officialUrl") if target_council else "",
+                        "sourcePageUrl": target_council.get("sourcePageUrl", "") if target_council else "",
+                        "rejectedAt": payload.get("rejectedAt") or "2026-08-27",
+                        "reason": reason
+                    }
+                    rejected_list.append(rej_item)
+                    with open(rej_file, "w", encoding="utf-8") as wf:
+                        json.dump(rejected_list, wf, ensure_ascii=False, indent=2)
+
+                self.send_response(200)
+                self.send_header('Content-Type', 'application/json; charset=utf-8')
+                self.end_headers()
+                self.wfile.write(json.dumps({"status": "ok", "message": f"Council {target_id} moved to rejected list"}).encode('utf-8'))
+            except Exception as e:
+                self.send_response(500)
+                self.send_header('Content-Type', 'application/json; charset=utf-8')
+                self.end_headers()
+                self.wfile.write(json.dumps({"status": "error", "message": str(e)}).encode('utf-8'))
+
+        elif self.path == "/api/revert-rejected-council":
+            content_length = int(self.headers.get('Content-Length', 0))
+            post_data = self.rfile.read(content_length)
+            try:
+                payload = json.loads(post_data.decode('utf-8'))
+                target_id = payload.get("id")
+                if not target_id:
+                    raise ValueError("Council ID is required")
+
+                rej_file = os.path.join(os.path.dirname(__file__), "rejected_councils.json")
+                rejected_list = []
+                target_rej = None
+                if os.path.exists(rej_file):
+                    with open(rej_file, "r", encoding="utf-8") as rf:
+                        rejected_list = json.load(rf)
+                    
+                    r_idx = next((i for i, c in enumerate(rejected_list) if c.get("id") == target_id), None)
+                    if r_idx is not None:
+                        target_rej = rejected_list.pop(r_idx)
+                        with open(rej_file, "w", encoding="utf-8") as wf:
+                            json.dump(rejected_list, wf, ensure_ascii=False, indent=2)
+
+                if target_rej and os.path.exists(DATA_JSON_FILE):
+                    with open(DATA_JSON_FILE, "r", encoding="utf-8") as df:
+                        data = json.load(df)
+                    
+                    discovered = data.setdefault("discoveredCouncils", [])
+                    if not any(c.get("id") == target_id for c in discovered):
+                        discovered.append({
+                            "id": target_rej.get("id"),
+                            "name": target_rej.get("name"),
+                            "ministry": target_rej.get("ministry"),
+                            "category": target_rej.get("category", "COUNCIL"),
+                            "officialUrl": target_rej.get("officialUrl", ""),
+                            "sourcePageUrl": target_rej.get("sourcePageUrl", ""),
+                            "status": "pending",
+                            "aiReason": ""
+                        })
+                        with open(DATA_JSON_FILE, "w", encoding="utf-8") as df:
+                            json.dump(data, df, ensure_ascii=False, indent=2)
+
+                self.send_response(200)
+                self.send_header('Content-Type', 'application/json; charset=utf-8')
+                self.end_headers()
+                self.wfile.write(json.dumps({"status": "ok", "message": f"Council {target_id} restored to pending discovered councils"}).encode('utf-8'))
+            except Exception as e:
+                self.send_response(500)
+                self.send_header('Content-Type', 'application/json; charset=utf-8')
+                self.end_headers()
+                self.wfile.write(json.dumps({"status": "error", "message": str(e)}).encode('utf-8'))
+
         elif self.path == "/api/run-discovery":
             global discovery_state
             if discovery_state["running"]:

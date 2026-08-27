@@ -588,9 +588,8 @@ JSON データを読み込み中...
         <select id="filterCategory"><option value="">全カテゴリ</option></select>
         <select id="filterVerdict">
           <option value="">全ステータス</option>
-          <option value="pending">未レビュー</option>
+          <option value="pending" selected>未レビュー</option>
           <option value="approved">承認済</option>
-          <option value="rejected">却下</option>
         </select>
         <select id="filterUrlStatus">
           <option value="">全URL疎通状態</option>
@@ -1274,7 +1273,12 @@ JSON データを読み込み中...
       const fVerdict   = vEl ? vEl.value : '';
       const fUrlStatus = uEl ? uEl.value : '';
 
+      const rejectedIdSet = new Set((rejectedCouncils || []).map(rc => rc.id));
+
       let filtered = allCouncils.filter(c => {
+        // 却下済み会議体は会議体データ管理に表示しない
+        if (rejectedIdSet.has(c.id)) return false;
+
         const minName = ministries[c.ministry] ? ministries[c.ministry].name : c.ministry;
         const text = `${c.name} ${c.id} ${minName} ${c.ministry}`.toLowerCase();
         if (searchTerm && !text.includes(searchTerm)) return false;
@@ -1285,7 +1289,6 @@ JSON データを読み込み中...
           const v = vObj ? vObj.verdict : null;
           if (fVerdict === 'pending' && v !== null && v !== 'pending') return false;
           if (fVerdict === 'approved' && v !== 'approved') return false;
-          if (fVerdict === 'rejected' && v !== 'rejected') return false;
         }
         if (fUrlStatus) {
           const st = urlStatus[c.id] || 'unverified';
@@ -1614,27 +1617,48 @@ JSON データを読み込み中...
       return (str || '').replace(/&/g,'&amp;').replace(/"/g,'&quot;');
     }
 
-    window.setVerdict = function(id, verdict) {
+    window.setVerdict = async function(id, verdict) {
       if (!verdicts[id]) verdicts[id] = { verdict: null, notes: '', correctedUrl: '' };
       verdicts[id].verdict = verdict;
       saveSavedVerdicts(verdicts);
 
       const council = allCouncils.find(c => c.id === id);
       if (verdict === 'rejected' && council) {
+        const rejItem = {
+          id: council.id,
+          name: council.name,
+          ministry: council.ministry,
+          category: council.category || 'COUNCIL',
+          officialUrl: council.officialUrl || '',
+          sourcePageUrl: council.sourcePageUrl || '',
+          rejectedAt: new Date().toISOString().slice(0, 10),
+          reason: verdicts[id].notes || council.aiReason || 'Admin rejected council'
+        };
         if (!rejectedCouncils.some(rc => rc.id === id)) {
-          rejectedCouncils.push({
-            id: council.id,
-            name: council.name,
-            ministry: council.ministry,
-            category: council.category || 'COUNCIL',
-            officialUrl: council.officialUrl || '',
-            sourcePageUrl: council.sourcePageUrl || '',
-            rejectedAt: new Date().toISOString().slice(0, 10),
-            reason: verdicts[id].notes || council.aiReason || 'Admin rejected council'
-          });
+          rejectedCouncils.push(rejItem);
           window.rejectedCouncils = rejectedCouncils;
+        }
+
+        // サーバーAPI呼び出し: docs/data.json から削除 & rejected_councils.json に保存
+        try {
+          await fetch('/api/reject-council', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              id: council.id,
+              reason: rejItem.reason,
+              rejectedAt: rejItem.rejectedAt,
+              council: rejItem
+            })
+          });
+        } catch (err) {
+          console.warn('Failed to call /api/reject-council, falling back to saveRejectedCouncilsDirect:', err);
           saveRejectedCouncilsDirect(true);
         }
+
+        // baseCouncils からも除外
+        const bIdx = baseCouncils.findIndex(bc => bc.id === id);
+        if (bIdx !== -1) baseCouncils.splice(bIdx, 1);
       } else if (verdict !== 'rejected') {
         const rejIdx = rejectedCouncils.findIndex(rc => rc.id === id);
         if (rejIdx !== -1) {
@@ -1734,12 +1758,17 @@ JSON データを読み込み中...
     };
 
     function updateStats() {
-      const total = allCouncils.length;
-      const approved = Object.values(verdicts).filter(v => v && v.verdict === 'approved').length;
-      const rejected = Object.values(verdicts).filter(v => v && v.verdict === 'rejected').length;
-      const pending  = total - approved - rejected;
-      const urlOk    = Object.values(urlStatus).filter(s => s === 'ok').length;
-      const corrected = Object.values(verdicts).filter(v => v && v.correctedUrl && typeof v.correctedUrl === 'string' && v.correctedUrl.trim() !== '').length;
+      const rejIdSet = new Set((rejectedCouncils || []).map(rc => rc.id));
+      const activeCouncils = allCouncils.filter(c => !rejIdSet.has(c.id));
+      const total = activeCouncils.length;
+      const approved = activeCouncils.filter(c => verdicts[c.id] && verdicts[c.id].verdict === 'approved').length;
+      const rejected = (rejectedCouncils || []).length;
+      const pending  = total - approved;
+      const urlOk    = activeCouncils.filter(c => urlStatus[c.id] === 'ok').length;
+      const corrected = activeCouncils.filter(c => {
+        const v = verdicts[c.id];
+        return v && v.correctedUrl && typeof v.correctedUrl === 'string' && v.correctedUrl.trim() !== '';
+      }).length;
 
       document.getElementById('statTotal').textContent = total;
       document.getElementById('statApproved').textContent = approved;
@@ -2162,14 +2191,38 @@ JSON データを読み込み中...
       if (verdicts[id]) {
         verdicts[id].verdict = null;
         saveSavedVerdicts(verdicts);
+      } else {
+        verdicts[id] = { verdict: null, notes: '', correctedUrl: '' };
+        saveSavedVerdicts(verdicts);
       }
+
       if (!allCouncils.some(c => c.id === id)) {
-        allCouncils.push(target);
+        const restoredCouncil = {
+          id: target.id,
+          name: target.name,
+          ministry: target.ministry,
+          category: target.category || 'COUNCIL',
+          officialUrl: target.officialUrl || '',
+          sourcePageUrl: target.sourcePageUrl || '',
+          isNew: true,
+          status: 'pending'
+        };
+        allCouncils.push(restoredCouncil);
         window.allCouncils = allCouncils;
       }
 
-      // 保存
-      await saveRejectedCouncilsDirect(true);
+      // サーバーAPI呼び出し: rejected_councils.json から削除 & docs/data.json の discoveredCouncils に復帰
+      try {
+        await fetch('/api/revert-rejected-council', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ id: target.id })
+        });
+      } catch (err) {
+        console.warn('Failed to call /api/revert-rejected-council, falling back to saveRejectedCouncilsDirect:', err);
+        await saveRejectedCouncilsDirect(true);
+      }
+
       renderRejectedList();
       renderCards();
       alert(`「${target.name || target.id}」を再レビュー対象に戻しました。`);
@@ -2623,6 +2676,12 @@ JSON データを読み込み中...
     document.getElementById('filterMinistry').addEventListener('change', renderCards);
     document.getElementById('filterCategory').addEventListener('change', renderCards);
     document.getElementById('filterVerdict').addEventListener('change', renderCards);
+
+    // デフォルトの絞り込み条件として「未レビュー (pending)」を設定
+    const filterVerdictEl = document.getElementById('filterVerdict');
+    if (filterVerdictEl) {
+      filterVerdictEl.value = 'pending';
+    }
 
     renderCards();
 

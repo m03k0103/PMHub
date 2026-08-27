@@ -93,6 +93,52 @@ def load_councils_from_data_json():
             print(f"[WARN] data.json 読み込み失敗: {e}", file=sys.stderr)
     return councils
 
+def interleave_by_ministry(councils):
+    """
+    同一省庁への連続アクセスを極力防止するため、省庁ごとに均等間隔（インターリーブ）で
+    巡回順序を並び替える。
+    """
+    if not councils:
+        return []
+    from collections import defaultdict, deque
+    buckets = defaultdict(deque)
+    for c in councils:
+        m = c.get("ministry") or "OTHER"
+        buckets[m].append(c)
+    
+    # 件数が多い順にソートした省庁リスト
+    sorted_ministries = sorted(buckets.keys(), key=lambda k: len(buckets[k]), reverse=True)
+    
+    # ラウンドロビン抽出
+    interleaved = []
+    while buckets:
+        for k in sorted_ministries:
+            if k in buckets and buckets[k]:
+                interleaved.append(buckets[k].popleft())
+                if not buckets[k]:
+                    del buckets[k]
+                    
+    # 末尾に同一省庁が連続して残る場合、先頭側の別の省庁の間に挿入して分散
+    final_list = []
+    for item in interleaved:
+        if not final_list or final_list[-1].get("ministry") != item.get("ministry"):
+            final_list.append(item)
+        else:
+            # 連続してしまう場合は、直前と異なる省庁の隙間に遡って挿入
+            inserted = False
+            for idx in range(len(final_list) - 1, 0, -1):
+                prev_m = final_list[idx - 1].get("ministry")
+                curr_m = final_list[idx].get("ministry")
+                this_m = item.get("ministry")
+                if prev_m != this_m and curr_m != this_m:
+                    final_list.insert(idx, item)
+                    inserted = True
+                    break
+            if not inserted:
+                final_list.append(item)
+                
+    return final_list
+
 def load_scraping_rules():
     """docs/data.json の scrapingRules キーからスクレイピングルールを読み込む"""
     if os.path.exists(DATA_JSON_FILE):
@@ -626,8 +672,8 @@ def main():
     global CRAWL_TARGETS
     dynamic_targets = load_councils_from_data_json()
     if dynamic_targets:
-        CRAWL_TARGETS = dynamic_targets
-        print(f"[INFO] docs/data.json から {len(CRAWL_TARGETS)} 件の会議体を動的に読み込みました。")
+        CRAWL_TARGETS = interleave_by_ministry(dynamic_targets)
+        print(f"[INFO] docs/data.json から {len(CRAWL_TARGETS)} 件の会議体を動的に読み込み、同一省庁連続アクセス防止のため省庁分散インターリーブ巡回順に並び替えました。")
     else:
         CRAWL_TARGETS = []
         print(f"[INFO] 会議体データが見つかりません。")

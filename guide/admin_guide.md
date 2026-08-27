@@ -49,7 +49,8 @@ python crawler.py
    - 一般公開するWebサーバー（Nginx / Apache / Cloudflare Pages / AWS S3等）のドキュメントルートには、**`docs/` ディレクトリ配下のみ**を公開設定してください。
    - `admin/` ディレクトリはWebアクセス不能な非公開領域として隔離します。
 
-2. **データ反映フロー**:
+2. **データ反映・却下会議体の分離管理フロー**:
    - クローラーが最新情報を検出した場合、抽出結果が `scraped_councils_output.json` に保存されます。
    - 管理ダッシュボード (`admin_dashboard.html`) または `apply_report.py` を通じて `docs/data.json` へ安全に反映します。
+   - **却下会議体**: 管理者コンソールで却下された会議体は `docs/data.json` から削除され、`admin/rejected_councils.json` に移動・隔離されます。クローラー巡回および公開ポータルから完全に除外されます。
    - 反映後は必ず `python testing/smoke_test.py` を実行してデータの整合性を確認します。
