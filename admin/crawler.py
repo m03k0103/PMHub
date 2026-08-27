@@ -516,6 +516,114 @@ def execute_rule_retrieval(target, html, rule_item, use_llm=True):
     }
     return scraped_item
 
+
+def sync_new_meetings_from_crawl(data, target, scraped_item):
+    """
+    クロール時に検出されたサブページ（個別開催回）から、未登録の新規開催回を自動検知して
+    docs/data.json の meetings 配列に正しく追加する。
+    ※ 既存の会議レコード（manualLock: true を含む）は完全保護し、上書き・改変しない。
+    """
+    if not scraped_item:
+        return 0
+
+    subpages = scraped_item.get("subpageMeetings", [])
+    if not subpages:
+        return 0
+
+    council_id = target["id"]
+    council_name = target["name"]
+    ministry = target["ministry"]
+    meetings = data.setdefault("meetings", [])
+
+    existing_urls = {m.get("officialUrl", "").rstrip("/"): m for m in meetings if m.get("councilId") == council_id}
+    existing_titles = {m.get("title", ""): m for m in meetings if m.get("councilId") == council_id}
+
+    added_count = 0
+    for sub in subpages:
+        sub_url = sub.get("subpageUrl", "").rstrip("/")
+        sub_title = sub.get("title", "").strip()
+        sub_mats = sub.get("materials", [])
+        sub_dates = sub.get("extractedDates", [])
+
+        # 既に登録済みの場合は完全スキップ（既存の手動データを保護）
+        if sub_url in existing_urls or (sub_title and sub_title in existing_titles):
+            continue
+
+        # 日付の算出
+        meet_date = ""
+        if sub_dates:
+            meet_date = sub_dates[0]
+        else:
+            # タイトルやURLから日付抽出
+            m_dt = parse_japanese_date(sub_title)
+            if m_dt:
+                meet_date = m_dt.strftime("%Y/%m/%d")
+            else:
+                meet_date = datetime.now().strftime("%Y/%m/%d")
+
+        # 会議IDの生成
+        clean_d = meet_date.replace("/", "-")
+        # 開催回番号
+        sess_nums = extract_session_numbers(sub_title + " " + sub_url)
+        sess_suffix = f"dai{sorted(sess_nums)[0]}" if sess_nums else f"sess{len(existing_urls) + added_count + 1}"
+        new_meet_id = f"meet-{clean_d}-{council_id}-{sess_suffix}"
+
+        # 重複ID回避
+        if any(m.get("id") == new_meet_id for m in meetings):
+            new_meet_id = f"meet-{clean_d}-{council_id}-{sess_suffix}-{added_count+1}"
+
+        # タイトルの正規化
+        formatted_title = sub_title
+        if council_name not in formatted_title and sess_nums:
+            formatted_title = f"第{sorted(sess_nums)[0]}回 {council_name}"
+        elif not formatted_title or formatted_title.startswith("http"):
+            formatted_title = f"{council_name} ({meet_date})"
+
+        # 資料配列の構築
+        clean_materials_list = []
+        for mat in sub_mats:
+            mat_name = mat.get("name", "").strip()
+            mat_url = mat.get("url", "").strip()
+            mat_type = mat.get("type", "PDF")
+            if not mat_url or mat_url == "#" or mat_url == sub_url:
+                continue
+            clean_materials_list.append({
+                "name": mat_name if mat_name else os.path.basename(mat_url),
+                "url": mat_url,
+                "type": mat_type,
+                "isPrivate": mat.get("isPrivate", False)
+            })
+
+        new_meeting = {
+            "id": new_meet_id,
+            "councilId": council_id,
+            "title": formatted_title,
+            "date": meet_date,
+            "officialUrl": sub.get("subpageUrl") or target.get("officialUrl") or target.get("url", ""),
+            "category": target.get("category", "COUNCIL"),
+            "ministry": ministry,
+            "materials": clean_materials_list
+        }
+
+
+        meetings.append(new_meeting)
+        existing_urls[sub_url] = new_meeting
+        existing_titles[formatted_title] = new_meeting
+        added_count += 1
+        print(f"  [\U00002728 新規開催回自動追加] [{meet_date}] {formatted_title} (ID: {new_meet_id}, 資料: {len(clean_materials_list)}件)")
+
+    if added_count > 0:
+        # 日付降順に再ソート
+        meetings.sort(key=lambda x: x.get("date", ""), reverse=True)
+        # 会議体の pastYearCount を更新
+        for c in data.get("councils", []):
+            if c.get("id") == council_id:
+                c_meets = [m for m in meetings if m.get("councilId") == council_id]
+                c["pastYearCount"] = len(c_meets)
+                break
+
+    return added_count
+
 def update_crawl_status(data, council_id, scraped_item, failure_reason=None):
     """data.json の councils 配列内の該当会議体に crawlStatus を記録する。
     manualLock: true が設定された会議体はクロールステータスのみ更新し、
@@ -732,6 +840,9 @@ def main():
             print(f"  -> 資料: {item['totalExtractedMaterials']} 件, 日付: {item['extractedDates']}, 抽出方法: {item['extractionMethod']}")
             
             update_crawl_status(data, target["id"], item)
+            new_added = sync_new_meetings_from_crawl(data, target, item)
+            if new_added > 0:
+                print(f"  -> \U0001F4E6 新規会議 {new_added} 件を data.json の meetings に自動追加・同期しました。")
         else:
             stats["fetch_error"] += 1
             print(f"  -> 🔴 [FETCH ERROR] ネットワーク取得失敗")

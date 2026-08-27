@@ -229992,6 +229992,146 @@
         "resolve_absolute_urls": true,
         "top_page_pdf_count": 0
       }
+    },
+    "moj-baibaisyun-kento": {
+      "rule_id": "rule-moj-baibaisyun-v2",
+      "ministryQuirk": "法務省 売買春検討会 サブページ巡回",
+      "rules": {
+        "subpage_discovery_pattern": "href=[\"\\']([^\"\\']*(?:keiji12_00\\d+|dai\\d+|\\d+kai|kaisai)[^\"\\'#]*)[\"\\']",
+        "date_regex": "(?:令和|平成)\\d+年\\d+月\\d+日|\\d{4}年\\d+月\\d+日|\\d{4}[/-]\\d+[/-]\\d+",
+        "pdf_selector": "href=[\"\\']([^\"\\']+\\.(?:pdf|txt))[\"\\']",
+        "deep_crawl_enabled": true
+      }
+    },
+    "moj-jizoku-hogoshi": {
+      "rule_id": "rule-moj-jizoku-hogoshi-v2",
+      "ministryQuirk": "法務省 保護司制度検討会 サブページ巡回",
+      "rules": {
+        "subpage_discovery_pattern": "href=[\"\\']([^\"\\']*(?:jizokuhogo\\d+|dai\\d+|\\d+kai|kaisai)[^\"\\'#]*)[\"\\']",
+        "date_regex": "(?:令和|平成)\\d+年\\d+月\\d+日|\\d{4}年\\d+月\\d+日|\\d{4}[/-]\\d+[/-]\\d+",
+        "pdf_selector": "href=[\"\\']([^\"\\']+\\.(?:pdf|txt))[\"\\']",
+        "deep_crawl_enabled": true
+      }
+    },
+    "moj-minji-hanketsu-db": {
+      "rule_id": "rule-moj-minji-hanketsu-v2",
+      "ministryQuirk": "法務省 民事判決DB検討会 サブページ巡回",
+      "rules": {
+        "subpage_discovery_pattern": "href=[\"\\']([^\"\\']*(?:shingi09900001_00\\d+|dai\\d+|\\d+kai|kaisai)[^\"\\'#]*)[\"\\']",
+        "date_regex": "(?:令和|平成)\\d+年\\d+月\\d+日|\\d{4}年\\d+月\\d+日|\\d{4}[/-]\\d+[/-]\\d+",
+        "pdf_selector": "href=[\"\\']([^\"\\']+\\.(?:pdf|txt))[\"\\']",
+        "deep_crawl_enabled": true
+      }
+    },
+    "moj-kyouyuu-shidou-kento": {
+      "rule_id": "rule-moj-kyouyuu-shidou-v2",
+      "ministryQuirk": "法務省 共有私道事例研究会 サブページ巡回",
+      "rules": {
+        "subpage_discovery_pattern": "href=[\"\\']([^\"\\']*(?:minji07_00\\d+|dai\\d+|\\d+kai|kaisai)[^\"\\'#]*)[\"\\']",
+        "date_regex": "(?:令和|平成)\\d+年\\d+月\\d+日|\\d{4}年\\d+月\\d+日|\\d{4}[/-]\\d+[/-]\\d+",
+        "pdf_selector": "href=[\"\\']([^\"\\']+\\.(?:pdf|txt))[\"\\']",
+        "deep_crawl_enabled": true
+      }
+    },
+    "moj-teikan-ninsho-kento": {
+      "rule_id": "rule-moj-teikan-ninsho-v2",
+      "ministryQuirk": "法務省 定款認証検討会 サブページ巡回",
+      "rules": {
+        "subpage_discovery_pattern": "href=[\"\\']([^\"\\']*(?:minji04_00\\d+|dai\\d+|\\d+kai|kaisai)[^\"\\'#]*)[\"\\']",
+        "date_regex": "(?:令和|平成)\\d+年\\d+月\\d+日|\\d{4}年\\d+月\\d+日|\\d{4}[/-]\\d+[/-]\\d+",
+        "pdf_selector": "href=[\"\\']([^\"\\']+\\.(?:pdf|txt))[\"\\']",
+        "deep_crawl_enabled": true
+      }
+    },
+    "moj-koseki-touitsu-wg": {
+      "rule_id": "rule-moj-koseki-touitsu-v2",
+      "ministryQuirk": "法務省 戸籍統一文字WG サブページ巡回",
+      "rules": {
+        "subpage_discovery_pattern": "href=[\"\\']([^\"\\']*(?:minji04_00\\d+|dai\\d+|\\d+kai|kaisai)[^\"\\'#]*)[\"\\']",
+        "date_regex": "(?:令和|平成)\\d+年\\d+月\\d+日|\\d{4}年\\d+月\\d+日|\\d{4}[/-]\\d+[/-]\\d+",
+        "pdf_selector": "href=[\"\\']([^\"\\']+\\.(?:pdf|txt))[\"\\']",
+        "deep_crawl_enabled": true
+      }
+    },
+    "moj-kyoujuu-shien-kento": {
+      "rule_id": "rule-moj-kyoujuu-shien-v2",
+      "ministryQuirk": "法務省 居住支援検討会 サブページ巡回",
+      "rules": {
+        "subpage_discovery_pattern": "href=[\"\\']([^\"\\']*(?:hogo11_00\\d+|dai\\d+|\\d+kai|kaisai)[^\"\\'#]*)[\"\\']",
+        "date_regex": "(?:令和|平成)\\d+年\\d+月\\d+日|\\d{4}年\\d+月\\d+日|\\d{4}[/-]\\d+[/-]\\d+",
+        "pdf_selector": "href=[\"\\']([^\"\\']+\\.(?:pdf|txt))[\"\\']",
+        "deep_crawl_enabled": true
+      }
+    },
+    "moj-jigyou-saisei-kento": {
+      "rule_id": "rule-moj-jigyou-saisei-v2",
+      "ministryQuirk": "法務省 事業再生検討会 サブページ巡回",
+      "rules": {
+        "subpage_discovery_pattern": "href=[\"\\']([^\"\\']*(?:minji04_00\\d+|dai\\d+|\\d+kai|kaisai)[^\"\\'#]*)[\"\\']",
+        "date_regex": "(?:令和|平成)\\d+年\\d+月\\d+日|\\d{4}年\\d+月\\d+日|\\d{4}[/-]\\d+[/-]\\d+",
+        "pdf_selector": "href=[\"\\']([^\"\\']+\\.(?:pdf|txt))[\"\\']",
+        "deep_crawl_enabled": true
+      }
+    },
+    "moj-youikuhi-kento": {
+      "rule_id": "rule-moj-youikuhi-v2",
+      "ministryQuirk": "法務省 養育費検討会 サブページ巡回",
+      "rules": {
+        "subpage_discovery_pattern": "href=[\"\\']([^\"\\']*(?:shingi04900001_00\\d+|dai\\d+|\\d+kai|kaisai)[^\"\\'#]*)[\"\\']",
+        "date_regex": "(?:令和|平成)\\d+年\\d+月\\d+日|\\d{4}年\\d+月\\d+日|\\d{4}[/-]\\d+[/-]\\d+",
+        "pdf_selector": "href=[\"\\']([^\"\\']+\\.(?:pdf|txt))[\"\\']",
+        "deep_crawl_enabled": true
+      }
+    },
+    "moj-shikei-yoronchousa": {
+      "rule_id": "rule-moj-shikei-yoron-v2",
+      "ministryQuirk": "法務省 死刑世論調査検討会 サブページ巡回",
+      "rules": {
+        "subpage_discovery_pattern": "href=[\"\\']([^\"\\']*(?:keiji12_00\\d+|dai\\d+|\\d+kai|kaisai)[^\"\\'#]*)[\"\\']",
+        "date_regex": "(?:令和|平成)\\d+年\\d+月\\d+日|\\d{4}年\\d+月\\d+日|\\d{4}[/-]\\d+[/-]\\d+",
+        "pdf_selector": "href=[\"\\']([^\"\\']+\\.(?:pdf|txt))[\"\\']",
+        "deep_crawl_enabled": true
+      }
+    },
+    "moj-keiji-tetsuduki-kenkyu": {
+      "rule_id": "rule-moj-keiji-tetsuduki-v2",
+      "ministryQuirk": "法務省 刑事手続研究会 サブページ巡回",
+      "rules": {
+        "subpage_discovery_pattern": "href=[\"\\']([^\"\\']*(?:keiji12_00\\d+|dai\\d+|\\d+kai|kaisai)[^\"\\'#]*)[\"\\']",
+        "date_regex": "(?:令和|平成)\\d+年\\d+月\\d+日|\\d{4}年\\d+月\\d+日|\\d{4}[/-]\\d+[/-]\\d+",
+        "pdf_selector": "href=[\"\\']([^\"\\']+\\.(?:pdf|txt))[\"\\']",
+        "deep_crawl_enabled": true
+      }
+    },
+    "moj-houterasu-arikata": {
+      "rule_id": "rule-moj-houterasu-v2",
+      "ministryQuirk": "法務省 法テラス検討会 サブページ巡回",
+      "rules": {
+        "subpage_discovery_pattern": "href=[\"\\']([^\"\\']*(?:housei04_00\\d+|dai\\d+|\\d+kai|kaisai)[^\"\\'#]*)[\"\\']",
+        "date_regex": "(?:令和|平成)\\d+年\\d+月\\d+日|\\d{4}年\\d+月\\d+日|\\d{4}[/-]\\d+[/-]\\d+",
+        "pdf_selector": "href=[\"\\']([^\"\\']+\\.(?:pdf|txt))[\"\\']",
+        "deep_crawl_enabled": true
+      }
+    },
+    "moj-shouzou-koe-sekinin": {
+      "rule_id": "rule-moj-shouzou-koe-v2",
+      "ministryQuirk": "法務省 肖像・声責任検討会 サブページ巡回",
+      "rules": {
+        "subpage_discovery_pattern": "href=[\"\\']([^\"\\']*(?:minji07_00\\d+|dai\\d+|\\d+kai|kaisai)[^\"\\'#]*)[\"\\']",
+        "date_regex": "(?:令和|平成)\\d+年\\d+月\\d+日|\\d{4}年\\d+月\\d+日|\\d{4}[/-]\\d+[/-]\\d+",
+        "pdf_selector": "href=[\"\\']([^\"\\']+\\.(?:pdf|txt))[\"\\']",
+        "deep_crawl_enabled": true
+      }
+    },
+    "moj-saihan-boushi": {
+      "rule_id": "rule-moj-saihan-boushi-v2",
+      "ministryQuirk": "法務省 再犯防止検討会 サブページ巡回",
+      "rules": {
+        "subpage_discovery_pattern": "href=[\"\\']([^\"\\']*(?:hisho04_00\\d+|dai\\d+|\\d+kai|kaisai)[^\"\\'#]*)[\"\\']",
+        "date_regex": "(?:令和|平成)\\d+年\\d+月\\d+日|\\d{4}年\\d+月\\d+日|\\d{4}[/-]\\d+[/-]\\d+",
+        "pdf_selector": "href=[\"\\']([^\"\\']+\\.(?:pdf|txt))[\"\\']",
+        "deep_crawl_enabled": true
+      }
     }
   },
   "discoveryKeywords": {

@@ -228,7 +228,79 @@ class TestCrawlerManualLockProtection(unittest.TestCase):
                 f"会議 {m_id} の materials 配列が重複排除処理によって一切改変されていないこと"
             )
 
+    def test_sync_new_meetings_adds_unregistered_session_and_preserves_locked(self):
+        """新規開催回が発見された場合に正しく追加され、既存のロック済み会議が破壊されないこと"""
+        from crawler import sync_new_meetings_from_crawl
+
+        mock_data = {
+            "councils": [
+                {
+                    "id": "moj-test-council",
+                    "name": "法務省テスト検討会",
+                    "ministry": "MOJ",
+                    "officialUrl": "https://example.com/portal",
+                    "pastYearCount": 1,
+                    "manualLock": True
+                }
+            ],
+            "meetings": [
+                {
+                    "id": "meet-2026-03-24-moj-test-council-dai1",
+                    "councilId": "moj-test-council",
+                    "title": "第1回 法務省テスト検討会",
+                    "date": "2026/03/24",
+                    "officialUrl": "https://example.com/session1.html",
+                    "manualLock": True,
+                    "materials": [
+                        {"name": "第1回 議事次第", "url": "https://example.com/mat1.pdf", "type": "PDF", "manualLock": True}
+                    ]
+                }
+            ]
+        }
+
+        mock_scraped_item = {
+            "councilId": "moj-test-council",
+            "subpageMeetings": [
+                # 既存の第1回（スキップされるべき）
+                {
+                    "subpageUrl": "https://example.com/session1.html",
+                    "title": "第1回 法務省テスト検討会",
+                    "materials": [{"name": "第1回 議事次第", "url": "https://example.com/mat1.pdf", "type": "PDF"}],
+                    "extractedDates": ["2026/03/24"]
+                },
+                # 新しく発見された第2回（追加されるべき）
+                {
+                    "subpageUrl": "https://example.com/session2.html",
+                    "title": "第2回 法務省テスト検討会",
+                    "materials": [
+                        {"name": "第2回 議事次第 (PDF)", "url": "https://example.com/mat2-1.pdf", "type": "PDF"},
+                        {"name": "第2回 配布資料 (PDF)", "url": "https://example.com/mat2-2.pdf", "type": "PDF"}
+                    ],
+                    "extractedDates": ["2026/04/15"]
+                }
+            ]
+        }
+
+        target = mock_data["councils"][0]
+        added = sync_new_meetings_from_crawl(mock_data, target, mock_scraped_item)
+
+        self.assertEqual(added, 1, "新規開催回（第2回）の1件のみが追加されること")
+        self.assertEqual(len(mock_data["meetings"]), 2, "合計会議数が2件になること")
+
+        # 第1回（手動ロック）が保護されていること
+        m1 = next(m for m in mock_data["meetings"] if m["officialUrl"] == "https://example.com/session1.html")
+        self.assertTrue(m1.get("manualLock"), "既存会議の manualLock が維持されていること")
+        self.assertEqual(len(m1["materials"]), 1)
+
+        # 第2回が正しく構築されていること
+        m2 = next(m for m in mock_data["meetings"] if m["officialUrl"] == "https://example.com/session2.html")
+        self.assertEqual(m2["date"], "2026/04/15")
+        self.assertEqual(len(m2["materials"]), 2)
+        self.assertEqual(m2["materials"][0]["url"], "https://example.com/mat2-1.pdf")
+        self.assertEqual(target["pastYearCount"], 2, "pastYearCount が更新されていること")
+
 def run_tests():
+
     print("==================================================")
     print(" クロールデータ保護・回帰テスト (test_crawler_regression.py)")
     print("==================================================")
