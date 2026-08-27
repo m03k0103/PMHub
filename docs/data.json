@@ -301,26 +301,6 @@
       }
     },
     {
-      "id": "mlit-shakai-sihon-soukai",
-      "name": "社会資本整備審議会",
-      "ministry": "MLIT",
-      "category": "COUNCIL",
-      "pastYearCount": 0,
-      "description": "大規模水災害対策、気象業務のあり方、未来のインフラ政策、防災・減災・国土強靱化推進方針を答申する国土交通省最高審議機関。",
-      "officialUrl": "https://www.mlit.go.jp/policy/shingikai/s201_shakai01.html",
-      "isWatched": true,
-      "trackedSince": "2019/02/01",
-      "crawlStatus": {
-        "lastAttempt": "2026-08-22 10:06:42",
-        "result": "partial",
-        "extractionMethod": "rule",
-        "materialsCount": 2,
-        "datesCount": 0,
-        "failureReason": "",
-        "consecutiveFailures": 0
-      }
-    },
-    {
       "id": "mlit-energy-anzenhosho-wg",
       "name": "社会資本整備審議会環境部会・交通政策審議会環境部会 エネルギー・経済安全保障小委員会",
       "ministry": "MLIT",
@@ -6055,6 +6035,46 @@
       "category": "COMMITTEE",
       "description": "名古屋刑務所における不適正処遇事案の原因究明および再発防止策を提言する第三者委員会。",
       "officialUrl": "https://www.moj.go.jp/shingi1/shingi06400003_00001.html",
+      "pastYearCount": 0,
+      "isWatched": true
+    },
+    {
+      "id": "mlit-renkei-shoiinkai",
+      "name": "本州・九州連携小委員会",
+      "ministry": "MLIT",
+      "category": "COMMITTEE",
+      "description": "社会資本整備審議会 道路分科会 国土幹線道路部会の下に設置。本州・九州間の連携強化および道路ネットワークのあり方に関する調査審議を行う。",
+      "officialUrl": "https://www.mlit.go.jp/policy/shingikai/s204_renkei.html",
+      "pastYearCount": 5,
+      "isWatched": true
+    },
+    {
+      "id": "mlit-kokudokannsen-bukai",
+      "name": "国土幹線道路部会",
+      "ministry": "MLIT",
+      "category": "SECTION",
+      "description": "社会資本整備審議会 道路分科会に設置。高規格幹線道路網の整備・活用、有料道路制度、高速道路の進化・改良等に関する調査審議を行う。",
+      "officialUrl": "https://www.mlit.go.jp/policy/shingikai/s204_kokudokannsenn.html",
+      "pastYearCount": 5,
+      "isWatched": true
+    },
+    {
+      "id": "mlit-douro-bunkakai",
+      "name": "道路分科会",
+      "ministry": "MLIT",
+      "category": "SUBCOMMITTEE",
+      "description": "社会資本整備審議会の分科会。道路整備基本計画、道路政策の中長期的な基本方針、道路ネットワークの構築等に関する重要事項を審議する。",
+      "officialUrl": "https://www.mlit.go.jp/policy/shingikai/s202_douro01.html",
+      "pastYearCount": 0,
+      "isWatched": true
+    },
+    {
+      "id": "mlit-shakai-shingikai",
+      "name": "社会資本整備審議会",
+      "ministry": "MLIT",
+      "category": "COUNCIL",
+      "description": "国土交通省に設置された重要審議会。道路、河川、都市計画、住宅・建築等に関する社会資本整備の基本方針および重要施策を調査審議する。",
+      "officialUrl": "https://www.mlit.go.jp/policy/shingikai/s201_shakai01.html",
       "pastYearCount": 0,
       "isWatched": true
     }
@@ -18204,6 +18224,103 @@
       "docCount": 56
     },
     {
+      "id": "meet-2026-07-16-mlit-renkei-shoiinkai-dai5",
+      "councilId": "mlit-renkei-shoiinkai",
+      "councilName": "本州・九州連携小委員会",
+      "ministry": "MLIT",
+      "category": "COMMITTEE",
+      "title": "第5回 本州・九州連携小委員会",
+      "date": "2026/07/16",
+      "updatedAt": "2026/07/16 17:00",
+      "location": "国土交通省 / Web会議",
+      "summary": "社会資本整備審議会 道路分科会 国土幹線道路部会 第5回 本州・九州連携小委員会の開催。配付資料および議事録。",
+      "agenda": [
+        "本州・九州連携小委員会における調査審議・検討"
+      ],
+      "materials": [
+        {
+          "name": "https://www.mlit.go.jp/policy/shingikai/s204_renkei.html",
+          "type": "HTML",
+          "size": "-",
+          "url": "https://www.mlit.go.jp/policy/shingikai/s204_renkei.html",
+          "isMinutes": false
+        },
+        {
+          "name": "議事概要",
+          "type": "HTML",
+          "size": "-",
+          "url": "https://www.mlit.go.jp/policy/shingikai/road01_sg_000805.html",
+          "isMinutes": true
+        },
+        {
+          "name": "議事録（PDF形式：277KB）",
+          "type": "PDF",
+          "size": "PDF",
+          "url": "https://www.mlit.go.jp/policy/shingikai/content/002018570.pdf",
+          "isMinutes": true
+        },
+        {
+          "name": "議事次第(PDF形式:70KB)",
+          "type": "PDF",
+          "size": "PDF",
+          "url": "https://www.mlit.go.jp/policy/shingikai/content/002012120.pdf",
+          "isMinutes": false
+        },
+        {
+          "name": "資料１　　　本州・九州連携小委員会委員名簿(PDF形式:77KB)",
+          "type": "PDF",
+          "size": "PDF",
+          "url": "https://www.mlit.go.jp/policy/shingikai/content/002012122.pdf",
+          "isMinutes": false
+        },
+        {
+          "name": "資料２　　　西日本高速道路株式会社 提出資料(PDF形式:7.7MB)",
+          "type": "PDF",
+          "size": "PDF",
+          "url": "https://www.mlit.go.jp/policy/shingikai/content/002012123.pdf",
+          "isMinutes": false
+        },
+        {
+          "name": "資料３　　　福岡北九州高速道路公社 提出資料(PDF形式:9.6MB)",
+          "type": "PDF",
+          "size": "PDF",
+          "url": "https://www.mlit.go.jp/policy/shingikai/content/002012124.pdf",
+          "isMinutes": false
+        },
+        {
+          "name": "資料４　　　現地視察結果(PDF形式:586KB)",
+          "type": "PDF",
+          "size": "PDF",
+          "url": "https://www.mlit.go.jp/policy/shingikai/content/002012125.pdf",
+          "isMinutes": false
+        },
+        {
+          "name": "参考資料１　今後のスケジュール（案） (PDF形式:83KB)",
+          "type": "PDF",
+          "size": "PDF",
+          "url": "https://www.mlit.go.jp/policy/shingikai/content/002012126.pdf",
+          "isMinutes": false
+        },
+        {
+          "name": "参考資料２　ヒアリング概要(PDF形式:420KB)",
+          "type": "PDF",
+          "size": "PDF",
+          "url": "https://www.mlit.go.jp/policy/shingikai/content/002012127.pdf",
+          "isMinutes": false
+        }
+      ],
+      "tags": [
+        "本州・九州連携小委員会",
+        "国土交通省",
+        "MLIT",
+        "道路分科会",
+        "社会資本整備審議会"
+      ],
+      "officialUrl": "https://www.mlit.go.jp/policy/shingikai/road01_sg_000806.html",
+      "hasMinutes": true,
+      "docCount": 10
+    },
+    {
       "id": "meet-2026-07-15-cas-linear-107-dai3",
       "councilId": "cas-linear-107",
       "councilName": "リニア開業に伴う新たな圏域形成に関する関係府省等会議",
@@ -25940,6 +26057,82 @@
       "docCount": 56
     },
     {
+      "id": "meet-2026-06-10-mlit-kokudokannsen-bukai-dai72",
+      "councilId": "mlit-kokudokannsen-bukai",
+      "councilName": "国土幹線道路部会",
+      "ministry": "MLIT",
+      "category": "SECTION",
+      "title": "第72回 国土幹線道路部会",
+      "date": "2026/06/10",
+      "updatedAt": "2026/06/10 17:00",
+      "location": "国土交通省 / Web会議",
+      "summary": "社会資本整備審議会 道路分科会 国土幹線道路部会 第72回 国土幹線道路部会の開催。配付資料および議事録。",
+      "agenda": [
+        "国土幹線道路部会における調査審議・検討"
+      ],
+      "materials": [
+        {
+          "name": "https://www.mlit.go.jp/policy/shingikai/s204_kokudokannsenn.html",
+          "type": "HTML",
+          "size": "-",
+          "url": "https://www.mlit.go.jp/policy/shingikai/s204_kokudokannsenn.html",
+          "isMinutes": false
+        },
+        {
+          "name": "議事概要",
+          "type": "HTML",
+          "size": "-",
+          "url": "https://www.mlit.go.jp/policy/shingikai/road01_sg_000802.html",
+          "isMinutes": true
+        },
+        {
+          "name": "議事録（PDF形式：318KB）",
+          "type": "PDF",
+          "size": "PDF",
+          "url": "https://www.mlit.go.jp/policy/shingikai/content/002011273.pdf",
+          "isMinutes": true
+        },
+        {
+          "name": "議事次第(PDF形式:24KB)",
+          "type": "PDF",
+          "size": "PDF",
+          "url": "https://www.mlit.go.jp/policy/shingikai/content/002005661.pdf",
+          "isMinutes": false
+        },
+        {
+          "name": "【資料１】社会資本整備審議会　道路分科会国土幹線道路部会委員名簿(PDF形式:42KB)",
+          "type": "PDF",
+          "size": "PDF",
+          "url": "https://www.mlit.go.jp/policy/shingikai/content/002005658.pdf",
+          "isMinutes": false
+        },
+        {
+          "name": "【資料２】（公社）日本バス協会　提出資料(PDF形式:815KB)",
+          "type": "PDF",
+          "size": "PDF",
+          "url": "https://www.mlit.go.jp/policy/shingikai/content/002005659.pdf",
+          "isMinutes": false
+        },
+        {
+          "name": "【資料３】東日本、中日本、西日本高速道路（株）　提出資料(PDF形式:6.4MB)",
+          "type": "PDF",
+          "size": "PDF",
+          "url": "https://www.mlit.go.jp/policy/shingikai/content/002005660.pdf",
+          "isMinutes": false
+        }
+      ],
+      "tags": [
+        "国土幹線道路部会",
+        "国土交通省",
+        "MLIT",
+        "道路分科会",
+        "社会資本整備審議会"
+      ],
+      "officialUrl": "https://www.mlit.go.jp/policy/shingikai/road01_sg_000803.html",
+      "hasMinutes": true,
+      "docCount": 7
+    },
+    {
       "id": "meet-2026-06-09-cfa-kodomo-suishin-dai6",
       "councilId": "cfa-kodomo-suishin",
       "councilName": "こども政策推進会議",
@@ -28298,6 +28491,103 @@
       "docCount": 12
     },
     {
+      "id": "meet-2026-05-13-mlit-renkei-shoiinkai-dai4",
+      "councilId": "mlit-renkei-shoiinkai",
+      "councilName": "本州・九州連携小委員会",
+      "ministry": "MLIT",
+      "category": "COMMITTEE",
+      "title": "第4回 本州・九州連携小委員会",
+      "date": "2026/05/13",
+      "updatedAt": "2026/05/13 17:00",
+      "location": "国土交通省 / Web会議",
+      "summary": "社会資本整備審議会 道路分科会 国土幹線道路部会 第4回 本州・九州連携小委員会の開催。配付資料および議事録。",
+      "agenda": [
+        "本州・九州連携小委員会における調査審議・検討"
+      ],
+      "materials": [
+        {
+          "name": "https://www.mlit.go.jp/policy/shingikai/s204_renkei.html",
+          "type": "HTML",
+          "size": "-",
+          "url": "https://www.mlit.go.jp/policy/shingikai/s204_renkei.html",
+          "isMinutes": false
+        },
+        {
+          "name": "議事概要",
+          "type": "HTML",
+          "size": "-",
+          "url": "https://www.mlit.go.jp/policy/shingikai/road01_sg_000799.html",
+          "isMinutes": true
+        },
+        {
+          "name": "議事録（PDF形式：311KB）",
+          "type": "PDF",
+          "size": "PDF",
+          "url": "https://www.mlit.go.jp/policy/shingikai/content/002008008.pdf",
+          "isMinutes": true
+        },
+        {
+          "name": "議事次第(PDF形式:70KB)",
+          "type": "PDF",
+          "size": "PDF",
+          "url": "https://www.mlit.go.jp/policy/shingikai/content/002000510.pdf",
+          "isMinutes": false
+        },
+        {
+          "name": "資料１　委員名簿(PDF形式:77KB)",
+          "type": "PDF",
+          "size": "PDF",
+          "url": "https://www.mlit.go.jp/policy/shingikai/content/002000511.pdf",
+          "isMinutes": false
+        },
+        {
+          "name": "資料２　全日本トラック協会　提出資料(PDF形式:1.1MB)",
+          "type": "PDF",
+          "size": "PDF",
+          "url": "https://www.mlit.go.jp/policy/shingikai/content/002000512.pdf",
+          "isMinutes": false
+        },
+        {
+          "name": "資料３　日本橋梁建設協会　提出資料(PDF形式:3.6MB)",
+          "type": "PDF",
+          "size": "PDF",
+          "url": "https://www.mlit.go.jp/policy/shingikai/content/002000513.pdf",
+          "isMinutes": false
+        },
+        {
+          "name": "資料４　本州四国連絡高速道路株式会社　提出資料(PDF形式:8.3MB)",
+          "type": "PDF",
+          "size": "PDF",
+          "url": "https://www.mlit.go.jp/policy/shingikai/content/002000514.pdf",
+          "isMinutes": false
+        },
+        {
+          "name": "参考資料　今後のスケジュール（案）(PDF形式:174KB)",
+          "type": "PDF",
+          "size": "PDF",
+          "url": "https://www.mlit.go.jp/policy/shingikai/content/002000515.pdf",
+          "isMinutes": false
+        },
+        {
+          "name": "第4回 記者発表資料 (PDF)",
+          "type": "PDF",
+          "size": "PDF",
+          "url": "https://www.mlit.go.jp/report/press/content/001999438.pdf",
+          "isMinutes": false
+        }
+      ],
+      "tags": [
+        "本州・九州連携小委員会",
+        "国土交通省",
+        "MLIT",
+        "道路分科会",
+        "社会資本整備審議会"
+      ],
+      "officialUrl": "https://www.mlit.go.jp/policy/shingikai/road01_sg_000800.html",
+      "hasMinutes": true,
+      "docCount": 10
+    },
+    {
       "id": "meet-2026-05-12-cas-chutou-jyousei-dai7",
       "councilId": "cas-chutou-jyousei",
       "councilName": "中東情勢に関する関係閣僚会議",
@@ -30027,6 +30317,103 @@
       "docCount": 59
     },
     {
+      "id": "meet-2026-04-22-mlit-renkei-shoiinkai-dai3",
+      "councilId": "mlit-renkei-shoiinkai",
+      "councilName": "本州・九州連携小委員会",
+      "ministry": "MLIT",
+      "category": "COMMITTEE",
+      "title": "第3回 本州・九州連携小委員会",
+      "date": "2026/04/22",
+      "updatedAt": "2026/04/22 17:00",
+      "location": "国土交通省 / Web会議",
+      "summary": "社会資本整備審議会 道路分科会 国土幹線道路部会 第3回 本州・九州連携小委員会の開催。配付資料および議事録。",
+      "agenda": [
+        "本州・九州連携小委員会における調査審議・検討"
+      ],
+      "materials": [
+        {
+          "name": "https://www.mlit.go.jp/policy/shingikai/s204_renkei.html",
+          "type": "HTML",
+          "size": "-",
+          "url": "https://www.mlit.go.jp/policy/shingikai/s204_renkei.html",
+          "isMinutes": false
+        },
+        {
+          "name": "記者発表資料 (PDF)",
+          "type": "PDF",
+          "size": "PDF",
+          "url": "https://www.mlit.go.jp/report/press/content/001997174.pdf",
+          "isMinutes": false
+        },
+        {
+          "name": "議事概要",
+          "type": "HTML",
+          "size": "-",
+          "url": "https://www.mlit.go.jp/policy/shingikai/road01_sg_000796.html",
+          "isMinutes": true
+        },
+        {
+          "name": "議事録（PDF形式：312KB）",
+          "type": "PDF",
+          "size": "PDF",
+          "url": "https://www.mlit.go.jp/policy/shingikai/content/002006041.pdf",
+          "isMinutes": true
+        },
+        {
+          "name": "議事次第(PDF形式:71KB)",
+          "type": "PDF",
+          "size": "PDF",
+          "url": "https://www.mlit.go.jp/policy/shingikai/content/001997699.pdf",
+          "isMinutes": false
+        },
+        {
+          "name": "資料１　委員名簿(PDF形式:77KB)",
+          "type": "PDF",
+          "size": "PDF",
+          "url": "https://www.mlit.go.jp/policy/shingikai/content/001997700.pdf",
+          "isMinutes": false
+        },
+        {
+          "name": "資料２　山口県　提出資料(PDF形式:4.8MB)",
+          "type": "PDF",
+          "size": "PDF",
+          "url": "https://www.mlit.go.jp/policy/shingikai/content/001997701.pdf",
+          "isMinutes": false
+        },
+        {
+          "name": "資料３　下関市　提出資料(PDF形式:13.1MB)",
+          "type": "PDF",
+          "size": "PDF",
+          "url": "https://www.mlit.go.jp/policy/shingikai/content/001997702.pdf",
+          "isMinutes": false
+        },
+        {
+          "name": "資料４　日本バス協会　提出資料(PDF形式:3.5MB)",
+          "type": "PDF",
+          "size": "PDF",
+          "url": "https://www.mlit.go.jp/policy/shingikai/content/001998517.pdf",
+          "isMinutes": false
+        },
+        {
+          "name": "資料５　今後のスケジュール（案）(PDF形式:153KB)",
+          "type": "PDF",
+          "size": "PDF",
+          "url": "https://www.mlit.go.jp/policy/shingikai/content/001997704.pdf",
+          "isMinutes": false
+        }
+      ],
+      "tags": [
+        "本州・九州連携小委員会",
+        "国土交通省",
+        "MLIT",
+        "道路分科会",
+        "社会資本整備審議会"
+      ],
+      "officialUrl": "https://www.mlit.go.jp/policy/shingikai/road01_sg_000795.html",
+      "hasMinutes": true,
+      "docCount": 10
+    },
+    {
       "id": "meet-2026-0420-mhlw-hosho-shiinsentaku-134",
       "councilId": "mhlw-hosho-shiinsentaku-134",
       "councilName": "mhlw-hosho-shiinsentaku-134",
@@ -31172,6 +31559,96 @@
       "officialUrl": "https://www.cas.go.jp/jp/seisaku/gskaigi/dai3/siryo1-1.pdf",
       "hasMinutes": false,
       "docCount": 7
+    },
+    {
+      "id": "meet-2026-03-30-mlit-renkei-shoiinkai-dai2",
+      "councilId": "mlit-renkei-shoiinkai",
+      "councilName": "本州・九州連携小委員会",
+      "ministry": "MLIT",
+      "category": "COMMITTEE",
+      "title": "第2回 本州・九州連携小委員会",
+      "date": "2026/03/30",
+      "updatedAt": "2026/03/30 17:00",
+      "location": "国土交通省 / Web会議",
+      "summary": "社会資本整備審議会 道路分科会 国土幹線道路部会 第2回 本州・九州連携小委員会の開催。配付資料および議事録。",
+      "agenda": [
+        "本州・九州連携小委員会における調査審議・検討"
+      ],
+      "materials": [
+        {
+          "name": "https://www.mlit.go.jp/policy/shingikai/s204_renkei.html",
+          "type": "HTML",
+          "size": "-",
+          "url": "https://www.mlit.go.jp/policy/shingikai/s204_renkei.html",
+          "isMinutes": false
+        },
+        {
+          "name": "議事概要",
+          "type": "HTML",
+          "size": "-",
+          "url": "https://www.mlit.go.jp/policy/shingikai/road01_sg_000788.html",
+          "isMinutes": true
+        },
+        {
+          "name": "議事録（PDF形式：299KB）",
+          "type": "PDF",
+          "size": "PDF",
+          "url": "https://www.mlit.go.jp/policy/shingikai/content/002006079.pdf",
+          "isMinutes": true
+        },
+        {
+          "name": "議事次第(PDF形式:37KB)",
+          "type": "PDF",
+          "size": "PDF",
+          "url": "https://www.mlit.go.jp/policy/shingikai/content/001992463.pdf",
+          "isMinutes": false
+        },
+        {
+          "name": "資料１　委員名簿(PDF形式:41KB)",
+          "type": "PDF",
+          "size": "PDF",
+          "url": "https://www.mlit.go.jp/policy/shingikai/content/001992464.pdf",
+          "isMinutes": false
+        },
+        {
+          "name": "資料２　福岡県　提出資料(PDF形式:3.3MB)",
+          "type": "PDF",
+          "size": "PDF",
+          "url": "https://www.mlit.go.jp/policy/shingikai/content/001992465.pdf",
+          "isMinutes": false
+        },
+        {
+          "name": "資料３　北九州市　提出資料(PDF形式:2.4MB)",
+          "type": "PDF",
+          "size": "PDF",
+          "url": "https://www.mlit.go.jp/policy/shingikai/content/001992466.pdf",
+          "isMinutes": false
+        },
+        {
+          "name": "資料４　中国経済連合会、九州経済連合会　提出資料(PDF形式:7.5MB)",
+          "type": "PDF",
+          "size": "PDF",
+          "url": "https://www.mlit.go.jp/policy/shingikai/content/001992467.pdf",
+          "isMinutes": false
+        },
+        {
+          "name": "資料５　今後のスケジュール（案）(PDF形式:52KB)",
+          "type": "PDF",
+          "size": "PDF",
+          "url": "https://www.mlit.go.jp/policy/shingikai/content/001992468.pdf",
+          "isMinutes": false
+        }
+      ],
+      "tags": [
+        "本州・九州連携小委員会",
+        "国土交通省",
+        "MLIT",
+        "道路分科会",
+        "社会資本整備審議会"
+      ],
+      "officialUrl": "https://www.mlit.go.jp/policy/shingikai/road01_sg_000786.html",
+      "hasMinutes": true,
+      "docCount": 9
     },
     {
       "id": "meet-2026-03-27-cao-cstp-44-dai80",
@@ -37275,6 +37752,117 @@
       "docCount": 7
     },
     {
+      "id": "meet-2026-03-02-mlit-renkei-shoiinkai-dai1",
+      "councilId": "mlit-renkei-shoiinkai",
+      "councilName": "本州・九州連携小委員会",
+      "ministry": "MLIT",
+      "category": "COMMITTEE",
+      "title": "第1回 本州・九州連携小委員会",
+      "date": "2026/03/02",
+      "updatedAt": "2026/03/02 17:00",
+      "location": "国土交通省 / Web会議",
+      "summary": "社会資本整備審議会 道路分科会 国土幹線道路部会 第1回 本州・九州連携小委員会の開催。配付資料および議事録。",
+      "agenda": [
+        "本州・九州連携小委員会における調査審議・検討"
+      ],
+      "materials": [
+        {
+          "name": "議事概要",
+          "type": "HTML",
+          "size": "-",
+          "url": "https://www.mlit.go.jp/policy/shingikai/road01_sg_000774.html",
+          "isMinutes": true
+        },
+        {
+          "name": "議事録（PDF形式：491KB）",
+          "type": "PDF",
+          "size": "PDF",
+          "url": "https://www.mlit.go.jp/policy/shingikai/content/002005994.pdf",
+          "isMinutes": true
+        },
+        {
+          "name": "議事次第(PDF形式:41KB)",
+          "type": "PDF",
+          "size": "PDF",
+          "url": "https://www.mlit.go.jp/policy/shingikai/content/001984434.pdf",
+          "isMinutes": false
+        },
+        {
+          "name": "資料１　委員名簿(PDF形式:41KB)",
+          "type": "PDF",
+          "size": "PDF",
+          "url": "https://www.mlit.go.jp/policy/shingikai/content/001984458.pdf",
+          "isMinutes": false
+        },
+        {
+          "name": "資料２　小委員会運営規則（案）(PDF形式:37KB)",
+          "type": "PDF",
+          "size": "PDF",
+          "url": "https://www.mlit.go.jp/policy/shingikai/content/001984459.pdf",
+          "isMinutes": false
+        },
+        {
+          "name": "資料３　本州・九州間の連携について(PDF形式:14.0MB)",
+          "type": "PDF",
+          "size": "PDF",
+          "url": "https://www.mlit.go.jp/policy/shingikai/content/001984460.pdf",
+          "isMinutes": false
+        },
+        {
+          "name": "資料４　本州・九州間の道路の現況について(PDF形式:10.3MB)",
+          "type": "PDF",
+          "size": "PDF",
+          "url": "https://www.mlit.go.jp/policy/shingikai/content/001984461.pdf",
+          "isMinutes": false
+        },
+        {
+          "name": "資料５　関門海峡周辺の道路ネットワークの利用形態について(PDF形式:6.3MB)",
+          "type": "PDF",
+          "size": "PDF",
+          "url": "https://www.mlit.go.jp/policy/shingikai/content/001984462.pdf",
+          "isMinutes": false
+        },
+        {
+          "name": "資料６　下関北九州道路の整備・管理について(PDF形式:4.4MB)",
+          "type": "PDF",
+          "size": "PDF",
+          "url": "https://www.mlit.go.jp/policy/shingikai/content/001984463.pdf",
+          "isMinutes": false
+        },
+        {
+          "name": "資料７　本州・九州連携における検討課題について(PDF形式:83KB)",
+          "type": "PDF",
+          "size": "PDF",
+          "url": "https://www.mlit.go.jp/policy/shingikai/content/001984464.pdf",
+          "isMinutes": false
+        },
+        {
+          "name": "参考資料１　国土幹線道路部会運営規則(PDF形式:49KB)",
+          "type": "PDF",
+          "size": "PDF",
+          "url": "https://www.mlit.go.jp/policy/shingikai/content/001984465.pdf",
+          "isMinutes": false
+        },
+        {
+          "name": "参考資料２　参考となる事例・データ集(PDF形式:4.0MB)",
+          "type": "PDF",
+          "size": "PDF",
+          "url": "https://www.mlit.go.jp/policy/shingikai/content/001984466.pdf",
+          "isMinutes": false
+        }
+      ],
+      "tags": [
+        "本州・九州連携小委員会",
+        "国土交通省",
+        "MLIT",
+        "道路分科会",
+        "社会資本整備審議会"
+      ],
+      "officialUrl": "https://www.mlit.go.jp/policy/shingikai/road01_sg_000773.html",
+      "hasMinutes": true,
+      "docCount": 12
+    },
+    {
       "id": "meet-2026-02-27-fdma-kento-180-令和7年度-dai1",
       "councilId": "fdma-kento-180",
       "councilName": "新技術を活用した屋外貯蔵タンクの効果的な予防保全に関する調査検討会",
@@ -42715,6 +43303,89 @@
       "docCount": 9
     },
     {
+      "id": "meet-2026-01-21-mlit-kokudokannsen-bukai-dai71",
+      "councilId": "mlit-kokudokannsen-bukai",
+      "councilName": "国土幹線道路部会",
+      "ministry": "MLIT",
+      "category": "SECTION",
+      "title": "第71回 国土幹線道路部会",
+      "date": "2026/01/21",
+      "updatedAt": "2026/01/21 17:00",
+      "location": "国土交通省 / Web会議",
+      "summary": "社会資本整備審議会 道路分科会 国土幹線道路部会 第71回 国土幹線道路部会の開催。配付資料および議事録。",
+      "agenda": [
+        "国土幹線道路部会における調査審議・検討"
+      ],
+      "materials": [
+        {
+          "name": "https://www.mlit.go.jp/policy/shingikai/s204_kokudokannsenn.html",
+          "type": "HTML",
+          "size": "-",
+          "url": "https://www.mlit.go.jp/policy/shingikai/s204_kokudokannsenn.html",
+          "isMinutes": false
+        },
+        {
+          "name": "議事概要",
+          "type": "HTML",
+          "size": "-",
+          "url": "https://www.mlit.go.jp/policy/shingikai/road01_sg_000770.html",
+          "isMinutes": true
+        },
+        {
+          "name": "議事録（PDF形式：303KB）",
+          "type": "PDF",
+          "size": "PDF",
+          "url": "https://www.mlit.go.jp/policy/shingikai/content/001982083.pdf",
+          "isMinutes": true
+        },
+        {
+          "name": "議事次第(PDF形式:36KB)",
+          "type": "PDF",
+          "size": "PDF",
+          "url": "https://www.mlit.go.jp/policy/shingikai/content/001977978.pdf",
+          "isMinutes": false
+        },
+        {
+          "name": "【資料１】社会資本整備審議会　道路分科会国土幹線道路部会委員名簿(PDF形式:42KB)",
+          "type": "PDF",
+          "size": "PDF",
+          "url": "https://www.mlit.go.jp/policy/shingikai/content/001977979.pdf",
+          "isMinutes": false
+        },
+        {
+          "name": "【資料２】能登半島地震の復旧・復興状況について（報告） (PDF形式:10.8MB)",
+          "type": "PDF",
+          "size": "PDF",
+          "url": "https://www.mlit.go.jp/policy/shingikai/content/001977980.pdf",
+          "isMinutes": false
+        },
+        {
+          "name": "【資料３】（一社）日本自動車連盟　提出資料(PDF形式:1.1MB)",
+          "type": "PDF",
+          "size": "PDF",
+          "url": "https://www.mlit.go.jp/policy/shingikai/content/001977981.pdf",
+          "isMinutes": false
+        },
+        {
+          "name": "【資料４】本州・九州連携に係る道路交通の現状と課題について(PDF形式:11.2MB)",
+          "type": "PDF",
+          "size": "PDF",
+          "url": "https://www.mlit.go.jp/policy/shingikai/content/001977982.pdf",
+          "isMinutes": false
+        }
+      ],
+      "tags": [
+        "国土幹線道路部会",
+        "国土交通省",
+        "MLIT",
+        "道路分科会",
+        "社会資本整備審議会"
+      ],
+      "officialUrl": "https://www.mlit.go.jp/policy/shingikai/road01_sg_000769.html",
+      "hasMinutes": true,
+      "docCount": 8
+    },
+    {
       "id": "meet-2026-01-20-cas-kokusentoc-24-dai67",
       "councilId": "cas-kokusentoc-24",
       "councilName": "国家戦略特別区域諮問会議",
@@ -44289,6 +44960,103 @@
       "officialUrl": "https://www.cas.go.jp/jp/seisaku/seme_no_yobouiryou/dai4/gijigaiyo.pdf",
       "hasMinutes": false,
       "docCount": 5
+    },
+    {
+      "id": "meet-2025-12-25-mlit-kokudokannsen-bukai-dai70",
+      "councilId": "mlit-kokudokannsen-bukai",
+      "councilName": "国土幹線道路部会",
+      "ministry": "MLIT",
+      "category": "SECTION",
+      "title": "第70回 国土幹線道路部会",
+      "date": "2025/12/25",
+      "updatedAt": "2025/12/25 17:00",
+      "location": "国土交通省 / Web会議",
+      "summary": "社会資本整備審議会 道路分科会 国土幹線道路部会 第70回 国土幹線道路部会の開催。配付資料および議事録。",
+      "agenda": [
+        "国土幹線道路部会における調査審議・検討"
+      ],
+      "materials": [
+        {
+          "name": "http://www.mlit.go.jp/policy/shingikai/s204_kokudokannsenn.html",
+          "type": "HTML",
+          "size": "-",
+          "url": "http://www.mlit.go.jp/policy/shingikai/s204_kokudokannsenn.html",
+          "isMinutes": false
+        },
+        {
+          "name": "議事概要",
+          "type": "HTML",
+          "size": "-",
+          "url": "https://www.mlit.go.jp/policy/shingikai/road01_sg_000767.html",
+          "isMinutes": true
+        },
+        {
+          "name": "議事録（PDF形式：338KB）",
+          "type": "PDF",
+          "size": "PDF",
+          "url": "https://www.mlit.go.jp/policy/shingikai/content/001981203.pdf",
+          "isMinutes": true
+        },
+        {
+          "name": "議事次第(PDF形式:39KB)",
+          "type": "PDF",
+          "size": "PDF",
+          "url": "https://www.mlit.go.jp/policy/shingikai/content/001975279.pdf",
+          "isMinutes": false
+        },
+        {
+          "name": "【資料１】社会資本整備審議会　道路分科会国土幹線道路部会委員名簿(PDF形式:42KB)",
+          "type": "PDF",
+          "size": "PDF",
+          "url": "https://www.mlit.go.jp/policy/shingikai/content/001975280.pdf",
+          "isMinutes": false
+        },
+        {
+          "name": "【資料２】全国軽自動車協会連合会　提出資料(PDF形式:2.0MB)",
+          "type": "PDF",
+          "size": "PDF",
+          "url": "https://www.mlit.go.jp/policy/shingikai/content/001975281.pdf",
+          "isMinutes": false
+        },
+        {
+          "name": "【資料３】通勤パスの試行状況について(PDF形式:924KB)",
+          "type": "PDF",
+          "size": "PDF",
+          "url": "https://www.mlit.go.jp/policy/shingikai/content/001975282.pdf",
+          "isMinutes": false
+        },
+        {
+          "name": "【資料４－１】 首都高速道路（株）　説明資料(PDF形式:2.8MB)",
+          "type": "PDF",
+          "size": "PDF",
+          "url": "https://www.mlit.go.jp/policy/shingikai/content/001975284.pdf",
+          "isMinutes": false
+        },
+        {
+          "name": "【資料４－２】 首都高の持続可能な道路サービスに関する検討会 第１次とりまとめ（概要）(PDF形式:176KB)",
+          "type": "PDF",
+          "size": "PDF",
+          "url": "https://www.mlit.go.jp/policy/shingikai/content/001975286.pdf",
+          "isMinutes": false
+        },
+        {
+          "name": "【資料４－３】 首都高の持続可能な道路サービスに関する検討会 第１次とりまとめ(PDF形式:294KB)",
+          "type": "PDF",
+          "size": "PDF",
+          "url": "https://www.mlit.go.jp/policy/shingikai/content/001975287.pdf",
+          "isMinutes": false
+        }
+      ],
+      "tags": [
+        "国土幹線道路部会",
+        "国土交通省",
+        "MLIT",
+        "道路分科会",
+        "社会資本整備審議会"
+      ],
+      "officialUrl": "https://www.mlit.go.jp/policy/shingikai/road01_sg_000766.html",
+      "hasMinutes": true,
+      "docCount": 10
     },
     {
       "id": "meet-2025-12-24-cas-nipponseichosenryaku-74-dai2",
@@ -48254,6 +49022,89 @@
       "docCount": 5
     },
     {
+      "id": "meet-2025-11-19-mlit-kokudokannsen-bukai-dai69",
+      "councilId": "mlit-kokudokannsen-bukai",
+      "councilName": "国土幹線道路部会",
+      "ministry": "MLIT",
+      "category": "SECTION",
+      "title": "第69回 国土幹線道路部会",
+      "date": "2025/11/19",
+      "updatedAt": "2025/11/19 17:00",
+      "location": "国土交通省 / Web会議",
+      "summary": "社会資本整備審議会 道路分科会 国土幹線道路部会 第69回 国土幹線道路部会の開催。配付資料および議事録。",
+      "agenda": [
+        "国土幹線道路部会における調査審議・検討"
+      ],
+      "materials": [
+        {
+          "name": "http://www.mlit.go.jp/policy/shingikai/s204_kokudokannsenn.html",
+          "type": "HTML",
+          "size": "-",
+          "url": "http://www.mlit.go.jp/policy/shingikai/s204_kokudokannsenn.html",
+          "isMinutes": false
+        },
+        {
+          "name": "議事概要",
+          "type": "HTML",
+          "size": "-",
+          "url": "https://www.mlit.go.jp/policy/shingikai/road01_sg_000752.html",
+          "isMinutes": true
+        },
+        {
+          "name": "議事録（PDF形式：316KB）",
+          "type": "PDF",
+          "size": "PDF",
+          "url": "https://www.mlit.go.jp/policy/shingikai/content/001975781.pdf",
+          "isMinutes": true
+        },
+        {
+          "name": "議事次第(PDF形式:36KB)",
+          "type": "PDF",
+          "size": "PDF",
+          "url": "https://www.mlit.go.jp/policy/shingikai/content/001969583.pdf",
+          "isMinutes": false
+        },
+        {
+          "name": "【資料１】社会資本整備審議会　道路分科会国土幹線道路部会委員名簿(PDF形式:42KB)",
+          "type": "PDF",
+          "size": "PDF",
+          "url": "https://www.mlit.go.jp/policy/shingikai/content/001969584.pdf",
+          "isMinutes": false
+        },
+        {
+          "name": "【資料２】全国オートバイ協同組合連合会　提出資料(PDF形式:184KB)",
+          "type": "PDF",
+          "size": "PDF",
+          "url": "https://www.mlit.go.jp/policy/shingikai/content/001969585.pdf",
+          "isMinutes": false
+        },
+        {
+          "name": "【資料３】高速道路料金割引に係るこれまでの経緯(PDF形式:472KB)",
+          "type": "PDF",
+          "size": "PDF",
+          "url": "https://www.mlit.go.jp/policy/shingikai/content/001969586.pdf",
+          "isMinutes": false
+        },
+        {
+          "name": "【資料４ 】混雑等に応じた柔軟な料金について(PDF形式:4.4MB)",
+          "type": "PDF",
+          "size": "PDF",
+          "url": "https://www.mlit.go.jp/policy/shingikai/content/001969587.pdf",
+          "isMinutes": false
+        }
+      ],
+      "tags": [
+        "国土幹線道路部会",
+        "国土交通省",
+        "MLIT",
+        "道路分科会",
+        "社会資本整備審議会"
+      ],
+      "officialUrl": "https://www.mlit.go.jp/policy/shingikai/road01_sg_000751.html",
+      "hasMinutes": true,
+      "docCount": 8
+    },
+    {
       "id": "meet-2025-11-18-cao-zei_cho-42-dai6",
       "councilId": "cao-zei_cho-42",
       "councilName": "税制調査会",
@@ -51231,6 +52082,96 @@
       "officialUrl": "https://www.cas.go.jp/jp/seisaku/kyuyo/index.html",
       "hasMinutes": true,
       "docCount": 2
+    },
+    {
+      "id": "meet-2025-08-05-mlit-kokudokannsen-bukai-dai68",
+      "councilId": "mlit-kokudokannsen-bukai",
+      "councilName": "国土幹線道路部会",
+      "ministry": "MLIT",
+      "category": "SECTION",
+      "title": "第68回 国土幹線道路部会",
+      "date": "2025/08/05",
+      "updatedAt": "2025/08/05 17:00",
+      "location": "国土交通省 / Web会議",
+      "summary": "社会資本整備審議会 道路分科会 国土幹線道路部会 第68回 国土幹線道路部会の開催。配付資料および議事録。",
+      "agenda": [
+        "国土幹線道路部会における調査審議・検討"
+      ],
+      "materials": [
+        {
+          "name": "http://www.mlit.go.jp/policy/shingikai/s204_kokudokannsenn.html",
+          "type": "HTML",
+          "size": "-",
+          "url": "http://www.mlit.go.jp/policy/shingikai/s204_kokudokannsenn.html",
+          "isMinutes": false
+        },
+        {
+          "name": "議事概要",
+          "type": "HTML",
+          "size": "-",
+          "url": "https://www.mlit.go.jp/policy/shingikai/road01_sg_000743.html",
+          "isMinutes": true
+        },
+        {
+          "name": "議事録（PDF形式：317KB）",
+          "type": "PDF",
+          "size": "PDF",
+          "url": "https://www.mlit.go.jp/policy/shingikai/content/001970110.pdf",
+          "isMinutes": true
+        },
+        {
+          "name": "議事次第(PDF形式:36KB)",
+          "type": "PDF",
+          "size": "PDF",
+          "url": "https://www.mlit.go.jp/policy/shingikai/content/001903963.pdf",
+          "isMinutes": false
+        },
+        {
+          "name": "【資料１】社会資本整備審議会　道路分科会国土幹線道路部会委員名簿(PDF形式:42KB)",
+          "type": "PDF",
+          "size": "PDF",
+          "url": "https://www.mlit.go.jp/policy/shingikai/content/001903964.pdf",
+          "isMinutes": false
+        },
+        {
+          "name": "【資料２】中日本高速道路（株）提出資料(PDF形式:1.1MB)",
+          "type": "PDF",
+          "size": "PDF",
+          "url": "https://www.mlit.go.jp/policy/shingikai/content/001903965.pdf",
+          "isMinutes": false
+        },
+        {
+          "name": "【資料３】高速道路機構・会社の業務点検フォローアップ(PDF形式:99KB)",
+          "type": "PDF",
+          "size": "PDF",
+          "url": "https://www.mlit.go.jp/policy/shingikai/content/001903966.pdf",
+          "isMinutes": false
+        },
+        {
+          "name": "【資料４】高速道路機構・会社の業務点検フォローアップ 概要(PDF形式:4.0MB)",
+          "type": "PDF",
+          "size": "PDF",
+          "url": "https://www.mlit.go.jp/policy/shingikai/content/001903967.pdf",
+          "isMinutes": false
+        },
+        {
+          "name": "【資料５】高速道路機構・会社の業務点検フォローアップ 本文(PDF形式:1.1MB)",
+          "type": "PDF",
+          "size": "PDF",
+          "url": "https://www.mlit.go.jp/policy/shingikai/content/001903968.pdf",
+          "isMinutes": false
+        }
+      ],
+      "tags": [
+        "国土幹線道路部会",
+        "国土交通省",
+        "MLIT",
+        "道路分科会",
+        "社会資本整備審議会"
+      ],
+      "officialUrl": "https://www.mlit.go.jp/policy/shingikai/road01_sg_000742.html",
+      "hasMinutes": true,
+      "docCount": 9
     },
     {
       "id": "meet-2025-07-31-cas-pqc-kanjikai-dai1",
@@ -175577,131 +176518,122 @@
       "docCount": 11
     },
     {
-      "id": "meet-2019-02-06-mlit-shakai-sihon-soukai-dai10",
-      "councilId": "mlit-shakai-sihon-soukai",
+      "id": "meet-2019-02-06-mlit-shakai-shingikai-dai10",
+      "councilId": "mlit-shakai-shingikai",
       "councilName": "社会資本整備審議会",
       "ministry": "MLIT",
       "category": "COUNCIL",
       "title": "第10回 社会資本整備審議会",
       "date": "2019/02/06",
       "updatedAt": "2019/02/06 17:00",
-      "location": "国土交通省 大会議室",
-      "summary": "大規模広域豪雨を踏まえた水災害対策のあり方、未来につなげるインフラ政策（案）、防災・減災・国土強靱化緊急対策が審議・決定された。",
+      "location": "国土交通省 / Web会議",
+      "summary": "社会資本整備審議会 道路分科会 国土幹線道路部会 第10回 社会資本整備審議会の開催。配付資料および議事録。",
       "agenda": [
-        "大規模広域豪雨を踏まえた水災害対策のあり方について",
-        "2030年の科学技術を見据えた気象業務のあり方について",
-        "未来につなげるインフラ政策（案）およびモビリティサービスの推進"
+        "社会資本整備審議会における調査審議・検討"
       ],
       "materials": [
         {
-          "name": "議事録 (PDF形式：352KB)",
-          "type": "PDF",
-          "size": "352 KB",
-          "url": "https://www.mlit.go.jp/common/001282717.pdf",
-          "isMinutes": true
-        },
-        {
           "name": "議事要旨",
           "type": "HTML",
-          "size": "25 KB",
+          "size": "-",
           "url": "https://www.mlit.go.jp/policy/shingikai/sogo01_sg_000033.html",
           "isMinutes": true
         },
         {
-          "name": "議事次第 (PDF形式：52KB)",
+          "name": "議事録（PDF形式：352KB）",
           "type": "PDF",
-          "size": "52 KB",
+          "size": "PDF",
+          "url": "https://www.mlit.go.jp/common/001282717.pdf",
+          "isMinutes": true
+        },
+        {
+          "name": "議事次第（PDF形式：52KB）",
+          "type": "PDF",
+          "size": "PDF",
           "url": "https://www.mlit.go.jp/common/001273277.pdf",
           "isMinutes": false
         },
         {
-          "name": "委員名簿 (PDF形式：123KB)",
+          "name": "委員名簿（PDF形式：123KB）",
           "type": "PDF",
-          "size": "123 KB",
+          "size": "PDF",
           "url": "https://www.mlit.go.jp/common/001273276.pdf",
           "isMinutes": false
         },
         {
-          "name": "資料1 大規模広域豪雨を踏まえた水災害対策のあり方 (PDF形式：455KB)",
+          "name": "資料１　大規模広域豪雨を踏まえた水災害対策のあり方（PDF形式：455KB）",
           "type": "PDF",
-          "size": "455 KB",
+          "size": "PDF",
           "url": "https://www.mlit.go.jp/common/001273275.pdf",
           "isMinutes": false
         },
         {
-          "name": "資料2 2030年の科学技術を見据えた気象業務のあり方 (PDF形式：636KB)",
+          "name": "資料２　2030年の科学技術を見据えた気象業務のあり方（PDF形式：636KB）",
           "type": "PDF",
-          "size": "636 KB",
+          "size": "PDF",
           "url": "https://www.mlit.go.jp/common/001273278.pdf",
           "isMinutes": false
         },
         {
-          "name": "資料3 国土交通技術行政の基本政策懇談会中間とりまとめ (PDF形式：262KB)",
+          "name": "資料３　国土交通技術行政の基本政策懇談会中間とりまとめ（PDF形式：262KB）",
           "type": "PDF",
-          "size": "262 KB",
+          "size": "PDF",
           "url": "https://www.mlit.go.jp/common/001273286.pdf",
           "isMinutes": false
         },
         {
-          "name": "資料4 未来につなげるインフラ政策（案）1/3 (PDF形式：6.3MB)",
+          "name": "資料４　未来につなげるインフラ政策（案）1/3（PDF形式：6.3MB）",
           "type": "PDF",
-          "size": "6.3 MB",
+          "size": "PDF",
           "url": "https://www.mlit.go.jp/common/001273285.pdf",
           "isMinutes": false
         },
         {
-          "name": "資料4 未来につなげるインフラ政策（案）2/3 (PDF形式：7.9MB)",
+          "name": "資料４　未来につなげるインフラ政策（案）2/3（PDF形式：7.9MB）",
           "type": "PDF",
-          "size": "7.9 MB",
+          "size": "PDF",
           "url": "https://www.mlit.go.jp/common/001273284.pdf",
           "isMinutes": false
         },
         {
-          "name": "資料4 未来につなげるインフラ政策（案）3/3 (PDF形式：6.5MB)",
+          "name": "資料４　未来につなげるインフラ政策（案）3/3（PDF形式：6.5MB）",
           "type": "PDF",
-          "size": "6.5 MB",
+          "size": "PDF",
           "url": "https://www.mlit.go.jp/common/001273283.pdf",
           "isMinutes": false
         },
         {
-          "name": "資料5 防災・減災、国土強靭化のための３か年緊急対策の概要 (PDF形式：220KB)",
+          "name": "資料５　防災・減災、国土強靭化のための３か年緊急対策の概要（PDF形式：220KB）",
           "type": "PDF",
-          "size": "220 KB",
+          "size": "PDF",
           "url": "https://www.mlit.go.jp/common/001273288.pdf",
           "isMinutes": false
         },
         {
-          "name": "資料6 新たなモビリティサービスの推進について (PDF形式：1.2MB)",
+          "name": "資料６　新たなモビリティサービスの推進について（PDF形式：1.2MB）",
           "type": "PDF",
-          "size": "1.2 MB",
+          "size": "PDF",
           "url": "https://www.mlit.go.jp/common/001273287.pdf",
           "isMinutes": false
         },
         {
-          "name": "資料7 社会資本整備、交通政策を巡る課題 (PDF形式：93KB)",
+          "name": "資料７　社会資本整備、交通政策を巡る課題（PDF形式：93KB）",
           "type": "PDF",
-          "size": "93 KB",
+          "size": "PDF",
           "url": "https://www.mlit.go.jp/common/001273292.pdf",
-          "isMinutes": false
-        },
-        {
-          "name": "第10回総会 配布資料ページ",
-          "type": "HTML",
-          "size": "35 KB",
-          "url": "https://www.mlit.go.jp/policy/shingikai/sogo01_sg_000035.html",
           "isMinutes": false
         }
       ],
       "tags": [
         "社会資本整備審議会",
-        "第10回総会",
-        "水災害対策",
-        "国土強靱化",
-        "国土交通省"
+        "国土交通省",
+        "MLIT",
+        "道路分科会",
+        "社会資本整備審議会"
       ],
       "officialUrl": "https://www.mlit.go.jp/policy/shingikai/sogo01_sg_000035.html",
       "hasMinutes": true,
-      "docCount": 14
+      "docCount": 13
     },
     {
       "id": "meet-2019-01-21-fsa-kinyu-chukai-dai16",
@@ -177859,6 +178791,145 @@
       "officialUrl": "https://www.chisou.go.jp/tiiki/kokusentoc/dai31/shiryou.html",
       "hasMinutes": true,
       "docCount": 12
+    },
+    {
+      "id": "meet-2017-08-22-mlit-douro-bunkakai-dai16",
+      "councilId": "mlit-douro-bunkakai",
+      "councilName": "道路分科会",
+      "ministry": "MLIT",
+      "category": "SUBCOMMITTEE",
+      "title": "第16回 道路分科会",
+      "date": "2017/08/22",
+      "updatedAt": "2017/08/22 17:00",
+      "location": "国土交通省 / Web会議",
+      "summary": "社会資本整備審議会 道路分科会 国土幹線道路部会 第16回 道路分科会の開催。配付資料および議事録。",
+      "agenda": [
+        "道路分科会における調査審議・検討"
+      ],
+      "materials": [
+        {
+          "name": "http://www.mlit.go.jp/policy/shingikai/s202_douro01.html",
+          "type": "HTML",
+          "size": "-",
+          "url": "http://www.mlit.go.jp/policy/shingikai/s202_douro01.html",
+          "isMinutes": false
+        },
+        {
+          "name": "記者発表資料 (PDF)",
+          "type": "PDF",
+          "size": "PDF",
+          "url": "https://www.mlit.go.jp/common/001197895.pdf",
+          "isMinutes": false
+        },
+        {
+          "name": "議事要旨",
+          "type": "HTML",
+          "size": "-",
+          "url": "https://www.mlit.go.jp/policy/shingikai/road01_sg_000371.html",
+          "isMinutes": true
+        },
+        {
+          "name": "議事録（PDF形式：373KB）",
+          "type": "PDF",
+          "size": "PDF",
+          "url": "https://www.mlit.go.jp/common/001210975.pdf",
+          "isMinutes": true
+        },
+        {
+          "name": "議事次第（PDF形式：31KB）",
+          "type": "PDF",
+          "size": "PDF",
+          "url": "https://www.mlit.go.jp/common/001202614.pdf",
+          "isMinutes": false
+        },
+        {
+          "name": "委員名簿（PDF形式：74KB）",
+          "type": "PDF",
+          "size": "PDF",
+          "url": "https://www.mlit.go.jp/common/001202615.pdf",
+          "isMinutes": false
+        },
+        {
+          "name": "【資料１】道路分科会 建議案 概要（PDF形式：153KB）",
+          "type": "PDF",
+          "size": "PDF",
+          "url": "https://www.mlit.go.jp/common/001202616.pdf",
+          "isMinutes": false
+        },
+        {
+          "name": "【資料２】道路分科会 建議案 説明資料（PDF形式：4.2MB）",
+          "type": "PDF",
+          "size": "PDF",
+          "url": "https://www.mlit.go.jp/common/001202617.pdf",
+          "isMinutes": false
+        },
+        {
+          "name": "【資料３】道路分科会 建議案（PDF形式：504KB）",
+          "type": "PDF",
+          "size": "PDF",
+          "url": "https://www.mlit.go.jp/common/001202618.pdf",
+          "isMinutes": false
+        },
+        {
+          "name": "【資料４】高速道路をめぐる状況について（PDF形式：4.2MB）",
+          "type": "PDF",
+          "size": "PDF",
+          "url": "https://www.mlit.go.jp/common/001202619.pdf",
+          "isMinutes": false
+        },
+        {
+          "name": "【資料５】道路の老朽化対策の状況について（PDF形式：1.4MB）",
+          "type": "PDF",
+          "size": "PDF",
+          "url": "https://www.mlit.go.jp/common/001202620.pdf",
+          "isMinutes": false
+        },
+        {
+          "name": "【資料６】無電柱化の取組について（PDF形式：1.4MB）",
+          "type": "PDF",
+          "size": "PDF",
+          "url": "https://www.mlit.go.jp/common/001202621.pdf",
+          "isMinutes": false
+        },
+        {
+          "name": "【資料７】自転車の活用促進に向けた取組について（PDF形式：1.3MB）",
+          "type": "PDF",
+          "size": "PDF",
+          "url": "https://www.mlit.go.jp/common/001202622.pdf",
+          "isMinutes": false
+        },
+        {
+          "name": "【参考資料】基本政策部会における検討経緯（PDF形式：112KB）",
+          "type": "PDF",
+          "size": "PDF",
+          "url": "https://www.mlit.go.jp/common/001202627.pdf",
+          "isMinutes": false
+        },
+        {
+          "name": "道路分科会における意見（PDF形式：109KB）",
+          "type": "PDF",
+          "size": "PDF",
+          "url": "https://www.mlit.go.jp/common/001201777.pdf",
+          "isMinutes": false
+        },
+        {
+          "name": "道路･交通イノベーション (PDF)",
+          "type": "PDF",
+          "size": "PDF",
+          "url": "https://www.mlit.go.jp/common/001201778.pdf",
+          "isMinutes": false
+        }
+      ],
+      "tags": [
+        "道路分科会",
+        "国土交通省",
+        "MLIT",
+        "道路分科会",
+        "社会資本整備審議会"
+      ],
+      "officialUrl": "https://www.mlit.go.jp/policy/shingikai/road01_sg_000370.html",
+      "hasMinutes": true,
+      "docCount": 16
     },
     {
       "id": "meet-2017-08-04-cas-ir_promotion-77-dai2",
@@ -192946,6 +194017,96 @@
       "docCount": 26
     },
     {
+      "id": "meet-2014-07-02-mlit-douro-bunkakai-dai15",
+      "councilId": "mlit-douro-bunkakai",
+      "councilName": "道路分科会",
+      "ministry": "MLIT",
+      "category": "SUBCOMMITTEE",
+      "title": "第15回 道路分科会",
+      "date": "2014/07/02",
+      "updatedAt": "2014/07/02 17:00",
+      "location": "国土交通省 / Web会議",
+      "summary": "社会資本整備審議会 道路分科会 国土幹線道路部会 第15回 道路分科会の開催。配付資料および議事録。",
+      "agenda": [
+        "道路分科会における調査審議・検討"
+      ],
+      "materials": [
+        {
+          "name": "議事要旨",
+          "type": "HTML",
+          "size": "-",
+          "url": "https://www.mlit.go.jp/policy/shingikai/road01_sg_000195.html",
+          "isMinutes": true
+        },
+        {
+          "name": "議事録（PDF形式：366KB）",
+          "type": "PDF",
+          "size": "PDF",
+          "url": "https://www.mlit.go.jp/common/001057970.pdf",
+          "isMinutes": true
+        },
+        {
+          "name": "議事次第（PDF形式：41KB）",
+          "type": "PDF",
+          "size": "PDF",
+          "url": "https://www.mlit.go.jp/common/001046638.pdf",
+          "isMinutes": false
+        },
+        {
+          "name": "【資料１】高速道路をめぐる状況について（PDF形式：1.4MB）",
+          "type": "PDF",
+          "size": "PDF",
+          "url": "https://www.mlit.go.jp/common/001046639.pdf",
+          "isMinutes": false
+        },
+        {
+          "name": "【資料２】道路の老朽化対策の本格実施について （PDF形式：1.3MB）",
+          "type": "PDF",
+          "size": "PDF",
+          "url": "https://www.mlit.go.jp/common/001046640.pdf",
+          "isMinutes": false
+        },
+        {
+          "name": "【資料３】大型車両の通行適正化の取組について （PDF形式：363KB）",
+          "type": "PDF",
+          "size": "PDF",
+          "url": "https://www.mlit.go.jp/common/001046642.pdf",
+          "isMinutes": false
+        },
+        {
+          "name": "【資料４】新たな国土構造を支える道路交通のあり方について  （PDF形式：4.8MB）",
+          "type": "PDF",
+          "size": "PDF",
+          "url": "https://www.mlit.go.jp/common/001046643.pdf",
+          "isMinutes": false
+        },
+        {
+          "name": "【参考資料１】大型車両の通行適正化の取組について （PDF形式：1.5MB）",
+          "type": "PDF",
+          "size": "PDF",
+          "url": "https://www.mlit.go.jp/common/001046644.pdf",
+          "isMinutes": false
+        },
+        {
+          "name": "【参考資料２】新たな国土構造を支える道路交通のあり方について （PDF形式：1.10MB）",
+          "type": "PDF",
+          "size": "PDF",
+          "url": "https://www.mlit.go.jp/common/001046645.pdf",
+          "isMinutes": false
+        }
+      ],
+      "tags": [
+        "道路分科会",
+        "国土交通省",
+        "MLIT",
+        "道路分科会",
+        "社会資本整備審議会"
+      ],
+      "officialUrl": "https://www.mlit.go.jp/policy/shingikai/road01_sg_000194.html",
+      "hasMinutes": true,
+      "docCount": 9
+    },
+    {
       "id": "meet-2014-06-17-cas-kokusentoc-24-dai6",
       "councilId": "cas-kokusentoc-24",
       "councilName": "国家戦略特別区域諮問会議",
@@ -193912,6 +195073,89 @@
       "docCount": 2
     },
     {
+      "id": "meet-2012-07-13-mlit-douro-bunkakai-dai14",
+      "councilId": "mlit-douro-bunkakai",
+      "councilName": "道路分科会",
+      "ministry": "MLIT",
+      "category": "SUBCOMMITTEE",
+      "title": "第14回 道路分科会",
+      "date": "2012/07/13",
+      "updatedAt": "2012/07/13 17:00",
+      "location": "国土交通省 / Web会議",
+      "summary": "社会資本整備審議会 道路分科会 国土幹線道路部会 第14回 道路分科会の開催。配付資料および議事録。",
+      "agenda": [
+        "道路分科会における調査審議・検討"
+      ],
+      "materials": [
+        {
+          "name": "議事要旨",
+          "type": "HTML",
+          "size": "-",
+          "url": "https://www.mlit.go.jp/policy/shingikai/road01_sg_000104.html",
+          "isMinutes": true
+        },
+        {
+          "name": "資料１－１　東日本大震災後の復旧・復興の状況（PDF形式：1.7MB）",
+          "type": "PDF",
+          "size": "PDF",
+          "url": "https://www.mlit.go.jp/common/000217723.pdf",
+          "isMinutes": false
+        },
+        {
+          "name": "資料１－２　高速道路をめぐる状況（PDF形式：3.5MB）",
+          "type": "PDF",
+          "size": "PDF",
+          "url": "https://www.mlit.go.jp/common/000217724.pdf",
+          "isMinutes": false
+        },
+        {
+          "name": "資料１－３　通学路の交通安全の確保（PDF形式：1.2MB）",
+          "type": "PDF",
+          "size": "PDF",
+          "url": "https://www.mlit.go.jp/common/000217725.pdf",
+          "isMinutes": false
+        },
+        {
+          "name": "資料２　道路分科会建議中間とりまとめと社会資本整備重点計画（素案）（PDF形式：1.1MB）",
+          "type": "PDF",
+          "size": "PDF",
+          "url": "https://www.mlit.go.jp/common/000217726.pdf",
+          "isMinutes": false
+        },
+        {
+          "name": "資料３　防災評価手法等について（PDF形式：1.7MB）",
+          "type": "PDF",
+          "size": "PDF",
+          "url": "https://www.mlit.go.jp/common/000217727.pdf",
+          "isMinutes": false
+        },
+        {
+          "name": "資料４　部会の設置（PDF形式：74KB）",
+          "type": "PDF",
+          "size": "PDF",
+          "url": "https://www.mlit.go.jp/common/000217728.pdf",
+          "isMinutes": false
+        },
+        {
+          "name": "参考資料　安全で快適な自転車利用環境の創出に向けた検討委員会の提言（PDF形式：1.4MB）",
+          "type": "PDF",
+          "size": "PDF",
+          "url": "https://www.mlit.go.jp/common/000217729.pdf",
+          "isMinutes": false
+        }
+      ],
+      "tags": [
+        "道路分科会",
+        "国土交通省",
+        "MLIT",
+        "道路分科会",
+        "社会資本整備審議会"
+      ],
+      "officialUrl": "https://www.mlit.go.jp/policy/shingikai/road01_sg_000103.html",
+      "hasMinutes": true,
+      "docCount": 8
+    },
+    {
       "id": "meet-2012-03-09-smea-kaigai-tenkai-dai4",
       "councilId": "smea-kaigai-tenkai",
       "councilName": "中小企業海外展開支援会議",
@@ -193978,6 +195222,89 @@
       "officialUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/kaigai/110624HS.html",
       "hasMinutes": false,
       "docCount": 1
+    },
+    {
+      "id": "meet-2011-05-23-mlit-douro-bunkakai-dai13",
+      "councilId": "mlit-douro-bunkakai",
+      "councilName": "道路分科会",
+      "ministry": "MLIT",
+      "category": "SUBCOMMITTEE",
+      "title": "第13回 道路分科会",
+      "date": "2011/05/23",
+      "updatedAt": "2011/05/23 17:00",
+      "location": "国土交通省 / Web会議",
+      "summary": "社会資本整備審議会 道路分科会 国土幹線道路部会 第13回 道路分科会の開催。配付資料および議事録。",
+      "agenda": [
+        "道路分科会における調査審議・検討"
+      ],
+      "materials": [
+        {
+          "name": "議事要旨",
+          "type": "HTML",
+          "size": "-",
+          "url": "https://www.mlit.go.jp/policy/shingikai/road01_sg_000048.html",
+          "isMinutes": true
+        },
+        {
+          "name": "議事録（PDF形式：542KB）",
+          "type": "PDF",
+          "size": "PDF",
+          "url": "https://www.mlit.go.jp/common/000189942.pdf",
+          "isMinutes": true
+        },
+        {
+          "name": "資料１　東日本大震災への対応と課題（PDF形式：5.1MB）",
+          "type": "PDF",
+          "size": "PDF",
+          "url": "https://www.mlit.go.jp/common/000145333.pdf",
+          "isMinutes": false
+        },
+        {
+          "name": "資料２　最近の高速道路関係の状況（PDF形式：3.8MB）",
+          "type": "PDF",
+          "size": "PDF",
+          "url": "https://www.mlit.go.jp/common/000145134.pdf",
+          "isMinutes": false
+        },
+        {
+          "name": "資料３　今後の道路政策の基本的方向について 検討スケジュール（案）（PDF形式：46KB）",
+          "type": "PDF",
+          "size": "PDF",
+          "url": "https://www.mlit.go.jp/common/000145135.pdf",
+          "isMinutes": false
+        },
+        {
+          "name": "資料４　大震災の教訓と、経済社会展望を踏まえた今後の道路施策の検討にあたっての論点（たたき台）（PDF形式：245KB）",
+          "type": "PDF",
+          "size": "PDF",
+          "url": "https://www.mlit.go.jp/common/000145136.pdf",
+          "isMinutes": false
+        },
+        {
+          "name": "資料５　事業評価部会の所掌事務の改正について（PDF形式：86KB）",
+          "type": "PDF",
+          "size": "PDF",
+          "url": "https://www.mlit.go.jp/common/000145137.pdf",
+          "isMinutes": false
+        },
+        {
+          "name": "参考資料　今後の社会・経済情勢の変化（PDF形式：1.7MB）",
+          "type": "PDF",
+          "size": "PDF",
+          "url": "https://www.mlit.go.jp/common/000145138.pdf",
+          "isMinutes": false
+        }
+      ],
+      "tags": [
+        "道路分科会",
+        "国土交通省",
+        "MLIT",
+        "道路分科会",
+        "社会資本整備審議会"
+      ],
+      "officialUrl": "https://www.mlit.go.jp/policy/shingikai/road01_sg_000049.html",
+      "hasMinutes": true,
+      "docCount": 8
     },
     {
       "id": "meet-2011-04-06-cas-hanzai-80",
@@ -194653,6 +195980,166 @@
       "docCount": 2
     },
     {
+      "id": "meet-2010-07-26-mlit-shakai-shingikai-dai9",
+      "councilId": "mlit-shakai-shingikai",
+      "councilName": "社会資本整備審議会",
+      "ministry": "MLIT",
+      "category": "COUNCIL",
+      "title": "第9回 社会資本整備審議会",
+      "date": "2010/07/26",
+      "updatedAt": "2010/07/26 17:00",
+      "location": "国土交通省 / Web会議",
+      "summary": "社会資本整備審議会 道路分科会 国土幹線道路部会 第9回 社会資本整備審議会の開催。配付資料および議事録。",
+      "agenda": [
+        "社会資本整備審議会における調査審議・検討"
+      ],
+      "materials": [
+        {
+          "name": "開催資料 (PDF)",
+          "type": "PDF",
+          "size": "PDF",
+          "url": "https://www.mlit.go.jp/common/000120176.pdf",
+          "isMinutes": false
+        },
+        {
+          "name": "議事要旨",
+          "type": "HTML",
+          "size": "-",
+          "url": "https://www.mlit.go.jp/policy/shingikai/sogo01_sg_000029.html",
+          "isMinutes": true
+        },
+        {
+          "name": "議事録（PDF形式：124KB）",
+          "type": "HTML",
+          "size": "-",
+          "url": "https://www.mlit.go.jp/common/000126114.doc",
+          "isMinutes": true
+        },
+        {
+          "name": "社会資本整備審議会",
+          "type": "HTML",
+          "size": "-",
+          "url": "https://www.mlit.go.jp/policy/shingikai/s201_shakai01.html",
+          "isMinutes": false
+        },
+        {
+          "name": "社会資本整備審議会委員名簿（一太郎形式：41KB）",
+          "type": "HTML",
+          "size": "-",
+          "url": "https://www.mlit.go.jp/common/000120678.jtd",
+          "isMinutes": false
+        },
+        {
+          "name": "交通政策審議会委員名簿（一太郎形式：46KB）",
+          "type": "HTML",
+          "size": "-",
+          "url": "https://www.mlit.go.jp/common/000120679.jtd",
+          "isMinutes": false
+        },
+        {
+          "name": "計画部会委員名簿（一太郎形式：47KB）",
+          "type": "HTML",
+          "size": "-",
+          "url": "https://www.mlit.go.jp/common/000120680.doc",
+          "isMinutes": false
+        },
+        {
+          "name": "国土交通省政策集２０１０（概要）（PPT形式：399KB） (PDF)",
+          "type": "PDF",
+          "size": "PDF",
+          "url": "https://www.mlit.go.jp/common/000121069.pdf",
+          "isMinutes": false
+        },
+        {
+          "name": "国土交通省成長戦略の概要（PPT形式：654KB）",
+          "type": "HTML",
+          "size": "-",
+          "url": "https://www.mlit.go.jp/common/000120682.ppt",
+          "isMinutes": false
+        },
+        {
+          "name": "交通基本法の制定と関連施策の充実に向けた基本的な考え方（案）（PPT形式：134KB）",
+          "type": "HTML",
+          "size": "-",
+          "url": "https://www.mlit.go.jp/common/000120683.ppt",
+          "isMinutes": false
+        },
+        {
+          "name": "交通基本法の制定と関連施策の充実に向けた基本的な考え方（案）２（PPT形式：124KB）",
+          "type": "HTML",
+          "size": "-",
+          "url": "https://www.mlit.go.jp/common/000120684.ppt",
+          "isMinutes": false
+        },
+        {
+          "name": "交通基本法の制定と関連施策の充実に向けた基本的な考え方（案）３（PPT形式：260KB）",
+          "type": "HTML",
+          "size": "-",
+          "url": "https://www.mlit.go.jp/common/000120685.ppt",
+          "isMinutes": false
+        },
+        {
+          "name": "交通基本法の制定と関連施策の充実に向けた基本的な考え方（案）４（PDF形式：210KB）",
+          "type": "PDF",
+          "size": "PDF",
+          "url": "https://www.mlit.go.jp/common/000120686.pdf",
+          "isMinutes": false
+        },
+        {
+          "name": "社会資本整備重点計画の概要（PPT形式：118KB）",
+          "type": "HTML",
+          "size": "-",
+          "url": "https://www.mlit.go.jp/common/000120687.ppt",
+          "isMinutes": false
+        },
+        {
+          "name": "社会資本整備重点計画見直しの論点（Word形式：337KB） (PDF)",
+          "type": "PDF",
+          "size": "PDF",
+          "url": "https://www.mlit.go.jp/common/000121070.pdf",
+          "isMinutes": false
+        },
+        {
+          "name": "論点例資料集（PDF形式：3.2MB）",
+          "type": "PDF",
+          "size": "PDF",
+          "url": "https://www.mlit.go.jp/common/000120689.pdf",
+          "isMinutes": false
+        },
+        {
+          "name": "重点計画見直しスケジュール（最速案）（PPT形式：335KB） (PDF)",
+          "type": "PDF",
+          "size": "PDF",
+          "url": "https://www.mlit.go.jp/common/000121071.pdf",
+          "isMinutes": false
+        },
+        {
+          "name": "社会資本整備関係　参考資料１（PDF形式：8.1MB）",
+          "type": "PDF",
+          "size": "PDF",
+          "url": "https://www.mlit.go.jp/common/000121312.pdf",
+          "isMinutes": false
+        },
+        {
+          "name": "社会資本整備審議会　参考資料２（PDF形式：9.5MB）",
+          "type": "PDF",
+          "size": "PDF",
+          "url": "https://www.mlit.go.jp/common/000121313.pdf",
+          "isMinutes": false
+        }
+      ],
+      "tags": [
+        "社会資本整備審議会",
+        "国土交通省",
+        "MLIT",
+        "道路分科会",
+        "社会資本整備審議会"
+      ],
+      "officialUrl": "https://www.mlit.go.jp/policy/shingikai/sogo01_sg_000028.html",
+      "hasMinutes": true,
+      "docCount": 19
+    },
+    {
       "id": "meet-2010-06-17-smea-kaikei-kenkyukai-dai5",
       "councilId": "smea-kaikei-kenkyukai",
       "councilName": "中小企業の会計に関する研究会",
@@ -195095,6 +196582,117 @@
       "officialUrl": "https://www.chisou.go.jp/tiiki/tiikisaisei/dai10/10_honbun.pdf",
       "hasMinutes": false,
       "docCount": 4
+    },
+    {
+      "id": "meet-2008-06-27-mlit-shakai-shingikai-dai8",
+      "councilId": "mlit-shakai-shingikai",
+      "councilName": "社会資本整備審議会",
+      "ministry": "MLIT",
+      "category": "COUNCIL",
+      "title": "第8回 社会資本整備審議会",
+      "date": "2008/06/27",
+      "updatedAt": "2008/06/27 17:00",
+      "location": "国土交通省 / Web会議",
+      "summary": "社会資本整備審議会 道路分科会 国土幹線道路部会 第8回 社会資本整備審議会の開催。配付資料および議事録。",
+      "agenda": [
+        "社会資本整備審議会における調査審議・検討"
+      ],
+      "materials": [
+        {
+          "name": "開催資料 (PDF)",
+          "type": "PDF",
+          "size": "PDF",
+          "url": "https://www.mlit.go.jp/common/000017626.pdf",
+          "isMinutes": false
+        },
+        {
+          "name": "議事要旨",
+          "type": "HTML",
+          "size": "-",
+          "url": "https://www.mlit.go.jp/policy/shingikai/sogo01_sg_000016.html",
+          "isMinutes": true
+        },
+        {
+          "name": "議事録（PDF形式：307KB）",
+          "type": "PDF",
+          "size": "PDF",
+          "url": "https://www.mlit.go.jp/common/000022486.pdf",
+          "isMinutes": true
+        },
+        {
+          "name": "社会資本整備審議会委員名簿（PDF形式：72KB）",
+          "type": "PDF",
+          "size": "PDF",
+          "url": "https://www.mlit.go.jp/common/000019112.pdf",
+          "isMinutes": false
+        },
+        {
+          "name": "交通政策審議会委員名簿（PDF形式：75KB）",
+          "type": "PDF",
+          "size": "PDF",
+          "url": "https://www.mlit.go.jp/common/000019113.pdf",
+          "isMinutes": false
+        },
+        {
+          "name": "「社会資本整備重点計画（平成１５～１９年度）」のフォローアップについて（PDF形式：277KB）",
+          "type": "PDF",
+          "size": "PDF",
+          "url": "https://www.mlit.go.jp/common/000019114.pdf",
+          "isMinutes": false
+        },
+        {
+          "name": "分析事例について（PDF形式：288KB）",
+          "type": "PDF",
+          "size": "PDF",
+          "url": "https://www.mlit.go.jp/common/000019115.pdf",
+          "isMinutes": false
+        },
+        {
+          "name": "「社会資本整備重点計画（平成１５～１９年度）」の３４指標のチェックアップ評価書（案）（PDF形式：1.6MB）",
+          "type": "PDF",
+          "size": "PDF",
+          "url": "https://www.mlit.go.jp/common/000019116.pdf",
+          "isMinutes": false
+        },
+        {
+          "name": "社会資本整備重点計画について（PPT形式：99KB）",
+          "type": "HTML",
+          "size": "-",
+          "url": "https://www.mlit.go.jp/common/000019117.ppt",
+          "isMinutes": false
+        },
+        {
+          "name": "国土交通省の環境政策について（PPT形式：226KB）",
+          "type": "HTML",
+          "size": "-",
+          "url": "https://www.mlit.go.jp/common/000019118.ppt",
+          "isMinutes": false
+        },
+        {
+          "name": "国土交通省技術基本計画について（PPT形式：108KB）",
+          "type": "HTML",
+          "size": "-",
+          "url": "https://www.mlit.go.jp/common/000019119.ppt",
+          "isMinutes": false
+        },
+        {
+          "name": "各分科会・部会の審議状況について（PPT形式：980KB）",
+          "type": "HTML",
+          "size": "-",
+          "url": "https://www.mlit.go.jp/common/000019120.ppt",
+          "isMinutes": false
+        }
+      ],
+      "tags": [
+        "社会資本整備審議会",
+        "国土交通省",
+        "MLIT",
+        "道路分科会",
+        "社会資本整備審議会"
+      ],
+      "officialUrl": "https://www.mlit.go.jp/policy/shingikai/sogo01_sg_000018.html",
+      "hasMinutes": true,
+      "docCount": 12
     },
     {
       "id": "meet-2008-04-18-cas-tiikisaisei-62-dai8",
@@ -195763,6 +197361,145 @@
       "officialUrl": "https://www.maff.go.jp/j/council/seisaku/",
       "hasMinutes": true,
       "docCount": 62
+    },
+    {
+      "id": "meet-2007-07-12-mlit-shakai-shingikai-dai7",
+      "councilId": "mlit-shakai-shingikai",
+      "councilName": "社会資本整備審議会",
+      "ministry": "MLIT",
+      "category": "COUNCIL",
+      "title": "第7回 社会資本整備審議会",
+      "date": "2007/07/12",
+      "updatedAt": "2007/07/12 17:00",
+      "location": "国土交通省 / Web会議",
+      "summary": "社会資本整備審議会 道路分科会 国土幹線道路部会 第7回 社会資本整備審議会の開催。配付資料および議事録。",
+      "agenda": [
+        "社会資本整備審議会における調査審議・検討"
+      ],
+      "materials": [
+        {
+          "name": "議事要旨",
+          "type": "HTML",
+          "size": "-",
+          "url": "http://www.mlit.go.jp/singikai/infra/7/070712.html",
+          "isMinutes": true
+        },
+        {
+          "name": "議事録（PDF形式：123KB）",
+          "type": "HTML",
+          "size": "-",
+          "url": "https://www.mlit.go.jp/common/000012607.doc",
+          "isMinutes": true
+        },
+        {
+          "name": "PDF形式 (PDF)",
+          "type": "PDF",
+          "size": "PDF",
+          "url": "http://www.mlit.go.jp/singikai/infra/7/images/shiryou.pdf",
+          "isMinutes": false
+        },
+        {
+          "name": "PDF形式 (PDF)",
+          "type": "PDF",
+          "size": "PDF",
+          "url": "http://www.mlit.go.jp/singikai/infra/7/images/gijishidai.pdf",
+          "isMinutes": false
+        },
+        {
+          "name": "PDF形式 (PDF)",
+          "type": "PDF",
+          "size": "PDF",
+          "url": "http://www.mlit.go.jp/singikai/infra/7/images/haiseki.pdf",
+          "isMinutes": false
+        },
+        {
+          "name": "PDF形式 (PDF)",
+          "type": "PDF",
+          "size": "PDF",
+          "url": "http://www.mlit.go.jp/singikai/infra/7/images/01.pdf",
+          "isMinutes": false
+        },
+        {
+          "name": "PDF形式 (PDF)",
+          "type": "PDF",
+          "size": "PDF",
+          "url": "http://www.mlit.go.jp/singikai/infra/7/images/02.pdf",
+          "isMinutes": false
+        },
+        {
+          "name": "PDF形式 (PDF)",
+          "type": "PDF",
+          "size": "PDF",
+          "url": "http://www.mlit.go.jp/singikai/infra/7/images/03.pdf",
+          "isMinutes": false
+        },
+        {
+          "name": "PDF形式 (PDF)",
+          "type": "PDF",
+          "size": "PDF",
+          "url": "http://www.mlit.go.jp/singikai/infra/7/images/shiryousyu.pdf",
+          "isMinutes": false
+        },
+        {
+          "name": "PDF形式 (PDF)",
+          "type": "PDF",
+          "size": "PDF",
+          "url": "http://www.mlit.go.jp/singikai/infra/7/images/04.pdf",
+          "isMinutes": false
+        },
+        {
+          "name": "PDF形式 (PDF)",
+          "type": "PDF",
+          "size": "PDF",
+          "url": "http://www.mlit.go.jp/singikai/infra/7/images/04b.pdf",
+          "isMinutes": false
+        },
+        {
+          "name": "PDF形式 (PDF)",
+          "type": "PDF",
+          "size": "PDF",
+          "url": "http://www.mlit.go.jp/singikai/infra/7/images/04s.pdf",
+          "isMinutes": false
+        },
+        {
+          "name": "PDF形式 (PDF)",
+          "type": "PDF",
+          "size": "PDF",
+          "url": "http://www.mlit.go.jp/singikai/infra/7/images/042.pdf",
+          "isMinutes": false
+        },
+        {
+          "name": "PDF形式 (PDF)",
+          "type": "PDF",
+          "size": "PDF",
+          "url": "http://www.mlit.go.jp/singikai/infra/7/images/05.pdf",
+          "isMinutes": false
+        },
+        {
+          "name": "PDF形式 (PDF)",
+          "type": "PDF",
+          "size": "PDF",
+          "url": "http://www.mlit.go.jp/singikai/infra/7/images/soshikizu.pdf",
+          "isMinutes": false
+        },
+        {
+          "name": "（ダウンロード）",
+          "type": "HTML",
+          "size": "-",
+          "url": "http://www.adobe.co.jp/products/acrobat/readstep.html",
+          "isMinutes": false
+        }
+      ],
+      "tags": [
+        "社会資本整備審議会",
+        "国土交通省",
+        "MLIT",
+        "道路分科会",
+        "社会資本整備審議会"
+      ],
+      "officialUrl": "http://www.mlit.go.jp/singikai/infra/7/070712.html",
+      "hasMinutes": true,
+      "docCount": 16
     },
     {
       "id": "meet-2007-02-28-smea-saisei-kadai-dai5",
@@ -206036,33 +207773,11 @@
       "aiReason": "AI判定: MHLW所管の公式審議会/検討会ページであることを確認（承認）"
     },
     {
-      "id": "mlit-1055",
-      "name": "社会資本整備審議会環境部会・交通政策審議会交通体系分科会環境部会エネルギー・経済安全保障小委員会",
-      "ministry": "MLIT",
-      "category": "SECTION",
-      "officialUrl": "https://www.mlit.go.jp/policy/shingikai/s304_anzenhosho.html",
-      "sourcePageUrl": "https://www.mlit.go.jp/policy/shingikai/shingikaiList.html",
-      "trackedSince": "2026-08-09",
-      "status": "approved",
-      "aiReason": "AI判定: MLIT所管の公式委員会ページであることを確認（承認）"
-    },
-    {
       "id": "mlit-1056",
       "name": "交通政策審議会　陸上交通分科会　鉄道部会　今後の整備新幹線の貸付のあり方に関する小委員会",
       "ministry": "MLIT",
       "category": "SECTION",
       "officialUrl": "https://www.mlit.go.jp/policy/shingikai/s304_arikata03.html",
-      "sourcePageUrl": "https://www.mlit.go.jp/policy/shingikai/shingikaiList.html",
-      "trackedSince": "2026-08-09",
-      "status": "approved",
-      "aiReason": "AI判定: MLIT所管の公式委員会ページであることを確認（承認）"
-    },
-    {
-      "id": "mlit-1057",
-      "name": "本州・九州連携小委員会",
-      "ministry": "MLIT",
-      "category": "COMMITTEE",
-      "officialUrl": "https://www.mlit.go.jp/policy/shingikai/s204_renkei.html",
       "sourcePageUrl": "https://www.mlit.go.jp/policy/shingikai/shingikaiList.html",
       "trackedSince": "2026-08-09",
       "status": "approved",
@@ -219458,34 +221173,10 @@
       "aiReason": "AI判定: MLIT所管の公式委員会ページであることを確認（承認）"
     },
     {
-      "id": "mlit-2638",
-      "name": "社会資本整備審議会環境部会・交通政策審議会交通体系分科会環境部会エネルギー・経済安全保障小委員会",
-      "ministry": "MLIT",
-      "category": "SECTION",
-      "officialUrl": "https://www.mlit.go.jp/policy/shingikai/shingikaiList.html",
-      "isNew": true,
-      "trackedSince": "2026-08-22",
-      "sourcePageUrl": "https://www.mlit.go.jp/policy/shingikai/shingikaiList.html",
-      "status": "approved",
-      "aiReason": "AI判定: MLIT所管の公式委員会ページであることを確認（承認）"
-    },
-    {
       "id": "mlit-2639",
       "name": "交通政策審議会　陸上交通分科会　鉄道部会　今後の整備新幹線の貸付のあり方に関する小委員会",
       "ministry": "MLIT",
       "category": "SECTION",
-      "officialUrl": "https://www.mlit.go.jp/policy/shingikai/shingikaiList.html",
-      "isNew": true,
-      "trackedSince": "2026-08-22",
-      "sourcePageUrl": "https://www.mlit.go.jp/policy/shingikai/shingikaiList.html",
-      "status": "approved",
-      "aiReason": "AI判定: MLIT所管の公式委員会ページであることを確認（承認）"
-    },
-    {
-      "id": "mlit-2640",
-      "name": "本州・九州連携小委員会",
-      "ministry": "MLIT",
-      "category": "COMMITTEE",
       "officialUrl": "https://www.mlit.go.jp/policy/shingikai/shingikaiList.html",
       "isNew": true,
       "trackedSince": "2026-08-22",
