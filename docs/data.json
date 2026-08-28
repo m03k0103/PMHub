@@ -8974,15 +8974,6 @@
       "pastYearCount": 0
     },
     {
-      "id": "jsa-621",
-      "name": "第二期スポーツ未来開拓会議",
-      "ministry": "JSA",
-      "category": "COUNCIL",
-      "officialUrl": "https://www.mext.go.jp/sports/b_menu/shingi/027_index/index.html",
-      "trackedSince": "2026-08-09",
-      "pastYearCount": 0
-    },
-    {
       "id": "jsa-622",
       "name": "大学スポーツ構想会議",
       "ministry": "JSA",
@@ -18192,15 +18183,6 @@
       "pastYearCount": 0
     },
     {
-      "id": "jsa-2207",
-      "name": "第二期スポーツ未来開拓会議",
-      "ministry": "JSA",
-      "category": "COUNCIL",
-      "officialUrl": "https://www.mext.go.jp/sports/b_menu/shingi/027_index/index.html",
-      "trackedSince": "2026-08-18",
-      "pastYearCount": 0
-    },
-    {
       "id": "jsa-2208",
       "name": "大学スポーツ構想会議",
       "ministry": "JSA",
@@ -23260,7 +23242,7 @@
     },
     {
       "id": "moj-kyouyuu-shidou-kento",
-      "name": "共有私道の保存・管理等に関する事例研究会（第２期）",
+      "name": "共有私道の保存・管理等に関する事例研究会",
       "ministry": "MOJ",
       "category": "STUDY",
       "officialUrl": "https://www.moj.go.jp/MINJI/minji07_00280.html",
@@ -23754,6 +23736,17 @@
       "manualLock": true,
       "description": "経済安全保障分野における重要技術の流出防止や法的枠組みを検討する有識者会議。",
       "pastYearCount": 6,
+      "trackedSince": "2026-08-09"
+    },
+    {
+      "id": "jsa-sports-mirai",
+      "name": "スポーツ未来開拓会議",
+      "ministry": "JSA",
+      "category": "COUNCIL",
+      "officialUrl": "https://www.mext.go.jp/sports/b_menu/shingi/027_index/index.html",
+      "manualLock": true,
+      "description": "スポーツ産業の成長促進およびDX・新たなスポーツビジネスの創出を検討する会議。",
+      "pastYearCount": 0,
       "trackedSince": "2026-08-09"
     }
   ],
@@ -216944,17 +216937,6 @@
       "aiReason": "AI判定: JSA所管の公式会議体マスターとして承認"
     },
     {
-      "id": "jsa-621",
-      "name": "第二期スポーツ未来開拓会議",
-      "ministry": "JSA",
-      "category": "COUNCIL",
-      "officialUrl": "https://www.mext.go.jp/sports/b_menu/shingi/027_index/index.html",
-      "sourcePageUrl": "https://www.mext.go.jp/sports/b_menu/shingi/027_index/index.html",
-      "trackedSince": "2026-08-09",
-      "status": "approved",
-      "aiReason": "AI判定: JSA所管の公式会議体マスターとして承認"
-    },
-    {
       "id": "jsa-622",
       "name": "大学スポーツ構想会議",
       "ministry": "JSA",
@@ -228208,17 +228190,6 @@
       "aiReason": "AI判定: JSA所管の公式会議体マスターとして承認"
     },
     {
-      "id": "jsa-2207",
-      "name": "第二期スポーツ未来開拓会議",
-      "ministry": "JSA",
-      "category": "COUNCIL",
-      "officialUrl": "https://www.mext.go.jp/sports/b_menu/shingi/027_index/index.html",
-      "sourcePageUrl": "https://www.mext.go.jp/sports/b_menu/shingi/027_index/index.html",
-      "trackedSince": "2026-08-18",
-      "status": "approved",
-      "aiReason": "AI判定: JSA所管の公式会議体マスターとして承認"
-    },
-    {
       "id": "jsa-2208",
       "name": "大学スポーツ構想会議",
       "ministry": "JSA",
@@ -234402,7 +234373,7 @@
     },
     {
       "id": "moj-kyouyuu-shidou-kento",
-      "name": "共有私道の保存・管理等に関する事例研究会（第２期）",
+      "name": "共有私道の保存・管理等に関する事例研究会",
       "ministry": "MOJ",
       "category": "STUDY",
       "officialUrl": "https://www.moj.go.jp/MINJI/minji07_00280.html",
@@ -234904,7 +234875,18 @@
       "sourcePageUrl": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/index.html",
       "trackedSince": "2026-08-09",
       "status": "approved",
-      "aiReason": "AI判定: CAS公式有識者会議マスターとして承認"
+      "aiReason": "AI判定: CAS所管の公式会議体マスターとして承認"
+    },
+    {
+      "id": "jsa-sports-mirai",
+      "name": "スポーツ未来開拓会議",
+      "ministry": "JSA",
+      "category": "COUNCIL",
+      "officialUrl": "https://www.mext.go.jp/sports/b_menu/shingi/027_index/index.html",
+      "sourcePageUrl": "https://www.mext.go.jp/sports/b_menu/shingi/027_index/index.html",
+      "trackedSince": "2026-08-09",
+      "status": "approved",
+      "aiReason": "AI判定: JSA所管の公式会議体マスターとして承認"
     }
   ],
   "scrapingRules": {
@@ -239123,6 +239105,16 @@
       "ministryQuirk": "中小企業庁 伴走支援の在り方検討会 サブページ巡回",
       "rules": {
         "subpage_discovery_pattern": "href=[\"\\']([^\"\\']*(?:bansou|\\d+kai|kaisai)[^\"\\'#]*)[\"\\']",
+        "date_regex": "(?:令和|平成)\\d+年\\d+月\\d+日|\\d{4}年\\d+月\\d+日|\\d{4}[/-]\\d+[/-]\\d+",
+        "pdf_selector": "href=[\"\\']([^\"\\']+\\.(?:pdf|txt))[\"\\']",
+        "deep_crawl_enabled": true
+      }
+    },
+    "jsa-sports-mirai": {
+      "rule_id": "rule-jsa-mirai-v2",
+      "ministryQuirk": "スポーツ庁 スポーツ未来開拓会議 サブページ巡回",
+      "rules": {
+        "subpage_discovery_pattern": "href=[\"\\']([^\"\\']*(?:027_index|\\d+kai|kaisai)[^\"\\'#]*)[\"\\']",
         "date_regex": "(?:令和|平成)\\d+年\\d+月\\d+日|\\d{4}年\\d+月\\d+日|\\d{4}[/-]\\d+[/-]\\d+",
         "pdf_selector": "href=[\"\\']([^\"\\']+\\.(?:pdf|txt))[\"\\']",
         "deep_crawl_enabled": true

@@ -994,8 +994,8 @@ JSON データを読み込み中...
     const ministries = window.MINISTRIES || {};
     const categories = window.CATEGORIES || {};
 
-    // Combine baseCouncils and discoveredCouncils (strictly filtering out session-named entries)
-    let allCouncils = [...baseCouncils].filter(c => c && c.id && !isSessionName(c.name));
+    // Combine baseCouncils and discoveredCouncils (baseCouncils is strictly 100% included)
+    let allCouncils = [...baseCouncils].filter(c => c && c.id);
     const discoveredFromStorage = getSavedDiscovered();
     const existingIdSet = new Set(allCouncils.map(c => c.id));
     if (Array.isArray(discoveredFromStorage)) {
