@@ -442,12 +442,12 @@
     },
     {
       "id": "fsa-kinyu-shingi",
-      "name": "金融審議会",
+      "name": "金融審議会 総会",
       "ministry": "FSA",
       "category": "COUNCIL",
       "pastYearCount": 3,
       "description": "金融システムの安定、市場機能の円滑化、地域金融力の強化、暗号資産制度、サステナビリティ開示、ディスクロージャー等の金融行政の重要事項を審議。",
-      "officialUrl": "https://www.fsa.go.jp/singi/singi_kinyu/base_gijiroku.html",
+      "officialUrl": "https://www.fsa.go.jp/singi/singi_kinyu/base_gijiroku.html#soukai",
       "isWatched": true,
       "trackedSince": "2022/11/01",
       "crawlStatus": {
@@ -7962,33 +7962,6 @@
       "pastYearCount": 0
     },
     {
-      "id": "fsa-496",
-      "name": "政策・審議会",
-      "ministry": "FSA",
-      "category": "COUNCIL",
-      "officialUrl": "https://www.fsa.go.jp/policy/index.html",
-      "trackedSince": "2026-08-09",
-      "pastYearCount": 0
-    },
-    {
-      "id": "fsa-497",
-      "name": "審議会・研究会等",
-      "ministry": "FSA",
-      "category": "STUDY",
-      "officialUrl": "https://www.fsa.go.jp/policy/index.html#policies_councils_03",
-      "trackedSince": "2026-08-09",
-      "pastYearCount": 0
-    },
-    {
-      "id": "fsa-498",
-      "name": "審議会・研究会等一覧",
-      "ministry": "FSA",
-      "category": "STUDY",
-      "officialUrl": "https://www.fsa.go.jp/singi/index.html",
-      "trackedSince": "2026-08-09",
-      "pastYearCount": 0
-    },
-    {
       "id": "fsa-499",
       "name": "バーゼル銀行監督委員会（BCBS）",
       "ministry": "FSA",
@@ -8012,15 +7985,6 @@
       "ministry": "FSA",
       "category": "COUNCIL",
       "officialUrl": "https://www.fsa.go.jp/singi/singi_kigyou/top.html",
-      "trackedSince": "2026-08-09",
-      "pastYearCount": 0
-    },
-    {
-      "id": "fsa-502",
-      "name": "総会以外の会議",
-      "ministry": "FSA",
-      "category": "COUNCIL",
-      "officialUrl": "https://www.fsa.go.jp/singi/singi_kigyou/top_gijiroku.html#soukaiigai",
       "trackedSince": "2026-08-09",
       "pastYearCount": 0
     },
@@ -15532,9 +15496,113 @@
       "description": "経済安全保障分野における重要技術の流出防止や法的枠組みを検討する有識者会議。",
       "pastYearCount": 6,
       "trackedSince": "2026-08-09"
+    },
+    {
+      "id": "cas-2841",
+      "name": "経済安全保障法制に関する有識者会議",
+      "ministry": "CAS",
+      "category": "COUNCIL",
+      "officialUrl": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/4index.html",
+      "trackedSince": "2026-08-28"
+    },
+    {
+      "id": "fsa-2844",
+      "name": "コーポレートガバナンス・コードの改訂に関する有識者会議",
+      "ministry": "FSA",
+      "category": "COUNCIL",
+      "officialUrl": "https://www.fsa.go.jp/singi/revision_corporategovernance/index.html",
+      "trackedSince": "2026-08-28"
+    },
+    {
+      "id": "jsa-2846",
+      "name": "都道府県・指定都市スポーツ主管課長会議",
+      "ministry": "JSA",
+      "category": "COUNCIL",
+      "officialUrl": "https://www.mext.go.jp/sports/b_menu/shingi/index.htm",
+      "trackedSince": "2026-08-28"
+    },
+    {
+      "id": "jsa-2849",
+      "name": "運動・スポーツガイドライン（仮称）策定に向けた有識者会議",
+      "ministry": "JSA",
+      "category": "COUNCIL",
+      "officialUrl": "https://www.mext.go.jp/sports/b_menu/shingi/index.htm",
+      "trackedSince": "2026-08-28"
+    },
+    {
+      "id": "mhlw-2852",
+      "name": "感染症・予防接種審査分科会 及び 感染症・予防接種審査分科会新型コロナウイルス感染症予防接種健康被害審査部会",
+      "ministry": "MHLW",
+      "category": "SECTION",
+      "officialUrl": "https://www.mhlw.go.jp/stf/shingi/shingi-shippei_127696_00006.html",
+      "trackedSince": "2026-08-28"
+    },
+    {
+      "id": "npa-2853",
+      "name": "匿名・流動型犯罪グループによる犯罪被害対策のための技術的措置に関する有識者検討会",
+      "ministry": "NPA",
+      "category": "STUDY",
+      "officialUrl": "https://www.npa.go.jp/bureau/soumu/kentoukai/shiryou.html",
+      "trackedSince": "2026-08-28"
+    },
+    {
+      "id": "nta-2854",
+      "name": "税理士分科会（国税審議会）",
+      "ministry": "NTA",
+      "category": "SUBCOMMITTEE",
+      "officialUrl": "https://www.nta.go.jp/about/council/kenkyu.htm",
+      "trackedSince": "2026-08-28"
+    },
+    {
+      "id": "nta-2882",
+      "name": "酒類販売業等に関する懇談会",
+      "ministry": "NTA",
+      "category": "STUDY",
+      "officialUrl": "https://www.nta.go.jp/about/council/kenkyu.htm#a05",
+      "trackedSince": "2026-08-28"
+    },
+    {
+      "id": "fsa-kinyu-bunkakai",
+      "name": "金融審議会 金融分科会",
+      "ministry": "FSA",
+      "category": "COUNCIL",
+      "officialUrl": "https://www.fsa.go.jp/singi/singi_kinyu/bunkakai/bunkakai_index.html",
+      "description": "国内金融システムの安定性・効率性向上、金融制度改革、金融行政の基本方針を審議する金融審議会の主要分科会。",
+      "manualLock": true,
+      "pastYearCount": 45,
+      "trackedSince": "2026-08-09"
     }
   ],
   "meetings": [
+    {
+      "id": "meet-2026-08-31-fsa-kinyu-bunkakai-dai45",
+      "councilId": "fsa-kinyu-bunkakai",
+      "title": "第45回 金融審議会 金融分科会",
+      "date": "2026/08/31",
+      "officialUrl": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/siryou/20260831.html",
+      "materials": [
+        {
+          "name": "説明資料（成長企業への資金供給の在り方等に関する検討について）",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/siryou/20260831/1.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "説明資料（保険制度の在り方に関する検討について）",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/siryou/20260831/2.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "金融審議会委員名簿",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/siryou/20260831/3.pdf",
+          "type": "PDF",
+          "manualLock": true
+        }
+      ],
+      "topics": [],
+      "manualLock": true
+    },
     {
       "id": "meet-2026-08-24-moj-baibaisyun-kento-dai8",
       "councilId": "moj-baibaisyun-kento",
@@ -43386,6 +43454,89 @@
       ]
     },
     {
+      "id": "meet-2026-02-03-fsa-kinyu-bunkakai-dai44",
+      "councilId": "fsa-kinyu-bunkakai",
+      "title": "第44回 金融審議会 金融分科会",
+      "date": "2026/02/03",
+      "officialUrl": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/siryou/20260203.html",
+      "materials": [
+        {
+          "name": "説明資料（金融審議会「地域金融力の強化に関するワーキング・グループ」報告）",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/siryou/20260203/1-1.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "金融審議会「地域金融力の強化に関するワーキング・グループ」報告",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/siryou/20260203/1-2.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "説明資料（金融審議会「暗号資産制度に関するワーキング・グループ」報告）",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/siryou/20260203/2-1.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "金融審議会「暗号資産制度に関するワーキング・グループ」報告",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/siryou/20260203/2-2.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "説明資料（金融審議会「市場制度ワーキング・グループ」報告）",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/siryou/20260203/3-1.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "金融審議会「市場制度ワーキング・グループ」報告",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/siryou/20260203/3-2.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "説明資料（金融審議会「サステナビリティ情報の開示と保証のあり方に関するワーキング・グループ」報告）",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/siryou/20260203/4-1.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "金融審議会「サステナビリティ情報の開示と保証のあり方に関するワーキング・グループ」報告",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/siryou/20260203/4-2.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "説明資料（金融審議会「ディスクロージャーワーキング・グループ」報告）",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/siryou/20260203/5-1.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "金融審議会「ディスクロージャーワーキング・グループ」報告",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/siryou/20260203/5-2.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "金融審議会委員名簿",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/siryou/20260203/6.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "議事録",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/gijiroku/20260203.html",
+          "type": "HTML",
+          "manualLock": true
+        }
+      ],
+      "topics": [],
+      "manualLock": true
+    },
+    {
       "id": "meet-2026-02-02-fdma-kento-182-令和7年度-dai1",
       "councilId": "fdma-kento-182",
       "councilName": "飛び火警戒要領の見直し等に関する意見聴取会",
@@ -55730,6 +55881,59 @@
       "manualLock": true
     },
     {
+      "id": "meet-2025-06-25-fsa-kinyu-bunkakai-dai43",
+      "councilId": "fsa-kinyu-bunkakai",
+      "title": "第43回 金融審議会 金融分科会",
+      "date": "2025/06/25",
+      "officialUrl": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/siryou/20250625.html",
+      "materials": [
+        {
+          "name": "説明資料（暗号資産を巡る制度のあり方に関する検討について）",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/siryou/20250625/1.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "説明資料（不公正取引規制の強化等に関する検討について）",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/siryou/20250625/2.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "説明資料（企業情報の開示のあり方に関する検討について）",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/siryou/20250625/3.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "説明資料（地域金融力の強化に関する検討について）",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/siryou/20250625/4.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "金融審議会委員名簿",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/siryou/20250625/5.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "諮問事項",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/siryou/20250625/6.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "議事録",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/gijiroku/20250625.html",
+          "type": "HTML",
+          "manualLock": true
+        }
+      ],
+      "topics": [],
+      "manualLock": true
+    },
+    {
       "id": "meet-2025-06-23-cas-zensedai-hosyo-dai21",
       "councilId": "cas-zensedai-hosyo",
       "councilName": "全世代型社会保障構築会議",
@@ -62503,6 +62707,65 @@
           "manualLock": true
         }
       ]
+    },
+    {
+      "id": "meet-2025-02-19-fsa-kinyu-bunkakai-dai42",
+      "councilId": "fsa-kinyu-bunkakai",
+      "title": "第42回 金融審議会 金融分科会",
+      "date": "2025/02/19",
+      "officialUrl": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/siryou/20250219.html",
+      "materials": [
+        {
+          "name": "説明資料（金融審議会「損害保険業等に関する制度等ワーキング・グループ」報告）",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/siryou/20250219/1-1.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "金融審議会「損害保険業等に関する制度等ワーキング・グループ」報告",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/siryou/20250219/1-2.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "説明資料（金融審議会「資金決済制度等に関するワーキング・グループ」報告）",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/siryou/20250219/2-1.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "金融審議会「資金決済制度等に関するワーキング・グループ」報告",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/siryou/20250219/2-2.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "公益信託に関する法律の概要",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/siryou/20250219/3-1.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "新しい公益信託制度に関する信託業法の適用の整理について",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/siryou/20250219/3-2.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "金融審議会委員名簿",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/siryou/20250219/4.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "議事録",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/gijiroku/20250219.html",
+          "type": "HTML",
+          "manualLock": true
+        }
+      ],
+      "topics": [],
+      "manualLock": true
     },
     {
       "id": "meet-2025-02-14-cas-indexhtmlsuisin_kaigi_record-65-dai1",
@@ -91510,6 +91773,59 @@
       "docCount": 24
     },
     {
+      "id": "meet-2024-08-26-fsa-kinyu-bunkakai-dai41",
+      "councilId": "fsa-kinyu-bunkakai",
+      "title": "第41回 金融審議会 金融分科会",
+      "date": "2024/08/26",
+      "officialUrl": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/siryou/20240826.html",
+      "materials": [
+        {
+          "name": "説明資料（資金決済制度等のあり方に関する検討）",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/siryou/20240826/1.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "説明資料（保険市場の信頼の確保と健全な発展に向けた方策に関する検討）",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/siryou/20240826/2.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "説明資料（金融審議会「市場制度ワーキング・グループ」報告）",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/siryou/20240826/3-1.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "金融審議会 市場制度ワーキング・グループ報告書",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/siryou/20240826/3-2.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "金融審議会委員名簿",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/siryou/20240826/4.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "諮問事項",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/siryou/20240826/5.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "議事録",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/gijiroku/20240826.html",
+          "type": "HTML",
+          "manualLock": true
+        }
+      ],
+      "topics": [],
+      "manualLock": true
+    },
+    {
       "id": "meet-2024-08-08-cas-kyuyo-9",
       "councilId": "cas-kyuyo-9",
       "councilName": "給与関係閣僚会議",
@@ -101020,6 +101336,89 @@
           "manualLock": true
         }
       ]
+    },
+    {
+      "id": "meet-2024-02-19-fsa-kinyu-bunkakai-dai40",
+      "councilId": "fsa-kinyu-bunkakai",
+      "title": "第40回 金融審議会 金融分科会",
+      "date": "2024/02/19",
+      "officialUrl": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/siryou/20240219.html",
+      "materials": [
+        {
+          "name": "説明資料（サステナビリティ情報の開示と保証のあり方に関する検討）",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/siryou/20240219/1.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "説明資料（金融審議会「公開買付制度・大量保有報告制度等ワーキング・グループ」報告）",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/siryou/20240219/2-1.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "金融審議会「公開買付制度・大量保有報告制度等ワーキング・グループ」報告",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/siryou/20240219/2-2.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "説明資料（金融審議会「市場制度ワーキンググループ」・「資産運用に関するタスクフォース」報告）",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/siryou/20240219/3-1.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "金融審議会「市場制度ワーキンググループ」・「資産運用に関するタスクフォース」報告書",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/siryou/20240219/3-2.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "説明資料（国民の安定的な資産形成の支援に関する施策の総合的な推進に関する基本的な方針（案）_経緯等）",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/siryou/20240219/4-1.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "説明資料（国民の安定的な資産形成の支援に関する施策の総合的な推進に関する基本的な方針（案）_概要",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/siryou/20240219/4-2.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "国民の安定的な資産形成の支援に関する施策の総合的な推進に関する基本的な方針（案）",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/siryou/20240219/4-3.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "金融審議会委員名簿",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/siryou/20240219/5.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "意見書（小林委員）",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/siryou/20240219/7.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "諮問事項",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/siryou/20240219/6.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "議事録",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/gijiroku/20240219.html",
+          "type": "HTML",
+          "manualLock": true
+        }
+      ],
+      "topics": [],
+      "manualLock": true
     },
     {
       "id": "meet-2024-02-15-moj-teikan-ninsho-kento-6",
@@ -119344,6 +119743,95 @@
       "docCount": 12
     },
     {
+      "id": "meet-2023-03-02-fsa-kinyu-bunkakai-dai39",
+      "councilId": "fsa-kinyu-bunkakai",
+      "title": "第39回 金融審議会 金融分科会",
+      "date": "2023/03/02",
+      "officialUrl": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/siryou/2023_0302.html",
+      "materials": [
+        {
+          "name": "説明資料（公開買付制度・大量保有報告制度等のあり方に関する検討）",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/siryou/20230302/1.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "資料 (PDF)",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/siryou/20230302/2-1.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "金融審議会「ディスクロージャーワーキング・グループ」報告",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/siryou/20230302/2-2.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "我が国におけるサステナビリティ開示のロードマップ",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/siryou/20230302/2-3.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "説明資料（金融審議会「市場制度ワーキング・グループ」第二次中間整理）",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/siryou/20230302/3-1.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "金融審議会「市場制度ワーキング・グループ」第二次中間整理",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/siryou/20230302/3-2.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "説明資料（金融審議会 市場制度ワーキング・グループ「顧客本位タスクフォース」中間報告）",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/siryou/20230302/4-1.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "金融審議会 市場制度ワーキング・グループ「顧客本位タスクフォース」中間報告",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/siryou/20230302/4-2.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "説明資料（金融審議会「事業性に着目した融資実務を支える制度のあり方等に関するワーキング・グループ」報告）",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/siryou/20230302/5-1.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "金融審議会「事業性に着目した融資実務を支える制度のあり方等に関するワーキング・グループ」報告",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/siryou/20230302/5-2.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "金融審議会委員名簿",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/siryou/20230302/6.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "諮問事項",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/siryou/20230302/7.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "議事録",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/gijiroku/2023_0302.html",
+          "type": "HTML",
+          "manualLock": true
+        }
+      ],
+      "topics": [],
+      "manualLock": true
+    },
+    {
       "id": "meet-2023-03-01-fdma-kento-94-令和4年度-dai1",
       "councilId": "fdma-kento-94",
       "councilName": "火災危険性を有するおそれのある物質等に関する調査検討会",
@@ -127428,6 +127916,77 @@
       "officialUrl": "https://www.fdma.go.jp/singi_kento/kento/7119.html",
       "hasMinutes": true,
       "docCount": 3
+    },
+    {
+      "id": "meet-2022-09-30-fsa-kinyu-bunkakai-dai38",
+      "councilId": "fsa-kinyu-bunkakai",
+      "title": "第38回 金融審議会 金融分科会",
+      "date": "2022/09/30",
+      "officialUrl": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/siryou/2022_0930.html",
+      "materials": [
+        {
+          "name": "説明資料（安定的な資産形成に関する検討）",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/siryou/2022_0930/1.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "説明資料（事業性に着目した融資を促進するための制度や実務のあり方に関する検討）",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/siryou/2022_0930/2.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "説明資料（金融審議会「市場制度ワーキング・グループ」中間整理の概要）",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/siryou/2022_0930/3.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "説明資料（金融審議会「ディスクロージャーワーキング・グループ」報告の概要）",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/siryou/2022_0930/4-1.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "説明資料（金融審議会「ディスクロージャーワーキング・グループ」報告）",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/siryou/2022_0930/4-2.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "説明資料（企業情報の開示のあり方に関する検討）",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/siryou/2022_0930/4-3.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "説明資料（2022事務年度金融行政方針について）",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/siryou/2022_0930/5.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "金融審議会委員名簿",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/siryou/2022_0930/6.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "諮問事項",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/siryou/2022_0930/7.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "議事録",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/gijiroku/2022_0930.html",
+          "type": "HTML",
+          "manualLock": true
+        }
+      ],
+      "topics": [],
+      "manualLock": true
     },
     {
       "id": "meet-2022-09-26-mof-zaiseiseido-bunkakai",
@@ -139643,6 +140202,59 @@
       "manualLock": true
     },
     {
+      "id": "meet-2022-01-31-fsa-kinyu-bunkakai-dai37",
+      "councilId": "fsa-kinyu-bunkakai",
+      "title": "第37回 金融審議会 金融分科会",
+      "date": "2022/01/31",
+      "officialUrl": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/siryou/2022_0131.html",
+      "materials": [
+        {
+          "name": "説明資料（第47回・第48回総会で出された委員の主なご意見）",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/siryou/20220131/1.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "説明資料（公認会計士制度部会報告）",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/siryou/20220131/2-1.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "「公認会計士制度部会」報告",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/siryou/20220131/2-2.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "説明資料（資金決済ワーキング・グループ報告）",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/siryou/20220131/3-1.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "「資金決済ワーキング・グループ」報告",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/siryou/20220131/3-2.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "金融審議会委員名簿",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/siryou/20220131/4.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "議事録",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/gijiroku/2022_0131.html",
+          "type": "HTML",
+          "manualLock": true
+        }
+      ],
+      "topics": [],
+      "manualLock": true
+    },
+    {
       "id": "meet-2022-01-28-fdma-kento-56-令和3年度-dai5",
       "councilId": "fdma-kento-56",
       "councilName": "自主防災組織等の地域防災の人材育成に関する検討会",
@@ -142843,6 +143455,65 @@
       "officialUrl": "https://www.cas.go.jp/jp/seisaku/kyuyo/index.html",
       "hasMinutes": true,
       "docCount": 2
+    },
+    {
+      "id": "meet-2021-11-22-fsa-kinyu-bunkakai-dai36",
+      "councilId": "fsa-kinyu-bunkakai",
+      "title": "第36回 金融審議会 金融分科会",
+      "date": "2021/11/22",
+      "officialUrl": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/siryou/2021_1122.html",
+      "materials": [
+        {
+          "name": "説明資料（公認会計士制度の改善に関する検討）",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/siryou/20211122/1-1.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "「会計監査の在り方に関する懇談会」論点整理",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/siryou/20211122/1-2.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "説明資料（「デジタル・分散型金融への対応のあり方等に関する研究会」中間論点整理）",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/siryou/20211122/2-1.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "「デジタル・分散型金融への対応のあり方等に関する研究会」中間論点整理",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/siryou/20211122/2-2.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "説明資料（金融庁の経済対策項目について）",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/siryou/20211122/3.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "金融審議会委員名簿",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/siryou/20211122/4.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "諮問事項",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/siryou/20211122/5.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "議事録",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/gijiroku/2021_1122.html",
+          "type": "HTML",
+          "manualLock": true
+        }
+      ],
+      "topics": [],
+      "manualLock": true
     },
     {
       "id": "meet-2021-11-19-moj-saihan-boushi-10",
@@ -146772,6 +147443,59 @@
       "manualLock": true
     },
     {
+      "id": "meet-2021-09-13-fsa-kinyu-bunkakai-dai35",
+      "councilId": "fsa-kinyu-bunkakai",
+      "title": "第35回 金融審議会 金融分科会",
+      "date": "2021/09/13",
+      "officialUrl": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/siryou/2021_0913.html",
+      "materials": [
+        {
+          "name": "説明資料（資金決済制度のあり方に関する検討）",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/siryou/20210913/1.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "説明資料（デジタル・分散型金融を巡る動向と今後の課題）",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/siryou/20210913/2.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "説明資料（会計監査を巡る動向）",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/siryou/20210913/3.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "説明資料（金融行政方針について）",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/siryou/20210913/4.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "金融審議会委員名簿",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/siryou/20210913/5.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "諮問事項",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/siryou/20210913/6.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "議事録",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/gijiroku/2021_0913.html",
+          "type": "HTML",
+          "manualLock": true
+        }
+      ],
+      "topics": [],
+      "manualLock": true
+    },
+    {
       "id": "meet-2021-09-09-smea-syokoutyukinkikitaiou-dai12",
       "councilId": "smea-syokoutyukinkikitaiou",
       "title": "商工中金の経営及び危機対応業務に関する評価委員会 第12回",
@@ -150487,6 +151211,65 @@
       "officialUrl": "https://www.fsa.go.jp/singi/suisai/index.html",
       "hasMinutes": true,
       "docCount": 2,
+      "manualLock": true
+    },
+    {
+      "id": "meet-2021-06-25-fsa-kinyu-bunkakai-dai34",
+      "councilId": "fsa-kinyu-bunkakai",
+      "title": "第34回 金融審議会 金融分科会",
+      "date": "2021/06/25",
+      "officialUrl": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/siryou/2021_0625.html",
+      "materials": [
+        {
+          "name": "説明資料（企業情報の開示のあり方に関する検討）",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/siryou/20210625/1.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "説明資料（市場制度ワーキング・グループ第二次報告）",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/siryou/20210625/2-1.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "金融審議会「市場制度ワーキング・グループ」第二次報告",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/siryou/20210625/2-2.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "説明資料（市場制度ワーキング・グループ「最良執行のあり方等に関するタスクフォース」報告書）",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/siryou/20210625/3-1.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "金融審議会「市場制度ワーキング・グループ　最良執行のあり方等に関するタスクフォース」報告書",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/siryou/20210625/3-2.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "金融審議会委員名簿",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/siryou/20210625/4.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "諮問事項",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/siryou/20210625/5.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "議事録",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/gijiroku/2021_0625.html",
+          "type": "HTML",
+          "manualLock": true
+        }
+      ],
+      "topics": [],
       "manualLock": true
     },
     {
@@ -160325,6 +161108,71 @@
       "manualLock": true
     },
     {
+      "id": "meet-2021-02-08-fsa-kinyu-bunkakai-dai33",
+      "councilId": "fsa-kinyu-bunkakai",
+      "title": "第33回 金融審議会 金融分科会",
+      "date": "2021/02/08",
+      "officialUrl": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/siryou/2021_0208.html",
+      "materials": [
+        {
+          "name": "説明資料（銀行制度等ワーキング・グループ報告）",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/siryou/20210208/1-1.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "金融審議会「銀行制度等ワーキング・グループ」報告",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/siryou/20210208/1-2.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "説明資料（市場制度ワーキング・グループ第一次報告）",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/siryou/20210208/2-1.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "金融審議会「市場制度ワーキング・グループ」第一次報告",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/siryou/20210208/2-2.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "説明資料（国際金融センターの推進について）",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/siryou/20210208/3.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "説明資料（「スチュワードシップ・コード及びコーポレートガバナンス・コードのフォローアップ会議」 意見書）",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/siryou/20210208/4-1.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "「スチュワードシップ・コード及びコーポレートガバナンス・コードのフォローアップ会議」 意見書",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/siryou/20210208/4-2.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "金融審議会委員名簿",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/siryou/20210208/5-2.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "議事録",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/gijiroku/2021_0208.html",
+          "type": "HTML",
+          "manualLock": true
+        }
+      ],
+      "topics": [],
+      "manualLock": true
+    },
+    {
       "id": "meet-2021-01-29-smea-chizaitorihiki-dai7",
       "councilId": "smea-chizaitorihiki",
       "title": "知的財産取引検討会 第7回",
@@ -166519,6 +167367,77 @@
       ]
     },
     {
+      "id": "meet-2020-09-11-fsa-kinyu-bunkakai-dai32",
+      "councilId": "fsa-kinyu-bunkakai",
+      "title": "第32回 金融審議会 金融分科会",
+      "date": "2020/09/11",
+      "officialUrl": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/siryou/20200911.html",
+      "materials": [
+        {
+          "name": "金融審議会令",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/siryou/20200911/1-1.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "金融審議会議事規則案",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/siryou/20200911/1-2.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "金融分科会議事規則案",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/siryou/20200911/1-3.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "事務局説明資料（銀行制度等のあり方に関する検討）",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/siryou/20200911/2.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "事務局説明資料（市場ワーキング・グループ関係）",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/siryou/20200911/3-1.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "金融審議会「市場ワーキング・グループ」報告書",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/siryou/20200911/3-2.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "事務局説明資料（金融行政方針）",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/siryou/20200911/4-1.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "令和２事務年度金融行政方針",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/siryou/20200911/4-2.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "諮問事項",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/siryou/20200911/simon.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "議事録",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/gijiroku/2020_0911.html",
+          "type": "HTML",
+          "manualLock": true
+        }
+      ],
+      "topics": [],
+      "manualLock": true
+    },
+    {
       "id": "meet-2020-08-27-smea-katatorihiki-dai4",
       "councilId": "smea-katatorihiki",
       "title": "型取引の適正化推進協議会 第4回",
@@ -169881,6 +170800,77 @@
       ]
     },
     {
+      "id": "meet-2020-02-17-fsa-kinyu-bunkakai-dai31",
+      "councilId": "fsa-kinyu-bunkakai",
+      "title": "第31回 金融審議会 金融分科会",
+      "date": "2020/02/17",
+      "officialUrl": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/siryou/2020_0217.html",
+      "materials": [
+        {
+          "name": "事務局説明資料（決済法制及び金融サービス仲介法制に関するワーキング・グループ関係）",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/siryou/2020_0217/11.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "金融審議会「決済法制及び金融サービス仲介法制に関するワーキング・グループ」報告",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/siryou/2020_0217/12.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "事務局説明資料（市場構造専門グループ関係）",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/siryou/2020_0217/21.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "金融審議会「市場ワーキング・グループ市場構造専門グループ」報告書",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/siryou/2020_0217/22.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "金融審議会「市場ワーキング・グループ市場構造専門グループ」報告書（英語訳版（未定稿））",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/siryou/2020_0217/23.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "事務局説明資料（市場ワーキング・グループ関係）",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/siryou/2020_0217/3.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "事務局説明資料（検査マニュアル廃止後の検査・監督の進め方について）",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/siryou/2020_0217/41.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "「検査マニュアル廃止後の融資に関する検査・監督の考え方と進め方」",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/siryou/2020_0217/42.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "金融審議会委員名簿",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/meibo/2020_0217.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "議事録",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/gijiroku/2020_0217.html",
+          "type": "HTML",
+          "manualLock": true
+        }
+      ],
+      "topics": [],
+      "manualLock": true
+    },
+    {
       "id": "meet-2020-02-13-fsa-keizaikachi-solvency-dai8",
       "councilId": "fsa-keizaikachi-solvency",
       "councilName": "経済価値ベースのソルベンシー規制等に関する有識者会議",
@@ -172511,6 +173501,65 @@
       ]
     },
     {
+      "id": "meet-2019-09-25-fsa-kinyu-bunkakai-dai30",
+      "councilId": "fsa-kinyu-bunkakai",
+      "title": "第30回 金融審議会 金融分科会",
+      "date": "2019/09/25",
+      "officialUrl": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/siryou/2019_0925.html",
+      "materials": [
+        {
+          "name": "事務局説明資料（市場構造専門グループ関係）",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/siryou/2019_0925/1.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "事務局説明資料（金融制度スタディ・グループ関係）",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/siryou/2019_0925/21.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "「決済」法制及び金融サービス仲介法制に係る制度整備についての報告≪基本的な考え方≫",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/siryou/2019_0925/22.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "主なポイント",
+          "url": "https://www.fsa.go.jp/news/r1/190828_summary.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "本文",
+          "url": "https://www.fsa.go.jp/news/r1/190828.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "金融審議会委員名簿",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/meibo/2019_0925.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "意見書（川島委員）",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/siryou/2019_0925/3.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "議事録",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/gijiroku/2019_0925.html",
+          "type": "HTML",
+          "manualLock": true
+        }
+      ],
+      "topics": [],
+      "manualLock": true
+    },
+    {
       "id": "meet-2019-09-20-fsa-keizaikachi-solvency-dai3",
       "councilId": "fsa-keizaikachi-solvency",
       "councilName": "経済価値ベースのソルベンシー規制等に関する有識者会議",
@@ -174131,6 +175180,65 @@
       ]
     },
     {
+      "id": "meet-2019-03-04-fsa-kinyu-bunkakai-dai29",
+      "councilId": "fsa-kinyu-bunkakai",
+      "title": "第29回 金融審議会 金融分科会",
+      "date": "2019/03/04",
+      "officialUrl": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/siryou/20190304.html",
+      "materials": [
+        {
+          "name": "事務局説明資料(金融制度スタディ・グループ関係)",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/siryou/20190304/1.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "金融機関による情報の利活用に係る制度整備についての報告",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/siryou/20190304/12.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "事務局説明資料(市場ワーキング・グループ関係)",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/siryou/20190304/2.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "直接金融市場に関する現行規制の点検について",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/siryou/20190304/22.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "仮想通貨交換業等に関する研究会報告書(概要)",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/siryou/20190304/31.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "仮想通貨交換業等に関する研究会報告書(本文)",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/siryou/20190304/32.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "金融審議会委員名簿",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/meibo/20190125.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "議事録",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/gijiroku/20190304.html",
+          "type": "HTML",
+          "manualLock": true
+        }
+      ],
+      "topics": [],
+      "manualLock": true
+    },
+    {
       "id": "meet-2019-02-26-moj-saihan-boushi-2",
       "councilId": "moj-saihan-boushi",
       "title": "平成３０年度（再犯防止推進計画等検討会）",
@@ -175500,6 +176608,83 @@
           "manualLock": true
         }
       ]
+    },
+    {
+      "id": "meet-2018-10-17-fsa-kinyu-bunkakai-dai28",
+      "councilId": "fsa-kinyu-bunkakai",
+      "title": "第28回 金融審議会 金融分科会",
+      "date": "2018/10/17",
+      "officialUrl": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/siryou/20181017.html",
+      "materials": [
+        {
+          "name": "ディスクロージャーワーキング・グループ報告(概要)",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/siryou/20181017/01.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "ディスクロージャーワーキング・グループ報告",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/siryou/20181017/02.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "金融制度スタディ・グループ中間整理(概要)",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/siryou/20181017/03.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "金融制度スタディ・グループ中間整理",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/siryou/20181017/04.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "事務局説明資料(金融審議会　金融制度スタディ・グループ(平成30事務年度)　第１回)",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/siryou/20181017/05.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "市場ワーキング・グループ(WG)の再開について",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/siryou/20181017/06.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "事務局説明資料(家計の安定的な資産形成の推進)",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/siryou/20181017/07.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "主なポイント",
+          "url": "https://www.fsa.go.jp/news/30/Summary_of_For_Providing_Better_Financial_Services.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "本文",
+          "url": "https://www.fsa.go.jp/news/30/For_Providing_Better_Financial_Services.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "金融審議会委員名簿",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/meibo/40.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "議事録",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/gijiroku/20181017.html",
+          "type": "HTML",
+          "manualLock": true
+        }
+      ],
+      "topics": [],
+      "manualLock": true
     },
     {
       "id": "meet-2018-09-28-smea-data-rikatsuyou-dai1",
@@ -177570,6 +178755,59 @@
       "ministry": "MOJ",
       "manualLock": true,
       "materials": []
+    },
+    {
+      "id": "meet-2017-11-16-fsa-kinyu-bunkakai-dai27",
+      "councilId": "fsa-kinyu-bunkakai",
+      "title": "第27回 金融審議会 金融分科会",
+      "date": "2017/11/16",
+      "officialUrl": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/siryou/20171116-1.html",
+      "materials": [
+        {
+          "name": "事務局説明資料",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/siryou/20171116/01.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "事務局説明資料",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/siryou/20171116/02.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "主なポイント",
+          "url": "https://www.fsa.go.jp/news/29/2017StrategicPoint.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "本文",
+          "url": "https://www.fsa.go.jp/news/29/2017StrategicDirection.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "概要",
+          "url": "https://www.fsa.go.jp/news/29/2017StrategicDirectionsSummary.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "諮問事項",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/siryou/20171116/06.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "議事録",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/gijiroku/20171116.html",
+          "type": "HTML",
+          "manualLock": true
+        }
+      ],
+      "topics": [],
+      "manualLock": true
     },
     {
       "id": "meet-2017-10-06-mlit-meeting-33-dai2",
@@ -180041,6 +181279,65 @@
       "officialUrl": "https://www.chisou.go.jp/tiiki/kokusentoc/dai29/shiryou.html",
       "hasMinutes": true,
       "docCount": 15
+    },
+    {
+      "id": "meet-2017-03-03-fsa-kinyu-bunkakai-dai26",
+      "councilId": "fsa-kinyu-bunkakai",
+      "title": "第26回 金融審議会 金融分科会",
+      "date": "2017/03/03",
+      "officialUrl": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/siryou/20170303.html",
+      "materials": [
+        {
+          "name": "事務局説明資料（日本の市場・取引所を巡る動向と今後の課題）（PDF:1,578KB）",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/siryou/20170303/01.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "金融審議会 市場ワーキング・グループ報告（PDF:2,154KB）",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/siryou/20170303/02.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "金融審議会 市場ワーキング・グループ フェア・ディスクロージャー・ルール・タスクフォース報告（PDF:644KB）",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/siryou/20170303/03.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "事務局説明資料（フィンテックや決済高度化を巡る動向と今後の課題）（PDF:2,067KB）",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/siryou/20170303/04.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "金融審議会 金融制度ワーキング・グループ報告（PDF:1,671KB）",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/siryou/20170303/05.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "事務局説明資料（検査・監督のあり方の見直し）（PDF:734KB）",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/siryou/20170303/06.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "金融審議会委員名簿（PDF:111KB）",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/siryou/20170303/07.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "議事録",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/gijiroku/20170303.html",
+          "type": "HTML",
+          "manualLock": true
+        }
+      ],
+      "topics": [],
+      "manualLock": true
     },
     {
       "id": "meet-2017-03-02-smea-kinyu-edi-dai5",
@@ -187520,6 +188817,47 @@
       "docCount": 4
     },
     {
+      "id": "meet-2016-04-19-fsa-kinyu-bunkakai-dai25",
+      "councilId": "fsa-kinyu-bunkakai",
+      "title": "第25回 金融審議会 金融分科会",
+      "date": "2016/04/19",
+      "officialUrl": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/siryou/20160419.html",
+      "materials": [
+        {
+          "name": "金融審議会金融分科会報告（案）「建設的な対話の促進に向けて」（PDF:506KB）",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/siryou/20160419/01.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "金融審議会金融分科会報告（案）「建設的な対話の促進に向けて」の概要（PDF:316KB）",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/siryou/20160419/02.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "事務局説明資料（市場・取引所を巡る諸問題に関する検討）（PDF:1,016KB）",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/siryou/20160419/03.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "諮問事項（PDF:54KB）",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/siryou/20160419/04.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "議事録",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/gijiroku/20160419.html",
+          "type": "HTML",
+          "manualLock": true
+        }
+      ],
+      "topics": [],
+      "manualLock": true
+    },
+    {
       "id": "meet-2016-04-13-cas-kokusentoc-24-dai21",
       "councilId": "cas-kokusentoc-24",
       "councilName": "国家戦略特別区域諮問会議",
@@ -188084,6 +189422,59 @@
       "manualLock": true
     },
     {
+      "id": "meet-2016-02-08-fsa-kinyu-bunkakai-dai24",
+      "councilId": "fsa-kinyu-bunkakai",
+      "title": "第24回 金融審議会 金融分科会",
+      "date": "2016/02/08",
+      "officialUrl": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/siryou/20160208.html",
+      "materials": [
+        {
+          "name": "金融審議会金融分科会報告（案）（金融グループを巡る制度のあり方に関するワーキング・グループ関連）（PDF:754KB）",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/siryou/20160208/01.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "金融審議会金融分科会報告（案）の概要（金融グループを巡る制度のあり方に関するワーキング・グループ関連）（PDF:291KB）",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/siryou/20160208/02.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "金融審議会金融分科会報告（案）（決済業務等の高度化に関するワーキング・グループ関連）（PDF:1,003KB）",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/siryou/20160208/03.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "金融審議会金融分科会報告（案）の概要（決済業務等の高度化に関するワーキング・グループ関連）（PDF:774KB）",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/siryou/20160208/04.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "事務局説明資料（ディスクロージャーワーキング・グループ関連）（PDF:181KB）",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/siryou/20160208/05.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "国際金融規制改革の最近の動向について（PDF:1,498KB）",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/siryou/20160208/06.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "議事録",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/gijiroku/20160208.html",
+          "type": "HTML",
+          "manualLock": true
+        }
+      ],
+      "topics": [],
+      "manualLock": true
+    },
+    {
       "id": "meet-2016-02-05-cas-kokusentoc-24-dai19",
       "councilId": "cas-kokusentoc-24",
       "councilName": "国家戦略特別区域諮問会議",
@@ -188538,6 +189929,71 @@
       "officialUrl": "https://www.chisou.go.jp/tiiki/kokusentoc/dai17/shiryou.html",
       "hasMinutes": true,
       "docCount": 10
+    },
+    {
+      "id": "meet-2015-10-23-fsa-kinyu-bunkakai-dai23",
+      "councilId": "fsa-kinyu-bunkakai",
+      "title": "第23回 金融審議会 金融分科会",
+      "date": "2015/10/23",
+      "officialUrl": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/siryou/20151023.html",
+      "materials": [
+        {
+          "name": "事務局説明資料（決済業務等の高度化に関する検討）（PDF:431KB）",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/siryou/20151023/01.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "事務局説明資料（金融グループを巡る制度のあり方に関する検討）（PDF:386KB）",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/siryou/20151023/02.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "事務局説明資料（企業の情報開示のあり方等に関する検討）（PDF:203KB）",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/siryou/20151023/03.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "本文（PDF:658KB）",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/siryou/20151023/04.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "概要（PDF:330KB）",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/siryou/20151023/05.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "主なポイント（PDF:154KB）",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/siryou/20151023/06.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "諮問事項（PDF:55KB）",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/siryou/20151023/07.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "金融審議会名簿（PDF:111KB）",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/siryou/20151023/08.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "議事録",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/gijiroku/20151023.html",
+          "type": "HTML",
+          "manualLock": true
+        }
+      ],
+      "topics": [],
+      "manualLock": true
     },
     {
       "id": "meet-2015-10-22-moj-keiji-fufukushinsa-12",
@@ -189839,6 +191295,65 @@
       "officialUrl": "https://www.chisou.go.jp/tiiki/kokusentoc/dai12/shidai.pdf",
       "hasMinutes": true,
       "docCount": 8
+    },
+    {
+      "id": "meet-2015-03-03-fsa-kinyu-bunkakai-dai22",
+      "councilId": "fsa-kinyu-bunkakai",
+      "title": "第22回 金融審議会 金融分科会",
+      "date": "2015/03/03",
+      "officialUrl": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/siryou/20150303.html",
+      "materials": [
+        {
+          "name": "金融審議会金融分科会報告（案）「投資家の保護及び成長資金の円滑な供給を確保するためのプロ向けファンドをめぐる制度のあり方について」（PDF:338KB）",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/siryou/20150303/01_1.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "「投資家の保護及び成長資金の円滑な供給を確保するためのプロ向けファンドをめぐる制度のあり方について」の概要（PDF:123KB）",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/siryou/20150303/01_2.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "事務局説明資料（決済業務等の高度化に関するスタディ・グループ関連）（PDF:175KB）",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/siryou/20150303/02.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "事務局説明資料（金融グループ関連）（PDF:125KB）",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/siryou/20150303/03_1.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "参考資料（金融グループ関連）（PDF:424KB）",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/siryou/20150303/03_2.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "諮問事項（PDF:58KB）",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/siryou/20150303/04.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "金融審議会名簿（PDF:82KB）",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/siryou/20150303/05.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "議事録",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/gijiroku/20150303.html",
+          "type": "HTML",
+          "manualLock": true
+        }
+      ],
+      "topics": [],
+      "manualLock": true
     },
     {
       "id": "meet-2015-01-09-cas-kokusentoc-24-dai11",
@@ -193782,6 +195297,65 @@
       "manualLock": true
     },
     {
+      "id": "meet-2014-09-26-fsa-kinyu-bunkakai-dai21",
+      "councilId": "fsa-kinyu-bunkakai",
+      "title": "第21回 金融審議会 金融分科会",
+      "date": "2014/09/26",
+      "officialUrl": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/siryou/20140926.html",
+      "materials": [
+        {
+          "name": "事務局説明資料（投資運用関連）（PDF:215KB）",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/siryou/20140926/01.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "事務局説明資料（決済業務等の高度化関連）（PDF:610KB）",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/siryou/20140926/02.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "事務局説明資料（最近の金融行政の動向について）（PDF:985KB）",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/siryou/20140926/03.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "金融モニタリングレポートの概要（PDF:325KB）",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/siryou/20140926/04.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "平成26事務年度金融モニタリング基本方針（PDF:670KB）",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/siryou/20140926/05.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "諮問事項（PDF:26KB）",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/siryou/20140926/06.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "日本の金融業とアジア（吉野会長提出資料）（PDF:97KB）",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/siryou/20140926/07.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "議事録",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/gijiroku/20140926.html",
+          "type": "HTML",
+          "manualLock": true
+        }
+      ],
+      "topics": [],
+      "manualLock": true
+    },
+    {
       "id": "meet-2014-09-25-cas-jyouhouhozen-37-dai9",
       "councilId": "cas-jyouhouhozen-37",
       "councilName": "情報保全諮問会議",
@@ -195845,6 +197419,41 @@
       "docCount": 5
     },
     {
+      "id": "meet-2014-02-24-fsa-kinyu-bunkakai-dai20",
+      "councilId": "fsa-kinyu-bunkakai",
+      "title": "第20回 金融審議会 金融分科会",
+      "date": "2014/02/24",
+      "officialUrl": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/siryou/20140224.html",
+      "materials": [
+        {
+          "name": "金融審議会金融分科会報告（案）「新規・成長企業へのリスクマネーの供給のあり方等について」（PDF:776KB）",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/siryou/20140224/01.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "「新規・成長企業へのリスクマネーの供給のあり方等について」の概要（PDF:115KB）",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/siryou/20140224/02.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "最近の金融行政の動向について（PDF:801KB）",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/siryou/20140224/03.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "議事録",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/gijiroku/20140224.html",
+          "type": "HTML",
+          "manualLock": true
+        }
+      ],
+      "topics": [],
+      "manualLock": true
+    },
+    {
       "id": "meet-2014-01-30-cas-kokusentoc-24-dai2",
       "councilId": "cas-kokusentoc-24",
       "councilName": "国家戦略特別区域諮問会議",
@@ -196182,6 +197791,189 @@
       "materials": []
     },
     {
+      "id": "meet-2013-09-09-fsa-kinyu-bunkakai-dai19",
+      "councilId": "fsa-kinyu-bunkakai",
+      "title": "第19回 金融審議会 金融分科会",
+      "date": "2013/09/09",
+      "officialUrl": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/siryou/20130909.html",
+      "materials": [
+        {
+          "name": "金融審議会金融分科会報告（案）「新しい保険商品・サービス及び募集ルールのあり方について」（PDF:1,157KB）",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/siryou/20130909/01.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "「新しい保険商品・サービス及び募集ルールのあり方について」の概要（PDF:307KB）",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/siryou/20130909/02.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "最近の金融行政の動向について（PDF:397KB）",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/siryou/20130909/03.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "議事録",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/gijiroku/20130909.html",
+          "type": "HTML",
+          "manualLock": true
+        }
+      ],
+      "topics": [],
+      "manualLock": true
+    },
+    {
+      "id": "meet-2013-06-05-fsa-kinyu-bunkakai-dai18",
+      "councilId": "fsa-kinyu-bunkakai",
+      "title": "第18回 金融審議会 金融分科会",
+      "date": "2013/06/05",
+      "officialUrl": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/siryou/20130605.html",
+      "materials": [
+        {
+          "name": "新規・成長産業等へのリスクマネー供給に関する議論の状況について（PDF:241KB）",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/siryou/20130605/01.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "官民ラウンドテーブルについて（PDF:269KB）",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/siryou/20130605/02.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "高齢化社会に対応した金融サービスの向上にむけて（官民ラウンドテーブル「高齢化社会と金融サービス」作業部会）（PDF:431KB）",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/siryou/20130605/03.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "我が国企業・金融機関の国際展開の拡充にむけて（官民ラウンドテーブル「国際展開」作業部会）（PDF:628KB）",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/siryou/20130605/04.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "金融機関によるリスクマネー供給力の強化等を通じた創業・新規事業支援 の促進にむけて（官民ラウンドテーブル「中小企業金融の向上」作業部会） （PDF:360KB）",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/siryou/20130605/05.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "金融経済教育研究会・報告書の概要（PDF:497KB）",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/siryou/20130605/06.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "金融経済教育研究会報告書（PDF:654KB）",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/siryou/20130605/07.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "金融審議会委員名簿（PDF:69KB）",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/siryou/20130605/08.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "諮問事項（PDF:50KB）",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/siryou/20130605/09.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "議事録",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/gijiroku/20130605.html",
+          "type": "HTML",
+          "manualLock": true
+        }
+      ],
+      "topics": [],
+      "manualLock": true
+    },
+    {
+      "id": "meet-2013-02-27-fsa-kinyu-bunkakai-dai17",
+      "councilId": "fsa-kinyu-bunkakai",
+      "title": "第17回 金融審議会 金融分科会",
+      "date": "2013/02/27",
+      "officialUrl": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/siryou/20130227.html",
+      "materials": [
+        {
+          "name": "金融審議会金融分科会報告（案）「投資信託・投資法人法制の見直しについて」（PDF:405KB）",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/siryou/20130227/01.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "「投資信託・投資法人法制の見直しについて」の概要（PDF:335KB）",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/siryou/20130227/02.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "金融審議会金融分科会報告（案）「近年の違反事案及び金融・企業実務を踏まえたインサイダー取引規制をめぐる制度整備について」（PDF:445KB）",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/siryou/20130227/03.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "「近年の違反事案及び金融・企業実務を踏まえたインサイダー取引規制をめぐる制度整備について」の概要（PDF:126KB）",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/siryou/20130227/04.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "金融審議会金融分科会報告（案）「金融システム安定等に資する銀行規制等の見直しについて」（PDF:436KB）",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/siryou/20130227/05.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "「金融システム安定等に資する銀行規制等の見直しについて」の概要（PDF:143KB）",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/siryou/20130227/06.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "保険商品・サービスの提供等の在り方に関するワーキング・グループの活動状況について（PDF:148KB）",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/siryou/20130227/07.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "最近の金融行政の動向について（本年１月の緊急経済対策に盛り込まれた諸施策）（PDF:1,472KB）",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/siryou/20130227/08.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "最近の金融行政の動向について（国際的な金融規制改革の動向）（PDF:491KB）",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/siryou/20130227/09.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "金融審議会委員名簿（PDF:43KB）",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/siryou/20130227/10.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "議事録",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/gijiroku/20130227.html",
+          "type": "HTML",
+          "manualLock": true
+        }
+      ],
+      "topics": [],
+      "manualLock": true
+    },
+    {
       "id": "meet-2012-12-04-smea-chishiki-support-dai3",
       "councilId": "smea-chishiki-support",
       "councilName": "知識サポート・経営改革プラットフォーム研究会",
@@ -196505,6 +198297,142 @@
       "manualLock": true
     },
     {
+      "id": "meet-2012-07-04-fsa-kinyu-bunkakai-dai16",
+      "councilId": "fsa-kinyu-bunkakai",
+      "title": "第16回 金融審議会 金融分科会",
+      "date": "2012/07/04",
+      "officialUrl": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/siryou/20120704.html",
+      "materials": [
+        {
+          "name": "「我が国金融業の中長期的な在り方について（現状と展望）」概要（PDF:31KB）",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/siryou/20120704/01.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "金融審議会金融分科会報告（案）「我が国金融業の中長期的な在り方について（現状と展望）」（PDF:1,183KB）",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/siryou/20120704/02.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "「我が国金融業の中長期的な在り方について（現状と展望）」の概要図（PDF:77KB）",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/siryou/20120704/03.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "投資信託・投資法人法制の見直しに関するワーキング・グループ中間論点整理（PDF:234KB）",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/siryou/20120704/04.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "諮問事項（平成24年４月11日）（PDF:25KB）",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/siryou/20120704/05.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "金融システム安定等に資する銀行規制等の在り方に関するワーキング・グループ委員等名簿及び開催状況（PDF:36KB）",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/siryou/20120704/06.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "保険商品・サービスの提供等の在り方に関するワーキング・グループメンバー名簿及び開催状況（PDF:109KB）",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/siryou/20120704/07.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "最近の金融行政について（欧州債務危機）（PDF:340KB）",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/siryou/20120704/08.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "最近の金融行政について（金融円滑化法の出口戦略等）（PDF:582KB）",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/siryou/20120704/09.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "諮問事項（PDF:25KB）",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/siryou/20120704/10.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "議事録",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/gijiroku/20120704.html",
+          "type": "HTML",
+          "manualLock": true
+        }
+      ],
+      "topics": [],
+      "manualLock": true
+    },
+    {
+      "id": "meet-2012-04-11-fsa-kinyu-bunkakai-dai15",
+      "councilId": "fsa-kinyu-bunkakai",
+      "title": "第15回 金融審議会 金融分科会",
+      "date": "2012/04/11",
+      "officialUrl": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/siryou/20120411.html",
+      "materials": [
+        {
+          "name": "我が国金融業の中長期的な在り方に関するワーキング・グループ「報告書の構成（たたき台）」（PDF:369KB）",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/siryou/20120411/01.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "我が国金融業の中長期的な在り方に関するワーキング・グループ「[素案]我が国金融業の中長期的な在り方（第１章）」（PDF:50KB）",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/siryou/20120411/02.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "我が国金融業の中長期的な在り方に関するワーキング・グループ「[素案]第２章　金融機関の在り方」（PDF:276KB）",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/siryou/20120411/03.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "吉野座長メモ（PDF:37KB）",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/siryou/20120411/04.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "投資信託・投資法人法制の見直しに関するワーキング・グループ「投資信託・投資法人法制の見直し」（PDF:351KB）",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/siryou/20120411/05.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "最近の金融行政を巡る動向（保険業法・金融商品取引法等の改正について）（PDF:609KB）",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/siryou/20120411/06.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "諮問事項（PDF:8KB）",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/siryou/20120411/07.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "議事録",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/gijiroku/20120411.html",
+          "type": "HTML",
+          "manualLock": true
+        }
+      ],
+      "topics": [],
+      "manualLock": true
+    },
+    {
       "id": "meet-2012-03-09-smea-kaigai-tenkai-dai4",
       "councilId": "smea-kaigai-tenkai",
       "councilName": "中小企業海外展開支援会議",
@@ -196537,6 +198465,77 @@
       "officialUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/kaigai/120309HS.html",
       "hasMinutes": false,
       "docCount": 1
+    },
+    {
+      "id": "meet-2012-01-27-fsa-kinyu-bunkakai-dai14",
+      "councilId": "fsa-kinyu-bunkakai",
+      "title": "第14回 金融審議会 金融分科会",
+      "date": "2012/01/27",
+      "officialUrl": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/siryou/20120127.html",
+      "materials": [
+        {
+          "name": "金融審議会金融分科会報告（案） 保険会社のグループ経営に関する規制の見直しについて（PDF:100KB）",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/siryou/20120127/01.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "「保険会社のグループ経営に関する規制の見直しについて」の概要（PDF:82KB）",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/siryou/20120127/02.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "金融審議会金融分科会報告（案） 企業のグループ化に対応したインサイダー取引規制の見直しについて（PDF:100KB）",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/siryou/20120127/03.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "「企業のグループ化に対応したインサイダー取引規制の見直しについて」の概要（PDF:65KB）",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/siryou/20120127/04.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "「我が国金融業の中長期的な在り方に関するワーキング・グループ」（PDF:187KB）",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/siryou/20120127/05.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "最近の金融・資本市場制度の整備、改善への取組み状況等の概要（PDF:22KB）",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/siryou/20120127/06.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "最近の金融行政を巡る動向（PDF:1,159KB）",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/siryou/20120127/07.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "金融審議会委員名簿（PDF:32KB）",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/siryou/20120127/08.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "諮問事項（PDF:11KB）",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/siryou/20120127/09.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "議事録",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/gijiroku/20120127.html",
+          "type": "HTML",
+          "manualLock": true
+        }
+      ],
+      "topics": [],
+      "manualLock": true
     },
     {
       "id": "meet-2011-10-20-moj-keiji-fufukushinsa-16",
@@ -197135,6 +199134,53 @@
       "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/hanzai/index.html",
       "hasMinutes": false,
       "docCount": 62
+    },
+    {
+      "id": "meet-2011-03-07-fsa-kinyu-bunkakai-dai13",
+      "councilId": "fsa-kinyu-bunkakai",
+      "title": "第13回 金融審議会 金融分科会",
+      "date": "2011/03/07",
+      "officialUrl": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/siryou/20110307.html",
+      "materials": [
+        {
+          "name": "最近の金融・資本市場制度の整備、改善への取組み状況等の概要（資料１－１）（PDF:90KB）",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/siryou/20110307/01_a.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "最近の金融・資本市場制度の整備、改善への取組み状況等（資料１－２）（PDF:332KB）",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/siryou/20110307/01_b.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "金融機関等のグループ経営に係る制度整備の取組み（資料２）（PDF:79KB）",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/siryou/20110307/02.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "諮問事項（PDF:65KB）",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/siryou/20110307/03.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "金融審議会委員名簿（PDF:91KB）",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/siryou/20110307/04.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "議事録",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/gijiroku/20110307.html",
+          "type": "HTML",
+          "manualLock": true
+        }
+      ],
+      "topics": [],
+      "manualLock": true
     },
     {
       "id": "meet-2011-02-02-smea-kaigai-tenkai-dai2",
@@ -198016,6 +200062,41 @@
       ]
     },
     {
+      "id": "meet-2009-07-29-fsa-kinyu-bunkakai-dai12",
+      "councilId": "fsa-kinyu-bunkakai",
+      "title": "第12回 金融審議会 金融分科会",
+      "date": "2009/07/29",
+      "officialUrl": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/siryou/20090729.html",
+      "materials": [
+        {
+          "name": "最近の金融審議会の活動状況等（PDF：140KB）",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/siryou/20090729/01.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "金融審議会金融分科会基本問題懇談会の設置について（案）（PDF：49KB）",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/siryou/20090729/02.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "論点メモ（PDF：46KB）",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/siryou/20090729/03.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "議事録",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/gijiroku/20090729.html",
+          "type": "HTML",
+          "manualLock": true
+        }
+      ],
+      "topics": [],
+      "manualLock": true
+    },
+    {
       "id": "meet-2009-03-30-cas-tiikisaisei-62-dai10",
       "councilId": "cas-tiikisaisei-62",
       "councilName": "地域再生本部",
@@ -198048,6 +200129,35 @@
       "officialUrl": "https://www.chisou.go.jp/tiiki/tiikisaisei/dai10/10_honbun.pdf",
       "hasMinutes": false,
       "docCount": 4
+    },
+    {
+      "id": "meet-2009-03-12-fsa-kinyu-bunkakai-dai11",
+      "councilId": "fsa-kinyu-bunkakai",
+      "title": "第11回 金融審議会 金融分科会",
+      "date": "2009/03/12",
+      "officialUrl": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/siryou/20090312.html",
+      "materials": [
+        {
+          "name": "金融審議会の活動状況（PDF：256KB）",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/siryou/20090312/01.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "京都議定書・環境自主行動計画関連資料（PDF：5,522KB）",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/siryou/20090312/02.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "議事録",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/gijiroku/20090312.html",
+          "type": "HTML",
+          "manualLock": true
+        }
+      ],
+      "topics": [],
+      "manualLock": true
     },
     {
       "id": "meet-2008-10-27-moj-keiji-fufukushinsa-19",
@@ -198394,6 +200504,47 @@
       "officialUrl": "https://www.chisou.go.jp/tiiki/tiikisaisei/dai9/honbun.pdf",
       "hasMinutes": false,
       "docCount": 5
+    },
+    {
+      "id": "meet-2008-02-08-fsa-kinyu-bunkakai-dai10",
+      "councilId": "fsa-kinyu-bunkakai",
+      "title": "第10回 金融審議会 金融分科会",
+      "date": "2008/02/08",
+      "officialUrl": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/siryou/20080208.html",
+      "materials": [
+        {
+          "name": "最近における金融審議会等の活動状況（PDF：1,762KB）",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/siryou/20080208/01.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "京都議定書・環境自主行動計画関係資料（PDF：4,389KB）",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/siryou/20080208/02.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "第一部会及び第二部会の部会報告等（PDF：3,896KB）",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/siryou/20080208/03.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "参考資料（PDF：440KB）",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/siryou/20080208/04.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "議事録",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/gijiroku/20080208.html",
+          "type": "HTML",
+          "manualLock": true
+        }
+      ],
+      "topics": [],
+      "manualLock": true
     },
     {
       "id": "meet-2007-11-30-cas-tiikisaisei-62-dai2",
@@ -199296,6 +201447,59 @@
       "docCount": 1
     },
     {
+      "id": "meet-2007-01-30-fsa-kinyu-bunkakai-dai9",
+      "councilId": "fsa-kinyu-bunkakai",
+      "title": "第9回 金融審議会 金融分科会",
+      "date": "2007/01/30",
+      "officialUrl": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/siryou/20070130.html",
+      "materials": [
+        {
+          "name": "参考資料（PDF：417KB）",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/siryou/20070130/00.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "「我が国金融・資本市場の国際化に関するスタディグループ」の設置について（PDF：58KB）",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/siryou/20070130/01.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "電子登録債権法（仮称）の制定に向けて～電子登録債権の管理機関のあり方を中心として～（PDF：423KB）",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/siryou/20070130/02.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "報告書：電子登録債権法（仮称）の制定に向けて～電子登録債権の管理機関のあり方を中心として～（PDF：36KB）",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/tosin/20061221.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "公認会計士制度部会報告について（PDF：246KB）",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/siryou/20070130/03.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "報告書：公認会計士・監査法人制度の充実・強化について（PDF：235KB）",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/tosin/20061222.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "議事録",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/gijiroku/20070130.html",
+          "type": "HTML",
+          "manualLock": true
+        }
+      ],
+      "topics": [],
+      "manualLock": true
+    },
+    {
       "id": "meet-2007-01-26-cas-doushuu-78",
       "councilId": "cas-doushuu-78",
       "councilName": "道州制特別区域推進本部",
@@ -199849,6 +202053,95 @@
       "docCount": 2
     },
     {
+      "id": "meet-2006-09-06-fsa-kinyu-bunkakai-dai8",
+      "councilId": "fsa-kinyu-bunkakai",
+      "title": "第8回 金融審議会 金融分科会",
+      "date": "2006/09/06",
+      "officialUrl": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/siryou/20060906.html",
+      "materials": [
+        {
+          "name": "資料１．金融商品取引法について（PDF：2,283KB）",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/siryou/20060906/01.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "資料２．信託法改正に伴う信託業法の見直しについて（PDF：773KB）",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/siryou/20060906/02.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "資料３．電子登録債権法（仮称）の検討状況について（PDF：589KB）",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/siryou/20060906/03.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "資料４．監査法人制度等の在り方について（PDF：1,268KB）",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/siryou/20060906/04.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "資料５．貸金業制度に関する懇談会の検討状況について（PDF：1,498KB）",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/siryou/20060906/05.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "参考資料（PDF：12KB）",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/siryou/20060906/r00.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "金融審議会委員名簿（PDF：35KB）",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/siryou/20060906/r01.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "金融審議会金融分科会委員等名簿（PDF：39KB）",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/siryou/20060906/r02.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "金融庁設置法（抄）（PDF：43KB）",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/siryou/20060906/r03.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "金融審議会令（PDF：88KB）",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/siryou/20060906/r04.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "金融審議会議事規則（PDF：29KB）",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/siryou/20060906/r05.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "金融分科会議事規則（PDF：41KB）",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/siryou/20060906/r06.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "議事録",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/gijiroku/20060906.html",
+          "type": "HTML",
+          "manualLock": true
+        }
+      ],
+      "topics": [],
+      "manualLock": true
+    },
+    {
       "id": "meet-2006-07-25-smea-atarashii-kinyu-dai1",
       "councilId": "smea-atarashii-kinyu",
       "councilName": "新しい中小企業金融研究会",
@@ -200116,6 +202409,71 @@
       "docCount": 10
     },
     {
+      "id": "meet-2005-02-02-fsa-kinyu-bunkakai-dai7",
+      "councilId": "fsa-kinyu-bunkakai",
+      "title": "第7回 金融審議会 金融分科会",
+      "date": "2005/02/02",
+      "officialUrl": "https://www.fsa.go.jp/singi/singi_kinyu/siryou/f-20050202-1.html",
+      "materials": [
+        {
+          "name": "（資料１）「金融改革プログラム」のポイント（PDF：152KB）",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/siryou/f-20050202-1/01.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "（資料２）金融改革プログラム　－金融サービス立国への挑戦―（PDF：222KB）",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/siryou/f-20050202-1/02.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "(1) 金融審議会委員名簿（PDF：66KB）",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/siryou/f-20050202-1/s01.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "(2) 金融審議会金融分科会委員等名簿（PDF：71KB）",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/siryou/f-20050202-1/s02.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "(3) 金融庁設置法（抄）（PDF：86KB）",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/siryou/f-20050202-1/s03.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "(4) 金融審議会令（PDF：106KB）",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/siryou/f-20050202-1/s04.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "(5) 金融審議会議事規則（PDF：56KB）",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/siryou/f-20050202-1/s05.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "(6) 金融分科会議事規則（PDF：62KB）",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/siryou/f-20050202-1/s06.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "議事録",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/gijiroku/soukai/f-20050202_gijiroku.html",
+          "type": "HTML",
+          "manualLock": true
+        }
+      ],
+      "topics": [],
+      "manualLock": true
+    },
+    {
       "id": "meet-2004-12-24-fsa-kinyu-shingi-dai1",
       "councilId": "fsa-kinyu-shingi",
       "councilName": "金融審議会",
@@ -200176,6 +202534,53 @@
       "officialUrl": "https://www.fsa.go.jp/singi/singi_kinyu/siryou/kinyu/dai1/f-20041224_sir/00.pdf",
       "hasMinutes": false,
       "docCount": 5
+    },
+    {
+      "id": "meet-2004-03-17-fsa-kinyu-bunkakai-dai6",
+      "councilId": "fsa-kinyu-bunkakai",
+      "title": "第6回 金融審議会 金融分科会",
+      "date": "2004/03/17",
+      "officialUrl": "https://www.fsa.go.jp/singi/singi_kinyu/siryou/f-20040317-1.html",
+      "materials": [
+        {
+          "name": "金融税制について（PDF：36KB）",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/siryou/f-20040317-1/01.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "最近の金融審議会の活動状況について（PDF：74KB）",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/siryou/f-20040317-1/02.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "金融検査マニュアル別冊〔中小企業融資編〕改訂の主な内容（PDF：23KB）",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/siryou/f-20040317-1/03a.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "金融検査マニュアル別冊〔中小企業融資編〕（PDF：186KB）",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/siryou/f-20040317-1/03b.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "マニュアル別冊リーフレット（Ａ３版両面）（PDF：214KB）",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/siryou/f-20040317-1/03c.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "議事録",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/gijiroku/soukai/f-20040317_gijiroku.html",
+          "type": "HTML",
+          "manualLock": true
+        }
+      ],
+      "topics": [],
+      "manualLock": true
     },
     {
       "id": "meet-2003-11-04-fsc-tenkabutu-117",
@@ -200301,6 +202706,224 @@
       "officialUrl": "https://www.fsc.go.jp/senmon/tenkabutu/",
       "hasMinutes": false,
       "docCount": 14
+    },
+    {
+      "id": "meet-2003-01-31-fsa-kinyu-bunkakai-dai5",
+      "councilId": "fsa-kinyu-bunkakai",
+      "title": "第5回 金融審議会 金融分科会",
+      "date": "2003/01/31",
+      "officialUrl": "https://www.fsa.go.jp/singi/singi_kinyu/siryou/f-20030131-4.html",
+      "materials": [
+        {
+          "name": "「金融再生プログラム」の進捗状況（PDF：205KB）",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/siryou/f-20030131-4/00.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "金融再生プログラム（PDF：37KB）",
+          "url": "https://www.fsa.go.jp/news/newsj/14/ginkou/f-20021031-1.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "金融審議会委員名簿（PDF：83KB）",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/siryou/f-20030131-4/01.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "金融審議会金融分科会委員等名簿（PDF：117KB）",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/siryou/f-20030131-4/02.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "金融庁設置法（抄）（PDF：５KB）",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/siryou/f-20030131-4/03.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "金融審議会令（PDF：11KB）",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/siryou/f-20030131-4/04.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "金融審議会の構成（PDF：10KB）",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/siryou/f-20030131-4/05.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "議事録",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/gijiroku/soukai/f-20030131_gijiroku.html",
+          "type": "HTML",
+          "manualLock": true
+        }
+      ],
+      "topics": [],
+      "manualLock": true
+    },
+    {
+      "id": "meet-2002-09-30-fsa-kinyu-bunkakai-dai4",
+      "councilId": "fsa-kinyu-bunkakai",
+      "title": "第4回 金融審議会 金融分科会",
+      "date": "2002/09/30",
+      "officialUrl": "https://www.fsa.go.jp/singi/singi_kinyu/siryou/f-20020930-2.html",
+      "materials": [
+        {
+          "name": "「中期的に展望した我が国金融システムの将来ビジョン」の概要（PDF：23KB）",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/siryou/f-20020930-2a.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "中期的に展望した我が国金融システムの将来ビジョン（金融審議会答申）（PDF：103KB）",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/siryou/f-20020930-2b.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "「金融中期ビジョン」に関する報告書案について（井口専門委員意見）（PDF：19KB）",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/siryou/f-20020930-2c.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "議事録",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/gijiroku/soukai/f-20020930_gijiroku.html",
+          "type": "HTML",
+          "manualLock": true
+        }
+      ],
+      "topics": [],
+      "manualLock": true
+    },
+    {
+      "id": "meet-2002-09-09-fsa-kinyu-bunkakai-dai3",
+      "councilId": "fsa-kinyu-bunkakai",
+      "title": "第3回 金融審議会 金融分科会",
+      "date": "2002/09/09",
+      "officialUrl": "https://www.fsa.go.jp/singi/singi_kinyu/siryou/f-20020909-1.html",
+      "materials": [
+        {
+          "name": "「中期ビジョン」に盛り込むことが考えられる事項（PDF：25KB）",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/siryou/f-20020909-1a.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "「中期ビジョン」に盛り込むことが考えられる事項に、横断的・包括的金融サービス法制定の検討を盛り込むこと（原委員意見）（PDF：25KB）",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/siryou/f-20020909-1b.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "「証券市場の改革促進プログラム（概要）」（PDF：21KB）",
+          "url": "https://www.fsa.go.jp/news/newsj/14/syouken/f-20020806-2a.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "「証券市場の改革促進プログラム（本文）」（PDF：40KB）",
+          "url": "https://www.fsa.go.jp/news/newsj/14/syouken/f-20020806-2b.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "「銀行と証券会社の共同店舗、銀行の有価証券売買等の書面取次ぎ、信用取引に係る価格ルールの導入に伴う内閣府令及びガイドラインの改正（案）」（PDF：４KB）",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/siryou/f-20020909-1c.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "「銀行と証券会社の共同店舗に係る内閣府令及びガイドラインの改正（案）」（PDF：33KB）",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/siryou/f-20020909-1d.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "「銀行の有価証券売買等の書面取次ぎに係るガイドラインの改正（案）」（PDF：46KB）",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/siryou/f-20020909-1e.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "「信用取引に係る価格ルールの導入に伴う内閣府令の改正（案）」（PDF：７KB）",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/siryou/f-20020909-1f.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "「米企業会計改革法成立までの経緯」（PDF：44KB）",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/siryou/f-20020909-1g.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "「公認会計士制度部会のこれまでの審議状況」（PDF：６KB）",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/siryou/f-20020909-1h.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "議事録",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/gijiroku/soukai/f-20020909_gijiroku.html",
+          "type": "HTML",
+          "manualLock": true
+        }
+      ],
+      "topics": [],
+      "manualLock": true
+    },
+    {
+      "id": "meet-2002-09-05-fsa-kinyu-bunkakai-dai2",
+      "councilId": "fsa-kinyu-bunkakai",
+      "title": "第2回 金融審議会 金融分科会",
+      "date": "2002/09/05",
+      "officialUrl": "https://www.fsa.go.jp/singi/singi_kinyu/siryou/f-20020905-1.html",
+      "materials": [
+        {
+          "name": "金融審議会答申「決済機能の安定確保のための方策について」（概要）（PDF：27KB）",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/siryou/f-20020905-1a.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "金融審議会答申「決済機能の安定確保のための方策について」（PDF：57KB）",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/siryou/f-20020905-1b.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "金融審議会答申「決済機能の安定確保のための方策について」（説明ペーパー）（PDF：26KB）",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/siryou/f-20020905-1c.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "金融審議会 金融分科会 決済機能の安定確保に関するプロジェクト・チーム　開催実績（PDF：５KB）",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/siryou/f-20020905-1d.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "「中期ビジョン」に盛り込むことが考えられる事項（PDF：26KB）",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/siryou/f-20020905-1e.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "議事録",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/gijiroku/soukai/f-20020905_gijiroku.html",
+          "type": "HTML",
+          "manualLock": true
+        }
+      ],
+      "topics": [],
+      "manualLock": true
     },
     {
       "id": "meet-2001-05-22-cao-oaep-17",
@@ -200552,6 +203175,35 @@
       "officialUrl": "https://wwwa.cao.go.jp/oaep/tokubetsusochi.html",
       "hasMinutes": false,
       "docCount": 39
+    },
+    {
+      "id": "meet-2001-02-22-fsa-kinyu-bunkakai-dai1",
+      "councilId": "fsa-kinyu-bunkakai",
+      "title": "第1回 金融審議会 金融分科会",
+      "date": "2001/02/22",
+      "officialUrl": "https://www.fsa.go.jp/singi/singi_kinyu/siryou/f-20010223-3.html",
+      "materials": [
+        {
+          "name": "金融分科会における今後の審議について（PDF：17KB）",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/siryou/f-20010223-3a.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "関係資料（PDF：484KB）",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/siryou/f-20010223-3b.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "議事録",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/gijiroku/kinyu/f-20010222_giji.html",
+          "type": "HTML",
+          "manualLock": true
+        }
+      ],
+      "topics": [],
+      "manualLock": true
     },
     {
       "id": "meet-0020-13-86-mlit-infra-management-wg-dai3",
@@ -201367,11 +204019,11 @@
     },
     {
       "id": "fsa-kinyu-shingi",
-      "name": "金融審議会",
+      "name": "金融審議会 総会",
       "ministry": "FSA",
       "category": "COUNCIL",
-      "officialUrl": "https://www.fsa.go.jp/singi/singi_kinyu/base_gijiroku.html",
-      "sourcePageUrl": "https://www.fsa.go.jp/singi/singi_kinyu/base_gijiroku.html",
+      "officialUrl": "https://www.fsa.go.jp/singi/singi_kinyu/base_gijiroku.html#soukai",
+      "sourcePageUrl": "https://www.fsa.go.jp/singi/singi_kinyu/base_gijiroku.html#soukai",
       "trackedSince": "2022/11/01",
       "status": "approved",
       "aiReason": "AI判定: FSA所管の公式会議体マスターとして承認"
@@ -204072,6 +206724,83 @@
       "aiReason": "AI判定: SMEA所管の公式会議体マスターとして承認"
     },
     {
+      "id": "smea-kinyu-edi",
+      "name": "金融EDIにおける商流情報等のあり方検討会議",
+      "ministry": "SMEA",
+      "category": "STUDY",
+      "officialUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/index.html",
+      "sourcePageUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/index.html",
+      "trackedSince": "2026-08-09",
+      "status": "approved",
+      "aiReason": "AI判定: SMEA所管の公式会議体マスターとして承認"
+    },
+    {
+      "id": "smea-chusho-kenshou",
+      "name": "中小企業憲章に関する研究会",
+      "ministry": "SMEA",
+      "category": "STUDY",
+      "officialUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/index.html",
+      "sourcePageUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/index.html",
+      "trackedSince": "2026-08-09",
+      "status": "approved",
+      "aiReason": "AI判定: SMEA所管の公式会議体マスターとして承認"
+    },
+    {
+      "id": "smea-kaikei-kenkyukai",
+      "name": "中小企業の会計に関する研究会",
+      "ministry": "SMEA",
+      "category": "STUDY",
+      "officialUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/index.html",
+      "sourcePageUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/index.html",
+      "trackedSince": "2026-08-09",
+      "status": "approved",
+      "aiReason": "AI判定: SMEA所管の公式会議体マスターとして承認"
+    },
+    {
+      "id": "smea-chishiki-support",
+      "name": "知識サポート・経営改革プラットフォーム研究会",
+      "ministry": "SMEA",
+      "category": "STUDY",
+      "officialUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/index.html",
+      "sourcePageUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/index.html",
+      "trackedSince": "2026-08-09",
+      "status": "approved",
+      "aiReason": "AI判定: SMEA所管の公式会議体マスターとして承認"
+    },
+    {
+      "id": "smea-kaigai-tenkai",
+      "name": "中小企業海外展開支援会議",
+      "ministry": "SMEA",
+      "category": "STUDY",
+      "officialUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/index.html",
+      "sourcePageUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/index.html",
+      "trackedSince": "2026-08-09",
+      "status": "approved",
+      "aiReason": "AI判定: SMEA所管の公式会議体マスターとして承認"
+    },
+    {
+      "id": "smea-atarashii-kinyu",
+      "name": "新しい中小企業金融研究会",
+      "ministry": "SMEA",
+      "category": "STUDY",
+      "officialUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/index.html",
+      "sourcePageUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/index.html",
+      "trackedSince": "2026-08-09",
+      "status": "approved",
+      "aiReason": "AI判定: SMEA所管の公式会議体マスターとして承認"
+    },
+    {
+      "id": "smea-saisei-kadai",
+      "name": "中小企業再生の今後の政策的課題に関する研究会",
+      "ministry": "SMEA",
+      "category": "STUDY",
+      "officialUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/index.html",
+      "sourcePageUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/index.html",
+      "trackedSince": "2026-08-09",
+      "status": "approved",
+      "aiReason": "AI判定: SMEA所管の公式会議体マスターとして承認"
+    },
+    {
       "id": "npsc-teirei-119",
       "name": "国家公安委員会 定例会議",
       "ministry": "NPSC",
@@ -204952,6 +207681,17 @@
       "aiReason": "AI判定: MOJ所管の公式会議体マスターとして承認"
     },
     {
+      "id": "mlit-renkei-shoiinkai",
+      "name": "本州・九州連携小委員会",
+      "ministry": "MLIT",
+      "category": "WORKING_GROUP",
+      "officialUrl": "https://www.mlit.go.jp/policy/shingikai/s204_renkei.html",
+      "sourcePageUrl": "https://www.mlit.go.jp/policy/shingikai/s204_renkei.html",
+      "trackedSince": "2026-08-09",
+      "status": "approved",
+      "aiReason": "AI判定: MLIT所管の公式会議体マスターとして承認"
+    },
+    {
       "id": "mlit-kokudokannsen-bukai",
       "name": "国土幹線道路部会",
       "ministry": "MLIT",
@@ -204991,6 +207731,17 @@
       "category": "STUDY",
       "officialUrl": "https://www.caa.go.jp/notice/conference/2026/",
       "sourcePageUrl": "https://www.caa.go.jp/notice/conference/2026/",
+      "trackedSince": "2026-08-09",
+      "status": "approved",
+      "aiReason": "AI判定: CAA所管の公式会議体マスターとして承認"
+    },
+    {
+      "id": "caa-209",
+      "name": "審議会・研究会",
+      "ministry": "CAA",
+      "category": "STUDY",
+      "officialUrl": "https://www.caa.go.jp/policies/council/",
+      "sourcePageUrl": "https://www.caa.go.jp/policies/council/",
       "trackedSince": "2026-08-09",
       "status": "approved",
       "aiReason": "AI判定: CAA所管の公式会議体マスターとして承認"
@@ -207306,39 +210057,6 @@
       "aiReason": "AI判定: DIGITAL所管の公式会議体マスターとして承認"
     },
     {
-      "id": "fsa-496",
-      "name": "政策・審議会",
-      "ministry": "FSA",
-      "category": "COUNCIL",
-      "officialUrl": "https://www.fsa.go.jp/policy/index.html",
-      "sourcePageUrl": "https://www.fsa.go.jp/policy/index.html",
-      "trackedSince": "2026-08-09",
-      "status": "approved",
-      "aiReason": "AI判定: FSA所管の公式会議体マスターとして承認"
-    },
-    {
-      "id": "fsa-497",
-      "name": "審議会・研究会等",
-      "ministry": "FSA",
-      "category": "STUDY",
-      "officialUrl": "https://www.fsa.go.jp/policy/index.html#policies_councils_03",
-      "sourcePageUrl": "https://www.fsa.go.jp/policy/index.html#policies_councils_03",
-      "trackedSince": "2026-08-09",
-      "status": "approved",
-      "aiReason": "AI判定: FSA所管の公式会議体マスターとして承認"
-    },
-    {
-      "id": "fsa-498",
-      "name": "審議会・研究会等一覧",
-      "ministry": "FSA",
-      "category": "STUDY",
-      "officialUrl": "https://www.fsa.go.jp/singi/index.html",
-      "sourcePageUrl": "https://www.fsa.go.jp/singi/index.html",
-      "trackedSince": "2026-08-09",
-      "status": "approved",
-      "aiReason": "AI判定: FSA所管の公式会議体マスターとして承認"
-    },
-    {
       "id": "fsa-499",
       "name": "バーゼル銀行監督委員会（BCBS）",
       "ministry": "FSA",
@@ -207367,17 +210085,6 @@
       "category": "COUNCIL",
       "officialUrl": "https://www.fsa.go.jp/singi/singi_kigyou/top.html",
       "sourcePageUrl": "https://www.fsa.go.jp/singi/singi_kigyou/top.html",
-      "trackedSince": "2026-08-09",
-      "status": "approved",
-      "aiReason": "AI判定: FSA所管の公式会議体マスターとして承認"
-    },
-    {
-      "id": "fsa-502",
-      "name": "総会以外の会議",
-      "ministry": "FSA",
-      "category": "COUNCIL",
-      "officialUrl": "https://www.fsa.go.jp/singi/singi_kigyou/top_gijiroku.html#soukaiigai",
-      "sourcePageUrl": "https://www.fsa.go.jp/singi/singi_kigyou/top_gijiroku.html#soukaiigai",
       "trackedSince": "2026-08-09",
       "status": "approved",
       "aiReason": "AI判定: FSA所管の公式会議体マスターとして承認"
@@ -207724,6 +210431,17 @@
       "aiReason": "AI判定: FSA所管の公式会議体マスターとして承認"
     },
     {
+      "id": "fsa-554",
+      "name": "中小企業における個人保証等の在り方研究会",
+      "ministry": "FSA",
+      "category": "STUDY",
+      "officialUrl": "https://www.fsa.go.jp/singi/chushoukigyou/index.html",
+      "sourcePageUrl": "https://www.fsa.go.jp/singi/chushoukigyou/index.html",
+      "trackedSince": "2026-08-09",
+      "status": "approved",
+      "aiReason": "AI判定: FSA所管の公式会議体マスターとして承認"
+    },
+    {
       "id": "fsa-555",
       "name": "金融ADR制度のフォローアップに関する有識者会議",
       "ministry": "FSA",
@@ -207961,6 +210679,17 @@
       "category": "COMMITTEE",
       "officialUrl": "https://www.fsc.go.jp/iinkai_annai/",
       "sourcePageUrl": "https://www.fsc.go.jp/iinkai_annai/",
+      "trackedSince": "2026-08-09",
+      "status": "approved",
+      "aiReason": "AI判定: FSC所管の公式会議体マスターとして承認"
+    },
+    {
+      "id": "fsc-578",
+      "name": "ワーキンググループ",
+      "ministry": "FSC",
+      "category": "WORKING_GROUP",
+      "officialUrl": "https://www.fsc.go.jp/senmon/sonota/",
+      "sourcePageUrl": "https://www.fsc.go.jp/senmon/sonota/",
       "trackedSince": "2026-08-09",
       "status": "approved",
       "aiReason": "AI判定: FSC所管の公式会議体マスターとして承認"
@@ -213686,6 +216415,28 @@
       "aiReason": "AI判定: MOJ所管の公式会議体マスターとして承認"
     },
     {
+      "id": "moj-1166",
+      "name": "省議・審議会等",
+      "ministry": "MOJ",
+      "category": "COUNCIL",
+      "officialUrl": "https://www.moj.go.jp/shingi_index.html",
+      "sourcePageUrl": "https://www.moj.go.jp/shingi_index.html",
+      "trackedSince": "2026-08-09",
+      "status": "approved",
+      "aiReason": "AI判定: MOJ所管の公式会議体マスターとして承認"
+    },
+    {
+      "id": "moj-1168",
+      "name": "政策・審議会等トップへ",
+      "ministry": "MOJ",
+      "category": "COUNCIL",
+      "officialUrl": "https://www.moj.go.jp/seisakusesaku_index.html",
+      "sourcePageUrl": "https://www.moj.go.jp/seisakusesaku_index.html",
+      "trackedSince": "2026-08-09",
+      "status": "approved",
+      "aiReason": "AI判定: MOJ所管の公式会議体マスターとして承認"
+    },
+    {
       "id": "moj-1170",
       "name": "法制審議会 - 生殖補助医療関連親子法制部会",
       "ministry": "MOJ",
@@ -213714,6 +216465,17 @@
       "category": "SECTION",
       "officialUrl": "https://www.moj.go.jp/shingi1/housei02_003007_00018.html",
       "sourcePageUrl": "https://www.moj.go.jp/shingi1/housei02_003007_00018.html",
+      "trackedSince": "2026-08-09",
+      "status": "approved",
+      "aiReason": "AI判定: MOJ所管の公式会議体マスターとして承認"
+    },
+    {
+      "id": "moj-1173",
+      "name": "法制審議会概要",
+      "ministry": "MOJ",
+      "category": "COUNCIL",
+      "officialUrl": "https://www.moj.go.jp/shingi1/shingi03500004.html",
+      "sourcePageUrl": "https://www.moj.go.jp/shingi1/shingi03500004.html",
       "trackedSince": "2026-08-09",
       "status": "approved",
       "aiReason": "AI判定: MOJ所管の公式会議体マスターとして承認"
@@ -214179,6 +216941,83 @@
       "trackedSince": "2026-08-09",
       "status": "approved",
       "aiReason": "AI判定: RINYA所管の公式会議体マスターとして承認"
+    },
+    {
+      "id": "rinya-1292",
+      "name": "林野庁事業評価技術検討会",
+      "ministry": "RINYA",
+      "category": "STUDY",
+      "officialUrl": "https://www.rinya.maff.go.jp/j/kikaku/hyouka/gijyutu/index.html",
+      "sourcePageUrl": "https://www.rinya.maff.go.jp/j/kikaku/hyouka/gijyutu/index.html",
+      "trackedSince": "2026-08-09",
+      "status": "approved",
+      "aiReason": "AI判定: RINYA所管の公式会議体マスターとして承認"
+    },
+    {
+      "id": "rinya-1304",
+      "name": "水源林造成事業評価委員会",
+      "ministry": "RINYA",
+      "category": "COMMITTEE",
+      "officialUrl": "https://www.rinya.maff.go.jp/j/seibi/suigenrin/hyouka/index.html",
+      "sourcePageUrl": "https://www.rinya.maff.go.jp/j/seibi/suigenrin/hyouka/index.html",
+      "trackedSince": "2026-08-09",
+      "status": "approved",
+      "aiReason": "AI判定: RINYA所管の公式会議体マスターとして承認"
+    },
+    {
+      "id": "smea-1393",
+      "name": "“ちいさな企業”発展会議",
+      "ministry": "SMEA",
+      "category": "COUNCIL",
+      "officialUrl": "https://www.chusho.meti.go.jp/seicho/schedule.html",
+      "sourcePageUrl": "https://www.chusho.meti.go.jp/seicho/schedule.html",
+      "trackedSince": "2026-08-09",
+      "status": "approved",
+      "aiReason": "AI判定: SMEA所管の公式会議体マスターとして承認"
+    },
+    {
+      "id": "smea-smart-sme-kenkyukai",
+      "name": "スマートSME(中小企業)研究会",
+      "ministry": "SMEA",
+      "category": "STUDY",
+      "officialUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/index.html#smartsme",
+      "sourcePageUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/index.html#smartsme",
+      "trackedSince": "2026-08-09",
+      "status": "approved",
+      "aiReason": "AI判定: SMEA所管の公式会議体マスターとして承認"
+    },
+    {
+      "id": "smea-1616",
+      "name": "中小企業における個人保証等の在り方研究会",
+      "ministry": "SMEA",
+      "category": "STUDY",
+      "officialUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/kojinhosho/index.html",
+      "sourcePageUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/kojinhosho/index.html",
+      "trackedSince": "2026-08-09",
+      "status": "approved",
+      "aiReason": "AI判定: SMEA所管の公式会議体マスターとして承認"
+    },
+    {
+      "id": "smea-1620",
+      "name": "“日本の未来”応援会議～小さな企業が日本を変える～(“ちいさな企業”)未来会議",
+      "ministry": "SMEA",
+      "category": "COUNCIL",
+      "officialUrl": "https://www.chusho.meti.go.jp/miraikaigi/index.html",
+      "sourcePageUrl": "https://www.chusho.meti.go.jp/miraikaigi/index.html",
+      "trackedSince": "2026-08-09",
+      "status": "approved",
+      "aiReason": "AI判定: SMEA所管の公式会議体マスターとして承認"
+    },
+    {
+      "id": "smea-1658",
+      "name": "中小企業金融の多様化と円滑化に向けた具体策に関する研究会",
+      "ministry": "SMEA",
+      "category": "STUDY",
+      "officialUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/kenkyu/2003/030509kinyu_tayouka.html",
+      "sourcePageUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/kenkyu/2003/030509kinyu_tayouka.html",
+      "trackedSince": "2026-08-09",
+      "status": "approved",
+      "aiReason": "AI判定: SMEA所管の公式会議体マスターとして承認"
     },
     {
       "id": "mhlw-781",
@@ -214665,6 +217504,17 @@
       "aiReason": "AI判定: METI所管の公式会議体マスターとして承認"
     },
     {
+      "id": "meti-1710",
+      "name": "CCS長期ロードマップ検討会",
+      "ministry": "METI",
+      "category": "STUDY",
+      "officialUrl": "https://www.meti.go.jp/shingikai/energy_environment/ccs_choki_roadmap/index.html",
+      "sourcePageUrl": "https://www.meti.go.jp/shingikai/energy_environment/ccs_choki_roadmap/index.html",
+      "trackedSince": "2026-08-11",
+      "status": "approved",
+      "aiReason": "AI判定: METI所管の公式会議体マスターとして承認"
+    },
+    {
       "id": "meti-1711",
       "name": "ネガティブエミッション市場創出に向けた検討会",
       "ministry": "METI",
@@ -214698,6 +217548,17 @@
       "aiReason": "AI判定: METI所管の公式会議体マスターとして承認"
     },
     {
+      "id": "meti-1714",
+      "name": "2050年カーボンニュートラルに向けた若手有識者研究会",
+      "ministry": "METI",
+      "category": "STUDY",
+      "officialUrl": "https://www.meti.go.jp/shingikai/energy_environment/2050_carbon_neutral/index.html",
+      "sourcePageUrl": "https://www.meti.go.jp/shingikai/energy_environment/2050_carbon_neutral/index.html",
+      "trackedSince": "2026-08-11",
+      "status": "approved",
+      "aiReason": "AI判定: METI所管の公式会議体マスターとして承認"
+    },
+    {
       "id": "meti-1715",
       "name": "GX実現に向けた排出量取引制度の検討に資する法的課題研究会",
       "ministry": "METI",
@@ -214709,12 +217570,34 @@
       "aiReason": "AI判定: METI所管の公式会議体マスターとして承認"
     },
     {
+      "id": "meti-1716",
+      "name": "GX実現に向けたカーボンフットプリント活⽤に関する研究会",
+      "ministry": "METI",
+      "category": "STUDY",
+      "officialUrl": "https://www.meti.go.jp/shingikai/energy_environment/gx_carbon_footprint/index.html",
+      "sourcePageUrl": "https://www.meti.go.jp/shingikai/energy_environment/gx_carbon_footprint/index.html",
+      "trackedSince": "2026-08-11",
+      "status": "approved",
+      "aiReason": "AI判定: METI所管の公式会議体マスターとして承認"
+    },
+    {
       "id": "meti-1717",
       "name": "GXリーグにおけるサプライチェーンでの取組のあり方に関する研究会",
       "ministry": "METI",
       "category": "STUDY",
       "officialUrl": "https://www.meti.go.jp/shingikai/energy_environment/gx_league/index.html",
       "sourcePageUrl": "https://www.meti.go.jp/shingikai/energy_environment/gx_league/index.html",
+      "trackedSince": "2026-08-11",
+      "status": "approved",
+      "aiReason": "AI判定: METI所管の公式会議体マスターとして承認"
+    },
+    {
+      "id": "meti-1718",
+      "name": "サプライチェーン全体でのカーボンニュートラルに向けたカーボンフットプリントの算定・検証等に関する検討会",
+      "ministry": "METI",
+      "category": "STUDY",
+      "officialUrl": "https://www.meti.go.jp/shingikai/energy_environment/carbon_footprint/index.html",
+      "sourcePageUrl": "https://www.meti.go.jp/shingikai/energy_environment/carbon_footprint/index.html",
       "trackedSince": "2026-08-11",
       "status": "approved",
       "aiReason": "AI判定: METI所管の公式会議体マスターとして承認"
@@ -214891,6 +217774,17 @@
       "category": "STUDY",
       "officialUrl": "https://www.meti.go.jp/shingikai/energy_environment/",
       "sourcePageUrl": "https://www.meti.go.jp/shingikai/energy_environment/",
+      "trackedSince": "2026-08-18",
+      "status": "approved",
+      "aiReason": "AI判定: ANRE所管の公式会議体マスターとして承認"
+    },
+    {
+      "id": "anre-1745",
+      "name": "審議会・研究会",
+      "ministry": "ANRE",
+      "category": "STUDY",
+      "officialUrl": "https://www.meti.go.jp/shingikai/index.html",
+      "sourcePageUrl": "https://www.meti.go.jp/shingikai/index.html",
       "trackedSince": "2026-08-18",
       "status": "approved",
       "aiReason": "AI判定: ANRE所管の公式会議体マスターとして承認"
@@ -215424,6 +218318,61 @@
       "aiReason": "AI判定: FSC所管の公式会議体マスターとして承認"
     },
     {
+      "id": "jfa-2174",
+      "name": "審議会",
+      "ministry": "JFA",
+      "category": "COUNCIL",
+      "officialUrl": "https://www.jfa.maff.go.jp/j/council/index.html",
+      "sourcePageUrl": "https://www.jfa.maff.go.jp/j/council/index.html",
+      "trackedSince": "2026-08-18",
+      "status": "approved",
+      "aiReason": "AI判定: JFA所管の公式会議体マスターとして承認"
+    },
+    {
+      "id": "jfa-2177",
+      "name": "独立行政法人評価委員会 水産分科会",
+      "ministry": "JFA",
+      "category": "SUBCOMMITTEE",
+      "officialUrl": "https://warp.ndl.go.jp/web/20190402000000/www.jfa.maff.go.jp/j/council/dokuho/index.html",
+      "sourcePageUrl": "https://warp.ndl.go.jp/web/20190402000000/www.jfa.maff.go.jp/j/council/dokuho/index.html",
+      "trackedSince": "2026-08-18",
+      "status": "approved",
+      "aiReason": "AI判定: JFA所管の公式会議体マスターとして承認"
+    },
+    {
+      "id": "jfa-2182",
+      "name": "水産業の成長産業化を推進するための試験・研究等を効果的に実施するための国立研究開発法人 水産研究・教育機構の研究体制のあり方に関する検討会",
+      "ministry": "JFA",
+      "category": "STUDY",
+      "officialUrl": "https://www.jfa.maff.go.jp/j/study/kenkyusidoka/kikoarikata.html",
+      "sourcePageUrl": "https://www.jfa.maff.go.jp/j/study/kenkyusidoka/kikoarikata.html",
+      "trackedSince": "2026-08-18",
+      "status": "approved",
+      "aiReason": "AI判定: JFA所管の公式会議体マスターとして承認"
+    },
+    {
+      "id": "jfa-2188",
+      "name": "新たな生活様式に対応した水産物消費拡大検討会",
+      "ministry": "JFA",
+      "category": "STUDY",
+      "officialUrl": "https://www.jfa.maff.go.jp/j/study/syouhi_kakudai.html",
+      "sourcePageUrl": "https://www.jfa.maff.go.jp/j/study/syouhi_kakudai.html",
+      "trackedSince": "2026-08-18",
+      "status": "approved",
+      "aiReason": "AI判定: JFA所管の公式会議体マスターとして承認"
+    },
+    {
+      "id": "jfa-2191",
+      "name": "第8次栽培漁業基本方針検討会",
+      "ministry": "JFA",
+      "category": "STUDY",
+      "officialUrl": "https://www.jfa.maff.go.jp/j/study/saibai8_kentokai.html",
+      "sourcePageUrl": "https://www.jfa.maff.go.jp/j/study/saibai8_kentokai.html",
+      "trackedSince": "2026-08-18",
+      "status": "approved",
+      "aiReason": "AI判定: JFA所管の公式会議体マスターとして承認"
+    },
+    {
       "id": "jsa-2227",
       "name": "都道府県・指定都市スポーツ主管課長会議",
       "ministry": "JSA",
@@ -215433,6 +218382,50 @@
       "trackedSince": "2026-08-18",
       "status": "approved",
       "aiReason": "AI判定: JSA所管の公式会議体マスターとして承認"
+    },
+    {
+      "id": "maff-2236",
+      "name": "審議会",
+      "ministry": "MAFF",
+      "category": "COUNCIL",
+      "officialUrl": "https://www.maff.go.jp/j/council/index.html",
+      "sourcePageUrl": "https://www.maff.go.jp/j/council/index.html",
+      "trackedSince": "2026-08-18",
+      "status": "approved",
+      "aiReason": "AI判定: MAFF所管の公式会議体マスターとして承認"
+    },
+    {
+      "id": "maff-2269",
+      "name": "養鶏・鶏卵行政に関する検証委員会",
+      "ministry": "MAFF",
+      "category": "COMMITTEE",
+      "officialUrl": "https://www.maff.go.jp/j/study/kensyouiinnkai/index.html",
+      "sourcePageUrl": "https://www.maff.go.jp/j/study/kensyouiinnkai/index.html",
+      "trackedSince": "2026-08-18",
+      "status": "approved",
+      "aiReason": "AI判定: MAFF所管の公式会議体マスターとして承認"
+    },
+    {
+      "id": "maff-2282",
+      "name": "植物新品種の保護・活用に関する懇談会［外部リンク］",
+      "ministry": "MAFF",
+      "category": "STUDY",
+      "officialUrl": "https://warp.ndl.go.jp/web/20161014000000/www.maff.go.jp/j/study/shokbutu_hogo/index.html",
+      "sourcePageUrl": "https://warp.ndl.go.jp/web/20161014000000/www.maff.go.jp/j/study/shokbutu_hogo/index.html",
+      "trackedSince": "2026-08-18",
+      "status": "approved",
+      "aiReason": "AI判定: MAFF所管の公式会議体マスターとして承認"
+    },
+    {
+      "id": "maff-2288",
+      "name": "収入保険制度の検討等に関する有識者会議（外部リンク）",
+      "ministry": "MAFF",
+      "category": "COUNCIL",
+      "officialUrl": "https://warp.ndl.go.jp/web/20171022000000/www.maff.go.jp/j/study/syunyu_kento/syunyu_kento.html",
+      "sourcePageUrl": "https://warp.ndl.go.jp/web/20171022000000/www.maff.go.jp/j/study/syunyu_kento/syunyu_kento.html",
+      "trackedSince": "2026-08-18",
+      "status": "approved",
+      "aiReason": "AI判定: MAFF所管の公式会議体マスターとして承認"
     },
     {
       "id": "mhlw-2316",
@@ -215466,6 +218459,50 @@
       "trackedSince": "2026-08-18",
       "status": "approved",
       "aiReason": "AI判定: MHLW所管の公式会議体マスターとして承認"
+    },
+    {
+      "id": "mlit-2642",
+      "name": "企画・モニタリング専門委員会",
+      "ministry": "MLIT",
+      "category": "COMMITTEE",
+      "officialUrl": "https://www.mlit.go.jp/policy/shingikai/shingikaiList.html",
+      "sourcePageUrl": "https://www.mlit.go.jp/policy/shingikai/shingikaiList.html",
+      "trackedSince": "2026-08-18",
+      "status": "approved",
+      "aiReason": "AI判定: MLIT所管の公式会議体マスターとして承認"
+    },
+    {
+      "id": "mlit-2644",
+      "name": "国土審議会　北海道開発分科会　計画推進部会",
+      "ministry": "MLIT",
+      "category": "SECTION",
+      "officialUrl": "https://www.mlit.go.jp/policy/shingikai/shingikaiList.html",
+      "sourcePageUrl": "https://www.mlit.go.jp/policy/shingikai/shingikaiList.html",
+      "trackedSince": "2026-08-18",
+      "status": "approved",
+      "aiReason": "AI判定: MLIT所管の公式会議体マスターとして承認"
+    },
+    {
+      "id": "mlit-2645",
+      "name": "技術安全ワーキンググループ",
+      "ministry": "MLIT",
+      "category": "WORKING_GROUP",
+      "officialUrl": "https://www.mlit.go.jp/policy/shingikai/shingikaiList.html",
+      "sourcePageUrl": "https://www.mlit.go.jp/policy/shingikai/shingikaiList.html",
+      "trackedSince": "2026-08-18",
+      "status": "approved",
+      "aiReason": "AI判定: MLIT所管の公式会議体マスターとして承認"
+    },
+    {
+      "id": "mof-2716",
+      "name": "審議会・研究会",
+      "ministry": "MOF",
+      "category": "STUDY",
+      "officialUrl": "https://www.mof.go.jp/about_mof/councils/index.htm",
+      "sourcePageUrl": "https://www.mof.go.jp/about_mof/councils/index.htm",
+      "trackedSince": "2026-08-18",
+      "status": "approved",
+      "aiReason": "AI判定: MOF所管の公式会議体マスターとして承認"
     },
     {
       "id": "mof-2717",
@@ -215512,6 +218549,61 @@
       "aiReason": "AI判定: MOF所管の公式会議体マスターとして承認"
     },
     {
+      "id": "mof-2724",
+      "name": "財政融資資金の貸付金の証券化等についての検討会【国立国会図書館へリンク】",
+      "ministry": "MOF",
+      "category": "STUDY",
+      "officialUrl": "https://warp.ndl.go.jp/web/20190106000000/www.mof.go.jp/about_mof/councils/shoukenka/index.html",
+      "sourcePageUrl": "https://warp.ndl.go.jp/web/20190106000000/www.mof.go.jp/about_mof/councils/shoukenka/index.html",
+      "trackedSince": "2026-08-18",
+      "status": "approved",
+      "aiReason": "AI判定: MOF所管の公式会議体マスターとして承認"
+    },
+    {
+      "id": "moj-2735",
+      "name": "国際連合犯罪防止刑事司法会議（京都コングレス）",
+      "ministry": "MOJ",
+      "category": "COUNCIL",
+      "officialUrl": "https://www.moj.go.jp/shingikai_index.html",
+      "sourcePageUrl": "https://www.moj.go.jp/shingikai_index.html",
+      "trackedSince": "2026-08-18",
+      "status": "approved",
+      "aiReason": "AI判定: MOJ所管の公式会議体マスターとして承認"
+    },
+    {
+      "id": "moj-2737",
+      "name": "審議会",
+      "ministry": "MOJ",
+      "category": "COUNCIL",
+      "officialUrl": "https://www.moj.go.jp/shingikai_index.html",
+      "sourcePageUrl": "https://www.moj.go.jp/shingikai_index.html",
+      "trackedSince": "2026-08-18",
+      "status": "approved",
+      "aiReason": "AI判定: MOJ所管の公式会議体マスターとして承認"
+    },
+    {
+      "id": "moj-2742",
+      "name": "検討会等",
+      "ministry": "MOJ",
+      "category": "STUDY",
+      "officialUrl": "https://www.moj.go.jp/kentoukai_index.html",
+      "sourcePageUrl": "https://www.moj.go.jp/kentoukai_index.html",
+      "trackedSince": "2026-08-18",
+      "status": "approved",
+      "aiReason": "AI判定: MOJ所管の公式会議体マスターとして承認"
+    },
+    {
+      "id": "nra-2770",
+      "name": "審議会等",
+      "ministry": "NRA",
+      "category": "COUNCIL",
+      "officialUrl": "https://www.da.nra.go.jp/search?fuse=1&f.gi=M003_004&f.gi=M003_005&f.gi=M003_006&f.gi=M003_007&f.gi=M003_008&f.gi=M003_009&f.gi=M003_010&f.gi=M003_011&f.gi=M003_012&f.gi=M003_194&f.gi=M003_195",
+      "sourcePageUrl": "https://www.da.nra.go.jp/search?fuse=1&f.gi=M003_004&f.gi=M003_005&f.gi=M003_006&f.gi=M003_007&f.gi=M003_008&f.gi=M003_009&f.gi=M003_010&f.gi=M003_011&f.gi=M003_012&f.gi=M003_194&f.gi=M003_195",
+      "trackedSince": "2026-08-18",
+      "status": "approved",
+      "aiReason": "AI判定: NRA所管の公式会議体マスターとして承認"
+    },
+    {
       "id": "ppc-2830",
       "name": "個人情報保護委員会について",
       "ministry": "PPC",
@@ -215543,6 +218635,17 @@
       "trackedSince": "2026-08-18",
       "status": "approved",
       "aiReason": "AI判定: PPC所管の公式会議体マスターとして承認"
+    },
+    {
+      "id": "rinya-2840",
+      "name": "木材需給会議",
+      "ministry": "RINYA",
+      "category": "COUNCIL",
+      "officialUrl": "https://warp.ndl.go.jp/web/20240306000000/www.rinya.maff.go.jp/j/riyou/jyukyuu/index.html",
+      "sourcePageUrl": "https://warp.ndl.go.jp/web/20240306000000/www.rinya.maff.go.jp/j/riyou/jyukyuu/index.html",
+      "trackedSince": "2026-08-18",
+      "status": "approved",
+      "aiReason": "AI判定: RINYA所管の公式会議体マスターとして承認"
     },
     {
       "id": "jcrc-2171",
@@ -215611,6 +218714,28 @@
       "aiReason": "AI判定: SMEA所管の公式会議体マスターとして承認"
     },
     {
+      "id": "smea-local-zebra",
+      "name": "ローカル・ゼブラ・エコシステムの構築に向けた社会的インパクト評価の活用実践に関する研究会",
+      "ministry": "SMEA",
+      "category": "STUDY",
+      "officialUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/index.html#local_zebra",
+      "sourcePageUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/index.html#local_zebra",
+      "trackedSince": "2026-08-09",
+      "status": "approved",
+      "aiReason": "AI判定: SMEA所管の公式会議体マスターとして承認"
+    },
+    {
+      "id": "smea-chiiki-ecosystem",
+      "name": "地域の社会課題解決促進に向けたエコシステム研究会",
+      "ministry": "SMEA",
+      "category": "STUDY",
+      "officialUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/index.html#ecosystem",
+      "sourcePageUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/index.html#ecosystem",
+      "trackedSince": "2026-08-09",
+      "status": "approved",
+      "aiReason": "AI判定: SMEA所管の公式会議体マスターとして承認"
+    },
+    {
       "id": "smea-hatarakikata",
       "name": "働き方改革対応合同チーム",
       "ministry": "SMEA",
@@ -215622,12 +218747,298 @@
       "aiReason": "AI判定: SMEA所管の公式会議体マスターとして承認"
     },
     {
+      "id": "smea-kenjinkaigi",
+      "name": "価値創造企業に関する賢人会議",
+      "ministry": "SMEA",
+      "category": "STUDY",
+      "officialUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/index.html#kenjinkaigi",
+      "sourcePageUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/index.html#kenjinkaigi",
+      "trackedSince": "2026-08-09",
+      "status": "approved",
+      "aiReason": "AI判定: SMEA所管の公式会議体マスターとして承認"
+    },
+    {
+      "id": "smea-chizaitorihiki-wg",
+      "name": "知的財産取引適正化ワーキンググループ",
+      "ministry": "SMEA",
+      "category": "WORKING_GROUP",
+      "officialUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/index.html#chizaitorihiki_wg",
+      "sourcePageUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/index.html#chizaitorihiki_wg",
+      "trackedSince": "2026-08-09",
+      "status": "approved",
+      "aiReason": "AI判定: SMEA所管の公式会議体マスターとして承認"
+    },
+    {
+      "id": "smea-kigyo-torihiki",
+      "name": "企業取引研究会",
+      "ministry": "SMEA",
+      "category": "STUDY",
+      "officialUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/index.html#kigyo_torihiki",
+      "sourcePageUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/index.html#kigyo_torihiki",
+      "trackedSince": "2026-08-09",
+      "status": "approved",
+      "aiReason": "AI判定: SMEA所管の公式会議体マスターとして承認"
+    },
+    {
+      "id": "smea-shiharaikaizen",
+      "name": "約束手形をはじめとする支払条件の改善に向けた検討会",
+      "ministry": "SMEA",
+      "category": "STUDY",
+      "officialUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/index.html#shiharaikaizen",
+      "sourcePageUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/index.html#shiharaikaizen",
+      "trackedSince": "2026-08-09",
+      "status": "approved",
+      "aiReason": "AI判定: SMEA所管の公式会議体マスターとして承認"
+    },
+    {
+      "id": "smea-chizaitorihiki",
+      "name": "知的財産取引検討会",
+      "ministry": "SMEA",
+      "category": "STUDY",
+      "officialUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/index.html#chizaitorihiki",
+      "sourcePageUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/index.html#chizaitorihiki",
+      "trackedSince": "2026-08-09",
+      "status": "approved",
+      "aiReason": "AI判定: SMEA所管の公式会議体マスターとして承認"
+    },
+    {
       "id": "smea-katatorihiki",
       "name": "型取引の適正化推進協議会",
       "ministry": "SMEA",
       "category": "STUDY",
       "officialUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/index.html#katatorihiki",
       "sourcePageUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/index.html#katatorihiki",
+      "trackedSince": "2026-08-09",
+      "status": "approved",
+      "aiReason": "AI判定: SMEA所管の公式会議体マスターとして承認"
+    },
+    {
+      "id": "smea-yorozu",
+      "name": "地域の経営支援力強化に向けたよろず支援拠点のあり方検討会",
+      "ministry": "SMEA",
+      "category": "STUDY",
+      "officialUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/index.html#yorozu",
+      "sourcePageUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/index.html#yorozu",
+      "trackedSince": "2026-08-09",
+      "status": "approved",
+      "aiReason": "AI判定: SMEA所管の公式会議体マスターとして承認"
+    },
+    {
+      "id": "smea-jigyo-kyodo",
+      "name": "事業協同組合等の余裕金運用に関する検討会",
+      "ministry": "SMEA",
+      "category": "STUDY",
+      "officialUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/index.html#jigyo_kyodo",
+      "sourcePageUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/index.html#jigyo_kyodo",
+      "trackedSince": "2026-08-09",
+      "status": "approved",
+      "aiReason": "AI判定: SMEA所管の公式会議体マスターとして承認"
+    },
+    {
+      "id": "smea-shokibo-jinzai-management",
+      "name": "中小企業・小規模事業者の人材マネジメントに関する研究会",
+      "ministry": "SMEA",
+      "category": "STUDY",
+      "officialUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/index.html#shokibo_jinzai_management",
+      "sourcePageUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/index.html#shokibo_jinzai_management",
+      "trackedSince": "2026-08-09",
+      "status": "approved",
+      "aiReason": "AI判定: SMEA所管の公式会議体マスターとして承認"
+    },
+    {
+      "id": "smea-shokibo-jinzai",
+      "name": "中小企業・小規模事業者の人材戦略に関する有識者検討会",
+      "ministry": "SMEA",
+      "category": "STUDY",
+      "officialUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/index.html#shokibo_jinzai",
+      "sourcePageUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/index.html#shokibo_jinzai",
+      "trackedSince": "2026-08-09",
+      "status": "approved",
+      "aiReason": "AI判定: SMEA所管の公式会議体マスターとして承認"
+    },
+    {
+      "id": "smea-data-rikatsuyou",
+      "name": "中小企業・小規模事業者のデータ利活用に関する検討委員会",
+      "ministry": "SMEA",
+      "category": "STUDY",
+      "officialUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/index.html#DataRikatsuyou",
+      "sourcePageUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/index.html#DataRikatsuyou",
+      "trackedSince": "2026-08-09",
+      "status": "approved",
+      "aiReason": "AI判定: SMEA所管の公式会議体マスターとして承認"
+    },
+    {
+      "id": "smea-shokibo-kaseguchikara",
+      "name": "小規模事業者の「稼ぐ力」の強化に向けた諸課題に関する検討会",
+      "ministry": "SMEA",
+      "category": "STUDY",
+      "officialUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/index.html#shokibo_kaseguchikara",
+      "sourcePageUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/index.html#shokibo_kaseguchikara",
+      "trackedSince": "2026-08-09",
+      "status": "approved",
+      "aiReason": "AI判定: SMEA所管の公式会議体マスターとして承認"
+    },
+    {
+      "id": "smea-shigenshuyaku",
+      "name": "中小企業の経営資源集約化等に関する検討会",
+      "ministry": "SMEA",
+      "category": "STUDY",
+      "officialUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/index.html#shigenshuyaku",
+      "sourcePageUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/index.html#shigenshuyaku",
+      "trackedSince": "2026-08-09",
+      "status": "approved",
+      "aiReason": "AI判定: SMEA所管の公式会議体マスターとして承認"
+    },
+    {
+      "id": "smea-shokei-ma",
+      "name": "中小企業の事業承継・M&Aに関する検討会",
+      "ministry": "SMEA",
+      "category": "STUDY",
+      "officialUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/index.html#shokei_ma",
+      "sourcePageUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/index.html#shokei_ma",
+      "trackedSince": "2026-08-09",
+      "status": "approved",
+      "aiReason": "AI判定: SMEA所管の公式会議体マスターとして承認"
+    },
+    {
+      "id": "smea-shinzoku",
+      "name": "中小企業の親族内承継に関する検討会",
+      "ministry": "SMEA",
+      "category": "STUDY",
+      "officialUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/index.html#shinzoku",
+      "sourcePageUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/index.html#shinzoku",
+      "trackedSince": "2026-08-09",
+      "status": "approved",
+      "aiReason": "AI判定: SMEA所管の公式会議体マスターとして承認"
+    },
+    {
+      "id": "smea-ma-shijou",
+      "name": "中小M&A市場の改革に向けた検討会",
+      "ministry": "SMEA",
+      "category": "STUDY",
+      "officialUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/index.html#ma_shijou",
+      "sourcePageUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/index.html#ma_shijou",
+      "trackedSince": "2026-08-09",
+      "status": "approved",
+      "aiReason": "AI判定: SMEA所管の公式会議体マスターとして承認"
+    },
+    {
+      "id": "smea-ma-guideline",
+      "name": "中小M&Aガイドライン見直し検討小委員会",
+      "ministry": "SMEA",
+      "category": "WORKING_GROUP",
+      "officialUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/index.html#ma_guideline",
+      "sourcePageUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/index.html#ma_guideline",
+      "trackedSince": "2026-08-09",
+      "status": "approved",
+      "aiReason": "AI判定: SMEA所管の公式会議体マスターとして承認"
+    },
+    {
+      "id": "smea-hikitugigl",
+      "name": "「事業引継ぎガイドライン」改訂検討会",
+      "ministry": "SMEA",
+      "category": "STUDY",
+      "officialUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/index.html#hikitugigl",
+      "sourcePageUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/index.html#hikitugigl",
+      "trackedSince": "2026-08-09",
+      "status": "approved",
+      "aiReason": "AI判定: SMEA所管の公式会議体マスターとして承認"
+    },
+    {
+      "id": "smea-innovation-produce-suishin",
+      "name": "イノベーション・プロデュース推進会議",
+      "ministry": "SMEA",
+      "category": "STUDY",
+      "officialUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/index.html#innovation_produce_suishin",
+      "sourcePageUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/index.html#innovation_produce_suishin",
+      "trackedSince": "2026-08-09",
+      "status": "approved",
+      "aiReason": "AI判定: SMEA所管の公式会議体マスターとして承認"
+    },
+    {
+      "id": "smea-innovation-producer",
+      "name": "イノベーション・プロデューサーガイドライン策定委員会",
+      "ministry": "SMEA",
+      "category": "STUDY",
+      "officialUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/index.html#innovation_producer",
+      "sourcePageUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/index.html#innovation_producer",
+      "trackedSince": "2026-08-09",
+      "status": "approved",
+      "aiReason": "AI判定: SMEA所管の公式会議体マスターとして承認"
+    },
+    {
+      "id": "smea-seicho-innovation",
+      "name": "中小企業の成長のためのイノベーション研究会",
+      "ministry": "SMEA",
+      "category": "STUDY",
+      "officialUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/index.html#seicho_innovation",
+      "sourcePageUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/index.html#seicho_innovation",
+      "trackedSince": "2026-08-09",
+      "status": "approved",
+      "aiReason": "AI判定: SMEA所管の公式会議体マスターとして承認"
+    },
+    {
+      "id": "smea-innovation",
+      "name": "中小企業のイノベーションの在り方に関する有識者検討会",
+      "ministry": "SMEA",
+      "category": "STUDY",
+      "officialUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/index.html#innovation",
+      "sourcePageUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/index.html#innovation",
+      "trackedSince": "2026-08-09",
+      "status": "approved",
+      "aiReason": "AI判定: SMEA所管の公式会議体マスターとして承認"
+    },
+    {
+      "id": "smea-sbir",
+      "name": "日本版ＳＢＩＲ制度の見直しに向けた検討会",
+      "ministry": "SMEA",
+      "category": "STUDY",
+      "officialUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/index.html#sbir",
+      "sourcePageUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/index.html#sbir",
+      "trackedSince": "2026-08-09",
+      "status": "approved",
+      "aiReason": "AI判定: SMEA所管の公式会議体マスターとして承認"
+    },
+    {
+      "id": "smea-kyoujin",
+      "name": "中小企業強靱化研究会",
+      "ministry": "SMEA",
+      "category": "STUDY",
+      "officialUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/index.html#kyoujin",
+      "sourcePageUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/index.html#kyoujin",
+      "trackedSince": "2026-08-09",
+      "status": "approved",
+      "aiReason": "AI判定: SMEA所管の公式会議体マスターとして承認"
+    },
+    {
+      "id": "smea-businessmodel-syokoutyukin",
+      "name": "新たなビジネスモデルを踏まえた商工中金の在り方検討会",
+      "ministry": "SMEA",
+      "category": "STUDY",
+      "officialUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/index.html#businessmodel_syokoutyukin",
+      "sourcePageUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/index.html#businessmodel_syokoutyukin",
+      "trackedSince": "2026-08-09",
+      "status": "approved",
+      "aiReason": "AI判定: SMEA所管の公式会議体マスターとして承認"
+    },
+    {
+      "id": "smea-syokoutyukinkikitaiou",
+      "name": "商工中金の経営及び危機対応業務に関する評価委員会",
+      "ministry": "SMEA",
+      "category": "STUDY",
+      "officialUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/index.html#syokoutyukinkikitaiou",
+      "sourcePageUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/index.html#syokoutyukinkikitaiou",
+      "trackedSince": "2026-08-09",
+      "status": "approved",
+      "aiReason": "AI判定: SMEA所管の公式会議体マスターとして承認"
+    },
+    {
+      "id": "smea-syokoutyukinarikata",
+      "name": "商工中金の在り方検討会",
+      "ministry": "SMEA",
+      "category": "STUDY",
+      "officialUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/index.html#syokoutyukinarikata",
+      "sourcePageUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/index.html#syokoutyukinarikata",
       "trackedSince": "2026-08-09",
       "status": "approved",
       "aiReason": "AI判定: SMEA所管の公式会議体マスターとして承認"
@@ -215732,6 +219143,17 @@
       "aiReason": "AI判定: MLIT所管の公式会議体マスターとして承認"
     },
     {
+      "id": "smea-bansou-shien",
+      "name": "伴走支援の在り方検討会",
+      "ministry": "SMEA",
+      "category": "STUDY",
+      "officialUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/index.html#bansou",
+      "sourcePageUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/index.html#bansou",
+      "trackedSince": "2026-08-09",
+      "status": "approved",
+      "aiReason": "AI判定: SMEA所管の公式会議体マスターとして承認"
+    },
+    {
       "id": "cas-keizai-anzen-hosyo",
       "name": "経済安全保障法制に関する有識者会議",
       "ministry": "CAS",
@@ -215741,6 +219163,105 @@
       "trackedSince": "2026-08-09",
       "status": "approved",
       "aiReason": "AI判定: CAS所管の公式会議体マスターとして承認"
+    },
+    {
+      "id": "cas-2841",
+      "name": "経済安全保障法制に関する有識者会議",
+      "ministry": "CAS",
+      "category": "COUNCIL",
+      "officialUrl": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/4index.html",
+      "sourcePageUrl": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/4index.html",
+      "trackedSince": "2026-08-28",
+      "status": "approved",
+      "aiReason": "AI判定: CAS所管の公式会議体マスターとして承認"
+    },
+    {
+      "id": "fsa-2844",
+      "name": "コーポレートガバナンス・コードの改訂に関する有識者会議",
+      "ministry": "FSA",
+      "category": "COUNCIL",
+      "officialUrl": "https://www.fsa.go.jp/singi/revision_corporategovernance/index.html",
+      "sourcePageUrl": "https://www.fsa.go.jp/singi/revision_corporategovernance/index.html",
+      "trackedSince": "2026-08-28",
+      "status": "approved",
+      "aiReason": "AI判定: FSA所管の公式会議体マスターとして承認"
+    },
+    {
+      "id": "jsa-2846",
+      "name": "都道府県・指定都市スポーツ主管課長会議",
+      "ministry": "JSA",
+      "category": "COUNCIL",
+      "officialUrl": "https://www.mext.go.jp/sports/b_menu/shingi/index.htm",
+      "sourcePageUrl": "https://www.mext.go.jp/sports/b_menu/shingi/index.htm",
+      "trackedSince": "2026-08-28",
+      "status": "approved",
+      "aiReason": "AI判定: JSA所管の公式会議体マスターとして承認"
+    },
+    {
+      "id": "jsa-2849",
+      "name": "運動・スポーツガイドライン（仮称）策定に向けた有識者会議",
+      "ministry": "JSA",
+      "category": "COUNCIL",
+      "officialUrl": "https://www.mext.go.jp/sports/b_menu/shingi/index.htm",
+      "sourcePageUrl": "https://www.mext.go.jp/sports/b_menu/shingi/index.htm",
+      "trackedSince": "2026-08-28",
+      "status": "approved",
+      "aiReason": "AI判定: JSA所管の公式会議体マスターとして承認"
+    },
+    {
+      "id": "mhlw-2852",
+      "name": "感染症・予防接種審査分科会 及び 感染症・予防接種審査分科会新型コロナウイルス感染症予防接種健康被害審査部会",
+      "ministry": "MHLW",
+      "category": "SECTION",
+      "officialUrl": "https://www.mhlw.go.jp/stf/shingi/shingi-shippei_127696_00006.html",
+      "sourcePageUrl": "https://www.mhlw.go.jp/stf/shingi/shingi-shippei_127696_00006.html",
+      "trackedSince": "2026-08-28",
+      "status": "approved",
+      "aiReason": "AI判定: MHLW所管の公式会議体マスターとして承認"
+    },
+    {
+      "id": "npa-2853",
+      "name": "匿名・流動型犯罪グループによる犯罪被害対策のための技術的措置に関する有識者検討会",
+      "ministry": "NPA",
+      "category": "STUDY",
+      "officialUrl": "https://www.npa.go.jp/bureau/soumu/kentoukai/shiryou.html",
+      "sourcePageUrl": "https://www.npa.go.jp/bureau/soumu/kentoukai/shiryou.html",
+      "trackedSince": "2026-08-28",
+      "status": "approved",
+      "aiReason": "AI判定: NPA所管の公式会議体マスターとして承認"
+    },
+    {
+      "id": "nta-2854",
+      "name": "税理士分科会（国税審議会）",
+      "ministry": "NTA",
+      "category": "SUBCOMMITTEE",
+      "officialUrl": "https://www.nta.go.jp/about/council/kenkyu.htm",
+      "sourcePageUrl": "https://www.nta.go.jp/about/council/kenkyu.htm",
+      "trackedSince": "2026-08-28",
+      "status": "approved",
+      "aiReason": "AI判定: NTA所管の公式会議体マスターとして承認"
+    },
+    {
+      "id": "nta-2882",
+      "name": "酒類販売業等に関する懇談会",
+      "ministry": "NTA",
+      "category": "STUDY",
+      "officialUrl": "https://www.nta.go.jp/about/council/kenkyu.htm#a05",
+      "sourcePageUrl": "https://www.nta.go.jp/about/council/kenkyu.htm#a05",
+      "trackedSince": "2026-08-28",
+      "status": "approved",
+      "aiReason": "AI判定: NTA所管の公式会議体マスターとして承認"
+    },
+    {
+      "id": "fsa-kinyu-bunkakai",
+      "name": "金融審議会 金融分科会",
+      "ministry": "FSA",
+      "category": "COUNCIL",
+      "officialUrl": "https://www.fsa.go.jp/singi/singi_kinyu/bunkakai/bunkakai_index.html",
+      "sourcePageUrl": "https://www.fsa.go.jp/singi/singi_kinyu/bunkakai/bunkakai_index.html",
+      "trackedSince": "2026-08-09",
+      "status": "approved",
+      "aiReason": "AI判定: FSA所管の公式会議体マスターとして承認"
     }
   ],
   "scrapingRules": {
@@ -219939,6 +223460,16 @@
       "ministryQuirk": "金融庁 会計監査の在り方に関する懇談会 サブページ巡回",
       "rules": {
         "subpage_discovery_pattern": "href=[\"\\']([^\"\\']*(?:kaikeikansanoarikata/\\d+|kaikeikansanoarikata/[^\"\\']+\\.html|\\d+kai|kaisai)[^\"\\'#]*)[\"\\']",
+        "date_regex": "(?:令和|平成)\\d+年\\d+月\\d+日|\\d{4}年\\d+月\\d+日|\\d{4}[/-]\\d+[/-]\\d+",
+        "pdf_selector": "href=[\"\\']([^\"\\']+\\.(?:pdf|txt))[\"\\']",
+        "deep_crawl_enabled": true
+      }
+    },
+    "fsa-kinyu-bunkakai": {
+      "rule_id": "rule-fsa-kinyu-bunkakai-v1",
+      "ministryQuirk": "金融庁 金融審議会 金融分科会 サブページ巡回",
+      "rules": {
+        "subpage_discovery_pattern": "href=[\"\\']([^\"\\']*(?:singi_kinyu/(?:soukai|bunkakai)/(?:siryou|gijiroku)/\\d+|news/r\\d+/singi/\\d+|\\d+kai|kaisai)[^\"\\'#]*)[\"\\']",
         "date_regex": "(?:令和|平成)\\d+年\\d+月\\d+日|\\d{4}年\\d+月\\d+日|\\d{4}[/-]\\d+[/-]\\d+",
         "pdf_selector": "href=[\"\\']([^\"\\']+\\.(?:pdf|txt))[\"\\']",
         "deep_crawl_enabled": true
