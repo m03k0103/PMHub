@@ -5385,13 +5385,14 @@
     },
     {
       "id": "mofa-gaiko-seisaku",
-      "name": "mofa-gaiko-seisaku",
+      "name": "外交政策に関する有識者懇談会",
       "ministry": "MOFA",
       "category": "COUNCIL",
-      "description": "mofa-gaiko-seisakuに関する調査審議・検討を行う。",
-      "officialUrl": "https://www.mofa.go.jp/mofaj/index.html",
+      "description": "国際情勢の変化を踏まえた中長期的な我が国の外交政策の方向性を議論する有識者懇談会。",
+      "officialUrl": "https://www.mofa.go.jp/mofaj/",
       "pastYearCount": 1,
-      "isWatched": true
+      "isWatched": true,
+      "manualLock": true
     },
     {
       "id": "mhlw-rousei-anzeneisei-147",
@@ -5605,43 +5606,47 @@
     },
     {
       "id": "ra-000815-79",
-      "name": "ra-000815-79",
+      "name": "復興推進会議",
       "ministry": "RA",
       "category": "COUNCIL",
-      "description": "ra-000815-79に関する調査審議・検討を行う。",
+      "description": "東日本大震災からの復興に関する施策の円滑かつ総合的な推進を図る会議。",
       "officialUrl": "https://www.reconstruction.go.jp/topics/cat-11/cat-47/cat-158/000815/",
       "pastYearCount": 2,
-      "isWatched": true
+      "isWatched": true,
+      "manualLock": true
     },
     {
       "id": "cas-atarashii-sihon-107",
-      "name": "cas-atarashii-sihon-107",
+      "name": "新しい資本主義実現会議",
       "ministry": "CAS",
       "category": "COUNCIL",
-      "description": "cas-atarashii-sihon-107に関する調査審議・検討を行う。",
-      "officialUrl": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai37/gijisidai.html",
+      "description": "成長と分配の好循環を生み出す「新しい資本主義」の実現に向けたグランドデザイン及び実行計画を検討する会議。",
+      "officialUrl": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/index.html",
       "pastYearCount": 5,
-      "isWatched": true
+      "isWatched": true,
+      "manualLock": true
     },
     {
       "id": "cas-roumuhi-tenka-108",
-      "name": "cas-roumuhi-tenka-108",
+      "name": "新しい資本主義実現本部",
       "ministry": "CAS",
       "category": "COUNCIL",
-      "description": "cas-roumuhi-tenka-108に関する調査審議・検討を行う。",
-      "officialUrl": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/honbu/dai5/gijisidai.html",
-      "pastYearCount": 5,
-      "isWatched": true
+      "description": "新しい資本主義の実現に向けた施策の総合的かつ計画的な推進を図る内閣本部の会合。",
+      "officialUrl": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/index.html#honbu",
+      "pastYearCount": 4,
+      "isWatched": true,
+      "manualLock": true
     },
     {
       "id": "fsc-nouyaku-118",
-      "name": "fsc-nouyaku-118",
+      "name": "農薬専門調査会",
       "ministry": "CAO",
       "category": "COUNCIL",
-      "description": "fsc-nouyaku-118に関する調査審議・検討を行う。",
+      "description": "食品安全委員会における農薬の食品健康影響評価を行う専門調査会。",
       "officialUrl": "https://www.fsc.go.jp/senmon/nouyaku/nou_dai5_senmon_susa_index.html",
       "pastYearCount": 5,
-      "isWatched": true
+      "isWatched": true,
+      "manualLock": true
     },
     {
       "id": "cao-kisei-startup-wg-113",
@@ -36709,7 +36714,7 @@
       "councilName": "mofa-gaiko-seisaku",
       "ministry": "Unknown",
       "category": "COUNCIL",
-      "title": "第14回 mofa-gaiko-seisaku",
+      "title": "第14回 外交政策に関する有識者懇談会",
       "date": "2026/06/30",
       "updatedAt": "2026/06/30 17:00",
       "location": "外務省 南庁舎3階 特別会議室",
@@ -36729,7 +36734,8 @@
       ],
       "officialUrl": "https://www.mofa.go.jp/mofaj/index.html",
       "hasMinutes": true,
-      "docCount": 1
+      "docCount": 1,
+      "manualLock": true
     },
     {
       "id": "meet-2026-06-29-cao-kisei-kaikaku-dai28",
@@ -60081,7 +60087,7 @@
       "councilName": "ra-000815-79",
       "ministry": "Unknown",
       "category": "COUNCIL",
-      "title": "第44回 ra-000815-79",
+      "title": "第44回 復興推進会議",
       "date": "2025/11/18",
       "updatedAt": "2025/11/18 17:00",
       "location": "首相官邸 / 各府省庁本府庁舎",
@@ -60098,7 +60104,8 @@
       ],
       "officialUrl": "https://www.reconstruction.go.jp/topics/cat-11/cat-47/cat-158/000815/",
       "hasMinutes": false,
-      "docCount": 1
+      "docCount": 1,
+      "manualLock": true
     },
     {
       "id": "meet-2025-11-18-smea-kigyo-torihiki-r7-dai3",
@@ -61569,7 +61576,7 @@
       "councilName": "cas-atarashii-sihon-107",
       "ministry": "Unknown",
       "category": "COUNCIL",
-      "title": "第37回 cas-atarashii-sihon-107",
+      "title": "第37回 新しい資本主義実現会議",
       "date": "2025/10/03",
       "updatedAt": "2025/10/03 17:00",
       "location": "各省庁本府庁舎 / オンライン会議",
@@ -61650,7 +61657,8 @@
       ],
       "officialUrl": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai37/gijisidai.html",
       "hasMinutes": false,
-      "docCount": 10
+      "docCount": 10,
+      "manualLock": true
     },
     {
       "id": "meet-2025-10-02-smea-kigyo-torihiki-r7-dai2",
@@ -63851,7 +63859,7 @@
       "councilName": "cas-roumuhi-tenka-108",
       "ministry": "Unknown",
       "category": "COUNCIL",
-      "title": "第5回 cas-roumuhi-tenka-108",
+      "title": "第5回 新しい資本主義実現本部",
       "date": "2025/06/30",
       "updatedAt": "2025/06/30 17:00",
       "location": "各省庁本府庁舎 / オンライン会議",
@@ -63939,7 +63947,8 @@
       ],
       "officialUrl": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/honbu/dai5/gijisidai.html",
       "hasMinutes": false,
-      "docCount": 11
+      "docCount": 11,
+      "manualLock": true
     },
     {
       "id": "meet-2025-06-23-cas-zensedai-hosyo-dai21",
@@ -64913,7 +64922,7 @@
       "councilName": "cas-atarashii-sihon-107",
       "ministry": "Unknown",
       "category": "COUNCIL",
-      "title": "第5回 cas-atarashii-sihon-107",
+      "title": "第5回 新しい資本主義実現会議",
       "date": "2025/06/13",
       "updatedAt": "2025/06/13 17:00",
       "location": "総理大臣官邸 / 各府省庁本庁舎",
@@ -65002,7 +65011,8 @@
       ],
       "officialUrl": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/honbu/dai5/gijisidai.html",
       "hasMinutes": false,
-      "docCount": 10
+      "docCount": 10,
+      "manualLock": true
     },
     {
       "id": "meet-2025-06-13-ra-fukko-suishin-dai47",
@@ -65750,7 +65760,7 @@
       "councilName": "fsc-nouyaku-118",
       "ministry": "Unknown",
       "category": "COUNCIL",
-      "title": "第5回 fsc-nouyaku-118",
+      "title": "第5回 農薬専門調査会",
       "date": "2025/05/29",
       "updatedAt": "2025/05/29 17:00",
       "location": "総理大臣官邸 / 各府省庁本庁舎",
@@ -65767,7 +65777,8 @@
       ],
       "officialUrl": "https://www.fsc.go.jp/senmon/nouyaku/nou_dai5_senmon_susa_index.html",
       "hasMinutes": false,
-      "docCount": 0
+      "docCount": 0,
+      "manualLock": true
     },
     {
       "id": "meet-2025-05-27-mof-zaiseiseido-bunkakai",
@@ -68481,7 +68492,7 @@
       "councilName": "fsc-nouyaku-118",
       "ministry": "Unknown",
       "category": "COUNCIL",
-      "title": "第2回 fsc-nouyaku-118",
+      "title": "第2回 農薬専門調査会",
       "date": "2025/03/26",
       "updatedAt": "2025/03/26 17:00",
       "location": "総理大臣官邸 / 各府省庁本庁舎",
@@ -68498,7 +68509,8 @@
       ],
       "officialUrl": "https://www.fsc.go.jp/senmon/nouyaku/nou_dai2_senmon_susa_index.html",
       "hasMinutes": false,
-      "docCount": 0
+      "docCount": 0,
+      "manualLock": true
     },
     {
       "id": "meet-2025-03-24-nta-kokuzei-shingikai-dai28",
@@ -102719,96 +102731,6 @@
       "docCount": 14
     },
     {
-      "id": "meet-2024-06-21-cas-roumuhi-tenka-108",
-      "councilId": "cas-roumuhi-tenka-108",
-      "councilName": "cas-roumuhi-tenka-108",
-      "ministry": "Unknown",
-      "category": "COUNCIL",
-      "title": "第37回 cas-roumuhi-tenka-108",
-      "date": "2024/06/21",
-      "updatedAt": "2024/06/21 17:00",
-      "location": "総理大臣官邸 / 各府省庁本庁舎",
-      "summary": "cas-roumuhi-tenka-108の開催。主要議題の推進状況及び今後の対応方針について審議が行われた。",
-      "agenda": [
-        "経済の現状と課題（基礎資料）",
-        "新しい資本主義の実現に向けた主な取組と成果",
-        "川邊委員提出資料"
-      ],
-      "materials": [
-        {
-          "name": "議事次第 (PDF)",
-          "type": "PDF",
-          "size": "PDF",
-          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai37/shidai.pdf",
-          "isMinutes": false
-        },
-        {
-          "name": "経済の現状と課題（基礎資料） (PDF)",
-          "type": "PDF",
-          "size": "PDF",
-          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai37/shiryou1.pdf",
-          "isMinutes": false
-        },
-        {
-          "name": "新しい資本主義の実現に向けた主な取組と成果 (PDF)",
-          "type": "PDF",
-          "size": "PDF",
-          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai37/shiryou2.pdf",
-          "isMinutes": false
-        },
-        {
-          "name": "川邊委員提出資料 (PDF)",
-          "type": "PDF",
-          "size": "PDF",
-          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai37/shiryou3.pdf",
-          "isMinutes": false
-        },
-        {
-          "name": "小林委員提出資料 (PDF)",
-          "type": "PDF",
-          "size": "PDF",
-          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai37/shiryou4.pdf",
-          "isMinutes": false
-        },
-        {
-          "name": "澤田委員提出資料 (PDF)",
-          "type": "PDF",
-          "size": "PDF",
-          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai37/shiryou5.pdf",
-          "isMinutes": false
-        },
-        {
-          "name": "渋澤委員提出資料 (PDF)",
-          "type": "PDF",
-          "size": "PDF",
-          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai37/shiryou6.pdf",
-          "isMinutes": false
-        },
-        {
-          "name": "松尾委員提出資料 (PDF)",
-          "type": "PDF",
-          "size": "PDF",
-          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai37/shiryou7.pdf",
-          "isMinutes": false
-        },
-        {
-          "name": "村上委員提出資料 (PDF)",
-          "type": "PDF",
-          "size": "PDF",
-          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai37/shiryou8.pdf",
-          "isMinutes": false
-        }
-      ],
-      "tags": [
-        "cas-ro",
-        "Unknown",
-        "政策会議"
-      ],
-      "officialUrl": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai37/gijisidai.html",
-      "hasMinutes": false,
-      "docCount": 9
-    },
-    {
       "id": "meet-2024-06-21-cas-kokusentoc-24-dai65",
       "councilId": "cas-kokusentoc-24",
       "councilName": "国家戦略特別区域諮問会議",
@@ -102967,7 +102889,7 @@
       "councilName": "cas-atarashii-sihon-107",
       "ministry": "Unknown",
       "category": "COUNCIL",
-      "title": "第4回 cas-atarashii-sihon-107",
+      "title": "第4回 新しい資本主義実現会議",
       "date": "2024/06/21",
       "updatedAt": "2024/06/21 17:00",
       "location": "総理大臣官邸 / 各府省庁本庁舎",
@@ -102998,7 +102920,8 @@
       ],
       "officialUrl": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/honbu/dai4/gijisidai.html",
       "hasMinutes": false,
-      "docCount": 2
+      "docCount": 2,
+      "manualLock": true
     },
     {
       "id": "meet-2024-06-21-cas-roumuhi-tenka-108-dai4",
@@ -103006,7 +102929,7 @@
       "councilName": "cas-roumuhi-tenka-108",
       "ministry": "Unknown",
       "category": "COUNCIL",
-      "title": "第4回 cas-roumuhi-tenka-108",
+      "title": "第4回 新しい資本主義実現本部",
       "date": "2024/06/21",
       "updatedAt": "2024/06/21 17:00",
       "location": "総理大臣官邸 / 各府省庁本庁舎",
@@ -103037,7 +102960,8 @@
       ],
       "officialUrl": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/honbu/dai4/gijisidai.html",
       "hasMinutes": false,
-      "docCount": 2
+      "docCount": 2,
+      "manualLock": true
     },
     {
       "id": "meet-2024-06-20-mod-drastic-reinforcement",
@@ -115214,7 +115138,7 @@
       "councilName": "fsc-nouyaku-118",
       "ministry": "Unknown",
       "category": "COUNCIL",
-      "title": "第4回 fsc-nouyaku-118",
+      "title": "第4回 農薬専門調査会",
       "date": "2023/10/20",
       "updatedAt": "2023/10/20 17:00",
       "location": "総理大臣官邸 / 各府省庁本庁舎",
@@ -115231,7 +115155,8 @@
       ],
       "officialUrl": "https://www.fsc.go.jp/senmon/nouyaku/nou_dai4_senmon_susa_index.html",
       "hasMinutes": false,
-      "docCount": 0
+      "docCount": 0,
+      "manualLock": true
     },
     {
       "id": "meet-2023-10-20-cas-kyuyo-9",
@@ -125386,7 +125311,7 @@
       "councilName": "ra-000815-79",
       "ministry": "Unknown",
       "category": "COUNCIL",
-      "title": "復興推進会議",
+      "title": "第28回 復興推進会議",
       "date": "2023/03/22",
       "updatedAt": "2023/03/22 17:00",
       "location": "総理大臣官邸 / 各府省庁本庁舎",
@@ -125403,7 +125328,8 @@
       ],
       "officialUrl": "https://www.reconstruction.go.jp/topics/cat-11/cat-47/cat-158/000815/",
       "hasMinutes": false,
-      "docCount": 0
+      "docCount": 0,
+      "manualLock": true
     },
     {
       "id": "meet-2023-03-16-smea-shigenshuyaku-dai8",
@@ -141136,7 +141062,7 @@
       "councilName": "cas-atarashii-sihon-107",
       "ministry": "Unknown",
       "category": "COUNCIL",
-      "title": "第2回 cas-atarashii-sihon-107",
+      "title": "第2回 新しい資本主義実現会議",
       "date": "2022/06/07",
       "updatedAt": "2022/06/07 17:00",
       "location": "総理大臣官邸 / 各府省庁本庁舎",
@@ -141190,7 +141116,8 @@
       ],
       "officialUrl": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/honbu/dai2/shidai.pdf",
       "hasMinutes": false,
-      "docCount": 5
+      "docCount": 5,
+      "manualLock": true
     },
     {
       "id": "meet-2022-06-07-cas-atarashii-sihon-107-dai3",
@@ -141198,7 +141125,7 @@
       "councilName": "cas-atarashii-sihon-107",
       "ministry": "Unknown",
       "category": "COUNCIL",
-      "title": "第3回 cas-atarashii-sihon-107",
+      "title": "第3回 新しい資本主義実現会議",
       "date": "2022/06/07",
       "updatedAt": "2022/06/07 17:00",
       "location": "総理大臣官邸 / 各府省庁本庁舎",
@@ -141245,7 +141172,8 @@
       ],
       "officialUrl": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/honbu/dai3/shidai.pdf",
       "hasMinutes": false,
-      "docCount": 4
+      "docCount": 4,
+      "manualLock": true
     },
     {
       "id": "meet-2022-06-07-cas-roumuhi-tenka-108-dai2",
@@ -141253,7 +141181,7 @@
       "councilName": "cas-roumuhi-tenka-108",
       "ministry": "Unknown",
       "category": "COUNCIL",
-      "title": "第2回 cas-roumuhi-tenka-108",
+      "title": "第2回 新しい資本主義実現本部",
       "date": "2022/06/07",
       "updatedAt": "2022/06/07 17:00",
       "location": "総理大臣官邸 / 各府省庁本庁舎",
@@ -141307,7 +141235,8 @@
       ],
       "officialUrl": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/honbu/dai2/shidai.pdf",
       "hasMinutes": false,
-      "docCount": 5
+      "docCount": 5,
+      "manualLock": true
     },
     {
       "id": "meet-2022-06-07-cas-roumuhi-tenka-108-dai3",
@@ -141315,7 +141244,7 @@
       "councilName": "cas-roumuhi-tenka-108",
       "ministry": "Unknown",
       "category": "COUNCIL",
-      "title": "第3回 cas-roumuhi-tenka-108",
+      "title": "第3回 新しい資本主義実現本部",
       "date": "2022/06/07",
       "updatedAt": "2022/06/07 17:00",
       "location": "総理大臣官邸 / 各府省庁本庁舎",
@@ -141362,7 +141291,8 @@
       ],
       "officialUrl": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/honbu/dai3/shidai.pdf",
       "hasMinutes": false,
-      "docCount": 4
+      "docCount": 4,
+      "manualLock": true
     },
     {
       "id": "meet-2022-06-07-digital-suishin-s2",
@@ -145982,7 +145912,7 @@
       "councilName": "fsc-nouyaku-118",
       "ministry": "Unknown",
       "category": "COUNCIL",
-      "title": "第3回 fsc-nouyaku-118",
+      "title": "第3回 農薬専門調査会",
       "date": "2022/03/18",
       "updatedAt": "2022/03/18 17:00",
       "location": "総理大臣官邸 / 各府省庁本庁舎",
@@ -145999,7 +145929,8 @@
       ],
       "officialUrl": "https://www.fsc.go.jp/senmon/nouyaku/nou_dai3_senmon_susa_index.html",
       "hasMinutes": false,
-      "docCount": 0
+      "docCount": 0,
+      "manualLock": true
     },
     {
       "id": "meet-2022-03-17-nta-nihonsan-sake-brand-dai2",
@@ -178244,7 +178175,7 @@
       "councilName": "fsc-nouyaku-118",
       "ministry": "Unknown",
       "category": "COUNCIL",
-      "title": "第1回 fsc-nouyaku-118",
+      "title": "第1回 農薬専門調査会",
       "date": "2020/02/05",
       "updatedAt": "2020/02/05 17:00",
       "location": "総理大臣官邸 / 各府省庁本庁舎",
@@ -178261,7 +178192,8 @@
       ],
       "officialUrl": "https://www.fsc.go.jp/senmon/nouyaku/nou_dai1_senmon_susa_index.html",
       "hasMinutes": false,
-      "docCount": 0
+      "docCount": 0,
+      "manualLock": true
     },
     {
       "id": "meet-2020-02-05-fdma-kento-52-令和元年度-dai1",
@@ -212670,11 +212602,11 @@
     },
     {
       "id": "mofa-gaiko-seisaku",
-      "name": "mofa-gaiko-seisaku",
+      "name": "外交政策に関する有識者懇談会",
       "ministry": "MOFA",
       "category": "COUNCIL",
-      "officialUrl": "https://www.mofa.go.jp/mofaj/index.html",
-      "sourcePageUrl": "https://www.mofa.go.jp/mofaj/index.html",
+      "officialUrl": "https://www.mofa.go.jp/mofaj/",
+      "sourcePageUrl": "https://www.mofa.go.jp/mofaj/",
       "trackedSince": "2026-08-09",
       "status": "approved",
       "aiReason": "AI判定: MOFA所管の公式会議体マスターとして承認"
@@ -212912,7 +212844,7 @@
     },
     {
       "id": "ra-000815-79",
-      "name": "ra-000815-79",
+      "name": "復興推進会議",
       "ministry": "RA",
       "category": "COUNCIL",
       "officialUrl": "https://www.reconstruction.go.jp/topics/cat-11/cat-47/cat-158/000815/",
@@ -212923,29 +212855,29 @@
     },
     {
       "id": "cas-atarashii-sihon-107",
-      "name": "cas-atarashii-sihon-107",
+      "name": "新しい資本主義実現会議",
       "ministry": "CAS",
       "category": "COUNCIL",
-      "officialUrl": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai37/gijisidai.html",
-      "sourcePageUrl": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai37/gijisidai.html",
+      "officialUrl": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/index.html",
+      "sourcePageUrl": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/index.html",
       "trackedSince": "2026-08-09",
       "status": "approved",
       "aiReason": "AI判定: CAS所管の公式会議体マスターとして承認"
     },
     {
       "id": "cas-roumuhi-tenka-108",
-      "name": "cas-roumuhi-tenka-108",
+      "name": "新しい資本主義実現本部",
       "ministry": "CAS",
       "category": "COUNCIL",
-      "officialUrl": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/honbu/dai5/gijisidai.html",
-      "sourcePageUrl": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/honbu/dai5/gijisidai.html",
+      "officialUrl": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/index.html#honbu",
+      "sourcePageUrl": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/index.html#honbu",
       "trackedSince": "2026-08-09",
       "status": "approved",
       "aiReason": "AI判定: CAS所管の公式会議体マスターとして承認"
     },
     {
       "id": "fsc-nouyaku-118",
-      "name": "fsc-nouyaku-118",
+      "name": "農薬専門調査会",
       "ministry": "CAO",
       "category": "COUNCIL",
       "officialUrl": "https://www.fsc.go.jp/senmon/nouyaku/nou_dai5_senmon_susa_index.html",
@@ -237031,23 +236963,13 @@
       }
     },
     "ra-000815-79": {
-      "rule_id": "rule-ra-000815-79-ai-v3",
-      "created_at": "2026-08-07 08:56:40",
-      "generator": "AI_Rule_Synthesis_Agent_v3",
-      "ministryQuirk": "復興庁型: topics/cat-XX 分類URLおよび日付命名PDF",
+      "rule_id": "rule-ra-fukko-v2",
+      "ministryQuirk": "復興庁 復興推進会議 サブページ巡回",
       "rules": {
-        "encoding": "utf-8",
-        "deep_crawl_enabled": true,
-        "subpage_discovery_pattern": "href=[\"\\']([^\"\\']*(?:topics/|\\d{8}|shidai)[^\"\\'#]*)[\"\\']",
-        "date_regex": "(?:令和[0-9０-９一-九]+年[0-9０-９一-十二]+月[0-9０-９一-三十一]+日|20[2-9][0-9]年[0-1]?[0-9]月[0-3]?[0-9]日)",
-        "prefer_subpage_date": true,
-        "extract_subpage_materials_primary": true,
-        "pdf_selector": "href=[\"\\']([^\"\\']+\\.pdf)[\"\\']",
-        "private_doc_keyword": "非公開",
-        "detect_private_materials": false,
-        "extract_all_materials": true,
-        "resolve_absolute_urls": true,
-        "top_page_pdf_count": 0
+        "subpage_discovery_pattern": "href=[\"\\']([^\"\\']*(?:000815|\\d+kai|kaisai)[^\"\\'#]*)[\"\\']",
+        "date_regex": "(?:令和|平成)\\d+年\\d+月\\d+日|\\d{4}年\\d+月\\d+日|\\d{4}[/-]\\d+[/-]\\d+",
+        "pdf_selector": "href=[\"\\']([^\"\\']+\\.(?:pdf|txt))[\"\\']",
+        "deep_crawl_enabled": true
       }
     },
     "cas-nihonhaku-81": {
@@ -237591,43 +237513,23 @@
       }
     },
     "cas-atarashii-sihon-107": {
-      "rule_id": "rule-cas-atarashii-sihon-107-ai-v3",
-      "created_at": "2026-08-07 08:56:44",
-      "generator": "AI_Rule_Synthesis_Agent_v3",
-      "ministryQuirk": "内閣官房型: daiXX/gijisidai.html 形式の2段階ネスト構造",
+      "rule_id": "rule-cas-sihon-v2",
+      "ministryQuirk": "内閣官房 新しい資本主義実現会議 サブページ巡回",
       "rules": {
-        "encoding": "utf-8",
-        "deep_crawl_enabled": true,
-        "subpage_discovery_pattern": "href=[\"\\']([^\"\\']*(?:dai\\d+|gijisidai|gijiroku)[^\"\\'#]*)[\"\\']",
-        "date_regex": "(?:令和[0-9０-９一-九]+年[0-9０-９一-十二]+月[0-9０-９一-三十一]+日|20[2-9][0-9]年[0-1]?[0-9]月[0-3]?[0-9]日)",
-        "prefer_subpage_date": true,
-        "extract_subpage_materials_primary": true,
-        "pdf_selector": "href=[\"\\']([^\"\\']+\\.pdf)[\"\\']",
-        "private_doc_keyword": "非公開",
-        "detect_private_materials": false,
-        "extract_all_materials": true,
-        "resolve_absolute_urls": true,
-        "top_page_pdf_count": 109
+        "subpage_discovery_pattern": "href=[\"\\']([^\"\\']*(?:atarashii_sihonsyugi/kaigi/dai\\d+|atarashii_sihonsyugi/[^\"\\']+\\.html|\\d+kai|kaisai)[^\"\\'#]*)[\"\\']",
+        "date_regex": "(?:令和|平成)\\d+年\\d+月\\d+日|\\d{4}年\\d+月\\d+日|\\d{4}[/-]\\d+[/-]\\d+",
+        "pdf_selector": "href=[\"\\']([^\"\\']+\\.(?:pdf|txt))[\"\\']",
+        "deep_crawl_enabled": true
       }
     },
     "cas-roumuhi-tenka-108": {
-      "rule_id": "rule-cas-roumuhi-tenka-108-ai-v3",
-      "created_at": "2026-08-07 08:56:44",
-      "generator": "AI_Rule_Synthesis_Agent_v3",
-      "ministryQuirk": "内閣官房型: daiXX/gijisidai.html 形式の2段階ネスト構造",
+      "rule_id": "rule-cas-honbu-v2",
+      "ministryQuirk": "内閣官房 新しい資本主義実現本部 サブページ巡回",
       "rules": {
-        "encoding": "utf-8",
-        "deep_crawl_enabled": true,
-        "subpage_discovery_pattern": "href=[\"\\']([^\"\\']*(?:dai\\d+|gijisidai|gijiroku)[^\"\\'#]*)[\"\\']",
-        "date_regex": "(?:令和[0-9０-９一-九]+年[0-9０-９一-十二]+月[0-9０-９一-三十一]+日|20[2-9][0-9]年[0-1]?[0-9]月[0-3]?[0-9]日)",
-        "prefer_subpage_date": true,
-        "extract_subpage_materials_primary": true,
-        "pdf_selector": "href=[\"\\']([^\"\\']+\\.pdf)[\"\\']",
-        "private_doc_keyword": "非公開",
-        "detect_private_materials": false,
-        "extract_all_materials": true,
-        "resolve_absolute_urls": true,
-        "top_page_pdf_count": 109
+        "subpage_discovery_pattern": "href=[\"\\']([^\"\\']*(?:atarashii_sihonsyugi/honbu/dai\\d+|atarashii_sihonsyugi/[^\"\\']+\\.html|\\d+kai|kaisai)[^\"\\'#]*)[\"\\']",
+        "date_regex": "(?:令和|平成)\\d+年\\d+月\\d+日|\\d{4}年\\d+月\\d+日|\\d{4}[/-]\\d+[/-]\\d+",
+        "pdf_selector": "href=[\"\\']([^\"\\']+\\.(?:pdf|txt))[\"\\']",
+        "deep_crawl_enabled": true
       }
     },
     "cao-kisei-chiiki-wg-109": {
@@ -237811,23 +237713,13 @@
       }
     },
     "fsc-nouyaku-118": {
-      "rule_id": "rule-fsc-nouyaku-118-ai-v3",
-      "created_at": "2026-08-07 08:56:45",
-      "generator": "AI_Rule_Synthesis_Agent_v3",
-      "ministryQuirk": "標準省庁型: 汎用個別回パターン",
+      "rule_id": "rule-fsc-nouyaku-v2",
+      "ministryQuirk": "食品安全委員会 農薬専門調査会 サブページ巡回",
       "rules": {
-        "encoding": "utf-8",
-        "deep_crawl_enabled": true,
-        "subpage_discovery_pattern": "href=[\"\\']([^\"\\']*(?:dai\\d+|\\d+kai|kaisai|gijisidai)[^\"\\'#]*)[\"\\']",
-        "date_regex": "(?:令和[0-9０-９一-九]+年[0-9０-９一-十二]+月[0-9０-９一-三十一]+日|20[2-9][0-9]年[0-1]?[0-9]月[0-3]?[0-9]日)",
-        "prefer_subpage_date": true,
-        "extract_subpage_materials_primary": true,
-        "pdf_selector": "href=[\"\\']([^\"\\']+\\.pdf)[\"\\']",
-        "private_doc_keyword": "非公開",
-        "detect_private_materials": false,
-        "extract_all_materials": true,
-        "resolve_absolute_urls": true,
-        "top_page_pdf_count": 28
+        "subpage_discovery_pattern": "href=[\"\\']([^\"\\']*(?:nou_dai\\d+_senmon|nouyaku/[^\"\\']+\\.html|\\d+kai|kaisai)[^\"\\'#]*)[\"\\']",
+        "date_regex": "(?:令和|平成)\\d+年\\d+月\\d+日|\\d{4}年\\d+月\\d+日|\\d{4}[/-]\\d+[/-]\\d+",
+        "pdf_selector": "href=[\"\\']([^\"\\']+\\.(?:pdf|txt))[\"\\']",
+        "deep_crawl_enabled": true
       }
     },
     "npsc-teirei-119": {
