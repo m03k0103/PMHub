@@ -45,9 +45,17 @@
    - エージェントまたは人間が手動で追加・修正した会議体（`councils`）、会議回（`meetings`）、資料（`materials`）には、クローラーによる上書きや削除を防止するため必ず `"manualLock": true` を設定する。
    - `manualLock: true` のレコードは、クローラー（`crawler.py`）の重複排除・再配分処理や `apply_report.py` による自動上書きから除外され、保護される。
 
-5. **文字化け防止の徹底**
+5. **クロールルール（`scrapingRules`）への連動反映（必須）**
+   - チャット経由で会議体や会議データを新規追加・修正した際は、次回以降の自動クロールで新しい開催回（第X+1回等）が正しく自動検知・追加されるよう、必ず `docs/data.json` の `scrapingRules` にも該当会議体のルールを登録・更新すること。
+   - ルール定義には、個別開催回URLパターン（`subpage_discovery_pattern`）、日付正規表現（`date_regex`）、資料セレクター（`pdf_selector`）、および `deep_crawl_enabled: true` を適切に設定する。
+
+6. **文字化け防止の徹底**
    - 日本語行政サイトのスクレイピング時は、`Shift_JIS` / `CP932` / `EUC-JP` / `UTF-8` のエンコーディング自動判定を厳格に行い、文字化けを徹底排除する。
 
-6. **自動テストによる整合性検証**
-   - データ更新後は、必ず [`testing/test_no_duplicate_meetings.py`](file:///d:/dev/PMHub/testing/test_no_duplicate_meetings.py)、[`testing/test_crawler_regression.py`](file:///d:/dev/PMHub/testing/test_crawler_regression.py)、および [`testing/smoke_test.py`](file:///d:/dev/PMHub/testing/smoke_test.py) による検証テストを実行し、重複・破損・回帰エラーが0件であることを確認する。
+7. **自動テスト・回帰テストによる整合性検証（必須）**
+   - データおよびルールの更新後は、必ず以下の検証テストを実行し、重複・破損・上書き・回帰エラーが0件であることを確認する：
+     1. [`testing/test_no_duplicate_meetings.py`](file:///d:/dev/PMHub/testing/test_no_duplicate_meetings.py) （重複会議・会議体の完全排除検証）
+     2. [`testing/test_crawler_regression.py`](file:///d:/dev/PMHub/testing/test_crawler_regression.py) （クローラー手動データ保護・新規開催回自動同期の回帰検証）
+     3. [`testing/smoke_test.py`](file:///d:/dev/PMHub/testing/smoke_test.py) （構文・URL疎通・UI描画・統合スモークテスト）
+
 
