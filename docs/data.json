@@ -15571,9 +15571,30 @@
       "manualLock": true,
       "pastYearCount": 45,
       "trackedSince": "2026-08-09"
+    },
+    {
+      "id": "mhlw-konnan-josei-shien-kento",
+      "name": "困難な問題を抱える女性への支援に関する検討会",
+      "ministry": "MHLW",
+      "category": "STUDY",
+      "officialUrl": "https://www.mhlw.go.jp/stf/newpage_74384.html",
+      "description": "困難な問題を抱える女性への支援に関する法律に基づく施策の現状と課題を検証し、支援の方向性を検討する検討会。",
+      "manualLock": true,
+      "pastYearCount": 2,
+      "trackedSince": "2026-08-09"
     }
   ],
   "meetings": [
+    {
+      "id": "meet-2026-09-02-mhlw-konnan-josei-shien-dai2",
+      "councilId": "mhlw-konnan-josei-shien-kento",
+      "title": "第2回 困難な問題を抱える女性への支援に関する検討会",
+      "date": "2026/09/02",
+      "officialUrl": "https://www.mhlw.go.jp/stf/newpage_75638.html",
+      "materials": [],
+      "topics": [],
+      "manualLock": true
+    },
     {
       "id": "meet-2026-08-31-fsa-kinyu-bunkakai-dai45",
       "councilId": "fsa-kinyu-bunkakai",
@@ -23019,6 +23040,59 @@
       "officialUrl": "https://www.da.nra.go.jp/detail/NRA100019551",
       "hasMinutes": false,
       "docCount": 9
+    },
+    {
+      "id": "meet-2026-07-29-mhlw-konnan-josei-shien-dai1",
+      "councilId": "mhlw-konnan-josei-shien-kento",
+      "title": "第1回 困難な問題を抱える女性への支援に関する検討会",
+      "date": "2026/07/29",
+      "officialUrl": "https://www.mhlw.go.jp/stf/newpage_74667.html",
+      "materials": [
+        {
+          "name": "議事次第 (PDF)",
+          "url": "https://www.mhlw.go.jp/content/12201000/001728875.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "資料１ 開催要綱 ・構成員名簿 (PDF)",
+          "url": "https://www.mhlw.go.jp/content/12201000/001728876.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "資料２ 施策の現状・課題 (PDF)",
+          "url": "https://www.mhlw.go.jp/content/12201000/001728896.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "資料３ 検討の視点（案）等について (PDF)",
+          "url": "https://www.mhlw.go.jp/content/12201000/001728878.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "参考資料１ 困難な問題を抱える女性への支援に関する法律 (PDF)",
+          "url": "https://www.mhlw.go.jp/content/12201000/001728879.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "参考資料２ 困難な問題を抱える女性への支援のための施策に関する基本的な方針 (PDF)",
+          "url": "https://www.mhlw.go.jp/content/12201000/001728880.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "参考資料３ 令和８年度当初予算の概要 (PDF)",
+          "url": "https://www.mhlw.go.jp/content/12201000/001728881.pdf",
+          "type": "PDF",
+          "manualLock": true
+        }
+      ],
+      "topics": [],
+      "manualLock": true
     },
     {
       "id": "meet-2026-07-28-mic-joho-tsushin",
@@ -219262,6 +219336,17 @@
       "trackedSince": "2026-08-09",
       "status": "approved",
       "aiReason": "AI判定: FSA所管の公式会議体マスターとして承認"
+    },
+    {
+      "id": "mhlw-konnan-josei-shien-kento",
+      "name": "困難な問題を抱える女性への支援に関する検討会",
+      "ministry": "MHLW",
+      "category": "STUDY",
+      "officialUrl": "https://www.mhlw.go.jp/stf/newpage_74384.html",
+      "sourcePageUrl": "https://www.mhlw.go.jp/stf/newpage_74384.html",
+      "trackedSince": "2026-08-09",
+      "status": "approved",
+      "aiReason": "AI判定: MHLW所管の公式会議体マスターとして承認"
     }
   ],
   "scrapingRules": {
@@ -223470,6 +223555,16 @@
       "ministryQuirk": "金融庁 金融審議会 金融分科会 サブページ巡回",
       "rules": {
         "subpage_discovery_pattern": "href=[\"\\']([^\"\\']*(?:singi_kinyu/(?:soukai|bunkakai)/(?:siryou|gijiroku)/\\d+|news/r\\d+/singi/\\d+|\\d+kai|kaisai)[^\"\\'#]*)[\"\\']",
+        "date_regex": "(?:令和|平成)\\d+年\\d+月\\d+日|\\d{4}年\\d+月\\d+日|\\d{4}[/-]\\d+[/-]\\d+",
+        "pdf_selector": "href=[\"\\']([^\"\\']+\\.(?:pdf|txt))[\"\\']",
+        "deep_crawl_enabled": true
+      }
+    },
+    "mhlw-konnan-josei-shien-kento": {
+      "rule_id": "rule-mhlw-konnan-josei-v1",
+      "ministryQuirk": "厚生労働省 困難な問題を抱える女性への支援に関する検討会 サブページ巡回",
+      "rules": {
+        "subpage_discovery_pattern": "href=[\"\\']([^\"\\']*(?:stf/newpage_\\d+\\.html|\\d+kai|kaisai)[^\"\\'#]*)[\"\\']",
         "date_regex": "(?:令和|平成)\\d+年\\d+月\\d+日|\\d{4}年\\d+月\\d+日|\\d{4}[/-]\\d+[/-]\\d+",
         "pdf_selector": "href=[\"\\']([^\"\\']+\\.(?:pdf|txt))[\"\\']",
         "deep_crawl_enabled": true

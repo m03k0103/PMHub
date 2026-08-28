@@ -64,4 +64,11 @@
      2. [`testing/test_crawler_regression.py`](file:///d:/dev/PMHub/testing/test_crawler_regression.py) （クローラー手動データ保護・新規開催回自動同期の回帰検証）
      3. [`testing/smoke_test.py`](file:///d:/dev/PMHub/testing/smoke_test.py) （構文・URL疎通・UI描画・統合スモークテスト）
 
+8. **会議体追加依頼時の包括的・同時作業スコープ（必須）**
+   - ユーザーから会議体（`councils`）の追加を依頼された場合、単に会議体マスターレコードを作成するだけでなく、以下の作業を必ず**ワンストップ・必須スコープとして同時に完遂**すること：
+     1. 各開催回の会議データ（`meetings`）の網羅的登録
+     2. 各回の個別資料・配布資料・議事録の末端PDF/HTMLリンク（`materials`）の取得と登録
+     3. 次回以降の自動検知用クロールルール（`scrapingRules`）の作成・連動反映（`deep_crawl_enabled: true`）
+     4. 3大自動テスト（`test_no_duplicate_meetings.py`、`test_crawler_regression.py`、`smoke_test.py`）の実行と整合性検証
+
 
