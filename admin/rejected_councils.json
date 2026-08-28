@@ -2358,5 +2358,89 @@
     "sourcePageUrl": "https://www.mlit.go.jp/policy/shingikai/shingikaiList.html",
     "rejectedAt": "2026-08-28",
     "reason": "会議体名に「第X回」が含まれる個別開催回のため却下。会議体（council）ではなく会議（meeting）として管理する。"
+  },
+  {
+    "id": "moj-1174",
+    "name": "検討会等",
+    "ministry": "MOJ",
+    "category": "STUDY",
+    "officialUrl": "https://www.moj.go.jp/kentoukai_index.html",
+    "sourcePageUrl": "https://www.moj.go.jp/kentoukai_index.html",
+    "rejectedAt": "2026-08-27",
+    "reason": "Admin rejected council"
+  },
+  {
+    "id": "moj-2681",
+    "name": "省議・審議会等",
+    "ministry": "MOJ",
+    "category": "COUNCIL",
+    "officialUrl": "https://www.moj.go.jp/shingi_index.html",
+    "sourcePageUrl": "https://www.moj.go.jp/shingikai_index.html",
+    "rejectedAt": "2026-08-27",
+    "reason": "Admin rejected council"
+  },
+  {
+    "id": "moj-2682",
+    "name": "国際連合犯罪防止刑事司法会議（京都コングレス）",
+    "ministry": "MOJ",
+    "category": "COUNCIL",
+    "officialUrl": "https://www.moj.go.jp/shingikai_index.html",
+    "sourcePageUrl": "https://www.moj.go.jp/shingikai_index.html",
+    "rejectedAt": "2026-08-27",
+    "reason": "Admin rejected council"
+  },
+  {
+    "id": "moj-2683",
+    "name": "政策・審議会等トップへ",
+    "ministry": "MOJ",
+    "category": "COUNCIL",
+    "officialUrl": "https://www.moj.go.jp/seisakusesaku_index.html",
+    "sourcePageUrl": "https://www.moj.go.jp/shingikai_index.html",
+    "rejectedAt": "2026-08-27",
+    "reason": "Admin rejected council"
+  },
+  {
+    "id": "moj-2688",
+    "name": "法制審議会概要",
+    "ministry": "MOJ",
+    "category": "COUNCIL",
+    "officialUrl": "https://www.moj.go.jp/shingi1/shingi03500004.html",
+    "sourcePageUrl": "https://www.moj.go.jp/shingikai_index.html",
+    "rejectedAt": "2026-08-27",
+    "reason": "Admin rejected council"
+  },
+  {
+    "id": "moj-2689",
+    "name": "検討会等",
+    "ministry": "MOJ",
+    "category": "STUDY",
+    "officialUrl": "https://www.moj.go.jp/kentoukai_index.html",
+    "sourcePageUrl": "https://www.moj.go.jp/kentoukai_index.html",
+    "rejectedAt": "2026-08-27",
+    "reason": "Admin rejected council"
+  },
+  {
+    "id": "smea-1388",
+    "name": "「小規模事業者の『稼ぐ力』の強化に向けた諸課題に関する検討会」の中間とりまとめを公表します",
+    "ministry": "SMEA",
+    "officialUrl": "https://www.meti.go.jp/press/2026/05/20260522003/20260522003.html",
+    "rejectedAt": "2026-08-28",
+    "reason": "個別開催回・資料ページのため会議データ(meetings)側で管理（1会議体1レコード原則）"
+  },
+  {
+    "id": "smea-1545",
+    "name": "事業承継を中心とする事業活性化に関する検討会 中間報告",
+    "ministry": "SMEA",
+    "officialUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/jigyousyoukei/140724torimatome.html",
+    "rejectedAt": "2026-08-28",
+    "reason": "個別開催回・資料ページのため会議データ(meetings)側で管理（1会議体1レコード原則）"
+  },
+  {
+    "id": "smea-1659",
+    "name": "中小企業基盤技術研究会 全文",
+    "ministry": "SMEA",
+    "officialUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/kenkyu/h12_06mono.html",
+    "rejectedAt": "2026-08-28",
+    "reason": "個別開催回・資料ページのため会議データ(meetings)側で管理（1会議体1レコード原則）"
   }
 ]
