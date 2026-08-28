@@ -324,12 +324,19 @@
 
   <main class="verify-container">
 
-    <div class="tabs-nav">
-      <button class="tab-btn active" data-tab="tab-crawler" onclick="switchTab('tab-crawler', this)">⚡ 自動巡回 ＆ システム設定</button>
-      <button class="tab-btn" data-tab="tab-meetings" onclick="switchTab('tab-meetings', this)">📋 会議データ管理</button>
-      <button class="tab-btn" data-tab="tab-councils" onclick="switchTab('tab-councils', this)">🔍 会議体データ管理</button>
-      <button class="tab-btn" data-tab="tab-rejected" onclick="switchTab('tab-rejected', this)">🚫 却下会議体管理</button>
-      <button class="tab-btn" data-tab="tab-ministries" onclick="switchTab('tab-ministries', this)">🏛 省庁メタデータ管理</button>
+    <div class="tabs-nav" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.5rem;">
+      <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+        <button class="tab-btn active" data-tab="tab-crawler" onclick="switchTab('tab-crawler', this)">⚡ 自動巡回 ＆ システム設定</button>
+        <button class="tab-btn" data-tab="tab-meetings" onclick="switchTab('tab-meetings', this)">📋 会議データ管理</button>
+        <button class="tab-btn" data-tab="tab-councils" onclick="switchTab('tab-councils', this)">🔍 会議体データ管理</button>
+        <button class="tab-btn" data-tab="tab-rejected" onclick="switchTab('tab-rejected', this)">🚫 却下会議体管理</button>
+        <button class="tab-btn" data-tab="tab-ministries" onclick="switchTab('tab-ministries', this)">🏛 省庁メタデータ管理</button>
+      </div>
+      <div>
+        <button class="btn-bulk export-json" onclick="clearCacheAndSyncWithDataJson()" style="background: rgba(59,130,246,0.15); color: #60a5fa; border-color: rgba(59,130,246,0.4); padding: 0.5rem 1rem; font-size: 0.85rem;" title="ブラウザの古いlocalStorageキャッシュを消去し、docs/data.json の最新データで強制同期します">
+          🔄 キャッシュクリア ＆ 最新データ強制同期
+        </button>
+      </div>
     </div>
 
     <!-- ── TAB 1: 自動巡回 ＆ システム設定 ── -->
@@ -949,17 +956,31 @@ JSON データを読み込み中...
       }
     }
 
+    window.clearCacheAndSyncWithDataJson = function() {
+      if (confirm('ブラウザの古いlocalStorageキャッシュをクリアし、docs/data.json の最新データで強制同期しますか？')) {
+        localStorage.removeItem(STORAGE_KEY_DISCOVERED);
+        localStorage.removeItem(STORAGE_KEY_VERDICTS);
+        window.location.reload();
+      }
+    };
+
+    function isSessionName(name) {
+      if (!name) return false;
+      return /第\s*[\d０-９一二三四五六七八九十百千]+\s*回|第\s*[\d０-９一二三四五六七八九十百千]+\s*期|配布資料|配付資料|議事次第|議事録|議事要旨|中間とりまとめ|中間報告|報告書|開催案内|の開催について/.test(name);
+    }
+
     function getSavedDiscovered() {
       try {
         const parsed = JSON.parse(localStorage.getItem(STORAGE_KEY_DISCOVERED) || '[]');
-        if (Array.isArray(parsed)) return parsed;
-        if (parsed && Array.isArray(parsed.councils)) return parsed.councils;
-        return [];
+        const list = Array.isArray(parsed) ? parsed : (parsed && Array.isArray(parsed.councils) ? parsed.councils : []);
+        // セッション名・個別開催回を含む古いキャッシュエントリを自動排除
+        return list.filter(item => item && item.id && !isSessionName(item.name));
       } catch(e) { return []; }
     }
     function saveSavedDiscovered(list) {
       try {
-        localStorage.setItem(STORAGE_KEY_DISCOVERED, JSON.stringify(list));
+        const cleanList = (list || []).filter(item => item && item.id && !isSessionName(item.name));
+        localStorage.setItem(STORAGE_KEY_DISCOVERED, JSON.stringify(cleanList));
       } catch(e) {
         console.warn('localStorage save failed (Discovered). Quota exceeded?', e);
       }
@@ -973,13 +994,13 @@ JSON データを読み込み中...
     const ministries = window.MINISTRIES || {};
     const categories = window.CATEGORIES || {};
 
-    // Combine baseCouncils and discoveredCouncils
-    let allCouncils = [...baseCouncils].filter(c => c && c.id);
+    // Combine baseCouncils and discoveredCouncils (strictly filtering out session-named entries)
+    let allCouncils = [...baseCouncils].filter(c => c && c.id && !isSessionName(c.name));
     const discoveredFromStorage = getSavedDiscovered();
     const existingIdSet = new Set(allCouncils.map(c => c.id));
     if (Array.isArray(discoveredFromStorage)) {
       discoveredFromStorage.forEach(dc => {
-        if (dc && dc.id && !existingIdSet.has(dc.id)) {
+        if (dc && dc.id && !existingIdSet.has(dc.id) && !isSessionName(dc.name)) {
           allCouncils.push(dc); window.allCouncils = allCouncils;
           existingIdSet.add(dc.id);
         }
@@ -991,7 +1012,7 @@ JSON データを読み込み中...
       const currentIds = new Set(allCouncils.map(c => c.id));
       let addedCount = 0;
       newCouncilsList.forEach(dc => {
-        if (dc && dc.id) {
+        if (dc && dc.id && !isSessionName(dc.name)) {
           const aiVerdict = (dc.status === 'approved' || dc.status === 'rejected') ? dc.status : null;
           const aiReason = dc.aiReason || '';
 
