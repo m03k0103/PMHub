@@ -59,6 +59,20 @@
   --color-jsa: #475569;      /* スポーツ庁 */
   --color-aca: #475569;      /* 文化庁 */
   --color-jcrc: #475569;     /* カジノ管理委員会 */
+  --color-npsc: #1d4ed8;     /* 国家公安委員会 - Blue */
+  --color-fsc: #16a34a;      /* 食品安全委員会 - Green */
+  --color-clrc: #475569;     /* 中央労働委員会 */
+  --color-rinya: #475569;    /* 林野庁 */
+  --color-jfa: #475569;      /* 水産庁 */
+  --color-anre: #475569;     /* 資源エネルギー庁 */
+  --color-jpo: #475569;      /* 特許庁 */
+  --color-smea: #475569;     /* 中小企業庁 */
+  --color-jta: #475569;      /* 観光庁 */
+  --color-jma: #475569;      /* 気象庁 */
+  --color-jtsb: #475569;     /* 運輸安全委員会 */
+  --color-jcg: #475569;      /* 海上保安庁 */
+  --color-atla: #475569;     /* 防衛装備庁 */
+  --color-boaj: #475569;     /* 日本学士院 */
 
   /* UI Spacing & Radius */
   --radius-sm: 6px;
@@ -741,6 +755,21 @@ body {
 .badge-ministry.JSA { background-color: var(--color-jsa); }
 .badge-ministry.ACA { background-color: var(--color-aca); }
 .badge-ministry.JCRC { background-color: var(--color-jcrc); }
+.badge-ministry.NPSC { background-color: var(--color-npsc); }
+.badge-ministry.FSC { background-color: var(--color-fsc); }
+.badge-ministry.CLRC { background-color: var(--color-clrc); }
+.badge-ministry.RINYA { background-color: var(--color-rinya); }
+.badge-ministry.JFA { background-color: var(--color-jfa); }
+.badge-ministry.ANRE { background-color: var(--color-anre); }
+.badge-ministry.JPO { background-color: var(--color-jpo); }
+.badge-ministry.SMEA { background-color: var(--color-smea); }
+.badge-ministry.JTA { background-color: var(--color-jta); }
+.badge-ministry.JMA { background-color: var(--color-jma); }
+.badge-ministry.JTSB { background-color: var(--color-jtsb); }
+.badge-ministry.JCG { background-color: var(--color-jcg); }
+.badge-ministry.ATLA { background-color: var(--color-atla); }
+.badge-ministry.BOAJ { background-color: var(--color-boaj); }
+
 
 .badge-category {
   font-size: 0.72rem;
