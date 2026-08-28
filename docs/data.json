@@ -13171,12 +13171,15 @@
       "trackedSince": "2026-08-09"
     },
     {
-      "id": "smea-1441",
-      "name": "令和元年 特別編 スマートSME(中小企業)研究会 配布資料",
+      "id": "smea-smart-sme-kenkyukai",
+      "name": "スマートSME(中小企業)研究会",
       "ministry": "SMEA",
       "category": "STUDY",
-      "officialUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/smartsme/190724smartsme.html",
-      "trackedSince": "2026-08-09"
+      "officialUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/index.html#smartsme",
+      "trackedSince": "2026-08-09",
+      "manualLock": true,
+      "description": "中小企業の生産性向上やデジタル化・スマート化に向けたデータ利活用や支援策を検討する中小企業庁の研究会。",
+      "pastYearCount": 2
     },
     {
       "id": "smea-1519",
@@ -174963,6 +174966,55 @@
       "manualLock": true
     },
     {
+      "id": "meet-2019-0724-smea-smart-sme-tokubetsu",
+      "councilId": "smea-smart-sme-kenkyukai",
+      "title": "令和元年 特別編 スマートSME(中小企業)研究会",
+      "date": "2019/07/24",
+      "officialUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/smartsme/190724smartsme.html",
+      "category": "STUDY",
+      "ministry": "SMEA",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "議事次第",
+          "url": "https://www.chusho.meti.go.jp/koukai/kenkyukai/smartsme/2019/190724smartsme00.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "資料1：経済産業省資料",
+          "url": "https://www.chusho.meti.go.jp/koukai/kenkyukai/smartsme/2019/190724smartsme01.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "資料2：世界経済フォーラム第四次産業革命日本センターご提出資料",
+          "url": "#",
+          "type": "非公開",
+          "isPrivate": true,
+          "manualLock": true
+        },
+        {
+          "name": "資料3：アクセンチュア株式会社ご提出資料",
+          "url": "https://www.chusho.meti.go.jp/koukai/kenkyukai/smartsme/2019/190724smartsme03.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "資料4：SAPジャパン株式会社ご提出資料",
+          "url": "https://www.chusho.meti.go.jp/koukai/kenkyukai/smartsme/2019/190724smartsme04.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "議事要旨",
+          "url": "https://www.chusho.meti.go.jp/koukai/kenkyukai/smartsme/2019/190724smartsmegy.pdf",
+          "type": "PDF",
+          "manualLock": true
+        }
+      ]
+    },
+    {
       "id": "meet-2019-07-02-fsa-kinyu-chukai-dai19",
       "councilId": "fsa-kinyu-chukai",
       "councilName": "金融仲介の改善に向けた検討会議",
@@ -175453,6 +175505,73 @@
       "hasMinutes": true,
       "docCount": 2,
       "manualLock": true
+    },
+    {
+      "id": "meet-2019-0523-smea-smart-sme-dai3",
+      "councilId": "smea-smart-sme-kenkyukai",
+      "title": "令和元年 第3回 スマートSME(中小企業)研究会",
+      "date": "2019/05/23",
+      "officialUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/smartsme/190523smartsme.html",
+      "category": "STUDY",
+      "ministry": "SMEA",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "議事次第",
+          "url": "https://www.chusho.meti.go.jp/koukai/kenkyukai/smartsme/2019/190523smartsme00.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "資料1：データの利活用・共有等を通じた事業者の経営課題解決について(資金調達を中心に)(討議用資料)",
+          "url": "https://www.chusho.meti.go.jp/koukai/kenkyukai/smartsme/2019/190523smartsme01.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "資料2：アジア開発銀行研究所 根本様、日本リスク・データ・バンク 稲葉様ご提出資料(銀行口座動態情報を活用した中小企業の信用リスク分析)",
+          "url": "https://www.chusho.meti.go.jp/koukai/kenkyukai/smartsme/2019/190523smartsme02.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "資料3：株式会社マネーフォワード 瀧様ご提出資料(マネーフォワードクラウド活用を用いた生産性向上事例)",
+          "url": "https://www.chusho.meti.go.jp/koukai/kenkyukai/smartsme/2019/190523smartsme03.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "資料4：アルトア株式会社 岡本様ご提出資料(中小企業向けオンライン融資サービスの普及に向けて)",
+          "url": "https://www.chusho.meti.go.jp/koukai/kenkyukai/smartsme/2019/190523smartsme04.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "資料5：LENDY株式会社 内山様ご提出資料(クレジットエンジン・LENDYのご紹介)",
+          "url": "#",
+          "type": "非公開",
+          "isPrivate": true,
+          "manualLock": true
+        },
+        {
+          "name": "資料6：OLTA株式会社 武田様ご提出資料",
+          "url": "https://www.chusho.meti.go.jp/koukai/kenkyukai/smartsme/2019/190523smartsme06.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "資料7：株式会社bitFlyer 三瀬様ご提出資料(中小企業支援におけるブロックチェーンの利用)",
+          "url": "https://www.chusho.meti.go.jp/koukai/kenkyukai/smartsme/2019/190523smartsme07.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "議事要旨",
+          "url": "https://www.chusho.meti.go.jp/koukai/kenkyukai/smartsme/2019/190523smartsmegy.pdf",
+          "type": "PDF",
+          "manualLock": true
+        }
+      ]
     },
     {
       "id": "meet-2019-04-19-cas-gambletou_izonsho-honbu-dai2",
@@ -211716,11 +211835,11 @@
       "aiReason": "AI判定: 会議体Webページではなく単体ファイル直リンクのため却下"
     },
     {
-      "id": "smea-1441",
-      "name": "令和元年 特別編 スマートSME(中小企業)研究会",
+      "id": "smea-smart-sme-kenkyukai",
+      "name": "スマートSME(中小企業)研究会",
       "ministry": "SMEA",
       "category": "STUDY",
-      "officialUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/smartsme/190724smartsme.html",
+      "officialUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/index.html#smartsme",
       "sourcePageUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/index.html",
       "trackedSince": "2026-08-09",
       "status": "approved",
@@ -230128,6 +230247,16 @@
       "ministryQuirk": "法務省 再犯防止検討会 サブページ巡回",
       "rules": {
         "subpage_discovery_pattern": "href=[\"\\']([^\"\\']*(?:hisho04_00\\d+|dai\\d+|\\d+kai|kaisai)[^\"\\'#]*)[\"\\']",
+        "date_regex": "(?:令和|平成)\\d+年\\d+月\\d+日|\\d{4}年\\d+月\\d+日|\\d{4}[/-]\\d+[/-]\\d+",
+        "pdf_selector": "href=[\"\\']([^\"\\']+\\.(?:pdf|txt))[\"\\']",
+        "deep_crawl_enabled": true
+      }
+    },
+    "smea-smart-sme-kenkyukai": {
+      "rule_id": "rule-smea-smart-sme-v2",
+      "ministryQuirk": "中小企業庁 スマートSME研究会 サブページ巡回",
+      "rules": {
+        "subpage_discovery_pattern": "href=[\"\\']([^\"\\']*(?:smartsme/\\d+smartsme|\\d+kai|kaisai)[^\"\\'#]*)[\"\\']",
         "date_regex": "(?:令和|平成)\\d+年\\d+月\\d+日|\\d{4}年\\d+月\\d+日|\\d{4}[/-]\\d+[/-]\\d+",
         "pdf_selector": "href=[\"\\']([^\"\\']+\\.(?:pdf|txt))[\"\\']",
         "deep_crawl_enabled": true
