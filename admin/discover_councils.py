@@ -134,6 +134,18 @@ def normalize_url(url):
     clean_path = p.path.rstrip("/")
     return f"{p.scheme}://{p.netloc}{clean_path}"
 
+def get_url_clean_key(url):
+    """http/https や末尾スラッシュ、クエリ、フラグメントを除去したURLの比較キーを生成"""
+    if not url:
+        return ""
+    try:
+        parsed = urllib.parse.urlparse(url)
+        netloc = parsed.netloc.lower()
+        path = parsed.path.rstrip("/")
+        return f"{netloc}{path}"
+    except Exception:
+        return url.strip().lower()
+
 def get_max_seq(councils):
     """既存COUNCILSから最大のID連番を取得する (例: cao-184 -> 184)"""
     max_num = 183
@@ -175,18 +187,33 @@ def run_discovery(progress_callback=None):
 
     # 却下済み会議体データの読み込み（再検出・再登録をブロック）
     rejected_file = os.path.join(BASE_DIR, "rejected_councils.json")
+    rejected_ids = set()
     rejected_urls = set()
+    rejected_clean_keys = set()
     rejected_names = set()
     if os.path.exists(rejected_file):
         try:
             with open(rejected_file, "r", encoding="utf-8") as rf:
                 rejected_data = json.load(rf)
                 for rc in rejected_data:
+                    if rc.get("id"):
+                        rejected_ids.add(rc.get("id").strip())
                     if rc.get("officialUrl"):
                         rejected_urls.add(normalize_url(rc.get("officialUrl")))
+                        clean_k = get_url_clean_key(rc.get("officialUrl"))
+                        if clean_k:
+                            rejected_clean_keys.add(clean_k)
+                    if rc.get("sourcePageUrl"):
+                        clean_sk = get_url_clean_key(rc.get("sourcePageUrl"))
+                        if clean_sk:
+                            rejected_clean_keys.add(clean_sk)
                     if rc.get("name"):
-                        rejected_names.add(rc.get("name").strip())
-            emit(f"却下済み会議体除外リスト: {len(rejected_data)} 件をロードしました（巡回検出対象外として除外）")
+                        n_raw = rc.get("name").strip()
+                        rejected_names.add(n_raw)
+                        n_clean = clean_council_name(n_raw)
+                        if n_clean:
+                            rejected_names.add(n_clean)
+            emit(f"却下済み会議体除外リスト: {len(rejected_data)} 件をロードしました（巡回検出対象外として完全除外）")
         except Exception as e:
             print(f"[WARN] Failed to load rejected_councils.json: {e}")
 
@@ -291,8 +318,21 @@ def run_discovery(progress_callback=None):
                 if target_council_name in existing_names:
                     continue
 
-                # 却下済み会議体の除外判定
-                if norm_final_url in rejected_urls or target_council_name in rejected_names:
+                # 却下済み会議体の除外判定（多層防御: 正規化URL, クリーンURLキー, 名称, リンクテキスト）
+                clean_final_k = get_url_clean_key(final_council_url)
+                clean_abs_k = get_url_clean_key(abs_url)
+
+                is_rejected = (
+                    norm_final_url in rejected_urls
+                    or normalize_url(abs_url) in rejected_urls
+                    or (clean_final_k and clean_final_k in rejected_clean_keys)
+                    or (clean_abs_k and clean_abs_k in rejected_clean_keys)
+                    or target_council_name in rejected_names
+                    or link_text in rejected_names
+                    or clean_council_name(link_text) in rejected_names
+                )
+                if is_rejected:
+                    emit(f"      🚫 [却下済み除外] {link_text} ({norm_final_url}) は過去に却下されているためスキップ")
                     continue
 
                 # 今回のクロール内での重複チェック
@@ -344,7 +384,7 @@ def run_discovery(progress_callback=None):
     emit(f"ディスカバリー巡回完了: 合計 {len(discovered_list)} 件の新規会議体レコードを作成しました。")
     emit("=" * 70)
 
-    # 結果JSONの保存 (data.jsonのdiscoveredCouncilsを更新)
+    # 結果JSONの保存 (data.jsonのdiscoveredCouncilsを更新、却下済みを完全パージ)
     if os.path.exists(DATA_JSON_PATH):
         try:
             with open(DATA_JSON_PATH, "r", encoding="utf-8") as f:
@@ -353,20 +393,41 @@ def run_discovery(progress_callback=None):
             existing_discovered = data.get("discoveredCouncils", [])
             existing_dict = {c.get("id"): c for c in existing_discovered if c.get("id")}
             
+            filtered_existing_dict = {}
+            for cid, c in existing_dict.items():
+                c_url = normalize_url(c.get("officialUrl", ""))
+                c_clean_k = get_url_clean_key(c.get("officialUrl", ""))
+                c_name = c.get("name", "").strip()
+                c_clean_name = clean_council_name(c_name)
+
+                if (cid in rejected_ids or
+                    c_url in rejected_urls or
+                    (c_clean_k and c_clean_k in rejected_clean_keys) or
+                    c_name in rejected_names or
+                    (c_clean_name and c_clean_name in rejected_names)):
+                    continue
+                filtered_existing_dict[cid] = c
+
             for new_c in discovered_list:
                 cid = new_c.get("id")
-                if cid in existing_dict:
-                    new_c["status"] = existing_dict[cid].get("status", "pending")
+                if (cid in rejected_ids or
+                    normalize_url(new_c.get("officialUrl", "")) in rejected_urls or
+                    get_url_clean_key(new_c.get("officialUrl", "")) in rejected_clean_keys or
+                    new_c.get("name", "").strip() in rejected_names):
+                    continue
+
+                if cid in filtered_existing_dict:
+                    new_c["status"] = filtered_existing_dict[cid].get("status", "pending")
                 else:
                     new_c["status"] = "pending"
-                existing_dict[cid] = new_c
+                filtered_existing_dict[cid] = new_c
             
-            data["discoveredCouncils"] = list(existing_dict.values())
+            data["discoveredCouncils"] = list(filtered_existing_dict.values())
             
             with open(DATA_JSON_PATH, "w", encoding="utf-8") as f:
                 json.dump(data, f, ensure_ascii=False, indent=2)
                 
-            print(f"結果を data.json の discoveredCouncils に保存しました。")
+            print(f"結果を data.json の discoveredCouncils に保存しました（却下済み除外適用済み）。")
         except Exception as e:
             print(f"[ERROR] data.json の更新に失敗しました: {e}")
     return discovered_list

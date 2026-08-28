@@ -79,7 +79,31 @@ class CustomHandler(http.server.SimpleHTTPRequestHandler):
             if os.path.exists(DATA_JSON_FILE):
                 with open(DATA_JSON_FILE, "r", encoding="utf-8") as f:
                     data = json.load(f)
-                    self.wfile.write(json.dumps({"councils": data.get("discoveredCouncils", [])}).encode('utf-8'))
+                discovered = data.get("discoveredCouncils", [])
+
+                # 却下済み会議体リストのロードと除外
+                rej_file = os.path.join(os.path.dirname(__file__), "rejected_councils.json")
+                rej_ids = set()
+                rej_names = set()
+                rej_urls = set()
+                if os.path.exists(rej_file):
+                    try:
+                        with open(rej_file, "r", encoding="utf-8") as rf:
+                            rej_list = json.load(rf)
+                            for rc in rej_list:
+                                if rc.get("id"): rej_ids.add(rc.get("id"))
+                                if rc.get("name"): rej_names.add(rc.get("name").strip())
+                                if rc.get("officialUrl"): rej_urls.add(rc.get("officialUrl").rstrip("/"))
+                    except Exception:
+                        pass
+
+                filtered = [
+                    c for c in discovered
+                    if c.get("id") not in rej_ids
+                    and c.get("name", "").strip() not in rej_names
+                    and (not c.get("officialUrl") or c.get("officialUrl").rstrip("/") not in rej_urls)
+                ]
+                self.wfile.write(json.dumps({"councils": filtered}).encode('utf-8'))
             else:
                 self.wfile.write(json.dumps({"councils": []}).encode('utf-8'))
         elif self.path == "/api/verification-report":

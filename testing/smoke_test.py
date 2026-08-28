@@ -431,16 +431,31 @@ def check_council_timeline_sync():
     if orphaned_meetings:
         print(f"  [WARN] 定義されていない会議体IDを持つ会議データがタイムラインに存在します: {sorted(orphaned_meetings)}")
 
-    # Check rejected councils separation
+    # Check rejected councils separation (both councils and discoveredCouncils)
     if os.path.exists(rejected_json_path):
         with open(rejected_json_path, "r", encoding="utf-8") as rf:
             rejected = json.load(rf)
             rejected_ids = set([r.get("id") for r in rejected if r.get("id")])
+            rejected_names = set([r.get("name", "").strip() for r in rejected if r.get("name")])
+
             collision = councils_set & rejected_ids
             if collision:
                 print(f"  [FAIL] 公開会議体 (COUNCILS) と却下リスト (rejected_councils.json) に重複IDが存在します: {collision}")
                 return False
-            print(f"  [PASS] 却下会議体 {len(rejected_ids)} 件の分離・公開データとの完全排他を検証完了")
+
+            discovered = data.get("discoveredCouncils", [])
+            discovered_ids = set([dc.get("id") for dc in discovered if dc.get("id")])
+            disc_collision = discovered_ids & rejected_ids
+            if disc_collision:
+                print(f"  [FAIL] 候補会議体 (discoveredCouncils) と却下リストに重複IDが存在します: {disc_collision}")
+                return False
+
+            disc_name_collision = [dc.get("name") for dc in discovered if dc.get("name", "").strip() in rejected_names]
+            if disc_name_collision:
+                print(f"  [FAIL] 候補会議体 (discoveredCouncils) と却下リストに重複名称が存在します: {disc_name_collision[:5]}")
+                return False
+
+            print(f"  [PASS] 却下会議体 {len(rejected_ids)} 件の分離・公開データおよび検出候補との完全排他を検証完了")
 
     print(f"  [PASS] 全 {len(councils_set)} 会議体の ID整合性・タイムライン紐づけを検証完了")
     return True
