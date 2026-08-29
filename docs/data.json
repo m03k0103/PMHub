@@ -82,7 +82,7 @@
     },
     {
       "id": "digital-suishin",
-      "name": "デジタル社会推進会議幹事会",
+      "name": "デジタル社会推進会議",
       "ministry": "DIGITAL",
       "category": "COUNCIL",
       "pastYearCount": 5,
@@ -98,7 +98,8 @@
         "datesCount": 2,
         "failureReason": "",
         "consecutiveFailures": 0
-      }
+      },
+      "manualLock": true
     },
     {
       "id": "cfa-kodomo-suishin",
@@ -716,26 +717,6 @@
         "extractionMethod": "rule",
         "materialsCount": 15,
         "datesCount": 1,
-        "failureReason": "",
-        "consecutiveFailures": 0
-      }
-    },
-    {
-      "id": "cas-gambletou_izonsho-10",
-      "name": "ギャンブル等依存症対策推進本部幹事会",
-      "ministry": "CAS",
-      "category": "HQ",
-      "pastYearCount": 3,
-      "description": "ギャンブル等依存症対策推進本部に置かれる幹事会。関係府省庁間の実務的調整及び基本計画の推進を行う。",
-      "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/gambletou_izonsho/index.html",
-      "isWatched": true,
-      "trackedSince": "2017/04/26",
-      "crawlStatus": {
-        "lastAttempt": "2026-08-22 10:07:06",
-        "result": "success",
-        "extractionMethod": "rule",
-        "materialsCount": 76,
-        "datesCount": 5,
         "failureReason": "",
         "consecutiveFailures": 0
       }
@@ -2445,7 +2426,7 @@
       "name": "社会的影響が特に深刻な大規模インフラ障害への対応に係る関係府省庁連絡会議",
       "ministry": "CAS",
       "category": "LIAISON",
-      "pastYearCount": 3,
+      "pastYearCount": 4,
       "description": "社会的影響が特に深刻な大規模インフラ障害への対応に係る関係府省庁連絡会議の基本方針、施策の推進状況および関係省庁間の連携・個別課題について審議する会議。",
       "officialUrl": "https://www.cas.go.jp/jp/seisaku/Infura_syougai/index.html",
       "isWatched": true,
@@ -2465,7 +2446,7 @@
       "name": "女性用トイレにおける行列問題の改善に向けた関係府省連絡会議",
       "ministry": "CAS",
       "category": "LIAISON",
-      "pastYearCount": 2,
+      "pastYearCount": 3,
       "description": "女性用トイレにおける行列問題の改善に向けた関係府省連絡会議の基本方針、施策の推進状況および関係省庁間の連携・個別課題について審議する会議。",
       "officialUrl": "https://www.cas.go.jp/jp/seisaku/powder-room/index.html",
       "isWatched": true,
@@ -2485,7 +2466,7 @@
       "name": "政府機関等における耐量子計算機暗号（PQC）利用に関する関係府省庁連絡会議",
       "ministry": "CAS",
       "category": "LIAISON",
-      "pastYearCount": 3,
+      "pastYearCount": 4,
       "description": "政府機関等における耐量子計算機暗号（PQC）利用に関する関係府省庁連絡会議の基本方針、施策の推進状況および関係省庁間の連携・個別課題について審議する会議。",
       "officialUrl": "https://www.cas.go.jp/jp/seisaku/pqc/index.html",
       "isWatched": true,
@@ -2625,7 +2606,7 @@
       "name": "リニア開業に伴う新たな圏域形成に関する関係府省等会議",
       "ministry": "CAS",
       "category": "PANEL",
-      "pastYearCount": 3,
+      "pastYearCount": 4,
       "description": "リニア開業に伴う新たな圏域形成に関する関係府省等会議の基本方針、施策の推進状況および関係省庁間の連携・個別課題について審議する会議。",
       "officialUrl": "https://www.cas.go.jp/jp/seisaku/linear/index.html",
       "isWatched": true,
@@ -5029,7 +5010,7 @@
       "category": "HQ",
       "description": "ギャンブル等依存症対策基本法に基づき設置された推進本部。基本計画の策定及び関係施策の総合的推進を行う。",
       "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/gambletou_izonsho/index.html",
-      "pastYearCount": 6,
+      "pastYearCount": 9,
       "isWatched": false,
       "crawlStatus": {
         "lastAttempt": "2026-08-22 10:10:24",
@@ -5059,46 +5040,6 @@
       "description": "内閣官房 GX実行会議の下に設置された、エネルギー・産業構造転換やGX経済移行債の活用等を専門的に議論するワーキンググループ。",
       "officialUrl": "https://www.cas.go.jp/jp/seisaku/gx_jikkou_kaigi/senmonka_wg/index.html",
       "pastYearCount": 4,
-      "isWatched": true
-    },
-    {
-      "id": "cas-linear-kanjikai",
-      "name": "リニア開業に伴う新たな圏域形成に関する関係府省等会議幹事会",
-      "ministry": "CAS",
-      "category": "COMMITTEE",
-      "description": "リニア開業に伴う新たな圏域形成に関する関係府省等会議の幹事会。",
-      "officialUrl": "https://www.cas.go.jp/jp/seisaku/linear/index.html",
-      "pastYearCount": 1,
-      "isWatched": true
-    },
-    {
-      "id": "cas-infura-syougai-kanjikai",
-      "name": "社会的影響が特に深刻な大規模インフラ障害への対応に係る関係府省庁連絡会議幹事会",
-      "ministry": "CAS",
-      "category": "COMMITTEE",
-      "description": "社会的影響が特に深刻な大規模インフラ障害への対応に係る関係府省庁連絡会議の幹事会。",
-      "officialUrl": "https://www.cas.go.jp/jp/seisaku/Infura_syougai/index.html",
-      "pastYearCount": 1,
-      "isWatched": true
-    },
-    {
-      "id": "cas-powder-room-kanjikai",
-      "name": "女性用トイレにおける行列問題の改善に向けた関係府省連絡会議幹事会",
-      "ministry": "CAS",
-      "category": "COMMITTEE",
-      "description": "女性用トイレにおける行列問題の改善に向けた関係府省連絡会議の幹事会。",
-      "officialUrl": "https://www.cas.go.jp/jp/seisaku/powder-room/index.html",
-      "pastYearCount": 1,
-      "isWatched": true
-    },
-    {
-      "id": "cas-pqc-kanjikai",
-      "name": "政府機関等における耐量子計算機暗号（PQC）利用に関する関係府省庁連絡会議幹事会",
-      "ministry": "CAS",
-      "category": "COMMITTEE",
-      "description": "政府機関等における耐量子計算機暗号（PQC）利用に関する関係府省庁連絡会議の幹事会。",
-      "officialUrl": "https://www.cas.go.jp/jp/seisaku/pqc/index.html",
-      "pastYearCount": 1,
       "isWatched": true
     },
     {
@@ -7016,15 +6957,6 @@
       "pastYearCount": 0
     },
     {
-      "id": "cas-338",
-      "name": "デジタル社会推進会議",
-      "ministry": "CAS",
-      "category": "HQ",
-      "officialUrl": "https://www.digital.go.jp/councils/social-promotion",
-      "trackedSince": "2026-08-09",
-      "pastYearCount": 0
-    },
-    {
       "id": "cas-339",
       "name": "「天皇の退位等に関する皇室典範特例法案に対する附帯決議」に関する有識者会議",
       "ministry": "CAS",
@@ -7417,15 +7349,6 @@
       "ministry": "DIGITAL",
       "category": "COUNCIL",
       "officialUrl": "https://www.digital.go.jp/councils",
-      "trackedSince": "2026-08-09",
-      "pastYearCount": 0
-    },
-    {
-      "id": "digital-384",
-      "name": "デジタル社会推進会議",
-      "ministry": "DIGITAL",
-      "category": "HQ",
-      "officialUrl": "https://www.digital.go.jp/councils/social-promotion",
       "trackedSince": "2026-08-09",
       "pastYearCount": 0
     },
@@ -13550,15 +13473,6 @@
       "pastYearCount": 0
     },
     {
-      "id": "rinya-1281",
-      "name": "国立研究開発法人審議会林野部会",
-      "ministry": "RINYA",
-      "category": "SECTION",
-      "officialUrl": "https://www.rinya.maff.go.jp/j/ken_sidou/shingikai/index.html",
-      "trackedSince": "2026-08-09",
-      "pastYearCount": 0
-    },
-    {
       "id": "rinya-1284",
       "name": "中央国有林材供給調整検討委員会",
       "ministry": "RINYA",
@@ -15479,36 +15393,13 @@
       "trackedSince": "2026-08-09"
     },
     {
-      "id": "cas-2841",
-      "name": "経済安全保障法制に関する有識者会議",
-      "ministry": "CAS",
-      "category": "COUNCIL",
-      "officialUrl": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/4index.html",
-      "trackedSince": "2026-08-28"
-    },
-    {
       "id": "fsa-2844",
       "name": "コーポレートガバナンス・コードの改訂に関する有識者会議",
       "ministry": "FSA",
       "category": "COUNCIL",
       "officialUrl": "https://www.fsa.go.jp/singi/revision_corporategovernance/index.html",
-      "trackedSince": "2026-08-28"
-    },
-    {
-      "id": "jsa-2846",
-      "name": "都道府県・指定都市スポーツ主管課長会議",
-      "ministry": "JSA",
-      "category": "COUNCIL",
-      "officialUrl": "https://www.mext.go.jp/sports/b_menu/shingi/index.htm",
-      "trackedSince": "2026-08-28"
-    },
-    {
-      "id": "jsa-2849",
-      "name": "運動・スポーツガイドライン（仮称）策定に向けた有識者会議",
-      "ministry": "JSA",
-      "category": "COUNCIL",
-      "officialUrl": "https://www.mext.go.jp/sports/b_menu/shingi/index.htm",
-      "trackedSince": "2026-08-28"
+      "trackedSince": "2026-08-28",
+      "pastYearCount": 0
     },
     {
       "id": "mhlw-2852",
@@ -15516,7 +15407,8 @@
       "ministry": "MHLW",
       "category": "SECTION",
       "officialUrl": "https://www.mhlw.go.jp/stf/shingi/shingi-shippei_127696_00006.html",
-      "trackedSince": "2026-08-28"
+      "trackedSince": "2026-08-28",
+      "pastYearCount": 0
     },
     {
       "id": "npa-2853",
@@ -15524,7 +15416,8 @@
       "ministry": "NPA",
       "category": "STUDY",
       "officialUrl": "https://www.npa.go.jp/bureau/soumu/kentoukai/shiryou.html",
-      "trackedSince": "2026-08-28"
+      "trackedSince": "2026-08-28",
+      "pastYearCount": 0
     },
     {
       "id": "nta-2854",
@@ -15532,15 +15425,8 @@
       "ministry": "NTA",
       "category": "SUBCOMMITTEE",
       "officialUrl": "https://www.nta.go.jp/about/council/kenkyu.htm",
-      "trackedSince": "2026-08-28"
-    },
-    {
-      "id": "nta-2882",
-      "name": "酒類販売業等に関する懇談会",
-      "ministry": "NTA",
-      "category": "STUDY",
-      "officialUrl": "https://www.nta.go.jp/about/council/kenkyu.htm#a05",
-      "trackedSince": "2026-08-28"
+      "trackedSince": "2026-08-28",
+      "pastYearCount": 0
     },
     {
       "id": "fsa-kinyu-bunkakai",
@@ -26279,7 +26165,7 @@
     },
     {
       "id": "meet-2026-07-15-cas-linear-kanjikai-dai3",
-      "councilId": "cas-linear-kanjikai",
+      "councilId": "cas-linear-107",
       "councilName": "リニア開業に伴う新たな圏域形成に関する関係府省等会議幹事会",
       "ministry": "CAS",
       "category": "PANEL",
@@ -26309,7 +26195,8 @@
       ],
       "officialUrl": "https://www.cas.go.jp/jp/seisaku/linear/dai3/gijisidai.html",
       "hasMinutes": true,
-      "docCount": 4
+      "docCount": 4,
+      "manualLock": true
     },
     {
       "id": "meet-2026-0715-mhlw-hosho-jidou-139",
@@ -33716,7 +33603,7 @@
     },
     {
       "id": "meet-2026-04-28-cas-infura-syougai-kanjikai-dai1",
-      "councilId": "cas-infura-syougai-kanjikai",
+      "councilId": "cas-Infura_syougai-98",
       "councilName": "社会的影響が特に深刻な大規模インフラ障害への対応に係る関係府省庁連絡会議幹事会",
       "ministry": "CAS",
       "category": "LIAISON",
@@ -33746,7 +33633,8 @@
       ],
       "officialUrl": "https://www.cas.go.jp/jp/seisaku/Infura_syougai/dai3/gijisidai.html",
       "hasMinutes": false,
-      "docCount": 6
+      "docCount": 6,
+      "manualLock": true
     },
     {
       "id": "meet-2026-04-28-mof-zaiseiseido-bunkakai",
@@ -55472,7 +55360,7 @@
     },
     {
       "id": "meet-2025-08-07-cas-powder-room-kanjikai-dai1",
-      "councilId": "cas-powder-room-kanjikai",
+      "councilId": "cas-powder_room-99",
       "councilName": "女性用トイレにおける行列問題の改善に向けた関係府省連絡会議幹事会",
       "ministry": "CAS",
       "category": "LIAISON",
@@ -55493,7 +55381,8 @@
       ],
       "officialUrl": "https://www.cas.go.jp/jp/seisaku/powder-room/kanjikai/dai1/gijishidai.html",
       "hasMinutes": false,
-      "docCount": 0
+      "docCount": 0,
+      "manualLock": true
     },
     {
       "id": "meet-2025-08-07-cas-kyuyo-9",
@@ -55704,7 +55593,7 @@
     },
     {
       "id": "meet-2025-07-31-cas-pqc-kanjikai-dai1",
-      "councilId": "cas-pqc-kanjikai",
+      "councilId": "cas-pqc-100",
       "councilName": "政府機関等における耐量子計算機暗号（PQC）利用に関する関係府省庁連絡会議幹事会",
       "ministry": "CAS",
       "category": "LIAISON",
@@ -55769,7 +55658,8 @@
       ],
       "officialUrl": "https://www.cas.go.jp/jp/seisaku/pqc/kanjikai/dai1/gijisidai.html",
       "hasMinutes": false,
-      "docCount": 6
+      "docCount": 6,
+      "manualLock": true
     },
     {
       "id": "meet-2025-07-30-smea-kigyo-torihiki-r7-dai1",
@@ -62303,7 +62193,7 @@
     },
     {
       "id": "meet-2025-03-21-cas-gambletou_izonsho-10-dai3",
-      "councilId": "cas-gambletou_izonsho-10",
+      "councilId": "cas-gambletou_izonsho-honbu",
       "councilName": "ギャンブル等依存症対策推進本部幹事会",
       "ministry": "CAS",
       "category": "HQ",
@@ -62353,7 +62243,8 @@
       ],
       "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/gambletou_izonsho/kanjikai_dai3/siryou.html",
       "hasMinutes": true,
-      "docCount": 4
+      "docCount": 4,
+      "manualLock": true
     },
     {
       "id": "meet-2025-03-21-cas-gambletou_izonsho-honbu-dai6",
@@ -178090,7 +177981,7 @@
     },
     {
       "id": "meet-2019-04-18-cas-gambletou_izonsho-10-dai2",
-      "councilId": "cas-gambletou_izonsho-10",
+      "councilId": "cas-gambletou_izonsho-honbu",
       "councilName": "ギャンブル等依存症対策推進本部幹事会",
       "ministry": "CAS",
       "category": "HQ",
@@ -178184,7 +178075,8 @@
       ],
       "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/gambletou_izonsho/kanjikai_dai2/siryou.html",
       "hasMinutes": true,
-      "docCount": 10
+      "docCount": 10,
+      "manualLock": true
     },
     {
       "id": "meet-2019-03-22-cas-chukatu-67-dai13",
@@ -179756,7 +179648,7 @@
     },
     {
       "id": "meet-2018-10-24-cas-gambletou_izonsho-10-dai1",
-      "councilId": "cas-gambletou_izonsho-10",
+      "councilId": "cas-gambletou_izonsho-honbu",
       "councilName": "ギャンブル等依存症対策推進本部幹事会",
       "ministry": "CAS",
       "category": "HQ",
@@ -179836,7 +179728,8 @@
       ],
       "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/gambletou_izonsho/kanjikai_dai1/siryou.html",
       "hasMinutes": true,
-      "docCount": 8
+      "docCount": 8,
+      "manualLock": true
     },
     {
       "id": "meet-2018-10-23-cas-kokusentoc-24-dai36",
@@ -209063,7 +208956,7 @@
     },
     {
       "id": "digital-suishin",
-      "name": "デジタル社会推進会議幹事会",
+      "name": "デジタル社会推進会議",
       "ministry": "DIGITAL",
       "category": "COUNCIL",
       "officialUrl": "https://www.digital.go.jp/councils/social-promotion-executive",
@@ -209409,17 +209302,6 @@
       "category": "LIAISON",
       "officialUrl": "https://www.cas.go.jp/jp/seisaku/kyuyo/index.html",
       "sourcePageUrl": "https://www.cas.go.jp/jp/seisaku/kyuyo/index.html",
-      "trackedSince": "2017/04/26",
-      "status": "approved",
-      "aiReason": "AI判定: CAS所管の公式会議体マスターとして承認"
-    },
-    {
-      "id": "cas-gambletou_izonsho-10",
-      "name": "ギャンブル等依存症対策推進本部幹事会",
-      "ministry": "CAS",
-      "category": "HQ",
-      "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/gambletou_izonsho/index.html",
-      "sourcePageUrl": "https://www.cas.go.jp/jp/seisakukaigi/gambletou_izonsho/index.html",
       "trackedSince": "2017/04/26",
       "status": "approved",
       "aiReason": "AI判定: CAS所管の公式会議体マスターとして承認"
@@ -211911,50 +211793,6 @@
       "aiReason": "AI判定: CAS所管の公式会議体マスターとして承認"
     },
     {
-      "id": "cas-linear-kanjikai",
-      "name": "リニア開業に伴う新たな圏域形成に関する関係府省等会議幹事会",
-      "ministry": "CAS",
-      "category": "COMMITTEE",
-      "officialUrl": "https://www.cas.go.jp/jp/seisaku/linear/index.html",
-      "sourcePageUrl": "https://www.cas.go.jp/jp/seisaku/linear/index.html",
-      "trackedSince": "2026-08-09",
-      "status": "approved",
-      "aiReason": "AI判定: CAS所管の公式会議体マスターとして承認"
-    },
-    {
-      "id": "cas-infura-syougai-kanjikai",
-      "name": "社会的影響が特に深刻な大規模インフラ障害への対応に係る関係府省庁連絡会議幹事会",
-      "ministry": "CAS",
-      "category": "COMMITTEE",
-      "officialUrl": "https://www.cas.go.jp/jp/seisaku/Infura_syougai/index.html",
-      "sourcePageUrl": "https://www.cas.go.jp/jp/seisaku/Infura_syougai/index.html",
-      "trackedSince": "2026-08-09",
-      "status": "approved",
-      "aiReason": "AI判定: CAS所管の公式会議体マスターとして承認"
-    },
-    {
-      "id": "cas-powder-room-kanjikai",
-      "name": "女性用トイレにおける行列問題の改善に向けた関係府省連絡会議幹事会",
-      "ministry": "CAS",
-      "category": "COMMITTEE",
-      "officialUrl": "https://www.cas.go.jp/jp/seisaku/powder-room/index.html",
-      "sourcePageUrl": "https://www.cas.go.jp/jp/seisaku/powder-room/index.html",
-      "trackedSince": "2026-08-09",
-      "status": "approved",
-      "aiReason": "AI判定: CAS所管の公式会議体マスターとして承認"
-    },
-    {
-      "id": "cas-pqc-kanjikai",
-      "name": "政府機関等における耐量子計算機暗号（PQC）利用に関する関係府省庁連絡会議幹事会",
-      "ministry": "CAS",
-      "category": "COMMITTEE",
-      "officialUrl": "https://www.cas.go.jp/jp/seisaku/pqc/index.html",
-      "sourcePageUrl": "https://www.cas.go.jp/jp/seisaku/pqc/index.html",
-      "trackedSince": "2026-08-09",
-      "status": "approved",
-      "aiReason": "AI判定: CAS所管の公式会議体マスターとして承認"
-    },
-    {
       "id": "smea-keiei-bansou",
       "name": "経営力再構築伴走支援推進協議会",
       "ministry": "SMEA",
@@ -214144,17 +213982,6 @@
       "aiReason": "AI判定: CAS所管の公式会議体マスターとして承認"
     },
     {
-      "id": "cas-338",
-      "name": "デジタル社会推進会議",
-      "ministry": "CAS",
-      "category": "HQ",
-      "officialUrl": "https://www.digital.go.jp/councils/social-promotion",
-      "sourcePageUrl": "https://www.digital.go.jp/councils/social-promotion",
-      "trackedSince": "2026-08-09",
-      "status": "approved",
-      "aiReason": "AI判定: CAS所管の公式会議体マスターとして承認"
-    },
-    {
       "id": "cas-339",
       "name": "「天皇の退位等に関する皇室典範特例法案に対する附帯決議」に関する有識者会議",
       "ministry": "CAS",
@@ -214634,17 +214461,6 @@
       "category": "COUNCIL",
       "officialUrl": "https://www.digital.go.jp/councils",
       "sourcePageUrl": "https://www.digital.go.jp/councils",
-      "trackedSince": "2026-08-09",
-      "status": "approved",
-      "aiReason": "AI判定: DIGITAL所管の公式会議体マスターとして承認"
-    },
-    {
-      "id": "digital-384",
-      "name": "デジタル社会推進会議",
-      "ministry": "DIGITAL",
-      "category": "HQ",
-      "officialUrl": "https://www.digital.go.jp/councils/social-promotion",
-      "sourcePageUrl": "https://www.digital.go.jp/councils/social-promotion",
       "trackedSince": "2026-08-09",
       "status": "approved",
       "aiReason": "AI判定: DIGITAL所管の公式会議体マスターとして承認"
@@ -222130,17 +221946,6 @@
       "aiReason": "AI判定: RINYA所管の公式会議体マスターとして承認"
     },
     {
-      "id": "rinya-1281",
-      "name": "国立研究開発法人審議会林野部会",
-      "ministry": "RINYA",
-      "category": "SECTION",
-      "officialUrl": "https://www.rinya.maff.go.jp/j/ken_sidou/shingikai/index.html",
-      "sourcePageUrl": "https://www.rinya.maff.go.jp/j/ken_sidou/shingikai/index.html",
-      "trackedSince": "2026-08-09",
-      "status": "approved",
-      "aiReason": "AI判定: RINYA所管の公式会議体マスターとして承認"
-    },
-    {
       "id": "rinya-1284",
       "name": "中央国有林材供給調整検討委員会",
       "ministry": "RINYA",
@@ -224385,17 +224190,6 @@
       "aiReason": "AI判定: CAS所管の公式会議体マスターとして承認"
     },
     {
-      "id": "cas-2841",
-      "name": "経済安全保障法制に関する有識者会議",
-      "ministry": "CAS",
-      "category": "COUNCIL",
-      "officialUrl": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/4index.html",
-      "sourcePageUrl": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/4index.html",
-      "trackedSince": "2026-08-28",
-      "status": "approved",
-      "aiReason": "AI判定: CAS所管の公式会議体マスターとして承認"
-    },
-    {
       "id": "fsa-2844",
       "name": "コーポレートガバナンス・コードの改訂に関する有識者会議",
       "ministry": "FSA",
@@ -224405,28 +224199,6 @@
       "trackedSince": "2026-08-28",
       "status": "approved",
       "aiReason": "AI判定: FSA所管の公式会議体マスターとして承認"
-    },
-    {
-      "id": "jsa-2846",
-      "name": "都道府県・指定都市スポーツ主管課長会議",
-      "ministry": "JSA",
-      "category": "COUNCIL",
-      "officialUrl": "https://www.mext.go.jp/sports/b_menu/shingi/index.htm",
-      "sourcePageUrl": "https://www.mext.go.jp/sports/b_menu/shingi/index.htm",
-      "trackedSince": "2026-08-28",
-      "status": "approved",
-      "aiReason": "AI判定: JSA所管の公式会議体マスターとして承認"
-    },
-    {
-      "id": "jsa-2849",
-      "name": "運動・スポーツガイドライン（仮称）策定に向けた有識者会議",
-      "ministry": "JSA",
-      "category": "COUNCIL",
-      "officialUrl": "https://www.mext.go.jp/sports/b_menu/shingi/index.htm",
-      "sourcePageUrl": "https://www.mext.go.jp/sports/b_menu/shingi/index.htm",
-      "trackedSince": "2026-08-28",
-      "status": "approved",
-      "aiReason": "AI判定: JSA所管の公式会議体マスターとして承認"
     },
     {
       "id": "mhlw-2852",
@@ -224457,17 +224229,6 @@
       "category": "SUBCOMMITTEE",
       "officialUrl": "https://www.nta.go.jp/about/council/kenkyu.htm",
       "sourcePageUrl": "https://www.nta.go.jp/about/council/kenkyu.htm",
-      "trackedSince": "2026-08-28",
-      "status": "approved",
-      "aiReason": "AI判定: NTA所管の公式会議体マスターとして承認"
-    },
-    {
-      "id": "nta-2882",
-      "name": "酒類販売業等に関する懇談会",
-      "ministry": "NTA",
-      "category": "STUDY",
-      "officialUrl": "https://www.nta.go.jp/about/council/kenkyu.htm#a05",
-      "sourcePageUrl": "https://www.nta.go.jp/about/council/kenkyu.htm#a05",
       "trackedSince": "2026-08-28",
       "status": "approved",
       "aiReason": "AI判定: NTA所管の公式会議体マスターとして承認"
