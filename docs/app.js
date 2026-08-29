@@ -69,6 +69,12 @@ document.addEventListener('DOMContentLoaded', async () => {
     meetingsByCouncilMap.get(m.councilId).push(m);
   });
 
+  const councilsByIdMap = new Map(COUNCILS.map(c => [c.id, c.name]));
+  function getCouncilName(meeting) {
+    if (!meeting) return '';
+    return meeting.councilName || councilsByIdMap.get(meeting.councilId) || meeting.title || '';
+  }
+
   // --- DOM ELEMENTS ---
   const el = {
     body: document.body,
@@ -792,7 +798,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
         <div class="card-title-block">
           <span class="card-council-name">
-            ${escapeHtml(meeting.councilName)}
+            ${escapeHtml(getCouncilName(meeting))}
             <a href="${escapeHtml(sanitizeUrl(meeting.officialUrl))}" target="_blank" rel="noopener noreferrer" class="inline-link-icon" title="公式トップページを開く" onclick="event.stopPropagation();">
               <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
             </a>
@@ -1186,7 +1192,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     `;
 
     el.modalTitle.textContent = meeting.title;
-    el.modalMinistry.textContent = `所管省庁: ${minInfo.name} (${meeting.councilName})`;
+    el.modalMinistry.textContent = `所管省庁: ${minInfo.name} (${getCouncilName(meeting)})`;
     el.modalDate.textContent = `📅 開催年月日: ${formatDate(meeting.date)}`;
     el.modalLocation.textContent = `📍 開催場所: ${meeting.location || 'オンライン / 講堂'}`;
     
@@ -1286,7 +1292,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     const csvRows = list.map(m => [
       `"${sanitizeCsvField(m.date)}"`,
       `"${sanitizeCsvField(MINISTRIES[m.ministry]?.name || m.ministry)}"`,
-      `"${sanitizeCsvField(m.councilName.replace(/"/g, '""'))}"`,
+      `"${sanitizeCsvField(getCouncilName(m).replace(/"/g, '""'))}"`,
       `"${sanitizeCsvField(m.title.replace(/"/g, '""'))}"`,
       `"${sanitizeCsvField(m.materials ? String(m.materials.length) : '0')}"`,
       `"${sanitizeCsvField(m.officialUrl)}"`,
