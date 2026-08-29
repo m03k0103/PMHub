@@ -19935,6 +19935,39 @@
       "pastYearCount": 4,
       "manualLock": true,
       "status": "approved"
+    },
+    {
+      "id": "cas-kokuminkaigi-jitsumu",
+      "name": "社会保障国民会議　給付付き税額控除等に関する実務者会議",
+      "ministry": "CAS",
+      "category": "COUNCIL",
+      "description": "給付付き税額控除等の制度設計および執行体制に関する実務的検討を行う会議。",
+      "officialUrl": "https://www.cas.go.jp/jp/seisaku/kokuminkaigi/index.html#jitsumu",
+      "pastYearCount": 22,
+      "manualLock": true,
+      "status": "approved"
+    },
+    {
+      "id": "cas-kokuminkaigi-yushikisha",
+      "name": "社会保障国民会議　有識者会議",
+      "ministry": "CAS",
+      "category": "COUNCIL",
+      "description": "社会保障制度改革および給付付き税額控除の基本方針に関する有識者による検討会議。",
+      "officialUrl": "https://www.cas.go.jp/jp/seisaku/kokuminkaigi/index.html#yushikisha",
+      "pastYearCount": 7,
+      "manualLock": true,
+      "status": "approved"
+    },
+    {
+      "id": "cas-kokuminkaigi-kunitochihou",
+      "name": "「給付付き税額控除」に関する国と地方の協議の場",
+      "ministry": "CAS",
+      "category": "COUNCIL",
+      "description": "給付付き税額控除の円滑な導入に向け、国と地方自治体の役割分担や連携について協議する場。",
+      "officialUrl": "https://www.cas.go.jp/jp/seisaku/kokuminkaigi/index.html#kunitochihou",
+      "pastYearCount": 1,
+      "manualLock": true,
+      "status": "approved"
     }
   ],
   "meetings": [
@@ -20100,6 +20133,53 @@
       "hasMinutes": false,
       "docCount": 1,
       "manualLock": true
+    },
+    {
+      "id": "meet-2026-08-10-cas-kokuminkaigi-kunitochihou-dai1",
+      "councilId": "cas-kokuminkaigi-kunitochihou",
+      "title": "第1回 「給付付き税額控除」に関する国と地方の協議の場",
+      "date": "2026/08/10",
+      "officialUrl": "https://www.cas.go.jp/jp/seisaku/kokuminkaigi/contents/20260810/index.html",
+      "category": "COUNCIL",
+      "ministry": "CAS",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "その他情報",
+          "url": "https://www.cas.go.jp/jp/siryou/index.html",
+          "type": "HTML",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "「給付付き税額控除」に関する国と地方の協議の場（第１回）　議事次第（PDF／71KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/kokuminkaigi/contents/20260810/00_agenda.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "「給付付き税額控除」に関する国と地方の協議の場の開催について（PDF／97KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/kokuminkaigi/contents/20260810/01_siryou1.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "「給付付き税額控除」について（PDF／1,942KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/kokuminkaigi/contents/20260810/02_siryou2.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "「給付付き税額控除」の制度導入の基本方針（令和８年８月５日閣議決定）（PDF／867KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/kokuminkaigi/contents/20260810/11_siryou11.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        }
+      ]
     },
     {
       "id": "meet-2026-08-07-cao-cstp-bridge-wg-dai3",
@@ -27515,6 +27595,121 @@
       "manualLock": true
     },
     {
+      "id": "meet-2026-07-29-cas-kokuminkaigi-jitsumu-dai22",
+      "councilId": "cas-kokuminkaigi-jitsumu",
+      "title": "第22回 社会保障国民会議　給付付き税額控除等に関する実務者会議",
+      "date": "2026/07/29",
+      "officialUrl": "https://www.cas.go.jp/jp/seisaku/kokuminkaigi/contents/20260729-2/index.html",
+      "category": "COUNCIL",
+      "ministry": "CAS",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "その他情報",
+          "url": "https://www.cas.go.jp/jp/siryou/index.html",
+          "type": "HTML",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "給付付き税額控除等に関する実務者会議（第22回）　議事次第（PDF／79KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/kokuminkaigi/contents/20260729-2/00_agenda.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "議題（PDF／163KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/kokuminkaigi/contents/20260729-2/01_siryou1.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "中間とりまとめ案（PDF／398KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/kokuminkaigi/contents/20260729-2/02_siryou2.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "中間とりまとめ案（PDF／398KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/kokuminkaigi/contents/20260729-2/04_siryou4.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "「給付付き税額控除」のイメージ（中間とりまとめ（案））（PDF／910KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/kokuminkaigi/contents/20260729-2/03_siryou3.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "議事要旨",
+          "url": "https://www.cas.go.jp/jp/seisaku/kokuminkaigi/contents/20260729-2/minutes.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        }
+      ]
+    },
+    {
+      "id": "meet-2026-07-29-cas-kokuminkaigi-yushikisha-dai7",
+      "councilId": "cas-kokuminkaigi-yushikisha",
+      "title": "第7回 社会保障国民会議　有識者会議",
+      "date": "2026/07/29",
+      "officialUrl": "https://www.cas.go.jp/jp/seisaku/kokuminkaigi/contents/20260729-1/",
+      "category": "COUNCIL",
+      "ministry": "CAS",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "その他情報",
+          "url": "https://www.cas.go.jp/jp/siryou/index.html",
+          "type": "HTML",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "第７回社会保障国民会議　有識者会議　議事次第（PDF／102KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/kokuminkaigi/contents/20260729-1/00_agenda.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "中間とりまとめ（案）（PDF／251KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/kokuminkaigi/contents/20260729-1/01_siryou1.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "「給付付き税額控除」のイメージ（中間とりまとめ（案））（PDF／916KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/kokuminkaigi/contents/20260729-1/02_siryou2.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "参考資料（PDF／3,064KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/kokuminkaigi/contents/20260729-1/03_siryou3.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "議事要旨",
+          "url": "https://www.cas.go.jp/jp/seisaku/kokuminkaigi/contents/20260729-1/minutes.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        }
+      ]
+    },
+    {
       "id": "meet-2026-07-28-mic-joho-tsushin",
       "councilId": "mic-joho-tsushin",
       "councilName": "情報通信審議会 情報通信政策部会",
@@ -28081,6 +28276,60 @@
       "officialUrl": "https://www.reconstruction.go.jp/topics/cat-11/cat-41/cat-129/cat-130/000818/",
       "hasMinutes": false,
       "docCount": 4
+    },
+    {
+      "id": "meet-2026-07-27-cas-kokuminkaigi-jitsumu-dai21",
+      "councilId": "cas-kokuminkaigi-jitsumu",
+      "title": "第21回 社会保障国民会議　給付付き税額控除等に関する実務者会議",
+      "date": "2026/07/27",
+      "officialUrl": "https://www.cas.go.jp/jp/seisaku/kokuminkaigi/contents/20260727/index.html",
+      "category": "COUNCIL",
+      "ministry": "CAS",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "その他情報",
+          "url": "https://www.cas.go.jp/jp/siryou/index.html",
+          "type": "HTML",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "給付付き税額控除等に関する実務者会議（第21回）　議事次第（PDF／79KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/kokuminkaigi/contents/20260727/00_agenda.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "議題（PDF／168KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/kokuminkaigi/contents/20260727/01_siryou1.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "中間とりまとめ案（PDF／393KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/kokuminkaigi/contents/20260727/02_siryou2.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "「給付付き税額控除」のイメージ（中間とりまとめ（案））（PDF／923KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/kokuminkaigi/contents/20260727/03_siryou3.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "議事要旨",
+          "url": "https://www.cas.go.jp/jp/seisaku/kokuminkaigi/contents/20260727/minutes.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        }
+      ]
     },
     {
       "id": "meet-2026-0725-meti-sankoushin-148",
@@ -28650,6 +28899,53 @@
       "officialUrl": "https://www.fdma.go.jp/singi_kento/kento/post-198.html",
       "hasMinutes": false,
       "docCount": 1
+    },
+    {
+      "id": "meet-2026-07-22-cas-kokuminkaigi-jitsumu-dai20",
+      "councilId": "cas-kokuminkaigi-jitsumu",
+      "title": "第20回 社会保障国民会議　給付付き税額控除等に関する実務者会議",
+      "date": "2026/07/22",
+      "officialUrl": "https://www.cas.go.jp/jp/seisaku/kokuminkaigi/contents/20260722/index.html",
+      "category": "COUNCIL",
+      "ministry": "CAS",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "その他情報",
+          "url": "https://www.cas.go.jp/jp/siryou/index.html",
+          "type": "HTML",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "給付付き税額控除等に関する実務者会議（第20回）　議事次第（PDF／83KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/kokuminkaigi/contents/20260722/00_agenda.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "議題（PDF／170KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/kokuminkaigi/contents/20260722/01_siryou1.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "中間とりまとめ案（「制度の経過措置（つなぎ）」抜粋）（PDF／347KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/kokuminkaigi/contents/20260722/02_siryou2.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "議事要旨",
+          "url": "https://www.cas.go.jp/jp/seisaku/kokuminkaigi/contents/20260722/minutes.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        }
+      ]
     },
     {
       "id": "meet-2026-07-21-cas-chiikimirai-63-dai3",
@@ -30470,6 +30766,60 @@
       "manualLock": true
     },
     {
+      "id": "meet-2026-07-16-cas-kokuminkaigi-jitsumu-dai19",
+      "councilId": "cas-kokuminkaigi-jitsumu",
+      "title": "第19回 社会保障国民会議　給付付き税額控除等に関する実務者会議",
+      "date": "2026/07/16",
+      "officialUrl": "https://www.cas.go.jp/jp/seisaku/kokuminkaigi/contents/20260716/index.html",
+      "category": "COUNCIL",
+      "ministry": "CAS",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "その他情報",
+          "url": "https://www.cas.go.jp/jp/siryou/index.html",
+          "type": "HTML",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "給付付き税額控除等に関する実務者会議（第19回）　議事次第（PDF／80KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/kokuminkaigi/contents/20260716/00_agenda.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "議題（PDF／171KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/kokuminkaigi/contents/20260716/01_siryou1.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "中間とりまとめ（案）（給付付き税額控除の本格導入部分）（PDF／383KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/kokuminkaigi/contents/20260716/02_siryou2.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "「所得に連動したきめ細かな給付」の本格導入のイメージ（中間とりまとめ(案) ）（PDF／676KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/kokuminkaigi/contents/20260716/21_siryou1.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "議事要旨",
+          "url": "https://www.cas.go.jp/jp/seisaku/kokuminkaigi/contents/20260716/minutes.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        }
+      ]
+    },
+    {
       "id": "meet-2026-07-15-cas-linear-107-dai3",
       "councilId": "cas-linear-107",
       "councilName": "リニア開業に伴う新たな圏域形成に関する関係府省等会議",
@@ -30830,6 +31180,60 @@
         {
           "name": "会議資料(関係府省庁連絡会議幹事会)",
           "url": "https://www.cas.go.jp/jp/seisakukaigi/influenza/pdf/siryou-260713.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        }
+      ]
+    },
+    {
+      "id": "meet-2026-07-13-cas-kokuminkaigi-jitsumu-dai18",
+      "councilId": "cas-kokuminkaigi-jitsumu",
+      "title": "第18回 社会保障国民会議　給付付き税額控除等に関する実務者会議",
+      "date": "2026/07/13",
+      "officialUrl": "https://www.cas.go.jp/jp/seisaku/kokuminkaigi/contents/20260713/index.html",
+      "category": "COUNCIL",
+      "ministry": "CAS",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "その他情報",
+          "url": "https://www.cas.go.jp/jp/siryou/index.html",
+          "type": "HTML",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "給付付き税額控除等に関する実務者会議（第18回）　議事次第（PDF／82KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/kokuminkaigi/contents/20260713/00_agenda.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "議題（PDF／154KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/kokuminkaigi/contents/20260713/01_siryou1.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "中間とりまとめ（案）（給付付き税額控除の本格導入部分）（PDF／257KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/kokuminkaigi/contents/20260713/02_siryou2.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "給付付き税額控除のイメージ（中間とりまとめに向けた議論の整理（給付付き税額控除））（（令和８年５月27日）資料２）の抜粋（PDF／608KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/kokuminkaigi/contents/20260713/11_siryou1.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "議事要旨",
+          "url": "https://www.cas.go.jp/jp/seisaku/kokuminkaigi/contents/20260713/minutes.pdf",
           "type": "PDF",
           "isPrivate": false,
           "manualLock": true
@@ -33728,6 +34132,81 @@
       ]
     },
     {
+      "id": "meet-2026-06-26-cas-kokuminkaigi-jitsumu-dai17",
+      "councilId": "cas-kokuminkaigi-jitsumu",
+      "title": "第17回 社会保障国民会議　給付付き税額控除等に関する実務者会議",
+      "date": "2026/06/26",
+      "officialUrl": "https://www.cas.go.jp/jp/seisaku/kokuminkaigi/contents/20260626/index.html",
+      "category": "COUNCIL",
+      "ministry": "CAS",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "その他情報",
+          "url": "https://www.cas.go.jp/jp/siryou/index.html",
+          "type": "HTML",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "給付付き税額控除等に関する実務者会議（第17回）　議事次第（PDF／80KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/kokuminkaigi/contents/20260626/00_agenda.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "議題（PDF／152KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/kokuminkaigi/contents/20260626/01_siryou1.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "中間とりまとめ（案）（PDF／384KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/kokuminkaigi/contents/20260626/02_siryou2.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "国民民主党提出資料（PDF／534KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/kokuminkaigi/contents/20260626/03_siryou3.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "チームみらい提出資料（PDF／445KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/kokuminkaigi/contents/20260626/04_siryou4.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "これまでの議論を踏まえたとりまとめの方向性（議長案）（（令和８年６月17日）配布資料）（PDF／399KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/kokuminkaigi/contents/20260626/11_siryou1.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "給付付き税額控除のイメージ（中間とりまとめに向けた議論の整理（給付付き税額控除））（（令和８年５月27日）資料２）（PDF／1,096KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/kokuminkaigi/contents/20260626/12_siryou2.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "議事要旨",
+          "url": "https://www.cas.go.jp/jp/seisaku/kokuminkaigi/contents/20260626/minutes.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        }
+      ]
+    },
+    {
       "id": "meet-2026-06-25-moj-shouzou-koe-sekinin-3",
       "councilId": "moj-shouzou-koe-sekinin",
       "title": "第３回　令和８年６月２５日（木）（肖像、声等の無断利用による民事責任の在り方に関する検討会）",
@@ -33942,6 +34421,74 @@
       "officialUrl": "https://www.maff.go.jp/j/syokuiku/kaigi/suisin.html",
       "hasMinutes": false,
       "docCount": 3
+    },
+    {
+      "id": "meet-2026-06-24-cas-kokuminkaigi-jitsumu-dai16",
+      "councilId": "cas-kokuminkaigi-jitsumu",
+      "title": "第16回 社会保障国民会議　給付付き税額控除等に関する実務者会議",
+      "date": "2026/06/24",
+      "officialUrl": "https://www.cas.go.jp/jp/seisaku/kokuminkaigi/contents/20260624/index.html",
+      "category": "COUNCIL",
+      "ministry": "CAS",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "その他情報",
+          "url": "https://www.cas.go.jp/jp/siryou/index.html",
+          "type": "HTML",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "給付付き税額控除等に関する実務者会議（第16回）　議事次第（PDF／80KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/kokuminkaigi/contents/20260624/00_agenda.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "議題（PDF／147KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/kokuminkaigi/contents/20260624/01_siryou1.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "中間とりまとめ（案）（PDF／314KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/kokuminkaigi/contents/20260624/21_siryou1.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "これまでの議論を踏まえたとりまとめの方向性（議長案）（（令和８年６月17日）配布資料）（PDF／399KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/kokuminkaigi/contents/20260624/11_siryou1.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "将来的な方向性について（中間とりまとめに向けた議論の整理（給付付き税額控除））（（令和８年６月10日）資料４）（PDF／648KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/kokuminkaigi/contents/20260624/12_siryou2.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "給付付き税額控除のイメージ（中間とりまとめに向けた議論の整理（給付付き税額控除））（（令和８年５月27日）資料２）（PDF／1,050KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/kokuminkaigi/contents/20260624/13_siryou3.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "議事要旨",
+          "url": "https://www.cas.go.jp/jp/seisaku/kokuminkaigi/contents/20260624/minutes.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        }
+      ]
     },
     {
       "id": "meet-2026-06-23-cao-cstp-bridge-wg-dai2",
@@ -35166,6 +35713,81 @@
       "manualLock": true
     },
     {
+      "id": "meet-2026-06-17-cas-kokuminkaigi-jitsumu-dai15",
+      "councilId": "cas-kokuminkaigi-jitsumu",
+      "title": "第15回 社会保障国民会議　給付付き税額控除等に関する実務者会議",
+      "date": "2026/06/17",
+      "officialUrl": "https://www.cas.go.jp/jp/seisaku/kokuminkaigi/contents/20260617/index.html",
+      "category": "COUNCIL",
+      "ministry": "CAS",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "その他情報",
+          "url": "https://www.cas.go.jp/jp/siryou/index.html",
+          "type": "HTML",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "給付付き税額控除等に関する実務者会議（第15回）　議事次第（PDF／79KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/kokuminkaigi/contents/20260617/00_agenda.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "議題（PDF／152KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/kokuminkaigi/contents/20260617/01_siryou1.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "これまでの議論を踏まえたとりまとめの方向性（議長案）（PDF／196KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/kokuminkaigi/contents/20260617/21_siryou1.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "給付付き税額控除のイメージ（中間とりまとめに向けた議論の整理（給付付き税額控除））（（令和８年５月27日）資料２）（PDF／1,004KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/kokuminkaigi/contents/20260617/11_siryou1.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "中間とりまとめに向けた議論の整理（給付付き税額控除）（（令和８年５月20日）資料７）（PDF／545KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/kokuminkaigi/contents/20260617/12_siryou2.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "将来的な方向性について（中間とりまとめに向けた議論の整理（給付付き税額控除））（（令和８年６月10日）資料４）（PDF／598KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/kokuminkaigi/contents/20260617/13_siryou3.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "「食料品消費税率ゼロ」実現に向けた課題の整理（ヒアリング結果概要）（（令和８年４月28日）資料５）（PDF／743KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/kokuminkaigi/contents/20260617/14_siryou4.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "議事要旨",
+          "url": "https://www.cas.go.jp/jp/seisaku/kokuminkaigi/contents/20260617/minutes.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        }
+      ]
+    },
+    {
       "id": "meet-2026-06-16-nra-teireikai-dai80",
       "councilId": "nra-teireikai",
       "councilName": "原子力規制委員会",
@@ -36308,6 +36930,88 @@
       "manualLock": true
     },
     {
+      "id": "meet-2026-06-10-cas-kokuminkaigi-jitsumu-dai14",
+      "councilId": "cas-kokuminkaigi-jitsumu",
+      "title": "第14回 社会保障国民会議　給付付き税額控除等に関する実務者会議",
+      "date": "2026/06/10",
+      "officialUrl": "https://www.cas.go.jp/jp/seisaku/kokuminkaigi/contents/20260610/index.html",
+      "category": "COUNCIL",
+      "ministry": "CAS",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "その他情報",
+          "url": "https://www.cas.go.jp/jp/siryou/index.html",
+          "type": "HTML",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "給付付き税額控除等に関する実務者会議（第14回）　議事次第（PDF／85KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/kokuminkaigi/contents/20260610/00_agenda.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "議題（PDF／152KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/kokuminkaigi/contents/20260610/01_siryou1.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "国民民主党提出資料（PDF／360KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/kokuminkaigi/contents/20260610/02_siryou2.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "チームみらい提出資料（PDF／1,315KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/kokuminkaigi/contents/20260610/03_siryou3.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "将来的な方向性について（中間とりまとめに向けた議論の整理（給付付き税額控除））（PDF／313KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/kokuminkaigi/contents/20260610/04_siryou4.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "給付付き税額控除のイメージ（中間とりまとめに向けた議論の整理（給付付き税額控除））（（令和８年５月27日）資料２）（PDF／1,004KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/kokuminkaigi/contents/20260610/11_siryou1.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "中間とりまとめに向けて留意すべき点（給付付き税額控除）（（令和８年６月３日）資料３）（PDF／478KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/kokuminkaigi/contents/20260610/12_siryou2.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "中間とりまとめに向けた議論の整理（給付付き税額控除）（令和８年５月20日）資料７）（PDF／496KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/kokuminkaigi/contents/20260610/13_siryou3.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "議事要旨",
+          "url": "https://www.cas.go.jp/jp/seisaku/kokuminkaigi/contents/20260610/minutes.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        }
+      ]
+    },
+    {
       "id": "meet-2026-06-09-cfa-kodomo-suishin-dai6",
       "councilId": "cfa-kodomo-suishin",
       "councilName": "こども政策推進会議",
@@ -36588,6 +37292,95 @@
       "officialUrl": "https://www.cas.go.jp/jp/seisaku/genshiryoku_kankeifusho_renrakukaigi/index.html",
       "hasMinutes": false,
       "docCount": 9
+    },
+    {
+      "id": "meet-2026-06-03-cas-kokuminkaigi-jitsumu-dai13",
+      "councilId": "cas-kokuminkaigi-jitsumu",
+      "title": "第13回 社会保障国民会議　給付付き税額控除等に関する実務者会議",
+      "date": "2026/06/03",
+      "officialUrl": "https://www.cas.go.jp/jp/seisaku/kokuminkaigi/contents/20260603/index.html",
+      "category": "COUNCIL",
+      "ministry": "CAS",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "その他情報",
+          "url": "https://www.cas.go.jp/jp/siryou/index.html",
+          "type": "HTML",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "給付付き税額控除等に関する実務者会議（第13回）　議事次第（PDF／83KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/kokuminkaigi/contents/20260603/00_agenda.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "議題（PDF／152KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/kokuminkaigi/contents/20260603/01_siryou1.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "給付付き税額控除のイメージ（中間とりまとめに向けた議論の整理（給付付き税額控除））（PDF／951KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/kokuminkaigi/contents/20260603/02_siryou2.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "中間とりまとめに向けて留意すべき点（給付付き税額控除）（PDF／182KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/kokuminkaigi/contents/20260603/03_siryou3.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "参考資料（経済産業省）（PDF／1,062KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/kokuminkaigi/contents/20260603/04_siryou4.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "参考資料（食料品消費税率ゼロ関係）（PDF／531KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/kokuminkaigi/contents/20260603/05_siryou5.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "給付付き税額控除のイメージ（中間とりまとめに向けた議論の整理（給付付き税額控除）） 参考資料（PDF／1,629KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/kokuminkaigi/contents/20260603/11_siryou1.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "中間とりまとめに向けた議論の整理（給付付き税額控除）（令和８年５月20日）資料７）（PDF／405KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/kokuminkaigi/contents/20260603/12_siryou2.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "「食料品消費税率ゼロ」実現に向けた課題の整理 （ヒアリング結果概要）（令和８年４月28日）資料５）（PDF／708KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/kokuminkaigi/contents/20260603/13_siryou3.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "議事要旨",
+          "url": "https://www.cas.go.jp/jp/seisaku/kokuminkaigi/contents/20260603/minutes.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        }
+      ]
     },
     {
       "id": "meet-2026-06-02-cas-chutou-jyousei-dai9",
@@ -37054,6 +37847,67 @@
       "docCount": 7
     },
     {
+      "id": "meet-2026-05-27-cas-kokuminkaigi-jitsumu-dai12",
+      "councilId": "cas-kokuminkaigi-jitsumu",
+      "title": "第12回 社会保障国民会議　給付付き税額控除等に関する実務者会議",
+      "date": "2026/05/27",
+      "officialUrl": "https://www.cas.go.jp/jp/seisaku/kokuminkaigi/contents/20260527/index.html",
+      "category": "COUNCIL",
+      "ministry": "CAS",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "その他情報",
+          "url": "https://www.cas.go.jp/jp/siryou/index.html",
+          "type": "HTML",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "給付付き税額控除等に関する実務者会議（第12回）　議事次第（PDF／80KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/kokuminkaigi/contents/20260527/00_agenda.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "議題（PDF／217KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/kokuminkaigi/contents/20260527/01_siryou1.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "給付付き税額控除のイメージ（中間とりまとめに向けた議論の整理（給付付き税額控除））（PDF／994KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/kokuminkaigi/contents/20260527/02_siryou2.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "給付付き税額控除のイメージ（中間とりまとめに向けた議論の整理（給付付き税額控除）） 参考資料（PDF／1,887KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/kokuminkaigi/contents/20260527/11_siryou1.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "中間とりまとめに向けた議論の整理（給付付き税額控除）（第11回給付付き税額控除等に関する実務者会議 （令和８年５月20日）資料７）（PDF／405KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/kokuminkaigi/contents/20260527/12_siryou2.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "議事要旨",
+          "url": "https://www.cas.go.jp/jp/seisaku/kokuminkaigi/contents/20260527/minutes.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        }
+      ]
+    },
+    {
       "id": "meet-2026-05-26-cao-getsurei-13-dai5",
       "councilId": "cao-getsurei-13",
       "councilName": "月例経済報告等に関する関係閣僚会議",
@@ -37432,6 +38286,88 @@
       "docCount": 2
     },
     {
+      "id": "meet-2026-05-20-cas-kokuminkaigi-jitsumu-dai11",
+      "councilId": "cas-kokuminkaigi-jitsumu",
+      "title": "第11回 社会保障国民会議　給付付き税額控除等に関する実務者会議",
+      "date": "2026/05/20",
+      "officialUrl": "https://www.cas.go.jp/jp/seisaku/kokuminkaigi/contents/20260520/index.html",
+      "category": "COUNCIL",
+      "ministry": "CAS",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "その他情報",
+          "url": "https://www.cas.go.jp/jp/siryou/index.html",
+          "type": "HTML",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "給付付き税額控除等に関する実務者会議（第11回）　議事次第（PDF／82KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/kokuminkaigi/contents/20260520/00_agenda.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "議題（PDF／173KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/kokuminkaigi/contents/20260520/01_siryou1.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "給付付き税額控除の制度設計に向けて③（PDF／3,416KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/kokuminkaigi/contents/20260520/02_siryou2.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "令和8年5月19日第6回有識者会議 八代尚宏氏提出資料（PDF／1,160KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/kokuminkaigi/contents/20260520/03_siryou3.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "令和8年5月19日第6回有識者会議 日本商工会議所提出資料（PDF／274KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/kokuminkaigi/contents/20260520/04_siryou4.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "令和8年5月19日第6回有識者会議 日本労働組合総連合会提出資料（PDF／2,786KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/kokuminkaigi/contents/20260520/05_siryou5.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "これまでの有識者会議及び実務者会議における主な意見（給付付き税額控除）（PDF／566KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/kokuminkaigi/contents/20260520/06_siryou6.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "中間とりまとめに向けた議論の整理（給付付き税額控除）（PDF／395KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/kokuminkaigi/contents/20260520/07_siryou7.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "議事要旨",
+          "url": "https://www.cas.go.jp/jp/seisaku/kokuminkaigi/contents/20260520/minutes.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        }
+      ]
+    },
+    {
       "id": "meet-2026-0519-cao-kisei-chiiki-wg-109",
       "councilId": "cao-kisei-chiiki-wg-109",
       "councilName": "cao-kisei-chiiki-wg-109",
@@ -37519,6 +38455,60 @@
       "docCount": 5
     },
     {
+      "id": "meet-2026-05-19-cas-kokuminkaigi-yushikisha-dai6",
+      "councilId": "cas-kokuminkaigi-yushikisha",
+      "title": "第6回 社会保障国民会議　有識者会議",
+      "date": "2026/05/19",
+      "officialUrl": "https://www.cas.go.jp/jp/seisaku/kokuminkaigi/contents/20260519/index.html",
+      "category": "COUNCIL",
+      "ministry": "CAS",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "その他情報",
+          "url": "https://www.cas.go.jp/jp/siryou/index.html",
+          "type": "HTML",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "第６回社会保障国民会議　有識者会議　議事次第（PDF／57KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/kokuminkaigi/contents/20260519/00_agenda.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "八代尚宏氏提出資料（PDF／1,096KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/kokuminkaigi/contents/20260519/01_siryou1.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "日本商工会議所提出資料（PDF／208KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/kokuminkaigi/contents/20260519/02_siryou2.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "日本労働組合総連合会提出資料（PDF／3,077KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/kokuminkaigi/contents/20260519/03_siryou3.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "議事要旨",
+          "url": "https://www.cas.go.jp/jp/seisaku/kokuminkaigi/contents/20260519/minutes.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        }
+      ]
+    },
+    {
       "id": "meet-2026-05-18-cas-ebola_hemorrhagic_fever_kankeishoutyou-5-dai1",
       "councilId": "cas-ebola_hemorrhagic_fever_kankeishoutyou-5",
       "councilName": "エボラ出血熱に関する関係省庁対策会議",
@@ -37597,6 +38587,74 @@
       "officialUrl": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_02medical/250501/medical05_agenda.html",
       "hasMinutes": false,
       "docCount": 1
+    },
+    {
+      "id": "meet-2026-05-15-cas-kokuminkaigi-yushikisha-dai5",
+      "councilId": "cas-kokuminkaigi-yushikisha",
+      "title": "第5回 社会保障国民会議　有識者会議",
+      "date": "2026/05/15",
+      "officialUrl": "https://www.cas.go.jp/jp/seisaku/kokuminkaigi/contents/20260515/index.html",
+      "category": "COUNCIL",
+      "ministry": "CAS",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "その他情報",
+          "url": "https://www.cas.go.jp/jp/siryou/index.html",
+          "type": "HTML",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "第５回社会保障国民会議　有識者会議　議事次第（PDF／109KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/kokuminkaigi/contents/20260515/00_agenda.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "これまでの議論を踏まえた今後の議論の素材（PDF／548KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/kokuminkaigi/contents/20260515/01_siryou1.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "給付付き税額控除の制度設計に向けて④（PDF／4,519KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/kokuminkaigi/contents/20260515/02_siryou2.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "「食料品消費税率ゼロ」実現に向けた課題の整理（ヒアリング結果概要）（PDF／689KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/kokuminkaigi/contents/20260515/03_siryou3.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "是枝構成員提出資料①（PDF／355KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/kokuminkaigi/contents/20260515/11_siryou11.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "是枝構成員提出資料②（PDF／1,863KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/kokuminkaigi/contents/20260515/12_siryou12.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "議事要旨",
+          "url": "https://www.cas.go.jp/jp/seisaku/kokuminkaigi/contents/20260515/minutes.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        }
+      ]
     },
     {
       "id": "meet-2026-05-14-cao-space-anpo-dai4",
@@ -37786,6 +38844,60 @@
       ],
       "topics": [],
       "manualLock": true
+    },
+    {
+      "id": "meet-2026-05-13-cas-kokuminkaigi-jitsumu-dai10",
+      "councilId": "cas-kokuminkaigi-jitsumu",
+      "title": "第10回 社会保障国民会議　給付付き税額控除等に関する実務者会議",
+      "date": "2026/05/13",
+      "officialUrl": "https://www.cas.go.jp/jp/seisaku/kokuminkaigi/contents/20260513/index.html",
+      "category": "COUNCIL",
+      "ministry": "CAS",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "その他情報",
+          "url": "https://www.cas.go.jp/jp/siryou/index.html",
+          "type": "HTML",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "給付付き税額控除等に関する実務者会議（第10回）　議事次第（PDF／78KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/kokuminkaigi/contents/20260513/00_agenda.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "議題（PDF／172KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/kokuminkaigi/contents/20260513/01_siryou1.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "これまでの議論を踏まえた今後の議論の素材（PDF／539KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/kokuminkaigi/contents/20260513/02_siryou2.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "「国と地方の役割分担」について（PDF／401KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/kokuminkaigi/contents/20260513/03_siryou3.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "議事要旨",
+          "url": "https://www.cas.go.jp/jp/seisaku/kokuminkaigi/contents/20260513/minutes.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        }
+      ]
     },
     {
       "id": "meet-2026-05-12-cas-chutou-jyousei-dai7",
@@ -38149,6 +39261,74 @@
       "docCount": 3
     },
     {
+      "id": "meet-2026-04-28-cas-kokuminkaigi-jitsumu-dai9",
+      "councilId": "cas-kokuminkaigi-jitsumu",
+      "title": "第9回 社会保障国民会議　給付付き税額控除等に関する実務者会議",
+      "date": "2026/04/28",
+      "officialUrl": "https://www.cas.go.jp/jp/seisaku/kokuminkaigi/contents/20260428/index.html",
+      "category": "COUNCIL",
+      "ministry": "CAS",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "その他情報",
+          "url": "https://www.cas.go.jp/jp/siryou/index.html",
+          "type": "HTML",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "給付付き税額控除等に関する実務者会議（第９回）　議事次第（PDF／100KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/kokuminkaigi/contents/20260428/00_agenda.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "議題（PDF／175KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/kokuminkaigi/contents/20260428/01_siryou1.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "給付付き税額控除の制度設計に向けて②（PDF／1,503KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/kokuminkaigi/contents/20260428/02_siryou2.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "給付実務の円滑化・迅速化のためのデジタルツールについて（PDF／2,235KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/kokuminkaigi/contents/20260428/03_siryou3.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "有識者会議におけるこれまでの議論の状況について（PDF／659KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/kokuminkaigi/contents/20260428/04_siryou4.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "「食料品消費税率ゼロ」実現に向けた課題の整理（ヒアリング結果概要）（PDF／907KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/kokuminkaigi/contents/20260428/05_siryou5.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "議事要旨",
+          "url": "https://www.cas.go.jp/jp/seisaku/kokuminkaigi/contents/20260428/minutes.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        }
+      ]
+    },
+    {
       "id": "meet-2026-04-27-moj-houterasu-arikata-2",
       "councilId": "moj-houterasu-arikata",
       "title": "第２回会議（令和８年４月２７日）（法テラスの在り方に関する有識者検討会）",
@@ -38340,6 +39520,60 @@
         {
           "name": "議事要旨",
           "url": "https://www.cas.go.jp/jp/seisaku/chyutoujyousei/dai5/gijiyoushi.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        }
+      ]
+    },
+    {
+      "id": "meet-2026-04-24-cas-kokuminkaigi-jitsumu-dai8",
+      "councilId": "cas-kokuminkaigi-jitsumu",
+      "title": "第8回 社会保障国民会議　給付付き税額控除等に関する実務者会議",
+      "date": "2026/04/24",
+      "officialUrl": "https://www.cas.go.jp/jp/seisaku/kokuminkaigi/contents/20260424/index.html",
+      "category": "COUNCIL",
+      "ministry": "CAS",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "その他情報",
+          "url": "https://www.cas.go.jp/jp/siryou/index.html",
+          "type": "HTML",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "給付付き税額控除等に関する実務者会議（第８回）　議事次第（PDF／99KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/kokuminkaigi/contents/20260424/00_agenda.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "議題（PDF／244KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/kokuminkaigi/contents/20260424/01_siryou1.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "若田部教授提出資料（PDF／2,316KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/kokuminkaigi/contents/20260424/02_siryou2.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "原田教授提出資料（PDF／434KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/kokuminkaigi/contents/20260424/03_siryou3.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "議事要旨",
+          "url": "https://www.cas.go.jp/jp/seisaku/kokuminkaigi/contents/20260424/minutes.pdf",
           "type": "PDF",
           "isPrivate": false,
           "manualLock": true
@@ -38673,6 +39907,114 @@
       ]
     },
     {
+      "id": "meet-2026-04-22-cas-kokuminkaigi-jitsumu-dai7",
+      "councilId": "cas-kokuminkaigi-jitsumu",
+      "title": "第7回 社会保障国民会議　給付付き税額控除等に関する実務者会議",
+      "date": "2026/04/22",
+      "officialUrl": "https://www.cas.go.jp/jp/seisaku/kokuminkaigi/contents/20260422/index.html",
+      "category": "COUNCIL",
+      "ministry": "CAS",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "その他情報",
+          "url": "https://www.cas.go.jp/jp/siryou/index.html",
+          "type": "HTML",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "給付付き税額控除等に関する実務者会議（第７回）　議事次第（PDF／100KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/kokuminkaigi/contents/20260422/00_agenda.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "議題（PDF／242KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/kokuminkaigi/contents/20260422/01_siryou1.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "議事要旨",
+          "url": "https://www.cas.go.jp/jp/seisaku/kokuminkaigi/contents/20260422/minutes.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        }
+      ]
+    },
+    {
+      "id": "meet-2026-04-21-cas-kokuminkaigi-yushikisha-dai4",
+      "councilId": "cas-kokuminkaigi-yushikisha",
+      "title": "第4回 社会保障国民会議　有識者会議",
+      "date": "2026/04/21",
+      "officialUrl": "https://www.cas.go.jp/jp/seisaku/kokuminkaigi/contents/20260421/index.html",
+      "category": "COUNCIL",
+      "ministry": "CAS",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "その他情報",
+          "url": "https://www.cas.go.jp/jp/siryou/index.html",
+          "type": "HTML",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "第４回社会保障国民会議　有識者会議　議事次第（PDF／66KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/kokuminkaigi/contents/20260421/00_agenda.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "これまでご議論いただいた内容等について（PDF／685KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/kokuminkaigi/contents/20260421/01_siryou1.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "給付付き税額控除の制度設計に向けて③（PDF／2,542KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/kokuminkaigi/contents/20260421/02_siryou2.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "給付事務の円滑化・迅速化のためのデジタルツールについて（PDF／2,597KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/kokuminkaigi/contents/20260421/03_siryou3.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "実務者会議における消費税に関するヒアリングについて（PDF／145KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/kokuminkaigi/contents/20260421/04_siryou4.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "冨田構成員提出資料（PDF／648KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/kokuminkaigi/contents/20260421/11_siryou11.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "議事要旨",
+          "url": "https://www.cas.go.jp/jp/seisaku/kokuminkaigi/contents/20260421/minutes.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        }
+      ]
+    },
+    {
       "id": "meet-2026-0420-mhlw-hosho-shiinsentaku-134",
       "councilId": "mhlw-hosho-shiinsentaku-134",
       "councilName": "mhlw-hosho-shiinsentaku-134",
@@ -38974,6 +40316,60 @@
           "name": "第5回 中小企業の親族内承継に関する検討会 配布資料",
           "url": "https://www.chusho.meti.go.jp/koukai/kenkyukai/shinzoku/005.html",
           "type": "HTML",
+          "manualLock": true
+        }
+      ]
+    },
+    {
+      "id": "meet-2026-04-15-cas-kokuminkaigi-jitsumu-dai6",
+      "councilId": "cas-kokuminkaigi-jitsumu",
+      "title": "第6回 社会保障国民会議　給付付き税額控除等に関する実務者会議",
+      "date": "2026/04/15",
+      "officialUrl": "https://www.cas.go.jp/jp/seisaku/kokuminkaigi/contents/20260415/index.html",
+      "category": "COUNCIL",
+      "ministry": "CAS",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "その他情報",
+          "url": "https://www.cas.go.jp/jp/siryou/index.html",
+          "type": "HTML",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "給付付き税額控除等に関する実務者会議（第６回）　議事次第（PDF／113KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/kokuminkaigi/contents/20260415/00_agenda.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "議題（PDF／157KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/kokuminkaigi/contents/20260415/01_siryou1.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "給付付き税額控除の制度設計に向けて（PDF／2174KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/kokuminkaigi/contents/20260415/02_siryou2.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "有識者会議におけるこれまでの議論の状況について（PDF／665KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/kokuminkaigi/contents/20260415/03_siryou3.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "議事要旨",
+          "url": "https://www.cas.go.jp/jp/seisaku/kokuminkaigi/contents/20260415/minutes.pdf",
+          "type": "PDF",
+          "isPrivate": false,
           "manualLock": true
         }
       ]
@@ -39532,6 +40928,128 @@
       ]
     },
     {
+      "id": "meet-2026-04-09-cas-kokuminkaigi-yushikisha-dai3",
+      "councilId": "cas-kokuminkaigi-yushikisha",
+      "title": "第3回 社会保障国民会議　有識者会議",
+      "date": "2026/04/09",
+      "officialUrl": "https://www.cas.go.jp/jp/seisaku/kokuminkaigi/contents/20260409/index.html",
+      "category": "COUNCIL",
+      "ministry": "CAS",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "その他情報",
+          "url": "https://www.cas.go.jp/jp/siryou/index.html",
+          "type": "HTML",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "第３回社会保障国民会議　有識者会議　議事次第（PDF／105KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/kokuminkaigi/contents/20260409/00_agenda.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "これまでご議論いただいた内容等について（PDF／593KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/kokuminkaigi/contents/20260409/01_siryou1.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "給付付き税額控除の制度設計に向けて②（PDF／2,248KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/kokuminkaigi/contents/20260409/02_siryou2.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "実務者会議における消費税に関するヒアリングについて（PDF／290KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/kokuminkaigi/contents/20260409/03_siryou3.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "議事要旨",
+          "url": "https://www.cas.go.jp/jp/seisaku/kokuminkaigi/contents/20260409/minutes.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        }
+      ]
+    },
+    {
+      "id": "meet-2026-04-08-cas-kokuminkaigi-jitsumu-dai5",
+      "councilId": "cas-kokuminkaigi-jitsumu",
+      "title": "第5回 社会保障国民会議　給付付き税額控除等に関する実務者会議",
+      "date": "2026/04/08",
+      "officialUrl": "https://www.cas.go.jp/jp/seisaku/kokuminkaigi/contents/20260408/index.html",
+      "category": "COUNCIL",
+      "ministry": "CAS",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "その他情報",
+          "url": "https://www.cas.go.jp/jp/siryou/index.html",
+          "type": "HTML",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "給付付き税額控除等に関する実務者会議（第５回）　議事次第（PDF／120KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/kokuminkaigi/contents/20260408/00_agenda.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "議題（PDF／263KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/kokuminkaigi/contents/20260408/01_siryou1.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "社会保障国民会議について（PDF／136KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/kokuminkaigi/contents/20260408/02_siryou2.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "給付付き税額控除等に関する実務者会議の運営（PDF／89KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/kokuminkaigi/contents/20260408/03_siryou3.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "実務者会議の今後の進め方について（PDF／102KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/kokuminkaigi/contents/20260408/04_siryou4.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "消費税関連システムの類型概要（PDF／770KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/kokuminkaigi/contents/20260408/05_siryou5.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "議事要旨",
+          "url": "https://www.cas.go.jp/jp/seisaku/kokuminkaigi/contents/20260408/minutes.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        }
+      ]
+    },
+    {
       "id": "meet-2026-04-07-moj-baibaisyun-kento-dai2",
       "councilId": "moj-baibaisyun-kento",
       "title": "第2回 売買春に係る規制の在り方検討会",
@@ -39603,6 +41121,67 @@
       "officialUrl": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/meeting.html",
       "hasMinutes": false,
       "docCount": 1
+    },
+    {
+      "id": "meet-2026-04-06-cas-kokuminkaigi-jitsumu-dai4",
+      "councilId": "cas-kokuminkaigi-jitsumu",
+      "title": "第4回 社会保障国民会議　給付付き税額控除等に関する実務者会議",
+      "date": "2026/04/06",
+      "officialUrl": "https://www.cas.go.jp/jp/seisaku/kokuminkaigi/contents/20260406/index.html",
+      "category": "COUNCIL",
+      "ministry": "CAS",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "その他情報",
+          "url": "https://www.cas.go.jp/jp/siryou/index.html",
+          "type": "HTML",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "給付付き税額控除等に関する実務者会議（第４回）　議事次第（PDF／83KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/kokuminkaigi/contents/20260406/00_agenda.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "議題（PDF／152KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/kokuminkaigi/contents/20260406/01_siryou1.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "第１回有識者会議のご指摘を踏まえた純負担率の分析（PDF／972KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/kokuminkaigi/contents/20260406/02_siryou2.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "有識者会議におけるこれまでの議論の状況について（PDF／480KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/kokuminkaigi/contents/20260406/03_siryou3.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "参考資料（PDF／1,614KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/kokuminkaigi/contents/20260406/11_siryou1.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "議事要旨",
+          "url": "https://www.cas.go.jp/jp/seisaku/kokuminkaigi/contents/20260406/minutes.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        }
+      ]
     },
     {
       "id": "meet-2026-04-02-cao-contents_kyogikai-25-dai2",
@@ -39735,6 +41314,67 @@
         {
           "name": "議事要旨",
           "url": "https://www.cas.go.jp/jp/seisaku/chyutoujyousei/tf_dai1/gijiyoushi.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        }
+      ]
+    },
+    {
+      "id": "meet-2026-04-02-cas-kokuminkaigi-yushikisha-dai2",
+      "councilId": "cas-kokuminkaigi-yushikisha",
+      "title": "第2回 社会保障国民会議　有識者会議",
+      "date": "2026/04/02",
+      "officialUrl": "https://www.cas.go.jp/jp/seisaku/kokuminkaigi/contents/20260402/index.html",
+      "category": "COUNCIL",
+      "ministry": "CAS",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "その他情報",
+          "url": "https://www.cas.go.jp/jp/siryou/index.html",
+          "type": "HTML",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "第２回社会保障国民会議　有識者会議　議事次第（PDF／65KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/kokuminkaigi/contents/20260402/00_agenda.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "第１回有識者会議においてご議論いただいた内容等について（PDF／508KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/kokuminkaigi/contents/20260402/01_siryou1.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "前回会議のご指摘を踏まえた純負担率の分析（PDF／4,841KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/kokuminkaigi/contents/20260402/02_siryou2.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "労働供給の状況等について（PDF／1,286KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/kokuminkaigi/contents/20260402/03_siryou3.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "実務者会議における消費税に関するヒアリングについて（PDF／144KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/kokuminkaigi/contents/20260402/04_siryou4.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "議事要旨",
+          "url": "https://www.cas.go.jp/jp/seisaku/kokuminkaigi/contents/20260402/minutes.pdf",
           "type": "PDF",
           "isPrivate": false,
           "manualLock": true
@@ -40361,6 +42001,88 @@
       ]
     },
     {
+      "id": "meet-2026-03-25-cas-kokuminkaigi-jitsumu-dai3",
+      "councilId": "cas-kokuminkaigi-jitsumu",
+      "title": "第3回 社会保障国民会議　給付付き税額控除等に関する実務者会議",
+      "date": "2026/03/25",
+      "officialUrl": "https://www.cas.go.jp/jp/seisaku/kokuminkaigi/contents/20260325/index.html",
+      "category": "COUNCIL",
+      "ministry": "CAS",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "その他情報",
+          "url": "https://www.cas.go.jp/jp/siryou/index.html",
+          "type": "HTML",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "給付付き税額控除等に関する実務者会議（第３回）　議事次第（PDF／111KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/kokuminkaigi/contents/20260325/00_agenda.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "議題（PDF／161KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/kokuminkaigi/contents/20260325/01_siryou1.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "社会保障国民会議について（PDF／235KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/kokuminkaigi/contents/20260325/02_siryou2.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "給付付き税額控除等に関する実務者会議の運営（PDF／92KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/kokuminkaigi/contents/20260325/03_siryou3.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "実務者会議の今後の進め方について（PDF／128KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/kokuminkaigi/contents/20260325/04_siryou4.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "給付付き税額控除等を巡る議論の経緯（PDF／828KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/kokuminkaigi/contents/20260325/05_siryou5.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "令和8年3月24日第1回有識者会議 翁構成員提出資料（PDF／1,493KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/kokuminkaigi/contents/20260325/06_siryou6.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "令和8年3月24日第1回有識者会議 是枝構成員提出資料（PDF／1,489KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/kokuminkaigi/contents/20260325/07_siryou7.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "議事要旨",
+          "url": "https://www.cas.go.jp/jp/seisaku/kokuminkaigi/contents/20260325/minutes.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        }
+      ]
+    },
+    {
       "id": "meet-2026-03-24-moj-baibaisyun-kento-dai1",
       "councilId": "moj-baibaisyun-kento",
       "title": "第1回 売買春に係る規制の在り方検討会",
@@ -40676,6 +42398,123 @@
         {
           "name": "議事要旨",
           "url": "https://www.cas.go.jp/jp/seisaku/chyutoujyousei/dai1/gijiyoushi.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        }
+      ]
+    },
+    {
+      "id": "meet-2026-03-24-cas-kokuminkaigi-yushikisha-dai1",
+      "councilId": "cas-kokuminkaigi-yushikisha",
+      "title": "第1回 社会保障国民会議　有識者会議",
+      "date": "2026/03/24",
+      "officialUrl": "https://www.cas.go.jp/jp/seisaku/kokuminkaigi/contents/20260324/index.html",
+      "category": "COUNCIL",
+      "ministry": "CAS",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "その他情報",
+          "url": "https://www.cas.go.jp/jp/siryou/index.html",
+          "type": "HTML",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "第１回社会保障国民会議　有識者会議　議事次第（PDF／104KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/kokuminkaigi/contents/20260324/00_agenda.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "社会保障国民会議について（PDF／710KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/kokuminkaigi/contents/20260324/01_siryou1.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "社会保障国民会議 有識者会議 構成員名簿（PDF／60KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/kokuminkaigi/contents/20260324/02_siryou2.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "社会保障国民会議 有識者会議の運営について（PDF／132KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/kokuminkaigi/contents/20260324/03_siryou3.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "実務者会議の今後の進め方について（PDF／107KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/kokuminkaigi/contents/20260324/04_siryou4.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "第１回給付付き税額控除等に関する実務者会議 議事要旨（PDF／308KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/kokuminkaigi/contents/20260324/05_siryou5.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "給付付き税額控除の制度設計に向けて（PDF／7,305KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/kokuminkaigi/contents/20260324/06_siryou6.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "実務者会議における消費税に関するヒアリングについて（PDF／128KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/kokuminkaigi/contents/20260324/07_siryou7.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "翁構成員提出資料①（PDF／1,443KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/kokuminkaigi/contents/20260324/11_siryou11.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "翁構成員提出資料②（PDF／1,959KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/kokuminkaigi/contents/20260324/12_siryou12.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "翁構成員提出資料③（PDF／2,433KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/kokuminkaigi/contents/20260324/13_siryou13.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "是枝構成員提出資料①（PDF／1,446KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/kokuminkaigi/contents/20260324/21_siryou21.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "是枝構成員提出資料②（PDF／987KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/kokuminkaigi/contents/20260324/22_siryou22.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "議事要旨",
+          "url": "https://www.cas.go.jp/jp/seisaku/kokuminkaigi/contents/20260324/minutes.pdf",
           "type": "PDF",
           "isPrivate": false,
           "manualLock": true
@@ -41525,6 +43364,53 @@
       "officialUrl": "https://www8.cao.go.jp/cstp/siryo/haihui083/haihu-083.html",
       "hasMinutes": false,
       "docCount": 3
+    },
+    {
+      "id": "meet-2026-03-18-cas-kokuminkaigi-jitsumu-dai2",
+      "councilId": "cas-kokuminkaigi-jitsumu",
+      "title": "第2回 社会保障国民会議　給付付き税額控除等に関する実務者会議",
+      "date": "2026/03/18",
+      "officialUrl": "https://www.cas.go.jp/jp/seisaku/kokuminkaigi/contents/20260318/index.html",
+      "category": "COUNCIL",
+      "ministry": "CAS",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "その他情報",
+          "url": "https://www.cas.go.jp/jp/siryou/index.html",
+          "type": "HTML",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "給付付き税額控除等に関する実務者会議（第２回）　議事次第（PDF／69KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/kokuminkaigi/contents/20260318/00_agenda.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "議題（PDF／147KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/kokuminkaigi/contents/20260318/01_siryou1.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "社会保障国民会議 有識者会議の構成員の内定について（PDF／113KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/kokuminkaigi/contents/20260318/02_siryou2.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "議事要旨",
+          "url": "https://www.cas.go.jp/jp/seisaku/kokuminkaigi/contents/20260318/minutes.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        }
+      ]
     },
     {
       "id": "meet-2026-03-17-cas-gx-senmonka-wg-dai16",
@@ -42475,6 +44361,81 @@
       "officialUrl": "https://www.mof.go.jp/about_mof/councils/fiscal_system_council/sub-of_fiscal_system/proceedings/material/20260312zaiseia.html",
       "hasMinutes": true,
       "docCount": 4
+    },
+    {
+      "id": "meet-2026-03-12-cas-kokuminkaigi-jitsumu-dai1",
+      "councilId": "cas-kokuminkaigi-jitsumu",
+      "title": "第1回 社会保障国民会議　給付付き税額控除等に関する実務者会議",
+      "date": "2026/03/12",
+      "officialUrl": "https://www.cas.go.jp/jp/seisaku/kokuminkaigi/contents/20260312/index.html",
+      "category": "COUNCIL",
+      "ministry": "CAS",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "その他情報",
+          "url": "https://www.cas.go.jp/jp/siryou/index.html",
+          "type": "HTML",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "給付付き税額控除等に関する実務者会議（第１回）　議事次第（PDF／114KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/kokuminkaigi/contents/20260312/00_agenda.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "議題（PDF／56KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/kokuminkaigi/contents/20260312/01_siryou1.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "社会保障国民会議について（PDF／210KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/kokuminkaigi/contents/20260312/02_siryou2.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "給付付き税額控除等に関する実務者会議の運営（PDF／87KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/kokuminkaigi/contents/20260312/03_siryou3.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "実務者会議の今後の進め方について（PDF／101KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/kokuminkaigi/contents/20260312/04_siryou4.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "給付付き税額控除について（PDF／444KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/kokuminkaigi/contents/20260312/05_siryou5.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "ヒアリング先候補（案）（PDF／281KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/kokuminkaigi/contents/20260312/06_siryou6.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "議事要旨",
+          "url": "https://www.cas.go.jp/jp/seisaku/kokuminkaigi/contents/20260312/minutes.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        }
+      ]
     },
     {
       "id": "meet-2026-03-11-moj-keiji-tetsuduki-kenkyu-2",
@@ -224806,6 +226767,33 @@
     "cas-chutou-jyousei-tf": {
       "rule_id": "rule-cas-chutou-jyousei-tf",
       "subpage_discovery_pattern": "https://www\\.cas\\.go\\.jp/jp/seisaku/chyutoujyousei/tf_dai\\d+/gijisidai\\.html",
+      "title_selector": "h1, h2, .title",
+      "date_regex": "(令和\\d+年\\d+月\\d+日|\\d{4}年\\d{1,2}月\\d{1,2}日)",
+      "pdf_selector": "a[href*='.pdf']",
+      "deep_crawl_enabled": true,
+      "manualLock": true
+    },
+    "cas-kokuminkaigi-jitsumu": {
+      "rule_id": "rule-cas-kokuminkaigi-jitsumu",
+      "subpage_discovery_pattern": "https://www\\.cas\\.go\\.jp/jp/seisaku/kokuminkaigi/contents/\\d+(?:-\\d+)?/index\\.html",
+      "title_selector": "h1, h2, .title",
+      "date_regex": "(令和\\d+年\\d+月\\d+日|\\d{4}年\\d{1,2}月\\d{1,2}日)",
+      "pdf_selector": "a[href*='.pdf']",
+      "deep_crawl_enabled": true,
+      "manualLock": true
+    },
+    "cas-kokuminkaigi-yushikisha": {
+      "rule_id": "rule-cas-kokuminkaigi-yushikisha",
+      "subpage_discovery_pattern": "https://www\\.cas\\.go\\.jp/jp/seisaku/kokuminkaigi/contents/\\d+(?:-\\d+)?/(?:index\\.html)?",
+      "title_selector": "h1, h2, .title",
+      "date_regex": "(令和\\d+年\\d+月\\d+日|\\d{4}年\\d{1,2}月\\d{1,2}日)",
+      "pdf_selector": "a[href*='.pdf']",
+      "deep_crawl_enabled": true,
+      "manualLock": true
+    },
+    "cas-kokuminkaigi-kunitochihou": {
+      "rule_id": "rule-cas-kokuminkaigi-kunitochihou",
+      "subpage_discovery_pattern": "https://www\\.cas\\.go\\.jp/jp/seisaku/kokuminkaigi/contents/\\d+/index\\.html",
       "title_selector": "h1, h2, .title",
       "date_regex": "(令和\\d+年\\d+月\\d+日|\\d{4}年\\d{1,2}月\\d{1,2}日)",
       "pdf_selector": "a[href*='.pdf']",
