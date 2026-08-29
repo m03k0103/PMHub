@@ -15581,6 +15581,138 @@
       "manualLock": true,
       "pastYearCount": 19,
       "trackedSince": "2022/01/15"
+    },
+    {
+      "id": "cao-zeicho-ebpm-senmonka",
+      "name": "税制のEBPMに関する専門家会合",
+      "ministry": "CAO",
+      "category": "STUDY",
+      "officialUrl": "https://www.cao.go.jp/zei-cho/gijiroku/ebpm/index.html",
+      "description": "租税特別措置等の税制措置の効果検証（EBPM：証拠に基づく政策立案）の手法・データ分析を議論する専門家会合。",
+      "manualLock": true,
+      "pastYearCount": 7,
+      "trackedSince": "2026-08-09"
+    },
+    {
+      "id": "cao-zeicho-life-senmonka",
+      "name": "活力ある長寿社会に向けたライフコースに中立な税制に関する専門家会合",
+      "ministry": "CAO",
+      "category": "STUDY",
+      "officialUrl": "https://www.cao.go.jp/zei-cho/gijiroku/life/index.html",
+      "description": "働き方や家族構成の多様化を踏まえ、個人のライフコースの選択に中立的な税制のあり方を議論する専門家会合。",
+      "manualLock": true,
+      "pastYearCount": 3,
+      "trackedSince": "2026-08-09"
+    },
+    {
+      "id": "cao-zeicho-digital-noukan-senmonka",
+      "name": "経済社会のデジタル化への対応と納税環境整備に関する専門家会合",
+      "ministry": "CAO",
+      "category": "STUDY",
+      "officialUrl": "https://www.cao.go.jp/zei-cho/gijiroku/digital-noukan/index.html",
+      "description": "デジタル経済の進展に伴う税務執行・納税手続のデジタル化および適正公平な課税の確保を議論する専門家会合。",
+      "manualLock": true,
+      "pastYearCount": 4,
+      "trackedSince": "2026-08-09"
+    },
+    {
+      "id": "cao-zeicho-noukan-senmonka",
+      "name": "納税環境整備に関する専門家会合",
+      "ministry": "CAO",
+      "category": "STUDY",
+      "officialUrl": "https://www.cao.go.jp/zei-cho/gijiroku/noukan/index.html",
+      "description": "納税者の利便性向上と適正な税務執行・コンプライアンス維持のための納税環境整備を議論する専門家会合。",
+      "manualLock": true,
+      "pastYearCount": 13,
+      "trackedSince": "2026-08-09"
+    },
+    {
+      "id": "cao-zeicho-sozoku-zoyo-senmonka",
+      "name": "相続税・贈与税に関する専門家会合",
+      "ministry": "CAO",
+      "category": "STUDY",
+      "officialUrl": "https://www.cao.go.jp/zei-cho/gijiroku/sozoku-zoyo/index.html",
+      "description": "資産移転の時期に中立的な税制の構築や高齢化社会における富の再配分・相続税・贈与税のあり方を議論する専門家会合。",
+      "manualLock": true,
+      "pastYearCount": 3,
+      "trackedSince": "2026-08-09"
+    },
+    {
+      "id": "cao-zeicho-rougo-shisan-senmonka",
+      "name": "老後の資産形成等に関する専門家会合",
+      "ministry": "CAO",
+      "category": "STUDY",
+      "officialUrl": "https://www.cao.go.jp/zei-cho/gijiroku/rougo/index.html",
+      "description": "高齢期における自助努力による資産形成や私的年金税制のあり方を総合的に議論する専門家会合。",
+      "manualLock": true,
+      "pastYearCount": 1,
+      "trackedSince": "2026-08-09"
+    },
+    {
+      "id": "cao-zeicho-renketsu-senmonka",
+      "name": "連結納税制度に関する専門家会合",
+      "ministry": "CAO",
+      "category": "STUDY",
+      "officialUrl": "https://www.cao.go.jp/zei-cho/gijiroku/renketsu/index.html",
+      "description": "企業グループ全体の税負担の適正化および連結納税・グループ通算制度の見直しを議論する専門家会合。",
+      "manualLock": true,
+      "pastYearCount": 5,
+      "trackedSince": "2026-08-09"
+    },
+    {
+      "id": "cao-zeicho-koku-han-kaigou",
+      "name": "国税犯則調査手続の見直しに関する会合",
+      "ministry": "CAO",
+      "category": "STUDY",
+      "officialUrl": "https://www.cao.go.jp/zei-cho/gijiroku/koku-han/index.html",
+      "description": "IT化等の社会環境の変化に対応した国税犯則調査手続の現代化・見直しを議論する会合。",
+      "manualLock": true,
+      "pastYearCount": 2,
+      "trackedSince": "2026-08-09"
+    },
+    {
+      "id": "cao-zeicho-kiso-shoiinkai",
+      "name": "政府税制調査会 基礎問題小委員会",
+      "ministry": "CAO",
+      "category": "STUDY",
+      "officialUrl": "https://www.cao.go.jp/zei-cho/gijiroku/kiso/index.html",
+      "description": "中長期的な税制のあり方や税体系全体の構造的課題を調査審議する政府税制調査会の基幹小委員会。",
+      "manualLock": true,
+      "pastYearCount": 6,
+      "trackedSince": "2026-08-09"
+    },
+    {
+      "id": "cao-zeicho-discussion1-kokusai",
+      "name": "国際課税ディスカッショングループ",
+      "ministry": "CAO",
+      "category": "STUDY",
+      "officialUrl": "https://www.cao.go.jp/zei-cho/gijiroku/discussion1/index.html",
+      "description": "BEPS（税源浸食と利益移転）対応やデジタル課税等の国際課税ルールを専門的に議論する作業グループ。",
+      "manualLock": true,
+      "pastYearCount": 7,
+      "trackedSince": "2026-08-09"
+    },
+    {
+      "id": "cao-zeicho-discussion2-mynumber",
+      "name": "マイナンバー・税務執行ディスカッショングループ",
+      "ministry": "CAO",
+      "category": "STUDY",
+      "officialUrl": "https://www.cao.go.jp/zei-cho/gijiroku/discussion2/index.html",
+      "description": "マイナンバー制度の税務利活用および情報連携による税務執行の効率化を議論する作業グループ。",
+      "manualLock": true,
+      "pastYearCount": 4,
+      "trackedSince": "2026-08-09"
+    },
+    {
+      "id": "cao-zeicho-discussion3-hojin",
+      "name": "法人課税ディスカッショングループ",
+      "ministry": "CAO",
+      "category": "STUDY",
+      "officialUrl": "https://www.cao.go.jp/zei-cho/gijiroku/discussion3/index.html",
+      "description": "国際競争力や投資促進の観点から法人課税の構造改革を議論する作業グループ。",
+      "manualLock": true,
+      "pastYearCount": 7,
+      "trackedSince": "2026-08-09"
     }
   ],
   "meetings": [
@@ -15591,6 +15723,23 @@
       "date": "2026/09/02",
       "officialUrl": "https://www.mhlw.go.jp/stf/newpage_75638.html",
       "materials": [],
+      "topics": [],
+      "manualLock": true
+    },
+    {
+      "id": "meet-2026-09-01-cao-zeicho-ebpm-senmonka-dai7",
+      "councilId": "cao-zeicho-ebpm-senmonka",
+      "title": "第7回 税制のEBPMに関する専門家会合",
+      "date": "2026/09/01",
+      "officialUrl": "https://www.cao.go.jp/zei-cho/gijiroku/ebpm/2026/index.html",
+      "materials": [
+        {
+          "name": "会議資料",
+          "url": "https://www.cao.go.jp/zei-cho/gijiroku/ebpm/2026/8ebpm7kai.html",
+          "type": "HTML",
+          "manualLock": true
+        }
+      ],
       "topics": [],
       "manualLock": true
     },
@@ -53225,6 +53374,93 @@
       "docCount": 4
     },
     {
+      "id": "meet-2025-11-13-cao-zeicho-life-senmonka-dai3",
+      "councilId": "cao-zeicho-life-senmonka",
+      "title": "第3回 活力ある長寿社会に向けたライフコースに中立な税制に関する専門家会合",
+      "date": "2025/11/13",
+      "officialUrl": "https://www.cao.go.jp/zei-cho/gijiroku/life/2025/index.html",
+      "materials": [
+        {
+          "name": "議事録 (PDF形式:305KB)",
+          "url": "https://www.cao.go.jp/zei-cho/content/7life3kaigiji.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "会議資料",
+          "url": "https://www.cao.go.jp/zei-cho/gijiroku/life/2025/7life3kai.html",
+          "type": "HTML",
+          "manualLock": true
+        },
+        {
+          "name": "記者会見録 (PDF形式:85KB)",
+          "url": "https://www.cao.go.jp/zei-cho/content/7life3kaiken.pdf",
+          "type": "PDF",
+          "manualLock": true
+        }
+      ],
+      "topics": [],
+      "manualLock": true
+    },
+    {
+      "id": "meet-2025-11-13-cao-zeicho-digital-noukan-senmonka-dai4",
+      "councilId": "cao-zeicho-digital-noukan-senmonka",
+      "title": "第4回 経済社会のデジタル化への対応と納税環境整備に関する専門家会合",
+      "date": "2025/11/13",
+      "officialUrl": "https://www.cao.go.jp/zei-cho/gijiroku/digital-noukan/2025/index.html",
+      "materials": [
+        {
+          "name": "議事録 (PDF形式:282KB)",
+          "url": "https://www.cao.go.jp/zei-cho/content/7digital-noukan4kaigiji.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "会議資料",
+          "url": "https://www.cao.go.jp/zei-cho/gijiroku/digital-noukan/2025/7digital-noukan4kai.html",
+          "type": "HTML",
+          "manualLock": true
+        },
+        {
+          "name": "記者会見録 (PDF形式:99KB)",
+          "url": "https://www.cao.go.jp/zei-cho/content/7digital-noukan4kaiken.pdf",
+          "type": "PDF",
+          "manualLock": true
+        }
+      ],
+      "topics": [],
+      "manualLock": true
+    },
+    {
+      "id": "meet-2025-11-12-cao-zeicho-ebpm-senmonka-dai6",
+      "councilId": "cao-zeicho-ebpm-senmonka",
+      "title": "第6回 税制のEBPMに関する専門家会合",
+      "date": "2025/11/12",
+      "officialUrl": "https://www.cao.go.jp/zei-cho/gijiroku/ebpm/2025/index.html",
+      "materials": [
+        {
+          "name": "議事録 (PDF形式:379KB)",
+          "url": "https://www.cao.go.jp/zei-cho/content/7ebpm6kaigiji.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "会議資料",
+          "url": "https://www.cao.go.jp/zei-cho/gijiroku/ebpm/2025/7ebpm6kai.html",
+          "type": "HTML",
+          "manualLock": true
+        },
+        {
+          "name": "記者会見録 (PDF形式:112KB)",
+          "url": "https://www.cao.go.jp/zei-cho/content/7ebpm6kaiken.pdf",
+          "type": "PDF",
+          "manualLock": true
+        }
+      ],
+      "topics": [],
+      "manualLock": true
+    },
+    {
       "id": "meet-2025-11-11-cas-kyuyo-9",
       "councilId": "cas-kyuyo-9",
       "councilName": "給与関係閣僚会議",
@@ -58068,6 +58304,35 @@
       "docCount": 16
     },
     {
+      "id": "meet-2025-06-18-cao-zeicho-ebpm-senmonka-dai5",
+      "councilId": "cao-zeicho-ebpm-senmonka",
+      "title": "第5回 税制のEBPMに関する専門家会合",
+      "date": "2025/06/18",
+      "officialUrl": "https://www.cao.go.jp/zei-cho/gijiroku/ebpm/2025/index.html",
+      "materials": [
+        {
+          "name": "議事録 (PDF形式:469KB)",
+          "url": "https://www.cao.go.jp/zei-cho/content/7ebpm5kaigiji.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "会議資料",
+          "url": "https://www.cao.go.jp/zei-cho/gijiroku/ebpm/2025/7ebpm5kai.html",
+          "type": "HTML",
+          "manualLock": true
+        },
+        {
+          "name": "記者会見録 (PDF形式:104KB)",
+          "url": "https://www.cao.go.jp/zei-cho/content/7ebpm5kaiken.pdf",
+          "type": "PDF",
+          "manualLock": true
+        }
+      ],
+      "topics": [],
+      "manualLock": true
+    },
+    {
       "id": "meet-2025-06-17-cas-1-94",
       "councilId": "cas-1-94",
       "councilName": "普天間飛行場の運用等に伴う宜野湾市民の住民の生活環境等の保全の課題に関する協議会",
@@ -58460,6 +58725,35 @@
           "manualLock": true
         }
       ]
+    },
+    {
+      "id": "meet-2025-06-11-cao-zeicho-digital-noukan-senmonka-dai3",
+      "councilId": "cao-zeicho-digital-noukan-senmonka",
+      "title": "第3回 経済社会のデジタル化への対応と納税環境整備に関する専門家会合",
+      "date": "2025/06/11",
+      "officialUrl": "https://www.cao.go.jp/zei-cho/gijiroku/digital-noukan/2025/index.html",
+      "materials": [
+        {
+          "name": "議事録 (PDF形式:389KB)",
+          "url": "https://www.cao.go.jp/zei-cho/content/7digital-noukan3kaigiji.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "会議資料",
+          "url": "https://www.cao.go.jp/zei-cho/gijiroku/digital-noukan/2025/7digital-noukan3kai.html",
+          "type": "HTML",
+          "manualLock": true
+        },
+        {
+          "name": "記者会見録 (PDF形式:121KB)",
+          "url": "https://www.cao.go.jp/zei-cho/content/7digital-noukan3kaiken.pdf",
+          "type": "PDF",
+          "manualLock": true
+        }
+      ],
+      "topics": [],
+      "manualLock": true
     },
     {
       "id": "meet-2025-06-10-cas-kagayakujosei-46-dai15",
@@ -59040,6 +59334,35 @@
       ]
     },
     {
+      "id": "meet-2025-06-03-cao-zeicho-ebpm-senmonka-dai4",
+      "councilId": "cao-zeicho-ebpm-senmonka",
+      "title": "第4回 税制のEBPMに関する専門家会合",
+      "date": "2025/06/03",
+      "officialUrl": "https://www.cao.go.jp/zei-cho/gijiroku/ebpm/2025/index.html",
+      "materials": [
+        {
+          "name": "議事録 (PDF形式:443KB)",
+          "url": "https://www.cao.go.jp/zei-cho/content/7ebpm4kaigiji.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "会議資料",
+          "url": "https://www.cao.go.jp/zei-cho/gijiroku/ebpm/2025/7ebpm4kai.html",
+          "type": "HTML",
+          "manualLock": true
+        },
+        {
+          "name": "記者会見録 (PDF形式:131KB)",
+          "url": "https://www.cao.go.jp/zei-cho/content/7ebpm4kaiken.pdf",
+          "type": "PDF",
+          "manualLock": true
+        }
+      ],
+      "topics": [],
+      "manualLock": true
+    },
+    {
       "id": "meet-2025-06-02-cao-ai-strategy-dai14",
       "councilId": "cao-ai-strategy",
       "councilName": "AI戦略会議",
@@ -59113,6 +59436,35 @@
       "officialUrl": "https://www.fsc.go.jp/senmon/nouyaku/nou_dai5_senmon_susa_index.html",
       "hasMinutes": false,
       "docCount": 0,
+      "manualLock": true
+    },
+    {
+      "id": "meet-2025-05-29-cao-zeicho-life-senmonka-dai2",
+      "councilId": "cao-zeicho-life-senmonka",
+      "title": "第2回 活力ある長寿社会に向けたライフコースに中立な税制に関する専門家会合",
+      "date": "2025/05/29",
+      "officialUrl": "https://www.cao.go.jp/zei-cho/gijiroku/life/2025/index.html",
+      "materials": [
+        {
+          "name": "議事録 (PDF形式:394KB)",
+          "url": "https://www.cao.go.jp/zei-cho/content/7life2kaigiji.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "会議資料",
+          "url": "https://www.cao.go.jp/zei-cho/gijiroku/life/2025/7life2kai.html",
+          "type": "HTML",
+          "manualLock": true
+        },
+        {
+          "name": "記者会見録 (PDF形式:146KB)",
+          "url": "https://www.cao.go.jp/zei-cho/content/7life2kaiken.pdf",
+          "type": "PDF",
+          "manualLock": true
+        }
+      ],
+      "topics": [],
       "manualLock": true
     },
     {
@@ -59748,6 +60100,35 @@
       "manualLock": true
     },
     {
+      "id": "meet-2025-05-21-cao-zeicho-ebpm-senmonka-dai3",
+      "councilId": "cao-zeicho-ebpm-senmonka",
+      "title": "第3回 税制のEBPMに関する専門家会合",
+      "date": "2025/05/21",
+      "officialUrl": "https://www.cao.go.jp/zei-cho/gijiroku/ebpm/2025/index.html",
+      "materials": [
+        {
+          "name": "議事録 (PDF形式:475KB)",
+          "url": "https://www.cao.go.jp/zei-cho/content/7ebpm3kaigiji.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "会議資料",
+          "url": "https://www.cao.go.jp/zei-cho/gijiroku/ebpm/2025/7ebpm3kai.html",
+          "type": "HTML",
+          "manualLock": true
+        },
+        {
+          "name": "記者会見録 (PDF形式:136KB)",
+          "url": "https://www.cao.go.jp/zei-cho/content/7ebpm3kaiken.pdf",
+          "type": "PDF",
+          "manualLock": true
+        }
+      ],
+      "topics": [],
+      "manualLock": true
+    },
+    {
       "id": "meet-2025-05-19-smea-seicho-innovation-dai5",
       "councilId": "smea-seicho-innovation",
       "title": "中小企業の成長のためのイノベーション研究会 第5回",
@@ -59812,6 +60193,35 @@
           "name": "議事録",
           "url": "https://www.mhlw.go.jp/stf/newpage_58805.html",
           "type": "HTML",
+          "manualLock": true
+        }
+      ],
+      "topics": [],
+      "manualLock": true
+    },
+    {
+      "id": "meet-2025-05-13-cao-zeicho-digital-noukan-senmonka-dai2",
+      "councilId": "cao-zeicho-digital-noukan-senmonka",
+      "title": "第2回 経済社会のデジタル化への対応と納税環境整備に関する専門家会合",
+      "date": "2025/05/13",
+      "officialUrl": "https://www.cao.go.jp/zei-cho/gijiroku/digital-noukan/2025/index.html",
+      "materials": [
+        {
+          "name": "議事録 (PDF形式:465KB)",
+          "url": "https://www.cao.go.jp/zei-cho/content/7digital-noukan2kaigiji.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "会議資料",
+          "url": "https://www.cao.go.jp/zei-cho/gijiroku/digital-noukan/2025/7digital-noukan2kai.html",
+          "type": "HTML",
+          "manualLock": true
+        },
+        {
+          "name": "記者会見録 (PDF形式:136KB)",
+          "url": "https://www.cao.go.jp/zei-cho/content/7digital-noukan2kaiken.pdf",
+          "type": "PDF",
           "manualLock": true
         }
       ],
@@ -89610,6 +90020,35 @@
       "docCount": 3
     },
     {
+      "id": "meet-2024-11-19-cao-zeicho-ebpm-senmonka-dai2",
+      "councilId": "cao-zeicho-ebpm-senmonka",
+      "title": "第2回 税制のEBPMに関する専門家会合",
+      "date": "2024/11/19",
+      "officialUrl": "https://www.cao.go.jp/zei-cho/gijiroku/ebpm/2024/index.html",
+      "materials": [
+        {
+          "name": "議事録 (PDF形式:496KB)",
+          "url": "https://www.cao.go.jp/zei-cho/content/6ebpm2kaigiji.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "会議資料",
+          "url": "https://www.cao.go.jp/zei-cho/gijiroku/ebpm/2024/6ebpm2kai.html",
+          "type": "HTML",
+          "manualLock": true
+        },
+        {
+          "name": "記者会見録 (PDF形式:147KB)",
+          "url": "https://www.cao.go.jp/zei-cho/content/6ebpm2kaiken.pdf",
+          "type": "PDF",
+          "manualLock": true
+        }
+      ],
+      "topics": [],
+      "manualLock": true
+    },
+    {
       "id": "meet-2024-11-18-fsa-stewardship-code-dai2",
       "councilId": "fsa-stewardship-code",
       "councilName": "スチュワードシップ・コードに関する有識者検討会",
@@ -90285,6 +90724,35 @@
       "docCount": 12
     },
     {
+      "id": "meet-2024-11-15-cao-zeicho-life-senmonka-dai1",
+      "councilId": "cao-zeicho-life-senmonka",
+      "title": "第1回 活力ある長寿社会に向けたライフコースに中立な税制に関する専門家会合",
+      "date": "2024/11/15",
+      "officialUrl": "https://www.cao.go.jp/zei-cho/gijiroku/life/2024/index.html",
+      "materials": [
+        {
+          "name": "議事録 (PDF形式:385KB)",
+          "url": "https://www.cao.go.jp/zei-cho/content/6life1kaigiji_1.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "会議資料",
+          "url": "https://www.cao.go.jp/zei-cho/gijiroku/life/2024/6life1kai.html",
+          "type": "HTML",
+          "manualLock": true
+        },
+        {
+          "name": "記者会見録 (PDF形式:144KB)",
+          "url": "https://www.cao.go.jp/zei-cho/content/6life1kaiken.pdf",
+          "type": "PDF",
+          "manualLock": true
+        }
+      ],
+      "topics": [],
+      "manualLock": true
+    },
+    {
       "id": "meet-2024-11-13-mof-zaiseiseido-bunkakai",
       "councilId": "mof-zaiseiseido-bunkakai",
       "councilName": "財政制度等審議会 財政制度分科会",
@@ -90353,6 +90821,35 @@
       "officialUrl": "https://www.mof.go.jp/about_mof/councils/fiscal_system_council/sub-of_fiscal_system/proceedings/material/20241113zaiseia.html",
       "hasMinutes": true,
       "docCount": 6
+    },
+    {
+      "id": "meet-2024-11-13-cao-zeicho-digital-noukan-senmonka-dai1",
+      "councilId": "cao-zeicho-digital-noukan-senmonka",
+      "title": "第1回 経済社会のデジタル化への対応と納税環境整備に関する専門家会合",
+      "date": "2024/11/13",
+      "officialUrl": "https://www.cao.go.jp/zei-cho/gijiroku/digital-noukan/2024/index.html",
+      "materials": [
+        {
+          "name": "議事録 (PDF形式:405KB)",
+          "url": "https://www.cao.go.jp/zei-cho/content/6digital-noukan1kaigiji.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "会議資料",
+          "url": "https://www.cao.go.jp/zei-cho/gijiroku/digital-noukan/2024/6digital-noukan1kai.html",
+          "type": "HTML",
+          "manualLock": true
+        },
+        {
+          "name": "記者会見録 (PDF形式:126KB)",
+          "url": "https://www.cao.go.jp/zei-cho/content/6digital-noukan1kaiken.pdf",
+          "type": "PDF",
+          "manualLock": true
+        }
+      ],
+      "topics": [],
+      "manualLock": true
     },
     {
       "id": "meet-2024-11-12-cas-kome_anteikyokyujitsugen_kaigi-27-dai3",
@@ -95463,6 +95960,35 @@
           "manualLock": true
         }
       ]
+    },
+    {
+      "id": "meet-2024-06-28-cao-zeicho-ebpm-senmonka-dai1",
+      "councilId": "cao-zeicho-ebpm-senmonka",
+      "title": "第1回 税制のEBPMに関する専門家会合",
+      "date": "2024/06/28",
+      "officialUrl": "https://www.cao.go.jp/zei-cho/gijiroku/ebpm/2024/index.html",
+      "materials": [
+        {
+          "name": "議事録 (PDF形式:502KB)",
+          "url": "https://www.cao.go.jp/zei-cho/content/6ebpm1kaigiji.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "会議資料",
+          "url": "https://www.cao.go.jp/zei-cho/gijiroku/ebpm/2024/6ebpm1kai.html",
+          "type": "HTML",
+          "manualLock": true
+        },
+        {
+          "name": "記者会見録 (PDF形式:184KB)",
+          "url": "https://www.cao.go.jp/zei-cho/content/6ebpm1kaiken.pdf",
+          "type": "PDF",
+          "manualLock": true
+        }
+      ],
+      "topics": [],
+      "manualLock": true
     },
     {
       "id": "meet-2024-06-27-moj-minji-hanketsu-db-15",
@@ -128754,6 +129280,35 @@
       "docCount": 7
     },
     {
+      "id": "meet-2022-10-28-cao-zeicho-noukan-senmonka-dai9",
+      "councilId": "cao-zeicho-noukan-senmonka",
+      "title": "第9回 納税環境整備に関する専門家会合",
+      "date": "2022/10/28",
+      "officialUrl": "https://www.cao.go.jp/zei-cho/gijiroku/noukan/2022/index.html",
+      "materials": [
+        {
+          "name": "議事録 (PDF形式:484KB)",
+          "url": "https://www.cao.go.jp/zei-cho/content/4noukan9kaigiji.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "会議資料",
+          "url": "https://www.cao.go.jp/zei-cho/gijiroku/noukan/2022/4noukan9kai.html",
+          "type": "HTML",
+          "manualLock": true
+        },
+        {
+          "name": "記者会見録 (PDF形式:144KB)",
+          "url": "https://www.cao.go.jp/zei-cho/content/4noukan9kaiken.pdf",
+          "type": "PDF",
+          "manualLock": true
+        }
+      ],
+      "topics": [],
+      "manualLock": true
+    },
+    {
       "id": "meet-2022-10-27-moj-keiji-fufukushinsa-5",
       "councilId": "moj-keiji-fufukushinsa",
       "title": "令和４年度（刑事施設の被収容者の不服審査に関する調査検討会）",
@@ -129098,6 +129653,35 @@
       "docCount": 2
     },
     {
+      "id": "meet-2022-10-26-cao-zeicho-sozoku-zoyo-senmonka-dai3",
+      "councilId": "cao-zeicho-sozoku-zoyo-senmonka",
+      "title": "第3回 相続税・贈与税に関する専門家会合",
+      "date": "2022/10/26",
+      "officialUrl": "https://www.cao.go.jp/zei-cho/gijiroku/sozoku-zoyo/2022/index.html",
+      "materials": [
+        {
+          "name": "議事録 (PDF形式:260KB)",
+          "url": "https://www.cao.go.jp/zei-cho/content/4sozoku-zoyo3kaigiji.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "会議資料",
+          "url": "https://www.cao.go.jp/zei-cho/gijiroku/sozoku-zoyo/2022/4sozoku-zoyo3kai.html",
+          "type": "HTML",
+          "manualLock": true
+        },
+        {
+          "name": "記者会見録 (PDF形式:82KB)",
+          "url": "https://www.cao.go.jp/zei-cho/content/4sozoku-zoyo3kaiken.pdf",
+          "type": "PDF",
+          "manualLock": true
+        }
+      ],
+      "topics": [],
+      "manualLock": true
+    },
+    {
       "id": "meet-2022-10-21-smea-shokibo-jinzai-dai1",
       "councilId": "smea-shokibo-jinzai",
       "title": "中小企業・小規模事業者の人材戦略に関する有識者検討会 第1回",
@@ -129120,6 +129704,35 @@
           "manualLock": true
         }
       ]
+    },
+    {
+      "id": "meet-2022-10-21-cao-zeicho-sozoku-zoyo-senmonka-dai2",
+      "councilId": "cao-zeicho-sozoku-zoyo-senmonka",
+      "title": "第2回 相続税・贈与税に関する専門家会合",
+      "date": "2022/10/21",
+      "officialUrl": "https://www.cao.go.jp/zei-cho/gijiroku/sozoku-zoyo/2022/index.html",
+      "materials": [
+        {
+          "name": "議事録 (PDF形式:385KB)",
+          "url": "https://www.cao.go.jp/zei-cho/content/4sozoku-zoyo2kaigiji.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "会議資料",
+          "url": "https://www.cao.go.jp/zei-cho/gijiroku/sozoku-zoyo/2022/4sozoku-zoyo2kai.html",
+          "type": "HTML",
+          "manualLock": true
+        },
+        {
+          "name": "記者会見録 (PDF形式:126KB)",
+          "url": "https://www.cao.go.jp/zei-cho/content/4sozoku-zoyo2kaiken.pdf",
+          "type": "PDF",
+          "manualLock": true
+        }
+      ],
+      "topics": [],
+      "manualLock": true
     },
     {
       "id": "meet-2022-10-19-mof-zaiseiseido-bunkakai",
@@ -129191,6 +129804,35 @@
       "officialUrl": "https://www.mof.go.jp/about_mof/councils/fiscal_system_council/sub-of_fiscal_system/proceedings_sk/material/zaiseisk20221019.html",
       "hasMinutes": true,
       "docCount": 6
+    },
+    {
+      "id": "meet-2022-10-19-cao-zeicho-noukan-senmonka-dai8",
+      "councilId": "cao-zeicho-noukan-senmonka",
+      "title": "第8回 納税環境整備に関する専門家会合",
+      "date": "2022/10/19",
+      "officialUrl": "https://www.cao.go.jp/zei-cho/gijiroku/noukan/2022/index.html",
+      "materials": [
+        {
+          "name": "議事録 (PDF形式:489KB)",
+          "url": "https://www.cao.go.jp/zei-cho/content/4noukan8kaigiji.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "会議資料",
+          "url": "https://www.cao.go.jp/zei-cho/gijiroku/noukan/2022/4noukan8kai.html",
+          "type": "HTML",
+          "manualLock": true
+        },
+        {
+          "name": "記者会見録 (PDF形式:120KB)",
+          "url": "https://www.cao.go.jp/zei-cho/content/4noukan8kaiken.pdf",
+          "type": "PDF",
+          "manualLock": true
+        }
+      ],
+      "topics": [],
+      "manualLock": true
     },
     {
       "id": "meet-2022-10-17-fdma-kento-81",
@@ -129520,6 +130162,35 @@
       "officialUrl": "https://www.cas.go.jp/jp/seisaku/kyuyo/index.html",
       "hasMinutes": true,
       "docCount": 2
+    },
+    {
+      "id": "meet-2022-10-05-cao-zeicho-sozoku-zoyo-senmonka-dai1",
+      "councilId": "cao-zeicho-sozoku-zoyo-senmonka",
+      "title": "第1回 相続税・贈与税に関する専門家会合",
+      "date": "2022/10/05",
+      "officialUrl": "https://www.cao.go.jp/zei-cho/gijiroku/sozoku-zoyo/2022/index.html",
+      "materials": [
+        {
+          "name": "議事録 (PDF形式:413KB)",
+          "url": "https://www.cao.go.jp/zei-cho/content/4sozoku-zoyo1kaigiji.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "会議資料",
+          "url": "https://www.cao.go.jp/zei-cho/gijiroku/sozoku-zoyo/4sozoku-zoyo1kai.html",
+          "type": "HTML",
+          "manualLock": true
+        },
+        {
+          "name": "記者会見録 (PDF形式:119KB)",
+          "url": "https://www.cao.go.jp/zei-cho/content/4sozoku-zoyo1kaiken.pdf",
+          "type": "PDF",
+          "manualLock": true
+        }
+      ],
+      "topics": [],
+      "manualLock": true
     },
     {
       "id": "meet-2022-09-30-fdma-kento-121",
@@ -146089,6 +146760,35 @@
       "docCount": 3
     },
     {
+      "id": "meet-2021-11-17-cao-zeicho-noukan-senmonka-dai7",
+      "councilId": "cao-zeicho-noukan-senmonka",
+      "title": "第7回 納税環境整備に関する専門家会合",
+      "date": "2021/11/17",
+      "officialUrl": "https://www.cao.go.jp/zei-cho/gijiroku/noukan/2021/index.html",
+      "materials": [
+        {
+          "name": "議事録 (PDF形式:419KB)",
+          "url": "https://www.cao.go.jp/zei-cho/content/3noukan7kaigiji.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "会議資料",
+          "url": "https://www.cao.go.jp/zei-cho/gijiroku/noukan/2021/3noukan7kai.html",
+          "type": "HTML",
+          "manualLock": true
+        },
+        {
+          "name": "記者会見録 (PDF形式:88KB)",
+          "url": "https://www.cao.go.jp/zei-cho/content/3noukan7kaiken.pdf",
+          "type": "PDF",
+          "manualLock": true
+        }
+      ],
+      "topics": [],
+      "manualLock": true
+    },
+    {
       "id": "meet-2021-11-15-mof-zaiseiseido-bunkakai",
       "councilId": "mof-zaiseiseido-bunkakai",
       "councilName": "財政制度等審議会 財政制度分科会",
@@ -150324,6 +151024,35 @@
       "officialUrl": "https://www.cas.go.jp/jp/seisaku/kyuyo/index.html",
       "hasMinutes": true,
       "docCount": 2
+    },
+    {
+      "id": "meet-2021-08-10-cao-zeicho-noukan-senmonka-dai6",
+      "councilId": "cao-zeicho-noukan-senmonka",
+      "title": "第6回 納税環境整備に関する専門家会合",
+      "date": "2021/08/10",
+      "officialUrl": "https://www.cao.go.jp/zei-cho/gijiroku/noukan/2021/index.html",
+      "materials": [
+        {
+          "name": "議事録 (PDF形式:442KB)",
+          "url": "https://www.cao.go.jp/zei-cho/content/3noukan6kaigiji.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "会議資料",
+          "url": "https://www.cao.go.jp/zei-cho/gijiroku/noukan/2021/3noukan6kai.html",
+          "type": "HTML",
+          "manualLock": true
+        },
+        {
+          "name": "記者会見録 (PDF形式:163KB)",
+          "url": "https://www.cao.go.jp/zei-cho/content/3noukan6kaiken.pdf",
+          "type": "PDF",
+          "manualLock": true
+        }
+      ],
+      "topics": [],
+      "manualLock": true
     },
     {
       "id": "meet-2021-08-05-ra-000818-15-s1",
@@ -154640,6 +155369,35 @@
       "officialUrl": "https://www.fdma.go.jp/singi_kento/kento/post-66.html",
       "hasMinutes": true,
       "docCount": 10
+    },
+    {
+      "id": "meet-2021-06-15-cao-zeicho-noukan-senmonka-dai5",
+      "councilId": "cao-zeicho-noukan-senmonka",
+      "title": "第5回 納税環境整備に関する専門家会合",
+      "date": "2021/06/15",
+      "officialUrl": "https://www.cao.go.jp/zei-cho/gijiroku/noukan/2021/index.html",
+      "materials": [
+        {
+          "name": "議事録 (PDF形式:296KB)",
+          "url": "https://www.cao.go.jp/zei-cho/content/3noukan5kaigiji.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "会議資料",
+          "url": "https://www.cao.go.jp/zei-cho/gijiroku/noukan/2021/3noukan5kai.html",
+          "type": "HTML",
+          "manualLock": true
+        },
+        {
+          "name": "記者会見録 (PDF形式:92KB)",
+          "url": "https://www.cao.go.jp/zei-cho/content/3noukan5kaiken.pdf",
+          "type": "PDF",
+          "manualLock": true
+        }
+      ],
+      "topics": [],
+      "manualLock": true
     },
     {
       "id": "meet-2021-06-11-fsa-sustainable-finance-dai8",
@@ -168031,6 +168789,35 @@
       ]
     },
     {
+      "id": "meet-2020-11-10-cao-zeicho-noukan-senmonka-dai4",
+      "councilId": "cao-zeicho-noukan-senmonka",
+      "title": "第4回 納税環境整備に関する専門家会合",
+      "date": "2020/11/10",
+      "officialUrl": "https://www.cao.go.jp/zei-cho/gijiroku/noukan/2020/index.html",
+      "materials": [
+        {
+          "name": "議事録 (PDF形式:237KB)",
+          "url": "https://www.cao.go.jp/zei-cho/content/2noukan4kaigiji.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "会議資料",
+          "url": "https://www.cao.go.jp/zei-cho/gijiroku/noukan/2020/2noukan4kai.html",
+          "type": "HTML",
+          "manualLock": true
+        },
+        {
+          "name": "記者会見録 (PDF形式:13KB)",
+          "url": "https://www.cao.go.jp/zei-cho/content/2noukan4kaiken.pdf",
+          "type": "PDF",
+          "manualLock": true
+        }
+      ],
+      "topics": [],
+      "manualLock": true
+    },
+    {
       "id": "meet-2020-11-04-fsa-arikataken-dai1",
       "councilId": "fsa-arikataken",
       "councilName": "事業者を支える融資・再生実務のあり方に関する研究会",
@@ -169163,6 +169950,64 @@
       "manualLock": true
     },
     {
+      "id": "meet-2020-10-21-cao-zeicho-noukan-senmonka-dai3",
+      "councilId": "cao-zeicho-noukan-senmonka",
+      "title": "第3回 納税環境整備に関する専門家会合",
+      "date": "2020/10/21",
+      "officialUrl": "https://www.cao.go.jp/zei-cho/gijiroku/noukan/2020/index.html",
+      "materials": [
+        {
+          "name": "議事録 (PDF形式:98KB)",
+          "url": "https://www.cao.go.jp/zei-cho/content/2noukan3kaigiji.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "会議資料",
+          "url": "https://www.cao.go.jp/zei-cho/gijiroku/noukan/2020/2noukan3kai.html",
+          "type": "HTML",
+          "manualLock": true
+        },
+        {
+          "name": "記者会見録 (PDF形式:97KB)",
+          "url": "https://www.cao.go.jp/zei-cho/content/2noukan3kaiken.pdf",
+          "type": "PDF",
+          "manualLock": true
+        }
+      ],
+      "topics": [],
+      "manualLock": true
+    },
+    {
+      "id": "meet-2020-10-16-cao-zeicho-noukan-senmonka-dai2",
+      "councilId": "cao-zeicho-noukan-senmonka",
+      "title": "第2回 納税環境整備に関する専門家会合",
+      "date": "2020/10/16",
+      "officialUrl": "https://www.cao.go.jp/zei-cho/gijiroku/noukan/2020/index.html",
+      "materials": [
+        {
+          "name": "議事録 (PDF形式:137KB)",
+          "url": "https://www.cao.go.jp/zei-cho/content/2noukan2kaigiji.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "会議資料",
+          "url": "https://www.cao.go.jp/zei-cho/gijiroku/noukan/2020/2noukan2kai.html",
+          "type": "HTML",
+          "manualLock": true
+        },
+        {
+          "name": "記者会見録 (PDF形式:87KB)",
+          "url": "https://www.cao.go.jp/zei-cho/content/2noukan2kaiken.pdf",
+          "type": "PDF",
+          "manualLock": true
+        }
+      ],
+      "topics": [],
+      "manualLock": true
+    },
+    {
       "id": "meet-2020-10-14-fsa-shomen-oin-dai7",
       "councilId": "fsa-shomen-oin",
       "councilName": "金融業界における書面・押印・対面手続の見直しに向けた検討会",
@@ -169709,6 +170554,35 @@
           "name": "議事録",
           "url": "https://www.mhlw.go.jp/stf/shingi2/0000204770_00029.html",
           "type": "HTML",
+          "manualLock": true
+        }
+      ],
+      "topics": [],
+      "manualLock": true
+    },
+    {
+      "id": "meet-2020-10-07-cao-zeicho-noukan-senmonka-dai1",
+      "councilId": "cao-zeicho-noukan-senmonka",
+      "title": "第1回 納税環境整備に関する専門家会合",
+      "date": "2020/10/07",
+      "officialUrl": "https://www.cao.go.jp/zei-cho/gijiroku/noukan/2020/index.html",
+      "materials": [
+        {
+          "name": "議事録 (PDF形式:276KB)",
+          "url": "https://www.cao.go.jp/zei-cho/content/2noukan1kaigiji.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "会議資料",
+          "url": "https://www.cao.go.jp/zei-cho/gijiroku/noukan/2020/2noukan1kai.html",
+          "type": "HTML",
+          "manualLock": true
+        },
+        {
+          "name": "記者会見録 (PDF形式:87KB)",
+          "url": "https://www.cao.go.jp/zei-cho/content/2noukan1kaiken.pdf",
+          "type": "PDF",
           "manualLock": true
         }
       ],
@@ -176890,6 +177764,35 @@
       ]
     },
     {
+      "id": "meet-2019-08-21-cao-zeicho-noukan-senmonka-h30-dai4",
+      "councilId": "cao-zeicho-noukan-senmonka",
+      "title": "平成30年度 第4回 納税環境整備に関する専門家会合",
+      "date": "2019/08/21",
+      "officialUrl": "https://www.cao.go.jp/zei-cho/gijiroku/noukan/2019/index.html",
+      "materials": [
+        {
+          "name": "議事録 (PDF形式:272KB)",
+          "url": "https://www.cao.go.jp/zei-cho/content/1noukan4kaigiji.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "会議資料",
+          "url": "https://www.cao.go.jp/zei-cho/gijiroku/noukan/2019/1noukan4kai.html",
+          "type": "HTML",
+          "manualLock": true
+        },
+        {
+          "name": "記者会見録 (PDF形式:103KB)",
+          "url": "https://www.cao.go.jp/zei-cho/content/1noukan4kaiken_2.pdf",
+          "type": "PDF",
+          "manualLock": true
+        }
+      ],
+      "topics": [],
+      "manualLock": true
+    },
+    {
       "id": "meet-2019-08-06-smea-katatorihiki-dai1",
       "councilId": "smea-katatorihiki",
       "title": "型取引の適正化推進協議会 第1回",
@@ -176912,6 +177815,35 @@
           "manualLock": true
         }
       ]
+    },
+    {
+      "id": "meet-2019-08-05-cao-zeicho-renketsu-senmonka-dai5",
+      "councilId": "cao-zeicho-renketsu-senmonka",
+      "title": "第5回 連結納税制度に関する専門家会合",
+      "date": "2019/08/05",
+      "officialUrl": "https://www.cao.go.jp/zei-cho/gijiroku/renketsu/2019/index.html",
+      "materials": [
+        {
+          "name": "議事録 (PDF形式:306KB)",
+          "url": "https://www.cao.go.jp/zei-cho/content/1renketsu5kaigiji.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "会議資料",
+          "url": "https://www.cao.go.jp/zei-cho/gijiroku/renketsu/2019/1renketsu5kai.html",
+          "type": "HTML",
+          "manualLock": true
+        },
+        {
+          "name": "記者会見録 (PDF形式:128KB)",
+          "url": "https://www.cao.go.jp/zei-cho/content/1renketsu5kaiken.pdf",
+          "type": "PDF",
+          "manualLock": true
+        }
+      ],
+      "topics": [],
+      "manualLock": true
     },
     {
       "id": "meet-2019-07-31-smea-sbir-dai2",
@@ -177181,6 +178113,35 @@
           "manualLock": true
         }
       ]
+    },
+    {
+      "id": "meet-2019-06-26-cao-zeicho-renketsu-senmonka-dai4",
+      "councilId": "cao-zeicho-renketsu-senmonka",
+      "title": "第4回 連結納税制度に関する専門家会合",
+      "date": "2019/06/26",
+      "officialUrl": "https://www.cao.go.jp/zei-cho/gijiroku/renketsu/2019/index.html",
+      "materials": [
+        {
+          "name": "議事録 (PDF形式:341KB)",
+          "url": "https://www.cao.go.jp/zei-cho/content/1renketsu4kaigiji.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "会議資料",
+          "url": "https://www.cao.go.jp/zei-cho/gijiroku/renketsu/2019/1renketsu4kai.html",
+          "type": "HTML",
+          "manualLock": true
+        },
+        {
+          "name": "記者会見録 (PDF形式:133KB)",
+          "url": "https://www.cao.go.jp/zei-cho/content/1renketsu4kaiken.pdf",
+          "type": "PDF",
+          "manualLock": true
+        }
+      ],
+      "topics": [],
+      "manualLock": true
     },
     {
       "id": "meet-2019-06-18-cas-kagayakujosei-46-dai8",
@@ -177482,6 +178443,35 @@
       "officialUrl": "https://www.chisou.go.jp/tiiki/kokusentoc/dai40/shidai.pdf",
       "hasMinutes": true,
       "docCount": 17
+    },
+    {
+      "id": "meet-2019-06-10-cao-zeicho-rougo-shisan-senmonka-dai1",
+      "councilId": "cao-zeicho-rougo-shisan-senmonka",
+      "title": "第1回 老後の資産形成等に関する専門家会合",
+      "date": "2019/06/10",
+      "officialUrl": "https://www.cao.go.jp/zei-cho/gijiroku/rougo/2019/index.html",
+      "materials": [
+        {
+          "name": "議事録 (PDF形式:331KB)",
+          "url": "https://www.cao.go.jp/zei-cho/content/1rougo1kaigiji.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "会議資料",
+          "url": "https://www.cao.go.jp/zei-cho/gijiroku/rougo/2019/1rougo1kai.html",
+          "type": "HTML",
+          "manualLock": true
+        },
+        {
+          "name": "記者会見録 (PDF形式:186KB)",
+          "url": "https://www.cao.go.jp/zei-cho/content/1rougo1kaiken.pdf",
+          "type": "PDF",
+          "manualLock": true
+        }
+      ],
+      "topics": [],
+      "manualLock": true
     },
     {
       "id": "meet-2019-06-05-cas-grassrootsTF-16-フォローアップ会合-dai3",
@@ -178076,6 +179066,35 @@
       "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/gambletou_izonsho/kanjikai_dai2/siryou.html",
       "hasMinutes": true,
       "docCount": 10,
+      "manualLock": true
+    },
+    {
+      "id": "meet-2019-04-18-cao-zeicho-renketsu-senmonka-dai3",
+      "councilId": "cao-zeicho-renketsu-senmonka",
+      "title": "第3回 連結納税制度に関する専門家会合",
+      "date": "2019/04/18",
+      "officialUrl": "https://www.cao.go.jp/zei-cho/gijiroku/renketsu/2019/index.html",
+      "materials": [
+        {
+          "name": "議事録 (PDF形式:253KB)",
+          "url": "https://www.cao.go.jp/zei-cho/content/31renketsu3kaigiji.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "会議資料",
+          "url": "https://www.cao.go.jp/zei-cho/gijiroku/renketsu/2019/31renketsu3kai.html",
+          "type": "HTML",
+          "manualLock": true
+        },
+        {
+          "name": "記者会見録 (PDF形式:99KB)",
+          "url": "https://www.cao.go.jp/zei-cho/content/31renketsu3kaiken.pdf",
+          "type": "PDF",
+          "manualLock": true
+        }
+      ],
+      "topics": [],
       "manualLock": true
     },
     {
@@ -178813,6 +179832,35 @@
       "docCount": 11
     },
     {
+      "id": "meet-2019-02-14-cao-zeicho-renketsu-senmonka-dai2",
+      "councilId": "cao-zeicho-renketsu-senmonka",
+      "title": "第2回 連結納税制度に関する専門家会合",
+      "date": "2019/02/14",
+      "officialUrl": "https://www.cao.go.jp/zei-cho/gijiroku/renketsu/2018/index.html",
+      "materials": [
+        {
+          "name": "議事録 (PDF形式:287KB)",
+          "url": "https://www.cao.go.jp/zei-cho/content/30renketsu2kaigiji.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "会議資料",
+          "url": "https://www.cao.go.jp/zei-cho/gijiroku/renketsu/2018/30renketsu2kai.html",
+          "type": "HTML",
+          "manualLock": true
+        },
+        {
+          "name": "記者会見録 (PDF形式:101KB)",
+          "url": "https://www.cao.go.jp/zei-cho/content/30renketsu2kaiken.pdf",
+          "type": "PDF",
+          "manualLock": true
+        }
+      ],
+      "topics": [],
+      "manualLock": true
+    },
+    {
       "id": "meet-2019-02-07-mhlw-nenkin-kouhou-kento-dai1",
       "councilId": "mhlw-nenkin-kouhou-kento",
       "title": "第1回 年金広報検討会",
@@ -179546,6 +180594,93 @@
       "manualLock": true
     },
     {
+      "id": "meet-2018-11-07-cao-zeicho-renketsu-senmonka-dai1",
+      "councilId": "cao-zeicho-renketsu-senmonka",
+      "title": "第1回 連結納税制度に関する専門家会合",
+      "date": "2018/11/07",
+      "officialUrl": "https://www.cao.go.jp/zei-cho/gijiroku/renketsu/2018/index.html",
+      "materials": [
+        {
+          "name": "議事録 (PDF形式:225KB)",
+          "url": "https://www.cao.go.jp/zei-cho/content/20181107_30renketsu1kaigiji.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "会議資料",
+          "url": "https://www.cao.go.jp/zei-cho/gijiroku/renketsu/2018/30renketsu1kai.html",
+          "type": "HTML",
+          "manualLock": true
+        },
+        {
+          "name": "記者会見録 (PDF形式:84KB)",
+          "url": "https://www.cao.go.jp/zei-cho/content/20181107_30renketsu1kaiken.pdf",
+          "type": "PDF",
+          "manualLock": true
+        }
+      ],
+      "topics": [],
+      "manualLock": true
+    },
+    {
+      "id": "meet-2018-11-05-cao-zeicho-noukan-senmonka-h30-dai3",
+      "councilId": "cao-zeicho-noukan-senmonka",
+      "title": "平成30年度 第3回 納税環境整備に関する専門家会合",
+      "date": "2018/11/05",
+      "officialUrl": "https://www.cao.go.jp/zei-cho/gijiroku/noukan/2018/index.html",
+      "materials": [
+        {
+          "name": "議事録 (PDF形式:294KB)",
+          "url": "https://www.cao.go.jp/zei-cho/content/20181105_30noukan3kaigiji.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "会議資料",
+          "url": "https://www.cao.go.jp/zei-cho/gijiroku/noukan/2018/30noukan3kai.html",
+          "type": "HTML",
+          "manualLock": true
+        },
+        {
+          "name": "記者会見録 (PDF形式:107KB)",
+          "url": "https://www.cao.go.jp/zei-cho/content/20181105_30noukan3kaiken.pdf",
+          "type": "PDF",
+          "manualLock": true
+        }
+      ],
+      "topics": [],
+      "manualLock": true
+    },
+    {
+      "id": "meet-2018-10-29-cao-zeicho-noukan-senmonka-h30-dai2",
+      "councilId": "cao-zeicho-noukan-senmonka",
+      "title": "平成30年度 第2回 納税環境整備に関する専門家会合",
+      "date": "2018/10/29",
+      "officialUrl": "https://www.cao.go.jp/zei-cho/gijiroku/noukan/2018/index.html",
+      "materials": [
+        {
+          "name": "議事録 (PDF形式:273KB)",
+          "url": "https://www.cao.go.jp/zei-cho/content/20181029_30noukan2kaigiji.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "会議資料",
+          "url": "https://www.cao.go.jp/zei-cho/gijiroku/noukan/2018/30noukan2kai.html",
+          "type": "HTML",
+          "manualLock": true
+        },
+        {
+          "name": "記者会見録 (PDF形式:66KB)",
+          "url": "https://www.cao.go.jp/zei-cho/content/20181029_30noukan2kaiken.pdf",
+          "type": "PDF",
+          "manualLock": true
+        }
+      ],
+      "topics": [],
+      "manualLock": true
+    },
+    {
       "id": "meet-2018-10-25-moj-keiji-fufukushinsa-9",
       "councilId": "moj-keiji-fufukushinsa",
       "title": "平成３０年度（刑事施設の被収容者の不服審査に関する調査検討会）",
@@ -179729,6 +180864,35 @@
       "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/gambletou_izonsho/kanjikai_dai1/siryou.html",
       "hasMinutes": true,
       "docCount": 8,
+      "manualLock": true
+    },
+    {
+      "id": "meet-2018-10-24-cao-zeicho-noukan-senmonka-h30-dai1",
+      "councilId": "cao-zeicho-noukan-senmonka",
+      "title": "平成30年度 第1回 納税環境整備に関する専門家会合",
+      "date": "2018/10/24",
+      "officialUrl": "https://www.cao.go.jp/zei-cho/gijiroku/noukan/2018/index.html",
+      "materials": [
+        {
+          "name": "議事録 (PDF形式:303KB)",
+          "url": "https://www.cao.go.jp/zei-cho/content/20181024_30noukan1kaigiji.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "会議資料",
+          "url": "https://www.cao.go.jp/zei-cho/gijiroku/noukan/2018/30noukan1kai.html",
+          "type": "HTML",
+          "manualLock": true
+        },
+        {
+          "name": "記者会見録 (PDF形式:82KB)",
+          "url": "https://www.cao.go.jp/zei-cho/content/20181024_30noukan1kaiken.pdf",
+          "type": "PDF",
+          "manualLock": true
+        }
+      ],
+      "topics": [],
       "manualLock": true
     },
     {
@@ -188095,6 +189259,35 @@
       "docCount": 14
     },
     {
+      "id": "meet-2016-11-09-cao-zeicho-koku-han-kaigou-dai2",
+      "councilId": "cao-zeicho-koku-han-kaigou",
+      "title": "第2回 国税犯則調査手続の見直しに関する会合",
+      "date": "2016/11/09",
+      "officialUrl": "https://www.cao.go.jp/zei-cho/gijiroku/koku-han/2016/index.html",
+      "materials": [
+        {
+          "name": "議事録 (PDF形式:224KB)",
+          "url": "https://www.cao.go.jp/zei-cho/content/20161228_28koku2kai.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "会議資料",
+          "url": "https://www.cao.go.jp/zei-cho/gijiroku/koku-han/2016/28koku2kai.html",
+          "type": "HTML",
+          "manualLock": true
+        },
+        {
+          "name": "記者会見録 (PDF形式:152KB)",
+          "url": "https://www.cao.go.jp/zei-cho/content/20170105_28koku2kaiken.pdf",
+          "type": "PDF",
+          "manualLock": true
+        }
+      ],
+      "topics": [],
+      "manualLock": true
+    },
+    {
       "id": "meet-2016-11-01-smea-kinyu-edi-dai3",
       "councilId": "smea-kinyu-edi",
       "councilName": "金融EDIにおける商流情報等のあり方検討会議",
@@ -188134,6 +189327,35 @@
       "officialUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/kinyuedi/161101kinyuedi.html",
       "hasMinutes": true,
       "docCount": 2
+    },
+    {
+      "id": "meet-2016-10-31-cao-zeicho-koku-han-kaigou-dai1",
+      "councilId": "cao-zeicho-koku-han-kaigou",
+      "title": "第1回 国税犯則調査手続の見直しに関する会合",
+      "date": "2016/10/31",
+      "officialUrl": "https://www.cao.go.jp/zei-cho/gijiroku/koku-han/2016/index.html",
+      "materials": [
+        {
+          "name": "議事録 (PDF形式:376KB)",
+          "url": "https://www.cao.go.jp/zei-cho/content/20161228_28koku1kai.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "会議資料",
+          "url": "https://www.cao.go.jp/zei-cho/gijiroku/koku-han/2016/28koku1kai.html",
+          "type": "HTML",
+          "manualLock": true
+        },
+        {
+          "name": "記者会見録 (PDF形式:132KB)",
+          "url": "https://www.cao.go.jp/zei-cho/content/20161125_28koku1kaiken.pdf",
+          "type": "PDF",
+          "manualLock": true
+        }
+      ],
+      "topics": [],
+      "manualLock": true
     },
     {
       "id": "meet-2016-10-24-fsa-monitoring-dai3",
@@ -191399,6 +192621,35 @@
       "manualLock": true
     },
     {
+      "id": "meet-2016-05-26-cao-zeicho-discussion1-kokusai-dai7",
+      "councilId": "cao-zeicho-discussion1-kokusai",
+      "title": "第7回 国際課税ディスカッショングループ",
+      "date": "2016/05/26",
+      "officialUrl": "https://www.cao.go.jp/zei-cho/gijiroku/discussion1/2016/index.html",
+      "materials": [
+        {
+          "name": "議事録 (PDF形式:420KB)",
+          "url": "https://www.cao.go.jp/zei-cho/content/20160711_28dis17kai.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "会議資料",
+          "url": "https://www.cao.go.jp/zei-cho/gijiroku/discussion1/2016/28dis17kai.html",
+          "type": "HTML",
+          "manualLock": true
+        },
+        {
+          "name": "記者会見録 (PDF形式:136KB)",
+          "url": "https://www.cao.go.jp/zei-cho/content/20160711_28dis17kaiken.pdf",
+          "type": "PDF",
+          "manualLock": true
+        }
+      ],
+      "topics": [],
+      "manualLock": true
+    },
+    {
       "id": "meet-2016-05-23-fsa-kinyu-chukai-dai4",
       "councilId": "fsa-kinyu-chukai",
       "councilName": "金融仲介の改善に向けた検討会議",
@@ -193330,6 +194581,35 @@
           "name": "議事録",
           "url": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/gijiroku/20151023.html",
           "type": "HTML",
+          "manualLock": true
+        }
+      ],
+      "topics": [],
+      "manualLock": true
+    },
+    {
+      "id": "meet-2015-10-23-cao-zeicho-discussion1-kokusai-dai6",
+      "councilId": "cao-zeicho-discussion1-kokusai",
+      "title": "第6回 国際課税ディスカッショングループ",
+      "date": "2015/10/23",
+      "officialUrl": "https://www.cao.go.jp/zei-cho/gijiroku/discussion1/2015/index.html",
+      "materials": [
+        {
+          "name": "議事録 (PDF形式:250KB)",
+          "url": "https://www.cao.go.jp/zei-cho/content/20160215_27dis16kai.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "会議資料",
+          "url": "https://www.cao.go.jp/zei-cho/gijiroku/discussion1/2015/27dis16kai.html",
+          "type": "HTML",
+          "manualLock": true
+        },
+        {
+          "name": "記者会見録 (PDF形式:182KB)",
+          "url": "https://www.cao.go.jp/zei-cho/content/20160218_27zen24kaiken_1.pdf",
+          "type": "PDF",
           "manualLock": true
         }
       ],
@@ -196979,6 +198259,35 @@
       "manualLock": true
     },
     {
+      "id": "meet-2014-10-30-cao-zeicho-kiso-shoiinkai-dai6",
+      "councilId": "cao-zeicho-kiso-shoiinkai",
+      "title": "第6回 政府税制調査会 基礎問題小委員会",
+      "date": "2014/10/30",
+      "officialUrl": "https://www.cao.go.jp/zei-cho/gijiroku/kiso/2014/index.html",
+      "materials": [
+        {
+          "name": "議事録 (PDF形式:430KB)",
+          "url": "https://www.cao.go.jp/zei-cho/content/20150203_26kiso6kai.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "会議資料",
+          "url": "https://www.cao.go.jp/zei-cho/gijiroku/kiso/2014/26kiso6kai.html",
+          "type": "HTML",
+          "manualLock": true
+        },
+        {
+          "name": "記者会見録 (PDF形式:226KB)",
+          "url": "https://www.cao.go.jp/zei-cho/content/20141126_26kiso6kaiken_3.pdf",
+          "type": "PDF",
+          "manualLock": true
+        }
+      ],
+      "topics": [],
+      "manualLock": true
+    },
+    {
       "id": "meet-2014-10-23-moj-keiji-fufukushinsa-13",
       "councilId": "moj-keiji-fufukushinsa",
       "title": "平成２６年度（刑事施設の被収容者の不服審査に関する調査検討会）",
@@ -196988,6 +198297,35 @@
       "ministry": "MOJ",
       "manualLock": true,
       "materials": []
+    },
+    {
+      "id": "meet-2014-10-21-cao-zeicho-kiso-shoiinkai-dai5",
+      "councilId": "cao-zeicho-kiso-shoiinkai",
+      "title": "第5回 政府税制調査会 基礎問題小委員会",
+      "date": "2014/10/21",
+      "officialUrl": "https://www.cao.go.jp/zei-cho/gijiroku/kiso/2014/index.html",
+      "materials": [
+        {
+          "name": "議事録 (PDF形式:274KB)",
+          "url": "https://www.cao.go.jp/zei-cho/content/20150202_26kiso5kai_2.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "会議資料",
+          "url": "https://www.cao.go.jp/zei-cho/gijiroku/kiso/2014/26kiso5kai.html",
+          "type": "HTML",
+          "manualLock": true
+        },
+        {
+          "name": "記者会見録 (PDF形式:264KB)",
+          "url": "https://www.cao.go.jp/zei-cho/content/20150309_26kiso5kaiken.pdf",
+          "type": "PDF",
+          "manualLock": true
+        }
+      ],
+      "topics": [],
+      "manualLock": true
     },
     {
       "id": "meet-2014-10-20-fsa-corporategovernance-code-dai4",
@@ -197957,6 +199295,35 @@
       "officialUrl": "https://www.chisou.go.jp/tiiki/kokusentoc/dai9/shiryou.html",
       "hasMinutes": true,
       "docCount": 9
+    },
+    {
+      "id": "meet-2014-10-06-cao-zeicho-kiso-shoiinkai-dai4",
+      "councilId": "cao-zeicho-kiso-shoiinkai",
+      "title": "第4回 政府税制調査会 基礎問題小委員会",
+      "date": "2014/10/06",
+      "officialUrl": "https://www.cao.go.jp/zei-cho/gijiroku/kiso/2014/index.html",
+      "materials": [
+        {
+          "name": "議事録 (PDF形式:288KB)",
+          "url": "https://www.cao.go.jp/zei-cho/content/20150309_26kiso4kai_2.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "会議資料",
+          "url": "https://www.cao.go.jp/zei-cho/gijiroku/kiso/2014/26kiso4kai.html",
+          "type": "HTML",
+          "manualLock": true
+        },
+        {
+          "name": "記者会見録 (PDF形式:210KB)",
+          "url": "https://www.cao.go.jp/zei-cho/content/20141110_26kiso4kaiken.pdf",
+          "type": "PDF",
+          "manualLock": true
+        }
+      ],
+      "topics": [],
+      "manualLock": true
     },
     {
       "id": "meet-2014-09-30-cas-kokusentoc-24-dai8",
@@ -200331,6 +201698,93 @@
       "manualLock": true
     },
     {
+      "id": "meet-2014-06-26-cao-zeicho-discussion1-kokusai-dai5",
+      "councilId": "cao-zeicho-discussion1-kokusai",
+      "title": "第5回 国際課税ディスカッショングループ",
+      "date": "2014/06/26",
+      "officialUrl": "https://www.cao.go.jp/zei-cho/gijiroku/discussion1/2014/index.html",
+      "materials": [
+        {
+          "name": "議事録 (PDF形式:390KB)",
+          "url": "https://www.cao.go.jp/zei-cho/content/20140901_26dis15kai.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "会議資料",
+          "url": "https://www.cao.go.jp/zei-cho/gijiroku/discussion1/2014/26dis15kai.html",
+          "type": "HTML",
+          "manualLock": true
+        },
+        {
+          "name": "記者会見録 (PDF形式:197KB)",
+          "url": "https://www.cao.go.jp/zei-cho/content/20140715_26dis15kaiken.pdf",
+          "type": "PDF",
+          "manualLock": true
+        }
+      ],
+      "topics": [],
+      "manualLock": true
+    },
+    {
+      "id": "meet-2014-06-25-cao-zeicho-kiso-shoiinkai-dai3",
+      "councilId": "cao-zeicho-kiso-shoiinkai",
+      "title": "第3回 政府税制調査会 基礎問題小委員会",
+      "date": "2014/06/25",
+      "officialUrl": "https://www.cao.go.jp/zei-cho/gijiroku/kiso/2014/index.html",
+      "materials": [
+        {
+          "name": "議事録 (PDF形式:439KB)",
+          "url": "https://www.cao.go.jp/zei-cho/content/20140814_26kiso3kai.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "会議資料",
+          "url": "https://www.cao.go.jp/zei-cho/gijiroku/kiso/2014/26kiso3kai.html",
+          "type": "HTML",
+          "manualLock": true
+        },
+        {
+          "name": "記者会見録 (PDF形式:215KB)",
+          "url": "https://www.cao.go.jp/zei-cho/content/20140703_26kiso3kaiken.pdf",
+          "type": "PDF",
+          "manualLock": true
+        }
+      ],
+      "topics": [],
+      "manualLock": true
+    },
+    {
+      "id": "meet-2014-06-25-cao-zeicho-discussion3-hojin-dai7",
+      "councilId": "cao-zeicho-discussion3-hojin",
+      "title": "第7回 法人課税ディスカッショングループ",
+      "date": "2014/06/25",
+      "officialUrl": "https://www.cao.go.jp/zei-cho/gijiroku/discussion3/2014/index.html",
+      "materials": [
+        {
+          "name": "議事録 (PDF形式:439KB)",
+          "url": "https://www.cao.go.jp/zei-cho/content/20140814_26kiso3kai_1.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "会議資料",
+          "url": "https://www.cao.go.jp/zei-cho/gijiroku/discussion3/2014/26dis37kai.html",
+          "type": "HTML",
+          "manualLock": true
+        },
+        {
+          "name": "記者会見録 (PDF形式:215KB)",
+          "url": "https://www.cao.go.jp/zei-cho/content/20140703_26kiso3kaiken_1.pdf",
+          "type": "PDF",
+          "manualLock": true
+        }
+      ],
+      "topics": [],
+      "manualLock": true
+    },
+    {
       "id": "meet-2014-06-17-cas-kokusentoc-24-dai6",
       "councilId": "cas-kokusentoc-24",
       "councilName": "国家戦略特別区域諮問会議",
@@ -200427,6 +201881,64 @@
       "officialUrl": "https://www.chisou.go.jp/tiiki/kokusentoc/dai6/shiryou.html",
       "hasMinutes": true,
       "docCount": 10
+    },
+    {
+      "id": "meet-2014-05-23-cao-zeicho-kiso-shoiinkai-dai2",
+      "councilId": "cao-zeicho-kiso-shoiinkai",
+      "title": "第2回 政府税制調査会 基礎問題小委員会",
+      "date": "2014/05/23",
+      "officialUrl": "https://www.cao.go.jp/zei-cho/gijiroku/kiso/2014/index.html",
+      "materials": [
+        {
+          "name": "議事録 (PDF形式:332KB)",
+          "url": "https://www.cao.go.jp/zei-cho/content/20140714_26kiso2kai.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "会議資料",
+          "url": "https://www.cao.go.jp/zei-cho/gijiroku/kiso/2014/26kiso2kai.html",
+          "type": "HTML",
+          "manualLock": true
+        },
+        {
+          "name": "記者会見録 (PDF形式:179KB)",
+          "url": "https://www.cao.go.jp/zei-cho/content/20140610_26kiso2kaiken.pdf",
+          "type": "PDF",
+          "manualLock": true
+        }
+      ],
+      "topics": [],
+      "manualLock": true
+    },
+    {
+      "id": "meet-2014-05-16-cao-zeicho-discussion3-hojin-dai6",
+      "councilId": "cao-zeicho-discussion3-hojin",
+      "title": "第6回 法人課税ディスカッショングループ",
+      "date": "2014/05/16",
+      "officialUrl": "https://www.cao.go.jp/zei-cho/gijiroku/discussion3/2014/index.html",
+      "materials": [
+        {
+          "name": "議事録 (PDF形式:464KB)",
+          "url": "https://www.cao.go.jp/zei-cho/content/20140714_26dis36kai.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "会議資料",
+          "url": "https://www.cao.go.jp/zei-cho/gijiroku/discussion3/2014/26dis36kai.html",
+          "type": "HTML",
+          "manualLock": true
+        },
+        {
+          "name": "記者会見録 (PDF形式:193KB)",
+          "url": "https://www.cao.go.jp/zei-cho/content/20140602_26zen8kaiken_1.pdf",
+          "type": "PDF",
+          "manualLock": true
+        }
+      ],
+      "topics": [],
+      "manualLock": true
     },
     {
       "id": "meet-2014-05-12-cas-kokusentoc-24-dai5",
@@ -200534,6 +202046,209 @@
       "docCount": 11
     },
     {
+      "id": "meet-2014-05-12-cao-zeicho-kiso-shoiinkai-dai1",
+      "councilId": "cao-zeicho-kiso-shoiinkai",
+      "title": "第1回 政府税制調査会 基礎問題小委員会",
+      "date": "2014/05/12",
+      "officialUrl": "https://www.cao.go.jp/zei-cho/gijiroku/kiso/2014/index.html",
+      "materials": [
+        {
+          "name": "議事録 (PDF形式:478KB)",
+          "url": "https://www.cao.go.jp/zei-cho/content/20140709_26kiso1kai.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "会議資料",
+          "url": "https://www.cao.go.jp/zei-cho/gijiroku/kiso/2014/26kiso1kai.html",
+          "type": "HTML",
+          "manualLock": true
+        },
+        {
+          "name": "記者会見録 (PDF形式:134KB)",
+          "url": "https://www.cao.go.jp/zei-cho/content/20140602_26kiso1kaiken.pdf",
+          "type": "PDF",
+          "manualLock": true
+        }
+      ],
+      "topics": [],
+      "manualLock": true
+    },
+    {
+      "id": "meet-2014-05-09-cao-zeicho-discussion3-hojin-dai5",
+      "councilId": "cao-zeicho-discussion3-hojin",
+      "title": "第5回 法人課税ディスカッショングループ",
+      "date": "2014/05/09",
+      "officialUrl": "https://www.cao.go.jp/zei-cho/gijiroku/discussion3/2014/index.html",
+      "materials": [
+        {
+          "name": "議事録 (PDF形式:482KB)",
+          "url": "https://www.cao.go.jp/zei-cho/content/20140709_26dis35kai.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "会議資料",
+          "url": "https://www.cao.go.jp/zei-cho/gijiroku/discussion3/2014/26dis35kai.html",
+          "type": "HTML",
+          "manualLock": true
+        },
+        {
+          "name": "記者会見録 (PDF形式:185KB)",
+          "url": "https://www.cao.go.jp/zei-cho/content/20140602_26zen7kaiken_1.pdf",
+          "type": "PDF",
+          "manualLock": true
+        }
+      ],
+      "topics": [],
+      "manualLock": true
+    },
+    {
+      "id": "meet-2014-04-24-cao-zeicho-discussion1-kokusai-dai4",
+      "councilId": "cao-zeicho-discussion1-kokusai",
+      "title": "第4回 国際課税ディスカッショングループ",
+      "date": "2014/04/24",
+      "officialUrl": "https://www.cao.go.jp/zei-cho/gijiroku/discussion1/2014/index.html",
+      "materials": [
+        {
+          "name": "議事録 (PDF形式:260KB)",
+          "url": "https://www.cao.go.jp/zei-cho/content/20140618_26dis14kai.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "会議資料",
+          "url": "https://www.cao.go.jp/zei-cho/gijiroku/discussion1/2014/26dis14kai.html",
+          "type": "HTML",
+          "manualLock": true
+        },
+        {
+          "name": "記者会見録 (PDF形式:135KB)",
+          "url": "https://www.cao.go.jp/zei-cho/content/20140526_26dis34kaiken_2.pdf",
+          "type": "PDF",
+          "manualLock": true
+        }
+      ],
+      "topics": [],
+      "manualLock": true
+    },
+    {
+      "id": "meet-2014-04-24-cao-zeicho-discussion3-hojin-dai4",
+      "councilId": "cao-zeicho-discussion3-hojin",
+      "title": "第4回 法人課税ディスカッショングループ",
+      "date": "2014/04/24",
+      "officialUrl": "https://www.cao.go.jp/zei-cho/gijiroku/discussion3/2014/index.html",
+      "materials": [
+        {
+          "name": "議事録 (PDF形式:485KB)",
+          "url": "https://www.cao.go.jp/zei-cho/content/20140625_26dis34kai.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "会議資料",
+          "url": "https://www.cao.go.jp/zei-cho/gijiroku/discussion3/2014/26dis34kai.html",
+          "type": "HTML",
+          "manualLock": true
+        },
+        {
+          "name": "記者会見録 (PDF形式:135KB)",
+          "url": "https://www.cao.go.jp/zei-cho/content/20140526_26dis34kaiken_1.pdf",
+          "type": "PDF",
+          "manualLock": true
+        }
+      ],
+      "topics": [],
+      "manualLock": true
+    },
+    {
+      "id": "meet-2014-04-14-cao-zeicho-discussion3-hojin-dai3",
+      "councilId": "cao-zeicho-discussion3-hojin",
+      "title": "第3回 法人課税ディスカッショングループ",
+      "date": "2014/04/14",
+      "officialUrl": "https://www.cao.go.jp/zei-cho/gijiroku/discussion3/2014/index.html",
+      "materials": [
+        {
+          "name": "議事録 (PDF形式:483KB)",
+          "url": "https://www.cao.go.jp/zei-cho/content/20140616_26dis33kai_1.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "会議資料",
+          "url": "https://www.cao.go.jp/zei-cho/gijiroku/discussion3/2014/26dis33kai.html",
+          "type": "HTML",
+          "manualLock": true
+        },
+        {
+          "name": "記者会見録 (PDF形式:182KB)",
+          "url": "https://www.cao.go.jp/zei-cho/content/20140427_26zen6kaiken_1.pdf",
+          "type": "PDF",
+          "manualLock": true
+        }
+      ],
+      "topics": [],
+      "manualLock": true
+    },
+    {
+      "id": "meet-2014-04-08-cao-zeicho-discussion2-mynumber-dai4",
+      "councilId": "cao-zeicho-discussion2-mynumber",
+      "title": "第4回 マイナンバー・税務執行ディスカッショングループ",
+      "date": "2014/04/08",
+      "officialUrl": "https://www.cao.go.jp/zei-cho/gijiroku/discussion2/2014/index.html",
+      "materials": [
+        {
+          "name": "議事録 (PDF形式:378KB)",
+          "url": "https://www.cao.go.jp/zei-cho/content/20140604_26dis24kai_2.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "会議資料",
+          "url": "https://www.cao.go.jp/zei-cho/gijiroku/discussion2/2014/26dis24kai.html",
+          "type": "HTML",
+          "manualLock": true
+        },
+        {
+          "name": "記者会見録 (PDF形式:151KB)",
+          "url": "https://www.cao.go.jp/zei-cho/content/20140427_26dis24kaiken.pdf",
+          "type": "PDF",
+          "manualLock": true
+        }
+      ],
+      "topics": [],
+      "manualLock": true
+    },
+    {
+      "id": "meet-2014-04-04-cao-zeicho-discussion1-kokusai-dai3",
+      "councilId": "cao-zeicho-discussion1-kokusai",
+      "title": "第3回 国際課税ディスカッショングループ",
+      "date": "2014/04/04",
+      "officialUrl": "https://www.cao.go.jp/zei-cho/gijiroku/discussion1/2014/index.html",
+      "materials": [
+        {
+          "name": "議事録 (PDF形式:453KB)",
+          "url": "https://www.cao.go.jp/zei-cho/content/20140604_26dis13kai_1.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "会議資料",
+          "url": "https://www.cao.go.jp/zei-cho/gijiroku/discussion1/2014/26dis13kai.html",
+          "type": "HTML",
+          "manualLock": true
+        },
+        {
+          "name": "記者会見録 (PDF形式:230KB)",
+          "url": "https://www.cao.go.jp/zei-cho/content/20140507_25dis13kaiken_1.pdf",
+          "type": "PDF",
+          "manualLock": true
+        }
+      ],
+      "topics": [],
+      "manualLock": true
+    },
+    {
       "id": "meet-2014-03-31-mhlw-tsumitatekin-kihon-shishin-kento-dai5",
       "councilId": "mhlw-tsumitatekin-kihon-shishin-kento",
       "title": "第5回 積立金基本指針に関する検討会",
@@ -200574,6 +202289,35 @@
           "name": "議事録",
           "url": "https://www.mhlw.go.jp/stf/shingi/0000047739.html",
           "type": "HTML",
+          "manualLock": true
+        }
+      ],
+      "topics": [],
+      "manualLock": true
+    },
+    {
+      "id": "meet-2014-03-31-cao-zeicho-discussion3-hojin-dai2",
+      "councilId": "cao-zeicho-discussion3-hojin",
+      "title": "第2回 法人課税ディスカッショングループ",
+      "date": "2014/03/31",
+      "officialUrl": "https://www.cao.go.jp/zei-cho/gijiroku/discussion3/2013/index.html",
+      "materials": [
+        {
+          "name": "議事録 (PDF形式:488KB)",
+          "url": "https://www.cao.go.jp/zei-cho/content/20140527_25dis32kai.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "会議資料",
+          "url": "https://www.cao.go.jp/zei-cho/gijiroku/discussion3/2013/25dis32kai.html",
+          "type": "HTML",
+          "manualLock": true
+        },
+        {
+          "name": "記者会見録 (PDF形式:153KB)",
+          "url": "https://www.cao.go.jp/zei-cho/content/20140414_25dis32kaiken.pdf",
+          "type": "PDF",
           "manualLock": true
         }
       ],
@@ -200776,6 +202520,64 @@
           "name": "議事録",
           "url": "https://www.mhlw.go.jp/stf/shingi/0000047740.html",
           "type": "HTML",
+          "manualLock": true
+        }
+      ],
+      "topics": [],
+      "manualLock": true
+    },
+    {
+      "id": "meet-2014-03-12-cao-zeicho-discussion3-hojin-dai1",
+      "councilId": "cao-zeicho-discussion3-hojin",
+      "title": "第1回 法人課税ディスカッショングループ",
+      "date": "2014/03/12",
+      "officialUrl": "https://www.cao.go.jp/zei-cho/gijiroku/discussion3/2013/index.html",
+      "materials": [
+        {
+          "name": "議事録 (PDF形式:516KB)",
+          "url": "https://www.cao.go.jp/zei-cho/content/20140515_26dis31kai_1.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "会議資料",
+          "url": "https://www.cao.go.jp/zei-cho/gijiroku/discussion3/2013/25dis31kai.html",
+          "type": "HTML",
+          "manualLock": true
+        },
+        {
+          "name": "記者会見録 (PDF形式:192KB)",
+          "url": "https://www.cao.go.jp/zei-cho/content/20140409_25dis31kaiken.pdf",
+          "type": "PDF",
+          "manualLock": true
+        }
+      ],
+      "topics": [],
+      "manualLock": true
+    },
+    {
+      "id": "meet-2014-02-28-cao-zeicho-discussion2-mynumber-dai3",
+      "councilId": "cao-zeicho-discussion2-mynumber",
+      "title": "第3回 マイナンバー・税務執行ディスカッショングループ",
+      "date": "2014/02/28",
+      "officialUrl": "https://www.cao.go.jp/zei-cho/gijiroku/discussion2/2013/index.html",
+      "materials": [
+        {
+          "name": "議事録 (PDF形式:485KB)",
+          "url": "https://www.cao.go.jp/zei-cho/content/20140507_25dis23kai_1.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "会議資料",
+          "url": "https://www.cao.go.jp/zei-cho/gijiroku/discussion2/2013/25dis23kai.html",
+          "type": "HTML",
+          "manualLock": true
+        },
+        {
+          "name": "記者会見録 (PDF形式:197KB)",
+          "url": "https://www.cao.go.jp/zei-cho/content/20140314_25dis23kaiken.pdf",
+          "type": "PDF",
           "manualLock": true
         }
       ],
@@ -201308,6 +203110,35 @@
       "manualLock": true
     },
     {
+      "id": "meet-2013-11-28-cao-zeicho-discussion2-mynumber-dai2",
+      "councilId": "cao-zeicho-discussion2-mynumber",
+      "title": "第2回 マイナンバー・税務執行ディスカッショングループ",
+      "date": "2013/11/28",
+      "officialUrl": "https://www.cao.go.jp/zei-cho/gijiroku/discussion2/2013/index.html",
+      "materials": [
+        {
+          "name": "議事録 (PDF形式:473KB)",
+          "url": "https://www.cao.go.jp/zei-cho/content/20140206_25dis22kai_1.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "会議資料",
+          "url": "https://www.cao.go.jp/zei-cho/gijiroku/discussion2/2013/25dis22kai.html",
+          "type": "HTML",
+          "manualLock": true
+        },
+        {
+          "name": "記者会見録 (PDF形式:109KB)",
+          "url": "https://www.cao.go.jp/zei-cho/content/20131204_25dis22kaiken_1.pdf",
+          "type": "PDF",
+          "manualLock": true
+        }
+      ],
+      "topics": [],
+      "manualLock": true
+    },
+    {
       "id": "meet-2013-11-27-fsa-stewardship-code-dai4",
       "councilId": "fsa-stewardship-code",
       "councilName": "スチュワードシップ・コードに関する有識者検討会",
@@ -201349,6 +203180,93 @@
       "officialUrl": "https://www.fsa.go.jp/singi/stewardship/index.html",
       "hasMinutes": true,
       "docCount": 2,
+      "manualLock": true
+    },
+    {
+      "id": "meet-2013-11-14-cao-zeicho-discussion1-kokusai-dai2",
+      "councilId": "cao-zeicho-discussion1-kokusai",
+      "title": "第2回 国際課税ディスカッショングループ",
+      "date": "2013/11/14",
+      "officialUrl": "https://www.cao.go.jp/zei-cho/gijiroku/discussion1/2013/index.html",
+      "materials": [
+        {
+          "name": "議事録 (PDF形式:447KB)",
+          "url": "https://www.cao.go.jp/zei-cho/content/20131227_25dis12kai_1.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "会議資料",
+          "url": "https://www.cao.go.jp/zei-cho/gijiroku/discussion1/2013/25dis12kai.html",
+          "type": "HTML",
+          "manualLock": true
+        },
+        {
+          "name": "記者会見録 (PDF形式:174KB)",
+          "url": "https://www.cao.go.jp/zei-cho/content/20131212_25dis12kaiken.pdf",
+          "type": "PDF",
+          "manualLock": true
+        }
+      ],
+      "topics": [],
+      "manualLock": true
+    },
+    {
+      "id": "meet-2013-11-08-cao-zeicho-discussion2-mynumber-dai1",
+      "councilId": "cao-zeicho-discussion2-mynumber",
+      "title": "第1回 マイナンバー・税務執行ディスカッショングループ",
+      "date": "2013/11/08",
+      "officialUrl": "https://www.cao.go.jp/zei-cho/gijiroku/discussion2/2013/index.html",
+      "materials": [
+        {
+          "name": "議事録 (PDF形式:496KB)",
+          "url": "https://www.cao.go.jp/zei-cho/content/20131218_25dis21kai_1.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "会議資料",
+          "url": "https://www.cao.go.jp/zei-cho/gijiroku/discussion2/2013/25dis21kai.html",
+          "type": "HTML",
+          "manualLock": true
+        },
+        {
+          "name": "記者会見録 (PDF形式:188KB)",
+          "url": "https://www.cao.go.jp/zei-cho/content/20131118_25dis21kaiken.pdf",
+          "type": "PDF",
+          "manualLock": true
+        }
+      ],
+      "topics": [],
+      "manualLock": true
+    },
+    {
+      "id": "meet-2013-10-24-cao-zeicho-discussion1-kokusai-dai1",
+      "councilId": "cao-zeicho-discussion1-kokusai",
+      "title": "第1回 国際課税ディスカッショングループ",
+      "date": "2013/10/24",
+      "officialUrl": "https://www.cao.go.jp/zei-cho/gijiroku/discussion1/2013/index.html",
+      "materials": [
+        {
+          "name": "議事録 (PDF形式:494KB)",
+          "url": "https://www.cao.go.jp/zei-cho/content/20131126_25dis11kai.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "会議資料",
+          "url": "https://www.cao.go.jp/zei-cho/gijiroku/discussion1/2013/25dis11kai.html",
+          "type": "HTML",
+          "manualLock": true
+        },
+        {
+          "name": "記者会見録 (PDF形式:228KB)",
+          "url": "https://www.cao.go.jp/zei-cho/content/20131216_25dis11kaiken_1.pdf",
+          "type": "PDF",
+          "manualLock": true
+        }
+      ],
+      "topics": [],
       "manualLock": true
     },
     {
@@ -208382,7 +210300,8 @@
       "color": "var(--color-cao)",
       "officialUrl": "https://www.cao.go.jp",
       "councilsUrls": [
-        "https://www.cao.go.jp/council.html"
+        "https://www.cao.go.jp/council.html",
+        "https://www.cao.go.jp/zei-cho/gijiroku/index.html"
       ],
       "hasCouncils": true
     },
@@ -224386,6 +226305,138 @@
       "trackedSince": "2022/01/15",
       "status": "approved",
       "aiReason": "AI判定: MHLW所管の公式会議体マスターとして承認"
+    },
+    {
+      "id": "cao-zeicho-ebpm-senmonka",
+      "name": "税制のEBPMに関する専門家会合",
+      "ministry": "CAO",
+      "category": "STUDY",
+      "officialUrl": "https://www.cao.go.jp/zei-cho/gijiroku/ebpm/index.html",
+      "sourcePageUrl": "https://www.cao.go.jp/zei-cho/gijiroku/ebpm/index.html",
+      "trackedSince": "2026-08-09",
+      "status": "approved",
+      "aiReason": "AI判定: CAO所管の公式会議体マスターとして承認"
+    },
+    {
+      "id": "cao-zeicho-life-senmonka",
+      "name": "活力ある長寿社会に向けたライフコースに中立な税制に関する専門家会合",
+      "ministry": "CAO",
+      "category": "STUDY",
+      "officialUrl": "https://www.cao.go.jp/zei-cho/gijiroku/life/index.html",
+      "sourcePageUrl": "https://www.cao.go.jp/zei-cho/gijiroku/life/index.html",
+      "trackedSince": "2026-08-09",
+      "status": "approved",
+      "aiReason": "AI判定: CAO所管の公式会議体マスターとして承認"
+    },
+    {
+      "id": "cao-zeicho-digital-noukan-senmonka",
+      "name": "経済社会のデジタル化への対応と納税環境整備に関する専門家会合",
+      "ministry": "CAO",
+      "category": "STUDY",
+      "officialUrl": "https://www.cao.go.jp/zei-cho/gijiroku/digital-noukan/index.html",
+      "sourcePageUrl": "https://www.cao.go.jp/zei-cho/gijiroku/digital-noukan/index.html",
+      "trackedSince": "2026-08-09",
+      "status": "approved",
+      "aiReason": "AI判定: CAO所管の公式会議体マスターとして承認"
+    },
+    {
+      "id": "cao-zeicho-noukan-senmonka",
+      "name": "納税環境整備に関する専門家会合",
+      "ministry": "CAO",
+      "category": "STUDY",
+      "officialUrl": "https://www.cao.go.jp/zei-cho/gijiroku/noukan/index.html",
+      "sourcePageUrl": "https://www.cao.go.jp/zei-cho/gijiroku/noukan/index.html",
+      "trackedSince": "2026-08-09",
+      "status": "approved",
+      "aiReason": "AI判定: CAO所管の公式会議体マスターとして承認"
+    },
+    {
+      "id": "cao-zeicho-sozoku-zoyo-senmonka",
+      "name": "相続税・贈与税に関する専門家会合",
+      "ministry": "CAO",
+      "category": "STUDY",
+      "officialUrl": "https://www.cao.go.jp/zei-cho/gijiroku/sozoku-zoyo/index.html",
+      "sourcePageUrl": "https://www.cao.go.jp/zei-cho/gijiroku/sozoku-zoyo/index.html",
+      "trackedSince": "2026-08-09",
+      "status": "approved",
+      "aiReason": "AI判定: CAO所管の公式会議体マスターとして承認"
+    },
+    {
+      "id": "cao-zeicho-rougo-shisan-senmonka",
+      "name": "老後の資産形成等に関する専門家会合",
+      "ministry": "CAO",
+      "category": "STUDY",
+      "officialUrl": "https://www.cao.go.jp/zei-cho/gijiroku/rougo/index.html",
+      "sourcePageUrl": "https://www.cao.go.jp/zei-cho/gijiroku/rougo/index.html",
+      "trackedSince": "2026-08-09",
+      "status": "approved",
+      "aiReason": "AI判定: CAO所管の公式会議体マスターとして承認"
+    },
+    {
+      "id": "cao-zeicho-renketsu-senmonka",
+      "name": "連結納税制度に関する専門家会合",
+      "ministry": "CAO",
+      "category": "STUDY",
+      "officialUrl": "https://www.cao.go.jp/zei-cho/gijiroku/renketsu/index.html",
+      "sourcePageUrl": "https://www.cao.go.jp/zei-cho/gijiroku/renketsu/index.html",
+      "trackedSince": "2026-08-09",
+      "status": "approved",
+      "aiReason": "AI判定: CAO所管の公式会議体マスターとして承認"
+    },
+    {
+      "id": "cao-zeicho-koku-han-kaigou",
+      "name": "国税犯則調査手続の見直しに関する会合",
+      "ministry": "CAO",
+      "category": "STUDY",
+      "officialUrl": "https://www.cao.go.jp/zei-cho/gijiroku/koku-han/index.html",
+      "sourcePageUrl": "https://www.cao.go.jp/zei-cho/gijiroku/koku-han/index.html",
+      "trackedSince": "2026-08-09",
+      "status": "approved",
+      "aiReason": "AI判定: CAO所管の公式会議体マスターとして承認"
+    },
+    {
+      "id": "cao-zeicho-kiso-shoiinkai",
+      "name": "政府税制調査会 基礎問題小委員会",
+      "ministry": "CAO",
+      "category": "STUDY",
+      "officialUrl": "https://www.cao.go.jp/zei-cho/gijiroku/kiso/index.html",
+      "sourcePageUrl": "https://www.cao.go.jp/zei-cho/gijiroku/kiso/index.html",
+      "trackedSince": "2026-08-09",
+      "status": "approved",
+      "aiReason": "AI判定: CAO所管の公式会議体マスターとして承認"
+    },
+    {
+      "id": "cao-zeicho-discussion1-kokusai",
+      "name": "国際課税ディスカッショングループ",
+      "ministry": "CAO",
+      "category": "STUDY",
+      "officialUrl": "https://www.cao.go.jp/zei-cho/gijiroku/discussion1/index.html",
+      "sourcePageUrl": "https://www.cao.go.jp/zei-cho/gijiroku/discussion1/index.html",
+      "trackedSince": "2026-08-09",
+      "status": "approved",
+      "aiReason": "AI判定: CAO所管の公式会議体マスターとして承認"
+    },
+    {
+      "id": "cao-zeicho-discussion2-mynumber",
+      "name": "マイナンバー・税務執行ディスカッショングループ",
+      "ministry": "CAO",
+      "category": "STUDY",
+      "officialUrl": "https://www.cao.go.jp/zei-cho/gijiroku/discussion2/index.html",
+      "sourcePageUrl": "https://www.cao.go.jp/zei-cho/gijiroku/discussion2/index.html",
+      "trackedSince": "2026-08-09",
+      "status": "approved",
+      "aiReason": "AI判定: CAO所管の公式会議体マスターとして承認"
+    },
+    {
+      "id": "cao-zeicho-discussion3-hojin",
+      "name": "法人課税ディスカッショングループ",
+      "ministry": "CAO",
+      "category": "STUDY",
+      "officialUrl": "https://www.cao.go.jp/zei-cho/gijiroku/discussion3/index.html",
+      "sourcePageUrl": "https://www.cao.go.jp/zei-cho/gijiroku/discussion3/index.html",
+      "trackedSince": "2026-08-09",
+      "status": "approved",
+      "aiReason": "AI判定: CAO所管の公式会議体マスターとして承認"
     }
   ],
   "scrapingRules": {
@@ -228704,6 +230755,126 @@
       "ministryQuirk": "厚生労働省 積立金基本指針に関する検討会 サブページ巡回",
       "rules": {
         "subpage_discovery_pattern": "href=[\"\\']([^\"\\']*(?:stf/(?:newpage_\\d+|shingi/other-nenkin_\\d+)[^\"\\'#]*|\\d+kai|kaisai)[^\"\\'#]*)[\"\\']",
+        "date_regex": "(?:令和|平成)\\d+年\\d+月\\d+日|\\d{4}年\\d+月\\d+日|\\d{4}[/-]\\d+[/-]\\d+",
+        "pdf_selector": "href=[\"\\']([^\"\\']+\\.(?:pdf|txt))[\"\\']",
+        "deep_crawl_enabled": true
+      }
+    },
+    "cao-zeicho-ebpm-senmonka": {
+      "rule_id": "rule-cao-zeicho-ebpm-senmonka-v1",
+      "ministryQuirk": "内閣府 政府税制調査会 税制のEBPMに関する専門家会合 サブページ巡回",
+      "rules": {
+        "subpage_discovery_pattern": "href=[\"\\']([^\"\\']*(?:zei-cho/gijiroku/[^\"\\'#]+|\\d{4}/|index\\.html)[^\"\\'#]*)[\"\\']",
+        "date_regex": "(?:令和|平成)\\d+年\\d+月\\d+日|\\d{4}年\\d+月\\d+日|\\d{4}[/-]\\d+[/-]\\d+",
+        "pdf_selector": "href=[\"\\']([^\"\\']+\\.(?:pdf|txt))[\"\\']",
+        "deep_crawl_enabled": true
+      }
+    },
+    "cao-zeicho-life-senmonka": {
+      "rule_id": "rule-cao-zeicho-life-senmonka-v1",
+      "ministryQuirk": "内閣府 政府税制調査会 活力ある長寿社会に向けたライフコースに中立な税制に関する専門家会合 サブページ巡回",
+      "rules": {
+        "subpage_discovery_pattern": "href=[\"\\']([^\"\\']*(?:zei-cho/gijiroku/[^\"\\'#]+|\\d{4}/|index\\.html)[^\"\\'#]*)[\"\\']",
+        "date_regex": "(?:令和|平成)\\d+年\\d+月\\d+日|\\d{4}年\\d+月\\d+日|\\d{4}[/-]\\d+[/-]\\d+",
+        "pdf_selector": "href=[\"\\']([^\"\\']+\\.(?:pdf|txt))[\"\\']",
+        "deep_crawl_enabled": true
+      }
+    },
+    "cao-zeicho-digital-noukan-senmonka": {
+      "rule_id": "rule-cao-zeicho-digital-noukan-senmonka-v1",
+      "ministryQuirk": "内閣府 政府税制調査会 経済社会のデジタル化への対応と納税環境整備に関する専門家会合 サブページ巡回",
+      "rules": {
+        "subpage_discovery_pattern": "href=[\"\\']([^\"\\']*(?:zei-cho/gijiroku/[^\"\\'#]+|\\d{4}/|index\\.html)[^\"\\'#]*)[\"\\']",
+        "date_regex": "(?:令和|平成)\\d+年\\d+月\\d+日|\\d{4}年\\d+月\\d+日|\\d{4}[/-]\\d+[/-]\\d+",
+        "pdf_selector": "href=[\"\\']([^\"\\']+\\.(?:pdf|txt))[\"\\']",
+        "deep_crawl_enabled": true
+      }
+    },
+    "cao-zeicho-noukan-senmonka": {
+      "rule_id": "rule-cao-zeicho-noukan-senmonka-v1",
+      "ministryQuirk": "内閣府 政府税制調査会 納税環境整備に関する専門家会合 サブページ巡回",
+      "rules": {
+        "subpage_discovery_pattern": "href=[\"\\']([^\"\\']*(?:zei-cho/gijiroku/[^\"\\'#]+|\\d{4}/|index\\.html)[^\"\\'#]*)[\"\\']",
+        "date_regex": "(?:令和|平成)\\d+年\\d+月\\d+日|\\d{4}年\\d+月\\d+日|\\d{4}[/-]\\d+[/-]\\d+",
+        "pdf_selector": "href=[\"\\']([^\"\\']+\\.(?:pdf|txt))[\"\\']",
+        "deep_crawl_enabled": true
+      }
+    },
+    "cao-zeicho-sozoku-zoyo-senmonka": {
+      "rule_id": "rule-cao-zeicho-sozoku-zoyo-senmonka-v1",
+      "ministryQuirk": "内閣府 政府税制調査会 相続税・贈与税に関する専門家会合 サブページ巡回",
+      "rules": {
+        "subpage_discovery_pattern": "href=[\"\\']([^\"\\']*(?:zei-cho/gijiroku/[^\"\\'#]+|\\d{4}/|index\\.html)[^\"\\'#]*)[\"\\']",
+        "date_regex": "(?:令和|平成)\\d+年\\d+月\\d+日|\\d{4}年\\d+月\\d+日|\\d{4}[/-]\\d+[/-]\\d+",
+        "pdf_selector": "href=[\"\\']([^\"\\']+\\.(?:pdf|txt))[\"\\']",
+        "deep_crawl_enabled": true
+      }
+    },
+    "cao-zeicho-rougo-shisan-senmonka": {
+      "rule_id": "rule-cao-zeicho-rougo-shisan-senmonka-v1",
+      "ministryQuirk": "内閣府 政府税制調査会 老後の資産形成等に関する専門家会合 サブページ巡回",
+      "rules": {
+        "subpage_discovery_pattern": "href=[\"\\']([^\"\\']*(?:zei-cho/gijiroku/[^\"\\'#]+|\\d{4}/|index\\.html)[^\"\\'#]*)[\"\\']",
+        "date_regex": "(?:令和|平成)\\d+年\\d+月\\d+日|\\d{4}年\\d+月\\d+日|\\d{4}[/-]\\d+[/-]\\d+",
+        "pdf_selector": "href=[\"\\']([^\"\\']+\\.(?:pdf|txt))[\"\\']",
+        "deep_crawl_enabled": true
+      }
+    },
+    "cao-zeicho-renketsu-senmonka": {
+      "rule_id": "rule-cao-zeicho-renketsu-senmonka-v1",
+      "ministryQuirk": "内閣府 政府税制調査会 連結納税制度に関する専門家会合 サブページ巡回",
+      "rules": {
+        "subpage_discovery_pattern": "href=[\"\\']([^\"\\']*(?:zei-cho/gijiroku/[^\"\\'#]+|\\d{4}/|index\\.html)[^\"\\'#]*)[\"\\']",
+        "date_regex": "(?:令和|平成)\\d+年\\d+月\\d+日|\\d{4}年\\d+月\\d+日|\\d{4}[/-]\\d+[/-]\\d+",
+        "pdf_selector": "href=[\"\\']([^\"\\']+\\.(?:pdf|txt))[\"\\']",
+        "deep_crawl_enabled": true
+      }
+    },
+    "cao-zeicho-koku-han-kaigou": {
+      "rule_id": "rule-cao-zeicho-koku-han-kaigou-v1",
+      "ministryQuirk": "内閣府 政府税制調査会 国税犯則調査手続の見直しに関する会合 サブページ巡回",
+      "rules": {
+        "subpage_discovery_pattern": "href=[\"\\']([^\"\\']*(?:zei-cho/gijiroku/[^\"\\'#]+|\\d{4}/|index\\.html)[^\"\\'#]*)[\"\\']",
+        "date_regex": "(?:令和|平成)\\d+年\\d+月\\d+日|\\d{4}年\\d+月\\d+日|\\d{4}[/-]\\d+[/-]\\d+",
+        "pdf_selector": "href=[\"\\']([^\"\\']+\\.(?:pdf|txt))[\"\\']",
+        "deep_crawl_enabled": true
+      }
+    },
+    "cao-zeicho-kiso-shoiinkai": {
+      "rule_id": "rule-cao-zeicho-kiso-shoiinkai-v1",
+      "ministryQuirk": "内閣府 政府税制調査会 政府税制調査会 基礎問題小委員会 サブページ巡回",
+      "rules": {
+        "subpage_discovery_pattern": "href=[\"\\']([^\"\\']*(?:zei-cho/gijiroku/[^\"\\'#]+|\\d{4}/|index\\.html)[^\"\\'#]*)[\"\\']",
+        "date_regex": "(?:令和|平成)\\d+年\\d+月\\d+日|\\d{4}年\\d+月\\d+日|\\d{4}[/-]\\d+[/-]\\d+",
+        "pdf_selector": "href=[\"\\']([^\"\\']+\\.(?:pdf|txt))[\"\\']",
+        "deep_crawl_enabled": true
+      }
+    },
+    "cao-zeicho-discussion1-kokusai": {
+      "rule_id": "rule-cao-zeicho-discussion1-kokusai-v1",
+      "ministryQuirk": "内閣府 政府税制調査会 国際課税ディスカッショングループ サブページ巡回",
+      "rules": {
+        "subpage_discovery_pattern": "href=[\"\\']([^\"\\']*(?:zei-cho/gijiroku/[^\"\\'#]+|\\d{4}/|index\\.html)[^\"\\'#]*)[\"\\']",
+        "date_regex": "(?:令和|平成)\\d+年\\d+月\\d+日|\\d{4}年\\d+月\\d+日|\\d{4}[/-]\\d+[/-]\\d+",
+        "pdf_selector": "href=[\"\\']([^\"\\']+\\.(?:pdf|txt))[\"\\']",
+        "deep_crawl_enabled": true
+      }
+    },
+    "cao-zeicho-discussion2-mynumber": {
+      "rule_id": "rule-cao-zeicho-discussion2-mynumber-v1",
+      "ministryQuirk": "内閣府 政府税制調査会 マイナンバー・税務執行ディスカッショングループ サブページ巡回",
+      "rules": {
+        "subpage_discovery_pattern": "href=[\"\\']([^\"\\']*(?:zei-cho/gijiroku/[^\"\\'#]+|\\d{4}/|index\\.html)[^\"\\'#]*)[\"\\']",
+        "date_regex": "(?:令和|平成)\\d+年\\d+月\\d+日|\\d{4}年\\d+月\\d+日|\\d{4}[/-]\\d+[/-]\\d+",
+        "pdf_selector": "href=[\"\\']([^\"\\']+\\.(?:pdf|txt))[\"\\']",
+        "deep_crawl_enabled": true
+      }
+    },
+    "cao-zeicho-discussion3-hojin": {
+      "rule_id": "rule-cao-zeicho-discussion3-hojin-v1",
+      "ministryQuirk": "内閣府 政府税制調査会 法人課税ディスカッショングループ サブページ巡回",
+      "rules": {
+        "subpage_discovery_pattern": "href=[\"\\']([^\"\\']*(?:zei-cho/gijiroku/[^\"\\'#]+|\\d{4}/|index\\.html)[^\"\\'#]*)[\"\\']",
         "date_regex": "(?:令和|平成)\\d+年\\d+月\\d+日|\\d{4}年\\d+月\\d+日|\\d{4}[/-]\\d+[/-]\\d+",
         "pdf_selector": "href=[\"\\']([^\"\\']+\\.(?:pdf|txt))[\"\\']",
         "deep_crawl_enabled": true
