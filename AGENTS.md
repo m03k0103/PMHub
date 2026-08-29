@@ -60,17 +60,18 @@
 
 7. **自動テスト・回帰テストによる整合性検証（必須）**
    - データおよびルールの更新後は、必ず以下の検証テストを実行し、重複・破損・上書き・回帰エラー・JavaScript実行時クラッシュが0件であることを確認する：
-     1. [`testing/test_no_duplicate_meetings.py`](file:///d:/dev/PMHub/testing/test_no_duplicate_meetings.py) （重複会議・会議体の完全排除検証）
-     2. [`testing/test_crawler_regression.py`](file:///d:/dev/PMHub/testing/test_crawler_regression.py) （クローラー手動データ保護・新規開催回自動同期の回帰検証）
-     3. [`testing/test_js_runtime.js`](file:///d:/dev/PMHub/testing/test_js_runtime.js) （公開ポータル・管理コンソールの JavaScript 実行時クラッシュ・TDZ・未定義参照の完全検証）
-     4. [`testing/smoke_test.py`](file:///d:/dev/PMHub/testing/smoke_test.py) （構文・URL疎通・UI描画・ランタイムクラッシュ・統合スモークテスト）
+     1. [`testing/smoke_test.py`](file:///d:/dev/PMHub/testing/smoke_test.py) （全8大テスト統合オーケストレーター：構文・URL疎通・JS単体・重複排除・ID排他性・UI描画・クローラー保護回帰・JSランタイムクラッシュ）
+     2. [`node --test testing/app.test.js`](file:///d:/dev/PMHub/testing/app.test.js) （JSセキュリティ・サニタイズ・フォーマット関数単体テスト）
+     3. [`testing/test_no_duplicate_meetings.py`](file:///d:/dev/PMHub/testing/test_no_duplicate_meetings.py) （重複会議・回次・日付・一時データの完全排除検証）
+     4. [`testing/test_crawler_regression.py`](file:///d:/dev/PMHub/testing/test_crawler_regression.py) （クローラー手動データ保護・新規開催回自動同期の回帰検証）
+     5. [`testing/test_js_runtime.js`](file:///d:/dev/PMHub/testing/test_js_runtime.js) （公開ポータル・管理コンソールの JavaScript 実行時クラッシュ・TDZ・全画面描画検証）
 
 8. **会議体追加依頼時の包括的・同時作業スコープ（必須）**
    - ユーザーから会議体（`councils`）の追加を依頼された場合、単に会議体マスターレコードを作成するだけでなく、以下の作業を必ず**ワンストップ・必須スコープとして同時に完遂**すること：
      1. 各開催回の会議データ（`meetings`）の網羅的登録
      2. 各回の個別資料・配布資料・議事録の末端PDF/HTMLリンク（`materials`）の取得と登録
      3. 次回以降の自動検知用クロールルール（`scrapingRules`）の作成・連動反映（`deep_crawl_enabled: true`）
-     4. 3大自動テスト（`test_no_duplicate_meetings.py`、`test_crawler_regression.py`、`smoke_test.py`）の実行と整合性検証
+     4. 統合自動テスト（`python testing/smoke_test.py`）の実行と整合性検証
 
 9. **スクレイピング・URL検証時のアクセス負荷軽減（レートリミット遵守・必須）**
    - 行政機関等の同一ホスト（ドメイン）に対するスクレイピングやURL疎通確認を行う際は、サーバーへの過度な負荷を防止するため、短時間に連続した大量アクセスを行わず、必ずリクエスト間に適切な待機時間（最低0.4〜1秒程度のスリープ）を設けたレートリミット（スロットリング）を遵守すること。

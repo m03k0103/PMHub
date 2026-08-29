@@ -228,7 +228,7 @@ def check_js_syntax(code, file_path=""):
 def check_syntax_errors():
     """1. JS/Python/HTML/JSON ファイルの文法・タグ構造エラーを自動確認"""
     print("--------------------------------------------------")
-    print(" [テスト 1/2] コードの文法エラー (SyntaxError) 自動検証")
+    print(" [テスト 1/8] コードの文法エラー (SyntaxError) 自動検証")
     print("--------------------------------------------------")
     
     files_to_check = [
@@ -239,7 +239,11 @@ def check_syntax_errors():
         os.path.join(PROJECT_ROOT, "admin", "discover_councils.py"),
         os.path.join(PROJECT_ROOT, "admin", "apply_report.py"),
         os.path.join(PROJECT_ROOT, "admin", "admin_dashboard.html"),
-        os.path.join(PROJECT_ROOT, "testing", "smoke_test.py")
+        os.path.join(PROJECT_ROOT, "testing", "smoke_test.py"),
+        os.path.join(PROJECT_ROOT, "testing", "test_js_runtime.js"),
+        os.path.join(PROJECT_ROOT, "testing", "app.test.js"),
+        os.path.join(PROJECT_ROOT, "testing", "test_no_duplicate_meetings.py"),
+        os.path.join(PROJECT_ROOT, "testing", "test_crawler_regression.py")
     ]
     
     errors_found = 0
@@ -332,7 +336,7 @@ def get_added_urls_from_git():
 def check_link_health(explicit_urls=None, check_all=False):
     """2. 追加・変更された URL のみのリンク疎通確認"""
     print("\n--------------------------------------------------")
-    print(" [テスト 2/2] リンク疎通確認 (追加・変更 URL のみ対象)")
+    print(" [テスト 2/8] リンク疎通確認 (追加・変更 URL のみ対象)")
     print("--------------------------------------------------")
 
     target_urls = []
@@ -385,21 +389,21 @@ def check_link_health(explicit_urls=None, check_all=False):
     print(f"\n  検証結果: 追加・変更 URL {len(unique_urls)} 件中 リンク切れ {broken_links} 件")
     return broken_links == 0
 
-def check_escape_html():
-    """3. JSユーティリティ (escapeHtml) の単体テスト"""
+def check_js_unit_tests():
+    """3. JSユーティリティ関数（セキュリティ・サニタイズ・フォーマット）の単体テスト実行"""
     print("\n--------------------------------------------------")
-    print(" [テスト 3/4] JSユーティリティ関数の単体テスト実行")
+    print(" [テスト 3/8] JSユーティリティ単体テスト (app.test.js)")
     print("--------------------------------------------------")
     try:
         import shutil
         node_cmd = shutil.which("node") or (r"D:\Programs\nodejs\node.exe" if os.path.exists(r"D:\Programs\nodejs\node.exe") else "node")
-        test_script_path = os.path.join(PROJECT_ROOT, "testing", "test_escapeHtml.js")
-        result = subprocess.run([node_cmd, test_script_path], cwd=PROJECT_ROOT, capture_output=True, text=True, encoding='utf-8', errors='replace')
+        test_script_path = os.path.join(PROJECT_ROOT, "testing", "app.test.js")
+        result = subprocess.run([node_cmd, "--test", test_script_path], cwd=PROJECT_ROOT, capture_output=True, text=True, encoding='utf-8', errors='replace')
         if result.returncode == 0:
-            print("  [PASS] escapeHtml 単体テスト通過")
+            print("  [PASS] escapeHtml / sanitizeUrl / formatDate 単体テスト全件通過 (node:test)")
             return True
         else:
-            print("  [FAIL] escapeHtml 単体テスト失敗")
+            print("  [FAIL] JS単体テスト失敗")
             print(result.stdout)
             print(result.stderr)
             return False
@@ -410,10 +414,35 @@ def check_escape_html():
         print(f"  [FAIL] テストスクリプト実行エラー: {e}")
         return False
 
-def check_council_timeline_sync():
-    """4. 会議体一覧 (COUNCILS), タイムライン (MEETINGS) の ID整合性自動検証"""
+def check_duplicate_meetings_quality():
+    """4. 会議レコード品質・回次整合性・重複排除の自動検証"""
     print("\n--------------------------------------------------")
-    print(" [テスト 4/5] 会議体・タイムライン・除外リスト ID完全整合性検証")
+    print(" [テスト 4/8] 会議品質・回次整合性・重複排除検証 (test_no_duplicate_meetings.py)")
+    print("--------------------------------------------------")
+    test_script = os.path.join(PROJECT_ROOT, "testing", "test_no_duplicate_meetings.py")
+    if not os.path.exists(test_script):
+        print("  [SKIP] test_no_duplicate_meetings.py が見つかりません")
+        return True
+
+    res = subprocess.run([sys.executable, test_script], capture_output=True, text=True, encoding='utf-8', errors='replace')
+    if res.returncode == 0:
+        print("  [PASS] 会議ID重複・回次重複・日付フォーマット・クローラー一時データ混入0件を検証完了")
+        return True
+    else:
+        print("  [FAIL] 会議データ品質・重複排除検証でエラーが検出されました:")
+        for line in res.stdout.splitlines():
+            if line.strip():
+                print(f"    {line}")
+        if res.stderr:
+            for line in res.stderr.splitlines():
+                if line.strip():
+                    print(f"    {line}")
+        return False
+
+def check_council_timeline_sync():
+    """5. 会議体一覧 (COUNCILS), タイムライン (MEETINGS) の ID整合性自動検証"""
+    print("\n--------------------------------------------------")
+    print(" [テスト 5/8] 会議体・タイムライン・除外リスト ID完全整合性検証")
     print("--------------------------------------------------")
 
     data_json_path = os.path.join(PROJECT_ROOT, "docs", "data.json")
@@ -468,9 +497,9 @@ def check_council_timeline_sync():
     return True
 
 def check_view_rendering():
-    """5. UI表示自動検証（公開ポータル＆管理ダッシュボードのDOM整合性チェック）"""
+    """6. UI表示自動検証（公開ポータル＆管理ダッシュボードのDOM整合性チェック）"""
     print("\n--------------------------------------------------")
-    print(" [テスト 5/5] UI表示機能検証（ポータル＆管理ダッシュボード構造）")
+    print(" [テスト 6/8] UI表示機能検証（ポータル＆管理ダッシュボード構造）")
     print("--------------------------------------------------")
 
     app_js_path = os.path.join(PROJECT_ROOT, "docs", "app.js")
@@ -514,9 +543,9 @@ def check_view_rendering():
     return True
 
 def check_crawler_regression():
-    """6. クローラーの手動保護回帰テストを実行"""
+    """7. クローラーの手動保護回帰テストを実行"""
     print("\n--------------------------------------------------")
-    print(" [テスト 6/7] クローラー手動データ保護回帰テスト")
+    print(" [テスト 7/8] クローラー手動データ保護回帰テスト")
     print("--------------------------------------------------")
     test_script = os.path.join(PROJECT_ROOT, "testing", "test_crawler_regression.py")
     if not os.path.exists(test_script):
@@ -539,9 +568,9 @@ def check_crawler_regression():
         return False
 
 def check_js_runtime_crash():
-    """7. JavaScript 実行時クラッシュ・TDZ・初期化検証（公開ポータル＆管理ダッシュボード）"""
+    """8. JavaScript 実行時クラッシュ・TDZ・初期化検証（公開ポータル＆管理ダッシュボード）"""
     print("\n--------------------------------------------------")
-    print(" [テスト 7/7] JavaScript 実行時クラッシュ・TDZ・描画検証")
+    print(" [テスト 8/8] JavaScript 実行時クラッシュ・TDZ・描画検証")
     print("--------------------------------------------------")
     import shutil
     node_cmd = shutil.which("node") or (r"D:\Programs\nodejs\node.exe" if os.path.exists(r"D:\Programs\nodejs\node.exe") else "node")
@@ -577,14 +606,15 @@ def main():
 
     syntax_ok = check_syntax_errors()
     links_ok = check_link_health(explicit_urls=args.url, check_all=args.all)
-    utils_ok = check_escape_html()
+    unit_ok = check_js_unit_tests()
+    dedup_ok = check_duplicate_meetings_quality()
     sync_ok = check_council_timeline_sync()
     view_ok = check_view_rendering()
     crawler_ok = check_crawler_regression()
     runtime_ok = check_js_runtime_crash()
 
     print("\n==================================================")
-    if syntax_ok and links_ok and utils_ok and sync_ok and view_ok and crawler_ok and runtime_ok:
+    if syntax_ok and links_ok and unit_ok and dedup_ok and sync_ok and view_ok and crawler_ok and runtime_ok:
         print(" 【結果】全スモークテストに合格しました。修正コードは正常です。")
         sys.exit(0)
     else:
