@@ -443,19 +443,12 @@ def check_council_timeline_sync():
                 print(f"  [FAIL] 公開会議体 (COUNCILS) と却下リスト (rejected_councils.json) に重複IDが存在します: {collision}")
                 return False
 
-            discovered = data.get("discoveredCouncils", [])
-            discovered_ids = set([dc.get("id") for dc in discovered if dc.get("id")])
-            disc_collision = discovered_ids & rejected_ids
-            if disc_collision:
-                print(f"  [FAIL] 候補会議体 (discoveredCouncils) と却下リストに重複IDが存在します: {disc_collision}")
+            councils_name_collision = [c.get("name") for c in councils if c.get("name", "").strip() in rejected_names]
+            if councils_name_collision:
+                print(f"  [FAIL] 会議体マスター (COUNCILS) と却下リストに重複名称が存在します: {councils_name_collision[:5]}")
                 return False
 
-            disc_name_collision = [dc.get("name") for dc in discovered if dc.get("name", "").strip() in rejected_names]
-            if disc_name_collision:
-                print(f"  [FAIL] 候補会議体 (discoveredCouncils) と却下リストに重複名称が存在します: {disc_name_collision[:5]}")
-                return False
-
-            print(f"  [PASS] 却下会議体 {len(rejected_ids)} 件の分離・公開データおよび検出候補との完全排他を検証完了")
+            print(f"  [PASS] 却下会議体 {len(rejected_ids)} 件の分離・公開データとの完全排他を検証完了")
 
     print(f"  [PASS] 全 {len(councils_set)} 会議体の ID整合性・タイムライン紐づけを検証完了")
     return True

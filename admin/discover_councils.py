@@ -384,14 +384,14 @@ def run_discovery(progress_callback=None):
     emit(f"ディスカバリー巡回完了: 合計 {len(discovered_list)} 件の新規会議体レコードを作成しました。")
     emit("=" * 70)
 
-    # 結果JSONの保存 (data.jsonのdiscoveredCouncilsを更新、却下済みを完全パージ)
+    # 結果JSONの保存 (data.json の councils を更新、却下済みを完全パージ)
     if os.path.exists(DATA_JSON_PATH):
         try:
             with open(DATA_JSON_PATH, "r", encoding="utf-8") as f:
                 data = json.load(f)
             
-            existing_discovered = data.get("discoveredCouncils", [])
-            existing_dict = {c.get("id"): c for c in existing_discovered if c.get("id")}
+            existing_councils = data.get("councils", [])
+            existing_dict = {c.get("id"): c for c in existing_councils if c.get("id")}
             
             filtered_existing_dict = {}
             for cid, c in existing_dict.items():
@@ -417,17 +417,22 @@ def run_discovery(progress_callback=None):
                     continue
 
                 if cid in filtered_existing_dict:
-                    new_c["status"] = filtered_existing_dict[cid].get("status", "pending")
+                    # 既存の会議体はステータスを維持
+                    new_c["status"] = filtered_existing_dict[cid].get("status", "approved")
+                    new_c["manualLock"] = filtered_existing_dict[cid].get("manualLock", False)
+                    new_c["pastYearCount"] = filtered_existing_dict[cid].get("pastYearCount", 0)
                 else:
                     new_c["status"] = "pending"
                 filtered_existing_dict[cid] = new_c
             
-            data["discoveredCouncils"] = list(filtered_existing_dict.values())
+            data["councils"] = list(filtered_existing_dict.values())
+            if "discoveredCouncils" in data:
+                del data["discoveredCouncils"]
             
             with open(DATA_JSON_PATH, "w", encoding="utf-8") as f:
                 json.dump(data, f, ensure_ascii=False, indent=2)
                 
-            print(f"結果を data.json の discoveredCouncils に保存しました（却下済み除外適用済み）。")
+            print(f"結果を data.json の councils に保存しました（却下済み除外適用済み）。")
         except Exception as e:
             print(f"[ERROR] data.json の更新に失敗しました: {e}")
     return discovered_list

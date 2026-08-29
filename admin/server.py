@@ -281,17 +281,13 @@ class CustomHandler(http.server.SimpleHTTPRequestHandler):
                         data = json.load(df)
                     
                     councils = data.get("councils", [])
-                    discovered = data.get("discoveredCouncils", [])
 
                     c_idx = next((i for i, c in enumerate(councils) if c.get("id") == target_id), None)
                     if c_idx is not None:
                         target_council = councils.pop(c_idx)
                     
-                    d_idx = next((i for i, c in enumerate(discovered) if c.get("id") == target_id), None)
-                    if d_idx is not None:
-                        if not target_council:
-                            target_council = discovered[d_idx]
-                        discovered.pop(d_idx)
+                    if "discoveredCouncils" in data:
+                        del data["discoveredCouncils"]
 
                     with open(DATA_JSON_FILE, "w", encoding="utf-8") as df:
                         json.dump(data, df, ensure_ascii=False, indent=2)
@@ -347,9 +343,9 @@ class CustomHandler(http.server.SimpleHTTPRequestHandler):
                     with open(DATA_JSON_FILE, "r", encoding="utf-8") as df:
                         data = json.load(df)
                     
-                    discovered = data.setdefault("discoveredCouncils", [])
-                    if not any(c.get("id") == target_id for c in discovered):
-                        discovered.append({
+                    councils = data.setdefault("councils", [])
+                    if not any(c.get("id") == target_id for c in councils):
+                        councils.append({
                             "id": target_rej.get("id"),
                             "name": target_rej.get("name"),
                             "ministry": target_rej.get("ministry"),
@@ -359,13 +355,15 @@ class CustomHandler(http.server.SimpleHTTPRequestHandler):
                             "status": "pending",
                             "aiReason": ""
                         })
-                        with open(DATA_JSON_FILE, "w", encoding="utf-8") as df:
-                            json.dump(data, df, ensure_ascii=False, indent=2)
+                    if "discoveredCouncils" in data:
+                        del data["discoveredCouncils"]
+                    with open(DATA_JSON_FILE, "w", encoding="utf-8") as df:
+                        json.dump(data, df, ensure_ascii=False, indent=2)
 
                 self.send_response(200)
                 self.send_header('Content-Type', 'application/json; charset=utf-8')
                 self.end_headers()
-                self.wfile.write(json.dumps({"status": "ok", "message": f"Council {target_id} restored to pending discovered councils"}).encode('utf-8'))
+                self.wfile.write(json.dumps({"status": "ok", "message": f"Council {target_id} restored to councils as pending"}).encode('utf-8'))
             except Exception as e:
                 self.send_response(500)
                 self.send_header('Content-Type', 'application/json; charset=utf-8')

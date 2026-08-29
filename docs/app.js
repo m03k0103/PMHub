@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     const res = await fetch(`data.json?t=${new Date().getTime()}`);
     if (!res.ok) throw new Error('Failed to load data.json');
     const data = await res.json();
-    window.COUNCILS = data.councils || [];
+    window.COUNCILS = (data.councils || []).filter(c => c.status !== 'pending');
     window.MEETINGS = data.meetings || [];
     window.MINISTRIES = data.ministries || {};
     window.CATEGORIES = data.categories || {};
