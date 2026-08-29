@@ -6887,15 +6887,6 @@
       "status": "approved"
     },
     {
-      "id": "cas-316",
-      "name": "経済安全保障推進会議",
-      "ministry": "CAS",
-      "category": "HQ",
-      "officialUrl": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyo/index.html",
-      "pastYearCount": 0,
-      "status": "approved"
-    },
-    {
       "id": "cas-317",
       "name": "原子力損害賠償制度の見直しに関する副大臣等会議",
       "ministry": "CAS",
@@ -7252,15 +7243,6 @@
       "ministry": "CAS",
       "category": "STUDY",
       "officialUrl": "https://www.cas.go.jp/jp/seisaku/clean_energy_kondan/index.html",
-      "pastYearCount": 0,
-      "status": "approved"
-    },
-    {
-      "id": "cas-359",
-      "name": "経済安全保障重点課題検討会議",
-      "ministry": "CAS",
-      "category": "STUDY",
-      "officialUrl": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyo/index.html#kentokaigi",
       "pastYearCount": 0,
       "status": "approved"
     },
@@ -15997,6 +15979,26 @@
       "pastYearCount": 5,
       "manualLock": true,
       "description": "法務省における前科による資格制限の在り方に関する検討ワーキンググループ。"
+    },
+    {
+      "id": "cas-keizai_anzen_suishin",
+      "name": "経済安全保障推進会議",
+      "ministry": "CAS",
+      "category": "HEADQUARTERS",
+      "officialUrl": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyo/index.html",
+      "pastYearCount": 8,
+      "manualLock": true,
+      "description": "内閣官房における経済安全保障推進会議。"
+    },
+    {
+      "id": "cas-keizai_anzen_kentou",
+      "name": "経済安全保障重点課題検討会議",
+      "ministry": "CAS",
+      "category": "STUDY_GROUP",
+      "officialUrl": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyo/index.html#kentokaigi",
+      "pastYearCount": 6,
+      "manualLock": true,
+      "description": "内閣官房における経済安全保障重点課題検討会議。"
     }
   ],
   "meetings": [
@@ -28148,6 +28150,22 @@
         {
           "name": "PPP/PFI推進アクションプラン（令和8年改定版）（案）（PDF形式：601KB）",
           "url": "https://www8.cao.go.jp/pfi/kaigi/22kai/pdf/shiryo_22-03-2.pdf"
+        }
+      ]
+    },
+    {
+      "id": "cas-keizai_anzen_kentou-20260611-006",
+      "councilId": "cas-keizai_anzen_kentou",
+      "title": "第6回 経済安全保障重点課題検討会議",
+      "date": "2026/06/11",
+      "officialUrl": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyo/index.html#kentokaigi",
+      "category": "STUDY_GROUP",
+      "ministry": "CAS",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "会議概要",
+          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyo/kentokaigi_dai6/gaiyo.pdf"
         }
       ]
     },
@@ -46823,6 +46841,30 @@
       ]
     },
     {
+      "id": "cas-keizai_anzen_suishin-20251107-008",
+      "councilId": "cas-keizai_anzen_suishin",
+      "title": "第8回 経済安全保障推進会議",
+      "date": "2025/11/07",
+      "officialUrl": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyo/dai8/gijisidai.html",
+      "category": "HEADQUARTERS",
+      "ministry": "CAS",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "議事次第",
+          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyo/dai8/shidai.pdf"
+        },
+        {
+          "name": "資料１ 経済安全保障の更なる推進に向けて",
+          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyo/dai8/shiryo1.pdf"
+        },
+        {
+          "name": "議事要旨",
+          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyo/dai8/gijiyoshi.pdf"
+        }
+      ]
+    },
+    {
       "id": "cao-kisei_startup_wg-20251106-007",
       "councilId": "cao-kisei_startup_wg",
       "title": "第7回 規制改革推進会議 スタートアップ・イノベーション促進WG（令和7年度）",
@@ -55281,6 +55323,34 @@
       ]
     },
     {
+      "id": "cas-keizai_anzen_suishin-20250307-007",
+      "councilId": "cas-keizai_anzen_suishin",
+      "title": "第7回 経済安全保障推進会議",
+      "date": "2025/03/07",
+      "officialUrl": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyo/dai7/gijisidai.html",
+      "category": "HEADQUARTERS",
+      "ministry": "CAS",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "議事次第",
+          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyo/dai7/sidai.pdf"
+        },
+        {
+          "name": "経済安全保障重要技術育成プログラム　研究開発ビジョン（第二次）（一部改定案）",
+          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyo/dai7/siryou1.pdf"
+        },
+        {
+          "name": "研究開発ビジョン（第二次）の一部改定について（案）",
+          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyo/dai7/sankou1.pdf"
+        },
+        {
+          "name": "議事要旨",
+          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyo/dai7/gijiyousi.pdf"
+        }
+      ]
+    },
+    {
       "id": "smea-yorozu-20250306-006",
       "councilId": "smea-yorozu",
       "title": "地域の経営支援力強化に向けたよろず支援拠点のあり方検討会 第6回",
@@ -56685,6 +56755,22 @@
         {
           "name": "第1回 中小企業の成長のためのイノベーション研究会 議事要旨(172KB)",
           "url": "https://www.chusho.meti.go.jp/koukai/kenkyukai/seicho_innovation/001/gy.pdf"
+        }
+      ]
+    },
+    {
+      "id": "cas-keizai_anzen_kentou-20250218-005",
+      "councilId": "cas-keizai_anzen_kentou",
+      "title": "第5回 経済安全保障重点課題検討会議",
+      "date": "2025/02/18",
+      "officialUrl": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyo/index.html#kentokaigi",
+      "category": "STUDY_GROUP",
+      "ministry": "CAS",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "会議概要",
+          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyo/kentokaigi_dai5/gaiyo.pdf"
         }
       ]
     },
@@ -64562,6 +64648,22 @@
         {
           "name": "参考資料５ 民事訴訟法（IT化関係）等の改正に関する要綱（抜粋）",
           "url": "https://www.moj.go.jp/content/001421213.pdf"
+        }
+      ]
+    },
+    {
+      "id": "cas-keizai_anzen_kentou-20240627-004",
+      "councilId": "cas-keizai_anzen_kentou",
+      "title": "第4回 経済安全保障重点課題検討会議",
+      "date": "2024/06/27",
+      "officialUrl": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyo/index.html#kentokaigi",
+      "category": "STUDY_GROUP",
+      "ministry": "CAS",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "会議概要",
+          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyo/kentokaigi_dai4/gaiyo.pdf"
         }
       ]
     },
@@ -73325,6 +73427,42 @@
       "docCount": 14
     },
     {
+      "id": "cas-keizai_anzen_suishin-20240130-006",
+      "councilId": "cas-keizai_anzen_suishin",
+      "title": "第6回 経済安全保障推進会議",
+      "date": "2024/01/30",
+      "officialUrl": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyo/dai6/gijisidai.html",
+      "category": "HEADQUARTERS",
+      "ministry": "CAS",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "議事次第",
+          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyo/dai6/gijisidai.pdf"
+        },
+        {
+          "name": "経済安全保障分野におけるセキュリティ・クリアランス制度等の整備に向けて",
+          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyo/dai6/siryou1.pdf"
+        },
+        {
+          "name": "名古屋港コンテナターミナルのシステム障害を受けた対応",
+          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyo/dai6/siryou2.pdf"
+        },
+        {
+          "name": "経済安全保障推進法　基幹インフラにおける医療の整理について",
+          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyo/dai6/siryou3.pdf"
+        },
+        {
+          "name": "基幹インフラ制度における今後の対応について",
+          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyo/dai6/siryou4.pdf"
+        },
+        {
+          "name": "議事要旨",
+          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyo/dai6/gijiyousi.pdf"
+        }
+      ]
+    },
+    {
       "id": "cfa-kodomo_shingikai-20240129-004",
       "councilId": "cfa-kodomo_shingikai",
       "title": "第4回 こども家庭審議会",
@@ -81276,6 +81414,34 @@
         {
           "name": "【委員提出資料】大月座長発表資料",
           "url": "https://www.moj.go.jp/content/001402371.pdf"
+        }
+      ]
+    },
+    {
+      "id": "cas-keizai_anzen_suishin-20230828-005",
+      "councilId": "cas-keizai_anzen_suishin",
+      "title": "第5回 経済安全保障推進会議",
+      "date": "2023/08/28",
+      "officialUrl": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyo/dai5/gijisidai.html",
+      "category": "HEADQUARTERS",
+      "ministry": "CAS",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "議事次第",
+          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyo/dai5/shidai.pdf"
+        },
+        {
+          "name": "経済安全保障重要技術育成プログラム　研究開発ビジョン（第二次）（案）",
+          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyo/dai5/siryou1.pdf"
+        },
+        {
+          "name": "経済安全保障重要技術育成プログラム　研究開発ビジョン（第二次）（案）概要",
+          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyo/dai5/sankou1.pdf"
+        },
+        {
+          "name": "議事要旨",
+          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyo/dai5/gijiyousi.pdf"
         }
       ]
     },
@@ -90412,6 +90578,22 @@
       ]
     },
     {
+      "id": "cas-keizai_anzen_kentou-20230217-003",
+      "councilId": "cas-keizai_anzen_kentou",
+      "title": "第3回 経済安全保障重点課題検討会議",
+      "date": "2023/02/17",
+      "officialUrl": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyo/index.html#kentokaigi",
+      "category": "STUDY_GROUP",
+      "ministry": "CAS",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "会議概要",
+          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyo/kentokaigi_dai3/gaiyo.pdf"
+        }
+      ]
+    },
+    {
       "id": "cas-atarashii_sihon_107-20230215-014",
       "councilId": "cas-atarashii_sihon_107",
       "title": "第14回 新しい資本主義実現会議",
@@ -90592,6 +90774,30 @@
         {
           "name": "令和5年 第1回 中小企業の成長経営の実現に向けた研究会 議事要旨(726KB)",
           "url": "https://www.chusho.meti.go.jp/koukai/kenkyukai/seichoken/001/gy.pdf"
+        }
+      ]
+    },
+    {
+      "id": "cas-keizai_anzen_suishin-20230214-004",
+      "councilId": "cas-keizai_anzen_suishin",
+      "title": "第4回 経済安全保障推進会議",
+      "date": "2023/02/14",
+      "officialUrl": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyo/dai4/gijisidai.html",
+      "category": "HEADQUARTERS",
+      "ministry": "CAS",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "議事次第",
+          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyo/dai4/shidai.pdf"
+        },
+        {
+          "name": "セキュリティ・クリアランス制度等の整備に向けて",
+          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyo/dai4/shiryou1.pdf"
+        },
+        {
+          "name": "議事要旨",
+          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyo/dai4/gijiyousi.pdf"
         }
       ]
     },
@@ -97125,6 +97331,34 @@
       ]
     },
     {
+      "id": "cas-keizai_anzen_suishin-20220916-003",
+      "councilId": "cas-keizai_anzen_suishin",
+      "title": "第3回 経済安全保障推進会議",
+      "date": "2022/09/16",
+      "officialUrl": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyo/dai3/gijisidai.html",
+      "category": "HEADQUARTERS",
+      "ministry": "CAS",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "議事次第",
+          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyo/dai3/shidai.pdf"
+        },
+        {
+          "name": "経済安全保障重要技術育成プログラム　研究開発ビジョン（第一次）（案）",
+          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyo/dai3/shiryou1.pdf"
+        },
+        {
+          "name": "経済安全保障重要技術育成プログラム　研究開発ビジョン（第一次）（案）概要",
+          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyo/dai3/shiryou2.pdf"
+        },
+        {
+          "name": "議事要旨",
+          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyo/dai3/gijiyousi.pdf"
+        }
+      ]
+    },
+    {
       "id": "cas-sangyouisan_93-20220914-013",
       "councilId": "cas-sangyouisan_93",
       "title": "第13回 稼働資産を含む産業遺産に関する有識者会議",
@@ -100978,6 +101212,22 @@
       ]
     },
     {
+      "id": "cas-keizai_anzen_kentou-20220422-002",
+      "councilId": "cas-keizai_anzen_kentou",
+      "title": "第2回 経済安全保障重点課題検討会議",
+      "date": "2022/04/22",
+      "officialUrl": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyo/index.html#kentokaigi",
+      "category": "STUDY_GROUP",
+      "ministry": "CAS",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "会議概要",
+          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyo/kentokaigi_dai2/gaiyo.pdf"
+        }
+      ]
+    },
+    {
       "id": "mof-zaiseiseido_bunkakai-20220420-s57",
       "councilId": "mof-zaiseiseido_bunkakai",
       "councilName": "財政制度等審議会 財政制度分科会",
@@ -103951,6 +104201,22 @@
       "manualLock": true
     },
     {
+      "id": "cas-keizai_anzen_kentou-20220311-001",
+      "councilId": "cas-keizai_anzen_kentou",
+      "title": "第1回 経済安全保障重点課題検討会議",
+      "date": "2022/03/11",
+      "officialUrl": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyo/index.html#kentokaigi",
+      "category": "STUDY_GROUP",
+      "ministry": "CAS",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "会議概要",
+          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyo/kentokaigi_dai1/gaiyo.pdf"
+        }
+      ]
+    },
+    {
       "id": "cas-kokusentoc_24-20220310-003",
       "councilId": "cas-kokusentoc_24",
       "councilName": "国家戦略特別区域諮問会議",
@@ -105212,6 +105478,34 @@
         {
           "name": "日本弁護士連合会提出資料",
           "url": "https://www.moj.go.jp/content/001370483.pdf"
+        }
+      ]
+    },
+    {
+      "id": "cas-keizai_anzen_suishin-20220204-002",
+      "councilId": "cas-keizai_anzen_suishin",
+      "title": "第2回 経済安全保障推進会議",
+      "date": "2022/02/04",
+      "officialUrl": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyo/dai2/gijisidai.html",
+      "category": "HEADQUARTERS",
+      "ministry": "CAS",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "議事次第",
+          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyo/dai2/shidai.pdf"
+        },
+        {
+          "name": "経済安全保障法制に関する提言の概要",
+          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyo/dai2/shiryou1.pdf"
+        },
+        {
+          "name": "経済安全保障法制に関する提言",
+          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyo/dai2/shiryou2.pdf"
+        },
+        {
+          "name": "議事要旨",
+          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyo/dai2/gijiyousi.pdf"
         }
       ]
     },
@@ -107887,6 +108181,42 @@
         {
           "name": "令和２年における警備業の概況（抄）",
           "url": "https://www.moj.go.jp/content/001359667.pdf"
+        }
+      ]
+    },
+    {
+      "id": "cas-keizai_anzen_suishin-20211119-001",
+      "councilId": "cas-keizai_anzen_suishin",
+      "title": "第1回 経済安全保障推進会議",
+      "date": "2021/11/19",
+      "officialUrl": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyo/dai1/gijisidai.html",
+      "category": "HEADQUARTERS",
+      "ministry": "CAS",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "議事次第",
+          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyo/dai1/shidai.pdf"
+        },
+        {
+          "name": "経済安全保障推進会議の開催について",
+          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyo/dai1/shiryou1-1.pdf"
+        },
+        {
+          "name": "経済安全保障推進会議　名簿",
+          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyo/dai1/shiryou1-2.pdf"
+        },
+        {
+          "name": "経済安全保障推進会議運営要領",
+          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyo/dai1/shiryou2.pdf"
+        },
+        {
+          "name": "経済安全保障の推進に向けて",
+          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyo/dai1/shiryou3.pdf"
+        },
+        {
+          "name": "議事要旨",
+          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyo/dai1/gijiyousi.pdf"
         }
       ]
     },
@@ -160967,6 +161297,24 @@
       "title_selector": "h1, h2, .title, table tr th",
       "date_regex": "(令和\\d+年\\d+月\\d+日|平成\\d+年\\d+月\\d+日|\\d{4}年\\d{1,2}月\\d{1,2}日)",
       "pdf_selector": "main a[href*='.pdf'], #main a[href*='.pdf'], table a[href*='.pdf']",
+      "deep_crawl_enabled": true,
+      "manualLock": true
+    },
+    "cas-keizai_anzen_suishin": {
+      "rule_id": "rule-cas-keizai_anzen_suishin",
+      "subpage_discovery_pattern": "https://www\\.cas\\.go\\.jp/jp/seisaku/keizai_anzen_hosyo/dai\\d+/gijisidai\\.html",
+      "title_selector": "h1, h2, .title",
+      "date_regex": "(令和\\d+年\\d+月\\d+日|平成\\d+年\\d+月\\d+日|\\d{4}年\\d{1,2}月\\d{1,2}日)",
+      "pdf_selector": "main a[href*='.pdf'], #main a[href*='.pdf'], a[href*='.pdf']",
+      "deep_crawl_enabled": true,
+      "manualLock": true
+    },
+    "cas-keizai_anzen_kentou": {
+      "rule_id": "rule-cas-keizai_anzen_kentou",
+      "subpage_discovery_pattern": "https://www\\.cas\\.go\\.jp/jp/seisaku/keizai_anzen_hosyo/index\\.html",
+      "title_selector": "h1, h2, .title, table tr td",
+      "date_regex": "(令和\\d+年\\d+月\\d+日|平成\\d+年\\d+月\\d+日|\\d{4}年\\d{1,2}月\\d{1,2}日)",
+      "pdf_selector": "a[href*='kentokaigi_dai']",
       "deep_crawl_enabled": true,
       "manualLock": true
     }
