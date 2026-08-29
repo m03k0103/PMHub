@@ -513,17 +513,21 @@ document.addEventListener('DOMContentLoaded', async () => {
 
       // Free word search
       if (state.searchQuery) {
-        const q = state.searchQuery.toLowerCase();
-        const titleMatch = meeting.title.toLowerCase().includes(q);
-        const councilMatch = meeting.councilName.toLowerCase().includes(q);
-        const summaryMatch = meeting.summary ? meeting.summary.toLowerCase().includes(q) : false;
-        const tagMatch = meeting.tags ? meeting.tags.some(t => t.toLowerCase().includes(q)) : false;
-        const agendaMatch = meeting.agenda ? meeting.agenda.some(a => a.toLowerCase().includes(q)) : false;
-        const matMatch = meeting.materials ? meeting.materials.some(m => m.name.toLowerCase().includes(q)) : false;
+        const queries = state.searchQuery.toLowerCase().split(/[\s　]+/).filter(k => k);
+        const c = COUNCILS.find(c => c.id === meeting.councilId);
+        const cName = c ? c.name : '';
+        
+        const match = queries.every(q => {
+          const titleMatch = meeting.title.toLowerCase().includes(q);
+          const councilMatch = cName.toLowerCase().includes(q);
+          const summaryMatch = meeting.summary ? meeting.summary.toLowerCase().includes(q) : false;
+          const tagMatch = meeting.tags ? meeting.tags.some(t => t.toLowerCase().includes(q)) : false;
+          const agendaMatch = meeting.agenda ? meeting.agenda.some(a => a.toLowerCase().includes(q)) : false;
+          const matMatch = meeting.materials ? meeting.materials.some(m => (m.name || '').toLowerCase().includes(q)) : false;
+          return titleMatch || councilMatch || summaryMatch || tagMatch || agendaMatch || matMatch;
+        });
 
-        if (!titleMatch && !councilMatch && !summaryMatch && !tagMatch && !agendaMatch && !matMatch) {
-          return false;
-        }
+        if (!match) return false;
       }
 
       // Ministry filter
@@ -862,20 +866,24 @@ document.addEventListener('DOMContentLoaded', async () => {
       }
 
       if (state.searchQuery) {
-        const q = state.searchQuery.toLowerCase();
+        const queries = state.searchQuery.toLowerCase().split(/[\s　]+/).filter(k => k);
         const minName = MINISTRIES[council.ministry]?.name || '';
-        const matchName = council.name.toLowerCase().includes(q);
-        const matchMin = minName.toLowerCase().includes(q);
-        const matchDesc = (council.description || '').toLowerCase().includes(q);
-        // Also search in meetings of this council
         const councilMeetings = meetingsByCouncilMap.get(council.id) || [];
-        const matchMeetings = councilMeetings.some(m => {
-          return m.title.toLowerCase().includes(q) ||
-            (m.summary && m.summary.toLowerCase().includes(q)) ||
-            (m.tags && m.tags.some(t => t.toLowerCase().includes(q))) ||
-            (m.materials && m.materials.some(mat => mat.name.toLowerCase().includes(q)));
+        
+        const match = queries.every(q => {
+          const matchName = council.name.toLowerCase().includes(q);
+          const matchMin = minName.toLowerCase().includes(q);
+          const matchDesc = (council.description || '').toLowerCase().includes(q);
+          const matchMeetings = councilMeetings.some(m => {
+            return m.title.toLowerCase().includes(q) ||
+              (m.summary && m.summary.toLowerCase().includes(q)) ||
+              (m.tags && m.tags.some(t => t.toLowerCase().includes(q))) ||
+              (m.materials && m.materials.some(mat => (mat.name || '').toLowerCase().includes(q)));
+          });
+          return matchName || matchMin || matchDesc || matchMeetings;
         });
-        if (!matchName && !matchMin && !matchDesc && !matchMeetings) return false;
+
+        if (!match) return false;
       }
       // If doc type filter is set, only show councils that have matching meetings
       if (state.docTypeFilter !== 'ALL') {
@@ -947,13 +955,33 @@ document.addEventListener('DOMContentLoaded', async () => {
       const pastYearDisplay = formatPastYearCountDisplay(c);
       const latestDateDisplay = getCouncilLatestDate(c);
       const isExpanded = state.expandedCouncilIds.has(c.id);
-      const councilMeetings = (meetingsByCouncilMap.get(c.id) || []).slice().sort((a, b) => {
+      let councilMeetings = (meetingsByCouncilMap.get(c.id) || []).slice().sort((a, b) => {
         const da = a.date ? a.date.replace(/-/g, '/') : '';
         const db = b.date ? b.date.replace(/-/g, '/') : '';
         return db.localeCompare(da);
       });
 
-      // 会議体カードを展開した際は、その会議体のすべての回の資料を表示（期間絞り込みは会議体リストのフィルタのみに適用）
+      if (state.searchQuery) {
+        const queries = state.searchQuery.toLowerCase().split(/[\s　]+/).filter(k => k);
+        const matchCouncil = queries.every(q => 
+          c.name.toLowerCase().includes(q) || 
+          minInfo.name.toLowerCase().includes(q) || 
+          (c.description || '').toLowerCase().includes(q)
+        );
+        // If the council itself doesn't match all keywords, filter its meetings so we only show the matching ones
+        if (!matchCouncil) {
+          councilMeetings = councilMeetings.filter(m => {
+            return queries.every(q => {
+              return m.title.toLowerCase().includes(q) ||
+                (m.summary && m.summary.toLowerCase().includes(q)) ||
+                (m.tags && m.tags.some(t => t.toLowerCase().includes(q))) ||
+                (m.materials && m.materials.some(mat => (mat.name || '').toLowerCase().includes(q)));
+            });
+          });
+        }
+      }
+
+      // 会議体カードを展開した際は、その会議体のすべての回の資料を表示（ただし検索キーワードに合致するもののみに絞り込み）
       const meetingsHTML = councilMeetings.length > 0 ? councilMeetings.map(m => `
         <div class="meeting-row">
           <div class="meeting-row-header">
