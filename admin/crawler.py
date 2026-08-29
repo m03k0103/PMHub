@@ -44,16 +44,19 @@ if sys.platform == "win32":
 
 DATA_JSON_FILE = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "docs", "data.json"))
 
+# 429 Quota Exceeded 回避用のサーキットブレーカーフラグ
+LLM_QUOTA_BLOCKED = False
+
 def load_crawler_config():
     if os.path.exists(DATA_JSON_FILE):
         try:
             with open(DATA_JSON_FILE, "r", encoding="utf-8") as f:
                 data = json.load(f)
                 config = data.get("crawlerConfig", {})
-                return config.get("llm_mode", True)
+                return config.get("llm_mode", False)  # デフォルトは高速・安全な Heuristic モード
         except Exception:
             pass
-    return True
+    return False
 
 def load_councils_from_data_json():
     """docs/data.json から登録済みの全会議体 (COUNCILS) を読み込む（却下済み会議体はクロール対象外）"""
@@ -351,7 +354,8 @@ def discover_subpage_links(html, base_url):
 
 def extract_via_llm_single(url, html, target_name):
     """単一ページに対してLLM抽出を実行する"""
-    if not model:
+    global LLM_QUOTA_BLOCKED
+    if not model or LLM_QUOTA_BLOCKED:
         return [], []
         
     soup = BeautifulSoup(html, 'html.parser')
@@ -393,28 +397,36 @@ URL: {url}
                 
         return materials, data.get("extractedDates", [])
     except Exception as e:
-        print(f"[ERROR] LLM Extraction failed for {url}: {e}")
+        err_str = str(e)
+        if "429" in err_str or "quota" in err_str.lower():
+            LLM_QUOTA_BLOCKED = True
+            print(f"[WARN] Gemini API クォータ制限 (429) を検知しました。以降の巡回は高速 Heuristic ルール抽出モードで安全に継続します。")
+        else:
+            print(f"[WARN] LLM Extraction failed for {url}: {e}")
         return [], []
 
 def extract_via_llm(target_url, html, target_name):
     """LLM抽出（トップページ + サブページ巡回）"""
-    if not model:
-        print("[WARN] LLM model not initialized. Skipping LLM extraction.")
+    global LLM_QUOTA_BLOCKED
+    if not model or LLM_QUOTA_BLOCKED:
         return [], []
     
     # Step 1: トップページ抽出
     all_materials, all_dates = extract_via_llm_single(target_url, html, target_name)
     
     # Step 2: サブページ発見・巡回
-    subpage_urls = discover_subpage_links(html, target_url)
-    if subpage_urls:
-        print(f"   [LLM Subpage Crawl] {len(subpage_urls)} 件のサブページを巡回中...")
-        for sub_url in subpage_urls:
-            sub_html = fetch_url(sub_url)
-            if sub_html:
-                sub_materials, sub_dates = extract_via_llm_single(sub_url, sub_html, target_name)
-                all_materials.extend(sub_materials)
-                all_dates.extend(sub_dates)
+    if not LLM_QUOTA_BLOCKED:
+        subpage_urls = discover_subpage_links(html, target_url)
+        if subpage_urls:
+            print(f"   [LLM Subpage Crawl] {len(subpage_urls)} 件のサブページを巡回中...")
+            for sub_url in subpage_urls:
+                if LLM_QUOTA_BLOCKED:
+                    break
+                sub_html = fetch_url(sub_url)
+                if sub_html:
+                    sub_materials, sub_dates = extract_via_llm_single(sub_url, sub_html, target_name)
+                    all_materials.extend(sub_materials)
+                    all_dates.extend(sub_dates)
     
     # 重複排除
     seen_urls = set()
@@ -428,8 +440,9 @@ def extract_via_llm(target_url, html, target_name):
     unique_dates = list(set(all_dates))
     return unique_materials, unique_dates
 
-def execute_rule_retrieval(target, html, rule_item, use_llm=True):
-    """多段フォールバック情報取得Engine (LLM → ルール → 失敗記録)"""
+def execute_rule_retrieval(target, html, rule_item, use_llm=False):
+    """多段情報取得Engine (高速Heuristicルール優先 → 未抽出時LLMフォールバック)"""
+    global LLM_QUOTA_BLOCKED
     rule = rule_item.get("rules", {})
     quirk_note = rule_item.get("ministryQuirk", "標準抽出ルール")
     
@@ -441,50 +454,44 @@ def execute_rule_retrieval(target, html, rule_item, use_llm=True):
     subpage_meetings = []
     extraction_method = "none"
     
-    # Stage 1: LLM抽出（サブページ巡回込み）
-    if use_llm:
-        print("   [Stage 1] LLM Extraction (Gemini API + サブページ巡回)...")
-        materials, dates = extract_via_llm(target["url"], html, target["name"])
-        if materials or dates:
-            unique_materials = materials
-            norm_date_matches = dates
-            extraction_method = "llm"
-            print(f"   [Stage 1 OK] LLM抽出成功: 資料 {len(materials)} 件, 日付 {len(dates)} 件")
-        else:
-            print(f"   [Stage 1 EMPTY] LLM抽出結果が0件 → Stage 2 (既存ルール) にフォールバック")
+    # Stage 1: 高速・網羅的な Heuristic ルール抽出 (scrapingRules 準拠)
+    pdf_pattern = rule.get("pdf_selector", r'href=["\']([^"\']+\.pdf)["\']')
+    top_materials = parse_materials_from_html(html, target["url"], pdf_pattern)
     
-    # Stage 2: 既存ルール抽出（LLMが失敗した場合 or LLM無効の場合）
-    if not unique_materials and not norm_date_matches:
-        print(f"   [Stage 2] 既存ルール抽出 (rule: {rule_item.get('rule_id', 'fallback')})...")
-        pdf_pattern = rule.get("pdf_selector", r'href=["\']([^"\']+\.pdf)["\']')
-        top_materials = parse_materials_from_html(html, target["url"], pdf_pattern)
-        
-        deep_enabled = rule.get("deep_crawl_enabled", True)
-        all_extracted_dates = []
-        
-        if deep_enabled:
-            new_meetings, new_materials, new_dates = _crawl_subpages(target["url"], html, rule, quirk_note, pdf_pattern)
-            subpage_meetings.extend(new_meetings)
-            top_materials.extend(new_materials)
-            all_extracted_dates.extend(new_dates)
+    deep_enabled = rule.get("deep_crawl_enabled", True)
+    all_extracted_dates = []
+    
+    if deep_enabled:
+        new_meetings, new_materials, new_dates = _crawl_subpages(target["url"], html, rule, quirk_note, pdf_pattern)
+        subpage_meetings.extend(new_meetings)
+        top_materials.extend(new_materials)
+        all_extracted_dates.extend(new_dates)
 
-        seen_keys = set()
-        for m in top_materials:
-            key = m["url"] if m["url"] != "#" else m["name"]
-            if key not in seen_keys:
-                seen_keys.add(key)
-                unique_materials.append(m)
+    seen_keys = set()
+    for m in top_materials:
+        key = m["url"] if m["url"] != "#" else m["name"]
+        if key not in seen_keys:
+            seen_keys.add(key)
+            unique_materials.append(m)
 
-        raw_date_matches = re.findall(rule.get("date_regex", r'(?:令和|平成)\d+年\d+月\d+日|\d{4}年\d+月\d+日|\d{4}[/-]\d+[/-]\d+'), html)
-        norm_date_matches = [normalize_japanese_numbers(d) for d in raw_date_matches]
-        all_extracted_dates.extend(norm_date_matches)
-        
-        if unique_materials or norm_date_matches:
-            extraction_method = "rule"
-            print(f"   [Stage 2 OK] ルール抽出成功: 資料 {len(unique_materials)} 件, 日付 {len(norm_date_matches)} 件")
-        else:
-            extraction_method = "none"
-            print(f"   [Stage 2 EMPTY] ルール抽出も0件 → 取得失敗として記録")
+    raw_date_matches = re.findall(rule.get("date_regex", r'(?:令和|平成)\d+年\d+月\d+日|\d{4}年\d+月\d+日|\d{4}[/-]\d+[/-]\d+'), html)
+    norm_date_matches = [normalize_japanese_numbers(d) for d in raw_date_matches]
+    all_extracted_dates.extend(norm_date_matches)
+    
+    if unique_materials or norm_date_matches or subpage_meetings:
+        extraction_method = "rule"
+    else:
+        # Stage 2: ルールで0件の場合のみ LLM (Gemini API) フォールバックを試行
+        if use_llm and not LLM_QUOTA_BLOCKED and model:
+            print(f"   [Stage 2 Fallback] ルール未検出 → LLM Extraction (Gemini API) を試行...")
+            materials, dates = extract_via_llm(target["url"], html, target["name"])
+            if materials or dates:
+                unique_materials = materials
+                norm_date_matches = dates
+                extraction_method = "llm"
+                print(f"   [Stage 2 OK] LLMフォールバック抽出成功: 資料 {len(materials)} 件, 日付 {len(dates)} 件")
+            else:
+                extraction_method = "none"
 
     past_year_count, has_top_page_dates = calculate_past_year_count(norm_date_matches)
 
