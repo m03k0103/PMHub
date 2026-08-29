@@ -5560,17 +5560,6 @@
       "status": "approved"
     },
     {
-      "id": "cao-kisei_iryou_wg_110",
-      "name": "規制改革推進会議 健康・医療・介護WG",
-      "ministry": "CAO",
-      "category": "WORKING_GROUP",
-      "description": "規制改革推進会議 健康・医療・介護WGに関する調査審議・検討を行う。",
-      "officialUrl": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_02medical/250501/medical05_agenda.html",
-      "pastYearCount": 2,
-      "isWatched": true,
-      "status": "approved"
-    },
-    {
       "id": "mhlw-hosho_shippei_133",
       "name": "社会保障審議会 疾病、傷害及び死因分類部会",
       "ministry": "MHLW",
@@ -15992,6 +15981,16 @@
       "officialUrl": "https://www.soumu.go.jp/main_sosiki/singi/chihou_seido/singi.html",
       "pastYearCount": 9,
       "manualLock": true
+    },
+    {
+      "id": "cao-kisei_iryou_wg",
+      "name": "規制改革推進会議 健康・医療・介護WG",
+      "ministry": "CAO",
+      "category": "WORKING_GROUP",
+      "officialUrl": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/meeting.html",
+      "pastYearCount": 27,
+      "manualLock": true,
+      "description": "内閣府 規制改革推進会議における健康・医療・介護ワーキング・グループ。"
     }
   ],
   "meetings": [
@@ -30618,29 +30617,76 @@
       ]
     },
     {
-      "id": "cao-kisei_iryou_wg_110-20260515-s01",
-      "councilId": "cao-kisei_iryou_wg_110",
-      "councilName": "cao-kisei-iryou-wg-110",
-      "ministry": "Unknown",
-      "category": "COUNCIL",
-      "title": "規制改革推進会議 健康・医療・介護WG（2026/05/15開催）",
+      "id": "cao-kisei_iryou_wg-20260515-012",
+      "councilId": "cao-kisei_iryou_wg",
+      "title": "第12回 規制改革推進会議 健康・医療・介護WG（令和7年度）",
       "date": "2026/05/15",
-      "updatedAt": "2026/05/15 17:00",
-      "location": "各省庁本府庁舎 / オンライン会議",
-      "summary": "規制改革推進会議 健康・医療・介護WGの開催。主要議題の推進状況および関係省庁間の連携について協議。",
-      "agenda": [
-        "規制改革推進会議 健康・医療・介護WGにおける主要施策の推進状況について",
-        "今後の対応方針および関係省庁間連携"
-      ],
-      "materials": [],
-      "tags": [
-        "規制改革推進",
-        "CAO",
-        "政策会議"
-      ],
-      "officialUrl": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_02medical/250501/medical05_agenda.html",
-      "hasMinutes": false,
-      "docCount": 1
+      "officialUrl": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_02medical/260515/medical12_agenda.html",
+      "category": "WORKING_GROUP",
+      "ministry": "CAO",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "議事録",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_02medical/260515/medical12_minutes.pdf"
+        },
+        {
+          "name": "議事次第 (PDF形式:93KB)",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_02medical/260515/medical12_agenda.pdf"
+        },
+        {
+          "name": "資料１ー１　厚生労働省提出資料（PDF形式：2,037KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_02medical/260515/medical12_0101.pdf"
+        },
+        {
+          "name": "資料１ー２　全国障害者地域生活支援事業者連絡会・一般社団法人日本パブリックアフェアーズ協会提出資料（PDF形式：2,467KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_02medical/260515/medical12_0102.pdf"
+        },
+        {
+          "name": "資料１ー３　一般社団法人東京都筋ジストロフィー協会提出資料（PDF形式：291KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_02medical/260515/medical12_0103.pdf"
+        },
+        {
+          "name": "資料１ー４　日本ＰＴＥＧ研究会提出資料（PDF形式：2,741KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_02medical/260515/medical12_0104.pdf"
+        },
+        {
+          "name": "資料１ー５　国際医療福祉大学那須医療センター提出資料（PDF形式：1,579KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_02medical/260515/medical12_0105.pdf"
+        },
+        {
+          "name": "資料２－１　一般社団法人次世代基盤政策研究所提出資料（PDF形式：4,100KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_02medical/260515/medical12_0201.pdf"
+        },
+        {
+          "name": "資料２－２　日本製薬工業協会提出資料（PDF形式：2,184KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_02medical/260515/medical12_0202.pdf"
+        },
+        {
+          "name": "資料２－３ー１　一般社団法人日本経済団体連合会提出資料（PDF形式：1,346KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_02medical/260515/medical12_020301.pdf"
+        },
+        {
+          "name": "資料２－３ー２　一般社団法人日本経済団体連合会提出資料（PDF形式：1,081KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_02medical/260515/medical12_020302.pdf"
+        },
+        {
+          "name": "１（PDF形式：4,261KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_02medical/260515/medical12_0204_01.pdf"
+        },
+        {
+          "name": "２（PDF形式：3,075KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_02medical/260515/medical12_0204_02.pdf"
+        },
+        {
+          "name": "３（PDF形式：4,213KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_02medical/260515/medical12_0204_03.pdf"
+        },
+        {
+          "name": "資料２－５　落合委員・伊藤専門委員・印南専門委員・大石専門委員・桜井専門委員・佐々木専門委員提出資料（PDF形式：358KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_02medical/260515/medical12_0205.pdf"
+        }
+      ]
     },
     {
       "id": "cao-space_anpo-20260514-004",
@@ -34610,6 +34656,42 @@
       "docCount": 4
     },
     {
+      "id": "cao-kisei_iryou_wg-20260323-011",
+      "councilId": "cao-kisei_iryou_wg",
+      "title": "第11回 規制改革推進会議 健康・医療・介護WG（令和7年度）",
+      "date": "2026/03/23",
+      "officialUrl": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_02medical/260323/medical11_agenda.html",
+      "category": "WORKING_GROUP",
+      "ministry": "CAO",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "議事録",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_02medical/260323/medical11_minutes.pdf"
+        },
+        {
+          "name": "議事次第 (PDF形式:101KB)",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_02medical/260323/medical11_agenda.pdf"
+        },
+        {
+          "name": "資料１　日本製薬工業協会・米国研究製薬工業協会・欧州製薬団体連合会・R&D Head Club提出資料（PDF形式：2,806KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_02medical/260323/medical11_01.pdf"
+        },
+        {
+          "name": "資料２　大阪大学医学部附属病院未来医療開発部臨床研究センター山本洋一センター長・教授提出資料（PDF形式：2,435KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_02medical/260323/medical11_02.pdf"
+        },
+        {
+          "name": "資料３　国立がん研究センター中央病院中村健一国際開発部門長・病院長特任補佐提出資料（PDF形式：619KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_02medical/260323/medical11_03.pdf"
+        },
+        {
+          "name": "資料４　厚生労働省提出資料（PDF形式：1,383KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_02medical/260323/medical11_04.pdf"
+        }
+      ]
+    },
+    {
       "id": "cas-kenkouiryou_20-20260319-046",
       "councilId": "cas-kenkouiryou_20",
       "title": "第46回 健康・医療戦略推進本部",
@@ -35566,6 +35648,70 @@
         {
           "name": "椎橋隆幸氏資料",
           "url": "https://www.moj.go.jp/content/001458428.pdf"
+        }
+      ]
+    },
+    {
+      "id": "cao-kisei_iryou_wg-20260311-010",
+      "councilId": "cao-kisei_iryou_wg",
+      "title": "第10回 規制改革推進会議 健康・医療・介護WG（令和7年度）",
+      "date": "2026/03/11",
+      "officialUrl": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_02medical/260311/medical10_agenda.html",
+      "category": "WORKING_GROUP",
+      "ministry": "CAO",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "議事録",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_02medical/260311/medical10_minutes.pdf"
+        },
+        {
+          "name": "議事次第 (PDF形式:108KB)",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_02medical/260311/medical10_agenda.pdf"
+        },
+        {
+          "name": "資料１ー１　一般社団法人次世代基盤政策研究所提出資料（PDF形式：1,895KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_02medical/260311/medical10_0101.pdf"
+        },
+        {
+          "name": "資料１ー２　一般社団法人全国がん患者団体連合会提出資料（PDF形式：2,068KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_02medical/260311/medical10_0102.pdf"
+        },
+        {
+          "name": "資料１ー３　一般社団法人ピーペック提出資料（PDF形式：1,025KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_02medical/260311/medical10_0103.pdf"
+        },
+        {
+          "name": "資料１ー４　国立健康危機管理研究機構システム基盤整備局医療情報管理部部長\n東京大学大学院医学系研究科医療AI・デジタルツイン開発学特任教授美代賢吾氏提出資料\n（PDF形式：4,175KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_02medical/260311/medical10_0104.pdf"
+        },
+        {
+          "name": "資料１ー５　学校法人順天堂順天堂大学大学院健康データサインエンス研究科大江和彦特任教授提出資（PDF形式：764KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_02medical/260311/medical10_0105.pdf"
+        },
+        {
+          "name": "資料１ー６　日本製薬工業協会提出資料（PDF形式：1,518KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_02medical/260311/medical10_0106.pdf"
+        },
+        {
+          "name": "資料１ー７　一般社団法人日本経済団体連合会提出資料（PDF形式：257KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_02medical/260311/medical10_0107.pdf"
+        },
+        {
+          "name": "資料１ー８　内閣府健康・医療戦略推進事務局提出資料（PDF形式：2,337KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_02medical/260311/medical10_0108.pdf"
+        },
+        {
+          "name": "資料１ー９　厚生労働省提出資料（PDF形式：1,874KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_02medical/260311/medical10_0109.pdf"
+        },
+        {
+          "name": "資料１ー10　個人情報保護委員会事務局提出資料（PDF形式：1,100KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_02medical/260311/medical10_0110.pdf"
+        },
+        {
+          "name": "資料２　事務局提出資料（PDF形式：194KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_02medical/260311/medical10_02.pdf"
         }
       ]
     },
@@ -39461,6 +39607,58 @@
       "officialUrl": "https://www.fdma.go.jp/singi_kento/kento/post-178.html",
       "hasMinutes": true,
       "docCount": 10
+    },
+    {
+      "id": "cao-kisei_iryou_wg-20260212-009",
+      "councilId": "cao-kisei_iryou_wg",
+      "title": "第9回 規制改革推進会議 健康・医療・介護WG（令和7年度）",
+      "date": "2026/02/12",
+      "officialUrl": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_02medical/260212/medical09_agenda.html",
+      "category": "WORKING_GROUP",
+      "ministry": "CAO",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "議事録",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_02medical/260212/medical09_minutes.pdf"
+        },
+        {
+          "name": "議事次第 (PDF形式:113KB)",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_02medical/260212/medical09_agenda.pdf"
+        },
+        {
+          "name": "資料１ー１　公益財団法人栃木県保健衛生事業団提出資料（PDF形式：4,323KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_02medical/260212/medical09_0101.pdf"
+        },
+        {
+          "name": "資料１ー２　公益財団法人北海道対がん協会提出資料（PDF形式：2,607KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_02medical/260212/medical09_0102.pdf"
+        },
+        {
+          "name": "資料１ー３　大阪大学大学院医学系研究科放射線統合医学講座梁川雅弘准教授提出資料（PDF形式：3,011KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_02medical/260212/medical09_0103.pdf"
+        },
+        {
+          "name": "資料１ー４　公立大学法人横浜市立大学附属病院核医学診療科石渡義之部長・大日本印刷株式会社メディカルヘルスケア本部事業企画ユニット事業企画部藤田亮プロフェッショナルスタッフ提出資料（PDF形式：1,507KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_02medical/260212/medical09_0104.pdf"
+        },
+        {
+          "name": "資料１ー５　一般社団法人日本画像医療システム工業会提出資料（PDF形式：1,613KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_02medical/260212/medical09_0105.pdf"
+        },
+        {
+          "name": "資料１ー６　ＡＩ医療機器協議会提出資料（PDF形式：4,469KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_02medical/260212/medical09_0106.pdf"
+        },
+        {
+          "name": "資料１ー７　厚生労働省提出資料（PDF形式：758KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_02medical/260212/medical09_0107.pdf"
+        },
+        {
+          "name": "資料２　事務局提出資料（PDF形式：285KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_02medical/260212/medical09_02.pdf"
+        }
+      ]
     },
     {
       "id": "fdma-kento_94-20260210-001",
@@ -43589,6 +43787,46 @@
       "docCount": 5
     },
     {
+      "id": "cao-kisei_iryou_wg-20251225-008",
+      "councilId": "cao-kisei_iryou_wg",
+      "title": "第8回 規制改革推進会議 健康・医療・介護WG（令和7年度）",
+      "date": "2025/12/25",
+      "officialUrl": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_02medical/251225/medical08_agenda.html",
+      "category": "WORKING_GROUP",
+      "ministry": "CAO",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "議事録",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_02medical/251225/medical08_minutes.pdf"
+        },
+        {
+          "name": "議事次第 (PDF形式:97KB)",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_02medical/251225/medical08_agenda.pdf"
+        },
+        {
+          "name": "資料１　中泊町提出資料（PDF形式：2,221KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_02medical/251225/medical08_01.pdf"
+        },
+        {
+          "name": "資料２　備前市提出資料（PDF形式：1,276KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_02medical/251225/medical08_02.pdf"
+        },
+        {
+          "name": "資料３　社会福祉法人おおなん福祉会提出資料（PDF形式：1,214KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_02medical/251225/medical08_03.pdf"
+        },
+        {
+          "name": "資料４　厚生労働省提出資料（PDF形式：2,662KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_02medical/251225/medical08_04.pdf"
+        },
+        {
+          "name": "資料５　大石専門委員・紀伊専門委員・時田専門委員提出資料（PDF形式：315KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_02medical/251225/medical08_05.pdf"
+        }
+      ]
+    },
+    {
       "id": "mhlw-rousei_roudoujouken_146-20251224-206",
       "councilId": "mhlw-rousei_roudoujouken_146",
       "title": "第206回 労働政策審議会 労働条件分科会",
@@ -45967,6 +46205,42 @@
       "docCount": 12
     },
     {
+      "id": "cao-kisei_iryou_wg-20251203-007",
+      "councilId": "cao-kisei_iryou_wg",
+      "title": "第7回 規制改革推進会議 健康・医療・介護WG（令和7年度）",
+      "date": "2025/12/03",
+      "officialUrl": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_02medical/251203/medical07_agenda.html",
+      "category": "WORKING_GROUP",
+      "ministry": "CAO",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "議事録",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_02medical/251203/medical07_minutes.pdf"
+        },
+        {
+          "name": "議事次第 (PDF形式:102KB)",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_02medical/251203/medical07_agenda.pdf"
+        },
+        {
+          "name": "資料１ー１　一般社団法人全国介護付きホーム協会提出資料（PDF形式：1,609KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_02medical/251203/medical07_0101.pdf"
+        },
+        {
+          "name": "資料１ー２　北九州市提出資料（PDF形式：1,297KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_02medical/251203/medical07_0102.pdf"
+        },
+        {
+          "name": "資料１ー３　厚生労働省提出資料（PDF形式：3,590KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_02medical/251203/medical07_0103.pdf"
+        },
+        {
+          "name": "資料２　事務局提出資料（PDF形式：176KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_02medical/251203/medical07_02.pdf"
+        }
+      ]
+    },
+    {
       "id": "cas-influenza_76-20251202-s20",
       "councilId": "cas-influenza_76",
       "title": "鳥インフルエンザ関係閣僚会議 関係府省庁連絡会議［持ち回り］（令和7年12月2日）",
@@ -47866,6 +48140,74 @@
       "officialUrl": "https://www.cas.go.jp/jp/seisaku/kumahigai_taisaku/dai1/gijishidai.html",
       "hasMinutes": true,
       "docCount": 4
+    },
+    {
+      "id": "cao-kisei_iryou_wg-20251029-006",
+      "councilId": "cao-kisei_iryou_wg",
+      "title": "第6回 規制改革推進会議 健康・医療・介護WG（令和7年度）",
+      "date": "2025/10/29",
+      "officialUrl": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_02medical/251029/medical06_agenda.html",
+      "category": "WORKING_GROUP",
+      "ministry": "CAO",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "議事録",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_02medical/251029/medical06_minutes.pdf"
+        },
+        {
+          "name": "議事次第 (PDF形式:114KB)",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_02medical/251029/medical06_agenda.pdf"
+        },
+        {
+          "name": "資料１－１　一般社団法人日本希少がん患者会ネットワーク提出資料（PDF形式：1,221KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_02medical/251029/medical06_0101.pdf"
+        },
+        {
+          "name": "資料１－２　公益財団法人がんの子どもを守る会提出資料（PDF形式：1,662KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_02medical/251029/medical06_0102.pdf"
+        },
+        {
+          "name": "資料１－３　一般社団法人全国がん患者団体連合会提出資料（PDF形式：1,313KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_02medical/251029/medical06_0103.pdf"
+        },
+        {
+          "name": "資料１－４　国立研究開発法人国立がん研究センターがん対策研究所サバイバーシップ研究部提出資料（PDF形式：1,777KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_02medical/251029/medical06_0104.pdf"
+        },
+        {
+          "name": "資料１－５　国立研究開発法人国立がん研究センターがんゲノム情報管理センター提出資料（PDF形式：931KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_02medical/251029/medical06_0105.pdf"
+        },
+        {
+          "name": "資料１－６　国立大学法人島根大学医学部精神医学講座稲垣正俊教授提出資料（PDF形式：872KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_02medical/251029/medical06_0106.pdf"
+        },
+        {
+          "name": "資料１－７　国立健康危機管理研究機構システム基盤整備局医療ＤＸ部国立研究開発法人国立がん研究センターがん対策研究所医療政策部石井太祐氏提出資料（PDF形式：1,141KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_02medical/251029/medical06_0107.pdf"
+        },
+        {
+          "name": "資料１－８－１　認定特定非営利活動法人日本がん登録協議会提出資料（PDF形式：754KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_02medical/251029/medical06_010801.pdf"
+        },
+        {
+          "name": "資料１－８－２　認定特定非営利活動法人日本がん登録協議会提出資料（PDF形式：830KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_02medical/251029/medical06_010802.pdf"
+        },
+        {
+          "name": "資料１－９　国立大学法人東北大学 東北メディカル・メガバンク機構提出資料（PDF形式：1,675KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_02medical/251029/medical06_0109.pdf"
+        },
+        {
+          "name": "資料１－10　厚生労働省提出資料（PDF形式：1,714KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_02medical/251029/medical06_0110.pdf"
+        },
+        {
+          "name": "資料２　事務局提出資料（PDF形式：197KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_02medical/251029/medical06_02.pdf"
+        }
+      ]
     },
     {
       "id": "mhlw-rousei_roudoujouken_146-20251027-204",
@@ -53810,6 +54152,94 @@
       ]
     },
     {
+      "id": "cao-kisei_iryou_wg-20250501-005",
+      "councilId": "cao-kisei_iryou_wg",
+      "title": "第5回 規制改革推進会議 健康・医療・介護WG（令和7年度）",
+      "date": "2025/05/01",
+      "officialUrl": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_02medical/250501/medical05_agenda.html",
+      "category": "WORKING_GROUP",
+      "ministry": "CAO",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "議事録",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_02medical/250501/medical05_minutes.pdf"
+        },
+        {
+          "name": "特定非営利法人akta　御提出資料（PDF形式：2,548KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_02medical/250501/medical05_01.pdf"
+        },
+        {
+          "name": "日本ＯＴＣ医薬品協会・一般社団法人日本臨床検査薬協会　御提出資料（PDF形式：4,700KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_02medical/250501/medical05_02.pdf"
+        },
+        {
+          "name": "一般社団法人上田薬剤師会 飯島常務理事　御提出資料（PDF形式：3,420KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_02medical/250501/medical05_03.pdf"
+        },
+        {
+          "name": "一般社団法人日本保険薬局協会　御提出資料（PDF形式：1,368KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_02medical/250501/medical05_04.pdf"
+        },
+        {
+          "name": "自治医科大学 矢作教授　御提出資料（PDF形式：1,651KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_02medical/250501/medical05_05.pdf"
+        },
+        {
+          "name": "東京大学 五十嵐特任准教授　御提出資料（PDF形式：927KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_02medical/250501/medical05_06.pdf"
+        },
+        {
+          "name": "厚生労働省　御提出資料（PDF形式：1,837KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_02medical/250501/medical05_07.pdf"
+        },
+        {
+          "name": "事務局　提出資料（PDF形式：250KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_02medical/250501/medical05_ref.pdf"
+        }
+      ]
+    },
+    {
+      "id": "cao-kisei_iryou_wg-20250428-004",
+      "councilId": "cao-kisei_iryou_wg",
+      "title": "第4回 規制改革推進会議 健康・医療・介護WG（令和7年度）",
+      "date": "2025/04/28",
+      "officialUrl": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_02medical/250428/medical04_agenda.html",
+      "category": "WORKING_GROUP",
+      "ministry": "CAO",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "議事録",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_02medical/250428/medical04_minutes.pdf"
+        },
+        {
+          "name": "邑南町　御提出資料（PDF形式：2,626KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_02medical/250428/medical04_0101.pdf"
+        },
+        {
+          "name": "五島市　御提出資料（PDF形式：2,043KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_02medical/250428/medical04_0102.pdf"
+        },
+        {
+          "name": "北海道　御提出資料（PDF形式：4,814KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_02medical/250428/medical04_0103.pdf"
+        },
+        {
+          "name": "厚生労働省　御提出資料（PDF形式：2,244KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_02medical/250428/medical04_0104.pdf"
+        },
+        {
+          "name": "大石専門委員・紀伊専門委員・時田専門委員　御提出資料（PDF形式：294KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_02medical/250428/medical04_0105.pdf"
+        },
+        {
+          "name": "事務局　提出資料（PDF形式：275KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_02medical/250428/medical04_02.pdf"
+        }
+      ]
+    },
+    {
       "id": "cfa-kodomo_shingikai-20250425-006",
       "councilId": "cfa-kodomo_shingikai",
       "title": "第6回 こども家庭審議会",
@@ -55383,6 +55813,82 @@
       ]
     },
     {
+      "id": "cao-kisei_iryou_wg-20250331-003",
+      "councilId": "cao-kisei_iryou_wg",
+      "title": "第3回 規制改革推進会議 健康・医療・介護WG（令和7年度）",
+      "date": "2025/03/31",
+      "officialUrl": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_02medical/250331/medical03_agenda.html",
+      "category": "WORKING_GROUP",
+      "ministry": "CAO",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "議事録",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_02medical/250331/medical03_minutes.pdf"
+        },
+        {
+          "name": "一般社団法人次世代基盤政策研究所　御提出資料（PDF形式：1,968KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_02medical/250331/medical03_010101.pdf"
+        },
+        {
+          "name": "一般社団法人次世代基盤政策研究所　御提出資料（PDF形式：1,440KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_02medical/250331/medical03_010102.pdf"
+        },
+        {
+          "name": "一般社団法人次世代基盤政策研究所　御提出資料（PDF形式：395KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_02medical/250331/medical03_010103.pdf"
+        },
+        {
+          "name": "京都大学医学部附属病院 黒田教授　御提出資料（PDF形式：3,970KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_02medical/250331/medical03_0102.pdf"
+        },
+        {
+          "name": "日本製薬工業協会　御提出資料（PDF形式：3,929KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_02medical/250331/medical03_0103.pdf"
+        },
+        {
+          "name": "一般社団法人日本医学会連合　健康・医療分野におけるビッグデータに関する委員会　御提出資料（PDF形式：2,425KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_02medical/250331/medical03_0104.pdf"
+        },
+        {
+          "name": "厚生労働省　御提出資料（PDF形式：2,410KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_02medical/250331/medical03_0105.pdf"
+        },
+        {
+          "name": "内閣府健康・医療戦略推進事務局　御提出資料（PDF形式：2,290KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_02medical/250331/medical03_0106.pdf"
+        },
+        {
+          "name": "個人情報保護委員会事務局　御提出資料（PDF形式：994KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_02medical/250331/medical03_0107.pdf"
+        },
+        {
+          "name": "内閣官房 デジタル行財政改革会議事務局　御提出資料（PDF形式：639KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_02medical/250331/medical03_0108.pdf"
+        },
+        {
+          "name": "落合委員・印南専門委員・伊藤専門委員　御提出資料（PDF形式：441KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_02medical/250331/medical03_0109.pdf"
+        },
+        {
+          "name": "特定医療法人谷田会谷田病院　御提出資料（PDF形式：836KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_02medical/250331/medical03_0201.pdf"
+        },
+        {
+          "name": "一般社団法人日本慢性期医療協会　御提出資料（PDF形式：163KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_02medical/250331/medical03_0202.pdf"
+        },
+        {
+          "name": "大石専門委員・高山専門委員　御提出資料（PDF形式：332KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_02medical/250331/medical03_0203.pdf"
+        },
+        {
+          "name": "厚生労働省　御提出資料（PDF形式：2,621KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_02medical/250331/medical03_0204.pdf"
+        }
+      ]
+    },
+    {
       "id": "cao-kisei_kaikaku-20250328-001",
       "councilId": "cao-kisei_kaikaku",
       "title": "第1回 規制改革推進会議",
@@ -56135,6 +56641,58 @@
       "docCount": 7
     },
     {
+      "id": "cao-kisei_iryou_wg-20250314-002",
+      "councilId": "cao-kisei_iryou_wg",
+      "title": "第2回 規制改革推進会議 健康・医療・介護WG（令和7年度）",
+      "date": "2025/03/14",
+      "officialUrl": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_02medical/250314/medical02_agenda.html",
+      "category": "WORKING_GROUP",
+      "ministry": "CAO",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "議事録",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_02medical/250314/medical02_minutes.pdf"
+        },
+        {
+          "name": "学校法人順天堂順天堂大学医学部附属練馬病院　杉田副院長・教授　御提出資料（PDF形式：1,186KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_02medical/250314/medical01_01.pdf"
+        },
+        {
+          "name": "横浜市メディカルコントロール協議会　竹内会長　御提出資料（PDF形式：2,938KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_02medical/250314/medical01_02.pdf"
+        },
+        {
+          "name": "一般社団法人日本救急医学会　横堀理事　御提出資料（PDF形式：1,817KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_02medical/250314/medical01_03.pdf"
+        },
+        {
+          "name": "一般社団法人全国救急救命士教育施設協議会　御提出資料（PDF形式：6,641KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_02medical/250314/medical01_04.pdf"
+        },
+        {
+          "name": "高山専門委員　御提出資料（PDF形式：361KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_02medical/250314/medical01_05.pdf"
+        },
+        {
+          "name": "厚生労働省　御提出資料（PDF形式：1,320KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_02medical/250314/medical01_06.pdf"
+        },
+        {
+          "name": "総務省消防庁　御提出資料（PDF形式：725KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_02medical/250314/medical01_07.pdf"
+        },
+        {
+          "name": "公益財団法人日本訪問看護財団　御提出資料（PDF形式：570KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_02medical/250314/medical02_01.pdf"
+        },
+        {
+          "name": "厚生労働省　御提出資料（PDF形式：2,003KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_02medical/250314/medical02_02.pdf"
+        }
+      ]
+    },
+    {
       "id": "smea-seicho_innovation-20250312-002",
       "councilId": "smea-seicho_innovation",
       "title": "中小企業の成長のためのイノベーション研究会 第2回",
@@ -56310,6 +56868,50 @@
         {
           "name": "第6回 地域の経営支援力強化に向けたよろず支援拠点のあり方検討会 議事要旨(255KB)",
           "url": "https://www.chusho.meti.go.jp/koukai/kenkyukai/yorozu/006/gy.pdf"
+        }
+      ]
+    },
+    {
+      "id": "cao-kisei_iryou_wg-20250306-001",
+      "councilId": "cao-kisei_iryou_wg",
+      "title": "第1回 規制改革推進会議 健康・医療・介護WG（令和7年度）",
+      "date": "2025/03/06",
+      "officialUrl": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_02medical/250306/medical01_agenda.html",
+      "category": "WORKING_GROUP",
+      "ministry": "CAO",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "議事録",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_02medical/250306/medical01_minutes.pdf"
+        },
+        {
+          "name": "薬機法68条ガイドラインプロジェクト　御提出資料（PDF形式：2,483KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_02medical/250306/medical01_01.pdf"
+        },
+        {
+          "name": "一般社団法人 全国がん患者団体連合会　御提出資料（PDF形式：6,278KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_02medical/250306/medical01_02.pdf"
+        },
+        {
+          "name": "日本製薬工業協会　御提出資料（PDF形式：1,743KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_02medical/250306/medical01_03.pdf"
+        },
+        {
+          "name": "一般社団法人 日本経済団体連合会　御提出資料（PDF形式：1,062KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_02medical/250306/medical01_04.pdf"
+        },
+        {
+          "name": "国立がん研究センター 中央病院 国際開発部門 中村部門長　御提出資料（PDF形式：638KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_02medical/250306/medical01_05.pdf"
+        },
+        {
+          "name": "厚生労働省　御提出資料（PDF形式：1,922KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_02medical/250306/medical01_06.pdf"
+        },
+        {
+          "name": "事務局　提出資料（PDF形式：367KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_02medical/250306/medical02.pdf"
         }
       ]
     },
@@ -59448,2065 +60050,6 @@
       "updatedAt": "2024/12/13 17:00",
       "location": "総理大臣官邸 / 各府省庁本庁舎",
       "summary": "cao-kisei-chiiki-wg-109の開催。主要議題の推進状況及び今後の対応方針について審議が行われた。",
-      "agenda": [
-        "委員",
-        "専門委員",
-        "WG構成"
-      ],
-      "materials": [
-        {
-          "name": "委員 (PDF)",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/archive/member/25_27/general_260619.pdf"
-        },
-        {
-          "name": "専門委員 (PDF)",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/archive/member/25_27/expert_260626.pdf"
-        },
-        {
-          "name": "WG構成 (PDF)",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/archive/member/25_27/wg_260417.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:285KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/committee/260629/260629minutes.pdf"
-        },
-        {
-          "name": "記者会見（PDF形式:135KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/committee/260629/260629interview.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:317KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/committee/260226/260226minutes.pdf"
-        },
-        {
-          "name": "記者会見（PDF形式:120KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/committee/260226/260226interview.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:334KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/committee/251224/251224minutes.pdf"
-        },
-        {
-          "name": "記者会見（PDF形式:121KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/committee/251224/251224interview.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:133KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/committee/251016/251016minutes.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:312KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/committee/251003/251003minutes.pdf"
-        },
-        {
-          "name": "記者会見（PDF形式:123KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/committee/251003/251003interview.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:345KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_01local/260519/local11_minutes.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:463KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_01local/260514/local10_minutes.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:473KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_01local/260513/local09_minutes.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:294KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_01local/260414/local08_minutes.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:551KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_01local/260217/local07_minutes.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:317KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_01local/260126/local06_minutes.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:364KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_01local/260115/local05_minutes.pdf"
-        },
-        {
-          "name": "生活者、旅行者、ホテル・旅館、飲食店向けアンケート調査（速報値・概要版）（令和６年12月13日公表）（PDF形式:860KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2409_05local/local_material/local_241213.pdf"
-        },
-        {
-          "name": "保育園等送迎の保護者、タクシードライバー、日本版ライドシェアドライバー向けアンケート調査（令和６年12月27日公表）（PDF形式:691KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2409_05local/local_material/local_241227.pdf"
-        },
-        {
-          "name": "生活者、旅行者、ホテル・旅館、飲食店向けアンケート調査（最終版）（令和７年１月31日公表）（PDF形式:903KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2409_05local/local_material/local_250131_1.pdf"
-        },
-        {
-          "name": "訪日外国人向けアンケート調査（令和７年１月31日公表）（PDF形式:359KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2409_05local/local_material/local_250131_2.pdf"
-        },
-        {
-          "name": "生活者、旅行者向けアンケート調査（令和７年３月28日公表）（PDF形式:780KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_05local/local_material/local_250328_01.pdf"
-        },
-        {
-          "name": "ホテル・旅館、飲食店向けアンケート調査（令和７年３月28日公表）（PDF形式:415KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_05local/local_material/local_250328_02.pdf"
-        },
-        {
-          "name": "中小規模団体の移動実態に関する調査（令和７年４月18日公表）（PDF形式:415KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_05local/local_material/local_250418.pdf"
-        },
-        {
-          "name": "地方の駅前等におけるタクシー手配の容易性等に関する調査（令和７年５月14日公表）（PDF形式:1492KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_05local/local_material/local_250514.pdf"
-        },
-        {
-          "name": "生活者、旅行者向けアンケート調査（令和８年１月15日公表）（PDF形式:528KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_05local/local_material/local_260115.pdf"
-        },
-        {
-          "name": "ホテル・旅館、飲食店向けアンケート調査（サンプル調査）（令和８年１月15日公表）（PDF形式:401KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_05local/local_material/local_260115_02.pdf"
-        },
-        {
-          "name": "生活者、旅行者向けアンケート調査（令和８年５月14日公表）（PDF形式:708KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_05local/local_material/local_260514.pdf"
-        },
-        {
-          "name": "ホテル・旅館、飲食店向けアンケート調査（サンプル調査）（令和８年５月14日公表）（PDF形式:516KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_05local/local_material/local_260514_02.pdf"
-        },
-        {
-          "name": "ホテル・旅館、飲食店向けアンケート調査（令和８年７月21日公表）（PDF形式:840KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_05local/local_material/local_260721.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:643KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_02medical/260515/medical12_minutes.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:455KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_02medical/260323/medical11_minutes.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:482KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_02medical/260311/medical10_minutes.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:318KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_02medical/260212/medical09_minutes.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:417KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_02medical/251225/medical08_minutes.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:350KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_02medical/251203/medical07_minutes.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:451KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_02medical/251029/medical06_minutes.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:212KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_03human/260521/human09_minutes.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:488KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_03human/260414/human08_minutes.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:583KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_03human/260407/human07_minutes.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:333KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_03human/260216/human06_minutes.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:356KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_03human/260109/human05_minutes.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:211KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_04startup/260617/startup15_minutes.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:481KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_04startup/260422/startup14_minutes.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:364KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_04startup/260413/startup13_minutes.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:453KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_04startup/260319/startup12_minutes.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:205KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_04startup/260310/startup11_minutes.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:459KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_04startup/260302/startup10_minutes.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:301KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_04startup/260205/startup09_minutes.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:319KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_04startup/260128/startup08_minutes.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:413KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_04startup/251106/startup07_minutes.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:325KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_05gx/260526/gx03_minutes.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:321KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_05gx/260114/gx02_minutes.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:532KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_06ai/260515/ai10_minutes.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:442KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_06ai/260430/ai09_minutes.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:518KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_06ai/260416/ai08_minutes.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:501KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_06ai/260213/ai07_minutes.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:435KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_06ai/260109/ai06_minutes.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:419KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_06ai/251107/ai05_minutes.pdf"
-        },
-        {
-          "name": "委員 (PDF)",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/archive/member/25_27/general_251016.pdf"
-        },
-        {
-          "name": "専門委員 (PDF)",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/archive/member/25_27/expert_251016.pdf"
-        },
-        {
-          "name": "WG構成 (PDF)",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/archive/member/25_27/wg_251016.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:331KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/committee/250528/250528minutes.pdf"
-        },
-        {
-          "name": "記者会見（PDF形式:129KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/committee/250528/250528interview.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:305KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_01local/250514/local04_minutes.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:351KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_01local/250425/local03_minutes.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:242KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_01local/250409/local02_minutes.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:414KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_01local/250328/local01_minutes.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:439KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_02medical/250501/medical05_minutes.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:376KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_02medical/250428/medical04_minutes.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:550KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_02medical/250331/medical03_minutes.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:516KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_02medical/250314/medical02_minutes.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:387KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_02medical/250306/medical01_minutes.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:545KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_03human/250425/human04_minutes.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:442KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_03human/250408/human03_minutes.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:417KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_03human/250304/human02_minutes.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:440KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_03human/250214/human01_minutes.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:661KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_04startup/250512/startup06_minutes.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:473KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_04startup/250421/startup05_minutes.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:442KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_04startup/250328/startup04_minutes.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:441KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_04startup/250325/startup03_minutes.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:648KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_04startup/250227/startup02_minutes.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:885KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_04startup/250207/startup01_minutes.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:996KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_05gx/250411/gx01_minutes.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:270KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_06ai/250508/ai04_minutes.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:448KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_06ai/250409/ai03_minutes.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:398KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_06ai/250313/ai02_minutes.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:397KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_06ai/250304/ai01_minutes.pdf"
-        },
-        {
-          "name": "委員 (PDF)",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/archive/member/23_25/general_241001.pdf"
-        },
-        {
-          "name": "専門委員 (PDF)",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/archive/member/23_25/expert_241120.pdf"
-        },
-        {
-          "name": "WG構成 (PDF)",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/archive/member/23_25/wg_241120.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:295KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/committee/241225/241225minutes.pdf"
-        },
-        {
-          "name": "記者会見（PDF形式:135KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/committee/241225/241225interview.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:321KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/committee/241112/241112minutes.pdf"
-        },
-        {
-          "name": "記者会見（PDF形式:149KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/committee/241112/241112interview.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:282KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/committee/240902/240902minutes.pdf"
-        },
-        {
-          "name": "記者会見（PDF形式:154KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/committee/240902/240902interview.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:495KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2409_01common/241209/common04_minutes.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:437KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2409_01common/241205/common03_minutes.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:496KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2409_01common/241120/common02_minutes.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:390KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2409_01common/241009/common01_minutes.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:473KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2409_02startup/241219/startup05_minutes.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:472KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2409_02startup/241204/startup04_minutes.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:504KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2409_02startup/241128/startup03_minutes.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:446KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2409_02startup/241118/startup02_minutes.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:472KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2409_02startup/241111/startup01_minutes.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:490KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2409_03human/241121/human02_minutes.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:375KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2409_03human/240925/human01_minutes.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:319KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2409_04medical/241204/medical04_minutes.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:409KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2409_04medical/241125/medical03_minutes.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:661KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2409_04medical/241011/medical02_minutes.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:410KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2409_04medical/240930/medical01_minutes.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:447KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2409_05local/241213/local03_minutes.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:406KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2409_05local/241126/local02_minutes.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:379KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2409_05local/240930/local01_minutes.pdf"
-        },
-        {
-          "name": "委員 (PDF)",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/archive/member/23_25/general_240708.pdf"
-        },
-        {
-          "name": "専門委員 (PDF)",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/archive/member/23_25/expert_240401.pdf"
-        },
-        {
-          "name": "WG構成 (PDF)",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/archive/member/23_25/wg_240708.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:310KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/committee/240531/240531minutes.pdf"
-        },
-        {
-          "name": "記者会見（PDF形式:242KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/committee/240531/240531interview.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:596KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/committee/231226/231226minutes.pdf"
-        },
-        {
-          "name": "記者会見（PDF形式:154KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/committee/231226/231226interview.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:288KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/committee/231016/231016minutes.pdf"
-        },
-        {
-          "name": "記者会見（PDF形式:169KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/committee/231016/231016interview.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:413KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2310_01common/240425/common06_minutes.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:379KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2310_01common/240328/common05_minutes.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:404KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2310_01common/240226/common04_minutes.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:314KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2310_01common/231211/common03_minutes.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:389KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2310_01common/231207/common02_minutes.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:412KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2310_01common/231116/common01_minutes.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:391KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2310_02startup/240419/startup09_minutes.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:432KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2310_02startup/240418/startup08_minutes.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:459KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2310_02startup/240403/startup07_minutes.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:400KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2310_02startup/240321/startup06_minutes.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:492KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2310_02startup/240227/startup05_minutes.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:517KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2310_02startup/240220/startup04_minutes.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:385KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2310_02startup/231212/startup03_minutes.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:722KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2310_02startup/231201/startup02_minutes.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:455KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2310_02startup/231117/startup01_minutes.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:441KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2310_03human/240510/human07_minutes.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:444KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2310_03human/240422/human06_minutes.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:479KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2310_03human/240417/human05_minutes.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:548KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2310_03human/240312/human04_minutes.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:428KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2310_03human/231205/human03_minutes.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:341KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2310_03human/231120/human02_minutes.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:527KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2310_03human/231115/human01_minutes.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:488KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2310_04medical/240426_02/medical11_minutes.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:489KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2310_04medical/240426_01/medical10_minutes.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:389KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2310_04medical/240328/medical09_minutes.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:405KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2310_04medical/240314/medical08_minutes.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:357KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2310_04medical/240307/medical07_minutes.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:337KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2310_04medical/231225/medical06_minutes.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:474KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2310_04medical/231221/medical05_minutes.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:393KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2310_04medical/231218/medical04_minutes.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:538KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2310_04medical/231211/medical03_minutes.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:598KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2310_04medical/231120/medical02_minutes.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:524KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2310_04medical/231116/medical01_minutes.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:135KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2310_05local/240829/local18_minutes.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:416KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2310_05local/240729/local17_minutes.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:331KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2310_05local/240521/local15_minutes.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:470KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2310_05local/240515/local14_minutes.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:299KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2310_05local/240510/local13_minutes.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:533KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2310_05local/240424/local12_minutes.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:323KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2310_05local/240419/local11_minutes.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:417KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2310_05local/240411/local10_minutes.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:503KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2310_05local/240311/local09_minutes.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:434KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2310_05local/240221/local08_minutes.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:326KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2310_05local/240216/local07_minutes.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:430KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2310_05local/240129/local06_minutes.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:412KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2310_05local/231215/local05_minutes.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:522KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2310_05local/231212/local04_minutes.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:518KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2310_05local/231130/local03_minutes.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:564KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2310_05local/231113/local02_minutes.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:661KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2310_05local/231106/local01_minutes.pdf"
-        },
-        {
-          "name": "委員 (PDF)",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/archive/member/21_23/general_230113.pdf"
-        },
-        {
-          "name": "専門委員 (PDF)",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/archive/member/21_23/expert_221013.pdf"
-        },
-        {
-          "name": "WG構成 (PDF)",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/archive/member/21_23/wg_230113.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:510KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/committee/230601/230601minutes.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:385KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/committee/221222/221222minutes.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:137KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/committee/221013/221013minutes.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:530KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2210_01startup/230621/startup14_minutes.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:380KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2210_01startup/230427/startup13_minutes.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:396KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2210_01startup/230421/startup12_minutes.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:422KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2210_01startup/230411/startup11_minutes.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:539KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2210_01startup/230406/startup10_minutes.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:390KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2210_01startup/230309/startup09_minutes.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:380KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2210_01startup/230302/startup08_minutes.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:476KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2210_01startup/230127/startup07_minutes.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:487KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2210_01startup/221209/startup06_minutes.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:419KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2210_01startup/221201/startup05_minutes.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:474KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2210_01startup/221129/startup04_minutes.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:439KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2210_01startup/221121/startup03_minutes.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:616KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2210_01startup/221111/startup02_minutes.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:459KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2210_01startup/221027/startup01_minutes.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:494KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2210_02human/230417/human12_minutes.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:392KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2210_02human/230405/human11_minutes.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:434KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2210_02human/230331/human10_minutes.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:591KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2210_02human/230315/human09_minutes.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:434KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2210_02human/230302/human08_minutes.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:364KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2210_02human/230206/human07_minutes.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:633KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2210_02human/230127/human06_minutes.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:407KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2210_02human/221130/human05_minutes.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:538KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2210_02human/221124/human04_minutes.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:425KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2210_02human/221114/human03_minutes.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:636KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2210_02human/221108/human02_minutes.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:509KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2210_02human/221014/human01_minutes.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:201KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2210_03medical/230519/medical13_minutes.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:189KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2210_03medical/230515/medical12_minutes.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:358KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2210_03medical/230424/medical11_minutes.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:96KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2210_03medical/230419/medical10_minutes.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:551KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2210_03medical/230414/medical09_minutes.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:567KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2210_03medical/230330/medical08_minutes.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:699KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2210_03medical/230306/medical07_minutes.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:713KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2210_03medical/230213/medical06_minutes.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:398KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2210_03medical/230125/medical05_minutes.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:609KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2210_03medical/221215/medical04_minutes.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:561KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2210_03medical/221128/medical03_minutes.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:597KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2210_03medical/221107/medical02_minutes.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:556KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2210_03medical/221020/medical01_minutes.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:443KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2210_04local/230518/local07_minutes.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:552KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2210_04local/230428/local06_minutes.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:342KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2210_04local/230410/local05_minutes.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:456KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2210_04local/230328/local04_minutes.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:371KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2210_04local/230316/local03_minutes.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:360KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2210_04local/230120/local02_minutes.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:370KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2210_04local/221202/local01_minutes.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:377KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2210_05common/230508_02/common12_minutes.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:385KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2210_05common/230508_01/common11_minutes.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:320KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2210_05common/230421/common10_minutes.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:418KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2210_05common/230420/common09_minutes.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:438KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2210_05common/230419/common08_minutes.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:320KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2210_05common/230329/common07_minutes.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:376KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2210_05common/230309/common06_minutes.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:412KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2210_05common/230222/common04_minutes.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:417KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2210_05common/221122/common03_minutes.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:485KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2210_05common/221110/common02_minutes.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:358KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2210_05common/221101/common01_minutes.pdf"
-        },
-        {
-          "name": "委員 (PDF)",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/archive/member/21_23/general_210823.pdf"
-        },
-        {
-          "name": "専門委員 (PDF)",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/archive/member/21_23/expert_220801.pdf"
-        },
-        {
-          "name": "WG構成員 (PDF)",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/archive/member/21_23/wg_220801.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:365KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/committee/220527/220527minutes.pdf"
-        },
-        {
-          "name": "記者会見（PDF形式:286KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/committee/220527/220527interview.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:446KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2201_01startup/221004/startup10_minutes.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:276KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2201_01startup/220426/startup09_minutes.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:587KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2201_01startup/220419/startup08_minutes.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:491KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2201_01startup/220414/startup07_minutes.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:258KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2201_01startup/220413/startup06_minutes.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:462KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2201_01startup/220407/startup05_minutes.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:431KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2201_01startup/220322/startup04_minutes.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:368KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2201_01startup/220318/startup03_minutes.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:441KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2201_01startup/220309/startup02_minutes.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:487KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2201_01startup/220124/startup01_minutes.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:344KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2201_02human/220928/human08_minutes.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:446KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2201_02human/220422/human07_minutes.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:397KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2201_02human/220415/human06_minutes.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:366KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2201_02human/220328/human05_minutes.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:332KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2201_02human/220315/human04_minutes.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:565KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2201_02human/220303/human03_minutes.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:691KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2201_02human/220131/human02_minutes.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:470KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2201_02human/220125/human01_minutes.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:535KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2201_03medical/220922/medical09_minutes.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:128KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2201_03medical/220831/medical08_minutes.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:377KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2201_03medical/220427/medical07_minutes.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:332KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2201_03medical/220418/medical06_minutes.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:261KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2201_03medical/220331/medical05_minutes.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:642KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2201_03medical/220315/medical04_minutes.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:558KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2201_03medical/220224/medical03_minutes.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:514KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2201_03medical/220207/medical02_minutes.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:505KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2201_03medical/220119/medical01_minutes.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:337KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2201_04local/221006/local06_minutes.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:450KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2201_04local/220426/local05_minutes.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:423KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2201_04local/220405/local04_minutes.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:318KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2201_04local/220314/local03_minutes.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:442KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2201_04local/220302/local02_minutes.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:406KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2201_04local/220218/local01_minutes.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:367KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2201_05digital/220930/digital06_minutes.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:406KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2201_05digital/220420/digital05_minutes.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:364KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2201_05digital/220412/digital04_minutes.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:433KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2201_05digital/220329/digital03_minutes.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:424KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2201_05digital/220301/digital02_minutes.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:428KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2201_05digital/220209/digital01_minutes.pdf"
-        },
-        {
-          "name": "専門委員 (PDF)",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/archive/member/21_23/expert_210823.pdf"
-        },
-        {
-          "name": "WG構成員 (PDF)",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/archive/member/21_23/wg_210823.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:251KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/committee/211222/211222minutes.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:215KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/committee/210823/210823minutes.pdf"
-        },
-        {
-          "name": "記者会見（PDF形式:134KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/committee/210823/210823interview.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:330KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/digital/211215/211215minutes.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:550KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/digital/211130/211130minutes.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:406KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/digital/211110/211110minutes.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:418KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/digital/211025/211025minutes.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:455KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/digital/210928/210928minutes.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:381KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/digital/210908/210908minutes.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:317KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/econrev/211208/211208minutes.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:493KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/econrev/211202/211202minutes.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:407KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/econrev/211125/211125minutes.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:659KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/econrev/211119/211119minutes.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:291KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/econrev/211105/211105minutes.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:386KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/econrev/211011/211011minutes.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:291KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/econrev/210917/210917minutes.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:397KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/kosodate/211201/211201minutes.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:277KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/kosodate/211122/211122minutes.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:424KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/kosodate/211117/211117minutes.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:411KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/kosodate/211027/211027minutes.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:408KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/kosodate/211020/211020minutes.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:441KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/kosodate/210929/210929minutes.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:305KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/kosodate/210915/210915minutes.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:437KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/iryou/211220/211220minutes.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:376KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/iryou/211206/211206minutes.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:592KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/iryou/211117/211117minutes.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:540KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/iryou/211025/211025minutes.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:451KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/iryou/211008/211008minutes.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:473KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/iryou/210927/210927minutes.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:642KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/iryou/210910/210910minutes.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:121KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/nousui/211213/211213minutes.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:494KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/nousui/211126/211126minutes.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:485KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/nousui/210924/210924minutes.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:365KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/nousui/210831/210831minutes.pdf"
-        },
-        {
-          "name": "委員 (PDF)",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/archive/member/19_21/general_191031.pdf"
-        },
-        {
-          "name": "専門委員 (PDF)",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/archive/member/19_21/expert_210601.pdf"
-        },
-        {
-          "name": "WG構成員 (PDF)",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/archive/member/19_21/wg_201005.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:293KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/committee/20210518/gijiroku0518.pdf"
-        },
-        {
-          "name": "記者会見（PDF形式:222KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/committee/20210518/interview0518.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:327KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/committee/20201222/gijiroku1222.pdf"
-        },
-        {
-          "name": "記者会見（PDF形式:193KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/committee/20201222/interview1222.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:270KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/coremeeting/20210601/gijiroku0601.pdf"
-        },
-        {
-          "name": "記者会見（PDF形式:236KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/coremeeting/20210601/interview0601.pdf"
-        },
-        {
-          "name": "議事要旨（PDF形式:90KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/coremeeting/20201221/gijiroku1221.pdf"
-        },
-        {
-          "name": "記者会見（PDF形式:217KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/coremeeting/20201221/interview1221.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:276KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/coremeeting/20201007/gijiroku1007.pdf"
-        },
-        {
-          "name": "記者会見（PDF形式:235KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/coremeeting/20201007/interview1007.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:360KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/seicho/20210517/gijiroku0517.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:373KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/seicho/20210427/gijiroku0427.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:435KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/seicho/20210408/gijiroku0408.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:451KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/seicho/20210324/gijiroku0324.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:382KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/seicho/20210225/gijiroku0225.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:405KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/seicho/20210212/gijiroku0212.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:356KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/seicho/20201130/gijiroku1130.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:332KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/seicho/20201109/gijiroku1109.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:299KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/seicho/20201020/gijiroku1020.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:412KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/seicho/20201012/gijiroku1012.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:357KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/koyou/20210414/gijiroku0414.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:352KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/koyou/20210331/gijiroku0331.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:441KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/koyou/20210326/gijiroku0326.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:304KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/koyou/20210315/gijiroku0315.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:635KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/koyou/20210217/gijiroku0217.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:377KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/koyou/20210201/gijiroku0201.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:356KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/koyou/20201118/gijiroku1118.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:388KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/koyou/20201113/gijiroku1113.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:330KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/koyou/20201023/gijiroku1023.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:393KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/koyou/20201012/gijiroku1012.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:255KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/toushi/20210729/gijiroku0729.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:396KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/toushi/20210528/gijiroku0528.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:404KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/toushi/20210512/gijiroku0512.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:440KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/toushi/20210426/gijiroku0426.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:546KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/toushi/20210413/gijiroku0413.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:321KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/toushi/20210412/gijiroku0412.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:467KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/toushi/20210405/gijiroku0405.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:261KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/toushi/20210317/gijiroku0317.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:228KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/toushi/20210315/gijiroku0315.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:277KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/toushi/20210222/gijiroku0222.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:261KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/toushi/20210216/gijiroku0216.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:261KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/toushi/20210119/gijiroku0119.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:277KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/toushi/20201215/gijiroku1215.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:226KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/toushi/20201125/gijiroku1125.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:312KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/toushi/20201119/gijiroku1119.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:267KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/toushi/20201106/gijiroku1106.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:256KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/toushi/20201022/gijiroku1022.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:337KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/toushi/20201009/gijiroku1009.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:458KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/iryou/20210420/gijiroku0420.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:338KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/iryou/20210413/gijiroku0413.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:409KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/iryou/20210407/gijiroku0407.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:284KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/iryou/20210322/gijiroku0322.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:468KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/iryou/20210308/gijiroku0308.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:280KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/iryou/20210224/gijiroku0224.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:469KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/iryou/20210210/gijiroku0210.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:270KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/iryou/20201217/gijiroku1217.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:245KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/iryou/20201126/gijiroku1126.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:446KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/iryou/20201109/gijiroku1109.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:475KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/iryou/20201021/gijiroku1021.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:257KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/iryou/20201019/gijiroku1019.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:326KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/nousui/20210726/gijiroku0726.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:493KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/nousui/20210513/gijiroku0513.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:450KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/nousui/20210419/gijiroku0419.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:382KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/nousui/20210414/gijiroku0414.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:382KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/nousui/20210331/gijiroku0331.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:410KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/nousui/20210319/gijiroku0319.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:439KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/nousui/20210305/gijiroku0305.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:401KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/nousui/20210201/gijiroku0201.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:422KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/nousui/20210120/gijiroku0120.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:286KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/nousui/20201214/gijiroku1214.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:445KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/nousui/20201130/gijiroku1130.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:401KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/nousui/20201111/gijiroku1111.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:379KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/nousui/20201026/gijiroku1026.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:336KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/nousui/20201019/gijiroku1019.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:306KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/digital/20210513/gijiroku0513.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:474KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/digital/20210427/gijiroku0427.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:308KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/digital/20210420/gijiroku0420.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:280KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/digital/20210330/gijiroku0330.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:352KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/digital/20210311/gijiroku0311.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:394KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/digital/20210302/gijiroku0302.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:406KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/digital/20210202/gijiroku0202.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:314KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/digital/20210120/gijiroku0120.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:343KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/digital/20201124/gijiroku1124.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:442KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/digital/20201117/gijiroku1117.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:290KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/digital/20201028/gijiroku1028.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:330KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/digital/20201012/gijiroku1012.pdf"
-        },
-        {
-          "name": "専門委員 (PDF)",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/archive/member/19_21/expert_1902xx.pdf"
-        },
-        {
-          "name": "WG構成員 (PDF)",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/archive/member/19_21/wg_191205.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:280KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/committee/20200702/gijiroku0702.pdf"
-        },
-        {
-          "name": "記者会見（PDF形式:305KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/committee/20200702/interview0702.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:296KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/committee/20200622/gijiroku0622.pdf"
-        },
-        {
-          "name": "記者会見（PDF形式:219KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/committee/20200622/interview0622.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:300KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/committee/20200518/gijiroku0518.pdf"
-        },
-        {
-          "name": "記者会見（PDF形式:223KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/committee/20200518/interview0518.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:268KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/committee/20200428/gijiroku0428.pdf"
-        },
-        {
-          "name": "記者会見（PDF形式:215KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/committee/20200428/interview0428.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:347KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/committee/20200413/gijiroku0413.pdf"
-        },
-        {
-          "name": "記者会見（PDF形式:243KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/committee/20200413/interview0413.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:471KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/committee/20200212/gijiroku0212.pdf"
-        },
-        {
-          "name": "記者会見（PDF形式:195KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/committee/20200212/interview0212.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:322KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/committee/20191202/gijiroku1202.pdf"
-        },
-        {
-          "name": "記者会見（PDF形式:202KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/committee/20191202/interview1202.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:398KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/committee/20191031/gijiroku1031.pdf"
-        },
-        {
-          "name": "記者会見（PDF形式:180KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/committee/20191031/interview1031.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:294KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/tf/20200403/gijiroku0403.pdf"
-        },
-        {
-          "name": "記者会見（PDF形式:221KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/tf/20200403/interview0403.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:352KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/tf/20200402/gijiroku0402.pdf"
-        },
-        {
-          "name": "記者会見（PDF形式:240KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/tf/20200402/interview0402.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:397KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/seicho/20200522/gijiroku0522.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:473KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/seicho/20200512/gijiroku0512.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:519KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/seicho/20200423/gijiroku0423.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:454KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/seicho/20200319/gijiroku0319.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:411KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/seicho/20200311/gijiroku0311.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:464KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/seicho/20200221/gijiroku0221.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:517KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/seicho/20200203/gijiroku0203.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:474KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/seicho/20200117/gijiroku0117.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:544KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/seicho/20191219/gijiroku1219.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:392KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/seicho/20191211/gijiroku1211.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:262KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/seicho/20191122/gijiroku1122.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:352KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/koyou/20200422/gijiroku0422.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:499KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/koyou/20200409/gijiroku0409.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:387KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/koyou/20200316/gijiroku0316.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:465KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/koyou/20200309/gijiroku0309.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:361KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/koyou/20200225/gijiroku0225.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:316KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/koyou/20200204/gijiroku0204.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:489KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/koyou/20200120/gijiroku0120.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:492KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/koyou/20191226/gijiroku1226.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:394KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/koyou/20191218/gijiroku1218.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:206KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/koyou/20191115/gijiroku1115.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:223KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/toushi/20201005/gijiroku1005.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:239KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/toushi/20200925/gijiroku0925.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:386KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/toushi/20200609/gijiroku0609.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:285KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/toushi/20200511/gijiroku0511.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:555KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/toushi/20200421/gijiroku0421.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:319KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/toushi/20200416/gijiroku0416.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:424KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/toushi/20200413/gijiroku0413.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:640KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/toushi/20200410/gijiroku0410.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:370KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/toushi/20200407/gijiroku0407.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:239KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/toushi/20200403/gijiroku0403.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:365KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/toushi/20200316/gijiroku0316.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:290KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/toushi/20200310/gijiroku0310.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:266KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/toushi/20200304/gijiroku0304.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:390KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/toushi/20200228/gijiroku0228.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:345KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/toushi/20200212/gijiroku0212.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:299KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/toushi/20200130/gijiroku0130.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:273KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/toushi/20200121/gijiroku0121.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:237KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/toushi/20191220/gijiroku1220.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:222KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/toushi/20191210/gijiroku1210.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:153KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/toushi/20191120/gijiroku1120.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:339KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/iryou/20200422/gijiroku0422.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:445KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/iryou/20200415/gijiroku0415.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:436KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/iryou/20200407/gijiroku0407.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:346KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/iryou/20200318/gijiroku0318.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:394KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/iryou/20200310/gijiroku0310.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:453KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/iryou/20200220/gijiroku0220.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:428KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/iryou/20200213/gijiroku0213.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:495KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/iryou/20200127/gijiroku0127.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:511KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/iryou/20200121/gijiroku0121.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:456KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/iryou/20191218/gijiroku1218.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:439KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/iryou/20191212/gijiroku1212.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:218KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/iryou/20191119/gijiroku1119.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:360KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/nousui/20200526/gijiroku0526.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:337KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/nousui/20200514/gijiroku0514.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:457KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/nousui/20200421/gijiroku0421.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:342KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/nousui/20200409/gijiroku0409.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:330KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/nousui/20200310/gijiroku0310.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:324KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/nousui/20200210/gijiroku0210.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:444KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/nousui/20200131/gijiroku0131.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:359KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/nousui/20200122/gijiroku0122.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:462KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/nousui/20191218/gijiroku1218.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:428KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/nousui/20191206/gijiroku1206.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:319KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/nousui/20191120/gijiroku1120.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:345KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/digital/20200618/gijiroku0618.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:426KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/digital/20200605/gijiroku0605.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:163KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/digital/20200511/gijiroku0511.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:228KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/digital/20200323/gijiroku0323.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:401KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/digital/20200317/gijiroku0317.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:400KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/digital/20200219/gijiroku0219.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:405KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/digital/20200127/gijiroku0127.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:419KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/digital/20200114/gijiroku0114.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:405KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/digital/20191220/gijiroku1220.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:407KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/digital/20191210/gijiroku1210.pdf"
-        },
-        {
-          "name": "議事録（PDF形式:247KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/digital/20191126/gijiroku1126.pdf"
-        },
-        {
-          "name": "内閣府本府組織令（抜粋）（PDF形式：172KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/pdf/soshikirei20191024.pdf"
-        },
-        {
-          "name": "規制改革推進会議令（平成28年政令第303号）（PDF形式：13KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/pdf/kaigirei2019.pdf"
-        },
-        {
-          "name": "規制改革推進会議運営規則（PDF形式：133KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/pdf/uneikisoku2024.pdf"
-        }
-      ],
-      "tags": [
-        "cao-ki",
-        "Unknown",
-        "政策会議"
-      ],
-      "officialUrl": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/meeting.html",
-      "hasMinutes": true,
-      "docCount": 508
-    },
-    {
-      "id": "cao-kisei_iryou_wg_110-20241213-s02",
-      "councilId": "cao-kisei_iryou_wg_110",
-      "councilName": "cao-kisei-iryou-wg-110",
-      "ministry": "Unknown",
-      "category": "COUNCIL",
-      "title": "規制改革推進会議 健康・医療・介護WG",
-      "date": "2024/12/13",
-      "updatedAt": "2024/12/13 17:00",
-      "location": "総理大臣官邸 / 各府省庁本庁舎",
-      "summary": "cao-kisei-iryou-wg-110の開催。主要議題の推進状況及び今後の対応方針について審議が行われた。",
       "agenda": [
         "委員",
         "専門委員",
@@ -72381,6 +70924,50 @@
       ]
     },
     {
+      "id": "cao-kisei_iryou_wg-20241204-004",
+      "councilId": "cao-kisei_iryou_wg",
+      "title": "第4回 規制改革推進会議 健康・医療・介護WG（令和6年度）",
+      "date": "2024/12/04",
+      "officialUrl": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2409_04medical/241204/medical04_agenda.html",
+      "category": "WORKING_GROUP",
+      "ministry": "CAO",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "議事録",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2409_04medical/241204/medical04_minutes.pdf"
+        },
+        {
+          "name": "鳥羽市　御提出資料（PDF形式：1,298KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2409_04medical/241204/medical04_01_01.pdf"
+        },
+        {
+          "name": "五島市・長崎大学離島医療研究所　御提出資料（PDF形式：3,169KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2409_04medical/241204/medical04_01_02.pdf"
+        },
+        {
+          "name": "伊那市　御提出資料（PDF形式：3,464KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2409_04medical/241204/medical04_01_03.pdf"
+        },
+        {
+          "name": "医療法人社団創青会　桑井理事長　御提出資料（PDF形式：1,192KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2409_04medical/241204/medical04_01_04.pdf"
+        },
+        {
+          "name": "大石専門委員・佐々木専門委員　御提出資料（PDF形式：396KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2409_04medical/241204/medical04_01_05.pdf"
+        },
+        {
+          "name": "厚生労働省　御提出資料（PDF形式：1,750KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2409_04medical/241204/medical04_01_06.pdf"
+        },
+        {
+          "name": "事務局　提出資料（PDF形式：257KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2409_04medical/241204/medical04_02.pdf"
+        }
+      ]
+    },
+    {
       "id": "nta-1252-20241203-027",
       "councilId": "nta-1252",
       "title": "第27回 国税審議会",
@@ -72575,6 +71162,114 @@
       "officialUrl": "https://www.cas.go.jp/jp/seisaku/jieikan/gijisidai/dai3/siryou.pdf",
       "hasMinutes": true,
       "docCount": 6
+    },
+    {
+      "id": "cao-kisei_iryou_wg-20241125-003",
+      "councilId": "cao-kisei_iryou_wg",
+      "title": "第3回 規制改革推進会議 健康・医療・介護WG（令和6年度）",
+      "date": "2024/11/25",
+      "officialUrl": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2409_04medical/241125/medical03_agenda.html",
+      "category": "WORKING_GROUP",
+      "ministry": "CAO",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "議事録",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2409_04medical/241125/medical03_minutes.pdf"
+        },
+        {
+          "name": "公益社団法人日本駆け込み寺　御提出資料（PDF形式：952KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2409_04medical/241125/medical01_01.pdf"
+        },
+        {
+          "name": "特定非営利活動法人BONDプロジェクト　御提出資料（PDF形式：1,098KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2409_04medical/241125/medical01_02.pdf"
+        },
+        {
+          "name": "国立研究開発法人国立精神・神経医療研究センター嶋根室長　御提出資料（PDF形式：2,084KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2409_04medical/241125/medical01_03.pdf"
+        },
+        {
+          "name": "一般社団法人新経済連盟　御提出資料（PDF形式：1,731KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2409_04medical/241125/medical01_04.pdf"
+        },
+        {
+          "name": "厚生労働省　御提出資料（PDF形式：2,211KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2409_04medical/241125/medical01_05.pdf"
+        },
+        {
+          "name": "一般社団法人次世代基盤政策研究所　御提出資料（PDF形式：2,591KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2409_04medical/241125/medical02_01.pdf"
+        },
+        {
+          "name": "日本製薬工業協会　御提出資料（PDF形式：3,504KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2409_04medical/241125/medical02_02.pdf"
+        },
+        {
+          "name": "日本医療政策学会　御提出資料（PDF形式：1,268KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2409_04medical/241125/medical02_03.pdf"
+        },
+        {
+          "name": "医療経済学会　御提出資料（PDF形式：732KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2409_04medical/241125/medical02_04_01.pdf"
+        },
+        {
+          "name": "医療経済学会　御提出資料（PDF形式：337KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2409_04medical/241125/medical02_04_02.pdf"
+        },
+        {
+          "name": "一般社団法人全国がん患者団体連合会　御提出資料（PDF形式：4,542KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2409_04medical/241125/medical02_05.pdf"
+        },
+        {
+          "name": "厚生労働省　御提出資料（PDF形式：2,851KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2409_04medical/241125/medical02_06.pdf"
+        },
+        {
+          "name": "内閣府健康・医療戦略推進事務局　御提出資料（PDF形式：1,947KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2409_04medical/241125/medical02_07_01.pdf"
+        },
+        {
+          "name": "内閣府健康・医療戦略推進事務局　御提出資料（PDF形式：3,335KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2409_04medical/241125/medical02_07_02.pdf"
+        },
+        {
+          "name": "個人情報保護委員会事務局　御提出資料（PDF形式：1,521KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2409_04medical/241125/medical02_08.pdf"
+        },
+        {
+          "name": "一般社団法人日本医学会連合　健康医療分野におけるビッグデータに関する委員会　御提出資料（PDF形式：2,777KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2409_04medical/241125/medical02_09_01.pdf"
+        },
+        {
+          "name": "一般社団法人日本医学会連合　健康医療分野におけるビッグデータに関する委員会　御提出資料（PDF形式：726KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2409_04medical/241125/medical02_09_02.pdf"
+        },
+        {
+          "name": "事務局　提出資料（PDF形式：462KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2409_04medical/241125/medical_ref0101.pdf"
+        },
+        {
+          "name": "事務局　提出資料（PDF形式：277KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2409_04medical/241125/medical_ref0102.pdf"
+        },
+        {
+          "name": "事務局　提出資料（PDF形式：751KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2409_04medical/241125/medical_ref0103.pdf"
+        },
+        {
+          "name": "事務局　提出資料（PDF形式：321KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2409_04medical/241125/medical_ref0200.pdf"
+        },
+        {
+          "name": "事務局　提出資料（PDF形式：1,257KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2409_04medical/241125/medical_ref0301.pdf"
+        },
+        {
+          "name": "事務局　提出資料（PDF形式：1,046KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2409_04medical/241125/medical_ref0302.pdf"
+        }
+      ]
     },
     {
       "id": "moj-youikuhi_kento-20241122-001",
@@ -75212,6 +73907,38 @@
       ]
     },
     {
+      "id": "cao-kisei_iryou_wg-20241011-002",
+      "councilId": "cao-kisei_iryou_wg",
+      "title": "第2回 規制改革推進会議 健康・医療・介護WG（令和6年度）",
+      "date": "2024/10/11",
+      "officialUrl": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2409_04medical/241011/medical02_agenda.html",
+      "category": "WORKING_GROUP",
+      "ministry": "CAO",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "議事録",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2409_04medical/241011/medical02_minutes.pdf"
+        },
+        {
+          "name": "保育の未来を創る会　御提出資料（PDF形式：2,345KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2409_04medical/241011/medical01.pdf"
+        },
+        {
+          "name": "こども家庭庁　御提出資料（PDF形式：902KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2409_04medical/241011/medical02.pdf"
+        },
+        {
+          "name": "中室委員　御提出資料（PDF形式：191KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2409_04medical/241011/medical03.pdf"
+        },
+        {
+          "name": "事務局　提出資料（PDF形式：249KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2409_04medical/241011/medical_ref01.pdf"
+        }
+      ]
+    },
+    {
       "id": "moj-keiji_fufukushinsa-20241010-s04",
       "councilId": "moj-keiji_fufukushinsa",
       "title": "令和６年度（刑事施設の被収容者の不服審査に関する調査検討会）",
@@ -75317,6 +74044,38 @@
         {
           "name": "議事要旨",
           "url": "https://www.moj.go.jp/content/001425546.pdf"
+        }
+      ]
+    },
+    {
+      "id": "cao-kisei_iryou_wg-20240930-001",
+      "councilId": "cao-kisei_iryou_wg",
+      "title": "第1回 規制改革推進会議 健康・医療・介護WG（令和6年度）",
+      "date": "2024/09/30",
+      "officialUrl": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2409_04medical/240930/medical01_agenda.html",
+      "category": "WORKING_GROUP",
+      "ministry": "CAO",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "議事録",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2409_04medical/240930/medical01_minutes.pdf"
+        },
+        {
+          "name": "厚生労働省　御提出資料（PDF形式：1,849KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2409_04medical/240930/medical01_01.pdf"
+        },
+        {
+          "name": "昭和薬科大学渡部教授　御提出資料（PDF形式：1,917KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2409_04medical/240930/medical01_02.pdf"
+        },
+        {
+          "name": "佐々木専門委員・桜井専門委員・高山専門委員　御提出資料（PDF形式：360KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2409_04medical/240930/medical01_03.pdf"
+        },
+        {
+          "name": "事務局　提出資料（PDF形式：243KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2409_04medical/240930/medical02.pdf"
         }
       ]
     },
@@ -81422,6 +80181,146 @@
       "docCount": 3
     },
     {
+      "id": "cao-kisei_iryou_wg-20240426-011",
+      "councilId": "cao-kisei_iryou_wg",
+      "title": "第11回 規制改革推進会議 健康・医療・介護WG（令和5年度）",
+      "date": "2024/04/26",
+      "officialUrl": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2310_04medical/240426_02/medical11_agenda.html",
+      "category": "WORKING_GROUP",
+      "ministry": "CAO",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "議事録",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2310_04medical/240426_02/medical11_minutes.pdf"
+        },
+        {
+          "name": "株式会社エール　御提出資料（PDF形式：1,177KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2310_04medical/240426_02/medical01_1.pdf"
+        },
+        {
+          "name": "社会福祉法人敬愛 けいあいの郷山王台　御提出資料（PDF形式：905KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2310_04medical/240426_02/medical01_2.pdf"
+        },
+        {
+          "name": "社会福祉法人聖隷福祉事業団 横須賀愛光園・松戸愛光園　御提出資料（PDF形式：3,607KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2310_04medical/240426_02/medical01_3.pdf"
+        },
+        {
+          "name": "高齢者住まい事業者団体連合会　御提出資料（PDF形式：508KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2310_04medical/240426_02/medical01_4.pdf"
+        },
+        {
+          "name": "公益社団法人経済同友会　御提出資料（PDF形式：265KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2310_04medical/240426_02/medical01_5_1.pdf"
+        },
+        {
+          "name": "公益社団法人経済同友会　御提出資料（参考資料）（PDF形式：430KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2310_04medical/240426_02/medical01_5_2.pdf"
+        },
+        {
+          "name": "岡元専門委員・高山専門委員・時田専門委員　御提出資料（PDF形式：265KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2310_04medical/240426_02/medical01_6.pdf"
+        },
+        {
+          "name": "厚生労働省　御提出資料（PDF形式：698KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2310_04medical/240426_02/medical01_7_1.pdf"
+        },
+        {
+          "name": "厚生労働省　御提出資料（参考資料１）（PDF形式：862KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2310_04medical/240426_02/medical01_7_2.pdf"
+        },
+        {
+          "name": "厚生労働省　御提出資料（参考資料２）（PDF形式：224KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2310_04medical/240426_02/medical01_7_3.pdf"
+        },
+        {
+          "name": "株式会社日本総合研究所　御提出資料（PDF形式：1,045KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2310_04medical/240426_02/medical02_1.pdf"
+        },
+        {
+          "name": "奈義ファミリークリニック松下所長　御提出資料（PDF形式：1,743KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2310_04medical/240426_02/medical02_2.pdf"
+        },
+        {
+          "name": "桜井専門委員　御提出資料（PDF形式：145KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2310_04medical/240426_02/medical02_3.pdf"
+        },
+        {
+          "name": "厚生労働省　御提出資料（PDF形式：1,564KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2310_04medical/240426_02/medical02_4.pdf"
+        }
+      ]
+    },
+    {
+      "id": "cao-kisei_iryou_wg-20240426-010",
+      "councilId": "cao-kisei_iryou_wg",
+      "title": "第10回 規制改革推進会議 健康・医療・介護WG（令和5年度）",
+      "date": "2024/04/26",
+      "officialUrl": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2310_04medical/240426_01/medical10_agenda.html",
+      "category": "WORKING_GROUP",
+      "ministry": "CAO",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "議事録",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2310_04medical/240426_01/medical10_minutes.pdf"
+        },
+        {
+          "name": "住田町　御提出資料（PDF形式：2,707KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2310_04medical/240426_01/medical01_1.pdf"
+        },
+        {
+          "name": "公益財団法人日本訪問看護財団　御提出資料（PDF形式：556KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2310_04medical/240426_01/medical01_2.pdf"
+        },
+        {
+          "name": "公益社団法人経済同友会 御提出資料（PDF形式：270KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2310_04medical/240426_01/medical01_3_1.pdf"
+        },
+        {
+          "name": "公益社団法人経済同友会 御提出資料（参考資料）（PDF形式：441KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2310_04medical/240426_01/medical01_3_2.pdf"
+        },
+        {
+          "name": "厚生労働省　御提出資料（PDF形式：1,264KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2310_04medical/240426_01/medical01_4.pdf"
+        },
+        {
+          "name": "厚生労働省　御提出資料（PDF形式：4,335KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2310_04medical/240426_01/medical02_1.pdf"
+        },
+        {
+          "name": "こども家庭庁　御提出資料（PDF形式：1,215KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2310_04medical/240426_01/medical02_2.pdf"
+        },
+        {
+          "name": "ブティックス株式会社　御提出資料（PDF形式：5,289KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2310_04medical/240426_01/medical02_3.pdf"
+        },
+        {
+          "name": "株式会社ストライク　御提出資料（PDF形式：1,637KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2310_04medical/240426_01/medical02_4.pdf"
+        },
+        {
+          "name": "全国社会福祉法人経営者協議会　御提出資料（PDF形式：914KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2310_04medical/240426_01/medical02_5.pdf"
+        },
+        {
+          "name": "社会福祉法人むべの里光栄　御提出資料（PDF形式：2,099KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2310_04medical/240426_01/medical02_6.pdf"
+        },
+        {
+          "name": "事務局　提出資料（PDF形式：172KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2310_04medical/240426_01/medical03.pdf"
+        },
+        {
+          "name": "事務局　提出資料（PDF形式：429KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2310_04medical/240426_01/medical_ref01.pdf"
+        }
+      ]
+    },
+    {
       "id": "moj-jizoku_hogoshi-20240425-009",
       "councilId": "moj-jizoku_hogoshi",
       "title": "第９回持続可能な保護司制度の確立に向けた検討会（令和６年４月２５日）",
@@ -84280,6 +83179,34 @@
       ]
     },
     {
+      "id": "cao-kisei_iryou_wg-20240328-009",
+      "councilId": "cao-kisei_iryou_wg",
+      "title": "第9回 規制改革推進会議 健康・医療・介護WG（令和5年度）",
+      "date": "2024/03/28",
+      "officialUrl": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2310_04medical/240328/medical09_agenda.html",
+      "category": "WORKING_GROUP",
+      "ministry": "CAO",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "議事録",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2310_04medical/240328/medical09_minutes.pdf"
+        },
+        {
+          "name": "厚生労働省　御提出資料（PDF形式：2,914KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2310_04medical/240328/medical01_1.pdf"
+        },
+        {
+          "name": "日本パブリックアフェアーズ協会　御提出資料（PDF形式：1,262KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2310_04medical/240328/medical01_2.pdf"
+        },
+        {
+          "name": "事務局　提出資料（PDF形式：265KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2310_04medical/240328/medical02.pdf"
+        }
+      ]
+    },
+    {
       "id": "cas-atarashii_sihon_107-20240326-025",
       "councilId": "cas-atarashii_sihon_107",
       "title": "第25回 新しい資本主義実現会議",
@@ -84914,6 +83841,58 @@
       ]
     },
     {
+      "id": "cao-kisei_iryou_wg-20240314-008",
+      "councilId": "cao-kisei_iryou_wg",
+      "title": "第8回 規制改革推進会議 健康・医療・介護WG（令和5年度）",
+      "date": "2024/03/14",
+      "officialUrl": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2310_04medical/240314/medical08_agenda.html",
+      "category": "WORKING_GROUP",
+      "ministry": "CAO",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "議事録",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2310_04medical/240314/medical08_minutes.pdf"
+        },
+        {
+          "name": "厚生労働省　御提出資料（PDF形式：6,733KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2310_04medical/240314/medical01.pdf"
+        },
+        {
+          "name": "１ （PDF形式:4,884KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2310_04medical/240314/medical01_1.pdf"
+        },
+        {
+          "name": "２ （PDF形式:3,106KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2310_04medical/240314/medical01_2.pdf"
+        },
+        {
+          "name": "さいたま市　御提出資料（PDF形式：78KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2310_04medical/240314/medical02_1.pdf"
+        },
+        {
+          "name": "さいたま市　御提出資料（PDF形式：1,014KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2310_04medical/240314/medical02_2.pdf"
+        },
+        {
+          "name": "全国がん患者団体連合会　御提出資料（PDF形式：1,654KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2310_04medical/240314/medical03.pdf"
+        },
+        {
+          "name": "日本ケアテック協会　御提出資料（PDF形式：1,042KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2310_04medical/240314/medical04.pdf"
+        },
+        {
+          "name": "全国老人保健施設協会　御提出資料（PDF形式：2,030KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2310_04medical/240314/medical05.pdf"
+        },
+        {
+          "name": "岡元専門委員・佐々木専門委員・時田専門委員　御提出資料（PDF形式：663KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2310_04medical/240314/medical_ref01.pdf"
+        }
+      ]
+    },
+    {
       "id": "cas-katsuryoku_kojyo_66-20240313-007",
       "councilId": "cas-katsuryoku_kojyo_66",
       "title": "第7回 中堅企業等の成長促進に関するワーキンググループ",
@@ -85299,6 +84278,66 @@
       "officialUrl": "https://www.fdma.go.jp/singi_kento/kento/post-136.html",
       "hasMinutes": false,
       "docCount": 3
+    },
+    {
+      "id": "cao-kisei_iryou_wg-20240307-007",
+      "councilId": "cao-kisei_iryou_wg",
+      "title": "第7回 規制改革推進会議 健康・医療・介護WG（令和5年度）",
+      "date": "2024/03/07",
+      "officialUrl": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2310_04medical/240307/medical07_agenda.html",
+      "category": "WORKING_GROUP",
+      "ministry": "CAO",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "議事録",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2310_04medical/240307/medical07_minutes.pdf"
+        },
+        {
+          "name": "厚生労働省・こども家庭庁・文部科学省・経済産業省　御提出資料（PDF形式：1,610KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2310_04medical/240307/medical01_1.pdf"
+        },
+        {
+          "name": "R&D Head Club　御提出資料（PDF形式：458KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2310_04medical/240307/medical01_2.pdf"
+        },
+        {
+          "name": "大阪大学 山本教授　御提出資料（PDF形式：2,050KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2310_04medical/240307/medical01_3.pdf"
+        },
+        {
+          "name": "日本医療ベンチャー協会　御提出資料（PDF形式：831KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2310_04medical/240307/medical01_4.pdf"
+        },
+        {
+          "name": "東京大学 上竹准教授　御提出資料（PDF形式：1,255KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2310_04medical/240307/medical01_5.pdf"
+        },
+        {
+          "name": "事務局　提出資料（PDF形式：398KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2310_04medical/240307/medical02.pdf"
+        },
+        {
+          "name": "事務局　提出資料（PDF形式：328KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2310_04medical/240307/medical_ref01.pdf"
+        },
+        {
+          "name": "事務局　提出資料（PDF形式：337KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2310_04medical/240307/medical_ref02.pdf"
+        },
+        {
+          "name": "事務局　提出資料（PDF形式：179KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2310_04medical/240307/medical_ref03.pdf"
+        },
+        {
+          "name": "事務局　提出資料（PDF形式：107KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2310_04medical/240307/medical_ref04.pdf"
+        },
+        {
+          "name": "事務局　提出資料（PDF形式：299KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2310_04medical/240307/medical_ref05.pdf"
+        }
+      ]
     },
     {
       "id": "mof-zaiseiseido_bunkakai-20240305-s31",
@@ -87764,6 +86803,50 @@
       ]
     },
     {
+      "id": "cao-kisei_iryou_wg-20231225-006",
+      "councilId": "cao-kisei_iryou_wg",
+      "title": "第6回 規制改革推進会議 健康・医療・介護WG（令和5年度）",
+      "date": "2023/12/25",
+      "officialUrl": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2310_04medical/231225/medical06_agenda.html",
+      "category": "WORKING_GROUP",
+      "ministry": "CAO",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "議事録",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2310_04medical/231225/medical06_minutes.pdf"
+        },
+        {
+          "name": "厚生労働省　御提出資料（PDF形式：1,945KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2310_04medical/231225/medical01.pdf"
+        },
+        {
+          "name": "日本医療ベンチャー協会　御提出資料（PDF形式：3,858KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2310_04medical/231225/medical02.pdf"
+        },
+        {
+          "name": "日本デジタルヘルス・アライアンス　御提出資料（PDF形式：1,725KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2310_04medical/231225/medical03.pdf"
+        },
+        {
+          "name": "厚生労働省　御提出資料（PDF形式：1,057KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2310_04medical/231225/medical_ref01.pdf"
+        },
+        {
+          "name": "厚生労働省　御提出資料（PDF形式：158KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2310_04medical/231225/medical_ref02.pdf"
+        },
+        {
+          "name": "厚生労働省　御提出資料（PDF形式：466KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2310_04medical/231225/medical_ref03.pdf"
+        },
+        {
+          "name": "桜井専門委員　御提出資料（PDF形式：378KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2310_04medical/231225/medical_ref04.pdf"
+        }
+      ]
+    },
+    {
       "id": "cfa-kodomo_suishin-20231222-002",
       "councilId": "cfa-kodomo_suishin",
       "title": "第2回 こども政策推進会議",
@@ -88379,6 +87462,50 @@
       ]
     },
     {
+      "id": "cao-kisei_iryou_wg-20231221-005",
+      "councilId": "cao-kisei_iryou_wg",
+      "title": "第5回 規制改革推進会議 健康・医療・介護WG（令和5年度）",
+      "date": "2023/12/21",
+      "officialUrl": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2310_04medical/231221/medical05_agenda.html",
+      "category": "WORKING_GROUP",
+      "ministry": "CAO",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "議事録",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2310_04medical/231221/medical05_minutes.pdf"
+        },
+        {
+          "name": "厚生労働省　御提出資料（PDF形式：740KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2310_04medical/231221/medical01_01.pdf"
+        },
+        {
+          "name": "厚生労働省　御提出資料（PDF形式：382KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2310_04medical/231221/medical01_02.pdf"
+        },
+        {
+          "name": "厚生労働省　御提出資料（PDF形式：513KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2310_04medical/231221/medical01_03.pdf"
+        },
+        {
+          "name": "厚生労働省　御提出資料（PDF形式：520KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2310_04medical/231221/medical01_04.pdf"
+        },
+        {
+          "name": "厚生労働省　御提出資料（PDF形式：712KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2310_04medical/231221/medical01_05.pdf"
+        },
+        {
+          "name": "事務局　御提出資料（PDF形式：423KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2310_04medical/231221/medical_ref01.pdf"
+        },
+        {
+          "name": "津川委員　御提出資料（PDF形式：675KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2310_04medical/231221/medical_ref02.pdf"
+        }
+      ]
+    },
+    {
       "id": "cas-digital_gyozaikaikaku_71-20231220-003",
       "councilId": "cas-digital_gyozaikaikaku_71",
       "councilName": "デジタル行財政改革会議",
@@ -88656,6 +87783,78 @@
       "docCount": 3
     },
     {
+      "id": "cao-kisei_iryou_wg-20231218-004",
+      "councilId": "cao-kisei_iryou_wg",
+      "title": "第4回 規制改革推進会議 健康・医療・介護WG（令和5年度）",
+      "date": "2023/12/18",
+      "officialUrl": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2310_04medical/231218/medical04_agenda.html",
+      "category": "WORKING_GROUP",
+      "ministry": "CAO",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "議事録",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2310_04medical/231218/medical04_minutes.pdf"
+        },
+        {
+          "name": "厚生労働省　御提出資料（PDF形式：464KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2310_04medical/231218/medical01_01_01.pdf"
+        },
+        {
+          "name": "石川県　御提出資料（PDF形式：150KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2310_04medical/231218/medical01_01_02.pdf"
+        },
+        {
+          "name": "石川県　御提出資料（PDF形式：818KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2310_04medical/231218/medical01_01_03.pdf"
+        },
+        {
+          "name": "千葉県　御提出資料（PDF形式：86KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2310_04medical/231218/medical01_01_04.pdf"
+        },
+        {
+          "name": "厚生労働省　御提出資料（PDF形式：1,311KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2310_04medical/231218/medical01_02.pdf"
+        },
+        {
+          "name": "厚生労働省　御提出資料（PDF形式：709KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2310_04medical/231218/medical02.pdf"
+        },
+        {
+          "name": "事務局　提出資料（PDF形式：190KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2310_04medical/231218/medical03.pdf"
+        },
+        {
+          "name": "事務局　提出資料（PDF形式：270KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2310_04medical/231218/medical_ref01.pdf"
+        },
+        {
+          "name": "慶應義塾大学　岸本特任教授　御提出資料（PDF形式：370KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2310_04medical/231218/medical_ref02_01.pdf"
+        },
+        {
+          "name": "慶應義塾大学　岸本特任教授　御提出資料（PDF形式：8,364KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2310_04medical/231218/medical_ref02_02.pdf"
+        },
+        {
+          "name": "１ （PDF形式:4,737KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2310_04medical/231218/medical_ref02_02_1.pdf"
+        },
+        {
+          "name": "２ （PDF形式:3,773KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2310_04medical/231218/medical_ref02_02_2.pdf"
+        },
+        {
+          "name": "事務局　提出資料（PDF形式：425KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2310_04medical/231218/medical_ref03.pdf"
+        },
+        {
+          "name": "事務局　提出資料（PDF形式：2,112KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2310_04medical/231218/medical_ref04.pdf"
+        }
+      ]
+    },
+    {
       "id": "cas-gx_jikkou_kaigi_32-20231215-010",
       "councilId": "cas-gx_jikkou_kaigi_32",
       "title": "第10回 ＧＸ実行会議",
@@ -88831,6 +88030,66 @@
         {
           "name": "資料４　起業家の負担軽減に向けた定款認証の見直しに関する取りまとめたたき台（案）",
           "url": "https://www.moj.go.jp/content/001408068.pdf"
+        }
+      ]
+    },
+    {
+      "id": "cao-kisei_iryou_wg-20231211-003",
+      "councilId": "cao-kisei_iryou_wg",
+      "title": "第3回 規制改革推進会議 健康・医療・介護WG（令和5年度）",
+      "date": "2023/12/11",
+      "officialUrl": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2310_04medical/231211/medical03_agenda.html",
+      "category": "WORKING_GROUP",
+      "ministry": "CAO",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "議事録",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2310_04medical/231211/medical03_minutes.pdf"
+        },
+        {
+          "name": "厚生労働省　御提出資料（PDF形式：2,067KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2310_04medical/231211/medical01_01.pdf"
+        },
+        {
+          "name": "日本OTC医薬品協会　御提出資料（PDF形式：4,425KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2310_04medical/231211/medical01_02.pdf"
+        },
+        {
+          "name": "日本パブリックアフェアーズ協会　御提出資料（PDF形式：2,382KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2310_04medical/231211/medical01_03.pdf"
+        },
+        {
+          "name": "日本パブリックアフェアーズ協会　御提出資料（PDF形式：1.259KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2310_04medical/231211/medical01_03_01.pdf"
+        },
+        {
+          "name": "日本パブリックアフェアーズ協会　御提出資料（PDF形式：1,403KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2310_04medical/231211/medical01_03_02.pdf"
+        },
+        {
+          "name": "厚生労働省　御提出資料（PDF形式：750KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2310_04medical/231211/medical02.pdf"
+        },
+        {
+          "name": "厚生労働省　御提出資料（PDF形式：4,015KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2310_04medical/231211/medical03.pdf"
+        },
+        {
+          "name": "厚生労働省　御提出資料（PDF形式：1,374KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2310_04medical/231211/medical04.pdf"
+        },
+        {
+          "name": "事務局　提出資料（PDF形式：338KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2310_04medical/231211/medical_ref01.pdf"
+        },
+        {
+          "name": "事務局　提出資料（PDF形式：313KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2310_04medical/231211/medical_ref02.pdf"
+        },
+        {
+          "name": "事務局　提出資料（PDF形式：256KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2310_04medical/231211/medical_ref03.pdf"
         }
       ]
     },
@@ -89684,6 +88943,74 @@
       "docCount": 5
     },
     {
+      "id": "cao-kisei_iryou_wg-20231120-002",
+      "councilId": "cao-kisei_iryou_wg",
+      "title": "第2回 規制改革推進会議 健康・医療・介護WG（令和5年度）",
+      "date": "2023/11/20",
+      "officialUrl": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2310_04medical/231120/medical02_agenda.html",
+      "category": "WORKING_GROUP",
+      "ministry": "CAO",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "議事録",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2310_04medical/231120/medical02_minutes.pdf"
+        },
+        {
+          "name": "日本デイサービス協会　御提出資料（PDF形式：1,465KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2310_04medical/231120/medical01_01_01.pdf"
+        },
+        {
+          "name": "能美市　御提出資料（PDF形式：3,008KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2310_04medical/231120/medical01_01_02.pdf"
+        },
+        {
+          "name": "厚生労働省　御提出資料（PDF形式：867KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2310_04medical/231120/medical01_01_03.pdf"
+        },
+        {
+          "name": "大石専門委員・佐々木専門委員　御提出資料（PDF形式：220KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2310_04medical/231120/medical01_01_04.pdf"
+        },
+        {
+          "name": "日本遠隔医療学会　御提出資料（PDF形式：2,292KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2310_04medical/231120/medical01_02_01.pdf"
+        },
+        {
+          "name": "慶應義塾大学　岸本教授　御提出資料（PDF形式：3,408KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2310_04medical/231120/medical01_02_02.pdf"
+        },
+        {
+          "name": "全国「精神病」者集団　御提出資料（PDF形式：421KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2310_04medical/231120/medical01_02_03.pdf"
+        },
+        {
+          "name": "日本医療ベンチャー協会　御提出資料（PDF形式：3,021KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2310_04medical/231120/medical01_02_04.pdf"
+        },
+        {
+          "name": "津川委員　御提出資料（PDF形式：2,286KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2310_04medical/231120/medical01_02_05.pdf"
+        },
+        {
+          "name": "厚生労働省　御提出資料（PDF形式：3,220KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2310_04medical/231120/medical01_02_06.pdf"
+        },
+        {
+          "name": "厚生労働省　御提出資料（PDF形式：3,154KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2310_04medical/231120/medical02.pdf"
+        },
+        {
+          "name": "厚生労働省　御提出資料（PDF形式：3,245KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2310_04medical/231120/medical03.pdf"
+        },
+        {
+          "name": "大石専門委員　御提出資料（PDF形式：1,878KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2310_04medical/231120/medical_ref.pdf"
+        }
+      ]
+    },
+    {
       "id": "cas-gx_senmonka_wg-20231116-004",
       "councilId": "cas-gx_senmonka_wg",
       "title": "第4回 ＧＸ実行会議 専門家ワーキンググループ",
@@ -89696,6 +89023,98 @@
         {
           "name": "第４回 令和５年１１月１６日 議事次第（PDF／51KB） 配布資料（PDF／12,226KB） 議事概要（PDF／682KB）",
           "url": "https://www.cas.go.jp/jp/seisaku/gx_jikkou_kaigi/senmonka_wg/dai4/gijisidai.pdf"
+        }
+      ]
+    },
+    {
+      "id": "cao-kisei_iryou_wg-20231116-001",
+      "councilId": "cao-kisei_iryou_wg",
+      "title": "第1回 規制改革推進会議 健康・医療・介護WG（令和5年度）",
+      "date": "2023/11/16",
+      "officialUrl": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2310_04medical/231116/medical01_agenda.html",
+      "category": "WORKING_GROUP",
+      "ministry": "CAO",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "議事録",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2310_04medical/231116/medical01_minutes.pdf"
+        },
+        {
+          "name": "厚生労働省　御提出資料（PDF形式：1,867KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2310_04medical/231116/medical01_01.pdf"
+        },
+        {
+          "name": "一般社団法人 日本フランチャイズチェーン協会　御提出資料（PDF形式：1,704KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2310_04medical/231116/medical01_02.pdf"
+        },
+        {
+          "name": "厚生労働省　御提出資料（PDF形式：370KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2310_04medical/231116/medical02_01.pdf"
+        },
+        {
+          "name": "一般社団法人 新経済連盟　御提出資料（PDF形式：844KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2310_04medical/231116/medical02_02.pdf"
+        },
+        {
+          "name": "厚生労働省　御提出資料（PDF形式：529KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2310_04medical/231116/medical03_01.pdf"
+        },
+        {
+          "name": "一般社団法人 新経済連盟　御提出資料（PDF形式：1,038KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2310_04medical/231116/medical03_02.pdf"
+        },
+        {
+          "name": "厚生労働省　御提出資料（PDF形式：1,076KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2310_04medical/231116/medical04_01.pdf"
+        },
+        {
+          "name": "国立精神・神経医療研究センター 松本部長　御提出資料（PDF形式：729KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2310_04medical/231116/medical04_02.pdf"
+        },
+        {
+          "name": "公益社団法人 日本駆け込み寺　御提出資料（PDF形式：1,291KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2310_04medical/231116/medical04_03.pdf"
+        },
+        {
+          "name": "特定非営利活動法人 Bondプロジェクト　御提出資料（PDF形式：1,982KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2310_04medical/231116/medical04_04.pdf"
+        },
+        {
+          "name": "一般社団法人 新経済連盟　御提出資料（PDF形式：1,722KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2310_04medical/231116/medical04_05.pdf"
+        },
+        {
+          "name": "国立精神・神経医療研究センター 嶋根室長　御提出資料（PDF形式：1,527KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2310_04medical/231116/medical04_06.pdf"
+        },
+        {
+          "name": "事務局　提出資料（PDF形式：282KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2310_04medical/231116/medical05.pdf"
+        },
+        {
+          "name": "大石専門委員　御提出資料（PDF形式：301KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2310_04medical/231116/medical_ref01.pdf"
+        },
+        {
+          "name": "事務局　提出資料（PDF形式：234KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2310_04medical/231116/medical_ref02.pdf"
+        },
+        {
+          "name": "事務局　提出資料（PDF形式：611KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2310_04medical/231116/medical_ref03.pdf"
+        },
+        {
+          "name": "事務局　提出資料（PDF形式：1,269KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2310_04medical/231116/medical_ref04.pdf"
+        },
+        {
+          "name": "事務局　提出資料（PDF形式：199KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2310_04medical/231116/medical_ref05.pdf"
+        },
+        {
+          "name": "事務局　提出資料（PDF形式：2,684KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2310_04medical/231116/medical_ref06.pdf"
         }
       ]
     },
@@ -188408,26 +187827,6 @@
         "top_page_pdf_count": 514
       }
     },
-    "cao-kisei_iryou_wg_110": {
-      "rule_id": "rule-cao-kisei_iryou_wg_110",
-      "created_at": "2026-08-07 08:56:44",
-      "generator": "AI_Rule_Synthesis_Agent_v3",
-      "ministryQuirk": "内閣府型: ◯kai/◯kai.html または kaisai.html の個別の回ネスト",
-      "rules": {
-        "encoding": "utf-8",
-        "deep_crawl_enabled": true,
-        "subpage_discovery_pattern": "href=[\"\\']([^\"\\']*(?:dai\\d+|\\d+kai|kaisai|gijisidai)[^\"\\'#]*)[\"\\']",
-        "date_regex": "(?:令和[0-9０-９一-九]+年[0-9０-９一-十二]+月[0-9０-９一-三十一]+日|20[2-9][0-9]年[0-1]?[0-9]月[0-3]?[0-9]日)",
-        "prefer_subpage_date": true,
-        "extract_subpage_materials_primary": true,
-        "pdf_selector": "href=[\"\\']([^\"\\']+\\.pdf)[\"\\']",
-        "private_doc_keyword": "非公開",
-        "detect_private_materials": true,
-        "extract_all_materials": true,
-        "resolve_absolute_urls": true,
-        "top_page_pdf_count": 514
-      }
-    },
     "cao-kisei_hatarakikata_wg_111": {
       "rule_id": "rule-cao-kisei_hatarakikata_wg_111",
       "created_at": "2026-08-07 08:56:44",
@@ -190244,6 +189643,15 @@
     "mic-chihou_seido_29": {
       "rule_id": "rule-mic-chihou_seido_29",
       "subpage_discovery_pattern": "https://www\\.soumu\\.go\\.jp/(main_sosiki|menu_sosiki)/singi/.*\\.html",
+      "title_selector": "h1, h2, .title",
+      "date_regex": "(令和\\d+年\\d+月\\d+日|平成\\d+年\\d+月\\d+日|\\d{4}年\\d{1,2}月\\d{1,2}日)",
+      "pdf_selector": "a[href*='.pdf']",
+      "deep_crawl_enabled": true,
+      "manualLock": true
+    },
+    "cao-kisei_iryou_wg": {
+      "rule_id": "rule-cao-kisei_iryou_wg",
+      "subpage_discovery_pattern": "https://www8\\.cao\\.go\\.jp/kisei-kaikaku/kisei/meeting/wg/.*medical.*\\.html",
       "title_selector": "h1, h2, .title",
       "date_regex": "(令和\\d+年\\d+月\\d+日|平成\\d+年\\d+月\\d+日|\\d{4}年\\d{1,2}月\\d{1,2}日)",
       "pdf_selector": "a[href*='.pdf']",
