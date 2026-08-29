@@ -946,25 +946,8 @@ document.addEventListener('DOMContentLoaded', async () => {
         return db.localeCompare(da);
       });
 
-      // Filter meetings within council if date range filter is active
-      let filteredMeetings = councilMeetings;
-      if (state.dateRangeFilter !== 'ALL') {
-        const refDate = getReferenceDate();
-        filteredMeetings = councilMeetings.filter(m => {
-          if (!m.date || m.date === '-') return false;
-          const meetingDate = new Date(m.date.replace(/-/g, '/'));
-          if (isNaN(meetingDate.getTime())) return false;
-          const diffDays = (refDate - meetingDate) / (1000 * 60 * 60 * 24);
-          if (state.dateRangeFilter === '7D' && (diffDays < 0 || diffDays > 7)) return false;
-          if (state.dateRangeFilter === '30D' && (diffDays < 0 || diffDays > 30)) return false;
-          if (state.dateRangeFilter === '90D' && (diffDays < 0 || diffDays > 90)) return false;
-          if (state.dateRangeFilter === 'PAST_YEAR' && (diffDays < 0 || diffDays > 365)) return false;
-          if (state.dateRangeFilter === 'YEAR' && meetingDate.getFullYear() !== refDate.getFullYear()) return false;
-          return true;
-        });
-      }
-
-      const meetingsHTML = filteredMeetings.length > 0 ? filteredMeetings.map(m => `
+      // 会議体カードを展開した際は、その会議体のすべての回の資料を表示（期間絞り込みは会議体リストのフィルタのみに適用）
+      const meetingsHTML = councilMeetings.length > 0 ? councilMeetings.map(m => `
         <div class="meeting-row">
           <div class="meeting-row-header">
             <span class="meeting-row-title">
@@ -981,7 +964,7 @@ document.addEventListener('DOMContentLoaded', async () => {
           ${(state.enableAiSummary && m.summary) ? `<div class="meeting-row-summary">${escapeHtml(m.summary)}</div>` : ''}
           ${renderMaterialsAccordionHTML(m.materials, m.id, m.officialUrl)}
         </div>
-      `).join('') : `<div class="meeting-row-no-data">この期間内の開催記録はありません</div>`;
+      `).join('') : `<div class="meeting-row-no-data">開催記録はありません</div>`;
 
       return `
         <div class="council-accordion-card ${isExpanded ? 'expanded' : ''}" id="council-card-${c.id}">
