@@ -1,5 +1,5 @@
 import http.server
-import socketserver
+from http.server import ThreadingHTTPServer, SimpleHTTPRequestHandler
 import json
 import os
 import sys
@@ -51,7 +51,7 @@ def _discovery_worker():
         discovery_state["error"] = str(e)
         discovery_state["running"] = False
 
-class CustomHandler(http.server.SimpleHTTPRequestHandler):
+class CustomHandler(SimpleHTTPRequestHandler):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, directory=BASE_DIR, **kwargs)
 
@@ -59,10 +59,29 @@ class CustomHandler(http.server.SimpleHTTPRequestHandler):
         self.send_header('Cache-Control', 'no-cache, no-store, must-revalidate')
         self.send_header('Pragma', 'no-cache')
         self.send_header('Expires', '0')
+        self.send_header('Access-Control-Allow-Origin', '*')
+        self.send_header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS')
+        self.send_header('Access-Control-Allow-Headers', 'Content-Type')
         super().end_headers()
 
+    def do_OPTIONS(self):
+        self.send_response(200)
+        self.end_headers()
+
     def do_GET(self):
-        if self.path == "/api/discovery-keywords":
+        parsed_url = urllib.parse.urlparse(self.path)
+        path = parsed_url.path
+
+        if path in ("/docs/data.json", "/data.json"):
+            self.send_response(200)
+            self.send_header('Content-Type', 'application/json; charset=utf-8')
+            self.end_headers()
+            if os.path.exists(DATA_JSON_FILE):
+                with open(DATA_JSON_FILE, "r", encoding="utf-8") as f:
+                    self.wfile.write(f.read().encode('utf-8'))
+            else:
+                self.wfile.write(json.dumps({}).encode('utf-8'))
+        elif path == "/api/discovery-keywords":
             self.send_response(200)
             self.send_header('Content-Type', 'application/json; charset=utf-8')
             self.end_headers()
@@ -72,7 +91,7 @@ class CustomHandler(http.server.SimpleHTTPRequestHandler):
                     self.wfile.write(json.dumps(data.get("discoveryKeywords", {})).encode('utf-8'))
             else:
                 self.wfile.write(json.dumps({}).encode('utf-8'))
-        elif self.path == "/api/discovered-councils":
+        elif path == "/api/discovered-councils":
             self.send_response(200)
             self.send_header('Content-Type', 'application/json; charset=utf-8')
             self.end_headers()
@@ -106,7 +125,7 @@ class CustomHandler(http.server.SimpleHTTPRequestHandler):
                 self.wfile.write(json.dumps({"councils": filtered}).encode('utf-8'))
             else:
                 self.wfile.write(json.dumps({"councils": []}).encode('utf-8'))
-        elif self.path == "/api/verification-report":
+        elif path == "/api/verification-report":
             self.send_response(200)
             self.send_header('Content-Type', 'application/json; charset=utf-8')
             self.end_headers()
@@ -116,7 +135,7 @@ class CustomHandler(http.server.SimpleHTTPRequestHandler):
                     self.wfile.write(f.read().encode('utf-8'))
             else:
                 self.wfile.write(json.dumps({}).encode('utf-8'))
-        elif self.path == "/api/rejected-councils":
+        elif path == "/api/rejected-councils":
             self.send_response(200)
             self.send_header('Content-Type', 'application/json; charset=utf-8')
             self.end_headers()
@@ -126,7 +145,7 @@ class CustomHandler(http.server.SimpleHTTPRequestHandler):
                     self.wfile.write(f.read().encode('utf-8'))
             else:
                 self.wfile.write(json.dumps([]).encode('utf-8'))
-        elif self.path == "/api/get-crawler-config":
+        elif path == "/api/get-crawler-config":
             self.send_response(200)
             self.send_header('Content-Type', 'application/json; charset=utf-8')
             self.end_headers()
@@ -136,12 +155,12 @@ class CustomHandler(http.server.SimpleHTTPRequestHandler):
                     self.wfile.write(json.dumps(data.get("crawlerConfig", {"llm_mode": True})).encode('utf-8'))
             else:
                 self.wfile.write(json.dumps({"llm_mode": True}).encode('utf-8'))
-        elif self.path.startswith("/api/discovery-status"):
+        elif path == "/api/discovery-status":
             self.send_response(200)
             self.send_header('Content-Type', 'application/json; charset=utf-8')
             self.end_headers()
             # 返すログのオフセット処理
-            query = urllib.parse.urlparse(self.path).query
+            query = parsed_url.query
             params = urllib.parse.parse_qs(query)
             since = int(params.get("since", [0])[0])
             
@@ -164,7 +183,10 @@ class CustomHandler(http.server.SimpleHTTPRequestHandler):
             super().do_GET()
 
     def do_POST(self):
-        if self.path in ("/api/save-ministry-updates", "/api/save-verification-report"):
+        parsed_url = urllib.parse.urlparse(self.path)
+        path = parsed_url.path
+
+        if path in ("/api/save-ministry-updates", "/api/save-verification-report"):
             content_length = int(self.headers.get('Content-Length', 0))
             post_data = self.rfile.read(content_length)
             try:
@@ -197,7 +219,7 @@ class CustomHandler(http.server.SimpleHTTPRequestHandler):
                 self.end_headers()
                 self.wfile.write(json.dumps({"status": "error", "message": str(e)}).encode('utf-8'))
 
-        elif self.path == "/api/save-discovery-keywords":
+        elif path == "/api/save-discovery-keywords":
             content_length = int(self.headers.get('Content-Length', 0))
             post_data = self.rfile.read(content_length)
             try:
@@ -218,7 +240,7 @@ class CustomHandler(http.server.SimpleHTTPRequestHandler):
                 self.end_headers()
                 self.wfile.write(json.dumps({"status": "error", "message": str(e)}).encode('utf-8'))
 
-        elif self.path == "/api/save-crawler-config":
+        elif path == "/api/save-crawler-config":
             content_length = int(self.headers.get('Content-Length', 0))
             post_data = self.rfile.read(content_length)
             try:
@@ -239,7 +261,7 @@ class CustomHandler(http.server.SimpleHTTPRequestHandler):
                 self.end_headers()
                 self.wfile.write(json.dumps({"status": "error", "message": str(e)}).encode('utf-8'))
 
-        elif self.path == "/api/save-rejected-councils":
+        elif path == "/api/save-rejected-councils":
             content_length = int(self.headers.get('Content-Length', 0))
             post_data = self.rfile.read(content_length)
             try:
@@ -257,7 +279,7 @@ class CustomHandler(http.server.SimpleHTTPRequestHandler):
                 self.end_headers()
                 self.wfile.write(json.dumps({"status": "error", "message": str(e)}).encode('utf-8'))
 
-        elif self.path == "/api/reject-council":
+        elif path == "/api/reject-council":
             content_length = int(self.headers.get('Content-Length', 0))
             post_data = self.rfile.read(content_length)
             try:
@@ -317,7 +339,7 @@ class CustomHandler(http.server.SimpleHTTPRequestHandler):
                 self.end_headers()
                 self.wfile.write(json.dumps({"status": "error", "message": str(e)}).encode('utf-8'))
 
-        elif self.path == "/api/revert-rejected-council":
+        elif path == "/api/revert-rejected-council":
             content_length = int(self.headers.get('Content-Length', 0))
             post_data = self.rfile.read(content_length)
             try:
@@ -370,7 +392,7 @@ class CustomHandler(http.server.SimpleHTTPRequestHandler):
                 self.end_headers()
                 self.wfile.write(json.dumps({"status": "error", "message": str(e)}).encode('utf-8'))
 
-        elif self.path == "/api/run-discovery":
+        elif path == "/api/run-discovery":
             global discovery_state
             if discovery_state["running"]:
                 self.send_response(200)
@@ -399,7 +421,7 @@ class CustomHandler(http.server.SimpleHTTPRequestHandler):
             self.send_header('Content-Type', 'application/json; charset=utf-8')
             self.end_headers()
             self.wfile.write(json.dumps({"status": "started", "message": "Discovery started in background"}).encode('utf-8'))
-        elif self.path == "/api/toggle-manual-lock":
+        elif path == "/api/toggle-manual-lock":
             content_length = int(self.headers.get('Content-Length', 0))
             post_data = self.rfile.read(content_length)
             try:
@@ -451,8 +473,12 @@ class CustomHandler(http.server.SimpleHTTPRequestHandler):
 if __name__ == "__main__":
     print(f"Starting PM-Hub Local Admin Server at http://localhost:{PORT}")
     print(f"Access Admin Dashboard at: http://localhost:{PORT}/admin/admin_dashboard.html")
-    with socketserver.TCPServer(("", PORT), CustomHandler) as httpd:
+    server_address = ("", PORT)
+    ThreadingHTTPServer.allow_reuse_address = True
+    with ThreadingHTTPServer(server_address, CustomHandler) as httpd:
         try:
             httpd.serve_forever()
+        except KeyboardInterrupt:
+            print("\nServer stopped.")
         except KeyboardInterrupt:
             print("\nServer stopped.")
