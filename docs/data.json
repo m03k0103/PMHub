@@ -15474,11 +15474,11 @@
       "id": "cas-keizai_anzen_hosyo",
       "name": "経済安全保障法制に関する有識者会議",
       "ministry": "CAS",
-      "category": "STUDY",
-      "officialUrl": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/index.html",
+      "category": "PANEL",
+      "officialUrl": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/4index.html",
       "manualLock": true,
-      "description": "経済安全保障分野における重要技術の流出防止や法的枠組みを検討する有識者会議。",
-      "pastYearCount": 6,
+      "description": "内閣官房における経済安全保障法制に関する有識者会議（令和４年度～）。",
+      "pastYearCount": 17,
       "status": "approved"
     },
     {
@@ -21585,6 +21585,94 @@
       "manualLock": true
     },
     {
+      "id": "cas-keizai_anzen_hosyo-20260724-017",
+      "councilId": "cas-keizai_anzen_hosyo",
+      "title": "第17回 経済安全保障法制に関する有識者会議",
+      "date": "2026/07/24",
+      "officialUrl": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/4index.html",
+      "category": "PANEL",
+      "ministry": "CAS",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "議事次第",
+          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/r8_dai17/gijishidai.pdf"
+        },
+        {
+          "name": "第５回サプライチェーン強靱化に関する検討会合　議事のポイント・検討会合資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/r8_dai17/shiryo1-1.pdf"
+        },
+        {
+          "name": "第５回サプライチェーン強靱化に関する検討会合　議事要旨",
+          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/r8_dai17/shiryo1-2.pdf"
+        },
+        {
+          "name": "第１回経済安保海外事業促進制度に関する検討会合　議事のポイント・検討会合資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/r8_dai17/shiryo1-3.pdf"
+        },
+        {
+          "name": "第１回経済安保海外事業促進制度に関する検討会合　議事要旨",
+          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/r8_dai17/shiryo1-4.pdf"
+        },
+        {
+          "name": "第１回総合的な調査研究に関する検討会合　議事のポイント・検討会合資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/r8_dai17/shiryo1-5.pdf"
+        },
+        {
+          "name": "第１回総合的な調査研究に関する検討会合　議事要旨",
+          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/r8_dai17/shiryo1-6.pdf"
+        },
+        {
+          "name": "第７回官民技術協力に関する検討会合　議事のポイント・検討会合資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/r8_dai17/shiryo1-7.pdf"
+        },
+        {
+          "name": "第７回官民技術協力に関する検討会合　議事要旨",
+          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/r8_dai17/shiryo1-8.pdf"
+        },
+        {
+          "name": "第３回基幹インフラに関する検討会合　議事のポイント・検討会合資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/r8_dai17/shiryo1-9.pdf"
+        },
+        {
+          "name": "第３回基幹インフラに関する検討会合　議事要旨",
+          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/r8_dai17/shiryo1-10.pdf"
+        },
+        {
+          "name": "骨太の方針・日本成長戦略の概要",
+          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/r8_dai17/shiryo2.pdf"
+        },
+        {
+          "name": "経済施策を一体的に講ずることによる安全保障の確保の推進に関する基本的な方針の変更（案）",
+          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/r8_dai17/shiryo3.pdf"
+        },
+        {
+          "name": "特定重要物資の安定的な供給の確保に関する基本指針の変更（案）",
+          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/r8_dai17/shiryo4.pdf"
+        },
+        {
+          "name": "特定海外事業の促進に関する基本指針（案）",
+          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/r8_dai17/shiryo5.pdf"
+        },
+        {
+          "name": "安全保障の確保に関する経済施策の総合的かつ効果的な推進のために必要な調査及び研究に関する基本指針（案）",
+          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/r8_dai17/shiryo6.pdf"
+        },
+        {
+          "name": "特定重要技術の研究開発の促進及びその成果の適切な活用に関する基本指針の変更（案）",
+          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/r8_dai17/shiryo7.pdf"
+        },
+        {
+          "name": "特定妨害行為の防止による特定社会基盤役務の安定的な提供の確保に関する基本指針の変更（案）",
+          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/r8_dai17/shiryo8.pdf"
+        },
+        {
+          "name": "議事要旨",
+          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/r8_dai17/gijiyoshi.pdf"
+        }
+      ]
+    },
+    {
       "id": "cas-kokuminkaigi_jitsumu-20260722-020",
       "councilId": "cas-kokuminkaigi_jitsumu",
       "title": "第20回 社会保障国民会議　給付付き税額控除等に関する実務者会議",
@@ -26521,6 +26609,30 @@
       "officialUrl": "https://www.cas.go.jp/jp/seisaku/kagayakujosei/dai16/gijisidai.html",
       "hasMinutes": false,
       "docCount": 3
+    },
+    {
+      "id": "cas-keizai_anzen_hosyo-20260625-016",
+      "councilId": "cas-keizai_anzen_hosyo",
+      "title": "第16回 経済安全保障法制に関する有識者会議",
+      "date": "2026/06/25",
+      "officialUrl": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/4index.html",
+      "category": "PANEL",
+      "ministry": "CAS",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "議事次第",
+          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/r8_dai16/gijishidai.pdf"
+        },
+        {
+          "name": "経済安全保障推進法等改正法案の審議について",
+          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/r8_dai16/shiryo1.pdf"
+        },
+        {
+          "name": "議事要旨",
+          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/r8_dai16/gijiyoshi.pdf"
+        }
+      ]
     },
     {
       "id": "cas-kokuminkaigi_jitsumu-20260624-016",
@@ -40241,6 +40353,42 @@
       "docCount": 1
     },
     {
+      "id": "cas-keizai_anzen_hosyo-20260130-015",
+      "councilId": "cas-keizai_anzen_hosyo",
+      "title": "第15回 経済安全保障法制に関する有識者会議",
+      "date": "2026/01/30",
+      "officialUrl": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/4index.html",
+      "category": "PANEL",
+      "ministry": "CAS",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "議事次第",
+          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/r8_dai15/gijishidai.pdf"
+        },
+        {
+          "name": "第５・６回分野別検討会合（官民技術協力）議事のポイント",
+          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/r8_dai15/shiryo1-1.pdf"
+        },
+        {
+          "name": "第５・６回分野別検討会合（官民技術協力）議事要旨",
+          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/r8_dai15/shiryo1-2.pdf"
+        },
+        {
+          "name": "第５・６回分野別検討会合（官民技術協力）資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/r8_dai15/shiryo1-3.pdf"
+        },
+        {
+          "name": "経済安全保障の更なる推進に向けた提言",
+          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/r8_dai15/teigen.pdf"
+        },
+        {
+          "name": "議事要旨",
+          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/r8_dai15/gijiyoshi.pdf"
+        }
+      ]
+    },
+    {
       "id": "cas-gskaigi_11-20260128-002",
       "councilId": "cas-gskaigi_11",
       "councilName": "行政改革推進会議",
@@ -41746,6 +41894,54 @@
         {
           "name": "第12回会合 令和８年１月16日 議事次第・資料 議事録",
           "url": "https://www.cas.go.jp/jp/seisakukaigi/jinsintorihiki/dai12/gijishidai.pdf"
+        }
+      ]
+    },
+    {
+      "id": "cas-keizai_anzen_hosyo-20260116-014",
+      "councilId": "cas-keizai_anzen_hosyo",
+      "title": "第14回 経済安全保障法制に関する有識者会議",
+      "date": "2026/01/16",
+      "officialUrl": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/4index.html",
+      "category": "PANEL",
+      "ministry": "CAS",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "議事次第",
+          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/r8_dai14/shidai.pdf"
+        },
+        {
+          "name": "提言骨子の概要",
+          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/r8_dai14/teigenkosshi_gaiyo.pdf"
+        },
+        {
+          "name": "サプライチェーン強靱化",
+          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/r8_dai14/teigenkosshi_1.pdf"
+        },
+        {
+          "name": "基幹インフラ役務の安定提供",
+          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/r8_dai14/teigenkosshi_2.pdf"
+        },
+        {
+          "name": "海外事業の展開支援",
+          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/r8_dai14/teigenkosshi_3.pdf"
+        },
+        {
+          "name": "特定重要技術の研究開発等",
+          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/r8_dai14/teigenkosshi_4.pdf"
+        },
+        {
+          "name": "総合的な経済安全保障シンクタンク及び官民協議会",
+          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/r8_dai14/teigenkosshi_5.pdf"
+        },
+        {
+          "name": "データセキュリティ",
+          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/r8_dai14/teigenkosshi_6.pdf"
+        },
+        {
+          "name": "議事要旨",
+          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/r8_dai14/gijiyoshi.pdf"
         }
       ]
     },
@@ -44412,6 +44608,70 @@
       ]
     },
     {
+      "id": "cas-keizai_anzen_hosyo-20251216-013",
+      "councilId": "cas-keizai_anzen_hosyo",
+      "title": "第13回 経済安全保障法制に関する有識者会議",
+      "date": "2025/12/16",
+      "officialUrl": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/4index.html",
+      "category": "PANEL",
+      "ministry": "CAS",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "議事次第",
+          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/r7_dai13/shidai.pdf"
+        },
+        {
+          "name": "推進法改正に関する検討会合の要点",
+          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/r7_dai13/shiryo1.pdf"
+        },
+        {
+          "name": "第１回推進法改正に関する検討会合資料（経済安全保障に関する総合的な調査研究及び官民協議会）",
+          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/r7_dai13/shiryo2.pdf"
+        },
+        {
+          "name": "第１回推進法改正に関する検討会合資料（サプライチェーン強靱化に向けた更なる措置・経済安全保障上重要な海外事業の展開）",
+          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/r7_dai13/shiryo3.pdf"
+        },
+        {
+          "name": "第１回推進法改正に関する検討会合資料（特定重要技術の研究開発に係る指定基金制度の在り方について）",
+          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/r7_dai13/shiryo4.pdf"
+        },
+        {
+          "name": "第１回推進法改正に関する検討会合 議事のポイント",
+          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/r7_dai13/shiryo5.pdf"
+        },
+        {
+          "name": "第１回推進法改正に関する検討会合 議事要旨",
+          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/r7_dai13/shiryo6.pdf"
+        },
+        {
+          "name": "第２回推進法改正に関する検討会合資料（基幹インフラ制度への医療分野追加に係る論点）",
+          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/r7_dai13/shiryo7.pdf"
+        },
+        {
+          "name": "第２回推進法改正に関する検討会合資料（基幹インフラ制度の運用改善に係る論点）",
+          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/r7_dai13/shiryo8.pdf"
+        },
+        {
+          "name": "第２回推進法改正に関する検討会合資料（データセキュリティ制度の検討について）",
+          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/r7_dai13/shiryo9.pdf"
+        },
+        {
+          "name": "第２回推進法改正に関する検討会合 議事のポイント",
+          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/r7_dai13/shiryo10.pdf"
+        },
+        {
+          "name": "第２回推進法改正に関する検討会合 議事要旨",
+          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/r7_dai13/shiryo11.pdf"
+        },
+        {
+          "name": "議事要旨",
+          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/r7_dai13/gijiyoshi.pdf"
+        }
+      ]
+    },
+    {
       "id": "cao-partnership_86-20251215-007",
       "councilId": "cao-partnership_86",
       "title": "第7回 未来を拓くパートナーシップ構築推進会議",
@@ -46014,6 +46274,62 @@
         {
           "name": "第2回 知的財産取引適正化ワーキンググループ 議事録(394KB)",
           "url": "https://www.chusho.meti.go.jp/koukai/kenkyukai/chizaitorihiki_wg/002/gijiroku.pdf"
+        }
+      ]
+    },
+    {
+      "id": "cas-keizai_anzen_hosyo-20251114-012",
+      "councilId": "cas-keizai_anzen_hosyo",
+      "title": "第12回 経済安全保障法制に関する有識者会議",
+      "date": "2025/11/14",
+      "officialUrl": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/4index.html",
+      "category": "PANEL",
+      "ministry": "CAS",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "議事次第",
+          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/r7_dai12/shidai.pdf"
+        },
+        {
+          "name": "経済安全保障の更なる推進に向けて",
+          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/r7_dai12/shiryo1.pdf"
+        },
+        {
+          "name": "基幹インフラ制度への医療分野の追加に係る検討状況等 について",
+          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/r7_dai12/shiryo2-1.pdf"
+        },
+        {
+          "name": "第２回分野別検討会合（基幹インフラ）議事のポイント",
+          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/r7_dai12/shiryo2-2.pdf"
+        },
+        {
+          "name": "第２回分野別検討会合（基幹インフラ）議事要旨",
+          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/r7_dai12/shiryo2-3.pdf"
+        },
+        {
+          "name": "基幹インフラ制度への医療分野の追加について",
+          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/r7_dai12/shiryo2-4.pdf"
+        },
+        {
+          "name": "サプライチェーン強靱化の取組フォローアップ",
+          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/r7_dai12/shiryo3-1.pdf"
+        },
+        {
+          "name": "重要物資に生じている安定供給確保上の課題",
+          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/r7_dai12/shiryo3-2.pdf"
+        },
+        {
+          "name": "第４回分野別検討会合（サプライチェーン強靱化）議事のポイント",
+          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/r7_dai12/shiryo3-3.pdf"
+        },
+        {
+          "name": "第４回分野別検討会合（サプライチェーン強靱化）議事要旨",
+          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/r7_dai12/shiryo3-4.pdf"
+        },
+        {
+          "name": "議事要旨",
+          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/r7_dai12/gijiyoshi.pdf"
         }
       ]
     },
@@ -57943,6 +58259,62 @@
       ]
     },
     {
+      "id": "cas-keizai_anzen_hosyo-20241224-011",
+      "councilId": "cas-keizai_anzen_hosyo",
+      "title": "第11回 経済安全保障法制に関する有識者会議",
+      "date": "2024/12/24",
+      "officialUrl": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/4index.html",
+      "category": "PANEL",
+      "ministry": "CAS",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "議事次第",
+          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/r6_dai11/gijisidai.pdf"
+        },
+        {
+          "name": "サプライチェーン強靱化の取組のフォローアップと今後の見直しの方向性",
+          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/r6_dai11/siryou1.pdf"
+        },
+        {
+          "name": "既指定物資の取組拡充（取組方針の改定）",
+          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/r6_dai11/siryou2.pdf"
+        },
+        {
+          "name": "経済安全保障推進法に基づき国自ら講ずる措置",
+          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/r6_dai11/siryou3-1.pdf"
+        },
+        {
+          "name": "特定重要物資の安定的な供給の確保に関する基本指針の一部変更案",
+          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/r6_dai11/siryou3-2.pdf"
+        },
+        {
+          "name": "第３回分野別検討会合（サプライチェーン強靱化）議事のポイント",
+          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/r6_dai11/siryou4.pdf"
+        },
+        {
+          "name": "第３回分野別検討会合（サプライチェーン強靱化）議事要旨",
+          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/r6_dai11/siryou5.pdf"
+        },
+        {
+          "name": "特定社会基盤役務の安定的な提供の確保に関する制度の一般港湾運送事業追加に向けた準備状況等について",
+          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/r6_dai11/siryou6.pdf"
+        },
+        {
+          "name": "「経済安全保障上の重要技術に関する技術流出防止策についての提言」を受けた対応について",
+          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/r6_dai11/siryou7.pdf"
+        },
+        {
+          "name": "特定重要技術に関する取組状況について",
+          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/r6_dai11/siryou8.pdf"
+        },
+        {
+          "name": "議事要旨",
+          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/r6_dai11/gijiyoushi.pdf"
+        }
+      ]
+    },
+    {
       "id": "ra-fukko_suishin-20241223-046",
       "councilId": "ra-fukko_suishin",
       "title": "第46回 復興推進委員会",
@@ -65738,6 +66110,50 @@
       "docCount": 19
     },
     {
+      "id": "cas-keizai_anzen_hosyo-20240604-010",
+      "councilId": "cas-keizai_anzen_hosyo",
+      "title": "第10回 経済安全保障法制に関する有識者会議",
+      "date": "2024/06/04",
+      "officialUrl": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/4index.html",
+      "category": "PANEL",
+      "ministry": "CAS",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "議事次第",
+          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/r6_dai10/gijisidai.pdf"
+        },
+        {
+          "name": "第２～４回分野別検討会合（官民技術協力）議事のポイント",
+          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/r6_dai10/siryou1.pdf"
+        },
+        {
+          "name": "第２～４回分野別検討会合（官民技術協力）議事要旨",
+          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/r6_dai10/siryou2.pdf"
+        },
+        {
+          "name": "第２～４回分野別検討会合（官民技術協力）資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/r6_dai10/siryou3.pdf"
+        },
+        {
+          "name": "経済安全保障推進法の取組状況",
+          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/r6_dai10/siryou6.pdf"
+        },
+        {
+          "name": "経済安全保障上の重要技術に関する技術流出防止策についての提言",
+          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/r6_dai10/siryou4.pdf"
+        },
+        {
+          "name": "経済安全保障上の重要技術に関する技術流出防止策についての提言概要",
+          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/r6_dai10/siryou5.pdf"
+        },
+        {
+          "name": "議事要旨",
+          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/r6_dai10/gijiyoushi.pdf"
+        }
+      ]
+    },
+    {
       "id": "cao-kaigi_88-20240603-020",
       "councilId": "cao-kaigi_88",
       "title": "第20回 民間資金等活用事業推進会議",
@@ -73005,6 +73421,66 @@
       ]
     },
     {
+      "id": "cas-keizai_anzen_hosyo-20240129-009",
+      "councilId": "cas-keizai_anzen_hosyo",
+      "title": "第9回 経済安全保障法制に関する有識者会議",
+      "date": "2024/01/29",
+      "officialUrl": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/4index.html",
+      "category": "PANEL",
+      "ministry": "CAS",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "議事次第",
+          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/r5_dai9/gijisidai.pdf"
+        },
+        {
+          "name": "第１回分野別検討会合（基幹インフラ）議事のポイント",
+          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/r5_dai9/siryou1.pdf"
+        },
+        {
+          "name": "第１回分野別検討会合（基幹インフラ）議事要旨",
+          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/r5_dai9/siryou2.pdf"
+        },
+        {
+          "name": "第１回分野別検討会合（基幹インフラ）資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/r5_dai9/siryou3.pdf"
+        },
+        {
+          "name": "特定社会基盤役務の安定的な提供の確保に関する制度の施行状況及び対象事業の追加について",
+          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/r5_dai9/siryou4.pdf"
+        },
+        {
+          "name": "特許出願非公開制度の運用開始に向けたスケジュール",
+          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/r5_dai9/siryou5.pdf"
+        },
+        {
+          "name": "分野別検討会合（特許出願の非公開）議事のポイント",
+          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/r5_dai9/siryou6.pdf"
+        },
+        {
+          "name": "第２回分野別検討会合（特許出願非公開）議事要旨",
+          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/r5_dai9/siryou7.pdf"
+        },
+        {
+          "name": "第２回分野別検討会合（特許出願非公開）資料：適正管理措置ガイドライン（案）の概要、損失の補償に関するQ&A（案）の概要",
+          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/r5_dai9/siryou8.pdf"
+        },
+        {
+          "name": "最終とりまとめ概要（セキュリティ・クリアランス）",
+          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/r5_dai9/siryou9.pdf"
+        },
+        {
+          "name": "最終とりまとめ（セキュリティ・クリアランス）",
+          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/r5_dai9/siryou10.pdf"
+        },
+        {
+          "name": "議事要旨",
+          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/r5_dai9/gijiyousi.pdf"
+        }
+      ]
+    },
+    {
       "id": "moj-minji_hanketsu_db-20240126-014",
       "councilId": "moj-minji_hanketsu_db",
       "title": "民事判決情報データベース化検討会（第１４回会議）（令和６年１月２６日開催）",
@@ -76508,6 +76984,54 @@
         {
           "name": "第３回 令和５年１１月 ８日 議事次第（PDF／54KB） 配布資料（PDF／14,430KB） 議事概要（PDF／675KB）",
           "url": "https://www.cas.go.jp/jp/seisaku/gx_jikkou_kaigi/senmonka_wg/dai3/gijisidai.pdf"
+        }
+      ]
+    },
+    {
+      "id": "cas-keizai_anzen_hosyo-20231108-008",
+      "councilId": "cas-keizai_anzen_hosyo",
+      "title": "第8回 経済安全保障法制に関する有識者会議",
+      "date": "2023/11/08",
+      "officialUrl": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/4index.html",
+      "category": "PANEL",
+      "ministry": "CAS",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "議事次第",
+          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/r5_dai8/gijisidai.pdf"
+        },
+        {
+          "name": "第２回分野別検討会合（サプライチェーン強靱化）議事のポイント",
+          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/r5_dai8/siryou1.pdf"
+        },
+        {
+          "name": "特定重要物資に関する取組の方向性について",
+          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/r5_dai8/siryou2.pdf"
+        },
+        {
+          "name": "第２回分野別検討会合（サプライチェーン強靱化）資料：特定重要物資に関する取組の方向性について",
+          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/r5_dai8/siryou3.pdf"
+        },
+        {
+          "name": "第２回分野別検討会合（サプライチェーン強靱化）議事要旨",
+          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/r5_dai8/siryou4.pdf"
+        },
+        {
+          "name": "経済安全保障重要技術育成プログラム（K Program)の現状",
+          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/r5_dai8/siryou5.pdf"
+        },
+        {
+          "name": "経済安全保障分野に関する重要技術に係る国際動向等について",
+          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/r5_dai8/siryou6.pdf"
+        },
+        {
+          "name": "経済安全保障法制に関する有識者会議の開催について（参考資料）",
+          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/r5_dai8/siryou7.pdf"
+        },
+        {
+          "name": "議事要旨",
+          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/r5_dai8/gijiyousi.pdf"
         }
       ]
     },
@@ -82779,6 +83303,38 @@
       ]
     },
     {
+      "id": "cas-keizai_anzen_hosyo-20230612-007",
+      "councilId": "cas-keizai_anzen_hosyo",
+      "title": "第7回 経済安全保障法制に関する有識者会議",
+      "date": "2023/06/12",
+      "officialUrl": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/4index.html",
+      "category": "PANEL",
+      "ministry": "CAS",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "議事次第",
+          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/r5_dai7/gijisidai.pdf"
+        },
+        {
+          "name": "特定社会基盤役務の安定的な提供の確保に関する制度の運用開始に向けた検討状況について",
+          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/r5_dai7/siryou1.pdf"
+        },
+        {
+          "name": "特許出願の非公開制度の運用開始に向けた検討状況について",
+          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/r5_dai7/siryou2.pdf"
+        },
+        {
+          "name": "特許出願の非公開制度の運用開始に向けた検討状況について（参考資料）",
+          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/r5_dai7/siryou3.pdf"
+        },
+        {
+          "name": "議事要旨",
+          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/r5_dai7/gijiyousi.pdf"
+        }
+      ]
+    },
+    {
       "id": "fsa-sustainable_finance-20230606-016",
       "councilId": "fsa-sustainable_finance",
       "councilName": "サステナブルファイナンス有識者会議",
@@ -86354,6 +86910,50 @@
         {
           "name": "法務省、厚生労働省　御提出資料（PDF形式：1,833KB）",
           "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2210_02human/230405/human11_01.pdf"
+        }
+      ]
+    },
+    {
+      "id": "cas-keizai_anzen_hosyo-20230405-006",
+      "councilId": "cas-keizai_anzen_hosyo",
+      "title": "第6回 経済安全保障法制に関する有識者会議",
+      "date": "2023/04/05",
+      "officialUrl": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/4index.html",
+      "category": "PANEL",
+      "ministry": "CAS",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "議事次第",
+          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/r5_dai6/gijisidai.pdf"
+        },
+        {
+          "name": "特定妨害行為の防止による特定社会基盤役務の安定的な提供の確保に関する基本指針（案）のパブリックコメント概要",
+          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/r5_dai6/siryou1.pdf"
+        },
+        {
+          "name": "特許出願の非公開に関する基本指針（案）のパブリックコメント概要",
+          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/r5_dai6/siryou2.pdf"
+        },
+        {
+          "name": "特定妨害行為の防止による特定社会基盤役務の安定的な提供の確保に関する基本指針（案）",
+          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/r5_dai6/siryou3.pdf"
+        },
+        {
+          "name": "特許出願の非公開に関する基本指針（案）",
+          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/r5_dai6/siryou4.pdf"
+        },
+        {
+          "name": "サプライチェーンの強靱化に向けた取組について",
+          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/r5_dai6/siryou5.pdf"
+        },
+        {
+          "name": "重要物資等関連業種の投資審査対象への追加について",
+          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/r5_dai6/siryou6.pdf"
+        },
+        {
+          "name": "議事要旨",
+          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/r5_dai6/gijiyousi.pdf"
         }
       ]
     },
@@ -90371,6 +90971,58 @@
       ]
     },
     {
+      "id": "cas-keizai_anzen_hosyo-20230208-005",
+      "councilId": "cas-keizai_anzen_hosyo",
+      "title": "第5回 経済安全保障法制に関する有識者会議",
+      "date": "2023/02/08",
+      "officialUrl": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/4index.html",
+      "category": "PANEL",
+      "ministry": "CAS",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "議事次第",
+          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/r5_dai5/gijisidai.pdf"
+        },
+        {
+          "name": "第１回分野別検討会合（特許出願非公開）資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/r5_dai5/siryou1.pdf"
+        },
+        {
+          "name": "第１回分野別検討会合（特許出願非公開）議事要旨",
+          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/r5_dai5/siryou2.pdf"
+        },
+        {
+          "name": "第１回分野別検討会合（特許出願非公開）議事のポイント",
+          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/r5_dai5/siryou3.pdf"
+        },
+        {
+          "name": "特許出願の非公開に関する基本指針（案）の概要",
+          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/r5_dai5/siryou4.pdf"
+        },
+        {
+          "name": "特許出願の非公開に関する基本指針（案）",
+          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/r5_dai5/siryou5.pdf"
+        },
+        {
+          "name": "特定妨害行為の防止による特定社会基盤役務の安定的な提供の確保に関する基本指針（案）の概要",
+          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/r5_dai5/siryou6.pdf"
+        },
+        {
+          "name": "特定妨害行為の防止による特定社会基盤役務の安定的な提供の確保に関する基本指針（案）",
+          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/r5_dai5/siryou7.pdf"
+        },
+        {
+          "name": "特定社会基盤役務の安定的な提供の確保に関する制度における特定社会基盤事業・特定社会基盤事業者の指定基準の考え方（案）",
+          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/r5_dai5/siryou8.pdf"
+        },
+        {
+          "name": "議事要旨",
+          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/r5_dai5/gijiyousi.pdf"
+        }
+      ]
+    },
+    {
       "id": "smea-businessmodel_syokoutyukin-20230207-006",
       "councilId": "smea-businessmodel_syokoutyukin",
       "title": "新たなビジネスモデルを踏まえた商工中金の在り方検討会 第6回",
@@ -93630,6 +94282,62 @@
       ]
     },
     {
+      "id": "cas-keizai_anzen_hosyo-20221116-004",
+      "councilId": "cas-keizai_anzen_hosyo",
+      "title": "第4回 経済安全保障法制に関する有識者会議",
+      "date": "2022/11/16",
+      "officialUrl": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/4index.html",
+      "category": "PANEL",
+      "ministry": "CAS",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "議事次第",
+          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/r4_dai4/gijisidai.pdf"
+        },
+        {
+          "name": "特定重要物資の指定について（安定供給確保取組方針案（概要））",
+          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/r4_dai4/siryou1.pdf"
+        },
+        {
+          "name": "第１回分野別検討会合（サプライチェーン強靱化）資料：特定重要物資の指定に向けて",
+          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/r4_dai4/siryou2.pdf"
+        },
+        {
+          "name": "第１回分野別検討会合（サプライチェーン強靱化）議事要旨",
+          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/r4_dai4/siryou3.pdf"
+        },
+        {
+          "name": "第１回分野別検討会合（サプライチェーン強靱化）議事のポイント",
+          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/r4_dai4/siryou4.pdf"
+        },
+        {
+          "name": "協議会モデル規約案等（概要",
+          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/r4_dai4/siryou5.pdf"
+        },
+        {
+          "name": "協議会モデル規約案（本文）",
+          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/r4_dai4/siryou6.pdf"
+        },
+        {
+          "name": "協議会設置等に係るガイドライン案（本文）",
+          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/r4_dai4/siryou7.pdf"
+        },
+        {
+          "name": "第１回分野別検討会合（官民技術協力）議事要旨",
+          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/r4_dai4/siryou8.pdf"
+        },
+        {
+          "name": "第１回分野別検討会合（官民技術協力）議事のポイント",
+          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/r4_dai4/siryou9.pdf"
+        },
+        {
+          "name": "議事要旨",
+          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/r4_dai4/gijiyousi.pdf"
+        }
+      ]
+    },
+    {
       "id": "moj-hanzai_higai_bengoshi-20221115-kyougi_008",
       "councilId": "moj-hanzai_higai_bengoshi",
       "title": "第8回 犯罪被害者支援弁護士制度・実務者協議会",
@@ -95342,6 +96050,30 @@
       ]
     },
     {
+      "id": "cas-keizai_anzen_hosyo-20221006-003",
+      "councilId": "cas-keizai_anzen_hosyo",
+      "title": "第3回 経済安全保障法制に関する有識者会議",
+      "date": "2022/10/06",
+      "officialUrl": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/4index.html",
+      "category": "PANEL",
+      "ministry": "CAS",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "議事次第",
+          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/r4_dai3/gijisidai.pdf"
+        },
+        {
+          "name": "サプライチェーン強靱化パートの運用に向けた検討",
+          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/r4_dai3/siryou.pdf"
+        },
+        {
+          "name": "議事要旨",
+          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/r4_dai3/gijiyousi.pdf"
+        }
+      ]
+    },
+    {
       "id": "cao-zeicho_sozoku_zoyo_senmonka-20221005-001",
       "councilId": "cao-zeicho_sozoku_zoyo_senmonka",
       "title": "第1回 相続税・贈与税に関する専門家会合",
@@ -96410,6 +97142,54 @@
         {
           "name": "Cover note points for interpretation strategy update – Sites of Japan’s Meiji Industrial Revolution（PDF形式：216KB）",
           "url": "https://www.cas.go.jp/jp/sangyousekaiisan/seikaiisan_houkoku/pdf/221130/siryou_en00.pdf"
+        }
+      ]
+    },
+    {
+      "id": "cas-keizai_anzen_hosyo-20220912-002",
+      "councilId": "cas-keizai_anzen_hosyo",
+      "title": "第2回 経済安全保障法制に関する有識者会議",
+      "date": "2022/09/12",
+      "officialUrl": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/4index.html",
+      "category": "PANEL",
+      "ministry": "CAS",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "議事次第",
+          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/r4_dai2/gijisidai.pdf"
+        },
+        {
+          "name": "基本方針・基本指針（サプライチェーン・技術）のパブリックコメント概要",
+          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/r4_dai2/siryou1.pdf"
+        },
+        {
+          "name": "経済施策を一体的に講ずることによる安全保障の確保の推進に関する基本的な方針（案）",
+          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/r4_dai2/siryou2.pdf"
+        },
+        {
+          "name": "特定重要物資の安定的な供給の確保に関する基本指針（案）",
+          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/r4_dai2/siryou3.pdf"
+        },
+        {
+          "name": "特定重要技術の研究開発の促進及びその成果の適切な活用に関する基本指針（案）",
+          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/r4_dai2/siryou4.pdf"
+        },
+        {
+          "name": "サプライチェーンの調査について",
+          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/r4_dai2/siryou5.pdf"
+        },
+        {
+          "name": "研究開発ビジョン（第一次）（案）概要",
+          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/r4_dai2/siryou6.pdf"
+        },
+        {
+          "name": "研究開発ビジョン（第一次）（案）",
+          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/r4_dai2/siryou7.pdf"
+        },
+        {
+          "name": "議事要旨",
+          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/r4_dai2/gijiyousi.pdf"
         }
       ]
     },
@@ -97755,786 +98535,6 @@
       ]
     },
     {
-      "id": "cas-keizai_anzen_hosyo-20220725-001",
-      "councilId": "cas-keizai_anzen_hosyo",
-      "councilName": "経済安全保障法制に関する有識者会議（令和４年度～）",
-      "ministry": "CAS",
-      "category": "PANEL",
-      "title": "第1回 経済安全保障法制に関する有識者会議（令和４年度～）",
-      "date": "2022/07/25",
-      "location": "総理大臣官邸 / 各府省庁本庁舎",
-      "summary": "第1回 経済安全保障法制に関する有識者会議（令和４年度～）の開催。主要議題の推進状況及び今後の対応方針について審議が行われた。",
-      "agenda": [
-        "第１回分野別検討会合（サプライチェーン強靱化）資料：特定重要物資の指定に向けて（PDF／3,550KB）",
-        "第１回分野別検討会合（サプライチェーン強靱化）議事のポイント（PDF／306KB）",
-        "第１回分野別検討会合（官民技術協力）議事のポイント（PDF／607KB）"
-      ],
-      "materials": [
-        {
-          "name": "第１回分野別検討会合（サプライチェーン強靱化）資料：特定重要物資の指定に向けて（PDF／3,550KB）",
-          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/r4_dai4/siryou2.pdf"
-        },
-        {
-          "name": "第１回分野別検討会合（サプライチェーン強靱化）議事要旨（PDF／403KB）",
-          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/r4_dai4/siryou3.pdf"
-        },
-        {
-          "name": "第１回分野別検討会合（サプライチェーン強靱化）議事のポイント（PDF／306KB）",
-          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/r4_dai4/siryou4.pdf"
-        },
-        {
-          "name": "第１回分野別検討会合（官民技術協力）議事要旨（PDF／476KB）",
-          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/r4_dai4/siryou8.pdf"
-        },
-        {
-          "name": "第１回分野別検討会合（官民技術協力）議事のポイント（PDF／607KB）",
-          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/r4_dai4/siryou9.pdf"
-        },
-        {
-          "name": "第１回分野別検討会合（特許出願非公開）資料（PDF／742KB）",
-          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/r5_dai5/siryou1.pdf"
-        },
-        {
-          "name": "第１回分野別検討会合（特許出願非公開）議事要旨（PDF／1,230KB）",
-          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/r5_dai5/siryou2.pdf"
-        },
-        {
-          "name": "第１回分野別検討会合（特許出願非公開）議事のポイント（PDF／360KB）",
-          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/r5_dai5/siryou3.pdf"
-        },
-        {
-          "name": "第１回分野別検討会合（基幹インフラ）議事のポイント（PDF／326KB）",
-          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/r5_dai9/siryou1.pdf"
-        },
-        {
-          "name": "第１回分野別検討会合（基幹インフラ）議事要旨（PDF／343KB）",
-          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/r5_dai9/siryou2.pdf"
-        },
-        {
-          "name": "第１回分野別検討会合（基幹インフラ）資料（PDF／2,660KB）",
-          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/r5_dai9/siryou3.pdf"
-        },
-        {
-          "name": "第１回推進法改正に関する検討会合資料（経済安全保障に関する総合的な調査研究及び官民協議会）（PDF／1.29MB）",
-          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/r7_dai13/shiryo2.pdf"
-        },
-        {
-          "name": "第１回推進法改正に関する検討会合資料（サプライチェーン強靱化に向けた更なる措置・経済安全保障上重要な海外事業の展開）（PDF／712KB）",
-          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/r7_dai13/shiryo3.pdf"
-        },
-        {
-          "name": "第１回推進法改正に関する検討会合資料（特定重要技術の研究開発に係る指定基金制度の在り方について）（PDF／730KB）",
-          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/r7_dai13/shiryo4.pdf"
-        },
-        {
-          "name": "第１回推進法改正に関する検討会合 議事のポイント（PDF／603KB）",
-          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/r7_dai13/shiryo5.pdf"
-        },
-        {
-          "name": "第１回推進法改正に関する検討会合 議事要旨（PDF／451KB）",
-          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/r7_dai13/shiryo6.pdf"
-        },
-        {
-          "name": "第１回経済安保海外事業促進制度に関する検討会合 議事のポイント・検討会合資料（PDF／783KB）",
-          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/r8_dai17/shiryo1-3.pdf"
-        },
-        {
-          "name": "第１回経済安保海外事業促進制度に関する検討会合 議事要旨（PDF／285KB）",
-          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/r8_dai17/shiryo1-4.pdf"
-        },
-        {
-          "name": "第１回総合的な調査研究に関する検討会合 議事のポイント・検討会合資料（PDF／753KB）",
-          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/r8_dai17/shiryo1-5.pdf"
-        },
-        {
-          "name": "第１回総合的な調査研究に関する検討会合 議事要旨（PDF／364KB）",
-          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/r8_dai17/shiryo1-6.pdf"
-        },
-        {
-          "name": "根拠・構成員（PDF／227KB）",
-          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/pdf/konkyo.pdf"
-        },
-        {
-          "name": "議事次第（PDF／46KB）",
-          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/r4_dai1/gijisidai.pdf"
-        },
-        {
-          "name": "経済安全保障法制に関する有識者会議の開催について（PDF／162KB）",
-          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/r4_dai1/siryou1.pdf"
-        },
-        {
-          "name": "経済安全保障法制に関する有識者会議運営要領（PDF／83KB）",
-          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/r4_dai1/siryou2.pdf"
-        },
-        {
-          "name": "経済安全保障推進法の審議・今後の課題等について（PDF／817KB）",
-          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/r4_dai1/siryou3.pdf"
-        },
-        {
-          "name": "ご説明資料（PDF／1,081KB）",
-          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/r4_dai1/siryou4.pdf"
-        },
-        {
-          "name": "経済施策を一体的に講ずることによる安全保障の確保の推進に関する基本的な方針（案）（PDF／267KB）",
-          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/r4_dai1/siryou5.pdf"
-        },
-        {
-          "name": "特定重要物資の安定的な供給の確保に関する基本指針（案）（PDF／362KB）",
-          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/r4_dai1/siryou6.pdf"
-        },
-        {
-          "name": "特定重要技術の研究開発の促進及びその成果の適切な活用に関する基本指針（案）（PDF／353KB）",
-          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/r4_dai1/siryou7.pdf"
-        },
-        {
-          "name": "議事要旨（PDF／289KB）",
-          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/r4_dai1/gijiyousi.pdf"
-        },
-        {
-          "name": "議事次第（PDF／84KB）",
-          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/r5_dai6/gijisidai.pdf"
-        },
-        {
-          "name": "特定妨害行為の防止による特定社会基盤役務の安定的な提供の確保に関する基本指針（案）のパブリックコメント概要（PDF／524KB）",
-          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/r5_dai6/siryou1.pdf"
-        },
-        {
-          "name": "特許出願の非公開に関する基本指針（案）のパブリックコメント概要（PDF／505KB）",
-          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/r5_dai6/siryou2.pdf"
-        },
-        {
-          "name": "特定妨害行為の防止による特定社会基盤役務の安定的な提供の確保に関する基本指針（案）（PDF／353KB）",
-          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/r5_dai6/siryou3.pdf"
-        },
-        {
-          "name": "特許出願の非公開に関する基本指針（案）（PDF／330KB）",
-          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/r5_dai6/siryou4.pdf"
-        },
-        {
-          "name": "サプライチェーンの強靱化に向けた取組について（PDF／1,823KB）",
-          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/r5_dai6/siryou5.pdf"
-        },
-        {
-          "name": "重要物資等関連業種の投資審査対象への追加について（PDF／739KB）",
-          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/r5_dai6/siryou6.pdf"
-        },
-        {
-          "name": "議事要旨（PDF／595KB）",
-          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/r5_dai6/gijiyousi.pdf"
-        },
-        {
-          "name": "議事次第（PDF／70KB）",
-          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/r5_dai8/gijisidai.pdf"
-        },
-        {
-          "name": "特定重要物資に関する取組の方向性について（PDF／3,598KB）",
-          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/r5_dai8/siryou2.pdf"
-        },
-        {
-          "name": "経済安全保障重要技術育成プログラム（K Program)の現状（PDF／780KB）",
-          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/r5_dai8/siryou5.pdf"
-        },
-        {
-          "name": "経済安全保障分野に関する重要技術に係る国際動向等について（PDF／202KB）",
-          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/r5_dai8/siryou6.pdf"
-        },
-        {
-          "name": "経済安全保障法制に関する有識者会議の開催について（参考資料）（PDF／162KB）",
-          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/r5_dai8/siryou7.pdf"
-        },
-        {
-          "name": "議事要旨（PDF／236KB）",
-          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/r5_dai8/gijiyousi.pdf"
-        },
-        {
-          "name": "議事次第（PDF／99KB）",
-          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/r5_dai9/gijisidai.pdf"
-        },
-        {
-          "name": "特定社会基盤役務の安定的な提供の確保に関する制度の施行状況及び対象事業の追加について（PDF／1,788KB）",
-          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/r5_dai9/siryou4.pdf"
-        },
-        {
-          "name": "特許出願非公開制度の運用開始に向けたスケジュール（PDF／222KB）",
-          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/r5_dai9/siryou5.pdf"
-        },
-        {
-          "name": "分野別検討会合（特許出願の非公開）議事のポイント（PDF／473KB）",
-          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/r5_dai9/siryou6.pdf"
-        },
-        {
-          "name": "最終とりまとめ概要（セキュリティ・クリアランス）（PDF／570KB）",
-          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/r5_dai9/siryou9.pdf"
-        },
-        {
-          "name": "最終とりまとめ（セキュリティ・クリアランス）（PDF／432KB）",
-          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/r5_dai9/siryou10.pdf"
-        },
-        {
-          "name": "議事要旨（PDF／252KB）",
-          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/r5_dai9/gijiyousi.pdf"
-        },
-        {
-          "name": "議事次第（PDF／53.8KB）",
-          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/r6_dai10/gijisidai.pdf"
-        },
-        {
-          "name": "第２～４回分野別検討会合（官民技術協力）議事のポイント（PDF／480KB）",
-          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/r6_dai10/siryou1.pdf"
-        },
-        {
-          "name": "第２～４回分野別検討会合（官民技術協力）議事要旨（PDF／883KB）",
-          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/r6_dai10/siryou2.pdf"
-        },
-        {
-          "name": "第２～４回分野別検討会合（官民技術協力）資料（PDF／2.9MB）",
-          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/r6_dai10/siryou3.pdf"
-        },
-        {
-          "name": "経済安全保障推進法の取組状況（PDF／1,698KB）",
-          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/r6_dai10/siryou6.pdf"
-        },
-        {
-          "name": "経済安全保障上の重要技術に関する技術流出防止策についての提言（PDF／1,635KB）",
-          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/r6_dai10/siryou4.pdf"
-        },
-        {
-          "name": "経済安全保障上の重要技術に関する技術流出防止策についての提言概要（PDF／555KB）",
-          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/r6_dai10/siryou5.pdf"
-        },
-        {
-          "name": "議事要旨（PDF／329KB）",
-          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/r6_dai10/gijiyoushi.pdf"
-        },
-        {
-          "name": "議事次第（PDF／127KB）",
-          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/r6_dai11/gijisidai.pdf"
-        },
-        {
-          "name": "サプライチェーン強靱化の取組のフォローアップと今後の見直しの方向性（PDF／819KB）",
-          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/r6_dai11/siryou1.pdf"
-        },
-        {
-          "name": "既指定物資の取組拡充（取組方針の改定）（PDF／724KB）",
-          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/r6_dai11/siryou2.pdf"
-        },
-        {
-          "name": "経済安全保障推進法に基づき国自ら講ずる措置（PDF／1,466KB）",
-          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/r6_dai11/siryou3-1.pdf"
-        },
-        {
-          "name": "特定重要物資の安定的な供給の確保に関する基本指針の一部変更案（PDF／2.2MB）",
-          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/r6_dai11/siryou3-2.pdf"
-        },
-        {
-          "name": "特定社会基盤役務の安定的な提供の確保に関する制度の一般港湾運送事業追加に向けた準備状況等について（PDF／2,497KB）",
-          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/r6_dai11/siryou6.pdf"
-        },
-        {
-          "name": "「経済安全保障上の重要技術に関する技術流出防止策についての提言」を受けた対応について（PDF／779KB）",
-          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/r6_dai11/siryou7.pdf"
-        },
-        {
-          "name": "特定重要技術に関する取組状況について（PDF／839KB）",
-          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/r6_dai11/siryou8.pdf"
-        },
-        {
-          "name": "議事要旨（PDF／343KB）",
-          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/r6_dai11/gijiyoushi.pdf"
-        },
-        {
-          "name": "議事次第（PDF／209KB）",
-          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/r7_dai12/shidai.pdf"
-        },
-        {
-          "name": "経済安全保障の更なる推進に向けて（PDF／1,525KB）",
-          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/r7_dai12/shiryo1.pdf"
-        },
-        {
-          "name": "基幹インフラ制度への医療分野の追加に係る検討状況等 について（PDF／2.3MB）",
-          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/r7_dai12/shiryo2-1.pdf"
-        },
-        {
-          "name": "基幹インフラ制度への医療分野の追加について（PDF／659KB）",
-          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/r7_dai12/shiryo2-4.pdf"
-        },
-        {
-          "name": "サプライチェーン強靱化の取組フォローアップ（PDF／1,099KB）",
-          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/r7_dai12/shiryo3-1.pdf"
-        },
-        {
-          "name": "重要物資に生じている安定供給確保上の課題（PDF／2.2MB）",
-          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/r7_dai12/shiryo3-2.pdf"
-        },
-        {
-          "name": "議事要旨（PDF／410KB）",
-          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/r7_dai12/gijiyoshi.pdf"
-        },
-        {
-          "name": "議事次第（PDF／195KB）",
-          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/r7_dai13/shidai.pdf"
-        },
-        {
-          "name": "推進法改正に関する検討会合の要点（PDF／2.20MB）",
-          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/r7_dai13/shiryo1.pdf"
-        },
-        {
-          "name": "議事要旨（PDF／378KB）",
-          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/r7_dai13/gijiyoshi.pdf"
-        },
-        {
-          "name": "議事次第（PDF／178KB）",
-          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/r8_dai14/shidai.pdf"
-        },
-        {
-          "name": "提言骨子の概要（PDF／447KB）",
-          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/r8_dai14/teigenkosshi_gaiyo.pdf"
-        },
-        {
-          "name": "サプライチェーン強靱化（PDF／261KB）",
-          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/r8_dai14/teigenkosshi_1.pdf"
-        },
-        {
-          "name": "データセキュリティ（PDF／248KB）",
-          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/r8_dai14/teigenkosshi_6.pdf"
-        },
-        {
-          "name": "議事要旨（PDF／334KB）",
-          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/r8_dai14/gijiyoshi.pdf"
-        },
-        {
-          "name": "議事次第（PDF／124KB）",
-          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/r8_dai15/gijishidai.pdf"
-        },
-        {
-          "name": "第５・６回分野別検討会合（官民技術協力）議事のポイント（PDF／484KB）",
-          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/r8_dai15/shiryo1-1.pdf"
-        },
-        {
-          "name": "第５・６回分野別検討会合（官民技術協力）議事要旨（PDF／321KB）",
-          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/r8_dai15/shiryo1-2.pdf"
-        },
-        {
-          "name": "第５・６回分野別検討会合（官民技術協力）資料（PDF／5.6MB）",
-          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/r8_dai15/shiryo1-3.pdf"
-        },
-        {
-          "name": "経済安全保障の更なる推進に向けた提言（PDF／4.6MB）",
-          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/r8_dai15/teigen.pdf"
-        },
-        {
-          "name": "議事要旨（PDF／362KB）",
-          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/r8_dai15/gijiyoshi.pdf"
-        },
-        {
-          "name": "議事次第（PDF／95KB）",
-          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/r8_dai16/gijishidai.pdf"
-        },
-        {
-          "name": "経済安全保障推進法等改正法案の審議について（PDF／622KB）",
-          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/r8_dai16/shiryo1.pdf"
-        },
-        {
-          "name": "議事要旨（PDF／456KB）",
-          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/r8_dai16/gijiyoshi.pdf"
-        },
-        {
-          "name": "議事次第（PDF／73KB）",
-          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/r8_dai17/gijishidai.pdf"
-        },
-        {
-          "name": "骨太の方針・日本成長戦略の概要（PDF／7.2MB）",
-          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/r8_dai17/shiryo2.pdf"
-        },
-        {
-          "name": "経済施策を一体的に講ずることによる安全保障の確保の推進に関する基本的な方針の変更（案）（PDF／466KB）",
-          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/r8_dai17/shiryo3.pdf"
-        },
-        {
-          "name": "特定重要物資の安定的な供給の確保に関する基本指針の変更（案）（PDF／588KB）",
-          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/r8_dai17/shiryo4.pdf"
-        },
-        {
-          "name": "特定海外事業の促進に関する基本指針（案）（PDF／538KB）",
-          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/r8_dai17/shiryo5.pdf"
-        },
-        {
-          "name": "安全保障の確保に関する経済施策の総合的かつ効果的な推進のために必要な調査及び研究に関する基本指針（案）（PDF／387KB）",
-          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/r8_dai17/shiryo6.pdf"
-        },
-        {
-          "name": "特定重要技術の研究開発の促進及びその成果の適切な活用に関する基本指針の変更（案）（PDF／538KB）",
-          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/r8_dai17/shiryo7.pdf"
-        },
-        {
-          "name": "特定妨害行為の防止による特定社会基盤役務の安定的な提供の確保に関する基本指針の変更（案）（PDF／636KB）",
-          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/r8_dai17/shiryo8.pdf"
-        }
-      ],
-      "tags": [
-        "経済安全保障",
-        "CAS",
-        "第1回"
-      ],
-      "officialUrl": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/r7_dai13/shiryo2.pdf",
-      "hasMinutes": true,
-      "docCount": 135
-    },
-    {
-      "id": "cas-keizai_anzen_hosyo-20220725-002",
-      "councilId": "cas-keizai_anzen_hosyo",
-      "councilName": "経済安全保障法制に関する有識者会議（令和４年度～）",
-      "ministry": "CAS",
-      "category": "PANEL",
-      "title": "第2回 経済安全保障法制に関する有識者会議（令和４年度～）",
-      "date": "2022/07/25",
-      "location": "総理大臣官邸 / 各府省庁本庁舎",
-      "summary": "第2回 経済安全保障法制に関する有識者会議（令和４年度～）の開催。主要議題の推進状況及び今後の対応方針について審議が行われた。",
-      "agenda": [
-        "第２回分野別検討会合（サプライチェーン強靱化）議事のポイント（PDF／677KB）",
-        "第２回分野別検討会合（サプライチェーン強靱化）資料：特定重要物資に関する取組の方向性について（PDF／4,944KB）",
-        "第２回分野別検討会合（特許出願非公開）資料：適正管理措置ガイドライン（案）の概要、損失の補償に関するQ&A（案）の概要（PDF／1,025KB）"
-      ],
-      "materials": [
-        {
-          "name": "第２回分野別検討会合（サプライチェーン強靱化）議事のポイント（PDF／677KB）",
-          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/r5_dai8/siryou1.pdf"
-        },
-        {
-          "name": "第２回分野別検討会合（サプライチェーン強靱化）資料：特定重要物資に関する取組の方向性について（PDF／4,944KB）",
-          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/r5_dai8/siryou3.pdf"
-        },
-        {
-          "name": "第２回分野別検討会合（サプライチェーン強靱化）議事要旨（PDF／1,281KB）",
-          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/r5_dai8/siryou4.pdf"
-        },
-        {
-          "name": "第２回分野別検討会合（特許出願非公開）議事要旨（PDF／815KB）",
-          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/r5_dai9/siryou7.pdf"
-        },
-        {
-          "name": "第２回分野別検討会合（特許出願非公開）資料：適正管理措置ガイドライン（案）の概要、損失の補償に関するQ&A（案）の概要（PDF／1,025KB）",
-          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/r5_dai9/siryou8.pdf"
-        },
-        {
-          "name": "第２回分野別検討会合（基幹インフラ）議事のポイント（PDF／357KB）",
-          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/r7_dai12/shiryo2-2.pdf"
-        },
-        {
-          "name": "第２回分野別検討会合（基幹インフラ）議事要旨（PDF／473KB）",
-          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/r7_dai12/shiryo2-3.pdf"
-        },
-        {
-          "name": "第２回推進法改正に関する検討会合資料（基幹インフラ制度への医療分野追加に係る論点）（PDF／3.34MB）",
-          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/r7_dai13/shiryo7.pdf"
-        },
-        {
-          "name": "第２回推進法改正に関する検討会合資料（基幹インフラ制度の運用改善に係る論点）（PDF／940KB）",
-          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/r7_dai13/shiryo8.pdf"
-        },
-        {
-          "name": "第２回推進法改正に関する検討会合資料（データセキュリティ制度の検討について）（PDF／1.20MB）",
-          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/r7_dai13/shiryo9.pdf"
-        },
-        {
-          "name": "第２回推進法改正に関する検討会合 議事のポイント（PDF／482KB）",
-          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/r7_dai13/shiryo10.pdf"
-        },
-        {
-          "name": "第２回推進法改正に関する検討会合 議事要旨（PDF／424KB）",
-          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/r7_dai13/shiryo11.pdf"
-        },
-        {
-          "name": "議事次第（PDF／46KB）",
-          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/r4_dai2/gijisidai.pdf"
-        },
-        {
-          "name": "基本方針・基本指針（サプライチェーン・技術）のパブリックコメント概要（PDF／1,036KB）",
-          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/r4_dai2/siryou1.pdf"
-        },
-        {
-          "name": "経済施策を一体的に講ずることによる安全保障の確保の推進に関する基本的な方針（案）（PDF／596KB）",
-          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/r4_dai2/siryou2.pdf"
-        },
-        {
-          "name": "特定重要物資の安定的な供給の確保に関する基本指針（案）（PDF／884KB）",
-          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/r4_dai2/siryou3.pdf"
-        },
-        {
-          "name": "特定重要技術の研究開発の促進及びその成果の適切な活用に関する基本指針（案）（PDF／785KB）",
-          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/r4_dai2/siryou4.pdf"
-        },
-        {
-          "name": "サプライチェーンの調査について（PDF／1,497KB）",
-          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/r4_dai2/siryou5.pdf"
-        },
-        {
-          "name": "研究開発ビジョン（第一次）（案）概要（PDF／1,414KB）",
-          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/r4_dai2/siryou6.pdf"
-        },
-        {
-          "name": "研究開発ビジョン（第一次）（案）（PDF／751KB）",
-          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/r4_dai2/siryou7.pdf"
-        },
-        {
-          "name": "議事要旨（PDF／696KB）",
-          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/r4_dai2/gijiyousi.pdf"
-        },
-        {
-          "name": "基幹インフラ役務の安定提供（PDF／361KB）",
-          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/r8_dai14/teigenkosshi_2.pdf"
-        }
-      ],
-      "tags": [
-        "経済安全保障",
-        "CAS",
-        "第2回"
-      ],
-      "officialUrl": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/4index.html",
-      "hasMinutes": true,
-      "docCount": 127
-    },
-    {
-      "id": "cas-keizai_anzen_hosyo-20220725-003",
-      "councilId": "cas-keizai_anzen_hosyo",
-      "councilName": "経済安全保障法制に関する有識者会議（令和４年度～）",
-      "ministry": "CAS",
-      "category": "PANEL",
-      "title": "第3回 経済安全保障法制に関する有識者会議（令和４年度～）",
-      "date": "2022/07/25",
-      "location": "総理大臣官邸 / 各府省庁本庁舎",
-      "summary": "第3回 経済安全保障法制に関する有識者会議（令和４年度～）の開催。主要議題の推進状況及び今後の対応方針について審議が行われた。",
-      "agenda": [
-        "第３回分野別検討会合（サプライチェーン強靱化）議事のポイント（PDF／399KB）",
-        "第３回基幹インフラに関する検討会合 議事のポイント・検討会合資料（PDF／1.2MB）",
-        "根拠・構成員（PDF／227KB）"
-      ],
-      "materials": [
-        {
-          "name": "第３回分野別検討会合（サプライチェーン強靱化）議事のポイント（PDF／399KB）",
-          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/r6_dai11/siryou4.pdf"
-        },
-        {
-          "name": "第３回分野別検討会合（サプライチェーン強靱化）議事要旨（PDF／564KB）",
-          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/r6_dai11/siryou5.pdf"
-        },
-        {
-          "name": "第３回基幹インフラに関する検討会合 議事のポイント・検討会合資料（PDF／1.2MB）",
-          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/r8_dai17/shiryo1-9.pdf"
-        },
-        {
-          "name": "第３回基幹インフラに関する検討会合 議事要旨（PDF／333KB）",
-          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/r8_dai17/shiryo1-10.pdf"
-        },
-        {
-          "name": "議事次第（PDF／44KB）",
-          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/r4_dai3/gijisidai.pdf"
-        },
-        {
-          "name": "サプライチェーン強靱化パートの運用に向けた検討（PDF／1,221KB）",
-          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/r4_dai3/siryou.pdf"
-        },
-        {
-          "name": "議事要旨（PDF／440KB）",
-          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/r4_dai3/gijiyousi.pdf"
-        },
-        {
-          "name": "海外事業の展開支援（PDF／241KB）",
-          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/r8_dai14/teigenkosshi_3.pdf"
-        }
-      ],
-      "tags": [
-        "経済安全保障",
-        "CAS",
-        "第3回"
-      ],
-      "officialUrl": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/4index.html",
-      "hasMinutes": true,
-      "docCount": 119
-    },
-    {
-      "id": "cas-keizai_anzen_hosyo-20220725-004",
-      "councilId": "cas-keizai_anzen_hosyo",
-      "councilName": "経済安全保障法制に関する有識者会議（令和４年度～）",
-      "ministry": "CAS",
-      "category": "PANEL",
-      "title": "第4回 経済安全保障法制に関する有識者会議（令和４年度～）",
-      "date": "2022/07/25",
-      "location": "総理大臣官邸 / 各府省庁本庁舎",
-      "summary": "第4回 経済安全保障法制に関する有識者会議（令和４年度～）の開催。主要議題の推進状況及び今後の対応方針について審議が行われた。",
-      "agenda": [
-        "第４回分野別検討会合（サプライチェーン強靱化）議事のポイント（PDF／308KB）",
-        "根拠・構成員（PDF／227KB）",
-        "経済安全保障法制に関する有識者会議の開催について（PDF／162KB）"
-      ],
-      "materials": [
-        {
-          "name": "第４回分野別検討会合（サプライチェーン強靱化）議事のポイント（PDF／308KB）",
-          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/r7_dai12/shiryo3-3.pdf"
-        },
-        {
-          "name": "第４回分野別検討会合（サプライチェーン強靱化）議事要旨（PDF／487KB）",
-          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/r7_dai12/shiryo3-4.pdf"
-        },
-        {
-          "name": "議事次第（PDF／99KB）",
-          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/r4_dai4/gijisidai.pdf"
-        },
-        {
-          "name": "特定重要物資の指定について（安定供給確保取組方針案（概要））（PDF／1,870KB）",
-          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/r4_dai4/siryou1.pdf"
-        },
-        {
-          "name": "協議会モデル規約案等（概要（PDF／1,542KB）",
-          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/r4_dai4/siryou5.pdf"
-        },
-        {
-          "name": "協議会モデル規約案（本文）（PDF／733KB）",
-          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/r4_dai4/siryou6.pdf"
-        },
-        {
-          "name": "協議会設置等に係るガイドライン案（本文）（PDF／554KB）",
-          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/r4_dai4/siryou7.pdf"
-        },
-        {
-          "name": "議事要旨（PDF／460KB）",
-          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/r4_dai4/gijiyousi.pdf"
-        },
-        {
-          "name": "特定重要技術の研究開発等（PDF／222KB）",
-          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/r8_dai14/teigenkosshi_4.pdf"
-        }
-      ],
-      "tags": [
-        "経済安全保障",
-        "CAS",
-        "第4回"
-      ],
-      "officialUrl": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/4index.html",
-      "hasMinutes": true,
-      "docCount": 117
-    },
-    {
-      "id": "cas-keizai_anzen_hosyo-20220725-005",
-      "councilId": "cas-keizai_anzen_hosyo",
-      "councilName": "経済安全保障法制に関する有識者会議（令和４年度～）",
-      "ministry": "CAS",
-      "category": "PANEL",
-      "title": "第5回 経済安全保障法制に関する有識者会議（令和４年度～）",
-      "date": "2022/07/25",
-      "location": "総理大臣官邸 / 各府省庁本庁舎",
-      "summary": "第5回 経済安全保障法制に関する有識者会議（令和４年度～）の開催。主要議題の推進状況及び今後の対応方針について審議が行われた。",
-      "agenda": [
-        "第５回サプライチェーン強靱化に関する検討会合 議事のポイント・検討会合資料（PDF／1.8MB）",
-        "根拠・構成員（PDF／227KB）",
-        "経済安全保障法制に関する有識者会議の開催について（PDF／162KB）"
-      ],
-      "materials": [
-        {
-          "name": "第５回サプライチェーン強靱化に関する検討会合 議事のポイント・検討会合資料（PDF／1.8MB）",
-          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/r8_dai17/shiryo1-1.pdf"
-        },
-        {
-          "name": "第５回サプライチェーン強靱化に関する検討会合 議事要旨（PDF／287KB）",
-          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/r8_dai17/shiryo1-2.pdf"
-        },
-        {
-          "name": "議事次第（PDF／145KB）",
-          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/r5_dai5/gijisidai.pdf"
-        },
-        {
-          "name": "特許出願の非公開に関する基本指針（案）の概要（PDF／636KB）",
-          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/r5_dai5/siryou4.pdf"
-        },
-        {
-          "name": "特許出願の非公開に関する基本指針（案）（PDF／604KB）",
-          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/r5_dai5/siryou5.pdf"
-        },
-        {
-          "name": "特定妨害行為の防止による特定社会基盤役務の安定的な提供の確保に関する基本指針（案）の概要（PDF／659KB）",
-          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/r5_dai5/siryou6.pdf"
-        },
-        {
-          "name": "特定妨害行為の防止による特定社会基盤役務の安定的な提供の確保に関する基本指針（案）（PDF／595KB）",
-          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/r5_dai5/siryou7.pdf"
-        },
-        {
-          "name": "特定社会基盤役務の安定的な提供の確保に関する制度における特定社会基盤事業・特定社会基盤事業者の指定基準の考え方（案）（PDF／604KB）",
-          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/r5_dai5/siryou8.pdf"
-        },
-        {
-          "name": "議事要旨（PDF／726KB）",
-          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/r5_dai5/gijiyousi.pdf"
-        },
-        {
-          "name": "総合的な経済安全保障シンクタンク及び官民協議会（PDF／271KB）",
-          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/r8_dai14/teigenkosshi_5.pdf"
-        }
-      ],
-      "tags": [
-        "経済安全保障",
-        "CAS",
-        "第5回"
-      ],
-      "officialUrl": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/4index.html",
-      "hasMinutes": true,
-      "docCount": 117
-    },
-    {
-      "id": "cas-keizai_anzen_hosyo-20220725-007",
-      "councilId": "cas-keizai_anzen_hosyo",
-      "councilName": "経済安全保障法制に関する有識者会議（令和４年度～）",
-      "ministry": "CAS",
-      "category": "PANEL",
-      "title": "第7回 経済安全保障法制に関する有識者会議（令和４年度～）",
-      "date": "2022/07/25",
-      "location": "総理大臣官邸 / 各府省庁本庁舎",
-      "summary": "第7回 経済安全保障法制に関する有識者会議（令和４年度～）の開催。主要議題の推進状況及び今後の対応方針について審議が行われた。",
-      "agenda": [
-        "第７回官民技術協力に関する検討会合 議事のポイント・検討会合資料（PDF／873KB）",
-        "根拠・構成員（PDF／227KB）",
-        "経済安全保障法制に関する有識者会議の開催について（PDF／162KB）"
-      ],
-      "materials": [
-        {
-          "name": "第７回官民技術協力に関する検討会合 議事のポイント・検討会合資料（PDF／873KB）",
-          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/r8_dai17/shiryo1-7.pdf"
-        },
-        {
-          "name": "第７回官民技術協力に関する検討会合 議事要旨（PDF／236KB）",
-          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/r8_dai17/shiryo1-8.pdf"
-        },
-        {
-          "name": "議事次第（PDF／84KB）",
-          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/r5_dai7/gijisidai.pdf"
-        },
-        {
-          "name": "特定社会基盤役務の安定的な提供の確保に関する制度の運用開始に向けた検討状況について（PDF／1,162KB）",
-          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/r5_dai7/siryou1.pdf"
-        },
-        {
-          "name": "特許出願の非公開制度の運用開始に向けた検討状況について（PDF／736KB）",
-          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/r5_dai7/siryou2.pdf"
-        },
-        {
-          "name": "特許出願の非公開制度の運用開始に向けた検討状況について（参考資料）（PDF／758KB）",
-          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/r5_dai7/siryou3.pdf"
-        },
-        {
-          "name": "議事要旨（PDF／922KB）",
-          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/r5_dai7/gijiyousi.pdf"
-        }
-      ],
-      "tags": [
-        "経済安全保障",
-        "CAS",
-        "第7回"
-      ],
-      "officialUrl": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/4index.html",
-      "hasMinutes": true,
-      "docCount": 117
-    },
-    {
       "id": "mic-chihou_seido_33-20220725-senmon_005",
       "councilId": "mic-chihou_seido_33",
       "title": "第5回 第33次地方制度調査会 専門小委員会",
@@ -98575,6 +98575,54 @@
         {
           "name": "000831266.pdf",
           "url": "https://www.soumu.go.jp/main_content/000831266.pdf"
+        }
+      ]
+    },
+    {
+      "id": "cas-keizai_anzen_hosyo-20220725-001",
+      "councilId": "cas-keizai_anzen_hosyo",
+      "title": "第1回 経済安全保障法制に関する有識者会議",
+      "date": "2022/07/25",
+      "officialUrl": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/4index.html",
+      "category": "PANEL",
+      "ministry": "CAS",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "議事次第",
+          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/r4_dai1/gijisidai.pdf"
+        },
+        {
+          "name": "経済安全保障法制に関する有識者会議の開催について",
+          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/r4_dai1/siryou1.pdf"
+        },
+        {
+          "name": "経済安全保障法制に関する有識者会議運営要領",
+          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/r4_dai1/siryou2.pdf"
+        },
+        {
+          "name": "経済安全保障推進法の審議・今後の課題等について",
+          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/r4_dai1/siryou3.pdf"
+        },
+        {
+          "name": "ご説明資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/r4_dai1/siryou4.pdf"
+        },
+        {
+          "name": "経済施策を一体的に講ずることによる安全保障の確保の推進に関する基本的な方針（案）",
+          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/r4_dai1/siryou5.pdf"
+        },
+        {
+          "name": "特定重要物資の安定的な供給の確保に関する基本指針（案）",
+          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/r4_dai1/siryou6.pdf"
+        },
+        {
+          "name": "特定重要技術の研究開発の促進及びその成果の適切な活用に関する基本指針（案）",
+          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/r4_dai1/siryou7.pdf"
+        },
+        {
+          "name": "議事要旨",
+          "url": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyohousei/r4_dai1/gijiyousi.pdf"
         }
       ]
     },
@@ -160910,6 +160958,15 @@
       "title_selector": "h1, h2, .title",
       "date_regex": "(令和\\d+年\\d+月\\d+日|平成\\d+年\\d+月\\d+日|\\d{4}年\\d{1,2}月\\d{1,2}日)",
       "pdf_selector": "main a[href*='.pdf'], #main a[href*='.pdf'], a[href*='content/']",
+      "deep_crawl_enabled": true,
+      "manualLock": true
+    },
+    "cas-keizai_anzen_hosyo": {
+      "rule_id": "rule-cas-keizai_anzen_hosyo",
+      "subpage_discovery_pattern": "https://www\\.cas\\.go\\.jp/jp/seisaku/keizai_anzen_hosyohousei/.*",
+      "title_selector": "h1, h2, .title, table tr th",
+      "date_regex": "(令和\\d+年\\d+月\\d+日|平成\\d+年\\d+月\\d+日|\\d{4}年\\d{1,2}月\\d{1,2}日)",
+      "pdf_selector": "main a[href*='.pdf'], #main a[href*='.pdf'], table a[href*='.pdf']",
       "deep_crawl_enabled": true,
       "manualLock": true
     }
