@@ -542,8 +542,14 @@ def sync_new_meetings_from_crawl(data, target, scraped_item):
     ministry = target["ministry"]
     meetings = data.setdefault("meetings", [])
 
-    existing_urls = {m.get("officialUrl", "").rstrip("/"): m for m in meetings if m.get("councilId") == council_id}
-    existing_titles = {m.get("title", ""): m for m in meetings if m.get("councilId") == council_id}
+    existing_c_meets = [m for m in meetings if m.get("councilId") == council_id]
+    existing_urls = {m.get("officialUrl", "").rstrip("/"): m for m in existing_c_meets if m.get("officialUrl")}
+    existing_titles = {m.get("title", ""): m for m in existing_c_meets if m.get("title")}
+    existing_sessions = set()
+    for m in existing_c_meets:
+        sess_list = extract_session_numbers(m.get("title", "") + " " + m.get("officialUrl", "") + " " + m.get("id", ""))
+        for s in sess_list:
+            existing_sessions.add(s)
 
     added_count = 0
     for sub in subpages:
@@ -552,27 +558,39 @@ def sync_new_meetings_from_crawl(data, target, scraped_item):
         sub_mats = sub.get("materials", [])
         sub_dates = sub.get("extractedDates", [])
 
-        # 既に登録済みの場合は完全スキップ（既存の手動データを保護）
-        if sub_url in existing_urls or (sub_title and sub_title in existing_titles):
+        # 開催回番号の抽出
+        sess_nums = extract_session_numbers(sub_title + " " + sub_url)
+        # 既に該当回次が登録済みの場合はスキップ
+        if sess_nums and any(s in existing_sessions for s in sess_nums):
             continue
 
-        # 日付の算出
+        # 既にURLまたはタイトルが完全一致している場合はスキップ
+        if sub_url and sub_url in existing_urls:
+            continue
+        if sub_title and sub_title in existing_titles:
+            continue
+
+        # 日付の算出および YYYY/MM/DD への正規化
         meet_date = ""
         if sub_dates:
-            meet_date = sub_dates[0]
-        else:
-            # タイトルやURLから日付抽出
-            m_dt = parse_japanese_date(sub_title)
-            if m_dt:
-                meet_date = m_dt.strftime("%Y/%m/%d")
+            dt = parse_japanese_date(sub_dates[0])
+            if dt:
+                meet_date = dt.strftime("%Y/%m/%d")
+            else:
+                m_iso = re.search(r'(\d{4})[/-](\d{1,2})[/-](\d{1,2})', str(sub_dates[0]))
+                if m_iso:
+                    meet_date = f"{int(m_iso.group(1)):04d}/{int(m_iso.group(2)):02d}/{int(m_iso.group(3)):02d}"
+        
+        if not meet_date:
+            dt = parse_japanese_date(sub_title)
+            if dt:
+                meet_date = dt.strftime("%Y/%m/%d")
             else:
                 meet_date = datetime.now().strftime("%Y/%m/%d")
 
         # 会議IDの生成
         clean_d = meet_date.replace("/", "-")
-        # 開催回番号
-        sess_nums = extract_session_numbers(sub_title + " " + sub_url)
-        sess_suffix = f"dai{sorted(sess_nums)[0]}" if sess_nums else f"sess{len(existing_urls) + added_count + 1}"
+        sess_suffix = f"dai{sorted(sess_nums)[0]}" if sess_nums else f"sess{len(existing_c_meets) + added_count + 1}"
         new_meet_id = f"meet-{clean_d}-{council_id}-{sess_suffix}"
 
         # 重複ID回避
@@ -612,12 +630,13 @@ def sync_new_meetings_from_crawl(data, target, scraped_item):
             "materials": clean_materials_list
         }
 
-
         meetings.append(new_meeting)
         existing_urls[sub_url] = new_meeting
         existing_titles[formatted_title] = new_meeting
+        for s in sess_nums:
+            existing_sessions.add(s)
         added_count += 1
-        print(f"  [\U00002728 新規開催回自動追加] [{meet_date}] {formatted_title} (ID: {new_meet_id}, 資料: {len(clean_materials_list)}件)")
+        print(f"  [✨ 新規開催回自動追加] [{meet_date}] {formatted_title} (ID: {new_meet_id}, 資料: {len(clean_materials_list)}件)")
 
     if added_count > 0:
         # 日付降順に再ソート

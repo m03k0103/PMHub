@@ -23,6 +23,7 @@ discovery_state = {
     "total_ministries": 0,
     "discovered_count": 0,
     "logs": [],
+    "log_seq": 0,
     "result": None,
     "error": None
 }
@@ -35,6 +36,7 @@ crawler_state = {
     "total_councils": 0,
     "current_council": "",
     "logs": [],
+    "log_seq": 0,
     "stats": None,
     "error": None,
     "lastCrawlTime": ""
@@ -51,7 +53,8 @@ def _crawler_worker():
                 crawler_state["total_councils"] = data.get("total", 0)
             elif data.get("type") == "crawl_completed":
                 crawler_state["lastCrawlTime"] = data.get("lastCrawlTime", "")
-        crawler_state["logs"].append(msg)
+        crawler_state["log_seq"] += 1
+        crawler_state["logs"].append({"id": crawler_state["log_seq"], "text": msg})
         if len(crawler_state["logs"]) > 500:
             crawler_state["logs"] = crawler_state["logs"][-500:]
 
@@ -76,7 +79,8 @@ def _discovery_worker():
                 discovery_state["total_ministries"] = data.get("total", 0)
             elif data.get("type") == "council_discovered":
                 discovery_state["discovered_count"] += 1
-        discovery_state["logs"].append(msg)
+        discovery_state["log_seq"] += 1
+        discovery_state["logs"].append({"id": discovery_state["log_seq"], "text": msg})
         if len(discovery_state["logs"]) > 500:
             discovery_state["logs"] = discovery_state["logs"][-500:]
 
@@ -197,12 +201,14 @@ class CustomHandler(SimpleHTTPRequestHandler):
             self.send_response(200)
             self.send_header('Content-Type', 'application/json; charset=utf-8')
             self.end_headers()
-            # 返すログのオフセット処理
             query = parsed_url.query
             params = urllib.parse.parse_qs(query)
-            since = int(params.get("since", [0])[0])
+            since_id = int(params.get("since_id", params.get("since", [0]))[0])
             
-            new_logs = discovery_state["logs"][since:]
+            all_logs = discovery_state["logs"]
+            new_logs = [l for l in all_logs if l["id"] > since_id]
+            latest_id = all_logs[-1]["id"] if all_logs else 0
+
             res_payload = {
                 "running": discovery_state["running"],
                 "progress": discovery_state["progress"],
@@ -212,7 +218,8 @@ class CustomHandler(SimpleHTTPRequestHandler):
                 "total_ministries": discovery_state["total_ministries"],
                 "discovered_count": discovery_state["discovered_count"],
                 "logs": new_logs,
-                "totalLogs": len(discovery_state["logs"]),
+                "latest_log_id": latest_id,
+                "totalLogs": discovery_state["log_seq"],
                 "result": discovery_state["result"],
                 "error": discovery_state["error"]
             }
@@ -223,9 +230,12 @@ class CustomHandler(SimpleHTTPRequestHandler):
             self.end_headers()
             query = parsed_url.query
             params = urllib.parse.parse_qs(query)
-            since = int(params.get("since", [0])[0])
+            since_id = int(params.get("since_id", params.get("since", [0]))[0])
             
-            new_logs = crawler_state["logs"][since:]
+            all_logs = crawler_state["logs"]
+            new_logs = [l for l in all_logs if l["id"] > since_id]
+            latest_id = all_logs[-1]["id"] if all_logs else 0
+
             res_payload = {
                 "running": crawler_state["running"],
                 "progress": crawler_state["progress"],
@@ -233,7 +243,8 @@ class CustomHandler(SimpleHTTPRequestHandler):
                 "current_idx": crawler_state["current_idx"],
                 "total_councils": crawler_state["total_councils"],
                 "logs": new_logs,
-                "totalLogs": len(crawler_state["logs"]),
+                "latest_log_id": latest_id,
+                "totalLogs": crawler_state["log_seq"],
                 "stats": crawler_state["stats"],
                 "error": crawler_state["error"],
                 "lastCrawlTime": crawler_state["lastCrawlTime"]

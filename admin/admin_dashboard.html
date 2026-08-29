@@ -751,13 +751,13 @@ JSON データを読み込み中...
           throw new Error('ディスカバリー開始リクエストに失敗しました');
         }
 
-        let logOffset = 0;
+        let lastLogId = 0;
         let isDone = false;
 
         while (!isDone) {
           await new Promise(r => setTimeout(r, 600));
           try {
-            const statusRes = await fetch(`/api/discovery-status?since=${logOffset}`);
+            const statusRes = await fetch(`/api/discovery-status?since_id=${lastLogId}`);
             if (statusRes.ok) {
               const statusData = await statusRes.json();
 
@@ -768,8 +768,16 @@ JSON データを読み込み中...
 
               // 新着ログを出力
               if (statusData.logs && statusData.logs.length > 0) {
-                statusData.logs.forEach(line => logLine(line));
-                logOffset = statusData.totalLogs || (logOffset + statusData.logs.length);
+                statusData.logs.forEach(item => {
+                  const lineText = (typeof item === 'object' && item.text) ? item.text : item;
+                  logLine(lineText);
+                  if (typeof item === 'object' && item.id) {
+                    lastLogId = Math.max(lastLogId, item.id);
+                  }
+                });
+                if (statusData.latest_log_id) {
+                  lastLogId = Math.max(lastLogId, statusData.latest_log_id);
+                }
               }
 
               // ボタンテキストに進捗を表示
@@ -870,16 +878,24 @@ JSON データを読み込み中...
       logLine(`サーバー応答: ${initData.message || 'クロール開始'}`);
 
       // 2. ポーリングループで進捗・ログをリアルタイム受信
-      let logOffset = 0;
+      let lastLogId = 0;
       const pollInterval = setInterval(async () => {
         try {
-          const statusRes = await fetch(`/api/crawler-status?since=${logOffset}`);
+          const statusRes = await fetch(`/api/crawler-status?since_id=${lastLogId}`);
           if (!statusRes.ok) return;
           const data = await statusRes.json();
 
           if (data.logs && data.logs.length > 0) {
-            data.logs.forEach(l => logLine(l));
-            logOffset += data.logs.length;
+            data.logs.forEach(item => {
+              const lineText = (typeof item === 'object' && item.text) ? item.text : item;
+              logLine(lineText);
+              if (typeof item === 'object' && item.id) {
+                lastLogId = Math.max(lastLogId, item.id);
+              }
+            });
+            if (data.latest_log_id) {
+              lastLogId = Math.max(lastLogId, data.latest_log_id);
+            }
           }
 
           if (progressFill && data.progress !== undefined) {
