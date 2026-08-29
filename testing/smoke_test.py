@@ -469,6 +469,18 @@ def check_council_timeline_sync():
 
     councils_set = set(councils_ids)
 
+    # Format check: councilId must have exactly 1 hyphen, meeting.id must have exactly 3 hyphens
+    invalid_c_ids = [cid for cid in councils_ids if cid.count('-') != 1 or not re.match(r'^[a-z]+-[a-z0-9_]+$', cid)]
+    if invalid_c_ids:
+        print(f"  [FAIL] 不正な councilId フォーマット (要 1ハイフン): {invalid_c_ids[:5]}")
+        return False
+
+    meeting_ids = [m.get("id", "") for m in meetings]
+    invalid_m_ids = [mid for mid in meeting_ids if mid.count('-') != 3 or not re.match(r'^[a-z]+-[a-z0-9_]+-\d{8}-[a-z0-9_]+$', mid)]
+    if invalid_m_ids:
+        print(f"  [FAIL] 不正な meetingId フォーマット (要 3ハイフン/4セグメント): {invalid_m_ids[:5]}")
+        return False
+
     # Check for meetings belonging to non-existent councils
     orphaned_meetings = meetings_council_ids - councils_set
     if orphaned_meetings:

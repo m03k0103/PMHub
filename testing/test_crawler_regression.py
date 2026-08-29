@@ -235,7 +235,7 @@ class TestCrawlerManualLockProtection(unittest.TestCase):
         mock_data = {
             "councils": [
                 {
-                    "id": "moj-test-council",
+                    "id": "moj-test_council",
                     "name": "法務省テスト検討会",
                     "ministry": "MOJ",
                     "officialUrl": "https://example.com/portal",
@@ -245,8 +245,8 @@ class TestCrawlerManualLockProtection(unittest.TestCase):
             ],
             "meetings": [
                 {
-                    "id": "meet-2026-03-24-moj-test-council-dai1",
-                    "councilId": "moj-test-council",
+                    "id": "moj-test_council-20260324-001",
+                    "councilId": "moj-test_council",
                     "title": "第1回 法務省テスト検討会",
                     "date": "2026/03/24",
                     "officialUrl": "https://example.com/session1.html",
@@ -259,7 +259,7 @@ class TestCrawlerManualLockProtection(unittest.TestCase):
         }
 
         mock_scraped_item = {
-            "councilId": "moj-test-council",
+            "councilId": "moj-test_council",
             "subpageMeetings": [
                 # 既存の第1回（スキップされるべき）
                 {

@@ -618,14 +618,14 @@ def sync_new_meetings_from_crawl(data, target, scraped_item):
             else:
                 meet_date = datetime.now().strftime("%Y/%m/%d")
 
-        # 会議IDの生成
-        clean_d = meet_date.replace("/", "-")
-        sess_suffix = f"dai{sorted(sess_nums)[0]}" if sess_nums else f"sess{len(existing_c_meets) + added_count + 1}"
-        new_meet_id = f"meet-{clean_d}-{council_id}-{sess_suffix}"
+        # 会議IDの生成（4セグメント統一形式: {council_id}-{YYYYMMDD}-{回次000またはs00}）
+        clean_d = meet_date.replace("/", "").replace("-", "")
+        sess_suffix = f"{sorted(sess_nums)[0]:03d}" if sess_nums else f"s{len(existing_c_meets) + added_count + 1:02d}"
+        new_meet_id = f"{council_id}-{clean_d}-{sess_suffix}"
 
         # 重複ID回避
         if any(m.get("id") == new_meet_id for m in meetings):
-            new_meet_id = f"meet-{clean_d}-{council_id}-{sess_suffix}-{added_count+1}"
+            new_meet_id = f"{council_id}-{clean_d}-{sess_suffix}_{added_count+1}"
 
         # タイトルの正規化
         formatted_title = sub_title

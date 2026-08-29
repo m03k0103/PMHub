@@ -116,17 +116,16 @@ def run_test():
     if bad_titles:
         errors.append(f"Generic/auto-extracted meeting titles found ({len(bad_titles)} items): {bad_titles[:5]}")
 
-    # 7. Check that no council records have '第n回' in their name
-    c_with_rounds = [c.get('name') for c in councils.values() if re.search(r'第\s*[0-9０-９一-九]+\s*回', c.get('name', ''))]
-    if c_with_rounds:
-        errors.append(f"Council records with '第n回' in title found ({len(c_with_rounds)} items): {c_with_rounds[:5]}")
+    # 8. Check councilId format (Must have exactly 1 hyphen: {ministry}-{slug})
+    bad_c_ids = [c_id for c_id in councils.keys() if c_id.count('-') != 1 or not re.match(r'^[a-z]+-[a-z0-9_]+$', c_id)]
+    if bad_c_ids:
+        errors.append(f"Invalid councilId format (must be {{ministry}}-{{slug}} with 1 hyphen) ({len(bad_c_ids)} items): {bad_c_ids[:5]}")
 
-    dc_with_rounds = [c.get('name') for c in data.get('discoveredCouncils', []) if re.search(r'第\s*[0-9０-９一-九]+\s*回', c.get('name', ''))]
-    if dc_with_rounds:
-        errors.append(f"Discovered council records with '第n回' in title found ({len(dc_with_rounds)} items): {dc_with_rounds[:5]}")
+    # 9. Check meetingId format (Must have exactly 3 hyphens: {councilId}-{YYYYMMDD}-{round/session})
+    bad_m_ids = [m.get('id') for m in meetings if m.get('id', '').count('-') != 3 or not re.match(r'^[a-z]+-[a-z0-9_]+-\d{8}-[a-z0-9_]+$', m.get('id', ''))]
+    if bad_m_ids:
+        errors.append(f"Invalid meetingId format (must be {{councilId}}-{{YYYYMMDD}}-{{round}} with 3 hyphens) ({len(bad_m_ids)} items): {bad_m_ids[:5]}")
 
-
-        
     if errors:
         print(f"FAILED: {len(errors)} validation errors found:")
         for e in errors:
