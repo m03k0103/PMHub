@@ -47,7 +47,7 @@
       "ministry": "CAO",
       "category": "COUNCIL",
       "pastYearCount": 28,
-      "description": "経済社会の構造改革を推進するため、各種規制の点検・見直し、スタートアップ・デジタル化の障害除去を答申する内閣府諮問機関。",
+      "description": "内閣府 規制改革推進会議の本会議。",
       "officialUrl": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/meeting.html",
       "isWatched": true,
       "crawlStatus": {
@@ -25657,6 +25657,27 @@
       ]
     },
     {
+      "id": "cas-kinyu_47-20260629-006",
+      "councilId": "cas-kinyu_47",
+      "title": "第6回 新戦略策定のための資産運用立国推進分科会",
+      "date": "2026/06/29",
+      "officialUrl": "https://www.cas.go.jp/jp/seisaku/nipponseichosenryaku/kinyu/dai6/gijishidai.html",
+      "category": "SUBCOMMITTEE",
+      "ministry": "CAS",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "その他情報",
+          "url": "https://www.cas.go.jp/jp/siryou/index.html",
+          "type": "HTML"
+        },
+        {
+          "name": "議事次第",
+          "url": "https://www.cas.go.jp/jp/seisaku/nipponseichosenryaku/kinyu/dai6/gijishidai.pdf"
+        }
+      ]
+    },
+    {
       "id": "cao-kisei_kaikaku-20260629-028",
       "councilId": "cao-kisei_kaikaku",
       "title": "第28回 規制改革推進会議",
@@ -25666,6 +25687,10 @@
       "ministry": "CAO",
       "manualLock": true,
       "materials": [
+        {
+          "name": "議事録",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/committee/260629/260629minutes.pdf"
+        },
         {
           "name": "議事次第 (PDF形式:149KB)",
           "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/committee/260629/260629general_00.pdf"
@@ -25729,27 +25754,6 @@
         {
           "name": "日本成長戦略の戦略分野に資する規制改革（規制改革推進に関する答申） （PDF形式:371KB）",
           "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/committee/260629/260629general_dec03.pdf"
-        }
-      ]
-    },
-    {
-      "id": "cas-kinyu_47-20260629-006",
-      "councilId": "cas-kinyu_47",
-      "title": "第6回 新戦略策定のための資産運用立国推進分科会",
-      "date": "2026/06/29",
-      "officialUrl": "https://www.cas.go.jp/jp/seisaku/nipponseichosenryaku/kinyu/dai6/gijishidai.html",
-      "category": "SUBCOMMITTEE",
-      "ministry": "CAS",
-      "manualLock": true,
-      "materials": [
-        {
-          "name": "その他情報",
-          "url": "https://www.cas.go.jp/jp/siryou/index.html",
-          "type": "HTML"
-        },
-        {
-          "name": "議事次第",
-          "url": "https://www.cas.go.jp/jp/seisaku/nipponseichosenryaku/kinyu/dai6/gijishidai.pdf"
         }
       ]
     },
@@ -28137,30 +28141,6 @@
       ]
     },
     {
-      "id": "cao-kisei_kaikaku-20260617-015",
-      "councilId": "cao-kisei_kaikaku",
-      "title": "第15回 規制改革推進会議",
-      "date": "2026/06/17",
-      "officialUrl": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_04startup/260617/startup15_agenda.html",
-      "category": "COUNCIL",
-      "ministry": "CAO",
-      "manualLock": true,
-      "materials": [
-        {
-          "name": "議事次第 (PDF形式:46KB)",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_04startup/260617/startup15_agenda.pdf"
-        },
-        {
-          "name": "資料１　事務局提出資料（PDF形式：627KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_04startup/260617/startup15_01.pdf"
-        },
-        {
-          "name": "参考資料　事務局提出資料（PDF形式：175KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_04startup/260617/startup15_ref.pdf"
-        }
-      ]
-    },
-    {
       "id": "mic-chihou_seido_34-20260617-senmon_006",
       "councilId": "mic-chihou_seido_34",
       "title": "第6回 第34次地方制度調査会 専門小委員会",
@@ -29907,30 +29887,6 @@
       "docCount": 4
     },
     {
-      "id": "cao-kisei_kaikaku-20260526-003",
-      "councilId": "cao-kisei_kaikaku",
-      "title": "第3回 規制改革推進会議",
-      "date": "2026/05/26",
-      "officialUrl": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_05gx/260526/gx03_agenda.html",
-      "category": "COUNCIL",
-      "ministry": "CAO",
-      "manualLock": true,
-      "materials": [
-        {
-          "name": "議事次第 (PDF形式:34KB)",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_05gx/260526/gx03_agenda.pdf"
-        },
-        {
-          "name": "資料１　事務局提出資料（PDF形式：1,638KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_05gx/260526/gx03_01.pdf"
-        },
-        {
-          "name": "資料２　事務局提出資料（PDF形式：218KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_05gx/260526/gx03_02.pdf"
-        }
-      ]
-    },
-    {
       "id": "cao-kisei_gx_subwg-20260526-003",
       "councilId": "cao-kisei_gx_subwg",
       "title": "第3回 規制改革推進会議 ＧＸ・サステナビリティサブWG（令和7年度）",
@@ -30475,42 +30431,6 @@
       ]
     },
     {
-      "id": "cao-kisei_kaikaku-20260519-011",
-      "councilId": "cao-kisei_kaikaku",
-      "title": "第11回 規制改革推進会議",
-      "date": "2026/05/19",
-      "officialUrl": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_01local/260519/local11_agenda.html",
-      "category": "COUNCIL",
-      "ministry": "CAO",
-      "manualLock": true,
-      "materials": [
-        {
-          "name": "議事次第 (PDF形式:54KB)",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_01local/260519/local11_agenda.pdf"
-        },
-        {
-          "name": "資料１　農林水産省提出資料（PDF形式：1741KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_01local/260519/local11_01.pdf"
-        },
-        {
-          "name": "資料２　事務局提出資料（PDF形式：174KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_01local/260519/local11_02.pdf"
-        },
-        {
-          "name": "参考資料１　第６回地域活性化・人手不足対応ワーキング・グループ（令和８年１月２６日）農林水産省提出資料（PDF形式：3640KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_01local/260519/local11_ref01.pdf"
-        },
-        {
-          "name": "参考資料２　第８回地域活性化・人手不足対応ワーキング・グループ（令和８年４月１４日）農林水産省提出資料（PDF形式：1210KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_01local/260519/local11_ref02.pdf"
-        },
-        {
-          "name": "参考資料３　第８回地域活性化・人手不足対応ワーキング・グループ（令和８年４月１４日）落合委員・佐藤委員・井上専門委員・秋元専門委員提出資料（PDF形式：609KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_01local/260519/local11_ref03.pdf"
-        }
-      ]
-    },
-    {
       "id": "cao-kisei_chiiki_wg-20260519-011",
       "councilId": "cao-kisei_chiiki_wg",
       "title": "第11回 規制改革推進会議 地域活性化・人手不足対応WG（令和7年度）",
@@ -30635,74 +30555,6 @@
         {
           "name": "議事要旨",
           "url": "https://www.cas.go.jp/jp/seisaku/kokuminkaigi/contents/20260515/minutes.pdf"
-        }
-      ]
-    },
-    {
-      "id": "cao-kisei_kaikaku-20260515-012",
-      "councilId": "cao-kisei_kaikaku",
-      "title": "第12回 規制改革推進会議",
-      "date": "2026/05/15",
-      "officialUrl": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_02medical/260515/medical12_agenda.html",
-      "category": "COUNCIL",
-      "ministry": "CAO",
-      "manualLock": true,
-      "materials": [
-        {
-          "name": "議事次第 (PDF形式:93KB)",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_02medical/260515/medical12_agenda.pdf"
-        },
-        {
-          "name": "資料１ー１　厚生労働省提出資料（PDF形式：2,037KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_02medical/260515/medical12_0101.pdf"
-        },
-        {
-          "name": "資料１ー２　全国障害者地域生活支援事業者連絡会・一般社団法人日本パブリックアフェアーズ協会提出資料（PDF形式：2,467KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_02medical/260515/medical12_0102.pdf"
-        },
-        {
-          "name": "資料１ー３　一般社団法人東京都筋ジストロフィー協会提出資料（PDF形式：291KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_02medical/260515/medical12_0103.pdf"
-        },
-        {
-          "name": "資料１ー４　日本ＰＴＥＧ研究会提出資料（PDF形式：2,741KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_02medical/260515/medical12_0104.pdf"
-        },
-        {
-          "name": "資料１ー５　国際医療福祉大学那須医療センター提出資料（PDF形式：1,579KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_02medical/260515/medical12_0105.pdf"
-        },
-        {
-          "name": "資料２－１　一般社団法人次世代基盤政策研究所提出資料（PDF形式：4,100KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_02medical/260515/medical12_0201.pdf"
-        },
-        {
-          "name": "資料２－２　日本製薬工業協会提出資料（PDF形式：2,184KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_02medical/260515/medical12_0202.pdf"
-        },
-        {
-          "name": "資料２－３ー１　一般社団法人日本経済団体連合会提出資料（PDF形式：1,346KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_02medical/260515/medical12_020301.pdf"
-        },
-        {
-          "name": "資料２－３ー２　一般社団法人日本経済団体連合会提出資料（PDF形式：1,081KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_02medical/260515/medical12_020302.pdf"
-        },
-        {
-          "name": "１（PDF形式：4,261KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_02medical/260515/medical12_0204_01.pdf"
-        },
-        {
-          "name": "２（PDF形式：3,075KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_02medical/260515/medical12_0204_02.pdf"
-        },
-        {
-          "name": "３（PDF形式：4,213KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_02medical/260515/medical12_0204_03.pdf"
-        },
-        {
-          "name": "資料２－５　落合委員・伊藤専門委員・印南専門委員・大石専門委員・桜井専門委員・佐々木専門委員提出資料（PDF形式：358KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_02medical/260515/medical12_0205.pdf"
         }
       ]
     },
@@ -30860,70 +30712,6 @@
       "officialUrl": "https://www8.cao.go.jp/space/comittee/27-anpo/anpo-dai69/gijisidai.html",
       "hasMinutes": false,
       "docCount": 12
-    },
-    {
-      "id": "cao-kisei_kaikaku-20260514-010",
-      "councilId": "cao-kisei_kaikaku",
-      "title": "第10回 規制改革推進会議",
-      "date": "2026/05/14",
-      "officialUrl": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_01local/260514/local10_agenda.html",
-      "category": "COUNCIL",
-      "ministry": "CAO",
-      "manualLock": true,
-      "materials": [
-        {
-          "name": "議事次第 (PDF形式:57KB)",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_01local/260514/local10_agenda.pdf"
-        },
-        {
-          "name": "資料１ー１　デジタル庁提出資料（PDF形式：915KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_01local/260514/local10_0101.pdf"
-        },
-        {
-          "name": "資料１ー２　株式会社ティアフォー提出資料（PDF形式：1,187KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_01local/260514/local10_0102.pdf"
-        },
-        {
-          "name": "資料１ー３　Turing株式会社提出資料（PDF形式：1,146KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_01local/260514/local10_0103.pdf"
-        },
-        {
-          "name": "資料１ー４　警察庁提出資料（PDF形式：1,224KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_01local/260514/local10_0104.pdf"
-        },
-        {
-          "name": "資料１ー５　国土交通省提出資料（PDF形式：338KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_01local/260514/local10_0105.pdf"
-        },
-        {
-          "name": "資料１ー６　事務局提出資料（PDF形式：380KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_01local/260514/local10_0106.pdf"
-        },
-        {
-          "name": "資料２ー１　事務局提出資料（PDF形式：730KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_01local/260514/local10_0201.pdf"
-        },
-        {
-          "name": "資料２ー２　事務局提出資料（PDF形式：625KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_01local/260514/local10_0202.pdf"
-        },
-        {
-          "name": "資料２ー３　事務局提出資料（PDF形式：871KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_01local/260514/local10_0203.pdf"
-        },
-        {
-          "name": "参考資料　事務局提出資料（PDF形式：691KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_01local/260514/local10_ref.pdf"
-        },
-        {
-          "name": "移動の足不足の改善状況についての検証及び令和８年３月末時点の利用者目線での検証結果の評価 （PDF形式:1,050KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_01local/260514/local10_0203.1.pdf"
-        },
-        {
-          "name": "自家用車活用事業等のモニタリング及び検証、令和８年６月末時点の評価及び移動の足不足の改善状況についての検証、令和８年６月末時点の利用者目線での検証結果の評価 （PDF形式:1,070KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_01local/260514/local10_0203.2.pdf"
-        }
-      ]
     },
     {
       "id": "cao-kisei_chiiki_wg-20260514-010",
@@ -31135,46 +30923,6 @@
       ],
       "topics": [],
       "manualLock": true
-    },
-    {
-      "id": "cao-kisei_kaikaku-20260513-009",
-      "councilId": "cao-kisei_kaikaku",
-      "title": "第9回 規制改革推進会議",
-      "date": "2026/05/13",
-      "officialUrl": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_01local/260513/local09_agenda.html",
-      "category": "COUNCIL",
-      "ministry": "CAO",
-      "manualLock": true,
-      "materials": [
-        {
-          "name": "議事次第 (PDF形式:41KB)",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_01local/260513/local09_agenda.pdf"
-        },
-        {
-          "name": "資料１ー１　株式会社シーフードレガシー提出資料（PDF形式：1,437KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_01local/260513/local09_0101.pdf"
-        },
-        {
-          "name": "資料１ー２　高知県提出資料（PDF形式：1,178KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_01local/260513/local09_0102.pdf"
-        },
-        {
-          "name": "資料１ー３　株式会社マルイチ産商提出資料（PDF形式：801KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_01local/260513/local09_0103.pdf"
-        },
-        {
-          "name": "資料１ー４　農林水産省提出資料（PDF形式：2,628KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_01local/260513/local09_0104.pdf"
-        },
-        {
-          "name": "資料１ー５　事務局提出資料（PDF形式：155KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_01local/260513/local09_0105.pdf"
-        },
-        {
-          "name": "資料２　事務局提出資料（PDF形式：197KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_01local/260513/local09_02.pdf"
-        }
-      ]
     },
     {
       "id": "mic-chihou_seido_34-20260513-senmon_005",
@@ -32222,38 +31970,6 @@
       ]
     },
     {
-      "id": "cao-kisei_kaikaku-20260422-014",
-      "councilId": "cao-kisei_kaikaku",
-      "title": "第14回 規制改革推進会議",
-      "date": "2026/04/22",
-      "officialUrl": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_04startup/260422/startup14_agenda.html",
-      "category": "COUNCIL",
-      "ministry": "CAO",
-      "manualLock": true,
-      "materials": [
-        {
-          "name": "議事次第 (PDF形式:98KB)",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_04startup/260422/startup14_agenda.pdf"
-        },
-        {
-          "name": "資料１ー１　総務省提出資料（PDF形式：1,185KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_04startup/260422/startup14_0101.pdf"
-        },
-        {
-          "name": "資料１ー２　豊田合成株式会社提出資料（PDF形式：2,747KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_04startup/260422/startup14_0102.pdf"
-        },
-        {
-          "name": "資料１ー３　ワイヤレス電力伝送実用化コンソーシアム提出資料（PDF形式：2,628KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_04startup/260422/startup14_0103.pdf"
-        },
-        {
-          "name": "資料２　事務局提出資料（PDF形式：578KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_04startup/260422/startup14_02.pdf"
-        }
-      ]
-    },
-    {
       "id": "cao-kisei_startup_wg-20260422-014",
       "councilId": "cao-kisei_startup_wg",
       "title": "第14回 規制改革推進会議 スタートアップ・イノベーション促進WG（令和7年度）",
@@ -32749,50 +32465,6 @@
       ]
     },
     {
-      "id": "cao-kisei_kaikaku-20260414-008",
-      "councilId": "cao-kisei_kaikaku",
-      "title": "第8回 規制改革推進会議",
-      "date": "2026/04/14",
-      "officialUrl": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_01local/260414/local08_agenda.html",
-      "category": "COUNCIL",
-      "ministry": "CAO",
-      "manualLock": true,
-      "materials": [
-        {
-          "name": "議事次第 (PDF形式:105KB)",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_01local/260414/local08_agenda.pdf"
-        },
-        {
-          "name": "資料１－１　公益社団法人日本農業法人協会提出資料（PDF形式：1477KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_01local/260414/local08_0101.pdf"
-        },
-        {
-          "name": "資料１－２　株式会社日本農業提出資料（PDF形式：780KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_01local/260414/local08_0102.pdf"
-        },
-        {
-          "name": "資料１－３　阿賀野市農業委員会提出資料（PDF形式：3618KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_01local/260414/local08_0103.pdf"
-        },
-        {
-          "name": "資料１－４　公益社団法人秋田県農業公社提出資料（PDF形式：1680KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_01local/260414/local08_0104.pdf"
-        },
-        {
-          "name": "資料１－５　農林水産省提出資料（PDF形式：1204KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_01local/260414/local08_0105.pdf"
-        },
-        {
-          "name": "資料１－６　落合委員・佐藤委員・井上専門委員・秋元専門委員提出資料（PDF形式：602KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_01local/260414/local08_0106.pdf"
-        },
-        {
-          "name": "資料２　事務局提出資料（PDF形式：253KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_01local/260414/local08_02.pdf"
-        }
-      ]
-    },
-    {
       "id": "mhlw-ideco_fukyuu_tokubetsu_kaigi-20260414-001",
       "councilId": "mhlw-ideco_fukyuu_tokubetsu_kaigi",
       "title": "第1回 iDeCo普及・推進特別会議",
@@ -32933,34 +32605,6 @@
         {
           "name": "資料８　厚生労働省提出資料（PDF形式：4,268KB）",
           "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_03human/260414/human08_08.pdf"
-        }
-      ]
-    },
-    {
-      "id": "cao-kisei_kaikaku-20260413-013",
-      "councilId": "cao-kisei_kaikaku",
-      "title": "第13回 規制改革推進会議",
-      "date": "2026/04/13",
-      "officialUrl": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_04startup/260413/startup13_agenda.html",
-      "category": "COUNCIL",
-      "ministry": "CAO",
-      "manualLock": true,
-      "materials": [
-        {
-          "name": "議事次第 (PDF形式:97.4KB)",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_04startup/260413/startup13_agenda.pdf"
-        },
-        {
-          "name": "資料１　消費者庁提出資料（PDF形式：797KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_04startup/260413/startup13_01.pdf"
-        },
-        {
-          "name": "資料２　一般社団法人日本フランチャイズチェーン協会提出資料（PDF形式：537KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_04startup/260413/startup13_02.pdf"
-        },
-        {
-          "name": "資料３　池田・染谷法律事務所提出資料（PDF形式：970KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_04startup/260413/startup13_03.pdf"
         }
       ]
     },
@@ -39214,6 +38858,27 @@
       "docCount": 5
     },
     {
+      "id": "smea-shokibo_kaseguchikara-20260226-002",
+      "councilId": "smea-shokibo_kaseguchikara",
+      "title": "小規模事業者の「稼ぐ力」の強化に向けた諸課題に関する検討会 第2回",
+      "date": "2026/02/26",
+      "officialUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/shokibo_kaseguchikara/002/002.html",
+      "category": "STUDY",
+      "ministry": "SMEA",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "第2回 小規模事業者の「稼ぐ力」の強化に向けた諸課題に関する検討会 配布資料",
+          "url": "https://www.chusho.meti.go.jp/koukai/kenkyukai/shokibo_kaseguchikara/002/002.html",
+          "type": "HTML"
+        },
+        {
+          "name": "第2回 小規模事業者の「稼ぐ力」の強化に向けた諸課題に関する検討会 議事要旨(700KB)",
+          "url": "https://www.chusho.meti.go.jp/koukai/kenkyukai/shokibo_kaseguchikara/002/gy.pdf"
+        }
+      ]
+    },
+    {
       "id": "cao-kisei_kaikaku-20260226-027",
       "councilId": "cao-kisei_kaikaku",
       "title": "第27回 規制改革推進会議",
@@ -39223,6 +38888,10 @@
       "ministry": "CAO",
       "manualLock": true,
       "materials": [
+        {
+          "name": "議事録",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/committee/260226/260226minutes.pdf"
+        },
         {
           "name": "議事次第 (PDF形式:96KB)",
           "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/committee/260226/260226general_00.pdf"
@@ -39262,27 +38931,6 @@
         {
           "name": "規制改革実施計画のフォローアップについて （PDF形式:208KB）",
           "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/committee/260226/260226general_dec05.pdf"
-        }
-      ]
-    },
-    {
-      "id": "smea-shokibo_kaseguchikara-20260226-002",
-      "councilId": "smea-shokibo_kaseguchikara",
-      "title": "小規模事業者の「稼ぐ力」の強化に向けた諸課題に関する検討会 第2回",
-      "date": "2026/02/26",
-      "officialUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/shokibo_kaseguchikara/002/002.html",
-      "category": "STUDY",
-      "ministry": "SMEA",
-      "manualLock": true,
-      "materials": [
-        {
-          "name": "第2回 小規模事業者の「稼ぐ力」の強化に向けた諸課題に関する検討会 配布資料",
-          "url": "https://www.chusho.meti.go.jp/koukai/kenkyukai/shokibo_kaseguchikara/002/002.html",
-          "type": "HTML"
-        },
-        {
-          "name": "第2回 小規模事業者の「稼ぐ力」の強化に向けた諸課題に関する検討会 議事要旨(700KB)",
-          "url": "https://www.chusho.meti.go.jp/koukai/kenkyukai/shokibo_kaseguchikara/002/gy.pdf"
         }
       ]
     },
@@ -39920,66 +39568,6 @@
         {
           "name": "「資源・エネルギー安全保障・GX」分野における成長戦略の検討（PDF／8.0MB）",
           "url": "https://www.cas.go.jp/jp/seisaku/gx_jikkou_kaigi/senmonka_wg/dai15/shiryo1.pdf"
-        }
-      ]
-    },
-    {
-      "id": "cao-kisei_kaikaku-20260217-007",
-      "councilId": "cao-kisei_kaikaku",
-      "title": "第7回 規制改革推進会議",
-      "date": "2026/02/17",
-      "officialUrl": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_01local/260217/local07_agenda.html",
-      "category": "COUNCIL",
-      "ministry": "CAO",
-      "manualLock": true,
-      "materials": [
-        {
-          "name": "議事次第 (PDF形式:98KB)",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_01local/260217/local07_agenda.pdf"
-        },
-        {
-          "name": "資料１　株式会社日本総合研究所創発戦略センター三輪泰史チーフスペシャリスト提出資料（PDF形式：1558KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_01local/260217/local07_01.pdf"
-        },
-        {
-          "name": "資料２　大和ハウス工業株式会社提出資料（PDF形式：2882KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_01local/260217/local07_02.pdf"
-        },
-        {
-          "name": "資料３　株式会社大仙提出資料（PDF形式：2758KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_01local/260217/local07_03.pdf"
-        },
-        {
-          "name": "資料４　明治大学農学部池田敬教授提出資料（PDF形式：391KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_01local/260217/local07_04.pdf"
-        },
-        {
-          "name": "１（PDF形式：711KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_01local/260217/local07_05_01.pdf"
-        },
-        {
-          "name": "２（PDF形式：4365KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_01local/260217/local07_05_02.pdf"
-        },
-        {
-          "name": "３（PDF形式：1655KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_01local/260217/local07_05_03.pdf"
-        },
-        {
-          "name": "４（PDF形式：4152KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_01local/260217/local07_05_04.pdf"
-        },
-        {
-          "name": "資料６　農林水産省提出資料（PDF形式：1738KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_01local/260217/local07_06.pdf"
-        },
-        {
-          "name": "資料７　国土交通省提出資料（PDF形式：566KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_01local/260217/local07_07.pdf"
-        },
-        {
-          "name": "資料８　事務局提出資料（PDF形式：300KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_01local/260217/local07_08.pdf"
         }
       ]
     },
@@ -42119,50 +41707,6 @@
       ]
     },
     {
-      "id": "cao-kisei_kaikaku-20260126-006",
-      "councilId": "cao-kisei_kaikaku",
-      "title": "第6回 規制改革推進会議",
-      "date": "2026/01/26",
-      "officialUrl": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_01local/260126/local06_agenda.html",
-      "category": "COUNCIL",
-      "ministry": "CAO",
-      "manualLock": true,
-      "materials": [
-        {
-          "name": "議事次第 (PDF形式:98KB)",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_01local/260126/local06_agenda.pdf"
-        },
-        {
-          "name": "資料１　株式会社日本総合研究所創発戦略センター三輪泰史チーフスペシャリスト提出資料（PDF形式：876KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_01local/260126/local06_01.pdf"
-        },
-        {
-          "name": "資料２－１　公益社団法人日本農業法人協会提出資料（PDF形式：1595KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_01local/260126/local06_0201.pdf"
-        },
-        {
-          "name": "資料２－２　公益社団法人日本農業法人協会提出資料（PDF形式：291KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_01local/260126/local06_0202.pdf"
-        },
-        {
-          "name": "資料３　株式会社日本農業提出資料（PDF形式：6163KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_01local/260126/local06_03.pdf"
-        },
-        {
-          "name": "資料４　宇佐市提出資料（PDF形式：3821KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_01local/260126/local06_04.pdf"
-        },
-        {
-          "name": "資料５　農林水産省提出資料（PDF形式：2861KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_01local/260126/local06_05.pdf"
-        },
-        {
-          "name": "資料６　落合委員・佐藤委員・井上専門委員・秋元専門委員提出資料（PDF形式：955KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_01local/260126/local06_06.pdf"
-        }
-      ]
-    },
-    {
       "id": "cao-contents_kyogikai_25-20260126-001",
       "councilId": "cao-contents_kyogikai_25",
       "councilName": "コンテンツ産業官民協議会",
@@ -43515,58 +43059,6 @@
       ]
     },
     {
-      "id": "cao-kisei_kaikaku-20260115-005",
-      "councilId": "cao-kisei_kaikaku",
-      "title": "第5回 規制改革推進会議",
-      "date": "2026/01/15",
-      "officialUrl": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_01local/260115/local05_agenda.html",
-      "category": "COUNCIL",
-      "ministry": "CAO",
-      "manualLock": true,
-      "materials": [
-        {
-          "name": "議事次第 (PDF形式:46KB)",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_01local/260115/local05_agenda.pdf"
-        },
-        {
-          "name": "資料１ー１　オリックス自動車株式会社提出資料（PDF形式：1,222KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_01local/260115/local05_0101.pdf"
-        },
-        {
-          "name": "資料１ー２　公益社団法人リース事業協会提出資料（PDF形式：363KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_01local/260115/local05_0102.pdf"
-        },
-        {
-          "name": "資料１ー３　国土交通省提出資料（PDF形式：2,898KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_01local/260115/local05_0103.pdf"
-        },
-        {
-          "name": "資料２ー１　事務局提出資料（PDF形式：524KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_01local/260115/local05_0201.pdf"
-        },
-        {
-          "name": "資料２ー２　事務局提出資料（PDF形式：207KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_01local/260115/local05_0202.pdf"
-        },
-        {
-          "name": "資料２ー３　事務局提出資料（PDF形式：1,742KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_01local/260115/local05_0203.pdf"
-        },
-        {
-          "name": "事務局提出資料（PDF形式：801KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_01local/260115/local05_0203_2.pdf"
-        },
-        {
-          "name": "資料３　事務局提出資料（PDF形式：204KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_01local/260115/local05_03.pdf"
-        },
-        {
-          "name": "参考資料　事務局提出資料（PDF形式：785KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_01local/260115/local05_ref.pdf"
-        }
-      ]
-    },
-    {
       "id": "cas-kinyu_47-20260115-001",
       "councilId": "cas-kinyu_47",
       "title": "第1回 新戦略策定のための資産運用立国推進分科会",
@@ -43717,50 +43209,6 @@
         {
           "name": "参考資料　事務局提出資料（PDF形式：785KB）",
           "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_01local/260115/local05_ref.pdf"
-        }
-      ]
-    },
-    {
-      "id": "cao-kisei_kaikaku-20260114-002",
-      "councilId": "cao-kisei_kaikaku",
-      "title": "第2回 規制改革推進会議",
-      "date": "2026/01/14",
-      "officialUrl": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_05gx/260114/gx02_agenda.html",
-      "category": "COUNCIL",
-      "ministry": "CAO",
-      "manualLock": true,
-      "materials": [
-        {
-          "name": "議事次第 (PDF形式:47KB)",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_05gx/260114/gx02_agenda.pdf"
-        },
-        {
-          "name": "資料１ー１　経済産業省提出資料（PDF形式：1,253KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_05gx/260114/gx02_0101.pdf"
-        },
-        {
-          "name": "資料１ー２　株式会社セブン-イレブン・ジャパン提出資料（PDF形式：2,642KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_05gx/260114/gx02_0102.pdf"
-        },
-        {
-          "name": "資料１ー３　株式会社アイ・グリッド・ソリューションズ提出資料（PDF形式：1,556KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_05gx/260114/gx02_0103.pdf"
-        },
-        {
-          "name": "資料１ー４　事務局提出資料（PDF形式：935KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_05gx/260114/gx02_0104.pdf"
-        },
-        {
-          "name": "資料１ー５　総務省提出資料（PDF形式：384KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_05gx/260114/gx02_0105.pdf"
-        },
-        {
-          "name": "資料１ー６　原田専門委員提出資料（PDF形式：169KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_05gx/260114/gx02_0106.pdf"
-        },
-        {
-          "name": "資料２　事務局提出資料（PDF形式：537KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_05gx/260114/gx02_02.pdf"
         }
       ]
     },
@@ -44960,6 +44408,10 @@
       "ministry": "CAO",
       "manualLock": true,
       "materials": [
+        {
+          "name": "議事録",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/committee/251224/251224minutes.pdf"
+        },
         {
           "name": "議事次第 (PDF形式:99KB)",
           "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/committee/251224/251224general_00.pdf"
@@ -49663,38 +49115,6 @@
       "docCount": 0
     },
     {
-      "id": "cao-kisei_kaikaku-20251016-025",
-      "councilId": "cao-kisei_kaikaku",
-      "title": "第25回 規制改革推進会議",
-      "date": "2025/10/16",
-      "officialUrl": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/committee/251016/agenda.html",
-      "category": "COUNCIL",
-      "ministry": "CAO",
-      "manualLock": true,
-      "materials": [
-        {
-          "name": "議事次第 (PDF形式:93KB)",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/committee/251016/251016general_00.pdf"
-        },
-        {
-          "name": "参考資料１ー１　規制改革推進会議委員名簿 （PDF形式:191KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/committee/251016/251016general_ref01_1.pdf"
-        },
-        {
-          "name": "参考資料１ー２　規制改革推進会議専門委員名簿 （PDF形式:325KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/committee/251016/251016general_ref01_2.pdf"
-        },
-        {
-          "name": "参考資料２ー１　規制改革推進会議令 （PDF形式:192KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/committee/251016/251016general_ref02_1.pdf"
-        },
-        {
-          "name": "参考資料２－２　規制改革推進会議運営規則 （PDF形式:206KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/committee/251016/251016general_ref02_2.pdf"
-        }
-      ]
-    },
-    {
       "id": "cas-gx_senmonka_wg-20251016-011",
       "councilId": "cas-gx_senmonka_wg",
       "title": "第11回 ＧＸ実行会議 専門家ワーキンググループ",
@@ -49720,6 +49140,46 @@
       "ministry": "MOJ",
       "manualLock": true,
       "materials": []
+    },
+    {
+      "id": "cao-kisei_kaikaku-20251016-025",
+      "councilId": "cao-kisei_kaikaku",
+      "title": "第25回 規制改革推進会議",
+      "date": "2025/10/16",
+      "officialUrl": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/committee/251003/agenda.html",
+      "category": "COUNCIL",
+      "ministry": "CAO",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "議事録",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/committee/251003/251003minutes.pdf"
+        },
+        {
+          "name": "議事次第 (PDF形式:99KB)",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/committee/251003/251003general_00.pdf"
+        },
+        {
+          "name": "資料１　規制改革実施計画を踏まえた規制・制度改革の更なる発展・深化について（案） （PDF形式:288KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/committee/251003/251003general_01.pdf"
+        },
+        {
+          "name": "参考資料１　規制・制度改革における直近１年間の主な取組・成果 （PDF形式:1,650KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/committee/251003/251003general_ref01.pdf"
+        },
+        {
+          "name": "参考資料２　川邊委員提出資料 （PDF形式:231KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/committee/251003/251003general_ref02.pdf"
+        },
+        {
+          "name": "参考資料３ー１　次期規制改革推進会議委員について （PDF形式:193KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/committee/251003/251003general_ref03_1.pdf"
+        },
+        {
+          "name": "参考資料３ー２　次期規制改革推進会議専門委員について （PDF形式:176KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/committee/251003/251003general_ref03_2.pdf"
+        }
+      ]
     },
     {
       "id": "moj-youikuhi_kento-20251014-005",
@@ -49829,42 +49289,6 @@
       ],
       "topics": [],
       "manualLock": true
-    },
-    {
-      "id": "cao-kisei_kaikaku-20251003-024",
-      "councilId": "cao-kisei_kaikaku",
-      "title": "第24回 規制改革推進会議",
-      "date": "2025/10/03",
-      "officialUrl": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/committee/251003/agenda.html",
-      "category": "COUNCIL",
-      "ministry": "CAO",
-      "manualLock": true,
-      "materials": [
-        {
-          "name": "議事次第 (PDF形式:99KB)",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/committee/251003/251003general_00.pdf"
-        },
-        {
-          "name": "資料１　規制改革実施計画を踏まえた規制・制度改革の更なる発展・深化について（案） （PDF形式:288KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/committee/251003/251003general_01.pdf"
-        },
-        {
-          "name": "参考資料１　規制・制度改革における直近１年間の主な取組・成果 （PDF形式:1,650KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/committee/251003/251003general_ref01.pdf"
-        },
-        {
-          "name": "参考資料２　川邊委員提出資料 （PDF形式:231KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/committee/251003/251003general_ref02.pdf"
-        },
-        {
-          "name": "参考資料３ー１　次期規制改革推進会議委員について （PDF形式:193KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/committee/251003/251003general_ref03_1.pdf"
-        },
-        {
-          "name": "参考資料３ー２　次期規制改革推進会議専門委員について （PDF形式:176KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/committee/251003/251003general_ref03_2.pdf"
-        }
-      ]
     },
     {
       "id": "cas-atarashii_sihon_107-20251003-037",
@@ -49987,6 +49411,46 @@
         {
           "name": "村上委員提出資料",
           "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai37/shiryou8.pdf"
+        }
+      ]
+    },
+    {
+      "id": "cao-kisei_kaikaku-20251003-024",
+      "councilId": "cao-kisei_kaikaku",
+      "title": "第24回 規制改革推進会議",
+      "date": "2025/10/03",
+      "officialUrl": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/committee/251003/agenda.html",
+      "category": "COUNCIL",
+      "ministry": "CAO",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "議事録",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/committee/251003/251003minutes.pdf"
+        },
+        {
+          "name": "議事次第 (PDF形式:99KB)",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/committee/251003/251003general_00.pdf"
+        },
+        {
+          "name": "資料１　規制改革実施計画を踏まえた規制・制度改革の更なる発展・深化について（案） （PDF形式:288KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/committee/251003/251003general_01.pdf"
+        },
+        {
+          "name": "参考資料１　規制・制度改革における直近１年間の主な取組・成果 （PDF形式:1,650KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/committee/251003/251003general_ref01.pdf"
+        },
+        {
+          "name": "参考資料２　川邊委員提出資料 （PDF形式:231KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/committee/251003/251003general_ref02.pdf"
+        },
+        {
+          "name": "参考資料３ー１　次期規制改革推進会議委員について （PDF形式:193KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/committee/251003/251003general_ref03_1.pdf"
+        },
+        {
+          "name": "参考資料３ー２　次期規制改革推進会議専門委員について （PDF形式:176KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/committee/251003/251003general_ref03_2.pdf"
         }
       ]
     },
@@ -54139,6 +53603,10 @@
       "manualLock": true,
       "materials": [
         {
+          "name": "議事録",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/committee/250528/250528minutes.pdf"
+        },
+        {
           "name": "規制改革推進に関する答申（案）（概要）（PDF形式:1,921KB）",
           "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/committee/250528/250528general_01_1.pdf"
         },
@@ -54738,42 +54206,6 @@
         {
           "name": "医療分野研究開発推進計画（PDF／942KB）",
           "url": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/tyousakai/dai43/sankou7.pdf"
-        }
-      ]
-    },
-    {
-      "id": "cao-kisei_kaikaku-20250514-004",
-      "councilId": "cao-kisei_kaikaku",
-      "title": "第4回 規制改革推進会議",
-      "date": "2025/05/14",
-      "officialUrl": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_01local/250514/local04_agenda.html",
-      "category": "COUNCIL",
-      "ministry": "CAO",
-      "manualLock": true,
-      "materials": [
-        {
-          "name": "事務局　提出資料（PDF形式：151KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_01local/250514/local01.pdf"
-        },
-        {
-          "name": "事務局　提出資料（PDF形式：1,506KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_01local/250514/local02_01.pdf"
-        },
-        {
-          "name": "事務局　提出資料（PDF形式：252KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_01local/250514/local02_02.pdf"
-        },
-        {
-          "name": "事務局　提出資料（PDF形式：741KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_01local/250514/local_ref01.pdf"
-        },
-        {
-          "name": "事務局　提出資料（PDF形式：806KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_01local/250514/local_ref02.pdf"
-        },
-        {
-          "name": "事務局　提出資料（PDF形式：417KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_01local/250514/local_ref03.pdf"
         }
       ]
     },
@@ -57408,54 +56840,6 @@
         {
           "name": "厚生労働省　御提出資料（PDF形式：2,621KB）",
           "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_02medical/250331/medical03_0204.pdf"
-        }
-      ]
-    },
-    {
-      "id": "cao-kisei_kaikaku-20250328-001",
-      "councilId": "cao-kisei_kaikaku",
-      "title": "第1回 規制改革推進会議",
-      "date": "2025/03/28",
-      "officialUrl": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_01local/250328/local01_agenda.html",
-      "category": "COUNCIL",
-      "ministry": "CAO",
-      "manualLock": true,
-      "materials": [
-        {
-          "name": "事務局　提出資料（PDF形式：776KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_01local/250328/local01_01.pdf"
-        },
-        {
-          "name": "事務局　提出資料（PDF形式：810KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_01local/250328/local01_02.pdf"
-        },
-        {
-          "name": "事務局　提出資料（PDF形式：373KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_01local/250328/local01_03.pdf"
-        },
-        {
-          "name": "事務局　提出資料（PDF形式：439KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_01local/250328/local01_04.pdf"
-        },
-        {
-          "name": "全国飲食業生活衛生同業組合連合会　御提出資料（PDF形式：123KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_01local/250328/local01_05.pdf"
-        },
-        {
-          "name": "栃木県移送サービス連絡協議会　御提出資料（PDF形式：3,296KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_01local/250328/local01_06.pdf"
-        },
-        {
-          "name": "事務局　提出資料（PDF形式：364KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_01local/250328/local02.pdf"
-        },
-        {
-          "name": "事務局　提出資料（PDF形式：1,511KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_01local/250328/local02_2.pdf"
-        },
-        {
-          "name": "事務局　提出資料（PDF形式：918KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_01local/250328/local_ref.pdf"
         }
       ]
     },
@@ -61451,54 +60835,6 @@
       ]
     },
     {
-      "id": "cao-kisei_kaikaku-20241225-022",
-      "councilId": "cao-kisei_kaikaku",
-      "title": "第22回 規制改革推進会議",
-      "date": "2024/12/25",
-      "officialUrl": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/committee/241225/agenda.html",
-      "category": "COUNCIL",
-      "ministry": "CAO",
-      "manualLock": true,
-      "materials": [
-        {
-          "name": "規制改革推進に関する中間答申（概要）（PDF形式:1,489KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/committee/241225/241225general_01-1.pdf"
-        },
-        {
-          "name": "概要資料（PDF形式：1,465KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/publication/opinion/241225point.pdf"
-        },
-        {
-          "name": "規制改革推進に関する中間答申（案）（PDF形式:1,142KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/committee/241225/241225general_01-2.pdf"
-        },
-        {
-          "name": "本文（PDF形式：1,105KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/publication/opinion/241225.pdf"
-        },
-        {
-          "name": "年明け以降の規制改革推進会議の進め方について（PDF形式:111KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/committee/241225/241225general_02-1.pdf"
-        },
-        {
-          "name": "規制改革推進会議運営規則の変更について（PDF形式:306KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/committee/241225/241225general_02-2.pdf"
-        },
-        {
-          "name": "内閣府本府組織令（平成12年政令第245号）（抜粋）（PDF形式:172KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/committee/241225/241225general_ref01_01.pdf"
-        },
-        {
-          "name": "規制改革推進会議令（平成28年政令第303号）（PDF形式:191KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/committee/241225/241225general_ref01_02.pdf"
-        },
-        {
-          "name": "規制改革推進会議委員名簿（PDF形式:179KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/committee/241225/241225general_ref01_03.pdf"
-        }
-      ]
-    },
-    {
       "id": "cas-sdgs_31-20241225-015",
       "councilId": "cas-sdgs_31",
       "title": "第15回 持続可能な開発目標（ＳＤＧｓ）推進本部",
@@ -61542,6 +60878,58 @@
       "officialUrl": "https://www.mext.go.jp/b_menu/shingi/chukyo/chukyo0/kaisai/1415012_00028.html",
       "hasMinutes": false,
       "docCount": 0
+    },
+    {
+      "id": "cao-kisei_kaikaku-20241225-022",
+      "councilId": "cao-kisei_kaikaku",
+      "title": "第22回 規制改革推進会議",
+      "date": "2024/12/25",
+      "officialUrl": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/committee/241225/agenda.html",
+      "category": "COUNCIL",
+      "ministry": "CAO",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "議事録",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/committee/241225/241225minutes.pdf"
+        },
+        {
+          "name": "規制改革推進に関する中間答申（概要）（PDF形式:1,489KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/committee/241225/241225general_01-1.pdf"
+        },
+        {
+          "name": "概要資料（PDF形式：1,465KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/publication/opinion/241225point.pdf"
+        },
+        {
+          "name": "規制改革推進に関する中間答申（案）（PDF形式:1,142KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/committee/241225/241225general_01-2.pdf"
+        },
+        {
+          "name": "本文（PDF形式：1,105KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/publication/opinion/241225.pdf"
+        },
+        {
+          "name": "年明け以降の規制改革推進会議の進め方について（PDF形式:111KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/committee/241225/241225general_02-1.pdf"
+        },
+        {
+          "name": "規制改革推進会議運営規則の変更について（PDF形式:306KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/committee/241225/241225general_02-2.pdf"
+        },
+        {
+          "name": "内閣府本府組織令（平成12年政令第245号）（抜粋）（PDF形式:172KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/committee/241225/241225general_ref01_01.pdf"
+        },
+        {
+          "name": "規制改革推進会議令（平成28年政令第303号）（PDF形式:191KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/committee/241225/241225general_ref01_02.pdf"
+        },
+        {
+          "name": "規制改革推進会議委員名簿（PDF形式:179KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/committee/241225/241225general_ref01_03.pdf"
+        }
+      ]
     },
     {
       "id": "cas-kokusentoc_24-20241224-039",
@@ -64031,50 +63419,6 @@
       "manualLock": true
     },
     {
-      "id": "cao-kisei_kaikaku-20241112-021",
-      "councilId": "cao-kisei_kaikaku",
-      "title": "第21回 規制改革推進会議",
-      "date": "2024/11/12",
-      "officialUrl": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/committee/241112/agenda.html",
-      "category": "COUNCIL",
-      "ministry": "CAO",
-      "manualLock": true,
-      "materials": [
-        {
-          "name": "今後の検討課題（PDF形式:1,510KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/committee/241112/241112general_01.pdf"
-        },
-        {
-          "name": "規制改革推進会議の進め方について（PDF形式:139KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/committee/241112/241112general_02.pdf"
-        },
-        {
-          "name": "ライドシェアに関する対応について（PDF形式:243KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/committee/241112/241112general_03.pdf"
-        },
-        {
-          "name": "落合委員提出資料（PDF形式:387KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/committee/241112/241112general_ref01.pdf"
-        },
-        {
-          "name": "内閣府本府組織令（平成12年政令第245号）（抜粋）（PDF形式:173KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/committee/241112/241112general_ref02_01.pdf"
-        },
-        {
-          "name": "規制改革推進会議令（平成28年政令第303号）（PDF形式:191KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/committee/241112/241112general_ref02_02.pdf"
-        },
-        {
-          "name": "規制会改革推進会議運営規則（PDF形式:205KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/committee/241112/241112general_ref02_03.pdf"
-        },
-        {
-          "name": "規制改革推進会議委員名簿（PDF形式:179KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/committee/241112/241112general_ref03.pdf"
-        }
-      ]
-    },
-    {
       "id": "cas-kome_anteikyokyujitsugen_kaigi_27-20241112-003",
       "councilId": "cas-kome_anteikyokyujitsugen_kaigi_27",
       "councilName": "米の安定供給等実現関係閣僚会議",
@@ -64116,6 +63460,54 @@
       "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/nousui/kome_anteikyokyujitsugen_kaigi/dai3/shiryo1.pdf",
       "hasMinutes": true,
       "docCount": 6
+    },
+    {
+      "id": "cao-kisei_kaikaku-20241112-021",
+      "councilId": "cao-kisei_kaikaku",
+      "title": "第21回 規制改革推進会議",
+      "date": "2024/11/12",
+      "officialUrl": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/committee/241112/agenda.html",
+      "category": "COUNCIL",
+      "ministry": "CAO",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "議事録",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/committee/241112/241112minutes.pdf"
+        },
+        {
+          "name": "今後の検討課題（PDF形式:1,510KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/committee/241112/241112general_01.pdf"
+        },
+        {
+          "name": "規制改革推進会議の進め方について（PDF形式:139KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/committee/241112/241112general_02.pdf"
+        },
+        {
+          "name": "ライドシェアに関する対応について（PDF形式:243KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/committee/241112/241112general_03.pdf"
+        },
+        {
+          "name": "落合委員提出資料（PDF形式:387KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/committee/241112/241112general_ref01.pdf"
+        },
+        {
+          "name": "内閣府本府組織令（平成12年政令第245号）（抜粋）（PDF形式:173KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/committee/241112/241112general_ref02_01.pdf"
+        },
+        {
+          "name": "規制改革推進会議令（平成28年政令第303号）（PDF形式:191KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/committee/241112/241112general_ref02_02.pdf"
+        },
+        {
+          "name": "規制会改革推進会議運営規則（PDF形式:205KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/committee/241112/241112general_ref02_03.pdf"
+        },
+        {
+          "name": "規制改革推進会議委員名簿（PDF形式:179KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/committee/241112/241112general_ref03.pdf"
+        }
+      ]
     },
     {
       "id": "mof-zaiseiseido_bunkakai-20241111-s21",
@@ -66485,6 +65877,10 @@
       "ministry": "CAO",
       "manualLock": true,
       "materials": [
+        {
+          "name": "議事録",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/committee/240902/240902minutes.pdf"
+        },
         {
           "name": "規制改革に関するこれまでの取組と成果（概要）（PDF形式:456KB）",
           "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/committee/240902/240902general_0101.pdf"
@@ -71092,66 +70488,6 @@
       ]
     },
     {
-      "id": "cao-kisei_kaikaku-20240531-016",
-      "councilId": "cao-kisei_kaikaku",
-      "title": "第16回 規制改革推進会議",
-      "date": "2024/05/31",
-      "officialUrl": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2310_05local/240531/local16_agenda.html",
-      "category": "COUNCIL",
-      "ministry": "CAO",
-      "manualLock": true,
-      "materials": [
-        {
-          "name": "内閣府・国土交通省　提出資料（PDF形式：80KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2310_05local/240531/local01.pdf"
-        },
-        {
-          "name": "事務局　提出資料（PDF形式：175KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2310_05local/240531/local_ref01.pdf"
-        },
-        {
-          "name": "事務局　提出資料（PDF形式：171KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2310_05local/240531/local_ref02.pdf"
-        }
-      ]
-    },
-    {
-      "id": "cao-kisei_kaikaku-20240531-019",
-      "councilId": "cao-kisei_kaikaku",
-      "title": "第19回 規制改革推進会議",
-      "date": "2024/05/31",
-      "officialUrl": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/committee/240531/agenda.html",
-      "category": "COUNCIL",
-      "ministry": "CAO",
-      "manualLock": true,
-      "materials": [
-        {
-          "name": "ライドシェア事業に係る法制度についての論点整理（PDF形式:80KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/committee/240531/240531general_01.pdf"
-        },
-        {
-          "name": "規制改革推進に関する答申（案）（概要資料）（PDF形式:407KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/committee/240531/240531general_0201.pdf"
-        },
-        {
-          "name": "規制改革推進に関する答申（案）（PDF形式:1,307KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/committee/240531/240531general_0202.pdf"
-        },
-        {
-          "name": "「ライドシェア事業に係る法制度についての論点整理」に伴う委員意見について（PDF形式:176KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/committee/240531/240531general_ref01.pdf"
-        },
-        {
-          "name": "規制改革実施計画のフォローアップ結果について【事項一覧】（PDF形式:242KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/committee/240531/240531general_ref0201.pdf"
-        },
-        {
-          "name": "規制改革実施計画のフォローアップ結果について（PDF形式:2,546KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/committee/240531/240531general_ref0202.pdf"
-        }
-      ]
-    },
-    {
       "id": "cfa-kodomo_suishin-20240531-003",
       "councilId": "cfa-kodomo_suishin",
       "title": "第3回 こども政策推進会議",
@@ -71291,6 +70627,46 @@
         {
           "name": "事務局　提出資料（PDF形式：171KB）",
           "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2310_05local/240531/local_ref02.pdf"
+        }
+      ]
+    },
+    {
+      "id": "cao-kisei_kaikaku-20240531-019",
+      "councilId": "cao-kisei_kaikaku",
+      "title": "第19回 規制改革推進会議",
+      "date": "2024/05/31",
+      "officialUrl": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/committee/240531/agenda.html",
+      "category": "COUNCIL",
+      "ministry": "CAO",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "議事録",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/committee/240531/240531minutes.pdf"
+        },
+        {
+          "name": "ライドシェア事業に係る法制度についての論点整理（PDF形式:80KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/committee/240531/240531general_01.pdf"
+        },
+        {
+          "name": "規制改革推進に関する答申（案）（概要資料）（PDF形式:407KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/committee/240531/240531general_0201.pdf"
+        },
+        {
+          "name": "規制改革推進に関する答申（案）（PDF形式:1,307KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/committee/240531/240531general_0202.pdf"
+        },
+        {
+          "name": "「ライドシェア事業に係る法制度についての論点整理」に伴う委員意見について（PDF形式:176KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/committee/240531/240531general_ref01.pdf"
+        },
+        {
+          "name": "規制改革実施計画のフォローアップ結果について【事項一覧】（PDF形式:242KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/committee/240531/240531general_ref0201.pdf"
+        },
+        {
+          "name": "規制改革実施計画のフォローアップ結果について（PDF形式:2,546KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/committee/240531/240531general_ref0202.pdf"
         }
       ]
     },
@@ -79652,6 +79028,10 @@
       "manualLock": true,
       "materials": [
         {
+          "name": "議事録",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/committee/231226/231226minutes.pdf"
+        },
+        {
           "name": "規制改革推進に関する中間答申（概要）（PDF形式：774KB）",
           "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/committee/231226/231226general_01.pdf"
         },
@@ -84498,6 +83878,10 @@
       "ministry": "CAO",
       "manualLock": true,
       "materials": [
+        {
+          "name": "議事録",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/committee/231016/231016minutes.pdf"
+        },
         {
           "name": "規制改革推進会議運営規則改定（案）について（PDF形式:235KB）",
           "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/committee/231016/231016general_01.pdf"
@@ -91027,6 +90411,66 @@
       "officialUrl": "https://www.chisou.go.jp/tiiki/kokusentoc/dai58/shiryou.html",
       "hasMinutes": true,
       "docCount": 12
+    },
+    {
+      "id": "cao-kisei_kaikaku-20230601-016",
+      "councilId": "cao-kisei_kaikaku",
+      "title": "第16回 規制改革推進会議",
+      "date": "2023/06/01",
+      "officialUrl": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/committee/230601/agenda.html",
+      "category": "COUNCIL",
+      "ministry": "CAO",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "議事録",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/committee/230601/230601minutes.pdf"
+        },
+        {
+          "name": "規制改革推進に関する答申（案）（概要資料）（PDF形式：523KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/committee/230601/230601general_0101.pdf"
+        },
+        {
+          "name": "規制改革推進に関する答申（案）（PDF形式：1,246KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/committee/230601/230601general_0102.pdf"
+        },
+        {
+          "name": "ローカルルール見直しに係る基本的考え方（案）（PDF形式：543KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/committee/230601/230601general_02.pdf"
+        },
+        {
+          "name": "医療等データの利活用法制等の整備について（案）（PDF形式：1,039KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/committee/230601/230601general_03.pdf"
+        },
+        {
+          "name": "規制改革実施計画のフォローアップ結果について（PDF形式：2,664KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/committee/230601/230601general_ref01.pdf"
+        },
+        {
+          "name": "分割版：１（PDF形式：1,973KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/committee/230601/230601general_ref01_01.pdf"
+        },
+        {
+          "name": "２（PDF形式：1,070KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/committee/230601/230601general_ref01_02.pdf"
+        },
+        {
+          "name": "国家戦略特区において取り組む規制改革事項等について（案）（PDF形式：875KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/committee/230601/230601nssz_01.pdf"
+        },
+        {
+          "name": "国家戦略特区 今後の進め方について（民間議員提出資料）（PDF形式：137KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/committee/230601/230601nssz_02.pdf"
+        },
+        {
+          "name": "国家戦略特区において取り組む規制改革事項等について（PDF形式：656KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/committee/230601/230601nssz_ref01.pdf"
+        },
+        {
+          "name": "国家戦略特別区域法及び構造改革特別区域法の一部を改正する法律（PDF形式：314KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/committee/230601/230601nssz_ref02.pdf"
+        }
+      ]
     },
     {
       "id": "cas-chuobou_61-20230530-043",
@@ -100485,6 +99929,58 @@
       "docCount": 13
     },
     {
+      "id": "cao-kisei_kaikaku-20221222-015",
+      "councilId": "cao-kisei_kaikaku",
+      "title": "第15回 規制改革推進会議",
+      "date": "2022/12/22",
+      "officialUrl": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/committee/221222/agenda.html",
+      "category": "COUNCIL",
+      "ministry": "CAO",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "議事録",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/committee/221222/221222minutes.pdf"
+        },
+        {
+          "name": "規制改革推進に関する中間答申（概要）（PDF形式：435KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/committee/221222/221222general_01.pdf"
+        },
+        {
+          "name": "規制改革推進に関する中間答申（案）（PDF形式：589KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/committee/221222/221222general_02.pdf"
+        },
+        {
+          "name": "区域計画の認定について（PDF形式：303KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/committee/221222/221222nssz_01.pdf"
+        },
+        {
+          "name": "地方創生のための制度改革・規制改革に関するアイディア募集を踏まえた施策パッケージ（PDF形式：690KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/committee/221222/221222nssz_02.pdf"
+        },
+        {
+          "name": "国家戦略特区において取り組む規制改革事項等について（案）（PDF形式：485KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/committee/221222/221222nssz_03.pdf"
+        },
+        {
+          "name": "国家戦略特別区域諮問会議決定（案）（PDF形式：163KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/committee/221222/221222nssz_04.pdf"
+        },
+        {
+          "name": "国家戦略特区 今後の進め方について（民間議員　御提出資料）（PDF形式：291KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/committee/221222/221222nssz_05.pdf"
+        },
+        {
+          "name": "国家戦略特別区域計画（案）（PDF形式：533KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/committee/221222/221222nssz_ref01.pdf"
+        },
+        {
+          "name": "スーパーシティ・デジタル田園健康特区における新たな規制改革事項（PDF形式：347KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/committee/221222/221222nssz_ref02.pdf"
+        }
+      ]
+    },
+    {
       "id": "moj-minji_hanketsu_db-20221221-003",
       "councilId": "moj-minji_hanketsu_db",
       "title": "民事判決情報データベース化検討会（第３回会議）（令和４年１２月２１日開催）",
@@ -103946,6 +103442,58 @@
       "officialUrl": "https://www.mof.go.jp/about_mof/councils/fiscal_system_council/sub-of_fiscal_system/proceedings/material/20221013zaiseia.html",
       "hasMinutes": true,
       "docCount": 8
+    },
+    {
+      "id": "cao-kisei_kaikaku-20221013-014",
+      "councilId": "cao-kisei_kaikaku",
+      "title": "第14回 規制改革推進会議",
+      "date": "2022/10/13",
+      "officialUrl": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/committee/221013/agenda.html",
+      "category": "COUNCIL",
+      "ministry": "CAO",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "議事録",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/committee/221013/221013minutes.pdf"
+        },
+        {
+          "name": "規制改革推進会議の進め方について（案）（事務局提出資料）（PDF形式：188KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/committee/221013/221013general_0101.pdf"
+        },
+        {
+          "name": "ワーキング・グループ構成員について（案）（事務局提出資料）（PDF形式：102KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/committee/221013/221013general_0102.pdf"
+        },
+        {
+          "name": "規制改革の重要課題について（事務局提出資料）（PDF形式：301KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/committee/221013/221013general_02.pdf"
+        },
+        {
+          "name": "規制改革推進会議意見書（佐藤委員御提出資料）（PDF形式：143KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/committee/221013/221013general_03.pdf"
+        },
+        {
+          "name": "内閣府本府組織令（平成12年政令第245号）（抜粋）（事務局提出資料）（PDF形式：173KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/committee/221013/221013general_ref01.pdf"
+        },
+        {
+          "name": "規制改革推進会議令（平成28年政令第303号）（事務局提出資料）（PDF形式：191KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/committee/221013/221013general_ref02.pdf"
+        },
+        {
+          "name": "規制改革推進会議運営規則（事務局提出資料）（PDF形式：206KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/committee/221013/221013general_ref03.pdf"
+        },
+        {
+          "name": "規制改革推進会議　委員名簿（事務局提出資料）（PDF形式：173KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/committee/221013/221013general_ref04.pdf"
+        },
+        {
+          "name": "規制改革推進会議　専門委員名簿（事務局提出資料）（PDF形式：100KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/committee/221013/221013general_ref05.pdf"
+        }
+      ]
     },
     {
       "id": "cao-partnership_86-20221011-004",
@@ -109907,6 +109455,46 @@
           "name": "第100回　税理士分科会（令和4年5月27日）",
           "url": "https://www.nta.go.jp/about/council/zeirishi/220527/100.htm",
           "type": "HTML"
+        }
+      ]
+    },
+    {
+      "id": "cao-kisei_kaikaku-20220527-013",
+      "councilId": "cao-kisei_kaikaku",
+      "title": "第13回 規制改革推進会議",
+      "date": "2022/05/27",
+      "officialUrl": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/committee/220527/agenda.html",
+      "category": "COUNCIL",
+      "ministry": "CAO",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "議事録",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/committee/220527/220527minutes.pdf"
+        },
+        {
+          "name": "規制改革推進に関する答申（案）（PDF形式：2,020KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/committee/220527/220527general_01.pdf"
+        },
+        {
+          "name": "１（PDF形式：1,557KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/committee/220527/220527general_01_01.pdf"
+        },
+        {
+          "name": "２（PDF形式：1,429KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/committee/220527/220527general_01_02.pdf"
+        },
+        {
+          "name": "規制改革推進に関する答申（概要）（PDF形式：981KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/committee/220527/220527general_02.pdf"
+        },
+        {
+          "name": "規制改革実施計画のフォローアップ結果について（PDF形式：1,567KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/committee/220527/220527general_03.pdf"
+        },
+        {
+          "name": "再生可能エネルギー等に関する規制等の総点検タスクフォースにおける取組（PDF形式：830KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/committee/220527/220527general_ref01.pdf"
         }
       ]
     },
@@ -118684,6 +118272,46 @@
       "docCount": 8
     },
     {
+      "id": "cao-kisei_kaikaku-20211222-012",
+      "councilId": "cao-kisei_kaikaku",
+      "title": "第12回 規制改革推進会議",
+      "date": "2021/12/22",
+      "officialUrl": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/committee/211222/agenda.html",
+      "category": "COUNCIL",
+      "ministry": "CAO",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "議事録",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/committee/211222/211222minutes.pdf"
+        },
+        {
+          "name": "当面の規制改革の実施事項（案）（PDF形式：1,063KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/committee/211222/211222general_0101.pdf"
+        },
+        {
+          "name": "当面の規制改革の実施事項（概要）（PDF形式：627KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/committee/211222/211222general_0102.pdf"
+        },
+        {
+          "name": "規制改革推進会議の進め方について　新旧対照表（PDF形式：63KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/committee/211222/211222general_0201.pdf"
+        },
+        {
+          "name": "規制改革推進会議の進め方について（案）（PDF形式：60KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/committee/211222/211222general_0202.pdf"
+        },
+        {
+          "name": "ワーキング・グループ構成員について（案）（PDF形式：73KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/committee/211222/211222general_0203.pdf"
+        },
+        {
+          "name": "規制改革推進会議運営規則（PDF形式：204KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/committee/211222/211222general_ref01.pdf"
+        }
+      ]
+    },
+    {
       "id": "smea-syokoutyukinkikitaiou-20211221-014",
       "councilId": "smea-syokoutyukinkikitaiou",
       "title": "商工中金の経営及び危機対応業務に関する評価委員会 第14回",
@@ -123241,6 +122869,58 @@
           "name": "資料",
           "url": "https://www.nta.go.jp/about/council/sake3/210823/shiryo/01.htm",
           "type": "HTML"
+        }
+      ]
+    },
+    {
+      "id": "cao-kisei_kaikaku-20210823-011",
+      "councilId": "cao-kisei_kaikaku",
+      "title": "第11回 規制改革推進会議",
+      "date": "2021/08/23",
+      "officialUrl": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/committee/210823/agenda.html",
+      "category": "COUNCIL",
+      "ministry": "CAO",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "議事録",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/committee/210823/210823minutes.pdf"
+        },
+        {
+          "name": "規制改革推進会議の進め方について（案）（PDF形式：103KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/committee/210823/210823general_01.pdf"
+        },
+        {
+          "name": "ワーキング・グループ構成員について（PDF形式：103KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/committee/210823/210823general_02.pdf"
+        },
+        {
+          "name": "規制改革の主な成果と当面の課題について（PDF形式：177KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/committee/210823/210823general_03.pdf"
+        },
+        {
+          "name": "内閣府本府組織令（平成12年政令第245号）（抜粋）（PDF形式：73KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/committee/210823/210823general_ref01.pdf"
+        },
+        {
+          "name": "規制改革推進会議令（平成28年政令第303号）（PDF形式：88KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/committee/210823/210823general_ref02.pdf"
+        },
+        {
+          "name": "規制改革推進会議運営規則（PDF形式：102KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/committee/210823/210823general_ref03.pdf"
+        },
+        {
+          "name": "規制改革推進会議　委員名簿（PDF形式：75KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/committee/210823/210823general_ref04.pdf"
+        },
+        {
+          "name": "規制改革推進会議　専門委員名簿（PDF形式：97KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/committee/210823/210823general_ref05.pdf"
+        },
+        {
+          "name": "規制改革・行政改革ホットライン（縦割り110番）の運営状況・再開について（PDF形式：977KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/committee/210823/210823general_ref06.pdf"
         }
       ]
     },
@@ -128162,6 +127842,34 @@
       "officialUrl": "https://www.mof.go.jp/about_mof/councils/fiscal_system_council/sub-of_fiscal_system/proceedings/material/20210512zaiseia.html",
       "hasMinutes": true,
       "docCount": 4
+    },
+    {
+      "id": "cao-kisei_kaikaku-20210518-010",
+      "councilId": "cao-kisei_kaikaku",
+      "title": "第10回 規制改革推進会議",
+      "date": "2021/05/18",
+      "officialUrl": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/committee/20210518/agenda.html",
+      "category": "COUNCIL",
+      "ministry": "CAO",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "議事録",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/committee/20210518/gijiroku0518.pdf"
+        },
+        {
+          "name": "デジタル技術の進展を踏まえた大学・高校の設置基準等の見直し及び外部人材の積極活用のための教員資格制度の見直しに関する意見（PDF形式：277KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/committee/20210518/210518honkaigi01.pdf"
+        },
+        {
+          "name": "デジタル時代の刑事法の在り方（PDF形式：219KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/committee/20210518/210518honkaigi02.pdf"
+        },
+        {
+          "name": "規制改革推進に関する答申骨子（案）（PDF形式：254KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/committee/20210518/210518honkaigi03.pdf"
+        }
+      ]
     },
     {
       "id": "cao-kisei_digital_ai_wg-20210513-012",
@@ -134919,6 +134627,34 @@
       ]
     },
     {
+      "id": "cao-kisei_kaikaku-20201222-009",
+      "councilId": "cao-kisei_kaikaku",
+      "title": "第9回 規制改革推進会議",
+      "date": "2020/12/22",
+      "officialUrl": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/committee/20201222/agenda.html",
+      "category": "COUNCIL",
+      "ministry": "CAO",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "議事録",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/committee/20201222/gijiroku1222.pdf"
+        },
+        {
+          "name": "当面の規制改革の実施事項の概要（PDF形式：204KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/committee/20201222/201222honkaigi01.pdf"
+        },
+        {
+          "name": "当面の規制改革の実施事項（PDF形式：66KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/committee/20201222/201222honkaigi02.pdf"
+        },
+        {
+          "name": "規制改革・行政改革担当大臣直轄チームの取組（PDF形式：466KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/committee/20201222/201222honkaigi03.pdf"
+        }
+      ]
+    },
+    {
       "id": "cas-kokusentoc_24-20201221-048",
       "councilId": "cas-kokusentoc_24",
       "councilName": "国家戦略特別区域諮問会議",
@@ -138929,6 +138665,38 @@
       ]
     },
     {
+      "id": "cao-kisei_kaikaku-20200702-008",
+      "councilId": "cao-kisei_kaikaku",
+      "title": "第8回 規制改革推進会議",
+      "date": "2020/07/02",
+      "officialUrl": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/committee/20200702/agenda.html",
+      "category": "COUNCIL",
+      "ministry": "CAO",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "議事録",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/committee/20200702/gijiroku0702.pdf"
+        },
+        {
+          "name": "規制改革推進に関する答申（PDF形式：614KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/committee/20200702/200702honkaigi01.pdf"
+        },
+        {
+          "name": "規制改革実施計画のフォローアップ結果について（PDF形式：971KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/committee/20200702/200702honkaigi02.pdf"
+        },
+        {
+          "name": "デジタル時代の規制・制度について（令和２年６月22日　規制改革推進会議決定）（PDF形式：343KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/committee/20200702/200702honkaigi03.pdf"
+        },
+        {
+          "name": "書面規制、押印、対面規制の見直しについて（PDF形式：304KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/committee/20200702/200702honkaigi04.pdf"
+        }
+      ]
+    },
+    {
       "id": "cas-kagayakujosei_46-20200701-009",
       "councilId": "cas-kagayakujosei_46",
       "councilName": "すべての女性が輝く社会づくり本部",
@@ -139038,6 +138806,42 @@
         {
           "name": "第１０回 令和 ２年 ６月２２日 議事次第 （PDF／98KB） 配布資料",
           "url": "https://www.cas.go.jp/jp/seisakukaigi/genshiryoku_bousai/dai10/gijisidai.pdf"
+        }
+      ]
+    },
+    {
+      "id": "cao-kisei_kaikaku-20200622-007",
+      "councilId": "cao-kisei_kaikaku",
+      "title": "第7回 規制改革推進会議",
+      "date": "2020/06/22",
+      "officialUrl": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/committee/20200622/agenda.html",
+      "category": "COUNCIL",
+      "ministry": "CAO",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "議事録",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/committee/20200622/gijiroku0622.pdf"
+        },
+        {
+          "name": "デジタル時代の規制・制度について（PDF形式：554KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/committee/20200622/200622honkaigi01.pdf"
+        },
+        {
+          "name": "書面規制、押印、対面規制の見直しについて（PDF形式：325KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/committee/20200622/200622honkaigi02.pdf"
+        },
+        {
+          "name": "別添（PDF形式：885KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/committee/20200622/200622honkaigi03.pdf"
+        },
+        {
+          "name": "押印についてのＱ＆Ａ（令和２年６月19日 内閣府、法務省、経済産業省）（PDF形式：363KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/committee/20200622/200622honkaigi04.pdf"
+        },
+        {
+          "name": "規制改革推進に関する答申骨子（PDF形式：241KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/committee/20200622/200622honkaigi05.pdf"
         }
       ]
     },
@@ -140462,6 +140266,30 @@
       ]
     },
     {
+      "id": "cao-kisei_kaikaku-20200518-006",
+      "councilId": "cao-kisei_kaikaku",
+      "title": "第6回 規制改革推進会議",
+      "date": "2020/05/18",
+      "officialUrl": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/committee/20200518/agenda.html",
+      "category": "COUNCIL",
+      "ministry": "CAO",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "議事録",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/committee/20200518/gijiroku0518.pdf"
+        },
+        {
+          "name": "一般用医薬品（スイッチＯＴＣ）選択肢の拡大に向けた意見（PDF形式：316KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/committee/20200518/200518honkaigi01.pdf"
+        },
+        {
+          "name": "書面規制、押印、対面規制の見直しについて（PDF形式：304KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/committee/20200518/200518honkaigi02.pdf"
+        }
+      ]
+    },
+    {
       "id": "cao-kisei_digital_ai_wg-20200511-009",
       "councilId": "cao-kisei_digital_ai_wg",
       "title": "第9回 規制改革推進会議 デジタル・AI WG（令和元年度）",
@@ -140478,6 +140306,34 @@
         {
           "name": "書式・様式の改善の取組について（PDF形式：357KB）",
           "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/digital/20200511/200511digital01.pdf"
+        }
+      ]
+    },
+    {
+      "id": "cao-kisei_kaikaku-20200428-005",
+      "councilId": "cao-kisei_kaikaku",
+      "title": "第5回 規制改革推進会議",
+      "date": "2020/04/28",
+      "officialUrl": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/committee/20200428/agenda.html",
+      "category": "COUNCIL",
+      "ministry": "CAO",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "議事録",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/committee/20200428/gijiroku0428.pdf"
+        },
+        {
+          "name": "医療・介護分野における重点的フォローアップ事項に関する意見―データ利活用の促進、社会保険診療報酬支払基金に関する見直し―（PDF形式：219KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/committee/20200428/200428honkaigi01.pdf"
+        },
+        {
+          "name": "書面規制、押印、対面規制について（PDF形式：216KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/committee/20200428/200428honkaigi02.pdf"
+        },
+        {
+          "name": "経済財政諮問会議（令和２年４月27日）資料（PDF形式：226KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/committee/20200428/200428honkaigi03.pdf"
         }
       ]
     },
@@ -140510,6 +140366,66 @@
         {
           "name": "第32次地方制度調査会第37回専門小委員会議事録",
           "url": "https://www.soumu.go.jp/main_content/000698478.pdf"
+        }
+      ]
+    },
+    {
+      "id": "cao-kisei_kaikaku-20200413-004",
+      "councilId": "cao-kisei_kaikaku",
+      "title": "第4回 規制改革推進会議",
+      "date": "2020/04/13",
+      "officialUrl": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/committee/20200413/agenda.html",
+      "category": "COUNCIL",
+      "ministry": "CAO",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "議事録",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/committee/20200413/gijiroku0413.pdf"
+        },
+        {
+          "name": "成長戦略ワーキング・グループの進捗について（PDF形式：219KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/committee/20200413/200413honkaigi01.pdf"
+        },
+        {
+          "name": "雇用・人づくりワーキング・グループの進捗について（PDF形式：216KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/committee/20200413/200413honkaigi02.pdf"
+        },
+        {
+          "name": "投資等ワーキング・グループの進捗について（PDF形式：226KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/committee/20200413/200413honkaigi03.pdf"
+        },
+        {
+          "name": "医療・介護ワーキング・グループの進捗について（PDF形式：212KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/committee/20200413/200413honkaigi04.pdf"
+        },
+        {
+          "name": "農林水産ワーキング・グループの進捗について（PDF形式：186KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/committee/20200413/200413honkaigi05.pdf"
+        },
+        {
+          "name": "デジタルガバメントワーキング・グループの進捗について（PDF形式：204KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/committee/20200413/200413honkaigi06.pdf"
+        },
+        {
+          "name": "新型コロナウイルス感染症患者の増加に際してのオンライン技術の活用について（令和２年４月７日 規制改革推進会議決定）（PDF形式：259KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/committee/20200413/200413honkaigi07.pdf"
+        },
+        {
+          "name": "水産改革に関する提言（令和２年４月９日 規制改革推進会議決定）（PDF形式：299KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/committee/20200413/200413honkaigi08.pdf"
+        },
+        {
+          "name": "インフラメンテナンスにおける新技術・データ利活用に 向けた意見（PDF形式：464KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/committee/20200413/200413honkaigi09.pdf"
+        },
+        {
+          "name": "デジタル時代の規制のあり方　規制・制度の見直しの切り口について（案）（PDF形式：279KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/committee/20200413/200413honkaigi10.pdf"
+        },
+        {
+          "name": "デジタル時代の規制改革のあり方について（整理すべき論点（メモ））（第３回規制改革推進会議（令和２年２月12日）配布資料）（PDF形式：230KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/committee/20200413/200413honkaigi11.pdf"
         }
       ]
     },
@@ -142175,6 +142091,58 @@
       "hasMinutes": true,
       "docCount": 2,
       "manualLock": true
+    },
+    {
+      "id": "cao-kisei_kaikaku-20200212-003",
+      "councilId": "cao-kisei_kaikaku",
+      "title": "第3回 規制改革推進会議",
+      "date": "2020/02/12",
+      "officialUrl": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/committee/20200212/agenda.html",
+      "category": "COUNCIL",
+      "ministry": "CAO",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "議事録",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/committee/20200212/gijiroku0212.pdf"
+        },
+        {
+          "name": "第四次産業革命時代の規制改革（須賀千鶴氏提出資料）（PDF形式：950KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/committee/20200212/200212honkaigi01.pdf"
+        },
+        {
+          "name": "デジタル時代の規制改革のあり方について（高橋議長代理提出資料）（PDF形式：16KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/committee/20200212/200212honkaigi02.pdf"
+        },
+        {
+          "name": "成長戦略ワーキング・グループの進捗について（PDF形式：15KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/committee/20200212/200212honkaigi03.pdf"
+        },
+        {
+          "name": "雇用・人づくりワーキング・グループの進捗について（PDF形式：16KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/committee/20200212/200212honkaigi04.pdf"
+        },
+        {
+          "name": "投資等ワーキング・グループの進捗について（PDF形式：19KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/committee/20200212/200212honkaigi05.pdf"
+        },
+        {
+          "name": "医療・介護ワーキング・グループの進捗について（PDF形式：14KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/committee/20200212/200212honkaigi06.pdf"
+        },
+        {
+          "name": "農林水産ワーキング・グループの進捗について（PDF形式：14KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/committee/20200212/200212honkaigi07.pdf"
+        },
+        {
+          "name": "デジタルガバメントワーキング・グループの進捗について（PDF形式：17KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/committee/20200212/200212honkaigi08.pdf"
+        },
+        {
+          "name": "規制改革実施計画のフォローアップについて（PDF形式：22KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/committee/20200212/200212honkaigi09.pdf"
+        }
+      ]
     },
     {
       "id": "smea-hikitugigl-20200207-003",
@@ -144683,6 +144651,74 @@
       ]
     },
     {
+      "id": "cao-kisei_kaikaku-20191202-002",
+      "councilId": "cao-kisei_kaikaku",
+      "title": "第2回 規制改革推進会議",
+      "date": "2019/12/02",
+      "officialUrl": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/committee/20191202/agenda.html",
+      "category": "COUNCIL",
+      "ministry": "CAO",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "議事録",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/committee/20191202/gijiroku1202.pdf"
+        },
+        {
+          "name": "成長戦略ワーキング・グループの運営方針について（PDF形式：12KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/committee/20191202/191202honkaigi01.pdf"
+        },
+        {
+          "name": "雇用・人づくりワーキング・グループの運営方針について（PDF形式：130KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/committee/20191202/191202honkaigi02.pdf"
+        },
+        {
+          "name": "投資等ワーキング・グループの運営方針について（PDF形式：198KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/committee/20191202/191202honkaigi03.pdf"
+        },
+        {
+          "name": "医療・介護ワーキング・グループの運営方針について（PDF形式：248KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/committee/20191202/191202honkaigi04.pdf"
+        },
+        {
+          "name": "農林水産ワーキング・グループの運営方針について（PDF形式：250KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/committee/20191202/191202honkaigi05.pdf"
+        },
+        {
+          "name": "デジタルガバメント ワーキング・グループの運営方針について（PDF形式：105KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/committee/20191202/191202honkaigi06.pdf"
+        },
+        {
+          "name": "規制改革推進会議の当面の重点事項（PDF形式：250KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/committee/20191202/191202honkaigi07.pdf"
+        },
+        {
+          "name": "重点的フォローアップ事項（PDF形式：269KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/committee/20191202/191202honkaigi08.pdf"
+        },
+        {
+          "name": "「規制改革ホットライン」運営方針について（PDF形式：108KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/committee/20191202/191202honkaigi09.pdf"
+        },
+        {
+          "name": "規制改革ホットラインの業務フロー（PDF形式：96KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/committee/20191202/191202honkaigi10.pdf"
+        },
+        {
+          "name": "平成30年度 規制改革ホットラインの運用状況について（PDF形式：105KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/committee/20191202/191202honkaigi11.pdf"
+        },
+        {
+          "name": "規制改革推進会議の進め方について（PDF形式：151KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/committee/20191202/191202honkaigi12.pdf"
+        },
+        {
+          "name": "規制改革推進会議ワーキンググループ（ＷＧ）の構成員名簿（PDF形式：104KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/committee/20191202/191202honkaigi13.pdf"
+        }
+      ]
+    },
+    {
       "id": "cao-kisei_digital_ai_wg-20191126-001",
       "councilId": "cao-kisei_digital_ai_wg",
       "title": "第1回 規制改革推進会議 デジタル・AI WG（令和元年度）",
@@ -145204,6 +145240,54 @@
         {
           "name": "議事要旨",
           "url": "https://www.chusho.meti.go.jp/koukai/kenkyukai/smartsme/2019/191101smartsmegy.pdf"
+        }
+      ]
+    },
+    {
+      "id": "cao-kisei_kaikaku-20191031-001",
+      "councilId": "cao-kisei_kaikaku",
+      "title": "第1回 規制改革推進会議",
+      "date": "2019/10/31",
+      "officialUrl": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/committee/20191031/agenda.html",
+      "category": "COUNCIL",
+      "ministry": "CAO",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "議事録",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/committee/20191031/gijiroku1031.pdf"
+        },
+        {
+          "name": "内閣総理大臣諮問文（PDF形式：146KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/committee/20191031/191031honkaigi01.pdf"
+        },
+        {
+          "name": "規制改革推進会議運営規則（PDF形式：203KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/committee/20191031/191031honkaigi02.pdf"
+        },
+        {
+          "name": "規制改革推進会議の議論について（案）（PDF形式：100KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/committee/20191031/191031honkaigi03.pdf"
+        },
+        {
+          "name": "重点的フォローアップ事項（案）（PDF形式：256KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/committee/20191031/191031honkaigi04.pdf"
+        },
+        {
+          "name": "内閣府本府組織令（抜粋）（PDF形式：172KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/committee/20191031/191031honkaigi05.pdf"
+        },
+        {
+          "name": "規制改革推進会議令（PDF形式：191KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/committee/20191031/191031honkaigi06.pdf"
+        },
+        {
+          "name": "規制改革推進会議委員名簿（PDF形式：191KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/committee/20191031/191031honkaigi07.pdf"
+        },
+        {
+          "name": "竹内委員御挨拶（PDF形式：193KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/committee/20191031/191031honkaigi08.pdf"
         }
       ]
     },
@@ -183276,7 +183360,7 @@
     },
     "cao-kisei_kaikaku": {
       "rule_id": "rule-cao-kisei_kaikaku",
-      "subpage_discovery_pattern": "https?://.*(?:dai|kaisai|session|shingikai|suishinkaigi)[^\\\"'>\\s]*",
+      "subpage_discovery_pattern": "https://www8\\.cao\\.go\\.jp/kisei-kaikaku/kisei/meeting/committee/.*\\.html",
       "title_selector": "h1, h2, .title",
       "date_regex": "(令和\\d+年\\d+月\\d+日|平成\\d+年\\d+月\\d+日|\\d{4}年\\d{1,2}月\\d{1,2}日)",
       "pdf_selector": "a[href*='.pdf']",
