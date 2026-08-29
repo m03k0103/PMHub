@@ -173,12 +173,26 @@ def interleave_by_ministry(councils):
     return final_list
 
 def load_scraping_rules():
-    """docs/data.json の scrapingRules キーからスクレイピングルールを読み込む"""
+    """docs/data.json の scrapingRules キーからスクレイピングルールを読み込み、必要に応じて scrapingRuleTemplates を展開・マージする"""
     if os.path.exists(DATA_JSON_FILE):
         try:
             with open(DATA_JSON_FILE, "r", encoding="utf-8") as f:
                 data = json.load(f)
-                return data.get("scrapingRules", {})
+                templates = data.get("scrapingRuleTemplates", {})
+                raw_rules = data.get("scrapingRules", {})
+                
+                resolved_rules = {}
+                for cid, r in raw_rules.items():
+                    if isinstance(r, dict) and "template" in r and r["template"] in templates:
+                        tpl_name = r["template"]
+                        # テンプレートをベースに個別オーバーライドをマージ
+                        merged = dict(templates[tpl_name])
+                        merged.update(r)
+                        merged.pop("template", None)
+                        resolved_rules[cid] = merged
+                    else:
+                        resolved_rules[cid] = r
+                return resolved_rules
         except Exception as e:
             print(f"[WARN] Failed to load scrapingRules from data.json: {e}", file=sys.stderr)
     return {}
