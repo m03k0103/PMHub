@@ -2329,7 +2329,7 @@
       "name": "鳥インフルエンザ関係閣僚会議",
       "ministry": "CAS",
       "category": "LIAISON",
-      "pastYearCount": 2,
+      "pastYearCount": 26,
       "description": "鳥インフルエンザ関係閣僚会議の基本方針、施策の推進状況および関係省庁間の連携・個別課題について審議する会議。",
       "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/influenza/",
       "isWatched": true,
@@ -2345,7 +2345,8 @@
       },
       "status": "approved",
       "sourcePageUrl": "https://www.cas.go.jp/jp/seisakukaigi/influenza/",
-      "aiReason": "AI判定: CAS所管の公式会議体マスターとして承認"
+      "aiReason": "AI判定: CAS所管の公式会議体マスターとして承認",
+      "manualLock": true
     },
     {
       "id": "cas-ir_promotion-77",
@@ -30766,6 +30767,25 @@
       "docCount": 3
     },
     {
+      "id": "meet-2026-0713-cas-influenza-76",
+      "councilId": "cas-influenza-76",
+      "title": "鳥インフルエンザ関係閣僚会議 関係府省庁連絡会議幹事会（令和8年7月13日）",
+      "date": "2026/07/13",
+      "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/influenza/",
+      "category": "MINISTERIAL",
+      "ministry": "CAS",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "会議資料(関係府省庁連絡会議幹事会)",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/influenza/pdf/siryou-260713.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        }
+      ]
+    },
+    {
       "id": "meet-2026-07-10-cao-ai-hq-dai5",
       "councilId": "cao-ai-hq",
       "councilName": "人工知能戦略本部",
@@ -38495,6 +38515,25 @@
       "manualLock": true
     },
     {
+      "id": "meet-2026-0422-cas-influenza-76",
+      "councilId": "cas-influenza-76",
+      "title": "鳥インフルエンザ関係閣僚会議 関係府省庁連絡会議［持ち回り］（令和8年4月22日）",
+      "date": "2026/04/22",
+      "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/influenza/",
+      "category": "MINISTERIAL",
+      "ministry": "CAS",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "会議資料(関係府省庁連絡会議)［持ち回り］",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/influenza/pdf/siryou-260422.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        }
+      ]
+    },
+    {
       "id": "meet-2026-0420-mhlw-hosho-shiinsentaku-134",
       "councilId": "mhlw-hosho-shiinsentaku-134",
       "councilName": "mhlw-hosho-shiinsentaku-134",
@@ -39797,6 +39836,25 @@
       "docCount": 4
     },
     {
+      "id": "meet-2026-0326-cas-influenza-76",
+      "councilId": "cas-influenza-76",
+      "title": "鳥インフルエンザ関係閣僚会議 関係府省庁連絡会議［持ち回り］（令和8年3月26日）",
+      "date": "2026/03/26",
+      "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/influenza/",
+      "category": "MINISTERIAL",
+      "ministry": "CAS",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "会議資料(関係府省庁連絡会議)［持ち回り］",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/influenza/pdf/siryou-260326.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        }
+      ]
+    },
+    {
       "id": "meet-2026-0325-mhlw-hosho-jidoukan-140",
       "councilId": "mhlw-hosho-jidoukan-140",
       "councilName": "mhlw-hosho-jidoukan-140",
@@ -39842,6 +39900,25 @@
           "name": "第4回 小規模事業者の「稼ぐ力」の強化に向けた諸課題に関する検討会 議事要旨(893KB)",
           "url": "https://www.chusho.meti.go.jp/koukai/kenkyukai/shokibo_kaseguchikara/004/gy.pdf",
           "type": "PDF",
+          "manualLock": true
+        }
+      ]
+    },
+    {
+      "id": "meet-2026-0325-cas-influenza-76",
+      "councilId": "cas-influenza-76",
+      "title": "鳥インフルエンザ関係閣僚会議 関係府省庁連絡会議［持ち回り］（令和8年3月25日）",
+      "date": "2026/03/25",
+      "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/influenza/",
+      "category": "MINISTERIAL",
+      "ministry": "CAS",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "会議資料(関係府省庁連絡会議)［持ち回り］",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/influenza/pdf/siryou-260325.pdf",
+          "type": "PDF",
+          "isPrivate": false,
           "manualLock": true
         }
       ]
@@ -42760,6 +42837,25 @@
           "name": "第3回 小規模事業者の「稼ぐ力」の強化に向けた諸課題に関する検討会 議事要旨(680KB)",
           "url": "https://www.chusho.meti.go.jp/koukai/kenkyukai/shokibo_kaseguchikara/003/gy.pdf",
           "type": "PDF",
+          "manualLock": true
+        }
+      ]
+    },
+    {
+      "id": "meet-2026-0305-cas-influenza-76",
+      "councilId": "cas-influenza-76",
+      "title": "鳥インフルエンザ関係閣僚会議 関係府省庁連絡会議［持ち回り］（令和8年3月5日）",
+      "date": "2026/03/05",
+      "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/influenza/",
+      "category": "MINISTERIAL",
+      "ministry": "CAS",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "会議資料(関係府省庁連絡会議)［持ち回り］",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/influenza/pdf/siryou-260305.pdf",
+          "type": "PDF",
+          "isPrivate": false,
           "manualLock": true
         }
       ]
@@ -46256,6 +46352,44 @@
       "docCount": 4
     },
     {
+      "id": "meet-2026-0221-cas-influenza-76",
+      "councilId": "cas-influenza-76",
+      "title": "鳥インフルエンザ関係閣僚会議 関係府省庁連絡会議［持ち回り］（令和8年2月21日）",
+      "date": "2026/02/21",
+      "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/influenza/",
+      "category": "MINISTERIAL",
+      "ministry": "CAS",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "会議資料(関係府省庁連絡会議)［持ち回り］",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/influenza/pdf/siryou-260221.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        }
+      ]
+    },
+    {
+      "id": "meet-2026-0220-cas-influenza-76",
+      "councilId": "cas-influenza-76",
+      "title": "鳥インフルエンザ関係閣僚会議 関係府省庁連絡会議［持ち回り］（令和8年2月20日）",
+      "date": "2026/02/20",
+      "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/influenza/",
+      "category": "MINISTERIAL",
+      "ministry": "CAS",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "会議資料(関係府省庁連絡会議)［持ち回り］",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/influenza/pdf/siryou-260220.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        }
+      ]
+    },
+    {
       "id": "meet-2026-02-19-fdma-kento-170-令和7年度-dai1",
       "councilId": "fdma-kento-170",
       "councilName": "消防技術戦略会議",
@@ -49366,6 +49500,25 @@
       "docCount": 6
     },
     {
+      "id": "meet-2026-0127-cas-influenza-76",
+      "councilId": "cas-influenza-76",
+      "title": "鳥インフルエンザ関係閣僚会議 関係府省庁連絡会議［持ち回り］（令和8年1月27日）",
+      "date": "2026/01/27",
+      "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/influenza/",
+      "category": "MINISTERIAL",
+      "ministry": "CAS",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "会議資料(関係府省庁連絡会議)［持ち回り］",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/influenza/pdf/siryou-260127.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        }
+      ]
+    },
+    {
       "id": "meet-2026-01-26-cao-contents_kyogikai-25-dai1",
       "councilId": "cao-contents_kyogikai-25",
       "councilName": "コンテンツ産業官民協議会",
@@ -50660,6 +50813,25 @@
       "docCount": 9
     },
     {
+      "id": "meet-2026-0122-cas-influenza-76",
+      "councilId": "cas-influenza-76",
+      "title": "鳥インフルエンザ関係閣僚会議 関係府省庁連絡会議［持ち回り］（令和8年1月22日）",
+      "date": "2026/01/22",
+      "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/influenza/",
+      "category": "MINISTERIAL",
+      "ministry": "CAS",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "会議資料(関係府省庁連絡会議)［持ち回り］",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/influenza/pdf/siryou-260122.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        }
+      ]
+    },
+    {
       "id": "meet-2026-01-21-mlit-kokudokannsen-bukai-dai71",
       "councilId": "mlit-kokudokannsen-bukai",
       "councilName": "国土幹線道路部会",
@@ -51733,6 +51905,63 @@
       ]
     },
     {
+      "id": "meet-2026-0113-cas-influenza-76",
+      "councilId": "cas-influenza-76",
+      "title": "鳥インフルエンザ関係閣僚会議 関係府省庁連絡会議［持ち回り］（令和8年1月13日）",
+      "date": "2026/01/13",
+      "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/influenza/",
+      "category": "MINISTERIAL",
+      "ministry": "CAS",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "会議資料(関係府省庁連絡会議)［持ち回り］",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/influenza/pdf/siryou-260113.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        }
+      ]
+    },
+    {
+      "id": "meet-2026-0110-cas-influenza-76",
+      "councilId": "cas-influenza-76",
+      "title": "鳥インフルエンザ関係閣僚会議 関係府省庁連絡会議［持ち回り］（令和8年1月10日）",
+      "date": "2026/01/10",
+      "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/influenza/",
+      "category": "MINISTERIAL",
+      "ministry": "CAS",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "会議資料(関係府省庁連絡会議)［持ち回り］",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/influenza/pdf/siryou-260110.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        }
+      ]
+    },
+    {
+      "id": "meet-2026-0108-cas-influenza-76",
+      "councilId": "cas-influenza-76",
+      "title": "鳥インフルエンザ関係閣僚会議 関係府省庁連絡会議［持ち回り］（令和8年1月8日）",
+      "date": "2026/01/08",
+      "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/influenza/",
+      "category": "MINISTERIAL",
+      "ministry": "CAS",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "会議資料(関係府省庁連絡会議)［持ち回り］",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/influenza/pdf/siryou-260108.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        }
+      ]
+    },
+    {
       "id": "meet-2026-01-07-cas-senpaku_top-55-dai3",
       "councilId": "cas-senpaku_top-55",
       "councilName": "船舶活用医療推進本部",
@@ -51778,6 +52007,25 @@
       "officialUrl": "https://www.cas.go.jp/jp/seisaku/senpaku_iryou/dai3/gijisidai.html",
       "hasMinutes": false,
       "docCount": 4
+    },
+    {
+      "id": "meet-2026-0102-cas-influenza-76",
+      "councilId": "cas-influenza-76",
+      "title": "鳥インフルエンザ関係閣僚会議 関係府省庁連絡会議［持ち回り］（令和8年1月2日）",
+      "date": "2026/01/02",
+      "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/influenza/",
+      "category": "MINISTERIAL",
+      "ministry": "CAS",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "会議資料(関係府省庁連絡会議)［持ち回り］",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/influenza/pdf/siryou-260102.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        }
+      ]
     },
     {
       "id": "meet-2026-01-01-moj-keiji-fufukushinsa-1",
@@ -52475,6 +52723,44 @@
       "officialUrl": "https://www.fsc.go.jp/senmon/kikaku/",
       "hasMinutes": false,
       "docCount": 1
+    },
+    {
+      "id": "meet-2025-1230-cas-influenza-76",
+      "councilId": "cas-influenza-76",
+      "title": "鳥インフルエンザ関係閣僚会議 関係府省庁連絡会議［持ち回り］（令和7年12月30日）",
+      "date": "2025/12/30",
+      "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/influenza/",
+      "category": "MINISTERIAL",
+      "ministry": "CAS",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "会議資料(関係府省庁連絡会議)［持ち回り］",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/influenza/pdf/siryou-251230.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        }
+      ]
+    },
+    {
+      "id": "meet-2025-1229-cas-influenza-76",
+      "councilId": "cas-influenza-76",
+      "title": "鳥インフルエンザ関係閣僚会議 関係府省庁連絡会議［持ち回り］（令和7年12月29日）",
+      "date": "2025/12/29",
+      "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/influenza/",
+      "category": "MINISTERIAL",
+      "ministry": "CAS",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "会議資料(関係府省庁連絡会議)［持ち回り］",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/influenza/pdf/siryou-251229.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        }
+      ]
     },
     {
       "id": "meet-2025-12-26-cas-enerugi-2-dai1",
@@ -53179,6 +53465,25 @@
       ]
     },
     {
+      "id": "meet-2025-1225-cas-influenza-76",
+      "councilId": "cas-influenza-76",
+      "title": "鳥インフルエンザ関係閣僚会議 関係府省庁連絡会議［持ち回り］（令和7年12月25日）",
+      "date": "2025/12/25",
+      "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/influenza/",
+      "category": "MINISTERIAL",
+      "ministry": "CAS",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "会議資料(関係府省庁連絡会議)［持ち回り］",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/influenza/pdf/siryou-251225.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        }
+      ]
+    },
+    {
       "id": "meet-2025-12-24-cas-nipponseichosenryaku-74-dai2",
       "councilId": "cas-nipponseichosenryaku-74",
       "councilName": "日本成長戦略会議",
@@ -53418,6 +53723,25 @@
       ],
       "topics": [],
       "manualLock": true
+    },
+    {
+      "id": "meet-2025-1224-cas-influenza-76",
+      "councilId": "cas-influenza-76",
+      "title": "鳥インフルエンザ関係閣僚会議 関係府省庁連絡会議［持ち回り］（令和7年12月24日）",
+      "date": "2025/12/24",
+      "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/influenza/",
+      "category": "MINISTERIAL",
+      "ministry": "CAS",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "会議資料(関係府省庁連絡会議)［持ち回り］",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/influenza/pdf/siryou-251224.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        }
+      ]
     },
     {
       "id": "meet-2025-12-23-cas-cs-30-dai2",
@@ -54066,6 +54390,25 @@
           "name": "第3回 イノベーション・プロデューサーガイドライン策定委員会 議事要旨(180KB)",
           "url": "https://www.chusho.meti.go.jp/koukai/kenkyukai/innovation_producer/003/gy.pdf",
           "type": "PDF",
+          "manualLock": true
+        }
+      ]
+    },
+    {
+      "id": "meet-2025-1220-cas-influenza-76",
+      "councilId": "cas-influenza-76",
+      "title": "鳥インフルエンザ関係閣僚会議 関係府省庁連絡会議［持ち回り］（令和7年12月20日）",
+      "date": "2025/12/20",
+      "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/influenza/",
+      "category": "MINISTERIAL",
+      "ministry": "CAS",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "会議資料(関係府省庁連絡会議)［持ち回り］",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/influenza/pdf/siryou-251220.pdf",
+          "type": "PDF",
+          "isPrivate": false,
           "manualLock": true
         }
       ]
@@ -55523,6 +55866,25 @@
       "docCount": 33
     },
     {
+      "id": "meet-2025-1216-cas-influenza-76",
+      "councilId": "cas-influenza-76",
+      "title": "鳥インフルエンザ関係閣僚会議 関係府省庁連絡会議［持ち回り］（令和7年12月16日）",
+      "date": "2025/12/16",
+      "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/influenza/",
+      "category": "MINISTERIAL",
+      "ministry": "CAS",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "会議資料(関係府省庁連絡会議)［持ち回り］",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/influenza/pdf/siryou-251216.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        }
+      ]
+    },
+    {
       "id": "meet-2025-12-15-cao-partnership-86",
       "councilId": "cao-partnership-86",
       "councilName": "未来を拓くパートナーシップ構築推進会議",
@@ -56364,6 +56726,25 @@
       ]
     },
     {
+      "id": "meet-2025-1202-cas-influenza-76",
+      "councilId": "cas-influenza-76",
+      "title": "鳥インフルエンザ関係閣僚会議 関係府省庁連絡会議［持ち回り］（令和7年12月2日）",
+      "date": "2025/12/02",
+      "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/influenza/",
+      "category": "MINISTERIAL",
+      "ministry": "CAS",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "会議資料(関係府省庁連絡会議)［持ち回り］",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/influenza/pdf/siryou-251202.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        }
+      ]
+    },
+    {
       "id": "meet-2025-11-28-cao-cstp-44-dai78",
       "councilId": "cao-cstp-44",
       "councilName": "総合科学技術・イノベーション会議",
@@ -56732,6 +57113,25 @@
       "officialUrl": "https://www.ppc.go.jp/news/r3kaiseihou_feature?ref=gnavi",
       "hasMinutes": false,
       "docCount": 0
+    },
+    {
+      "id": "meet-2025-1122-cas-influenza-76",
+      "councilId": "cas-influenza-76",
+      "title": "鳥インフルエンザ関係閣僚会議 関係府省庁連絡会議［持ち回り］（令和7年11月22日）",
+      "date": "2025/11/22",
+      "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/influenza/",
+      "category": "MINISTERIAL",
+      "ministry": "CAS",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "会議資料(関係府省庁連絡会議)［持ち回り］",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/influenza/pdf/siryou-251122.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        }
+      ]
     },
     {
       "id": "meet-2025-11-20-mof-zaiseiseido-bunkakai",
@@ -57881,6 +58281,25 @@
       "docCount": 16
     },
     {
+      "id": "meet-2025-1109-cas-influenza-76",
+      "councilId": "cas-influenza-76",
+      "title": "鳥インフルエンザ関係閣僚会議 関係府省庁連絡会議［持ち回り］（令和7年11月9日）",
+      "date": "2025/11/09",
+      "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/influenza/",
+      "category": "MINISTERIAL",
+      "ministry": "CAS",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "会議資料(関係府省庁連絡会議)［持ち回り］",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/influenza/pdf/siryou-251109.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        }
+      ]
+    },
+    {
       "id": "meet-2025-11-07-mof-zaiseiseido-bunkakai",
       "councilId": "mof-zaiseiseido-bunkakai",
       "councilName": "財政制度等審議会 財政制度分科会",
@@ -58330,6 +58749,44 @@
       "docCount": 12
     },
     {
+      "id": "meet-2025-1104-cas-influenza-76",
+      "councilId": "cas-influenza-76",
+      "title": "鳥インフルエンザ関係閣僚会議 関係府省庁連絡会議［持ち回り］（令和7年11月4日）",
+      "date": "2025/11/04",
+      "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/influenza/",
+      "category": "MINISTERIAL",
+      "ministry": "CAS",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "会議資料(関係府省庁連絡会議)［持ち回り］",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/influenza/pdf/siryou-251104.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        }
+      ]
+    },
+    {
+      "id": "meet-2025-1102-cas-influenza-76",
+      "councilId": "cas-influenza-76",
+      "title": "鳥インフルエンザ関係閣僚会議 関係府省庁連絡会議［持ち回り］（令和7年11月2日）",
+      "date": "2025/11/02",
+      "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/influenza/",
+      "category": "MINISTERIAL",
+      "ministry": "CAS",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "会議資料(関係府省庁連絡会議)［持ち回り］",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/influenza/pdf/siryou-251102.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        }
+      ]
+    },
+    {
       "id": "meet-2025-10-30-cas-kumahigai_taisaku-14-dai1",
       "councilId": "cas-kumahigai_taisaku-14",
       "councilName": "クマ被害対策等に関する関係閣僚会議",
@@ -58474,6 +58931,32 @@
       ],
       "topics": [],
       "manualLock": true
+    },
+    {
+      "id": "meet-2025-1022-cas-influenza-76",
+      "councilId": "cas-influenza-76",
+      "title": "鳥インフルエンザ関係閣僚会議（令和7年10月22日）",
+      "date": "2025/10/22",
+      "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/influenza/",
+      "category": "MINISTERIAL",
+      "ministry": "CAS",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "会議資料",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/influenza/pdf/siryou-251022a.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "会議資料(関係府省庁連絡会議幹事会)",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/influenza/pdf/siryou-251022b.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        }
+      ]
     },
     {
       "id": "meet-2025-10-21-cas-jikkoukaigi-83",
@@ -59286,246 +59769,23 @@
       ]
     },
     {
-      "id": "meet-2025-09-05-cas-influenza-76",
+      "id": "meet-2025-0905-cas-influenza-76",
       "councilId": "cas-influenza-76",
-      "councilName": "鳥インフルエンザ関係閣僚会議",
-      "ministry": "CAS",
-      "category": "LIAISON",
-      "title": "鳥インフルエンザ関係閣僚会議",
+      "title": "鳥インフルエンザ関係閣僚会議 関係府省庁連絡会議幹事会（令和7年9月5日）",
       "date": "2025/09/05",
-      "updatedAt": "2025/09/05 17:00",
-      "location": "総理大臣官邸 / 各府省庁本庁舎",
-      "summary": "鳥インフルエンザ関係閣僚会議の開催。主要議題の推進状況及び今後の対応方針について審議が行われた。",
-      "agenda": [
-        "会議資料(関係府省庁連絡会議幹事会)",
-        "会議資料",
-        "会議資料(関係府省庁連絡会議幹事会)"
-      ],
-      "materials": [
-        {
-          "name": "会議資料(関係府省庁連絡会議)［持ち回り］ (PDF)",
-          "type": "PDF",
-          "size": "PDF",
-          "url": "https://www.cas.go.jp/jp/seisakukaigi/influenza/pdf/siryou-251216.pdf",
-          "isMinutes": false
-        },
-        {
-          "name": "会議資料(関係府省庁連絡会議)［持ち回り］ (PDF)",
-          "type": "PDF",
-          "size": "PDF",
-          "url": "https://www.cas.go.jp/jp/seisakukaigi/influenza/pdf/siryou-251220.pdf",
-          "isMinutes": false
-        },
-        {
-          "name": "会議資料(関係府省庁連絡会議)［持ち回り］ (PDF)",
-          "type": "PDF",
-          "size": "PDF",
-          "url": "https://www.cas.go.jp/jp/seisakukaigi/influenza/pdf/siryou-251224.pdf",
-          "isMinutes": false
-        },
-        {
-          "name": "会議資料(関係府省庁連絡会議)［持ち回り］ (PDF)",
-          "type": "PDF",
-          "size": "PDF",
-          "url": "https://www.cas.go.jp/jp/seisakukaigi/influenza/pdf/siryou-251225.pdf",
-          "isMinutes": false
-        },
-        {
-          "name": "会議資料(関係府省庁連絡会議)［持ち回り］ (PDF)",
-          "type": "PDF",
-          "size": "PDF",
-          "url": "https://www.cas.go.jp/jp/seisakukaigi/influenza/pdf/siryou-251229.pdf",
-          "isMinutes": false
-        },
-        {
-          "name": "会議資料(関係府省庁連絡会議)［持ち回り］ (PDF)",
-          "type": "PDF",
-          "size": "PDF",
-          "url": "https://www.cas.go.jp/jp/seisakukaigi/influenza/pdf/siryou-251230.pdf",
-          "isMinutes": false
-        },
-        {
-          "name": "会議資料(関係府省庁連絡会議)［持ち回り］ (PDF)",
-          "type": "PDF",
-          "size": "PDF",
-          "url": "https://www.cas.go.jp/jp/seisakukaigi/influenza/pdf/siryou-260102.pdf",
-          "isMinutes": false
-        },
-        {
-          "name": "会議資料(関係府省庁連絡会議)［持ち回り］ (PDF)",
-          "type": "PDF",
-          "size": "PDF",
-          "url": "https://www.cas.go.jp/jp/seisakukaigi/influenza/pdf/siryou-260108.pdf",
-          "isMinutes": false
-        },
-        {
-          "name": "会議資料(関係府省庁連絡会議)［持ち回り］ (PDF)",
-          "type": "PDF",
-          "size": "PDF",
-          "url": "https://www.cas.go.jp/jp/seisakukaigi/influenza/pdf/siryou-260110.pdf",
-          "isMinutes": false
-        },
-        {
-          "name": "会議資料(関係府省庁連絡会議)［持ち回り］ (PDF)",
-          "type": "PDF",
-          "size": "PDF",
-          "url": "https://www.cas.go.jp/jp/seisakukaigi/influenza/pdf/siryou-260113.pdf",
-          "isMinutes": false
-        },
-        {
-          "name": "会議資料(関係府省庁連絡会議)［持ち回り］ (PDF)",
-          "type": "PDF",
-          "size": "PDF",
-          "url": "https://www.cas.go.jp/jp/seisakukaigi/influenza/pdf/siryou-260122.pdf",
-          "isMinutes": false
-        },
-        {
-          "name": "会議資料(関係府省庁連絡会議)［持ち回り］ (PDF)",
-          "type": "PDF",
-          "size": "PDF",
-          "url": "https://www.cas.go.jp/jp/seisakukaigi/influenza/pdf/siryou-260127.pdf",
-          "isMinutes": false
-        },
-        {
-          "name": "会議資料(関係府省庁連絡会議)［持ち回り］ (PDF)",
-          "type": "PDF",
-          "size": "PDF",
-          "url": "https://www.cas.go.jp/jp/seisakukaigi/influenza/pdf/siryou-260220.pdf",
-          "isMinutes": false
-        },
-        {
-          "name": "会議資料(関係府省庁連絡会議)［持ち回り］ (PDF)",
-          "type": "PDF",
-          "size": "PDF",
-          "url": "https://www.cas.go.jp/jp/seisakukaigi/influenza/pdf/siryou-260221.pdf",
-          "isMinutes": false
-        },
-        {
-          "name": "会議資料(関係府省庁連絡会議)［持ち回り］ (PDF)",
-          "type": "PDF",
-          "size": "PDF",
-          "url": "https://www.cas.go.jp/jp/seisakukaigi/influenza/pdf/siryou-260305.pdf",
-          "isMinutes": false
-        },
-        {
-          "name": "会議資料(関係府省庁連絡会議)［持ち回り］ (PDF)",
-          "type": "PDF",
-          "size": "PDF",
-          "url": "https://www.cas.go.jp/jp/seisakukaigi/influenza/pdf/siryou-260325.pdf",
-          "isMinutes": false
-        },
-        {
-          "name": "会議資料(関係府省庁連絡会議)［持ち回り］ (PDF)",
-          "type": "PDF",
-          "size": "PDF",
-          "url": "https://www.cas.go.jp/jp/seisakukaigi/influenza/pdf/siryou-260326.pdf",
-          "isMinutes": false
-        },
-        {
-          "name": "会議資料(関係府省庁連絡会議)［持ち回り］ (PDF)",
-          "type": "PDF",
-          "size": "PDF",
-          "url": "https://www.cas.go.jp/jp/seisakukaigi/influenza/pdf/siryou-260422.pdf",
-          "isMinutes": false
-        },
-        {
-          "name": "会議資料(関係府省庁連絡会議幹事会) (PDF)",
-          "type": "PDF",
-          "size": "PDF",
-          "url": "https://www.cas.go.jp/jp/seisakukaigi/influenza/pdf/siryou-260713.pdf",
-          "isMinutes": false
-        }
-      ],
-      "tags": [
-        "鳥インフルエ",
-        "CAS",
-        "政策会議"
-      ],
       "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/influenza/",
-      "hasMinutes": false,
-      "docCount": 27
-    },
-    {
-      "id": "meet-2026-0713-cas-influenza-76",
-      "councilId": "cas-influenza-76",
-      "councilName": "鳥インフルエンザ関係閣僚会議",
+      "category": "MINISTERIAL",
       "ministry": "CAS",
-      "category": "LIAISON",
-      "title": "鳥インフルエンザ関係閣僚会議 会合（令和7年9月5日）",
-      "date": "2025/09/05",
-      "updatedAt": "2025/09/05 17:00",
-      "location": "首相官邸 / 各府省庁本府庁舎",
-      "summary": "鳥インフルエンザ関係閣僚会議が開催され、会合（令和7年9月5日）における政策課題および各種推進方針について審議が行われた。",
-      "agenda": [
-        "会合（令和7年9月5日）における主要施策の推進状況について",
-        "関係府省間における連携および今後の対応方針"
-      ],
+      "manualLock": true,
       "materials": [
         {
-          "name": "会議資料(関係府省庁連絡会議幹事会) (PDF)",
-          "type": "PDF",
-          "size": "PDF",
+          "name": "会議資料(関係府省庁連絡会議幹事会)",
           "url": "https://www.cas.go.jp/jp/seisakukaigi/influenza/pdf/siryou-250905.pdf",
-          "isMinutes": false
-        },
-        {
-          "name": "会議資料 (PDF)",
           "type": "PDF",
-          "size": "PDF",
-          "url": "https://www.cas.go.jp/jp/seisakukaigi/influenza/pdf/siryou-251022a.pdf",
-          "isMinutes": false
-        },
-        {
-          "name": "会議資料(関係府省庁連絡会議幹事会) (PDF)",
-          "type": "PDF",
-          "size": "PDF",
-          "url": "https://www.cas.go.jp/jp/seisakukaigi/influenza/pdf/siryou-251022b.pdf",
-          "isMinutes": false
-        },
-        {
-          "name": "会議資料(関係府省庁連絡会議)［持ち回り］ (PDF)",
-          "type": "PDF",
-          "size": "PDF",
-          "url": "https://www.cas.go.jp/jp/seisakukaigi/influenza/pdf/siryou-251102.pdf",
-          "isMinutes": false
-        },
-        {
-          "name": "会議資料(関係府省庁連絡会議)［持ち回り］ (PDF)",
-          "type": "PDF",
-          "size": "PDF",
-          "url": "https://www.cas.go.jp/jp/seisakukaigi/influenza/pdf/siryou-251104.pdf",
-          "isMinutes": false
-        },
-        {
-          "name": "会議資料(関係府省庁連絡会議)［持ち回り］ (PDF)",
-          "type": "PDF",
-          "size": "PDF",
-          "url": "https://www.cas.go.jp/jp/seisakukaigi/influenza/pdf/siryou-251109.pdf",
-          "isMinutes": false
-        },
-        {
-          "name": "会議資料(関係府省庁連絡会議)［持ち回り］ (PDF)",
-          "type": "PDF",
-          "size": "PDF",
-          "url": "https://www.cas.go.jp/jp/seisakukaigi/influenza/pdf/siryou-251122.pdf",
-          "isMinutes": false
-        },
-        {
-          "name": "会議資料(関係府省庁連絡会議)［持ち回り］ (PDF)",
-          "type": "PDF",
-          "size": "PDF",
-          "url": "https://www.cas.go.jp/jp/seisakukaigi/influenza/pdf/siryou-251202.pdf",
-          "isMinutes": false
+          "isPrivate": false,
+          "manualLock": true
         }
-      ],
-      "tags": [
-        "鳥インフルエンザ",
-        "CAS",
-        "政策会議"
-      ],
-      "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/influenza/",
-      "hasMinutes": false,
-      "docCount": 9
+      ]
     },
     {
       "id": "meet-2025-09-04-mhlw-rousei-roudoujouken-dai202",
@@ -217119,24 +217379,12 @@
       }
     },
     "cas-influenza-76": {
-      "rule_id": "rule-cas-influenza-76-ai-v3",
-      "created_at": "2026-08-07 08:56:39",
-      "generator": "AI_Rule_Synthesis_Agent_v3",
-      "ministryQuirk": "内閣官房型: daiXX/gijisidai.html 形式の2段階ネスト構造",
-      "rules": {
-        "encoding": "utf-8",
-        "deep_crawl_enabled": false,
-        "subpage_discovery_pattern": "href=[\"\\']([^\"\\']*(?:dai\\d+|gijisidai|gijiroku)[^\"\\'#]*)[\"\\']",
-        "date_regex": "(?:令和[0-9０-９一-九]+年[0-9０-９一-十二]+月[0-9０-９一-三十一]+日|20[2-9][0-9]年[0-1]?[0-9]月[0-3]?[0-9]日)",
-        "prefer_subpage_date": true,
-        "extract_subpage_materials_primary": true,
-        "pdf_selector": "href=[\"\\']([^\"\\']+\\.pdf)[\"\\']",
-        "private_doc_keyword": "非公開",
-        "detect_private_materials": false,
-        "extract_all_materials": true,
-        "resolve_absolute_urls": true,
-        "top_page_pdf_count": 27
-      }
+      "rule_id": "rule-cas-influenza-76",
+      "title_selector": "h1, h2, .title",
+      "date_regex": "(令和\\d+年\\d+月\\d+日|\\d{4}年\\d{1,2}月\\d{1,2}日)",
+      "pdf_selector": "a[href*='.pdf']",
+      "deep_crawl_enabled": true,
+      "manualLock": true
     },
     "cas-ir_promotion-77": {
       "rule_id": "rule-cas-ir_promotion-77-ai-v3",
