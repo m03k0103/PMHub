@@ -682,8 +682,9 @@ document.addEventListener('DOMContentLoaded', async () => {
     const hasMaterials = filteredMaterials.length > 0;
 
     const listItems = hasMaterials ? filteredMaterials.map(mat => {
-      const isPrivate = mat.isPrivate || mat.type === '非公開' || mat.url === '#';
-      const icon = isPrivate ? '🔒' : (mat.type === 'PDF' ? '📄' : '🌐');
+      const isPrivate = Boolean(mat.isPrivate || mat.type === '非公開' || mat.url === '#');
+      const docType = mat.type || (mat.url && mat.url.toLowerCase().endsWith('.pdf') ? 'PDF' : (mat.url ? 'HTML' : 'PDF'));
+      const icon = isPrivate ? '🔒' : (docType === 'PDF' ? '📄' : '🌐');
       
       return `
         <li class="material-item-row">
@@ -700,9 +701,9 @@ document.addEventListener('DOMContentLoaded', async () => {
           <div class="material-item-right">
             ${isPrivate ? `
               <span class="badge-private">非公開</span>
-            ` : `
-              <span class="badge-file-size">${escapeHtml(mat.size || '')}</span>
-            `}
+            ` : (mat.size && mat.size !== 'PDF' && mat.size !== '-' && mat.size !== 'HTML' ? `
+              <span class="badge-file-size">${escapeHtml(mat.size)}</span>
+            ` : '')}
           </div>
         </li>
       `;
@@ -1176,7 +1177,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     // Documents
     if (meeting.materials && meeting.materials.length > 0) {
       el.modalDocsList.innerHTML = meeting.materials.map(doc => {
-        const isPrivate = doc.isPrivate || doc.type === '非公開' || doc.url === '#';
+        const isPrivate = Boolean(doc.isPrivate || doc.type === '非公開' || doc.url === '#');
         if (isPrivate) {
           return `
             <div class="doc-download-item" style="opacity: 0.75; cursor: default;">
@@ -1188,11 +1189,13 @@ document.addEventListener('DOMContentLoaded', async () => {
             </div>
           `;
         }
+        const docType = doc.type || (doc.url && doc.url.toLowerCase().endsWith('.pdf') ? 'PDF' : (doc.url ? 'HTML' : 'PDF'));
+        const sizeInfo = (doc.size && doc.size !== 'PDF' && doc.size !== '-' && doc.size !== 'HTML') ? `<span class="text-sm" style="display:block; margin-top:0.2rem;">ファイルサイズ: ${escapeHtml(doc.size)}</span>` : '';
         return `
           <a href="${escapeHtml(sanitizeUrl(doc.url))}" target="_blank" rel="noopener noreferrer" class="doc-download-item">
             <div>
-              <strong>[${escapeHtml(doc.type)}] ${escapeHtml(doc.name)}</strong>
-              <span class="text-sm" style="display:block; margin-top:0.2rem;">ファイルサイズ: ${escapeHtml(doc.size)}</span>
+              <strong>[${escapeHtml(docType)}] ${escapeHtml(doc.name)}</strong>
+              ${sizeInfo}
             </div>
             <span class="text-accent text-sm">PDF/HTMLを開く ↗</span>
           </a>
