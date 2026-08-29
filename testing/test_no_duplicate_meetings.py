@@ -38,6 +38,13 @@ def extract_round_and_type(title, council_name=""):
     if fy_m and fy_m.group(1) not in council_name:
         sub_type += fy_m.group(1)
 
+    if '／' in council_name or '/' in council_name:
+        for part in re.split(r'[／/]', council_name):
+            part = part.strip()
+            if part and part in t_norm:
+                sub_type += f"_{part}"
+                break
+
     if '総会' in t_norm and '総会' not in council_name:
         sub_type += "_総会"
     elif ('専門小委員会' in t_norm or '専門委員会' in t_norm) and ('専門小委員会' not in council_name and '専門委員会' not in council_name):
@@ -50,6 +57,12 @@ def extract_round_and_type(title, council_name=""):
         sub_type += "_フォローアップ会合"
     elif '幹事会' in t_norm and '幹事会' not in council_name:
         sub_type += "_幹事会"
+    elif '実務者協議会' in t_norm and '実務者協議会' not in council_name:
+        sub_type += "_実務者協議会"
+    elif '協議会' in t_norm and '協議会' not in council_name:
+        sub_type += "_協議会"
+    elif '検討会' in t_norm and '検討会' not in council_name:
+        sub_type += "_検討会"
     elif ('ワーキンググループ' in t_norm or ' WG' in t_norm) and ('WG' not in council_name and 'ワーキンググループ' not in council_name):
         sub_type += "_WG"
     elif '分科会' in t_norm and '分科会' not in council_name:
