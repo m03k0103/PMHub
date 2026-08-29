@@ -6493,7 +6493,7 @@
       "category": "COUNCIL",
       "description": "成長と分配の好循環を生み出す「新しい資本主義」の実現に向けたグランドデザイン及び実行計画を検討する会議。",
       "officialUrl": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/index.html",
-      "pastYearCount": 5,
+      "pastYearCount": 37,
       "isWatched": true,
       "manualLock": true,
       "status": "approved",
@@ -59421,92 +59421,112 @@
     {
       "id": "meet-2025-10-03-cas-atarashii-sihon-107-dai37",
       "councilId": "cas-atarashii-sihon-107",
-      "councilName": "cas-atarashii-sihon-107",
-      "ministry": "Unknown",
-      "category": "COUNCIL",
       "title": "第37回 新しい資本主義実現会議",
       "date": "2025/10/03",
-      "updatedAt": "2025/10/03 17:00",
-      "location": "各省庁本府庁舎 / オンライン会議",
-      "summary": "新しい資本主義実現会議の開催。主要議題の推進状況および関係省庁間の連携について協議。",
-      "agenda": [
-        "新しい資本主義実現会議における主要施策の推進状況について",
-        "今後の対応方針および関係省庁間連携"
-      ],
+      "officialUrl": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai37/gijisidai.html",
+      "category": "COUNCIL",
+      "ministry": "CAS",
+      "manualLock": true,
       "materials": [
         {
-          "name": "議事次第 (PDF)",
-          "type": "PDF",
-          "size": "PDF",
+          "name": "その他情報",
+          "url": "https://www.cas.go.jp/jp/siryou/index.html",
+          "type": "HTML",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "議事次第",
           "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai37/shidai.pdf",
-          "isMinutes": false
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
         },
         {
-          "name": "経済の現状と課題（基礎資料） (PDF)",
-          "type": "PDF",
-          "size": "PDF",
+          "name": "経済の現状と課題（基礎資料）",
           "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai37/shiryou1.pdf",
-          "isMinutes": false
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
         },
         {
-          "name": "新しい資本主義の実現に向けた主な取組と成果 (PDF)",
-          "type": "PDF",
-          "size": "PDF",
+          "name": "新しい資本主義の実現に向けた主な取組と成果",
           "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai37/shiryou2.pdf",
-          "isMinutes": false
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
         },
         {
-          "name": "川邊委員提出資料 (PDF)",
-          "type": "PDF",
-          "size": "PDF",
+          "name": "川邊委員提出資料",
           "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai37/shiryou3.pdf",
-          "isMinutes": false
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
         },
         {
-          "name": "小林委員提出資料 (PDF)",
-          "type": "PDF",
-          "size": "PDF",
+          "name": "小林委員提出資料",
           "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai37/shiryou4.pdf",
-          "isMinutes": false
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
         },
         {
-          "name": "澤田委員提出資料 (PDF)",
-          "type": "PDF",
-          "size": "PDF",
+          "name": "澤田委員提出資料",
           "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai37/shiryou5.pdf",
-          "isMinutes": false
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
         },
         {
-          "name": "渋澤委員提出資料 (PDF)",
-          "type": "PDF",
-          "size": "PDF",
+          "name": "渋澤委員提出資料",
           "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai37/shiryou6.pdf",
-          "isMinutes": false
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
         },
         {
-          "name": "松尾委員提出資料 (PDF)",
-          "type": "PDF",
-          "size": "PDF",
+          "name": "松尾委員提出資料",
           "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai37/shiryou7.pdf",
-          "isMinutes": false
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
         },
         {
-          "name": "村上委員提出資料 (PDF)",
-          "type": "PDF",
-          "size": "PDF",
+          "name": "村上委員提出資料",
           "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai37/shiryou8.pdf",
-          "isMinutes": false
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "議事要旨",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai37/gijiyousi.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "大臣記者会見要旨",
+          "url": "https://www.cao.go.jp/minister/2411_r_akazawa/kaiken/20251003kaiken.html",
+          "type": "HTML",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "議事録",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai37/gijiroku.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "総理の一日",
+          "url": "https://www.kantei.go.jp/jp/103/actions/202510/03shihon.html",
+          "type": "HTML",
+          "isPrivate": false,
+          "manualLock": true
         }
-      ],
-      "tags": [
-        "新しい資本主",
-        "CAS",
-        "政策会議"
-      ],
-      "officialUrl": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai37/gijisidai.html",
-      "hasMinutes": false,
-      "docCount": 10,
-      "manualLock": true
+      ]
     },
     {
       "id": "meet-2025-10-02-smea-kigyo-torihiki-r7-dai2",
@@ -62939,104 +62959,6 @@
       "manualLock": true
     },
     {
-      "id": "meet-2025-06-13-cas-atarashii-sihon-107-dai5",
-      "councilId": "cas-atarashii-sihon-107",
-      "councilName": "cas-atarashii-sihon-107",
-      "ministry": "Unknown",
-      "category": "COUNCIL",
-      "title": "第5回 新しい資本主義実現会議",
-      "date": "2025/06/13",
-      "updatedAt": "2025/06/13 17:00",
-      "location": "総理大臣官邸 / 各府省庁本庁舎",
-      "summary": "cas-atarashii-sihon-107の開催。主要議題の推進状況及び今後の対応方針について審議が行われた。",
-      "agenda": [
-        "新しい資本主義のグランドデザイン及び実行計画2025年改訂版案",
-        "労務費の適切な転嫁のための関係省庁連絡会議について",
-        "価格交渉促進月間（2025年３月）フォローアップ調査結果の概要及び「令和７年度中小企業者に関する国等の契約の基本方針」について"
-      ],
-      "materials": [
-        {
-          "name": "議事次第 (PDF)",
-          "type": "PDF",
-          "size": "PDF",
-          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/honbu/dai5/shidai.pdf",
-          "isMinutes": false
-        },
-        {
-          "name": "新しい資本主義のグランドデザイン及び実行計画2025年改訂版案 (PDF)",
-          "type": "PDF",
-          "size": "PDF",
-          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/honbu/dai5/shiryou.pdf",
-          "isMinutes": false
-        },
-        {
-          "name": "労務費の適切な転嫁のための関係省庁連絡会議について (PDF)",
-          "type": "PDF",
-          "size": "PDF",
-          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/wgkaisai/roumuhitenka_dai5/siryou1.pdf",
-          "isMinutes": false
-        },
-        {
-          "name": "価格交渉促進月間（2025年３月）フォローアップ調査結果の概要及び「令和７年度中小企業者に関する国等の契約の基本方針」について (PDF)",
-          "type": "PDF",
-          "size": "PDF",
-          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/wgkaisai/roumuhitenka_dai5/siryou2.pdf",
-          "isMinutes": false
-        },
-        {
-          "name": "中小受託取引適正化法の概要 (PDF)",
-          "type": "PDF",
-          "size": "PDF",
-          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/wgkaisai/roumuhitenka_dai5/siryou3.pdf",
-          "isMinutes": false
-        },
-        {
-          "name": "円滑な価格転嫁等に資する適切な低入札価格調査の実施等について (PDF)",
-          "type": "PDF",
-          "size": "PDF",
-          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/wgkaisai/roumuhitenka_dai5/siryou4.pdf",
-          "isMinutes": false
-        },
-        {
-          "name": "地方の官公需における適切な価格転嫁に向けた取組について (PDF)",
-          "type": "PDF",
-          "size": "PDF",
-          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/wgkaisai/roumuhitenka_dai5/siryou5.pdf",
-          "isMinutes": false
-        },
-        {
-          "name": "前回会議（12月23日）における内閣官房副長官の指示事項に対する対応状況 (PDF)",
-          "type": "PDF",
-          "size": "PDF",
-          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/wgkaisai/roumuhitenka_dai5/siryou6.pdf",
-          "isMinutes": false
-        },
-        {
-          "name": "地方公共団体における週休２日工事等の実施 (PDF)",
-          "type": "PDF",
-          "size": "PDF",
-          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/wgkaisai/roumuhitenka_dai5/siryou7.pdf",
-          "isMinutes": false
-        },
-        {
-          "name": "価格交渉促進月間（2025年３月）フォローアップ調査結果 (PDF)",
-          "type": "PDF",
-          "size": "PDF",
-          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/wgkaisai/roumuhitenka_dai5/sankou.pdf",
-          "isMinutes": false
-        }
-      ],
-      "tags": [
-        "cas-at",
-        "Unknown",
-        "政策会議"
-      ],
-      "officialUrl": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/honbu/dai5/gijisidai.html",
-      "hasMinutes": false,
-      "docCount": 10,
-      "manualLock": true
-    },
-    {
       "id": "meet-2025-06-13-ra-fukko-suishin-dai47",
       "councilId": "ra-fukko-suishin",
       "councilName": "復興推進委員会",
@@ -63164,6 +63086,67 @@
       "officialUrl": "https://www.reconstruction.go.jp/topics/main-cat7/sub-cat7-2/20250609164826.html",
       "hasMinutes": true,
       "docCount": 14
+    },
+    {
+      "id": "meet-2025-06-13-cas-atarashii-sihon-107-dai36",
+      "councilId": "cas-atarashii-sihon-107",
+      "title": "第36回 新しい資本主義実現会議",
+      "date": "2025/06/13",
+      "officialUrl": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai36/gijisidai.html",
+      "category": "COUNCIL",
+      "ministry": "CAS",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "その他情報",
+          "url": "https://www.cas.go.jp/jp/siryou/index.html",
+          "type": "HTML",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "議事次第",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai36/shidai.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "新しい資本主義のグランドデザイン及び実行計画2025年改訂版（案）",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai36/shiryou1.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "内閣総理大臣からの諮問第53号について",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai36/shiryou2.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "経済財政運営と改革の基本方針2025（案）",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai36/shiryou3.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "議事要旨",
+          "url": "https://www5.cao.go.jp/keizai-shimon/kaigi/minutes/2025/0613gijiyoushi.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "総理の一日",
+          "url": "https://www.kantei.go.jp/jp/103/actions/202506/13keizai_shihon.html",
+          "type": "HTML",
+          "isPrivate": false,
+          "manualLock": true
+        }
+      ]
     },
     {
       "id": "meet-2025-06-11-smea-shinzoku-dai1",
@@ -63577,6 +63560,102 @@
       ],
       "topics": [],
       "manualLock": true
+    },
+    {
+      "id": "meet-2025-06-06-cas-atarashii-sihon-107-dai35",
+      "councilId": "cas-atarashii-sihon-107",
+      "title": "第35回 新しい資本主義実現会議",
+      "date": "2025/06/06",
+      "officialUrl": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai35/gijisidai.html",
+      "category": "COUNCIL",
+      "ministry": "CAS",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "その他情報",
+          "url": "https://www.cas.go.jp/jp/siryou/index.html",
+          "type": "HTML",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "議事次第",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai35/shidai.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "新しい資本主義のグランドデザイン及び実行計画2025年改訂版案",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai35/shiryou1.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "川邊委員提出資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai35/shiryou2.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "小林委員提出資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai35/shiryou3.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "澤田委員提出資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai35/shiryou4.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "渋澤委員提出資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai35/shiryou5.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "新浪委員提出資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai35/shiryou6.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "芳野委員提出資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai35/shiryou7.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "議事要旨",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai35/gijiyousi.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "議事録",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai35/gijiroku.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "総理の一日",
+          "url": "https://www.kantei.go.jp/jp/103/actions/202506/06shihon.html",
+          "type": "HTML",
+          "isPrivate": false,
+          "manualLock": true
+        }
+      ]
     },
     {
       "id": "meet-2025-06-04-cao-kaigi-88-dai21",
@@ -64622,6 +64701,284 @@
       ]
     },
     {
+      "id": "meet-2025-05-14-cas-atarashii-sihon-107-dai34",
+      "councilId": "cas-atarashii-sihon-107",
+      "title": "第34回 新しい資本主義実現会議",
+      "date": "2025/05/14",
+      "officialUrl": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai34/gijisidai.html",
+      "category": "COUNCIL",
+      "ministry": "CAS",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "その他情報",
+          "url": "https://www.cas.go.jp/jp/siryou/index.html",
+          "type": "HTML",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "議事次第",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai34/shidai.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "「中小企業・小規模事業者の賃金向上推進５か年計画」の施策パッケージ案",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai34/shiryou1.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "論点案",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai34/shiryou2.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "翁委員提出資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai34/shiryou3-1.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "翁委員提出資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai34/shiryou3-2.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "川邊委員提出資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai34/shiryou4.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "小林委員提出資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai34/shiryou5.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "渋澤委員提出資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai34/shiryou6.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "冨山委員提出資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai34/shiryou7.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "新浪委員提出資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai34/shiryou8.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "松尾委員提出資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai34/shiryou9.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "芳野委員提出資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai34/shiryou10.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "国土交通大臣提出資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai34/shiryou11.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "デジタル行財政改革担当大臣提出資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai34/shiryou12.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "内閣府特命担当大臣（金融）提出資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai34/shiryou13.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "経済産業大臣提出資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai34/shiryou14.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "農林水産大臣提出資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai34/shiryou15.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "飲食業",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai34/shiryou16-1.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "宿泊業",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai34/shiryou16-2.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "小売業",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai34/shiryou16-3.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "生活関連サービス業（理容業、美容業、クリーニング業）",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai34/shiryou16-4-1.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "生活関連サービス業（冠婚葬祭業）",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai34/shiryou16-4-2.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "自動車整備業",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai34/shiryou16-5-1.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "ビルメンテナンス業",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai34/shiryou16-5-2.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "製造業（中小製造業）",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai34/shiryou16-6-1.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "製造業（食品製造業）",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai34/shiryou16-6-2.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "運輸業",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai34/shiryou16-7.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "建設業",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai34/shiryou16-8.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "医療",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai34/shiryou16-9.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "介護",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai34/shiryou16-10-1.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "障害福祉",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai34/shiryou16-10-2.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "保育",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai34/shiryou16-11.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "農林水産業",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai34/shiryou16-12.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "議事要旨",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai34/gijiyousi.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "大臣記者会見要旨",
+          "url": "https://www.cao.go.jp/minister/2411_r_akazawa/kaiken/20250514kaiken.html",
+          "type": "HTML",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "議事録",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai34/gijiroku.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "総理の一日",
+          "url": "https://www.kantei.go.jp/jp/103/actions/202505/14shihon.html",
+          "type": "HTML",
+          "isPrivate": false,
+          "manualLock": true
+        }
+      ]
+    },
+    {
       "id": "meet-2025-05-13-mhlw-rousei-roudoujouken-dai197",
       "councilId": "mhlw-rousei-roudoujouken-146",
       "title": "第197回 労働政策審議会 労働条件分科会",
@@ -65628,6 +65985,165 @@
       ],
       "topics": [],
       "manualLock": true
+    },
+    {
+      "id": "meet-2025-04-23-cas-atarashii-sihon-107-dai33",
+      "councilId": "cas-atarashii-sihon-107",
+      "title": "第33回 新しい資本主義実現会議",
+      "date": "2025/04/23",
+      "officialUrl": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai33/gijisidai.html",
+      "category": "COUNCIL",
+      "ministry": "CAS",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "その他情報",
+          "url": "https://www.cas.go.jp/jp/siryou/index.html",
+          "type": "HTML",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "議事次第",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai33/shidai.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "基礎資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai33/shiryou1.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "論点案",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai33/shiryou2.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "翁委員提出資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai33/shiryou3.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "川邊委員提出資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai33/shiryou4.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "小林委員提出資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai33/shiryou5.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "渋澤委員提出資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai33/shiryou6.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "諏訪委員提出資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai33/shiryou7.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "冨山委員提出資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai33/shiryou8.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "新浪委員提出資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai33/shiryou9.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "松尾委員提出資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai33/shiryou10.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "柳川委員提出資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai33/shiryou11.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "芳野委員提出資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai33/shiryou12.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "厚生労働大臣提出資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai33/shiryou13.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "経済産業大臣提出資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai33/shiryou14.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "内閣府特命担当大臣（科学技術政策）提出資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai33/shiryou15.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "議事要旨",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai33/gijiyousi.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "大臣記者会見要旨",
+          "url": "https://www.cao.go.jp/minister/2411_r_akazawa/kaiken/20250423kaiken.html",
+          "type": "HTML",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "議事録",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai33/gijiroku.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "総理の一日",
+          "url": "https://www.kantei.go.jp/jp/103/actions/202504/23shihon.html",
+          "type": "HTML",
+          "isPrivate": false,
+          "manualLock": true
+        }
+      ]
     },
     {
       "id": "meet-2025-04-15-mof-zaiseiseido-bunkakai",
@@ -66884,6 +67400,158 @@
       ]
     },
     {
+      "id": "meet-2025-03-28-cas-atarashii-sihon-107-dai32",
+      "councilId": "cas-atarashii-sihon-107",
+      "title": "第32回 新しい資本主義実現会議",
+      "date": "2025/03/28",
+      "officialUrl": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai32/gijisidai.html",
+      "category": "COUNCIL",
+      "ministry": "CAS",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "その他情報",
+          "url": "https://www.cas.go.jp/jp/siryou/index.html",
+          "type": "HTML",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "議事次第",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai32/shidai.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "基礎資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai32/shiryou1.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "論点案",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai32/shiryou2.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "翁委員提出資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai32/shiryou3.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "川邊委員提出資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai32/shiryou4.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "小林委員提出資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai32/shiryou5.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "渋澤委員提出資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai32/shiryou6.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "諏訪委員提出資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai32/shiryou7.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "冨山委員提出資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai32/shiryou8.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "新浪委員提出資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai32/shiryou9.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "柳川委員提出資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai32/shiryou10.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "芳野委員提出資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai32/shiryou11.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "経済産業大臣提出資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai32/shiryou12.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "総務大臣提出資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai32/shiryou13.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "公正取引委員会委員長提出資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai32/shiryou14.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "議事要旨",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai32/gijiyousi.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "大臣記者会見要旨",
+          "url": "https://www.cao.go.jp/minister/2411_r_akazawa/kaiken/20250328kaiken_00002.html",
+          "type": "HTML",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "議事録",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai32/gijiroku.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "総理の一日",
+          "url": "https://www.kantei.go.jp/jp/103/actions/202503/28shihon.html",
+          "type": "HTML",
+          "isPrivate": false,
+          "manualLock": true
+        }
+      ]
+    },
+    {
       "id": "meet-2025-03-27-mhlw-rousei-roudoujouken-dai196",
       "councilId": "mhlw-rousei-roudoujouken-146",
       "title": "第196回 労働政策審議会 労働条件分科会",
@@ -67915,6 +68583,144 @@
       ],
       "topics": [],
       "manualLock": true
+    },
+    {
+      "id": "meet-2025-02-27-cas-atarashii-sihon-107-dai31",
+      "councilId": "cas-atarashii-sihon-107",
+      "title": "第31回 新しい資本主義実現会議",
+      "date": "2025/02/27",
+      "officialUrl": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai31/gijisidai.html",
+      "category": "COUNCIL",
+      "ministry": "CAS",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "その他情報",
+          "url": "https://www.cas.go.jp/jp/siryou/index.html",
+          "type": "HTML",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "議事次第",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai31/shidai.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "基礎資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai31/shiryou1.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "論点案",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai31/shiryou2.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "翁委員提出資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai31/shiryou3.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "川邊委員提出資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai31/shiryou4.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "小林委員提出資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai31/shiryou5.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "渋澤委員提出資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai31/shiryou6.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "諏訪委員提出資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai31/shiryou7.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "十倉委員提出資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai31/shiryou8.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "冨山委員提出資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai31/shiryou9.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "新浪委員提出資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai31/shiryou10.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "平野委員提出資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai31/shiryou11.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "芳野委員提出資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai31/shiryou12.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "議事要旨",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai31/gijiyousi.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "大臣記者会見要旨",
+          "url": "https://www.cao.go.jp/minister/2411_r_akazawa/kaiken/20250227kaiken.html",
+          "type": "HTML",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "議事録",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai31/gijiroku.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "総理の一日",
+          "url": "https://www.kantei.go.jp/jp/103/actions/202502/27shihon.html",
+          "type": "HTML",
+          "isPrivate": false,
+          "manualLock": true
+        }
+      ]
     },
     {
       "id": "meet-2025-02-26-fdma-kento-94-令和6年度-dai1",
@@ -95697,6 +96503,137 @@
       "docCount": 7
     },
     {
+      "id": "meet-2024-10-30-cas-atarashii-sihon-107-dai30",
+      "councilId": "cas-atarashii-sihon-107",
+      "title": "第30回 新しい資本主義実現会議",
+      "date": "2024/10/30",
+      "officialUrl": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai30/gijisidai.html",
+      "category": "COUNCIL",
+      "ministry": "CAS",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "その他情報",
+          "url": "https://www.cas.go.jp/jp/siryou/index.html",
+          "type": "HTML",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "議事次第",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai30/shidai.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "重点施策（案）",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai30/shiryou1.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "こちら",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai30/juutensesaku_set.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "翁委員提出資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai30/shiryou2.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "小林委員提出資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai30/shiryou3.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "渋澤委員提出資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai30/shiryou4.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "冨山委員提出資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai30/shiryou5.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "新浪委員提出資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai30/shiryou6.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "松尾委員提出資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai30/shiryou7.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "柳川委員提出資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai30/shiryou8.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "芳野委員提出資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai30/shiryou9.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "経済産業大臣提出資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai30/shiryou10.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "議事要旨",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai30/gijiyousi.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "大臣記者会見要旨",
+          "url": "https://www.cao.go.jp/minister/2410_r_akazawa/kaiken/20241030kaiken.html",
+          "type": "HTML",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "議事録",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai30/gijiroku.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "総理の一日",
+          "url": "https://www.kantei.go.jp/jp/102_ishiba/actions/202410/30shihon.html",
+          "type": "HTML",
+          "isPrivate": false,
+          "manualLock": true
+        }
+      ]
+    },
+    {
       "id": "meet-2024-10-28-mof-zaiseiseido-bunkakai",
       "councilId": "mof-zaiseiseido-bunkakai",
       "councilName": "財政制度等審議会 財政制度分科会",
@@ -101757,46 +102694,6 @@
       "docCount": 18
     },
     {
-      "id": "meet-2024-06-21-cas-atarashii-sihon-107-dai4",
-      "councilId": "cas-atarashii-sihon-107",
-      "councilName": "cas-atarashii-sihon-107",
-      "ministry": "Unknown",
-      "category": "COUNCIL",
-      "title": "第4回 新しい資本主義実現会議",
-      "date": "2024/06/21",
-      "updatedAt": "2024/06/21 17:00",
-      "location": "総理大臣官邸 / 各府省庁本庁舎",
-      "summary": "cas-atarashii-sihon-107の開催。主要議題の推進状況及び今後の対応方針について審議が行われた。",
-      "agenda": [
-        "新しい資本主義のグランドデザイン及び実行計画2024年改訂版（案）"
-      ],
-      "materials": [
-        {
-          "name": "議事次第 (PDF)",
-          "type": "PDF",
-          "size": "PDF",
-          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/honbu/dai4/shidai.pdf",
-          "isMinutes": false
-        },
-        {
-          "name": "新しい資本主義のグランドデザイン及び実行計画2024年改訂版（案） (PDF)",
-          "type": "PDF",
-          "size": "PDF",
-          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/honbu/dai4/shiryou.pdf",
-          "isMinutes": false
-        }
-      ],
-      "tags": [
-        "cas-at",
-        "Unknown",
-        "政策会議"
-      ],
-      "officialUrl": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/honbu/dai4/gijisidai.html",
-      "hasMinutes": false,
-      "docCount": 2,
-      "manualLock": true
-    },
-    {
       "id": "meet-2024-06-21-cas-roumuhi-tenka-108-dai4",
       "councilId": "cas-roumuhi-tenka-108",
       "councilName": "cas-roumuhi-tenka-108",
@@ -101835,6 +102732,88 @@
       "hasMinutes": false,
       "docCount": 2,
       "manualLock": true
+    },
+    {
+      "id": "meet-2024-06-21-cas-atarashii-sihon-107-dai29",
+      "councilId": "cas-atarashii-sihon-107",
+      "title": "第29回 新しい資本主義実現会議",
+      "date": "2024/06/21",
+      "officialUrl": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai29/gijisidai.html",
+      "category": "COUNCIL",
+      "ministry": "CAS",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "その他情報",
+          "url": "https://www.cas.go.jp/jp/siryou/index.html",
+          "type": "HTML",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "議事次第",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai29/shidai.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "新しい資本主義のグランドデザイン及び実行計画2024年改訂版（案）",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai29/shiryou1.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "内閣総理大臣からの諮問第51号について",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai29/shiryou2.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "経済財政運営と改革の基本方針2024（案）",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai29/shiryou3.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "経済財政運営と改革の基本方針2024～賃上げと投資がけん引する成長型経済の実現～（経済財政政策担当大臣提出資料）",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai29/shiryou4.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "経済財政運営と改革の基本方針2024～政策ファイル～（経済財政政策担当大臣提出資料）",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai29/shiryou5.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "議事要旨",
+          "url": "https://www5.cao.go.jp/keizai-shimon/kaigi/minutes/2024/0621/gijiyoushi.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "大臣記者会見要旨",
+          "url": "https://www5.cao.go.jp/keizai-shimon/kaigi/minutes/2024/0621/interview.html",
+          "type": "HTML",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "総理の一日",
+          "url": "https://www.kantei.go.jp/jp/101_kishida/actions/202406/21keizai_shihon.html",
+          "type": "HTML",
+          "isPrivate": false,
+          "manualLock": true
+        }
+      ]
     },
     {
       "id": "meet-2024-06-20-mod-drastic-reinforcement",
@@ -102849,6 +103828,130 @@
           "name": "審議結果・配付資料アーカイブ",
           "url": "https://www.mhlw.go.jp/stf/shingi/indexshingi.html",
           "type": "HTML",
+          "manualLock": true
+        }
+      ]
+    },
+    {
+      "id": "meet-2024-06-07-cas-atarashii-sihon-107-dai28",
+      "councilId": "cas-atarashii-sihon-107",
+      "title": "第28回 新しい資本主義実現会議",
+      "date": "2024/06/07",
+      "officialUrl": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai28/gijisidai.html",
+      "category": "COUNCIL",
+      "ministry": "CAS",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "その他情報",
+          "url": "https://www.cas.go.jp/jp/siryou/index.html",
+          "type": "HTML",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "議事次第",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai28/shidai.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "新しい資本主義のグランドデザイン及び実行計画2024年改訂版案",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai28/shiryou1.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "翁委員提出資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai28/shiryou2.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "川邊委員提出資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai28/shiryou3.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "澤田委員提出資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai28/shiryou4.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "渋澤委員提出資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai28/shiryou5.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "冨山委員提出資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai28/shiryou6.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "新浪委員提出資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai28/shiryou7.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "平野委員提出資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai28/shiryou8.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "柳川委員提出資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai28/shiryou9.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "芳野委員提出資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai28/shiryou10.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "議事要旨",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai28/gijiyousi.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "大臣記者会見要旨",
+          "url": "https://www.cao.go.jp/minister/2309_y_shindo/kaiken/20240607kaiken.html",
+          "type": "HTML",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "議事録",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai28/gijiroku.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "総理の一日",
+          "url": "https://www.kantei.go.jp/jp/101_kishida/actions/202406/07shihon.html",
+          "type": "HTML",
+          "isPrivate": false,
           "manualLock": true
         }
       ]
@@ -103894,6 +104997,151 @@
       ]
     },
     {
+      "id": "meet-2024-05-09-cas-atarashii-sihon-107-dai27",
+      "councilId": "cas-atarashii-sihon-107",
+      "title": "第27回 新しい資本主義実現会議",
+      "date": "2024/05/09",
+      "officialUrl": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai27/gijisidai.html",
+      "category": "COUNCIL",
+      "ministry": "CAS",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "その他情報",
+          "url": "https://www.cas.go.jp/jp/siryou/index.html",
+          "type": "HTML",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "議事次第",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai27/shidai.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "基礎資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai27/shiryou1.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "論点案",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai27/shiryou2.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "翁委員提出資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai27/shiryou3.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "川邊委員提出資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai27/shiryou4.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "小林委員提出資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai27/shiryou5.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "渋澤委員提出資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai27/shiryou6.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "冨山委員提出資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai27/shiryou7-1.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "冨山委員提出資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai27/shiryou7-2.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "新浪委員提出資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai27/shiryou8.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "柳川委員提出資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai27/shiryou9.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "芳野委員提出資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai27/shiryou10.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "金融担当大臣提出資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai27/shiryou11.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "厚生労働大臣提出資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai27/shiryou12.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "議事要旨",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai27/gijiyousi.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "大臣記者会見要旨",
+          "url": "https://www.cao.go.jp/minister/2309_y_shindo/kaiken/20240509kaiken.html",
+          "type": "HTML",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "議事録",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai27/gijiroku.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "総理の一日",
+          "url": "https://www.kantei.go.jp/jp/101_kishida/actions/202405/09shihon.html",
+          "type": "HTML",
+          "isPrivate": false,
+          "manualLock": true
+        }
+      ]
+    },
+    {
       "id": "meet-2024-05-08-mof-zaiseiseido-bunkakai",
       "councilId": "mof-zaiseiseido-bunkakai",
       "councilName": "財政制度等審議会 財政制度分科会",
@@ -104902,6 +106150,158 @@
       "docCount": 6
     },
     {
+      "id": "meet-2024-04-17-cas-atarashii-sihon-107-dai26",
+      "councilId": "cas-atarashii-sihon-107",
+      "title": "第26回 新しい資本主義実現会議",
+      "date": "2024/04/17",
+      "officialUrl": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai26/gijisidai.html",
+      "category": "COUNCIL",
+      "ministry": "CAS",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "その他情報",
+          "url": "https://www.cas.go.jp/jp/siryou/index.html",
+          "type": "HTML",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "議事次第",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai26/shidai.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "基礎資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai26/shiryou1.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "論点案",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai26/shiryou2.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "是枝監督提出資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai26/shiryou3.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "翁委員提出資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai26/shiryou4.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "川邊委員提出資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai26/shiryou5.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "小林委員提出資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai26/shiryou6.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "渋澤委員提出資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai26/shiryou7.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "冨山委員提出資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai26/shiryou8.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "新浪委員提出資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai26/shiryou9.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "平野委員提出資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai26/shiryou10.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "柳川委員提出資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai26/shiryou11.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "芳野委員提出資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai26/shiryou12.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "文部科学大臣提出資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai26/shiryou13.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "公正取引委員会委員長提出資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai26/shiryou14.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "議事要旨",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai26/gijiyousi.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "大臣記者会見要旨",
+          "url": "https://www.cao.go.jp/minister/2309_y_shindo/kaiken/20240417kaiken.html",
+          "type": "HTML",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "議事録",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai26/gijiroku.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "総理の一日",
+          "url": "https://www.kantei.go.jp/jp/101_kishida/actions/202404/17shihon.html",
+          "type": "HTML",
+          "isPrivate": false,
+          "manualLock": true
+        }
+      ]
+    },
+    {
       "id": "meet-2024-04-16-mof-zaiseiseido-bunkakai",
       "councilId": "mof-zaiseiseido-bunkakai",
       "councilName": "財政制度等審議会 財政制度分科会",
@@ -105800,6 +107200,137 @@
       "hasMinutes": true,
       "docCount": 59,
       "manualLock": true
+    },
+    {
+      "id": "meet-2024-03-26-cas-atarashii-sihon-107-dai25",
+      "councilId": "cas-atarashii-sihon-107",
+      "title": "第25回 新しい資本主義実現会議",
+      "date": "2024/03/26",
+      "officialUrl": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai25/gijisidai.html",
+      "category": "COUNCIL",
+      "ministry": "CAS",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "その他情報",
+          "url": "https://www.cas.go.jp/jp/siryou/index.html",
+          "type": "HTML",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "議事次第",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai25/shidai.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "基礎資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai25/shiryou1.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "論点案",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai25/shiryou2.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "翁委員提出資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai25/shiryou3.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "川邊委員提出資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai25/shiryou4.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "小林委員提出資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai25/shiryou5.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "渋澤委員提出資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai25/shiryou6.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "冨山委員提出資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai25/shiryou7.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "新浪委員提出資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai25/shiryou8.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "平野委員提出資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai25/shiryou9.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "柳川委員提出資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai25/shiryou10.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "芳野委員提出資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai25/shiryou11.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "議事要旨",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai25/gijiyousi.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "大臣記者会見要旨",
+          "url": "https://www.cao.go.jp/minister/2309_y_shindo/kaiken/20240326kaiken.html",
+          "type": "HTML",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "議事録",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai25/gijiroku.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "総理の一日",
+          "url": "https://www.kantei.go.jp/jp/101_kishida/actions/202403/26shihon.html",
+          "type": "HTML",
+          "isPrivate": false,
+          "manualLock": true
+        }
+      ]
     },
     {
       "id": "meet-2024-03-21-moj-teikan-ninsho-kento-7",
@@ -108143,6 +109674,137 @@
       "hasMinutes": true,
       "docCount": 60,
       "manualLock": true
+    },
+    {
+      "id": "meet-2024-02-27-cas-atarashii-sihon-107-dai24",
+      "councilId": "cas-atarashii-sihon-107",
+      "title": "第24回 新しい資本主義実現会議",
+      "date": "2024/02/27",
+      "officialUrl": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai24/gijisidai.html",
+      "category": "COUNCIL",
+      "ministry": "CAS",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "その他情報",
+          "url": "https://www.cas.go.jp/jp/siryou/index.html",
+          "type": "HTML",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "議事次第",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai24/shidai.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "基礎資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai24/shiryou1.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "論点案",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai24/shiryou2.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "翁委員提出資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai24/shiryou3.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "川邊委員提出資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai24/shiryou4.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "小林委員提出資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai24/shiryou5.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "渋澤委員提出資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai24/shiryou6.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "冨山委員提出資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai24/shiryou7.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "新浪委員提出資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai24/shiryou8.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "柳川委員提出資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai24/shiryou9.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "芳野委員提出資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai24/shiryou10.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "金融担当大臣提出資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai24/shiryou11.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "議事要旨",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai24/gijiyousi.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "大臣記者会見要旨",
+          "url": "https://www.cao.go.jp/minister/2309_y_shindo/kaiken/20240227kaiken.html",
+          "type": "HTML",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "議事録",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai24/gijiroku.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "総理の一日",
+          "url": "https://www.kantei.go.jp/jp/101_kishida/actions/202402/27shihon.html",
+          "type": "HTML",
+          "isPrivate": false,
+          "manualLock": true
+        }
+      ]
     },
     {
       "id": "meet-2024-02-21-moj-jizoku-hogoshi-7",
@@ -114200,6 +115862,151 @@
       ]
     },
     {
+      "id": "meet-2023-10-25-cas-atarashii-sihon-107-dai23",
+      "councilId": "cas-atarashii-sihon-107",
+      "title": "第23回 新しい資本主義実現会議",
+      "date": "2023/10/25",
+      "officialUrl": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai23/gijisidai.html",
+      "category": "COUNCIL",
+      "ministry": "CAS",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "その他情報",
+          "url": "https://www.cas.go.jp/jp/siryou/index.html",
+          "type": "HTML",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "議事次第",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai23/shidai.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "基礎資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai23/shiryou1.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "翁委員提出資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai23/shiryou2.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "川邊委員提出資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai23/shiryou3.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "小林委員提出資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai23/shiryou4.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "渋澤委員提出資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai23/shiryou5.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "冨山委員提出資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai23/shiryou6-1.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "冨山委員提出資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai23/shiryou6-2.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "新浪委員提出資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai23/shiryou7.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "平野委員提出資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai23/shiryou8.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "柳川委員提出資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai23/shiryou9.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "芳野委員提出資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai23/shiryou10.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "厚生労働大臣提出資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai23/shiryou11.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "文部科学大臣提出資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai23/shiryou12.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "議事要旨",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai23/gijiyousi.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "大臣記者会見要旨",
+          "url": "https://www.cao.go.jp/minister/2309_y_shindo/kaiken/20231025kaiken.html",
+          "type": "HTML",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "議事録",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai23/gijiroku.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "総理の一日",
+          "url": "https://www.kantei.go.jp/jp/101_kishida/actions/202310/25shihon.html",
+          "type": "HTML",
+          "isPrivate": false,
+          "manualLock": true
+        }
+      ]
+    },
+    {
       "id": "meet-2023-10-20-cas-kokusentoc-24-dai60",
       "councilId": "cas-kokusentoc-24",
       "councilName": "国家戦略特別区域諮問会議",
@@ -117408,6 +119215,144 @@
       "docCount": 7
     },
     {
+      "id": "meet-2023-09-27-cas-atarashii-sihon-107-dai22",
+      "councilId": "cas-atarashii-sihon-107",
+      "title": "第22回 新しい資本主義実現会議",
+      "date": "2023/09/27",
+      "officialUrl": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai22/gijisidai.html",
+      "category": "COUNCIL",
+      "ministry": "CAS",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "その他情報",
+          "url": "https://www.cas.go.jp/jp/siryou/index.html",
+          "type": "HTML",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "議事次第",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai22/shidai.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "新しい資本主義の推進についての重点事項（案）",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai22/shiryou1.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "こちら",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai22/juutenjikou_set.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "翁委員提出資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai22/shiryou2.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "川邊委員提出資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai22/shiryou3.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "小林委員提出資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai22/shiryou4.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "渋澤委員提出資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai22/shiryou5.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "冨山委員提出資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai22/shiryou6.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "新浪委員提出資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai22/shiryou7.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "平野委員提出資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai22/shiryou8.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "柳川委員提出資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai22/shiryou9.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "芳野委員提出資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai22/shiryou10.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "厚生労働大臣提出資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai22/shiryou11.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "議事要旨",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai22/gijiyousi.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "大臣記者会見要旨",
+          "url": "https://www.cao.go.jp/minister/2309_y_shindo/kaiken/20230927kaiken.html",
+          "type": "HTML",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "議事録",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai22/gijiroku.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "総理の一日",
+          "url": "https://www.kantei.go.jp/jp/101_kishida/actions/202309/27shihon.html",
+          "type": "HTML",
+          "isPrivate": false,
+          "manualLock": true
+        }
+      ]
+    },
+    {
       "id": "meet-2023-09-25-cfa-kodomo-shingikai-s0",
       "councilId": "cfa-kodomo-shingikai",
       "councilName": "こども家庭審議会",
@@ -118355,6 +120300,151 @@
       "officialUrl": "https://www.cas.go.jp/jp/seisaku/osaka_kansai_banpaku/kaigou.html",
       "hasMinutes": true,
       "docCount": 8
+    },
+    {
+      "id": "meet-2023-08-31-cas-atarashii-sihon-107-dai21",
+      "councilId": "cas-atarashii-sihon-107",
+      "title": "第21回 新しい資本主義実現会議",
+      "date": "2023/08/31",
+      "officialUrl": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai21/gijisidai.html",
+      "category": "COUNCIL",
+      "ministry": "CAS",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "その他情報",
+          "url": "https://www.cas.go.jp/jp/siryou/index.html",
+          "type": "HTML",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "議事次第",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai21/shidai.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "基礎資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai21/shiryou1.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "論点案",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai21/shiryou2.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "厚生労働大臣提出資料（１）",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai21/shiryou3.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "翁委員提出資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai21/shiryou4.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "小林委員提出資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai21/shiryou5.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "渋澤委員提出資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai21/shiryou6.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "冨山委員提出資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai21/shiryou7.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "新浪委員提出資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai21/shiryou8.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "柳川委員提出資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai21/shiryou9.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "芳野委員提出資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai21/shiryou10.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "経済産業大臣提出資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai21/shiryou11.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "厚生労働大臣提出資料（２）",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai21/shiryou12.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "公正取引委員会委員長提出資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai21/shiryou13.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "議事要旨",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai21/gijiyousi.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "大臣記者会見要旨",
+          "url": "https://www.cao.go.jp/minister/2210_s_goto/kaiken/20230831kaiken.html",
+          "type": "HTML",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "議事録",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai21/gijiroku.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "総理の一日",
+          "url": "https://www.kantei.go.jp/jp/101_kishida/actions/202308/31shihon.html",
+          "type": "HTML",
+          "isPrivate": false,
+          "manualLock": true
+        }
+      ]
     },
     {
       "id": "meet-2023-08-30-moj-jizoku-hogoshi-4",
@@ -120518,6 +122608,95 @@
       ]
     },
     {
+      "id": "meet-2023-06-16-cas-atarashii-sihon-107-dai20",
+      "councilId": "cas-atarashii-sihon-107",
+      "title": "第20回 新しい資本主義実現会議",
+      "date": "2023/06/16",
+      "officialUrl": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai20/gijisidai.html",
+      "category": "COUNCIL",
+      "ministry": "CAS",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "その他情報",
+          "url": "https://www.cas.go.jp/jp/siryou/index.html",
+          "type": "HTML",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "議事次第",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai20/shidai.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "新しい資本主義のグランドデザイン及び実行計画2023改訂版案",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai20/shiryou1.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "成長戦略等のフォローアップ案",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai20/shiryou2.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "小林委員提出資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai20/shiryou3.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "内閣総理大臣からの諮問第49号について",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai20/shiryou4.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "経済財政運営と改革の基本方針2023（案）",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai20/shiryou5.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "「新しい資本主義のグランドデザイン及び実行計画」（令和４年６月７日）のフォローアップ（内閣官房新しい資本主義実現本部事務局）",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai20/sankou.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "議事要旨",
+          "url": "https://www5.cao.go.jp/keizai-shimon/kaigi/minutes/2023/0616/gijiyoushi.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "大臣記者会見要旨",
+          "url": "https://www5.cao.go.jp/keizai-shimon/kaigi/minutes/2023/0616/interview.html",
+          "type": "HTML",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "総理の一日",
+          "url": "https://www.kantei.go.jp/jp/101_kishida/actions/202306/16keizai_shihon.html",
+          "type": "HTML",
+          "isPrivate": false,
+          "manualLock": true
+        }
+      ]
+    },
+    {
       "id": "meet-2023-06-13-cas-kagayakujosei-46-dai13",
       "councilId": "cas-kagayakujosei-46",
       "councilName": "すべての女性が輝く社会づくり本部",
@@ -121077,6 +123256,151 @@
       "hasMinutes": true,
       "docCount": 58,
       "manualLock": true
+    },
+    {
+      "id": "meet-2023-06-06-cas-atarashii-sihon-107-dai19",
+      "councilId": "cas-atarashii-sihon-107",
+      "title": "第19回 新しい資本主義実現会議",
+      "date": "2023/06/06",
+      "officialUrl": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai19/gijisidai.html",
+      "category": "COUNCIL",
+      "ministry": "CAS",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "その他情報",
+          "url": "https://www.cas.go.jp/jp/siryou/index.html",
+          "type": "HTML",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "議事次第",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai19/shidai.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "新しい資本主義のグランドデザイン及び実行計画2023改訂版案",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai19/shiryou1.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "成長戦略等のフォローアップ案",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai19/shiryou2.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "翁委員提出資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai19/shiryou3.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "川邊委員提出資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai19/shiryou4.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "小林委員提出資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai19/shiryou5.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "渋澤委員提出資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai19/shiryou6.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "冨山委員提出資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai19/shiryou7.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "新浪委員提出資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai19/shiryou8.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "米良委員提出資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai19/shiryou9.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "柳川委員提出資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai19/shiryou10.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "芳野委員提出資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai19/shiryou11.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "財務大臣提出資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai19/shiryou12.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "「新しい資本主義のグランドデザイン及び実行計画」（令和４年６月７日）のフォローアップ （内閣官房新しい資本主義実現本部事務局）",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai19/sankou.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "議事要旨",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai19/gijiyousi.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "大臣記者会見要旨",
+          "url": "https://www.cao.go.jp/minister/2210_s_goto/kaiken/20230606kaiken.html",
+          "type": "HTML",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "議事録",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai19/gijiroku.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "総理の一日",
+          "url": "https://www.kantei.go.jp/jp/101_kishida/actions/202306/06shihon.html",
+          "type": "HTML",
+          "isPrivate": false,
+          "manualLock": true
+        }
+      ]
     },
     {
       "id": "meet-2023-06-02-cao-kaigi-88-dai19",
@@ -122144,6 +124468,137 @@
           "name": "第1回 中小M&Aガイドライン見直し検討小委員会 議事要旨(227KB)",
           "url": "https://www.chusho.meti.go.jp/koukai/kenkyukai/ma_guideline/001/gy.pdf",
           "type": "PDF",
+          "manualLock": true
+        }
+      ]
+    },
+    {
+      "id": "meet-2023-05-16-cas-atarashii-sihon-107-dai18",
+      "councilId": "cas-atarashii-sihon-107",
+      "title": "第18回 新しい資本主義実現会議",
+      "date": "2023/05/16",
+      "officialUrl": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai18/gijisidai.html",
+      "category": "COUNCIL",
+      "ministry": "CAS",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "その他情報",
+          "url": "https://www.cas.go.jp/jp/siryou/index.html",
+          "type": "HTML",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "議事次第",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai18/shidai.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "三位一体の労働市場改革の指針（案）",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai18/shiryou1.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "こちら",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/pdf/roudousijou.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "翁委員提出資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai18/shiryou2.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "川邊委員提出資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai18/shiryou3.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "小林委員提出資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai18/shiryou4.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "渋澤委員提出資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai18/shiryou5.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "冨山委員提出資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai18/shiryou6.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "平野委員提出資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai18/shiryou7.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "柳川委員提出資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai18/shiryou8.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "芳野委員提出資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai18/shiryou9.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "厚生労働大臣提出資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai18/shiryou10.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "議事要旨",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai18/gijiyousi.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "大臣記者会見要旨",
+          "url": "https://www.cao.go.jp/minister/2210_s_goto/kaiken/20230516kaiken.html",
+          "type": "HTML",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "議事録",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai18/gijiroku.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "総理の一日",
+          "url": "https://www.kantei.go.jp/jp/101_kishida/actions/202305/16shihon.html",
+          "type": "HTML",
+          "isPrivate": false,
           "manualLock": true
         }
       ]
@@ -123358,6 +125813,158 @@
       "manualLock": true
     },
     {
+      "id": "meet-2023-04-25-cas-atarashii-sihon-107-dai17",
+      "councilId": "cas-atarashii-sihon-107",
+      "title": "第17回 新しい資本主義実現会議",
+      "date": "2023/04/25",
+      "officialUrl": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai17/gijisidai.html",
+      "category": "COUNCIL",
+      "ministry": "CAS",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "その他情報",
+          "url": "https://www.cas.go.jp/jp/siryou/index.html",
+          "type": "HTML",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "議事次第",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai17/shidai.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "基礎資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai17/shiryou1.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "論点案",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai17/shiryou2.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "加藤弁護士提出資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai17/shiryou3.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "翁委員提出資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai17/shiryou4.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "川邊委員提出資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai17/shiryou5.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "小林委員提出資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai17/shiryou6.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "櫻田委員提出資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai17/shiryou7.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "渋澤委員提出資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai17/shiryou8.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "十倉委員提出資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai17/shiryou9.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "冨山委員提出資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai17/shiryou10-1.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "冨山委員提出資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai17/shiryou10-2.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "松尾委員提出資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai17/shiryou11.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "柳川委員提出資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai17/shiryou12.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "芳野委員提出資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai17/shiryou13.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "議事要旨",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai17/gijiyousi.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "大臣記者会見要旨",
+          "url": "https://www.cao.go.jp/minister/2210_s_goto/kaiken/20230425kaiken_00002.html",
+          "type": "HTML",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "議事録",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai17/gijiroku.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "総理の一日",
+          "url": "https://www.kantei.go.jp/jp/101_kishida/actions/202304/25shihon.html",
+          "type": "HTML",
+          "isPrivate": false,
+          "manualLock": true
+        }
+      ]
+    },
+    {
       "id": "meet-2023-04-24-mof-zaiseiseido-bunkakai",
       "councilId": "mof-zaiseiseido-bunkakai",
       "councilName": "財政制度等審議会 財政制度分科会",
@@ -124128,6 +126735,137 @@
       "docCount": 11
     },
     {
+      "id": "meet-2023-04-12-cas-atarashii-sihon-107-dai16",
+      "councilId": "cas-atarashii-sihon-107",
+      "title": "第16回 新しい資本主義実現会議",
+      "date": "2023/04/12",
+      "officialUrl": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai16/gijisidai.html",
+      "category": "COUNCIL",
+      "ministry": "CAS",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "その他情報",
+          "url": "https://www.cas.go.jp/jp/siryou/index.html",
+          "type": "HTML",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "議事次第",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai16/shidai.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "三位一体労働市場改革の論点案",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai16/shiryou1.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "翁委員提出資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai16/shiryou2.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "川邊委員提出資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai16/shiryou3.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "小林委員提出資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai16/shiryou4.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "櫻田委員提出資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai16/shiryou5.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "渋澤委員提出資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai16/shiryou6.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "冨山委員提出資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai16/shiryou7.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "平野委員提出資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai16/shiryou8.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "柳川委員提出資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai16/shiryou9.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "芳野委員提出資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai16/shiryou10.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "厚生労働大臣提出資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai16/shiryou11.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "議事要旨",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai16/gijiyousi.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "大臣記者会見要旨",
+          "url": "https://www.cao.go.jp/minister/2210_s_goto/kaiken/20230412kaiken.html",
+          "type": "HTML",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "議事録",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai16/gijiroku.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "総理の一日",
+          "url": "https://www.kantei.go.jp/jp/101_kishida/actions/202304/12shihon.html",
+          "type": "HTML",
+          "isPrivate": false,
+          "manualLock": true
+        }
+      ]
+    },
+    {
       "id": "meet-2023-04-04-cas-kokusai_kansen-21-dai8",
       "councilId": "cas-kokusai_kansen-21",
       "councilName": "国際的に脅威となる感染症対策の強化のための国際連携等関係閣僚会議",
@@ -124426,6 +127164,151 @@
           "name": "第５回議事次第",
           "url": "https://www.moj.go.jp/content/001394069.pdf",
           "type": "PDF",
+          "manualLock": true
+        }
+      ]
+    },
+    {
+      "id": "meet-2023-03-29-cas-atarashii-sihon-107-dai15",
+      "councilId": "cas-atarashii-sihon-107",
+      "title": "第15回 新しい資本主義実現会議",
+      "date": "2023/03/29",
+      "officialUrl": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai15/gijisidai.html",
+      "category": "COUNCIL",
+      "ministry": "CAS",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "その他情報",
+          "url": "https://www.cas.go.jp/jp/siryou/index.html",
+          "type": "HTML",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "議事次第",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai15/shidai.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "「新しい資本主義のグランドデザイン及び実行計画」フォローアップ",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai15/shiryou1.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "翁委員提出資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai15/shiryou2.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "川邊委員提出資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai15/shiryou3.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "小林委員提出資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai15/shiryou4.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "櫻田委員提出資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai15/shiryou5.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "澤田委員提出資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai15/shiryou6.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "渋澤委員提出資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai15/shiryou7.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "冨山委員提出資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai15/shiryou8.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "平野委員提出資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai15/shiryou9.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "松尾委員提出資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai15/shiryou10.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "米良委員提出資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai15/shiryou11.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "柳川委員提出資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai15/shiryou12.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "芳野委員提出資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai15/shiryou13.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "議事要旨",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai15/gijiyousi.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "大臣記者会見要旨",
+          "url": "https://www.cao.go.jp/minister/2210_s_goto/kaiken/20230329kaiken.html",
+          "type": "HTML",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "議事録",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai15/gijiroku.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "総理の一日",
+          "url": "https://www.kantei.go.jp/jp/101_kishida/actions/202303/29shihon.html",
+          "type": "HTML",
+          "isPrivate": false,
           "manualLock": true
         }
       ]
@@ -128521,6 +131404,137 @@
           "name": "令和5年 第1回 中小企業の成長経営の実現に向けた研究会 議事要旨(726KB)",
           "url": "https://www.chusho.meti.go.jp/koukai/kenkyukai/seichoken/001/gy.pdf",
           "type": "PDF",
+          "manualLock": true
+        }
+      ]
+    },
+    {
+      "id": "meet-2023-02-15-cas-atarashii-sihon-107-dai14",
+      "councilId": "cas-atarashii-sihon-107",
+      "title": "第14回 新しい資本主義実現会議",
+      "date": "2023/02/15",
+      "officialUrl": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai14/gijisidai.html",
+      "category": "COUNCIL",
+      "ministry": "CAS",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "その他情報",
+          "url": "https://www.cas.go.jp/jp/siryou/index.html",
+          "type": "HTML",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "議事次第",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai14/shidai.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "基礎資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai14/shiryou1.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "論点",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai14/shiryou2.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "翁委員提出資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai14/shiryou3.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "小林委員提出資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai14/shiryou4.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "櫻田委員提出資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai14/shiryou5.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "渋澤委員提出資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai14/shiryou6.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "十倉委員提出資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai14/shiryou7.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "冨山委員提出資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai14/shiryou8.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "松尾委員提出資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai14/shiryou9.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "柳川委員提出資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai14/shiryou10.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "芳野委員提出資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai14/shiryou11.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "議事要旨",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai14/gijiyousi.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "大臣記者会見要旨",
+          "url": "https://www.cao.go.jp/minister/2210_s_goto/kaiken/20230215kaiken.html",
+          "type": "HTML",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "議事録",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai14/gijiroku.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "総理の一日",
+          "url": "https://www.kantei.go.jp/jp/101_kishida/actions/202302/15shihon.html",
+          "type": "HTML",
+          "isPrivate": false,
           "manualLock": true
         }
       ]
@@ -132708,6 +135722,130 @@
       "docCount": 4
     },
     {
+      "id": "meet-2022-11-28-cas-atarashii-sihon-107-dai13",
+      "councilId": "cas-atarashii-sihon-107",
+      "title": "第13回 新しい資本主義実現会議",
+      "date": "2022/11/28",
+      "officialUrl": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai13/gijisidai.html",
+      "category": "COUNCIL",
+      "ministry": "CAS",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "その他情報",
+          "url": "https://www.cas.go.jp/jp/siryou/index.html",
+          "type": "HTML",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "議事次第",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai13/shidai.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "スタートアップ育成５か年計画",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai13/shiryou1.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "スタートアップ育成５か年計画ロードマップ",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai13/shiryou2.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "資産所得倍増プラン",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai13/shiryou3.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "翁委員提出資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai13/shiryou4.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "川邊委員提出資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai13/shiryou5.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "櫻田委員提出資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai13/shiryou6.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "渋澤委員提出資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai13/shiryou7.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "冨山委員提出資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai13/shiryou8.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "平野委員提出資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai13/shiryou9.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "芳野委員提出資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai13/shiryou10.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "議事要旨",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai13/gijiyousi.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "大臣記者会見要旨",
+          "url": "https://www.cao.go.jp/minister/2210_s_goto/kaiken/20221128kaiken.html",
+          "type": "HTML",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "議事録",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai13/gijiroku.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "総理の一日",
+          "url": "https://www.kantei.go.jp/jp/101_kishida/actions/202211/28shihon.html",
+          "type": "HTML",
+          "isPrivate": false,
+          "manualLock": true
+        }
+      ]
+    },
+    {
       "id": "meet-2022-11-25-nta-zeirishi-bunkakai-dai102",
       "councilId": "nta-zeirishi-bunkakai",
       "title": "第102回 国税審議会 税理士分科会",
@@ -133401,6 +136539,137 @@
       "officialUrl": "https://www.cas.go.jp/jp/seisaku/ful/taisakusuisin/dai20_2025/gijisidai_1.pdf",
       "hasMinutes": true,
       "docCount": 14
+    },
+    {
+      "id": "meet-2022-11-10-cas-atarashii-sihon-107-dai12",
+      "councilId": "cas-atarashii-sihon-107",
+      "title": "第12回 新しい資本主義実現会議",
+      "date": "2022/11/10",
+      "officialUrl": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai12/gijisidai.html",
+      "category": "COUNCIL",
+      "ministry": "CAS",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "その他情報",
+          "url": "https://www.cas.go.jp/jp/siryou/index.html",
+          "type": "HTML",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "議事次第",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai12/shidai.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "企業間の労働移動の円滑化・リスキリング・構造的賃金引上げに関する基礎資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai12/shiryou1.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "論点",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai12/shiryou2.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "翁委員提出資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai12/shiryou3.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "川邊委員提出資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai12/shiryou4.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "櫻田委員提出資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai12/shiryou5.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "渋澤委員提出資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai12/shiryou6.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "平野委員提出資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai12/shiryou7.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "松尾委員提出資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai12/shiryou8.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "柳川委員提出資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai12/shiryou9.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "芳野委員提出資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai12/shiryou10.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "厚生労働大臣提出資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai12/shiryou11.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "議事要旨",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai12/gijiyousi.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "大臣記者会見要旨",
+          "url": "https://www.cao.go.jp/minister/2210_s_goto/kaiken/20221110kaiken.html",
+          "type": "HTML",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "議事録",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai12/gijiroku.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "総理の一日",
+          "url": "https://www.kantei.go.jp/jp/101_kishida/actions/202211/10shihon.html",
+          "type": "HTML",
+          "isPrivate": false,
+          "manualLock": true
+        }
+      ]
     },
     {
       "id": "meet-2022-11-08-cas-nousui-40-dai2",
@@ -134151,6 +137420,60 @@
       "manualLock": true
     },
     {
+      "id": "meet-2022-10-26-cas-atarashii-sihon-107-dai11",
+      "councilId": "cas-atarashii-sihon-107",
+      "title": "第11回 新しい資本主義実現会議",
+      "date": "2022/10/26",
+      "officialUrl": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai11/gijisidai.html",
+      "category": "COUNCIL",
+      "ministry": "CAS",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "その他情報",
+          "url": "https://www.cas.go.jp/jp/siryou/index.html",
+          "type": "HTML",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "議事次第",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai11/shidai.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "ヘンダーソン委員提出資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai11/shiryou.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "議事要旨",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai11/gijiyousi.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "議事録",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai11/gijiroku.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "総理の一日",
+          "url": "https://www.kantei.go.jp/jp/101_kishida/actions/202210/26shihon.html",
+          "type": "HTML",
+          "isPrivate": false,
+          "manualLock": true
+        }
+      ]
+    },
+    {
       "id": "meet-2022-10-21-smea-shokibo-jinzai-dai1",
       "councilId": "smea-shokibo-jinzai",
       "title": "中小企業・小規模事業者の人材戦略に関する有識者検討会 第1回",
@@ -134660,6 +137983,130 @@
       ],
       "topics": [],
       "manualLock": true
+    },
+    {
+      "id": "meet-2022-10-04-cas-atarashii-sihon-107-dai10",
+      "councilId": "cas-atarashii-sihon-107",
+      "title": "第10回 新しい資本主義実現会議",
+      "date": "2022/10/04",
+      "officialUrl": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai10/gijisidai.html",
+      "category": "COUNCIL",
+      "ministry": "CAS",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "その他情報",
+          "url": "https://www.cas.go.jp/jp/siryou/index.html",
+          "type": "HTML",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "議事次第",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai10/shidai.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "新しい資本主義実現会議の有識者構成員の交代・追加について",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai10/shiryou1.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "「新しい資本主義のグランドデザイン及び実行計画」の実施についての総合経済対策の重点事項（案）",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai10/shiryou2.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "こちら",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/pdf/juutenjikou_set.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "古谷公正取引委員会委員長提出資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai10/shiryou3.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "渋澤委員提出資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai10/shiryou4.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "諏訪委員提出資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai10/shiryou5.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "冨山委員提出資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai10/shiryou6.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "柳川委員提出資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai10/shiryou7.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "芳野委員提出資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai10/shiryou8.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "厚生労働大臣提出資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai10/shiryou9.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "議事要旨",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai10/gijiyousi.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "大臣記者会見要旨",
+          "url": "https://www.cao.go.jp/minister/2208_d_yamagiwa/kaiken/20221004kaiken.html",
+          "type": "HTML",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "議事録",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai10/gijiroku.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "総理の一日",
+          "url": "https://www.kantei.go.jp/jp/101_kishida/actions/202210/04shihon.html",
+          "type": "HTML",
+          "isPrivate": false,
+          "manualLock": true
+        }
+      ]
     },
     {
       "id": "meet-2022-09-30-fdma-kento-121",
@@ -140845,125 +144292,6 @@
       "manualLock": true
     },
     {
-      "id": "meet-2022-06-07-cas-atarashii-sihon-107-dai2",
-      "councilId": "cas-atarashii-sihon-107",
-      "councilName": "cas-atarashii-sihon-107",
-      "ministry": "Unknown",
-      "category": "COUNCIL",
-      "title": "第2回 新しい資本主義実現会議",
-      "date": "2022/06/07",
-      "updatedAt": "2022/06/07 17:00",
-      "location": "総理大臣官邸 / 各府省庁本庁舎",
-      "summary": "第2回 cas-atarashii-sihon-107の開催。主要議題の推進状況及び今後の対応方針について審議が行われた。",
-      "agenda": [
-        "新しい資本主義のグランドデザイン及び実行計画（案）",
-        "フォローアップ（案）",
-        "新しい資本主義実行計画工程表（案）"
-      ],
-      "materials": [
-        {
-          "name": "議事次第 (PDF)",
-          "type": "PDF",
-          "size": "PDF",
-          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/honbu/dai2/shidai.pdf",
-          "isMinutes": false
-        },
-        {
-          "name": "新しい資本主義のグランドデザイン及び実行計画（案） (PDF)",
-          "type": "PDF",
-          "size": "PDF",
-          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/honbu/dai2/shiryou1.pdf",
-          "isMinutes": false
-        },
-        {
-          "name": "フォローアップ（案） (PDF)",
-          "type": "PDF",
-          "size": "PDF",
-          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/honbu/dai2/shiryou2.pdf",
-          "isMinutes": false
-        },
-        {
-          "name": "新しい資本主義実行計画工程表（案） (PDF)",
-          "type": "PDF",
-          "size": "PDF",
-          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/honbu/dai2/sankou1.pdf",
-          "isMinutes": false
-        },
-        {
-          "name": "フォローアップ工程表（案） (PDF)",
-          "type": "PDF",
-          "size": "PDF",
-          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/honbu/dai2/sankou2.pdf",
-          "isMinutes": false
-        }
-      ],
-      "tags": [
-        "cas-at",
-        "Unknown",
-        "第2回"
-      ],
-      "officialUrl": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/honbu/dai2/shidai.pdf",
-      "hasMinutes": false,
-      "docCount": 5,
-      "manualLock": true
-    },
-    {
-      "id": "meet-2022-06-07-cas-atarashii-sihon-107-dai3",
-      "councilId": "cas-atarashii-sihon-107",
-      "councilName": "cas-atarashii-sihon-107",
-      "ministry": "Unknown",
-      "category": "COUNCIL",
-      "title": "第3回 新しい資本主義実現会議",
-      "date": "2022/06/07",
-      "updatedAt": "2022/06/07 17:00",
-      "location": "総理大臣官邸 / 各府省庁本庁舎",
-      "summary": "第3回 cas-atarashii-sihon-107の開催。主要議題の推進状況及び今後の対応方針について審議が行われた。",
-      "agenda": [
-        "新しい資本主義のグランドデザイン及び実行計画2023改訂版案",
-        "成長戦略等のフォローアップ案",
-        "「新しい資本主義のグランドデザイン及び実行計画」（令和４年６月７日）のフォローアップ"
-      ],
-      "materials": [
-        {
-          "name": "議事次第 (PDF)",
-          "type": "PDF",
-          "size": "PDF",
-          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/honbu/dai3/shidai.pdf",
-          "isMinutes": false
-        },
-        {
-          "name": "新しい資本主義のグランドデザイン及び実行計画2023改訂版案 (PDF)",
-          "type": "PDF",
-          "size": "PDF",
-          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/honbu/dai3/shiryou1.pdf",
-          "isMinutes": false
-        },
-        {
-          "name": "成長戦略等のフォローアップ案 (PDF)",
-          "type": "PDF",
-          "size": "PDF",
-          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/honbu/dai3/shiryou2.pdf",
-          "isMinutes": false
-        },
-        {
-          "name": "「新しい資本主義のグランドデザイン及び実行計画」（令和４年６月７日）のフォローアップ (PDF)",
-          "type": "PDF",
-          "size": "PDF",
-          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/honbu/dai3/sankou1.pdf",
-          "isMinutes": false
-        }
-      ],
-      "tags": [
-        "cas-at",
-        "Unknown",
-        "第3回"
-      ],
-      "officialUrl": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/honbu/dai3/shidai.pdf",
-      "hasMinutes": false,
-      "docCount": 4,
-      "manualLock": true
-    },
-    {
       "id": "meet-2022-06-07-cas-roumuhi-tenka-108-dai2",
       "councilId": "cas-roumuhi-tenka-108",
       "councilName": "cas-roumuhi-tenka-108",
@@ -141106,6 +144434,95 @@
       "officialUrl": "https://www.digital.go.jp/councils",
       "hasMinutes": false,
       "docCount": 0
+    },
+    {
+      "id": "meet-2022-06-07-cas-atarashii-sihon-107-dai9",
+      "councilId": "cas-atarashii-sihon-107",
+      "title": "第9回 新しい資本主義実現会議",
+      "date": "2022/06/07",
+      "officialUrl": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai9/gijisidai.html",
+      "category": "COUNCIL",
+      "ministry": "CAS",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "その他情報",
+          "url": "https://www.cas.go.jp/jp/siryou/index.html",
+          "type": "HTML",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "議事次第",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai9/shidai.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "新しい資本主義のグランドデザイン及び実行計画（案）",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai9/shiryou1.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "渋澤委員提出資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai9/shiryou2.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "内閣総理大臣からの諮問第47 号について",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai9/shiryou3.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "経済財政運営と改革の基本方針2022（案）",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai9/shiryou4-1.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "経済財政運営と改革の基本方針2022（案）概要",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai9/shiryou4-2.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "議事要旨",
+          "url": "https://www5.cao.go.jp/keizai-shimon/kaigi/minutes/2022/0607/gijiyoushi.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "大臣記者会見要旨",
+          "url": "https://www5.cao.go.jp/keizai-shimon/kaigi/minutes/2022/0607/interview.html",
+          "type": "HTML",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "議事録",
+          "url": "https://www5.cao.go.jp/keizai-shimon/kaigi/minutes/2022/0607/gijiroku.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "総理の一日",
+          "url": "https://www.kantei.go.jp/jp/101_kishida/actions/202206/07keizai.html",
+          "type": "HTML",
+          "isPrivate": false,
+          "manualLock": true
+        }
+      ]
     },
     {
       "id": "meet-2022-06-06-ra-fukko-suishin-s1",
@@ -141373,6 +144790,123 @@
           "name": "第101回　税理士分科会（令和4年6月2日）",
           "url": "https://www.nta.go.jp/about/council/zeirishi/220602/101.htm",
           "type": "HTML",
+          "manualLock": true
+        }
+      ]
+    },
+    {
+      "id": "meet-2022-05-31-cas-atarashii-sihon-107-dai8",
+      "councilId": "cas-atarashii-sihon-107",
+      "title": "第8回 新しい資本主義実現会議",
+      "date": "2022/05/31",
+      "officialUrl": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai8/gijisidai.html",
+      "category": "COUNCIL",
+      "ministry": "CAS",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "その他情報",
+          "url": "https://www.cas.go.jp/jp/siryou/index.html",
+          "type": "HTML",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "議事次第",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai8/shidai.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "新しい資本主義のグランドデザイン及び実行計画（案）",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai8/shiryou1.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "萩生田経済産業大臣提出資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai8/shiryou2.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "山口環境大臣提出資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai8/shiryou3.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "翁委員提出資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai8/shiryou4.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "櫻田委員提出資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai8/shiryou5.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "澤田委員提出資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai8/shiryou6.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "十倉委員提出資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai8/shiryou7.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "柳川委員提出資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai8/shiryou8.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "芳野委員提出資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai8/shiryou9.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "議事要旨",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai8/gijiyousi.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "大臣記者会見要旨",
+          "url": "https://www5.cao.go.jp/keizai-shimon/kaigi/minutes/2022/0531/interview.html",
+          "type": "HTML",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "議事録",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai8/gijiroku.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "総理の一日",
+          "url": "http://www.kantei.go.jp/jp/101_kishida/actions/202205/31shihon.html",
+          "type": "HTML",
+          "isPrivate": false,
           "manualLock": true
         }
       ]
@@ -141952,6 +145486,200 @@
       "manualLock": true
     },
     {
+      "id": "meet-2022-05-20-cas-atarashii-sihon-107-dai7",
+      "councilId": "cas-atarashii-sihon-107",
+      "title": "第7回 新しい資本主義実現会議",
+      "date": "2022/05/20",
+      "officialUrl": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai7/gijisidai.html",
+      "category": "COUNCIL",
+      "ministry": "CAS",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "その他情報",
+          "url": "https://www.cas.go.jp/jp/siryou/index.html",
+          "type": "HTML",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "議事次第",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai7/shidai.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "基礎資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai7/shiryou1.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "論点案",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai7/shiryou2.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "十倉委員提出資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai7/shiryou3.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "末松教育再生担当大臣提出資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai7/shiryou4.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "翁委員提出資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai7/shiryou5.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "川邊委員提出資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai7/shiryou6.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "櫻田委員提出資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai7/shiryou7.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "澤田委員提出資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai7/shiryou8.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "冨山委員提出資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai7/shiryou9.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "松尾委員提出資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai7/shiryou10.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "三村委員提出資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai7/shiryou11.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "村上委員提出資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai7/shiryou12.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "柳川委員提出資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai7/shiryou13.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "芳野委員提出資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai7/shiryou14.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "渋澤委員提出資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai7/shiryou15.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "後藤厚生労働大臣提出資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai7/shiryou16.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "萩生田経済産業大臣提出資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai7/shiryou17.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "古谷公正取引委員会委員長提出資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai7/shiryou18.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "全世代型社会保障構築会議 議論の中間整理",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai7/sankou1.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "全世代型社会保障構築会議 議論の中間整理（概要）",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai7/sankou2.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "議事要旨",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai7/gijiyousi.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "大臣記者会見要旨",
+          "url": "https://www.cao.go.jp/minister/2111_d_yamagiwa/kaiken/20220520kaiken.html",
+          "type": "HTML",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "議事録",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai7/gijiroku.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "総理の一日",
+          "url": "http://www.kantei.go.jp/jp/101_kishida/actions/202205/20shihon.html",
+          "type": "HTML",
+          "isPrivate": false,
+          "manualLock": true
+        }
+      ]
+    },
+    {
       "id": "meet-2022-05-16-mof-zaiseiseido-bunkakai",
       "councilId": "mof-zaiseiseido-bunkakai",
       "councilName": "財政制度等審議会 財政制度分科会",
@@ -141999,6 +145727,186 @@
       "officialUrl": "https://www.mof.go.jp/about_mof/councils/fiscal_system_council/sub-of_fiscal_system/proceedings/material/zaiseia20220516.html",
       "hasMinutes": true,
       "docCount": 3
+    },
+    {
+      "id": "meet-2022-04-28-cas-atarashii-sihon-107-dai6",
+      "councilId": "cas-atarashii-sihon-107",
+      "title": "第6回 新しい資本主義実現会議",
+      "date": "2022/04/28",
+      "officialUrl": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai6/gijisidai.html",
+      "category": "COUNCIL",
+      "ministry": "CAS",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "その他情報",
+          "url": "https://www.cas.go.jp/jp/siryou/index.html",
+          "type": "HTML",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "議事次第",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai6/shidai.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "基礎資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai6/shiryou1.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "論点案",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai6/shiryou2.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "金子総務大臣提出資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai6/shiryou3.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "翁委員提出資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai6/shiryou4.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "櫻田委員提出資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai6/shiryou5.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "澤田委員提出資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai6/shiryou6.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "渋澤委員提出資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai6/shiryou7.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "十倉委員提出資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai6/shiryou8.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "冨山委員提出資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai6/shiryou9.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "平野委員提出資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai6/shiryou10.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "松尾委員提出資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai6/shiryou11.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "三村委員提出資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai6/shiryou12.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "米良委員提出資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai6/shiryou13.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "柳川委員提出資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai6/shiryou14.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "芳野委員提出資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai6/shiryou15.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "若宮デジタル田園都市国家構想担当大臣提出資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai6/shiryou16.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "牧島デジタル大臣提出資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai6/shiryou17.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "萩生田経済産業大臣提出資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai6/shiryou18.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "議事要旨",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai6/gijiyousi.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "大臣記者会見要旨",
+          "url": "https://www.cao.go.jp/minister/2111_d_yamagiwa/kaiken/20220428kaiken.html",
+          "type": "HTML",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "議事録",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai6/gijiroku.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "総理の一日",
+          "url": "http://www.kantei.go.jp/jp/101_kishida/actions/202204/28shihon.html",
+          "type": "HTML",
+          "isPrivate": false,
+          "manualLock": true
+        }
+      ]
     },
     {
       "id": "meet-2022-04-25-fsa-sustainable-finance-dai11",
@@ -142914,6 +146822,151 @@
       "officialUrl": "https://www.mof.go.jp/about_mof/councils/fiscal_system_council/sub-of_fiscal_system/proceedings/material/zaiseia20220411.html",
       "hasMinutes": true,
       "docCount": 10
+    },
+    {
+      "id": "meet-2022-04-12-cas-atarashii-sihon-107-dai5",
+      "councilId": "cas-atarashii-sihon-107",
+      "title": "第5回 新しい資本主義実現会議",
+      "date": "2022/04/12",
+      "officialUrl": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai5/gijisidai.html",
+      "category": "COUNCIL",
+      "ministry": "CAS",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "その他情報",
+          "url": "https://www.cas.go.jp/jp/siryou/index.html",
+          "type": "HTML",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "議事次第",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai5/shidai.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "基礎資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai5/shiryou1.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "論点案",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai5/shiryou2.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "萩生田経済産業大臣提出資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai5/shiryou3.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "翁委員提出資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai5/shiryou4.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "川邊委員提出資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai5/shiryou5.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "渋澤委員提出資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai5/shiryou6.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "十倉委員提出資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai5/shiryou7.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "冨山委員提出資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai5/shiryou8.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "三村委員提出資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai5/shiryou9.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "柳川委員提出資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai5/shiryou10.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "芳野委員提出資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai5/shiryou11.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "鈴木金融担当大臣提出資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai5/shiryou12.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "ＩＰＯプロセスの見直し",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai5/sankou.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "議事要旨",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai5/gijiyousi.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "大臣記者会見要旨",
+          "url": "https://www.cao.go.jp/minister/2111_d_yamagiwa/kaiken/20220412kaiken.html",
+          "type": "HTML",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "議事録",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai5/gijiroku.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "総理の一日",
+          "url": "https://www.kantei.go.jp/jp/101_kishida/actions/202204/12shihon.html",
+          "type": "HTML",
+          "isPrivate": false,
+          "manualLock": true
+        }
+      ]
     },
     {
       "id": "meet-2022-04-08-mof-zaiseiseido-bunkakai",
@@ -146277,6 +150330,165 @@
       "hasMinutes": true,
       "docCount": 2,
       "manualLock": true
+    },
+    {
+      "id": "meet-2022-03-08-cas-atarashii-sihon-107-dai4",
+      "councilId": "cas-atarashii-sihon-107",
+      "title": "第4回 新しい資本主義実現会議",
+      "date": "2022/03/08",
+      "officialUrl": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai4/gijisidai.html",
+      "category": "COUNCIL",
+      "ministry": "CAS",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "その他情報",
+          "url": "https://www.cas.go.jp/jp/siryou/index.html",
+          "type": "HTML",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "議事次第",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai4/shidair2.1.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "基礎資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai4/shiryou1r.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "論点案",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai4/shiryou2.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "小柴満信ＪＳＲ株式会社名誉会長提出資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai4/shiryou3.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "松尾委員提出資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai4/shiryou4.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "山中伸弥京都大学ｉＰＳ細胞研究所所長提出資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai4/shiryou5.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "近藤昭彦神戸大学副学長・大学院科学技術イノベーション研究科長提出資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai4/shiryou6.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "櫻田委員提出資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai4/shiryou7.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "渋澤委員提出資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai4/shiryou8.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "冨山委員提出資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai4/shiryou9.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "平野委員提出資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai4/shiryou10.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "三村委員提出資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai4/shiryou11.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "柳川委員提出資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai4/shiryou12.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "芳野委員提出資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai4/shiryou13.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "萩生田経済産業大臣提出資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai4/shiryou14.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "若宮国際博覧会担当大臣提出資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai4/shiryou15.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "議事要旨",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai4/gijiyousi.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "大臣記者会見要旨",
+          "url": "https://www.cao.go.jp/minister/2111_d_yamagiwa/kaiken/20220308kaiken.html",
+          "type": "HTML",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "議事録",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai4/gijiroku.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "総理の一日",
+          "url": "https://www.kantei.go.jp/jp/101_kishida/actions/202203/08shihon.html",
+          "type": "HTML",
+          "isPrivate": false,
+          "manualLock": true
+        }
+      ]
     },
     {
       "id": "meet-2022-03-07-smea-syokoutyukinkikitaiou-dai15",
@@ -151020,6 +155232,123 @@
       "docCount": 4
     },
     {
+      "id": "meet-2021-11-26-cas-atarashii-sihon-107-dai3",
+      "councilId": "cas-atarashii-sihon-107",
+      "title": "第3回 新しい資本主義実現会議",
+      "date": "2021/11/26",
+      "officialUrl": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai3/gijisidai.html",
+      "category": "COUNCIL",
+      "ministry": "CAS",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "その他情報",
+          "url": "https://www.cas.go.jp/jp/siryou/index.html",
+          "type": "HTML",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "議事次第",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai3/shidai.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "賃金・人的資本に関するデータ集",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai3/shiryou1.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "翁委員提出資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai3/shiryou2.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "渋澤委員提出資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai3/shiryou3.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "冨山委員提出資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai3/shiryou4.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "三村委員提出資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai3/shiryou5.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "柳川委員提出資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai3/shiryou6.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "芳野委員提出資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai3/shiryou7.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "後藤厚生労働大臣提出資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai3/shiryou8.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "萩生田経済産業大臣提出資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai3/shiryou9.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "議事要旨",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai3/gijiyousi.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "大臣記者会見要旨",
+          "url": "https://www.cao.go.jp/minister/2111_d_yamagiwa/kaiken/20211126kaiken.html",
+          "type": "HTML",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "議事録",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai3/gijiroku.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "総理の一日",
+          "url": "https://www.kantei.go.jp/jp/101_kishida/actions/202111/26shihon.html",
+          "type": "HTML",
+          "isPrivate": false,
+          "manualLock": true
+        }
+      ]
+    },
+    {
       "id": "meet-2021-11-24-cas-kyuyo-9",
       "councilId": "cas-kyuyo-9",
       "councilName": "給与関係閣僚会議",
@@ -151431,6 +155760,130 @@
       "officialUrl": "https://www.mof.go.jp/about_mof/councils/fiscal_system_council/sub-of_fiscal_system/proceedings/material/20211108zaiseia.html",
       "hasMinutes": true,
       "docCount": 6
+    },
+    {
+      "id": "meet-2021-11-08-cas-atarashii-sihon-107-dai2",
+      "councilId": "cas-atarashii-sihon-107",
+      "title": "第2回 新しい資本主義実現会議",
+      "date": "2021/11/08",
+      "officialUrl": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai2/gijisidai.html",
+      "category": "COUNCIL",
+      "ministry": "CAS",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "その他情報",
+          "url": "https://www.cas.go.jp/jp/siryou/index.html",
+          "type": "HTML",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "議事次第",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai2/shidai.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "緊急提言（案）概要",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai2/shiryou1.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "こちら",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/pdf/kinkyuteigen_gaiyou_set.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "緊急提言（案）～未来を切り拓く「新しい資本主義」とその起動に向けて～",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai2/shiryou2.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "こちら",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/pdf/kinkyuteigen_honbun_set.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "渋澤委員提出資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai2/shiryou3.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "十倉委員提出資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai2/shiryou4.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "冨山委員提出資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai2/shiryou5.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "平野委員提出資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai2/shiryou6.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "三村委員提出資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai2/shiryou7.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "芳野委員提出資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai2/shiryou8.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "議事要旨",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai2/gijiyousi.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "大臣記者会見要旨",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai2/interview.html",
+          "type": "HTML",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "議事録",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai2/gijiroku.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "総理の一日",
+          "url": "https://www.kantei.go.jp/jp/100_kishida/actions/202111/08shihon.html",
+          "type": "HTML",
+          "isPrivate": false,
+          "manualLock": true
+        }
+      ]
     },
     {
       "id": "meet-2021-11-04-cas-kokusentoc-24-dai52",
@@ -152651,6 +157104,151 @@
           "name": "説明資料",
           "url": "https://www.nta.go.jp/about/council/shingikai/211027/shiryo/kenkyu.htm",
           "type": "HTML",
+          "manualLock": true
+        }
+      ]
+    },
+    {
+      "id": "meet-2021-10-26-cas-atarashii-sihon-107-dai1",
+      "councilId": "cas-atarashii-sihon-107",
+      "title": "第1回 新しい資本主義実現会議",
+      "date": "2021/10/26",
+      "officialUrl": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai1/gijisidai.html",
+      "category": "COUNCIL",
+      "ministry": "CAS",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "その他情報",
+          "url": "https://www.cas.go.jp/jp/siryou/index.html",
+          "type": "HTML",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "議事次第（PDF／42KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai1/shidai.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "新しい資本主義実現会議の開催について（PDF／70KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai1/shiryou1-1.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "新しい資本主義実現会議　有識者構成員（PDF／83KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai1/shiryou1-2.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "新しい資本主義実現会議運営要領（PDF／40KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai1/shiryou2.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "新しい資本主義の実現に向けて（論点）（PDF／403KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai1/shiryou3.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "新しい資本主義（ステークホルダー論）を巡る識者の議論の整理（PDF／403KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai1/shiryou4.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "参考資料（データ集）（PDF／889KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai1/shiryou5.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "渋澤委員提出資料（PDF／310KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai1/shiryou6-1.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "十倉委員提出資料（PDF／316KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai1/shiryou6-2.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "冨山委員提出資料（PDF／352KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai1/shiryou6-3.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "平野委員提出資料（PDF／159KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai1/shiryou6-4.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "三村委員提出資料（PDF／617KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai1/shiryou6-5.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "柳川委員提出資料（PDF／150KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai1/shiryou6-6.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "芳野委員提出資料（PDF／421KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai1/shiryou6-7.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "議事要旨",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai1/gijiyousi.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "大臣記者会見要旨",
+          "url": "https://www.cao.go.jp/minister/2110_d_yamagiwa/kaiken/20211026kaiken.html",
+          "type": "HTML",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "議事録",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai1/gijiroku.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "総理の一日",
+          "url": "http://www.kantei.go.jp/jp/100_kishida/actions/202110/26shihon.html",
+          "type": "HTML",
+          "isPrivate": false,
           "manualLock": true
         }
       ]
@@ -217977,14 +222575,13 @@
       }
     },
     "cas-atarashii-sihon-107": {
-      "rule_id": "rule-cas-sihon-v2",
-      "ministryQuirk": "内閣官房 新しい資本主義実現会議 サブページ巡回",
-      "rules": {
-        "subpage_discovery_pattern": "href=[\"\\']([^\"\\']*(?:atarashii_sihonsyugi/kaigi/dai\\d+|atarashii_sihonsyugi/[^\"\\']+\\.html|\\d+kai|kaisai)[^\"\\'#]*)[\"\\']",
-        "date_regex": "(?:令和|平成)\\d+年\\d+月\\d+日|\\d{4}年\\d+月\\d+日|\\d{4}[/-]\\d+[/-]\\d+",
-        "pdf_selector": "href=[\"\\']([^\"\\']+\\.(?:pdf|txt))[\"\\']",
-        "deep_crawl_enabled": true
-      }
+      "rule_id": "rule-cas-atarashii-sihon-107",
+      "subpage_discovery_pattern": "https://www\\.cas\\.go\\.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai\\d+/gijisidai\\.html",
+      "title_selector": "h1, h2, .title",
+      "date_regex": "(令和\\d+年\\d+月\\d+日|\\d{4}年\\d{1,2}月\\d{1,2}日)",
+      "pdf_selector": "a[href*='.pdf']",
+      "deep_crawl_enabled": true,
+      "manualLock": true
     },
     "cas-roumuhi-tenka-108": {
       "rule_id": "rule-cas-honbu-v2",
