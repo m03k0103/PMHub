@@ -245,12 +245,12 @@ document.addEventListener('DOMContentLoaded', async () => {
         el.statLastUpdate.textContent = formatDate(LAST_CRAWL_TIME);
       } else {
         const latestMeeting = MEETINGS.reduce((latest, m) => {
-          if (!m.updatedAt) return latest;
-          return (!latest || m.updatedAt > latest.updatedAt) ? m : latest;
+          if (!m.date) return latest;
+          return (!latest || m.date > latest.date) ? m : latest;
         }, null);
 
-        if (latestMeeting && latestMeeting.updatedAt) {
-          el.statLastUpdate.textContent = formatDate(latestMeeting.updatedAt);
+        if (latestMeeting && latestMeeting.date) {
+          el.statLastUpdate.textContent = formatDate(latestMeeting.date);
         }
       }
     }
