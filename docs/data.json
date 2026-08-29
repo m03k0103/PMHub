@@ -5907,7 +5907,7 @@
       "category": "STUDY",
       "description": "再犯防止推進計画の策定及び推進に関する検討を行う。",
       "officialUrl": "https://www.moj.go.jp/hisho/seisakuhyouka/hisho04_00050.html",
-      "pastYearCount": 21,
+      "pastYearCount": 16,
       "isWatched": true,
       "manualLock": true,
       "status": "approved"
@@ -15987,6 +15987,16 @@
       "pastYearCount": 45,
       "manualLock": true,
       "description": "内閣府 規制改革推進会議におけるデジタル・AI WG。"
+    },
+    {
+      "id": "moj-zenka_shikaku_wg",
+      "name": "前科による資格制限の在り方に関する検討ワーキンググループ",
+      "ministry": "MOJ",
+      "category": "WORKING_GROUP",
+      "officialUrl": "https://www.moj.go.jp/hisho/seisakuhyouka/hisho04_00050.html",
+      "pastYearCount": 5,
+      "manualLock": true,
+      "description": "法務省における前科による資格制限の在り方に関する検討ワーキンググループ。"
     }
   ],
   "meetings": [
@@ -86485,12 +86495,12 @@
       ]
     },
     {
-      "id": "moj-saihan_boushi-20230330-005",
-      "councilId": "moj-saihan_boushi",
-      "title": "第５回会議（令和５年３月３０日）（再犯防止推進計画等検討会）",
+      "id": "moj-zenka_shikaku_wg-20230330-005",
+      "councilId": "moj-zenka_shikaku_wg",
+      "title": "第5回 前科による資格制限の在り方に関する検討ワーキンググループ",
       "date": "2023/03/30",
       "officialUrl": "https://www.moj.go.jp/hisho/saihanboushi/hisho04_00093.html",
-      "category": "STUDY",
+      "category": "WORKING_GROUP",
       "ministry": "MOJ",
       "manualLock": true,
       "materials": [
@@ -101918,12 +101928,12 @@
       ]
     },
     {
-      "id": "moj-saihan_boushi-20220330-004",
-      "councilId": "moj-saihan_boushi",
-      "title": "第４回会議（令和４年３月３０日）（再犯防止推進計画等検討会）",
+      "id": "moj-zenka_shikaku_wg-20220330-004",
+      "councilId": "moj-zenka_shikaku_wg",
+      "title": "第4回 前科による資格制限の在り方に関する検討ワーキンググループ",
       "date": "2022/03/30",
       "officialUrl": "https://www.moj.go.jp/hisho/saihanboushi/hisho04_00077.html",
-      "category": "STUDY",
+      "category": "WORKING_GROUP",
       "ministry": "MOJ",
       "manualLock": true,
       "materials": [
@@ -107196,12 +107206,48 @@
       "manualLock": true
     },
     {
-      "id": "moj-saihan_boushi-20211215-003",
-      "councilId": "moj-saihan_boushi",
-      "title": "第３回会議（令和３年１２月１５日）（再犯防止推進計画等検討会）",
+      "id": "cao-kisei_digital_ai_wg-20211215-006",
+      "councilId": "cao-kisei_digital_ai_wg",
+      "title": "第6回 規制改革推進会議 デジタル・AI WG（令和3年度秋）",
+      "date": "2021/12/15",
+      "officialUrl": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/digital/211215/agenda.html",
+      "category": "WORKING_GROUP",
+      "ministry": "CAO",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "議事録",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/digital/211215/211215minutes.pdf"
+        },
+        {
+          "name": "論点に対する回答（外務省　御提出資料）（PDF形式：274KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/digital/211215/211215digital_0101.pdf"
+        },
+        {
+          "name": "論点に対する回答 追加分（外務省　御提出資料）（PDF形式：163KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/digital/211215/211215digital_0102.pdf"
+        },
+        {
+          "name": "マイナポータル上での旅券オンライン申請（外務省　御提出資料）（PDF形式：501KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/digital/211215/211215digital_0103.pdf"
+        },
+        {
+          "name": "電子申請導入と旅券システム（外務省　御提出資料）（PDF形式：359KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/digital/211215/211215digital_0104.pdf"
+        },
+        {
+          "name": "本人確認ガイド （ICAO TRIP Guide on Evidence of Identityより抜粋／外務省　御提出資料）（PDF形式：362KB）",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/digital/211215/211215digital_0105.pdf"
+        }
+      ]
+    },
+    {
+      "id": "moj-zenka_shikaku_wg-20211215-003",
+      "councilId": "moj-zenka_shikaku_wg",
+      "title": "第3回 前科による資格制限の在り方に関する検討ワーキンググループ",
       "date": "2021/12/15",
       "officialUrl": "https://www.moj.go.jp/hisho/saihanboushi/hisho04_00069.html",
-      "category": "STUDY",
+      "category": "WORKING_GROUP",
       "ministry": "MOJ",
       "manualLock": true,
       "materials": [
@@ -107272,42 +107318,6 @@
         {
           "name": "再犯防止推進計画等検討会構成員 宮田桂子弁護士提出意見書",
           "url": "https://www.moj.go.jp/content/001361977.pdf"
-        }
-      ]
-    },
-    {
-      "id": "cao-kisei_digital_ai_wg-20211215-006",
-      "councilId": "cao-kisei_digital_ai_wg",
-      "title": "第6回 規制改革推進会議 デジタル・AI WG（令和3年度秋）",
-      "date": "2021/12/15",
-      "officialUrl": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/digital/211215/agenda.html",
-      "category": "WORKING_GROUP",
-      "ministry": "CAO",
-      "manualLock": true,
-      "materials": [
-        {
-          "name": "議事録",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/digital/211215/211215minutes.pdf"
-        },
-        {
-          "name": "論点に対する回答（外務省　御提出資料）（PDF形式：274KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/digital/211215/211215digital_0101.pdf"
-        },
-        {
-          "name": "論点に対する回答 追加分（外務省　御提出資料）（PDF形式：163KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/digital/211215/211215digital_0102.pdf"
-        },
-        {
-          "name": "マイナポータル上での旅券オンライン申請（外務省　御提出資料）（PDF形式：501KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/digital/211215/211215digital_0103.pdf"
-        },
-        {
-          "name": "電子申請導入と旅券システム（外務省　御提出資料）（PDF形式：359KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/digital/211215/211215digital_0104.pdf"
-        },
-        {
-          "name": "本人確認ガイド （ICAO TRIP Guide on Evidence of Identityより抜粋／外務省　御提出資料）（PDF形式：362KB）",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/digital/211215/211215digital_0105.pdf"
         }
       ]
     },
@@ -107785,12 +107795,12 @@
       "docCount": 3
     },
     {
-      "id": "moj-saihan_boushi-20211119-002",
-      "councilId": "moj-saihan_boushi",
-      "title": "第２回会議（令和３年１１月１９日）（再犯防止推進計画等検討会）",
+      "id": "moj-zenka_shikaku_wg-20211119-002",
+      "councilId": "moj-zenka_shikaku_wg",
+      "title": "第2回 前科による資格制限の在り方に関する検討ワーキンググループ",
       "date": "2021/11/19",
       "officialUrl": "https://www.moj.go.jp/hisho/saihanboushi/hisho04_00068.html",
-      "category": "STUDY",
+      "category": "WORKING_GROUP",
       "ministry": "MOJ",
       "manualLock": true,
       "materials": [
@@ -111825,12 +111835,12 @@
       "manualLock": true
     },
     {
-      "id": "moj-saihan_boushi-20210629-001",
-      "councilId": "moj-saihan_boushi",
-      "title": "第１回会議（令和３年６月２９日）（再犯防止推進計画等検討会）",
+      "id": "moj-zenka_shikaku_wg-20210629-001",
+      "councilId": "moj-zenka_shikaku_wg",
+      "title": "第1回 前科による資格制限の在り方に関する検討ワーキンググループ",
       "date": "2021/06/29",
       "officialUrl": "https://www.moj.go.jp/hisho/saihanboushi/hisho04_00063.html",
-      "category": "STUDY",
+      "category": "WORKING_GROUP",
       "ministry": "MOJ",
       "manualLock": true,
       "materials": [
@@ -160891,6 +160901,15 @@
       "title_selector": "h1, h2, .title",
       "date_regex": "(令和\\d+年\\d+月\\d+日|平成\\d+年\\d+月\\d+日|\\d{4}年\\d{1,2}月\\d{1,2}日)",
       "pdf_selector": "main a[href*='.pdf'], #main a[href*='.pdf'], a[href*='siryou/']",
+      "deep_crawl_enabled": true,
+      "manualLock": true
+    },
+    "moj-zenka_shikaku_wg": {
+      "rule_id": "rule-moj-zenka_shikaku_wg",
+      "subpage_discovery_pattern": "https://www\\.moj\\.go\\.jp/hisho/saihanboushi/hisho04_.*\\.html",
+      "title_selector": "h1, h2, .title",
+      "date_regex": "(令和\\d+年\\d+月\\d+日|平成\\d+年\\d+月\\d+日|\\d{4}年\\d{1,2}月\\d{1,2}日)",
+      "pdf_selector": "main a[href*='.pdf'], #main a[href*='.pdf'], a[href*='content/']",
       "deep_crawl_enabled": true,
       "manualLock": true
     }
