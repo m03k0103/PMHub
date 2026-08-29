@@ -5,9 +5,11 @@
 
 if (typeof document !== 'undefined') {
 document.addEventListener('DOMContentLoaded', async () => {
+  let dataLastModified = '';
   try {
     const res = await fetch(`data.json?t=${new Date().getTime()}`);
     if (!res.ok) throw new Error('Failed to load data.json');
+    dataLastModified = (res.headers && typeof res.headers.get === 'function') ? (res.headers.get('Last-Modified') || '') : '';
     const data = await res.json();
     window.COUNCILS = (data.councils || []).filter(c => c.status !== 'pending');
     window.MEETINGS = data.meetings || [];
@@ -16,6 +18,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     window.DOC_TYPES = data.docTypes || {};
     window.INITIAL_ALERT_KEYWORDS = data.initialAlertKeywords || [];
     window.LAST_CRAWL_TIME = data.lastCrawlTime || '';
+    window.DATA_LAST_MODIFIED = dataLastModified;
   } catch(e) {
     console.error('Data loading error:', e);
     window.COUNCILS = [];
@@ -25,6 +28,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     window.DOC_TYPES = {};
     window.INITIAL_ALERT_KEYWORDS = [];
     window.LAST_CRAWL_TIME = '';
+    window.DATA_LAST_MODIFIED = '';
   }
 
   const COUNCILS = window.COUNCILS || [];
@@ -34,6 +38,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   const DOC_TYPES = window.DOC_TYPES || {};
   const INITIAL_ALERT_KEYWORDS = window.INITIAL_ALERT_KEYWORDS || [];
   const LAST_CRAWL_TIME = window.LAST_CRAWL_TIME || '';
+  const DATA_LAST_MODIFIED = window.DATA_LAST_MODIFIED || dataLastModified;
 
   // --- STATE MANAGEMENT ---
   const state = {
@@ -243,15 +248,10 @@ document.addEventListener('DOMContentLoaded', async () => {
     if (el.statLastUpdate) {
       if (typeof LAST_CRAWL_TIME !== 'undefined' && LAST_CRAWL_TIME) {
         el.statLastUpdate.textContent = formatDate(LAST_CRAWL_TIME);
+      } else if (typeof DATA_LAST_MODIFIED !== 'undefined' && DATA_LAST_MODIFIED) {
+        el.statLastUpdate.textContent = formatDate(DATA_LAST_MODIFIED);
       } else {
-        const latestMeeting = MEETINGS.reduce((latest, m) => {
-          if (!m.date) return latest;
-          return (!latest || m.date > latest.date) ? m : latest;
-        }, null);
-
-        if (latestMeeting && latestMeeting.date) {
-          el.statLastUpdate.textContent = formatDate(latestMeeting.date);
-        }
+        el.statLastUpdate.textContent = '—';
       }
     }
   }

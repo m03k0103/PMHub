@@ -122,12 +122,14 @@ function createMockDOM(sampleData, sampleRejected) {
         return {
           ok: true,
           status: 200,
+          headers: { get: () => 'Wed, 29 Aug 2026 07:00:00 GMT' },
           json: async () => sampleRejected
         };
       }
       return {
         ok: true,
         status: 200,
+        headers: { get: () => 'Wed, 29 Aug 2026 07:00:00 GMT' },
         json: async () => sampleData
       };
     },
