@@ -2202,7 +2202,7 @@ JSON データを読み込み中...
         if (res.ok) {
           updates.forEach(code => {
             const u = ministryUpdates[code];
-            if (!ministries[code]) ministries[code] = { name: code, kanji: code, code: code, color: 'var(--color-cao)' };
+            if (!ministries[code]) ministries[code] = { name: code, code: code, color: 'var(--color-cao)' };
             if (u.officialUrl !== undefined) ministries[code].officialUrl = u.officialUrl.trim();
             if (u.councilsUrls !== undefined) ministries[code].councilsUrls = u.councilsUrls.map(x => x.trim()).filter(x => x !== '');
             if (u.hasCouncils !== undefined) ministries[code].hasCouncils = u.hasCouncils;
@@ -2232,7 +2232,7 @@ JSON データを読み込み中...
 
           updates.forEach(code => {
             const u = ministryUpdates[code];
-            if (!ministries[code]) ministries[code] = { name: code, kanji: code, code: code, color: 'var(--color-cao)' };
+            if (!ministries[code]) ministries[code] = { name: code, code: code, color: 'var(--color-cao)' };
             if (u.officialUrl !== undefined) ministries[code].officialUrl = u.officialUrl.trim();
             if (u.councilsUrls !== undefined) ministries[code].councilsUrls = u.councilsUrls.map(x => x.trim()).filter(x => x !== '');
             if (u.hasCouncils !== undefined) ministries[code].hasCouncils = u.hasCouncils;

@@ -136,7 +136,6 @@ document.addEventListener('DOMContentLoaded', async () => {
     modalTitle: document.getElementById('modalTitle'),
     modalMinistry: document.getElementById('modalMinistry'),
     modalDate: document.getElementById('modalDate'),
-    modalLocation: document.getElementById('modalLocation'),
     modalSummary: document.getElementById('modalSummary'),
     modalAgenda: document.getElementById('modalAgenda'),
     modalDocsList: document.getElementById('modalDocsList'),
@@ -1194,7 +1193,6 @@ document.addEventListener('DOMContentLoaded', async () => {
     el.modalTitle.textContent = meeting.title;
     el.modalMinistry.textContent = `所管省庁: ${minInfo.name} (${getCouncilName(meeting)})`;
     el.modalDate.textContent = `📅 開催年月日: ${formatDate(meeting.date)}`;
-    el.modalLocation.textContent = `📍 開催場所: ${meeting.location || 'オンライン / 講堂'}`;
     
     // AI Summary Feature Flag check
     const summaryBox = document.querySelector('.summary-box');
