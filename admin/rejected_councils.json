@@ -2248,5 +2248,45 @@
     "sourcePageUrl": "",
     "rejectedAt": "2026-08-28",
     "reason": "Admin rejected council"
+  },
+  {
+    "id": "cfa-380",
+    "name": "会議等",
+    "ministry": "CFA",
+    "category": "COUNCIL",
+    "officialUrl": "https://www.cfa.go.jp/councils",
+    "sourcePageUrl": "https://www.cfa.go.jp/councils",
+    "rejectedAt": "2026-08-29",
+    "reason": "審議会・検討会の個別マスターではなくポータルの汎用ナビゲーションリンクのため除外"
+  },
+  {
+    "id": "mhlw-727",
+    "name": "審議会・研究会等",
+    "ministry": "MHLW",
+    "category": "STUDY",
+    "officialUrl": "https://www.mhlw.go.jp/stf/shingi/indexshingi.html",
+    "sourcePageUrl": "https://www.mhlw.go.jp/stf/shingi/indexshingi.html",
+    "rejectedAt": "2026-08-29",
+    "reason": "審議会・検討会の個別マスターではなくポータルの汎用ナビゲーションリンクのため除外"
+  },
+  {
+    "id": "nta-1251",
+    "name": "審議会・研究会等",
+    "ministry": "NTA",
+    "category": "STUDY",
+    "officialUrl": "https://www.nta.go.jp/about/council/kenkyu.htm",
+    "sourcePageUrl": "https://www.nta.go.jp/about/council/kenkyu.htm",
+    "rejectedAt": "2026-08-29",
+    "reason": "審議会・検討会の個別マスターではなくポータルの汎用ナビゲーションリンクのため除外"
+  },
+  {
+    "id": "digital-383",
+    "name": "会議等",
+    "ministry": "DIGITAL",
+    "category": "COUNCIL",
+    "officialUrl": "https://www.digital.go.jp/councils",
+    "sourcePageUrl": "https://www.digital.go.jp/councils",
+    "rejectedAt": "2026-08-29",
+    "reason": "審議会・検討会の個別マスターではなくデジタル庁ポータルの汎用ナビゲーションリンクのため除外"
   }
 ]

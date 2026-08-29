@@ -1005,18 +1005,26 @@ JSON データを読み込み中...
     const ministries = window.MINISTRIES || {};
     const categories = window.CATEGORIES || {};
 
+    function isGenericPortalUrl(url) {
+      if (!url) return true;
+      const u = url.replace(/\/+$/, '').toLowerCase();
+      return u.endsWith('/index.html') || u.endsWith('/index.htm') || u.endsWith('/shingikailist.html') ||
+             u.endsWith('/indexshingi.html') || u.endsWith('/councils') || u.endsWith('/kenkyu.htm') ||
+             u.endsWith('/minutes') || u.endsWith('/meeting.html');
+    }
+
     function isRejectedCouncil(c) {
       if (!c) return false;
       const rList = window.rejectedCouncils || [];
       if (c.id && rList.some(rc => rc.id === c.id)) return true;
-      const cUrl = (c.officialUrl || '').replace(/\/+$/, '').toLowerCase();
-      if (cUrl && rList.some(rc => (rc.officialUrl || '').replace(/\/+$/, '').toLowerCase() === cUrl)) return true;
       const cName = (c.name || '').trim();
       if (cName && rList.some(rc => (rc.name || '').trim() === cName)) return true;
+      const cUrl = (c.officialUrl || '').replace(/\/+$/, '').toLowerCase();
+      if (cUrl && !isGenericPortalUrl(cUrl) && rList.some(rc => (rc.officialUrl || '').replace(/\/+$/, '').toLowerCase() === cUrl)) return true;
       return false;
     }
 
-    // councils をそのまま allCouncils として使用（却下済みは除外）
+    // councils をそのまま allCouncils として使用（ID/完全名称一致の却下済みのみ除外）
     let allCouncils = [...baseCouncils].filter(c => c && c.id && !isRejectedCouncil(c));
     allCouncils.forEach(c => {
       if (c.status === 'pending') c.isNew = true;
