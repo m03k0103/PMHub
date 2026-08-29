@@ -777,9 +777,9 @@
       "id": "cao-getsurei_13",
       "name": "月例経済報告等に関する関係閣僚会議",
       "ministry": "CAO",
-      "category": "LIAISON",
-      "pastYearCount": 7,
-      "description": "毎月の日本経済および世界経済の最新動向（個人消費・設備投資・物価・雇用・海外情勢等）を分析し、関係閣僚および日本銀行総裁等が景気判断を評価・共有する関係閣僚会議。",
+      "category": "MINISTERIAL_MEETING",
+      "pastYearCount": 8,
+      "description": "内閣府における月例経済報告等に関する関係閣僚会議。",
       "officialUrl": "https://www5.cao.go.jp/keizai3/getsurei/getsurei-index.html",
       "isWatched": true,
       "crawlStatus": {
@@ -791,7 +791,8 @@
         "failureReason": "",
         "consecutiveFailures": 0
       },
-      "status": "approved"
+      "status": "approved",
+      "manualLock": true
     },
     {
       "id": "cas-kumahigai_taisaku_14",
@@ -16075,6 +16076,34 @@
       ]
     },
     {
+      "id": "cao-getsurei_13-20260827-008",
+      "councilId": "cao-getsurei_13",
+      "title": "月例経済報告等に関する関係閣僚会議（令和8年8月）",
+      "date": "2026/08/27",
+      "officialUrl": "https://www5.cao.go.jp/keizai3/getsurei/2026/0827getsurei/main.pdf",
+      "category": "MINISTERIAL_MEETING",
+      "ministry": "CAO",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "月例経済報告（8月）",
+          "url": "https://www5.cao.go.jp/keizai3/getsurei/2026/0827getsurei/main.pdf"
+        },
+        {
+          "name": "関係閣僚会議資料",
+          "url": "https://www5.cao.go.jp/keizai3/getsurei/2026/08kaigi.pdf"
+        },
+        {
+          "name": "日本銀行資料",
+          "url": "https://www5.cao.go.jp/keizai3/getsurei/2026/08nichigin.pdf"
+        },
+        {
+          "name": "主要経済指標",
+          "url": "https://www5.cao.go.jp/keizai3/getsurei/2026/08shihyou/shihyou.pdf"
+        }
+      ]
+    },
+    {
       "id": "cas-chutou_jyousei_tf-20260826-004",
       "councilId": "cas-chutou_jyousei_tf",
       "title": "第4回 中東情勢に伴う重要物資の安定的な供給確保のためのタスクフォース",
@@ -20743,548 +20772,6 @@
       ]
     },
     {
-      "id": "cao-getsurei_13-20260729-007",
-      "councilId": "cao-getsurei_13",
-      "councilName": "月例経済報告等に関する関係閣僚会議",
-      "ministry": "CAO",
-      "category": "LIAISON",
-      "title": "第7回 月例経済報告等に関する関係閣僚会議",
-      "date": "2026/07/29",
-      "location": "総理大臣官邸 / 各府省庁本庁舎",
-      "summary": "月例経済報告等に関する関係閣僚会議の開催。主要議題の推進状況及び今後の対応方針について審議が行われた。",
-      "agenda": [
-        "月例経済報告等に関する関係閣僚会議の根拠・構成員 （PDF形式：110KB）",
-        "7月（PDF形式：286KB）",
-        "閣僚会議資料（PDF形式：268KB）"
-      ],
-      "materials": [
-        {
-          "name": "月例経済報告等に関する関係閣僚会議の根拠・構成員 （PDF形式：110KB）",
-          "url": "https://www5.cao.go.jp/keizai3/getsurei/20251028/kaisaiyouryou.pdf"
-        },
-        {
-          "name": "7月（PDF形式：286KB）",
-          "url": "https://www5.cao.go.jp/keizai3/getsurei/2026/0729getsurei/main.pdf"
-        },
-        {
-          "name": "閣僚会議資料（PDF形式：268KB）",
-          "url": "https://www5.cao.go.jp/keizai3/getsurei/2026/07kaigi.pdf"
-        },
-        {
-          "name": "日本銀行資料（PDF形式：373KB）",
-          "url": "https://www5.cao.go.jp/keizai3/getsurei/2026/07nichigin.pdf"
-        },
-        {
-          "name": "主要経済指標（PDF形式：2,996KB）",
-          "url": "https://www5.cao.go.jp/keizai3/getsurei/2026/07shihyou/shihyou.pdf"
-        },
-        {
-          "name": "6月（PDF形式：282KB）",
-          "url": "https://www5.cao.go.jp/keizai3/getsurei/2026/0630getsurei/main.pdf"
-        },
-        {
-          "name": "閣僚会議資料（PDF形式：791KB）",
-          "url": "https://www5.cao.go.jp/keizai3/getsurei/2026/06kaigi.pdf"
-        },
-        {
-          "name": "日本銀行資料（PDF形式：518KB）",
-          "url": "https://www5.cao.go.jp/keizai3/getsurei/2026/06nichigin.pdf"
-        },
-        {
-          "name": "主要経済指標（PDF形式：3,283KB）",
-          "url": "https://www5.cao.go.jp/keizai3/getsurei/2026/06shihyou/shihyou.pdf"
-        },
-        {
-          "name": "5月（PDF形式：367KB）",
-          "url": "https://www5.cao.go.jp/keizai3/getsurei/2026/0526getsurei/main.pdf"
-        },
-        {
-          "name": "閣僚会議資料（PDF形式：905KB）",
-          "url": "https://www5.cao.go.jp/keizai3/getsurei/2026/05kaigi.pdf"
-        },
-        {
-          "name": "日本銀行資料（PDF形式：356KB）",
-          "url": "https://www5.cao.go.jp/keizai3/getsurei/2026/05nichigin.pdf"
-        },
-        {
-          "name": "主要経済指標（PDF形式：3,311KB）",
-          "url": "https://www5.cao.go.jp/keizai3/getsurei/2026/05shihyou/shihyou.pdf"
-        },
-        {
-          "name": "4月（PDF形式：305KB）",
-          "url": "https://www5.cao.go.jp/keizai3/getsurei/2026/0423getsurei/main.pdf"
-        },
-        {
-          "name": "閣僚会議資料（PDF形式：905KB）",
-          "url": "https://www5.cao.go.jp/keizai3/getsurei/2026/04kaigi.pdf"
-        },
-        {
-          "name": "日本銀行資料（PDF形式：409KB）",
-          "url": "https://www5.cao.go.jp/keizai3/getsurei/2026/04nichigin.pdf"
-        },
-        {
-          "name": "主要経済指標（PDF形式：3,285KB）",
-          "url": "https://www5.cao.go.jp/keizai3/getsurei/2026/04shihyou/shihyou.pdf"
-        },
-        {
-          "name": "3月（PDF形式：376KB）",
-          "url": "https://www5.cao.go.jp/keizai3/getsurei/2026/0327getsurei/main.pdf"
-        },
-        {
-          "name": "閣僚会議資料（PDF形式：983KB）",
-          "url": "https://www5.cao.go.jp/keizai3/getsurei/2026/03kaigi.pdf"
-        },
-        {
-          "name": "日本銀行資料（PDF形式：484KB）",
-          "url": "https://www5.cao.go.jp/keizai3/getsurei/2026/03nichigin.pdf"
-        },
-        {
-          "name": "主要経済指標（PDF形式：3,287KB）",
-          "url": "https://www5.cao.go.jp/keizai3/getsurei/2026/03shihyou/shihyou.pdf"
-        },
-        {
-          "name": "2月（PDF形式：363KB）",
-          "url": "https://www5.cao.go.jp/keizai3/getsurei/2026/0225getsurei/main.pdf"
-        },
-        {
-          "name": "閣僚会議資料（PDF形式：903KB）",
-          "url": "https://www5.cao.go.jp/keizai3/getsurei/2026/02kaigi.pdf"
-        },
-        {
-          "name": "日本銀行資料（PDF形式：344KB）",
-          "url": "https://www5.cao.go.jp/keizai3/getsurei/2026/02nichigin.pdf"
-        },
-        {
-          "name": "主要経済指標（PDF形式：3,106KB）",
-          "url": "https://www5.cao.go.jp/keizai3/getsurei/2026/02shihyou/shihyou.pdf"
-        },
-        {
-          "name": "1月（PDF形式：373KB）",
-          "url": "https://www5.cao.go.jp/keizai3/getsurei/2026/0122getsurei/main.pdf"
-        },
-        {
-          "name": "閣僚会議資料（PDF形式：864KB）",
-          "url": "https://www5.cao.go.jp/keizai3/getsurei/2026/01kaigi.pdf"
-        },
-        {
-          "name": "日本銀行資料（PDF形式：338KB）",
-          "url": "https://www5.cao.go.jp/keizai3/getsurei/2026/01nichigin.pdf"
-        },
-        {
-          "name": "主要経済指標（PDF形式：3,099KB）",
-          "url": "https://www5.cao.go.jp/keizai3/getsurei/2026/01shihyou/shihyou.pdf"
-        },
-        {
-          "name": "12月（PDF形式：415KB）",
-          "url": "https://www5.cao.go.jp/keizai3/getsurei/2025/1219getsurei/main.pdf"
-        },
-        {
-          "name": "閣僚会議資料（PDF形式：869KB）",
-          "url": "https://www5.cao.go.jp/keizai3/getsurei/2025/12kaigi.pdf"
-        },
-        {
-          "name": "日本銀行資料（PDF形式：445KB）",
-          "url": "https://www5.cao.go.jp/keizai3/getsurei/2025/12nichigin.pdf"
-        },
-        {
-          "name": "主要経済指標（PDF形式：2,723KB）",
-          "url": "https://www5.cao.go.jp/keizai3/getsurei/2025/12shihyou/shihyou.pdf"
-        },
-        {
-          "name": "11月（PDF形式：369KB）",
-          "url": "https://www5.cao.go.jp/keizai3/getsurei/2025/1126getsurei/main.pdf"
-        },
-        {
-          "name": "閣僚会議資料（PDF形式：805KB）",
-          "url": "https://www5.cao.go.jp/keizai3/getsurei/2025/11kaigi.pdf"
-        },
-        {
-          "name": "日本銀行資料（PDF形式：381KB）",
-          "url": "https://www5.cao.go.jp/keizai3/getsurei/2025/11nichigin.pdf"
-        },
-        {
-          "name": "主要経済指標（PDF形式：2,918KB）",
-          "url": "https://www5.cao.go.jp/keizai3/getsurei/2025/11shihyou/shihyou.pdf"
-        },
-        {
-          "name": "10月（PDF形式：308KB）",
-          "url": "https://www5.cao.go.jp/keizai3/getsurei/2025/1029getsurei/main.pdf"
-        },
-        {
-          "name": "閣僚会議資料（PDF形式：1,100KB）",
-          "url": "https://www5.cao.go.jp/keizai3/getsurei/2025/10kaigi.pdf"
-        },
-        {
-          "name": "日本銀行資料（PDF形式：377KB）",
-          "url": "https://www5.cao.go.jp/keizai3/getsurei/2025/10nichigin.pdf"
-        },
-        {
-          "name": "主要経済指標（PDF形式：2,454KB）",
-          "url": "https://www5.cao.go.jp/keizai3/getsurei/2025/10shihyou/shihyou.pdf"
-        },
-        {
-          "name": "9月（PDF形式：330KB）",
-          "url": "https://www5.cao.go.jp/keizai3/getsurei/2025/0929getsurei/main.pdf"
-        },
-        {
-          "name": "閣僚会議資料（PDF形式：911KB）",
-          "url": "https://www5.cao.go.jp/keizai3/getsurei/2025/09kaigi.pdf"
-        },
-        {
-          "name": "日本銀行資料（PDF形式：455KB）",
-          "url": "https://www5.cao.go.jp/keizai3/getsurei/2025/09nichigin.pdf"
-        },
-        {
-          "name": "※訂正があります。（PDF形式：49KB）",
-          "url": "https://www5.cao.go.jp/keizai3/getsurei/2025/1020teisei.pdf"
-        },
-        {
-          "name": "主要経済指標（PDF形式：3,011KB）",
-          "url": "https://www5.cao.go.jp/keizai3/getsurei/2025/09shihyou/shihyou.pdf"
-        },
-        {
-          "name": "8月（PDF形式：359KB）",
-          "url": "https://www5.cao.go.jp/keizai3/getsurei/2025/0827getsurei/main.pdf"
-        },
-        {
-          "name": "閣僚会議資料（PDF形式：899KB）",
-          "url": "https://www5.cao.go.jp/keizai3/getsurei/2025/08kaigi.pdf"
-        },
-        {
-          "name": "日本銀行資料（PDF形式：370KB）",
-          "url": "https://www5.cao.go.jp/keizai3/getsurei/2025/08nichigin.pdf"
-        },
-        {
-          "name": "主要経済指標（PDF形式：2,432KB）",
-          "url": "https://www5.cao.go.jp/keizai3/getsurei/2025/08shihyou/shihyou.pdf"
-        },
-        {
-          "name": "7月（PDF形式：383KB）",
-          "url": "https://www5.cao.go.jp/keizai3/getsurei/2025/0729getsurei/main.pdf"
-        },
-        {
-          "name": "閣僚会議資料（PDF形式：1,102KB）",
-          "url": "https://www5.cao.go.jp/keizai3/getsurei/2025/07kaigi.pdf"
-        },
-        {
-          "name": "日本銀行資料（PDF形式：452KB）",
-          "url": "https://www5.cao.go.jp/keizai3/getsurei/2025/07nichigin.pdf"
-        },
-        {
-          "name": "主要経済指標（PDF形式：2,336KB）",
-          "url": "https://www5.cao.go.jp/keizai3/getsurei/2025/07shihyou/shihyou.pdf"
-        },
-        {
-          "name": "6月（PDF形式：442KB）",
-          "url": "https://www5.cao.go.jp/keizai3/getsurei/2025/0611getsurei/main.pdf"
-        },
-        {
-          "name": "閣僚会議資料（PDF形式：1,333KB）",
-          "url": "https://www5.cao.go.jp/keizai3/getsurei/2025/06kaigi.pdf"
-        },
-        {
-          "name": "日本銀行資料（PDF形式：399KB）",
-          "url": "https://www5.cao.go.jp/keizai3/getsurei/2025/06nichigin.pdf"
-        },
-        {
-          "name": "主要経済指標（PDF形式：2,141KB）",
-          "url": "https://www5.cao.go.jp/keizai3/getsurei/2025/06shihyou/shihyou.pdf"
-        },
-        {
-          "name": "5月（PDF形式：320KB）",
-          "url": "https://www5.cao.go.jp/keizai3/getsurei/2025/0522getsurei/main.pdf"
-        },
-        {
-          "name": "閣僚会議資料（PDF形式：1,254KB）",
-          "url": "https://www5.cao.go.jp/keizai3/getsurei/2025/05kaigi.pdf"
-        },
-        {
-          "name": "※訂正があります。（PDF形式：274KB）",
-          "url": "https://www5.cao.go.jp/keizai3/getsurei/2025/0530teisei.pdf"
-        },
-        {
-          "name": "日本銀行資料（PDF形式：372KB）",
-          "url": "https://www5.cao.go.jp/keizai3/getsurei/2025/05nichigin.pdf"
-        },
-        {
-          "name": "主要経済指標（PDF形式：2,641KB）",
-          "url": "https://www5.cao.go.jp/keizai3/getsurei/2025/05shihyou/shihyou.pdf"
-        },
-        {
-          "name": "4月（PDF形式：354KB）",
-          "url": "https://www5.cao.go.jp/keizai3/getsurei/2025/0418getsurei/main.pdf"
-        },
-        {
-          "name": "閣僚会議資料（PDF形式：1,407KB）",
-          "url": "https://www5.cao.go.jp/keizai3/getsurei/2025/04kaigi.pdf"
-        },
-        {
-          "name": "日本銀行資料（PDF形式：367KB）",
-          "url": "https://www5.cao.go.jp/keizai3/getsurei/2025/04nichigin.pdf"
-        },
-        {
-          "name": "主要経済指標（PDF形式：2,676KB）",
-          "url": "https://www5.cao.go.jp/keizai3/getsurei/2025/04shihyou/shihyou.pdf"
-        },
-        {
-          "name": "3月（PDF形式：326KB）",
-          "url": "https://www5.cao.go.jp/keizai3/getsurei/2025/0319getsurei/main.pdf"
-        },
-        {
-          "name": "閣僚会議資料（PDF形式：1,341KB）",
-          "url": "https://www5.cao.go.jp/keizai3/getsurei/2025/03kaigi.pdf"
-        },
-        {
-          "name": "日本銀行資料（PDF形式：368KB）",
-          "url": "https://www5.cao.go.jp/keizai3/getsurei/2025/03nichigin.pdf"
-        },
-        {
-          "name": "主要経済指標（PDF形式：2,779KB）",
-          "url": "https://www5.cao.go.jp/keizai3/getsurei/2025/03shihyou/shihyou.pdf"
-        },
-        {
-          "name": "2月（PDF形式：313KB）",
-          "url": "https://www5.cao.go.jp/keizai3/getsurei/2025/0219getsurei/main.pdf"
-        },
-        {
-          "name": "閣僚会議資料（PDF形式：1,463KB）",
-          "url": "https://www5.cao.go.jp/keizai3/getsurei/2025/02kaigi.pdf"
-        },
-        {
-          "name": "日本銀行資料（PDF形式：440KB）",
-          "url": "https://www5.cao.go.jp/keizai3/getsurei/2025/02nichigin.pdf"
-        },
-        {
-          "name": "主要経済指標（PDF形式：2,497KB）",
-          "url": "https://www5.cao.go.jp/keizai3/getsurei/2025/02shihyou/shihyou.pdf"
-        },
-        {
-          "name": "1月（PDF形式：326KB）",
-          "url": "https://www5.cao.go.jp/keizai3/getsurei/2025/0123getsurei/main.pdf"
-        },
-        {
-          "name": "閣僚会議資料（PDF形式：2,112KB）",
-          "url": "https://www5.cao.go.jp/keizai3/getsurei/2025/01kaigi.pdf"
-        },
-        {
-          "name": "※訂正があります。（PDF形式：154KB）",
-          "url": "https://www5.cao.go.jp/keizai3/getsurei/2025/0204teisei.pdf"
-        },
-        {
-          "name": "日本銀行資料（PDF形式：501KB）",
-          "url": "https://www5.cao.go.jp/keizai3/getsurei/2025/01nichigin.pdf"
-        },
-        {
-          "name": "主要経済指標（PDF形式：2,479KB）",
-          "url": "https://www5.cao.go.jp/keizai3/getsurei/2025/01shihyou/shihyou.pdf"
-        },
-        {
-          "name": "12月（PDF形式：304KB）",
-          "url": "https://www5.cao.go.jp/keizai3/getsurei/2024/1220getsurei/main.pdf"
-        },
-        {
-          "name": "閣僚会議資料（PDF形式：1,821KB）",
-          "url": "https://www5.cao.go.jp/keizai3/getsurei/2024/12kaigi.pdf"
-        },
-        {
-          "name": "日本銀行資料（PDF形式：718KB）",
-          "url": "https://www5.cao.go.jp/keizai3/getsurei/2024/12nichigin.pdf"
-        },
-        {
-          "name": "主要経済指標（PDF形式：2,898KB）",
-          "url": "https://www5.cao.go.jp/keizai3/getsurei/2024/12shihyou/shihyou.pdf"
-        },
-        {
-          "name": "11月（PDF形式：328KB）",
-          "url": "https://www5.cao.go.jp/keizai3/getsurei/2024/1126getsurei/main.pdf"
-        },
-        {
-          "name": "閣僚会議資料（PDF形式：1,631KB）",
-          "url": "https://www5.cao.go.jp/keizai3/getsurei/2024/11kaigi.pdf"
-        },
-        {
-          "name": "日本銀行資料（PDF形式：485KB）",
-          "url": "https://www5.cao.go.jp/keizai3/getsurei/2024/11nichigin.pdf"
-        },
-        {
-          "name": "主要経済指標（PDF形式：2,384KB）",
-          "url": "https://www5.cao.go.jp/keizai3/getsurei/2024/11shihyou/shihyou.pdf"
-        },
-        {
-          "name": "10月（PDF形式：318KB）",
-          "url": "https://www5.cao.go.jp/keizai3/getsurei/2024/1029getsurei/main.pdf"
-        },
-        {
-          "name": "閣僚会議資料（PDF形式：1,800KB）",
-          "url": "https://www5.cao.go.jp/keizai3/getsurei/2024/10kaigi.pdf"
-        },
-        {
-          "name": "日本銀行資料（PDF形式：486KB）",
-          "url": "https://www5.cao.go.jp/keizai3/getsurei/2024/10nichigin.pdf"
-        },
-        {
-          "name": "主要経済指標（PDF形式：2,534KB）",
-          "url": "https://www5.cao.go.jp/keizai3/getsurei/2024/10shihyou/shihyou.pdf"
-        },
-        {
-          "name": "9月（PDF形式：285KB）",
-          "url": "https://www5.cao.go.jp/keizai3/getsurei/2024/0918getsurei/main.pdf"
-        },
-        {
-          "name": "閣僚会議資料（PDF形式：1,806KB）",
-          "url": "https://www5.cao.go.jp/keizai3/getsurei/2024/09kaigi.pdf"
-        },
-        {
-          "name": "日本銀行資料（PDF形式：478KB）",
-          "url": "https://www5.cao.go.jp/keizai3/getsurei/2024/09nichigin.pdf"
-        },
-        {
-          "name": "主要経済指標（PDF形式：2,528KB）",
-          "url": "https://www5.cao.go.jp/keizai3/getsurei/2024/09shihyou/shihyou.pdf"
-        },
-        {
-          "name": "8月（PDF形式：361KB）",
-          "url": "https://www5.cao.go.jp/keizai3/getsurei/2024/0829getsurei/main.pdf"
-        },
-        {
-          "name": "閣僚会議資料（PDF形式：2,035KB）",
-          "url": "https://www5.cao.go.jp/keizai3/getsurei/2024/08kaigi.pdf"
-        },
-        {
-          "name": "日本銀行資料（PDF形式：567KB）",
-          "url": "https://www5.cao.go.jp/keizai3/getsurei/2024/08nichigin.pdf"
-        },
-        {
-          "name": "主要経済指標（PDF形式：2,523KB）",
-          "url": "https://www5.cao.go.jp/keizai3/getsurei/2024/08shihyou/shihyou.pdf"
-        },
-        {
-          "name": "7月（PDF形式：281KB）",
-          "url": "https://www5.cao.go.jp/keizai3/getsurei/2024/0725getsurei/main.pdf"
-        },
-        {
-          "name": "閣僚会議資料（PDF形式：1,738KB）",
-          "url": "https://www5.cao.go.jp/keizai3/getsurei/2024/07kaigi.pdf"
-        },
-        {
-          "name": "日本銀行資料（PDF形式：462KB）",
-          "url": "https://www5.cao.go.jp/keizai3/getsurei/2024/07nichigin.pdf"
-        },
-        {
-          "name": "主要経済指標（PDF形式：2,130KB）",
-          "url": "https://www5.cao.go.jp/keizai3/getsurei/2024/07shihyou/shihyou.pdf"
-        },
-        {
-          "name": "6月（PDF形式：358KB）",
-          "url": "https://www5.cao.go.jp/keizai3/getsurei/2024/0627getsurei/main.pdf"
-        },
-        {
-          "name": "閣僚会議資料（PDF形式：1,333KB）",
-          "url": "https://www5.cao.go.jp/keizai3/getsurei/2024/06kaigi.pdf"
-        },
-        {
-          "name": "日本銀行資料（PDF形式：517KB）",
-          "url": "https://www5.cao.go.jp/keizai3/getsurei/2024/06nichigin.pdf"
-        },
-        {
-          "name": "主要経済指標（PDF形式：3,025KB）",
-          "url": "https://www5.cao.go.jp/keizai3/getsurei/2024/06shihyou/shihyou.pdf"
-        },
-        {
-          "name": "5月（PDF形式：479KB）",
-          "url": "https://www5.cao.go.jp/keizai3/getsurei/2024/0527getsurei/main.pdf"
-        },
-        {
-          "name": "閣僚会議資料（PDF形式：1,440KB）",
-          "url": "https://www5.cao.go.jp/keizai3/getsurei/2024/05kaigi.pdf"
-        },
-        {
-          "name": "日本銀行資料（PDF形式：460KB）",
-          "url": "https://www5.cao.go.jp/keizai3/getsurei/2024/05nichigin.pdf"
-        },
-        {
-          "name": "主要経済指標（PDF形式：2,388KB）",
-          "url": "https://www5.cao.go.jp/keizai3/getsurei/2024/05shihyou/shihyou.pdf"
-        },
-        {
-          "name": "4月（PDF形式：453KB）",
-          "url": "https://www5.cao.go.jp/keizai3/getsurei/2024/0423getsurei/main.pdf"
-        },
-        {
-          "name": "閣僚会議資料（PDF形式：1,540KB）",
-          "url": "https://www5.cao.go.jp/keizai3/getsurei/2024/04kaigi.pdf"
-        },
-        {
-          "name": "日本銀行資料（PDF形式：360KB）",
-          "url": "https://www5.cao.go.jp/keizai3/getsurei/2024/04nichigin.pdf"
-        },
-        {
-          "name": "主要経済指標（PDF形式：2,651KB）",
-          "url": "https://www5.cao.go.jp/keizai3/getsurei/2024/04shihyou/shihyou.pdf"
-        },
-        {
-          "name": "3月（PDF形式：480KB）",
-          "url": "https://www5.cao.go.jp/keizai3/getsurei/2024/0322getsurei/main.pdf"
-        },
-        {
-          "name": "閣僚会議資料（PDF形式：1,622KB）",
-          "url": "https://www5.cao.go.jp/keizai3/getsurei/2024/03kaigi.pdf"
-        },
-        {
-          "name": "日本銀行資料（PDF形式：524KB）",
-          "url": "https://www5.cao.go.jp/keizai3/getsurei/2024/03nichigin.pdf"
-        },
-        {
-          "name": "主要経済指標（PDF形式：2,597KB）",
-          "url": "https://www5.cao.go.jp/keizai3/getsurei/2024/03shihyou/shihyou.pdf"
-        },
-        {
-          "name": "2月（PDF形式：371KB）",
-          "url": "https://www5.cao.go.jp/keizai3/getsurei/2024/0221getsurei/main.pdf"
-        },
-        {
-          "name": "閣僚会議資料（PDF形式：1,464KB）",
-          "url": "https://www5.cao.go.jp/keizai3/getsurei/2024/02kaigi.pdf"
-        },
-        {
-          "name": "日本銀行資料（PDF形式：450KB）",
-          "url": "https://www5.cao.go.jp/keizai3/getsurei/2024/02nichigin.pdf"
-        },
-        {
-          "name": "主要経済指標（PDF形式：2,286KB）",
-          "url": "https://www5.cao.go.jp/keizai3/getsurei/2024/02shihyou/shihyou.pdf"
-        },
-        {
-          "name": "1月（PDF形式：342KB）",
-          "url": "https://www5.cao.go.jp/keizai3/getsurei/2024/0125getsurei/main.pdf"
-        },
-        {
-          "name": "閣僚会議資料（PDF形式：1,482KB）",
-          "url": "https://www5.cao.go.jp/keizai3/getsurei/2024/01kaigi.pdf"
-        },
-        {
-          "name": "※訂正があります。（PDF形式：86KB）",
-          "url": "https://www5.cao.go.jp/keizai3/getsurei/2024/0215teisei.pdf"
-        },
-        {
-          "name": "日本銀行資料（PDF形式：446KB）",
-          "url": "https://www5.cao.go.jp/keizai3/getsurei/2024/01nichigin.pdf"
-        },
-        {
-          "name": "主要経済指標（PDF形式：3,072KB）",
-          "url": "https://www5.cao.go.jp/keizai3/getsurei/2024/01shihyou/shihyou.pdf"
-        }
-      ],
-      "tags": [
-        "月例経済報告",
-        "CAO",
-        "政策会議"
-      ],
-      "officialUrl": "https://www5.cao.go.jp/keizai3/getsurei/getsurei-index.html",
-      "hasMinutes": false,
-      "docCount": 129
-    },
-    {
       "id": "cas-titeki2_72-20260729-031",
       "councilId": "cas-titeki2_72",
       "councilName": "知的財産戦略本部",
@@ -21508,6 +20995,34 @@
         {
           "name": "議事要旨",
           "url": "https://www.cas.go.jp/jp/seisaku/kokuminkaigi/contents/20260729-1/minutes.pdf"
+        }
+      ]
+    },
+    {
+      "id": "cao-getsurei_13-20260729-007",
+      "councilId": "cao-getsurei_13",
+      "title": "月例経済報告等に関する関係閣僚会議（令和8年7月）",
+      "date": "2026/07/29",
+      "officialUrl": "https://www5.cao.go.jp/keizai3/getsurei/2026/0729getsurei/main.pdf",
+      "category": "MINISTERIAL_MEETING",
+      "ministry": "CAO",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "月例経済報告（7月）",
+          "url": "https://www5.cao.go.jp/keizai3/getsurei/2026/0729getsurei/main.pdf"
+        },
+        {
+          "name": "関係閣僚会議資料",
+          "url": "https://www5.cao.go.jp/keizai3/getsurei/2026/07kaigi.pdf"
+        },
+        {
+          "name": "日本銀行資料",
+          "url": "https://www5.cao.go.jp/keizai3/getsurei/2026/07nichigin.pdf"
+        },
+        {
+          "name": "主要経済指標",
+          "url": "https://www5.cao.go.jp/keizai3/getsurei/2026/07shihyou/shihyou.pdf"
         }
       ]
     },
@@ -25195,32 +24710,6 @@
       "manualLock": true
     },
     {
-      "id": "cao-getsurei_13-20260630-006",
-      "councilId": "cao-getsurei_13",
-      "councilName": "月例経済報告等に関する関係閣僚会議",
-      "ministry": "CAO",
-      "category": "LIAISON",
-      "title": "第6回 月例経済報告等に関する関係閣僚会議",
-      "date": "2026/06/30",
-      "location": "首相官邸 4階 大臣会議室",
-      "summary": "6月の月例経済報告。設備投資の持ち直しおよび雇用・所得環境の改善傾向に関する審議。",
-      "agenda": [
-        "令和8年6月の月例経済報告について",
-        "日本銀行における最新金融経済情勢の報告"
-      ],
-      "materials": [],
-      "tags": [
-        "月例経済報告",
-        "内閣府",
-        "日本銀行",
-        "景気動向",
-        "主要経済指標"
-      ],
-      "officialUrl": "https://www5.cao.go.jp/keizai3/getsurei/getsurei-index.html",
-      "hasMinutes": false,
-      "docCount": 4
-    },
-    {
       "id": "cas-chiikimirai_63-20260630-002",
       "councilId": "cas-chiikimirai_63",
       "councilName": "地域未来戦略本部",
@@ -25372,6 +24861,34 @@
       "hasMinutes": true,
       "docCount": 1,
       "manualLock": true
+    },
+    {
+      "id": "cao-getsurei_13-20260630-006",
+      "councilId": "cao-getsurei_13",
+      "title": "月例経済報告等に関する関係閣僚会議（令和8年6月）",
+      "date": "2026/06/30",
+      "officialUrl": "https://www5.cao.go.jp/keizai3/getsurei/2026/0630getsurei/main.pdf",
+      "category": "MINISTERIAL_MEETING",
+      "ministry": "CAO",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "月例経済報告（6月）",
+          "url": "https://www5.cao.go.jp/keizai3/getsurei/2026/0630getsurei/main.pdf"
+        },
+        {
+          "name": "関係閣僚会議資料",
+          "url": "https://www5.cao.go.jp/keizai3/getsurei/2026/06kaigi.pdf"
+        },
+        {
+          "name": "日本銀行資料",
+          "url": "https://www5.cao.go.jp/keizai3/getsurei/2026/06nichigin.pdf"
+        },
+        {
+          "name": "主要経済指標",
+          "url": "https://www5.cao.go.jp/keizai3/getsurei/2026/06shihyou/shihyou.pdf"
+        }
+      ]
     },
     {
       "id": "cas-jinko_senryaku_41-20260629-002",
@@ -29688,32 +29205,6 @@
       "docCount": 7
     },
     {
-      "id": "cao-getsurei_13-20260526-005",
-      "councilId": "cao-getsurei_13",
-      "councilName": "月例経済報告等に関する関係閣僚会議",
-      "ministry": "CAO",
-      "category": "LIAISON",
-      "title": "第5回 月例経済報告等に関する関係閣僚会議",
-      "date": "2026/05/26",
-      "location": "首相官邸 4階 大臣会議室",
-      "summary": "5月の月例経済報告。個人消費の持ち直しの動きと物価情勢についての評価。",
-      "agenda": [
-        "令和8年5月の月例経済報告について",
-        "日本銀行における最新金融経済情勢の報告"
-      ],
-      "materials": [],
-      "tags": [
-        "月例経済報告",
-        "内閣府",
-        "日本銀行",
-        "景気動向",
-        "主要経済指標"
-      ],
-      "officialUrl": "https://www5.cao.go.jp/keizai3/getsurei/getsurei-index.html",
-      "hasMinutes": false,
-      "docCount": 4
-    },
-    {
       "id": "cao-kisei_gx_subwg-20260526-003",
       "councilId": "cao-kisei_gx_subwg",
       "title": "第3回 規制改革推進会議 ＧＸ・サステナビリティサブWG（令和7年度）",
@@ -29738,6 +29229,34 @@
         {
           "name": "資料２　事務局提出資料（PDF形式：218KB）",
           "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_05gx/260526/gx03_02.pdf"
+        }
+      ]
+    },
+    {
+      "id": "cao-getsurei_13-20260526-005",
+      "councilId": "cao-getsurei_13",
+      "title": "月例経済報告等に関する関係閣僚会議（令和8年5月）",
+      "date": "2026/05/26",
+      "officialUrl": "https://www5.cao.go.jp/keizai3/getsurei/2026/0526getsurei/main.pdf",
+      "category": "MINISTERIAL_MEETING",
+      "ministry": "CAO",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "月例経済報告（5月）",
+          "url": "https://www5.cao.go.jp/keizai3/getsurei/2026/0526getsurei/main.pdf"
+        },
+        {
+          "name": "関係閣僚会議資料",
+          "url": "https://www5.cao.go.jp/keizai3/getsurei/2026/05kaigi.pdf"
+        },
+        {
+          "name": "日本銀行資料",
+          "url": "https://www5.cao.go.jp/keizai3/getsurei/2026/05nichigin.pdf"
+        },
+        {
+          "name": "主要経済指標",
+          "url": "https://www5.cao.go.jp/keizai3/getsurei/2026/05shihyou/shihyou.pdf"
         }
       ]
     },
@@ -31461,32 +30980,6 @@
       ]
     },
     {
-      "id": "cao-getsurei_13-20260423-004",
-      "councilId": "cao-getsurei_13",
-      "councilName": "月例経済報告等に関する関係閣僚会議",
-      "ministry": "CAO",
-      "category": "LIAISON",
-      "title": "第4回 月例経済報告等に関する関係閣僚会議",
-      "date": "2026/04/23",
-      "location": "首相官邸 4階 大臣会議室",
-      "summary": "4月の月例経済報告。新年度における経済政策の動向および為替・金融市場の検証。",
-      "agenda": [
-        "令和8年4月の月例経済報告について",
-        "日本銀行における最新金融経済情勢の報告"
-      ],
-      "materials": [],
-      "tags": [
-        "月例経済報告",
-        "内閣府",
-        "日本銀行",
-        "景気動向",
-        "主要経済指標"
-      ],
-      "officialUrl": "https://www5.cao.go.jp/keizai3/getsurei/getsurei-index.html",
-      "hasMinutes": false,
-      "docCount": 4
-    },
-    {
       "id": "mhlw-kakutei_kyoshutsu_nenkin_kondan-20260423-001",
       "councilId": "mhlw-kakutei_kyoshutsu_nenkin_kondan",
       "title": "第1回 確定拠出年金制度の運用改善等に関する有識者懇談会",
@@ -31598,6 +31091,34 @@
         {
           "name": "議事要旨",
           "url": "https://wwwa.cao.go.jp/oaep/genryokuricchi-kaigi/2026/siryo08/gijiyoshi08.pdf"
+        }
+      ]
+    },
+    {
+      "id": "cao-getsurei_13-20260423-004",
+      "councilId": "cao-getsurei_13",
+      "title": "月例経済報告等に関する関係閣僚会議（令和8年4月）",
+      "date": "2026/04/23",
+      "officialUrl": "https://www5.cao.go.jp/keizai3/getsurei/2026/0423getsurei/main.pdf",
+      "category": "MINISTERIAL_MEETING",
+      "ministry": "CAO",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "月例経済報告（4月）",
+          "url": "https://www5.cao.go.jp/keizai3/getsurei/2026/0423getsurei/main.pdf"
+        },
+        {
+          "name": "関係閣僚会議資料",
+          "url": "https://www5.cao.go.jp/keizai3/getsurei/2026/04kaigi.pdf"
+        },
+        {
+          "name": "日本銀行資料",
+          "url": "https://www5.cao.go.jp/keizai3/getsurei/2026/04nichigin.pdf"
+        },
+        {
+          "name": "主要経済指標",
+          "url": "https://www5.cao.go.jp/keizai3/getsurei/2026/04shihyou/shihyou.pdf"
         }
       ]
     },
@@ -33696,28 +33217,30 @@
     {
       "id": "cao-getsurei_13-20260327-003",
       "councilId": "cao-getsurei_13",
-      "councilName": "月例経済報告等に関する関係閣僚会議",
-      "ministry": "CAO",
-      "category": "LIAISON",
-      "title": "第3回 月例経済報告等に関する関係閣僚会議",
+      "title": "月例経済報告等に関する関係閣僚会議（令和8年3月）",
       "date": "2026/03/27",
-      "location": "首相官邸 4階 大臣会議室",
-      "summary": "3月の月例経済報告。年度末における企業の景況感および輸出・生産の動きに関する協議。",
-      "agenda": [
-        "令和8年3月の月例経済報告について",
-        "日本銀行における最新金融経済情勢の報告"
-      ],
-      "materials": [],
-      "tags": [
-        "月例経済報告",
-        "内閣府",
-        "日本銀行",
-        "景気動向",
-        "主要経済指標"
-      ],
-      "officialUrl": "https://www5.cao.go.jp/keizai3/getsurei/getsurei-index.html",
-      "hasMinutes": false,
-      "docCount": 4
+      "officialUrl": "https://www5.cao.go.jp/keizai3/getsurei/2026/0327getsurei/main.pdf",
+      "category": "MINISTERIAL_MEETING",
+      "ministry": "CAO",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "月例経済報告（3月）",
+          "url": "https://www5.cao.go.jp/keizai3/getsurei/2026/0327getsurei/main.pdf"
+        },
+        {
+          "name": "関係閣僚会議資料",
+          "url": "https://www5.cao.go.jp/keizai3/getsurei/2026/03kaigi.pdf"
+        },
+        {
+          "name": "日本銀行資料",
+          "url": "https://www5.cao.go.jp/keizai3/getsurei/2026/03nichigin.pdf"
+        },
+        {
+          "name": "主要経済指標",
+          "url": "https://www5.cao.go.jp/keizai3/getsurei/2026/03shihyou/shihyou.pdf"
+        }
+      ]
     },
     {
       "id": "cas-influenza_76-20260326-s03",
@@ -38734,28 +38257,30 @@
     {
       "id": "cao-getsurei_13-20260225-002",
       "councilId": "cao-getsurei_13",
-      "councilName": "月例経済報告等に関する関係閣僚会議",
-      "ministry": "CAO",
-      "category": "LIAISON",
-      "title": "第2回 月例経済報告等に関する関係閣僚会議",
+      "title": "月例経済報告等に関する関係閣僚会議（令和8年2月）",
       "date": "2026/02/25",
-      "location": "首相官邸 4階 大臣会議室",
-      "summary": "2月の月例経済報告。春闘に向けた賃上げ動向および世界経済の不透明感に関する分析。",
-      "agenda": [
-        "令和8年2月の月例経済報告について",
-        "日本銀行における最新金融経済情勢の報告"
-      ],
-      "materials": [],
-      "tags": [
-        "月例経済報告",
-        "内閣府",
-        "日本銀行",
-        "景気動向",
-        "主要経済指標"
-      ],
-      "officialUrl": "https://www5.cao.go.jp/keizai3/getsurei/getsurei-index.html",
-      "hasMinutes": false,
-      "docCount": 4
+      "officialUrl": "https://www5.cao.go.jp/keizai3/getsurei/2026/0225getsurei/main.pdf",
+      "category": "MINISTERIAL_MEETING",
+      "ministry": "CAO",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "月例経済報告（2月）",
+          "url": "https://www5.cao.go.jp/keizai3/getsurei/2026/0225getsurei/main.pdf"
+        },
+        {
+          "name": "関係閣僚会議資料",
+          "url": "https://www5.cao.go.jp/keizai3/getsurei/2026/02kaigi.pdf"
+        },
+        {
+          "name": "日本銀行資料",
+          "url": "https://www5.cao.go.jp/keizai3/getsurei/2026/02nichigin.pdf"
+        },
+        {
+          "name": "主要経済指標",
+          "url": "https://www5.cao.go.jp/keizai3/getsurei/2026/02shihyou/shihyou.pdf"
+        }
+      ]
     },
     {
       "id": "cas-kenkouiryou_20-20260224-006",
@@ -42247,32 +41772,6 @@
       "docCount": 4
     },
     {
-      "id": "cao-getsurei_13-20260122-001",
-      "councilId": "cao-getsurei_13",
-      "councilName": "月例経済報告等に関する関係閣僚会議",
-      "ministry": "CAO",
-      "category": "LIAISON",
-      "title": "第1回 月例経済報告等に関する関係閣僚会議",
-      "date": "2026/01/22",
-      "location": "首相官邸 4階 大臣会議室",
-      "summary": "1月の月例経済報告。新年の景気判断および国内需要・海外リスクの検証。",
-      "agenda": [
-        "令和8年1月の月例経済報告について",
-        "日本銀行における最新金融経済情勢の報告"
-      ],
-      "materials": [],
-      "tags": [
-        "月例経済報告",
-        "内閣府",
-        "日本銀行",
-        "景気動向",
-        "主要経済指標"
-      ],
-      "officialUrl": "https://www5.cao.go.jp/keizai3/getsurei/getsurei-index.html",
-      "hasMinutes": false,
-      "docCount": 4
-    },
-    {
       "id": "cas-influenza_76-20260122-s09",
       "councilId": "cas-influenza_76",
       "title": "鳥インフルエンザ関係閣僚会議 関係府省庁連絡会議［持ち回り］（令和8年1月22日）",
@@ -42469,6 +41968,34 @@
         {
           "name": "議事録（PDF／579KB）",
           "url": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/f1e48c87-1be5-46c9-908d-b6e93dc09f6b/2ce7e02c/20260212_councils_shingikai_f1e48c87_10.pdf"
+        }
+      ]
+    },
+    {
+      "id": "cao-getsurei_13-20260122-001",
+      "councilId": "cao-getsurei_13",
+      "title": "月例経済報告等に関する関係閣僚会議（令和8年1月）",
+      "date": "2026/01/22",
+      "officialUrl": "https://www5.cao.go.jp/keizai3/getsurei/2026/0122getsurei/main.pdf",
+      "category": "MINISTERIAL_MEETING",
+      "ministry": "CAO",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "月例経済報告（1月）",
+          "url": "https://www5.cao.go.jp/keizai3/getsurei/2026/0122getsurei/main.pdf"
+        },
+        {
+          "name": "関係閣僚会議資料",
+          "url": "https://www5.cao.go.jp/keizai3/getsurei/2026/01kaigi.pdf"
+        },
+        {
+          "name": "日本銀行資料",
+          "url": "https://www5.cao.go.jp/keizai3/getsurei/2026/01nichigin.pdf"
+        },
+        {
+          "name": "主要経済指標",
+          "url": "https://www5.cao.go.jp/keizai3/getsurei/2026/01shihyou/shihyou.pdf"
         }
       ]
     },
@@ -183104,24 +182631,13 @@
       }
     },
     "cao-getsurei_13": {
-      "created_at": "2026-08-07 08:56:31",
-      "generator": "AI_Rule_Synthesis_Agent_v3",
-      "ministryQuirk": "内閣府型: ◯kai/◯kai.html または kaisai.html の個別の回ネスト",
       "rule_id": "rule-cao-getsurei_13",
-      "rules": {
-        "date_regex": "(?:令和[0-9０-９一-九]+年[0-9０-９一-十二]+月[0-9０-９一-三十一]+日|20[2-9][0-9]年[0-1]?[0-9]月[0-3]?[0-9]日)",
-        "deep_crawl_enabled": true,
-        "detect_private_materials": false,
-        "encoding": "utf-8",
-        "extract_all_materials": true,
-        "extract_subpage_materials_primary": true,
-        "pdf_selector": "href=[\"\\']([^\"\\']+\\.pdf)[\"\\']",
-        "prefer_subpage_date": true,
-        "private_doc_keyword": "非公開",
-        "resolve_absolute_urls": true,
-        "subpage_discovery_pattern": "href=[\"\\']([^\"\\']*(?:dai\\d+|\\d+kai|kaisai|gijisidai)[^\"\\'#]*)[\"\\']",
-        "top_page_pdf_count": 131
-      }
+      "subpage_discovery_pattern": "https://www5\\.cao\\.go\\.jp/keizai3/getsurei/.*\\.html",
+      "title_selector": "h1, h2, .title",
+      "date_regex": "(令和\\d+年\\d+月\\d+日|平成\\d+年\\d+月\\d+日|\\d{4}年\\d{1,2}月\\d{1,2}日)",
+      "pdf_selector": "a[href*='.pdf']",
+      "deep_crawl_enabled": true,
+      "manualLock": true
     },
     "cas-grassrootstf_16": {
       "created_at": "2026-08-07 08:56:31",
