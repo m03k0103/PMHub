@@ -575,6 +575,8 @@ document.addEventListener('DOMContentLoaded', async () => {
         return a.time - b.time;
       } else if (state.sortBy === 'DOCS_DESC') {
         return (b.item.materials ? b.item.materials.length : 0) - (a.item.materials ? a.item.materials.length : 0);
+      } else if (state.sortBy === 'DOCS_ASC') {
+        return (a.item.materials ? a.item.materials.length : 0) - (b.item.materials ? b.item.materials.length : 0);
       }
       return 0;
     });
@@ -912,6 +914,10 @@ document.addEventListener('DOMContentLoaded', async () => {
         const docsA = (meetingsByCouncilMap.get(a.id) || []).reduce((sum, m) => sum + (m.materials ? m.materials.length : 0), 0);
         const docsB = (meetingsByCouncilMap.get(b.id) || []).reduce((sum, m) => sum + (m.materials ? m.materials.length : 0), 0);
         return docsB - docsA;
+      } else if (state.sortBy === 'DOCS_ASC') {
+        const docsA = (meetingsByCouncilMap.get(a.id) || []).reduce((sum, m) => sum + (m.materials ? m.materials.length : 0), 0);
+        const docsB = (meetingsByCouncilMap.get(b.id) || []).reduce((sum, m) => sum + (m.materials ? m.materials.length : 0), 0);
+        return docsA - docsB;
       }
       return 0;
     });
