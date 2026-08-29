@@ -5,9 +5,10 @@ import os
 import sys
 import threading
 import urllib.parse
+from datetime import datetime
 from apply_report import apply_report
 from discover_councils import run_discovery
-from crawler import run_meeting_crawler
+from crawler import run_meeting_crawler, save_data_json_with_backup
 
 PORT = 8000
 BASE_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
@@ -250,6 +251,45 @@ class CustomHandler(SimpleHTTPRequestHandler):
                 "lastCrawlTime": crawler_state["lastCrawlTime"]
             }
             self.wfile.write(json.dumps(res_payload, ensure_ascii=False).encode('utf-8'))
+        elif path == "/api/new-meetings":
+            self.send_response(200)
+            self.send_header('Content-Type', 'application/json; charset=utf-8')
+            self.end_headers()
+            new_list = []
+            if os.path.exists(DATA_JSON_FILE):
+                try:
+                    with open(DATA_JSON_FILE, "r", encoding="utf-8") as f:
+                        data = json.load(f)
+                    c_map = {c["id"]: c for c in data.get("councils", [])}
+                    for m in data.get("meetings", []):
+                        if m.get("isNewlyDiscovered"):
+                            c_info = c_map.get(m.get("councilId"), {})
+                            new_list.append({
+                                **m,
+                                "councilName": c_info.get("name", m.get("councilId")),
+                                "ministry": c_info.get("ministry", m.get("ministry", ""))
+                            })
+                except Exception as e:
+                    print(f"[WARN] Failed to read new meetings: {e}", file=sys.stderr)
+            self.wfile.write(json.dumps({"count": len(new_list), "meetings": new_list}, ensure_ascii=False).encode('utf-8'))
+        elif path == "/api/backups":
+            self.send_response(200)
+            self.send_header('Content-Type', 'application/json; charset=utf-8')
+            self.end_headers()
+            backup_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "docs", "backups"))
+            backups = []
+            if os.path.exists(backup_dir):
+                for f in sorted(os.listdir(backup_dir), reverse=True):
+                    if f.startswith("data_") and f.endswith(".json"):
+                        f_path = os.path.join(backup_dir, f)
+                        sz = os.path.getsize(f_path)
+                        mtime = os.path.getmtime(f_path)
+                        backups.append({
+                            "filename": f,
+                            "sizeBytes": sz,
+                            "createdAt": datetime.fromtimestamp(mtime).strftime("%Y/%m/%d %H:%M:%S")
+                        })
+            self.wfile.write(json.dumps({"backups": backups}, ensure_ascii=False).encode('utf-8'))
         else:
             super().do_GET()
 

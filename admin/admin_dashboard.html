@@ -449,6 +449,18 @@
         </div>
       </section>
 
+      <!-- 2.5. NEWLY DISCOVERED MEETINGS PREVIEW -->
+      <section class="admin-card card-glass" id="newlyDiscoveredSection" style="display: none; border-color: rgba(16, 185, 129, 0.4); background: rgba(16, 185, 129, 0.03);">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem;">
+          <h3 style="color: #10b981;">✨ 新規自動追加された会議データ (<span id="newlyDiscoveredCount">0</span> 件)</h3>
+          <span class="text-xs" style="color: var(--text-muted);">docs/data.json に自動同期済み</span>
+        </div>
+        <p class="text-sm" style="color: var(--text-muted); margin-bottom: 1rem;">直近の自動クロールで新たに検知・登録された会議（開催回）と資料一覧です。</p>
+        <div id="newlyDiscoveredListContainer" style="display: flex; flex-direction: column; gap: 0.75rem; max-height: 350px; overflow-y: auto;">
+          <!-- Rendered dynamically -->
+        </div>
+      </section>
+
       <!-- 3. CONFIGURATION & FEATURE FLAGS -->
       <section class="admin-card card-glass">
         <h3>⚙️ システム設定・Feature Flag 管理</h3>
@@ -920,10 +932,9 @@ JSON データを読み込み中...
               logLine(`[ERROR] クローラー実行エラー: ${data.error}`);
               alert(`クローラー実行中にエラーが発生しました: ${data.error}`);
             } else {
-              logLine('✅ クローラーが全会議体の巡回および docs/data.json の更新を完了しました！');
-              const stats = data.stats || {};
-              alert(`【クロール完了】\n・成功: ${stats.success || 0} 件\n・部分成功: ${stats.partial || 0} 件\n・失敗: ${stats.failed || 0} 件\n・新規追加会議: ${stats.new_meetings || 0} 件\n\ndocs/data.json に最新データが自動保存されました。`);
-              
+              // 新着会議リストの取得・描画
+              loadAndRenderNewMeetings();
+
               // 画面のデータインスペクターとキャッシュを自動更新
               if (typeof updateDataJsonInspector === 'function') updateDataJsonInspector();
             }
@@ -941,6 +952,52 @@ JSON データを読み込み中...
         btn.textContent = '⚡ 会議・資料クロール即時実行';
       }
       isRunningMeetingCrawl = false;
+    }
+  };
+
+  window.loadAndRenderNewMeetings = async function() {
+    try {
+      const res = await fetch('/api/new-meetings');
+      if (!res.ok) return;
+      const data = await res.json();
+      const section = document.getElementById('newlyDiscoveredSection');
+      const countEl = document.getElementById('newlyDiscoveredCount');
+      const container = document.getElementById('newlyDiscoveredListContainer');
+      if (!section || !container) return;
+
+      const meets = data.meetings || [];
+      if (meets.length === 0) {
+        section.style.display = 'none';
+        return;
+      }
+
+      section.style.display = 'block';
+      if (countEl) countEl.textContent = meets.length;
+      container.innerHTML = meets.map(m => {
+        const matCount = (m.materials || []).length;
+        const matPdfCount = (m.materials || []).filter(x => (x.url || '').toLowerCase().endsWith('.pdf')).length;
+        return `
+          <div style="background: rgba(0,0,0,0.3); border: 1px solid rgba(16,185,129,0.3); border-radius: var(--radius-md); padding: 0.85rem 1rem;">
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 0.5rem;">
+              <div>
+                <span class="badge" style="background: rgba(16,185,129,0.2); color:#10b981; margin-right: 0.4rem; font-size: 0.75rem;">NEW</span>
+                <span style="font-weight: 600; color: var(--text-primary); font-size: 0.95rem;">${m.title || m.id}</span>
+                <span style="color: var(--text-muted); font-size: 0.82rem; margin-left: 0.5rem;">(${m.councilName || m.councilId})</span>
+              </div>
+              <span style="font-size: 0.8rem; color: #38bdf8; font-weight: 500; white-space: nowrap;">📅 ${m.date || '日付未定'}</span>
+            </div>
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 0.5rem; font-size: 0.8rem; color: var(--text-muted);">
+              <div>
+                <span>配布資料: <strong style="color: var(--text-primary);">${matCount}</strong> 件 (PDF: <strong style="color:#10b981;">${matPdfCount}</strong> 件)</span>
+                ${m.discoveredAt ? `<span style="margin-left: 0.8rem; color: #94a3b8;">検知: ${m.discoveredAt}</span>` : ''}
+              </div>
+              ${m.officialUrl ? `<a href="${m.officialUrl}" target="_blank" rel="noopener" style="color: #60a5fa; text-decoration: underline;">公式ページ ↗</a>` : ''}
+            </div>
+          </div>
+        `;
+      }).join('');
+    } catch(e) {
+      console.warn('Failed to load new meetings:', e);
     }
   };
 
@@ -1130,6 +1187,7 @@ JSON データを読み込み中...
       }
     };
     loadRejectedCouncils();
+    if (typeof loadAndRenderNewMeetings === 'function') loadAndRenderNewMeetings();
 
     function populateFilterDropdowns() {
       const ministrySet = new Set(allCouncils.map(c => c.ministry));
@@ -2975,32 +3033,28 @@ JSON データを読み込み中...
     loadLlmConfig();
 
     function updateDataJsonInspector() {
-      if (window.DATA) {
-        const summary = {
-          lastCrawlTime: window.DATA.lastCrawlTime || '未実行',
-          crawlerConfig: window.DATA.crawlerConfig || { llm_mode: true },
-          totalCouncils: (window.DATA.councils || []).length,
-          totalMeetings: (window.DATA.meetings || []).length,
-          discoveryKeywordsCount: (window.DATA.discoveryKeywords?.commonKeywords || []).length
-        };
-        jsonInspector.textContent = JSON.stringify(summary, null, 2);
-      } else {
-        fetch('../docs/data.json')
-          .then(res => res.json())
-          .then(data => {
-            const summary = {
-              lastCrawlTime: data.lastCrawlTime || '未実行',
-              crawlerConfig: data.crawlerConfig || { llm_mode: true },
-              totalCouncils: (data.councils || []).length,
-              totalMeetings: (data.meetings || []).length,
-              discoveryKeywordsCount: (data.discoveryKeywords?.commonKeywords || []).length
-            };
-            jsonInspector.textContent = JSON.stringify(summary, null, 2);
-          })
-          .catch(err => {
-            jsonInspector.textContent = '// docs/data.json の読み込み完了';
+      fetch('../docs/data.json?t=' + new Date().getTime())
+        .then(res => res.json())
+        .then(data => {
+          const summary = {
+            lastCrawlTime: data.lastCrawlTime || '未実行',
+            crawlerConfig: data.crawlerConfig || { llm_mode: false },
+            totalCouncils: (data.councils || []).length,
+            totalMeetings: (data.meetings || []).length,
+            discoveryKeywordsCount: (data.discoveryKeywords?.commonKeywords || []).length,
+            autoBackupsLocation: "docs/backups/"
+          };
+          if (jsonInspector) jsonInspector.textContent = JSON.stringify(summary, null, 2);
+          
+          // ヘッダーやステータスバーの最終同期日時を同期
+          const syncLabels = document.querySelectorAll('.last-sync-time, #lastSyncTimeLabel');
+          syncLabels.forEach(el => {
+            el.textContent = data.lastCrawlTime || '未実行';
           });
-      }
+        })
+        .catch(err => {
+          if (jsonInspector) jsonInspector.textContent = '// docs/data.json の読み込み完了';
+        });
     }
     updateDataJsonInspector();
 

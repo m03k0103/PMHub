@@ -43,9 +43,39 @@ if sys.platform == "win32":
 
 
 DATA_JSON_FILE = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "docs", "data.json"))
+BACKUP_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "docs", "backups"))
 
 # 429 Quota Exceeded 回避用のサーキットブレーカーフラグ
 LLM_QUOTA_BLOCKED = False
+
+def save_data_json_with_backup(data, target_file=DATA_JSON_FILE):
+    """
+    docs/data.json を更新する前に、タイムスタンプ付きで docs/backups/ に自動バックアップを作成し、
+    安全に上書き保存する（過去30世代保持）。
+    """
+    import shutil
+    try:
+        os.makedirs(BACKUP_DIR, exist_ok=True)
+        if os.path.exists(target_file):
+            ts = datetime.now().strftime("%Y%m%d_%H%M%S")
+            backup_path = os.path.join(BACKUP_DIR, f"data_{ts}.json")
+            shutil.copy2(target_file, backup_path)
+            
+            # 過去30世代を超える古いバックアップの自動整理
+            b_files = sorted([os.path.join(BACKUP_DIR, f) for f in os.listdir(BACKUP_DIR) if f.startswith("data_") and f.endswith(".json")])
+            if len(b_files) > 30:
+                for old_f in b_files[:-30]:
+                    try:
+                        os.remove(old_f)
+                    except Exception:
+                        pass
+
+        with open(target_file, "w", encoding="utf-8") as f:
+            json.dump(data, f, ensure_ascii=False, indent=2)
+        return True
+    except Exception as e:
+        print(f"[ERROR] Failed to save data.json with backup: {e}", file=sys.stderr)
+        return False
 
 def load_crawler_config():
     if os.path.exists(DATA_JSON_FILE):
@@ -627,7 +657,9 @@ def sync_new_meetings_from_crawl(data, target, scraped_item):
             "officialUrl": sub.get("subpageUrl") or target.get("officialUrl") or target.get("url", ""),
             "category": target.get("category", "COUNCIL"),
             "ministry": ministry,
-            "materials": clean_materials_list
+            "materials": clean_materials_list,
+            "isNewlyDiscovered": True,
+            "discoveredAt": datetime.now().strftime("%Y/%m/%d %H:%M")
         }
 
         meetings.append(new_meeting)
@@ -837,6 +869,7 @@ def run_meeting_crawler(progress_callback=None):
         return {"success": 0, "partial": 0, "failed": 0, "fetch_error": 0, "new_meetings": 0}
 
     use_llm = load_crawler_config()
+    now_str = datetime.now().strftime("%Y/%m/%d %H:%M")
     emit("=" * 60)
     emit(" 政策会議ウォッチ (PM-HUB) クローラー")
     emit("=" * 60)
@@ -850,9 +883,13 @@ def run_meeting_crawler(progress_callback=None):
         with open(DATA_JSON_FILE, "r", encoding="utf-8") as f:
             data = json.load(f)
 
+    # クロール開始時に lastCrawlTime を即時更新・バックアップ保存
+    data["lastCrawlTime"] = now_str
+    save_data_json_with_backup(data)
+
     rules = load_scraping_rules()
     results = []
-    stats = {"success": 0, "partial": 0, "failed": 0, "fetch_error": 0, "new_meetings": 0}
+    stats = {"success": 0, "partial": 0, "failed": 0, "fetch_error": 0, "new_meetings": 0, "newly_added_list": []}
     total_councils = len(CRAWL_TARGETS)
 
     for idx, target in enumerate(CRAWL_TARGETS, 1):
@@ -893,9 +930,13 @@ def run_meeting_crawler(progress_callback=None):
             new_added = sync_new_meetings_from_crawl(data, target, item)
             if new_added > 0:
                 stats["new_meetings"] += new_added
+                now_str = datetime.now().strftime("%Y/%m/%d %H:%M")
+                data["lastCrawlTime"] = now_str
+                save_data_json_with_backup(data)
                 emit(f"  -> 📦 新規会議 {new_added} 件を data.json の meetings に自動追加・同期しました。", {
                     "type": "new_meeting_added",
                     "council_id": target["id"],
+                    "council_name": c_name,
                     "new_added": new_added
                 })
         else:
@@ -918,20 +959,23 @@ def run_meeting_crawler(progress_callback=None):
     # 全体データに対して資料リンクの重複排除・正規化を実施
     deduplicate_data_materials(data)
 
-    # data.json にクロールステータスとタイムスタンプを直接保存
+    # data.json にクロールステータスと最終タイムスタンプを保存（バックアップ付き）
     now_str = datetime.now().strftime("%Y/%m/%d %H:%M")
     data["lastCrawlTime"] = now_str
-    try:
-        with open(DATA_JSON_FILE, "w", encoding="utf-8") as f:
-            json.dump(data, f, ensure_ascii=False, indent=2)
-        emit(f"[更新成功] docs/data.json にクロール結果・ステータスと lastCrawlTime を保存しました。")
-    except Exception as e:
-        emit(f"[WARN] data.json 更新失敗: {e}")
+    if save_data_json_with_backup(data):
+        emit(f"[更新成功] docs/data.json にクロール結果・ステータスと lastCrawlTime ({now_str}) を保存しました（自動バックアップ作成完了）。")
+    else:
+        emit(f"[WARN] data.json 更新失敗")
+
+    # 新規追加された会議リストを抽出してイベントに添付
+    newly_added = [m for m in data.get("meetings", []) if m.get("isNewlyDiscovered")]
+    stats["newly_added_list"] = newly_added[:20]
 
     emit(f"データ取得完了: 結果を docs/data.json に直接反映しました。", {
         "type": "crawl_completed",
         "progress": 100,
         "stats": stats,
+        "newly_added_count": len(newly_added),
         "lastCrawlTime": now_str
     })
     return stats
