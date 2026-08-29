@@ -604,7 +604,7 @@
       "name": "全世代型社会保障構築会議",
       "ministry": "CAS",
       "category": "PANEL",
-      "pastYearCount": 4,
+      "pastYearCount": 21,
       "description": "全世代型社会保障の構築に向け、医療・介護の構造改革、少子化対策、年金改革の具体策を審議・答申する内閣官房会議。",
       "officialUrl": "https://www.cas.go.jp/jp/seisaku/zensedai_hosyo/index.html",
       "isWatched": true,
@@ -620,7 +620,8 @@
       },
       "status": "approved",
       "sourcePageUrl": "https://www.cas.go.jp/jp/seisaku/zensedai_hosyo/index.html",
-      "aiReason": "AI判定: CAS所管の公式会議体マスターとして承認"
+      "aiReason": "AI判定: CAS所管の公式会議体マスターとして承認",
+      "manualLock": true
     },
     {
       "id": "cao-ai-hq",
@@ -1732,7 +1733,7 @@
       "name": "全世代型社会保障構築本部",
       "ministry": "CAS",
       "category": "HQ",
-      "pastYearCount": 6,
+      "pastYearCount": 12,
       "description": "全世代型社会保障構築本部の基本方針、施策の推進状況および関係省庁間の連携・個別課題について審議する会議。",
       "officialUrl": "https://www.cas.go.jp/jp/seisaku/zensedai_shakaihosho_kochiku/index.html",
       "isWatched": true,
@@ -1748,7 +1749,8 @@
       },
       "status": "approved",
       "sourcePageUrl": "https://www.cas.go.jp/jp/seisaku/zensedai_shakaihosho_kochiku/index.html",
-      "aiReason": "AI判定: CAS所管の公式会議体マスターとして承認"
+      "aiReason": "AI判定: CAS所管の公式会議体マスターとして承認",
+      "manualLock": true
     },
     {
       "id": "cas-kaiyou-51",
@@ -60162,75 +60164,6 @@
       "manualLock": true
     },
     {
-      "id": "meet-2025-11-17-cas-zensedai_shakaihosho_kochiku-50-dai12",
-      "councilId": "cas-zensedai_shakaihosho_kochiku-50",
-      "councilName": "全世代型社会保障構築本部",
-      "ministry": "CAS",
-      "category": "HQ",
-      "title": "第12回 全世代型社会保障構築本部",
-      "date": "2025/11/17",
-      "updatedAt": "2025/11/17 17:00",
-      "location": "首相官邸 / 各府省庁本府庁舎",
-      "summary": "第12回 全世代型社会保障構築本部の開催。主要議題の推進状況及び今後の対応方針について審議が行われた。",
-      "agenda": [
-        "「全世代型社会保障構築を目指す改革の道筋（改革工程）」の検討状況について（PDF／694 KB）",
-        "全世代型社会保障構築を目指す改革の道筋（改革工程）（概要）（PDF／712 KB）",
-        "総理指示"
-      ],
-      "materials": [
-        {
-          "name": "第12回 全世代型社会保障構築本部 議事次第（PDF／53 KB）",
-          "type": "PDF",
-          "size": "PDF",
-          "url": "https://www.cas.go.jp/jp/seisaku/zensedai_shakaihosho_kochiku/dai12/gijisidai.pdf",
-          "isMinutes": false
-        },
-        {
-          "name": "「全世代型社会保障構築を目指す改革の道筋（改革工程）」の検討状況について（PDF／694 KB）",
-          "type": "PDF",
-          "size": "PDF",
-          "url": "https://www.cas.go.jp/jp/seisaku/zensedai_shakaihosho_kochiku/dai12/siryou1.pdf",
-          "isMinutes": false
-        },
-        {
-          "name": "全世代型社会保障構築を目指す改革の道筋（改革工程）（概要）（PDF／712 KB）",
-          "type": "PDF",
-          "size": "PDF",
-          "url": "https://www.cas.go.jp/jp/seisaku/zensedai_shakaihosho_kochiku/dai12/sankou2.pdf",
-          "isMinutes": false
-        },
-        {
-          "name": "総理指示 (PDF)",
-          "type": "PDF",
-          "size": "PDF",
-          "url": "https://www.cas.go.jp/jp/seisaku/zensedai_shakaihosho_kochiku/dai12/251117_shiji.pdf",
-          "isMinutes": false
-        },
-        {
-          "name": "「全世代型社会保障の構築に向けた取組について」を決定しました。 (PDF)",
-          "type": "PDF",
-          "size": "PDF",
-          "url": "https://www.cas.go.jp/jp/seisaku/zensedai_shakaihosho_kochiku/pdf/20221216torikumi.pdf",
-          "isMinutes": false
-        },
-        {
-          "name": "全世代型社会保障構築本部の設置について（PDF／42KB）",
-          "type": "PDF",
-          "size": "PDF",
-          "url": "https://www.cas.go.jp/jp/seisaku/zensedai_shakaihosho_kochiku/pdf/konkyo.pdf",
-          "isMinutes": false
-        }
-      ],
-      "tags": [
-        "全世代型社会",
-        "CAS",
-        "第12回"
-      ],
-      "officialUrl": "https://www.cas.go.jp/jp/seisaku/zensedai_shakaihosho_kochiku/dai12/gijisidai.pdf",
-      "hasMinutes": false,
-      "docCount": 7
-    },
-    {
       "id": "meet-2025-11-17-smea-local-zebra-dai3",
       "councilId": "smea-local-zebra",
       "title": "ローカル・ゼブラ・エコシステムの構築に向けた社会的インパクト評価の活用実践に関する研究会 第3回",
@@ -60262,6 +60195,60 @@
           "name": "第3回 ローカル・ゼブラ・エコシステムの構築に向けた社会的インパクト評価の活用実践に関する研究会 議事要旨(873KB)",
           "url": "https://www.chusho.meti.go.jp/koukai/kenkyukai/local_zebra/003/gy.pdf",
           "type": "PDF",
+          "manualLock": true
+        }
+      ]
+    },
+    {
+      "id": "meet-2025-11-17-cas-zensedai_shakaihosho_kochiku-50-dai12",
+      "councilId": "cas-zensedai_shakaihosho_kochiku-50",
+      "title": "第12回 全世代型社会保障構築本部",
+      "date": "2025/11/17",
+      "officialUrl": "https://www.cas.go.jp/jp/seisaku/zensedai_shakaihosho_kochiku/dai12/gijisidai.html",
+      "category": "HEADQUARTERS",
+      "ministry": "CAS",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "その他情報",
+          "url": "https://www.cas.go.jp/jp/siryou/index.html",
+          "type": "HTML",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "第12回　全世代型社会保障構築本部　議事次第（PDF／53 KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/zensedai_shakaihosho_kochiku/dai12/gijisidai.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "「全世代型社会保障構築を目指す改革の道筋（改革工程）」の検討状況について（PDF／694 KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/zensedai_shakaihosho_kochiku/dai12/siryou1.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "第219回国会における高市内閣総理大臣所信表明演説（抄）（PDF／418 KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/zensedai_shakaihosho_kochiku/dai12/sankou1.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "全世代型社会保障構築を目指す改革の道筋（改革工程）（概要）（PDF／712 KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/zensedai_shakaihosho_kochiku/dai12/sankou2.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "総理指示",
+          "url": "https://www.cas.go.jp/jp/seisaku/zensedai_shakaihosho_kochiku/dai12/251117_shiji.pdf",
+          "type": "PDF",
+          "isPrivate": false,
           "manualLock": true
         }
       ]
@@ -64347,108 +64334,105 @@
     {
       "id": "meet-2025-06-23-cas-zensedai-hosyo-dai21",
       "councilId": "cas-zensedai-hosyo",
-      "councilName": "全世代型社会保障構築会議",
-      "ministry": "CAS",
-      "category": "PANEL",
       "title": "第21回 全世代型社会保障構築会議",
       "date": "2025/06/23",
-      "updatedAt": "2025/06/23 17:00",
-      "location": "首相官邸 2階 大ホール",
-      "summary": "医療・介護の自己負担見直しおよび子支援財源「支援金制度」の具体的な徴収スキームに関する議論の取りまとめ案が提示された。",
-      "agenda": [
-        "全世代型社会保障構築に向けた改革工程表の実施状況評価",
-        "医療保険制度における高所得者の負担適正化と医療DXの効果波及",
-        "介護サービスの基盤整備と生産性向上（ロボット・ICT導入）"
-      ],
+      "officialUrl": "https://www.cas.go.jp/jp/seisaku/zensedai_hosyo/dai21/gijisidai.html",
+      "category": "COUNCIL",
+      "ministry": "CAS",
+      "manualLock": true,
       "materials": [
         {
-          "name": "第21回 全世代型社会保障構築会議 議事次第（PDF／70KB）",
-          "type": "PDF",
-          "size": "PDF",
+          "name": "その他情報",
+          "url": "https://www.cas.go.jp/jp/siryou/index.html",
+          "type": "HTML",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "第21回　全世代型社会保障構築会議　議事次第（PDF／70KB）",
           "url": "https://www.cas.go.jp/jp/seisaku/zensedai_hosyo/dai21/00_gijisidai.pdf",
-          "isMinutes": false
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
         },
         {
           "name": "年金制度改正について（PDF／1,597KB）",
-          "type": "PDF",
-          "size": "PDF",
           "url": "https://www.cas.go.jp/jp/seisaku/zensedai_hosyo/dai21/01_siryou1.pdf",
-          "isMinutes": false
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
         },
         {
           "name": "医療提供体制について（PDF／3,130KB）",
-          "type": "PDF",
-          "size": "PDF",
           "url": "https://www.cas.go.jp/jp/seisaku/zensedai_hosyo/dai21/02_siryou2.pdf",
-          "isMinutes": false
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
         },
         {
           "name": "介護提供体制について（PDF／3,816KB）",
-          "type": "PDF",
-          "size": "PDF",
           "url": "https://www.cas.go.jp/jp/seisaku/zensedai_hosyo/dai21/03_siryou3.pdf",
-          "isMinutes": false
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
         },
         {
           "name": "地域共生社会について（PDF／3,710KB）",
-          "type": "PDF",
-          "size": "PDF",
           "url": "https://www.cas.go.jp/jp/seisaku/zensedai_hosyo/dai21/04_siryou4.pdf",
-          "isMinutes": false
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
         },
         {
           "name": "高額療養費制度の見直しについて（PDF／836KB）",
-          "type": "PDF",
-          "size": "PDF",
           "url": "https://www.cas.go.jp/jp/seisaku/zensedai_hosyo/dai21/05_siryou5.pdf",
-          "isMinutes": false
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
         },
         {
           "name": "地域働き方・職場改革について（PDF／589KB）",
-          "type": "PDF",
-          "size": "PDF",
           "url": "https://www.cas.go.jp/jp/seisaku/zensedai_hosyo/dai21/06_siryou6.pdf",
-          "isMinutes": false
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
         },
         {
           "name": "笠木構成員提出資料（PDF／475KB）",
-          "type": "PDF",
-          "size": "PDF",
           "url": "https://www.cas.go.jp/jp/seisaku/zensedai_hosyo/dai21/07_siryou7.pdf",
-          "isMinutes": false
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
         },
         {
           "name": "経済財政運営と改革の基本方針2025（抜粋）（PDF／1,158KB）",
-          "type": "PDF",
-          "size": "PDF",
           "url": "https://www.cas.go.jp/jp/seisaku/zensedai_hosyo/dai21/08_sankou1.pdf",
-          "isMinutes": false
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
         },
         {
           "name": "地方創生2.0基本構想（抜粋）（PDF／884KB）",
-          "type": "PDF",
-          "size": "PDF",
           "url": "https://www.cas.go.jp/jp/seisaku/zensedai_hosyo/dai21/09_sankou2.pdf",
-          "isMinutes": false
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
         },
         {
-          "name": "全世代型社会保障構築会議 報告書（令和４年12月16日）（概要）及び全世代型社会保障構築を目指す改革の道筋（改革工程）（PDF／960KB）",
-          "type": "PDF",
-          "size": "PDF",
+          "name": "全世代型社会保障構築会議　報告書（令和４年12月16日）（概要）及び全世代型社会保障構築を目指す改革の道筋（改革工程）（PDF／960KB）",
           "url": "https://www.cas.go.jp/jp/seisaku/zensedai_hosyo/dai21/10_sankou3.pdf",
-          "isMinutes": false
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "議事録（PDF／562KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/zensedai_hosyo/dai21/gijiroku.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
         }
-      ],
-      "tags": [
-        "社会保障",
-        "医療 reform",
-        "介護",
-        "少子化対策",
-        "内閣官房"
-      ],
-      "officialUrl": "https://www.cas.go.jp/jp/seisaku/zensedai_hosyo/dai21/gijisidai.html",
-      "hasMinutes": true,
-      "docCount": 11
+      ]
     },
     {
       "id": "meet-2025-06-20-fsa-sustainable-finance-dai29",
@@ -96675,57 +96659,56 @@
     {
       "id": "meet-2024-12-06-cas-zensedai-hosyo-dai20",
       "councilId": "cas-zensedai-hosyo",
-      "councilName": "全世代型社会保障構築会議",
-      "ministry": "CAS",
-      "category": "PANEL",
       "title": "第20回 全世代型社会保障構築会議",
       "date": "2024/12/06",
-      "updatedAt": "2024/12/06 17:00",
-      "location": "総理大臣官邸 / 各府省庁本庁舎",
-      "summary": "全世代型社会保障構築会議の開催。主要議題の推進状況及び今後の対応方針について審議が行われた。",
-      "agenda": [
-        "次期年金制度改正について（PDF／4,333KB）",
-        "日本創生に向けた人口戦略フォーラムinとっとり 石破総理説明資料（PDF／1,056KB）",
-        "日本創生に向けた人口戦略フォーラムinとっとり 石破総理説明参考資料（PDF／1,952KB）"
-      ],
+      "officialUrl": "https://www.cas.go.jp/jp/seisaku/zensedai_hosyo/dai20/gijisidai.html",
+      "category": "COUNCIL",
+      "ministry": "CAS",
+      "manualLock": true,
       "materials": [
         {
-          "name": "第20回 全世代型社会保障構築会議 議事次第（PDF／100KB）",
-          "type": "PDF",
-          "size": "PDF",
+          "name": "その他情報",
+          "url": "https://www.cas.go.jp/jp/siryou/index.html",
+          "type": "HTML",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "第20回　全世代型社会保障構築会議　議事次第（PDF／100KB）",
           "url": "https://www.cas.go.jp/jp/seisaku/zensedai_hosyo/dai20/00_gijisidai.pdf",
-          "isMinutes": false
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
         },
         {
           "name": "次期年金制度改正について（PDF／4,333KB）",
-          "type": "PDF",
-          "size": "PDF",
           "url": "https://www.cas.go.jp/jp/seisaku/zensedai_hosyo/dai20/01_siryou1.pdf",
-          "isMinutes": false
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
         },
         {
           "name": "日本創生に向けた人口戦略フォーラムinとっとり 石破総理説明資料（PDF／1,056KB）",
-          "type": "PDF",
-          "size": "PDF",
           "url": "https://www.cas.go.jp/jp/seisaku/zensedai_hosyo/dai20/02_sankou1.pdf",
-          "isMinutes": false
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
         },
         {
           "name": "日本創生に向けた人口戦略フォーラムinとっとり 石破総理説明参考資料（PDF／1,952KB）",
-          "type": "PDF",
-          "size": "PDF",
           "url": "https://www.cas.go.jp/jp/seisaku/zensedai_hosyo/dai20/03_sankou2.pdf",
-          "isMinutes": false
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "議事録（PDF／486KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/zensedai_hosyo/dai20/gijiroku.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
         }
-      ],
-      "tags": [
-        "全世代型社会",
-        "CAS",
-        "政策会議"
-      ],
-      "officialUrl": "https://www.cas.go.jp/jp/seisaku/zensedai_hosyo/dai20/gijisidai.html",
-      "hasMinutes": false,
-      "docCount": 4
+      ]
     },
     {
       "id": "meet-2024-12-03-nta-kokuzei-shingikai-dai27",
@@ -98480,6 +98463,81 @@
       "manualLock": true
     },
     {
+      "id": "meet-2024-11-15-cas-zensedai-hosyo-dai19",
+      "councilId": "cas-zensedai-hosyo",
+      "title": "第19回 全世代型社会保障構築会議",
+      "date": "2024/11/15",
+      "officialUrl": "https://www.cas.go.jp/jp/seisaku/zensedai_hosyo/dai19/gijisidai.html",
+      "category": "COUNCIL",
+      "ministry": "CAS",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "その他情報",
+          "url": "https://www.cas.go.jp/jp/siryou/index.html",
+          "type": "HTML",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "第19回　全世代型社会保障構築会議　議事次第（PDF／93KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/zensedai_hosyo/dai19/00_gijisidai.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "第11回全世代型社会保障構築本部における総理発言（PDF／233KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/zensedai_hosyo/dai19/01_siryou1.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "「全世代型社会保障構築を目指す改革の道筋（改革工程）」の検討状況について（地域医療構想、医師偏在対策、かかりつけ医機能等）（PDF／5,787KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/zensedai_hosyo/dai19/02_siryou2.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "「全世代型社会保障構築を目指す改革の道筋（改革工程）」の検討状況について（地域共生社会関係）（PDF／1,336KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/zensedai_hosyo/dai19/03_siryou3.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "國土構成員提出資料（PDF／960KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/zensedai_hosyo/dai19/04_siryou4.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "全世代型社会保障構築について（令和６年11月８日 第11回全世代型社会保障構築本部 資料１）（PDF／1,825KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/zensedai_hosyo/dai19/05_sankou1.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "「全世代型社会保障構築会議の開催について」の一部改正について（令和６年11月８日 第11回全世代型社会保障構築本部 資料２）（PDF／144KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/zensedai_hosyo/dai19/06_sankou2.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "議事録（PDF／513KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/zensedai_hosyo/dai19/gijiroku.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        }
+      ]
+    },
+    {
       "id": "meet-2024-11-13-mof-zaiseiseido-bunkakai",
       "councilId": "mof-zaiseiseido-bunkakai",
       "councilName": "財政制度等審議会 財政制度分科会",
@@ -98712,169 +98770,58 @@
       "docCount": 7
     },
     {
-      "id": "meet-2024-11-08-cas-zensedai-hosyo-dai11",
-      "councilId": "cas-zensedai-hosyo",
-      "councilName": "全世代型社会保障構築会議",
-      "ministry": "CAS",
-      "category": "PANEL",
-      "title": "第11回 全世代型社会保障構築会議",
-      "date": "2024/11/08",
-      "updatedAt": "2024/11/08 17:00",
-      "location": "総理大臣官邸 / 各府省庁本庁舎",
-      "summary": "第11回 全世代型社会保障構築会議の開催。主要議題の推進状況及び今後の対応方針について審議が行われた。",
-      "agenda": [
-        "第11回全世代型社会保障構築本部における総理発言（PDF／233KB）",
-        "全世代型社会保障構築について（令和６年11月８日 第11回全世代型社会保障構築本部 資料１）（PDF／1,825KB）",
-        "「全世代型社会保障構築会議の開催について」の一部改正について（令和６年11月８日 第11回全世代型社会保障構築本部 資料２）（PDF／144KB）"
-      ],
-      "materials": [
-        {
-          "name": "第11回全世代型社会保障構築本部における総理発言（PDF／233KB）",
-          "type": "PDF",
-          "size": "PDF",
-          "url": "https://www.cas.go.jp/jp/seisaku/zensedai_hosyo/dai19/01_siryou1.pdf",
-          "isMinutes": false
-        },
-        {
-          "name": "全世代型社会保障構築について（令和６年11月８日 第11回全世代型社会保障構築本部 資料１）（PDF／1,825KB）",
-          "type": "PDF",
-          "size": "PDF",
-          "url": "https://www.cas.go.jp/jp/seisaku/zensedai_hosyo/dai19/05_sankou1.pdf",
-          "isMinutes": false
-        },
-        {
-          "name": "「全世代型社会保障構築会議の開催について」の一部改正について（令和６年11月８日 第11回全世代型社会保障構築本部 資料２）（PDF／144KB）",
-          "type": "PDF",
-          "size": "PDF",
-          "url": "https://www.cas.go.jp/jp/seisaku/zensedai_hosyo/dai19/06_sankou2.pdf",
-          "isMinutes": false
-        }
-      ],
-      "tags": [
-        "全世代型社会",
-        "CAS",
-        "第11回"
-      ],
-      "officialUrl": "https://www.cas.go.jp/jp/seisaku/zensedai_hosyo/dai19/gijisidai.html",
-      "hasMinutes": false,
-      "docCount": 3
-    },
-    {
-      "id": "meet-2024-11-08-cas-zensedai-hosyo-dai19",
-      "councilId": "cas-zensedai-hosyo",
-      "councilName": "全世代型社会保障構築会議",
-      "ministry": "CAS",
-      "category": "PANEL",
-      "title": "第19回 全世代型社会保障構築会議",
-      "date": "2024/11/08",
-      "updatedAt": "2024/11/08 17:00",
-      "location": "総理大臣官邸 / 各府省庁本庁舎",
-      "summary": "第19回 全世代型社会保障構築会議の開催。主要議題の推進状況及び今後の対応方針について審議が行われた。",
-      "agenda": [
-        "「全世代型社会保障構築を目指す改革の道筋（改革工程）」の検討状況について（地域医療構想、医師偏在対策、かかりつけ医機能等）（PDF／5,787KB）",
-        "「全世代型社会保障構築を目指す改革の道筋（改革工程）」の検討状況について（地域共生社会関係）（PDF／1,336KB）",
-        "國土構成員提出資料（PDF／960KB）"
-      ],
-      "materials": [
-        {
-          "name": "第19回 全世代型社会保障構築会議 議事次第（PDF／93KB）",
-          "type": "PDF",
-          "size": "PDF",
-          "url": "https://www.cas.go.jp/jp/seisaku/zensedai_hosyo/dai19/00_gijisidai.pdf",
-          "isMinutes": false
-        },
-        {
-          "name": "「全世代型社会保障構築を目指す改革の道筋（改革工程）」の検討状況について（地域医療構想、医師偏在対策、かかりつけ医機能等）（PDF／5,787KB）",
-          "type": "PDF",
-          "size": "PDF",
-          "url": "https://www.cas.go.jp/jp/seisaku/zensedai_hosyo/dai19/02_siryou2.pdf",
-          "isMinutes": false
-        },
-        {
-          "name": "「全世代型社会保障構築を目指す改革の道筋（改革工程）」の検討状況について（地域共生社会関係）（PDF／1,336KB）",
-          "type": "PDF",
-          "size": "PDF",
-          "url": "https://www.cas.go.jp/jp/seisaku/zensedai_hosyo/dai19/03_siryou3.pdf",
-          "isMinutes": false
-        },
-        {
-          "name": "國土構成員提出資料（PDF／960KB）",
-          "type": "PDF",
-          "size": "PDF",
-          "url": "https://www.cas.go.jp/jp/seisaku/zensedai_hosyo/dai19/04_siryou4.pdf",
-          "isMinutes": false
-        }
-      ],
-      "tags": [
-        "全世代型社会",
-        "CAS",
-        "第19回"
-      ],
-      "officialUrl": "https://www.cas.go.jp/jp/seisaku/zensedai_hosyo/dai19/00_gijisidai.pdf",
-      "hasMinutes": false,
-      "docCount": 4
-    },
-    {
       "id": "meet-2024-11-08-cas-zensedai_shakaihosho_kochiku-50-dai11",
       "councilId": "cas-zensedai_shakaihosho_kochiku-50",
-      "councilName": "全世代型社会保障構築本部",
-      "ministry": "CAS",
-      "category": "HQ",
       "title": "第11回 全世代型社会保障構築本部",
       "date": "2024/11/08",
-      "updatedAt": "2024/11/08 17:00",
-      "location": "総理大臣官邸 / 各府省庁本庁舎",
-      "summary": "全世代型社会保障構築本部の開催。主要議題の推進状況及び今後の対応方針について審議が行われた。",
-      "agenda": [
-        "全世代型社会保障構築について（PDF／1,830KB）",
-        "「全世代型社会保障構築会議の開催について」の一部改正について（PDF／136KB）",
-        "全世代型社会保障構築を目指す改革の道筋（改革工程）（PDF／422KB）"
-      ],
+      "officialUrl": "https://www.cas.go.jp/jp/seisaku/zensedai_shakaihosho_kochiku/dai11/gijisidai.html",
+      "category": "HEADQUARTERS",
+      "ministry": "CAS",
+      "manualLock": true,
       "materials": [
         {
-          "name": "第11回 全世代型社会保障構築本部 議事次第 （PDF／48KB）",
-          "type": "PDF",
-          "size": "PDF",
+          "name": "その他情報",
+          "url": "https://www.cas.go.jp/jp/siryou/index.html",
+          "type": "HTML",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "第11回　全世代型社会保障構築本部　議事次第 （PDF／48KB）",
           "url": "https://www.cas.go.jp/jp/seisaku/zensedai_shakaihosho_kochiku/dai11/gijisidai.pdf",
-          "isMinutes": false
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
         },
         {
           "name": "全世代型社会保障構築について（PDF／1,830KB）",
-          "type": "PDF",
-          "size": "PDF",
           "url": "https://www.cas.go.jp/jp/seisaku/zensedai_shakaihosho_kochiku/dai11/siryou1.pdf",
-          "isMinutes": false
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
         },
         {
           "name": "「全世代型社会保障構築会議の開催について」の一部改正について（PDF／136KB）",
-          "type": "PDF",
-          "size": "PDF",
           "url": "https://www.cas.go.jp/jp/seisaku/zensedai_shakaihosho_kochiku/dai11/siryou2.pdf",
-          "isMinutes": false
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
         },
         {
           "name": "全世代型社会保障構築を目指す改革の道筋（改革工程）（PDF／422KB）",
-          "type": "PDF",
-          "size": "PDF",
           "url": "https://www.cas.go.jp/jp/seisaku/zensedai_shakaihosho_kochiku/dai11/sankou1.pdf",
-          "isMinutes": false
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
         },
         {
           "name": "こども未来戦略（PDF／823KB）",
-          "type": "PDF",
-          "size": "PDF",
           "url": "https://www.cas.go.jp/jp/seisaku/zensedai_shakaihosho_kochiku/dai11/sankou2.pdf",
-          "isMinutes": false
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
         }
-      ],
-      "tags": [
-        "全世代型社会",
-        "CAS",
-        "政策会議"
-      ],
-      "officialUrl": "https://www.cas.go.jp/jp/seisaku/zensedai_shakaihosho_kochiku/dai11/gijisidai.html",
-      "hasMinutes": false,
-      "docCount": 5
+      ]
     },
     {
       "id": "meet-2024-11-01-mof-zaiseiseido-bunkakai",
@@ -107247,6 +107194,67 @@
       ]
     },
     {
+      "id": "meet-2024-05-27-cas-zensedai-hosyo-dai18",
+      "councilId": "cas-zensedai-hosyo",
+      "title": "第18回 全世代型社会保障構築会議",
+      "date": "2024/05/27",
+      "officialUrl": "https://www.cas.go.jp/jp/seisaku/zensedai_hosyo/dai18/gijisidai.html",
+      "category": "COUNCIL",
+      "ministry": "CAS",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "その他情報",
+          "url": "https://www.cas.go.jp/jp/siryou/index.html",
+          "type": "HTML",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "第１８回　全世代型社会保障構築会議　議事次第（PDF／86KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/zensedai_hosyo/dai18/gijisidai.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "「全世代型社会保障構築を目指す改革の道筋（改革工程）」の検討状況について（地域医療構想、かかりつけ医機能等）（PDF／3,223KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/zensedai_hosyo/dai18/siryou1.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "全世代型社会保障構築会議の今後の進め方（案）（PDF／114KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/zensedai_hosyo/dai18/siryou2.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "菊池構成員提出資料（PDF／528KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/zensedai_hosyo/dai18/siryou3.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "國土構成員提出資料（PDF／543KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/zensedai_hosyo/dai18/siryou4.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "議事録（PDF／522KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/zensedai_hosyo/dai18/gijiroku.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        }
+      ]
+    },
+    {
       "id": "meet-2024-05-22-cas-kinyu-47-dai4",
       "councilId": "cas-kinyu-47",
       "councilName": "新戦略策定のための資産運用立国推進分科会",
@@ -109840,6 +109848,95 @@
           "name": "意見交換用資料",
           "url": "https://www.moj.go.jp/content/001420275.pdf",
           "type": "PDF",
+          "manualLock": true
+        }
+      ]
+    },
+    {
+      "id": "meet-2024-03-21-cas-zensedai-hosyo-dai17",
+      "councilId": "cas-zensedai-hosyo",
+      "title": "第17回 全世代型社会保障構築会議",
+      "date": "2024/03/21",
+      "officialUrl": "https://www.cas.go.jp/jp/seisaku/zensedai_hosyo/dai17/gijisidai.html",
+      "category": "COUNCIL",
+      "ministry": "CAS",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "その他情報",
+          "url": "https://www.cas.go.jp/jp/siryou/index.html",
+          "type": "HTML",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "第１７回　全世代型社会保障構築会議　議事次第（PDF／182KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/zensedai_hosyo/dai17/gijisidai.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "こども未来戦略（PDF／765KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/zensedai_hosyo/dai17/siryou1.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "全世代型社会保障構築を目指す改革の道筋（改革工程）について（PDF／442KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/zensedai_hosyo/dai17/siryou2.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "「子ども・子育て支援法等の一部を改正する法律案」の概要（PDF／2,422KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/zensedai_hosyo/dai17/siryou3.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "「雇用保険等の一部を改正する法律案」の概要（PDF／1,814KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/zensedai_hosyo/dai17/siryou4.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "「育児休業、介護休業等育児又は家族介護を行う労働者の福祉に関する法律及び次世代育成支援対策推進法の一部を改正する法律案」の概要（PDF／1,006KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/zensedai_hosyo/dai17/siryou5.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "「生活困窮者自立支援法等の一部を改正する法律案」の概要（PDF／2,054KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/zensedai_hosyo/dai17/siryou6.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "「住宅確保要配慮者に対する賃貸住宅の供給の促進に関する法律等の一部を改正する法律案」の概要（PDF／1,737KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/zensedai_hosyo/dai17/siryou7.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "「こども未来戦略」「全世代型社会保障構築を目指す改革の道筋（改革工程）」の概要（PDF／1,215KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/zensedai_hosyo/dai17/sankou1.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "議事録（PDF／526KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/zensedai_hosyo/dai17/gijiroku.pdf",
+          "type": "PDF",
+          "isPrivate": false,
           "manualLock": true
         }
       ]
@@ -113636,171 +113733,6 @@
       "docCount": 5
     },
     {
-      "id": "meet-2023-12-22-cas-zensedai_shakaihosho_kochiku-50-dai2",
-      "councilId": "cas-zensedai_shakaihosho_kochiku-50",
-      "councilName": "全世代型社会保障構築本部",
-      "ministry": "CAS",
-      "category": "HQ",
-      "title": "第2回 全世代型社会保障構築本部",
-      "date": "2023/12/22",
-      "updatedAt": "2023/12/22 17:00",
-      "location": "首相官邸 / 各府省庁本府庁舎",
-      "summary": "第2回 全世代型社会保障構築本部の開催。主要議題の推進状況及び今後の対応方針について審議が行われた。",
-      "agenda": [
-        "全世代型社会保障構築本部 公式掲載資料・ページ (HTML)",
-        "「全世代型社会保障の構築に向けた取組について」を決定しました。",
-        "全世代型社会保障構築本部の設置について（PDF／42KB）"
-      ],
-      "materials": [
-        {
-          "name": "第２回 こども政策推進会議・第10回 全世代型社会保障構築本部 議事次第 （PDF／26KB）",
-          "type": "PDF",
-          "size": "PDF",
-          "url": "https://www.cas.go.jp/jp/seisaku/zensedai_shakaihosho_kochiku/dai10/gijisidai.pdf",
-          "isMinutes": false
-        }
-      ],
-      "tags": [
-        "全世代型社会",
-        "CAS",
-        "第2回"
-      ],
-      "officialUrl": "https://www.cas.go.jp/jp/seisaku/zensedai_shakaihosho_kochiku/dai12/gijisidai.html",
-      "hasMinutes": false,
-      "docCount": 4
-    },
-    {
-      "id": "meet-2023-12-22-cas-zensedai_shakaihosho_kochiku-50-dai10",
-      "councilId": "cas-zensedai_shakaihosho_kochiku-50",
-      "councilName": "全世代型社会保障構築本部",
-      "ministry": "CAS",
-      "category": "HQ",
-      "title": "第10回 全世代型社会保障構築本部",
-      "date": "2023/12/22",
-      "updatedAt": "2023/12/22 17:00",
-      "location": "首相官邸 / 各府省庁本府庁舎",
-      "summary": "第10回 全世代型社会保障構築本部の開催。主要議題の推進状況及び今後の対応方針について審議が行われた。",
-      "agenda": [
-        "「こども未来戦略」についてを決定しました。（PDF／916KB）",
-        "「全世代型社会保障構築を目指す改革の道筋（改革工程）」についてを決定しました。（PDF／493KB）",
-        "全世代型社会保障構築を目指す改革の道筋（改革工程）（令和５年１２月２２日閣議決定）（PDF／493KB）"
-      ],
-      "materials": [
-        {
-          "name": "「こども未来戦略」についてを決定しました。（PDF／916KB）",
-          "type": "PDF",
-          "size": "PDF",
-          "url": "https://www.cas.go.jp/jp/seisaku/zensedai_shakaihosho_kochiku/dai10/siryou1-2.pdf",
-          "isMinutes": false
-        },
-        {
-          "name": "「全世代型社会保障構築を目指す改革の道筋（改革工程）」についてを決定しました。（PDF／493KB）",
-          "type": "PDF",
-          "size": "PDF",
-          "url": "https://www.cas.go.jp/jp/seisaku/zensedai_shakaihosho_kochiku/dai10/siryou2-2.pdf",
-          "isMinutes": false
-        },
-        {
-          "name": "全世代型社会保障構築を目指す改革の道筋（改革工程）（令和５年１２月２２日閣議決定）（PDF／493KB）",
-          "type": "PDF",
-          "size": "PDF",
-          "url": "https://www.cas.go.jp/jp/seisaku/zensedai_shakaihosho_kochiku/dai10/kaikakukoutei.pdf",
-          "isMinutes": false
-        },
-        {
-          "name": "「こども未来戦略」について（PDF／889KB）",
-          "type": "PDF",
-          "size": "PDF",
-          "url": "https://www.cas.go.jp/jp/seisaku/zensedai_shakaihosho_kochiku/dai10/siryou1.pdf",
-          "isMinutes": false
-        },
-        {
-          "name": "「全世代型社会保障構築を目指す改革の道筋（改革工程）」について（PDF／465KB）",
-          "type": "PDF",
-          "size": "PDF",
-          "url": "https://www.cas.go.jp/jp/seisaku/zensedai_shakaihosho_kochiku/dai10/siryou2.pdf",
-          "isMinutes": false
-        },
-        {
-          "name": "こども大綱（案）等について（概要）（PDF／142KB）",
-          "type": "PDF",
-          "size": "PDF",
-          "url": "https://www.cas.go.jp/jp/seisaku/zensedai_shakaihosho_kochiku/dai10/siryou3.pdf",
-          "isMinutes": false
-        },
-        {
-          "name": "こども大綱（案）（PDF／676KB）",
-          "type": "PDF",
-          "size": "PDF",
-          "url": "https://www.cas.go.jp/jp/seisaku/zensedai_shakaihosho_kochiku/dai10/siryou4.pdf",
-          "isMinutes": false
-        },
-        {
-          "name": "こども大綱（案）参考資料（PDF／2,204KB）",
-          "type": "PDF",
-          "size": "PDF",
-          "url": "https://www.cas.go.jp/jp/seisaku/zensedai_shakaihosho_kochiku/dai10/sankou1.pdf",
-          "isMinutes": false
-        },
-        {
-          "name": "幼児期までのこどもの育ちに係る基本的なビジョン（案）（PDF／835KB）",
-          "type": "PDF",
-          "size": "PDF",
-          "url": "https://www.cas.go.jp/jp/seisaku/zensedai_shakaihosho_kochiku/dai10/sankou2.pdf",
-          "isMinutes": false
-        },
-        {
-          "name": "こどもの居場所づくりに関する指針（案）（PDF／252KB）",
-          "type": "PDF",
-          "size": "PDF",
-          "url": "https://www.cas.go.jp/jp/seisaku/zensedai_shakaihosho_kochiku/dai10/sankou3.pdf",
-          "isMinutes": false
-        }
-      ],
-      "tags": [
-        "全世代型社会",
-        "CAS",
-        "第10回"
-      ],
-      "officialUrl": "https://www.cas.go.jp/jp/seisaku/zensedai_shakaihosho_kochiku/dai10/siryou1-2.pdf",
-      "hasMinutes": false,
-      "docCount": 13
-    },
-    {
-      "id": "meet-2023-12-22-cas-zensedai_shakaihosho_kochiku-50-dai219",
-      "councilId": "cas-zensedai_shakaihosho_kochiku-50",
-      "councilName": "全世代型社会保障構築本部",
-      "ministry": "CAS",
-      "category": "HQ",
-      "title": "第219回 全世代型社会保障構築本部",
-      "date": "2023/12/22",
-      "updatedAt": "2023/12/22 17:00",
-      "location": "首相官邸 / 各府省庁本府庁舎",
-      "summary": "第219回 全世代型社会保障構築本部の開催。主要議題の推進状況及び今後の対応方針について審議が行われた。",
-      "agenda": [
-        "第219回国会における高市内閣総理大臣所信表明演説（抄）（PDF／418 KB）",
-        "全世代型社会保障構築本部 公式掲載資料・ページ (HTML)",
-        "「全世代型社会保障の構築に向けた取組について」を決定しました。"
-      ],
-      "materials": [
-        {
-          "name": "第219回国会における高市内閣総理大臣所信表明演説（抄）（PDF／418 KB）",
-          "type": "PDF",
-          "size": "PDF",
-          "url": "https://www.cas.go.jp/jp/seisaku/zensedai_shakaihosho_kochiku/dai12/sankou1.pdf",
-          "isMinutes": false
-        }
-      ],
-      "tags": [
-        "全世代型社会",
-        "CAS",
-        "第219回"
-      ],
-      "officialUrl": "https://www.cas.go.jp/jp/seisaku/zensedai_shakaihosho_kochiku/dai12/gijisidai.html",
-      "hasMinutes": false,
-      "docCount": 4
-    },
-    {
       "id": "meet-2023-12-22-cfa-kodomo-shingikai-dai4",
       "councilId": "cfa-kodomo-shingikai",
       "councilName": "こども家庭審議会",
@@ -114070,6 +114002,81 @@
       "officialUrl": "https://www.cfa.go.jp/councils/suishinkaigi/3bbf70e9",
       "hasMinutes": true,
       "docCount": 20
+    },
+    {
+      "id": "meet-2023-12-22-cas-zensedai_shakaihosho_kochiku-50-dai10",
+      "councilId": "cas-zensedai_shakaihosho_kochiku-50",
+      "title": "第10回 全世代型社会保障構築本部",
+      "date": "2023/12/22",
+      "officialUrl": "https://www.cas.go.jp/jp/seisaku/zensedai_shakaihosho_kochiku/dai10/gijisidai.html",
+      "category": "HEADQUARTERS",
+      "ministry": "CAS",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "その他情報",
+          "url": "https://www.cas.go.jp/jp/siryou/index.html",
+          "type": "HTML",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "第２回　こども政策推進会議・第10回　全世代型社会保障構築本部　議事次第 （PDF／26KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/zensedai_shakaihosho_kochiku/dai10/gijisidai.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "「こども未来戦略」について（PDF／889KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/zensedai_shakaihosho_kochiku/dai10/siryou1.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "「全世代型社会保障構築を目指す改革の道筋（改革工程）」について（PDF／465KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/zensedai_shakaihosho_kochiku/dai10/siryou2.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "こども大綱（案）等について（概要）（PDF／142KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/zensedai_shakaihosho_kochiku/dai10/siryou3.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "こども大綱（案）（PDF／676KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/zensedai_shakaihosho_kochiku/dai10/siryou4.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "こども大綱（案）参考資料（PDF／2,204KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/zensedai_shakaihosho_kochiku/dai10/sankou1.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "幼児期までのこどもの育ちに係る基本的なビジョン（案）（PDF／835KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/zensedai_shakaihosho_kochiku/dai10/sankou2.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "こどもの居場所づくりに関する指針（案）（PDF／252KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/zensedai_shakaihosho_kochiku/dai10/sankou3.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        }
+      ]
     },
     {
       "id": "meet-2023-12-21-moj-jizoku-hogoshi-6",
@@ -115352,6 +115359,53 @@
           "name": "第1回 事業協同組合等の余裕金運用に関する検討会 議事要旨",
           "url": "https://www.chusho.meti.go.jp/koukai/kenkyukai/jigyo_kyodo/001/gy.pdf",
           "type": "PDF",
+          "manualLock": true
+        }
+      ]
+    },
+    {
+      "id": "meet-2023-11-30-cas-zensedai-hosyo-dai16",
+      "councilId": "cas-zensedai-hosyo",
+      "title": "第16回 全世代型社会保障構築会議",
+      "date": "2023/11/30",
+      "officialUrl": "https://www.cas.go.jp/jp/seisaku/zensedai_hosyo/dai16/gijisidai.html",
+      "category": "COUNCIL",
+      "ministry": "CAS",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "その他情報",
+          "url": "https://www.cas.go.jp/jp/siryou/index.html",
+          "type": "HTML",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "第１６回　全世代型社会保障構築会議　議事次第（PDF／60KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/zensedai_hosyo/dai16/gijisidai.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "これまでの主なご意見（PDF／894KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/zensedai_hosyo/dai16/siryou1.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "菊池構成員　提出資料（PDF／417KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/zensedai_hosyo/dai16/siryou2.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "議事録（PDF／399KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/zensedai_hosyo/dai16/gijiroku.pdf",
+          "type": "PDF",
+          "isPrivate": false,
           "manualLock": true
         }
       ]
@@ -118118,6 +118172,95 @@
           "name": "参考資料６－２ 米国デラウェア州の基本定款のサンプル",
           "url": "https://www.moj.go.jp/content/001405581.pdf",
           "type": "PDF",
+          "manualLock": true
+        }
+      ]
+    },
+    {
+      "id": "meet-2023-10-31-cas-zensedai-hosyo-dai15",
+      "councilId": "cas-zensedai-hosyo",
+      "title": "第15回 全世代型社会保障構築会議",
+      "date": "2023/10/31",
+      "officialUrl": "https://www.cas.go.jp/jp/seisaku/zensedai_hosyo/dai15/gijisidai.html",
+      "category": "COUNCIL",
+      "ministry": "CAS",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "その他情報",
+          "url": "https://www.cas.go.jp/jp/siryou/index.html",
+          "type": "HTML",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "第１５回　全世代型社会保障構築会議　議事次第（PDF／173KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/zensedai_hosyo/dai15/gijisidai.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "前回の会議における主なご意見（PDF／823KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/zensedai_hosyo/dai15/siryou1.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "各分野における今後の改革の方向性（PDF／726KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/zensedai_hosyo/dai15/siryou2.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "新経済・財政再生計画 改革工程表2022（「１.社会保障 」部分抜粋）（PDF／16,011KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/zensedai_hosyo/dai15/siryou3.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "日本商工会議所提出資料（PDF／657KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/zensedai_hosyo/dai15/siryou4.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "経済同友会提出資料（PDF／404KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/zensedai_hosyo/dai15/siryou5.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "日本労働組合総連合会提出資料（PDF／993KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/zensedai_hosyo/dai15/siryou6.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "日本経済団体連合会提出資料（PDF／7,712KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/zensedai_hosyo/dai15/siryou7.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "香取構成員提出資料（PDF／501KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/zensedai_hosyo/dai15/siryou8.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "議事録（PDF／346KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/zensedai_hosyo/dai15/gijiroku.pdf",
+          "type": "PDF",
+          "isPrivate": false,
           "manualLock": true
         }
       ]
@@ -121528,66 +121671,100 @@
       "docCount": 7
     },
     {
-      "id": "meet-2023-09-27-cas-zensedai_shakaihosho_kochiku-50-dai9",
-      "councilId": "cas-zensedai_shakaihosho_kochiku-50",
-      "councilName": "全世代型社会保障構築本部",
+      "id": "meet-2023-10-04-cas-zensedai-hosyo-dai14",
+      "councilId": "cas-zensedai-hosyo",
+      "title": "第14回 全世代型社会保障構築会議",
+      "date": "2023/10/04",
+      "officialUrl": "https://www.cas.go.jp/jp/seisaku/zensedai_hosyo/dai14/gijisidai.html",
+      "category": "COUNCIL",
       "ministry": "CAS",
-      "category": "HQ",
-      "title": "第9回 全世代型社会保障構築本部",
-      "date": "2023/09/27",
-      "updatedAt": "2023/09/27 17:00",
-      "location": "総理大臣官邸 / 各府省庁本庁舎",
-      "summary": "全世代型社会保障構築本部の開催。主要議題の推進状況及び今後の対応方針について審議が行われた。",
-      "agenda": [
-        "いわゆる「年収の壁」への当面の対応について（PDF／88KB）",
-        "（別紙）年収の壁・支援強化パッケージ（PDF／310KB）",
-        "「全世代型社会保障構築会議の開催について」の一部改正について（PDF／142KB）"
-      ],
+      "manualLock": true,
       "materials": [
         {
-          "name": "第９回 全世代型社会保障構築本部 議事次第（PDF／135KB）",
-          "type": "PDF",
-          "size": "PDF",
-          "url": "https://www.cas.go.jp/jp/seisaku/zensedai_shakaihosho_kochiku/dai9/gijisidai.pdf",
-          "isMinutes": false
+          "name": "その他情報",
+          "url": "https://www.cas.go.jp/jp/siryou/index.html",
+          "type": "HTML",
+          "isPrivate": false,
+          "manualLock": true
         },
         {
-          "name": "いわゆる「年収の壁」への当面の対応について（PDF／88KB）",
+          "name": "第１４回　全世代型社会保障構築会議　議事次第（PDF／179KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/zensedai_hosyo/dai14/gijisidai.pdf",
           "type": "PDF",
-          "size": "PDF",
-          "url": "https://www.cas.go.jp/jp/seisaku/zensedai_shakaihosho_kochiku/dai9/siryou1.pdf",
-          "isMinutes": false
+          "isPrivate": false,
+          "manualLock": true
         },
         {
-          "name": "（別紙）年収の壁・支援強化パッケージ（PDF／310KB）",
+          "name": "こども未来戦略方針（概要）（PDF／2,668KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/zensedai_hosyo/dai14/siryou1.pdf",
           "type": "PDF",
-          "size": "PDF",
-          "url": "https://www.cas.go.jp/jp/seisaku/zensedai_shakaihosho_kochiku/dai9/siryou1_bessi.pdf",
-          "isMinutes": false
+          "isPrivate": false,
+          "manualLock": true
         },
         {
-          "name": "「全世代型社会保障構築会議の開催について」の一部改正について（PDF／142KB）",
+          "name": "全世代型社会保障構築会議報告書に関する取組状況（PDF／4,473KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/zensedai_hosyo/dai14/siryou2.pdf",
           "type": "PDF",
-          "size": "PDF",
-          "url": "https://www.cas.go.jp/jp/seisaku/zensedai_shakaihosho_kochiku/dai9/siryou2.pdf",
-          "isMinutes": false
+          "isPrivate": false,
+          "manualLock": true
         },
         {
-          "name": "「年収の壁」への当面の対応策（PDF／3,404KB）",
+          "name": "住宅確保要配慮者に対する居住支援機能等のあり方に関する検討状況について（PDF／1,582KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/zensedai_hosyo/dai14/siryou3.pdf",
           "type": "PDF",
-          "size": "PDF",
-          "url": "https://www.cas.go.jp/jp/seisaku/zensedai_shakaihosho_kochiku/dai9/sankou1.pdf",
-          "isMinutes": false
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "全世代型社会保障の構築に向けた「社会保障の改革工程」について（PDF／4,742KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/zensedai_hosyo/dai14/siryou4.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "香取構成員提出資料（PDF／225KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/zensedai_hosyo/dai14/siryou5.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "全世代型社会保障構築会議　報告書（PDF／687KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/zensedai_hosyo/dai14/sankou1.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "こども未来戦略方針（PDF／705KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/zensedai_hosyo/dai14/sankou2.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "経済財政運営と改革の基本方針2023　(抜粋)（PDF／567KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/zensedai_hosyo/dai14/sankou3.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "全世代型社会保障構築会議の開催について」の一部改正について（PDF／142B）",
+          "url": "https://www.cas.go.jp/jp/seisaku/zensedai_hosyo/dai14/sankou4.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "議事録（PDF／425KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/zensedai_hosyo/dai14/gijiroku.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
         }
-      ],
-      "tags": [
-        "全世代型社会",
-        "CAS",
-        "政策会議"
-      ],
-      "officialUrl": "https://www.cas.go.jp/jp/seisaku/zensedai_shakaihosho_kochiku/dai9/gijisidai.html",
-      "hasMinutes": false,
-      "docCount": 5
+      ]
     },
     {
       "id": "meet-2023-09-27-mof-zaiseiseido-bunkakai",
@@ -121799,6 +121976,60 @@
           "name": "総理の一日",
           "url": "https://www.kantei.go.jp/jp/101_kishida/actions/202309/27shihon.html",
           "type": "HTML",
+          "isPrivate": false,
+          "manualLock": true
+        }
+      ]
+    },
+    {
+      "id": "meet-2023-09-27-cas-zensedai_shakaihosho_kochiku-50-dai9",
+      "councilId": "cas-zensedai_shakaihosho_kochiku-50",
+      "title": "第9回 全世代型社会保障構築本部",
+      "date": "2023/09/27",
+      "officialUrl": "https://www.cas.go.jp/jp/seisaku/zensedai_shakaihosho_kochiku/dai9/gijisidai.html",
+      "category": "HEADQUARTERS",
+      "ministry": "CAS",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "その他情報",
+          "url": "https://www.cas.go.jp/jp/siryou/index.html",
+          "type": "HTML",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "第９回　全世代型社会保障構築本部　議事次第（PDF／135KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/zensedai_shakaihosho_kochiku/dai9/gijisidai.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "いわゆる「年収の壁」への当面の対応について（PDF／88KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/zensedai_shakaihosho_kochiku/dai9/siryou1.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "（別紙）年収の壁・支援強化パッケージ（PDF／310KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/zensedai_shakaihosho_kochiku/dai9/siryou1_bessi.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "「全世代型社会保障構築会議の開催について」の一部改正について（PDF／142KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/zensedai_shakaihosho_kochiku/dai9/siryou2.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "「年収の壁」への当面の対応策（PDF／3,404KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/zensedai_shakaihosho_kochiku/dai9/sankou1.pdf",
+          "type": "PDF",
           "isPrivate": false,
           "manualLock": true
         }
@@ -125216,6 +125447,39 @@
       "officialUrl": "https://www.cas.go.jp/jp/seisaku/kagayakujosei/dai13/gijisidai.html",
       "hasMinutes": true,
       "docCount": 6
+    },
+    {
+      "id": "meet-2023-06-13-cas-zensedai_shakaihosho_kochiku-50-dai8",
+      "councilId": "cas-zensedai_shakaihosho_kochiku-50",
+      "title": "第8回 全世代型社会保障構築本部",
+      "date": "2023/06/13",
+      "officialUrl": "https://www.cas.go.jp/jp/seisaku/zensedai_shakaihosho_kochiku/dai8/gijisidai.html",
+      "category": "HEADQUARTERS",
+      "ministry": "CAS",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "その他情報",
+          "url": "https://www.cas.go.jp/jp/siryou/index.html",
+          "type": "HTML",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "第８回　全世代型社会保障構築本部　議事次第（PDF／132KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/zensedai_shakaihosho_kochiku/dai8/gijisidai.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "「こども未来戦略方針」（PDF／715KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/zensedai_shakaihosho_kochiku/dai8/siryou.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        }
+      ]
     },
     {
       "id": "meet-2023-06-06-fsa-sustainable-finance-dai16",
@@ -129318,6 +129582,39 @@
       ]
     },
     {
+      "id": "meet-2023-04-07-cas-zensedai_shakaihosho_kochiku-50-dai7",
+      "councilId": "cas-zensedai_shakaihosho_kochiku-50",
+      "title": "第7回 全世代型社会保障構築本部",
+      "date": "2023/04/07",
+      "officialUrl": "https://www.cas.go.jp/jp/seisaku/zensedai_shakaihosho_kochiku/dai7/gijisidai.html",
+      "category": "HEADQUARTERS",
+      "ministry": "CAS",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "その他情報",
+          "url": "https://www.cas.go.jp/jp/siryou/index.html",
+          "type": "HTML",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "こども未来戦略会議の開催について（PDF／115KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/zensedai_shakaihosho_kochiku/dai7/siryou1.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "「全世代型社会保障構築会議の開催について」の一部改正について（PDF／142KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/zensedai_shakaihosho_kochiku/dai7/siryou2.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        }
+      ]
+    },
+    {
       "id": "meet-2023-04-04-cas-kokusai_kansen-21-dai8",
       "councilId": "cas-kokusai_kansen-21",
       "councilName": "国際的に脅威となる感染症対策の強化のための国際連携等関係閣僚会議",
@@ -133150,6 +133447,81 @@
       "docCount": 4
     },
     {
+      "id": "meet-2023-02-24-cas-zensedai-hosyo-dai13",
+      "councilId": "cas-zensedai-hosyo",
+      "title": "第13回 全世代型社会保障構築会議",
+      "date": "2023/02/24",
+      "officialUrl": "https://www.cas.go.jp/jp/seisaku/zensedai_hosyo/dai13/gijisidai.html",
+      "category": "COUNCIL",
+      "ministry": "CAS",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "その他情報",
+          "url": "https://www.cas.go.jp/jp/siryou/index.html",
+          "type": "HTML",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "第１３回　全世代型社会保障構築会議　議事次第（PDF／175KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/zensedai_hosyo/dai13/gijisidai.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "全世代対応型の持続可能な社会保障制度を構築するための健康保険法等の一部を改正する法律案について（厚生労働省提出資料）（PDF／8,050KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/zensedai_hosyo/dai13/siryou1.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "こども政策の強化について（内閣官房こども家庭庁設立準備室提出資料）（PDF／291KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/zensedai_hosyo/dai13/siryou2.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "香取構成員提出資料（PDF／1,252KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/zensedai_hosyo/dai13/siryou3.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "冨山構成員提出資料（PDF／360KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/zensedai_hosyo/dai13/siryou4.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "こども政策の強化に関する関係府省会議（第１回）議事要旨（PDF／264KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/zensedai_hosyo/dai13/sankou1.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "こども政策の強化に関する関係府省会議（第２回）議事要旨（PDF／291KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/zensedai_hosyo/dai13/sankou2.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "議事録（PDF／358KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/zensedai_hosyo/dai13/gijiroku.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        }
+      ]
+    },
+    {
       "id": "meet-2023-02-22-moj-minji-hanketsu-db-5",
       "councilId": "moj-minji-hanketsu-db",
       "title": "民事判決情報データベース化検討会（第５回会議）（令和５年２月２２日開催）",
@@ -136601,6 +136973,39 @@
       "docCount": 11
     },
     {
+      "id": "meet-2022-12-23-cas-zensedai_shakaihosho_kochiku-50-dai6",
+      "councilId": "cas-zensedai_shakaihosho_kochiku-50",
+      "title": "第6回 全世代型社会保障構築本部",
+      "date": "2022/12/23",
+      "officialUrl": "https://www.cas.go.jp/jp/seisaku/zensedai_shakaihosho_kochiku/dai6/gijisidai.html",
+      "category": "HEADQUARTERS",
+      "ministry": "CAS",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "その他情報",
+          "url": "https://www.cas.go.jp/jp/siryou/index.html",
+          "type": "HTML",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "介護職員の働く環境改善に向けた取組について（別紙）介護職員の働く環境改善に向けた政策パッケージ（PDF／347KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/zensedai_shakaihosho_kochiku/dai6/siryou1.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "介護職員の働く環境改善に向けた政策パッケージ（概要）（PDF／270KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/zensedai_shakaihosho_kochiku/dai6/siryou2.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        }
+      ]
+    },
+    {
       "id": "meet-2022-12-22-cas-kokusentoc-24-dai56",
       "councilId": "cas-kokusentoc-24",
       "councilName": "国家戦略特別区域諮問会議",
@@ -136950,6 +137355,100 @@
           "name": "第1回 新たなビジネスモデルを踏まえた商工中金の在り方検討会 議事要旨(219KB)",
           "url": "https://www.chusho.meti.go.jp/koukai/kenkyukai/businessmodel_syokoutyukin/001/gy.pdf",
           "type": "PDF",
+          "manualLock": true
+        }
+      ]
+    },
+    {
+      "id": "meet-2022-12-16-cas-zensedai_shakaihosho_kochiku-50-dai5",
+      "councilId": "cas-zensedai_shakaihosho_kochiku-50",
+      "title": "第5回 全世代型社会保障構築本部",
+      "date": "2022/12/16",
+      "officialUrl": "https://www.cas.go.jp/jp/seisaku/zensedai_shakaihosho_kochiku/dai5/gijisidai.html",
+      "category": "HEADQUARTERS",
+      "ministry": "CAS",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "その他情報",
+          "url": "https://www.cas.go.jp/jp/siryou/index.html",
+          "type": "HTML",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "第５回全世代型社会保障構築本部（PDF／173KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/zensedai_shakaihosho_kochiku/dai5/gijisidai.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "全世代型社会保障の構築に向けた取組について（PDF／94KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/zensedai_shakaihosho_kochiku/dai5/siryou1.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "（別紙） 全世代型社会保障構築会議 報告書（PDF／727KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/zensedai_shakaihosho_kochiku/dai5/bessi.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "介護職員の働く環境改善に向けた政策パッケージ（案）（厚生労働大臣提出資料）（PDF／672KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/zensedai_shakaihosho_kochiku/dai5/siryou2.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "費用の継続的な見える化について（令和４年１２月２日公的価格評価検討委員会）（PDF／370KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/zensedai_shakaihosho_kochiku/dai5/sankou1.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        }
+      ]
+    },
+    {
+      "id": "meet-2022-12-16-cas-zensedai-hosyo-dai12",
+      "councilId": "cas-zensedai-hosyo",
+      "title": "第12回 全世代型社会保障構築会議",
+      "date": "2022/12/16",
+      "officialUrl": "https://www.cas.go.jp/jp/seisaku/zensedai_hosyo/dai12/gijisidai.html",
+      "category": "COUNCIL",
+      "ministry": "CAS",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "その他情報",
+          "url": "https://www.cas.go.jp/jp/siryou/index.html",
+          "type": "HTML",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "第１２回　全世代型社会保障構築会議　議事次第（PDF／166KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/zensedai_hosyo/dai12/gijisidai.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "全世代型社会保障構築会議 報告書（PDF／727KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/zensedai_hosyo/dai12/siryou1.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "議事録（PDF／249KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/zensedai_hosyo/dai12/gijiroku.pdf",
+          "type": "PDF",
+          "isPrivate": false,
           "manualLock": true
         }
       ]
@@ -137465,6 +137964,32 @@
       ]
     },
     {
+      "id": "meet-2022-12-14-cas-zensedai-hosyo-dai11",
+      "councilId": "cas-zensedai-hosyo",
+      "title": "第11回 全世代型社会保障構築会議",
+      "date": "2022/12/14",
+      "officialUrl": "https://www.cas.go.jp/jp/seisaku/zensedai_hosyo/dai11/gijisidai.html",
+      "category": "COUNCIL",
+      "ministry": "CAS",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "その他情報",
+          "url": "https://www.cas.go.jp/jp/siryou/index.html",
+          "type": "HTML",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "第１１回全世代型社会保障構築会議　議事次第（PDF／135KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/zensedai_hosyo/dai11/gijisidai.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        }
+      ]
+    },
+    {
       "id": "meet-2022-12-09-cas-ful-103-dai21",
       "councilId": "cas-ful-103",
       "councilName": "新型インフルエンザ等対策推進会議",
@@ -137560,6 +138085,102 @@
       "officialUrl": "https://www.cas.go.jp/jp/seisaku/ful/taisakusuisin/dai21_2026/gijisidai_1.pdf",
       "hasMinutes": true,
       "docCount": 13
+    },
+    {
+      "id": "meet-2022-12-07-cas-zensedai-hosyo-dai10",
+      "councilId": "cas-zensedai-hosyo",
+      "title": "第10回 全世代型社会保障構築会議",
+      "date": "2022/12/07",
+      "officialUrl": "https://www.cas.go.jp/jp/seisaku/zensedai_hosyo/dai10/gijisidai.html",
+      "category": "COUNCIL",
+      "ministry": "CAS",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "その他情報",
+          "url": "https://www.cas.go.jp/jp/siryou/index.html",
+          "type": "HTML",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "第１０回　全世代型社会保障構築会議　議事次第（PDF／103KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/zensedai_hosyo/dai10/gijisidai.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "医療保険制度改革について（厚生労働省提出資料）（PDF／4,258KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/zensedai_hosyo/dai10/siryou1.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "医療提供体制について（厚生労働省提出資料）（PDF／2,424KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/zensedai_hosyo/dai10/siryou2.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "介護保険制度の見直しについて（厚生労働省提出資料）（PDF／9,806KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/zensedai_hosyo/dai10/siryou3.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "全世代型社会保障の基本的考え方（清家座長提出資料）（PDF／558KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/zensedai_hosyo/dai10/siryou4.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "全世代型社会保障の構築に向けた各分野における改革の方向性（論点整理）（PDF／663KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/zensedai_hosyo/dai10/siryou5.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "費用の継続的な見える化について（公的価格評価検討委員会 増田座長提出資料）（PDF／369KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/zensedai_hosyo/dai10/siryou6-1.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "医療法人における職種ごとの給与の見える化について（公的価格評価検討委員会 増田座長提出資料）（PDF／199KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/zensedai_hosyo/dai10/siryou6-2.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "土居構成員提出資料（PDF／123KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/zensedai_hosyo/dai10/siryou7.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "権丈構成員提出資料（PDF／1,417KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/zensedai_hosyo/dai10/siryou8.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "議事録（PDF／456KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/zensedai_hosyo/dai10/gijiroku.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        }
+      ]
     },
     {
       "id": "meet-2022-12-06-smea-innovation-dai1",
@@ -138316,6 +138937,100 @@
       ]
     },
     {
+      "id": "meet-2022-11-24-cas-zensedai_shakaihosho_kochiku-50-dai4",
+      "councilId": "cas-zensedai_shakaihosho_kochiku-50",
+      "title": "第4回 全世代型社会保障構築本部",
+      "date": "2022/11/24",
+      "officialUrl": "https://www.cas.go.jp/jp/seisaku/zensedai_shakaihosho_kochiku/dai4/gijisidai.html",
+      "category": "HEADQUARTERS",
+      "ministry": "CAS",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "その他情報",
+          "url": "https://www.cas.go.jp/jp/siryou/index.html",
+          "type": "HTML",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "第４回全世代型社会保障構築本部_議事次第（PDF／116KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/zensedai_shakaihosho_kochiku/dai4/gijisidai.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "全世代型社会保障構築に向けての「基本的考え方」について（全世代型社会保障構築会議 清家座長提出資料）（PDF／394KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/zensedai_shakaihosho_kochiku/dai4/siryou1-1.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "全世代型社会保障構築会議の論点整理（各分野の改革の方向性）（PDF／743KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/zensedai_shakaihosho_kochiku/dai4/siryou1-2.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "「全世代型社会保障構築会議の開催について」の一部改正について（PDF／139KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/zensedai_shakaihosho_kochiku/dai4/siryou2.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        }
+      ]
+    },
+    {
+      "id": "meet-2022-11-24-cas-zensedai-hosyo-dai9",
+      "councilId": "cas-zensedai-hosyo",
+      "title": "第9回 全世代型社会保障構築会議",
+      "date": "2022/11/24",
+      "officialUrl": "https://www.cas.go.jp/jp/seisaku/zensedai_hosyo/dai9/gijisidai.html",
+      "category": "COUNCIL",
+      "ministry": "CAS",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "その他情報",
+          "url": "https://www.cas.go.jp/jp/siryou/index.html",
+          "type": "HTML",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "第９回　全世代型社会保障構築会議　議事次第（PDF／140KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/zensedai_hosyo/dai9/gijisidai.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "全世代型社会保障構築に向けての「基本的考え方」について（清家座長提出資料）（PDF／394KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/zensedai_hosyo/dai9/siryou1.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "論点整理（各分野の改革の方向性）（案）（PDF／738KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/zensedai_hosyo/dai9/siryou2.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "議事録（PDF／417KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/zensedai_hosyo/dai9/gijiroku.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        }
+      ]
+    },
+    {
       "id": "meet-2022-11-18-nta-kokuzei-shingikai-dai24",
       "councilId": "nta-1252",
       "title": "第24回 国税審議会",
@@ -138991,6 +139706,102 @@
       "officialUrl": "https://www.cas.go.jp/jp/seisaku/ful/taisakusuisin/dai20_2025/gijisidai_1.pdf",
       "hasMinutes": true,
       "docCount": 14
+    },
+    {
+      "id": "meet-2022-11-11-cas-zensedai-hosyo-dai8",
+      "councilId": "cas-zensedai-hosyo",
+      "title": "第8回 全世代型社会保障構築会議",
+      "date": "2022/11/11",
+      "officialUrl": "https://www.cas.go.jp/jp/seisaku/zensedai_hosyo/dai8/gijisidai.html",
+      "category": "COUNCIL",
+      "ministry": "CAS",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "その他情報",
+          "url": "https://www.cas.go.jp/jp/siryou/index.html",
+          "type": "HTML",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "第８回　全世代型社会保障構築会議　議事次第（PDF／222KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/zensedai_hosyo/dai8/gijisidai.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "医療提供体制に関する議論の状況について（増田主査提出資料）（PDF／296KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/zensedai_hosyo/dai8/siryou1.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "働き方に中立的な社会保障制度等の構築について（権丈主査提出資料）（PDF／139KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/zensedai_hosyo/dai8/siryou2.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "全世代型社会保障構築に向けての「基本的考え方」について（清家座長提出資料）（PDF／272KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/zensedai_hosyo/dai8/siryou3.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "地域共生社会（住まい関係）（PDF／3,973KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/zensedai_hosyo/dai8/siryou4.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "物価高克服・経済再生実現のための総合経済対策（概要）（PDF／1,355KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/zensedai_hosyo/dai8/siryou5.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "香取構成員提出資料（PDF／951KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/zensedai_hosyo/dai8/siryou6.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "権丈構成員提出資料（PDF／1,958KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/zensedai_hosyo/dai8/siryou7.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "日本経済団体連合会提出資料（PDF／223KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/zensedai_hosyo/dai8/siryou8.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "日本労働組合総連合会提出資料（PDF／4,654KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/zensedai_hosyo/dai8/siryou9.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "議事録（PDF／562KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/zensedai_hosyo/dai8/gijiroku.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        }
+      ]
     },
     {
       "id": "meet-2022-11-10-cas-atarashii-sihon-107-dai12",
@@ -141267,6 +142078,60 @@
       "manualLock": true
     },
     {
+      "id": "meet-2022-09-28-cas-zensedai-hosyo-dai7",
+      "councilId": "cas-zensedai-hosyo",
+      "title": "第7回 全世代型社会保障構築会議",
+      "date": "2022/09/28",
+      "officialUrl": "https://www.cas.go.jp/jp/seisaku/zensedai_hosyo/dai7/gijisidai.html",
+      "category": "COUNCIL",
+      "ministry": "CAS",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "その他情報",
+          "url": "https://www.cas.go.jp/jp/siryou/index.html",
+          "type": "HTML",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "第７回　全世代型社会保障構築会議　議事次第（PDF／166KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/zensedai_hosyo/dai7/gijisidai.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "子ども・子育て支援の充実について（清家主査提出資料）（PDF／200KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/zensedai_hosyo/dai7/siryou1.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "医療・介護制度の改革について（増田主査提出資料）（PDF／312KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/zensedai_hosyo/dai7/siryou2.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "基礎資料集（PDF／5,176KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/zensedai_hosyo/dai7/sankou1.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "議事録（PDF／363KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/zensedai_hosyo/dai7/gijiroku.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        }
+      ]
+    },
+    {
       "id": "meet-2022-09-26-mof-zaiseiseido-bunkakai",
       "councilId": "mof-zaiseiseido-bunkakai",
       "councilName": "財政制度等審議会 財政制度分科会",
@@ -141906,6 +142771,149 @@
       "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/nousui/shokunou_dai1/gijisidai.html",
       "hasMinutes": true,
       "docCount": 4
+    },
+    {
+      "id": "meet-2022-09-07-cas-zensedai_shakaihosho_kochiku-50-dai3",
+      "councilId": "cas-zensedai_shakaihosho_kochiku-50",
+      "title": "第3回 全世代型社会保障構築本部",
+      "date": "2022/09/07",
+      "officialUrl": "https://www.cas.go.jp/jp/seisaku/zensedai_shakaihosho_kochiku/dai3/gijisidai.html",
+      "category": "HEADQUARTERS",
+      "ministry": "CAS",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "その他情報",
+          "url": "https://www.cas.go.jp/jp/siryou/index.html",
+          "type": "HTML",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "第３回全世代型社会保障構築本部_議事次第（PDF／121KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/zensedai_shakaihosho_kochiku/dai3/gijisidai.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "説明資料（PDF／1,737KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/zensedai_shakaihosho_kochiku/dai3/siryou1.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "「全世代型社会保障構築会議の開催について」の一部改正について（PDF／131KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/zensedai_shakaihosho_kochiku/dai3/siryou2.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "全世代型社会保障構築会議　議論の中間整理（概要）（PDF／565KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/zensedai_shakaihosho_kochiku/dai3/sankou1.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "経済財政運営と改革の基本方針2022（抜粋）（PDF／814KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/zensedai_shakaihosho_kochiku/dai3/sankou2.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "新しい資本主義のグランドデザイン及び実行計画（抜粋）（PDF／620KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/zensedai_shakaihosho_kochiku/dai3/sankou3.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        }
+      ]
+    },
+    {
+      "id": "meet-2022-09-07-cas-zensedai-hosyo-dai6",
+      "councilId": "cas-zensedai-hosyo",
+      "title": "第6回 全世代型社会保障構築会議",
+      "date": "2022/09/07",
+      "officialUrl": "https://www.cas.go.jp/jp/seisaku/zensedai_hosyo/dai6/gijisidai.html",
+      "category": "COUNCIL",
+      "ministry": "CAS",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "その他情報",
+          "url": "https://www.cas.go.jp/jp/siryou/index.html",
+          "type": "HTML",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "第６回全世代型社会保障構築会議　議事次第（PDF／175KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/zensedai_hosyo/dai6/gijisidai.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "第３回全世代型社会保障構築本部における総理発言（PDF／209KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/zensedai_hosyo/dai6/siryou1.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "「議論の中間整理」及び「経済財政運営と改革の基本方針2022」で指摘された主な検討項目（PDF／190KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/zensedai_hosyo/dai6/siryou2.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "全世代型社会保障構築会議　議論の中間整理（概要）（PDF／567KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/zensedai_hosyo/dai6/sankou1.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "経済財政運営と改革の基本方針2022（抜粋）（PDF／814KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/zensedai_hosyo/dai6/sankou2.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "新しい資本主義のグランドデザイン及び実行計画（抜粋）（PDF／620KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/zensedai_hosyo/dai6/sankou3.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "第３回全世代型社会保障構築本部説明資料（PDF／1,739KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/zensedai_hosyo/dai6/sankou4.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "「全世代型社会保障構築会議の開催について」の一部改正について（PDF／131KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/zensedai_hosyo/dai6/sankou5.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "議事録（PDF／306KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/zensedai_hosyo/dai6/gijiroku.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        }
+      ]
     },
     {
       "id": "meet-2022-09-01-fsa-transition-finance-dai5",
@@ -148132,6 +149140,93 @@
       ]
     },
     {
+      "id": "meet-2022-05-17-cas-zensedai_shakaihosho_kochiku-50-dai2",
+      "councilId": "cas-zensedai_shakaihosho_kochiku-50",
+      "title": "第2回 全世代型社会保障構築本部",
+      "date": "2022/05/17",
+      "officialUrl": "https://www.cas.go.jp/jp/seisaku/zensedai_hosyo/dai5/gijisidai.html",
+      "category": "HEADQUARTERS",
+      "ministry": "CAS",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "その他情報",
+          "url": "https://www.cas.go.jp/jp/siryou/index.html",
+          "type": "HTML",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "第５回全世代型社会保障構築会議・第２回全世代型社会保障構築本部　議事次第（PDF／163KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/zensedai_hosyo/dai5/gijisidai.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "全世代型社会保障構築会議 議論の中間整理（PDF／341KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/zensedai_hosyo/dai5/siryou1.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "全世代型社会保障構築会議 議論の中間整理（概要）（PDF／567KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/zensedai_hosyo/dai5/siryou2.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        }
+      ]
+    },
+    {
+      "id": "meet-2022-05-17-cas-zensedai-hosyo-dai5",
+      "councilId": "cas-zensedai-hosyo",
+      "title": "第5回 全世代型社会保障構築会議",
+      "date": "2022/05/17",
+      "officialUrl": "https://www.cas.go.jp/jp/seisaku/zensedai_hosyo/dai5/gijisidai.html",
+      "category": "COUNCIL",
+      "ministry": "CAS",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "その他情報",
+          "url": "https://www.cas.go.jp/jp/siryou/index.html",
+          "type": "HTML",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "第５回全世代型社会保障構築会議・第２回全世代型社会保障構築本部　議事次第（PDF／163KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/zensedai_hosyo/dai5/gijisidai.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "全世代型社会保障構築会議 議論の中間整理（PDF／341KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/zensedai_hosyo/dai5/siryou1.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "全世代型社会保障構築会議 議論の中間整理（概要）（PDF／567KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/zensedai_hosyo/dai5/siryou2.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "議事録（PDF／246KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/zensedai_hosyo/dai5/gijiroku.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        }
+      ]
+    },
+    {
       "id": "meet-2022-05-16-mof-zaiseiseido-bunkakai",
       "councilId": "mof-zaiseiseido-bunkakai",
       "councilName": "財政制度等審議会 財政制度分科会",
@@ -148355,6 +149450,53 @@
           "name": "総理の一日",
           "url": "http://www.kantei.go.jp/jp/101_kishida/actions/202204/28shihon.html",
           "type": "HTML",
+          "isPrivate": false,
+          "manualLock": true
+        }
+      ]
+    },
+    {
+      "id": "meet-2022-04-26-cas-zensedai-hosyo-dai4",
+      "councilId": "cas-zensedai-hosyo",
+      "title": "第4回 全世代型社会保障構築会議",
+      "date": "2022/04/26",
+      "officialUrl": "https://www.cas.go.jp/jp/seisaku/zensedai_hosyo/dai4/gijisidai.html",
+      "category": "COUNCIL",
+      "ministry": "CAS",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "その他情報",
+          "url": "https://www.cas.go.jp/jp/siryou/index.html",
+          "type": "HTML",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "第４回全世代型社会保障構築会議　議事次第（PDF／161KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/zensedai_hosyo/dai4/gijisidai.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "議論の整理（PDF／551KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/zensedai_hosyo/dai4/siryou1.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "（参考）これまでの会議における主なご意見（PDF／815KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/zensedai_hosyo/dai4/siryou2.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "議事録（PDF／468KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/zensedai_hosyo/dai4/gijiroku.pdf",
+          "type": "PDF",
           "isPrivate": false,
           "manualLock": true
         }
@@ -150016,6 +151158,67 @@
           "name": "議事録",
           "url": "https://www.moj.go.jp/content/001374468.pdf",
           "type": "PDF",
+          "manualLock": true
+        }
+      ]
+    },
+    {
+      "id": "meet-2022-03-29-cas-zensedai-hosyo-dai3",
+      "councilId": "cas-zensedai-hosyo",
+      "title": "第3回 全世代型社会保障構築会議",
+      "date": "2022/03/29",
+      "officialUrl": "https://www.cas.go.jp/jp/seisaku/zensedai_hosyo/dai3/gijisidai.html",
+      "category": "COUNCIL",
+      "ministry": "CAS",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "その他情報",
+          "url": "https://www.cas.go.jp/jp/siryou/index.html",
+          "type": "HTML",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "第３回全世代型社会保障構築会議　議事次第（PDF／164KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/zensedai_hosyo/dai3/gijisidai.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "当面の論点（PDF／612KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/zensedai_hosyo/dai3/shiryou1.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "議論の整理（PDF／540KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/zensedai_hosyo/dai3/shiryou2.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "前回の会議における主なご意見（PDF／753KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/zensedai_hosyo/dai3/shiryou3.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "基礎資料集（PDF／15,980KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/zensedai_hosyo/dai3/sankou1.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "議事録（PDF／369KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/zensedai_hosyo/dai3/gijiroku3.pdf",
+          "type": "PDF",
+          "isPrivate": false,
           "manualLock": true
         }
       ]
@@ -152738,6 +153941,67 @@
       "officialUrl": "https://www.chisou.go.jp/tiiki/kokusentoc/dai53/shidai.pdf",
       "hasMinutes": true,
       "docCount": 16
+    },
+    {
+      "id": "meet-2022-03-09-cas-zensedai-hosyo-dai2",
+      "councilId": "cas-zensedai-hosyo",
+      "title": "第2回 全世代型社会保障構築会議",
+      "date": "2022/03/09",
+      "officialUrl": "https://www.cas.go.jp/jp/seisaku/zensedai_hosyo/dai2/gijisidai.html",
+      "category": "COUNCIL",
+      "ministry": "CAS",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "その他情報",
+          "url": "https://www.cas.go.jp/jp/siryou/index.html",
+          "type": "HTML",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "第２回全世代型社会保障構築会議　議事次第（PDF／81KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/zensedai_hosyo/dai2/gijisidai.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "当面の論点（PDF／601KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/zensedai_hosyo/dai2/shiryou1.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "香取構成員提出資料（PDF／557KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/zensedai_hosyo/dai2/shiryou2.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "基礎資料集（PDF／15,004KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/zensedai_hosyo/dai2/sankou1.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "公的価格評価検討委員会中間整理（PDF／650KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/zensedai_hosyo/dai2/sankou2.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "議事録（PDF／421KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/zensedai_hosyo/dai2/gijiroku.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        }
+      ]
     },
     {
       "id": "meet-2022-03-08-fsa-suisai-ryoritsu-dai5",
@@ -155958,6 +157222,46 @@
       "manualLock": true
     },
     {
+      "id": "meet-2022-01-28-cas-zensedai_shakaihosho_kochiku-50-dai1",
+      "councilId": "cas-zensedai_shakaihosho_kochiku-50",
+      "title": "第1回 全世代型社会保障構築本部",
+      "date": "2022/01/28",
+      "officialUrl": "https://www.cas.go.jp/jp/seisaku/zensedai_shakaihosho_kochiku/dai1/gijisidai.html",
+      "category": "HEADQUARTERS",
+      "ministry": "CAS",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "その他情報",
+          "url": "https://www.cas.go.jp/jp/siryou/index.html",
+          "type": "HTML",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "全世代型社会保障構築本部の設置について（PDF／109KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/zensedai_shakaihosho_kochiku/dai1/shiryou1.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "全世代型社会保障構築会議の開催について（PDF／219KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/zensedai_shakaihosho_kochiku/dai1/shiryou2.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "公的価格評価検討委員会中間整理（PDF／582KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/zensedai_shakaihosho_kochiku/dai1/shiryou3.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        }
+      ]
+    },
+    {
       "id": "meet-2022-01-19-nta-sake-bunkakai-dai22",
       "councilId": "nta-sake-bunkakai",
       "title": "第22回 国税審議会 酒類分科会",
@@ -158142,6 +159446,74 @@
       "officialUrl": "https://www.cas.go.jp/jp/seisaku/kyuyo/index.html",
       "hasMinutes": true,
       "docCount": 2
+    },
+    {
+      "id": "meet-2021-11-09-cas-zensedai-hosyo-dai1",
+      "councilId": "cas-zensedai-hosyo",
+      "title": "第1回 全世代型社会保障構築会議",
+      "date": "2021/11/09",
+      "officialUrl": "https://www.cas.go.jp/jp/seisaku/zensedai_hosyo/dai1/gijisidai.html",
+      "category": "COUNCIL",
+      "ministry": "CAS",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "その他情報",
+          "url": "https://www.cas.go.jp/jp/siryou/index.html",
+          "type": "HTML",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "第１回全世代型社会保障構築会議・第１回公的価格評価検討委員会 合同会議 議事次第（PDF／64KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/zensedai_hosyo/dai1/gijisidai.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "全世代型社会保障構築会議の開催について（PDF／116KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/zensedai_hosyo/dai1/shiryou1.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "全世代型社会保障構築会議運営要領（PDF／66KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/zensedai_hosyo/dai1/shiryou2-1.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "公的価格評価検討委員会運営要領（PDF／87KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/zensedai_hosyo/dai1/shiryou2-2.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "これまでの全世代型社会保障の経緯（PDF／664KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/zensedai_hosyo/dai1/shiryou3.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "公的価格の制度について（PDF／1,419KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/zensedai_hosyo/dai1/shiryou4.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "議事録（PDF／254KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/zensedai_hosyo/dai1/gijiroku.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        }
+      ]
     },
     {
       "id": "meet-2021-11-08-mof-zaiseiseido-bunkakai",
@@ -222418,24 +223790,13 @@
       }
     },
     "cas-zensedai-hosyo": {
-      "rule_id": "rule-cas-zensedai-hosyo-ai-v3",
-      "created_at": "2026-08-07 08:56:29",
-      "generator": "AI_Rule_Synthesis_Agent_v3",
-      "ministryQuirk": "内閣官房型: daiXX/gijisidai.html 形式の2段階ネスト構造",
-      "rules": {
-        "encoding": "utf-8",
-        "deep_crawl_enabled": true,
-        "subpage_discovery_pattern": "href=[\"\\']([^\"\\']*(?:dai\\d+|gijisidai|gijiroku)[^\"\\'#]*)[\"\\']",
-        "date_regex": "(?:令和[0-9０-９一-九]+年[0-9０-９一-十二]+月[0-9０-９一-三十一]+日|20[2-9][0-9]年[0-1]?[0-9]月[0-3]?[0-9]日)",
-        "prefer_subpage_date": true,
-        "extract_subpage_materials_primary": true,
-        "pdf_selector": "href=[\"\\']([^\"\\']+\\.pdf)[\"\\']",
-        "private_doc_keyword": "非公開",
-        "detect_private_materials": false,
-        "extract_all_materials": true,
-        "resolve_absolute_urls": true,
-        "top_page_pdf_count": 33
-      }
+      "rule_id": "rule-cas-zensedai-hosyo",
+      "subpage_discovery_pattern": "https://www\\.cas\\.go\\.jp/jp/seisaku/zensedai_hosyo/dai\\d+/gijisidai\\.html",
+      "title_selector": "h1, h2, .title",
+      "date_regex": "(令和\\d+年\\d+月\\d+日|\\d{4}年\\d{1,2}月\\d{1,2}日)",
+      "pdf_selector": "a[href*='.pdf']",
+      "deep_crawl_enabled": true,
+      "manualLock": true
     },
     "cas-kokumin-kaigi": {
       "rule_id": "rule-cas-kokumin-kaigi-ai-v3",
@@ -223918,24 +225279,13 @@
       }
     },
     "cas-zensedai_shakaihosho_kochiku-50": {
-      "rule_id": "rule-cas-zensedai_shakaihosho_kochiku-50-ai-v3",
-      "created_at": "2026-08-07 08:56:36",
-      "generator": "AI_Rule_Synthesis_Agent_v3",
-      "ministryQuirk": "内閣官房型: daiXX/gijisidai.html 形式の2段階ネスト構造",
-      "rules": {
-        "encoding": "utf-8",
-        "deep_crawl_enabled": true,
-        "subpage_discovery_pattern": "href=[\"\\']([^\"\\']*(?:dai\\d+|gijisidai|gijiroku)[^\"\\'#]*)[\"\\']",
-        "date_regex": "(?:令和[0-9０-９一-九]+年[0-9０-９一-十二]+月[0-9０-９一-三十一]+日|20[2-9][0-9]年[0-1]?[0-9]月[0-3]?[0-9]日)",
-        "prefer_subpage_date": true,
-        "extract_subpage_materials_primary": true,
-        "pdf_selector": "href=[\"\\']([^\"\\']+\\.pdf)[\"\\']",
-        "private_doc_keyword": "非公開",
-        "detect_private_materials": false,
-        "extract_all_materials": true,
-        "resolve_absolute_urls": true,
-        "top_page_pdf_count": 16
-      }
+      "rule_id": "rule-cas-zensedai_shakaihosho_kochiku-50",
+      "subpage_discovery_pattern": "https://www\\.cas\\.go\\.jp/jp/seisaku/zensedai_shakaihosho_kochiku/dai\\d+/gijisidai\\.html",
+      "title_selector": "h1, h2, .title",
+      "date_regex": "(令和\\d+年\\d+月\\d+日|\\d{4}年\\d{1,2}月\\d{1,2}日)",
+      "pdf_selector": "a[href*='.pdf']",
+      "deep_crawl_enabled": true,
+      "manualLock": true
     },
     "cas-kaiyou-51": {
       "rule_id": "rule-cas-kaiyou-51-ai-v3",
