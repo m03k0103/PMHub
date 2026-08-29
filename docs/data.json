@@ -1,4 +1,511 @@
 {
+  "ministries": {
+    "CAO": {
+      "name": "内閣府",
+      "kanji": "内閣府",
+      "code": "CAO",
+      "color": "var(--color-cao)",
+      "officialUrl": "https://www.cao.go.jp",
+      "councilsUrls": [
+        "https://www.cao.go.jp/council.html",
+        "https://www.cao.go.jp/zei-cho/gijiroku/index.html"
+      ],
+      "hasCouncils": true
+    },
+    "CAS": {
+      "name": "内閣官房",
+      "kanji": "内閣官房",
+      "code": "CAS",
+      "color": "var(--color-cas)",
+      "officialUrl": "https://www.cas.go.jp",
+      "councilsUrls": [
+        "https://www.cas.go.jp/jp/seisakukaigi/"
+      ],
+      "hasCouncils": true
+    },
+    "CLB": {
+      "name": "内閣法制局",
+      "kanji": "内閣法制局",
+      "code": "CLB",
+      "color": "var(--color-clb)",
+      "officialUrl": "https://www.clb.go.jp/",
+      "councilsUrls": [],
+      "hasCouncils": false
+    },
+    "JINJI": {
+      "name": "人事院",
+      "kanji": "人事院",
+      "code": "JINJI",
+      "color": "var(--color-jinji)",
+      "officialUrl": "https://www.jinji.go.jp/",
+      "councilsUrls": [],
+      "hasCouncils": false
+    },
+    "KUNAICHO": {
+      "name": "宮内庁",
+      "kanji": "宮内庁",
+      "code": "KUNAICHO",
+      "color": "var(--color-kunaicho)",
+      "officialUrl": "https://www.kunaicho.go.jp/",
+      "councilsUrls": [],
+      "hasCouncils": false
+    },
+    "DIGITAL": {
+      "name": "デジタル庁",
+      "kanji": "デジタル庁",
+      "code": "DIGITAL",
+      "color": "var(--color-digital)",
+      "officialUrl": "https://www.digital.go.jp",
+      "councilsUrls": [
+        "https://www.digital.go.jp/councils"
+      ],
+      "hasCouncils": true
+    },
+    "CFA": {
+      "name": "こども家庭庁",
+      "kanji": "こども家庭庁",
+      "code": "CFA",
+      "color": "var(--color-cfa)",
+      "officialUrl": "https://www.cfa.go.jp",
+      "councilsUrls": [
+        "https://www.cfa.go.jp/councils"
+      ],
+      "hasCouncils": true
+    },
+    "RA": {
+      "name": "復興庁",
+      "kanji": "復興庁",
+      "code": "RA",
+      "color": "var(--color-ra)",
+      "officialUrl": "https://www.reconstruction.go.jp",
+      "councilsUrls": [],
+      "hasCouncils": false
+    },
+    "JFTC": {
+      "name": "公正取引委員会",
+      "kanji": "公正取引委員会",
+      "code": "JFTC",
+      "color": "var(--color-jftc)",
+      "officialUrl": "https://www.jftc.go.jp/",
+      "councilsUrls": [],
+      "hasCouncils": false
+    },
+    "NPSC": {
+      "name": "国家公安委員会",
+      "kanji": "国家公安委員会",
+      "code": "NPSC",
+      "color": "var(--color-npsc)",
+      "officialUrl": "https://www.npsc.go.jp",
+      "councilsUrls": [],
+      "hasCouncils": false
+    },
+    "NPA": {
+      "name": "警察庁",
+      "kanji": "警察庁",
+      "code": "NPA",
+      "color": "var(--color-npa)",
+      "officialUrl": "https://www.npa.go.jp",
+      "councilsUrls": [
+        "https://www.npa.go.jp/policies/council/index.html"
+      ],
+      "hasCouncils": true
+    },
+    "PPC": {
+      "name": "個人情報保護委員会",
+      "kanji": "個人情報保護委員会",
+      "code": "PPC",
+      "color": "var(--color-ppc)",
+      "officialUrl": "https://www.ppc.go.jp",
+      "councilsUrls": [
+        "https://www.ppc.go.jp/enforcement/minutes/"
+      ],
+      "hasCouncils": true
+    },
+    "JCRC": {
+      "name": "カジノ管理委員会",
+      "kanji": "カジノ管理委員会",
+      "code": "JCRC",
+      "color": "var(--color-jcrc)",
+      "officialUrl": "https://www.jcrc.go.jp/index.html",
+      "councilsUrls": [
+        "https://www.jcrc.go.jp/activity/holding.html"
+      ],
+      "hasCouncils": true
+    },
+    "FSA": {
+      "name": "金融庁",
+      "kanji": "金融庁",
+      "code": "FSA",
+      "color": "var(--color-fsa)",
+      "officialUrl": "https://www.fsa.go.jp",
+      "councilsUrls": [
+        "https://www.fsa.go.jp/singi/"
+      ],
+      "hasCouncils": true
+    },
+    "CAA": {
+      "name": "消費者庁",
+      "kanji": "消費者庁",
+      "code": "CAA",
+      "color": "var(--color-caa)",
+      "officialUrl": "https://www.caa.go.jp",
+      "councilsUrls": [
+        "https://www.caa.go.jp/policies/council/"
+      ],
+      "hasCouncils": true
+    },
+    "FSC": {
+      "name": "食品安全委員会",
+      "kanji": "食品安全委員会",
+      "code": "FSC",
+      "color": "var(--color-fsc)",
+      "officialUrl": "https://www.fsc.go.jp",
+      "councilsUrls": [
+        "https://www.fsc.go.jp/iinkai_annai/"
+      ],
+      "hasCouncils": true
+    },
+    "MIC": {
+      "name": "総務省",
+      "kanji": "総務省",
+      "code": "MIC",
+      "color": "var(--color-mic)",
+      "officialUrl": "https://www.soumu.go.jp",
+      "councilsUrls": [
+        "https://www.soumu.go.jp/menu_sosiki/singi/"
+      ],
+      "hasCouncils": true
+    },
+    "CCAC": {
+      "name": "公害等調整委員会",
+      "kanji": "公害等調整委員会",
+      "code": "CCAC",
+      "color": "var(--color-ccac)",
+      "officialUrl": "https://www.soumu.go.jp/kouchoi/",
+      "councilsUrls": [],
+      "hasCouncils": false
+    },
+    "FDMA": {
+      "name": "消防庁",
+      "kanji": "消防庁",
+      "code": "FDMA",
+      "color": "var(--color-fdma)",
+      "officialUrl": "https://www.fdma.go.jp",
+      "councilsUrls": [
+        "https://www.fdma.go.jp/singi_kento"
+      ],
+      "hasCouncils": true
+    },
+    "MOJ": {
+      "name": "法務省",
+      "kanji": "法務省",
+      "code": "MOJ",
+      "color": "var(--color-moj)",
+      "officialUrl": "https://www.moj.go.jp",
+      "councilsUrls": [
+        "https://www.moj.go.jp/shingikai_index.html",
+        "https://www.moj.go.jp/kentoukai_index.html",
+        "https://www.moj.go.jp/sonota_index.html"
+      ],
+      "hasCouncils": true
+    },
+    "ISA": {
+      "name": "出入国在留管理庁",
+      "kanji": "出入国在留管理庁",
+      "code": "ISA",
+      "color": "var(--color-isa)",
+      "officialUrl": "https://www.moj.go.jp/isa/",
+      "councilsUrls": [
+        "https://www.moj.go.jp/isa/policies/conference/seisaku_index.html"
+      ],
+      "hasCouncils": true
+    },
+    "KOUANSHIN": {
+      "name": "公安審査委員会",
+      "kanji": "公安審査委員会",
+      "code": "KOUANSHIN",
+      "color": "var(--color-kouanshin)",
+      "officialUrl": "https://www.moj.go.jp/kouanshin/kouanshinsa_index.html",
+      "councilsUrls": [],
+      "hasCouncils": false
+    },
+    "PSIA": {
+      "name": "公安調査庁",
+      "kanji": "公安調査庁",
+      "code": "PSIA",
+      "color": "var(--color-psia)",
+      "officialUrl": "https://www.moj.go.jp/psia/",
+      "councilsUrls": [],
+      "hasCouncils": false
+    },
+    "MOFA": {
+      "name": "外務省",
+      "kanji": "外務省",
+      "code": "MOFA",
+      "color": "var(--color-mofa)",
+      "officialUrl": "https://www.mofa.go.jp/mofaj/index.html",
+      "councilsUrls": [
+        "https://www.mofa.go.jp/mofaj/annai/shingikai/"
+      ],
+      "hasCouncils": true
+    },
+    "MOF": {
+      "name": "財務省",
+      "kanji": "財務省",
+      "code": "MOF",
+      "color": "var(--color-mof)",
+      "officialUrl": "https://www.mof.go.jp",
+      "councilsUrls": [
+        "https://www.mof.go.jp/about_mof/councils/"
+      ],
+      "hasCouncils": true
+    },
+    "NTA": {
+      "name": "国税庁",
+      "kanji": "国税庁",
+      "code": "NTA",
+      "color": "var(--color-nta)",
+      "officialUrl": "https://www.nta.go.jp/",
+      "councilsUrls": [
+        "https://www.nta.go.jp/about/council/kenkyu.htm"
+      ],
+      "hasCouncils": true
+    },
+    "MEXT": {
+      "name": "文部科学省",
+      "kanji": "文部科学省",
+      "code": "MEXT",
+      "color": "var(--color-mext)",
+      "officialUrl": "https://www.mext.go.jp",
+      "councilsUrls": [
+        "https://www.mext.go.jp/b_menu/shingi/main_b5.htm"
+      ],
+      "hasCouncils": true
+    },
+    "JSA": {
+      "name": "スポーツ庁",
+      "kanji": "スポーツ庁",
+      "code": "JSA",
+      "color": "var(--color-jsa)",
+      "officialUrl": "https://www.mext.go.jp/sports/",
+      "councilsUrls": [
+        "https://www.mext.go.jp/sports/b_menu/shingi/"
+      ],
+      "hasCouncils": true
+    },
+    "ACA": {
+      "name": "文化庁",
+      "kanji": "文化庁",
+      "code": "ACA",
+      "color": "var(--color-aca)",
+      "officialUrl": "https://www.bunka.go.jp",
+      "councilsUrls": [
+        "https://www.bunka.go.jp/seisaku/bunkashingikai/"
+      ],
+      "hasCouncils": true
+    },
+    "MHLW": {
+      "name": "厚生労働省",
+      "kanji": "厚生労働省",
+      "code": "MHLW",
+      "color": "var(--color-mhlw)",
+      "officialUrl": "https://www.mhlw.go.jp/index.html",
+      "councilsUrls": [
+        "https://www.mhlw.go.jp/stf/shingi/indexshingi.html",
+        "https://www.mhlw.go.jp/stf/shingi/indexshingiother_129216.html"
+      ],
+      "hasCouncils": true
+    },
+    "CLRC": {
+      "name": "中央労働委員会",
+      "kanji": "中央労働委員会",
+      "code": "CLRC",
+      "color": "var(--color-clrc)",
+      "officialUrl": "https://www.mhlw.go.jp/churoi/",
+      "councilsUrls": [],
+      "hasCouncils": false
+    },
+    "MAFF": {
+      "name": "農林水産省",
+      "kanji": "農林水産省",
+      "code": "MAFF",
+      "color": "var(--color-maff)",
+      "officialUrl": "https://www.maff.go.jp",
+      "councilsUrls": [
+        "https://www.maff.go.jp/j/council/",
+        "https://www.maff.go.jp/j/study/"
+      ],
+      "hasCouncils": true
+    },
+    "RINYA": {
+      "name": "林野庁",
+      "kanji": "林野庁",
+      "code": "RINYA",
+      "color": "var(--color-rinya)",
+      "officialUrl": "https://www.rinya.maff.go.jp",
+      "councilsUrls": [
+        "https://www.rinya.maff.go.jp/j/kouhou/singikai.html"
+      ],
+      "hasCouncils": true
+    },
+    "JFA": {
+      "name": "水産庁",
+      "kanji": "水産庁",
+      "code": "JFA",
+      "color": "var(--color-jfa)",
+      "officialUrl": "https://www.jfa.maff.go.jp/index.html",
+      "councilsUrls": [
+        "https://www.jfa.maff.go.jp/j/council/",
+        "https://www.jfa.maff.go.jp/j/study/"
+      ],
+      "hasCouncils": true
+    },
+    "METI": {
+      "name": "経済産業省",
+      "kanji": "経済産業省",
+      "code": "METI",
+      "color": "var(--color-meti)",
+      "officialUrl": "https://www.meti.go.jp",
+      "councilsUrls": [
+        "https://www.meti.go.jp/shingikai/index_links.html",
+        "https://www.meti.go.jp/shingikai/energy_environment/"
+      ],
+      "hasCouncils": true
+    },
+    "ANRE": {
+      "name": "資源エネルギー庁",
+      "kanji": "資源エネルギー庁",
+      "code": "ANRE",
+      "color": "var(--color-anre)",
+      "officialUrl": "https://www.enecho.meti.go.jp",
+      "councilsUrls": [
+        "https://www.enecho.meti.go.jp/committee/council/",
+        "https://www.enecho.meti.go.jp/committee/studygroup/",
+        "https://www.meti.go.jp/shingikai/energy_environment/"
+      ],
+      "hasCouncils": true
+    },
+    "JPO": {
+      "name": "特許庁",
+      "kanji": "特許庁",
+      "code": "JPO",
+      "color": "var(--color-jpo)",
+      "officialUrl": "https://www.jpo.go.jp/index.html",
+      "councilsUrls": [],
+      "hasCouncils": false
+    },
+    "SMEA": {
+      "name": "中小企業庁",
+      "kanji": "中小企業庁",
+      "code": "SMEA",
+      "color": "var(--color-smea)",
+      "officialUrl": "https://www.chusho.meti.go.jp",
+      "councilsUrls": [
+        "https://www.chusho.meti.go.jp/koukai/shingikai/",
+        "https://www.chusho.meti.go.jp/koukai/kenkyukai/index.html"
+      ],
+      "hasCouncils": true
+    },
+    "MLIT": {
+      "name": "国土交通省",
+      "kanji": "国土交通省",
+      "code": "MLIT",
+      "color": "var(--color-mlit)",
+      "officialUrl": "https://www.mlit.go.jp",
+      "councilsUrls": [
+        "https://www.mlit.go.jp/policy/shingikai/shingikaiList.html"
+      ],
+      "hasCouncils": true
+    },
+    "JTA": {
+      "name": "観光庁",
+      "kanji": "観光庁",
+      "code": "JTA",
+      "color": "var(--color-jta)",
+      "officialUrl": "https://www.mlit.go.jp/kankocho/index.html",
+      "councilsUrls": [],
+      "hasCouncils": false
+    },
+    "JMA": {
+      "name": "気象庁",
+      "kanji": "気象庁",
+      "code": "JMA",
+      "color": "var(--color-jma)",
+      "officialUrl": "https://www.jma.go.jp/jma/index.html",
+      "councilsUrls": [],
+      "hasCouncils": false
+    },
+    "JTSB": {
+      "name": "運輸安全委員会",
+      "kanji": "運輸安全委員会",
+      "code": "JTSB",
+      "color": "var(--color-jtsb)",
+      "officialUrl": "https://www.mlit.go.jp/jtsb/index.html",
+      "councilsUrls": [],
+      "hasCouncils": false
+    },
+    "JCG": {
+      "name": "海上保安庁",
+      "kanji": "海上保安庁",
+      "code": "JCG",
+      "color": "var(--color-jcg)",
+      "officialUrl": "https://www.kaiho.mlit.go.jp/",
+      "councilsUrls": [],
+      "hasCouncils": false
+    },
+    "MOE": {
+      "name": "環境省",
+      "kanji": "環境省",
+      "code": "MOE",
+      "color": "var(--color-moe)",
+      "officialUrl": "https://www.env.go.jp",
+      "councilsUrls": [
+        "https://www.env.go.jp/council/b_info.html",
+        "https://www.env.go.jp/council/sonota.html"
+      ],
+      "hasCouncils": false
+    },
+    "NRA": {
+      "name": "原子力規制委員会",
+      "kanji": "原子力規制委員会",
+      "code": "NRA",
+      "color": "var(--color-nra)",
+      "officialUrl": "https://www.nra.go.jp",
+      "councilsUrls": [
+        "https://www.nra.go.jp/Selection/meeting_index.html"
+      ],
+      "hasCouncils": true
+    },
+    "MOD": {
+      "name": "防衛省",
+      "kanji": "防衛省",
+      "code": "MOD",
+      "color": "var(--color-mod)",
+      "officialUrl": "https://www.mod.go.jp",
+      "councilsUrls": [
+        "https://www.mod.go.jp/j/policy/agenda/meeting/"
+      ],
+      "hasCouncils": true
+    },
+    "ATLA": {
+      "name": "防衛装備庁",
+      "kanji": "防衛装備庁",
+      "code": "ATLA",
+      "color": "var(--color-atla)",
+      "officialUrl": "https://www.mod.go.jp/atla/",
+      "councilsUrls": [],
+      "hasCouncils": false
+    },
+    "BOAJ": {
+      "name": "会計検査院",
+      "kanji": "会計検査院",
+      "code": "BOAJ",
+      "color": "var(--color-boaj)",
+      "officialUrl": "https://www.jbaudit.go.jp",
+      "councilsUrls": [],
+      "hasCouncils": false
+    }
+  },
   "councils": [
     {
       "id": "cao-ai_strategy",
@@ -158115,513 +158622,6 @@
       "docCount": 9
     }
   ],
-  "ministries": {
-    "CAO": {
-      "name": "内閣府",
-      "kanji": "内閣府",
-      "code": "CAO",
-      "color": "var(--color-cao)",
-      "officialUrl": "https://www.cao.go.jp",
-      "councilsUrls": [
-        "https://www.cao.go.jp/council.html",
-        "https://www.cao.go.jp/zei-cho/gijiroku/index.html"
-      ],
-      "hasCouncils": true
-    },
-    "CAS": {
-      "name": "内閣官房",
-      "kanji": "内閣官房",
-      "code": "CAS",
-      "color": "var(--color-cas)",
-      "officialUrl": "https://www.cas.go.jp",
-      "councilsUrls": [
-        "https://www.cas.go.jp/jp/seisakukaigi/"
-      ],
-      "hasCouncils": true
-    },
-    "CLB": {
-      "name": "内閣法制局",
-      "kanji": "内閣法制局",
-      "code": "CLB",
-      "color": "var(--color-clb)",
-      "officialUrl": "https://www.clb.go.jp/",
-      "councilsUrls": [],
-      "hasCouncils": false
-    },
-    "JINJI": {
-      "name": "人事院",
-      "kanji": "人事院",
-      "code": "JINJI",
-      "color": "var(--color-jinji)",
-      "officialUrl": "https://www.jinji.go.jp/",
-      "councilsUrls": [],
-      "hasCouncils": false
-    },
-    "KUNAICHO": {
-      "name": "宮内庁",
-      "kanji": "宮内庁",
-      "code": "KUNAICHO",
-      "color": "var(--color-kunaicho)",
-      "officialUrl": "https://www.kunaicho.go.jp/",
-      "councilsUrls": [],
-      "hasCouncils": false
-    },
-    "DIGITAL": {
-      "name": "デジタル庁",
-      "kanji": "デジタル庁",
-      "code": "DIGITAL",
-      "color": "var(--color-digital)",
-      "officialUrl": "https://www.digital.go.jp",
-      "councilsUrls": [
-        "https://www.digital.go.jp/councils"
-      ],
-      "hasCouncils": true
-    },
-    "CFA": {
-      "name": "こども家庭庁",
-      "kanji": "こども家庭庁",
-      "code": "CFA",
-      "color": "var(--color-cfa)",
-      "officialUrl": "https://www.cfa.go.jp",
-      "councilsUrls": [
-        "https://www.cfa.go.jp/councils"
-      ],
-      "hasCouncils": true
-    },
-    "RA": {
-      "name": "復興庁",
-      "kanji": "復興庁",
-      "code": "RA",
-      "color": "var(--color-ra)",
-      "officialUrl": "https://www.reconstruction.go.jp",
-      "councilsUrls": [],
-      "hasCouncils": false
-    },
-    "JFTC": {
-      "name": "公正取引委員会",
-      "kanji": "公正取引委員会",
-      "code": "JFTC",
-      "color": "var(--color-jftc)",
-      "officialUrl": "https://www.jftc.go.jp/",
-      "councilsUrls": [],
-      "hasCouncils": false
-    },
-    "NPSC": {
-      "name": "国家公安委員会",
-      "kanji": "国家公安委員会",
-      "code": "NPSC",
-      "color": "var(--color-npsc)",
-      "officialUrl": "https://www.npsc.go.jp",
-      "councilsUrls": [],
-      "hasCouncils": false
-    },
-    "NPA": {
-      "name": "警察庁",
-      "kanji": "警察庁",
-      "code": "NPA",
-      "color": "var(--color-npa)",
-      "officialUrl": "https://www.npa.go.jp",
-      "councilsUrls": [
-        "https://www.npa.go.jp/policies/council/index.html"
-      ],
-      "hasCouncils": true
-    },
-    "PPC": {
-      "name": "個人情報保護委員会",
-      "kanji": "個人情報保護委員会",
-      "code": "PPC",
-      "color": "var(--color-ppc)",
-      "officialUrl": "https://www.ppc.go.jp",
-      "councilsUrls": [
-        "https://www.ppc.go.jp/enforcement/minutes/"
-      ],
-      "hasCouncils": true
-    },
-    "JCRC": {
-      "name": "カジノ管理委員会",
-      "kanji": "カジノ管理委員会",
-      "code": "JCRC",
-      "color": "var(--color-jcrc)",
-      "officialUrl": "https://www.jcrc.go.jp/index.html",
-      "councilsUrls": [
-        "https://www.jcrc.go.jp/activity/holding.html"
-      ],
-      "hasCouncils": true
-    },
-    "FSA": {
-      "name": "金融庁",
-      "kanji": "金融庁",
-      "code": "FSA",
-      "color": "var(--color-fsa)",
-      "officialUrl": "https://www.fsa.go.jp",
-      "councilsUrls": [
-        "https://www.fsa.go.jp/singi/"
-      ],
-      "hasCouncils": true
-    },
-    "CAA": {
-      "name": "消費者庁",
-      "kanji": "消費者庁",
-      "code": "CAA",
-      "color": "var(--color-caa)",
-      "officialUrl": "https://www.caa.go.jp",
-      "councilsUrls": [
-        "https://www.caa.go.jp/policies/council/"
-      ],
-      "hasCouncils": true
-    },
-    "FSC": {
-      "name": "食品安全委員会",
-      "kanji": "食品安全委員会",
-      "code": "FSC",
-      "color": "var(--color-fsc)",
-      "officialUrl": "https://www.fsc.go.jp",
-      "councilsUrls": [
-        "https://www.fsc.go.jp/iinkai_annai/"
-      ],
-      "hasCouncils": true
-    },
-    "MIC": {
-      "name": "総務省",
-      "kanji": "総務省",
-      "code": "MIC",
-      "color": "var(--color-mic)",
-      "officialUrl": "https://www.soumu.go.jp",
-      "councilsUrls": [
-        "https://www.soumu.go.jp/menu_sosiki/singi/"
-      ],
-      "hasCouncils": true
-    },
-    "CCAC": {
-      "name": "公害等調整委員会",
-      "kanji": "公害等調整委員会",
-      "code": "CCAC",
-      "color": "var(--color-ccac)",
-      "officialUrl": "https://www.soumu.go.jp/kouchoi/",
-      "councilsUrls": [],
-      "hasCouncils": false
-    },
-    "FDMA": {
-      "name": "消防庁",
-      "kanji": "消防庁",
-      "code": "FDMA",
-      "color": "var(--color-fdma)",
-      "officialUrl": "https://www.fdma.go.jp",
-      "councilsUrls": [
-        "https://www.fdma.go.jp/singi_kento"
-      ],
-      "hasCouncils": true
-    },
-    "MOJ": {
-      "name": "法務省",
-      "kanji": "法務省",
-      "code": "MOJ",
-      "color": "var(--color-moj)",
-      "officialUrl": "https://www.moj.go.jp",
-      "councilsUrls": [
-        "https://www.moj.go.jp/shingikai_index.html",
-        "https://www.moj.go.jp/kentoukai_index.html",
-        "https://www.moj.go.jp/sonota_index.html"
-      ],
-      "hasCouncils": true
-    },
-    "ISA": {
-      "name": "出入国在留管理庁",
-      "kanji": "出入国在留管理庁",
-      "code": "ISA",
-      "color": "var(--color-isa)",
-      "officialUrl": "https://www.moj.go.jp/isa/",
-      "councilsUrls": [
-        "https://www.moj.go.jp/isa/policies/conference/seisaku_index.html"
-      ],
-      "hasCouncils": true
-    },
-    "KOUANSHIN": {
-      "name": "公安審査委員会",
-      "kanji": "公安審査委員会",
-      "code": "KOUANSHIN",
-      "color": "var(--color-kouanshin)",
-      "officialUrl": "https://www.moj.go.jp/kouanshin/kouanshinsa_index.html",
-      "councilsUrls": [],
-      "hasCouncils": false
-    },
-    "PSIA": {
-      "name": "公安調査庁",
-      "kanji": "公安調査庁",
-      "code": "PSIA",
-      "color": "var(--color-psia)",
-      "officialUrl": "https://www.moj.go.jp/psia/",
-      "councilsUrls": [],
-      "hasCouncils": false
-    },
-    "MOFA": {
-      "name": "外務省",
-      "kanji": "外務省",
-      "code": "MOFA",
-      "color": "var(--color-mofa)",
-      "officialUrl": "https://www.mofa.go.jp/mofaj/index.html",
-      "councilsUrls": [
-        "https://www.mofa.go.jp/mofaj/annai/shingikai/"
-      ],
-      "hasCouncils": true
-    },
-    "MOF": {
-      "name": "財務省",
-      "kanji": "財務省",
-      "code": "MOF",
-      "color": "var(--color-mof)",
-      "officialUrl": "https://www.mof.go.jp",
-      "councilsUrls": [
-        "https://www.mof.go.jp/about_mof/councils/"
-      ],
-      "hasCouncils": true
-    },
-    "NTA": {
-      "name": "国税庁",
-      "kanji": "国税庁",
-      "code": "NTA",
-      "color": "var(--color-nta)",
-      "officialUrl": "https://www.nta.go.jp/",
-      "councilsUrls": [
-        "https://www.nta.go.jp/about/council/kenkyu.htm"
-      ],
-      "hasCouncils": true
-    },
-    "MEXT": {
-      "name": "文部科学省",
-      "kanji": "文部科学省",
-      "code": "MEXT",
-      "color": "var(--color-mext)",
-      "officialUrl": "https://www.mext.go.jp",
-      "councilsUrls": [
-        "https://www.mext.go.jp/b_menu/shingi/main_b5.htm"
-      ],
-      "hasCouncils": true
-    },
-    "JSA": {
-      "name": "スポーツ庁",
-      "kanji": "スポーツ庁",
-      "code": "JSA",
-      "color": "var(--color-jsa)",
-      "officialUrl": "https://www.mext.go.jp/sports/",
-      "councilsUrls": [
-        "https://www.mext.go.jp/sports/b_menu/shingi/"
-      ],
-      "hasCouncils": true
-    },
-    "ACA": {
-      "name": "文化庁",
-      "kanji": "文化庁",
-      "code": "ACA",
-      "color": "var(--color-aca)",
-      "officialUrl": "https://www.bunka.go.jp",
-      "councilsUrls": [
-        "https://www.bunka.go.jp/seisaku/bunkashingikai/"
-      ],
-      "hasCouncils": true
-    },
-    "MHLW": {
-      "name": "厚生労働省",
-      "kanji": "厚生労働省",
-      "code": "MHLW",
-      "color": "var(--color-mhlw)",
-      "officialUrl": "https://www.mhlw.go.jp/index.html",
-      "councilsUrls": [
-        "https://www.mhlw.go.jp/stf/shingi/indexshingi.html",
-        "https://www.mhlw.go.jp/stf/shingi/indexshingiother_129216.html"
-      ],
-      "hasCouncils": true
-    },
-    "CLRC": {
-      "name": "中央労働委員会",
-      "kanji": "中央労働委員会",
-      "code": "CLRC",
-      "color": "var(--color-clrc)",
-      "officialUrl": "https://www.mhlw.go.jp/churoi/",
-      "councilsUrls": [],
-      "hasCouncils": false
-    },
-    "MAFF": {
-      "name": "農林水産省",
-      "kanji": "農林水産省",
-      "code": "MAFF",
-      "color": "var(--color-maff)",
-      "officialUrl": "https://www.maff.go.jp",
-      "councilsUrls": [
-        "https://www.maff.go.jp/j/council/",
-        "https://www.maff.go.jp/j/study/"
-      ],
-      "hasCouncils": true
-    },
-    "RINYA": {
-      "name": "林野庁",
-      "kanji": "林野庁",
-      "code": "RINYA",
-      "color": "var(--color-rinya)",
-      "officialUrl": "https://www.rinya.maff.go.jp",
-      "councilsUrls": [
-        "https://www.rinya.maff.go.jp/j/kouhou/singikai.html"
-      ],
-      "hasCouncils": true
-    },
-    "JFA": {
-      "name": "水産庁",
-      "kanji": "水産庁",
-      "code": "JFA",
-      "color": "var(--color-jfa)",
-      "officialUrl": "https://www.jfa.maff.go.jp/index.html",
-      "councilsUrls": [
-        "https://www.jfa.maff.go.jp/j/council/",
-        "https://www.jfa.maff.go.jp/j/study/"
-      ],
-      "hasCouncils": true
-    },
-    "METI": {
-      "name": "経済産業省",
-      "kanji": "経済産業省",
-      "code": "METI",
-      "color": "var(--color-meti)",
-      "officialUrl": "https://www.meti.go.jp",
-      "councilsUrls": [
-        "https://www.meti.go.jp/shingikai/index_links.html",
-        "https://www.meti.go.jp/shingikai/energy_environment/"
-      ],
-      "hasCouncils": true
-    },
-    "ANRE": {
-      "name": "資源エネルギー庁",
-      "kanji": "資源エネルギー庁",
-      "code": "ANRE",
-      "color": "var(--color-anre)",
-      "officialUrl": "https://www.enecho.meti.go.jp",
-      "councilsUrls": [
-        "https://www.enecho.meti.go.jp/committee/council/",
-        "https://www.enecho.meti.go.jp/committee/studygroup/",
-        "https://www.meti.go.jp/shingikai/energy_environment/"
-      ],
-      "hasCouncils": true
-    },
-    "JPO": {
-      "name": "特許庁",
-      "kanji": "特許庁",
-      "code": "JPO",
-      "color": "var(--color-jpo)",
-      "officialUrl": "https://www.jpo.go.jp/index.html",
-      "councilsUrls": [],
-      "hasCouncils": false
-    },
-    "SMEA": {
-      "name": "中小企業庁",
-      "kanji": "中小企業庁",
-      "code": "SMEA",
-      "color": "var(--color-smea)",
-      "officialUrl": "https://www.chusho.meti.go.jp",
-      "councilsUrls": [
-        "https://www.chusho.meti.go.jp/koukai/shingikai/",
-        "https://www.chusho.meti.go.jp/koukai/kenkyukai/index.html"
-      ],
-      "hasCouncils": true
-    },
-    "MLIT": {
-      "name": "国土交通省",
-      "kanji": "国土交通省",
-      "code": "MLIT",
-      "color": "var(--color-mlit)",
-      "officialUrl": "https://www.mlit.go.jp",
-      "councilsUrls": [
-        "https://www.mlit.go.jp/policy/shingikai/shingikaiList.html"
-      ],
-      "hasCouncils": true
-    },
-    "JTA": {
-      "name": "観光庁",
-      "kanji": "観光庁",
-      "code": "JTA",
-      "color": "var(--color-jta)",
-      "officialUrl": "https://www.mlit.go.jp/kankocho/index.html",
-      "councilsUrls": [],
-      "hasCouncils": false
-    },
-    "JMA": {
-      "name": "気象庁",
-      "kanji": "気象庁",
-      "code": "JMA",
-      "color": "var(--color-jma)",
-      "officialUrl": "https://www.jma.go.jp/jma/index.html",
-      "councilsUrls": [],
-      "hasCouncils": false
-    },
-    "JTSB": {
-      "name": "運輸安全委員会",
-      "kanji": "運輸安全委員会",
-      "code": "JTSB",
-      "color": "var(--color-jtsb)",
-      "officialUrl": "https://www.mlit.go.jp/jtsb/index.html",
-      "councilsUrls": [],
-      "hasCouncils": false
-    },
-    "JCG": {
-      "name": "海上保安庁",
-      "kanji": "海上保安庁",
-      "code": "JCG",
-      "color": "var(--color-jcg)",
-      "officialUrl": "https://www.kaiho.mlit.go.jp/",
-      "councilsUrls": [],
-      "hasCouncils": false
-    },
-    "MOE": {
-      "name": "環境省",
-      "kanji": "環境省",
-      "code": "MOE",
-      "color": "var(--color-moe)",
-      "officialUrl": "https://www.env.go.jp",
-      "councilsUrls": [
-        "https://www.env.go.jp/council/b_info.html",
-        "https://www.env.go.jp/council/sonota.html"
-      ],
-      "hasCouncils": false
-    },
-    "NRA": {
-      "name": "原子力規制委員会",
-      "kanji": "原子力規制委員会",
-      "code": "NRA",
-      "color": "var(--color-nra)",
-      "officialUrl": "https://www.nra.go.jp",
-      "councilsUrls": [
-        "https://www.nra.go.jp/Selection/meeting_index.html"
-      ],
-      "hasCouncils": true
-    },
-    "MOD": {
-      "name": "防衛省",
-      "kanji": "防衛省",
-      "code": "MOD",
-      "color": "var(--color-mod)",
-      "officialUrl": "https://www.mod.go.jp",
-      "councilsUrls": [
-        "https://www.mod.go.jp/j/policy/agenda/meeting/"
-      ],
-      "hasCouncils": true
-    },
-    "ATLA": {
-      "name": "防衛装備庁",
-      "kanji": "防衛装備庁",
-      "code": "ATLA",
-      "color": "var(--color-atla)",
-      "officialUrl": "https://www.mod.go.jp/atla/",
-      "councilsUrls": [],
-      "hasCouncils": false
-    },
-    "BOAJ": {
-      "name": "会計検査院",
-      "kanji": "会計検査院",
-      "code": "BOAJ",
-      "color": "var(--color-boaj)",
-      "officialUrl": "https://www.jbaudit.go.jp",
-      "councilsUrls": [],
-      "hasCouncils": false
-    }
-  },
   "categories": {
     "LIAISON": "関係閣僚会議",
     "COUNCIL": "審議会",
@@ -158651,6 +158651,274 @@
     "エネルギー"
   ],
   "lastCrawlTime": "2026/08/29 10:51",
+  "scrapingRuleTemplates": {
+    "tpl-cas-gijisidai-nested": {
+      "date_regex": "(令和\\d+年\\d+月\\d+日|平成\\d+年\\d+月\\d+日|\\d{4}年\\d{1,2}月\\d{1,2}日)",
+      "deep_crawl_enabled": true,
+      "pdf_selector": "a[href*='.pdf']",
+      "subpage_discovery_pattern": "https?://.*(?:dai|kaisai|session|shingikai|suishinkaigi)[^\\\"'>\\s]*",
+      "title_selector": "h1, h2, .title"
+    },
+    "tpl-general-multiministry-session": {
+      "ministryQuirk": "標準省庁型: 汎用個別回パターン",
+      "rules": {
+        "date_regex": "(?:令和[0-9０-９一-九]+年[0-9０-９一-十二]+月[0-9０-９一-三十一]+日|20[1-2][0-9]年[0-1]?[0-9]月[0-3]?[0-9]日)",
+        "deep_crawl_enabled": true,
+        "detect_private_materials": false,
+        "encoding": "utf-8",
+        "extract_all_materials": true,
+        "extract_subpage_materials_primary": true,
+        "pdf_selector": "href=[\"\\']([^\"\\']+\\.pdf)[\"\\']",
+        "prefer_subpage_date": true,
+        "private_doc_keyword": "非公開",
+        "resolve_absolute_urls": true,
+        "subpage_discovery_pattern": "href=[\"\\']([^\"\\']*(?:dai\\d+|\\d+kai|kaisai|gijisidai|meeting)[^\"\\'#]*)[\"\\']",
+        "top_page_pdf_count": 0
+      }
+    },
+    "tpl-ministry-hybrid-kaisai": {
+      "ministryQuirk": "標準省庁型: 汎用個別回パターン",
+      "rules": {
+        "date_regex": "(?:令和[0-9０-９一-九]+年[0-9０-９一-十二]+月[0-9０-９一-三十一]+日|20[2-9][0-9]年[0-1]?[0-9]月[0-3]?[0-9]日)",
+        "deep_crawl_enabled": true,
+        "detect_private_materials": false,
+        "encoding": "utf-8",
+        "extract_all_materials": true,
+        "extract_subpage_materials_primary": true,
+        "pdf_selector": "href=[\"\\']([^\"\\']+\\.pdf)[\"\\']",
+        "prefer_subpage_date": true,
+        "private_doc_keyword": "非公開",
+        "resolve_absolute_urls": true,
+        "subpage_discovery_pattern": "href=[\"\\']([^\"\\']*(?:dai\\d+|\\d+kai|kaisai|gijisidai)[^\"\\'#]*)[\"\\']",
+        "top_page_pdf_count": 0
+      }
+    },
+    "tpl-general-round-pattern": {
+      "date_regex": "(令和\\d+年\\d+月\\d+日|平成\\d+年\\d+月\\d+日|\\d{4}年\\d{1,2}月\\d{1,2}日)",
+      "deep_crawl_enabled": true,
+      "pdf_selector": "a[href*='.pdf']",
+      "subpage_discovery_pattern": "https://www\\.soumu\\.go\\.jp/(main_sosiki|menu_sosiki)/singi/.*\\.html",
+      "title_selector": "h1, h2, .title"
+    },
+    "tpl-cao-zeicho-senmonka": {
+      "ministryQuirk": "標準省庁型: 汎用個別回パターン",
+      "rules": {
+        "date_regex": "20[2-9][0-9]年[0-1]?[0-9]月[0-3]?[0-9]日",
+        "deep_crawl_enabled": false,
+        "detect_private_materials": false,
+        "encoding": "utf-8",
+        "extract_all_materials": true,
+        "extract_subpage_materials_primary": true,
+        "pdf_selector": "href=[\"\\']([^\"\\']+\\.pdf)[\"\\']",
+        "prefer_subpage_date": true,
+        "private_doc_keyword": "非公開",
+        "resolve_absolute_urls": true,
+        "subpage_discovery_pattern": "href=[\"\\']([^\"\\']*(?:dai\\d+|\\d+kai|kaisai|gijisidai)[^\"\\'#]*)[\"\\']",
+        "top_page_pdf_count": 0
+      }
+    },
+    "tpl-mhlw-nenkin-stf": {
+      "date_regex": "(令和\\d+年\\d+月\\d+日|平成\\d+年\\d+月\\d+日|\\d{4}年\\d{1,2}月\\d{1,2}日)",
+      "deep_crawl_enabled": true,
+      "pdf_selector": "a[href*='.pdf']",
+      "subpage_discovery_pattern": "https://www8\\.cao\\.go\\.jp/kisei-kaikaku/kisei/meeting/wg/.*\\.html",
+      "title_selector": "h1, h2, .title"
+    },
+    "tpl-cas-gaikokujinzai-series": {
+      "ministryQuirk": "標準省庁型: 汎用個別回パターン",
+      "rules": {
+        "date_regex": "(?:令和[0-9０-９一-九]+年[0-9０-９一-十二]+月[0-9０-９一-三十一]+日|20[2-9][0-9]年[0-1]?[0-9]月[0-3]?[0-9]日)",
+        "deep_crawl_enabled": true,
+        "detect_private_materials": false,
+        "encoding": "utf-8",
+        "extract_all_materials": true,
+        "extract_subpage_materials_primary": true,
+        "pdf_selector": "href=[\"\\']([^\"\\']+\\.pdf)[\"\\']",
+        "prefer_subpage_date": true,
+        "private_doc_keyword": "非公開",
+        "resolve_absolute_urls": true,
+        "subpage_discovery_pattern": "href=[\"\\']([^\"\\']*(?:dai\\d+|\\d+kai|kaisai|gijisidai)[^\"\\'#]*)[\"\\']",
+        "top_page_pdf_count": 1
+      }
+    },
+    "tpl-shallow-single-page": {
+      "ministryQuirk": "内閣官房型: daiXX/gijisidai.html 形式の2段階ネスト構造",
+      "rules": {
+        "date_regex": "(?:令和[0-9０-９一-九]+年[0-9０-９一-十二]+月[0-9０-９一-三十一]+日|20[2-9][0-9]年[0-1]?[0-9]月[0-3]?[0-9]日)",
+        "deep_crawl_enabled": true,
+        "detect_private_materials": false,
+        "encoding": "utf-8",
+        "extract_all_materials": true,
+        "extract_subpage_materials_primary": true,
+        "pdf_selector": "href=[\"\\']([^\"\\']+\\.pdf)[\"\\']",
+        "prefer_subpage_date": true,
+        "private_doc_keyword": "非公開",
+        "resolve_absolute_urls": true,
+        "subpage_discovery_pattern": "href=[\"\\']([^\"\\']*(?:dai\\d+|gijisidai|gijiroku)[^\"\\'#]*)[\"\\']",
+        "top_page_pdf_count": 3
+      }
+    },
+    "tpl-mic-soumu-singi": {
+      "ministryQuirk": "内閣官房型: daiXX/gijisidai.html 形式の2段階ネスト構造",
+      "rules": {
+        "date_regex": "(?:令和[0-9０-９一-九]+年[0-9０-９一-十二]+月[0-9０-９一-三十一]+日|20[2-9][0-9]年[0-1]?[0-9]月[0-3]?[0-9]日)",
+        "deep_crawl_enabled": true,
+        "detect_private_materials": false,
+        "encoding": "utf-8",
+        "extract_all_materials": true,
+        "extract_subpage_materials_primary": true,
+        "pdf_selector": "href=[\"\\']([^\"\\']+\\.pdf)[\"\\']",
+        "prefer_subpage_date": true,
+        "private_doc_keyword": "非公開",
+        "resolve_absolute_urls": true,
+        "subpage_discovery_pattern": "href=[\"\\']([^\"\\']*(?:dai\\d+|gijisidai|gijiroku)[^\"\\'#]*)[\"\\']",
+        "top_page_pdf_count": 4
+      }
+    },
+    "tpl-shallow-round-direct": {
+      "ministryQuirk": "内閣官房型: daiXX/gijisidai.html 形式の2段階ネスト構造",
+      "rules": {
+        "date_regex": "(?:令和[0-9０-９一-九]+年[0-9０-９一-十二]+月[0-9０-９一-三十一]+日|20[2-9][0-9]年[0-1]?[0-9]月[0-3]?[0-9]日)",
+        "deep_crawl_enabled": true,
+        "detect_private_materials": false,
+        "encoding": "utf-8",
+        "extract_all_materials": true,
+        "extract_subpage_materials_primary": true,
+        "pdf_selector": "href=[\"\\']([^\"\\']+\\.pdf)[\"\\']",
+        "prefer_subpage_date": true,
+        "private_doc_keyword": "非公開",
+        "resolve_absolute_urls": true,
+        "subpage_discovery_pattern": "href=[\"\\']([^\"\\']*(?:dai\\d+|gijisidai|gijiroku)[^\"\\'#]*)[\"\\']",
+        "top_page_pdf_count": 8
+      }
+    },
+    "tpl-preset-pattern-11": {
+      "ministryQuirk": "内閣官房型: daiXX/gijisidai.html 形式の2段階ネスト構造",
+      "rules": {
+        "date_regex": "(?:令和[0-9０-９一-九]+年[0-9０-９一-十二]+月[0-9０-９一-三十一]+日|20[2-9][0-9]年[0-1]?[0-9]月[0-3]?[0-9]日)",
+        "deep_crawl_enabled": true,
+        "detect_private_materials": false,
+        "encoding": "utf-8",
+        "extract_all_materials": true,
+        "extract_subpage_materials_primary": true,
+        "pdf_selector": "href=[\"\\']([^\"\\']+\\.pdf)[\"\\']",
+        "prefer_subpage_date": true,
+        "private_doc_keyword": "非公開",
+        "resolve_absolute_urls": true,
+        "subpage_discovery_pattern": "href=[\"\\']([^\"\\']*(?:dai\\d+|gijisidai|gijiroku)[^\"\\'#]*)[\"\\']",
+        "top_page_pdf_count": 11
+      }
+    },
+    "tpl-preset-pattern-12": {
+      "ministryQuirk": "内閣官房型: daiXX/gijisidai.html 形式の2段階ネスト構造",
+      "rules": {
+        "date_regex": "(?:令和[0-9０-９一-九]+年[0-9０-９一-十二]+月[0-9０-９一-三十一]+日|20[2-9][0-9]年[0-1]?[0-9]月[0-3]?[0-9]日)",
+        "deep_crawl_enabled": true,
+        "detect_private_materials": false,
+        "encoding": "utf-8",
+        "extract_all_materials": true,
+        "extract_subpage_materials_primary": true,
+        "pdf_selector": "href=[\"\\']([^\"\\']+\\.pdf)[\"\\']",
+        "prefer_subpage_date": true,
+        "private_doc_keyword": "非公開",
+        "resolve_absolute_urls": true,
+        "subpage_discovery_pattern": "href=[\"\\']([^\"\\']*(?:dai\\d+|gijisidai|gijiroku)[^\"\\'#]*)[\"\\']",
+        "top_page_pdf_count": 12
+      }
+    },
+    "tpl-preset-pattern-13": {
+      "date_regex": "(令和\\d+年\\d+月\\d+日|平成\\d+年\\d+月\\d+日|\\d{4}年\\d{1,2}月\\d{1,2}日)",
+      "deep_crawl_enabled": true,
+      "pdf_selector": "a[href*='.pdf']",
+      "subpage_discovery_pattern": "https://www\\.fsa\\.go\\.jp/singi/stewardship/siryou/\\d+\\.html",
+      "title_selector": "h1, h2, .title"
+    },
+    "tpl-preset-pattern-14": {
+      "ministryQuirk": "標準省庁型: 汎用個別回パターン",
+      "rules": {
+        "date_regex": "(?:令和[0-9０-９一-九]+年[0-9０-９一-十二]+月[0-9０-９一-三十一]+日|20[2-9][0-9]年[0-1]?[0-9]月[0-3]?[0-9]日)",
+        "deep_crawl_enabled": false,
+        "detect_private_materials": false,
+        "encoding": "utf-8",
+        "extract_all_materials": true,
+        "extract_subpage_materials_primary": true,
+        "pdf_selector": "href=[\"\\']([^\"\\']+\\.pdf)[\"\\']",
+        "prefer_subpage_date": true,
+        "private_doc_keyword": "非公開",
+        "resolve_absolute_urls": true,
+        "subpage_discovery_pattern": "href=[\"\\']([^\"\\']*(?:dai\\d+|\\d+kai|kaisai|gijisidai)[^\"\\'#]*)[\"\\']",
+        "top_page_pdf_count": 0
+      }
+    },
+    "tpl-preset-pattern-15": {
+      "ministryQuirk": "内閣官房型: daiXX/gijisidai.html 形式の2段階ネスト構造",
+      "rules": {
+        "date_regex": "(?:令和[0-9０-９一-九]+年[0-9０-９一-十二]+月[0-9０-９一-三十一]+日|20[2-9][0-9]年[0-1]?[0-9]月[0-3]?[0-9]日)",
+        "deep_crawl_enabled": true,
+        "detect_private_materials": false,
+        "encoding": "utf-8",
+        "extract_all_materials": true,
+        "extract_subpage_materials_primary": true,
+        "pdf_selector": "href=[\"\\']([^\"\\']+\\.pdf)[\"\\']",
+        "prefer_subpage_date": true,
+        "private_doc_keyword": "非公開",
+        "resolve_absolute_urls": true,
+        "subpage_discovery_pattern": "href=[\"\\']([^\"\\']*(?:dai\\d+|gijisidai|gijiroku)[^\"\\'#]*)[\"\\']",
+        "top_page_pdf_count": 2
+      }
+    },
+    "tpl-preset-pattern-16": {
+      "ministryQuirk": "内閣官房型: daiXX/gijisidai.html 形式の2段階ネスト構造",
+      "rules": {
+        "date_regex": "20[2-9][0-9]年[0-1]?[0-9]月[0-3]?[0-9]日",
+        "deep_crawl_enabled": true,
+        "detect_private_materials": false,
+        "encoding": "utf-8",
+        "extract_all_materials": true,
+        "extract_subpage_materials_primary": true,
+        "pdf_selector": "href=[\"\\']([^\"\\']+\\.pdf)[\"\\']",
+        "prefer_subpage_date": true,
+        "private_doc_keyword": "非公開",
+        "resolve_absolute_urls": true,
+        "subpage_discovery_pattern": "href=[\"\\']([^\"\\']*(?:dai\\d+|gijisidai|gijiroku)[^\"\\'#]*)[\"\\']",
+        "top_page_pdf_count": 0
+      }
+    },
+    "tpl-preset-pattern-17": {
+      "ministryQuirk": "内閣官房型: daiXX/gijisidai.html 形式の2段階ネスト構造",
+      "rules": {
+        "date_regex": "(?:令和[0-9０-９一-九]+年[0-9０-９一-十二]+月[0-9０-９一-三十一]+日|20[2-9][0-9]年[0-1]?[0-9]月[0-3]?[0-9]日)",
+        "deep_crawl_enabled": true,
+        "detect_private_materials": false,
+        "encoding": "utf-8",
+        "extract_all_materials": true,
+        "extract_subpage_materials_primary": true,
+        "pdf_selector": "href=[\"\\']([^\"\\']+\\.pdf)[\"\\']",
+        "prefer_subpage_date": true,
+        "private_doc_keyword": "非公開",
+        "resolve_absolute_urls": true,
+        "subpage_discovery_pattern": "href=[\"\\']([^\"\\']*(?:dai\\d+|gijisidai|gijiroku)[^\"\\'#]*)[\"\\']",
+        "top_page_pdf_count": 18
+      }
+    },
+    "tpl-preset-pattern-18": {
+      "ministryQuirk": "内閣官房型: daiXX/gijisidai.html 形式の2段階ネスト構造",
+      "rules": {
+        "date_regex": "(?:令和[0-9０-９一-九]+年[0-9０-９一-十二]+月[0-9０-９一-三十一]+日|20[2-9][0-9]年[0-1]?[0-9]月[0-3]?[0-9]日)",
+        "deep_crawl_enabled": true,
+        "detect_private_materials": false,
+        "encoding": "utf-8",
+        "extract_all_materials": true,
+        "extract_subpage_materials_primary": true,
+        "pdf_selector": "href=[\"\\']([^\"\\']+\\.pdf)[\"\\']",
+        "prefer_subpage_date": true,
+        "private_doc_keyword": "非公開",
+        "resolve_absolute_urls": true,
+        "subpage_discovery_pattern": "href=[\"\\']([^\"\\']*(?:dai\\d+|gijisidai|gijiroku)[^\"\\'#]*)[\"\\']",
+        "top_page_pdf_count": 6
+      }
+    }
+  },
   "scrapingRules": {
     "cao-ai_strategy": {
       "template": "tpl-cas-gijisidai-nested",
@@ -161185,273 +161453,5 @@
   "crawlerConfig": {
     "llm_mode": false
   },
-  "discoveredCouncils": [],
-  "scrapingRuleTemplates": {
-    "tpl-cas-gijisidai-nested": {
-      "date_regex": "(令和\\d+年\\d+月\\d+日|平成\\d+年\\d+月\\d+日|\\d{4}年\\d{1,2}月\\d{1,2}日)",
-      "deep_crawl_enabled": true,
-      "pdf_selector": "a[href*='.pdf']",
-      "subpage_discovery_pattern": "https?://.*(?:dai|kaisai|session|shingikai|suishinkaigi)[^\\\"'>\\s]*",
-      "title_selector": "h1, h2, .title"
-    },
-    "tpl-general-multiministry-session": {
-      "ministryQuirk": "標準省庁型: 汎用個別回パターン",
-      "rules": {
-        "date_regex": "(?:令和[0-9０-９一-九]+年[0-9０-９一-十二]+月[0-9０-９一-三十一]+日|20[1-2][0-9]年[0-1]?[0-9]月[0-3]?[0-9]日)",
-        "deep_crawl_enabled": true,
-        "detect_private_materials": false,
-        "encoding": "utf-8",
-        "extract_all_materials": true,
-        "extract_subpage_materials_primary": true,
-        "pdf_selector": "href=[\"\\']([^\"\\']+\\.pdf)[\"\\']",
-        "prefer_subpage_date": true,
-        "private_doc_keyword": "非公開",
-        "resolve_absolute_urls": true,
-        "subpage_discovery_pattern": "href=[\"\\']([^\"\\']*(?:dai\\d+|\\d+kai|kaisai|gijisidai|meeting)[^\"\\'#]*)[\"\\']",
-        "top_page_pdf_count": 0
-      }
-    },
-    "tpl-ministry-hybrid-kaisai": {
-      "ministryQuirk": "標準省庁型: 汎用個別回パターン",
-      "rules": {
-        "date_regex": "(?:令和[0-9０-９一-九]+年[0-9０-９一-十二]+月[0-9０-９一-三十一]+日|20[2-9][0-9]年[0-1]?[0-9]月[0-3]?[0-9]日)",
-        "deep_crawl_enabled": true,
-        "detect_private_materials": false,
-        "encoding": "utf-8",
-        "extract_all_materials": true,
-        "extract_subpage_materials_primary": true,
-        "pdf_selector": "href=[\"\\']([^\"\\']+\\.pdf)[\"\\']",
-        "prefer_subpage_date": true,
-        "private_doc_keyword": "非公開",
-        "resolve_absolute_urls": true,
-        "subpage_discovery_pattern": "href=[\"\\']([^\"\\']*(?:dai\\d+|\\d+kai|kaisai|gijisidai)[^\"\\'#]*)[\"\\']",
-        "top_page_pdf_count": 0
-      }
-    },
-    "tpl-general-round-pattern": {
-      "date_regex": "(令和\\d+年\\d+月\\d+日|平成\\d+年\\d+月\\d+日|\\d{4}年\\d{1,2}月\\d{1,2}日)",
-      "deep_crawl_enabled": true,
-      "pdf_selector": "a[href*='.pdf']",
-      "subpage_discovery_pattern": "https://www\\.soumu\\.go\\.jp/(main_sosiki|menu_sosiki)/singi/.*\\.html",
-      "title_selector": "h1, h2, .title"
-    },
-    "tpl-cao-zeicho-senmonka": {
-      "ministryQuirk": "標準省庁型: 汎用個別回パターン",
-      "rules": {
-        "date_regex": "20[2-9][0-9]年[0-1]?[0-9]月[0-3]?[0-9]日",
-        "deep_crawl_enabled": false,
-        "detect_private_materials": false,
-        "encoding": "utf-8",
-        "extract_all_materials": true,
-        "extract_subpage_materials_primary": true,
-        "pdf_selector": "href=[\"\\']([^\"\\']+\\.pdf)[\"\\']",
-        "prefer_subpage_date": true,
-        "private_doc_keyword": "非公開",
-        "resolve_absolute_urls": true,
-        "subpage_discovery_pattern": "href=[\"\\']([^\"\\']*(?:dai\\d+|\\d+kai|kaisai|gijisidai)[^\"\\'#]*)[\"\\']",
-        "top_page_pdf_count": 0
-      }
-    },
-    "tpl-mhlw-nenkin-stf": {
-      "date_regex": "(令和\\d+年\\d+月\\d+日|平成\\d+年\\d+月\\d+日|\\d{4}年\\d{1,2}月\\d{1,2}日)",
-      "deep_crawl_enabled": true,
-      "pdf_selector": "a[href*='.pdf']",
-      "subpage_discovery_pattern": "https://www8\\.cao\\.go\\.jp/kisei-kaikaku/kisei/meeting/wg/.*\\.html",
-      "title_selector": "h1, h2, .title"
-    },
-    "tpl-cas-gaikokujinzai-series": {
-      "ministryQuirk": "標準省庁型: 汎用個別回パターン",
-      "rules": {
-        "date_regex": "(?:令和[0-9０-９一-九]+年[0-9０-９一-十二]+月[0-9０-９一-三十一]+日|20[2-9][0-9]年[0-1]?[0-9]月[0-3]?[0-9]日)",
-        "deep_crawl_enabled": true,
-        "detect_private_materials": false,
-        "encoding": "utf-8",
-        "extract_all_materials": true,
-        "extract_subpage_materials_primary": true,
-        "pdf_selector": "href=[\"\\']([^\"\\']+\\.pdf)[\"\\']",
-        "prefer_subpage_date": true,
-        "private_doc_keyword": "非公開",
-        "resolve_absolute_urls": true,
-        "subpage_discovery_pattern": "href=[\"\\']([^\"\\']*(?:dai\\d+|\\d+kai|kaisai|gijisidai)[^\"\\'#]*)[\"\\']",
-        "top_page_pdf_count": 1
-      }
-    },
-    "tpl-shallow-single-page": {
-      "ministryQuirk": "内閣官房型: daiXX/gijisidai.html 形式の2段階ネスト構造",
-      "rules": {
-        "date_regex": "(?:令和[0-9０-９一-九]+年[0-9０-９一-十二]+月[0-9０-９一-三十一]+日|20[2-9][0-9]年[0-1]?[0-9]月[0-3]?[0-9]日)",
-        "deep_crawl_enabled": true,
-        "detect_private_materials": false,
-        "encoding": "utf-8",
-        "extract_all_materials": true,
-        "extract_subpage_materials_primary": true,
-        "pdf_selector": "href=[\"\\']([^\"\\']+\\.pdf)[\"\\']",
-        "prefer_subpage_date": true,
-        "private_doc_keyword": "非公開",
-        "resolve_absolute_urls": true,
-        "subpage_discovery_pattern": "href=[\"\\']([^\"\\']*(?:dai\\d+|gijisidai|gijiroku)[^\"\\'#]*)[\"\\']",
-        "top_page_pdf_count": 3
-      }
-    },
-    "tpl-mic-soumu-singi": {
-      "ministryQuirk": "内閣官房型: daiXX/gijisidai.html 形式の2段階ネスト構造",
-      "rules": {
-        "date_regex": "(?:令和[0-9０-９一-九]+年[0-9０-９一-十二]+月[0-9０-９一-三十一]+日|20[2-9][0-9]年[0-1]?[0-9]月[0-3]?[0-9]日)",
-        "deep_crawl_enabled": true,
-        "detect_private_materials": false,
-        "encoding": "utf-8",
-        "extract_all_materials": true,
-        "extract_subpage_materials_primary": true,
-        "pdf_selector": "href=[\"\\']([^\"\\']+\\.pdf)[\"\\']",
-        "prefer_subpage_date": true,
-        "private_doc_keyword": "非公開",
-        "resolve_absolute_urls": true,
-        "subpage_discovery_pattern": "href=[\"\\']([^\"\\']*(?:dai\\d+|gijisidai|gijiroku)[^\"\\'#]*)[\"\\']",
-        "top_page_pdf_count": 4
-      }
-    },
-    "tpl-shallow-round-direct": {
-      "ministryQuirk": "内閣官房型: daiXX/gijisidai.html 形式の2段階ネスト構造",
-      "rules": {
-        "date_regex": "(?:令和[0-9０-９一-九]+年[0-9０-９一-十二]+月[0-9０-９一-三十一]+日|20[2-9][0-9]年[0-1]?[0-9]月[0-3]?[0-9]日)",
-        "deep_crawl_enabled": true,
-        "detect_private_materials": false,
-        "encoding": "utf-8",
-        "extract_all_materials": true,
-        "extract_subpage_materials_primary": true,
-        "pdf_selector": "href=[\"\\']([^\"\\']+\\.pdf)[\"\\']",
-        "prefer_subpage_date": true,
-        "private_doc_keyword": "非公開",
-        "resolve_absolute_urls": true,
-        "subpage_discovery_pattern": "href=[\"\\']([^\"\\']*(?:dai\\d+|gijisidai|gijiroku)[^\"\\'#]*)[\"\\']",
-        "top_page_pdf_count": 8
-      }
-    },
-    "tpl-preset-pattern-11": {
-      "ministryQuirk": "内閣官房型: daiXX/gijisidai.html 形式の2段階ネスト構造",
-      "rules": {
-        "date_regex": "(?:令和[0-9０-９一-九]+年[0-9０-９一-十二]+月[0-9０-９一-三十一]+日|20[2-9][0-9]年[0-1]?[0-9]月[0-3]?[0-9]日)",
-        "deep_crawl_enabled": true,
-        "detect_private_materials": false,
-        "encoding": "utf-8",
-        "extract_all_materials": true,
-        "extract_subpage_materials_primary": true,
-        "pdf_selector": "href=[\"\\']([^\"\\']+\\.pdf)[\"\\']",
-        "prefer_subpage_date": true,
-        "private_doc_keyword": "非公開",
-        "resolve_absolute_urls": true,
-        "subpage_discovery_pattern": "href=[\"\\']([^\"\\']*(?:dai\\d+|gijisidai|gijiroku)[^\"\\'#]*)[\"\\']",
-        "top_page_pdf_count": 11
-      }
-    },
-    "tpl-preset-pattern-12": {
-      "ministryQuirk": "内閣官房型: daiXX/gijisidai.html 形式の2段階ネスト構造",
-      "rules": {
-        "date_regex": "(?:令和[0-9０-９一-九]+年[0-9０-９一-十二]+月[0-9０-９一-三十一]+日|20[2-9][0-9]年[0-1]?[0-9]月[0-3]?[0-9]日)",
-        "deep_crawl_enabled": true,
-        "detect_private_materials": false,
-        "encoding": "utf-8",
-        "extract_all_materials": true,
-        "extract_subpage_materials_primary": true,
-        "pdf_selector": "href=[\"\\']([^\"\\']+\\.pdf)[\"\\']",
-        "prefer_subpage_date": true,
-        "private_doc_keyword": "非公開",
-        "resolve_absolute_urls": true,
-        "subpage_discovery_pattern": "href=[\"\\']([^\"\\']*(?:dai\\d+|gijisidai|gijiroku)[^\"\\'#]*)[\"\\']",
-        "top_page_pdf_count": 12
-      }
-    },
-    "tpl-preset-pattern-13": {
-      "date_regex": "(令和\\d+年\\d+月\\d+日|平成\\d+年\\d+月\\d+日|\\d{4}年\\d{1,2}月\\d{1,2}日)",
-      "deep_crawl_enabled": true,
-      "pdf_selector": "a[href*='.pdf']",
-      "subpage_discovery_pattern": "https://www\\.fsa\\.go\\.jp/singi/stewardship/siryou/\\d+\\.html",
-      "title_selector": "h1, h2, .title"
-    },
-    "tpl-preset-pattern-14": {
-      "ministryQuirk": "標準省庁型: 汎用個別回パターン",
-      "rules": {
-        "date_regex": "(?:令和[0-9０-９一-九]+年[0-9０-９一-十二]+月[0-9０-９一-三十一]+日|20[2-9][0-9]年[0-1]?[0-9]月[0-3]?[0-9]日)",
-        "deep_crawl_enabled": false,
-        "detect_private_materials": false,
-        "encoding": "utf-8",
-        "extract_all_materials": true,
-        "extract_subpage_materials_primary": true,
-        "pdf_selector": "href=[\"\\']([^\"\\']+\\.pdf)[\"\\']",
-        "prefer_subpage_date": true,
-        "private_doc_keyword": "非公開",
-        "resolve_absolute_urls": true,
-        "subpage_discovery_pattern": "href=[\"\\']([^\"\\']*(?:dai\\d+|\\d+kai|kaisai|gijisidai)[^\"\\'#]*)[\"\\']",
-        "top_page_pdf_count": 0
-      }
-    },
-    "tpl-preset-pattern-15": {
-      "ministryQuirk": "内閣官房型: daiXX/gijisidai.html 形式の2段階ネスト構造",
-      "rules": {
-        "date_regex": "(?:令和[0-9０-９一-九]+年[0-9０-９一-十二]+月[0-9０-９一-三十一]+日|20[2-9][0-9]年[0-1]?[0-9]月[0-3]?[0-9]日)",
-        "deep_crawl_enabled": true,
-        "detect_private_materials": false,
-        "encoding": "utf-8",
-        "extract_all_materials": true,
-        "extract_subpage_materials_primary": true,
-        "pdf_selector": "href=[\"\\']([^\"\\']+\\.pdf)[\"\\']",
-        "prefer_subpage_date": true,
-        "private_doc_keyword": "非公開",
-        "resolve_absolute_urls": true,
-        "subpage_discovery_pattern": "href=[\"\\']([^\"\\']*(?:dai\\d+|gijisidai|gijiroku)[^\"\\'#]*)[\"\\']",
-        "top_page_pdf_count": 2
-      }
-    },
-    "tpl-preset-pattern-16": {
-      "ministryQuirk": "内閣官房型: daiXX/gijisidai.html 形式の2段階ネスト構造",
-      "rules": {
-        "date_regex": "20[2-9][0-9]年[0-1]?[0-9]月[0-3]?[0-9]日",
-        "deep_crawl_enabled": true,
-        "detect_private_materials": false,
-        "encoding": "utf-8",
-        "extract_all_materials": true,
-        "extract_subpage_materials_primary": true,
-        "pdf_selector": "href=[\"\\']([^\"\\']+\\.pdf)[\"\\']",
-        "prefer_subpage_date": true,
-        "private_doc_keyword": "非公開",
-        "resolve_absolute_urls": true,
-        "subpage_discovery_pattern": "href=[\"\\']([^\"\\']*(?:dai\\d+|gijisidai|gijiroku)[^\"\\'#]*)[\"\\']",
-        "top_page_pdf_count": 0
-      }
-    },
-    "tpl-preset-pattern-17": {
-      "ministryQuirk": "内閣官房型: daiXX/gijisidai.html 形式の2段階ネスト構造",
-      "rules": {
-        "date_regex": "(?:令和[0-9０-９一-九]+年[0-9０-９一-十二]+月[0-9０-９一-三十一]+日|20[2-9][0-9]年[0-1]?[0-9]月[0-3]?[0-9]日)",
-        "deep_crawl_enabled": true,
-        "detect_private_materials": false,
-        "encoding": "utf-8",
-        "extract_all_materials": true,
-        "extract_subpage_materials_primary": true,
-        "pdf_selector": "href=[\"\\']([^\"\\']+\\.pdf)[\"\\']",
-        "prefer_subpage_date": true,
-        "private_doc_keyword": "非公開",
-        "resolve_absolute_urls": true,
-        "subpage_discovery_pattern": "href=[\"\\']([^\"\\']*(?:dai\\d+|gijisidai|gijiroku)[^\"\\'#]*)[\"\\']",
-        "top_page_pdf_count": 18
-      }
-    },
-    "tpl-preset-pattern-18": {
-      "ministryQuirk": "内閣官房型: daiXX/gijisidai.html 形式の2段階ネスト構造",
-      "rules": {
-        "date_regex": "(?:令和[0-9０-９一-九]+年[0-9０-９一-十二]+月[0-9０-９一-三十一]+日|20[2-9][0-9]年[0-1]?[0-9]月[0-3]?[0-9]日)",
-        "deep_crawl_enabled": true,
-        "detect_private_materials": false,
-        "encoding": "utf-8",
-        "extract_all_materials": true,
-        "extract_subpage_materials_primary": true,
-        "pdf_selector": "href=[\"\\']([^\"\\']+\\.pdf)[\"\\']",
-        "prefer_subpage_date": true,
-        "private_doc_keyword": "非公開",
-        "resolve_absolute_urls": true,
-        "subpage_discovery_pattern": "href=[\"\\']([^\"\\']*(?:dai\\d+|gijisidai|gijiroku)[^\"\\'#]*)[\"\\']",
-        "top_page_pdf_count": 6
-      }
-    }
-  }
+  "discoveredCouncils": []
 }
