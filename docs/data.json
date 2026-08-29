@@ -5194,16 +5194,6 @@
       "isWatched": true
     },
     {
-      "id": "mhlw-rousei-roudoujouken-146",
-      "name": "労働政策審議会 労働条件分科会",
-      "ministry": "MHLW",
-      "category": "SUBCOMMITTEE",
-      "description": "労働政策審議会 労働条件分科会に関する調査審議・検討を行う。",
-      "officialUrl": "https://www.mhlw.go.jp/stf/shingi/shingi-rousei_126969_00004.html",
-      "pastYearCount": 1,
-      "isWatched": true
-    },
-    {
       "id": "meti-ax-skill-wg-149",
       "name": "AX時代におけるスキルのあり方検討ワーキンググループ",
       "ministry": "METI",
@@ -11319,15 +11309,6 @@
       "pastYearCount": 0
     },
     {
-      "id": "mhlw-923",
-      "name": "労働条件分科会",
-      "ministry": "MHLW",
-      "category": "SUBCOMMITTEE",
-      "officialUrl": "https://www.mhlw.go.jp/stf/shingi/shingi-rousei_126969_00004.html",
-      "trackedSince": "2026-08-09",
-      "pastYearCount": 0
-    },
-    {
       "id": "mhlw-924",
       "name": "労働条件分科会自動車運転者労働時間等専門委員会",
       "ministry": "MHLW",
@@ -15703,6 +15684,17 @@
       "manualLock": true,
       "pastYearCount": 5,
       "trackedSince": "2026-08-09"
+    },
+    {
+      "id": "mhlw-rousei-roudoujouken-146",
+      "name": "労働政策審議会 労働条件分科会",
+      "ministry": "MHLW",
+      "category": "COUNCIL",
+      "officialUrl": "https://www.mhlw.go.jp/stf/shingi/shingi-rousei_126969_00004.html",
+      "description": "労働基準法、賃金支払確保法、労働時間制度等の労働条件全般に係る重要施策・法改正事項を調査審議する労働政策審議会の主要分科会。",
+      "manualLock": true,
+      "pastYearCount": 19,
+      "trackedSince": "2022/01/15"
     }
   ],
   "meetings": [
@@ -15895,9 +15887,10 @@
         "NPSC",
         "政策会議"
       ],
-      "officialUrl": "https://www.npsc.go.jp/activity/index.html",
+      "officialUrl": "https://www.npsc.go.jp/activity/",
       "hasMinutes": false,
-      "docCount": 1
+      "docCount": 1,
+      "manualLock": true
     },
     {
       "id": "meet-2026-08-06-fdma-kento-203",
@@ -17497,9 +17490,10 @@
         "MHLW",
         "政策会議"
       ],
-      "officialUrl": "https://www.mhlw.go.jp/stf/shingi/shingi-hosho_seikatsu.html",
+      "officialUrl": "https://www.mhlw.go.jp/stf/shingi/shingi-hosho_126702.html",
       "hasMinutes": false,
-      "docCount": 1
+      "docCount": 1,
+      "manualLock": true
     },
     {
       "id": "meet-2026-07-31-cas-genshiryoku-kakuryo-kaigi-dai14",
@@ -19100,9 +19094,10 @@
         "CAS",
         "第8回"
       ],
-      "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/ir_promotion/dai8/gijiroku.pdf",
+      "officialUrl": "https://www.cas.go.jp/jp/seisaku/kanko/index.html",
       "hasMinutes": true,
-      "docCount": 3
+      "docCount": 3,
+      "manualLock": true
     },
     {
       "id": "meet-2026-07-30-cas-ir_promotion-77-dai9",
@@ -23375,31 +23370,6 @@
       "docCount": 6
     },
     {
-      "id": "meet-2026-0728-mhlw-rousei-roudoujouken-146",
-      "councilId": "mhlw-rousei-roudoujouken-146",
-      "councilName": "mhlw-rousei-roudoujouken-146",
-      "ministry": "Unknown",
-      "category": "COUNCIL",
-      "title": "労働政策審議会 労働条件分科会（2026/07/28開催）",
-      "date": "2026/07/28",
-      "updatedAt": "2026/07/28 17:00",
-      "location": "各省庁本府庁舎 / オンライン会議",
-      "summary": "労働政策審議会 労働条件分科会の開催。主要議題の推進状況および関係省庁間の連携について協議。",
-      "agenda": [
-        "労働政策審議会 労働条件分科会における主要施策の推進状況について",
-        "今後の対応方針および関係省庁間連携"
-      ],
-      "materials": [],
-      "tags": [
-        "労働政策審議",
-        "MHLW",
-        "政策会議"
-      ],
-      "officialUrl": "https://www.mhlw.go.jp/stf/shingi/shingi-rousei_roudoujouken.html",
-      "hasMinutes": false,
-      "docCount": 1
-    },
-    {
       "id": "meet-2026-07-28-mlit-energy-anzenhosho-wg-dai1",
       "councilId": "mlit-energy-anzenhosho-wg",
       "councilName": "社会資本整備審議会環境部会・交通政策審議会環境部会 エネルギー・経済安全保障小委員会",
@@ -23756,9 +23726,10 @@
         "MHLW",
         "政策会議"
       ],
-      "officialUrl": "https://www.mhlw.go.jp/stf/shingi/shingi-hosho_shikinunyou.html",
+      "officialUrl": "https://www.mhlw.go.jp/stf/shingi/shingi-hosho_126725.html",
       "hasMinutes": false,
-      "docCount": 1
+      "docCount": 1,
+      "manualLock": true
     },
     {
       "id": "meet-2026-07-27-ra-000818-15-dai33",
@@ -24192,9 +24163,10 @@
         "MHLW",
         "政策会議"
       ],
-      "officialUrl": "https://www.mhlw.go.jp/stf/shingi/shingi-hosho_kaigohoken.html",
+      "officialUrl": "https://www.mhlw.go.jp/stf/shingi/shingi-hosho_126710.html",
       "hasMinutes": false,
-      "docCount": 1
+      "docCount": 1,
+      "manualLock": true
     },
     {
       "id": "meet-2026-0724-mhlw-hosho-shouni-143",
@@ -24217,9 +24189,10 @@
         "MHLW",
         "政策会議"
       ],
-      "officialUrl": "https://www.mhlw.go.jp/stf/shingi/shingi-hosho_shouni.html",
+      "officialUrl": "https://www.mhlw.go.jp/stf/shingi/shingi-hosho_126715.html",
       "hasMinutes": false,
-      "docCount": 1
+      "docCount": 1,
+      "manualLock": true
     },
     {
       "id": "meet-2026-0722-mext-chukyo-130",
@@ -24242,9 +24215,10 @@
         "MEXT",
         "政策会議"
       ],
-      "officialUrl": "https://www.mext.go.jp/b_menu/shingi/chukyo/index.htm",
+      "officialUrl": "https://www.mext.go.jp/b_menu/shingi/chukyo/chukyo0/index.htm",
       "hasMinutes": false,
-      "docCount": 1
+      "docCount": 1,
+      "manualLock": true
     },
     {
       "id": "meet-2026-0722-moe-chuo-kankyo-154",
@@ -24650,9 +24624,10 @@
         "MIC",
         "政策会議"
       ],
-      "officialUrl": "https://www.soumu.go.jp/main_sosiki/joho_tsusin/eng/council/index.html",
+      "officialUrl": "https://www.soumu.go.jp/main_sosiki/joho_tsusin/policyreports/joho_tsusin/index.html",
       "hasMinutes": false,
-      "docCount": 1
+      "docCount": 1,
+      "manualLock": true
     },
     {
       "id": "meet-2026-0720-mlit-koutsu-151",
@@ -24675,9 +24650,10 @@
         "MLIT",
         "政策会議"
       ],
-      "officialUrl": "https://www.mlit.go.jp/policy/shingikai/s30_koutsu01.html",
+      "officialUrl": "https://www.mlit.go.jp/policy/shingikai/s301_koutsu01.html",
       "hasMinutes": false,
-      "docCount": 1
+      "docCount": 1,
+      "manualLock": true
     },
     {
       "id": "meet-2026-0718-mhlw-hosho-kaigo-136",
@@ -24700,9 +24676,10 @@
         "MHLW",
         "政策会議"
       ],
-      "officialUrl": "https://www.mhlw.go.jp/stf/shingi/shingi-hosho_kaigo.html",
+      "officialUrl": "https://www.mhlw.go.jp/stf/shingi/shingi-hosho_126698.html",
       "hasMinutes": false,
-      "docCount": 1
+      "docCount": 1,
+      "manualLock": true
     },
     {
       "id": "meet-2026-07-17-cas-kenkouiryou-20-dai9",
@@ -26355,9 +26332,10 @@
         "MHLW",
         "政策会議"
       ],
-      "officialUrl": "https://www.mhlw.go.jp/stf/shingi/shingi-hosho_jidou.html",
+      "officialUrl": "https://www.mhlw.go.jp/stf/shingi/shingi-hosho_126707.html",
       "hasMinutes": false,
-      "docCount": 1
+      "docCount": 1,
+      "manualLock": true
     },
     {
       "id": "meet-2026-0715-mic-chizai-122",
@@ -26380,9 +26358,10 @@
         "MIC",
         "政策会議"
       ],
-      "officialUrl": "https://www.soumu.go.jp/main_sosiki/singi/chizai/index.html",
+      "officialUrl": "https://www.soumu.go.jp/main_sosiki/singi/chizai/",
       "hasMinutes": false,
-      "docCount": 1
+      "docCount": 1,
+      "manualLock": true
     },
     {
       "id": "meet-2026-0714-mhlw-kousei-kansenshou-144",
@@ -26405,9 +26384,69 @@
         "MHLW",
         "政策会議"
       ],
-      "officialUrl": "https://www.mhlw.go.jp/stf/shingi/shingi-kousei_kansenshou.html",
+      "officialUrl": "https://www.mhlw.go.jp/stf/shingi/shingi-kousei_127699.html",
       "hasMinutes": false,
-      "docCount": 1
+      "docCount": 1,
+      "manualLock": true
+    },
+    {
+      "id": "meet-2026-07-14-mhlw-rousei-roudoujouken-dai210",
+      "councilId": "mhlw-rousei-roudoujouken-146",
+      "title": "第210回 労働政策審議会 労働条件分科会",
+      "date": "2026/07/14",
+      "officialUrl": "https://www.mhlw.go.jp/stf/newpage_74576.html",
+      "materials": [
+        {
+          "name": "議事次第［PDF形式：57KB］",
+          "url": "https://www.mhlw.go.jp/content/11201250/001722479.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "資料No.1 資金移動業者の口座への賃金支払制度について［PDF形式：3.1MB］",
+          "url": "https://www.mhlw.go.jp/content/11201250/001722480.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "資料No.2-1 日本成長戦略会議 労働市場改革分科会 とりまとめ［PDF形式：11.8MB］",
+          "url": "https://www.mhlw.go.jp/content/11201250/001722481.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "資料No.2-2 「経済財政運営と改革の基本方針2026（案）」等について［PDF形式：1.1MB］",
+          "url": "https://www.mhlw.go.jp/content/11201250/001722515.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "資料No.2-3  労働基準法等に基づく届出等に係る電子申請の状況について［PDF形式：3.8MB］",
+          "url": "https://www.mhlw.go.jp/content/11201250/001722483.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "参考資料No.1 労働条件分科会委員名簿［PDF形式：128KB］",
+          "url": "https://www.mhlw.go.jp/content/11201250/001722484.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "（別紙） 「経済財政運営と改革の基本方針2026」等について［PDF形式：3.7MB］",
+          "url": "https://www.mhlw.go.jp/content/11201250/001727086.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "議事録",
+          "url": "https://www.mhlw.go.jp/stf/newpage_75380.html",
+          "type": "HTML",
+          "manualLock": true
+        }
+      ],
+      "topics": [],
+      "manualLock": true
     },
     {
       "id": "meet-2026-07-13-moj-shouzou-koe-sekinin-4",
@@ -26882,9 +26921,10 @@
         "MHLW",
         "政策会議"
       ],
-      "officialUrl": "https://www.mhlw.go.jp/stf/shingi/shingi-hosho_iryou.html",
+      "officialUrl": "https://www.mhlw.go.jp/stf/shingi/shingi-hosho_126697.html",
       "hasMinutes": false,
-      "docCount": 1
+      "docCount": 1,
+      "manualLock": true
     },
     {
       "id": "meet-2026-0710-mlit-kokudo-150",
@@ -26907,9 +26947,10 @@
         "MLIT",
         "政策会議"
       ],
-      "officialUrl": "https://www.mlit.go.jp/policy/shingikai/s01_kokudo01.html",
+      "officialUrl": "https://www.mlit.go.jp/policy/shingikai/s101_kokudo01.html",
       "hasMinutes": false,
-      "docCount": 1
+      "docCount": 1,
+      "manualLock": true
     },
     {
       "id": "meet-2026-0710-moj-housei-soukai-123",
@@ -26932,9 +26973,10 @@
         "MOJ",
         "政策会議"
       ],
-      "officialUrl": "https://www.moj.go.jp/shingikai/shingikai_housei.html",
+      "officialUrl": "https://www.moj.go.jp/shingi1/shingikai_soukai.html",
       "hasMinutes": false,
-      "docCount": 1
+      "docCount": 1,
+      "manualLock": true
     },
     {
       "id": "meet-2026-07-10-ppc-ai-privacy-dai8",
@@ -27555,9 +27597,10 @@
         "MOJ",
         "政策会議"
       ],
-      "officialUrl": "https://www.moj.go.jp/shingikai/shingikai_keiji.html",
+      "officialUrl": "https://www.moj.go.jp/shingi1/shingi04900001_00001.html",
       "hasMinutes": false,
-      "docCount": 1
+      "docCount": 1,
+      "manualLock": true
     },
     {
       "id": "meet-2026-07-03-moj-houterasu-arikata-6",
@@ -28793,9 +28836,10 @@
         "MEXT",
         "政策会議"
       ],
-      "officialUrl": "https://www.mext.go.jp/b_menu/shingi/gijyutu/index.htm",
+      "officialUrl": "https://www.mext.go.jp/b_menu/shingi/gijyutu/gijyutu0/index.htm",
       "hasMinutes": false,
-      "docCount": 1
+      "docCount": 1,
+      "manualLock": true
     },
     {
       "id": "meet-2026-06-30-mofa-gaiko-seisaku-dai14",
@@ -30474,9 +30518,10 @@
         "MHLW",
         "政策会議"
       ],
-      "officialUrl": "https://www.mhlw.go.jp/stf/shingi/shingi-rousei_anzeneisei.html",
+      "officialUrl": "https://www.mhlw.go.jp/stf/shingi/shingi-rousei_126972.html",
       "hasMinutes": false,
-      "docCount": 1
+      "docCount": 1,
+      "manualLock": true
     },
     {
       "id": "meet-2026-06-20-mod-defense-industry-wg-dai2",
@@ -30562,9 +30607,10 @@
         "MOJ",
         "政策会議"
       ],
-      "officialUrl": "https://www.moj.go.jp/shingikai/shingikai_kaisha.html",
+      "officialUrl": "https://www.moj.go.jp/shingi1/shingi04900001_00002.html",
       "hasMinutes": false,
-      "docCount": 1
+      "docCount": 1,
+      "manualLock": true
     },
     {
       "id": "meet-2026-06-19-cao-ai-hq-dai4",
@@ -30801,9 +30847,10 @@
         "MLIT",
         "政策会議"
       ],
-      "officialUrl": "https://www.mlit.go.jp/policy/shingikai/s40_unyu01.html",
+      "officialUrl": "https://www.mlit.go.jp/policy/shingikai/s401_unyu01.html",
       "hasMinutes": false,
-      "docCount": 1
+      "docCount": 1,
+      "manualLock": true
     },
     {
       "id": "meet-2026-06-16-nra-teireikai-dai80",
@@ -30931,9 +30978,10 @@
         "MHLW",
         "政策会議"
       ],
-      "officialUrl": "https://www.mhlw.go.jp/stf/shingi/shingi-hosho_toukei.html",
+      "officialUrl": "https://www.mhlw.go.jp/stf/shingi/shingi-hosho_126694.html",
       "hasMinutes": false,
-      "docCount": 1
+      "docCount": 1,
+      "manualLock": true
     },
     {
       "id": "meet-2026-0615-mhlw-shakai-hosho",
@@ -31095,9 +31143,10 @@
         "MOJ",
         "政策会議"
       ],
-      "officialUrl": "https://www.moj.go.jp/shingikai/shingikai_seishoku.html",
+      "officialUrl": "https://www.moj.go.jp/shingi1/shingi04900001_00003.html",
       "hasMinutes": false,
-      "docCount": 1
+      "docCount": 1,
+      "manualLock": true
     },
     {
       "id": "meet-2026-06-12-digital-suishin-dai23",
@@ -31392,9 +31441,10 @@
         "MHLW",
         "政策会議"
       ],
-      "officialUrl": "https://www.mhlw.go.jp/stf/shingi/shingi-hosho_fukushi.html",
+      "officialUrl": "https://www.mhlw.go.jp/stf/shingi/shingi-hosho_126701.html",
       "hasMinutes": false,
-      "docCount": 1
+      "docCount": 1,
+      "manualLock": true
     },
     {
       "id": "meet-2026-06-11-moj-houterasu-arikata-4",
@@ -32878,9 +32928,10 @@
         "MLIT",
         "政策会議"
       ],
-      "officialUrl": "https://www.mlit.go.jp/policy/shingikai/s50_chuou01.html",
+      "officialUrl": "https://www.mlit.go.jp/policy/shingikai/s501_chuou01.html",
       "hasMinutes": false,
-      "docCount": 1
+      "docCount": 1,
+      "manualLock": true
     },
     {
       "id": "meet-2026-05-22-cao-cstp-bridge-wg-dai1",
@@ -33407,6 +33458,53 @@
       "manualLock": true
     },
     {
+      "id": "meet-2026-05-13-mhlw-rousei-roudoujouken-dai209",
+      "councilId": "mhlw-rousei-roudoujouken-146",
+      "title": "第209回 労働政策審議会 労働条件分科会",
+      "date": "2026/05/13",
+      "officialUrl": "https://www.mhlw.go.jp/stf/newpage_73065.html",
+      "materials": [
+        {
+          "name": "議事次第［PDF形式：31KB］",
+          "url": "https://www.mhlw.go.jp/content/11201250/001698618.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "資料No.1 資金移動業者の口座への賃金支払制度について［PDF形式：4.5MB］",
+          "url": "https://www.mhlw.go.jp/content/11201250/001698619.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "資料No.2-1 労働市場改革における議論について［PDF形式：35.3MB］",
+          "url": "https://www.mhlw.go.jp/content/11201250/001698620.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "資料No.2-2 裁量労働制に関する実態調査（案）について［PDF形式：1.8MB］",
+          "url": "https://www.mhlw.go.jp/content/11201250/001698621.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "参考資料No.1 労働条件分科会委員名簿［PDF形式：324KB］",
+          "url": "https://www.mhlw.go.jp/content/11201250/001699154.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "議事録",
+          "url": "https://www.mhlw.go.jp/stf/newpage_73976.html",
+          "type": "HTML",
+          "manualLock": true
+        }
+      ],
+      "topics": [],
+      "manualLock": true
+    },
+    {
       "id": "meet-2026-05-12-cas-chutou-jyousei-dai7",
       "councilId": "cas-chutou-jyousei",
       "councilName": "中東情勢に関する関係閣僚会議",
@@ -33496,9 +33594,10 @@
         "MHLW",
         "政策会議"
       ],
-      "officialUrl": "https://www.mhlw.go.jp/stf/shingi/shingi-hosho_shippei.html",
+      "officialUrl": "https://www.mhlw.go.jp/stf/shingi/shingi-hosho_126695.html",
       "hasMinutes": false,
-      "docCount": 1
+      "docCount": 1,
+      "manualLock": true
     },
     {
       "id": "meet-2026-0430-cao-kisei-digital-ai-wg-112",
@@ -34170,9 +34269,10 @@
         "MHLW",
         "政策会議"
       ],
-      "officialUrl": "https://www.mhlw.go.jp/stf/shingi/shingi-hosho_shiinsentaku.html",
+      "officialUrl": "https://www.mhlw.go.jp/stf/shingi/shingi-hosho_126696.html",
       "hasMinutes": false,
-      "docCount": 1
+      "docCount": 1,
+      "manualLock": true
     },
     {
       "id": "meet-2026-04-17-mof-zaiseiseido-bunkakai",
@@ -34251,6 +34351,65 @@
       "officialUrl": "https://www.mof.go.jp/about_mof/councils/fiscal_system_council/sub-of_fiscal_system/proceedings/material/20260417zaiseia.html",
       "hasMinutes": true,
       "docCount": 7
+    },
+    {
+      "id": "meet-2026-04-17-mhlw-rousei-roudoujouken-dai208",
+      "councilId": "mhlw-rousei-roudoujouken-146",
+      "title": "第208回 労働政策審議会 労働条件分科会",
+      "date": "2026/04/17",
+      "officialUrl": "https://www.mhlw.go.jp/stf/newpage_72614.html",
+      "materials": [
+        {
+          "name": "議事次第［PDF形式：62KB］",
+          "url": "https://www.mhlw.go.jp/content/11201250/001691986.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "資料No.1 2024年度年度評価 評価シート［PDF形式：319KB］",
+          "url": "https://www.mhlw.go.jp/content/11201250/001691987.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "資料No.2-1 労働組合法施行令の一部を改正する政令案の概要［PDF形式：760KB］",
+          "url": "https://www.mhlw.go.jp/content/11201250/001691988.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "資料No.2-2 労働基準法施行規則の一部改正の概要［PDF形式：2.0MB］",
+          "url": "https://www.mhlw.go.jp/content/11201250/001691995.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "資料No.3 労働市場改革分科会における議論について［PDF形式：18.9MB］",
+          "url": "https://www.mhlw.go.jp/content/11201250/001691996.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "参考資料No.1 労働条件分科会委員名簿［PDF形式：321KB］",
+          "url": "https://www.mhlw.go.jp/content/11201250/001691997.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "参考資料No.2 2024年度年度評価 参考資料集［PDF形式：4.4MB］",
+          "url": "https://www.mhlw.go.jp/content/11201250/001691998.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "議事録",
+          "url": "https://www.mhlw.go.jp/stf/newpage_73563.html",
+          "type": "HTML",
+          "manualLock": true
+        }
+      ],
+      "topics": [],
+      "manualLock": true
     },
     {
       "id": "meet-2026-04-16-cas-gx-senmonka-wg-dai17",
@@ -34767,9 +34926,10 @@
         "MOD",
         "政策会議"
       ],
-      "officialUrl": "https://www.mod.go.jp/j/approach/agenda/meeting/shisetsu/index.html",
+      "officialUrl": "https://www.mod.go.jp/j/approach/agenda/meeting/shisetsu/",
       "hasMinutes": false,
-      "docCount": 1
+      "docCount": 1,
+      "manualLock": true
     },
     {
       "id": "meet-2026-04-07-moj-baibaisyun-kento-dai2",
@@ -35411,9 +35571,10 @@
         "MHLW",
         "政策会議"
       ],
-      "officialUrl": "https://www.mhlw.go.jp/stf/shingi/shingi-hosho_jidoukan.html",
+      "officialUrl": "https://www.mhlw.go.jp/stf/shingi/shingi-hosho_126708.html",
       "hasMinutes": false,
-      "docCount": 1
+      "docCount": 1,
+      "manualLock": true
     },
     {
       "id": "meet-2026-03-25-smea-shokibo-kaseguchikara-dai4",
@@ -36776,6 +36937,41 @@
       ]
     },
     {
+      "id": "meet-2026-03-13-mhlw-rousei-roudoujouken-dai207",
+      "councilId": "mhlw-rousei-roudoujouken-146",
+      "title": "第207回 労働政策審議会 労働条件分科会",
+      "date": "2026/03/13",
+      "officialUrl": "https://www.mhlw.go.jp/stf/newpage_71550.html",
+      "materials": [
+        {
+          "name": "議事次第［PDF形式：53KB］",
+          "url": "https://www.mhlw.go.jp/content/11201250/001672457.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "資料No.1 働き方改革の「総点検」について［PDF形式：3.2MB］",
+          "url": "https://www.mhlw.go.jp/content/11201250/001672458.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "参考資料No.1 労働条件分科会委員名簿［PDF形式：631KB］",
+          "url": "https://www.mhlw.go.jp/content/11201250/001672459.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "議事録",
+          "url": "https://www.mhlw.go.jp/stf/newpage_72719.html",
+          "type": "HTML",
+          "manualLock": true
+        }
+      ],
+      "topics": [],
+      "manualLock": true
+    },
+    {
       "id": "meet-2026-0312-mof-customs-appeal-129",
       "councilId": "mof-customs-appeal-129",
       "councilName": "mof-customs-appeal-129",
@@ -36796,9 +36992,10 @@
         "MOF",
         "政策会議"
       ],
-      "officialUrl": "https://www.mof.go.jp/about_mof/councils/customs_appeal/index.html",
+      "officialUrl": "https://www.mof.go.jp/about_mof/councils/customs_tariff/index.html",
       "hasMinutes": false,
-      "docCount": 1
+      "docCount": 1,
+      "manualLock": true
     },
     {
       "id": "meet-2026-03-12-fdma-kento-196-令和7年度-dai1",
@@ -42295,9 +42492,10 @@
         "MHLW",
         "政策会議"
       ],
-      "officialUrl": "https://www.mhlw.go.jp/stf/shingi/shingi-kousei_influ.html",
+      "officialUrl": "https://www.mhlw.go.jp/stf/shingi/shingi-kousei_127703.html",
       "hasMinutes": false,
-      "docCount": 1
+      "docCount": 1,
+      "manualLock": true
     },
     {
       "id": "meet-2026-02-18-smea-local-zebra-dai4",
@@ -48917,6 +49115,65 @@
       "docCount": 14
     },
     {
+      "id": "meet-2025-12-24-mhlw-rousei-roudoujouken-dai206",
+      "councilId": "mhlw-rousei-roudoujouken-146",
+      "title": "第206回 労働政策審議会 労働条件分科会",
+      "date": "2025/12/24",
+      "officialUrl": "https://www.mhlw.go.jp/stf/newpage_67839.html",
+      "materials": [
+        {
+          "name": "議事次第［PDF形式：35KB］",
+          "url": "https://www.mhlw.go.jp/content/11201250/001619718.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "資料No.1-1 賃金の支払の確保等に関する法律施行規則の一部を改正する省令案要綱（諮問）［PDF形式：947KB］",
+          "url": "https://www.mhlw.go.jp/content/11201250/001619719.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "資料No.1-2 未払賃金立替払の手続デジタル化について［PDF形式：2.2MB］",
+          "url": "https://www.mhlw.go.jp/content/11201250/001619720.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "資料No.2-1 労働時間法制の具体的課題に関する検討の論点について［PDF形式：2.1MB］",
+          "url": "https://www.mhlw.go.jp/content/11201250/001619721.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "資料No.2-2 労働時間法制の具体的課題について［PDF形式：10.8MB］",
+          "url": "https://www.mhlw.go.jp/content/11201250/001619722.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "参考資料No.1 各側委員からの主な意見の整理［PDF形式：270KB］",
+          "url": "https://www.mhlw.go.jp/content/11201250/001619723.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "（別紙）答申文（労審発第1727号）［PDF形式：69KB］",
+          "url": "https://www.mhlw.go.jp/content/11201250/001621767.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "議事録",
+          "url": "https://www.mhlw.go.jp/stf/newpage_69623.html",
+          "type": "HTML",
+          "manualLock": true
+        }
+      ],
+      "topics": [],
+      "manualLock": true
+    },
+    {
       "id": "meet-2025-12-23-cas-cs-30-dai2",
       "councilId": "cas-cs-30",
       "councilName": "サイバーセキュリティ戦略本部",
@@ -52748,6 +53005,65 @@
       ]
     },
     {
+      "id": "meet-2025-11-18-mhlw-rousei-roudoujouken-dai205",
+      "councilId": "mhlw-rousei-roudoujouken-146",
+      "title": "第205回 労働政策審議会 労働条件分科会",
+      "date": "2025/11/18",
+      "officialUrl": "https://www.mhlw.go.jp/stf/newpage_65974.html",
+      "materials": [
+        {
+          "name": "議事次第［PDF形式：72KB］",
+          "url": "https://www.mhlw.go.jp/content/11201250/001595977.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "資料No.1-1労働時間法制の具体的課題に関する検討の論点について［PDF形式：2.0MB］",
+          "url": "https://www.mhlw.go.jp/content/11201250/001595978.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "資料No.1-2労働時間法制の具体的課題について［PDF形式：7.1MB］",
+          "url": "https://www.mhlw.go.jp/content/11201250/001595979.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "資料No.2-1「労働局あっせんにおける解雇型雇用終了事案の分析」（概要）［PDF形式：6.4MB］",
+          "url": "https://www.mhlw.go.jp/content/11201250/001595980.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "資料No.2-2「解雇等に関する労働者意識調査」（概要）［PDF形式：4.3MB］",
+          "url": "https://www.mhlw.go.jp/content/11201250/001595984.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "資料No.2-3「諸外国における解雇の金銭救済制度に関する有識者に対するヒアリング調査」（概要）［PDF形式：3.9MB］",
+          "url": "https://www.mhlw.go.jp/content/11201250/001595985.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "参考資料No.1 各側委員からの主な意見の整理［PDF形式：270KB］",
+          "url": "https://www.mhlw.go.jp/content/11201250/001595986.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "議事録",
+          "url": "https://www.mhlw.go.jp/stf/newpage_68076.html",
+          "type": "HTML",
+          "manualLock": true
+        }
+      ],
+      "topics": [],
+      "manualLock": true
+    },
+    {
       "id": "meet-2025-11-17-cas-zensedai_shakaihosho_kochiku-50-dai12",
       "councilId": "cas-zensedai_shakaihosho_kochiku-50",
       "councilName": "全世代型社会保障構築本部",
@@ -53786,6 +54102,47 @@
       "docCount": 4
     },
     {
+      "id": "meet-2025-10-27-mhlw-rousei-roudoujouken-dai204",
+      "councilId": "mhlw-rousei-roudoujouken-146",
+      "title": "第204回 労働政策審議会 労働条件分科会",
+      "date": "2025/10/27",
+      "officialUrl": "https://www.mhlw.go.jp/stf/newpage_65057.html",
+      "materials": [
+        {
+          "name": "議事次第［PDF形式：29KB］",
+          "url": "https://www.mhlw.go.jp/content/11201250/001585947.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "資料No.1 労働時間法制の具体的課題に関する検討の論点について［PDF形式：1.6MB］",
+          "url": "https://www.mhlw.go.jp/content/11201250/001585948.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "資料No.2 労働時間法制の具体的課題について［PDF形式：16.3MB］",
+          "url": "https://www.mhlw.go.jp/content/11201250/001585949.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "参考資料No.1 各側委員からの主な意見の整理［PDF形式：270KB］",
+          "url": "https://www.mhlw.go.jp/content/11201250/001585950.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "議事録",
+          "url": "https://www.mhlw.go.jp/stf/newpage_66496.html",
+          "type": "HTML",
+          "manualLock": true
+        }
+      ],
+      "topics": [],
+      "manualLock": true
+    },
+    {
       "id": "meet-2025-10-21-cas-jikkoukaigi-83",
       "councilId": "cas-jikkoukaigi-83",
       "councilName": "防災対策実行会議",
@@ -54391,6 +54748,53 @@
       "docCount": 0
     },
     {
+      "id": "meet-2025-09-30-mhlw-rousei-roudoujouken-dai203",
+      "councilId": "mhlw-rousei-roudoujouken-146",
+      "title": "第203回 労働政策審議会 労働条件分科会",
+      "date": "2025/09/30",
+      "officialUrl": "https://www.mhlw.go.jp/stf/newpage_63876.html",
+      "materials": [
+        {
+          "name": "議事次第［PDF形式：33KB］",
+          "url": "https://www.mhlw.go.jp/content/11201250/001567873.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "資料No.1 集団的労使コミュニケーションの在り方（過半数労働組合・過半数代表者等）に関する検討の論点について［PDF形式：465KB］",
+          "url": "https://www.mhlw.go.jp/content/11201250/001567874.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "資料No.2 集団的労使コミュニケーションの在り方（過半数労働組合・過半数代表者等）について［PDF形式：4.7MB］",
+          "url": "https://www.mhlw.go.jp/content/11201250/001567875.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "参考資料No.1 労働条件分科会委員名簿［PDF形式：109KB］",
+          "url": "https://www.mhlw.go.jp/content/11201250/001567876.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "参考資料No.2 各側委員からの主な意見の整理［PDF形式：270KB］",
+          "url": "https://www.mhlw.go.jp/content/11201250/001567877.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "議事録",
+          "url": "https://www.mhlw.go.jp/stf/newpage_65418.html",
+          "type": "HTML",
+          "manualLock": true
+        }
+      ],
+      "topics": [],
+      "manualLock": true
+    },
+    {
       "id": "meet-2025-09-29-smea-local-zebra-dai2",
       "councilId": "smea-local-zebra",
       "title": "ローカル・ゼブラ・エコシステムの構築に向けた社会的インパクト評価の活用実践に関する研究会 第2回",
@@ -54791,6 +55195,59 @@
       "docCount": 9
     },
     {
+      "id": "meet-2025-09-04-mhlw-rousei-roudoujouken-dai202",
+      "councilId": "mhlw-rousei-roudoujouken-146",
+      "title": "第202回 労働政策審議会 労働条件分科会",
+      "date": "2025/09/04",
+      "officialUrl": "https://www.mhlw.go.jp/stf/newpage_62773.html",
+      "materials": [
+        {
+          "name": "議事次第［PDF形式：32KB］",
+          "url": "https://www.mhlw.go.jp/content/11201250/001553320.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "資料No.1 各側委員からの主な意見の整理（案）［PDF形式：266KB］",
+          "url": "https://www.mhlw.go.jp/content/11201250/001553321.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "資料No.2 労働時間法制の具体的課題について④［PDF形式：7.2MB］",
+          "url": "https://www.mhlw.go.jp/content/11201250/001553322.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "資料No.3 労働条件分科会におけるこれまでの意見［PDF形式：14.4MB］",
+          "url": "https://www.mhlw.go.jp/content/11201250/001553323.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "資料No.4 働き方改革の「総点検」について［PDF形式：1.6MB］",
+          "url": "https://www.mhlw.go.jp/content/11201250/001553324.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "参考資料No.1 労働条件分科会委員名簿［PDF形式：122KB］",
+          "url": "https://www.mhlw.go.jp/content/11201250/001553325.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "議事録",
+          "url": "https://www.mhlw.go.jp/stf/newpage_64452.html",
+          "type": "HTML",
+          "manualLock": true
+        }
+      ],
+      "topics": [],
+      "manualLock": true
+    },
+    {
       "id": "meet-2025-09-02-cas-r60101notojishin-89-dai14",
       "councilId": "cas-r60101notojishin-89",
       "councilName": "令和６年能登半島地震復旧・復興支援本部",
@@ -54935,6 +55392,59 @@
       "officialUrl": "https://www.cas.go.jp/jp/seisaku/genshiryoku_kakuryo_kaigi/dai13/gijisidai.html",
       "hasMinutes": true,
       "docCount": 5
+    },
+    {
+      "id": "meet-2025-08-19-mhlw-rousei-roudoujouken-dai201",
+      "councilId": "mhlw-rousei-roudoujouken-146",
+      "title": "第201回 労働政策審議会 労働条件分科会",
+      "date": "2025/08/19",
+      "officialUrl": "https://www.mhlw.go.jp/stf/newpage_61482.html",
+      "materials": [
+        {
+          "name": "議事次第［PDF形式：45KB］",
+          "url": "https://www.mhlw.go.jp/content/11201250/001538707.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "資料No.1 社会保険労務士法の一部を改正する法律（令和７年法律第77 号）の概要［PDF形式：337KB］",
+          "url": "https://www.mhlw.go.jp/content/11201250/001538708.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "資料No.2  労働基準法等に基づく届出等に係る電子申請の状況について［PDF形式：1.5MB］",
+          "url": "https://www.mhlw.go.jp/content/11201250/001538709.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "資料No.3 労働時間法制の具体的課題について④［PDF形式：4.7MB］",
+          "url": "https://www.mhlw.go.jp/content/11201250/001538710.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "資料No.4 各側委員からの主な意見の整理（案）［PDF形式：251KB］",
+          "url": "https://www.mhlw.go.jp/content/11201250/001538711.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "資料No.5 労働条件分科会におけるこれまでの意見［PDF形式：14.4MB］",
+          "url": "https://www.mhlw.go.jp/content/11201250/001538712.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "議事録",
+          "url": "https://www.mhlw.go.jp/stf/newpage_63543.html",
+          "type": "HTML",
+          "manualLock": true
+        }
+      ],
+      "topics": [],
+      "manualLock": true
     },
     {
       "id": "meet-2025-08-13-smea-shinzoku-dai3",
@@ -57734,6 +58244,77 @@
       "docCount": 2
     },
     {
+      "id": "meet-2025-06-16-mhlw-rousei-roudoujouken-dai200",
+      "councilId": "mhlw-rousei-roudoujouken-146",
+      "title": "第200回 労働政策審議会 労働条件分科会",
+      "date": "2025/06/16",
+      "officialUrl": "https://www.mhlw.go.jp/stf/newpage_58834.html",
+      "materials": [
+        {
+          "name": "議事次第［PDF形式：50KB］",
+          "url": "https://www.mhlw.go.jp/content/11201250/001504153.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "資料No.1 労働政策審議会労働条件分科会運営規程の改正について（概要）［PDF形式：420KB］",
+          "url": "https://www.mhlw.go.jp/content/11201250/001504154.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "資料No.2 「経済財政運営と改革の基本方針2025」等について［PDF形式：8.8MB］",
+          "url": "https://www.mhlw.go.jp/content/11201250/001504155.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "資料No.3 労働時間法制の具体的課題について③［PDF形式：12.6MB］",
+          "url": "https://www.mhlw.go.jp/content/11201250/001504156.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "資料No.4 集団的労使コミュニケーションの在り方（過半数労働組合・過半数代表 者等）について［PDF形式：19.5MB］",
+          "url": "https://www.mhlw.go.jp/content/11201250/001504157.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "資料No.5 労働条件分科会におけるこれまでの意見［PDF形式：13.5MB］",
+          "url": "https://www.mhlw.go.jp/content/11201250/001504158.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "参考資料No.1 労働基準法の災害補償責任と労災保険法の関係［PDF形式：1.1MB］",
+          "url": "https://www.mhlw.go.jp/content/11201250/001504159.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "参考資料No.2 労働時間制度等に関する実態調査結果について（概要）［PDF形式：46.8MB］",
+          "url": "https://www.mhlw.go.jp/content/11201250/001503716.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "参考資料No.3 副業・兼業の促進に関するガイドライン［PDF形式：337KB］",
+          "url": "https://www.mhlw.go.jp/content/11201250/001503717.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "議事録",
+          "url": "https://www.mhlw.go.jp/stf/newpage_59697.html",
+          "type": "HTML",
+          "manualLock": true
+        }
+      ],
+      "topics": [],
+      "manualLock": true
+    },
+    {
       "id": "meet-2025-06-13-cas-atarashii-sihon-107-dai5",
       "councilId": "cas-atarashii-sihon-107",
       "councilName": "cas-atarashii-sihon-107",
@@ -58296,6 +58877,53 @@
           "manualLock": true
         }
       ]
+    },
+    {
+      "id": "meet-2025-06-06-mhlw-rousei-roudoujouken-dai199",
+      "councilId": "mhlw-rousei-roudoujouken-146",
+      "title": "第199回 労働政策審議会 労働条件分科会",
+      "date": "2025/06/06",
+      "officialUrl": "https://www.mhlw.go.jp/stf/newpage_58588.html",
+      "materials": [
+        {
+          "name": "議事次第［PDF形式：42KB］",
+          "url": "https://www.mhlw.go.jp/content/11201250/001499963.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "資料No.1　資金移動業者の口座への賃金支払制度について ［PDF形式：1.4MB］",
+          "url": "https://www.mhlw.go.jp/content/11201250/001499964.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "資料No.2　労働時間法制の具体的課題について②［PDF形式：23.3MB］",
+          "url": "https://www.mhlw.go.jp/content/11201250/001499965.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "資料No.3　労働条件分科会におけるこれまでの意見［PDF形式：9.5MB］",
+          "url": "https://www.mhlw.go.jp/content/11201250/001499966.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "参考資料No.1　労働時間制度等に関する実態調査結果について（概要）［PDF形式：37.3MB］",
+          "url": "https://www.mhlw.go.jp/content/11201250/001499967.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "議事録",
+          "url": "https://www.mhlw.go.jp/stf/newpage_59422.html",
+          "type": "HTML",
+          "manualLock": true
+        }
+      ],
+      "topics": [],
+      "manualLock": true
     },
     {
       "id": "meet-2025-06-04-cao-kaigi-88-dai21",
@@ -59195,6 +59823,41 @@
       ]
     },
     {
+      "id": "meet-2025-05-23-mhlw-rousei-roudoujouken-dai198",
+      "councilId": "mhlw-rousei-roudoujouken-146",
+      "title": "第198回 労働政策審議会 労働条件分科会",
+      "date": "2025/05/23",
+      "officialUrl": "https://www.mhlw.go.jp/stf/newpage_58138.html",
+      "materials": [
+        {
+          "name": "議事次第［PDF形式：31KB］",
+          "url": "https://www.mhlw.go.jp/content/11201250/001491861.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "資料 No.1 集団的労使コミュニケーションの在り方（過半数労働組合・過半数代表者等）について［PDF形式：18.1MB］",
+          "url": "https://www.mhlw.go.jp/content/11201250/001491862.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "参考資料No.1 労働時間制度等に関する実態調査結果について（概要）［PDF形式：46.8MB］",
+          "url": "https://www.mhlw.go.jp/content/11201250/001491863.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "議事録",
+          "url": "https://www.mhlw.go.jp/stf/newpage_59176.html",
+          "type": "HTML",
+          "manualLock": true
+        }
+      ],
+      "topics": [],
+      "manualLock": true
+    },
+    {
       "id": "meet-2025-05-19-smea-seicho-innovation-dai5",
       "councilId": "smea-seicho-innovation",
       "title": "中小企業の成長のためのイノベーション研究会 第5回",
@@ -59217,6 +59880,53 @@
           "manualLock": true
         }
       ]
+    },
+    {
+      "id": "meet-2025-05-13-mhlw-rousei-roudoujouken-dai197",
+      "councilId": "mhlw-rousei-roudoujouken-146",
+      "title": "第197回 労働政策審議会 労働条件分科会",
+      "date": "2025/05/13",
+      "officialUrl": "https://www.mhlw.go.jp/stf/newpage_57740.html",
+      "materials": [
+        {
+          "name": "議事次第［PDF形式：31KB］",
+          "url": "https://www.mhlw.go.jp/content/11201250/001486602.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "資料No.１　労働時間法制の具体的課題について①［PDF形式：33.1MB］",
+          "url": "https://www.mhlw.go.jp/content/11201250/001486603.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "資料No.２　労働条件分科会におけるこれまでの意見 ［PDF形式：7.0MB］",
+          "url": "https://www.mhlw.go.jp/content/11201250/001486604.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "参考資料No.１労働条件分科会委員名簿 ［PDF形式：75KB］",
+          "url": "https://www.mhlw.go.jp/content/11201250/001486605.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "参考資料No.２　労働時間制度等に関する実態調査結果について（概要）［PDF形式：46.8MB］",
+          "url": "https://www.mhlw.go.jp/content/11201250/001486606.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "議事録",
+          "url": "https://www.mhlw.go.jp/stf/newpage_58805.html",
+          "type": "HTML",
+          "manualLock": true
+        }
+      ],
+      "topics": [],
+      "manualLock": true
     },
     {
       "id": "meet-2025-05-12-digital-suishin-dai3",
@@ -61405,6 +62115,53 @@
       ]
     },
     {
+      "id": "meet-2025-03-27-mhlw-rousei-roudoujouken-dai196",
+      "councilId": "mhlw-rousei-roudoujouken-146",
+      "title": "第196回 労働政策審議会 労働条件分科会",
+      "date": "2025/03/27",
+      "officialUrl": "https://www.mhlw.go.jp/stf/newpage_56091.html",
+      "materials": [
+        {
+          "name": "議事次第［PDF形式：32KB］",
+          "url": "https://www.mhlw.go.jp/content/11201250/001462081.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "資料No.1　金融商品取引法等の改正に伴う労働基準法施行規則の一部改正について（報告事項）［PDF形式：2.4MB］",
+          "url": "https://www.mhlw.go.jp/content/11201250/001462082.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "資料No.2　労働時間制度等に関する実態調査結果について（概要）［PDF形式：46.8MB］",
+          "url": "https://www.mhlw.go.jp/content/11201250/001462595.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "参考資料No.1　労働時間制度等に関する実態調査　事業所票［PDF形式：1.1MB］",
+          "url": "https://www.mhlw.go.jp/content/11201250/001462083.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "参考資料No.2　労働時間制度等に関する実態調査　個人票［PDF形式：1.1MB］",
+          "url": "https://www.mhlw.go.jp/content/11201250/001462084.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "議事録",
+          "url": "https://www.mhlw.go.jp/stf/newpage_57784.html",
+          "type": "HTML",
+          "manualLock": true
+        }
+      ],
+      "topics": [],
+      "manualLock": true
+    },
+    {
       "id": "meet-2025-03-26-fsc-nouyaku-118-dai2",
       "councilId": "fsc-nouyaku-118",
       "councilName": "fsc-nouyaku-118",
@@ -61874,6 +62631,53 @@
       ]
     },
     {
+      "id": "meet-2025-03-11-mhlw-rousei-roudoujouken-dai195",
+      "councilId": "mhlw-rousei-roudoujouken-146",
+      "title": "第195回 労働政策審議会 労働条件分科会",
+      "date": "2025/03/11",
+      "officialUrl": "https://www.mhlw.go.jp/stf/newpage_53998.html",
+      "materials": [
+        {
+          "name": "議事次第［PDF形式：27KB］",
+          "url": "https://www.mhlw.go.jp/content/11201250/001438292.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "資料No.１　2023年度年度評価 評価シート［PDF形式：129KB］",
+          "url": "https://www.mhlw.go.jp/content/11201250/001438293.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "資料No.２　労働基準法における「労働者」ついて［PDF形式：6.3MB］",
+          "url": "https://www.mhlw.go.jp/content/11201250/001438294.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "資料No.３　労働基準法における「事業」について［PDF形式：4.2MB］",
+          "url": "https://www.mhlw.go.jp/content/11201250/001438295.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "参考資料　2023年度年度評価 参考資料集［PDF形式：1.9MB］",
+          "url": "https://www.mhlw.go.jp/content/11201250/001438296.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "議事録",
+          "url": "https://www.mhlw.go.jp/stf/newpage_57316.html",
+          "type": "HTML",
+          "manualLock": true
+        }
+      ],
+      "topics": [],
+      "manualLock": true
+    },
+    {
       "id": "meet-2025-03-10-mext-chuo-kyoiku-dai142",
       "councilId": "mext-chuo-kyoiku",
       "councilName": "中央教育審議会 初等中等教育分科会",
@@ -62282,6 +63086,65 @@
       "officialUrl": "https://www.fdma.go.jp/singi_kento/kento/post-165.html",
       "hasMinutes": true,
       "docCount": 8
+    },
+    {
+      "id": "meet-2025-02-28-mhlw-rousei-roudoujouken-dai194",
+      "councilId": "mhlw-rousei-roudoujouken-146",
+      "title": "第194回 労働政策審議会 労働条件分科会",
+      "date": "2025/02/28",
+      "officialUrl": "https://www.mhlw.go.jp/stf/newpage_53211.html",
+      "materials": [
+        {
+          "name": "議事次第［PDF形式：31KB］",
+          "url": "https://www.mhlw.go.jp/content/11201250/001426229.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "資料No.1　労働条件分科会における今後の議論の進め方（案）［PDF形式：756KB］",
+          "url": "https://www.mhlw.go.jp/content/11201250/001426230.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "資料No.2　労働時間制度等に関する実態調査結果について（速報値）［PDF形式：10.0MB］",
+          "url": "https://www.mhlw.go.jp/content/11201250/001426231.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "参考資料No.1　労働条件分科会委員名簿［PDF形式：601KB］",
+          "url": "https://www.mhlw.go.jp/content/11201250/001426232.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "参考資料No.2　労働時間等関係資料［PDF形式：11.7MB］",
+          "url": "https://www.mhlw.go.jp/content/11201250/001426233.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "参考資料No.3　労働時間制度等に関する実態調査　事業所票［PDF形式：1.1MB］",
+          "url": "https://www.mhlw.go.jp/content/11201250/001426234.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "参考資料No.4　労働時間制度等に関する実態調査　個人票［PDF形式：1.1MB］",
+          "url": "https://www.mhlw.go.jp/content/11201250/001426235.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "議事録",
+          "url": "https://www.mhlw.go.jp/stf/newpage_56624.html",
+          "type": "HTML",
+          "manualLock": true
+        }
+      ],
+      "topics": [],
+      "manualLock": true
     },
     {
       "id": "meet-2025-02-26-fdma-kento-94-令和6年度-dai1",
@@ -65302,6 +66165,59 @@
       "officialUrl": "https://www.cfa.go.jp/councils/shingikai/63b0c3b5",
       "hasMinutes": true,
       "docCount": 4
+    },
+    {
+      "id": "meet-2025-01-21-mhlw-rousei-roudoujouken-dai193",
+      "councilId": "mhlw-rousei-roudoujouken-146",
+      "title": "第193回 労働政策審議会 労働条件分科会",
+      "date": "2025/01/21",
+      "officialUrl": "https://www.mhlw.go.jp/stf/newpage_49356.html",
+      "materials": [
+        {
+          "name": "議事次第［PDF形式：32KB］",
+          "url": "https://www.mhlw.go.jp/content/11201250/001378415.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "資料No.1 労働政策審議会労働条件分科会 「組織再編に伴う労働関係の調整に関する部会」（仮称）の設置について［PDF形式：412KB］",
+          "url": "https://www.mhlw.go.jp/content/11201250/001378416.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "資料No.2 労働基準関係法制研究会報告書［PDF形式：880KB］",
+          "url": "https://www.mhlw.go.jp/content/11201250/001378417.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "参考資料No.1 労働条件分科会委員名簿 ［PDF形式：618KB］",
+          "url": "https://www.mhlw.go.jp/content/11201250/001378418.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "参考資料No.2 「組織再編に伴う労働関係の調整に関する部会」（仮称）の概要について［PDF形式：206KB］",
+          "url": "https://www.mhlw.go.jp/content/11201250/001378512.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "参考資料No.３ 参考資料［PDF形式：9.3MB］",
+          "url": "https://www.mhlw.go.jp/content/11201250/001378513.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "議事録",
+          "url": "https://www.mhlw.go.jp/stf/newpage_52928.html",
+          "type": "HTML",
+          "manualLock": true
+        }
+      ],
+      "topics": [],
+      "manualLock": true
     },
     {
       "id": "meet-2024-12-26-cao-ai-strategy-dai12",
@@ -93301,6 +94217,47 @@
       "docCount": 4
     },
     {
+      "id": "meet-2024-07-17-mhlw-rousei-roudoujouken-dai192",
+      "councilId": "mhlw-rousei-roudoujouken-146",
+      "title": "第192回 労働政策審議会 労働条件分科会",
+      "date": "2024/07/17",
+      "officialUrl": "https://www.mhlw.go.jp/stf/newpage_41466.html",
+      "materials": [
+        {
+          "name": "議事次第［PDF形式：35KB］",
+          "url": "https://www.mhlw.go.jp/content/11201250/001275124.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "資料No.1 「経済財政運営と改革の基本方針2024」等について（報告事項）［PDF形式：519KB］",
+          "url": "https://www.mhlw.go.jp/content/11201250/001275125.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "資料No.2 「事業性融資の推進等に関する法律」の成立について（報告事項）［PDF形式：2.9MB］",
+          "url": "https://www.mhlw.go.jp/content/11201250/001275126.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "参考資料No.1 労働条件分科会委員名簿 ［PDF形式：100KB］",
+          "url": "https://www.mhlw.go.jp/content/11201250/001275127.pdf",
+          "type": "PDF",
+          "manualLock": true
+        },
+        {
+          "name": "議事録",
+          "url": "https://www.mhlw.go.jp/stf/newpage_42888.html",
+          "type": "HTML",
+          "manualLock": true
+        }
+      ],
+      "topics": [],
+      "manualLock": true
+    },
+    {
       "id": "meet-2024-07-16-fsa-transition-finance-dai10",
       "councilId": "fsa-transition-finance",
       "councilName": "トランジション・ファイナンス環境整備検討会",
@@ -119553,7 +120510,7 @@
       "councilId": "mlit-shinkansen-kashitsuke-shoiinkai",
       "title": "第6回 今後の整備新幹線の貸付のあり方に関する小委員会",
       "date": "2023/03/14",
-      "officialUrl": "https://www.mlit.go.jp/policy/shingikai/s304_tetsudo03.html",
+      "officialUrl": "https://www.mlit.go.jp/policy/shingikai/s304_tetsudo02.html",
       "category": "WORKING_GROUP",
       "ministry": "MLIT",
       "manualLock": true,
@@ -211108,17 +212065,6 @@
       "aiReason": "AI判定: MHLW所管の公式会議体マスターとして承認"
     },
     {
-      "id": "mhlw-rousei-roudoujouken-146",
-      "name": "労働政策審議会 労働条件分科会",
-      "ministry": "MHLW",
-      "category": "SUBCOMMITTEE",
-      "officialUrl": "https://www.mhlw.go.jp/stf/shingi/shingi-rousei_126969_00004.html",
-      "sourcePageUrl": "https://www.mhlw.go.jp/stf/shingi/shingi-rousei_126969_00004.html",
-      "trackedSince": "2026-08-09",
-      "status": "approved",
-      "aiReason": "AI判定: MHLW所管の公式会議体マスターとして承認"
-    },
-    {
       "id": "meti-ax-skill-wg-149",
       "name": "AX時代におけるスキルのあり方検討ワーキンググループ",
       "ministry": "METI",
@@ -218445,17 +219391,6 @@
       "aiReason": "AI判定: MHLW所管の公式会議体マスターとして承認"
     },
     {
-      "id": "mhlw-923",
-      "name": "労働条件分科会",
-      "ministry": "MHLW",
-      "category": "SUBCOMMITTEE",
-      "officialUrl": "https://www.mhlw.go.jp/stf/shingi/shingi-rousei_126969_00004.html",
-      "sourcePageUrl": "https://www.mhlw.go.jp/stf/shingi/shingi-rousei_126969_00004.html",
-      "trackedSince": "2026-08-09",
-      "status": "approved",
-      "aiReason": "AI判定: MHLW所管の公式会議体マスターとして承認"
-    },
-    {
       "id": "mhlw-924",
       "name": "労働条件分科会自動車運転者労働時間等専門委員会",
       "ministry": "MHLW",
@@ -223679,6 +224614,17 @@
       "trackedSince": "2026-08-09",
       "status": "approved",
       "aiReason": "AI判定: MHLW所管の公式会議体マスターとして承認"
+    },
+    {
+      "id": "mhlw-rousei-roudoujouken-146",
+      "name": "労働政策審議会 労働条件分科会",
+      "ministry": "MHLW",
+      "category": "COUNCIL",
+      "officialUrl": "https://www.mhlw.go.jp/stf/shingi/shingi-rousei_126969_00004.html",
+      "sourcePageUrl": "https://www.mhlw.go.jp/stf/shingi/shingi-rousei_126969_00004.html",
+      "trackedSince": "2022/01/15",
+      "status": "approved",
+      "aiReason": "AI判定: MHLW所管の公式会議体マスターとして承認"
     }
   ],
   "scrapingRules": {
@@ -227083,23 +228029,13 @@
       }
     },
     "mhlw-rousei-roudoujouken-146": {
-      "rule_id": "rule-mhlw-rousei-roudoujouken-146-ai-v3",
-      "created_at": "2026-08-07 08:50:00",
-      "generator": "AI_Rule_Synthesis_Agent_v3",
-      "ministryQuirk": "標準省庁型: 汎用個別回パターン",
+      "rule_id": "rule-mhlw-rousei-roudoujouken-v1",
+      "ministryQuirk": "厚生労働省 労働政策審議会 労働条件分科会 サブページ巡回",
       "rules": {
-        "encoding": "utf-8",
-        "deep_crawl_enabled": true,
-        "subpage_discovery_pattern": "href=[\"\\']([^\"\\']*(?:dai\\d+|\\d+kai|kaisai|gijisidai|meeting)[^\"\\'#]*)[\"\\']",
-        "date_regex": "(?:令和[0-9０-９一-九]+年[0-9０-９一-十二]+月[0-9０-９一-三十一]+日|20[1-2][0-9]年[0-1]?[0-9]月[0-3]?[0-9]日)",
-        "prefer_subpage_date": true,
-        "extract_subpage_materials_primary": true,
-        "pdf_selector": "href=[\"\\']([^\"\\']+\\.pdf)[\"\\']",
-        "private_doc_keyword": "非公開",
-        "detect_private_materials": false,
-        "extract_all_materials": true,
-        "resolve_absolute_urls": true,
-        "top_page_pdf_count": 0
+        "subpage_discovery_pattern": "href=[\"\\']([^\"\\']*(?:stf/newpage_\\d+\\.html|\\d+kai|kaisai)[^\"\\'#]*)[\"\\']",
+        "date_regex": "(?:令和|平成)\\d+年\\d+月\\d+日|\\d{4}年\\d+月\\d+日|\\d{4}[/-]\\d+[/-]\\d+",
+        "pdf_selector": "href=[\"\\']([^\"\\']+\\.(?:pdf|txt))[\"\\']",
+        "deep_crawl_enabled": true
       }
     },
     "mhlw-rousei-anzeneisei-147": {
