@@ -41,7 +41,10 @@ def check_js_syntax(code, file_path=""):
     node_cmd = shutil.which("node") or (r"D:\Programs\nodejs\node.exe" if os.path.exists(r"D:\Programs\nodejs\node.exe") else None)
     if node_cmd:
         try:
-            res = subprocess.run([node_cmd, "--check", file_path], capture_output=True, text=True, encoding='utf-8', errors='replace')
+            if file_path and os.path.isfile(file_path):
+                res = subprocess.run([node_cmd, "--check", file_path], capture_output=True, text=True, encoding='utf-8', errors='replace')
+            else:
+                res = subprocess.run([node_cmd, "--check"], input=code, capture_output=True, text=True, encoding='utf-8', errors='replace')
             if res.returncode == 0:
                 return True, "Node.js Syntax OK"
             else:
@@ -275,6 +278,17 @@ def check_syntax_errors():
                 print(f"  [FAIL] {rel_path} : HTML <div> tag mismatch (open: {open_divs}, close: {close_divs})")
                 errors_found += 1
 
+            # HTML内のインライン <script> タグの構文チェック
+            inline_scripts = re.findall(r'<script(?![^>]*src=)>([\s\S]*?)</script>', code, re.IGNORECASE)
+            for idx, sc in enumerate(inline_scripts):
+                if sc.strip():
+                    ok, msg = check_js_syntax(sc, f"{rel_path} <script #{idx+1}>")
+                    if ok:
+                        print(f"  [PASS] {rel_path} <script #{idx+1}> : {msg}")
+                    else:
+                        print(f"  [FAIL] {rel_path} <script #{idx+1}> : {msg}")
+                        errors_found += 1
+
     # data.json & rejected_councils.json JSON validation
     json_files = [
         os.path.join(PROJECT_ROOT, "docs", "data.json"),
@@ -500,9 +514,9 @@ def check_view_rendering():
     return True
 
 def check_crawler_regression():
-    """クローラーの手動保護回帰テストを実行"""
+    """6. クローラーの手動保護回帰テストを実行"""
     print("\n--------------------------------------------------")
-    print(" [テスト 6/6] クローラー手動データ保護回帰テスト")
+    print(" [テスト 6/7] クローラー手動データ保護回帰テスト")
     print("--------------------------------------------------")
     test_script = os.path.join(PROJECT_ROOT, "testing", "test_crawler_regression.py")
     if not os.path.exists(test_script):
@@ -515,6 +529,33 @@ def check_crawler_regression():
         return True
     else:
         print("  [FAIL] クローラー回帰テストでエラーが検出されました:")
+        for line in res.stdout.splitlines():
+            if line.strip():
+                print(f"    {line}")
+        if res.stderr:
+            for line in res.stderr.splitlines():
+                if line.strip():
+                    print(f"    {line}")
+        return False
+
+def check_js_runtime_crash():
+    """7. JavaScript 実行時クラッシュ・TDZ・初期化検証（公開ポータル＆管理ダッシュボード）"""
+    print("\n--------------------------------------------------")
+    print(" [テスト 7/7] JavaScript 実行時クラッシュ・TDZ・描画検証")
+    print("--------------------------------------------------")
+    import shutil
+    node_cmd = shutil.which("node") or (r"D:\Programs\nodejs\node.exe" if os.path.exists(r"D:\Programs\nodejs\node.exe") else "node")
+    test_script = os.path.join(PROJECT_ROOT, "testing", "test_js_runtime.js")
+    if not os.path.exists(test_script):
+        print("  [SKIP] test_js_runtime.js が見つかりません")
+        return True
+
+    res = subprocess.run([node_cmd, test_script], capture_output=True, text=True, encoding='utf-8', errors='replace')
+    if res.returncode == 0:
+        print("  [PASS] 公開ポータルおよび管理コンソールの JavaScript 実行時クラッシュ0件・全画面描画成功")
+        return True
+    else:
+        print("  [FAIL] JavaScript 実行時にクラッシュ（例外）が検知されました:")
         for line in res.stdout.splitlines():
             if line.strip():
                 print(f"    {line}")
@@ -540,9 +581,10 @@ def main():
     sync_ok = check_council_timeline_sync()
     view_ok = check_view_rendering()
     crawler_ok = check_crawler_regression()
+    runtime_ok = check_js_runtime_crash()
 
     print("\n==================================================")
-    if syntax_ok and links_ok and utils_ok and sync_ok and view_ok and crawler_ok:
+    if syntax_ok and links_ok and utils_ok and sync_ok and view_ok and crawler_ok and runtime_ok:
         print(" 【結果】全スモークテストに合格しました。修正コードは正常です。")
         sys.exit(0)
     else:

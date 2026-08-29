@@ -27,6 +27,14 @@ document.addEventListener('DOMContentLoaded', async () => {
     window.LAST_CRAWL_TIME = '';
   }
 
+  const COUNCILS = window.COUNCILS || [];
+  const MEETINGS = window.MEETINGS || [];
+  const MINISTRIES = window.MINISTRIES || {};
+  const CATEGORIES = window.CATEGORIES || {};
+  const DOC_TYPES = window.DOC_TYPES || {};
+  const INITIAL_ALERT_KEYWORDS = window.INITIAL_ALERT_KEYWORDS || [];
+  const LAST_CRAWL_TIME = window.LAST_CRAWL_TIME || '';
+
   // --- STATE MANAGEMENT ---
   const state = {
     currentTab: 'main',

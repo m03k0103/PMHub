@@ -59,10 +59,11 @@
    - 日本語行政サイトのスクレイピング時は、`Shift_JIS` / `CP932` / `EUC-JP` / `UTF-8` のエンコーディング自動判定を厳格に行い、文字化けを徹底排除する。
 
 7. **自動テスト・回帰テストによる整合性検証（必須）**
-   - データおよびルールの更新後は、必ず以下の検証テストを実行し、重複・破損・上書き・回帰エラーが0件であることを確認する：
+   - データおよびルールの更新後は、必ず以下の検証テストを実行し、重複・破損・上書き・回帰エラー・JavaScript実行時クラッシュが0件であることを確認する：
      1. [`testing/test_no_duplicate_meetings.py`](file:///d:/dev/PMHub/testing/test_no_duplicate_meetings.py) （重複会議・会議体の完全排除検証）
      2. [`testing/test_crawler_regression.py`](file:///d:/dev/PMHub/testing/test_crawler_regression.py) （クローラー手動データ保護・新規開催回自動同期の回帰検証）
-     3. [`testing/smoke_test.py`](file:///d:/dev/PMHub/testing/smoke_test.py) （構文・URL疎通・UI描画・統合スモークテスト）
+     3. [`testing/test_js_runtime.js`](file:///d:/dev/PMHub/testing/test_js_runtime.js) （公開ポータル・管理コンソールの JavaScript 実行時クラッシュ・TDZ・未定義参照の完全検証）
+     4. [`testing/smoke_test.py`](file:///d:/dev/PMHub/testing/smoke_test.py) （構文・URL疎通・UI描画・ランタイムクラッシュ・統合スモークテスト）
 
 8. **会議体追加依頼時の包括的・同時作業スコープ（必須）**
    - ユーザーから会議体（`councils`）の追加を依頼された場合、単に会議体マスターレコードを作成するだけでなく、以下の作業を必ず**ワンストップ・必須スコープとして同時に完遂**すること：
