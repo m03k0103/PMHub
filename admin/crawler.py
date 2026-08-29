@@ -790,23 +790,33 @@ def deduplicate_data_materials(data):
     if removed_cross_dup > 0 or removed_portal > 0:
         print(f"[重複排除] 会議間重複資料 {removed_cross_dup} 件、ポータルリンク {removed_portal} 件を自動整理しました。")
 
-def main():
+def run_meeting_crawler(progress_callback=None):
     global CRAWL_TARGETS
+    
+    def emit(msg, payload=None):
+        print(msg)
+        if progress_callback:
+            try:
+                progress_callback(msg, payload)
+            except Exception as pe:
+                print(f"[WARN] progress_callback error: {pe}", file=sys.stderr)
+
     dynamic_targets = load_councils_from_data_json()
     if dynamic_targets:
         CRAWL_TARGETS = interleave_by_ministry(dynamic_targets)
-        print(f"[INFO] docs/data.json から {len(CRAWL_TARGETS)} 件の会議体を動的に読み込み、同一省庁連続アクセス防止のため省庁分散インターリーブ巡回順に並び替えました。")
+        emit(f"[INFO] docs/data.json から {len(CRAWL_TARGETS)} 件の会議体を動的に読み込み、同一省庁連続アクセス防止のため省庁分散インターリーブ巡回順に並び替えました。")
     else:
         CRAWL_TARGETS = []
-        print(f"[INFO] 会議体データが見つかりません。")
+        emit(f"[INFO] 会議体データが見つかりません。")
+        return {"success": 0, "partial": 0, "failed": 0, "fetch_error": 0, "new_meetings": 0}
 
     use_llm = load_crawler_config()
-    print("==========================================================")
-    print(" 政策会議ウォッチ (PM-HUB) クローラー")
-    print("==========================================================")
-    print(f"抽出モード: {'LLM抽出 (Gemini API) + フォールバック' if use_llm else '既存ルール (Heuristic)'}")
-    print(f"取得実行時刻: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
-    print(f"対象会議体数: {len(CRAWL_TARGETS)} 件\n")
+    emit("=" * 60)
+    emit(" 政策会議ウォッチ (PM-HUB) クローラー")
+    emit("=" * 60)
+    emit(f"抽出モード: {'LLM抽出 (Gemini API) + フォールバック' if use_llm else '既存ルール (Heuristic)'}")
+    emit(f"取得実行時刻: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
+    emit(f"対象会議体数: {len(CRAWL_TARGETS)} 件\n")
 
     # data.json をまるごと読み込み（ステータス更新用）
     data = {}
@@ -816,10 +826,24 @@ def main():
 
     rules = load_scraping_rules()
     results = []
-    stats = {"success": 0, "partial": 0, "failed": 0, "fetch_error": 0}
+    stats = {"success": 0, "partial": 0, "failed": 0, "fetch_error": 0, "new_meetings": 0}
+    total_councils = len(CRAWL_TARGETS)
 
     for idx, target in enumerate(CRAWL_TARGETS, 1):
-        print(f"[{idx}/{len(CRAWL_TARGETS)}] HTTP GET: {target['name']} ({target['url']})...")
+        pct = int((idx / max(total_councils, 1)) * 90)
+        c_name = target.get("name", target.get("id"))
+        c_min = target.get("ministry", "")
+        
+        emit(f"▶ [{idx}/{total_councils}] [{c_min}] HTTP GET: {c_name} ({target['url']})...", {
+            "type": "council_start",
+            "council_id": target["id"],
+            "council_name": c_name,
+            "ministry": c_min,
+            "progress": pct,
+            "current": idx,
+            "total": total_councils
+        })
+        
         html = fetch_url(target["url"])
         
         if html:
@@ -836,28 +860,34 @@ def main():
             stats[cr] = stats.get(cr, 0) + 1
             
             status_icon = {"success": "🟢", "partial": "🟡", "failed": "🔴"}.get(cr, "⚪")
-            print(f"  -> {status_icon} [{cr.upper()}] タイトル: {item['pageTitle']}")
-            print(f"  -> 資料: {item['totalExtractedMaterials']} 件, 日付: {item['extractedDates']}, 抽出方法: {item['extractionMethod']}")
+            emit(f"  -> {status_icon} [{cr.upper()}] タイトル: {item['pageTitle']}")
+            emit(f"  -> 資料: {item['totalExtractedMaterials']} 件, 日付: {item['extractedDates']}, 抽出方法: {item['extractionMethod']}")
             
             update_crawl_status(data, target["id"], item)
             new_added = sync_new_meetings_from_crawl(data, target, item)
             if new_added > 0:
-                print(f"  -> \U0001F4E6 新規会議 {new_added} 件を data.json の meetings に自動追加・同期しました。")
+                stats["new_meetings"] += new_added
+                emit(f"  -> 📦 新規会議 {new_added} 件を data.json の meetings に自動追加・同期しました。", {
+                    "type": "new_meeting_added",
+                    "council_id": target["id"],
+                    "new_added": new_added
+                })
         else:
             stats["fetch_error"] += 1
-            print(f"  -> 🔴 [FETCH ERROR] ネットワーク取得失敗")
+            emit(f"  -> 🔴 [FETCH ERROR] ネットワーク取得失敗")
             update_crawl_status(data, target["id"], None, "Network fetch failed")
-        print("-" * 65)
+        emit("-" * 65)
 
     # サマリー表示
-    print(f"\n{'='*60}")
-    print(f" クロール結果サマリー")
-    print(f"{'='*60}")
-    print(f"  🟢 成功 (success):  {stats['success']} 件")
-    print(f"  🟡 部分成功 (partial): {stats['partial']} 件")
-    print(f"  🔴 失敗 (failed):   {stats['failed']} 件")
-    print(f"  🔴 取得エラー:      {stats['fetch_error']} 件")
-    print(f"{'='*60}")
+    emit(f"\n{'='*60}")
+    emit(f" クロール結果サマリー")
+    emit(f"{'='*60}")
+    emit(f"  🟢 成功 (success):     {stats['success']} 件")
+    emit(f"  🟡 部分成功 (partial):    {stats['partial']} 件")
+    emit(f"  🔴 失敗 (failed):      {stats['failed']} 件")
+    emit(f"  🔴 取得エラー:         {stats['fetch_error']} 件")
+    emit(f"  📦 新規追加会議:       {stats['new_meetings']} 件")
+    emit(f"{'='*60}")
 
     # 全体データに対して資料リンクの重複排除・正規化を実施
     deduplicate_data_materials(data)
@@ -868,11 +898,20 @@ def main():
     try:
         with open(DATA_JSON_FILE, "w", encoding="utf-8") as f:
             json.dump(data, f, ensure_ascii=False, indent=2)
-        print(f"[更新成功] docs/data.json にクロール結果・ステータスと lastCrawlTime を保存しました。")
+        emit(f"[更新成功] docs/data.json にクロール結果・ステータスと lastCrawlTime を保存しました。")
     except Exception as e:
-        print(f"[WARN] data.json 更新失敗: {e}")
+        emit(f"[WARN] data.json 更新失敗: {e}")
 
-    print(f"データ取得完了: 結果を docs/data.json に直接反映しました。")
+    emit(f"データ取得完了: 結果を docs/data.json に直接反映しました。", {
+        "type": "crawl_completed",
+        "progress": 100,
+        "stats": stats,
+        "lastCrawlTime": now_str
+    })
+    return stats
+
+def main():
+    run_meeting_crawler()
 
 if __name__ == "__main__":
     main()

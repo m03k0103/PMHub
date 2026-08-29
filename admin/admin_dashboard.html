@@ -837,7 +837,6 @@ JSON データを読み込み中...
   window.startMeetingCrawl = async function() {
     if (isRunningMeetingCrawl) return;
     isRunningMeetingCrawl = true;
-    alert('【会議・資料クロール開始】登録済み全会議体の最新会議資料・開催回インデックス巡回を開始します。');
 
     const btn = document.getElementById('adminStartCrawlBtn');
     const progressFill = document.getElementById('adminProgressFill');
@@ -859,58 +858,68 @@ JSON データを読み込み中...
       logs.scrollTop = logs.scrollHeight;
     };
 
-    logLine('登録済み会議体リストの最新会議資料巡回を開始します...');
+    logLine('バックエンドの Python クローラー (admin/crawler.py) を起動しています...');
 
     try {
-      const list = (window.allCouncils && Array.isArray(window.allCouncils) && window.allCouncils.length > 0)
-        ? window.allCouncils
-        : (typeof COUNCILS !== 'undefined' && Array.isArray(COUNCILS) ? COUNCILS : []);
-
-      if (!list || list.length === 0) {
-        logLine('[ERROR] 巡回対象の会議体データが存在しません。');
-        if (btn) {
-          btn.disabled = false;
-          btn.textContent = '⚡ 会議・資料クロール即時実行';
-        }
-        isRunningMeetingCrawl = false;
-        return;
+      // 1. サーバーAPIにクロール開始を要求
+      const res = await fetch('/api/run-crawler', { method: 'POST' });
+      if (!res.ok) {
+        throw new Error(`サーバーエラー (HTTP ${res.status}): ローカルサーバーが起動しているか確認してください。`);
       }
+      const initData = await res.json();
+      logLine(`サーバー応答: ${initData.message || 'クロール開始'}`);
 
-      const targets = list.map(c => {
-        const minName = (typeof MINISTRIES !== 'undefined' && MINISTRIES[c.ministry]) ? MINISTRIES[c.ministry].name : (c.ministry || '省庁');
-        let domain = 'go.jp';
+      // 2. ポーリングループで進捗・ログをリアルタイム受信
+      let logOffset = 0;
+      const pollInterval = setInterval(async () => {
         try {
-          if (c.officialUrl) {
-            const urlObj = new URL(c.officialUrl);
-            domain = urlObj.hostname;
-          }
-        } catch(e) {}
-        return `${minName}: ${c.name || c.id} (${domain})`;
-      });
+          const statusRes = await fetch(`/api/crawler-status?since=${logOffset}`);
+          if (!statusRes.ok) return;
+          const data = await statusRes.json();
 
-      let idx = 0;
-      const intervalTime = Math.max(15, Math.min(300, 3000 / targets.length));
-      const interval = setInterval(() => {
-        if (idx < targets.length) {
-          idx++;
-          const pct = Math.round((idx / targets.length) * 100);
-          if (progressFill) progressFill.style.width = pct + '%';
-          logLine(`[${pct}%] 会議・資料クロール完了: ${targets[idx-1]} (HTTP 200 OK)`);
-        } else {
-          clearInterval(interval);
-          if (progressFill) progressFill.style.width = '100%';
-          logLine('✅ 全会議体のWebクローリング・会議資料インデックス同期が完了しました！');
-          if (btn) {
-            btn.disabled = false;
-            btn.textContent = '⚡ 会議・資料クロール即時実行';
+          if (data.logs && data.logs.length > 0) {
+            data.logs.forEach(l => logLine(l));
+            logOffset += data.logs.length;
           }
-          isRunningMeetingCrawl = false;
-          alert('登録済み全会議体のWebクローリング・会議資料インデックス同期が完了しました！');
+
+          if (progressFill && data.progress !== undefined) {
+            progressFill.style.width = Math.min(100, Math.max(0, data.progress)) + '%';
+          }
+
+          if (btn && data.current_council) {
+            btn.textContent = `⏳ クロール中 (${data.current_idx || 0}/${data.total_councils || 0})…`;
+          }
+
+          // クロール完了
+          if (!data.running) {
+            clearInterval(pollInterval);
+            isRunningMeetingCrawl = false;
+            if (progressFill) progressFill.style.width = '100%';
+            if (btn) {
+              btn.disabled = false;
+              btn.textContent = '⚡ 会議・資料クロール即時実行';
+            }
+
+            if (data.error) {
+              logLine(`[ERROR] クローラー実行エラー: ${data.error}`);
+              alert(`クローラー実行中にエラーが発生しました: ${data.error}`);
+            } else {
+              logLine('✅ クローラーが全会議体の巡回および docs/data.json の更新を完了しました！');
+              const stats = data.stats || {};
+              alert(`【クロール完了】\n・成功: ${stats.success || 0} 件\n・部分成功: ${stats.partial || 0} 件\n・失敗: ${stats.failed || 0} 件\n・新規追加会議: ${stats.new_meetings || 0} 件\n\ndocs/data.json に最新データが自動保存されました。`);
+              
+              // 画面のデータインスペクターとキャッシュを自動更新
+              if (typeof updateDataJsonInspector === 'function') updateDataJsonInspector();
+            }
+          }
+        } catch (pollErr) {
+          console.warn('Crawler status polling error:', pollErr);
         }
-      }, intervalTime);
+      }, 600);
 
-    } catch(e) {
-      logLine(`[ERROR] クロール処理中に例外が発生しました: ${e}`);
+    } catch (e) {
+      logLine(`[ERROR] クロール起動に失敗しました: ${e.message || e}`);
+      alert(`クロール起動エラー: ${e.message || e}`);
       if (btn) {
         btn.disabled = false;
         btn.textContent = '⚡ 会議・資料クロール即時実行';

@@ -7,6 +7,7 @@ import threading
 import urllib.parse
 from apply_report import apply_report
 from discover_councils import run_discovery
+from crawler import run_meeting_crawler
 
 PORT = 8000
 BASE_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
@@ -25,6 +26,43 @@ discovery_state = {
     "result": None,
     "error": None
 }
+
+# Global crawler status state
+crawler_state = {
+    "running": False,
+    "progress": 0,
+    "current_idx": 0,
+    "total_councils": 0,
+    "current_council": "",
+    "logs": [],
+    "stats": None,
+    "error": None,
+    "lastCrawlTime": ""
+}
+
+def _crawler_worker():
+    global crawler_state
+    def on_progress(msg, data=None):
+        if data:
+            if data.get("type") == "council_start":
+                crawler_state["progress"] = data.get("progress", crawler_state["progress"])
+                crawler_state["current_council"] = data.get("council_name", "")
+                crawler_state["current_idx"] = data.get("current", 0)
+                crawler_state["total_councils"] = data.get("total", 0)
+            elif data.get("type") == "crawl_completed":
+                crawler_state["lastCrawlTime"] = data.get("lastCrawlTime", "")
+        crawler_state["logs"].append(msg)
+        if len(crawler_state["logs"]) > 500:
+            crawler_state["logs"] = crawler_state["logs"][-500:]
+
+    try:
+        stats = run_meeting_crawler(progress_callback=on_progress)
+        crawler_state["stats"] = stats
+        crawler_state["progress"] = 100
+        crawler_state["running"] = False
+    except Exception as e:
+        crawler_state["error"] = str(e)
+        crawler_state["running"] = False
 
 def _discovery_worker():
     global discovery_state
@@ -177,6 +215,28 @@ class CustomHandler(SimpleHTTPRequestHandler):
                 "totalLogs": len(discovery_state["logs"]),
                 "result": discovery_state["result"],
                 "error": discovery_state["error"]
+            }
+            self.wfile.write(json.dumps(res_payload, ensure_ascii=False).encode('utf-8'))
+        elif path == "/api/crawler-status":
+            self.send_response(200)
+            self.send_header('Content-Type', 'application/json; charset=utf-8')
+            self.end_headers()
+            query = parsed_url.query
+            params = urllib.parse.parse_qs(query)
+            since = int(params.get("since", [0])[0])
+            
+            new_logs = crawler_state["logs"][since:]
+            res_payload = {
+                "running": crawler_state["running"],
+                "progress": crawler_state["progress"],
+                "current_council": crawler_state["current_council"],
+                "current_idx": crawler_state["current_idx"],
+                "total_councils": crawler_state["total_councils"],
+                "logs": new_logs,
+                "totalLogs": len(crawler_state["logs"]),
+                "stats": crawler_state["stats"],
+                "error": crawler_state["error"],
+                "lastCrawlTime": crawler_state["lastCrawlTime"]
             }
             self.wfile.write(json.dumps(res_payload, ensure_ascii=False).encode('utf-8'))
         else:
@@ -421,6 +481,34 @@ class CustomHandler(SimpleHTTPRequestHandler):
             self.send_header('Content-Type', 'application/json; charset=utf-8')
             self.end_headers()
             self.wfile.write(json.dumps({"status": "started", "message": "Discovery started in background"}).encode('utf-8'))
+
+        elif path == "/api/run-crawler":
+            global crawler_state
+            if crawler_state["running"]:
+                self.send_response(200)
+                self.send_header('Content-Type', 'application/json; charset=utf-8')
+                self.end_headers()
+                self.wfile.write(json.dumps({"status": "running", "message": "Crawler is already running"}).encode('utf-8'))
+                return
+
+            crawler_state = {
+                "running": True,
+                "progress": 5,
+                "current_idx": 0,
+                "total_councils": 0,
+                "current_council": "",
+                "logs": [],
+                "stats": None,
+                "error": None,
+                "lastCrawlTime": ""
+            }
+            t = threading.Thread(target=_crawler_worker, daemon=True)
+            t.start()
+
+            self.send_response(200)
+            self.send_header('Content-Type', 'application/json; charset=utf-8')
+            self.end_headers()
+            self.wfile.write(json.dumps({"status": "started", "message": "Meeting crawler started in background"}).encode('utf-8'))
         elif path == "/api/toggle-manual-lock":
             content_length = int(self.headers.get('Content-Length', 0))
             post_data = self.rfile.read(content_length)
