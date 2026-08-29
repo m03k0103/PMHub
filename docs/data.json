@@ -181645,7 +181645,7 @@
       "name": "内閣法制局",
       "kanji": "内閣法制局",
       "code": "CLB",
-      "color": "var(--color-clb, #64748b)",
+      "color": "var(--color-clb)",
       "officialUrl": "https://www.clb.go.jp/",
       "councilsUrls": [],
       "hasCouncils": false
@@ -181654,7 +181654,7 @@
       "name": "人事院",
       "kanji": "人事院",
       "code": "JINJI",
-      "color": "var(--color-jinji, #64748b)",
+      "color": "var(--color-jinji)",
       "officialUrl": "https://www.jinji.go.jp/",
       "councilsUrls": [],
       "hasCouncils": false
@@ -181663,7 +181663,7 @@
       "name": "宮内庁",
       "kanji": "宮内庁",
       "code": "KUNAICHO",
-      "color": "var(--color-kunaicho, #64748b)",
+      "color": "var(--color-kunaicho)",
       "officialUrl": "https://www.kunaicho.go.jp/",
       "councilsUrls": [],
       "hasCouncils": false
@@ -181703,7 +181703,7 @@
       "name": "公正取引委員会",
       "kanji": "公正取引委員会",
       "code": "JFTC",
-      "color": "var(--color-jftc, #64748b)",
+      "color": "var(--color-jftc)",
       "officialUrl": "https://www.jftc.go.jp/",
       "councilsUrls": [],
       "hasCouncils": false
@@ -181743,7 +181743,7 @@
       "name": "カジノ管理委員会",
       "kanji": "カジノ管理委員会",
       "code": "JCRC",
-      "color": "var(--color-jcrc, #64748b)",
+      "color": "var(--color-jcrc)",
       "officialUrl": "https://www.jcrc.go.jp/index.html",
       "councilsUrls": [
         "https://www.jcrc.go.jp/activity/holding.html"
@@ -181798,7 +181798,7 @@
       "name": "公害等調整委員会",
       "kanji": "公害等調整委員会",
       "code": "CCAC",
-      "color": "var(--color-ccac, #64748b)",
+      "color": "var(--color-ccac)",
       "officialUrl": "https://www.soumu.go.jp/kouchoi/",
       "councilsUrls": [],
       "hasCouncils": false
@@ -181807,7 +181807,7 @@
       "name": "消防庁",
       "kanji": "消防庁",
       "code": "FDMA",
-      "color": "var(--color-fdma, #64748b)",
+      "color": "var(--color-fdma)",
       "officialUrl": "https://www.fdma.go.jp",
       "councilsUrls": [
         "https://www.fdma.go.jp/singi_kento"
@@ -181831,7 +181831,7 @@
       "name": "出入国在留管理庁",
       "kanji": "出入国在留管理庁",
       "code": "ISA",
-      "color": "var(--color-isa, #64748b)",
+      "color": "var(--color-isa)",
       "officialUrl": "https://www.moj.go.jp/isa/",
       "councilsUrls": [
         "https://www.moj.go.jp/isa/policies/conference/seisaku_index.html"
@@ -181842,7 +181842,7 @@
       "name": "公安審査委員会",
       "kanji": "公安審査委員会",
       "code": "KOUANSHIN",
-      "color": "var(--color-kouanshin, #64748b)",
+      "color": "var(--color-kouanshin)",
       "officialUrl": "https://www.moj.go.jp/kouanshin/kouanshinsa_index.html",
       "councilsUrls": [],
       "hasCouncils": false
@@ -181851,7 +181851,7 @@
       "name": "公安調査庁",
       "kanji": "公安調査庁",
       "code": "PSIA",
-      "color": "var(--color-psia, #64748b)",
+      "color": "var(--color-psia)",
       "officialUrl": "https://www.moj.go.jp/psia/",
       "councilsUrls": [],
       "hasCouncils": false
@@ -181882,7 +181882,7 @@
       "name": "国税庁",
       "kanji": "国税庁",
       "code": "NTA",
-      "color": "var(--color-nta, #64748b)",
+      "color": "var(--color-nta)",
       "officialUrl": "https://www.nta.go.jp/",
       "councilsUrls": [
         "https://www.nta.go.jp/about/council/kenkyu.htm"
@@ -181904,7 +181904,7 @@
       "name": "スポーツ庁",
       "kanji": "スポーツ庁",
       "code": "JSA",
-      "color": "var(--color-jsa, #64748b)",
+      "color": "var(--color-jsa)",
       "officialUrl": "https://www.mext.go.jp/sports/",
       "councilsUrls": [
         "https://www.mext.go.jp/sports/b_menu/shingi/"
@@ -181915,7 +181915,7 @@
       "name": "文化庁",
       "kanji": "文化庁",
       "code": "ACA",
-      "color": "var(--color-aca, #64748b)",
+      "color": "var(--color-aca)",
       "officialUrl": "https://www.bunka.go.jp",
       "councilsUrls": [
         "https://www.bunka.go.jp/seisaku/bunkashingikai/"
@@ -181938,7 +181938,7 @@
       "name": "中央労働委員会",
       "kanji": "中央労働委員会",
       "code": "CLRC",
-      "color": "var(--color-clrc, #64748b)",
+      "color": "var(--color-clrc)",
       "officialUrl": "https://www.mhlw.go.jp/churoi/",
       "councilsUrls": [],
       "hasCouncils": false
@@ -181959,7 +181959,7 @@
       "name": "林野庁",
       "kanji": "林野庁",
       "code": "RINYA",
-      "color": "var(--color-rinya, #64748b)",
+      "color": "var(--color-rinya)",
       "officialUrl": "https://www.rinya.maff.go.jp",
       "councilsUrls": [
         "https://www.rinya.maff.go.jp/j/kouhou/singikai.html"
@@ -181970,7 +181970,7 @@
       "name": "水産庁",
       "kanji": "水産庁",
       "code": "JFA",
-      "color": "var(--color-jfa, #64748b)",
+      "color": "var(--color-jfa)",
       "officialUrl": "https://www.jfa.maff.go.jp/index.html",
       "councilsUrls": [
         "https://www.jfa.maff.go.jp/j/council/",
@@ -181994,7 +181994,7 @@
       "name": "資源エネルギー庁",
       "kanji": "資源エネルギー庁",
       "code": "ANRE",
-      "color": "var(--color-anre, #64748b)",
+      "color": "var(--color-anre)",
       "officialUrl": "https://www.enecho.meti.go.jp",
       "councilsUrls": [
         "https://www.enecho.meti.go.jp/committee/council/",
@@ -182007,7 +182007,7 @@
       "name": "特許庁",
       "kanji": "特許庁",
       "code": "JPO",
-      "color": "var(--color-jpo, #64748b)",
+      "color": "var(--color-jpo)",
       "officialUrl": "https://www.jpo.go.jp/index.html",
       "councilsUrls": [],
       "hasCouncils": false
@@ -182016,7 +182016,7 @@
       "name": "中小企業庁",
       "kanji": "中小企業庁",
       "code": "SMEA",
-      "color": "var(--color-smea, #64748b)",
+      "color": "var(--color-smea)",
       "officialUrl": "https://www.chusho.meti.go.jp",
       "councilsUrls": [
         "https://www.chusho.meti.go.jp/koukai/shingikai/",
@@ -182039,7 +182039,7 @@
       "name": "観光庁",
       "kanji": "観光庁",
       "code": "JTA",
-      "color": "var(--color-jta, #64748b)",
+      "color": "var(--color-jta)",
       "officialUrl": "https://www.mlit.go.jp/kankocho/index.html",
       "councilsUrls": [],
       "hasCouncils": false
@@ -182048,7 +182048,7 @@
       "name": "気象庁",
       "kanji": "気象庁",
       "code": "JMA",
-      "color": "var(--color-jma, #64748b)",
+      "color": "var(--color-jma)",
       "officialUrl": "https://www.jma.go.jp/jma/index.html",
       "councilsUrls": [],
       "hasCouncils": false
@@ -182057,7 +182057,7 @@
       "name": "運輸安全委員会",
       "kanji": "運輸安全委員会",
       "code": "JTSB",
-      "color": "var(--color-jtsb, #64748b)",
+      "color": "var(--color-jtsb)",
       "officialUrl": "https://www.mlit.go.jp/jtsb/index.html",
       "councilsUrls": [],
       "hasCouncils": false
@@ -182066,7 +182066,7 @@
       "name": "海上保安庁",
       "kanji": "海上保安庁",
       "code": "JCG",
-      "color": "var(--color-jcg, #64748b)",
+      "color": "var(--color-jcg)",
       "officialUrl": "https://www.kaiho.mlit.go.jp/",
       "councilsUrls": [],
       "hasCouncils": false
@@ -182109,7 +182109,7 @@
       "name": "防衛装備庁",
       "kanji": "防衛装備庁",
       "code": "ATLA",
-      "color": "var(--color-atla, #64748b)",
+      "color": "var(--color-atla)",
       "officialUrl": "https://www.mod.go.jp/atla/",
       "councilsUrls": [],
       "hasCouncils": false
@@ -182118,7 +182118,7 @@
       "name": "会計検査院",
       "kanji": "会計検査院",
       "code": "BOAJ",
-      "color": "var(--color-boaj, #64748b)",
+      "color": "var(--color-boaj)",
       "officialUrl": "https://www.jbaudit.go.jp",
       "councilsUrls": [],
       "hasCouncils": false
