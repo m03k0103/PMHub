@@ -130,7 +130,6 @@ def apply_report(json_path, data_json_path=None):
                                 "ministry": target_council.get("ministry") if target_council else "",
                                 "category": target_council.get("category", "COUNCIL") if target_council else "COUNCIL",
                                 "officialUrl": target_council.get("officialUrl") if target_council else "",
-                                "sourcePageUrl": target_council.get("sourcePageUrl", "") if target_council else "",
                                 "rejectedAt": corr.get("rejectedAt") or "2026-08-25",
                                 "reason": corr.get("reason") or "Admin rejected council"
                             }

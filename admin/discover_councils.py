@@ -203,10 +203,6 @@ def run_discovery(progress_callback=None):
                         clean_k = get_url_clean_key(rc.get("officialUrl"))
                         if clean_k:
                             rejected_clean_keys.add(clean_k)
-                    if rc.get("sourcePageUrl"):
-                        clean_sk = get_url_clean_key(rc.get("sourcePageUrl"))
-                        if clean_sk:
-                            rejected_clean_keys.add(clean_sk)
                     if rc.get("name"):
                         n_raw = rc.get("name").strip()
                         rejected_names.add(n_raw)
@@ -366,9 +362,7 @@ def run_discovery(progress_callback=None):
                     "ministry": min_code,
                     "category": category,
                     "officialUrl": final_council_url if not is_meeting_pattern else page_url,
-                    "isNew": True,
-                    "trackedSince": datetime.now().strftime("%Y-%m-%d"),
-                    "sourcePageUrl": page_url
+                    "isNew": True
                 }
 
                 discovered_list.append(council_item)

@@ -432,7 +432,6 @@ class CustomHandler(SimpleHTTPRequestHandler):
                         "ministry": target_council.get("ministry") if target_council else "",
                         "category": target_council.get("category", "COUNCIL") if target_council else "COUNCIL",
                         "officialUrl": target_council.get("officialUrl") if target_council else "",
-                        "sourcePageUrl": target_council.get("sourcePageUrl", "") if target_council else "",
                         "rejectedAt": payload.get("rejectedAt") or "2026-08-27",
                         "reason": reason
                     }
@@ -484,9 +483,7 @@ class CustomHandler(SimpleHTTPRequestHandler):
                             "ministry": target_rej.get("ministry"),
                             "category": target_rej.get("category", "COUNCIL"),
                             "officialUrl": target_rej.get("officialUrl", ""),
-                            "sourcePageUrl": target_rej.get("sourcePageUrl", ""),
-                            "status": "pending",
-                            "aiReason": ""
+                            "status": "pending"
                         })
                     if "discoveredCouncils" in data:
                         del data["discoveredCouncils"]

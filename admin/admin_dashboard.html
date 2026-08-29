@@ -1119,16 +1119,15 @@ JSON データを読み込み中...
       newCouncilsList.forEach(dc => {
         if (dc && dc.id && !isSessionName(dc.name) && !isRejectedCouncil(dc)) {
           const aiVerdict = (dc.status === 'approved' || dc.status === 'rejected') ? dc.status : null;
-          const aiReason = dc.aiReason || '';
 
           if (!currentIds.has(dc.id)) {
             dc.isNew = true;
             allCouncils.push(dc); window.allCouncils = allCouncils;
             currentIds.add(dc.id);
-            verdicts[dc.id] = { verdict: aiVerdict, notes: aiReason, correctedUrl: '' };
+            verdicts[dc.id] = { verdict: aiVerdict, notes: '', correctedUrl: '' };
             addedCount++;
           } else if (aiVerdict && (!verdicts[dc.id] || verdicts[dc.id].verdict === null || verdicts[dc.id].verdict === 'pending')) {
-            verdicts[dc.id] = { verdict: aiVerdict, notes: aiReason, correctedUrl: verdicts[dc.id]?.correctedUrl || '' };
+            verdicts[dc.id] = { verdict: aiVerdict, notes: '', correctedUrl: verdicts[dc.id]?.correctedUrl || '' };
           }
         }
       });
@@ -1163,13 +1162,11 @@ JSON データを読み込み中...
       const isBase = baseCouncils.some(bc => bc.id === c.id);
       let defaultV = isBase ? 'approved' : ((c.isNew === true || knownIdSet.has(c.id)) ? null : 'approved');
       if (c.status === 'approved' || c.status === 'rejected') defaultV = c.status;
-      const initialNotes = c.aiReason || '';
       const norm = normalizeVerdict(savedVerdicts[c.id], defaultV);
       // 本番公開データ (baseCouncils) は原則承認済みとして同期
       if (isBase && norm.verdict !== 'approved') {
         norm.verdict = 'approved';
       }
-      if (!norm.notes && initialNotes) norm.notes = initialNotes;
       verdicts[c.id] = norm;
     });
 
@@ -1547,7 +1544,6 @@ JSON データを読み込み中...
             <span class="meta-chip"><span class="chip-icon">🏛</span> ${minName} (${c.ministry})</span>
             <span class="category-badge cat-${c.category}">${catLabel}</span>
             <span class="meta-chip"><span class="chip-icon">🔗</span> <a href="${escAttr(c.officialUrl)}" target="_blank" rel="noopener">${truncateUrl(c.officialUrl, 55)}</a> ${urlBadge}</span>
-            <span class="meta-chip"><span class="chip-icon">📅</span> ${c.trackedSince || '—'}</span>
             <span class="meta-chip" style="cursor:pointer;" onclick="jumpToMeetingList('${c.id}')"><span class="chip-icon">📋</span> 会議数: ${cMeetings.length} 件 ↗</span>
           </div>
           ${nameCorrectionHtml}
@@ -1800,9 +1796,8 @@ JSON データを読み込み中...
           ministry: council.ministry,
           category: council.category || 'COUNCIL',
           officialUrl: council.officialUrl || '',
-          sourcePageUrl: council.sourcePageUrl || '',
           rejectedAt: new Date().toISOString().slice(0, 10),
-          reason: verdicts[id].notes || council.aiReason || 'Admin rejected council'
+          reason: verdicts[id].notes || 'Admin rejected council'
         };
         if (!rejectedCouncils.some(rc => rc.id === id)) {
           rejectedCouncils.push(rejItem);
@@ -2338,10 +2333,9 @@ JSON データを読み込み中...
             <span class="category-badge cat-${c.category || 'COUNCIL'}">${catLabel}</span>
             <span class="meta-chip"><span class="chip-icon">🔗</span> <a href="${escAttr(c.officialUrl)}" target="_blank" rel="noopener">${truncateUrl(c.officialUrl, 55) || 'URLなし'}</a></span>
             <span class="meta-chip"><span class="chip-icon">📅</span> 却下日: ${c.rejectedAt || '—'}</span>
-            ${c.sourcePageUrl ? `<span class="meta-chip"><span class="chip-icon">🌐</span> 元一覧: <a href="${escAttr(c.sourcePageUrl)}" target="_blank" rel="noopener">${truncateUrl(c.sourcePageUrl, 30)}</a></span>` : ''}
           </div>
           <div style="margin-top:0.75rem; padding:0.6rem 0.85rem; background:rgba(239,68,68,0.06); border:1px solid rgba(239,68,68,0.2); border-radius:var(--radius-md); font-size:0.8rem; color:#f87171;">
-            <b>🚫 却下理由 / AI判定理由:</b> ${escHtml(c.reason || '手動却下')}
+            <b>🚫 却下理由:</b> ${escHtml(c.reason || '手動却下')}
           </div>
         </div>`;
       }).join('');
@@ -2373,7 +2367,6 @@ JSON データを読み込み中...
           ministry: target.ministry,
           category: target.category || 'COUNCIL',
           officialUrl: target.officialUrl || '',
-          sourcePageUrl: target.sourcePageUrl || '',
           isNew: true,
           status: 'pending'
         };
@@ -2585,8 +2578,7 @@ JSON データを読み込み中...
                 name: finalName,
                 ministry: c.ministry,
                 category: c.category,
-                officialUrl: finalUrl,
-                trackedSince: c.trackedSince || new Date().toISOString().slice(0, 10)
+                officialUrl: finalUrl
               }
             });
           } else {
@@ -2716,7 +2708,7 @@ JSON データを読み込み中...
             } else if (corr.action === 'add_council' && corr.council) {
               const added = corr.council;
               if (!text.includes(`id: '${added.id}'`)) {
-                const cFormatted = `  {\n    id: '${added.id}',\n    name: '${added.name.replace(/'/g, "\\'")}',\n    ministry: '${added.ministry}',\n    category: '${added.category}',\n    officialUrl: '${added.officialUrl}',\n    trackedSince: '${added.trackedSince}'\n  },\n];\nconst MEETINGS`;
+                const cFormatted = `  {\n    id: '${added.id}',\n    name: '${added.name.replace(/'/g, "\\'")}',\n    ministry: '${added.ministry}',\n    category: '${added.category}',\n    officialUrl: '${added.officialUrl}'\n  },\n];\nconst MEETINGS`;
                 text = text.replace(/\n\];[\s\n]*const MEETINGS/, `,\n${cFormatted}`);
               }
             }
@@ -2772,8 +2764,7 @@ JSON データを読み込み中...
                 name: finalName,
                 ministry: c.ministry,
                 category: c.category,
-                officialUrl: finalUrl,
-                trackedSince: c.trackedSince || new Date().toISOString().slice(0, 10)
+                officialUrl: finalUrl
               }
             });
           } else {

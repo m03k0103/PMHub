@@ -164,7 +164,6 @@ def run_verification():
         if c_id in results:
             r = results[c_id]
             dc['status'] = r['verdict']
-            dc['aiReason'] = r['reason']
             if r['verdict'] == 'approved':
                 approved_count += 1
             else:
