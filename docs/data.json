@@ -650,7 +650,7 @@
       "name": "中東情勢に関する関係閣僚会議",
       "ministry": "CAS",
       "category": "LIAISON",
-      "pastYearCount": 6,
+      "pastYearCount": 11,
       "description": "中東地域情勢の緊迫化に伴う在留邦人の安全確保、原油・LNG供給体制の安定、および海上交通路の安全対策を迅速に協議する関係閣僚会議。",
       "officialUrl": "https://www.cas.go.jp/jp/seisaku/chyutoujyousei/index.html",
       "isWatched": true,
@@ -666,7 +666,8 @@
       },
       "status": "approved",
       "sourcePageUrl": "https://www.cas.go.jp/jp/seisaku/chyutoujyousei/index.html",
-      "aiReason": "AI判定: CAS所管の公式会議体マスターとして承認"
+      "aiReason": "AI判定: CAS所管の公式会議体マスターとして承認",
+      "manualLock": true
     },
     {
       "id": "cas-ainusuishin-1",
@@ -19923,6 +19924,17 @@
       "status": "approved",
       "sourcePageUrl": "https://www.cao.go.jp/zei-cho/gijiroku/discussion3/index.html",
       "aiReason": "AI判定: CAO所管の公式会議体マスターとして承認"
+    },
+    {
+      "id": "cas-chutou-jyousei-tf",
+      "name": "中東情勢に伴う重要物資の安定的な供給確保のためのタスクフォース",
+      "ministry": "CAS",
+      "category": "TASKFORCE",
+      "description": "中東情勢の影響を受けるエネルギーや原材料等の重要物資について安定供給を確保するための関係府省タスクフォース。",
+      "officialUrl": "https://www.cas.go.jp/jp/seisaku/chyutoujyousei/index.html",
+      "pastYearCount": 4,
+      "manualLock": true,
+      "status": "approved"
     }
   ],
   "meetings": [
@@ -19981,6 +19993,53 @@
       ],
       "topics": [],
       "manualLock": true
+    },
+    {
+      "id": "meet-2026-08-26-cas-chutou-jyousei-tf-dai4",
+      "councilId": "cas-chutou-jyousei-tf",
+      "title": "第4回 中東情勢に伴う重要物資の安定的な供給確保のためのタスクフォース",
+      "date": "2026/08/26",
+      "officialUrl": "https://www.cas.go.jp/jp/seisaku/chyutoujyousei/tf_dai4/gijisidai.html",
+      "category": "TASKFORCE",
+      "ministry": "CAS",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "その他情報",
+          "url": "https://www.cas.go.jp/jp/siryou/index.html",
+          "type": "HTML",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "経済産業省提出資料（PDF／1,083KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/chyutoujyousei/tf_dai4/siryou1.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "厚生労働省提出資料（PDF／860KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/chyutoujyousei/tf_dai4/siryou2.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "国土交通省提出資料（PDF／533KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/chyutoujyousei/tf_dai4/siryou3.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "農林水産省提出資料（PDF／487KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/chyutoujyousei/tf_dai4/siryou4.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        }
+      ]
     },
     {
       "id": "meet-2026-08-24-moj-baibaisyun-kento-dai8",
@@ -28104,68 +28163,6 @@
       "docCount": 4
     },
     {
-      "id": "meet-2026-07-24-cas-chutou-jyousei-dai3",
-      "councilId": "cas-chutou-jyousei",
-      "councilName": "中東情勢に関する関係閣僚会議",
-      "ministry": "CAS",
-      "category": "LIAISON",
-      "title": "第3回 中東情勢に関する関係閣僚会議",
-      "date": "2026/07/24",
-      "updatedAt": "2026/07/24 17:00",
-      "location": "総理大臣官邸 / 各府省庁本庁舎",
-      "summary": "中東情勢に関する関係閣僚会議の開催。主要議題の推進状況及び今後の対応方針について審議が行われた。",
-      "agenda": [
-        "経済産業省提出資料（PDF／1,153KB）",
-        "厚生労働省提出資料（PDF／861KB）",
-        "国土交通省提出資料（PDF／739KB）"
-      ],
-      "materials": [
-        {
-          "name": "経済産業省提出資料（PDF／1,153KB）",
-          "type": "PDF",
-          "size": "PDF",
-          "url": "https://www.cas.go.jp/jp/seisaku/chyutoujyousei/tf_dai3/siryou1.pdf",
-          "isMinutes": false
-        },
-        {
-          "name": "厚生労働省提出資料（PDF／861KB）",
-          "type": "PDF",
-          "size": "PDF",
-          "url": "https://www.cas.go.jp/jp/seisaku/chyutoujyousei/tf_dai3/siryou2.pdf",
-          "isMinutes": false
-        },
-        {
-          "name": "国土交通省提出資料（PDF／739KB）",
-          "type": "PDF",
-          "size": "PDF",
-          "url": "https://www.cas.go.jp/jp/seisaku/chyutoujyousei/tf_dai3/siryou3.pdf",
-          "isMinutes": false
-        },
-        {
-          "name": "農林水産省提出資料（PDF／933KB）",
-          "type": "PDF",
-          "size": "PDF",
-          "url": "https://www.cas.go.jp/jp/seisaku/chyutoujyousei/tf_dai3/siryou4.pdf",
-          "isMinutes": false
-        },
-        {
-          "name": "供給の偏り・流通の目詰まり解消案件（PDF／351KB）",
-          "type": "PDF",
-          "size": "PDF",
-          "url": "https://www.cas.go.jp/jp/seisaku/chyutoujyousei/tf_dai3/siryou5.pdf",
-          "isMinutes": false
-        }
-      ],
-      "tags": [
-        "中東情勢に関",
-        "CAS",
-        "政策会議"
-      ],
-      "officialUrl": "https://www.cas.go.jp/jp/seisaku/chyutoujyousei/tf_dai3/gijisidai.html",
-      "hasMinutes": false,
-      "docCount": 5
-    },
-    {
       "id": "meet-2026-07-24-cas-kenkouiryou-20-dai2",
       "councilId": "cas-kenkouiryou-20",
       "councilName": "健康・医療戦略推進本部",
@@ -28438,6 +28435,60 @@
       "hasMinutes": false,
       "docCount": 1,
       "manualLock": true
+    },
+    {
+      "id": "meet-2026-07-24-cas-chutou-jyousei-tf-dai3",
+      "councilId": "cas-chutou-jyousei-tf",
+      "title": "第3回 中東情勢に伴う重要物資の安定的な供給確保のためのタスクフォース",
+      "date": "2026/07/24",
+      "officialUrl": "https://www.cas.go.jp/jp/seisaku/chyutoujyousei/tf_dai3/gijisidai.html",
+      "category": "TASKFORCE",
+      "ministry": "CAS",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "その他情報",
+          "url": "https://www.cas.go.jp/jp/siryou/index.html",
+          "type": "HTML",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "経済産業省提出資料（PDF／1,153KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/chyutoujyousei/tf_dai3/siryou1.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "厚生労働省提出資料（PDF／861KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/chyutoujyousei/tf_dai3/siryou2.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "国土交通省提出資料（PDF／739KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/chyutoujyousei/tf_dai3/siryou3.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "農林水産省提出資料（PDF／933KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/chyutoujyousei/tf_dai3/siryou4.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "供給の偏り・流通の目詰まり解消案件（PDF／351KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/chyutoujyousei/tf_dai3/siryou5.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        }
+      ]
     },
     {
       "id": "meet-2026-0722-mext-chukyo-130",
@@ -33474,112 +33525,6 @@
       ]
     },
     {
-      "id": "meet-2026-06-26-cas-chutou-jyousei-dai11",
-      "councilId": "cas-chutou-jyousei",
-      "councilName": "中東情勢に関する関係閣僚会議",
-      "ministry": "CAS",
-      "category": "LIAISON",
-      "title": "第11回 中東情勢に関する関係閣僚会議",
-      "date": "2026/06/26",
-      "updatedAt": "2026/06/26 17:00",
-      "location": "首相官邸 2階 危機管理センター",
-      "summary": "中東情勢の緊迫化に伴う日本関係船舶の航行安全確保策、原油・LNG調達体制の安定性評価、および現地邦人保護の手順が確認された。",
-      "agenda": [
-        "中東地域の最新情勢および関係閣僚による安全確保措置の評価",
-        "日本関係船舶の航行安全および原油・LNG等のエネルギー安定供給確保",
-        "現地在留邦人の安全確保および緊急支援体制の維持方針"
-      ],
-      "materials": [
-        {
-          "name": "経済産業省提出資料（PDF／1,068KB）",
-          "type": "PDF",
-          "size": "PDF",
-          "url": "https://www.cas.go.jp/jp/seisaku/chyutoujyousei/dai11/pdf/siryou1.pdf",
-          "isMinutes": false
-        },
-        {
-          "name": "厚生労働省提出資料（PDF／852KB）",
-          "type": "PDF",
-          "size": "PDF",
-          "url": "https://www.cas.go.jp/jp/seisaku/chyutoujyousei/dai11/pdf/siryou2.pdf",
-          "isMinutes": false
-        },
-        {
-          "name": "国土交通省提出資料（PDF／767KB）",
-          "type": "PDF",
-          "size": "PDF",
-          "url": "https://www.cas.go.jp/jp/seisaku/chyutoujyousei/dai11/pdf/siryou3.pdf",
-          "isMinutes": false
-        },
-        {
-          "name": "農林水産省提出資料（PDF／575KB）",
-          "type": "PDF",
-          "size": "PDF",
-          "url": "https://www.cas.go.jp/jp/seisaku/chyutoujyousei/dai11/pdf/siryou4.pdf",
-          "isMinutes": false
-        },
-        {
-          "name": "塗料・シンナーの目詰まり解消対策の進捗（PDF／739KB）",
-          "type": "PDF",
-          "size": "PDF",
-          "url": "https://www.cas.go.jp/jp/seisaku/chyutoujyousei/dai11/pdf/siryou6.pdf",
-          "isMinutes": false
-        },
-        {
-          "name": "目詰まり・偏り解消協力団体・企業名の公表状況（PDF／441KB）",
-          "type": "PDF",
-          "size": "PDF",
-          "url": "https://www.cas.go.jp/jp/seisaku/chyutoujyousei/dai11/pdf/siryou7.pdf",
-          "isMinutes": false
-        },
-        {
-          "name": "自動車のエンジンオイル・シンナーの供給状況に関するアンケート結果（PDF／493KB）",
-          "type": "PDF",
-          "size": "PDF",
-          "url": "https://www.cas.go.jp/jp/seisaku/chyutoujyousei/dai11/pdf/siryou8.pdf",
-          "isMinutes": false
-        },
-        {
-          "name": "パン・菓子等販売店の実態把握・目詰まり解消（PDF／440KB）",
-          "type": "PDF",
-          "size": "PDF",
-          "url": "https://www.cas.go.jp/jp/seisaku/chyutoujyousei/dai11/pdf/siryou9.pdf",
-          "isMinutes": false
-        },
-        {
-          "name": "中東情勢を踏まえた医療用手袋の備蓄の放出（PDF／447KB）",
-          "type": "PDF",
-          "size": "PDF",
-          "url": "https://www.cas.go.jp/jp/seisaku/chyutoujyousei/dai11/pdf/siryou10.pdf",
-          "isMinutes": false
-        },
-        {
-          "name": "供給の偏り・流通の目詰まりの解消案件（PDF／450KB）",
-          "type": "PDF",
-          "size": "PDF",
-          "url": "https://www.cas.go.jp/jp/seisaku/chyutoujyousei/dai11/pdf/siryou11.pdf",
-          "isMinutes": false
-        },
-        {
-          "name": "Ｇ７の消費者物価と実質賃金（PDF／270KB）",
-          "type": "PDF",
-          "size": "PDF",
-          "url": "https://www.cas.go.jp/jp/seisaku/chyutoujyousei/dai11/pdf/siryou12.pdf",
-          "isMinutes": false
-        }
-      ],
-      "tags": [
-        "中東情勢",
-        "安全保障",
-        "邦人保護",
-        "エネルギー",
-        "内閣官房"
-      ],
-      "officialUrl": "https://www.cas.go.jp/jp/seisaku/chyutoujyousei/dai11/gijisidai.html",
-      "hasMinutes": true,
-      "docCount": 11
-    },
-    {
       "id": "meet-2026-06-26-cas-titeki2-72-dai30",
       "councilId": "cas-titeki2-72",
       "councilName": "知的財産戦略本部",
@@ -33675,6 +33620,109 @@
           "name": "中小企業・小規模事業者の人材マネジメントに関する研究会 報告書",
           "url": "https://www.chusho.meti.go.jp/koukai/kenkyukai/shokibo_jinzai_management/report/260626report.pdf",
           "type": "PDF",
+          "manualLock": true
+        }
+      ]
+    },
+    {
+      "id": "meet-2026-06-26-cas-chutou-jyousei-dai11",
+      "councilId": "cas-chutou-jyousei",
+      "title": "第11回 中東情勢に関する関係閣僚会議",
+      "date": "2026/06/26",
+      "officialUrl": "https://www.cas.go.jp/jp/seisaku/chyutoujyousei/dai11/gijisidai.html",
+      "category": "MINISTERIAL",
+      "ministry": "CAS",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "その他情報",
+          "url": "https://www.cas.go.jp/jp/siryou/index.html",
+          "type": "HTML",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "経済産業省提出資料（PDF／1,068KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/chyutoujyousei/dai11/pdf/siryou1.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "厚生労働省提出資料（PDF／852KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/chyutoujyousei/dai11/pdf/siryou2.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "国土交通省提出資料（PDF／767KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/chyutoujyousei/dai11/pdf/siryou3.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "農林水産省提出資料（PDF／575KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/chyutoujyousei/dai11/pdf/siryou4.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "塗料・シンナーの目詰まり解消対策の進捗（PDF／739KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/chyutoujyousei/dai11/pdf/siryou6.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "目詰まり・偏り解消協力団体・企業名の公表状況（PDF／441KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/chyutoujyousei/dai11/pdf/siryou7.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "自動車のエンジンオイル・シンナーの供給状況に関するアンケート結果（PDF／493KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/chyutoujyousei/dai11/pdf/siryou8.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "パン・菓子等販売店の実態把握・目詰まり解消（PDF／440KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/chyutoujyousei/dai11/pdf/siryou9.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "中東情勢を踏まえた医療用手袋の備蓄の放出（PDF／447KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/chyutoujyousei/dai11/pdf/siryou10.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "供給の偏り・流通の目詰まりの解消案件（PDF／450KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/chyutoujyousei/dai11/pdf/siryou11.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "Ｇ７の消費者物価と実質賃金（PDF／270KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/chyutoujyousei/dai11/pdf/siryou12.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "議事要旨",
+          "url": "https://www.cas.go.jp/jp/seisaku/chyutoujyousei/dai11/gijiyoushi.pdf",
+          "type": "PDF",
+          "isPrivate": false,
           "manualLock": true
         }
       ]
@@ -35955,124 +36003,6 @@
       "docCount": 2
     },
     {
-      "id": "meet-2026-06-11-cas-chutou-jyousei-dai10",
-      "councilId": "cas-chutou-jyousei",
-      "councilName": "中東情勢に関する関係閣僚会議",
-      "ministry": "CAS",
-      "category": "LIAISON",
-      "title": "第10回 中東情勢に関する関係閣僚会議",
-      "date": "2026/06/11",
-      "updatedAt": "2026/06/11 17:00",
-      "location": "首相官邸 2階 危機管理センター",
-      "summary": "ホルムズ海峡周辺の情勢推移、海上自衛隊による情報収集活動、および国家備蓄放出の準備状況について協議が行われた。",
-      "agenda": [
-        "中東情勢に関する関係閣僚会議（第10回）開催報告",
-        "エネルギー供給への影響と石油備蓄放出手続きの事前確認"
-      ],
-      "materials": [
-        {
-          "name": "経済産業省提出資料（PDF／1,854KB）",
-          "type": "PDF",
-          "size": "PDF",
-          "url": "https://www.cas.go.jp/jp/seisaku/chyutoujyousei/dai10/pdf/siryou1.pdf",
-          "isMinutes": false
-        },
-        {
-          "name": "厚生労働省提出資料（PDF／649KB）",
-          "type": "PDF",
-          "size": "PDF",
-          "url": "https://www.cas.go.jp/jp/seisaku/chyutoujyousei/dai10/pdf/siryou2.pdf",
-          "isMinutes": false
-        },
-        {
-          "name": "国土交通省提出資料（PDF／799KB）",
-          "type": "PDF",
-          "size": "PDF",
-          "url": "https://www.cas.go.jp/jp/seisaku/chyutoujyousei/dai10/pdf/siryou3.pdf",
-          "isMinutes": false
-        },
-        {
-          "name": "農林水産省提出資料（PDF／568KB）",
-          "type": "PDF",
-          "size": "PDF",
-          "url": "https://www.cas.go.jp/jp/seisaku/chyutoujyousei/dai10/pdf/siryou4.pdf",
-          "isMinutes": false
-        },
-        {
-          "name": "原油の調達の動向（PDF／296KB）",
-          "type": "PDF",
-          "size": "PDF",
-          "url": "https://www.cas.go.jp/jp/seisaku/chyutoujyousei/dai10/pdf/siryou5.pdf",
-          "isMinutes": false
-        },
-        {
-          "name": "潤滑油における直接販売スキームの新設（PDF／424KB）",
-          "type": "PDF",
-          "size": "PDF",
-          "url": "https://www.cas.go.jp/jp/seisaku/chyutoujyousei/dai10/pdf/siryou6.pdf",
-          "isMinutes": false
-        },
-        {
-          "name": "建設・住宅資材における地方支分部局連携による目詰まり改善の取組状況（PDF／413KB）",
-          "type": "PDF",
-          "size": "PDF",
-          "url": "https://www.cas.go.jp/jp/seisaku/chyutoujyousei/dai10/pdf/siryou7.pdf",
-          "isMinutes": false
-        },
-        {
-          "name": "パン・菓子等販売店の実態把握・目詰まり解消（PDF／393KB）",
-          "type": "PDF",
-          "size": "PDF",
-          "url": "https://www.cas.go.jp/jp/seisaku/chyutoujyousei/dai10/pdf/siryou8.pdf",
-          "isMinutes": false
-        },
-        {
-          "name": "医療分野における品目別相談件数の推移（PDF／361KB）",
-          "type": "PDF",
-          "size": "PDF",
-          "url": "https://www.cas.go.jp/jp/seisaku/chyutoujyousei/dai10/pdf/siryou9.pdf",
-          "isMinutes": false
-        },
-        {
-          "name": "供給の偏り・流通の目詰まりの解消案件（PDF／433KB）",
-          "type": "PDF",
-          "size": "PDF",
-          "url": "https://www.cas.go.jp/jp/seisaku/chyutoujyousei/dai10/pdf/siryou10.pdf",
-          "isMinutes": false
-        },
-        {
-          "name": "令和８年度一般会計補正予算（第１号）の概要（PDF／356KB）",
-          "type": "PDF",
-          "size": "PDF",
-          "url": "https://www.cas.go.jp/jp/seisaku/chyutoujyousei/dai10/pdf/sankou.pdf",
-          "isMinutes": false
-        },
-        {
-          "name": "第10回 会議議事要旨 (PDF)",
-          "type": "PDF",
-          "size": "210 KB",
-          "url": "https://www.cas.go.jp/jp/seisaku/chyutoujyousei/dai10/gijiyoushi.pdf",
-          "isMinutes": true
-        },
-        {
-          "name": "第10回 会議開催概要ページ",
-          "type": "HTML",
-          "size": "30 KB",
-          "url": "https://www.cas.go.jp/jp/seisaku/chyutoujyousei/dai10/gijisidai.html",
-          "isMinutes": false
-        }
-      ],
-      "tags": [
-        "中東情勢",
-        "安全保障",
-        "エネルギー",
-        "内閣官房"
-      ],
-      "officialUrl": "https://www.cas.go.jp/jp/seisaku/chyutoujyousei/dai10/gijisidai.html",
-      "hasMinutes": true,
-      "docCount": 13
-    },
-    {
       "id": "meet-2026-06-11-cas-suisinkaigi-97-dai20",
       "councilId": "cas-suisinkaigi-97",
       "councilName": "国土強靱化推進会議",
@@ -36153,6 +36083,109 @@
       "officialUrl": "https://www.cas.go.jp/jp/seisaku/suisinkaigi/dai20/index.html",
       "hasMinutes": false,
       "docCount": 9
+    },
+    {
+      "id": "meet-2026-06-11-cas-chutou-jyousei-dai10",
+      "councilId": "cas-chutou-jyousei",
+      "title": "第10回 中東情勢に関する関係閣僚会議",
+      "date": "2026/06/11",
+      "officialUrl": "https://www.cas.go.jp/jp/seisaku/chyutoujyousei/dai10/gijisidai.html",
+      "category": "MINISTERIAL",
+      "ministry": "CAS",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "その他情報",
+          "url": "https://www.cas.go.jp/jp/siryou/index.html",
+          "type": "HTML",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "経済産業省提出資料（PDF／1,854KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/chyutoujyousei/dai10/pdf/siryou1.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "厚生労働省提出資料（PDF／649KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/chyutoujyousei/dai10/pdf/siryou2.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "国土交通省提出資料（PDF／799KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/chyutoujyousei/dai10/pdf/siryou3.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "農林水産省提出資料（PDF／568KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/chyutoujyousei/dai10/pdf/siryou4.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "原油の調達の動向（PDF／296KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/chyutoujyousei/dai10/pdf/siryou5.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "潤滑油における直接販売スキームの新設（PDF／424KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/chyutoujyousei/dai10/pdf/siryou6.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "建設・住宅資材における地方支分部局連携による目詰まり改善の取組状況（PDF／413KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/chyutoujyousei/dai10/pdf/siryou7.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "パン・菓子等販売店の実態把握・目詰まり解消（PDF／393KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/chyutoujyousei/dai10/pdf/siryou8.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "医療分野における品目別相談件数の推移（PDF／361KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/chyutoujyousei/dai10/pdf/siryou9.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "供給の偏り・流通の目詰まりの解消案件（PDF／433KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/chyutoujyousei/dai10/pdf/siryou10.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "令和８年度一般会計補正予算（第１号）の概要（PDF／356KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/chyutoujyousei/dai10/pdf/sankou.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "議事要旨",
+          "url": "https://www.cas.go.jp/jp/seisaku/chyutoujyousei/dai10/gijiyoushi.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        }
+      ]
     },
     {
       "id": "meet-2026-06-10-moj-baibaisyun-kento-dai5",
@@ -36559,105 +36592,91 @@
     {
       "id": "meet-2026-06-02-cas-chutou-jyousei-dai9",
       "councilId": "cas-chutou-jyousei",
-      "councilName": "中東情勢に関する関係閣僚会議",
-      "ministry": "CAS",
-      "category": "LIAISON",
       "title": "第9回 中東情勢に関する関係閣僚会議",
       "date": "2026/06/02",
-      "updatedAt": "2026/06/02 17:00",
-      "location": "首相官邸 2階 危機管理センター",
-      "summary": "現地邦人の安全確保および民間航空便の運航支援手続きについて審議された。",
-      "agenda": [
-        "現地在留邦人の安全状況および退避支援手順の確認",
-        "関係省庁（外務省・防衛省・国土交通省）の連携体制強化"
-      ],
+      "officialUrl": "https://www.cas.go.jp/jp/seisaku/chyutoujyousei/dai9/gijisidai.html",
+      "category": "MINISTERIAL",
+      "ministry": "CAS",
+      "manualLock": true,
       "materials": [
         {
+          "name": "その他情報",
+          "url": "https://www.cas.go.jp/jp/siryou/index.html",
+          "type": "HTML",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
           "name": "経済産業省提出資料（PDF／1,427KB）",
-          "type": "PDF",
-          "size": "PDF",
           "url": "https://www.cas.go.jp/jp/seisaku/chyutoujyousei/dai9/pdf/siryou1.pdf",
-          "isMinutes": false
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
         },
         {
           "name": "厚生労働省提出資料（PDF／1,091KB）",
-          "type": "PDF",
-          "size": "PDF",
           "url": "https://www.cas.go.jp/jp/seisaku/chyutoujyousei/dai9/pdf/siryou2.pdf",
-          "isMinutes": false
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
         },
         {
           "name": "国土交通省提出資料（PDF／491KB）",
-          "type": "PDF",
-          "size": "PDF",
           "url": "https://www.cas.go.jp/jp/seisaku/chyutoujyousei/dai9/pdf/siryou3.pdf",
-          "isMinutes": false
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
         },
         {
           "name": "農林水産省提出資料（PDF／544KB）",
-          "type": "PDF",
-          "size": "PDF",
           "url": "https://www.cas.go.jp/jp/seisaku/chyutoujyousei/dai9/pdf/siryou4.pdf",
-          "isMinutes": false
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
         },
         {
           "name": "ナフサ由来の化学製品の需給見通し（PDF／591KB）",
-          "type": "PDF",
-          "size": "PDF",
           "url": "https://www.cas.go.jp/jp/seisaku/chyutoujyousei/dai9/pdf/siryou5.pdf",
-          "isMinutes": false
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
         },
         {
           "name": "化学製品の安定供給の見通し（PDF／468KB）",
-          "type": "PDF",
-          "size": "PDF",
           "url": "https://www.cas.go.jp/jp/seisaku/chyutoujyousei/dai9/pdf/siryou6.pdf",
-          "isMinutes": false
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
         },
         {
           "name": "トルエン等の大幅増産について（シンナー・塗料の目詰まり解消対策）（PDF／333KB）",
-          "type": "PDF",
-          "size": "PDF",
           "url": "https://www.cas.go.jp/jp/seisaku/chyutoujyousei/dai9/pdf/siryou7.pdf",
-          "isMinutes": false
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
         },
         {
           "name": "ナフサ関連の各製品の在庫について（PDF／438KB）",
-          "type": "PDF",
-          "size": "PDF",
           "url": "https://www.cas.go.jp/jp/seisaku/chyutoujyousei/dai9/pdf/siryou8.pdf",
-          "isMinutes": false
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
         },
         {
           "name": "供給の偏り・流通の目詰まり解消案件及び川中～川下の流通過程における「目詰まり対策」の強化等（PDF／780KB）",
-          "type": "PDF",
-          "size": "PDF",
           "url": "https://www.cas.go.jp/jp/seisaku/chyutoujyousei/dai9/pdf/siryou9.pdf",
-          "isMinutes": false
-        },
-        {
-          "name": "第9回 会議議事要旨 (PDF)",
           "type": "PDF",
-          "size": "190 KB",
-          "url": "https://www.cas.go.jp/jp/seisaku/chyutoujyousei/dai9/gijiyoushi.pdf",
-          "isMinutes": true
+          "isPrivate": false,
+          "manualLock": true
         },
         {
-          "name": "第9回 会議開催概要ページ",
-          "type": "HTML",
-          "size": "28 KB",
-          "url": "https://www.cas.go.jp/jp/seisaku/chyutoujyousei/dai9/gijisidai.html",
-          "isMinutes": false
+          "name": "議事要旨",
+          "url": "https://www.cas.go.jp/jp/seisaku/chyutoujyousei/dai9/gijiyoushi.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
         }
-      ],
-      "tags": [
-        "中東情勢",
-        "邦人保護",
-        "内閣官房"
-      ],
-      "officialUrl": "https://www.cas.go.jp/jp/seisaku/chyutoujyousei/dai9/gijisidai.html",
-      "hasMinutes": true,
-      "docCount": 11
+      ]
     },
     {
       "id": "meet-2026-05-29-moj-baibaisyun-kento-dai4",
@@ -37258,92 +37277,91 @@
     {
       "id": "meet-2026-05-21-cas-chutou-jyousei-dai8",
       "councilId": "cas-chutou-jyousei",
-      "councilName": "中東情勢に関する関係閣僚会議",
-      "ministry": "CAS",
-      "category": "LIAISON",
       "title": "第8回 中東情勢に関する関係閣僚会議",
       "date": "2026/05/21",
-      "updatedAt": "2026/05/21 17:00",
-      "location": "総理大臣官邸 / 各府省庁本庁舎",
-      "summary": "中東情勢に関する関係閣僚会議の開催。主要議題の推進状況及び今後の対応方針について審議が行われた。",
-      "agenda": [
-        "経済産業省提出資料（PDF／1,407KB）",
-        "厚生労働省提出資料（PDF／593KB）",
-        "国土交通省提出資料（PDF／638KB）"
-      ],
+      "officialUrl": "https://www.cas.go.jp/jp/seisaku/chyutoujyousei/dai8/gijisidai.html",
+      "category": "MINISTERIAL",
+      "ministry": "CAS",
+      "manualLock": true,
       "materials": [
         {
+          "name": "その他情報",
+          "url": "https://www.cas.go.jp/jp/siryou/index.html",
+          "type": "HTML",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
           "name": "経済産業省提出資料（PDF／1,407KB）",
-          "type": "PDF",
-          "size": "PDF",
           "url": "https://www.cas.go.jp/jp/seisaku/chyutoujyousei/dai8/pdf/siryou1.pdf",
-          "isMinutes": false
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
         },
         {
           "name": "厚生労働省提出資料（PDF／593KB）",
-          "type": "PDF",
-          "size": "PDF",
           "url": "https://www.cas.go.jp/jp/seisaku/chyutoujyousei/dai8/pdf/siryou2.pdf",
-          "isMinutes": false
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
         },
         {
           "name": "国土交通省提出資料（PDF／638KB）",
-          "type": "PDF",
-          "size": "PDF",
           "url": "https://www.cas.go.jp/jp/seisaku/chyutoujyousei/dai8/pdf/siryou3.pdf",
-          "isMinutes": false
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
         },
         {
           "name": "農林水産省提出資料（PDF／447KB）",
-          "type": "PDF",
-          "size": "PDF",
           "url": "https://www.cas.go.jp/jp/seisaku/chyutoujyousei/dai8/pdf/siryou4.pdf",
-          "isMinutes": false
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
         },
         {
           "name": "環境省提出資料（PDF／460KB）",
-          "type": "PDF",
-          "size": "PDF",
           "url": "https://www.cas.go.jp/jp/seisaku/chyutoujyousei/dai8/pdf/siryou5.pdf",
-          "isMinutes": false
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
         },
         {
           "name": "川中～川下の流通過程における「目詰まり対策」の強化（PDF／504KB）",
-          "type": "PDF",
-          "size": "PDF",
           "url": "https://www.cas.go.jp/jp/seisaku/chyutoujyousei/dai8/pdf/siryou6.pdf",
-          "isMinutes": false
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
         },
         {
           "name": "副大臣・大臣政務官が大型連休中に収集した事業者・団体からの声（中東情勢による物資供給への影響）（PDF／263KB）",
-          "type": "PDF",
-          "size": "PDF",
           "url": "https://www.cas.go.jp/jp/seisaku/chyutoujyousei/dai8/pdf/siryou7.pdf",
-          "isMinutes": false
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
         },
         {
           "name": "国及び業界団体による要請等の状況（PDF／301KB）",
-          "type": "PDF",
-          "size": "PDF",
           "url": "https://www.cas.go.jp/jp/seisaku/chyutoujyousei/dai8/pdf/siryou8.pdf",
-          "isMinutes": false
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
         },
         {
           "name": "供給の偏り・流通の目詰まりの解消案件（PDF／387KB）",
-          "type": "PDF",
-          "size": "PDF",
           "url": "https://www.cas.go.jp/jp/seisaku/chyutoujyousei/dai8/pdf/siryou9.pdf",
-          "isMinutes": false
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "議事要旨",
+          "url": "https://www.cas.go.jp/jp/seisaku/chyutoujyousei/dai8/gijiyoushi.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
         }
-      ],
-      "tags": [
-        "中東情勢に関",
-        "CAS",
-        "政策会議"
-      ],
-      "officialUrl": "https://www.cas.go.jp/jp/seisaku/chyutoujyousei/dai8/gijisidai.html",
-      "hasMinutes": false,
-      "docCount": 9
+      ]
     },
     {
       "id": "meet-2026-0520-mofa-kaigai-kouryushingi-127",
@@ -37772,71 +37790,70 @@
     {
       "id": "meet-2026-05-12-cas-chutou-jyousei-dai7",
       "councilId": "cas-chutou-jyousei",
-      "councilName": "中東情勢に関する関係閣僚会議",
-      "ministry": "CAS",
-      "category": "LIAISON",
       "title": "第7回 中東情勢に関する関係閣僚会議",
       "date": "2026/05/12",
-      "updatedAt": "2026/05/12 17:00",
-      "location": "総理大臣官邸 / 各府省庁本庁舎",
-      "summary": "中東情勢に関する関係閣僚会議の開催。主要議題の推進状況及び今後の対応方針について審議が行われた。",
-      "agenda": [
-        "経済産業省提出資料（PDF／1,260KB）",
-        "厚生労働省提出資料（PDF／572KB）",
-        "農林水産省提出資料（PDF／497KB）"
-      ],
+      "officialUrl": "https://www.cas.go.jp/jp/seisaku/chyutoujyousei/dai7/gijisidai.html",
+      "category": "MINISTERIAL",
+      "ministry": "CAS",
+      "manualLock": true,
       "materials": [
         {
+          "name": "その他情報",
+          "url": "https://www.cas.go.jp/jp/siryou/index.html",
+          "type": "HTML",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
           "name": "経済産業省提出資料（PDF／1,260KB）",
-          "type": "PDF",
-          "size": "PDF",
           "url": "https://www.cas.go.jp/jp/seisaku/chyutoujyousei/dai7/pdf/siryou1.pdf",
-          "isMinutes": false
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
         },
         {
           "name": "厚生労働省提出資料（PDF／572KB）",
-          "type": "PDF",
-          "size": "PDF",
           "url": "https://www.cas.go.jp/jp/seisaku/chyutoujyousei/dai7/pdf/siryou2.pdf",
-          "isMinutes": false
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
         },
         {
           "name": "農林水産省提出資料（PDF／497KB）",
-          "type": "PDF",
-          "size": "PDF",
           "url": "https://www.cas.go.jp/jp/seisaku/chyutoujyousei/dai7/pdf/siryou3.pdf",
-          "isMinutes": false
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
         },
         {
           "name": "国土交通省提出資料（PDF／747KB）",
-          "type": "PDF",
-          "size": "PDF",
           "url": "https://www.cas.go.jp/jp/seisaku/chyutoujyousei/dai7/pdf/siryou4.pdf",
-          "isMinutes": false
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
         },
         {
           "name": "国及び業界団体による要請等の状況（PDF／521KB）",
-          "type": "PDF",
-          "size": "PDF",
           "url": "https://www.cas.go.jp/jp/seisaku/chyutoujyousei/dai7/pdf/siryou5.pdf",
-          "isMinutes": false
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
         },
         {
           "name": "供給の偏り・流通の目詰まりの解消案件（PDF／371KB）",
-          "type": "PDF",
-          "size": "PDF",
           "url": "https://www.cas.go.jp/jp/seisaku/chyutoujyousei/dai7/pdf/siryou6.pdf",
-          "isMinutes": false
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "議事要旨",
+          "url": "https://www.cas.go.jp/jp/seisaku/chyutoujyousei/dai7/gijiyoushi.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
         }
-      ],
-      "tags": [
-        "中東情勢に関",
-        "CAS",
-        "政策会議"
-      ],
-      "officialUrl": "https://www.cas.go.jp/jp/seisaku/chyutoujyousei/dai7/gijisidai.html",
-      "hasMinutes": false,
-      "docCount": 6
+      ]
     },
     {
       "id": "meet-2026-0510-mhlw-hosho-shippei-133",
@@ -37888,6 +37905,74 @@
       "officialUrl": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/meeting.html",
       "hasMinutes": false,
       "docCount": 1
+    },
+    {
+      "id": "meet-2026-04-30-cas-chutou-jyousei-dai6",
+      "councilId": "cas-chutou-jyousei",
+      "title": "第6回 中東情勢に関する関係閣僚会議",
+      "date": "2026/04/30",
+      "officialUrl": "https://www.cas.go.jp/jp/seisaku/chyutoujyousei/dai6/gijisidai.html",
+      "category": "MINISTERIAL",
+      "ministry": "CAS",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "その他情報",
+          "url": "https://www.cas.go.jp/jp/siryou/index.html",
+          "type": "HTML",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "経済産業省提出資料（PDF／1,801KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/chyutoujyousei/dai6/pdf/siryou1.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "厚生労働省提出資料（PDF／349KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/chyutoujyousei/dai6/pdf/siryou2.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "農林水産省提出資料（PDF／212KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/chyutoujyousei/dai6/pdf/siryou3.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "国土交通省提出資料（PDF／601KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/chyutoujyousei/dai6/pdf/siryou4.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "環境省提出資料（PDF／434KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/chyutoujyousei/dai6/pdf/siryou5.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "供給の偏り・流通の目詰まり解消案件・ガソリン価格の国際比較（PDF／681KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/chyutoujyousei/dai6/pdf/siryou6.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "議事要旨",
+          "url": "https://www.cas.go.jp/jp/seisaku/chyutoujyousei/dai6/gijiyoushi.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        }
+      ]
     },
     {
       "id": "meet-2026-04-28-cas-Infura_syougai-98-dai3",
@@ -38203,6 +38288,60 @@
           "name": "不正競争防止法におけるパブリシティ価値の保護に関する調査研究報告書",
           "url": "https://www.meti.go.jp/meti_lib/report/2024FY/000278.pdf",
           "type": "PDF",
+          "manualLock": true
+        }
+      ]
+    },
+    {
+      "id": "meet-2026-04-24-cas-chutou-jyousei-dai5",
+      "councilId": "cas-chutou-jyousei",
+      "title": "第5回 中東情勢に関する関係閣僚会議",
+      "date": "2026/04/24",
+      "officialUrl": "https://www.cas.go.jp/jp/seisaku/chyutoujyousei/dai5/gijisidai.html",
+      "category": "MINISTERIAL",
+      "ministry": "CAS",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "その他情報",
+          "url": "https://www.cas.go.jp/jp/siryou/index.html",
+          "type": "HTML",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "経済産業省提出資料（PDF／839KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/chyutoujyousei/dai5/pdf/siryou1.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "厚生労働省提出資料（PDF／536KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/chyutoujyousei/dai5/pdf/siryou2.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "農林水産省提出資料（PDF／365KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/chyutoujyousei/dai5/pdf/siryou3.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "供給の偏り・流通の目詰まり解消案件（PDF／752KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/chyutoujyousei/dai5/pdf/siryou4.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "議事要旨",
+          "url": "https://www.cas.go.jp/jp/seisaku/chyutoujyousei/dai5/gijiyoushi.pdf",
+          "type": "PDF",
+          "isPrivate": false,
           "manualLock": true
         }
       ]
@@ -38768,6 +38907,60 @@
       "docCount": 6
     },
     {
+      "id": "meet-2026-04-16-cas-chutou-jyousei-dai4",
+      "councilId": "cas-chutou-jyousei",
+      "title": "第4回 中東情勢に関する関係閣僚会議",
+      "date": "2026/04/16",
+      "officialUrl": "https://www.cas.go.jp/jp/seisaku/chyutoujyousei/dai4/gijisidai.html",
+      "category": "MINISTERIAL",
+      "ministry": "CAS",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "その他情報",
+          "url": "https://www.cas.go.jp/jp/siryou/index.html",
+          "type": "HTML",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "外務省提出資料（PDF／1,007KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/chyutoujyousei/dai4/pdf/siryou1.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "経済産業省提出資料（PDF／1,253KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/chyutoujyousei/dai4/pdf/siryou2.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "厚生労働省提出資料（PDF／585KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/chyutoujyousei/dai4/pdf/siryou3.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "供給の偏り・流通の目詰まり解消案件（PDF／302KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/chyutoujyousei/dai4/pdf/siryou4.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "議事要旨",
+          "url": "https://www.cas.go.jp/jp/seisaku/chyutoujyousei/dai4/gijiyoushi.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        }
+      ]
+    },
+    {
       "id": "meet-2026-04-15-smea-shinzoku-dai5",
       "councilId": "smea-shinzoku",
       "title": "中小企業の親族内承継に関する検討会 第5回",
@@ -39217,6 +39410,128 @@
       "manualLock": true
     },
     {
+      "id": "meet-2026-04-10-cas-chutou-jyousei-dai3",
+      "councilId": "cas-chutou-jyousei",
+      "title": "第3回 中東情勢に関する関係閣僚会議",
+      "date": "2026/04/10",
+      "officialUrl": "https://www.cas.go.jp/jp/seisaku/chyutoujyousei/dai3/gijisidai.html",
+      "category": "MINISTERIAL",
+      "ministry": "CAS",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "その他情報",
+          "url": "https://www.cas.go.jp/jp/siryou/index.html",
+          "type": "HTML",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "外務省提出資料（PDF／295KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/chyutoujyousei/dai3/pdf/siryou1.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "経済産業省提出資料（PDF／1,318KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/chyutoujyousei/dai3/pdf/siryou2.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "厚生労働省提出資料（PDF／668KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/chyutoujyousei/dai3/pdf/siryou3.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "国土交通省提出資料（PDF／494KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/chyutoujyousei/dai3/pdf/siryou4.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "農林水産省提出資料（PDF／338KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/chyutoujyousei/dai3/pdf/siryou5.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "環境省提出資料（PDF／388KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/chyutoujyousei/dai3/pdf/siryou6.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "供給の偏り・流通の目詰まり解消案件（PDF／260KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/chyutoujyousei/dai3/pdf/siryou7.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "議事要旨",
+          "url": "https://www.cas.go.jp/jp/seisaku/chyutoujyousei/dai3/gijiyoushi.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        }
+      ]
+    },
+    {
+      "id": "meet-2026-04-09-cas-chutou-jyousei-tf-dai2",
+      "councilId": "cas-chutou-jyousei-tf",
+      "title": "第2回 中東情勢に伴う重要物資の安定的な供給確保のためのタスクフォース",
+      "date": "2026/04/09",
+      "officialUrl": "https://www.cas.go.jp/jp/seisaku/chyutoujyousei/tf_dai2/gijisidai.html",
+      "category": "TASKFORCE",
+      "ministry": "CAS",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "その他情報",
+          "url": "https://www.cas.go.jp/jp/siryou/index.html",
+          "type": "HTML",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "厚生労働省提出資料①（PDF／316KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/chyutoujyousei/tf_dai2/siryou1-1.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "厚生労働省提出資料②（PDF／609KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/chyutoujyousei/tf_dai2/siryou1-2.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "経済産業省提出資料（PDF／706KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/chyutoujyousei/tf_dai2/siryou2.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "議事要旨",
+          "url": "https://www.cas.go.jp/jp/seisaku/chyutoujyousei/tf_dai2/gijiyoushi.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        }
+      ]
+    },
+    {
       "id": "meet-2026-04-07-moj-baibaisyun-kento-dai2",
       "councilId": "moj-baibaisyun-kento",
       "title": "第2回 売買春に係る規制の在り方検討会",
@@ -39359,6 +39674,74 @@
       "docCount": 6
     },
     {
+      "id": "meet-2026-04-02-cas-chutou-jyousei-tf-dai1",
+      "councilId": "cas-chutou-jyousei-tf",
+      "title": "第1回 中東情勢に伴う重要物資の安定的な供給確保のためのタスクフォース",
+      "date": "2026/04/02",
+      "officialUrl": "https://www.cas.go.jp/jp/seisaku/chyutoujyousei/tf_dai1/gijisidai.html",
+      "category": "TASKFORCE",
+      "ministry": "CAS",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "その他情報",
+          "url": "https://www.cas.go.jp/jp/siryou/index.html",
+          "type": "HTML",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "中東情勢に伴う重要物資の安定的な供給確保のためのタスクフォースの開催について（PDF／258KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/chyutoujyousei/tf_dai1/siryou1.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "経済産業省提出資料（PDF／369KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/chyutoujyousei/tf_dai1/siryou2.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "厚生労働省提出資料（PDF／492KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/chyutoujyousei/tf_dai1/siryou3.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "国土交通省提出資料（PDF／447KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/chyutoujyousei/tf_dai1/siryou4.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "農林水産省提出資料（PDF／631KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/chyutoujyousei/tf_dai1/siryou5.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "環境省提出資料（PDF／322KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/chyutoujyousei/tf_dai1/siryou6.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "議事要旨",
+          "url": "https://www.cas.go.jp/jp/seisaku/chyutoujyousei/tf_dai1/gijiyoushi.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        }
+      ]
+    },
+    {
       "id": "meet-2026-03-31-cas-gskaigi-11-dai3",
       "councilId": "cas-gskaigi-11",
       "councilName": "行政改革推進会議",
@@ -39433,6 +39816,60 @@
       "officialUrl": "https://www.cas.go.jp/jp/seisaku/gskaigi/dai3/siryo1-1.pdf",
       "hasMinutes": false,
       "docCount": 7
+    },
+    {
+      "id": "meet-2026-03-31-cas-chutou-jyousei-dai2",
+      "councilId": "cas-chutou-jyousei",
+      "title": "第2回 中東情勢に関する関係閣僚会議",
+      "date": "2026/03/31",
+      "officialUrl": "https://www.cas.go.jp/jp/seisaku/chyutoujyousei/dai2/gijisidai.html",
+      "category": "MINISTERIAL",
+      "ministry": "CAS",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "その他情報",
+          "url": "https://www.cas.go.jp/jp/siryou/index.html",
+          "type": "HTML",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "外務省提出資料（PDF／466KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/chyutoujyousei/dai2/pdf/siryou1.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "経済産業省提出資料（PDF／1,302KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/chyutoujyousei/dai2/pdf/siryou2.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "国土交通省提出資料（PDF／312KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/chyutoujyousei/dai2/pdf/siryou3.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "中東情勢に伴う重要物資の安定的な供給確保のためのタスクフォースの開催について（PDF／133KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/chyutoujyousei/dai2/pdf/siryou4.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "議事要旨",
+          "url": "https://www.cas.go.jp/jp/seisaku/chyutoujyousei/dai2/gijiyoushi.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        }
+      ]
     },
     {
       "id": "meet-2026-03-30-mlit-renkei-shoiinkai-dai2",
@@ -40190,6 +40627,60 @@
       "officialUrl": "https://www.chisou.go.jp/tiiki/sogotoc/sinsei/dai1/index.html",
       "hasMinutes": false,
       "docCount": 22
+    },
+    {
+      "id": "meet-2026-03-24-cas-chutou-jyousei-dai1",
+      "councilId": "cas-chutou-jyousei",
+      "title": "第1回 中東情勢に関する関係閣僚会議",
+      "date": "2026/03/24",
+      "officialUrl": "https://www.cas.go.jp/jp/seisaku/chyutoujyousei/dai1/gijisidai.html",
+      "category": "MINISTERIAL",
+      "ministry": "CAS",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "その他情報",
+          "url": "https://www.cas.go.jp/jp/siryou/index.html",
+          "type": "HTML",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "中東情勢に関する関係閣僚会議の開催について（PDF／127KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/chyutoujyousei/dai1/pdf/siryou1.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "外務省提出資料（PDF／437KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/chyutoujyousei/dai1/pdf/siryou2.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "国土交通省提出資料（PDF／398KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/chyutoujyousei/dai1/pdf/siryou3.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "経済産業省提出資料（PDF／1,523KB）",
+          "url": "https://www.cas.go.jp/jp/seisaku/chyutoujyousei/dai1/pdf/siryou4.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        },
+        {
+          "name": "議事要旨",
+          "url": "https://www.cas.go.jp/jp/seisaku/chyutoujyousei/dai1/gijiyoushi.pdf",
+          "type": "PDF",
+          "isPrivate": false,
+          "manualLock": true
+        }
+      ]
     },
     {
       "id": "meet-2026-03-23-cas-kokusentoc-24-dai68",
@@ -219897,24 +220388,13 @@
   "lastCrawlTime": "2026/08/29 10:51",
   "scrapingRules": {
     "cas-chutou-jyousei": {
-      "rule_id": "rule-cas-chutou-jyousei-ai-v3",
-      "created_at": "2026-08-07 08:56:29",
-      "generator": "AI_Rule_Synthesis_Agent_v3",
-      "ministryQuirk": "内閣官房型: daiXX/gijisidai.html 形式の2段階ネスト構造",
-      "rules": {
-        "encoding": "utf-8",
-        "deep_crawl_enabled": true,
-        "subpage_discovery_pattern": "href=[\"\\']([^\"\\']*(?:dai\\d+|gijisidai|gijiroku)[^\"\\'#]*)[\"\\']",
-        "date_regex": "(?:令和[0-9０-９一-九]+年[0-9０-９一-十二]+月[0-9０-９一-三十一]+日|20[2-9][0-9]年[0-1]?[0-9]月[0-3]?[0-9]日)",
-        "prefer_subpage_date": true,
-        "extract_subpage_materials_primary": true,
-        "pdf_selector": "href=[\"\\']([^\"\\']+\\.pdf)[\"\\']",
-        "private_doc_keyword": "非公開",
-        "detect_private_materials": false,
-        "extract_all_materials": true,
-        "resolve_absolute_urls": true,
-        "top_page_pdf_count": 15
-      }
+      "rule_id": "rule-cas-chutou-jyousei",
+      "subpage_discovery_pattern": "https://www\\.cas\\.go\\.jp/jp/seisaku/chyutoujyousei/dai\\d+/gijisidai\\.html",
+      "title_selector": "h1, h2, .title",
+      "date_regex": "(令和\\d+年\\d+月\\d+日|\\d{4}年\\d{1,2}月\\d{1,2}日)",
+      "pdf_selector": "a[href*='.pdf']",
+      "deep_crawl_enabled": true,
+      "manualLock": true
     },
     "cao-ai-strategy": {
       "rule_id": "rule-cao-ai-strategy-ai-v3",
@@ -224322,6 +224802,15 @@
         "pdf_selector": "href=[\"\\']([^\"\\']+\\.(?:pdf|txt))[\"\\']",
         "deep_crawl_enabled": true
       }
+    },
+    "cas-chutou-jyousei-tf": {
+      "rule_id": "rule-cas-chutou-jyousei-tf",
+      "subpage_discovery_pattern": "https://www\\.cas\\.go\\.jp/jp/seisaku/chyutoujyousei/tf_dai\\d+/gijisidai\\.html",
+      "title_selector": "h1, h2, .title",
+      "date_regex": "(令和\\d+年\\d+月\\d+日|\\d{4}年\\d{1,2}月\\d{1,2}日)",
+      "pdf_selector": "a[href*='.pdf']",
+      "deep_crawl_enabled": true,
+      "manualLock": true
     }
   },
   "discoveryKeywords": {
