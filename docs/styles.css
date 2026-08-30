@@ -1486,19 +1486,54 @@ body {
 
 /* --- COLLAPSIBLE MATERIALS ACCORDION & VERTICAL LIST STYLES --- */
 .council-common-materials-wrapper {
-  background: rgba(6, 182, 212, 0.03);
+  padding: 0.6rem 0.8rem 0.4rem;
+  background: rgba(6, 182, 212, 0.05);
+  border-bottom: 1px dashed var(--border-color);
   border-radius: var(--radius-md) var(--radius-md) 0 0;
 }
 .council-common-materials-wrapper .materials-accordion {
   margin-top: 0;
-  border-color: rgba(6, 182, 212, 0.25);
-  background: rgba(15, 23, 42, 0.6);
+  border-color: rgba(6, 182, 212, 0.35);
+  background: var(--bg-card);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 }
 .council-common-materials-wrapper .materials-toggle-btn {
-  background: rgba(6, 182, 212, 0.07);
+  background: rgba(6, 182, 212, 0.12);
+  color: var(--text-primary);
 }
 .council-common-materials-wrapper .materials-toggle-btn:hover {
-  background: rgba(6, 182, 212, 0.15);
+  background: rgba(6, 182, 212, 0.2);
+  color: var(--accent-primary);
+}
+
+[data-theme="light"] .council-common-materials-wrapper {
+  background: rgba(6, 182, 212, 0.06);
+  border-bottom: 1px dashed rgba(6, 182, 212, 0.25);
+}
+[data-theme="light"] .council-common-materials-wrapper .materials-accordion {
+  background: #ffffff;
+  border-color: rgba(8, 145, 178, 0.35);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
+}
+[data-theme="light"] .council-common-materials-wrapper .materials-toggle-btn {
+  background: rgba(6, 182, 212, 0.12);
+  color: #0e7490;
+  font-weight: 700;
+}
+[data-theme="light"] .council-common-materials-wrapper .materials-toggle-btn:hover {
+  background: rgba(6, 182, 212, 0.22);
+  color: #0891b2;
+}
+[data-theme="light"] .council-common-materials-wrapper .materials-collapse-content {
+  background: #f8fafc;
+}
+[data-theme="light"] .council-common-materials-wrapper .material-item-row {
+  background: #ffffff;
+  border-color: rgba(0, 0, 0, 0.08);
+}
+[data-theme="light"] .council-common-materials-wrapper .material-item-row:hover {
+  background: rgba(6, 182, 212, 0.06);
+  border-color: var(--accent-primary);
 }
 
 .materials-accordion {
