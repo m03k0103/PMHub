@@ -293,7 +293,7 @@ def _crawl_subpages(target_url, html, rule, quirk_note, pdf_pattern):
                     sub_title = sub_url
 
                 sub_materials = parse_materials_from_html(sub_html, sub_url, pdf_pattern)
-                raw_sub_dates = re.findall(rule.get("date_regex", r'(?:令和|平成)\d+年\d+月\d+日|\d{4}年\d+月\d+日|\d{4}[/-]\d+[/-]\d+'), sub_html)
+                raw_sub_dates = extract_clean_dates_from_html(sub_html, rule.get("date_regex", r'(?:令和|平成)(?:\d+|元)年\d+月\d+日|\d{4}年\d+月\d+日|\d{4}[/-]\d+[/-]\d+'))
                 norm_sub_dates = [normalize_japanese_numbers(d) for d in raw_sub_dates]
                 all_extracted_dates.extend(norm_sub_dates)
 
@@ -308,21 +308,56 @@ def _crawl_subpages(target_url, html, rule, quirk_note, pdf_pattern):
 
     return subpage_meetings, additional_materials, all_extracted_dates
 
+def clean_html_for_dates(html_str):
+    """ヘッダー・フッター・サイドバー・パンくず等のノイズを除去して本文ブロックを抽出"""
+    if not html_str:
+        return ""
+    try:
+        soup = BeautifulSoup(html_str, 'html.parser')
+        for tag in soup(['nav', 'aside', 'footer', 'script', 'style', 'header']):
+            tag.decompose()
+        for el in soup.find_all(id=re.compile(r'(side|nav|footer|header|menu|breadcrumb)', re.I)):
+            el.decompose()
+        for el in soup.find_all(class_=re.compile(r'(side|nav|footer|header|menu|breadcrumb)', re.I)):
+            el.decompose()
+        main_el = soup.find(id=re.compile(r'(main|content)', re.I)) or soup.find(class_=re.compile(r'(main|content)', re.I)) or soup.body
+        return str(main_el) if main_el else str(soup)
+    except Exception:
+        return html_str
+
+def extract_clean_dates_from_html(html_str, date_regex_pattern=r'(?:令和|平成)(?:\d+|元)年\d+月\d+日|\d{4}年\d+月\d+日|\d{4}[/-]\d+[/-]\d+'):
+    """更新日・掲載日などのノイズを除去して会議開催日を抽出"""
+    cleaned_html = clean_html_for_dates(html_str)
+    raw_dates = re.findall(date_regex_pattern, cleaned_html)
+    
+    # 「更新日: 2024年X月X日」「掲載日: ...」などの直前ラベル付きの日付を除外
+    filtered_dates = []
+    for d in raw_dates:
+        # 直前20文字に「更新日」「掲載日」「公表日」「作成日」が含まれる場合は除外
+        escaped_d = re.escape(d)
+        if re.search(r'(?:更新日|最終更新|掲載日|公表日|作成日|ページID|copyright)[\s\:\：\-\.\/]*' + escaped_d, cleaned_html, re.I):
+            continue
+        filtered_dates.append(d)
+        
+    return filtered_dates if filtered_dates else raw_dates
+
 def parse_japanese_date(date_str):
-    """和暦・西暦文字列を datetime オブジェクトに変換"""
+    """和暦・西暦文字列を datetime オブジェクトに変換（元年対応）"""
     if not date_str:
         return None
     date_str = normalize_japanese_numbers(date_str)
-    m_reiwa = re.search(r'令和(\d+)年(\d+)月(\d+)日', date_str)
+    m_reiwa = re.search(r'令和(\d+|元)年(\d+)月(\d+)日', date_str)
     if m_reiwa:
         try:
-            return datetime(2018 + int(m_reiwa.group(1)), int(m_reiwa.group(2)), int(m_reiwa.group(3)))
+            yr_num = 1 if m_reiwa.group(1) == '元' else int(m_reiwa.group(1))
+            return datetime(2018 + yr_num, int(m_reiwa.group(2)), int(m_reiwa.group(3)))
         except Exception:
             pass
-    m_heisei = re.search(r'平成(\d+)年(\d+)月(\d+)日', date_str)
+    m_heisei = re.search(r'平成(\d+|元)年(\d+)月(\d+)日', date_str)
     if m_heisei:
         try:
-            return datetime(1988 + int(m_heisei.group(1)), int(m_heisei.group(2)), int(m_heisei.group(3)))
+            yr_num = 1 if m_heisei.group(1) == '元' else int(m_heisei.group(1))
+            return datetime(1988 + yr_num, int(m_heisei.group(2)), int(m_heisei.group(3)))
         except Exception:
             pass
     m_seireki = re.search(r'(\d{4})年(\d{1,2})月(\d{1,2})日', date_str)
@@ -518,7 +553,7 @@ def execute_rule_retrieval(target, html, rule_item, use_llm=False):
             seen_keys.add(key)
             unique_materials.append(m)
 
-    raw_date_matches = re.findall(rule.get("date_regex", r'(?:令和|平成)\d+年\d+月\d+日|\d{4}年\d+月\d+日|\d{4}[/-]\d+[/-]\d+'), html)
+    raw_date_matches = extract_clean_dates_from_html(html, rule.get("date_regex", r'(?:令和|平成)(?:\d+|元)年\d+月\d+日|\d{4}年\d+月\d+日|\d{4}[/-]\d+[/-]\d+'))
     norm_date_matches = [normalize_japanese_numbers(d) for d in raw_date_matches]
     all_extracted_dates.extend(norm_date_matches)
     
