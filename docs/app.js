@@ -586,6 +586,10 @@ document.addEventListener('DOMContentLoaded', async () => {
         return (b.item.materials ? b.item.materials.length : 0) - (a.item.materials ? a.item.materials.length : 0);
       } else if (state.sortBy === 'DOCS_ASC') {
         return (a.item.materials ? a.item.materials.length : 0) - (b.item.materials ? b.item.materials.length : 0);
+      } else if (state.sortBy === 'MEETINGS_DESC') {
+        return (meetingCounts[b.item.councilId] || 0) - (meetingCounts[a.item.councilId] || 0);
+      } else if (state.sortBy === 'MEETINGS_ASC') {
+        return (meetingCounts[a.item.councilId] || 0) - (meetingCounts[b.item.councilId] || 0);
       }
       return 0;
     });
@@ -931,6 +935,10 @@ document.addEventListener('DOMContentLoaded', async () => {
         const docsA = (meetingsByCouncilMap.get(a.id) || []).reduce((sum, m) => sum + (m.materials ? m.materials.length : 0), 0);
         const docsB = (meetingsByCouncilMap.get(b.id) || []).reduce((sum, m) => sum + (m.materials ? m.materials.length : 0), 0);
         return docsA - docsB;
+      } else if (state.sortBy === 'MEETINGS_DESC') {
+        return (meetingCounts[b.id] || 0) - (meetingCounts[a.id] || 0);
+      } else if (state.sortBy === 'MEETINGS_ASC') {
+        return (meetingCounts[a.id] || 0) - (meetingCounts[b.id] || 0);
       }
       return 0;
     });
