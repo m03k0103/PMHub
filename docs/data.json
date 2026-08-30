@@ -1929,44 +1929,6 @@
       "status": "approved"
     },
     {
-      "id": "maff-kaigi",
-      "name": "食育推進会議",
-      "ministry": "MAFF",
-      "category": "PANEL",
-      "pastYearCount": 8,
-      "description": "食育推進会議の基本方針、施策の推進状況および関係省庁間の連携・個別課題について審議する会議。",
-      "officialUrl": "https://www.maff.go.jp/j/syokuiku/kaigi/suisin.html",
-      "isWatched": true,
-      "crawlStatus": {
-        "lastAttempt": "2026-08-22 10:07:49",
-        "result": "success",
-        "extractionMethod": "rule",
-        "materialsCount": 2,
-        "datesCount": 5,
-        "failureReason": "",
-        "consecutiveFailures": 0
-      },
-      "status": "approved",
-      "manualLock": true,
-      "materials": [
-        {
-          "name": "参考資料1：食育推進会議委員名簿(PDF : 330KB)",
-          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/9th-3.pdf",
-          "type": "PDF"
-        },
-        {
-          "name": "参考資料2：食育推進会議運営規則(PDF : 283KB)",
-          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/9th-4.pdf",
-          "type": "PDF"
-        },
-        {
-          "name": "資料1：食育推進評価専門委員会構成員名簿(PDF : 92KB)",
-          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r08_02-2.pdf",
-          "type": "PDF"
-        }
-      ]
-    },
-    {
       "id": "caa-shokuhin_loss_sakugen",
       "name": "食品ロス削減推進会議",
       "ministry": "CAA",
@@ -18007,6 +17969,36 @@
       "pastYearCount": 7,
       "manualLock": true,
       "description": "文化庁文化審議会における国語分科会 国語教育等小委員会（平成15年4月22日～平成15年7月25日）。"
+    },
+    {
+      "id": "maff-shokuiku_suishin_kaigi",
+      "name": "食育推進会議",
+      "ministry": "MAFF",
+      "category": "COUNCIL",
+      "officialUrl": "https://www.maff.go.jp/j/syokuiku/kaigi/suisin.html",
+      "pastYearCount": 3,
+      "manualLock": true,
+      "description": "農林水産省における食育推進会議。"
+    },
+    {
+      "id": "maff-shokuiku_suishin_hyouka_iinkai",
+      "name": "食育推進評価専門委員会",
+      "ministry": "MAFF",
+      "category": "SPECIAL_COMMITTEE",
+      "officialUrl": "https://www.maff.go.jp/j/syokuiku/kaigi/suisin.html",
+      "pastYearCount": 33,
+      "manualLock": true,
+      "description": "農林水産省における食育推進評価専門委員会。"
+    },
+    {
+      "id": "maff-shokuiku_mieruka_wg",
+      "name": "食育目標達成に向けた取組の「見える化」ワーキンググループ",
+      "ministry": "MAFF",
+      "category": "WORKING_GROUP",
+      "officialUrl": "https://www.maff.go.jp/j/syokuiku/kaigi/suisin.html",
+      "pastYearCount": 2,
+      "manualLock": true,
+      "description": "農林水産省における食育目標達成に向けた取組の「見える化」ワーキンググループ。"
     }
   ],
   "meetings": [
@@ -27046,51 +27038,6 @@
       "docCount": 3
     },
     {
-      "id": "maff-kaigi-20260624-009",
-      "councilId": "maff-kaigi",
-      "title": "第9回 食育推進会議",
-      "date": "2026/06/24",
-      "officialUrl": "https://www.maff.go.jp/j/syokuiku/kaigi/9th.html",
-      "category": "PANEL",
-      "ministry": "MAFF",
-      "manualLock": true,
-      "materials": [
-        {
-          "name": "食育推進会議（第9回）議事次第(PDF : 159KB)",
-          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/9th-1.pdf"
-        },
-        {
-          "name": "資料1：第5次食育推進基本計画作成に向けたこれまでの議論等(PDF : 223KB)",
-          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/9th-2.pdf"
-        },
-        {
-          "name": "資料2：第5次食育推進基本計画（案）概要(PDF : 553KB)",
-          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/9th-5.pdf"
-        },
-        {
-          "name": "資料3：第5次食育推進基本計画（案）(PDF : 424KB)",
-          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/9th-6.pdf"
-        },
-        {
-          "name": "参考資料1：食育推進会議委員名簿(PDF : 330KB)",
-          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/9th-3.pdf"
-        },
-        {
-          "name": "参考資料2：食育推進会議運営規則(PDF : 283KB)",
-          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/9th-4.pdf"
-        },
-        {
-          "name": "議事要旨(PDF : 143KB)",
-          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/9th-7.pdf"
-        },
-        {
-          "name": "議事録(PDF : 209KB)",
-          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/9th-8.pdf"
-        }
-      ],
-      "councilName": "食育推進会議"
-    },
-    {
       "id": "cas-tppinfo-20260624-s01",
       "councilId": "cas-tppinfo",
       "councilName": "「ＴＰＰ等総合対策本部」（旧ＴＰＰに関する主要閣僚会議）",
@@ -27280,6 +27227,50 @@
         {
           "name": "議事概要[96KB]",
           "url": "https://www.fsc.go.jp/fsciis/attachedFile/download?retrievalId=kai20260624id1&fileId=310"
+        }
+      ]
+    },
+    {
+      "id": "maff-shokuiku_suishin_kaigi-20260624-009",
+      "councilId": "maff-shokuiku_suishin_kaigi",
+      "title": "第9回 食育推進会議",
+      "date": "2026/06/24",
+      "officialUrl": "https://www.maff.go.jp/j/syokuiku/kaigi/9th.html",
+      "category": "COUNCIL",
+      "ministry": "MAFF",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "食育推進会議（第9回）議事次第",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/9th-1.pdf"
+        },
+        {
+          "name": "資料1：第5次食育推進基本計画作成に向けたこれまでの議論等",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/9th-2.pdf"
+        },
+        {
+          "name": "資料2：第5次食育推進基本計画（案）概要",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/9th-5.pdf"
+        },
+        {
+          "name": "資料3：第5次食育推進基本計画（案）",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/9th-6.pdf"
+        },
+        {
+          "name": "参考資料1：食育推進会議委員名簿",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/9th-3.pdf"
+        },
+        {
+          "name": "参考資料2：食育推進会議運営規則",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/9th-4.pdf"
+        },
+        {
+          "name": "議事要旨",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/9th-7.pdf"
+        },
+        {
+          "name": "議事録",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/9th-8.pdf"
         }
       ]
     },
@@ -28528,67 +28519,6 @@
       "docCount": 1
     },
     {
-      "id": "maff-kaigi-20260615-002",
-      "councilId": "maff-kaigi",
-      "title": "第2回 食育推進会議",
-      "date": "2026/06/15",
-      "officialUrl": "https://www.maff.go.jp/j/syokuiku/kaigi/r08_02.html",
-      "category": "PANEL",
-      "ministry": "MAFF",
-      "manualLock": true,
-      "materials": [
-        {
-          "name": "令和8年度第2回食育推進評価専門委員会議事次第(PDF : 204KB)",
-          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r08_02-1.pdf"
-        },
-        {
-          "name": "資料1：食育推進評価専門委員会構成員名簿(PDF : 92KB)",
-          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r08_02-2.pdf"
-        },
-        {
-          "name": "資料2：食育基本法の一部を改正する法律 概要(PDF : 234KB)",
-          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r08_02-3.pdf"
-        },
-        {
-          "name": "資料3-1：第5次食育推進基本計画（案）概要(PDF : 1,069KB)",
-          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r08_02-10.pdf"
-        },
-        {
-          "name": "資料3-2：第5次食育推進基本計画（案）(PDF : 667KB)",
-          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r08_02-11.pdf"
-        },
-        {
-          "name": "参考資料1：食育推進評価専門委員会の開催について(PDF : 190KB)",
-          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r08_02-4.pdf"
-        },
-        {
-          "name": "参考資料2：食育基本法の一部を改正する法律 新旧対照表(PDF : 830KB)",
-          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r08_02-5.pdf"
-        },
-        {
-          "name": "参考資料3：食育推進全国大会について(PDF : 630KB)",
-          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r08_02-6.pdf"
-        },
-        {
-          "name": "参考資料4：食育活動表彰受賞者について(PDF : 966KB)",
-          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r08_02-7.pdf"
-        },
-        {
-          "name": "参考資料5：官民連携食育プラットフォーム会員勉強会について(PDF : 417KB)",
-          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r08_02-8.pdf"
-        },
-        {
-          "name": "参考資料6：「食育実践優良法人2026」について(PDF : 497KB)",
-          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r08_02-9.pdf"
-        },
-        {
-          "name": "令和8年度第2回議事録(PDF : 285KB)",
-          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r08_02-12.pdf"
-        }
-      ],
-      "councilName": "食育推進会議"
-    },
-    {
       "id": "caa-shohisha_seisaku-20260615-s01",
       "councilId": "caa-shohisha_seisaku",
       "councilName": "消費者委員会 生成AI・消費者問題作業部会",
@@ -28736,6 +28666,66 @@
       "hasMinutes": true,
       "docCount": 6,
       "manualLock": true
+    },
+    {
+      "id": "maff-shokuiku_suishin_hyouka_iinkai-20260615-r08_002",
+      "councilId": "maff-shokuiku_suishin_hyouka_iinkai",
+      "title": "令和8年度 第2回 食育推進評価専門委員会",
+      "date": "2026/06/15",
+      "officialUrl": "https://www.maff.go.jp/j/syokuiku/kaigi/r08_02.html",
+      "category": "SPECIAL_COMMITTEE",
+      "ministry": "MAFF",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "令和8年度第2回食育推進評価専門委員会議事次第",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r08_02-1.pdf"
+        },
+        {
+          "name": "資料1：食育推進評価専門委員会構成員名簿",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r08_02-2.pdf"
+        },
+        {
+          "name": "資料2：食育基本法の一部を改正する法律 概要",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r08_02-3.pdf"
+        },
+        {
+          "name": "資料3-1：第5次食育推進基本計画（案）概要",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r08_02-10.pdf"
+        },
+        {
+          "name": "資料3-2：第5次食育推進基本計画（案）",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r08_02-11.pdf"
+        },
+        {
+          "name": "参考資料1：食育推進評価専門委員会の開催について",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r08_02-4.pdf"
+        },
+        {
+          "name": "参考資料2：食育基本法の一部を改正する法律 新旧対照表",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r08_02-5.pdf"
+        },
+        {
+          "name": "参考資料3：食育推進全国大会について",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r08_02-6.pdf"
+        },
+        {
+          "name": "参考資料4：食育活動表彰受賞者について",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r08_02-7.pdf"
+        },
+        {
+          "name": "参考資料5：官民連携食育プラットフォーム会員勉強会について",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r08_02-8.pdf"
+        },
+        {
+          "name": "参考資料6：「食育実践優良法人2026」について",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r08_02-9.pdf"
+        },
+        {
+          "name": "令和8年度第2回議事録",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r08_02-12.pdf"
+        }
+      ]
     },
     {
       "id": "mhlw-hosho_fukushi-20260612-s01",
@@ -35738,55 +35728,6 @@
       ]
     },
     {
-      "id": "maff-kaigi-20260408-001",
-      "councilId": "maff-kaigi",
-      "title": "第1回 食育推進会議",
-      "date": "2026/04/08",
-      "officialUrl": "https://www.maff.go.jp/j/syokuiku/kaigi/r08_01.html",
-      "category": "PANEL",
-      "ministry": "MAFF",
-      "manualLock": true,
-      "materials": [
-        {
-          "name": "令和8年度第1回食育推進評価専門委員会議事次第(PDF : 53KB)",
-          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r08_01-1.pdf"
-        },
-        {
-          "name": "資料1-1：第5次食育推進基本計画  骨子（案）概要(PDF : 591KB)",
-          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r08_01-2.pdf"
-        },
-        {
-          "name": "資料1-2：第5次食育推進基本計画  骨子（案）(PDF : 411KB)",
-          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r08_01-3.pdf"
-        },
-        {
-          "name": "資料2：第5次食育推進基本計画  目標設定の考え方(PDF : 793KB)",
-          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r08_01-4.pdf"
-        },
-        {
-          "name": "参考資料1：食育推進評価専門委員会構成員名簿(PDF : 140KB)",
-          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r08_01-5.pdf"
-        },
-        {
-          "name": "参考資料2：食育推進評価専門委員会の開催について(PDF : 237KB)",
-          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r08_01-6.pdf"
-        },
-        {
-          "name": "参考資料3：令和8(2026)年度等食育関連予算(PDF : 682KB)",
-          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r08_01-7.pdf"
-        },
-        {
-          "name": "参考資料4：令和8(2026)年度等食育関連予算関連資料(PDF : 14,412KB)",
-          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r08_01-8.pdf"
-        },
-        {
-          "name": "令和8年度第1回議事概要(PDF : 779KB)",
-          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r08_01-9.pdf"
-        }
-      ],
-      "councilName": "食育推進会議"
-    },
-    {
       "id": "cas-kokuminkaigi_jitsumu-20260408-005",
       "councilId": "cas-kokuminkaigi_jitsumu",
       "title": "第5回 社会保障国民会議　給付付き税額控除等に関する実務者会議",
@@ -35860,6 +35801,54 @@
         {
           "name": "第44回 開催案内",
           "url": "https://www.mhlw.go.jp/stf/newpage_72054.html"
+        }
+      ]
+    },
+    {
+      "id": "maff-shokuiku_suishin_hyouka_iinkai-20260408-r08_001",
+      "councilId": "maff-shokuiku_suishin_hyouka_iinkai",
+      "title": "令和8年度 第1回 食育推進評価専門委員会（書面による持ち回り開催）",
+      "date": "2026/04/08",
+      "officialUrl": "https://www.maff.go.jp/j/syokuiku/kaigi/r08_01.html",
+      "category": "SPECIAL_COMMITTEE",
+      "ministry": "MAFF",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "令和8年度第1回食育推進評価専門委員会議事次第",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r08_01-1.pdf"
+        },
+        {
+          "name": "資料1-1：第5次食育推進基本計画  骨子（案）概要",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r08_01-2.pdf"
+        },
+        {
+          "name": "資料1-2：第5次食育推進基本計画  骨子（案）",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r08_01-3.pdf"
+        },
+        {
+          "name": "資料2：第5次食育推進基本計画  目標設定の考え方",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r08_01-4.pdf"
+        },
+        {
+          "name": "参考資料1：食育推進評価専門委員会構成員名簿",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r08_01-5.pdf"
+        },
+        {
+          "name": "参考資料2：食育推進評価専門委員会の開催について",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r08_01-6.pdf"
+        },
+        {
+          "name": "参考資料3：令和8(2026)年度等食育関連予算",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r08_01-7.pdf"
+        },
+        {
+          "name": "参考資料4：令和8(2026)年度等食育関連予算関連資料",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r08_01-8.pdf"
+        },
+        {
+          "name": "令和8年度第1回議事概要",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r08_01-9.pdf"
         }
       ]
     },
@@ -52493,55 +52482,6 @@
       "councilName": "国税審議会"
     },
     {
-      "id": "maff-kaigi-20251208-004",
-      "councilId": "maff-kaigi",
-      "title": "第4回 食育推進会議",
-      "date": "2025/12/08",
-      "officialUrl": "https://www.maff.go.jp/j/syokuiku/kaigi/r07_04.html",
-      "category": "PANEL",
-      "ministry": "MAFF",
-      "manualLock": true,
-      "materials": [
-        {
-          "name": "令和7年度第4回食育推進評価専門委員会議事次第(PDF : 88KB)",
-          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r07_04-1.pdf"
-        },
-        {
-          "name": "資料1：食育推進評価専門委員会構成員名簿(PDF : 214KB)",
-          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r07_04-2.pdf"
-        },
-        {
-          "name": "資料2：第5次食育推進基本計画  構成（案）(PDF : 449KB)",
-          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r07_04-7.pdf"
-        },
-        {
-          "name": "資料3：第5次食育推進基本計画の目標の設定について(PDF : 934KB)",
-          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r07_04-8.pdf"
-        },
-        {
-          "name": "参考資料1：食育推進評価専門委員会の開催について(PDF : 190KB)",
-          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r07_04-3.pdf"
-        },
-        {
-          "name": "参考資料2：スモールステップからはじめる学校給食での地場産物等活用のためのガイドブック(PDF : 10,384KB)",
-          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r07_04-6.pdf"
-        },
-        {
-          "name": "参考資料3：官民連携食育プラットフォーム会員交流会概要(PDF : 456KB)",
-          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r07_04-4.pdf"
-        },
-        {
-          "name": "参考資料4：「GREEN×EXPO 2027」パンフレット(PDF : 2,846KB)",
-          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r07_04-5.pdf"
-        },
-        {
-          "name": "令和7年度第4回議事録(PDF : 469KB)",
-          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r07_04-9.pdf"
-        }
-      ],
-      "councilName": "食育推進会議"
-    },
-    {
       "id": "mhlw-shakai_hosho_shougaisha-20251208-153",
       "councilId": "mhlw-shakai_hosho_shougaisha",
       "title": "第153回 社会保障審議会 障害者部会",
@@ -52830,6 +52770,54 @@
       "hasMinutes": true,
       "docCount": 7,
       "manualLock": true
+    },
+    {
+      "id": "maff-shokuiku_suishin_hyouka_iinkai-20251208-r07_004",
+      "councilId": "maff-shokuiku_suishin_hyouka_iinkai",
+      "title": "令和7年度 第4回 食育推進評価専門委員会",
+      "date": "2025/12/08",
+      "officialUrl": "https://www.maff.go.jp/j/syokuiku/kaigi/r07_04.html",
+      "category": "SPECIAL_COMMITTEE",
+      "ministry": "MAFF",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "令和7年度第4回食育推進評価専門委員会議事次第",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r07_04-1.pdf"
+        },
+        {
+          "name": "資料1：食育推進評価専門委員会構成員名簿",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r07_04-2.pdf"
+        },
+        {
+          "name": "資料2：第5次食育推進基本計画  構成（案）",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r07_04-7.pdf"
+        },
+        {
+          "name": "資料3：第5次食育推進基本計画の目標の設定について",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r07_04-8.pdf"
+        },
+        {
+          "name": "参考資料1：食育推進評価専門委員会の開催について",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r07_04-3.pdf"
+        },
+        {
+          "name": "参考資料2：スモールステップからはじめる学校給食での地場産物等活用のためのガイドブック",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r07_04-6.pdf"
+        },
+        {
+          "name": "参考資料3：官民連携食育プラットフォーム会員交流会概要",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r07_04-4.pdf"
+        },
+        {
+          "name": "参考資料4：「GREEN×EXPO 2027」パンフレット",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r07_04-5.pdf"
+        },
+        {
+          "name": "令和7年度第4回議事録",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r07_04-9.pdf"
+        }
+      ]
     },
     {
       "id": "cas-2027_hakurankai-20251205-003",
@@ -59901,97 +59889,96 @@
       ]
     },
     {
-      "id": "maff-kaigi-20250922-003",
-      "councilId": "maff-kaigi",
-      "title": "第3回 食育推進会議",
+      "id": "maff-shokuiku_suishin_hyouka_iinkai-20250922-r07_003",
+      "councilId": "maff-shokuiku_suishin_hyouka_iinkai",
+      "title": "令和7年度 第3回 食育推進評価専門委員会",
       "date": "2025/09/22",
       "officialUrl": "https://www.maff.go.jp/j/syokuiku/kaigi/r07_03.html",
-      "category": "PANEL",
+      "category": "SPECIAL_COMMITTEE",
       "ministry": "MAFF",
       "manualLock": true,
       "materials": [
         {
-          "name": "令和7年度第3回食育推進評価専門委員会議事次第(PDF : 148KB)",
+          "name": "令和7年度第3回食育推進評価専門委員会議事次第",
           "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r07_03-21.pdf"
         },
         {
-          "name": "資料1：食育推進評価専門委員会構成員名簿(PDF : 211KB)",
+          "name": "資料1：食育推進評価専門委員会構成員名簿",
           "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r07_03-1.pdf"
         },
         {
-          "name": "資料2：第5次食育推進基本計画の重点事項の方向性（案）(PDF : 1,199KB)",
+          "name": "資料2：第5次食育推進基本計画の重点事項の方向性（案）",
           "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r07_03-16.pdf"
         },
         {
-          "name": "資料3：辻委員 提出資料(PDF : 1,372KB)",
+          "name": "資料3：辻委員 提出資料",
           "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r07_03-2.pdf"
         },
         {
-          "name": "資料4：小竹委員 提出資料(PDF : 1,854KB)",
+          "name": "資料4：小竹委員 提出資料",
           "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r07_03-3.pdf"
         },
         {
-          "name": "資料5：田中委員 提出資料(PDF : 6,201KB)",
+          "name": "資料5：田中委員 提出資料",
           "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r07_03-4.pdf"
         },
         {
-          "name": "資料6：中澤委員 提出資料(PDF : 6,079KB)",
+          "name": "資料6：中澤委員 提出資料",
           "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r07_03-5.pdf"
         },
         {
-          "name": "資料7：阿部委員 提出資料(PDF : 3,200KB)",
+          "name": "資料7：阿部委員 提出資料",
           "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r07_03-6.pdf"
         },
         {
-          "name": "資料8：丹羽委員 提出資料(PDF : 753KB)",
+          "name": "資料8：丹羽委員 提出資料",
           "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r07_03-7.pdf"
         },
         {
-          "name": "資料9：笠置委員 提出資料(PDF : 930KB)",
+          "name": "資料9：笠置委員 提出資料",
           "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r07_03-8.pdf"
         },
         {
-          "name": "資料10：田村委員 提出資料(PDF : 2,204KB)",
+          "name": "資料10：田村委員 提出資料",
           "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r07_03-9.pdf"
         },
         {
-          "name": "資料11：久志本委員 提出資料(PDF : 1,858KB)",
+          "name": "資料11：久志本委員 提出資料",
           "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r07_03-17.pdf"
         },
         {
-          "name": "資料12：百谷委員 提出資料(PDF : 832KB)",
+          "name": "資料12：百谷委員 提出資料",
           "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r07_03-10.pdf"
         },
         {
-          "name": "資料13：澤木委員 提出資料(PDF : 1,784KB)",
+          "name": "資料13：澤木委員 提出資料",
           "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r07_03-11.pdf"
         },
         {
-          "name": "資料14：第5次食育推進基本計画の目標の設定について(PDF : 799KB)",
+          "name": "資料14：第5次食育推進基本計画の目標の設定について",
           "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r07_03-20.pdf"
         },
         {
-          "name": "参考資料1：食育推進評価専門委員会の開催について(PDF : 190KB)",
+          "name": "参考資料1：食育推進評価専門委員会の開催について",
           "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r07_03-12.pdf"
         },
         {
-          "name": "参考資料3：山口委員 提出資料(PDF : 2,308KB)",
+          "name": "参考資料3：山口委員 提出資料",
           "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r07_03-14.pdf"
         },
         {
-          "name": "参考資料4：食育実践優良法人顕彰制度について(PDF : 957KB)",
+          "name": "参考資料4：食育実践優良法人顕彰制度について",
           "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r07_03-15.pdf"
         },
         {
-          "name": "参考資料5：おいしい給食タイアップについて(PDF : 3,911KB)",
+          "name": "参考資料5：おいしい給食タイアップについて",
           "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r07_03-18.pdf"
         },
         {
-          "name": "令和7年度第3回議事録(PDF : 509KB)",
+          "name": "令和7年度第3回議事録",
           "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r07_03-22.pdf"
         }
-      ],
-      "councilName": "食育推進会議"
+      ]
     },
     {
       "id": "mod-drastic_reinforcement-20250919-006",
@@ -60316,6 +60303,90 @@
         {
           "name": "海外における権利執行の課題と出版権登録制度について",
           "url": "https://www.bunka.go.jp/seisaku/bunkashingikai/chosakuken/workingteam/r07_01/pdf/94269701_14.pdf"
+        }
+      ]
+    },
+    {
+      "id": "maff-shokuiku_suishin_hyouka_iinkai-20250911-r07_002",
+      "councilId": "maff-shokuiku_suishin_hyouka_iinkai",
+      "title": "令和7年度 第2回 食育推進評価専門委員会",
+      "date": "2025/09/11",
+      "officialUrl": "https://www.maff.go.jp/j/syokuiku/kaigi/r07_02.html",
+      "category": "SPECIAL_COMMITTEE",
+      "ministry": "MAFF",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "令和7年度第2回食育推進評価専門委員会議事次第",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r07_02-19.pdf"
+        },
+        {
+          "name": "資料1：食育推進評価専門委員会委員名簿",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r07_02-1.pdf"
+        },
+        {
+          "name": "資料2：第5次食育推進基本計画の重点事項の方向性（案）",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r07_02-2.pdf"
+        },
+        {
+          "name": "資料3：武見委員 提出資料",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r07_02-3.pdf"
+        },
+        {
+          "name": "資料4：上岡委員 提出資料",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r07_02-4.pdf"
+        },
+        {
+          "name": "資料5：久保委員 提出資料",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r07_02-5.pdf"
+        },
+        {
+          "name": "資料6：加茂委員 提出資料",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r07_02-16.pdf"
+        },
+        {
+          "name": "資料7：赤松委員 提出資料",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r07_02-6.pdf"
+        },
+        {
+          "name": "資料8：前島委員 提出資料",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r07_02-7.pdf"
+        },
+        {
+          "name": "資料9：長島委員 提出資料",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r07_02-8.pdf"
+        },
+        {
+          "name": "資料10：石井委員 提出資料",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r07_02-9.pdf"
+        },
+        {
+          "name": "資料11-1：多村委員 提出資料",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r07_02-10.pdf"
+        },
+        {
+          "name": "資料11-2：多村委員 提出資料",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r07_02-11.pdf"
+        },
+        {
+          "name": "資料12：竹野委員 提出資料",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r07_02-12.pdf"
+        },
+        {
+          "name": "資料13：瀧本委員 提出資料",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r07_02-13.pdf"
+        },
+        {
+          "name": "参考資料1：食育推進評価専門委員会の開催について",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r07_02-14.pdf"
+        },
+        {
+          "name": "参考資料2：令和8年度食育関連予算概算要求",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r07_02-18.pdf"
+        },
+        {
+          "name": "令和7年度第2回議事録",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r07_02-20.pdf"
         }
       ]
     },
@@ -64644,6 +64715,50 @@
         {
           "name": "第25回 開催案内",
           "url": "https://www.mhlw.go.jp/shingi/2008/06/s0619-3.html"
+        }
+      ]
+    },
+    {
+      "id": "maff-shokuiku_suishin_hyouka_iinkai-20250630-r07_001",
+      "councilId": "maff-shokuiku_suishin_hyouka_iinkai",
+      "title": "令和7年度 第1回 食育推進評価専門委員会",
+      "date": "2025/06/30",
+      "officialUrl": "https://www.maff.go.jp/j/syokuiku/kaigi/r07_01.html",
+      "category": "SPECIAL_COMMITTEE",
+      "ministry": "MAFF",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "令和7年度第1回食育推進評価専門委員会議事次第",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r07_01-8.pdf"
+        },
+        {
+          "name": "資料1：食育推進評価専門委員会構成員名簿",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r07_01-1.pdf"
+        },
+        {
+          "name": "資料2：官民連携食育プラットフォームの設立について",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r07_01-5.pdf"
+        },
+        {
+          "name": "資料3：第5次食育推進基本計画作成に向けた主な論点について",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r07_01-6.pdf"
+        },
+        {
+          "name": "資料4：第20回食育推進全国大会開催概要について",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r07_01-2.pdf"
+        },
+        {
+          "name": "資料5：第9回食育活動表彰受賞者について",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r07_01-3.pdf"
+        },
+        {
+          "name": "参考資料：食育推進評価専門委員会の開催について",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r07_01-4.pdf"
+        },
+        {
+          "name": "令和7年度第1回議事録",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r07_01-7.pdf"
         }
       ]
     },
@@ -73427,6 +73542,130 @@
         {
           "name": "議事概要",
           "url": "https://www.fsc.go.jp/fsciis/attachedFile/download?retrievalId=kai20250307no1&fileId=310"
+        }
+      ]
+    },
+    {
+      "id": "maff-shokuiku_suishin_hyouka_iinkai-20250307-r06_002",
+      "councilId": "maff-shokuiku_suishin_hyouka_iinkai",
+      "title": "令和6年度 第2回 食育推進評価専門委員会",
+      "date": "2025/03/07",
+      "officialUrl": "https://www.maff.go.jp/j/syokuiku/kaigi/r06_02.html",
+      "category": "SPECIAL_COMMITTEE",
+      "ministry": "MAFF",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "令和6年度第2回食育推進評価専門委員会議事次第",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r06_02-31.pdf"
+        },
+        {
+          "name": "資料1：食育推進評価専門委員会委員名簿",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r06_02-1.pdf"
+        },
+        {
+          "name": "資料2：第5次食育推進基本計画の作成に向けた進め方（案）",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r06_02-2.pdf"
+        },
+        {
+          "name": "資料3：第4次食育推進基本計画の各目標の進捗状況",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r06_02-27.pdf"
+        },
+        {
+          "name": "資料4：瀧本委員 提出資料",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r06_02-3.pdf"
+        },
+        {
+          "name": "分割1",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r06_02-4.pdf"
+        },
+        {
+          "name": "分割2",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r06_02-5.pdf"
+        },
+        {
+          "name": "資料5：田村委員 提出資料",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r06_02-29.pdf"
+        },
+        {
+          "name": "分割1",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r06_02-7.pdf"
+        },
+        {
+          "name": "分割2",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r06_02-8.pdf"
+        },
+        {
+          "name": "分割3",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r06_02-28.pdf"
+        },
+        {
+          "name": "資料6：中澤委員 提出資料",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r06_02-10.pdf"
+        },
+        {
+          "name": "分割1",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r06_02-11.pdf"
+        },
+        {
+          "name": "分割2",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r06_02-12.pdf"
+        },
+        {
+          "name": "分割3",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r06_02-13.pdf"
+        },
+        {
+          "name": "資料7：食料・農業・農村基本計画（食育の推進パート）の検討状況",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r06_02-26.pdf"
+        },
+        {
+          "name": "資料8：食育推進全国大会について",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r06_02-14.pdf"
+        },
+        {
+          "name": "資料9：「食育実践優良法人顕彰（仮称）」の創設について",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r06_02-15.pdf"
+        },
+        {
+          "name": "参考資料1：食育推進評価専門委員会の開催について",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r06_02-16.pdf"
+        },
+        {
+          "name": "参考資料2：田村委員 提出資料",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r06_02-17.pdf"
+        },
+        {
+          "name": "参考資料3：令和7(2025)年度等食育関連予算案",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r06_02-18.pdf"
+        },
+        {
+          "name": "参考資料4：令和7(2025)年度等食育関連予算案関連資料",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r06_02-19.pdf"
+        },
+        {
+          "name": "分割1",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r06_02-20.pdf"
+        },
+        {
+          "name": "分割2",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r06_02-21.pdf"
+        },
+        {
+          "name": "分割3",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r06_02-22.pdf"
+        },
+        {
+          "name": "分割4",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r06_02-23.pdf"
+        },
+        {
+          "name": "分割5",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r06_02-24.pdf"
+        },
+        {
+          "name": "令和6年度第2回議事録",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r06_02-30.pdf"
         }
       ]
     },
@@ -83703,6 +83942,170 @@
         {
           "name": "議事録",
           "url": "https://www.bunka.go.jp/seisaku/bunkashingikai/kokugo/roman/roman_04/pdf/94170101_01.pdf"
+        }
+      ]
+    },
+    {
+      "id": "maff-shokuiku_suishin_hyouka_iinkai-20240920-r06_001",
+      "councilId": "maff-shokuiku_suishin_hyouka_iinkai",
+      "title": "令和6年度 第1回 食育推進評価専門委員会",
+      "date": "2024/09/20",
+      "officialUrl": "https://www.maff.go.jp/j/syokuiku/kaigi/r06_01.html",
+      "category": "SPECIAL_COMMITTEE",
+      "ministry": "MAFF",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "令和6年度第1回食育推進評価専門委員会議事次第",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r06_01-1.pdf"
+        },
+        {
+          "name": "資料1：食育推進評価専門委員会委員名簿",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r06_01-2.pdf"
+        },
+        {
+          "name": "資料2：第4次食育推進基本計画について",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r06_01-3.pdf"
+        },
+        {
+          "name": "資料3：食料・農業・農村基本法の改正について",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r06_01-4.pdf"
+        },
+        {
+          "name": "資料4：今後の食育推進評価専門委員会の進め方について（案）",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r06_01-5.pdf"
+        },
+        {
+          "name": "資料5：令和6年度全国食育推進ネットワークの運営について",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r06_01-6.pdf"
+        },
+        {
+          "name": "資料6：第19回食育推進全国大会開催概要について",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r06_01-7.pdf"
+        },
+        {
+          "name": "資料7：第8回食育活動表彰受賞者について",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r06_01-8.pdf"
+        },
+        {
+          "name": "資料8：こども若者★いけんぷらす いけんひろばについて",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r06_01-9.pdf"
+        },
+        {
+          "name": "資料9：加茂委員提出資料",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r06_01-10.pdf"
+        },
+        {
+          "name": "分割（1）",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r06_01-14.pdf"
+        },
+        {
+          "name": "分割（2）",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r06_01-15.pdf"
+        },
+        {
+          "name": "分割（3）",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r06_01-16.pdf"
+        },
+        {
+          "name": "分割（4）",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r06_01-17.pdf"
+        },
+        {
+          "name": "分割（5）",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r06_01-18.pdf"
+        },
+        {
+          "name": "資料10：笠置委員提出資料",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r06_01-13.pdf"
+        },
+        {
+          "name": "分割（1）",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r06_01-19.pdf"
+        },
+        {
+          "name": "分割（2）",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r06_01-20.pdf"
+        },
+        {
+          "name": "分割（3）",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r06_01-21.pdf"
+        },
+        {
+          "name": "分割（4）",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r06_01-22.pdf"
+        },
+        {
+          "name": "参考資料1：食育推進評価専門委員会の開催について",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r06_01-11.pdf"
+        },
+        {
+          "name": "参考資料2：令和7年度食育関連予算概算要求",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r06_01-35.pdf"
+        },
+        {
+          "name": "正誤表",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r06_01-36.pdf"
+        },
+        {
+          "name": "分割（1）",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r06_01-37.pdf"
+        },
+        {
+          "name": "分割（2）",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r06_01-40.pdf"
+        },
+        {
+          "name": "分割（3）",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r06_01-38.pdf"
+        },
+        {
+          "name": "分割（4）",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r06_01-41.pdf"
+        },
+        {
+          "name": "分割（5）",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r06_01-39.pdf"
+        },
+        {
+          "name": "令和6年度第1回議事録",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r06_01-28.pdf"
+        }
+      ]
+    },
+    {
+      "id": "maff-shokuiku_suishin_hyouka_iinkai-20240920-s01",
+      "councilId": "maff-shokuiku_suishin_hyouka_iinkai",
+      "title": "第4次食育推進基本計画フォローアップ 中間取りまとめ",
+      "date": "2024/09/20",
+      "officialUrl": "https://www.maff.go.jp/j/syokuiku/kaigi/4th_chuukan.html",
+      "category": "SPECIAL_COMMITTEE",
+      "ministry": "MAFF",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "第4次食育推進基本計画フォローアップ  中間取りまとめ",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/4th_chuukan-8.pdf"
+        },
+        {
+          "name": "別添1 第4次食育推進基本計画における数値目標の達成状況",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/4th_chuukan-2.pdf"
+        },
+        {
+          "name": "別添2 目標達成に課題の残る数値目標の分析・評価",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/4th_chuukan-9.pdf"
+        },
+        {
+          "name": "分割1",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/4th_chuukan-10.pdf"
+        },
+        {
+          "name": "分割2",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/4th_chuukan-11.pdf"
+        },
+        {
+          "name": "分割3",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/4th_chuukan-12.pdf"
         }
       ]
     },
@@ -95940,6 +96343,90 @@
         {
           "name": "AI と著作権に関する関係者ネットワーク（仮称）について",
           "url": "https://www.bunka.go.jp/seisaku/bunkashingikai/chosakuken/bunkakai/69/pdf/94022801_06.pdf"
+        }
+      ]
+    },
+    {
+      "id": "maff-shokuiku_suishin_hyouka_iinkai-20240319-r05_002",
+      "councilId": "maff-shokuiku_suishin_hyouka_iinkai",
+      "title": "令和5年度 第2回 食育推進評価専門委員会",
+      "date": "2024/03/19",
+      "officialUrl": "https://www.maff.go.jp/j/syokuiku/kaigi/r05_02.html",
+      "category": "SPECIAL_COMMITTEE",
+      "ministry": "MAFF",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "令和5年度第2回食育推進評価専門委員会議事次第",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r05_02-1.pdf"
+        },
+        {
+          "name": "資料1 食育推評価専門構成員名簿",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r05_02-2.pdf"
+        },
+        {
+          "name": "資料2 中間取りまとめ（案）",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r05_02-18.pdf"
+        },
+        {
+          "name": "（別添1）第4次食育推進基本計画における数値目標の達成状況",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r05_02-5.pdf"
+        },
+        {
+          "name": "（別添2）数値目標の分析・評価",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r05_02-17.pdf"
+        },
+        {
+          "name": "分割版（1）",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r05_02-6.pdf"
+        },
+        {
+          "name": "分割版（2）",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r05_02-7.pdf"
+        },
+        {
+          "name": "分割版（3）",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r05_02-15.pdf"
+        },
+        {
+          "name": "分割版（4）",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r05_02-16.pdf"
+        },
+        {
+          "name": "参考資料1_令和6年度等食育関連予算案",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r05_02-3.pdf"
+        },
+        {
+          "name": "参考資料2_令和6年度等食育関連予算案関連資料",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r05_02-8.pdf"
+        },
+        {
+          "name": "分割（1）",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r05_02-9.pdf"
+        },
+        {
+          "name": "分割（2）",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r05_02-10.pdf"
+        },
+        {
+          "name": "分割（3）",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r05_02-11.pdf"
+        },
+        {
+          "name": "分割（4）",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r05_02-12.pdf"
+        },
+        {
+          "name": "分割（5）",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r05_02-13.pdf"
+        },
+        {
+          "name": "分割（6）",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r05_02-14.pdf"
+        },
+        {
+          "name": "令和5年度第2回議事録",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r05_02-19.pdf"
         }
       ]
     },
@@ -108742,6 +109229,142 @@
       ]
     },
     {
+      "id": "maff-shokuiku_suishin_hyouka_iinkai-20230929-r05_001",
+      "councilId": "maff-shokuiku_suishin_hyouka_iinkai",
+      "title": "令和5年度 第1回 食育推進評価専門委員会",
+      "date": "2023/09/29",
+      "officialUrl": "https://www.maff.go.jp/j/syokuiku/kaigi/230906.html",
+      "category": "SPECIAL_COMMITTEE",
+      "ministry": "MAFF",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "令和5年度第1回食育推進評価専門委員会議事次第",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/230906-1.pdf"
+        },
+        {
+          "name": "資料1_食育推進評価専門委員会構成員名簿",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/230906-2.pdf"
+        },
+        {
+          "name": "資料2上岡委員提出資料",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/230906-16.pdf"
+        },
+        {
+          "name": "分割版(1)",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/230906-3.pdf"
+        },
+        {
+          "name": "分割版(2)",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/230906-4.pdf"
+        },
+        {
+          "name": "資料3_久保委員提出資料",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/230906-5.pdf"
+        },
+        {
+          "name": "資料4_新井委員提出資料",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/230906-6.pdf"
+        },
+        {
+          "name": "資料5_健康日本21（第三次）について",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/230906-17.pdf"
+        },
+        {
+          "name": "分割版(1)",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/230906-7.pdf"
+        },
+        {
+          "name": "分割版(2)",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/230906-8.pdf"
+        },
+        {
+          "name": "資料6_令和5年度全国食育推進ネットワークの運営イメージ",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/230906-9.pdf"
+        },
+        {
+          "name": "資料7_第18回食育推進全国大会開催概要",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/230906-10.pdf"
+        },
+        {
+          "name": "資料8_持続可能な食を支える食育の推進に係る普及啓発について",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/230906-11.pdf"
+        },
+        {
+          "name": "資料9_地方公共団体の食育推進計画策定等の効果の検証について",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/230906-32.pdf"
+        },
+        {
+          "name": "資料10_産地や環境を考慮した食品の選択を促すためのデータ分析について",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/230906-13.pdf"
+        },
+        {
+          "name": "参考資料1_食育推進評価専門委員会の開催について",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/230906-14.pdf"
+        },
+        {
+          "name": "参考資料2_今後の審議の進め方について",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/230906-15.pdf"
+        },
+        {
+          "name": "参考資料3_令和6(2024)年度食育関連予算概算要求",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/230906-18.pdf"
+        },
+        {
+          "name": "分割版(1)",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/230906-19.pdf"
+        },
+        {
+          "name": "分割版(2)",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/230906-20.pdf"
+        },
+        {
+          "name": "分割版(3)",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/230906-21.pdf"
+        },
+        {
+          "name": "分割版(4)",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/230906-22.pdf"
+        },
+        {
+          "name": "分割版(5)",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/230906-23.pdf"
+        },
+        {
+          "name": "分割版(6)",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/230906-24.pdf"
+        },
+        {
+          "name": "分割版(7)",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/230906-25.pdf"
+        },
+        {
+          "name": "分割版(8)",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/230906-26.pdf"
+        },
+        {
+          "name": "分割版(9)",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/230906-27.pdf"
+        },
+        {
+          "name": "分割版(10)",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/230906-28.pdf"
+        },
+        {
+          "name": "分割版(11)",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/230906-29.pdf"
+        },
+        {
+          "name": "分割版(12)",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/230906-30.pdf"
+        },
+        {
+          "name": "令和5年度第1回食育推進評価専門委員会議事録",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/230906-31.pdf"
+        }
+      ]
+    },
+    {
       "id": "fsc-pfas_wg-20230928-003",
       "councilId": "fsc-pfas_wg",
       "title": "有機フッ素化合物（PFAS）ワーキンググループ（第3回）",
@@ -119994,6 +120617,98 @@
       ]
     },
     {
+      "id": "maff-shokuiku_suishin_hyouka_iinkai-20230320-r04_002",
+      "councilId": "maff-shokuiku_suishin_hyouka_iinkai",
+      "title": "令和4年度 第2回 食育推進評価専門委員会",
+      "date": "2023/03/20",
+      "officialUrl": "https://www.maff.go.jp/j/syokuiku/kaigi/r04_02.html",
+      "category": "SPECIAL_COMMITTEE",
+      "ministry": "MAFF",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "令和4年度第2回食育推進評価専門委員会議事次第",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r04_02-2.pdf"
+        },
+        {
+          "name": "資料1：第4次食育推進基本計画の各目標の進捗状況",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r04_02-8.pdf"
+        },
+        {
+          "name": "資料2：食育関連施策について",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r04_02-19.pdf"
+        },
+        {
+          "name": "資料3：阿部委員 提出資料",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r04_02-9.pdf"
+        },
+        {
+          "name": "資料4：田中委員 提出資料",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r04_02-15.pdf"
+        },
+        {
+          "name": "資料5：瀧本委員 提出資料",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r04_02-16.pdf"
+        },
+        {
+          "name": "資料6：武見委員 提出資料",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r04_02-18.pdf"
+        },
+        {
+          "name": "資料7：食育推進全国大会について",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r04_02-17.pdf"
+        },
+        {
+          "name": "資料8：スマートミール関連資料",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r04_02-20.pdf"
+        },
+        {
+          "name": "参考資料1：今後の審議の進め方について",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r04_02-12.pdf"
+        },
+        {
+          "name": "参考資料2：令和5(2023)年度等食育関連予算案",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r04_02-4.pdf"
+        },
+        {
+          "name": "参考資料3：令和5（2023）年度等食育関連予算案関連資料",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r04_02-6.pdf"
+        },
+        {
+          "name": "分割1",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r04_02-7.pdf"
+        },
+        {
+          "name": "分割2",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r04_02-1.pdf"
+        },
+        {
+          "name": "分割3",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r04_02-5.pdf"
+        },
+        {
+          "name": "分割4",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r04_02-11.pdf"
+        },
+        {
+          "name": "分割5",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r04_02-14.pdf"
+        },
+        {
+          "name": "分割6",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r04_02-3.pdf"
+        },
+        {
+          "name": "分割7",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r04_02-13.pdf"
+        },
+        {
+          "name": "令和4年度第2回議事録",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r04_02-10.pdf"
+        }
+      ]
+    },
+    {
       "id": "cas-sokuitiri-20230317-003",
       "councilId": "cas-sokuitiri",
       "title": "第3回 地理空間情報活用推進会議",
@@ -130583,6 +131298,78 @@
       "docCount": 6
     },
     {
+      "id": "maff-shokuiku_suishin_hyouka_iinkai-20220926-r04_001",
+      "councilId": "maff-shokuiku_suishin_hyouka_iinkai",
+      "title": "令和4年度 第1回 食育推進評価専門委員会",
+      "date": "2022/09/26",
+      "officialUrl": "https://www.maff.go.jp/j/syokuiku/kaigi/r04_01.html",
+      "category": "SPECIAL_COMMITTEE",
+      "ministry": "MAFF",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "令和4年度第1回食育推進評価専門委員会議事次第",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r04_01-6.pdf"
+        },
+        {
+          "name": "資料1：食育推進評価専門委員会構成員名簿",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r04_01-8.pdf"
+        },
+        {
+          "name": "資料2：服部委員提出資料",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r04_01-1.pdf"
+        },
+        {
+          "name": "資料2分割1",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r04_01-13.pdf"
+        },
+        {
+          "name": "資料2分割2",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r04_01-9.pdf"
+        },
+        {
+          "name": "資料2分割3",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r04_01-3.pdf"
+        },
+        {
+          "name": "資料3：堀切委員提出資料",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r04_01-2.pdf"
+        },
+        {
+          "name": "資料4：小竹委員提出資料",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r04_01-5.pdf"
+        },
+        {
+          "name": "資料5：都道府県・市町村における食育推進計画作成の見える化について",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r04_01-14.pdf"
+        },
+        {
+          "name": "資料6：令和4年度全国食育推進ネットワークの運営イメージ",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r04_01-7.pdf"
+        },
+        {
+          "name": "資料7：第17回食育推進全国大会開催概要",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r04_01-10.pdf"
+        },
+        {
+          "name": "参考資料1：食育推進評価専門委員会の開催について",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r04_01-4.pdf"
+        },
+        {
+          "name": "参考資料2：今後の審議の進め方について",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r04_01-12.pdf"
+        },
+        {
+          "name": "参考資料3：令和4（2022）年度食育関連予算及び令和5（2023）年度食育関連予算概算要求",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r04_01-11.pdf"
+        },
+        {
+          "name": "令和4年度第1回議事録",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r04_01-15.pdf"
+        }
+      ]
+    },
+    {
       "id": "aca-kokugo_nihongo_sansyo_hoi_wg-20220921-r04_003",
       "councilId": "aca-kokugo_nihongo_sansyo_hoi_wg",
       "title": "令和4年 第3回 「日本語教育の参照枠」補遺版の検討に関するワーキンググループ",
@@ -139995,6 +140782,186 @@
       ]
     },
     {
+      "id": "maff-shokuiku_suishin_hyouka_iinkai-20220324-r03_002",
+      "councilId": "maff-shokuiku_suishin_hyouka_iinkai",
+      "title": "令和3年度 第2回 食育推進評価専門委員会",
+      "date": "2022/03/24",
+      "officialUrl": "https://www.maff.go.jp/j/syokuiku/kaigi/r03_02.html",
+      "category": "SPECIAL_COMMITTEE",
+      "ministry": "MAFF",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "令和3年度第2回食育推進評価専門委員会議事次第",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r03_02-12.pdf"
+        },
+        {
+          "name": "資料1-1：食育目標達成に向けた取組の「見える化」ワーキンググループ報告書",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r03_02-26.pdf"
+        },
+        {
+          "name": "構成員名簿",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r03_02-27.pdf"
+        },
+        {
+          "name": "食育の取組を収集・整理するための調査個票",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r03_02-16.pdf"
+        },
+        {
+          "name": "コミットメントのイメージ",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r03_02-20.pdf"
+        },
+        {
+          "name": "資料1-2：食育目標達成に向けた取組の「見える化」ワーキンググループ報告書の概要",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r03_02-3.pdf"
+        },
+        {
+          "name": "資料1-2分割1",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r03_02-9.pdf"
+        },
+        {
+          "name": "資料1-2分割2",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r03_02-17.pdf"
+        },
+        {
+          "name": "資料1-3：第4次食育推進基本計画の各目標に対応する取組の「見える化」の方策について",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r03_02-31.pdf"
+        },
+        {
+          "name": "資料2-1：第4次食育推進基本計画の各目標の達成状況",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r03_02-4.pdf"
+        },
+        {
+          "name": "資料2-2：第4次食育推進基本計画の実施を推進する施策",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r03_02-7.pdf"
+        },
+        {
+          "name": "資料3：今後の食育推進評価専門委員会の進め方について（案）",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r03_02-23.pdf"
+        },
+        {
+          "name": "資料4：食育ピクトグラムについて",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r03_02-6.pdf"
+        },
+        {
+          "name": "参考資料1-1：令和4年度食育関連予算案",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r03_02-18.pdf"
+        },
+        {
+          "name": "参考資料1-2：令和4年度食育関連予算案関連資料",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r03_02-21.pdf"
+        },
+        {
+          "name": "分割1",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r03_02-13.pdf"
+        },
+        {
+          "name": "分割2",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r03_02-14.pdf"
+        },
+        {
+          "name": "分割3",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r03_02-32.pdf"
+        },
+        {
+          "name": "分割4",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r03_02-25.pdf"
+        },
+        {
+          "name": "分割5",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r03_02-34.pdf"
+        },
+        {
+          "name": "分割6",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r03_02-35.pdf"
+        },
+        {
+          "name": "分割7",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r03_02-30.pdf"
+        },
+        {
+          "name": "参考資料2：デジタル食育ガイドブック",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r03_02-8.pdf"
+        },
+        {
+          "name": "分割1",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r03_02-33.pdf"
+        },
+        {
+          "name": "分割2",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r03_02-15.pdf"
+        },
+        {
+          "name": "分割3",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r03_02-10.pdf"
+        },
+        {
+          "name": "分割4",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r03_02-5.pdf"
+        },
+        {
+          "name": "分割5",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r03_02-28.pdf"
+        },
+        {
+          "name": "分割6",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r03_02-22.pdf"
+        },
+        {
+          "name": "分割7",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r03_02-24.pdf"
+        },
+        {
+          "name": "分割8",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r03_02-29.pdf"
+        },
+        {
+          "name": "分割9",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r03_02-19.pdf"
+        },
+        {
+          "name": "分割10",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r03_02-2.pdf"
+        },
+        {
+          "name": "資料4：食育ピクトグラムについて",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r03_02-36.pdf"
+        },
+        {
+          "name": "参考資料2：デジタル食育ガイドブック",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r03_02-38.pdf"
+        },
+        {
+          "name": "分割1",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r03_02-39.pdf"
+        },
+        {
+          "name": "分割2",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r03_02-40.pdf"
+        },
+        {
+          "name": "分割3",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r03_02-41.pdf"
+        },
+        {
+          "name": "分割4",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r03_02-42.pdf"
+        },
+        {
+          "name": "分割5",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r03_02-43.pdf"
+        },
+        {
+          "name": "分割6",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r03_02-44.pdf"
+        },
+        {
+          "name": "令和3年度第2回議事録",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r03_02-37.pdf"
+        }
+      ]
+    },
+    {
       "id": "cao-kisei_startup_wg-20220322-004",
       "councilId": "cao-kisei_startup_wg",
       "title": "第4回 規制改革推進会議 スタートアップ・イノベーション促進WG（令和3年度）",
@@ -142783,6 +143750,58 @@
       "hasMinutes": true,
       "docCount": 19,
       "manualLock": true
+    },
+    {
+      "id": "maff-shokuiku_mieruka_wg-20220228-r03_002",
+      "councilId": "maff-shokuiku_mieruka_wg",
+      "title": "令和3年度 第2回 取組の「見える化」WG",
+      "date": "2022/02/28",
+      "officialUrl": "https://www.maff.go.jp/j/syokuiku/kaigi/wg_r03_02.html",
+      "category": "WORKING_GROUP",
+      "ministry": "MAFF",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "令和3年度第2回食育目標達成に向けた取組の「見える化」ワーキンググループ議事次第",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/wg_r03_02-4.pdf"
+        },
+        {
+          "name": "食育目標達成に向けた取組の「見える化」ワーキンググループ報告素案",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/wg_r03_02-6.pdf"
+        },
+        {
+          "name": "別添1：食育目標達成に向けた取組の「見える化」ワーキンググループ構成員名簿",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/wg_r03_02-7.pdf"
+        },
+        {
+          "name": "別添2：食育の取組を収集・整理するための項目案",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/wg_r03_02-9.pdf"
+        },
+        {
+          "name": "別添4：コミットメントのイメージ",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/wg_r03_02-2.pdf"
+        },
+        {
+          "name": "食育目標達成に向けた取組の「見える化」ワーキンググループ報告素案概要",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/wg_r03_02-8.pdf"
+        },
+        {
+          "name": "分割1",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/wg_r03_02-3.pdf"
+        },
+        {
+          "name": "分割2",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/wg_r03_02-10.pdf"
+        },
+        {
+          "name": "参考資料：食育目標達成に向けた取組の「見える化」ワーキンググループ開催要領",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/wg_r03_02-1.pdf"
+        },
+        {
+          "name": "令和3年度第2回議事要旨",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/wg_r03_02-5.pdf"
+        }
+      ]
     },
     {
       "id": "cas-kenkou_iryou_honbu-20220225-037",
@@ -149708,6 +150727,54 @@
       "councilName": "全世代型社会保障構築会議"
     },
     {
+      "id": "maff-shokuiku_mieruka_wg-20211109-r03_001",
+      "councilId": "maff-shokuiku_mieruka_wg",
+      "title": "令和3年度 第1回 取組の「見える化」WG",
+      "date": "2021/11/09",
+      "officialUrl": "https://www.maff.go.jp/j/syokuiku/kaigi/wg_r03_01.html",
+      "category": "WORKING_GROUP",
+      "ministry": "MAFF",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "令和3年度第1回食育目標達成に向けた取組の「見える化」ワーキンググループ議事次第",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/wg_r03_01-6.pdf"
+        },
+        {
+          "name": "資料1：食育目標達成に向けた取組の「見える化」ワーキンググループの開催について",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/wg_r03_01-7.pdf"
+        },
+        {
+          "name": "資料2：ワーキンググループにおける食育目標達成に向けた取組の「見える化」の進め方について",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/wg_r03_01-8.pdf"
+        },
+        {
+          "name": "資料3：ご議論いただきたい事項",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/wg_r03_01-5.pdf"
+        },
+        {
+          "name": "資料4：食育の取組を収集・整理するための項目（意見反映版）",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/wg_r03_01-1.pdf"
+        },
+        {
+          "name": "資料5：食育の取組の具体例",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/wg_r03_01-2.pdf"
+        },
+        {
+          "name": "資料6：回答方法について",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/wg_r03_01-3.pdf"
+        },
+        {
+          "name": "参考資料：「見える化」の例、コミットメントの例",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/wg_r03_01-9.pdf"
+        },
+        {
+          "name": "令和3年度第1回議事要旨",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/wg_r03_01-4.pdf"
+        }
+      ]
+    },
+    {
       "id": "mof-zaiseiseido_bunkakai-20211108-s01",
       "councilId": "mof-zaiseiseido_bunkakai",
       "councilName": "財政制度等審議会 財政制度分科会",
@@ -151418,6 +152485,86 @@
       "councilName": "年金広報検討会",
       "ministry": "MHLW",
       "category": "STUDY"
+    },
+    {
+      "id": "maff-shokuiku_suishin_hyouka_iinkai-20210929-r03_001",
+      "councilId": "maff-shokuiku_suishin_hyouka_iinkai",
+      "title": "令和3年度 第1回 食育推進評価専門委員会",
+      "date": "2021/09/29",
+      "officialUrl": "https://www.maff.go.jp/j/syokuiku/kaigi/r03_01.html",
+      "category": "SPECIAL_COMMITTEE",
+      "ministry": "MAFF",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "令和3年度第1回食育推進評価専門委員会議事次第",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r03_01-1.pdf"
+        },
+        {
+          "name": "資料1：食育推進評価専門委員会構成員名簿",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r03_01-16.pdf"
+        },
+        {
+          "name": "資料2-1：令和3（2021）年度の食育推進評価専門委員会の審議について（案）",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r03_01-10.pdf"
+        },
+        {
+          "name": "資料2-2：第4次食育推進基本計画の各目標に対応する取組の「見える化」について（案）",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r03_01-7.pdf"
+        },
+        {
+          "name": "資料2-3：食育目標達成に向けた取組の「見える化」ワーキンググループの開催について（案）",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r03_01-12.pdf"
+        },
+        {
+          "name": "資料3：産学官等連携による健康的で持続可能な食環境づくりの推進について",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r03_01-4.pdf"
+        },
+        {
+          "name": "資料4-1：あふの環2030プロジェクト～食と農林水産業のサステナビリティを考える～",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r03_01-8.pdf"
+        },
+        {
+          "name": "あふの環2030プロジェクト～食と農林水産業のサステナビリティを考える～",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r03_01-11.pdf"
+        },
+        {
+          "name": "あふの環2030プロジェクト～食と農林水産業のサステナビリティを考える～",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r03_01-2.pdf"
+        },
+        {
+          "name": "あふの環2030プロジェクト～食と農林水産業のサステナビリティを考える～",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r03_01-14.pdf"
+        },
+        {
+          "name": "資料4-2：みどりの食料システム戦略パンフレット",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r03_01-9.pdf"
+        },
+        {
+          "name": "資料5-1：国連食料システムサミット概要",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r03_01-3.pdf"
+        },
+        {
+          "name": "資料5-2：「行動宣言」骨子・原文",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r03_01-13.pdf"
+        },
+        {
+          "name": "参考資料1：第4次食育推進基本計画（概要）",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r03_01-5.pdf"
+        },
+        {
+          "name": "参考資料2：食育ピクトグラムと第4次食育推進基本計画の目標について（服部委員提出資料）",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r03_01-15.pdf"
+        },
+        {
+          "name": "参考資料3：令和3(2021)年度食育関連予算及び令和4(2022)年度食育関連予算概算要求",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r03_01-6.pdf"
+        },
+        {
+          "name": "令和3年度第1回議事録",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r03_01-17.pdf"
+        }
+      ]
     },
     {
       "id": "cao-kisei_digital_ai_wg-20210928-002",
@@ -158584,51 +159731,6 @@
       "councilName": "知的財産取引検討会"
     },
     {
-      "id": "maff-kaigi-20210331-008",
-      "councilId": "maff-kaigi",
-      "title": "第8回 食育推進会議",
-      "date": "2021/03/31",
-      "officialUrl": "https://www.maff.go.jp/j/syokuiku/kaigi/8th.html",
-      "category": "PANEL",
-      "ministry": "MAFF",
-      "manualLock": true,
-      "materials": [
-        {
-          "name": "食育推進会議（第8回）議事次第(PDF : 158KB)",
-          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/8th-4.pdf"
-        },
-        {
-          "name": "資料1：第4次食育推進基本計画（案）の概要(PDF : 948KB)",
-          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/8th-10.pdf"
-        },
-        {
-          "name": "資料2：第4次食育推進基本計画（案）(PDF : 531KB)",
-          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/8th-8.pdf"
-        },
-        {
-          "name": "参考資料1：食育推進会議委員名簿(PDF : 177KB)",
-          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/8th-1.pdf"
-        },
-        {
-          "name": "参考資料2：食育推進会議運営規則(PDF : 180KB)",
-          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/8th-3.pdf"
-        },
-        {
-          "name": "参考資料3：食育ピクトグラム（デザイン、コンセプト、利用規約）(PDF : 394KB)",
-          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/8th-2.pdf"
-        },
-        {
-          "name": "議事要旨(PDF : 197KB)",
-          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/8th-7.pdf"
-        },
-        {
-          "name": "議事録(PDF : 210KB)",
-          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/8th-9.pdf"
-        }
-      ],
-      "councilName": "食育推進会議"
-    },
-    {
       "id": "fsa-transition_finance-20210331-002",
       "councilId": "fsa-transition_finance",
       "councilName": "トランジション・ファイナンス環境整備検討会",
@@ -158762,6 +159864,50 @@
       ]
     },
     {
+      "id": "maff-shokuiku_suishin_kaigi-20210331-008",
+      "councilId": "maff-shokuiku_suishin_kaigi",
+      "title": "第8回 食育推進会議",
+      "date": "2021/03/31",
+      "officialUrl": "https://www.maff.go.jp/j/syokuiku/kaigi/8th.html",
+      "category": "COUNCIL",
+      "ministry": "MAFF",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "食育推進会議（第8回）議事次第",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/8th-4.pdf"
+        },
+        {
+          "name": "資料1：第4次食育推進基本計画（案）の概要",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/8th-10.pdf"
+        },
+        {
+          "name": "資料2：第4次食育推進基本計画（案）",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/8th-8.pdf"
+        },
+        {
+          "name": "参考資料1：食育推進会議委員名簿",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/8th-1.pdf"
+        },
+        {
+          "name": "参考資料2：食育推進会議運営規則",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/8th-3.pdf"
+        },
+        {
+          "name": "参考資料3：食育ピクトグラム（デザイン、コンセプト、利用規約）",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/8th-2.pdf"
+        },
+        {
+          "name": "議事要旨",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/8th-7.pdf"
+        },
+        {
+          "name": "議事録",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/8th-9.pdf"
+        }
+      ]
+    },
+    {
       "id": "nta-zeirishi_bunkakai-20210330-096",
       "councilId": "nta-zeirishi_bunkakai",
       "title": "第96回 国税審議会 税理士分科会",
@@ -158858,18 +160004,6 @@
       "councilName": "規制改革推進会議 デジタル・AI WG"
     },
     {
-      "id": "maff-kaigi-20210329-007",
-      "councilId": "maff-kaigi",
-      "title": "第7回 食育推進会議",
-      "date": "2021/03/29",
-      "officialUrl": "https://warp.ndl.go.jp/info:ndljp/pid/13271042/www.maff.go.jp/j/syokuiku/kaigi/7th.html",
-      "category": "PANEL",
-      "ministry": "MAFF",
-      "manualLock": true,
-      "materials": [],
-      "councilName": "食育推進会議"
-    },
-    {
       "id": "fdma-kikenbutsu_kisei_anzen-20210329-r03_004",
       "councilId": "fdma-kikenbutsu_kisei_anzen",
       "councilName": "消防団員の処遇等に関する検討会",
@@ -158927,6 +160061,22 @@
       "hasMinutes": true,
       "docCount": 8,
       "manualLock": true
+    },
+    {
+      "id": "maff-shokuiku_suishin_kaigi-20210329-007",
+      "councilId": "maff-shokuiku_suishin_kaigi",
+      "title": "第7回 食育推進会議（書面による持ち回り開催）",
+      "date": "2021/03/29",
+      "officialUrl": "https://warp.ndl.go.jp/info:ndljp/pid/13271042/www.maff.go.jp/j/syokuiku/kaigi/7th.html",
+      "category": "COUNCIL",
+      "ministry": "MAFF",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "第7回 食育推進会議（書面による持ち回り開催） 議事要旨・資料アーカイブ",
+          "url": "https://warp.ndl.go.jp/info:ndljp/pid/13271042/www.maff.go.jp/j/syokuiku/kaigi/7th.html"
+        }
+      ]
     },
     {
       "id": "fsa-sustainable_finance-20210325-005",
@@ -159192,47 +160342,6 @@
       ]
     },
     {
-      "id": "maff-kaigi-20210319-005",
-      "councilId": "maff-kaigi",
-      "title": "第5回 食育推進会議",
-      "date": "2021/03/19",
-      "officialUrl": "https://www.maff.go.jp/j/syokuiku/kaigi/r02_05.html",
-      "category": "PANEL",
-      "ministry": "MAFF",
-      "manualLock": true,
-      "materials": [
-        {
-          "name": "令和2年度第5回食育推進評価専門委員会議事次第(PDF : 180KB)",
-          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r02_05-2.pdf"
-        },
-        {
-          "name": "資料1：第4次食育推進基本計画（案）(PDF : 525KB)",
-          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r02_05-8.pdf"
-        },
-        {
-          "name": "資料2：第4次食育推進基本計画（案）のパブリックコメント後の修正点(PDF : 154KB)",
-          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r02_05-4.pdf"
-        },
-        {
-          "name": "参考資料1：食育推進評価専門委員会構成員名簿(PDF : 212KB)",
-          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r02_05-3.pdf"
-        },
-        {
-          "name": "参考資料2：食育推進評価専門委員会の開催について(PDF : 155KB)",
-          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r02_05-6.pdf"
-        },
-        {
-          "name": "参考資料3：第4次食育推進基本計画案に対する意見募集の結果 概要（主なもの）(PDF : 70KB)",
-          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r02_05-1.pdf"
-        },
-        {
-          "name": "参考資料4：第4次食育推進基本計画（令和3～7年度）（案）の 概要(PDF : 950KB)",
-          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r02_05-9.pdf"
-        }
-      ],
-      "councilName": "食育推進会議"
-    },
-    {
       "id": "cas-tiikisaisei-20210319-034",
       "councilId": "cas-tiikisaisei",
       "title": "第34回 地域再生本部",
@@ -159490,6 +160599,46 @@
       "hasMinutes": false,
       "docCount": 4,
       "manualLock": true
+    },
+    {
+      "id": "maff-shokuiku_suishin_hyouka_iinkai-20210319-r02_005",
+      "councilId": "maff-shokuiku_suishin_hyouka_iinkai",
+      "title": "令和2年度 第5回 食育推進評価専門委員会（書面による持ち回り開催）",
+      "date": "2021/03/19",
+      "officialUrl": "https://www.maff.go.jp/j/syokuiku/kaigi/r02_05.html",
+      "category": "SPECIAL_COMMITTEE",
+      "ministry": "MAFF",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "令和2年度第5回食育推進評価専門委員会議事次第",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r02_05-2.pdf"
+        },
+        {
+          "name": "資料1：第4次食育推進基本計画（案）",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r02_05-8.pdf"
+        },
+        {
+          "name": "資料2：第4次食育推進基本計画（案）のパブリックコメント後の修正点",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r02_05-4.pdf"
+        },
+        {
+          "name": "参考資料1：食育推進評価専門委員会構成員名簿",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r02_05-3.pdf"
+        },
+        {
+          "name": "参考資料2：食育推進評価専門委員会の開催について",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r02_05-6.pdf"
+        },
+        {
+          "name": "参考資料3：第4次食育推進基本計画案に対する意見募集の結果 概要（主なもの）",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r02_05-1.pdf"
+        },
+        {
+          "name": "参考資料4：第4次食育推進基本計画（令和3～7年度）（案）の 概要",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r02_05-9.pdf"
+        }
+      ]
     },
     {
       "id": "fdma-kikenbutsu_umpan_anzen-20210318-r03_003",
@@ -161534,6 +162683,46 @@
       "hasMinutes": true,
       "docCount": 11,
       "manualLock": true
+    },
+    {
+      "id": "maff-shokuiku_suishin_hyouka_iinkai-20210209-r02_004",
+      "councilId": "maff-shokuiku_suishin_hyouka_iinkai",
+      "title": "令和2年度 第4回 食育推進評価専門委員会",
+      "date": "2021/02/09",
+      "officialUrl": "https://www.maff.go.jp/j/syokuiku/kaigi/r02_04.html",
+      "category": "SPECIAL_COMMITTEE",
+      "ministry": "MAFF",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "令和2年度第4回食育推進評価専門委員会議事次第",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r02_04-4.pdf"
+        },
+        {
+          "name": "資料1：第4次食育推進基本計画（令和3～7年度）（案）の概要",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r02_04-9.pdf"
+        },
+        {
+          "name": "資料2：第4次食育推進基本計画（案）",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r02_04-6.pdf"
+        },
+        {
+          "name": "参考資料1：食育推進評価専門委員会構成員名簿",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r02_04-5.pdf"
+        },
+        {
+          "name": "参考資料2：食育推進評価専門委員会の開催について",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r02_04-3.pdf"
+        },
+        {
+          "name": "参考資料3：食育ピクトグラム（デザイン、コンセプト、利用規約）",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r02_04-7.pdf"
+        },
+        {
+          "name": "令和2年度第4回議事録",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r02_04-8.pdf"
+        }
+      ]
     },
     {
       "id": "fsa-kinyu_bunkakai-20210208-033",
@@ -164106,6 +165295,74 @@
       "councilName": "国土強靱化推進本部"
     },
     {
+      "id": "maff-shokuiku_suishin_hyouka_iinkai-20201211-r02_003",
+      "councilId": "maff-shokuiku_suishin_hyouka_iinkai",
+      "title": "令和2年度 第3回 食育推進評価専門委員会",
+      "date": "2020/12/11",
+      "officialUrl": "https://www.maff.go.jp/j/syokuiku/kaigi/r02_03.html",
+      "category": "SPECIAL_COMMITTEE",
+      "ministry": "MAFF",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "令和2年度第3回食育推進評価専門委員会議事次第",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r02_03-6.pdf"
+        },
+        {
+          "name": "資料1-1：国連食料システムサミット2021（仮訳）",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r02_03-1.pdf"
+        },
+        {
+          "name": "資料1-2：国連食料システムサミット2021－世界で議論されていること－",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r02_03-10.pdf"
+        },
+        {
+          "name": "分割1",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r02_03-8.pdf"
+        },
+        {
+          "name": "分割2",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r02_03-11.pdf"
+        },
+        {
+          "name": "分割3",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r02_03-2.pdf"
+        },
+        {
+          "name": "資料2：第4次食育推進基本計画の作成に向けた基本的考え方",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r02_03-14.pdf"
+        },
+        {
+          "name": "分割1",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r02_03-15.pdf"
+        },
+        {
+          "name": "分割2",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r02_03-4.pdf"
+        },
+        {
+          "name": "資料3：第4次食育推進基本計画の骨子（案）",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r02_03-3.pdf"
+        },
+        {
+          "name": "資料4：食育に関する新たな啓発資材（ピクトグラム）について",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r02_03-5.pdf"
+        },
+        {
+          "name": "参考資料1：食育推進評価専門委員会構成員名簿",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r02_03-7.pdf"
+        },
+        {
+          "name": "参考資料2：食育推進評価専門委員会の開催について",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r02_03-13.pdf"
+        },
+        {
+          "name": "令和2年度第3回議事録",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r02_03-16.pdf"
+        }
+      ]
+    },
+    {
       "id": "smea-katatorihiki-20201210-005",
       "councilId": "smea-katatorihiki",
       "title": "型取引の適正化推進協議会 第5回",
@@ -166144,6 +167401,150 @@
       "category": "STUDY"
     },
     {
+      "id": "maff-shokuiku_suishin_hyouka_iinkai-20201001-r02_002",
+      "councilId": "maff-shokuiku_suishin_hyouka_iinkai",
+      "title": "令和2年度 第2回 食育推進評価専門委員会",
+      "date": "2020/10/01",
+      "officialUrl": "https://www.maff.go.jp/j/syokuiku/kaigi/r02_02.html",
+      "category": "SPECIAL_COMMITTEE",
+      "ministry": "MAFF",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "令和2年度第2回食育推進評価専門委員会議事次第",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r02_02-1.pdf"
+        },
+        {
+          "name": "資料1-1：食育推進評価専門委員会構成員名簿",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r02_02-24.pdf"
+        },
+        {
+          "name": "資料1-2：食育推進評価専門委員会の開催について",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r02_02-30.pdf"
+        },
+        {
+          "name": "資料2：カゴメ株式会社 提出資料",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r02_02-7.pdf"
+        },
+        {
+          "name": "分割1",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r02_02-26.pdf"
+        },
+        {
+          "name": "分割2",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r02_02-12.pdf"
+        },
+        {
+          "name": "資料3：日本マクドナルド株式会社 提出資料",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r02_02-27.pdf"
+        },
+        {
+          "name": "資料4：長島委員 提出資料",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r02_02-2.pdf"
+        },
+        {
+          "name": "資料5：高橋委員 提出資料",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r02_02-3.pdf"
+        },
+        {
+          "name": "資料6：樽井委員 提出資料",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r02_02-16.pdf"
+        },
+        {
+          "name": "資料7：阿部委員 提出資料",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r02_02-4.pdf"
+        },
+        {
+          "name": "資料8：中澤委員 提出資料",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r02_02-9.pdf"
+        },
+        {
+          "name": "分割1",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r02_02-15.pdf"
+        },
+        {
+          "name": "分割2",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r02_02-17.pdf"
+        },
+        {
+          "name": "資料9：田中委員 提出資料",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r02_02-20.pdf"
+        },
+        {
+          "name": "資料10-1：田村委員 提出資料",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r02_02-36.pdf"
+        },
+        {
+          "name": "分割1",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r02_02-33.pdf"
+        },
+        {
+          "name": "分割2",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r02_02-35.pdf"
+        },
+        {
+          "name": "分割3",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r02_02-34.pdf"
+        },
+        {
+          "name": "資料10-2：田村委員 提出資料",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r02_02-23.pdf"
+        },
+        {
+          "name": "資料10-3：田村委員 提出資料",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r02_02-13.pdf"
+        },
+        {
+          "name": "資料11：有田委員 提出資料",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r02_02-10.pdf"
+        },
+        {
+          "name": "資料12：澤木委員 提出資料",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r02_02-32.pdf"
+        },
+        {
+          "name": "資料13：滝村委員 提出資料",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r02_02-25.pdf"
+        },
+        {
+          "name": "分割1",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r02_02-21.pdf"
+        },
+        {
+          "name": "分割2",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r02_02-19.pdf"
+        },
+        {
+          "name": "資料14：合瀬委員 提出資料",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r02_02-28.pdf"
+        },
+        {
+          "name": "資料15：第4次食育推進基本計画の重点課題の方向性（案）",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r02_02-29.pdf"
+        },
+        {
+          "name": "資料16：第4次食育推進基本計画の重点課題の考え方（案）",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r02_02-11.pdf"
+        },
+        {
+          "name": "参考資料1-1：第4次食育推進基本計画作成に向けた主な論点の概要",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r02_02-38.pdf"
+        },
+        {
+          "name": "参考資料1-2：第4次食育推進基本計画作成に向けた主な論点",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r02_02-39.pdf"
+        },
+        {
+          "name": "参考資料2：陳委員 提出資料",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r02_02-31.pdf"
+        },
+        {
+          "name": "令和2年度第2回議事録",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r02_02-37.pdf"
+        }
+      ]
+    },
+    {
       "id": "cas-sangyouisan-20200930-011",
       "councilId": "cas-sangyouisan",
       "title": "第11回 稼働資産を含む産業遺産に関する有識者会議",
@@ -167202,6 +168603,142 @@
         {
           "name": "議事概要",
           "url": "https://www.fsc.go.jp/fsciis/attachedFile/download?retrievalId=kai20200819so1&fileId=710"
+        }
+      ]
+    },
+    {
+      "id": "maff-shokuiku_suishin_hyouka_iinkai-20200818-r02_001",
+      "councilId": "maff-shokuiku_suishin_hyouka_iinkai",
+      "title": "令和2年度 第1回 食育推進評価専門委員会",
+      "date": "2020/08/18",
+      "officialUrl": "https://www.maff.go.jp/j/syokuiku/kaigi/r02_01.html",
+      "category": "SPECIAL_COMMITTEE",
+      "ministry": "MAFF",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "令和2年度第1回食育推進評価専門委員会議事次第",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r02_01-13.pdf"
+        },
+        {
+          "name": "資料1-1 食育推進評価専門委員会構成員名簿",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r02_01-20.pdf"
+        },
+        {
+          "name": "資料1-2 食育推進評価専門委員会の開催について",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r02_01-22.pdf"
+        },
+        {
+          "name": "資料2 第4次食育推進基本計画の作成に向けた進め方（案）",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r02_01-30.pdf"
+        },
+        {
+          "name": "資料3 服部座長 提出資料",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r02_01-3.pdf"
+        },
+        {
+          "name": "分割1",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r02_01-4.pdf"
+        },
+        {
+          "name": "分割2",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r02_01-10.pdf"
+        },
+        {
+          "name": "分割3",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r02_01-16.pdf"
+        },
+        {
+          "name": "分割4",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r02_01-1.pdf"
+        },
+        {
+          "name": "分割5",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r02_01-27.pdf"
+        },
+        {
+          "name": "資料4 全中石堂常務理事 提出資料",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r02_01-5.pdf"
+        },
+        {
+          "name": "分割1",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r02_01-29.pdf"
+        },
+        {
+          "name": "分割2",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r02_01-21.pdf"
+        },
+        {
+          "name": "資料5 加藤委員 提出資料",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r02_01-9.pdf"
+        },
+        {
+          "name": "資料6 菊地委員 提出資料",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r02_01-2.pdf"
+        },
+        {
+          "name": "分割1",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r02_01-11.pdf"
+        },
+        {
+          "name": "分割2",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r02_01-18.pdf"
+        },
+        {
+          "name": "資料7 北川三和子委員 提出資料（意見書）",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r02_01-23.pdf"
+        },
+        {
+          "name": "資料8_瀧本委員_提出資料",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r02_01-19.pdf"
+        },
+        {
+          "name": "資料9-1 北川和也委員 提出資料",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r02_01-6.pdf"
+        },
+        {
+          "name": "分割1",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r02_01-28.pdf"
+        },
+        {
+          "name": "分割2",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r02_01-17.pdf"
+        },
+        {
+          "name": "資料9-2 北川和也委員 提出資料",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r02_01-14.pdf"
+        },
+        {
+          "name": "資料10 武見委員 提出資料",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r02_01-12.pdf"
+        },
+        {
+          "name": "資料11 パブリックコメントで寄せられた意見の概要",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r02_01-24.pdf"
+        },
+        {
+          "name": "資料12 第4次食育推進基本計画の重点課題の方向性（たたき台）",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r02_01-25.pdf"
+        },
+        {
+          "name": "資料13 第4次食育推進基本計画の重点課題の考え方 （たたき台）",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r02_01-15.pdf"
+        },
+        {
+          "name": "追加資料 堀切委員 提出資料",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r02_01-8.pdf"
+        },
+        {
+          "name": "参考資料1-1 主な論点概要",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r02_01-32.pdf"
+        },
+        {
+          "name": "参考資料1-2主な論点本体",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r02_01-33.pdf"
+        },
+        {
+          "name": "令和2年度第1回議事録",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r02_01-31.pdf"
         }
       ]
     },
@@ -171708,6 +173245,102 @@
       "manualLock": true
     },
     {
+      "id": "maff-shokuiku_suishin_hyouka_iinkai-20200325-r01_003",
+      "councilId": "maff-shokuiku_suishin_hyouka_iinkai",
+      "title": "令和元年度 第3回 食育推進評価専門委員会（書面による持ち回り開催）",
+      "date": "2020/03/25",
+      "officialUrl": "https://www.maff.go.jp/j/syokuiku/kaigi/r01_03.html",
+      "category": "SPECIAL_COMMITTEE",
+      "ministry": "MAFF",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "令和元年度第3回食育推進評価専門委員会議事次第",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r01_03-13.pdf"
+        },
+        {
+          "name": "資料1-1：消費者庁提出資料",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r01_03-16.pdf"
+        },
+        {
+          "name": "資料1-2：農林水産省提出資料",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r01_03-11.pdf"
+        },
+        {
+          "name": "分割1",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r01_03-1.pdf"
+        },
+        {
+          "name": "分割2",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r01_03-8.pdf"
+        },
+        {
+          "name": "分割3",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r01_03-20.pdf"
+        },
+        {
+          "name": "分割4",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r01_03-18.pdf"
+        },
+        {
+          "name": "資料2：第3次食育推進基本計画における数値目標の達成状況（最新値）",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r01_03-6.pdf"
+        },
+        {
+          "name": "資料3-1：第4次食育推進基本計画作成に向けた主な論点（概要）",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r01_03-23.pdf"
+        },
+        {
+          "name": "資料3-2：第4次食育推進基本計画作成に向けた主な論点",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r01_03-22.pdf"
+        },
+        {
+          "name": "参考資料1：令和元年度第2回食育推進評価専門委員会でいただいた主な御意見",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r01_03-2.pdf"
+        },
+        {
+          "name": "参考資料2：第4次食育推進基本計画の作成に向けた進め方（案）",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r01_03-17.pdf"
+        },
+        {
+          "name": "参考資料3：ちょうどよいバランスの食生活（令和元年度農林水産省委託事業）（案）",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r01_03-10.pdf"
+        },
+        {
+          "name": "分割1",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r01_03-12.pdf"
+        },
+        {
+          "name": "分割2",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r01_03-9.pdf"
+        },
+        {
+          "name": "分割3",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r01_03-19.pdf"
+        },
+        {
+          "name": "分割4",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r01_03-7.pdf"
+        },
+        {
+          "name": "参考資料4：従業員等の健康に配慮した企業の食育推進事例集（令和元年度農林水産省委託事業）",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r01_03-15.pdf"
+        },
+        {
+          "name": "分割1",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r01_03-3.pdf"
+        },
+        {
+          "name": "分割2",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r01_03-14.pdf"
+        },
+        {
+          "name": "分割3",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r01_03-4.pdf"
+        }
+      ]
+    },
+    {
       "id": "cao-kisei_digital_ai_wg-20200323-008",
       "councilId": "cao-kisei_digital_ai_wg",
       "title": "第8回 規制改革推進会議 デジタル・AI WG（令和元年度）",
@@ -175055,6 +176688,110 @@
       "hasMinutes": true,
       "docCount": 2,
       "manualLock": true
+    },
+    {
+      "id": "maff-shokuiku_suishin_hyouka_iinkai-20200120-r01_002",
+      "councilId": "maff-shokuiku_suishin_hyouka_iinkai",
+      "title": "令和元年度 第2回 食育推進評価専門委員会",
+      "date": "2020/01/20",
+      "officialUrl": "https://www.maff.go.jp/j/syokuiku/kaigi/r01_02.html",
+      "category": "SPECIAL_COMMITTEE",
+      "ministry": "MAFF",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "令和元年度第2回食育推進評価専門委員会議事次第",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r01_02-8.pdf"
+        },
+        {
+          "name": "食育推進評価専門委員会構成員名簿",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r01_02-18.pdf"
+        },
+        {
+          "name": "資料1 第4次食育推進基本計画作成に向けた課題検討及び事例収集（中間報告）",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r01_02-23.pdf"
+        },
+        {
+          "name": "資料2 児童生徒における食育推進状況調査報告（抜粋）",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r01_02-4.pdf"
+        },
+        {
+          "name": "資料3 食品ロス削減の推進に関する法律",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r01_02-3.pdf"
+        },
+        {
+          "name": "資料4 第3次食育推進基本計画の実施を推進する施策",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r01_02-1.pdf"
+        },
+        {
+          "name": "資料5-1 第4次食育推進基本計画作成に向けた主な論点（案）の概要",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r01_02-10.pdf"
+        },
+        {
+          "name": "資料5-2 第4次食育推進基本計画作成に向けた主な論点（案）",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r01_02-9.pdf"
+        },
+        {
+          "name": "参考資料1 令和2(2020)年度食育関連予算（案）",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r01_02-22.pdf"
+        },
+        {
+          "name": "分割1",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r01_02-16.pdf"
+        },
+        {
+          "name": "分割2",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r01_02-11.pdf"
+        },
+        {
+          "name": "分割3-1",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r01_02-20.pdf"
+        },
+        {
+          "name": "分割3-2",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r01_02-12.pdf"
+        },
+        {
+          "name": "分割3-3",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r01_02-17.pdf"
+        },
+        {
+          "name": "分割4",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r01_02-13.pdf"
+        },
+        {
+          "name": "分割5",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r01_02-6.pdf"
+        },
+        {
+          "name": "分割6-1",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r01_02-21.pdf"
+        },
+        {
+          "name": "分割6-2",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r01_02-14.pdf"
+        },
+        {
+          "name": "分割6-3",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r01_02-7.pdf"
+        },
+        {
+          "name": "参考資料2 SDGsアクションプラン2020（抜粋）",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r01_02-2.pdf"
+        },
+        {
+          "name": "参考資料3 令和元(2019)年度第1回食育推進評価専門委員会でいただいた御意見",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r01_02-15.pdf"
+        },
+        {
+          "name": "参考資料4 第4次食育推進基本計画の作成に向けた進め方（案）",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r01_02-5.pdf"
+        },
+        {
+          "name": "議事録",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r01_02-24.pdf"
+        }
+      ]
     },
     {
       "id": "aca-bunkazai_bunkakai-20200117-r02_210",
@@ -181157,6 +182894,154 @@
       "manualLock": true
     },
     {
+      "id": "maff-shokuiku_suishin_hyouka_iinkai-20190902-r01_001",
+      "councilId": "maff-shokuiku_suishin_hyouka_iinkai",
+      "title": "令和元年度 第1回 食育推進評価専門委員会",
+      "date": "2019/09/02",
+      "officialUrl": "https://www.maff.go.jp/j/syokuiku/kaigi/r1_01.html",
+      "category": "SPECIAL_COMMITTEE",
+      "ministry": "MAFF",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "令和元年度第1回食育推進評価専門委員会議事次第",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r1_01-3.pdf"
+        },
+        {
+          "name": "食育推進評価専門委員会構成員名簿",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r1_01-1.pdf"
+        },
+        {
+          "name": "令和元（2019）年度の食育推進評価専門委員会の審議について",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r1_01-19.pdf"
+        },
+        {
+          "name": "第4次食育推進基本計画作成に向けた進め方（案）",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r1_01-15.pdf"
+        },
+        {
+          "name": "第3次食育推進基本計画における数値目標の達成状況",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r1_01-25.pdf"
+        },
+        {
+          "name": "数値目標の分析・評価",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r1_01-6.pdf"
+        },
+        {
+          "name": "分割1",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r1_01-16.pdf"
+        },
+        {
+          "name": "分割2",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r1_01-13.pdf"
+        },
+        {
+          "name": "分割3",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r1_01-9.pdf"
+        },
+        {
+          "name": "分割4",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r1_01-5.pdf"
+        },
+        {
+          "name": "分割5",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r1_01-21.pdf"
+        },
+        {
+          "name": "分割6",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r1_01-23.pdf"
+        },
+        {
+          "name": "食をめぐる現状について",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r1_01-17.pdf"
+        },
+        {
+          "name": "分割1",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r1_01-4.pdf"
+        },
+        {
+          "name": "分割2",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r1_01-2.pdf"
+        },
+        {
+          "name": "分割3",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r1_01-8.pdf"
+        },
+        {
+          "name": "令和元（2019）年度食育関連予算及び令和2（2020）年度食育関連予算概算要求",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r1_01-26.pdf"
+        },
+        {
+          "name": "分割1",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r1_01-14.pdf"
+        },
+        {
+          "name": "分割2",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r1_01-20.pdf"
+        },
+        {
+          "name": "分割3",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r1_01-7.pdf"
+        },
+        {
+          "name": "分割4",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r1_01-10.pdf"
+        },
+        {
+          "name": "持続可能な開発目標（SDGs）と第3次食育推進基本計画",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r1_01-18.pdf"
+        },
+        {
+          "name": "令和元（2019）年度第14回食育推進食育推進全国大会開催結果について",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r1_01-22.pdf"
+        },
+        {
+          "name": "第4回食育活動表彰募集のお知らせ",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r1_01-24.pdf"
+        },
+        {
+          "name": "第3次食育推進評価専門委員会フォローアップ 中間取りまとめ",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r1_01-11.pdf"
+        },
+        {
+          "name": "平成30（2018）年度第3回食育推進評価専門委員会でいただいた御意見",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/r1_01-12.pdf"
+        },
+        {
+          "name": "令和元年度第1回議事録",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/pdf/r1/r1_report_1.pdf"
+        }
+      ]
+    },
+    {
+      "id": "maff-shokuiku_suishin_hyouka_iinkai-20190902-s02",
+      "councilId": "maff-shokuiku_suishin_hyouka_iinkai",
+      "title": "第3次食育推進基本計画フォローアップ 中間取りまとめ",
+      "date": "2019/09/02",
+      "officialUrl": "https://www.maff.go.jp/j/syokuiku/kaigi/3rd_chuukan.html",
+      "category": "SPECIAL_COMMITTEE",
+      "ministry": "MAFF",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "第3次食育推進基本計画フォローアップ中間取りまとめ",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/3rd_chuukan-3.pdf"
+        },
+        {
+          "name": "第3次食育推進基本計画における数値目標の達成状況",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/3rd_chuukan-2.pdf"
+        },
+        {
+          "name": "目標達成に課題の残る数値目標の分析・評価",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/3rd_chuukan-4.pdf"
+        },
+        {
+          "name": "主な意見整理表",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/3rd_chuukan-1.pdf"
+        }
+      ]
+    },
+    {
       "id": "mic-chihou_seido_32-20190829-021",
       "councilId": "mic-chihou_seido_32",
       "title": "第21回 第32次地方制度調査会 専門小委員会",
@@ -185437,6 +187322,78 @@
       "councilName": "地域再生本部"
     },
     {
+      "id": "maff-shokuiku_suishin_hyouka_iinkai-20190322-h30_003",
+      "councilId": "maff-shokuiku_suishin_hyouka_iinkai",
+      "title": "平成30年度 第3回 食育推進評価専門委員会",
+      "date": "2019/03/22",
+      "officialUrl": "https://www.maff.go.jp/j/syokuiku/kaigi/h30_03.html",
+      "category": "SPECIAL_COMMITTEE",
+      "ministry": "MAFF",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "食育推進評価専門委員会 構成員 名簿",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/h30_03-11.pdf"
+        },
+        {
+          "name": "中間取りまとめ（案）（見消版）",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/h30_03-15.pdf"
+        },
+        {
+          "name": "中間取りまとめ（案）（反映版）",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/h30_03-14.pdf"
+        },
+        {
+          "name": "第3次食育推進基本計画における数値目標の達成状況",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/h30_03-2.pdf"
+        },
+        {
+          "name": "目標達成に課題の残る数値目標の分析・評価",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/h30_03-3.pdf"
+        },
+        {
+          "name": "食育推進評価専門委員会における主な御意見",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/h30_03-10.pdf"
+        },
+        {
+          "name": "第3次食育推進基本計画における数値目標の達成状況（平成31（2019）年3月時点）",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/h30_03-1.pdf"
+        },
+        {
+          "name": "迫委員提出資料",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/h30_03-12.pdf"
+        },
+        {
+          "name": "第2回食育推進評価専門委員会でいただいた御意見",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/h30_03-9.pdf"
+        },
+        {
+          "name": "「食育」ってどんないいことがあるの？～エビデンス（根拠）に基づいて分かったこと～Part 2",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/h30_03-13.pdf"
+        },
+        {
+          "name": "分割1",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/h30_03-7.pdf"
+        },
+        {
+          "name": "分割2",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/h30_03-5.pdf"
+        },
+        {
+          "name": "分割3",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/h30_03-4.pdf"
+        },
+        {
+          "name": "分割4",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/h30_03-8.pdf"
+        },
+        {
+          "name": "平成30年度第3回議事録",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/h30_03-6.pdf"
+        }
+      ]
+    },
+    {
       "id": "aca-bunka_shingikai_sokai-20190320-078",
       "councilId": "aca-bunka_shingikai_sokai",
       "title": "第78回 文化審議会 総会",
@@ -186725,6 +188682,90 @@
         {
           "name": "議事概要［PDF:49KB］",
           "url": "https://www.fsc.go.jp/fsciis/attachedFile/download?retrievalId=kai20190206sh1&fileId=210"
+        }
+      ]
+    },
+    {
+      "id": "maff-shokuiku_suishin_hyouka_iinkai-20190206-h30_002",
+      "councilId": "maff-shokuiku_suishin_hyouka_iinkai",
+      "title": "平成30年度 第2回 食育推進評価専門委員会",
+      "date": "2019/02/06",
+      "officialUrl": "https://www.maff.go.jp/j/syokuiku/kaigi/h30_02.html",
+      "category": "SPECIAL_COMMITTEE",
+      "ministry": "MAFF",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "食育推進評価専門委員会構成員名簿",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/h30_02-10.pdf"
+        },
+        {
+          "name": "中間取りまとめ（案）",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/h30_02-13.pdf"
+        },
+        {
+          "name": "第3次食育推進基本計画における数値目標の達成状況",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/h30_02-2.pdf"
+        },
+        {
+          "name": "目標達成に課題の残る数値目標の分析・評価",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/h30_02-3.pdf"
+        },
+        {
+          "name": "食育推進評価専門委員会における主な御意見",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/h30_02-16.pdf"
+        },
+        {
+          "name": "上岡専門委員提出資料",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/h30_02-6.pdf"
+        },
+        {
+          "name": "平成31（2019）年度食育関連予算（案）",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/h30_02-4.pdf"
+        },
+        {
+          "name": "分割1",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/h30_02-7.pdf"
+        },
+        {
+          "name": "分割2",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/h30_02-8.pdf"
+        },
+        {
+          "name": "分割3-1",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/h30_02-1.pdf"
+        },
+        {
+          "name": "分割3-2",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/h30_02-9.pdf"
+        },
+        {
+          "name": "分割4-1",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/h30_02-17.pdf"
+        },
+        {
+          "name": "分割4-2",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/h30_02-11.pdf"
+        },
+        {
+          "name": "分割5",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/h30_02-18.pdf"
+        },
+        {
+          "name": "SDGsアクションプラン2019（抜粋）",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/h30_02-15.pdf"
+        },
+        {
+          "name": "政府広報関係資料",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/h30_02-5.pdf"
+        },
+        {
+          "name": "第1回食育推進評価専門委員会でいただいた御意見",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/h30_02-14.pdf"
+        },
+        {
+          "name": "平成30年度第2回議事録",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/h30_02-12.pdf"
         }
       ]
     },
@@ -188304,6 +190345,78 @@
         {
           "name": "議事概要",
           "url": "https://www.fsc.go.jp/fsciis/attachedFile/download?retrievalId=kai20181101pr1&fileId=410"
+        }
+      ]
+    },
+    {
+      "id": "maff-shokuiku_suishin_hyouka_iinkai-20181031-h30_001",
+      "councilId": "maff-shokuiku_suishin_hyouka_iinkai",
+      "title": "平成30年度 第1回 食育推進評価専門委員会",
+      "date": "2018/10/31",
+      "officialUrl": "https://www.maff.go.jp/j/syokuiku/kaigi/h30_01.html",
+      "category": "SPECIAL_COMMITTEE",
+      "ministry": "MAFF",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "食育推進評価専門委員会構成員名簿",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/h30_01-1.pdf"
+        },
+        {
+          "name": "食育推進評価専門委員会の開催について",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/h30_01-4.pdf"
+        },
+        {
+          "name": "平成30(2018)年度の食育推進評価専門委員会の審議について",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/h30_01-11.pdf"
+        },
+        {
+          "name": "第4次食育推進基本計画の作成に向けた進め方（案）",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/h30_01-12.pdf"
+        },
+        {
+          "name": "第3次食育推進基本計画における数値目標の達成状況",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/h30_01-7.pdf"
+        },
+        {
+          "name": "目標達成に課題の残る数値目標の分析・評価",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/h30_01-6.pdf"
+        },
+        {
+          "name": "第6期食育推進評価専門委員会における主な御意見",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/h30_01-9.pdf"
+        },
+        {
+          "name": "平成30(2018)年度食育関連予算及び平成31(2019)年度食育関連予算概算要求",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/h30_01-13.pdf"
+        },
+        {
+          "name": "（施策の参考となる資料）",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/h30_01-3.pdf"
+        },
+        {
+          "name": "分割1",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/h30_01-10.pdf"
+        },
+        {
+          "name": "分割2",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/h30_01-14.pdf"
+        },
+        {
+          "name": "分割3",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/h30_01-2.pdf"
+        },
+        {
+          "name": "分割4",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/h30_01-8.pdf"
+        },
+        {
+          "name": "分割5",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/h30_01-15.pdf"
+        },
+        {
+          "name": "平成30年度第1回議事録",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/h30_01-5.pdf"
         }
       ]
     },
@@ -191406,6 +193519,266 @@
       ]
     },
     {
+      "id": "maff-shokuiku_suishin_hyouka_iinkai-20180329-ki06_005",
+      "councilId": "maff-shokuiku_suishin_hyouka_iinkai",
+      "title": "第6期 第5回 食育推進評価専門委員会",
+      "date": "2018/03/29",
+      "officialUrl": "https://www.maff.go.jp/j/syokuiku/kaigi/6th_05.html",
+      "category": "SPECIAL_COMMITTEE",
+      "ministry": "MAFF",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "第3次計画の重点課題と目標",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/6th_05-5.pdf"
+        },
+        {
+          "name": "課題について御提出いただいた「視点・ポイント」",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/6th_05-14.pdf"
+        },
+        {
+          "name": "「食の循環」関連施策（全体像）",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/6th_05-20.pdf"
+        },
+        {
+          "name": "「食の循環」関連施策（各府省庁別）",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/6th_05-7.pdf"
+        },
+        {
+          "name": "分割1",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/6th_05-56.pdf"
+        },
+        {
+          "name": "分割2",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/6th_05-33.pdf"
+        },
+        {
+          "name": "分割3",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/6th_05-30.pdf"
+        },
+        {
+          "name": "重点課題と目標・施策（食の循環）",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/6th_05-10.pdf"
+        },
+        {
+          "name": "消費者庁説明資料",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/6th_05-11.pdf"
+        },
+        {
+          "name": "農林水産省説明資料",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/6th_05-17.pdf"
+        },
+        {
+          "name": "食育白書における「食の循環や環境を意識した食育の推進」取組",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/6th_05-15.pdf"
+        },
+        {
+          "name": "分割1",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/6th_05-54.pdf"
+        },
+        {
+          "name": "分割2",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/6th_05-26.pdf"
+        },
+        {
+          "name": "分割3",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/6th_05-46.pdf"
+        },
+        {
+          "name": "分割4",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/6th_05-31.pdf"
+        },
+        {
+          "name": "分割5",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/6th_05-47.pdf"
+        },
+        {
+          "name": "分割6",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/6th_05-53.pdf"
+        },
+        {
+          "name": "分割7",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/6th_05-35.pdf"
+        },
+        {
+          "name": "食育関係表彰における「食の循環や環境を意識した食育」取組",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/6th_05-9.pdf"
+        },
+        {
+          "name": "分割1",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/6th_05-49.pdf"
+        },
+        {
+          "name": "分割2",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/6th_05-42.pdf"
+        },
+        {
+          "name": "分割3",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/6th_05-27.pdf"
+        },
+        {
+          "name": "分割4",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/6th_05-36.pdf"
+        },
+        {
+          "name": "分割5",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/6th_05-52.pdf"
+        },
+        {
+          "name": "廣野委員説明資料",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/6th_05-3.pdf"
+        },
+        {
+          "name": "上岡委員資料",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/6th_05-12.pdf"
+        },
+        {
+          "name": "川井委員資料（食の循環）",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/6th_05-2.pdf"
+        },
+        {
+          "name": "「食文化の継承に向けた食育の推進」関連施策（全体像）",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/6th_05-21.pdf"
+        },
+        {
+          "name": "「食文化の継承に向けた食育の推進」関連施策（各府省庁別）",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/6th_05-19.pdf"
+        },
+        {
+          "name": "重点課題と目標・施策（食文化）",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/6th_05-13.pdf"
+        },
+        {
+          "name": "農林水産省説明資料",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/6th_05-18.pdf"
+        },
+        {
+          "name": "分割1",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/6th_05-40.pdf"
+        },
+        {
+          "name": "分割2",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/6th_05-37.pdf"
+        },
+        {
+          "name": "食育白書における「食文化の継承に向けた食育の推進」関連取組",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/6th_05-22.pdf"
+        },
+        {
+          "name": "分割1",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/6th_05-32.pdf"
+        },
+        {
+          "name": "分割2",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/6th_05-34.pdf"
+        },
+        {
+          "name": "分割3",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/6th_05-61.pdf"
+        },
+        {
+          "name": "表彰における「食文化の継承に向けた食育」関連取組",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/6th_05-8.pdf"
+        },
+        {
+          "name": "分割1",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/6th_05-28.pdf"
+        },
+        {
+          "name": "分割2",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/6th_05-50.pdf"
+        },
+        {
+          "name": "分割3",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/6th_05-48.pdf"
+        },
+        {
+          "name": "分割4",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/6th_05-41.pdf"
+        },
+        {
+          "name": "分割5",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/6th_05-44.pdf"
+        },
+        {
+          "name": "中澤委員説明資料",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/6th_05-6.pdf"
+        },
+        {
+          "name": "分割1",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/6th_05-43.pdf"
+        },
+        {
+          "name": "分割2",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/6th_05-38.pdf"
+        },
+        {
+          "name": "分割3",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/6th_05-55.pdf"
+        },
+        {
+          "name": "分割4",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/6th_05-45.pdf"
+        },
+        {
+          "name": "分割5",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/6th_05-24.pdf"
+        },
+        {
+          "name": "川井委員資料（食文化）",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/6th_05-4.pdf"
+        },
+        {
+          "name": "食育推進施策の目標と現状に関する評価",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/6th_05-1.pdf"
+        },
+        {
+          "name": "第4回評価専門委員会でいただいた主な御意見",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/6th_05-59.pdf"
+        },
+        {
+          "name": "平成30年度食育関連予算（案）",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/6th_05-29.pdf"
+        },
+        {
+          "name": "平成30年度食育関連予算関連資料",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/6th_05-63.pdf"
+        },
+        {
+          "name": "分割1",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/6th_05-57.pdf"
+        },
+        {
+          "name": "分割2",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/6th_05-23.pdf"
+        },
+        {
+          "name": "分割3",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/6th_05-51.pdf"
+        },
+        {
+          "name": "分割4",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/6th_05-39.pdf"
+        },
+        {
+          "name": "分割5",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/6th_05-60.pdf"
+        },
+        {
+          "name": "分割6",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/6th_05-25.pdf"
+        },
+        {
+          "name": "日本食生活協会編「日本の味 郷土料理めぐり」",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/6th_05-58.pdf"
+        },
+        {
+          "name": "議事録",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/6th_05-62.pdf"
+        }
+      ]
+    },
+    {
       "id": "cao-kaigi-20180328-012",
       "councilId": "cao-kaigi",
       "title": "第12回 民間資金等活用事業推進会議",
@@ -192556,6 +194929,242 @@
         }
       ],
       "councilName": "商工中金の在り方検討会"
+    },
+    {
+      "id": "maff-shokuiku_suishin_hyouka_iinkai-20171218-ki06_004",
+      "councilId": "maff-shokuiku_suishin_hyouka_iinkai",
+      "title": "第6期 第4回 食育推進評価専門委員会",
+      "date": "2017/12/18",
+      "officialUrl": "https://www.maff.go.jp/j/syokuiku/kaigi/6th_04.html",
+      "category": "SPECIAL_COMMITTEE",
+      "ministry": "MAFF",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "第3次食育推進基本計画の5つの重点課題と目標",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/6th_04-25.pdf"
+        },
+        {
+          "name": "課題について御提出いただいた「視点・ポイント」",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/6th_04-39.pdf"
+        },
+        {
+          "name": "「多様な暮らしに対応した食育の推進」関連施策（全体像）",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/6th_04-18.pdf"
+        },
+        {
+          "name": "「多様な暮らしに対応した食育の推進」関連施策（各府省庁別）",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/6th_04-34.pdf"
+        },
+        {
+          "name": "重点課題「多様な暮らしに対応した食育の推進」関連目標の達成に資する施策",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/6th_04-46.pdf"
+        },
+        {
+          "name": "農林水産省説明資料「子供食堂と連携した地域における食育の推進活動事例集の作成」",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/6th_04-3.pdf"
+        },
+        {
+          "name": "文部科学省説明資料「早寝早起き朝ごはん」全国協議会について",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/6th_04-53.pdf"
+        },
+        {
+          "name": "食育白書における「多様な暮らしに対応した食育の推進」に関連する取組",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/6th_04-16.pdf"
+        },
+        {
+          "name": "分割1",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/6th_04-32.pdf"
+        },
+        {
+          "name": "分割2",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/6th_04-1.pdf"
+        },
+        {
+          "name": "分割3",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/6th_04-36.pdf"
+        },
+        {
+          "name": "分割4",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/6th_04-30.pdf"
+        },
+        {
+          "name": "分割5",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/6th_04-26.pdf"
+        },
+        {
+          "name": "分割6",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/6th_04-21.pdf"
+        },
+        {
+          "name": "農林水産省食育関係表彰における「多様な暮らしに対応した食育の推進」に関連する取組",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/6th_04-51.pdf"
+        },
+        {
+          "name": "分割1",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/6th_04-19.pdf"
+        },
+        {
+          "name": "分割2",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/6th_04-38.pdf"
+        },
+        {
+          "name": "分割3",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/6th_04-40.pdf"
+        },
+        {
+          "name": "「健康寿命の延伸につながる食育の推進」関連施策（全体像）",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/6th_04-48.pdf"
+        },
+        {
+          "name": "「健康寿命の延伸につながる食育の推進」関連施策（各府省庁別）",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/6th_04-42.pdf"
+        },
+        {
+          "name": "分割1",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/6th_04-22.pdf"
+        },
+        {
+          "name": "分割2",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/6th_04-56.pdf"
+        },
+        {
+          "name": "分割3",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/6th_04-6.pdf"
+        },
+        {
+          "name": "重点課題「健康寿命の延伸につながる食育の推進」関連目標の達成に資する施策",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/6th_04-27.pdf"
+        },
+        {
+          "name": "厚生労働省説明資料「スマートライフプロジェクト」及び「健康寿命をのばそう！アワード」",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/6th_04-11.pdf"
+        },
+        {
+          "name": "分割1",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/6th_04-12.pdf"
+        },
+        {
+          "name": "分割2",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/6th_04-17.pdf"
+        },
+        {
+          "name": "食育白書における「健康寿命の延伸につながる食育の推進」に関連する取組",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/6th_04-41.pdf"
+        },
+        {
+          "name": "分割1",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/6th_04-54.pdf"
+        },
+        {
+          "name": "分割2",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/6th_04-52.pdf"
+        },
+        {
+          "name": "分割3",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/6th_04-7.pdf"
+        },
+        {
+          "name": "分割4",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/6th_04-29.pdf"
+        },
+        {
+          "name": "分割5",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/6th_04-14.pdf"
+        },
+        {
+          "name": "分割6",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/6th_04-47.pdf"
+        },
+        {
+          "name": "分割7",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/6th_04-49.pdf"
+        },
+        {
+          "name": "分割8",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/6th_04-2.pdf"
+        },
+        {
+          "name": "分割9",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/6th_04-4.pdf"
+        },
+        {
+          "name": "分割10",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/6th_04-20.pdf"
+        },
+        {
+          "name": "分割11",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/6th_04-10.pdf"
+        },
+        {
+          "name": "分割12",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/6th_04-44.pdf"
+        },
+        {
+          "name": "分割13",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/6th_04-33.pdf"
+        },
+        {
+          "name": "分割14",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/6th_04-31.pdf"
+        },
+        {
+          "name": "分割15",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/6th_04-9.pdf"
+        },
+        {
+          "name": "分割16",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/6th_04-8.pdf"
+        },
+        {
+          "name": "分割17",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/6th_04-15.pdf"
+        },
+        {
+          "name": "分割18",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/6th_04-37.pdf"
+        },
+        {
+          "name": "農林水産省食育関係表彰における「健康寿命の延伸につながる食育の推進」に関連する取組",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/6th_04-23.pdf"
+        },
+        {
+          "name": "分割1",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/6th_04-35.pdf"
+        },
+        {
+          "name": "分割2",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/6th_04-5.pdf"
+        },
+        {
+          "name": "分割3",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/6th_04-55.pdf"
+        },
+        {
+          "name": "小松委員説明資料",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/6th_04-24.pdf"
+        },
+        {
+          "name": "武見委員説明資料",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/6th_04-13.pdf"
+        },
+        {
+          "name": "第3回評価専門委員会でいただいた主な御意見",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/6th_04-43.pdf"
+        },
+        {
+          "name": "健康経営度調査から見た食生活改善の取組",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/6th_04-28.pdf"
+        },
+        {
+          "name": "各府省統一の情報発信",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/6th_04-45.pdf"
+        },
+        {
+          "name": "議事録",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/6th_04-50.pdf"
+        }
+      ]
     },
     {
       "id": "smea-syokoutyukinarikata-20171215-004",
@@ -194043,6 +196652,146 @@
         {
           "name": "議事録",
           "url": "https://www.bunka.go.jp/seisaku/bunkashingikai/kokugo/kokugo_kadai/iinkai_12/pdf/r1396704_01.pdf"
+        }
+      ]
+    },
+    {
+      "id": "maff-shokuiku_suishin_hyouka_iinkai-20170919-ki06_003",
+      "councilId": "maff-shokuiku_suishin_hyouka_iinkai",
+      "title": "第6期 第3回 食育推進評価専門委員会",
+      "date": "2017/09/19",
+      "officialUrl": "https://www.maff.go.jp/j/syokuiku/kaigi/6th_03.html",
+      "category": "SPECIAL_COMMITTEE",
+      "ministry": "MAFF",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "第6期食育推進評価専門委員会構成員名簿(平成29年9月6日現在)",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/6th_03-4.pdf"
+        },
+        {
+          "name": "今後の食育推進評価専門委員会の審議について(案)",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/6th_03-2.pdf"
+        },
+        {
+          "name": "第3次食育推進基本計画の5つの重点課題と目標",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/6th_03-5.pdf"
+        },
+        {
+          "name": "「若い世代を中心とした食育の推進」関連施策(全体像)",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/6th_03-9.pdf"
+        },
+        {
+          "name": "「若い世代を中心とした食育の推進」関連施策(各府省庁別)",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/6th_03-14.pdf"
+        },
+        {
+          "name": "経済産業省補足資料",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/6th_03-10.pdf"
+        },
+        {
+          "name": "経済産業省補足資料(2017健康経営銘柄)",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/6th_03-27.pdf"
+        },
+        {
+          "name": "重点課題「若い世代を中心とした食育の推進」関連目標の達成に資する施策",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/6th_03-18.pdf"
+        },
+        {
+          "name": "食育白書における「若い世代を中心とした食育の推進」に関連する取組",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/6th_03-3.pdf"
+        },
+        {
+          "name": "別添(平成26年度食育白書抜粋)",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/6th_03-29.pdf"
+        },
+        {
+          "name": "分割1",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/6th_03-25.pdf"
+        },
+        {
+          "name": "分割2",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/6th_03-17.pdf"
+        },
+        {
+          "name": "分割3",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/6th_03-20.pdf"
+        },
+        {
+          "name": "別添(平成27年度食育白書抜粋)",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/6th_03-16.pdf"
+        },
+        {
+          "name": "分割1",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/6th_03-19.pdf"
+        },
+        {
+          "name": "分割2",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/6th_03-12.pdf"
+        },
+        {
+          "name": "別添(平成28年度食育白書抜粋)",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/6th_03-1.pdf"
+        },
+        {
+          "name": "分割1",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/6th_03-21.pdf"
+        },
+        {
+          "name": "分割2",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/6th_03-8.pdf"
+        },
+        {
+          "name": "農林水産省食育活動表彰における「若い世代を中心とした食育の推進」に関連する取組",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/6th_03-22.pdf"
+        },
+        {
+          "name": "別添(事例集抜粋)",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/6th_03-6.pdf"
+        },
+        {
+          "name": "「若い世代の食育」に関する意見募集(内閣府青少年意見募集事業の活用)",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/6th_03-28.pdf"
+        },
+        {
+          "name": "文部科学省説明資料",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/6th_03-13.pdf"
+        },
+        {
+          "name": "平成29年度食育関連予算及び平成30年度食育関連予算概算要求",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/6th_03-23.pdf"
+        },
+        {
+          "name": "平成30年度食育関連概算要求資料(内閣府食品安全委員会)",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/6th_03-26.pdf"
+        },
+        {
+          "name": "平成30年度食育関連概算要求資料(文部科学省)",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/6th_03-11.pdf"
+        },
+        {
+          "name": "平成30年度食育関連概算要求資料(厚生労働省)",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/6th_03-7.pdf"
+        },
+        {
+          "name": "分割1",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/6th_03-30.pdf"
+        },
+        {
+          "name": "分割2",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/6th_03-31.pdf"
+        },
+        {
+          "name": "平成30年度食育関連概算要求資料(農林水産省)",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/6th_03-24.pdf"
+        },
+        {
+          "name": "平成30年度食育関連概算要求資料(環境省)",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/6th_03-15.pdf"
+        },
+        {
+          "name": "議事録",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/6th_03-32.pdf"
         }
       ]
     },
@@ -197546,6 +200295,62 @@
       "councilName": "スマートSME(中小企業)研究会"
     },
     {
+      "id": "maff-shokuiku_suishin_hyouka_iinkai-20170329-ki06_002",
+      "councilId": "maff-shokuiku_suishin_hyouka_iinkai",
+      "title": "第6期 第2回 食育推進評価専門委員会",
+      "date": "2017/03/29",
+      "officialUrl": "https://www.maff.go.jp/j/syokuiku/kaigi/6th_02.html",
+      "category": "SPECIAL_COMMITTEE",
+      "ministry": "MAFF",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "第6期食育推進評価専門委員会構成員名簿",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/6th_02-6.pdf"
+        },
+        {
+          "name": "数値目標の現状値調査方法等の変更について（消費者庁、農林水産省）",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/6th_02-10.pdf"
+        },
+        {
+          "name": "「第3次食育推進基本計画の5つの重点課題について議論していくべきと思われる視点・ポイント」についての対応手順",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/6th_02-3.pdf"
+        },
+        {
+          "name": "食育推進評価専門委員会（第6期）の当面の審議事項の考え方（案)",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/6th_02-11.pdf"
+        },
+        {
+          "name": "第3次食育推進基本計画（概要)",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/6th_02-2.pdf"
+        },
+        {
+          "name": "平成28年度及び平成29年度食育関連予算",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/6th_02-4.pdf"
+        },
+        {
+          "name": "平成29年度食育関連予算",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/6th_02-5.pdf"
+        },
+        {
+          "name": "分割1",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/6th_02-7.pdf"
+        },
+        {
+          "name": "分割2",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/6th_02-9.pdf"
+        },
+        {
+          "name": "分割3",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/6th_02-8.pdf"
+        },
+        {
+          "name": "議事録",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/6th_02-1.pdf"
+        }
+      ]
+    },
+    {
       "id": "cas-tiikisaisei-20170327-028",
       "councilId": "cas-tiikisaisei",
       "title": "第28回 地域再生本部",
@@ -200245,6 +203050,50 @@
         {
           "name": "議事概要【PDF:96KB】",
           "url": "https://www.fsc.go.jp/fsciis/attachedFile/download?retrievalId=kai20161110ks1&fileId=511"
+        }
+      ]
+    },
+    {
+      "id": "maff-shokuiku_suishin_hyouka_iinkai-20161110-ki06_001",
+      "councilId": "maff-shokuiku_suishin_hyouka_iinkai",
+      "title": "第6期 第1回 食育推進評価専門委員会",
+      "date": "2016/11/10",
+      "officialUrl": "https://www.maff.go.jp/j/syokuiku/kaigi/6th_01.html",
+      "category": "SPECIAL_COMMITTEE",
+      "ministry": "MAFF",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "食育推進評価専門委員会の開催について",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/6th_01-1.pdf"
+        },
+        {
+          "name": "食育推進評価専門委員会構成員名簿",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/6th_01-4.pdf"
+        },
+        {
+          "name": "食育基本法・第3次食育推進基本計画概要",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/6th_01-5.pdf"
+        },
+        {
+          "name": "第3次食育推進基本計画の実施を推進する施策について",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/6th_01-8.pdf"
+        },
+        {
+          "name": "当面の審議事項について",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/6th_01-3.pdf"
+        },
+        {
+          "name": "食育活動表彰について",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/6th_01-2.pdf"
+        },
+        {
+          "name": "平成28年度食育推進ボランティア表彰事例集",
+          "url": "https://www.maff.go.jp/j/syokuiku/attach/pdf/b_hyousyou-1.pdf"
+        },
+        {
+          "name": "議事録",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/6th_01-7.pdf"
         }
       ]
     },
@@ -203912,6 +206761,42 @@
       "officialUrl": "https://www.meti.go.jp/shingikai/sankoshin/shinsangyo_kozo/007.html",
       "hasMinutes": true,
       "manualLock": true
+    },
+    {
+      "id": "maff-shokuiku_suishin_hyouka_iinkai-20160328-ki05_002",
+      "councilId": "maff-shokuiku_suishin_hyouka_iinkai",
+      "title": "第5期 第2回 食育推進評価専門委員会",
+      "date": "2016/03/28",
+      "officialUrl": "https://www.maff.go.jp/j/syokuiku/kaigi/5th_02.html",
+      "category": "SPECIAL_COMMITTEE",
+      "ministry": "MAFF",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "食生活指針(改訂版)(案)",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/5th_02-3.pdf"
+        },
+        {
+          "name": "食生活指針(改訂案)に関する説明資料",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/5th_02-1.pdf"
+        },
+        {
+          "name": "分割1（PDF：480KB）",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/pdf/s3_1.pdf"
+        },
+        {
+          "name": "分割2（PDF：393KB）",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/pdf/s3_2.pdf"
+        },
+        {
+          "name": "食生活指針(現行(平成12年版))",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/5th_02-5.pdf"
+        },
+        {
+          "name": "食生活指針の解説要領(抜粋)",
+          "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/5th_02-6.pdf"
+        }
+      ]
     },
     {
       "id": "ra-fukushima_fukko_saisei-20160327-012",
@@ -242345,6 +245230,33 @@
       "date_regex": "(令和\\d+年\\d+月\\d+日|平成\\d+年\\d+月\\d+日|\\d{4}年\\d{1,2}月\\d{1,2}日)",
       "pdf_selector": "a[href*='.pdf'], a[href*='pdf']",
       "deep_crawl_enabled": false,
+      "manualLock": true
+    },
+    "maff-shokuiku_suishin_kaigi": {
+      "rule_id": "rule-maff-shokuiku_suishin_kaigi",
+      "subpage_discovery_pattern": "https://www\\.maff\\.go\\.jp/j/syokuiku/kaigi/.*",
+      "title_selector": "h1, h2, .title",
+      "date_regex": "(令和\\d+年\\d+月\\d+日|平成\\d+年\\d+月\\d+日|\\d{4}年\\d{1,2}月\\d{1,2}日)",
+      "pdf_selector": "a[href*='.pdf'], a[href*='pdf']",
+      "deep_crawl_enabled": true,
+      "manualLock": true
+    },
+    "maff-shokuiku_suishin_hyouka_iinkai": {
+      "rule_id": "rule-maff-shokuiku_suishin_hyouka_iinkai",
+      "subpage_discovery_pattern": "https://www\\.maff\\.go\\.jp/j/syokuiku/kaigi/.*",
+      "title_selector": "h1, h2, .title",
+      "date_regex": "(令和\\d+年\\d+月\\d+日|平成\\d+年\\d+月\\d+日|\\d{4}年\\d{1,2}月\\d{1,2}日)",
+      "pdf_selector": "a[href*='.pdf'], a[href*='pdf']",
+      "deep_crawl_enabled": true,
+      "manualLock": true
+    },
+    "maff-shokuiku_mieruka_wg": {
+      "rule_id": "rule-maff-shokuiku_mieruka_wg",
+      "subpage_discovery_pattern": "https://www\\.maff\\.go\\.jp/j/syokuiku/kaigi/.*",
+      "title_selector": "h1, h2, .title",
+      "date_regex": "(令和\\d+年\\d+月\\d+日|平成\\d+年\\d+月\\d+日|\\d{4}年\\d{1,2}月\\d{1,2}日)",
+      "pdf_selector": "a[href*='.pdf'], a[href*='pdf']",
+      "deep_crawl_enabled": true,
       "manualLock": true
     }
   },
