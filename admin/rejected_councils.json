@@ -2107,5 +2107,32 @@
     "officialUrl": "https://www.digital.go.jp/councils",
     "rejectedAt": "2026-08-29",
     "reason": "審議会・検討会の個別マスターではなくデジタル庁ポータルの汎用ナビゲーションリンクのため除外"
+  },
+  {
+    "id": "mhlw-726",
+    "name": "行事・会議の予定",
+    "ministry": "MHLW",
+    "category": "OTHER",
+    "officialUrl": "https://www.mhlw.go.jp/houdou_kouhou/gyouji_kaigi/",
+    "rejectedAt": "2026-08-30",
+    "reason": "ユーザー指示: 会議体本体ではなく共通行事予定ページのため却下"
+  },
+  {
+    "id": "mhlw-728",
+    "name": "国会会議録",
+    "ministry": "MHLW",
+    "category": "OTHER",
+    "officialUrl": "https://www.mhlw.go.jp/seisakunitsuite/kaigiroku/",
+    "rejectedAt": "2026-08-30",
+    "reason": "ユーザー指示: 会議体本体ではなく国会審議ログページのため却下"
+  },
+  {
+    "id": "mhlw-731",
+    "name": "行事・会議の予定はこちらから",
+    "ministry": "MHLW",
+    "category": "OTHER",
+    "officialUrl": "https://www.mhlw.go.jp/houdou_kouhou/gyouji_kaigi/index.html",
+    "rejectedAt": "2026-08-30",
+    "reason": "ユーザー指示: 会議体本体ではなく共通行事予定リンクのため却下"
   }
 ]

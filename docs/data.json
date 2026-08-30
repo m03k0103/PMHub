@@ -1056,26 +1056,6 @@
       "status": "approved"
     },
     {
-      "id": "mhlw-shakai_hosho",
-      "name": "社会保障審議会 医療保険部会",
-      "ministry": "MHLW",
-      "category": "COUNCIL",
-      "pastYearCount": 1,
-      "description": "医療保険制度改革、マイナ保険証の普及・運用、診療報酬改定の基本方針および薬価制度の見直しを審議。",
-      "officialUrl": "https://www.mhlw.go.jp/stf/shingi/index.html",
-      "isWatched": true,
-      "crawlStatus": {
-        "lastAttempt": "2026-08-22 10:06:40",
-        "result": "partial",
-        "extractionMethod": "rule",
-        "materialsCount": 0,
-        "datesCount": 2,
-        "failureReason": "",
-        "consecutiveFailures": 0
-      },
-      "status": "approved"
-    },
-    {
       "id": "maff-shokuryo_nogyo",
       "name": "食料・農業・農村政策審議会",
       "ministry": "MAFF",
@@ -13328,38 +13308,11 @@
       "status": "approved"
     },
     {
-      "id": "mhlw-726",
-      "name": "行事・会議の予定",
-      "ministry": "MHLW",
-      "category": "COUNCIL",
-      "officialUrl": "https://www.mhlw.go.jp/houdou_kouhou/gyouji_kaigi/",
-      "pastYearCount": 0,
-      "status": "approved"
-    },
-    {
-      "id": "mhlw-728",
-      "name": "国会会議録",
-      "ministry": "MHLW",
-      "category": "COUNCIL",
-      "officialUrl": "https://www.mhlw.go.jp/seisakunitsuite/kaigiroku/",
-      "pastYearCount": 0,
-      "status": "approved"
-    },
-    {
       "id": "mhlw-729",
       "name": "中央労働委員会",
       "ministry": "MHLW",
       "category": "COMMITTEE",
       "officialUrl": "https://www.mhlw.go.jp/churoi/",
-      "pastYearCount": 0,
-      "status": "approved"
-    },
-    {
-      "id": "mhlw-731",
-      "name": "行事・会議の予定はこちらから",
-      "ministry": "MHLW",
-      "category": "COUNCIL",
-      "officialUrl": "https://www.mhlw.go.jp/houdou_kouhou/gyouji_kaigi/index.html",
       "pastYearCount": 0,
       "status": "approved"
     },
@@ -13513,15 +13466,6 @@
       "ministry": "MHLW",
       "category": "SECTION",
       "officialUrl": "https://www.mhlw.go.jp/stf/shingi/shingi-hosho_126704.html",
-      "pastYearCount": 0,
-      "status": "approved"
-    },
-    {
-      "id": "mhlw-749",
-      "name": "医療保険部会",
-      "ministry": "MHLW",
-      "category": "SECTION",
-      "officialUrl": "https://www.mhlw.go.jp/stf/newpage_28708.html",
       "pastYearCount": 0,
       "status": "approved"
     },
@@ -20611,6 +20555,16 @@
       "pastYearCount": 6,
       "manualLock": true,
       "description": "食品安全委員会におけるビスフェノールＡワーキンググループ。"
+    },
+    {
+      "id": "mhlw-shakai_hosho_iryou_hoken",
+      "name": "社会保障審議会 医療保険部会",
+      "ministry": "MHLW",
+      "category": "SUBCOMMITTEE",
+      "officialUrl": "https://www.mhlw.go.jp/stf/newpage_28708.html",
+      "pastYearCount": 28,
+      "manualLock": true,
+      "description": "厚生労働省社会保障審議会における医療保険部会。"
     }
   ],
   "meetings": [
@@ -20799,6 +20753,62 @@
         {
           "name": "議事概要",
           "url": "https://www.fsc.go.jp/fsciis/attachedFile/download?retrievalId=kai20260827no1&fileId=310"
+        }
+      ]
+    },
+    {
+      "id": "mhlw-shakai_hosho_iryou_hoken-20260827-213",
+      "councilId": "mhlw-shakai_hosho_iryou_hoken",
+      "title": "第213回 社会保障審議会 医療保険部会",
+      "date": "2026/08/27",
+      "officialUrl": "https://www.mhlw.go.jp/stf/newpage_75815.html",
+      "category": "SUBCOMMITTEE",
+      "ministry": "MHLW",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "議事次第",
+          "url": "https://www.mhlw.go.jp/content/12401000/001742883.pdf"
+        },
+        {
+          "name": "委員名簿",
+          "url": "https://www.mhlw.go.jp/content/12401000/001742887.pdf"
+        },
+        {
+          "name": "【資料１】ＯＴＣ類似薬の保険給付の見直しの実施について",
+          "url": "https://www.mhlw.go.jp/content/12401000/001742888.pdf"
+        },
+        {
+          "name": "【資料２－１】全国がん患者団体連合会提出資料",
+          "url": "https://www.mhlw.go.jp/content/12401000/001742889.pdf"
+        },
+        {
+          "name": "【資料２－２】日本難病・疾病団体協議会提出資料",
+          "url": "https://www.mhlw.go.jp/content/12401000/001742890.pdf"
+        },
+        {
+          "name": "【資料３】医療情報化推進方針案等について",
+          "url": "https://www.mhlw.go.jp/content/12401000/001742891.pdf"
+        },
+        {
+          "name": "【資料４】電子処方箋の進捗状況と今後の対応",
+          "url": "https://www.mhlw.go.jp/content/12401000/001742903.pdf"
+        },
+        {
+          "name": "【参考資料１】ＯＴＣ類似薬の保険給付の見直しの実施に向けた中間とりまとめ",
+          "url": "https://www.mhlw.go.jp/content/12401000/001742892.pdf"
+        },
+        {
+          "name": "【参考資料２】医療情報化推進方針（案）",
+          "url": "https://www.mhlw.go.jp/content/12401000/001742893.pdf"
+        },
+        {
+          "name": "【当日配布資料】「経済財政運営と改革の基本方針2026」、「日本成長戦略」及び「規制改革実行計画」等について",
+          "url": "https://www.mhlw.go.jp/content/12401000/001742894.pdf"
+        },
+        {
+          "name": "第213回医療保険部会資料（全体版）",
+          "url": "https://www.mhlw.go.jp/content/12401000/001742904.pdf"
         }
       ]
     },
@@ -29766,6 +29776,54 @@
       ]
     },
     {
+      "id": "mhlw-shakai_hosho_iryou_hoken-20260618-212",
+      "councilId": "mhlw-shakai_hosho_iryou_hoken",
+      "title": "第212回 社会保障審議会 医療保険部会",
+      "date": "2026/06/18",
+      "officialUrl": "https://www.mhlw.go.jp/stf/newpage_73929.html",
+      "category": "SUBCOMMITTEE",
+      "ministry": "MHLW",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "議事次第",
+          "url": "https://www.mhlw.go.jp/content/12401000/001712847.pdf"
+        },
+        {
+          "name": "委員名簿",
+          "url": "https://www.mhlw.go.jp/content/12401000/001712848.pdf"
+        },
+        {
+          "name": "【資料１】健康保険法等の一部を改正する法律（令和８年法律第31号）の成立について",
+          "url": "https://www.mhlw.go.jp/content/12401000/001712849.pdf"
+        },
+        {
+          "name": "【資料２】ＯＴＣ類似薬の保険給付の見直しの実施に向けた技術的検討会について",
+          "url": "https://www.mhlw.go.jp/content/12401000/001712850.pdf"
+        },
+        {
+          "name": "【資料３】マイナ保険証の円滑な利用について",
+          "url": "https://www.mhlw.go.jp/content/12401000/001712851.pdf"
+        },
+        {
+          "name": "【資料４】年金額の改定を踏まえた自己負担の所得区分における基準額の調整について",
+          "url": "https://www.mhlw.go.jp/content/12401000/001712871.pdf"
+        },
+        {
+          "name": "【資料５】医療費における保険給付率と患者負担率のバランス等の定期的な見える化について",
+          "url": "https://www.mhlw.go.jp/content/12401000/001712872.pdf"
+        },
+        {
+          "name": "第212回医療保険部会資料（全体版）",
+          "url": "https://www.mhlw.go.jp/content/12401000/001712852.pdf"
+        },
+        {
+          "name": "第212回 議事録",
+          "url": "https://www.mhlw.go.jp/stf/newpage_75122.html"
+        }
+      ]
+    },
+    {
       "id": "mic-chihou_seido_34-20260617-006",
       "councilId": "mic-chihou_seido_34",
       "title": "第6回 第34次地方制度調査会 専門小委員会",
@@ -30178,28 +30236,6 @@
         "政策会議"
       ],
       "officialUrl": "https://www.env.go.jp/council/06earth/yoshi06.html",
-      "hasMinutes": false,
-      "docCount": 1
-    },
-    {
-      "id": "mhlw-shakai_hosho-20260615-s01",
-      "councilId": "mhlw-shakai_hosho",
-      "councilName": "社会保障審議会 医療保険部会",
-      "ministry": "MHLW",
-      "category": "COUNCIL",
-      "title": "社会保障審議会 医療保険部会",
-      "date": "2026/06/15",
-      "summary": "社会保障審議会 医療保険部会が開催され、重要施策の進捗確認および今後の推進方針について議論が行われた。",
-      "agenda": [
-        "今後の施策推進方針について",
-        "関係省庁・有識者からのヒアリング"
-      ],
-      "materials": [],
-      "tags": [
-        "社会保障審議会 ",
-        "政策会議"
-      ],
-      "officialUrl": "https://www.mhlw.go.jp/stf/shingi/index.html",
       "hasMinutes": false,
       "docCount": 1
     },
@@ -38887,6 +38923,46 @@
       ]
     },
     {
+      "id": "mhlw-shakai_hosho_iryou_hoken-20260319-211",
+      "councilId": "mhlw-shakai_hosho_iryou_hoken",
+      "title": "第211回 社会保障審議会 医療保険部会",
+      "date": "2026/03/19",
+      "officialUrl": "https://www.mhlw.go.jp/stf/newpage_71714.html",
+      "category": "SUBCOMMITTEE",
+      "ministry": "MHLW",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "議事次第",
+          "url": "https://www.mhlw.go.jp/content/12401000/001676378.pdf"
+        },
+        {
+          "name": "委員名簿",
+          "url": "https://www.mhlw.go.jp/content/12401000/001676379.pdf"
+        },
+        {
+          "name": "【資料１】健康保険法等の一部を改正する法律案について",
+          "url": "https://www.mhlw.go.jp/content/12401000/001676380.pdf"
+        },
+        {
+          "name": "【資料２】医療保険制度改革に関する広報について",
+          "url": "https://www.mhlw.go.jp/content/12401000/001676381.pdf"
+        },
+        {
+          "name": "【参考資料】健康保険法等の一部を改正する法律案要綱",
+          "url": "https://www.mhlw.go.jp/content/12401000/001676382.pdf"
+        },
+        {
+          "name": "第211回医療保険部会資料（全体版）",
+          "url": "https://www.mhlw.go.jp/content/12401000/001676383.pdf"
+        },
+        {
+          "name": "第211回 議事録",
+          "url": "https://www.mhlw.go.jp/stf/newpage_75042.html"
+        }
+      ]
+    },
+    {
       "id": "cas-kokuminkaigi_jitsumu-20260318-002",
       "councilId": "cas-kokuminkaigi_jitsumu",
       "title": "第2回 社会保障国民会議　給付付き税額控除等に関する実務者会議",
@@ -43265,6 +43341,50 @@
       "councilName": "規制改革推進会議 健康・医療・介護WG"
     },
     {
+      "id": "mhlw-shakai_hosho_iryou_hoken-20260212-210",
+      "councilId": "mhlw-shakai_hosho_iryou_hoken",
+      "title": "第210回 社会保障審議会 医療保険部会",
+      "date": "2026/02/12",
+      "officialUrl": "https://www.mhlw.go.jp/stf/newpage_70362.html",
+      "category": "SUBCOMMITTEE",
+      "ministry": "MHLW",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "議事次第",
+          "url": "https://www.mhlw.go.jp/content/12401000/001654419.pdf"
+        },
+        {
+          "name": "委員名簿",
+          "url": "https://www.mhlw.go.jp/content/12401000/001654420.pdf"
+        },
+        {
+          "name": "【資料１】医療法等改正を踏まえた対応について",
+          "url": "https://www.mhlw.go.jp/content/12401000/001654421.pdf"
+        },
+        {
+          "name": "【資料２】第４期医療費適正化計画における地域フォーミュラリについて",
+          "url": "https://www.mhlw.go.jp/content/12401000/001654422.pdf"
+        },
+        {
+          "name": "【資料３】マイナ保険証の円滑な利用について",
+          "url": "https://www.mhlw.go.jp/content/12401000/001654423.pdf"
+        },
+        {
+          "name": "【資料４】令和８年度予算案（保険局関係）の主な事項について",
+          "url": "https://www.mhlw.go.jp/content/12401000/001654424.pdf"
+        },
+        {
+          "name": "第210回医療保険部会資料（全体版）",
+          "url": "https://www.mhlw.go.jp/content/12401000/001654425.pdf"
+        },
+        {
+          "name": "第210回 議事録",
+          "url": "https://www.mhlw.go.jp/stf/newpage_74430.html"
+        }
+      ]
+    },
+    {
       "id": "fdma-kento_94-20260210-003",
       "councilId": "fdma-kento_94",
       "councilName": "火災危険性を有するおそれのある物質等に関する調査検討会",
@@ -46452,6 +46572,58 @@
       ]
     },
     {
+      "id": "mhlw-shakai_hosho_iryou_hoken-20251225-209",
+      "councilId": "mhlw-shakai_hosho_iryou_hoken",
+      "title": "第209回 社会保障審議会 医療保険部会",
+      "date": "2025/12/25",
+      "officialUrl": "https://www.mhlw.go.jp/stf/newpage_67949.html",
+      "category": "SUBCOMMITTEE",
+      "ministry": "MHLW",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "議事次第",
+          "url": "https://www.mhlw.go.jp/content/12401000/001621841.pdf"
+        },
+        {
+          "name": "委員名簿",
+          "url": "https://www.mhlw.go.jp/content/12401000/001621842.pdf"
+        },
+        {
+          "name": "【資料１－１】議論の整理（案）",
+          "url": "https://www.mhlw.go.jp/content/12401000/001621843.pdf"
+        },
+        {
+          "name": "【資料１－２】高額療養費制度の見直しについて",
+          "url": "https://www.mhlw.go.jp/content/12401000/001621844.pdf"
+        },
+        {
+          "name": "【資料１－３】OTC類似薬を含む薬剤自己負担の見直しの在り方について",
+          "url": "https://www.mhlw.go.jp/content/12401000/001629737.pdf"
+        },
+        {
+          "name": "【参考資料１】参考資料",
+          "url": "https://www.mhlw.go.jp/content/12401000/001621846.pdf"
+        },
+        {
+          "name": "【参考資料２】高額療養費について（参考資料）",
+          "url": "https://www.mhlw.go.jp/content/12401000/001629738.pdf"
+        },
+        {
+          "name": "【参考資料３】特別料金の対象となる医薬品の成分一覧（案）",
+          "url": "https://www.mhlw.go.jp/content/12401000/001621851.pdf"
+        },
+        {
+          "name": "第209回医療保険部会 第9回高額療養費制度の在り方に関する専門委員会合同開催資料（全体版）",
+          "url": "https://www.mhlw.go.jp/content/12401000/001629801.pdf"
+        },
+        {
+          "name": "第209回 議事録",
+          "url": "https://www.mhlw.go.jp/stf/newpage_69855.html"
+        }
+      ]
+    },
+    {
       "id": "mhlw-rousei_roudoujouken_146-20251224-206",
       "councilId": "mhlw-rousei_roudoujouken_146",
       "title": "第206回 労働政策審議会 労働条件分科会",
@@ -47606,6 +47778,42 @@
         {
           "name": "議事概要",
           "url": "https://www.fsc.go.jp/fsciis/attachedFile/download?retrievalId=kai20251218ff1&fileId=610"
+        }
+      ]
+    },
+    {
+      "id": "mhlw-shakai_hosho_iryou_hoken-20251218-208",
+      "councilId": "mhlw-shakai_hosho_iryou_hoken",
+      "title": "第208回 社会保障審議会 医療保険部会",
+      "date": "2025/12/18",
+      "officialUrl": "https://www.mhlw.go.jp/stf/newpage_67486.html",
+      "category": "SUBCOMMITTEE",
+      "ministry": "MHLW",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "議事次第",
+          "url": "https://www.mhlw.go.jp/content/12401000/001614904.pdf"
+        },
+        {
+          "name": "委員名簿",
+          "url": "https://www.mhlw.go.jp/content/12401000/001614905.pdf"
+        },
+        {
+          "name": "【資料１】議論の整理（案）",
+          "url": "https://www.mhlw.go.jp/content/12401000/001615000.pdf"
+        },
+        {
+          "name": "【資料２】マイナ保険証の利用促進等について",
+          "url": "https://www.mhlw.go.jp/content/12401000/001614998.pdf"
+        },
+        {
+          "name": "第208回医療保険部会資料（全体版）",
+          "url": "https://www.mhlw.go.jp/content/12401000/001615001.pdf"
+        },
+        {
+          "name": "第208回 議事録",
+          "url": "https://www.mhlw.go.jp/stf/newpage_69487.html"
         }
       ]
     },
@@ -49297,6 +49505,50 @@
       "councilName": "中小企業の親族内承継に関する検討会"
     },
     {
+      "id": "mhlw-shakai_hosho_iryou_hoken-20251212-207",
+      "councilId": "mhlw-shakai_hosho_iryou_hoken",
+      "title": "第207回 社会保障審議会 医療保険部会",
+      "date": "2025/12/12",
+      "officialUrl": "https://www.mhlw.go.jp/stf/newpage_67104.html",
+      "category": "SUBCOMMITTEE",
+      "ministry": "MHLW",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "議事次第",
+          "url": "https://www.mhlw.go.jp/content/12401000/001610188.pdf"
+        },
+        {
+          "name": "委員名簿",
+          "url": "https://www.mhlw.go.jp/content/12401000/001610189.pdf"
+        },
+        {
+          "name": "【資料１】医療保険制度における出産に対する支援の強化について",
+          "url": "https://www.mhlw.go.jp/content/12401000/001610190.pdf"
+        },
+        {
+          "name": "【資料２】協会けんぽにおける予防・健康づくりの取組等",
+          "url": "https://www.mhlw.go.jp/content/12401000/001610192.pdf"
+        },
+        {
+          "name": "【資料３】後期高齢者医療の保険料賦課限度額について",
+          "url": "https://www.mhlw.go.jp/content/12401000/001610193.pdf"
+        },
+        {
+          "name": "【資料４】医療機関の業務効率化・職場環境改善の推進に関する方向性について（案）",
+          "url": "https://www.mhlw.go.jp/content/12401000/001610194.pdf"
+        },
+        {
+          "name": "第207回医療保険部会資料（全体版）",
+          "url": "https://www.mhlw.go.jp/content/12401000/001610195.pdf"
+        },
+        {
+          "name": "第207回 議事録",
+          "url": "https://www.mhlw.go.jp/stf/newpage_69385.html"
+        }
+      ]
+    },
+    {
       "id": "nta-zeirishi_bunkakai-20251210-117",
       "councilId": "nta-zeirishi_bunkakai",
       "title": "第117回 国税審議会 税理士分科会",
@@ -50091,6 +50343,78 @@
       "docCount": 12
     },
     {
+      "id": "mhlw-shakai_hosho_iryou_hoken-20251204-206",
+      "councilId": "mhlw-shakai_hosho_iryou_hoken",
+      "title": "第206回 社会保障審議会 医療保険部会",
+      "date": "2025/12/04",
+      "officialUrl": "https://www.mhlw.go.jp/stf/newpage_66677.html",
+      "category": "SUBCOMMITTEE",
+      "ministry": "MHLW",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "議事次第",
+          "url": "https://www.mhlw.go.jp/content/12401000/001604404.pdf"
+        },
+        {
+          "name": "委員名簿",
+          "url": "https://www.mhlw.go.jp/content/12401000/001604405.pdf"
+        },
+        {
+          "name": "【資料１】医療保険制度における出産に対する支援の強化について",
+          "url": "https://www.mhlw.go.jp/content/12401000/001604406.pdf"
+        },
+        {
+          "name": "【資料２－１】世代内、世代間の公平の更なる確保による全世代型社会保障の構築の推進（高齢者医療における負担の在り方について）",
+          "url": "https://www.mhlw.go.jp/content/12401000/001604407.pdf"
+        },
+        {
+          "name": "【資料２－２】世代内、世代間の公平の更なる確保による全世代型社会保障の構築の推進（医療保険における金融所得の勘案について）",
+          "url": "https://www.mhlw.go.jp/content/12401000/001604408.pdf"
+        },
+        {
+          "name": "【資料２－３】入院時の食費・光熱水費について",
+          "url": "https://www.mhlw.go.jp/content/12401000/001604409.pdf"
+        },
+        {
+          "name": "【資料３－１】令和８年度診療報酬改定の基本方針の概要（案）",
+          "url": "https://www.mhlw.go.jp/content/12401000/001604410.pdf"
+        },
+        {
+          "name": "【資料３－２】令和８年度診療報酬改定の基本方針（案）",
+          "url": "https://www.mhlw.go.jp/content/12401000/001604411.pdf"
+        },
+        {
+          "name": "【資料４】「強い経済」を実現する総合経済対策～日本と日本人の底力で不安を希望に変える～",
+          "url": "https://www.mhlw.go.jp/content/12401000/001604412.pdf"
+        },
+        {
+          "name": "【資料５】令和７年度補正予算案（保険局関係）の主な事項について",
+          "url": "https://www.mhlw.go.jp/content/12401000/001604413.pdf"
+        },
+        {
+          "name": "【参考資料１－１】第204回社会保障審議会医療保険部会（令和７年11月20日開催）における主な御意見（「令和８年度診療報酬改定の基本方針について」関係）",
+          "url": "https://www.mhlw.go.jp/content/12401000/001604414.pdf"
+        },
+        {
+          "name": "【参考資料１－２】第121回社会保障審議会医療部会（令和７年11月25日開催）における主な御意見（「令和８年度診療報酬改定の基本方針について」関係）",
+          "url": "https://www.mhlw.go.jp/content/12401000/001604415.pdf"
+        },
+        {
+          "name": "【参考資料１－３】診療報酬改定の基本方針　参考資料",
+          "url": "https://www.mhlw.go.jp/content/12401000/001604416.pdf"
+        },
+        {
+          "name": "第206回医療保険部会資料（全体版）",
+          "url": "https://www.mhlw.go.jp/content/12401000/001604417.pdf"
+        },
+        {
+          "name": "第206回 議事録",
+          "url": "https://www.mhlw.go.jp/stf/newpage_68427.html"
+        }
+      ]
+    },
+    {
       "id": "cao-kisei_iryou_wg-20251203-007",
       "councilId": "cao-kisei_iryou_wg",
       "title": "第7回 規制改革推進会議 健康・医療・介護WG（令和7年度）",
@@ -50681,6 +51005,54 @@
       ]
     },
     {
+      "id": "mhlw-shakai_hosho_iryou_hoken-20251127-205",
+      "councilId": "mhlw-shakai_hosho_iryou_hoken",
+      "title": "第205回 社会保障審議会 医療保険部会",
+      "date": "2025/11/27",
+      "officialUrl": "https://www.mhlw.go.jp/stf/newpage_66319.html",
+      "category": "SUBCOMMITTEE",
+      "ministry": "MHLW",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "議事次第",
+          "url": "https://www.mhlw.go.jp/content/12401000/001599971.pdf"
+        },
+        {
+          "name": "委員名簿",
+          "url": "https://www.mhlw.go.jp/content/12401000/001599972.pdf"
+        },
+        {
+          "name": "【資料１－１】OTC類似薬を含む薬剤自己負担の見直しの在り方について",
+          "url": "https://www.mhlw.go.jp/content/12401000/001599954.pdf"
+        },
+        {
+          "name": "【資料１－２】国民健康保険制度の取組強化の方向性",
+          "url": "https://www.mhlw.go.jp/content/12401000/001599955.pdf"
+        },
+        {
+          "name": "【資料２】第４期医療費適正化計画における医療資源の効果的・効率的な活用について",
+          "url": "https://www.mhlw.go.jp/content/12401000/001600025.pdf"
+        },
+        {
+          "name": "【資料３】国民健康保険の保険料（税）の賦課（課税）限度額について",
+          "url": "https://www.mhlw.go.jp/content/12401000/001599957.pdf"
+        },
+        {
+          "name": "【資料４】業務効率化・職場環境改善の更なる推進に関する方向性について",
+          "url": "https://www.mhlw.go.jp/content/12401000/001599958.pdf"
+        },
+        {
+          "name": "第205回医療保険部会資料（全体版）",
+          "url": "https://www.mhlw.go.jp/content/12401000/001600026.pdf"
+        },
+        {
+          "name": "第205回 議事録",
+          "url": "https://www.mhlw.go.jp/stf/newpage_68379.html"
+        }
+      ]
+    },
+    {
       "id": "mic-chiji_kaigi_43-20251126-s01",
       "councilId": "mic-chiji_kaigi_43",
       "councilName": "全国都道府県知事会議（政府主催）",
@@ -51026,6 +51398,74 @@
         {
           "name": "議事概要",
           "url": "https://www.fsc.go.jp/fsciis/attachedFile/download?retrievalId=kai20251120id1&fileId=210"
+        }
+      ]
+    },
+    {
+      "id": "mhlw-shakai_hosho_iryou_hoken-20251120-204",
+      "councilId": "mhlw-shakai_hosho_iryou_hoken",
+      "title": "第204回 社会保障審議会 医療保険部会",
+      "date": "2025/11/20",
+      "officialUrl": "https://www.mhlw.go.jp/stf/newpage_66117.html",
+      "category": "SUBCOMMITTEE",
+      "ministry": "MHLW",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "議事次第",
+          "url": "https://www.mhlw.go.jp/content/12401000/001597662.pdf"
+        },
+        {
+          "name": "委員名簿",
+          "url": "https://www.mhlw.go.jp/content/12401000/001597663.pdf"
+        },
+        {
+          "name": "【資料１－１】全国がん患者団体連合会提出資料",
+          "url": "https://www.mhlw.go.jp/content/12401000/001597705.pdf"
+        },
+        {
+          "name": "【資料１－２】日本アレルギー友の会提出資料",
+          "url": "https://www.mhlw.go.jp/content/12401000/001597748.pdf"
+        },
+        {
+          "name": "【資料１－３】ささえあい医療人権センターCOML提出資料",
+          "url": "https://www.mhlw.go.jp/content/12401000/001597707.pdf"
+        },
+        {
+          "name": "【資料２】医療保険制度における出産に対する支援の強化について",
+          "url": "https://www.mhlw.go.jp/content/12401000/001597701.pdf"
+        },
+        {
+          "name": "【資料３】入院時の食費・光熱水費について",
+          "url": "https://www.mhlw.go.jp/content/12401000/001597708.pdf"
+        },
+        {
+          "name": "【資料４－１】令和８年度診療報酬改定の基本方針（骨子案の概要）",
+          "url": "https://www.mhlw.go.jp/content/12401000/001597709.pdf"
+        },
+        {
+          "name": "【資料４－２】令和８年度診療報酬改定の基本方針（骨子案）",
+          "url": "https://www.mhlw.go.jp/content/12401000/001597710.pdf"
+        },
+        {
+          "name": "【参考資料１－１】第201回社会保障審議会医療保険部会（令和７年10月23日開催）における主な御意見（「令和８年度診療報酬改定の基本方針について」関係）",
+          "url": "https://www.mhlw.go.jp/content/12401000/001597711.pdf"
+        },
+        {
+          "name": "【参考資料１－２】第120回社会保障審議会医療部会（令和７年10月27日開催）における主な御意見（「令和８年度診療報酬改定の基本方針について」関係）",
+          "url": "https://www.mhlw.go.jp/content/12401000/001597712.pdf"
+        },
+        {
+          "name": "【参考資料１－３】診療報酬改定の基本方針　参考資料",
+          "url": "https://www.mhlw.go.jp/content/12401000/001597713.pdf"
+        },
+        {
+          "name": "第204回医療保険部会資料（全体版）",
+          "url": "https://www.mhlw.go.jp/content/12401000/001597749.pdf"
+        },
+        {
+          "name": "第204回 議事録",
+          "url": "https://www.mhlw.go.jp/stf/newpage_68350.html"
         }
       ]
     },
@@ -51918,6 +52358,50 @@
       ]
     },
     {
+      "id": "mhlw-shakai_hosho_iryou_hoken-20251113-203",
+      "councilId": "mhlw-shakai_hosho_iryou_hoken",
+      "title": "第203回 社会保障審議会 医療保険部会",
+      "date": "2025/11/13",
+      "officialUrl": "https://www.mhlw.go.jp/stf/newpage_65886.html",
+      "category": "SUBCOMMITTEE",
+      "ministry": "MHLW",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "議事次第",
+          "url": "https://www.mhlw.go.jp/content/12401000/001594824.pdf"
+        },
+        {
+          "name": "委員名簿",
+          "url": "https://www.mhlw.go.jp/content/12401000/001594825.pdf"
+        },
+        {
+          "name": "【資料１－１】世代内、世代間の公平の更なる確保による全世代型社会保障の構築の推進（高齢者医療における負担の在り方について）",
+          "url": "https://www.mhlw.go.jp/content/12401000/001594826.pdf"
+        },
+        {
+          "name": "【資料１－２】世代内、世代間の公平の更なる確保による全世代型社会保障の構築の推進（医療保険における金融所得の勘案について）",
+          "url": "https://www.mhlw.go.jp/content/12401000/001594827.pdf"
+        },
+        {
+          "name": "【資料２】医療機関の業務効率化・職場環境改善の推進に関する論点",
+          "url": "https://www.mhlw.go.jp/content/12401000/001594828.pdf"
+        },
+        {
+          "name": "【資料３】マイナ保険証の利用促進等について",
+          "url": "https://www.mhlw.go.jp/content/12401000/001594829.pdf"
+        },
+        {
+          "name": "第203回医療保険部会資料（全体版）",
+          "url": "https://www.mhlw.go.jp/content/12401000/001594830.pdf"
+        },
+        {
+          "name": "第203回 議事録",
+          "url": "https://www.mhlw.go.jp/stf/newpage_68298.html"
+        }
+      ]
+    },
+    {
       "id": "cao-zeicho_ebpm_senmonka-20251112-006",
       "councilId": "cao-zeicho_ebpm_senmonka",
       "title": "第6回 税制のEBPMに関する専門家会合",
@@ -52635,6 +53119,42 @@
         }
       ],
       "councilName": "規制改革推進会議 スタートアップ・イノベーション促進WG"
+    },
+    {
+      "id": "mhlw-shakai_hosho_iryou_hoken-20251106-202",
+      "councilId": "mhlw-shakai_hosho_iryou_hoken",
+      "title": "第202回 社会保障審議会 医療保険部会",
+      "date": "2025/11/06",
+      "officialUrl": "https://www.mhlw.go.jp/stf/newpage_65636.html",
+      "category": "SUBCOMMITTEE",
+      "ministry": "MHLW",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "議事次第",
+          "url": "https://www.mhlw.go.jp/content/12401000/001591449.pdf"
+        },
+        {
+          "name": "委員名簿",
+          "url": "https://www.mhlw.go.jp/content/12401000/001591450.pdf"
+        },
+        {
+          "name": "【資料１－１】高額療養費制度について",
+          "url": "https://www.mhlw.go.jp/content/12401000/001591451.pdf"
+        },
+        {
+          "name": "【資料１－２】薬剤給付の在り方について",
+          "url": "https://www.mhlw.go.jp/content/12401000/001591452.pdf"
+        },
+        {
+          "name": "第202回医療保険部会資料（全体版）",
+          "url": "https://www.mhlw.go.jp/content/12401000/001591465.pdf"
+        },
+        {
+          "name": "第202回 議事録",
+          "url": "https://www.mhlw.go.jp/stf/newpage_68241.html"
+        }
+      ]
     },
     {
       "id": "ra-fukko_suishin-20251105-048",
@@ -53505,6 +54025,66 @@
       "councilName": "国土強靱化推進会議"
     },
     {
+      "id": "mhlw-shakai_hosho_iryou_hoken-20251023-201",
+      "councilId": "mhlw-shakai_hosho_iryou_hoken",
+      "title": "第201回 社会保障審議会 医療保険部会",
+      "date": "2025/10/23",
+      "officialUrl": "https://www.mhlw.go.jp/stf/newpage_65085.html",
+      "category": "SUBCOMMITTEE",
+      "ministry": "MHLW",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "議事次第",
+          "url": "https://www.mhlw.go.jp/content/12401000/001584286.pdf"
+        },
+        {
+          "name": "委員名簿",
+          "url": "https://www.mhlw.go.jp/content/12401000/001584287.pdf"
+        },
+        {
+          "name": "【資料１】医療保険制度における出産に対する支援の強化について",
+          "url": "https://www.mhlw.go.jp/content/12401000/001584788.pdf"
+        },
+        {
+          "name": "【資料２】世代内、世代間の公平の更なる確保による全世代型社会保障の構築の推進",
+          "url": "https://www.mhlw.go.jp/content/12401000/001584438.pdf"
+        },
+        {
+          "name": "【資料３】令和８年度診療報酬改定の基本方針について（基本認識、基本的視点、具体的方向性②）",
+          "url": "https://www.mhlw.go.jp/content/12401000/001584289.pdf"
+        },
+        {
+          "name": "【参考資料１－１】 「妊娠・出産・産後における妊産婦等の支援策等に関する検討会 議論の整理」の概要",
+          "url": "https://www.mhlw.go.jp/content/12401000/001584290.pdf"
+        },
+        {
+          "name": "【参考資料１－２】 妊娠・出産・産後における妊産婦等の支援策等に関する検討会 議論の整理",
+          "url": "https://www.mhlw.go.jp/content/12401000/001584291.pdf"
+        },
+        {
+          "name": "【参考資料２－１】 第198回社会保障審議会医療保険部会（令和７年９月26日開催）における主な御意見",
+          "url": "https://www.mhlw.go.jp/content/12401000/001584292.pdf"
+        },
+        {
+          "name": "【参考資料２－２】 第119回社会保障審議会医療部会（令和７年10月3日開催）における主な御意見",
+          "url": "https://www.mhlw.go.jp/content/12401000/001584293.pdf"
+        },
+        {
+          "name": "【参考資料２－３】 診療報酬改定の基本方針 参考資料",
+          "url": "https://www.mhlw.go.jp/content/12401000/001584294.pdf"
+        },
+        {
+          "name": "第201回医療保険部会資料（全体版）",
+          "url": "https://www.mhlw.go.jp/content/12401000/001584789.pdf"
+        },
+        {
+          "name": "第201回 議事録",
+          "url": "https://www.mhlw.go.jp/stf/newpage_65871.html"
+        }
+      ]
+    },
+    {
       "id": "cas-influenza_76-20251022-s01",
       "councilId": "cas-influenza_76",
       "title": "鳥インフルエンザ関係閣僚会議（令和7年10月22日）",
@@ -54042,6 +54622,42 @@
         {
           "name": "議事概要",
           "url": "https://www.fsc.go.jp/fsciis/attachedFile/download?retrievalId=kai20251016pr1&fileId=910"
+        }
+      ]
+    },
+    {
+      "id": "mhlw-shakai_hosho_iryou_hoken-20251016-200",
+      "councilId": "mhlw-shakai_hosho_iryou_hoken",
+      "title": "第200回 社会保障審議会 医療保険部会",
+      "date": "2025/10/16",
+      "officialUrl": "https://www.mhlw.go.jp/stf/newpage_64752.html",
+      "category": "SUBCOMMITTEE",
+      "ministry": "MHLW",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "議事次第",
+          "url": "https://www.mhlw.go.jp/content/12401000/001579673.pdf"
+        },
+        {
+          "name": "委員名簿",
+          "url": "https://www.mhlw.go.jp/content/12401000/001579674.pdf"
+        },
+        {
+          "name": "【資料１】薬剤給付の在り方について",
+          "url": "https://www.mhlw.go.jp/content/12401000/001579694.pdf"
+        },
+        {
+          "name": "【資料２】マイナ保険証の利用促進等について",
+          "url": "https://www.mhlw.go.jp/content/12401000/001579695.pdf"
+        },
+        {
+          "name": "第200回医療保険部会資料（全体版）",
+          "url": "https://www.mhlw.go.jp/content/12401000/001579696.pdf"
+        },
+        {
+          "name": "第200回 議事録",
+          "url": "https://www.mhlw.go.jp/stf/newpage_65850.html"
         }
       ]
     },
@@ -54674,6 +55290,50 @@
       "docCount": 5
     },
     {
+      "id": "mhlw-shakai_hosho_iryou_hoken-20251002-199",
+      "councilId": "mhlw-shakai_hosho_iryou_hoken",
+      "title": "第199回 社会保障審議会 医療保険部会",
+      "date": "2025/10/02",
+      "officialUrl": "https://www.mhlw.go.jp/stf/newpage_64202.html",
+      "category": "SUBCOMMITTEE",
+      "ministry": "MHLW",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "議事次第",
+          "url": "https://www.mhlw.go.jp/content/12401000/001572559.pdf"
+        },
+        {
+          "name": "委員名簿",
+          "url": "https://www.mhlw.go.jp/content/12401000/001572560.pdf"
+        },
+        {
+          "name": "【資料１】医療保険制度改革について",
+          "url": "https://www.mhlw.go.jp/content/12401000/001573276.pdf"
+        },
+        {
+          "name": "【資料２】病床転換助成事業について",
+          "url": "https://www.mhlw.go.jp/content/12401000/001572770.pdf"
+        },
+        {
+          "name": "【資料３】特定健康診査に相当する健康診査に係る結果送付の電子化",
+          "url": "https://www.mhlw.go.jp/content/12401000/001572771.pdf"
+        },
+        {
+          "name": "【資料４】個人の予防・健康づくりに向けたインセンティブについて",
+          "url": "https://www.mhlw.go.jp/content/12401000/001572772.pdf"
+        },
+        {
+          "name": "第199回医療保険部会資料（全体版）",
+          "url": "https://www.mhlw.go.jp/content/12401000/001572773.pdf"
+        },
+        {
+          "name": "第199回 議事録",
+          "url": "https://www.mhlw.go.jp/stf/newpage_65849.html"
+        }
+      ]
+    },
+    {
       "id": "mhlw-rousei_roudoujouken_146-20250930-203",
       "councilId": "mhlw-rousei_roudoujouken_146",
       "title": "第203回 労働政策審議会 労働条件分科会",
@@ -54958,6 +55618,54 @@
         {
           "name": "議事概要",
           "url": "https://www.fsc.go.jp/fsciis/attachedFile/download?retrievalId=kai20250926no1&fileId=310"
+        }
+      ]
+    },
+    {
+      "id": "mhlw-shakai_hosho_iryou_hoken-20250926-198",
+      "councilId": "mhlw-shakai_hosho_iryou_hoken",
+      "title": "第198回 社会保障審議会 医療保険部会",
+      "date": "2025/09/26",
+      "officialUrl": "https://www.mhlw.go.jp/stf/newpage_63945.html",
+      "category": "SUBCOMMITTEE",
+      "ministry": "MHLW",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "議事次第",
+          "url": "https://www.mhlw.go.jp/content/12401000/001568768.pdf"
+        },
+        {
+          "name": "委員名簿",
+          "url": "https://www.mhlw.go.jp/content/12401000/001568769.pdf"
+        },
+        {
+          "name": "【資料１】医療保険制度改革について",
+          "url": "https://www.mhlw.go.jp/content/12401000/001568770.pdf"
+        },
+        {
+          "name": "【資料２】令和８年度診療報酬改定の基本方針について",
+          "url": "https://www.mhlw.go.jp/content/12401000/001568771.pdf"
+        },
+        {
+          "name": "【資料３】高額療養費制度について",
+          "url": "https://www.mhlw.go.jp/content/12401000/001568818.pdf"
+        },
+        {
+          "name": "【参考資料１－１】診療報酬改定の基本方針　参考資料",
+          "url": "https://www.mhlw.go.jp/content/12401000/001568773.pdf"
+        },
+        {
+          "name": "【参考資料１－２】令和６年度診療報酬改定について",
+          "url": "https://www.mhlw.go.jp/content/12401000/001568774.pdf"
+        },
+        {
+          "name": "第198回医療保険部会資料（全体版）",
+          "url": "https://www.mhlw.go.jp/content/12401000/001568827.pdf"
+        },
+        {
+          "name": "第198回 議事録",
+          "url": "https://www.mhlw.go.jp/stf/newpage_65342.html"
         }
       ]
     },
@@ -55343,6 +56051,74 @@
       "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/ondanka/kaisai/dai36/shiryo_250919.pdf",
       "hasMinutes": false,
       "docCount": 5
+    },
+    {
+      "id": "mhlw-shakai_hosho_iryou_hoken-20250918-197",
+      "councilId": "mhlw-shakai_hosho_iryou_hoken",
+      "title": "第197回 社会保障審議会 医療保険部会",
+      "date": "2025/09/18",
+      "officialUrl": "https://www.mhlw.go.jp/stf/newpage_63640.html",
+      "category": "SUBCOMMITTEE",
+      "ministry": "MHLW",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "議事次第",
+          "url": "https://www.mhlw.go.jp/content/12401000/001564546.pdf"
+        },
+        {
+          "name": "委員名簿",
+          "url": "https://www.mhlw.go.jp/content/12401000/001564547.pdf"
+        },
+        {
+          "name": "【資料１－１】医療保険制度改革に向けた議論の進め方",
+          "url": "https://www.mhlw.go.jp/content/12401000/001564548.pdf"
+        },
+        {
+          "name": "【資料１－２】基礎資料",
+          "url": "https://www.mhlw.go.jp/content/12401000/001564549.pdf"
+        },
+        {
+          "name": "【資料２】令和８年度予算概算要求（保険局関係）について",
+          "url": "https://www.mhlw.go.jp/content/12401000/001564550.pdf"
+        },
+        {
+          "name": "【資料３】 医療費の動向 令和６年度の状況",
+          "url": "https://www.mhlw.go.jp/content/12401000/001564551.pdf"
+        },
+        {
+          "name": "【参考資料１】経済財政運営と改革の基本方針2025等",
+          "url": "https://www.mhlw.go.jp/content/12401000/001564552.pdf"
+        },
+        {
+          "name": "【参考資料２】令和８年度予算概算要求（保険局関係）参考資料",
+          "url": "https://www.mhlw.go.jp/content/12401000/001564553.pdf"
+        },
+        {
+          "name": "【参考資料３－１】令和６年度  医療費の動向",
+          "url": "https://www.mhlw.go.jp/content/12401000/001564555.pdf"
+        },
+        {
+          "name": "【参考資料３－２】令和６年度  医科医療費（電算処理分）の動向",
+          "url": "https://www.mhlw.go.jp/content/12401000/001564556.pdf"
+        },
+        {
+          "name": "【参考資料３－３】令和６年度  歯科医療費（電算処理分）の動向",
+          "url": "https://www.mhlw.go.jp/content/12401000/001564557.pdf"
+        },
+        {
+          "name": "【参考資料３－４】令和６年度  調剤医療費（電算処理分）の動向",
+          "url": "https://www.mhlw.go.jp/content/12401000/001564558.pdf"
+        },
+        {
+          "name": "第197回医療保険部会資料（全体版）",
+          "url": "https://www.mhlw.go.jp/content/12401000/001564554.pdf"
+        },
+        {
+          "name": "第197回 議事録",
+          "url": "https://www.mhlw.go.jp/stf/newpage_65340.html"
+        }
+      ]
     },
     {
       "id": "cao-ai_hq-20250912-001",
@@ -55999,6 +56775,58 @@
         }
       ],
       "councilName": "原子力災害からの福島復興再生協議会"
+    },
+    {
+      "id": "mhlw-shakai_hosho_iryou_hoken-20250828-196",
+      "councilId": "mhlw-shakai_hosho_iryou_hoken",
+      "title": "第196回 社会保障審議会 医療保険部会",
+      "date": "2025/08/28",
+      "officialUrl": "https://www.mhlw.go.jp/stf/newpage_62501.html",
+      "category": "SUBCOMMITTEE",
+      "ministry": "MHLW",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "議事次第",
+          "url": "https://www.mhlw.go.jp/content/12401000/001549827.pdf"
+        },
+        {
+          "name": "委員名簿",
+          "url": "https://www.mhlw.go.jp/content/12401000/001549813.pdf"
+        },
+        {
+          "name": "【資料１】診療報酬改定の基本方針について（前回改定の振り返り）",
+          "url": "https://www.mhlw.go.jp/content/12401000/001549828.pdf"
+        },
+        {
+          "name": "【資料２】マイナ保険証の利用促進等について",
+          "url": "https://www.mhlw.go.jp/content/12401000/001549829.pdf"
+        },
+        {
+          "name": "【資料３】電子処方箋・電子カルテの目標設定等について（報告事項）",
+          "url": "https://www.mhlw.go.jp/content/12401000/001549830.pdf"
+        },
+        {
+          "name": "11_【参考資料１－１】令和６年度診療報酬改定のスケジュール",
+          "url": "https://www.mhlw.go.jp/content/12401000/001549831.pdf"
+        },
+        {
+          "name": "12_【参考資料１－２】令和６年度診療報酬改定の基本方針",
+          "url": "https://www.mhlw.go.jp/content/12401000/001549832.pdf"
+        },
+        {
+          "name": "13_【参考資料１－３】経済財政運営と改革の基本方針2025について",
+          "url": "https://www.mhlw.go.jp/content/12401000/001549833.pdf"
+        },
+        {
+          "name": "第196回医療保険部会資料（全体版）",
+          "url": "https://www.mhlw.go.jp/content/12401000/001549834.pdf"
+        },
+        {
+          "name": "第196回 議事録",
+          "url": "https://www.mhlw.go.jp/stf/newpage_63366.html"
+        }
+      ]
     },
     {
       "id": "fsc-nouyaku_dai5-20250827-040",
@@ -59652,6 +60480,50 @@
       ]
     },
     {
+      "id": "mhlw-shakai_hosho_iryou_hoken-20250619-195",
+      "councilId": "mhlw-shakai_hosho_iryou_hoken",
+      "title": "第195回 社会保障審議会 医療保険部会",
+      "date": "2025/06/19",
+      "officialUrl": "https://www.mhlw.go.jp/stf/newpage_58958.html",
+      "category": "SUBCOMMITTEE",
+      "ministry": "MHLW",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "議事次第",
+          "url": "https://www.mhlw.go.jp/content/12401000/001505991.pdf"
+        },
+        {
+          "name": "委員名簿",
+          "url": "https://www.mhlw.go.jp/content/12401000/001505992.pdf"
+        },
+        {
+          "name": "【資料１】被用者保険の適用拡大について",
+          "url": "https://www.mhlw.go.jp/content/12401000/001505993.pdf"
+        },
+        {
+          "name": "【資料２】病床転換助成事業について",
+          "url": "https://www.mhlw.go.jp/content/12401000/001505994.pdf"
+        },
+        {
+          "name": "【資料３】「経済財政運営と改革の基本方針 2025」、「新しい資本主義のグランドデザイン及び 実行計画 2025 改訂版」及び「規制改革実行計画」等について",
+          "url": "https://www.mhlw.go.jp/content/12401000/001505995.pdf"
+        },
+        {
+          "name": "【参考資料】 病床転換助成事業等に関する実態調査・効果検証等調査研究事業報告",
+          "url": "https://www.mhlw.go.jp/content/12401000/001506004.pdf"
+        },
+        {
+          "name": "第195回医療保険部会資料（全体版）",
+          "url": "https://www.mhlw.go.jp/content/12401000/001505996.pdf"
+        },
+        {
+          "name": "第195回 議事録",
+          "url": "https://www.mhlw.go.jp/stf/newpage_59880.html"
+        }
+      ]
+    },
+    {
       "id": "cao-zeicho_ebpm_senmonka-20250618-005",
       "councilId": "cao-zeicho_ebpm_senmonka",
       "title": "第5回 税制のEBPMに関する専門家会合",
@@ -62973,6 +63845,46 @@
       "councilName": "規制改革推進会議 健康・医療・介護WG"
     },
     {
+      "id": "mhlw-shakai_hosho_iryou_hoken-20250501-194",
+      "councilId": "mhlw-shakai_hosho_iryou_hoken",
+      "title": "第194回 社会保障審議会 医療保険部会",
+      "date": "2025/05/01",
+      "officialUrl": "https://www.mhlw.go.jp/stf/newpage_57556.html",
+      "category": "SUBCOMMITTEE",
+      "ministry": "MHLW",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "議事次第",
+          "url": "https://www.mhlw.go.jp/content/12401000/001483384.pdf"
+        },
+        {
+          "name": "委員名簿",
+          "url": "https://www.mhlw.go.jp/content/12401000/001483385.pdf"
+        },
+        {
+          "name": "【資料１】高額療養費制度の在り方に関する専門委員会（仮称）の設置について",
+          "url": "https://www.mhlw.go.jp/content/12401000/001483386.pdf"
+        },
+        {
+          "name": "【資料２】マイナ保険証の利用促進等について",
+          "url": "https://www.mhlw.go.jp/content/12401000/001483387.pdf"
+        },
+        {
+          "name": "【資料３】医療費における保険給付率と患者負担率のバランス等の定期的な見える化について",
+          "url": "https://www.mhlw.go.jp/content/12401000/001483388.pdf"
+        },
+        {
+          "name": "第194回医療保険部会資料（全体版）",
+          "url": "https://www.mhlw.go.jp/content/12401000/001483389.pdf"
+        },
+        {
+          "name": "第194回 議事録",
+          "url": "https://www.mhlw.go.jp/stf/newpage_58311.html"
+        }
+      ]
+    },
+    {
       "id": "cao-kisei_iryou_wg-20250428-004",
       "councilId": "cao-kisei_iryou_wg",
       "title": "第4回 規制改革推進会議 健康・医療・介護WG（令和7年度）",
@@ -64623,6 +65535,62 @@
         }
       ],
       "councilName": "防衛力の抜本的強化に関する有識者会議"
+    },
+    {
+      "id": "mhlw-shakai_hosho_iryou_hoken-20250403-193",
+      "councilId": "mhlw-shakai_hosho_iryou_hoken",
+      "title": "第193回 社会保障審議会 医療保険部会",
+      "date": "2025/04/03",
+      "officialUrl": "https://www.mhlw.go.jp/stf/newpage_56697.html",
+      "category": "SUBCOMMITTEE",
+      "ministry": "MHLW",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "議事次第",
+          "url": "https://www.mhlw.go.jp/content/12401000/001471565.pdf"
+        },
+        {
+          "name": "委員名簿",
+          "url": "https://www.mhlw.go.jp/content/12401000/001471566.pdf"
+        },
+        {
+          "name": "【資料１】マイナ保険証の利用促進等について",
+          "url": "https://www.mhlw.go.jp/content/12401000/001471729.pdf"
+        },
+        {
+          "name": "【資料２】被用者保険における予防・健康づくりの推進について",
+          "url": "https://www.mhlw.go.jp/content/12401000/001471568.pdf"
+        },
+        {
+          "name": "【資料３】第３期医療費適正化計画の実績評価及び第４期全国医療費適正化計画について",
+          "url": "https://www.mhlw.go.jp/content/12401000/001471569.pdf"
+        },
+        {
+          "name": "【資料４】年金額の改定を踏まえた自己負担の所得区分における基準額の調整について",
+          "url": "https://www.mhlw.go.jp/content/12401000/001471570.pdf"
+        },
+        {
+          "name": "【資料５】医療法等の一部を改正する法律案の閣議決定について",
+          "url": "https://www.mhlw.go.jp/content/12401000/001471571.pdf"
+        },
+        {
+          "name": "【参考資料１】第３期全国医療費適正化計画の実績に関する評価（実績評価）",
+          "url": "https://www.mhlw.go.jp/content/12401000/001471572.pdf"
+        },
+        {
+          "name": "【参考資料２】高齢者の医療の確保に関する法律第八条第一項の規定に基づき定める計画の全部を改正する件",
+          "url": "https://www.mhlw.go.jp/content/12401000/001471573.pdf"
+        },
+        {
+          "name": "第193回医療保険部会資料（全体版）",
+          "url": "https://www.mhlw.go.jp/content/12401000/001471738.pdf"
+        },
+        {
+          "name": "第193回 議事録",
+          "url": "https://www.mhlw.go.jp/stf/newpage_57754.html"
+        }
+      ]
     },
     {
       "id": "cas-kokudo_kyoujinka_28-20250401-022",
@@ -68922,6 +69890,54 @@
       "councilName": "こども家庭審議会"
     },
     {
+      "id": "mhlw-shakai_hosho_iryou_hoken-20250123-192",
+      "councilId": "mhlw-shakai_hosho_iryou_hoken",
+      "title": "第192回 社会保障審議会 医療保険部会",
+      "date": "2025/01/23",
+      "officialUrl": "https://www.mhlw.go.jp/stf/newpage_49644.html",
+      "category": "SUBCOMMITTEE",
+      "ministry": "MHLW",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "議事次第",
+          "url": "https://www.mhlw.go.jp/content/12401000/001382234.pdf"
+        },
+        {
+          "name": "委員名簿",
+          "url": "https://www.mhlw.go.jp/content/12401000/001382235.pdf"
+        },
+        {
+          "name": "【資料１】電子処方箋の現況と今後の対応",
+          "url": "https://www.mhlw.go.jp/content/12401000/001382236.pdf"
+        },
+        {
+          "name": "【資料２】高額療養費制度の見直しについて",
+          "url": "https://www.mhlw.go.jp/content/12401000/001393881.pdf"
+        },
+        {
+          "name": "【資料３】令和７年度予算案（保険局関係）の主な事項について",
+          "url": "https://www.mhlw.go.jp/content/12401000/001382238.pdf"
+        },
+        {
+          "name": "【資料４】骨太方針2024 を踏まえた取組方針について",
+          "url": "https://www.mhlw.go.jp/content/12401000/001382239.pdf"
+        },
+        {
+          "name": "【参考資料】令和７年度予算案（保険局関係）参考資料",
+          "url": "https://www.mhlw.go.jp/content/12401000/001382245.pdf"
+        },
+        {
+          "name": "第192回医療保険部会資料（全体版）",
+          "url": "https://www.mhlw.go.jp/content/12401000/001393882.pdf"
+        },
+        {
+          "name": "第192回 議事録",
+          "url": "https://www.mhlw.go.jp/stf/newpage_54036.html"
+        }
+      ]
+    },
+    {
       "id": "mhlw-rousei_roudoujouken_146-20250121-193",
       "councilId": "mhlw-rousei_roudoujouken_146",
       "title": "第193回 労働政策審議会 労働条件分科会",
@@ -69366,6 +70382,42 @@
         {
           "name": "議事概要",
           "url": "https://www.fsc.go.jp/fsciis/attachedFile/download?retrievalId=kai20241226pr1&fileId=910"
+        }
+      ]
+    },
+    {
+      "id": "mhlw-shakai_hosho_iryou_hoken-20241226-191",
+      "councilId": "mhlw-shakai_hosho_iryou_hoken",
+      "title": "第191回 社会保障審議会 医療保険部会",
+      "date": "2024/12/26",
+      "officialUrl": "https://www.mhlw.go.jp/stf/newpage_48148.html",
+      "category": "SUBCOMMITTEE",
+      "ministry": "MHLW",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "議事次第",
+          "url": "https://www.mhlw.go.jp/content/12401000/001365187.pdf"
+        },
+        {
+          "name": "委員名簿",
+          "url": "https://www.mhlw.go.jp/content/12401000/001365188.pdf"
+        },
+        {
+          "name": "【資料１】被用者保険の適用拡大及びいわゆる「年収の壁」への対応について",
+          "url": "https://www.mhlw.go.jp/content/12401000/001365189.pdf"
+        },
+        {
+          "name": "【資料２】入院時の食費について",
+          "url": "https://www.mhlw.go.jp/content/12401000/001365190.pdf"
+        },
+        {
+          "name": "第191回医療保険部会資料（全体版）",
+          "url": "https://www.mhlw.go.jp/content/12401000/001365191.pdf"
+        },
+        {
+          "name": "第191回 議事録",
+          "url": "https://www.mhlw.go.jp/stf/newpage_52525.html"
         }
       ]
     },
@@ -69889,6 +70941,46 @@
       "councilName": "規制改革推進会議 スタートアップ・イノベーション促進WG"
     },
     {
+      "id": "mhlw-shakai_hosho_iryou_hoken-20241219-190",
+      "councilId": "mhlw-shakai_hosho_iryou_hoken",
+      "title": "第190回 社会保障審議会 医療保険部会",
+      "date": "2024/12/19",
+      "officialUrl": "https://www.mhlw.go.jp/stf/newpage_47571.html",
+      "category": "SUBCOMMITTEE",
+      "ministry": "MHLW",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "議事次第",
+          "url": "https://www.mhlw.go.jp/content/12401000/001358746.pdf"
+        },
+        {
+          "name": "委員名簿",
+          "url": "https://www.mhlw.go.jp/content/12401000/001358747.pdf"
+        },
+        {
+          "name": "【資料１－１】医師偏在是正対策について",
+          "url": "https://www.mhlw.go.jp/content/12401000/001359469.pdf"
+        },
+        {
+          "name": "【資料１－２】医師偏在対策に関するとりまとめ",
+          "url": "https://www.mhlw.go.jp/content/12401000/001358749.pdf"
+        },
+        {
+          "name": "【参考資料】マイナ保険証の利用促進等について",
+          "url": "https://www.mhlw.go.jp/content/12401000/001358750.pdf"
+        },
+        {
+          "name": "第190回医療保険部会資料（全体版）",
+          "url": "https://www.mhlw.go.jp/content/12401000/001359470.pdf"
+        },
+        {
+          "name": "第190回 議事録",
+          "url": "https://www.mhlw.go.jp/stf/newpage_52523.html"
+        }
+      ]
+    },
+    {
       "id": "fsc-hisiryou-20241218-204",
       "councilId": "fsc-hisiryou",
       "title": "第204回肥料・飼料等専門調査会",
@@ -70249,6 +71341,46 @@
       "manualLock": true
     },
     {
+      "id": "mhlw-shakai_hosho_iryou_hoken-20241212-189",
+      "councilId": "mhlw-shakai_hosho_iryou_hoken",
+      "title": "第189回 社会保障審議会 医療保険部会",
+      "date": "2024/12/12",
+      "officialUrl": "https://www.mhlw.go.jp/stf/newpage_46880.html",
+      "category": "SUBCOMMITTEE",
+      "ministry": "MHLW",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "議事次第",
+          "url": "https://www.mhlw.go.jp/content/12401000/001351607.pdf"
+        },
+        {
+          "name": "委員名簿",
+          "url": "https://www.mhlw.go.jp/content/12401000/001351608.pdf"
+        },
+        {
+          "name": "【資料１】被用者保険の適用拡大及びいわゆる「年収の壁」への対応について",
+          "url": "https://www.mhlw.go.jp/content/12401000/001351609.pdf"
+        },
+        {
+          "name": "【資料２】医療保険制度改革について",
+          "url": "https://www.mhlw.go.jp/content/12401000/001351610.pdf"
+        },
+        {
+          "name": "【資料３】医療ＤＸの推進等について",
+          "url": "https://www.mhlw.go.jp/content/12401000/001351611.pdf"
+        },
+        {
+          "name": "第189回医療保険部会資料（全体版）",
+          "url": "https://www.mhlw.go.jp/content/12401000/001351612.pdf"
+        },
+        {
+          "name": "第189回 議事録",
+          "url": "https://www.mhlw.go.jp/stf/newpage_51831.html"
+        }
+      ]
+    },
+    {
       "id": "fdma-kento_164-20241211-003",
       "councilId": "fdma-kento_164",
       "councilName": "津波時の浸水想定区域での活動を勘案した消防活動計画等に関する意見聴取会",
@@ -70468,6 +71600,46 @@
         }
       ],
       "councilName": "就職・採用活動日程に関する関係省庁連絡会議"
+    },
+    {
+      "id": "mhlw-shakai_hosho_iryou_hoken-20241205-188",
+      "councilId": "mhlw-shakai_hosho_iryou_hoken",
+      "title": "第188回 社会保障審議会 医療保険部会",
+      "date": "2024/12/05",
+      "officialUrl": "https://www.mhlw.go.jp/stf/newpage_46486.html",
+      "category": "SUBCOMMITTEE",
+      "ministry": "MHLW",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "議事次第",
+          "url": "https://www.mhlw.go.jp/content/12401000/001345772.pdf"
+        },
+        {
+          "name": "委員名簿",
+          "url": "https://www.mhlw.go.jp/content/12401000/001345773.pdf"
+        },
+        {
+          "name": "【資料１】医療保険制度改革について",
+          "url": "https://www.mhlw.go.jp/content/12401000/001345774.pdf"
+        },
+        {
+          "name": "【資料２】「国民の安心・安全と持続的な成長に向けた総合経済対策～全ての世代の現在・将来の賃金・所得を増やす～」について",
+          "url": "https://www.mhlw.go.jp/content/12401000/001345775.pdf"
+        },
+        {
+          "name": "【資料３】令和６年度補正予算案（保険局関係）の主な事項について",
+          "url": "https://www.mhlw.go.jp/content/12401000/001345776.pdf"
+        },
+        {
+          "name": "第188回医療保険部会資料（全体版）",
+          "url": "https://www.mhlw.go.jp/content/12401000/001345777.pdf"
+        },
+        {
+          "name": "第188回 議事録",
+          "url": "https://www.mhlw.go.jp/stf/newpage_50368.html"
+        }
+      ]
     },
     {
       "id": "cao-kisei_startup_wg-20241204-004",
@@ -70960,6 +72132,42 @@
         }
       ],
       "councilName": "規制改革推進会議 スタートアップ・イノベーション促進WG"
+    },
+    {
+      "id": "mhlw-shakai_hosho_iryou_hoken-20241128-187",
+      "councilId": "mhlw-shakai_hosho_iryou_hoken",
+      "title": "第187回 社会保障審議会 医療保険部会",
+      "date": "2024/11/28",
+      "officialUrl": "https://www.mhlw.go.jp/stf/newpage_46203.html",
+      "category": "SUBCOMMITTEE",
+      "ministry": "MHLW",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "議事次第",
+          "url": "https://www.mhlw.go.jp/content/12401000/001341051.pdf"
+        },
+        {
+          "name": "委員名簿",
+          "url": "https://www.mhlw.go.jp/content/12401000/001341052.pdf"
+        },
+        {
+          "name": "【資料１】医師偏在是正対策について",
+          "url": "https://www.mhlw.go.jp/content/12401000/001366587.pdf"
+        },
+        {
+          "name": "【資料２】医療保険制度改革について",
+          "url": "https://www.mhlw.go.jp/content/12401000/001341054.pdf"
+        },
+        {
+          "name": "第187回医療保険部会資料（全体版）",
+          "url": "https://www.mhlw.go.jp/content/12401000/001366588.pdf"
+        },
+        {
+          "name": "第187回 議事録",
+          "url": "https://www.mhlw.go.jp/stf/newpage_49879.html"
+        }
+      ]
     },
     {
       "id": "smea-kigyo_torihiki-20241126-005",
@@ -71636,6 +72844,58 @@
         {
           "name": "議事概要",
           "url": "https://www.fsc.go.jp/fsciis/attachedFile/download?retrievalId=kai20241121no1&fileId=310"
+        }
+      ]
+    },
+    {
+      "id": "mhlw-shakai_hosho_iryou_hoken-20241121-186",
+      "councilId": "mhlw-shakai_hosho_iryou_hoken",
+      "title": "第186回 社会保障審議会 医療保険部会",
+      "date": "2024/11/21",
+      "officialUrl": "https://www.mhlw.go.jp/stf/newpage_45733.html",
+      "category": "SUBCOMMITTEE",
+      "ministry": "MHLW",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "議事次第",
+          "url": "https://www.mhlw.go.jp/content/12401000/001336292.pdf"
+        },
+        {
+          "name": "委員名簿",
+          "url": "https://www.mhlw.go.jp/content/12401000/001336293.pdf"
+        },
+        {
+          "name": "【資料１】被用者保険の適用拡大及びいわゆる「年収の壁」への対応について",
+          "url": "https://www.mhlw.go.jp/content/12401000/001336294.pdf"
+        },
+        {
+          "name": "【資料２】医療保険制度改革について",
+          "url": "https://www.mhlw.go.jp/content/12401000/001336295.pdf"
+        },
+        {
+          "name": "【資料３】マイナ保険証の利用促進等について",
+          "url": "https://www.mhlw.go.jp/content/12401000/001336296.pdf"
+        },
+        {
+          "name": "【資料４】出産費用の状況等について",
+          "url": "https://www.mhlw.go.jp/content/12401000/001336297.pdf"
+        },
+        {
+          "name": "【参考資料１－１】障害者部会・こども家庭審議会障害児支援部会合同会議での主な意見",
+          "url": "https://www.mhlw.go.jp/content/12401000/001336298.pdf"
+        },
+        {
+          "name": "【参考資料１－２】高齢者・障害者等の要配慮者の方々におけるマイナンバーカードの健康保険証利用について（支援者・ご家族向けご説明資料）",
+          "url": "https://www.mhlw.go.jp/content/12401000/001336299.pdf"
+        },
+        {
+          "name": "第186回医療保険部会資料（全体版）",
+          "url": "https://www.mhlw.go.jp/content/12401000/001336300.pdf"
+        },
+        {
+          "name": "第186回 議事録",
+          "url": "https://www.mhlw.go.jp/stf/newpage_49829.html"
         }
       ]
     },
@@ -191414,6 +192674,15 @@
     "cas-atarashii_shihon_kaigi": {
       "template": "tpl-general-multiministry-session",
       "subpage_discovery_pattern": "https://www\\.cas\\.go\\.jp/jp/seisaku/atarashii_sihonsyugi/kaigi/dai\\d+/gijisidai\\.html",
+      "manualLock": true
+    },
+    "mhlw-shakai_hosho_iryou_hoken": {
+      "rule_id": "rule-mhlw-shakai_hosho_iryou_hoken",
+      "subpage_discovery_pattern": "https://www\\.mhlw\\.go\\.jp/stf/newpage_\\d+\\.html",
+      "title_selector": "h1, h2, .title",
+      "date_regex": "(令和\\d+年\\d+月\\d+日|平成\\d+年\\d+月\\d+日|\\d{4}年\\d{1,2}月\\d{1,2}日)",
+      "pdf_selector": "main a[href*='.pdf'], #content a[href*='.pdf'], a[href*='content']",
+      "deep_crawl_enabled": true,
       "manualLock": true
     }
   },
