@@ -17682,6 +17682,25 @@
       "pastYearCount": 100,
       "manualLock": true,
       "description": "文化庁における文化審議会総会。"
+    },
+    {
+      "id": "meti-shinsangyo_kozo",
+      "name": "産業構造審議会 新産業構造部会",
+      "ministry": "METI",
+      "category": "COUNCIL",
+      "pastYearCount": 0,
+      "description": "第4次産業革命（IoT・ビッグデータ・AI・ロボット）をリードする日本の新産業構造ビジョンの策定に向け、産業構造・就業構造の転換及び具体的施策を審議した部会（※2017年度で廃止）。",
+      "officialUrl": "https://www.meti.go.jp/shingikai/sankoshin/shinsangyo_kozo/index.html",
+      "isWatched": false,
+      "status": "approved",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "第4次産業革命をリードする日本の戦略",
+          "url": "https://www.meti.go.jp/shingikai/sankoshin/shinsangyo_kozo/pdf/ch_01.pdf",
+          "type": "PDF"
+        }
+      ]
     }
   ],
   "meetings": [
@@ -203031,6 +203050,1211 @@
       "officialUrl": "https://www.mlit.go.jp/policy/shingikai/sogo03_sg_000240.html",
       "hasMinutes": false,
       "docCount": 9
+    },
+    {
+      "id": "meti-shinsangyo_kozo-20170529-017",
+      "councilId": "meti-shinsangyo_kozo",
+      "councilName": "産業構造審議会 新産業構造部会",
+      "ministry": "METI",
+      "category": "COUNCIL",
+      "title": "第17回 産業構造審議会 新産業構造部会",
+      "date": "2017/05/29",
+      "summary": "産業構造審議会 新産業構造部会 第17回の開催。主要議題に関する審議及び資料の公開が行われた。",
+      "agenda": [
+        "審議会・研究会",
+        "産業構造審議会",
+        "第17回 産業構造審議会 新産業構造部会"
+      ],
+      "materials": [
+        {
+          "name": "資料1　議事次第（PDF形式：92KB）",
+          "url": "https://www.meti.go.jp/shingikai/sankoshin/shinsangyo_kozo/pdf/017_01_00.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "資料2　委員名簿（PDF形式：160KB）",
+          "url": "https://www.meti.go.jp/shingikai/sankoshin/shinsangyo_kozo/pdf/017_02_00.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "資料3　座席表（PDF形式：97KB）",
+          "url": "https://www.meti.go.jp/shingikai/sankoshin/shinsangyo_kozo/pdf/017_03_00.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "資料4　「新産業構造ビジョン（とりまとめ）」概要資料（PDF形式：2,784KB）",
+          "url": "https://www.meti.go.jp/shingikai/sankoshin/shinsangyo_kozo/pdf/017_04_00.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "資料5　「新産業構造ビジョン（とりまとめ）」全体版資料（PDF形式：11,776KB）",
+          "url": "https://www.meti.go.jp/shingikai/sankoshin/shinsangyo_kozo/pdf/017_05_00.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "議事録（PDF形式：486KB）",
+          "url": "https://www.meti.go.jp/shingikai/sankoshin/shinsangyo_kozo/pdf/017_gijiroku.pdf",
+          "type": "PDF"
+        }
+      ],
+      "tags": [
+        "METI",
+        "新産業構造部会",
+        "産業構造審議会",
+        "政策会議",
+        "第4次産業革命"
+      ],
+      "officialUrl": "https://www.meti.go.jp/shingikai/sankoshin/shinsangyo_kozo/017.html",
+      "hasMinutes": true,
+      "manualLock": true
+    },
+    {
+      "id": "meti-shinsangyo_kozo-20170427-016",
+      "councilId": "meti-shinsangyo_kozo",
+      "councilName": "産業構造審議会 新産業構造部会",
+      "ministry": "METI",
+      "category": "COUNCIL",
+      "title": "第16回 産業構造審議会 新産業構造部会",
+      "date": "2017/04/27",
+      "summary": "産業構造審議会 新産業構造部会 第16回の開催。主要議題に関する審議及び資料の公開が行われた。",
+      "agenda": [
+        "審議会・研究会",
+        "産業構造審議会",
+        "第16回 産業構造審議会 新産業構造部会"
+      ],
+      "materials": [
+        {
+          "name": "資料1　議事次第（PDF形式：111KB）",
+          "url": "https://www.meti.go.jp/shingikai/sankoshin/shinsangyo_kozo/pdf/016_01_00.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "資料2　委員名簿（PDF形式：173KB）",
+          "url": "https://www.meti.go.jp/shingikai/sankoshin/shinsangyo_kozo/pdf/016_02_00.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "資料3　座席表（PDF形式：169KB）",
+          "url": "https://www.meti.go.jp/shingikai/sankoshin/shinsangyo_kozo/pdf/016_03_00.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "資料4　西川氏プレゼン資料（PDF形式：1,790KB）",
+          "url": "https://www.meti.go.jp/shingikai/sankoshin/shinsangyo_kozo/pdf/016_04_00.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "資料5　小柴氏プレゼン資料（PDF形式：3,350KB）",
+          "url": "https://www.meti.go.jp/shingikai/sankoshin/shinsangyo_kozo/pdf/016_05_00.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "資料6　町田氏プレゼン資料（PDF形式：449KB）",
+          "url": "https://www.meti.go.jp/shingikai/sankoshin/shinsangyo_kozo/pdf/016_06_00.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "資料7　栗山氏プレゼン資料（PDF形式：2,806KB）",
+          "url": "https://www.meti.go.jp/shingikai/sankoshin/shinsangyo_kozo/pdf/016_07_00.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "資料8　事務局資料（PDF形式：10,097KB）",
+          "url": "https://www.meti.go.jp/shingikai/sankoshin/shinsangyo_kozo/pdf/016_08_00.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "議事録（PDF形式：516KB）",
+          "url": "https://www.meti.go.jp/shingikai/sankoshin/shinsangyo_kozo/pdf/016_gijiroku.pdf",
+          "type": "PDF"
+        }
+      ],
+      "tags": [
+        "METI",
+        "新産業構造部会",
+        "産業構造審議会",
+        "政策会議",
+        "第4次産業革命"
+      ],
+      "officialUrl": "https://www.meti.go.jp/shingikai/sankoshin/shinsangyo_kozo/016.html",
+      "hasMinutes": true,
+      "manualLock": true
+    },
+    {
+      "id": "meti-shinsangyo_kozo-20170405-015",
+      "councilId": "meti-shinsangyo_kozo",
+      "councilName": "産業構造審議会 新産業構造部会",
+      "ministry": "METI",
+      "category": "COUNCIL",
+      "title": "第15回 産業構造審議会 新産業構造部会",
+      "date": "2017/04/05",
+      "summary": "産業構造審議会 新産業構造部会 第15回の開催。主要議題に関する審議及び資料の公開が行われた。",
+      "agenda": [
+        "審議会・研究会",
+        "産業構造審議会",
+        "第15回 産業構造審議会 新産業構造部会"
+      ],
+      "materials": [
+        {
+          "name": "資料1　議事次第（PDF形式：105KB）",
+          "url": "https://www.meti.go.jp/shingikai/sankoshin/shinsangyo_kozo/pdf/015_01_00.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "資料2　委員名簿（PDF形式：173KB）",
+          "url": "https://www.meti.go.jp/shingikai/sankoshin/shinsangyo_kozo/pdf/015_02_00.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "資料3　座席表（PDF形式：170KB）",
+          "url": "https://www.meti.go.jp/shingikai/sankoshin/shinsangyo_kozo/pdf/015_03_00.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "資料5　Society 5.0・Connected Industriesを支える「ルールの高度化」（PDF形式：3,998KB）",
+          "url": "https://www.meti.go.jp/shingikai/sankoshin/shinsangyo_kozo/pdf/015_05_00.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "議事録（PDF形式：553KB）",
+          "url": "https://www.meti.go.jp/shingikai/sankoshin/shinsangyo_kozo/pdf/015_gijiroku.pdf",
+          "type": "PDF"
+        }
+      ],
+      "tags": [
+        "METI",
+        "新産業構造部会",
+        "産業構造審議会",
+        "政策会議",
+        "第4次産業革命"
+      ],
+      "officialUrl": "https://www.meti.go.jp/shingikai/sankoshin/shinsangyo_kozo/015.html",
+      "hasMinutes": true,
+      "manualLock": true
+    },
+    {
+      "id": "meti-shinsangyo_kozo-20170314-014",
+      "councilId": "meti-shinsangyo_kozo",
+      "councilName": "産業構造審議会 新産業構造部会",
+      "ministry": "METI",
+      "category": "COUNCIL",
+      "title": "第14回 産業構造審議会 新産業構造部会",
+      "date": "2017/03/14",
+      "summary": "産業構造審議会 新産業構造部会 第14回の開催。主要議題に関する審議及び資料の公開が行われた。",
+      "agenda": [
+        "審議会・研究会",
+        "産業構造審議会",
+        "第14回 産業構造審議会 新産業構造部会"
+      ],
+      "materials": [
+        {
+          "name": "資料1　議事次第（PDF形式：103KB）",
+          "url": "https://www.meti.go.jp/shingikai/sankoshin/shinsangyo_kozo/pdf/014_01_00.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "資料2　委員名簿（PDF形式：170KB）",
+          "url": "https://www.meti.go.jp/shingikai/sankoshin/shinsangyo_kozo/pdf/014_02_00.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "資料3　座席表（PDF形式：174KB）",
+          "url": "https://www.meti.go.jp/shingikai/sankoshin/shinsangyo_kozo/pdf/014_03_00.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "資料4-1　社会保障パート（ディスカッションペーパー：抜粋版）（PDF形式：1,874KB）",
+          "url": "https://www.meti.go.jp/shingikai/sankoshin/shinsangyo_kozo/pdf/014_04_01.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "資料4-2　社会保障パート（ディスカッションペーパー：全体版）（PDF形式：3,253KB）",
+          "url": "https://www.meti.go.jp/shingikai/sankoshin/shinsangyo_kozo/pdf/014_04_02.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "資料5-1　イノベーションパート（討議資料）（PDF形式：2,376KB）",
+          "url": "https://www.meti.go.jp/shingikai/sankoshin/shinsangyo_kozo/pdf/014_05_01.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "資料5-2　イノベーションパート（参考資料集）（PDF形式：2,434KB）",
+          "url": "https://www.meti.go.jp/shingikai/sankoshin/shinsangyo_kozo/pdf/014_05_02.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "資料6　産総研 辻井氏資料（PDF形式：630KB）",
+          "url": "https://www.meti.go.jp/shingikai/sankoshin/shinsangyo_kozo/pdf/014_06_00.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "資料7　大阪大学 北岡氏資料（PDF形式：1,980KB）",
+          "url": "https://www.meti.go.jp/shingikai/sankoshin/shinsangyo_kozo/pdf/014_07_00.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "資料8　伊佐山委員資料（PDF形式：1,661KB）",
+          "url": "https://www.meti.go.jp/shingikai/sankoshin/shinsangyo_kozo/pdf/014_08_00.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "議事録（PDF形式：378KB）",
+          "url": "https://www.meti.go.jp/shingikai/sankoshin/shinsangyo_kozo/pdf/014_gijiroku.pdf",
+          "type": "PDF"
+        }
+      ],
+      "tags": [
+        "METI",
+        "新産業構造部会",
+        "産業構造審議会",
+        "政策会議",
+        "第4次産業革命"
+      ],
+      "officialUrl": "https://www.meti.go.jp/shingikai/sankoshin/shinsangyo_kozo/014.html",
+      "hasMinutes": true,
+      "manualLock": true
+    },
+    {
+      "id": "meti-shinsangyo_kozo-20170213-013",
+      "councilId": "meti-shinsangyo_kozo",
+      "councilName": "産業構造審議会 新産業構造部会",
+      "ministry": "METI",
+      "category": "COUNCIL",
+      "title": "第13回 産業構造審議会 新産業構造部会",
+      "date": "2017/02/13",
+      "summary": "産業構造審議会 新産業構造部会 第13回の開催。主要議題に関する審議及び資料の公開が行われた。",
+      "agenda": [
+        "審議会・研究会",
+        "産業構造審議会",
+        "第13回 産業構造審議会 新産業構造部会"
+      ],
+      "materials": [
+        {
+          "name": "資料1　議事次第（PDF形式：116KB）",
+          "url": "https://www.meti.go.jp/shingikai/sankoshin/shinsangyo_kozo/pdf/013_01_00.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "資料2　委員名簿（PDF形式：168KB）",
+          "url": "https://www.meti.go.jp/shingikai/sankoshin/shinsangyo_kozo/pdf/013_02_00.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "資料3　座席表（PDF形式：142KB）",
+          "url": "https://www.meti.go.jp/shingikai/sankoshin/shinsangyo_kozo/pdf/013_03_00.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "資料4　福原氏プレゼン資料（PDF形式：2,209KB）",
+          "url": "https://www.meti.go.jp/shingikai/sankoshin/shinsangyo_kozo/pdf/013_04_00.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "資料5　石戸委員プレゼン資料（PDF形式：1,720KB）",
+          "url": "https://www.meti.go.jp/shingikai/sankoshin/shinsangyo_kozo/pdf/013_05_00.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "資料6　安宅委員プレゼン資料（PDF形式：8,548KB）",
+          "url": "https://www.meti.go.jp/shingikai/sankoshin/shinsangyo_kozo/pdf/013_06_00.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "資料7　新産業構造部会　人材雇用パート（討議資料）（PDF形式：3,851KB）",
+          "url": "https://www.meti.go.jp/shingikai/sankoshin/shinsangyo_kozo/pdf/013_07_00.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "議事録（PDF形式：376KB）",
+          "url": "https://www.meti.go.jp/shingikai/sankoshin/shinsangyo_kozo/pdf/013_gijiroku.pdf",
+          "type": "PDF"
+        }
+      ],
+      "tags": [
+        "METI",
+        "新産業構造部会",
+        "産業構造審議会",
+        "政策会議",
+        "第4次産業革命"
+      ],
+      "officialUrl": "https://www.meti.go.jp/shingikai/sankoshin/shinsangyo_kozo/013.html",
+      "hasMinutes": true,
+      "manualLock": true
+    },
+    {
+      "id": "meti-shinsangyo_kozo-20161222-012",
+      "councilId": "meti-shinsangyo_kozo",
+      "councilName": "産業構造審議会 新産業構造部会",
+      "ministry": "METI",
+      "category": "COUNCIL",
+      "title": "第12回 産業構造審議会 新産業構造部会",
+      "date": "2016/12/22",
+      "summary": "産業構造審議会 新産業構造部会 第12回の開催。新産業構造ビジョンの策定に向けた審議及び各種配布資料・議事録の公開。",
+      "agenda": [
+        "新産業構造の創出・推進に向けた施策の検討について",
+        "第4次産業革命への対応及び今後の推進方針"
+      ],
+      "materials": [
+        {
+          "name": "資料1　議事次第（PDF形式：118KB）",
+          "url": "https://www.meti.go.jp/shingikai/sankoshin/shinsangyo_kozo/pdf/012_01_00.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "資料2　委員名簿（PDF形式：167KB）",
+          "url": "https://www.meti.go.jp/shingikai/sankoshin/shinsangyo_kozo/pdf/012_02_00.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "資料3　座席表（PDF形式：174KB）",
+          "url": "https://www.meti.go.jp/shingikai/sankoshin/shinsangyo_kozo/pdf/012_03_00.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "資料4　プレゼン資料(1)（PDF形式：4,153KB）",
+          "url": "https://www.meti.go.jp/shingikai/sankoshin/shinsangyo_kozo/pdf/012_04_00.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "資料5　プレゼン資料(2)（PDF形式：2,367KB）",
+          "url": "https://www.meti.go.jp/shingikai/sankoshin/shinsangyo_kozo/pdf/012_05_00.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "資料6-1　戦略分野(4)「スマートに暮らす」（討議資料）【抜粋版】（PDF形式：3,093KB）",
+          "url": "https://www.meti.go.jp/shingikai/sankoshin/shinsangyo_kozo/pdf/012_06_01.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "資料6-2　戦略分野(4)「スマートに暮らす」（討議資料）【全体版】（PDF形式：6,682KB）",
+          "url": "https://www.meti.go.jp/shingikai/sankoshin/shinsangyo_kozo/pdf/012_06_02.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "参考資料　安宅委員提出資料（PDF形式：1,791KB）",
+          "url": "https://www.meti.go.jp/shingikai/sankoshin/shinsangyo_kozo/pdf/012_s01_00.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "議事録（PDF形式：447KB）",
+          "url": "https://www.meti.go.jp/shingikai/sankoshin/shinsangyo_kozo/pdf/012_gijiroku.pdf",
+          "type": "PDF"
+        }
+      ],
+      "tags": [
+        "METI",
+        "新産業構造部会",
+        "産業構造審議会",
+        "政策会議",
+        "第4次産業革命"
+      ],
+      "officialUrl": "https://www.meti.go.jp/shingikai/sankoshin/shinsangyo_kozo/012.html",
+      "hasMinutes": true,
+      "manualLock": true
+    },
+    {
+      "id": "meti-shinsangyo_kozo-20161128-011",
+      "councilId": "meti-shinsangyo_kozo",
+      "councilName": "産業構造審議会 新産業構造部会",
+      "ministry": "METI",
+      "category": "COUNCIL",
+      "title": "第11回 産業構造審議会 新産業構造部会",
+      "date": "2016/11/28",
+      "summary": "産業構造審議会 新産業構造部会 第11回の開催。主要議題に関する審議及び資料の公開が行われた。",
+      "agenda": [
+        "審議会・研究会",
+        "産業構造審議会",
+        "第11回 産業構造審議会 新産業構造部会",
+        "資料7　戦略分野(3)「スマートに生み出す・手に入れる」（討議資料）（PDF形式：3,491KB）"
+      ],
+      "materials": [
+        {
+          "name": "資料1　議事次第（PDF形式：110KB）",
+          "url": "https://www.meti.go.jp/shingikai/sankoshin/shinsangyo_kozo/pdf/011_01_00.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "資料2　委員名簿（PDF形式：140KB）",
+          "url": "https://www.meti.go.jp/shingikai/sankoshin/shinsangyo_kozo/pdf/011_02_00.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "資料3　座席表（PDF形式：151KB）",
+          "url": "https://www.meti.go.jp/shingikai/sankoshin/shinsangyo_kozo/pdf/011_03_00.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "資料5　プレゼン資料(2)（PDF形式：1,620KB）",
+          "url": "https://www.meti.go.jp/shingikai/sankoshin/shinsangyo_kozo/pdf/011_05_00.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "資料6　プレゼン資料(3)（PDF形式：23,523KB）",
+          "url": "https://www.meti.go.jp/shingikai/sankoshin/shinsangyo_kozo/pdf/011_06_00.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "資料7　戦略分野(3)「スマートに生み出す・手に入れる」（討議資料）（PDF形式：3,491KB）",
+          "url": "https://www.meti.go.jp/shingikai/sankoshin/shinsangyo_kozo/pdf/011_07_00.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "参考資料　松尾委員プレゼン資料（PDF形式：2,274KB）",
+          "url": "https://www.meti.go.jp/shingikai/sankoshin/shinsangyo_kozo/pdf/011_s01_00.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "議事録（PDF形式：477KB）",
+          "url": "https://www.meti.go.jp/shingikai/sankoshin/shinsangyo_kozo/pdf/011_gijiroku.pdf",
+          "type": "PDF"
+        }
+      ],
+      "tags": [
+        "METI",
+        "新産業構造部会",
+        "産業構造審議会",
+        "政策会議",
+        "第4次産業革命"
+      ],
+      "officialUrl": "https://www.meti.go.jp/shingikai/sankoshin/shinsangyo_kozo/011.html",
+      "hasMinutes": true,
+      "manualLock": true
+    },
+    {
+      "id": "meti-shinsangyo_kozo-20161102-010",
+      "councilId": "meti-shinsangyo_kozo",
+      "councilName": "産業構造審議会 新産業構造部会",
+      "ministry": "METI",
+      "category": "COUNCIL",
+      "title": "第10回 産業構造審議会 新産業構造部会",
+      "date": "2016/11/02",
+      "summary": "産業構造審議会 新産業構造部会 第10回の開催。新産業構造ビジョンの策定に向けた審議及び各種配布資料・議事録の公開。",
+      "agenda": [
+        "新産業構造の創出・推進に向けた施策の検討について",
+        "第4次産業革命への対応及び今後の推進方針"
+      ],
+      "materials": [
+        {
+          "name": "資料1　議事次第（PDF形式：102KB）",
+          "url": "https://www.meti.go.jp/shingikai/sankoshin/shinsangyo_kozo/pdf/010_01_00.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "資料2　委員名簿（PDF形式：184KB）",
+          "url": "https://www.meti.go.jp/shingikai/sankoshin/shinsangyo_kozo/pdf/010_02_00.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "資料3　座席表（PDF形式：167KB）",
+          "url": "https://www.meti.go.jp/shingikai/sankoshin/shinsangyo_kozo/pdf/010_03_00.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "資料4　プレゼン資料（1）（PDF形式：1,232KB）",
+          "url": "https://www.meti.go.jp/shingikai/sankoshin/shinsangyo_kozo/pdf/010_04_00.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "資料5　プレゼン資料（2）（PDF形式：867KB）",
+          "url": "https://www.meti.go.jp/shingikai/sankoshin/shinsangyo_kozo/pdf/010_05_00.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "資料6　プレゼン資料（3）（PDF形式：366KB）",
+          "url": "https://www.meti.go.jp/shingikai/sankoshin/shinsangyo_kozo/pdf/010_06_00.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "資料7　戦略分野（2）「健康を維持する・生涯活躍する」（討議資料）（PDF形式：3,803KB）",
+          "url": "https://www.meti.go.jp/shingikai/sankoshin/shinsangyo_kozo/pdf/010_07_00.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "参考資料　高橋委員提出資料（PDF形式：463KB）",
+          "url": "https://www.meti.go.jp/shingikai/sankoshin/shinsangyo_kozo/pdf/010_s01_00.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "議事録（PDF形式：470KB）",
+          "url": "https://www.meti.go.jp/shingikai/sankoshin/shinsangyo_kozo/pdf/010_gijiroku.pdf",
+          "type": "PDF"
+        }
+      ],
+      "tags": [
+        "METI",
+        "新産業構造部会",
+        "産業構造審議会",
+        "政策会議",
+        "第4次産業革命"
+      ],
+      "officialUrl": "https://www.meti.go.jp/shingikai/sankoshin/shinsangyo_kozo/010.html",
+      "hasMinutes": true,
+      "manualLock": true
+    },
+    {
+      "id": "meti-shinsangyo_kozo-20160913-009",
+      "councilId": "meti-shinsangyo_kozo",
+      "councilName": "産業構造審議会 新産業構造部会",
+      "ministry": "METI",
+      "category": "COUNCIL",
+      "title": "第9回 産業構造審議会 新産業構造部会",
+      "date": "2016/09/13",
+      "summary": "産業構造審議会 新産業構造部会 第9回の開催。新産業構造ビジョンの策定に向けた審議及び各種配布資料・議事録の公開。",
+      "agenda": [
+        "新産業構造の創出・推進に向けた施策の検討について",
+        "第4次産業革命への対応及び今後の推進方針"
+      ],
+      "materials": [
+        {
+          "name": "資料1　議事次第（PDF形式：177KB）",
+          "url": "https://www.meti.go.jp/shingikai/sankoshin/shinsangyo_kozo/pdf/009_01_00.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "資料2　委員名簿（PDF形式：181KB）",
+          "url": "https://www.meti.go.jp/shingikai/sankoshin/shinsangyo_kozo/pdf/009_02_00.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "資料3　座席表（PDF形式：217KB）",
+          "url": "https://www.meti.go.jp/shingikai/sankoshin/shinsangyo_kozo/pdf/009_03_00.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "資料4　「新産業構造ビジョン」の今後の検討事項（案）（PDF形式：604KB）",
+          "url": "https://www.meti.go.jp/shingikai/sankoshin/shinsangyo_kozo/pdf/009_04_00.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "資料5　プレゼンテーション(1)「人の移動」（自動走行等）（PDF形式：7,722KB）",
+          "url": "https://www.meti.go.jp/shingikai/sankoshin/shinsangyo_kozo/pdf/009_05_00.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "資料6　プレゼンテーション(2)「物の移動」（ドローン等）（PDF形式：2,597KB）",
+          "url": "https://www.meti.go.jp/shingikai/sankoshin/shinsangyo_kozo/pdf/009_06_00.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "資料7　戦略分野(1)「安全に移動する」（討議資料）（PDF形式：3,208KB）",
+          "url": "https://www.meti.go.jp/shingikai/sankoshin/shinsangyo_kozo/pdf/009_07_00.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "参考資料　自動運転の今後についての提案（高橋政代委員ご提出資料）（PDF形式：502KB）",
+          "url": "https://www.meti.go.jp/shingikai/sankoshin/shinsangyo_kozo/pdf/009_08_00.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "議事録（PDF形式：449KB）",
+          "url": "https://www.meti.go.jp/shingikai/sankoshin/shinsangyo_kozo/pdf/009_gijiroku.pdf",
+          "type": "PDF"
+        }
+      ],
+      "tags": [
+        "METI",
+        "新産業構造部会",
+        "産業構造審議会",
+        "政策会議",
+        "第4次産業革命"
+      ],
+      "officialUrl": "https://www.meti.go.jp/shingikai/sankoshin/shinsangyo_kozo/009.html",
+      "hasMinutes": true,
+      "manualLock": true
+    },
+    {
+      "id": "meti-shinsangyo_kozo-20160714-s01",
+      "councilId": "meti-shinsangyo_kozo",
+      "councilName": "産業構造審議会 新産業構造部会",
+      "ministry": "METI",
+      "category": "COUNCIL",
+      "title": "フォローアップ会議 産業構造審議会 新産業構造部会",
+      "date": "2016/07/14",
+      "summary": "産業構造審議会 新産業構造部会 フォローアップ会議の開催。新産業構造ビジョンの策定に向けた審議及び各種配布資料・議事録の公開。",
+      "agenda": [
+        "新産業構造の創出・推進に向けた施策の検討について",
+        "第4次産業革命への対応及び今後の推進方針"
+      ],
+      "materials": [
+        {
+          "name": "資料1　議事次第（PDF形式：172KB）",
+          "url": "https://www.meti.go.jp/shingikai/sankoshin/shinsangyo_kozo/pdf/f001_01_00.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "資料2　委員名簿（PDF形式：183KB）",
+          "url": "https://www.meti.go.jp/shingikai/sankoshin/shinsangyo_kozo/pdf/f001_02_00.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "資料3　座席表（PDF形式：133KB）",
+          "url": "https://www.meti.go.jp/shingikai/sankoshin/shinsangyo_kozo/pdf/f001_03_00.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "講演資料1　ギル・プラット氏（PDF形式：546KB）",
+          "url": "https://www.meti.go.jp/shingikai/sankoshin/shinsangyo_kozo/pdf/f001_s01_00.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "講演資料2　ヴィージェイ・クマール氏（PDF形式：1,835KB）",
+          "url": "https://www.meti.go.jp/shingikai/sankoshin/shinsangyo_kozo/pdf/f001_s02_00.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "講演資料3　ダニエラ・ラス氏（PDF形式：1,444KB）",
+          "url": "https://www.meti.go.jp/shingikai/sankoshin/shinsangyo_kozo/pdf/f001_s03_00.pdf",
+          "type": "PDF"
+        }
+      ],
+      "tags": [
+        "METI",
+        "新産業構造部会",
+        "産業構造審議会",
+        "政策会議",
+        "第4次産業革命"
+      ],
+      "officialUrl": "https://www.meti.go.jp/shingikai/sankoshin/shinsangyo_kozo/follow_up.html",
+      "hasMinutes": false,
+      "manualLock": true
+    },
+    {
+      "id": "meti-shinsangyo_kozo-20160427-008",
+      "councilId": "meti-shinsangyo_kozo",
+      "councilName": "産業構造審議会 新産業構造部会",
+      "ministry": "METI",
+      "category": "COUNCIL",
+      "title": "第8回（中間整理） 産業構造審議会 新産業構造部会",
+      "date": "2016/04/27",
+      "summary": "産業構造審議会 新産業構造部会 第8回（中間整理）の開催。新産業構造ビジョンの策定に向けた審議及び各種配布資料・議事録の公開。",
+      "agenda": [
+        "新産業構造の創出・推進に向けた施策の検討について",
+        "第4次産業革命への対応及び今後の推進方針"
+      ],
+      "materials": [
+        {
+          "name": "資料1　議事次第（PDF形式：163KB）",
+          "url": "https://www.meti.go.jp/shingikai/sankoshin/shinsangyo_kozo/pdf/008_01_00.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "資料2　委員名簿（PDF形式：183KB）",
+          "url": "https://www.meti.go.jp/shingikai/sankoshin/shinsangyo_kozo/pdf/008_02_00.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "資料3　座席表（PDF形式：128KB）",
+          "url": "https://www.meti.go.jp/shingikai/sankoshin/shinsangyo_kozo/pdf/008_03_00.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "資料4　新産業構造ビジョン 中間整理（PDF形式：4,579KB）",
+          "url": "https://www.meti.go.jp/shingikai/sankoshin/shinsangyo_kozo/pdf/008_04_00.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "資料5-1　「新産業構造ビジョン」～第4次産業革命をリードする日本の戦略～産業構造審議会 中間整理（PDF形式：6,387KB）",
+          "url": "https://www.meti.go.jp/shingikai/sankoshin/shinsangyo_kozo/pdf/008_05_01.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "資料5-2　国内の先進事例（PDF形式：4,481KB）",
+          "url": "https://www.meti.go.jp/shingikai/sankoshin/shinsangyo_kozo/pdf/008_05_02.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "議事録（PDF形式：395KB）",
+          "url": "https://www.meti.go.jp/shingikai/sankoshin/shinsangyo_kozo/pdf/008_gijiroku.pdf",
+          "type": "PDF"
+        }
+      ],
+      "tags": [
+        "METI",
+        "新産業構造部会",
+        "産業構造審議会",
+        "政策会議",
+        "第4次産業革命"
+      ],
+      "officialUrl": "https://www.meti.go.jp/shingikai/sankoshin/shinsangyo_kozo/008.html",
+      "hasMinutes": true,
+      "manualLock": true
+    },
+    {
+      "id": "meti-shinsangyo_kozo-20160329-007",
+      "councilId": "meti-shinsangyo_kozo",
+      "councilName": "産業構造審議会 新産業構造部会",
+      "ministry": "METI",
+      "category": "COUNCIL",
+      "title": "第7回 産業構造審議会 新産業構造部会",
+      "date": "2016/03/29",
+      "summary": "産業構造審議会 新産業構造部会 第7回の開催。新産業構造ビジョンの策定に向けた審議及び各種配布資料・議事録の公開。",
+      "agenda": [
+        "新産業構造の創出・推進に向けた施策の検討について",
+        "第4次産業革命への対応及び今後の推進方針"
+      ],
+      "materials": [
+        {
+          "name": "資料1　議事次第（PDF形式：179KB）",
+          "url": "https://www.meti.go.jp/shingikai/sankoshin/shinsangyo_kozo/pdf/007_01_00.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "資料2　委員名簿（PDF形式：229KB）",
+          "url": "https://www.meti.go.jp/shingikai/sankoshin/shinsangyo_kozo/pdf/007_02_00.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "資料3　座席表（PDF形式：130KB）",
+          "url": "https://www.meti.go.jp/shingikai/sankoshin/shinsangyo_kozo/pdf/007_03_00.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "資料4-1　データの利活用等に関する制度・ルールについて（PDF形式：4,692KB）",
+          "url": "https://www.meti.go.jp/shingikai/sankoshin/shinsangyo_kozo/pdf/007_04_01.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "資料4-2　今後のサイバーセキュリティ政策について（PDF形式：1,062KB）",
+          "url": "https://www.meti.go.jp/shingikai/sankoshin/shinsangyo_kozo/pdf/007_04_02.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "資料4-3　第4次産業革命における変革の経路（樹形図・ロードマップ）の検討（案）（PDF形式：886KB）",
+          "url": "https://www.meti.go.jp/shingikai/sankoshin/shinsangyo_kozo/pdf/007_04_03.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "資料4-4　第4次産業革命に対応した規制改革について（PDF形式：1,094KB）",
+          "url": "https://www.meti.go.jp/shingikai/sankoshin/shinsangyo_kozo/pdf/007_04_04.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "資料4-5　産業構造の円滑な転換について（新陳代謝の促進）（PDF形式：2,489KB）",
+          "url": "https://www.meti.go.jp/shingikai/sankoshin/shinsangyo_kozo/pdf/007_04_05.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "資料4-6　第4次産業革命への対応の方向性 領域横断型の検討課題：行政サービス分野（PDF形式：3,865KB）",
+          "url": "https://www.meti.go.jp/shingikai/sankoshin/shinsangyo_kozo/pdf/007_04_06.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "資料5　意見書（PDF形式：137KB）",
+          "url": "https://www.meti.go.jp/shingikai/sankoshin/shinsangyo_kozo/pdf/007_05_00.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "議事録（PDF形式：430KB）",
+          "url": "https://www.meti.go.jp/shingikai/sankoshin/shinsangyo_kozo/pdf/007_gijiroku.pdf",
+          "type": "PDF"
+        }
+      ],
+      "tags": [
+        "METI",
+        "新産業構造部会",
+        "産業構造審議会",
+        "政策会議",
+        "第4次産業革命"
+      ],
+      "officialUrl": "https://www.meti.go.jp/shingikai/sankoshin/shinsangyo_kozo/007.html",
+      "hasMinutes": true,
+      "manualLock": true
+    },
+    {
+      "id": "meti-shinsangyo_kozo-20160229-006",
+      "councilId": "meti-shinsangyo_kozo",
+      "councilName": "産業構造審議会 新産業構造部会",
+      "ministry": "METI",
+      "category": "COUNCIL",
+      "title": "第6回 産業構造審議会 新産業構造部会",
+      "date": "2016/02/29",
+      "summary": "産業構造審議会 新産業構造部会 第6回の開催。新産業構造ビジョンの策定に向けた審議及び各種配布資料・議事録の公開。",
+      "agenda": [
+        "新産業構造の創出・推進に向けた施策の検討について",
+        "第4次産業革命への対応及び今後の推進方針"
+      ],
+      "materials": [
+        {
+          "name": "資料1　議事次第（PDF形式：164KB）",
+          "url": "https://www.meti.go.jp/shingikai/sankoshin/shinsangyo_kozo/pdf/006_01_00.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "資料2　委員名簿（PDF形式：229KB）",
+          "url": "https://www.meti.go.jp/shingikai/sankoshin/shinsangyo_kozo/pdf/006_02_00.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "資料3　座席表（PDF形式：290KB）",
+          "url": "https://www.meti.go.jp/shingikai/sankoshin/shinsangyo_kozo/pdf/006_03_00.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "資料4-1　第4次産業革命への対応の方向性　領域横断型の検討課題（PDF形式：5,786KB）",
+          "url": "https://www.meti.go.jp/shingikai/sankoshin/shinsangyo_kozo/pdf/006_04_01.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "資料4-2　第4次産業革命への対応の方向性　横串課題についての議論（PDF形式：2,027KB）",
+          "url": "https://www.meti.go.jp/shingikai/sankoshin/shinsangyo_kozo/pdf/006_04_02.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "資料4-3　我が国と世界の構造変化と第4次産業革命による変革の方向性（PDF形式：1,855KB）",
+          "url": "https://www.meti.go.jp/shingikai/sankoshin/shinsangyo_kozo/pdf/006_04_03.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "資料4-4　産業構造の将来像の検討について（PDF形式：1,238KB）",
+          "url": "https://www.meti.go.jp/shingikai/sankoshin/shinsangyo_kozo/pdf/006_04_04.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "岡島氏プレゼン資料（PDF形式：1,184KB）",
+          "url": "https://www.meti.go.jp/shingikai/sankoshin/shinsangyo_kozo/pdf/006_s02_00.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "志賀委員プレゼン資料（PDF形式：1,079KB）",
+          "url": "https://www.meti.go.jp/shingikai/sankoshin/shinsangyo_kozo/pdf/006_s01_00.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "議事録（PDF形式：425KB）",
+          "url": "https://www.meti.go.jp/shingikai/sankoshin/shinsangyo_kozo/pdf/006_gijiroku.pdf",
+          "type": "PDF"
+        }
+      ],
+      "tags": [
+        "METI",
+        "新産業構造部会",
+        "産業構造審議会",
+        "政策会議",
+        "第4次産業革命"
+      ],
+      "officialUrl": "https://www.meti.go.jp/shingikai/sankoshin/shinsangyo_kozo/006.html",
+      "hasMinutes": true,
+      "manualLock": true
+    },
+    {
+      "id": "meti-shinsangyo_kozo-20160125-005",
+      "councilId": "meti-shinsangyo_kozo",
+      "councilName": "産業構造審議会 新産業構造部会",
+      "ministry": "METI",
+      "category": "COUNCIL",
+      "title": "第5回 産業構造審議会 新産業構造部会",
+      "date": "2016/01/25",
+      "summary": "産業構造審議会 新産業構造部会 第5回の開催。新産業構造ビジョンの策定に向けた審議及び各種配布資料・議事録の公開。",
+      "agenda": [
+        "新産業構造の創出・推進に向けた施策の検討について",
+        "第4次産業革命への対応及び今後の推進方針"
+      ],
+      "materials": [
+        {
+          "name": "資料1　議事次第（PDF形式：166KB）",
+          "url": "https://www.meti.go.jp/shingikai/sankoshin/shinsangyo_kozo/pdf/005_01_00.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "資料2　委員名簿（PDF形式：229KB）",
+          "url": "https://www.meti.go.jp/shingikai/sankoshin/shinsangyo_kozo/pdf/005_02_00.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "資料3　座席表（PDF形式：308KB）",
+          "url": "https://www.meti.go.jp/shingikai/sankoshin/shinsangyo_kozo/pdf/005_03_00.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "資料4-1　本日の議論の枠組み（PDF形式：325KB）",
+          "url": "https://www.meti.go.jp/shingikai/sankoshin/shinsangyo_kozo/pdf/005_04_01.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "資料4-2　第4次産業革命への対応の方向性（PDF形式：6,241KB）",
+          "url": "https://www.meti.go.jp/shingikai/sankoshin/shinsangyo_kozo/pdf/005_04_02.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "資料4-3　第4次産業革命への対応の方向性（PDF形式：9,827KB）",
+          "url": "https://www.meti.go.jp/shingikai/sankoshin/shinsangyo_kozo/pdf/005_04_03.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "参考資料　「第4次産業革命」がもたらす産業構造の変革と対応の方向性について（日本労働組合総連合会）（PDF形式：539KB）",
+          "url": "https://www.meti.go.jp/shingikai/sankoshin/shinsangyo_kozo/pdf/005_s01_00.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "参考資料　これから求められる人材について（安宅氏）（PDF形式：1,381KB）",
+          "url": "https://www.meti.go.jp/shingikai/sankoshin/shinsangyo_kozo/pdf/005_s02_00.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "参考資料　プログラミング教育への取り組みについて（南場委員）（PDF形式：1,147KB）",
+          "url": "https://www.meti.go.jp/shingikai/sankoshin/shinsangyo_kozo/pdf/005_s03_00.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "議事録（PDF形式：445KB）",
+          "url": "https://www.meti.go.jp/shingikai/sankoshin/shinsangyo_kozo/pdf/005_gijiroku.pdf",
+          "type": "PDF"
+        }
+      ],
+      "tags": [
+        "METI",
+        "新産業構造部会",
+        "産業構造審議会",
+        "政策会議",
+        "第4次産業革命"
+      ],
+      "officialUrl": "https://www.meti.go.jp/shingikai/sankoshin/shinsangyo_kozo/005.html",
+      "hasMinutes": true,
+      "manualLock": true
+    },
+    {
+      "id": "meti-shinsangyo_kozo-20151214-004",
+      "councilId": "meti-shinsangyo_kozo",
+      "councilName": "産業構造審議会 新産業構造部会",
+      "ministry": "METI",
+      "category": "COUNCIL",
+      "title": "第4回 産業構造審議会 新産業構造部会",
+      "date": "2015/12/14",
+      "summary": "産業構造審議会 新産業構造部会 第4回の開催。新産業構造ビジョンの策定に向けた審議及び各種配布資料・議事録の公開。",
+      "agenda": [
+        "新産業構造の創出・推進に向けた施策の検討について",
+        "第4次産業革命への対応及び今後の推進方針"
+      ],
+      "materials": [
+        {
+          "name": "【事務局座席表】第4回新産業構造部会（PDF形式：201KB）",
+          "url": "https://www.meti.go.jp/shingikai/sankoshin/shinsangyo_kozo/pdf/004_01_01.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "資料1　議事次第（PDF形式：175KB）",
+          "url": "https://www.meti.go.jp/shingikai/sankoshin/shinsangyo_kozo/pdf/004_01_00.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "資料2　委員名簿（PDF形式：229KB）",
+          "url": "https://www.meti.go.jp/shingikai/sankoshin/shinsangyo_kozo/pdf/004_02_00.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "資料3　座席表（PDF形式：219KB）",
+          "url": "https://www.meti.go.jp/shingikai/sankoshin/shinsangyo_kozo/pdf/004_03_00.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "資料4-1　事務局資料（PDF形式：5,560KB）",
+          "url": "https://www.meti.go.jp/shingikai/sankoshin/shinsangyo_kozo/pdf/004_04_01.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "資料4-2　事務局資料（PDF形式：2,671KB）",
+          "url": "https://www.meti.go.jp/shingikai/sankoshin/shinsangyo_kozo/pdf/004_04_02.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "資料5　製造業とディープラーニング（PDF形式：1,202KB）",
+          "url": "https://www.meti.go.jp/shingikai/sankoshin/shinsangyo_kozo/pdf/004_05_00.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "議事録（PDF形式：438KB）",
+          "url": "https://www.meti.go.jp/shingikai/sankoshin/shinsangyo_kozo/pdf/004_gijiroku.pdf",
+          "type": "PDF"
+        }
+      ],
+      "tags": [
+        "METI",
+        "新産業構造部会",
+        "産業構造審議会",
+        "政策会議",
+        "第4次産業革命"
+      ],
+      "officialUrl": "https://www.meti.go.jp/shingikai/sankoshin/shinsangyo_kozo/004.html",
+      "hasMinutes": true,
+      "manualLock": true
+    },
+    {
+      "id": "meti-shinsangyo_kozo-20151127-003",
+      "councilId": "meti-shinsangyo_kozo",
+      "councilName": "産業構造審議会 新産業構造部会",
+      "ministry": "METI",
+      "category": "COUNCIL",
+      "title": "第3回 産業構造審議会 新産業構造部会",
+      "date": "2015/11/27",
+      "summary": "産業構造審議会 新産業構造部会 第3回の開催。新産業構造ビジョンの策定に向けた審議及び各種配布資料・議事録の公開。",
+      "agenda": [
+        "新産業構造の創出・推進に向けた施策の検討について",
+        "第4次産業革命への対応及び今後の推進方針"
+      ],
+      "materials": [
+        {
+          "name": "資料1　議事次第（PDF形式：168KB）",
+          "url": "https://www.meti.go.jp/shingikai/sankoshin/shinsangyo_kozo/pdf/003_01_00.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "資料2　委員名簿（PDF形式：229KB）",
+          "url": "https://www.meti.go.jp/shingikai/sankoshin/shinsangyo_kozo/pdf/003_02_00.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "討議用資料　デジタル競争時代における産業転換（PDF形式：2,016KB）",
+          "url": "https://www.meti.go.jp/shingikai/sankoshin/shinsangyo_kozo/pdf/003_04_00.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "事務局資料（PDF形式：7,629KB）",
+          "url": "https://www.meti.go.jp/shingikai/sankoshin/shinsangyo_kozo/pdf/003_05_00.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "議事録（PDF形式：437KB）",
+          "url": "https://www.meti.go.jp/shingikai/sankoshin/shinsangyo_kozo/pdf/003_gijiroku.pdf",
+          "type": "PDF"
+        }
+      ],
+      "tags": [
+        "METI",
+        "新産業構造部会",
+        "産業構造審議会",
+        "政策会議",
+        "第4次産業革命"
+      ],
+      "officialUrl": "https://www.meti.go.jp/shingikai/sankoshin/shinsangyo_kozo/003.html",
+      "hasMinutes": true,
+      "manualLock": true
+    },
+    {
+      "id": "meti-shinsangyo_kozo-20151028-002",
+      "councilId": "meti-shinsangyo_kozo",
+      "councilName": "産業構造審議会 新産業構造部会",
+      "ministry": "METI",
+      "category": "COUNCIL",
+      "title": "第2回 産業構造審議会 新産業構造部会",
+      "date": "2015/10/28",
+      "summary": "産業構造審議会 新産業構造部会 第2回の開催。新産業構造ビジョンの策定に向けた審議及び各種配布資料・議事録の公開。",
+      "agenda": [
+        "新産業構造の創出・推進に向けた施策の検討について",
+        "第4次産業革命への対応及び今後の推進方針"
+      ],
+      "materials": [
+        {
+          "name": "資料1　議事次第（PDF形式：173KB）",
+          "url": "https://www.meti.go.jp/shingikai/sankoshin/shinsangyo_kozo/pdf/002_01_00.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "資料2　委員名簿（PDF形式：229KB）",
+          "url": "https://www.meti.go.jp/shingikai/sankoshin/shinsangyo_kozo/pdf/002_02_00.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "資料3　座席表（PDF形式：129KB）",
+          "url": "https://www.meti.go.jp/shingikai/sankoshin/shinsangyo_kozo/pdf/002_03_00.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "資料4　海外企業の最新動向（PDF形式：3,182KB）",
+          "url": "https://www.meti.go.jp/shingikai/sankoshin/shinsangyo_kozo/pdf/002_04_00.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "資料5　松尾委員プレゼンテーション資料（PDF形式：1,752KB）",
+          "url": "https://www.meti.go.jp/shingikai/sankoshin/shinsangyo_kozo/pdf/002_05_00.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "資料6　安宅氏プレゼンテーション資料（PDF形式：66,646KB）",
+          "url": "https://www.meti.go.jp/shingikai/sankoshin/shinsangyo_kozo/pdf/002_06_00.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "議事録（PDF形式：443KB）",
+          "url": "https://www.meti.go.jp/shingikai/sankoshin/shinsangyo_kozo/pdf/002_gijiroku.pdf",
+          "type": "PDF"
+        }
+      ],
+      "tags": [
+        "METI",
+        "新産業構造部会",
+        "産業構造審議会",
+        "政策会議",
+        "第4次産業革命"
+      ],
+      "officialUrl": "https://www.meti.go.jp/shingikai/sankoshin/shinsangyo_kozo/002.html",
+      "hasMinutes": true,
+      "manualLock": true
+    },
+    {
+      "id": "meti-shinsangyo_kozo-20150917-001",
+      "councilId": "meti-shinsangyo_kozo",
+      "councilName": "産業構造審議会 新産業構造部会",
+      "ministry": "METI",
+      "category": "COUNCIL",
+      "title": "第1回 産業構造審議会 新産業構造部会",
+      "date": "2015/09/17",
+      "summary": "産業構造審議会 新産業構造部会 第1回の開催。新産業構造ビジョンの策定に向けた審議及び各種配布資料・議事録の公開。",
+      "agenda": [
+        "新産業構造の創出・推進に向けた施策の検討について",
+        "第4次産業革命への対応及び今後の推進方針"
+      ],
+      "materials": [
+        {
+          "name": "資料1　議事次第（PDF形式：161KB）",
+          "url": "https://www.meti.go.jp/shingikai/sankoshin/shinsangyo_kozo/pdf/001_01_00.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "資料2　新産業構造部会の設置について（PDF形式：179KB）",
+          "url": "https://www.meti.go.jp/shingikai/sankoshin/shinsangyo_kozo/pdf/001_02_00.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "資料3　委員名簿（PDF形式：229KB）",
+          "url": "https://www.meti.go.jp/shingikai/sankoshin/shinsangyo_kozo/pdf/001_03_00.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "資料4　座席表（PDF形式：129KB）",
+          "url": "https://www.meti.go.jp/shingikai/sankoshin/shinsangyo_kozo/pdf/001_04_00.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "資料5　議事の公開について（PDF形式：152KB）",
+          "url": "https://www.meti.go.jp/shingikai/sankoshin/shinsangyo_kozo/pdf/001_05_00.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "資料6　新産業構造部会の検討の背景とミッション（第1回新産業構造部会 事務局説明資料）（PDF形式：2,974KB）",
+          "url": "https://www.meti.go.jp/shingikai/sankoshin/shinsangyo_kozo/pdf/001_06_00.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "議事要旨（PDF形式：496KB）",
+          "url": "https://www.meti.go.jp/shingikai/sankoshin/shinsangyo_kozo/pdf/001_gijiyoshi.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "議事録（PDF形式：350KB）",
+          "url": "https://www.meti.go.jp/shingikai/sankoshin/shinsangyo_kozo/pdf/001_gijiroku.pdf",
+          "type": "PDF"
+        }
+      ],
+      "tags": [
+        "METI",
+        "新産業構造部会",
+        "産業構造審議会",
+        "政策会議",
+        "第4次産業革命"
+      ],
+      "officialUrl": "https://www.meti.go.jp/shingikai/sankoshin/shinsangyo_kozo/001.html",
+      "hasMinutes": true,
+      "manualLock": true
     }
   ],
   "categories": {
@@ -205914,6 +207138,14 @@
       "pdf_selector": "a[href*='.pdf'], a[href*='pdf']",
       "deep_crawl_enabled": true,
       "manualLock": true
+    },
+    "meti-shinsangyo_kozo": {
+      "official_url": "https://www.meti.go.jp/shingikai/sankoshin/shinsangyo_kozo/index.html",
+      "deep_crawl_enabled": false,
+      "is_active": false,
+      "subpage_discovery_pattern": "/shingikai/sankoshin/shinsangyo_kozo/(\\d{3}|follow_up)\\.html",
+      "date_regex": "(\\d{4})年(\\d{1,2})月(\\d{1,2})日",
+      "pdf_selector": "ul.lnkLst a[href$='.pdf']"
     }
   },
   "discoveryKeywords": {
