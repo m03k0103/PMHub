@@ -411,9 +411,8 @@ document.addEventListener('DOMContentLoaded', async () => {
       activePanel.classList.add('active');
     }
 
-    if (tabName === 'analytics' && !state.chartsInitialized) {
+    if (tabName === 'analytics') {
       renderCharts();
-      state.chartsInitialized = true;
     }
 
     window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -1120,75 +1119,257 @@ document.addEventListener('DOMContentLoaded', async () => {
   }
 
   // --- ANALYTICS CHARTS (CHART.JS) ---
+  let ministryChartInstance = null;
+  let timelineChartInstance = null;
+
   function renderCharts() {
     if (typeof Chart === 'undefined') return;
+    renderMinistryChart();
+    initTimelineFiscalYearSelect();
+    renderTimelineChart();
+    state.chartsInitialized = true;
+  }
 
-    // 1. Ministry Meetings Bar Chart
-    const ministryCounts = {};
-    Object.keys(MINISTRIES).forEach(k => ministryCounts[k] = 0);
-    MEETINGS.forEach(m => {
-      if (ministryCounts[m.ministry] !== undefined) {
-        ministryCounts[m.ministry]++;
-      }
-    });
+  window.setMinistryChartMetric = function(metric) {
+    state.analyticsMetric = metric;
+    // Update button active state
+    const btnGroup = document.getElementById('ministryMetricBtnGroup');
+    if (btnGroup) {
+      btnGroup.querySelectorAll('.btn-chart-metric').forEach(btn => {
+        if (btn.getAttribute('data-metric') === metric) {
+          btn.classList.add('active');
+        } else {
+          btn.classList.remove('active');
+        }
+      });
+    }
+    renderMinistryChart();
+  };
 
-    const ctx1 = document.getElementById('ministryChart').getContext('2d');
-    new Chart(ctx1, {
+  window.setAnalyticsFiscalYear = function(fy) {
+    state.analyticsFiscalYear = parseInt(fy, 10);
+    renderTimelineChart();
+  };
+
+  function renderMinistryChart() {
+    const canvas = document.getElementById('ministryChart');
+    if (!canvas || typeof Chart === 'undefined') return;
+    const ctx = canvas.getContext('2d');
+
+    const metric = state.analyticsMetric || 'MEETINGS';
+    const minKeys = Object.keys(MINISTRIES);
+
+    let dataValues = [];
+    let metricLabel = '';
+    let titleText = '';
+    let descText = '';
+
+    if (metric === 'COUNCILS') {
+      const counts = {};
+      minKeys.forEach(k => counts[k] = 0);
+      COUNCILS.forEach(c => {
+        if (counts[c.ministry] !== undefined) counts[c.ministry]++;
+      });
+      dataValues = minKeys.map(k => counts[k]);
+      metricLabel = '所管会議体数 (件)';
+      titleText = '省庁別 所管会議体数';
+      descText = '各省庁が所管する会議体マスター数 breakdown';
+    } else if (metric === 'MATERIALS') {
+      const counts = {};
+      minKeys.forEach(k => counts[k] = 0);
+      MEETINGS.forEach(m => {
+        if (counts[m.ministry] !== undefined) counts[m.ministry] += (m.materials ? m.materials.length : 0);
+      });
+      COUNCILS.forEach(c => {
+        if (counts[c.ministry] !== undefined) counts[c.ministry] += (c.materials ? c.materials.length : 0);
+      });
+      dataValues = minKeys.map(k => counts[k]);
+      metricLabel = '公開資料点数 (点)';
+      titleText = '省庁別 公開資料数';
+      descText = '各省庁の会議で公開された配付資料・議事録の総点数 breakdown';
+    } else {
+      // MEETINGS (default)
+      const counts = {};
+      minKeys.forEach(k => counts[k] = 0);
+      MEETINGS.forEach(m => {
+        if (counts[m.ministry] !== undefined) counts[m.ministry]++;
+      });
+      dataValues = minKeys.map(k => counts[k]);
+      metricLabel = '会議開催数 (回)';
+      titleText = '省庁別 会議の数';
+      descText = '各省庁の開催会議数 breakdown';
+    }
+
+    const titleEl = document.getElementById('ministryChartTitle');
+    const descEl = document.getElementById('ministryChartDesc');
+    if (titleEl) titleEl.textContent = titleText;
+    if (descEl) descEl.textContent = descText;
+
+    if (ministryChartInstance) {
+      try { ministryChartInstance.destroy(); } catch(e) {}
+    }
+
+    const palette = ['#3b82f6', '#06b6d4', '#10b981', '#f59e0b', '#f43f5e', '#a855f7', '#ec4899', '#84cc16', '#6366f1', '#14b8a6'];
+
+    ministryChartInstance = new Chart(ctx, {
       type: 'bar',
       data: {
-        labels: Object.keys(MINISTRIES).map(k => MINISTRIES[k].name),
+        labels: minKeys.map(k => MINISTRIES[k].name),
         datasets: [{
-          label: '会議開催数 (件)',
-          data: Object.keys(MINISTRIES).map(k => ministryCounts[k]),
-          backgroundColor: ['#a855f7', '#06b6d4', '#10b981', '#f43f5e', '#f59e0b', '#3b82f6', '#ec4899', '#84cc16'],
+          label: metricLabel,
+          data: dataValues,
+          backgroundColor: minKeys.map((_, i) => palette[i % palette.length]),
           borderRadius: 6
         }]
       },
       options: {
         responsive: true,
         maintainAspectRatio: false,
-        plugins: { legend: { display: false } },
+        plugins: {
+          legend: { display: false },
+          tooltip: {
+            callbacks: {
+              label: function(context) {
+                return `${context.dataset.label}: ${context.raw.toLocaleString()}`;
+              }
+            }
+          }
+        },
         scales: {
-          y: { beginAtZero: true, grid: { color: 'rgba(255,255,255,0.05)' } },
-          x: { grid: { display: false } }
+          y: {
+            beginAtZero: true,
+            grid: { color: 'rgba(255,255,255,0.05)' },
+            ticks: { color: '#94a3b8' }
+          },
+          x: {
+            grid: { display: false },
+            ticks: { color: '#94a3b8', maxRotation: 45, minRotation: 0 }
+          }
+        }
+      }
+    });
+  }
+
+  function getAvailableFiscalYears() {
+    const fySet = new Set();
+    MEETINGS.forEach(m => {
+      if (m.date && m.date.length >= 7) {
+        const parts = m.date.replace(/-/g, '/').split('/');
+        const y = parseInt(parts[0], 10);
+        const mon = parseInt(parts[1], 10);
+        if (!isNaN(y) && !isNaN(mon) && y >= 1990) {
+          const fy = mon >= 4 ? y : y - 1;
+          fySet.add(fy);
+        }
+      }
+    });
+    return Array.from(fySet).sort((a, b) => b - a);
+  }
+
+  function initTimelineFiscalYearSelect() {
+    const selectEl = document.getElementById('analyticsFiscalYearSelect');
+    if (!selectEl) return;
+
+    const fys = getAvailableFiscalYears();
+    if (fys.length === 0) {
+      fys.push(new Date().getFullYear());
+    }
+
+    if (!state.analyticsFiscalYear || !fys.includes(state.analyticsFiscalYear)) {
+      state.analyticsFiscalYear = fys[0]; // 最も新しい年度
+    }
+
+    selectEl.innerHTML = fys.map(fy => `
+      <option value="${fy}" ${fy === state.analyticsFiscalYear ? 'selected' : ''}>
+        ${fy}年度 (${fy}年4月〜${fy + 1}年3月)
+      </option>
+    `).join('');
+  }
+
+  function renderTimelineChart() {
+    const canvas = document.getElementById('timelineChart');
+    if (!canvas || typeof Chart === 'undefined') return;
+    const ctx = canvas.getContext('2d');
+
+    const targetFY = state.analyticsFiscalYear || new Date().getFullYear();
+
+    // 4月〜翌年3月 (12ヶ月)
+    const monthLabels = ['4月', '5月', '6月', '7月', '8月', '9月', '10月', '11月', '12月', '1月', '2月', '3月'];
+    const meetingCounts = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+    const materialCounts = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+
+    MEETINGS.forEach(m => {
+      if (m.date && m.date.length >= 7) {
+        const parts = m.date.replace(/-/g, '/').split('/');
+        const y = parseInt(parts[0], 10);
+        const mon = parseInt(parts[1], 10);
+        if (!isNaN(y) && !isNaN(mon)) {
+          const fy = mon >= 4 ? y : y - 1;
+          if (fy === targetFY) {
+            const idx = (mon - 4 + 12) % 12;
+            meetingCounts[idx]++;
+            materialCounts[idx] += (m.materials ? m.materials.length : 0);
+          }
         }
       }
     });
 
+    if (timelineChartInstance) {
+      try { timelineChartInstance.destroy(); } catch(e) {}
+    }
 
-
-    // 3. Monthly Timeline Activity Line Chart
-    const ctx3 = document.getElementById('timelineChart').getContext('2d');
-    new Chart(ctx3, {
+    timelineChartInstance = new Chart(ctx, {
       type: 'line',
       data: {
-        labels: ['2026年2月', '2026年3月', '2026年4月', '2026年5月', '2026年6月', '2026年7月'],
+        labels: monthLabels,
         datasets: [
           {
-            label: '公開配布資料数',
-            data: [12, 19, 25, 22, 31, 38],
+            label: '公開配布資料数 (点)',
+            data: materialCounts,
             borderColor: '#06b6d4',
-            backgroundColor: 'rgba(6, 182, 212, 0.1)',
+            backgroundColor: 'rgba(6, 182, 212, 0.12)',
             fill: true,
-            tension: 0.3
+            tension: 0.35,
+            pointBackgroundColor: '#06b6d4',
+            pointRadius: 4
           },
           {
-            label: '会議開催数',
-            data: [4, 6, 8, 7, 10, 12],
+            label: '会議開催数 (回)',
+            data: meetingCounts,
             borderColor: '#3b82f6',
-            backgroundColor: 'rgba(59, 130, 246, 0.1)',
+            backgroundColor: 'rgba(59, 130, 246, 0.12)',
             fill: true,
-            tension: 0.3
+            tension: 0.35,
+            pointBackgroundColor: '#3b82f6',
+            pointRadius: 4
           }
         ]
       },
       options: {
         responsive: true,
         maintainAspectRatio: false,
-        plugins: { legend: { labels: { color: '#94a3b8' } } },
+        plugins: {
+          legend: {
+            labels: { color: '#94a3b8', font: { weight: '600' } }
+          },
+          tooltip: {
+            callbacks: {
+              title: function(items) {
+                return `${targetFY}年度 ${items[0].label}`;
+              }
+            }
+          }
+        },
         scales: {
-          y: { beginAtZero: true, grid: { color: 'rgba(255,255,255,0.05)' } },
-          x: { grid: { color: 'rgba(255,255,255,0.05)' } }
+          y: {
+            beginAtZero: true,
+            grid: { color: 'rgba(255,255,255,0.05)' },
+            ticks: { color: '#94a3b8' }
+          },
+          x: {
+            grid: { color: 'rgba(255,255,255,0.05)' },
+            ticks: { color: '#94a3b8' }
+          }
         }
       }
     });

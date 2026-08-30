@@ -1011,6 +1011,14 @@ body {
   grid-column: 1 / -1;
 }
 
+.chart-header-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
 .chart-header h3 {
   font-size: 1.1rem;
   font-weight: 700;
@@ -1021,9 +1029,68 @@ body {
   color: var(--text-muted);
 }
 
+.chart-metrics-btn-group {
+  display: inline-flex;
+  background: rgba(15, 23, 42, 0.6);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  padding: 0.2rem;
+  gap: 0.2rem;
+}
+
+.btn-chart-metric {
+  background: transparent;
+  border: none;
+  color: var(--text-secondary);
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 0.35rem 0.75rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: var(--transition-fast);
+}
+
+.btn-chart-metric:hover {
+  color: var(--text-primary);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.btn-chart-metric.active {
+  background: var(--accent-primary);
+  color: #fff;
+}
+
+.chart-control-wrap {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.chart-control-label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+}
+
+.chart-select {
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  padding: 0.35rem 0.75rem;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: var(--transition-fast);
+}
+
+.chart-select:focus {
+  border-color: var(--accent-primary);
+  outline: none;
+}
+
 .chart-body {
   position: relative;
-  min-height: 260px;
+  min-height: 280px;
   width: 100%;
 }
 

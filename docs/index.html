@@ -406,9 +406,16 @@
 
       <div class="analytics-grid">
         <div class="chart-card card-glass full-width">
-          <div class="chart-header">
-            <h3>省庁別 会議体開催実績</h3>
-            <span class="chart-desc">直近の会議開催件数 breakdown</span>
+          <div class="chart-header chart-header-flex">
+            <div>
+              <h3 id="ministryChartTitle">省庁別 会議の数</h3>
+              <span class="chart-desc" id="ministryChartDesc">各省庁の開催会議数 breakdown</span>
+            </div>
+            <div class="chart-metrics-btn-group" id="ministryMetricBtnGroup">
+              <button type="button" class="btn-chart-metric" data-metric="COUNCILS" onclick="setMinistryChartMetric('COUNCILS')">会議体の数</button>
+              <button type="button" class="btn-chart-metric active" data-metric="MEETINGS" onclick="setMinistryChartMetric('MEETINGS')">会議の数</button>
+              <button type="button" class="btn-chart-metric" data-metric="MATERIALS" onclick="setMinistryChartMetric('MATERIALS')">資料の数</button>
+            </div>
           </div>
           <div class="chart-body">
             <canvas id="ministryChart"></canvas>
@@ -416,9 +423,17 @@
         </div>
 
         <div class="chart-card card-glass full-width">
-          <div class="chart-header">
-            <h3>月別 資料・議事録公開アクティビティ</h3>
-            <span class="chart-desc">時系列における情報公開ペースの推移</span>
+          <div class="chart-header chart-header-flex">
+            <div>
+              <h3>月別 資料・議事録公開アクティビティ</h3>
+              <span class="chart-desc">時系列における情報公開ペースの推移（4月〜翌年3月）</span>
+            </div>
+            <div class="chart-control-wrap">
+              <label for="analyticsFiscalYearSelect" class="chart-control-label">対象年度:</label>
+              <select id="analyticsFiscalYearSelect" class="chart-select" onchange="setAnalyticsFiscalYear(this.value)">
+                <!-- JavaScriptで動的生成 -->
+              </select>
+            </div>
           </div>
           <div class="chart-body">
             <canvas id="timelineChart"></canvas>
