@@ -16572,7 +16572,14 @@
       "category": "HEADQUARTERS",
       "officialUrl": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/index.html#honbu",
       "status": "approved",
-      "manualLock": true
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "新しい資本主義実現本部の設置について（令和３年１０月１５日閣議決定）",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/pdf/honbu.pdf",
+          "type": "PDF"
+        }
+      ]
     },
     {
       "id": "cas-atarashii_shihon_kaigi",
@@ -16581,7 +16588,19 @@
       "category": "COUNCIL",
       "officialUrl": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/index.html",
       "status": "approved",
-      "manualLock": true
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "新しい資本主義実現会議の開催について（令和３年１０月１５日閣議決定）",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/pdf/kaigi.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "新しい資本主義実現会議 有識者構成員名簿",
+          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/pdf/meibo.pdf",
+          "type": "PDF"
+        }
+      ]
     }
   ],
   "meetings": [

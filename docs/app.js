@@ -682,7 +682,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     }
   };
 
-  function renderMaterialsAccordionHTML(materials, meetingId, officialUrl) {
+  function renderMaterialsAccordionHTML(materials, meetingId, officialUrl, label = '資料リストを開く', emptyText = '配付資料はありません') {
     // 一次ソースと同じ場所へのリンクを除外
     const filteredMaterials = (materials || []).filter(mat => {
       if (officialUrl && mat.url === officialUrl) return false;
@@ -720,7 +720,7 @@ document.addEventListener('DOMContentLoaded', async () => {
       `;
     }).join('') : `
       <li class="material-item-empty">
-        <span class="text-muted">配付資料はありません</span>
+        <span class="text-muted">${emptyText}</span>
       </li>
     `;
 
@@ -728,7 +728,7 @@ document.addEventListener('DOMContentLoaded', async () => {
       <div class="materials-accordion">
         <button class="materials-toggle-btn" onclick="toggleMaterialsAccordion(this, '${meetingId}')" type="button">
           <div class="materials-toggle-left">
-            <span>📂 資料リストを開く</span>
+            <span>📂 ${escapeHtml(label)}</span>
             <span class="materials-badge-count ${hasMaterials ? '' : 'no-materials'}">${hasMaterials ? `${filteredMaterials.length}件` : '資料なし'}</span>
           </div>
           <span class="toggle-arrow" id="arrow-${meetingId}">▼</span>
@@ -1036,6 +1036,9 @@ document.addEventListener('DOMContentLoaded', async () => {
             </div>
           </div>
           <div class="council-meetings-body">
+            <div class="council-common-materials-wrapper" style="padding: 0.6rem 0.8rem 0.2rem; border-bottom: 1px dashed var(--border-subtle, rgba(255,255,255,0.08));">
+              ${renderMaterialsAccordionHTML(c.materials, 'council-' + c.id, c.officialUrl, '会議体の資料リストを開く（構成員名簿・設置根拠等）', '会議体資料（構成員名簿・設置根拠等）は未登録です')}
+            </div>
             <div class="council-meetings-list">
               ${meetingsHTML}
             </div>
