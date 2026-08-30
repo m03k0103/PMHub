@@ -1831,13 +1831,13 @@ body {
 
 /* Council Meetings Body (expandable) */
 .council-meetings-body {
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.35s ease;
+  display: none;
 }
 
 .council-accordion-card.expanded .council-meetings-body {
-  max-height: 5000px;
+  display: block;
+  max-height: none;
+  overflow: visible;
 }
 
 .council-meetings-list {
