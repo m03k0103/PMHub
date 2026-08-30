@@ -1486,10 +1486,8 @@ body {
 
 /* --- COLLAPSIBLE MATERIALS ACCORDION & VERTICAL LIST STYLES --- */
 .council-common-materials-wrapper {
-  padding: 0.6rem 0.8rem 0.4rem;
-  background: rgba(6, 182, 212, 0.05);
-  border-bottom: 1px dashed var(--border-color);
-  border-radius: var(--radius-md) var(--radius-md) 0 0;
+  padding: 0.6rem 0.8rem 0.2rem;
+  background: transparent;
 }
 .council-common-materials-wrapper .materials-accordion {
   margin-top: 0;
@@ -1507,8 +1505,7 @@ body {
 }
 
 [data-theme="light"] .council-common-materials-wrapper {
-  background: rgba(6, 182, 212, 0.06);
-  border-bottom: 1px dashed rgba(6, 182, 212, 0.25);
+  background: transparent;
 }
 [data-theme="light"] .council-common-materials-wrapper .materials-accordion {
   background: #ffffff;
