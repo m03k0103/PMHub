@@ -563,7 +563,8 @@ document.addEventListener('DOMContentLoaded', async () => {
         if (state.dateRangeFilter === '30D' && (diffDays < 0 || diffDays > 30)) return false;
         if (state.dateRangeFilter === '90D' && (diffDays < 0 || diffDays > 90)) return false;
         if (state.dateRangeFilter === 'PAST_YEAR' && (diffDays < 0 || diffDays > 365)) return false;
-        if (state.dateRangeFilter === 'YEAR' && meetingDate.getFullYear() !== refDate.getFullYear()) return false;
+        if (state.dateRangeFilter === 'YEAR' && getFiscalYear(meetingDate) !== getFiscalYear(refDate)) return false;
+        if (state.dateRangeFilter === 'PREV_YEAR' && getFiscalYear(meetingDate) !== (getFiscalYear(refDate) - 1)) return false;
       }
 
       return true;
@@ -626,11 +627,12 @@ document.addEventListener('DOMContentLoaded', async () => {
     if (state.docTypeFilter !== 'ALL') activeTags.push({ label: `資料: ${state.docTypeFilter}`, key: 'docType' });
     if (state.dateRangeFilter !== 'ALL') {
       const dateLabels = {
-        'PAST_YEAR': '過去1年間に開催',
+        'PAST_YEAR': '直近1年間',
+        'YEAR': '今年度',
+        'PREV_YEAR': '昨年度',
         '7D': '直近7日間',
         '30D': '直近30日間',
-        '90D': '直近90日間',
-        'YEAR': '今年度 (2026年)'
+        '90D': '直近90日間'
       };
       activeTags.push({ label: `期間: ${dateLabels[state.dateRangeFilter] || state.dateRangeFilter}`, key: 'dateRange' });
     }
@@ -866,7 +868,8 @@ document.addEventListener('DOMContentLoaded', async () => {
             if (state.dateRangeFilter === '7D') return diffDays >= 0 && diffDays <= 7;
             if (state.dateRangeFilter === '30D') return diffDays >= 0 && diffDays <= 30;
             if (state.dateRangeFilter === '90D') return diffDays >= 0 && diffDays <= 90;
-            if (state.dateRangeFilter === 'YEAR') return md.getFullYear() === refDate.getFullYear();
+            if (state.dateRangeFilter === 'YEAR') return getFiscalYear(md) === getFiscalYear(refDate);
+            if (state.dateRangeFilter === 'PREV_YEAR') return getFiscalYear(md) === (getFiscalYear(refDate) - 1);
             return true;
           });
           if (!hasMatchingMeeting) return false;
@@ -1526,6 +1529,22 @@ document.addEventListener('DOMContentLoaded', async () => {
 }
 
 // Helper function
+function getFiscalYear(dateInput) {
+  if (!dateInput) return null;
+  let date;
+  if (dateInput instanceof Date) {
+    date = dateInput;
+  } else if (typeof dateInput === 'string') {
+    date = new Date(dateInput.replace(/-/g, '/'));
+  } else {
+    return null;
+  }
+  if (isNaN(date.getTime())) return null;
+  const y = date.getFullYear();
+  const m = date.getMonth() + 1;
+  return m >= 4 ? y : y - 1;
+}
+
 function formatDate(str) {
   if (!str) return '';
   return str.replace(/-/g, '/');
@@ -1567,6 +1586,7 @@ function capitalize(str) {
 
 if (typeof module !== 'undefined' && module.exports) {
   module.exports = {
+    getFiscalYear,
     formatDate,
     escapeHtml,
     sanitizeUrl,
