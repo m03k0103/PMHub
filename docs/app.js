@@ -1036,9 +1036,11 @@ document.addEventListener('DOMContentLoaded', async () => {
             </div>
           </div>
           <div class="council-meetings-body">
-            <div class="council-common-materials-wrapper" style="padding: 0.6rem 0.8rem 0.2rem; border-bottom: 1px dashed var(--border-subtle, rgba(255,255,255,0.08));">
-              ${renderMaterialsAccordionHTML(c.materials, 'council-' + c.id, c.officialUrl, '会議体の資料リストを開く（構成員名簿・設置根拠等）', '会議体資料（構成員名簿・設置根拠等）は未登録です')}
-            </div>
+            ${(Array.isArray(c.materials) && c.materials.length > 0) ? `
+              <div class="council-common-materials-wrapper" style="padding: 0.6rem 0.8rem 0.2rem; border-bottom: 1px dashed var(--border-subtle, rgba(255,255,255,0.08));">
+                ${renderMaterialsAccordionHTML(c.materials, 'council-' + c.id, c.officialUrl, '会議体の資料リストを開く（構成員名簿・設置根拠等）')}
+              </div>
+            ` : ''}
             <div class="council-meetings-list">
               ${meetingsHTML}
             </div>
