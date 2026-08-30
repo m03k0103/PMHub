@@ -3992,24 +3992,6 @@
       "status": "approved"
     },
     {
-      "id": "aca-184",
-      "name": "文化審議会 総会",
-      "ministry": "ACA",
-      "category": "COUNCIL",
-      "officialUrl": "https://www.bunka.go.jp/seisaku/bunkashingikai/sokai/",
-      "pastYearCount": 0,
-      "crawlStatus": {
-        "lastAttempt": "2026-08-22 10:09:19",
-        "result": "success",
-        "extractionMethod": "rule",
-        "materialsCount": 8,
-        "datesCount": 5,
-        "failureReason": "",
-        "consecutiveFailures": 0
-      },
-      "status": "approved"
-    },
-    {
       "id": "aca-186",
       "name": "美術品補償制度部会",
       "ministry": "ACA",
@@ -20461,6 +20443,16 @@
       "isWatched": false,
       "status": "approved",
       "manualLock": true
+    },
+    {
+      "id": "aca-bunka_shingikai_sokai",
+      "name": "文化審議会 総会",
+      "ministry": "ACA",
+      "category": "COUNCIL",
+      "officialUrl": "https://www.bunka.go.jp/seisaku/bunkashingikai/sokai/",
+      "pastYearCount": 100,
+      "manualLock": true,
+      "description": "文化庁における文化審議会総会。"
     }
   ],
   "meetings": [
@@ -37241,6 +37233,58 @@
       "councilName": "中東情勢に関する関係閣僚会議"
     },
     {
+      "id": "aca-bunka_shingikai_sokai-20260410-100",
+      "councilId": "aca-bunka_shingikai_sokai",
+      "title": "第100回 文化審議会 総会",
+      "date": "2026/04/10",
+      "officialUrl": "https://www.bunka.go.jp/seisaku/bunkashingikai/sokai/sokai_26/100/index.html",
+      "category": "COUNCIL",
+      "ministry": "ACA",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "第26期文化審議会委員名簿",
+          "url": "https://www.bunka.go.jp/seisaku/bunkashingikai/sokai/sokai_26/100/pdf/94376901_01.pdf"
+        },
+        {
+          "name": "文化審議会概要",
+          "url": "https://www.bunka.go.jp/seisaku/bunkashingikai/sokai/sokai_26/100/pdf/94376901_02.pdf"
+        },
+        {
+          "name": "各分科会への委員の分属",
+          "url": "https://www.bunka.go.jp/seisaku/bunkashingikai/sokai/sokai_26/100/pdf/94376901_03.pdf"
+        },
+        {
+          "name": "文化政策部会の設置について（案）",
+          "url": "https://www.bunka.go.jp/seisaku/bunkashingikai/sokai/sokai_26/100/pdf/94376901_04.pdf"
+        },
+        {
+          "name": "美術品補償制度部会の設置について（案）",
+          "url": "https://www.bunka.go.jp/seisaku/bunkashingikai/sokai/sokai_26/100/pdf/94376901_05.pdf"
+        },
+        {
+          "name": "世界文化遺産部会の設置について（案）",
+          "url": "https://www.bunka.go.jp/seisaku/bunkashingikai/sokai/sokai_26/100/pdf/94376901_06.pdf"
+        },
+        {
+          "name": "無形文化遺産部会の設置について（案）",
+          "url": "https://www.bunka.go.jp/seisaku/bunkashingikai/sokai/sokai_26/100/pdf/94376901_07.pdf"
+        },
+        {
+          "name": "文化施設部会の設置について（案）",
+          "url": "https://www.bunka.go.jp/seisaku/bunkashingikai/sokai/sokai_26/100/pdf/94376901_08.pdf"
+        },
+        {
+          "name": "文化経済部会の設置について（案）",
+          "url": "https://www.bunka.go.jp/seisaku/bunkashingikai/sokai/sokai_26/100/pdf/94376901_09.pdf"
+        },
+        {
+          "name": "文化審議会関係法令等",
+          "url": "https://www.bunka.go.jp/seisaku/bunkashingikai/sokai/sokai_26/100/pdf/94376901_10.pdf"
+        }
+      ]
+    },
+    {
       "id": "cas-kokuminkaigi_yushikisha-20260409-003",
       "councilId": "cas-kokuminkaigi_yushikisha",
       "title": "第3回 社会保障国民会議　有識者会議",
@@ -38526,6 +38570,66 @@
       "officialUrl": "https://www8.cao.go.jp/cstp/siryo/haihui084/haihu-084.html",
       "hasMinutes": true,
       "docCount": 8
+    },
+    {
+      "id": "aca-bunka_shingikai_sokai-20260327-099",
+      "councilId": "aca-bunka_shingikai_sokai",
+      "title": "第99回 文化審議会 総会",
+      "date": "2026/03/27",
+      "officialUrl": "https://www.bunka.go.jp/seisaku/bunkashingikai/sokai/sokai_25/99/index.html",
+      "category": "COUNCIL",
+      "ministry": "ACA",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "国語分科会における審議状況と今後の主な課題",
+          "url": "https://www.bunka.go.jp/seisaku/bunkashingikai/sokai/sokai_25/99/pdf/94350601_01.pdf"
+        },
+        {
+          "name": "著作権分科会における審議状況と今後の主な課題",
+          "url": "https://www.bunka.go.jp/seisaku/bunkashingikai/sokai/sokai_25/99/pdf/94350601_02.pdf"
+        },
+        {
+          "name": "文化財分科会における審議状況と今後の主な課題",
+          "url": "https://www.bunka.go.jp/seisaku/bunkashingikai/sokai/sokai_25/99/pdf/94350601_03.pdf"
+        },
+        {
+          "name": "文化政策部会における審議状況と今後の主な課題",
+          "url": "https://www.bunka.go.jp/seisaku/bunkashingikai/sokai/sokai_25/99/pdf/94350601_04.pdf"
+        },
+        {
+          "name": "美術品補償制度部会における審議状況と今後の主な課題",
+          "url": "https://www.bunka.go.jp/seisaku/bunkashingikai/sokai/sokai_25/99/pdf/94350601_05.pdf"
+        },
+        {
+          "name": "世界文化遺産部会における審議の状況と今後の主な課題",
+          "url": "https://www.bunka.go.jp/seisaku/bunkashingikai/sokai/sokai_25/99/pdf/94350601_06.pdf"
+        },
+        {
+          "name": "無形文化遺産部会における審議状況と今後の主な課題",
+          "url": "https://www.bunka.go.jp/seisaku/bunkashingikai/sokai/sokai_25/99/pdf/94350601_07.pdf"
+        },
+        {
+          "name": "文化経済部会における審議状況と今後の主な課題",
+          "url": "https://www.bunka.go.jp/seisaku/bunkashingikai/sokai/sokai_25/99/pdf/94350601_08.pdf"
+        },
+        {
+          "name": "文化施設部会における審議状況と今後の主な課題",
+          "url": "https://www.bunka.go.jp/seisaku/bunkashingikai/sokai/sokai_25/99/pdf/94352701_01.pdf"
+        },
+        {
+          "name": "京都移転後の主な取組について",
+          "url": "https://www.bunka.go.jp/seisaku/bunkashingikai/sokai/sokai_25/99/pdf/94350601_10.pdf"
+        },
+        {
+          "name": "令和8年度文化庁予算（案）の概要について",
+          "url": "https://www.bunka.go.jp/seisaku/bunkashingikai/sokai/sokai_25/99/pdf/94350601_11.pdf"
+        },
+        {
+          "name": "令和7年度文化庁補正予算について",
+          "url": "https://www.bunka.go.jp/seisaku/bunkashingikai/sokai/sokai_25/99/pdf/94350601_12.pdf"
+        }
+      ]
     },
     {
       "id": "cas-sokuitiri-20260326-012",
@@ -59328,6 +59432,30 @@
       ]
     },
     {
+      "id": "aca-bunka_shingikai_sokai-20250820-098",
+      "councilId": "aca-bunka_shingikai_sokai",
+      "title": "第98回 文化審議会 総会",
+      "date": "2025/08/20",
+      "officialUrl": "https://www.bunka.go.jp/seisaku/bunkashingikai/sokai/sokai_25/98/index.html",
+      "category": "COUNCIL",
+      "ministry": "ACA",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "「改定ローマ字のつづり方（答申）」（案）の概要",
+          "url": "https://www.bunka.go.jp/seisaku/bunkashingikai/sokai/sokai_25/98/pdf/94261201_02.pdf"
+        },
+        {
+          "name": "「改定ローマ字のつづり方（答申）」（案）",
+          "url": "https://www.bunka.go.jp/seisaku/bunkashingikai/sokai/sokai_25/98/pdf/94258801_02.pdf"
+        },
+        {
+          "name": "令和7年3月27日第24期文化審議会第3回総会（第96回）資料1～9（抜粋）",
+          "url": "https://www.bunka.go.jp/seisaku/bunkashingikai/sokai/sokai_25/98/pdf/94258801_03.pdf"
+        }
+      ]
+    },
+    {
       "id": "mhlw-rousei_roudoujouken-20250819-201",
       "councilId": "mhlw-rousei_roudoujouken",
       "title": "第201回 労働政策審議会 労働条件分科会",
@@ -67991,6 +68119,58 @@
       ]
     },
     {
+      "id": "aca-bunka_shingikai_sokai-20250411-097",
+      "councilId": "aca-bunka_shingikai_sokai",
+      "title": "第97回 文化審議会 総会",
+      "date": "2025/04/11",
+      "officialUrl": "https://www.bunka.go.jp/seisaku/bunkashingikai/sokai/sokai_25/97/index.html",
+      "category": "COUNCIL",
+      "ministry": "ACA",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "第25期文化審議会委員名簿",
+          "url": "https://www.bunka.go.jp/seisaku/bunkashingikai/sokai/sokai_25/97/pdf/94201401_01.pdf"
+        },
+        {
+          "name": "文化審議会概要",
+          "url": "https://www.bunka.go.jp/seisaku/bunkashingikai/sokai/sokai_25/97/pdf/94201401_02.pdf"
+        },
+        {
+          "name": "各分科会への委員の分属",
+          "url": "https://www.bunka.go.jp/seisaku/bunkashingikai/sokai/sokai_25/97/pdf/94201401_03.pdf"
+        },
+        {
+          "name": "文化政策部会の設置について（案）",
+          "url": "https://www.bunka.go.jp/seisaku/bunkashingikai/sokai/sokai_25/97/pdf/94201401_04.pdf"
+        },
+        {
+          "name": "美術品補償制度部会の設置について（案）",
+          "url": "https://www.bunka.go.jp/seisaku/bunkashingikai/sokai/sokai_25/97/pdf/94201401_05.pdf"
+        },
+        {
+          "name": "世界文化遺産部会の設置について（案）",
+          "url": "https://www.bunka.go.jp/seisaku/bunkashingikai/sokai/sokai_25/97/pdf/94201401_06.pdf"
+        },
+        {
+          "name": "無形文化遺産部会の設置について（案）",
+          "url": "https://www.bunka.go.jp/seisaku/bunkashingikai/sokai/sokai_25/97/pdf/94264501_01.pdf"
+        },
+        {
+          "name": "文化施設部会の設置について（案）",
+          "url": "https://www.bunka.go.jp/seisaku/bunkashingikai/sokai/sokai_25/97/pdf/94201401_08.pdf"
+        },
+        {
+          "name": "文化経済部会の設置について（案）",
+          "url": "https://www.bunka.go.jp/seisaku/bunkashingikai/sokai/sokai_25/97/pdf/94201401_09.pdf"
+        },
+        {
+          "name": "文化審議会関係法令等",
+          "url": "https://www.bunka.go.jp/seisaku/bunkashingikai/sokai/sokai_25/97/pdf/94201401_10.pdf"
+        }
+      ]
+    },
+    {
       "id": "mof-zaiseiseido_bunkakai-20250409-s01",
       "councilId": "mof-zaiseiseido_bunkakai",
       "councilName": "財政制度等審議会 財政制度分科会",
@@ -69026,6 +69206,26 @@
         {
           "name": "議事概要",
           "url": "https://www.fsc.go.jp/fsciis/attachedFile/download?retrievalId=kai20250327pr1&fileId=910"
+        }
+      ]
+    },
+    {
+      "id": "aca-bunka_shingikai_sokai-20250327-096",
+      "councilId": "aca-bunka_shingikai_sokai",
+      "title": "第96回 文化審議会 総会",
+      "date": "2025/03/27",
+      "officialUrl": "https://www.bunka.go.jp/seisaku/bunkashingikai/sokai/sokai_24/96/index.html",
+      "category": "COUNCIL",
+      "ministry": "ACA",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "資料1~資料11 一式",
+          "url": "https://www.bunka.go.jp/seisaku/bunkashingikai/sokai/sokai_24/96/pdf/94189901_01.pdf"
+        },
+        {
+          "name": "第24期 文化審議会第3回総会(第96回) 議事録",
+          "url": "https://www.bunka.go.jp/seisaku/bunkashingikai/sokai/sokai_24/96/pdf/94206801_01.pdf"
         }
       ]
     },
@@ -86128,6 +86328,26 @@
       "councilName": "規制改革推進会議 地域活性化・人手不足対応WG"
     },
     {
+      "id": "aca-bunka_shingikai_sokai-20240514-095",
+      "councilId": "aca-bunka_shingikai_sokai",
+      "title": "第95回 文化審議会 総会",
+      "date": "2024/05/14",
+      "officialUrl": "https://www.bunka.go.jp/seisaku/bunkashingikai/sokai/sokai_24/95/index.html",
+      "category": "COUNCIL",
+      "ministry": "ACA",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "これからの時代におけるローマ字使用の在り方について（諮問）",
+          "url": "https://www.bunka.go.jp/seisaku/bunkashingikai/sokai/sokai_24/95/pdf/94051101_01.pdf"
+        },
+        {
+          "name": "第24期文化審議会第2回総会　議事録",
+          "url": "https://www.bunka.go.jp/seisaku/bunkashingikai/sokai/sokai_24/95/pdf/94197501_17.pdf"
+        }
+      ]
+    },
+    {
       "id": "smea-seichoken-20240513-004",
       "councilId": "smea-seichoken",
       "title": "令和6年 中小企業の成長経営の実現に向けた研究会 第4回",
@@ -88346,6 +88566,58 @@
       "councilName": "国土強靱化推進会議"
     },
     {
+      "id": "aca-bunka_shingikai_sokai-20240410-094",
+      "councilId": "aca-bunka_shingikai_sokai",
+      "title": "第94回 文化審議会 総会",
+      "date": "2024/04/10",
+      "officialUrl": "https://www.bunka.go.jp/seisaku/bunkashingikai/sokai/sokai_24/94/index.html",
+      "category": "COUNCIL",
+      "ministry": "ACA",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "第24期⽂化審議会委員名簿",
+          "url": "https://www.bunka.go.jp/seisaku/bunkashingikai/sokai/sokai_24/94/pdf/94038901_01.pdf"
+        },
+        {
+          "name": "⽂化審議会概要",
+          "url": "https://www.bunka.go.jp/seisaku/bunkashingikai/sokai/sokai_24/94/pdf/94047101_01.pdf"
+        },
+        {
+          "name": "各分科会への委員の分属",
+          "url": "https://www.bunka.go.jp/seisaku/bunkashingikai/sokai/sokai_24/94/pdf/94038901_03.pdf"
+        },
+        {
+          "name": "⽂化政策部会の設置について（案）",
+          "url": "https://www.bunka.go.jp/seisaku/bunkashingikai/sokai/sokai_24/94/pdf/94047101_02.pdf"
+        },
+        {
+          "name": "美術品補償制度部会の設置について（案）",
+          "url": "https://www.bunka.go.jp/seisaku/bunkashingikai/sokai/sokai_24/94/pdf/94047101_03.pdf"
+        },
+        {
+          "name": "世界⽂化遺産部会の設置について（案）",
+          "url": "https://www.bunka.go.jp/seisaku/bunkashingikai/sokai/sokai_24/94/pdf/94047101_04.pdf"
+        },
+        {
+          "name": "無形⽂化遺産部会の設置について（案）",
+          "url": "https://www.bunka.go.jp/seisaku/bunkashingikai/sokai/sokai_24/94/pdf/94047101_05.pdf"
+        },
+        {
+          "name": "⽂化施設部会の設置について（案）",
+          "url": "https://www.bunka.go.jp/seisaku/bunkashingikai/sokai/sokai_24/94/pdf/94047101_06.pdf"
+        },
+        {
+          "name": "⽂化経済部会の設置について（案）",
+          "url": "https://www.bunka.go.jp/seisaku/bunkashingikai/sokai/sokai_24/94/pdf/94047101_07.pdf"
+        },
+        {
+          "name": "⽂化審議会関係法令等",
+          "url": "https://www.bunka.go.jp/seisaku/bunkashingikai/sokai/sokai_24/94/pdf/94047101_08.pdf"
+        }
+      ]
+    },
+    {
       "id": "mof-zaiseiseido_bunkakai-20240409-s01",
       "councilId": "mof-zaiseiseido_bunkakai",
       "councilName": "財政制度等審議会 財政制度分科会",
@@ -89770,6 +90042,26 @@
         {
           "name": "第112回 開催案内",
           "url": "https://www.mhlw.go.jp/stf/newpage_38916.html"
+        }
+      ]
+    },
+    {
+      "id": "aca-bunka_shingikai_sokai-20240327-093",
+      "councilId": "aca-bunka_shingikai_sokai",
+      "title": "第93回 文化審議会 総会",
+      "date": "2024/03/27",
+      "officialUrl": "https://www.bunka.go.jp/seisaku/bunkashingikai/sokai/sokai_23/93/index.html",
+      "category": "COUNCIL",
+      "ministry": "ACA",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "資料1~資料11　一式",
+          "url": "https://www.bunka.go.jp/seisaku/bunkashingikai/sokai/sokai_23/93/pdf/94025501_01.pdf"
+        },
+        {
+          "name": "第23期文化審議会第2回総会 議事録",
+          "url": "https://www.bunka.go.jp/seisaku/bunkashingikai/sokai/sokai_23/93/pdf/94197501_16.pdf"
         }
       ]
     },
@@ -110337,6 +110629,46 @@
       "councilName": "こども政策推進会議"
     },
     {
+      "id": "aca-bunka_shingikai_sokai-20230418-092",
+      "councilId": "aca-bunka_shingikai_sokai",
+      "title": "第92回 文化審議会 総会",
+      "date": "2023/04/18",
+      "officialUrl": "https://www.bunka.go.jp/seisaku/bunkashingikai/sokai/sokai_23/92/index.html",
+      "category": "COUNCIL",
+      "ministry": "ACA",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "第23期文化審議会委員名簿",
+          "url": "https://www.bunka.go.jp/seisaku/bunkashingikai/sokai/sokai_23/92/pdf/93874301_01.pdf"
+        },
+        {
+          "name": "文化審議会概要",
+          "url": "https://www.bunka.go.jp/seisaku/bunkashingikai/sokai/sokai_23/92/pdf/93874301_02.pdf"
+        },
+        {
+          "name": "各分科会への委員の分属",
+          "url": "https://www.bunka.go.jp/seisaku/bunkashingikai/sokai/sokai_23/92/pdf/93874301_03.pdf"
+        },
+        {
+          "name": "資料4~9　一式",
+          "url": "https://www.bunka.go.jp/seisaku/bunkashingikai/sokai/sokai_23/92/pdf/93874301_04.pdf"
+        },
+        {
+          "name": "参考資料1~3　一式",
+          "url": "https://www.bunka.go.jp/seisaku/bunkashingikai/sokai/sokai_23/92/pdf/93874301_05.pdf"
+        },
+        {
+          "name": "文化庁の京都移転について",
+          "url": "https://www.bunka.go.jp/seisaku/bunkashingikai/sokai/sokai_23/92/pdf/93874301_06.pdf"
+        },
+        {
+          "name": "文化芸術推進基本計画（第2期）（令和5年3月24日閣議決定）",
+          "url": "https://www.bunka.go.jp/seisaku/bunkashingikai/sokai/sokai_23/92/pdf/93874301_07.pdf"
+        }
+      ]
+    },
+    {
       "id": "cao-kisei_hatarakikata_wg-20230417-012",
       "councilId": "cao-kisei_hatarakikata_wg",
       "title": "第12回 規制改革推進会議 働き方・人への投資WG（令和4年度）",
@@ -111338,6 +111670,82 @@
         }
       ],
       "councilName": "規制改革推進会議 働き方・人への投資WG"
+    },
+    {
+      "id": "aca-bunka_shingikai_sokai-20230331-091",
+      "councilId": "aca-bunka_shingikai_sokai",
+      "title": "第91回 文化審議会 総会",
+      "date": "2023/03/31",
+      "officialUrl": "https://www.bunka.go.jp/seisaku/bunkashingikai/sokai/sokai_22/91/index.html",
+      "category": "COUNCIL",
+      "ministry": "ACA",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "国語分科会における審議状況と今後の課題",
+          "url": "https://www.bunka.go.jp/seisaku/bunkashingikai/sokai/sokai_22/91/pdf/93974301_01.pdf"
+        },
+        {
+          "name": "著作権分科会における審議状況と今後の課題",
+          "url": "https://www.bunka.go.jp/seisaku/bunkashingikai/sokai/sokai_22/91/pdf/93974301_02.pdf"
+        },
+        {
+          "name": "文化財分科会における審議状況と今後の課題",
+          "url": "https://www.bunka.go.jp/seisaku/bunkashingikai/sokai/sokai_22/91/pdf/93974301_03.pdf"
+        },
+        {
+          "name": "美術品補償制度部会における審議状況と今後の課題",
+          "url": "https://www.bunka.go.jp/seisaku/bunkashingikai/sokai/sokai_22/91/pdf/93974301_04.pdf"
+        },
+        {
+          "name": "世界文化遺産部会における審議状況と今後の課題",
+          "url": "https://www.bunka.go.jp/seisaku/bunkashingikai/sokai/sokai_22/91/pdf/93974301_05.pdf"
+        },
+        {
+          "name": "無形文化遺産部会における審議状況と今後の課題",
+          "url": "https://www.bunka.go.jp/seisaku/bunkashingikai/sokai/sokai_22/91/pdf/93974301_06.pdf"
+        },
+        {
+          "name": "博物館部会における審議状況と今後の課題",
+          "url": "https://www.bunka.go.jp/seisaku/bunkashingikai/sokai/sokai_22/91/pdf/93974301_07.pdf"
+        },
+        {
+          "name": "文化経済部会文化芸術カウンシル機能検討WG概要",
+          "url": "https://www.bunka.go.jp/seisaku/bunkashingikai/sokai/sokai_22/91/pdf/93974301_08.pdf"
+        },
+        {
+          "name": "文化経済部会文化芸術カウンシルWG報告書",
+          "url": "https://www.bunka.go.jp/seisaku/bunkashingikai/sokai/sokai_22/91/pdf/93974301_09.pdf"
+        },
+        {
+          "name": "文化経済部会 基盤・制度WG公的な鑑定評価に関する作業部会概要",
+          "url": "https://www.bunka.go.jp/seisaku/bunkashingikai/sokai/sokai_22/91/pdf/93974301_10.pdf"
+        },
+        {
+          "name": "文化経済部会 基盤・制度WG公的な鑑定評価に関する作業部会中間とりまとめ",
+          "url": "https://www.bunka.go.jp/seisaku/bunkashingikai/sokai/sokai_22/91/pdf/93974301_11.pdf"
+        },
+        {
+          "name": "文化経済部会美術品（近現代分野）の価格評価手法、手順等についてのガイドライン試行版",
+          "url": "https://www.bunka.go.jp/seisaku/bunkashingikai/sokai/sokai_22/91/pdf/93974301_12.pdf"
+        },
+        {
+          "name": "国語分科会で今後取り組むべき課題（報告）",
+          "url": "https://www.bunka.go.jp/seisaku/bunkashingikai/sokai/sokai_22/91/pdf/93974301_13.pdf"
+        },
+        {
+          "name": "著作権法の一部を改正する法律（案）について",
+          "url": "https://www.bunka.go.jp/seisaku/bunkashingikai/sokai/sokai_22/91/pdf/93974301_14.pdf"
+        },
+        {
+          "name": "デジタルトランスフォーメーション（ＤＸ）時代に対応した著作権制度・政策の在り方について (第一次答申)",
+          "url": "https://www.bunka.go.jp/seisaku/bunkashingikai/sokai/sokai_22/91/pdf/93974301_15.pdf"
+        },
+        {
+          "name": "デジタルトランスフォーメーション（ＤＸ）時代に対応した著作権制度・政策の在り方について (第一次答申)（概要）",
+          "url": "https://www.bunka.go.jp/seisaku/bunkashingikai/sokai/sokai_22/91/pdf/93974301_16.pdf"
+        }
+      ]
     },
     {
       "id": "moj-zenka_shikaku_wg-20230330-005",
@@ -113590,6 +113998,58 @@
       "officialUrl": "https://www.fdma.go.jp/singi_kento/kento/post-127.html",
       "hasMinutes": true,
       "docCount": 19
+    },
+    {
+      "id": "aca-bunka_shingikai_sokai-20230301-090",
+      "councilId": "aca-bunka_shingikai_sokai",
+      "title": "第90回 文化審議会 総会",
+      "date": "2023/03/01",
+      "officialUrl": "https://www.bunka.go.jp/seisaku/bunkashingikai/sokai/sokai_22/90/index.html",
+      "category": "COUNCIL",
+      "ministry": "ACA",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "文化芸術推進基本計画（第2期）（答申案）",
+          "url": "https://www.bunka.go.jp/seisaku/bunkashingikai/sokai/sokai_22/90/pdf/93862901_01.pdf"
+        },
+        {
+          "name": "文化審議会「文化芸術推進基本計画（第2期）（中間報告）に対する国民からの意見募集の結果について",
+          "url": "https://www.bunka.go.jp/seisaku/bunkashingikai/sokai/sokai_22/90/pdf/93862901_02.pdf"
+        },
+        {
+          "name": "文化芸術推進基本計画（第2期）検討スケジュール（案）",
+          "url": "https://www.bunka.go.jp/seisaku/bunkashingikai/sokai/sokai_22/90/pdf/93862901_03.pdf"
+        },
+        {
+          "name": "文化芸術推進基本計画（第2期）関連データ集",
+          "url": "https://www.bunka.go.jp/seisaku/bunkashingikai/sokai/sokai_22/90/pdf/93862901_04.pdf"
+        },
+        {
+          "name": "新時代に求められる文化芸術に関する施策の統合的かつ計画的な推進方策について－「文化芸術推進基本計画（第2期）」の策定に向けて－（概要）",
+          "url": "https://www.bunka.go.jp/seisaku/bunkashingikai/sokai/sokai_22/90/pdf/93862901_05.pdf"
+        },
+        {
+          "name": "文化芸術推進基本計画（第1期）（平成30年3月6日閣議決定）について－「文化芸術推進基本計画（第2期）」の策定に向けて－",
+          "url": "https://www.bunka.go.jp/seisaku/bunkashingikai/sokai/sokai_22/90/pdf/93862901_06.pdf"
+        },
+        {
+          "name": "文化芸術推進基本計画（第1期）（平成30年3月6日閣議決定）の概要",
+          "url": "https://www.bunka.go.jp/seisaku/bunkashingikai/sokai/sokai_22/90/pdf/93862901_07.pdf"
+        },
+        {
+          "name": "文化芸術推進基本計画（第1期）（平成30年3月6日閣議決定）",
+          "url": "https://www.bunka.go.jp/seisaku/bunka_gyosei/hoshin/pdf/r1389480_01.pdf"
+        },
+        {
+          "name": "文化審議会関係資料",
+          "url": "https://www.bunka.go.jp/seisaku/bunkashingikai/sokai/sokai_22/90/pdf/93862901_09.pdf"
+        },
+        {
+          "name": "第22期文化審議会第4回総会 議事録",
+          "url": "https://www.bunka.go.jp/seisaku/bunkashingikai/sokai/sokai_22/90/pdf/94197501_15.pdf"
+        }
+      ]
     },
     {
       "id": "fdma-chikudenchi_bouka-20230228-003",
@@ -116641,6 +117101,78 @@
         }
       ],
       "councilName": "中小企業・小規模事業者の人材戦略に関する有識者検討会"
+    },
+    {
+      "id": "aca-bunka_shingikai_sokai-20221219-089",
+      "councilId": "aca-bunka_shingikai_sokai",
+      "title": "第89回 文化審議会 総会",
+      "date": "2022/12/19",
+      "officialUrl": "https://www.bunka.go.jp/seisaku/bunkashingikai/sokai/sokai_22/89/index.html",
+      "category": "COUNCIL",
+      "ministry": "ACA",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "文化芸術推進基本計画（第2期）（中間報告）（案）",
+          "url": "https://www.bunka.go.jp/seisaku/bunkashingikai/sokai/sokai_22/89/pdf/93820601_01.pdf"
+        },
+        {
+          "name": "持続可能な文化財の保存と活用のための方策について（第二次答申) 【概要】",
+          "url": "https://www.bunka.go.jp/seisaku/bunkashingikai/sokai/sokai_22/89/pdf/93820601_02.pdf"
+        },
+        {
+          "name": "持続可能な文化財の保存と活用のための方策について(第二次答申)",
+          "url": "https://www.bunka.go.jp/seisaku/bunkashingikai/sokai/sokai_22/89/pdf/93820601_03.pdf"
+        },
+        {
+          "name": "文化財の匠プロジェクト 【概要】",
+          "url": "https://www.bunka.go.jp/seisaku/bunkashingikai/sokai/sokai_22/89/pdf/93820601_04.pdf"
+        },
+        {
+          "name": "文化財の匠プロジェクト",
+          "url": "https://www.bunka.go.jp/seisaku/bunkashingikai/sokai/sokai_22/89/pdf/93820601_05.pdf"
+        },
+        {
+          "name": "文化芸術推進基本計画（第2期）に向けて（文化芸術推進基本計画（第1期）中間評価報告書 参考資料2）",
+          "url": "https://www.bunka.go.jp/seisaku/bunkashingikai/sokai/sokai_22/89/pdf/93820601_06.pdf"
+        },
+        {
+          "name": "「地域における日本語教育の在り方について」（報告）のポイント",
+          "url": "https://www.bunka.go.jp/seisaku/bunkashingikai/sokai/sokai_22/89/pdf/93820601_07.pdf"
+        },
+        {
+          "name": "第22期文化審議会スケジュール",
+          "url": "https://www.bunka.go.jp/seisaku/bunkashingikai/sokai/sokai_22/89/pdf/93820601_08.pdf"
+        },
+        {
+          "name": "参考資料1",
+          "url": "https://www.bunka.go.jp/seisaku/bunkashingikai/sokai/sokai_22/89/pdf/93820601_09.pdf"
+        },
+        {
+          "name": "新時代に求められる文化芸術に関する施策の総合的かつ計画的な推進方策について－「文化芸術推進基本計画（第2期）」の策定に向けて－（概要）",
+          "url": "https://www.bunka.go.jp/seisaku/bunkashingikai/sokai/sokai_22/89/pdf/93820601_10.pdf"
+        },
+        {
+          "name": "新時代に求められる文化芸術に関する施策の総合的かつ計画的な推進方策について－「文化芸術推進基本計画（第2期）」の策定に向けて－",
+          "url": "https://www.bunka.go.jp/seisaku/bunkashingikai/sokai/sokai_22/89/pdf/93820601_11.pdf"
+        },
+        {
+          "name": "文化芸術推進基本計画（第1期）（平成30年3月6日閣議決定）の概要",
+          "url": "https://www.bunka.go.jp/seisaku/bunkashingikai/sokai/sokai_22/89/pdf/93820601_12.pdf"
+        },
+        {
+          "name": "文化芸術推進基本計画（第1期）（平成30年3月6日閣議決定)",
+          "url": "https://www.bunka.go.jp/seisaku/bunkashingikai/sokai/sokai_22/89/pdf/93820601_13.pdf"
+        },
+        {
+          "name": "文化審議会関係資料",
+          "url": "https://www.bunka.go.jp/seisaku/bunkashingikai/sokai/sokai_22/89/pdf/93820601_14.pdf"
+        },
+        {
+          "name": "第22期文化審議会第3回総会 議事録",
+          "url": "https://www.bunka.go.jp/seisaku/bunkashingikai/sokai/sokai_22/89/pdf/94197501_14.pdf"
+        }
+      ]
     },
     {
       "id": "smea-businessmodel_syokoutyukin-20221216-001",
@@ -124277,6 +124809,66 @@
       "category": "STUDY"
     },
     {
+      "id": "aca-bunka_shingikai_sokai-20220628-088",
+      "councilId": "aca-bunka_shingikai_sokai",
+      "title": "第88回 文化審議会 総会",
+      "date": "2022/06/28",
+      "officialUrl": "https://www.bunka.go.jp/seisaku/bunkashingikai/sokai/sokai_22/88/index.html",
+      "category": "COUNCIL",
+      "ministry": "ACA",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "新時代に求められる文化芸術に関する施策の総合的かつ計画的な推進方策について-「文化芸術推進基本計画（第2期）」の策定に向けて-（諮問）（概要）",
+          "url": "https://www.bunka.go.jp/seisaku/bunkashingikai/sokai/sokai_22/88/pdf/93732301_01.pdf"
+        },
+        {
+          "name": "新時代に求められる文化芸術に関する施策の総合的かつ計画的な推進方策について-「文化芸術推進基本計画（第2期）」の策定に向けて-（諮問）",
+          "url": "https://www.bunka.go.jp/seisaku/bunkashingikai/sokai/sokai_22/88/pdf/93732301_02.pdf"
+        },
+        {
+          "name": "文化芸術推進基本計画（第2期）に向けて（文化芸術推進基本計画（第1期）中間評価報告書 参考資料2）",
+          "url": "https://www.bunka.go.jp/seisaku/bunkashingikai/sokai/sokai_22/88/pdf/93732301_03.pdf"
+        },
+        {
+          "name": "政府文書における文化芸術関係の主な記述について",
+          "url": "https://www.bunka.go.jp/seisaku/bunkashingikai/sokai/sokai_22/88/pdf/93732301_04.pdf"
+        },
+        {
+          "name": "検討スケジュール（案）",
+          "url": "https://www.bunka.go.jp/seisaku/bunkashingikai/sokai/sokai_22/88/pdf/93732301_05.pdf"
+        },
+        {
+          "name": "第22期文化審議会委員名簿",
+          "url": "https://www.bunka.go.jp/seisaku/bunkashingikai/sokai/sokai_22/88/pdf/93732301_06.pdf"
+        },
+        {
+          "name": "文化審議会概要",
+          "url": "https://www.bunka.go.jp/seisaku/bunkashingikai/sokai/sokai_22/88/pdf/93732301_07.pdf"
+        },
+        {
+          "name": "各分科会への委員の分属",
+          "url": "https://www.bunka.go.jp/seisaku/bunkashingikai/sokai/sokai_22/88/pdf/93732301_08.pdf"
+        },
+        {
+          "name": "資料4～資料6　一式",
+          "url": "https://www.bunka.go.jp/seisaku/bunkashingikai/sokai/sokai_22/88/pdf/93732301_09.pdf"
+        },
+        {
+          "name": "文化芸術推進基本計画（第1期）の概要",
+          "url": "https://www.bunka.go.jp/seisaku/bunkashingikai/sokai/sokai_22/88/pdf/93732301_10.pdf"
+        },
+        {
+          "name": "文化芸術推進基本計画（第1期）中間評価報告書（令和4年3月31日　文化審議会決定）",
+          "url": "https://www.bunka.go.jp/seisaku/bunkashingikai/sokai/sokai_22/88/pdf/93732301_11.pdf"
+        },
+        {
+          "name": "第22期文化審議会第2回総会　議事録",
+          "url": "https://www.bunka.go.jp/seisaku/bunkashingikai/sokai/sokai_22/88/pdf/94197501_13.pdf"
+        }
+      ]
+    },
+    {
       "id": "fsa-sustainable_finance-20220627-013",
       "councilId": "fsa-sustainable_finance",
       "councilName": "サステナブルファイナンス有識者会議",
@@ -127840,6 +128432,70 @@
       "councilName": "規制改革推進会議 デジタル・AI WG"
     },
     {
+      "id": "aca-bunka_shingikai_sokai-20220412-087",
+      "councilId": "aca-bunka_shingikai_sokai",
+      "title": "第87回 文化審議会 総会",
+      "date": "2022/04/12",
+      "officialUrl": "https://www.bunka.go.jp/seisaku/bunkashingikai/sokai/sokai_22/87/index.html",
+      "category": "COUNCIL",
+      "ministry": "ACA",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "第22期文化審議会委員名簿",
+          "url": "https://www.bunka.go.jp/seisaku/bunkashingikai/sokai/sokai_22/87/pdf/93703101_01.pdf"
+        },
+        {
+          "name": "文化審議会概要",
+          "url": "https://www.bunka.go.jp/seisaku/bunkashingikai/sokai/sokai_22/87/pdf/93703101_02.pdf"
+        },
+        {
+          "name": "各分科会への委員の分属",
+          "url": "https://www.bunka.go.jp/seisaku/bunkashingikai/sokai/sokai_22/87/pdf/93703101_03.pdf"
+        },
+        {
+          "name": "文化政策部会の設置について（案）",
+          "url": "https://www.bunka.go.jp/seisaku/bunkashingikai/sokai/sokai_22/87/pdf/93703101_04.pdf"
+        },
+        {
+          "name": "美術品補償制度部会の設置について（案）",
+          "url": "https://www.bunka.go.jp/seisaku/bunkashingikai/sokai/sokai_22/87/pdf/93703101_05.pdf"
+        },
+        {
+          "name": "世界文化遺産部会の設置について（案）",
+          "url": "https://www.bunka.go.jp/seisaku/bunkashingikai/sokai/sokai_22/87/pdf/93703101_06.pdf"
+        },
+        {
+          "name": "無形文化遺産部会の設置について（案）",
+          "url": "https://www.bunka.go.jp/seisaku/bunkashingikai/sokai/sokai_22/87/pdf/93703101_07.pdf"
+        },
+        {
+          "name": "博物館部会の設置について（案）",
+          "url": "https://www.bunka.go.jp/seisaku/bunkashingikai/sokai/sokai_22/87/pdf/93703101_08.pdf"
+        },
+        {
+          "name": "文化経済部会の設置について（案）",
+          "url": "https://www.bunka.go.jp/seisaku/bunkashingikai/sokai/sokai_22/87/pdf/93703101_09.pdf"
+        },
+        {
+          "name": "博物館法の一部を改正する法律の概要等について",
+          "url": "https://www.bunka.go.jp/seisaku/bunkashingikai/sokai/sokai_22/87/pdf/93703101_10.pdf"
+        },
+        {
+          "name": "文化審議会関係法令",
+          "url": "https://www.bunka.go.jp/seisaku/bunkashingikai/sokai/sokai_22/87/pdf/93703101_11.pdf"
+        },
+        {
+          "name": "文化審議会運営規則",
+          "url": "https://www.bunka.go.jp/seisaku/bunkashingikai/sokai/sokai_22/87/pdf/93703101_12.pdf"
+        },
+        {
+          "name": "文化審議会の会議の公開について",
+          "url": "https://www.bunka.go.jp/seisaku/bunkashingikai/sokai/sokai_22/87/pdf/93703101_13.pdf"
+        }
+      ]
+    },
+    {
       "id": "mof-zaiseiseido_bunkakai-20220408-s01",
       "councilId": "mof-zaiseiseido_bunkakai",
       "councilName": "財政制度等審議会 財政制度分科会",
@@ -128288,6 +128944,70 @@
         }
       ],
       "councilName": "規制改革推進会議 デジタル・AI WG"
+    },
+    {
+      "id": "aca-bunka_shingikai_sokai-20220329-086",
+      "councilId": "aca-bunka_shingikai_sokai",
+      "title": "第86回 文化審議会 総会",
+      "date": "2022/03/29",
+      "officialUrl": "https://www.bunka.go.jp/seisaku/bunkashingikai/sokai/sokai_21/86/index.html",
+      "category": "COUNCIL",
+      "ministry": "ACA",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "国語分科会における審議状況と今後の主な課題",
+          "url": "https://www.bunka.go.jp/seisaku/bunkashingikai/sokai/sokai_21/86/pdf/93694101_01.pdf"
+        },
+        {
+          "name": "著作権分科会における審議状況と今後の主な課題",
+          "url": "https://www.bunka.go.jp/seisaku/bunkashingikai/sokai/sokai_21/86/pdf/93694101_02.pdf"
+        },
+        {
+          "name": "文化財分科会における審議状況と今後の主な課題",
+          "url": "https://www.bunka.go.jp/seisaku/bunkashingikai/sokai/sokai_21/86/pdf/93694101_03.pdf"
+        },
+        {
+          "name": "文化政策部会における審議状況と今後の主な課題",
+          "url": "https://www.bunka.go.jp/seisaku/bunkashingikai/sokai/sokai_21/86/pdf/93694101_04.pdf"
+        },
+        {
+          "name": "美術品補償制度部会における審議状況と今後の主な課題",
+          "url": "https://www.bunka.go.jp/seisaku/bunkashingikai/sokai/sokai_21/86/pdf/93694101_05.pdf"
+        },
+        {
+          "name": "世界文化遺産部会における審議状況と今後の主な課題",
+          "url": "https://www.bunka.go.jp/seisaku/bunkashingikai/sokai/sokai_21/86/pdf/93694101_06.pdf"
+        },
+        {
+          "name": "無形文化遺産部会における審議状況と今後の主な課題",
+          "url": "https://www.bunka.go.jp/seisaku/bunkashingikai/sokai/sokai_21/86/pdf/93694101_07.pdf"
+        },
+        {
+          "name": "博物館部会における審議状況と今後の主な課題",
+          "url": "https://www.bunka.go.jp/seisaku/bunkashingikai/sokai/sokai_21/86/pdf/93694101_08.pdf"
+        },
+        {
+          "name": "文化経済部会における審議状況と今後の主な課題",
+          "url": "https://www.bunka.go.jp/seisaku/bunkashingikai/sokai/sokai_21/86/pdf/93694101_09.pdf"
+        },
+        {
+          "name": "博物館法の一部を改正する法律（案）について（概要）",
+          "url": "https://www.bunka.go.jp/seisaku/bunkashingikai/sokai/sokai_21/86/pdf/93694101_10.pdf"
+        },
+        {
+          "name": "博物館法の一部を改正する法律（案）について（新旧対照条文）",
+          "url": "https://www.bunka.go.jp/seisaku/bunkashingikai/sokai/sokai_21/86/pdf/93694101_11.pdf"
+        },
+        {
+          "name": "文化と経済の好循環を実現する文化芸術活動の「創造的循環」",
+          "url": "https://www.bunka.go.jp/seisaku/bunkashingikai/sokai/sokai_21/86/pdf/93694101_12.pdf"
+        },
+        {
+          "name": "令和４年度文化庁予算の概要",
+          "url": "https://www.bunka.go.jp/seisaku/bunkashingikai/sokai/sokai_21/86/pdf/93694101_13.pdf"
+        }
+      ]
     },
     {
       "id": "cao-kisei_hatarakikata_wg-20220328-005",
@@ -133226,6 +133946,46 @@
       "officialUrl": "https://www.fdma.go.jp/singi_kento/kento/post-100.html",
       "hasMinutes": true,
       "docCount": 10
+    },
+    {
+      "id": "aca-bunka_shingikai_sokai-20211220-085",
+      "councilId": "aca-bunka_shingikai_sokai",
+      "title": "第85回 文化審議会 総会",
+      "date": "2021/12/20",
+      "officialUrl": "https://www.bunka.go.jp/seisaku/bunkashingikai/sokai/sokai_21/85/index.html",
+      "category": "COUNCIL",
+      "ministry": "ACA",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "博物館法制度の今後の在り方について（答申）（案）",
+          "url": "https://www.bunka.go.jp/seisaku/bunkashingikai/sokai/sokai_21/85/pdf/93639201_07.pdf"
+        },
+        {
+          "name": "博物館法制度の今後の在り方について（答申）（案）の概要",
+          "url": "https://www.bunka.go.jp/seisaku/bunkashingikai/sokai/sokai_21/85/pdf/93639201_08.pdf"
+        },
+        {
+          "name": "文化経済部会の設置",
+          "url": "https://www.bunka.go.jp/seisaku/bunkashingikai/sokai/sokai_21/85/pdf/93639201_03.pdf"
+        },
+        {
+          "name": "文化財分科会からの報告",
+          "url": "https://www.bunka.go.jp/seisaku/bunkashingikai/sokai/sokai_21/85/pdf/93639201_04.pdf"
+        },
+        {
+          "name": "国語分科会からの報告",
+          "url": "https://www.bunka.go.jp/seisaku/bunkashingikai/sokai/sokai_21/85/pdf/93639201_05.pdf"
+        },
+        {
+          "name": "令和3年度文化庁補正予算（案）の概要",
+          "url": "https://www.bunka.go.jp/seisaku/bunkashingikai/sokai/sokai_21/85/pdf/93639201_06.pdf"
+        },
+        {
+          "name": "第21期文化審議会第2回総会 議事録",
+          "url": "https://www.bunka.go.jp/seisaku/bunkashingikai/sokai/sokai_21/85/pdf/94197501_12.pdf"
+        }
+      ]
     },
     {
       "id": "fdma-boukasoubi_guideline-20211217-003",
@@ -142009,6 +142769,50 @@
       "councilName": "中小企業強靱化研究会"
     },
     {
+      "id": "aca-bunka_shingikai_sokai-20210405-084",
+      "councilId": "aca-bunka_shingikai_sokai",
+      "title": "第84回 文化審議会 総会",
+      "date": "2021/04/05",
+      "officialUrl": "https://www.bunka.go.jp/seisaku/bunkashingikai/sokai/sokai_21/84/index.html",
+      "category": "COUNCIL",
+      "ministry": "ACA",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "第21期文化審議会委員名簿",
+          "url": "https://www.bunka.go.jp/seisaku/bunkashingikai/sokai/sokai_21/84/pdf/93077601_01.pdf"
+        },
+        {
+          "name": "文化審議会概要",
+          "url": "https://www.bunka.go.jp/seisaku/bunkashingikai/sokai/sokai_21/84/pdf/93077601_02.pdf"
+        },
+        {
+          "name": "各分科会への委員の分属",
+          "url": "https://www.bunka.go.jp/seisaku/bunkashingikai/sokai/sokai_21/84/pdf/93077601_03.pdf"
+        },
+        {
+          "name": "資料4～資料8　一式",
+          "url": "https://www.bunka.go.jp/seisaku/bunkashingikai/sokai/sokai_21/84/pdf/93077601_08.pdf"
+        },
+        {
+          "name": "文化審議会関係法令",
+          "url": "https://www.bunka.go.jp/seisaku/bunkashingikai/sokai/sokai_21/84/pdf/93077602_01.pdf"
+        },
+        {
+          "name": "文化審議会運営規則",
+          "url": "https://www.bunka.go.jp/seisaku/bunkashingikai/sokai/sokai_21/84/pdf/93077602_02.pdf"
+        },
+        {
+          "name": "文化審議会の会議の公開について",
+          "url": "https://www.bunka.go.jp/seisaku/bunkashingikai/sokai/sokai_21/84/pdf/93077602_03.pdf"
+        },
+        {
+          "name": "第21期文化審議会第1回総会 議事録",
+          "url": "https://www.bunka.go.jp/seisaku/bunkashingikai/sokai/sokai_21/84/pdf/94197501_11.pdf"
+        }
+      ]
+    },
+    {
       "id": "smea-chizaitorihiki-20210331-s01",
       "councilId": "smea-chizaitorihiki",
       "title": "知的財産取引検討会 報告書",
@@ -142138,6 +142942,70 @@
       "hasMinutes": true,
       "docCount": 63,
       "manualLock": true
+    },
+    {
+      "id": "aca-bunka_shingikai_sokai-20210331-083",
+      "councilId": "aca-bunka_shingikai_sokai",
+      "title": "第83回 文化審議会 総会",
+      "date": "2021/03/31",
+      "officialUrl": "https://www.bunka.go.jp/seisaku/bunkashingikai/sokai/sokai_20/83/index.html",
+      "category": "COUNCIL",
+      "ministry": "ACA",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "資料1～資料8　一式",
+          "url": "https://www.bunka.go.jp/seisaku/bunkashingikai/sokai/sokai_20/83/pdf/93055801_01.pdf"
+        },
+        {
+          "name": "文化財保護法の一部を改正する法律（案）について（概要）",
+          "url": "https://www.bunka.go.jp/seisaku/bunkashingikai/sokai/sokai_20/83/pdf/93055801_02.pdf"
+        },
+        {
+          "name": "著作権法の一部を改正する法律（案）について（概要）",
+          "url": "https://www.bunka.go.jp/seisaku/bunkashingikai/sokai/sokai_20/83/pdf/93055801_03.pdf"
+        },
+        {
+          "name": "新しい「公用文作成の要領」に向けて（報告）",
+          "url": "https://www.bunka.go.jp/seisaku/bunkashingikai/sokai/sokai_20/83/pdf/93055801_04.pdf"
+        },
+        {
+          "name": "「障害」の表記に関する国語分科会の考え方",
+          "url": "https://www.bunka.go.jp/seisaku/bunkashingikai/sokai/sokai_20/83/pdf/93055801_05.pdf"
+        },
+        {
+          "name": "「日本語教育の参照枠」一次報告（PDF）",
+          "url": "https://www.bunka.go.jp/seisaku/bunkashingikai/kokugo/hokoku/pdf/92664201_01.pdf"
+        },
+        {
+          "name": "「日本語教育の参照枠」二次報告",
+          "url": "https://www.bunka.go.jp/seisaku/bunkashingikai/sokai/sokai_20/83/pdf/93055801_07.pdf"
+        },
+        {
+          "name": "今後の食文化振興の在り方について～日本の魅力ある食文化を未来につなげるために～（概要・本文））",
+          "url": "https://www.bunka.go.jp/seisaku/bunkashingikai/sokai/sokai_20/83/pdf/93055801_08.pdf"
+        },
+        {
+          "name": "アート市場活性化を通じた文化と経済の好循環による「文化芸術立国」の実現に向けて（概要・本文）",
+          "url": "https://www.bunka.go.jp/seisaku/bunkashingikai/sokai/sokai_20/83/pdf/93055801_09.pdf"
+        },
+        {
+          "name": "文化財保護法の一部を改正する法律（案）について（新旧対照条文）",
+          "url": "https://www.bunka.go.jp/seisaku/bunkashingikai/sokai/sokai_20/83/pdf/93055801_10.pdf"
+        },
+        {
+          "name": "著作権法の一部を改正する法律（案）について（新旧対照条文）",
+          "url": "https://www.bunka.go.jp/seisaku/bunkashingikai/sokai/sokai_20/83/pdf/93055801_11.pdf"
+        },
+        {
+          "name": "令和3年度文化庁予算の概要",
+          "url": "https://www.bunka.go.jp/seisaku/bunkashingikai/sokai/sokai_20/83/pdf/93055801_12.pdf"
+        },
+        {
+          "name": "第20期文化審議会第2回総会 議事録",
+          "url": "https://www.bunka.go.jp/seisaku/bunkashingikai/sokai/sokai_20/83/pdf/94197501_10.pdf"
+        }
+      ]
     },
     {
       "id": "nta-zeirishi_bunkakai-20210330-096",
@@ -151630,6 +152498,62 @@
       "councilName": "第32次地方制度調査会"
     },
     {
+      "id": "aca-bunka_shingikai_sokai-20200403-082",
+      "councilId": "aca-bunka_shingikai_sokai",
+      "title": "第82回 文化審議会 総会",
+      "date": "2020/04/03",
+      "officialUrl": "https://www.bunka.go.jp/seisaku/bunkashingikai/sokai/sokai_20/82/index.html",
+      "category": "COUNCIL",
+      "ministry": "ACA",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "第20期文化審議会総会名簿",
+          "url": "https://www.bunka.go.jp/seisaku/bunkashingikai/sokai/sokai_20/82/pdf/92199701_01.pdf"
+        },
+        {
+          "name": "文化審議会概要",
+          "url": "https://www.bunka.go.jp/seisaku/bunkashingikai/sokai/sokai_20/82/pdf/92199701_02.pdf"
+        },
+        {
+          "name": "分科会委員分属",
+          "url": "https://www.bunka.go.jp/seisaku/bunkashingikai/sokai/sokai_20/82/pdf/92199701_03.pdf"
+        },
+        {
+          "name": "文化政策部会の設置について（案）",
+          "url": "https://www.bunka.go.jp/seisaku/bunkashingikai/sokai/sokai_20/82/pdf/92199701_04.pdf"
+        },
+        {
+          "name": "美術品補償制度部会の設置について（案）",
+          "url": "https://www.bunka.go.jp/seisaku/bunkashingikai/sokai/sokai_20/82/pdf/92199701_05.pdf"
+        },
+        {
+          "name": "世界文化遺産部会の設置について（案）",
+          "url": "https://www.bunka.go.jp/seisaku/bunkashingikai/sokai/sokai_20/82/pdf/92199701_06.pdf"
+        },
+        {
+          "name": "無形文化遺産部会の設置について（案）",
+          "url": "https://www.bunka.go.jp/seisaku/bunkashingikai/sokai/sokai_20/82/pdf/92199701_07.pdf"
+        },
+        {
+          "name": "博物館部会の設置について（案）",
+          "url": "https://www.bunka.go.jp/seisaku/bunkashingikai/sokai/sokai_20/82/pdf/92199701_08.pdf"
+        },
+        {
+          "name": "文化審議会関係法令",
+          "url": "https://www.bunka.go.jp/seisaku/bunkashingikai/sokai/sokai_20/82/pdf/92199701_09.pdf"
+        },
+        {
+          "name": "文化審議会運営規則",
+          "url": "https://www.bunka.go.jp/seisaku/bunkashingikai/sokai/sokai_20/82/pdf/92199701_10.pdf"
+        },
+        {
+          "name": "文化審議会の会議の公開について",
+          "url": "https://www.bunka.go.jp/seisaku/bunkashingikai/sokai/sokai_20/82/pdf/92199701_11.pdf"
+        }
+      ]
+    },
+    {
       "id": "cas-tiikisaisei-20200331-033",
       "councilId": "cas-tiikisaisei",
       "title": "第33回 地域再生本部",
@@ -151829,6 +152753,30 @@
         }
       ],
       "councilName": "健康・医療戦略推進本部"
+    },
+    {
+      "id": "aca-bunka_shingikai_sokai-20200327-081",
+      "councilId": "aca-bunka_shingikai_sokai",
+      "title": "第81回 文化審議会 総会",
+      "date": "2020/03/27",
+      "officialUrl": "https://www.bunka.go.jp/seisaku/bunkashingikai/sokai/sokai_19/81/index.html",
+      "category": "COUNCIL",
+      "ministry": "ACA",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "日本語教師の資格の在り方について（報告）",
+          "url": "https://www.bunka.go.jp/seisaku/bunkashingikai/kokugo/hokoku/pdf/92083701_01.pdf"
+        },
+        {
+          "name": "資料1～資料8 一式",
+          "url": "https://www.bunka.go.jp/seisaku/bunkashingikai/sokai/sokai_19/81/pdf/92179002_01.pdf"
+        },
+        {
+          "name": "「日本博」について",
+          "url": "https://www.bunka.go.jp/seisaku/bunkashingikai/sokai/sokai_19/81/pdf/92179002_02.pdf"
+        }
+      ]
     },
     {
       "id": "cao-kisei_digital_ai_wg-20200323-008",
@@ -157249,6 +158197,22 @@
       "category": "STUDY"
     },
     {
+      "id": "aca-bunka_shingikai_sokai-20191028-080",
+      "councilId": "aca-bunka_shingikai_sokai",
+      "title": "第80回 文化審議会 総会",
+      "date": "2019/10/28",
+      "officialUrl": "https://www.bunka.go.jp/seisaku/bunkashingikai/sokai/sokai_19/80/index.html",
+      "category": "COUNCIL",
+      "ministry": "ACA",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "博物館部会の設置について（案）",
+          "url": "https://www.bunka.go.jp/seisaku/bunkashingikai/sokai/sokai_19/80/pdf/92179001_01.pdf"
+        }
+      ]
+    },
+    {
       "id": "mic-chihou_seido_32-20191025-004",
       "councilId": "mic-chihou_seido_32",
       "title": "第4回 第32次地方制度調査会 総会",
@@ -161992,6 +162956,58 @@
       ]
     },
     {
+      "id": "aca-bunka_shingikai_sokai-20190412-079",
+      "councilId": "aca-bunka_shingikai_sokai",
+      "title": "第79回 文化審議会 総会",
+      "date": "2019/04/12",
+      "officialUrl": "https://www.bunka.go.jp/seisaku/bunkashingikai/sokai/sokai_19/79/index.html",
+      "category": "COUNCIL",
+      "ministry": "ACA",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "第19期文化審議会委員名簿",
+          "url": "https://www.bunka.go.jp/seisaku/bunkashingikai/sokai/sokai_19/79/pdf/r1416098_01.pdf"
+        },
+        {
+          "name": "文化審議会概要",
+          "url": "https://www.bunka.go.jp/seisaku/bunkashingikai/sokai/sokai_19/79/pdf/r1416098_02.pdf"
+        },
+        {
+          "name": "各分科会への委員の分属",
+          "url": "https://www.bunka.go.jp/seisaku/bunkashingikai/sokai/sokai_19/79/pdf/r1416098_03.pdf"
+        },
+        {
+          "name": "文化政策部会の設置について（案）",
+          "url": "https://www.bunka.go.jp/seisaku/bunkashingikai/sokai/sokai_19/79/pdf/r1416098_04.pdf"
+        },
+        {
+          "name": "美術品補償制度部会の設置について（案）",
+          "url": "https://www.bunka.go.jp/seisaku/bunkashingikai/sokai/sokai_19/79/pdf/r1416098_05.pdf"
+        },
+        {
+          "name": "世界文化遺産部会の設置について（案）",
+          "url": "https://www.bunka.go.jp/seisaku/bunkashingikai/sokai/sokai_19/79/pdf/r1416098_06.pdf"
+        },
+        {
+          "name": "無形文化遺産部会の設置について（案）",
+          "url": "https://www.bunka.go.jp/seisaku/bunkashingikai/sokai/sokai_19/79/pdf/r1416098_07.pdf"
+        },
+        {
+          "name": "文化審議会関係法令",
+          "url": "https://www.bunka.go.jp/seisaku/bunkashingikai/sokai/sokai_19/79/pdf/r1416098_08.pdf"
+        },
+        {
+          "name": "文化審議会運営規則",
+          "url": "https://www.bunka.go.jp/seisaku/bunkashingikai/sokai/sokai_19/79/pdf/r1416098_09.pdf"
+        },
+        {
+          "name": "文化審議会の会議の公開について",
+          "url": "https://www.bunka.go.jp/seisaku/bunkashingikai/sokai/sokai_19/79/pdf/r1416098_10.pdf"
+        }
+      ]
+    },
+    {
       "id": "mic-chihou_seido_32-20190408-013",
       "councilId": "mic-chihou_seido_32",
       "title": "第13回 第32次地方制度調査会 専門小委員会",
@@ -162243,6 +163259,22 @@
         }
       ],
       "councilName": "地域再生本部"
+    },
+    {
+      "id": "aca-bunka_shingikai_sokai-20190320-078",
+      "councilId": "aca-bunka_shingikai_sokai",
+      "title": "第78回 文化審議会 総会",
+      "date": "2019/03/20",
+      "officialUrl": "https://www.bunka.go.jp/seisaku/bunkashingikai/sokai/sokai_18/78/",
+      "category": "COUNCIL",
+      "ministry": "ACA",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "議事録",
+          "url": "https://www.bunka.go.jp/seisaku/bunkashingikai/sokai/sokai_18/78/pdf/94197501_09.pdf"
+        }
+      ]
     },
     {
       "id": "smea-smart_sme_kenkyukai-20190313-001",
@@ -167252,6 +168284,22 @@
       "councilName": "商工中金の経営及び危機対応業務に関する評価委員会"
     },
     {
+      "id": "aca-bunka_shingikai_sokai-20180406-077",
+      "councilId": "aca-bunka_shingikai_sokai",
+      "title": "第77回 文化審議会 総会",
+      "date": "2018/04/06",
+      "officialUrl": "https://www.bunka.go.jp/seisaku/bunkashingikai/sokai/sokai_18/77/",
+      "category": "COUNCIL",
+      "ministry": "ACA",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "議事録",
+          "url": "https://www.bunka.go.jp/seisaku/bunkashingikai/sokai/sokai_18/77/pdf/94197501_08.pdf"
+        }
+      ]
+    },
+    {
       "id": "jsa-sports_guideline-20180331-s01",
       "councilId": "jsa-sports_guideline",
       "title": "運動・スポーツガイドライン（仮称）策定に向けた有識者会議（平成29年度）",
@@ -167554,6 +168602,22 @@
         {
           "name": "75議事概要［99KB］",
           "url": "https://www.fsc.go.jp/fsciis/attachedFile/download?retrievalId=kai20180326bv1&fileId=410"
+        }
+      ]
+    },
+    {
+      "id": "aca-bunka_shingikai_sokai-20180323-076",
+      "councilId": "aca-bunka_shingikai_sokai",
+      "title": "第76回 文化審議会 総会",
+      "date": "2018/03/23",
+      "officialUrl": "https://www.bunka.go.jp/seisaku/bunkashingikai/sokai/sokai_17/76/",
+      "category": "COUNCIL",
+      "ministry": "ACA",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "議事録",
+          "url": "https://www.bunka.go.jp/seisaku/bunkashingikai/sokai/sokai_17/76/pdf/94197501_07.pdf"
         }
       ]
     },
@@ -167934,6 +168998,22 @@
       "councilName": "高齢社会対策会議"
     },
     {
+      "id": "aca-bunka_shingikai_sokai-20180216-075",
+      "councilId": "aca-bunka_shingikai_sokai",
+      "title": "第75回 文化審議会 総会",
+      "date": "2018/02/16",
+      "officialUrl": "https://www.bunka.go.jp/seisaku/bunkashingikai/sokai/sokai_17/75/",
+      "category": "COUNCIL",
+      "ministry": "ACA",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "議事録",
+          "url": "https://www.bunka.go.jp/seisaku/bunkashingikai/sokai/sokai_17/75/pdf/94197501_06.pdf"
+        }
+      ]
+    },
+    {
       "id": "fsc-biseibutu_virus-20180207-074",
       "councilId": "fsc-biseibutu_virus",
       "title": "第74回微生物・ウイルス専門調査会",
@@ -168172,6 +169252,22 @@
         }
       ],
       "councilName": "商工中金の在り方検討会"
+    },
+    {
+      "id": "aca-bunka_shingikai_sokai-20171227-074",
+      "councilId": "aca-bunka_shingikai_sokai",
+      "title": "第74回 文化審議会 総会",
+      "date": "2017/12/27",
+      "officialUrl": "https://www.bunka.go.jp/seisaku/bunkashingikai/sokai/sokai_17/74/",
+      "category": "COUNCIL",
+      "ministry": "ACA",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "議事録",
+          "url": "https://www.bunka.go.jp/seisaku/bunkashingikai/sokai/sokai_17/74/pdf/94197501_05.pdf"
+        }
+      ]
     },
     {
       "id": "cas-titeki2-20171222-010",
@@ -169039,6 +170135,22 @@
         {
           "name": "第10回 開催案内",
           "url": "https://www.mhlw.go.jp/stf/shingi2/0000183613.html"
+        }
+      ]
+    },
+    {
+      "id": "aca-bunka_shingikai_sokai-20171113-073",
+      "councilId": "aca-bunka_shingikai_sokai",
+      "title": "第73回 文化審議会 総会",
+      "date": "2017/11/13",
+      "officialUrl": "https://www.bunka.go.jp/seisaku/bunkashingikai/sokai/sokai_17/73/",
+      "category": "COUNCIL",
+      "ministry": "ACA",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "議事録",
+          "url": "https://www.bunka.go.jp/seisaku/bunkashingikai/sokai/sokai_17/73/pdf/94197501_04.pdf"
         }
       ]
     },
@@ -170673,6 +171785,22 @@
       ]
     },
     {
+      "id": "aca-bunka_shingikai_sokai-20170621-072",
+      "councilId": "aca-bunka_shingikai_sokai",
+      "title": "第72回 文化審議会 総会",
+      "date": "2017/06/21",
+      "officialUrl": "https://www.bunka.go.jp/seisaku/bunkashingikai/sokai/sokai_17/72/",
+      "category": "COUNCIL",
+      "ministry": "ACA",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "議事録",
+          "url": "https://www.bunka.go.jp/seisaku/bunkashingikai/sokai/sokai_17/72/gijiroku.html"
+        }
+      ]
+    },
+    {
       "id": "cas-chotatsu-20170615-004",
       "councilId": "cas-chotatsu",
       "councilName": "政府調達の自主的措置に関する関係省庁等会議",
@@ -172182,6 +173310,22 @@
       "councilName": "中央防災会議"
     },
     {
+      "id": "aca-bunka_shingikai_sokai-20170406-071",
+      "councilId": "aca-bunka_shingikai_sokai",
+      "title": "第71回 文化審議会 総会",
+      "date": "2017/04/06",
+      "officialUrl": "https://www.bunka.go.jp/seisaku/bunkashingikai/sokai/sokai_17/71/",
+      "category": "COUNCIL",
+      "ministry": "ACA",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "議事録",
+          "url": "https://www.bunka.go.jp/seisaku/bunkashingikai/sokai/sokai_17/71/gijiroku.html"
+        }
+      ]
+    },
+    {
       "id": "cas-ir_promotion-20170404-001",
       "councilId": "cas-ir_promotion",
       "title": "第1回 特定複合観光施設区域整備推進本部",
@@ -172607,6 +173751,22 @@
       "hasMinutes": false,
       "docCount": 56,
       "manualLock": true
+    },
+    {
+      "id": "aca-bunka_shingikai_sokai-20170314-070",
+      "councilId": "aca-bunka_shingikai_sokai",
+      "title": "第70回 文化審議会 総会",
+      "date": "2017/03/14",
+      "officialUrl": "https://www.bunka.go.jp/seisaku/bunkashingikai/sokai/sokai_16/70/",
+      "category": "COUNCIL",
+      "ministry": "ACA",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "議事録",
+          "url": "https://www.bunka.go.jp/seisaku/bunkashingikai/sokai/sokai_16/70/pdf/94197501_03.pdf"
+        }
+      ]
     },
     {
       "id": "ra-fukko_suishin_kaigi-20170310-018",
@@ -174456,6 +175616,22 @@
       "councilName": "国際的に脅威となる感染症対策の強化のための国際連携等関係閣僚会議"
     },
     {
+      "id": "aca-bunka_shingikai_sokai-20161114-069",
+      "councilId": "aca-bunka_shingikai_sokai",
+      "title": "第69回 文化審議会 総会",
+      "date": "2016/11/14",
+      "officialUrl": "https://www.bunka.go.jp/seisaku/bunkashingikai/sokai/sokai_16/69/",
+      "category": "COUNCIL",
+      "ministry": "ACA",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "議事録",
+          "url": "https://www.bunka.go.jp/seisaku/bunkashingikai/sokai/sokai_16/69/pdf/94197501_02.pdf"
+        }
+      ]
+    },
+    {
       "id": "fsc-kabi_shizen-20161110-043",
       "councilId": "fsc-kabi_shizen",
       "title": "第43回 かび毒・自然毒等専門調査会",
@@ -175486,6 +176662,22 @@
       "officialUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/kinyuedi/160927kinyuedi.html",
       "hasMinutes": true,
       "docCount": 2
+    },
+    {
+      "id": "aca-bunka_shingikai_sokai-20160927-068",
+      "councilId": "aca-bunka_shingikai_sokai",
+      "title": "第68回 文化審議会 総会",
+      "date": "2016/09/27",
+      "officialUrl": "https://www.bunka.go.jp/seisaku/bunkashingikai/sokai/sokai_16/68/",
+      "category": "COUNCIL",
+      "ministry": "ACA",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "議事録",
+          "url": "https://www.bunka.go.jp/seisaku/bunkashingikai/sokai/sokai_16/68/pdf/94197501_01.pdf"
+        }
+      ]
     },
     {
       "id": "cas-genshiryoku_kakuryo_kaigi-20160921-005",
@@ -177331,6 +178523,22 @@
       "manualLock": true
     },
     {
+      "id": "aca-bunka_shingikai_sokai-20160404-067",
+      "councilId": "aca-bunka_shingikai_sokai",
+      "title": "第67回 文化審議会 総会",
+      "date": "2016/04/04",
+      "officialUrl": "https://www.bunka.go.jp/seisaku/bunkashingikai/sokai/sokai_16/67/",
+      "category": "COUNCIL",
+      "ministry": "ACA",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "議事録",
+          "url": "https://www.bunka.go.jp/seisaku/bunkashingikai/sokai/sokai_16/67/gijiroku.html"
+        }
+      ]
+    },
+    {
       "id": "cao-space_anpo-20160330-011",
       "councilId": "cao-space_anpo",
       "councilName": "宇宙政策委員会 宇宙安全保障部会",
@@ -177693,6 +178901,22 @@
         {
           "name": "第38回 開催案内",
           "url": "https://www.mhlw.go.jp/stf/shingi2/0000115414.html"
+        }
+      ]
+    },
+    {
+      "id": "aca-bunka_shingikai_sokai-20160314-066",
+      "councilId": "aca-bunka_shingikai_sokai",
+      "title": "第66回 文化審議会 総会",
+      "date": "2016/03/14",
+      "officialUrl": "https://www.bunka.go.jp/seisaku/bunkashingikai/sokai/sokai_15/66/",
+      "category": "COUNCIL",
+      "ministry": "ACA",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "議事録",
+          "url": "https://www.bunka.go.jp/seisaku/bunkashingikai/sokai/sokai_15/66/gijiroku.html"
         }
       ]
     },
@@ -181378,6 +182602,22 @@
       "councilName": "第31次地方制度調査会"
     },
     {
+      "id": "aca-bunka_shingikai_sokai-20150416-065",
+      "councilId": "aca-bunka_shingikai_sokai",
+      "title": "第65回 文化審議会 総会",
+      "date": "2015/04/16",
+      "officialUrl": "https://www.bunka.go.jp/seisaku/bunkashingikai/sokai/sokai_15/65/",
+      "category": "COUNCIL",
+      "ministry": "ACA",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "議事録",
+          "url": "https://www.bunka.go.jp/seisaku/bunkashingikai/sokai/sokai_15/65/gijiroku.html"
+        }
+      ]
+    },
+    {
       "id": "mic-chihou_seido_31-20150413-015",
       "councilId": "mic-chihou_seido_31",
       "title": "第15回 第31次地方制度調査会 専門小委員会",
@@ -181536,6 +182776,22 @@
       ]
     },
     {
+      "id": "aca-bunka_shingikai_sokai-20150330-064",
+      "councilId": "aca-bunka_shingikai_sokai",
+      "title": "第64回 文化審議会 総会",
+      "date": "2015/03/30",
+      "officialUrl": "https://www.bunka.go.jp/seisaku/bunkashingikai/sokai/sokai_15/64/",
+      "category": "COUNCIL",
+      "ministry": "ACA",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "議事録",
+          "url": "https://www.bunka.go.jp/seisaku/bunkashingikai/sokai/sokai_15/64/gijiroku.html"
+        }
+      ]
+    },
+    {
       "id": "cas-kenkou_iryou_honbu-20150325-007",
       "councilId": "cas-kenkou_iryou_honbu",
       "title": "第7回 健康・医療戦略推進本部",
@@ -181680,6 +182936,22 @@
         {
           "name": "議事概要",
           "url": "https://www.fsc.go.jp/fsciis/attachedFile/download?retrievalId=kai20150319ky1&fileId=510"
+        }
+      ]
+    },
+    {
+      "id": "aca-bunka_shingikai_sokai-20150316-063",
+      "councilId": "aca-bunka_shingikai_sokai",
+      "title": "第63回 文化審議会 総会",
+      "date": "2015/03/16",
+      "officialUrl": "https://www.bunka.go.jp/seisaku/bunkashingikai/sokai/sokai_14/63/",
+      "category": "COUNCIL",
+      "ministry": "ACA",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "議事録",
+          "url": "https://www.bunka.go.jp/seisaku/bunkashingikai/sokai/sokai_14/63/gijiroku.html"
         }
       ]
     },
@@ -185013,6 +186285,22 @@
       "councilName": "国土強靱化の推進に関する関係府省庁連絡会議"
     },
     {
+      "id": "aca-bunka_shingikai_sokai-20140724-062",
+      "councilId": "aca-bunka_shingikai_sokai",
+      "title": "第62回 文化審議会 総会",
+      "date": "2014/07/24",
+      "officialUrl": "https://www.bunka.go.jp/seisaku/bunkashingikai/sokai/sokai_14/62/",
+      "category": "COUNCIL",
+      "ministry": "ACA",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "議事録",
+          "url": "https://www.bunka.go.jp/seisaku/bunkashingikai/sokai/sokai_14/62/gijiroku.html"
+        }
+      ]
+    },
+    {
       "id": "mic-chihou_seido_31-20140723-004",
       "councilId": "mic-chihou_seido_31",
       "title": "第4回 第31次地方制度調査会 専門小委員会",
@@ -186553,6 +187841,22 @@
       "councilName": "中央防災会議"
     },
     {
+      "id": "aca-bunka_shingikai_sokai-20140328-061",
+      "councilId": "aca-bunka_shingikai_sokai",
+      "title": "第61回 文化審議会 総会",
+      "date": "2014/03/28",
+      "officialUrl": "https://www.bunka.go.jp/seisaku/bunkashingikai/sokai/sokai_14/61/",
+      "category": "COUNCIL",
+      "ministry": "ACA",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "議事録",
+          "url": "https://www.bunka.go.jp/seisaku/bunkashingikai/sokai/sokai_14/61/gijiroku.html"
+        }
+      ]
+    },
+    {
       "id": "mhlw-tsumitatekin_kihon_shishin_kento-20140324-004",
       "councilId": "mhlw-tsumitatekin_kihon_shishin_kento",
       "title": "第4回 積立金基本指針に関する検討会",
@@ -186740,6 +188044,22 @@
         {
           "name": "第16回 開催案内",
           "url": "https://www.mhlw.go.jp/stf/shingi/0000037557.html"
+        }
+      ]
+    },
+    {
+      "id": "aca-bunka_shingikai_sokai-20140303-060",
+      "councilId": "aca-bunka_shingikai_sokai",
+      "title": "第60回 文化審議会 総会",
+      "date": "2014/03/03",
+      "officialUrl": "https://www.bunka.go.jp/seisaku/bunkashingikai/sokai/sokai_13/60/",
+      "category": "COUNCIL",
+      "ministry": "ACA",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "議事録",
+          "url": "https://www.bunka.go.jp/seisaku/bunkashingikai/sokai/sokai_13/60/gijiroku.html"
         }
       ]
     },
@@ -189261,6 +190581,22 @@
       "councilName": "国土強靱化の推進に関する関係府省庁連絡会議"
     },
     {
+      "id": "aca-bunka_shingikai_sokai-20130319-059",
+      "councilId": "aca-bunka_shingikai_sokai",
+      "title": "第59回 文化審議会 総会",
+      "date": "2013/03/19",
+      "officialUrl": "https://www.bunka.go.jp/seisaku/bunkashingikai/sokai/sokai_13/59/",
+      "category": "COUNCIL",
+      "ministry": "ACA",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "議事録",
+          "url": "https://www.bunka.go.jp/seisaku/bunkashingikai/sokai/sokai_13/59/gijiroku.html"
+        }
+      ]
+    },
+    {
       "id": "fsc-osen_tou-20130315-kagaku_005",
       "councilId": "fsc-osen_tou",
       "title": "第5回 化学物質・汚染物質専門調査会（平成25年）",
@@ -189669,6 +191005,22 @@
         }
       ],
       "councilName": "原子力災害からの福島復興再生協議会"
+    },
+    {
+      "id": "aca-bunka_shingikai_sokai-20130214-058",
+      "councilId": "aca-bunka_shingikai_sokai",
+      "title": "第58回 文化審議会 総会",
+      "date": "2013/02/14",
+      "officialUrl": "https://www.bunka.go.jp/seisaku/bunkashingikai/sokai/sokai_12/58/",
+      "category": "COUNCIL",
+      "ministry": "ACA",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "議事録",
+          "url": "https://www.bunka.go.jp/seisaku/bunkashingikai/sokai/sokai_12/58/gijiroku.html"
+        }
+      ]
     },
     {
       "id": "ra-fukko_suishin-20130206-007",
@@ -192739,6 +194091,22 @@
       "docCount": 1
     },
     {
+      "id": "aca-bunka_shingikai_sokai-20120305-057",
+      "councilId": "aca-bunka_shingikai_sokai",
+      "title": "第57回 文化審議会 総会",
+      "date": "2012/03/05",
+      "officialUrl": "https://www.bunka.go.jp/seisaku/bunkashingikai/sokai/sokai_12/57/",
+      "category": "COUNCIL",
+      "ministry": "ACA",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "議事録",
+          "url": "https://www.bunka.go.jp/seisaku/bunkashingikai/sokai/sokai_12/57/gijiroku.html"
+        }
+      ]
+    },
+    {
       "id": "fsc-osen_tou-20120223-kanji_008",
       "councilId": "fsc-osen_tou",
       "title": "第8回 化学物質・汚染物質専門調査会 幹事会（平成24年）",
@@ -192787,6 +194155,22 @@
         {
           "name": "議事概要［PDF］",
           "url": "https://www.fsc.go.jp/fsciis/attachedFile/download?retrievalId=kai20120223ka1&fileId=610"
+        }
+      ]
+    },
+    {
+      "id": "aca-bunka_shingikai_sokai-20120220-056",
+      "councilId": "aca-bunka_shingikai_sokai",
+      "title": "第56回 文化審議会 総会",
+      "date": "2012/02/20",
+      "officialUrl": "https://www.bunka.go.jp/seisaku/bunkashingikai/sokai/sokai_11/56/",
+      "category": "COUNCIL",
+      "ministry": "ACA",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "議事録",
+          "url": "https://www.bunka.go.jp/seisaku/bunkashingikai/sokai/sokai_11/56/gijiroku.html"
         }
       ]
     },
@@ -193984,6 +195368,22 @@
       "councilName": "第30次地方制度調査会"
     },
     {
+      "id": "aca-bunka_shingikai_sokai-20110722-055",
+      "councilId": "aca-bunka_shingikai_sokai",
+      "title": "第55回 文化審議会 総会",
+      "date": "2011/07/22",
+      "officialUrl": "https://www.bunka.go.jp/seisaku/bunkashingikai/sokai/sokai_11/55/",
+      "category": "COUNCIL",
+      "ministry": "ACA",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "議事要旨",
+          "url": "https://www.bunka.go.jp/seisaku/bunkashingikai/sokai/sokai_11/55/pdf/gijiyoshi.pdf"
+        }
+      ]
+    },
+    {
       "id": "mic-joho_tsushin-20110721-038",
       "councilId": "mic-joho_tsushin",
       "title": "第38回 情報通信審議会 情報通信政策部会",
@@ -194282,6 +195682,22 @@
         }
       ],
       "councilName": "情報通信審議会 情報通信政策部会"
+    },
+    {
+      "id": "aca-bunka_shingikai_sokai-20110525-054",
+      "councilId": "aca-bunka_shingikai_sokai",
+      "title": "第54回 文化審議会 総会",
+      "date": "2011/05/25",
+      "officialUrl": "https://www.bunka.go.jp/seisaku/bunkashingikai/sokai/sokai_11/54/",
+      "category": "COUNCIL",
+      "ministry": "ACA",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "議事録",
+          "url": "https://www.bunka.go.jp/seisaku/bunkashingikai/sokai/sokai_11/54/gijiroku.html"
+        }
+      ]
     },
     {
       "id": "mhlw-shakai_hosho_seikatsu_hogo-20110524-002",
@@ -194797,6 +196213,22 @@
       "category": "COUNCIL"
     },
     {
+      "id": "aca-bunka_shingikai_sokai-20110222-053",
+      "councilId": "aca-bunka_shingikai_sokai",
+      "title": "第53回 文化審議会 総会",
+      "date": "2011/02/22",
+      "officialUrl": "https://www.bunka.go.jp/seisaku/bunkashingikai/sokai/sokai_11/53/",
+      "category": "COUNCIL",
+      "ministry": "ACA",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "議事録",
+          "url": "https://www.bunka.go.jp/seisaku/bunkashingikai/sokai/sokai_11/53/gijiroku.html"
+        }
+      ]
+    },
+    {
       "id": "mic-joho_tsushin-20110210-036",
       "councilId": "mic-joho_tsushin",
       "title": "第36回 情報通信審議会 情報通信政策部会",
@@ -194958,6 +196390,22 @@
       "officialUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/kaigai/110202HS.html",
       "hasMinutes": false,
       "docCount": 1
+    },
+    {
+      "id": "aca-bunka_shingikai_sokai-20110131-052",
+      "councilId": "aca-bunka_shingikai_sokai",
+      "title": "第52回 文化審議会 総会",
+      "date": "2011/01/31",
+      "officialUrl": "https://www.bunka.go.jp/seisaku/bunkashingikai/sokai/sokai_10/52/",
+      "category": "COUNCIL",
+      "ministry": "ACA",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "議事録",
+          "url": "https://www.bunka.go.jp/seisaku/bunkashingikai/sokai/sokai_10/52/gijiroku.html"
+        }
+      ]
     },
     {
       "id": "mhlw-gpif_unei_kento-20101217-012",
@@ -195588,6 +197036,22 @@
       "councilName": "年金積立金管理運用独立行政法人の運営の在り方に関する検討会",
       "ministry": "MHLW",
       "category": "STUDY"
+    },
+    {
+      "id": "aca-bunka_shingikai_sokai-20100607-051",
+      "councilId": "aca-bunka_shingikai_sokai",
+      "title": "第51回 文化審議会 総会",
+      "date": "2010/06/07",
+      "officialUrl": "https://www.bunka.go.jp/seisaku/bunkashingikai/sokai/sokai_10/51/",
+      "category": "COUNCIL",
+      "ministry": "ACA",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "議事録",
+          "url": "https://www.bunka.go.jp/seisaku/bunkashingikai/sokai/sokai_10/51/gijiroku.html"
+        }
+      ]
     },
     {
       "id": "smea-chusho_kenshou-20100528-006",
@@ -196264,6 +197728,22 @@
       "category": "STUDY"
     },
     {
+      "id": "aca-bunka_shingikai_sokai-20100210-050",
+      "councilId": "aca-bunka_shingikai_sokai",
+      "title": "第50回 文化審議会 総会",
+      "date": "2010/02/10",
+      "officialUrl": "https://www.bunka.go.jp/seisaku/bunkashingikai/sokai/sokai_10/50/",
+      "category": "COUNCIL",
+      "ministry": "ACA",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "議事録",
+          "url": "https://www.bunka.go.jp/seisaku/bunkashingikai/sokai/sokai_10/50/gijiroku.html"
+        }
+      ]
+    },
+    {
       "id": "smea-chusho_kenshou-20100203-001",
       "councilId": "smea-chusho_kenshou",
       "councilName": "中小企業憲章に関する研究会",
@@ -196297,6 +197777,22 @@
       "officialUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/2010/100203HS.html",
       "hasMinutes": true,
       "docCount": 2
+    },
+    {
+      "id": "aca-bunka_shingikai_sokai-20100201-049",
+      "councilId": "aca-bunka_shingikai_sokai",
+      "title": "第49回 文化審議会 総会",
+      "date": "2010/02/01",
+      "officialUrl": "https://www.bunka.go.jp/seisaku/bunkashingikai/sokai/sokai_9/49/index.html",
+      "category": "COUNCIL",
+      "ministry": "ACA",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "議事録",
+          "url": "https://www.bunka.go.jp/seisaku/bunkashingikai/sokai/sokai_9/49/gijiroku.html"
+        }
+      ]
     },
     {
       "id": "mhlw-gpif_unei_kento-20100122-003",
@@ -197491,6 +198987,22 @@
       "councilName": "第29次地方制度調査会"
     },
     {
+      "id": "aca-bunka_shingikai_sokai-20090218-048",
+      "councilId": "aca-bunka_shingikai_sokai",
+      "title": "第48回 文化審議会 総会",
+      "date": "2009/02/18",
+      "officialUrl": "https://www.bunka.go.jp/seisaku/bunkashingikai/sokai/sokai_9/48/index.html",
+      "category": "COUNCIL",
+      "ministry": "ACA",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "議事録",
+          "url": "https://www.bunka.go.jp/seisaku/bunkashingikai/sokai/sokai_9/48/gijiroku.html"
+        }
+      ]
+    },
+    {
       "id": "mic-chihou_seido_29-20090217-022",
       "councilId": "mic-chihou_seido_29",
       "title": "第22回 第29次地方制度調査会 専門小委員会",
@@ -197563,6 +199075,22 @@
         }
       ],
       "councilName": "第29次地方制度調査会"
+    },
+    {
+      "id": "aca-bunka_shingikai_sokai-20090129-047",
+      "councilId": "aca-bunka_shingikai_sokai",
+      "title": "第47回 文化審議会 総会",
+      "date": "2009/01/29",
+      "officialUrl": "https://www.bunka.go.jp/seisaku/bunkashingikai/sokai/sokai_8/47/index.html",
+      "category": "COUNCIL",
+      "ministry": "ACA",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "議事録",
+          "url": "https://www.bunka.go.jp/seisaku/bunkashingikai/sokai/sokai_8/47/gijiroku.html"
+        }
+      ]
     },
     {
       "id": "cas-chukatu-20081219-006",
@@ -198291,6 +199819,22 @@
       "councilName": "情報通信審議会 情報通信政策部会"
     },
     {
+      "id": "aca-bunka_shingikai_sokai-20080214-046",
+      "councilId": "aca-bunka_shingikai_sokai",
+      "title": "第46回 文化審議会 総会",
+      "date": "2008/02/14",
+      "officialUrl": "https://www.bunka.go.jp/seisaku/bunkashingikai/sokai/sokai_8/46/index.html",
+      "category": "COUNCIL",
+      "ministry": "ACA",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "議事録",
+          "url": "https://www.bunka.go.jp/seisaku/bunkashingikai/sokai/sokai_8/46/gijiroku.html"
+        }
+      ]
+    },
+    {
       "id": "fsa-kinyu_bunkakai-20080208-010",
       "councilId": "fsa-kinyu_bunkakai",
       "title": "第10回 金融審議会 金融分科会",
@@ -198324,6 +199868,22 @@
       "councilName": "金融審議会 金融分科会",
       "ministry": "FSA",
       "category": "COUNCIL"
+    },
+    {
+      "id": "aca-bunka_shingikai_sokai-20080201-045",
+      "councilId": "aca-bunka_shingikai_sokai",
+      "title": "第45回 文化審議会 総会",
+      "date": "2008/02/01",
+      "officialUrl": "https://www.bunka.go.jp/seisaku/bunkashingikai/sokai/sokai_7/45/index.html",
+      "category": "COUNCIL",
+      "ministry": "ACA",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "議事録",
+          "url": "https://www.bunka.go.jp/seisaku/bunkashingikai/sokai/sokai_7/45/gijiroku.html"
+        }
+      ]
     },
     {
       "id": "cas-chukatu-20080129-004",
@@ -199140,6 +200700,22 @@
       "docCount": 62
     },
     {
+      "id": "aca-bunka_shingikai_sokai-20070629-044",
+      "councilId": "aca-bunka_shingikai_sokai",
+      "title": "第44回 文化審議会 総会",
+      "date": "2007/06/29",
+      "officialUrl": "https://www.bunka.go.jp/seisaku/bunkashingikai/sokai/sokai_7/44/index.html",
+      "category": "COUNCIL",
+      "ministry": "ACA",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "議事録",
+          "url": "https://www.bunka.go.jp/seisaku/bunkashingikai/sokai/sokai_7/44/gijiroku.html"
+        }
+      ]
+    },
+    {
       "id": "mic-joho_tsushin-20070626-026",
       "councilId": "mic-joho_tsushin",
       "title": "第26回 情報通信審議会 情報通信政策部会",
@@ -199782,6 +201358,38 @@
         }
       ],
       "councilName": "地域再生本部"
+    },
+    {
+      "id": "aca-bunka_shingikai_sokai-20070216-043",
+      "councilId": "aca-bunka_shingikai_sokai",
+      "title": "第43回 文化審議会 総会",
+      "date": "2007/02/16",
+      "officialUrl": "https://www.bunka.go.jp/seisaku/bunkashingikai/sokai/sokai_7/43/index.html",
+      "category": "COUNCIL",
+      "ministry": "ACA",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "議事録",
+          "url": "https://www.bunka.go.jp/seisaku/bunkashingikai/sokai/sokai_7/43/gijiroku.html"
+        }
+      ]
+    },
+    {
+      "id": "aca-bunka_shingikai_sokai-20070202-042",
+      "councilId": "aca-bunka_shingikai_sokai",
+      "title": "第42回 文化審議会 総会",
+      "date": "2007/02/02",
+      "officialUrl": "https://www.bunka.go.jp/seisaku/bunkashingikai/sokai/sokai_6/42/index.html",
+      "category": "COUNCIL",
+      "ministry": "ACA",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "議事録",
+          "url": "https://www.bunka.go.jp/seisaku/bunkashingikai/sokai/sokai_6/42/gijiroku.html"
+        }
+      ]
     },
     {
       "id": "fsa-kinyu_bunkakai-20070130-009",
@@ -200867,6 +202475,22 @@
       "councilName": "中央防災会議"
     },
     {
+      "id": "aca-bunka_shingikai_sokai-20060217-041",
+      "councilId": "aca-bunka_shingikai_sokai",
+      "title": "第41回 文化審議会 総会",
+      "date": "2006/02/17",
+      "officialUrl": "https://www.bunka.go.jp/seisaku/bunkashingikai/sokai/sokai_6/41/index.html",
+      "category": "COUNCIL",
+      "ministry": "ACA",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "議事録",
+          "url": "https://www.bunka.go.jp/seisaku/bunkashingikai/sokai/sokai_6/41/gijiroku.html"
+        }
+      ]
+    },
+    {
       "id": "cas-tiikisaisei-20060215-002",
       "councilId": "cas-tiikisaisei",
       "title": "第2回 地域再生本部",
@@ -200894,6 +202518,22 @@
         }
       ],
       "councilName": "地域再生本部"
+    },
+    {
+      "id": "aca-bunka_shingikai_sokai-20060203-040",
+      "councilId": "aca-bunka_shingikai_sokai",
+      "title": "第40回 文化審議会 総会",
+      "date": "2006/02/03",
+      "officialUrl": "https://www.bunka.go.jp/seisaku/bunkashingikai/sokai/sokai_5/40/index.html",
+      "category": "COUNCIL",
+      "ministry": "ACA",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "議事録",
+          "url": "https://www.bunka.go.jp/seisaku/bunkashingikai/sokai/sokai_5/40/gijiroku.html"
+        }
+      ]
     },
     {
       "id": "fsa-kinyu_shingi-20060126-002",
@@ -201481,6 +203121,22 @@
       "councilName": "中央防災会議"
     },
     {
+      "id": "aca-bunka_shingikai_sokai-20050330-039",
+      "councilId": "aca-bunka_shingikai_sokai",
+      "title": "第39回 文化審議会 総会",
+      "date": "2005/03/30",
+      "officialUrl": "https://www.bunka.go.jp/seisaku/bunkashingikai/sokai/sokai_5/39/index.html",
+      "category": "COUNCIL",
+      "ministry": "ACA",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "議事録",
+          "url": "https://www.bunka.go.jp/seisaku/bunkashingikai/sokai/sokai_5/39/gijiroku.html"
+        }
+      ]
+    },
+    {
       "id": "mic-joho_tsushin-20050308-017",
       "councilId": "mic-joho_tsushin",
       "title": "第17回 情報通信審議会 情報通信政策部会",
@@ -201491,6 +203147,22 @@
       "manualLock": true,
       "materials": [],
       "councilName": "情報通信審議会 情報通信政策部会"
+    },
+    {
+      "id": "aca-bunka_shingikai_sokai-20050217-038",
+      "councilId": "aca-bunka_shingikai_sokai",
+      "title": "第38回 文化審議会 総会",
+      "date": "2005/02/17",
+      "officialUrl": "https://www.bunka.go.jp/seisaku/bunkashingikai/sokai/sokai_5/38/index.html",
+      "category": "COUNCIL",
+      "ministry": "ACA",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "議事録",
+          "url": "https://www.bunka.go.jp/seisaku/bunkashingikai/sokai/sokai_5/38/gijiroku.html"
+        }
+      ]
     },
     {
       "id": "mhlw-shakai_hosho-20050209-016",
@@ -201642,6 +203314,22 @@
       "councilName": "金融審議会 金融分科会",
       "ministry": "FSA",
       "category": "COUNCIL"
+    },
+    {
+      "id": "aca-bunka_shingikai_sokai-20050202-037",
+      "councilId": "aca-bunka_shingikai_sokai",
+      "title": "第37回 文化審議会 総会",
+      "date": "2005/02/02",
+      "officialUrl": "https://www.bunka.go.jp/seisaku/bunkashingikai/sokai/sokai_4/37/index.html",
+      "category": "COUNCIL",
+      "ministry": "ACA",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "第37回 会議情報",
+          "url": "https://www.bunka.go.jp/seisaku/bunkashingikai/sokai/sokai_4/37/index.html"
+        }
+      ]
     },
     {
       "id": "mic-joho_tsushin-20050112-016",
@@ -202032,6 +203720,38 @@
       "councilName": "金融審議会 金融分科会",
       "ministry": "FSA",
       "category": "COUNCIL"
+    },
+    {
+      "id": "aca-bunka_shingikai_sokai-20040217-036",
+      "councilId": "aca-bunka_shingikai_sokai",
+      "title": "第36回 文化審議会 総会",
+      "date": "2004/02/17",
+      "officialUrl": "https://warp.ndl.go.jp/info:ndljp/pid/12231838/www.mext.go.jp/b_menu/shingi/bunka/gijiroku/001/05021501.htm",
+      "category": "COUNCIL",
+      "ministry": "ACA",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "第36回 議事要旨",
+          "url": "https://warp.ndl.go.jp/info:ndljp/pid/12231838/www.mext.go.jp/b_menu/shingi/bunka/gijiroku/001/05021501.htm"
+        }
+      ]
+    },
+    {
+      "id": "aca-bunka_shingikai_sokai-20040203-035",
+      "councilId": "aca-bunka_shingikai_sokai",
+      "title": "第35回 文化審議会 総会",
+      "date": "2004/02/03",
+      "officialUrl": "https://warp.ndl.go.jp/info:ndljp/pid/12231838/www.mext.go.jp/b_menu/shingi/bunka/gijiroku/001/04022701.htm",
+      "category": "COUNCIL",
+      "ministry": "ACA",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "第35回 議事要旨",
+          "url": "https://warp.ndl.go.jp/info:ndljp/pid/12231838/www.mext.go.jp/b_menu/shingi/bunka/gijiroku/001/04022701.htm"
+        }
+      ]
     },
     {
       "id": "mhlw-shakai_hosho-20040202-014",
@@ -202690,6 +204410,22 @@
       ]
     },
     {
+      "id": "aca-bunka_shingikai_sokai-20030218-034",
+      "councilId": "aca-bunka_shingikai_sokai",
+      "title": "第34回 文化審議会 総会",
+      "date": "2003/02/18",
+      "officialUrl": "https://warp.ndl.go.jp/info:ndljp/pid/12231838/www.mext.go.jp/b_menu/shingi/bunka/gijiroku/001/04021301.htm",
+      "category": "COUNCIL",
+      "ministry": "ACA",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "第34回 議事要旨",
+          "url": "https://warp.ndl.go.jp/info:ndljp/pid/12231838/www.mext.go.jp/b_menu/shingi/bunka/gijiroku/001/04021301.htm"
+        }
+      ]
+    },
+    {
       "id": "fsa-kinyu_bunkakai-20030131-005",
       "councilId": "fsa-kinyu_bunkakai",
       "title": "第5回 金融審議会 金融分科会",
@@ -202737,6 +204473,22 @@
       "category": "COUNCIL"
     },
     {
+      "id": "aca-bunka_shingikai_sokai-20030129-033",
+      "councilId": "aca-bunka_shingikai_sokai",
+      "title": "第33回 文化審議会 総会",
+      "date": "2003/01/29",
+      "officialUrl": "https://warp.ndl.go.jp/info:ndljp/pid/12231838/www.mext.go.jp/b_menu/shingi/bunka/gijiroku/001/030202.htm",
+      "category": "COUNCIL",
+      "ministry": "ACA",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "第33回 議事要旨",
+          "url": "https://warp.ndl.go.jp/info:ndljp/pid/12231838/www.mext.go.jp/b_menu/shingi/bunka/gijiroku/001/030202.htm"
+        }
+      ]
+    },
+    {
       "id": "mhlw-shakai_hosho-20021203-008",
       "councilId": "mhlw-shakai_hosho",
       "title": "第8回 社会保障審議会",
@@ -202765,6 +204517,54 @@
         {
           "name": "第8回 議事録",
           "url": "https://www.mhlw.go.jp/content/shingi___2002___12___txt___s1203-4.txt"
+        }
+      ]
+    },
+    {
+      "id": "aca-bunka_shingikai_sokai-20021128-032",
+      "councilId": "aca-bunka_shingikai_sokai",
+      "title": "第32回 文化審議会 総会",
+      "date": "2002/11/28",
+      "officialUrl": "https://warp.ndl.go.jp/info:ndljp/pid/12231838/www.mext.go.jp/b_menu/shingi/bunka/gijiroku/001/030201.htm",
+      "category": "COUNCIL",
+      "ministry": "ACA",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "第32回 議事要旨",
+          "url": "https://warp.ndl.go.jp/info:ndljp/pid/12231838/www.mext.go.jp/b_menu/shingi/bunka/gijiroku/001/030201.htm"
+        }
+      ]
+    },
+    {
+      "id": "aca-bunka_shingikai_sokai-20021016-031",
+      "councilId": "aca-bunka_shingikai_sokai",
+      "title": "第31回 文化審議会 総会",
+      "date": "2002/10/16",
+      "officialUrl": "https://warp.ndl.go.jp/info:ndljp/pid/12231838/www.mext.go.jp/b_menu/shingi/bunka/gijiroku/001/021201.htm",
+      "category": "COUNCIL",
+      "ministry": "ACA",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "第31回 議事要旨",
+          "url": "https://warp.ndl.go.jp/info:ndljp/pid/12231838/www.mext.go.jp/b_menu/shingi/bunka/gijiroku/001/021201.htm"
+        }
+      ]
+    },
+    {
+      "id": "aca-bunka_shingikai_sokai-20021004-030",
+      "councilId": "aca-bunka_shingikai_sokai",
+      "title": "第30回 文化審議会 総会",
+      "date": "2002/10/04",
+      "officialUrl": "https://warp.ndl.go.jp/info:ndljp/pid/12231838/www.mext.go.jp/b_menu/shingi/bunka/gijiroku/001/021003.htm",
+      "category": "COUNCIL",
+      "ministry": "ACA",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "第30回 議事要旨",
+          "url": "https://warp.ndl.go.jp/info:ndljp/pid/12231838/www.mext.go.jp/b_menu/shingi/bunka/gijiroku/001/021003.htm"
         }
       ]
     },
@@ -202798,6 +204598,38 @@
       "councilName": "金融審議会 金融分科会",
       "ministry": "FSA",
       "category": "COUNCIL"
+    },
+    {
+      "id": "aca-bunka_shingikai_sokai-20020925-029",
+      "councilId": "aca-bunka_shingikai_sokai",
+      "title": "第29回 文化審議会 総会",
+      "date": "2002/09/25",
+      "officialUrl": "https://warp.ndl.go.jp/info:ndljp/pid/12231838/www.mext.go.jp/b_menu/shingi/bunka/gijiroku/001/021002.htm",
+      "category": "COUNCIL",
+      "ministry": "ACA",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "第29回 議事要旨",
+          "url": "https://warp.ndl.go.jp/info:ndljp/pid/12231838/www.mext.go.jp/b_menu/shingi/bunka/gijiroku/001/021002.htm"
+        }
+      ]
+    },
+    {
+      "id": "aca-bunka_shingikai_sokai-20020913-028",
+      "councilId": "aca-bunka_shingikai_sokai",
+      "title": "第28回 文化審議会 総会",
+      "date": "2002/09/13",
+      "officialUrl": "https://warp.ndl.go.jp/info:ndljp/pid/12231838/www.mext.go.jp/b_menu/shingi/bunka/gijiroku/001/021001.htm",
+      "category": "COUNCIL",
+      "ministry": "ACA",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "第28回 議事要旨",
+          "url": "https://warp.ndl.go.jp/info:ndljp/pid/12231838/www.mext.go.jp/b_menu/shingi/bunka/gijiroku/001/021001.htm"
+        }
+      ]
     },
     {
       "id": "fsa-kinyu_bunkakai-20020909-003",
@@ -202898,6 +204730,38 @@
       "category": "COUNCIL"
     },
     {
+      "id": "aca-bunka_shingikai_sokai-20020807-027",
+      "councilId": "aca-bunka_shingikai_sokai",
+      "title": "第27回 文化審議会 総会",
+      "date": "2002/08/07",
+      "officialUrl": "https://warp.ndl.go.jp/info:ndljp/pid/12231838/www.mext.go.jp/b_menu/shingi/bunka/gijiroku/001/020901.htm",
+      "category": "COUNCIL",
+      "ministry": "ACA",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "第27回 議事要旨",
+          "url": "https://warp.ndl.go.jp/info:ndljp/pid/12231838/www.mext.go.jp/b_menu/shingi/bunka/gijiroku/001/020901.htm"
+        }
+      ]
+    },
+    {
+      "id": "aca-bunka_shingikai_sokai-20020730-026",
+      "councilId": "aca-bunka_shingikai_sokai",
+      "title": "第26回 文化審議会 総会",
+      "date": "2002/07/30",
+      "officialUrl": "https://warp.ndl.go.jp/info:ndljp/pid/12231838/www.mext.go.jp/b_menu/shingi/bunka/gijiroku/001/020802.htm",
+      "category": "COUNCIL",
+      "ministry": "ACA",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "第26回 議事要旨",
+          "url": "https://warp.ndl.go.jp/info:ndljp/pid/12231838/www.mext.go.jp/b_menu/shingi/bunka/gijiroku/001/020802.htm"
+        }
+      ]
+    },
+    {
       "id": "mhlw-shakai_hosho-20020726-007",
       "councilId": "mhlw-shakai_hosho",
       "title": "第7回 社会保障審議会",
@@ -202930,6 +204794,22 @@
         {
           "name": "第7回 議事録",
           "url": "https://www.mhlw.go.jp/content/shingi___2002___07___txt___s0726-3.txt"
+        }
+      ]
+    },
+    {
+      "id": "aca-bunka_shingikai_sokai-20020716-025",
+      "councilId": "aca-bunka_shingikai_sokai",
+      "title": "第25回 文化審議会 総会",
+      "date": "2002/07/16",
+      "officialUrl": "https://warp.ndl.go.jp/info:ndljp/pid/12231838/www.mext.go.jp/b_menu/shingi/bunka/gijiroku/001/020801.htm",
+      "category": "COUNCIL",
+      "ministry": "ACA",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "第25回 議事要旨",
+          "url": "https://warp.ndl.go.jp/info:ndljp/pid/12231838/www.mext.go.jp/b_menu/shingi/bunka/gijiroku/001/020801.htm"
         }
       ]
     },
@@ -202991,6 +204871,38 @@
       "councilName": "中央防災会議"
     },
     {
+      "id": "aca-bunka_shingikai_sokai-20020625-024",
+      "councilId": "aca-bunka_shingikai_sokai",
+      "title": "第24回 文化審議会 総会",
+      "date": "2002/06/25",
+      "officialUrl": "https://warp.ndl.go.jp/info:ndljp/pid/12231838/www.mext.go.jp/b_menu/shingi/bunka/gijiroku/001/020702.htm",
+      "category": "COUNCIL",
+      "ministry": "ACA",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "第24回 議事要旨",
+          "url": "https://warp.ndl.go.jp/info:ndljp/pid/12231838/www.mext.go.jp/b_menu/shingi/bunka/gijiroku/001/020702.htm"
+        }
+      ]
+    },
+    {
+      "id": "aca-bunka_shingikai_sokai-20020605-023",
+      "councilId": "aca-bunka_shingikai_sokai",
+      "title": "第23回 文化審議会 総会",
+      "date": "2002/06/05",
+      "officialUrl": "https://warp.ndl.go.jp/info:ndljp/pid/12231838/www.mext.go.jp/b_menu/shingi/bunka/gijiroku/001/020701.htm",
+      "category": "COUNCIL",
+      "ministry": "ACA",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "第23回 議事要旨",
+          "url": "https://warp.ndl.go.jp/info:ndljp/pid/12231838/www.mext.go.jp/b_menu/shingi/bunka/gijiroku/001/020701.htm"
+        }
+      ]
+    },
+    {
       "id": "mhlw-shakai_hosho-20020517-006",
       "councilId": "mhlw-shakai_hosho",
       "title": "第6回 社会保障審議会",
@@ -203007,6 +204919,22 @@
         {
           "name": "第6回 議事録",
           "url": "https://www.mhlw.go.jp/content/shingi___2002___05___txt___s0517-4.txt"
+        }
+      ]
+    },
+    {
+      "id": "aca-bunka_shingikai_sokai-20020424-022",
+      "councilId": "aca-bunka_shingikai_sokai",
+      "title": "第22回 文化審議会 総会",
+      "date": "2002/04/24",
+      "officialUrl": "https://warp.ndl.go.jp/info:ndljp/pid/12231838/www.mext.go.jp/b_menu/shingi/bunka/gijiroku/001/020601.htm",
+      "category": "COUNCIL",
+      "ministry": "ACA",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "第22回 議事要旨",
+          "url": "https://warp.ndl.go.jp/info:ndljp/pid/12231838/www.mext.go.jp/b_menu/shingi/bunka/gijiroku/001/020601.htm"
         }
       ]
     },
@@ -203068,6 +204996,38 @@
       "councilName": "中央防災会議"
     },
     {
+      "id": "aca-bunka_shingikai_sokai-20020319-021",
+      "councilId": "aca-bunka_shingikai_sokai",
+      "title": "第21回 文化審議会 総会",
+      "date": "2002/03/19",
+      "officialUrl": "https://warp.ndl.go.jp/info:ndljp/pid/12231838/www.mext.go.jp/b_menu/shingi/bunka/gijiroku/001/020402.htm",
+      "category": "COUNCIL",
+      "ministry": "ACA",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "第21回 議事要旨",
+          "url": "https://warp.ndl.go.jp/info:ndljp/pid/12231838/www.mext.go.jp/b_menu/shingi/bunka/gijiroku/001/020402.htm"
+        }
+      ]
+    },
+    {
+      "id": "aca-bunka_shingikai_sokai-20020220-020",
+      "councilId": "aca-bunka_shingikai_sokai",
+      "title": "第20回 文化審議会 総会",
+      "date": "2002/02/20",
+      "officialUrl": "https://warp.ndl.go.jp/info:ndljp/pid/12231838/www.mext.go.jp/b_menu/shingi/bunka/gijiroku/001/020401.htm",
+      "category": "COUNCIL",
+      "ministry": "ACA",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "第20回 議事要旨",
+          "url": "https://warp.ndl.go.jp/info:ndljp/pid/12231838/www.mext.go.jp/b_menu/shingi/bunka/gijiroku/001/020401.htm"
+        }
+      ]
+    },
+    {
       "id": "mhlw-shakai_hosho-20020130-005",
       "councilId": "mhlw-shakai_hosho",
       "title": "第5回 社会保障審議会",
@@ -203088,6 +205048,22 @@
         {
           "name": "第5回 議事録",
           "url": "https://www.mhlw.go.jp/content/shingi___2002___01___txt___s0130-3.txt"
+        }
+      ]
+    },
+    {
+      "id": "aca-bunka_shingikai_sokai-20020124-019",
+      "councilId": "aca-bunka_shingikai_sokai",
+      "title": "第19回 文化審議会 総会",
+      "date": "2002/01/24",
+      "officialUrl": "https://warp.ndl.go.jp/info:ndljp/pid/12231838/www.mext.go.jp/b_menu/shingi/bunka/gijiroku/001/020201.htm",
+      "category": "COUNCIL",
+      "ministry": "ACA",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "第19回 議事要旨",
+          "url": "https://warp.ndl.go.jp/info:ndljp/pid/12231838/www.mext.go.jp/b_menu/shingi/bunka/gijiroku/001/020201.htm"
         }
       ]
     },
@@ -203145,6 +205121,22 @@
       "councilName": "中央防災会議"
     },
     {
+      "id": "aca-bunka_shingikai_sokai-20011217-018",
+      "councilId": "aca-bunka_shingikai_sokai",
+      "title": "第18回 文化審議会 総会",
+      "date": "2001/12/17",
+      "officialUrl": "https://warp.ndl.go.jp/info:ndljp/pid/12231838/www.mext.go.jp/b_menu/shingi/bunka/gijiroku/001/020102.htm",
+      "category": "COUNCIL",
+      "ministry": "ACA",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "第18回 議事要旨",
+          "url": "https://warp.ndl.go.jp/info:ndljp/pid/12231838/www.mext.go.jp/b_menu/shingi/bunka/gijiroku/001/020102.htm"
+        }
+      ]
+    },
+    {
       "id": "mhlw-shakai_hosho-20011213-004",
       "councilId": "mhlw-shakai_hosho",
       "title": "第4回 社会保障審議会",
@@ -203157,6 +205149,150 @@
         {
           "name": "第4回 議事録",
           "url": "https://www.mhlw.go.jp/content/shingi___0112___txt___s1213-3.txt"
+        }
+      ]
+    },
+    {
+      "id": "aca-bunka_shingikai_sokai-20011211-017",
+      "councilId": "aca-bunka_shingikai_sokai",
+      "title": "第17回 文化審議会 総会",
+      "date": "2001/12/11",
+      "officialUrl": "https://warp.ndl.go.jp/info:ndljp/pid/12231838/www.mext.go.jp/b_menu/shingi/bunka/gijiroku/001/020101.htm",
+      "category": "COUNCIL",
+      "ministry": "ACA",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "第17回 議事要旨",
+          "url": "https://warp.ndl.go.jp/info:ndljp/pid/12231838/www.mext.go.jp/b_menu/shingi/bunka/gijiroku/001/020101.htm"
+        }
+      ]
+    },
+    {
+      "id": "aca-bunka_shingikai_sokai-20011127-016",
+      "councilId": "aca-bunka_shingikai_sokai",
+      "title": "第16回 文化審議会 総会",
+      "date": "2001/11/27",
+      "officialUrl": "https://warp.ndl.go.jp/info:ndljp/pid/12231838/www.mext.go.jp/b_menu/shingi/bunka/gijiroku/001/011202.htm",
+      "category": "COUNCIL",
+      "ministry": "ACA",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "第16回 議事要旨",
+          "url": "https://warp.ndl.go.jp/info:ndljp/pid/12231838/www.mext.go.jp/b_menu/shingi/bunka/gijiroku/001/011202.htm"
+        }
+      ]
+    },
+    {
+      "id": "aca-bunka_shingikai_sokai-20011115-015",
+      "councilId": "aca-bunka_shingikai_sokai",
+      "title": "第15回 文化審議会 総会",
+      "date": "2001/11/15",
+      "officialUrl": "https://warp.ndl.go.jp/info:ndljp/pid/12231838/www.mext.go.jp/b_menu/shingi/bunka/gijiroku/001/011201.htm",
+      "category": "COUNCIL",
+      "ministry": "ACA",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "第15回 議事要旨",
+          "url": "https://warp.ndl.go.jp/info:ndljp/pid/12231838/www.mext.go.jp/b_menu/shingi/bunka/gijiroku/001/011201.htm"
+        }
+      ]
+    },
+    {
+      "id": "aca-bunka_shingikai_sokai-20011026-014",
+      "councilId": "aca-bunka_shingikai_sokai",
+      "title": "第14回 文化審議会 総会",
+      "date": "2001/10/26",
+      "officialUrl": "https://warp.ndl.go.jp/info:ndljp/pid/12231838/www.mext.go.jp/b_menu/shingi/bunka/gijiroku/001/011103.htm",
+      "category": "COUNCIL",
+      "ministry": "ACA",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "第14回 議事要旨",
+          "url": "https://warp.ndl.go.jp/info:ndljp/pid/12231838/www.mext.go.jp/b_menu/shingi/bunka/gijiroku/001/011103.htm"
+        }
+      ]
+    },
+    {
+      "id": "aca-bunka_shingikai_sokai-20011017-013",
+      "councilId": "aca-bunka_shingikai_sokai",
+      "title": "第13回 文化審議会 総会",
+      "date": "2001/10/17",
+      "officialUrl": "https://warp.ndl.go.jp/info:ndljp/pid/12231838/www.mext.go.jp/b_menu/shingi/bunka/gijiroku/001/011102.htm",
+      "category": "COUNCIL",
+      "ministry": "ACA",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "第13回 議事要旨",
+          "url": "https://warp.ndl.go.jp/info:ndljp/pid/12231838/www.mext.go.jp/b_menu/shingi/bunka/gijiroku/001/011102.htm"
+        }
+      ]
+    },
+    {
+      "id": "aca-bunka_shingikai_sokai-20011003-012",
+      "councilId": "aca-bunka_shingikai_sokai",
+      "title": "第12回 文化審議会 総会",
+      "date": "2001/10/03",
+      "officialUrl": "https://warp.ndl.go.jp/info:ndljp/pid/12231838/www.mext.go.jp/b_menu/shingi/bunka/gijiroku/001/011001.htm",
+      "category": "COUNCIL",
+      "ministry": "ACA",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "第12回 議事要旨",
+          "url": "https://warp.ndl.go.jp/info:ndljp/pid/12231838/www.mext.go.jp/b_menu/shingi/bunka/gijiroku/001/011001.htm"
+        }
+      ]
+    },
+    {
+      "id": "aca-bunka_shingikai_sokai-20010925-011",
+      "councilId": "aca-bunka_shingikai_sokai",
+      "title": "第11回 文化審議会 総会",
+      "date": "2001/09/25",
+      "officialUrl": "https://warp.ndl.go.jp/info:ndljp/pid/12231838/www.mext.go.jp/b_menu/shingi/bunka/gijiroku/001/010902.htm",
+      "category": "COUNCIL",
+      "ministry": "ACA",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "第11回 議事要旨",
+          "url": "https://warp.ndl.go.jp/info:ndljp/pid/12231838/www.mext.go.jp/b_menu/shingi/bunka/gijiroku/001/010902.htm"
+        }
+      ]
+    },
+    {
+      "id": "aca-bunka_shingikai_sokai-20010911-010",
+      "councilId": "aca-bunka_shingikai_sokai",
+      "title": "第10回 文化審議会 総会",
+      "date": "2001/09/11",
+      "officialUrl": "https://warp.ndl.go.jp/info:ndljp/pid/12231838/www.mext.go.jp/b_menu/shingi/bunka/gijiroku/001/010901.htm",
+      "category": "COUNCIL",
+      "ministry": "ACA",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "第10回 議事要旨",
+          "url": "https://warp.ndl.go.jp/info:ndljp/pid/12231838/www.mext.go.jp/b_menu/shingi/bunka/gijiroku/001/010901.htm"
+        }
+      ]
+    },
+    {
+      "id": "aca-bunka_shingikai_sokai-20010723-009",
+      "councilId": "aca-bunka_shingikai_sokai",
+      "title": "第9回 文化審議会 総会",
+      "date": "2001/07/23",
+      "officialUrl": "https://warp.ndl.go.jp/info:ndljp/pid/12231838/www.mext.go.jp/b_menu/shingi/bunka/gijiroku/001/010702.htm",
+      "category": "COUNCIL",
+      "ministry": "ACA",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "第9回 議事要旨",
+          "url": "https://warp.ndl.go.jp/info:ndljp/pid/12231838/www.mext.go.jp/b_menu/shingi/bunka/gijiroku/001/010702.htm"
         }
       ]
     },
@@ -203181,6 +205317,38 @@
         {
           "name": "第3回 議事録",
           "url": "https://www.mhlw.go.jp/content/shingi___0107___txt___s0713-2.txt"
+        }
+      ]
+    },
+    {
+      "id": "aca-bunka_shingikai_sokai-20010710-008",
+      "councilId": "aca-bunka_shingikai_sokai",
+      "title": "第8回 文化審議会 総会",
+      "date": "2001/07/10",
+      "officialUrl": "https://warp.ndl.go.jp/info:ndljp/pid/12231838/www.mext.go.jp/b_menu/shingi/bunka/gijiroku/001/010701.htm",
+      "category": "COUNCIL",
+      "ministry": "ACA",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "第8回 議事要旨",
+          "url": "https://warp.ndl.go.jp/info:ndljp/pid/12231838/www.mext.go.jp/b_menu/shingi/bunka/gijiroku/001/010701.htm"
+        }
+      ]
+    },
+    {
+      "id": "aca-bunka_shingikai_sokai-20010629-007",
+      "councilId": "aca-bunka_shingikai_sokai",
+      "title": "第7回 文化審議会 総会",
+      "date": "2001/06/29",
+      "officialUrl": "https://warp.ndl.go.jp/info:ndljp/pid/12231838/www.mext.go.jp/b_menu/shingi/bunka/gijiroku/001/010602.htm",
+      "category": "COUNCIL",
+      "ministry": "ACA",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "第7回 議事要旨",
+          "url": "https://warp.ndl.go.jp/info:ndljp/pid/12231838/www.mext.go.jp/b_menu/shingi/bunka/gijiroku/001/010602.htm"
         }
       ]
     },
@@ -203247,6 +205415,38 @@
       "councilName": "中央防災会議"
     },
     {
+      "id": "aca-bunka_shingikai_sokai-20010618-006",
+      "councilId": "aca-bunka_shingikai_sokai",
+      "title": "第6回 文化審議会 総会",
+      "date": "2001/06/18",
+      "officialUrl": "https://warp.ndl.go.jp/info:ndljp/pid/12231838/www.mext.go.jp/b_menu/shingi/bunka/gijiroku/001/010601.htm",
+      "category": "COUNCIL",
+      "ministry": "ACA",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "第6回 議事要旨",
+          "url": "https://warp.ndl.go.jp/info:ndljp/pid/12231838/www.mext.go.jp/b_menu/shingi/bunka/gijiroku/001/010601.htm"
+        }
+      ]
+    },
+    {
+      "id": "aca-bunka_shingikai_sokai-20010530-005",
+      "councilId": "aca-bunka_shingikai_sokai",
+      "title": "第5回 文化審議会 総会",
+      "date": "2001/05/30",
+      "officialUrl": "https://warp.ndl.go.jp/info:ndljp/pid/12231838/www.mext.go.jp/b_menu/shingi/bunka/gijiroku/001/010502.htm",
+      "category": "COUNCIL",
+      "ministry": "ACA",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "第5回 議事要旨",
+          "url": "https://warp.ndl.go.jp/info:ndljp/pid/12231838/www.mext.go.jp/b_menu/shingi/bunka/gijiroku/001/010502.htm"
+        }
+      ]
+    },
+    {
       "id": "mhlw-shakai_hosho-20010518-002",
       "councilId": "mhlw-shakai_hosho",
       "title": "第2回 社会保障審議会",
@@ -203259,6 +205459,54 @@
         {
           "name": "第2回 議事録",
           "url": "https://www.mhlw.go.jp/content/shingi___0105___txt___s0518-1.txt"
+        }
+      ]
+    },
+    {
+      "id": "aca-bunka_shingikai_sokai-20010514-004",
+      "councilId": "aca-bunka_shingikai_sokai",
+      "title": "第4回 文化審議会 総会",
+      "date": "2001/05/14",
+      "officialUrl": "https://warp.ndl.go.jp/info:ndljp/pid/12231838/www.mext.go.jp/b_menu/shingi/bunka/gijiroku/001/010501.htm",
+      "category": "COUNCIL",
+      "ministry": "ACA",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "第4回 議事要旨",
+          "url": "https://warp.ndl.go.jp/info:ndljp/pid/12231838/www.mext.go.jp/b_menu/shingi/bunka/gijiroku/001/010501.htm"
+        }
+      ]
+    },
+    {
+      "id": "aca-bunka_shingikai_sokai-20010416-003",
+      "councilId": "aca-bunka_shingikai_sokai",
+      "title": "第3回 文化審議会 総会",
+      "date": "2001/04/16",
+      "officialUrl": "https://warp.ndl.go.jp/info:ndljp/pid/12231838/www.mext.go.jp/b_menu/shingi/bunka/gijiroku/001/010401.htm",
+      "category": "COUNCIL",
+      "ministry": "ACA",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "第3回 議事要旨",
+          "url": "https://warp.ndl.go.jp/info:ndljp/pid/12231838/www.mext.go.jp/b_menu/shingi/bunka/gijiroku/001/010401.htm"
+        }
+      ]
+    },
+    {
+      "id": "aca-bunka_shingikai_sokai-20010305-002",
+      "councilId": "aca-bunka_shingikai_sokai",
+      "title": "第2回 文化審議会 総会",
+      "date": "2001/03/05",
+      "officialUrl": "https://warp.ndl.go.jp/info:ndljp/pid/12231838/www.mext.go.jp/b_menu/shingi/bunka/gijiroku/001/010301.htm",
+      "category": "COUNCIL",
+      "ministry": "ACA",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "第2回 議事要旨",
+          "url": "https://warp.ndl.go.jp/info:ndljp/pid/12231838/www.mext.go.jp/b_menu/shingi/bunka/gijiroku/001/010301.htm"
         }
       ]
     },
@@ -203288,6 +205536,22 @@
       "councilName": "金融審議会 金融分科会",
       "ministry": "FSA",
       "category": "COUNCIL"
+    },
+    {
+      "id": "aca-bunka_shingikai_sokai-20010205-001",
+      "councilId": "aca-bunka_shingikai_sokai",
+      "title": "第1回 文化審議会 総会",
+      "date": "2001/02/05",
+      "officialUrl": "https://warp.ndl.go.jp/info:ndljp/pid/12231838/www.mext.go.jp/b_menu/shingi/bunka/gijiroku/001/010201.htm",
+      "category": "COUNCIL",
+      "ministry": "ACA",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "第1回 議事要旨",
+          "url": "https://warp.ndl.go.jp/info:ndljp/pid/12231838/www.mext.go.jp/b_menu/shingi/bunka/gijiroku/001/010201.htm"
+        }
+      ]
     },
     {
       "id": "mhlw-shakai_hosho-20010130-001",
@@ -206411,6 +208675,15 @@
     },
     "caa-shokuhin_loss_sakugen": {
       "template": "tpl-cas-gijisidai-nested",
+      "manualLock": true
+    },
+    "aca-bunka_shingikai_sokai": {
+      "rule_id": "rule-aca-bunka_shingikai_sokai",
+      "subpage_discovery_pattern": "https://www\\.bunka\\.go\\.jp/seisaku/bunkashingikai/sokai/sokai_\\d+/.*",
+      "title_selector": "h1, h2, .title",
+      "date_regex": "(令和\\d+年\\d+月\\d+日|平成\\d+年\\d+月\\d+日|\\d{4}年\\d{1,2}月\\d{1,2}日)",
+      "pdf_selector": "a[href*='.pdf'], a[href*='pdf']",
+      "deep_crawl_enabled": true,
       "manualLock": true
     }
   },
