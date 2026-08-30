@@ -1029,6 +1029,7 @@ document.addEventListener('DOMContentLoaded', async () => {
             <div class="council-header-right">
               <div class="council-header-meta">
                 <span>最新開催: <strong>${latestDateDisplay}</strong></span>
+                <span>全期間: <strong>${meetingCounts[c.id] || 0}回</strong></span>
                 <span>過去1年: <strong style="color: var(--accent-secondary);">${pastYearDisplay}</strong></span>
               </div>
               <span class="council-expand-arrow">▼</span>
