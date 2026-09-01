@@ -40,6 +40,33 @@ document.addEventListener('DOMContentLoaded', async () => {
   const LAST_CRAWL_TIME = window.LAST_CRAWL_TIME || '';
   const DATA_LAST_MODIFIED = window.DATA_LAST_MODIFIED || dataLastModified;
 
+  const DEFAULT_CATEGORY_LABELS = {
+    LIAISON: '関係閣僚会議',
+    MINISTERIAL_MEETING: '関係閣僚会議',
+    MINISTERIAL: '関係閣僚会議',
+    COUNCIL: '審議会',
+    ADVISORY: '諮問会議',
+    HQ: '推進本部',
+    HEADQUARTERS: '推進本部',
+    COMMITTEE: '委員会',
+    COMMISSION: '委員会',
+    SUBCOMMITTEE: '分科会',
+    SECTION: '部会',
+    PANEL: '有識者会議',
+    STUDY: '検討会',
+    STUDY_GROUP: '検討会',
+    ROUNDTABLE: '懇談会',
+    WORKING_GROUP: '作業部会',
+    EXPERT_COMMITTEE: '専門調査会',
+    SPECIAL_COMMITTEE: '特別委員会',
+    TASKFORCE: 'タスクフォース'
+  };
+
+  function getCategoryLabel(cat) {
+    if (!cat || cat === 'ALL') return '';
+    return CATEGORIES[cat] || DEFAULT_CATEGORY_LABELS[cat] || cat;
+  }
+
   // --- STATE MANAGEMENT ---
   const state = {
     currentTab: 'main',
@@ -623,7 +650,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     if (state.searchQuery) activeTags.push({ label: `検索: "${state.searchQuery}"`, key: 'search' });
     if (state.watchlistOnly) activeTags.push({ label: '⭐ ウォッチ対象のみ', key: 'watchlistOnly' });
     if (state.ministryFilter !== 'ALL') activeTags.push({ label: `省庁: ${MINISTRIES[state.ministryFilter]?.name || state.ministryFilter}`, key: 'ministry' });
-    if (state.categoryFilter !== 'ALL') activeTags.push({ label: `会議種別: ${CATEGORIES[state.categoryFilter]}`, key: 'category' });
+    if (state.categoryFilter !== 'ALL') activeTags.push({ label: `会議種別: ${getCategoryLabel(state.categoryFilter)}`, key: 'category' });
     if (state.docTypeFilter !== 'ALL') activeTags.push({ label: `資料: ${state.docTypeFilter}`, key: 'docType' });
     if (state.dateRangeFilter !== 'ALL') {
       const dateLabels = {
@@ -774,7 +801,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
   function createTimelineCardHTML(meeting) {
     const minInfo = MINISTRIES[meeting.ministry] || { name: meeting.ministry, color: '#3b82f6' };
-    const categoryName = CATEGORIES[meeting.category] || meeting.category;
+    const categoryName = getCategoryLabel(meeting.category);
 
     const docPillsHTML = (meeting.materials || []).map(doc => `
       <a href="${escapeHtml(sanitizeUrl(doc.url))}" target="_blank" rel="noopener noreferrer" class="doc-pill" title="${escapeHtml(doc.name)} (${escapeHtml(doc.size)})">
@@ -1022,7 +1049,7 @@ document.addEventListener('DOMContentLoaded', async () => {
             <div class="council-header-left">
               <div class="council-header-top-row">
                 <span class="badge-ministry ${c.ministry}">${minInfo.name}</span>
-                <span class="badge-category">${CATEGORIES[c.category] || c.category}</span>
+                <span class="badge-category">${getCategoryLabel(c.category)}</span>
                 <button class="btn-watchlist-toggle ${isWatching ? 'watching' : ''}" style="margin-left: auto;" onclick="event.stopPropagation(); toggleWatchlist('${c.id}')">
                   <svg width="14" height="14" viewBox="0 0 24 24" fill="${isWatching ? 'currentColor' : 'none'}" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
                   ${isWatching ? 'ウォッチ中' : 'ウォッチ'}
@@ -1385,7 +1412,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     el.modalBadges.innerHTML = `
       <span class="badge-ministry ${meeting.ministry}">${minInfo.name}</span>
-      <span class="badge-category">${CATEGORIES[meeting.category]}</span>
+      <span class="badge-category">${getCategoryLabel(meeting.category)}</span>
     `;
 
     el.modalTitle.textContent = meeting.title;

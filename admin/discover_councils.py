@@ -81,20 +81,64 @@ def load_keywords():
     }
 
 def parse_data_json():
-    """docs/data.json から MINISTRIES と COUNCILS のデータを抽出する"""
+    """docs/data.json から MINISTRIES, COUNCILS, CATEGORIES のデータを抽出する"""
     if not os.path.exists(DATA_JSON_PATH):
         print(f"[ERROR] {DATA_JSON_PATH} が見つかりません。", file=sys.stderr)
-        return {}, []
+        return {}, [], {}
 
     try:
         with open(DATA_JSON_PATH, "r", encoding="utf-8") as f:
             data = json.load(f)
             ministries = data.get("ministries", {})
             councils = data.get("councils", [])
-            return ministries, councils
+            categories = data.get("categories", {})
+            return ministries, councils, categories
     except Exception as e:
         print(f"[ERROR] failed to parse data.json: {e}", file=sys.stderr)
-        return {}, []
+        return {}, [], {}
+
+def infer_council_category(name_or_text, defined_categories=None):
+    """
+    会議体名称またはリンクテキストから、定義済み categories に合致するカテゴリIDを判定。
+    戻り値: (category_id, is_default_fallback)
+    """
+    text = name_or_text or ""
+    # 優先度の高い特定キーワードから順に判定
+    if "専門調査会" in text or "専門委員会" in text:
+        cat = "EXPERT_COMMITTEE"
+    elif "特別委員会" in text:
+        cat = "SPECIAL_COMMITTEE"
+    elif "タスクフォース" in text or "TF" in text:
+        cat = "TASKFORCE"
+    elif "分科会" in text:
+        cat = "SUBCOMMITTEE"
+    elif "部会" in text:
+        cat = "SECTION"
+    elif "ワーキンググループ" in text or "作業部会" in text or "WG" in text:
+        cat = "WORKING_GROUP"
+    elif "有識者会議" in text:
+        cat = "PANEL"
+    elif "懇談会" in text:
+        cat = "ROUNDTABLE"
+    elif "検討会" in text or "研究会" in text or "検討会議" in text or "協議会" in text:
+        cat = "STUDY"
+    elif "関係閣僚会議" in text or "連絡会議" in text:
+        cat = "LIAISON"
+    elif "推進本部" in text or "本部" in text or "推進会議" in text:
+        cat = "HQ"
+    elif "諮問会議" in text:
+        cat = "ADVISORY"
+    elif "委員会" in text:
+        cat = "COMMITTEE"
+    elif "審議会" in text or "会合" in text:
+        cat = "COUNCIL"
+    else:
+        cat = "COUNCIL"
+        return (cat, True)
+    
+    if defined_categories and cat not in defined_categories:
+        return ("COUNCIL", True)
+    return (cat, False)
 
 def fetch_page_and_final_url(url):
     """
@@ -213,8 +257,8 @@ def run_discovery(progress_callback=None):
     min_add_kw = keywords_cfg.get("ministryAddKeywords", {})
     min_exc_kw = keywords_cfg.get("ministryExcludeKeywords", {})
 
-    ministries, existing_councils = parse_data_json()
-    emit(f"登録済み省庁数: {len(ministries)} 組織, 既存会議体数: {len(existing_councils)} 件\n")
+    ministries, existing_councils, categories_def = parse_data_json()
+    emit(f"登録済み省庁数: {len(ministries)} 組織, 既存会議体数: {len(existing_councils)} 件, カテゴリー定義数: {len(categories_def)} 種類\n")
 
     # 却下済み会議体データの読み込み（再検出・再登録をブロック）
     rejected_file = os.path.join(BASE_DIR, "rejected_councils.json")
@@ -251,6 +295,8 @@ def run_discovery(progress_callback=None):
     next_seq = get_max_seq(existing_councils) + 1
     discovered_list = []
     seen_in_this_run = set()
+    category_counts = {}
+    unmatched_category_councils = []
 
     total_ministries = len([m for m in ministries.values() if m.get("hasCouncils", True) and m.get("councilsUrls")])
     current_min_idx = 0
@@ -368,24 +414,25 @@ def run_discovery(progress_callback=None):
                     continue
                 seen_in_this_run.add(key_pair)
 
-                # カテゴリの自動推定
-                category = "COUNCIL"
-                if "部会" in link_text:
-                    category = "SECTION"
-                elif "分科会" in link_text:
-                    category = "SUBCOMMITTEE"
-                elif "ワーキンググループ" in link_text or "WG" in link_text:
-                    category = "WORKING_GROUP"
-                elif "検討会" in link_text or "研究会" in link_text or "懇談会" in link_text:
-                    category = "STUDY"
-                elif "委員会" in link_text:
-                    category = "COMMITTEE"
-                elif "本部" in link_text or "推進会議" in link_text:
-                    category = "HQ"
+                # カテゴリの自動推定（定義済み categories から厳密に判定）
+                category, is_default = infer_council_category(f"{target_council_name} {link_text}", categories_def)
+                category_counts[category] = category_counts.get(category, 0) + 1
+
+                if is_default:
+                    unmatched_category_councils.append({
+                        "id": None,  # 採番後に設定
+                        "name": target_council_name,
+                        "url": final_council_url if not is_meeting_pattern else page_url,
+                        "ministry": min_code,
+                        "appliedCategory": category
+                    })
 
                 # 採番規則: 省庁コード小文字 + 連番 (例: cao-184, mhlw-185)
                 council_id = f"{min_code.lower()}-{next_seq}"
                 next_seq += 1
+
+                if is_default and unmatched_category_councils:
+                    unmatched_category_councils[-1]["id"] = council_id
 
                 council_item = {
                     "id": council_id,
@@ -398,7 +445,8 @@ def run_discovery(progress_callback=None):
 
                 discovered_list.append(council_item)
                 found_count_in_page += 1
-                emit(f"      ✨ [新規会議体検出] {council_id}: {link_text} -> {final_council_url}", {
+                cat_label = categories_def.get(category, category)
+                emit(f"      ✨ [新規会議体検出] [{cat_label}] {council_id}: {link_text} -> {final_council_url}", {
                     "type": "council_discovered",
                     "council": council_item
                 })
@@ -407,6 +455,23 @@ def run_discovery(progress_callback=None):
 
     emit("\n" + "=" * 70)
     emit(f"ディスカバリー巡回完了: 合計 {len(discovered_list)} 件の新規会議体レコードを作成しました。")
+    emit("-" * 70)
+    emit("【新規検出会議体のカテゴリー内訳】")
+    if category_counts:
+        for cat_id, cnt in sorted(category_counts.items(), key=lambda x: x[1], reverse=True):
+            label = categories_def.get(cat_id, cat_id)
+            emit(f"  - {label} ({cat_id}): {cnt} 件")
+    else:
+        emit("  - 新規検出なし")
+
+    if unmatched_category_councils:
+        emit("-" * 70)
+        emit(f"⚠️ 【特定カテゴリーに該当せずデフォルト（COUNCIL/審議会）が適用された会議体: {len(unmatched_category_councils)}件】")
+        for u in unmatched_category_councils:
+            emit(f"  ・ [{u['ministry']}] {u['id']}: {u['name']} -> {u['url']}")
+    elif discovered_list:
+        emit("-" * 70)
+        emit("  ✨ すべての新規会議体が特定の定義済みカテゴリーに分類されました。")
     emit("=" * 70)
 
     # 結果JSONの保存 (data.json の councils を更新、却下済みを完全パージ)

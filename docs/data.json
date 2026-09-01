@@ -1382,7 +1382,7 @@
       "id": "cao-getsurei_keizai",
       "name": "月例経済報告等に関する関係閣僚会議",
       "ministry": "CAO",
-      "category": "MINISTERIAL_MEETING",
+      "category": "LIAISON",
       "pastYearCount": 8,
       "description": "内閣府における月例経済報告等に関する関係閣僚会議。",
       "officialUrl": "https://www5.cao.go.jp/keizai3/getsurei/getsurei-index.html",
@@ -6940,7 +6940,7 @@
       "id": "moj-hanzai_higai_bengoshi",
       "name": "犯罪被害者支援弁護士制度検討会／犯罪被害者支援弁護士制度・実務者協議会",
       "ministry": "MOJ",
-      "category": "STUDY_GROUP",
+      "category": "STUDY",
       "description": "法務省における犯罪被害者支援弁護士制度検討会および犯罪被害者支援弁護士制度・実務者協議会。",
       "officialUrl": "https://www.moj.go.jp/housei/sougouhouritsushien/housei04_00017.html",
       "pastYearCount": 19,
@@ -16999,7 +16999,7 @@
       "id": "fsa-stewardship_r06",
       "name": "スチュワードシップ・コードに関する有識者会議（令和６年度）",
       "ministry": "FSA",
-      "category": "STUDY_GROUP",
+      "category": "STUDY",
       "officialUrl": "https://www.fsa.go.jp/singi/stewardship/index.html",
       "pastYearCount": 3,
       "manualLock": true,
@@ -17015,7 +17015,7 @@
       "id": "fsa-stewardship_r01",
       "name": "スチュワードシップ・コードに関する有識者検討会（令和元年度）",
       "ministry": "FSA",
-      "category": "STUDY_GROUP",
+      "category": "STUDY",
       "officialUrl": "https://www.fsa.go.jp/singi/stewardship/index.html",
       "pastYearCount": 3,
       "manualLock": true
@@ -17024,7 +17024,7 @@
       "id": "fsa-stewardship_h28",
       "name": "スチュワードシップ・コードに関する有識者検討会",
       "ministry": "FSA",
-      "category": "STUDY_GROUP",
+      "category": "STUDY",
       "officialUrl": "https://www.fsa.go.jp/singi/stewardship/index.html",
       "pastYearCount": 3,
       "manualLock": true
@@ -17110,7 +17110,7 @@
       "id": "cas-keizai_anzen_suishin",
       "name": "経済安全保障推進会議",
       "ministry": "CAS",
-      "category": "HEADQUARTERS",
+      "category": "HQ",
       "officialUrl": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyo/index.html",
       "pastYearCount": 8,
       "manualLock": true,
@@ -17127,7 +17127,7 @@
       "id": "cas-keizai_anzen_kentou",
       "name": "経済安全保障重点課題検討会議",
       "ministry": "CAS",
-      "category": "STUDY_GROUP",
+      "category": "STUDY",
       "officialUrl": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyo/index.html#kentokaigi",
       "pastYearCount": 6,
       "manualLock": true,
@@ -17137,7 +17137,7 @@
       "id": "cas-kenkou_iryou_honbu",
       "name": "健康・医療戦略推進本部",
       "ministry": "CAS",
-      "category": "HEADQUARTERS",
+      "category": "HQ",
       "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/",
       "pastYearCount": 57,
       "manualLock": true,
@@ -17156,7 +17156,7 @@
       "id": "cas-atarashii_shihon_honbu",
       "name": "新しい資本主義実現本部",
       "ministry": "CAS",
-      "category": "HEADQUARTERS",
+      "category": "HQ",
       "officialUrl": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/index.html#honbu",
       "status": "approved",
       "manualLock": true,
@@ -17193,7 +17193,7 @@
       "id": "fsc-honkaigi",
       "name": "食品安全委員会",
       "ministry": "FSC",
-      "category": "COMMISSION",
+      "category": "COMMITTEE",
       "officialUrl": "https://www.fsc.go.jp/iinkai_annai/jisseki.html",
       "pastYearCount": 30,
       "manualLock": true,
@@ -18183,7 +18183,7 @@
       "title": "月例経済報告等に関する関係閣僚会議（令和8年8月）",
       "date": "2026/08/27",
       "officialUrl": "https://www5.cao.go.jp/keizai3/getsurei/2026/0827getsurei/main.pdf",
-      "category": "MINISTERIAL_MEETING",
+      "category": "LIAISON",
       "ministry": "CAO",
       "manualLock": true,
       "materials": [
@@ -18486,7 +18486,7 @@
       "title": "第１０３５回 食品安全委員会",
       "date": "2026/08/25",
       "officialUrl": "https://www.fsc.go.jp/fsciis/meetingMaterial/show/kai20260825fsc",
-      "category": "COMMISSION",
+      "category": "COMMITTEE",
       "ministry": "FSC",
       "manualLock": true,
       "materials": [
@@ -18662,7 +18662,7 @@
       "title": "第１０３４回 食品安全委員会",
       "date": "2026/08/18",
       "officialUrl": "https://www.fsc.go.jp/fsciis/meetingMaterial/show/kai20260818fsc",
-      "category": "COMMISSION",
+      "category": "COMMITTEE",
       "ministry": "FSC",
       "manualLock": true,
       "materials": [
@@ -18815,7 +18815,7 @@
       "title": "第36回 国土強靱化の推進に関する関係府省庁連絡会議",
       "date": "2026/08/07",
       "officialUrl": "https://www.cas.go.jp/jp/seisaku/kyoujinka/dai36/shidai.html",
-      "category": "MINISTERIAL",
+      "category": "LIAISON",
       "ministry": "CAS",
       "manualLock": true,
       "materials": [
@@ -19725,7 +19725,7 @@
       "title": "第１０３３回 食品安全委員会",
       "date": "2026/08/04",
       "officialUrl": "https://www.fsc.go.jp/fsciis/meetingMaterial/show/kai20260804fsc",
-      "category": "COMMISSION",
+      "category": "COMMITTEE",
       "ministry": "FSC",
       "manualLock": true,
       "materials": [
@@ -22857,7 +22857,7 @@
       "title": "月例経済報告等に関する関係閣僚会議（令和8年7月）",
       "date": "2026/07/29",
       "officialUrl": "https://www5.cao.go.jp/keizai3/getsurei/2026/0729getsurei/main.pdf",
-      "category": "MINISTERIAL_MEETING",
+      "category": "LIAISON",
       "ministry": "CAO",
       "manualLock": true,
       "materials": [
@@ -23151,7 +23151,7 @@
       "title": "第１０３２回 食品安全委員会",
       "date": "2026/07/28",
       "officialUrl": "https://www.fsc.go.jp/fsciis/meetingMaterial/show/kai20260728fsc",
-      "category": "COMMISSION",
+      "category": "COMMITTEE",
       "ministry": "FSC",
       "manualLock": true,
       "materials": [
@@ -24119,7 +24119,7 @@
       "title": "第１０３１回 食品安全委員会",
       "date": "2026/07/21",
       "officialUrl": "https://www.fsc.go.jp/fsciis/meetingMaterial/show/kai20260721fsc",
-      "category": "COMMISSION",
+      "category": "COMMITTEE",
       "ministry": "FSC",
       "manualLock": true,
       "materials": [
@@ -25015,7 +25015,7 @@
       "title": "鳥インフルエンザ関係閣僚会議 関係府省庁連絡会議幹事会（令和8年7月13日）",
       "date": "2026/07/13",
       "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/influenza/",
-      "category": "MINISTERIAL",
+      "category": "LIAISON",
       "ministry": "CAS",
       "manualLock": true,
       "materials": [
@@ -25289,7 +25289,7 @@
       "title": "第5回 人工知能戦略本部",
       "date": "2026/07/10",
       "officialUrl": "https://www8.cao.go.jp/cstp/ai/ai_hq/5kai/5kai.html",
-      "category": "HEADQUARTERS",
+      "category": "HQ",
       "ministry": "CAO",
       "manualLock": true,
       "materials": [
@@ -25613,7 +25613,7 @@
       "title": "第１０３０回 食品安全委員会",
       "date": "2026/07/07",
       "officialUrl": "https://www.fsc.go.jp/fsciis/meetingMaterial/show/kai20260707fsc",
-      "category": "COMMISSION",
+      "category": "COMMITTEE",
       "ministry": "FSC",
       "manualLock": true,
       "materials": [
@@ -25748,7 +25748,7 @@
       "title": "第24回 国土強靱化推進本部",
       "date": "2026/07/03",
       "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/kokudo_kyoujinka/kaisai/dai24/index.html",
-      "category": "HEADQUARTERS",
+      "category": "HQ",
       "ministry": "CAS",
       "manualLock": true,
       "materials": [
@@ -26217,7 +26217,7 @@
       "title": "月例経済報告等に関する関係閣僚会議（令和8年6月）",
       "date": "2026/06/30",
       "officialUrl": "https://www5.cao.go.jp/keizai3/getsurei/2026/0630getsurei/main.pdf",
-      "category": "MINISTERIAL_MEETING",
+      "category": "LIAISON",
       "ministry": "CAO",
       "manualLock": true,
       "materials": [
@@ -26880,7 +26880,7 @@
       "title": "第57回 健康・医療戦略推進本部",
       "date": "2026/06/26",
       "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/suisin/suisin_dai57/gijishidai.html",
-      "category": "HEADQUARTERS",
+      "category": "HQ",
       "ministry": "CAS",
       "manualLock": true,
       "materials": [
@@ -26905,7 +26905,7 @@
       "title": "第11回 中東情勢に関する関係閣僚会議",
       "date": "2026/06/26",
       "officialUrl": "https://www.cas.go.jp/jp/seisaku/chyutoujyousei/dai11/gijisidai.html",
-      "category": "MINISTERIAL",
+      "category": "LIAISON",
       "ministry": "CAS",
       "manualLock": true,
       "materials": [
@@ -27553,7 +27553,7 @@
       "title": "第１０２９回 食品安全委員会",
       "date": "2026/06/23",
       "officialUrl": "https://www.fsc.go.jp/fsciis/meetingMaterial/show/kai20260623fsc",
-      "category": "COMMISSION",
+      "category": "COMMITTEE",
       "ministry": "FSC",
       "manualLock": true,
       "materials": [
@@ -27849,7 +27849,7 @@
       "title": "第4回 人工知能戦略本部",
       "date": "2026/06/19",
       "officialUrl": "https://www8.cao.go.jp/cstp/ai/ai_hq/4kai/4kai.html",
-      "category": "HEADQUARTERS",
+      "category": "HQ",
       "ministry": "CAO",
       "manualLock": true,
       "materials": [
@@ -28312,7 +28312,7 @@
       "title": "第１０２８回 食品安全委員会",
       "date": "2026/06/16",
       "officialUrl": "https://www.fsc.go.jp/fsciis/meetingMaterial/show/kai20260616fsc",
-      "category": "COMMISSION",
+      "category": "COMMITTEE",
       "ministry": "FSC",
       "manualLock": true,
       "materials": [
@@ -29591,7 +29591,7 @@
       "title": "第6回 経済安全保障重点課題検討会議",
       "date": "2026/06/11",
       "officialUrl": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyo/index.html#kentokaigi",
-      "category": "STUDY_GROUP",
+      "category": "STUDY",
       "ministry": "CAS",
       "manualLock": true,
       "materials": [
@@ -29608,7 +29608,7 @@
       "title": "第10回 中東情勢に関する関係閣僚会議",
       "date": "2026/06/11",
       "officialUrl": "https://www.cas.go.jp/jp/seisaku/chyutoujyousei/dai10/gijisidai.html",
-      "category": "MINISTERIAL",
+      "category": "LIAISON",
       "ministry": "CAS",
       "manualLock": true,
       "materials": [
@@ -29981,7 +29981,7 @@
       "title": "第１０２７回 食品安全委員会",
       "date": "2026/06/09",
       "officialUrl": "https://www.fsc.go.jp/fsciis/meetingMaterial/show/kai20260609fsc",
-      "category": "COMMISSION",
+      "category": "COMMITTEE",
       "ministry": "FSC",
       "manualLock": true,
       "materials": [
@@ -30473,7 +30473,7 @@
       "title": "第9回 中東情勢に関する関係閣僚会議",
       "date": "2026/06/02",
       "officialUrl": "https://www.cas.go.jp/jp/seisaku/chyutoujyousei/dai9/gijisidai.html",
-      "category": "MINISTERIAL",
+      "category": "LIAISON",
       "ministry": "CAS",
       "manualLock": true,
       "materials": [
@@ -31160,7 +31160,7 @@
       "title": "月例経済報告等に関する関係閣僚会議（令和8年5月）",
       "date": "2026/05/26",
       "officialUrl": "https://www5.cao.go.jp/keizai3/getsurei/2026/0526getsurei/main.pdf",
-      "category": "MINISTERIAL_MEETING",
+      "category": "LIAISON",
       "ministry": "CAO",
       "manualLock": true,
       "materials": [
@@ -31189,7 +31189,7 @@
       "title": "第１０２６回 食品安全委員会",
       "date": "2026/05/26",
       "officialUrl": "https://www.fsc.go.jp/fsciis/meetingMaterial/show/kai20260526fsc",
-      "category": "COMMISSION",
+      "category": "COMMITTEE",
       "ministry": "FSC",
       "manualLock": true,
       "materials": [
@@ -31621,7 +31621,7 @@
       "title": "第8回 中東情勢に関する関係閣僚会議",
       "date": "2026/05/21",
       "officialUrl": "https://www.cas.go.jp/jp/seisaku/chyutoujyousei/dai8/gijisidai.html",
-      "category": "MINISTERIAL",
+      "category": "LIAISON",
       "ministry": "CAS",
       "manualLock": true,
       "materials": [
@@ -32077,7 +32077,7 @@
       "title": "第１０２５回 食品安全委員会",
       "date": "2026/05/19",
       "officialUrl": "https://www.fsc.go.jp/fsciis/meetingMaterial/show/kai20260519fsc",
-      "category": "COMMISSION",
+      "category": "COMMITTEE",
       "ministry": "FSC",
       "manualLock": true,
       "materials": [
@@ -32848,7 +32848,7 @@
       "title": "第7回 中東情勢に関する関係閣僚会議",
       "date": "2026/05/12",
       "officialUrl": "https://www.cas.go.jp/jp/seisaku/chyutoujyousei/dai7/gijisidai.html",
-      "category": "MINISTERIAL",
+      "category": "LIAISON",
       "ministry": "CAS",
       "manualLock": true,
       "materials": [
@@ -32889,7 +32889,7 @@
       "title": "第１０２４回 食品安全委員会",
       "date": "2026/05/12",
       "officialUrl": "https://www.fsc.go.jp/fsciis/meetingMaterial/show/kai20260512fsc",
-      "category": "COMMISSION",
+      "category": "COMMITTEE",
       "ministry": "FSC",
       "manualLock": true,
       "materials": [
@@ -33033,7 +33033,7 @@
       "title": "第6回 中東情勢に関する関係閣僚会議",
       "date": "2026/04/30",
       "officialUrl": "https://www.cas.go.jp/jp/seisaku/chyutoujyousei/dai6/gijisidai.html",
-      "category": "MINISTERIAL",
+      "category": "LIAISON",
       "ministry": "CAS",
       "manualLock": true,
       "materials": [
@@ -33323,7 +33323,7 @@
       "title": "第１０２３回 食品安全委員会",
       "date": "2026/04/28",
       "officialUrl": "https://www.fsc.go.jp/fsciis/meetingMaterial/show/kai20260428fsc",
-      "category": "COMMISSION",
+      "category": "COMMITTEE",
       "ministry": "FSC",
       "manualLock": true,
       "materials": [
@@ -33760,7 +33760,7 @@
       "title": "第5回 中東情勢に関する関係閣僚会議",
       "date": "2026/04/24",
       "officialUrl": "https://www.cas.go.jp/jp/seisaku/chyutoujyousei/dai5/gijisidai.html",
-      "category": "MINISTERIAL",
+      "category": "LIAISON",
       "ministry": "CAS",
       "manualLock": true,
       "materials": [
@@ -34161,7 +34161,7 @@
       "title": "月例経済報告等に関する関係閣僚会議（令和8年4月）",
       "date": "2026/04/23",
       "officialUrl": "https://www5.cao.go.jp/keizai3/getsurei/2026/0423getsurei/main.pdf",
-      "category": "MINISTERIAL_MEETING",
+      "category": "LIAISON",
       "ministry": "CAO",
       "manualLock": true,
       "materials": [
@@ -34415,7 +34415,7 @@
       "title": "鳥インフルエンザ関係閣僚会議 関係府省庁連絡会議［持ち回り］（令和8年4月22日）",
       "date": "2026/04/22",
       "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/influenza/",
-      "category": "MINISTERIAL",
+      "category": "LIAISON",
       "ministry": "CAS",
       "manualLock": true,
       "materials": [
@@ -34510,7 +34510,7 @@
       "title": "第１０２２回 食品安全委員会",
       "date": "2026/04/21",
       "officialUrl": "https://www.fsc.go.jp/fsciis/meetingMaterial/show/kai20260421fsc",
-      "category": "COMMISSION",
+      "category": "COMMITTEE",
       "ministry": "FSC",
       "manualLock": true,
       "materials": [
@@ -34757,7 +34757,7 @@
       "title": "第4回 中東情勢に関する関係閣僚会議",
       "date": "2026/04/16",
       "officialUrl": "https://www.cas.go.jp/jp/seisaku/chyutoujyousei/dai4/gijisidai.html",
-      "category": "MINISTERIAL",
+      "category": "LIAISON",
       "ministry": "CAS",
       "manualLock": true,
       "materials": [
@@ -35558,7 +35558,7 @@
       "title": "第3回 中東情勢に関する関係閣僚会議",
       "date": "2026/04/10",
       "officialUrl": "https://www.cas.go.jp/jp/seisaku/chyutoujyousei/dai3/gijisidai.html",
-      "category": "MINISTERIAL",
+      "category": "LIAISON",
       "ministry": "CAS",
       "manualLock": true,
       "materials": [
@@ -35969,7 +35969,7 @@
       "title": "第1021回 食品安全委員会",
       "date": "2026/04/07",
       "officialUrl": "https://www.fsc.go.jp/fsciis/meetingMaterial/show/kai20260407fsc",
-      "category": "COMMISSION",
+      "category": "COMMITTEE",
       "ministry": "FSC",
       "manualLock": true,
       "materials": [
@@ -36344,7 +36344,7 @@
       "title": "第2回 中東情勢に関する関係閣僚会議",
       "date": "2026/03/31",
       "officialUrl": "https://www.cas.go.jp/jp/seisaku/chyutoujyousei/dai2/gijisidai.html",
-      "category": "MINISTERIAL",
+      "category": "LIAISON",
       "ministry": "CAS",
       "manualLock": true,
       "materials": [
@@ -36377,7 +36377,7 @@
       "title": "第1020回 食品安全委員会",
       "date": "2026/03/31",
       "officialUrl": "https://www.fsc.go.jp/fsciis/meetingMaterial/show/kai20260331fsc",
-      "category": "COMMISSION",
+      "category": "COMMITTEE",
       "ministry": "FSC",
       "manualLock": true,
       "materials": [
@@ -36861,7 +36861,7 @@
       "title": "月例経済報告等に関する関係閣僚会議（令和8年3月）",
       "date": "2026/03/27",
       "officialUrl": "https://www5.cao.go.jp/keizai3/getsurei/2026/0327getsurei/main.pdf",
-      "category": "MINISTERIAL_MEETING",
+      "category": "LIAISON",
       "ministry": "CAO",
       "manualLock": true,
       "materials": [
@@ -37018,7 +37018,7 @@
       "title": "鳥インフルエンザ関係閣僚会議 関係府省庁連絡会議［持ち回り］（令和8年3月26日）",
       "date": "2026/03/26",
       "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/influenza/",
-      "category": "MINISTERIAL",
+      "category": "LIAISON",
       "ministry": "CAS",
       "manualLock": true,
       "materials": [
@@ -37146,7 +37146,7 @@
       "title": "鳥インフルエンザ関係閣僚会議 関係府省庁連絡会議［持ち回り］（令和8年3月25日）",
       "date": "2026/03/25",
       "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/influenza/",
-      "category": "MINISTERIAL",
+      "category": "LIAISON",
       "ministry": "CAS",
       "manualLock": true,
       "materials": [
@@ -37470,7 +37470,7 @@
       "title": "第1回 中東情勢に関する関係閣僚会議",
       "date": "2026/03/24",
       "officialUrl": "https://www.cas.go.jp/jp/seisaku/chyutoujyousei/dai1/gijisidai.html",
-      "category": "MINISTERIAL",
+      "category": "LIAISON",
       "ministry": "CAS",
       "manualLock": true,
       "materials": [
@@ -37503,7 +37503,7 @@
       "title": "第1019回 食品安全委員会",
       "date": "2026/03/24",
       "officialUrl": "https://www.fsc.go.jp/fsciis/meetingMaterial/show/kai20260324fsc",
-      "category": "COMMISSION",
+      "category": "COMMITTEE",
       "ministry": "FSC",
       "manualLock": true,
       "materials": [
@@ -37728,7 +37728,7 @@
       "title": "第56回 健康・医療戦略推進本部",
       "date": "2026/03/23",
       "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/suisin/suisin_dai56/gijishidai.html",
-      "category": "HEADQUARTERS",
+      "category": "HQ",
       "ministry": "CAS",
       "manualLock": true,
       "materials": [
@@ -38553,7 +38553,7 @@
       "title": "第1018回 食品安全委員会",
       "date": "2026/03/17",
       "officialUrl": "https://www.fsc.go.jp/fsciis/meetingMaterial/show/kai20260317fsc",
-      "category": "COMMISSION",
+      "category": "COMMITTEE",
       "ministry": "FSC",
       "manualLock": true,
       "materials": [
@@ -39681,7 +39681,7 @@
       "title": "第1017回 食品安全委員会",
       "date": "2026/03/10",
       "officialUrl": "https://www.fsc.go.jp/fsciis/meetingMaterial/show/kai20260310fsc",
-      "category": "COMMISSION",
+      "category": "COMMITTEE",
       "ministry": "FSC",
       "manualLock": true,
       "materials": [
@@ -40226,7 +40226,7 @@
       "title": "鳥インフルエンザ関係閣僚会議 関係府省庁連絡会議［持ち回り］（令和8年3月5日）",
       "date": "2026/03/05",
       "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/influenza/",
-      "category": "MINISTERIAL",
+      "category": "LIAISON",
       "ministry": "CAS",
       "manualLock": true,
       "materials": [
@@ -40468,7 +40468,7 @@
       "title": "第1016回 食品安全委員会",
       "date": "2026/03/03",
       "officialUrl": "https://www.fsc.go.jp/fsciis/meetingMaterial/show/kai20260303fsc",
-      "category": "COMMISSION",
+      "category": "COMMITTEE",
       "ministry": "FSC",
       "manualLock": true,
       "materials": [
@@ -41693,7 +41693,7 @@
       "title": "第55回 健康・医療戦略推進本部",
       "date": "2026/02/25",
       "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/suisin/suisin_dai55/gijishidai.html",
-      "category": "HEADQUARTERS",
+      "category": "HQ",
       "ministry": "CAS",
       "manualLock": true,
       "materials": [
@@ -41710,7 +41710,7 @@
       "title": "月例経済報告等に関する関係閣僚会議（令和8年2月）",
       "date": "2026/02/25",
       "officialUrl": "https://www5.cao.go.jp/keizai3/getsurei/2026/0225getsurei/main.pdf",
-      "category": "MINISTERIAL_MEETING",
+      "category": "LIAISON",
       "ministry": "CAO",
       "manualLock": true,
       "materials": [
@@ -41820,7 +41820,7 @@
       "title": "第1015回 食品安全委員会",
       "date": "2026/02/24",
       "officialUrl": "https://www.fsc.go.jp/fsciis/meetingMaterial/show/kai20260224fsc",
-      "category": "COMMISSION",
+      "category": "COMMITTEE",
       "ministry": "FSC",
       "manualLock": true,
       "materials": [
@@ -41924,7 +41924,7 @@
       "title": "鳥インフルエンザ関係閣僚会議 関係府省庁連絡会議［持ち回り］（令和8年2月21日）",
       "date": "2026/02/21",
       "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/influenza/",
-      "category": "MINISTERIAL",
+      "category": "LIAISON",
       "ministry": "CAS",
       "manualLock": true,
       "materials": [
@@ -41958,7 +41958,7 @@
       "title": "鳥インフルエンザ関係閣僚会議 関係府省庁連絡会議［持ち回り］（令和8年2月20日）",
       "date": "2026/02/20",
       "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/influenza/",
-      "category": "MINISTERIAL",
+      "category": "LIAISON",
       "ministry": "CAS",
       "manualLock": true,
       "materials": [
@@ -42694,7 +42694,7 @@
       "title": "第1014回 食品安全委員会",
       "date": "2026/02/17",
       "officialUrl": "https://www.fsc.go.jp/fsciis/meetingMaterial/show/kai20260217fsc",
-      "category": "COMMISSION",
+      "category": "COMMITTEE",
       "ministry": "FSC",
       "manualLock": true,
       "materials": [
@@ -43547,7 +43547,7 @@
       "title": "第1013回 食品安全委員会",
       "date": "2026/02/10",
       "officialUrl": "https://www.fsc.go.jp/fsciis/meetingMaterial/show/kai20260210fsc",
-      "category": "COMMISSION",
+      "category": "COMMITTEE",
       "ministry": "FSC",
       "manualLock": true,
       "materials": [
@@ -44115,7 +44115,7 @@
       "title": "第1012回 食品安全委員会",
       "date": "2026/02/03",
       "officialUrl": "https://www.fsc.go.jp/fsciis/meetingMaterial/show/kai20260203fsc",
-      "category": "COMMISSION",
+      "category": "COMMITTEE",
       "ministry": "FSC",
       "manualLock": true,
       "materials": [
@@ -45700,7 +45700,7 @@
       "title": "鳥インフルエンザ関係閣僚会議 関係府省庁連絡会議［持ち回り］（令和8年1月27日）",
       "date": "2026/01/27",
       "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/influenza/",
-      "category": "MINISTERIAL",
+      "category": "LIAISON",
       "ministry": "CAS",
       "manualLock": true,
       "materials": [
@@ -45766,7 +45766,7 @@
       "title": "第1011回 食品安全委員会",
       "date": "2026/01/27",
       "officialUrl": "https://www.fsc.go.jp/fsciis/meetingMaterial/show/kai20260127fsc",
-      "category": "COMMISSION",
+      "category": "COMMITTEE",
       "ministry": "FSC",
       "manualLock": true,
       "materials": [
@@ -46150,7 +46150,7 @@
       "title": "第35回 国土強靱化の推進に関する関係府省庁連絡会議",
       "date": "2026/01/23",
       "officialUrl": "https://www.cas.go.jp/jp/seisaku/kyoujinka/dai35/shidai.html",
-      "category": "MINISTERIAL",
+      "category": "LIAISON",
       "ministry": "CAS",
       "manualLock": true,
       "materials": [
@@ -46700,7 +46700,7 @@
       "title": "鳥インフルエンザ関係閣僚会議 関係府省庁連絡会議［持ち回り］（令和8年1月22日）",
       "date": "2026/01/22",
       "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/influenza/",
-      "category": "MINISTERIAL",
+      "category": "LIAISON",
       "ministry": "CAS",
       "manualLock": true,
       "materials": [
@@ -46717,7 +46717,7 @@
       "title": "月例経済報告等に関する関係閣僚会議（令和8年1月）",
       "date": "2026/01/22",
       "officialUrl": "https://www5.cao.go.jp/keizai3/getsurei/2026/0122getsurei/main.pdf",
-      "category": "MINISTERIAL_MEETING",
+      "category": "LIAISON",
       "ministry": "CAO",
       "manualLock": true,
       "materials": [
@@ -46914,7 +46914,7 @@
       "title": "第1010回 食品安全委員会",
       "date": "2026/01/20",
       "officialUrl": "https://www.fsc.go.jp/fsciis/meetingMaterial/show/kai20260120fsc",
-      "category": "COMMISSION",
+      "category": "COMMITTEE",
       "ministry": "FSC",
       "manualLock": true,
       "materials": [
@@ -47564,7 +47564,7 @@
       "title": "鳥インフルエンザ関係閣僚会議 関係府省庁連絡会議［持ち回り］（令和8年1月13日）",
       "date": "2026/01/13",
       "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/influenza/",
-      "category": "MINISTERIAL",
+      "category": "LIAISON",
       "ministry": "CAS",
       "manualLock": true,
       "materials": [
@@ -47581,7 +47581,7 @@
       "title": "第1009回 食品安全委員会",
       "date": "2026/01/13",
       "officialUrl": "https://www.fsc.go.jp/fsciis/meetingMaterial/show/kai20260113fsc",
-      "category": "COMMISSION",
+      "category": "COMMITTEE",
       "ministry": "FSC",
       "manualLock": true,
       "materials": [
@@ -47633,7 +47633,7 @@
       "title": "鳥インフルエンザ関係閣僚会議 関係府省庁連絡会議［持ち回り］（令和8年1月10日）",
       "date": "2026/01/10",
       "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/influenza/",
-      "category": "MINISTERIAL",
+      "category": "LIAISON",
       "ministry": "CAS",
       "manualLock": true,
       "materials": [
@@ -47824,7 +47824,7 @@
       "title": "鳥インフルエンザ関係閣僚会議 関係府省庁連絡会議［持ち回り］（令和8年1月8日）",
       "date": "2026/01/08",
       "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/influenza/",
-      "category": "MINISTERIAL",
+      "category": "LIAISON",
       "ministry": "CAS",
       "manualLock": true,
       "materials": [
@@ -47877,7 +47877,7 @@
       "title": "第1008回 食品安全委員会",
       "date": "2026/01/07",
       "officialUrl": "https://www.fsc.go.jp/fsciis/meetingMaterial/show/kai20260107fsc",
-      "category": "COMMISSION",
+      "category": "COMMITTEE",
       "ministry": "FSC",
       "manualLock": true,
       "materials": [
@@ -47913,7 +47913,7 @@
       "title": "鳥インフルエンザ関係閣僚会議 関係府省庁連絡会議［持ち回り］（令和8年1月2日）",
       "date": "2026/01/02",
       "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/influenza/",
-      "category": "MINISTERIAL",
+      "category": "LIAISON",
       "ministry": "CAS",
       "manualLock": true,
       "materials": [
@@ -48145,7 +48145,7 @@
       "title": "鳥インフルエンザ関係閣僚会議 関係府省庁連絡会議［持ち回り］（令和7年12月30日）",
       "date": "2025/12/30",
       "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/influenza/",
-      "category": "MINISTERIAL",
+      "category": "LIAISON",
       "ministry": "CAS",
       "manualLock": true,
       "materials": [
@@ -48162,7 +48162,7 @@
       "title": "鳥インフルエンザ関係閣僚会議 関係府省庁連絡会議［持ち回り］（令和7年12月29日）",
       "date": "2025/12/29",
       "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/influenza/",
-      "category": "MINISTERIAL",
+      "category": "LIAISON",
       "ministry": "CAS",
       "manualLock": true,
       "materials": [
@@ -48536,7 +48536,7 @@
       "title": "鳥インフルエンザ関係閣僚会議 関係府省庁連絡会議［持ち回り］（令和7年12月25日）",
       "date": "2025/12/25",
       "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/influenza/",
-      "category": "MINISTERIAL",
+      "category": "LIAISON",
       "ministry": "CAS",
       "manualLock": true,
       "materials": [
@@ -49100,7 +49100,7 @@
       "title": "鳥インフルエンザ関係閣僚会議 関係府省庁連絡会議［持ち回り］（令和7年12月24日）",
       "date": "2025/12/24",
       "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/influenza/",
-      "category": "MINISTERIAL",
+      "category": "LIAISON",
       "ministry": "CAS",
       "manualLock": true,
       "materials": [
@@ -49650,7 +49650,7 @@
       "title": "第1007回 食品安全委員会",
       "date": "2025/12/23",
       "officialUrl": "https://www.fsc.go.jp/fsciis/meetingMaterial/show/kai20251223fsc",
-      "category": "COMMISSION",
+      "category": "COMMITTEE",
       "ministry": "FSC",
       "manualLock": true,
       "materials": [
@@ -49908,7 +49908,7 @@
       "title": "鳥インフルエンザ関係閣僚会議 関係府省庁連絡会議［持ち回り］（令和7年12月20日）",
       "date": "2025/12/20",
       "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/influenza/",
-      "category": "MINISTERIAL",
+      "category": "LIAISON",
       "ministry": "CAS",
       "manualLock": true,
       "materials": [
@@ -49976,7 +49976,7 @@
       "title": "第3回 人工知能戦略本部",
       "date": "2025/12/19",
       "officialUrl": "https://www8.cao.go.jp/cstp/ai/ai_hq/3kai/3kai.html",
-      "category": "HEADQUARTERS",
+      "category": "HQ",
       "ministry": "CAO",
       "manualLock": true,
       "materials": [
@@ -51705,7 +51705,7 @@
       "title": "鳥インフルエンザ関係閣僚会議 関係府省庁連絡会議［持ち回り］（令和7年12月16日）",
       "date": "2025/12/16",
       "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/influenza/",
-      "category": "MINISTERIAL",
+      "category": "LIAISON",
       "ministry": "CAS",
       "manualLock": true,
       "materials": [
@@ -51722,7 +51722,7 @@
       "title": "第1006回 食品安全委員会",
       "date": "2025/12/16",
       "officialUrl": "https://www.fsc.go.jp/fsciis/meetingMaterial/show/kai20251216fsc",
-      "category": "COMMISSION",
+      "category": "COMMITTEE",
       "ministry": "FSC",
       "manualLock": true,
       "materials": [
@@ -53708,7 +53708,7 @@
       "title": "鳥インフルエンザ関係閣僚会議 関係府省庁連絡会議［持ち回り］（令和7年12月2日）",
       "date": "2025/12/02",
       "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/influenza/",
-      "category": "MINISTERIAL",
+      "category": "LIAISON",
       "ministry": "CAS",
       "manualLock": true,
       "materials": [
@@ -53905,7 +53905,7 @@
       "title": "第54回 健康・医療戦略推進本部",
       "date": "2025/11/28",
       "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/suisin/suisin_dai54/gijishidai.html",
-      "category": "HEADQUARTERS",
+      "category": "HQ",
       "ministry": "CAS",
       "manualLock": true,
       "materials": [
@@ -54495,7 +54495,7 @@
       "title": "鳥インフルエンザ関係閣僚会議 関係府省庁連絡会議［持ち回り］（令和7年11月22日）",
       "date": "2025/11/22",
       "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/influenza/",
-      "category": "MINISTERIAL",
+      "category": "LIAISON",
       "ministry": "CAS",
       "manualLock": true,
       "materials": [
@@ -54512,7 +54512,7 @@
       "title": "第2回 人工知能戦略本部",
       "date": "2025/11/21",
       "officialUrl": "https://www8.cao.go.jp/cstp/ai/ai_hq/2kai/2kai.html",
-      "category": "HEADQUARTERS",
+      "category": "HQ",
       "ministry": "CAO",
       "manualLock": true,
       "materials": [
@@ -55227,7 +55227,7 @@
       "title": "第12回 全世代型社会保障構築本部",
       "date": "2025/11/17",
       "officialUrl": "https://www.cas.go.jp/jp/seisaku/zensedai_shakaihosho_kochiku/dai12/gijisidai.html",
-      "category": "HEADQUARTERS",
+      "category": "HQ",
       "ministry": "CAS",
       "manualLock": true,
       "materials": [
@@ -56430,7 +56430,7 @@
       "title": "鳥インフルエンザ関係閣僚会議 関係府省庁連絡会議［持ち回り］（令和7年11月9日）",
       "date": "2025/11/09",
       "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/influenza/",
-      "category": "MINISTERIAL",
+      "category": "LIAISON",
       "ministry": "CAS",
       "manualLock": true,
       "materials": [
@@ -56520,7 +56520,7 @@
       "title": "第8回 経済安全保障推進会議",
       "date": "2025/11/07",
       "officialUrl": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyo/dai8/gijisidai.html",
-      "category": "HEADQUARTERS",
+      "category": "HQ",
       "ministry": "CAS",
       "manualLock": true,
       "materials": [
@@ -57021,7 +57021,7 @@
       "title": "鳥インフルエンザ関係閣僚会議 関係府省庁連絡会議［持ち回り］（令和7年11月4日）",
       "date": "2025/11/04",
       "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/influenza/",
-      "category": "MINISTERIAL",
+      "category": "LIAISON",
       "ministry": "CAS",
       "manualLock": true,
       "materials": [
@@ -57107,7 +57107,7 @@
       "title": "鳥インフルエンザ関係閣僚会議 関係府省庁連絡会議［持ち回り］（令和7年11月2日）",
       "date": "2025/11/02",
       "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/influenza/",
-      "category": "MINISTERIAL",
+      "category": "LIAISON",
       "ministry": "CAS",
       "manualLock": true,
       "materials": [
@@ -57855,7 +57855,7 @@
       "title": "鳥インフルエンザ関係閣僚会議（令和7年10月22日）",
       "date": "2025/10/22",
       "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/influenza/",
-      "category": "MINISTERIAL",
+      "category": "LIAISON",
       "ministry": "CAS",
       "manualLock": true,
       "materials": [
@@ -60143,7 +60143,7 @@
       "title": "第1回 人工知能戦略本部",
       "date": "2025/09/12",
       "officialUrl": "https://www8.cao.go.jp/cstp/ai/ai_hq/1kai/1kai.html",
-      "category": "HEADQUARTERS",
+      "category": "HQ",
       "ministry": "CAO",
       "manualLock": true,
       "materials": [
@@ -60590,7 +60590,7 @@
       "title": "鳥インフルエンザ関係閣僚会議 関係府省庁連絡会議幹事会（令和7年9月5日）",
       "date": "2025/09/05",
       "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/influenza/",
-      "category": "MINISTERIAL",
+      "category": "LIAISON",
       "ministry": "CAS",
       "manualLock": true,
       "materials": [
@@ -61096,7 +61096,7 @@
       "title": "第53回 健康・医療戦略推進本部",
       "date": "2025/08/22",
       "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/suisin/suisin_dai53/gijisidai.html",
-      "category": "HEADQUARTERS",
+      "category": "HQ",
       "ministry": "CAS",
       "manualLock": true,
       "materials": [],
@@ -61742,7 +61742,7 @@
       "title": "第34回 国土強靱化の推進に関する関係府省庁連絡会議",
       "date": "2025/08/08",
       "officialUrl": "https://www.cas.go.jp/jp/seisaku/kyoujinka/dai34/sidai.html",
-      "category": "MINISTERIAL",
+      "category": "LIAISON",
       "ministry": "CAS",
       "manualLock": true,
       "materials": [
@@ -65501,7 +65501,7 @@
       "title": "第52回 健康・医療戦略推進本部",
       "date": "2025/06/20",
       "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/suisin/suisin_dai52/gijisidai.html",
-      "category": "HEADQUARTERS",
+      "category": "HQ",
       "ministry": "CAS",
       "manualLock": true,
       "materials": [
@@ -66439,7 +66439,7 @@
       "title": "第5回 新しい資本主義実現本部",
       "date": "2025/06/13",
       "ministry": "CAS",
-      "category": "HEADQUARTERS",
+      "category": "HQ",
       "officialUrl": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/honbu/dai5/gijisidai.html",
       "materials": [
         {
@@ -66972,7 +66972,7 @@
       "title": "第23回 国土強靱化推進本部",
       "date": "2025/06/06",
       "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/kokudo_kyoujinka/kaisai/dai23/index.html",
-      "category": "HEADQUARTERS",
+      "category": "HQ",
       "ministry": "CAS",
       "manualLock": true,
       "materials": [
@@ -71626,7 +71626,7 @@
       "title": "第22回 国土強靱化推進本部",
       "date": "2025/04/01",
       "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/kokudo_kyoujinka/kaisai/dai22/index.html",
-      "category": "HEADQUARTERS",
+      "category": "HQ",
       "ministry": "CAS",
       "manualLock": true,
       "materials": [
@@ -72494,7 +72494,7 @@
       "title": "第51回 健康・医療戦略推進本部",
       "date": "2025/03/24",
       "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/suisin/suisin_dai51/gijisidai.html",
-      "category": "HEADQUARTERS",
+      "category": "HQ",
       "ministry": "CAS",
       "manualLock": true,
       "materials": [],
@@ -73485,7 +73485,7 @@
       "title": "第7回 経済安全保障推進会議",
       "date": "2025/03/07",
       "officialUrl": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyo/dai7/gijisidai.html",
-      "category": "HEADQUARTERS",
+      "category": "HQ",
       "ministry": "CAS",
       "manualLock": true,
       "materials": [
@@ -74162,7 +74162,7 @@
       "title": "第50回 健康・医療戦略推進本部",
       "date": "2025/02/27",
       "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/suisin/suisin_dai50/gijisidai.html",
-      "category": "HEADQUARTERS",
+      "category": "HQ",
       "ministry": "CAS",
       "manualLock": true,
       "materials": [
@@ -74338,7 +74338,7 @@
       "title": "第3回 スチュワードシップ・コードに関する有識者会議（令和６年度）",
       "date": "2025/02/26",
       "officialUrl": "https://www.fsa.go.jp/singi/stewardship/siryou/20250226.html",
-      "category": "STUDY_GROUP",
+      "category": "STUDY",
       "ministry": "FSA",
       "manualLock": true,
       "materials": [
@@ -74879,7 +74879,7 @@
       "title": "第49回 健康・医療戦略推進本部",
       "date": "2025/02/18",
       "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/suisin/suisin_dai49/gijisidai.html",
-      "category": "HEADQUARTERS",
+      "category": "HQ",
       "ministry": "CAS",
       "manualLock": true,
       "materials": [
@@ -74924,7 +74924,7 @@
       "title": "第5回 経済安全保障重点課題検討会議",
       "date": "2025/02/18",
       "officialUrl": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyo/index.html#kentokaigi",
-      "category": "STUDY_GROUP",
+      "category": "STUDY",
       "ministry": "CAS",
       "manualLock": true,
       "materials": [
@@ -75016,7 +75016,7 @@
       "title": "第33回 国土強靱化の推進に関する関係府省庁連絡会議",
       "date": "2025/02/14",
       "officialUrl": "https://www.cas.go.jp/jp/seisaku/kyoujinka/dai33/sidai.html",
-      "category": "MINISTERIAL",
+      "category": "LIAISON",
       "ministry": "CAS",
       "manualLock": true,
       "materials": [
@@ -79179,7 +79179,7 @@
       "title": "第48回 健康・医療戦略推進本部",
       "date": "2024/12/09",
       "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/suisin/suisin_dai48/gijisidai.html",
-      "category": "HEADQUARTERS",
+      "category": "HQ",
       "ministry": "CAS",
       "manualLock": true,
       "materials": [
@@ -80845,7 +80845,7 @@
       "title": "第2回 スチュワードシップ・コードに関する有識者会議（令和６年度）",
       "date": "2024/11/18",
       "officialUrl": "https://www.fsa.go.jp/singi/stewardship/siryou/20241118.html",
-      "category": "STUDY_GROUP",
+      "category": "STUDY",
       "ministry": "FSA",
       "manualLock": true,
       "materials": [
@@ -81622,7 +81622,7 @@
       "title": "第11回 全世代型社会保障構築本部",
       "date": "2024/11/08",
       "officialUrl": "https://www.cas.go.jp/jp/seisaku/zensedai_shakaihosho_kochiku/dai11/gijisidai.html",
-      "category": "HEADQUARTERS",
+      "category": "HQ",
       "ministry": "CAS",
       "manualLock": true,
       "materials": [
@@ -82804,7 +82804,7 @@
       "title": "第1回 スチュワードシップ・コードに関する有識者会議（令和６年度）",
       "date": "2024/10/18",
       "officialUrl": "https://www.fsa.go.jp/singi/stewardship/siryou/20241018.html",
-      "category": "STUDY_GROUP",
+      "category": "STUDY",
       "ministry": "FSA",
       "manualLock": true,
       "materials": [
@@ -85662,7 +85662,7 @@
       "title": "第47回 健康・医療戦略推進本部",
       "date": "2024/08/08",
       "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/suisin/suisin_dai47/gijisidai.html",
-      "category": "HEADQUARTERS",
+      "category": "HQ",
       "ministry": "CAS",
       "manualLock": true,
       "materials": [
@@ -85880,7 +85880,7 @@
       "title": "第32回 国土強靱化の推進に関する関係府省庁連絡会議",
       "date": "2024/07/30",
       "officialUrl": "https://www.cas.go.jp/jp/seisaku/kyoujinka/dai32/sidai.html",
-      "category": "MINISTERIAL",
+      "category": "LIAISON",
       "ministry": "CAS",
       "manualLock": true,
       "materials": [
@@ -86175,7 +86175,7 @@
       "title": "第21回 国土強靱化推進本部",
       "date": "2024/07/26",
       "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/kokudo_kyoujinka/kaisai/dai21/index.html",
-      "category": "HEADQUARTERS",
+      "category": "HQ",
       "ministry": "CAS",
       "manualLock": true,
       "materials": [
@@ -87327,7 +87327,7 @@
       "title": "第46回 健康・医療戦略推進本部",
       "date": "2024/06/28",
       "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/suisin/suisin_dai46/gijisidai.html",
-      "category": "HEADQUARTERS",
+      "category": "HQ",
       "ministry": "CAS",
       "manualLock": true,
       "materials": [
@@ -87598,7 +87598,7 @@
       "title": "第4回 経済安全保障重点課題検討会議",
       "date": "2024/06/27",
       "officialUrl": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyo/index.html#kentokaigi",
-      "category": "STUDY_GROUP",
+      "category": "STUDY",
       "ministry": "CAS",
       "manualLock": true,
       "materials": [
@@ -88789,7 +88789,7 @@
       "title": "第4回 新しい資本主義実現本部",
       "date": "2024/06/21",
       "ministry": "CAS",
-      "category": "HEADQUARTERS",
+      "category": "HQ",
       "officialUrl": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/honbu/dai4/gijisidai.html",
       "materials": [
         {
@@ -94864,7 +94864,7 @@
       "title": "第45回 健康・医療戦略推進本部",
       "date": "2024/04/01",
       "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/suisin/suisin_dai45/gijisidai.html",
-      "category": "HEADQUARTERS",
+      "category": "HQ",
       "ministry": "CAS",
       "manualLock": true,
       "materials": [
@@ -95939,7 +95939,7 @@
       "title": "第20回 国土強靱化推進本部",
       "date": "2024/03/22",
       "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/kokudo_kyoujinka/kaisai/dai20/index.html",
-      "category": "HEADQUARTERS",
+      "category": "HQ",
       "ministry": "CAS",
       "manualLock": true,
       "materials": [
@@ -98362,7 +98362,7 @@
       "title": "第44回 健康・医療戦略推進本部",
       "date": "2024/02/22",
       "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/suisin/suisin_dai44/gijisidai.html",
-      "category": "HEADQUARTERS",
+      "category": "HQ",
       "ministry": "CAS",
       "manualLock": true,
       "materials": [
@@ -99659,7 +99659,7 @@
       "title": "第6回 経済安全保障推進会議",
       "date": "2024/01/30",
       "officialUrl": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyo/dai6/gijisidai.html",
-      "category": "HEADQUARTERS",
+      "category": "HQ",
       "ministry": "CAS",
       "manualLock": true,
       "materials": [
@@ -100055,7 +100055,7 @@
       "title": "第31回 国土強靱化の推進に関する関係府省庁連絡会議",
       "date": "2024/01/23",
       "officialUrl": "https://www.cas.go.jp/jp/seisaku/kyoujinka/dai31/sidai.html",
-      "category": "MINISTERIAL",
+      "category": "LIAISON",
       "ministry": "CAS",
       "manualLock": true,
       "materials": [
@@ -101048,7 +101048,7 @@
       "title": "第10回 全世代型社会保障構築本部",
       "date": "2023/12/22",
       "officialUrl": "https://www.cas.go.jp/jp/seisaku/zensedai_shakaihosho_kochiku/dai10/gijisidai.html",
-      "category": "HEADQUARTERS",
+      "category": "HQ",
       "ministry": "CAS",
       "manualLock": true,
       "materials": [
@@ -104031,7 +104031,7 @@
       "title": "第43回 健康・医療戦略推進本部",
       "date": "2023/11/27",
       "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/suisin/suisin_dai43/gijisidai.html",
-      "category": "HEADQUARTERS",
+      "category": "HQ",
       "ministry": "CAS",
       "manualLock": true,
       "materials": [
@@ -107842,7 +107842,7 @@
       "title": "第19回 国土強靱化推進本部",
       "date": "2023/10/19",
       "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/kokudo_kyoujinka/kaisai/dai19/index.html",
-      "category": "HEADQUARTERS",
+      "category": "HQ",
       "ministry": "CAS",
       "manualLock": true,
       "materials": [
@@ -109641,7 +109641,7 @@
       "title": "第9回 全世代型社会保障構築本部",
       "date": "2023/09/27",
       "officialUrl": "https://www.cas.go.jp/jp/seisaku/zensedai_shakaihosho_kochiku/dai9/gijisidai.html",
-      "category": "HEADQUARTERS",
+      "category": "HQ",
       "ministry": "CAS",
       "manualLock": true,
       "materials": [
@@ -111123,7 +111123,7 @@
       "title": "第30回 国土強靱化の推進に関する関係府省庁連絡会議",
       "date": "2023/08/30",
       "officialUrl": "https://www.cas.go.jp/jp/seisaku/kyoujinka/dai30/sidai.html",
-      "category": "MINISTERIAL",
+      "category": "LIAISON",
       "ministry": "CAS",
       "manualLock": true,
       "materials": [
@@ -111330,7 +111330,7 @@
       "title": "第5回 経済安全保障推進会議",
       "date": "2023/08/28",
       "officialUrl": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyo/dai5/gijisidai.html",
-      "category": "HEADQUARTERS",
+      "category": "HQ",
       "ministry": "CAS",
       "manualLock": true,
       "materials": [
@@ -112158,7 +112158,7 @@
       "title": "第29回 国土強靱化の推進に関する関係府省庁連絡会議",
       "date": "2023/08/03",
       "officialUrl": "https://www.cas.go.jp/jp/seisaku/kyoujinka/dai29/sidai.html",
-      "category": "MINISTERIAL",
+      "category": "LIAISON",
       "ministry": "CAS",
       "manualLock": true,
       "materials": [
@@ -112499,7 +112499,7 @@
       "title": "第18回 国土強靱化推進本部",
       "date": "2023/07/28",
       "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/kokudo_kyoujinka/kaisai/dai18/index.html",
-      "category": "HEADQUARTERS",
+      "category": "HQ",
       "ministry": "CAS",
       "manualLock": true,
       "materials": [
@@ -114662,7 +114662,7 @@
       "title": "第42回 健康・医療戦略推進本部",
       "date": "2023/06/26",
       "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/suisin/suisin_dai42/gijisidai.html",
-      "category": "HEADQUARTERS",
+      "category": "HQ",
       "ministry": "CAS",
       "manualLock": true,
       "materials": [
@@ -115198,7 +115198,7 @@
       "title": "第3回 新しい資本主義実現本部",
       "date": "2023/06/16",
       "ministry": "CAS",
-      "category": "HEADQUARTERS",
+      "category": "HQ",
       "officialUrl": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/honbu/dai3/gijisidai.html",
       "materials": [
         {
@@ -115525,7 +115525,7 @@
       "title": "第8回 全世代型社会保障構築本部",
       "date": "2023/06/13",
       "officialUrl": "https://www.cas.go.jp/jp/seisaku/zensedai_shakaihosho_kochiku/dai8/gijisidai.html",
-      "category": "HEADQUARTERS",
+      "category": "HQ",
       "ministry": "CAS",
       "manualLock": true,
       "materials": [
@@ -118439,7 +118439,7 @@
       "title": "第14回 犯罪被害者支援弁護士制度・実務者協議会",
       "date": "2023/04/25",
       "officialUrl": "https://www.moj.go.jp/content/001395378.pdf",
-      "category": "STUDY_GROUP",
+      "category": "STUDY",
       "ministry": "MOJ",
       "manualLock": true,
       "materials": [
@@ -119344,7 +119344,7 @@
       "title": "第13回 犯罪被害者支援弁護士制度・実務者協議会",
       "date": "2023/04/11",
       "officialUrl": "https://www.moj.go.jp/content/001395375.pdf",
-      "category": "STUDY_GROUP",
+      "category": "STUDY",
       "ministry": "MOJ",
       "manualLock": true,
       "materials": [
@@ -119621,7 +119621,7 @@
       "title": "第7回 全世代型社会保障構築本部",
       "date": "2023/04/07",
       "officialUrl": "https://www.cas.go.jp/jp/seisaku/zensedai_shakaihosho_kochiku/dai7/gijisidai.html",
-      "category": "HEADQUARTERS",
+      "category": "HQ",
       "ministry": "CAS",
       "manualLock": true,
       "materials": [
@@ -119679,7 +119679,7 @@
       "title": "第17回 国土強靱化推進本部",
       "date": "2023/04/07",
       "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/kokudo_kyoujinka/kaisai/dai17/index.html",
-      "category": "HEADQUARTERS",
+      "category": "HQ",
       "ministry": "CAS",
       "manualLock": true,
       "materials": [
@@ -120557,7 +120557,7 @@
       "title": "第12回 犯罪被害者支援弁護士制度・実務者協議会",
       "date": "2023/03/22",
       "officialUrl": "https://www.moj.go.jp/content/001394433.pdf",
-      "category": "STUDY_GROUP",
+      "category": "STUDY",
       "ministry": "MOJ",
       "manualLock": true,
       "materials": [
@@ -122903,7 +122903,7 @@
       "title": "第41回 健康・医療戦略推進本部",
       "date": "2023/02/21",
       "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/suisin/suisin_dai41/gijisidai.html",
-      "category": "HEADQUARTERS",
+      "category": "HQ",
       "ministry": "CAS",
       "manualLock": true,
       "materials": [
@@ -123172,7 +123172,7 @@
       "title": "第3回 経済安全保障重点課題検討会議",
       "date": "2023/02/17",
       "officialUrl": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyo/index.html#kentokaigi",
-      "category": "STUDY_GROUP",
+      "category": "STUDY",
       "ministry": "CAS",
       "manualLock": true,
       "materials": [
@@ -123351,7 +123351,7 @@
       "title": "第4回 経済安全保障推進会議",
       "date": "2023/02/14",
       "officialUrl": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyo/dai4/gijisidai.html",
-      "category": "HEADQUARTERS",
+      "category": "HQ",
       "ministry": "CAS",
       "manualLock": true,
       "materials": [
@@ -123426,7 +123426,7 @@
       "title": "第16回 国土強靱化推進本部",
       "date": "2023/02/10",
       "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/kokudo_kyoujinka/kaisai/dai16/index.html",
-      "category": "HEADQUARTERS",
+      "category": "HQ",
       "ministry": "CAS",
       "manualLock": true,
       "materials": [
@@ -123582,7 +123582,7 @@
       "title": "第11回 犯罪被害者支援弁護士制度・実務者協議会",
       "date": "2023/02/08",
       "officialUrl": "https://www.moj.go.jp/content/001394225.pdf",
-      "category": "STUDY_GROUP",
+      "category": "STUDY",
       "ministry": "MOJ",
       "manualLock": true,
       "materials": [
@@ -124129,7 +124129,7 @@
       "title": "第28回 国土強靱化の推進に関する関係府省庁連絡会議",
       "date": "2023/01/31",
       "officialUrl": "https://www.cas.go.jp/jp/seisaku/kyoujinka/dai28/sidai.html",
-      "category": "MINISTERIAL",
+      "category": "LIAISON",
       "ministry": "CAS",
       "manualLock": true,
       "materials": [
@@ -124687,7 +124687,7 @@
       "title": "第10回 犯罪被害者支援弁護士制度・実務者協議会",
       "date": "2023/01/18",
       "officialUrl": "https://www.moj.go.jp/content/001389909.pdf",
-      "category": "STUDY_GROUP",
+      "category": "STUDY",
       "ministry": "MOJ",
       "manualLock": true,
       "materials": [
@@ -125322,7 +125322,7 @@
       "title": "第6回 全世代型社会保障構築本部",
       "date": "2022/12/23",
       "officialUrl": "https://www.cas.go.jp/jp/seisaku/zensedai_shakaihosho_kochiku/dai6/gijisidai.html",
-      "category": "HEADQUARTERS",
+      "category": "HQ",
       "ministry": "CAS",
       "manualLock": true,
       "materials": [
@@ -125992,7 +125992,7 @@
       "title": "第5回 全世代型社会保障構築本部",
       "date": "2022/12/16",
       "officialUrl": "https://www.cas.go.jp/jp/seisaku/zensedai_shakaihosho_kochiku/dai5/gijisidai.html",
-      "category": "HEADQUARTERS",
+      "category": "HQ",
       "ministry": "CAS",
       "manualLock": true,
       "materials": [
@@ -126204,7 +126204,7 @@
       "title": "第9回 犯罪被害者支援弁護士制度・実務者協議会",
       "date": "2022/12/15",
       "officialUrl": "https://www.moj.go.jp/content/001388078.pdf",
-      "category": "STUDY_GROUP",
+      "category": "STUDY",
       "ministry": "MOJ",
       "manualLock": true,
       "materials": [
@@ -127774,7 +127774,7 @@
       "title": "第40回 健康・医療戦略推進本部",
       "date": "2022/11/25",
       "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/suisin/suisin_dai40/gijisidai.html",
-      "category": "HEADQUARTERS",
+      "category": "HQ",
       "ministry": "CAS",
       "manualLock": true,
       "materials": [
@@ -127791,7 +127791,7 @@
       "title": "第4回 全世代型社会保障構築本部",
       "date": "2022/11/24",
       "officialUrl": "https://www.cas.go.jp/jp/seisaku/zensedai_shakaihosho_kochiku/dai4/gijisidai.html",
-      "category": "HEADQUARTERS",
+      "category": "HQ",
       "ministry": "CAS",
       "manualLock": true,
       "materials": [
@@ -128322,7 +128322,7 @@
       "title": "第8回 犯罪被害者支援弁護士制度・実務者協議会",
       "date": "2022/11/15",
       "officialUrl": "https://www.moj.go.jp/content/001385808.pdf",
-      "category": "STUDY_GROUP",
+      "category": "STUDY",
       "ministry": "MOJ",
       "manualLock": true,
       "materials": [
@@ -129585,7 +129585,7 @@
       "title": "第15回 国土強靱化推進本部",
       "date": "2022/10/25",
       "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/kokudo_kyoujinka/kaisai/dai15/index.html",
-      "category": "HEADQUARTERS",
+      "category": "HQ",
       "ministry": "CAS",
       "manualLock": true,
       "materials": [
@@ -130587,7 +130587,7 @@
       "title": "第7回 犯罪被害者支援弁護士制度・実務者協議会",
       "date": "2022/10/04",
       "officialUrl": "https://www.moj.go.jp/content/001384109.pdf",
-      "category": "STUDY_GROUP",
+      "category": "STUDY",
       "ministry": "MOJ",
       "manualLock": true,
       "materials": [
@@ -131506,7 +131506,7 @@
       "title": "第3回 経済安全保障推進会議",
       "date": "2022/09/16",
       "officialUrl": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyo/dai3/gijisidai.html",
-      "category": "HEADQUARTERS",
+      "category": "HQ",
       "ministry": "CAS",
       "manualLock": true,
       "materials": [
@@ -132082,7 +132082,7 @@
       "title": "第6回 犯罪被害者支援弁護士制度・実務者協議会",
       "date": "2022/09/08",
       "officialUrl": "https://www.moj.go.jp/content/001382418.pdf",
-      "category": "STUDY_GROUP",
+      "category": "STUDY",
       "ministry": "MOJ",
       "manualLock": true,
       "materials": [
@@ -132151,7 +132151,7 @@
       "title": "第3回 全世代型社会保障構築本部",
       "date": "2022/09/07",
       "officialUrl": "https://www.cas.go.jp/jp/seisaku/zensedai_shakaihosho_kochiku/dai3/gijisidai.html",
-      "category": "HEADQUARTERS",
+      "category": "HQ",
       "ministry": "CAS",
       "manualLock": true,
       "materials": [
@@ -134346,7 +134346,7 @@
       "title": "第27回 国土強靱化の推進に関する関係府省庁連絡会議",
       "date": "2022/08/02",
       "officialUrl": "https://www.cas.go.jp/jp/seisaku/kyoujinka/dai27/sidai.html",
-      "category": "MINISTERIAL",
+      "category": "LIAISON",
       "ministry": "CAS",
       "manualLock": true,
       "materials": [
@@ -134658,7 +134658,7 @@
       "title": "第5回 犯罪被害者支援弁護士制度・実務者協議会",
       "date": "2022/07/27",
       "officialUrl": "https://www.moj.go.jp/content/001379830.pdf",
-      "category": "STUDY_GROUP",
+      "category": "STUDY",
       "ministry": "MOJ",
       "manualLock": true,
       "materials": [
@@ -136009,7 +136009,7 @@
       "title": "第4回 犯罪被害者支援弁護士制度・実務者協議会",
       "date": "2022/06/21",
       "officialUrl": "https://www.moj.go.jp/content/001377586.pdf",
-      "category": "STUDY_GROUP",
+      "category": "STUDY",
       "ministry": "MOJ",
       "manualLock": true,
       "materials": [
@@ -136042,7 +136042,7 @@
       "title": "第14回 国土強靱化推進本部",
       "date": "2022/06/21",
       "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/kokudo_kyoujinka/kaisai/dai14/index.html",
-      "category": "HEADQUARTERS",
+      "category": "HQ",
       "ministry": "CAS",
       "manualLock": true,
       "materials": [
@@ -136063,7 +136063,7 @@
       "title": "第39回 健康・医療戦略推進本部",
       "date": "2022/06/21",
       "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/suisin/suisin_dai39/gijisidai.html",
-      "category": "HEADQUARTERS",
+      "category": "HQ",
       "ministry": "CAS",
       "manualLock": true,
       "materials": [
@@ -136629,7 +136629,7 @@
       "title": "第2回 新しい資本主義実現本部",
       "date": "2022/06/07",
       "ministry": "CAS",
-      "category": "HEADQUARTERS",
+      "category": "HQ",
       "officialUrl": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/honbu/dai2/gijisidai.html",
       "materials": [
         {
@@ -137555,7 +137555,7 @@
       "title": "第38回 健康・医療戦略推進本部",
       "date": "2022/05/24",
       "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/suisin/suisin_dai38/gijisidai.html",
-      "category": "HEADQUARTERS",
+      "category": "HQ",
       "ministry": "CAS",
       "manualLock": true,
       "materials": [
@@ -137779,7 +137779,7 @@
       "title": "第2回 全世代型社会保障構築本部",
       "date": "2022/05/17",
       "officialUrl": "https://www.cas.go.jp/jp/seisaku/zensedai_hosyo/dai5/gijisidai.html",
-      "category": "HEADQUARTERS",
+      "category": "HQ",
       "ministry": "CAS",
       "manualLock": true,
       "materials": [
@@ -138166,7 +138166,7 @@
       "title": "第3回 犯罪被害者支援弁護士制度・実務者協議会",
       "date": "2022/05/11",
       "officialUrl": "https://www.moj.go.jp/content/001375657.pdf",
-      "category": "STUDY_GROUP",
+      "category": "STUDY",
       "ministry": "MOJ",
       "manualLock": true,
       "materials": [
@@ -138757,7 +138757,7 @@
       "title": "第2回 経済安全保障重点課題検討会議",
       "date": "2022/04/22",
       "officialUrl": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyo/index.html#kentokaigi",
-      "category": "STUDY_GROUP",
+      "category": "STUDY",
       "ministry": "CAS",
       "manualLock": true,
       "materials": [
@@ -142352,7 +142352,7 @@
       "title": "第1回 経済安全保障重点課題検討会議",
       "date": "2022/03/11",
       "officialUrl": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyo/index.html#kentokaigi",
-      "category": "STUDY_GROUP",
+      "category": "STUDY",
       "ministry": "CAS",
       "manualLock": true,
       "materials": [
@@ -143833,7 +143833,7 @@
       "title": "第37回 健康・医療戦略推進本部",
       "date": "2022/02/25",
       "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/suisin/suisin_dai37/gijisidai.html",
-      "category": "HEADQUARTERS",
+      "category": "HQ",
       "ministry": "CAS",
       "manualLock": true,
       "materials": [
@@ -144959,7 +144959,7 @@
       "title": "第2回 犯罪被害者支援弁護士制度・実務者協議会",
       "date": "2022/02/07",
       "officialUrl": "https://www.moj.go.jp/content/001370480.pdf",
-      "category": "STUDY_GROUP",
+      "category": "STUDY",
       "ministry": "MOJ",
       "manualLock": true,
       "materials": [
@@ -145378,7 +145378,7 @@
       "title": "第2回 経済安全保障推進会議",
       "date": "2022/02/04",
       "officialUrl": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyo/dai2/gijisidai.html",
-      "category": "HEADQUARTERS",
+      "category": "HQ",
       "ministry": "CAS",
       "manualLock": true,
       "materials": [
@@ -145822,7 +145822,7 @@
       "title": "第1回 全世代型社会保障構築本部",
       "date": "2022/01/28",
       "officialUrl": "https://www.cas.go.jp/jp/seisaku/zensedai_shakaihosho_kochiku/dai1/gijisidai.html",
-      "category": "HEADQUARTERS",
+      "category": "HQ",
       "ministry": "CAS",
       "manualLock": true,
       "materials": [
@@ -146099,7 +146099,7 @@
       "title": "第26回 国土強靱化の推進に関する関係府省庁連絡会議",
       "date": "2022/01/19",
       "officialUrl": "https://www.cas.go.jp/jp/seisaku/kyoujinka/dai26/sidai.html",
-      "category": "MINISTERIAL",
+      "category": "LIAISON",
       "ministry": "CAS",
       "manualLock": true,
       "materials": [
@@ -150015,7 +150015,7 @@
       "title": "第36回 健康・医療戦略推進本部",
       "date": "2021/11/24",
       "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/suisin/suisin_dai36/gijisidai.html",
-      "category": "HEADQUARTERS",
+      "category": "HQ",
       "ministry": "CAS",
       "manualLock": true,
       "materials": [
@@ -150176,7 +150176,7 @@
       "title": "第1回 経済安全保障推進会議",
       "date": "2021/11/19",
       "officialUrl": "https://www.cas.go.jp/jp/seisaku/keizai_anzen_hosyo/dai1/gijisidai.html",
-      "category": "HEADQUARTERS",
+      "category": "HQ",
       "ministry": "CAS",
       "manualLock": true,
       "materials": [
@@ -151302,7 +151302,7 @@
       "title": "第1回 犯罪被害者支援弁護士制度・実務者協議会",
       "date": "2021/10/26",
       "officialUrl": "https://www.moj.go.jp/content/001363112.pdf",
-      "category": "STUDY_GROUP",
+      "category": "STUDY",
       "ministry": "MOJ",
       "manualLock": true,
       "materials": [
@@ -151862,7 +151862,7 @@
       "title": "第1回 新しい資本主義実現本部",
       "date": "2021/10/15",
       "ministry": "CAS",
-      "category": "HEADQUARTERS",
+      "category": "HQ",
       "officialUrl": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/honbu/dai1/gijisidai.html",
       "materials": [
         {
@@ -154484,7 +154484,7 @@
       "title": "第25回 国土強靱化の推進に関する関係府省庁連絡会議",
       "date": "2021/07/29",
       "officialUrl": "https://www.cas.go.jp/jp/seisaku/kyoujinka/dai25/sidai.html",
-      "category": "MINISTERIAL",
+      "category": "LIAISON",
       "ministry": "CAS",
       "manualLock": true,
       "materials": [
@@ -156318,7 +156318,7 @@
       "title": "第35回 健康・医療戦略推進本部",
       "date": "2021/06/22",
       "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/suisin/suisin_dai35/gijisidai.html",
-      "category": "HEADQUARTERS",
+      "category": "HQ",
       "ministry": "CAS",
       "manualLock": true,
       "materials": [
@@ -156621,7 +156621,7 @@
       "title": "第13回 国土強靱化推進本部",
       "date": "2021/06/17",
       "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/kokudo_kyoujinka/kaisai/dai13/index.html",
-      "category": "HEADQUARTERS",
+      "category": "HQ",
       "ministry": "CAS",
       "manualLock": true,
       "materials": [
@@ -157178,7 +157178,7 @@
       "title": "第34回 健康・医療戦略推進本部",
       "date": "2021/06/01",
       "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/suisin/suisin_dai34/gijisidai.html",
-      "category": "HEADQUARTERS",
+      "category": "HQ",
       "ministry": "CAS",
       "manualLock": true,
       "materials": [
@@ -159628,7 +159628,7 @@
       "title": "第33回 健康・医療戦略推進本部",
       "date": "2021/04/06",
       "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/suisin/suisin_dai33/gijisidai.html",
-      "category": "HEADQUARTERS",
+      "category": "HQ",
       "ministry": "CAS",
       "manualLock": true,
       "materials": [
@@ -161587,7 +161587,7 @@
       "title": "第5回 犯罪被害者支援弁護士制度検討会",
       "date": "2021/03/11",
       "officialUrl": "https://www.moj.go.jp/content/001346179.pdf",
-      "category": "STUDY_GROUP",
+      "category": "STUDY",
       "ministry": "MOJ",
       "manualLock": true,
       "materials": [
@@ -163920,7 +163920,7 @@
       "title": "第24回 国土強靱化の推進に関する関係府省庁連絡会議",
       "date": "2021/01/19",
       "officialUrl": "https://www.cas.go.jp/jp/seisaku/kyoujinka/dai24/sidai.html",
-      "category": "MINISTERIAL",
+      "category": "LIAISON",
       "ministry": "CAS",
       "manualLock": true,
       "materials": [
@@ -165291,7 +165291,7 @@
       "title": "第12回 国土強靱化推進本部",
       "date": "2020/12/11",
       "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/kokudo_kyoujinka/kaisai/dai12/index.html",
-      "category": "HEADQUARTERS",
+      "category": "HQ",
       "ministry": "CAS",
       "manualLock": true,
       "materials": [
@@ -166122,7 +166122,7 @@
       "title": "第32回 健康・医療戦略推進本部",
       "date": "2020/11/24",
       "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/suisin/suisin_dai32/gijisidai.html",
-      "category": "HEADQUARTERS",
+      "category": "HQ",
       "ministry": "CAS",
       "manualLock": true,
       "materials": [
@@ -166408,7 +166408,7 @@
       "title": "第4回 犯罪被害者支援弁護士制度検討会",
       "date": "2020/11/16",
       "officialUrl": "https://www.moj.go.jp/content/001333135.pdf",
-      "category": "STUDY_GROUP",
+      "category": "STUDY",
       "ministry": "MOJ",
       "manualLock": true,
       "materials": [
@@ -167354,7 +167354,7 @@
       "title": "第3回 犯罪被害者支援弁護士制度検討会",
       "date": "2020/10/07",
       "officialUrl": "https://www.moj.go.jp/content/001331434.pdf",
-      "category": "STUDY_GROUP",
+      "category": "STUDY",
       "ministry": "MOJ",
       "manualLock": true,
       "materials": [
@@ -168155,7 +168155,7 @@
       "title": "第2回 犯罪被害者支援弁護士制度検討会",
       "date": "2020/08/28",
       "officialUrl": "https://www.moj.go.jp/content/001328459.pdf",
-      "category": "STUDY_GROUP",
+      "category": "STUDY",
       "ministry": "MOJ",
       "manualLock": true,
       "materials": [
@@ -168208,7 +168208,7 @@
       "title": "第23回 国土強靱化の推進に関する関係府省庁連絡会議",
       "date": "2020/08/28",
       "officialUrl": "https://www.cas.go.jp/jp/seisaku/kyoujinka/dai23/sidai.html",
-      "category": "MINISTERIAL",
+      "category": "LIAISON",
       "ministry": "CAS",
       "manualLock": true,
       "materials": [
@@ -168280,7 +168280,7 @@
       "title": "第31回 健康・医療戦略推進本部",
       "date": "2020/08/26",
       "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/suisin/suisin_dai31/gijisidai.html",
-      "category": "HEADQUARTERS",
+      "category": "HQ",
       "ministry": "CAS",
       "manualLock": true,
       "materials": [
@@ -169068,7 +169068,7 @@
       "title": "第1回 犯罪被害者支援弁護士制度検討会",
       "date": "2020/07/29",
       "officialUrl": "https://www.moj.go.jp/content/001326408.pdf",
-      "category": "STUDY_GROUP",
+      "category": "STUDY",
       "ministry": "MOJ",
       "manualLock": true,
       "materials": [
@@ -169992,7 +169992,7 @@
       "title": "第30回 健康・医療戦略推進本部",
       "date": "2020/07/14",
       "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/suisin/suisin_dai30/gijisidai.html",
-      "category": "HEADQUARTERS",
+      "category": "HQ",
       "ministry": "CAS",
       "manualLock": true,
       "materials": [
@@ -170663,7 +170663,7 @@
       "title": "第11回 国土強靱化推進本部",
       "date": "2020/06/18",
       "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/kokudo_kyoujinka/kaisai/dai11/index.html",
-      "category": "HEADQUARTERS",
+      "category": "HQ",
       "ministry": "CAS",
       "manualLock": true,
       "materials": [
@@ -172793,7 +172793,7 @@
       "title": "第29回 健康・医療戦略推進本部",
       "date": "2020/04/17",
       "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/suisin/suisin_dai29/gijisidai.html",
-      "category": "HEADQUARTERS",
+      "category": "HQ",
       "ministry": "CAS",
       "manualLock": true,
       "materials": [
@@ -173082,7 +173082,7 @@
       "title": "第28回 健康・医療戦略推進本部",
       "date": "2020/03/27",
       "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/suisin/suisin_dai28/gijisidai.html",
-      "category": "HEADQUARTERS",
+      "category": "HQ",
       "ministry": "CAS",
       "manualLock": true,
       "materials": [
@@ -174788,7 +174788,7 @@
       "title": "第27回 健康・医療戦略推進本部",
       "date": "2020/02/27",
       "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/suisin/suisin_dai27/gijisidai.html",
-      "category": "HEADQUARTERS",
+      "category": "HQ",
       "ministry": "CAS",
       "manualLock": true,
       "materials": [
@@ -176634,7 +176634,7 @@
       "title": "第22回 国土強靱化の推進に関する関係府省庁連絡会議",
       "date": "2020/01/21",
       "officialUrl": "https://www.cas.go.jp/jp/seisaku/kyoujinka/dai22/sidai.html",
-      "category": "MINISTERIAL",
+      "category": "LIAISON",
       "ministry": "CAS",
       "manualLock": true,
       "materials": [
@@ -178603,7 +178603,7 @@
       "title": "第3回 スチュワードシップ・コードに関する有識者検討会（令和元年度）",
       "date": "2019/12/11",
       "officialUrl": "https://www.fsa.go.jp/singi/stewardship/siryou/20191211.html",
-      "category": "STUDY_GROUP",
+      "category": "STUDY",
       "ministry": "FSA",
       "manualLock": true,
       "materials": [
@@ -179951,7 +179951,7 @@
       "title": "第26回 健康・医療戦略推進本部",
       "date": "2019/11/14",
       "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/suisin/suisin_dai26/gijisidai.html",
-      "category": "HEADQUARTERS",
+      "category": "HQ",
       "ministry": "CAS",
       "manualLock": true,
       "materials": [
@@ -180251,7 +180251,7 @@
       "title": "第2回 スチュワードシップ・コードに関する有識者検討会（令和元年度）",
       "date": "2019/11/08",
       "officialUrl": "https://www.fsa.go.jp/singi/stewardship/siryou/20191108.html",
-      "category": "STUDY_GROUP",
+      "category": "STUDY",
       "ministry": "FSA",
       "manualLock": true,
       "materials": [
@@ -181949,7 +181949,7 @@
       "title": "第1回 スチュワードシップ・コードに関する有識者検討会（令和元年度）",
       "date": "2019/10/02",
       "officialUrl": "https://www.fsa.go.jp/singi/stewardship/siryou/20191002.html",
-      "category": "STUDY_GROUP",
+      "category": "STUDY",
       "ministry": "FSA",
       "manualLock": true,
       "materials": [
@@ -183140,7 +183140,7 @@
       "title": "第25回 健康・医療戦略推進本部",
       "date": "2019/08/22",
       "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/suisin/suisin_dai25/gijisidai.html",
-      "category": "HEADQUARTERS",
+      "category": "HQ",
       "ministry": "CAS",
       "manualLock": true,
       "materials": [
@@ -183626,7 +183626,7 @@
       "title": "第21回 国土強靱化の推進に関する関係府省庁連絡会議",
       "date": "2019/08/02",
       "officialUrl": "https://www.cas.go.jp/jp/seisaku/kyoujinka/dai21/sidai.html",
-      "category": "MINISTERIAL",
+      "category": "LIAISON",
       "ministry": "CAS",
       "manualLock": true,
       "materials": [
@@ -185002,7 +185002,7 @@
       "title": "第24回 健康・医療戦略推進本部",
       "date": "2019/06/20",
       "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/suisin/suisin_dai24/gijisidai.html",
-      "category": "HEADQUARTERS",
+      "category": "HQ",
       "ministry": "CAS",
       "manualLock": true,
       "materials": [
@@ -185398,7 +185398,7 @@
       "title": "第10回 国土強靱化推進本部",
       "date": "2019/06/11",
       "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/kokudo_kyoujinka/kaisai/dai10/index.html",
-      "category": "HEADQUARTERS",
+      "category": "HQ",
       "ministry": "CAS",
       "manualLock": true,
       "materials": [
@@ -189044,7 +189044,7 @@
       "title": "第20回 国土強靱化の推進に関する関係府省庁連絡会議",
       "date": "2019/01/29",
       "officialUrl": "https://www.cas.go.jp/jp/seisaku/kyoujinka/dai20/sidai.html",
-      "category": "MINISTERIAL",
+      "category": "LIAISON",
       "ministry": "CAS",
       "manualLock": true,
       "materials": [
@@ -189551,7 +189551,7 @@
       "title": "第9回 国土強靱化推進本部",
       "date": "2018/12/14",
       "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/kokudo_kyoujinka/kaisai/dai9/index.html",
-      "category": "HEADQUARTERS",
+      "category": "HQ",
       "ministry": "CAS",
       "manualLock": true,
       "materials": [
@@ -189811,7 +189811,7 @@
       "title": "第23回 健康・医療戦略推進本部",
       "date": "2018/11/22",
       "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/suisin/suisin_dai23/gijisidai.html",
-      "category": "HEADQUARTERS",
+      "category": "HQ",
       "ministry": "CAS",
       "manualLock": true,
       "materials": [
@@ -191747,7 +191747,7 @@
       "title": "第8回 国土強靱化推進本部",
       "date": "2018/08/06",
       "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/kokudo_kyoujinka/index.html",
-      "category": "HEADQUARTERS",
+      "category": "HQ",
       "ministry": "CAS",
       "manualLock": true,
       "materials": [
@@ -191865,7 +191865,7 @@
       "title": "第19回 国土強靱化の推進に関する関係府省庁連絡会議",
       "date": "2018/07/27",
       "officialUrl": "https://www.cas.go.jp/jp/seisaku/kyoujinka/dai19/sidai.html",
-      "category": "MINISTERIAL",
+      "category": "LIAISON",
       "ministry": "CAS",
       "manualLock": true,
       "materials": [
@@ -191903,7 +191903,7 @@
       "title": "第22回 健康・医療戦略推進本部",
       "date": "2018/07/25",
       "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/suisin/suisin_dai22/gijisidai.html",
-      "category": "HEADQUARTERS",
+      "category": "HQ",
       "ministry": "CAS",
       "manualLock": true,
       "materials": [
@@ -192793,7 +192793,7 @@
       "title": "第7回 国土強靱化推進本部",
       "date": "2018/06/05",
       "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/kokudo_kyoujinka/kaisai/dai7/index.html",
-      "category": "HEADQUARTERS",
+      "category": "HQ",
       "ministry": "CAS",
       "manualLock": true,
       "materials": [
@@ -192935,7 +192935,7 @@
       "title": "第21回 健康・医療戦略推進本部",
       "date": "2018/05/29",
       "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/suisin/suisin_dai21/gijisidai.html",
-      "category": "HEADQUARTERS",
+      "category": "HQ",
       "ministry": "CAS",
       "manualLock": true,
       "materials": [
@@ -193039,7 +193039,7 @@
       "title": "第18回 国土強靱化の推進に関する関係府省庁連絡会議",
       "date": "2018/05/25",
       "officialUrl": "https://www.cas.go.jp/jp/seisaku/kyoujinka/dai18/sidai.html",
-      "category": "MINISTERIAL",
+      "category": "LIAISON",
       "ministry": "CAS",
       "manualLock": true,
       "materials": [
@@ -194668,7 +194668,7 @@
       "title": "第17回 国土強靱化の推進に関する関係府省庁連絡会議",
       "date": "2018/01/26",
       "officialUrl": "https://www.cas.go.jp/jp/seisaku/kyoujinka/dai17/sidai.html",
-      "category": "MINISTERIAL",
+      "category": "LIAISON",
       "ministry": "CAS",
       "manualLock": true,
       "materials": [
@@ -195728,7 +195728,7 @@
       "title": "第9回 再犯防止推進計画等検討会（平成29年度）",
       "date": "2017/11/28",
       "officialUrl": "https://www.moj.go.jp/hisho/saihanboushi/hisho04_00037.html",
-      "category": "STUDY_GROUP",
+      "category": "STUDY",
       "ministry": "MOJ",
       "manualLock": true,
       "materials": [
@@ -195988,7 +195988,7 @@
       "title": "第20回 健康・医療戦略推進本部",
       "date": "2017/11/16",
       "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/suisin/suisin_dai20/gijisidai.html",
-      "category": "HEADQUARTERS",
+      "category": "HQ",
       "ministry": "CAS",
       "manualLock": true,
       "materials": [
@@ -196542,7 +196542,7 @@
       "title": "第8回 再犯防止推進計画等検討会（平成29年度）",
       "date": "2017/09/26",
       "officialUrl": "https://www.moj.go.jp/hisho/saihanboushi/hisho04_00037.html",
-      "category": "STUDY_GROUP",
+      "category": "STUDY",
       "ministry": "MOJ",
       "manualLock": true,
       "materials": [
@@ -196583,7 +196583,7 @@
       "title": "第16回 国土強靱化の推進に関する関係府省庁連絡会議",
       "date": "2017/09/22",
       "officialUrl": "https://www.cas.go.jp/jp/seisaku/kyoujinka/dai16/sidai.html",
-      "category": "MINISTERIAL",
+      "category": "LIAISON",
       "ministry": "CAS",
       "manualLock": true,
       "materials": [
@@ -197128,7 +197128,7 @@
       "title": "第7回 再犯防止推進計画等検討会（平成29年度）",
       "date": "2017/08/29",
       "officialUrl": "https://www.moj.go.jp/hisho/saihanboushi/hisho04_00037.html",
-      "category": "STUDY_GROUP",
+      "category": "STUDY",
       "ministry": "MOJ",
       "manualLock": true,
       "materials": [
@@ -197464,7 +197464,7 @@
       "title": "第15回 国土強靱化の推進に関する関係府省庁連絡会議",
       "date": "2017/07/31",
       "officialUrl": "https://www.cas.go.jp/jp/seisaku/kyoujinka/dai15/sidai.html",
-      "category": "MINISTERIAL",
+      "category": "LIAISON",
       "ministry": "CAS",
       "manualLock": true,
       "materials": [
@@ -197571,7 +197571,7 @@
       "title": "第19回 健康・医療戦略推進本部",
       "date": "2017/07/26",
       "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/suisin/suisin_dai19/gijisidai.html",
-      "category": "HEADQUARTERS",
+      "category": "HQ",
       "ministry": "CAS",
       "manualLock": true,
       "materials": [
@@ -197723,7 +197723,7 @@
       "title": "第6回 再犯防止推進計画等検討会（平成29年度）",
       "date": "2017/07/18",
       "officialUrl": "https://www.moj.go.jp/hisho/saihanboushi/hisho04_00037.html",
-      "category": "STUDY_GROUP",
+      "category": "STUDY",
       "ministry": "MOJ",
       "manualLock": true,
       "materials": [
@@ -197990,7 +197990,7 @@
       "title": "第5回 再犯防止推進計画等検討会（平成29年度）",
       "date": "2017/06/28",
       "officialUrl": "https://www.moj.go.jp/hisho/saihanboushi/hisho04_00037.html",
-      "category": "STUDY_GROUP",
+      "category": "STUDY",
       "ministry": "MOJ",
       "manualLock": true,
       "materials": [
@@ -198296,7 +198296,7 @@
       "title": "第18回 健康・医療戦略推進本部",
       "date": "2017/06/14",
       "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/suisin/suisin_dai18/gijisidai.html",
-      "category": "HEADQUARTERS",
+      "category": "HQ",
       "ministry": "CAS",
       "manualLock": true,
       "materials": [
@@ -198725,7 +198725,7 @@
       "title": "第6回 国土強靱化推進本部",
       "date": "2017/06/06",
       "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/kokudo_kyoujinka/kaisai/dai6/index.html",
-      "category": "HEADQUARTERS",
+      "category": "HQ",
       "ministry": "CAS",
       "manualLock": true,
       "materials": [
@@ -198930,7 +198930,7 @@
       "title": "第4回 再犯防止推進計画等検討会（平成29年度）",
       "date": "2017/05/31",
       "officialUrl": "https://www.moj.go.jp/hisho/saihanboushi/hisho04_00037.html",
-      "category": "STUDY_GROUP",
+      "category": "STUDY",
       "ministry": "MOJ",
       "manualLock": true,
       "materials": [
@@ -199465,7 +199465,7 @@
       "title": "第14回 国土強靱化の推進に関する関係府省庁連絡会議",
       "date": "2017/04/27",
       "officialUrl": "https://www.cas.go.jp/jp/seisaku/kyoujinka/dai14/sidai.html",
-      "category": "MINISTERIAL",
+      "category": "LIAISON",
       "ministry": "CAS",
       "manualLock": true,
       "materials": [
@@ -199559,7 +199559,7 @@
       "title": "第3回 再犯防止推進計画等検討会（平成29年度）",
       "date": "2017/04/26",
       "officialUrl": "https://www.moj.go.jp/hisho/saihanboushi/hisho04_00037.html",
-      "category": "STUDY_GROUP",
+      "category": "STUDY",
       "ministry": "MOJ",
       "manualLock": true,
       "materials": [
@@ -200401,7 +200401,7 @@
       "title": "第2回 再犯防止推進計画等検討会（平成29年度）",
       "date": "2017/03/24",
       "officialUrl": "https://www.moj.go.jp/hisho/saihanboushi/hisho04_00037.html",
-      "category": "STUDY_GROUP",
+      "category": "STUDY",
       "ministry": "MOJ",
       "manualLock": true,
       "materials": [
@@ -200550,7 +200550,7 @@
       "title": "第3回 スチュワードシップ・コードに関する有識者検討会",
       "date": "2017/03/22",
       "officialUrl": "https://www.fsa.go.jp/singi/stewardship/siryou/20170322.html",
-      "category": "STUDY_GROUP",
+      "category": "STUDY",
       "ministry": "FSA",
       "manualLock": true,
       "materials": [
@@ -201102,7 +201102,7 @@
       "title": "第1回 再犯防止推進計画等検討会（平成29年度）",
       "date": "2017/02/22",
       "officialUrl": "https://www.moj.go.jp/hisho/saihanboushi/hisho04_00037.html",
-      "category": "STUDY_GROUP",
+      "category": "STUDY",
       "ministry": "MOJ",
       "manualLock": true,
       "materials": [
@@ -201338,7 +201338,7 @@
       "title": "第2回 スチュワードシップ・コードに関する有識者検討会",
       "date": "2017/02/17",
       "officialUrl": "https://www.fsa.go.jp/singi/stewardship/siryou/20170217.html",
-      "category": "STUDY_GROUP",
+      "category": "STUDY",
       "ministry": "FSA",
       "manualLock": true,
       "materials": [
@@ -201372,7 +201372,7 @@
       "title": "第17回 健康・医療戦略推進本部",
       "date": "2017/02/17",
       "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/suisin/suisin_dai17/gijisidai.html",
-      "category": "HEADQUARTERS",
+      "category": "HQ",
       "ministry": "CAS",
       "manualLock": true,
       "materials": [
@@ -201689,7 +201689,7 @@
       "title": "第1回 スチュワードシップ・コードに関する有識者検討会",
       "date": "2017/01/31",
       "officialUrl": "https://www.fsa.go.jp/singi/stewardship/siryou/20170131.html",
-      "category": "STUDY_GROUP",
+      "category": "STUDY",
       "ministry": "FSA",
       "manualLock": true,
       "materials": [
@@ -201784,7 +201784,7 @@
       "title": "第13回 国土強靱化の推進に関する関係府省庁連絡会議",
       "date": "2017/01/27",
       "officialUrl": "https://www.cas.go.jp/jp/seisaku/kyoujinka/dai13/sidai.html",
-      "category": "MINISTERIAL",
+      "category": "LIAISON",
       "ministry": "CAS",
       "manualLock": true,
       "materials": [
@@ -202833,7 +202833,7 @@
       "title": "第16回 健康・医療戦略推進本部",
       "date": "2016/11/21",
       "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/suisin/suisin_dai16/gijisidai.html",
-      "category": "HEADQUARTERS",
+      "category": "HQ",
       "ministry": "CAS",
       "manualLock": true,
       "materials": [
@@ -204601,7 +204601,7 @@
       "title": "第15回 健康・医療戦略推進本部",
       "date": "2016/08/31",
       "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/suisin/suisin_dai15/gijisidai.html",
-      "category": "HEADQUARTERS",
+      "category": "HQ",
       "ministry": "CAS",
       "manualLock": true,
       "materials": [
@@ -204835,7 +204835,7 @@
       "title": "第12回 国土強靱化の推進に関する関係府省庁連絡会議",
       "date": "2016/07/29",
       "officialUrl": "https://www.cas.go.jp/jp/seisaku/kyoujinka/dai12/sidai.html",
-      "category": "MINISTERIAL",
+      "category": "LIAISON",
       "ministry": "CAS",
       "manualLock": true,
       "materials": [
@@ -204861,7 +204861,7 @@
       "title": "第14回 健康・医療戦略推進本部",
       "date": "2016/07/29",
       "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/suisin/suisin_dai14/gijisidai.html",
-      "category": "HEADQUARTERS",
+      "category": "HQ",
       "ministry": "CAS",
       "manualLock": true,
       "materials": [
@@ -205633,7 +205633,7 @@
       "title": "第13回 健康・医療戦略推進本部",
       "date": "2016/05/25",
       "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/suisin/suisin_dai13/gijisidai.html",
-      "category": "HEADQUARTERS",
+      "category": "HQ",
       "ministry": "CAS",
       "manualLock": true,
       "materials": [
@@ -205667,7 +205667,7 @@
       "title": "第5回 国土強靱化推進本部",
       "date": "2016/05/24",
       "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/kokudo_kyoujinka/kaisai/dai5/index.html",
-      "category": "HEADQUARTERS",
+      "category": "HQ",
       "ministry": "CAS",
       "manualLock": true,
       "materials": [
@@ -208274,7 +208274,7 @@
       "title": "第11回 国土強靱化の推進に関する関係府省庁連絡会議",
       "date": "2016/01/14",
       "officialUrl": "https://www.cas.go.jp/jp/seisaku/kyoujinka/dai11/sidai.html",
-      "category": "MINISTERIAL",
+      "category": "LIAISON",
       "ministry": "CAS",
       "manualLock": true,
       "materials": [
@@ -209230,7 +209230,7 @@
       "title": "第12回 健康・医療戦略推進本部",
       "date": "2015/11/13",
       "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/suisin/suisin_dai12/gijisidai.html",
-      "category": "HEADQUARTERS",
+      "category": "HQ",
       "ministry": "CAS",
       "manualLock": true,
       "materials": [
@@ -210204,7 +210204,7 @@
       "title": "第11回 健康・医療戦略推進本部",
       "date": "2015/09/11",
       "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/suisin/suisin_dai11/gijisidai.html",
-      "category": "HEADQUARTERS",
+      "category": "HQ",
       "ministry": "CAS",
       "manualLock": true,
       "materials": [
@@ -210369,7 +210369,7 @@
       "title": "第10回 健康・医療戦略推進本部",
       "date": "2015/08/28",
       "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/suisin/suisin_dai10/gijisidai.html",
-      "category": "HEADQUARTERS",
+      "category": "HQ",
       "ministry": "CAS",
       "manualLock": true,
       "materials": [
@@ -210509,7 +210509,7 @@
       "title": "第10回 国土強靱化の推進に関する関係府省庁連絡会議",
       "date": "2015/07/31",
       "officialUrl": "https://www.cas.go.jp/jp/seisaku/kyoujinka/dai10/sidai.html",
-      "category": "MINISTERIAL",
+      "category": "LIAISON",
       "ministry": "CAS",
       "manualLock": true,
       "materials": [
@@ -210668,7 +210668,7 @@
       "title": "第9回 健康・医療戦略推進本部",
       "date": "2015/07/21",
       "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/suisin/suisin_dai9/gijisidai.html",
-      "category": "HEADQUARTERS",
+      "category": "HQ",
       "ministry": "CAS",
       "manualLock": true,
       "materials": [
@@ -211201,7 +211201,7 @@
       "title": "第4回 国土強靱化推進本部",
       "date": "2015/06/16",
       "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/kokudo_kyoujinka/kaisai/dai4/index.html",
-      "category": "HEADQUARTERS",
+      "category": "HQ",
       "ministry": "CAS",
       "manualLock": true,
       "materials": [
@@ -211255,7 +211255,7 @@
       "title": "第8回 健康・医療戦略推進本部",
       "date": "2015/06/12",
       "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/suisin/suisin_dai8/gijisidai.html",
-      "category": "HEADQUARTERS",
+      "category": "HQ",
       "ministry": "CAS",
       "manualLock": true,
       "materials": [
@@ -211883,7 +211883,7 @@
       "title": "第7回 健康・医療戦略推進本部",
       "date": "2015/03/25",
       "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/suisin/suisin_dai7/gijisidai.html",
-      "category": "HEADQUARTERS",
+      "category": "HQ",
       "ministry": "CAS",
       "manualLock": true,
       "materials": [
@@ -212645,7 +212645,7 @@
       "title": "第9回 国土強靱化の推進に関する関係府省庁連絡会議",
       "date": "2015/01/23",
       "officialUrl": "https://www.cas.go.jp/jp/seisaku/kyoujinka/dai9/sidai.html",
-      "category": "MINISTERIAL",
+      "category": "LIAISON",
       "ministry": "CAS",
       "manualLock": true,
       "materials": [
@@ -212800,7 +212800,7 @@
       "title": "第6回 健康・医療戦略推進本部",
       "date": "2015/01/20",
       "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/suisin/suisin_dai6/gijisidai.html",
-      "category": "HEADQUARTERS",
+      "category": "HQ",
       "ministry": "CAS",
       "manualLock": true,
       "materials": [
@@ -213574,7 +213574,7 @@
       "title": "第5回 健康・医療戦略推進本部",
       "date": "2014/11/14",
       "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/suisin/suisin_dai5/gijisidai.html",
-      "category": "HEADQUARTERS",
+      "category": "HQ",
       "ministry": "CAS",
       "manualLock": true,
       "materials": [
@@ -213877,7 +213877,7 @@
       "title": "第4回 健康・医療戦略推進本部",
       "date": "2014/10/29",
       "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/suisin/suisin_dai4/gijisidai.html",
-      "category": "HEADQUARTERS",
+      "category": "HQ",
       "ministry": "CAS",
       "manualLock": true,
       "materials": [
@@ -215426,7 +215426,7 @@
       "title": "第3回 健康・医療戦略推進本部",
       "date": "2014/08/29",
       "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/suisin/suisin_dai3/gijisidai.html",
-      "category": "HEADQUARTERS",
+      "category": "HQ",
       "ministry": "CAS",
       "manualLock": true,
       "materials": [
@@ -215658,7 +215658,7 @@
       "title": "第8回 国土強靱化の推進に関する関係府省庁連絡会議",
       "date": "2014/07/28",
       "officialUrl": "https://www.cas.go.jp/jp/seisaku/kyoujinka/dai8/sidai.html",
-      "category": "MINISTERIAL",
+      "category": "LIAISON",
       "ministry": "CAS",
       "manualLock": true,
       "materials": [
@@ -215757,7 +215757,7 @@
       "title": "第2回 健康・医療戦略推進本部",
       "date": "2014/07/22",
       "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/suisin/suisin_dai2/gijisidai.html",
-      "category": "HEADQUARTERS",
+      "category": "HQ",
       "ministry": "CAS",
       "manualLock": true,
       "materials": [
@@ -216454,7 +216454,7 @@
       "title": "第1回 健康・医療戦略推進本部",
       "date": "2014/06/10",
       "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/suisin/suisin_dai1/gijisidai.html",
-      "category": "HEADQUARTERS",
+      "category": "HQ",
       "ministry": "CAS",
       "manualLock": true,
       "materials": [
@@ -216499,7 +216499,7 @@
       "title": "第3回 国土強靱化推進本部",
       "date": "2014/06/03",
       "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/kokudo_kyoujinka/kaisai/dai3/index.html",
-      "category": "HEADQUARTERS",
+      "category": "HQ",
       "ministry": "CAS",
       "manualLock": true,
       "materials": [
@@ -216922,7 +216922,7 @@
       "title": "第2回 国土強靱化推進本部",
       "date": "2014/04/25",
       "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/kokudo_kyoujinka/kaisai/dai2/index.html",
-      "category": "HEADQUARTERS",
+      "category": "HQ",
       "ministry": "CAS",
       "manualLock": true,
       "materials": [
@@ -217103,7 +217103,7 @@
       "title": "第7回 国土強靱化の推進に関する関係府省庁連絡会議",
       "date": "2014/04/17",
       "officialUrl": "https://www.cas.go.jp/jp/seisaku/kyoujinka/dai7/sidai.html",
-      "category": "MINISTERIAL",
+      "category": "LIAISON",
       "ministry": "CAS",
       "manualLock": true,
       "materials": [
@@ -218400,7 +218400,7 @@
       "title": "第1回 国土強靱化推進本部",
       "date": "2013/12/17",
       "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/kokudo_kyoujinka/index.html",
-      "category": "HEADQUARTERS",
+      "category": "HQ",
       "ministry": "CAS",
       "manualLock": true,
       "materials": [
@@ -218489,7 +218489,7 @@
       "title": "第6回 国土強靱化の推進に関する関係府省庁連絡会議",
       "date": "2013/12/12",
       "officialUrl": "https://www.cas.go.jp/jp/seisaku/kyoujinka/dai6/6sidai.html",
-      "category": "MINISTERIAL",
+      "category": "LIAISON",
       "ministry": "CAS",
       "manualLock": true,
       "materials": [
@@ -219272,7 +219272,7 @@
       "title": "第5回 国土強靱化の推進に関する関係府省庁連絡会議",
       "date": "2013/09/13",
       "officialUrl": "https://www.cas.go.jp/jp/seisaku/kyoujinka/dai5/5sidai.html",
-      "category": "MINISTERIAL",
+      "category": "LIAISON",
       "ministry": "CAS",
       "manualLock": true,
       "materials": [
@@ -219447,7 +219447,7 @@
       "title": "第4回 国土強靱化の推進に関する関係府省庁連絡会議",
       "date": "2013/08/08",
       "officialUrl": "https://www.cas.go.jp/jp/seisaku/kyoujinka/dai4/4sidai.html",
-      "category": "MINISTERIAL",
+      "category": "LIAISON",
       "ministry": "CAS",
       "manualLock": true,
       "materials": [
@@ -220096,7 +220096,7 @@
       "title": "第3回 国土強靱化の推進に関する関係府省庁連絡会議",
       "date": "2013/05/28",
       "officialUrl": "https://www.cas.go.jp/jp/seisaku/kyoujinka/dai3/3sidai.html",
-      "category": "MINISTERIAL",
+      "category": "LIAISON",
       "ministry": "CAS",
       "manualLock": true,
       "materials": [
@@ -220524,7 +220524,7 @@
       "title": "第2回 国土強靱化の推進に関する関係府省庁連絡会議",
       "date": "2013/04/10",
       "officialUrl": "https://www.cas.go.jp/jp/seisaku/kyoujinka/dai2/2sidai.html",
-      "category": "MINISTERIAL",
+      "category": "LIAISON",
       "ministry": "CAS",
       "manualLock": true,
       "materials": [
@@ -220750,7 +220750,7 @@
       "title": "第1回 国土強靱化の推進に関する関係府省庁連絡会議",
       "date": "2013/03/19",
       "officialUrl": "https://www.cas.go.jp/jp/seisaku/kyoujinka/dai1/1sidai.html",
-      "category": "MINISTERIAL",
+      "category": "LIAISON",
       "ministry": "CAS",
       "manualLock": true,
       "materials": [
@@ -242053,7 +242053,10 @@
     "PANEL": "有識者会議",
     "STUDY": "検討会",
     "ROUNDTABLE": "懇談会",
-    "WORKING_GROUP": "作業部会"
+    "WORKING_GROUP": "作業部会",
+    "EXPERT_COMMITTEE": "専門調査会",
+    "SPECIAL_COMMITTEE": "特別委員会",
+    "TASKFORCE": "タスクフォース"
   },
   "docTypes": {
     "MINUTES": "議事録・要旨",
