@@ -299,6 +299,58 @@ class TestCrawlerManualLockProtection(unittest.TestCase):
         self.assertEqual(m2["materials"][0]["url"], "https://example.com/mat2-1.pdf")
         self.assertEqual(target["pastYearCount"], 2, "pastYearCount が更新されていること")
 
+    def test_sync_new_meetings_upgrades_parent_url_when_specific_page_discovered(self):
+        """開催前で親URLのままだった既存会議に、開催後に個別資料ページが発見された場合、自動昇格・資料更新されること"""
+        from crawler import sync_new_meetings_from_crawl
+
+        mock_data = {
+            "councils": [
+                {
+                    "id": "mhlw-test_kaigo",
+                    "name": "社会保障審議会 介護給付費分科会",
+                    "ministry": "MHLW",
+                    "officialUrl": "https://www.mhlw.go.jp/stf/shingi/shingi-hosho_126698_00022.html",
+                    "pastYearCount": 1,
+                    "manualLock": True
+                }
+            ],
+            "meetings": [
+                {
+                    "id": "mhlw-test_kaigo-20260828-263",
+                    "councilId": "mhlw-test_kaigo",
+                    "title": "第263回 社会保障審議会 介護給付費分科会",
+                    "date": "2026/08/28",
+                    "officialUrl": "https://www.mhlw.go.jp/stf/shingi/shingi-hosho_126698_00022.html", # 開催前で親URLのまま
+                    "materials": [] # 資料未掲載
+                }
+            ]
+        }
+
+        mock_scraped_item = {
+            "subpageMeetings": [
+                {
+                    "subpageUrl": "https://www.mhlw.go.jp/stf/newpage_75439.html",
+                    "title": "第263回社会保障審議会介護給付費分科会（web会議）資料",
+                    "extractedDates": ["令和8年8月28日"],
+                    "materials": [
+                        {"name": "議事次第", "url": "https://www.mhlw.go.jp/content/001743312.pdf", "type": "PDF"},
+                        {"name": "資料1", "url": "https://www.mhlw.go.jp/content/001743314.pdf", "type": "PDF"}
+                    ]
+                }
+            ]
+        }
+
+        target = mock_data["councils"][0]
+        added = sync_new_meetings_from_crawl(mock_data, target, mock_scraped_item)
+
+        self.assertEqual(added, 1, "既存会議（第263回）が資料ページURLへ自動昇格・更新されること")
+        self.assertEqual(len(mock_data["meetings"]), 1, "会議総数は1件のまま（重複追加されないこと）")
+
+        m263 = mock_data["meetings"][0]
+        self.assertEqual(m263["officialUrl"], "https://www.mhlw.go.jp/stf/newpage_75439.html", "officialUrl が個別資料ページURLに更新されていること")
+        self.assertEqual(len(m263["materials"]), 2, "資料2件が同期されていること")
+        self.assertEqual(m263["materials"][0]["url"], "https://www.mhlw.go.jp/content/001743312.pdf")
+
 def run_tests():
 
     print("==================================================")

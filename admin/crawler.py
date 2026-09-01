@@ -733,11 +733,34 @@ def execute_rule_retrieval(target, html, rule_item, use_llm=False):
     return scraped_item
 
 
+def is_generic_index_url(url):
+    """報道発表インデックスやポータルトップ等の汎用インデックスURLかどうかを判定する"""
+    if not url:
+        return True
+    u_lower = url.lower()
+    patterns = [
+        r'houdou/index\.html',
+        r'houdou/houdou\.html',
+        r'press/index\.html',
+        r'topics/index\.html',
+        r'news/index\.html',
+        r'shingi/index\.html',
+        r'/pressrelease/?$',
+        r'/houdou_topics/?$',
+        r'/houdou/?$'
+    ]
+    for p in patterns:
+        if re.search(p, u_lower):
+            return True
+    return False
+
+
 def sync_new_meetings_from_crawl(data, target, scraped_item):
     """
-    クロール時に検出されたサブページ（個別開催回）から、未登録の新規開催回を自動検知して
-    docs/data.json の meetings 配列に正しく追加する。
-    ※ 既存の会議レコード（manualLock: true を含む）は完全保護し、上書き・改変しない。
+    クロール時に検出されたサブページ（個別開催回）から、
+    1. 未登録の新規開催回を自動検知して docs/data.json の meetings 配列に追加する。
+    2. 開催前・未掲載で親URLのままだった既存会議に、新たに個別資料ページが公開された場合は officialUrl と資料を自動昇格・更新する。
+    ※ 既存の手動作成済み会議（manualLock: true かつ個別資料登録済み）は保護する。
     """
     if not scraped_item:
         return 0
@@ -748,6 +771,7 @@ def sync_new_meetings_from_crawl(data, target, scraped_item):
 
     council_id = target["id"]
     council_name = target["name"]
+    council_parent_url = target.get("officialUrl") or target.get("url", "")
     ministry = target["ministry"]
     meetings = data.setdefault("meetings", [])
 
@@ -769,8 +793,46 @@ def sync_new_meetings_from_crawl(data, target, scraped_item):
 
         # 開催回番号の抽出
         sess_nums = extract_session_numbers(sub_title + " " + sub_url)
-        # 既に該当回次が登録済みの場合はスキップ
+
+        # 資料配列の構築
+        clean_materials_list = []
+        for mat in sub_mats:
+            mat_name = mat.get("name", "").strip()
+            mat_url = mat.get("url", "").strip()
+            mat_type = mat.get("type", "PDF")
+            if not mat_url or mat_url == "#" or mat_url == sub_url:
+                continue
+            clean_materials_list.append({
+                "name": mat_name if mat_name else os.path.basename(mat_url),
+                "url": mat_url,
+                "type": mat_type,
+                "isPrivate": mat.get("isPrivate", False)
+            })
+
+        # --- A. 既存会議の自動昇格・更新（資料未掲載・親URLだった会議が開催日後に個別資料ページを検出した場合） ---
         if sess_nums and any(s in existing_sessions for s in sess_nums):
+            # 該当する既存会議を探索
+            matched_existing = []
+            for m in existing_c_meets:
+                m_sess = extract_session_numbers(m.get("title", "") + " " + m.get("officialUrl", "") + " " + m.get("id", ""))
+                if any(s in m_sess for s in sess_nums):
+                    matched_existing.append(m)
+
+            for ex_m in matched_existing:
+                curr_url = ex_m.get("officialUrl", "").rstrip("/")
+                curr_mats = ex_m.get("materials", [])
+                
+                # 親URLまたは汎用報道URL、あるいは資料0件の場合で、今回具体的な個別資料ページ・資料が発見された場合
+                is_parent_or_generic = (curr_url == council_parent_url.rstrip("/") or is_generic_index_url(curr_url))
+                has_no_mats = len(curr_mats) == 0
+                has_new_valid_subpage = sub_url and not is_generic_index_url(sub_url)
+
+                if (is_parent_or_generic or has_no_mats) and has_new_valid_subpage and clean_materials_list:
+                    ex_m["officialUrl"] = sub.get("subpageUrl")
+                    ex_m["materials"] = clean_materials_list
+                    ex_m["lastUpdatedFromCrawl"] = datetime.now().strftime("%Y/%m/%d %H:%M")
+                    print(f"  [✨ 資料ページ自動更新] [{ex_m.get('date')}] {ex_m.get('title')} (URL: {sub_url}, 資料: {len(clean_materials_list)}件)")
+                    added_count += 1
             continue
 
         # 既にURLまたはタイトルが完全一致している場合はスキップ
@@ -779,6 +841,7 @@ def sync_new_meetings_from_crawl(data, target, scraped_item):
         if sub_title and sub_title in existing_titles:
             continue
 
+        # --- B. 新規開催回の追加 ---
         # 日付の算出および YYYY/MM/DD への正規化
         meet_date = ""
         if sub_dates:
@@ -813,27 +876,17 @@ def sync_new_meetings_from_crawl(data, target, scraped_item):
         elif not formatted_title or formatted_title.startswith("http"):
             formatted_title = f"{council_name} ({meet_date})"
 
-        # 資料配列の構築
-        clean_materials_list = []
-        for mat in sub_mats:
-            mat_name = mat.get("name", "").strip()
-            mat_url = mat.get("url", "").strip()
-            mat_type = mat.get("type", "PDF")
-            if not mat_url or mat_url == "#" or mat_url == sub_url:
-                continue
-            clean_materials_list.append({
-                "name": mat_name if mat_name else os.path.basename(mat_url),
-                "url": mat_url,
-                "type": mat_type,
-                "isPrivate": mat.get("isPrivate", False)
-            })
+        # 汎用報道URLや資料未掲載の場合は親の会議体URLを設定
+        resolved_meet_url = sub.get("subpageUrl")
+        if not resolved_meet_url or is_generic_index_url(resolved_meet_url):
+            resolved_meet_url = council_parent_url
 
         new_meeting = {
             "id": new_meet_id,
             "councilId": council_id,
             "title": formatted_title,
             "date": meet_date,
-            "officialUrl": sub.get("subpageUrl") or target.get("officialUrl") or target.get("url", ""),
+            "officialUrl": resolved_meet_url,
             "category": target.get("category", "COUNCIL"),
             "ministry": ministry,
             "materials": clean_materials_list,
@@ -860,6 +913,7 @@ def sync_new_meetings_from_crawl(data, target, scraped_item):
                 break
 
     return added_count
+
 
 def update_crawl_status(data, council_id, scraped_item, failure_reason=None):
     """data.json の councils 配列内の該当会議体に crawlStatus を記録する。
