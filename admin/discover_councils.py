@@ -32,6 +32,37 @@ if sys.platform == "win32":
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 PROJECT_ROOT = os.path.dirname(BASE_DIR)
 DATA_JSON_PATH = os.path.join(PROJECT_ROOT, "docs", "data.json")
+BACKUP_DIR = os.path.join(BASE_DIR, "backups")
+
+def save_data_json_with_backup(data, target_file=DATA_JSON_PATH):
+    """
+    docs/data.json を更新する前に、タイムスタンプ付きで admin/backups/ に自動バックアップを作成し、
+    安全に上書き保存する（過去30世代保持）。
+    """
+    import shutil
+    try:
+        os.makedirs(BACKUP_DIR, exist_ok=True)
+        if os.path.exists(target_file):
+            ts = datetime.now().strftime("%Y%m%d_%H%M%S")
+            backup_path = os.path.join(BACKUP_DIR, f"data_{ts}.json")
+            shutil.copy2(target_file, backup_path)
+            
+            # 過去30世代を超える古いバックアップの自動整理
+            b_files = sorted([os.path.join(BACKUP_DIR, f) for f in os.listdir(BACKUP_DIR) if f.startswith("data_") and f.endswith(".json")])
+            if len(b_files) > 30:
+                for old_f in b_files[:-30]:
+                    try:
+                        os.remove(old_f)
+                    except Exception:
+                        pass
+
+        with open(target_file, "w", encoding="utf-8") as f:
+            json.dump(data, f, ensure_ascii=False, indent=2)
+        return True
+    except Exception as e:
+        print(f"[ERROR] Failed to save data.json with backup: {e}", file=sys.stderr)
+        return False
+
 
 def load_keywords():
     if os.path.exists(DATA_JSON_PATH):
@@ -423,10 +454,10 @@ def run_discovery(progress_callback=None):
             if "discoveredCouncils" in data:
                 del data["discoveredCouncils"]
             
-            with open(DATA_JSON_PATH, "w", encoding="utf-8") as f:
-                json.dump(data, f, ensure_ascii=False, indent=2)
-                
-            print(f"結果を data.json の councils に保存しました（却下済み除外適用済み）。")
+            if save_data_json_with_backup(data):
+                print(f"結果を data.json の councils に保存しました（自動バックアップ作成完了）。")
+            else:
+                print(f"[WARN] data.json の保存に失敗しました。")
         except Exception as e:
             print(f"[ERROR] data.json の更新に失敗しました: {e}")
     return discovered_list

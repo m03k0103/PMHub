@@ -3,6 +3,7 @@ from http.server import ThreadingHTTPServer, SimpleHTTPRequestHandler
 import json
 import os
 import sys
+import shutil
 import threading
 import urllib.parse
 from datetime import datetime
@@ -13,6 +14,7 @@ from crawler import run_meeting_crawler, save_data_json_with_backup
 PORT = 8000
 BASE_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
 DATA_JSON_FILE = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "docs", "data.json"))
+BACKUP_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), "backups"))
 
 # Global discovery status state
 discovery_state = {
@@ -289,12 +291,11 @@ class CustomHandler(SimpleHTTPRequestHandler):
             self.send_response(200)
             self.send_header('Content-Type', 'application/json; charset=utf-8')
             self.end_headers()
-            backup_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "docs", "backups"))
             backups = []
-            if os.path.exists(backup_dir):
-                for f in sorted(os.listdir(backup_dir), reverse=True):
+            if os.path.exists(BACKUP_DIR):
+                for f in sorted(os.listdir(BACKUP_DIR), reverse=True):
                     if f.startswith("data_") and f.endswith(".json"):
-                        f_path = os.path.join(backup_dir, f)
+                        f_path = os.path.join(BACKUP_DIR, f)
                         sz = os.path.getsize(f_path)
                         mtime = os.path.getmtime(f_path)
                         backups.append({
@@ -632,7 +633,52 @@ class CustomHandler(SimpleHTTPRequestHandler):
                 self.send_header('Content-Type', 'application/json; charset=utf-8')
                 self.end_headers()
                 self.wfile.write(json.dumps({"status": "error", "message": str(e)}).encode('utf-8'))
+        elif path == "/api/rollback-data":
+            try:
+                if not os.path.exists(BACKUP_DIR):
+                    raise ValueError("バックアップフォルダ (admin/backups) が存在しません。")
 
+                b_files = sorted([f for f in os.listdir(BACKUP_DIR) if f.startswith("data_") and f.endswith(".json")], reverse=True)
+                if not b_files:
+                    raise ValueError("利用可能なバックアップファイルがありません。")
+
+                latest_backup_file = b_files[0]
+                latest_backup_path = os.path.join(BACKUP_DIR, latest_backup_file)
+
+                # 念のためロールバック前の現在の状態を退避
+                if os.path.exists(DATA_JSON_FILE):
+                    ts = datetime.now().strftime("%Y%m%d_%H%M%S")
+                    pre_rollback_path = os.path.join(BACKUP_DIR, f"data_pre_rollback_{ts}.json")
+                    shutil.copy2(DATA_JSON_FILE, pre_rollback_path)
+
+                # バックアップファイルで data.json を上書き復元
+                shutil.copy2(latest_backup_path, DATA_JSON_FILE)
+
+                # 復元後のデータ概要を取得
+                with open(DATA_JSON_FILE, "r", encoding="utf-8") as f:
+                    restored_data = json.load(f)
+
+                c_count = len(restored_data.get("councils", []))
+                m_count = len(restored_data.get("meetings", []))
+                last_crawl = restored_data.get("lastCrawlTime", "-")
+
+                self.send_response(200)
+                self.send_header('Content-Type', 'application/json; charset=utf-8')
+                self.end_headers()
+                self.wfile.write(json.dumps({
+                    "status": "ok",
+                    "message": f"直前のバックアップ ({latest_backup_file}) から data.json を正常に復元しました。",
+                    "backupFile": latest_backup_file,
+                    "councilsCount": c_count,
+                    "meetingsCount": m_count,
+                    "lastCrawlTime": last_crawl,
+                    "totalBackups": len(b_files)
+                }, ensure_ascii=False).encode('utf-8'))
+            except Exception as e:
+                self.send_response(500)
+                self.send_header('Content-Type', 'application/json; charset=utf-8')
+                self.end_headers()
+                self.wfile.write(json.dumps({"status": "error", "message": str(e)}, ensure_ascii=False).encode('utf-8'))
         else:
             self.send_error(404)
 
