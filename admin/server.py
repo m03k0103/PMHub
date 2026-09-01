@@ -29,9 +29,11 @@ discovery_state = {
     "error": None
 }
 
-# Global crawler status state
+# Global crawler status state and stop event
+crawler_stop_event = threading.Event()
 crawler_state = {
     "running": False,
+    "stopping": False,
     "progress": 0,
     "current_idx": 0,
     "total_councils": 0,
@@ -40,11 +42,12 @@ crawler_state = {
     "log_seq": 0,
     "stats": None,
     "error": None,
-    "lastCrawlTime": ""
+    "lastCrawlTime": "",
+    "log_file": ""
 }
 
 def _crawler_worker():
-    global crawler_state
+    global crawler_state, crawler_stop_event
     def on_progress(msg, data=None):
         if data:
             if data.get("type") == "council_start":
@@ -52,21 +55,29 @@ def _crawler_worker():
                 crawler_state["current_council"] = data.get("council_name", "")
                 crawler_state["current_idx"] = data.get("current", 0)
                 crawler_state["total_councils"] = data.get("total", 0)
-            elif data.get("type") == "crawl_completed":
+                if data.get("log_file"):
+                    crawler_state["log_file"] = data.get("log_file")
+            elif data.get("type") in ("crawl_completed", "crawl_stopped"):
                 crawler_state["lastCrawlTime"] = data.get("lastCrawlTime", "")
+                if data.get("log_file"):
+                    crawler_state["log_file"] = data.get("log_file")
         crawler_state["log_seq"] += 1
         crawler_state["logs"].append({"id": crawler_state["log_seq"], "text": msg})
         if len(crawler_state["logs"]) > 500:
             crawler_state["logs"] = crawler_state["logs"][-500:]
 
     try:
-        stats = run_meeting_crawler(progress_callback=on_progress)
+        stats = run_meeting_crawler(progress_callback=on_progress, stop_event=crawler_stop_event)
         crawler_state["stats"] = stats
         crawler_state["progress"] = 100
         crawler_state["running"] = False
+        crawler_state["stopping"] = False
+        if stats and stats.get("log_file"):
+            crawler_state["log_file"] = stats.get("log_file")
     except Exception as e:
         crawler_state["error"] = str(e)
         crawler_state["running"] = False
+        crawler_state["stopping"] = False
 
 def _discovery_worker():
     global discovery_state
@@ -239,6 +250,7 @@ class CustomHandler(SimpleHTTPRequestHandler):
 
             res_payload = {
                 "running": crawler_state["running"],
+                "stopping": crawler_state.get("stopping", False),
                 "progress": crawler_state["progress"],
                 "current_council": crawler_state["current_council"],
                 "current_idx": crawler_state["current_idx"],
@@ -248,7 +260,8 @@ class CustomHandler(SimpleHTTPRequestHandler):
                 "totalLogs": crawler_state["log_seq"],
                 "stats": crawler_state["stats"],
                 "error": crawler_state["error"],
-                "lastCrawlTime": crawler_state["lastCrawlTime"]
+                "lastCrawlTime": crawler_state["lastCrawlTime"],
+                "log_file": crawler_state.get("log_file", "")
             }
             self.wfile.write(json.dumps(res_payload, ensure_ascii=False).encode('utf-8'))
         elif path == "/api/new-meetings":
@@ -294,6 +307,7 @@ class CustomHandler(SimpleHTTPRequestHandler):
             super().do_GET()
 
     def do_POST(self):
+        global crawler_state, crawler_stop_event, discovery_state
         parsed_url = urllib.parse.urlparse(self.path)
         path = parsed_url.path
 
@@ -501,7 +515,6 @@ class CustomHandler(SimpleHTTPRequestHandler):
                 self.wfile.write(json.dumps({"status": "error", "message": str(e)}).encode('utf-8'))
 
         elif path == "/api/run-discovery":
-            global discovery_state
             if discovery_state["running"]:
                 self.send_response(200)
                 self.send_header('Content-Type', 'application/json; charset=utf-8')
@@ -531,7 +544,6 @@ class CustomHandler(SimpleHTTPRequestHandler):
             self.wfile.write(json.dumps({"status": "started", "message": "Discovery started in background"}).encode('utf-8'))
 
         elif path == "/api/run-crawler":
-            global crawler_state
             if crawler_state["running"]:
                 self.send_response(200)
                 self.send_header('Content-Type', 'application/json; charset=utf-8')
@@ -539,16 +551,20 @@ class CustomHandler(SimpleHTTPRequestHandler):
                 self.wfile.write(json.dumps({"status": "running", "message": "Crawler is already running"}).encode('utf-8'))
                 return
 
+            crawler_stop_event.clear()
             crawler_state = {
                 "running": True,
+                "stopping": False,
                 "progress": 5,
                 "current_idx": 0,
                 "total_councils": 0,
                 "current_council": "",
                 "logs": [],
+                "log_seq": 0,
                 "stats": None,
                 "error": None,
-                "lastCrawlTime": ""
+                "lastCrawlTime": "",
+                "log_file": ""
             }
             t = threading.Thread(target=_crawler_worker, daemon=True)
             t.start()
@@ -557,6 +573,21 @@ class CustomHandler(SimpleHTTPRequestHandler):
             self.send_header('Content-Type', 'application/json; charset=utf-8')
             self.end_headers()
             self.wfile.write(json.dumps({"status": "started", "message": "Meeting crawler started in background"}).encode('utf-8'))
+
+        elif path == "/api/stop-crawler":
+            if not crawler_state["running"]:
+                self.send_response(200)
+                self.send_header('Content-Type', 'application/json; charset=utf-8')
+                self.end_headers()
+                self.wfile.write(json.dumps({"status": "not_running", "message": "Crawler is not running"}).encode('utf-8'))
+                return
+
+            crawler_stop_event.set()
+            crawler_state["stopping"] = True
+            self.send_response(200)
+            self.send_header('Content-Type', 'application/json; charset=utf-8')
+            self.end_headers()
+            self.wfile.write(json.dumps({"status": "stopping", "message": "Crawler stop signal sent. Finalizing..."}).encode('utf-8'))
         elif path == "/api/toggle-manual-lock":
             content_length = int(self.headers.get('Content-Length', 0))
             post_data = self.rfile.read(content_length)

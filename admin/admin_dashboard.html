@@ -431,12 +431,21 @@
               承認済会議体（<code>COUNCILS</code>）のトップページURLを巡回し、各会議（開催回、開催日、アジェンダ、PDF・HTML資料リンク等）の最新情報を自動抽出・更新します。
             </p>
           </div>
-          <button class="btn-crawler btn-bulk approve-all" id="adminStartCrawlBtn" onclick="if(window.startMeetingCrawl){ window.startMeetingCrawl(); } else { alert('startMeetingCrawl function not ready yet!'); }" style="font-size: 1rem; padding: 0.75rem 1.5rem;">
-            ⚡ 会議・資料クロール即時実行
-          </button>
+          <div style="display: flex; gap: 0.75rem; align-items: center;">
+            <button class="btn-crawler btn-bulk approve-all" id="adminStartCrawlBtn" onclick="if(window.startMeetingCrawl){ window.startMeetingCrawl(); } else { alert('startMeetingCrawl function not ready yet!'); }" style="font-size: 1rem; padding: 0.75rem 1.5rem;">
+              ⚡ 会議・資料クロール即時実行
+            </button>
+            <button class="btn-bulk" id="adminStopCrawlBtn" onclick="if(window.stopMeetingCrawl){ window.stopMeetingCrawl(); } else { alert('stopMeetingCrawl not ready'); }" style="display: none; font-size: 1rem; padding: 0.75rem 1.25rem; background: rgba(239, 68, 68, 0.2); border: 1px solid rgba(239, 68, 68, 0.6); color: #f87171; border-radius: var(--radius-md); cursor: pointer; transition: all 0.2s;">
+              🛑 クロール停止
+            </button>
+          </div>
         </div>
 
         <div style="margin-top: 1rem;">
+          <div id="adminCrawlerLogFileInfo" style="display: none; font-size: 0.75rem; color: #94a3b8; margin-bottom: 0.5rem; font-family: monospace;">
+            📄 ログファイル: <span id="adminCrawlerLogFilePath" style="color: #60a5fa; font-weight: bold;"></span>
+          </div>
+
           <div class="crawler-progress-bar" style="height: 6px; background: rgba(255,255,255,0.08); border-radius: 4px; overflow: hidden; margin-bottom: 0.75rem;">
             <div class="crawler-progress-fill" id="adminProgressFill" style="height: 100%; width: 0%; background: #10b981; transition: width 0.2s;"></div>
           </div>
@@ -854,11 +863,32 @@ JSON データを読み込み中...
 
   // ─── 2. Meeting Crawler Engine (Global scope definition) ───
   let isRunningMeetingCrawl = false;
+
+  window.stopMeetingCrawl = async function() {
+    const stopBtn = document.getElementById('adminStopCrawlBtn');
+    if (stopBtn) {
+      stopBtn.disabled = true;
+      stopBtn.textContent = '🛑 停止処理中…';
+    }
+    try {
+      const res = await fetch('/api/stop-crawler', { method: 'POST' });
+      if (!res.ok) throw new Error(`HTTP ${res.status}`);
+      const data = await res.json();
+      console.log('Stop response:', data);
+    } catch (e) {
+      alert(`停止リクエスト失敗: ${e.message || e}`);
+      if (stopBtn) stopBtn.disabled = false;
+    }
+  };
+
   window.startMeetingCrawl = async function() {
     if (isRunningMeetingCrawl) return;
     isRunningMeetingCrawl = true;
 
     const btn = document.getElementById('adminStartCrawlBtn');
+    const stopBtn = document.getElementById('adminStopCrawlBtn');
+    const logInfo = document.getElementById('adminCrawlerLogFileInfo');
+    const logPath = document.getElementById('adminCrawlerLogFilePath');
     const progressFill = document.getElementById('adminProgressFill');
     const logs = document.getElementById('adminTerminalLogs');
 
@@ -866,8 +896,14 @@ JSON データを読み込み中...
       btn.disabled = true;
       btn.textContent = '⏳ クロール中…';
     }
+    if (stopBtn) {
+      stopBtn.style.display = 'inline-block';
+      stopBtn.disabled = false;
+      stopBtn.textContent = '🛑 クロール停止';
+    }
     if (progressFill) progressFill.style.width = '0%';
     if (logs) logs.innerHTML = '';
+    if (logInfo) logInfo.style.display = 'none';
 
     const logLine = (msg, time = new Date().toTimeString().slice(0,8)) => {
       if (!logs) return;
@@ -897,6 +933,16 @@ JSON データを読み込み中...
           if (!statusRes.ok) return;
           const data = await statusRes.json();
 
+          if (data.log_file && logInfo && logPath) {
+            logInfo.style.display = 'block';
+            logPath.textContent = data.log_file;
+          }
+
+          if (data.stopping && stopBtn) {
+            stopBtn.disabled = true;
+            stopBtn.textContent = '🛑 停止処理中…';
+          }
+
           if (data.logs && data.logs.length > 0) {
             data.logs.forEach(item => {
               const lineText = (typeof item === 'object' && item.text) ? item.text : item;
@@ -918,7 +964,7 @@ JSON データを読み込み中...
             btn.textContent = `⏳ クロール中 (${data.current_idx || 0}/${data.total_councils || 0})…`;
           }
 
-          // クロール完了
+          // クロール完了または停止
           if (!data.running) {
             clearInterval(pollInterval);
             isRunningMeetingCrawl = false;
@@ -926,6 +972,11 @@ JSON データを読み込み中...
             if (btn) {
               btn.disabled = false;
               btn.textContent = '⚡ 会議・資料クロール即時実行';
+            }
+            if (stopBtn) {
+              stopBtn.style.display = 'none';
+              stopBtn.disabled = false;
+              stopBtn.textContent = '🛑 クロール停止';
             }
 
             if (data.error) {
@@ -950,6 +1001,9 @@ JSON データを読み込み中...
       if (btn) {
         btn.disabled = false;
         btn.textContent = '⚡ 会議・資料クロール即時実行';
+      }
+      if (stopBtn) {
+        stopBtn.style.display = 'none';
       }
       isRunningMeetingCrawl = false;
     }

@@ -11,3 +11,6 @@ Thumbs.db
 .idea/
 node_modules
 docs/backups/
+logs/
+admin/logs/
+*.log

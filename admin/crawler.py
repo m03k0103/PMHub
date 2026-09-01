@@ -44,9 +44,27 @@ if sys.platform == "win32":
 
 DATA_JSON_FILE = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "docs", "data.json"))
 BACKUP_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "docs", "backups"))
+LOGS_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), "logs"))
 
 # 429 Quota Exceeded 回避用のサーキットブレーカーフラグ
 LLM_QUOTA_BLOCKED = False
+
+def init_crawler_logfile():
+    """admin/logs/ ディレクトリに日時付きログファイルと latest ログファイルを初期化してファイルオブジェクトを返す"""
+    try:
+        os.makedirs(LOGS_DIR, exist_ok=True)
+        ts = datetime.now().strftime("%Y%m%d_%H%M%S")
+        log_filename = f"crawler_{ts}.log"
+        log_filepath = os.path.join(LOGS_DIR, log_filename)
+        latest_filepath = os.path.join(LOGS_DIR, "crawler_latest.log")
+        
+        log_f = open(log_filepath, "a", encoding="utf-8")
+        latest_f = open(latest_filepath, "w", encoding="utf-8")
+        return log_f, latest_f, log_filepath, latest_filepath
+    except Exception as e:
+        print(f"[WARN] Failed to initialize log file: {e}", file=sys.stderr)
+        return None, None, "", ""
+
 
 def save_data_json_with_backup(data, target_file=DATA_JSON_FILE):
     """
@@ -897,11 +915,27 @@ def deduplicate_data_materials(data):
     if removed_cross_dup > 0 or removed_portal > 0:
         print(f"[重複排除] 会議間重複資料 {removed_cross_dup} 件、ポータルリンク {removed_portal} 件を自動整理しました。")
 
-def run_meeting_crawler(progress_callback=None):
+def run_meeting_crawler(progress_callback=None, stop_event=None):
     global CRAWL_TARGETS
     
+    log_f, latest_f, log_filepath, latest_filepath = init_crawler_logfile()
+
     def emit(msg, payload=None):
         print(msg)
+        now_ts = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+        log_line = f"[{now_ts}] {msg}\n"
+        if log_f:
+            try:
+                log_f.write(log_line)
+                log_f.flush()
+            except Exception:
+                pass
+        if latest_f:
+            try:
+                latest_f.write(log_line)
+                latest_f.flush()
+            except Exception:
+                pass
         if progress_callback:
             try:
                 progress_callback(msg, payload)
@@ -915,7 +949,9 @@ def run_meeting_crawler(progress_callback=None):
     else:
         CRAWL_TARGETS = []
         emit(f"[INFO] 会議体データが見つかりません。")
-        return {"success": 0, "partial": 0, "failed": 0, "fetch_error": 0, "new_meetings": 0}
+        if log_f: log_f.close()
+        if latest_f: latest_f.close()
+        return {"success": 0, "partial": 0, "failed": 0, "fetch_error": 0, "new_meetings": 0, "log_file": log_filepath}
 
     use_llm = load_crawler_config()
     now_str = datetime.now().strftime("%Y/%m/%d %H:%M")
@@ -924,7 +960,9 @@ def run_meeting_crawler(progress_callback=None):
     emit("=" * 60)
     emit(f"抽出モード: {'LLM抽出 (Gemini API) + フォールバック' if use_llm else '既存ルール (Heuristic)'}")
     emit(f"取得実行時刻: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
-    emit(f"対象会議体数: {len(CRAWL_TARGETS)} 件\n")
+    emit(f"対象会議体数: {len(CRAWL_TARGETS)} 件")
+    if log_filepath:
+        emit(f"ログファイル出力先: {log_filepath}\n")
 
     # data.json をまるごと読み込み（ステータス更新用）
     data = {}
@@ -938,10 +976,26 @@ def run_meeting_crawler(progress_callback=None):
 
     rules = load_scraping_rules()
     results = []
-    stats = {"success": 0, "partial": 0, "failed": 0, "fetch_error": 0, "new_meetings": 0, "newly_added_list": []}
+    stats = {
+        "success": 0,
+        "partial": 0,
+        "failed": 0,
+        "fetch_error": 0,
+        "new_meetings": 0,
+        "stopped": False,
+        "processed_councils": 0,
+        "newly_added_list": [],
+        "log_file": log_filepath
+    }
     total_councils = len(CRAWL_TARGETS)
 
     for idx, target in enumerate(CRAWL_TARGETS, 1):
+        # 途中停止チェック
+        if stop_event and stop_event.is_set():
+            emit(f"\n🛑 [STOP] ユーザーまたはシステムによる停止要求を受信しました。処理を安全に中断します（処理済み: {idx-1}/{total_councils} 件）。")
+            stats["stopped"] = True
+            break
+
         pct = int((idx / max(total_councils, 1)) * 90)
         c_name = target.get("name", target.get("id"))
         c_min = target.get("ministry", "")
@@ -953,10 +1007,12 @@ def run_meeting_crawler(progress_callback=None):
             "ministry": c_min,
             "progress": pct,
             "current": idx,
-            "total": total_councils
+            "total": total_councils,
+            "log_file": log_filepath
         })
         
         html = fetch_url(target["url"])
+        stats["processed_councils"] += 1
         
         if html:
             c_id = target["id"]
@@ -996,13 +1052,19 @@ def run_meeting_crawler(progress_callback=None):
 
     # サマリー表示
     emit(f"\n{'='*60}")
-    emit(f" クロール結果サマリー")
+    if stats.get("stopped"):
+        emit(f" 🛑 クロール中断サマリー (途中停止)")
+    else:
+        emit(f" クロール結果サマリー (完了)")
     emit(f"{'='*60}")
+    emit(f"  処理会議体数:          {stats['processed_councils']} / {total_councils} 件")
     emit(f"  🟢 成功 (success):     {stats['success']} 件")
     emit(f"  🟡 部分成功 (partial):    {stats['partial']} 件")
     emit(f"  🔴 失敗 (failed):      {stats['failed']} 件")
     emit(f"  🔴 取得エラー:         {stats['fetch_error']} 件")
     emit(f"  📦 新規追加会議:       {stats['new_meetings']} 件")
+    if log_filepath:
+        emit(f"  📄 ログファイル:       {log_filepath}")
     emit(f"{'='*60}")
 
     # 全体データに対して資料リンクの重複排除・正規化を実施
@@ -1020,17 +1082,35 @@ def run_meeting_crawler(progress_callback=None):
     newly_added = [m for m in data.get("meetings", []) if m.get("isNewlyDiscovered")]
     stats["newly_added_list"] = newly_added[:20]
 
-    emit(f"データ取得完了: 結果を docs/data.json に直接反映しました。", {
-        "type": "crawl_completed",
+    finish_type = "crawl_stopped" if stats.get("stopped") else "crawl_completed"
+    emit(f"処理終了: docs/data.json を更新しました。", {
+        "type": finish_type,
         "progress": 100,
         "stats": stats,
         "newly_added_count": len(newly_added),
-        "lastCrawlTime": now_str
+        "lastCrawlTime": now_str,
+        "log_file": log_filepath,
+        "stopped": stats.get("stopped", False)
     })
+    
+    if log_f:
+        try: log_f.close()
+        except Exception: pass
+    if latest_f:
+        try: latest_f.close()
+        except Exception: pass
+        
     return stats
 
 def main():
-    run_meeting_crawler()
+    import threading
+    cli_stop_event = threading.Event()
+    
+    try:
+        run_meeting_crawler(stop_event=cli_stop_event)
+    except KeyboardInterrupt:
+        print("\n\n[INFO] キーボード割り込み (Ctrl+C) を検知しました。停止シグナルを発行します...")
+        cli_stop_event.set()
 
 if __name__ == "__main__":
     main()
