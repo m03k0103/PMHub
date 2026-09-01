@@ -13,6 +13,7 @@ import urllib.request
 import urllib.parse
 import re
 import io
+import time
 from datetime import datetime, timedelta
 from bs4 import BeautifulSoup
 import google.generativeai as genai
@@ -215,18 +216,100 @@ def load_scraping_rules():
             print(f"[WARN] Failed to load scrapingRules from data.json: {e}", file=sys.stderr)
     return {}
 
-def fetch_url(url):
+def decode_html_bytes(content_bytes, content_type_header=""):
+    """
+    HTTPヘッダー、metaタグ、各種エンコーディング（UTF-8, CP932/Shift_JIS, EUC-JP）を
+    正確に自動判別してデコードし、文字化けを完全排除する。
+    """
+    if not content_bytes:
+        return ""
+    
+    encoding = None
+    # 1. Content-Type ヘッダーの charset 判定
+    if content_type_header:
+        m = re.search(r'charset=([\'"]?[\w\-]+[\'"]?)', content_type_header, re.I)
+        if m:
+            raw_enc = m.group(1).strip('\'"').lower()
+            if raw_enc in ('shift_jis', 'shift-jis', 'sjis', 'x-sjis'):
+                encoding = 'cp932'
+            elif raw_enc in ('euc-jp', 'eucjp'):
+                encoding = 'euc-jp'
+            elif raw_enc in ('utf-8', 'utf8'):
+                encoding = 'utf-8'
+
+    # 2. HTMLの先頭2048バイトから <meta charset="..."> または <meta http-equiv=... charset=...> を抽出
+    head_sample = content_bytes[:2048].decode('ascii', errors='ignore')
+    m_meta = re.search(r'<meta[^>]+charset=[\'"]?([\w\-]+)', head_sample, re.I)
+    if not m_meta:
+        m_meta = re.search(r'content=[\'"][^"\']*charset=([\w\-]+)', head_sample, re.I)
+        
+    if m_meta:
+        meta_enc = m_meta.group(1).strip('\'"').lower()
+        if meta_enc in ('shift_jis', 'shift-jis', 'sjis', 'x-sjis'):
+            encoding = 'cp932'
+        elif meta_enc in ('euc-jp', 'eucjp'):
+            encoding = 'euc-jp'
+        elif meta_enc in ('utf-8', 'utf8'):
+            encoding = 'utf-8'
+
+    # 3. 試行デコード（検出されたエンコーディング最優先 -> UTF-8 -> CP932 -> EUC-JP）
+    encodings_to_try = []
+    if encoding:
+        encodings_to_try.append(encoding)
+    encodings_to_try.extend(['utf-8', 'cp932', 'euc-jp'])
+    
+    # 重複除去
+    seen = set()
+    unique_encs = []
+    for e in encodings_to_try:
+        if e not in seen:
+            seen.add(e)
+            unique_encs.append(e)
+
+    for enc in unique_encs:
+        try:
+            decoded = content_bytes.decode(enc)
+            # 文字化け特有の不正バイトや置換文字の混入チェック
+            if '\ufffd' not in decoded:
+                return decoded
+        except (UnicodeDecodeError, LookupError):
+            continue
+
+    # 4. chardet による推測（インストールされている場合）
+    try:
+        import chardet
+        detected = chardet.detect(content_bytes[:4096])
+        if detected and detected.get('encoding'):
+            return content_bytes.decode(detected['encoding'], errors='replace')
+    except Exception:
+        pass
+
+    return content_bytes.decode('utf-8', errors='replace')
+
+def fetch_url(url, timeout=12):
     parsed_url = urllib.parse.urlparse(url)
     if parsed_url.scheme not in ("http", "https"):
         print(f"[ERROR] Invalid scheme: {url}", file=sys.stderr)
         return None
     headers = {
-        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) PMHubRetrievalEngine/2.0'
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36',
+        'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8',
+        'Accept-Language': 'ja,en-US;q=0.9,en;q=0.8',
+        'Sec-Ch-Ua': '"Chromium";v="128", "Not;A=Brand";v="24", "Google Chrome";v="128"',
+        'Sec-Ch-Ua-Mobile': '?0',
+        'Sec-Ch-Ua-Platform': '"Windows"',
+        'Sec-Fetch-Dest': 'document',
+        'Sec-Fetch-Mode': 'navigate',
+        'Sec-Fetch-Site': 'none',
+        'Sec-Fetch-User': '?1',
+        'Upgrade-Insecure-Requests': '1'
     }
     req = urllib.request.Request(url, headers=headers)
     try:
-        with urllib.request.urlopen(req, timeout=10) as response:
-            return response.read().decode('utf-8', errors='ignore')
+        with urllib.request.urlopen(req, timeout=timeout) as response:
+            content_type = response.headers.get('Content-Type', '')
+            raw_bytes = response.read()
+            return decode_html_bytes(raw_bytes, content_type)
     except Exception as e:
         print(f"[ERROR] Failed to fetch {url}: {e}", file=sys.stderr)
         return None
@@ -288,7 +371,7 @@ def _crawl_subpages(target_url, html, rule, quirk_note, pdf_pattern):
     base_tag = soup.find('base', href=True)
     page_base_url = urllib.parse.urljoin(target_url, base_tag['href']) if base_tag else target_url
 
-    subpage_pattern = rule.get("subpage_discovery_pattern", r'href=["\']([^"\']*(?:dai\d+|\d+kai|kaisai|gijisidai)[^"\'#]*)["\']')
+    subpage_pattern = rule.get("subpage_discovery_pattern", r'href=["\']([^"\']*(?:dai\d+|\d+kai|kaisai|gijisidai|gijiroku|newpage_\d+|shingi2|session|meeting|siryou|bunkakai)[^"\'#]*)["\']')
     subpage_links = re.findall(subpage_pattern, html, re.IGNORECASE)
 
     if subpage_links:
@@ -343,8 +426,22 @@ def clean_html_for_dates(html_str):
     except Exception:
         return html_str
 
-def extract_clean_dates_from_html(html_str, date_regex_pattern=r'(?:令和|平成)(?:\d+|元)年\d+月\d+日|\d{4}年\d+月\d+日|\d{4}[/-]\d+[/-]\d+'):
-    """更新日・掲載日などのノイズを除去して会議開催日を抽出"""
+def validate_and_normalize_date(date_str):
+    """
+    抽出された日付文字列が実在する妥当な日付（1990年〜2035年、月1〜12、日1〜31）であるかを検証し、
+    正規化された文字列または None を返す。
+    """
+    if not date_str or not isinstance(date_str, str):
+        return None
+    dt = parse_japanese_date(date_str)
+    if not dt:
+        return None
+    if 1990 <= dt.year <= 2035 and 1 <= dt.month <= 12 and 1 <= dt.day <= 31:
+        return date_str.strip()
+    return None
+
+def extract_clean_dates_from_html(html_str, date_regex_pattern=r'(?<![\d\w\/\-])(?:(?:令和|平成)(?:\d+|元)年\d{1,2}月\d{1,2}日|\d{4}年\d{1,2}月\d{1,2}日|\d{4}[/-]\d{1,2}[/-]\d{1,2})(?![\d\w\/\-])'):
+    """更新日・掲載日などのノイズや不正パターンを除去して会議開催日を抽出"""
     cleaned_html = clean_html_for_dates(html_str)
     raw_dates = re.findall(date_regex_pattern, cleaned_html)
     
@@ -355,39 +452,53 @@ def extract_clean_dates_from_html(html_str, date_regex_pattern=r'(?:令和|平�
         escaped_d = re.escape(d)
         if re.search(r'(?:更新日|最終更新|掲載日|公表日|作成日|ページID|copyright)[\s\:\：\-\.\/]*' + escaped_d, cleaned_html, re.I):
             continue
-        filtered_dates.append(d)
+        valid_d = validate_and_normalize_date(d)
+        if valid_d:
+            filtered_dates.append(valid_d)
         
-    return filtered_dates if filtered_dates else raw_dates
+    return filtered_dates
 
 def parse_japanese_date(date_str):
-    """和暦・西暦文字列を datetime オブジェクトに変換（元年対応）"""
+    """和暦・西暦文字列を datetime オブジェクトに変換（元年対応・厳格検証）"""
     if not date_str:
         return None
-    date_str = normalize_japanese_numbers(date_str)
-    m_reiwa = re.search(r'令和(\d+|元)年(\d+)月(\d+)日', date_str)
+    date_str = normalize_japanese_numbers(date_str).strip()
+    m_reiwa = re.search(r'(?<!\d)令和(\d+|元)年(\d{1,2})月(\d{1,2})日(?!\d)', date_str)
     if m_reiwa:
         try:
             yr_num = 1 if m_reiwa.group(1) == '元' else int(m_reiwa.group(1))
-            return datetime(2018 + yr_num, int(m_reiwa.group(2)), int(m_reiwa.group(3)))
+            year = 2018 + yr_num
+            month = int(m_reiwa.group(2))
+            day = int(m_reiwa.group(3))
+            return datetime(year, month, day)
         except Exception:
             pass
-    m_heisei = re.search(r'平成(\d+|元)年(\d+)月(\d+)日', date_str)
+    m_heisei = re.search(r'(?<!\d)平成(\d+|元)年(\d{1,2})月(\d{1,2})日(?!\d)', date_str)
     if m_heisei:
         try:
             yr_num = 1 if m_heisei.group(1) == '元' else int(m_heisei.group(1))
-            return datetime(1988 + yr_num, int(m_heisei.group(2)), int(m_heisei.group(3)))
+            year = 1988 + yr_num
+            month = int(m_heisei.group(2))
+            day = int(m_heisei.group(3))
+            return datetime(year, month, day)
         except Exception:
             pass
-    m_seireki = re.search(r'(\d{4})年(\d{1,2})月(\d{1,2})日', date_str)
+    m_seireki = re.search(r'(?<!\d)(\d{4})年(\d{1,2})月(\d{1,2})日(?!\d)', date_str)
     if m_seireki:
         try:
-            return datetime(int(m_seireki.group(1)), int(m_seireki.group(2)), int(m_seireki.group(3)))
+            year = int(m_seireki.group(1))
+            month = int(m_seireki.group(2))
+            day = int(m_seireki.group(3))
+            return datetime(year, month, day)
         except Exception:
             pass
-    m_slash = re.search(r'(\d{4})[/-](\d{1,2})[/-](\d{1,2})', date_str)
+    m_slash = re.search(r'(?<![\d\w])(\d{4})[/-](\d{1,2})[/-](\d{1,2})(?![\d\w])', date_str)
     if m_slash:
         try:
-            return datetime(int(m_slash.group(1)), int(m_slash.group(2)), int(m_slash.group(3)))
+            year = int(m_slash.group(1))
+            month = int(m_slash.group(2))
+            day = int(m_slash.group(3))
+            return datetime(year, month, day)
         except Exception:
             pass
     return None
@@ -419,9 +530,9 @@ def discover_subpage_links(html, base_url):
     if base_tag:
         base_url = urllib.parse.urljoin(base_url, base_tag['href'])
 
-    # 会議サブページのパターン (dai1, 1kai, kaisai, gijisidai, etc.)
+    # 会議サブページのパターン (dai1, 1kai, kaisai, gijisidai, newpage_XXX, shingi2, etc.)
     subpage_pattern = re.compile(
-        r'(?:dai\d+|\d+kai|kaisai|gijisidai|gijiroku|kaigi|meeting|shiryo)',
+        r'(?:dai\d+|\d+kai|kaisai|gijisidai|gijiroku|kaigi|meeting|shiryo|siryou|newpage_\d+|shingi2|session|bunkakai)',
         re.IGNORECASE
     )
     
@@ -572,8 +683,9 @@ def execute_rule_retrieval(target, html, rule_item, use_llm=False):
             unique_materials.append(m)
 
     raw_date_matches = extract_clean_dates_from_html(html, rule.get("date_regex", r'(?:令和|平成)(?:\d+|元)年\d+月\d+日|\d{4}年\d+月\d+日|\d{4}[/-]\d+[/-]\d+'))
-    norm_date_matches = [normalize_japanese_numbers(d) for d in raw_date_matches]
-    all_extracted_dates.extend(norm_date_matches)
+    top_norm_dates = [normalize_japanese_numbers(d) for d in raw_date_matches]
+    all_extracted_dates.extend(top_norm_dates)
+    norm_date_matches = list(dict.fromkeys(all_extracted_dates))
     
     if unique_materials or norm_date_matches or subpage_meetings:
         extraction_method = "rule"
@@ -1049,6 +1161,10 @@ def run_meeting_crawler(progress_callback=None, stop_event=None):
             emit(f"  -> 🔴 [FETCH ERROR] ネットワーク取得失敗")
             update_crawl_status(data, target["id"], None, "Network fetch failed")
         emit("-" * 65)
+
+        # レートリミット（スロットリング: 行政サーバー負荷軽減 & WAFブロック回避）
+        if idx < total_councils and not (stop_event and stop_event.is_set()):
+            time.sleep(0.35)
 
     # サマリー表示
     emit(f"\n{'='*60}")
