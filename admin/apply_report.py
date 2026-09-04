@@ -1,20 +1,11 @@
 import json
 import os
 import sys
-import io
+import shutil
 
-# Windows ターミナルログの文字化け防止 (chcp 65001 & UTF-8 再構成)
-if sys.platform == "win32":
-    os.system("chcp 65001 > NUL 2>&1")
-    try:
-        if hasattr(sys.stdout, 'reconfigure'):
-            sys.stdout.reconfigure(encoding='utf-8', errors='replace')
-            sys.stderr.reconfigure(encoding='utf-8', errors='replace')
-        else:
-            sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8', errors='replace')
-            sys.stderr = io.TextIOWrapper(sys.stderr.buffer, encoding='utf-8', errors='replace')
-    except Exception:
-        pass
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from utils import setup_win32_utf8
+setup_win32_utf8()
 
 
 def apply_report(json_path, data_json_path=None):
@@ -99,7 +90,7 @@ def apply_report(json_path, data_json_path=None):
                     print(f"Warning: MEETINGS item {target_id} not found")
 
         elif action == "remove_council" or action == "reject_council":
-            target_id = corr.get("targetId")
+            # target_id はループ先頭で取得済み（二重代入を廃止）
             if target_id:
                 # 削除対象の会議体情報を取得
                 target_council = next((c for c in councils if c.get("id") == target_id), None)
@@ -154,6 +145,13 @@ def apply_report(json_path, data_json_path=None):
                     print(f"Added new council: {c_id}")
                 else:
                     print(f"Warning: Council {c_id} already exists")
+
+    # C-4: 保存前にバックアップを作成（crawler.py と同様の運用ポリシー）
+    backup_path = data_json_path + ".bak"
+    try:
+        shutil.copy2(data_json_path, backup_path)
+    except Exception as e:
+        print(f"[WARN] Failed to create backup: {e}")
 
     # Save back to data.json
     with open(data_json_path, "w", encoding="utf-8") as f:

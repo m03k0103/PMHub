@@ -9,14 +9,16 @@
 import sys
 import os
 import json
+import shutil
 import urllib.request
 import urllib.parse
 import re
-import io
 import time
 from datetime import datetime, timedelta
 from bs4 import BeautifulSoup
 import google.generativeai as genai
+from utils import setup_win32_utf8
+setup_win32_utf8()
 
 API_KEY = os.environ.get("GEMINI_API_KEY")
 if API_KEY:
@@ -28,19 +30,6 @@ if API_KEY:
         model = None
 else:
     model = None
-
-# Windows ターミナルログの文字化け防止 (chcp 65001 & UTF-8 再構成)
-if sys.platform == "win32":
-    os.system("chcp 65001 > NUL 2>&1")
-    try:
-        if hasattr(sys.stdout, 'reconfigure'):
-            sys.stdout.reconfigure(encoding='utf-8', errors='replace')
-            sys.stderr.reconfigure(encoding='utf-8', errors='replace')
-        else:
-            sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8', errors='replace')
-            sys.stderr = io.TextIOWrapper(sys.stderr.buffer, encoding='utf-8', errors='replace')
-    except Exception:
-        pass
 
 
 DATA_JSON_FILE = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "docs", "data.json"))
@@ -72,7 +61,6 @@ def save_data_json_with_backup(data, target_file=DATA_JSON_FILE):
     docs/data.json を更新する前に、タイムスタンプ付きで docs/backups/ に自動バックアップを作成し、
     安全に上書き保存する（過去30世代保持）。
     """
-    import shutil
     try:
         os.makedirs(BACKUP_DIR, exist_ok=True)
         if os.path.exists(target_file):
@@ -1070,7 +1058,8 @@ def deduplicate_data_materials(data):
                     score += 5
 
                 m_date = m.get("date", "")
-                if m_date and not m_date.startswith("1312") and not m_date.startswith("2026/08/09"):
+                # "1312" で始まる日付は明らかな無効値（旧クローラー残骸）のみスキップ
+                if m_date and not m_date.startswith("1312"):
                     score += 2
 
                 scored_candidates.append((score, m, mat))

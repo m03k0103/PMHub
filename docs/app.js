@@ -621,10 +621,8 @@ document.addEventListener('DOMContentLoaded', async () => {
       return 0;
     });
 
-    for (let i = 0; i < list.length; i++) {
-      list[i] = mapped[i].item;
-    }
-    return list;
+    // 純粋関数: 引数を変更せず新配列を返す（副作用排除）
+    return mapped.map(x => x.item);
   }
 
   function renderByDateView() {
@@ -678,20 +676,9 @@ document.addEventListener('DOMContentLoaded', async () => {
     }
   }
 
-  window.toggleMaterialsAccordion = function(btnOrMeetingId, optionalMeetingId) {
-    let accordionEl = null;
-    let meetingId = optionalMeetingId;
-
-    if (btnOrMeetingId && typeof btnOrMeetingId === 'object' && btnOrMeetingId.closest) {
-      accordionEl = btnOrMeetingId.closest('.materials-accordion');
-    } else if (typeof btnOrMeetingId === 'string') {
-      meetingId = btnOrMeetingId;
-      const content = document.getElementById(`materials-content-${meetingId}`);
-      if (content) {
-        accordionEl = content.closest('.materials-accordion');
-      }
-    }
-
+  window.toggleMaterialsAccordion = function(btn, meetingId) {
+    // btn: ボタン DOM 要素（onclick="toggleMaterialsAccordion(this, '${meetingId}')" で呼び出し）
+    const accordionEl = btn && btn.closest ? btn.closest('.materials-accordion') : null;
     if (!accordionEl) return;
 
     const contentEl = accordionEl.querySelector('.materials-collapse-content');

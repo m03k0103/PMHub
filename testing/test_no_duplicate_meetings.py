@@ -8,21 +8,11 @@ import json
 import os
 import re
 import sys
-import io
 from collections import defaultdict
 
-# Windows ターミナルログの文字化け防止 (chcp 65001 & UTF-8 再構成)
-if sys.platform == "win32":
-    os.system("chcp 65001 > NUL 2>&1")
-    try:
-        if hasattr(sys.stdout, 'reconfigure'):
-            sys.stdout.reconfigure(encoding='utf-8', errors='replace')
-            sys.stderr.reconfigure(encoding='utf-8', errors='replace')
-        else:
-            sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8', errors='replace')
-            sys.stderr = io.TextIOWrapper(sys.stderr.buffer, encoding='utf-8', errors='replace')
-    except Exception:
-        pass
+sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "admin"))
+from utils import setup_win32_utf8
+setup_win32_utf8()
 
 
 def to_halfwidth(s):

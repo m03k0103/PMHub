@@ -12,25 +12,14 @@ import sys
 import os
 import json
 import copy
-import io
 import unittest
-
-# Windows ターミナルログの文字化け防止
-if sys.platform == "win32":
-    os.system("chcp 65001 > NUL 2>&1")
-    try:
-        if hasattr(sys.stdout, 'reconfigure'):
-            sys.stdout.reconfigure(encoding='utf-8', errors='replace')
-            sys.stderr.reconfigure(encoding='utf-8', errors='replace')
-        else:
-            sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8', errors='replace')
-            sys.stderr = io.TextIOWrapper(sys.stderr.buffer, encoding='utf-8', errors='replace')
-    except Exception:
-        pass
 
 PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 ADMIN_DIR = os.path.join(PROJECT_ROOT, "admin")
 sys.path.insert(0, ADMIN_DIR)
+from utils import setup_win32_utf8
+setup_win32_utf8()
+
 
 from crawler import deduplicate_data_materials, update_crawl_status
 from apply_report import apply_report
@@ -45,7 +34,7 @@ class TestCrawlerManualLockProtection(unittest.TestCase):
             ],
             "meetings": [
                 {
-                    "id": "meet-1",
+                    "id": "test-council-1-20260101-001",
                     "councilId": "test-council-1",
                     "title": "第1回 テスト会議",
                     "date": "2026/01/01",
@@ -56,7 +45,7 @@ class TestCrawlerManualLockProtection(unittest.TestCase):
                     ]
                 },
                 {
-                    "id": "meet-2",
+                    "id": "test-council-1-20260201-002",
                     "councilId": "test-council-1",
                     "title": "第2回 テスト会議",
                     "date": "2026/02/01",
@@ -71,7 +60,7 @@ class TestCrawlerManualLockProtection(unittest.TestCase):
         # クローラーの重複排除を実行
         deduplicate_data_materials(mock_data)
 
-        # meet-1 (locked) の資料がすべて残っていることを検証
+        # test-council-1-20260101-001 (locked) の資料がすべて残っていることを検証
         m1 = mock_data["meetings"][0]
         self.assertEqual(len(m1["materials"]), 2, "manualLock: true の会議資料は削除されてはいけない")
         self.assertEqual(m1["materials"][0]["url"], "https://example.com/shared.pdf")
@@ -85,7 +74,7 @@ class TestCrawlerManualLockProtection(unittest.TestCase):
             ],
             "meetings": [
                 {
-                    "id": "meet-2-1",
+                    "id": "test-council-2-20260101-001",
                     "councilId": "test-council-2",
                     "title": "第1回 テスト会議",
                     "date": "2026/01/01",
@@ -95,7 +84,7 @@ class TestCrawlerManualLockProtection(unittest.TestCase):
                     ]
                 },
                 {
-                    "id": "meet-2-2",
+                    "id": "test-council-2-20260201-002",
                     "councilId": "test-council-2",
                     "title": "第2回 テスト会議",
                     "date": "2026/02/01",
@@ -109,7 +98,7 @@ class TestCrawlerManualLockProtection(unittest.TestCase):
 
         deduplicate_data_materials(mock_data)
 
-        # meet-2-1 の手動保護資料が残っていること
+        # test-council-2-20260101-001 の手動保護資料が残っていること
         m2_1 = mock_data["meetings"][0]
         self.assertEqual(len(m2_1["materials"]), 1)
         self.assertEqual(m2_1["materials"][0]["name"], "手動保護資料")

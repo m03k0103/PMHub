@@ -18,22 +18,13 @@ import urllib.request
 import urllib.error
 import subprocess
 import argparse
-import io
-
-# Windows ターミナルログの文字化け防止 (chcp 65001 & UTF-8 再構成)
-if sys.platform == "win32":
-    os.system("chcp 65001 > NUL 2>&1")
-    try:
-        if hasattr(sys.stdout, 'reconfigure'):
-            sys.stdout.reconfigure(encoding='utf-8', errors='replace')
-            sys.stderr.reconfigure(encoding='utf-8', errors='replace')
-        else:
-            sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8', errors='replace')
-            sys.stderr = io.TextIOWrapper(sys.stderr.buffer, encoding='utf-8', errors='replace')
-    except Exception:
-        pass
 
 PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+sys.path.insert(0, os.path.join(PROJECT_ROOT, "admin"))
+from utils import setup_win32_utf8
+setup_win32_utf8()
+
+
 
 def check_js_syntax(code, file_path=""):
     """JS の文法エラー（カンマ欠落、不整合な文字、要素・プロパティ間カンマ欠落等）を精密検証"""
@@ -63,12 +54,7 @@ def check_js_syntax(code, file_path=""):
     if parens != 0 or curlies != 0 or squares != 0:
         return False, f"JavaScript 括弧の数不一致 (小括弧:{parens}, 中括弧:{curlies}, 角括弧:{squares})"
 
-    if "data.js" in file_path:
-        missing_comma_obj = re.search(r'\}\s*\n\s*\{', cleaned_code)
-        if missing_comma_obj:
-            pos = missing_comma_obj.start()
-            line_no = code[:pos].count('\n') + 1
-            return False, f"JavaScript オブジェクト間カンマ欠落検知 ({line_no}行目付近の '}}' 直後に ',' がありません)"
+
 
     bracket_stack = []
     line_no = 1
@@ -314,9 +300,9 @@ def get_added_urls_from_git():
     """git diff から新規追加・変更された URL を動的に抽出"""
     added_urls = set()
     diff_commands = [
-        ["git", "diff", "HEAD", "--", "docs/data.js"],
-        ["git", "diff", "HEAD~1", "HEAD", "--", "docs/data.js"],
-        ["git", "diff", "--staged", "--", "docs/data.js"]
+        ["git", "diff", "HEAD", "--", "docs/data.json"],
+        ["git", "diff", "HEAD~1", "HEAD", "--", "docs/data.json"],
+        ["git", "diff", "--staged", "--", "docs/data.json"]
     ]
     
     for cmd in diff_commands:
@@ -343,9 +329,9 @@ def check_link_health(explicit_urls=None, check_all=False):
     if explicit_urls:
         target_urls = explicit_urls
     elif check_all:
-        data_js_path = os.path.join(PROJECT_ROOT, "docs", "data.js")
-        if os.path.exists(data_js_path):
-            with open(data_js_path, "r", encoding="utf-8") as f:
+        data_json_path = os.path.join(PROJECT_ROOT, "docs", "data.json")
+        if os.path.exists(data_json_path):
+            with open(data_json_path, "r", encoding="utf-8") as f:
                 content = f.read()
             target_urls = re.findall(r"https?://[^\s\x22\x27,]+", content)
             target_urls = [u for u in target_urls if "example" not in u and "googleapis" not in u]
