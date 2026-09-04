@@ -3472,24 +3472,6 @@
       "status": "approved"
     },
     {
-      "id": "mhlw-783",
-      "name": "小児慢性特定疾病検討委員会",
-      "ministry": "MHLW",
-      "category": "COMMITTEE",
-      "officialUrl": "https://www.mhlw.go.jp/stf/shingi/shingi-hosho_126716_00008.html",
-      "pastYearCount": 0,
-      "crawlStatus": {
-        "lastAttempt": "2026-08-22 10:09:20",
-        "result": "partial",
-        "extractionMethod": "rule",
-        "materialsCount": 0,
-        "datesCount": 5,
-        "failureReason": "",
-        "consecutiveFailures": 0
-      },
-      "status": "approved"
-    },
-    {
       "id": "meti-1676",
       "name": "東北電力株式会社による電気料金値上げ認可申請に係る公聴会",
       "ministry": "METI",
@@ -17999,6 +17981,16 @@
       "pastYearCount": 2,
       "manualLock": true,
       "description": "農林水産省における食育目標達成に向けた取組の「見える化」ワーキンググループ。"
+    },
+    {
+      "id": "mhlw-shakai_hosho_shouni_mansei_kento",
+      "name": "社会保障審議会 小児慢性特定疾病対策部会 小児慢性特定疾病検討委員会",
+      "ministry": "MHLW",
+      "category": "SPECIAL_COMMITTEE",
+      "officialUrl": "https://www.mhlw.go.jp/stf/shingi/shingi-hosho_126716_00008.html",
+      "pastYearCount": 5,
+      "manualLock": true,
+      "description": "厚生労働省社会保障審議会における小児慢性特定疾病検討委員会。"
     }
   ],
   "meetings": [
@@ -242040,6 +242032,238 @@
       "officialUrl": "https://www.mlit.go.jp/policy/shingikai/sogo03_sg_000240.html",
       "hasMinutes": false,
       "docCount": 9
+    },
+    {
+      "id": "mhlw-shakai_hosho_shouni_mansei_kento-20241223-005",
+      "councilId": "mhlw-shakai_hosho_shouni_mansei_kento",
+      "title": "第5回 社会保障審議会 小児慢性特定疾病対策部会 小児慢性特定疾病検討委員会",
+      "date": "2024/12/23",
+      "officialUrl": "https://www.mhlw.go.jp/stf/newpage_47305.html",
+      "category": "SPECIAL_COMMITTEE",
+      "ministry": "MHLW",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "議事次第",
+          "url": "https://www.mhlw.go.jp/content/10905000/001360437.pdf"
+        },
+        {
+          "name": "委員名簿",
+          "url": "https://www.mhlw.go.jp/content/10905000/001360438.pdf"
+        },
+        {
+          "name": "資料 小児慢性特定疾病の検討について",
+          "url": "https://www.mhlw.go.jp/content/10905000/001360439.pdf"
+        },
+        {
+          "name": "参考資料１ 社会保障審議会小児慢性特定疾病対策部会小児慢性特定疾病検討委員会の設置について（第１回小児慢性特定疾病対策部会資料）",
+          "url": "https://www.mhlw.go.jp/content/10905000/001360440.pdf"
+        },
+        {
+          "name": "参考資料２ 社会保障審議会小児慢性特定疾病対策部会運営細則",
+          "url": "https://www.mhlw.go.jp/content/10905000/001360441.pdf"
+        },
+        {
+          "name": "第5回 議事録",
+          "url": "https://www.mhlw.go.jp/stf/newpage_48714.html"
+        }
+      ]
+    },
+    {
+      "id": "mhlw-shakai_hosho_shouni_mansei_kento-20240828-004",
+      "councilId": "mhlw-shakai_hosho_shouni_mansei_kento",
+      "title": "第4回 社会保障審議会 小児慢性特定疾病対策部会 小児慢性特定疾病検討委員会",
+      "date": "2024/08/28",
+      "officialUrl": "https://www.mhlw.go.jp/stf/newpage_43092.html",
+      "category": "SPECIAL_COMMITTEE",
+      "ministry": "MHLW",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "議事要旨",
+          "url": "https://www.mhlw.go.jp/content/10906000/001301591.pdf"
+        },
+        {
+          "name": "議事次第",
+          "url": "https://www.mhlw.go.jp/content/10906000/001296454.pdf"
+        },
+        {
+          "name": "資料１　パブリックコメントで寄せられた御意見について",
+          "url": "https://www.mhlw.go.jp/content/10906000/001296514.pdf"
+        },
+        {
+          "name": "資料２　第２回社会保障審議会小児慢性特定疾病対策部会小児慢性特定疾病検討委員会小児慢性特定疾病に係る新規の疾病追加の検討結果（一覧表）の一部修正について（第３回小児慢性特定疾病検討委員会資料）",
+          "url": "https://www.mhlw.go.jp/content/10906000/001296456.pdf"
+        },
+        {
+          "name": "資料３　第２回社会保障審議会小児慢性特定疾病対策部会小児慢性特定疾病検討委員会小児慢性特定疾病に係る新規の疾病追加の検討結果（個票）の一部修正について（第３回小児慢性特定疾病検討委員会資料）",
+          "url": "https://www.mhlw.go.jp/content/10906000/001296457.pdf"
+        },
+        {
+          "name": "参考資料１　小児慢性特定疾病の検討について（第1回小児慢性特定疾病検討委員会資料）",
+          "url": "https://www.mhlw.go.jp/content/10906000/001296515.pdf"
+        }
+      ]
+    },
+    {
+      "id": "mhlw-shakai_hosho_shouni_mansei_kento-20240520-003",
+      "councilId": "mhlw-shakai_hosho_shouni_mansei_kento",
+      "title": "第3回 社会保障審議会 小児慢性特定疾病対策部会 小児慢性特定疾病検討委員会",
+      "date": "2024/05/20",
+      "officialUrl": "https://www.mhlw.go.jp/stf/newpage_40405.html",
+      "category": "SPECIAL_COMMITTEE",
+      "ministry": "MHLW",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "議事要旨",
+          "url": "https://www.mhlw.go.jp/content/10906000/001258040.pdf"
+        },
+        {
+          "name": "議事次第",
+          "url": "https://www.mhlw.go.jp/content/10906000/001257918.pdf"
+        },
+        {
+          "name": "資料１　第２回社会保障審議会小児慢性特定疾病対策部会小児慢性特定疾病検討委員会　小児慢性特定疾病に係る新規の疾病追加の検討結果（一覧表）の一部修正について",
+          "url": "https://www.mhlw.go.jp/content/10906000/001257919.pdf"
+        },
+        {
+          "name": "資料２　第２回社会保障審議会小児慢性特定疾病対策部会小児慢性特定疾病検討委員会　小児慢性特疾病に係る新規の疾病追加の検討結果（個票）の一部修正について",
+          "url": "https://www.mhlw.go.jp/content/10906000/001257921.pdf"
+        }
+      ]
+    },
+    {
+      "id": "mhlw-shakai_hosho_shouni_mansei_kento-20240206-002",
+      "councilId": "mhlw-shakai_hosho_shouni_mansei_kento",
+      "title": "第2回 社会保障審議会 小児慢性特定疾病対策部会 小児慢性特定疾病検討委員会",
+      "date": "2024/02/06",
+      "officialUrl": "https://www.mhlw.go.jp/stf/newpage_37546.html",
+      "category": "SPECIAL_COMMITTEE",
+      "ministry": "MHLW",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "議事次第",
+          "url": "https://www.mhlw.go.jp/content/10905000/001204151.pdf"
+        },
+        {
+          "name": "委員名簿",
+          "url": "https://www.mhlw.go.jp/content/10905000/001204237.pdf"
+        },
+        {
+          "name": "資料１－１ 小児慢性特定疾病ごとに厚生労働大臣が定める疾病の状態の程度の一部を改正する件（案）に関する意見募集の結果について（案）",
+          "url": "https://www.mhlw.go.jp/content/10905000/001204153.pdf"
+        },
+        {
+          "name": "資料１－２ 小児慢性特定疾病におけるヒト成長ホルモン治療を行う場合の疾病の状態の程度に係る検討結果について（小児慢性特定疾病対策部会への報告案）",
+          "url": "https://www.mhlw.go.jp/content/10905000/001204154.pdf"
+        },
+        {
+          "name": "資料２－１ 小児慢性特定疾病に係る新規の疾病追加について情報提供のあった疾病（一覧表）",
+          "url": "https://www.mhlw.go.jp/content/10905000/001204155.pdf"
+        },
+        {
+          "name": "資料２－２ 小児慢性特疾病に係る新規の疾病追加について情報提供のあった疾病（個票）",
+          "url": "https://www.mhlw.go.jp/content/10905000/001204156.pdf"
+        },
+        {
+          "name": "資料３ 指定難病に係る新規の疾病追加について情報提供のあった疾病（個票）（第55回指定難病検討委員会において検討する疾病）",
+          "url": "https://www.mhlw.go.jp/content/10905000/001204157.pdf"
+        },
+        {
+          "name": "参考資料１ 小児慢性特定疾病におけるヒト成長ホルモン治療を行う場合の疾病の状態の程度について（第1回小児慢性特定疾病検討委員会資料）",
+          "url": "https://www.mhlw.go.jp/content/10905000/001204158.pdf"
+        },
+        {
+          "name": "参考資料２ 小児慢性特定疾病の検討について（第1回小児慢性特定疾病検討委員会資料）",
+          "url": "https://www.mhlw.go.jp/content/10905000/001204159.pdf"
+        },
+        {
+          "name": "参考資料３－１ 指定難病に係る新規の疾病追加について情報提供のあった疾病（一覧表）（第54回指定難病検討委員会資料）",
+          "url": "https://www.mhlw.go.jp/content/10905000/001204160.pdf"
+        },
+        {
+          "name": "参考資料３－２ 指定難病の検討について（第53回指定難病検討委員会資料）",
+          "url": "https://www.mhlw.go.jp/content/10905000/001204161.pdf"
+        },
+        {
+          "name": "参考資料３－３ 厚生科学審議会疾病対策部会指定難病検討委員会における指定難病に関する検討の基本方針（第53回指定難病検討委員会資料）",
+          "url": "https://www.mhlw.go.jp/content/10905000/001204162.pdf"
+        },
+        {
+          "name": "第2回 議事録",
+          "url": "https://www.mhlw.go.jp/stf/newpage_39374.html"
+        }
+      ]
+    },
+    {
+      "id": "mhlw-shakai_hosho_shouni_mansei_kento-20231227-001",
+      "councilId": "mhlw-shakai_hosho_shouni_mansei_kento",
+      "title": "第1回 社会保障審議会 小児慢性特定疾病対策部会 小児慢性特定疾病検討委員会",
+      "date": "2023/12/27",
+      "officialUrl": "https://www.mhlw.go.jp/stf/newpage_36905.html",
+      "category": "SPECIAL_COMMITTEE",
+      "ministry": "MHLW",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "議事次第",
+          "url": "https://www.mhlw.go.jp/content/10905000/001184068.pdf"
+        },
+        {
+          "name": "委員名簿",
+          "url": "https://www.mhlw.go.jp/content/10905000/001184069.pdf"
+        },
+        {
+          "name": "資料１－１ 指定難病の検討について",
+          "url": "https://www.mhlw.go.jp/content/10905000/001184070.pdf"
+        },
+        {
+          "name": "資料１－２ 厚生科学審議会疾病対策部会指定難病検討委員会における指定難病に関する検討の基本方針",
+          "url": "https://www.mhlw.go.jp/content/10905000/001184071.pdf"
+        },
+        {
+          "name": "資料２ 小児慢性特定疾病の検討について",
+          "url": "https://www.mhlw.go.jp/content/10905000/001184072.pdf"
+        },
+        {
+          "name": "資料３ 小児慢性特定疾病におけるヒト成長ホルモン治療を行う場合の疾病の状態の程度について",
+          "url": "https://www.mhlw.go.jp/content/10905000/001184073.pdf"
+        },
+        {
+          "name": "参考資料１ 指定難病の要件について（第26回指定難病検討委員会資料）",
+          "url": "https://www.mhlw.go.jp/content/10905000/001184074.pdf"
+        },
+        {
+          "name": "参考資料２ 今後の指定難病の検討の在り方について（第32回指定難病検討委員会資料）",
+          "url": "https://www.mhlw.go.jp/content/10905000/001184075.pdf"
+        },
+        {
+          "name": "参考資料３ 今後の指定難病の検討の在り方について（第40回指定難病検討委員会資料）",
+          "url": "https://www.mhlw.go.jp/content/10905000/001184076.pdf"
+        },
+        {
+          "name": "参考資料４ 制度見直しの議論を踏まえた指定難病に関する検討（第33回指定難病検討委員会資料）",
+          "url": "https://www.mhlw.go.jp/content/10905000/001184077.pdf"
+        },
+        {
+          "name": "参考資料５ 厚生科学審議会疾病対策部会指定難病検討委員会の設置について（第１回指定難病検討委員会資料）",
+          "url": "https://www.mhlw.go.jp/content/10905000/001184078.pdf"
+        },
+        {
+          "name": "参考資料６ 社会保障審議会小児慢性特定疾病対策部会小児慢性特定疾病検討委員会の設置について（第１回小児慢性特定疾病対策部会資料）",
+          "url": "https://www.mhlw.go.jp/content/10905000/001184079.pdf"
+        },
+        {
+          "name": "参考資料７ 社会保障審議会小児慢性特定疾病対策部会運営細則（第１回小児慢性特定疾病対策部会資料）",
+          "url": "https://www.mhlw.go.jp/content/10905000/001184080.pdf"
+        },
+        {
+          "name": "第1回 議事録",
+          "url": "https://www.mhlw.go.jp/stf/newpage_38301.html"
+        }
+      ]
     }
   ],
   "categories": {
@@ -245283,6 +245507,15 @@
       "title_selector": "h1, h2, .title",
       "date_regex": "(令和\\d+年\\d+月\\d+日|平成\\d+年\\d+月\\d+日|\\d{4}年\\d{1,2}月\\d{1,2}日)",
       "pdf_selector": "a[href*='.pdf'], a[href*='pdf']",
+      "deep_crawl_enabled": true,
+      "manualLock": true
+    },
+    "mhlw-shakai_hosho_shouni_mansei_kento": {
+      "rule_id": "rule-mhlw-shakai_hosho_shouni_mansei_kento",
+      "subpage_discovery_pattern": "https://www\\.mhlw\\.go\\.jp/stf/newpage_\\d+\\.html",
+      "title_selector": "h1, h2, .title",
+      "date_regex": "((?:令和|平成|\\d{4}年)\\s*\\d{1,2}月\\s*\\d{1,2}日|\\d{4}[年/\\-]\\d{1,2}[月/\\-]\\d{1,2})",
+      "pdf_selector": "a[href*='.pdf'], a[href*='/content/']",
       "deep_crawl_enabled": true,
       "manualLock": true
     }

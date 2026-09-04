@@ -734,7 +734,7 @@ def execute_rule_retrieval(target, html, rule_item, use_llm=False):
 
 
 def is_generic_index_url(url):
-    """報道発表インデックスやポータルトップ等の汎用インデックスURLかどうかを判定する"""
+    """報道発表インデックスやポータルトップ・開催状況一覧等の汎用インデックスURLかどうかを判定する"""
     if not url:
         return True
     u_lower = url.lower()
@@ -747,7 +747,12 @@ def is_generic_index_url(url):
         r'shingi/index\.html',
         r'/pressrelease/?$',
         r'/houdou_topics/?$',
-        r'/houdou/?$'
+        r'/houdou/?$',
+        r'comittee/kaisai\.html',
+        r'space/comittee/about\.html',
+        r'/kaisai\.html$',
+        r'indexshingi\.html',
+        r'newpage_19921\.html'
     ]
     for p in patterns:
         if re.search(p, u_lower):
