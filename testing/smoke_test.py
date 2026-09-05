@@ -296,6 +296,19 @@ def check_syntax_errors():
 
     return errors_found == 0
 
+def is_valid_test_url(u):
+    """URLが実在するWebアドレスか（スクレイピング正規表現等の誤検出でないか）を判定"""
+    if not u or not u.startswith(('http://', 'https://')):
+        return False
+    # PMHubダミー/テンプレートURLを除外
+    if any(d in u for d in ['pm-hub.gov.example', 'example.com', 'googleapis.com']):
+        return False
+    # scrapingRules の正規表現パターン・メタ構文の誤検出を除外
+    regex_chars = ['\\', '.*', '(?:', '[^', r'\d', r'\b', '|', '(?=']
+    if any(p in u for p in regex_chars):
+        return False
+    return True
+
 def get_added_urls_from_git():
     """git diff から新規追加・変更された URL を動的に抽出"""
     added_urls = set()
@@ -312,7 +325,7 @@ def get_added_urls_from_git():
                 if line.startswith("+") and not line.startswith("+++"):
                     found = re.findall(r"https?://[^\s\x22\x27,]+", line)
                     for u in found:
-                        if "pm-hub.gov.example" not in u and "googleapis.com" not in u:
+                        if is_valid_test_url(u):
                             added_urls.add(u)
         except Exception:
             pass
@@ -321,20 +334,22 @@ def get_added_urls_from_git():
 
 def check_link_health(explicit_urls=None, check_all=False):
     """2. 追加・変更された URL のみのリンク疎通確認"""
+    import time
+    from collections import defaultdict
     print("\n--------------------------------------------------")
     print(" [テスト 2/8] リンク疎通確認 (追加・変更 URL のみ対象)")
     print("--------------------------------------------------")
 
     target_urls = []
     if explicit_urls:
-        target_urls = explicit_urls
+        target_urls = [u for u in explicit_urls if is_valid_test_url(u)]
     elif check_all:
         data_json_path = os.path.join(PROJECT_ROOT, "docs", "data.json")
         if os.path.exists(data_json_path):
             with open(data_json_path, "r", encoding="utf-8") as f:
                 content = f.read()
-            target_urls = re.findall(r"https?://[^\s\x22\x27,]+", content)
-            target_urls = [u for u in target_urls if "example" not in u and "googleapis" not in u]
+            raw_urls = re.findall(r"https?://[^\s\x22\x27,]+", content)
+            target_urls = [u for u in raw_urls if is_valid_test_url(u)]
     else:
         target_urls = get_added_urls_from_git()
 
@@ -345,8 +360,13 @@ def check_link_health(explicit_urls=None, check_all=False):
         return True
 
     print(f"  検出された追加・変更 URL (計 {len(unique_urls)} 件) の疎通確認を実行中...")
-    headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36 PMHubSmokeTester/3.0'}
+    headers = {
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36',
+        'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+        'Accept-Language': 'ja,en-US;q=0.9,en;q=0.8'
+    }
     broken_links = 0
+    domain_last_time = defaultdict(float)
 
     for url in unique_urls:
         parsed_url = urllib.parse.urlparse(url)
@@ -354,6 +374,12 @@ def check_link_health(explicit_urls=None, check_all=False):
             print(f"  [FAIL 無効なスキーム] {url}")
             broken_links += 1
             continue
+
+        domain = parsed_url.netloc
+        elapsed = time.time() - domain_last_time[domain]
+        if elapsed < 0.35:
+            time.sleep(0.35 - elapsed)
+        domain_last_time[domain] = time.time()
 
         try:
             req = urllib.request.Request(url, headers=headers)
@@ -363,8 +389,8 @@ def check_link_health(explicit_urls=None, check_all=False):
                 else:
                     print(f"  [WARN {resp.status}] {url}")
         except urllib.error.HTTPError as e:
-            if e.code == 403:
-                print(f"  [PASS (403 Bot Protected)] {url}")
+            if e.code in (403, 401):
+                print(f"  [PASS (Bot Protected {e.code})] {url}")
             else:
                 print(f"  [FAIL リンク切れ ({e.code})] {url}")
                 broken_links += 1
