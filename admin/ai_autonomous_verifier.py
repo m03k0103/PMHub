@@ -9,19 +9,8 @@ import io
 import time
 from bs4 import BeautifulSoup
 from concurrent.futures import ThreadPoolExecutor, as_completed
-
-# Windows ターミナルログの文字化け防止 (chcp 65001 & UTF-8 再構成)
-if sys.platform == "win32":
-    os.system("chcp 65001 > NUL 2>&1")
-    try:
-        if hasattr(sys.stdout, 'reconfigure'):
-            sys.stdout.reconfigure(encoding='utf-8', errors='replace')
-            sys.stderr.reconfigure(encoding='utf-8', errors='replace')
-        else:
-            sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8', errors='replace')
-            sys.stderr = io.TextIOWrapper(sys.stderr.buffer, encoding='utf-8', errors='replace')
-    except Exception:
-        pass
+from utils import setup_win32_utf8, get_browser_headers
+setup_win32_utf8()
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 DATA_JSON_FILE = os.path.abspath(os.path.join(BASE_DIR, "..", "docs", "data.json"))
@@ -84,7 +73,7 @@ def verify_single_council(council, registered_names, registered_urls):
     # 2. HTTP connectivity & content evaluation
     req = urllib.request.Request(
         url,
-        headers={'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) PMHub-AI-Verifier/2.0'}
+        headers=get_browser_headers()
     )
     try:
         with urllib.request.urlopen(req, timeout=8) as res:

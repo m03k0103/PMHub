@@ -17,7 +17,7 @@ import time
 from datetime import datetime, timedelta
 from bs4 import BeautifulSoup
 import google.generativeai as genai
-from utils import setup_win32_utf8
+from utils import setup_win32_utf8, get_browser_headers, save_data_json_with_backup
 setup_win32_utf8()
 
 API_KEY = os.environ.get("GEMINI_API_KEY")
@@ -54,35 +54,6 @@ def init_crawler_logfile():
     except Exception as e:
         print(f"[WARN] Failed to initialize log file: {e}", file=sys.stderr)
         return None, None, "", ""
-
-
-def save_data_json_with_backup(data, target_file=DATA_JSON_FILE):
-    """
-    docs/data.json を更新する前に、タイムスタンプ付きで docs/backups/ に自動バックアップを作成し、
-    安全に上書き保存する（過去30世代保持）。
-    """
-    try:
-        os.makedirs(BACKUP_DIR, exist_ok=True)
-        if os.path.exists(target_file):
-            ts = datetime.now().strftime("%Y%m%d_%H%M%S")
-            backup_path = os.path.join(BACKUP_DIR, f"data_{ts}.json")
-            shutil.copy2(target_file, backup_path)
-            
-            # 過去30世代を超える古いバックアップの自動整理
-            b_files = sorted([os.path.join(BACKUP_DIR, f) for f in os.listdir(BACKUP_DIR) if f.startswith("data_") and f.endswith(".json")])
-            if len(b_files) > 30:
-                for old_f in b_files[:-30]:
-                    try:
-                        os.remove(old_f)
-                    except Exception:
-                        pass
-
-        with open(target_file, "w", encoding="utf-8") as f:
-            json.dump(data, f, ensure_ascii=False, indent=2)
-        return True
-    except Exception as e:
-        print(f"[ERROR] Failed to save data.json with backup: {e}", file=sys.stderr)
-        return False
 
 def load_crawler_config():
     if os.path.exists(DATA_JSON_FILE):
@@ -279,19 +250,7 @@ def fetch_url(url, timeout=12):
     if parsed_url.scheme not in ("http", "https"):
         print(f"[ERROR] Invalid scheme: {url}", file=sys.stderr)
         return None
-    headers = {
-        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36',
-        'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8',
-        'Accept-Language': 'ja,en-US;q=0.9,en;q=0.8',
-        'Sec-Ch-Ua': '"Chromium";v="128", "Not;A=Brand";v="24", "Google Chrome";v="128"',
-        'Sec-Ch-Ua-Mobile': '?0',
-        'Sec-Ch-Ua-Platform': '"Windows"',
-        'Sec-Fetch-Dest': 'document',
-        'Sec-Fetch-Mode': 'navigate',
-        'Sec-Fetch-Site': 'none',
-        'Sec-Fetch-User': '?1',
-        'Upgrade-Insecure-Requests': '1'
-    }
+    headers = get_browser_headers()
     req = urllib.request.Request(url, headers=headers)
     try:
         with urllib.request.urlopen(req, timeout=timeout) as response:
@@ -424,7 +383,8 @@ def validate_and_normalize_date(date_str):
     dt = parse_japanese_date(date_str)
     if not dt:
         return None
-    if 1990 <= dt.year <= 2035 and 1 <= dt.month <= 12 and 1 <= dt.day <= 31:
+    max_year = datetime.now().year + 2
+    if 1990 <= dt.year <= max_year and 1 <= dt.month <= 12 and 1 <= dt.day <= 31:
         return date_str.strip()
     return None
 

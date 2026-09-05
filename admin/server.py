@@ -9,7 +9,9 @@ import urllib.parse
 from datetime import datetime
 from apply_report import apply_report
 from discover_councils import run_discovery
-from crawler import run_meeting_crawler, save_data_json_with_backup
+from crawler import run_meeting_crawler
+from utils import setup_win32_utf8, save_data_json_with_backup
+setup_win32_utf8()
 
 PORT = 8000
 BASE_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
@@ -320,7 +322,7 @@ class CustomHandler(SimpleHTTPRequestHandler):
                 report = {
                     "_format": "pmhub-verification-report-v2",
                     "exportedAt": data.get("exportedAt"),
-                    "targetFile": "docs/data.js",
+                    "targetFile": "docs/data.json",
                     "corrections": data.get("corrections", [])
                 }
                 temp_json = os.path.join(os.path.dirname(__file__), "_temp_update.json")
@@ -335,7 +337,7 @@ class CustomHandler(SimpleHTTPRequestHandler):
                     self.send_response(200)
                     self.send_header('Content-Type', 'application/json; charset=utf-8')
                     self.end_headers()
-                    self.wfile.write(json.dumps({"status": "ok", "message": "docs/data.js successfully updated!"}).encode('utf-8'))
+                    self.wfile.write(json.dumps({"status": "ok", "message": "docs/data.json successfully updated!"}).encode('utf-8'))
                 else:
                     self.send_response(500)
                     self.end_headers()
@@ -354,8 +356,7 @@ class CustomHandler(SimpleHTTPRequestHandler):
                     with open(DATA_JSON_FILE, "r", encoding="utf-8") as f:
                         data = json.load(f)
                     data["discoveryKeywords"] = data_kw
-                    with open(DATA_JSON_FILE, "w", encoding="utf-8") as f:
-                        json.dump(data, f, ensure_ascii=False, indent=2)
+                    save_data_json_with_backup(data, DATA_JSON_FILE)
                 self.send_response(200)
                 self.send_header('Content-Type', 'application/json; charset=utf-8')
                 self.end_headers()
@@ -375,8 +376,7 @@ class CustomHandler(SimpleHTTPRequestHandler):
                     with open(DATA_JSON_FILE, "r", encoding="utf-8") as f:
                         data = json.load(f)
                     data["crawlerConfig"] = config_data
-                    with open(DATA_JSON_FILE, "w", encoding="utf-8") as f:
-                        json.dump(data, f, ensure_ascii=False, indent=2)
+                    save_data_json_with_backup(data, DATA_JSON_FILE)
                 self.send_response(200)
                 self.send_header('Content-Type', 'application/json; charset=utf-8')
                 self.end_headers()
@@ -434,11 +434,10 @@ class CustomHandler(SimpleHTTPRequestHandler):
                     if c_idx is not None:
                         target_council = councils.pop(c_idx)
                     
-                    if "discoveredCouncils" in data:
-                        del data["discoveredCouncils"]
+                    if "discoveredCouncils" in data and isinstance(data["discoveredCouncils"], list):
+                        data["discoveredCouncils"] = [c for c in data["discoveredCouncils"] if c.get("id") != target_id]
 
-                    with open(DATA_JSON_FILE, "w", encoding="utf-8") as df:
-                        json.dump(data, df, ensure_ascii=False, indent=2)
+                    save_data_json_with_backup(data, DATA_JSON_FILE)
 
                 if not any(rc.get("id") == target_id for rc in rejected_list):
                     rej_item = {
@@ -500,10 +499,9 @@ class CustomHandler(SimpleHTTPRequestHandler):
                             "officialUrl": target_rej.get("officialUrl", ""),
                             "status": "pending"
                         })
-                    if "discoveredCouncils" in data:
-                        del data["discoveredCouncils"]
-                    with open(DATA_JSON_FILE, "w", encoding="utf-8") as df:
-                        json.dump(data, df, ensure_ascii=False, indent=2)
+                    if "discoveredCouncils" in data and isinstance(data["discoveredCouncils"], list):
+                        data["discoveredCouncils"] = [c for c in data["discoveredCouncils"] if c.get("id") != target_id]
+                    save_data_json_with_backup(data, DATA_JSON_FILE)
 
                 self.send_response(200)
                 self.send_header('Content-Type', 'application/json; charset=utf-8')
@@ -618,8 +616,7 @@ class CustomHandler(SimpleHTTPRequestHandler):
                                     mat["manualLock"] = lock_value
                                 break
 
-                    with open(DATA_JSON_FILE, "w", encoding="utf-8") as df:
-                        json.dump(data, df, ensure_ascii=False, indent=2)
+                    save_data_json_with_backup(data, DATA_JSON_FILE)
 
                 self.send_response(200)
                 self.send_header('Content-Type', 'application/json; charset=utf-8')

@@ -16,52 +16,12 @@ import urllib.parse
 from datetime import datetime
 from bs4 import BeautifulSoup
 
-# Windows ターミナルログの文字化け防止
-if sys.platform == "win32":
-    os.system("chcp 65001 > NUL 2>&1")
-    try:
-        if hasattr(sys.stdout, 'reconfigure'):
-            sys.stdout.reconfigure(encoding='utf-8', errors='replace')
-            sys.stderr.reconfigure(encoding='utf-8', errors='replace')
-        else:
-            sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8', errors='replace')
-            sys.stderr = io.TextIOWrapper(sys.stderr.buffer, encoding='utf-8', errors='replace')
-    except Exception:
-        pass
+from utils import setup_win32_utf8, get_browser_headers, save_data_json_with_backup
+setup_win32_utf8()
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 PROJECT_ROOT = os.path.dirname(BASE_DIR)
 DATA_JSON_PATH = os.path.join(PROJECT_ROOT, "docs", "data.json")
-BACKUP_DIR = os.path.join(BASE_DIR, "backups")
-
-def save_data_json_with_backup(data, target_file=DATA_JSON_PATH):
-    """
-    docs/data.json を更新する前に、タイムスタンプ付きで admin/backups/ に自動バックアップを作成し、
-    安全に上書き保存する（過去30世代保持）。
-    """
-    import shutil
-    try:
-        os.makedirs(BACKUP_DIR, exist_ok=True)
-        if os.path.exists(target_file):
-            ts = datetime.now().strftime("%Y%m%d_%H%M%S")
-            backup_path = os.path.join(BACKUP_DIR, f"data_{ts}.json")
-            shutil.copy2(target_file, backup_path)
-            
-            # 過去30世代を超える古いバックアップの自動整理
-            b_files = sorted([os.path.join(BACKUP_DIR, f) for f in os.listdir(BACKUP_DIR) if f.startswith("data_") and f.endswith(".json")])
-            if len(b_files) > 30:
-                for old_f in b_files[:-30]:
-                    try:
-                        os.remove(old_f)
-                    except Exception:
-                        pass
-
-        with open(target_file, "w", encoding="utf-8") as f:
-            json.dump(data, f, ensure_ascii=False, indent=2)
-        return True
-    except Exception as e:
-        print(f"[ERROR] Failed to save data.json with backup: {e}", file=sys.stderr)
-        return False
 
 
 def load_keywords():
@@ -147,9 +107,7 @@ def fetch_page_and_final_url(url):
     """
     req = urllib.request.Request(
         url,
-        headers={
-            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36 PMHubDiscovery/1.0"
-        }
+        headers=get_browser_headers()
     )
     try:
         with urllib.request.urlopen(req, timeout=10) as res:

@@ -599,7 +599,7 @@ JSON データを読み込み中...
       <!-- Meetings Bulk Actions -->
       <div class="bulk-actions">
         <button class="btn-bulk check-urls" id="btnCheckAllMeetingMats">🔗 全会議の資料を一括疎通チェック</button>
-        <button class="btn-bulk export-json" onclick="saveMeetingUrlsDirectToDataJs()" style="background: rgba(16,185,129,0.15); color: #10b981; border-color: rgba(16,185,129,0.4);">💾 docs/data.json に直接反映</button>
+        <button class="btn-bulk export-json" onclick="saveMeetingUrlsDirectToDataJson()" style="background: rgba(16,185,129,0.15); color: #10b981; border-color: rgba(16,185,129,0.4);">💾 docs/data.json に直接反映</button>
         <button class="btn-bulk export-json" id="btnExportMeetingsJson">📥 変更をJSONエクスポート</button>
       </div>
 
@@ -645,7 +645,7 @@ JSON データを読み込み中...
         <button class="btn-bulk check-urls" id="btnLoadAiReport" style="background: rgba(163,230,53,0.15); color: #a3e635; border-color: rgba(163,230,53,0.4);">🤖 AIの自動判定をロードする</button>
         <button class="btn-bulk check-urls" id="btnCheckUrls">🔗 URL一括疎通チェック</button>
         <button class="btn-bulk approve-all" id="btnApproveAll">✅ 未レビューを全て承認</button>
-        <button class="btn-bulk export-json" id="btnSaveCouncilDirect" onclick="saveCouncilDirectToDataJs()" style="background: rgba(16,185,129,0.15); color: #10b981; border-color: rgba(16,185,129,0.4);">💾 docs/data.json に直接反映</button>
+        <button class="btn-bulk export-json" id="btnSaveCouncilDirect" onclick="saveCouncilDirectToDataJson()" style="background: rgba(16,185,129,0.15); color: #10b981; border-color: rgba(16,185,129,0.4);">💾 docs/data.json に直接反映</button>
         <button class="btn-bulk export-json" id="btnExportJson">📥 承認済をJSONエクスポート</button>
       </div>
 
@@ -709,7 +709,7 @@ JSON データを読み込み中...
     <!-- ── TAB 5: 省庁メタデータ管理 ── -->
     <div id="tab-ministries" class="tab-content">
       <div class="bulk-actions" style="margin-bottom: 1rem;">
-        <button class="btn-bulk export-json" onclick="saveDirectToDataJs()" style="background: rgba(16,185,129,0.15); color: #10b981; border-color: rgba(16,185,129,0.4);">💾 docs/data.json に直接反映</button>
+        <button class="btn-bulk export-json" onclick="saveDirectToDataJson()" style="background: rgba(16,185,129,0.15); color: #10b981; border-color: rgba(16,185,129,0.4);">💾 docs/data.json に直接反映</button>
         <button class="btn-bulk export-json" onclick="exportMinistryJson()">📥 変更をJSONエクスポート</button>
       </div>
       <div id="ministryListContainer"></div>
@@ -1789,7 +1789,7 @@ JSON データを読み込み中...
     };
 
     let isSavingMeetingUrlsDirect = false;
-    window.saveMeetingUrlsDirectToDataJs = async function() {
+    window.saveMeetingUrlsDirectToDataJson = async function() {
       if (isSavingMeetingUrlsDirect) return;
       isSavingMeetingUrlsDirect = true;
       try {
@@ -1886,12 +1886,13 @@ JSON データを読み込み中...
       if (isLocalhost) {
         alert('【サーバー保存エラー】localhost:8000 への保存処理が完了できませんでした。\nローカルサーバー (py admin/server.py) が正常に起動しているかご確認ください。\n\nバックアップとしてJSONを出力しました。');
       } else {
-        alert('file:// 直開きのブラウザ制限によりファイル直接上書きが制限されているため、JSONを出力しました。\n\nターミナルで以下を実行すると data.js に反映できます：\npy admin/apply_report.py admin/meeting_urls_updates_*.json');
+        alert('file:// 直開きのブラウザ制限によりファイル直接上書きが制限されているため、JSONを出力しました。\n\nターミナルで以下を実行すると docs/data.json に反映できます：\npy admin/apply_report.py admin/meeting_urls_updates_*.json');
       }
       } finally {
         isSavingMeetingUrlsDirect = false;
       }
     };
+    window.saveMeetingUrlsDirectToDataJs = window.saveMeetingUrlsDirectToDataJson;
 
     document.getElementById('btnExportMeetingsJson').addEventListener('click', async () => {
       const corrections = [];
@@ -2363,7 +2364,7 @@ JSON データを読み込み中...
     };
 
     let isSavingMinistryDirect = false;
-    window.saveDirectToDataJs = async function() {
+    window.saveDirectToDataJson = async function() {
       if (isSavingMinistryDirect) return;
       isSavingMinistryDirect = true;
       try {
@@ -2458,12 +2459,13 @@ JSON データを読み込み中...
       if (isLocalhost) {
         alert('【サーバー保存エラー】localhost:8000 への保存処理が完了できませんでした。\nローカルサーバー (py admin/server.py) が正常に起動しているかご確認ください。\n\nバックアップとしてJSONを出力しました。');
       } else {
-        alert('file:// 直開きのブラウザ制限によりファイル直接上書きが制限されているため、JSONを出力しました。\n\nターミナルで以下を実行すると data.js に反映できます：\npy admin/apply_report.py admin/ministry_updates_*.json');
+        alert('file:// 直開きのブラウザ制限によりファイル直接上書きが制限されているため、JSONを出力しました。\n\nターミナルで以下を実行すると docs/data.json に反映できます：\npy admin/apply_report.py admin/ministry_updates_*.json');
       }
       } finally {
         isSavingMinistryDirect = false;
       }
     };
+    window.saveDirectToDataJs = window.saveDirectToDataJson;
 
     renderMinistryList();
 
@@ -2747,9 +2749,9 @@ JSON データを読み込み中...
       });
     });
 
-    // ─── Save Council to data.js (including new discovered councils) ───
+    // ─── Save Council to docs/data.json (including new discovered councils) ───
     let isSavingCouncilDirect = false;
-    window.saveCouncilDirectToDataJs = async function() {
+    window.saveCouncilDirectToDataJson = async function() {
       if (isSavingCouncilDirect) return;
       isSavingCouncilDirect = true;
       const btn = document.getElementById('btnSaveCouncilDirect');
@@ -2927,13 +2929,14 @@ JSON データを読み込み中...
       if (isLocalhost) {
         alert('【サーバー保存エラー】localhost:8000 への保存処理が完了できませんでした。\nローカルサーバー (py admin/server.py) が正常に起動しているかご確認ください。\n\nバックアップとしてJSONを出力しました。');
       } else {
-        alert('file:// 直開きのブラウザ制限によりファイル直接上書きが制限されているため、JSONを出力しました。\n\nターミナルで以下を実行すると data.js に反映できます：\npy admin/apply_report.py admin/verification_report_*.json');
+        alert('file:// 直開きのブラウザ制限によりファイル直接上書きが制限されているため、JSONを出力しました。\n\nターミナルで以下を実行すると docs/data.json に反映できます：\npy admin/apply_report.py admin/verification_report_*.json');
       }
       } finally {
         isSavingCouncilDirect = false;
         if (btn) { btn.disabled = false; btn.textContent = origText || '💾 docs/data.json に直接反映'; }
       }
     };
+    window.saveCouncilDirectToDataJs = window.saveCouncilDirectToDataJson;
 
     document.getElementById('btnExportJson').addEventListener('click', async () => {
       const approvedCouncils = allCouncils.filter(c => verdicts[c.id] && verdicts[c.id].verdict === 'approved');

@@ -10,8 +10,15 @@ Thumbs.db
 .vscode/
 .idea/
 node_modules
+
+# Backups & Logs
 docs/backups/
 admin/backups/
 logs/
 admin/logs/
 *.log
+
+# Temporary & Backup files
+*.tmp
+*.bak
+_temp_*.json

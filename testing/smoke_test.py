@@ -21,7 +21,7 @@ import argparse
 
 PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, os.path.join(PROJECT_ROOT, "admin"))
-from utils import setup_win32_utf8
+from utils import setup_win32_utf8, get_browser_headers
 setup_win32_utf8()
 
 
@@ -74,140 +74,6 @@ def check_js_syntax(code, file_path=""):
             if top_char != expected:
                 return False, f"括弧ペア不一致: '{top_char}' ({top_line}行目) に対し '{char}' ({line_no}行目)"
         col_no += 1
-
-    if "data.js" in file_path or "const MEETINGS =" in code:
-        token_spec = [
-            ('COMMENT_SINGLE', r'//.*'),
-            ('COMMENT_MULTI',  r'/\*[\s\S]*?\*/'),
-            ('STRING',         r"'(?:\\.|[^'\\])*'|\"(?:\\.|[^\"\\])*\"|`(?:\\.|[^`\\])*`"),
-            ('NUMBER',         r'-?\d+(?:\.\d+)?'),
-            ('BOOL_NULL',      r'\b(true|false|null|undefined)\b'),
-            ('KEYWORD',        r'\b(const|let|var)\b'),
-            ('IDENT',          r'[a-zA-Z_$][a-zA-Z0-9_$]*'),
-            ('COLON',          r':'),
-            ('COMMA',          r','),
-            ('LBRACE',         r'\{'),
-            ('RBRACE',         r'\}'),
-            ('LBRACK',         r'\['),
-            ('RBRACK',         r'\]'),
-            ('EQUALS',         r'='),
-            ('SEMI',           r';'),
-            ('NEWLINE',        r'\n'),
-            ('SKIP',           r'[ \t\r]+'),
-            ('MISMATCH',       r'.'),
-        ]
-
-        tok_regex = '|'.join('(?P<%s>%s)' % pair for pair in token_spec)
-        tok_line = 1
-        tok_line_start = 0
-
-        tokens = []
-        for mo in re.finditer(tok_regex, code):
-            kind = mo.lastgroup
-            value = mo.group()
-            column = mo.start() - tok_line_start
-            if kind == 'NEWLINE':
-                tok_line += 1
-                tok_line_start = mo.end()
-                continue
-            elif kind in ('SKIP', 'COMMENT_SINGLE', 'COMMENT_MULTI'):
-                continue
-            elif kind == 'MISMATCH':
-                return False, f"不正な文字 '{value}' (行 {tok_line}, 列 {column})"
-            tokens.append((kind, value, tok_line, column))
-
-        pos = 0
-
-        def peek():
-            return tokens[pos] if pos < len(tokens) else None
-
-        def consume(expected_kind=None):
-            nonlocal pos
-            t = peek()
-            if not t:
-                raise SyntaxError(f"予期せぬファイル末尾 (期待: {expected_kind})")
-            if expected_kind and t[0] != expected_kind:
-                raise SyntaxError(f"行 {t[2]}, 列 {t[3]}: '{expected_kind}' が必要ですが '{t[1]}' が指定されています")
-            pos += 1
-            return t
-
-        def parse_val():
-            t = peek()
-            if not t:
-                raise SyntaxError("値が必要です")
-            if t[0] == 'LBRACE':
-                parse_obj()
-            elif t[0] == 'LBRACK':
-                parse_arr()
-            elif t[0] in ('STRING', 'NUMBER', 'BOOL_NULL', 'IDENT', 'KEYWORD'):
-                consume()
-            else:
-                raise SyntaxError(f"行 {t[2]}, 列 {t[3]}: 値のコンテキストで不正なトークン '{t[1]}'")
-
-        def parse_obj():
-            consume('LBRACE')
-            while True:
-                t = peek()
-                if not t:
-                    raise SyntaxError("閉じ括弧 '}' がありません")
-                if t[0] == 'RBRACE':
-                    consume('RBRACE')
-                    break
-                if t[0] not in ('IDENT', 'STRING', 'KEYWORD'):
-                    raise SyntaxError(f"行 {t[2]}, 列 {t[3]}: プロパティキーが必要です (実際: '{t[1]}')")
-                consume()
-                consume('COLON')
-                parse_val()
-                
-                t = peek()
-                if t and t[0] == 'COMMA':
-                    consume('COMMA')
-                    if peek() and peek()[0] == 'RBRACE':
-                        consume('RBRACE')
-                        break
-                elif t and t[0] == 'RBRACE':
-                    consume('RBRACE')
-                    break
-                else:
-                    raise SyntaxError(f"行 {t[2]}, 列 {t[3]}: カンマ ',' または '}}' が必要です ('{t[1]}' が存在します)")
-
-        def parse_arr():
-            consume('LBRACK')
-            while True:
-                t = peek()
-                if not t:
-                    raise SyntaxError("閉じ括弧 ']' がありません")
-                if t[0] == 'RBRACK':
-                    consume('RBRACK')
-                    break
-                parse_val()
-                
-                t = peek()
-                if t and t[0] == 'COMMA':
-                    consume('COMMA')
-                    if peek() and peek()[0] == 'RBRACK':
-                        consume('RBRACK')
-                        break
-                elif t and t[0] == 'RBRACK':
-                    consume('RBRACK')
-                    break
-                else:
-                    raise SyntaxError(f"行 {t[2]}, 列 {t[3]}: カンマ ',' または ']' が必要です ('{t[1]}' が存在します)")
-
-        try:
-            while pos < len(tokens):
-                t = peek()
-                if t[0] == 'KEYWORD' and t[1] in ('const', 'let', 'var'):
-                    consume('KEYWORD')
-                    consume('IDENT')
-                    consume('EQUALS')
-                    parse_val()
-                    if peek() and peek()[0] == 'SEMI':
-                        consume('SEMI')
-                else:
-                    pos += 1
-        except SyntaxError as e:
-            return False, f"データ構文エラー: {str(e)}"
 
     return True, "JavaScript Syntax OK"
 
@@ -360,11 +226,7 @@ def check_link_health(explicit_urls=None, check_all=False):
         return True
 
     print(f"  検出された追加・変更 URL (計 {len(unique_urls)} 件) の疎通確認を実行中...")
-    headers = {
-        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36',
-        'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
-        'Accept-Language': 'ja,en-US;q=0.9,en;q=0.8'
-    }
+    headers = get_browser_headers()
     broken_links = 0
     domain_last_time = defaultdict(float)
 
