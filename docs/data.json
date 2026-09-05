@@ -8676,7 +8676,7 @@
       "ministry": "CAO",
       "category": "COMMITTEE",
       "officialUrl": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/index.html",
-      "pastYearCount": 4,
+      "pastYearCount": 3,
       "status": "approved",
       "crawlStatus": {
         "lastAttempt": "2026-09-05 08:27:46",
@@ -8687,7 +8687,8 @@
         "failureReason": "",
         "consecutiveFailures": 0,
         "manualLockActive": false
-      }
+      },
+      "manualLock": true
     },
     {
       "id": "cao-241",
@@ -26480,25 +26481,6 @@
         }
       ],
       "manualLock": true
-    },
-    {
-      "id": "cao-238-20280331-088",
-      "councilId": "cao-238",
-      "title": "障害者政策委員会（第88回）議事録 - 内閣府",
-      "date": "2028/03/31",
-      "officialUrl": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_88/gijiroku.html",
-      "category": "COUNCIL",
-      "ministry": "CAO",
-      "materials": [
-        {
-          "name": "（PDF形式：112KB）",
-          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_88/pdf/gijiroku.pdf",
-          "type": "PDF",
-          "isPrivate": false
-        }
-      ],
-      "isNewlyDiscovered": true,
-      "discoveredAt": "2026/09/05 08:27"
     },
     {
       "id": "cao-227-20260908-034",
@@ -132277,25 +132259,6 @@
           "url": "https://www.mhlw.go.jp/stf/newpage_69284.html"
         }
       ]
-    },
-    {
-      "id": "cao-238-20260129-087",
-      "councilId": "cao-238",
-      "title": "障害者政策委員会（第87回）議事録 - 内閣府",
-      "date": "2026/01/29",
-      "officialUrl": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_87/gijiroku.html",
-      "category": "COUNCIL",
-      "ministry": "CAO",
-      "materials": [
-        {
-          "name": "（PDF形式：140KB）",
-          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_87/pdf/gijiroku.pdf",
-          "type": "PDF",
-          "isPrivate": false
-        }
-      ],
-      "isNewlyDiscovered": true,
-      "discoveredAt": "2026/09/05 08:27"
     },
     {
       "id": "mhlw-kigyou_nenkin_mieruka_kondan-20260128-002",
@@ -313004,18 +312967,6 @@
       ]
     },
     {
-      "id": "cao-238-20150210-004",
-      "councilId": "cao-238",
-      "title": "第4回 障害者政策委員会",
-      "date": "2015/02/10",
-      "officialUrl": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/txt/dai4honbun.txt",
-      "category": "COUNCIL",
-      "ministry": "CAO",
-      "materials": [],
-      "isNewlyDiscovered": true,
-      "discoveredAt": "2026/09/05 08:27"
-    },
-    {
       "id": "fsc-sinkaihatu-20150206-104",
       "councilId": "fsc-sinkaihatu",
       "title": "第１０４回 新開発食品専門調査会（非公開）",
@@ -330722,25 +330673,6 @@
       "category": "STUDY"
     },
     {
-      "id": "cao-238-20101217-086",
-      "councilId": "cao-238",
-      "title": "障害者政策委員会（第86回）議事録 - 内閣府",
-      "date": "2010/12/17",
-      "officialUrl": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_86/gijiroku.html",
-      "category": "COUNCIL",
-      "ministry": "CAO",
-      "materials": [
-        {
-          "name": "（PDF形式：159KB）",
-          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_86/pdf/gijiroku.pdf",
-          "type": "PDF",
-          "isPrivate": false
-        }
-      ],
-      "isNewlyDiscovered": true,
-      "discoveredAt": "2026/09/05 08:27"
-    },
-    {
       "id": "aca-bunkazai_hogojoyaku-20101216-h22_006",
       "councilId": "aca-bunkazai_hogojoyaku",
       "title": "平成22年 第6回 文化審議会文化財分科会 無形文化遺産保護条約に関する特別委員会",
@@ -347212,6 +347144,4862 @@
           "url": "https://www.mhlw.go.jp/stf/shingi2/0000167003.html"
         }
       ]
+    },
+    {
+      "id": "cao-238-20260708-088",
+      "councilId": "cao-238",
+      "title": "第88回 障害者政策委員会",
+      "date": "2026/07/08",
+      "officialUrl": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_88/index.html",
+      "category": "COMMITTEE",
+      "ministry": "CAO",
+      "materials": [
+        {
+          "name": "障害者に対する偏見や差別のない共生社会の実現に向けた行動計画の実施状況",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_88/pdf/s1-1.pdf"
+        },
+        {
+          "name": "障害者差別解消に関する事業者等の取組状況調査",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_88/pdf/s1-2.pdf"
+        },
+        {
+          "name": "障害者に対する偏見や差別のない共生社会の実現に向けた対策推進本部幹事会議事概要",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_88/pdf/s1-3.pdf"
+        },
+        {
+          "name": "障害者基本計画（第５次）の実施状況（相対的欠格条項等の現況）",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_88/pdf/s2.pdf"
+        },
+        {
+          "name": "今後の審議の進め方",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_88/pdf/s3.pdf"
+        },
+        {
+          "name": "石橋委員提出資料",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_88/pdf/s4-1.pdf"
+        },
+        {
+          "name": "平野委員提出資料",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_88/pdf/s4-2.pdf"
+        },
+        {
+          "name": "臼井専門委員提出資料",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_88/pdf/s4-3.pdf"
+        },
+        {
+          "name": "内閣府障害者政策委員会　第７期委員名簿",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_88/pdf/ref1.pdf"
+        },
+        {
+          "name": "障害者に対する偏見や差別のない共生社会の実現に向けた行動計画（概要）",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_88/pdf/ref2.pdf"
+        },
+        {
+          "name": "第88回 障害者政策委員会 議事録（PDF）",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_88/pdf/gijiroku.pdf"
+        },
+        {
+          "name": "第88回 障害者政策委員会 議事録",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_88/gijiroku.html"
+        }
+      ],
+      "manualLock": true
+    },
+    {
+      "id": "cao-238-20260129-087",
+      "councilId": "cao-238",
+      "title": "第87回 障害者政策委員会",
+      "date": "2026/01/29",
+      "officialUrl": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_87/index.html",
+      "category": "COMMITTEE",
+      "ministry": "CAO",
+      "materials": [
+        {
+          "name": "障害者基本計画（第５次）の実施状況（令和６年度）",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_87/pdf/s1-1.pdf"
+        },
+        {
+          "name": "（別表）障害者基本計画（第５次）関連成果目標",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_87/pdf/s1-2.pdf"
+        },
+        {
+          "name": "国の審議会等における障害のある女性委員の人数等について",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_87/pdf/s1-3.pdf"
+        },
+        {
+          "name": "国家資格試験の実施等に当たっての障害特性に応じた合理的配慮の提供状況",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_87/pdf/s1-4.pdf"
+        },
+        {
+          "name": "安部井委員提出資料",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_87/pdf/s2-1.pdf"
+        },
+        {
+          "name": "岩上委員提出資料",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_87/pdf/s2-2.pdf"
+        },
+        {
+          "name": "石橋委員提出資料",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_87/pdf/s2-3.pdf"
+        },
+        {
+          "name": "平野委員提出資料",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_87/pdf/s2-4.pdf"
+        },
+        {
+          "name": "臼井専門委員提出資料",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_87/pdf/s2-5.pdf"
+        },
+        {
+          "name": "内閣府障害者政策委員会 第７期委員名簿",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_86/pdf/ref1.pdf"
+        },
+        {
+          "name": "障害者基本計画（第５次）の実施状況（令和６年度）に対する意見及び回答",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_87/pdf/jigo_s1.pdf"
+        },
+        {
+          "name": "国家資格試験の実施等に当たっての障害特性に応じた合理的配慮の提供状況（令和７年１２月１日現在）に対する意見及び回答",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_87/pdf/jigo_s2.pdf"
+        },
+        {
+          "name": "第87回 障害者政策委員会 議事録（PDF）",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_87/pdf/gijiroku.pdf"
+        },
+        {
+          "name": "第87回 障害者政策委員会 議事録",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_87/gijiroku.html"
+        }
+      ],
+      "manualLock": true
+    },
+    {
+      "id": "cao-238-20251119-086",
+      "councilId": "cao-238",
+      "title": "第86回 障害者政策委員会",
+      "date": "2025/11/19",
+      "officialUrl": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_86/index.html",
+      "category": "COMMITTEE",
+      "ministry": "CAO",
+      "materials": [
+        {
+          "name": "障害者基本計画（第５次）の実施状況（令和６年度）",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_86/pdf/s1-1.pdf"
+        },
+        {
+          "name": "（別表）障害者基本計画（第５次）関連成果目標",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_86/pdf/s1-2.pdf"
+        },
+        {
+          "name": "新銀委員提出資料",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_86/pdf/s2-1.pdf"
+        },
+        {
+          "name": "岩上委員提出資料",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_86/pdf/s2-2.pdf"
+        },
+        {
+          "name": "石橋委員提出資料",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_86/pdf/s2-3.pdf"
+        },
+        {
+          "name": "内閣府障害者政策委員会 第７期委員名簿",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_86/pdf/ref1.pdf"
+        },
+        {
+          "name": "障害者政策委員会（第86回）後日回答としたもの",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_86/pdf/jigo_s1.pdf"
+        },
+        {
+          "name": "第86回 障害者政策委員会 議事録（PDF）",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_86/pdf/gijiroku.pdf"
+        },
+        {
+          "name": "第86回 障害者政策委員会 議事録",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_86/gijiroku.html"
+        }
+      ],
+      "manualLock": true
+    },
+    {
+      "id": "cao-238-20251028-085",
+      "councilId": "cao-238",
+      "title": "第85回 障害者政策委員会",
+      "date": "2025/10/28",
+      "officialUrl": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_85/index.html",
+      "category": "COMMITTEE",
+      "ministry": "CAO",
+      "materials": [
+        {
+          "name": "今後の障害者政策委員会の議題について",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_85/pdf/s1.pdf"
+        },
+        {
+          "name": "障害者基本計画（第５次）の実施状況（令和６年度）",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_85/pdf/s2-1.pdf"
+        },
+        {
+          "name": "（別表）障害者基本計画（第５次）関連成果目標",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_85/pdf/s2-2.pdf"
+        },
+        {
+          "name": "国の審議会等における障害のある女性委員の人数等について",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_85/pdf/s2-3.pdf"
+        },
+        {
+          "name": "石橋委員提出資料",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_85/pdf/s3.pdf"
+        },
+        {
+          "name": "内閣府障害者政策委員会 第７期委員名簿",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_85/pdf/ref1.pdf"
+        },
+        {
+          "name": "障害者政策委員会（第85回）後日回答としたもの",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_85/pdf/jigo_s1.pdf"
+        },
+        {
+          "name": "第85回 障害者政策委員会 議事録（PDF）",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_85/pdf/gijiroku.pdf"
+        },
+        {
+          "name": "第85回 障害者政策委員会 議事録",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_85/gijiroku.html"
+        }
+      ],
+      "manualLock": true
+    },
+    {
+      "id": "cao-238-20250716-084",
+      "councilId": "cao-238",
+      "title": "第84回 障害者政策委員会",
+      "date": "2025/07/16",
+      "officialUrl": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_84/index.html",
+      "category": "COMMITTEE",
+      "ministry": "CAO",
+      "materials": [
+        {
+          "name": "障害を理由とする差別の解消に向けた相談窓口の試行に係る調査研究（概要）",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_84/pdf/s1-1.pdf"
+        },
+        {
+          "name": "障害を理由とする差別の解消に向けた相談窓口の試行に係る調査研究（全文）",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_84/pdf/s1-2.pdf"
+        },
+        {
+          "name": "手話施策推進法（概要）",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_84/pdf/s2-1.pdf"
+        },
+        {
+          "name": "手話施策推進法（本文）",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_84/pdf/s2-2.pdf"
+        },
+        {
+          "name": "手話に関する施策の推進に関する法律の施行について（通知）",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_84/pdf/s2-3.pdf"
+        },
+        {
+          "name": "石橋委員提出資料（手話施策推進法の施行に寄せて）",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_84/pdf/s2-4.pdf"
+        },
+        {
+          "name": "石橋委員提出資料（手話言語法策定に向けた取り組み）",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_84/pdf/s2-5.pdf"
+        },
+        {
+          "name": "「ともともフェスタ 2025」開催（概要）",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_84/pdf/s3.pdf"
+        },
+        {
+          "name": "内閣府障害者政策委員会 第７期委員名簿",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_84/pdf/ref1.pdf"
+        },
+        {
+          "name": "障害者政策委員会（第84回）後日回答としたもの",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_84/pdf/jigo_s1.pdf"
+        },
+        {
+          "name": "第84回 障害者政策委員会 議事録（PDF）",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_84/pdf/gijiroku.pdf"
+        },
+        {
+          "name": "第84回 障害者政策委員会 議事録",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_84/gijiroku.html"
+        }
+      ],
+      "manualLock": true
+    },
+    {
+      "id": "cao-238-20250312-083",
+      "councilId": "cao-238",
+      "title": "第83回 障害者政策委員会",
+      "date": "2025/03/12",
+      "officialUrl": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_83/index.html",
+      "category": "COMMITTEE",
+      "ministry": "CAO",
+      "materials": [
+        {
+          "name": "障害者に対する偏見や差別のない共生社会の実現に向けた行動計画（概要）",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_83/pdf/s1-1.pdf"
+        },
+        {
+          "name": "障害者に対する偏見や差別のない共生社会の実現に向けた行動計画（本文）",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_83/pdf/s1-2.pdf"
+        },
+        {
+          "name": "障害のある人への偏見や差別の根絶に向けた官房長官訓示",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_83/pdf/s2.pdf"
+        },
+        {
+          "name": "日比委員提出資料",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_83/pdf/s3.pdf"
+        },
+        {
+          "name": "内閣府障害者政策委員会 第７期委員名簿",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_83/pdf/ref1.pdf"
+        },
+        {
+          "name": "障害者政策委員会令",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_83/pdf/ref2.pdf"
+        },
+        {
+          "name": "障害者政策委員会運営規則",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_83/pdf/ref3.pdf"
+        },
+        {
+          "name": "障害者政策委員会（第83回）後日回答としたもの",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_83/pdf/jigo_s1.pdf"
+        },
+        {
+          "name": "第83回 障害者政策委員会 議事録（PDF）",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_83/pdf/gijiroku.pdf"
+        },
+        {
+          "name": "第83回 障害者政策委員会 議事録",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_83/gijiroku.html"
+        }
+      ],
+      "manualLock": true
+    },
+    {
+      "id": "cao-238-20241211-082",
+      "councilId": "cao-238",
+      "title": "第82回 障害者政策委員会",
+      "date": "2024/12/11",
+      "officialUrl": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_82/index.html",
+      "category": "COMMITTEE",
+      "ministry": "CAO",
+      "materials": [
+        {
+          "name": "障害者基本計画（第５次）の実施状況（令和５年度）",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_82/pdf/s1-1.pdf"
+        },
+        {
+          "name": "（別表）障害者基本計画（第５次）関連成果目標",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_82/pdf/s1-2.pdf"
+        },
+        {
+          "name": "「障害者基本計画（第５次）の実施状況」及び「（別表）障害者基本計画（第５次）関連成果目標」更新表",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_82/pdf/s1-3.pdf"
+        },
+        {
+          "name": "内閣人事局提出資料",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_82/pdf/s2-1.pdf"
+        },
+        {
+          "name": "内閣府提出資料",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_82/pdf/s2-2.pdf"
+        },
+        {
+          "name": "警察庁提出資料",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_82/pdf/s2-3.pdf"
+        },
+        {
+          "name": "金融庁提出資料",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_82/pdf/s2-4.pdf"
+        },
+        {
+          "name": "消費者庁提出資料",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_82/pdf/s2-5.pdf"
+        },
+        {
+          "name": "こども家庭庁提出資料",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_82/pdf/s2-6.pdf"
+        },
+        {
+          "name": "デジタル庁提出資料",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_82/pdf/s2-7.pdf"
+        },
+        {
+          "name": "復興庁提出資料",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_82/pdf/s2-8.pdf"
+        },
+        {
+          "name": "総務省提出資料",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_82/pdf/s2-9.pdf"
+        },
+        {
+          "name": "法務省提出資料",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_82/pdf/s2-10.pdf"
+        },
+        {
+          "name": "外務省提出資料",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_82/pdf/s2-11.pdf"
+        },
+        {
+          "name": "文部科学省提出資料",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_82/pdf/s2-12.pdf"
+        },
+        {
+          "name": "厚生労働省提出資料",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_82/pdf/s2-13.pdf"
+        },
+        {
+          "name": "農林水産省提出資料",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_82/pdf/s2-14.pdf"
+        },
+        {
+          "name": "経済産業省提出資料",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_82/pdf/s2-15.pdf"
+        },
+        {
+          "name": "国土交通省提出資料",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_82/pdf/s2-16.pdf"
+        },
+        {
+          "name": "環境省提出資料",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_82/pdf/s2-17.pdf"
+        },
+        {
+          "name": "石橋委員提出資料",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_82/pdf/s3-1.pdf"
+        },
+        {
+          "name": "佐藤委員提出資料",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_82/pdf/s3-2.pdf"
+        },
+        {
+          "name": "日比委員提出資料",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_82/pdf/s3-3.pdf"
+        },
+        {
+          "name": "臼井専門委員提出資料",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_82/pdf/s3-4.pdf"
+        },
+        {
+          "name": "障害者基本計画（第５次）の実施状況（令和５年度）に対する意見及び回答",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_82/pdf/jigo_s1.pdf"
+        },
+        {
+          "name": "その他資料に対する意見及び回答",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_82/pdf/jigo_s2.pdf"
+        },
+        {
+          "name": "第82回 障害者政策委員会 議事録（PDF）",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_82/pdf/gijiroku.pdf"
+        },
+        {
+          "name": "第82回 障害者政策委員会 議事録",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_82/gijiroku.html"
+        }
+      ],
+      "manualLock": true
+    },
+    {
+      "id": "cao-238-20241029-081",
+      "councilId": "cao-238",
+      "title": "第81回 障害者政策委員会",
+      "date": "2024/10/29",
+      "officialUrl": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_81/index.html",
+      "category": "COMMITTEE",
+      "ministry": "CAO",
+      "materials": [
+        {
+          "name": "（報告）G7 包摂と障害に関する担当大臣会合",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_81/pdf/s1-1.pdf"
+        },
+        {
+          "name": "ソルファニャーノ憲章概要",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_81/pdf/s1-2.pdf"
+        },
+        {
+          "name": "障害者基本計画（第５次）の実施状況（令和５年度）",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_81/pdf/s2-1.pdf"
+        },
+        {
+          "name": "（別表）障害者基本計画（第５次）関連成果目標",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_81/pdf/s2-2.pdf"
+        },
+        {
+          "name": "内閣人事局提出資料",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_81/pdf/s3-1.pdf"
+        },
+        {
+          "name": "内閣府提出資料",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_81/pdf/s3-2.pdf"
+        },
+        {
+          "name": "警察庁提出資料",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_81/pdf/s3-3.pdf"
+        },
+        {
+          "name": "金融庁提出資料",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_81/pdf/s3-4.pdf"
+        },
+        {
+          "name": "消費者庁提出資料",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_81/pdf/s3-5.pdf"
+        },
+        {
+          "name": "こども家庭庁提出資料",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_81/pdf/s3-6.pdf"
+        },
+        {
+          "name": "デジタル庁提出資料",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_81/pdf/s3-7.pdf"
+        },
+        {
+          "name": "復興庁提出資料",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_81/pdf/s3-8.pdf"
+        },
+        {
+          "name": "総務省提出資料",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_81/pdf/s3-9.pdf"
+        },
+        {
+          "name": "法務省提出資料",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_81/pdf/s3-10.pdf"
+        },
+        {
+          "name": "外務省提出資料",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_81/pdf/s3-11.pdf"
+        },
+        {
+          "name": "文部科学省提出資料",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_81/pdf/s3-12.pdf"
+        },
+        {
+          "name": "厚生労働省提出資料",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_81/pdf/s3-13.pdf"
+        },
+        {
+          "name": "農林水産省提出資料",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_81/pdf/s3-14.pdf"
+        },
+        {
+          "name": "経済産業省提出資料",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_81/pdf/s3-15.pdf"
+        },
+        {
+          "name": "国土交通省提出資料",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_81/pdf/s3-16.pdf"
+        },
+        {
+          "name": "環境省提出資料",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_81/pdf/s3-17.pdf"
+        },
+        {
+          "name": "石橋委員提出資料",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_81/pdf/s4.pdf"
+        },
+        {
+          "name": "（（報告）G7 包摂と障害に関する担当大臣会合及びソルファニャーノ憲章概要）に対する意見及び回答",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_81/pdf/jigo_s1.pdf"
+        },
+        {
+          "name": "（障害者基本計画（第５次）の実施状況（令和５年度））に対する意見及び回答",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_81/pdf/jigo_s2.pdf"
+        },
+        {
+          "name": "第81回 障害者政策委員会 議事録（PDF）",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_81/pdf/gijiroku.pdf"
+        },
+        {
+          "name": "第81回 障害者政策委員会 議事録",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_81/gijiroku.html"
+        }
+      ],
+      "manualLock": true
+    },
+    {
+      "id": "cao-238-20241008-080",
+      "councilId": "cao-238",
+      "title": "第80回 障害者政策委員会",
+      "date": "2024/10/08",
+      "officialUrl": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_80/index.html",
+      "category": "COMMITTEE",
+      "ministry": "CAO",
+      "materials": [
+        {
+          "name": "本年の障害者政策委員会の議題について",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_80/pdf/s1.pdf"
+        },
+        {
+          "name": "障害者に対する偏見や差別のない共生社会の実現に向けた対策推進本部の設置について",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_80/pdf/s2.pdf"
+        },
+        {
+          "name": "障害者基本計画（第５次）の実施状況（令和５年度）",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_80/pdf/s3-1.pdf"
+        },
+        {
+          "name": "（別表）障害者基本計画（第５次）関連成果目標",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_80/pdf/s3-2.pdf"
+        },
+        {
+          "name": "国の審議会等における障害のある女性委員の人数等について",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_80/pdf/s3-3.pdf"
+        },
+        {
+          "name": "（別表）相対欠格条項の検証・見直し状況",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_80/pdf/s3-4.pdf"
+        },
+        {
+          "name": "内閣人事局提出資料",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_80/pdf/s4-1.pdf"
+        },
+        {
+          "name": "内閣府提出資料",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_80/pdf/s4-2.pdf"
+        },
+        {
+          "name": "警察庁提出資料",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_80/pdf/s4-3.pdf"
+        },
+        {
+          "name": "金融庁提出資料",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_80/pdf/s4-4.pdf"
+        },
+        {
+          "name": "消費者庁提出資料",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_80/pdf/s4-5.pdf"
+        },
+        {
+          "name": "こども家庭庁提出資料",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_80/pdf/s4-6.pdf"
+        },
+        {
+          "name": "デジタル庁提出資料",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_80/pdf/s4-7.pdf"
+        },
+        {
+          "name": "復興庁提出資料",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_80/pdf/s4-8.pdf"
+        },
+        {
+          "name": "総務省提出資料",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_80/pdf/s4-9.pdf"
+        },
+        {
+          "name": "法務省提出資料",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_80/pdf/s4-10.pdf"
+        },
+        {
+          "name": "外務省提出資料",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_80/pdf/s4-11.pdf"
+        },
+        {
+          "name": "文部科学省提出資料",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_80/pdf/s4-12.pdf"
+        },
+        {
+          "name": "厚生労働省提出資料",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_80/pdf/s4-13.pdf"
+        },
+        {
+          "name": "農林水産省提出資料",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_80/pdf/s4-14.pdf"
+        },
+        {
+          "name": "経済産業省提出資料",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_80/pdf/s4-15.pdf"
+        },
+        {
+          "name": "国土交通省提出資料",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_80/pdf/s4-16.pdf"
+        },
+        {
+          "name": "環境省提出資料",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_80/pdf/s4-17.pdf"
+        },
+        {
+          "name": "石橋委員提出資料",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_80/pdf/s4-18.pdf"
+        },
+        {
+          "name": "臼井委員提出資料",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_80/pdf/s4-19.pdf"
+        },
+        {
+          "name": "（障害者に対する偏見や差別のない共生社会の実現に向けた対策推進本部の設置について）に対する意見及び回答",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_80/pdf/jigo_s2.pdf"
+        },
+        {
+          "name": "（障害者基本計画（第５次）の実施状況（令和５年度））に対する意見及び回答",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_80/pdf/jigo_s3-1.pdf"
+        },
+        {
+          "name": "（（別表）障害者基本計画（第５次）関連成果目標）に対する意見及び回答",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_80/pdf/jigo_s3-2.pdf"
+        },
+        {
+          "name": "（国の審議会等における障害のある女性委員の人数等について）に対する意見及び回答",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_80/pdf/jigo_s3-3.pdf"
+        },
+        {
+          "name": "（（別表）相対欠格条項の検証・見直し状況）に対する意見及び回答",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_80/pdf/jigo_s3-4.pdf"
+        },
+        {
+          "name": "第80回 障害者政策委員会 議事録（PDF）",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_80/pdf/gijiroku.pdf"
+        },
+        {
+          "name": "第80回 障害者政策委員会 議事録",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_80/gijiroku.html"
+        }
+      ],
+      "manualLock": true
+    },
+    {
+      "id": "cao-238-20240624-079",
+      "councilId": "cao-238",
+      "title": "第79回 障害者政策委員会",
+      "date": "2024/06/24",
+      "officialUrl": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_79/index.html",
+      "category": "COMMITTEE",
+      "ministry": "CAO",
+      "materials": [
+        {
+          "name": "第５次障害者基本計画の実施状況の監視に向けての視点_石川准",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_79/pdf/s1.pdf"
+        },
+        {
+          "name": "第79回 障害者政策委員会 議事録（PDF）",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_79/pdf/gijiroku.pdf"
+        },
+        {
+          "name": "第79回 障害者政策委員会 議事録",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_79/gijiroku.html"
+        }
+      ],
+      "manualLock": true
+    },
+    {
+      "id": "cao-238-20240307-078",
+      "councilId": "cao-238",
+      "title": "第78回 障害者政策委員会",
+      "date": "2024/03/07",
+      "officialUrl": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_78/index.html",
+      "category": "COMMITTEE",
+      "ministry": "CAO",
+      "materials": [
+        {
+          "name": "内閣府説明資料",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_78/pdf/s1.pdf"
+        },
+        {
+          "name": "金融庁説明資料",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_78/pdf/s2.pdf"
+        },
+        {
+          "name": "文部科学省説明資料",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_78/pdf/s3.pdf"
+        },
+        {
+          "name": "厚生労働省説明資料",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_78/pdf/s4.pdf"
+        },
+        {
+          "name": "経済産業省説明資料",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_78/pdf/s5.pdf"
+        },
+        {
+          "name": "国土交通省説明資料",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_78/pdf/s6.pdf"
+        },
+        {
+          "name": "兵庫県説明資料",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_78/pdf/s7.pdf"
+        },
+        {
+          "name": "（一社）日本ショッピングセンター協会説明資料",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_78/pdf/s8.pdf"
+        },
+        {
+          "name": "（一社）全国銀行協会説明資料",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_78/pdf/s9.pdf"
+        },
+        {
+          "name": "第６期障害者政策委員会　今後のスケジュール（案）",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_78/pdf/s10.pdf"
+        },
+        {
+          "name": "内閣府本府所管事業分野における障害を理由とする差別の解消の推進に関する対応指針",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_78/pdf/ref1-1.pdf"
+        },
+        {
+          "name": "内閣府本府における障害を理由とする差別の解消の推進に関する対応要領",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_78/pdf/ref1-2.pdf"
+        },
+        {
+          "name": "内閣府本府所管事業分野における障害を理由とする差別の解消の推進に関する対応指針",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_78/pdf/ref2-1.pdf"
+        },
+        {
+          "name": "金融庁所管事業分野における障害を理由とする差別の解消の推進に関する対応指針",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_78/pdf/ref2-2.pdf"
+        },
+        {
+          "name": "文部科学省所管事業分野における障害を理由とする差別の解消の推進に関する対応指針",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_78/pdf/ref3-1.pdf"
+        },
+        {
+          "name": "文部科学省における障害を理由とする差別の解消の推進に関する対応要領",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_78/pdf/ref3-2.pdf"
+        },
+        {
+          "name": "厚生労働省所管事業分野における障害を理由とする差別の解消の推進に関する対応指針",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_78/pdf/ref4-1.pdf"
+        },
+        {
+          "name": "厚生労働省における障害を理由とする差別の解消の推進に関する対応要領",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_78/pdf/ref4-2.pdf"
+        },
+        {
+          "name": "経済産業省所管事業分野における障害を理由とする差別の解消の推進に関する対応指針",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_78/pdf/ref5-1.pdf"
+        },
+        {
+          "name": "経済産業省における障害を理由とする差別の解消の推進に関する対応要領",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_78/pdf/ref5-2.pdf"
+        },
+        {
+          "name": "国土交通省所管事業における障害を理由とする差別の解消の推進に関する対応指針",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_78/pdf/ref6-1.pdf"
+        },
+        {
+          "name": "国土交通省における障害を理由とする差別の解消の推進に関する対応要領",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_78/pdf/ref6-2.pdf"
+        },
+        {
+          "name": "兵庫県庁作成改正障害者差別解消法パンフレット",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_78/pdf/ref7.pdf"
+        },
+        {
+          "name": "第78回 障害者政策委員会 議事録（PDF）",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_78/pdf/gijiroku.pdf"
+        },
+        {
+          "name": "第78回 障害者政策委員会 議事録",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_78/gijiroku.html"
+        }
+      ],
+      "manualLock": true
+    },
+    {
+      "id": "cao-238-20231113-077",
+      "councilId": "cao-238",
+      "title": "第77回 障害者政策委員会",
+      "date": "2023/11/13",
+      "officialUrl": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_77/index.html",
+      "category": "COMMITTEE",
+      "ministry": "CAO",
+      "materials": [
+        {
+          "name": "障害者基本計画（第４次）の実施状況（令和３年度・４年度）",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_77/pdf/s1-1.pdf"
+        },
+        {
+          "name": "（別表）障害者基本計画（第４次）関連成果目標",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_77/pdf/s1-2.pdf"
+        },
+        {
+          "name": "警察庁提出資料",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_77/pdf/s2.pdf"
+        },
+        {
+          "name": "こども家庭庁提出資料",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_77/pdf/s3.pdf"
+        },
+        {
+          "name": "デジタル庁提出資料",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_77/pdf/s4.pdf"
+        },
+        {
+          "name": "総務省提出資料",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_77/pdf/s5.pdf"
+        },
+        {
+          "name": "文部科学省提出資料",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_77/pdf/s6-1.pdf"
+        },
+        {
+          "name": "文部科学省提出資料（数値目標）",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_77/pdf/s6-2.pdf"
+        },
+        {
+          "name": "厚生労働省提出資料",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_77/pdf/s7.pdf"
+        },
+        {
+          "name": "経済産業省提出資料",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_77/pdf/s8.pdf"
+        },
+        {
+          "name": "国土交通省提出資料",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_77/pdf/s9.pdf"
+        },
+        {
+          "name": "白江委員提出資料",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_77/pdf/s10.pdf"
+        },
+        {
+          "name": "石橋委員提出資料",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_77/pdf/s11.pdf"
+        },
+        {
+          "name": "第77回 障害者政策委員会 議事録（PDF）",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_77/pdf/gijiroku.pdf"
+        },
+        {
+          "name": "第77回 障害者政策委員会 議事録",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_77/gijiroku.html"
+        }
+      ],
+      "manualLock": true
+    },
+    {
+      "id": "cao-238-20231004-076",
+      "councilId": "cao-238",
+      "title": "第76回 障害者政策委員会",
+      "date": "2023/10/04",
+      "officialUrl": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_76/index.html",
+      "category": "COMMITTEE",
+      "ministry": "CAO",
+      "materials": [
+        {
+          "name": "障害者政策委員会　委員名簿",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_76/pdf/s1.pdf"
+        },
+        {
+          "name": "障害者基本計画（第４次）の実施状況（令和３年度・４年度）",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_76/pdf/s2-1.pdf"
+        },
+        {
+          "name": "（別表）障害者基本計画（第４次）関連成果目標",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_76/pdf/s2-2.pdf"
+        },
+        {
+          "name": "資料2-1「障害者基本計画（第４次）の実施状況（令和３年度・４年度）」、資料2-2「（別表）障害者基本計画（第４次）関連成果目標」について一部訂正しました。（令和６年３月22日） 正誤表はこちら",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_76/pdf/seigo.pdf"
+        },
+        {
+          "name": "内閣人事局提出資料",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_76/pdf/s3.pdf"
+        },
+        {
+          "name": "内閣府提出資料",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_76/pdf/s4.pdf"
+        },
+        {
+          "name": "金融庁提出資料",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_76/pdf/s5.pdf"
+        },
+        {
+          "name": "消費者庁提出資料",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_76/pdf/s6.pdf"
+        },
+        {
+          "name": "復興庁提出資料",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_76/pdf/s7.pdf"
+        },
+        {
+          "name": "法務省提出資料",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_76/pdf/s8.pdf"
+        },
+        {
+          "name": "外務省提出資料",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_76/pdf/s9.pdf"
+        },
+        {
+          "name": "農林水産省提出資料",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_76/pdf/s10r.pdf"
+        },
+        {
+          "name": "環境省提出資料",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_76/pdf/s11.pdf"
+        },
+        {
+          "name": "第76回 障害者政策委員会 議事録（PDF）",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_76/pdf/gijiroku.pdf"
+        },
+        {
+          "name": "第76回 障害者政策委員会 議事録",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_76/gijiroku.html"
+        }
+      ],
+      "manualLock": true
+    },
+    {
+      "id": "cao-238-20221216-075",
+      "councilId": "cao-238",
+      "title": "第75回 障害者政策委員会",
+      "date": "2022/12/16",
+      "officialUrl": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_75/index.html",
+      "category": "COMMITTEE",
+      "ministry": "CAO",
+      "materials": [
+        {
+          "name": "障害者基本計画（第５次）（案）",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_75/pdf/s1.pdf"
+        },
+        {
+          "name": "障害者基本計画（第５次）（案）新旧対照表",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_75/pdf/s2.pdf"
+        },
+        {
+          "name": "障害者基本計画（第５次）関連成果目標案",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_75/pdf/s3.pdf"
+        },
+        {
+          "name": "第75回 障害者政策委員会 議事録（PDF）",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_75/pdf/gijiroku.pdf"
+        },
+        {
+          "name": "第75回 障害者政策委員会 議事録",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_75/gijiroku.html"
+        }
+      ],
+      "manualLock": true
+    },
+    {
+      "id": "cao-238-20221201-074",
+      "councilId": "cao-238",
+      "title": "第74回 障害者政策委員会",
+      "date": "2022/12/01",
+      "officialUrl": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_74/index.html",
+      "category": "COMMITTEE",
+      "ministry": "CAO",
+      "materials": [
+        {
+          "name": "障害者基本計画（第５次）（案）",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_74/pdf/s1.pdf"
+        },
+        {
+          "name": "障害者基本計画（第５次）（案）新旧対照表",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_74/pdf/s2.pdf"
+        },
+        {
+          "name": "障害者基本計画（第５次）関連成果目標案",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_74/pdf/s3.pdf"
+        },
+        {
+          "name": "障害者基本計画（第５次）の検討に向けた意見の整理",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_74/pdf/s4.pdf"
+        },
+        {
+          "name": "安部井委員提出資料",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_74/pdf/s5.pdf"
+        },
+        {
+          "name": "第74回 障害者政策委員会 議事録（PDF）",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_74/pdf/gijiroku.pdf"
+        },
+        {
+          "name": "第74回 障害者政策委員会 議事録",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_74/gijiroku.html"
+        }
+      ],
+      "manualLock": true
+    },
+    {
+      "id": "cao-238-20221114-073",
+      "councilId": "cao-238",
+      "title": "第73回 障害者政策委員会",
+      "date": "2022/11/14",
+      "officialUrl": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_73/index.html",
+      "category": "COMMITTEE",
+      "ministry": "CAO",
+      "materials": [
+        {
+          "name": "障害者基本計画（第５次）(案)",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_73/pdf/s1.pdf"
+        },
+        {
+          "name": "障害者基本計画（第５次）(案)新旧対照表",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_73/pdf/s2.pdf"
+        },
+        {
+          "name": "障害者基本計画（第５次）関連成果目標案",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_73/pdf/s3.pdf"
+        },
+        {
+          "name": "障害者基本計画（第５次）の検討に向けた意見の整理",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_73/pdf/s4.pdf"
+        },
+        {
+          "name": "厚生労働省説明資料",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_73/pdf/s5.pdf"
+        },
+        {
+          "name": "文部科学省説明資料",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_73/pdf/s6-1.pdf"
+        },
+        {
+          "name": "文部科学省説明資料",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_73/pdf/s6-2.pdf"
+        },
+        {
+          "name": "障害を理由とする差別の解消の推進に関する基本方針改定案",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_73/pdf/s7.pdf"
+        },
+        {
+          "name": "障害を理由とする差別の解消の推進に関する基本方針改定案　新旧対照表",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_73/pdf/s8.pdf"
+        },
+        {
+          "name": "障害者権利委員会による対日審査総括所見（英文）確定版",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_73/pdf/ref.pdf"
+        },
+        {
+          "name": "第73回 障害者政策委員会 議事録（PDF）",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_73/pdf/gijiroku.pdf"
+        },
+        {
+          "name": "第73回 障害者政策委員会 議事録",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_73/gijiroku.html"
+        }
+      ],
+      "manualLock": true
+    },
+    {
+      "id": "cao-238-20221024-072",
+      "councilId": "cao-238",
+      "title": "第72回 障害者政策委員会",
+      "date": "2022/10/24",
+      "officialUrl": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_72/index.html",
+      "category": "COMMITTEE",
+      "ministry": "CAO",
+      "materials": [
+        {
+          "name": "障害を理由とする差別の解消の推進に関する基本方針改定案",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_72/pdf/s1.pdf"
+        },
+        {
+          "name": "障害を理由とする差別の解消の推進に関する基本方針改定案　新旧対照表",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_72/pdf/s2.pdf"
+        },
+        {
+          "name": "障害者基本計画（第５次）（案）",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_72/pdf/s3.pdf"
+        },
+        {
+          "name": "障害者基本計画（第５次）（案）新旧対照表",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_72/pdf/s4.pdf"
+        },
+        {
+          "name": "障害者基本計画（第５次）関連成果目標案",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_72/pdf/s5.pdf"
+        },
+        {
+          "name": "障害者基本計画（第５次）の検討に向けた意見の整理",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_72/pdf/s6.pdf"
+        },
+        {
+          "name": "石橋委員提出資料",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_72/pdf/s7.pdf"
+        },
+        {
+          "name": "第72回 障害者政策委員会 議事録（PDF）",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_72/pdf/gijiroku.pdf"
+        },
+        {
+          "name": "第72回 障害者政策委員会 議事録",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_72/gijiroku.html"
+        }
+      ],
+      "manualLock": true
+    },
+    {
+      "id": "cao-238-20221005-071",
+      "councilId": "cao-238",
+      "title": "第71回 障害者政策委員会",
+      "date": "2022/10/05",
+      "officialUrl": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_71/index.html",
+      "category": "COMMITTEE",
+      "ministry": "CAO",
+      "materials": [
+        {
+          "name": "障害者基本計画（第５次）本文案",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_71/pdf/s1.pdf"
+        },
+        {
+          "name": "障害者基本計画（第５次）総論本文案及び各論_新旧対照表",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_71/pdf/s2.pdf"
+        },
+        {
+          "name": "障害者基本計画（第５次）関連成果目標案",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_71/pdf/s3.pdf"
+        },
+        {
+          "name": "地方分権改革に関する提案について",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_71/pdf/s4.pdf"
+        },
+        {
+          "name": "障害者基本計画（第５次）における委員意見について",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_71/pdf/s5.pdf"
+        },
+        {
+          "name": "障害者権利委員会による対日審査総括所見（英文）",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_71/pdf/ref.pdf"
+        },
+        {
+          "name": "第71回 障害者政策委員会 議事録（PDF）",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_71/pdf/gijiroku.pdf"
+        },
+        {
+          "name": "第71回 障害者政策委員会 議事録",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_71/gijiroku.html"
+        }
+      ],
+      "manualLock": true
+    },
+    {
+      "id": "cao-238-20220926-070",
+      "councilId": "cao-238",
+      "title": "第70回 障害者政策委員会",
+      "date": "2022/09/26",
+      "officialUrl": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_70/index.html",
+      "category": "COMMITTEE",
+      "ministry": "CAO",
+      "materials": [
+        {
+          "name": "障害を理由とする差別の解消の推進に関する基本方針改定案",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_70/pdf/s1.pdf"
+        },
+        {
+          "name": "障害を理由とする差別の解消の推進に関する基本方針改定案　新旧対照表",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_70/pdf/s2.pdf"
+        },
+        {
+          "name": "竹下委員提出資料",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_70/pdf/s3.pdf"
+        },
+        {
+          "name": "障害者権利条約政府報告審査における石川委員長の冒頭ステートメント",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_70/pdf/s4.pdf"
+        },
+        {
+          "name": "基本方針の改定に係るこれまでの議論等(第１・第２部分)[第64回障害者政策委員会配布資料]",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_70/pdf/ref1.pdf"
+        },
+        {
+          "name": "基本方針の改定に係るこれまでの議論等(第３～第６部分) [第66回障害者政策委員会配布資料]",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_70/pdf/ref2.pdf"
+        },
+        {
+          "name": "第70回 障害者政策委員会 議事録（PDF）",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_70/pdf/gijiroku.pdf"
+        },
+        {
+          "name": "第70回 障害者政策委員会 議事録",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_70/gijiroku.html"
+        }
+      ],
+      "manualLock": true
+    },
+    {
+      "id": "cao-238-20220801-069",
+      "councilId": "cao-238",
+      "title": "第69回 障害者政策委員会",
+      "date": "2022/08/01",
+      "officialUrl": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_69/index.html",
+      "category": "COMMITTEE",
+      "ministry": "CAO",
+      "materials": [
+        {
+          "name": "障害を理由とする差別の解消の推進に関する基本方針改定案",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_69/pdf/s1.pdf"
+        },
+        {
+          "name": "障害を理由とする差別の解消の推進に関する基本方針改定案　新旧対照表",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_69/pdf/s2.pdf"
+        },
+        {
+          "name": "基本方針の改定に係るこれまでの議論等（第１・第２部分）[第64回障害者政策委員会配布資料]",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_69/pdf/ref1.pdf"
+        },
+        {
+          "name": "基本方針の改定に係るこれまでの議論等（第３～第６部分）[第66回障害者政策委員会配布資料]",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_69/pdf/ref2.pdf"
+        },
+        {
+          "name": "第69回 障害者政策委員会 議事録（PDF）",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_69/pdf/gijiroku.pdf"
+        },
+        {
+          "name": "第69回 障害者政策委員会 議事録",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_69/gijiroku.html"
+        }
+      ],
+      "manualLock": true
+    },
+    {
+      "id": "cao-238-20220707-068",
+      "councilId": "cao-238",
+      "title": "第68回 障害者政策委員会",
+      "date": "2022/07/07",
+      "officialUrl": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_68/index.html",
+      "category": "COMMITTEE",
+      "ministry": "CAO",
+      "materials": [
+        {
+          "name": "障害者基本計画（第５次）　各論本文案（第８、第４、第９、第10、第11部分）",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_68/pdf/s1.pdf"
+        },
+        {
+          "name": "障害者基本計画（第５次）　各論本文案（第８、第４、第９、第10、第11部分）第４次計画との比較",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_68/pdf/s2.pdf"
+        },
+        {
+          "name": "障害者基本計画（第５次）関連成果目標案（第８、第４、第９、第10、第11部分）",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_68/pdf/s3.pdf"
+        },
+        {
+          "name": "障害者基本計画（第５次）の検討に向けた意見の整理",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_68/pdf/s4.pdf"
+        },
+        {
+          "name": "第68回 障害者政策委員会 議事録（PDF）",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_68/pdf/gijiroku.pdf"
+        },
+        {
+          "name": "第68回 障害者政策委員会 議事録",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_68/gijiroku.html"
+        }
+      ],
+      "manualLock": true
+    },
+    {
+      "id": "cao-238-20220704-067",
+      "councilId": "cao-238",
+      "title": "第67回 障害者政策委員会",
+      "date": "2022/07/04",
+      "officialUrl": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_67/index.html",
+      "category": "COMMITTEE",
+      "ministry": "CAO",
+      "materials": [
+        {
+          "name": "障害者基本計画（第５次）　各論本文案（第６、第５、第７部分）",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_67/pdf/s1.pdf"
+        },
+        {
+          "name": "障害者基本計画（第５次）　各論本文案（第６、第５、第７部分）第４次計画との比較",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_67/pdf/s2.pdf"
+        },
+        {
+          "name": "障害者基本計画（第５次）関連成果目標案（第６、第５、第７部分）",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_67/pdf/s3.pdf"
+        },
+        {
+          "name": "障害者基本計画（第５次）の検討に向けた意見の整理",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_67/pdf/s4.pdf"
+        },
+        {
+          "name": "第67回 障害者政策委員会 議事録（PDF）",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_67/pdf/gijiroku.pdf"
+        },
+        {
+          "name": "第67回 障害者政策委員会 議事録",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_67/gijiroku.html"
+        }
+      ],
+      "manualLock": true
+    },
+    {
+      "id": "cao-238-20220614-066",
+      "councilId": "cao-238",
+      "title": "第66回 障害者政策委員会",
+      "date": "2022/06/14",
+      "officialUrl": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_66/index.html",
+      "category": "COMMITTEE",
+      "ministry": "CAO",
+      "materials": [
+        {
+          "name": "令和3年度調査研究事業報告書概要（今後の方向性）",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_66/pdf/s1.pdf"
+        },
+        {
+          "name": "令和3年度調査研究事業報告書",
+          "url": "https://www8.cao.go.jp/shougai/suishin/tyosa/r03jittai/pdf/print.pdf"
+        },
+        {
+          "name": "資料2を一部訂正しました。（令和４年８月22日） 正誤表はこちら",
+          "url": "https://www8.cao.go.jp/shougai/suishin/tyosa/r03jittai/pdf/seigo2.pdf"
+        },
+        {
+          "name": "障害を理由とする差別の解消の推進に関する基本方針改定案（第3～第6部分）",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_66/pdf/s3.pdf"
+        },
+        {
+          "name": "障害を理由とする差別の解消の推進に関する基本方針改定案 新旧対照表（第3～第6部分）",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_66/pdf/s4.pdf"
+        },
+        {
+          "name": "基本方針の改定に係るこれまでの議論等（第3～第6部分）",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_66/pdf/s5.pdf"
+        },
+        {
+          "name": "障害者の権利に関する条約の実施状況に係る障害者政策委員会の見解（英文）",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_66/pdf/s6.pdf"
+        },
+        {
+          "name": "障害者の権利に関する条約の実施状況に係る障害者政策委員会の見解（和文）",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_66/pdf/s7.pdf"
+        },
+        {
+          "name": "第66回 障害者政策委員会 議事録（PDF）",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_66/pdf/gijiroku.pdf"
+        },
+        {
+          "name": "第66回 障害者政策委員会 議事録",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_66/gijiroku.html"
+        }
+      ],
+      "manualLock": true
+    },
+    {
+      "id": "cao-238-20220524-065",
+      "councilId": "cao-238",
+      "title": "第65回 障害者政策委員会",
+      "date": "2022/05/24",
+      "officialUrl": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_65/index.html",
+      "category": "COMMITTEE",
+      "ministry": "CAO",
+      "materials": [
+        {
+          "name": "障害者基本計画（第５次）　骨格案",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_65/pdf/s1.pdf"
+        },
+        {
+          "name": "障害者基本計画（第５次）　総論本文案",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_65/pdf/s2.pdf"
+        },
+        {
+          "name": "障害者基本計画（第５次）　総論本文案　新旧対照表",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_65/pdf/s3.pdf"
+        },
+        {
+          "name": "障害者基本計画（第５次）　各論本文案（第１～第３部分）",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_65/pdf/s4.pdf"
+        },
+        {
+          "name": "障害者基本計画（第５次）　各論本文案（第１～第３部分）第４次計画との比較",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_65/pdf/s5.pdf"
+        },
+        {
+          "name": "障害者基本計画（第５次）関連成果目標案",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_65/pdf/s6.pdf"
+        },
+        {
+          "name": "障害者基本計画（第５次）の検討に向けた意見の整理",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_65/pdf/s7.pdf"
+        },
+        {
+          "name": "第65回 障害者政策委員会 議事録（PDF）",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_65/pdf/gijiroku.pdf"
+        },
+        {
+          "name": "第65回 障害者政策委員会 議事録",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_65/gijiroku.html"
+        }
+      ],
+      "manualLock": true
+    },
+    {
+      "id": "cao-238-20220426-064",
+      "councilId": "cao-238",
+      "title": "第64回 障害者政策委員会",
+      "date": "2022/04/26",
+      "officialUrl": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_64/index.html",
+      "category": "COMMITTEE",
+      "ministry": "CAO",
+      "materials": [
+        {
+          "name": "障害を理由とする差別の解消の推進に関する基本方針改定案（第1・第2部分）",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_64/pdf/s1.pdf"
+        },
+        {
+          "name": "障害を理由とする差別の解消の推進に関する基本方針改定案 新旧対照表（第1・第2部分）",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_64/pdf/s2.pdf"
+        },
+        {
+          "name": "基本方針の改定に係るこれまでの議論等（第1・第2部分）",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_64/pdf/s3.pdf"
+        },
+        {
+          "name": "障害者の権利に関する条約の実施状況に係る障害者政策委員会の見解（案）",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_64/pdf/s4.pdf"
+        },
+        {
+          "name": "障害を理由とする差別の解消の推進に関する基本方針（現行）",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_64/pdf/ref.pdf"
+        },
+        {
+          "name": "第64回 障害者政策委員会 議事録（PDF）",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_64/pdf/gijiroku.pdf"
+        },
+        {
+          "name": "第64回 障害者政策委員会 議事録",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_64/gijiroku.html"
+        }
+      ],
+      "manualLock": true
+    },
+    {
+      "id": "cao-238-20220324-063",
+      "councilId": "cao-238",
+      "title": "第63回 障害者政策委員会",
+      "date": "2022/03/24",
+      "officialUrl": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_63/index.html",
+      "category": "COMMITTEE",
+      "ministry": "CAO",
+      "materials": [
+        {
+          "name": "障害者の権利に関する条約の実施状況に係る障害者政策委員会の見解（案）",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_63/pdf/s1.pdf"
+        },
+        {
+          "name": "眞保専門委員提出資料",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_63/pdf/s2.pdf"
+        },
+        {
+          "name": "第63回 障害者政策委員会 議事録（PDF）",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_63/pdf/gijiroku.pdf"
+        },
+        {
+          "name": "第63回 障害者政策委員会 議事録",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_63/gijiroku.html"
+        }
+      ],
+      "manualLock": true
+    },
+    {
+      "id": "cao-238-20220304-062",
+      "councilId": "cao-238",
+      "title": "第62回 障害者政策委員会",
+      "date": "2022/03/04",
+      "officialUrl": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_62/index.html",
+      "category": "COMMITTEE",
+      "ministry": "CAO",
+      "materials": [
+        {
+          "name": "障害者基本計画（第５次）　骨格案",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_62/pdf/s1.pdf"
+        },
+        {
+          "name": "障害者基本計画（第５次）　総論本文案",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_62/pdf/s2.pdf"
+        },
+        {
+          "name": "障害者基本計画（第５次）　総論本文案　新旧対照表",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_62/pdf/s3.pdf"
+        },
+        {
+          "name": "障害者基本計画（第５次）の検討に向けた意見の整理・課題等について（案）",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_62/pdf/s4.pdf"
+        },
+        {
+          "name": "障害者差別解消法に基づく基本方針の改定に向けた障害者政策委員会における今後の審議の進め方（イメージ）",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_62/pdf/s5.pdf"
+        },
+        {
+          "name": "第62回 障害者政策委員会 議事録（PDF）",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_62/pdf/gijiroku.pdf"
+        },
+        {
+          "name": "第62回 障害者政策委員会 議事録",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_62/gijiroku.html"
+        }
+      ],
+      "manualLock": true
+    },
+    {
+      "id": "cao-238-20220131-061",
+      "councilId": "cao-238",
+      "title": "第61回 障害者政策委員会",
+      "date": "2022/01/31",
+      "officialUrl": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_61/index.html",
+      "category": "COMMITTEE",
+      "ministry": "CAO",
+      "materials": [
+        {
+          "name": "障害者の権利に関する条約の実施状況に係る障害者政策委員会の見解（案）（たたき台）",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_61/pdf/s1.pdf"
+        },
+        {
+          "name": "「障害者の権利に関する条約の実施状況に係る障害者政策委員会の見解（案）」に係る委員・専門委員からの御意見等",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_61/pdf/s2.pdf"
+        },
+        {
+          "name": "障害者総合支援法３年後見直し（令和４年改正）中間整理概要",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_61/pdf/s3.pdf"
+        },
+        {
+          "name": "障害者基本計画（第５次）骨格案",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_61/pdf/s4.pdf"
+        },
+        {
+          "name": "障害者基本計画（第５次）総論本文案",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_61/pdf/s5.pdf"
+        },
+        {
+          "name": "障害者基本計画(第５次)_総論本文案　新旧対照表",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_61/pdf/s6.pdf"
+        },
+        {
+          "name": "障害者基本計画（第５次）の検討に向けた意見の整理・課題等について（案）",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_61/pdf/s7.pdf"
+        },
+        {
+          "name": "地方分権改革に関する提案について",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_61/pdf/s8.pdf"
+        },
+        {
+          "name": "障害者差別解消法に基づく基本方針の改定に向けた障害者政策委員会における今後の審議の進め方（イメージ）",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_61/pdf/s9.pdf"
+        },
+        {
+          "name": "竹下委員提出資料",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_61/pdf/s10.pdf"
+        },
+        {
+          "name": "佐保委員提出資料",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_61/pdf/s11.pdf"
+        },
+        {
+          "name": "第61回 障害者政策委員会 議事録（PDF）",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_61/pdf/gijiroku.pdf"
+        },
+        {
+          "name": "第61回 障害者政策委員会 議事録",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_61/gijiroku.html"
+        }
+      ],
+      "manualLock": true
+    },
+    {
+      "id": "cao-238-20211213-060",
+      "councilId": "cao-238",
+      "title": "第60回 障害者政策委員会",
+      "date": "2021/12/13",
+      "officialUrl": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_60/index.html",
+      "category": "COMMITTEE",
+      "ministry": "CAO",
+      "materials": [
+        {
+          "name": "基本方針改定に係るヒアリング項目（事業者団体等）",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_60/pdf/s1.pdf"
+        },
+        {
+          "name": "基本方針改定に係る事業者団体等からの意見一覧（前半ヒアリング分）",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_60/pdf/s2.pdf"
+        },
+        {
+          "name": "基本方針改定に係る事業者団体等からの意見一覧（後半ヒアリング分）",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_60/pdf/s3.pdf"
+        },
+        {
+          "name": "基本方針改定に係るヒアリング項目（地方団体）",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_60/pdf/s4.pdf"
+        },
+        {
+          "name": "基本方針改定に係る地方団体からの意見一覧",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_60/pdf/s5.pdf"
+        },
+        {
+          "name": "障害者の権利に関する条約の実施状況に係る障害者政策委員会の見解（案）（たたき台）",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_60/pdf/s6.pdf"
+        },
+        {
+          "name": "障害者統計の充実について",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_60/pdf/s7.pdf"
+        },
+        {
+          "name": "障害者基本計画（第５次）の検討に向けた意見の整理・課題等について（案）",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_60/pdf/s8.pdf"
+        },
+        {
+          "name": "第60回 障害者政策委員会 議事録（PDF）",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_60/pdf/gijiroku.pdf"
+        },
+        {
+          "name": "第60回 障害者政策委員会 議事録",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_60/gijiroku.html"
+        }
+      ],
+      "manualLock": true
+    },
+    {
+      "id": "cao-238-20211115-059",
+      "councilId": "cao-238",
+      "title": "第59回 障害者政策委員会",
+      "date": "2021/11/15",
+      "officialUrl": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_59/index.html",
+      "category": "COMMITTEE",
+      "ministry": "CAO",
+      "materials": [
+        {
+          "name": "基本方針改定に係るヒアリング項目（地方団体）",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_59/pdf/s1.pdf"
+        },
+        {
+          "name": "基本方針改定に係る地方団体からの意見一覧",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_59/pdf/s2.pdf"
+        },
+        {
+          "name": "基本方針改定に係るヒアリング項目（事業者団体等）",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_59/pdf/s3.pdf"
+        },
+        {
+          "name": "基本方針改定に係る事業者団体等からの意見一覧（前半ヒアリング分）",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_59/pdf/s4.pdf"
+        },
+        {
+          "name": "基本方針改定に係る事業者団体等からの意見一覧（後半ヒアリング分）",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_59/pdf/s5.pdf"
+        },
+        {
+          "name": "第59回 障害者政策委員会 議事録（PDF）",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_59/pdf/gijiroku.pdf"
+        },
+        {
+          "name": "第59回 障害者政策委員会 議事録",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_59/gijiroku.html"
+        }
+      ],
+      "manualLock": true
+    },
+    {
+      "id": "cao-238-20211101-058",
+      "councilId": "cao-238",
+      "title": "第58回 障害者政策委員会",
+      "date": "2021/11/01",
+      "officialUrl": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_58/index.html",
+      "category": "COMMITTEE",
+      "ministry": "CAO",
+      "materials": [
+        {
+          "name": "令和２年度障害者基本計画（第４次）の実施状況",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_58/pdf/s1-1.pdf"
+        },
+        {
+          "name": "（別表）令和２年度障害者基本計画（第４次）関連成果目標",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_58/pdf/s1-2.pdf"
+        },
+        {
+          "name": "内閣人事局提出資料",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_58/pdf/s2.pdf"
+        },
+        {
+          "name": "内閣府提出資料",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_58/pdf/s3.pdf"
+        },
+        {
+          "name": "警察庁提出資料",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_58/pdf/s4.pdf"
+        },
+        {
+          "name": "金融庁提出資料",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_58/pdf/s5.pdf"
+        },
+        {
+          "name": "総務省提出資料",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_58/pdf/s6.pdf"
+        },
+        {
+          "name": "法務省提出資料",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_58/pdf/s7.pdf"
+        },
+        {
+          "name": "農林水産省提出資料",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_58/pdf/s8.pdf"
+        },
+        {
+          "name": "経済産業省提出資料",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_58/pdf/s9.pdf"
+        },
+        {
+          "name": "環境省提出資料",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_58/pdf/s10.pdf"
+        },
+        {
+          "name": "障害者政策員会における障害者基本計画（第５次）の今後の審議の進め方（イメージ）",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_58/pdf/s11.pdf"
+        },
+        {
+          "name": "平成30年度障害者基本計画（第４次）の実施状況",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_58/pdf/ref1-1.pdf"
+        },
+        {
+          "name": "（別表）平成30年度障害者基本計画（第４次）関連成果目標",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_58/pdf/ref1-2.pdf"
+        },
+        {
+          "name": "令和元年度障害者基本計画（第４次）の実施状況",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_58/pdf/ref2-1.pdf"
+        },
+        {
+          "name": "（別表）令和元年度障害者基本計画（第４次）関連成果目標",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_58/pdf/ref2-2.pdf"
+        },
+        {
+          "name": "第58回 障害者政策委員会 議事録（PDF）",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_58/pdf/gijiroku.pdf"
+        },
+        {
+          "name": "第58回 障害者政策委員会 議事録",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_58/gijiroku.html"
+        }
+      ],
+      "manualLock": true
+    },
+    {
+      "id": "cao-238-20210927-057",
+      "councilId": "cao-238",
+      "title": "第57回 障害者政策委員会",
+      "date": "2021/09/27",
+      "officialUrl": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_57/index.html",
+      "category": "COMMITTEE",
+      "ministry": "CAO",
+      "materials": [
+        {
+          "name": "基本方針改定に係るヒアリング項目",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_57/pdf/s1.pdf"
+        },
+        {
+          "name": "基本方針改定に係る障害者団体からの意見一覧",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_57/pdf/s2.pdf"
+        },
+        {
+          "name": "障害者基本計画（第４次）の実施状況（令和２年度）",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_57/pdf/s3-1.pdf"
+        },
+        {
+          "name": "（別表）障害者基本計画（第４次）関連成果目標",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_57/pdf/s3-2.pdf"
+        },
+        {
+          "name": "文部科学省提出資料",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_57/pdf/s4.pdf"
+        },
+        {
+          "name": "厚生労働省提出資料1",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_57/pdf/s5-1.pdf"
+        },
+        {
+          "name": "厚生労働省提出資料2",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_57/pdf/s5-2.pdf"
+        },
+        {
+          "name": "国土交通省提出資料",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_57/pdf/s6.pdf"
+        },
+        {
+          "name": "第57回 障害者政策委員会 議事録（PDF）",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_57/pdf/gijiroku.pdf"
+        },
+        {
+          "name": "第57回 障害者政策委員会 議事録",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_57/gijiroku.html"
+        }
+      ],
+      "manualLock": true
+    },
+    {
+      "id": "cao-238-20210913-056",
+      "councilId": "cao-238",
+      "title": "第56回 障害者政策委員会",
+      "date": "2021/09/13",
+      "officialUrl": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_56/index.html",
+      "category": "COMMITTEE",
+      "ministry": "CAO",
+      "materials": [
+        {
+          "name": "基本方針の改定に係るヒアリング項目",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_56/pdf/s1.pdf"
+        },
+        {
+          "name": "基本方針改定に係る障害者団体からの意見一覧（前半（13：30～15：00ヒアリング分））",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_56/pdf/s2.pdf"
+        },
+        {
+          "name": "基本方針改定に係る障害者団体からの意見一覧（後半（15：30～17：00ヒアリング分））",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_56/pdf/s3.pdf"
+        },
+        {
+          "name": "第56回 障害者政策委員会 議事録（PDF）",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_56/pdf/gijiroku.pdf"
+        },
+        {
+          "name": "第56回 障害者政策委員会 議事録",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_56/gijiroku.html"
+        }
+      ],
+      "manualLock": true
+    },
+    {
+      "id": "cao-238-20210628-055",
+      "councilId": "cao-238",
+      "title": "第55回 障害者政策委員会",
+      "date": "2021/06/28",
+      "officialUrl": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_55/index.html",
+      "category": "COMMITTEE",
+      "ministry": "CAO",
+      "materials": [
+        {
+          "name": "障害を理由とする差別の解消の推進に関する法律の一部を改正する法律の概要",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_55/pdf/s1-1.pdf"
+        },
+        {
+          "name": "障害を理由とする差別の解消の推進に関する法律の一部を改正する法律 新旧対照条文",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_55/pdf/s1-2.pdf"
+        },
+        {
+          "name": "衆議院内閣委員会における障害を理由とする差別の解消の推進に関する法律の一部を改正する法律案に対する附帯決議",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_55/pdf/s1-3.pdf"
+        },
+        {
+          "name": "参議院内閣委員会における障害を理由とする差別の解消の推進に関する法律の一部を改正する法律案に対する附帯決議",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_55/pdf/s1-4.pdf"
+        },
+        {
+          "name": "障害者差別解消法改正法の施行に向けたスケジュール（イメージ）",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_55/pdf/s2-1.pdf"
+        },
+        {
+          "name": "障害者差別解消法に基づく基本方針の改定に向けた審議の進め方（案）",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_55/pdf/s2-2.pdf"
+        },
+        {
+          "name": "障害者差別解消関係府省連絡会議について",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_55/pdf/s2-3.pdf"
+        },
+        {
+          "name": "国連障害者権利委員会からの事前質問事項への回答案",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_55/pdf/s3.pdf"
+        },
+        {
+          "name": "第55回 障害者政策委員会 議事録（PDF）",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_55/pdf/gijiroku.pdf"
+        },
+        {
+          "name": "第55回 障害者政策委員会 議事録",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_55/gijiroku.html"
+        }
+      ],
+      "manualLock": true
+    },
+    {
+      "id": "cao-238-20210322-054",
+      "councilId": "cao-238",
+      "title": "第54回 障害者政策委員会",
+      "date": "2021/03/22",
+      "officialUrl": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_54/index.html",
+      "category": "COMMITTEE",
+      "ministry": "CAO",
+      "materials": [
+        {
+          "name": "障害者政策委員会 委員名簿",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_54/pdf/s1.pdf"
+        },
+        {
+          "name": "障害を理由とする差別の解消の推進に関する法律の一部を改正する法律案の概要",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_54/pdf/s2-1.pdf"
+        },
+        {
+          "name": "障害を理由とする差別の解消の推進に関する法律の一部を改正する法律案 新旧対照条文",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_54/pdf/s2-2.pdf"
+        },
+        {
+          "name": "「「障害」の表記に関する国語分科会の考え方」の概要",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_54/pdf/s3-1.pdf"
+        },
+        {
+          "name": "「障害」の表記に関する国語分科会の考え方",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_54/pdf/s3-2.pdf"
+        },
+        {
+          "name": "第54回 障害者政策委員会 議事録（PDF）",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_54/pdf/gijiroku.pdf"
+        },
+        {
+          "name": "第54回 障害者政策委員会 議事録",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_54/gijiroku.html"
+        }
+      ],
+      "manualLock": true
+    },
+    {
+      "id": "cao-238-20201214-053",
+      "councilId": "cao-238",
+      "title": "第53回 障害者政策委員会",
+      "date": "2020/12/14",
+      "officialUrl": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_53/index.html",
+      "category": "COMMITTEE",
+      "ministry": "CAO",
+      "materials": [
+        {
+          "name": "障害者基本計画（第４次）の実施状況（令和元年度）",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_53/pdf/s1-1.pdf"
+        },
+        {
+          "name": "（別表）障害者基本計画（第４次）関連成果目標",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_53/pdf/s1-2.pdf"
+        },
+        {
+          "name": "資料1－2「（別表）障害者基本計画（第４次）関連成果目標」について一部訂正いたしました。（令和３年４月15日） 正誤表はこちら",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_53/pdf/s1-2_seigo.pdf"
+        },
+        {
+          "name": "文部科学省提出資料",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_53/pdf/s2.pdf"
+        },
+        {
+          "name": "厚生労働省提出資料",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_53/pdf/s3-1.pdf"
+        },
+        {
+          "name": "厚生労働省提出資料",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_53/pdf/s3-2.pdf"
+        },
+        {
+          "name": "国土交通省提出資料",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_53/pdf/s4.pdf"
+        },
+        {
+          "name": "障害者差別解消法の施行３年後見直しの検討の方向性について",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_53/pdf/s5.pdf"
+        },
+        {
+          "name": "障害者差別解消法の施行３年後見直しに関する事業者団体ヒアリング結果概要",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_53/pdf/s6.pdf"
+        },
+        {
+          "name": "障害者差別解消法の施行３年後見直しに関する障害者団体ヒアリング結果概要",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_53/pdf/s7.pdf"
+        },
+        {
+          "name": "障害者差別解消法の改正に盛り込む事項（案）",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_53/pdf/s8.pdf"
+        },
+        {
+          "name": "第53回 障害者政策委員会 議事録（PDF）",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_53/pdf/gijiroku.pdf"
+        },
+        {
+          "name": "第53回 障害者政策委員会 議事録",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_53/gijiroku.html"
+        }
+      ],
+      "manualLock": true
+    },
+    {
+      "id": "cao-238-20200622-052",
+      "councilId": "cao-238",
+      "title": "第52回 障害者政策委員会",
+      "date": "2020/06/22",
+      "officialUrl": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_52/index.html",
+      "category": "COMMITTEE",
+      "ministry": "CAO",
+      "materials": [
+        {
+          "name": "障害者差別解消法の施行３年後見直しに関する意見（案）",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_52/pdf/s1-1.pdf"
+        },
+        {
+          "name": "障害者差別解消法の施行３年後見直しに関する意見（案）（見え消し版）",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_52/pdf/s1-2.pdf"
+        },
+        {
+          "name": "令和元年度障害者統計の充実に係る調査研究事業報告書（概要）",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_52/pdf/s2.pdf"
+        },
+        {
+          "name": "第52回 障害者政策委員会 議事録（PDF）",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_52/pdf/gijiroku.pdf"
+        },
+        {
+          "name": "第52回 障害者政策委員会 議事録",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_52/gijiroku.html"
+        }
+      ],
+      "manualLock": true
+    },
+    {
+      "id": "cao-238-20200525-051",
+      "councilId": "cao-238",
+      "title": "第51回 障害者政策委員会",
+      "date": "2020/05/25",
+      "officialUrl": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_51/index.html",
+      "category": "COMMITTEE",
+      "ministry": "CAO",
+      "materials": [
+        {
+          "name": "障害者政策委員会運営規則の改正について（概要）",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_51/pdf/s1-1.pdf"
+        },
+        {
+          "name": "障害者政策委員会運営規則（案）",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_51/pdf/s1-2.pdf"
+        },
+        {
+          "name": "障害者差別解消法の施行３年後見直しに関する意見（案）",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_51/pdf/s2-1.pdf"
+        },
+        {
+          "name": "障害者差別解消法の施行３年後見直しに関する意見（案）（見え消し版）",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_51/pdf/s2-2.pdf"
+        },
+        {
+          "name": "阿部委員、安藤委員、岩上委員、大河内委員、大塚委員、岡田委員、加藤委員、門川委員、河井委員、北岡委員、久保委員、佐藤委員、竹下委員、玉木委員、野澤委員提出資料",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_51/pdf/s3.pdf"
+        },
+        {
+          "name": "竹下委員提出資料",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_51/pdf/s4.pdf"
+        },
+        {
+          "name": "第51回 障害者政策委員会 議事録（PDF）",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_51/pdf/gijiroku.pdf"
+        },
+        {
+          "name": "第51回 障害者政策委員会 議事録",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_51/gijiroku.html"
+        }
+      ],
+      "manualLock": true
+    },
+    {
+      "id": "cao-238-20200221-050",
+      "councilId": "cao-238",
+      "title": "第50回 障害者政策委員会",
+      "date": "2020/02/21",
+      "officialUrl": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_50/index.html",
+      "category": "COMMITTEE",
+      "ministry": "CAO",
+      "materials": [
+        {
+          "name": "第50回 資料",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_50/pdf/s1-1.pdf"
+        },
+        {
+          "name": "第50回 資料",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_50/pdf/s1-2.pdf"
+        },
+        {
+          "name": "第50回 資料",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_50/pdf/s2.pdf"
+        },
+        {
+          "name": "第50回 資料",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_50/pdf/s3.pdf"
+        },
+        {
+          "name": "第50回 資料",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_50/pdf/s4.pdf"
+        },
+        {
+          "name": "第50回 障害者政策委員会 議事録（PDF）",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_50/pdf/gijiroku.pdf"
+        },
+        {
+          "name": "第50回 障害者政策委員会 議事録",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_50/gijiroku.html"
+        }
+      ],
+      "manualLock": true
+    },
+    {
+      "id": "cao-238-20200127-049",
+      "councilId": "cao-238",
+      "title": "第49回 障害者政策委員会",
+      "date": "2020/01/27",
+      "officialUrl": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_49/index.html",
+      "category": "COMMITTEE",
+      "ministry": "CAO",
+      "materials": [
+        {
+          "name": "第49回 資料",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_49/pdf/s1.pdf"
+        },
+        {
+          "name": "第49回 資料",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_49/pdf/s2.pdf"
+        },
+        {
+          "name": "第49回 障害者政策委員会 議事録（PDF）",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_49/pdf/gijiroku.pdf"
+        },
+        {
+          "name": "第49回 障害者政策委員会 議事録",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_49/gijiroku.html"
+        }
+      ],
+      "manualLock": true
+    },
+    {
+      "id": "cao-238-20191212-048",
+      "councilId": "cao-238",
+      "title": "第48回 障害者政策委員会",
+      "date": "2019/12/12",
+      "officialUrl": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_48/index.html",
+      "category": "COMMITTEE",
+      "ministry": "CAO",
+      "materials": [
+        {
+          "name": "第48回 資料",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_48/pdf/s1-1.pdf"
+        },
+        {
+          "name": "第48回 資料",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_48/pdf/s1-2.pdf"
+        },
+        {
+          "name": "1/2 ｜ 2/2",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_48/pdf/s2-1.pdf"
+        },
+        {
+          "name": "1/2 ｜ 2/2",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_48/pdf/s2-2.pdf"
+        },
+        {
+          "name": "第48回 資料",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_48/pdf/s3.pdf"
+        },
+        {
+          "name": "第48回 資料",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_48/pdf/s4.pdf"
+        },
+        {
+          "name": "第48回 資料",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_48/pdf/s5.pdf"
+        },
+        {
+          "name": "第48回 資料",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_48/pdf/s6-1.pdf"
+        },
+        {
+          "name": "第48回 資料",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_48/pdf/s6-2.pdf"
+        },
+        {
+          "name": "第48回 資料",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_48/pdf/s6-3.pdf"
+        },
+        {
+          "name": "第48回 資料",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_48/pdf/s7.pdf"
+        },
+        {
+          "name": "第48回 資料",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_48/pdf/s8.pdf"
+        },
+        {
+          "name": "第48回 資料",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_48/pdf/s9.pdf"
+        },
+        {
+          "name": "第48回 資料",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_48/pdf/s10.pdf"
+        },
+        {
+          "name": "第48回 資料",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_48/pdf/s11-1.pdf"
+        },
+        {
+          "name": "第48回 資料",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_48/pdf/s11-2.pdf"
+        },
+        {
+          "name": "第48回 障害者政策委員会 議事録（PDF）",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_48/pdf/gijiroku.pdf"
+        },
+        {
+          "name": "第48回 障害者政策委員会 議事録",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_48/gijiroku.html"
+        }
+      ],
+      "manualLock": true
+    },
+    {
+      "id": "cao-238-20191114-047",
+      "councilId": "cao-238",
+      "title": "第47回 障害者政策委員会",
+      "date": "2019/11/14",
+      "officialUrl": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_47/index.html",
+      "category": "COMMITTEE",
+      "ministry": "CAO",
+      "materials": [
+        {
+          "name": "第47回 資料",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_47/pdf/s1-1.pdf"
+        },
+        {
+          "name": "第47回 資料",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_47/pdf/s1-2.pdf"
+        },
+        {
+          "name": "第47回 資料",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_47/pdf/s2.pdf"
+        },
+        {
+          "name": "第47回 資料",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_47/pdf/s3.pdf"
+        },
+        {
+          "name": "第47回 資料",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_47/pdf/s4.pdf"
+        },
+        {
+          "name": "第47回 資料",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_47/pdf/s5.pdf"
+        },
+        {
+          "name": "第47回 資料",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_47/pdf/s6-1.pdf"
+        },
+        {
+          "name": "第47回 資料",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_47/pdf/s6-2.pdf"
+        },
+        {
+          "name": "第47回 資料",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_47/pdf/s6-3.pdf"
+        },
+        {
+          "name": "第47回 資料",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_47/pdf/s7-1.pdf"
+        },
+        {
+          "name": "第47回 資料",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_47/pdf/s7-2.pdf"
+        },
+        {
+          "name": "第47回 資料",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_47/pdf/s8.pdf"
+        },
+        {
+          "name": "第47回 障害者政策委員会 議事録（PDF）",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_47/pdf/gijiroku.pdf"
+        },
+        {
+          "name": "第47回 障害者政策委員会 議事録",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_47/gijiroku.html"
+        }
+      ],
+      "manualLock": true
+    },
+    {
+      "id": "cao-238-20191017-046",
+      "councilId": "cao-238",
+      "title": "第46回 障害者政策委員会",
+      "date": "2019/10/17",
+      "officialUrl": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_46/index.html",
+      "category": "COMMITTEE",
+      "ministry": "CAO",
+      "materials": [
+        {
+          "name": "第46回 資料",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_46/pdf/s1.pdf"
+        },
+        {
+          "name": "第46回 資料",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_46/pdf/s2.pdf"
+        },
+        {
+          "name": "第46回 資料",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_46/pdf/s3.pdf"
+        },
+        {
+          "name": "第46回 資料",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_46/pdf/s4.pdf"
+        },
+        {
+          "name": "第46回 資料",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_46/pdf/s5.pdf"
+        },
+        {
+          "name": "第46回 資料",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_46/pdf/ref.pdf"
+        },
+        {
+          "name": "第46回 障害者政策委員会 議事録（PDF）",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_46/pdf/gijiroku.pdf"
+        },
+        {
+          "name": "第46回 障害者政策委員会 議事録",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_46/gijiroku.html"
+        }
+      ],
+      "manualLock": true
+    },
+    {
+      "id": "cao-238-20190627-045",
+      "councilId": "cao-238",
+      "title": "第45回 障害者政策委員会",
+      "date": "2019/06/27",
+      "officialUrl": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_45/index.html",
+      "category": "COMMITTEE",
+      "ministry": "CAO",
+      "materials": [
+        {
+          "name": "第45回 資料",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_45/pdf/s1.pdf"
+        },
+        {
+          "name": "第45回 資料",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_45/pdf/s2-1.pdf"
+        },
+        {
+          "name": "第45回 資料",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_45/pdf/s2-2.pdf"
+        },
+        {
+          "name": "第45回 資料",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_45/pdf/s3.pdf"
+        },
+        {
+          "name": "第45回 資料",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_45/pdf/s4.pdf"
+        },
+        {
+          "name": "第45回 障害者政策委員会 議事録（PDF）",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_45/pdf/gijiroku.pdf"
+        },
+        {
+          "name": "第45回 障害者政策委員会 議事録",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_45/gijiroku.html"
+        }
+      ],
+      "manualLock": true
+    },
+    {
+      "id": "cao-238-20190603-044",
+      "councilId": "cao-238",
+      "title": "第44回 障害者政策委員会",
+      "date": "2019/06/03",
+      "officialUrl": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_44/index.html",
+      "category": "COMMITTEE",
+      "ministry": "CAO",
+      "materials": [
+        {
+          "name": "第44回 資料",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_44/pdf/s1.pdf"
+        },
+        {
+          "name": "第44回 資料",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_44/pdf/s2-1.pdf"
+        },
+        {
+          "name": "第44回 資料",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_44/pdf/s2-2.pdf"
+        },
+        {
+          "name": "第44回 資料",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_44/pdf/ref1.pdf"
+        },
+        {
+          "name": "第44回 資料",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_44/pdf/ref2.pdf"
+        },
+        {
+          "name": "第44回 障害者政策委員会 議事録（PDF）",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_44/pdf/gijiroku.pdf"
+        },
+        {
+          "name": "第44回 障害者政策委員会 議事録",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_44/gijiroku.html"
+        }
+      ],
+      "manualLock": true
+    },
+    {
+      "id": "cao-238-20190422-043",
+      "councilId": "cao-238",
+      "title": "第43回 障害者政策委員会",
+      "date": "2019/04/22",
+      "officialUrl": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_43/index.html",
+      "category": "COMMITTEE",
+      "ministry": "CAO",
+      "materials": [
+        {
+          "name": "第43回 資料",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_43/pdf/s1.pdf"
+        },
+        {
+          "name": "第43回 障害者政策委員会 議事録（PDF）",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_43/pdf/gijiroku.pdf"
+        },
+        {
+          "name": "第43回 障害者政策委員会 議事録",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_43/gijiroku.html"
+        }
+      ],
+      "manualLock": true
+    },
+    {
+      "id": "cao-238-20190222-042",
+      "councilId": "cao-238",
+      "title": "第42回 障害者政策委員会",
+      "date": "2019/02/22",
+      "officialUrl": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_42/index.html",
+      "category": "COMMITTEE",
+      "ministry": "CAO",
+      "materials": [
+        {
+          "name": "第42回 資料",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_42/pdf/s1-1.pdf"
+        },
+        {
+          "name": "第42回 資料",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_42/pdf/s1-2.pdf"
+        },
+        {
+          "name": "第42回 資料",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_42/pdf/s2.pdf"
+        },
+        {
+          "name": "第42回 資料",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_42/pdf/s3-1.pdf"
+        },
+        {
+          "name": "第42回 資料",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_42/pdf/s3-2.pdf"
+        },
+        {
+          "name": "第42回 資料",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_42/pdf/s4.pdf"
+        },
+        {
+          "name": "第42回 資料",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_42/pdf/s5.pdf"
+        },
+        {
+          "name": "第42回 資料",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_42/pdf/s6.pdf"
+        },
+        {
+          "name": "第42回 資料",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_42/pdf/ref.pdf"
+        },
+        {
+          "name": "第42回 障害者政策委員会 議事録（PDF）",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_42/pdf/gijiroku.pdf"
+        },
+        {
+          "name": "第42回 障害者政策委員会 議事録",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_42/gijiroku.html"
+        }
+      ],
+      "manualLock": true
+    },
+    {
+      "id": "cao-238-20190125-041",
+      "councilId": "cao-238",
+      "title": "第41回 障害者政策委員会",
+      "date": "2019/01/25",
+      "officialUrl": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_41/index.html",
+      "category": "COMMITTEE",
+      "ministry": "CAO",
+      "materials": [
+        {
+          "name": "第41回 資料",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_41/pdf/s1.pdf"
+        },
+        {
+          "name": "第41回 資料",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_41/pdf/s2-1.pdf"
+        },
+        {
+          "name": "第41回 資料",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_41/pdf/s2-2.pdf"
+        },
+        {
+          "name": "第41回 資料",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_41/pdf/s3.pdf"
+        },
+        {
+          "name": "第41回 資料",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_41/pdf/s4.pdf"
+        },
+        {
+          "name": "第41回 資料",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_41/pdf/iken.pdf"
+        },
+        {
+          "name": "第41回 障害者政策委員会 議事録（PDF）",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_41/pdf/gijiroku.pdf"
+        },
+        {
+          "name": "第41回 障害者政策委員会 議事録",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_41/gijiroku.html"
+        }
+      ],
+      "manualLock": true
+    },
+    {
+      "id": "cao-238-20171222-040",
+      "councilId": "cao-238",
+      "title": "第40回 障害者政策委員会",
+      "date": "2017/12/22",
+      "officialUrl": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_40/index.html",
+      "category": "COMMITTEE",
+      "ministry": "CAO",
+      "materials": [
+        {
+          "name": "第40回 資料",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_40/pdf/s1-1.pdf"
+        },
+        {
+          "name": "第40回 資料",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_40/pdf/s1-2.pdf"
+        },
+        {
+          "name": "第40回 資料",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_40/pdf/s2-1.pdf"
+        },
+        {
+          "name": "第40回 資料",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_40/pdf/s2-2.pdf"
+        },
+        {
+          "name": "第40回 障害者政策委員会 議事録（PDF）",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_40/pdf/gijiroku.pdf"
+        },
+        {
+          "name": "第40回 障害者政策委員会 議事録",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_40/gijiroku.html"
+        }
+      ],
+      "manualLock": true
+    },
+    {
+      "id": "cao-238-20171020-039",
+      "councilId": "cao-238",
+      "title": "第39回 障害者政策委員会",
+      "date": "2017/10/20",
+      "officialUrl": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_39/index.html",
+      "category": "COMMITTEE",
+      "ministry": "CAO",
+      "materials": [
+        {
+          "name": "第39回 資料",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_39/pdf/s1-1.pdf"
+        },
+        {
+          "name": "第39回 資料",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_39/pdf/s1-2.pdf"
+        },
+        {
+          "name": "第39回 資料",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_39/pdf/s2-1.pdf"
+        },
+        {
+          "name": "第39回 資料",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_39/pdf/s2-2.pdf"
+        },
+        {
+          "name": "第39回 障害者政策委員会 議事録（PDF）",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_39/pdf/gijiroku.pdf"
+        },
+        {
+          "name": "第39回 障害者政策委員会 議事録",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_39/gijiroku.html"
+        }
+      ],
+      "manualLock": true
+    },
+    {
+      "id": "cao-238-20170925-038",
+      "councilId": "cao-238",
+      "title": "第38回 障害者政策委員会",
+      "date": "2017/09/25",
+      "officialUrl": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_38/index.html",
+      "category": "COMMITTEE",
+      "ministry": "CAO",
+      "materials": [
+        {
+          "name": "第38回 資料",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_38/pdf/s1.pdf"
+        },
+        {
+          "name": "第38回 資料",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_38/pdf/s2-1.pdf"
+        },
+        {
+          "name": "第38回 資料",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_38/pdf/s2-2.pdf"
+        },
+        {
+          "name": "第38回 障害者政策委員会 議事録（PDF）",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_38/pdf/gijiroku.pdf"
+        },
+        {
+          "name": "第38回 障害者政策委員会 議事録",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_38/gijiroku.html"
+        }
+      ],
+      "manualLock": true
+    },
+    {
+      "id": "cao-238-20170807-037",
+      "councilId": "cao-238",
+      "title": "第37回 障害者政策委員会",
+      "date": "2017/08/07",
+      "officialUrl": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_37/index.html",
+      "category": "COMMITTEE",
+      "ministry": "CAO",
+      "materials": [
+        {
+          "name": "第37回 資料",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_37/pdf/s1-1.pdf"
+        },
+        {
+          "name": "第37回 資料",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_37/pdf/s1-2.pdf"
+        },
+        {
+          "name": "第37回 資料",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_37/pdf/s2-1.pdf"
+        },
+        {
+          "name": "第37回 資料",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_37/pdf/s2-2.pdf"
+        },
+        {
+          "name": "第37回 障害者政策委員会 議事録（PDF）",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_37/pdf/gijiroku.pdf"
+        },
+        {
+          "name": "第37回 障害者政策委員会 議事録",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_37/gijiroku.html"
+        }
+      ],
+      "manualLock": true
+    },
+    {
+      "id": "cao-238-20170721-036",
+      "councilId": "cao-238",
+      "title": "第36回 障害者政策委員会",
+      "date": "2017/07/21",
+      "officialUrl": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_36/index.html",
+      "category": "COMMITTEE",
+      "ministry": "CAO",
+      "materials": [
+        {
+          "name": "第36回 資料",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_36/pdf/s1-1.pdf"
+        },
+        {
+          "name": "第36回 資料",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_36/pdf/s1-2.pdf"
+        },
+        {
+          "name": "第36回 資料",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_36/pdf/s2.pdf"
+        },
+        {
+          "name": "第36回 障害者政策委員会 議事録（PDF）",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_36/pdf/gijiroku.pdf"
+        },
+        {
+          "name": "第36回 障害者政策委員会 議事録",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_36/gijiroku.html"
+        }
+      ],
+      "manualLock": true
+    },
+    {
+      "id": "cao-238-20170623-035",
+      "councilId": "cao-238",
+      "title": "第35回 障害者政策委員会",
+      "date": "2017/06/23",
+      "officialUrl": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_35/index.html",
+      "category": "COMMITTEE",
+      "ministry": "CAO",
+      "materials": [
+        {
+          "name": "第35回 資料",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_35/pdf/s1.pdf"
+        },
+        {
+          "name": "第35回 資料",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_35/pdf/s2-1.pdf"
+        },
+        {
+          "name": "第35回 資料",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_35/pdf/s2-2.pdf"
+        },
+        {
+          "name": "第35回 障害者政策委員会 議事録（PDF）",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_35/pdf/gijiroku.pdf"
+        },
+        {
+          "name": "第35回 障害者政策委員会 議事録",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_35/gijiroku.html"
+        }
+      ],
+      "manualLock": true
+    },
+    {
+      "id": "cao-238-20170529-034",
+      "councilId": "cao-238",
+      "title": "第34回 障害者政策委員会",
+      "date": "2017/05/29",
+      "officialUrl": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_34/index.html",
+      "category": "COMMITTEE",
+      "ministry": "CAO",
+      "materials": [
+        {
+          "name": "資料1－1 地方公共団体における取組の概況",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_34/pdf/s1-1.pdf"
+        },
+        {
+          "name": "資料1－2 障害者差別解消支援地域協議会の設置状況等について",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_34/pdf/s1-2.pdf"
+        },
+        {
+          "name": "資料2－1 障害者差別解消支援地域協議会の設置・運営等に関するガイドライン",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_34/pdf/s2-1.pdf"
+        },
+        {
+          "name": "資料2－2 地方公共団体向け広報資料(つくってみませんか？地域協議会)",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_34/pdf/s2-2.pdf"
+        },
+        {
+          "name": "資料3－1 障害者の生涯を通じた多様な学習活動の充実について",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_34/pdf/s3-1.pdf"
+        },
+        {
+          "name": "1/6 ｜ 2/6 ｜ 3/6 ｜ 4/6 ｜ 5/6",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_34/pdf/s3-2-1.pdf"
+        },
+        {
+          "name": "1/6 ｜ 2/6 ｜ 3/6 ｜ 4/6 ｜ 5/6",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_34/pdf/s3-2-2.pdf"
+        },
+        {
+          "name": "1/6 ｜ 2/6 ｜ 3/6 ｜ 4/6 ｜ 5/6",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_34/pdf/s3-2-3.pdf"
+        },
+        {
+          "name": "1/6 ｜ 2/6 ｜ 3/6 ｜ 4/6 ｜ 5/6",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_34/pdf/s3-2-4.pdf"
+        },
+        {
+          "name": "1/6 ｜ 2/6 ｜ 3/6 ｜ 4/6 ｜ 5/6",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_34/pdf/s3-2-5.pdf"
+        },
+        {
+          "name": "6/6",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_34/pdf/s3-2-6.pdf"
+        },
+        {
+          "name": "資料4－1 障害者基本計画(第４次)骨格案",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_34/pdf/s4-1.pdf"
+        },
+        {
+          "name": "資料4－2 障害者基本計画(第４次)骨格案(見え消し版)",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_34/pdf/s4-2.pdf"
+        },
+        {
+          "name": "資料5 障害者基本計画(第４次)の今後の審議の進め方(案)",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_34/pdf/s5.pdf"
+        },
+        {
+          "name": "資料6－1 障害者基本計画(第４次)本文案(総論部分)",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_34/pdf/s6-1.pdf"
+        },
+        {
+          "name": "資料6－2 障害者基本計画(第４次)本文案(総論部分)(骨格案との対照表)",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_34/pdf/s6-2.pdf"
+        },
+        {
+          "name": "第34回 障害者政策委員会 議事録（PDF）",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_34/pdf/gijiroku.pdf"
+        },
+        {
+          "name": "第34回 障害者政策委員会 議事録",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_34/gijiroku.html"
+        }
+      ],
+      "manualLock": true
+    },
+    {
+      "id": "cao-238-20170421-033",
+      "councilId": "cao-238",
+      "title": "第33回 障害者政策委員会",
+      "date": "2017/04/21",
+      "officialUrl": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_33/index.html",
+      "category": "COMMITTEE",
+      "ministry": "CAO",
+      "materials": [
+        {
+          "name": "資料1－1 「ユニバーサルデザイン2020行動計画」について",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_33/pdf/s1-1.pdf"
+        },
+        {
+          "name": "資料1－2 ユニバーサルデザイン2020行動計画",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_33/pdf/s1-2.pdf"
+        },
+        {
+          "name": "資料2－1 障害者基本計画(第４次)の策定に当たっての基本的考え方(案)",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_33/pdf/s2-1.pdf"
+        },
+        {
+          "name": "資料2－2 障害者基本計画(第４次)骨格案",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_33/pdf/s2-2.pdf"
+        },
+        {
+          "name": "資料2－3 障害者基本計画(第４次)骨格案(見え消し版)",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_33/pdf/s2-3.pdf"
+        },
+        {
+          "name": "資料3 障害者基本計画(第４次)の今後の審議の進め方(案)",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_33/pdf/s3.pdf"
+        },
+        {
+          "name": "資料4－1 障害者基本計画(第４次)本文案(総論部分)",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_33/pdf/s4-1.pdf"
+        },
+        {
+          "name": "資料4－2 障害者基本計画(第４次)本文案(総論部分)(骨格案との対照表)",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_33/pdf/s4-2.pdf"
+        },
+        {
+          "name": "第33回 障害者政策委員会 議事録（PDF）",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_33/pdf/gijiroku.pdf"
+        },
+        {
+          "name": "第33回 障害者政策委員会 議事録",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_33/gijiroku.html"
+        }
+      ],
+      "manualLock": true
+    },
+    {
+      "id": "cao-238-20170224-032",
+      "councilId": "cao-238",
+      "title": "第32回 障害者政策委員会",
+      "date": "2017/02/24",
+      "officialUrl": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_32/index.html",
+      "category": "COMMITTEE",
+      "ministry": "CAO",
+      "materials": [
+        {
+          "name": "資料1－1 地方公共団体における地域協議会の設置状況(総括表)",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_32/pdf/s1-1.pdf"
+        },
+        {
+          "name": "資料1－2 障害者差別解消支援地域協議会の設置状況等について",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_32/pdf/s1-2.pdf"
+        },
+        {
+          "name": "第32回 資料",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_32/pdf/s1-3.pdf"
+        },
+        {
+          "name": "資料2－1 障害者基本計画(第４次)目次案",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_32/pdf/s2-1.pdf"
+        },
+        {
+          "name": "資料2－2 障害者基本計画(第４次)骨格案",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_32/pdf/s2-2.pdf"
+        },
+        {
+          "name": "資料2－3 障害者基本計画(第４次)骨格案(新旧対照表)",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_32/pdf/s2-3.pdf"
+        },
+        {
+          "name": "第32回 資料",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_32/pdf/ref.pdf"
+        },
+        {
+          "name": "第32回 障害者政策委員会 議事録（PDF）",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_32/pdf/gijiroku.pdf"
+        },
+        {
+          "name": "第32回 障害者政策委員会 議事録",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_32/gijiroku.html"
+        }
+      ],
+      "manualLock": true
+    },
+    {
+      "id": "cao-238-20161212-031",
+      "councilId": "cao-238",
+      "title": "第31回 障害者政策委員会",
+      "date": "2016/12/12",
+      "officialUrl": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_31/index.html",
+      "category": "COMMITTEE",
+      "ministry": "CAO",
+      "materials": [
+        {
+          "name": "資料1 平成28年度「障害者週間」（12月3日～9日）について",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_31/pdf/s-1.pdf"
+        },
+        {
+          "name": "資料2-1 地方公共団体における対応要領の策定状況",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_31/pdf/s-2-1.pdf"
+        },
+        {
+          "name": "資料2-2 地方公共団体における地域協議会の設置状況",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_31/pdf/s-2-2.pdf"
+        },
+        {
+          "name": "資料3 成年後見制度について",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_31/pdf/s-3.pdf"
+        },
+        {
+          "name": "資料4 障害者基本計画（第４次）の今後の審議の進め方（案）",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_31/pdf/s-4.pdf"
+        },
+        {
+          "name": "資料5 障害者基本計画（第４次）の検討を見据えた今後の障害者施策の課題について",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_31/pdf/s-5.pdf"
+        },
+        {
+          "name": "第31回 障害者政策委員会 議事録（PDF）",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_31/pdf/gijiroku.pdf"
+        },
+        {
+          "name": "第31回 障害者政策委員会 議事録",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_31/gijiroku.html"
+        }
+      ],
+      "manualLock": true
+    },
+    {
+      "id": "cao-238-20161021-030",
+      "councilId": "cao-238",
+      "title": "第30回 障害者政策委員会",
+      "date": "2016/10/21",
+      "officialUrl": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_30/index.html",
+      "category": "COMMITTEE",
+      "ministry": "CAO",
+      "materials": [
+        {
+          "name": "資料1 障害者政策委員会 委員名簿",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_30/pdf/s-1.pdf"
+        },
+        {
+          "name": "資料2 今後の審議スケジュール(想定)",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_30/pdf/s-2.pdf"
+        },
+        {
+          "name": "資料3 議論の整理 ～第3次障害者基本計画の実施状況を踏まえた課題～",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_30/pdf/s-3.pdf"
+        },
+        {
+          "name": "資料4-1 平成26・27年度障害者施策実施状況 1/2 ｜ 2/2",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_30/pdf/s-4-1-1.pdf"
+        },
+        {
+          "name": "資料4-1 平成26・27年度障害者施策実施状況 1/2 ｜ 2/2",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_30/pdf/s-4-1-2.pdf"
+        },
+        {
+          "name": "資料4-2 文部科学省提出資料(平成26・27年度障害者施策実施状況関係)",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_30/pdf/s-4-2.pdf"
+        },
+        {
+          "name": "1/3 ｜ 2/3 ｜ 3/3 1/3 ｜ 2/3 ｜ 3/3",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_30/pdf/s-4-3-1.pdf"
+        },
+        {
+          "name": "1/3 ｜ 2/3 ｜ 3/3 1/3 ｜ 2/3 ｜ 3/3",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_30/pdf/s-4-3-2.pdf"
+        },
+        {
+          "name": "1/3 ｜ 2/3 ｜ 3/3 1/3 ｜ 2/3 ｜ 3/3",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_30/pdf/s-4-3-3.pdf"
+        },
+        {
+          "name": "資料4-4 国土交通省提出資料(平成26・27年度障害者施策実施状況関係)",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_30/pdf/s-4-4.pdf"
+        },
+        {
+          "name": "第30回 障害者政策委員会 議事録（PDF）",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_30/pdf/gijiroku.pdf"
+        },
+        {
+          "name": "第30回 障害者政策委員会 議事録",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_30/gijiroku.html"
+        }
+      ],
+      "manualLock": true
+    },
+    {
+      "id": "cao-238-20160729-029",
+      "councilId": "cao-238",
+      "title": "第29回 障害者政策委員会",
+      "date": "2016/07/29",
+      "officialUrl": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_29/index.html",
+      "category": "COMMITTEE",
+      "ministry": "CAO",
+      "materials": [
+        {
+          "name": "資料1－1 障害者の権利に関する条約第１回日本政府報告（概要）",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_29/pdf/s1-1.pdf"
+        },
+        {
+          "name": "1/4 ｜ 2/4 ｜ 3/4 ｜ 4/4",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_29/pdf/s1-2-1.pdf"
+        },
+        {
+          "name": "1/4 ｜ 2/4 ｜ 3/4 ｜ 4/4",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_29/pdf/s1-2-2.pdf"
+        },
+        {
+          "name": "1/4 ｜ 2/4 ｜ 3/4 ｜ 4/4",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_29/pdf/s1-2-3.pdf"
+        },
+        {
+          "name": "1/4 ｜ 2/4 ｜ 3/4 ｜ 4/4",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_29/pdf/s1-2-4.pdf"
+        },
+        {
+          "name": "資料1－3 障害者権利委員会委員選挙投票結果",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_29/pdf/s1-3.pdf"
+        },
+        {
+          "name": "資料2－1 障害者差別解消地域支援協議会の設置・運営指針（概要） ｜ テキスト",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_29/pdf/s2-1.pdf"
+        },
+        {
+          "name": "資料2－2 障害者差別解消支援地域協議会設置の手引き（概要） ｜ テキスト",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_29/pdf/s2-2.pdf"
+        },
+        {
+          "name": "資料2－3 平成28年度障害者差別解消支援地域協議会体制整備事業 ｜ テキスト",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_29/pdf/s2-3.pdf"
+        },
+        {
+          "name": "資料2－4 障害を理由とする差別の解消に向けた地域フォーラム ｜ テキスト",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_29/pdf/s2-4.pdf"
+        },
+        {
+          "name": "資料2－5 地方公共団体における対応要領の策定状況（概要） ｜ テキスト",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_29/pdf/s2-5.pdf"
+        },
+        {
+          "name": "資料2－6 地方公共団体における地域協議会の設置状況（概要） ｜ テキスト",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_29/pdf/s2-6.pdf"
+        },
+        {
+          "name": "資料2－7 内閣府本府職員対応要領に基づく研修について 1/2 ｜ 2/2 テキスト",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_29/pdf/s2-7-1.pdf"
+        },
+        {
+          "name": "資料2－7 内閣府本府職員対応要領に基づく研修について 1/2 ｜ 2/2 テキスト",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_29/pdf/s2-7-2.pdf"
+        },
+        {
+          "name": "資料2－8 北海道の取組状況 ｜ テキスト",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_29/pdf/s2-8.pdf"
+        },
+        {
+          "name": "資料2－9 障害者差別解消法の施行について～浦安市の取組～ ｜ テキスト",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_29/pdf/s2-9.pdf"
+        },
+        {
+          "name": "資料2－10 交通の好事例",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_29/pdf/s2-10.pdf"
+        },
+        {
+          "name": "資料3 持続可能な開発目標（ＳＤＧｓ）について",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_29/pdf/s3.pdf"
+        },
+        {
+          "name": "第29回 障害者政策委員会 議事録（PDF）",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_29/pdf/gijiroku.pdf"
+        },
+        {
+          "name": "第29回 障害者政策委員会 議事録",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_29/gijiroku.html"
+        }
+      ],
+      "manualLock": true
+    },
+    {
+      "id": "cao-238-20151218-028",
+      "councilId": "cao-238",
+      "title": "第28回 障害者政策委員会",
+      "date": "2015/12/18",
+      "officialUrl": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_28/index.html",
+      "category": "COMMITTEE",
+      "ministry": "CAO",
+      "materials": [
+        {
+          "name": "1/2 ｜ 2/2",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_28/pdf/s1-1-1.pdf"
+        },
+        {
+          "name": "1/2 ｜ 2/2",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_28/pdf/s1-1-2.pdf"
+        },
+        {
+          "name": "資料1－2 障害者の権利に関する条約第１回日本政府報告（案）（日本語仮訳）見え消し版 テキスト",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_28/pdf/s1-2.pdf"
+        },
+        {
+          "name": "参考資料1 障害者権利条約第1回政府報告の留意点及び骨子 テキスト",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_28/pdf/ss1.pdf"
+        },
+        {
+          "name": "参考資料2 障害者差別解消法施行令案及び施行規則案の概要 テキスト",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_28/pdf/ss2.pdf"
+        },
+        {
+          "name": "参考資料3 障害者差別解消法に基づく対応要領・対応指針一覧",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_28/pdf/ss3.pdf"
+        },
+        {
+          "name": "1/2 ｜ 2/2",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_28/pdf/ss4-1.pdf"
+        },
+        {
+          "name": "1/2 ｜ 2/2",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_28/pdf/ss4-2.pdf"
+        },
+        {
+          "name": "参考資料5－1 障害者差別解消支援地域協議会設置の手引き（概要） テキスト",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_28/pdf/ss5-1.pdf"
+        },
+        {
+          "name": "第28回 資料",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_28/pdf/ss5-2.pdf"
+        },
+        {
+          "name": "参考資料6 障害を理由とする差別の解消に向けた地域フォーラムについて テキスト",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_28/pdf/ss6.pdf"
+        },
+        {
+          "name": "第28回 障害者政策委員会 議事録（PDF）",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_28/pdf/gijiroku.pdf"
+        },
+        {
+          "name": "第28回 障害者政策委員会 議事録",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_28/gijiroku.html"
+        }
+      ],
+      "manualLock": true
+    },
+    {
+      "id": "cao-238-20151026-027",
+      "councilId": "cao-238",
+      "title": "第27回 障害者政策委員会",
+      "date": "2015/10/26",
+      "officialUrl": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_27/index.html",
+      "category": "COMMITTEE",
+      "ministry": "CAO",
+      "materials": [
+        {
+          "name": "資料1 障害者の権利に関する条約第１回日本政府報告（案）（日本語仮訳） テキスト 1/3 | 2/3 | 3/3",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_27/pdf/s1_1.pdf"
+        },
+        {
+          "name": "資料1 障害者の権利に関する条約第１回日本政府報告（案）（日本語仮訳） テキスト 1/3 | 2/3 | 3/3",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_27/pdf/s1_2_1.pdf"
+        },
+        {
+          "name": "資料1 障害者の権利に関する条約第１回日本政府報告（案）（日本語仮訳） テキスト 1/3 | 2/3 | 3/3",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_27/pdf/s1_2_2.pdf"
+        },
+        {
+          "name": "資料2 障害者政策委員会における監視の議論を通じて、政府報告に盛り込むことが考えられる意見（事務局案）",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_27/pdf/s2.pdf"
+        },
+        {
+          "name": "参考資料1 障害者政策委員会における第３次障害者基本計画の実施状況の監視に係る今後のスケジュールについて（案）",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_27/pdf/ss1.pdf"
+        },
+        {
+          "name": "参考資料2 障害者権利条約第1回政府報告の留意点及び骨子",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_27/pdf/ss2.pdf"
+        },
+        {
+          "name": "参考資料3 議論の整理",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_27/pdf/ss3.pdf"
+        },
+        {
+          "name": "第27回 障害者政策委員会 議事録（PDF）",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_27/pdf/gijiroku.pdf"
+        },
+        {
+          "name": "第27回 障害者政策委員会 議事録",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_27/gijiroku.html"
+        }
+      ],
+      "manualLock": true
+    },
+    {
+      "id": "cao-238-20150924-026",
+      "councilId": "cao-238",
+      "title": "第26回 障害者政策委員会",
+      "date": "2015/09/24",
+      "officialUrl": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_26/index.html",
+      "category": "COMMITTEE",
+      "ministry": "CAO",
+      "materials": [
+        {
+          "name": "資料1-1 第3次障害者基本計画の実施状況の監視について",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_26/pdf/s1-1.pdf"
+        },
+        {
+          "name": "資料1-2 第3次障害者基本計画の実施状況の監視について 見え消し版",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_26/pdf/s1-2.pdf"
+        },
+        {
+          "name": "目次・1 生活支援 1/2 | 2/2",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_26/pdf/s1-3_1_1.pdf"
+        },
+        {
+          "name": "目次・1 生活支援 1/2 | 2/2",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_26/pdf/s1-3_1_2.pdf"
+        },
+        {
+          "name": "2 保健・医療 1/2 | 2/2",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_26/pdf/s1-3_2_1.pdf"
+        },
+        {
+          "name": "2 保健・医療 1/2 | 2/2",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_26/pdf/s1-3_2_2.pdf"
+        },
+        {
+          "name": "3 教育、文化芸術活動・スポーツ等 1/4 | 2/4 | 3/4 | 4/4",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_26/pdf/s1-3_3_1.pdf"
+        },
+        {
+          "name": "3 教育、文化芸術活動・スポーツ等 1/4 | 2/4 | 3/4 | 4/4",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_26/pdf/s1-3_3_2.pdf"
+        },
+        {
+          "name": "3 教育、文化芸術活動・スポーツ等 1/4 | 2/4 | 3/4 | 4/4",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_26/pdf/s1-3_3_3.pdf"
+        },
+        {
+          "name": "3 教育、文化芸術活動・スポーツ等 1/4 | 2/4 | 3/4 | 4/4",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_26/pdf/s1-3_3_4.pdf"
+        },
+        {
+          "name": "4 雇用・就業、経済的自立の支援 1/3 | 2/3 | 3/3",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_26/pdf/s1-3_4_1.pdf"
+        },
+        {
+          "name": "4 雇用・就業、経済的自立の支援 1/3 | 2/3 | 3/3",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_26/pdf/s1-3_4_2.pdf"
+        },
+        {
+          "name": "4 雇用・就業、経済的自立の支援 1/3 | 2/3 | 3/3",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_26/pdf/s1-3_4_3.pdf"
+        },
+        {
+          "name": "5 生活環境 1/2 | 2/2",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_26/pdf/s1-3_5_1.pdf"
+        },
+        {
+          "name": "5 生活環境 1/2 | 2/2",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_26/pdf/s1-3_5_2.pdf"
+        },
+        {
+          "name": "6 情報アクセシビリティ",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_26/pdf/s1-3_6.pdf"
+        },
+        {
+          "name": "7 安全・安心",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_26/pdf/s1-3_7.pdf"
+        },
+        {
+          "name": "8 差別の解消及び権利擁護の推進 1/2 | 2/2",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_26/pdf/s1-3_8_1.pdf"
+        },
+        {
+          "name": "8 差別の解消及び権利擁護の推進 1/2 | 2/2",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_26/pdf/s1-3_8_2.pdf"
+        },
+        {
+          "name": "9 行政サービス等における配慮",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_26/pdf/s1-3_9.pdf"
+        },
+        {
+          "name": "10 国際協力",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_26/pdf/s1-3_10.pdf"
+        },
+        {
+          "name": "推進体制",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_26/pdf/s1-3_11.pdf"
+        },
+        {
+          "name": "資料1-4 議論の整理",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_26/pdf/s1-4.pdf"
+        },
+        {
+          "name": "資料1-5 議論の整理 見え消し版",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_26/pdf/s1-5.pdf"
+        },
+        {
+          "name": "資料2 障害者の権利に関する条約第１回日本政府報告（案）（日本語仮訳） テキスト 1/3 | 2/3 | 3/3",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_26/pdf/s2_1.pdf"
+        },
+        {
+          "name": "資料2 障害者の権利に関する条約第１回日本政府報告（案）（日本語仮訳） テキスト 1/3 | 2/3 | 3/3",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_26/pdf/s2_2.pdf"
+        },
+        {
+          "name": "資料2 障害者の権利に関する条約第１回日本政府報告（案）（日本語仮訳） テキスト 1/3 | 2/3 | 3/3",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_26/pdf/s2_3.pdf"
+        },
+        {
+          "name": "資料3 政府報告に盛り込むことが考えられる意見（事務局たたき台）",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_26/pdf/s3.pdf"
+        },
+        {
+          "name": "参考資料1 障害者政策委員会における第3次障害者基本計画の実施状況の監視に係る今後のスケジュールについて（案）",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_26/pdf/ss1.pdf"
+        },
+        {
+          "name": "参考資料2 障害者権利条約第1回政府報告の留意点及び骨子",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_26/pdf/ss2.pdf"
+        },
+        {
+          "name": "第26回 障害者政策委員会 議事録（PDF）",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_26/pdf/gijiroku.pdf"
+        },
+        {
+          "name": "第26回 障害者政策委員会 議事録",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_26/gijiroku.html"
+        }
+      ],
+      "manualLock": true
+    },
+    {
+      "id": "cao-238-20150831-025",
+      "councilId": "cao-238",
+      "title": "第25回 障害者政策委員会",
+      "date": "2015/08/31",
+      "officialUrl": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_25/index.html",
+      "category": "COMMITTEE",
+      "ministry": "CAO",
+      "materials": [
+        {
+          "name": "資料1 西田参考人提出資料：欧州諸国との比較からみる我が国の精神科強制入院制度の課題",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_25/pdf/s1.pdf"
+        },
+        {
+          "name": "資料2 柘植委員提出資料：インクルーシブ教育システム",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_25/pdf/s2.pdf"
+        },
+        {
+          "name": "資料3-1 第3次障害者基本計画の実施状況の監視について（案）",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_25/pdf/s3-1.pdf"
+        },
+        {
+          "name": "目次・1 生活支援 1/2 | 2/2",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_25/pdf/s3-2_1_1.pdf"
+        },
+        {
+          "name": "目次・1 生活支援 1/2 | 2/2",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_25/pdf/s3-2_1_2.pdf"
+        },
+        {
+          "name": "2 保健・医療 1/2 | 2/2",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_25/pdf/s3-2_2_1.pdf"
+        },
+        {
+          "name": "2 保健・医療 1/2 | 2/2",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_25/pdf/s3-2_2_2.pdf"
+        },
+        {
+          "name": "3 教育、文化芸術活動・スポーツ等 1/4 | 2/4 | 3/4 | 4/4",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_25/pdf/s3-2_3_1.pdf"
+        },
+        {
+          "name": "3 教育、文化芸術活動・スポーツ等 1/4 | 2/4 | 3/4 | 4/4",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_25/pdf/s3-2_3_2.pdf"
+        },
+        {
+          "name": "3 教育、文化芸術活動・スポーツ等 1/4 | 2/4 | 3/4 | 4/4",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_25/pdf/s3-2_3_3.pdf"
+        },
+        {
+          "name": "3 教育、文化芸術活動・スポーツ等 1/4 | 2/4 | 3/4 | 4/4",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_25/pdf/s3-2_3_4.pdf"
+        },
+        {
+          "name": "4 雇用・就業、経済的自立の支援 1/3 | 2/3 | 3/3",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_25/pdf/s3-2_4_1.pdf"
+        },
+        {
+          "name": "4 雇用・就業、経済的自立の支援 1/3 | 2/3 | 3/3",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_25/pdf/s3-2_4_2.pdf"
+        },
+        {
+          "name": "4 雇用・就業、経済的自立の支援 1/3 | 2/3 | 3/3",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_25/pdf/s3-2_4_3.pdf"
+        },
+        {
+          "name": "5 生活環境 1/2 | 2/2",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_25/pdf/s3-2_5_1.pdf"
+        },
+        {
+          "name": "5 生活環境 1/2 | 2/2",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_25/pdf/s3-2_5_2.pdf"
+        },
+        {
+          "name": "6 情報アクセシビリティ",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_25/pdf/s3-2_6.pdf"
+        },
+        {
+          "name": "7 安全・安心",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_25/pdf/s3-2_7.pdf"
+        },
+        {
+          "name": "8 差別の解消及び権利擁護の推進 1/2 | 2/2",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_25/pdf/s3-2_8_1.pdf"
+        },
+        {
+          "name": "8 差別の解消及び権利擁護の推進 1/2 | 2/2",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_25/pdf/s3-2_8_2.pdf"
+        },
+        {
+          "name": "9 行政サービス等における配慮",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_25/pdf/s3-2_9.pdf"
+        },
+        {
+          "name": "10 国際協力",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_25/pdf/s3-2_10.pdf"
+        },
+        {
+          "name": "推進体制",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_25/pdf/s3-2_11.pdf"
+        },
+        {
+          "name": "資料3-3 議論の整理（案）",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_25/pdf/s3-3.pdf"
+        },
+        {
+          "name": "資料3-4 議論の整理（案）見え消し版",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_25/pdf/s3-4.pdf"
+        },
+        {
+          "name": "資料4 厚生労働省提出資料：障害者基本計画 6-(3)-1について（通訳介助員の養成と派遣について）",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_25/pdf/s4.pdf"
+        },
+        {
+          "name": "資料5 厚生労働省提出資料：第22回障害者政策委員会「9.行政サービス等における配慮」：委員からの質問事項（宿題分）について",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_25/pdf/s5.pdf"
+        },
+        {
+          "name": "資料6 厚生労働省提出資料：第24回障害者政策委員会における議論を踏まえた厚生労働省提出資料",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_25/pdf/s6.pdf"
+        },
+        {
+          "name": "参考資料1 障害者政策委員会ワーキング・セッションについて",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_25/pdf/ss1.pdf"
+        },
+        {
+          "name": "参考資料2 障害者政策委員会における第3次障害者基本計画の実施状況の監視に係る今後のスケジュールについて（案）",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_25/pdf/ss2.pdf"
+        },
+        {
+          "name": "参考資料3 障害者政策委員会における第3次障害者基本計画の実施状況の監視について（案）（第20回障害者政策委員会 資料）【抜粋】",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_25/pdf/ss3.pdf"
+        },
+        {
+          "name": "第25回 障害者政策委員会 議事録（PDF）",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_25/pdf/gijiroku.pdf"
+        },
+        {
+          "name": "第25回 障害者政策委員会 議事録",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_25/gijiroku.html"
+        }
+      ],
+      "manualLock": true
+    },
+    {
+      "id": "cao-238-20150810-024",
+      "councilId": "cao-238",
+      "title": "第24回 障害者政策委員会",
+      "date": "2015/08/10",
+      "officialUrl": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_24/index.html",
+      "category": "COMMITTEE",
+      "ministry": "CAO",
+      "materials": [
+        {
+          "name": "資料1 大日方委員提出資料",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_24/pdf/s1.pdf"
+        },
+        {
+          "name": "資料2-1 松森委員提出資料1",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_24/pdf/s2-1.pdf"
+        },
+        {
+          "name": "資料2-2 松森委員提出資料2",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_24/pdf/s2-2.pdf"
+        },
+        {
+          "name": "資料3-1 第3次障害者基本計画の実施状況の監視について（案）",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_24/pdf/s3-1.pdf"
+        },
+        {
+          "name": "目次・1 生活支援 1/3 | 2/3 | 3/3",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_24/pdf/s3-2_1_1.pdf"
+        },
+        {
+          "name": "目次・1 生活支援 1/3 | 2/3 | 3/3",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_24/pdf/s3-2_1_2.pdf"
+        },
+        {
+          "name": "目次・1 生活支援 1/3 | 2/3 | 3/3",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_24/pdf/s3-2_1_3.pdf"
+        },
+        {
+          "name": "2 保健・医療 1/3 | 2/3 | 3/3",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_24/pdf/s3-2_2_1.pdf"
+        },
+        {
+          "name": "2 保健・医療 1/3 | 2/3 | 3/3",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_24/pdf/s3-2_2_2.pdf"
+        },
+        {
+          "name": "2 保健・医療 1/3 | 2/3 | 3/3",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_24/pdf/s3-2_2_3.pdf"
+        },
+        {
+          "name": "3 教育、文化芸術活動・スポーツ等 1/5 | 2/5 | 3/5 | 4/5 5/5",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_24/pdf/s3-2_3_1.pdf"
+        },
+        {
+          "name": "3 教育、文化芸術活動・スポーツ等 1/5 | 2/5 | 3/5 | 4/5 5/5",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_24/pdf/s3-2_3_2.pdf"
+        },
+        {
+          "name": "3 教育、文化芸術活動・スポーツ等 1/5 | 2/5 | 3/5 | 4/5 5/5",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_24/pdf/s3-2_3_3.pdf"
+        },
+        {
+          "name": "3 教育、文化芸術活動・スポーツ等 1/5 | 2/5 | 3/5 | 4/5 5/5",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_24/pdf/s3-2_3_4.pdf"
+        },
+        {
+          "name": "3 教育、文化芸術活動・スポーツ等 1/5 | 2/5 | 3/5 | 4/5 5/5",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_24/pdf/s3-2_3_5.pdf"
+        },
+        {
+          "name": "4 雇用・就業、経済的自立の支援 1/4 | 2/4 | 3/4 | 4/4",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_24/pdf/s3-2_4_1.pdf"
+        },
+        {
+          "name": "4 雇用・就業、経済的自立の支援 1/4 | 2/4 | 3/4 | 4/4",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_24/pdf/s3-2_4_2.pdf"
+        },
+        {
+          "name": "4 雇用・就業、経済的自立の支援 1/4 | 2/4 | 3/4 | 4/4",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_24/pdf/s3-2_4_3.pdf"
+        },
+        {
+          "name": "4 雇用・就業、経済的自立の支援 1/4 | 2/4 | 3/4 | 4/4",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_24/pdf/s3-2_4_4.pdf"
+        },
+        {
+          "name": "5 生活環境 1/3 | 2/3 | 3/3",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_24/pdf/s3-2_5_1.pdf"
+        },
+        {
+          "name": "5 生活環境 1/3 | 2/3 | 3/3",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_24/pdf/s3-2_5_2.pdf"
+        },
+        {
+          "name": "5 生活環境 1/3 | 2/3 | 3/3",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_24/pdf/s3-2_5_3.pdf"
+        },
+        {
+          "name": "6 情報アクセシビリティ",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_24/pdf/s3-2_6.pdf"
+        },
+        {
+          "name": "7 安全・安心 1/3 | 2/3 | 3/3",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_24/pdf/s3-2_7_1.pdf"
+        },
+        {
+          "name": "7 安全・安心 1/3 | 2/3 | 3/3",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_24/pdf/s3-2_7_2.pdf"
+        },
+        {
+          "name": "7 安全・安心 1/3 | 2/3 | 3/3",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_24/pdf/s3-2_7_3.pdf"
+        },
+        {
+          "name": "8 差別の解消及び権利擁護の推進 1/2 | 2/2",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_24/pdf/s3-2_8_1.pdf"
+        },
+        {
+          "name": "8 差別の解消及び権利擁護の推進 1/2 | 2/2",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_24/pdf/s3-2_8_2.pdf"
+        },
+        {
+          "name": "9 行政サービス等における配慮",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_24/pdf/s3-2_9.pdf"
+        },
+        {
+          "name": "10 国際協力",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_24/pdf/s3-2_10.pdf"
+        },
+        {
+          "name": "推進体制",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_24/pdf/s3-2_11.pdf"
+        },
+        {
+          "name": "資料3-3 議論の整理（案）",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_24/pdf/s3-3.pdf"
+        },
+        {
+          "name": "資料4 文部科学省提出資料：第21回障害者政策委員会出された御質問に対する回答（障害者基本計画3）",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_24/pdf/s4.pdf"
+        },
+        {
+          "name": "資料5 文部科学省・厚生労働省提出資料：スポーツ大会の予選会に関する取組について（障害者基本計画3-(4)-1）",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_24/pdf/s5.pdf"
+        },
+        {
+          "name": "資料6 国土交通省提出資料：第21回障害者政策委員会における委員からの国土交通省に係る質問への回答（障害者基本計画5）",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_24/pdf/s6.pdf"
+        },
+        {
+          "name": "資料7 内閣府防災提出資料：意見に対する回答（障害者基本計画7）",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_24/pdf/s7.pdf"
+        },
+        {
+          "name": "資料8 消防庁提出資料：第22回障害者政策委員会における質問への回答（障害者基本計画7）",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_24/pdf/s8.pdf"
+        },
+        {
+          "name": "資料9 厚生労働省提出資料：第22回障害者政策委員会「9.行政サービス等における配慮」：委員からの質問事項について",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_24/pdf/s9.pdf"
+        },
+        {
+          "name": "資料10 障害者政策委員会ワーキング・セッションⅡ議論の整理（たたき台）に対する意見",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_24/pdf/s10.pdf"
+        },
+        {
+          "name": "資料11 厚生労働省提出資料：第21回障害者政策委員会「2.保健・医療」：委員からの質問事項について（障害者基本計画2）",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_24/pdf/s11.pdf"
+        },
+        {
+          "name": "参考資料1 障害者政策委員会ワーキング・セッションについて",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_24/pdf/ss1.pdf"
+        },
+        {
+          "name": "参考資料2 障害者政策委員会における第3次障害者基本計画の実施状況の監視に係る今後のスケジュールについて（案）",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_24/pdf/ss2.pdf"
+        },
+        {
+          "name": "参考資料3 障害者政策委員会における第3次障害者基本計画の実施状況の監視について（案）（第20回障害者政策委員会 資料）【抜粋】",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_24/pdf/ss3.pdf"
+        },
+        {
+          "name": "第24回 障害者政策委員会 議事録（PDF）",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_24/pdf/gijiroku.pdf"
+        },
+        {
+          "name": "第24回 障害者政策委員会 議事録",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_24/gijiroku.html"
+        }
+      ],
+      "manualLock": true
+    },
+    {
+      "id": "cao-238-20150710-023",
+      "councilId": "cao-238",
+      "title": "第23回 障害者政策委員会",
+      "date": "2015/07/10",
+      "officialUrl": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_23/index.html",
+      "category": "COMMITTEE",
+      "ministry": "CAO",
+      "materials": [
+        {
+          "name": "資料1 勝又参考人提出資料",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_23/pdf/s1.pdf"
+        },
+        {
+          "name": "資料2-1 ワーキング・セッションI議論の整理（たたき台）",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_23/pdf/s2-1.pdf"
+        },
+        {
+          "name": "資料2-2 ワーキング・セッションII議論の整理（たたき台）",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_23/pdf/s2-2.pdf"
+        },
+        {
+          "name": "資料2-3 ワーキング・セッションIII議論の整理（たたき台）",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_23/pdf/s2-3.pdf"
+        },
+        {
+          "name": "資料2-4 ワーキング・セッションIV議論の整理（たたき台）",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_23/pdf/s2-4.pdf"
+        },
+        {
+          "name": "資料3-1 ワーキング・セッションI議論の概要",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_23/pdf/s3-1.pdf"
+        },
+        {
+          "name": "資料3-2 ワーキング・セッションII議論の概要",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_23/pdf/s3-2.pdf"
+        },
+        {
+          "name": "資料3-3 ワーキング・セッションIII議論の概要",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_23/pdf/s3-3.pdf"
+        },
+        {
+          "name": "資料3-4 ワーキング・セッションIV議論の概要",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_23/pdf/s3-4.pdf"
+        },
+        {
+          "name": "資料4-1 WS I成年後見関係事件の概況",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_23/pdf/s4-1.pdf"
+        },
+        {
+          "name": "資料4-2 WS I後見人等解任件数",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_23/pdf/s4-2.pdf"
+        },
+        {
+          "name": "資料4-3 WS II各年6月入院者に対するその後の退院患者数の割合",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_23/pdf/s4-3.pdf"
+        },
+        {
+          "name": "資料4-4 WS II精神病床における患者の動態の年次推移",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_23/pdf/s4-4.pdf"
+        },
+        {
+          "name": "資料4-5 WS II精神病床の利用状況調査結果報告 1/2 | 1/2",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_23/pdf/s4-5-1.pdf"
+        },
+        {
+          "name": "資料4-5 WS II精神病床の利用状況調査結果報告 1/2 | 1/2",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_23/pdf/s4-5-2.pdf"
+        },
+        {
+          "name": "資料4-6 WS II諸外国における地域移行をめぐる動向について",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_23/pdf/s4-6.pdf"
+        },
+        {
+          "name": "資料4-7 WS II重度の身体障害者を含めた障害者に対する保健・医療施策について",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_23/pdf/s4-7.pdf"
+        },
+        {
+          "name": "資料4-8 WS II追加資料（厚生労働省）",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_23/pdf/s4-8.pdf"
+        },
+        {
+          "name": "資料4-9 WS III第１回における質問への回答（文部科学省）",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_23/pdf/s4-9.pdf"
+        },
+        {
+          "name": "資料4-10 WS IIIインクルーシブ教育システム構築事業",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_23/pdf/s4-10.pdf"
+        },
+        {
+          "name": "資料4-11 WS III委員及び参考人からのご質問に対する回答（厚生労働省）",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_23/pdf/s4-11.pdf"
+        },
+        {
+          "name": "資料4-12 WS IV視聴覚障害者向け放送の普及",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_23/pdf/s4-12.pdf"
+        },
+        {
+          "name": "資料4-13 WS IV教科用特定図書等について",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_23/pdf/s4-13.pdf"
+        },
+        {
+          "name": "資料4-14 WS IV情報アクセシビリティ勉強会報告書",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_23/pdf/s4-14.pdf"
+        },
+        {
+          "name": "資料5 厚生労働省提出資料：ワーキング・セッションII委員・参考人からの質問事項 喀痰吸引等支援体制加算に関するデータについて",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_23/pdf/s5.pdf"
+        },
+        {
+          "name": "資料6 厚生労働省提出資料：ワーキング・セッションⅢ委員及び参考人からの追加のご指摘に対する回答",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_23/pdf/s6.pdf"
+        },
+        {
+          "name": "資料7 文部科学省提出資料：ワーキング・セッションII III IV第2回における御質問への回答",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_23/pdf/s7.pdf"
+        },
+        {
+          "name": "参考資料1 障害者政策委員会ワーキング・セッションについて",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/ws4/pdf/ref1.pdf"
+        },
+        {
+          "name": "参考資料2 障害者政策委員会における第３次障害者基本計画の実施状況の監視に係る今後のスケジュールについて（案）",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_22/pdf/ss2.pdf"
+        },
+        {
+          "name": "参考資料3 障害者政策委員会における第３次障害者基本計画の実施状況の監視について（案）（第20回障害者政策委員会 資料）【抜粋】",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/ws4/pdf/ref3.pdf"
+        },
+        {
+          "name": "第23回 障害者政策委員会 議事録（PDF）",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_23/pdf/gijiroku.pdf"
+        },
+        {
+          "name": "第23回 障害者政策委員会 議事録",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_23/gijiroku.html"
+        }
+      ],
+      "manualLock": true
+    },
+    {
+      "id": "cao-238-20150629-022",
+      "councilId": "cao-238",
+      "title": "第22回 障害者政策委員会",
+      "date": "2015/06/29",
+      "officialUrl": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_22/index.html",
+      "category": "COMMITTEE",
+      "ministry": "CAO",
+      "materials": [
+        {
+          "name": "資料1 復興庁提出資料：復興庁における取組について（障害者基本計画７－（２）－１）",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_22/pdf/s1.pdf"
+        },
+        {
+          "name": "資料2 消費者庁提出資料：障害者の消費者生活相談や消費者被害の実態（障害者基本計画７－(４)－１～４）",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_22/pdf/s2.pdf"
+        },
+        {
+          "name": "資料3 内閣府（障害者施策担当）提出資料：障害及び障害者理解の促進について（障害者基本計画Ⅳ推進体制） 1/2 | 1/2",
+          "url": "https://www8.cao.go.jp/shougai/kou-kei/pdf/leaf-h27-1.pdf"
+        },
+        {
+          "name": "資料3 内閣府（障害者施策担当）提出資料：障害及び障害者理解の促進について（障害者基本計画Ⅳ推進体制） 1/2 | 1/2",
+          "url": "https://www8.cao.go.jp/shougai/kou-kei/pdf/leaf-h27-2.pdf"
+        },
+        {
+          "name": "参考資料1 障害者政策委員会ワーキング・セッションについて",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/ws4/pdf/ref1.pdf"
+        },
+        {
+          "name": "参考資料2 障害者政策委員会における第３次障害者基本計画の実施状況の監視に係る今後のスケジュールについて（案）",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_22/pdf/ss2.pdf"
+        },
+        {
+          "name": "参考資料3 障害者政策委員会における第３次障害者基本計画の実施状況の監視について（案）（第20回障害者政策委員会 資料）【抜粋】",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/ws4/pdf/ref3.pdf"
+        },
+        {
+          "name": "第22回 障害者政策委員会 議事録（PDF）",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_22/pdf/gijiroku.pdf"
+        },
+        {
+          "name": "第22回 障害者政策委員会 議事録",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_22/gijiroku.html"
+        }
+      ],
+      "manualLock": true
+    },
+    {
+      "id": "cao-238-20150529-021",
+      "councilId": "cao-238",
+      "title": "第21回 障害者政策委員会",
+      "date": "2015/05/29",
+      "officialUrl": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_21/index.html",
+      "category": "COMMITTEE",
+      "ministry": "CAO",
+      "materials": [
+        {
+          "name": "資料1 文部科学省における障害者スポーツの取組（障害者基本計画3-(4)について）",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_21/pdf/s1.pdf"
+        },
+        {
+          "name": "資料2 障害者の芸術活動を支援するための取組について",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_21/pdf/s2.pdf"
+        },
+        {
+          "name": "資料3 バリアフリー施策の推進",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_21/pdf/s3.pdf"
+        },
+        {
+          "name": "参考資料1 障害者政策委員会ワーキング・セッションについて",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/ws4/pdf/ref1.pdf"
+        },
+        {
+          "name": "参考資料2 障害者政策委員会における第３次障害者基本計画の実施状況の監視に係る今後のスケジュールについて（案）",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/ws4/pdf/ref2.pdf"
+        },
+        {
+          "name": "参考資料3 障害者政策委員会における第３次障害者基本計画の実施状況の監視について（案）（第20回障害者政策委員会 資料）【抜粋】",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/ws4/pdf/ref3.pdf"
+        },
+        {
+          "name": "第21回 障害者政策委員会 議事録（PDF）",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_21/pdf/gijiroku.pdf"
+        },
+        {
+          "name": "第21回 障害者政策委員会 議事録",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_21/gijiroku.html"
+        }
+      ],
+      "manualLock": true
+    },
+    {
+      "id": "cao-238-20150417-020",
+      "councilId": "cao-238",
+      "title": "第20回 障害者政策委員会",
+      "date": "2015/04/17",
+      "officialUrl": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_20/index.html",
+      "category": "COMMITTEE",
+      "ministry": "CAO",
+      "materials": [
+        {
+          "name": "資料1 障害者政策委員会における第3次障害者基本計画の実施状況の監視について（案）",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_20/pdf/s1.pdf"
+        },
+        {
+          "name": "参考資料 障害者権利条約第1回政府報告の留意点及び骨子",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_20/pdf/ref1.pdf"
+        },
+        {
+          "name": "第20回 障害者政策委員会 議事録（PDF）",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_20/pdf/gijiroku.pdf"
+        },
+        {
+          "name": "第20回 障害者政策委員会 議事録",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_20/gijiroku.html"
+        }
+      ],
+      "manualLock": true
+    },
+    {
+      "id": "cao-238-20150327-019",
+      "councilId": "cao-238",
+      "title": "第19回 障害者政策委員会",
+      "date": "2015/03/27",
+      "officialUrl": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_19/index.html",
+      "category": "COMMITTEE",
+      "ministry": "CAO",
+      "materials": [
+        {
+          "name": "資料1 障害者差別解消法に基づく基本方針（原案）に関する意見募集の結果について",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_19/pdf/s1.pdf"
+        },
+        {
+          "name": "資料2 障害を理由とする差別の解消の推進に関する基本方針",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_19/pdf/s2.pdf"
+        },
+        {
+          "name": "資料3 障害者基本計画（第3次）の実施状況（案）",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_19/pdf/s3.pdf"
+        },
+        {
+          "name": "資料4 障害者権利条約第1回政府報告の留意点及び骨子（案）",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_19/pdf/s4.pdf"
+        },
+        {
+          "name": "参考資料1 障害者権利条約パンフレット（外務省）",
+          "url": "http://www.mofa.go.jp/mofaj/files/000069541.pdf"
+        },
+        {
+          "name": "参考資料2 障害を理由とする差別の解消に向けた地域フォーラム等について",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_19/pdf/ref2.pdf"
+        },
+        {
+          "name": "第19回 障害者政策委員会 議事録（PDF）",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_19/pdf/gijiroku.pdf"
+        },
+        {
+          "name": "第19回 障害者政策委員会 議事録",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_19/gijiroku.html"
+        }
+      ],
+      "manualLock": true
+    },
+    {
+      "id": "cao-238-20141110-018",
+      "councilId": "cao-238",
+      "title": "第18回 障害者政策委員会",
+      "date": "2014/11/10",
+      "officialUrl": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_18/index.html",
+      "category": "COMMITTEE",
+      "ministry": "CAO",
+      "materials": [
+        {
+          "name": "資料1 障害を理由とする差別の解消の推進に関する基本方針（案）",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_18/pdf/s1.pdf"
+        },
+        {
+          "name": "資料2 障害を理由とする差別の解消の推進に関する基本方針（案）見え消し版",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_18/pdf/s2.pdf"
+        },
+        {
+          "name": "参考資料 障害を理由とした差別の解消に向けた地域フォーラムについて",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_18/pdf/ref.pdf"
+        },
+        {
+          "name": "第18回 障害者政策委員会 議事録（PDF）",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_18/pdf/gijiroku.pdf"
+        },
+        {
+          "name": "第18回 障害者政策委員会 議事録",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_18/gijiroku1.html"
+        }
+      ],
+      "manualLock": true
+    },
+    {
+      "id": "cao-238-20141027-017",
+      "councilId": "cao-238",
+      "title": "第17回 障害者政策委員会",
+      "date": "2014/10/27",
+      "officialUrl": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_17/index.html",
+      "category": "COMMITTEE",
+      "ministry": "CAO",
+      "materials": [
+        {
+          "name": "資料1 障害を理由とする差別の解消の推進に関する基本方針（素案）",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_16/pdf/s1.pdf"
+        },
+        {
+          "name": "資料2 委員意見",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_17/pdf/s2.pdf"
+        },
+        {
+          "name": "参考資料",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_17/pdf/ref.pdf"
+        },
+        {
+          "name": "第17回 障害者政策委員会 議事録（PDF）",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_17/pdf/gijiroku.pdf"
+        },
+        {
+          "name": "第17回 障害者政策委員会 議事録",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_17/gijiroku1.html"
+        }
+      ],
+      "manualLock": true
+    },
+    {
+      "id": "cao-238-20141020-016",
+      "councilId": "cao-238",
+      "title": "第16回 障害者政策委員会",
+      "date": "2014/10/20",
+      "officialUrl": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_16/index.html",
+      "category": "COMMITTEE",
+      "ministry": "CAO",
+      "materials": [
+        {
+          "name": "資料1 障害を理由とする差別の解消の推進に関する基本方針（素案）",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_16/pdf/s1.pdf"
+        },
+        {
+          "name": "第16回 障害者政策委員会 議事録（PDF）",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_16/pdf/gijiroku.pdf"
+        },
+        {
+          "name": "第16回 障害者政策委員会 議事録",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_16/gijiroku1.html"
+        }
+      ],
+      "manualLock": true
+    },
+    {
+      "id": "cao-238-20140929-015",
+      "councilId": "cao-238",
+      "title": "第15回 障害者政策委員会",
+      "date": "2014/09/29",
+      "officialUrl": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_15/index.html",
+      "category": "COMMITTEE",
+      "ministry": "CAO",
+      "materials": [
+        {
+          "name": "資料1 基本方針に関する事業者等からの意見一覧",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_15/pdf/s1.pdf"
+        },
+        {
+          "name": "第15回 障害者政策委員会 議事録（PDF）",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_15/pdf/gijiroku.pdf"
+        },
+        {
+          "name": "第15回 障害者政策委員会 議事録",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_15/gijiroku1.html"
+        }
+      ],
+      "manualLock": true
+    },
+    {
+      "id": "cao-238-20140922-014",
+      "councilId": "cao-238",
+      "title": "第14回 障害者政策委員会",
+      "date": "2014/09/22",
+      "officialUrl": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_14/index.html",
+      "category": "COMMITTEE",
+      "ministry": "CAO",
+      "materials": [
+        {
+          "name": "資料1 基本方針に関する事業者等からの意見一覧",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_14/pdf/s1.pdf"
+        },
+        {
+          "name": "（一社）全国銀行協会提出資料1 1/2 ｜ 2/2",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_14/pdf/s1-g1-1.pdf"
+        },
+        {
+          "name": "（一社）全国銀行協会提出資料1 1/2 ｜ 2/2",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_14/pdf/s1-g1-2.pdf"
+        },
+        {
+          "name": "（一社）全国銀行協会提出資料2 ｜ テキスト",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_14/pdf/s1-g2.pdf"
+        },
+        {
+          "name": "（一社）全国福祉輸送サービス協会／全国ハイヤータクシー連合会提出資料1 1/2 ｜ 2/2 ｜ テキスト",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_14/pdf/s1-f1-1.pdf"
+        },
+        {
+          "name": "（一社）全国福祉輸送サービス協会／全国ハイヤータクシー連合会提出資料1 1/2 ｜ 2/2 ｜ テキスト",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_14/pdf/s1-f1-2.pdf"
+        },
+        {
+          "name": "（一社）全国福祉輸送サービス協会提出資料2 1/7 ｜ 2/7 ｜ 3/7 ｜ 4/7 5/7 ｜ 6/7 ｜ 7/7",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_14/pdf/s1-f2-1.pdf"
+        },
+        {
+          "name": "（一社）全国福祉輸送サービス協会提出資料2 1/7 ｜ 2/7 ｜ 3/7 ｜ 4/7 5/7 ｜ 6/7 ｜ 7/7",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_14/pdf/s1-f2-2.pdf"
+        },
+        {
+          "name": "（一社）全国福祉輸送サービス協会提出資料2 1/7 ｜ 2/7 ｜ 3/7 ｜ 4/7 5/7 ｜ 6/7 ｜ 7/7",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_14/pdf/s1-f2-3.pdf"
+        },
+        {
+          "name": "（一社）全国福祉輸送サービス協会提出資料2 1/7 ｜ 2/7 ｜ 3/7 ｜ 4/7 5/7 ｜ 6/7 ｜ 7/7",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_14/pdf/s1-f2-4.pdf"
+        },
+        {
+          "name": "（一社）全国福祉輸送サービス協会提出資料2 1/7 ｜ 2/7 ｜ 3/7 ｜ 4/7 5/7 ｜ 6/7 ｜ 7/7",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_14/pdf/s1-f2-5.pdf"
+        },
+        {
+          "name": "（一社）全国福祉輸送サービス協会提出資料2 1/7 ｜ 2/7 ｜ 3/7 ｜ 4/7 5/7 ｜ 6/7 ｜ 7/7",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_14/pdf/s1-f2-6.pdf"
+        },
+        {
+          "name": "（一社）全国福祉輸送サービス協会提出資料2 1/7 ｜ 2/7 ｜ 3/7 ｜ 4/7 5/7 ｜ 6/7 ｜ 7/7",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_14/pdf/s1-f2-7.pdf"
+        },
+        {
+          "name": "（公社）日本バス協会提出資料1",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_14/pdf/s1-b1-1.pdf"
+        },
+        {
+          "name": "（公社）日本バス協会提出資料2 1/2 ｜ 2/2 ｜ テキスト",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_14/pdf/s1-b2-1.pdf"
+        },
+        {
+          "name": "（公社）日本バス協会提出資料2 1/2 ｜ 2/2 ｜ テキスト",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_14/pdf/s1-b2-2.pdf"
+        },
+        {
+          "name": "第14回 障害者政策委員会 議事録（PDF）",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_14/pdf/gijiroku.pdf"
+        },
+        {
+          "name": "第14回 障害者政策委員会 議事録",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_14/gijiroku1.html"
+        }
+      ],
+      "manualLock": true
+    },
+    {
+      "id": "cao-238-20140901-013",
+      "councilId": "cao-238",
+      "title": "第13回 障害者政策委員会",
+      "date": "2014/09/01",
+      "officialUrl": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_13/index.html",
+      "category": "COMMITTEE",
+      "ministry": "CAO",
+      "materials": [
+        {
+          "name": "資料1 障害者政策委員会委員",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_13/pdf/s1.pdf"
+        },
+        {
+          "name": "資料2 障害者政策委員会について",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_13/pdf/s2.pdf"
+        },
+        {
+          "name": "資料3 障害者基本法",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_13/pdf/s3.pdf"
+        },
+        {
+          "name": "資料4 第3次障害者基本計画",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_13/pdf/s4.pdf"
+        },
+        {
+          "name": "資料5 障害を理由とする差別の解消の推進に関する法律について 1/2 ｜ 2/2",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_13/pdf/s5-1.pdf"
+        },
+        {
+          "name": "資料5 障害を理由とする差別の解消の推進に関する法律について 1/2 ｜ 2/2",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_13/pdf/s5-2.pdf"
+        },
+        {
+          "name": "資料6 障害を理由とする差別の解消の推進に関する法律（平成二十五年法律第六十五号）",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_13/pdf/s6.pdf"
+        },
+        {
+          "name": "資料7 「基本方針の構成（イメージ案）」及び「ヒアリング項目について（案）」〔第8回資料〕",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_13/pdf/s7.pdf"
+        },
+        {
+          "name": "資料8 障害者差別解消法「基本方針」に係る障害者政策委員会のスケジュール",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_13/pdf/s8.pdf"
+        },
+        {
+          "name": "資料9 障害者の権利に関する条約",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_13/pdf/s9.pdf"
+        },
+        {
+          "name": "資料10 「障害者基本計画の推進状況～平成24年度～」（第12回 障害者政策委員会 資料1）について（補足説明）",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_13/pdf/s10.pdf"
+        },
+        {
+          "name": "第13回 障害者政策委員会 議事録（PDF）",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_13/pdf/gijiroku.pdf"
+        },
+        {
+          "name": "第13回 障害者政策委員会 議事録",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_13/gijiroku1.html"
+        }
+      ],
+      "manualLock": true
+    },
+    {
+      "id": "cao-238-20140428-012",
+      "councilId": "cao-238",
+      "title": "第12回 障害者政策委員会",
+      "date": "2014/04/28",
+      "officialUrl": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_12/index.html",
+      "category": "COMMITTEE",
+      "ministry": "CAO",
+      "materials": [
+        {
+          "name": "資料1 障害者基本計画の推進状況～平成24年度～ 1/2 ｜ 2/2",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_12/pdf/s1-1.pdf"
+        },
+        {
+          "name": "資料1 障害者基本計画の推進状況～平成24年度～ 1/2 ｜ 2/2",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_12/pdf/s1-2.pdf"
+        },
+        {
+          "name": "資料2 基本方針に関する関係団体からの意見",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_12/pdf/s2.pdf"
+        },
+        {
+          "name": "参考1 障害者差別解消支援地域協議会体制整備事業の実施に係る同協議会の設置・運営暫定指針",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_12/pdf/ref1.pdf"
+        },
+        {
+          "name": "参考2 障害者差別解消支援地域協議会体制整備事業の実施に係る同協議会の設置・運営暫定指針の概要",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_12/pdf/ref2.pdf"
+        },
+        {
+          "name": "参考3 平成25年度 障害者権利条約の国内モニタリングに関する国際調査実施報告",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_12/pdf/ref3.pdf"
+        },
+        {
+          "name": "矢澤氏当日提出資料",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_12/pdf/0428-s1.pdf"
+        },
+        {
+          "name": "河村氏当日提出資料",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_12/pdf/0428-s2.pdf"
+        },
+        {
+          "name": "土本委員当日提出資料 ｜ テキスト",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_12/pdf/0428-s3.pdf"
+        },
+        {
+          "name": "第12回 障害者政策委員会 議事録（PDF）",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_12/pdf/gijiroku.pdf"
+        },
+        {
+          "name": "第12回 障害者政策委員会 議事録",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_12/gijiroku1.html"
+        }
+      ],
+      "manualLock": true
+    },
+    {
+      "id": "cao-238-20140203-011",
+      "councilId": "cao-238",
+      "title": "第11回 障害者政策委員会",
+      "date": "2014/02/03",
+      "officialUrl": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_11/index.html",
+      "category": "COMMITTEE",
+      "ministry": "CAO",
+      "materials": [
+        {
+          "name": "資料1 基本方針に関する障害者団体等からの意見一覧",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_11/pdf/s1.pdf"
+        },
+        {
+          "name": "参考資料1 厚生労働省提出資料",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_11/pdf/ref1.pdf"
+        },
+        {
+          "name": "第11回 障害者政策委員会 議事録（PDF）",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_11/pdf/gijiroku1.pdf"
+        },
+        {
+          "name": "第11回 障害者政策委員会 議事録（PDF）",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_11/pdf/gijiroku2.pdf"
+        },
+        {
+          "name": "第11回 障害者政策委員会 議事録",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_11/gijiroku1.html"
+        }
+      ],
+      "manualLock": true
+    },
+    {
+      "id": "cao-238-20140120-010",
+      "councilId": "cao-238",
+      "title": "第10回 障害者政策委員会",
+      "date": "2014/01/20",
+      "officialUrl": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_10/index.html",
+      "category": "COMMITTEE",
+      "ministry": "CAO",
+      "materials": [
+        {
+          "name": "資料1 基本方針に関する障害者団体からの意見一覧 1/2 ｜ 2/2",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_10/pdf/s1-1.pdf"
+        },
+        {
+          "name": "資料1 基本方針に関する障害者団体からの意見一覧 1/2 ｜ 2/2",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_10/pdf/s1-2.pdf"
+        },
+        {
+          "name": "参考1 障害者差別解消法 わかりやすい版 1/2 ｜ 2/2",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_10/pdf/ref1-1.pdf"
+        },
+        {
+          "name": "参考1 障害者差別解消法 わかりやすい版 1/2 ｜ 2/2",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_10/pdf/ref1-2.pdf"
+        },
+        {
+          "name": "参考2 障害者差別解消支援地域協議会の在り方検討会について",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_10/pdf/ref2.pdf"
+        },
+        {
+          "name": "第10回 障害者政策委員会 議事録（PDF）",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_10/pdf/gijiroku.pdf"
+        },
+        {
+          "name": "第10回 障害者政策委員会 議事録",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_10/gijiroku1.html"
+        }
+      ],
+      "manualLock": true
+    },
+    {
+      "id": "cao-238-20131213-009",
+      "councilId": "cao-238",
+      "title": "第9回 障害者政策委員会",
+      "date": "2013/12/13",
+      "officialUrl": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_9/index.html",
+      "category": "COMMITTEE",
+      "ministry": "CAO",
+      "materials": [
+        {
+          "name": "資料1-1 基本方針に関する委員意見一覧 その1",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_9/pdf/s1-1.pdf"
+        },
+        {
+          "name": "資料1-2 基本方針に関する委員意見一覧 その2",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_9/pdf/s1-2.pdf"
+        },
+        {
+          "name": "第9回 障害者政策委員会 議事録（PDF）",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_9/pdf/gijiroku.pdf"
+        },
+        {
+          "name": "第9回 障害者政策委員会 議事録",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_9/gijiroku1.html"
+        }
+      ],
+      "manualLock": true
+    },
+    {
+      "id": "cao-238-20131111-008",
+      "councilId": "cao-238",
+      "title": "第8回 障害者政策委員会",
+      "date": "2013/11/11",
+      "officialUrl": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_8/index.html",
+      "category": "COMMITTEE",
+      "ministry": "CAO",
+      "materials": [
+        {
+          "name": "資料1 障害を理由とする差別の解消の推進に関する法律について",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_8/pdf/s1.pdf"
+        },
+        {
+          "name": "資料2 障害を理由とする差別の解消の推進に関する法律（本文）",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_8/pdf/s2.pdf"
+        },
+        {
+          "name": "資料3 基本方針の構成（イメージ案）及びヒアリング項目について（案）",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_8/pdf/s3.pdf"
+        },
+        {
+          "name": "参考資料1 第3次障害者基本計画（概要）",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_8/pdf/ref1.pdf"
+        },
+        {
+          "name": "参考資料2 第3次障害者基本計画（本文）",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_8/pdf/ref2.pdf"
+        },
+        {
+          "name": "参考資料3 障害者差別解消法施行に向けたスケジュール（想定）",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_8/pdf/ref3.pdf"
+        },
+        {
+          "name": "参考資料4 障害を理由とする差別について考える地域フォーラム（仮称）について",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_8/pdf/ref4.pdf"
+        },
+        {
+          "name": "参考資料5 外務省提出資料",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_8/pdf/ref5.pdf"
+        },
+        {
+          "name": "第8回 障害者政策委員会 議事録（PDF）",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_8/pdf/gijiroku.pdf"
+        },
+        {
+          "name": "第8回 障害者政策委員会 議事録",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_8/gijiroku1.html"
+        }
+      ],
+      "manualLock": true
+    },
+    {
+      "id": "cao-238-20130809-007",
+      "councilId": "cao-238",
+      "title": "第7回 障害者政策委員会",
+      "date": "2013/08/09",
+      "officialUrl": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_7/index.html",
+      "category": "COMMITTEE",
+      "ministry": "CAO",
+      "materials": [
+        {
+          "name": "資料1 障害者基本計画（原案（修正版））",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_7/pdf/s1.pdf"
+        },
+        {
+          "name": "資料2 障害者基本計画（原案（修正版））（修正箇所表示版）（",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_7/pdf/s2.pdf"
+        },
+        {
+          "name": "資料3 委員からの意見について",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_7/pdf/s3.pdf"
+        },
+        {
+          "name": "資料4 土本委員提出意見",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_7/pdf/s4.pdf"
+        },
+        {
+          "name": "第7回 障害者政策委員会 議事録（PDF）",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_7/pdf/gijiroku.pdf"
+        },
+        {
+          "name": "第7回 障害者政策委員会 議事録",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_7/gijiroku.html"
+        }
+      ],
+      "manualLock": true
+    },
+    {
+      "id": "cao-238-20130722-006",
+      "councilId": "cao-238",
+      "title": "第6回 障害者政策委員会",
+      "date": "2013/07/22",
+      "officialUrl": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_6/index.html",
+      "category": "COMMITTEE",
+      "ministry": "CAO",
+      "materials": [
+        {
+          "name": "資料1 障害を理由とする差別の解消の推進に関する法律【概要】",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_6/pdf/s1.pdf"
+        },
+        {
+          "name": "資料2 障害を理由とする差別の解消の推進に関する法律",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_6/pdf/s2.pdf"
+        },
+        {
+          "name": "資料3 障害者差別解消法施行に向けたスケジュール",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_6/pdf/s3.pdf"
+        },
+        {
+          "name": "資料4 障害者基本計画（原案）",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_6/pdf/s4.pdf"
+        },
+        {
+          "name": "参考資料1 障害を理由とする差別の解消の推進に関する法律案に対する附帯決議",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_6/pdf/ref1.pdf"
+        },
+        {
+          "name": "第6回 障害者政策委員会 議事録（PDF）",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_6/pdf/gijiroku.pdf"
+        },
+        {
+          "name": "第6回 障害者政策委員会 議事録",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_6/gijiroku.html"
+        }
+      ],
+      "manualLock": true
+    },
+    {
+      "id": "cao-238-20121217-005",
+      "councilId": "cao-238",
+      "title": "第5回 障害者政策委員会",
+      "date": "2012/12/17",
+      "officialUrl": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_5/index.html",
+      "category": "COMMITTEE",
+      "ministry": "CAO",
+      "materials": [
+        {
+          "name": "資料1 新「障害者基本計画」に関する障害者政策委員会の意見（案）",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_5/pdf/s1.pdf"
+        },
+        {
+          "name": "資料2 新「障害者基本計画」に関する障害者政策委員会の意見（案）（修正箇所表示版）",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_5/pdf/s2.pdf"
+        },
+        {
+          "name": "参考資料1 障害者基本法、障害者政策委員会令及び障害者政策委員会運営規則",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_5/pdf/ref1.pdf"
+        },
+        {
+          "name": "参考資料2 障害者基本計画",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_5/pdf/ref2.pdf"
+        },
+        {
+          "name": "第5回 障害者政策委員会 議事録（PDF）",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_5/pdf/gijiroku.pdf"
+        },
+        {
+          "name": "第5回 障害者政策委員会 議事録",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_5/gijiroku.html"
+        }
+      ],
+      "manualLock": true
+    },
+    {
+      "id": "cao-238-20121210-004",
+      "councilId": "cao-238",
+      "title": "第4回 障害者政策委員会",
+      "date": "2012/12/10",
+      "officialUrl": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_4/index.html",
+      "category": "COMMITTEE",
+      "ministry": "CAO",
+      "materials": [
+        {
+          "name": "資料1 各小委員会における審議状況について（第４～第６小委員会）",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_4/pdf/s1.pdf"
+        },
+        {
+          "name": "資料2 新たな障害者基本計画に関する障害者政策委員会意見（仮称）（原案）",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_4/pdf/s2.pdf"
+        },
+        {
+          "name": "資料3 委員提出資料",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_4/pdf/s3.pdf"
+        },
+        {
+          "name": "資料４ 地方障害者計画の改定予定について",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_4/pdf/s4.pdf"
+        },
+        {
+          "name": "参考資料1 障害者基本法、障害者政策委員会令及び障害者政策委員会運営規則",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_4/pdf/ref1.pdf"
+        },
+        {
+          "name": "参考資料2 障害者基本計画",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_4/pdf/ref2.pdf"
+        },
+        {
+          "name": "参考資料3 第３回小委員会（11月26日）の補足事項について",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_4/pdf/ref3.pdf"
+        },
+        {
+          "name": "第4回 障害者政策委員会 議事録（PDF）",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_4/pdf/gijiroku.pdf"
+        },
+        {
+          "name": "第4回 障害者政策委員会 議事録",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_4/gijiroku.html"
+        }
+      ],
+      "manualLock": true
+    },
+    {
+      "id": "cao-238-20121105-003",
+      "councilId": "cao-238",
+      "title": "第3回 障害者政策委員会",
+      "date": "2012/11/05",
+      "officialUrl": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_3/index.html",
+      "category": "COMMITTEE",
+      "ministry": "CAO",
+      "materials": [
+        {
+          "name": "資料1 障害を理由とする差別の禁止に関する法制についての差別禁止部会意見（概要）",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_3/pdf/s1.pdf"
+        },
+        {
+          "name": "1/3 ｜ 2/3 ｜ 3/3",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_3/pdf/s2-1.pdf"
+        },
+        {
+          "name": "1/3 ｜ 2/3 ｜ 3/3",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_3/pdf/s2-2.pdf"
+        },
+        {
+          "name": "1/3 ｜ 2/3 ｜ 3/3",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_3/pdf/s2-3.pdf"
+        },
+        {
+          "name": "資料3 各小委員会における審議状況について（第１～第３小委員会）",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_3/pdf/s3.pdf"
+        },
+        {
+          "name": "資料4 新たな障害者基本計画に関する障害者政策委員会意見（仮称）（骨子案）（総論及び推進体制部分）",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_3/pdf/s4.pdf"
+        },
+        {
+          "name": "資料5 委員提出資料",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_3/pdf/s5.pdf"
+        },
+        {
+          "name": "参考資料1 障害者基本法、障害者政策委員会令及び障害者政策委員会運営規則",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_3/pdf/ref1.pdf"
+        },
+        {
+          "name": "参考資料2 障害者基本計画",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_3/pdf/ref2.pdf"
+        },
+        {
+          "name": "参考資料3 障害者政策委員会の当面の予定について",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_3/pdf/ref3.pdf"
+        },
+        {
+          "name": "第3回 障害者政策委員会 議事録（PDF）",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_3/pdf/gijiroku.pdf"
+        },
+        {
+          "name": "第3回 障害者政策委員会 議事録",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_3/gijiroku.html"
+        }
+      ],
+      "manualLock": true
+    },
+    {
+      "id": "cao-238-20120820-002",
+      "councilId": "cao-238",
+      "title": "第2回 障害者政策委員会",
+      "date": "2012/08/20",
+      "officialUrl": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_2/index.html",
+      "category": "COMMITTEE",
+      "ministry": "CAO",
+      "materials": [
+        {
+          "name": "資料1 現行障害者基本計画の項目",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_2/pdf/s1.pdf"
+        },
+        {
+          "name": "資料2 小委員会のグループ分け（案）",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_2/pdf/s2.pdf"
+        },
+        {
+          "name": "資料3 委員提出資料",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_2/pdf/s3.pdf"
+        },
+        {
+          "name": "参考資料1 障害者政策委員会委員名簿",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_2/pdf/ref1.pdf"
+        },
+        {
+          "name": "参考資料2 障害者政策委員会差別禁止部会委員名簿",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_2/pdf/ref2.pdf"
+        },
+        {
+          "name": "参考資料3 障害者基本法、障害者政策委員会令及び障害者政策委員会運営規則",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_2/pdf/ref3.pdf"
+        },
+        {
+          "name": "参考資料4 障害者基本計画",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_2/pdf/ref4.pdf"
+        },
+        {
+          "name": "第2回 障害者政策委員会 議事録（PDF）",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_2/pdf/gijiroku.pdf"
+        },
+        {
+          "name": "第2回 障害者政策委員会 議事録",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_2/gijiroku.html"
+        }
+      ],
+      "manualLock": true
+    },
+    {
+      "id": "cao-238-20120723-001",
+      "councilId": "cao-238",
+      "title": "第1回 障害者政策委員会",
+      "date": "2012/07/23",
+      "officialUrl": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_1/index.html",
+      "category": "COMMITTEE",
+      "ministry": "CAO",
+      "materials": [
+        {
+          "name": "資料1 障害者政策委員会委員名簿",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_1/pdf/s1.pdf"
+        },
+        {
+          "name": "資料2 障害者基本法（抜粋）及び障害者政策委員会令",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_1/pdf/s2.pdf"
+        },
+        {
+          "name": "資料3 障害者政策委員会運営規則（案）",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_1/pdf/s3.pdf"
+        },
+        {
+          "name": "資料4 差別禁止部会の設置について（案）",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_1/pdf/s4.pdf"
+        },
+        {
+          "name": "資料5 新たな障害者基本計画の在り方に関する検討の進め方（案）",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_1/pdf/s5.pdf"
+        },
+        {
+          "name": "第1回 障害者政策委員会 議事録（PDF）",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_1/pdf/gijiroku.pdf"
+        },
+        {
+          "name": "第1回 障害者政策委員会 議事録",
+          "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_1/gijiroku.html"
+        }
+      ],
+      "manualLock": true
     }
   ],
   "categories": {
@@ -350510,6 +355298,15 @@
       "subpage_discovery_pattern": "https://www\\.cao\\.go\\.jp/consumer/kabusoshiki/kokyoryokin/(?:senmon|bukai)/\\d+/shiryou/index\\.html",
       "date_regex": "(?:令和\\d+年\\d{1,2}月\\d{1,2}日|\\d{4}年\\d{1,2}月\\d{1,2}日|\\d{4}/\\d{1,2}/\\d{1,2})",
       "pdf_selector": "a[href$='.pdf']",
+      "deep_crawl_enabled": true,
+      "manualLock": true
+    },
+    "cao-238": {
+      "rule_id": "rule-cao-238",
+      "subpage_discovery_pattern": "https://www8\\.cao\\.go\\.jp/shougai/suishin/seisaku_iinkai/k_\\d+/(?:index|gijiroku)\\.html",
+      "title_selector": "h1, h2, title",
+      "date_regex": "((?:令和|平成|\\d{4}年)\\s*\\d{1,2}月\\s*\\d{1,2}日|\\d{4}[年/\\-]\\d{1,2}[月/\\-]\\d{1,2})",
+      "pdf_selector": "a[href*='.pdf']",
       "deep_crawl_enabled": true,
       "manualLock": true
     }
