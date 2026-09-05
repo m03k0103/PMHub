@@ -707,6 +707,23 @@ def is_generic_index_url(url):
             return True
     return False
 
+def is_preliminary_notice_page(url, title=""):
+    """
+    開催案内・事前告知ページ（例: .../kaisai/index.html, 〜の開催について）であるかを判定。
+    これらは事前の案内であり、資料が掲載される会議ページではないため会議として追加しない。
+    """
+    if not url and not title:
+        return False
+    u_lower = (url or "").lower()
+    # URLに /kaisai/ や /online_kaisai 等が含まれる場合
+    if re.search(r'/(?:kaisai|online_kaisai)/', u_lower) or u_lower.endswith('/kaisai.html'):
+        return True
+    # タイトルが「〜の開催について」「〜の開催案内」「〜傍聴の案内」等で終わる場合
+    t_clean = (title or "").strip()
+    if re.search(r'(?:の開催について|の開催案内|傍聴の案内|傍聴について|の開催概要について)$', t_clean):
+        return True
+    return False
+
 
 def sync_new_meetings_from_crawl(data, target, scraped_item):
     """
@@ -733,9 +750,8 @@ def sync_new_meetings_from_crawl(data, target, scraped_item):
     existing_titles = {m.get("title", ""): m for m in existing_c_meets if m.get("title")}
     existing_sessions = set()
     for m in existing_c_meets:
-        sess_list = extract_session_numbers(m.get("title", "") + " " + m.get("officialUrl", "") + " " + m.get("id", ""))
-        for s in sess_list:
-            existing_sessions.add(s)
+        sess = extract_session_numbers(m.get("title", "") + " " + m.get("officialUrl", "") + " " + m.get("id", ""))
+        existing_sessions.update(sess)
 
     added_count = 0
     for sub in subpages:
@@ -743,6 +759,10 @@ def sync_new_meetings_from_crawl(data, target, scraped_item):
         sub_title = sub.get("title", "").strip()
         sub_mats = sub.get("materials", [])
         sub_dates = sub.get("extractedDates", [])
+
+        # 事前開催案内ページ（資料なしの事前告知）は会議ページとして登録しない
+        if is_preliminary_notice_page(sub_url, sub_title) and not sub_mats:
+            continue
 
         # 開催回番号の抽出
         sess_nums = extract_session_numbers(sub_title + " " + sub_url)

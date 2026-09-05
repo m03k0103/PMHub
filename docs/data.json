@@ -8291,25 +8291,6 @@
       }
     },
     {
-      "id": "caa-214",
-      "name": "消費者委員会",
-      "ministry": "CAA",
-      "category": "COMMITTEE",
-      "officialUrl": "https://www.cao.go.jp/consumer/",
-      "pastYearCount": 4,
-      "status": "approved",
-      "crawlStatus": {
-        "lastAttempt": "2026-09-05 08:20:25",
-        "result": "success",
-        "extractionMethod": "rule",
-        "materialsCount": 2,
-        "datesCount": 5,
-        "failureReason": "",
-        "consecutiveFailures": 0,
-        "manualLockActive": false
-      }
-    },
-    {
       "id": "cao-215",
       "name": "内閣官房の各種本部・会議等の活動情報はこちら",
       "ministry": "CAO",
@@ -8702,25 +8683,6 @@
         "result": "success",
         "extractionMethod": "rule",
         "materialsCount": 27,
-        "datesCount": 5,
-        "failureReason": "",
-        "consecutiveFailures": 0,
-        "manualLockActive": false
-      }
-    },
-    {
-      "id": "cao-239",
-      "name": "消費者委員会",
-      "ministry": "CAO",
-      "category": "COMMITTEE",
-      "officialUrl": "https://www.cao.go.jp/consumer/index.html",
-      "pastYearCount": 4,
-      "status": "approved",
-      "crawlStatus": {
-        "lastAttempt": "2026-09-05 08:27:56",
-        "result": "success",
-        "extractionMethod": "rule",
-        "materialsCount": 2,
         "datesCount": 5,
         "failureReason": "",
         "consecutiveFailures": 0,
@@ -25728,9 +25690,797 @@
         "consecutiveFailures": 0,
         "manualLockActive": true
       }
+    },
+    {
+      "id": "cao-shouhisha_iinkai",
+      "name": "消費者委員会",
+      "ministry": "CAO",
+      "category": "COMMITTEE",
+      "officialUrl": "https://www.cao.go.jp/consumer/iinkai/index.html",
+      "description": "内閣府に設置された独立機関として、消費者行政全般の施策を監視し建議する委員会本会議。",
+      "manualLock": true,
+      "isWatched": true,
+      "status": "approved",
+      "pastYearCount": 20,
+      "crawlStatus": {
+        "lastAttempt": "2026-09-05 13:25:25",
+        "result": "success",
+        "extractionMethod": "rule",
+        "materialsCount": 0,
+        "datesCount": 0,
+        "failureReason": "",
+        "consecutiveFailures": 0,
+        "manualLockActive": true
+      }
+    },
+    {
+      "id": "cao-shokuhin_hyouji_bukai",
+      "name": "食品表示部会",
+      "ministry": "CAO",
+      "category": "SUBCOMMITTEE",
+      "officialUrl": "https://www.cao.go.jp/consumer/kabusoshiki/syokuhinhyouji/index.html",
+      "description": "消費者委員会の専門部会として、食品表示基準の策定やサプリメント規制等の食品表示制度について調査審議する部会。",
+      "manualLock": true,
+      "isWatched": true,
+      "status": "approved",
+      "pastYearCount": 4,
+      "crawlStatus": {
+        "lastAttempt": "2026-09-05 13:25:27",
+        "result": "success",
+        "extractionMethod": "rule",
+        "materialsCount": 0,
+        "datesCount": 0,
+        "failureReason": "",
+        "consecutiveFailures": 0,
+        "manualLockActive": true
+      }
+    },
+    {
+      "id": "cao-ai_technology_senmon",
+      "name": "人工知能（AI）技術の利用と消費者問題に関する専門調査会",
+      "ministry": "CAO",
+      "category": "WORKING_GROUP",
+      "officialUrl": "https://www.cao.go.jp/consumer/kabusoshiki/ai_technology/index.html",
+      "description": "生成AI等の人工知能技術の利用に伴う消費者問題やリスク対応、消費者保護ルールを調査審議する専門調査会。",
+      "manualLock": true,
+      "isWatched": true,
+      "status": "approved",
+      "pastYearCount": 8,
+      "crawlStatus": {
+        "lastAttempt": "2026-09-05 13:25:29",
+        "result": "success",
+        "extractionMethod": "rule",
+        "materialsCount": 0,
+        "datesCount": 0,
+        "failureReason": "",
+        "consecutiveFailures": 0,
+        "manualLockActive": true
+      }
+    },
+    {
+      "id": "cao-payment_senmon",
+      "name": "支払手段の多様化と消費者問題に関する専門調査会",
+      "ministry": "CAO",
+      "category": "WORKING_GROUP",
+      "officialUrl": "https://www.cao.go.jp/consumer/kabusoshiki/payment/index.html",
+      "description": "キャッシュレス決済や暗号資産など支払手段の多様化に伴う消費者被害防止や取引ルールの在り方を調査審議する専門調査会。",
+      "manualLock": true,
+      "isWatched": true,
+      "status": "approved",
+      "pastYearCount": 10,
+      "crawlStatus": {
+        "lastAttempt": "2026-09-05 13:25:31",
+        "result": "success",
+        "extractionMethod": "rule",
+        "materialsCount": 0,
+        "datesCount": 0,
+        "failureReason": "",
+        "consecutiveFailures": 0,
+        "manualLockActive": true
+      }
+    },
+    {
+      "id": "cao-kokyoryokin_senmon",
+      "name": "公共料金等専門調査会",
+      "ministry": "CAO",
+      "category": "WORKING_GROUP",
+      "officialUrl": "https://www.cao.go.jp/consumer/kabusoshiki/kokyoryokin/index.html",
+      "description": "電気・ガス・鉄道等の公共料金改定等について消費者の立場から適正性を検証・調査審議する専門調査会。",
+      "manualLock": true,
+      "isWatched": true,
+      "status": "approved",
+      "pastYearCount": 4,
+      "crawlStatus": {
+        "lastAttempt": "2026-09-05 13:25:33",
+        "result": "success",
+        "extractionMethod": "rule",
+        "materialsCount": 0,
+        "datesCount": 0,
+        "failureReason": "",
+        "consecutiveFailures": 0,
+        "manualLockActive": true
+      }
     }
   ],
   "meetings": [
+    {
+      "id": "cao-shokuhin_hyouji_bukai-20260903-083",
+      "councilId": "cao-shokuhin_hyouji_bukai",
+      "title": "第83回 食品表示部会",
+      "date": "2026/09/03",
+      "officialUrl": "https://www.cao.go.jp/consumer/kabusoshiki/syokuhinhyouji/bukai/083/shiryou/index.html",
+      "category": "COMMITTEE",
+      "ministry": "CAO",
+      "materials": [
+        {
+          "name": "議事次第（PDF形式：65KB）",
+          "url": "https://www.cao.go.jp/consumer/kabusoshiki/syokuhinhyouji/doc/260903_gijishidai.pdf",
+          "type": "PDF",
+          "isPrivate": false
+        },
+        {
+          "name": "【資料１】 サプリメントの規制の在り方について（消費者庁、厚生労働省資料）（PDF形式：1459KB）",
+          "url": "https://www.cao.go.jp/consumer/kabusoshiki/syokuhinhyouji/doc/260903_shiryou1.pdf",
+          "type": "PDF",
+          "isPrivate": false
+        },
+        {
+          "name": "【参考資料１】 平成 30 年食品衛生法改正の施行後５年を目途とした検討のとりまとめ（PDF形式：1104KB）",
+          "url": "https://www.cao.go.jp/consumer/kabusoshiki/syokuhinhyouji/doc/260903_sankou1.pdf",
+          "type": "PDF",
+          "isPrivate": false
+        },
+        {
+          "name": "【参考資料２】 サプリメント食品に係る消費者問題に関する意見（PDF形式：267KB）",
+          "url": "https://www.cao.go.jp/consumer/kabusoshiki/syokuhinhyouji/doc/260903_sankou2.pdf",
+          "type": "PDF",
+          "isPrivate": false
+        },
+        {
+          "name": "【参考資料３】 答申書（令和6年7月16日付 府消委第141号）（PDF形式：204KB）",
+          "url": "https://www.cao.go.jp/consumer/kabusoshiki/syokuhinhyouji/doc/260903_sankou3.pdf",
+          "type": "PDF",
+          "isPrivate": false
+        }
+      ],
+      "manualLock": true
+    },
+    {
+      "id": "cao-shouhisha_iinkai-20260827-498",
+      "councilId": "cao-shouhisha_iinkai",
+      "title": "第498回 消費者委員会",
+      "date": "2026/08/27",
+      "officialUrl": "https://www.cao.go.jp/consumer/iinkai/2026/498/shiryou/index.html",
+      "category": "COMMITTEE",
+      "ministry": "CAO",
+      "materials": [
+        {
+          "name": "議事次第（PDF形式：83KB）",
+          "url": "https://www.cao.go.jp/consumer/iinkai/2026/498/doc/20260827_gijishidai.pdf",
+          "type": "PDF",
+          "isPrivate": false
+        },
+        {
+          "name": "【資料1】 消費者基本計画の施策の取組状況等に関する意見（案）（PDF形式：258KB）",
+          "url": "https://www.cao.go.jp/consumer/iinkai/2026/498/doc/20260827_shiryou1.pdf",
+          "type": "PDF",
+          "isPrivate": false
+        },
+        {
+          "name": "【参考資料1】 答申書（PDF形式：73KB）",
+          "url": "https://www.cao.go.jp/consumer/iinkai/2026/498/doc/20260827_sankou1.pdf",
+          "type": "PDF",
+          "isPrivate": false
+        },
+        {
+          "name": "【参考資料2】 消費者委員会に寄せられた要望書・意見書・声明文等一覧（令和８年７月分）（PDF形式：185KB）",
+          "url": "https://www.cao.go.jp/consumer/iinkai/2026/498/doc/20260827_sankou2.pdf",
+          "type": "PDF",
+          "isPrivate": false
+        },
+        {
+          "name": "【参考資料3】 委員間打合せ概要メモ（PDF形式：234KB）",
+          "url": "https://www.cao.go.jp/consumer/iinkai/2026/498/doc/20260827_sankou3.pdf",
+          "type": "PDF",
+          "isPrivate": false
+        }
+      ],
+      "manualLock": true
+    },
+    {
+      "id": "cao-ai_technology_senmon-20260820-008",
+      "councilId": "cao-ai_technology_senmon",
+      "title": "第8回 人工知能（AI）技術の利用と消費者問題に関する専門調査会",
+      "date": "2026/08/20",
+      "officialUrl": "https://www.cao.go.jp/consumer/kabusoshiki/ai_technology/008/shiryou/index.html",
+      "category": "COMMITTEE",
+      "ministry": "CAO",
+      "materials": [
+        {
+          "name": "議事次第（PDF形式：72KB）",
+          "url": "https://www.cao.go.jp/consumer/kabusoshiki/ai_technology/doc/008_260820_gijishidai.pdf",
+          "type": "PDF",
+          "isPrivate": false
+        },
+        {
+          "name": "【資料1】 勝又教授提出資料（PDF形式：1035KB）",
+          "url": "https://www.cao.go.jp/consumer/kabusoshiki/ai_technology/doc/008_260820_shiryou1.pdf",
+          "type": "PDF",
+          "isPrivate": false
+        },
+        {
+          "name": "【資料2】 丸山座長代理提出資料（PDF形式：1763KB）",
+          "url": "https://www.cao.go.jp/consumer/kabusoshiki/ai_technology/doc/008_260820_shiryou2.pdf",
+          "type": "PDF",
+          "isPrivate": false
+        }
+      ],
+      "manualLock": true
+    },
+    {
+      "id": "cao-shokuhin_hyouji_bukai-20260806-082",
+      "councilId": "cao-shokuhin_hyouji_bukai",
+      "title": "第82回 食品表示部会",
+      "date": "2026/08/06",
+      "officialUrl": "https://www.cao.go.jp/consumer/kabusoshiki/syokuhinhyouji/bukai/082/shiryou/index.html",
+      "category": "COMMITTEE",
+      "ministry": "CAO",
+      "materials": [
+        {
+          "name": "議事次第（PDF形式：65KB）",
+          "url": "https://www.cao.go.jp/consumer/kabusoshiki/syokuhinhyouji/doc/260806_gijishidai.pdf",
+          "type": "PDF",
+          "isPrivate": false
+        },
+        {
+          "name": "【資料１】 諮問書（令和８年７月17日付 消食表第528号）（PDF形式：263KB）",
+          "url": "https://www.cao.go.jp/consumer/kabusoshiki/syokuhinhyouji/doc/260806_shiryou1.pdf",
+          "type": "PDF",
+          "isPrivate": false
+        },
+        {
+          "name": "【資料２】 栄養機能食品に関する食品表示基準の一部改正について（PDF形式：825KB）",
+          "url": "https://www.cao.go.jp/consumer/kabusoshiki/syokuhinhyouji/doc/260806_shiryou2.pdf",
+          "type": "PDF",
+          "isPrivate": false
+        },
+        {
+          "name": "【資料３】 食品表示基準の一部を改正する内閣府令（案）に関する御意見の概要及び御意見に対する考え方（令和８年８月６日時点 速報版）（PDF形式：439KB）",
+          "url": "https://www.cao.go.jp/consumer/kabusoshiki/syokuhinhyouji/doc/260806_shiryou3.pdf",
+          "type": "PDF",
+          "isPrivate": false
+        },
+        {
+          "name": "【参考資料１】 食品表示基準（条文抜粋）（PDF形式：223KB）",
+          "url": "https://www.cao.go.jp/consumer/kabusoshiki/syokuhinhyouji/doc/260806_sankou1.pdf",
+          "type": "PDF",
+          "isPrivate": false
+        },
+        {
+          "name": "【参考資料２】 令和７年度栄養機能食品に関する検討会取りまとめ（PDF形式：1877KB）",
+          "url": "https://www.cao.go.jp/consumer/kabusoshiki/syokuhinhyouji/doc/260806_sankou2.pdf",
+          "type": "PDF",
+          "isPrivate": false
+        },
+        {
+          "name": "【追加資料】 答申書・報告書（案）（PDF形式：74KB）",
+          "url": "https://www.cao.go.jp/consumer/kabusoshiki/syokuhinhyouji/doc/260806_tsuika.pdf",
+          "type": "PDF",
+          "isPrivate": false
+        },
+        {
+          "name": "PDF形式：152KB",
+          "url": "https://www.cao.go.jp/consumer/content/260806_gijiroku.pdf",
+          "type": "PDF",
+          "isPrivate": false
+        }
+      ],
+      "manualLock": true
+    },
+    {
+      "id": "cao-payment_senmon-20260803-019",
+      "councilId": "cao-payment_senmon",
+      "title": "第19回 支払手段の多様化と消費者問題に関する専門調査会",
+      "date": "2026/08/03",
+      "officialUrl": "https://www.cao.go.jp/consumer/kabusoshiki/payment/019/shiryou/index.html",
+      "category": "COMMITTEE",
+      "ministry": "CAO",
+      "materials": [
+        {
+          "name": "議事次第（PDF形式：163KB）",
+          "url": "https://www.cao.go.jp/consumer/kabusoshiki/payment/doc/019_260803_gijishidai.pdf",
+          "type": "PDF",
+          "isPrivate": false
+        },
+        {
+          "name": "【資料1】 取りまとめについて（案）（PDF形式：854KB）",
+          "url": "https://www.cao.go.jp/consumer/kabusoshiki/payment/doc/019_260803_shiryou1.pdf",
+          "type": "PDF",
+          "isPrivate": false
+        },
+        {
+          "name": "【資料2】 細谷委員提出資料（PDF形式：601KB）",
+          "url": "https://www.cao.go.jp/consumer/kabusoshiki/payment/doc/019_260803_shiryou2.pdf",
+          "type": "PDF",
+          "isPrivate": false
+        },
+        {
+          "name": "【資料3】 葛山員提出資料（PDF形式：503KB）",
+          "url": "https://www.cao.go.jp/consumer/kabusoshiki/payment/doc/019_260803_shiryou3.pdf",
+          "type": "PDF",
+          "isPrivate": false
+        },
+        {
+          "name": "【資料4】 池本委員提出資料（PDF形式：290KB）",
+          "url": "https://www.cao.go.jp/consumer/kabusoshiki/payment/doc/019_260803_shiryou4.pdf",
+          "type": "PDF",
+          "isPrivate": false
+        },
+        {
+          "name": "【資料5】 谷本委員提出資料（PDF形式：255KB）",
+          "url": "https://www.cao.go.jp/consumer/kabusoshiki/payment/doc/019_260803_shiryou5.pdf",
+          "type": "PDF",
+          "isPrivate": false
+        }
+      ],
+      "manualLock": true
+    },
+    {
+      "id": "cao-shouhisha_iinkai-20260731-497",
+      "councilId": "cao-shouhisha_iinkai",
+      "title": "第497回 消費者委員会",
+      "date": "2026/07/31",
+      "officialUrl": "https://www.cao.go.jp/consumer/iinkai/2026/497/shiryou/index.html",
+      "category": "COMMITTEE",
+      "ministry": "CAO",
+      "materials": [
+        {
+          "name": "議事次第（PDF形式：177KB）",
+          "url": "https://www.cao.go.jp/consumer/iinkai/2026/497/doc/20260731_gijishidai.pdf",
+          "type": "PDF",
+          "isPrivate": false
+        },
+        {
+          "name": "【資料1】 サプリメントの規制の在り方について（消費者庁・厚生労働省資料）（PDF形式：1,784KB）",
+          "url": "https://www.cao.go.jp/consumer/iinkai/2026/497/doc/20260731_shiryou1.pdf",
+          "type": "PDF",
+          "isPrivate": false
+        },
+        {
+          "name": "【参考資料1】 委員間打合せ概要メモ（PDF形式：128KB）",
+          "url": "https://www.cao.go.jp/consumer/iinkai/2026/497/doc/20260731_sankou1.pdf",
+          "type": "PDF",
+          "isPrivate": false
+        }
+      ],
+      "manualLock": true
+    },
+    {
+      "id": "cao-ai_technology_senmon-20260730-007",
+      "councilId": "cao-ai_technology_senmon",
+      "title": "第7回 人工知能（AI）技術の利用と消費者問題に関する専門調査会",
+      "date": "2026/07/30",
+      "officialUrl": "https://www.cao.go.jp/consumer/kabusoshiki/ai_technology/007/shiryou/index.html",
+      "category": "COMMITTEE",
+      "ministry": "CAO",
+      "materials": [
+        {
+          "name": "議事次第（PDF形式：58KB）",
+          "url": "https://www.cao.go.jp/consumer/kabusoshiki/ai_technology/doc/007_260730_gijishidai.pdf",
+          "type": "PDF",
+          "isPrivate": false
+        },
+        {
+          "name": "【資料1】 唐沢委員提出資料（PDF形式：1241KB）",
+          "url": "https://www.cao.go.jp/consumer/kabusoshiki/ai_technology/doc/007_260730_shiryou1.pdf",
+          "type": "PDF",
+          "isPrivate": false
+        }
+      ],
+      "manualLock": true
+    },
+    {
+      "id": "cao-shouhisha_iinkai-20260724-496",
+      "councilId": "cao-shouhisha_iinkai",
+      "title": "第496回 消費者委員会",
+      "date": "2026/07/24",
+      "officialUrl": "https://www.cao.go.jp/consumer/iinkai/2026/496/shiryou/index.html",
+      "category": "COMMITTEE",
+      "ministry": "CAO",
+      "materials": [
+        {
+          "name": "議事次第（PDF形式：189KB）",
+          "url": "https://www.cao.go.jp/consumer/iinkai/2026/496/doc/20260724_gijishidai.pdf",
+          "type": "PDF",
+          "isPrivate": false
+        },
+        {
+          "name": "【資料1-1】 消費者教育の取組について（消費者庁資料）（PDF形式：3,040KB）",
+          "url": "https://www.cao.go.jp/consumer/iinkai/2026/496/doc/20260724_shiryou1-1.pdf",
+          "type": "PDF",
+          "isPrivate": false
+        },
+        {
+          "name": "【資料1-2】 地域ネットワーク構築・強化分科会 取りまとめ要点（消費者庁資料）（PDF形式：1,257KB）",
+          "url": "https://www.cao.go.jp/consumer/iinkai/2026/496/doc/20260724_shiryou1-2.pdf",
+          "type": "PDF",
+          "isPrivate": false
+        },
+        {
+          "name": "【資料1-3】 文部科学省における消費者教育の取組等について（文部科学省資料）（PDF形式：3,345KB）",
+          "url": "https://www.cao.go.jp/consumer/iinkai/2026/496/doc/20260724_shiryou1-3.pdf",
+          "type": "PDF",
+          "isPrivate": false
+        },
+        {
+          "name": "【資料1-4】 金融経済教育推進機構（J-FLEC）の活動状況（金融経済教育推進機構資料）（PDF形式：4,120KB）",
+          "url": "https://www.cao.go.jp/consumer/iinkai/2026/496/doc/20260724_shiryou1-4.pdf",
+          "type": "PDF",
+          "isPrivate": false
+        },
+        {
+          "name": "【参考資料1-1】 消費者委員会に寄せられた要望書・意見書・声明文等一覧（令和８年６月分）（PDF形式：150KB）",
+          "url": "https://www.cao.go.jp/consumer/iinkai/2026/496/doc/20260724_sankou1-1.pdf",
+          "type": "PDF",
+          "isPrivate": false
+        },
+        {
+          "name": "【参考資料1-2】 国民生活センター記者公表案件一覧（令和８年４月～６月分）（PDF形式：150KB）",
+          "url": "https://www.cao.go.jp/consumer/iinkai/2026/496/doc/20260724_sankou1-2.pdf",
+          "type": "PDF",
+          "isPrivate": false
+        },
+        {
+          "name": "【参考資料2】 委員間打合せ概要メモ（PDF形式：141KB）",
+          "url": "https://www.cao.go.jp/consumer/iinkai/2026/496/doc/20260724_sankou2.pdf",
+          "type": "PDF",
+          "isPrivate": false
+        }
+      ],
+      "manualLock": true
+    },
+    {
+      "id": "cao-payment_senmon-20260723-018",
+      "councilId": "cao-payment_senmon",
+      "title": "第18回 支払手段の多様化と消費者問題に関する専門調査会",
+      "date": "2026/07/23",
+      "officialUrl": "https://www.cao.go.jp/consumer/kabusoshiki/payment/018/shiryou/index.html",
+      "category": "COMMITTEE",
+      "ministry": "CAO",
+      "materials": [
+        {
+          "name": "議事次第（PDF形式：56KB）",
+          "url": "https://www.cao.go.jp/consumer/kabusoshiki/payment/doc/018_260723_gijishidai.pdf",
+          "type": "PDF",
+          "isPrivate": false
+        },
+        {
+          "name": "【資料1】 主な論点について（第４回）（PDF形式：538KB）",
+          "url": "https://www.cao.go.jp/consumer/kabusoshiki/payment/doc/018_260723_shiryou1.pdf",
+          "type": "PDF",
+          "isPrivate": false
+        },
+        {
+          "name": "【資料2】 柿野委員提出資料（PDF形式：859KB）",
+          "url": "https://www.cao.go.jp/consumer/kabusoshiki/payment/doc/018_260723_shiryou2.pdf",
+          "type": "PDF",
+          "isPrivate": false
+        },
+        {
+          "name": "【資料3】 瀧委員提出資料（PDF形式：630KB）",
+          "url": "https://www.cao.go.jp/consumer/kabusoshiki/payment/doc/018_260723_shiryou3.pdf",
+          "type": "PDF",
+          "isPrivate": false
+        },
+        {
+          "name": "【資料4】 池本委員提出資料（PDF形式：351KB）",
+          "url": "https://www.cao.go.jp/consumer/kabusoshiki/payment/doc/018_260723_shiryou4.pdf",
+          "type": "PDF",
+          "isPrivate": false
+        },
+        {
+          "name": "【資料5】 細谷委員提出資料（PDF形式：907KB）",
+          "url": "https://www.cao.go.jp/consumer/kabusoshiki/payment/doc/018_260723_shiryou5.pdf",
+          "type": "PDF",
+          "isPrivate": false
+        },
+        {
+          "name": "【資料6】 宮園委員提出資料（PDF形式：842KB）",
+          "url": "https://www.cao.go.jp/consumer/kabusoshiki/payment/doc/018_260723_shiryou6.pdf",
+          "type": "PDF",
+          "isPrivate": false
+        },
+        {
+          "name": "【資料7】 葛山委員提出資料（PDF形式：554KB）",
+          "url": "https://www.cao.go.jp/consumer/kabusoshiki/payment/doc/018_260723_shiryou7.pdf",
+          "type": "PDF",
+          "isPrivate": false
+        },
+        {
+          "name": "【資料8】 山本委員提出資料（PDF形式：609KB）",
+          "url": "https://www.cao.go.jp/consumer/kabusoshiki/payment/doc/018_260723_shiryou8.pdf",
+          "type": "PDF",
+          "isPrivate": false
+        }
+      ],
+      "manualLock": true
+    },
+    {
+      "id": "cao-ai_technology_senmon-20260717-006",
+      "councilId": "cao-ai_technology_senmon",
+      "title": "第6回 人工知能（AI）技術の利用と消費者問題に関する専門調査会",
+      "date": "2026/07/17",
+      "officialUrl": "https://www.cao.go.jp/consumer/kabusoshiki/ai_technology/006/shiryou/index.html",
+      "category": "COMMITTEE",
+      "ministry": "CAO",
+      "materials": [
+        {
+          "name": "議事次第（PDF形式：71KB）",
+          "url": "https://www.cao.go.jp/consumer/kabusoshiki/ai_technology/doc/006_260717_gijishidai.pdf",
+          "type": "PDF",
+          "isPrivate": false
+        },
+        {
+          "name": "【資料1】 加藤委員提出資料（PDF形式：1710KB）",
+          "url": "https://www.cao.go.jp/consumer/kabusoshiki/ai_technology/doc/006_260717_shiryou1.pdf",
+          "type": "PDF",
+          "isPrivate": false
+        },
+        {
+          "name": "【資料2】 葭沢上級執行役員提出資料（PDF形式：2872KB）",
+          "url": "https://www.cao.go.jp/consumer/kabusoshiki/ai_technology/doc/006_260717_shiryou2.pdf",
+          "type": "PDF",
+          "isPrivate": false
+        },
+        {
+          "name": "PDF形式：525KB",
+          "url": "https://www.cao.go.jp/consumer/content/006_260717_gijiroku.pdf",
+          "type": "PDF",
+          "isPrivate": false
+        }
+      ],
+      "manualLock": true
+    },
+    {
+      "id": "cao-payment_senmon-20260710-017",
+      "councilId": "cao-payment_senmon",
+      "title": "第17回 支払手段の多様化と消費者問題に関する専門調査会",
+      "date": "2026/07/10",
+      "officialUrl": "https://www.cao.go.jp/consumer/kabusoshiki/payment/017/shiryou/index.html",
+      "category": "COMMITTEE",
+      "ministry": "CAO",
+      "materials": [
+        {
+          "name": "議事次第（PDF形式：52KB）",
+          "url": "https://www.cao.go.jp/consumer/kabusoshiki/payment/doc/017_260710_gijishidai.pdf",
+          "type": "PDF",
+          "isPrivate": false
+        },
+        {
+          "name": "【資料1】 主な論点について（第３回）（PDF形式：492KB）",
+          "url": "https://www.cao.go.jp/consumer/kabusoshiki/payment/doc/017_260710_shiryou1.pdf",
+          "type": "PDF",
+          "isPrivate": false
+        },
+        {
+          "name": "【資料2】 宮園委員提出資料（PDF形式：842KB）",
+          "url": "https://www.cao.go.jp/consumer/kabusoshiki/payment/doc/017_260710_shiryou2.pdf",
+          "type": "PDF",
+          "isPrivate": false
+        },
+        {
+          "name": "【資料3】 葛山委員提出資料（PDF形式：510KB）",
+          "url": "https://www.cao.go.jp/consumer/kabusoshiki/payment/doc/017_260710_shiryou3.pdf",
+          "type": "PDF",
+          "isPrivate": false
+        },
+        {
+          "name": "【資料4】 永沢委員提出資料（PDF形式：244KB）",
+          "url": "https://www.cao.go.jp/consumer/kabusoshiki/payment/doc/017_260710_shiryou4.pdf",
+          "type": "PDF",
+          "isPrivate": false
+        },
+        {
+          "name": "【資料5】 細谷委員提出資料（PDF形式：655KB）",
+          "url": "https://www.cao.go.jp/consumer/kabusoshiki/payment/doc/017_260710_shiryou5.pdf",
+          "type": "PDF",
+          "isPrivate": false
+        },
+        {
+          "name": "【資料6】 池本委員提出資料（PDF形式：381KB）",
+          "url": "https://www.cao.go.jp/consumer/kabusoshiki/payment/doc/017_260710_shiryou6.pdf",
+          "type": "PDF",
+          "isPrivate": false
+        }
+      ],
+      "manualLock": true
+    },
+    {
+      "id": "cao-kokyoryokin_senmon-20260317-093",
+      "councilId": "cao-kokyoryokin_senmon",
+      "title": "第93回 公共料金等専門調査会",
+      "date": "2026/03/17",
+      "officialUrl": "https://www.cao.go.jp/consumer/kabusoshiki/kokyoryokin/senmon/093/shiryou/index.html",
+      "category": "COMMITTEE",
+      "ministry": "CAO",
+      "materials": [
+        {
+          "name": "議事次第（PDF形式：41KB）",
+          "url": "https://www.cao.go.jp/consumer/kabusoshiki/kokyoryokin/doc/093_260317_gijishidai.pdf",
+          "type": "PDF",
+          "isPrivate": false
+        },
+        {
+          "name": "【資料1】 託送料金制度（レベニューキャップ制度）における物価等の上昇及び事業報酬の取扱いについて（電力・ガス取引監視等委員会提出資料）（PDF形式：4466KB）",
+          "url": "https://www.cao.go.jp/consumer/kabusoshiki/kokyoryokin/doc/093_260317_shiryou1.pdf",
+          "type": "PDF",
+          "isPrivate": false
+        },
+        {
+          "name": "PDF形式：390KB",
+          "url": "https://www.cao.go.jp/consumer/content/093_260317_gijiroku.pdf",
+          "type": "PDF",
+          "isPrivate": false
+        }
+      ],
+      "manualLock": true
+    },
+    {
+      "id": "cao-kokyoryokin_senmon-20260218-092",
+      "councilId": "cao-kokyoryokin_senmon",
+      "title": "第92回 公共料金等専門調査会",
+      "date": "2026/02/18",
+      "officialUrl": "https://www.cao.go.jp/consumer/kabusoshiki/kokyoryokin/senmon/092/shiryou/index.html",
+      "category": "COMMITTEE",
+      "ministry": "CAO",
+      "materials": [
+        {
+          "name": "議事次第（PDF形式：42KB）",
+          "url": "https://www.cao.go.jp/consumer/kabusoshiki/kokyoryokin/doc/092_260218_gijishidai.pdf",
+          "type": "PDF",
+          "isPrivate": false
+        },
+        {
+          "name": "【資料1】 一般乗用旅客自動車運送事業（東京都特別区・武三地区）の運賃の改定案に関する公共料金等専門調査会意見（案）（PDF形式：331KB）",
+          "url": "https://www.cao.go.jp/consumer/kabusoshiki/kokyoryokin/doc/092_260218_shiryou1.pdf",
+          "type": "PDF",
+          "isPrivate": false
+        },
+        {
+          "name": "PDF形式：344KB",
+          "url": "https://www.cao.go.jp/consumer/content/092_260218_gijiroku.pdf",
+          "type": "PDF",
+          "isPrivate": false
+        }
+      ],
+      "manualLock": true
+    },
+    {
+      "id": "cao-shokuhin_hyouji_bukai-20260206-081",
+      "councilId": "cao-shokuhin_hyouji_bukai",
+      "title": "第81回 食品表示部会",
+      "date": "2026/02/06",
+      "officialUrl": "https://www.cao.go.jp/consumer/kabusoshiki/syokuhinhyouji/bukai/081/shiryou/index.html",
+      "category": "COMMITTEE",
+      "ministry": "CAO",
+      "materials": [
+        {
+          "name": "議事次第（PDF形式：107KB）",
+          "url": "https://www.cao.go.jp/consumer/kabusoshiki/syokuhinhyouji/doc/260206_gijishidai.pdf",
+          "type": "PDF",
+          "isPrivate": false
+        },
+        {
+          "name": "【資料１】 諮問書（令和８年１月13日付 消食表第２号）（PDF形式：652KB）",
+          "url": "https://www.cao.go.jp/consumer/kabusoshiki/syokuhinhyouji/doc/260206_shiryou1.pdf",
+          "type": "PDF",
+          "isPrivate": false
+        },
+        {
+          "name": "【資料２】 食品表示基準の一部改正について（PDF形式：4645KB）",
+          "url": "https://www.cao.go.jp/consumer/kabusoshiki/syokuhinhyouji/doc/260206_shiryou2.pdf",
+          "type": "PDF",
+          "isPrivate": false
+        },
+        {
+          "name": "【資料３】 食品表示基準の一部改正に関する質問・意見について１（PDF形式：174KB）",
+          "url": "https://www.cao.go.jp/consumer/kabusoshiki/syokuhinhyouji/doc/260206_shiryou3.pdf",
+          "type": "PDF",
+          "isPrivate": false
+        },
+        {
+          "name": "【資料４】 食品表示基準の一部改正に関する質問・意見について２（PDF形式：244KB）",
+          "url": "https://www.cao.go.jp/consumer/kabusoshiki/syokuhinhyouji/doc/260206_shiryou4.pdf",
+          "type": "PDF",
+          "isPrivate": false
+        },
+        {
+          "name": "【資料５】 食品表示基準の一部改正案に関する御意見の概要及び御意見に対する考え方（令和８年２月６日時点 速報版）（PDF形式：300KB）",
+          "url": "https://www.cao.go.jp/consumer/kabusoshiki/syokuhinhyouji/doc/260206_shiryou5.pdf",
+          "type": "PDF",
+          "isPrivate": false
+        },
+        {
+          "name": "【参考資料１】 食品表示基準別表第19（衛生事項抜粋）（PDF形式：313KB）",
+          "url": "https://www.cao.go.jp/consumer/kabusoshiki/syokuhinhyouji/doc/260206_sankou1.pdf",
+          "type": "PDF",
+          "isPrivate": false
+        },
+        {
+          "name": "【参考資料２】 「旧食品衛生法に由来する個別品目ごとの表示ルール」と「食品、添加物等の規格基準」等との対応（PDF形式：3288KB）",
+          "url": "https://www.cao.go.jp/consumer/kabusoshiki/syokuhinhyouji/doc/260206_sankou2.pdf",
+          "type": "PDF",
+          "isPrivate": false
+        },
+        {
+          "name": "【参考資料３】 食物アレルギー表示に関するアドバイザー会議構成員名簿（PDF形式：99KB）",
+          "url": "https://www.cao.go.jp/consumer/kabusoshiki/syokuhinhyouji/doc/260206_sankou3.pdf",
+          "type": "PDF",
+          "isPrivate": false
+        },
+        {
+          "name": "【参考資料４】 食物アレルギー表示に関するアドバイザー会議 申合せ事項（PDF形式：227KB）",
+          "url": "https://www.cao.go.jp/consumer/kabusoshiki/syokuhinhyouji/doc/260206_sankou4.pdf",
+          "type": "PDF",
+          "isPrivate": false
+        },
+        {
+          "name": "【参考資料５】 食品衛生法施行規則及び乳及び乳製品の成分規格等に関する省令の一部を改正する省令等の施行について（平成13年３月15日付 食発第79号）（PDF形式：685KB）",
+          "url": "https://www.cao.go.jp/consumer/kabusoshiki/syokuhinhyouji/doc/260206_sankou5.pdf",
+          "type": "PDF",
+          "isPrivate": false
+        },
+        {
+          "name": "【追加資料】 答申書・報告書（案）（PDF形式：77KB）",
+          "url": "https://www.cao.go.jp/consumer/kabusoshiki/syokuhinhyouji/doc/260206_tsuika.pdf",
+          "type": "PDF",
+          "isPrivate": false
+        },
+        {
+          "name": "PDF形式：344KB",
+          "url": "https://www.cao.go.jp/consumer/content/260206_gijiroku.pdf",
+          "type": "PDF",
+          "isPrivate": false
+        }
+      ],
+      "manualLock": true
+    },
+    {
+      "id": "cao-kokyoryokin_senmon-20260128-091",
+      "councilId": "cao-kokyoryokin_senmon",
+      "title": "第91回 公共料金等専門調査会",
+      "date": "2026/01/28",
+      "officialUrl": "https://www.cao.go.jp/consumer/kabusoshiki/kokyoryokin/senmon/091/shiryou/index.html",
+      "category": "COMMITTEE",
+      "ministry": "CAO",
+      "materials": [
+        {
+          "name": "議事次第（PDF形式：42KB）",
+          "url": "https://www.cao.go.jp/consumer/kabusoshiki/kokyoryokin/doc/091_260128_gijishidai.pdf",
+          "type": "PDF",
+          "isPrivate": false
+        },
+        {
+          "name": "【資料1】 東京のタクシー運賃改定について（国土交通省提出資料）（PDF形式：2956KB）",
+          "url": "https://www.cao.go.jp/consumer/kabusoshiki/kokyoryokin/doc/091_260128_shiryou1.pdf",
+          "type": "PDF",
+          "isPrivate": false
+        },
+        {
+          "name": "【資料2】 タクシーは「進化」し続けます（（一社）東京ハイヤー・タクシー協会提出資料）（PDF形式：3407KB）",
+          "url": "https://www.cao.go.jp/consumer/kabusoshiki/kokyoryokin/doc/091_260128_shiryou2.pdf",
+          "type": "PDF",
+          "isPrivate": false
+        },
+        {
+          "name": "PDF形式：316KB",
+          "url": "https://www.cao.go.jp/consumer/content/091_260128_gijiroku.pdf",
+          "type": "PDF",
+          "isPrivate": false
+        }
+      ],
+      "manualLock": true
+    },
     {
       "id": "cao-238-20280331-088",
       "councilId": "cao-238",
@@ -25751,42 +26501,6 @@
       "discoveredAt": "2026/09/05 08:27"
     },
     {
-      "id": "caa-214-20260909-009",
-      "councilId": "caa-214",
-      "title": "第9回 人工知能（ＡＩ）技術の利用と消費者問題に関する専門調査会の開催について : 消費者委員会 - 内閣府",
-      "date": "2026/09/09",
-      "officialUrl": "https://www.cao.go.jp/consumer/kabusoshiki/ai_technology/009/kaisai/index.html",
-      "category": "COUNCIL",
-      "ministry": "CAA",
-      "materials": [],
-      "isNewlyDiscovered": true,
-      "discoveredAt": "2026/09/05 08:20"
-    },
-    {
-      "id": "cao-239-20260909-009",
-      "councilId": "cao-239",
-      "title": "第9回 人工知能（ＡＩ）技術の利用と消費者問題に関する専門調査会の開催について : 消費者委員会 - 内閣府",
-      "date": "2026/09/09",
-      "officialUrl": "https://www.cao.go.jp/consumer/kabusoshiki/ai_technology/009/kaisai/index.html",
-      "category": "COUNCIL",
-      "ministry": "CAO",
-      "materials": [],
-      "isNewlyDiscovered": true,
-      "discoveredAt": "2026/09/05 08:27"
-    },
-    {
-      "id": "caa-214-20260908-020",
-      "councilId": "caa-214",
-      "title": "第20回  支払手段の多様化と消費者問題に関する専門調査会の開催について : 消費者委員会 - 内閣府",
-      "date": "2026/09/08",
-      "officialUrl": "https://www.cao.go.jp/consumer/kabusoshiki/payment/020/kaisai/index.html",
-      "category": "COUNCIL",
-      "ministry": "CAA",
-      "materials": [],
-      "isNewlyDiscovered": true,
-      "discoveredAt": "2026/09/05 08:20"
-    },
-    {
       "id": "cao-227-20260908-034",
       "councilId": "cao-227",
       "title": "令和8年第34回原子力委員会定例会議の開催について",
@@ -25797,18 +26511,6 @@
       "materials": [],
       "isNewlyDiscovered": true,
       "discoveredAt": "2026/09/05 08:25"
-    },
-    {
-      "id": "cao-239-20260908-020",
-      "councilId": "cao-239",
-      "title": "第20回  支払手段の多様化と消費者問題に関する専門調査会の開催について : 消費者委員会 - 内閣府",
-      "date": "2026/09/08",
-      "officialUrl": "https://www.cao.go.jp/consumer/kabusoshiki/payment/020/kaisai/index.html",
-      "category": "COUNCIL",
-      "ministry": "CAO",
-      "materials": [],
-      "isNewlyDiscovered": true,
-      "discoveredAt": "2026/09/05 08:27"
     },
     {
       "id": "anre-198-20260905-002",
@@ -102094,18 +102796,6 @@
       "discoveredAt": "2026/09/05 08:31"
     },
     {
-      "id": "caa-214-20260904-499",
-      "councilId": "caa-214",
-      "title": "第499回 消費者委員会本会議の開催について : 消費者委員会 - 内閣府",
-      "date": "2026/09/04",
-      "officialUrl": "https://www.cao.go.jp/consumer/iinkai/2026/499/kaisai/index.html",
-      "category": "COUNCIL",
-      "ministry": "CAA",
-      "materials": [],
-      "isNewlyDiscovered": true,
-      "discoveredAt": "2026/09/05 08:20"
-    },
-    {
       "id": "jsa-620-20260904-004",
       "councilId": "jsa-620",
       "title": "スポーツを観る機会の確保及びスポーツ放映に関する検討会（第4回）の開催について：スポーツ庁",
@@ -102118,18 +102808,6 @@
       "discoveredAt": "2026/09/05 08:20"
     },
     {
-      "id": "cao-239-20260904-499",
-      "councilId": "cao-239",
-      "title": "第499回 消費者委員会本会議の開催について : 消費者委員会 - 内閣府",
-      "date": "2026/09/04",
-      "officialUrl": "https://www.cao.go.jp/consumer/iinkai/2026/499/kaisai/index.html",
-      "category": "COUNCIL",
-      "ministry": "CAO",
-      "materials": [],
-      "isNewlyDiscovered": true,
-      "discoveredAt": "2026/09/05 08:27"
-    },
-    {
       "id": "fsc-nouyaku_dai4-20260903-s31",
       "councilId": "fsc-nouyaku_dai4",
       "title": "会議資料詳細",
@@ -102140,30 +102818,6 @@
       "materials": [],
       "isNewlyDiscovered": true,
       "discoveredAt": "2026/09/05 08:19"
-    },
-    {
-      "id": "caa-214-20260903-083",
-      "councilId": "caa-214",
-      "title": "第83回 食品表示部会の開催について : 消費者委員会 - 内閣府",
-      "date": "2026/09/03",
-      "officialUrl": "https://www.cao.go.jp/consumer/kabusoshiki/syokuhinhyouji/bukai/083/kaisai/index.html",
-      "category": "COUNCIL",
-      "ministry": "CAA",
-      "materials": [],
-      "isNewlyDiscovered": true,
-      "discoveredAt": "2026/09/05 08:20"
-    },
-    {
-      "id": "cao-239-20260903-083",
-      "councilId": "cao-239",
-      "title": "第83回 食品表示部会の開催について : 消費者委員会 - 内閣府",
-      "date": "2026/09/03",
-      "officialUrl": "https://www.cao.go.jp/consumer/kabusoshiki/syokuhinhyouji/bukai/083/kaisai/index.html",
-      "category": "COUNCIL",
-      "ministry": "CAO",
-      "materials": [],
-      "isNewlyDiscovered": true,
-      "discoveredAt": "2026/09/05 08:27"
     },
     {
       "id": "mhlw-konnan_josei_shien_kento-20260902-002",
@@ -349816,6 +350470,46 @@
       "title_selector": "h1, h2, .title",
       "date_regex": "((?:令和|平成|\\d{4}年)\\s*\\d{1,2}月\\s*\\d{1,2}日|\\d{4}[年/\\-]\\d{1,2}[月/\\-]\\d{1,2})",
       "pdf_selector": "a[href*='.pdf'], a[href*='/content/']",
+      "deep_crawl_enabled": true,
+      "manualLock": true
+    },
+    "cao-shouhisha_iinkai": {
+      "template": "tpl-cao-consumer-shiryou",
+      "subpage_discovery_pattern": "https://www\\.cao\\.go\\.jp/consumer/iinkai/\\d{4}/\\d+/shiryou/index\\.html",
+      "date_regex": "(?:令和\\d+年\\d{1,2}月\\d{1,2}日|\\d{4}年\\d{1,2}月\\d{1,2}日|\\d{4}/\\d{1,2}/\\d{1,2})",
+      "pdf_selector": "a[href$='.pdf']",
+      "deep_crawl_enabled": true,
+      "manualLock": true
+    },
+    "cao-shokuhin_hyouji_bukai": {
+      "template": "tpl-cao-consumer-shiryou",
+      "subpage_discovery_pattern": "https://www\\.cao\\.go\\.jp/consumer/kabusoshiki/syokuhinhyouji/bukai/\\d+/shiryou/index\\.html",
+      "date_regex": "(?:令和\\d+年\\d{1,2}月\\d{1,2}日|\\d{4}年\\d{1,2}月\\d{1,2}日|\\d{4}/\\d{1,2}/\\d{1,2})",
+      "pdf_selector": "a[href$='.pdf']",
+      "deep_crawl_enabled": true,
+      "manualLock": true
+    },
+    "cao-ai_technology_senmon": {
+      "template": "tpl-cao-consumer-shiryou",
+      "subpage_discovery_pattern": "https://www\\.cao\\.go\\.jp/consumer/kabusoshiki/ai_technology/\\d+/shiryou/index\\.html",
+      "date_regex": "(?:令和\\d+年\\d{1,2}月\\d{1,2}日|\\d{4}年\\d{1,2}月\\d{1,2}日|\\d{4}/\\d{1,2}/\\d{1,2})",
+      "pdf_selector": "a[href$='.pdf']",
+      "deep_crawl_enabled": true,
+      "manualLock": true
+    },
+    "cao-payment_senmon": {
+      "template": "tpl-cao-consumer-shiryou",
+      "subpage_discovery_pattern": "https://www\\.cao\\.go\\.jp/consumer/kabusoshiki/payment/\\d+/shiryou/index\\.html",
+      "date_regex": "(?:令和\\d+年\\d{1,2}月\\d{1,2}日|\\d{4}年\\d{1,2}月\\d{1,2}日|\\d{4}/\\d{1,2}/\\d{1,2})",
+      "pdf_selector": "a[href$='.pdf']",
+      "deep_crawl_enabled": true,
+      "manualLock": true
+    },
+    "cao-kokyoryokin_senmon": {
+      "template": "tpl-cao-consumer-shiryou",
+      "subpage_discovery_pattern": "https://www\\.cao\\.go\\.jp/consumer/kabusoshiki/kokyoryokin/(?:senmon|bukai)/\\d+/shiryou/index\\.html",
+      "date_regex": "(?:令和\\d+年\\d{1,2}月\\d{1,2}日|\\d{4}年\\d{1,2}月\\d{1,2}日|\\d{4}/\\d{1,2}/\\d{1,2})",
+      "pdf_selector": "a[href$='.pdf']",
       "deep_crawl_enabled": true,
       "manualLock": true
     }

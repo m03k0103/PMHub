@@ -180,13 +180,25 @@ def get_added_urls_from_git():
     added_urls = set()
     diff_commands = [
         ["git", "diff", "HEAD", "--", "docs/data.json"],
-        ["git", "diff", "HEAD~1", "HEAD", "--", "docs/data.json"],
         ["git", "diff", "--staged", "--", "docs/data.json"]
     ]
     
     for cmd in diff_commands:
         try:
             output = subprocess.check_output(cmd, cwd=PROJECT_ROOT, stderr=subprocess.DEVNULL, encoding='utf-8', errors='replace')
+            for line in output.splitlines():
+                if line.startswith("+") and not line.startswith("+++"):
+                    found = re.findall(r"https?://[^\s\x22\x27,]+", line)
+                    for u in found:
+                        if is_valid_test_url(u):
+                            added_urls.add(u)
+        except Exception:
+            pass
+
+    # ワーキングツリーに未コミット差分がない場合（コミット直後等）のみ、直前コミット (HEAD~1) を検証
+    if not added_urls:
+        try:
+            output = subprocess.check_output(["git", "diff", "HEAD~1", "HEAD", "--", "docs/data.json"], cwd=PROJECT_ROOT, stderr=subprocess.DEVNULL, encoding='utf-8', errors='replace')
             for line in output.splitlines():
                 if line.startswith("+") and not line.startswith("+++"):
                     found = re.findall(r"https?://[^\s\x22\x27,]+", line)
