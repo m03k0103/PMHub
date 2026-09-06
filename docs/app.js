@@ -1561,7 +1561,11 @@ function getFiscalYear(dateInput) {
 
 function formatDate(str) {
   if (!str) return '';
-  return str.replace(/-/g, '/');
+  const normalized = str.replace(/-/g, '/');
+  if (normalized === '2099/01/01' || normalized.startsWith('2099/')) {
+    return '開催日不明（要確認）';
+  }
+  return normalized;
 }
 
 function escapeHtml(str) {

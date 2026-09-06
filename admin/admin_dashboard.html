@@ -1482,11 +1482,16 @@ JSON データを読み込み中...
           matRowsHtml = `<div style="font-size:0.75rem; color:var(--text-muted); padding:0.3rem 0;">※ この開催回の資料データなし</div>`;
         }
 
+        const isDateUnconfirmed = m.date === '2099/01/01' || m.isDateUnconfirmed;
+        const dateDisplay = isDateUnconfirmed
+          ? `<span class="meta-chip" style="color:#eab308;border-color:rgba(234,179,8,0.4);background:rgba(234,179,8,0.12);font-weight:bold;">⚠️ 開催日不明（要確認）</span>`
+          : `開催日: 📅 ${m.date}`;
+
         return `<div class="council-card" style="--card-accent: ${accentColor}; margin-bottom: 1rem; animation-delay: ${Math.min(i * 0.02, 0.5)}s;">
           <div class="card-top">
             <div class="card-title-area">
-              <div class="card-idx">#${i + 1} / ${filtered.length} ｜ 開催日: 📅 ${m.date}</div>
-              <div class="card-name" style="font-size: 1.05rem;">${m.title}</div>
+              <div class="card-idx">#${i + 1} / ${filtered.length} ｜ ${dateDisplay}</div>
+              <div class="card-name" style="font-size: 1.05rem;">${m.title} ${isDateUnconfirmed ? '<span class="meta-chip" style="color:#f59e0b;border-color:rgba(245,158,11,0.4);background:rgba(245,158,11,0.1);font-size:0.75rem;">要確認</span>' : ''}</div>
               <div class="card-id">ID: ${m.id} ｜ 会議体: ${m.councilName || m.councilId}</div>
             </div>
             <div class="card-actions">

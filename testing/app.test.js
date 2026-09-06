@@ -60,6 +60,11 @@ test('formatDate utility function', async (t) => {
     assert.strictEqual(formatDate(''), '');
     assert.strictEqual(formatDate(null), '');
   });
+
+  await t.test('formats 2099 dummy date as 開催日不明（要確認）', () => {
+    assert.strictEqual(formatDate('2099/01/01'), '開催日不明（要確認）');
+    assert.strictEqual(formatDate('2099-01-01'), '開催日不明（要確認）');
+  });
 });
 
 test('getFiscalYear utility function (Japanese Fiscal Year: Apr - Mar)', async (t) => {

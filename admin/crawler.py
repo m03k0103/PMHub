@@ -828,6 +828,7 @@ def sync_new_meetings_from_crawl(data, target, scraped_item):
         # --- B. 新規開催回の追加 ---
         # 日付の算出および YYYY/MM/DD への正規化
         meet_date = ""
+        is_date_unconfirmed = False
         if sub_dates:
             dt = parse_japanese_date(sub_dates[0])
             if dt:
@@ -837,12 +838,21 @@ def sync_new_meetings_from_crawl(data, target, scraped_item):
                 if m_iso:
                     meet_date = f"{int(m_iso.group(1)):04d}/{int(m_iso.group(2)):02d}/{int(m_iso.group(3)):02d}"
         
-        if not meet_date:
+        if not meet_date and sub_title:
             dt = parse_japanese_date(sub_title)
             if dt:
                 meet_date = dt.strftime("%Y/%m/%d")
-            else:
-                meet_date = datetime.now().strftime("%Y/%m/%d")
+
+        if not meet_date and sub_url:
+            # URL内の日付パターン (例: 20240820, 2024-08-20, 2024_08_20)
+            m_url = re.search(r'(?:^|[/_-])(20\d{2})[-_]?([01]\d)[-_]?([0-3]\d)(?:$|[._/-])', sub_url)
+            if m_url:
+                meet_date = f"{m_url.group(1)}/{m_url.group(2)}/{m_url.group(3)}"
+
+        # 開催日が特定できない場合は当日日付ではなくダミー日付(2099/01/01)を設定（管理画面で要確認対象とする）
+        if not meet_date:
+            meet_date = "2099/01/01"
+            is_date_unconfirmed = True
 
         # 会議IDの生成（4セグメント統一形式: {council_id}-{YYYYMMDD}-{回次000またはs00}）
         clean_d = meet_date.replace("/", "").replace("-", "")
@@ -858,7 +868,11 @@ def sync_new_meetings_from_crawl(data, target, scraped_item):
         if council_name not in formatted_title and sess_nums:
             formatted_title = f"第{sorted(sess_nums)[0]}回 {council_name}"
         elif not formatted_title or formatted_title.startswith("http"):
-            formatted_title = f"{council_name} ({meet_date})"
+            date_label = "開催日不明" if is_date_unconfirmed else meet_date
+            formatted_title = f"{council_name} ({date_label})"
+
+        if is_date_unconfirmed and "開催日不明" not in formatted_title:
+            formatted_title = f"{formatted_title} (開催日不明)"
 
         # 汎用報道URLや資料未掲載の場合は親の会議体URLを設定
         resolved_meet_url = sub.get("subpageUrl")
@@ -875,6 +889,7 @@ def sync_new_meetings_from_crawl(data, target, scraped_item):
             "ministry": ministry,
             "materials": clean_materials_list,
             "isNewlyDiscovered": True,
+            "isDateUnconfirmed": is_date_unconfirmed,
             "discoveredAt": datetime.now().strftime("%Y/%m/%d %H:%M")
         }
 
@@ -884,7 +899,8 @@ def sync_new_meetings_from_crawl(data, target, scraped_item):
         for s in sess_nums:
             existing_sessions.add(s)
         added_count += 1
-        print(f"  [✨ 新規開催回自動追加] [{meet_date}] {formatted_title} (ID: {new_meet_id}, 資料: {len(clean_materials_list)}件)")
+        log_prefix = "⚠️ [開催日不明(2099/01/01)]" if is_date_unconfirmed else "✨ [新規開催回自動追加]"
+        print(f"  {log_prefix} [{meet_date}] {formatted_title} (ID: {new_meet_id}, 資料: {len(clean_materials_list)}件)")
 
     if added_count > 0:
         # 日付降順に再ソート
