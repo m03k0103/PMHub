@@ -272,6 +272,15 @@ def parse_materials_from_html(html, base_url, pdf_selector):
     if base_tag:
         base_url = urllib.parse.urljoin(base_url, base_tag['href'])
     
+    EXCLUDE_MATERIAL_NAMES = {
+        '本文へ移動します', 'フッターへ移動します', '閉じる', 'メニューを閉じる',
+        'メニューを開く', 'このページの先頭へ', '前のページへ戻る', '前のページへ',
+        '先頭へ戻る', 'ページトップへ', 'ページ先頭へ', 'PAGE TOP', 'Page Top',
+        'pagetop', 'トップへ', 'トップ', 'HOME', 'Home', '戻る', '印刷', '印刷する',
+        '別ウィンドウで開く', '新しいウィンドウで開く', '（別ウィンドウで開く）',
+        'JavaScriptが無効です', 'JavaScriptを有効にしてください'
+    }
+
     # Extract PDF links
     for a_tag in soup.find_all('a', href=True):
         href = a_tag['href']
@@ -280,8 +289,12 @@ def parse_materials_from_html(html, base_url, pdf_selector):
             clean_name = link_text if link_text else os.path.basename(href)
             abs_url = urllib.parse.urljoin(base_url, href)
             
-            # ポータルや一覧、一次ソースリンク、内閣官房「その他情報」等を除外
-            if abs_url == base_url or any(k in clean_name for k in ['公式ポータル', '公式ページ', '公式情報ポータル', '審議会・検討会等一覧', '公式掲載資料・ページ']) or 'cas.go.jp/jp/siryou' in abs_url.lower():
+            # ハッシュアンカーや不要ナビゲーション、ポータルや一覧等を除外
+            if '#' in href and any(h in href.lower() for h in ['#contents', '#block_', '#header', '#footer', '#skip', '#main', '#page']):
+                continue
+            if clean_name in EXCLUDE_MATERIAL_NAMES or any(k in clean_name for k in ['移動します', '公式ポータル', '公式ページ', '公式情報ポータル', '審議会・検討会等一覧', '公式掲載資料・ページ']):
+                continue
+            if abs_url == base_url or 'cas.go.jp/jp/siryou' in abs_url.lower():
                 continue
                 
             materials.append({
