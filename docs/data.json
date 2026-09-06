@@ -7120,27 +7120,6 @@
       }
     },
     {
-      "id": "mof-customs_appeal",
-      "name": "関税等ふん争審査会",
-      "ministry": "MOF",
-      "category": "COUNCIL",
-      "description": "関税等ふん争審査会に関する調査審議・検討を行う。",
-      "officialUrl": "https://www.mof.go.jp/about_mof/councils/customs_appeal/index.html",
-      "pastYearCount": 1,
-      "isWatched": true,
-      "status": "approved",
-      "crawlStatus": {
-        "lastAttempt": "2026-09-05 08:25:10",
-        "result": "failed",
-        "extractionMethod": "none",
-        "materialsCount": 0,
-        "datesCount": 0,
-        "failureReason": "Network fetch failed",
-        "consecutiveFailures": 1,
-        "manualLockActive": false
-      }
-    },
-    {
       "id": "mhlw-kousei_influ",
       "name": "厚生科学審議会 新型インフルエンザ対策に関する小委員会",
       "ministry": "MHLW",
@@ -22012,25 +21991,6 @@
       }
     },
     {
-      "id": "mof-2718",
-      "name": "税制調査会　会議資料",
-      "ministry": "MOF",
-      "category": "COUNCIL",
-      "officialUrl": "https://www.mof.go.jp/tax_policy/councils/zeicho/index.html",
-      "pastYearCount": 1,
-      "status": "approved",
-      "crawlStatus": {
-        "lastAttempt": "2026-09-05 08:27:32",
-        "result": "partial",
-        "extractionMethod": "rule",
-        "materialsCount": 0,
-        "datesCount": 5,
-        "failureReason": "",
-        "consecutiveFailures": 0,
-        "manualLockActive": false
-      }
-    },
-    {
       "id": "mof-2719",
       "name": "財務省改革プロジェクトチーム",
       "ministry": "MOF",
@@ -25952,6 +25912,578 @@
     }
   ],
   "meetings": [
+    {
+      "id": "mof-1158-20260819-002",
+      "councilId": "mof-1158",
+      "title": "第2回 日本のコンテンツ・地域資源等の国内外への発信を目的とする新たな貨幣のあり方に関する有識者懇談会",
+      "date": "2026/08/19",
+      "officialUrl": "https://www.mof.go.jp/about_mof/councils/meeting_of_coin/20260819.html",
+      "materials": [
+        {
+          "title": "議事次第",
+          "url": "https://www.mof.go.jp/about_mof/councils/meeting_of_coin/20260819gijishidai.pdf"
+        },
+        {
+          "title": "独立行政法人造幣局資料",
+          "url": "https://www.mof.go.jp/about_mof/councils/meeting_of_coin/20260819_1.pdf"
+        }
+      ],
+      "manualLock": true
+    },
+    {
+      "id": "mof-1151-20260629-100",
+      "councilId": "mof-1151",
+      "title": "第100回 国債投資家懇談会",
+      "date": "2026/06/29",
+      "officialUrl": "https://www.mof.go.jp/about_mof/councils/meeting_of_jgbi/proceedings/260629.html",
+      "materials": [
+        {
+          "title": "議事の要点",
+          "url": "https://www.mof.go.jp/about_mof/councils/meeting_of_jgbi/proceedings/260629toushika.html"
+        },
+        {
+          "title": "議事要旨",
+          "url": "https://www.mof.go.jp/about_mof/councils/meeting_of_jgbi/proceedings/260629.html"
+        },
+        {
+          "title": "配布資料",
+          "url": "https://www.mof.go.jp/about_mof/councils/meeting_of_jgbi/proceedings/260629toushika100.pdf"
+        }
+      ],
+      "manualLock": true
+    },
+    {
+      "id": "mof-1158-20260604-001",
+      "councilId": "mof-1158",
+      "title": "第1回 日本のコンテンツ・地域資源等の国内外への発信を目的とする新たな貨幣のあり方に関する有識者懇談会",
+      "date": "2026/06/04",
+      "officialUrl": "https://www.mof.go.jp/about_mof/councils/meeting_of_coin/20260604.html",
+      "materials": [
+        {
+          "title": "議事要旨",
+          "url": "https://www.mof.go.jp/about_mof/councils/meeting_of_coin/20260702.html"
+        },
+        {
+          "title": "議事次第",
+          "url": "https://www.mof.go.jp/about_mof/councils/meeting_of_coin/20260604gijishidai.pdf"
+        },
+        {
+          "title": "理財局国庫課資料",
+          "url": "https://www.mof.go.jp/about_mof/councils/meeting_of_coin/20260604_1.pdf"
+        },
+        {
+          "title": "独立行政法人造幣局資料",
+          "url": "https://www.mof.go.jp/about_mof/councils/meeting_of_coin/20260604_2.pdf"
+        },
+        {
+          "title": "竹内委員資料",
+          "url": "https://www.mof.go.jp/about_mof/councils/meeting_of_coin/20260604_3.pdf"
+        },
+        {
+          "title": "田邉委員資料",
+          "url": "https://www.mof.go.jp/about_mof/councils/meeting_of_coin/20260604_4.pdf"
+        }
+      ],
+      "manualLock": true
+    },
+    {
+      "id": "mof-1151-20260327-099",
+      "councilId": "mof-1151",
+      "title": "第99回 国債投資家懇談会",
+      "date": "2026/03/27",
+      "officialUrl": "https://www.mof.go.jp/about_mof/councils/meeting_of_jgbi/proceedings/260327.html",
+      "materials": [
+        {
+          "title": "議事の要点",
+          "url": "https://www.mof.go.jp/about_mof/councils/meeting_of_jgbi/proceedings/260327toushika.html"
+        },
+        {
+          "title": "議事要旨",
+          "url": "https://www.mof.go.jp/about_mof/councils/meeting_of_jgbi/proceedings/260327.html"
+        },
+        {
+          "title": "配布資料",
+          "url": "https://www.mof.go.jp/about_mof/councils/meeting_of_jgbi/proceedings/260327toushika99.pdf"
+        }
+      ],
+      "manualLock": true
+    },
+    {
+      "id": "mof-1162-20251222-001",
+      "councilId": "mof-1162",
+      "title": "第1回 (株)日本政策投資銀行の特定投資業務の運用等に関する検討会",
+      "date": "2025/12/22",
+      "officialUrl": "https://www.mof.go.jp/policy/financial_system/councils/dbjttunnyou/tt/251222/index.html",
+      "materials": [
+        {
+          "title": "議事要旨",
+          "url": "https://www.mof.go.jp/policy/financial_system/councils/dbjttunnyou/tt/ttsummary/index.html"
+        },
+        {
+          "title": "議事次第",
+          "url": "https://www.mof.go.jp/policy/financial_system/councils/dbjttunnyou/tt/251222/tt251222material1.pdf"
+        },
+        {
+          "title": "委員等名簿",
+          "url": "https://www.mof.go.jp/policy/financial_system/councils/dbjttunnyou/tt/251222/tt251222material2.pdf"
+        },
+        {
+          "title": "(株)日本政策投資銀行の特定投資業務の運用等に関する検討会の運営等について",
+          "url": "https://www.mof.go.jp/policy/financial_system/councils/dbjttunnyou/tt/251222/tt251222material3.pdf"
+        },
+        {
+          "title": "(株)日本政策投資銀行資料",
+          "url": "https://www.mof.go.jp/policy/financial_system/councils/dbjttunnyou/tt/251222/tt251222material4.pdf"
+        }
+      ],
+      "manualLock": true
+    },
+    {
+      "id": "mof-1151-20251127-098",
+      "councilId": "mof-1151",
+      "title": "第98回 国債投資家懇談会",
+      "date": "2025/11/27",
+      "officialUrl": "https://www.mof.go.jp/about_mof/councils/meeting_of_jgbi/proceedings/251127.html",
+      "materials": [
+        {
+          "title": "議事の要点",
+          "url": "https://www.mof.go.jp/about_mof/councils/meeting_of_jgbi/proceedings/251127toushika.html"
+        },
+        {
+          "title": "議事要旨",
+          "url": "https://www.mof.go.jp/about_mof/councils/meeting_of_jgbi/proceedings/251127.html"
+        },
+        {
+          "title": "配布資料",
+          "url": "https://www.mof.go.jp/about_mof/councils/meeting_of_jgbi/proceedings/outline/251127toushika98.pdf"
+        }
+      ],
+      "manualLock": true
+    },
+    {
+      "id": "mof-1151-20250623-097",
+      "councilId": "mof-1151",
+      "title": "第97回 国債投資家懇談会",
+      "date": "2025/06/23",
+      "officialUrl": "https://www.mof.go.jp/about_mof/councils/meeting_of_jgbi/proceedings/250623.html",
+      "materials": [
+        {
+          "title": "議事の要点",
+          "url": "https://www.mof.go.jp/about_mof/councils/meeting_of_jgbi/proceedings/250623toushika.html"
+        },
+        {
+          "title": "議事要旨",
+          "url": "https://www.mof.go.jp/about_mof/councils/meeting_of_jgbi/proceedings/250623.html"
+        },
+        {
+          "title": "配布資料",
+          "url": "https://www.mof.go.jp/about_mof/councils/meeting_of_jgbi/proceedings/outline/250623toushika97.pdf"
+        }
+      ],
+      "manualLock": true
+    },
+    {
+      "id": "mof-1151-20250324-096",
+      "councilId": "mof-1151",
+      "title": "第96回 国債投資家懇談会",
+      "date": "2025/03/24",
+      "officialUrl": "https://www.mof.go.jp/about_mof/councils/meeting_of_jgbi/proceedings/250324.html",
+      "materials": [
+        {
+          "title": "議事の要点",
+          "url": "https://www.mof.go.jp/about_mof/councils/meeting_of_jgbi/proceedings/250324toushika.html"
+        },
+        {
+          "title": "議事要旨",
+          "url": "https://www.mof.go.jp/about_mof/councils/meeting_of_jgbi/proceedings/250324.html"
+        },
+        {
+          "title": "配布資料",
+          "url": "https://www.mof.go.jp/about_mof/councils/meeting_of_jgbi/proceedings/outline/250324toushika96.pdf"
+        }
+      ],
+      "manualLock": true
+    },
+    {
+      "id": "mof-1151-20241127-095",
+      "councilId": "mof-1151",
+      "title": "第95回 国債投資家懇談会",
+      "date": "2024/11/27",
+      "officialUrl": "https://www.mof.go.jp/about_mof/councils/meeting_of_jgbi/proceedings/241127.html",
+      "materials": [
+        {
+          "title": "議事の要点",
+          "url": "https://www.mof.go.jp/about_mof/councils/meeting_of_jgbi/proceedings/241127toushika.html"
+        },
+        {
+          "title": "議事要旨",
+          "url": "https://www.mof.go.jp/about_mof/councils/meeting_of_jgbi/proceedings/241127.html"
+        },
+        {
+          "title": "配布資料",
+          "url": "https://www.mof.go.jp/about_mof/councils/meeting_of_jgbi/proceedings/outline/241127toushika95.pdf"
+        }
+      ],
+      "manualLock": true
+    },
+    {
+      "id": "mof-1151-20240313-094",
+      "councilId": "mof-1151",
+      "title": "第94回 国債投資家懇談会",
+      "date": "2024/03/13",
+      "officialUrl": "https://www.mof.go.jp/about_mof/councils/meeting_of_jgbi/proceedings/240313.html",
+      "materials": [
+        {
+          "title": "議事の要点",
+          "url": "https://www.mof.go.jp/about_mof/councils/meeting_of_jgbi/proceedings/240313toushika.html"
+        },
+        {
+          "title": "議事要旨",
+          "url": "https://www.mof.go.jp/about_mof/councils/meeting_of_jgbi/proceedings/240313.html"
+        },
+        {
+          "title": "配布資料",
+          "url": "https://www.mof.go.jp/about_mof/councils/meeting_of_jgbi/proceedings/outline/240313toushika94.pdf"
+        }
+      ],
+      "manualLock": true
+    },
+    {
+      "id": "mof-1151-20231206-093",
+      "councilId": "mof-1151",
+      "title": "第93回 国債投資家懇談会",
+      "date": "2023/12/06",
+      "officialUrl": "https://www.mof.go.jp/about_mof/councils/meeting_of_jgbi/proceedings/231206.html",
+      "materials": [
+        {
+          "title": "議事の要点",
+          "url": "https://www.mof.go.jp/about_mof/councils/meeting_of_jgbi/proceedings/231206toushika.html"
+        },
+        {
+          "title": "議事要旨",
+          "url": "https://www.mof.go.jp/about_mof/councils/meeting_of_jgbi/proceedings/231206.html"
+        },
+        {
+          "title": "配布資料",
+          "url": "https://www.mof.go.jp/about_mof/councils/meeting_of_jgbi/proceedings/outline/231206toushika93.pdf"
+        }
+      ],
+      "manualLock": true
+    },
+    {
+      "id": "mof-1151-20231023-092",
+      "councilId": "mof-1151",
+      "title": "第92回 国債投資家懇談会",
+      "date": "2023/10/23",
+      "officialUrl": "https://www.mof.go.jp/about_mof/councils/meeting_of_jgbi/proceedings/231023.html",
+      "materials": [
+        {
+          "title": "議事の要点",
+          "url": "https://www.mof.go.jp/about_mof/councils/meeting_of_jgbi/proceedings/231023toushika.html"
+        },
+        {
+          "title": "議事要旨",
+          "url": "https://www.mof.go.jp/about_mof/councils/meeting_of_jgbi/proceedings/231023.html"
+        },
+        {
+          "title": "配布資料",
+          "url": "https://www.mof.go.jp/about_mof/councils/meeting_of_jgbi/proceedings/outline/231023toushika92.pdf"
+        }
+      ],
+      "manualLock": true
+    },
+    {
+      "id": "mof-1151-20230322-091",
+      "councilId": "mof-1151",
+      "title": "第91回 国債投資家懇談会",
+      "date": "2023/03/22",
+      "officialUrl": "https://www.mof.go.jp/about_mof/councils/meeting_of_jgbi/proceedings/230322.html",
+      "materials": [
+        {
+          "title": "議事の要点",
+          "url": "https://www.mof.go.jp/about_mof/councils/meeting_of_jgbi/proceedings/230322toushika.html"
+        },
+        {
+          "title": "議事要旨",
+          "url": "https://www.mof.go.jp/about_mof/councils/meeting_of_jgbi/proceedings/230322.html"
+        },
+        {
+          "title": "配布資料",
+          "url": "https://www.mof.go.jp/about_mof/councils/meeting_of_jgbi/proceedings/outline/230322toushika91.pdf"
+        }
+      ],
+      "manualLock": true
+    },
+    {
+      "id": "mof-1151-20221202-090",
+      "councilId": "mof-1151",
+      "title": "第90回 国債投資家懇談会",
+      "date": "2022/12/02",
+      "officialUrl": "https://www.mof.go.jp/about_mof/councils/meeting_of_jgbi/proceedings/221202.html",
+      "materials": [
+        {
+          "title": "議事の要点",
+          "url": "https://www.mof.go.jp/about_mof/councils/meeting_of_jgbi/proceedings/221202toushika.html"
+        },
+        {
+          "title": "議事要旨",
+          "url": "https://www.mof.go.jp/about_mof/councils/meeting_of_jgbi/proceedings/221202.html"
+        },
+        {
+          "title": "配布資料",
+          "url": "https://www.mof.go.jp/about_mof/councils/meeting_of_jgbi/proceedings/outline/221202toushika90.pdf"
+        }
+      ],
+      "manualLock": true
+    },
+    {
+      "id": "mof-1151-20221025-089",
+      "councilId": "mof-1151",
+      "title": "第89回 国債投資家懇談会",
+      "date": "2022/10/25",
+      "officialUrl": "https://www.mof.go.jp/about_mof/councils/meeting_of_jgbi/proceedings/221025.html",
+      "materials": [
+        {
+          "title": "議事の要点",
+          "url": "https://www.mof.go.jp/about_mof/councils/meeting_of_jgbi/proceedings/221025toushika.html"
+        },
+        {
+          "title": "議事要旨",
+          "url": "https://www.mof.go.jp/about_mof/councils/meeting_of_jgbi/proceedings/221025.html"
+        },
+        {
+          "title": "配布資料",
+          "url": "https://www.mof.go.jp/about_mof/councils/meeting_of_jgbi/proceedings/outline/221025toushika89.pdf"
+        }
+      ],
+      "manualLock": true
+    },
+    {
+      "id": "mof-1151-20220322-088",
+      "councilId": "mof-1151",
+      "title": "第88回 国債投資家懇談会",
+      "date": "2022/03/22",
+      "officialUrl": "https://www.mof.go.jp/about_mof/councils/meeting_of_jgbi/proceedings/220322.html",
+      "materials": [
+        {
+          "title": "議事の要点",
+          "url": "https://www.mof.go.jp/about_mof/councils/meeting_of_jgbi/proceedings/220322toushika.html"
+        },
+        {
+          "title": "議事要旨",
+          "url": "https://www.mof.go.jp/about_mof/councils/meeting_of_jgbi/proceedings/220322.html"
+        },
+        {
+          "title": "配布資料",
+          "url": "https://www.mof.go.jp/about_mof/councils/meeting_of_jgbi/proceedings/outline/220322toushika88.pdf"
+        }
+      ],
+      "manualLock": true
+    },
+    {
+      "id": "mof-1151-20211129-087",
+      "councilId": "mof-1151",
+      "title": "第87回 国債投資家懇談会",
+      "date": "2021/11/29",
+      "officialUrl": "https://www.mof.go.jp/about_mof/councils/meeting_of_jgbi/proceedings/211129.html",
+      "materials": [
+        {
+          "title": "議事の要点",
+          "url": "https://www.mof.go.jp/about_mof/councils/meeting_of_jgbi/proceedings/211129toushika.html"
+        },
+        {
+          "title": "議事要旨",
+          "url": "https://www.mof.go.jp/about_mof/councils/meeting_of_jgbi/proceedings/211129.html"
+        },
+        {
+          "title": "配布資料",
+          "url": "https://www.mof.go.jp/about_mof/councils/meeting_of_jgbi/proceedings/outline/211129toushika87.pdf"
+        }
+      ],
+      "manualLock": true
+    },
+    {
+      "id": "mof-1160-20211115-007",
+      "councilId": "mof-1160",
+      "title": "第7回 行政財産の未来像研究会",
+      "date": "2021/11/15",
+      "officialUrl": "https://www.mof.go.jp/policy/national_property/councils/mirai/miraizo-haihu7.html",
+      "materials": [
+        {
+          "title": "議事次第",
+          "url": "https://www.mof.go.jp/policy/national_property/councils/mirai/7-giji.pdf"
+        }
+      ],
+      "manualLock": true
+    },
+    {
+      "id": "mof-1160-20211026-006",
+      "councilId": "mof-1160",
+      "title": "第6回 行政財産の未来像研究会",
+      "date": "2021/10/26",
+      "officialUrl": "https://www.mof.go.jp/policy/national_property/councils/mirai/miraizo-haihu6.html",
+      "materials": [
+        {
+          "title": "議事要旨",
+          "url": "https://www.mof.go.jp/policy/national_property/councils/mirai/6-gijiyoshi.pdf"
+        },
+        {
+          "title": "議事次第",
+          "url": "https://www.mof.go.jp/policy/national_property/councils/mirai/6-giji.pdf"
+        },
+        {
+          "title": "官庁営繕における環境負荷低減の取組み",
+          "url": "https://www.mof.go.jp/policy/national_property/councils/mirai/6-shiryo1.pdf"
+        },
+        {
+          "title": "脱炭素社会の実現に向けた取組み",
+          "url": "https://www.mof.go.jp/policy/national_property/councils/mirai/6-shiryo2.pdf"
+        },
+        {
+          "title": "公務員宿舎の維持管理（需給のミスマッチ・老朽化）",
+          "url": "https://www.mof.go.jp/policy/national_property/councils/mirai/6-shiryo3.pdf"
+        }
+      ],
+      "manualLock": true
+    },
+    {
+      "id": "mof-1160-20210929-005",
+      "councilId": "mof-1160",
+      "title": "第5回 行政財産の未来像研究会",
+      "date": "2021/09/29",
+      "officialUrl": "https://www.mof.go.jp/policy/national_property/councils/mirai/miraizo-haihu5.html",
+      "materials": [
+        {
+          "title": "議事要旨",
+          "url": "https://www.mof.go.jp/policy/national_property/councils/mirai/5-gijiyoshi.pdf"
+        },
+        {
+          "title": "議事次第",
+          "url": "https://www.mof.go.jp/policy/national_property/councils/mirai/5-giji.pdf"
+        },
+        {
+          "title": "公務員宿舎の現状（宿舎の老朽化等対応について）",
+          "url": "https://www.mof.go.jp/policy/national_property/councils/mirai/5-shiryo1.pdf"
+        },
+        {
+          "title": "ＵＲ賃貸住宅ストックの概要とリニューアル（住戸改修）等について",
+          "url": "https://www.mof.go.jp/policy/national_property/councils/mirai/5-shiryo2.pdf"
+        }
+      ],
+      "manualLock": true
+    },
+    {
+      "id": "mof-1160-20210618-004",
+      "councilId": "mof-1160",
+      "title": "第4回 行政財産の未来像研究会",
+      "date": "2021/06/18",
+      "officialUrl": "https://www.mof.go.jp/policy/national_property/councils/mirai/miraizo-haihu4.html",
+      "materials": [
+        {
+          "title": "議事要旨",
+          "url": "https://www.mof.go.jp/policy/national_property/councils/mirai/4-gijiyoshi.pdf"
+        },
+        {
+          "title": "議事次第",
+          "url": "https://www.mof.go.jp/policy/national_property/councils/mirai/4-giji.pdf"
+        },
+        {
+          "title": "公務員宿舎の現状（若手職員の宿舎事情等について）",
+          "url": "https://www.mof.go.jp/policy/national_property/councils/mirai/4-shiryo1.pdf"
+        },
+        {
+          "title": "月島荘",
+          "url": "https://www.mof.go.jp/policy/national_property/councils/mirai/4-shiryo2.pdf"
+        },
+        {
+          "title": "日吉寮",
+          "url": "https://www.mof.go.jp/policy/national_property/councils/mirai/4-shiryo3.pdf"
+        },
+        {
+          "title": "「行政財産の未来像研究会」御説明資料（人事院）",
+          "url": "https://www.mof.go.jp/policy/national_property/councils/mirai/4-shiryo4.pdf"
+        }
+      ],
+      "manualLock": true
+    },
+    {
+      "id": "mof-1160-20210525-003",
+      "councilId": "mof-1160",
+      "title": "第3回 行政財産の未来像研究会",
+      "date": "2021/05/25",
+      "officialUrl": "https://www.mof.go.jp/policy/national_property/councils/mirai/miraizo_haihu3.html",
+      "materials": [
+        {
+          "title": "議事要旨",
+          "url": "https://www.mof.go.jp/policy/national_property/councils/mirai/3-gijiyoshi.pdf"
+        },
+        {
+          "title": "議事次第",
+          "url": "https://www.mof.go.jp/policy/national_property/councils/mirai/3-giji.pdf"
+        },
+        {
+          "title": "WORK STYLING",
+          "url": "https://www.mof.go.jp/policy/national_property/councils/mirai/3-shiryo1-1.pdf"
+        },
+        {
+          "title": "アフターコロナを見据えた単身用賃貸住宅におけるターゲット設定・商品企画について",
+          "url": "https://www.mof.go.jp/policy/national_property/councils/mirai/3-shiryo1-2.pdf"
+        },
+        {
+          "title": "行政管理局におけるオフィス改革の取組",
+          "url": "https://www.mof.go.jp/policy/national_property/councils/mirai/3-shiryo2.pdf"
+        },
+        {
+          "title": "オフィスと働き方改革の動向",
+          "url": "https://www.mof.go.jp/policy/national_property/councils/mirai/3-shiryo3.pdf"
+        }
+      ],
+      "manualLock": true
+    },
+    {
+      "id": "mof-1160-20210513-002",
+      "councilId": "mof-1160",
+      "title": "第2回 行政財産の未来像研究会",
+      "date": "2021/05/13",
+      "officialUrl": "https://www.mof.go.jp/policy/national_property/councils/mirai/miraizo_haihu2.html",
+      "materials": [
+        {
+          "title": "現地視察",
+          "url": "https://www.mof.go.jp/policy/national_property/councils/mirai/2-shiryo.pdf"
+        }
+      ],
+      "manualLock": true
+    },
+    {
+      "id": "mof-1160-20210426-001",
+      "councilId": "mof-1160",
+      "title": "第1回 行政財産の未来像研究会",
+      "date": "2021/04/26",
+      "officialUrl": "https://www.mof.go.jp/policy/national_property/councils/mirai/miraizo_haihu1.html",
+      "materials": [
+        {
+          "title": "議事要旨",
+          "url": "https://www.mof.go.jp/policy/national_property/councils/mirai/1-gijiyoshi.pdf"
+        },
+        {
+          "title": "議事次第",
+          "url": "https://www.mof.go.jp/policy/national_property/councils/mirai/1-giji.pdf"
+        },
+        {
+          "title": "行政財産の未来像研究会の開催について",
+          "url": "https://www.mof.go.jp/policy/national_property/councils/mirai/1-shiryo1.pdf"
+        },
+        {
+          "title": "行政財産の現状と課題について",
+          "url": "https://www.mof.go.jp/policy/national_property/councils/mirai/1-shiryo2.pdf"
+        },
+        {
+          "title": "不動産市場の中長期トレンドと最近の動き",
+          "url": "https://www.mof.go.jp/policy/national_property/councils/mirai/1-shiryo3.pdf"
+        }
+      ],
+      "manualLock": true
+    },
     {
       "id": "cao-shokuhin_hyouji_bukai-20260903-083",
       "councilId": "cao-shokuhin_hyouji_bukai",
@@ -42002,30 +42534,6 @@
       "discoveredAt": "2026/09/05 08:24"
     },
     {
-      "id": "mof-1151-20260905-098",
-      "councilId": "mof-1151",
-      "title": "国債投資家懇談会（第98回）議事要旨 : 財務省",
-      "date": "2026/09/05",
-      "officialUrl": "https://www.mof.go.jp/about_mof/councils/meeting_of_jgbi/proceedings/251127.html",
-      "category": "COUNCIL",
-      "ministry": "MOF",
-      "materials": [],
-      "isNewlyDiscovered": true,
-      "discoveredAt": "2026/09/05 08:24"
-    },
-    {
-      "id": "mof-1151-20260905-s03",
-      "councilId": "mof-1151",
-      "title": "国立国会図書館インターネット資料収集保存事業（WARP）",
-      "date": "2026/09/05",
-      "officialUrl": "https://warp.ndl.go.jp/web/20210401124019/http://www.mof.go.jp/about_mof/councils/meeting_of_jgbi/proceedings/index.html",
-      "category": "COUNCIL",
-      "ministry": "MOF",
-      "materials": [],
-      "isNewlyDiscovered": true,
-      "discoveredAt": "2026/09/05 08:24"
-    },
-    {
       "id": "mhlw-742-20260905-s01",
       "councilId": "mhlw-742",
       "title": "覚書等｜厚生労働省",
@@ -42904,18 +43412,6 @@
       "officialUrl": "https://warp.da.ndl.go.jp/info:ndljp/pid/11623291/www.mod.go.jp/j/approach/agenda/meeting/materials/jinji-ken/giji/08.html",
       "category": "COUNCIL",
       "ministry": "MOD",
-      "materials": [],
-      "isNewlyDiscovered": true,
-      "discoveredAt": "2026/09/05 08:24"
-    },
-    {
-      "id": "mof-1152-20260905-s06",
-      "councilId": "mof-1152",
-      "title": "国立国会図書館インターネット資料収集保存事業（WARP）",
-      "date": "2026/09/05",
-      "officialUrl": "https://warp.ndl.go.jp/web/20220701181157/www.mof.go.jp/about_mof/councils/meeting_of_jgbtr/proceedings/index.html",
-      "category": "COUNCIL",
-      "ministry": "MOF",
       "materials": [],
       "isNewlyDiscovered": true,
       "discoveredAt": "2026/09/05 08:24"
@@ -47366,18 +47862,6 @@
       "officialUrl": "https://www.mhlw.go.jp/stf/shingi2/newpage_00246.html",
       "category": "COUNCIL",
       "ministry": "MHLW",
-      "materials": [],
-      "isNewlyDiscovered": true,
-      "discoveredAt": "2026/09/05 08:25"
-    },
-    {
-      "id": "mof-1158-20260905-s01",
-      "councilId": "mof-1158",
-      "title": "日本のコンテンツ・地域資源等の国内外への発信を目的とする新たな貨幣のあり方に関する有識者懇談会 : 財務省",
-      "date": "2026/09/05",
-      "officialUrl": "https://www.mof.go.jp/about_mof/councils/meeting_of_coin/index.html",
-      "category": "COUNCIL",
-      "ministry": "MOF",
       "materials": [],
       "isNewlyDiscovered": true,
       "discoveredAt": "2026/09/05 08:25"
@@ -111976,16 +112460,12 @@
       ],
       "materials": [
         {
-          "name": "設置根拠・構成員(PDF:180KB)",
-          "url": "https://www.mof.go.jp/policy/international_policy/gaitame_kawase/fdi/../../contents/pdf/20260618215004_1.pdf"
+          "title": "議事録",
+          "url": "https://www.mof.go.jp/policy/international_policy/contents/pdf/20260618215004_3.pdf"
         },
         {
-          "name": "幹事会の構成員(PDF:113KB)",
-          "url": "https://www.mof.go.jp/policy/international_policy/gaitame_kawase/fdi/../../contents/pdf/20260618215004_2.pdf"
-        },
-        {
-          "name": "議事録(PDF:306KB)",
-          "url": "https://www.mof.go.jp/policy/international_policy/gaitame_kawase/fdi/../../contents/pdf/20260618215004_3.pdf"
+          "title": "資料",
+          "url": "https://www.mof.go.jp/policy/international_policy/gaitame_kawase/fdi/20260619131155.html"
         }
       ],
       "tags": [
@@ -111995,7 +112475,8 @@
       ],
       "officialUrl": "https://www.mof.go.jp/policy/international_policy/gaitame_kawase/fdi/20260618215004.html",
       "hasMinutes": true,
-      "docCount": 4
+      "docCount": 4,
+      "manualLock": true
     },
     {
       "id": "cas-kinyu-20260629-006",
@@ -113517,42 +113998,6 @@
         }
       ],
       "councilName": "人工知能戦略本部"
-    },
-    {
-      "id": "mof-fdi-20260618-s01",
-      "councilId": "mof-fdi",
-      "councilName": "対日外国投資委員会",
-      "ministry": "MOF",
-      "category": "COMMITTEE",
-      "title": "対日外国投資委員会",
-      "date": "2026/06/18",
-      "summary": "対日外国投資委員会の開催。主要議題の推進状況及び今後の対応方針について審議が行われた。",
-      "agenda": [
-        "設置根拠・構成員",
-        "幹事会の構成員"
-      ],
-      "materials": [
-        {
-          "name": "設置根拠・構成員(PDF:180KB)",
-          "url": "https://www.mof.go.jp/policy/international_policy/contents/pdf/20260618215004_1.pdf"
-        },
-        {
-          "name": "幹事会の構成員(PDF:113KB)",
-          "url": "https://www.mof.go.jp/policy/international_policy/contents/pdf/20260618215004_2.pdf"
-        },
-        {
-          "name": "議事録(PDF:306KB)",
-          "url": "https://www.mof.go.jp/policy/international_policy/contents/pdf/20260618215004_3.pdf"
-        }
-      ],
-      "tags": [
-        "対日外国投資",
-        "MOF",
-        "政策会議"
-      ],
-      "officialUrl": "https://www.mof.go.jp/policy/international_policy/gaitame_kawase/fdi/20260618215004.html",
-      "hasMinutes": true,
-      "docCount": 3
     },
     {
       "id": "mlit-unyu-20260618-s01",
@@ -115782,39 +116227,36 @@
     {
       "id": "mof-1152-20260608-025",
       "councilId": "mof-1152",
-      "title": "国債トップリテーラー会議（第25回）議事要旨 : 財務省",
+      "title": "第25回 国債トップリテーラー会議",
       "date": "2026/06/08",
       "officialUrl": "https://www.mof.go.jp/about_mof/councils/meeting_of_jgbtr/proceedings/outline/e20260608.html",
       "category": "COUNCIL",
       "ministry": "MOF",
       "materials": [
         {
-          "name": "資料１",
-          "url": "https://www.mof.go.jp/about_mof/councils/meeting_of_jgbtr/proceedings/material/e20260608a.pdf",
-          "type": "PDF",
-          "isPrivate": false
+          "title": "議事要旨",
+          "url": "https://www.mof.go.jp/about_mof/councils/meeting_of_jgbtr/proceedings/outline/e20260608.html"
         },
         {
-          "name": "資料２",
-          "url": "https://www.mof.go.jp/about_mof/councils/meeting_of_jgbtr/proceedings/material/e20260608b.pdf",
-          "type": "PDF",
-          "isPrivate": false
+          "title": "資料１",
+          "url": "https://www.mof.go.jp/about_mof/councils/meeting_of_jgbtr/proceedings/material/e20260608a.pdf"
         },
         {
-          "name": "資料３",
-          "url": "https://www.mof.go.jp/about_mof/councils/meeting_of_jgbtr/proceedings/material/e20260608c.pdf",
-          "type": "PDF",
-          "isPrivate": false
+          "title": "資料２",
+          "url": "https://www.mof.go.jp/about_mof/councils/meeting_of_jgbtr/proceedings/material/e20260608b.pdf"
         },
         {
-          "name": "参考資料",
-          "url": "https://www.mof.go.jp/about_mof/councils/meeting_of_jgbtr/proceedings/material/e20260608d.pdf",
-          "type": "PDF",
-          "isPrivate": false
+          "title": "資料３",
+          "url": "https://www.mof.go.jp/about_mof/councils/meeting_of_jgbtr/proceedings/material/e20260608c.pdf"
+        },
+        {
+          "title": "参考資料",
+          "url": "https://www.mof.go.jp/about_mof/councils/meeting_of_jgbtr/proceedings/material/e20260608d.pdf"
         }
       ],
       "isNewlyDiscovered": true,
-      "discoveredAt": "2026/09/05 08:24"
+      "discoveredAt": "2026/09/05 08:24",
+      "manualLock": true
     },
     {
       "id": "mhlw-kakutei_kyoshutsu_nenkin_kondan-20260605-002",
@@ -123080,103 +123522,6 @@
       "discoveredAt": "2026/09/05 08:19"
     },
     {
-      "id": "mof-1151-20260327-s01",
-      "councilId": "mof-1151",
-      "title": "国債投資家懇談会（議事要旨等） : 財務省",
-      "date": "2026/03/27",
-      "officialUrl": "https://www.mof.go.jp/about_mof/councils/meeting_of_jgbi/proceedings/index.html",
-      "category": "COUNCIL",
-      "ministry": "MOF",
-      "materials": [
-        {
-          "name": "資料(PDF:942KB)",
-          "url": "https://www.mof.go.jp/about_mof/councils/meeting_of_jgbi/proceedings/260629toushika100.pdf",
-          "type": "PDF",
-          "isPrivate": false
-        },
-        {
-          "name": "資料(PDF:4946KB)",
-          "url": "https://www.mof.go.jp/about_mof/councils/meeting_of_jgbi/proceedings/260327toushika99.pdf",
-          "type": "PDF",
-          "isPrivate": false
-        },
-        {
-          "name": "資料(PDF:1796KB)",
-          "url": "https://www.mof.go.jp/about_mof/councils/meeting_of_jgbi/proceedings/outline/251127toushika98.pdf",
-          "type": "PDF",
-          "isPrivate": false
-        },
-        {
-          "name": "資料(PDF:851KB)",
-          "url": "https://www.mof.go.jp/about_mof/councils/meeting_of_jgbi/proceedings/outline/250623toushika97.pdf",
-          "type": "PDF",
-          "isPrivate": false
-        },
-        {
-          "name": "資料(PDF:1436KB)",
-          "url": "https://www.mof.go.jp/about_mof/councils/meeting_of_jgbi/proceedings/outline/250324toushika96.pdf",
-          "type": "PDF",
-          "isPrivate": false
-        },
-        {
-          "name": "資料(PDF:3802KB)",
-          "url": "https://www.mof.go.jp/about_mof/councils/meeting_of_jgbi/proceedings/outline/241127toushika95.pdf",
-          "type": "PDF",
-          "isPrivate": false
-        },
-        {
-          "name": "資料(PDF:1684KB)",
-          "url": "https://www.mof.go.jp/about_mof/councils/meeting_of_jgbi/proceedings/outline/240313toushika94.pdf",
-          "type": "PDF",
-          "isPrivate": false
-        },
-        {
-          "name": "資料(PDF:2238KB)",
-          "url": "https://www.mof.go.jp/about_mof/councils/meeting_of_jgbi/proceedings/outline/231206toushika93.pdf",
-          "type": "PDF",
-          "isPrivate": false
-        },
-        {
-          "name": "資料(PDF:848KB)",
-          "url": "https://www.mof.go.jp/about_mof/councils/meeting_of_jgbi/proceedings/outline/231023toushika92.pdf",
-          "type": "PDF",
-          "isPrivate": false
-        },
-        {
-          "name": "資料(PDF:1739KB)",
-          "url": "https://www.mof.go.jp/about_mof/councils/meeting_of_jgbi/proceedings/outline/230322toushika91.pdf",
-          "type": "PDF",
-          "isPrivate": false
-        },
-        {
-          "name": "資料(PDF:1567KB)",
-          "url": "https://www.mof.go.jp/about_mof/councils/meeting_of_jgbi/proceedings/outline/221202toushika90.pdf",
-          "type": "PDF",
-          "isPrivate": false
-        },
-        {
-          "name": "資料(PDF:907KB)",
-          "url": "https://www.mof.go.jp/about_mof/councils/meeting_of_jgbi/proceedings/outline/221025toushika89.pdf",
-          "type": "PDF",
-          "isPrivate": false
-        },
-        {
-          "name": "資料(PDF:2207KB)",
-          "url": "https://www.mof.go.jp/about_mof/councils/meeting_of_jgbi/proceedings/outline/220322toushika88.pdf",
-          "type": "PDF",
-          "isPrivate": false
-        },
-        {
-          "name": "資料(PDF:2196KB)",
-          "url": "https://www.mof.go.jp/about_mof/councils/meeting_of_jgbi/proceedings/outline/211129toushika87.pdf",
-          "type": "PDF",
-          "isPrivate": false
-        }
-      ],
-      "isNewlyDiscovered": true,
-      "discoveredAt": "2026/09/05 08:24"
-    },
-    {
       "id": "mhlw-751-20260327-034",
       "councilId": "mhlw-751",
       "title": "第34回社会保障審議会医療保険部会 柔道整復療養費検討専門委員会議事録 （2026年3月27日）｜厚生労働省",
@@ -125251,30 +125596,6 @@
       "officialUrl": "https://www.mof.go.jp/about_mof/councils/fiscal_system_council/sub-of_fiscal_system/proceedings/material/20260312zaiseia.html",
       "hasMinutes": true,
       "docCount": 4
-    },
-    {
-      "id": "mof-customs_appeal-20260312-s01",
-      "councilId": "mof-customs_appeal",
-      "councilName": "関税等ふん争審査会",
-      "ministry": "MOF",
-      "category": "COUNCIL",
-      "title": "関税等ふん争審査会（2026/03/12開催）",
-      "date": "2026/03/12",
-      "summary": "関税等ふん争審査会の開催。主要議題の推進状況および関係省庁間の連携について協議。",
-      "agenda": [
-        "関税等ふん争審査会における主要施策の推進状況について",
-        "今後の対応方針および関係省庁間連携"
-      ],
-      "materials": [],
-      "tags": [
-        "関税等ふん争",
-        "MOF",
-        "政策会議"
-      ],
-      "officialUrl": "https://www.mof.go.jp/about_mof/councils/customs_disatisfaction_review/index.html",
-      "hasMinutes": false,
-      "docCount": 1,
-      "manualLock": true
     },
     {
       "id": "cas-kokuminkaigi_jitsumu-20260312-001",
@@ -136667,25 +136988,6 @@
           "url": "https://www.mhlw.go.jp/stf/newpage_66962.html"
         }
       ]
-    },
-    {
-      "id": "mof-1162-20251222-s01",
-      "councilId": "mof-1162",
-      "title": "(株)日本政策投資銀行の特定投資業務の運用等に関する検討会の開催について : 財務省",
-      "date": "2025/12/22",
-      "officialUrl": "https://www.mof.go.jp/policy/financial_system/councils/dbjttunnyou/dbjttunnyoukaikaisai/index.html",
-      "category": "COUNCIL",
-      "ministry": "MOF",
-      "materials": [
-        {
-          "name": "(株)日本政策投資銀行の特定投資業務の概要",
-          "url": "https://www.mof.go.jp/policy/financial_system/councils/dbjttunnyou/dbjttunnyoukaikaisai/dbjtokuteitoushi2025a.pdf",
-          "type": "PDF",
-          "isPrivate": false
-        }
-      ],
-      "isNewlyDiscovered": true,
-      "discoveredAt": "2026/09/05 08:26"
     },
     {
       "id": "cas-influenza-20251220-s01",
@@ -154514,39 +154816,36 @@
     {
       "id": "mof-1152-20250609-024",
       "councilId": "mof-1152",
-      "title": "国債トップリテーラー会議（第24回）議事要旨 : 財務省",
+      "title": "第24回 国債トップリテーラー会議",
       "date": "2025/06/09",
       "officialUrl": "https://www.mof.go.jp/about_mof/councils/meeting_of_jgbtr/proceedings/outline/e20250609.html",
       "category": "COUNCIL",
       "ministry": "MOF",
       "materials": [
         {
-          "name": "資料１",
-          "url": "https://www.mof.go.jp/about_mof/councils/meeting_of_jgbtr/proceedings/material/e20250609a.pdf",
-          "type": "PDF",
-          "isPrivate": false
+          "title": "議事要旨",
+          "url": "https://www.mof.go.jp/about_mof/councils/meeting_of_jgbtr/proceedings/outline/e20250609.html"
         },
         {
-          "name": "資料２",
-          "url": "https://www.mof.go.jp/about_mof/councils/meeting_of_jgbtr/proceedings/material/e20250609b.pdf",
-          "type": "PDF",
-          "isPrivate": false
+          "title": "資料１",
+          "url": "https://www.mof.go.jp/about_mof/councils/meeting_of_jgbtr/proceedings/material/e20250609a.pdf"
         },
         {
-          "name": "資料３",
-          "url": "https://www.mof.go.jp/about_mof/councils/meeting_of_jgbtr/proceedings/material/e20250609c.pdf",
-          "type": "PDF",
-          "isPrivate": false
+          "title": "資料２",
+          "url": "https://www.mof.go.jp/about_mof/councils/meeting_of_jgbtr/proceedings/material/e20250609b.pdf"
         },
         {
-          "name": "資料４",
-          "url": "https://www.mof.go.jp/about_mof/councils/meeting_of_jgbtr/proceedings/material/e20250609d.pdf",
-          "type": "PDF",
-          "isPrivate": false
+          "title": "資料３",
+          "url": "https://www.mof.go.jp/about_mof/councils/meeting_of_jgbtr/proceedings/material/e20250609c.pdf"
+        },
+        {
+          "title": "資料４",
+          "url": "https://www.mof.go.jp/about_mof/councils/meeting_of_jgbtr/proceedings/material/e20250609d.pdf"
         }
       ],
       "isNewlyDiscovered": true,
-      "discoveredAt": "2026/09/05 08:24"
+      "discoveredAt": "2026/09/05 08:24",
+      "manualLock": true
     },
     {
       "id": "smea-ma_shijou-20250606-002",
@@ -181154,59 +181453,42 @@
       "manualLock": true
     },
     {
-      "id": "mof-1152-20240607-s01",
-      "councilId": "mof-1152",
-      "title": "国債トップリテーラー会議（議事要旨等） : 財務省",
-      "date": "2024/06/07",
-      "officialUrl": "https://www.mof.go.jp/about_mof/councils/meeting_of_jgbtr/proceedings/index.html",
-      "category": "COUNCIL",
-      "ministry": "MOF",
-      "materials": [],
-      "isNewlyDiscovered": true,
-      "discoveredAt": "2026/09/05 08:24"
-    },
-    {
       "id": "mof-1152-20240607-023",
       "councilId": "mof-1152",
-      "title": "国債トップリテーラー会議（第23回）議事要旨 : 財務省",
+      "title": "第23回 国債トップリテーラー会議",
       "date": "2024/06/07",
       "officialUrl": "https://www.mof.go.jp/about_mof/councils/meeting_of_jgbtr/proceedings/outline/e20240607.html",
       "category": "COUNCIL",
       "ministry": "MOF",
       "materials": [
         {
-          "name": "資料１",
-          "url": "https://www.mof.go.jp/about_mof/councils/meeting_of_jgbtr/proceedings/material/e20240607a.pdf",
-          "type": "PDF",
-          "isPrivate": false
+          "title": "議事要旨",
+          "url": "https://www.mof.go.jp/about_mof/councils/meeting_of_jgbtr/proceedings/outline/e20240607.html"
         },
         {
-          "name": "資料２",
-          "url": "https://www.mof.go.jp/about_mof/councils/meeting_of_jgbtr/proceedings/material/e20240607b.pdf",
-          "type": "PDF",
-          "isPrivate": false
+          "title": "資料１",
+          "url": "https://www.mof.go.jp/about_mof/councils/meeting_of_jgbtr/proceedings/material/e20240607a.pdf"
         },
         {
-          "name": "資料３",
-          "url": "https://www.mof.go.jp/about_mof/councils/meeting_of_jgbtr/proceedings/material/e20240607c.pdf",
-          "type": "PDF",
-          "isPrivate": false
+          "title": "資料２",
+          "url": "https://www.mof.go.jp/about_mof/councils/meeting_of_jgbtr/proceedings/material/e20240607b.pdf"
         },
         {
-          "name": "資料４",
-          "url": "https://www.mof.go.jp/about_mof/councils/meeting_of_jgbtr/proceedings/material/e20240607d.pdf",
-          "type": "PDF",
-          "isPrivate": false
+          "title": "資料３",
+          "url": "https://www.mof.go.jp/about_mof/councils/meeting_of_jgbtr/proceedings/material/e20240607c.pdf"
         },
         {
-          "name": "資料５",
-          "url": "https://www.mof.go.jp/about_mof/councils/meeting_of_jgbtr/proceedings/material/e20240607e.pdf",
-          "type": "PDF",
-          "isPrivate": false
+          "title": "資料４",
+          "url": "https://www.mof.go.jp/about_mof/councils/meeting_of_jgbtr/proceedings/material/e20240607d.pdf"
+        },
+        {
+          "title": "資料５",
+          "url": "https://www.mof.go.jp/about_mof/councils/meeting_of_jgbtr/proceedings/material/e20240607e.pdf"
         }
       ],
       "isNewlyDiscovered": true,
-      "discoveredAt": "2026/09/05 08:24"
+      "discoveredAt": "2026/09/05 08:24",
+      "manualLock": true
     },
     {
       "id": "fsa-521-20240607-004",
@@ -207990,27 +208272,28 @@
     {
       "id": "mof-1152-20230615-022",
       "councilId": "mof-1152",
-      "title": "国債トップリテーラー会議（第22回）議事要旨 : 財務省",
+      "title": "第22回 国債トップリテーラー会議",
       "date": "2023/06/15",
       "officialUrl": "https://www.mof.go.jp/about_mof/councils/meeting_of_jgbtr/proceedings/outline/e20230615.html",
       "category": "COUNCIL",
       "ministry": "MOF",
       "materials": [
         {
-          "name": "資料１",
-          "url": "https://www.mof.go.jp/about_mof/councils/meeting_of_jgbtr/proceedings/material/e20230615a.pdf",
-          "type": "PDF",
-          "isPrivate": false
+          "title": "議事要旨",
+          "url": "https://www.mof.go.jp/about_mof/councils/meeting_of_jgbtr/proceedings/outline/e20230615.html"
         },
         {
-          "name": "資料２",
-          "url": "https://www.mof.go.jp/about_mof/councils/meeting_of_jgbtr/proceedings/material/e20230615b.pdf",
-          "type": "PDF",
-          "isPrivate": false
+          "title": "資料１",
+          "url": "https://www.mof.go.jp/about_mof/councils/meeting_of_jgbtr/proceedings/material/e20230615a.pdf"
+        },
+        {
+          "title": "資料２",
+          "url": "https://www.mof.go.jp/about_mof/councils/meeting_of_jgbtr/proceedings/material/e20230615b.pdf"
         }
       ],
       "isNewlyDiscovered": true,
-      "discoveredAt": "2026/09/05 08:24"
+      "discoveredAt": "2026/09/05 08:24",
+      "manualLock": true
     },
     {
       "id": "cas-zensedai_shakaihosho_kochiku-20230613-008",
@@ -255756,18 +256039,6 @@
       ]
     },
     {
-      "id": "mof-1160-20210423-s01",
-      "councilId": "mof-1160",
-      "title": "「行政財産の未来像研究会」の開催について : 財務省",
-      "date": "2021/04/23",
-      "officialUrl": "https://www.mof.go.jp/policy/national_property/councils/mirai/miraizo_kaisai.html",
-      "category": "COUNCIL",
-      "ministry": "MOF",
-      "materials": [],
-      "isNewlyDiscovered": true,
-      "discoveredAt": "2026/09/05 08:26"
-    },
-    {
       "id": "fsa-sustainable_finance-20210422-006",
       "councilId": "fsa-sustainable_finance",
       "councilName": "サステナブルファイナンス有識者会議",
@@ -274673,18 +274944,6 @@
         }
       ],
       "councilName": "第32次地方制度調査会"
-    },
-    {
-      "id": "mof-2718-20200110-s01",
-      "councilId": "mof-2718",
-      "title": "会議資料 : 税制調査会 - 内閣府",
-      "date": "2020/01/10",
-      "officialUrl": "https://www.cao.go.jp/zei-cho/gijiroku/index.html",
-      "category": "COUNCIL",
-      "ministry": "MOF",
-      "materials": [],
-      "isNewlyDiscovered": true,
-      "discoveredAt": "2026/09/05 08:27"
     },
     {
       "id": "fdma-shouboudan_kyouka-20191226-r01_003",
@@ -352405,21 +352664,21 @@
       "councilId": "mof-jgbsp",
       "title": "第119回 国債市場特別参加者会合",
       "date": "2026/06/26",
-      "officialUrl": "https://www.mof.go.jp/about_mof/councils/meeting_of_jgbsp/proceedings/index.html",
+      "officialUrl": "https://www.mof.go.jp/about_mof/councils/meeting_of_jgbsp/proceedings/260626pd.html",
       "category": "COMMITTEE",
       "ministry": "MOF",
       "manualLock": true,
       "materials": [
         {
-          "name": "第119回 議事の要点",
+          "title": "配布資料",
           "url": "https://www.mof.go.jp/about_mof/councils/meeting_of_jgbsp/proceedings/260626pd.html"
         },
         {
-          "name": "第119回 議事要旨",
+          "title": "議事要旨",
           "url": "https://www.mof.go.jp/about_mof/councils/meeting_of_jgbsp/proceedings/260626.html"
         },
         {
-          "name": "第119回 資料",
+          "title": "配布資料(PDF)",
           "url": "https://www.mof.go.jp/about_mof/councils/meeting_of_jgbsp/proceedings/260626pd119.pdf"
         }
       ]
@@ -352429,21 +352688,21 @@
       "councilId": "mof-jgbsp",
       "title": "第118回 国債市場特別参加者会合",
       "date": "2026/03/26",
-      "officialUrl": "https://www.mof.go.jp/about_mof/councils/meeting_of_jgbsp/proceedings/index.html",
+      "officialUrl": "https://www.mof.go.jp/about_mof/councils/meeting_of_jgbsp/proceedings/260326pd.html",
       "category": "COMMITTEE",
       "ministry": "MOF",
       "manualLock": true,
       "materials": [
         {
-          "name": "第118回 議事の要点",
+          "title": "配布資料",
           "url": "https://www.mof.go.jp/about_mof/councils/meeting_of_jgbsp/proceedings/260326pd.html"
         },
         {
-          "name": "第118回 議事要旨",
+          "title": "議事要旨",
           "url": "https://www.mof.go.jp/about_mof/councils/meeting_of_jgbsp/proceedings/260326.html"
         },
         {
-          "name": "第118回 資料",
+          "title": "配布資料(PDF)",
           "url": "https://www.mof.go.jp/about_mof/councils/meeting_of_jgbsp/proceedings/260326pd118.pdf"
         }
       ]
@@ -352453,21 +352712,21 @@
       "councilId": "mof-jgbsp",
       "title": "第117回 国債市場特別参加者会合",
       "date": "2025/12/12",
-      "officialUrl": "https://www.mof.go.jp/about_mof/councils/meeting_of_jgbsp/proceedings/index.html",
+      "officialUrl": "https://www.mof.go.jp/about_mof/councils/meeting_of_jgbsp/proceedings/251212pd.html",
       "category": "COMMITTEE",
       "ministry": "MOF",
       "manualLock": true,
       "materials": [
         {
-          "name": "第117回 議事の要点",
+          "title": "配布資料",
           "url": "https://www.mof.go.jp/about_mof/councils/meeting_of_jgbsp/proceedings/251212pd.html"
         },
         {
-          "name": "第117回 議事要旨",
+          "title": "議事要旨",
           "url": "https://www.mof.go.jp/about_mof/councils/meeting_of_jgbsp/proceedings/251212.html"
         },
         {
-          "name": "第117回 資料",
+          "title": "配布資料(PDF)",
           "url": "https://www.mof.go.jp/about_mof/councils/meeting_of_jgbsp/proceedings/251212pd117.pdf"
         }
       ]
@@ -352477,21 +352736,21 @@
       "councilId": "mof-jgbsp",
       "title": "第116回 国債市場特別参加者会合",
       "date": "2025/11/27",
-      "officialUrl": "https://www.mof.go.jp/about_mof/councils/meeting_of_jgbsp/proceedings/index.html",
+      "officialUrl": "https://www.mof.go.jp/about_mof/councils/meeting_of_jgbsp/proceedings/251127pd.html",
       "category": "COMMITTEE",
       "ministry": "MOF",
       "manualLock": true,
       "materials": [
         {
-          "name": "第116回 議事の要点",
+          "title": "配布資料",
           "url": "https://www.mof.go.jp/about_mof/councils/meeting_of_jgbsp/proceedings/251127pd.html"
         },
         {
-          "name": "第116回 議事要旨",
+          "title": "議事要旨",
           "url": "https://www.mof.go.jp/about_mof/councils/meeting_of_jgbsp/proceedings/251127.html"
         },
         {
-          "name": "第116回 資料",
+          "title": "配布資料(PDF)",
           "url": "https://www.mof.go.jp/about_mof/councils/meeting_of_jgbsp/proceedings/outline/251127pd116.pdf"
         }
       ]
@@ -352501,21 +352760,21 @@
       "councilId": "mof-jgbsp",
       "title": "第115回 国債市場特別参加者会合",
       "date": "2025/09/24",
-      "officialUrl": "https://www.mof.go.jp/about_mof/councils/meeting_of_jgbsp/proceedings/index.html",
+      "officialUrl": "https://www.mof.go.jp/about_mof/councils/meeting_of_jgbsp/proceedings/outline/250924.html",
       "category": "COMMITTEE",
       "ministry": "MOF",
       "manualLock": true,
       "materials": [
         {
-          "name": "第115回 議事の要点",
-          "url": "https://www.mof.go.jp/about_mof/councils/meeting_of_jgbsp/proceedings/outline/20250924.html"
-        },
-        {
-          "name": "第115回 議事要旨",
+          "title": "議事要旨",
           "url": "https://www.mof.go.jp/about_mof/councils/meeting_of_jgbsp/proceedings/outline/250924.html"
         },
         {
-          "name": "第115回 資料",
+          "title": "配布資料(HTML)",
+          "url": "https://www.mof.go.jp/about_mof/councils/meeting_of_jgbsp/proceedings/outline/20250924.html"
+        },
+        {
+          "title": "配布資料(PDF)",
           "url": "https://www.mof.go.jp/about_mof/councils/meeting_of_jgbsp/proceedings/outline/250924pd115.pdf"
         }
       ]
@@ -352531,7 +352790,7 @@
       "manualLock": true,
       "materials": [
         {
-          "name": "第4回 議事録",
+          "title": "議事録",
           "url": "https://www.mof.go.jp/about_mof/councils/jishin_benkyoukai/proceeding/records_20260626.pdf"
         }
       ]
@@ -352541,17 +352800,17 @@
       "councilId": "mof-jishin_benkyoukai",
       "title": "第3回 地震保険制度と共済に係る勉強会",
       "date": "2026/05/22",
-      "officialUrl": "https://www.mof.go.jp/about_mof/councils/jishin_benkyoukai/proceeding/index.html",
+      "officialUrl": "https://www.mof.go.jp/about_mof/councils/jishin_benkyoukai/proceeding/material_20260522.html",
       "category": "STUDY_GROUP",
       "ministry": "MOF",
       "manualLock": true,
       "materials": [
         {
-          "name": "第3回 議事録",
+          "title": "議事録",
           "url": "https://www.mof.go.jp/about_mof/councils/jishin_benkyoukai/proceeding/records_20260522.pdf"
         },
         {
-          "name": "第3回 配付資料",
+          "title": "配付資料",
           "url": "https://www.mof.go.jp/about_mof/councils/jishin_benkyoukai/proceeding/material_20260522.html"
         }
       ]
@@ -352561,17 +352820,17 @@
       "councilId": "mof-jishin_benkyoukai",
       "title": "第2回 地震保険制度と共済に係る勉強会",
       "date": "2026/03/31",
-      "officialUrl": "https://www.mof.go.jp/about_mof/councils/jishin_benkyoukai/proceeding/index.html",
+      "officialUrl": "https://www.mof.go.jp/about_mof/councils/jishin_benkyoukai/proceeding/material_20260331.html",
       "category": "STUDY_GROUP",
       "ministry": "MOF",
       "manualLock": true,
       "materials": [
         {
-          "name": "第2回 議事録",
+          "title": "議事録",
           "url": "https://www.mof.go.jp/about_mof/councils/jishin_benkyoukai/proceeding/records_20260331.pdf"
         },
         {
-          "name": "第2回 配付資料",
+          "title": "配付資料",
           "url": "https://www.mof.go.jp/about_mof/councils/jishin_benkyoukai/proceeding/material_20260331.html"
         }
       ]
@@ -352581,17 +352840,17 @@
       "councilId": "mof-jishin_benkyoukai",
       "title": "第1回 地震保険制度と共済に係る勉強会",
       "date": "2026/01/28",
-      "officialUrl": "https://www.mof.go.jp/about_mof/councils/jishin_benkyoukai/proceeding/index.html",
+      "officialUrl": "https://www.mof.go.jp/about_mof/councils/jishin_benkyoukai/proceeding/material_20260128.html",
       "category": "STUDY_GROUP",
       "ministry": "MOF",
       "manualLock": true,
       "materials": [
         {
-          "name": "第1回 議事録",
+          "title": "議事録",
           "url": "https://www.mof.go.jp/about_mof/councils/jishin_benkyoukai/proceeding/records_20260128.pdf"
         },
         {
-          "name": "第1回 配付資料",
+          "title": "配付資料",
           "url": "https://www.mof.go.jp/about_mof/councils/jishin_benkyoukai/proceeding/material_20260128.html"
         }
       ]
@@ -352713,17 +352972,17 @@
       "councilId": "mof-bop",
       "title": "第4回 国際収支から見た日本経済の課題と処方箋",
       "date": "2024/05/20",
-      "officialUrl": "https://www.mof.go.jp/policy/international_policy/councils/bop/outline/index.html",
+      "officialUrl": "https://www.mof.go.jp/policy/international_policy/councils/bop/outline/20240520.html",
       "category": "STUDY_GROUP",
       "ministry": "MOF",
       "manualLock": true,
       "materials": [
         {
-          "name": "第4回 議事要旨（PDF）",
+          "title": "資料(PDF)",
           "url": "https://www.mof.go.jp/policy/international_policy/councils/bop/outline/20240520.pdf"
         },
         {
-          "name": "第4回 資料",
+          "title": "概要(HTML)",
           "url": "https://www.mof.go.jp/policy/international_policy/councils/bop/outline/20240520.html"
         }
       ]
@@ -352733,17 +352992,17 @@
       "councilId": "mof-bop",
       "title": "第3回 国際収支から見た日本経済の課題と処方箋",
       "date": "2024/05/08",
-      "officialUrl": "https://www.mof.go.jp/policy/international_policy/councils/bop/outline/index.html",
+      "officialUrl": "https://www.mof.go.jp/policy/international_policy/councils/bop/outline/20240508.html",
       "category": "STUDY_GROUP",
       "ministry": "MOF",
       "manualLock": true,
       "materials": [
         {
-          "name": "第3回 議事要旨（PDF）",
+          "title": "資料(PDF)",
           "url": "https://www.mof.go.jp/policy/international_policy/councils/bop/outline/20240508.pdf"
         },
         {
-          "name": "第3回 資料",
+          "title": "概要(HTML)",
           "url": "https://www.mof.go.jp/policy/international_policy/councils/bop/outline/20240508.html"
         }
       ]
@@ -352753,17 +353012,17 @@
       "councilId": "mof-bop",
       "title": "第2回 国際収支から見た日本経済の課題と処方箋",
       "date": "2024/04/24",
-      "officialUrl": "https://www.mof.go.jp/policy/international_policy/councils/bop/outline/index.html",
+      "officialUrl": "https://www.mof.go.jp/policy/international_policy/councils/bop/outline/20240424.html",
       "category": "STUDY_GROUP",
       "ministry": "MOF",
       "manualLock": true,
       "materials": [
         {
-          "name": "第2回 議事要旨（PDF）",
+          "title": "資料(PDF)",
           "url": "https://www.mof.go.jp/policy/international_policy/councils/bop/outline/20240424.pdf"
         },
         {
-          "name": "第2回 資料",
+          "title": "概要(HTML)",
           "url": "https://www.mof.go.jp/policy/international_policy/councils/bop/outline/20240424.html"
         }
       ]
@@ -352773,17 +353032,17 @@
       "councilId": "mof-bop",
       "title": "第1回 国際収支から見た日本経済の課題と処方箋",
       "date": "2024/03/26",
-      "officialUrl": "https://www.mof.go.jp/policy/international_policy/councils/bop/outline/index.html",
+      "officialUrl": "https://www.mof.go.jp/policy/international_policy/councils/bop/outline/20240326.html",
       "category": "STUDY_GROUP",
       "ministry": "MOF",
       "manualLock": true,
       "materials": [
         {
-          "name": "第1回 議事要旨（PDF）",
+          "title": "資料(PDF)",
           "url": "https://www.mof.go.jp/policy/international_policy/councils/bop/outline/20240326.pdf"
         },
         {
-          "name": "第1回 資料",
+          "title": "概要(HTML)",
           "url": "https://www.mof.go.jp/policy/international_policy/councils/bop/outline/20240326.html"
         }
       ]
@@ -353364,9 +353623,6 @@
       "template": "tpl-general-multiministry-session"
     },
     "mofa-kaigai_kouryushingi": {
-      "template": "tpl-general-multiministry-session"
-    },
-    "mof-customs_appeal": {
       "template": "tpl-general-multiministry-session"
     },
     "mext-chukyo": {
@@ -356262,6 +356518,46 @@
       "pdf_selector": "a[href*='.pdf']",
       "deep_crawl_enabled": true,
       "manualLock": true
+    },
+    "mof-1152": {
+      "councilId": "mof-1152",
+      "target_url": "https://www.mof.go.jp/about_mof/councils/meeting_of_jgbtr/proceedings/index.html",
+      "subpage_discovery_pattern": ".*outline/e\\d{8}\\.html$",
+      "date_regex": "令和\\s*(\\d+|元)年\\s*(\\d+)月\\s*(\\d+)日|(\\d{4})年(\\d{1,2})月(\\d{1,2})日",
+      "pdf_selector": "a[href*='.pdf']",
+      "deep_crawl_enabled": true
+    },
+    "mof-1151": {
+      "councilId": "mof-1151",
+      "target_url": "https://www.mof.go.jp/about_mof/councils/meeting_of_jgbi/proceedings/index.html",
+      "subpage_discovery_pattern": ".*proceedings/(?:outline/)?\\d{6}(?:toushika)?\\.(?:html|pdf)$",
+      "date_regex": "令和\\s*(\\d+|元)年\\s*(\\d+)月\\s*(\\d+)日|(\\d{4})年(\\d{1,2})月(\\d{1,2})日",
+      "pdf_selector": "a[href*='.pdf']",
+      "deep_crawl_enabled": true
+    },
+    "mof-1158": {
+      "councilId": "mof-1158",
+      "target_url": "https://www.mof.go.jp/about_mof/councils/meeting_of_coin/index.html",
+      "subpage_discovery_pattern": ".*meeting_of_coin/\\d{8}\\.html$",
+      "date_regex": "令和\\s*(\\d+|元)年\\s*(\\d+)月\\s*(\\d+)日|(\\d{4})年(\\d{1,2})月(\\d{1,2})日",
+      "pdf_selector": "a[href*='.pdf']",
+      "deep_crawl_enabled": true
+    },
+    "mof-1162": {
+      "councilId": "mof-1162",
+      "target_url": "https://www.mof.go.jp/policy/financial_system/councils/dbjttunnyou/tt/index.html",
+      "subpage_discovery_pattern": ".*tt/\\d+/index\\.html$",
+      "date_regex": "令和\\s*(\\d+|元)年\\s*(\\d+)月\\s*(\\d+)日|(\\d{4})年(\\d{1,2})月(\\d{1,2})日",
+      "pdf_selector": "a[href*='.pdf']",
+      "deep_crawl_enabled": true
+    },
+    "mof-1160": {
+      "councilId": "mof-1160",
+      "target_url": "https://www.mof.go.jp/policy/national_property/councils/mirai/miraizo_gijihaihu.html",
+      "subpage_discovery_pattern": ".*mirai/miraizo[_-]haihu\\d*\\.html$",
+      "date_regex": "令和\\s*(\\d+|元)年\\s*(\\d+)月\\s*(\\d+)日|(\\d{4})年(\\d{1,2})月(\\d{1,2})日",
+      "pdf_selector": "a[href*='.pdf']",
+      "deep_crawl_enabled": true
     }
   },
   "discoveryKeywords": {
