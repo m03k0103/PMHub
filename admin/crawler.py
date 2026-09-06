@@ -261,10 +261,12 @@ def fetch_url(url, timeout=12):
         print(f"[ERROR] Failed to fetch {url}: {e}", file=sys.stderr)
         return None
 
-def parse_materials_from_html(html, base_url, pdf_selector):
-    """HTMLから全配布資料（公開PDFおよび非公開資料）を抽出（ポータルや一覧ページ等のノイズは除外）"""
+def parse_materials_from_html(html, base_url, pdf_selector=None):
+    """HTMLから全配布資料（公開PDF、HTML議事録、および非公開資料）を抽出（ポータルやヘッダー・ナビノイズは事前除外）"""
     materials = []
-    
+    if not html:
+        return materials
+        
     soup = BeautifulSoup(html, 'html.parser')
     
     # 1. Base URL consideration
@@ -272,6 +274,14 @@ def parse_materials_from_html(html, base_url, pdf_selector):
     if base_tag:
         base_url = urllib.parse.urljoin(base_url, base_tag['href'])
     
+    # 2. 共通ヘッダー・フッター・ナビゲーション領域の事前完全除去（スキップリンク・UIノイズの根本遮断）
+    for noise_tag in soup(['header', 'footer', 'nav', 'aside', 'script', 'style']):
+        noise_tag.extract()
+    for noise_id in ['header_navskip', 'js_drawer', 'header', 'footer', 'local_nav', 'gnavi', 'topic_path_head', 'sub_contents']:
+        el = soup.find(id=noise_id)
+        if el:
+            el.extract()
+
     EXCLUDE_MATERIAL_NAMES = {
         '本文へ移動します', 'フッターへ移動します', '閉じる', 'メニューを閉じる',
         'メニューを開く', 'このページの先頭へ', '前のページへ戻る', '前のページへ',
@@ -281,26 +291,57 @@ def parse_materials_from_html(html, base_url, pdf_selector):
         'JavaScriptが無効です', 'JavaScriptを有効にしてください'
     }
 
-    # Extract PDF links
+    seen_urls = set()
+
+    # 3. リンク抽出 (PDF文書およびHTML議事録・要旨)
     for a_tag in soup.find_all('a', href=True):
-        href = a_tag['href']
-        if href.lower().endswith('.pdf'):
-            link_text = a_tag.get_text(strip=True)
-            clean_name = link_text if link_text else os.path.basename(href)
-            abs_url = urllib.parse.urljoin(base_url, href)
+        href = a_tag['href'].strip()
+        if not href or href.startswith('#') or href.startswith('javascript:'):
+            continue
             
-            # ハッシュアンカーや不要ナビゲーション、ポータルや一覧等を除外
-            if '#' in href and any(h in href.lower() for h in ['#contents', '#block_', '#header', '#footer', '#skip', '#main', '#page']):
-                continue
-            if clean_name in EXCLUDE_MATERIAL_NAMES or any(k in clean_name for k in ['移動します', '公式ポータル', '公式ページ', '公式情報ポータル', '審議会・検討会等一覧', '公式掲載資料・ページ']):
-                continue
-            if abs_url == base_url or 'cas.go.jp/jp/siryou' in abs_url.lower():
-                continue
-                
+        # ハッシュアンカー付きURLのアンカー部分を正規化・判定
+        if '#' in href and any(h in href.lower() for h in ['#contents', '#block_', '#header', '#footer', '#skip', '#main', '#page']):
+            continue
+
+        abs_url = urllib.parse.urljoin(base_url, href)
+        if abs_url == base_url or abs_url in seen_urls:
+            continue
+        if 'cas.go.jp/jp/siryou' in abs_url.lower() or is_generic_index_url(abs_url):
+            continue
+
+        raw_text = a_tag.get_text(" ", strip=True)
+        clean_name = re.sub(r'[\（\(]PDF[／/形式\:\s\d\.\,KBMB]+\s*[\）\)]', '', raw_text).strip()
+        clean_name = re.sub(r'［PDF形式：\d+.*?］', '', clean_name).strip()
+        
+        parsed_path = urllib.parse.urlparse(abs_url).path
+        filename = os.path.basename(parsed_path)
+        if not clean_name:
+            clean_name = filename if filename else "配付資料"
+
+        if clean_name in EXCLUDE_MATERIAL_NAMES or any(k in clean_name for k in ['移動します', '公式ポータル', '公式ページ', '公式情報ポータル', '審議会・検討会等一覧', '公式掲載資料・ページ']):
+            continue
+
+        # A. PDFおよび各種文書ファイル
+        if href.lower().endswith(('.pdf', '.docx', '.xlsx', '.doc', '.xls')) or '/pdf/' in href.lower():
+            seen_urls.add(abs_url)
             materials.append({
                 "name": clean_name,
                 "url": abs_url,
                 "type": "PDF",
+                "isPrivate": False
+            })
+        # B. HTML形式の議事録・議事要旨
+        elif any(k in href.lower() for k in ['gijiroku', 'gijiyoshi', 'giji_yoshi', 'proceedings']) or any(k in clean_name for k in ['議事録', '議事要旨', '議事次第・配布資料']):
+            seen_urls.add(abs_url)
+            doc_name = clean_name
+            if 'gijiroku' in href.lower() and ('議事録' not in doc_name):
+                doc_name = "議事録"
+            elif 'gijiyoshi' in href.lower() and ('議事要旨' not in doc_name):
+                doc_name = "議事要旨"
+            materials.append({
+                "name": doc_name,
+                "url": abs_url,
+                "type": "HTML",
                 "isPrivate": False
             })
             
@@ -356,6 +397,41 @@ def _crawl_subpages(target_url, html, rule, quirk_note, pdf_pattern):
                     sub_title = sub_url
 
                 sub_materials = parse_materials_from_html(sub_html, sub_url, pdf_pattern)
+                
+                # 2段階配付資料自動探索: もしPDF資料が0件（または議事録のみ）の場合、同一ディレクトリの随伴資料ページ（gijishidai.html等）を自動探索
+                has_pdf = any(m.get("type") == "PDF" for m in sub_materials)
+                if not has_pdf:
+                    folder_url = sub_url if sub_url.endswith('/') else urllib.parse.urljoin(sub_url, './')
+                    # 随伴資料ページの候補探索（同階層のgijishidai.htmlまたはページ内リンク）
+                    companion_candidates = []
+                    for a in sub_soup.find_all('a', href=True):
+                        h_lower = a['href'].lower()
+                        if any(k in h_lower for k in ['gijishidai', 'shiryo', 'siryou', 'haifu']) and not h_lower.endswith('.pdf'):
+                            companion_candidates.append(urllib.parse.urljoin(sub_url, a['href']))
+                    companion_candidates.append(urllib.parse.urljoin(folder_url, 'gijishidai.html'))
+                    companion_candidates.append(urllib.parse.urljoin(folder_url, 'index.html'))
+                    
+                    for comp_url in list(dict.fromkeys(companion_candidates)):
+                        if comp_url == sub_url:
+                            continue
+                        comp_html = fetch_url(comp_url)
+                        if comp_html:
+                            comp_mats = parse_materials_from_html(comp_html, comp_url, pdf_pattern)
+                            comp_pdfs = [cm for cm in comp_mats if cm.get("type") == "PDF"]
+                            if comp_pdfs:
+                                for cp in comp_pdfs:
+                                    if not any(m.get("url") == cp.get("url") for m in sub_materials):
+                                        sub_materials.append(cp)
+                                # 自身が議事録ページであれば議事録としても保持
+                                if 'gijiroku' in sub_url.lower() and not any(m.get("url") == sub_url for m in sub_materials):
+                                    sub_materials.append({
+                                        "name": "議事録",
+                                        "url": sub_url,
+                                        "type": "HTML",
+                                        "isPrivate": False
+                                    })
+                                break
+
                 raw_sub_dates = extract_clean_dates_from_html(sub_html, rule.get("date_regex", r'(?:令和|平成)(?:\d+|元)年\d+月\d+日|\d{4}年\d+月\d+日|\d{4}[/-]\d+[/-]\d+'))
                 norm_sub_dates = [normalize_japanese_numbers(d) for d in raw_sub_dates]
                 all_extracted_dates.extend(norm_sub_dates)
@@ -521,7 +597,19 @@ def discover_subpage_links(html, base_url):
             seen.add(abs_url)
             candidates.append(abs_url)
     
-    return candidates[:8]  # 最大8サブページ
+    # 優先度ソート: 議事次第（gijishidai）、配付資料（shiryo）、ディレクトリトップ（index.html/末尾スラッシュ）を議事録単体より優先
+    def subpage_priority(url):
+        u_low = url.lower()
+        if any(k in u_low for k in ['gijishidai', 'shiryo', 'siryou', 'haifu']):
+            return 3
+        if u_low.endswith('/') or u_low.endswith('/index.html') or 'dai' in u_low or 'kai' in u_low:
+            return 2
+        if 'gijiroku' in u_low:
+            return 1
+        return 0
+
+    candidates.sort(key=subpage_priority, reverse=True)
+    return candidates[:12]  # 最大12サブページを優先巡回
 
 def extract_via_llm_single(url, html, target_name):
     """単一ページに対してLLM抽出を実行する"""
