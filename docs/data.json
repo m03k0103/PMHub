@@ -18491,7 +18491,7 @@
       "ministry": "MOF",
       "category": "COUNCIL",
       "officialUrl": "https://www.mof.go.jp/about_mof/councils/meeting_of_cbdc/index.html",
-      "pastYearCount": 3,
+      "pastYearCount": 2,
       "status": "approved",
       "crawlStatus": {
         "lastAttempt": "2026-09-05 08:25:43",
@@ -18502,7 +18502,26 @@
         "failureReason": "",
         "consecutiveFailures": 0,
         "manualLockActive": false
-      }
+      },
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "CBDC（中央銀行デジタル通貨）に関する有識者会議の開催について",
+          "url": "https://www.mof.go.jp/about_mof/councils/meeting_of_cbdc/20230414.html"
+        },
+        {
+          "name": "ＣＢＤＣ（中央銀行デジタル通貨）に関する有識者会議 取りまとめ",
+          "url": "https://www.mof.go.jp/about_mof/councils/meeting_of_cbdc/20231213torimatome.pdf"
+        },
+        {
+          "name": "ＣＢＤＣ（中央銀行デジタル通貨）に関する有識者会議 取りまとめ（概要）",
+          "url": "https://www.mof.go.jp/about_mof/councils/meeting_of_cbdc/20231213torimatomegaiyou.pdf"
+        },
+        {
+          "name": "（参考）ＣＢＤＣ（中央銀行デジタル通貨）に関する有識者会議の主な議論の紹介",
+          "url": "https://www.mof.go.jp/about_mof/councils/meeting_of_cbdc/20231213omonagiron.pdf"
+        }
+      ]
     },
     {
       "id": "mof-1158",
@@ -46395,43 +46414,6 @@
       "category": "COUNCIL",
       "ministry": "CAO",
       "materials": [],
-      "isNewlyDiscovered": true,
-      "discoveredAt": "2026/09/05 08:25"
-    },
-    {
-      "id": "mof-1157-20260905-001",
-      "councilId": "mof-1157",
-      "title": "第1回CBDC（中央銀行デジタル通貨）に関する有識者会議　配布資料 : 財務省",
-      "date": "2026/09/05",
-      "officialUrl": "https://www.mof.go.jp/about_mof/councils/meeting_of_cbdc/cbdchaihu.html",
-      "category": "COUNCIL",
-      "ministry": "MOF",
-      "materials": [
-        {
-          "name": "議事次第(PDF:38KB)",
-          "url": "https://www.mof.go.jp/about_mof/councils/meeting_of_cbdc/20230421gijisidai.pdf",
-          "type": "PDF",
-          "isPrivate": false
-        },
-        {
-          "name": "CBDC（中央銀行デジタル通貨）に関する有識者会議の開催について（４月１４日財務省公表）(PDF:59KB)",
-          "url": "https://www.mof.go.jp/about_mof/councils/meeting_of_cbdc/20230414cbdckaisai.pdf",
-          "type": "PDF",
-          "isPrivate": false
-        },
-        {
-          "name": "事務局説明資料(PDF:1386KB)",
-          "url": "https://www.mof.go.jp/about_mof/councils/meeting_of_cbdc/20230421jimukyokusetumeisiryou.pdf",
-          "type": "PDF",
-          "isPrivate": false
-        },
-        {
-          "name": "日本銀行説明資料(PDF:1320KB)",
-          "url": "https://www.mof.go.jp/about_mof/councils/meeting_of_cbdc/0421nichiginsiryou.pdf",
-          "type": "PDF",
-          "isPrivate": false
-        }
-      ],
       "isNewlyDiscovered": true,
       "discoveredAt": "2026/09/05 08:25"
     },
@@ -155826,18 +155808,6 @@
       "docCount": 7
     },
     {
-      "id": "mof-1157-20250527-s02",
-      "councilId": "mof-1157",
-      "title": "「CBDC（中央銀行デジタル通貨）に関する有識者会議」の開催について : 財務省",
-      "date": "2025/05/27",
-      "officialUrl": "https://www.mof.go.jp/about_mof/councils/meeting_of_cbdc/20230414.html",
-      "category": "COUNCIL",
-      "ministry": "MOF",
-      "materials": [],
-      "isNewlyDiscovered": true,
-      "discoveredAt": "2026/09/05 08:25"
-    },
-    {
       "id": "fsc-tenkabutu-20250526-202",
       "councilId": "fsc-tenkabutu",
       "title": "第202回 添加物専門調査会",
@@ -196897,49 +196867,6 @@
           "url": "https://www.bunka.go.jp/seisaku/bunkashingikai/chosakuken/shiyoryo/r05_03/"
         }
       ]
-    },
-    {
-      "id": "mof-1157-20231122-s01",
-      "councilId": "mof-1157",
-      "title": "CBDC（中央銀行デジタル通貨）に関する有識者会議 : 財務省",
-      "date": "2023/11/22",
-      "officialUrl": "https://www.mof.go.jp/about_mof/councils/meeting_of_cbdc/index.html",
-      "category": "COUNCIL",
-      "ministry": "MOF",
-      "materials": [
-        {
-          "name": "ＣＢＤＣ（中央銀行デジタル通貨）に関する有識者会議　取りまとめ(PDF:1149KB)",
-          "url": "https://www.mof.go.jp/about_mof/councils/meeting_of_cbdc/20231213torimatome.pdf",
-          "type": "PDF",
-          "isPrivate": false
-        },
-        {
-          "name": "ＣＢＤＣ（中央銀行デジタル通貨）に関する有識者会議　取りまとめ（概要）(PDF:817KB)",
-          "url": "https://www.mof.go.jp/about_mof/councils/meeting_of_cbdc/20231213torimatomegaiyou.pdf",
-          "type": "PDF",
-          "isPrivate": false
-        },
-        {
-          "name": "（参考）ＣＢＤＣ（中央銀行デジタル通貨）に関する有識者会議の主な議論の紹介(PDF:436KB)",
-          "url": "https://www.mof.go.jp/about_mof/councils/meeting_of_cbdc/20231213omonagiron.pdf",
-          "type": "PDF",
-          "isPrivate": false
-        },
-        {
-          "name": "議事要旨",
-          "url": "https://www.mof.go.jp/about_mof/councils/meeting_of_cbdc/20250527_agenda.pdf",
-          "type": "PDF",
-          "isPrivate": false
-        },
-        {
-          "name": "議事要旨",
-          "url": "https://www.mof.go.jp/about_mof/councils/meeting_of_cbdc/20260625_agenda.pdf",
-          "type": "PDF",
-          "isPrivate": false
-        }
-      ],
-      "isNewlyDiscovered": true,
-      "discoveredAt": "2026/09/05 08:25"
     },
     {
       "id": "mof-2716-20231122-s05",
@@ -352162,6 +352089,322 @@
           "url": "https://www.mof.go.jp/about_mof/councils/meeting_of_cbdcre/contents/pdf/index_2.pdf"
         }
       ]
+    },
+    {
+      "id": "mof-1157-20230421-001",
+      "councilId": "mof-1157",
+      "title": "第1回 CBDC（中央銀行デジタル通貨）に関する有識者会議",
+      "date": "2023/04/21",
+      "officialUrl": "https://www.mof.go.jp/about_mof/councils/meeting_of_cbdc/cbdchaihu.html",
+      "category": "COUNCIL",
+      "ministry": "MOF",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "第1回 議事要旨",
+          "url": "https://www.mof.go.jp/about_mof/councils/meeting_of_cbdc/cbdcgiji.html"
+        },
+        {
+          "name": "議事次第",
+          "url": "https://www.mof.go.jp/about_mof/councils/meeting_of_cbdc/20230421gijisidai.pdf"
+        },
+        {
+          "name": "CBDC（中央銀行デジタル通貨）に関する有識者会議の開催について（４月１４日財務省公表）",
+          "url": "https://www.mof.go.jp/about_mof/councils/meeting_of_cbdc/20230414cbdckaisai.pdf"
+        },
+        {
+          "name": "事務局説明資料",
+          "url": "https://www.mof.go.jp/about_mof/councils/meeting_of_cbdc/20230421jimukyokusetumeisiryou.pdf"
+        },
+        {
+          "name": "日本銀行説明資料",
+          "url": "https://www.mof.go.jp/about_mof/councils/meeting_of_cbdc/0421nichiginsiryou.pdf"
+        }
+      ]
+    },
+    {
+      "id": "mof-1157-20230524-002",
+      "councilId": "mof-1157",
+      "title": "第2回 CBDC（中央銀行デジタル通貨）に関する有識者会議",
+      "date": "2023/05/24",
+      "officialUrl": "https://www.mof.go.jp/about_mof/councils/meeting_of_cbdc/2cbdchaihu.html",
+      "category": "COUNCIL",
+      "ministry": "MOF",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "第2回 議事要旨",
+          "url": "https://www.mof.go.jp/about_mof/councils/meeting_of_cbdc/2cbdcgiji.html"
+        },
+        {
+          "name": "議事次第",
+          "url": "https://www.mof.go.jp/about_mof/councils/meeting_of_cbdc/20230524gijisidai.pdf"
+        },
+        {
+          "name": "金融庁説明資料",
+          "url": "https://www.mof.go.jp/about_mof/councils/meeting_of_cbdc/20230524siryou1.pdf"
+        },
+        {
+          "name": "小早川委員説明資料",
+          "url": "https://www.mof.go.jp/about_mof/councils/meeting_of_cbdc/20230524siryou2.pdf"
+        }
+      ]
+    },
+    {
+      "id": "mof-1157-20230616-003",
+      "councilId": "mof-1157",
+      "title": "第3回 CBDC（中央銀行デジタル通貨）に関する有識者会議",
+      "date": "2023/06/16",
+      "officialUrl": "https://www.mof.go.jp/about_mof/councils/meeting_of_cbdc/3cbdchaihu.html",
+      "category": "COUNCIL",
+      "ministry": "MOF",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "第3回 議事要旨",
+          "url": "https://www.mof.go.jp/about_mof/councils/meeting_of_cbdc/3cbdcgiji.html"
+        },
+        {
+          "name": "議事次第",
+          "url": "https://www.mof.go.jp/about_mof/councils/meeting_of_cbdc/20230616gijisidai.pdf"
+        },
+        {
+          "name": "全国銀行協会説明資料",
+          "url": "https://www.mof.go.jp/about_mof/councils/meeting_of_cbdc/20230616jbasiryou.pdf"
+        },
+        {
+          "name": "日本資金決済業協会説明資料",
+          "url": "https://www.mof.go.jp/about_mof/councils/meeting_of_cbdc/20230616s-kessaisiryou.pdf"
+        },
+        {
+          "name": "Fintech 協会説明資料",
+          "url": "https://www.mof.go.jp/about_mof/councils/meeting_of_cbdc/20230616fintechsiryou.pdf.pdf"
+        },
+        {
+          "name": "デジタル通貨フォーラム説明資料",
+          "url": "https://www.mof.go.jp/about_mof/councils/meeting_of_cbdc/20230616dc-forum.pdf"
+        }
+      ]
+    },
+    {
+      "id": "mof-1157-20230905-004",
+      "councilId": "mof-1157",
+      "title": "第4回 CBDC（中央銀行デジタル通貨）に関する有識者会議",
+      "date": "2023/09/05",
+      "officialUrl": "https://www.mof.go.jp/about_mof/councils/meeting_of_cbdc/4cbdchaihu.html",
+      "category": "COUNCIL",
+      "ministry": "MOF",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "第4回 議事要旨",
+          "url": "https://www.mof.go.jp/about_mof/councils/meeting_of_cbdc/4cbdcgiji.html"
+        },
+        {
+          "name": "議事次第",
+          "url": "https://www.mof.go.jp/about_mof/councils/meeting_of_cbdc/20230905gijishidai.pdf"
+        },
+        {
+          "name": "事務局説明資料",
+          "url": "https://www.mof.go.jp/about_mof/councils/meeting_of_cbdc/20230905jimukyokusiryou.pdf"
+        }
+      ]
+    },
+    {
+      "id": "mof-1157-20230926-005",
+      "councilId": "mof-1157",
+      "title": "第5回 CBDC（中央銀行デジタル通貨）に関する有識者会議",
+      "date": "2023/09/26",
+      "officialUrl": "https://www.mof.go.jp/about_mof/councils/meeting_of_cbdc/5cbdchaihu.html",
+      "category": "COUNCIL",
+      "ministry": "MOF",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "第5回 議事要旨",
+          "url": "https://www.mof.go.jp/about_mof/councils/meeting_of_cbdc/5cbdcgiji.html"
+        },
+        {
+          "name": "議事次第",
+          "url": "https://www.mof.go.jp/about_mof/councils/meeting_of_cbdc/20230926gijishidai.pdf"
+        },
+        {
+          "name": "事務局説明資料",
+          "url": "https://www.mof.go.jp/about_mof/councils/meeting_of_cbdc/20230926jimukyokusiryou.pdf"
+        }
+      ]
+    },
+    {
+      "id": "mof-1157-20231013-006",
+      "councilId": "mof-1157",
+      "title": "第6回 CBDC（中央銀行デジタル通貨）に関する有識者会議",
+      "date": "2023/10/13",
+      "officialUrl": "https://www.mof.go.jp/about_mof/councils/meeting_of_cbdc/6cbdchaihu.html",
+      "category": "COUNCIL",
+      "ministry": "MOF",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "第6回 議事要旨",
+          "url": "https://www.mof.go.jp/about_mof/councils/meeting_of_cbdc/6cbdcgiji.html"
+        },
+        {
+          "name": "議事次第",
+          "url": "https://www.mof.go.jp/about_mof/councils/meeting_of_cbdc/20231013gijishidai.pdf"
+        },
+        {
+          "name": "事務局説明資料",
+          "url": "https://www.mof.go.jp/about_mof/councils/meeting_of_cbdc/20231013jimukyokusiryou.pdf"
+        }
+      ]
+    },
+    {
+      "id": "mof-1157-20231122-007",
+      "councilId": "mof-1157",
+      "title": "第7回 CBDC（中央銀行デジタル通貨）に関する有識者会議",
+      "date": "2023/11/22",
+      "officialUrl": "https://www.mof.go.jp/about_mof/councils/meeting_of_cbdc/7cbdchaihu.html",
+      "category": "COUNCIL",
+      "ministry": "MOF",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "議事次第",
+          "url": "https://www.mof.go.jp/about_mof/councils/meeting_of_cbdc/20231122gijishidai.pdf"
+        },
+        {
+          "name": "デジタルユーロの「準備フェーズ」への移行について（概要）",
+          "url": "https://www.mof.go.jp/about_mof/councils/meeting_of_cbdc/20231122sannkoushiryou.pdf"
+        }
+      ]
+    },
+    {
+      "id": "mof-1157-20231213-008",
+      "councilId": "mof-1157",
+      "title": "第8回 CBDC（中央銀行デジタル通貨）に関する有識者会議",
+      "date": "2023/12/13",
+      "officialUrl": "https://www.mof.go.jp/about_mof/councils/meeting_of_cbdc/8cbdchaihu.html",
+      "category": "COUNCIL",
+      "ministry": "MOF",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "第8回 議事要旨",
+          "url": "https://www.mof.go.jp/about_mof/councils/meeting_of_cbdc/8cbdcgiji.html"
+        },
+        {
+          "name": "議事次第",
+          "url": "https://www.mof.go.jp/about_mof/councils/meeting_of_cbdc/20231213gijishidai.pdf"
+        },
+        {
+          "name": "ＣＢＤＣ（中央銀行デジタル通貨）に関する有識者会議 取りまとめ",
+          "url": "https://www.mof.go.jp/about_mof/councils/meeting_of_cbdc/20231213torimatome.pdf"
+        },
+        {
+          "name": "ＣＢＤＣ（中央銀行デジタル通貨）に関する有識者会議 取りまとめ（概要）",
+          "url": "https://www.mof.go.jp/about_mof/councils/meeting_of_cbdc/20231213torimatomegaiyou.pdf"
+        },
+        {
+          "name": "（参考）ＣＢＤＣ（中央銀行デジタル通貨）に関する有識者会議の主な議論の紹介",
+          "url": "https://www.mof.go.jp/about_mof/councils/meeting_of_cbdc/20231213omonagiron.pdf"
+        }
+      ]
+    },
+    {
+      "id": "mof-1157-20240528-009",
+      "councilId": "mof-1157",
+      "title": "第9回 CBDC（中央銀行デジタル通貨）に関する有識者会議",
+      "date": "2024/05/28",
+      "officialUrl": "https://www.mof.go.jp/about_mof/councils/meeting_of_cbdc/9cbdchaihu.html",
+      "category": "COUNCIL",
+      "ministry": "MOF",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "第9回 議事要旨",
+          "url": "https://www.mof.go.jp/about_mof/councils/meeting_of_cbdc/9cbdcgiji.html"
+        },
+        {
+          "name": "議事次第",
+          "url": "https://www.mof.go.jp/about_mof/councils/meeting_of_cbdc/20240528gijisidai.pdf"
+        },
+        {
+          "name": "事務局説明資料",
+          "url": "https://www.mof.go.jp/about_mof/councils/meeting_of_cbdc/20240528jimukyokusiryou.pdf"
+        },
+        {
+          "name": "日本銀行説明資料",
+          "url": "https://www.mof.go.jp/about_mof/councils/meeting_of_cbdc/20240528nichiginsiryou.pdf"
+        },
+        {
+          "name": "ＣＢＤＣに関する関係府省庁・日本銀行連絡会議 中間整理",
+          "url": "https://www.mof.go.jp/about_mof/councils/meeting_of_cbdc/20240417chuukanseiri.pdf"
+        }
+      ]
+    },
+    {
+      "id": "mof-1157-20250527-010",
+      "councilId": "mof-1157",
+      "title": "第10回 CBDC（中央銀行デジタル通貨）に関する有識者会議",
+      "date": "2025/05/27",
+      "officialUrl": "https://www.mof.go.jp/about_mof/councils/meeting_of_cbdc/20250527haifu.html",
+      "category": "COUNCIL",
+      "ministry": "MOF",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "第10回 議事要旨（PDF）",
+          "url": "https://www.mof.go.jp/about_mof/councils/meeting_of_cbdc/20250527_agenda.pdf"
+        },
+        {
+          "name": "議事次第",
+          "url": "https://www.mof.go.jp/about_mof/councils/meeting_of_cbdc/20250527_gijisidai.pdf"
+        },
+        {
+          "name": "事務局説明資料",
+          "url": "https://www.mof.go.jp/about_mof/councils/meeting_of_cbdc/20250527_siryo1.pdf"
+        },
+        {
+          "name": "日本銀行説明資料",
+          "url": "https://www.mof.go.jp/about_mof/councils/meeting_of_cbdc/20250527_siryo2.pdf"
+        },
+        {
+          "name": "ＣＢＤＣに関する関係府省庁・日本銀行連絡会議 第２次中間整理",
+          "url": "https://www.mof.go.jp/about_mof/councils/meeting_of_cbdc/20250527_sanko.pdf"
+        }
+      ]
+    },
+    {
+      "id": "mof-1157-20260625-011",
+      "councilId": "mof-1157",
+      "title": "第11回 CBDC（中央銀行デジタル通貨）に関する有識者会議",
+      "date": "2026/06/25",
+      "officialUrl": "https://www.mof.go.jp/about_mof/councils/meeting_of_cbdc/11cbdchaihu.html",
+      "category": "COUNCIL",
+      "ministry": "MOF",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "第11回 議事要旨（PDF）",
+          "url": "https://www.mof.go.jp/about_mof/councils/meeting_of_cbdc/20260625_agenda.pdf"
+        },
+        {
+          "name": "議事次第",
+          "url": "https://www.mof.go.jp/about_mof/councils/meeting_of_cbdc/20260625_gijisidai.pdf"
+        },
+        {
+          "name": "事務局説明資料",
+          "url": "https://www.mof.go.jp/about_mof/councils/meeting_of_cbdc/20260625_siryou1.pdf"
+        },
+        {
+          "name": "日本銀行説明資料",
+          "url": "https://www.mof.go.jp/about_mof/councils/meeting_of_cbdc/20260625_siryou2.pdf"
+        },
+        {
+          "name": "ＣＢＤＣに関する関係府省庁・日本銀行連絡会議 進捗報告",
+          "url": "https://www.mof.go.jp/about_mof/councils/meeting_of_cbdc/20260625_sanko.pdf"
+        }
+      ]
     }
   ],
   "categories": {
@@ -355475,6 +355718,15 @@
     "mof-1159": {
       "rule_id": "rule-mof-1159",
       "subpage_discovery_pattern": "https://www\\.mof\\.go\\.jp/about_mof/councils/meeting_of_cbdcre/.*(?:haihu|haifu).*\\.html",
+      "title_selector": "h1, h2, title",
+      "date_regex": "((?:令和|平成|\\d{4}年)\\s*\\d{1,2}月\\s*\\d{1,2}日|\\d{4}[年/\\-]\\d{1,2}[月/\\-]\\d{1,2})",
+      "pdf_selector": "a[href*='.pdf']",
+      "deep_crawl_enabled": true,
+      "manualLock": true
+    },
+    "mof-1157": {
+      "rule_id": "rule-mof-1157",
+      "subpage_discovery_pattern": "https://www\\.mof\\.go\\.jp/about_mof/councils/meeting_of_cbdc/.*(?:haihu|haifu).*\\.html",
       "title_selector": "h1, h2, title",
       "date_regex": "((?:令和|平成|\\d{4}年)\\s*\\d{1,2}月\\s*\\d{1,2}日|\\d{4}[年/\\-]\\d{1,2}[月/\\-]\\d{1,2})",
       "pdf_selector": "a[href*='.pdf']",
