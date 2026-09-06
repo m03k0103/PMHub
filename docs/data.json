@@ -4172,7 +4172,7 @@
       "name": "国債投資家懇談会",
       "ministry": "MOF",
       "category": "STUDY",
-      "officialUrl": "https://www.mof.go.jp/about_mof/councils/meeting_of_jgbi/proceedings/index.html",
+      "officialUrl": "https://www.mof.go.jp/about_mof/councils/meeting_of_jgbi/index.html",
       "pastYearCount": 3,
       "crawlStatus": {
         "lastAttempt": "2026-09-05 08:24:42",
@@ -4184,14 +4184,15 @@
         "consecutiveFailures": 0,
         "manualLockActive": false
       },
-      "status": "approved"
+      "status": "approved",
+      "manualLock": true
     },
     {
       "id": "mof-1152",
       "name": "国債トップリテーラー会議",
       "ministry": "MOF",
       "category": "COUNCIL",
-      "officialUrl": "https://www.mof.go.jp/about_mof/councils/meeting_of_jgbtr/proceedings/index.html",
+      "officialUrl": "https://www.mof.go.jp/about_mof/councils/meeting_of_jgbtr/index.html",
       "pastYearCount": 6,
       "crawlStatus": {
         "lastAttempt": "2026-09-05 08:24:57",
@@ -4203,7 +4204,8 @@
         "consecutiveFailures": 0,
         "manualLockActive": false
       },
-      "status": "approved"
+      "status": "approved",
+      "manualLock": true
     },
     {
       "id": "smea-1306",
@@ -18540,7 +18542,8 @@
         "failureReason": "Both LLM and rule extraction returned 0 results",
         "consecutiveFailures": 1,
         "manualLockActive": false
-      }
+      },
+      "manualLock": true
     },
     {
       "id": "mof-1159",
@@ -21984,25 +21987,6 @@
         "extractionMethod": "rule",
         "materialsCount": 0,
         "datesCount": 5,
-        "failureReason": "",
-        "consecutiveFailures": 0,
-        "manualLockActive": false
-      }
-    },
-    {
-      "id": "mof-2716",
-      "name": "審議会・研究会",
-      "ministry": "MOF",
-      "category": "STUDY",
-      "officialUrl": "https://www.mof.go.jp/about_mof/councils/index.htm",
-      "pastYearCount": 6,
-      "status": "approved",
-      "crawlStatus": {
-        "lastAttempt": "2026-09-05 08:27:10",
-        "result": "success",
-        "extractionMethod": "rule",
-        "materialsCount": 8,
-        "datesCount": 3,
         "failureReason": "",
         "consecutiveFailures": 0,
         "manualLockActive": false
@@ -25831,6 +25815,140 @@
         "consecutiveFailures": 0,
         "manualLockActive": true
       }
+    },
+    {
+      "id": "mof-jgbsp",
+      "name": "国債市場特別参加者会合",
+      "ministry": "MOF",
+      "category": "COMMITTEE",
+      "officialUrl": "https://www.mof.go.jp/about_mof/councils/meeting_of_jgbsp/index.html",
+      "pastYearCount": 4,
+      "status": "approved",
+      "manualLock": true
+    },
+    {
+      "id": "mof-ilbe",
+      "name": "物価連動債の発行再開に関するワーキング・グループ",
+      "ministry": "MOF",
+      "category": "WG",
+      "officialUrl": "https://www.mof.go.jp/about_mof/councils/meeting_of_ilbe/index.htm",
+      "pastYearCount": 0,
+      "status": "approved",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "第1次報告",
+          "url": "https://www.mof.go.jp/about_mof/councils/meeting_of_ilbe/proceedings/outline/wg1sthoukoku.pdf"
+        }
+      ]
+    },
+    {
+      "id": "mof-ebpm_benkyoukai",
+      "name": "法人税のEBPMに関する勉強会",
+      "ministry": "MOF",
+      "category": "STUDY_GROUP",
+      "officialUrl": "https://www.mof.go.jp/about_mof/councils/ebpm_benkyoukai/index.html",
+      "pastYearCount": 1,
+      "status": "approved",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "開催通知",
+          "url": "https://www.mof.go.jp/about_mof/councils/ebpm_benkyoukai/ebpm_benkyoukai_kaisai.html"
+        }
+      ]
+    },
+    {
+      "id": "mof-epa_benkyoukai",
+      "name": "EPA利用推進の取組に係る有識者勉強会",
+      "ministry": "MOF",
+      "category": "STUDY_GROUP",
+      "officialUrl": "https://www.mof.go.jp/about_mof/councils/epa/index.html",
+      "pastYearCount": 0,
+      "status": "approved",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "EPA有識者勉強会報告書 本文",
+          "url": "https://www.mof.go.jp/about_mof/councils/epa/honbun.pdf"
+        }
+      ]
+    },
+    {
+      "id": "mof-jishin_benkyoukai",
+      "name": "地震保険制度と共済に係る勉強会",
+      "ministry": "MOF",
+      "category": "STUDY_GROUP",
+      "officialUrl": "https://www.mof.go.jp/about_mof/councils/jishin_benkyoukai/index.html",
+      "pastYearCount": 4,
+      "status": "approved",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "開催について",
+          "url": "https://www.mof.go.jp/about_mof/councils/jishin_benkyoukai/kaisai.html"
+        }
+      ]
+    },
+    {
+      "id": "mof-bop",
+      "name": "国際収支から見た日本経済の課題と処方箋",
+      "ministry": "MOF",
+      "category": "STUDY_GROUP",
+      "officialUrl": "https://www.mof.go.jp/policy/international_policy/councils/bop/index.html",
+      "pastYearCount": 4,
+      "status": "approved",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "開催通知",
+          "url": "https://www.mof.go.jp/policy/international_policy/councils/bop/notification.html"
+        },
+        {
+          "name": "報告書",
+          "url": "https://www.mof.go.jp/policy/international_policy/councils/bop/20240701140554.html"
+        }
+      ]
+    },
+    {
+      "id": "mof-hyoka_zouhei",
+      "name": "独立行政法人造幣局の業務実績評価に関する有識者会合",
+      "ministry": "MOF",
+      "category": "COMMITTEE",
+      "officialUrl": "https://www.mof.go.jp/about_mof/councils/hyoka_zouhei/index.html",
+      "pastYearCount": 1,
+      "status": "approved",
+      "manualLock": true
+    },
+    {
+      "id": "mof-hyoka_insatsu",
+      "name": "独立行政法人国立印刷局の業務実績評価に関する有識者会合",
+      "ministry": "MOF",
+      "category": "COMMITTEE",
+      "officialUrl": "https://www.mof.go.jp/about_mof/councils/hyoka_insatsu/index.html",
+      "pastYearCount": 1,
+      "status": "approved",
+      "manualLock": true
+    },
+    {
+      "id": "mof-hyoka_nrib",
+      "name": "独立行政法人酒類総合研究所の業務実績評価に関する有識者会合",
+      "ministry": "MOF",
+      "category": "COMMITTEE",
+      "officialUrl": "https://www.mof.go.jp/about_mof/councils/aboutNRIByushikishakaigo/index.html",
+      "pastYearCount": 1,
+      "status": "approved",
+      "manualLock": true
+    },
+    {
+      "id": "mof-customs_disatisfaction_review",
+      "name": "関税等不服審査会",
+      "ministry": "MOF",
+      "category": "COUNCIL",
+      "officialUrl": "https://www.mof.go.jp/about_mof/councils/customs_disatisfaction_review/index.html",
+      "pastYearCount": 1,
+      "status": "approved",
+      "manualLock": true
     }
   ],
   "meetings": [
@@ -55104,87 +55222,6 @@
           "isPrivate": false
         }
       ],
-      "isNewlyDiscovered": true,
-      "discoveredAt": "2026/09/05 08:27"
-    },
-    {
-      "id": "mof-2716-20260905-s01",
-      "councilId": "mof-2716",
-      "title": "国債市場特別参加者会合 : 財務省",
-      "date": "2026/09/05",
-      "officialUrl": "https://www.mof.go.jp/about_mof/councils/meeting_of_jgbsp/index.html",
-      "category": "COUNCIL",
-      "ministry": "MOF",
-      "materials": [
-        {
-          "name": "メンバー(PDF)",
-          "url": "https://www.mof.go.jp/about_mof/councils/meeting_of_jgbsp/231227.pdf",
-          "type": "PDF",
-          "isPrivate": false
-        }
-      ],
-      "isNewlyDiscovered": true,
-      "discoveredAt": "2026/09/05 08:27"
-    },
-    {
-      "id": "mof-2716-20260905-s02",
-      "councilId": "mof-2716",
-      "title": "国債投資家懇談会 : 財務省",
-      "date": "2026/09/05",
-      "officialUrl": "https://www.mof.go.jp/about_mof/councils/meeting_of_jgbi/index.html",
-      "category": "COUNCIL",
-      "ministry": "MOF",
-      "materials": [
-        {
-          "name": "メンバー",
-          "url": "https://www.mof.go.jp/about_mof/councils/meeting_of_jgbi/press_release/260831toushika.pdf",
-          "type": "PDF",
-          "isPrivate": false
-        }
-      ],
-      "isNewlyDiscovered": true,
-      "discoveredAt": "2026/09/05 08:27"
-    },
-    {
-      "id": "mof-2716-20260905-s03",
-      "councilId": "mof-2716",
-      "title": "国債トップリテーラー会議 : 財務省",
-      "date": "2026/09/05",
-      "officialUrl": "https://www.mof.go.jp/about_mof/councils/meeting_of_jgbtr/index.html",
-      "category": "COUNCIL",
-      "ministry": "MOF",
-      "materials": [
-        {
-          "name": "メンバー",
-          "url": "https://www.mof.go.jp/about_mof/councils/meeting_of_jgbtr/membertr20260608.pdf",
-          "type": "PDF",
-          "isPrivate": false
-        }
-      ],
-      "isNewlyDiscovered": true,
-      "discoveredAt": "2026/09/05 08:27"
-    },
-    {
-      "id": "mof-2716-20260905-s04",
-      "councilId": "mof-2716",
-      "title": "物価連動債の発行再開に関するワーキング・グループ : 財務省",
-      "date": "2026/09/05",
-      "officialUrl": "https://www.mof.go.jp/about_mof/councils/meeting_of_ilbe/index.htm",
-      "category": "COUNCIL",
-      "ministry": "MOF",
-      "materials": [],
-      "isNewlyDiscovered": true,
-      "discoveredAt": "2026/09/05 08:27"
-    },
-    {
-      "id": "mof-2716-20260905-s06",
-      "councilId": "mof-2716",
-      "title": "日本のコンテンツ・地域資源等の国内外への発信を目的とする新たな貨幣のあり方に関する有識者懇談会 : 財務省",
-      "date": "2026/09/05",
-      "officialUrl": "https://www.mof.go.jp/about_mof/councils/meeting_of_coin/index.html",
-      "category": "COUNCIL",
-      "ministry": "MOF",
-      "materials": [],
       "isNewlyDiscovered": true,
       "discoveredAt": "2026/09/05 08:27"
     },
@@ -196867,49 +196904,6 @@
           "url": "https://www.bunka.go.jp/seisaku/bunkashingikai/chosakuken/shiyoryo/r05_03/"
         }
       ]
-    },
-    {
-      "id": "mof-2716-20231122-s05",
-      "councilId": "mof-2716",
-      "title": "CBDC（中央銀行デジタル通貨）に関する有識者会議 : 財務省",
-      "date": "2023/11/22",
-      "officialUrl": "https://www.mof.go.jp/about_mof/councils/meeting_of_cbdc/index.html",
-      "category": "COUNCIL",
-      "ministry": "MOF",
-      "materials": [
-        {
-          "name": "ＣＢＤＣ（中央銀行デジタル通貨）に関する有識者会議　取りまとめ(PDF:1149KB)",
-          "url": "https://www.mof.go.jp/about_mof/councils/meeting_of_cbdc/20231213torimatome.pdf",
-          "type": "PDF",
-          "isPrivate": false
-        },
-        {
-          "name": "ＣＢＤＣ（中央銀行デジタル通貨）に関する有識者会議　取りまとめ（概要）(PDF:817KB)",
-          "url": "https://www.mof.go.jp/about_mof/councils/meeting_of_cbdc/20231213torimatomegaiyou.pdf",
-          "type": "PDF",
-          "isPrivate": false
-        },
-        {
-          "name": "（参考）ＣＢＤＣ（中央銀行デジタル通貨）に関する有識者会議の主な議論の紹介(PDF:436KB)",
-          "url": "https://www.mof.go.jp/about_mof/councils/meeting_of_cbdc/20231213omonagiron.pdf",
-          "type": "PDF",
-          "isPrivate": false
-        },
-        {
-          "name": "議事要旨",
-          "url": "https://www.mof.go.jp/about_mof/councils/meeting_of_cbdc/20250527_agenda.pdf",
-          "type": "PDF",
-          "isPrivate": false
-        },
-        {
-          "name": "議事要旨",
-          "url": "https://www.mof.go.jp/about_mof/councils/meeting_of_cbdc/20260625_agenda.pdf",
-          "type": "PDF",
-          "isPrivate": false
-        }
-      ],
-      "isNewlyDiscovered": true,
-      "discoveredAt": "2026/09/05 08:27"
     },
     {
       "id": "moj-teikan_ninsho_kento-20231121-002",
@@ -352405,6 +352399,506 @@
           "url": "https://www.mof.go.jp/about_mof/councils/meeting_of_cbdc/20260625_sanko.pdf"
         }
       ]
+    },
+    {
+      "id": "mof-jgbsp-20260626-119",
+      "councilId": "mof-jgbsp",
+      "title": "第119回 国債市場特別参加者会合",
+      "date": "2026/06/26",
+      "officialUrl": "https://www.mof.go.jp/about_mof/councils/meeting_of_jgbsp/proceedings/index.html",
+      "category": "COMMITTEE",
+      "ministry": "MOF",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "第119回 議事の要点",
+          "url": "https://www.mof.go.jp/about_mof/councils/meeting_of_jgbsp/proceedings/260626pd.html"
+        },
+        {
+          "name": "第119回 議事要旨",
+          "url": "https://www.mof.go.jp/about_mof/councils/meeting_of_jgbsp/proceedings/260626.html"
+        },
+        {
+          "name": "第119回 資料",
+          "url": "https://www.mof.go.jp/about_mof/councils/meeting_of_jgbsp/proceedings/260626pd119.pdf"
+        }
+      ]
+    },
+    {
+      "id": "mof-jgbsp-20260326-118",
+      "councilId": "mof-jgbsp",
+      "title": "第118回 国債市場特別参加者会合",
+      "date": "2026/03/26",
+      "officialUrl": "https://www.mof.go.jp/about_mof/councils/meeting_of_jgbsp/proceedings/index.html",
+      "category": "COMMITTEE",
+      "ministry": "MOF",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "第118回 議事の要点",
+          "url": "https://www.mof.go.jp/about_mof/councils/meeting_of_jgbsp/proceedings/260326pd.html"
+        },
+        {
+          "name": "第118回 議事要旨",
+          "url": "https://www.mof.go.jp/about_mof/councils/meeting_of_jgbsp/proceedings/260326.html"
+        },
+        {
+          "name": "第118回 資料",
+          "url": "https://www.mof.go.jp/about_mof/councils/meeting_of_jgbsp/proceedings/260326pd118.pdf"
+        }
+      ]
+    },
+    {
+      "id": "mof-jgbsp-20251212-117",
+      "councilId": "mof-jgbsp",
+      "title": "第117回 国債市場特別参加者会合",
+      "date": "2025/12/12",
+      "officialUrl": "https://www.mof.go.jp/about_mof/councils/meeting_of_jgbsp/proceedings/index.html",
+      "category": "COMMITTEE",
+      "ministry": "MOF",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "第117回 議事の要点",
+          "url": "https://www.mof.go.jp/about_mof/councils/meeting_of_jgbsp/proceedings/251212pd.html"
+        },
+        {
+          "name": "第117回 議事要旨",
+          "url": "https://www.mof.go.jp/about_mof/councils/meeting_of_jgbsp/proceedings/251212.html"
+        },
+        {
+          "name": "第117回 資料",
+          "url": "https://www.mof.go.jp/about_mof/councils/meeting_of_jgbsp/proceedings/251212pd117.pdf"
+        }
+      ]
+    },
+    {
+      "id": "mof-jgbsp-20251127-116",
+      "councilId": "mof-jgbsp",
+      "title": "第116回 国債市場特別参加者会合",
+      "date": "2025/11/27",
+      "officialUrl": "https://www.mof.go.jp/about_mof/councils/meeting_of_jgbsp/proceedings/index.html",
+      "category": "COMMITTEE",
+      "ministry": "MOF",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "第116回 議事の要点",
+          "url": "https://www.mof.go.jp/about_mof/councils/meeting_of_jgbsp/proceedings/251127pd.html"
+        },
+        {
+          "name": "第116回 議事要旨",
+          "url": "https://www.mof.go.jp/about_mof/councils/meeting_of_jgbsp/proceedings/251127.html"
+        },
+        {
+          "name": "第116回 資料",
+          "url": "https://www.mof.go.jp/about_mof/councils/meeting_of_jgbsp/proceedings/outline/251127pd116.pdf"
+        }
+      ]
+    },
+    {
+      "id": "mof-jgbsp-20250924-115",
+      "councilId": "mof-jgbsp",
+      "title": "第115回 国債市場特別参加者会合",
+      "date": "2025/09/24",
+      "officialUrl": "https://www.mof.go.jp/about_mof/councils/meeting_of_jgbsp/proceedings/index.html",
+      "category": "COMMITTEE",
+      "ministry": "MOF",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "第115回 議事の要点",
+          "url": "https://www.mof.go.jp/about_mof/councils/meeting_of_jgbsp/proceedings/outline/20250924.html"
+        },
+        {
+          "name": "第115回 議事要旨",
+          "url": "https://www.mof.go.jp/about_mof/councils/meeting_of_jgbsp/proceedings/outline/250924.html"
+        },
+        {
+          "name": "第115回 資料",
+          "url": "https://www.mof.go.jp/about_mof/councils/meeting_of_jgbsp/proceedings/outline/250924pd115.pdf"
+        }
+      ]
+    },
+    {
+      "id": "mof-jishin_benkyoukai-20260626-004",
+      "councilId": "mof-jishin_benkyoukai",
+      "title": "第4回 地震保険制度と共済に係る勉強会",
+      "date": "2026/06/26",
+      "officialUrl": "https://www.mof.go.jp/about_mof/councils/jishin_benkyoukai/proceeding/index.html",
+      "category": "STUDY_GROUP",
+      "ministry": "MOF",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "第4回 議事録",
+          "url": "https://www.mof.go.jp/about_mof/councils/jishin_benkyoukai/proceeding/records_20260626.pdf"
+        }
+      ]
+    },
+    {
+      "id": "mof-jishin_benkyoukai-20260522-003",
+      "councilId": "mof-jishin_benkyoukai",
+      "title": "第3回 地震保険制度と共済に係る勉強会",
+      "date": "2026/05/22",
+      "officialUrl": "https://www.mof.go.jp/about_mof/councils/jishin_benkyoukai/proceeding/index.html",
+      "category": "STUDY_GROUP",
+      "ministry": "MOF",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "第3回 議事録",
+          "url": "https://www.mof.go.jp/about_mof/councils/jishin_benkyoukai/proceeding/records_20260522.pdf"
+        },
+        {
+          "name": "第3回 配付資料",
+          "url": "https://www.mof.go.jp/about_mof/councils/jishin_benkyoukai/proceeding/material_20260522.html"
+        }
+      ]
+    },
+    {
+      "id": "mof-jishin_benkyoukai-20260331-002",
+      "councilId": "mof-jishin_benkyoukai",
+      "title": "第2回 地震保険制度と共済に係る勉強会",
+      "date": "2026/03/31",
+      "officialUrl": "https://www.mof.go.jp/about_mof/councils/jishin_benkyoukai/proceeding/index.html",
+      "category": "STUDY_GROUP",
+      "ministry": "MOF",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "第2回 議事録",
+          "url": "https://www.mof.go.jp/about_mof/councils/jishin_benkyoukai/proceeding/records_20260331.pdf"
+        },
+        {
+          "name": "第2回 配付資料",
+          "url": "https://www.mof.go.jp/about_mof/councils/jishin_benkyoukai/proceeding/material_20260331.html"
+        }
+      ]
+    },
+    {
+      "id": "mof-jishin_benkyoukai-20260128-001",
+      "councilId": "mof-jishin_benkyoukai",
+      "title": "第1回 地震保険制度と共済に係る勉強会",
+      "date": "2026/01/28",
+      "officialUrl": "https://www.mof.go.jp/about_mof/councils/jishin_benkyoukai/proceeding/index.html",
+      "category": "STUDY_GROUP",
+      "ministry": "MOF",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "第1回 議事録",
+          "url": "https://www.mof.go.jp/about_mof/councils/jishin_benkyoukai/proceeding/records_20260128.pdf"
+        },
+        {
+          "name": "第1回 配付資料",
+          "url": "https://www.mof.go.jp/about_mof/councils/jishin_benkyoukai/proceeding/material_20260128.html"
+        }
+      ]
+    },
+    {
+      "id": "mof-ebpm_benkyoukai-20240619-s06",
+      "councilId": "mof-ebpm_benkyoukai",
+      "title": "法人税のEBPMに関する勉強会（令和６年６月19日開催）",
+      "date": "2024/06/19",
+      "officialUrl": "https://www.mof.go.jp/about_mof/councils/ebpm_benkyoukai/ebpm_gijiyoshi/index.html",
+      "category": "STUDY_GROUP",
+      "ministry": "MOF",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "議事要旨",
+          "url": "https://www.mof.go.jp/about_mof/councils/ebpm_benkyoukai/ebpm_gijiyoshi/20240619gijiyoshi.pdf"
+        },
+        {
+          "name": "事務局資料",
+          "url": "https://www.mof.go.jp/about_mof/councils/ebpm_benkyoukai/ebpm_gijiyoshi/240619jimukyoku_siryou.pdf"
+        }
+      ]
+    },
+    {
+      "id": "mof-ebpm_benkyoukai-20240126-s05",
+      "councilId": "mof-ebpm_benkyoukai",
+      "title": "法人税のEBPMに関する勉強会（令和６年１月26日開催）",
+      "date": "2024/01/26",
+      "officialUrl": "https://www.mof.go.jp/about_mof/councils/ebpm_benkyoukai/ebpm_gijiyoshi/index.html",
+      "category": "STUDY_GROUP",
+      "ministry": "MOF",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "議事要旨",
+          "url": "https://www.mof.go.jp/about_mof/councils/ebpm_benkyoukai/ebpm_gijiyoshi/20240126gijiyoshi.pdf"
+        },
+        {
+          "name": "事務局資料",
+          "url": "https://www.mof.go.jp/about_mof/councils/ebpm_benkyoukai/ebpm_gijiyoshi/240126jimukyoku_siryou.pdf"
+        }
+      ]
+    },
+    {
+      "id": "mof-ebpm_benkyoukai-20231107-s04",
+      "councilId": "mof-ebpm_benkyoukai",
+      "title": "法人税のEBPMに関する勉強会（令和５年11月７日開催）",
+      "date": "2023/11/07",
+      "officialUrl": "https://www.mof.go.jp/about_mof/councils/ebpm_benkyoukai/ebpm_gijiyoshi/index.html",
+      "category": "STUDY_GROUP",
+      "ministry": "MOF",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "議事要旨",
+          "url": "https://www.mof.go.jp/about_mof/councils/ebpm_benkyoukai/ebpm_gijiyoshi/20231107gijiyoshi.pdf"
+        }
+      ]
+    },
+    {
+      "id": "mof-ebpm_benkyoukai-20231031-s03",
+      "councilId": "mof-ebpm_benkyoukai",
+      "title": "法人税のEBPMに関する勉強会（令和５年10月31日開催）",
+      "date": "2023/10/31",
+      "officialUrl": "https://www.mof.go.jp/about_mof/councils/ebpm_benkyoukai/ebpm_gijiyoshi/index.html",
+      "category": "STUDY_GROUP",
+      "ministry": "MOF",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "議事要旨",
+          "url": "https://www.mof.go.jp/about_mof/councils/ebpm_benkyoukai/ebpm_gijiyoshi/20231031gijiyoshi.pdf"
+        }
+      ]
+    },
+    {
+      "id": "mof-ebpm_benkyoukai-20231027-s02",
+      "councilId": "mof-ebpm_benkyoukai",
+      "title": "法人税のEBPMに関する勉強会（令和５年10月27日開催）",
+      "date": "2023/10/27",
+      "officialUrl": "https://www.mof.go.jp/about_mof/councils/ebpm_benkyoukai/ebpm_gijiyoshi/index.html",
+      "category": "STUDY_GROUP",
+      "ministry": "MOF",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "議事要旨",
+          "url": "https://www.mof.go.jp/about_mof/councils/ebpm_benkyoukai/ebpm_gijiyoshi/20231027gijiyoshi.pdf"
+        }
+      ]
+    },
+    {
+      "id": "mof-ebpm_benkyoukai-20231018-s01",
+      "councilId": "mof-ebpm_benkyoukai",
+      "title": "法人税のEBPMに関する勉強会（令和５年10月18日開催）",
+      "date": "2023/10/18",
+      "officialUrl": "https://www.mof.go.jp/about_mof/councils/ebpm_benkyoukai/ebpm_gijiyoshi/index.html",
+      "category": "STUDY_GROUP",
+      "ministry": "MOF",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "議事要旨",
+          "url": "https://www.mof.go.jp/about_mof/councils/ebpm_benkyoukai/ebpm_gijiyoshi/20231018gijiyoshi.pdf"
+        },
+        {
+          "name": "事務局資料",
+          "url": "https://www.mof.go.jp/about_mof/councils/ebpm_benkyoukai/ebpm_gijiyoshi/jimukyoku_siryou.pdf"
+        },
+        {
+          "name": "参考資料",
+          "url": "https://www.mof.go.jp/about_mof/councils/ebpm_benkyoukai/ebpm_gijiyoshi/sankou_siryou.pdf"
+        }
+      ]
+    },
+    {
+      "id": "mof-bop-20240520-004",
+      "councilId": "mof-bop",
+      "title": "第4回 国際収支から見た日本経済の課題と処方箋",
+      "date": "2024/05/20",
+      "officialUrl": "https://www.mof.go.jp/policy/international_policy/councils/bop/outline/index.html",
+      "category": "STUDY_GROUP",
+      "ministry": "MOF",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "第4回 議事要旨（PDF）",
+          "url": "https://www.mof.go.jp/policy/international_policy/councils/bop/outline/20240520.pdf"
+        },
+        {
+          "name": "第4回 資料",
+          "url": "https://www.mof.go.jp/policy/international_policy/councils/bop/outline/20240520.html"
+        }
+      ]
+    },
+    {
+      "id": "mof-bop-20240508-003",
+      "councilId": "mof-bop",
+      "title": "第3回 国際収支から見た日本経済の課題と処方箋",
+      "date": "2024/05/08",
+      "officialUrl": "https://www.mof.go.jp/policy/international_policy/councils/bop/outline/index.html",
+      "category": "STUDY_GROUP",
+      "ministry": "MOF",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "第3回 議事要旨（PDF）",
+          "url": "https://www.mof.go.jp/policy/international_policy/councils/bop/outline/20240508.pdf"
+        },
+        {
+          "name": "第3回 資料",
+          "url": "https://www.mof.go.jp/policy/international_policy/councils/bop/outline/20240508.html"
+        }
+      ]
+    },
+    {
+      "id": "mof-bop-20240424-002",
+      "councilId": "mof-bop",
+      "title": "第2回 国際収支から見た日本経済の課題と処方箋",
+      "date": "2024/04/24",
+      "officialUrl": "https://www.mof.go.jp/policy/international_policy/councils/bop/outline/index.html",
+      "category": "STUDY_GROUP",
+      "ministry": "MOF",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "第2回 議事要旨（PDF）",
+          "url": "https://www.mof.go.jp/policy/international_policy/councils/bop/outline/20240424.pdf"
+        },
+        {
+          "name": "第2回 資料",
+          "url": "https://www.mof.go.jp/policy/international_policy/councils/bop/outline/20240424.html"
+        }
+      ]
+    },
+    {
+      "id": "mof-bop-20240326-001",
+      "councilId": "mof-bop",
+      "title": "第1回 国際収支から見た日本経済の課題と処方箋",
+      "date": "2024/03/26",
+      "officialUrl": "https://www.mof.go.jp/policy/international_policy/councils/bop/outline/index.html",
+      "category": "STUDY_GROUP",
+      "ministry": "MOF",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "第1回 議事要旨（PDF）",
+          "url": "https://www.mof.go.jp/policy/international_policy/councils/bop/outline/20240326.pdf"
+        },
+        {
+          "name": "第1回 資料",
+          "url": "https://www.mof.go.jp/policy/international_policy/councils/bop/outline/20240326.html"
+        }
+      ]
+    },
+    {
+      "id": "mof-hyoka_zouhei-20260724-s01",
+      "councilId": "mof-hyoka_zouhei",
+      "title": "令和８年度 独立行政法人造幣局の業務実績評価に関する有識者会合",
+      "date": "2026/07/24",
+      "officialUrl": "https://www.mof.go.jp/about_mof/councils/hyoka_zouhei/outline/zouhei_giziyoushi20260724.html",
+      "category": "COMMITTEE",
+      "ministry": "MOF",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "議事要旨",
+          "url": "https://www.mof.go.jp/about_mof/councils/hyoka_zouhei/outline/zouhei_giziyoushi20260724.html"
+        }
+      ]
+    },
+    {
+      "id": "mof-hyoka_zouhei-20250918-s02",
+      "councilId": "mof-hyoka_zouhei",
+      "title": "令和７年度 独立行政法人造幣局の業務実績評価に関する有識者会合",
+      "date": "2025/09/18",
+      "officialUrl": "https://www.mof.go.jp/about_mof/councils/hyoka_zouhei/outline/zouhei_giziyoushi20250918.html",
+      "category": "COMMITTEE",
+      "ministry": "MOF",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "議事要旨",
+          "url": "https://www.mof.go.jp/about_mof/councils/hyoka_zouhei/outline/zouhei_giziyoushi20250918.html"
+        }
+      ]
+    },
+    {
+      "id": "mof-hyoka_insatsu-20260728-s01",
+      "councilId": "mof-hyoka_insatsu",
+      "title": "令和８年度 独立行政法人国立印刷局の業務実績評価に関する有識者会合",
+      "date": "2026/07/28",
+      "officialUrl": "https://www.mof.go.jp/about_mof/councils/hyoka_insatsu/outline/insatsu_giziyoushi20260728.html",
+      "category": "COMMITTEE",
+      "ministry": "MOF",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "議事要旨",
+          "url": "https://www.mof.go.jp/about_mof/councils/hyoka_insatsu/outline/insatsu_giziyoushi20260728.html"
+        }
+      ]
+    },
+    {
+      "id": "mof-hyoka_insatsu-20250729-s02",
+      "councilId": "mof-hyoka_insatsu",
+      "title": "令和７年度 独立行政法人国立印刷局の業務実績評価に関する有識者会合",
+      "date": "2025/07/29",
+      "officialUrl": "https://www.mof.go.jp/about_mof/councils/hyoka_insatsu/outline/insatsu_giziyoushi20250729.html",
+      "category": "COMMITTEE",
+      "ministry": "MOF",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "議事要旨",
+          "url": "https://www.mof.go.jp/about_mof/councils/hyoka_insatsu/outline/insatsu_giziyoushi20250729.html"
+        }
+      ]
+    },
+    {
+      "id": "mof-hyoka_nrib-20260723-s01",
+      "councilId": "mof-hyoka_nrib",
+      "title": "令和８年度 独立行政法人酒類総合研究所の業務実績評価に関する有識者会合",
+      "date": "2026/07/23",
+      "officialUrl": "https://www.mof.go.jp/about_mof/councils/aboutNRIByushikishakaigo/NRIBgijiyoushilist/20260723NRIBgijiyoushi.html",
+      "category": "COMMITTEE",
+      "ministry": "MOF",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "議事要旨",
+          "url": "https://www.mof.go.jp/about_mof/councils/aboutNRIByushikishakaigo/NRIBgijiyoushilist/20260723NRIBgijiyoushi.html"
+        }
+      ]
+    },
+    {
+      "id": "mof-hyoka_nrib-20250814-s02",
+      "councilId": "mof-hyoka_nrib",
+      "title": "令和７年度 独立行政法人酒類総合研究所の業務実績評価に関する有識者会合",
+      "date": "2025/08/14",
+      "officialUrl": "https://www.mof.go.jp/about_mof/councils/aboutNRIByushikishakaigo/NRIBgijiyoushilist/20250814141009.html",
+      "category": "COMMITTEE",
+      "ministry": "MOF",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "議事要旨",
+          "url": "https://www.mof.go.jp/about_mof/councils/aboutNRIByushikishakaigo/NRIBgijiyoushilist/20250814141009.html"
+        }
+      ]
+    },
+    {
+      "id": "mof-customs_disatisfaction_review-20250612-s01",
+      "councilId": "mof-customs_disatisfaction_review",
+      "title": "令和７年度 関税等不服審査会 総会",
+      "date": "2025/06/12",
+      "officialUrl": "https://www.mof.go.jp/about_mof/councils/customs_disatisfaction_review/soukai/outline/b20250612.html",
+      "category": "COUNCIL",
+      "ministry": "MOF",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "総会 議事要旨",
+          "url": "https://www.mof.go.jp/about_mof/councils/customs_disatisfaction_review/soukai/outline/b20250612.html"
+        }
+      ]
     }
   ],
   "categories": {
@@ -355727,6 +356221,42 @@
     "mof-1157": {
       "rule_id": "rule-mof-1157",
       "subpage_discovery_pattern": "https://www\\.mof\\.go\\.jp/about_mof/councils/meeting_of_cbdc/.*(?:haihu|haifu).*\\.html",
+      "title_selector": "h1, h2, title",
+      "date_regex": "((?:令和|平成|\\d{4}年)\\s*\\d{1,2}月\\s*\\d{1,2}日|\\d{4}[年/\\-]\\d{1,2}[月/\\-]\\d{1,2})",
+      "pdf_selector": "a[href*='.pdf']",
+      "deep_crawl_enabled": true,
+      "manualLock": true
+    },
+    "mof-jgbsp": {
+      "rule_id": "rule-mof-jgbsp",
+      "subpage_discovery_pattern": "https://www\\.mof\\.go\\.jp/about_mof/councils/meeting_of_jgbsp/proceedings/.*",
+      "title_selector": "h1, h2, title",
+      "date_regex": "((?:令和|平成|\\d{4}年)\\s*\\d{1,2}月\\s*\\d{1,2}日|\\d{4}[年/\\-]\\d{1,2}[月/\\-]\\d{1,2})",
+      "pdf_selector": "a[href*='.pdf']",
+      "deep_crawl_enabled": true,
+      "manualLock": true
+    },
+    "mof-jishin_benkyoukai": {
+      "rule_id": "rule-mof-jishin_benkyoukai",
+      "subpage_discovery_pattern": "https://www\\.mof\\.go\\.jp/about_mof/councils/jishin_benkyoukai/proceeding/.*",
+      "title_selector": "h1, h2, title",
+      "date_regex": "((?:令和|平成|\\d{4}年)\\s*\\d{1,2}月\\s*\\d{1,2}日|\\d{4}[年/\\-]\\d{1,2}[月/\\-]\\d{1,2})",
+      "pdf_selector": "a[href*='.pdf']",
+      "deep_crawl_enabled": true,
+      "manualLock": true
+    },
+    "mof-ebpm_benkyoukai": {
+      "rule_id": "rule-mof-ebpm_benkyoukai",
+      "subpage_discovery_pattern": "https://www\\.mof\\.go\\.jp/about_mof/councils/ebpm_benkyoukai/ebpm_gijiyoshi/.*",
+      "title_selector": "h1, h2, title",
+      "date_regex": "((?:令和|平成|\\d{4}年)\\s*\\d{1,2}月\\s*\\d{1,2}日|\\d{4}[年/\\-]\\d{1,2}[月/\\-]\\d{1,2})",
+      "pdf_selector": "a[href*='.pdf']",
+      "deep_crawl_enabled": true,
+      "manualLock": true
+    },
+    "mof-bop": {
+      "rule_id": "rule-mof-bop",
+      "subpage_discovery_pattern": "https://www\\.mof\\.go\\.jp/policy/international_policy/councils/bop/outline/.*",
       "title_selector": "h1, h2, title",
       "date_regex": "((?:令和|平成|\\d{4}年)\\s*\\d{1,2}月\\s*\\d{1,2}日|\\d{4}[年/\\-]\\d{1,2}[月/\\-]\\d{1,2})",
       "pdf_selector": "a[href*='.pdf']",
