@@ -709,14 +709,14 @@ def is_generic_index_url(url, title=""):
     for p in patterns:
         if re.search(p, u_lower):
             return True
-    if title and ("その他情報" in title):
+    if title and ("その他情報" in title or "覚書等" in title or "覚書" in title):
         return True
     return False
 
 def is_preliminary_notice_page(url, title=""):
     """
-    開催案内・事前告知ページ（例: .../kaisai/index.html, 〜の開催について）であるかを判定。
-    これらは事前の案内であり、資料が掲載される会議ページではないため会議として追加しない。
+    開催案内・事前告知ページ（例: .../kaisai/index.html, 〜の開催について）や資料未添付の議事要旨・議事録単体ページであるかを判定。
+    これらは資料が掲載される会議ページではないため、独立した会議として追加しない。
     """
     if not url and not title:
         return False
@@ -724,9 +724,10 @@ def is_preliminary_notice_page(url, title=""):
     # URLに /kaisai/ や /online_kaisai 等が含まれる場合
     if re.search(r'/(?:kaisai|online_kaisai)/', u_lower) or u_lower.endswith('/kaisai.html'):
         return True
-    # タイトルが「〜の開催について」「〜の開催案内」「〜傍聴の案内」等で終わる場合
+    # タイトルから末尾の省庁名サフィックスを除去して判定
     t_clean = (title or "").strip()
-    if re.search(r'(?:の開催について|の開催案内|傍聴の案内|傍聴について|の開催概要について)$', t_clean):
+    t_clean = re.sub(r'[\s｜\|].*?(?:厚生労働省|内閣府|内閣官房|財務省|金融庁|法務省|経済産業省|文部科学省|総務省|外務省|農林水産省|国土交通省|環境省|防衛省|デジタル庁|こども家庭庁).*$', '', t_clean).strip()
+    if re.search(r'(?:の開催について|の開催案内|傍聴の案内|傍聴について|の開催概要について|議事要旨|議事録)$', t_clean):
         return True
     return False
 
