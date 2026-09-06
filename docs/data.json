@@ -295495,7 +295495,6 @@
       "title_selector": "h1, h2, .title",
       "date_regex": "((?:令和|平成|\\d{4}年)\\s*\\d{1,2}月\\s*\\d{1,2}日|\\d{4}[年/\\-]\\d{1,2}[月/\\-]\\d{1,2})",
       "pdf_selector": "a[href*='.pdf'], a[href*='/content/']",
-      "deep_crawl_enabled": true,
       "manualLock": true
     },
     "mhlw-hosho_shouni": {
@@ -295548,7 +295547,6 @@
       "title_selector": "h1, h2, .title",
       "date_regex": "(令和\\d+年\\d+月\\d+日|平成\\d+年\\d+月\\d+日|\\d{4}年\\d{1,2}月\\d{1,2}日)",
       "pdf_selector": "main a[href*='.pdf'], #content a[href*='.pdf'], a[href*='content']",
-      "deep_crawl_enabled": true,
       "manualLock": true
     },
     "caa-shohisha_seisaku": {
@@ -295570,7 +295568,6 @@
       "title_selector": "h2, h1",
       "date_regex": "(\\d{4}年\\d{1,2}月\\d{1,2}日|(?:令和|平成)\\d+年\\d+月\\d+日)",
       "pdf_selector": "a[href*='attachedFile/download'], a[href*='fileId=']",
-      "deep_crawl_enabled": true,
       "manualLock": true
     },
     "meti-ax_skill_wg": {
@@ -295712,7 +295709,6 @@
     },
     "cas-chutou_jyousei": {
       "date_regex": "(令和\\d+年\\d+月\\d+日|\\d{4}年\\d{1,2}月\\d{1,2}日)",
-      "deep_crawl_enabled": true,
       "manualLock": true,
       "pdf_selector": "a[href*='.pdf']",
       "rule_id": "rule-cas-chutou_jyousei",
@@ -295721,7 +295717,6 @@
     },
     "cao-kisei_kaikaku": {
       "date_regex": "(令和\\d+年\\d+月\\d+日|平成\\d+年\\d+月\\d+日|\\d{4}年\\d{1,2}月\\d{1,2}日)",
-      "deep_crawl_enabled": true,
       "manualLock": true,
       "pdf_selector": "a[href*='.pdf']",
       "rule_id": "rule-cao-kisei_kaikaku",
@@ -295730,7 +295725,6 @@
     },
     "cas-zensedai_hosyo": {
       "date_regex": "(令和\\d+年\\d+月\\d+日|\\d{4}年\\d{1,2}月\\d{1,2}日)",
-      "deep_crawl_enabled": true,
       "manualLock": true,
       "pdf_selector": "a[href*='.pdf']",
       "rule_id": "rule-cas-zensedai_hosyo",
@@ -295759,7 +295753,6 @@
     },
     "cao-ai_hq": {
       "date_regex": "(令和\\d+年\\d+月\\d+日|平成\\d+年\\d+月\\d+日|\\d{4}年\\d{1,2}月\\d{1,2}日)",
-      "deep_crawl_enabled": true,
       "manualLock": true,
       "pdf_selector": "a[href*='.pdf']",
       "rule_id": "rule-cao-ai_hq",
@@ -295768,7 +295761,6 @@
     },
     "cfa-kodomo_suishin": {
       "date_regex": "(令和\\d+年\\d+月\\d+日|平成\\d+年\\d+月\\d+日|\\d{4}年\\d{1,2}月\\d{1,2}日)",
-      "deep_crawl_enabled": true,
       "manualLock": true,
       "pdf_selector": "a[href*='.pdf']",
       "rule_id": "rule-cfa-kodomo_suishin",
@@ -295777,7 +295769,6 @@
     },
     "cfa-kodomo_shingikai": {
       "date_regex": "(令和\\d+年\\d+月\\d+日|平成\\d+年\\d+月\\d+日|\\d{4}年\\d{1,2}月\\d{1,2}日)",
-      "deep_crawl_enabled": true,
       "manualLock": true,
       "pdf_selector": "a[href*='.pdf']",
       "rule_id": "rule-cfa-kodomo_shingikai",
@@ -295990,7 +295981,6 @@
       "title_selector": "h1, h2, .title",
       "date_regex": "(令和\\d+年\\d+月\\d+日|平成\\d+年\\d+月\\d+日|\\d{4}年\\d{1,2}月\\d{1,2}日)",
       "pdf_selector": "a[href*='.pdf']",
-      "deep_crawl_enabled": true,
       "manualLock": true
     },
     "cas-grassroots_tf": {
@@ -296015,7 +296005,6 @@
     },
     "cas-kokudo_kyoujinka_renraku": {
       "date_regex": "(令和\\d+年\\d+月\\d+日|平成\\d+年\\d+月\\d+日|\\d{4}年\\d{1,2}月\\d{1,2}日)",
-      "deep_crawl_enabled": true,
       "manualLock": true,
       "pdf_selector": "a[href*='.pdf']",
       "rule_id": "rule-cas-kyoujinka_22",
@@ -296104,7 +296093,6 @@
     },
     "cas-kokudo_kyoujinka_honbu": {
       "date_regex": "(令和\\d+年\\d+月\\d+日|平成\\d+年\\d+月\\d+日|\\d{4}年\\d{1,2}月\\d{1,2}日)",
-      "deep_crawl_enabled": true,
       "manualLock": true,
       "pdf_selector": "a[href*='.pdf']",
       "rule_id": "rule-cas-kokudo_kyoujinka_28",
@@ -296333,7 +296321,6 @@
     },
     "cas-zensedai_shakaihosho_kochiku": {
       "date_regex": "(令和\\d+年\\d+月\\d+日|\\d{4}年\\d{1,2}月\\d{1,2}日)",
-      "deep_crawl_enabled": true,
       "manualLock": true,
       "pdf_selector": "a[href*='.pdf']",
       "rule_id": "rule-cas-zensedai_shakaihosho_kochiku_50",
@@ -296482,7 +296469,6 @@
     },
     "cas-nipponseichosenryaku": {
       "date_regex": "(令和\\d+年\\d+月\\d+日|平成\\d+年\\d+月\\d+日|\\d{4}年\\d{1,2}月\\d{1,2}日)",
-      "deep_crawl_enabled": true,
       "manualLock": true,
       "pdf_selector": "a[href*='.pdf']",
       "rule_id": "rule-cas-nipponseichosenryaku_74",
@@ -296491,7 +296477,6 @@
     },
     "cas-influenza": {
       "date_regex": "(令和\\d+年\\d+月\\d+日|\\d{4}年\\d{1,2}月\\d{1,2}日)",
-      "deep_crawl_enabled": true,
       "manualLock": true,
       "pdf_selector": "a[href*='.pdf']",
       "rule_id": "rule-cas-influenza_76",
@@ -296619,7 +296604,6 @@
     },
     "cas-suisinkaigi": {
       "date_regex": "(令和\\d+年\\d+月\\d+日|平成\\d+年\\d+月\\d+日|\\d{4}年\\d{1,2}月\\d{1,2}日)",
-      "deep_crawl_enabled": true,
       "manualLock": true,
       "pdf_selector": "a[href*='.pdf']",
       "rule_id": "rule-cas-suisinkaigi_97",
@@ -296692,7 +296676,6 @@
       "title_selector": "h2, h1",
       "date_regex": "(\\d{4}年\\d{1,2}月\\d{1,2}日|(?:令和|平成)\\d+年\\d+月\\d+日)",
       "pdf_selector": "a[href*='attachedFile/download'], a[href*='fileId=']",
-      "deep_crawl_enabled": true,
       "manualLock": true
     },
     "mhlw-rousei_roudoujouken": {
@@ -296841,7 +296824,6 @@
       "title_selector": "h1, h2, .title",
       "date_regex": "(令和\\d+年\\d+月\\d+日|平成\\d+年\\d+月\\d+日|\\d{4}年\\d{1,2}月\\d{1,2}日)",
       "pdf_selector": "main a[href*='.pdf'], #main a[href*='.pdf'], a[href*='content/']",
-      "deep_crawl_enabled": true,
       "manualLock": true
     },
     "smea-smart_sme_kenkyukai": {
@@ -297488,7 +297470,6 @@
     },
     "cas-chutou_jyousei_tf": {
       "date_regex": "(令和\\d+年\\d+月\\d+日|\\d{4}年\\d{1,2}月\\d{1,2}日)",
-      "deep_crawl_enabled": true,
       "manualLock": true,
       "pdf_selector": "a[href*='.pdf']",
       "rule_id": "rule-cas-chutou_jyousei_tf",
@@ -297497,7 +297478,6 @@
     },
     "cas-kokuminkaigi_jitsumu": {
       "date_regex": "(令和\\d+年\\d+月\\d+日|\\d{4}年\\d{1,2}月\\d{1,2}日)",
-      "deep_crawl_enabled": true,
       "manualLock": true,
       "pdf_selector": "a[href*='.pdf']",
       "rule_id": "rule-cas-kokuminkaigi_jitsumu",
@@ -297506,7 +297486,6 @@
     },
     "cas-kokuminkaigi_yushikisha": {
       "date_regex": "(令和\\d+年\\d+月\\d+日|\\d{4}年\\d{1,2}月\\d{1,2}日)",
-      "deep_crawl_enabled": true,
       "manualLock": true,
       "pdf_selector": "a[href*='.pdf']",
       "rule_id": "rule-cas-kokuminkaigi_yushikisha",
@@ -297515,7 +297494,6 @@
     },
     "cas-kokuminkaigi_kunitochihou": {
       "date_regex": "(令和\\d+年\\d+月\\d+日|\\d{4}年\\d{1,2}月\\d{1,2}日)",
-      "deep_crawl_enabled": true,
       "manualLock": true,
       "pdf_selector": "a[href*='.pdf']",
       "rule_id": "rule-cas-kokuminkaigi_kunitochihou",
@@ -297524,7 +297502,6 @@
     },
     "cao-kisei_iryou_wg": {
       "date_regex": "(令和\\d+年\\d+月\\d+日|平成\\d+年\\d+月\\d+日|\\d{4}年\\d{1,2}月\\d{1,2}日)",
-      "deep_crawl_enabled": true,
       "manualLock": true,
       "pdf_selector": "a[href*='.pdf']",
       "rule_id": "rule-cao-kisei_iryou_wg",
@@ -297537,7 +297514,6 @@
       "title_selector": "h1, h2, .title",
       "date_regex": "(令和\\d+年\\d+月\\d+日|平成\\d+年\\d+月\\d+日|\\d{4}年\\d{1,2}月\\d{1,2}日)",
       "pdf_selector": "a[href*='.pdf']",
-      "deep_crawl_enabled": true,
       "manualLock": true
     },
     "fsa-sustainable_finance": {
@@ -297546,7 +297522,6 @@
       "title_selector": "h1, h2, .title",
       "date_regex": "(令和\\d+年\\d+月\\d+日|平成\\d+年\\d+月\\d+日|\\d{4}年\\d{1,2}月\\d{1,2}日)",
       "pdf_selector": "main a[href*='.pdf'], #main a[href*='.pdf'], a[href*='siryou/']",
-      "deep_crawl_enabled": true,
       "manualLock": true
     },
     "moj-zenka_shikaku_wg": {
@@ -297555,7 +297530,6 @@
       "title_selector": "h1, h2, .title",
       "date_regex": "(令和\\d+年\\d+月\\d+日|平成\\d+年\\d+月\\d+日|\\d{4}年\\d{1,2}月\\d{1,2}日)",
       "pdf_selector": "main a[href*='.pdf'], #main a[href*='.pdf'], a[href*='content/']",
-      "deep_crawl_enabled": true,
       "manualLock": true
     },
     "cas-keizai_anzen_hosyo": {
@@ -297564,7 +297538,6 @@
       "title_selector": "h1, h2, .title, table tr th",
       "date_regex": "(令和\\d+年\\d+月\\d+日|平成\\d+年\\d+月\\d+日|\\d{4}年\\d{1,2}月\\d{1,2}日)",
       "pdf_selector": "main a[href*='.pdf'], #main a[href*='.pdf'], table a[href*='.pdf'], a[href*='.pdf']",
-      "deep_crawl_enabled": true,
       "manualLock": true
     },
     "cas-keizai_anzen_suishin": {
@@ -297573,7 +297546,6 @@
       "title_selector": "h1, h2, .title",
       "date_regex": "(令和\\d+年\\d+月\\d+日|平成\\d+年\\d+月\\d+日|\\d{4}年\\d{1,2}月\\d{1,2}日)",
       "pdf_selector": "main a[href*='.pdf'], #main a[href*='.pdf'], a[href*='.pdf']",
-      "deep_crawl_enabled": true,
       "manualLock": true
     },
     "cas-keizai_anzen_kentou": {
@@ -297582,7 +297554,6 @@
       "title_selector": "h1, h2, .title, table tr td",
       "date_regex": "(令和\\d+年\\d+月\\d+日|平成\\d+年\\d+月\\d+日|\\d{4}年\\d{1,2}月\\d{1,2}日)",
       "pdf_selector": "a[href*='kentokaigi_dai']",
-      "deep_crawl_enabled": true,
       "manualLock": true
     },
     "cas-kenkou_iryou_honbu": {
@@ -297591,7 +297562,6 @@
       "title_selector": "h1, h2, .title",
       "date_regex": "(令和\\d+年\\d+月\\d+日|平成\\d+年\\d+月\\d+日|\\d{4}年\\d{1,2}月\\d{1,2}日)",
       "pdf_selector": "main a[href*='.pdf'], #main a[href*='.pdf'], a[href*='.pdf']",
-      "deep_crawl_enabled": true,
       "manualLock": true
     },
     "digital-suishin_kanjikai": {
@@ -297610,7 +297580,6 @@
       "title_selector": "h2, h1",
       "date_regex": "(\\d{4}年\\d{1,2}月\\d{1,2}日|(?:令和|平成)\\d+年\\d+月\\d+日)",
       "pdf_selector": "a[href*='attachedFile/download'], a[href*='fileId=']",
-      "deep_crawl_enabled": true,
       "manualLock": true
     },
     "fsc-nouyaku_dai1": {
@@ -297619,7 +297588,6 @@
       "title_selector": "h2, h1",
       "date_regex": "(\\d{4}年\\d{1,2}月\\d{1,2}日|(?:令和|平成)\\d+年\\d+月\\d+日)",
       "pdf_selector": "a[href*='attachedFile/download'], a[href*='fileId=']",
-      "deep_crawl_enabled": true,
       "manualLock": true
     },
     "fsc-nouyaku_dai2": {
@@ -297628,7 +297596,6 @@
       "title_selector": "h2, h1",
       "date_regex": "(\\d{4}年\\d{1,2}月\\d{1,2}日|(?:令和|平成)\\d+年\\d+月\\d+日)",
       "pdf_selector": "a[href*='attachedFile/download'], a[href*='fileId=']",
-      "deep_crawl_enabled": true,
       "manualLock": true
     },
     "fsc-nouyaku_dai3": {
@@ -297637,7 +297604,6 @@
       "title_selector": "h2, h1",
       "date_regex": "(\\d{4}年\\d{1,2}月\\d{1,2}日|(?:令和|平成)\\d+年\\d+月\\d+日)",
       "pdf_selector": "a[href*='attachedFile/download'], a[href*='fileId=']",
-      "deep_crawl_enabled": true,
       "manualLock": true
     },
     "fsc-nouyaku_dai4": {
@@ -297646,7 +297612,6 @@
       "title_selector": "h2, h1",
       "date_regex": "(\\d{4}年\\d{1,2}月\\d{1,2}日|(?:令和|平成)\\d+年\\d+月\\d+日)",
       "pdf_selector": "a[href*='attachedFile/download'], a[href*='fileId=']",
-      "deep_crawl_enabled": true,
       "manualLock": true
     },
     "fsc-nouyaku_dai5": {
@@ -297655,7 +297620,6 @@
       "title_selector": "h2, h1",
       "date_regex": "(\\d{4}年\\d{1,2}月\\d{1,2}日|(?:令和|平成)\\d+年\\d+月\\d+日)",
       "pdf_selector": "a[href*='attachedFile/download'], a[href*='fileId=']",
-      "deep_crawl_enabled": true,
       "manualLock": true
     },
     "fsc-doubutu": {
@@ -297664,7 +297628,6 @@
       "title_selector": "h2, h1",
       "date_regex": "(\\d{4}年\\d{1,2}月\\d{1,2}日|(?:令和|平成)\\d+年\\d+月\\d+日)",
       "pdf_selector": "a[href*='attachedFile/download'], a[href*='fileId=']",
-      "deep_crawl_enabled": true,
       "manualLock": true
     },
     "fsc-kiguyouki": {
@@ -297673,7 +297636,6 @@
       "title_selector": "h2, h1",
       "date_regex": "(\\d{4}年\\d{1,2}月\\d{1,2}日|(?:令和|平成)\\d+年\\d+月\\d+日)",
       "pdf_selector": "a[href*='attachedFile/download'], a[href*='fileId=']",
-      "deep_crawl_enabled": true,
       "manualLock": true
     },
     "fsc-osen_tou": {
@@ -297682,7 +297644,6 @@
       "title_selector": "h2, h1",
       "date_regex": "(\\d{4}年\\d{1,2}月\\d{1,2}日|(?:令和|平成)\\d+年\\d+月\\d+日)",
       "pdf_selector": "a[href*='attachedFile/download'], a[href*='fileId=']",
-      "deep_crawl_enabled": true,
       "manualLock": true
     },
     "fsc-biseibutu_virus": {
@@ -297691,7 +297652,6 @@
       "title_selector": "h2, h1",
       "date_regex": "(\\d{4}年\\d{1,2}月\\d{1,2}日|(?:令和|平成)\\d+年\\d+月\\d+日)",
       "pdf_selector": "a[href*='attachedFile/download'], a[href*='fileId=']",
-      "deep_crawl_enabled": true,
       "manualLock": true
     },
     "fsc-prion": {
@@ -297700,7 +297660,6 @@
       "title_selector": "h2, h1",
       "date_regex": "(\\d{4}年\\d{1,2}月\\d{1,2}日|(?:令和|平成)\\d+年\\d+月\\d+日)",
       "pdf_selector": "a[href*='attachedFile/download'], a[href*='fileId=']",
-      "deep_crawl_enabled": true,
       "manualLock": true
     },
     "fsc-kabi_shizen": {
@@ -297709,7 +297668,6 @@
       "title_selector": "h2, h1",
       "date_regex": "(\\d{4}年\\d{1,2}月\\d{1,2}日|(?:令和|平成)\\d+年\\d+月\\d+日)",
       "pdf_selector": "a[href*='attachedFile/download'], a[href*='fileId=']",
-      "deep_crawl_enabled": true,
       "manualLock": true
     },
     "fsc-idensi": {
@@ -297718,7 +297676,6 @@
       "title_selector": "h2, h1",
       "date_regex": "(\\d{4}年\\d{1,2}月\\d{1,2}日|(?:令和|平成)\\d+年\\d+月\\d+日)",
       "pdf_selector": "a[href*='attachedFile/download'], a[href*='fileId=']",
-      "deep_crawl_enabled": true,
       "manualLock": true
     },
     "fsc-sinkaihatu": {
@@ -297727,7 +297684,6 @@
       "title_selector": "h2, h1",
       "date_regex": "(\\d{4}年\\d{1,2}月\\d{1,2}日|(?:令和|平成)\\d+年\\d+月\\d+日)",
       "pdf_selector": "a[href*='attachedFile/download'], a[href*='fileId=']",
-      "deep_crawl_enabled": true,
       "manualLock": true
     },
     "fsc-hisiryou": {
@@ -297736,7 +297692,6 @@
       "title_selector": "h2, h1",
       "date_regex": "(\\d{4}年\\d{1,2}月\\d{1,2}日|(?:令和|平成)\\d+年\\d+月\\d+日)",
       "pdf_selector": "a[href*='attachedFile/download'], a[href*='fileId=']",
-      "deep_crawl_enabled": true,
       "manualLock": true
     },
     "fsc-eiyotenkabutu_wg": {
@@ -297745,7 +297700,6 @@
       "title_selector": "h2, h1",
       "date_regex": "(\\d{4}年\\d{1,2}月\\d{1,2}日|(?:令和|平成)\\d+年\\d+月\\d+日)",
       "pdf_selector": "a[href*='attachedFile/download'], a[href*='fileId=']",
-      "deep_crawl_enabled": true,
       "manualLock": true
     },
     "fsc-yakuzaitaiseikin_wg": {
@@ -297754,7 +297708,6 @@
       "title_selector": "h2, h1",
       "date_regex": "(\\d{4}年\\d{1,2}月\\d{1,2}日|(?:令和|平成)\\d+年\\d+月\\d+日)",
       "pdf_selector": "a[href*='attachedFile/download'], a[href*='fileId=']",
-      "deep_crawl_enabled": true,
       "manualLock": true
     },
     "fsc-hyoukagijyutukikaku_wg": {
@@ -297763,7 +297716,6 @@
       "title_selector": "h2, h1",
       "date_regex": "(\\d{4}年\\d{1,2}月\\d{1,2}日|(?:令和|平成)\\d+年\\d+月\\d+日)",
       "pdf_selector": "a[href*='attachedFile/download'], a[href*='fileId=']",
-      "deep_crawl_enabled": true,
       "manualLock": true
     },
     "fsc-pfas_wg": {
@@ -297772,7 +297724,6 @@
       "title_selector": "h2, h1",
       "date_regex": "(\\d{4}年\\d{1,2}月\\d{1,2}日|(?:令和|平成)\\d+年\\d+月\\d+日)",
       "pdf_selector": "a[href*='attachedFile/download'], a[href*='fileId=']",
-      "deep_crawl_enabled": true,
       "manualLock": true
     },
     "fsc-bakuro_wg": {
@@ -297781,7 +297732,6 @@
       "title_selector": "h2, h1",
       "date_regex": "(\\d{4}年\\d{1,2}月\\d{1,2}日|(?:令和|平成)\\d+年\\d+月\\d+日)",
       "pdf_selector": "a[href*='attachedFile/download'], a[href*='fileId=']",
-      "deep_crawl_enabled": true,
       "manualLock": true
     },
     "fsc-bpa_wg": {
@@ -297790,7 +297740,6 @@
       "title_selector": "h2, h1",
       "date_regex": "(\\d{4}年\\d{1,2}月\\d{1,2}日|(?:令和|平成)\\d+年\\d+月\\d+日)",
       "pdf_selector": "a[href*='attachedFile/download'], a[href*='fileId=']",
-      "deep_crawl_enabled": true,
       "manualLock": true
     },
     "cas-atarashii_shihon_honbu": {
@@ -297809,7 +297758,6 @@
       "title_selector": "h1, h2, .title",
       "date_regex": "(令和\\d+年\\d+月\\d+日|平成\\d+年\\d+月\\d+日|\\d{4}年\\d{1,2}月\\d{1,2}日)",
       "pdf_selector": "main a[href*='.pdf'], #content a[href*='.pdf'], a[href*='content']",
-      "deep_crawl_enabled": true,
       "manualLock": true
     },
     "mhlw-shakai_hosho_seikatsu_hogo": {
@@ -297818,7 +297766,6 @@
       "title_selector": "h1, h2, .title",
       "date_regex": "(令和\\d+年\\d+月\\d+日|平成\\d+年\\d+月\\d+日|\\d{4}年\\d{1,2}月\\d{1,2}日)",
       "pdf_selector": "main a[href*='.pdf'], #content a[href*='.pdf'], a[href*='content']",
-      "deep_crawl_enabled": true,
       "manualLock": true
     },
     "mhlw-shakai_hosho_iryou": {
@@ -297827,7 +297774,6 @@
       "title_selector": "h1, h2, .title",
       "date_regex": "(令和\\d+年\\d+月\\d+日|平成\\d+年\\d+月\\d+日|\\d{4}年\\d{1,2}月\\d{1,2}日)",
       "pdf_selector": "main a[href*='.pdf'], #content a[href*='.pdf'], a[href*='content']",
-      "deep_crawl_enabled": true,
       "manualLock": true
     },
     "mhlw-shakai_hosho_seikatsu_konkyuu": {
@@ -297836,7 +297782,6 @@
       "title_selector": "h1, h2, .title",
       "date_regex": "(令和\\d+年\\d+月\\d+日|平成\\d+年\\d+月\\d+日|\\d{4}年\\d{1,2}月\\d{1,2}日)",
       "pdf_selector": "main a[href*='.pdf'], #content a[href*='.pdf'], a[href*='content']",
-      "deep_crawl_enabled": true,
       "manualLock": true
     },
     "mhlw-shakai_hosho_kaigo_hoken": {
@@ -297845,7 +297790,6 @@
       "title_selector": "h1, h2, .title",
       "date_regex": "(令和\\d+年\\d+月\\d+日|平成\\d+年\\d+月\\d+日|\\d{4}年\\d{1,2}月\\d{1,2}日)",
       "pdf_selector": "main a[href*='.pdf'], #content a[href*='.pdf'], a[href*='content']",
-      "deep_crawl_enabled": true,
       "manualLock": true
     },
     "mhlw-shakai_hosho_nenkin": {
@@ -297854,7 +297798,6 @@
       "title_selector": "h1, h2, .title",
       "date_regex": "(令和\\d+年\\d+月\\d+日|平成\\d+年\\d+月\\d+日|\\d{4}年\\d{1,2}月\\d{1,2}日)",
       "pdf_selector": "main a[href*='.pdf'], #content a[href*='.pdf'], a[href*='content']",
-      "deep_crawl_enabled": true,
       "manualLock": true
     },
     "mhlw-shakai_hosho_shougaisha": {
@@ -297863,7 +297806,6 @@
       "title_selector": "h1, h2, .title",
       "date_regex": "(令和\\d+年\\d+月\\d+日|平成\\d+年\\d+月\\d+日|\\d{4}年\\d{1,2}月\\d{1,2}日)",
       "pdf_selector": "main a[href*='.pdf'], #content a[href*='.pdf'], a[href*='content']",
-      "deep_crawl_enabled": true,
       "manualLock": true
     },
     "mhlw-shakai_hosho_kaigo_kyuufu": {
@@ -297872,7 +297814,6 @@
       "title_selector": "h1, h2, .title",
       "date_regex": "(令和\\d+年\\d+月\\d+日|平成\\d+年\\d+月\\d+日|\\d{4}年\\d{1,2}月\\d{1,2}日)",
       "pdf_selector": "main a[href*='.pdf'], #content a[href*='.pdf'], a[href*='content']",
-      "deep_crawl_enabled": true,
       "manualLock": true
     },
     "caa-shokuhin_loss_sakugen": {
@@ -297885,12 +297826,10 @@
       "title_selector": "h1, h2, .title",
       "date_regex": "(令和\\d+年\\d+月\\d+日|平成\\d+年\\d+月\\d+日|\\d{4}年\\d{1,2}月\\d{1,2}日)",
       "pdf_selector": "a[href*='.pdf'], a[href*='pdf']",
-      "deep_crawl_enabled": true,
       "manualLock": true
     },
     "meti-shinsangyo_kozo": {
       "official_url": "https://www.meti.go.jp/shingikai/sankoshin/shinsangyo_kozo/index.html",
-      "deep_crawl_enabled": false,
       "is_active": false,
       "subpage_discovery_pattern": "/shingikai/sankoshin/shinsangyo_kozo/(\\d{3}|follow_up)\\.html",
       "date_regex": "(\\d{4})年(\\d{1,2})月(\\d{1,2})日",
@@ -297902,7 +297841,6 @@
       "title_selector": "h1, h2, .title",
       "date_regex": "(令和\\d+年\\d+月\\d+日|平成\\d+年\\d+月\\d+日|\\d{4}年\\d{1,2}月\\d{1,2}日)",
       "pdf_selector": "a[href*='.pdf'], a[href*='pdf']",
-      "deep_crawl_enabled": true,
       "manualLock": true
     },
     "aca-chosakuken_seisaku_shoiinkai": {
@@ -297911,7 +297849,6 @@
       "title_selector": "h1, h2, .title",
       "date_regex": "(令和\\d+年\\d+月\\d+日|平成\\d+年\\d+月\\d+日|\\d{4}年\\d{1,2}月\\d{1,2}日)",
       "pdf_selector": "a[href*='.pdf'], a[href*='pdf']",
-      "deep_crawl_enabled": true,
       "manualLock": true
     },
     "aca-chosakuken_houseido_wt": {
@@ -297920,7 +297857,6 @@
       "title_selector": "h1, h2, .title",
       "date_regex": "(令和\\d+年\\d+月\\d+日|平成\\d+年\\d+月\\d+日|\\d{4}年\\d{1,2}月\\d{1,2}日)",
       "pdf_selector": "a[href*='.pdf'], a[href*='pdf']",
-      "deep_crawl_enabled": true,
       "manualLock": true
     },
     "aca-chosakuken_housoujouyaku_wt": {
@@ -297929,7 +297865,6 @@
       "title_selector": "h1, h2, .title",
       "date_regex": "(令和\\d+年\\d+月\\d+日|平成\\d+年\\d+月\\d+日|\\d{4}年\\d{1,2}月\\d{1,2}日)",
       "pdf_selector": "a[href*='.pdf'], a[href*='pdf']",
-      "deep_crawl_enabled": true,
       "manualLock": true
     },
     "aca-chosakuken_shiyouryou_bukai": {
@@ -297938,7 +297873,6 @@
       "title_selector": "h1, h2, .title",
       "date_regex": "(令和\\d+年\\d+月\\d+日|平成\\d+年\\d+月\\d+日|\\d{4}年\\d{1,2}月\\d{1,2}日)",
       "pdf_selector": "a[href*='.pdf'], a[href*='pdf']",
-      "deep_crawl_enabled": true,
       "manualLock": true
     },
     "aca-bunkazai_bunkakai": {
@@ -297947,7 +297881,6 @@
       "title_selector": "h1, h2, .title",
       "date_regex": "(令和\\d+年\\d+月\\d+日|平成\\d+年\\d+月\\d+日|\\d{4}年\\d{1,2}月\\d{1,2}日)",
       "pdf_selector": "a[href*='.pdf'], a[href*='pdf']",
-      "deep_crawl_enabled": true,
       "manualLock": true
     },
     "aca-bunkazai_sekaitokubetsu": {
@@ -297956,7 +297889,6 @@
       "title_selector": "h1, h2, .title",
       "date_regex": "(令和\\d+年\\d+月\\d+日|平成\\d+年\\d+月\\d+日|\\d{4}年\\d{1,2}月\\d{1,2}日)",
       "pdf_selector": "a[href*='.pdf'], a[href*='pdf']",
-      "deep_crawl_enabled": true,
       "manualLock": true
     },
     "aca-bunkazai_sekaitokubetsu_wg": {
@@ -297965,7 +297897,6 @@
       "title_selector": "h1, h2, .title",
       "date_regex": "(令和\\d+年\\d+月\\d+日|平成\\d+年\\d+月\\d+日|\\d{4}年\\d{1,2}月\\d{1,2}日)",
       "pdf_selector": "a[href*='.pdf'], a[href*='pdf']",
-      "deep_crawl_enabled": true,
       "manualLock": true
     },
     "aca-bunkazai_hogojoyaku": {
@@ -297974,7 +297905,6 @@
       "title_selector": "h1, h2, .title",
       "date_regex": "(令和\\d+年\\d+月\\d+日|平成\\d+年\\d+月\\d+日|\\d{4}年\\d{1,2}月\\d{1,2}日)",
       "pdf_selector": "a[href*='.pdf'], a[href*='pdf']",
-      "deep_crawl_enabled": true,
       "manualLock": true
     },
     "aca-kokugo_bunkakai": {
@@ -297983,7 +297913,6 @@
       "title_selector": "h1, h2, .title",
       "date_regex": "(令和\\d+年\\d+月\\d+日|平成\\d+年\\d+月\\d+日|\\d{4}年\\d{1,2}月\\d{1,2}日)",
       "pdf_selector": "a[href*='.pdf'], a[href*='pdf']",
-      "deep_crawl_enabled": true,
       "manualLock": true
     },
     "aca-kokugo_gairai": {
@@ -297992,7 +297921,6 @@
       "title_selector": "h1, h2, .title",
       "date_regex": "(令和\\d+年\\d+月\\d+日|平成\\d+年\\d+月\\d+日|\\d{4}年\\d{1,2}月\\d{1,2}日)",
       "pdf_selector": "a[href*='.pdf'], a[href*='pdf']",
-      "deep_crawl_enabled": true,
       "manualLock": true
     },
     "aca-kokugo_gengo": {
@@ -298001,7 +297929,6 @@
       "title_selector": "h1, h2, .title",
       "date_regex": "(令和\\d+年\\d+月\\d+日|平成\\d+年\\d+月\\d+日|\\d{4}年\\d{1,2}月\\d{1,2}日)",
       "pdf_selector": "a[href*='.pdf'], a[href*='pdf']",
-      "deep_crawl_enabled": true,
       "manualLock": true
     },
     "aca-kokugo_roman": {
@@ -298010,7 +297937,6 @@
       "title_selector": "h1, h2, .title",
       "date_regex": "(令和\\d+年\\d+月\\d+日|平成\\d+年\\d+月\\d+日|\\d{4}年\\d{1,2}月\\d{1,2}日)",
       "pdf_selector": "a[href*='.pdf'], a[href*='pdf']",
-      "deep_crawl_enabled": true,
       "manualLock": true
     },
     "aca-kokugo_kadai": {
@@ -298019,7 +297945,6 @@
       "title_selector": "h1, h2, .title",
       "date_regex": "(令和\\d+年\\d+月\\d+日|平成\\d+年\\d+月\\d+日|\\d{4}年\\d{1,2}月\\d{1,2}日)",
       "pdf_selector": "a[href*='.pdf'], a[href*='pdf']",
-      "deep_crawl_enabled": true,
       "manualLock": true
     },
     "aca-kokugo_nihongo": {
@@ -298028,7 +297953,6 @@
       "title_selector": "h1, h2, .title",
       "date_regex": "(令和\\d+年\\d+月\\d+日|平成\\d+年\\d+月\\d+日|\\d{4}年\\d{1,2}月\\d{1,2}日)",
       "pdf_selector": "a[href*='.pdf'], a[href*='pdf']",
-      "deep_crawl_enabled": true,
       "manualLock": true
     },
     "aca-kokugo_shuro_nihongo_wg": {
@@ -298037,7 +297961,6 @@
       "title_selector": "h1, h2, .title",
       "date_regex": "(令和\\d+年\\d+月\\d+日|平成\\d+年\\d+月\\d+日|\\d{4}年\\d{1,2}月\\d{1,2}日)",
       "pdf_selector": "a[href*='.pdf'], a[href*='pdf']",
-      "deep_crawl_enabled": true,
       "manualLock": true
     },
     "aca-kokugo_nihongo_kyoiku_wg": {
@@ -298046,7 +297969,6 @@
       "title_selector": "h1, h2, .title",
       "date_regex": "(令和\\d+年\\d+月\\d+日|平成\\d+年\\d+月\\d+日|\\d{4}年\\d{1,2}月\\d{1,2}日)",
       "pdf_selector": "a[href*='.pdf'], a[href*='pdf']",
-      "deep_crawl_enabled": true,
       "manualLock": true
     },
     "aca-kokugo_nihongo_hyojun_wg": {
@@ -298055,7 +297977,6 @@
       "title_selector": "h1, h2, .title",
       "date_regex": "(令和\\d+年\\d+月\\d+日|平成\\d+年\\d+月\\d+日|\\d{4}年\\d{1,2}月\\d{1,2}日)",
       "pdf_selector": "a[href*='.pdf'], a[href*='pdf']",
-      "deep_crawl_enabled": true,
       "manualLock": true
     },
     "aca-kokugo_nihongo_hanteikijun_wg": {
@@ -298064,7 +297985,6 @@
       "title_selector": "h1, h2, .title",
       "date_regex": "(令和\\d+年\\d+月\\d+日|平成\\d+年\\d+月\\d+日|\\d{4}年\\d{1,2}月\\d{1,2}日)",
       "pdf_selector": "a[href*='.pdf'], a[href*='pdf']",
-      "deep_crawl_enabled": true,
       "manualLock": true
     },
     "aca-kokugo_curriculum_wg": {
@@ -298073,7 +297993,6 @@
       "title_selector": "h1, h2, .title",
       "date_regex": "(令和\\d+年\\d+月\\d+日|平成\\d+年\\d+月\\d+日|\\d{4}年\\d{1,2}月\\d{1,2}日)",
       "pdf_selector": "a[href*='.pdf'], a[href*='pdf']",
-      "deep_crawl_enabled": true,
       "manualLock": true
     },
     "aca-kokugo_nihongo_sansyo_wg": {
@@ -298082,7 +298001,6 @@
       "title_selector": "h1, h2, .title",
       "date_regex": "(令和\\d+年\\d+月\\d+日|平成\\d+年\\d+月\\d+日|\\d{4}年\\d{1,2}月\\d{1,2}日)",
       "pdf_selector": "a[href*='.pdf'], a[href*='pdf']",
-      "deep_crawl_enabled": true,
       "manualLock": true
     },
     "aca-kokugo_cando_wg": {
@@ -298091,7 +298009,6 @@
       "title_selector": "h1, h2, .title",
       "date_regex": "(令和\\d+年\\d+月\\d+日|平成\\d+年\\d+月\\d+日|\\d{4}年\\d{1,2}月\\d{1,2}日)",
       "pdf_selector": "a[href*='.pdf'], a[href*='pdf']",
-      "deep_crawl_enabled": true,
       "manualLock": true
     },
     "aca-kokugo_nihongo_sansyo_hoi_wg": {
@@ -298100,7 +298017,6 @@
       "title_selector": "h1, h2, .title",
       "date_regex": "(令和\\d+年\\d+月\\d+日|平成\\d+年\\d+月\\d+日|\\d{4}年\\d{1,2}月\\d{1,2}日)",
       "pdf_selector": "a[href*='.pdf'], a[href*='pdf']",
-      "deep_crawl_enabled": true,
       "manualLock": true
     },
     "aca-kokugo_nintei_kikan_wg": {
@@ -298109,7 +298025,6 @@
       "title_selector": "h1, h2, .title",
       "date_regex": "(令和\\d+年\\d+月\\d+日|平成\\d+年\\d+月\\d+日|\\d{4}年\\d{1,2}月\\d{1,2}日)",
       "pdf_selector": "a[href*='.pdf'], a[href*='pdf']",
-      "deep_crawl_enabled": true,
       "manualLock": true
     },
     "aca-kokugo_kikan_toroku_wg": {
@@ -298118,7 +298033,6 @@
       "title_selector": "h1, h2, .title",
       "date_regex": "(令和\\d+年\\d+月\\d+日|平成\\d+年\\d+月\\d+日|\\d{4}年\\d{1,2}月\\d{1,2}日)",
       "pdf_selector": "a[href*='.pdf'], a[href*='pdf']",
-      "deep_crawl_enabled": true,
       "manualLock": true
     },
     "aca-kokugo_kanji_h25_h28": {
@@ -298127,7 +298041,6 @@
       "title_selector": "h1, h2, .title",
       "date_regex": "(令和\\d+年\\d+月\\d+日|平成\\d+年\\d+月\\d+日|\\d{4}年\\d{1,2}月\\d{1,2}日)",
       "pdf_selector": "a[href*='.pdf'], a[href*='pdf']",
-      "deep_crawl_enabled": false,
       "manualLock": true
     },
     "aca-kokugo_kadai_kento_h24_h25": {
@@ -298136,7 +298049,6 @@
       "title_selector": "h1, h2, .title",
       "date_regex": "(令和\\d+年\\d+月\\d+日|平成\\d+年\\d+月\\d+日|\\d{4}年\\d{1,2}月\\d{1,2}日)",
       "pdf_selector": "a[href*='.pdf'], a[href*='pdf']",
-      "deep_crawl_enabled": false,
       "manualLock": true
     },
     "aca-kokugo_mondai_h23_h24": {
@@ -298145,7 +298057,6 @@
       "title_selector": "h1, h2, .title",
       "date_regex": "(令和\\d+年\\d+月\\d+日|平成\\d+年\\d+月\\d+日|\\d{4}年\\d{1,2}月\\d{1,2}日)",
       "pdf_selector": "a[href*='.pdf'], a[href*='pdf']",
-      "deep_crawl_enabled": false,
       "manualLock": true
     },
     "aca-kokugo_shido_wg_h24": {
@@ -298154,7 +298065,6 @@
       "title_selector": "h1, h2, .title",
       "date_regex": "(令和\\d+年\\d+月\\d+日|平成\\d+年\\d+月\\d+日|\\d{4}年\\d{1,2}月\\d{1,2}日)",
       "pdf_selector": "a[href*='.pdf'], a[href*='pdf']",
-      "deep_crawl_enabled": false,
       "manualLock": true
     },
     "aca-kokugo_kadai_wg_h24_h25": {
@@ -298163,7 +298073,6 @@
       "title_selector": "h1, h2, .title",
       "date_regex": "(令和\\d+年\\d+月\\d+日|平成\\d+年\\d+月\\d+日|\\d{4}年\\d{1,2}月\\d{1,2}日)",
       "pdf_selector": "a[href*='.pdf'], a[href*='pdf']",
-      "deep_crawl_enabled": false,
       "manualLock": true
     },
     "aca-kokugo_nihongo_wg_h29": {
@@ -298172,7 +298081,6 @@
       "title_selector": "h1, h2, .title",
       "date_regex": "(令和\\d+年\\d+月\\d+日|平成\\d+年\\d+月\\d+日|\\d{4}年\\d{1,2}月\\d{1,2}日)",
       "pdf_selector": "a[href*='.pdf'], a[href*='pdf']",
-      "deep_crawl_enabled": false,
       "manualLock": true
     },
     "aca-kokugo_kenkyu_h23": {
@@ -298181,7 +298089,6 @@
       "title_selector": "h1, h2, .title",
       "date_regex": "(令和\\d+年\\d+月\\d+日|平成\\d+年\\d+月\\d+日|\\d{4}年\\d{1,2}月\\d{1,2}日)",
       "pdf_selector": "a[href*='.pdf'], a[href*='pdf']",
-      "deep_crawl_enabled": false,
       "manualLock": true
     },
     "aca-kokugo_kanji_h17_h22": {
@@ -298190,7 +298097,6 @@
       "title_selector": "h1, h2, .title",
       "date_regex": "(令和\\d+年\\d+月\\d+日|平成\\d+年\\d+月\\d+日|\\d{4}年\\d{1,2}月\\d{1,2}日)",
       "pdf_selector": "a[href*='.pdf'], a[href*='pdf']",
-      "deep_crawl_enabled": false,
       "manualLock": true
     },
     "aca-kokugo_keigo_h17_h19": {
@@ -298199,7 +298105,6 @@
       "title_selector": "h1, h2, .title",
       "date_regex": "(令和\\d+年\\d+月\\d+日|平成\\d+年\\d+月\\d+日|\\d{4}年\\d{1,2}月\\d{1,2}日)",
       "pdf_selector": "a[href*='.pdf'], a[href*='pdf']",
-      "deep_crawl_enabled": false,
       "manualLock": true
     },
     "aca-kokugo_dokusho_h15": {
@@ -298208,7 +298113,6 @@
       "title_selector": "h1, h2, .title",
       "date_regex": "(令和\\d+年\\d+月\\d+日|平成\\d+年\\d+月\\d+日|\\d{4}年\\d{1,2}月\\d{1,2}日)",
       "pdf_selector": "a[href*='.pdf'], a[href*='pdf']",
-      "deep_crawl_enabled": false,
       "manualLock": true
     },
     "aca-kokugo_kyoiku_h15": {
@@ -298217,7 +298121,6 @@
       "title_selector": "h1, h2, .title",
       "date_regex": "(令和\\d+年\\d+月\\d+日|平成\\d+年\\d+月\\d+日|\\d{4}年\\d{1,2}月\\d{1,2}日)",
       "pdf_selector": "a[href*='.pdf'], a[href*='pdf']",
-      "deep_crawl_enabled": false,
       "manualLock": true
     },
     "maff-shokuiku_suishin_kaigi": {
@@ -298226,7 +298129,6 @@
       "title_selector": "h1, h2, .title",
       "date_regex": "(令和\\d+年\\d+月\\d+日|平成\\d+年\\d+月\\d+日|\\d{4}年\\d{1,2}月\\d{1,2}日)",
       "pdf_selector": "a[href*='.pdf'], a[href*='pdf']",
-      "deep_crawl_enabled": true,
       "manualLock": true
     },
     "maff-shokuiku_suishin_hyouka_iinkai": {
@@ -298235,7 +298137,6 @@
       "title_selector": "h1, h2, .title",
       "date_regex": "(令和\\d+年\\d+月\\d+日|平成\\d+年\\d+月\\d+日|\\d{4}年\\d{1,2}月\\d{1,2}日)",
       "pdf_selector": "a[href*='.pdf'], a[href*='pdf']",
-      "deep_crawl_enabled": true,
       "manualLock": true
     },
     "maff-shokuiku_mieruka_wg": {
@@ -298244,7 +298145,6 @@
       "title_selector": "h1, h2, .title",
       "date_regex": "(令和\\d+年\\d+月\\d+日|平成\\d+年\\d+月\\d+日|\\d{4}年\\d{1,2}月\\d{1,2}日)",
       "pdf_selector": "a[href*='.pdf'], a[href*='pdf']",
-      "deep_crawl_enabled": true,
       "manualLock": true
     },
     "mhlw-shakai_hosho_shouni_mansei_kento": {
@@ -298253,7 +298153,6 @@
       "title_selector": "h1, h2, .title",
       "date_regex": "((?:令和|平成|\\d{4}年)\\s*\\d{1,2}月\\s*\\d{1,2}日|\\d{4}[年/\\-]\\d{1,2}[月/\\-]\\d{1,2})",
       "pdf_selector": "a[href*='.pdf'], a[href*='/content/']",
-      "deep_crawl_enabled": true,
       "manualLock": true
     },
     "cao-shouhisha_iinkai": {
@@ -298261,7 +298160,6 @@
       "subpage_discovery_pattern": "https://www\\.cao\\.go\\.jp/consumer/iinkai/\\d{4}/\\d+/shiryou/index\\.html",
       "date_regex": "(?:令和\\d+年\\d{1,2}月\\d{1,2}日|\\d{4}年\\d{1,2}月\\d{1,2}日|\\d{4}/\\d{1,2}/\\d{1,2})",
       "pdf_selector": "a[href$='.pdf']",
-      "deep_crawl_enabled": true,
       "manualLock": true
     },
     "cao-shokuhin_hyouji_bukai": {
@@ -298269,7 +298167,6 @@
       "subpage_discovery_pattern": "https://www\\.cao\\.go\\.jp/consumer/kabusoshiki/syokuhinhyouji/bukai/\\d+/shiryou/index\\.html",
       "date_regex": "(?:令和\\d+年\\d{1,2}月\\d{1,2}日|\\d{4}年\\d{1,2}月\\d{1,2}日|\\d{4}/\\d{1,2}/\\d{1,2})",
       "pdf_selector": "a[href$='.pdf']",
-      "deep_crawl_enabled": true,
       "manualLock": true
     },
     "cao-ai_technology_senmon": {
@@ -298277,7 +298174,6 @@
       "subpage_discovery_pattern": "https://www\\.cao\\.go\\.jp/consumer/kabusoshiki/ai_technology/\\d+/shiryou/index\\.html",
       "date_regex": "(?:令和\\d+年\\d{1,2}月\\d{1,2}日|\\d{4}年\\d{1,2}月\\d{1,2}日|\\d{4}/\\d{1,2}/\\d{1,2})",
       "pdf_selector": "a[href$='.pdf']",
-      "deep_crawl_enabled": true,
       "manualLock": true
     },
     "cao-payment_senmon": {
@@ -298285,7 +298181,6 @@
       "subpage_discovery_pattern": "https://www\\.cao\\.go\\.jp/consumer/kabusoshiki/payment/\\d+/shiryou/index\\.html",
       "date_regex": "(?:令和\\d+年\\d{1,2}月\\d{1,2}日|\\d{4}年\\d{1,2}月\\d{1,2}日|\\d{4}/\\d{1,2}/\\d{1,2})",
       "pdf_selector": "a[href$='.pdf']",
-      "deep_crawl_enabled": true,
       "manualLock": true
     },
     "cao-kokyoryokin_senmon": {
@@ -298293,7 +298188,6 @@
       "subpage_discovery_pattern": "https://www\\.cao\\.go\\.jp/consumer/kabusoshiki/kokyoryokin/(?:senmon|bukai)/\\d+/shiryou/index\\.html",
       "date_regex": "(?:令和\\d+年\\d{1,2}月\\d{1,2}日|\\d{4}年\\d{1,2}月\\d{1,2}日|\\d{4}/\\d{1,2}/\\d{1,2})",
       "pdf_selector": "a[href$='.pdf']",
-      "deep_crawl_enabled": true,
       "manualLock": true
     },
     "cao-238": {
@@ -298302,7 +298196,6 @@
       "title_selector": "h1, h2, title",
       "date_regex": "((?:令和|平成|\\d{4}年)\\s*\\d{1,2}月\\s*\\d{1,2}日|\\d{4}[年/\\-]\\d{1,2}[月/\\-]\\d{1,2})",
       "pdf_selector": "a[href*='.pdf']",
-      "deep_crawl_enabled": true,
       "manualLock": true
     },
     "mof-1159": {
@@ -298311,7 +298204,6 @@
       "title_selector": "h1, h2, title",
       "date_regex": "((?:令和|平成|\\d{4}年)\\s*\\d{1,2}月\\s*\\d{1,2}日|\\d{4}[年/\\-]\\d{1,2}[月/\\-]\\d{1,2})",
       "pdf_selector": "a[href*='.pdf']",
-      "deep_crawl_enabled": true,
       "manualLock": true
     },
     "mof-1157": {
@@ -298320,7 +298212,6 @@
       "title_selector": "h1, h2, title",
       "date_regex": "((?:令和|平成|\\d{4}年)\\s*\\d{1,2}月\\s*\\d{1,2}日|\\d{4}[年/\\-]\\d{1,2}[月/\\-]\\d{1,2})",
       "pdf_selector": "a[href*='.pdf']",
-      "deep_crawl_enabled": true,
       "manualLock": true
     },
     "mof-jgbsp": {
@@ -298329,7 +298220,6 @@
       "title_selector": "h1, h2, title",
       "date_regex": "((?:令和|平成|\\d{4}年)\\s*\\d{1,2}月\\s*\\d{1,2}日|\\d{4}[年/\\-]\\d{1,2}[月/\\-]\\d{1,2})",
       "pdf_selector": "a[href*='.pdf']",
-      "deep_crawl_enabled": true,
       "manualLock": true
     },
     "mof-jishin_benkyoukai": {
@@ -298338,7 +298228,6 @@
       "title_selector": "h1, h2, title",
       "date_regex": "((?:令和|平成|\\d{4}年)\\s*\\d{1,2}月\\s*\\d{1,2}日|\\d{4}[年/\\-]\\d{1,2}[月/\\-]\\d{1,2})",
       "pdf_selector": "a[href*='.pdf']",
-      "deep_crawl_enabled": true,
       "manualLock": true
     },
     "mof-ebpm_benkyoukai": {
@@ -298347,7 +298236,6 @@
       "title_selector": "h1, h2, title",
       "date_regex": "((?:令和|平成|\\d{4}年)\\s*\\d{1,2}月\\s*\\d{1,2}日|\\d{4}[年/\\-]\\d{1,2}[月/\\-]\\d{1,2})",
       "pdf_selector": "a[href*='.pdf']",
-      "deep_crawl_enabled": true,
       "manualLock": true
     },
     "mof-bop": {
@@ -298356,7 +298244,6 @@
       "title_selector": "h1, h2, title",
       "date_regex": "((?:令和|平成|\\d{4}年)\\s*\\d{1,2}月\\s*\\d{1,2}日|\\d{4}[年/\\-]\\d{1,2}[月/\\-]\\d{1,2})",
       "pdf_selector": "a[href*='.pdf']",
-      "deep_crawl_enabled": true,
       "manualLock": true
     },
     "mof-1152": {
@@ -298364,40 +298251,35 @@
       "target_url": "https://www.mof.go.jp/about_mof/councils/meeting_of_jgbtr/proceedings/index.html",
       "subpage_discovery_pattern": ".*outline/e\\d{8}\\.html$",
       "date_regex": "令和\\s*(\\d+|元)年\\s*(\\d+)月\\s*(\\d+)日|(\\d{4})年(\\d{1,2})月(\\d{1,2})日",
-      "pdf_selector": "a[href*='.pdf']",
-      "deep_crawl_enabled": true
+      "pdf_selector": "a[href*='.pdf']"
     },
     "mof-1151": {
       "councilId": "mof-1151",
       "target_url": "https://www.mof.go.jp/about_mof/councils/meeting_of_jgbi/proceedings/index.html",
       "subpage_discovery_pattern": ".*proceedings/(?:outline/)?\\d{6}(?:toushika)?\\.(?:html|pdf)$",
       "date_regex": "令和\\s*(\\d+|元)年\\s*(\\d+)月\\s*(\\d+)日|(\\d{4})年(\\d{1,2})月(\\d{1,2})日",
-      "pdf_selector": "a[href*='.pdf']",
-      "deep_crawl_enabled": true
+      "pdf_selector": "a[href*='.pdf']"
     },
     "mof-1158": {
       "councilId": "mof-1158",
       "target_url": "https://www.mof.go.jp/about_mof/councils/meeting_of_coin/index.html",
       "subpage_discovery_pattern": ".*meeting_of_coin/\\d{8}\\.html$",
       "date_regex": "令和\\s*(\\d+|元)年\\s*(\\d+)月\\s*(\\d+)日|(\\d{4})年(\\d{1,2})月(\\d{1,2})日",
-      "pdf_selector": "a[href*='.pdf']",
-      "deep_crawl_enabled": true
+      "pdf_selector": "a[href*='.pdf']"
     },
     "mof-1162": {
       "councilId": "mof-1162",
       "target_url": "https://www.mof.go.jp/policy/financial_system/councils/dbjttunnyou/tt/index.html",
       "subpage_discovery_pattern": ".*tt/\\d+/index\\.html$",
       "date_regex": "令和\\s*(\\d+|元)年\\s*(\\d+)月\\s*(\\d+)日|(\\d{4})年(\\d{1,2})月(\\d{1,2})日",
-      "pdf_selector": "a[href*='.pdf']",
-      "deep_crawl_enabled": true
+      "pdf_selector": "a[href*='.pdf']"
     },
     "mof-1160": {
       "councilId": "mof-1160",
       "target_url": "https://www.mof.go.jp/policy/national_property/councils/mirai/miraizo_gijihaihu.html",
       "subpage_discovery_pattern": ".*mirai/miraizo[_-]haihu\\d*\\.html$",
       "date_regex": "令和\\s*(\\d+|元)年\\s*(\\d+)月\\s*(\\d+)日|(\\d{4})年(\\d{1,2})月(\\d{1,2})日",
-      "pdf_selector": "a[href*='.pdf']",
-      "deep_crawl_enabled": true
+      "pdf_selector": "a[href*='.pdf']"
     },
     "cao-genshiryoku_kisei_ikenkoukan": {
       "rule_id": "rule-cao-genshiryoku_kisei_ikenkoukan",
