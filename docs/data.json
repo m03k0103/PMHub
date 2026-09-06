@@ -17188,7 +17188,7 @@
       }
     },
     {
-      "id": "mhlw-1051",
+      "id": "mhlw-alcohol_kenkou_shougai",
       "name": "アルコール健康障害対策関係者会議",
       "ministry": "MHLW",
       "category": "COUNCIL",
@@ -17204,7 +17204,8 @@
         "failureReason": "",
         "consecutiveFailures": 0,
         "manualLockActive": false
-      }
+      },
+      "manualLock": true
     },
     {
       "id": "mhlw-1053",
@@ -39533,67 +39534,6 @@
       "title": "第35回特定石綿被害建設業務労働者等認定審査会専門委員会議事概要｜厚生労働省",
       "date": "2026/09/05",
       "officialUrl": "https://www.mhlw.go.jp/stf/newpage_73810.html",
-      "category": "COUNCIL",
-      "ministry": "MHLW",
-      "materials": [],
-      "isNewlyDiscovered": true,
-      "discoveredAt": "2026/09/05 08:30"
-    },
-    {
-      "id": "mhlw-1051-20260905-s02",
-      "councilId": "mhlw-1051",
-      "title": "アルコール健康障害対策推進基本計画（第３期）について｜厚生労働省",
-      "date": "2026/09/05",
-      "officialUrl": "https://www.mhlw.go.jp/stf/newpage_71947.html",
-      "category": "COUNCIL",
-      "ministry": "MHLW",
-      "materials": [
-        {
-          "name": "アルコール健康障害対策推進基本計画（第３期）［PDF形式：961KB］",
-          "url": "https://www.mhlw.go.jp/content/10901000/001680715.pdf",
-          "type": "PDF",
-          "isPrivate": false
-        },
-        {
-          "name": "＜評価・検証のための関連指標＞ 現状データ［PDF形式：134KB］",
-          "url": "https://www.mhlw.go.jp/content/10901000/001679051.pdf",
-          "type": "PDF",
-          "isPrivate": false
-        }
-      ],
-      "isNewlyDiscovered": true,
-      "discoveredAt": "2026/09/05 08:30"
-    },
-    {
-      "id": "mhlw-1051-20260905-037",
-      "councilId": "mhlw-1051",
-      "title": "第37回アルコール健康障害対策関係者会議　議事録 ｜厚生労働省",
-      "date": "2026/09/05",
-      "officialUrl": "https://www.mhlw.go.jp/stf/newpage_71432.html",
-      "category": "COUNCIL",
-      "ministry": "MHLW",
-      "materials": [],
-      "isNewlyDiscovered": true,
-      "discoveredAt": "2026/09/05 08:30"
-    },
-    {
-      "id": "mhlw-1051-20260905-s04",
-      "councilId": "mhlw-1051",
-      "title": "アルコール健康障害対策関係者会議｜厚生労働省",
-      "date": "2026/09/05",
-      "officialUrl": "https://www.mhlw.go.jp/stf/newpage_67063.html",
-      "category": "COUNCIL",
-      "ministry": "MHLW",
-      "materials": [],
-      "isNewlyDiscovered": true,
-      "discoveredAt": "2026/09/05 08:30"
-    },
-    {
-      "id": "mhlw-1051-20260905-036",
-      "councilId": "mhlw-1051",
-      "title": "第36回アルコール健康障害対策関係者会議　議事録 ｜厚生労働省",
-      "date": "2026/09/05",
-      "officialUrl": "https://www.mhlw.go.jp/stf/newpage_67545.html",
       "category": "COUNCIL",
       "ministry": "MHLW",
       "materials": [],
@@ -290043,6 +289983,2842 @@
           "type": "HTML"
         }
       ]
+    },
+    {
+      "id": "mhlw-alcohol_kenkou_shougai-20141031-001",
+      "councilId": "mhlw-alcohol_kenkou_shougai",
+      "title": "第1回 アルコール健康障害対策関係者会議",
+      "date": "2014/10/31",
+      "officialUrl": "https://www.mhlw.go.jp/stf/shingi2/0000174378.html",
+      "materials": [
+        {
+          "name": "資料1 アルコール健康障害対策関係者会議　委員名簿（PDF：210KB）",
+          "url": "https://www.mhlw.go.jp/file/05-Shingikai-12205250-Shakaiengokyokushougaihokenfukushibu-Kokoronokenkoushienshitsu/s_34.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "資料2-1 アルコール健康障害対策基本法の概要（PDF：214KB）",
+          "url": "https://www.mhlw.go.jp/file/05-Shingikai-12205250-Shakaiengokyokushougaihokenfukushibu-Kokoronokenkoushienshitsu/s_2_10.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "資料2-2 アルコール健康障害対策基本法（PDF：260KB）",
+          "url": "https://www.mhlw.go.jp/file/05-Shingikai-12205250-Shakaiengokyokushougaihokenfukushibu-Kokoronokenkoushienshitsu/s_2_11.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "資料2-3 アルコール健康障害対策関係者会議令（PDF：181KB）",
+          "url": "https://www.mhlw.go.jp/file/05-Shingikai-12205250-Shakaiengokyokushougaihokenfukushibu-Kokoronokenkoushienshitsu/s_2_12.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "資料3 アルコール健康障害対策関係者会議運営規則（案）（PDF：106KB）",
+          "url": "https://www.mhlw.go.jp/file/05-Shingikai-12205250-Shakaiengokyokushougaihokenfukushibu-Kokoronokenkoushienshitsu/s_35.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "資料4-1 アルコール健康障害対策推進基本計画の案の作成方針（案）（PDF：140KB）",
+          "url": "https://www.mhlw.go.jp/file/05-Shingikai-12205250-Shakaiengokyokushougaihokenfukushibu-Kokoronokenkoushienshitsu/s_4_17.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "資料4-2 アルコール健康障害対策推進基本計画の案の作成に向けたスケジュール（案）（PDF：249KB）",
+          "url": "https://www.mhlw.go.jp/file/05-Shingikai-12205250-Shakaiengokyokushougaihokenfukushibu-Kokoronokenkoushienshitsu/s_4_18.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "資料5-1 関係府省庁におけるアルコール関連施策の概要（PDF：432KB）",
+          "url": "https://www.mhlw.go.jp/file/05-Shingikai-12205250-Shakaiengokyokushougaihokenfukushibu-Kokoronokenkoushienshitsu/s_5_7.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "資料5-2 関係府省庁におけるアルコール関連施策の概要 内閣府 1/2（PDF：189KB）",
+          "url": "https://www.mhlw.go.jp/file/05-Shingikai-12205250-Shakaiengokyokushougaihokenfukushibu-Kokoronokenkoushienshitsu/s_5_2_1.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "資料5-2 関係府省庁におけるアルコール関連施策の概要 内閣府 2/2（PDF：393KB）",
+          "url": "https://www.mhlw.go.jp/file/05-Shingikai-12205250-Shakaiengokyokushougaihokenfukushibu-Kokoronokenkoushienshitsu/s_5_2_2.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "資料5-2 関係府省庁におけるアルコール関連施策の概要 法務省（PDF：183KB）",
+          "url": "https://www.mhlw.go.jp/file/05-Shingikai-12205250-Shakaiengokyokushougaihokenfukushibu-Kokoronokenkoushienshitsu/s_5_2_3.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "資料5-2 関係府省庁におけるアルコール関連施策の概要 国税庁 1/2（PDF：485KB）",
+          "url": "https://www.mhlw.go.jp/file/05-Shingikai-12205250-Shakaiengokyokushougaihokenfukushibu-Kokoronokenkoushienshitsu/s_5_2_4.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "資料5-2 関係府省庁におけるアルコール関連施策の概要 国税庁 2/2（PDF：393KB）",
+          "url": "https://www.mhlw.go.jp/file/05-Shingikai-12205250-Shakaiengokyokushougaihokenfukushibu-Kokoronokenkoushienshitsu/s_5_2_5.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "資料5-2 関係府省庁におけるアルコール関連施策の概要 文部科学省 1/3（PDF：296KB）",
+          "url": "https://www.mhlw.go.jp/file/05-Shingikai-12205250-Shakaiengokyokushougaihokenfukushibu-Kokoronokenkoushienshitsu/s_5_2_7.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "資料5-2 関係府省庁におけるアルコール関連施策の概要 文部科学省 2/3（PDF：412KB）",
+          "url": "https://www.mhlw.go.jp/file/05-Shingikai-12205250-Shakaiengokyokushougaihokenfukushibu-Kokoronokenkoushienshitsu/s_5_2_8.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "資料5-2 関係府省庁におけるアルコール関連施策の概要 文部科学省 3/3（PDF：258KB）",
+          "url": "https://www.mhlw.go.jp/file/05-Shingikai-12205250-Shakaiengokyokushougaihokenfukushibu-Kokoronokenkoushienshitsu/s_5_2_9.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "資料5-2 関係府省庁におけるアルコール関連施策の概要 厚生労働省 1/5（PDF：414KB）",
+          "url": "https://www.mhlw.go.jp/file/05-Shingikai-12205250-Shakaiengokyokushougaihokenfukushibu-Kokoronokenkoushienshitsu/s_5_2_10.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "資料5-2 関係府省庁におけるアルコール関連施策の概要 厚生労働省 2/5（PDF：446KB）",
+          "url": "https://www.mhlw.go.jp/file/05-Shingikai-12205250-Shakaiengokyokushougaihokenfukushibu-Kokoronokenkoushienshitsu/s_5_2_11.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "資料5-2 関係府省庁におけるアルコール関連施策の概要 厚生労働省 3/5（PDF：416KB）",
+          "url": "https://www.mhlw.go.jp/file/05-Shingikai-12205250-Shakaiengokyokushougaihokenfukushibu-Kokoronokenkoushienshitsu/s_5_2_12.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "資料5-2 関係府省庁におけるアルコール関連施策の概要 厚生労働省 4/5（PDF：423KB）",
+          "url": "https://www.mhlw.go.jp/file/05-Shingikai-12205250-Shakaiengokyokushougaihokenfukushibu-Kokoronokenkoushienshitsu/s_5_2_13.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "資料5-2 関係府省庁におけるアルコール関連施策の概要 厚生労働省 5/5（PDF：408KB）",
+          "url": "https://www.mhlw.go.jp/file/05-Shingikai-12205250-Shakaiengokyokushougaihokenfukushibu-Kokoronokenkoushienshitsu/s_5_2_14.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "資料5-2 関係府省庁におけるアルコール関連施策の概要 警察庁（PDF：42KB）",
+          "url": "https://www.mhlw.go.jp/file/05-Shingikai-12205250-Shakaiengokyokushougaihokenfukushibu-Kokoronokenkoushienshitsu/s_5_2_15.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "資料5-2 関係府省庁におけるアルコール関連施策の概要 国土交通省（PDF：378KB）",
+          "url": "https://www.mhlw.go.jp/file/05-Shingikai-12205250-Shakaiengokyokushougaihokenfukushibu-Kokoronokenkoushienshitsu/s_5_2_16.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "参考資料 アルコール健康障害対策推進会議の設置について（PDF：200KB）",
+          "url": "https://www.mhlw.go.jp/file/05-Shingikai-12205250-Shakaiengokyokushougaihokenfukushibu-Kokoronokenkoushienshitsu/ss_49.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "議事録",
+          "url": "https://www.mhlw.go.jp/stf/shingi2/0000175409.html",
+          "type": "HTML"
+        }
+      ],
+      "manualLock": true,
+      "councilName": "アルコール健康障害対策関係者会議",
+      "ministry": "MHLW",
+      "category": "COUNCIL"
+    },
+    {
+      "id": "mhlw-alcohol_kenkou_shougai-20141212-002",
+      "councilId": "mhlw-alcohol_kenkou_shougai",
+      "title": "第2回 アルコール健康障害対策関係者会議",
+      "date": "2014/12/12",
+      "officialUrl": "https://www.mhlw.go.jp/stf/shingi2/0000174103.html",
+      "materials": [
+        {
+          "name": "資料1　我が国の飲酒パターンとアルコール関連問題に関する現状【尾崎委員提出資料】 1/5（PDF：341KB）",
+          "url": "https://www.mhlw.go.jp/file/05-Shingikai-12205250-Shakaiengokyokushougaihokenfukushibu-Kokoronokenkoushienshitsu/s_1_21.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "資料1　我が国の飲酒パターンとアルコール関連問題に関する現状【尾崎委員提出資料】 2/5（PDF：502KB）",
+          "url": "https://www.mhlw.go.jp/file/05-Shingikai-12205250-Shakaiengokyokushougaihokenfukushibu-Kokoronokenkoushienshitsu/s_1_22.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "資料1　我が国の飲酒パターンとアルコール関連問題に関する現状【尾崎委員提出資料】 3/5（PDF：412KB）",
+          "url": "https://www.mhlw.go.jp/file/05-Shingikai-12205250-Shakaiengokyokushougaihokenfukushibu-Kokoronokenkoushienshitsu/s_1_23.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "資料1　我が国の飲酒パターンとアルコール関連問題に関する現状【尾崎委員提出資料】 4/5（PDF：227KB）",
+          "url": "https://www.mhlw.go.jp/file/05-Shingikai-12205250-Shakaiengokyokushougaihokenfukushibu-Kokoronokenkoushienshitsu/s_1_24.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "資料1　我が国の飲酒パターンとアルコール関連問題に関する現状【尾崎委員提出資料】 5/5（PDF：403KB）",
+          "url": "https://www.mhlw.go.jp/file/05-Shingikai-12205250-Shakaiengokyokushougaihokenfukushibu-Kokoronokenkoushienshitsu/s_1_25.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "資料2　我が国のアルコール健康問題に関する現状【堀江委員提出資料】 1/2（PDF：374KB）",
+          "url": "https://www.mhlw.go.jp/file/05-Shingikai-12205250-Shakaiengokyokushougaihokenfukushibu-Kokoronokenkoushienshitsu/s_2_8.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "資料2　我が国のアルコール健康問題に関する現状【堀江委員提出資料】 2/2（PDF：460KB）",
+          "url": "https://www.mhlw.go.jp/file/05-Shingikai-12205250-Shakaiengokyokushougaihokenfukushibu-Kokoronokenkoushienshitsu/s_2_9.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "資料3　アルコール依存症と家族 －「社会の意識」を変えることで、早期発見・早期回復を！－【猪野委員提出資料】 1/3（PDF：483KB）",
+          "url": "https://www.mhlw.go.jp/file/05-Shingikai-12205250-Shakaiengokyokushougaihokenfukushibu-Kokoronokenkoushienshitsu/s_3_5.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "資料3　アルコール依存症と家族 －「社会の意識」を変えることで、早期発見・早期回復を！－【猪野委員提出資料】 2/3（PDF：400KB）",
+          "url": "https://www.mhlw.go.jp/file/05-Shingikai-12205250-Shakaiengokyokushougaihokenfukushibu-Kokoronokenkoushienshitsu/s_3_6.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "資料3　アルコール依存症と家族 －「社会の意識」を変えることで、早期発見・早期回復を！－【猪野委員提出資料】 3/3（PDF：283KB）",
+          "url": "https://www.mhlw.go.jp/file/05-Shingikai-12205250-Shakaiengokyokushougaihokenfukushibu-Kokoronokenkoushienshitsu/s_3_7.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "資料4-1 自助団体の活動の現状について(レジメ)【大槻委員提出資料】（PDF：289KB）",
+          "url": "https://www.mhlw.go.jp/file/05-Shingikai-12205250-Shakaiengokyokushougaihokenfukushibu-Kokoronokenkoushienshitsu/s_4_12.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "資料4-2 自助団体の活動の現状について(スライド)【大槻委員提出資料】（PDF：476KB）",
+          "url": "https://www.mhlw.go.jp/file/05-Shingikai-12205250-Shakaiengokyokushougaihokenfukushibu-Kokoronokenkoushienshitsu/s_4_16.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "資料4-3　全日本断酒連盟リーフレット【大槻委員提出資料】 1/6（PDF：364KB）",
+          "url": "https://www.mhlw.go.jp/file/05-Shingikai-12205250-Shakaiengokyokushougaihokenfukushibu-Kokoronokenkoushienshitsu/s_4_3_1.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "資料4-3　全日本断酒連盟リーフレット【大槻委員提出資料】 2/6（PDF：418KB）",
+          "url": "https://www.mhlw.go.jp/file/05-Shingikai-12205250-Shakaiengokyokushougaihokenfukushibu-Kokoronokenkoushienshitsu/s_4_3_2.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "資料4-3　全日本断酒連盟リーフレット【大槻委員提出資料】 3/6（PDF：418KB）",
+          "url": "https://www.mhlw.go.jp/file/05-Shingikai-12205250-Shakaiengokyokushougaihokenfukushibu-Kokoronokenkoushienshitsu/s_4_3_3.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "資料4-3　全日本断酒連盟リーフレット【大槻委員提出資料】 4/6（PDF：418KB）",
+          "url": "https://www.mhlw.go.jp/file/05-Shingikai-12205250-Shakaiengokyokushougaihokenfukushibu-Kokoronokenkoushienshitsu/s_4_3_4.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "資料4-3　全日本断酒連盟リーフレット【大槻委員提出資料】 5/6（PDF：400KB）",
+          "url": "https://www.mhlw.go.jp/file/05-Shingikai-12205250-Shakaiengokyokushougaihokenfukushibu-Kokoronokenkoushienshitsu/s_4_3_5.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "資料4-3　全日本断酒連盟リーフレット【大槻委員提出資料】 6/6（PDF：336KB）",
+          "url": "https://www.mhlw.go.jp/file/05-Shingikai-12205250-Shakaiengokyokushougaihokenfukushibu-Kokoronokenkoushienshitsu/s_4_3_6.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "資料5　多量飲酒者対策—飲酒量低減指導の効果、普及への課題—【杠委員提出資料】 1/3（PDF：500KB）",
+          "url": "https://www.mhlw.go.jp/file/05-Shingikai-12205250-Shakaiengokyokushougaihokenfukushibu-Kokoronokenkoushienshitsu/s_5_4.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "資料5　多量飲酒者対策—飲酒量低減指導の効果、普及への課題—【杠委員提出資料】 2/3（PDF：353KB）",
+          "url": "https://www.mhlw.go.jp/file/05-Shingikai-12205250-Shakaiengokyokushougaihokenfukushibu-Kokoronokenkoushienshitsu/s_5_5.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "資料5　多量飲酒者対策—飲酒量低減指導の効果、普及への課題—【杠委員提出資料】 3/3（PDF：289KB）",
+          "url": "https://www.mhlw.go.jp/file/05-Shingikai-12205250-Shakaiengokyokushougaihokenfukushibu-Kokoronokenkoushienshitsu/s_5_6.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "参考資料1 委員名簿（PDF：210KB）",
+          "url": "https://www.mhlw.go.jp/file/05-Shingikai-12205250-Shakaiengokyokushougaihokenfukushibu-Kokoronokenkoushienshitsu/ss_46.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "参考資料2 前回の主な意見（PDF：185KB）",
+          "url": "https://www.mhlw.go.jp/file/05-Shingikai-12205250-Shakaiengokyokushougaihokenfukushibu-Kokoronokenkoushienshitsu/ss_47.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "参考資料3 アルコール健康障害対策推進基本計画の案の作成方針（PDF：140KB）",
+          "url": "https://www.mhlw.go.jp/file/05-Shingikai-12205250-Shakaiengokyokushougaihokenfukushibu-Kokoronokenkoushienshitsu/ss_48.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "議事録",
+          "url": "https://www.mhlw.go.jp/stf/shingi2/0000175401.html",
+          "type": "HTML"
+        }
+      ],
+      "manualLock": true,
+      "councilName": "アルコール健康障害対策関係者会議",
+      "ministry": "MHLW",
+      "category": "COUNCIL"
+    },
+    {
+      "id": "mhlw-alcohol_kenkou_shougai-20150128-003",
+      "councilId": "mhlw-alcohol_kenkou_shougai",
+      "title": "第3回 アルコール健康障害対策関係者会議",
+      "date": "2015/01/28",
+      "officialUrl": "https://www.mhlw.go.jp/stf/shingi2/0000174072.html",
+      "materials": [
+        {
+          "name": "資料1-1 「ビール酒造組合概要」【友野委員提出資料<1>】（PDF：200KB）",
+          "url": "https://www.mhlw.go.jp/file/05-Shingikai-12205250-Shakaiengokyokushougaihokenfukushibu-Kokoronokenkoushienshitsu/s_1_17.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "資料1-2 「酒類の広告・宣伝及び酒類容器の表示に関する自主基準」【友野委員提出資料<2>】（PDF：237KB）",
+          "url": "https://www.mhlw.go.jp/file/05-Shingikai-12205250-Shakaiengokyokushougaihokenfukushibu-Kokoronokenkoushienshitsu/s_1_18.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "資料1-3 「酒類広告審査委員会」【友野委員提出資料<3>】（PDF：220KB）",
+          "url": "https://www.mhlw.go.jp/file/05-Shingikai-12205250-Shakaiengokyokushougaihokenfukushibu-Kokoronokenkoushienshitsu/s_1_19.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "資料1-4 「適正飲酒に対する取組み」【友野委員提出資料<4>】（PDF：412KB）",
+          "url": "https://www.mhlw.go.jp/file/05-Shingikai-12205250-Shakaiengokyokushougaihokenfukushibu-Kokoronokenkoushienshitsu/s_1_20.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "資料2 「全国小売酒販組合中央会の取組」【坂田委員提出資料】（PDF：450KB）",
+          "url": "https://www.mhlw.go.jp/file/05-Shingikai-12205250-Shakaiengokyokushougaihokenfukushibu-Kokoronokenkoushienshitsu/s_30.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "資料3 「民間団体としてのASKの取組」【今成委員提出資料】 1/2（PDF：397KB）",
+          "url": "https://www.mhlw.go.jp/file/05-Shingikai-12205250-Shakaiengokyokushougaihokenfukushibu-Kokoronokenkoushienshitsu/s_3_1.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "資料3 「民間団体としてのASKの取組」【今成委員提出資料】 2/2（PDF：480KB）",
+          "url": "https://www.mhlw.go.jp/file/05-Shingikai-12205250-Shakaiengokyokushougaihokenfukushibu-Kokoronokenkoushienshitsu/s_3_4.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "資料4 「福岡県における飲酒運転対策の取組」【近藤参考人（福岡県）提出資料】（PDF：184KB）",
+          "url": "https://www.mhlw.go.jp/file/05-Shingikai-12205250-Shakaiengokyokushougaihokenfukushibu-Kokoronokenkoushienshitsu/s_33.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "資料5-1　委員から御提出いただいた御意見（PDF：222KB）",
+          "url": "https://www.mhlw.go.jp/file/05-Shingikai-12205250-Shakaiengokyokushougaihokenfukushibu-Kokoronokenkoushienshitsu/s_5_1.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "資料5-2　御意見を踏まえた今後の進め方等について（PDF：189KB）",
+          "url": "https://www.mhlw.go.jp/file/05-Shingikai-12205250-Shakaiengokyokushougaihokenfukushibu-Kokoronokenkoushienshitsu/s_5_3.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "追加資料　今成委員追加配布資料（PDF：94KB）",
+          "url": "https://www.mhlw.go.jp/file/05-Shingikai-12205250-Shakaiengokyokushougaihokenfukushibu-Kokoronokenkoushienshitsu/ss_43.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "参考資料1　委員名簿（PDF：210KB）",
+          "url": "https://www.mhlw.go.jp/file/05-Shingikai-12205250-Shakaiengokyokushougaihokenfukushibu-Kokoronokenkoushienshitsu/ss.1.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "参考資料2　アルコール健康障害対策推進基本計画の案の作成方針（PDF：140KB）",
+          "url": "https://www.mhlw.go.jp/file/05-Shingikai-12205250-Shakaiengokyokushougaihokenfukushibu-Kokoronokenkoushienshitsu/ss_44.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "参考資料3　前回までの主な意見（PDF：272KB）",
+          "url": "https://www.mhlw.go.jp/file/05-Shingikai-12205250-Shakaiengokyokushougaihokenfukushibu-Kokoronokenkoushienshitsu/ss_45.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "議事録",
+          "url": "https://www.mhlw.go.jp/stf/shingi2/0000174912.html",
+          "type": "HTML"
+        }
+      ],
+      "manualLock": true,
+      "councilName": "アルコール健康障害対策関係者会議",
+      "ministry": "MHLW",
+      "category": "COUNCIL"
+    },
+    {
+      "id": "mhlw-alcohol_kenkou_shougai-20150302-004",
+      "councilId": "mhlw-alcohol_kenkou_shougai",
+      "title": "第4回 アルコール健康障害対策関係者会議",
+      "date": "2015/03/02",
+      "officialUrl": "https://www.mhlw.go.jp/stf/shingi2/0000174025.html",
+      "materials": [
+        {
+          "name": "資料1-1　アルコールと自殺の関連および対策について 1/3（PDF：502KB）",
+          "url": "https://www.mhlw.go.jp/file/05-Shingikai-12205250-Shakaiengokyokushougaihokenfukushibu-Kokoronokenkoushienshitsu/s1_1.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "資料1-1　アルコールと自殺の関連および対策について 2/3（PDF：269KB）",
+          "url": "https://www.mhlw.go.jp/file/05-Shingikai-12205250-Shakaiengokyokushougaihokenfukushibu-Kokoronokenkoushienshitsu/s_1_11.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "資料1-1　アルコールと自殺の関連および対策について 3/3（PDF：441KB）",
+          "url": "https://www.mhlw.go.jp/file/05-Shingikai-12205250-Shakaiengokyokushougaihokenfukushibu-Kokoronokenkoushienshitsu/s_1_16.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "資料2　職場におけるアルコール問題の現状と課題について（PDF：356KB）",
+          "url": "https://www.mhlw.go.jp/file/05-Shingikai-12205250-Shakaiengokyokushougaihokenfukushibu-Kokoronokenkoushienshitsu/s_27.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "資料3　アルコール専門医療と一般医療の連携（PDF：461KB）",
+          "url": "https://www.mhlw.go.jp/file/05-Shingikai-12205250-Shakaiengokyokushougaihokenfukushibu-Kokoronokenkoushienshitsu/s_32.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "資料4-1　AAの活動について（PDF：272KB）",
+          "url": "https://www.mhlw.go.jp/file/05-Shingikai-12205250-Shakaiengokyokushougaihokenfukushibu-Kokoronokenkoushienshitsu/s_4_11.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "資料4-2　追加資料 〈1〉（PDF：318KB）",
+          "url": "https://www.mhlw.go.jp/file/05-Shingikai-12205250-Shakaiengokyokushougaihokenfukushibu-Kokoronokenkoushienshitsu/s_4_13.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "資料4-3　追加資料 〈2〉（PDF：257KB）",
+          "url": "https://www.mhlw.go.jp/file/05-Shingikai-12205250-Shakaiengokyokushougaihokenfukushibu-Kokoronokenkoushienshitsu/s_4_14.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "資料4-4　追加資料 〈3〉（PDF：372KB）",
+          "url": "https://www.mhlw.go.jp/file/05-Shingikai-12205250-Shakaiengokyokushougaihokenfukushibu-Kokoronokenkoushienshitsu/s_4_15.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "資料4-5　追加資料 〈4〉 1/2（PDF：367KB）",
+          "url": "https://www.mhlw.go.jp/file/05-Shingikai-12205250-Shakaiengokyokushougaihokenfukushibu-Kokoronokenkoushienshitsu/s4_5_1.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "資料4-5　追加資料 〈4〉 2/2（PDF：450KB）",
+          "url": "https://www.mhlw.go.jp/file/05-Shingikai-12205250-Shakaiengokyokushougaihokenfukushibu-Kokoronokenkoushienshitsu/s_4_5_2.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "資料5-1　これまでの議論を踏まえた事務局案（PDF：176KB）",
+          "url": "https://www.mhlw.go.jp/file/05-Shingikai-12205250-Shakaiengokyokushougaihokenfukushibu-Kokoronokenkoushienshitsu/s5_1.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "資料5-2　事務局案に対する御意見（PDF：174KB）",
+          "url": "https://www.mhlw.go.jp/file/05-Shingikai-12205250-Shakaiengokyokushougaihokenfukushibu-Kokoronokenkoushienshitsu/s_5_2.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "資料6　ワーキンググループ開催要綱（案）（PDF：212KB）",
+          "url": "https://www.mhlw.go.jp/file/05-Shingikai-12205250-Shakaiengokyokushougaihokenfukushibu-Kokoronokenkoushienshitsu/s_31.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "参考資料1　委員名簿（PDF：210KB）",
+          "url": "https://www.mhlw.go.jp/file/05-Shingikai-12205250-Shakaiengokyokushougaihokenfukushibu-Kokoronokenkoushienshitsu/ss_39.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "参考資料2　アルコール健康障害対策推進基本計画の案の作成方針（PDF：140KB）",
+          "url": "https://www.mhlw.go.jp/file/05-Shingikai-12205250-Shakaiengokyokushougaihokenfukushibu-Kokoronokenkoushienshitsu/ss_40.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "参考資料3　前回までの主な意見（PDF：303KB）",
+          "url": "https://www.mhlw.go.jp/file/05-Shingikai-12205250-Shakaiengokyokushougaihokenfukushibu-Kokoronokenkoushienshitsu/ss_41.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "参考資料4　アルコール健康障害対策推進会議の設置について（PDF：200KB）",
+          "url": "https://www.mhlw.go.jp/file/05-Shingikai-12205250-Shakaiengokyokushougaihokenfukushibu-Kokoronokenkoushienshitsu/ss_42.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "議事録",
+          "url": "https://www.mhlw.go.jp/stf/shingi2/0000174909.html",
+          "type": "HTML"
+        }
+      ],
+      "manualLock": true,
+      "councilName": "アルコール健康障害対策関係者会議",
+      "ministry": "MHLW",
+      "category": "COUNCIL"
+    },
+    {
+      "id": "mhlw-alcohol_kenkou_shougai-20150410-005",
+      "councilId": "mhlw-alcohol_kenkou_shougai",
+      "title": "第5回 アルコール健康障害対策関係者会議",
+      "date": "2015/04/10",
+      "officialUrl": "https://www.mhlw.go.jp/stf/shingi2/0000174023.html",
+      "materials": [
+        {
+          "name": "資料1-1　アルコール依存症と家族（PDF：330KB）",
+          "url": "https://www.mhlw.go.jp/file/05-Shingikai-12205250-Shakaiengokyokushougaihokenfukushibu-Kokoronokenkoushienshitsu/s_1_13.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "資料1-2　アルコール依存症と家族の地獄（PDF：252KB）",
+          "url": "https://www.mhlw.go.jp/file/05-Shingikai-12205250-Shakaiengokyokushougaihokenfukushibu-Kokoronokenkoushienshitsu/s_1_14.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "資料1-3　酒害からの回復には家族の協力が必要（PDF：304KB）",
+          "url": "https://www.mhlw.go.jp/file/05-Shingikai-12205250-Shakaiengokyokushougaihokenfukushibu-Kokoronokenkoushienshitsu/s_1_12.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "資料1-4　家族の酒害相談活動（PDF：205KB）",
+          "url": "https://www.mhlw.go.jp/file/05-Shingikai-12205250-Shakaiengokyokushougaihokenfukushibu-Kokoronokenkoushienshitsu/s_1_15.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "資料2　アルコール関連問題への取組～地域ネットワークの構築に向けて～ 1/4（PDF：258KB）",
+          "url": "https://www.mhlw.go.jp/file/05-Shingikai-12205250-Shakaiengokyokushougaihokenfukushibu-Kokoronokenkoushienshitsu/s_2_1.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "資料2　アルコール関連問題への取組～地域ネットワークの構築に向けて～ 2/4（PDF：468KB）",
+          "url": "https://www.mhlw.go.jp/file/05-Shingikai-12205250-Shakaiengokyokushougaihokenfukushibu-Kokoronokenkoushienshitsu/s_2_3.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "資料2　アルコール関連問題への取組～地域ネットワークの構築に向けて～ 3/4（PDF：419KB）",
+          "url": "https://www.mhlw.go.jp/file/05-Shingikai-12205250-Shakaiengokyokushougaihokenfukushibu-Kokoronokenkoushienshitsu/s_2_5.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "資料2　アルコール関連問題への取組～地域ネットワークの構築に向けて～ 4/4（PDF：432KB）",
+          "url": "https://www.mhlw.go.jp/file/05-Shingikai-12205250-Shakaiengokyokushougaihokenfukushibu-Kokoronokenkoushienshitsu/s_2_6.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "資料2の追加資料（PDF：361KB）",
+          "url": "https://www.mhlw.go.jp/file/05-Shingikai-12205250-Shakaiengokyokushougaihokenfukushibu-Kokoronokenkoushienshitsu/s_2_7.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "資料3　教育・誘引防止・飲酒運転等ワーキンググループ整理表（PDF：156KB）",
+          "url": "https://www.mhlw.go.jp/file/05-Shingikai-12205250-Shakaiengokyokushougaihokenfukushibu-Kokoronokenkoushienshitsu/s_28.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "資料4　飲酒に関する風潮、社会的認識等についての意見（PDF：197KB）",
+          "url": "https://www.mhlw.go.jp/file/05-Shingikai-12205250-Shakaiengokyokushougaihokenfukushibu-Kokoronokenkoushienshitsu/s_29.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "参考資料1　委員名簿（PDF：210KB）",
+          "url": "https://www.mhlw.go.jp/file/05-Shingikai-12205250-Shakaiengokyokushougaihokenfukushibu-Kokoronokenkoushienshitsu/ss_35.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "参考資料2　アルコール健康障害対策推進基本計画の案の作成方針（PDF：140KB）",
+          "url": "https://www.mhlw.go.jp/file/05-Shingikai-12205250-Shakaiengokyokushougaihokenfukushibu-Kokoronokenkoushienshitsu/ss_36.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "参考資料3　アルコール健康障害対策関係者会議ワーキンググループ開催要綱（PDF：273KB）",
+          "url": "https://www.mhlw.go.jp/file/05-Shingikai-12205250-Shakaiengokyokushougaihokenfukushibu-Kokoronokenkoushienshitsu/ss_37.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "参考資料4　前回までの主な意見（PDF：325KB）",
+          "url": "https://www.mhlw.go.jp/file/05-Shingikai-12205250-Shakaiengokyokushougaihokenfukushibu-Kokoronokenkoushienshitsu/ss_38.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "議事録",
+          "url": "https://www.mhlw.go.jp/stf/shingi2/0000174895.html",
+          "type": "HTML"
+        }
+      ],
+      "manualLock": true,
+      "councilName": "アルコール健康障害対策関係者会議",
+      "ministry": "MHLW",
+      "category": "COUNCIL"
+    },
+    {
+      "id": "mhlw-alcohol_kenkou_shougai-20150612-006",
+      "councilId": "mhlw-alcohol_kenkou_shougai",
+      "title": "第6回 アルコール健康障害対策関係者会議",
+      "date": "2015/06/12",
+      "officialUrl": "https://www.mhlw.go.jp/stf/shingi2/0000173472.html",
+      "materials": [
+        {
+          "name": "資料1-1　教育・誘引防止・飲酒運転等ワーキンググループ整理表（PDF：142KB）",
+          "url": "https://www.mhlw.go.jp/file/05-Shingikai-12205250-Shakaiengokyokushougaihokenfukushibu-Kokoronokenkoushienshitsu/s_1_8.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "資料1-2　第２回教育・誘引防止・飲酒運転等ワーキンググループ資料（PDF：326KB）",
+          "url": "https://www.mhlw.go.jp/file/05-Shingikai-12205250-Shakaiengokyokushougaihokenfukushibu-Kokoronokenkoushienshitsu/s_1_9.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "資料1-3　第２回教育・誘引防止・飲酒運転等ワーキンググループ資料 1/3（PDF：256KB）",
+          "url": "https://www.mhlw.go.jp/file/05-Shingikai-12205250-Shakaiengokyokushougaihokenfukushibu-Kokoronokenkoushienshitsu/s_1_3_1.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "資料1-3　第２回教育・誘引防止・飲酒運転等ワーキンググループ資料 2/3（PDF：297KB）",
+          "url": "https://www.mhlw.go.jp/file/05-Shingikai-12205250-Shakaiengokyokushougaihokenfukushibu-Kokoronokenkoushienshitsu/s_1_3_2.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "資料1-3　第２回教育・誘引防止・飲酒運転等ワーキンググループ資料 3/3（PDF：499KB）",
+          "url": "https://www.mhlw.go.jp/file/05-Shingikai-12205250-Shakaiengokyokushougaihokenfukushibu-Kokoronokenkoushienshitsu/s_1_3_3.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "資料2　健診・医療ワーキンググループ整理表（PDF：127KB）",
+          "url": "https://www.mhlw.go.jp/file/05-Shingikai-12205250-Shakaiengokyokushougaihokenfukushibu-Kokoronokenkoushienshitsu/s_26.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "資料3-1　樋口委員配布資料「用語及び研究の推進について」 1/5（PDF：219KB）",
+          "url": "https://www.mhlw.go.jp/file/05-Shingikai-12205250-Shakaiengokyokushougaihokenfukushibu-Kokoronokenkoushienshitsu/s_1_10.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "資料3-1　樋口委員配布資料「用語及び研究の推進について」 2/5（PDF：384KB）",
+          "url": "https://www.mhlw.go.jp/file/05-Shingikai-12205250-Shakaiengokyokushougaihokenfukushibu-Kokoronokenkoushienshitsu/s_3_1_2.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "資料3-1　樋口委員配布資料「用語及び研究の推進について」 3/5（PDF：149KB）",
+          "url": "https://www.mhlw.go.jp/file/05-Shingikai-12205250-Shakaiengokyokushougaihokenfukushibu-Kokoronokenkoushienshitsu/s_3_1_3.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "資料3-1　樋口委員配布資料「用語及び研究の推進について」 4/5（PDF：111KB）",
+          "url": "https://www.mhlw.go.jp/file/05-Shingikai-12205250-Shakaiengokyokushougaihokenfukushibu-Kokoronokenkoushienshitsu/s_3_1_4.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "資料3-1　樋口委員配布資料「用語及び研究の推進について」 5/5（PDF：324KB）",
+          "url": "https://www.mhlw.go.jp/file/05-Shingikai-12205250-Shakaiengokyokushougaihokenfukushibu-Kokoronokenkoushienshitsu/s_3_1_5.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "資料3-2　樋口委員配布資料「調査研究の推進」（PDF：244KB）",
+          "url": "https://www.mhlw.go.jp/file/05-Shingikai-12205250-Shakaiengokyokushougaihokenfukushibu-Kokoronokenkoushienshitsu/s_3_2.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "資料3-3　樋口委員配布資料「参考資料：提案されている具体的な調査研究(草稿)」（PDF：348KB）",
+          "url": "https://www.mhlw.go.jp/file/05-Shingikai-12205250-Shakaiengokyokushougaihokenfukushibu-Kokoronokenkoushienshitsu/s_3_3.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "資料4　松下参考人配布資料「女性と高齢者のアルコール問題について」 1/8（PDF：206KB）",
+          "url": "https://www.mhlw.go.jp/file/05-Shingikai-12205250-Shakaiengokyokushougaihokenfukushibu-Kokoronokenkoushienshitsu/s_4_3.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "資料4　松下参考人配布資料「女性と高齢者のアルコール問題について」 2/8（PDF：447KB）",
+          "url": "https://www.mhlw.go.jp/file/05-Shingikai-12205250-Shakaiengokyokushougaihokenfukushibu-Kokoronokenkoushienshitsu/s_4_4.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "資料4　松下参考人配布資料「女性と高齢者のアルコール問題について」 3/8（PDF：260KB）",
+          "url": "https://www.mhlw.go.jp/file/05-Shingikai-12205250-Shakaiengokyokushougaihokenfukushibu-Kokoronokenkoushienshitsu/s_4_5.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "資料4　松下参考人配布資料「女性と高齢者のアルコール問題について」 4/8（PDF：105KB）",
+          "url": "https://www.mhlw.go.jp/file/05-Shingikai-12205250-Shakaiengokyokushougaihokenfukushibu-Kokoronokenkoushienshitsu/s_4_6.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "資料4　松下参考人配布資料「女性と高齢者のアルコール問題について」 5/8（PDF：412KB）",
+          "url": "https://www.mhlw.go.jp/file/05-Shingikai-12205250-Shakaiengokyokushougaihokenfukushibu-Kokoronokenkoushienshitsu/s_4_7.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "資料4　松下参考人配布資料「女性と高齢者のアルコール問題について」 6/8（PDF：478KB）",
+          "url": "https://www.mhlw.go.jp/file/05-Shingikai-12205250-Shakaiengokyokushougaihokenfukushibu-Kokoronokenkoushienshitsu/s_4_8.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "資料4　松下参考人配布資料「女性と高齢者のアルコール問題について」 7/8（PDF：483KB）",
+          "url": "https://www.mhlw.go.jp/file/05-Shingikai-12205250-Shakaiengokyokushougaihokenfukushibu-Kokoronokenkoushienshitsu/s_4_9.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "資料4　松下参考人配布資料「女性と高齢者のアルコール問題について」 8/8（PDF：317KB）",
+          "url": "https://www.mhlw.go.jp/file/05-Shingikai-12205250-Shakaiengokyokushougaihokenfukushibu-Kokoronokenkoushienshitsu/s_4_10.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "参考資料1　委員名簿（PDF：210KB）",
+          "url": "https://www.mhlw.go.jp/file/05-Shingikai-12205250-Shakaiengokyokushougaihokenfukushibu-Kokoronokenkoushienshitsu/ss_31.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "参考資料2　アルコール健康障害対策推進基本計画の案の作成方針（PDF：140KB）",
+          "url": "https://www.mhlw.go.jp/file/05-Shingikai-12205250-Shakaiengokyokushougaihokenfukushibu-Kokoronokenkoushienshitsu/ss_32.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "参考資料3　アルコール健康障害対策関係者会議ワーキンググループ開催要綱（PDF：273KB）",
+          "url": "https://www.mhlw.go.jp/file/05-Shingikai-12205250-Shakaiengokyokushougaihokenfukushibu-Kokoronokenkoushienshitsu/ss_33.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "参考資料4　前回までの主な意見（PDF：344KB）",
+          "url": "https://www.mhlw.go.jp/file/05-Shingikai-12205250-Shakaiengokyokushougaihokenfukushibu-Kokoronokenkoushienshitsu/ss_34.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "議事録",
+          "url": "https://www.mhlw.go.jp/stf/shingi2/0000174893.html",
+          "type": "HTML"
+        }
+      ],
+      "manualLock": true,
+      "councilName": "アルコール健康障害対策関係者会議",
+      "ministry": "MHLW",
+      "category": "COUNCIL"
+    },
+    {
+      "id": "mhlw-alcohol_kenkou_shougai-20150828-007",
+      "councilId": "mhlw-alcohol_kenkou_shougai",
+      "title": "第7回 アルコール健康障害対策関係者会議",
+      "date": "2015/08/28",
+      "officialUrl": "https://www.mhlw.go.jp/stf/shingi2/0000173153.html",
+      "materials": [
+        {
+          "name": "資料1　竹井参考人配布資料「アルコール関連問題に関する調査・研究を推進するための必要なメカニズム」１／２（PDF：462KB）",
+          "url": "https://www.mhlw.go.jp/file/05-Shingikai-12205250-Shakaiengokyokushougaihokenfukushibu-Kokoronokenkoushienshitsu/s_1_6.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "資料1　竹井参考人配布資料「アルコール関連問題に関する調査・研究を推進するための必要なメカニズム」２／２（PDF：258KB）",
+          "url": "https://www.mhlw.go.jp/file/05-Shingikai-12205250-Shakaiengokyokushougaihokenfukushibu-Kokoronokenkoushienshitsu/s_1_7.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "資料2　健診・医療ワーキンググループ整理表（PDF：28KB）",
+          "url": "https://www.mhlw.go.jp/file/05-Shingikai-12205250-Shakaiengokyokushougaihokenfukushibu-Kokoronokenkoushienshitsu/s_22.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "資料3　教育・誘引防止・飲酒運転等ワーキンググループ整理表（PDF：49KB）",
+          "url": "https://www.mhlw.go.jp/file/05-Shingikai-12205250-Shakaiengokyokushougaihokenfukushibu-Kokoronokenkoushienshitsu/s_23.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "資料4　相談支援・社会復帰・民間団体ワーキンググループ整理表（PDF：29KB）",
+          "url": "https://www.mhlw.go.jp/file/05-Shingikai-12205250-Shakaiengokyokushougaihokenfukushibu-Kokoronokenkoushienshitsu/s_24.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "追加資料　第3WG　相談支援・社会復帰・民間団体WGの開催状況（概要）（PDF：13KB）",
+          "url": "https://www.mhlw.go.jp/file/05-Shingikai-12205250-Shakaiengokyokushougaihokenfukushibu-Kokoronokenkoushienshitsu/s_25.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "参考資料1　委員名簿（PDF：12KB）",
+          "url": "https://www.mhlw.go.jp/file/05-Shingikai-12205250-Shakaiengokyokushougaihokenfukushibu-Kokoronokenkoushienshitsu/ss_28.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "参考資料2　アルコール健康障害対策推進基本計画の案の作成方針（PDF：8KB）",
+          "url": "https://www.mhlw.go.jp/file/05-Shingikai-12205250-Shakaiengokyokushougaihokenfukushibu-Kokoronokenkoushienshitsu/ss_29.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "参考資料3　アルコール健康障害対策関係者会議ワーキンググループ開催要綱（PDF：13KB）",
+          "url": "https://www.mhlw.go.jp/file/05-Shingikai-12205250-Shakaiengokyokushougaihokenfukushibu-Kokoronokenkoushienshitsu/ss_30.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "議事録",
+          "url": "https://www.mhlw.go.jp/stf/shingi2/0000174887.html",
+          "type": "HTML"
+        }
+      ],
+      "manualLock": true,
+      "councilName": "アルコール健康障害対策関係者会議",
+      "ministry": "MHLW",
+      "category": "COUNCIL"
+    },
+    {
+      "id": "mhlw-alcohol_kenkou_shougai-20150925-008",
+      "councilId": "mhlw-alcohol_kenkou_shougai",
+      "title": "第8回 アルコール健康障害対策関係者会議",
+      "date": "2015/09/25",
+      "officialUrl": "https://www.mhlw.go.jp/stf/shingi2/0000173111.html",
+      "materials": [
+        {
+          "name": "資料1-1　教育・誘引防止・飲酒運転等ワーキンググループ整理表（PDF：264KB）",
+          "url": "https://www.mhlw.go.jp/file/05-Shingikai-12205250-Shakaiengokyokushougaihokenfukushibu-Kokoronokenkoushienshitsu/s_1_4.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "資料1-2　不適切な飲酒の予防、適正飲酒の啓発に向けた酒類業界としての取組みについて（第4回教育等WG配布資料）（PDF：213KB）",
+          "url": "https://www.mhlw.go.jp/file/05-Shingikai-12205250-Shakaiengokyokushougaihokenfukushibu-Kokoronokenkoushienshitsu/s_1_5.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "資料2　健診・医療ワーキンググループ整理表（PDF：153KB）",
+          "url": "https://www.mhlw.go.jp/file/05-Shingikai-12205250-Shakaiengokyokushougaihokenfukushibu-Kokoronokenkoushienshitsu/s_18.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "資料3　相談支援・社会復帰・民間団体ワーキンググループ整理表（PDF：207KB）",
+          "url": "https://www.mhlw.go.jp/file/05-Shingikai-12205250-Shakaiengokyokushougaihokenfukushibu-Kokoronokenkoushienshitsu/s_19.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "資料4-1　アルコール健康障害対策推進基本計画　目次（たたき台）（PDF：344KB）",
+          "url": "https://www.mhlw.go.jp/file/05-Shingikai-12205250-Shakaiengokyokushougaihokenfukushibu-Kokoronokenkoushienshitsu/s_4_1.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "資料4-2　「基本的な考え方」及び「第1期基本計画で取り組むべき重点課題」（たたき台）（PDF：304KB）",
+          "url": "https://www.mhlw.go.jp/file/05-Shingikai-12205250-Shakaiengokyokushougaihokenfukushibu-Kokoronokenkoushienshitsu/s_4_2.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "資料5　今後のアルコール健康障害対策関係者会議の進め方（案）（PDF：132KB）",
+          "url": "https://www.mhlw.go.jp/file/05-Shingikai-12205250-Shakaiengokyokushougaihokenfukushibu-Kokoronokenkoushienshitsu/s_20.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "資料6　関係府省庁におけるアルコール関連施策の概要（PDF：436KB）",
+          "url": "https://www.mhlw.go.jp/file/05-Shingikai-12205250-Shakaiengokyokushougaihokenfukushibu-Kokoronokenkoushienshitsu/s_21.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "参考資料1　委員名簿（PDF：209KB）",
+          "url": "https://www.mhlw.go.jp/file/05-Shingikai-12205250-Shakaiengokyokushougaihokenfukushibu-Kokoronokenkoushienshitsu/ss_26.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "参考資料2　アルコール健康障害対策推進基本計画の案の作成方針（PDF：140KB）",
+          "url": "https://www.mhlw.go.jp/file/05-Shingikai-12205250-Shakaiengokyokushougaihokenfukushibu-Kokoronokenkoushienshitsu/ss_27.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "議事録",
+          "url": "https://www.mhlw.go.jp/stf/shingi2/0000174880.html",
+          "type": "HTML"
+        }
+      ],
+      "manualLock": true,
+      "councilName": "アルコール健康障害対策関係者会議",
+      "ministry": "MHLW",
+      "category": "COUNCIL"
+    },
+    {
+      "id": "mhlw-alcohol_kenkou_shougai-20151023-009",
+      "councilId": "mhlw-alcohol_kenkou_shougai",
+      "title": "第9回 アルコール健康障害対策関係者会議",
+      "date": "2015/10/23",
+      "officialUrl": "https://www.mhlw.go.jp/stf/shingi2/0000173096.html",
+      "materials": [
+        {
+          "name": "資料1-1　アルコール健康障害予防のための早期介入の取組等に関する意見（PDF：271KB）",
+          "url": "https://www.mhlw.go.jp/file/05-Shingikai-12205250-Shakaiengokyokushougaihokenfukushibu-Kokoronokenkoushienshitsu/s_1_1.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "資料1-2　アルコール健康障害予防のための早期介入の取組等について（PDF：257KB）",
+          "url": "https://www.mhlw.go.jp/file/05-Shingikai-12205250-Shakaiengokyokushougaihokenfukushibu-Kokoronokenkoushienshitsu/s_1_3.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "資料2-1　「II 基本的な考え方」及び「III 第１期基本計画で取り組むべき重点課題」（PDF：337KB）",
+          "url": "https://www.mhlw.go.jp/file/05-Shingikai-12205250-Shakaiengokyokushougaihokenfukushibu-Kokoronokenkoushienshitsu/s2_1.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "資料2-2　「II 基本的な考え方」及び「III 第１期基本計画で取り組むべき重点課題」対照表１／２（PDF：439KB）",
+          "url": "https://www.mhlw.go.jp/file/05-Shingikai-12205250-Shakaiengokyokushougaihokenfukushibu-Kokoronokenkoushienshitsu/s2_2_1.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "資料2-2　「II 基本的な考え方」及び「III 第１期基本計画で取り組むべき重点課題」対照表２／２（PDF：458KB）",
+          "url": "https://www.mhlw.go.jp/file/05-Shingikai-12205250-Shakaiengokyokushougaihokenfukushibu-Kokoronokenkoushienshitsu/s2_2_2.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "追加資料　　相談支援の拠点について（PDF：316KB）",
+          "url": "https://www.mhlw.go.jp/file/05-Shingikai-12205250-Shakaiengokyokushougaihokenfukushibu-Kokoronokenkoushienshitsu/s3.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "参考資料1　委員名簿（PDF：210KB）",
+          "url": "https://www.mhlw.go.jp/file/05-Shingikai-12205250-Shakaiengokyokushougaihokenfukushibu-Kokoronokenkoushienshitsu/ss_17.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "参考資料2　アルコール健康障害対策推進基本計画の案の作成方針（PDF：140KB）",
+          "url": "https://www.mhlw.go.jp/file/05-Shingikai-12205250-Shakaiengokyokushougaihokenfukushibu-Kokoronokenkoushienshitsu/ss_18.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "参考資料3　各ワーキンググループ整理票（PDF：343KB）",
+          "url": "https://www.mhlw.go.jp/file/05-Shingikai-12205250-Shakaiengokyokushougaihokenfukushibu-Kokoronokenkoushienshitsu/ss_19.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "参考資料4　今後のアルコール健康障害対策関係者会議の進め方（PDF：132KB）",
+          "url": "https://www.mhlw.go.jp/file/05-Shingikai-12205250-Shakaiengokyokushougaihokenfukushibu-Kokoronokenkoushienshitsu/ss_20.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "参考資料5 アルコール健康障害対策推進会議の設置について（関係府省申せ）（PDF：198KB）",
+          "url": "https://www.mhlw.go.jp/file/05-Shingikai-12205250-Shakaiengokyokushougaihokenfukushibu-Kokoronokenkoushienshitsu/ss_25.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "議事録",
+          "url": "https://www.mhlw.go.jp/stf/shingi2/0000174847.html",
+          "type": "HTML"
+        }
+      ],
+      "manualLock": true,
+      "councilName": "アルコール健康障害対策関係者会議",
+      "ministry": "MHLW",
+      "category": "COUNCIL"
+    },
+    {
+      "id": "mhlw-alcohol_kenkou_shougai-20151113-010",
+      "councilId": "mhlw-alcohol_kenkou_shougai",
+      "title": "第10回 アルコール健康障害対策関係者会議",
+      "date": "2015/11/13",
+      "officialUrl": "https://www.mhlw.go.jp/stf/shingi2/0000173076.html",
+      "materials": [
+        {
+          "name": "資料1-1 「II 基本的な考え方」及び「III 第１期基本計画で取り組むべき重点課題」（PDF：221KB）",
+          "url": "https://www.mhlw.go.jp/file/05-Shingikai-12205250-Shakaiengokyokushougaihokenfukushibu-Kokoronokenkoushienshitsu/s_1_2.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "資料1-2 「II 基本的な考え方」及び「III 第１期基本計画で取り組むべき重点課題」対照表１／２（PDF：445KB）",
+          "url": "https://www.mhlw.go.jp/file/05-Shingikai-12205250-Shakaiengokyokushougaihokenfukushibu-Kokoronokenkoushienshitsu/s_1_2_1.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "資料1-2 「II 基本的な考え方」及び「III 第１期基本計画で取り組むべき重点課題」対照表２／２（PDF：447KB）",
+          "url": "https://www.mhlw.go.jp/file/05-Shingikai-12205250-Shakaiengokyokushougaihokenfukushibu-Kokoronokenkoushienshitsu/s_1_2_2.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "資料2 「IV　基本的施策」（PDF：438KB）",
+          "url": "https://www.mhlw.go.jp/file/05-Shingikai-12205250-Shakaiengokyokushougaihokenfukushibu-Kokoronokenkoushienshitsu/s_17.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "参考資料1 委員名簿（PDF：106KB）",
+          "url": "https://www.mhlw.go.jp/file/05-Shingikai-12205250-Shakaiengokyokushougaihokenfukushibu-Kokoronokenkoushienshitsu/ss_21.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "参考資料2 アルコール健康障害対策推進基本計画の案の作成方針（PDF：140KB）",
+          "url": "https://www.mhlw.go.jp/file/05-Shingikai-12205250-Shakaiengokyokushougaihokenfukushibu-Kokoronokenkoushienshitsu/ss_22.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "参考資料3 各ワーキンググループ整理票（PDF：445KB）",
+          "url": "https://www.mhlw.go.jp/file/05-Shingikai-12205250-Shakaiengokyokushougaihokenfukushibu-Kokoronokenkoushienshitsu/ss_23.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "参考資料4 今後のアルコール健康障害対策関係者会議の進め方（PDF：131KB）",
+          "url": "https://www.mhlw.go.jp/file/05-Shingikai-12205250-Shakaiengokyokushougaihokenfukushibu-Kokoronokenkoushienshitsu/ss_24.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "議事録",
+          "url": "https://www.mhlw.go.jp/stf/shingi2/0000174842.html",
+          "type": "HTML"
+        }
+      ],
+      "manualLock": true,
+      "councilName": "アルコール健康障害対策関係者会議",
+      "ministry": "MHLW",
+      "category": "COUNCIL"
+    },
+    {
+      "id": "mhlw-alcohol_kenkou_shougai-20151130-011",
+      "councilId": "mhlw-alcohol_kenkou_shougai",
+      "title": "第11回 アルコール健康障害対策関係者会議",
+      "date": "2015/11/30",
+      "officialUrl": "https://www.mhlw.go.jp/stf/shingi2/0000172624.html",
+      "materials": [
+        {
+          "name": "資料1　今後のアルコール健康障害対策関係者会議の進め方（PDF：130KB）",
+          "url": "https://www.mhlw.go.jp/file/05-Shingikai-12205250-Shakaiengokyokushougaihokenfukushibu-Kokoronokenkoushienshitsu/ss_13.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "資料2　アルコール健康障害対策推進基本計画骨子（案）１／４（PDF：437KB）",
+          "url": "https://www.mhlw.go.jp/file/05-Shingikai-12205250-Shakaiengokyokushougaihokenfukushibu-Kokoronokenkoushienshitsu/ss_2_3.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "資料2　アルコール健康障害対策推進基本計画骨子（案）２／４（PDF：422KB）",
+          "url": "https://www.mhlw.go.jp/file/05-Shingikai-12205250-Shakaiengokyokushougaihokenfukushibu-Kokoronokenkoushienshitsu/s_2_2.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "資料2　アルコール健康障害対策推進基本計画骨子（案）３／４（PDF：429KB）",
+          "url": "https://www.mhlw.go.jp/file/05-Shingikai-12205250-Shakaiengokyokushougaihokenfukushibu-Kokoronokenkoushienshitsu/ss_2_4.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "資料2　アルコール健康障害対策推進基本計画骨子（案）４／４（PDF：454KB）",
+          "url": "https://www.mhlw.go.jp/file/05-Shingikai-12205250-Shakaiengokyokushougaihokenfukushibu-Kokoronokenkoushienshitsu/s_2_4.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "追加資料　　田辺委員　追加提出資料（PDF：205KB）",
+          "url": "https://www.mhlw.go.jp/file/05-Shingikai-12205250-Shakaiengokyokushougaihokenfukushibu-Kokoronokenkoushienshitsu/0000172626.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "参考資料1　田辺委員　提出資料（PDF：297KB）",
+          "url": "https://www.mhlw.go.jp/file/05-Shingikai-12205250-Shakaiengokyokushougaihokenfukushibu-Kokoronokenkoushienshitsu/ss_14.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "参考資料2　委員名簿（PDF：210KB）",
+          "url": "https://www.mhlw.go.jp/file/05-Shingikai-12205250-Shakaiengokyokushougaihokenfukushibu-Kokoronokenkoushienshitsu/ss_15.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "参考資料3　各ワーキンググループ整理票（PDF：445KB）",
+          "url": "https://www.mhlw.go.jp/file/05-Shingikai-12205250-Shakaiengokyokushougaihokenfukushibu-Kokoronokenkoushienshitsu/ss_16.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "議事録",
+          "url": "https://www.mhlw.go.jp/stf/shingi2/0000174830.html",
+          "type": "HTML"
+        }
+      ],
+      "manualLock": true,
+      "councilName": "アルコール健康障害対策関係者会議",
+      "ministry": "MHLW",
+      "category": "COUNCIL"
+    },
+    {
+      "id": "mhlw-alcohol_kenkou_shougai-20151225-012",
+      "councilId": "mhlw-alcohol_kenkou_shougai",
+      "title": "第12回 アルコール健康障害対策関係者会議",
+      "date": "2015/12/25",
+      "officialUrl": "https://www.mhlw.go.jp/stf/shingi2/0000172600.html",
+      "materials": [
+        {
+          "name": "資料1　第１期基本計画で取り組むべき重点課題の目標について（PDF：419KB）",
+          "url": "https://www.mhlw.go.jp/file/05-Shingikai-12205250-Shakaiengokyokushougaihokenfukushibu-Kokoronokenkoushienshitsu/s_15.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "資料2　アルコール健康障害対策推進基本計画骨子（案）（PDF：238KB）",
+          "url": "https://www.mhlw.go.jp/file/05-Shingikai-12205250-Shakaiengokyokushougaihokenfukushibu-Kokoronokenkoushienshitsu/s_16.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "参考資料1　今後のアルコール健康障害対策関係者会議の進め方（PDF：130KB）",
+          "url": "https://www.mhlw.go.jp/file/05-Shingikai-12205250-Shakaiengokyokushougaihokenfukushibu-Kokoronokenkoushienshitsu/ss_10.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "参考資料2　委員名簿（PDF：210KB）",
+          "url": "https://www.mhlw.go.jp/file/05-Shingikai-12205250-Shakaiengokyokushougaihokenfukushibu-Kokoronokenkoushienshitsu/ss_11.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "参考資料3　各ワーキンググループ整理票（PDF：445KB）",
+          "url": "https://www.mhlw.go.jp/file/05-Shingikai-12205250-Shakaiengokyokushougaihokenfukushibu-Kokoronokenkoushienshitsu/ss_12.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "議事録",
+          "url": "https://www.mhlw.go.jp/stf/shingi2/0000174826.html",
+          "type": "HTML"
+        }
+      ],
+      "manualLock": true,
+      "councilName": "アルコール健康障害対策関係者会議",
+      "ministry": "MHLW",
+      "category": "COUNCIL"
+    },
+    {
+      "id": "mhlw-alcohol_kenkou_shougai-20160122-013",
+      "councilId": "mhlw-alcohol_kenkou_shougai",
+      "title": "第13回 アルコール健康障害対策関係者会議",
+      "date": "2016/01/22",
+      "officialUrl": "https://www.mhlw.go.jp/stf/shingi2/0000171999.html",
+      "materials": [
+        {
+          "name": "資料1 アルコール健康障害対策推進基本計画（案）（見え消し）（PDF：299KB）",
+          "url": "https://www.mhlw.go.jp/file/05-Shingikai-12205250-Shakaiengokyokushougaihokenfukushibu-Kokoronokenkoushienshitsu/s_7.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "資料2 アルコール健康障害対策推進基本計画（案）（PDF：284KB）",
+          "url": "https://www.mhlw.go.jp/file/05-Shingikai-12205250-Shakaiengokyokushougaihokenfukushibu-Kokoronokenkoushienshitsu/s_8.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "議事録",
+          "url": "https://www.mhlw.go.jp/stf/shingi2/0000174824.html",
+          "type": "HTML"
+        }
+      ],
+      "manualLock": true,
+      "councilName": "アルコール健康障害対策関係者会議",
+      "ministry": "MHLW",
+      "category": "COUNCIL"
+    },
+    {
+      "id": "mhlw-alcohol_kenkou_shougai-20160210-014",
+      "councilId": "mhlw-alcohol_kenkou_shougai",
+      "title": "第14回 アルコール健康障害対策関係者会議",
+      "date": "2016/02/10",
+      "officialUrl": "https://www.mhlw.go.jp/stf/shingi2/0000171997.html",
+      "materials": [
+        {
+          "name": "資料1 アルコール健康障害対策推進基本計画（案）（見え消し）（PDF：280KB）",
+          "url": "https://www.mhlw.go.jp/file/05-Shingikai-12205250-Shakaiengokyokushougaihokenfukushibu-Kokoronokenkoushienshitsu/s_5.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "資料2 アルコール健康障害対策推進基本計画（案）（PDF：277KB）",
+          "url": "https://www.mhlw.go.jp/file/05-Shingikai-12205250-Shakaiengokyokushougaihokenfukushibu-Kokoronokenkoushienshitsu/s_6.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "参考資料 アルコール健康障害対策推進基本計画の概要（案）（PDF：69KB）",
+          "url": "https://www.mhlw.go.jp/file/05-Shingikai-12205250-Shakaiengokyokushougaihokenfukushibu-Kokoronokenkoushienshitsu/ss.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "議事録",
+          "url": "https://www.mhlw.go.jp/stf/shingi2/0000174823.html",
+          "type": "HTML"
+        }
+      ],
+      "manualLock": true,
+      "councilName": "アルコール健康障害対策関係者会議",
+      "ministry": "MHLW",
+      "category": "COUNCIL"
+    },
+    {
+      "id": "mhlw-alcohol_kenkou_shougai-20170308-015",
+      "councilId": "mhlw-alcohol_kenkou_shougai",
+      "title": "第15回 アルコール健康障害対策関係者会議",
+      "date": "2017/03/08",
+      "officialUrl": "https://www.mhlw.go.jp/stf/shingi2/0000171834.html",
+      "materials": [
+        {
+          "name": "資料１ アルコール健康障害対策関係者会議委員名簿（第２期）（PDF：109KB）",
+          "url": "https://www.mhlw.go.jp/file/05-Shingikai-12205250-Shakaiengokyokushougaihokenfukushibu-Kokoronokenkoushienshitsu/s_1.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "資料２ アルコール健康障害対策推進の枠組み（PDF：325KB）",
+          "url": "https://www.mhlw.go.jp/file/05-Shingikai-12205250-Shakaiengokyokushougaihokenfukushibu-Kokoronokenkoushienshitsu/s_2.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "資料３ 都道府県アルコール健康障害対策推進計画策定（予定）状況（PDF：123KB）",
+          "url": "https://www.mhlw.go.jp/file/05-Shingikai-12205250-Shakaiengokyokushougaihokenfukushibu-Kokoronokenkoushienshitsu/s_3.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "資料４ 厚生労働省移管後（平成29年度以降）の推進体制等について（PDF：283KB）",
+          "url": "https://www.mhlw.go.jp/file/05-Shingikai-12205250-Shakaiengokyokushougaihokenfukushibu-Kokoronokenkoushienshitsu/s_4.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "参考１ アルコール健康障害対策推進基本計画（PDF：281KB）",
+          "url": "https://www.mhlw.go.jp/file/05-Shingikai-12205250-Shakaiengokyokushougaihokenfukushibu-Kokoronokenkoushienshitsu/ss_1.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "参考２ アルコール健康障害対策推進ガイドブック１／２（PDF：2,473KB）",
+          "url": "https://www.mhlw.go.jp/file/05-Shingikai-12205250-Shakaiengokyokushougaihokenfukushibu-Kokoronokenkoushienshitsu/ss_2_1.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "参考２ アルコール健康障害対策推進ガイドブック２／２（PDF：1,629KB）",
+          "url": "https://www.mhlw.go.jp/file/05-Shingikai-12205250-Shakaiengokyokushougaihokenfukushibu-Kokoronokenkoushienshitsu/ss_2_2.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "参考３ アルコール健康障害対策関係者会議令（PDF：192KB）",
+          "url": "https://www.mhlw.go.jp/file/05-Shingikai-12205250-Shakaiengokyokushougaihokenfukushibu-Kokoronokenkoushienshitsu/ss_3.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "参考４ アルコール健康障害対策関係者会議運営規則（PDF：183KB）",
+          "url": "https://www.mhlw.go.jp/file/05-Shingikai-12205250-Shakaiengokyokushougaihokenfukushibu-Kokoronokenkoushienshitsu/ss_4.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "議事録",
+          "url": "https://www.mhlw.go.jp/stf/shingi2/0000174792.html",
+          "type": "HTML"
+        }
+      ],
+      "manualLock": true,
+      "councilName": "アルコール健康障害対策関係者会議",
+      "ministry": "MHLW",
+      "category": "COUNCIL"
+    },
+    {
+      "id": "mhlw-alcohol_kenkou_shougai-20170614-016",
+      "councilId": "mhlw-alcohol_kenkou_shougai",
+      "title": "第16回 アルコール健康障害対策関係者会議",
+      "date": "2017/06/14",
+      "officialUrl": "https://www.mhlw.go.jp/stf/shingi2/0000167856.html",
+      "materials": [
+        {
+          "name": "資料１　アルコール健康障害対策関係者会議委員名簿（PDF：134KB）",
+          "url": "https://www.mhlw.go.jp/file/05-Shingikai-12205250-Shakaiengokyokushougaihokenfukushibu-Kokoronokenkoushienshitsu/01.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "資料２　平成29年度におけるアルコール健康障害対策の推進体制について（PDF：1,210KB）",
+          "url": "https://www.mhlw.go.jp/file/05-Shingikai-12205250-Shakaiengokyokushougaihokenfukushibu-Kokoronokenkoushienshitsu/02.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "資料３　アルコール健康障害対策推進基本計画の重点課題について（PDF：3,220KB）",
+          "url": "https://www.mhlw.go.jp/file/05-Shingikai-12205250-Shakaiengokyokushougaihokenfukushibu-Kokoronokenkoushienshitsu/0000167849.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "資料４　関係府省庁におけるアルコール関連問題啓発フォーラム・シンポジウム・広報活動状況について（PDF：251KB）",
+          "url": "https://www.mhlw.go.jp/file/05-Shingikai-12205250-Shakaiengokyokushougaihokenfukushibu-Kokoronokenkoushienshitsu/04.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "資料５　都道府県アルコール健康障害対策推進計画の策定（予定）状況について（PDF：179KB）",
+          "url": "https://www.mhlw.go.jp/file/05-Shingikai-12205250-Shakaiengokyokushougaihokenfukushibu-Kokoronokenkoushienshitsu/05.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "資料６　アルコール健康障害対策予算及び実施事業等について（PDF：1,175KB）",
+          "url": "https://www.mhlw.go.jp/file/05-Shingikai-12205250-Shakaiengokyokushougaihokenfukushibu-Kokoronokenkoushienshitsu/06.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "資料７　関係府省庁におけるアルコール関連施策の概要（PDF：1,210KB）",
+          "url": "https://www.mhlw.go.jp/file/05-Shingikai-12205250-Shakaiengokyokushougaihokenfukushibu-Kokoronokenkoushienshitsu/07.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "参考１　アルコール健康障害対策基本法（PDF：206KB）",
+          "url": "https://www.mhlw.go.jp/file/05-Shingikai-12205250-Shakaiengokyokushougaihokenfukushibu-Kokoronokenkoushienshitsu/01_1.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "参考２　アルコール健康障害対策関係者会議令（PDF：102KB）",
+          "url": "https://www.mhlw.go.jp/file/05-Shingikai-12205250-Shakaiengokyokushougaihokenfukushibu-Kokoronokenkoushienshitsu/02_1.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "参考３　アルコール健康障害対策推進基本計画（PDF：281KB）",
+          "url": "https://www.mhlw.go.jp/file/05-Shingikai-12205250-Shakaiengokyokushougaihokenfukushibu-Kokoronokenkoushienshitsu/03.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "参考４　依存症「相談拠点」及び「専門医療機関」に係る関係通知（PDF：477KB）",
+          "url": "https://www.mhlw.go.jp/file/05-Shingikai-12205250-Shakaiengokyokushougaihokenfukushibu-Kokoronokenkoushienshitsu/04_1.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "参考５　平成29年度アルコール健康障害対策業務　年間予定スケジュール（PDF：192KB）",
+          "url": "https://www.mhlw.go.jp/file/05-Shingikai-12205250-Shakaiengokyokushougaihokenfukushibu-Kokoronokenkoushienshitsu/05_1.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "議事録",
+          "url": "https://www.mhlw.go.jp/stf/shingi2/0000171989.html",
+          "type": "HTML"
+        },
+        {
+          "name": "開催案内",
+          "url": "https://www.mhlw.go.jp/stf/shingi2/0000167100.html",
+          "type": "HTML"
+        }
+      ],
+      "manualLock": true,
+      "councilName": "アルコール健康障害対策関係者会議",
+      "ministry": "MHLW",
+      "category": "COUNCIL"
+    },
+    {
+      "id": "mhlw-alcohol_kenkou_shougai-20180328-017",
+      "councilId": "mhlw-alcohol_kenkou_shougai",
+      "title": "第17回 アルコール健康障害対策関係者会議",
+      "date": "2018/03/28",
+      "officialUrl": "https://www.mhlw.go.jp/stf/shingi2/0000202961.html",
+      "materials": [
+        {
+          "name": "議事次第 第17回アルコール健康障害対策関係者会議.pdf（PDF：89KB）",
+          "url": "https://www.mhlw.go.jp/file/05-Shingikai-12205250-Shakaiengokyokushougaihokenfukushibu-Kokoronokenkoushienshitsu/0000202949.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "【資料1】アルコール健康障害対策関係者会議 委員名簿.pdf（PDF：153KB）",
+          "url": "https://www.mhlw.go.jp/file/05-Shingikai-12205250-Shakaiengokyokushougaihokenfukushibu-Kokoronokenkoushienshitsu/0000202945.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "【資料2】平成29年度におけるアルコール健康障害対策に関する取組について.pdf（PDF：2,050KB）",
+          "url": "https://www.mhlw.go.jp/file/05-Shingikai-12205250-Shakaiengokyokushougaihokenfukushibu-Kokoronokenkoushienshitsu/0000202946.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "【資料3】アルコール健康障害対策推進基本計画における重点課題について.pdf（PDF：1,073KB）",
+          "url": "https://www.mhlw.go.jp/file/05-Shingikai-12205250-Shakaiengokyokushougaihokenfukushibu-Kokoronokenkoushienshitsu/0000202947.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "【資料4】都道府県アルコール推進計画」策定（予定）状況（平成30年3月1日現在）.pdf（PDF：462KB）",
+          "url": "https://www.mhlw.go.jp/file/05-Shingikai-12205250-Shakaiengokyokushougaihokenfukushibu-Kokoronokenkoushienshitsu/0000202948.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "【資料5】都道府県アドバイザー派遣事業の報告.pdf（PDF：1,739KB）",
+          "url": "https://www.mhlw.go.jp/file/05-Shingikai-12205250-Shakaiengokyokushougaihokenfukushibu-Kokoronokenkoushienshitsu/0000202950.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "【資料6】平成30年度におけるアルコール健康障害対策予算及び実施事業等について.pdf（PDF：484KB）",
+          "url": "https://www.mhlw.go.jp/file/05-Shingikai-12205250-Shakaiengokyokushougaihokenfukushibu-Kokoronokenkoushienshitsu/0000202951.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "【資料7】関係府省庁におけるアルコール関連施策の概要.pdf（PDF：1,014KB）",
+          "url": "https://www.mhlw.go.jp/file/05-Shingikai-12205250-Shakaiengokyokushougaihokenfukushibu-Kokoronokenkoushienshitsu/0000202952.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "【参考１】アルコール健康障害対策基本法条文 .pdf（PDF：206KB）",
+          "url": "https://www.mhlw.go.jp/file/05-Shingikai-12205250-Shakaiengokyokushougaihokenfukushibu-Kokoronokenkoushienshitsu/0000202953.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "【参考２】アルコール健康障害対策関係者会議令.pdf（PDF：102KB）",
+          "url": "https://www.mhlw.go.jp/file/05-Shingikai-12205250-Shakaiengokyokushougaihokenfukushibu-Kokoronokenkoushienshitsu/0000202954.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "【参考3】アルコール健康障害対策推進基本計画.pdf（PDF：1,009KB）",
+          "url": "https://www.mhlw.go.jp/file/05-Shingikai-12205250-Shakaiengokyokushougaihokenfukushibu-Kokoronokenkoushienshitsu/0000202955.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "【参考4】依存症「相談拠点」及び「専門医療機関」に係る関係通知.pdf（PDF：397KB）",
+          "url": "https://www.mhlw.go.jp/file/05-Shingikai-12205250-Shakaiengokyokushougaihokenfukushibu-Kokoronokenkoushienshitsu/0000202956.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "【参考5】 平成29年度アルコール関連問題啓発週間におけるフォーラム紹介.pdf（PDF：790KB）",
+          "url": "https://www.mhlw.go.jp/file/05-Shingikai-12205250-Shakaiengokyokushougaihokenfukushibu-Kokoronokenkoushienshitsu/0000202957.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "【参考6】 今後のアルコール健康障害対策のスケジュールについて.pdf（PDF：273KB）",
+          "url": "https://www.mhlw.go.jp/file/05-Shingikai-12205250-Shakaiengokyokushougaihokenfukushibu-Kokoronokenkoushienshitsu/0000202958.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "議事録",
+          "url": "https://www.mhlw.go.jp/stf/shingi2/0000204236.html",
+          "type": "HTML"
+        },
+        {
+          "name": "開催案内",
+          "url": "https://www.mhlw.go.jp/stf/shingi2/0000196965.html",
+          "type": "HTML"
+        }
+      ],
+      "manualLock": true,
+      "councilName": "アルコール健康障害対策関係者会議",
+      "ministry": "MHLW",
+      "category": "COUNCIL"
+    },
+    {
+      "id": "mhlw-alcohol_kenkou_shougai-20190329-018",
+      "councilId": "mhlw-alcohol_kenkou_shougai",
+      "title": "第18回 アルコール健康障害対策関係者会議",
+      "date": "2019/03/29",
+      "officialUrl": "https://www.mhlw.go.jp/stf/shingi2/0000202961_00001.html",
+      "materials": [
+        {
+          "name": "議事次第 第18回アルコール健康障害対策関係者会議［88KB］",
+          "url": "https://www.mhlw.go.jp/content/12205250/000504351.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "【資料１】アルコール健康障害対策関係者会議 委員名簿［157KB］",
+          "url": "https://www.mhlw.go.jp/content/12205250/000504352.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "【資料２】平成30年度におけるアルコール健康障害対策に関する取組について［2.0MB］",
+          "url": "https://www.mhlw.go.jp/content/12205250/000504354.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "【資料３】アルコール健康障害対策推進基本計画における重点課題について［1.8MB］",
+          "url": "https://www.mhlw.go.jp/content/12205250/000504355.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "【資料４】都道府県アルコール推進計画」策定（予定）状況（平成31年2月28日現在）［656KB］",
+          "url": "https://www.mhlw.go.jp/content/12205250/000504357.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "【資料５】都道府県アドバイザー派遣事業の報告［2.1MB］",
+          "url": "https://www.mhlw.go.jp/content/12205250/000504358.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "【資料６】『総合病院を中心としたAL連携医療』［3.8MB］",
+          "url": "https://www.mhlw.go.jp/content/12205250/000504360.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "【資料７】平成31年度におけるアルコール健康障害対策予算及び実施事業等について［771KB］",
+          "url": "https://www.mhlw.go.jp/content/12205250/000504362.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "【資料８】関係府省庁におけるアルコール関連施策の概要［978KB］",
+          "url": "https://www.mhlw.go.jp/content/12205250/000504363.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "【参考１】アルコール健康障害対策基本法条文［199KB］",
+          "url": "https://www.mhlw.go.jp/content/12205250/000504364.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "【参考２】アルコール健康障害対策関係者会議令［97KB］",
+          "url": "https://www.mhlw.go.jp/content/12205250/000504365.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "【参考３】アルコール健康障害対策推進基本計画［990KB］",
+          "url": "https://www.mhlw.go.jp/content/12205250/000504366.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "【参考４】依存症「相談拠点」及び「専門医療機関」に係る関係通知［373KB］",
+          "url": "https://www.mhlw.go.jp/content/12205250/000504367.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "【参考５】 今後のアルコール健康障害対策のスケジュールについて［371KB］",
+          "url": "https://www.mhlw.go.jp/content/12205250/000504368.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "議事録",
+          "url": "https://www.mhlw.go.jp/stf/shingi2/0000204236_00001.html",
+          "type": "HTML"
+        },
+        {
+          "name": "開催案内",
+          "url": "https://www.mhlw.go.jp/stf/shingi2/0000196965_00001.html",
+          "type": "HTML"
+        }
+      ],
+      "manualLock": true,
+      "councilName": "アルコール健康障害対策関係者会議",
+      "ministry": "MHLW",
+      "category": "COUNCIL"
+    },
+    {
+      "id": "mhlw-alcohol_kenkou_shougai-20191030-019",
+      "councilId": "mhlw-alcohol_kenkou_shougai",
+      "title": "第19回 アルコール健康障害対策関係者会議",
+      "date": "2019/10/30",
+      "officialUrl": "https://www.mhlw.go.jp/stf/shingi2/0000202961_00002.html",
+      "materials": [
+        {
+          "name": "議事次第 第19回アルコール健康障害対策関係者会議［88KB］",
+          "url": "https://www.mhlw.go.jp/content/12205250/000562417.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "【資料１】アルコール健康障害対策推進基本計画の 検討 スケジュール案［157KB］",
+          "url": "https://www.mhlw.go.jp/content/12205250/000504352.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "【資料２】第１ 期アルコール健康障害対策 推進 基本計画（重点 課題 ）の取組状況［1.9MB］",
+          "url": "https://www.mhlw.go.jp/content/12205250/000562419.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "【資料３】都道府県アルコール健康障害対策推進計画 の 策定状況［102KB］",
+          "url": "https://www.mhlw.go.jp/content/12205250/000562420.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "【資料４】第１ 期アルコール健康障害対策 推進 基本計画（基本的 施策 等）の取組状況［2.5MB］",
+          "url": "https://www.mhlw.go.jp/content/12205250/000562646.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "【資料５】アルコール健康障害に関するWHOの動き［1.6MB］",
+          "url": "https://www.mhlw.go.jp/content/12205250/000562477.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "【資料６】アルコール健康障害にかかる参考資料［4.7MB］",
+          "url": "https://www.mhlw.go.jp/content/12205250/000562423.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "【参考１】アルコール健康障害対策関係者会議　委員名簿［154KB］",
+          "url": "https://www.mhlw.go.jp/content/12205250/000599223.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "【参考２】アルコール健康障害対策基本法［210KB］",
+          "url": "https://www.mhlw.go.jp/content/12205250/000562425.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "【参考３】アルコール健康障害対策関係者会議令［99KB］",
+          "url": "https://www.mhlw.go.jp/content/12205250/000562426.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "【参考４】アルコール健康障害対策推進基本計画［1008KB］",
+          "url": "https://www.mhlw.go.jp/content/12205250/000562427.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "議事録",
+          "url": "https://www.mhlw.go.jp/stf/shingi2/0000204236_00002.html",
+          "type": "HTML"
+        },
+        {
+          "name": "開催案内",
+          "url": "https://www.mhlw.go.jp/stf/newpage_07386.html",
+          "type": "HTML"
+        }
+      ],
+      "manualLock": true,
+      "councilName": "アルコール健康障害対策関係者会議",
+      "ministry": "MHLW",
+      "category": "COUNCIL"
+    },
+    {
+      "id": "mhlw-alcohol_kenkou_shougai-20191219-020",
+      "councilId": "mhlw-alcohol_kenkou_shougai",
+      "title": "第20回 アルコール健康障害対策関係者会議",
+      "date": "2019/12/19",
+      "officialUrl": "https://www.mhlw.go.jp/stf/shingi2/0000202961_00007.html",
+      "materials": [
+        {
+          "name": "議事次第 第20回アルコール健康障害対策関係者会議［123KB］",
+          "url": "https://www.mhlw.go.jp/content/12205250/000615162.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "【資料１】堀江委員提出資料「アルコール性肝障害の現状－一般臨床医に求められるアルコール依存症の治療－」［1.6MB］",
+          "url": "https://www.mhlw.go.jp/content/12205250/000615165.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "【資料２】吉本参考人提出資料「プライマリケアにおけるアルコール関連問題への取組み～軽度のアルコール依存症患者の対応を含めて～」［1.2MB］",
+          "url": "https://www.mhlw.go.jp/content/12205250/000615166.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "【資料３】辻本委員提出資料「精神科診療所の立場からアルコール医療を考える～日精診アンケート結果を中心に～」［4.7MB］",
+          "url": "https://www.mhlw.go.jp/content/12205250/000615167.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "【資料４】堀井委員提出資料「2019年度アルコール関連障害対策基本法に関連する、中国・四国地域の事業」［11.0MB］",
+          "url": "https://www.mhlw.go.jp/content/12205250/000615168.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "【資料５】小松委員提出資料「Treatment　Gapをうめる架け橋」［3.9MB］",
+          "url": "https://www.mhlw.go.jp/content/12205250/000615173.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "【資料６】廣参考人提出資料「産業保健・企業の取組み」［1.2MB］",
+          "url": "https://www.mhlw.go.jp/content/12205250/000615169.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "【資料７】伊藤委員提出資料「基本計画の成果と今後の重点課題　SBIRTSの促進に向けて～自助グループの立場から～」［1.9MB］",
+          "url": "https://www.mhlw.go.jp/content/12205250/000615170.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "【資料８】第19回関係者会議(10月30日)での主なご意見［321KB］",
+          "url": "https://www.mhlw.go.jp/content/12205250/000615171.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "【資料９】アルコール健康障害に係る参考資料［5.1MB］",
+          "url": "https://www.mhlw.go.jp/content/12205250/000615172.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "【参考１】アルコール健康障害対策関係者会議　委員名簿［162KB］",
+          "url": "https://www.mhlw.go.jp/content/12205250/000599223.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "【参考２】アルコール健康障害対策基本法［258KB］",
+          "url": "https://www.mhlw.go.jp/content/12205250/000562425.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "【参考３】アルコール健康障害対策関係者会議令［114KB］",
+          "url": "https://www.mhlw.go.jp/content/12205250/000562426.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "【参考４】アルコール健康障害対策推進基本計画［1.1MB］",
+          "url": "https://www.mhlw.go.jp/content/12205250/000562427.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "議事録",
+          "url": "https://www.mhlw.go.jp/stf/shingi2/0000204236_00003.html",
+          "type": "HTML"
+        },
+        {
+          "name": "開催案内",
+          "url": "https://www.mhlw.go.jp/stf/newpage_08362.html",
+          "type": "HTML"
+        }
+      ],
+      "manualLock": true,
+      "councilName": "アルコール健康障害対策関係者会議",
+      "ministry": "MHLW",
+      "category": "COUNCIL"
+    },
+    {
+      "id": "mhlw-alcohol_kenkou_shougai-20200206-021",
+      "councilId": "mhlw-alcohol_kenkou_shougai",
+      "title": "第21回 アルコール健康障害対策関係者会議",
+      "date": "2020/02/06",
+      "officialUrl": "https://www.mhlw.go.jp/stf/shingi2/0000202961_00005.html",
+      "materials": [
+        {
+          "name": "議事次第 第21回アルコール健康障害対策関係者会議［108KB］",
+          "url": "https://www.mhlw.go.jp/content/12205250/000592558.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "【資料１】白川委員提出資料「依存症相談拠点と精神保健福祉センターの依存症対象事業・全国精神保健福祉センター長会の依存症対策」［1.6MB］",
+          "url": "https://www.mhlw.go.jp/content/12205250/000578273.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "【資料２】中原委員提出資料「福岡県宗像・遠賀保健所におけるアルコール依存症対策事業」［2.3MB］",
+          "url": "https://www.mhlw.go.jp/content/12205250/000592560.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "【資料３】鹿内参考人提出資料「「依存症を考えるつどい」の取り組み」［813KB］",
+          "url": "https://www.mhlw.go.jp/content/12205250/000594169.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "【資料４】小仲参考人提出資料「高齢者のアルコール問題における支援について」［1.9MB］",
+          "url": "https://www.mhlw.go.jp/content/12205250/000592562.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "【資料５－１】AA日本参考人提出資料「AAの概要と関係者の皆様へのご協力について」［2.7MB］",
+          "url": "https://www.mhlw.go.jp/content/12205250/000592563.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "【資料５－２】AA日本参考人提出資料［240KB］",
+          "url": "https://www.mhlw.go.jp/content/12205250/000592564.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "【資料６】第20回アルコール健康障害対策関係者会議(令和元年12月19日)での主なご意見［391KB］",
+          "url": "https://www.mhlw.go.jp/content/12205250/000592565.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "【参考１】アルコール健康障害対策関係者会議　委員名簿［162KB］",
+          "url": "https://www.mhlw.go.jp/content/12205250/000599228.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "【参考２】アルコール健康障害対策基本法［258KB］",
+          "url": "https://www.mhlw.go.jp/content/12205250/000592567.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "【参考３】アルコール健康障害対策関係者会議令［114KB］",
+          "url": "https://www.mhlw.go.jp/content/12205250/000592568.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "【参考４】アルコール健康障害対策推進基本計画［1.1MB］",
+          "url": "https://www.mhlw.go.jp/content/12205250/000592569.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "議事録",
+          "url": "https://www.mhlw.go.jp/stf/shingi2/0000204236_00005.html",
+          "type": "HTML"
+        },
+        {
+          "name": "開催案内",
+          "url": "https://www.mhlw.go.jp/stf/newpage_09163.html",
+          "type": "HTML"
+        }
+      ],
+      "manualLock": true,
+      "councilName": "アルコール健康障害対策関係者会議",
+      "ministry": "MHLW",
+      "category": "COUNCIL"
+    },
+    {
+      "id": "mhlw-alcohol_kenkou_shougai-20200318-022",
+      "councilId": "mhlw-alcohol_kenkou_shougai",
+      "title": "第22回 アルコール健康障害対策関係者会議",
+      "date": "2020/03/18",
+      "officialUrl": "https://www.mhlw.go.jp/stf/shingi2/0000202961_00006.html",
+      "materials": [
+        {
+          "name": "議事次第 第22回アルコール健康障害対策関係者会議",
+          "url": "https://www.mhlw.go.jp/content/12205250/000609112.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "【資料１】小佐井参考人提出資料「大学における飲酒事故・アルコールハラスメント防止教育の取組みと課題」",
+          "url": "https://www.mhlw.go.jp/content/12205250/000609111.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "【資料２－１】板垣委員提出資料「不適切な飲酒の予防、適正飲酒の啓発に向けた酒類業界の取組みについて」",
+          "url": "https://www.mhlw.go.jp/content/12205250/000608856.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "【資料２－２】田中参考人提出資料「WHOアルコール世界戦略と酒類業界の取り組み」",
+          "url": "https://www.mhlw.go.jp/content/12205250/000608857.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "【資料３】吉田委員提出資料「酒類販売の現場から」",
+          "url": "https://www.mhlw.go.jp/content/12205250/000609104.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "【資料４】花尻参考人・濱参考人提出資料「三重県における飲酒運転防止に関する取組」",
+          "url": "https://www.mhlw.go.jp/content/12205250/000609103.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "【資料５】登川参考人提出資料「沖縄県における飲酒運転根絶対策について」",
+          "url": "https://www.mhlw.go.jp/content/12205250/000609344.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "【資料６】今後（令和２年度）のアルコール健康障害対策関係者会議の進め方（案）",
+          "url": "https://www.mhlw.go.jp/content/12205250/000609102.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "【資料７】第21回アルコール健康障害対策関係者会議（令和２年２月６日）での主なご意見",
+          "url": "https://www.mhlw.go.jp/content/12205250/000609346.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "【参考１】アルコール健康障害対策関係者会議　委員名簿",
+          "url": "https://www.mhlw.go.jp/content/12205250/000608846.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "【参考２】アルコール健康障害対策基本法",
+          "url": "https://www.mhlw.go.jp/content/12205250/000592567.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "【参考３】アルコール健康障害対策関係者会議令",
+          "url": "https://www.mhlw.go.jp/content/12205250/000592568.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "【参考４】アルコール健康障害対策推進基本計画",
+          "url": "https://www.mhlw.go.jp/content/12205250/000592569.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "議事録",
+          "url": "https://www.mhlw.go.jp/stf/shingi2/0000204236_00006.html",
+          "type": "HTML"
+        },
+        {
+          "name": "開催案内",
+          "url": "https://www.mhlw.go.jp/stf/newpage_10179.html",
+          "type": "HTML"
+        }
+      ],
+      "manualLock": true,
+      "councilName": "アルコール健康障害対策関係者会議",
+      "ministry": "MHLW",
+      "category": "COUNCIL"
+    },
+    {
+      "id": "mhlw-alcohol_kenkou_shougai-20200612-023",
+      "councilId": "mhlw-alcohol_kenkou_shougai",
+      "title": "第23回 アルコール健康障害対策関係者会議",
+      "date": "2020/06/12",
+      "officialUrl": "https://www.mhlw.go.jp/stf/shingi2/0000202961_00010.html",
+      "materials": [
+        {
+          "name": "議事次第 第23回アルコール健康障害対策関係者会議",
+          "url": "https://www.mhlw.go.jp/content/12205250/000639046.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "【資料１】今後のアルコール健康障害対策関係者会議の進め方（案）",
+          "url": "https://www.mhlw.go.jp/content/12205250/000639048.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "000608856.pdf",
+          "url": "https://www.mhlw.go.jp/content/12205250/000608856.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "【資料２】第１期アルコール健康障害対策推進基本計画（重点課題）の評価",
+          "url": "https://www.mhlw.go.jp/content/12205250/000639049.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "【資料３】第１期アルコール健康障害対策推進基本計画（基本的施策等）の評価",
+          "url": "https://www.mhlw.go.jp/content/12205250/000639051.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "【資料４】第２期アルコール健康障害対策推進基本計画の構成",
+          "url": "https://www.mhlw.go.jp/content/12205250/000639053.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "【資料５】第２期アルコール健康障害対策推進基本計画案（新旧対照表）（健診、医療）",
+          "url": "https://www.mhlw.go.jp/content/12205250/000639054.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "000609344.pdf",
+          "url": "https://www.mhlw.go.jp/content/12205250/000609344.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "【参考資料１】アルコール健康障害対策基本法等の抜粋（基本計画の評価関係）",
+          "url": "https://www.mhlw.go.jp/content/12205250/000639059.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "【参考資料２】これまでの関係者会議で出された御意見等",
+          "url": "https://www.mhlw.go.jp/content/12205250/000639060.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "【参考資料３】第22回アルコール健康障害対策関係者会議（令和2年3月18日）での主なご意見",
+          "url": "https://www.mhlw.go.jp/content/12205250/000639061.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "議事録",
+          "url": "https://www.mhlw.go.jp/stf/shingi2/0000204236_00007.html",
+          "type": "HTML"
+        },
+        {
+          "name": "開催案内",
+          "url": "https://www.mhlw.go.jp/stf/newpage_11708.html",
+          "type": "HTML"
+        }
+      ],
+      "manualLock": true,
+      "councilName": "アルコール健康障害対策関係者会議",
+      "ministry": "MHLW",
+      "category": "COUNCIL"
+    },
+    {
+      "id": "mhlw-alcohol_kenkou_shougai-20200731-024",
+      "councilId": "mhlw-alcohol_kenkou_shougai",
+      "title": "第24回 アルコール健康障害対策関係者会議",
+      "date": "2020/07/31",
+      "officialUrl": "https://www.mhlw.go.jp/stf/shingi2/0000202961_00011.html",
+      "materials": [
+        {
+          "name": "議事次第 第24回アルコール健康障害対策関係者会議",
+          "url": "https://www.mhlw.go.jp/content/12205250/000654176.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "【資料１】今後のアルコール健康障害対策関係者会議の進め方（案）",
+          "url": "https://www.mhlw.go.jp/content/12205250/000654178.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "000608856.pdf",
+          "url": "https://www.mhlw.go.jp/content/12205250/000608856.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "【資料２】第２期アルコール健康障害対策推進基本計画案（第1期の評価等）",
+          "url": "https://www.mhlw.go.jp/content/12205250/000654205.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "【資料３】第２期アルコール健康障害対策推進基本計画案（新旧対照表）（健診、医療）",
+          "url": "https://www.mhlw.go.jp/content/12205250/000654206.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "【資料４】今成委員提出資料「アルコール関連問題 家族ぐるみの回復支援を！」",
+          "url": "https://www.mhlw.go.jp/content/12205250/000654249.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "【資料５】第２期アルコール健康障害対策推進基本計画案（新旧対照表）（相談支援・社会復帰等）",
+          "url": "https://www.mhlw.go.jp/content/12205250/000654208.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "【参考資料１】これまでの関係者会議で出された御意見等",
+          "url": "https://www.mhlw.go.jp/content/12205250/000654250.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "【参考資料２】第１期アルコール健康障害対策推進基本計画（重点課題）の評価",
+          "url": "https://www.mhlw.go.jp/content/12205250/000654251.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "【参考資料３】第１期アルコール健康障害対策推進基本計画（基本的施策等）の評価",
+          "url": "https://www.mhlw.go.jp/content/12205250/000654253.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "【参考資料４】前回会議における質問事項に対する回答",
+          "url": "https://www.mhlw.go.jp/content/12205250/000654280.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "【参考資料５】今回会議の議題に関するご意見等",
+          "url": "https://www.mhlw.go.jp/content/12205250/000654257.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "議事録",
+          "url": "https://www.mhlw.go.jp/stf/shingi2/0000204236_00008.html",
+          "type": "HTML"
+        },
+        {
+          "name": "開催案内",
+          "url": "https://www.mhlw.go.jp/stf/newpage_12535.html",
+          "type": "HTML"
+        }
+      ],
+      "manualLock": true,
+      "councilName": "アルコール健康障害対策関係者会議",
+      "ministry": "MHLW",
+      "category": "COUNCIL"
+    },
+    {
+      "id": "mhlw-alcohol_kenkou_shougai-20200904-025",
+      "councilId": "mhlw-alcohol_kenkou_shougai",
+      "title": "第25回 アルコール健康障害対策関係者会議",
+      "date": "2020/09/04",
+      "officialUrl": "https://www.mhlw.go.jp/stf/shingi2/0000202961_00012.html",
+      "materials": [
+        {
+          "name": "議事次第 第25回アルコール健康障害対策関係者会議",
+          "url": "https://www.mhlw.go.jp/content/12205250/000667550.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "000654178.pdf",
+          "url": "https://www.mhlw.go.jp/content/12205250/000654178.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "【資料１】今後のアルコール健康障害対策関係者会議の進め方（案）",
+          "url": "https://www.mhlw.go.jp/content/12205250/000666545.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "000608856.pdf",
+          "url": "https://www.mhlw.go.jp/content/12205250/000608856.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "【資料２】第２期アルコール健康障害対策推進基本計画案（新旧対照表）（相談支援・社会復帰等）",
+          "url": "https://www.mhlw.go.jp/content/12205250/000666547.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "【資料３】第２期アルコール健康障害対策推進基本計画案（新旧対照表）（教育・啓発、不適切飲酒の防止等）",
+          "url": "https://www.mhlw.go.jp/content/12205250/000666548.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "【資料４】アルコール健康障害対策推進基本計画の重点課題について",
+          "url": "https://www.mhlw.go.jp/content/12205250/000674799.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "【参考資料１】これまでの関係者会議で出された御意見等",
+          "url": "https://www.mhlw.go.jp/content/12205250/000654250.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "【参考資料２】第２期アルコール健康障害対策推進基本計画案（第1期の評価等）",
+          "url": "https://www.mhlw.go.jp/content/12205250/000666549.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "【参考資料３】アルコール健康障害対策基本計画（Ⅲ 基本計画で取り組むべき重点課題（抜粋））",
+          "url": "https://www.mhlw.go.jp/content/12205250/000666574.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "【参考資料４】第１期アルコール健康障害対策推進基本計画（基本的施策等）の評価",
+          "url": "https://www.mhlw.go.jp/content/12205250/000666576.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "【参考資料５】今回会議の議題に関するご意見等",
+          "url": "https://www.mhlw.go.jp/content/12205250/000667723.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "議事録",
+          "url": "https://www.mhlw.go.jp/stf/shingi2/0000204236_00011.html",
+          "type": "HTML"
+        },
+        {
+          "name": "開催案内",
+          "url": "https://www.mhlw.go.jp/stf/newpage_13248.html",
+          "type": "HTML"
+        }
+      ],
+      "manualLock": true,
+      "councilName": "アルコール健康障害対策関係者会議",
+      "ministry": "MHLW",
+      "category": "COUNCIL"
+    },
+    {
+      "id": "mhlw-alcohol_kenkou_shougai-20201029-026",
+      "councilId": "mhlw-alcohol_kenkou_shougai",
+      "title": "第26回 アルコール健康障害対策関係者会議",
+      "date": "2020/10/29",
+      "officialUrl": "https://www.mhlw.go.jp/stf/shingi2/0000202961_00013.html",
+      "materials": [
+        {
+          "name": "議事次第 第26回アルコール健康障害対策関係者会議",
+          "url": "https://www.mhlw.go.jp/content/12205250/000688848.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "【資料１】第２期アルコール健康障害対策推進基本計画案（教育・啓発、不適切飲酒の防止等）",
+          "url": "https://www.mhlw.go.jp/content/12205250/000688849.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "【資料２】第２期アルコール健康障害対策推進基本計画案",
+          "url": "https://www.mhlw.go.jp/content/12205250/000688850.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "【参考資料１】今後のアルコール健康障害対策関係者会議の進め方（案）",
+          "url": "https://www.mhlw.go.jp/content/12205250/000688852.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "【参考資料２】アルコール関連問題啓発週間ポスター",
+          "url": "https://www.mhlw.go.jp/content/12205250/000688854.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "議事録",
+          "url": "https://www.mhlw.go.jp/stf/shingi2/0000204236_00012.html",
+          "type": "HTML"
+        },
+        {
+          "name": "開催案内",
+          "url": "https://www.mhlw.go.jp/stf/newpage_14311.html",
+          "type": "HTML"
+        }
+      ],
+      "manualLock": true,
+      "councilName": "アルコール健康障害対策関係者会議",
+      "ministry": "MHLW",
+      "category": "COUNCIL"
+    },
+    {
+      "id": "mhlw-alcohol_kenkou_shougai-20201224-027",
+      "councilId": "mhlw-alcohol_kenkou_shougai",
+      "title": "第27回 アルコール健康障害対策関係者会議",
+      "date": "2020/12/24",
+      "officialUrl": "https://www.mhlw.go.jp/stf/shingi2/0000202961_00014.html",
+      "materials": [
+        {
+          "name": "議事次第 第27回アルコール健康障害対策関係者会議［54KB］",
+          "url": "https://www.mhlw.go.jp/content/12205250/000709797.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "【資料１】アルコール健康障害対策推進基本計画 （第２期）（案［1.3MB］",
+          "url": "https://www.mhlw.go.jp/content/12205250/000709798.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "議事録",
+          "url": "https://www.mhlw.go.jp/stf/shingi2/0000204236_00013.html",
+          "type": "HTML"
+        },
+        {
+          "name": "開催案内",
+          "url": "https://www.mhlw.go.jp/stf/newpage_15490.html",
+          "type": "HTML"
+        }
+      ],
+      "manualLock": true,
+      "councilName": "アルコール健康障害対策関係者会議",
+      "ministry": "MHLW",
+      "category": "COUNCIL"
+    },
+    {
+      "id": "mhlw-alcohol_kenkou_shougai-20230222-028",
+      "councilId": "mhlw-alcohol_kenkou_shougai",
+      "title": "第28回 アルコール健康障害対策関係者会議",
+      "date": "2023/02/22",
+      "officialUrl": "https://www.mhlw.go.jp/stf/newpage_31398.html",
+      "materials": [
+        {
+          "name": "議事概要　第28回アルコール健康障害対策関係者会議［PDF形式：32KB］",
+          "url": "https://www.mhlw.go.jp/content/12200000/001062336.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "資料　第2期アルコール健康障害対策推進基本計画（基本的施策）の取組状況（令和３年度）［PDF形式：933KB］",
+          "url": "https://www.mhlw.go.jp/content/12200000/001062347.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "参考資料１　アルコール健康障害対策連携会議の開催・関係機関の参画状況（令和３年度）［PDF形式：192KB］",
+          "url": "https://www.mhlw.go.jp/content/12200000/001062359.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "参考資料２　都道府県アルコール健康障害対策推進計画策定状況（令和３年度）［PDF形式：59KB］",
+          "url": "https://www.mhlw.go.jp/content/12200000/001062360.pdf",
+          "type": "PDF"
+        }
+      ],
+      "manualLock": true,
+      "councilName": "アルコール健康障害対策関係者会議",
+      "ministry": "MHLW",
+      "category": "COUNCIL"
+    },
+    {
+      "id": "mhlw-alcohol_kenkou_shougai-20230929-029",
+      "councilId": "mhlw-alcohol_kenkou_shougai",
+      "title": "第29回 アルコール健康障害対策関係者会議",
+      "date": "2023/09/29",
+      "officialUrl": "https://www.mhlw.go.jp/stf/shingi2/0000202961_00027.html",
+      "materials": [
+        {
+          "name": "議事次第［33KB］",
+          "url": "https://www.mhlw.go.jp/content/12200000/001562654.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "【資料１】 第５期_アルコール健康障害対策関係者会議 委員名簿［126KB］",
+          "url": "https://www.mhlw.go.jp/content/12200000/001562682.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "【資料２】 第２期アルコール健康障害対策推進基本計画の令和４年度取組状況（概要）［867KB］",
+          "url": "https://www.mhlw.go.jp/content/12200000/001562685.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "【資料３】 第２期アルコール健康障害対策推進基本計画（基本的施策等）の取組状況［462KB］",
+          "url": "https://www.mhlw.go.jp/content/12200000/001562692.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "【資料４】 健康に配慮した飲酒に関するガイドライン（案） ［211KB］",
+          "url": "https://www.mhlw.go.jp/content/12200000/001562693.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "【資料５】 健康に配慮した飲酒に関するガイドライン周知のためのリーフレット構成案［521KB］",
+          "url": "https://www.mhlw.go.jp/content/12200000/001562856.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "【資料６】 委員提出資料［834KB］",
+          "url": "https://www.mhlw.go.jp/content/12200000/001562859.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "【参考資料１】アルコール健康障害対策基本法条文［736KB］",
+          "url": "https://www.mhlw.go.jp/content/12200000/001562867.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "【参考資料２】アルコール健康障害対策関係者会議令［626KB］",
+          "url": "https://www.mhlw.go.jp/content/12200000/001562868.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "【参考資料３】第２期アルコール健康障害対策推進基本計画［932KB］",
+          "url": "https://www.mhlw.go.jp/content/12200000/001562869.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "議事録",
+          "url": "https://www.mhlw.go.jp/stf/shingi2/0000155047_00028.html",
+          "type": "HTML"
+        },
+        {
+          "name": "開催案内",
+          "url": "https://www.mhlw.go.jp/stf/newpage_35268.html",
+          "type": "HTML"
+        }
+      ],
+      "manualLock": true,
+      "councilName": "アルコール健康障害対策関係者会議",
+      "ministry": "MHLW",
+      "category": "COUNCIL"
+    },
+    {
+      "id": "mhlw-alcohol_kenkou_shougai-20241028-030",
+      "councilId": "mhlw-alcohol_kenkou_shougai",
+      "title": "第30回 アルコール健康障害対策関係者会議",
+      "date": "2024/10/28",
+      "officialUrl": "https://www.mhlw.go.jp/stf/shingi2/0000202961_00037.html",
+      "materials": [
+        {
+          "name": "議事次第",
+          "url": "https://www.mhlw.go.jp/content/12205250/001321243.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "【資料１－１】第２期アルコール健康障害対策推進基本計画の令和５年度取組状況（概要）",
+          "url": "https://www.mhlw.go.jp/content/12205250/001320084.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "【資料１－２】第２期アルコール健康障害対策推進基本計画（基本的施策等）の取組状況（令和５年度）",
+          "url": "https://www.mhlw.go.jp/content/12205250/001320007.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "【資料２】純アルコール量とアルコール分解時間を把握するツール「アルコールウォッチ」をリリース",
+          "url": "https://www.mhlw.go.jp/content/12205250/001320008.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "【資料３】アルコール健康障害対策推進基本計画の検討スケジュール（案）",
+          "url": "https://www.mhlw.go.jp/content/12205250/001320009.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "【参考資料１】アルコール健康障害対策基本法",
+          "url": "https://www.mhlw.go.jp/content/12205250/001320010.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "【参考資料２】アルコール健康障害対策関係者会議令",
+          "url": "https://www.mhlw.go.jp/content/12205250/001320011.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "【参考資料３】アルコール健康障害対策推進基本計画",
+          "url": "https://www.mhlw.go.jp/content/12205250/001320012.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "【参考資料４】第５期アルコール健康障害対策関係者会議 委員名簿",
+          "url": "https://www.mhlw.go.jp/content/12205250/001321241.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "議事録",
+          "url": "https://www.mhlw.go.jp/stf/newpage_49783.html",
+          "type": "HTML"
+        },
+        {
+          "name": "開催案内",
+          "url": "https://www.mhlw.go.jp/stf/newpage_44421.html",
+          "type": "HTML"
+        }
+      ],
+      "manualLock": true,
+      "councilName": "アルコール健康障害対策関係者会議",
+      "ministry": "MHLW",
+      "category": "COUNCIL"
+    },
+    {
+      "id": "mhlw-alcohol_kenkou_shougai-20250127-031",
+      "councilId": "mhlw-alcohol_kenkou_shougai",
+      "title": "第31回 アルコール健康障害対策関係者会議",
+      "date": "2025/01/27",
+      "officialUrl": "https://www.mhlw.go.jp/stf/newpage_49785.html",
+      "materials": [
+        {
+          "name": "議事次第［PDF形式：46KB］",
+          "url": "https://www.mhlw.go.jp/content/10601000/001383696.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "資料１　小野里委員提出資料「ビール酒造組合啓発活動」［PDF形式：2.4MB］",
+          "url": "https://www.mhlw.go.jp/content/10601000/001383697.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "資料２　渋木委員提出資料「“最後の砦”酒類小売販売場の立場から」［PDF形式：3.2MB］",
+          "url": "https://www.mhlw.go.jp/content/10601000/001383698.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "資料３　山本参考人提出資料「アルコール問題のある親と暮らす子どものニーズと家族支援」［PDF形式：1.9MB］",
+          "url": "https://www.mhlw.go.jp/content/10601000/001383719.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "資料４　長嶺参考人提出資料「アルコール依存症の親を持つこどもの立場から願う支援」［PDF形式：1.1MB］",
+          "url": "https://www.mhlw.go.jp/content/10601000/001383720.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "資料５　白井参考人提出資料「アルコール家族（ヤングケアラー）の現状とその対策への要望～自分の体験から～」［PDF形式：1.1MB］",
+          "url": "https://www.mhlw.go.jp/content/10601000/001383721.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "参考資料１　アルコール健康障害対策基本法［PDF形式：735KB］",
+          "url": "https://www.mhlw.go.jp/content/10601000/001383699.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "参考資料２　アルコール健康障害対策関係者会議令［PDF形式：626KB］",
+          "url": "https://www.mhlw.go.jp/content/10601000/001383700.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "参考資料３　アルコール健康障害対策推進基本計画［PDF形式：932KB］",
+          "url": "https://www.mhlw.go.jp/content/10601000/001383701.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "参考資料４　第５期アルコール健康障害対策関係者会議 委員名簿［PDF形式：601KB］",
+          "url": "https://www.mhlw.go.jp/content/10601000/001383727.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "議事録",
+          "url": "https://www.mhlw.go.jp/stf/newpage_52969.html",
+          "type": "HTML"
+        },
+        {
+          "name": "開催案内",
+          "url": "https://www.mhlw.go.jp/stf/newpage_49303.html",
+          "type": "HTML"
+        }
+      ],
+      "manualLock": true,
+      "councilName": "アルコール健康障害対策関係者会議",
+      "ministry": "MHLW",
+      "category": "COUNCIL"
+    },
+    {
+      "id": "mhlw-alcohol_kenkou_shougai-20250324-032",
+      "councilId": "mhlw-alcohol_kenkou_shougai",
+      "title": "第32回 アルコール健康障害対策関係者会議",
+      "date": "2025/03/24",
+      "officialUrl": "https://www.mhlw.go.jp/stf/newpage_55592.html",
+      "materials": [
+        {
+          "name": "議事次第［PDF形式：47KB］",
+          "url": "https://www.mhlw.go.jp/content/10601000/001456650.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "資料１　上村委員提出資料「‘依存症専門医療機関’である‘普通’の精神科診療所での依存症治療の現状と課題」［PDF形式：1.8MB］",
+          "url": "https://www.mhlw.go.jp/content/10601000/001456651.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "資料２　小松委員提出資料「第3期アルコール健康障害対策推進基本計画に残された課題」［PDF形式：3.0MB］",
+          "url": "https://www.mhlw.go.jp/content/10601000/001456652.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "資料３　白石委員提出資料「アルコール健康障害における内科（身体科）の立ち位置」※P11に一部データ等の誤りがあったため会議後に修正したものを掲載［PDF形式：2.0MB］",
+          "url": "https://www.mhlw.go.jp/content/10601000/001456653.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "資料４　山口委員提出資料「鹿児島県におけるアルコール依存症対策」［PDF形式：1.3MB］",
+          "url": "https://www.mhlw.go.jp/content/10601000/001456654.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "資料５　青山参考人提出資料「子育て支援を通じたアルコール使用障害からの親子の回復」［PDF形式：338KB］",
+          "url": "https://www.mhlw.go.jp/content/10601000/001456655.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "参考資料１　アルコール健康障害対策基本法［PDF形式：735KB］",
+          "url": "https://www.mhlw.go.jp/content/10601000/001456656.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "参考資料２　アルコール健康障害対策関係者会議令［PDF形式：626KB］",
+          "url": "https://www.mhlw.go.jp/content/10601000/001456657.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "参考資料３　アルコール健康障害対策推進基本計画［PDF形式：932KB］",
+          "url": "https://www.mhlw.go.jp/content/10601000/001456658.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "参考資料４　第６期アルコール健康障害対策関係者会議 委員名簿［PDF形式：599KB］",
+          "url": "https://www.mhlw.go.jp/content/10601000/001456659.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "議事録",
+          "url": "https://www.mhlw.go.jp/stf/newpage_57393.html",
+          "type": "HTML"
+        },
+        {
+          "name": "開催案内",
+          "url": "https://www.mhlw.go.jp/stf/newpage_54759.html",
+          "type": "HTML"
+        }
+      ],
+      "manualLock": true,
+      "councilName": "アルコール健康障害対策関係者会議",
+      "ministry": "MHLW",
+      "category": "COUNCIL"
+    },
+    {
+      "id": "mhlw-alcohol_kenkou_shougai-20250428-033",
+      "councilId": "mhlw-alcohol_kenkou_shougai",
+      "title": "第33回 アルコール健康障害対策関係者会議",
+      "date": "2025/04/28",
+      "officialUrl": "https://www.mhlw.go.jp/stf/newpage_57432.html",
+      "materials": [
+        {
+          "name": "議事次第［PDF形式：62KB］",
+          "url": "https://www.mhlw.go.jp/content/10601000/001481397.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "資料１　志田委員提出資料「精神保健福祉センターにおけるアルコール健康障害対策関連の取り組み」［PDF形式：1.5MB］",
+          "url": "https://www.mhlw.go.jp/content/10601000/001481398.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "資料２　林委員提出資料「アルコール健康障害対策断酒会の取り組み～アルコール依存症対策を中心に～」［PDF形式：1.4MB］",
+          "url": "https://www.mhlw.go.jp/content/10601000/001481399.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "資料３　今後のアルコール健康障害関係者会議の進め方について［PDF形式：35KB］",
+          "url": "https://www.mhlw.go.jp/content/10601000/001481400.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "資料４－１　第２期アルコール健康障害対策基本計画の取組状況（概要）［PDF形式：259KB］",
+          "url": "https://www.mhlw.go.jp/content/10601000/001481401.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "資料４－２　第２期アルコール健康障害対策推進基本計画（基本的施策等）の取組状況（令和６年度）［PDF形式：792KB］",
+          "url": "https://www.mhlw.go.jp/content/10601000/001481402.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "資料５　アルコール健康障害対策基本計画の構成について［PDF形式：78KB］",
+          "url": "https://www.mhlw.go.jp/content/10601000/001481407.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "参考資料１　アルコール健康障害対策基本法［PDF形式：736KB］",
+          "url": "https://www.mhlw.go.jp/content/10601000/001481403.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "参考資料２　アルコール健康障害対策関係者会議令［PDF形式：626KB］",
+          "url": "https://www.mhlw.go.jp/content/10601000/001481404.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "参考資料３　アルコール健康障害対策推進基本計画［PDF形式：932KB］",
+          "url": "https://www.mhlw.go.jp/content/10601000/001481405.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "参考資料４　第６期アルコール健康障害対策関係者会議 委員名簿［PDF形式：429KB］",
+          "url": "https://www.mhlw.go.jp/content/10601000/001481406.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "参考資料５　アルコール健康障害関係者会議（第30回～第32回）において出された御意見等 ［PDF形式：206KB］",
+          "url": "https://www.mhlw.go.jp/content/10601000/001481408.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "議事録",
+          "url": "https://www.mhlw.go.jp/stf/newpage_58978.html",
+          "type": "HTML"
+        },
+        {
+          "name": "開催案内",
+          "url": "https://www.mhlw.go.jp/stf/newpage_57155.html",
+          "type": "HTML"
+        }
+      ],
+      "manualLock": true,
+      "councilName": "アルコール健康障害対策関係者会議",
+      "ministry": "MHLW",
+      "category": "COUNCIL"
+    },
+    {
+      "id": "mhlw-alcohol_kenkou_shougai-20250630-034",
+      "councilId": "mhlw-alcohol_kenkou_shougai",
+      "title": "第34回 アルコール健康障害対策関係者会議",
+      "date": "2025/06/30",
+      "officialUrl": "https://www.mhlw.go.jp/stf/newpage_59198.html",
+      "materials": [
+        {
+          "name": "議事次第［PDF形式：71KB］",
+          "url": "https://www.mhlw.go.jp/content/10601000/001510043.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "【資料１－１】（警察庁）飲酒運転をした者に対する指導等の取組について［PDF形式：3.0MB］",
+          "url": "https://www.mhlw.go.jp/content/10601000/001510044.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "【資料１－２】（法務省）刑事施設におけるアルコール依存回復プログラム等について［PDF形式：1.3MB］",
+          "url": "https://www.mhlw.go.jp/content/10601000/001510045.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "【資料１－３】（国土交通省）飲酒運転防止に係る国土交通省の取組［PDF形式：889KB］",
+          "url": "https://www.mhlw.go.jp/content/10601000/001510046.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "【資料１－４】アルコール健康障害対策基本計画改定の方向性［PDF形式：114KB］",
+          "url": "https://www.mhlw.go.jp/content/10601000/001510047.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "【資料２－１】「依存症の親を持つ成人のヤングケアラー経験に関する実態調査」の中間報告と第３期基本計画への政策提案［PDF形式：1.4MB］",
+          "url": "https://www.mhlw.go.jp/content/10601000/001510048.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "【資料２－２】アルコール健康障害対策基本計画改定の方向性［PDF形式：101KB］",
+          "url": "https://www.mhlw.go.jp/content/10601000/001510049.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "【資料３】今後のアルコール健康障害関係者会議の進め方について（案）［PDF形式：38KB］",
+          "url": "https://www.mhlw.go.jp/content/10601000/001510065.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "参考資料１　アルコール健康障害対策基本法［PDF形式：736KB］",
+          "url": "https://www.mhlw.go.jp/content/10601000/001510050.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "参考資料２　アルコール健康障害対策関係者会議令［PDF形式：626KB］",
+          "url": "https://www.mhlw.go.jp/content/10601000/001510051.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "参考資料３　アルコール健康障害対策推進基本計画［PDF形式：932KB］",
+          "url": "https://www.mhlw.go.jp/content/10601000/001510052.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "参考資料４　第６期アルコール健康障害対策関係者会議 委員名簿［PDF形式：126KB］",
+          "url": "https://www.mhlw.go.jp/content/10601000/001510053.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "参考資料５　アルコール健康障害関係者会議（第30回～第33回）において出された御意見等 ［PDF形式：242KB］",
+          "url": "https://www.mhlw.go.jp/content/10601000/001510054.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "参考資料６　ヤングケアラー支援の現況［PDF形式：3.1MB］",
+          "url": "https://www.mhlw.go.jp/content/10601000/001510066.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "議事録",
+          "url": "https://www.mhlw.go.jp/stf/newpage_62663.html",
+          "type": "HTML"
+        },
+        {
+          "name": "開催案内",
+          "url": "https://www.mhlw.go.jp/stf/newpage_58991.html",
+          "type": "HTML"
+        }
+      ],
+      "manualLock": true,
+      "councilName": "アルコール健康障害対策関係者会議",
+      "ministry": "MHLW",
+      "category": "COUNCIL"
+    },
+    {
+      "id": "mhlw-alcohol_kenkou_shougai-20250922-035",
+      "councilId": "mhlw-alcohol_kenkou_shougai",
+      "title": "第35回 アルコール健康障害対策関係者会議",
+      "date": "2025/09/22",
+      "officialUrl": "https://www.mhlw.go.jp/stf/newpage_63789.html",
+      "materials": [
+        {
+          "name": "議事次第［PDF形式：70KB］",
+          "url": "https://www.mhlw.go.jp/content/10601000/001566489.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "【資料１】アルコール健康障害対策推進基本計画改定の方向性（Ⅲ アルコール健康障害対策推進基本計画で取り組むべき重点課題）［PDF形式：553KB］",
+          "url": "https://www.mhlw.go.jp/content/10601000/001566414.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "【資料２－１】ビール酒造組合説明資料［PDF形式：1.5MB］",
+          "url": "https://www.mhlw.go.jp/content/10601000/001566490.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "【資料２－２】アルコール健康障害対策基本計画改定の方向性（２．不適切な飲酒の誘引の防止）［PDF形式：552KB］",
+          "url": "https://www.mhlw.go.jp/content/10601000/001566499.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "【資料３】アルコール健康障害対策基本計画改定の方向性［PDF形式：553KB］",
+          "url": "https://www.mhlw.go.jp/content/10601000/001566491.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "【資料４】今後のアルコール健康障害関係者会議の進め方について［PDF形式：42KB］",
+          "url": "https://www.mhlw.go.jp/content/10601000/001566492.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "【参考資料１】アルコール健康障害対策基本法条文 ［PDF形式：736KB］",
+          "url": "https://www.mhlw.go.jp/content/10601000/001566493.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "【参考資料２】アルコール健康障害対策関係者会議令［PDF形式：626KB］",
+          "url": "https://www.mhlw.go.jp/content/10601000/001566494.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "【参考資料３】第２期アルコール健康障害対策推進基本計画［PDF形式：932KB］",
+          "url": "https://www.mhlw.go.jp/content/10601000/001566495.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "【参考資料４】第６期_アルコール健康障害対策関係者会議 委員名簿［PDF形式：126KB］",
+          "url": "https://www.mhlw.go.jp/content/10601000/001566496.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "【参考資料５】アルコール健康障害関係者会議（第30回～第34回）において出された御意見等［PDF形式：261KB］",
+          "url": "https://www.mhlw.go.jp/content/10601000/001566497.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "【参考資料６】「飲酒と生活習慣に関する調査」結果速報［PDF形式：3.4MB］",
+          "url": "https://www.mhlw.go.jp/content/10601000/001566498.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "議事録",
+          "url": "https://www.mhlw.go.jp/stf/newpage_65632.html",
+          "type": "HTML"
+        },
+        {
+          "name": "開催案内",
+          "url": "https://www.mhlw.go.jp/stf/newpage_63402.html",
+          "type": "HTML"
+        }
+      ],
+      "manualLock": true,
+      "councilName": "アルコール健康障害対策関係者会議",
+      "ministry": "MHLW",
+      "category": "COUNCIL"
+    },
+    {
+      "id": "mhlw-alcohol_kenkou_shougai-20251117-036",
+      "councilId": "mhlw-alcohol_kenkou_shougai",
+      "title": "第36回 アルコール健康障害対策関係者会議",
+      "date": "2025/11/17",
+      "officialUrl": "https://www.mhlw.go.jp/stf/newpage_65964.html",
+      "materials": [
+        {
+          "name": "議事次第［PDF形式：64KB］",
+          "url": "https://www.mhlw.go.jp/content/10601000/001595816.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "【資料１－１】文部科学省提出資料「飲酒防止等に関する文部科学省の取組」［PDF形式：2.7MB］",
+          "url": "https://www.mhlw.go.jp/content/10601000/001595817.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "【資料１－２】医療、福祉等関連分野におけるアルコール依存症の教育状況［PDF形式：450KB］",
+          "url": "https://www.mhlw.go.jp/content/10601000/001595818.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "【資料１－３】アルコール健康障害対策推進基本計画改定の方向性（１．教育の振興等）［PDF形式：451KB］",
+          "url": "https://www.mhlw.go.jp/content/10601000/001595819.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "【資料２－１】アルコール健康障害対策推進基本計画の改定案（素案）の作成方針について［PDF形式：199KB］",
+          "url": "https://www.mhlw.go.jp/content/10601000/001595820.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "【資料２－２】アルコール健康障害対策推進基本計画の改定案（素案）［PDF形式：643KB］",
+          "url": "https://www.mhlw.go.jp/content/10601000/001595821.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "【参考資料１】アルコール健康障害対策基本法条文 ［PDF形式：736KB］",
+          "url": "https://www.mhlw.go.jp/content/10601000/001595822.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "【参考資料２】アルコール健康障害対策関係者会議令［PDF形式：626KB］",
+          "url": "https://www.mhlw.go.jp/content/10601000/001595823.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "【参考資料３】第２期アルコール健康障害対策推進基本計画［PDF形式：932KB］",
+          "url": "https://www.mhlw.go.jp/content/10601000/001595824.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "【参考資料４】第６期_アルコール健康障害対策関係者会議 委員名簿［PDF形式：126KB］",
+          "url": "https://www.mhlw.go.jp/content/10601000/001595825.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "【参考資料５】第３期アルコール健康障害対策推進基本計画　重点課題　＜評価・検証のための関連指標＞［PDF形式：658KB］",
+          "url": "https://www.mhlw.go.jp/content/10601000/001595826.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "【参考資料６】第３期アルコール健康障害対策推進基本計画　重点課題　＜評価・検証のための関連指標＞参考資料［PDF形式：1.4MB］",
+          "url": "https://www.mhlw.go.jp/content/10601000/001595827.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "議事録",
+          "url": "https://www.mhlw.go.jp/stf/newpage_67545.html",
+          "type": "HTML"
+        },
+        {
+          "name": "開催案内",
+          "url": "https://www.mhlw.go.jp/stf/newpage_65628.html",
+          "type": "HTML"
+        }
+      ],
+      "manualLock": true,
+      "councilName": "アルコール健康障害対策関係者会議",
+      "ministry": "MHLW",
+      "category": "COUNCIL"
+    },
+    {
+      "id": "mhlw-alcohol_kenkou_shougai-20251222-037",
+      "councilId": "mhlw-alcohol_kenkou_shougai",
+      "title": "第37回 アルコール健康障害対策関係者会議",
+      "date": "2025/12/22",
+      "officialUrl": "https://www.mhlw.go.jp/stf/newpage_67687.html",
+      "materials": [
+        {
+          "name": "議事次第［PDF形式：36KB］",
+          "url": "https://www.mhlw.go.jp/content/10601000/001617493.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "【資料１】アルコール健康障害対策基本計画案［PDF形式：406KB］",
+          "url": "https://www.mhlw.go.jp/content/10601000/001617513.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "【参考資料１】＜評価・検証のための関連指標＞ 現状データ［PDF形式：175KB］",
+          "url": "https://www.mhlw.go.jp/content/10601000/001617508.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "議事録",
+          "url": "https://www.mhlw.go.jp/stf/newpage_71432.html",
+          "type": "HTML"
+        },
+        {
+          "name": "開催案内",
+          "url": "https://www.mhlw.go.jp/stf/newpage_67063.html",
+          "type": "HTML"
+        }
+      ],
+      "manualLock": true,
+      "councilName": "アルコール健康障害対策関係者会議",
+      "ministry": "MHLW",
+      "category": "COUNCIL"
     }
   ],
   "categories": {
@@ -293451,6 +296227,17 @@
       "rules": {
         "deep_crawl_enabled": true,
         "subpage_discovery_pattern": "href=[\"\\']([^\"\\']*(?:kaigi/other/siryo\\d+|video|giji\\d+)[^\"\\'#]*)[\"\\']",
+        "pdf_selector": "href=[\"\\']([^\"\\']+\\.(?:pdf|txt))[\"\\']",
+        "date_regex": "(?:令和|平成)\\d+年\\d+月\\d+日|\\d{4}年\\d+月\\d+日|\\d{4}[/-]\\d+[/-]\\d+"
+      }
+    },
+    "mhlw-alcohol_kenkou_shougai": {
+      "rule_id": "rule-mhlw-alcohol_kenkou_shougai",
+      "ministryQuirk": "厚生労働省 アルコール健康障害対策関係者会議 サブページ巡回",
+      "manualLock": true,
+      "rules": {
+        "deep_crawl_enabled": true,
+        "subpage_discovery_pattern": "href=[\"\\']([^\"\\']*(?:stf/(?:newpage_\\d+|shingi2/\\d+)[^\"\\'#]*|\\d+kai|kaisai)[^\"\\'#]*)[\"\\']",
         "pdf_selector": "href=[\"\\']([^\"\\']+\\.(?:pdf|txt))[\"\\']",
         "date_regex": "(?:令和|平成)\\d+年\\d+月\\d+日|\\d{4}年\\d+月\\d+日|\\d{4}[/-]\\d+[/-]\\d+"
       }
