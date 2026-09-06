@@ -2134,5 +2134,14 @@
     "officialUrl": "https://www.mhlw.go.jp/houdou_kouhou/gyouji_kaigi/index.html",
     "rejectedAt": "2026-08-30",
     "reason": "ユーザー指示: 会議体本体ではなく共通行事予定リンクのため却下"
+  },
+  {
+    "id": "mof-2716",
+    "name": "審議会・研究会（財務省）",
+    "ministry": "MOF",
+    "category": "COUNCIL",
+    "officialUrl": "https://www.mof.go.jp/about_mof/councils/index.htm",
+    "rejectedAt": "2026-09-06",
+    "reason": "会議体の本体ではなく親インデックス・ポータル（審議会・研究会）のため削除・却下"
   }
 ]
