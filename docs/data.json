@@ -8462,25 +8462,6 @@
       }
     },
     {
-      "id": "cao-227",
-      "name": "原子力委員会",
-      "ministry": "CAO",
-      "category": "COMMITTEE",
-      "officialUrl": "https://www.aec.go.jp/",
-      "pastYearCount": 3,
-      "status": "approved",
-      "crawlStatus": {
-        "lastAttempt": "2026-09-05 08:25:58",
-        "result": "success",
-        "extractionMethod": "rule",
-        "materialsCount": 43,
-        "datesCount": 5,
-        "failureReason": "",
-        "consecutiveFailures": 0,
-        "manualLockActive": false
-      }
-    },
-    {
       "id": "cao-228",
       "name": "公益認定等委員会",
       "ministry": "CAO",
@@ -25909,6 +25890,16 @@
       "pastYearCount": 1,
       "status": "approved",
       "manualLock": true
+    },
+    {
+      "id": "cao-genshiryoku_kisei_ikenkoukan",
+      "name": "原子力規制委員会との意見交換会",
+      "ministry": "CAO",
+      "category": "STUDY",
+      "officialUrl": "https://www.aec.go.jp/kaigi/other/",
+      "pastYearCount": 4,
+      "status": "approved",
+      "manualLock": true
     }
   ],
   "meetings": [
@@ -27161,18 +27152,6 @@
         }
       ],
       "manualLock": true
-    },
-    {
-      "id": "cao-227-20260908-034",
-      "councilId": "cao-227",
-      "title": "令和8年第34回原子力委員会定例会議の開催について",
-      "date": "2026/09/08",
-      "officialUrl": "https://www.aec.go.jp/kaigi/kaisai/yotei/index.html",
-      "category": "COUNCIL",
-      "ministry": "CAO",
-      "materials": [],
-      "isNewlyDiscovered": true,
-      "discoveredAt": "2026/09/05 08:25"
     },
     {
       "id": "anre-198-20260905-002",
@@ -34363,18 +34342,6 @@
       "officialUrl": "https://www.mhlw.go.jp/stf/newpage_69110.html",
       "category": "COUNCIL",
       "ministry": "MHLW",
-      "materials": [],
-      "isNewlyDiscovered": true,
-      "discoveredAt": "2026/09/05 08:25"
-    },
-    {
-      "id": "cao-227-20260905-s01",
-      "councilId": "cao-227",
-      "title": "定例会議・臨時会議・専門部会　開催案内｜原子力委員会",
-      "date": "2026/09/05",
-      "officialUrl": "https://www.aec.go.jp/kaigi/kaisai/",
-      "category": "COUNCIL",
-      "ministry": "CAO",
       "materials": [],
       "isNewlyDiscovered": true,
       "discoveredAt": "2026/09/05 08:25"
@@ -46417,18 +46384,6 @@
       "materials": [],
       "isNewlyDiscovered": true,
       "discoveredAt": "2026/09/05 08:18"
-    },
-    {
-      "id": "cao-227-20260724-003",
-      "councilId": "cao-227",
-      "title": "第3回 原子力委員会",
-      "date": "2026/07/24",
-      "officialUrl": "https://www.aec.go.jp/kaigi/kaisai/yotei2/",
-      "category": "COUNCIL",
-      "ministry": "CAO",
-      "materials": [],
-      "isNewlyDiscovered": true,
-      "discoveredAt": "2026/09/05 08:25"
     },
     {
       "id": "fsc-nouyaku_dai2-20260723-053",
@@ -289941,6 +289896,153 @@
           "url": "https://www.mof.go.jp/about_mof/councils/customs_disatisfaction_review/soukai/outline/b20250612.html"
         }
       ]
+    },
+    {
+      "id": "cao-genshiryoku_kisei_ikenkoukan-20251016-004",
+      "councilId": "cao-genshiryoku_kisei_ikenkoukan",
+      "title": "第4回 原子力委員会と原子力規制委員会との意見交換会",
+      "date": "2025/10/16",
+      "officialUrl": "https://www.aec.go.jp/kaigi/other/siryo04/",
+      "category": "STUDY",
+      "ministry": "CAO",
+      "councilName": "原子力規制委員会との意見交換会",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "（１）原子力規制委員会における近年の取組・トピックス（PDF形式：1.6MB）",
+          "url": "https://www.aec.go.jp/kaigi/other/siryo04/siryo1.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "（２）原子力委員会における近年の取組・トピックス（PDF形式：1.6MB）",
+          "url": "https://www.aec.go.jp/kaigi/other/siryo04/siryo2.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "（３）核不拡散・核セキュリティにおける米国DOE/NNSAとJAEAの協力（PDF形式：6.3MB）",
+          "url": "https://www.aec.go.jp/kaigi/other/siryo04/siryo3.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "（４）原子力学会における人材育成について（PDF形式：179KB）",
+          "url": "https://www.aec.go.jp/kaigi/other/siryo04/siryo4.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "議事録（PDF形式： 267KB）",
+          "url": "https://www.aec.go.jp/kaigi/other/siryo04/giji04.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "動画",
+          "url": "https://www.youtube.com/live/5zy5RIEjrqA?si=xNeue4V1DdtefKaj",
+          "type": "HTML"
+        }
+      ]
+    },
+    {
+      "id": "cao-genshiryoku_kisei_ikenkoukan-20221028-003",
+      "councilId": "cao-genshiryoku_kisei_ikenkoukan",
+      "title": "第3回 原子力委員会と原子力規制委員会との意見交換会",
+      "date": "2022/10/28",
+      "officialUrl": "https://www.aec.go.jp/kaigi/other/siryo03/",
+      "category": "STUDY",
+      "ministry": "CAO",
+      "councilName": "原子力規制委員会との意見交換会",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "「原子力利用に関する基本的考え方」これまでの議論の整理（概要）（PDF形式：420KB）",
+          "url": "https://www.aec.go.jp/kaigi/other/siryo03/siryo1.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "（２）「原子力利用に関する基本的考え方」これまでの議論の整理（PDF形式：448KB）",
+          "url": "https://www.aec.go.jp/kaigi/other/siryo03/siryo2.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "（３）医療用等ラジオアイソトープ製造・利用推進アクションプラン（概要）（PDF形式：357KB）",
+          "url": "https://www.aec.go.jp/kaigi/other/siryo03/siryo3.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "議事録（PDF形式： 257KB）",
+          "url": "https://www.aec.go.jp/kaigi/other/siryo03/giji03.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "動画",
+          "url": "https://wwwc.cao.go.jp/lib_007/video/iken_kisei_20221028.html",
+          "type": "HTML"
+        }
+      ]
+    },
+    {
+      "id": "cao-genshiryoku_kisei_ikenkoukan-20170627-002",
+      "councilId": "cao-genshiryoku_kisei_ikenkoukan",
+      "title": "第2回 原子力委員会と原子力規制委員会との意見交換会",
+      "date": "2017/06/27",
+      "officialUrl": "https://www.aec.go.jp/kaigi/other/siryo02/",
+      "category": "STUDY",
+      "ministry": "CAO",
+      "councilName": "原子力規制委員会との意見交換会",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "（１）原子力利用について（原子力委員会）（PDF形式：1.4MB）",
+          "url": "https://www.aec.go.jp/kaigi/other/siryo02/siryo1.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "（１－１）「原子力利用に関する基本的考え方（案）」（原子力委員会）（PDF形式：1.0MB）",
+          "url": "https://www.aec.go.jp/kaigi/other/siryo02/ssiryo1-1.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "（１－２）参考資料（原子力委員会）（PDF形式：33.5MB）",
+          "url": "https://www.aec.go.jp/kaigi/other/siryo02/ssiryo1-2.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "（２）原子炉主任技術者筆記試験等の実施結果について（報告）（原子力規制委員会）（PDF形式：113KB）",
+          "url": "https://www.aec.go.jp/kaigi/other/siryo02/ssiryo2.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "議事録（PDF形式： 371KB）",
+          "url": "https://www.aec.go.jp/kaigi/other/siryo02/giji02.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "動画",
+          "url": "https://wwwc.cao.go.jp/lib_007/video/iken_kisei_20170627.html",
+          "type": "HTML"
+        }
+      ]
+    },
+    {
+      "id": "cao-genshiryoku_kisei_ikenkoukan-20160720-001",
+      "councilId": "cao-genshiryoku_kisei_ikenkoukan",
+      "title": "第1回 原子力委員会と原子力規制委員会との意見交換会",
+      "date": "2016/07/20",
+      "officialUrl": "https://www.aec.go.jp/kaigi/other/",
+      "category": "STUDY",
+      "ministry": "CAO",
+      "councilName": "原子力規制委員会との意見交換会",
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "議事録（PDF形式： 320KB）",
+          "url": "https://www.aec.go.jp/kaigi/other/siryo01/giji01.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "動画",
+          "url": "https://wwwc.cao.go.jp/lib_007/video/iken_kisei_20160720.html",
+          "type": "HTML"
+        }
+      ]
     }
   ],
   "categories": {
@@ -293341,6 +293443,17 @@
       "date_regex": "令和\\s*(\\d+|元)年\\s*(\\d+)月\\s*(\\d+)日|(\\d{4})年(\\d{1,2})月(\\d{1,2})日",
       "pdf_selector": "a[href*='.pdf']",
       "deep_crawl_enabled": true
+    },
+    "cao-genshiryoku_kisei_ikenkoukan": {
+      "rule_id": "rule-cao-genshiryoku_kisei_ikenkoukan",
+      "ministryQuirk": "内閣府・原子力委員会 原子力規制委員会との意見交換会 サブページ巡回",
+      "manualLock": true,
+      "rules": {
+        "deep_crawl_enabled": true,
+        "subpage_discovery_pattern": "href=[\"\\']([^\"\\']*(?:kaigi/other/siryo\\d+|video|giji\\d+)[^\"\\'#]*)[\"\\']",
+        "pdf_selector": "href=[\"\\']([^\"\\']+\\.(?:pdf|txt))[\"\\']",
+        "date_regex": "(?:令和|平成)\\d+年\\d+月\\d+日|\\d{4}年\\d+月\\d+日|\\d{4}[/-]\\d+[/-]\\d+"
+      }
     }
   },
   "discoveryKeywords": {
