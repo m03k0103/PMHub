@@ -2143,5 +2143,15 @@
     "officialUrl": "https://www.mof.go.jp/about_mof/councils/index.htm",
     "rejectedAt": "2026-09-06",
     "reason": "会議体の本体ではなく親インデックス・ポータル（審議会・研究会）のため削除・却下"
+  },
+  {
+    "id": "mof-2718",
+    "name": "税制調査会　会議資料（財務省ポータル）",
+    "reason": "Redirect page to Cabinet Office cao-zei_cho"
+  },
+  {
+    "id": "mof-customs_appeal",
+    "name": "関税等ふん争審査会（404廃止）",
+    "reason": "Dead link 404 and duplicate of mof-customs_disatisfaction_review"
   }
 ]

@@ -176,7 +176,43 @@ def is_valid_test_url(u):
     return True
 
 def get_added_urls_from_git():
-    """git diff から新規追加・変更された URL を動的に抽出"""
+    """新規追加・変更された URL を動的に抽出 (既存URLの並び替え・移動による過剰テストを防止)"""
+    current_json_path = os.path.join(PROJECT_ROOT, "docs", "data.json")
+    if not os.path.exists(current_json_path):
+        return []
+
+    def extract_urls_from_text(text):
+        urls = set()
+        for u in re.findall(r"https?://[^\s\x22\x27,]+", text):
+            if is_valid_test_url(u):
+                urls.add(u)
+        return urls
+
+    # 1. JSON レベルの差分比較（HEAD / HEAD~1 との URL 差分抽出）
+    try:
+        with open(current_json_path, "r", encoding="utf-8") as f:
+            curr_text = f.read()
+        curr_urls = extract_urls_from_text(curr_text)
+
+        status_out = subprocess.check_output(
+            ["git", "status", "--porcelain", "docs/data.json"],
+            cwd=PROJECT_ROOT, stderr=subprocess.DEVNULL, encoding='utf-8', errors='replace'
+        ).strip()
+        base_rev = "HEAD" if status_out else "HEAD~1"
+
+        base_text = subprocess.check_output(
+            ["git", "show", f"{base_rev}:docs/data.json"],
+            cwd=PROJECT_ROOT, stderr=subprocess.DEVNULL, encoding='utf-8', errors='replace'
+        )
+        base_urls = extract_urls_from_text(base_text)
+
+        # 既存 URL は除外し、真に新出・変更された URL のみを抽出
+        diff_urls = curr_urls - base_urls
+        return sorted(diff_urls)
+    except Exception:
+        pass
+
+    # 2. フォールバック：git diff の追加行から抽出
     added_urls = set()
     diff_commands = [
         ["git", "diff", "HEAD", "--", "docs/data.json"],
@@ -195,20 +231,7 @@ def get_added_urls_from_git():
         except Exception:
             pass
 
-    # ワーキングツリーに未コミット差分がない場合（コミット直後等）のみ、直前コミット (HEAD~1) を検証
-    if not added_urls:
-        try:
-            output = subprocess.check_output(["git", "diff", "HEAD~1", "HEAD", "--", "docs/data.json"], cwd=PROJECT_ROOT, stderr=subprocess.DEVNULL, encoding='utf-8', errors='replace')
-            for line in output.splitlines():
-                if line.startswith("+") and not line.startswith("+++"):
-                    found = re.findall(r"https?://[^\s\x22\x27,]+", line)
-                    for u in found:
-                        if is_valid_test_url(u):
-                            added_urls.add(u)
-        except Exception:
-            pass
-            
-    return list(added_urls)
+    return sorted(added_urls)
 
 def check_link_health(explicit_urls=None, check_all=False):
     """2. 追加・変更された URL のみのリンク疎通確認"""
