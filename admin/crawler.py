@@ -280,8 +280,8 @@ def parse_materials_from_html(html, base_url, pdf_selector):
             clean_name = link_text if link_text else os.path.basename(href)
             abs_url = urllib.parse.urljoin(base_url, href)
             
-            # ポータルや一覧、一次ソースリンクを除外
-            if abs_url == base_url or any(k in clean_name for k in ['公式ポータル', '公式ページ', '公式情報ポータル', '審議会・検討会等一覧', '公式掲載資料・ページ']):
+            # ポータルや一覧、一次ソースリンク、内閣官房「その他情報」等を除外
+            if abs_url == base_url or any(k in clean_name for k in ['公式ポータル', '公式ページ', '公式情報ポータル', '審議会・検討会等一覧', '公式掲載資料・ページ']) or 'cas.go.jp/jp/siryou' in abs_url.lower():
                 continue
                 
             materials.append({
@@ -330,6 +330,8 @@ def _crawl_subpages(target_url, html, rule, quirk_note, pdf_pattern):
             if parsed_url.scheme not in ('http', 'https'):
                 continue
             if sub_url.lower().endswith('.pdf'):
+                continue
+            if 'cas.go.jp/jp/siryou' in sub_url.lower() or is_generic_index_url(sub_url):
                 continue
 
             sub_html = fetch_url(sub_url)
@@ -500,7 +502,7 @@ def discover_subpage_links(html, base_url):
         base_domain = urllib.parse.urlparse(base_url).netloc
         if parsed.netloc != base_domain:
             continue
-        if abs_url in seen or abs_url == base_url:
+        if abs_url in seen or abs_url == base_url or 'cas.go.jp/jp/siryou' in abs_url.lower() or is_generic_index_url(abs_url):
             continue
         if subpage_pattern.search(href):
             seen.add(abs_url)
@@ -681,8 +683,8 @@ def execute_rule_retrieval(target, html, rule_item, use_llm=False):
     return scraped_item
 
 
-def is_generic_index_url(url):
-    """報道発表インデックスやポータルトップ・開催状況一覧等の汎用インデックスURLかどうかを判定する"""
+def is_generic_index_url(url, title=""):
+    """報道発表インデックスやポータルトップ・開催状況一覧・「その他情報」等の汎用インデックスURLかどうかを判定する"""
     if not url:
         return True
     u_lower = url.lower()
@@ -700,11 +702,15 @@ def is_generic_index_url(url):
         r'space/comittee/about\.html',
         r'/kaisai\.html$',
         r'indexshingi\.html',
-        r'newpage_19921\.html'
+        r'newpage_19921\.html',
+        r'cas\.go\.jp/jp/siryou(?:/index\.html)?$',
+        r'cas\.go\.jp/jp/siryou/'
     ]
     for p in patterns:
         if re.search(p, u_lower):
             return True
+    if title and ("その他情報" in title):
+        return True
     return False
 
 def is_preliminary_notice_page(url, title=""):
@@ -760,6 +766,10 @@ def sync_new_meetings_from_crawl(data, target, scraped_item):
         sub_mats = sub.get("materials", [])
         sub_dates = sub.get("extractedDates", [])
 
+        # 汎用インデックスURLや内閣官房「その他情報」等は会議ページとして登録しない
+        if is_generic_index_url(sub_url, sub_title):
+            continue
+
         # 事前開催案内ページ（資料なしの事前告知）は会議ページとして登録しない
         if is_preliminary_notice_page(sub_url, sub_title) and not sub_mats:
             continue
@@ -798,7 +808,7 @@ def sync_new_meetings_from_crawl(data, target, scraped_item):
                 # 親URLまたは汎用報道URL、あるいは資料0件の場合で、今回具体的な個別資料ページ・資料が発見された場合
                 is_parent_or_generic = (curr_url == council_parent_url.rstrip("/") or is_generic_index_url(curr_url))
                 has_no_mats = len(curr_mats) == 0
-                has_new_valid_subpage = sub_url and not is_generic_index_url(sub_url)
+                has_new_valid_subpage = sub_url and not is_generic_index_url(sub_url, sub_title)
 
                 if (is_parent_or_generic or has_no_mats) and has_new_valid_subpage and clean_materials_list:
                     ex_m["officialUrl"] = sub.get("subpageUrl")
@@ -851,7 +861,7 @@ def sync_new_meetings_from_crawl(data, target, scraped_item):
 
         # 汎用報道URLや資料未掲載の場合は親の会議体URLを設定
         resolved_meet_url = sub.get("subpageUrl")
-        if not resolved_meet_url or is_generic_index_url(resolved_meet_url):
+        if not resolved_meet_url or is_generic_index_url(resolved_meet_url, sub_title):
             resolved_meet_url = council_parent_url
 
         new_meeting = {
