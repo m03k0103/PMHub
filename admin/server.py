@@ -10,7 +10,7 @@ from datetime import datetime
 from apply_report import apply_report
 from discover_councils import run_discovery
 from crawler import run_meeting_crawler
-from utils import setup_win32_utf8, save_data_json_with_backup
+from utils import setup_win32_utf8, save_data_json_with_backup, load_rejected_councils, save_rejected_councils, get_rejected_identifiers, DEFAULT_REJECTED_COUNCILS_PATH
 setup_win32_utf8()
 
 PORT = 8000
@@ -159,26 +159,13 @@ class CustomHandler(SimpleHTTPRequestHandler):
                 discovered = data.get("discoveredCouncils", [])
 
                 # 却下済み会議体リストのロードと除外
-                rej_file = os.path.join(os.path.dirname(__file__), "rejected_councils.json")
-                rej_ids = set()
-                rej_names = set()
-                rej_urls = set()
-                if os.path.exists(rej_file):
-                    try:
-                        with open(rej_file, "r", encoding="utf-8") as rf:
-                            rej_list = json.load(rf)
-                            for rc in rej_list:
-                                if rc.get("id"): rej_ids.add(rc.get("id"))
-                                if rc.get("name"): rej_names.add(rc.get("name").strip())
-                                if rc.get("officialUrl"): rej_urls.add(rc.get("officialUrl").rstrip("/"))
-                    except Exception:
-                        pass
+                rej_ids, rej_names, rej_urls = get_rejected_identifiers()
 
                 filtered = [
                     c for c in discovered
                     if c.get("id") not in rej_ids
                     and c.get("name", "").strip() not in rej_names
-                    and (not c.get("officialUrl") or c.get("officialUrl").rstrip("/") not in rej_urls)
+                    and (not c.get("officialUrl") or c.get("officialUrl").strip().rstrip("/") not in rej_urls)
                 ]
                 self.wfile.write(json.dumps({"councils": filtered}).encode('utf-8'))
             else:
@@ -197,12 +184,8 @@ class CustomHandler(SimpleHTTPRequestHandler):
             self.send_response(200)
             self.send_header('Content-Type', 'application/json; charset=utf-8')
             self.end_headers()
-            rej_file = os.path.join(os.path.dirname(__file__), "rejected_councils.json")
-            if os.path.exists(rej_file):
-                with open(rej_file, "r", encoding="utf-8") as f:
-                    self.wfile.write(f.read().encode('utf-8'))
-            else:
-                self.wfile.write(json.dumps([]).encode('utf-8'))
+            rejected_list = load_rejected_councils()
+            self.wfile.write(json.dumps(rejected_list).encode('utf-8'))
         elif path == "/api/get-crawler-config":
             self.send_response(200)
             self.send_header('Content-Type', 'application/json; charset=utf-8')
@@ -392,9 +375,7 @@ class CustomHandler(SimpleHTTPRequestHandler):
             post_data = self.rfile.read(content_length)
             try:
                 data = json.loads(post_data.decode('utf-8'))
-                rej_file = os.path.join(os.path.dirname(__file__), "rejected_councils.json")
-                with open(rej_file, "w", encoding="utf-8") as f:
-                    json.dump(data, f, ensure_ascii=False, indent=2)
+                save_rejected_councils(data)
                 self.send_response(200)
                 self.send_header('Content-Type', 'application/json; charset=utf-8')
                 self.end_headers()
@@ -417,11 +398,7 @@ class CustomHandler(SimpleHTTPRequestHandler):
                 if not target_id:
                     raise ValueError("Council ID is required")
 
-                rej_file = os.path.join(os.path.dirname(__file__), "rejected_councils.json")
-                rejected_list = []
-                if os.path.exists(rej_file):
-                    with open(rej_file, "r", encoding="utf-8") as rf:
-                        rejected_list = json.load(rf)
+                rejected_list = load_rejected_councils()
 
                 target_council = council_obj
                 if os.path.exists(DATA_JSON_FILE):
@@ -450,8 +427,7 @@ class CustomHandler(SimpleHTTPRequestHandler):
                         "reason": reason
                     }
                     rejected_list.append(rej_item)
-                    with open(rej_file, "w", encoding="utf-8") as wf:
-                        json.dump(rejected_list, wf, ensure_ascii=False, indent=2)
+                    save_rejected_councils(rejected_list)
 
                 self.send_response(200)
                 self.send_header('Content-Type', 'application/json; charset=utf-8')
@@ -472,18 +448,12 @@ class CustomHandler(SimpleHTTPRequestHandler):
                 if not target_id:
                     raise ValueError("Council ID is required")
 
-                rej_file = os.path.join(os.path.dirname(__file__), "rejected_councils.json")
-                rejected_list = []
+                rejected_list = load_rejected_councils()
                 target_rej = None
-                if os.path.exists(rej_file):
-                    with open(rej_file, "r", encoding="utf-8") as rf:
-                        rejected_list = json.load(rf)
-                    
-                    r_idx = next((i for i, c in enumerate(rejected_list) if c.get("id") == target_id), None)
-                    if r_idx is not None:
-                        target_rej = rejected_list.pop(r_idx)
-                        with open(rej_file, "w", encoding="utf-8") as wf:
-                            json.dump(rejected_list, wf, ensure_ascii=False, indent=2)
+                r_idx = next((i for i, c in enumerate(rejected_list) if c.get("id") == target_id), None)
+                if r_idx is not None:
+                    target_rej = rejected_list.pop(r_idx)
+                    save_rejected_councils(rejected_list)
 
                 if target_rej and os.path.exists(DATA_JSON_FILE):
                     with open(DATA_JSON_FILE, "r", encoding="utf-8") as df:

@@ -4,7 +4,7 @@ import sys
 import shutil
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from utils import setup_win32_utf8
+from utils import setup_win32_utf8, save_data_json_with_backup, load_rejected_councils, save_rejected_councils
 setup_win32_utf8()
 
 
@@ -106,13 +106,7 @@ def apply_report(json_path, data_json_path=None):
 
                     # rejected_councils.json に記録・保存
                     try:
-                        base_dir = os.path.dirname(os.path.abspath(__file__))
-                        rejected_file = os.path.join(base_dir, "rejected_councils.json")
-                        rejected_list = []
-                        if os.path.exists(rejected_file):
-                            with open(rejected_file, "r", encoding="utf-8") as rf:
-                                rejected_list = json.load(rf)
-
+                        rejected_list = load_rejected_councils()
                         # 重複追加の防止
                         if not any(rc.get("id") == target_id for rc in rejected_list):
                             rej_item = {
@@ -125,8 +119,7 @@ def apply_report(json_path, data_json_path=None):
                                 "reason": corr.get("reason") or "Admin rejected council"
                             }
                             rejected_list.append(rej_item)
-                            with open(rejected_file, "w", encoding="utf-8") as wf:
-                                json.dump(rejected_list, wf, ensure_ascii=False, indent=2)
+                            save_rejected_councils(rejected_list)
                             print(f"Saved rejected council {target_id} to rejected_councils.json")
                     except Exception as err:
                         print(f"Warning: Failed to update rejected_councils.json: {err}")
@@ -146,16 +139,8 @@ def apply_report(json_path, data_json_path=None):
                 else:
                     print(f"Warning: Council {c_id} already exists")
 
-    # C-4: 保存前にバックアップを作成（crawler.py と同様の運用ポリシー）
-    backup_path = data_json_path + ".bak"
-    try:
-        shutil.copy2(data_json_path, backup_path)
-    except Exception as e:
-        print(f"[WARN] Failed to create backup: {e}")
-
-    # Save back to data.json
-    with open(data_json_path, "w", encoding="utf-8") as f:
-        json.dump(data, f, ensure_ascii=False, indent=2)
+    # 保存前に admin/backups/ にタイムスタンプ付き世代バックアップを作成して安全に上書き保存
+    save_data_json_with_backup(data, data_json_path)
 
     print(f"\nReport applied. {applied_count} out of {len(corrections)} changes saved to data.json")
     return True
