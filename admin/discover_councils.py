@@ -16,7 +16,7 @@ import urllib.parse
 from datetime import datetime
 from bs4 import BeautifulSoup
 
-from utils import setup_win32_utf8, get_browser_headers, save_data_json_with_backup
+from utils import setup_win32_utf8, get_browser_headers, save_data_json_with_backup, decode_html_bytes, load_rejected_councils
 setup_win32_utf8()
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
@@ -112,20 +112,9 @@ def fetch_page_and_final_url(url):
     try:
         with urllib.request.urlopen(req, timeout=10) as res:
             final_url = res.geturl()  # リダイレクト後の最終正規URL
-            charset = res.headers.get_content_charset() or "utf-8"
+            content_type = res.headers.get("Content-Type", "")
             html_bytes = res.read()
-            html_text = ""
-            try:
-                html_text = html_bytes.decode(charset, errors="replace")
-            except Exception:
-                for enc in ["shift_jis", "cp932", "euc-jp"]:
-                    try:
-                        html_text = html_bytes.decode(enc)
-                        break
-                    except Exception:
-                        pass
-                if not html_text:
-                    html_text = html_bytes.decode("utf-8", errors="ignore")
+            html_text = decode_html_bytes(html_bytes, content_type)
             return html_text, final_url
     except Exception as e:
         print(f"   [HTTP ERROR] {url}: {e}")
@@ -219,32 +208,26 @@ def run_discovery(progress_callback=None):
     emit(f"登録済み省庁数: {len(ministries)} 組織, 既存会議体数: {len(existing_councils)} 件, カテゴリー定義数: {len(categories_def)} 種類\n")
 
     # 却下済み会議体データの読み込み（再検出・再登録をブロック）
-    rejected_file = os.path.join(BASE_DIR, "rejected_councils.json")
+    rejected_data = load_rejected_councils()
     rejected_ids = set()
     rejected_urls = set()
     rejected_clean_keys = set()
     rejected_names = set()
-    if os.path.exists(rejected_file):
-        try:
-            with open(rejected_file, "r", encoding="utf-8") as rf:
-                rejected_data = json.load(rf)
-                for rc in rejected_data:
-                    if rc.get("id"):
-                        rejected_ids.add(rc.get("id").strip())
-                    if rc.get("officialUrl"):
-                        rejected_urls.add(normalize_url(rc.get("officialUrl")))
-                        clean_k = get_url_clean_key(rc.get("officialUrl"))
-                        if clean_k:
-                            rejected_clean_keys.add(clean_k)
-                    if rc.get("name"):
-                        n_raw = rc.get("name").strip()
-                        rejected_names.add(n_raw)
-                        n_clean = clean_council_name(n_raw)
-                        if n_clean:
-                            rejected_names.add(n_clean)
-            emit(f"却下済み会議体除外リスト: {len(rejected_data)} 件をロードしました（巡回検出対象外として完全除外）")
-        except Exception as e:
-            print(f"[WARN] Failed to load rejected_councils.json: {e}")
+    for rc in rejected_data:
+        if rc.get("id"):
+            rejected_ids.add(rc.get("id").strip())
+        if rc.get("officialUrl"):
+            rejected_urls.add(normalize_url(rc.get("officialUrl")))
+            clean_k = get_url_clean_key(rc.get("officialUrl"))
+            if clean_k:
+                rejected_clean_keys.add(clean_k)
+        if rc.get("name"):
+            n_raw = rc.get("name").strip()
+            rejected_names.add(n_raw)
+            n_clean = clean_council_name(n_raw)
+            if n_clean:
+                rejected_names.add(n_clean)
+    emit(f"却下済み会議体除外リスト: {len(rejected_data)} 件をロードしました（巡回検出対象外として完全除外）")
 
     # 既存の会議体URLと名前のセット（重複判定用）
     existing_urls = {normalize_url(c.get("officialUrl", "")) for c in existing_councils if c.get("officialUrl")}

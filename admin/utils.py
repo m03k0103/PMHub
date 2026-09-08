@@ -10,6 +10,7 @@ import sys
 import os
 import io
 import json
+import re
 import shutil
 from datetime import datetime
 
@@ -18,6 +19,7 @@ BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 PROJECT_ROOT = os.path.dirname(BASE_DIR)
 DEFAULT_DATA_JSON_PATH = os.path.join(PROJECT_ROOT, "docs", "data.json")
 DEFAULT_BACKUP_DIR = os.path.join(BASE_DIR, "backups")
+DEFAULT_REJECTED_COUNCILS_PATH = os.path.join(BASE_DIR, "rejected_councils.json")
 
 
 def setup_win32_utf8():
@@ -88,3 +90,122 @@ def save_data_json_with_backup(data, target_file=DEFAULT_DATA_JSON_PATH, backup_
     except Exception as e:
         print(f"[ERROR] Failed to save data.json with backup: {e}", file=sys.stderr)
         return False
+
+
+def decode_html_bytes(content_bytes, content_type_header=""):
+    """
+    HTTPヘッダー、metaタグ、各種エンコーディング（UTF-8, CP932/Shift_JIS, EUC-JP）を
+    正確に自動判別してデコードし、文字化けを完全排除する。
+    """
+    if not content_bytes:
+        return ""
+    
+    encoding = None
+    # 1. Content-Type ヘッダーの charset 判定
+    if content_type_header:
+        m = re.search(r'charset=([\'"]?[\w\-]+[\'"]?)', content_type_header, re.I)
+        if m:
+            raw_enc = m.group(1).strip('\'"').lower()
+            if raw_enc in ('shift_jis', 'shift-jis', 'sjis', 'x-sjis'):
+                encoding = 'cp932'
+            elif raw_enc in ('euc-jp', 'eucjp'):
+                encoding = 'euc-jp'
+            elif raw_enc in ('utf-8', 'utf8'):
+                encoding = 'utf-8'
+
+    # 2. HTMLの先頭2048バイトから <meta charset="..."> または <meta http-equiv=... charset=...> を抽出
+    head_sample = content_bytes[:2048].decode('ascii', errors='ignore')
+    m_meta = re.search(r'<meta[^>]+charset=[\'"]?([\w\-]+)', head_sample, re.I)
+    if not m_meta:
+        m_meta = re.search(r'content=[\'"][^"\']*charset=([\w\-]+)', head_sample, re.I)
+        
+    if m_meta:
+        meta_enc = m_meta.group(1).strip('\'"').lower()
+        if meta_enc in ('shift_jis', 'shift-jis', 'sjis', 'x-sjis'):
+            encoding = 'cp932'
+        elif meta_enc in ('euc-jp', 'eucjp'):
+            encoding = 'euc-jp'
+        elif meta_enc in ('utf-8', 'utf8'):
+            encoding = 'utf-8'
+
+    # 3. 試行デコード（検出されたエンコーディング最優先 -> UTF-8 -> CP932 -> EUC-JP）
+    encodings_to_try = []
+    if encoding:
+        encodings_to_try.append(encoding)
+    encodings_to_try.extend(['utf-8', 'cp932', 'euc-jp'])
+    
+    # 重複除去
+    seen = set()
+    unique_encs = []
+    for e in encodings_to_try:
+        if e not in seen:
+            seen.add(e)
+            unique_encs.append(e)
+
+    for enc in unique_encs:
+        try:
+            decoded = content_bytes.decode(enc)
+            # 文字化け特有の不正バイトや置換文字の混入チェック
+            if '\ufffd' not in decoded:
+                return decoded
+        except (UnicodeDecodeError, LookupError):
+            continue
+
+    # 4. chardet による推測（インストールされている場合）
+    try:
+        import chardet
+        detected = chardet.detect(content_bytes[:4096])
+        if detected and detected.get('encoding'):
+            return content_bytes.decode(detected['encoding'], errors='replace')
+    except Exception:
+        pass
+
+    return content_bytes.decode('utf-8', errors='replace')
+
+
+def load_rejected_councils(rejected_file=DEFAULT_REJECTED_COUNCILS_PATH):
+    """
+    admin/rejected_councils.json を安全に読み込み、却下済み会議体のリストを返す。
+    ファイルが存在しないかエラーの場合は空リスト [] を返す。
+    """
+    if os.path.exists(rejected_file):
+        try:
+            with open(rejected_file, "r", encoding="utf-8") as f:
+                data = json.load(f)
+                return data if isinstance(data, list) else []
+        except Exception as e:
+            print(f"[WARN] Failed to load {rejected_file}: {e}", file=sys.stderr)
+    return []
+
+
+def save_rejected_councils(rejected_data, rejected_file=DEFAULT_REJECTED_COUNCILS_PATH):
+    """
+    admin/rejected_councils.json に却下済み会議体リストを整形保存する。
+    """
+    try:
+        os.makedirs(os.path.dirname(os.path.abspath(rejected_file)), exist_ok=True)
+        with open(rejected_file, "w", encoding="utf-8") as f:
+            json.dump(rejected_data, f, ensure_ascii=False, indent=2)
+        return True
+    except Exception as e:
+        print(f"[ERROR] Failed to save {rejected_file}: {e}", file=sys.stderr)
+        return False
+
+
+def get_rejected_identifiers(rejected_file=DEFAULT_REJECTED_COUNCILS_PATH):
+    """
+    却下済み会議体から (ids_set, names_set, urls_set) のタプルを取得する。
+    URLは末尾スラッシュを除去した正規化形式で保持する。
+    """
+    rej_list = load_rejected_councils(rejected_file)
+    rej_ids = set()
+    rej_names = set()
+    rej_urls = set()
+    for rc in rej_list:
+        if rc.get("id"):
+            rej_ids.add(rc.get("id").strip())
+        if rc.get("name"):
+            rej_names.add(rc.get("name").strip())
+        if rc.get("officialUrl"):
+            rej_urls.add(rc.get("officialUrl").strip().rstrip("/"))
+    return rej_ids, rej_names, rej_urls
