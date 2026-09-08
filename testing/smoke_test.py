@@ -18,6 +18,7 @@ import urllib.request
 import urllib.error
 import subprocess
 import argparse
+import shutil
 
 PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, os.path.join(PROJECT_ROOT, "admin"))
@@ -25,11 +26,26 @@ from utils import setup_win32_utf8, get_browser_headers
 setup_win32_utf8()
 
 
+def get_node_command():
+    """Node.js 実行バイナリのパスを安全かつ汎用的に解決する"""
+    cmd = shutil.which("node")
+    if cmd:
+        return cmd
+    candidates = [
+        r"C:\Program Files\nodejs\node.exe",
+        r"C:\Program Files (x86)\nodejs\node.exe",
+        r"D:\Programs\nodejs\node.exe",
+        os.path.expandvars(r"%LOCALAPPDATA%\Programs\node\node.exe")
+    ]
+    for c in candidates:
+        if os.path.exists(c):
+            return c
+    return "node"
+
 
 def check_js_syntax(code, file_path=""):
     """JS の文法エラー（カンマ欠落、不整合な文字、要素・プロパティ間カンマ欠落等）を精密検証"""
-    import shutil
-    node_cmd = shutil.which("node") or (r"D:\Programs\nodejs\node.exe" if os.path.exists(r"D:\Programs\nodejs\node.exe") else None)
+    node_cmd = get_node_command()
     if node_cmd:
         try:
             if file_path and os.path.isfile(file_path):
@@ -304,8 +320,7 @@ def check_js_unit_tests():
     print(" [テスト 3/8] JSユーティリティ単体テスト (app.test.js)")
     print("--------------------------------------------------")
     try:
-        import shutil
-        node_cmd = shutil.which("node") or (r"D:\Programs\nodejs\node.exe" if os.path.exists(r"D:\Programs\nodejs\node.exe") else "node")
+        node_cmd = get_node_command()
         test_script_path = os.path.join(PROJECT_ROOT, "testing", "app.test.js")
         result = subprocess.run([node_cmd, "--test", test_script_path], cwd=PROJECT_ROOT, capture_output=True, text=True, encoding='utf-8', errors='replace')
         if result.returncode == 0:
@@ -493,8 +508,7 @@ def check_js_runtime_crash():
     print("\n--------------------------------------------------")
     print(" [テスト 8/8] JavaScript 実行時クラッシュ・TDZ・描画検証")
     print("--------------------------------------------------")
-    import shutil
-    node_cmd = shutil.which("node") or (r"D:\Programs\nodejs\node.exe" if os.path.exists(r"D:\Programs\nodejs\node.exe") else "node")
+    node_cmd = get_node_command()
     test_script = os.path.join(PROJECT_ROOT, "testing", "test_js_runtime.js")
     if not os.path.exists(test_script):
         print("  [SKIP] test_js_runtime.js が見つかりません")
