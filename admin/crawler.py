@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-政策会議ウォッチ (PM-HUB) - 2回目用情報取得Engine (2nd-Time Information Retrieval Engine)
-1回目用情報確認Agent (agent_initial_verifier.py) が生成した抽出ルール (scraping_rules.json) を読み込み、
-高速・高精度な2段階階層クロールおよび資料データ取得を実行する専用Engine
+政策会議ウォッチ (PM-HUB) - 審議会・会議体情報取得Engine (Information Retrieval Engine)
+docs/data.json の会議体マスター (councils) およびスクレイピングルール (scrapingRules) を読み込み、
+高速・高精度な階層クロールおよび資料データ取得を実行する専用Engine
 """
 
 import sys
@@ -16,20 +16,34 @@ import re
 import time
 from datetime import datetime, timedelta
 from bs4 import BeautifulSoup
-import google.generativeai as genai
 from utils import setup_win32_utf8, get_browser_headers, save_data_json_with_backup, decode_html_bytes, get_rejected_identifiers
 setup_win32_utf8()
 
-API_KEY = os.environ.get("GEMINI_API_KEY")
-if API_KEY:
-    genai.configure(api_key=API_KEY)
+# LLM (Gemini API) の遅延初期化キャッシュ
+_gemini_model = None
+
+def get_gemini_model():
+    """
+    LLMフォールバックが必要な場合にのみ初期化する（遅延ロード）。
+    通常運用（Heuristicモード）時の起動時間を短縮し、依存警告を抑制する。
+    """
+    global _gemini_model
+    if _gemini_model is not None:
+        return _gemini_model
+    api_key = os.environ.get("GEMINI_API_KEY")
+    if not api_key:
+        return None
     try:
-        model = genai.GenerativeModel('gemini-3.6-flash')
+        import warnings
+        with warnings.catch_warnings():
+            warnings.simplefilter("ignore", category=FutureWarning)
+            import google.generativeai as genai
+        genai.configure(api_key=api_key)
+        _gemini_model = genai.GenerativeModel('gemini-3.8-flash')
+        return _gemini_model
     except Exception as e:
-        print(f"Failed to initialize Gemini model: {e}")
-        model = None
-else:
-    model = None
+        print(f"[WARN] Failed to initialize Gemini model (gemini-3.8-flash): {e}")
+        return None
 
 
 DATA_JSON_FILE = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "docs", "data.json"))
@@ -534,6 +548,7 @@ def discover_subpage_links(html, base_url):
 def extract_via_llm_single(url, html, target_name):
     """単一ページに対してLLM抽出を実行する"""
     global LLM_QUOTA_BLOCKED
+    model = get_gemini_model()
     if not model or LLM_QUOTA_BLOCKED:
         return [], []
         
@@ -587,6 +602,7 @@ URL: {url}
 def extract_via_llm(target_url, html, target_name):
     """LLM抽出（トップページ + サブページ巡回）"""
     global LLM_QUOTA_BLOCKED
+    model = get_gemini_model()
     if not model or LLM_QUOTA_BLOCKED:
         return [], []
     
@@ -637,14 +653,12 @@ def execute_rule_retrieval(target, html, rule_item, use_llm=False):
     pdf_pattern = rule.get("pdf_selector", r'href=["\']([^"\']+\.pdf)["\']')
     top_materials = parse_materials_from_html(html, target["url"], pdf_pattern)
     
-    deep_enabled = rule.get("deep_crawl_enabled", True)
+    # ディープクロールは常に実行（サブページを深掘りして配付資料を収集）
     all_extracted_dates = []
-    
-    if deep_enabled:
-        new_meetings, new_materials, new_dates = _crawl_subpages(target["url"], html, rule, quirk_note, pdf_pattern)
-        subpage_meetings.extend(new_meetings)
-        top_materials.extend(new_materials)
-        all_extracted_dates.extend(new_dates)
+    new_meetings, new_materials, new_dates = _crawl_subpages(target["url"], html, rule, quirk_note, pdf_pattern)
+    subpage_meetings.extend(new_meetings)
+    top_materials.extend(new_materials)
+    all_extracted_dates.extend(new_dates)
 
     seen_keys = set()
     for m in top_materials:
@@ -662,8 +676,8 @@ def execute_rule_retrieval(target, html, rule_item, use_llm=False):
         extraction_method = "rule"
     else:
         # Stage 2: ルールで0件の場合のみ LLM (Gemini API) フォールバックを試行
-        if use_llm and not LLM_QUOTA_BLOCKED and model:
-            print(f"   [Stage 2 Fallback] ルール未検出 → LLM Extraction (Gemini API) を試行...")
+        if use_llm and not LLM_QUOTA_BLOCKED and get_gemini_model():
+            print(f"   [Stage 2 Fallback] ルール未検出 → LLM Extraction (Gemini API: gemini-3.8-flash) を試行...")
             materials, dates = extract_via_llm(target["url"], html, target["name"])
             if materials or dates:
                 unique_materials = materials
