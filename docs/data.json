@@ -14244,12 +14244,12 @@
       }
     },
     {
-      "id": "mhlw-750",
-      "name": "医療保険部会　高額療養費制度の在り方に関する専門委員会",
+      "id": "mhlw-kougaku_ryouyouhi",
+      "name": "医療保険部会 高額療養費制度の在り方に関する専門委員会",
       "ministry": "MHLW",
       "category": "SECTION",
       "officialUrl": "https://www.mhlw.go.jp/stf/shingi/other-hoken_474087_00004.html",
-      "pastYearCount": 2,
+      "pastYearCount": 7,
       "status": "approved",
       "crawlStatus": {
         "lastAttempt": "2026-09-05 08:25:24",
@@ -14260,7 +14260,8 @@
         "failureReason": "",
         "consecutiveFailures": 0,
         "manualLockActive": false
-      }
+      },
+      "manualLock": true
     },
     {
       "id": "mhlw-751",
@@ -26941,51 +26942,6 @@
           "url": "https://www.mhlw.go.jp/content/12404000/001681193.pdf"
         }
       ],
-      "isNewlyDiscovered": true,
-      "discoveredAt": "2026/09/05 08:25",
-      "manualLock": true
-    },
-    {
-      "id": "mhlw-750-20990101-s04",
-      "councilId": "mhlw-750",
-      "title": "「高額療養費制度の在り方に関する専門委員会」「高額療養費制度の見直しの基本的な考え方」｜厚生労働省",
-      "date": "2099/01/01",
-      "officialUrl": "https://www.mhlw.go.jp/stf/newpage_67332.html",
-      "category": "COUNCIL",
-      "ministry": "MHLW",
-      "materials": [
-        {
-          "name": "高額療養費制度の見直しの基本的な考え方［PDF形式：164KB］",
-          "url": "https://www.mhlw.go.jp/content/12401000/001613051.pdf"
-        }
-      ],
-      "isNewlyDiscovered": true,
-      "discoveredAt": "2026/09/05 08:25",
-      "isDateUnconfirmed": true,
-      "manualLock": true
-    },
-    {
-      "id": "mhlw-750-20260903-s02",
-      "councilId": "mhlw-750",
-      "title": "社会保障審議会（医療保険部会）｜厚生労働省",
-      "date": "2026/09/03",
-      "officialUrl": "https://www.mhlw.go.jp/stf/newpage_28708.html",
-      "category": "COUNCIL",
-      "ministry": "MHLW",
-      "materials": [],
-      "isNewlyDiscovered": true,
-      "discoveredAt": "2026/09/05 08:25",
-      "manualLock": true
-    },
-    {
-      "id": "mhlw-750-20251225-009",
-      "councilId": "mhlw-750",
-      "title": "第9回 医療保険部会　高額療養費制度の在り方に関する専門委員会",
-      "date": "2025/12/25",
-      "officialUrl": "https://www.mhlw.go.jp/stf/newpage_69932.html",
-      "category": "COUNCIL",
-      "ministry": "MHLW",
-      "materials": [],
       "isNewlyDiscovered": true,
       "discoveredAt": "2026/09/05 08:25",
       "manualLock": true
@@ -286420,6 +286376,354 @@
         }
       ],
       "manualLock": true
+    },
+    {
+      "id": "mhlw-kougaku_ryouyouhi-20251225-009",
+      "councilId": "mhlw-kougaku_ryouyouhi",
+      "title": "第9回 医療保険部会 高額療養費制度の在り方に関する専門委員会",
+      "date": "2025/12/25",
+      "officialUrl": "https://www.mhlw.go.jp/stf/newpage_67991.html",
+      "materials": [
+        {
+          "name": "議事次第［PDF形式：50KB］",
+          "url": "https://www.mhlw.go.jp/content/12401000/001621871.pdf"
+        },
+        {
+          "name": "委員名簿［PDF形式：208KB］",
+          "url": "https://www.mhlw.go.jp/content/12401000/001621872.pdf"
+        },
+        {
+          "name": "【資料１－１】議論の整理（案）［PDF形式：458KB］",
+          "url": "https://www.mhlw.go.jp/content/12401000/001621873.pdf"
+        },
+        {
+          "name": "【資料１－２】高額療養費制度の見直しについて［PDF形式：1.3MB］",
+          "url": "https://www.mhlw.go.jp/content/12401000/001621874.pdf"
+        },
+        {
+          "name": "【資料１－３】OTC類似薬を含む薬剤自己負担の見直しの在り方について［PDF形式：510KB］",
+          "url": "https://www.mhlw.go.jp/content/12401000/001621875.pdf"
+        },
+        {
+          "name": "【参考資料１】参考資料［PDF形式：1.5MB］",
+          "url": "https://www.mhlw.go.jp/content/12401000/001621876.pdf"
+        },
+        {
+          "name": "【参考資料２】高額療養費について（参考資料）［PDF形式：3.9MB］",
+          "url": "https://www.mhlw.go.jp/content/12401000/001621877.pdf"
+        },
+        {
+          "name": "【参考資料３】特別料金の対象となる医薬品の成分一覧（案）［PDF形式：225KB］",
+          "url": "https://www.mhlw.go.jp/content/12401000/001621878.pdf"
+        },
+        {
+          "name": "第209回社会保障審議会医療保険部会 第9回高額療養費制度の在り方に関する専門委員会合同開催資料（全体版）［PDF形式：7.7MB］",
+          "url": "https://www.mhlw.go.jp/content/12401000/001621879.pdf"
+        },
+        {
+          "name": "第9回 議事録",
+          "url": "https://www.mhlw.go.jp/stf/newpage_69932.html"
+        }
+      ],
+      "manualLock": true
+    },
+    {
+      "id": "mhlw-kougaku_ryouyouhi-20251216-s01",
+      "councilId": "mhlw-kougaku_ryouyouhi",
+      "title": "医療保険部会 高額療養費制度の在り方に関する専門委員会（高額療養費制度の見直しの基本的な考え方）",
+      "date": "2025/12/16",
+      "officialUrl": "https://www.mhlw.go.jp/stf/newpage_67332.html",
+      "materials": [
+        {
+          "name": "高額療養費制度の見直しの基本的な考え方［PDF形式：164KB］",
+          "url": "https://www.mhlw.go.jp/content/12401000/001613051.pdf"
+        }
+      ],
+      "manualLock": true
+    },
+    {
+      "id": "mhlw-kougaku_ryouyouhi-20251215-008",
+      "councilId": "mhlw-kougaku_ryouyouhi",
+      "title": "第8回 医療保険部会 高額療養費制度の在り方に関する専門委員会",
+      "date": "2025/12/15",
+      "officialUrl": "https://www.mhlw.go.jp/stf/newpage_67188.html",
+      "materials": [
+        {
+          "name": "議事次第［PDF形式：47KB］",
+          "url": "https://www.mhlw.go.jp/content/12401000/001611467.pdf"
+        },
+        {
+          "name": "委員名簿［PDF形式：98KB］",
+          "url": "https://www.mhlw.go.jp/content/12401000/001611468.pdf"
+        },
+        {
+          "name": "【資料１】高額療養費制度の見直しの基本的な考え方（案）［PDF形式：179KB］",
+          "url": "https://www.mhlw.go.jp/content/12401000/001611471.pdf"
+        },
+        {
+          "name": "【資料２】高額療養費制度について［PDF形式：580KB］",
+          "url": "https://www.mhlw.go.jp/content/12401000/001612339.pdf"
+        },
+        {
+          "name": "【資料３】外来特例について（追加資料）［PDF形式：976KB］",
+          "url": "https://www.mhlw.go.jp/content/12401000/001621905.pdf"
+        },
+        {
+          "name": "【参考資料１】高額療養費制度について（参考資料）［PDF形式：3.2MB］",
+          "url": "https://www.mhlw.go.jp/content/12401000/001617572.pdf"
+        },
+        {
+          "name": "第8回 議事録",
+          "url": "https://www.mhlw.go.jp/stf/newpage_67882.html"
+        }
+      ],
+      "manualLock": true
+    },
+    {
+      "id": "mhlw-kougaku_ryouyouhi-20251208-007",
+      "councilId": "mhlw-kougaku_ryouyouhi",
+      "title": "第7回 医療保険部会 高額療養費制度の在り方に関する専門委員会",
+      "date": "2025/12/08",
+      "officialUrl": "https://www.mhlw.go.jp/stf/newpage_66835.html",
+      "materials": [
+        {
+          "name": "議事次第［PDF形式：50KB］",
+          "url": "https://www.mhlw.go.jp/content/12401000/001606355.pdf"
+        },
+        {
+          "name": "委員名簿［PDF形式：98KB］",
+          "url": "https://www.mhlw.go.jp/content/12401000/001606356.pdf"
+        },
+        {
+          "name": "【資料１】医療保険部会における議論の状況について［PDF形式：297KB］",
+          "url": "https://www.mhlw.go.jp/content/12401000/001606357.pdf"
+        },
+        {
+          "name": "【資料２】高額療養費制度の見直しの基本的な考え方（案）［PDF形式：176KB］",
+          "url": "https://www.mhlw.go.jp/content/12401000/001606358.pdf"
+        },
+        {
+          "name": "【委員提出資料１】菊池委員提出資料［PDF形式：496KB］",
+          "url": "https://www.mhlw.go.jp/content/12401000/001606359.pdf"
+        },
+        {
+          "name": "【参考資料１】高額療養費制度について（参考資料）［PDF形式：3.2MB］",
+          "url": "https://www.mhlw.go.jp/content/12401000/001612352.pdf"
+        },
+        {
+          "name": "第7回 議事録",
+          "url": "https://www.mhlw.go.jp/stf/newpage_67320.html"
+        }
+      ],
+      "manualLock": true
+    },
+    {
+      "id": "mhlw-kougaku_ryouyouhi-20251121-006",
+      "councilId": "mhlw-kougaku_ryouyouhi",
+      "title": "第6回 医療保険部会 高額療養費制度の在り方に関する専門委員会",
+      "date": "2025/11/21",
+      "officialUrl": "https://www.mhlw.go.jp/stf/newpage_66209.html",
+      "materials": [
+        {
+          "name": "議事次第［PDF形式：22KB］",
+          "url": "https://www.mhlw.go.jp/content/12401000/001598634.pdf"
+        },
+        {
+          "name": "委員名簿［PDF形式：98KB］",
+          "url": "https://www.mhlw.go.jp/content/12401000/001598635.pdf"
+        },
+        {
+          "name": "【資料１】高額療養費制度について［PDF形式：1.9MB］",
+          "url": "https://www.mhlw.go.jp/content/12401000/001603467.pdf"
+        },
+        {
+          "name": "【委員提出資料１】天野委員提出資料［PDF形式：1.2MB］",
+          "url": "https://www.mhlw.go.jp/content/12401000/001598637.pdf"
+        },
+        {
+          "name": "【委員提出資料２】大黒委員提出資料［PDF形式：2.1MB］",
+          "url": "https://www.mhlw.go.jp/content/12401000/001598638.pdf"
+        },
+        {
+          "name": "第6回 議事録",
+          "url": "https://www.mhlw.go.jp/stf/newpage_67101.html"
+        }
+      ],
+      "manualLock": true
+    },
+    {
+      "id": "mhlw-kougaku_ryouyouhi-20251022-005",
+      "councilId": "mhlw-kougaku_ryouyouhi",
+      "title": "第5回 医療保険部会 高額療養費制度の在り方に関する専門委員会",
+      "date": "2025/10/22",
+      "officialUrl": "https://www.mhlw.go.jp/stf/newpage_65037.html",
+      "materials": [
+        {
+          "name": "議事次第［PDF形式：41KB］",
+          "url": "https://www.mhlw.go.jp/content/12401000/001583519.pdf"
+        },
+        {
+          "name": "委員名簿［PDF形式：97KB］",
+          "url": "https://www.mhlw.go.jp/content/12401000/001583516.pdf"
+        },
+        {
+          "name": "【資料１】高額療養費制度について［PDF形式：21.6MB］",
+          "url": "https://www.mhlw.go.jp/content/12401000/001586272.pdf"
+        },
+        {
+          "name": "【委員提出資料】大黒委員提出資料［PDF形式：1.2MB］",
+          "url": "https://www.mhlw.go.jp/content/12401000/001583520.pdf"
+        },
+        {
+          "name": "第5回 議事録",
+          "url": "https://www.mhlw.go.jp/stf/newpage_67100.html"
+        }
+      ],
+      "manualLock": true
+    },
+    {
+      "id": "mhlw-kougaku_ryouyouhi-20250916-004",
+      "councilId": "mhlw-kougaku_ryouyouhi",
+      "title": "第4回 医療保険部会 高額療養費制度の在り方に関する専門委員会",
+      "date": "2025/09/16",
+      "officialUrl": "https://www.mhlw.go.jp/stf/newpage_63522.html",
+      "materials": [
+        {
+          "name": "議事次第［PDF形式：41KB］",
+          "url": "https://www.mhlw.go.jp/content/12401000/001562874.pdf"
+        },
+        {
+          "name": "委員名簿［PDF形式：97KB］",
+          "url": "https://www.mhlw.go.jp/content/12401000/001562862.pdf"
+        },
+        {
+          "name": "資料１ 高額療養費制度について［PDF形式：2.2MB］",
+          "url": "https://www.mhlw.go.jp/content/12401000/001562875.pdf"
+        },
+        {
+          "name": "参考資料１ 第１回高額療養費制度の在り方に関する専門委員会 資料２［PDF形式：2.4MB］",
+          "url": "https://www.mhlw.go.jp/content/12401000/001562876.pdf"
+        },
+        {
+          "name": "第4回 議事録",
+          "url": "https://www.mhlw.go.jp/stf/newpage_66610.html"
+        }
+      ],
+      "manualLock": true
+    },
+    {
+      "id": "mhlw-kougaku_ryouyouhi-20250828-003",
+      "councilId": "mhlw-kougaku_ryouyouhi",
+      "title": "第3回 医療保険部会 高額療養費制度の在り方に関する専門委員会",
+      "date": "2025/08/28",
+      "officialUrl": "https://www.mhlw.go.jp/stf/newpage_62476.html",
+      "materials": [
+        {
+          "name": "議事次第［PDF形式：51KB］",
+          "url": "https://www.mhlw.go.jp/content/12401000/001549601.pdf"
+        },
+        {
+          "name": "委員名簿［PDF形式：97KB］",
+          "url": "https://www.mhlw.go.jp/content/12401000/001549581.pdf"
+        },
+        {
+          "name": "【参考人提出資料１】岡参考人提出資料［PDF形式：378KB］",
+          "url": "https://www.mhlw.go.jp/content/12401000/001549602.pdf"
+        },
+        {
+          "name": "【参考人提出資料２】日原参考人提出資料［PDF形式：2.4MB］",
+          "url": "https://www.mhlw.go.jp/content/12401000/001549603.pdf"
+        },
+        {
+          "name": "【参考人提出資料３】康永参考人提出資料［PDF形式：1.1MB］",
+          "url": "https://www.mhlw.go.jp/content/12401000/001549604.pdf"
+        },
+        {
+          "name": "【参考人提出資料４】後藤参考人提出資料［PDF形式：2.3MB］",
+          "url": "https://www.mhlw.go.jp/content/12401000/001549605.pdf"
+        },
+        {
+          "name": "第3回 議事録",
+          "url": "https://www.mhlw.go.jp/stf/newpage_63803.html"
+        }
+      ],
+      "manualLock": true
+    },
+    {
+      "id": "mhlw-kougaku_ryouyouhi-20250630-002",
+      "councilId": "mhlw-kougaku_ryouyouhi",
+      "title": "第2回 医療保険部会 高額療養費制度の在り方に関する専門委員会",
+      "date": "2025/06/30",
+      "officialUrl": "https://www.mhlw.go.jp/stf/newpage_59240.html",
+      "materials": [
+        {
+          "name": "議事次第［PDF形式：48KB］",
+          "url": "https://www.mhlw.go.jp/content/12401000/001510788.pdf"
+        },
+        {
+          "name": "委員名簿［PDF形式：97KB］",
+          "url": "https://www.mhlw.go.jp/content/12401000/001510833.pdf"
+        },
+        {
+          "name": "【参考人提出資料１】河田参考人提出資料［PDF形式：1.8MB］",
+          "url": "https://www.mhlw.go.jp/content/12401000/001510790.pdf"
+        },
+        {
+          "name": "【参考人提出資料２】武川参考人提出資料［PDF形式：3.8MB］",
+          "url": "https://www.mhlw.go.jp/content/12401000/001510942.pdf"
+        },
+        {
+          "name": "【参考人提出資料３】橋本参考人提出資料［PDF形式：4.3MB］",
+          "url": "https://www.mhlw.go.jp/content/12401000/001510792.pdf"
+        },
+        {
+          "name": "【参考人提出資料４】山口参考人提出資料［PDF形式：254KB］",
+          "url": "https://www.mhlw.go.jp/content/12401000/001510794.pdf"
+        },
+        {
+          "name": "第2回 議事録",
+          "url": "https://www.mhlw.go.jp/stf/newpage_60070.html"
+        }
+      ],
+      "manualLock": true
+    },
+    {
+      "id": "mhlw-kougaku_ryouyouhi-20250526-001",
+      "councilId": "mhlw-kougaku_ryouyouhi",
+      "title": "第1回 医療保険部会 高額療養費制度の在り方に関する専門委員会",
+      "date": "2025/05/26",
+      "officialUrl": "https://www.mhlw.go.jp/stf/newpage_58126.html",
+      "materials": [
+        {
+          "name": "議事次第［PDF形式：26KB］",
+          "url": "https://www.mhlw.go.jp/content/12401000/001492844.pdf"
+        },
+        {
+          "name": "座席表［PDF形式：28KB］",
+          "url": "https://www.mhlw.go.jp/content/12401000/001492845.pdf"
+        },
+        {
+          "name": "【資料１-１】高額療養費制度の在り方に関する専門委員会 設置要綱［PDF形式：152KB］",
+          "url": "https://www.mhlw.go.jp/content/12401000/001492846.pdf"
+        },
+        {
+          "name": "【資料１-２】社会保障審議会運営規則［PDF形式：84KB］",
+          "url": "https://www.mhlw.go.jp/content/12401000/001492847.pdf"
+        },
+        {
+          "name": "【資料２】高額療養費制度について［PDF形式：1.9MB］",
+          "url": "https://www.mhlw.go.jp/content/12401000/001492935.pdf"
+        },
+        {
+          "name": "【委員提出資料】天野委員提出資料［PDF形式：14.7MB］",
+          "url": "https://www.mhlw.go.jp/content/12401000/001492849.pdf"
+        },
+        {
+          "name": "第1回 議事録",
+          "url": "https://www.mhlw.go.jp/stf/newpage_58557.html"
+        }
+      ],
+      "manualLock": true
     }
   ],
   "categories": {
@@ -289727,6 +290031,13 @@
     "mhlw-anma_massage_ryouyouhi": {
       "officialUrl": "https://www.mhlw.go.jp/stf/shingi/shingi-hosho_126708.html",
       "subpage_discovery_pattern": "https://www.mhlw.go.jp/stf/(shingi2/)?(newpage_\\d+|\\d{10}_\\d+)\\.html",
+      "pdf_selector": "a[href*=\"/content/\"], a[href$=\".pdf\"]",
+      "date_regex": "(\\d{4})年(\\d{1,2})月(\\d{1,2})日|(令和|平成)(\\d+|元)年(\\d{1,2})月(\\d{1,2})日",
+      "deep_crawl_enabled": true
+    },
+    "mhlw-kougaku_ryouyouhi": {
+      "officialUrl": "https://www.mhlw.go.jp/stf/shingi/other-hoken_474087_00004.html",
+      "subpage_discovery_pattern": "https://www.mhlw.go.jp/stf/newpage_\\d+\\.html",
       "pdf_selector": "a[href*=\"/content/\"], a[href$=\".pdf\"]",
       "date_regex": "(\\d{4})年(\\d{1,2})月(\\d{1,2})日|(令和|平成)(\\d+|元)年(\\d{1,2})月(\\d{1,2})日",
       "deep_crawl_enabled": true
