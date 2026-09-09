@@ -739,12 +739,17 @@ def is_generic_index_url(url, title=""):
         r'indexshingi\.html',
         r'newpage_19921\.html',
         r'cas\.go\.jp/jp/siryou(?:/index\.html)?$',
-        r'cas\.go\.jp/jp/siryou/'
+        r'cas\.go\.jp/jp/siryou/',
+        r'cyber/what-we-do/csmeeting\.html',
+        r'/int/kaisai/kako\.html',
+        r'study/dai3sya/index\.html',
+        r'policymeeting/(?:index\.html)?$',
+        r'gijiroku/zeicho/\d{4}/(?:index\.html)?$'
     ]
     for p in patterns:
         if re.search(p, u_lower):
             return True
-    if title and ("その他情報" in title or "覚書等" in title or "覚書" in title):
+    if title and any(k in title for k in ["その他情報", "覚書等", "覚書", "有識者会議｜警察庁", "過去の国際会議", "研究会等一覧へのリンク"]):
         return True
     return False
 
@@ -809,6 +814,35 @@ def sync_new_meetings_from_crawl(data, target, scraped_item):
         # 事前開催案内ページ（資料なしの事前告知）は会議ページとして登録しない
         if is_preliminary_notice_page(sub_url, sub_title) and not sub_mats:
             continue
+
+        # 他省庁URLの誤混入ガード（例: MHLW会議体にMETIのURLが混入するのを防止）
+        ministry_code = (ministry or "").upper()
+        if ministry_code:
+            parsed_sub = urllib.parse.urlparse(sub_url)
+            sub_host = parsed_sub.netloc.lower()
+            if "example.com" not in sub_host and "localhost" not in sub_host:
+                MINISTRY_DOMAINS = {
+                    "MHLW": ["mhlw.go.jp"],
+                    "METI": ["meti.go.jp"],
+                    "MAFF": ["maff.go.jp"],
+                    "MOJ": ["moj.go.jp"],
+                    "CAO": ["cao.go.jp", "scj.go.jp"],
+                    "CAS": ["cas.go.jp"],
+                    "NPA": ["npa.go.jp"],
+                    "FSA": ["fsa.go.jp"],
+                    "MIC": ["soumu.go.jp"],
+                    "MOF": ["mof.go.jp"],
+                    "MEXT": ["mext.go.jp"],
+                    "MLIT": ["mlit.go.jp"],
+                    "ENV": ["env.go.jp"],
+                    "MOD": ["mod.go.jp"],
+                    "DIGITAL": ["digital.go.jp"],
+                    "CFA": ["cfa.go.jp"]
+                }
+                # 他省庁の公式ドメインが含まれている場合は明らかなクロス省庁混入としてスキップ
+                other_ministry_domains = [d for m, dlist in MINISTRY_DOMAINS.items() if m != ministry_code for d in dlist]
+                if any(other_d in sub_host for other_d in other_ministry_domains):
+                    continue
 
         # 開催回番号の抽出
         sess_nums = extract_session_numbers(sub_title + " " + sub_url)
