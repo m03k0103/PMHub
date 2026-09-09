@@ -14282,12 +14282,12 @@
       }
     },
     {
-      "id": "mhlw-752",
+      "id": "mhlw-anma_massage_ryouyouhi",
       "name": "医療保険部会 あん摩マッサージ指圧、はり・きゅう療養費検討専門委員会",
       "ministry": "MHLW",
       "category": "SECTION",
       "officialUrl": "https://www.mhlw.go.jp/stf/shingi/shingi-hosho_126708.html",
-      "pastYearCount": 3,
+      "pastYearCount": 4,
       "status": "approved",
       "crawlStatus": {
         "lastAttempt": "2026-09-05 08:25:46",
@@ -14298,7 +14298,8 @@
         "failureReason": "",
         "consecutiveFailures": 0,
         "manualLockActive": false
-      }
+      },
+      "manualLock": true
     },
     {
       "id": "mhlw-753",
@@ -27891,18 +27892,6 @@
       "title": "社会保障審議会（医療保険部会 治療用装具療養費検討専門委員会）の開催について【ハイブリッドにて開催】｜厚生労働省",
       "date": "2026/09/05",
       "officialUrl": "https://www.mhlw.go.jp/stf/newpage_69110.html",
-      "category": "COUNCIL",
-      "ministry": "MHLW",
-      "materials": [],
-      "isNewlyDiscovered": true,
-      "discoveredAt": "2026/09/05 08:25"
-    },
-    {
-      "id": "mhlw-752-20260905-s03",
-      "councilId": "mhlw-752",
-      "title": "社会保障審議会（医療保険部会 あん摩マッサージ指圧、はり・きゅう療養費検討専門委員会）の開催について｜厚生労働省",
-      "date": "2026/09/05",
-      "officialUrl": "https://www.mhlw.go.jp/stf/shingi2/newpage_00246.html",
       "category": "COUNCIL",
       "ministry": "MHLW",
       "materials": [],
@@ -48073,18 +48062,6 @@
       ]
     },
     {
-      "id": "mhlw-752-20260430-038",
-      "councilId": "mhlw-752",
-      "title": "第38回社会保障審議会医療保険部会 あん摩マッサージ指圧、はり・きゅう療養費検討専門委員会議事録（2026年4月30日）｜厚生労働省",
-      "date": "2026/04/30",
-      "officialUrl": "https://www.mhlw.go.jp/stf/shingi2/newpage_00275.html",
-      "category": "COUNCIL",
-      "ministry": "MHLW",
-      "materials": [],
-      "isNewlyDiscovered": true,
-      "discoveredAt": "2026/09/05 08:25"
-    },
-    {
       "id": "mhlw-751-20260430-035",
       "councilId": "mhlw-751",
       "title": "第35回社会保障審議会医療保険部会 柔道整復療養費検討専門委員会議事録 （2026年4月30日）｜厚生労働省",
@@ -51860,18 +51837,6 @@
         }
       ],
       "manualLock": true
-    },
-    {
-      "id": "mhlw-752-20260327-037",
-      "councilId": "mhlw-752",
-      "title": "第37回社会保障審議会医療保険部会 あん摩マッサージ指圧、はり・きゅう療養費検討専門委員会議事録（2026年3月27日）｜厚生労働省",
-      "date": "2026/03/27",
-      "officialUrl": "https://www.mhlw.go.jp/stf/shingi2/newpage_00268.html",
-      "category": "COUNCIL",
-      "ministry": "MHLW",
-      "materials": [],
-      "isNewlyDiscovered": true,
-      "discoveredAt": "2026/09/05 08:25"
     },
     {
       "id": "mhlw-751-20260327-034",
@@ -286500,6 +286465,1251 @@
       "officialUrl": "https://www.mlit.go.jp/policy/shingikai/sogo03_sg_000240.html",
       "hasMinutes": false,
       "docCount": 9
+    },
+    {
+      "id": "mhlw-anma_massage_ryouyouhi-20260430-038",
+      "councilId": "mhlw-anma_massage_ryouyouhi",
+      "title": "第38回 医療保険部会 あん摩マッサージ指圧、はり・きゅう療養費検討専門委員会",
+      "date": "2026/04/30",
+      "officialUrl": "https://www.mhlw.go.jp/stf/shingi2/newpage_00266.html",
+      "materials": [
+        {
+          "name": "委員名簿［PDF形式：82KB］",
+          "url": "https://www.mhlw.go.jp/content/12404000/001681197.pdf"
+        },
+        {
+          "name": "あ－１ あはき療養費の令和８年度料金改定（案）について［PDF形式：680KB］",
+          "url": "https://www.mhlw.go.jp/content/12404000/001696850.pdf"
+        },
+        {
+          "name": "あ－２ 支給基準及び同意書の在り方について［PDF形式：835KB］",
+          "url": "https://www.mhlw.go.jp/content/12404000/001696854.pdf"
+        },
+        {
+          "name": "第38回 議事録",
+          "url": "https://www.mhlw.go.jp/stf/shingi2/newpage_00275.html"
+        }
+      ],
+      "manualLock": true
+    },
+    {
+      "id": "mhlw-anma_massage_ryouyouhi-20260327-037",
+      "councilId": "mhlw-anma_massage_ryouyouhi",
+      "title": "第37回 医療保険部会 あん摩マッサージ指圧、はり・きゅう療養費検討専門委員会",
+      "date": "2026/03/27",
+      "officialUrl": "https://www.mhlw.go.jp/stf/shingi2/newpage_72066.html",
+      "materials": [
+        {
+          "name": "委員名簿［PDF形式：5KB］",
+          "url": "https://www.mhlw.go.jp/content/12404000/001681197.pdf"
+        },
+        {
+          "name": "あ－１ あはき療養費の令和８年度改定の基本的な考え方（案）について（その３）［PDF形式：4.8MB］",
+          "url": "https://www.mhlw.go.jp/content/12404000/001681200.pdf"
+        },
+        {
+          "name": "幸野委員提出資料［PDF形式：1.3MB］",
+          "url": "https://www.mhlw.go.jp/content/12404000/001681325.pdf"
+        },
+        {
+          "name": "第37回 議事録",
+          "url": "https://www.mhlw.go.jp/stf/shingi2/newpage_00268.html"
+        }
+      ],
+      "manualLock": true
+    },
+    {
+      "id": "mhlw-anma_massage_ryouyouhi-20260304-036",
+      "councilId": "mhlw-anma_massage_ryouyouhi",
+      "title": "第36回 医療保険部会 あん摩マッサージ指圧、はり・きゅう療養費検討専門委員会",
+      "date": "2026/03/04",
+      "officialUrl": "https://www.mhlw.go.jp/stf/newpage_71031.html",
+      "materials": [
+        {
+          "name": "委員名簿［PDF形式：56KB］",
+          "url": "https://www.mhlw.go.jp/content/12404000/001665223.pdf"
+        },
+        {
+          "name": "あ－１ あはき療養費の令和８年度改定の基本的な考え方（案）について（その２）［PDF形式：22.1MB］",
+          "url": "https://www.mhlw.go.jp/content/12404000/001664665.pdf"
+        },
+        {
+          "name": "往田委員提出資料［PDF形式：239KB］",
+          "url": "https://www.mhlw.go.jp/content/12404000/001665224.pdf"
+        },
+        {
+          "name": "幸野委員提出資料［PDF形式：259KB］",
+          "url": "https://www.mhlw.go.jp/content/12404000/001665225.pdf"
+        },
+        {
+          "name": "第36回 議事録",
+          "url": "https://www.mhlw.go.jp/stf/shingi2/newpage_00223.html"
+        }
+      ],
+      "manualLock": true
+    },
+    {
+      "id": "mhlw-anma_massage_ryouyouhi-20260130-035",
+      "councilId": "mhlw-anma_massage_ryouyouhi",
+      "title": "第35回 医療保険部会 あん摩マッサージ指圧、はり・きゅう療養費検討専門委員会",
+      "date": "2026/01/30",
+      "officialUrl": "https://www.mhlw.go.jp/stf/newpage_69738.html",
+      "materials": [
+        {
+          "name": "委員名簿［PDF形式：51KB］",
+          "url": "https://www.mhlw.go.jp/content/12404000/001646883.pdf"
+        },
+        {
+          "name": "あ－１ あはき療養費の令和８年度改定の基本的な考え方（案）について［PDF形式：2.6MB］",
+          "url": "https://www.mhlw.go.jp/content/12404000/001646884.pdf"
+        },
+        {
+          "name": "あ－参考 参考資料［PDF形式：1.4MB］",
+          "url": "https://www.mhlw.go.jp/content/12404000/001646885.pdf"
+        },
+        {
+          "name": "第35回 議事録",
+          "url": "https://www.mhlw.go.jp/stf/shingi2/newpage_71272.html"
+        }
+      ],
+      "manualLock": true
+    },
+    {
+      "id": "mhlw-anma_massage_ryouyouhi-20250331-034",
+      "councilId": "mhlw-anma_massage_ryouyouhi",
+      "title": "第34回 医療保険部会 あん摩マッサージ指圧、はり・きゅう療養費検討専門委員会",
+      "date": "2025/03/31",
+      "officialUrl": "https://www.mhlw.go.jp/stf/shingi2/0000204312_00033.html",
+      "materials": [
+        {
+          "name": "専門委員名簿(PDF：61KB)",
+          "url": "https://www.mhlw.go.jp/content/12601000/001467880.pdf"
+        },
+        {
+          "name": "あー１ 柔道整復療養費のオンライン請求導入等について（中間とりまとめ）（PDF：266KB）",
+          "url": "https://www.mhlw.go.jp/content/12601000/001467887.pdf"
+        },
+        {
+          "name": "あー参考 参考資料（PDF：4MB）",
+          "url": "https://www.mhlw.go.jp/content/12601000/001467882.pdf"
+        },
+        {
+          "name": "第34回 議事録",
+          "url": "https://www.mhlw.go.jp/stf/shingi2/0000195191_00035.html"
+        }
+      ],
+      "manualLock": true
+    },
+    {
+      "id": "mhlw-anma_massage_ryouyouhi-20250228-033",
+      "councilId": "mhlw-anma_massage_ryouyouhi",
+      "title": "第33回 医療保険部会 あん摩マッサージ指圧、はり・きゅう療養費検討専門委員会",
+      "date": "2025/02/28",
+      "officialUrl": "https://www.mhlw.go.jp/stf/shingi2/0000204312_00031.html",
+      "materials": [
+        {
+          "name": "専門委員名簿(PDF：61KB)",
+          "url": "https://www.mhlw.go.jp/content/12601000/001426848.pdf"
+        },
+        {
+          "name": "あー１ あん摩マッサージ師、はり師、きゅう師の施術所におけるオンライン資格確認について（PDF：2MB）",
+          "url": "https://www.mhlw.go.jp/content/12601000/001426856.pdf"
+        },
+        {
+          "name": "第33回 議事録",
+          "url": "https://www.mhlw.go.jp/stf/shingi2/0000195191_00033.html"
+        }
+      ],
+      "manualLock": true
+    },
+    {
+      "id": "mhlw-anma_massage_ryouyouhi-20240426-032",
+      "councilId": "mhlw-anma_massage_ryouyouhi",
+      "title": "第32回 医療保険部会 あん摩マッサージ指圧、はり・きゅう療養費検討専門委員会",
+      "date": "2024/04/26",
+      "officialUrl": "https://www.mhlw.go.jp/stf/shingi2/0000204312_00029.html",
+      "materials": [
+        {
+          "name": "専門委員名簿(PDF：53KB)",
+          "url": "https://www.mhlw.go.jp/content/12601000/001249722.pdf"
+        },
+        {
+          "name": "あー１ あはき療養費の令和６年度料金改定（案）について（PDF：3MB）",
+          "url": "https://www.mhlw.go.jp/content/12601000/001249723.pdf"
+        },
+        {
+          "name": "あ－参考 参考資料（PDF：3MB）",
+          "url": "https://www.mhlw.go.jp/content/12601000/001249724.pdf"
+        },
+        {
+          "name": "第32回 議事録",
+          "url": "https://www.mhlw.go.jp/stf/shingi2/0000195191_00031.html"
+        }
+      ],
+      "manualLock": true
+    },
+    {
+      "id": "mhlw-anma_massage_ryouyouhi-20240318-031",
+      "councilId": "mhlw-anma_massage_ryouyouhi",
+      "title": "第31回 医療保険部会 あん摩マッサージ指圧、はり・きゅう療養費検討専門委員会",
+      "date": "2024/03/18",
+      "officialUrl": "https://www.mhlw.go.jp/stf/shingi2/0000204312_00026.html",
+      "materials": [
+        {
+          "name": "000623841.pdf",
+          "url": "https://www.mhlw.go.jp/content/12601000/000623841.pdf"
+        },
+        {
+          "name": "専門委員名簿(PDF:94KB)",
+          "url": "https://www.mhlw.go.jp/content/12601000/001228132.pdf"
+        },
+        {
+          "name": "あー１ あはき療養費の令和６年改定の基本的な考え方（案）について(PDF:２,774KB)",
+          "url": "https://www.mhlw.go.jp/content/12601000/001228133.pdf"
+        },
+        {
+          "name": "あ－参考 参考資料(PDF:6,176KB)",
+          "url": "https://www.mhlw.go.jp/content/12601000/001228135.pdf"
+        },
+        {
+          "name": "第31回 議事録",
+          "url": "https://www.mhlw.go.jp/stf/shingi2/0000195191_00030.html"
+        }
+      ],
+      "manualLock": true
+    },
+    {
+      "id": "mhlw-anma_massage_ryouyouhi-20240125-030",
+      "councilId": "mhlw-anma_massage_ryouyouhi",
+      "title": "第30回 医療保険部会 あん摩マッサージ指圧、はり・きゅう療養費検討専門委員会",
+      "date": "2024/01/25",
+      "officialUrl": "https://www.mhlw.go.jp/stf/shingi2/0000204312_00024.html",
+      "materials": [
+        {
+          "name": "000623841.pdf",
+          "url": "https://www.mhlw.go.jp/content/12601000/000623841.pdf"
+        },
+        {
+          "name": "専門委員名簿(PDF:94KB)",
+          "url": "https://www.mhlw.go.jp/content/12601000/001196921.pdf"
+        },
+        {
+          "name": "あー１ 「R６改定の基本的な考え方（案）」(PDF:4,090KB)",
+          "url": "https://www.mhlw.go.jp/content/12601000/001196924.pdf"
+        },
+        {
+          "name": "あ－参考 参考資料(PDF:6,399KB)",
+          "url": "https://www.mhlw.go.jp/content/12601000/001196926.pdf"
+        },
+        {
+          "name": "第30回 議事録",
+          "url": "https://www.mhlw.go.jp/stf/shingi2/0000195191_00027.html"
+        }
+      ],
+      "manualLock": true
+    },
+    {
+      "id": "mhlw-anma_massage_ryouyouhi-20231201-029",
+      "councilId": "mhlw-anma_massage_ryouyouhi",
+      "title": "第29回 医療保険部会 あん摩マッサージ指圧、はり・きゅう療養費検討専門委員会",
+      "date": "2023/12/01",
+      "officialUrl": "https://www.mhlw.go.jp/stf/shingi2/0000204312_00023.html",
+      "materials": [
+        {
+          "name": "委員名簿［PDF形式：85KB］",
+          "url": "https://www.mhlw.go.jp/content/12404000/001664237.pdf"
+        },
+        {
+          "name": "あー１ 「R６改定の基本的な考え方（案）」［PDF形式：3.6MB］",
+          "url": "https://www.mhlw.go.jp/content/12404000/001664244.pdf"
+        },
+        {
+          "name": "あ－参考 参考資料［PDF形式：2.5MB］",
+          "url": "https://www.mhlw.go.jp/content/12404000/001664245.pdf"
+        },
+        {
+          "name": "第29回 議事録",
+          "url": "https://www.mhlw.go.jp/stf/shingi2/0000195191_00024.html"
+        }
+      ],
+      "manualLock": true
+    },
+    {
+      "id": "mhlw-anma_massage_ryouyouhi-20231026-028",
+      "councilId": "mhlw-anma_massage_ryouyouhi",
+      "title": "第28回 医療保険部会 あん摩マッサージ指圧、はり・きゅう療養費検討専門委員会",
+      "date": "2023/10/26",
+      "officialUrl": "https://www.mhlw.go.jp/stf/shingi2/0000204312_00022.html",
+      "materials": [
+        {
+          "name": "委員名簿［PDF形式：85KB］",
+          "url": "https://www.mhlw.go.jp/content/12404000/001664255.pdf"
+        },
+        {
+          "name": "あー１ あん摩マッサージ師、はり師、きゅう師の施術所におけるオンライン資格確認について［PDF形式：547KB］",
+          "url": "https://www.mhlw.go.jp/content/12404000/001664260.pdf"
+        },
+        {
+          "name": "あー参考 資格確認限定型オンライン資格確認等システム利用規約（案）［PDF形式：410KB］",
+          "url": "https://www.mhlw.go.jp/content/12404000/001664261.pdf"
+        },
+        {
+          "name": "第28回 議事録",
+          "url": "https://www.mhlw.go.jp/stf/shingi2/0000195191_00023.html"
+        }
+      ],
+      "manualLock": true
+    },
+    {
+      "id": "mhlw-anma_massage_ryouyouhi-20230922-027",
+      "councilId": "mhlw-anma_massage_ryouyouhi",
+      "title": "第27回 医療保険部会 あん摩マッサージ指圧、はり・きゅう療養費検討専門委員会",
+      "date": "2023/09/22",
+      "officialUrl": "https://www.mhlw.go.jp/stf/shingi2/0000204312_00019.html",
+      "materials": [
+        {
+          "name": "委員名簿［PDF形式：83KB］",
+          "url": "https://www.mhlw.go.jp/content/12404000/001665982.pdf"
+        },
+        {
+          "name": "あ－１ あん摩マッサージ師、はり師、きゅう師の施術所における オンライン資格確認について ［PDF形式：1.2MB］",
+          "url": "https://www.mhlw.go.jp/content/12404000/001665985.pdf"
+        },
+        {
+          "name": "あ－参考 参考資料［PDF形式：366KB］",
+          "url": "https://www.mhlw.go.jp/content/12404000/001665986.pdf"
+        },
+        {
+          "name": "第27回 議事録",
+          "url": "https://www.mhlw.go.jp/stf/shingi2/0000195191_00022.html"
+        }
+      ],
+      "manualLock": true
+    },
+    {
+      "id": "mhlw-anma_massage_ryouyouhi-20230714-026",
+      "councilId": "mhlw-anma_massage_ryouyouhi",
+      "title": "第26回 医療保険部会 あん摩マッサージ指圧、はり・きゅう療養費検討専門委員会",
+      "date": "2023/07/14",
+      "officialUrl": "https://www.mhlw.go.jp/stf/shingi2/0000204312_00018.html",
+      "materials": [
+        {
+          "name": "委員名簿［PDF形式：84KB］",
+          "url": "https://www.mhlw.go.jp/content/12404000/001666112.pdf"
+        },
+        {
+          "name": "あ－１ あはき療養費の令和６年改定の基本的な考え方（案）について［PDF形式：1.3MB］",
+          "url": "https://www.mhlw.go.jp/content/12404000/001666113.pdf"
+        },
+        {
+          "name": "あ－参考 参考資料［PDF形式：2.1MB］",
+          "url": "https://www.mhlw.go.jp/content/12404000/001666114.pdf"
+        },
+        {
+          "name": "第26回 議事録",
+          "url": "https://www.mhlw.go.jp/stf/shingi2/0000195191_00019.html"
+        }
+      ],
+      "manualLock": true
+    },
+    {
+      "id": "mhlw-anma_massage_ryouyouhi-20220506-025",
+      "councilId": "mhlw-anma_massage_ryouyouhi",
+      "title": "第25回 医療保険部会 あん摩マッサージ指圧、はり・きゅう療養費検討専門委員会",
+      "date": "2022/05/06",
+      "officialUrl": "https://www.mhlw.go.jp/stf/shingi2/0000204312_00015.html",
+      "materials": [
+        {
+          "name": "委員名簿［PDF形式：51KB］",
+          "url": "https://www.mhlw.go.jp/content/12404000/001666532.pdf"
+        },
+        {
+          "name": "あ－１ あはき療養費の令和４年度料金改定（案）について［PDF形式：457KB］",
+          "url": "https://www.mhlw.go.jp/content/12404000/001666533.pdf"
+        },
+        {
+          "name": "あ－参考 参考資料［PDF形式：3.4MB］",
+          "url": "https://www.mhlw.go.jp/content/12404000/001666534.pdf"
+        },
+        {
+          "name": "第25回 議事録",
+          "url": "https://www.mhlw.go.jp/stf/shingi2/0000195191_00015.html"
+        }
+      ],
+      "manualLock": true
+    },
+    {
+      "id": "mhlw-anma_massage_ryouyouhi-20220324-024",
+      "councilId": "mhlw-anma_massage_ryouyouhi",
+      "title": "第24回 医療保険部会 あん摩マッサージ指圧、はり・きゅう療養費検討専門委員会",
+      "date": "2022/03/24",
+      "officialUrl": "https://www.mhlw.go.jp/stf/shingi2/0000195191_00014.html",
+      "materials": [
+        {
+          "name": "第24回 議事録",
+          "url": "https://www.mhlw.go.jp/stf/shingi2/0000195191_00014.html"
+        }
+      ],
+      "manualLock": true
+    },
+    {
+      "id": "mhlw-anma_massage_ryouyouhi-20220222-023",
+      "councilId": "mhlw-anma_massage_ryouyouhi",
+      "title": "第23回 医療保険部会 あん摩マッサージ指圧、はり・きゅう療養費検討専門委員会",
+      "date": "2022/02/22",
+      "officialUrl": "https://www.mhlw.go.jp/stf/shingi2/0000204312_00010.html",
+      "materials": [
+        {
+          "name": "委員名簿［PDF形式：50KB］",
+          "url": "https://www.mhlw.go.jp/content/12404000/001667491.pdf"
+        },
+        {
+          "name": "あ－１ あはき療養費の令和４年改定の基本的な考え方（案）について［PDF形式：964KB］",
+          "url": "https://www.mhlw.go.jp/content/12404000/001667492.pdf"
+        },
+        {
+          "name": "第23回 議事録",
+          "url": "https://www.mhlw.go.jp/stf/shingi2/0000195191_00011.html"
+        }
+      ],
+      "manualLock": true
+    },
+    {
+      "id": "mhlw-anma_massage_ryouyouhi-20201112-s17",
+      "councilId": "mhlw-anma_massage_ryouyouhi",
+      "title": "医療保険部会 あん摩マッサージ指圧、はり・きゅう療養費検討専門委員会（取りまとめ・公表資料）",
+      "date": "2020/11/12",
+      "officialUrl": "https://www.mhlw.go.jp/stf/shingi2/0000156408_00003.html",
+      "materials": [
+        {
+          "name": "000546320.pdf",
+          "url": "https://www.mhlw.go.jp/content/12601000/000546320.pdf"
+        },
+        {
+          "name": "報道発表資料（PDF：139KB）",
+          "url": "https://www.mhlw.go.jp/content/12601000/000693886.pdf"
+        }
+      ],
+      "manualLock": true
+    },
+    {
+      "id": "mhlw-anma_massage_ryouyouhi-20201029-022",
+      "councilId": "mhlw-anma_massage_ryouyouhi",
+      "title": "第22回 医療保険部会 あん摩マッサージ指圧、はり・きゅう療養費検討専門委員会",
+      "date": "2020/10/29",
+      "officialUrl": "https://www.mhlw.go.jp/stf/shingi2/0000204312_00005.html",
+      "materials": [
+        {
+          "name": "委員名簿［PDF形式：51KB］",
+          "url": "https://www.mhlw.go.jp/content/12404000/001671407.pdf"
+        },
+        {
+          "name": "あ－１ 料金改定について［PDF形式：884KB］",
+          "url": "https://www.mhlw.go.jp/content/12404000/001671409.pdf"
+        },
+        {
+          "name": "あ－２ 改定について［PDF形式：53KB］",
+          "url": "https://www.mhlw.go.jp/content/12404000/001671410.pdf"
+        },
+        {
+          "name": "あ－３ 長期頻回の施術等に関する調査結果及び検討［PDF形式：4.5MB］",
+          "url": "https://www.mhlw.go.jp/content/12404000/001671411.pdf"
+        },
+        {
+          "name": "第22回 議事録",
+          "url": "https://www.mhlw.go.jp/stf/shingi2/0000195191_00006.html"
+        }
+      ],
+      "manualLock": true
+    },
+    {
+      "id": "mhlw-anma_massage_ryouyouhi-20190910-s19",
+      "councilId": "mhlw-anma_massage_ryouyouhi",
+      "title": "医療保険部会 あん摩マッサージ指圧、はり・きゅう療養費検討専門委員会（取りまとめ・公表資料）",
+      "date": "2019/09/10",
+      "officialUrl": "https://www.mhlw.go.jp/stf/shingi/shingi-hosho_126708.html",
+      "materials": [],
+      "manualLock": true
+    },
+    {
+      "id": "mhlw-anma_massage_ryouyouhi-20190906-021",
+      "councilId": "mhlw-anma_massage_ryouyouhi",
+      "title": "第21回 医療保険部会 あん摩マッサージ指圧、はり・きゅう療養費検討専門委員会",
+      "date": "2019/09/06",
+      "officialUrl": "https://www.mhlw.go.jp/stf/shingi2/0000204323_00001.html",
+      "materials": [
+        {
+          "name": "座席図［PDF形式：92KB］",
+          "url": "https://www.mhlw.go.jp/content/12404000/001671956.pdf"
+        },
+        {
+          "name": "委員名簿［PDF形式：106KB］",
+          "url": "https://www.mhlw.go.jp/content/12404000/001671958.pdf"
+        },
+        {
+          "name": "あ－１［PDF形式：169KB］",
+          "url": "https://www.mhlw.go.jp/content/12404000/001671964.pdf"
+        },
+        {
+          "name": "あ－２［PDF形式：265KB］",
+          "url": "https://www.mhlw.go.jp/content/12404000/001671965.pdf"
+        },
+        {
+          "name": "あ－３［PDF形式：381KB］",
+          "url": "https://www.mhlw.go.jp/content/12404000/001671966.pdf"
+        },
+        {
+          "name": "第21回 議事録",
+          "url": "https://www.mhlw.go.jp/stf/shingi2/0000198655_00002.html"
+        }
+      ],
+      "manualLock": true
+    },
+    {
+      "id": "mhlw-anma_massage_ryouyouhi-20180423-s21",
+      "councilId": "mhlw-anma_massage_ryouyouhi",
+      "title": "医療保険部会 あん摩マッサージ指圧、はり・きゅう療養費検討専門委員会（あはき療養費の不正対策及び受領委任制度による指導監督の仕組みの導入）",
+      "date": "2018/04/23",
+      "officialUrl": "https://www.mhlw.go.jp/stf/shingi2/0000212744.html",
+      "materials": [
+        {
+          "name": "あはき療養費の不正対策及び受領委任制度による指導監督の仕組みの導入（PDF：528KB）",
+          "url": "https://www.mhlw.go.jp/file/05-Shingikai-12601000-Seisakutoukatsukan-Sanjikanshitsu_Shakaihoshoutantou/000020180423.pdf"
+        }
+      ],
+      "manualLock": true
+    },
+    {
+      "id": "mhlw-anma_massage_ryouyouhi-20180423-020",
+      "councilId": "mhlw-anma_massage_ryouyouhi",
+      "title": "第20回 医療保険部会 あん摩マッサージ指圧、はり・きゅう療養費検討専門委員会",
+      "date": "2018/04/23",
+      "officialUrl": "https://www.mhlw.go.jp/stf/shingi2/0000204323.html",
+      "materials": [
+        {
+          "name": "座席図（PDF：76KB）",
+          "url": "https://www.mhlw.go.jp/file/05-Shingikai-12601000-Seisakutoukatsukan-Sanjikanshitsu_Shakaihoshoutantou/0000204319.pdf"
+        },
+        {
+          "name": "委員名簿（PDF：56KB）",
+          "url": "https://www.mhlw.go.jp/file/05-Shingikai-12601000-Seisakutoukatsukan-Sanjikanshitsu_Shakaihoshoutantou/0000204320.pdf"
+        },
+        {
+          "name": "あ－１（PDF：242KB）",
+          "url": "https://www.mhlw.go.jp/file/05-Shingikai-12601000-Seisakutoukatsukan-Sanjikanshitsu_Shakaihoshoutantou/0000204321.pdf"
+        },
+        {
+          "name": "あ－２（PDF：50KB）",
+          "url": "https://www.mhlw.go.jp/file/05-Shingikai-12601000-Seisakutoukatsukan-Sanjikanshitsu_Shakaihoshoutantou/0000204322.pdf"
+        },
+        {
+          "name": "吉田参考人提出資料（PDF：53KB）",
+          "url": "https://www.mhlw.go.jp/file/05-Shingikai-12601000-Seisakutoukatsukan-Sanjikanshitsu_Shakaihoshoutantou/0000204402.pdf"
+        },
+        {
+          "name": "第20回 議事録",
+          "url": "https://www.mhlw.go.jp/stf/newpage_00572.html"
+        }
+      ],
+      "manualLock": true
+    },
+    {
+      "id": "mhlw-anma_massage_ryouyouhi-20180302-019",
+      "councilId": "mhlw-anma_massage_ryouyouhi",
+      "title": "第19回 医療保険部会 あん摩マッサージ指圧、はり・きゅう療養費検討専門委員会",
+      "date": "2018/03/02",
+      "officialUrl": "https://www.mhlw.go.jp/stf/shingi2/0000194967.html",
+      "materials": [
+        {
+          "name": "座席図（PDF：38KB）",
+          "url": "https://www.mhlw.go.jp/file/05-Shingikai-12601000-Seisakutoukatsukan-Sanjikanshitsu_Shakaihoshoutantou/0000195550.pdf"
+        },
+        {
+          "name": "委員名簿（PDF：57KB）",
+          "url": "https://www.mhlw.go.jp/file/05-Shingikai-12601000-Seisakutoukatsukan-Sanjikanshitsu_Shakaihoshoutantou/0000195552.pdf"
+        },
+        {
+          "name": "資料 あ－１（PDF：220KB）",
+          "url": "https://www.mhlw.go.jp/file/05-Shingikai-12601000-Seisakutoukatsukan-Sanjikanshitsu_Shakaihoshoutantou/0000195553.pdf"
+        },
+        {
+          "name": "資料 あ－２（PDF：324KB）",
+          "url": "https://www.mhlw.go.jp/file/05-Shingikai-12601000-Seisakutoukatsukan-Sanjikanshitsu_Shakaihoshoutantou/0000195556.pdf"
+        },
+        {
+          "name": "吉田参考人提出資料（PDF：122KB）",
+          "url": "https://www.mhlw.go.jp/file/05-Shingikai-12601000-Seisakutoukatsukan-Sanjikanshitsu_Shakaihoshoutantou/0000195557.pdf"
+        },
+        {
+          "name": "第19回 議事録",
+          "url": "https://www.mhlw.go.jp/stf/shingi2/0000198655.html"
+        }
+      ],
+      "manualLock": true
+    },
+    {
+      "id": "mhlw-anma_massage_ryouyouhi-20180131-018",
+      "councilId": "mhlw-anma_massage_ryouyouhi",
+      "title": "第18回 医療保険部会 あん摩マッサージ指圧、はり・きゅう療養費検討専門委員会",
+      "date": "2018/01/31",
+      "officialUrl": "https://www.mhlw.go.jp/stf/shingi2/0000192475.html",
+      "materials": [
+        {
+          "name": "座席図（PDF：38KB）",
+          "url": "https://www.mhlw.go.jp/file/05-Shingikai-12601000-Seisakutoukatsukan-Sanjikanshitsu_Shakaihoshoutantou/0000192741.pdf"
+        },
+        {
+          "name": "委員名簿（PDF：57KB）",
+          "url": "https://www.mhlw.go.jp/file/05-Shingikai-12601000-Seisakutoukatsukan-Sanjikanshitsu_Shakaihoshoutantou/0000192624.pdf"
+        },
+        {
+          "name": "資料 あ－１（PDF：211KB）",
+          "url": "https://www.mhlw.go.jp/file/05-Shingikai-12601000-Seisakutoukatsukan-Sanjikanshitsu_Shakaihoshoutantou/0000192785.pdf"
+        },
+        {
+          "name": "あ－１ 参考資料（PDF：1,528KB）",
+          "url": "https://www.mhlw.go.jp/file/05-Shingikai-12601000-Seisakutoukatsukan-Sanjikanshitsu_Shakaihoshoutantou/0000192625.pdf"
+        },
+        {
+          "name": "参考資料（PDF：180KB）",
+          "url": "https://www.mhlw.go.jp/file/05-Shingikai-12601000-Seisakutoukatsukan-Sanjikanshitsu_Shakaihoshoutantou/0000192626.pdf"
+        },
+        {
+          "name": "第18回 議事録",
+          "url": "https://www.mhlw.go.jp/stf/shingi2/0000195196.html"
+        }
+      ],
+      "manualLock": true
+    },
+    {
+      "id": "mhlw-anma_massage_ryouyouhi-20171227-017",
+      "councilId": "mhlw-anma_massage_ryouyouhi",
+      "title": "第17回 医療保険部会 あん摩マッサージ指圧、はり・きゅう療養費検討専門委員会",
+      "date": "2017/12/27",
+      "officialUrl": "https://www.mhlw.go.jp/stf/shingi2/0000189362.html",
+      "materials": [
+        {
+          "name": "座席図（PDF：38KB）",
+          "url": "https://www.mhlw.go.jp/file/05-Shingikai-12601000-Seisakutoukatsukan-Sanjikanshitsu_Shakaihoshoutantou/0000189365.pdf"
+        },
+        {
+          "name": "委員名簿（PDF：57KB）",
+          "url": "https://www.mhlw.go.jp/file/05-Shingikai-12601000-Seisakutoukatsukan-Sanjikanshitsu_Shakaihoshoutantou/0000189366.pdf"
+        },
+        {
+          "name": "資料 あ－１（PDF：3,425KB）",
+          "url": "https://www.mhlw.go.jp/file/05-Shingikai-12601000-Seisakutoukatsukan-Sanjikanshitsu_Shakaihoshoutantou/0000189367.pdf"
+        },
+        {
+          "name": "資料 あ－２（PDF：106KB）",
+          "url": "https://www.mhlw.go.jp/file/05-Shingikai-12601000-Seisakutoukatsukan-Sanjikanshitsu_Shakaihoshoutantou/0000189368.pdf"
+        },
+        {
+          "name": "後藤委員提出資料（PDF：204KB）",
+          "url": "https://www.mhlw.go.jp/file/05-Shingikai-12601000-Seisakutoukatsukan-Sanjikanshitsu_Shakaihoshoutantou/0000189369.pdf"
+        },
+        {
+          "name": "吉田参考人提出資料１（PDF：214KB）",
+          "url": "https://www.mhlw.go.jp/file/05-Shingikai-12601000-Seisakutoukatsukan-Sanjikanshitsu_Shakaihoshoutantou/0000189370.pdf"
+        },
+        {
+          "name": "吉田参考人提出資料２（PDF：86KB）",
+          "url": "https://www.mhlw.go.jp/file/05-Shingikai-12601000-Seisakutoukatsukan-Sanjikanshitsu_Shakaihoshoutantou/0000189371.pdf"
+        },
+        {
+          "name": "第17回 議事録",
+          "url": "https://www.mhlw.go.jp/stf/shingi2/0000192474.html"
+        }
+      ],
+      "manualLock": true
+    },
+    {
+      "id": "mhlw-anma_massage_ryouyouhi-20171120-016",
+      "councilId": "mhlw-anma_massage_ryouyouhi",
+      "title": "第16回 医療保険部会 あん摩マッサージ指圧、はり・きゅう療養費検討専門委員会",
+      "date": "2017/11/20",
+      "officialUrl": "https://www.mhlw.go.jp/stf/shingi2/0000184634.html",
+      "materials": [
+        {
+          "name": "座席図（PDF：32KB）",
+          "url": "https://www.mhlw.go.jp/file/05-Shingikai-12601000-Seisakutoukatsukan-Sanjikanshitsu_Shakaihoshoutantou/0000185375.pdf"
+        },
+        {
+          "name": "委員名簿（PDF：57KB）",
+          "url": "https://www.mhlw.go.jp/file/05-Shingikai-12601000-Seisakutoukatsukan-Sanjikanshitsu_Shakaihoshoutantou/0000184997.pdf"
+        },
+        {
+          "name": "資料 あ－１（PDF：123KB）",
+          "url": "https://www.mhlw.go.jp/file/05-Shingikai-12601000-Seisakutoukatsukan-Sanjikanshitsu_Shakaihoshoutantou/0000184998.pdf"
+        },
+        {
+          "name": "資料 あ－２（PDF：106KB）",
+          "url": "https://www.mhlw.go.jp/file/05-Shingikai-12601000-Seisakutoukatsukan-Sanjikanshitsu_Shakaihoshoutantou/0000184999.pdf"
+        },
+        {
+          "name": "資料 あ－３（PDF：39KB）",
+          "url": "https://www.mhlw.go.jp/file/05-Shingikai-12601000-Seisakutoukatsukan-Sanjikanshitsu_Shakaihoshoutantou/0000185001.pdf"
+        },
+        {
+          "name": "参考資料（PDF：1,231KB）",
+          "url": "https://www.mhlw.go.jp/file/05-Shingikai-12601000-Seisakutoukatsukan-Sanjikanshitsu_Shakaihoshoutantou/0000185002.pdf"
+        },
+        {
+          "name": "第16回 議事録",
+          "url": "https://www.mhlw.go.jp/stf/shingi2/0000189067.html"
+        }
+      ],
+      "manualLock": true
+    },
+    {
+      "id": "mhlw-anma_massage_ryouyouhi-20170327-s27",
+      "councilId": "mhlw-anma_massage_ryouyouhi",
+      "title": "医療保険部会 あん摩マッサージ指圧、はり・きゅう療養費検討専門委員会（あん摩マッサージ指圧、はり・きゅう療養費検討専門委員会におけるあん摩マッサージ指圧、はり・きゅう療養費の見直しについて）",
+      "date": "2017/03/27",
+      "officialUrl": "https://www.mhlw.go.jp/stf/shingi2/0000156410.html",
+      "materials": [
+        {
+          "name": "あん摩マッサージ指圧、はり・きゅう療養費検討専門委員会におけるあん摩マッサージ指圧、はり・きゅう療養費の見直しについて（PDF：102KB）",
+          "url": "https://www.mhlw.go.jp/file/05-Shingikai-12601000-Seisakutoukatsukan-Sanjikanshitsu_Shakaihoshoutantou/0000157961.pdf"
+        }
+      ],
+      "manualLock": true
+    },
+    {
+      "id": "mhlw-anma_massage_ryouyouhi-20170327-015",
+      "councilId": "mhlw-anma_massage_ryouyouhi",
+      "title": "第15回 医療保険部会 あん摩マッサージ指圧、はり・きゅう療養費検討専門委員会",
+      "date": "2017/03/27",
+      "officialUrl": "https://www.mhlw.go.jp/stf/shingi2/0000156400.html",
+      "materials": [
+        {
+          "name": "座席図［PDF形式：28KB］",
+          "url": "https://www.mhlw.go.jp/content/12404000/001683427.pdf"
+        },
+        {
+          "name": "委員名簿［PDF形式：53KB］",
+          "url": "https://www.mhlw.go.jp/content/12404000/001683428.pdf"
+        },
+        {
+          "name": "資料 あ－１［PDF形式：100KB］",
+          "url": "https://www.mhlw.go.jp/content/12404000/001683433.pdf"
+        },
+        {
+          "name": "資料 あ－２［PDF形式：37KB］",
+          "url": "https://www.mhlw.go.jp/content/12404000/001683434.pdf"
+        },
+        {
+          "name": "第15回 議事録",
+          "url": "https://www.mhlw.go.jp/stf/shingi2/0000162114.html"
+        }
+      ],
+      "manualLock": true
+    },
+    {
+      "id": "mhlw-anma_massage_ryouyouhi-20170321-014",
+      "councilId": "mhlw-anma_massage_ryouyouhi",
+      "title": "第14回 医療保険部会 あん摩マッサージ指圧、はり・きゅう療養費検討専門委員会",
+      "date": "2017/03/21",
+      "officialUrl": "https://www.mhlw.go.jp/stf/shingi2/0000155752.html",
+      "materials": [
+        {
+          "name": "座席図（PDF：31KB）",
+          "url": "https://www.mhlw.go.jp/file/05-Shingikai-12601000-Seisakutoukatsukan-Sanjikanshitsu_Shakaihoshoutantou/0000155811.pdf"
+        },
+        {
+          "name": "委員名簿（PDF：57KB）",
+          "url": "https://www.mhlw.go.jp/file/05-Shingikai-12601000-Seisakutoukatsukan-Sanjikanshitsu_Shakaihoshoutantou/0000155743.pdf"
+        },
+        {
+          "name": "後藤委員提出資料（PDF：280KB）",
+          "url": "https://www.mhlw.go.jp/file/05-Shingikai-12601000-Seisakutoukatsukan-Sanjikanshitsu_Shakaihoshoutantou/0000155745.pdf"
+        },
+        {
+          "name": "資料 あ－１（PDF：105KB）",
+          "url": "https://www.mhlw.go.jp/file/05-Shingikai-12601000-Seisakutoukatsukan-Sanjikanshitsu_Shakaihoshoutantou/0000155749.pdf"
+        },
+        {
+          "name": "資料 あ－２（PDF：1,941KB）",
+          "url": "https://www.mhlw.go.jp/file/05-Shingikai-12601000-Seisakutoukatsukan-Sanjikanshitsu_Shakaihoshoutantou/0000155751.pdf"
+        },
+        {
+          "name": "第14回 議事録",
+          "url": "https://www.mhlw.go.jp/stf/shingi2/0000162112.html"
+        }
+      ],
+      "manualLock": true
+    },
+    {
+      "id": "mhlw-anma_massage_ryouyouhi-20170301-013",
+      "councilId": "mhlw-anma_massage_ryouyouhi",
+      "title": "第13回 医療保険部会 あん摩マッサージ指圧、はり・きゅう療養費検討専門委員会",
+      "date": "2017/03/01",
+      "officialUrl": "https://www.mhlw.go.jp/stf/shingi2/0000153025.html",
+      "materials": [
+        {
+          "name": "座席図（PDF：31KB）",
+          "url": "https://www.mhlw.go.jp/file/05-Shingikai-12601000-Seisakutoukatsukan-Sanjikanshitsu_Shakaihoshoutantou/0000153375.pdf"
+        },
+        {
+          "name": "委員名簿（PDF：57KB）",
+          "url": "https://www.mhlw.go.jp/file/05-Shingikai-12601000-Seisakutoukatsukan-Sanjikanshitsu_Shakaihoshoutantou/0000153376.pdf"
+        },
+        {
+          "name": "資料 あ－１（PDF：159KB）",
+          "url": "https://www.mhlw.go.jp/file/05-Shingikai-12601000-Seisakutoukatsukan-Sanjikanshitsu_Shakaihoshoutantou/0000153377.pdf"
+        },
+        {
+          "name": "資料 あ－２（PDF：62KB）",
+          "url": "https://www.mhlw.go.jp/file/05-Shingikai-12601000-Seisakutoukatsukan-Sanjikanshitsu_Shakaihoshoutantou/0000153378.pdf"
+        },
+        {
+          "name": "資料 あ－３（PDF：1,941KB）",
+          "url": "https://www.mhlw.go.jp/file/05-Shingikai-12601000-Seisakutoukatsukan-Sanjikanshitsu_Shakaihoshoutantou/0000153379.pdf"
+        },
+        {
+          "name": "村岡委員提出資料（PDF：116KB）",
+          "url": "https://www.mhlw.go.jp/file/05-Shingikai-12601000-Seisakutoukatsukan-Sanjikanshitsu_Shakaihoshoutantou/0000153380.pdf"
+        },
+        {
+          "name": "宮澤委員提出資料（PDF：84KB）",
+          "url": "https://www.mhlw.go.jp/file/05-Shingikai-12601000-Seisakutoukatsukan-Sanjikanshitsu_Shakaihoshoutantou/0000153381.pdf"
+        },
+        {
+          "name": "第13回 議事録",
+          "url": "https://www.mhlw.go.jp/stf/shingi2/0000156890.html"
+        }
+      ],
+      "manualLock": true
+    },
+    {
+      "id": "mhlw-anma_massage_ryouyouhi-20170215-012",
+      "councilId": "mhlw-anma_massage_ryouyouhi",
+      "title": "第12回 医療保険部会 あん摩マッサージ指圧、はり・きゅう療養費検討専門委員会",
+      "date": "2017/02/15",
+      "officialUrl": "https://www.mhlw.go.jp/stf/shingi2/0000151432.html",
+      "materials": [
+        {
+          "name": "座席図［PDF形式：29KB］",
+          "url": "https://www.mhlw.go.jp/content/12404000/001678385.pdf"
+        },
+        {
+          "name": "委員名簿［PDF形式：53KB］",
+          "url": "https://www.mhlw.go.jp/content/12404000/001678386.pdf"
+        },
+        {
+          "name": "資料 あ－１［PDF形式：134KB］",
+          "url": "https://www.mhlw.go.jp/content/12404000/001678387.pdf"
+        },
+        {
+          "name": "資料 あ－参考［PDF形式：1.2MB］",
+          "url": "https://www.mhlw.go.jp/content/12404000/001678388.pdf"
+        },
+        {
+          "name": "資料 あ－２［PDF形式：219KB］",
+          "url": "https://www.mhlw.go.jp/content/12404000/001678389.pdf"
+        },
+        {
+          "name": "第12回 議事録",
+          "url": "https://www.mhlw.go.jp/stf/shingi2/0000154673.html"
+        }
+      ],
+      "manualLock": true
+    },
+    {
+      "id": "mhlw-anma_massage_ryouyouhi-20170202-011",
+      "councilId": "mhlw-anma_massage_ryouyouhi",
+      "title": "第11回 医療保険部会 あん摩マッサージ指圧、はり・きゅう療養費検討専門委員会",
+      "date": "2017/02/02",
+      "officialUrl": "https://www.mhlw.go.jp/stf/shingi2/0000149874.html",
+      "materials": [
+        {
+          "name": "座席図（PDF：30KB）",
+          "url": "https://www.mhlw.go.jp/file/05-Shingikai-12601000-Seisakutoukatsukan-Sanjikanshitsu_Shakaihoshoutantou/0000150149.pdf"
+        },
+        {
+          "name": "委員名簿（PDF：56KB）",
+          "url": "https://www.mhlw.go.jp/file/05-Shingikai-12601000-Seisakutoukatsukan-Sanjikanshitsu_Shakaihoshoutantou/0000150150.pdf"
+        },
+        {
+          "name": "資料 あ－１（PDF：105KB）",
+          "url": "https://www.mhlw.go.jp/file/05-Shingikai-12601000-Seisakutoukatsukan-Sanjikanshitsu_Shakaihoshoutantou/0000150151.pdf"
+        },
+        {
+          "name": "参考資料（PDF：165KB）",
+          "url": "https://www.mhlw.go.jp/file/05-Shingikai-12601000-Seisakutoukatsukan-Sanjikanshitsu_Shakaihoshoutantou/0000150152.pdf"
+        },
+        {
+          "name": "第11回 議事録",
+          "url": "https://www.mhlw.go.jp/stf/shingi2/0000153022.html"
+        }
+      ],
+      "manualLock": true
+    },
+    {
+      "id": "mhlw-anma_massage_ryouyouhi-20170118-010",
+      "councilId": "mhlw-anma_massage_ryouyouhi",
+      "title": "第10回 医療保険部会 あん摩マッサージ指圧、はり・きゅう療養費検討専門委員会",
+      "date": "2017/01/18",
+      "officialUrl": "https://www.mhlw.go.jp/stf/shingi2/0000148664.html",
+      "materials": [
+        {
+          "name": "座席図（PDF：32KB）",
+          "url": "https://www.mhlw.go.jp/file/05-Shingikai-12601000-Seisakutoukatsukan-Sanjikanshitsu_Shakaihoshoutantou/0000148867.pdf"
+        },
+        {
+          "name": "委員名簿（PDF：57KB）",
+          "url": "https://www.mhlw.go.jp/file/05-Shingikai-12601000-Seisakutoukatsukan-Sanjikanshitsu_Shakaihoshoutantou/0000148868.pdf"
+        },
+        {
+          "name": "資料 あ－１（PDF：107KB）",
+          "url": "https://www.mhlw.go.jp/file/05-Shingikai-12601000-Seisakutoukatsukan-Sanjikanshitsu_Shakaihoshoutantou/0000148869.pdf"
+        },
+        {
+          "name": "資料 あ－２（PDF：265KB）",
+          "url": "https://www.mhlw.go.jp/file/05-Shingikai-12601000-Seisakutoukatsukan-Sanjikanshitsu_Shakaihoshoutantou/0000148896.pdf"
+        },
+        {
+          "name": "資料 あ－３（PDF：877KB）",
+          "url": "https://www.mhlw.go.jp/file/05-Shingikai-12601000-Seisakutoukatsukan-Sanjikanshitsu_Shakaihoshoutantou/0000148870.pdf"
+        },
+        {
+          "name": "資料 あ－４（PDF：1,660KB）",
+          "url": "https://www.mhlw.go.jp/file/05-Shingikai-12601000-Seisakutoukatsukan-Sanjikanshitsu_Shakaihoshoutantou/0000148871.pdf"
+        },
+        {
+          "name": "資料 あ－５（PDF：700KB）",
+          "url": "https://www.mhlw.go.jp/file/05-Shingikai-12601000-Seisakutoukatsukan-Sanjikanshitsu_Shakaihoshoutantou/0000148872.pdf"
+        },
+        {
+          "name": "参考資料（PDF：191KB）",
+          "url": "https://www.mhlw.go.jp/file/05-Shingikai-12601000-Seisakutoukatsukan-Sanjikanshitsu_Shakaihoshoutantou/0000148873.pdf"
+        },
+        {
+          "name": "第10回 議事録",
+          "url": "https://www.mhlw.go.jp/stf/shingi2/0000151852.html"
+        }
+      ],
+      "manualLock": true
+    },
+    {
+      "id": "mhlw-anma_massage_ryouyouhi-20161207-009",
+      "councilId": "mhlw-anma_massage_ryouyouhi",
+      "title": "第9回 医療保険部会 あん摩マッサージ指圧、はり・きゅう療養費検討専門委員会",
+      "date": "2016/12/07",
+      "officialUrl": "https://www.mhlw.go.jp/stf/shingi2/0000144957.html",
+      "materials": [
+        {
+          "name": "座席図（PDF：36KB）",
+          "url": "https://www.mhlw.go.jp/file/05-Shingikai-12601000-Seisakutoukatsukan-Sanjikanshitsu_Shakaihoshoutantou/0000145043.pdf"
+        },
+        {
+          "name": "資料 あ－１（PDF：56KB）",
+          "url": "https://www.mhlw.go.jp/file/05-Shingikai-12601000-Seisakutoukatsukan-Sanjikanshitsu_Shakaihoshoutantou/0000145046.pdf"
+        },
+        {
+          "name": "全国健康保険協会提出資料（PDF：124KB）",
+          "url": "https://www.mhlw.go.jp/file/05-Shingikai-12601000-Seisakutoukatsukan-Sanjikanshitsu_Shakaihoshoutantou/0000145047.pdf"
+        },
+        {
+          "name": "千葉県国民健康保険団体連合会提出資料（PDF：1,456KB）",
+          "url": "https://www.mhlw.go.jp/file/05-Shingikai-12601000-Seisakutoukatsukan-Sanjikanshitsu_Shakaihoshoutantou/0000145048.pdf"
+        },
+        {
+          "name": "近畿厚生局提出資料（PDF：2,901KB）",
+          "url": "https://www.mhlw.go.jp/file/05-Shingikai-12601000-Seisakutoukatsukan-Sanjikanshitsu_Shakaihoshoutantou/0000145050.pdf"
+        },
+        {
+          "name": "あ－２（PDF：1,216KB）",
+          "url": "https://www.mhlw.go.jp/file/05-Shingikai-12601000-Seisakutoukatsukan-Sanjikanshitsu_Shakaihoshoutantou/0000145051.pdf"
+        },
+        {
+          "name": "第9回 議事録",
+          "url": "https://www.mhlw.go.jp/stf/shingi2/0000147777.html"
+        }
+      ],
+      "manualLock": true
+    },
+    {
+      "id": "mhlw-anma_massage_ryouyouhi-20161102-008",
+      "councilId": "mhlw-anma_massage_ryouyouhi",
+      "title": "第8回 医療保険部会 あん摩マッサージ指圧、はり・きゅう療養費検討専門委員会",
+      "date": "2016/11/02",
+      "officialUrl": "https://www.mhlw.go.jp/stf/shingi2/0000141400.html",
+      "materials": [
+        {
+          "name": "座席図［PDF形式：29KB］",
+          "url": "https://www.mhlw.go.jp/content/12404000/001678425.pdf"
+        },
+        {
+          "name": "資料 あ－１［PDF形式：52KB］",
+          "url": "https://www.mhlw.go.jp/content/12404000/001678430.pdf"
+        },
+        {
+          "name": "資料 あ－２［PDF形式：84KB］",
+          "url": "https://www.mhlw.go.jp/content/12404000/001678431.pdf"
+        },
+        {
+          "name": "資料 あ－３［PDF形式：47KB］",
+          "url": "https://www.mhlw.go.jp/content/12404000/001678432.pdf"
+        },
+        {
+          "name": "資料 あ－４［PDF形式：91KB］",
+          "url": "https://www.mhlw.go.jp/content/12404000/001678433.pdf"
+        },
+        {
+          "name": "資料 あ－５［PDF形式：1.1MB］",
+          "url": "https://www.mhlw.go.jp/content/12404000/001678434.pdf"
+        },
+        {
+          "name": "参考資料［PDF形式：978KB］",
+          "url": "https://www.mhlw.go.jp/content/12404000/001678435.pdf"
+        },
+        {
+          "name": "第8回 議事録",
+          "url": "https://www.mhlw.go.jp/stf/shingi2/0000145006.html"
+        }
+      ],
+      "manualLock": true
+    },
+    {
+      "id": "mhlw-anma_massage_ryouyouhi-20160923-s36",
+      "councilId": "mhlw-anma_massage_ryouyouhi",
+      "title": "医療保険部会 あん摩マッサージ指圧、はり・きゅう療養費検討専門委員会（あん摩マッサージ指圧、はり・きゅう療養費検討専門委員会における議論の整理について）",
+      "date": "2016/09/23",
+      "officialUrl": "https://www.mhlw.go.jp/stf/shingi2/0000136720.html",
+      "materials": [
+        {
+          "name": "あん摩マッサージ指圧、はり・きゅう療養費検討専門委員会における議論の整理（PDF：108KB）",
+          "url": "https://www.mhlw.go.jp/file/05-Shingikai-12601000-Seisakutoukatsukan-Sanjikanshitsu_Shakaihoshoutantou/0000137664.pdf"
+        }
+      ],
+      "manualLock": true
+    },
+    {
+      "id": "mhlw-anma_massage_ryouyouhi-20160830-007",
+      "councilId": "mhlw-anma_massage_ryouyouhi",
+      "title": "第7回 医療保険部会 あん摩マッサージ指圧、はり・きゅう療養費検討専門委員会",
+      "date": "2016/08/30",
+      "officialUrl": "https://www.mhlw.go.jp/stf/shingi2/0000134769.html",
+      "materials": [
+        {
+          "name": "座席図（PDF：31KB）",
+          "url": "https://www.mhlw.go.jp/file/05-Shingikai-12601000-Seisakutoukatsukan-Sanjikanshitsu_Shakaihoshoutantou/0000134997.pdf"
+        },
+        {
+          "name": "資料 あ－１（PDF：55KB）",
+          "url": "https://www.mhlw.go.jp/file/05-Shingikai-12601000-Seisakutoukatsukan-Sanjikanshitsu_Shakaihoshoutantou/0000134998.pdf"
+        },
+        {
+          "name": "資料 あ－２（PDF：110KB）",
+          "url": "https://www.mhlw.go.jp/file/05-Shingikai-12601000-Seisakutoukatsukan-Sanjikanshitsu_Shakaihoshoutantou/0000134999.pdf"
+        },
+        {
+          "name": "資料 あ－３（PDF：99KB）",
+          "url": "https://www.mhlw.go.jp/file/05-Shingikai-12601000-Seisakutoukatsukan-Sanjikanshitsu_Shakaihoshoutantou/0000135000.pdf"
+        },
+        {
+          "name": "参考資料（PDF：2,654KB）",
+          "url": "https://www.mhlw.go.jp/file/05-Shingikai-12601000-Seisakutoukatsukan-Sanjikanshitsu_Shakaihoshoutantou/0000135001.pdf"
+        },
+        {
+          "name": "第7回 議事録",
+          "url": "https://www.mhlw.go.jp/stf/shingi2/0000138153.html"
+        }
+      ],
+      "manualLock": true
+    },
+    {
+      "id": "mhlw-anma_massage_ryouyouhi-20160707-006",
+      "councilId": "mhlw-anma_massage_ryouyouhi",
+      "title": "第6回 医療保険部会 あん摩マッサージ指圧、はり・きゅう療養費検討専門委員会",
+      "date": "2016/07/07",
+      "officialUrl": "https://www.mhlw.go.jp/stf/shingi2/0000129658.html",
+      "materials": [
+        {
+          "name": "座席図（PDF：30.7KB）",
+          "url": "https://www.mhlw.go.jp/file/05-Shingikai-12601000-Seisakutoukatsukan-Sanjikanshitsu_Shakaihoshoutantou/0000129654.pdf"
+        },
+        {
+          "name": "資料 あ－１（PDF：54.0KB）",
+          "url": "https://www.mhlw.go.jp/file/05-Shingikai-12601000-Seisakutoukatsukan-Sanjikanshitsu_Shakaihoshoutantou/0000129655.pdf"
+        },
+        {
+          "name": "資料 あ－２（PDF：58.8KB）",
+          "url": "https://www.mhlw.go.jp/file/05-Shingikai-12601000-Seisakutoukatsukan-Sanjikanshitsu_Shakaihoshoutantou/0000129656.pdf"
+        },
+        {
+          "name": "資料 あ－３（PDF：803KB）",
+          "url": "https://www.mhlw.go.jp/file/05-Shingikai-12601000-Seisakutoukatsukan-Sanjikanshitsu_Shakaihoshoutantou/0000129657.pdf"
+        },
+        {
+          "name": "第6回 議事録",
+          "url": "https://www.mhlw.go.jp/stf/shingi2/0000131843.html"
+        }
+      ],
+      "manualLock": true
+    },
+    {
+      "id": "mhlw-anma_massage_ryouyouhi-20160513-005",
+      "councilId": "mhlw-anma_massage_ryouyouhi",
+      "title": "第5回 医療保険部会 あん摩マッサージ指圧、はり・きゅう療養費検討専門委員会",
+      "date": "2016/05/13",
+      "officialUrl": "https://www.mhlw.go.jp/stf/shingi2/0000123905.html",
+      "materials": [
+        {
+          "name": "座席図（PDF：30.6KB）",
+          "url": "https://www.mhlw.go.jp/file/05-Shingikai-12601000-Seisakutoukatsukan-Sanjikanshitsu_Shakaihoshoutantou/0000124161.pdf"
+        },
+        {
+          "name": "資料 あ－１（PDF：55.6KB）",
+          "url": "https://www.mhlw.go.jp/file/05-Shingikai-12601000-Seisakutoukatsukan-Sanjikanshitsu_Shakaihoshoutantou/0000124167.pdf"
+        },
+        {
+          "name": "資料 あ－２（PDF：2,270KB）",
+          "url": "https://www.mhlw.go.jp/file/05-Shingikai-12601000-Seisakutoukatsukan-Sanjikanshitsu_Shakaihoshoutantou/0000124162.pdf"
+        },
+        {
+          "name": "仲野委員、杉田委員、時任委員、竹下委員提出資料１（PDF：395KB）",
+          "url": "https://www.mhlw.go.jp/file/05-Shingikai-12601000-Seisakutoukatsukan-Sanjikanshitsu_Shakaihoshoutantou/0000124164.pdf"
+        },
+        {
+          "name": "仲野委員、杉田委員、時任委員、竹下委員提出資料２（PDF：49KB）",
+          "url": "https://www.mhlw.go.jp/file/05-Shingikai-12601000-Seisakutoukatsukan-Sanjikanshitsu_Shakaihoshoutantou/0000124165.pdf"
+        },
+        {
+          "name": "仲野委員、杉田委員、時任委員、竹下委員提出資料３（PDF：111KB）",
+          "url": "https://www.mhlw.go.jp/file/05-Shingikai-12601000-Seisakutoukatsukan-Sanjikanshitsu_Shakaihoshoutantou/0000124166.pdf"
+        },
+        {
+          "name": "第5回 議事録",
+          "url": "https://www.mhlw.go.jp/stf/shingi2/0000127406.html"
+        }
+      ],
+      "manualLock": true
+    },
+    {
+      "id": "mhlw-anma_massage_ryouyouhi-20160329-004",
+      "councilId": "mhlw-anma_massage_ryouyouhi",
+      "title": "第4回 医療保険部会 あん摩マッサージ指圧、はり・きゅう療養費検討専門委員会",
+      "date": "2016/03/29",
+      "officialUrl": "https://www.mhlw.go.jp/stf/shingi2/0000118217.html",
+      "materials": [
+        {
+          "name": "座席図［PDF形式：29KB］",
+          "url": "https://www.mhlw.go.jp/content/12404000/001683482.pdf"
+        },
+        {
+          "name": "資料 あ－１［PDF形式：52KB］",
+          "url": "https://www.mhlw.go.jp/content/12404000/001683485.pdf"
+        },
+        {
+          "name": "資料 あ－２［PDF形式：2.2MB］",
+          "url": "https://www.mhlw.go.jp/content/12404000/001683486.pdf"
+        },
+        {
+          "name": "第4回 議事録",
+          "url": "https://www.mhlw.go.jp/stf/shingi2/0000123684.html"
+        }
+      ],
+      "manualLock": true
+    },
+    {
+      "id": "mhlw-anma_massage_ryouyouhi-20140318-003",
+      "councilId": "mhlw-anma_massage_ryouyouhi",
+      "title": "第3回 医療保険部会 あん摩マッサージ指圧、はり・きゅう療養費検討専門委員会",
+      "date": "2014/03/18",
+      "officialUrl": "https://www.mhlw.go.jp/stf/shingi/0000040472.html",
+      "materials": [
+        {
+          "name": "座席図［PDF形式：28KB］",
+          "url": "https://www.mhlw.go.jp/content/12404000/001678360.pdf"
+        },
+        {
+          "name": "資料 あ－１［PDF形式：293KB］",
+          "url": "https://www.mhlw.go.jp/content/12404000/001678363.pdf"
+        },
+        {
+          "name": "資料 あ－２［PDF形式：115KB］",
+          "url": "https://www.mhlw.go.jp/content/12404000/001678364.pdf"
+        },
+        {
+          "name": "資料 あ－参考［PDF形式：244KB］",
+          "url": "https://www.mhlw.go.jp/content/12404000/001678365.pdf"
+        },
+        {
+          "name": "第3回 議事録",
+          "url": "https://www.mhlw.go.jp/stf/shingi/0000047488.html"
+        }
+      ],
+      "manualLock": true
+    },
+    {
+      "id": "mhlw-anma_massage_ryouyouhi-20130326-002",
+      "councilId": "mhlw-anma_massage_ryouyouhi",
+      "title": "第2回 医療保険部会 あん摩マッサージ指圧、はり・きゅう療養費検討専門委員会",
+      "date": "2013/03/26",
+      "officialUrl": "https://www.mhlw.go.jp/stf/shingi/2r9852000002mku7.html",
+      "materials": [
+        {
+          "name": "座席図（PDF:69KB）",
+          "url": "https://www.mhlw.go.jp/stf/shingi/2r9852000002mku7-att/2r9852000002mky5.pdf"
+        },
+        {
+          "name": "資料 あ－１（PDF:303KB）",
+          "url": "https://www.mhlw.go.jp/stf/shingi/2r9852000002mku7-att/2r9852000002mpwn.pdf"
+        },
+        {
+          "name": "資料 あ－２（PDF:219KB）",
+          "url": "https://www.mhlw.go.jp/stf/shingi/2r9852000002mku7-att/2r9852000002mpxf.pdf"
+        },
+        {
+          "name": "仲野委員、杉田委員、時任委員、竹下委員提出資料（PDF:782KB）",
+          "url": "https://www.mhlw.go.jp/stf/shingi/2r9852000002mku7-att/2r9852000002mpxo.pdf"
+        },
+        {
+          "name": "第2回 議事録",
+          "url": "https://www.mhlw.go.jp/stf/shingi/2r98520000030xdj.html"
+        }
+      ],
+      "manualLock": true
+    },
+    {
+      "id": "mhlw-anma_massage_ryouyouhi-20121019-001",
+      "councilId": "mhlw-anma_massage_ryouyouhi",
+      "title": "第1回 医療保険部会 あん摩マッサージ指圧、はり・きゅう療養費検討専門委員会",
+      "date": "2012/10/19",
+      "officialUrl": "https://www.mhlw.go.jp/stf/shingi/2r9852000002y8l9.html",
+      "materials": [
+        {
+          "name": "座席図（PDF:57KB）",
+          "url": "https://www.mhlw.go.jp/stf/shingi/2r9852000002y8l9-att/2r9852000002y8ov.pdf"
+        },
+        {
+          "name": "資料 あ－１（PDF:215KB）",
+          "url": "https://www.mhlw.go.jp/stf/shingi/2r9852000002y8l9-att/2r9852000002y8p4.pdf"
+        },
+        {
+          "name": "資料 あ－２（PDF:607KB）",
+          "url": "https://www.mhlw.go.jp/stf/shingi/2r9852000002y8l9-att/2r9852000002y8q9.pdf"
+        },
+        {
+          "name": "資料 あ－３（PDF:189KB）",
+          "url": "https://www.mhlw.go.jp/stf/shingi/2r9852000002y8l9-att/2r9852000002y8qg.pdf"
+        },
+        {
+          "name": "高橋委員提出資料１（PDF:1467KB）",
+          "url": "https://www.mhlw.go.jp/stf/shingi/2r9852000002y8l9-att/2r9852000002y8qn.pdf"
+        },
+        {
+          "name": "高橋委員提出資料２（PDF:330KB）",
+          "url": "https://www.mhlw.go.jp/stf/shingi/2r9852000002y8l9-att/2r9852000002y8qu.pdf"
+        },
+        {
+          "name": "第1回 議事録",
+          "url": "https://www.mhlw.go.jp/stf/shingi/2r9852000002ml6w.html"
+        }
+      ],
+      "manualLock": true
     }
   ],
   "categories": {
@@ -289803,6 +291013,13 @@
         "pdf_selector": "href=[\"\\']([^\"\\']+\\.(?:pdf|docx|xlsx))[\"\\']",
         "date_regex": "(?:令和|平成)(?:\\d+|元)年\\d{1,2}月\\d{1,2}日|\\d{4}年\\d{1,2}月\\d{1,2}日|\\d{4}[/-]\\d{1,2}[/-]\\d{1,2}"
       }
+    },
+    "mhlw-anma_massage_ryouyouhi": {
+      "officialUrl": "https://www.mhlw.go.jp/stf/shingi/shingi-hosho_126708.html",
+      "subpage_discovery_pattern": "https://www.mhlw.go.jp/stf/(shingi2/)?(newpage_\\d+|\\d{10}_\\d+)\\.html",
+      "pdf_selector": "a[href*=\"/content/\"], a[href$=\".pdf\"]",
+      "date_regex": "(\\d{4})年(\\d{1,2})月(\\d{1,2})日|(令和|平成)(\\d+|元)年(\\d{1,2})月(\\d{1,2})日",
+      "deep_crawl_enabled": true
     }
   },
   "discoveryKeywords": {
