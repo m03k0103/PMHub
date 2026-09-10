@@ -368,20 +368,20 @@
         </div>
       </section>
 
-      <!-- 1. 新規会議体 検出巡回 (審議会ディスカバリー) -->
+      <!-- 1. 新規会議体ディスカバリー -->
       <section class="admin-card card-glass">
         <div class="section-header" style="display: flex; align-items: flex-start; justify-content: space-between; flex-wrap: wrap; gap: 1rem;">
           <div>
             <h2 class="admin-header-title">
               <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-              🏛 新規会議体 検出巡回（審議会ディスカバリー）
+              🏛 新規会議体ディスカバリー
             </h2>
             <p class="section-subtitle" style="margin-top:0.3rem; color:var(--text-muted);">
               全48省庁の「審議会等ページURL」を自動巡回し、未登録の会議体名称およびトップページURLを自動抽出・検出します。
             </p>
           </div>
           <button class="btn-crawler btn-bulk approve-all" id="btnStartDiscovery" onclick="if(window.startDiscovery){ window.startDiscovery(); } else { alert('startDiscovery function not ready yet!'); }" style="font-size: 1rem; padding: 0.75rem 1.5rem; background: rgba(59,130,246,0.15); color: #60a5fa; border-color: rgba(59,130,246,0.4);">
-            ⚡ 新規会議体の検出巡回を実行 (Python API)
+            ⚡ 実行
           </button>
         </div>
 
@@ -392,7 +392,7 @@
 
           <div class="crawler-terminal" id="discoveryTerminalLogs" style="background: #090d16; border: 1px solid var(--border-color); padding: 1rem; border-radius: var(--radius-md); font-family: 'JetBrains Mono', monospace; font-size: 0.8rem; color: #94a3b8; max-height: 220px; overflow-y: auto;">
             <div class="crawler-log-line">
-              <span class="crawler-log-time" style="color: #60a5fa;">[READY]</span> 新規会議体ディスカバリーエンジン待機中。「新規会議体の検出巡回を実行 (Python API)」をクリックしてください。
+              <span class="crawler-log-time" style="color: #60a5fa;">[READY]</span> 新規会議体ディスカバリーエンジン待機中。「実行」をクリックしてください。
             </div>
           </div>
 
@@ -445,13 +445,13 @@
         </details>
       </section>
 
-      <!-- 2. 登録済み会議体 各会議・資料 自動収集クローラー (既存改修) -->
+      <!-- 2. 登録済会議体 開催回ディスカバリー -->
       <section class="admin-card card-glass">
         <div class="section-header" style="display: flex; align-items: flex-start; justify-content: space-between; flex-wrap: wrap; gap: 1rem;">
           <div>
             <h2 class="admin-header-title">
               <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/></svg>
-              📄 登録済み会議体 会議・資料自動収集クローラー
+              📄 登録済会議体 開催回ディスカバリー
             </h2>
             <p class="section-subtitle" style="margin-top:0.3rem; color:var(--text-muted);">
               承認済会議体（<code>COUNCILS</code>）のトップページURLを巡回し、各会議（開催回、開催日、アジェンダ、PDF・HTML資料リンク等）の最新情報を自動抽出・更新します。
@@ -459,7 +459,7 @@
           </div>
           <div style="display: flex; gap: 0.75rem; align-items: center;">
             <button class="btn-crawler btn-bulk approve-all" id="adminStartCrawlBtn" onclick="if(window.startMeetingCrawl){ window.startMeetingCrawl(); } else { alert('startMeetingCrawl function not ready yet!'); }" style="font-size: 1rem; padding: 0.75rem 1.5rem;">
-              ⚡ 会議・資料クロール即時実行
+              ⚡ 実行
             </button>
             <button class="btn-bulk" id="adminStopCrawlBtn" onclick="if(window.stopMeetingCrawl){ window.stopMeetingCrawl(); } else { alert('stopMeetingCrawl not ready'); }" style="display: none; font-size: 1rem; padding: 0.75rem 1.25rem; background: rgba(239, 68, 68, 0.2); border: 1px solid rgba(239, 68, 68, 0.6); color: #f87171; border-radius: var(--radius-md); cursor: pointer; transition: all 0.2s;">
               🛑 クロール停止
@@ -924,7 +924,7 @@ JSON データを読み込み中...
         isRunningDiscovery = false;
         if (btn) {
           btn.disabled = false;
-          btn.textContent = '⚡ 新規会議体の検出巡回を実行 (Python API)';
+          btn.textContent = '⚡ 実行';
         }
       }
 
@@ -946,7 +946,7 @@ JSON データを読み込み中...
           logLine('全省庁の審議会一覧巡回が完了しました。');
           if (btn) {
             btn.disabled = false;
-            btn.textContent = '⚡ 新規会議体の検出巡回を実行 (Python API)';
+            btn.textContent = '⚡ 実行';
           }
         }
       }, 80);
@@ -1062,7 +1062,7 @@ JSON データを読み込み中...
             if (progressFill) progressFill.style.width = '100%';
             if (btn) {
               btn.disabled = false;
-              btn.textContent = '⚡ 会議・資料クロール即時実行';
+              btn.textContent = '⚡ 実行';
             }
             if (stopBtn) {
               stopBtn.style.display = 'none';
@@ -1091,7 +1091,7 @@ JSON データを読み込み中...
       alert(`クロール起動エラー: ${e.message || e}`);
       if (btn) {
         btn.disabled = false;
-        btn.textContent = '⚡ 会議・資料クロール即時実行';
+        btn.textContent = '⚡ 実行';
       }
       if (stopBtn) {
         stopBtn.style.display = 'none';
