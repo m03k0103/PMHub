@@ -3770,25 +3770,6 @@
       "status": "approved"
     },
     {
-      "id": "ppc-1265",
-      "name": "個人情報保護委員会",
-      "ministry": "PPC",
-      "category": "COMMITTEE",
-      "officialUrl": "https://www.ppc.go.jp/enforcement/minutes/",
-      "pastYearCount": 1,
-      "crawlStatus": {
-        "lastAttempt": "2026-09-05 08:17:59",
-        "result": "success",
-        "extractionMethod": "rule",
-        "materialsCount": 5,
-        "datesCount": 5,
-        "failureReason": "",
-        "consecutiveFailures": 0,
-        "manualLockActive": false
-      },
-      "status": "approved"
-    },
-    {
       "id": "aca-187",
       "name": "世界文化遺産部会",
       "ministry": "ACA",
@@ -6348,166 +6329,6 @@
       "isWatched": true,
       "status": "approved",
       "manualLock": true
-    },
-    {
-      "id": "smea-keiei_bansou",
-      "name": "経営力再構築伴走支援推進協議会",
-      "ministry": "SMEA",
-      "category": "STUDY",
-      "description": "中小企業の経営力再構築に向けた伴走型支援の普及・高度化を推進するための協議会。",
-      "officialUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/index.html",
-      "pastYearCount": 0,
-      "status": "approved",
-      "crawlStatus": {
-        "lastAttempt": "2026-09-05 08:19:37",
-        "result": "failed",
-        "extractionMethod": "none",
-        "materialsCount": 0,
-        "datesCount": 0,
-        "failureReason": "Both LLM and rule extraction returned 0 results",
-        "consecutiveFailures": 1,
-        "manualLockActive": false
-      }
-    },
-    {
-      "id": "smea-kinyu_edi",
-      "name": "金融EDIにおける商流情報等のあり方検討会議",
-      "ministry": "SMEA",
-      "category": "STUDY",
-      "description": "全銀EDIシステム（ZEDI）等を活用した金融EDIの普及と中小企業の受発注・決済業務の効率化について検討を行う。",
-      "officialUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/index.html",
-      "pastYearCount": 0,
-      "status": "approved",
-      "crawlStatus": {
-        "lastAttempt": "2026-09-05 08:19:56",
-        "result": "failed",
-        "extractionMethod": "none",
-        "materialsCount": 0,
-        "datesCount": 0,
-        "failureReason": "Both LLM and rule extraction returned 0 results",
-        "consecutiveFailures": 1,
-        "manualLockActive": false
-      }
-    },
-    {
-      "id": "smea-chusho_kenshou",
-      "name": "中小企業憲章に関する研究会",
-      "ministry": "SMEA",
-      "category": "STUDY",
-      "description": "中小企業憲章の理念や基本方針、中小企業政策の基本構想について調査審議を行う。",
-      "officialUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/index.html",
-      "pastYearCount": 0,
-      "status": "approved",
-      "crawlStatus": {
-        "lastAttempt": "2026-09-05 08:20:16",
-        "result": "failed",
-        "extractionMethod": "none",
-        "materialsCount": 0,
-        "datesCount": 0,
-        "failureReason": "Both LLM and rule extraction returned 0 results",
-        "consecutiveFailures": 1,
-        "manualLockActive": false
-      }
-    },
-    {
-      "id": "smea-kaikei_kenkyukai",
-      "name": "中小企業の会計に関する研究会",
-      "ministry": "SMEA",
-      "category": "STUDY",
-      "description": "中小企業の財務経営力強化や会計基準（中小会計要領等）の普及に向けた検討を行う。",
-      "officialUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/index.html",
-      "pastYearCount": 0,
-      "status": "approved",
-      "crawlStatus": {
-        "lastAttempt": "2026-09-05 08:20:34",
-        "result": "failed",
-        "extractionMethod": "none",
-        "materialsCount": 0,
-        "datesCount": 0,
-        "failureReason": "Both LLM and rule extraction returned 0 results",
-        "consecutiveFailures": 1,
-        "manualLockActive": false
-      }
-    },
-    {
-      "id": "smea-chishiki_support",
-      "name": "知識サポート・経営改革プラットフォーム研究会",
-      "ministry": "SMEA",
-      "category": "STUDY",
-      "description": "中小企業の経営改革を支える知識プラットフォームの構築・運用を検討する。",
-      "officialUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/index.html",
-      "pastYearCount": 0,
-      "status": "approved",
-      "crawlStatus": {
-        "lastAttempt": "2026-09-05 08:20:50",
-        "result": "failed",
-        "extractionMethod": "none",
-        "materialsCount": 0,
-        "datesCount": 0,
-        "failureReason": "Both LLM and rule extraction returned 0 results",
-        "consecutiveFailures": 1,
-        "manualLockActive": false
-      }
-    },
-    {
-      "id": "smea-kaigai_tenkai",
-      "name": "中小企業海外展開支援会議",
-      "ministry": "SMEA",
-      "category": "STUDY",
-      "description": "中小企業の海外販路開拓や輸出拡大に向けた支援体制・施策を検討する。",
-      "officialUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/index.html",
-      "pastYearCount": 0,
-      "status": "approved",
-      "crawlStatus": {
-        "lastAttempt": "2026-09-05 08:21:08",
-        "result": "failed",
-        "extractionMethod": "none",
-        "materialsCount": 0,
-        "datesCount": 0,
-        "failureReason": "Both LLM and rule extraction returned 0 results",
-        "consecutiveFailures": 1,
-        "manualLockActive": false
-      }
-    },
-    {
-      "id": "smea-atarashii_kinyu",
-      "name": "新しい中小企業金融研究会",
-      "ministry": "SMEA",
-      "category": "STUDY",
-      "description": "事業性評価や新たな資金調達手法、中小企業金融の円滑化に向けた課題を検討する。",
-      "officialUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/index.html",
-      "pastYearCount": 0,
-      "status": "approved",
-      "crawlStatus": {
-        "lastAttempt": "2026-09-05 08:21:24",
-        "result": "failed",
-        "extractionMethod": "none",
-        "materialsCount": 0,
-        "datesCount": 0,
-        "failureReason": "Both LLM and rule extraction returned 0 results",
-        "consecutiveFailures": 1,
-        "manualLockActive": false
-      }
-    },
-    {
-      "id": "smea-saisei_kadai",
-      "name": "中小企業再生の今後の政策的課題に関する研究会",
-      "ministry": "SMEA",
-      "category": "STUDY",
-      "description": "中小企業の事業再生・再チャレンジ支援に係る制度的・実務的課題を検討する。",
-      "officialUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/index.html",
-      "pastYearCount": 0,
-      "status": "approved",
-      "crawlStatus": {
-        "lastAttempt": "2026-09-05 08:21:40",
-        "result": "failed",
-        "extractionMethod": "none",
-        "materialsCount": 0,
-        "datesCount": 0,
-        "failureReason": "Both LLM and rule extraction returned 0 results",
-        "consecutiveFailures": 1,
-        "manualLockActive": false
-      }
     },
     {
       "id": "npsc-teirei",
@@ -19239,158 +19060,6 @@
       }
     },
     {
-      "id": "nta-1252",
-      "name": "国税審議会",
-      "ministry": "NTA",
-      "category": "COUNCIL",
-      "officialUrl": "https://www.nta.go.jp/about/council/kenkyu.htm#a01",
-      "pastYearCount": 1,
-      "status": "approved",
-      "crawlStatus": {
-        "lastAttempt": "2026-09-05 08:17:29",
-        "result": "success",
-        "extractionMethod": "rule",
-        "materialsCount": 112,
-        "datesCount": 5,
-        "failureReason": "",
-        "consecutiveFailures": 0,
-        "manualLockActive": false
-      }
-    },
-    {
-      "id": "nta-1253",
-      "name": "国税審査分科会（国税審議会）",
-      "ministry": "NTA",
-      "category": "SUBCOMMITTEE",
-      "officialUrl": "https://www.nta.go.jp/about/council/kenkyu.htm#a02",
-      "pastYearCount": 1,
-      "status": "approved",
-      "crawlStatus": {
-        "lastAttempt": "2026-09-05 08:17:54",
-        "result": "success",
-        "extractionMethod": "rule",
-        "materialsCount": 112,
-        "datesCount": 5,
-        "failureReason": "",
-        "consecutiveFailures": 0,
-        "manualLockActive": false
-      }
-    },
-    {
-      "id": "nta-1254",
-      "name": "酒類分科会（国税審議会）",
-      "ministry": "NTA",
-      "category": "SUBCOMMITTEE",
-      "officialUrl": "https://www.nta.go.jp/about/council/kenkyu.htm#a03",
-      "pastYearCount": 1,
-      "status": "approved",
-      "crawlStatus": {
-        "lastAttempt": "2026-09-05 08:18:20",
-        "result": "success",
-        "extractionMethod": "rule",
-        "materialsCount": 112,
-        "datesCount": 5,
-        "failureReason": "",
-        "consecutiveFailures": 0,
-        "manualLockActive": false
-      }
-    },
-    {
-      "id": "nta-1255",
-      "name": "地理的表示部会（酒類分科会）",
-      "ministry": "NTA",
-      "category": "SECTION",
-      "officialUrl": "https://www.nta.go.jp/about/council/kenkyu.htm#a031",
-      "pastYearCount": 1,
-      "status": "approved",
-      "crawlStatus": {
-        "lastAttempt": "2026-09-05 08:18:46",
-        "result": "success",
-        "extractionMethod": "rule",
-        "materialsCount": 112,
-        "datesCount": 5,
-        "failureReason": "",
-        "consecutiveFailures": 0,
-        "manualLockActive": false
-      }
-    },
-    {
-      "id": "nta-1257",
-      "name": "日本酒のグローバルなブランド戦略に関する検討会",
-      "ministry": "NTA",
-      "category": "STUDY",
-      "officialUrl": "https://www.nta.go.jp/about/council/kenkyu.htm#a10",
-      "pastYearCount": 1,
-      "status": "approved",
-      "crawlStatus": {
-        "lastAttempt": "2026-09-05 08:19:06",
-        "result": "success",
-        "extractionMethod": "rule",
-        "materialsCount": 112,
-        "datesCount": 5,
-        "failureReason": "",
-        "consecutiveFailures": 0,
-        "manualLockActive": false
-      }
-    },
-    {
-      "id": "nta-1258",
-      "name": "日本産酒類の情報発信の強化に関する懇談会",
-      "ministry": "NTA",
-      "category": "STUDY",
-      "officialUrl": "https://www.nta.go.jp/about/council/kenkyu.htm#a09",
-      "pastYearCount": 1,
-      "status": "approved",
-      "crawlStatus": {
-        "lastAttempt": "2026-09-05 08:19:25",
-        "result": "success",
-        "extractionMethod": "rule",
-        "materialsCount": 112,
-        "datesCount": 5,
-        "failureReason": "",
-        "consecutiveFailures": 0,
-        "manualLockActive": false
-      }
-    },
-    {
-      "id": "nta-1260",
-      "name": "申告手続の電子化等に関する研究会",
-      "ministry": "NTA",
-      "category": "STUDY",
-      "officialUrl": "https://www.nta.go.jp/about/council/kenkyu.htm#a06",
-      "pastYearCount": 1,
-      "status": "approved",
-      "crawlStatus": {
-        "lastAttempt": "2026-09-05 08:19:44",
-        "result": "success",
-        "extractionMethod": "rule",
-        "materialsCount": 112,
-        "datesCount": 5,
-        "failureReason": "",
-        "consecutiveFailures": 0,
-        "manualLockActive": false
-      }
-    },
-    {
-      "id": "nta-1261",
-      "name": "土地評価審議会",
-      "ministry": "NTA",
-      "category": "COUNCIL",
-      "officialUrl": "https://www.nta.go.jp/about/council/kenkyu.htm#tochihyoka",
-      "pastYearCount": 1,
-      "status": "approved",
-      "crawlStatus": {
-        "lastAttempt": "2026-09-05 08:20:03",
-        "result": "success",
-        "extractionMethod": "rule",
-        "materialsCount": 112,
-        "datesCount": 5,
-        "failureReason": "",
-        "consecutiveFailures": 0,
-        "manualLockActive": false
-      }
-    },
-    {
       "id": "ppc-1267",
       "name": "個人情報保護政策懇談会",
       "ministry": "PPC",
@@ -19578,44 +19247,6 @@
         "failureReason": "Both LLM and rule extraction returned 0 results",
         "consecutiveFailures": 1,
         "manualLockActive": false
-      }
-    },
-    {
-      "id": "smea-smart_sme_kenkyukai",
-      "name": "スマートSME(中小企業)研究会",
-      "ministry": "SMEA",
-      "category": "STUDY",
-      "officialUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/index.html#smartsme",
-      "manualLock": true,
-      "description": "中小企業の生産性向上やデジタル化・スマート化に向けたデータ利活用や支援策を検討する中小企業庁の研究会。",
-      "pastYearCount": 0,
-      "status": "approved",
-      "materials": [
-        {
-          "name": "出席者名簿",
-          "url": "https://www.chusho.meti.go.jp/koukai/kenkyukai/smartsme/2019/191101smartsme01.pdf",
-          "type": "PDF"
-        },
-        {
-          "name": "出席者名簿",
-          "url": "https://www.chusho.meti.go.jp/koukai/kenkyukai/smartsme/2019/191010smartsme01.pdf",
-          "type": "PDF"
-        },
-        {
-          "name": "委員名簿",
-          "url": "https://www.chusho.meti.go.jp/koukai/kenkyukai/smartsme/2018/180620smartsme01.pdf",
-          "type": "PDF"
-        }
-      ],
-      "crawlStatus": {
-        "lastAttempt": "2026-09-05 08:22:15",
-        "result": "failed",
-        "extractionMethod": "none",
-        "materialsCount": 0,
-        "datesCount": 0,
-        "failureReason": "Both LLM and rule extraction returned 0 results",
-        "consecutiveFailures": 1,
-        "manualLockActive": true
       }
     },
     {
@@ -21877,63 +21508,6 @@
       }
     },
     {
-      "id": "mlit-2642",
-      "name": "企画・モニタリング専門委員会",
-      "ministry": "MLIT",
-      "category": "COMMITTEE",
-      "officialUrl": "https://www.mlit.go.jp/policy/shingikai/shingikaiList.html",
-      "pastYearCount": 0,
-      "status": "approved",
-      "crawlStatus": {
-        "lastAttempt": "2026-09-05 08:24:29",
-        "result": "partial",
-        "extractionMethod": "rule",
-        "materialsCount": 0,
-        "datesCount": 5,
-        "failureReason": "",
-        "consecutiveFailures": 0,
-        "manualLockActive": false
-      }
-    },
-    {
-      "id": "mlit-2644",
-      "name": "国土審議会　北海道開発分科会　計画推進部会",
-      "ministry": "MLIT",
-      "category": "SECTION",
-      "officialUrl": "https://www.mlit.go.jp/policy/shingikai/shingikaiList.html",
-      "pastYearCount": 0,
-      "status": "approved",
-      "crawlStatus": {
-        "lastAttempt": "2026-09-05 08:24:44",
-        "result": "partial",
-        "extractionMethod": "rule",
-        "materialsCount": 0,
-        "datesCount": 5,
-        "failureReason": "",
-        "consecutiveFailures": 0,
-        "manualLockActive": false
-      }
-    },
-    {
-      "id": "mlit-2645",
-      "name": "技術安全ワーキンググループ",
-      "ministry": "MLIT",
-      "category": "WORKING_GROUP",
-      "officialUrl": "https://www.mlit.go.jp/policy/shingikai/shingikaiList.html",
-      "pastYearCount": 0,
-      "status": "approved",
-      "crawlStatus": {
-        "lastAttempt": "2026-09-05 08:24:59",
-        "result": "partial",
-        "extractionMethod": "rule",
-        "materialsCount": 0,
-        "datesCount": 5,
-        "failureReason": "",
-        "consecutiveFailures": 0,
-        "manualLockActive": false
-      }
-    },
-    {
       "id": "mof-2717",
       "name": "財政制度等審議会",
       "ministry": "MOF",
@@ -22181,44 +21755,6 @@
       }
     },
     {
-      "id": "mlit-2637",
-      "name": "インフラマネジメント戦略小委員会",
-      "ministry": "MLIT",
-      "category": "COMMITTEE",
-      "officialUrl": "https://www.mlit.go.jp/policy/shingikai/shingikaiList.html",
-      "pastYearCount": 0,
-      "status": "approved",
-      "crawlStatus": {
-        "lastAttempt": "2026-09-05 08:25:12",
-        "result": "partial",
-        "extractionMethod": "rule",
-        "materialsCount": 0,
-        "datesCount": 5,
-        "failureReason": "",
-        "consecutiveFailures": 0,
-        "manualLockActive": false
-      }
-    },
-    {
-      "id": "mlit-2638",
-      "name": "社会資本整備審議会環境部会・交通政策審議会交通体系分科会環境部会エネルギー・経済安全保障小委員会",
-      "ministry": "MLIT",
-      "category": "SECTION",
-      "officialUrl": "https://www.mlit.go.jp/policy/shingikai/shingikaiList.html",
-      "pastYearCount": 0,
-      "status": "approved",
-      "crawlStatus": {
-        "lastAttempt": "2026-09-05 08:25:22",
-        "result": "partial",
-        "extractionMethod": "rule",
-        "materialsCount": 0,
-        "datesCount": 5,
-        "failureReason": "",
-        "consecutiveFailures": 0,
-        "manualLockActive": false
-      }
-    },
-    {
       "id": "moj-kyouyuu_shidou_kento",
       "name": "共有私道の保存・管理等に関する事例研究会",
       "ministry": "MOJ",
@@ -22268,836 +21804,6 @@
       }
     },
     {
-      "id": "smea-seichoken",
-      "name": "中小企業の成長経営の実現に向けた研究会",
-      "ministry": "SMEA",
-      "category": "STUDY",
-      "officialUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/index.html#seichoken",
-      "manualLock": true,
-      "description": "中小企業の持続的成長・生産性向上に向けた経営戦略やビジネスモデル変革を検討する研究会。",
-      "pastYearCount": 0,
-      "status": "approved",
-      "materials": [
-        {
-          "name": "資料1 委員名簿",
-          "url": "https://www.chusho.meti.go.jp/koukai/kenkyukai/seichoken/r7_001/001.pdf",
-          "type": "PDF"
-        },
-        {
-          "name": "資料1 委員名簿",
-          "url": "https://www.chusho.meti.go.jp/koukai/kenkyukai/seichoken/r6_004/001.pdf",
-          "type": "PDF"
-        },
-        {
-          "name": "資料1 委員名簿",
-          "url": "https://www.chusho.meti.go.jp/koukai/kenkyukai/seichoken/r6_003/001.pdf",
-          "type": "PDF"
-        }
-      ],
-      "crawlStatus": {
-        "lastAttempt": "2026-09-05 08:23:11",
-        "result": "failed",
-        "extractionMethod": "none",
-        "materialsCount": 0,
-        "datesCount": 0,
-        "failureReason": "Both LLM and rule extraction returned 0 results",
-        "consecutiveFailures": 1,
-        "manualLockActive": true
-      }
-    },
-    {
-      "id": "smea-local_zebra",
-      "name": "ローカル・ゼブラ・エコシステムの構築に向けた社会的インパクト評価の活用実践に関する研究会",
-      "ministry": "SMEA",
-      "category": "STUDY",
-      "officialUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/index.html#local_zebra",
-      "manualLock": true,
-      "description": "社会的インパクト評価の活用を通じてローカル・ゼブラ企業の創出・育成および地域エコシステムの構築を推進する研究会。",
-      "pastYearCount": 3,
-      "status": "approved",
-      "materials": [
-        {
-          "name": "資料1：委員名簿",
-          "url": "https://www.chusho.meti.go.jp/koukai/kenkyukai/local_zebra/004/001.pdf",
-          "type": "PDF"
-        },
-        {
-          "name": "資料1：委員名簿",
-          "url": "https://www.chusho.meti.go.jp/koukai/kenkyukai/local_zebra/003/001.pdf",
-          "type": "PDF"
-        },
-        {
-          "name": "資料2：委員名簿",
-          "url": "https://www.chusho.meti.go.jp/koukai/kenkyukai/local_zebra/001/002.pdf",
-          "type": "PDF"
-        }
-      ],
-      "crawlStatus": {
-        "lastAttempt": "2026-09-05 08:23:24",
-        "result": "failed",
-        "extractionMethod": "none",
-        "materialsCount": 0,
-        "datesCount": 0,
-        "failureReason": "Both LLM and rule extraction returned 0 results",
-        "consecutiveFailures": 1,
-        "manualLockActive": true
-      }
-    },
-    {
-      "id": "smea-chiiki_ecosystem",
-      "name": "地域の社会課題解決促進に向けたエコシステム研究会",
-      "ministry": "SMEA",
-      "category": "STUDY",
-      "officialUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/index.html#ecosystem",
-      "manualLock": true,
-      "description": "地域課題解決事業の推進および地域エコシステムの自立的発展に向けた基本指針・支援策を検討する研究会。",
-      "pastYearCount": 0,
-      "status": "approved",
-      "materials": [
-        {
-          "name": "資料1：委員名簿(PDF形式：117KB)",
-          "url": "https://www.chusho.meti.go.jp/koukai/kenkyukai/ecosystem/004/001.pdf",
-          "type": "PDF"
-        }
-      ],
-      "crawlStatus": {
-        "lastAttempt": "2026-09-05 08:24:40",
-        "result": "success",
-        "extractionMethod": "rule",
-        "materialsCount": 351,
-        "datesCount": 5,
-        "failureReason": "",
-        "consecutiveFailures": 0,
-        "manualLockActive": true
-      }
-    },
-    {
-      "id": "smea-hatarakikata",
-      "name": "働き方改革対応合同チーム",
-      "ministry": "SMEA",
-      "category": "STUDY",
-      "officialUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/index.html#hatarakikata",
-      "manualLock": true,
-      "description": "中小企業における働き方改革の円滑な推進と生産性向上の両立に向けた支援策を検討する合同チーム。",
-      "pastYearCount": 0,
-      "status": "approved",
-      "crawlStatus": {
-        "lastAttempt": "2026-09-05 08:24:54",
-        "result": "failed",
-        "extractionMethod": "none",
-        "materialsCount": 0,
-        "datesCount": 0,
-        "failureReason": "Both LLM and rule extraction returned 0 results",
-        "consecutiveFailures": 1,
-        "manualLockActive": true
-      }
-    },
-    {
-      "id": "smea-kenjinkaigi",
-      "name": "価値創造企業に関する賢人会議",
-      "ministry": "SMEA",
-      "category": "STUDY",
-      "officialUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/index.html#kenjinkaigi",
-      "manualLock": true,
-      "description": "付加価値の創造やイノベーションを通じて地域や社会に貢献する価値創造企業のあり方を議論する賢人会議。",
-      "pastYearCount": 0,
-      "status": "approved",
-      "materials": [
-        {
-          "name": "賢人会議名簿",
-          "url": "https://www.chusho.meti.go.jp/koukai/kenkyukai/kenjinkaigi/2020/download/200218kenjinkaigi01.pdf",
-          "type": "PDF"
-        },
-        {
-          "name": "委員名簿",
-          "url": "https://www.chusho.meti.go.jp/koukai/kenkyukai/kenjinkaigi/2019/download/191203kenjinkaigi02.pdf",
-          "type": "PDF"
-        }
-      ],
-      "crawlStatus": {
-        "lastAttempt": "2026-09-05 08:25:08",
-        "result": "failed",
-        "extractionMethod": "none",
-        "materialsCount": 0,
-        "datesCount": 0,
-        "failureReason": "Both LLM and rule extraction returned 0 results",
-        "consecutiveFailures": 1,
-        "manualLockActive": true
-      }
-    },
-    {
-      "id": "smea-chizaitorihiki_wg",
-      "name": "知的財産取引適正化ワーキンググループ",
-      "ministry": "SMEA",
-      "category": "WORKING_GROUP",
-      "officialUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/index.html#chizaitorihiki_wg",
-      "manualLock": true,
-      "description": "中小企業の知的財産に関する適正な取引環境の構築に向けたガイドラインや運用改善を検討するWG。",
-      "pastYearCount": 4,
-      "status": "approved",
-      "crawlStatus": {
-        "lastAttempt": "2026-09-05 08:25:19",
-        "result": "failed",
-        "extractionMethod": "none",
-        "materialsCount": 0,
-        "datesCount": 0,
-        "failureReason": "Both LLM and rule extraction returned 0 results",
-        "consecutiveFailures": 1,
-        "manualLockActive": true
-      }
-    },
-    {
-      "id": "smea-kigyo_torihiki",
-      "name": "企業取引研究会",
-      "ministry": "SMEA",
-      "category": "STUDY",
-      "officialUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/index.html#kigyo_torihiki",
-      "manualLock": true,
-      "description": "適正な下請取引や価格転嫁、取引条件の改善に向けた施策を検討する研究会。",
-      "pastYearCount": 4,
-      "status": "approved",
-      "crawlStatus": {
-        "lastAttempt": "2026-09-05 08:25:30",
-        "result": "failed",
-        "extractionMethod": "none",
-        "materialsCount": 0,
-        "datesCount": 0,
-        "failureReason": "Both LLM and rule extraction returned 0 results",
-        "consecutiveFailures": 1,
-        "manualLockActive": true
-      }
-    },
-    {
-      "id": "smea-shiharaikaizen",
-      "name": "約束手形をはじめとする支払条件の改善に向けた検討会",
-      "ministry": "SMEA",
-      "category": "STUDY",
-      "officialUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/index.html#shiharaikaizen",
-      "manualLock": true,
-      "description": "約束手形の利用廃止や支払期日の短縮など、中小企業の資金繰り改善に向けた支払条件の適正化を検討する会合。",
-      "pastYearCount": 0,
-      "status": "approved",
-      "crawlStatus": {
-        "lastAttempt": "2026-09-05 08:25:41",
-        "result": "failed",
-        "extractionMethod": "none",
-        "materialsCount": 0,
-        "datesCount": 0,
-        "failureReason": "Both LLM and rule extraction returned 0 results",
-        "consecutiveFailures": 1,
-        "manualLockActive": true
-      }
-    },
-    {
-      "id": "smea-chizaitorihiki",
-      "name": "知的財産取引検討会",
-      "ministry": "SMEA",
-      "category": "STUDY",
-      "officialUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/index.html#chizaitorihiki",
-      "manualLock": true,
-      "description": "中小企業・スタートアップの知財保護と適正な取引慣行の確立を検討する検討会。",
-      "pastYearCount": 0,
-      "status": "approved",
-      "crawlStatus": {
-        "lastAttempt": "2026-09-05 08:25:52",
-        "result": "failed",
-        "extractionMethod": "none",
-        "materialsCount": 0,
-        "datesCount": 0,
-        "failureReason": "Both LLM and rule extraction returned 0 results",
-        "consecutiveFailures": 1,
-        "manualLockActive": true
-      }
-    },
-    {
-      "id": "smea-katatorihiki",
-      "name": "型取引の適正化推進協議会",
-      "ministry": "SMEA",
-      "category": "STUDY",
-      "officialUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/index.html#katatorihiki",
-      "manualLock": true,
-      "description": "製造業における「型」の保管・廃棄・費用負担等の取引適正化に向けたアクションプランを推進する協議会。",
-      "pastYearCount": 0,
-      "status": "approved",
-      "crawlStatus": {
-        "lastAttempt": "2026-09-05 08:26:05",
-        "result": "failed",
-        "extractionMethod": "none",
-        "materialsCount": 0,
-        "datesCount": 0,
-        "failureReason": "Both LLM and rule extraction returned 0 results",
-        "consecutiveFailures": 1,
-        "manualLockActive": true
-      }
-    },
-    {
-      "id": "smea-yorozu",
-      "name": "地域の経営支援力強化に向けたよろず支援拠点のあり方検討会",
-      "ministry": "SMEA",
-      "category": "STUDY",
-      "officialUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/index.html#yorozu",
-      "manualLock": true,
-      "description": "全国のよろず支援拠点の支援機能強化および伴走型支援体制の高度化を検討する検討会。",
-      "pastYearCount": 0,
-      "status": "approved",
-      "crawlStatus": {
-        "lastAttempt": "2026-09-05 08:26:16",
-        "result": "failed",
-        "extractionMethod": "none",
-        "materialsCount": 0,
-        "datesCount": 0,
-        "failureReason": "Both LLM and rule extraction returned 0 results",
-        "consecutiveFailures": 1,
-        "manualLockActive": true
-      }
-    },
-    {
-      "id": "smea-jigyo_kyodo",
-      "name": "事業協同組合等の余裕金運用に関する検討会",
-      "ministry": "SMEA",
-      "category": "STUDY",
-      "officialUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/index.html#jigyo_kyodo",
-      "manualLock": true,
-      "description": "事業協同組合等の健全な財務運営および余裕金の安全かつ効率的な運用方法を検討する検討会。",
-      "pastYearCount": 0,
-      "status": "approved",
-      "crawlStatus": {
-        "lastAttempt": "2026-09-05 08:26:27",
-        "result": "failed",
-        "extractionMethod": "none",
-        "materialsCount": 0,
-        "datesCount": 0,
-        "failureReason": "Both LLM and rule extraction returned 0 results",
-        "consecutiveFailures": 1,
-        "manualLockActive": true
-      }
-    },
-    {
-      "id": "smea-shokibo_jinzai_management",
-      "name": "中小企業・小規模事業者の人材マネジメントに関する研究会",
-      "ministry": "SMEA",
-      "category": "STUDY",
-      "officialUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/index.html#shokibo_jinzai_management",
-      "manualLock": true,
-      "description": "中小企業・小規模事業者の持続的成長を支える多様な人材の確保・育成・定着に向けたマネジメント手法を検討する研究会。",
-      "pastYearCount": 5,
-      "status": "approved",
-      "crawlStatus": {
-        "lastAttempt": "2026-09-05 08:26:38",
-        "result": "failed",
-        "extractionMethod": "none",
-        "materialsCount": 0,
-        "datesCount": 0,
-        "failureReason": "Both LLM and rule extraction returned 0 results",
-        "consecutiveFailures": 1,
-        "manualLockActive": true
-      }
-    },
-    {
-      "id": "smea-shokibo_jinzai",
-      "name": "中小企業・小規模事業者の人材戦略に関する有識者検討会",
-      "ministry": "SMEA",
-      "category": "STUDY",
-      "officialUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/index.html#shokibo_jinzai",
-      "manualLock": true,
-      "description": "人手不足に対応するための人材活用ガイドライン策定や多様な人材活用戦略を検討する有識者検討会。",
-      "pastYearCount": 0,
-      "status": "approved",
-      "crawlStatus": {
-        "lastAttempt": "2026-09-05 08:26:50",
-        "result": "failed",
-        "extractionMethod": "none",
-        "materialsCount": 0,
-        "datesCount": 0,
-        "failureReason": "Both LLM and rule extraction returned 0 results",
-        "consecutiveFailures": 1,
-        "manualLockActive": true
-      }
-    },
-    {
-      "id": "smea-data_rikatsuyou",
-      "name": "中小企業・小規模事業者のデータ利活用に関する検討委員会",
-      "ministry": "SMEA",
-      "category": "STUDY",
-      "officialUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/index.html#DataRikatsuyou",
-      "manualLock": true,
-      "description": "中小企業の業務効率化や新ビジネス創出に向けたデータの収集・利活用促進策を検討する委員会。",
-      "pastYearCount": 0,
-      "status": "approved",
-      "crawlStatus": {
-        "lastAttempt": "2026-09-05 08:26:58",
-        "result": "failed",
-        "extractionMethod": "none",
-        "materialsCount": 0,
-        "datesCount": 0,
-        "failureReason": "Both LLM and rule extraction returned 0 results",
-        "consecutiveFailures": 1,
-        "manualLockActive": true
-      }
-    },
-    {
-      "id": "smea-shokibo_kaseguchikara",
-      "name": "小規模事業者の「稼ぐ力」の強化に向けた諸課題に関する検討会",
-      "ministry": "SMEA",
-      "category": "STUDY",
-      "officialUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/index.html#shokibo_kaseguchikara",
-      "manualLock": true,
-      "description": "小規模事業者が持続的に発展し付加価値を高めるための「稼ぐ力」の強化策を検討する検討会。",
-      "pastYearCount": 5,
-      "status": "approved",
-      "crawlStatus": {
-        "lastAttempt": "2026-09-05 08:27:08",
-        "result": "failed",
-        "extractionMethod": "none",
-        "materialsCount": 0,
-        "datesCount": 0,
-        "failureReason": "Both LLM and rule extraction returned 0 results",
-        "consecutiveFailures": 1,
-        "manualLockActive": true
-      }
-    },
-    {
-      "id": "smea-shigenshuyaku",
-      "name": "中小企業の経営資源集約化等に関する検討会",
-      "ministry": "SMEA",
-      "category": "STUDY",
-      "officialUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/index.html#shigenshuyaku",
-      "manualLock": true,
-      "description": "中小M&Aや事業統合を通じた経営資源の集約化・生産性向上を支援する施策を検討する検討会。",
-      "pastYearCount": 0,
-      "status": "approved",
-      "crawlStatus": {
-        "lastAttempt": "2026-09-05 08:27:20",
-        "result": "failed",
-        "extractionMethod": "none",
-        "materialsCount": 0,
-        "datesCount": 0,
-        "failureReason": "Both LLM and rule extraction returned 0 results",
-        "consecutiveFailures": 1,
-        "manualLockActive": true
-      }
-    },
-    {
-      "id": "smea-shokei_ma",
-      "name": "中小企業の事業承継・M&Aに関する検討会",
-      "ministry": "SMEA",
-      "category": "STUDY",
-      "officialUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/index.html#shokei_ma",
-      "manualLock": true,
-      "description": "円滑な事業承継と健全な中小M&A市場の発展に向けた総合的な支援策を検討する検討会。",
-      "pastYearCount": 0,
-      "status": "approved",
-      "crawlStatus": {
-        "lastAttempt": "2026-09-05 08:27:31",
-        "result": "failed",
-        "extractionMethod": "none",
-        "materialsCount": 0,
-        "datesCount": 0,
-        "failureReason": "Both LLM and rule extraction returned 0 results",
-        "consecutiveFailures": 1,
-        "manualLockActive": true
-      }
-    },
-    {
-      "id": "smea-shinzoku",
-      "name": "中小企業の親族内承継に関する検討会",
-      "ministry": "SMEA",
-      "category": "STUDY",
-      "officialUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/index.html#shinzoku",
-      "manualLock": true,
-      "description": "後継者不在問題への対応や親族内承継の円滑化に向けた税制・金融・法的支援策を検討する検討会。",
-      "pastYearCount": 4,
-      "status": "approved",
-      "crawlStatus": {
-        "lastAttempt": "2026-09-05 08:27:40",
-        "result": "failed",
-        "extractionMethod": "none",
-        "materialsCount": 0,
-        "datesCount": 0,
-        "failureReason": "Both LLM and rule extraction returned 0 results",
-        "consecutiveFailures": 1,
-        "manualLockActive": true
-      }
-    },
-    {
-      "id": "smea-ma_shijou",
-      "name": "中小M&A市場の改革に向けた検討会",
-      "ministry": "SMEA",
-      "category": "STUDY",
-      "officialUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/index.html#ma_shijou",
-      "manualLock": true,
-      "description": "中小M&A仲介業者・FAの透明性確保や手数料適正化など、市場の健全な発展に向けた改革を議論する検討会。",
-      "pastYearCount": 2,
-      "status": "approved",
-      "crawlStatus": {
-        "lastAttempt": "2026-09-05 08:27:51",
-        "result": "failed",
-        "extractionMethod": "none",
-        "materialsCount": 0,
-        "datesCount": 0,
-        "failureReason": "Both LLM and rule extraction returned 0 results",
-        "consecutiveFailures": 1,
-        "manualLockActive": true
-      }
-    },
-    {
-      "id": "smea-ma_guideline",
-      "name": "中小M&Aガイドライン見直し検討小委員会",
-      "ministry": "SMEA",
-      "category": "WORKING_GROUP",
-      "officialUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/index.html#ma_guideline",
-      "manualLock": true,
-      "description": "中小M&Aガイドラインの改訂や遵守状況のモニタリングを行う小委員会。",
-      "pastYearCount": 0,
-      "status": "approved",
-      "crawlStatus": {
-        "lastAttempt": "2026-09-05 08:28:01",
-        "result": "failed",
-        "extractionMethod": "none",
-        "materialsCount": 0,
-        "datesCount": 0,
-        "failureReason": "Both LLM and rule extraction returned 0 results",
-        "consecutiveFailures": 1,
-        "manualLockActive": true
-      }
-    },
-    {
-      "id": "smea-hikitugigl",
-      "name": "「事業引継ぎガイドライン」改訂検討会",
-      "ministry": "SMEA",
-      "category": "STUDY",
-      "officialUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/index.html#hikitugigl",
-      "manualLock": true,
-      "description": "事業引継ぎ支援センターの機能強化やガイドラインの改訂を検討する会合。",
-      "pastYearCount": 0,
-      "status": "approved",
-      "crawlStatus": {
-        "lastAttempt": "2026-09-05 08:28:11",
-        "result": "failed",
-        "extractionMethod": "none",
-        "materialsCount": 0,
-        "datesCount": 0,
-        "failureReason": "Both LLM and rule extraction returned 0 results",
-        "consecutiveFailures": 1,
-        "manualLockActive": true
-      }
-    },
-    {
-      "id": "smea-innovation_produce_suishin",
-      "name": "イノベーション・プロデュース推進会議",
-      "ministry": "SMEA",
-      "category": "STUDY",
-      "officialUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/index.html#innovation_produce_suishin",
-      "manualLock": true,
-      "description": "地域や中小企業における新規事業創出・イノベーションを推進する会議。",
-      "pastYearCount": 1,
-      "status": "approved",
-      "crawlStatus": {
-        "lastAttempt": "2026-09-05 08:28:18",
-        "result": "failed",
-        "extractionMethod": "none",
-        "materialsCount": 0,
-        "datesCount": 0,
-        "failureReason": "Both LLM and rule extraction returned 0 results",
-        "consecutiveFailures": 1,
-        "manualLockActive": true
-      }
-    },
-    {
-      "id": "smea-innovation_producer",
-      "name": "イノベーション・プロデューサーガイドライン策定委員会",
-      "ministry": "SMEA",
-      "category": "STUDY",
-      "officialUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/index.html#innovation_producer",
-      "manualLock": true,
-      "description": "イノベーション・プロデューサーの育成・活用ガイドライン策定を検討する委員会。",
-      "pastYearCount": 2,
-      "status": "approved",
-      "crawlStatus": {
-        "lastAttempt": "2026-09-05 08:28:26",
-        "result": "failed",
-        "extractionMethod": "none",
-        "materialsCount": 0,
-        "datesCount": 0,
-        "failureReason": "Both LLM and rule extraction returned 0 results",
-        "consecutiveFailures": 1,
-        "manualLockActive": true
-      }
-    },
-    {
-      "id": "smea-seicho_innovation",
-      "name": "中小企業の成長のためのイノベーション研究会",
-      "ministry": "SMEA",
-      "category": "STUDY",
-      "officialUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/index.html#seicho_innovation",
-      "manualLock": true,
-      "description": "研究開発やDX・GXを通じた中小企業の成長促進策を検討する研究会。",
-      "pastYearCount": 0,
-      "status": "approved",
-      "crawlStatus": {
-        "lastAttempt": "2026-09-05 08:28:32",
-        "result": "failed",
-        "extractionMethod": "none",
-        "materialsCount": 0,
-        "datesCount": 0,
-        "failureReason": "Both LLM and rule extraction returned 0 results",
-        "consecutiveFailures": 1,
-        "manualLockActive": true
-      }
-    },
-    {
-      "id": "smea-innovation",
-      "name": "中小企業のイノベーションの在り方に関する有識者検討会",
-      "ministry": "SMEA",
-      "category": "STUDY",
-      "officialUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/index.html#innovation",
-      "manualLock": true,
-      "description": "中小企業の持続的発展を支えるイノベーション創出の方向性を議論する有識者検討会。",
-      "pastYearCount": 0,
-      "status": "approved",
-      "crawlStatus": {
-        "lastAttempt": "2026-09-05 08:28:42",
-        "result": "failed",
-        "extractionMethod": "none",
-        "materialsCount": 0,
-        "datesCount": 0,
-        "failureReason": "Both LLM and rule extraction returned 0 results",
-        "consecutiveFailures": 1,
-        "manualLockActive": true
-      }
-    },
-    {
-      "id": "smea-sbir",
-      "name": "日本版ＳＢＩＲ制度の見直しに向けた検討会",
-      "ministry": "SMEA",
-      "category": "STUDY",
-      "officialUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/index.html#sbir",
-      "manualLock": true,
-      "description": "中小企業・スタートアップの研究開発を促進する日本版SBIR制度の抜本的見直しを検討する検討会。",
-      "pastYearCount": 0,
-      "status": "approved",
-      "crawlStatus": {
-        "lastAttempt": "2026-09-05 08:28:52",
-        "result": "failed",
-        "extractionMethod": "none",
-        "materialsCount": 0,
-        "datesCount": 0,
-        "failureReason": "Both LLM and rule extraction returned 0 results",
-        "consecutiveFailures": 1,
-        "manualLockActive": true
-      }
-    },
-    {
-      "id": "smea-kyoujin",
-      "name": "中小企業強靱化研究会",
-      "ministry": "SMEA",
-      "category": "STUDY",
-      "officialUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/index.html#kyoujin",
-      "manualLock": true,
-      "description": "自然災害や感染症等のリスクに対する中小企業の事業継続力強化（レジリエンス向上）を検討する研究会。",
-      "pastYearCount": 0,
-      "status": "approved",
-      "crawlStatus": {
-        "lastAttempt": "2026-09-05 08:29:04",
-        "result": "failed",
-        "extractionMethod": "none",
-        "materialsCount": 0,
-        "datesCount": 0,
-        "failureReason": "Both LLM and rule extraction returned 0 results",
-        "consecutiveFailures": 1,
-        "manualLockActive": true
-      }
-    },
-    {
-      "id": "smea-businessmodel_syokoutyukin",
-      "name": "新たなビジネスモデルを踏まえた商工中金の在り方検討会",
-      "ministry": "SMEA",
-      "category": "STUDY",
-      "officialUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/index.html#businessmodel_syokoutyukin",
-      "manualLock": true,
-      "description": "事業承継支援や再生支援等の新たな付加価値提供を踏まえた商工中金の組織・業務のあり方を議論する検討会。",
-      "pastYearCount": 0,
-      "status": "approved",
-      "crawlStatus": {
-        "lastAttempt": "2026-09-05 08:29:12",
-        "result": "failed",
-        "extractionMethod": "none",
-        "materialsCount": 0,
-        "datesCount": 0,
-        "failureReason": "Both LLM and rule extraction returned 0 results",
-        "consecutiveFailures": 1,
-        "manualLockActive": true
-      }
-    },
-    {
-      "id": "smea-syokoutyukinkikitaiou",
-      "name": "商工中金の経営及び危機対応業務に関する評価委員会",
-      "ministry": "SMEA",
-      "category": "STUDY",
-      "officialUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/index.html#syokoutyukinkikitaiou",
-      "manualLock": true,
-      "description": "商工中金の経営状況や危機対応業務の実施状況を客観的に評価する委員会。",
-      "pastYearCount": 0,
-      "status": "approved",
-      "crawlStatus": {
-        "lastAttempt": "2026-09-05 08:29:25",
-        "result": "failed",
-        "extractionMethod": "none",
-        "materialsCount": 0,
-        "datesCount": 0,
-        "failureReason": "Both LLM and rule extraction returned 0 results",
-        "consecutiveFailures": 1,
-        "manualLockActive": true
-      }
-    },
-    {
-      "id": "smea-syokoutyukinarikata",
-      "name": "商工中金の在り方検討会",
-      "ministry": "SMEA",
-      "category": "STUDY",
-      "officialUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/index.html#syokoutyukinarikata",
-      "manualLock": true,
-      "description": "商工中金の完全民営化および新たなビジネスモデルのあり方を検討する検討会。",
-      "pastYearCount": 0,
-      "status": "approved",
-      "crawlStatus": {
-        "lastAttempt": "2026-09-05 08:29:53",
-        "result": "success",
-        "extractionMethod": "rule",
-        "materialsCount": 342,
-        "datesCount": 5,
-        "failureReason": "",
-        "consecutiveFailures": 0,
-        "manualLockActive": true
-      }
-    },
-    {
-      "id": "nta-shinsa_bunkakai",
-      "name": "国税審議会 国税審査分科会",
-      "ministry": "NTA",
-      "category": "COUNCIL",
-      "officialUrl": "https://www.nta.go.jp/about/council/kenkyu.htm#a02",
-      "manualLock": true,
-      "description": "国税庁長官の処分に関する異議申立て・再調査の請求等の適正性を審査する分科会。",
-      "pastYearCount": 1,
-      "status": "approved",
-      "crawlStatus": {
-        "lastAttempt": "2026-09-05 08:20:23",
-        "result": "success",
-        "extractionMethod": "rule",
-        "materialsCount": 112,
-        "datesCount": 5,
-        "failureReason": "",
-        "consecutiveFailures": 0,
-        "manualLockActive": true
-      }
-    },
-    {
-      "id": "nta-sake_bunkakai",
-      "name": "国税審議会 酒類分科会",
-      "ministry": "NTA",
-      "category": "COUNCIL",
-      "officialUrl": "https://www.nta.go.jp/about/council/kenkyu.htm#a03",
-      "manualLock": true,
-      "description": "酒税保全法や酒類業の健全な発達・表示基準等に関する重要事項を調査審議する分科会。",
-      "pastYearCount": 1,
-      "status": "approved",
-      "crawlStatus": {
-        "lastAttempt": "2026-09-05 08:20:43",
-        "result": "success",
-        "extractionMethod": "rule",
-        "materialsCount": 112,
-        "datesCount": 5,
-        "failureReason": "",
-        "consecutiveFailures": 0,
-        "manualLockActive": true
-      }
-    },
-    {
-      "id": "nta-chiri_hyouji_bukai",
-      "name": "国税審議会 地理的表示部会",
-      "ministry": "NTA",
-      "category": "WORKING_GROUP",
-      "officialUrl": "https://www.nta.go.jp/about/council/kenkyu.htm#a031",
-      "manualLock": true,
-      "description": "酒類の地理的表示（GI）の指定および保護に関する専門的検討を行う部会。",
-      "pastYearCount": 0,
-      "status": "approved",
-      "crawlStatus": {
-        "lastAttempt": "2026-09-05 08:21:00",
-        "result": "success",
-        "extractionMethod": "rule",
-        "materialsCount": 128,
-        "datesCount": 5,
-        "failureReason": "",
-        "consecutiveFailures": 0,
-        "manualLockActive": true
-      }
-    },
-    {
-      "id": "nta-zeirishi_bunkakai",
-      "name": "国税審議会 税理士分科会",
-      "ministry": "NTA",
-      "category": "COUNCIL",
-      "officialUrl": "https://www.nta.go.jp/about/council/kenkyu.htm#a04",
-      "manualLock": true,
-      "description": "税理士試験の実施や税理士の懲戒処分、税理士制度に関する重要事項を調査審議する分科会。",
-      "pastYearCount": 5,
-      "status": "approved",
-      "crawlStatus": {
-        "lastAttempt": "2026-09-05 08:21:18",
-        "result": "success",
-        "extractionMethod": "rule",
-        "materialsCount": 115,
-        "datesCount": 5,
-        "failureReason": "",
-        "consecutiveFailures": 0,
-        "manualLockActive": true
-      }
-    },
-    {
-      "id": "nta-nihonsan_sake_brand",
-      "name": "日本産酒類のブランド戦略検討会",
-      "ministry": "NTA",
-      "category": "STUDY",
-      "officialUrl": "https://www.nta.go.jp/about/council/kenkyu.htm#a11",
-      "manualLock": true,
-      "description": "日本産酒類の輸出拡大および海外におけるブランド価値向上のための戦略を検討する会合。",
-      "pastYearCount": 0,
-      "status": "approved",
-      "crawlStatus": {
-        "lastAttempt": "2026-09-05 08:21:32",
-        "result": "success",
-        "extractionMethod": "rule",
-        "materialsCount": 118,
-        "datesCount": 5,
-        "failureReason": "",
-        "consecutiveFailures": 0,
-        "manualLockActive": true
-      }
-    },
-    {
-      "id": "nta-sake_kondan",
-      "name": "酒類販売業等に関する懇談会",
-      "ministry": "NTA",
-      "category": "STUDY",
-      "officialUrl": "https://www.nta.go.jp/about/council/kenkyu.htm#a05",
-      "manualLock": true,
-      "description": "酒類販売業を取り巻く環境変化や公正な取引環境の確保について意見交換を行う懇談会。",
-      "pastYearCount": 1,
-      "status": "approved",
-      "crawlStatus": {
-        "lastAttempt": "2026-09-05 08:21:48",
-        "result": "success",
-        "extractionMethod": "rule",
-        "materialsCount": 112,
-        "datesCount": 5,
-        "failureReason": "",
-        "consecutiveFailures": 0,
-        "manualLockActive": true
-      }
-    },
-    {
       "id": "jsa-sports_guideline",
       "name": "運動・スポーツガイドライン（仮称）策定に向けた有識者会議",
       "ministry": "JSA",
@@ -23113,27 +21819,6 @@
         "extractionMethod": "rule",
         "materialsCount": 3,
         "datesCount": 5,
-        "failureReason": "",
-        "consecutiveFailures": 0,
-        "manualLockActive": true
-      }
-    },
-    {
-      "id": "mhlw-kansenshou_yobou_shinsa",
-      "name": "厚生科学審議会 感染症・予防接種審査分科会",
-      "ministry": "MHLW",
-      "category": "COUNCIL",
-      "officialUrl": "https://www.mhlw.go.jp/stf/shingi/indexshingi.html",
-      "manualLock": true,
-      "description": "予防接種健康被害救済制度および感染症の予防接種に関する審査を行う厚生科学審議会の分科会。",
-      "pastYearCount": 0,
-      "status": "approved",
-      "crawlStatus": {
-        "lastAttempt": "2026-09-05 08:30:25",
-        "result": "partial",
-        "extractionMethod": "rule",
-        "materialsCount": 74,
-        "datesCount": 0,
         "failureReason": "",
         "consecutiveFailures": 0,
         "manualLockActive": true
@@ -23156,44 +21841,6 @@
         "materialsCount": 0,
         "datesCount": 0,
         "failureReason": "Network fetch failed",
-        "consecutiveFailures": 1,
-        "manualLockActive": true
-      }
-    },
-    {
-      "id": "smea-bansou_shien",
-      "name": "伴走支援の在り方検討会",
-      "ministry": "SMEA",
-      "category": "STUDY",
-      "officialUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/index.html#bansou",
-      "manualLock": true,
-      "description": "中小企業・小規模事業者の経営力再構築に向けた伴走型支援のあり方や評価指標を検討する検討会。",
-      "pastYearCount": 0,
-      "status": "approved",
-      "materials": [
-        {
-          "name": "資料1 委員名簿",
-          "url": "https://www.chusho.meti.go.jp/koukai/kenkyukai/seichoken/r6_004/001.pdf",
-          "type": "PDF"
-        },
-        {
-          "name": "資料1 委員名簿",
-          "url": "https://www.chusho.meti.go.jp/koukai/kenkyukai/seichoken/r6_003/001.pdf",
-          "type": "PDF"
-        },
-        {
-          "name": "資料1 委員名簿",
-          "url": "https://www.chusho.meti.go.jp/koukai/kenkyukai/seichoken/r6_002/001.pdf",
-          "type": "PDF"
-        }
-      ],
-      "crawlStatus": {
-        "lastAttempt": "2026-09-05 08:30:10",
-        "result": "failed",
-        "extractionMethod": "none",
-        "materialsCount": 0,
-        "datesCount": 0,
-        "failureReason": "Both LLM and rule extraction returned 0 results",
         "consecutiveFailures": 1,
         "manualLockActive": true
       }
@@ -23251,25 +21898,6 @@
         "extractionMethod": "rule",
         "materialsCount": 18,
         "datesCount": 3,
-        "failureReason": "",
-        "consecutiveFailures": 0,
-        "manualLockActive": false
-      }
-    },
-    {
-      "id": "nta-2854",
-      "name": "税理士分科会（国税審議会）",
-      "ministry": "NTA",
-      "category": "SUBCOMMITTEE",
-      "officialUrl": "https://www.nta.go.jp/about/council/kenkyu.htm",
-      "pastYearCount": 1,
-      "status": "approved",
-      "crawlStatus": {
-        "lastAttempt": "2026-09-05 08:22:06",
-        "result": "success",
-        "extractionMethod": "rule",
-        "materialsCount": 112,
-        "datesCount": 5,
         "failureReason": "",
         "consecutiveFailures": 0,
         "manualLockActive": false
@@ -25884,6 +24512,334 @@
       "pastYearCount": 1,
       "status": "approved",
       "manualLock": true
+    },
+    {
+      "id": "cas-kokka_jouhou",
+      "name": "国家情報会議",
+      "ministry": "CAS",
+      "category": "COUNCIL",
+      "officialUrl": "https://www.cas.go.jp/jp/gaiyou/jimu/nic_nib.html",
+      "status": "approved"
+    },
+    {
+      "id": "cas-datacenter_ricchi",
+      "name": "データセンターの立地に関する関係省庁連絡会議",
+      "ministry": "CAS",
+      "category": "LIAISON",
+      "officialUrl": "https://www.cas.go.jp/jp/seisaku/datacenter_ricchi/index.html",
+      "status": "approved"
+    },
+    {
+      "id": "digital-jinzai_ikusei",
+      "name": "今後のデジタル人材育成政策に関する検討会",
+      "ministry": "DIGITAL",
+      "category": "STUDY",
+      "officialUrl": "https://www.digital.go.jp/councils/digital-talent-development-policy",
+      "status": "approved"
+    },
+    {
+      "id": "fsa-kinyu_singikai",
+      "name": "金融審議会",
+      "ministry": "FSA",
+      "category": "COUNCIL",
+      "officialUrl": "https://www.fsa.go.jp/singi/singi_kinyu/base.html",
+      "status": "approved"
+    },
+    {
+      "id": "jsa-sports_mirai_kaihatsu",
+      "name": "第二期スポーツ未来開拓会議",
+      "ministry": "JSA",
+      "category": "COUNCIL",
+      "officialUrl": "https://www.mext.go.jp/sports/b_menu/shingi/027_index/index.html",
+      "status": "approved"
+    },
+    {
+      "id": "meti-shouhi_keizai",
+      "name": "消費経済審議会",
+      "ministry": "METI",
+      "category": "COUNCIL",
+      "officialUrl": "https://www.meti.go.jp/shingikai/shokeishin/index.html",
+      "status": "approved"
+    },
+    {
+      "id": "meti-keiryou_gyousei",
+      "name": "計量行政審議会",
+      "ministry": "METI",
+      "category": "COUNCIL",
+      "officialUrl": "https://www.meti.go.jp/shingikai/keiryogyoseishin/index.html",
+      "status": "approved"
+    },
+    {
+      "id": "meti-denryoku_gas_kanshi",
+      "name": "電力・ガス取引監視等委員会",
+      "ministry": "METI",
+      "category": "COMMITTEE",
+      "officialUrl": "https://www.egc.meti.go.jp/activity/index.html",
+      "status": "approved"
+    },
+    {
+      "id": "meti-yushutsunyu_torihiki",
+      "name": "輸出入取引審議会",
+      "ministry": "METI",
+      "category": "COUNCIL",
+      "officialUrl": "https://warp.ndl.go.jp/web/20180913000000/www.meti.go.jp/shingikai/yutorishin/index.html",
+      "status": "approved"
+    },
+    {
+      "id": "meti-kagaku_busshitsu",
+      "name": "化学物質審議会",
+      "ministry": "METI",
+      "category": "COUNCIL",
+      "officialUrl": "https://www.meti.go.jp/shingikai/kagakubusshitsu/index.html",
+      "status": "approved"
+    },
+    {
+      "id": "meti-suiso_daidoumyaku",
+      "name": "水素大動脈構想実現会議",
+      "ministry": "METI",
+      "category": "COUNCIL",
+      "officialUrl": "https://www.meti.go.jp/shingikai/energy_environment/hydrogen_highway/index.html",
+      "status": "approved"
+    },
+    {
+      "id": "mhlw-fukushi_jinzai",
+      "name": "福祉部会福祉人材確保専門委員会",
+      "ministry": "MHLW",
+      "category": "EXPERT_COMMITTEE",
+      "officialUrl": "https://www.mhlw.go.jp/stf/shingi/shingi-hosho_224742.html",
+      "status": "approved"
+    },
+    {
+      "id": "mhlw-jinkou_bukai",
+      "name": "人口部会",
+      "ministry": "MHLW",
+      "category": "SECTION",
+      "officialUrl": "https://www.mhlw.go.jp/stf/shingi/shingi-hosho_126704.html",
+      "status": "approved"
+    },
+    {
+      "id": "mhlw-tokumei_iryou",
+      "name": "匿名医療情報等の提供に関する専門委員会",
+      "ministry": "MHLW",
+      "category": "EXPERT_COMMITTEE",
+      "officialUrl": "https://www.mhlw.go.jp/stf/shingi/index_13914.html",
+      "status": "approved"
+    },
+    {
+      "id": "mhlw-kodomo_katei_fukushi",
+      "name": "新たな子ども家庭福祉のあり方に関する専門委員会",
+      "ministry": "MHLW",
+      "category": "EXPERT_COMMITTEE",
+      "officialUrl": "https://www.mhlw.go.jp/stf/shingi/shingi-hosho_294280.html",
+      "status": "approved"
+    },
+    {
+      "id": "mhlw-dai3gou_hihoken",
+      "name": "国民年金第３号被保険者制度等に関する検討会",
+      "ministry": "MHLW",
+      "category": "STUDY",
+      "officialUrl": "https://www.mhlw.go.jp/stf/newpage_75817.html",
+      "status": "approved"
+    },
+    {
+      "id": "mic-kanmin_kyousou",
+      "name": "官民競争入札等監理委員会",
+      "ministry": "MIC",
+      "category": "COMMITTEE",
+      "officialUrl": "https://www.soumu.go.jp/main_sosiki/singi/kanmin/index.html",
+      "status": "approved"
+    },
+    {
+      "id": "mic-dokuritsu_gyousei_hyouka",
+      "name": "独立行政法人評価制度委員会",
+      "ministry": "MIC",
+      "category": "COMMITTEE",
+      "officialUrl": "https://www.soumu.go.jp/main_sosiki/singi/dokuritugyousei/index.html",
+      "status": "approved"
+    },
+    {
+      "id": "mic-kuni_chihou_keisou",
+      "name": "国地方係争処理委員会",
+      "ministry": "MIC",
+      "category": "COMMITTEE",
+      "officialUrl": "https://www.soumu.go.jp/main_sosiki/singi/keisou/index.html",
+      "status": "approved"
+    },
+    {
+      "id": "mic-denki_tsushin_funso",
+      "name": "電気通信紛争処理委員会",
+      "ministry": "MIC",
+      "category": "COMMITTEE",
+      "officialUrl": "https://www.soumu.go.jp/main_sosiki/hunso/index.html",
+      "status": "approved"
+    },
+    {
+      "id": "mic-denpa_kanri",
+      "name": "電波監理審議会",
+      "ministry": "MIC",
+      "category": "COUNCIL",
+      "officialUrl": "https://www.soumu.go.jp/main_sosiki/joho_tsusin/policyreports/denpa_kanri/index.html",
+      "status": "approved"
+    },
+    {
+      "id": "mic-toukei_iinkai",
+      "name": "統計委員会",
+      "ministry": "MIC",
+      "category": "COMMITTEE",
+      "officialUrl": "https://www.soumu.go.jp/main_sosiki/singi/toukei/index.html",
+      "status": "approved"
+    },
+    {
+      "id": "mic-jouhou_yusei_singikai",
+      "name": "情報通信行政・郵政行政審議会",
+      "ministry": "MIC",
+      "category": "COUNCIL",
+      "officialUrl": "https://www.soumu.go.jp/main_sosiki/singi/yusei/yusei.html",
+      "status": "approved"
+    },
+    {
+      "id": "mic-seiji_shikin_tekiseika",
+      "name": "政治資金適正化委員会",
+      "ministry": "MIC",
+      "category": "COMMITTEE",
+      "officialUrl": "https://www.soumu.go.jp/main_sosiki/singi/seiji_tekisei/seiji_tekisei.html",
+      "status": "approved"
+    },
+    {
+      "id": "mic-seisaku_hyouka_singikai",
+      "name": "政策評価審議会",
+      "ministry": "MIC",
+      "category": "COUNCIL",
+      "officialUrl": "https://www.soumu.go.jp/main_sosiki/hyouka/hyokashingikai_n/hyoukashingikai.html",
+      "status": "approved"
+    },
+    {
+      "id": "mic-seimu_sanyaku",
+      "name": "総務省政務三役会議",
+      "ministry": "MIC",
+      "category": "COUNCIL",
+      "officialUrl": "https://www.soumu.go.jp/main_sosiki/singi/seimusanyaku/doga.html",
+      "status": "approved"
+    },
+    {
+      "id": "mic-chihou_gyouzaisei",
+      "name": "地方行財政検討会議",
+      "ministry": "MIC",
+      "category": "STUDY",
+      "officialUrl": "https://www.soumu.go.jp/main_sosiki/kenkyu/chihou_zaisei/index.html",
+      "status": "approved"
+    },
+    {
+      "id": "mic-seisaku_kaigi",
+      "name": "総務省政策会議",
+      "ministry": "MIC",
+      "category": "COUNCIL",
+      "officialUrl": "https://www.soumu.go.jp/main_sosiki/singi/seisakukaigi/index.html",
+      "status": "approved"
+    },
+    {
+      "id": "mic-kanbu_kondankai",
+      "name": "総務省と地方公共団体の幹部懇談会",
+      "ministry": "MIC",
+      "category": "ROUNDTABLE",
+      "officialUrl": "https://www.soumu.go.jp/main_sosiki/kenkyu/kanbu_kondankai/index.html",
+      "status": "approved"
+    },
+    {
+      "id": "mic-chiiki_shuken_tv",
+      "name": "地域主権改革テレビ会議",
+      "ministry": "MIC",
+      "category": "COUNCIL",
+      "officialUrl": "https://www.soumu.go.jp/main_sosiki/singi/kaikaku_tv/index.html",
+      "status": "approved"
+    },
+    {
+      "id": "mic-ict_hojokin_pt",
+      "name": "ICT補助金等調査・検討プロジェクトチーム",
+      "ministry": "MIC",
+      "category": "COUNCIL",
+      "officialUrl": "https://www.soumu.go.jp/main_sosiki/singi/ict_hojo/index.html",
+      "status": "approved"
+    },
+    {
+      "id": "mic-jouhou_tsushin_kenshou",
+      "name": "情報通信行政検証委員会",
+      "ministry": "MIC",
+      "category": "COMMITTEE",
+      "officialUrl": "https://www.soumu.go.jp/main_sosiki/singi/johotsushin_gyosei_kenshoiinkai/index.html",
+      "status": "approved"
+    },
+    {
+      "id": "mic-soumushou_dokuritsu_hyouka",
+      "name": "総務省独立行政法人評価委員会",
+      "ministry": "MIC",
+      "category": "COMMITTEE",
+      "officialUrl": "https://www.soumu.go.jp/main_sosiki/singi/dokuritu/index.html",
+      "status": "approved"
+    },
+    {
+      "id": "mic-toukei_singikai",
+      "name": "統計審議会",
+      "ministry": "MIC",
+      "category": "COUNCIL",
+      "officialUrl": "https://www.soumu.go.jp/main_sosiki/singi/toukeisingikai/index.htm",
+      "status": "approved"
+    },
+    {
+      "id": "mic-nenkin_kiroku_kenshou",
+      "name": "年金記録問題検証委員会",
+      "ministry": "MIC",
+      "category": "COMMITTEE",
+      "officialUrl": "https://www.soumu.go.jp/main_sosiki/hyouka/nenkinmondai.html",
+      "status": "approved"
+    },
+    {
+      "id": "mic-kotei_shisan_hyouka",
+      "name": "固定資産評価審議会",
+      "ministry": "MIC",
+      "category": "COUNCIL",
+      "officialUrl": "https://www.soumu.go.jp/main_sosiki/singi/koteishisan/koteishisan.html",
+      "status": "approved"
+    },
+    {
+      "id": "mic-nenkin_shakaihoken_kanshi",
+      "name": "年金業務・社会保険庁監視等委員会",
+      "ministry": "MIC",
+      "category": "COMMITTEE",
+      "officialUrl": "https://www.soumu.go.jp/main_sosiki/singi/kanshi/index.html",
+      "status": "approved"
+    },
+    {
+      "id": "mic-nenkin_gyoumu_kanshi",
+      "name": "年金業務監視委員会",
+      "ministry": "MIC",
+      "category": "COMMITTEE",
+      "officialUrl": "https://www.soumu.go.jp/main_sosiki/hyouka/nenkinkanshi/index.html",
+      "status": "approved"
+    },
+    {
+      "id": "mic-seisaku_dokuritsu_hyouka",
+      "name": "政策評価・独立行政法人評価委員会",
+      "ministry": "MIC",
+      "category": "COMMITTEE",
+      "officialUrl": "https://www.soumu.go.jp/main_sosiki/hyouka/dokuritu_n/hyoukaiinkai.html",
+      "status": "approved"
+    },
+    {
+      "id": "mic-nenkin_kiroku_daisansha",
+      "name": "年金記録確認第三者委員会",
+      "ministry": "MIC",
+      "category": "COMMITTEE",
+      "officialUrl": "https://www.soumu.go.jp/main_sosiki/hyouka/nenkindaisansha.html",
+      "status": "approved"
+    },
+    {
+      "id": "mofa-gaimu_jinji",
+      "name": "外務人事審議会",
+      "ministry": "MOFA",
+      "category": "COUNCIL",
+      "officialUrl": "https://www.mofa.go.jp/mofaj/annai/shingikai/jinji/index.html",
+      "status": "approved"
     }
   ],
   "meetings": [
@@ -287766,6 +286722,5 @@
   },
   "crawlerConfig": {
     "llm_mode": false
-  },
-  "discoveredCouncils": []
+  }
 }

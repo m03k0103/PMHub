@@ -2170,5 +2170,320 @@
     "officialUrl": "https://www.cas.go.jp/jp/gaiyou/jimu/jinjikyoku/satei_01_04.html",
     "reason": "内閣人事局の査定一覧ポータルページ（政策会議体ではないため却下）",
     "rejectedAt": "2026-09-06"
+  },
+  {
+    "id": "cas-2858",
+    "name": "熊本地震非常災害対策本部会議",
+    "ministry": "CAS",
+    "category": "SECTION",
+    "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/",
+    "rejectedAt": "2026-09-12",
+    "reason": "ディスカバリー精査: ポータル一覧・特定開催回・報告書・アンカー重複のため却下"
+  },
+  {
+    "id": "cas-2859",
+    "name": "８月千葉豪雨に関する関係閣僚会議",
+    "ministry": "CAS",
+    "category": "LIAISON",
+    "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/",
+    "rejectedAt": "2026-09-12",
+    "reason": "ディスカバリー精査: ポータル一覧・特定開催回・報告書・アンカー重複のため却下"
+  },
+  {
+    "id": "fsc-2863",
+    "name": "> ワーキンググループ",
+    "ministry": "FSC",
+    "category": "WORKING_GROUP",
+    "officialUrl": "https://www.fsc.go.jp/senmon/sonota/",
+    "rejectedAt": "2026-09-12",
+    "reason": "ディスカバリー精査: ポータル一覧・特定開催回・報告書・アンカー重複のため却下"
+  },
+  {
+    "id": "fsc-2864",
+    "name": "> 以前設置していた主なワーキンググループ",
+    "ministry": "FSC",
+    "category": "WORKING_GROUP",
+    "officialUrl": "https://www.fsc.go.jp/senmon/index.html#jump220",
+    "rejectedAt": "2026-09-12",
+    "reason": "ディスカバリー精査: ポータル一覧・特定開催回・報告書・アンカー重複のため却下"
+  },
+  {
+    "id": "fsc-2865",
+    "name": "> 食品安全委員会による評価書・QA等一覧（50音順）",
+    "ministry": "FSC",
+    "category": "COMMITTEE",
+    "officialUrl": "https://www.fsc.go.jp/hazard/",
+    "rejectedAt": "2026-09-12",
+    "reason": "ディスカバリー精査: ポータル・開催予定一覧リンクのため却下"
+  },
+  {
+    "id": "fsc-2866",
+    "name": "> 食品安全委員会が評価した化学物質の毒性評価情報",
+    "ministry": "FSC",
+    "category": "COMMITTEE",
+    "officialUrl": "https://www.fsc.go.jp/foodsafetyinfo_map/toxicological_database.html",
+    "rejectedAt": "2026-09-12",
+    "reason": "ディスカバリー精査: ポータル一覧・特定開催回・報告書・アンカー重複のため却下"
+  },
+  {
+    "id": "fsc-2867",
+    "name": "食品安全委員会 （FSC）とは",
+    "ministry": "FSC",
+    "category": "COMMITTEE",
+    "officialUrl": "https://www.fsc.go.jp/iinkai/",
+    "rejectedAt": "2026-09-12",
+    "reason": "ディスカバリー精査: ポータル一覧・特定開催回・報告書・アンカー重複のため却下"
+  },
+  {
+    "id": "fsc-2868",
+    "name": "委員会・調査会等 開催予定・実績",
+    "ministry": "FSC",
+    "category": "COMMITTEE",
+    "officialUrl": "https://www.fsc.go.jp/iinkai_annai/",
+    "rejectedAt": "2026-09-12",
+    "reason": "ディスカバリー精査: ポータル・開催予定一覧リンクのため却下"
+  },
+  {
+    "id": "fsc-2869",
+    "name": "ワーキンググループを設置",
+    "ministry": "FSC",
+    "category": "WORKING_GROUP",
+    "officialUrl": "https://www.fsc.go.jp/senmon/sonota/",
+    "rejectedAt": "2026-09-12",
+    "reason": "ディスカバリー精査: ポータル一覧・特定開催回・報告書・アンカー重複のため却下"
+  },
+  {
+    "id": "fsc-2870",
+    "name": "香料ワーキンググループ",
+    "ministry": "FSC",
+    "category": "WORKING_GROUP",
+    "officialUrl": "https://www.fsc.go.jp/senmon/sonota2/kouryou.html",
+    "rejectedAt": "2026-09-12",
+    "reason": "ディスカバリー精査: ポータル一覧・特定開催回・報告書・アンカー重複のため却下"
+  },
+  {
+    "id": "fsc-2871",
+    "name": "ぶどう酒の製造に用いる添加物に関するワーキンググループ",
+    "ministry": "FSC",
+    "category": "WORKING_GROUP",
+    "officialUrl": "https://www.fsc.go.jp/senmon/sonota2/budoushutenkabutu.html",
+    "rejectedAt": "2026-09-12",
+    "reason": "ディスカバリー精査: ポータル一覧・特定開催回・報告書・アンカー重複のため却下"
+  },
+  {
+    "id": "fsc-2872",
+    "name": "鉛ワーキンググループ",
+    "ministry": "FSC",
+    "category": "WORKING_GROUP",
+    "officialUrl": "https://www.fsc.go.jp/senmon/sonota2/#a21",
+    "rejectedAt": "2026-09-12",
+    "reason": "ディスカバリー精査: 同一一覧ページ内アンカーリンク重複のため却下"
+  },
+  {
+    "id": "fsc-2873",
+    "name": "アレルゲンを含む食品に関するワーキンググループ",
+    "ministry": "FSC",
+    "category": "WORKING_GROUP",
+    "officialUrl": "https://www.fsc.go.jp/senmon/sonota2/#a22",
+    "rejectedAt": "2026-09-12",
+    "reason": "ディスカバリー精査: 同一一覧ページ内アンカーリンク重複のため却下"
+  },
+  {
+    "id": "fsc-2874",
+    "name": "六価クロムワーキンググループ",
+    "ministry": "FSC",
+    "category": "WORKING_GROUP",
+    "officialUrl": "https://www.fsc.go.jp/senmon/sonota2/#a23",
+    "rejectedAt": "2026-09-12",
+    "reason": "ディスカバリー精査: 同一一覧ページ内アンカーリンク重複のため却下"
+  },
+  {
+    "id": "fsc-2875",
+    "name": "菌末を原材料として使用する調製粉乳に関するワーキンググループ",
+    "ministry": "FSC",
+    "category": "WORKING_GROUP",
+    "officialUrl": "https://www.fsc.go.jp/senmon/sonota2/#a11",
+    "rejectedAt": "2026-09-12",
+    "reason": "ディスカバリー精査: 同一一覧ページ内アンカーリンク重複のため却下"
+  },
+  {
+    "id": "fsc-2876",
+    "name": "加熱時に生じるアクリルアミドワーキンググループ",
+    "ministry": "FSC",
+    "category": "WORKING_GROUP",
+    "officialUrl": "https://www.fsc.go.jp/senmon/sonota2/#a2",
+    "rejectedAt": "2026-09-12",
+    "reason": "ディスカバリー精査: 同一一覧ページ内アンカーリンク重複のため却下"
+  },
+  {
+    "id": "fsc-2877",
+    "name": "清涼飲料水等に関するワーキンググループ",
+    "ministry": "FSC",
+    "category": "WORKING_GROUP",
+    "officialUrl": "https://www.fsc.go.jp/senmon/sonota2/#a4",
+    "rejectedAt": "2026-09-12",
+    "reason": "ディスカバリー精査: 同一一覧ページ内アンカーリンク重複のため却下"
+  },
+  {
+    "id": "fsc-2878",
+    "name": "いわゆる「健康食品」に関する検討ワーキンググループ",
+    "ministry": "FSC",
+    "category": "WORKING_GROUP",
+    "officialUrl": "https://www.fsc.go.jp/senmon/sonota2/#a6",
+    "rejectedAt": "2026-09-12",
+    "reason": "ディスカバリー精査: 同一一覧ページ内アンカーリンク重複のため却下"
+  },
+  {
+    "id": "fsc-2879",
+    "name": "放射性物質の食品健康影響評価に関するワーキンググループ",
+    "ministry": "FSC",
+    "category": "WORKING_GROUP",
+    "officialUrl": "https://www.fsc.go.jp/senmon/sonota2/#a7",
+    "rejectedAt": "2026-09-12",
+    "reason": "ディスカバリー精査: 同一一覧ページ内アンカーリンク重複のため却下"
+  },
+  {
+    "id": "fsc-2880",
+    "name": "高濃度にジアシルグリセロールを含む食品に関するワーキンググループ",
+    "ministry": "FSC",
+    "category": "WORKING_GROUP",
+    "officialUrl": "https://www.fsc.go.jp/senmon/sonota2/#a8",
+    "rejectedAt": "2026-09-12",
+    "reason": "ディスカバリー精査: 同一一覧ページ内アンカーリンク重複のため却下"
+  },
+  {
+    "id": "fsc-2881",
+    "name": "食品による窒息事故に関するワーキンググループ",
+    "ministry": "FSC",
+    "category": "WORKING_GROUP",
+    "officialUrl": "https://www.fsc.go.jp/senmon/sonota2/#a9",
+    "rejectedAt": "2026-09-12",
+    "reason": "ディスカバリー精査: 同一一覧ページ内アンカーリンク重複のため却下"
+  },
+  {
+    "id": "jsa-2883",
+    "name": "都道府県・指定都市スポーツ主管課長会議（令和元年度）",
+    "ministry": "JSA",
+    "category": "COUNCIL",
+    "officialUrl": "https://www.mext.go.jp/sports/b_menu/shingi/030_index/index.htm",
+    "rejectedAt": "2026-09-12",
+    "reason": "ディスカバリー精査: ポータル一覧・特定開催回・報告書・アンカー重複のため却下"
+  },
+  {
+    "id": "jsa-2884",
+    "name": "運動・スポーツガイドライン（仮称）策定に向けた有識者会議（平成28年度）",
+    "ministry": "JSA",
+    "category": "PANEL",
+    "officialUrl": "https://www.mext.go.jp/sports/b_menu/shingi/009_index/index.htm",
+    "rejectedAt": "2026-09-12",
+    "reason": "ディスカバリー精査: ポータル一覧・特定開催回・報告書・アンカー重複のため却下"
+  },
+  {
+    "id": "meti-2890",
+    "name": "審議会概要はこちらをご覧ください",
+    "ministry": "METI",
+    "category": "COUNCIL",
+    "officialUrl": "https://www.cas.go.jp/jp/gaiyou/jimu/jinjikyoku/satei_01_04_03.html",
+    "rejectedAt": "2026-09-12",
+    "reason": "ディスカバリー精査: ポータル一覧・特定開催回・報告書・アンカー重複のため却下"
+  },
+  {
+    "id": "mhlw-2892",
+    "name": "審議会・研究会等開催予定一覧",
+    "ministry": "MHLW",
+    "category": "STUDY",
+    "officialUrl": "https://www.mhlw.go.jp/topics/event/open_doors.html",
+    "rejectedAt": "2026-09-12",
+    "reason": "ディスカバリー精査: ポータル・開催予定一覧リンクのため却下"
+  },
+  {
+    "id": "mic-2898",
+    "name": "審議会・委員会・会議等",
+    "ministry": "MIC",
+    "category": "COMMITTEE",
+    "officialUrl": "https://www.soumu.go.jp/menu_sosiki/singi/index.html",
+    "rejectedAt": "2026-09-12",
+    "reason": "ディスカバリー精査: ポータル一覧・特定開催回・報告書・アンカー重複のため却下"
+  },
+  {
+    "id": "mic-2899",
+    "name": "研究会等はこちら",
+    "ministry": "MIC",
+    "category": "STUDY",
+    "officialUrl": "https://www.soumu.go.jp/menu_sosiki/kenkyu/kenkyu.html",
+    "rejectedAt": "2026-09-12",
+    "reason": "ディスカバリー精査: ポータル一覧・特定開催回・報告書・アンカー重複のため却下"
+  },
+  {
+    "id": "mlit-2926",
+    "name": "交通政策審議会陸上交通分科会自動車部会報告書",
+    "ministry": "MLIT",
+    "category": "SUBCOMMITTEE",
+    "officialUrl": "https://www.mlit.go.jp/policy/shingikai/s304_gijutsuanzen04wg.html",
+    "rejectedAt": "2026-09-12",
+    "reason": "ディスカバリー精査: 報告書・単発資料ページのため却下"
+  },
+  {
+    "id": "mof-2927",
+    "name": "税制調査会　会議資料",
+    "ministry": "MOF",
+    "category": "COUNCIL",
+    "officialUrl": "https://www.mof.go.jp/tax_policy/councils/zeicho/index.html",
+    "rejectedAt": "2026-09-12",
+    "reason": "ディスカバリー精査: ポータル一覧・特定開催回・報告書・アンカー重複のため却下"
+  },
+  {
+    "id": "nta-2930",
+    "name": "「酒類販売業等に関する懇談会」取りまとめ（平成16年12月17日）",
+    "ministry": "NTA",
+    "category": "ROUNDTABLE",
+    "officialUrl": "https://www.nta.go.jp/about/council/sake/matome041217/01.htm",
+    "rejectedAt": "2026-09-12",
+    "reason": "ディスカバリー精査: 報告書・単発資料ページのため却下"
+  },
+  {
+    "id": "nta-2931",
+    "name": "酒類販売業等に関する懇談会の開催について",
+    "ministry": "NTA",
+    "category": "ROUNDTABLE",
+    "officialUrl": "https://www.nta.go.jp/about/council/sake/kaisai040224/01.htm",
+    "rejectedAt": "2026-09-12",
+    "reason": "ディスカバリー精査: ポータル一覧・特定開催回・報告書・アンカー重複のため却下"
+  },
+  {
+    "id": "nta-2932",
+    "name": "酒類販売業等に関する懇談会の開催について（平成13年12月19日）",
+    "ministry": "NTA",
+    "category": "ROUNDTABLE",
+    "officialUrl": "https://www.nta.go.jp/about/council/sake/kaisai011219/01.htm",
+    "rejectedAt": "2026-09-12",
+    "reason": "ディスカバリー精査: ポータル一覧・特定開催回・報告書・アンカー重複のため却下"
+  },
+  {
+    "id": "aca-chosakuken_bunkakai_dup",
+    "name": "著作権分科会",
+    "ministry": "ACA",
+    "category": "SUBCOMMITTEE",
+    "officialUrl": "https://www.bunka.go.jp/seisaku/bunkashingikai/chosakuken/",
+    "rejectedAt": "2026-09-12",
+    "reason": "既存会議体（著作権分科会）と重複のため却下"
+  },
+  {
+    "id": "aca-kokugo_bunkakai_dup",
+    "name": "国語分科会",
+    "ministry": "ACA",
+    "category": "SUBCOMMITTEE",
+    "officialUrl": "https://www.bunka.go.jp/seisaku/bunkashingikai/kokugo/",
+    "rejectedAt": "2026-09-12",
+    "reason": "既存会議体（国語分科会）と重複のため却下"
+  },
+  {
+    "id": "mic-shoubou_singikai",
+    "name": "消防審議会（消防庁のホームページへリンクしています。）",
+    "ministry": "MIC",
+    "category": "COUNCIL",
+    "officialUrl": "http://www.fdma.go.jp/neuter/about/shingi_kento/shingi.html",
+    "rejectedAt": "2026-09-12",
+    "reason": "リンク切れ(404)および消防庁への外部リンクのため却下"
   }
 ]

@@ -13,6 +13,7 @@ import re
 import io
 import urllib.request
 import urllib.parse
+import time
 from datetime import datetime
 from bs4 import BeautifulSoup
 
@@ -105,6 +106,7 @@ def fetch_page_and_final_url(url):
     指定URLへ実際にHTTPアクセスし、転送（リダイレクト）を追跡して
     「最終的な正規URL」およびHTMLテキストを取得する。
     """
+    time.sleep(0.35)  # 0.35s rate limit to prevent overloading target servers
     req = urllib.request.Request(
         url,
         headers=get_browser_headers()
