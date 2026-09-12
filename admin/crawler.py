@@ -240,7 +240,7 @@ def parse_materials_from_html(html, base_url, pdf_selector=None):
         abs_url = urllib.parse.urljoin(base_url, href)
         if abs_url == base_url or abs_url in seen_urls:
             continue
-        if 'cas.go.jp/jp/siryou' in abs_url.lower() or is_generic_index_url(abs_url):
+        if any(k in abs_url.lower() for k in ['cas.go.jp/jp/siryou', 'cas.go.jp/jp/shiryo']) or is_generic_index_url(abs_url):
             continue
 
         raw_text = a_tag.get_text(" ", strip=True)
@@ -319,7 +319,7 @@ def _crawl_subpages(target_url, html, rule, quirk_note, pdf_pattern):
                 continue
             if sub_url.lower().endswith('.pdf'):
                 continue
-            if 'cas.go.jp/jp/siryou' in sub_url.lower() or is_generic_index_url(sub_url):
+            if any(k in sub_url.lower() for k in ['cas.go.jp/jp/siryou', 'cas.go.jp/jp/shiryo']) or is_generic_index_url(sub_url):
                 continue
 
             sub_html = fetch_url(sub_url)
@@ -563,7 +563,7 @@ def discover_subpage_links(html, base_url):
         base_domain = urllib.parse.urlparse(base_url).netloc
         if parsed.netloc != base_domain:
             continue
-        if abs_url in seen or abs_url == base_url or 'cas.go.jp/jp/siryou' in abs_url.lower() or is_generic_index_url(abs_url):
+        if abs_url in seen or abs_url == base_url or any(k in abs_url.lower() for k in ['cas.go.jp/jp/siryou', 'cas.go.jp/jp/shiryo']) or is_generic_index_url(abs_url):
             continue
         if subpage_pattern.search(href):
             seen.add(abs_url)
@@ -776,8 +776,8 @@ def is_generic_index_url(url, title=""):
         r'/kaisai\.html$',
         r'indexshingi\.html',
         r'newpage_19921\.html',
-        r'cas\.go\.jp/jp/siryou(?:/index\.html)?$',
-        r'cas\.go\.jp/jp/siryou/',
+        r'cas\.go\.jp/jp/s(?:i|hi)ryou?(?:/index\.html)?$',
+        r'cas\.go\.jp/jp/s(?:i|hi)ryou?/',
         r'cyber/what-we-do/csmeeting\.html',
         r'/int/kaisai/kako\.html',
         r'study/dai3sya/index\.html',
