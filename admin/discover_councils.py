@@ -35,7 +35,7 @@ def load_keywords():
         except Exception as e:
             print(f"[WARN] キーワード設定の読み込みエラー: {e}", file=sys.stderr)
     return {
-        "commonKeywords": ["審議会", "検討会", "委員会", "部会", "分科会", "懇談会", "ワーキンググループ", "WG", "研究会", "プロジェクトチーム", "タスクフォース", "有識者会議", "本部", "推進会議", "円卓会議", "会議"],
+        "commonKeywords": ["審議会", "検討会", "委員会", "部会", "分科会", "懇談会", "ワーキンググループ", "ワーキング・グループ", "スタディグループ", "スタディ・グループ", "WG", "SG", "審査会", "研究会", "プロジェクトチーム", "タスクフォース", "有識者会議", "本部", "推進会議", "円卓会議", "会議"],
         "commonExcludeKeywords": ["過去", "名簿", "委員名簿", "議事録", "議事要旨", "資料一覧", "配付資料", "法令", "設置根拠", "傍聴", "更新履歴", "PDF", "Excel", "プライバシーポリシー"],
         "ministryAddKeywords": {},
         "ministryExcludeKeywords": {}
@@ -75,13 +75,13 @@ def infer_council_category(name_or_text, defined_categories=None):
         cat = "SUBCOMMITTEE"
     elif "部会" in text:
         cat = "SECTION"
-    elif "ワーキンググループ" in text or "作業部会" in text or "WG" in text:
+    elif "ワーキンググループ" in text or "ワーキング・グループ" in text or "作業部会" in text or "WG" in text:
         cat = "WORKING_GROUP"
     elif "有識者会議" in text:
         cat = "PANEL"
     elif "懇談会" in text:
         cat = "ROUNDTABLE"
-    elif "検討会" in text or "研究会" in text or "検討会議" in text or "協議会" in text:
+    elif "スタディグループ" in text or "スタディ・グループ" in text or "SG" in text or "検討会" in text or "研究会" in text or "検討会議" in text or "協議会" in text:
         cat = "STUDY"
     elif "関係閣僚会議" in text or "連絡会議" in text:
         cat = "LIAISON"
@@ -89,7 +89,7 @@ def infer_council_category(name_or_text, defined_categories=None):
         cat = "HQ"
     elif "諮問会議" in text:
         cat = "ADVISORY"
-    elif "委員会" in text:
+    elif "審査会" in text or "委員会" in text:
         cat = "COMMITTEE"
     elif "審議会" in text or "会合" in text:
         cat = "COUNCIL"
@@ -185,7 +185,7 @@ def get_max_seq(councils):
                 pass
     return max_num
 
-def run_discovery(progress_callback=None):
+def run_discovery(progress_callback=None, target_ministry=None, dry_run=False):
     def emit(msg, data=None):
         print(msg)
         if progress_callback:
@@ -197,6 +197,10 @@ def run_discovery(progress_callback=None):
     emit("=" * 70)
     emit("【PM-HUB】省庁 審議会・会議体ディスカバリー巡回 開始")
     emit("（審議会等ページにアクセスし、全会議体を個別の正規URLで独立検出します）")
+    if target_ministry:
+        emit(f"巡回対象省庁フィルター: {target_ministry.upper()}")
+    if dry_run:
+        emit("動作モード: DRY RUN（data.json への書き込みなし）")
     emit(f"実行時刻: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
     emit("=" * 70)
 
@@ -241,10 +245,13 @@ def run_discovery(progress_callback=None):
     category_counts = {}
     unmatched_category_councils = []
 
-    total_ministries = len([m for m in ministries.values() if m.get("hasCouncils", True) and m.get("councilsUrls")])
+    active_ministries = [m for code, m in ministries.items() if m.get("hasCouncils", True) and m.get("councilsUrls") and (not target_ministry or code.upper() == target_ministry.upper())]
+    total_ministries = len(active_ministries)
     current_min_idx = 0
 
     for min_code, min_info in sorted(ministries.items()):
+        if target_ministry and min_code.upper() != target_ministry.upper():
+            continue
         min_name = min_info.get("name", min_code)
         has_councils = min_info.get("hasCouncils", True)
         councils_urls = min_info.get("councilsUrls", [])
@@ -418,6 +425,10 @@ def run_discovery(progress_callback=None):
     emit("=" * 70)
 
     # 結果JSONの保存 (data.json の councils を更新、却下済みを完全パージ)
+    if dry_run:
+        emit("\n[DRY RUN] dry-run モードのため、data.json への保存はスキップされました。")
+        return discovered_list
+
     if os.path.exists(DATA_JSON_PATH):
         try:
             with open(DATA_JSON_PATH, "r", encoding="utf-8") as f:
@@ -471,4 +482,9 @@ def run_discovery(progress_callback=None):
     return discovered_list
 
 if __name__ == "__main__":
-    run_discovery()
+    import argparse
+    parser = argparse.ArgumentParser(description="PMHub 審議会・会議体ディスカバリーエンジン")
+    parser.add_argument("--ministry", type=str, default=None, help="巡回対象の省庁コード（例: FSA, MOF, METI）")
+    parser.add_argument("--dry-run", action="store_true", help="data.json を更新せず、検出結果の表示のみを行う")
+    args = parser.parse_args()
+    run_discovery(target_ministry=args.ministry, dry_run=args.dry_run)

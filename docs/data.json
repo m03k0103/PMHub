@@ -125,7 +125,10 @@
       "color": "var(--color-fsa)",
       "officialUrl": "https://www.fsa.go.jp",
       "councilsUrls": [
-        "https://www.fsa.go.jp/singi/"
+        "https://www.fsa.go.jp/singi/",
+        "https://www.fsa.go.jp/singi/singi_kinyu/base_gijiroku.html",
+        "https://www.fsa.go.jp/singi/singi_kigyou/top_gijiroku.html",
+        "https://www.fsa.go.jp/cpaaob/shinsakai/index.html"
       ],
       "hasCouncils": true
     },
@@ -24841,6 +24844,519 @@
       "category": "COUNCIL",
       "officialUrl": "https://www.mofa.go.jp/mofaj/annai/shingikai/jinji/index.html",
       "status": "approved"
+    },
+    {
+      "id": "fsa-kigyou_kaikei_bukai",
+      "name": "企業会計審議会 会計部会",
+      "ministry": "FSA",
+      "category": "SECTION",
+      "officialUrl": "https://www.fsa.go.jp/singi/singi_kigyou/kaikei/kaikei_index.html",
+      "status": "approved",
+      "manualLock": true
+    },
+    {
+      "id": "fsa-kigyou_kansa_bukai",
+      "name": "企業会計審議会 監査部会",
+      "ministry": "FSA",
+      "category": "SECTION",
+      "officialUrl": "https://www.fsa.go.jp/singi/singi_kigyou/kansa/kansa_index.html",
+      "status": "approved",
+      "manualLock": true
+    },
+    {
+      "id": "fsa-kigyou_naibu_bukai",
+      "name": "企業会計審議会 内部統制部会",
+      "ministry": "FSA",
+      "category": "SECTION",
+      "officialUrl": "https://www.fsa.go.jp/singi/singi_kigyou/naibu/naibu_index.html",
+      "status": "approved",
+      "manualLock": true
+    },
+    {
+      "id": "fsa-kigyou_hoshou_bukai",
+      "name": "企業会計審議会 サステナビリティ情報保証部会",
+      "ministry": "FSA",
+      "category": "SECTION",
+      "officialUrl": "https://www.fsa.go.jp/singi/singi_kigyou/hoshou/hoshou_index.html",
+      "status": "approved",
+      "manualLock": true
+    },
+    {
+      "id": "fsa-kigyou_kikaku_bukai",
+      "name": "企業会計審議会 企画調整部会",
+      "ministry": "FSA",
+      "category": "SECTION",
+      "officialUrl": "https://www.fsa.go.jp/singi/singi_kigyou/kikaku/kikaku_index.html",
+      "status": "approved",
+      "manualLock": true
+    },
+    {
+      "id": "fsa-kigyou_dai1_bukai",
+      "name": "企業会計審議会 第一部会",
+      "ministry": "FSA",
+      "category": "SECTION",
+      "officialUrl": "https://www.fsa.go.jp/singi/singi_kigyou/ichibukai/ichibukai_index.html",
+      "status": "approved",
+      "manualLock": true
+    },
+    {
+      "id": "fsa-kigyou_dai2_bukai",
+      "name": "企業会計審議会 第二部会",
+      "ministry": "FSA",
+      "category": "SECTION",
+      "officialUrl": "https://www.fsa.go.jp/singi/singi_kigyou/nibukai/nibukai_index.html",
+      "status": "approved",
+      "manualLock": true
+    },
+    {
+      "id": "fsa-kigyou_kotei_bukai",
+      "name": "企業会計審議会 固定資産部会",
+      "ministry": "FSA",
+      "category": "SECTION",
+      "officialUrl": "https://www.fsa.go.jp/singi/singi_kigyou/kotei/kotei_index.html",
+      "status": "approved",
+      "manualLock": true
+    },
+    {
+      "id": "fsa-kinyu_seityousikin_wg",
+      "name": "成長企業への資金供給の在り方等に関するワーキング・グループ",
+      "ministry": "FSA",
+      "category": "WORKING_GROUP",
+      "officialUrl": "https://www.fsa.go.jp/singi/singi_kinyu/seityousikin_wg/seityousikin_wg_index.html",
+      "status": "approved",
+      "manualLock": true
+    },
+    {
+      "id": "fsa-kinyu_disclosure_wg",
+      "name": "ディスクロージャーワーキング・グループ",
+      "ministry": "FSA",
+      "category": "WORKING_GROUP",
+      "officialUrl": "https://www.fsa.go.jp/singi/singi_kinyu/disclosure_wg/disclosure_wg_index.html",
+      "status": "approved",
+      "manualLock": true
+    },
+    {
+      "id": "fsa-kinyu_angoshisan_wg",
+      "name": "暗号資産制度に関するワーキング・グループ",
+      "ministry": "FSA",
+      "category": "WORKING_GROUP",
+      "officialUrl": "https://www.fsa.go.jp/singi/singi_kinyu/angoshisanseido_wg/angoshisanseido_wg_index.html",
+      "status": "approved",
+      "manualLock": true
+    },
+    {
+      "id": "fsa-kinyu_sustainability_wg",
+      "name": "サステナビリティ情報の開示と保証のあり方に関するワーキング・グループ",
+      "ministry": "FSA",
+      "category": "WORKING_GROUP",
+      "officialUrl": "https://www.fsa.go.jp/singi/singi_kinyu/sustainability_disclose_wg/sustainability_disclose_wg_index.html",
+      "status": "approved",
+      "manualLock": true
+    },
+    {
+      "id": "fsa-kinyu_sonpo_wg",
+      "name": "損害保険業等に関する制度等ワーキング・グループ",
+      "ministry": "FSA",
+      "category": "WORKING_GROUP",
+      "officialUrl": "https://www.fsa.go.jp/singi/singi_kinyu/sonpo_wg/sonpo_wg_index.html",
+      "status": "approved",
+      "manualLock": true
+    },
+    {
+      "id": "fsa-kinyu_shijoseido_wg",
+      "name": "市場制度ワーキング・グループ",
+      "ministry": "FSA",
+      "category": "WORKING_GROUP",
+      "officialUrl": "https://www.fsa.go.jp/singi/singi_kinyu/shijoseido_wg/shijoseido_wg_index.html",
+      "status": "approved",
+      "manualLock": true
+    },
+    {
+      "id": "fsa-kinyu_shikin_kessaiseido_wg",
+      "name": "資金決済制度等に関するワーキング・グループ",
+      "ministry": "FSA",
+      "category": "WORKING_GROUP",
+      "officialUrl": "https://www.fsa.go.jp/singi/singi_kinyu/shikin_kessaiseido_wg/shikin_kessaiseido_wg_index.html",
+      "status": "approved",
+      "manualLock": true
+    },
+    {
+      "id": "fsa-kinyu_kaijiseido_wg",
+      "name": "開示制度ワーキング・グループ",
+      "ministry": "FSA",
+      "category": "WORKING_GROUP",
+      "officialUrl": "https://www.fsa.go.jp/singi/kaijiseidowg/index.html",
+      "status": "approved",
+      "manualLock": true
+    },
+    {
+      "id": "fsa-kinyu_shisanunyou_tf",
+      "name": "資産運用に関するタスクフォース",
+      "ministry": "FSA",
+      "category": "TASKFORCE",
+      "officialUrl": "https://www.fsa.go.jp/singi/singi_kinyu/shisanunyou_tf/shisanunyou_tf_index.html",
+      "status": "approved",
+      "manualLock": true
+    },
+    {
+      "id": "fsa-kinyu_kokyakuhoni_tf",
+      "name": "顧客本位タスクフォース",
+      "ministry": "FSA",
+      "category": "TASKFORCE",
+      "officialUrl": "https://www.fsa.go.jp/singi/singi_kinyu/kokyakuhoni_tf/kokyakuhoni_tf_index.html",
+      "status": "approved",
+      "manualLock": true
+    },
+    {
+      "id": "fsa-kinyu_tob_wg",
+      "name": "公開買付制度・大量保有報告制度等ワーキング・グループ",
+      "ministry": "FSA",
+      "category": "WORKING_GROUP",
+      "officialUrl": "https://www.fsa.go.jp/singi/singi_kinyu/tob_wg/tob_wg_index.html",
+      "status": "approved",
+      "manualLock": true
+    },
+    {
+      "id": "fsa-kinyu_jigyousei_wg",
+      "name": "事業性に着目した融資実務を支える制度のあり方等に関するワーキング・グループ",
+      "ministry": "FSA",
+      "category": "WORKING_GROUP",
+      "officialUrl": "https://www.fsa.go.jp/singi/singi_kinyu/jigyousei_wg/jigyousei_wg_index.html",
+      "status": "approved",
+      "manualLock": true
+    },
+    {
+      "id": "fsa-kinyu_sairyo_tf",
+      "name": "最良執行のあり方等に関するタスクフォース",
+      "ministry": "FSA",
+      "category": "TASKFORCE",
+      "officialUrl": "https://www.fsa.go.jp/singi/singi_kinyu/sairyo_tf/sairyo_tf_index.html",
+      "status": "approved",
+      "manualLock": true
+    },
+    {
+      "id": "fsa-kinyu_chiikikinyu_wg",
+      "name": "地域金融力の強化に関するワーキング・グループ",
+      "ministry": "FSA",
+      "category": "WORKING_GROUP",
+      "officialUrl": "https://www.fsa.go.jp/singi/singi_kinyu/chiikikinyuryoku_wg/chiikikinyuryoku_wg.html",
+      "status": "approved",
+      "manualLock": true
+    },
+    {
+      "id": "fsa-kinyu_shikinkessai_wg",
+      "name": "資金決済ワーキング・グループ",
+      "ministry": "FSA",
+      "category": "WORKING_GROUP",
+      "officialUrl": "https://www.fsa.go.jp/singi/singi_kinyu/shikinkessai_wg/shikinkessai_wg_index.html",
+      "status": "approved",
+      "manualLock": true
+    },
+    {
+      "id": "fsa-kinyu_kinri_bunkakai",
+      "name": "金利調整分科会",
+      "ministry": "FSA",
+      "category": "SUBCOMMITTEE",
+      "officialUrl": "https://www.fsa.go.jp/singi/singi_kinyu/kinri/kinri_index.html",
+      "status": "approved",
+      "manualLock": true
+    },
+    {
+      "id": "fsa-kinyu_jibaiseki_bukai",
+      "name": "自動車損害賠償責任保険制度部会",
+      "ministry": "FSA",
+      "category": "SECTION",
+      "officialUrl": "https://www.fsa.go.jp/singi/singi_kinyu/jibaiseki/jibaiseki_index.html",
+      "status": "approved",
+      "manualLock": true
+    },
+    {
+      "id": "fsa-kinyu_kaikeishi_bukai",
+      "name": "公認会計士制度部会",
+      "ministry": "FSA",
+      "category": "SECTION",
+      "officialUrl": "https://www.fsa.go.jp/singi/singi_kinyu/kaikeishi/kaikeishi_index.html",
+      "status": "approved",
+      "manualLock": true
+    },
+    {
+      "id": "fsa-kinyu_ginkouseido_wg",
+      "name": "銀行制度等ワーキング・グループ",
+      "ministry": "FSA",
+      "category": "WORKING_GROUP",
+      "officialUrl": "https://www.fsa.go.jp/singi/singi_kinyu/ginkouseido_wg/ginkouseido_wg_index.html",
+      "status": "approved",
+      "manualLock": true
+    },
+    {
+      "id": "fsa-kinyu_market_wg",
+      "name": "市場ワーキング・グループ",
+      "ministry": "FSA",
+      "category": "WORKING_GROUP",
+      "officialUrl": "https://www.fsa.go.jp/singi/singi_kinyu/market_wg/market_wg_index.html",
+      "status": "approved",
+      "manualLock": true
+    },
+    {
+      "id": "fsa-kinyu_market_str_grp",
+      "name": "市場構造専門グループ",
+      "ministry": "FSA",
+      "category": "WORKING_GROUP",
+      "officialUrl": "https://www.fsa.go.jp/singi/singi_kinyu/market-str/market_str_index.html",
+      "status": "approved",
+      "manualLock": true
+    },
+    {
+      "id": "fsa-kinyu_kessaichukai_wg",
+      "name": "決済法制及び金融サービス仲介法制に関するワーキング・グループ",
+      "ministry": "FSA",
+      "category": "WORKING_GROUP",
+      "officialUrl": "https://www.fsa.go.jp/singi/singi_kinyu/kessaichukai_wg/kessaichukai_wg_index.html",
+      "status": "approved",
+      "manualLock": true
+    },
+    {
+      "id": "fsa-kinyu_seido_sg",
+      "name": "金融制度スタディ・グループ",
+      "ministry": "FSA",
+      "category": "STUDY",
+      "officialUrl": "https://www.fsa.go.jp/singi/singi_kinyu/seido-sg/seido-sg_index.html",
+      "status": "approved",
+      "manualLock": true
+    },
+    {
+      "id": "fsa-kinyu_financial_system_wg",
+      "name": "金融制度ワーキング・グループ",
+      "ministry": "FSA",
+      "category": "WORKING_GROUP",
+      "officialUrl": "https://www.fsa.go.jp/singi/singi_kinyu/financial_system/financial_system_index.html",
+      "status": "approved",
+      "manualLock": true
+    },
+    {
+      "id": "fsa-kinyu_fair_disclosure_tf",
+      "name": "フェア・ディスクロージャー・ルール・タスクフォース",
+      "ministry": "FSA",
+      "category": "TASKFORCE",
+      "officialUrl": "https://www.fsa.go.jp/singi/singi_kinyu/fair_disclosure/fair_disclosure_index.html",
+      "status": "approved",
+      "manualLock": true
+    },
+    {
+      "id": "fsa-kinyu_kessai_wg",
+      "name": "決済業務等の高度化に関するワーキング・グループ",
+      "ministry": "FSA",
+      "category": "WORKING_GROUP",
+      "officialUrl": "https://www.fsa.go.jp/singi/singi_kinyu/kessai_wg/kessai_wg_index.html",
+      "status": "approved",
+      "manualLock": true
+    },
+    {
+      "id": "fsa-kinyu_financial_group_wg",
+      "name": "金融グループを巡る制度のあり方に関するワーキング・グループ",
+      "ministry": "FSA",
+      "category": "WORKING_GROUP",
+      "officialUrl": "https://www.fsa.go.jp/singi/singi_kinyu/financial_group/financial_group_index.html",
+      "status": "approved",
+      "manualLock": true
+    },
+    {
+      "id": "fsa-kinyu_toushi_wg",
+      "name": "投資運用等に関するワーキング・グループ",
+      "ministry": "FSA",
+      "category": "WORKING_GROUP",
+      "officialUrl": "https://www.fsa.go.jp/singi/singi_kinyu/toushi_wg/toushi_wg_index.html",
+      "status": "approved",
+      "manualLock": true
+    },
+    {
+      "id": "fsa-kinyu_kessai_sg",
+      "name": "決済業務等の高度化に関するスタディ・グループ",
+      "ministry": "FSA",
+      "category": "STUDY",
+      "officialUrl": "https://www.fsa.go.jp/singi/singi_kinyu/kessai_sg/kessai_sg_index.html",
+      "status": "approved",
+      "manualLock": true
+    },
+    {
+      "id": "fsa-kinyu_risk_money_wg",
+      "name": "新規・成長企業へのリスクマネーの供給のあり方等に関するワーキング・グループ",
+      "ministry": "FSA",
+      "category": "WORKING_GROUP",
+      "officialUrl": "https://www.fsa.go.jp/singi/singi_kinyu/risk_money/risk_money_index.html",
+      "status": "approved",
+      "manualLock": true
+    },
+    {
+      "id": "fsa-kinyu_hoken_teikyou_wg",
+      "name": "保険商品・サービスの提供等の在り方に関するワーキング・グループ",
+      "ministry": "FSA",
+      "category": "WORKING_GROUP",
+      "officialUrl": "https://www.fsa.go.jp/singi/singi_kinyu/hoken_teikyou/hoken_teikyou_index.html",
+      "status": "approved",
+      "manualLock": true
+    },
+    {
+      "id": "fsa-kinyu_ginkou_wg",
+      "name": "金融システム安定等に資する銀行規制等の在り方に関するワーキング・グループ",
+      "ministry": "FSA",
+      "category": "WORKING_GROUP",
+      "officialUrl": "https://www.fsa.go.jp/singi/singi_kinyu/ginkou_wg/ginkou_wg_index.html",
+      "status": "approved",
+      "manualLock": true
+    },
+    {
+      "id": "fsa-kinyu_toushi_h24_wg",
+      "name": "投資信託・投資法人法制の見直しに関するワーキング・グループ",
+      "ministry": "FSA",
+      "category": "WORKING_GROUP",
+      "officialUrl": "https://www.fsa.go.jp/singi/singi_kinyu/toushi/toushi_index.html",
+      "status": "approved",
+      "manualLock": true
+    },
+    {
+      "id": "fsa-kinyu_insider_wg",
+      "name": "インサイダー取引規制に関するワーキング・グループ",
+      "ministry": "FSA",
+      "category": "WORKING_GROUP",
+      "officialUrl": "https://www.fsa.go.jp/singi/singi_kinyu/insider_h24/insider_h24_index.html",
+      "status": "approved",
+      "manualLock": true
+    },
+    {
+      "id": "fsa-kinyu_chukichoki_wg",
+      "name": "我が国金融業の中長期的な在り方に関するワーキング・グループ",
+      "ministry": "FSA",
+      "category": "WORKING_GROUP",
+      "officialUrl": "https://www.fsa.go.jp/singi/singi_kinyu/w_group/w_group_index.html",
+      "status": "approved",
+      "manualLock": true
+    },
+    {
+      "id": "fsa-kinyu_hoken_group_wg",
+      "name": "保険会社のグループ経営に関する規制の在り方ワーキング・グループ",
+      "ministry": "FSA",
+      "category": "WORKING_GROUP",
+      "officialUrl": "https://www.fsa.go.jp/singi/singi_kinyu/hoken_wg/hoken_wg_index.html",
+      "status": "approved",
+      "manualLock": true
+    },
+    {
+      "id": "fsa-kinyu_kihon_kondankai",
+      "name": "金融分科会 基本問題懇談会",
+      "ministry": "FSA",
+      "category": "ROUNDTABLE",
+      "officialUrl": "https://www.fsa.go.jp/singi/singi_kinyu/kondankai/kondankai_index.html",
+      "status": "approved",
+      "manualLock": true
+    },
+    {
+      "id": "fsa-kinyu_kokusaika_sg",
+      "name": "金融分科会 我が国金融・資本市場の国際化に関するスタディグループ",
+      "ministry": "FSA",
+      "category": "STUDY",
+      "officialUrl": "https://www.fsa.go.jp/singi/singi_kinyu/s_group/s_group_index.html",
+      "status": "approved",
+      "manualLock": true
+    },
+    {
+      "id": "fsa-kinyu_dai1_bukai",
+      "name": "金融分科会 第一部会",
+      "ministry": "FSA",
+      "category": "SECTION",
+      "officialUrl": "https://www.fsa.go.jp/singi/singi_kinyu/dai1/dai1_index.html",
+      "status": "approved",
+      "manualLock": true
+    },
+    {
+      "id": "fsa-kinyu_dai1_disclose_wg",
+      "name": "金融分科会 第一部会 ディスクロージャーワーキング・グループ",
+      "ministry": "FSA",
+      "category": "WORKING_GROUP",
+      "officialUrl": "https://www.fsa.go.jp/singi/singi_kinyu/dai1/disclose_wg_index.html",
+      "status": "approved",
+      "manualLock": true
+    },
+    {
+      "id": "fsa-kinyu_dai1_housei_wg",
+      "name": "金融分科会 第一部会 法制ワーキング・グループ",
+      "ministry": "FSA",
+      "category": "WORKING_GROUP",
+      "officialUrl": "https://www.fsa.go.jp/singi/singi_kinyu/dai1/housei_index.html",
+      "status": "approved",
+      "manualLock": true
+    },
+    {
+      "id": "fsa-kinyu_dai1_koukai_wg",
+      "name": "金融分科会 第一部会 公開買付制度等ワーキング・グループ",
+      "ministry": "FSA",
+      "category": "WORKING_GROUP",
+      "officialUrl": "https://www.fsa.go.jp/singi/singi_kinyu/dai1/koukai_index.html",
+      "status": "approved",
+      "manualLock": true
+    },
+    {
+      "id": "fsa-kinyu_dai2_bukai",
+      "name": "金融分科会 第二部会",
+      "ministry": "FSA",
+      "category": "SECTION",
+      "officialUrl": "https://www.fsa.go.jp/singi/singi_kinyu/dai2/dai2_index.html",
+      "status": "approved",
+      "manualLock": true
+    },
+    {
+      "id": "fsa-kinyu_dai2_kessai_wg",
+      "name": "金融分科会 第二部会 決済に関するワーキング・グループ",
+      "ministry": "FSA",
+      "category": "WORKING_GROUP",
+      "officialUrl": "https://www.fsa.go.jp/singi/singi_kinyu/dai2/kessai_index.html",
+      "status": "approved",
+      "manualLock": true
+    },
+    {
+      "id": "fsa-kinyu_dai2_kyoukin_wg",
+      "name": "金融分科会 第二部会 協同組織金融機関のあり方に関するワーキング・グループ",
+      "ministry": "FSA",
+      "category": "WORKING_GROUP",
+      "officialUrl": "https://www.fsa.go.jp/singi/singi_kinyu/dai2/kyoukin_index.html",
+      "status": "approved",
+      "manualLock": true
+    },
+    {
+      "id": "fsa-kinyu_dai2_hoken_wg",
+      "name": "金融分科会 第二部会 保険の基本問題に関するワーキング・グループ",
+      "ministry": "FSA",
+      "category": "WORKING_GROUP",
+      "officialUrl": "https://www.fsa.go.jp/singi/singi_kinyu/dai2/hoken_index.html",
+      "status": "approved",
+      "manualLock": true
+    },
+    {
+      "id": "fsa-cpaaob",
+      "name": "公認会計士・監査審査会",
+      "ministry": "FSA",
+      "category": "COMMITTEE",
+      "officialUrl": "https://www.fsa.go.jp/cpaaob/shinsakai/index.html",
+      "status": "approved",
+      "manualLock": true
+    },
+    {
+      "id": "fsa-kinyu_kinou_kyouka",
+      "name": "金融機能強化審査会",
+      "ministry": "FSA",
+      "category": "COMMITTEE",
+      "officialUrl": "https://www.fsa.go.jp/singi/soff/index.html",
+      "status": "approved",
+      "manualLock": true
+    },
+    {
+      "id": "fsa-kinyu_tokubetsu_bukai",
+      "name": "金融分科会 特別部会",
+      "ministry": "FSA",
+      "category": "SECTION",
+      "officialUrl": "https://www.fsa.go.jp/singi/singi_kinyu/siryou/kinyu/tokubetu/tokubetu_index.html",
+      "status": "approved",
+      "manualLock": true
     }
   ],
   "meetings": [
@@ -285163,7 +285679,10 @@
       "タスクフォース",
       "円卓会議",
       "会議",
-      "アドバイザリーボード"
+      "アドバイザリーボード",
+      "ワーキング・グループ",
+      "スタディ・グループ",
+      "審査会"
     ],
     "commonExcludeKeywords": [
       "過去",

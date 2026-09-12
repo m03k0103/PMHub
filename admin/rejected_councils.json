@@ -2485,5 +2485,41 @@
     "officialUrl": "http://www.fdma.go.jp/neuter/about/shingi_kento/shingi.html",
     "rejectedAt": "2026-09-12",
     "reason": "リンク切れ(404)および消防庁への外部リンクのため却下"
+  },
+  {
+    "id": "fsa-policy_portal",
+    "name": "金融庁 政策・審議会",
+    "ministry": "FSA",
+    "category": "COUNCIL",
+    "officialUrl": "https://www.fsa.go.jp/policy/index.html",
+    "rejectedAt": "2026-09-12",
+    "reason": "AI判定: 会議体本体ではなく共通ポータル・目次ページのため却下"
+  },
+  {
+    "id": "fsa-cpaaob_soshiki",
+    "name": "審査会について",
+    "ministry": "FSA",
+    "category": "COMMITTEE",
+    "officialUrl": "https://www.fsa.go.jp/cpaaob/shinsakai/soshiki/index.html",
+    "rejectedAt": "2026-09-12",
+    "reason": "AI判定: 会議体本体ではなく公認会計士・監査審査会の組織概要ページのため却下"
+  },
+  {
+    "id": "fsa-cpaaob_katsudou",
+    "name": "審査会の開催状況",
+    "ministry": "FSA",
+    "category": "COMMITTEE",
+    "officialUrl": "https://www.fsa.go.jp/cpaaob/shinsakai/katsudou/index.html",
+    "rejectedAt": "2026-09-12",
+    "reason": "AI判定: 会議体本体ではなく公認会計士・監査審査会の開催履歴一覧ページのため却下（親会議体へ集約）"
+  },
+  {
+    "id": "fsa-cpaaob_kako",
+    "name": "公認会計士・監査審査会発足以前の情報",
+    "ministry": "FSA",
+    "category": "COMMITTEE",
+    "officialUrl": "https://www.fsa.go.jp/cpaaob/sonota/kako.html",
+    "rejectedAt": "2026-09-12",
+    "reason": "AI判定: 発足以前の過去アーカイブ一覧ページのため却下"
   }
 ]
