@@ -10733,44 +10733,6 @@
       "status": "approved"
     },
     {
-      "id": "fsa-499",
-      "name": "バーゼル銀行監督委員会（BCBS）",
-      "ministry": "FSA",
-      "category": "COMMITTEE",
-      "officialUrl": "https://www.fsa.go.jp/inter/bis/bis_menu.html",
-      "pastYearCount": 0,
-      "status": "approved",
-      "crawlStatus": {
-        "lastAttempt": "2026-09-05 08:22:26",
-        "result": "partial",
-        "extractionMethod": "rule",
-        "materialsCount": 0,
-        "datesCount": 5,
-        "failureReason": "",
-        "consecutiveFailures": 0,
-        "manualLockActive": false
-      }
-    },
-    {
-      "id": "fsa-500",
-      "name": "金融活動作業部会（FATF）",
-      "ministry": "FSA",
-      "category": "SECTION",
-      "officialUrl": "https://www.fsa.go.jp/inter/fatf/fatf_menu.html",
-      "pastYearCount": 0,
-      "status": "approved",
-      "crawlStatus": {
-        "lastAttempt": "2026-09-05 08:22:40",
-        "result": "partial",
-        "extractionMethod": "rule",
-        "materialsCount": 0,
-        "datesCount": 5,
-        "failureReason": "",
-        "consecutiveFailures": 0,
-        "manualLockActive": false
-      }
-    },
-    {
       "id": "fsa-501",
       "name": "企業会計審議会",
       "ministry": "FSA",
@@ -10805,25 +10767,6 @@
         "datesCount": 5,
         "failureReason": "",
         "consecutiveFailures": 0,
-        "manualLockActive": false
-      }
-    },
-    {
-      "id": "fsa-504",
-      "name": "証券取引等監視委員会",
-      "ministry": "FSA",
-      "category": "COMMITTEE",
-      "officialUrl": "https://www.fsa.go.jp/sesc/index.html",
-      "pastYearCount": 0,
-      "status": "approved",
-      "crawlStatus": {
-        "lastAttempt": "2026-09-05 08:23:21",
-        "result": "failed",
-        "extractionMethod": "none",
-        "materialsCount": 0,
-        "datesCount": 0,
-        "failureReason": "Both LLM and rule extraction returned 0 results",
-        "consecutiveFailures": 1,
         "manualLockActive": false
       }
     },
@@ -19083,25 +19026,6 @@
       }
     },
     {
-      "id": "ppc-1268",
-      "name": "国際会議",
-      "ministry": "PPC",
-      "category": "COUNCIL",
-      "officialUrl": "https://www.ppc.go.jp/enforcement/cooperation/international_conference/?ref=gnavi",
-      "pastYearCount": 1,
-      "status": "approved",
-      "crawlStatus": {
-        "lastAttempt": "2026-09-05 08:19:11",
-        "result": "success",
-        "extractionMethod": "rule",
-        "materialsCount": 16,
-        "datesCount": 5,
-        "failureReason": "",
-        "consecutiveFailures": 0,
-        "manualLockActive": false
-      }
-    },
-    {
       "id": "ppc-1269",
       "name": "開示(委員会保有個人情報 )",
       "ministry": "PPC",
@@ -26326,39 +26250,6 @@
     {
       "id": "ppc-1269-20260826-s02",
       "councilId": "ppc-1269",
-      "title": "令和８年 改正個人情報保護法について ｜個人情報保護委員会",
-      "date": "2026/08/26",
-      "officialUrl": "https://www.ppc.go.jp/personalinfo/legal/r8kaiseihogohou?ref=gnavi",
-      "category": "COUNCIL",
-      "ministry": "PPC",
-      "materials": [
-        {
-          "name": "法律(PDF : 414KB)",
-          "url": "https://www.ppc.go.jp/files/pdf/260717_houritsu.pdf"
-        },
-        {
-          "name": "新旧対照表(PDF : 626KB)",
-          "url": "https://www.ppc.go.jp/files/pdf/260717_sinkyutaisyohyo.pdf"
-        },
-        {
-          "name": "個人情報保護法等の一部を改正する法律について(PDF : 1982KB)",
-          "url": "https://www.ppc.go.jp/files/pdf/260717_kaiseihounitsuite.pdf"
-        },
-        {
-          "name": "個人情報の保護に関する法律の一部を改正する法律の成立を受けた個人情報保護委員会の今後の取組について(PDF : 633KB)",
-          "url": "https://www.ppc.go.jp/files/pdf/260731_kongonotorikumi.pdf"
-        },
-        {
-          "name": "個人情報の保護に関する法律等の一部を改正する法律　政令・規則等で定める事項の全体像について(PDF : 518KB)",
-          "url": "https://www.ppc.go.jp/files/pdf/260826_zentaizou.pdf"
-        }
-      ],
-      "isNewlyDiscovered": true,
-      "discoveredAt": "2026/09/05 08:19"
-    },
-    {
-      "id": "ppc-1268-20260826-s02",
-      "councilId": "ppc-1268",
       "title": "令和８年 改正個人情報保護法について ｜個人情報保護委員会",
       "date": "2026/08/26",
       "officialUrl": "https://www.ppc.go.jp/personalinfo/legal/r8kaiseihogohou?ref=gnavi",
