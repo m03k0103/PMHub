@@ -2602,5 +2602,50 @@
     "officialUrl": "https://www.ppc.go.jp/personalinfo/legal/kondankai_redirect/?ref=gnavi",
     "rejectedAt": "2026-09-12",
     "reason": "ユーザー指示: 会議体本体ではなくリダイレクトナビゲーションページのため除外"
+  },
+  {
+    "id": "fsa-kinyu_singikai",
+    "name": "金融審議会",
+    "ministry": "FSA",
+    "category": "COUNCIL",
+    "officialUrl": "https://www.fsa.go.jp/singi/singi_kinyu/base.html",
+    "rejectedAt": "2026-09-12",
+    "reason": "AI判定: 親ポータルページ（総会は fsa-kinyu_shingi で登録管理済み）のため却下"
+  },
+  {
+    "id": "fsa-520",
+    "name": "金融経済教育推進会議",
+    "ministry": "FSA",
+    "category": "COUNCIL",
+    "officialUrl": "https://www.j-flec.go.jp/conference/",
+    "rejectedAt": "2026-09-12",
+    "reason": "AI判定: J-FLEC外部サイト化に伴い直接の開催回ページが存在しないため却下"
+  },
+  {
+    "id": "fsa-555",
+    "name": "金融ADR制度のフォローアップに関する有識者会議",
+    "ministry": "FSA",
+    "category": "CONFERENCE",
+    "officialUrl": "https://www.fsa.go.jp/singi/adr-followup/index.html",
+    "rejectedAt": "2026-09-12",
+    "reason": "AI判定: 設置要綱と最終取りまとめのみで、個別開催回ページが存在しないため却下"
+  },
+  {
+    "id": "fsa-557",
+    "name": "店頭デリバティブ市場規制にかかる検討会",
+    "ministry": "FSA",
+    "category": "STUDY_GROUP",
+    "officialUrl": "https://www.fsa.go.jp/singi/derivative/index.html",
+    "rejectedAt": "2026-09-12",
+    "reason": "AI判定: 設置要綱と最終取りまとめのみで、個別開催回ページが存在しないため却下"
+  },
+  {
+    "id": "fsa-cpaaob",
+    "name": "公認会計士・監査審査会",
+    "ministry": "FSA",
+    "category": "COUNCIL",
+    "officialUrl": "https://www.fsa.go.jp/cpaaob/shinsakai/index.html",
+    "rejectedAt": "2026-09-12",
+    "reason": "AI判定: 組織トップポータルであり、直接の開催回ページが存在しないため却下"
   }
 ]
