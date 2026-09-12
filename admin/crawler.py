@@ -859,6 +859,11 @@ def sync_new_meetings_from_crawl(data, target, scraped_item):
         if any(kw == sub_title for kw in GENERIC_TITLE_KEYWORDS) or '食の安全、を科学する' in sub_title:
             continue
 
+        # 親会議体への下部組織・専門家会合の誤混入ガード（例: 税制調査会(cao-zei_cho)にEBPM等の専門家会合が混入するのを防止）
+        if council_id == "cao-zei_cho":
+            if any(k in sub_url.lower() for k in ['/ebpm/', '/life/', '/digital-noukan/', '/noukan/', '/sozoku-zoyo/', '/renketsu/', '/rougo/', '/koku-han/', '/discussion']) or "専門家会合" in sub_title or "ディスカッショングループ" in sub_title:
+                continue
+
         # 他省庁URLの誤混入ガード（例: MHLW会議体にMETIのURLが混入するのを防止）
         ministry_code = (ministry or "").upper()
         if ministry_code:

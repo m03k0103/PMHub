@@ -2092,7 +2092,7 @@
       "name": "税制調査会",
       "ministry": "CAO",
       "category": "PANEL",
-      "pastYearCount": 4,
+      "pastYearCount": "-",
       "description": "税制調査会の基本方針、施策の推進状況および関係省庁間の連携・個別課題について審議する会議。",
       "officialUrl": "https://www.cao.go.jp/zei-cho/",
       "isWatched": true,
@@ -28024,39 +28024,6 @@
       "councilName": "税制のEBPMに関する専門家会合",
       "ministry": "CAO",
       "category": "STUDY"
-    },
-    {
-      "id": "cao-zei_cho-20260901-007",
-      "councilId": "cao-zei_cho",
-      "title": "第7回　税制のEBPMに関する専門家会合（2026年9月1日）資料一覧  : 税制調査会 - 内閣府",
-      "date": "2026/09/01",
-      "officialUrl": "https://www.cao.go.jp/zei-cho/gijiroku/ebpm/2026/8ebpm7kai.html",
-      "category": "COUNCIL",
-      "ministry": "CAO",
-      "materials": [
-        {
-          "name": "次第 (PDF形式:44KB)",
-          "url": "https://www.cao.go.jp/zei-cho/content/8ebpm7kai.pdf"
-        },
-        {
-          "name": "【証７－１】財務省説明資料（租税特別措置の適用実態調査の結果に関する報告書） (PDF形式:438KB)",
-          "url": "https://www.cao.go.jp/zei-cho/content/8ebpm7kai1.pdf"
-        },
-        {
-          "name": "【証７－２】財務省説明資料（中小企業税制） (PDF形式:421KB)",
-          "url": "https://www.cao.go.jp/zei-cho/content/8ebpm7kai2.pdf"
-        },
-        {
-          "name": "【証７－３】見直し室説明資料（租税特別措置の自己点検） (PDF形式:392KB)",
-          "url": "https://www.cao.go.jp/zei-cho/content/8ebpm7kai3.pdf"
-        },
-        {
-          "name": "【証７－４】中小企業庁説明資料（中小企業税制の効果について） (PDF形式:1.5MB)",
-          "url": "https://www.cao.go.jp/zei-cho/content/8ebpm7kai4.pdf"
-        }
-      ],
-      "isNewlyDiscovered": true,
-      "discoveredAt": "2026/09/05 08:21"
     },
     {
       "id": "mhlw-2852-20260831-198",
@@ -66148,72 +66115,6 @@
       "category": "STUDY"
     },
     {
-      "id": "cao-zei_cho-20251113-004",
-      "councilId": "cao-zei_cho",
-      "title": "第4回 税制調査会",
-      "date": "2025/11/13",
-      "officialUrl": "https://www.cao.go.jp/zei-cho/gijiroku/digital-noukan/2025/index.html",
-      "category": "PANEL",
-      "ministry": "CAO",
-      "manualLock": true,
-      "materials": [
-        {
-          "name": "議事録 (PDF形式:282KB)",
-          "url": "https://www.cao.go.jp/zei-cho/content/7digital-noukan4kaigiji.pdf"
-        },
-        {
-          "name": "記者会見録 (PDF形式:99KB)",
-          "url": "https://www.cao.go.jp/zei-cho/content/7digital-noukan4kaiken.pdf"
-        },
-        {
-          "name": "議事録 (PDF形式:389KB)",
-          "url": "https://www.cao.go.jp/zei-cho/content/7digital-noukan3kaigiji.pdf"
-        },
-        {
-          "name": "記者会見録 (PDF形式:121KB)",
-          "url": "https://www.cao.go.jp/zei-cho/content/7digital-noukan3kaiken.pdf"
-        },
-        {
-          "name": "議事録 (PDF形式:465KB)",
-          "url": "https://www.cao.go.jp/zei-cho/content/7digital-noukan2kaigiji.pdf"
-        },
-        {
-          "name": "記者会見録 (PDF形式:136KB)",
-          "url": "https://www.cao.go.jp/zei-cho/content/7digital-noukan2kaiken.pdf"
-        }
-      ],
-      "councilName": "税制調査会"
-    },
-    {
-      "id": "cao-zei_cho-20251113-003",
-      "councilId": "cao-zei_cho",
-      "title": "第3回 税制調査会",
-      "date": "2025/11/13",
-      "officialUrl": "https://www.cao.go.jp/zei-cho/gijiroku/life/2025/index.html",
-      "category": "PANEL",
-      "ministry": "CAO",
-      "manualLock": true,
-      "materials": [
-        {
-          "name": "議事録 (PDF形式:305KB)",
-          "url": "https://www.cao.go.jp/zei-cho/content/7life3kaigiji.pdf"
-        },
-        {
-          "name": "記者会見録 (PDF形式:85KB)",
-          "url": "https://www.cao.go.jp/zei-cho/content/7life3kaiken.pdf"
-        },
-        {
-          "name": "議事録 (PDF形式:394KB)",
-          "url": "https://www.cao.go.jp/zei-cho/content/7life2kaigiji.pdf"
-        },
-        {
-          "name": "記者会見録 (PDF形式:146KB)",
-          "url": "https://www.cao.go.jp/zei-cho/content/7life2kaiken.pdf"
-        }
-      ],
-      "councilName": "税制調査会"
-    },
-    {
       "id": "mhlw-1048-20251112-017",
       "councilId": "mhlw-1048",
       "title": "第17回厚生労働省国立研究開発法人等審議会厚生科学研究評価部会　資料｜厚生労働省",
@@ -66452,51 +66353,6 @@
       "councilName": "税制のEBPMに関する専門家会合",
       "ministry": "CAO",
       "category": "STUDY"
-    },
-    {
-      "id": "cao-zei_cho-20251112-006",
-      "councilId": "cao-zei_cho",
-      "title": "第6回 税制調査会",
-      "date": "2025/11/12",
-      "officialUrl": "https://www.cao.go.jp/zei-cho/gijiroku/ebpm/2025/index.html",
-      "category": "PANEL",
-      "ministry": "CAO",
-      "manualLock": true,
-      "materials": [
-        {
-          "name": "議事録 (PDF形式:379KB)",
-          "url": "https://www.cao.go.jp/zei-cho/content/7ebpm6kaigiji.pdf"
-        },
-        {
-          "name": "記者会見録 (PDF形式:112KB)",
-          "url": "https://www.cao.go.jp/zei-cho/content/7ebpm6kaiken.pdf"
-        },
-        {
-          "name": "議事録 (PDF形式:469KB)",
-          "url": "https://www.cao.go.jp/zei-cho/content/7ebpm5kaigiji.pdf"
-        },
-        {
-          "name": "記者会見録 (PDF形式:104KB)",
-          "url": "https://www.cao.go.jp/zei-cho/content/7ebpm5kaiken.pdf"
-        },
-        {
-          "name": "議事録 (PDF形式:443KB)",
-          "url": "https://www.cao.go.jp/zei-cho/content/7ebpm4kaigiji.pdf"
-        },
-        {
-          "name": "記者会見録 (PDF形式:131KB)",
-          "url": "https://www.cao.go.jp/zei-cho/content/7ebpm4kaiken.pdf"
-        },
-        {
-          "name": "議事録 (PDF形式:475KB)",
-          "url": "https://www.cao.go.jp/zei-cho/content/7ebpm3kaigiji.pdf"
-        },
-        {
-          "name": "記者会見録 (PDF形式:136KB)",
-          "url": "https://www.cao.go.jp/zei-cho/content/7ebpm3kaiken.pdf"
-        }
-      ],
-      "councilName": "税制調査会"
     },
     {
       "id": "aca-chosakuken_seisaku_shoiinkai-20251112-r7_002",
@@ -78182,51 +78038,6 @@
       "category": "STUDY"
     },
     {
-      "id": "cao-zei_cho-20250618-005",
-      "councilId": "cao-zei_cho",
-      "title": "第5回 税制調査会",
-      "date": "2025/06/18",
-      "officialUrl": "https://www.cao.go.jp/zei-cho/gijiroku/ebpm/2025/index.html",
-      "category": "PANEL",
-      "ministry": "CAO",
-      "manualLock": true,
-      "materials": [
-        {
-          "name": "議事録 (PDF形式:379KB)",
-          "url": "https://www.cao.go.jp/zei-cho/content/7ebpm6kaigiji.pdf"
-        },
-        {
-          "name": "記者会見録 (PDF形式:112KB)",
-          "url": "https://www.cao.go.jp/zei-cho/content/7ebpm6kaiken.pdf"
-        },
-        {
-          "name": "議事録 (PDF形式:469KB)",
-          "url": "https://www.cao.go.jp/zei-cho/content/7ebpm5kaigiji.pdf"
-        },
-        {
-          "name": "記者会見録 (PDF形式:104KB)",
-          "url": "https://www.cao.go.jp/zei-cho/content/7ebpm5kaiken.pdf"
-        },
-        {
-          "name": "議事録 (PDF形式:443KB)",
-          "url": "https://www.cao.go.jp/zei-cho/content/7ebpm4kaigiji.pdf"
-        },
-        {
-          "name": "記者会見録 (PDF形式:131KB)",
-          "url": "https://www.cao.go.jp/zei-cho/content/7ebpm4kaiken.pdf"
-        },
-        {
-          "name": "議事録 (PDF形式:475KB)",
-          "url": "https://www.cao.go.jp/zei-cho/content/7ebpm3kaigiji.pdf"
-        },
-        {
-          "name": "記者会見録 (PDF形式:136KB)",
-          "url": "https://www.cao.go.jp/zei-cho/content/7ebpm3kaiken.pdf"
-        }
-      ],
-      "councilName": "税制調査会"
-    },
-    {
       "id": "fdma-kasai_kikensei_busshitsu-20250617-r07_001",
       "councilId": "fdma-kasai_kikensei_busshitsu",
       "councilName": "火災危険性を有するおそれのある物質等に関する調査検討会",
@@ -80166,35 +79977,6 @@
       "councilName": "活力ある長寿社会に向けたライフコースに中立な税制に関する専門家会合",
       "ministry": "CAO",
       "category": "STUDY"
-    },
-    {
-      "id": "cao-zei_cho-20250529-002",
-      "councilId": "cao-zei_cho",
-      "title": "第2回 税制調査会",
-      "date": "2025/05/29",
-      "officialUrl": "https://www.cao.go.jp/zei-cho/gijiroku/life/2025/index.html",
-      "category": "PANEL",
-      "ministry": "CAO",
-      "manualLock": true,
-      "materials": [
-        {
-          "name": "議事録 (PDF形式:305KB)",
-          "url": "https://www.cao.go.jp/zei-cho/content/7life3kaigiji.pdf"
-        },
-        {
-          "name": "記者会見録 (PDF形式:85KB)",
-          "url": "https://www.cao.go.jp/zei-cho/content/7life3kaiken.pdf"
-        },
-        {
-          "name": "議事録 (PDF形式:394KB)",
-          "url": "https://www.cao.go.jp/zei-cho/content/7life2kaigiji.pdf"
-        },
-        {
-          "name": "記者会見録 (PDF形式:146KB)",
-          "url": "https://www.cao.go.jp/zei-cho/content/7life2kaiken.pdf"
-        }
-      ],
-      "councilName": "税制調査会"
     },
     {
       "id": "aca-kokugo_gengo-20250529-r07_007",
@@ -282207,7 +281989,11 @@
       "manualLock": true
     },
     "cao-zei_cho": {
-      "template": "tpl-cas-gijisidai-nested",
+      "rule_id": "rule-cao-zei_cho",
+      "subpage_discovery_pattern": "https://www\\.cao\\.go\\.jp/zei-cho/gijiroku/zeicho/.*",
+      "title_selector": "h1, h2, title",
+      "date_regex": "((?:令和|平成|\\d{4}年)\\s*\\d{1,2}月\\s*\\d{1,2}日|\\d{4}[年/\\-]\\d{1,2}[月/\\-]\\d{1,2})",
+      "pdf_selector": "a[href*='.pdf']",
       "manualLock": true
     },
     "cas-jinsintorihiki": {
