@@ -391,6 +391,19 @@ def _crawl_subpages(target_url, html, rule, quirk_note, pdf_pattern):
                                     })
                                 break
 
+                # 3段階配付資料自動展開: 抽出された資料リストに「会議資料」「資料」等のHTMLページがある場合、そのリンク先を取得して内部の末端PDF資料を展開
+                html_materials = [m for m in sub_materials if (m.get('url', '').endswith('.html') or m.get('url', '').endswith('.htm'))]
+                for hm in html_materials:
+                    hm_url = hm.get('url')
+                    hm_name = hm.get('name', '')
+                    if any(k in hm_name for k in ['会議資料', '配付資料', '配布資料', '資料一覧', '資料']) or re.search(r'\d+kai\.html$', hm_url):
+                        hm_html = fetch_url(hm_url)
+                        if hm_html:
+                            expanded_mats = parse_materials_from_html(hm_html, hm_url, pdf_pattern)
+                            for em in expanded_mats:
+                                if em.get('type') == 'PDF' and not any(m.get('url') == em.get('url') for m in sub_materials):
+                                    sub_materials.append(em)
+
                 raw_sub_dates = extract_clean_dates_from_html(sub_html, rule.get("date_regex", r'(?:令和|平成)(?:\d+|元)年\d+月\d+日|\d{4}年\d+月\d+日|\d{4}[/-]\d+[/-]\d+'))
                 norm_sub_dates = [normalize_japanese_numbers(d) for d in raw_sub_dates]
                 all_extracted_dates.extend(norm_sub_dates)
