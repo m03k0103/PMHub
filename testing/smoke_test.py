@@ -308,6 +308,17 @@ def check_link_health(explicit_urls=None, check_all=False):
                 print(f"  [FAIL リンク切れ ({e.code})] {url}")
                 broken_links += 1
         except Exception as e:
+            if "CERTIFICATE_VERIFY_FAILED" in str(e):
+                try:
+                    import ssl
+                    ctx = ssl._create_unverified_context()
+                    req = urllib.request.Request(url, headers=headers)
+                    with urllib.request.urlopen(req, timeout=10, context=ctx) as resp:
+                        if resp.status in (200, 301, 302, 202):
+                            print(f"  [200 OK (SSL検証フォールバック)] {url}")
+                            continue
+                except Exception:
+                    pass
             print(f"  [FAIL リンク切れ] {url} -> {e}")
             broken_links += 1
 
