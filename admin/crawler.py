@@ -326,7 +326,32 @@ def _crawl_subpages(target_url, html, rule, quirk_note, pdf_pattern):
             if sub_html:
                 try:
                     sub_soup = BeautifulSoup(sub_html, 'html.parser')
-                    sub_title = sub_soup.title.string.strip() if sub_soup.title and sub_soup.title.string else sub_url
+                    # タイトルの取得: title_selector が指定されていれば優先、もしくは h2/h1 から探す
+                    sub_title = ""
+                    title_sel = rule.get("title_selector")
+                    if title_sel:
+                        sel_el = sub_soup.select_one(title_sel)
+                        if sel_el:
+                            sub_title = sel_el.get_text(" ", strip=True)
+
+                    GENERIC_TITLE_KEYWORDS = ['会議資料詳細', '資料詳細', '会議詳細', 'トップページ', '目次', 'ホーム', '配付資料一覧']
+                    # title_selector で取れなかった場合、またはジェネリックタイトルの場合
+                    if not sub_title or any(kw in sub_title for kw in GENERIC_TITLE_KEYWORDS):
+                        # h2, h1, h3 を順に探して具体的な会議名を取得
+                        for tag_name in ['h2', 'h1', 'h3']:
+                            found_tag = sub_soup.find(tag_name)
+                            if found_tag:
+                                t_cand = found_tag.get_text(" ", strip=True)
+                                if t_cand and not any(kw in t_cand for kw in GENERIC_TITLE_KEYWORDS):
+                                    sub_title = t_cand
+                                    break
+
+                    # それでもなければ <title> タグ
+                    if not sub_title and sub_soup.title and sub_soup.title.string:
+                        sub_title = sub_soup.title.string.strip()
+
+                    if not sub_title:
+                        sub_title = sub_url
                 except Exception:
                     sub_title = sub_url
 
@@ -744,12 +769,13 @@ def is_generic_index_url(url, title=""):
         r'/int/kaisai/kako\.html',
         r'study/dai3sya/index\.html',
         r'policymeeting/(?:index\.html)?$',
-        r'gijiroku/zeicho/\d{4}/(?:index\.html)?$'
+        r'gijiroku/zeicho/\d{4}/(?:index\.html)?$',
+        r'fsc\.go\.jp/senmon/(?:[^/]+/)?$'
     ]
     for p in patterns:
         if re.search(p, u_lower):
             return True
-    if title and any(k in title for k in ["その他情報", "覚書等", "覚書", "有識者会議｜警察庁", "過去の国際会議", "研究会等一覧へのリンク"]):
+    if title and any(k in title for k in ["その他情報", "覚書等", "覚書", "有識者会議｜警察庁", "過去の国際会議", "研究会等一覧へのリンク", "会議資料詳細", "資料詳細", "会議詳細", "食の安全、を科学する"]):
         return True
     return False
 
@@ -813,6 +839,11 @@ def sync_new_meetings_from_crawl(data, target, scraped_item):
 
         # 事前開催案内ページ（資料なしの事前告知）は会議ページとして登録しない
         if is_preliminary_notice_page(sub_url, sub_title) and not sub_mats:
+            continue
+
+        # ジェネリックタイトルおよびポータルサイト名の登録遮断ガード
+        GENERIC_TITLE_KEYWORDS = ['会議資料詳細', '資料詳細', '会議詳細', 'トップページ', '目次', 'ホーム', '配付資料一覧']
+        if any(kw == sub_title for kw in GENERIC_TITLE_KEYWORDS) or '食の安全、を科学する' in sub_title:
             continue
 
         # 他省庁URLの誤混入ガード（例: MHLW会議体にMETIのURLが混入するのを防止）
