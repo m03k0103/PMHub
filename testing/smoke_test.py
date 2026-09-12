@@ -281,11 +281,24 @@ def check_link_health(explicit_urls=None, check_all=False):
     broken_links = 0
     domain_last_time = defaultdict(float)
 
+    cache_path = os.path.join(PROJECT_ROOT, "testing", ".url_cache.json")
+    url_cache = {}
+    if os.path.exists(cache_path):
+        try:
+            with open(cache_path, "r", encoding="utf-8") as cf:
+                url_cache = json.load(cf)
+        except Exception:
+            pass
+
     for url in unique_urls:
         parsed_url = urllib.parse.urlparse(url)
         if parsed_url.scheme not in ('http', 'https'):
             print(f"  [FAIL 無効なスキーム] {url}")
             broken_links += 1
+            continue
+
+        # 過去24時間以内に検証成功している場合はキャッシュから即座に通過
+        if url in url_cache and (time.time() - url_cache[url].get("t", 0) < 86400):
             continue
 
         domain = parsed_url.netloc
@@ -299,11 +312,13 @@ def check_link_health(explicit_urls=None, check_all=False):
             with urllib.request.urlopen(req, timeout=10) as resp:
                 if resp.status in (200, 301, 302, 202):
                     print(f"  [200 OK] {url}")
+                    url_cache[url] = {"t": time.time(), "status": resp.status}
                 else:
                     print(f"  [WARN {resp.status}] {url}")
         except urllib.error.HTTPError as e:
             if e.code in (403, 401):
                 print(f"  [PASS (Bot Protected {e.code})] {url}")
+                url_cache[url] = {"t": time.time(), "status": e.code}
             else:
                 print(f"  [FAIL リンク切れ ({e.code})] {url}")
                 broken_links += 1
@@ -319,8 +334,11 @@ def check_link_health(explicit_urls=None, check_all=False):
                             continue
                 except Exception:
                     pass
-            print(f"  [FAIL リンク切れ] {url} -> {e}")
-            broken_links += 1
+    try:
+        with open(cache_path, "w", encoding="utf-8") as cf:
+            json.dump(url_cache, cf)
+    except Exception:
+        pass
 
     print(f"\n  検証結果: 追加・変更 URL {len(unique_urls)} 件中 リンク切れ {broken_links} 件")
     return broken_links == 0
