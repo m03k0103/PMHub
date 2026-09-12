@@ -2521,5 +2521,41 @@
     "officialUrl": "https://www.fsa.go.jp/cpaaob/sonota/kako.html",
     "rejectedAt": "2026-09-12",
     "reason": "AI判定: 発足以前の過去アーカイブ一覧ページのため却下"
+  },
+  {
+    "id": "fsa-499",
+    "name": "バーゼル銀行監督委員会（BCBS）",
+    "ministry": "FSA",
+    "category": "COMMITTEE",
+    "officialUrl": "https://www.fsa.go.jp/inter/bis/bis_menu.html",
+    "rejectedAt": "2026-09-12",
+    "reason": "ユーザー指示: 国内政策会議（審議会・検討会）ではなく国際機関・合意枠組みのため除外"
+  },
+  {
+    "id": "fsa-500",
+    "name": "金融活動作業部会（FATF）",
+    "ministry": "FSA",
+    "category": "SECTION",
+    "officialUrl": "https://www.fsa.go.jp/inter/fatf/fatf_menu.html",
+    "rejectedAt": "2026-09-12",
+    "reason": "ユーザー指示: 国内政策会議（審議会・検討会）ではなく国際機関・合意枠組みのため除外"
+  },
+  {
+    "id": "fsa-504",
+    "name": "証券取引等監視委員会",
+    "ministry": "FSA",
+    "category": "COMMITTEE",
+    "officialUrl": "https://www.fsa.go.jp/sesc/index.html",
+    "rejectedAt": "2026-09-12",
+    "reason": "ユーザー指示: 審議会・検討会等の政策会議ではなく外局・独立機関のため除外"
+  },
+  {
+    "id": "ppc-1268",
+    "name": "国際会議",
+    "ministry": "PPC",
+    "category": "COUNCIL",
+    "officialUrl": "https://www.ppc.go.jp/enforcement/cooperation/international_conference/?ref=gnavi",
+    "rejectedAt": "2026-09-12",
+    "reason": "ユーザー指示: 会議体ではなく国際協力全般のナビゲーションページのため除外"
   }
 ]
