@@ -2557,5 +2557,50 @@
     "officialUrl": "https://www.ppc.go.jp/enforcement/cooperation/international_conference/?ref=gnavi",
     "rejectedAt": "2026-09-12",
     "reason": "ユーザー指示: 会議体ではなく国際協力全般のナビゲーションページのため除外"
+  },
+  {
+    "id": "ppc-2832",
+    "name": "委員会の活動方針",
+    "ministry": "PPC",
+    "category": "COMMITTEE",
+    "officialUrl": "https://www.ppc.go.jp/aboutus/katsudouhoushin/?ref=gnavi",
+    "rejectedAt": "2026-09-12",
+    "reason": "ユーザー指示: 会議体ではなく委員会組織の活動方針ナビゲーションページのため除外"
+  },
+  {
+    "id": "ppc-1269",
+    "name": "開示(委員会保有個人情報 )",
+    "ministry": "PPC",
+    "category": "COMMITTEE",
+    "officialUrl": "https://www.ppc.go.jp/application/privacy/?ref=gnavi",
+    "rejectedAt": "2026-09-12",
+    "reason": "ユーザー指示: 会議体ではなく開示請求手続きの案内ページのため除外"
+  },
+  {
+    "id": "ppc-2830",
+    "name": "個人情報保護委員会について",
+    "ministry": "PPC",
+    "category": "COMMITTEE",
+    "officialUrl": "https://www.ppc.go.jp/aboutus/commission/?ref=gnavi",
+    "rejectedAt": "2026-09-12",
+    "reason": "ユーザー指示: 会議体ではなく組織概要の案内ページのため除外"
+  },
+  {
+    "id": "ppc-2831",
+    "name": "個人情報保護委員会の運営",
+    "ministry": "PPC",
+    "category": "COMMITTEE",
+    "officialUrl": "https://www.ppc.go.jp/aboutus/operating_policy/?ref=gnavi",
+    "rejectedAt": "2026-09-12",
+    "reason": "ユーザー指示: 会議体ではなく組織運営の案内ページのため除外"
+  },
+  {
+    "id": "ppc-1267",
+    "name": "個人情報保護政策懇談会",
+    "ministry": "PPC",
+    "category": "STUDY",
+    "officialUrl": "https://www.ppc.go.jp/personalinfo/legal/kondankai_redirect/?ref=gnavi",
+    "rejectedAt": "2026-09-12",
+    "reason": "ユーザー指示: 会議体本体ではなくリダイレクトナビゲーションページのため除外"
   }
 ]
