@@ -15893,8 +15893,9 @@
       "ministry": "MHLW",
       "category": "SECTION",
       "officialUrl": "https://www.mhlw.go.jp/stf/shingi/shingi-rousei_126981.html",
-      "pastYearCount": 5,
-      "status": "approved"
+      "pastYearCount": 6,
+      "status": "approved",
+      "manualLock": true
     },
     {
       "id": "mhlw-940",
@@ -377546,10 +377547,10 @@
       "manualLock": true
     },
     {
-      "id": "mhlw-939-20261001-392",
+      "id": "mhlw-939-20260324-392",
       "councilId": "mhlw-939",
       "title": "第392回 職業安定分科会労働力需給制度部会",
-      "date": "2026/10/01",
+      "date": "2026/03/24",
       "officialUrl": "https://www.mhlw.go.jp/stf/newpage_72595.html",
       "materials": [
         {

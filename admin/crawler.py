@@ -428,9 +428,11 @@ def clean_html_for_dates(html_str):
         for tag in soup(['nav', 'aside', 'footer', 'script', 'style', 'header']):
             tag.decompose()
         for el in soup.find_all(id=re.compile(r'(side|nav|footer|header|menu|breadcrumb)', re.I)):
-            el.decompose()
+            if el.name not in ('body', 'html'):
+                el.decompose()
         for el in soup.find_all(class_=re.compile(r'(side|nav|footer|header|menu|breadcrumb)', re.I)):
-            el.decompose()
+            if el.name not in ('body', 'html'):
+                el.decompose()
         main_el = soup.find(id=re.compile(r'(main|content)', re.I)) or soup.find(class_=re.compile(r'(main|content)', re.I)) or soup.body
         return str(main_el) if main_el else str(soup)
     except Exception:
@@ -454,14 +456,19 @@ def validate_and_normalize_date(date_str):
 def extract_clean_dates_from_html(html_str, date_regex_pattern=r'(?<![\d\w\/\-])(?:(?:令和|平成)(?:\d+|元)年\d{1,2}月\d{1,2}日|\d{4}年\d{1,2}月\d{1,2}日|\d{4}[/-]\d{1,2}[/-]\d{1,2})(?![\d\w\/\-])'):
     """更新日・掲載日などのノイズや不正パターンを除去して会議開催日を抽出"""
     cleaned_html = clean_html_for_dates(html_str)
+    # 全角数字を半角に正規化
+    cleaned_html = cleaned_html.translate(str.maketrans('０１２３４５６７８９', '0123456789'))
+    # 年号併記の括弧を除去 (例: 2026年（令和8年）3月24日 -> 2026年3月24日)
+    cleaned_html = re.sub(r'(\d{4}年)[（\(][^）\)\n]+[）\)]\s*(\d{1,2}月\d{1,2}日)', r'\1\2', cleaned_html)
+    cleaned_html = re.sub(r'((?:令和|平成)(?:\d+|元)年)[（\(][^）\)\n]+[）\)]\s*(\d{1,2}月\d{1,2}日)', r'\1\2', cleaned_html)
     raw_dates = re.findall(date_regex_pattern, cleaned_html)
     
     # 「更新日: 2024年X月X日」「掲載日: ...」などの直前ラベル付きの日付を除外
     filtered_dates = []
     for d in raw_dates:
-        # 直前20文字に「更新日」「掲載日」「公表日」「作成日」が含まれる場合は除外
+        # 直前ラベルに「更新日」「掲載日」「公表日」「作成日」「施行期日」「適用期日」等が含まれる場合は除外
         escaped_d = re.escape(d)
-        if re.search(r'(?:更新日|最終更新|掲載日|公表日|作成日|ページID|copyright)[\s\:\：\-\.\/]*' + escaped_d, cleaned_html, re.I):
+        if re.search(r'(?:更新日|最終更新|掲載日|公表日|作成日|ページID|copyright|施行期日|施行日|施行|適用期日|適用日|公布の日|公布日|施行予定|適用予定)[^。\n]{0,30}' + escaped_d, cleaned_html, re.I):
             continue
         valid_d = validate_and_normalize_date(d)
         if valid_d:
