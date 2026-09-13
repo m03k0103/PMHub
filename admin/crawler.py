@@ -791,7 +791,9 @@ def is_generic_index_url(url, title=""):
         r'topics/bukyoku/syakai/soren/',
         r'bousai\.go\.jp/kohou/oshirase/',
         r'iinkaisai/iinkaisai\.html',
-        r'bunkakaisai/bunkakaisai\.html'
+        r'bunkakaisai/bunkakaisai\.html',
+        r'yusei_kaisai\.html',
+        r'/kaisai/yusei/'
     ]
     for p in patterns:
         if re.search(p, u_lower):
