@@ -783,7 +783,15 @@ def is_generic_index_url(url, title=""):
         r'study/dai3sya/index\.html',
         r'policymeeting/(?:index\.html)?$',
         r'gijiroku/zeicho/\d{4}/(?:index\.html)?$',
-        r'fsc\.go\.jp/senmon/(?:[^/]+/)?$'
+        r'fsc\.go\.jp/senmon/(?:[^/]+/)?$',
+        r'kanbou_library_library\d+_\d+\.html',
+        r'14th_congress_index\.html',
+        r'menu_sosiki/singi/index\.html',
+        r'sonota_index\.html',
+        r'topics/bukyoku/syakai/soren/',
+        r'bousai\.go\.jp/kohou/oshirase/',
+        r'iinkaisai/iinkaisai\.html',
+        r'bunkakaisai/bunkakaisai\.html'
     ]
     for p in patterns:
         if re.search(p, u_lower):
