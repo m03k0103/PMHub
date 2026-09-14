@@ -4135,7 +4135,8 @@
         "consecutiveFailures": 0,
         "manualLockActive": false
       },
-      "status": "approved"
+      "status": "approved",
+      "manualLock": true
     },
     {
       "id": "mof-1150",
@@ -391024,30 +391025,69 @@
       "manualLock": true
     },
     {
-      "id": "mof-1149-20251010-001",
+      "id": "mof-1149-20250910-001",
       "councilId": "mof-1149",
       "title": "第1回 不当廉売関税の迂回防止に関するワーキンググループ",
-      "date": "2025/10/10",
-      "officialUrl": "https://www.mof.go.jp/about_mof/councils/futorenbaiwg/hutorenbaiwg_gijihaihu.html",
+      "date": "2025/09/10",
+      "officialUrl": "https://www.mof.go.jp/about_mof/councils/futorenbaiwg/futorenbaiwg_gijihaihu/index.html",
+      "manualLock": true,
       "materials": [
         {
-          "name": "議事要旨",
-          "url": "https://www.mof.go.jp/about_mof/councils/futorenbaiwg/futorenbaiwg_gijihaihu/wg20251010.html"
+          "title": "議事要旨",
+          "url": "https://www.mof.go.jp/about_mof/councils/futorenbaiwg/futorenbaiwg_gijihaihu/wg20250910.html",
+          "type": "summary"
         },
         {
-          "name": "配付資料",
-          "url": "https://www.mof.go.jp/about_mof/councils/futorenbaiwg/futorenbaiwg_gijihaihu/index2.html"
+          "title": "議事日程",
+          "url": "https://www.mof.go.jp/about_mof/councils/futorenbaiwg/futorenbaiwg_gijihaihu/20250910/20250910gijinittei.pdf",
+          "type": "pdf"
         },
         {
-          "name": "議事要旨",
-          "url": "https://www.mof.go.jp/about_mof/councils/futorenbaiwg/futorenbaiwg_gijihaihu/wg20250910.html"
+          "title": "（資料１）不当廉売関税に係る迂回防止制度創設の必要性（令和８年度関税制度改正要望）",
+          "url": "https://www.mof.go.jp/about_mof/councils/futorenbaiwg/futorenbaiwg_gijihaihu/20250910/shiryo1.pdf",
+          "type": "pdf"
         },
         {
-          "name": "配付資料",
-          "url": "https://www.mof.go.jp/about_mof/councils/futorenbaiwg/futorenbaiwg_gijihaihu/index.html"
+          "title": "（資料２）不当廉売関税にかかる迂回防止制度の骨格（案）",
+          "url": "https://www.mof.go.jp/about_mof/councils/futorenbaiwg/futorenbaiwg_gijihaihu/20250910/shiryo2.pdf",
+          "type": "pdf"
         }
-      ],
-      "manualLock": true
+      ]
+    },
+    {
+      "id": "mof-1149-20251010-002",
+      "councilId": "mof-1149",
+      "title": "第2回 不当廉売関税の迂回防止に関するワーキンググループ",
+      "date": "2025/10/10",
+      "officialUrl": "https://www.mof.go.jp/about_mof/councils/futorenbaiwg/futorenbaiwg_gijihaihu/index2.html",
+      "manualLock": true,
+      "materials": [
+        {
+          "title": "議事要旨",
+          "url": "https://www.mof.go.jp/about_mof/councils/futorenbaiwg/futorenbaiwg_gijihaihu/wg20251010.html",
+          "type": "summary"
+        },
+        {
+          "title": "議事日程",
+          "url": "https://www.mof.go.jp/about_mof/councils/futorenbaiwg/futorenbaiwg_gijihaihu/20251010/20251010gijinittei.pdf",
+          "type": "pdf"
+        },
+        {
+          "title": "（資料１）AD迂回防止制度の調査手続案",
+          "url": "https://www.mof.go.jp/about_mof/councils/futorenbaiwg/futorenbaiwg_gijihaihu/20251010/shiryo1.pdf",
+          "type": "pdf"
+        },
+        {
+          "title": "（資料２－１）とりまとめ（原案）不当廉売関税の迂回防止に関するワーキンググループ",
+          "url": "https://www.mof.go.jp/about_mof/councils/futorenbaiwg/futorenbaiwg_gijihaihu/20251010/shiryo2-1.pdf",
+          "type": "pdf"
+        },
+        {
+          "title": "（資料２－２）AD迂回防止WGとりまとめ（骨子案）",
+          "url": "https://www.mof.go.jp/about_mof/councils/futorenbaiwg/futorenbaiwg_gijihaihu/20251010/shiryo2-2.pdf",
+          "type": "pdf"
+        }
+      ]
     },
     {
       "id": "mof-1150-20230602-003",
@@ -430045,11 +430085,10 @@
       "subpage_discovery_pattern": "href=[\"\\']([^\"\\']*(?:/shingikai/[^\"\\']+|/report/[^\"\\']+|kaisai|gijiroku|\\b\\d{3,4}\\.html)[^\"\\']*)[\"\\']"
     },
     "mof-1149": {
+      "councilId": "mof-1149",
+      "subpage_discovery_pattern": "futorenbaiwg_gijihaihu/index\\d*\\.html",
       "deep_crawl_enabled": true,
-      "date_regex": "(?:令和|平成)\\d+年\\d+月\\d+日|20\\d{2}年\\d+月\\d+日",
-      "pdf_selector": "href=[\"\\']([^\"\\']+\\.pdf)[\"\\']",
-      "manualLock": true,
-      "subpage_discovery_pattern": "href=[\"\\']([^\"\\']*(?:proceedings|material|outline)/20\\d{6}[^\"\\']*)[\"\\']"
+      "pdf_selector": "a[href$='.pdf']"
     },
     "mof-1150": {
       "deep_crawl_enabled": true,
