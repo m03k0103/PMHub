@@ -6005,9 +6005,10 @@
       "name": "国家情報会議",
       "ministry": "CAS",
       "category": "COUNCIL",
-      "officialUrl": "https://www.cas.go.jp/jp/gaiyou/jimu/nic_nib.html",
+      "officialUrl": "https://www.cas.go.jp/jp/gaiyou/jimu/nic_kaisai.html",
       "status": "approved",
-      "pastYearCount": 1
+      "pastYearCount": 1,
+      "manualLock": true
     },
     {
       "id": "cas-kokudo_kyoujinka_honbu",
@@ -6494,7 +6495,7 @@
       "category": "HQ",
       "pastYearCount": 1,
       "description": "地球温暖化対策推進本部の基本方針、施策の推進状況および関係省庁間の連携・個別課題について審議する会議。",
-      "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/ondanka/index.html",
+      "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/ondanka/kaisai.html",
       "isWatched": true,
       "crawlStatus": {
         "lastAttempt": "2026-09-05 08:28:57",
@@ -6506,7 +6507,8 @@
         "consecutiveFailures": 0,
         "manualLockActive": false
       },
-      "status": "approved"
+      "status": "approved",
+      "manualLock": true
     },
     {
       "id": "cas-osaka_kansai_banpaku",
@@ -25566,6 +25568,15 @@
       "manualLock": true
     },
     {
+      "id": "mhlw-tokumei_iryou-20260911-001",
+      "councilId": "mhlw-tokumei_iryou",
+      "title": "第1回 匿名医療情報等の提供に関する専門委員会",
+      "date": "2026/09/11",
+      "officialUrl": "https://www.mhlw.go.jp/stf/newpage_28708.html",
+      "materials": [],
+      "manualLock": true
+    },
+    {
       "id": "mhlw-991-20260910-001",
       "councilId": "mhlw-991",
       "title": "第1回 薬事審議会",
@@ -25807,30 +25818,6 @@
         }
       ],
       "manualLock": true
-    },
-    {
-      "id": "mhlw-tokumei_iryou-20260907-047",
-      "councilId": "mhlw-tokumei_iryou",
-      "title": "第47回 匿名医療情報等の提供に関する専門委員会（書面開催）",
-      "date": "2026/09/07",
-      "round": 47,
-      "roundStr": "第47回",
-      "officialUrl": "https://www.mhlw.go.jp/stf/index_00161.html",
-      "manualLock": true,
-      "materials": [
-        {
-          "title": "議事次第",
-          "url": "https://www.mhlw.go.jp/content/12400000/001746108.pdf"
-        },
-        {
-          "title": "構成員名簿",
-          "url": "https://www.mhlw.go.jp/content/12400000/001746109.pdf"
-        },
-        {
-          "title": "（資料1）匿名医療保険等関連情報の提供申出に対する審査方針等について",
-          "url": "https://www.mhlw.go.jp/content/12400000/001746110.pdf"
-        }
-      ]
     },
     {
       "id": "mhlw-946-20260907-059",
@@ -26235,42 +26222,6 @@
       "officialUrl": "https://www.soumu.go.jp/main_sosiki/hunso/case/iinkai/02shingi02_04000286.html",
       "materials": [],
       "manualLock": true
-    },
-    {
-      "id": "mhlw-tokumei_iryou-20260902-046",
-      "councilId": "mhlw-tokumei_iryou",
-      "title": "第46回 匿名医療情報等の提供に関する専門委員会",
-      "date": "2026/09/02",
-      "round": 46,
-      "roundStr": "第46回",
-      "officialUrl": "https://www.mhlw.go.jp/stf/index_00160.html",
-      "manualLock": true,
-      "materials": [
-        {
-          "title": "議事次第",
-          "url": "https://www.mhlw.go.jp/content/12400000/001744559.pdf"
-        },
-        {
-          "title": "構成員名簿",
-          "url": "https://www.mhlw.go.jp/content/12400000/001744560.pdf"
-        },
-        {
-          "title": "（資料1）通年パネルデータセットおよびNDB-βの今後の作成方針について（案）",
-          "url": "https://www.mhlw.go.jp/content/12400000/001744588.pdf"
-        },
-        {
-          "title": "（資料2）二次利用ポータルに追加掲載するNDB基礎資料について（案）",
-          "url": "https://www.mhlw.go.jp/content/12400000/001744589.pdf"
-        },
-        {
-          "title": "（資料3）匿名医療情報等の提供に関する委員会設置要綱",
-          "url": "https://www.mhlw.go.jp/content/12400000/001744668.pdf"
-        },
-        {
-          "title": "（資料5）匿名医療保険等関連情報および匿名診療等関連情報の提供申出に対する審査方針等について",
-          "url": "https://www.mhlw.go.jp/content/12400000/001744669.pdf"
-        }
-      ]
     },
     {
       "id": "mhlw-konnan_josei_shien_kento-20260902-002",
@@ -28367,6 +28318,15 @@
           "url": "https://www.mod.go.jp/j/policy/agenda/meeting/dstb/pdf/youkou-02.pdf"
         }
       ],
+      "manualLock": true
+    },
+    {
+      "id": "mhlw-tokumei_iryou-20260824-046",
+      "councilId": "mhlw-tokumei_iryou",
+      "title": "第46回 匿名医療情報等の提供に関する専門委員会",
+      "date": "2026/08/24",
+      "officialUrl": "https://www.mhlw.go.jp/stf/newpage_75719.html",
+      "materials": [],
       "manualLock": true
     },
     {
@@ -31333,30 +31293,6 @@
       "manualLock": true
     },
     {
-      "id": "mhlw-tokumei_iryou-20260803-045",
-      "councilId": "mhlw-tokumei_iryou",
-      "title": "第45回 匿名医療情報等の提供に関する専門委員会（書面開催）",
-      "date": "2026/08/03",
-      "round": 45,
-      "roundStr": "第45回",
-      "officialUrl": "https://www.mhlw.go.jp/stf/index_00155.html",
-      "manualLock": true,
-      "materials": [
-        {
-          "title": "議事次第",
-          "url": "https://www.mhlw.go.jp/content/12400000/001728929.pdf"
-        },
-        {
-          "title": "構成員名簿",
-          "url": "https://www.mhlw.go.jp/content/12400000/001728930.pdf"
-        },
-        {
-          "title": "（資料1）匿名医療保険等関連情報の提供申出に対する審査方針等について",
-          "url": "https://www.mhlw.go.jp/content/12400000/001728931.pdf"
-        }
-      ]
-    },
-    {
       "id": "mhlw-kousei_kagaku_hyouka-20260803-018",
       "councilId": "mhlw-kousei_kagaku_hyouka",
       "title": "第18回厚生労働省国立研究開発法人等審議会厚生科学研究評価部会　資料｜厚生労働省",
@@ -31696,6 +31632,22 @@
       ]
     },
     {
+      "id": "cas-ondanka-20260731-055",
+      "councilId": "cas-ondanka",
+      "title": "第55回 地球温暖化対策推進本部（持ち回り開催）",
+      "date": "2026/07/31",
+      "round": 55,
+      "roundStr": "第55回",
+      "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/ondanka/kaisai/dai55/gijisidai.html",
+      "manualLock": true,
+      "materials": [
+        {
+          "title": "2024年度における地球温暖化対策計画の進捗状況(案)",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/ondanka/kaisai/dai55/shiryo1.pdf"
+        }
+      ]
+    },
+    {
       "id": "cas-kumahigai_taisaku-20260731-005",
       "councilId": "cas-kumahigai_taisaku",
       "councilName": "クマ被害対策等に関する関係閣僚会議",
@@ -31737,21 +31689,8 @@
       "councilId": "cas-kokka_jouhou",
       "title": "第1回 国家情報会議",
       "date": "2026/07/31",
-      "officialUrl": "https://www.cas.go.jp/jp/gaiyou/jimu/nic_nib.html",
-      "materials": [
-        {
-          "name": "国家情報会議設置法の施行に伴う関係政令の整備等に関する政令",
-          "url": "https://www.cas.go.jp/jp/gaiyou/jimu/pdf/kokkajyouhokaigi_seibi.pdf"
-        },
-        {
-          "name": "国家情報会議設置法の施行期日を定める政令",
-          "url": "https://www.cas.go.jp/jp/gaiyou/jimu/pdf/kokkajyouhokaigi_kijitsu.pdf"
-        },
-        {
-          "name": "国家情報会議設置法（概要）（PDF）",
-          "url": "https://www.cas.go.jp/jp/gaiyou/jimu/pdf/kokkajyouhokaigi_gaiyou.pdf"
-        }
-      ],
+      "officialUrl": "https://www.cas.go.jp/jp/gaiyou/jimu/nic_kaisai.html",
+      "materials": [],
       "manualLock": true
     },
     {
@@ -41328,30 +41267,6 @@
       ]
     },
     {
-      "id": "mhlw-tokumei_iryou-20260706-044",
-      "councilId": "mhlw-tokumei_iryou",
-      "title": "第44回 匿名医療情報等の提供に関する専門委員会（書面開催）",
-      "date": "2026/07/06",
-      "round": 44,
-      "roundStr": "第44回",
-      "officialUrl": "https://www.mhlw.go.jp/stf/index_00150.html",
-      "manualLock": true,
-      "materials": [
-        {
-          "title": "議事次第",
-          "url": "https://www.mhlw.go.jp/content/12400000/001716500.pdf"
-        },
-        {
-          "title": "構成員名簿",
-          "url": "https://www.mhlw.go.jp/content/12400000/001716501.pdf"
-        },
-        {
-          "title": "（資料1）匿名医療保険等関連情報の提供申出に対する審査方針等について",
-          "url": "https://www.mhlw.go.jp/content/12400000/001716504.pdf"
-        }
-      ]
-    },
-    {
       "id": "moj-housei_keiji-20260705-s01",
       "councilId": "moj-housei_keiji",
       "councilName": "法制審議会 刑事法（犯罪被害者関係）部会",
@@ -49966,30 +49881,6 @@
       "manualLock": true
     },
     {
-      "id": "mhlw-tokumei_iryou-20260608-043",
-      "councilId": "mhlw-tokumei_iryou",
-      "title": "第43回 匿名医療情報等の提供に関する専門委員会（書面開催）",
-      "date": "2026/06/08",
-      "round": 43,
-      "roundStr": "第43回",
-      "officialUrl": "https://www.mhlw.go.jp/stf/index_00147.html",
-      "manualLock": true,
-      "materials": [
-        {
-          "title": "議事次第",
-          "url": "https://www.mhlw.go.jp/content/12400000/001708528.pdf"
-        },
-        {
-          "title": "構成員名簿",
-          "url": "https://www.mhlw.go.jp/content/12400000/001708529.pdf"
-        },
-        {
-          "title": "（資料1） 匿名医療保険等関連情報の提供申出に対する審査方針等について",
-          "url": "https://www.mhlw.go.jp/content/12400000/001708527.pdf"
-        }
-      ]
-    },
-    {
       "id": "mhlw-999-20260608-003",
       "councilId": "mhlw-999",
       "title": "第3回 医療機器・体外診断薬部会",
@@ -56001,50 +55892,6 @@
       "docCount": 9
     },
     {
-      "id": "mhlw-tokumei_iryou-20260603-042",
-      "councilId": "mhlw-tokumei_iryou",
-      "title": "第42回 匿名医療情報等の提供に関する専門委員会",
-      "date": "2026/06/03",
-      "round": 42,
-      "roundStr": "第42回",
-      "officialUrl": "https://www.mhlw.go.jp/stf/index_00143.html",
-      "manualLock": true,
-      "materials": [
-        {
-          "title": "議事次第",
-          "url": "https://www.mhlw.go.jp/content/12400000/001706371.pdf"
-        },
-        {
-          "title": "構成員名簿",
-          "url": "https://www.mhlw.go.jp/content/12400000/001706372.pdf"
-        },
-        {
-          "title": "（資料1）通年パネルDSディクショナリについて",
-          "url": "https://www.mhlw.go.jp/content/12400000/001706373.pdf"
-        },
-        {
-          "title": "（資料2）二次利用ポータルの利用状況及びHICを用いたNDBデータ提供の現状（報告）",
-          "url": "https://www.mhlw.go.jp/content/12400000/001706374.pdf"
-        },
-        {
-          "title": "（資料3）匿名医療保険等関連情報の第三者提供の現状について（報告）",
-          "url": "https://www.mhlw.go.jp/content/12400000/001706375.pdf"
-        },
-        {
-          "title": "（資料4）匿名診療等関連情報の第三者提供の現状について（報告）",
-          "url": "https://www.mhlw.go.jp/content/12400000/001706376.pdf"
-        },
-        {
-          "title": "（資料6）匿名医療保険等関連情報および匿名診療等関連情報の提供申出に対する審査方針等について",
-          "url": "https://www.mhlw.go.jp/content/12400000/001706377.pdf"
-        },
-        {
-          "title": "議事録",
-          "url": "https://www.mhlw.go.jp/stf/index_00158.html"
-        }
-      ]
-    },
-    {
       "id": "mhlw-880-20260603-061",
       "councilId": "mhlw-880",
       "title": "第61回 地域保健健康増進栄養部会",
@@ -57340,6 +57187,15 @@
           "url": "https://www.soumu.go.jp/main_content/001075945.pdf"
         }
       ],
+      "manualLock": true
+    },
+    {
+      "id": "mhlw-tokumei_iryou-20260526-042",
+      "councilId": "mhlw-tokumei_iryou",
+      "title": "第42回 匿名医療情報等の提供に関する専門委員会",
+      "date": "2026/05/26",
+      "officialUrl": "https://www.mhlw.go.jp/stf/newpage_73387.html",
+      "materials": [],
       "manualLock": true
     },
     {
@@ -60839,38 +60695,6 @@
       "manualLock": true
     },
     {
-      "id": "mhlw-tokumei_iryou-20260511-041",
-      "councilId": "mhlw-tokumei_iryou",
-      "title": "第41回 匿名医療情報等の提供に関する専門委員会",
-      "date": "2026/05/11",
-      "round": 41,
-      "roundStr": "第41回",
-      "officialUrl": "https://www.mhlw.go.jp/stf/index_00137.html",
-      "manualLock": true,
-      "materials": [
-        {
-          "title": "議事次第",
-          "url": "https://www.mhlw.go.jp/content/12400000/001698640.pdf"
-        },
-        {
-          "title": "構成員名簿",
-          "url": "https://www.mhlw.go.jp/content/12400000/001698641.pdf"
-        },
-        {
-          "title": "（資料１）審査結果の確認について",
-          "url": "https://www.mhlw.go.jp/content/12400000/001698642.pdf"
-        },
-        {
-          "title": "（資料２）匿名医療保険等関連情報の提供申出に対する審査方針等について",
-          "url": "https://www.mhlw.go.jp/content/12400000/001698643.pdf"
-        },
-        {
-          "title": "議事録",
-          "url": "https://www.mhlw.go.jp/stf/index_00144.html"
-        }
-      ]
-    },
-    {
       "id": "mhlw-996-20260511-005",
       "councilId": "mhlw-996",
       "title": "第5回 医薬品第二部会",
@@ -60966,6 +60790,15 @@
           "url": "https://www.mhlw.go.jp/content/10900000/001703829.pdf"
         }
       ],
+      "manualLock": true
+    },
+    {
+      "id": "mhlw-tokumei_iryou-20260507-041",
+      "councilId": "mhlw-tokumei_iryou",
+      "title": "第41回 匿名医療情報等の提供に関する専門委員会",
+      "date": "2026/05/07",
+      "officialUrl": "https://www.mhlw.go.jp/stf/newpage_73033.html",
+      "materials": [],
       "manualLock": true
     },
     {
@@ -72792,30 +72625,6 @@
       "manualLock": true
     },
     {
-      "id": "mhlw-tokumei_iryou-20260309-040",
-      "councilId": "mhlw-tokumei_iryou",
-      "title": "第40回 匿名医療情報等の提供に関する専門委員会（書面開催）",
-      "date": "2026/03/09",
-      "round": 40,
-      "roundStr": "第40回",
-      "officialUrl": "https://www.mhlw.go.jp/stf/index_00131.html",
-      "manualLock": true,
-      "materials": [
-        {
-          "title": "議事次第",
-          "url": "https://www.mhlw.go.jp/content/12400000/001667724.pdf"
-        },
-        {
-          "title": "構成員名簿",
-          "url": "https://www.mhlw.go.jp/content/12400000/001667725.pdf"
-        },
-        {
-          "title": "（資料１）匿名医療保険等関連情報の提供申出に対する審査方針等について",
-          "url": "https://www.mhlw.go.jp/content/12400000/001667735.pdf"
-        }
-      ]
-    },
-    {
       "id": "mhlw-shakai_hosho_kaigo_hoken-20260309-134",
       "councilId": "mhlw-shakai_hosho_kaigo_hoken",
       "title": "第134回 社会保障審議会 介護保険部会",
@@ -74101,42 +73910,6 @@
       "officialUrl": "https://www.mod.go.jp/j/policy/agenda/meeting/cho-shin/index.html",
       "hasMinutes": false,
       "docCount": 1
-    },
-    {
-      "id": "mhlw-tokumei_iryou-20260304-039",
-      "councilId": "mhlw-tokumei_iryou",
-      "title": "第39回 匿名医療情報等の提供に関する専門委員会",
-      "date": "2026/03/04",
-      "round": 39,
-      "roundStr": "第39回",
-      "officialUrl": "https://www.mhlw.go.jp/stf/index_00130.html",
-      "manualLock": true,
-      "materials": [
-        {
-          "title": "議事次第",
-          "url": "https://www.mhlw.go.jp/content/12400000/001665092.pdf"
-        },
-        {
-          "title": "構成員名簿",
-          "url": "https://www.mhlw.go.jp/content/12400000/001665093.pdf"
-        },
-        {
-          "title": "（資料１）「匿名医療保険等関連情報の提供に関する申出書」の審査スケジュールについて",
-          "url": "https://www.mhlw.go.jp/content/12400000/001665094.pdf"
-        },
-        {
-          "title": "（資料２）「匿名診療等関連情報の提供に関する申出書」の審査スケジュールについて",
-          "url": "https://www.mhlw.go.jp/content/12400000/001665095.pdf"
-        },
-        {
-          "title": "（資料４）匿名医療保険等関連情報および匿名診療等関連情報の提供申出に対する審査方針等について",
-          "url": "https://www.mhlw.go.jp/content/12400000/001665096.pdf"
-        },
-        {
-          "title": "議事録",
-          "url": "https://www.mhlw.go.jp/stf/index_00139.html"
-        }
-      ]
     },
     {
       "id": "mhlw-anma_massage_ryouyouhi-20260304-036",
@@ -76486,6 +76259,15 @@
       "materials": [],
       "isNewlyDiscovered": true,
       "discoveredAt": "2026/09/05 08:22",
+      "manualLock": true
+    },
+    {
+      "id": "mhlw-tokumei_iryou-20260220-039",
+      "councilId": "mhlw-tokumei_iryou",
+      "title": "第39回 匿名医療情報等の提供に関する専門委員会",
+      "date": "2026/02/20",
+      "officialUrl": "https://www.mhlw.go.jp/stf/newpage_70754.html",
+      "materials": [],
       "manualLock": true
     },
     {
@@ -85147,30 +84929,6 @@
       "councilName": "鳥インフルエンザ関係閣僚会議"
     },
     {
-      "id": "mhlw-tokumei_iryou-20260109-038",
-      "councilId": "mhlw-tokumei_iryou",
-      "title": "第38回 匿名医療情報等の提供に関する専門委員会（書面開催）",
-      "date": "2026/01/09",
-      "round": 38,
-      "roundStr": "第38回",
-      "officialUrl": "https://www.mhlw.go.jp/stf/index_00128.html",
-      "manualLock": true,
-      "materials": [
-        {
-          "title": "議事次第",
-          "url": "https://www.mhlw.go.jp/content/12400000/001628861.pdf"
-        },
-        {
-          "title": "構成員名簿",
-          "url": "https://www.mhlw.go.jp/content/12400000/001628862.pdf"
-        },
-        {
-          "title": "（資料１）匿名医療保険等関連情報の提供申出に対する審査方針等について",
-          "url": "https://www.mhlw.go.jp/content/12400000/001628863.pdf"
-        }
-      ]
-    },
-    {
       "id": "digital-agile_opensource-20260109-s02",
       "councilId": "digital-agile_opensource",
       "title": "オープンソース化・OSS利活用に関する有識者検討会｜デジタル庁",
@@ -91364,30 +91122,6 @@
       "councilName": "国税審議会"
     },
     {
-      "id": "mhlw-tokumei_iryou-20251208-037",
-      "councilId": "mhlw-tokumei_iryou",
-      "title": "第37回 匿名医療情報等の提供に関する専門委員会（書面開催）",
-      "date": "2025/12/08",
-      "round": 37,
-      "roundStr": "第37回",
-      "officialUrl": "https://www.mhlw.go.jp/stf/index_00125.html",
-      "manualLock": true,
-      "materials": [
-        {
-          "title": "議事次第",
-          "url": "https://www.mhlw.go.jp/content/12400000/001605274.pdf"
-        },
-        {
-          "title": "構成員名簿",
-          "url": "https://www.mhlw.go.jp/content/12400000/001605275.pdf"
-        },
-        {
-          "title": "（資料１）匿名医療保険等関連情報の提供申出に対する審査方針等について",
-          "url": "https://www.mhlw.go.jp/content/12400000/001605276.pdf"
-        }
-      ]
-    },
-    {
       "id": "mhlw-shakai_hosho_shougaisha-20251208-153",
       "councilId": "mhlw-shakai_hosho_shougaisha",
       "title": "第153回 社会保障審議会 障害者部会",
@@ -92660,42 +92394,6 @@
         {
           "name": "第3回 会議情報",
           "url": "https://www.bunka.go.jp/seisaku/bunkashingikai/chosakuken/shiyoryo/r07_03/"
-        }
-      ]
-    },
-    {
-      "id": "mhlw-tokumei_iryou-20251203-036",
-      "councilId": "mhlw-tokumei_iryou",
-      "title": "第36回 匿名医療情報等の提供に関する専門委員会",
-      "date": "2025/12/03",
-      "round": 36,
-      "roundStr": "第36回",
-      "officialUrl": "https://www.mhlw.go.jp/stf/index_00123.html",
-      "manualLock": true,
-      "materials": [
-        {
-          "title": "議事次第",
-          "url": "https://www.mhlw.go.jp/content/12400000/001603097.pdf"
-        },
-        {
-          "title": "構成員名簿",
-          "url": "https://www.mhlw.go.jp/content/12400000/001603098.pdf"
-        },
-        {
-          "title": "（資料１）40歳未満の事業主健診情報等のNDB収載について",
-          "url": "https://www.mhlw.go.jp/content/12400000/001603099.pdf"
-        },
-        {
-          "title": "（資料２）第11回及び第12回NDBオープンデータの作成方針",
-          "url": "https://www.mhlw.go.jp/content/12400000/001603100.pdf"
-        },
-        {
-          "title": "（資料３）匿名医療保険等関連情報および匿名診療等関連情報の提供申出に対する審査方針等について",
-          "url": "https://www.mhlw.go.jp/content/12400000/001603101.pdf"
-        },
-        {
-          "title": "議事録",
-          "url": "https://www.mhlw.go.jp/stf/index_00129.html"
         }
       ]
     },
@@ -94139,6 +93837,15 @@
         }
       ],
       "councilName": "鳥インフルエンザ関係閣僚会議"
+    },
+    {
+      "id": "mhlw-tokumei_iryou-20251121-036",
+      "councilId": "mhlw-tokumei_iryou",
+      "title": "第36回 匿名医療情報等の提供に関する専門委員会",
+      "date": "2025/11/21",
+      "officialUrl": "https://www.mhlw.go.jp/stf/newpage_66194.html",
+      "materials": [],
+      "manualLock": true
     },
     {
       "id": "mhlw-shakai_hosho_kaigo_kyuufu-20251121-248",
@@ -96771,30 +96478,6 @@
       "isNewlyDiscovered": true,
       "discoveredAt": "2026/09/05 08:22",
       "manualLock": true
-    },
-    {
-      "id": "mhlw-tokumei_iryou-20251110-035",
-      "councilId": "mhlw-tokumei_iryou",
-      "title": "第35回 匿名医療情報等の提供に関する専門委員会（書面開催）",
-      "date": "2025/11/10",
-      "round": 35,
-      "roundStr": "第35回",
-      "officialUrl": "https://www.mhlw.go.jp/stf/index_00121.html",
-      "manualLock": true,
-      "materials": [
-        {
-          "title": "議事次第",
-          "url": "https://www.mhlw.go.jp/content/12400000/001592268.pdf"
-        },
-        {
-          "title": "構成員名簿",
-          "url": "https://www.mhlw.go.jp/content/12400000/001592269.pdf"
-        },
-        {
-          "title": "（資料１）匿名医療保険等関連情報の提供申出に対する審査方針等について",
-          "url": "https://www.mhlw.go.jp/content/12400000/001592270.pdf"
-        }
-      ]
     },
     {
       "id": "mhlw-shakai_hosho_shougaisha-20251110-152",
@@ -100948,30 +100631,6 @@
       "manualLock": true
     },
     {
-      "id": "mhlw-tokumei_iryou-20251006-034",
-      "councilId": "mhlw-tokumei_iryou",
-      "title": "第34回 匿名医療情報等の提供に関する専門委員会（書面開催）",
-      "date": "2025/10/06",
-      "round": 34,
-      "roundStr": "第34回",
-      "officialUrl": "https://www.mhlw.go.jp/stf/index_00117.html",
-      "manualLock": true,
-      "materials": [
-        {
-          "title": "議事次第",
-          "url": "https://www.mhlw.go.jp/content/12400000/001573951.pdf"
-        },
-        {
-          "title": "構成員名簿",
-          "url": "https://www.mhlw.go.jp/content/12400000/001573952.pdf"
-        },
-        {
-          "title": "（資料１）匿名医療保険等関連情報の提供申出に対する審査方針等について",
-          "url": "https://www.mhlw.go.jp/content/12400000/001573953.pdf"
-        }
-      ]
-    },
-    {
       "id": "mhlw-830-20251006-013",
       "councilId": "mhlw-830",
       "title": "第１３回 結核部会",
@@ -103550,36 +103209,28 @@
       ]
     },
     {
-      "id": "cas-ondanka-20250919-036",
+      "id": "cas-ondanka-20250919-054",
       "councilId": "cas-ondanka",
-      "councilName": "地球温暖化対策推進本部",
-      "ministry": "CAS",
-      "category": "HQ",
-      "title": "第36回 地球温暖化対策推進本部",
+      "title": "第54回 地球温暖化対策推進本部（持ち回り開催）",
       "date": "2025/09/19",
-      "summary": "第36回 地球温暖化対策推進本部の開催。主要議題の推進状況及び今後の対応方針について審議が行われた。",
-      "agenda": [
-        "ng΍i{̊JÂɂāiߘaVNXPXꕔjiPDF^115KBj",
-        "2024Nxɂng΍v̐iU000cbd41iPDF^8,912KBj"
-      ],
+      "round": 54,
+      "roundStr": "第54回",
+      "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/ondanka/kaisai/dai54/gijisidai.html",
+      "manualLock": true,
       "materials": [
         {
-          "name": "地球温暖化対策推進本部幹事会の開催について（令和７年９月１９日一部改正）（PDF／115KB）",
-          "url": "https://www.cas.go.jp/jp/seisakukaigi/ondanka/kaisai/dai36/shiryo_250919.pdf"
+          "title": "2023年度における地球温暖化対策計画の進捗状況(案)",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/ondanka/kaisai/dai54/siryou1.pdf"
         },
         {
-          "name": "地球温暖化対策推進本部幹事会の開催について（令和５年６月３０日一部改正）（PDF／118KB）",
-          "url": "https://www.cas.go.jp/jp/seisakukaigi/ondanka/kaisai/dai36/siryou_230630.pdf"
+          "title": "「地球温暖化対策推進本部幹事会の開催について」の一部改正（案）について",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/ondanka/kaisai/dai54/siryou2.pdf"
+        },
+        {
+          "title": "地球温暖化対策推進本部幹事会の開催について（一部改正による改正後のイメージ）",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/ondanka/kaisai/dai54/sankou1.pdf"
         }
-      ],
-      "tags": [
-        "地球温暖化対",
-        "CAS",
-        "第36回"
-      ],
-      "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/ondanka/kaisai/dai36/shiryo_250919.pdf",
-      "hasMinutes": false,
-      "docCount": 5
+      ]
     },
     {
       "id": "aca-bunkazai_bunkakai-20250919-r07_274",
@@ -104348,30 +103999,6 @@
       "councilName": "イノベーション・プロデューサーガイドライン策定委員会"
     },
     {
-      "id": "mhlw-tokumei_iryou-20250908-033",
-      "councilId": "mhlw-tokumei_iryou",
-      "title": "第33回 匿名医療情報等の提供に関する専門委員会（書面開催）",
-      "date": "2025/09/08",
-      "round": 33,
-      "roundStr": "第33回",
-      "officialUrl": "https://www.mhlw.go.jp/stf/index_00114.html",
-      "manualLock": true,
-      "materials": [
-        {
-          "title": "議事次第",
-          "url": "https://www.mhlw.go.jp/content/12400000/001557276.pdf"
-        },
-        {
-          "title": "構成員名簿",
-          "url": "https://www.mhlw.go.jp/content/12400000/001557277.pdf"
-        },
-        {
-          "title": "（資料１）匿名医療保険等関連情報の提供申出に対する審査方針等について",
-          "url": "https://www.mhlw.go.jp/content/12400000/001557278.pdf"
-        }
-      ]
-    },
-    {
       "id": "mhlw-shakai_hosho_kaigo_hoken-20250908-124",
       "councilId": "mhlw-shakai_hosho_kaigo_hoken",
       "title": "第124回 社会保障審議会 介護保険部会",
@@ -104887,46 +104514,6 @@
         }
       ],
       "manualLock": true
-    },
-    {
-      "id": "mhlw-tokumei_iryou-20250903-032",
-      "councilId": "mhlw-tokumei_iryou",
-      "title": "第32回 匿名医療情報等の提供に関する専門委員会",
-      "date": "2025/09/03",
-      "round": 32,
-      "roundStr": "第32回",
-      "officialUrl": "https://www.mhlw.go.jp/stf/index_00112.html",
-      "manualLock": true,
-      "materials": [
-        {
-          "title": "議事次第［44KB］",
-          "url": "https://www.mhlw.go.jp/content/12400000/001553844.pdf"
-        },
-        {
-          "title": "構成員名簿［72KB］",
-          "url": "https://www.mhlw.go.jp/content/12400000/001553848.pdf"
-        },
-        {
-          "title": "（資料１）NDBの利用に関するガイドラインの改正について ［717KB］",
-          "url": "https://www.mhlw.go.jp/content/12400000/001553885.pdf"
-        },
-        {
-          "title": "（資料２）匿名医療保険等関連情報および匿名診療等関連情報の提供申出に対する審査方針等について［390KB］",
-          "url": "https://www.mhlw.go.jp/content/12400000/001553874.pdf"
-        },
-        {
-          "title": "（参考資料１）NDBの利用に関するガイドライン（第3.1版案） ［593KB］",
-          "url": "https://www.mhlw.go.jp/content/12400000/001553880.pdf"
-        },
-        {
-          "title": "（参考資料２）新旧対照表［272KB］",
-          "url": "https://www.mhlw.go.jp/content/12400000/001553881.pdf"
-        },
-        {
-          "title": "議事録",
-          "url": "https://www.mhlw.go.jp/stf/index_00115.html"
-        }
-      ]
     },
     {
       "id": "aca-chosakuken_shiyouryou_bukai-20250903-r7_002",
@@ -105941,6 +105528,15 @@
           "url": "https://www.da.nra.go.jp/view/NRA100012490?contents=NRA100012490-004-001"
         }
       ],
+      "manualLock": true
+    },
+    {
+      "id": "mhlw-tokumei_iryou-20250825-032",
+      "councilId": "mhlw-tokumei_iryou",
+      "title": "第32回 匿名医療情報等の提供に関する専門委員会",
+      "date": "2025/08/25",
+      "officialUrl": "https://www.mhlw.go.jp/stf/newpage_61726.html",
+      "materials": [],
       "manualLock": true
     },
     {
@@ -107443,30 +107039,6 @@
         }
       ],
       "councilName": "知的財産取引適正化ワーキンググループ"
-    },
-    {
-      "id": "mhlw-tokumei_iryou-20250804-031",
-      "councilId": "mhlw-tokumei_iryou",
-      "title": "第31回 匿名医療情報等の提供に関する専門委員会（書面開催）",
-      "date": "2025/08/04",
-      "round": 31,
-      "roundStr": "第31回",
-      "officialUrl": "https://www.mhlw.go.jp/stf/index_00109.html",
-      "manualLock": true,
-      "materials": [
-        {
-          "title": "議事次第",
-          "url": "https://www.mhlw.go.jp/content/12400000/001528973.pdf"
-        },
-        {
-          "title": "構成員名簿",
-          "url": "https://www.mhlw.go.jp/content/12400000/001528974.pdf"
-        },
-        {
-          "title": "（資料１）匿名医療保険等関連情報の提供申出に対する審査方針等について",
-          "url": "https://www.mhlw.go.jp/content/12400000/001528975.pdf"
-        }
-      ]
     },
     {
       "id": "mhlw-shakai_hosho_seikatsu_hogo-20250804-053",
@@ -110412,30 +109984,6 @@
       "hasMinutes": true,
       "docCount": 4,
       "manualLock": true
-    },
-    {
-      "id": "mhlw-tokumei_iryou-20250707-030",
-      "councilId": "mhlw-tokumei_iryou",
-      "title": "第30回 匿名医療情報等の提供に関する専門委員会（書面開催）",
-      "date": "2025/07/07",
-      "round": 30,
-      "roundStr": "第30回",
-      "officialUrl": "https://www.mhlw.go.jp/stf/index_00106.html",
-      "manualLock": true,
-      "materials": [
-        {
-          "title": "議事次第",
-          "url": "https://www.mhlw.go.jp/content/12400000/001513504.pdf"
-        },
-        {
-          "title": "構成員名簿",
-          "url": "https://www.mhlw.go.jp/content/12400000/001513505.pdf"
-        },
-        {
-          "title": "（資料１）匿名医療保険等関連情報の提供申出に対する審査方針等について",
-          "url": "https://www.mhlw.go.jp/content/12400000/001513506.pdf"
-        }
-      ]
     },
     {
       "id": "fdma-hinanjo_shoubou_anzen-20250707-r07_003",
@@ -114608,46 +114156,6 @@
       "manualLock": true
     },
     {
-      "id": "mhlw-tokumei_iryou-20250611-029",
-      "councilId": "mhlw-tokumei_iryou",
-      "title": "第29回 匿名医療情報等の提供に関する専門委員会",
-      "date": "2025/06/11",
-      "round": 29,
-      "roundStr": "第29回",
-      "officialUrl": "https://www.mhlw.go.jp/stf/index_00104.html",
-      "manualLock": true,
-      "materials": [
-        {
-          "title": "議事次第［45KB］",
-          "url": "https://www.mhlw.go.jp/content/12400000/001502012.pdf"
-        },
-        {
-          "title": "構成員名簿［74KB］",
-          "url": "https://www.mhlw.go.jp/content/12400000/001502090.pdf"
-        },
-        {
-          "title": "（資料１）二次利用ポータル及びHICを用いたNDBデータ提供の現状について（報告）［473KB］",
-          "url": "https://www.mhlw.go.jp/content/12400000/001502016.pdf"
-        },
-        {
-          "title": "（資料２）匿名医療保険等関連情報の第三者提供の現状について（報告）［6.5MB］",
-          "url": "https://www.mhlw.go.jp/content/12400000/001508276.pdf"
-        },
-        {
-          "title": "（資料３）匿名診療等関連情報の第三者提供の現状について（報告）［4.7MB］",
-          "url": "https://www.mhlw.go.jp/content/12400000/001502023.pdf"
-        },
-        {
-          "title": "（資料４）匿名医療保険等関連情報および匿名診療等関連情報の提供申出に対する審査方針等について［404KB］",
-          "url": "https://www.mhlw.go.jp/content/12400000/001502024.pdf"
-        },
-        {
-          "title": "議事録",
-          "url": "https://www.mhlw.go.jp/stf/index_00107.html"
-        }
-      ]
-    },
-    {
       "id": "cas-sokuitiri-20250611-020",
       "councilId": "cas-sokuitiri",
       "title": "第20回 地理空間情報活用推進会議",
@@ -115410,6 +114918,15 @@
       "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/nousui/kome_anteikyokyujitsugen_kaigi/dai1/shiryo.pdf",
       "hasMinutes": true,
       "docCount": 6
+    },
+    {
+      "id": "mhlw-tokumei_iryou-20250604-029",
+      "councilId": "mhlw-tokumei_iryou",
+      "title": "第29回 匿名医療情報等の提供に関する専門委員会",
+      "date": "2025/06/04",
+      "officialUrl": "https://www.mhlw.go.jp/stf/newpage_52989.html",
+      "materials": [],
+      "manualLock": true
     },
     {
       "id": "cas-suisinkaigi-20250604-014",
@@ -121959,30 +121476,6 @@
       "councilName": "規制改革推進会議 働き方・人への投資WG"
     },
     {
-      "id": "mhlw-tokumei_iryou-20250407-028",
-      "councilId": "mhlw-tokumei_iryou",
-      "title": "第28回 匿名医療情報等の提供に関する専門委員会（書面開催）",
-      "date": "2025/04/07",
-      "round": 28,
-      "roundStr": "第28回",
-      "officialUrl": "https://www.mhlw.go.jp/stf/index_00098.html",
-      "manualLock": true,
-      "materials": [
-        {
-          "title": "議事次第",
-          "url": "https://www.mhlw.go.jp/content/12400000/001472758.pdf"
-        },
-        {
-          "title": "構成員名簿",
-          "url": "https://www.mhlw.go.jp/content/12400000/001472755.pdf"
-        },
-        {
-          "title": "（資料１）匿名医療保険等関連情報の提供申出に対する審査方針等について",
-          "url": "https://www.mhlw.go.jp/content/12400000/001472772.pdf"
-        }
-      ]
-    },
-    {
       "id": "caa-shouhisha_kyouiku_suishin-20250404-s02",
       "councilId": "caa-shouhisha_kyouiku_suishin",
       "title": "会議資料・議事録(第6期) | 消費者庁",
@@ -125358,30 +124851,6 @@
       ]
     },
     {
-      "id": "mhlw-tokumei_iryou-20250310-027",
-      "councilId": "mhlw-tokumei_iryou",
-      "title": "第27回 匿名医療情報等の提供に関する専門委員会（書面開催）",
-      "date": "2025/03/10",
-      "round": 27,
-      "roundStr": "第27回",
-      "officialUrl": "https://www.mhlw.go.jp/stf/index_00092.html",
-      "manualLock": true,
-      "materials": [
-        {
-          "title": "議事次第",
-          "url": "https://www.mhlw.go.jp/content/12400000/001433745.pdf"
-        },
-        {
-          "title": "構成員名簿",
-          "url": "https://www.mhlw.go.jp/content/12400000/001435088.pdf"
-        },
-        {
-          "title": "（資料１）匿名医療保険等関連情報の提供申出に対する審査方針等について",
-          "url": "https://www.mhlw.go.jp/content/12400000/001433747.pdf"
-        }
-      ]
-    },
-    {
       "id": "mhlw-918-20250310-004",
       "councilId": "mhlw-918",
       "title": "第4回 化学物質審査等検討小委員会",
@@ -125904,58 +125373,6 @@
       "hasMinutes": true,
       "docCount": 33,
       "manualLock": true
-    },
-    {
-      "id": "mhlw-tokumei_iryou-20250305-026",
-      "councilId": "mhlw-tokumei_iryou",
-      "title": "第26回 匿名医療情報等の提供に関する専門委員会",
-      "date": "2025/03/05",
-      "round": 26,
-      "roundStr": "第26回",
-      "officialUrl": "https://www.mhlw.go.jp/stf/index_00091.html",
-      "manualLock": true,
-      "materials": [
-        {
-          "title": "議事次第",
-          "url": "https://www.mhlw.go.jp/content/12400000/001430214.pdf"
-        },
-        {
-          "title": "構成員名簿",
-          "url": "https://www.mhlw.go.jp/content/12400000/001430215.pdf"
-        },
-        {
-          "title": "（資料１）通年パネルデータセットの今後の作成方針について（案）",
-          "url": "https://www.mhlw.go.jp/content/12400000/001430216.pdf"
-        },
-        {
-          "title": "（資料２）死亡情報のデータディクショナリーの公開について（報告）",
-          "url": "https://www.mhlw.go.jp/content/12400000/001430217.pdf"
-        },
-        {
-          "title": "（資料３）二次利用ポータルに掲載するNDB基礎資料について（案）",
-          "url": "https://www.mhlw.go.jp/content/12400000/001430218.pdf"
-        },
-        {
-          "title": "（資料４）匿名医療保険等関連情報データベース（NDB）の提供申出に係る会議審査のスケジュールについて",
-          "url": "https://www.mhlw.go.jp/content/12400000/001430219.pdf"
-        },
-        {
-          "title": "（資料５）匿名診療等関連情報データベースの提供申出に係る審査のスケジュールについて",
-          "url": "https://www.mhlw.go.jp/content/12400000/001430220.pdf"
-        },
-        {
-          "title": "（資料８）匿名医療保険等関連情報および匿名診療等関連情報の提供申出に対する審査方針等について",
-          "url": "https://www.mhlw.go.jp/content/12400000/001430221.pdf"
-        },
-        {
-          "title": "（参考資料）死亡情報データディクショナリー［70KB］",
-          "url": "https://www.mhlw.go.jp/content/12400000/001430235.xlsx"
-        },
-        {
-          "title": "議事録",
-          "url": "https://www.mhlw.go.jp/stf/index_00097.html"
-        }
-      ]
     },
     {
       "id": "mhlw-904-20250305-020",
@@ -127885,6 +127302,34 @@
       "manualLock": true
     },
     {
+      "id": "cas-ondanka-20250218-053",
+      "councilId": "cas-ondanka",
+      "title": "第53回 地球温暖化対策推進本部（持ち回り開催）",
+      "date": "2025/02/18",
+      "round": 53,
+      "roundStr": "第53回",
+      "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/ondanka/kaisai/dai53/gijisidai.html",
+      "manualLock": true,
+      "materials": [
+        {
+          "title": "地球温暖化対策計画（案）の概要",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/ondanka/kaisai/dai53/siryou1-1.pdf"
+        },
+        {
+          "title": "地球温暖化対策計画（案）",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/ondanka/kaisai/dai53/siryou1-2.pdf"
+        },
+        {
+          "title": "政府がその事務及び事業に関し温室効果ガスの排出の削減等のため実行すべき措置について定める計画（政府実行計画）（案）の概要",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/ondanka/kaisai/dai53/siryou2-1.pdf"
+        },
+        {
+          "title": "政府がその事務及び事業に関し温室効果ガスの排出の削減等のため実行すべき措置について定める計画（案）",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/ondanka/kaisai/dai53/siryou2-2.pdf"
+        }
+      ]
+    },
+    {
       "id": "cas-kenkou_iryou_honbu-20250218-049",
       "councilId": "cas-kenkou_iryou_honbu",
       "title": "第49回 健康・医療戦略推進本部",
@@ -129287,30 +128732,6 @@
         }
       ],
       "councilName": "AI戦略会議"
-    },
-    {
-      "id": "mhlw-tokumei_iryou-20250203-025",
-      "councilId": "mhlw-tokumei_iryou",
-      "title": "第25回 匿名医療情報等の提供に関する専門委員会（書面開催）",
-      "date": "2025/02/03",
-      "round": 25,
-      "roundStr": "第25回",
-      "officialUrl": "https://www.mhlw.go.jp/stf/index_00085.html",
-      "manualLock": true,
-      "materials": [
-        {
-          "title": "議事次第",
-          "url": "https://www.mhlw.go.jp/content/12400000/001392296.pdf"
-        },
-        {
-          "title": "構成員名簿",
-          "url": "https://www.mhlw.go.jp/content/12400000/001391717.pdf"
-        },
-        {
-          "title": "（資料１）匿名医療保険等関連情報の提供申出に対する審査方針等について",
-          "url": "https://www.mhlw.go.jp/content/12400000/001391718.pdf"
-        }
-      ]
     },
     {
       "id": "mhlw-shakai_hosho-20250203-033",
@@ -133318,6 +132739,46 @@
         }
       ],
       "manualLock": true
+    },
+    {
+      "id": "cas-ondanka-20241227-052",
+      "councilId": "cas-ondanka",
+      "title": "第52回 地球温暖化対策推進本部",
+      "date": "2024/12/27",
+      "round": 52,
+      "roundStr": "第52回",
+      "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/ondanka/kaisai/dai52/gijisidai.html",
+      "manualLock": true,
+      "materials": [
+        {
+          "title": "議事要旨",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/ondanka/kaisai/dai52/gijiyousi.pdf"
+        },
+        {
+          "title": "地球温暖化対策計画（案）の概要",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/ondanka/kaisai/dai52/siryou1-1.pdf"
+        },
+        {
+          "title": "地球温暖化対策計画（案）",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/ondanka/kaisai/dai52/siryou1-2.pdf"
+        },
+        {
+          "title": "政府がその事務及び事業に関し温室効果ガスの排出の削減等のため実行すべき措置について定める計画（政府実行計画）（案）の概要",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/ondanka/kaisai/dai52/siryou2-1.pdf"
+        },
+        {
+          "title": "政府がその事務及び事業に関し温室効果ガスの排出の削減等のため実行すべき措置について定める計画（政府実行計画）（案）",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/ondanka/kaisai/dai52/siryou2-2.pdf"
+        },
+        {
+          "title": "「地球温暖化対策推進本部幹事会の開催について」の一部改正（案）について",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/ondanka/kaisai/dai52/siryou3.pdf"
+        },
+        {
+          "title": "地球温暖化対策推進本部幹事会の開催について（一部改正による改正後のイメージ）",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/ondanka/kaisai/dai52/sankou1.pdf"
+        }
+      ]
     },
     {
       "id": "cas-kyouseishakai_honbu-20241227-003",
@@ -137411,42 +136872,6 @@
       "councilName": "就職・採用活動日程に関する関係省庁連絡会議"
     },
     {
-      "id": "mhlw-tokumei_iryou-20241204-024",
-      "councilId": "mhlw-tokumei_iryou",
-      "title": "第24回 匿名医療情報等の提供に関する専門委員会",
-      "date": "2024/12/04",
-      "round": 24,
-      "roundStr": "第24回",
-      "officialUrl": "https://www.mhlw.go.jp/stf/index_00081.html",
-      "manualLock": true,
-      "materials": [
-        {
-          "title": "議事次第",
-          "url": "https://www.mhlw.go.jp/content/12400000/001344391.pdf"
-        },
-        {
-          "title": "構成員名簿",
-          "url": "https://www.mhlw.go.jp/content/12400000/001344392.pdf"
-        },
-        {
-          "title": "（資料１）死亡情報・訪問看護レセプト情報の第三者提供開始について（案）",
-          "url": "https://www.mhlw.go.jp/content/12400000/001344393.pdf"
-        },
-        {
-          "title": "（資料２）第10回オープンデータの作成方針について（案）",
-          "url": "https://www.mhlw.go.jp/content/12400000/001344394.pdf"
-        },
-        {
-          "title": "（資料４）匿名医療保険等関連情報および匿名診療等関連情報の提供申出に対する審査方針等について",
-          "url": "https://www.mhlw.go.jp/content/12400000/001344395.pdf"
-        },
-        {
-          "title": "議事録",
-          "url": "https://www.mhlw.go.jp/stf/index_00083.html"
-        }
-      ]
-    },
-    {
       "id": "mhlw-1021-20241204-060",
       "councilId": "mhlw-1021",
       "title": "第60回 中央社会保険医療協議会調査実施小委員会",
@@ -138619,30 +138044,6 @@
         }
       ],
       "manualLock": true
-    },
-    {
-      "id": "mhlw-tokumei_iryou-20241125-023",
-      "councilId": "mhlw-tokumei_iryou",
-      "title": "第23回 匿名医療情報等の提供に関する専門委員会（書面開催）",
-      "date": "2024/11/25",
-      "round": 23,
-      "roundStr": "第23回",
-      "officialUrl": "https://www.mhlw.go.jp/stf/index_00080.html",
-      "manualLock": true,
-      "materials": [
-        {
-          "title": "議事次第",
-          "url": "https://www.mhlw.go.jp/content/12400000/001337599.pdf"
-        },
-        {
-          "title": "構成員名簿",
-          "url": "https://www.mhlw.go.jp/content/12400000/001337600.pdf"
-        },
-        {
-          "title": "（資料１）匿名医療保険等関連情報の提供申出に対する審査方針等について",
-          "url": "https://www.mhlw.go.jp/content/12400000/001337601.pdf"
-        }
-      ]
     },
     {
       "id": "mhlw-shakai_hosho_nenkin-20241125-021",
@@ -145989,50 +145390,6 @@
       "manualLock": true
     },
     {
-      "id": "mhlw-tokumei_iryou-20240904-022",
-      "councilId": "mhlw-tokumei_iryou",
-      "title": "第22回 匿名医療情報等の提供に関する専門委員会",
-      "date": "2024/09/04",
-      "round": 22,
-      "roundStr": "第22回",
-      "officialUrl": "https://www.mhlw.go.jp/stf/index_00075.html",
-      "manualLock": true,
-      "materials": [
-        {
-          "title": "議事次第",
-          "url": "https://www.mhlw.go.jp/content/12400000/001298660.pdf"
-        },
-        {
-          "title": "構成員名簿",
-          "url": "https://www.mhlw.go.jp/content/12400000/001298661.pdf"
-        },
-        {
-          "title": "（資料１）NDBの第三者提供手数料の改正について（報告）",
-          "url": "https://www.mhlw.go.jp/content/12400000/001306006.pdf"
-        },
-        {
-          "title": "（資料２）NDBの利用に関するガイドラインの改正ついて",
-          "url": "https://www.mhlw.go.jp/content/12400000/001298663.pdf"
-        },
-        {
-          "title": "（資料４）匿名医療保険等関連情報および匿名診療等関連情報の提供申出に対する審査方針等について",
-          "url": "https://www.mhlw.go.jp/content/12400000/001298664.pdf"
-        },
-        {
-          "title": "（参考資料１）NDBガイドライン（案）",
-          "url": "https://www.mhlw.go.jp/content/12400000/001298755.pdf"
-        },
-        {
-          "title": "（参考資料２）NDBガイドライン新旧対照表",
-          "url": "https://www.mhlw.go.jp/content/12400000/001298756.pdf"
-        },
-        {
-          "title": "議事録",
-          "url": "https://www.mhlw.go.jp/stf/index_00076.html"
-        }
-      ]
-    },
-    {
       "id": "mhlw-1046-20240904-006",
       "councilId": "mhlw-1046",
       "title": "第６回 国立研究開発法人等審議会",
@@ -152929,6 +152286,22 @@
       ]
     },
     {
+      "id": "cas-ondanka-20240620-051",
+      "councilId": "cas-ondanka",
+      "title": "第51回 地球温暖化対策推進本部（持ち回り開催）",
+      "date": "2024/06/20",
+      "round": 51,
+      "roundStr": "第51回",
+      "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/ondanka/kaisai/dai51/gijisidai.html",
+      "manualLock": true,
+      "materials": [
+        {
+          "title": "2022年度における地球温暖化対策計画の進捗状況(案)（PDF/6,716KB）",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/ondanka/kaisai/dai51/siryou1.pdf"
+        }
+      ]
+    },
+    {
       "id": "cas-374-20240620-008",
       "councilId": "cas-374",
       "title": "第8回 認知症施策推進関係者会議",
@@ -153584,50 +152957,6 @@
         }
       ],
       "manualLock": true
-    },
-    {
-      "id": "mhlw-tokumei_iryou-20240612-021",
-      "councilId": "mhlw-tokumei_iryou",
-      "title": "第21回 匿名医療情報等の提供に関する専門委員会",
-      "date": "2024/06/12",
-      "round": 21,
-      "roundStr": "第21回",
-      "officialUrl": "https://www.mhlw.go.jp/stf/index_00072.html",
-      "manualLock": true,
-      "materials": [
-        {
-          "title": "議事次第",
-          "url": "https://www.mhlw.go.jp/content/12400000/001262619.pdf"
-        },
-        {
-          "title": "構成員名簿",
-          "url": "https://www.mhlw.go.jp/content/12400000/001262620.pdf"
-        },
-        {
-          "title": "（資料１）NDBにおける新たな迅速提供の形態について（案）",
-          "url": "https://www.mhlw.go.jp/content/12400000/001262621.pdf"
-        },
-        {
-          "title": "（資料２）NDBにおける死亡情報の収載と提供について（案）",
-          "url": "https://www.mhlw.go.jp/content/12400000/001262622.pdf"
-        },
-        {
-          "title": "（資料３）匿名医療保険等関連情報の第三者提供の現状について（報告）",
-          "url": "https://www.mhlw.go.jp/content/12400000/001262623.pdf"
-        },
-        {
-          "title": "（資料４）匿名診療等関連情報の第三者提供の現状について（報告）",
-          "url": "https://www.mhlw.go.jp/content/12400000/001262624.pdf"
-        },
-        {
-          "title": "（資料５）匿名医療保険等関連情報および匿名診療等関連情報の提供申出に対する審査方針等について",
-          "url": "https://www.mhlw.go.jp/content/12400000/001262625.pdf"
-        },
-        {
-          "title": "議事録",
-          "url": "https://www.mhlw.go.jp/stf/index_00073.html"
-        }
-      ]
     },
     {
       "id": "fsc-hisiryou-20240612-199",
@@ -164872,50 +164201,6 @@
       "councilName": "規制改革推進会議 健康・医療・介護WG"
     },
     {
-      "id": "mhlw-tokumei_iryou-20240306-020",
-      "councilId": "mhlw-tokumei_iryou",
-      "title": "第20回 匿名医療情報等の提供に関する専門委員会",
-      "date": "2024/03/06",
-      "round": 20,
-      "roundStr": "第20回",
-      "officialUrl": "https://www.mhlw.go.jp/stf/index_00065.html",
-      "manualLock": true,
-      "materials": [
-        {
-          "title": "議事次第",
-          "url": "https://www.mhlw.go.jp/content/12400000/001214755.pdf"
-        },
-        {
-          "title": "構成員名簿",
-          "url": "https://www.mhlw.go.jp/content/12400000/001214756.pdf"
-        },
-        {
-          "title": "（資料１）NDB提供体制の見直しについて",
-          "url": "https://www.mhlw.go.jp/content/12400000/001214757.pdf"
-        },
-        {
-          "title": "（資料２）NDB収載・提供情報の追加について",
-          "url": "https://www.mhlw.go.jp/content/12400000/001218316.pdf"
-        },
-        {
-          "title": "（資料３）「匿名医療保険等関連情報の提供に関する申出書」の審査スケジュールについて",
-          "url": "https://www.mhlw.go.jp/content/12400000/001218317.pdf"
-        },
-        {
-          "title": "（資料４）「匿名診療等関連情報の提供に関する申出書」の審査スケジュールについて",
-          "url": "https://www.mhlw.go.jp/content/12400000/001218318.pdf"
-        },
-        {
-          "title": "（資料６）匿名医療保険等関連情報の提供申出に対する審査方針等について",
-          "url": "https://www.mhlw.go.jp/content/12400000/001218334.pdf"
-        },
-        {
-          "title": "議事録",
-          "url": "https://www.mhlw.go.jp/stf/index_00067.html"
-        }
-      ]
-    },
-    {
       "id": "mof-zaiseiseido_bunkakai-20240305-s01",
       "councilId": "mof-zaiseiseido_bunkakai",
       "councilName": "財政制度等審議会 財政制度分科会",
@@ -169258,30 +168543,6 @@
         }
       ],
       "councilName": "高齢社会対策会議"
-    },
-    {
-      "id": "mhlw-tokumei_iryou-20240209-019",
-      "councilId": "mhlw-tokumei_iryou",
-      "title": "第19回 匿名医療情報等の提供に関する専門委員会（書面開催）",
-      "date": "2024/02/09",
-      "round": 19,
-      "roundStr": "第19回",
-      "officialUrl": "https://www.mhlw.go.jp/stf/index_00064.html",
-      "manualLock": true,
-      "materials": [
-        {
-          "title": "議事次第",
-          "url": "https://www.mhlw.go.jp/content/12400000/001210707.pdf"
-        },
-        {
-          "title": "構成員名簿",
-          "url": "https://www.mhlw.go.jp/content/12400000/001210708.pdf"
-        },
-        {
-          "title": "（資料１）匿名医療保険等関連情報の提供申出に対する審査方針等について",
-          "url": "https://www.mhlw.go.jp/content/12400000/001210709.pdf"
-        }
-      ]
     },
     {
       "id": "digital-435-20240209-002",
@@ -175285,42 +174546,6 @@
         }
       ],
       "manualLock": true
-    },
-    {
-      "id": "mhlw-tokumei_iryou-20231206-018",
-      "councilId": "mhlw-tokumei_iryou",
-      "title": "第18回 匿名医療情報等の提供に関する専門委員会",
-      "date": "2023/12/06",
-      "round": 18,
-      "roundStr": "第18回",
-      "officialUrl": "https://www.mhlw.go.jp/stf/index_00059.html",
-      "manualLock": true,
-      "materials": [
-        {
-          "title": "議事次第",
-          "url": "https://www.mhlw.go.jp/content/12400000/001175400.pdf"
-        },
-        {
-          "title": "構成員名簿",
-          "url": "https://www.mhlw.go.jp/content/12400000/001175401.pdf"
-        },
-        {
-          "title": "（資料１）NDB の迅速提供に向けたスキーム再構築に資する 研究_中間報告書",
-          "url": "https://www.mhlw.go.jp/content/12400000/001176009.pdf"
-        },
-        {
-          "title": "（資料２）第９回NDBオープンデータの作成方針について",
-          "url": "https://www.mhlw.go.jp/content/12400000/001175414.pdf"
-        },
-        {
-          "title": "（資料３）匿名医療保険等関連情報の提供申出に対する審査方針等について",
-          "url": "https://www.mhlw.go.jp/content/12400000/001175415.pdf"
-        },
-        {
-          "title": "議事録",
-          "url": "https://www.mhlw.go.jp/stf/index_00062.html"
-        }
-      ]
     },
     {
       "id": "mhlw-1029-20231206-008",
@@ -185542,58 +184767,6 @@
       "manualLock": true
     },
     {
-      "id": "mhlw-tokumei_iryou-20230906-017",
-      "councilId": "mhlw-tokumei_iryou",
-      "title": "第17回 匿名医療情報等の提供に関する専門委員会",
-      "date": "2023/09/06",
-      "round": 17,
-      "roundStr": "第17回",
-      "officialUrl": "https://www.mhlw.go.jp/stf/index_00051.html",
-      "manualLock": true,
-      "materials": [
-        {
-          "title": "議事次第",
-          "url": "https://www.mhlw.go.jp/content/12400000/001139958.pdf"
-        },
-        {
-          "title": "構成員名簿",
-          "url": "https://www.mhlw.go.jp/content/12400000/001139959.pdf"
-        },
-        {
-          "title": "（資料１－１）NDBの利用に関するガイドラインの改正について",
-          "url": "https://www.mhlw.go.jp/content/12400000/001139960.pdf"
-        },
-        {
-          "title": "（資料１－２）匿名診療等関連情報の利用に関するガイドラインの改正について",
-          "url": "https://www.mhlw.go.jp/content/12400000/001139961.pdf"
-        },
-        {
-          "title": "（資料２）NDB及びDPCDBの第三者提供手数料の改正について",
-          "url": "https://www.mhlw.go.jp/content/12400000/001139962.pdf"
-        },
-        {
-          "title": "（資料３）匿名レセプト情報等の提供申出に対する審査方針等について",
-          "url": "https://www.mhlw.go.jp/content/12400000/001139963.pdf"
-        },
-        {
-          "title": "（資料４）匿名診療等関連情報の提供申出に対する審査方針等について",
-          "url": "https://www.mhlw.go.jp/content/12400000/001139964.pdf"
-        },
-        {
-          "title": "（参考資料１）NDBガイドライン（案）",
-          "url": "https://www.mhlw.go.jp/content/12400000/001142466.pdf"
-        },
-        {
-          "title": "（参考資料３）新旧ガイドライン対応表",
-          "url": "https://www.mhlw.go.jp/content/12400000/001142467.pdf"
-        },
-        {
-          "title": "議事録",
-          "url": "https://www.mhlw.go.jp/stf/index_00052.html"
-        }
-      ]
-    },
-    {
       "id": "fsc-hyoukagijyutukikaku_wg-20230906-032",
       "councilId": "fsc-hyoukagijyutukikaku_wg",
       "title": "第32回評価技術企画ワーキンググループ",
@@ -190638,6 +189811,30 @@
       "manualLock": true
     },
     {
+      "id": "cas-ondanka-20230630-050",
+      "councilId": "cas-ondanka",
+      "title": "第50回 地球温暖化対策推進本部（持ち回り開催）",
+      "date": "2023/06/30",
+      "round": 50,
+      "roundStr": "第50回",
+      "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/ondanka/kaisai/dai50/gijisidai.html",
+      "manualLock": true,
+      "materials": [
+        {
+          "title": "2021年度における地球温暖化対策計画の進捗状況(案)（PDF/6,581KB）",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/ondanka/kaisai/dai50/siryou1.pdf"
+        },
+        {
+          "title": "「地球温暖化対策推進本部幹事会の開催について」の一部改正について（PDF/253KB）",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/ondanka/kaisai/dai50/siryou2.pdf"
+        },
+        {
+          "title": "地球温暖化対策推進本部幹事会の開催について（一部改正後イメージ）（PDF/269KB）",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/ondanka/kaisai/dai50/sankou1.pdf"
+        }
+      ]
+    },
+    {
       "id": "cas-jinsintorihiki-20230630-009",
       "councilId": "cas-jinsintorihiki",
       "title": "第9回 人身取引対策推進会議",
@@ -193007,54 +192204,6 @@
         }
       ],
       "manualLock": true
-    },
-    {
-      "id": "mhlw-tokumei_iryou-20230607-016",
-      "councilId": "mhlw-tokumei_iryou",
-      "title": "第16回 匿名医療情報等の提供に関する専門委員会",
-      "date": "2023/06/07",
-      "round": 16,
-      "roundStr": "第16回",
-      "officialUrl": "https://www.mhlw.go.jp/stf/index_00046.html",
-      "manualLock": true,
-      "materials": [
-        {
-          "title": "議事次第",
-          "url": "https://www.mhlw.go.jp/content/12400000/001101481.pdf"
-        },
-        {
-          "title": "構成員名簿",
-          "url": "https://www.mhlw.go.jp/content/12400000/001101482.pdf"
-        },
-        {
-          "title": "（資料１）NDBサンプルデータ（データ見本）について",
-          "url": "https://www.mhlw.go.jp/content/12400000/001101483.pdf"
-        },
-        {
-          "title": "（資料２）第8回NDBオープンデータの公表について（報告）",
-          "url": "https://www.mhlw.go.jp/content/12400000/001101484.pdf"
-        },
-        {
-          "title": "（資料３）匿名レセプト情報等の第三者提供の現状について（報告）",
-          "url": "https://www.mhlw.go.jp/content/12400000/001101485.pdf"
-        },
-        {
-          "title": "（資料４）匿名診療等関連情報の第三者提供の現状について（報告）",
-          "url": "https://www.mhlw.go.jp/content/12400000/001101486.pdf"
-        },
-        {
-          "title": "（資料５）匿名レセプト情報等の提供申出に対する審査方針等について",
-          "url": "https://www.mhlw.go.jp/content/12400000/001101487.pdf"
-        },
-        {
-          "title": "（資料６）匿名診療等関連情報の提供申出に対する審査方針等について",
-          "url": "https://www.mhlw.go.jp/content/12400000/001101518.pdf"
-        },
-        {
-          "title": "議事録",
-          "url": "https://www.mhlw.go.jp/stf/index_00048.html"
-        }
-      ]
     },
     {
       "id": "fsa-chuugoku_kinyu-20230607-010",
@@ -197377,34 +196526,6 @@
         }
       ],
       "manualLock": true
-    },
-    {
-      "id": "mhlw-tokumei_iryou-20230419-015",
-      "councilId": "mhlw-tokumei_iryou",
-      "title": "第15回 匿名医療情報等の提供に関する専門委員会",
-      "date": "2023/04/19",
-      "round": 15,
-      "roundStr": "第15回",
-      "officialUrl": "https://www.mhlw.go.jp/stf/index_00040.html",
-      "manualLock": true,
-      "materials": [
-        {
-          "title": "議事次第",
-          "url": "https://www.mhlw.go.jp/content/12400000/001088145.pdf"
-        },
-        {
-          "title": "構成員名簿",
-          "url": "https://www.mhlw.go.jp/content/12400000/001088146.pdf"
-        },
-        {
-          "title": "（資料1）医療・介護データ等解析基盤（HIC）の本格運用を見据えたNDBデータの利活用の更なる促進について",
-          "url": "https://www.mhlw.go.jp/content/12400000/001088147.pdf"
-        },
-        {
-          "title": "議事録",
-          "url": "https://www.mhlw.go.jp/stf/index_00042.html"
-        }
-      ]
     },
     {
       "id": "fsc-tenkabutu-20230419-191",
@@ -202641,50 +201762,6 @@
         }
       ],
       "councilName": "規制改革推進会議 働き方・人への投資WG"
-    },
-    {
-      "id": "mhlw-tokumei_iryou-20230301-014",
-      "councilId": "mhlw-tokumei_iryou",
-      "title": "第14回 匿名医療情報等の提供に関する専門委員会",
-      "date": "2023/03/01",
-      "round": 14,
-      "roundStr": "第14回",
-      "officialUrl": "https://www.mhlw.go.jp/stf/index_00036.html",
-      "manualLock": true,
-      "materials": [
-        {
-          "title": "議事次第",
-          "url": "https://www.mhlw.go.jp/content/12400000/001064646.pdf"
-        },
-        {
-          "title": "構成員名簿",
-          "url": "https://www.mhlw.go.jp/content/12400000/001064647.pdf"
-        },
-        {
-          "title": "（資料1）NDB収載・提供情報の追加",
-          "url": "https://www.mhlw.go.jp/content/12400000/001064648.pdf"
-        },
-        {
-          "title": "（資料2）「匿名レセプト情報等の提供に関する申出書」の審査スケジュールについて",
-          "url": "https://www.mhlw.go.jp/content/12400000/001064649.pdf"
-        },
-        {
-          "title": "（資料3）「匿名診療等関連情報の提供に関する申出書」の審査スケジュールについて",
-          "url": "https://www.mhlw.go.jp/content/12400000/001064650.pdf"
-        },
-        {
-          "title": "（資料4）匿名レセプト情報等の提供申出に対する審査方針等について",
-          "url": "https://www.mhlw.go.jp/content/12400000/001064651.pdf"
-        },
-        {
-          "title": "（資料5）匿名診療等関連情報の提供申出に対する審査方針等について",
-          "url": "https://www.mhlw.go.jp/content/12400000/001064652.pdf"
-        },
-        {
-          "title": "議事録",
-          "url": "https://www.mhlw.go.jp/stf/index_00038.html"
-        }
-      ]
     },
     {
       "id": "jfa-609-20230301-001",
@@ -209498,54 +208575,6 @@
         }
       ],
       "manualLock": true
-    },
-    {
-      "id": "mhlw-tokumei_iryou-20221207-013",
-      "councilId": "mhlw-tokumei_iryou",
-      "title": "第13回 匿名医療情報等の提供に関する専門委員会",
-      "date": "2022/12/07",
-      "round": 13,
-      "roundStr": "第13回",
-      "officialUrl": "https://www.mhlw.go.jp/stf/index_00031.html",
-      "manualLock": true,
-      "materials": [
-        {
-          "title": "議事次第",
-          "url": "https://www.mhlw.go.jp/content/12400000/001020960.pdf"
-        },
-        {
-          "title": "構成員名簿",
-          "url": "https://www.mhlw.go.jp/content/12400000/001020961.pdf"
-        },
-        {
-          "title": "（資料1）NDBの個人識別情報の補正作業について（報告）",
-          "url": "https://www.mhlw.go.jp/content/12400000/001020962.pdf"
-        },
-        {
-          "title": "（資料2）NDBと死亡情報の連結について",
-          "url": "https://www.mhlw.go.jp/content/12400000/001020963.pdf"
-        },
-        {
-          "title": "（資料3）トライアルデータセット（仮称）の仕様について",
-          "url": "https://www.mhlw.go.jp/content/12400000/001020964.pdf"
-        },
-        {
-          "title": "（資料4）匿名レセプト情報等の提供申出に対する審査方針等について",
-          "url": "https://www.mhlw.go.jp/content/12400000/001020965.pdf"
-        },
-        {
-          "title": "（資料5）匿名診療等関連情報の提供申出に対する審査方針等について",
-          "url": "https://www.mhlw.go.jp/content/12400000/001020969.pdf"
-        },
-        {
-          "title": "（参考資料1）学生実習におけるサンプリングデータセット利用について",
-          "url": "https://www.mhlw.go.jp/content/12400000/001020970.pdf"
-        },
-        {
-          "title": "議事録",
-          "url": "https://www.mhlw.go.jp/stf/index_00033.html"
-        }
-      ]
     },
     {
       "id": "fsc-tenkabutu-20221207-189",
@@ -219334,46 +218363,6 @@
       "manualLock": true
     },
     {
-      "id": "mhlw-tokumei_iryou-20220914-012",
-      "councilId": "mhlw-tokumei_iryou",
-      "title": "第12回 匿名医療情報等の提供に関する専門委員会",
-      "date": "2022/09/14",
-      "round": 12,
-      "roundStr": "第12回",
-      "officialUrl": "https://www.mhlw.go.jp/stf/index_00027.html",
-      "manualLock": true,
-      "materials": [
-        {
-          "title": "議事次第",
-          "url": "https://www.mhlw.go.jp/content/12400000/000989573.pdf"
-        },
-        {
-          "title": "構成員名簿",
-          "url": "https://www.mhlw.go.jp/content/12400000/000989574.pdf"
-        },
-        {
-          "title": "（資料1）第三者提供の現状について（報告）",
-          "url": "https://www.mhlw.go.jp/content/12400000/000989575.pdf"
-        },
-        {
-          "title": "（資料2）匿名診療等関連情報（DPCデータ）の個票情報の提供に係る課題について",
-          "url": "https://www.mhlw.go.jp/content/12400000/000989576.pdf"
-        },
-        {
-          "title": "（資料3）匿名レセプト情報等の提供申出に対する審査方針等について",
-          "url": "https://www.mhlw.go.jp/content/12400000/000989577.pdf"
-        },
-        {
-          "title": "（資料4）匿名診療等関連情報の提供申出に対する審査方針等について",
-          "url": "https://www.mhlw.go.jp/content/12400000/000989578.pdf"
-        },
-        {
-          "title": "議事録",
-          "url": "https://www.mhlw.go.jp/stf/index_00029.html"
-        }
-      ]
-    },
-    {
       "id": "mhlw-jidou_bukai-20220914-052",
       "councilId": "mhlw-jidou_bukai",
       "title": "第52回社会保障審議会児童部会　資料｜厚生労働省",
@@ -220578,38 +219567,6 @@
         {
           "title": "議事録",
           "url": "https://www.fsa.go.jp/singi/soff/gijiroku/20220901/29_a.pdf"
-        }
-      ]
-    },
-    {
-      "id": "mhlw-tokumei_iryou-20220831-011",
-      "councilId": "mhlw-tokumei_iryou",
-      "title": "第11回 匿名医療情報等の提供に関する専門委員会",
-      "date": "2022/08/31",
-      "round": 11,
-      "roundStr": "第11回",
-      "officialUrl": "https://www.mhlw.go.jp/stf/index_00025.html",
-      "manualLock": true,
-      "materials": [
-        {
-          "title": "議事次第",
-          "url": "https://www.mhlw.go.jp/content/12400000/000982802.pdf"
-        },
-        {
-          "title": "構成員名簿",
-          "url": "https://www.mhlw.go.jp/content/12400000/000982803.pdf"
-        },
-        {
-          "title": "（資料1）今後のNDBについて",
-          "url": "https://www.mhlw.go.jp/content/12400000/000982804.pdf"
-        },
-        {
-          "title": "（参考資料1）公的DBについて",
-          "url": "https://www.mhlw.go.jp/content/12400000/000982805.pdf"
-        },
-        {
-          "title": "議事録",
-          "url": "https://www.mhlw.go.jp/stf/index_00026.html"
         }
       ]
     },
@@ -226183,6 +225140,22 @@
       ]
     },
     {
+      "id": "cas-ondanka-20220617-049",
+      "councilId": "cas-ondanka",
+      "title": "第49回 地球温暖化対策推進本部（持ち回り開催）",
+      "date": "2022/06/17",
+      "round": 49,
+      "roundStr": "第49回",
+      "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/ondanka/kaisai/dai49/gijisidai.html",
+      "manualLock": true,
+      "materials": [
+        {
+          "title": "2020年度における地球温暖化対策計画の進捗状況（案）（PDF/50,094KB）",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/ondanka/kaisai/dai49/siryou1.pdf"
+        }
+      ]
+    },
+    {
       "id": "cas-chuobou-20220617-041",
       "councilId": "cas-chuobou",
       "title": "第41回 中央防災会議",
@@ -226713,58 +225686,6 @@
         }
       ],
       "manualLock": true
-    },
-    {
-      "id": "mhlw-tokumei_iryou-20220608-010",
-      "councilId": "mhlw-tokumei_iryou",
-      "title": "第10回 匿名医療情報等の提供に関する専門委員会",
-      "date": "2022/06/08",
-      "round": 10,
-      "roundStr": "第10回",
-      "officialUrl": "https://www.mhlw.go.jp/stf/index_00020.html",
-      "manualLock": true,
-      "materials": [
-        {
-          "title": "議事次第",
-          "url": "https://www.mhlw.go.jp/content/12400000/000947951.pdf"
-        },
-        {
-          "title": "構成員名簿",
-          "url": "https://www.mhlw.go.jp/content/12400000/000947952.pdf"
-        },
-        {
-          "title": "（資料1）匿名レセプト情報等の第三者提供の現状について（報告）",
-          "url": "https://www.mhlw.go.jp/content/12400000/000947953.pdf"
-        },
-        {
-          "title": "（資料2）DPCデータ（匿名診療等関連情報）に係る第三者提供の現状について（報告）",
-          "url": "https://www.mhlw.go.jp/content/12400000/000947954.pdf"
-        },
-        {
-          "title": "（資料3）第７回NDBオープンデータの公表について",
-          "url": "https://www.mhlw.go.jp/content/12400000/000947955.pdf"
-        },
-        {
-          "title": "（資料4）不適切利用に関する注意喚起について",
-          "url": "https://www.mhlw.go.jp/content/12400000/000947956.pdf"
-        },
-        {
-          "title": "（資料5）匿名レセプト情報等の提供申出に対する審査方針等について",
-          "url": "https://www.mhlw.go.jp/content/12400000/000947980.pdf"
-        },
-        {
-          "title": "（資料6）匿名診療等関連情報の提供申出に対する審査方針等について",
-          "url": "https://www.mhlw.go.jp/content/12400000/000947981.pdf"
-        },
-        {
-          "title": "（参考資料）不適切利用に関する注意喚起について",
-          "url": "https://www.mhlw.go.jp/content/12400000/000947982.pdf"
-        },
-        {
-          "title": "議事録",
-          "url": "https://www.mhlw.go.jp/stf/index_00021.html"
-        }
-      ]
     },
     {
       "id": "digital-426-20220607-002",
@@ -235124,46 +234045,6 @@
         }
       ],
       "councilName": "共有私道の保存・管理等に関する事例研究会"
-    },
-    {
-      "id": "mhlw-tokumei_iryou-20220316-009",
-      "councilId": "mhlw-tokumei_iryou",
-      "title": "第9回 匿名医療情報等の提供に関する専門委員会",
-      "date": "2022/03/16",
-      "round": 9,
-      "roundStr": "第9回",
-      "officialUrl": "https://www.mhlw.go.jp/stf/index_00017.html",
-      "manualLock": true,
-      "materials": [
-        {
-          "title": "議事次第",
-          "url": "https://www.mhlw.go.jp/content/12400000/000913128.pdf"
-        },
-        {
-          "title": "構成員名簿",
-          "url": "https://www.mhlw.go.jp/content/12400000/000913129.pdf"
-        },
-        {
-          "title": "（資料1）高確法17条の規定に基づくNDB関連業務の社会保険診療報酬支払基金への業務委託について（報告）",
-          "url": "https://www.mhlw.go.jp/content/12400000/000913130.pdf"
-        },
-        {
-          "title": "（資料2）「匿名レセプト情報等の提供に関する申出書」の審査スケジュールについて",
-          "url": "https://www.mhlw.go.jp/content/12400000/000913131.pdf"
-        },
-        {
-          "title": "（資料3）「匿名診療等関連情報の提供に関する申出書」の審査スケジュールについて",
-          "url": "https://www.mhlw.go.jp/content/12400000/000913132.pdf"
-        },
-        {
-          "title": "（資料５）匿名レセプト情報等の提供申出に対する審査方針等について",
-          "url": "https://www.mhlw.go.jp/content/12400000/000913133.pdf"
-        },
-        {
-          "title": "議事録",
-          "url": "https://www.mhlw.go.jp/stf/index_00019.html"
-        }
-      ]
     },
     {
       "id": "aca-chosakuken_shiyouryou_bukai-20220316-r3_004",
@@ -244304,46 +243185,6 @@
       "councilName": "国税審議会 税理士分科会"
     },
     {
-      "id": "mhlw-tokumei_iryou-20211208-008",
-      "councilId": "mhlw-tokumei_iryou",
-      "title": "第8回 匿名医療情報等の提供に関する専門委員会",
-      "date": "2021/12/08",
-      "round": 8,
-      "roundStr": "第8回",
-      "officialUrl": "https://www.mhlw.go.jp/stf/index_00015.html",
-      "manualLock": true,
-      "materials": [
-        {
-          "title": "議事次第",
-          "url": "https://www.mhlw.go.jp/content/12400000/000863366.pdf"
-        },
-        {
-          "title": "構成員名簿",
-          "url": "https://www.mhlw.go.jp/content/12400000/000863367.pdf"
-        },
-        {
-          "title": "（資料1）匿名診療等関連情報（DPCデータ）の個票情報の提供、NDB・介護DBとの連結について",
-          "url": "https://www.mhlw.go.jp/content/12400000/000863369.pdf"
-        },
-        {
-          "title": "（資料2）医療・介護データ等の解析基盤（HIC）開発の進捗",
-          "url": "https://www.mhlw.go.jp/content/12400000/000863370.pdf"
-        },
-        {
-          "title": "（資料3）匿名レセプト情報等の提供申出に対する審査方針等について",
-          "url": "https://www.mhlw.go.jp/content/12400000/000863371.pdf"
-        },
-        {
-          "title": "（参考資料1）匿名診療等関連情報の提供に関するガイドライン 新旧対応表",
-          "url": "https://www.mhlw.go.jp/content/12400000/000863372.pdf"
-        },
-        {
-          "title": "議事録",
-          "url": "https://www.mhlw.go.jp/stf/index_00016.html"
-        }
-      ]
-    },
-    {
       "id": "digital-397-20211208-003",
       "councilId": "digital-397",
       "title": "第3回 デジタル社会構想会議",
@@ -248448,45 +247289,32 @@
       "manualLock": true
     },
     {
-      "id": "cas-ondanka-20211022-053",
+      "id": "cas-ondanka-20211022-048",
       "councilId": "cas-ondanka",
-      "councilName": "地球温暖化対策推進本部",
-      "ministry": "CAS",
-      "category": "HQ",
-      "title": "第53回 地球温暖化対策推進本部",
+      "title": "第48回 地球温暖化対策推進本部（持ち回り開催）",
       "date": "2021/10/22",
-      "summary": "第53回 地球温暖化対策推進本部の開催。主要議題の推進状況及び今後の対応方針について審議が行われた。",
-      "agenda": [
-        "{iPDF^2,642KBj",
-        "TviPDF^803KBj",
-        "{iPDF^464KBj"
-      ],
+      "round": 48,
+      "roundStr": "第48回",
+      "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/ondanka/kaisai/dai48/gijisidai.html",
+      "manualLock": true,
       "materials": [
         {
-          "name": "{iPDF^2,642KBj (PDF)",
-          "url": "https://www.cas.go.jp/jp/seisakukaigi/ondanka/kaisai/dai53/pdf/keikaku_honbun.pdf"
+          "title": "地球温暖化対策計画（案）",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/ondanka/kaisai/dai48/siryou1.pdf"
         },
         {
-          "name": "概要（PDF／803KB）",
-          "url": "https://www.cas.go.jp/jp/seisakukaigi/ondanka/kaisai/dai53/pdf/keikaku_gaiyou.pdf"
+          "title": "日本のＮＤＣ（国が決定する貢献）",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/ondanka/kaisai/dai48/siryou2.pdf"
         },
         {
-          "name": "本文（PDF／464KB）",
-          "url": "https://www.cas.go.jp/jp/seisakukaigi/ondanka/kaisai/dai53/pdf/seifu_keikaku_honbun.pdf"
+          "title": "パリ協定に基づく成長戦略としての長期戦略（案）",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/ondanka/kaisai/dai48/siryou3.pdf"
         },
         {
-          "name": "概要（PDF／494KB）",
-          "url": "https://www.cas.go.jp/jp/seisakukaigi/ondanka/kaisai/dai53/pdf/seifu_keikaku_gaiyou.pdf"
+          "title": "政府がその事務及び事業に関し温室効果ガスの排出の削減等のため実行すべき措置について定める計画（政府実行計画）（案）",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/ondanka/kaisai/dai48/siryou4.pdf"
         }
-      ],
-      "tags": [
-        "地球温暖化対",
-        "CAS",
-        "第53回"
-      ],
-      "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/ondanka/kaisai/dai53/pdf/keikaku_honbun.pdf",
-      "hasMinutes": false,
-      "docCount": 7
+      ]
     },
     {
       "id": "mhlw-1025-20211021-009",
@@ -250501,58 +249329,6 @@
       "manualLock": true
     },
     {
-      "id": "mhlw-tokumei_iryou-20210916-007",
-      "councilId": "mhlw-tokumei_iryou",
-      "title": "第7回 匿名医療情報等の提供に関する専門委員会",
-      "date": "2021/09/16",
-      "round": 7,
-      "roundStr": "第7回",
-      "officialUrl": "https://www.mhlw.go.jp/stf/index_00010.html",
-      "manualLock": true,
-      "materials": [
-        {
-          "title": "議事次第",
-          "url": "https://www.mhlw.go.jp/content/12400000/000833063.pdf"
-        },
-        {
-          "title": "構成員名簿",
-          "url": "https://www.mhlw.go.jp/content/12400000/000833064.pdf"
-        },
-        {
-          "title": "座席図",
-          "url": "https://www.mhlw.go.jp/content/12400000/000833065.pdf"
-        },
-        {
-          "title": "（資料１）匿名診療等関連情報（DPCデータ）の個票情報の提供について",
-          "url": "https://www.mhlw.go.jp/content/12400000/000833066.pdf"
-        },
-        {
-          "title": "（資料2）匿名診療等関連情報（DPCデータ）の第三者提供の現状について（報告）",
-          "url": "https://www.mhlw.go.jp/content/12400000/000833067.pdf"
-        },
-        {
-          "title": "（資料3）匿名レセプト情報等の第三者提供の現状について（報告）",
-          "url": "https://www.mhlw.go.jp/content/12400000/000833068.pdf"
-        },
-        {
-          "title": "（資料4）訪問看護ステーションにおけるオンライン請求の実施時期変更について（報告）",
-          "url": "https://www.mhlw.go.jp/content/12400000/000833069.pdf"
-        },
-        {
-          "title": "（資料5）匿名レセプト情報等の提供申出に対する審査方針等について",
-          "url": "https://www.mhlw.go.jp/content/12400000/000833070.pdf"
-        },
-        {
-          "title": "（資料6）匿名診療等関連情報の提供申出に対する審査方針等について",
-          "url": "https://www.mhlw.go.jp/content/12400000/000833071.pdf"
-        },
-        {
-          "title": "議事録",
-          "url": "https://www.mhlw.go.jp/stf/index_00012.html"
-        }
-      ]
-    },
-    {
       "id": "mhlw-shouni_mansei_shien-20210916-049",
       "councilId": "mhlw-shouni_mansei_shien",
       "title": "第４９回社会保障審議会児童部会小児慢性特定疾患児への支援の在り方に関する専門委員会　資料",
@@ -251473,32 +250249,72 @@
       "category": "STUDY"
     },
     {
-      "id": "cas-ondanka-20210903-043",
+      "id": "cas-ondanka-20210903-047",
       "councilId": "cas-ondanka",
-      "councilName": "地球温暖化対策推進本部",
-      "ministry": "CAS",
-      "category": "HQ",
-      "title": "第43回 地球温暖化対策推進本部",
+      "title": "第47回 地球温暖化対策推進本部",
       "date": "2021/09/03",
-      "summary": "第43回 地球温暖化対策推進本部の開催。主要議題の推進状況及び今後の対応方針について審議が行われた。",
-      "agenda": [
-        "Cϓ΍î߂̗L҉c̐ݒuɂāiߘaRNXRꕔjiPDF^103KBj",
-        "2024Nxɂng΍v̐iU000cbd41iPDF^8,912KBj"
-      ],
+      "round": 47,
+      "roundStr": "第47回",
+      "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/ondanka/kaisai/dai47/gijisidai.html",
+      "manualLock": true,
       "materials": [
         {
-          "name": "気候変動対策推進のための有識者会議の設置について（令和３年９月３日一部改正）（PDF／103KB）",
-          "url": "https://www.cas.go.jp/jp/seisakukaigi/ondanka/kaisai/dai43/siryou1_210903.pdf"
+          "title": "議事要旨",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/ondanka/kaisai/dai47/gijiyousi.pdf"
+        },
+        {
+          "title": "地球温暖化対策計画（案）の概要",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/ondanka/kaisai/dai47/siryou1-1.pdf"
+        },
+        {
+          "title": "地球温暖化対策計画（案）",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/ondanka/kaisai/dai47/siryou1-2.pdf"
+        },
+        {
+          "title": "日本のＮＤＣ（国が決定する貢献）（案）",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/ondanka/kaisai/dai47/siryou2.pdf"
+        },
+        {
+          "title": "パリ協定に基づく成長戦略としての長期戦略（案）の概要",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/ondanka/kaisai/dai47/siryou3-1.pdf"
+        },
+        {
+          "title": "パリ協定に基づく成長戦略としての長期戦略（案）",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/ondanka/kaisai/dai47/siryou3-2.pdf"
+        },
+        {
+          "title": "政府がその事務及び事業に関し温室効果ガスの排出の削減等のため実行すべき措置について定める計画（政府実行計画）（案）の概要",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/ondanka/kaisai/dai47/siryou4-1.pdf"
+        },
+        {
+          "title": "政府がその事務及び事業に関し温室効果ガスの排出の削減等のため実行すべき措置について定める計画（政府実行計画）（案）",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/ondanka/kaisai/dai47/siryou4-2.pdf"
+        },
+        {
+          "title": "「地球温暖化対策推進本部幹事会の開催について」の一部改正（案）について",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/ondanka/kaisai/dai47/siryou5.pdf"
+        },
+        {
+          "title": "「気候変動対策推進のための有識者会議の設置について」の一部改正（案）について",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/ondanka/kaisai/dai47/siryou6.pdf"
+        },
+        {
+          "title": "地球温暖化対策計画（案）における対策の削減量の根拠",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/ondanka/kaisai/dai47/sankou1.pdf"
+        },
+        {
+          "title": "地球温暖化対策推進本部幹事会の開催について（一部改正による改正後のイメージ）",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/ondanka/kaisai/dai47/sankou2.pdf"
+        },
+        {
+          "title": "気候変動対策推進のための有識者会議の設置について（一部改正による改正後のイメージ）",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/ondanka/kaisai/dai47/sankou3-1.pdf"
+        },
+        {
+          "title": "気候変動対策推進のための有識者会議構成員名簿（別紙参考）",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/ondanka/kaisai/dai47/sankou3-2.pdf"
         }
-      ],
-      "tags": [
-        "地球温暖化対",
-        "CAS",
-        "第43回"
-      ],
-      "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/ondanka/kaisai/dai43/siryou1_210903.pdf",
-      "hasMinutes": false,
-      "docCount": 4
+      ]
     },
     {
       "id": "fsa-kinyu_kinou_kyouka-20210902-026",
@@ -255748,42 +254564,6 @@
       "manualLock": true
     },
     {
-      "id": "mhlw-tokumei_iryou-20210624-006",
-      "councilId": "mhlw-tokumei_iryou",
-      "title": "第6回 匿名医療情報等の提供に関する専門委員会",
-      "date": "2021/06/24",
-      "round": 6,
-      "roundStr": "第6回",
-      "officialUrl": "https://www.mhlw.go.jp/stf/index_00008.html",
-      "manualLock": true,
-      "materials": [
-        {
-          "title": "議事次第",
-          "url": "https://www.mhlw.go.jp/content/12400000/000796501.pdf"
-        },
-        {
-          "title": "構成員名簿",
-          "url": "https://www.mhlw.go.jp/content/12400000/000796502.pdf"
-        },
-        {
-          "title": "座席図",
-          "url": "https://www.mhlw.go.jp/content/12400000/000796503.pdf"
-        },
-        {
-          "title": "（資料１）NDB収載・提供情報の拡大について",
-          "url": "https://www.mhlw.go.jp/content/12400000/000796504.pdf"
-        },
-        {
-          "title": "（資料２）履歴照会・回答システムの活用に伴うNDBの第三者提供に係る手数料の改定について（報告）",
-          "url": "https://www.mhlw.go.jp/content/12400000/000796892.pdf"
-        },
-        {
-          "title": "議事録",
-          "url": "https://www.mhlw.go.jp/stf/index_00009.html"
-        }
-      ]
-    },
-    {
       "id": "cas-gambletou_izonsho_honbu-20210623-k03",
       "councilId": "cas-gambletou_izonsho_honbu",
       "councilName": "ギャンブル等依存症対策推進本部",
@@ -257154,54 +255934,6 @@
       "hasMinutes": true,
       "docCount": 59,
       "manualLock": true
-    },
-    {
-      "id": "mhlw-tokumei_iryou-20210609-005",
-      "councilId": "mhlw-tokumei_iryou",
-      "title": "第5回 匿名医療情報等の提供に関する専門委員会",
-      "date": "2021/06/09",
-      "round": 5,
-      "roundStr": "第5回",
-      "officialUrl": "https://www.mhlw.go.jp/stf/index_00006.html",
-      "manualLock": true,
-      "materials": [
-        {
-          "title": "議事次第",
-          "url": "https://www.mhlw.go.jp/content/12400000/000789694.pdf"
-        },
-        {
-          "title": "構成員名簿",
-          "url": "https://www.mhlw.go.jp/content/12400000/000789695.pdf"
-        },
-        {
-          "title": "座席図",
-          "url": "https://www.mhlw.go.jp/content/12400000/000789696.pdf"
-        },
-        {
-          "title": "（資料１）第三者提供の現状について（報告）",
-          "url": "https://www.mhlw.go.jp/content/12400000/000789697.pdf"
-        },
-        {
-          "title": "（資料２）第6回NDBオープンデータについて",
-          "url": "https://www.mhlw.go.jp/content/12400000/000789698.pdf"
-        },
-        {
-          "title": "（資料３）第7回NDBオープンデータの作成方針について",
-          "url": "https://www.mhlw.go.jp/content/12400000/000789699.pdf"
-        },
-        {
-          "title": "（資料４）匿名レセプト情報等の提供申出に対する審査方針等について",
-          "url": "https://www.mhlw.go.jp/content/12400000/000789700.pdf"
-        },
-        {
-          "title": "（資料５）匿名診療等関連情報の提供申出に対する審査方針等について",
-          "url": "https://www.mhlw.go.jp/content/12400000/000789701.pdf"
-        },
-        {
-          "title": "議事録",
-          "url": "https://www.mhlw.go.jp/stf/index_00007.html"
-        }
-      ]
     },
     {
       "id": "fsc-eiyotenkabutu_wg-20210609-015",
@@ -258758,6 +257490,30 @@
       "docCount": 4
     },
     {
+      "id": "cas-ondanka-20210521-046",
+      "councilId": "cas-ondanka",
+      "title": "第46回 地球温暖化対策推進本部（持ち回り開催）",
+      "date": "2021/05/21",
+      "round": 46,
+      "roundStr": "第46回",
+      "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/ondanka/kaisai/dai46/gijisidai.html",
+      "manualLock": true,
+      "materials": [
+        {
+          "title": "「気候変動対策推進のための有識者会議の設置について」の一部改正について（PDF/86KB）",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/ondanka/kaisai/dai46/siryou1.pdf"
+        },
+        {
+          "title": "「気候変動対策推進のための有識者会議の設置について」の一部改正について 新旧対照表（PDF/99KB）",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/ondanka/kaisai/dai46/sankou1.pdf"
+        },
+        {
+          "title": "気候変動対策推進のための有識者会議の設置について（一部改正による改正後のイメージ）（PDF/146KB）",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/ondanka/kaisai/dai46/sankou2.pdf"
+        }
+      ]
+    },
+    {
       "id": "aca-kokugo_nihongo_sansyo_wg-20210521-r03_001",
       "councilId": "aca-kokugo_nihongo_sansyo_wg",
       "title": "令和3年 第1回 「日本語教育の参照枠」の活用に関するワーキンググループ",
@@ -260031,34 +258787,6 @@
       "manualLock": true
     },
     {
-      "id": "mhlw-tokumei_iryou-20210422-004",
-      "councilId": "mhlw-tokumei_iryou",
-      "title": "第4回 匿名医療情報等の提供に関する専門委員会",
-      "date": "2021/04/22",
-      "round": 4,
-      "roundStr": "第4回",
-      "officialUrl": "https://www.mhlw.go.jp/stf/index_00003.html",
-      "manualLock": true,
-      "materials": [
-        {
-          "title": "議事次第",
-          "url": "https://www.mhlw.go.jp/content/12400000/000771628.pdf"
-        },
-        {
-          "title": "構成員名簿",
-          "url": "https://www.mhlw.go.jp/content/12400000/000771629.pdf"
-        },
-        {
-          "title": "（資料１）匿名医療情報等の提供に関する専門委員会 情報提供関連懇談会の設置について",
-          "url": "https://www.mhlw.go.jp/content/12400000/000771631.pdf"
-        },
-        {
-          "title": "議事録",
-          "url": "https://www.mhlw.go.jp/stf/index_00005.html"
-        }
-      ]
-    },
-    {
       "id": "mhlw-820-20210422-006",
       "councilId": "mhlw-820",
       "title": "第6回 予防接種・ワクチン分科会　研究開発及び生産・流通部会　季節性インフルエンザワクチンの製造株について検討する小委員会",
@@ -260098,65 +258826,20 @@
       "manualLock": true
     },
     {
-      "id": "cas-ondanka-20210422-048",
+      "id": "cas-ondanka-20210422-045",
       "councilId": "cas-ondanka",
-      "councilName": "地球温暖化対策推進本部",
-      "ministry": "CAS",
-      "category": "HQ",
-      "title": "第48回 地球温暖化対策推進本部",
+      "title": "第45回 地球温暖化対策推進本部",
       "date": "2021/04/22",
-      "summary": "第48回 地球温暖化対策推進本部の開催。主要議題の推進状況及び今後の対応方針について審議が行われた。",
-      "agenda": [
-        "{̂mcbi肷vjiPDF^58KBj",
-        "{iPDF^7,260KBj",
-        "TviPDF^152KBj"
-      ],
+      "round": 45,
+      "roundStr": "第45回",
+      "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/ondanka/kaisai/dai45/gijisidai.html",
+      "manualLock": true,
       "materials": [
         {
-          "name": "日本のＮＤＣ（国が決定する貢献）（PDF／58KB）",
-          "url": "https://www.cas.go.jp/jp/seisakukaigi/ondanka/kaisai/dai48/pdf/ndc_kouken.pdf"
-        },
-        {
-          "name": "{iPDF^7,260KBj (PDF)",
-          "url": "https://www.cas.go.jp/jp/seisakukaigi/ondanka/kaisai/dai48/pdf/keikaku_honbun.pdf"
-        },
-        {
-          "name": "概要（PDF／152KB）",
-          "url": "https://www.cas.go.jp/jp/seisakukaigi/ondanka/kaisai/dai48/pdf/keikaku_gaiyou.pdf"
-        },
-        {
-          "name": "同計画の参考資料（PDF／18,425KB）",
-          "url": "https://www.cas.go.jp/jp/seisakukaigi/ondanka/kaisai/dai48/pdf/sankou.pdf"
-        },
-        {
-          "name": "{iPDF^5,546KBj (PDF)",
-          "url": "https://www.cas.go.jp/jp/seisakukaigi/ondanka/kaisai/dai48/pdf/senryaku_honbun.pdf"
-        },
-        {
-          "name": "概要（PDF／191KB）",
-          "url": "https://www.cas.go.jp/jp/seisakukaigi/ondanka/kaisai/dai48/pdf/senryaku_gaiyou.pdf"
-        },
-        {
-          "name": "本文（PDF／477KB）",
-          "url": "https://www.cas.go.jp/jp/seisakukaigi/ondanka/kaisai/dai48/pdf/sochi_honbun.pdf"
-        },
-        {
-          "name": "概要（PDF／225KB）",
-          "url": "https://www.cas.go.jp/jp/seisakukaigi/ondanka/kaisai/dai48/pdf/sochi_gaiyou.pdf"
-        },
-        {
-          "name": "政府実行計画実施要領（令和4年５月27日一部改正）（PDF／296KB）",
-          "url": "https://www.cas.go.jp/jp/seisakukaigi/ondanka/kaisai/dai48/pdf/mousiawase.pdf"
+          "title": "議事要旨",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/ondanka/kaisai/dai45/gijiyousi.pdf"
         }
-      ],
-      "tags": [
-        "地球温暖化対",
-        "CAS",
-        "第48回"
-      ],
-      "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/ondanka/kaisai/dai48/pdf/ndc_kouken.pdf",
-      "hasMinutes": false,
-      "docCount": 12
+      ]
     },
     {
       "id": "mof-zaiseiseido_bunkakai-20210421-s01",
@@ -261558,6 +260241,26 @@
       ]
     },
     {
+      "id": "cas-ondanka-20210329-044",
+      "councilId": "cas-ondanka",
+      "title": "第44回 地球温暖化対策推進本部（持ち回り開催）",
+      "date": "2021/03/29",
+      "round": 44,
+      "roundStr": "第44回",
+      "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/ondanka/kaisai/dai44/mochimawari.html",
+      "manualLock": true,
+      "materials": [
+        {
+          "title": "2019年度における地球温暖化対策計画の進捗状況",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/ondanka/kaisai/dai44/siryou1.pdf"
+        },
+        {
+          "title": "温室効果ガスの排出削減、吸収等に関する対策・施策の進捗状況一覧（各評価毎）／温室効果ガス別その他区分ごと、部門別の2030年度排出削減見込量・吸収見込量と進捗状況の評価",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/ondanka/kaisai/dai44/sankou1.pdf"
+        }
+      ]
+    },
+    {
       "id": "mic-denki_tsusin_bukai-20210326-112",
       "councilId": "mic-denki_tsusin_bukai",
       "title": "第112回 情報通信行政・郵政行政審議会 電気通信事業部会",
@@ -261968,6 +260671,22 @@
       "hasMinutes": true,
       "docCount": 10,
       "manualLock": true
+    },
+    {
+      "id": "cas-ondanka-20210325-043",
+      "councilId": "cas-ondanka",
+      "title": "第43回 地球温暖化対策推進本部（持ち回り開催）",
+      "date": "2021/03/25",
+      "round": 43,
+      "roundStr": "第43回",
+      "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/ondanka/kaisai/dai43/mochimawari.html",
+      "manualLock": true,
+      "materials": [
+        {
+          "title": "気候変動対策推進のための有識者会議の設置について",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/ondanka/kaisai/dai43/siryou1.pdf"
+        }
+      ]
     },
     {
       "id": "cas-kokusentoc-20210325-050",
@@ -262676,62 +261395,6 @@
         }
       ],
       "manualLock": true
-    },
-    {
-      "id": "mhlw-tokumei_iryou-20210319-003",
-      "councilId": "mhlw-tokumei_iryou",
-      "title": "第3回 匿名医療情報等の提供に関する専門委員会",
-      "date": "2021/03/19",
-      "round": 3,
-      "roundStr": "第3回",
-      "officialUrl": "https://www.mhlw.go.jp/stf/index_16064.html",
-      "manualLock": true,
-      "materials": [
-        {
-          "title": "議事次第",
-          "url": "https://www.mhlw.go.jp/content/12400000/000756512.pdf"
-        },
-        {
-          "title": "構成員名簿",
-          "url": "https://www.mhlw.go.jp/content/12400000/000719458.pdf"
-        },
-        {
-          "title": "座席図",
-          "url": "https://www.mhlw.go.jp/content/12400000/000756513.pdf"
-        },
-        {
-          "title": "（資料１）NDBの更改と医療・介護データ等の解析基盤の開発着手",
-          "url": "https://www.mhlw.go.jp/content/12400000/000756514.pdf"
-        },
-        {
-          "title": "（資料２）NDBの利活用促進に向けた取り組み",
-          "url": "https://www.mhlw.go.jp/content/12400000/000756515.pdf"
-        },
-        {
-          "title": "（資料３）「匿名レセプト情報等の提供に関する申出書」の審査スケジュールについて",
-          "url": "https://www.mhlw.go.jp/content/12400000/000756516.pdf"
-        },
-        {
-          "title": "（資料４）「匿名診療等関連情報の提供に関する申出書」の審査スケジュールについて",
-          "url": "https://www.mhlw.go.jp/content/12400000/000756628.pdf"
-        },
-        {
-          "title": "（資料５）匿名レセプト情報等の提供申出に対する審査方針等について",
-          "url": "https://www.mhlw.go.jp/content/12400000/000756517.pdf"
-        },
-        {
-          "title": "（資料６）匿名診療等関連情報の提供申出に対する審査方針等について",
-          "url": "https://www.mhlw.go.jp/content/12400000/000756518.pdf"
-        },
-        {
-          "title": "（資料７）オンサイトリサーチセンターからのデータ持ち出し時における審査について",
-          "url": "https://www.mhlw.go.jp/content/12400000/000756519.pdf"
-        },
-        {
-          "title": "議事録",
-          "url": "https://www.mhlw.go.jp/stf/index_17526.html"
-        }
-      ]
     },
     {
       "id": "maff-shokuiku_suishin_hyouka_iinkai-20210319-r02_005",
@@ -270934,58 +269597,6 @@
       "manualLock": true
     },
     {
-      "id": "mhlw-tokumei_iryou-20201203-002",
-      "councilId": "mhlw-tokumei_iryou",
-      "title": "第2回 匿名医療情報等の提供に関する専門委員会",
-      "date": "2020/12/03",
-      "round": 2,
-      "roundStr": "第2回",
-      "officialUrl": "https://www.mhlw.go.jp/stf/index_15229.html",
-      "manualLock": true,
-      "materials": [
-        {
-          "title": "議事次第",
-          "url": "https://www.mhlw.go.jp/content/12400000/000700966.pdf"
-        },
-        {
-          "title": "構成員名簿",
-          "url": "https://www.mhlw.go.jp/content/12400000/000700977.pdf"
-        },
-        {
-          "title": "座席図",
-          "url": "https://www.mhlw.go.jp/content/12400000/000700978.pdf"
-        },
-        {
-          "title": "（資料１）訪問看護のオンライン請求に関する資料",
-          "url": "https://www.mhlw.go.jp/content/12400000/000700979.pdf"
-        },
-        {
-          "title": "（資料２）ガイドライン改正に関する資料",
-          "url": "https://www.mhlw.go.jp/content/12400000/000700980.pdf"
-        },
-        {
-          "title": "（資料３）不適切利用発生時の対応に関する資料（報告）",
-          "url": "https://www.mhlw.go.jp/content/12400000/000700981.pdf"
-        },
-        {
-          "title": "（資料５）匿名レセプト情報等の提供申出に対する審査方針等について（申出11件）",
-          "url": "https://www.mhlw.go.jp/content/12400000/000700990.pdf"
-        },
-        {
-          "title": "（資料６）匿名診療等関連情報の提供申出に対する審査方針等について（申出1件）",
-          "url": "https://www.mhlw.go.jp/content/12400000/000700991.pdf"
-        },
-        {
-          "title": "（資料７）オンサイトリサーチセンターからのデータ持ち出し時における審査について",
-          "url": "https://www.mhlw.go.jp/content/12400000/000700992.pdf"
-        },
-        {
-          "title": "議事録",
-          "url": "https://www.mhlw.go.jp/stf/index_15535.html"
-        }
-      ]
-    },
-    {
       "id": "mic-denki_tsusin_bukai-20201202-108",
       "councilId": "mic-denki_tsusin_bukai",
       "title": "第108回 情報通信行政・郵政行政審議会 電気通信事業部会",
@@ -272358,6 +270969,22 @@
       "manualLock": true
     },
     {
+      "id": "cas-ondanka-20201030-042",
+      "councilId": "cas-ondanka",
+      "title": "第42回 地球温暖化対策推進本部",
+      "date": "2020/10/30",
+      "round": 42,
+      "roundStr": "第42回",
+      "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/ondanka/kaisai/dai42/gijisidai.html",
+      "manualLock": true,
+      "materials": [
+        {
+          "title": "議事要旨",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/ondanka/kaisai/dai42/gijiyousi.pdf"
+        }
+      ]
+    },
+    {
       "id": "aca-kokugo_kadai-20201030-r02_038",
       "councilId": "aca-kokugo_kadai",
       "title": "令和2年 第38回 文化審議会国語分科会 国語課題小委員会",
@@ -273459,50 +272086,6 @@
         }
       ],
       "manualLock": true
-    },
-    {
-      "id": "mhlw-tokumei_iryou-20201001-001",
-      "councilId": "mhlw-tokumei_iryou",
-      "title": "第1回 匿名医療情報等の提供に関する専門委員会（書面開催）",
-      "date": "2020/10/01",
-      "round": 1,
-      "roundStr": "第1回",
-      "officialUrl": "https://www.mhlw.go.jp/stf/shingi/index_14135.html",
-      "manualLock": true,
-      "materials": [
-        {
-          "title": "議事次第",
-          "url": "https://www.mhlw.go.jp/content/12400000/000682885.pdf"
-        },
-        {
-          "title": "（資料１）匿名医療・介護情報等の提供に関する委員会設置要綱",
-          "url": "https://www.mhlw.go.jp/content/12400000/000682911.pdf"
-        },
-        {
-          "title": "（資料２）匿名医療情報等の提供に関する専門委員会設置要綱",
-          "url": "https://www.mhlw.go.jp/content/12400000/000682912.pdf"
-        },
-        {
-          "title": "（資料３）匿名医療・要介護認定情報等の提供について",
-          "url": "https://www.mhlw.go.jp/content/12400000/000682913.pdf"
-        },
-        {
-          "title": "（資料４）匿名レセプト情報・匿名特定健診等情報の提供に関するガイドライン（案）",
-          "url": "https://www.mhlw.go.jp/content/12400000/000682914.pdf"
-        },
-        {
-          "title": "（資料５）匿名診療等関連情報の提供に関するガイドライン（案）",
-          "url": "https://www.mhlw.go.jp/content/12400000/000682915.pdf"
-        },
-        {
-          "title": "（資料６）匿名医療・介護情報等の提供に関する委員会の進め方（案）",
-          "url": "https://www.mhlw.go.jp/content/12400000/000682916.pdf"
-        },
-        {
-          "title": "（参考資料）医療介護データの連結等に関する今後のスケジュール",
-          "url": "https://www.mhlw.go.jp/content/12400000/000682917.pdf"
-        }
-      ]
     },
     {
       "id": "maff-shokuiku_suishin_hyouka_iinkai-20201001-r02_002",
@@ -281028,30 +279611,22 @@
     {
       "id": "cas-ondanka-20200330-041",
       "councilId": "cas-ondanka",
-      "councilName": "地球温暖化対策推進本部",
-      "ministry": "CAS",
-      "category": "HQ",
-      "title": "第41回 地球温暖化対策推進本部",
+      "title": "第41回 地球温暖化対策推進本部（持ち回り開催）",
       "date": "2020/03/30",
-      "summary": "第41回 地球温暖化対策推進本部の開催。主要議題の推進状況及び今後の対応方針について審議が行われた。",
-      "agenda": [
-        "{NDCi肷vjiPDF^618KBj",
-        "2024Nxɂng΍v̐iU000cbd41iPDF^8,912KBj"
-      ],
+      "round": 41,
+      "roundStr": "第41回",
+      "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/ondanka/kaisai/dai41/mochimawari.html",
+      "manualLock": true,
       "materials": [
         {
-          "name": "日本のNDC（国が決定する貢献）（PDF／618KB）",
+          "title": "日本のNDC（国が決定する貢献）",
           "url": "https://www.cas.go.jp/jp/seisakukaigi/ondanka/kaisai/dai41/siryou1.pdf"
+        },
+        {
+          "title": "2018年度における地球温暖化対策計画の進捗状況",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/ondanka/kaisai/dai41/siryou2.pdf"
         }
-      ],
-      "tags": [
-        "地球温暖化対",
-        "CAS",
-        "第41回"
-      ],
-      "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/ondanka/kaisai/dai41/siryou1.pdf",
-      "hasMinutes": false,
-      "docCount": 4
+      ]
     },
     {
       "id": "fdma-chika_tank_anzen-20200327-r02_003",
@@ -298855,39 +297430,26 @@
     {
       "id": "cas-ondanka-20190611-040",
       "councilId": "cas-ondanka",
-      "councilName": "地球温暖化対策推進本部",
-      "ministry": "CAS",
-      "category": "HQ",
       "title": "第40回 地球温暖化対策推進本部",
       "date": "2019/06/11",
-      "summary": "第40回 地球温暖化対策推進本部の開催。主要議題の推進状況及び今後の対応方針について審議が行われた。",
-      "agenda": [
-        "pɊÂ헪ƂĂ̒헪iPDF^1,319KBj",
-        "헪̊TviPDF^971KBj",
-        "헪ɑ΂pubNRǧʁiPDF^782KBj"
-      ],
+      "round": 40,
+      "roundStr": "第40回",
+      "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/ondanka/kaisai/dai40/gijisidai.html",
+      "manualLock": true,
       "materials": [
         {
-          "name": "パリ協定に基づく成長戦略としての長期戦略（PDF／1,319KB）",
-          "url": "https://www.cas.go.jp/jp/seisakukaigi/ondanka/kaisai/dai40/pdf/senryaku.pdf"
+          "title": "議事要旨",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/ondanka/kaisai/dai40/gijiyousi.pdf"
         },
         {
-          "name": "同戦略の概要（PDF／971KB）",
-          "url": "https://www.cas.go.jp/jp/seisakukaigi/ondanka/kaisai/dai40/pdf/gaiyou.pdf"
+          "title": "パリ協定に基づく成長戦略としての長期戦略（案）の概要",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/ondanka/kaisai/dai40/pdf/siryou1-1.pdf"
         },
         {
-          "name": "同戦略に対するパブリックコメントの結果（PDF／782KB）",
-          "url": "https://www.cas.go.jp/jp/seisakukaigi/ondanka/kaisai/dai40/pdf/pubcome.pdf"
+          "title": "パリ協定に基づく成長戦略としての長期戦略（案）",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/ondanka/kaisai/dai40/pdf/siryou1-2.pdf"
         }
-      ],
-      "tags": [
-        "地球温暖化対",
-        "CAS",
-        "第40回"
-      ],
-      "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/ondanka/kaisai/dai40/pdf/senryaku.pdf",
-      "hasMinutes": false,
-      "docCount": 4
+      ]
     },
     {
       "id": "cas-kokusentoc-20190611-040",
@@ -301920,6 +300482,26 @@
       "councilName": "アルコール健康障害対策関係者会議",
       "ministry": "MHLW",
       "category": "COUNCIL"
+    },
+    {
+      "id": "cas-ondanka-20190329-039",
+      "councilId": "cas-ondanka",
+      "title": "第39回 地球温暖化対策推進本部（持ち回り開催）",
+      "date": "2019/03/29",
+      "round": 39,
+      "roundStr": "第39回",
+      "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/ondanka/kaisai/dai39/mochimawari.html",
+      "manualLock": true,
+      "materials": [
+        {
+          "title": "2017年度における地球温暖化対策計画の進捗状況",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/ondanka/kaisai/dai39/siryou.pdf"
+        },
+        {
+          "title": "温室効果ガスの排出削減、吸収等に関する対策・施策の進捗状況一覧／温室効果ガス別その他区分ごと、部門別の2030年度排出削減見込量・吸収見込量と進捗状況の評価",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/ondanka/kaisai/dai39/sankou.pdf"
+        }
+      ]
     },
     {
       "id": "mic-denki_tsusin_bukai-20190328-094",
@@ -313121,6 +311703,22 @@
       "manualLock": true
     },
     {
+      "id": "cas-ondanka-20180330-038",
+      "councilId": "cas-ondanka",
+      "title": "第38回 地球温暖化対策推進本部（持ち回り開催）",
+      "date": "2018/03/30",
+      "round": 38,
+      "roundStr": "第38回",
+      "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/ondanka/kaisai/dai38/mochimawari.html",
+      "manualLock": true,
+      "materials": [
+        {
+          "title": "2016年度における地球温暖化対策計画の進捗状況",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/ondanka/kaisai/dai38/siryou.pdf"
+        }
+      ]
+    },
+    {
       "id": "mic-yusei_gyousei_bunkakai-20180329-055",
       "councilId": "mic-yusei_gyousei_bunkakai",
       "title": "第55回 情報通信行政・郵政行政審議会 郵政行政分科会",
@@ -317388,79 +315986,6 @@
       "discoveredAt": "2026/09/05 08:25"
     },
     {
-      "id": "cas-ondanka-20171127-035",
-      "councilId": "cas-ondanka",
-      "councilName": "地球温暖化対策推進本部",
-      "ministry": "CAS",
-      "category": "HQ",
-      "title": "第35回 地球温暖化対策推進本部",
-      "date": "2017/11/27",
-      "summary": "第35回 地球温暖化対策推進本部の開催。主要議題の推進状況及び今後の対応方針について審議が行われた。",
-      "agenda": [
-        "{iPDF^887KBj",
-        "ʕ\\iPDF^1,367KBj",
-        "v̎QliPDF^1,530KBj"
-      ],
-      "materials": [
-        {
-          "name": "本文（PDF／887KB）",
-          "url": "https://www.cas.go.jp/jp/seisakukaigi/ondanka/kaisai/dai35/pdf/honbun.pdf"
-        },
-        {
-          "name": "別表（PDF／1,367KB）",
-          "url": "https://www.cas.go.jp/jp/seisakukaigi/ondanka/kaisai/dai35/pdf/betuhiyou.pdf"
-        },
-        {
-          "name": "同計画の参考資料（PDF／1,530KB）",
-          "url": "https://www.cas.go.jp/jp/seisakukaigi/ondanka/kaisai/dai35/pdf/sankou.pdf"
-        },
-        {
-          "name": "同計画の概要（PDF／1,381KB）",
-          "url": "https://www.cas.go.jp/jp/seisakukaigi/ondanka/kaisai/dai35/pdf/gaiyou.pdf"
-        },
-        {
-          "name": "同計画に対するパブリックコメントの結果（PDF／180KB）",
-          "url": "https://www.cas.go.jp/jp/seisakukaigi/ondanka/kaisai/dai35/pdf/pubcome.pdf"
-        },
-        {
-          "name": "政府実行計画（PDF／443KB）",
-          "url": "https://www.cas.go.jp/jp/seisakukaigi/ondanka/kaisai/dai35/pdf/jikko_keikaku.pdf"
-        },
-        {
-          "name": "政府実行計画実施要領（PDF／270KB）",
-          "url": "https://www.cas.go.jp/jp/seisakukaigi/ondanka/kaisai/dai35/pdf/jisshi_yoryo.pdf"
-        },
-        {
-          "name": "省エネルギー診断の実施について（PDF／95KB）",
-          "url": "https://www.cas.go.jp/jp/seisakukaigi/ondanka/kaisai/dai35/pdf/shoene.pdf"
-        },
-        {
-          "name": "エネルギー消費の見える化とエネルギー管理の徹底について（PDF／268KB）",
-          "url": "https://www.cas.go.jp/jp/seisakukaigi/ondanka/kaisai/dai35/pdf/enerugi_shindan.pdf"
-        },
-        {
-          "name": "ＬＥＤ照明の導入について（PDF／82KB）",
-          "url": "https://www.cas.go.jp/jp/seisakukaigi/ondanka/kaisai/dai35/pdf/led_donyu.pdf"
-        },
-        {
-          "name": "政府実行計画の実施の支援体制について（PDF／183KB）",
-          "url": "https://www.cas.go.jp/jp/seisakukaigi/ondanka/kaisai/dai35/pdf/shien_taisei.pdf"
-        },
-        {
-          "name": "地球温暖化防止のための国民運動のための推進体制について（PDF／111KB）",
-          "url": "https://www.cas.go.jp/jp/seisakukaigi/ondanka/kaisai/dai35/pdf/suishin_taisei.pdf"
-        }
-      ],
-      "tags": [
-        "地球温暖化対",
-        "CAS",
-        "第35回"
-      ],
-      "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/ondanka/kaisai/dai35/pdf/honbun.pdf",
-      "hasMinutes": false,
-      "docCount": 13
-    },
-    {
       "id": "mic-denki_tsusin_bukai-20171124-082",
       "councilId": "mic-denki_tsusin_bukai",
       "title": "第82回 情報通信行政・郵政行政審議会 電気通信事業部会",
@@ -320115,6 +318640,22 @@
         }
       ],
       "manualLock": true
+    },
+    {
+      "id": "cas-ondanka-20170831-037",
+      "councilId": "cas-ondanka",
+      "title": "第37回 地球温暖化対策推進本部（持ち回り開催）",
+      "date": "2017/08/31",
+      "round": 37,
+      "roundStr": "第37回",
+      "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/ondanka/kaisai/dai37/mochimawari.html",
+      "manualLock": true,
+      "materials": [
+        {
+          "title": "2014年度及び2015年度の地球温暖化対策及び施策の進捗状況",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/ondanka/kaisai/dai37/siryou.pdf"
+        }
+      ]
     },
     {
       "id": "mhlw-shakai_hosho_seikatsu_konkyuu-20170830-006",
@@ -328575,6 +327116,22 @@
       "manualLock": true
     },
     {
+      "id": "cas-ondanka-20170110-036",
+      "councilId": "cas-ondanka",
+      "title": "第36回 地球温暖化対策推進本部（持ち回り開催）",
+      "date": "2017/01/10",
+      "round": 36,
+      "roundStr": "第36回",
+      "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/ondanka/kaisai/dai36/mochimawari.html",
+      "manualLock": true,
+      "materials": [
+        {
+          "title": "地球温暖化対策推進本部幹事会の開催について",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/ondanka/kaisai/dai36/siryou.pdf"
+        }
+      ]
+    },
+    {
       "title": "第14回原子炉安全専門審査会・第13回核燃料安全専門審査会　合同審査会",
       "date": "2017/01/05",
       "officialUrl": "https://www.da.nra.go.jp/detail/NRA004000025",
@@ -335763,32 +334320,36 @@
       ]
     },
     {
-      "id": "cas-ondanka-20160513-032",
+      "id": "cas-ondanka-20160513-035",
       "councilId": "cas-ondanka",
-      "councilName": "地球温暖化対策推進本部",
-      "ministry": "CAS",
-      "category": "HQ",
-      "title": "第32回 地球温暖化対策推進本部",
+      "title": "第35回 地球温暖化対策推進本部（持ち回り開催）",
       "date": "2016/05/13",
-      "summary": "第32回 地球温暖化対策推進本部の開催。主要議題の推進状況及び今後の対応方針について審議が行われた。",
-      "agenda": [
-        "pU00013942܂ng΍̎gjɂāiPDF^129KBj",
-        "2024Nxɂng΍v̐iU000cbd41iPDF^8,912KBj"
-      ],
+      "round": 35,
+      "roundStr": "第35回",
+      "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/ondanka/kaisai/dai35/mochimawari.html",
+      "manualLock": true,
       "materials": [
         {
-          "name": "パリ協定を踏まえた地球温暖化対策の取組方針について（PDF／129KB）",
-          "url": "https://www.cas.go.jp/jp/seisakukaigi/ondanka/kaisai/dai32/paris_torikumi.pdf"
+          "title": "地球温暖化対策計画（閣議決定案）の概要",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/ondanka/kaisai/dai35/siryou1_1.pdf"
+        },
+        {
+          "title": "地球温暖化対策計画（閣議決定案）",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/ondanka/kaisai/dai35/siryou1_2.pdf"
+        },
+        {
+          "title": "政府がその事務及び事業に関し温室効果ガスの排出の抑制等のため実行すべき措置について定める計画（政府実行計画）（案）の概要",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/ondanka/kaisai/dai35/siryou2_1.pdf"
+        },
+        {
+          "title": "政府がその事務及び事業に関し温室効果ガスの排出の抑制等のため実行すべき措置について定める計画（政府実行計画）（案）",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/ondanka/kaisai/dai35/siryou2_2.pdf"
+        },
+        {
+          "title": "地球温暖化対策計画（閣議決定案）における対策の削減量の根拠",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/ondanka/kaisai/dai35/sankou1.pdf"
         }
-      ],
-      "tags": [
-        "地球温暖化対",
-        "CAS",
-        "第32回"
-      ],
-      "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/ondanka/kaisai/dai32/paris_torikumi.pdf",
-      "hasMinutes": false,
-      "docCount": 4
+      ]
     },
     {
       "id": "cao-yosan_senryaku-20160513-010",
@@ -337621,6 +336182,54 @@
       "docCount": 4
     },
     {
+      "id": "cas-ondanka-20160315-034",
+      "councilId": "cas-ondanka",
+      "title": "第34回 地球温暖化対策推進本部",
+      "date": "2016/03/15",
+      "round": 34,
+      "roundStr": "第34回",
+      "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/ondanka/kaisai/dai34/gijisidai.html",
+      "manualLock": true,
+      "materials": [
+        {
+          "title": "議事要旨",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/ondanka/kaisai/dai34/gijiyousi.pdf"
+        },
+        {
+          "title": "地球温暖化対策計画（案）の概要",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/ondanka/kaisai/dai34/siryou1-1.pdf"
+        },
+        {
+          "title": "本文",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/ondanka/kaisai/dai34/siryou1-2-1.pdf"
+        },
+        {
+          "title": "別表",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/ondanka/kaisai/dai34/siryou1-2-2.pdf"
+        },
+        {
+          "title": "政府がその事務及び事業に関し温室効果ガスの排出の抑制等のため実行すべき措置について定める計画（政府実行計画）（骨子案）概要",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/ondanka/kaisai/dai34/siryou2-1.pdf"
+        },
+        {
+          "title": "政府がその事務及び事業に関し温室効果ガスの排出の抑制等のため実行すべき措置について定める計画（政府実行計画）（骨子案）",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/ondanka/kaisai/dai34/siryou2-2.pdf"
+        },
+        {
+          "title": "地球温暖化防止のための国民運動の推進体制の強化について",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/ondanka/kaisai/dai34/siryou3.pdf"
+        },
+        {
+          "title": "地球温暖化対策計画（案）における対策の削減量の根拠",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/ondanka/kaisai/dai34/sankou1.pdf"
+        },
+        {
+          "title": "地球温暖化対策推進法の一部を改正する法律案の概要",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/ondanka/kaisai/dai34/sankou2.pdf"
+        }
+      ]
+    },
+    {
       "id": "mhlw-shakai_hosho_nenkin-20160314-038",
       "councilId": "mhlw-shakai_hosho_nenkin",
       "title": "第38回 社会保障審議会 年金部会",
@@ -338419,6 +337028,22 @@
         }
       ],
       "manualLock": true
+    },
+    {
+      "id": "cas-ondanka-20160212-033",
+      "councilId": "cas-ondanka",
+      "title": "第33回 地球温暖化対策推進本部（持ち回り開催）",
+      "date": "2016/02/12",
+      "round": 33,
+      "roundStr": "第33回",
+      "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/ondanka/kaisai/dai33/mochimawari.html",
+      "manualLock": true,
+      "materials": [
+        {
+          "title": "2013年度の地球温暖化対策及び施策の進捗状況",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/ondanka/kaisai/dai33/siryou.pdf"
+        }
+      ]
     },
     {
       "id": "aca-bunkazai_bunkakai-20160212-h28_167",
@@ -339529,6 +338154,34 @@
         }
       ],
       "manualLock": true
+    },
+    {
+      "id": "cas-ondanka-20151222-032",
+      "councilId": "cas-ondanka",
+      "title": "第32回 地球温暖化対策推進本部",
+      "date": "2015/12/22",
+      "round": 32,
+      "roundStr": "第32回",
+      "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/ondanka/kaisai/dai32/gijisidai.html",
+      "manualLock": true,
+      "materials": [
+        {
+          "title": "議事要旨",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/ondanka/kaisai/dai32/gijiyousi.pdf"
+        },
+        {
+          "title": "COP21におけるパリ協定の採択",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/ondanka/kaisai/dai32/siryou1.pdf"
+        },
+        {
+          "title": "パリ協定を踏まえた地球温暖化対策の取組方針について",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/ondanka/kaisai/dai32/siryou2.pdf"
+        },
+        {
+          "title": "国連気候変動枠組条約第２１回締約国会議（COP21）京都議定書第１１回締約国会合（CMP11）等（概要と評価）",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/ondanka/kaisai/dai32/sankou1.pdf"
+        }
+      ]
     },
     {
       "id": "fsa-kinyu_chukai-20151221-001",
@@ -340922,6 +339575,34 @@
         {
           "name": "議事録",
           "url": "https://www.bunka.go.jp/seisaku/bunkashingikai/kokugo/shoiinkai/iinkai_20/pdf/gijiroku.pdf"
+        }
+      ]
+    },
+    {
+      "id": "cas-ondanka-20151126-031",
+      "councilId": "cas-ondanka",
+      "title": "第31回 地球温暖化対策推進本部",
+      "date": "2015/11/26",
+      "round": 31,
+      "roundStr": "第31回",
+      "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/ondanka/kaisai/dai31/gijisidai.html",
+      "manualLock": true,
+      "materials": [
+        {
+          "title": "議事要旨",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/ondanka/kaisai/dai31/gijiyousi.pdf"
+        },
+        {
+          "title": "「美しい星への行動 ２．０」（ACE2.0）",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/ondanka/kaisai/dai31/siryou1.pdf"
+        },
+        {
+          "title": "気候変動の影響への適応計画について",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/ondanka/kaisai/dai31/sankou1.pdf"
+        },
+        {
+          "title": "我が国の温室効果ガス排出量（2014年度速報値）",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/ondanka/kaisai/dai31/sankou2.pdf"
         }
       ]
     },
@@ -344284,6 +342965,34 @@
       "councilName": "健康・医療戦略推進本部"
     },
     {
+      "id": "cas-ondanka-20150717-030",
+      "councilId": "cas-ondanka",
+      "title": "第30回 地球温暖化対策推進本部",
+      "date": "2015/07/17",
+      "round": 30,
+      "roundStr": "第30回",
+      "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/ondanka/kaisai/dai30/gijisidai.html",
+      "manualLock": true,
+      "materials": [
+        {
+          "title": "議事要旨",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/ondanka/kaisai/dai30/gijiyousi.pdf"
+        },
+        {
+          "title": "日本の約束草案について",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/ondanka/kaisai/dai30/siryou1.pdf"
+        },
+        {
+          "title": "日本の約束草案（案）",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/ondanka/kaisai/dai30/siryou2.pdf"
+        },
+        {
+          "title": "長期エネルギー需給見通し",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/ondanka/kaisai/dai30/sankou1.pdf"
+        }
+      ]
+    },
+    {
       "id": "aca-bunkazai_bunkakai-20150717-h27_161",
       "councilId": "aca-bunkazai_bunkakai",
       "title": "平成27年 第161回 文化審議会 文化財分科会",
@@ -345567,40 +344276,36 @@
       "docCount": 12
     },
     {
-      "id": "cas-ondanka-20150602-030",
+      "id": "cas-ondanka-20150602-029",
       "councilId": "cas-ondanka",
-      "councilName": "地球温暖化対策推進本部",
-      "ministry": "CAS",
-      "category": "HQ",
-      "title": "第30回 地球温暖化対策推進本部",
+      "title": "第29回 地球温暖化対策推進本部",
       "date": "2015/06/02",
-      "summary": "第30回 地球温暖化対策推進本部の開催。主要議題の推進状況及び今後の対応方針について審議が行われた。",
-      "agenda": [
-        "{̖U00051a51āiPDF^200KBj",
-        "2024Nxɂng΍v̐iU000cbd41iPDF^8,912KBj"
-      ],
+      "round": 29,
+      "roundStr": "第29回",
+      "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/ondanka/kaisai/dai29/gijisidai.html",
+      "manualLock": true,
       "materials": [
         {
-          "name": "日本の約束草案（PDF／200KB）",
-          "url": "https://www.cas.go.jp/jp/seisakukaigi/ondanka/kaisai/dai30/yakusoku_souan.pdf"
+          "title": "議事要旨",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/ondanka/kaisai/dai29/gijiyousi.pdf"
         },
         {
-          "name": "2024年度における地球温暖化対策計画の進捗状況（PDF／8,912KB）",
-          "url": "https://www.cas.go.jp/jp/seisakukaigi/ondanka/2024/2024_shinchoku.pdf"
+          "title": "日本の約束草案（要綱・政府原案）について",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/ondanka/kaisai/dai29/siryou1-1.pdf"
         },
         {
-          "name": "2023年度における地球温暖化対策計画の進捗状況（PDF／8,873KB）",
-          "url": "https://www.cas.go.jp/jp/seisakukaigi/ondanka/2023/2023_sinchoku.pdf"
+          "title": "日本の約束草案（政府原案）",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/ondanka/kaisai/dai29/siryou1-2.pdf"
+        },
+        {
+          "title": "日本の約束草案（要綱）",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/ondanka/kaisai/dai29/siryou1-3.pdf"
+        },
+        {
+          "title": "地球温暖化防止に関する国民運動の開始について",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/ondanka/kaisai/dai29/siryou2.pdf"
         }
-      ],
-      "tags": [
-        "地球温暖化対",
-        "CAS",
-        "第30回"
-      ],
-      "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/ondanka/kaisai/dai30/yakusoku_souan.pdf",
-      "hasMinutes": false,
-      "docCount": 4
+      ]
     },
     {
       "id": "aca-chosakuken_bunkakai-20150602-042",
@@ -355586,6 +354291,22 @@
       "manualLock": true
     },
     {
+      "id": "cas-ondanka-20140701-028",
+      "councilId": "cas-ondanka",
+      "title": "第28回 地球温暖化対策推進本部（持ち回り開催）",
+      "date": "2014/07/01",
+      "round": 28,
+      "roundStr": "第28回",
+      "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/ondanka/kaisai/dai28/mochimawari.html",
+      "manualLock": true,
+      "materials": [
+        {
+          "title": "京都議定書目標達成計画の進捗状況",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/ondanka/kaisai/dai28/siryou.pdf"
+        }
+      ]
+    },
+    {
       "id": "cas-308-20140627-002",
       "councilId": "cas-308",
       "title": "第２回 官民ファンドの活用推進に関する関係閣僚会議",
@@ -361190,6 +359911,46 @@
       "manualLock": true
     },
     {
+      "id": "cas-ondanka-20131115-027",
+      "councilId": "cas-ondanka",
+      "title": "第27回 地球温暖化対策推進本部",
+      "date": "2013/11/15",
+      "round": 27,
+      "roundStr": "第27回",
+      "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/ondanka/kaisai/dai27/gijisidai.html",
+      "manualLock": true,
+      "materials": [
+        {
+          "title": "議事要旨",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/ondanka/kaisai/dai27/gijiyousi.pdf"
+        },
+        {
+          "title": "COP19 に向けた温室効果ガス削減目標について （環境省）",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/ondanka/kaisai/dai27/siryou1_1.pdf"
+        },
+        {
+          "title": "カンクン合意履行のための地球温暖化対策について （環境省）",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/ondanka/kaisai/dai27/siryou1_2.pdf"
+        },
+        {
+          "title": "「ACE：Actions for Cool Earth（美しい星への行動）」（攻めの地球温暖化外交戦略）概要（外務省、経済産業省、環境省）",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/ondanka/kaisai/dai27/siryou2_1.pdf"
+        },
+        {
+          "title": "「ACE：Actions for Cool Earth （美しい星への行動）」（攻めの地球温暖化外交戦略）（外務省、経済産業省、環境省）",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/ondanka/kaisai/dai27/siryou2_2.pdf"
+        },
+        {
+          "title": "「ACE：Actions for Cool Earth （美しい星への行動）」（攻めの地球温暖化外交戦略）施策集（外務省、経済産業省、環境省）",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/ondanka/kaisai/dai27/siryou2_3.pdf"
+        },
+        {
+          "title": "第1 回産業競争力会議の議論を踏まえた当面の政策対応について（１月25 日第３回日本経済再生本部）",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/ondanka/kaisai/dai27/sankou.pdf"
+        }
+      ]
+    },
+    {
       "id": "cao-kyoujo_shakai-20131115-s06",
       "councilId": "cao-kyoujo_shakai",
       "title": "平成25年度ワーキング・グループ 開催状況 | NPOホームページ",
@@ -365114,6 +363875,22 @@
       "councilName": "第30次地方制度調査会"
     },
     {
+      "id": "cas-ondanka-20130405-026",
+      "councilId": "cas-ondanka",
+      "title": "第26回 地球温暖化対策推進本部（持ち回り開催）",
+      "date": "2013/04/05",
+      "round": 26,
+      "roundStr": "第26回",
+      "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/ondanka/kaisai/dai26/mochimawari.html",
+      "manualLock": true,
+      "materials": [
+        {
+          "title": "京都議定書目標達成計画の進捗状況",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/ondanka/kaisai/dai26/sintyoku.pdf"
+        }
+      ]
+    },
+    {
       "id": "fsa-kinyu_hoken_teikyou_wg-20130404-013",
       "councilId": "fsa-kinyu_hoken_teikyou_wg",
       "title": "第13回 保険商品・サービスの提供等の在り方に関するワーキング・グループ",
@@ -365723,6 +364500,38 @@
         {
           "name": "議事概要［PDF］",
           "url": "https://www.fsc.go.jp/fsciis/attachedFile/download?retrievalId=kai20130315ka1&fileId=610"
+        }
+      ]
+    },
+    {
+      "id": "cas-ondanka-20130315-025",
+      "councilId": "cas-ondanka",
+      "title": "第25回 地球温暖化対策推進本部",
+      "date": "2013/03/15",
+      "round": 25,
+      "roundStr": "第25回",
+      "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/ondanka/kaisai/130315/gijisidai.html",
+      "manualLock": true,
+      "materials": [
+        {
+          "title": "当面の地球温暖化対策に関する方針（案）",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/ondanka/kaisai/130315/siryou.pdf"
+        },
+        {
+          "title": "第1回産業競争力会議の議論を踏まえた当面の 政策対応について（１月25日第３回日本経済再生本部）",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/ondanka/kaisai/130315/sankou1.pdf"
+        },
+        {
+          "title": "今後の気候変動交渉のスケジュール",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/ondanka/kaisai/130315/sankou2.pdf"
+        },
+        {
+          "title": "地球温暖化対策の推進に関する法律の一部を改 正する法律案の概要",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/ondanka/kaisai/130315/sankou3.pdf"
+        },
+        {
+          "title": "アジアにおける大気汚染問題の解決に向けた今 後の取組",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/ondanka/kaisai/130315/sankou4.pdf"
         }
       ]
     },
@@ -376641,6 +375450,22 @@
         {
           "name": "議事概要［PDF］",
           "url": "https://www.fsc.go.jp/fsciis/attachedFile/download?retrievalId=kai20111222ka1&fileId=710"
+        }
+      ]
+    },
+    {
+      "id": "cas-ondanka-20111220-024",
+      "councilId": "cas-ondanka",
+      "title": "第24回 地球温暖化対策推進本部（持ち回り開催）",
+      "date": "2011/12/20",
+      "round": 24,
+      "roundStr": "第24回",
+      "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/ondanka/kaisai/dai24mochimawari.html",
+      "manualLock": true,
+      "materials": [
+        {
+          "title": "持ち回り開催結果",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/ondanka/kaisai/dai24mochimawari.html"
         }
       ]
     },
@@ -390661,6 +389486,22 @@
       "manualLock": true
     },
     {
+      "id": "cas-ondanka-20090717-023",
+      "councilId": "cas-ondanka",
+      "title": "第23回 地球温暖化対策推進本部（持ち回り開催）",
+      "date": "2009/07/17",
+      "round": 23,
+      "roundStr": "第23回",
+      "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/ondanka/kaisai/090717/mochimawari.html",
+      "manualLock": true,
+      "materials": [
+        {
+          "title": "持ち回り開催結果",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/ondanka/kaisai/090717/mochimawari.html"
+        }
+      ]
+    },
+    {
       "id": "aca-kokugo_kanji_h17_h22-20090717-h21_034",
       "councilId": "aca-kokugo_kanji_h17_h22",
       "title": "平成21年 第34回 国語分科会 漢字小委員会（平成17年9月13日～平成22年4月23日）",
@@ -395272,6 +394113,54 @@
       ]
     },
     {
+      "id": "cas-ondanka-20081021-022",
+      "councilId": "cas-ondanka",
+      "title": "第22回 地球温暖化対策推進本部",
+      "date": "2008/10/21",
+      "round": 22,
+      "roundStr": "第22回",
+      "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/ondanka/kaisai/081021/gijisidai.html",
+      "manualLock": true,
+      "materials": [
+        {
+          "title": "排出量取引の国内統合市場の試行的実施について（案）",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/ondanka/kaisai/081021/siryou1.pdf"
+        },
+        {
+          "title": "第６回地球温暖化問題に関する懇談会 麻生総理発言のポイント",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/ondanka/kaisai/081021/siryou2.pdf"
+        },
+        {
+          "title": "排出量取引の国内統合市場の試行的実施について",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/ondanka/kaisai/081021/sankou1.pdf"
+        },
+        {
+          "title": "試行排出量取引スキームの募集要項、実施要領",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/ondanka/kaisai/081021/sankou2.pdf"
+        },
+        {
+          "title": "(1)",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/ondanka/kaisai/081021/sankou2_1.pdf"
+        },
+        {
+          "title": "(2)",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/ondanka/kaisai/081021/sankou2_2.pdf"
+        },
+        {
+          "title": "(3)",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/ondanka/kaisai/081021/sankou2_3.pdf"
+        },
+        {
+          "title": "(4)",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/ondanka/kaisai/081021/sankou2_4.pdf"
+        },
+        {
+          "title": "国内クレジット制度の運営規則等",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/ondanka/kaisai/081021/sankou3.pdf"
+        }
+      ]
+    },
+    {
       "id": "aca-kokugo_kanji_h17_h22-20081021-h20_026",
       "councilId": "aca-kokugo_kanji_h17_h22",
       "title": "平成20年 第26回 国語分科会 漢字小委員会（平成17年9月13日～平成22年4月23日）",
@@ -396200,6 +395089,42 @@
       ]
     },
     {
+      "id": "cas-ondanka-20080729-021",
+      "councilId": "cas-ondanka",
+      "title": "第21回 地球温暖化対策推進本部",
+      "date": "2008/07/29",
+      "round": 21,
+      "roundStr": "第21回",
+      "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/ondanka/kaisai/080729/gijisidai.html",
+      "manualLock": true,
+      "materials": [
+        {
+          "title": "概要",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/ondanka/kaisai/080729/siryou1_1.pdf"
+        },
+        {
+          "title": "本文",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/ondanka/kaisai/080729/siryou1_2.pdf"
+        },
+        {
+          "title": "参考資料",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/ondanka/kaisai/080729/siryou1_3.pdf"
+        },
+        {
+          "title": "京都議定書目標達成計画の進捗状況（案）",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/ondanka/kaisai/080729/siryou2.pdf"
+        },
+        {
+          "title": "地球温暖化問題への国内対策に関する関係審議会合同会議（第１８回）の概要",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/ondanka/kaisai/080729/siryou3.pdf"
+        },
+        {
+          "title": "我が国の温室効果ガス排出量",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/ondanka/kaisai/080729/sankou.pdf"
+        }
+      ]
+    },
+    {
       "id": "fsa-kinyu_dai2_kyoukin_wg-20080725-007",
       "councilId": "fsa-kinyu_dai2_kyoukin_wg",
       "title": "第7回 金融分科会 第二部会 協同組織金融機関のあり方に関するワーキング・グループ",
@@ -396924,6 +395849,42 @@
       ]
     },
     {
+      "id": "cas-ondanka-20080617-020",
+      "councilId": "cas-ondanka",
+      "title": "第20回 地球温暖化対策推進本部",
+      "date": "2008/06/17",
+      "round": 20,
+      "roundStr": "第20回",
+      "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/ondanka/kaisai/080617/gijisidai.html",
+      "manualLock": true,
+      "materials": [
+        {
+          "title": "スピーチ本文",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/ondanka/kaisai/080617/siryou1_1.pdf"
+        },
+        {
+          "title": "参考資料",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/ondanka/kaisai/080617/siryou1_2.pdf"
+        },
+        {
+          "title": "「低炭素社会・日本」をめざして（平成２０年６月１６日地球温暖化問題に関する懇談会提言）",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/ondanka/kaisai/080617/siryou2.pdf"
+        },
+        {
+          "title": "総理スピーチ及び懇談会提言に盛り込まれた主な政策課題（例）",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/ondanka/kaisai/080617/siryou3.pdf"
+        },
+        {
+          "title": "低炭素社会づくりのための体制整備について（案）",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/ondanka/kaisai/080617/siryou4.pdf"
+        },
+        {
+          "title": "クールアース・デーの設定について",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/ondanka/kaisai/080617/siryou5.pdf"
+        }
+      ]
+    },
+    {
       "id": "aca-kokugo_kanji_h17_h22-20080616-h20_023",
       "councilId": "aca-kokugo_kanji_h17_h22",
       "title": "平成20年 第23回 国語分科会 漢字小委員会（平成17年9月13日～平成22年4月23日）",
@@ -397621,6 +396582,46 @@
       ]
     },
     {
+      "id": "cas-ondanka-20080328-019",
+      "councilId": "cas-ondanka",
+      "title": "第19回 地球温暖化対策推進本部",
+      "date": "2008/03/28",
+      "round": 19,
+      "roundStr": "第19回",
+      "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/ondanka/kaisai/080328/gijisidai.html",
+      "manualLock": true,
+      "materials": [
+        {
+          "title": "京都議定書目標達成計画（閣議決定案）概要",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/ondanka/kaisai/080328/siryou1.pdf"
+        },
+        {
+          "title": "本文",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/ondanka/kaisai/080328/siryou2_1.pdf"
+        },
+        {
+          "title": "別表",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/ondanka/kaisai/080328/siryou2_2.pdf"
+        },
+        {
+          "title": "「京都議定書目標達成計画」（改定案）に関する意見募集に際しての補足説明資料",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/ondanka/kaisai/080328/sankou1.pdf"
+        },
+        {
+          "title": "「京都議定書目標達成計画」（改定案）に対する意見募集の結果について",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/ondanka/kaisai/080328/sankou2.pdf"
+        },
+        {
+          "title": "温室効果ガス排出量見通しに用いたマクロフレーム等",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/ondanka/kaisai/080328/sankou3_1.pdf"
+        },
+        {
+          "title": "別表１～６の具体的対策の排出削減見込量の根拠",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/ondanka/kaisai/080328/sankou3_2.pdf"
+        }
+      ]
+    },
+    {
       "id": "cas-361-20080328-001",
       "councilId": "cas-361",
       "title": "第1回 公共工事の品質確保の促進に関する関係省庁連絡会議",
@@ -398000,6 +397001,42 @@
         }
       ],
       "manualLock": true
+    },
+    {
+      "id": "cas-ondanka-20080229-018",
+      "councilId": "cas-ondanka",
+      "title": "第18回 地球温暖化対策推進本部",
+      "date": "2008/02/29",
+      "round": 18,
+      "roundStr": "第18回",
+      "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/ondanka/kaisai/080229/gijisidai.html",
+      "manualLock": true,
+      "materials": [
+        {
+          "title": "京都議定書目標達成計画（改定案）概要",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/ondanka/kaisai/080229/siryou1.pdf"
+        },
+        {
+          "title": "本文1",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/ondanka/kaisai/080229/siryou2_1.pdf"
+        },
+        {
+          "title": "本文2",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/ondanka/kaisai/080229/siryou2_2.pdf"
+        },
+        {
+          "title": "京都議定書目標達成計画の改定スケジュール",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/ondanka/kaisai/080229/siryou3.pdf"
+        },
+        {
+          "title": "地球温暖化問題への国内対策に関する関係審議会合同会議(第１７回)の概要",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/ondanka/kaisai/080229/siryou4.pdf"
+        },
+        {
+          "title": "京都議定書目標達成計画関連予算資料（平成２０年度予算案）",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/ondanka/kaisai/080229/sankou1.pdf"
+        }
+      ]
     },
     {
       "id": "aca-chosakuken_bunkakai-20080227-025",
@@ -400843,6 +399880,26 @@
       ]
     },
     {
+      "id": "cas-ondanka-20071002-017",
+      "councilId": "cas-ondanka",
+      "title": "第17回 地球温暖化対策推進本部",
+      "date": "2007/10/02",
+      "round": 17,
+      "roundStr": "第17回",
+      "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/ondanka/kaisai/071002/gijisidai.html",
+      "manualLock": true,
+      "materials": [
+        {
+          "title": "京都議定書目標達成計画の見直しに向けた基本方針（案）の概要",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/ondanka/kaisai/071002/siryou1.pdf"
+        },
+        {
+          "title": "京都議定書目標達成計画の見直しに向けた基本方針（案）",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/ondanka/kaisai/071002/siryou2.pdf"
+        }
+      ]
+    },
+    {
       "id": "mic-toukei_singikai-20071001-001",
       "councilId": "mic-toukei_singikai",
       "title": "第1回 統計審議会",
@@ -402251,6 +401308,58 @@
       ]
     },
     {
+      "id": "cas-ondanka-20070529-016",
+      "councilId": "cas-ondanka",
+      "title": "第16回 地球温暖化対策推進本部",
+      "date": "2007/05/29",
+      "round": 16,
+      "roundStr": "第16回",
+      "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/ondanka/kaisai/070529/gijisidai.html",
+      "manualLock": true,
+      "materials": [
+        {
+          "title": "本文/",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/ondanka/2007/0524inv/siryou3.pdf"
+        },
+        {
+          "title": "付属資料１（革新的技術開発）/",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/ondanka/2007/0524inv/siryou4.pdf"
+        },
+        {
+          "title": "付属資料２（低炭素社会）/",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/ondanka/2007/0524inv/siryou5.pdf"
+        },
+        {
+          "title": "付属資料３（国民運動）/",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/ondanka/2007/0524inv/siryou6.pdf"
+        },
+        {
+          "title": "付属資料４（主要外交日程）/",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/ondanka/2007/0524inv/siryou7.pdf"
+        },
+        {
+          "title": "概要（図）/",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/ondanka/2007/0524inv/siryou1.pdf"
+        },
+        {
+          "title": "2005年度（平成17年度）の温室効果ガス排出量について",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/ondanka/kaisai/070529/siryou2.pdf"
+        },
+        {
+          "title": "京都議定書目標達成計画の進捗状況(案)",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/ondanka/kaisai/070529/siryou3.pdf"
+        },
+        {
+          "title": "地球温暖化問題への国内対策に関する関係審議会合同会議（第１６回）の概要",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/ondanka/kaisai/070529/siryou4.pdf"
+        },
+        {
+          "title": "２１世紀環境立国戦略の策定に向けた提言（中央環境審議会意見具申）",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/ondanka/kaisai/070529/siryou5.pdf"
+        }
+      ]
+    },
+    {
       "id": "mic-joho_tsushin-20070524-025",
       "councilId": "mic-joho_tsushin",
       "title": "第25回 情報通信審議会 情報通信政策部会",
@@ -402643,6 +401752,22 @@
         {
           "title": "議事録",
           "url": "https://www.fsa.go.jp/singi/singi_kigyou/gijiroku/kansa/20070320.pdf"
+        }
+      ]
+    },
+    {
+      "id": "cas-ondanka-20070320-015",
+      "councilId": "cas-ondanka",
+      "title": "第15回 地球温暖化対策推進本部",
+      "date": "2007/03/20",
+      "round": 15,
+      "roundStr": "第15回",
+      "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/ondanka/kaisai/070320/gijisidai.html",
+      "manualLock": true,
+      "materials": [
+        {
+          "title": "Ｇ８環境大臣会合の概要等",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/ondanka/kaisai/070320/siryou.pdf"
         }
       ]
     },
@@ -406210,6 +405335,22 @@
         {
           "title": "議事録",
           "url": "https://www.fsa.go.jp/singi/singi_kigyou/gijiroku/kansa/20060707.pdf"
+        }
+      ]
+    },
+    {
+      "id": "cas-ondanka-20060707-014",
+      "councilId": "cas-ondanka",
+      "title": "第14回 地球温暖化対策推進本部",
+      "date": "2006/07/07",
+      "round": 14,
+      "roundStr": "第14回",
+      "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/ondanka/kaisai/060707/gijisidai.html",
+      "manualLock": true,
+      "materials": [
+        {
+          "title": "議事次第",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/ondanka/kaisai/060707/gijisidai.html"
         }
       ]
     },
@@ -414336,6 +413477,22 @@
       "materials": []
     },
     {
+      "id": "cas-ondanka-20050426-013",
+      "councilId": "cas-ondanka",
+      "title": "第13回 地球温暖化対策推進本部（持ち回り開催）",
+      "date": "2005/04/26",
+      "round": 13,
+      "roundStr": "第13回",
+      "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/ondanka/kaisai/050426/mochimawari.html",
+      "manualLock": true,
+      "materials": [
+        {
+          "title": "持ち回り開催結果",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/ondanka/kaisai/050426/mochimawari.html"
+        }
+      ]
+    },
+    {
       "id": "fsa-keizai_kyouiku_kondan-20050425-003",
       "councilId": "fsa-keizai_kyouiku_kondan",
       "title": "第3回 金融経済教育懇談会",
@@ -415027,6 +414184,26 @@
       "officialUrl": "https://www.mhlw.go.jp/shingi/2005/03/s0329-11.html",
       "materials": [],
       "manualLock": true
+    },
+    {
+      "id": "cas-ondanka-20050329-012",
+      "councilId": "cas-ondanka",
+      "title": "第12回 地球温暖化対策推進本部",
+      "date": "2005/03/29",
+      "round": 12,
+      "roundStr": "第12回",
+      "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/ondanka/kaisai/050329/gijisidai.html",
+      "manualLock": true,
+      "materials": [
+        {
+          "title": "京都議定書目標達成計画（案）",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/ondanka/kaisai/050329/siryou1.pdf"
+        },
+        {
+          "title": "地球温暖化防止の国民運動に関する統一ロゴマークについて",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/ondanka/kaisai/050329/siryou2.pdf"
+        }
+      ]
     },
     {
       "id": "fsa-keizai_kyouiku_kondan-20050328-002",
@@ -418349,6 +417526,34 @@
       ]
     },
     {
+      "id": "cas-ondanka-20040518-011",
+      "councilId": "cas-ondanka",
+      "title": "第11回 地球温暖化対策推進本部",
+      "date": "2004/05/18",
+      "round": 11,
+      "roundStr": "第11回",
+      "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/ondanka/kaisai/040518/gijisidai.html",
+      "manualLock": true,
+      "materials": [
+        {
+          "title": "2002年度（平成14年度）の温室効果ガスの排出量について",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/ondanka/kaisai/040518/siryou1.pdf"
+        },
+        {
+          "title": "平成16年度地球環境保全調査研究等総合推進計画（案）",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/ondanka/kaisai/040518/siryou3.pdf"
+        },
+        {
+          "title": "平成14年度地球環境保全調査研究等総合推進計画の実施状況",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/ondanka/kaisai/040518/siryou4.pdf"
+        },
+        {
+          "title": "京都メカニズムの個別プロジェクトの承認結果等について",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/ondanka/kaisai/040518/siryou5.pdf"
+        }
+      ]
+    },
+    {
       "id": "mhlw-902-20040514-001",
       "councilId": "mhlw-902",
       "title": "第1回 医薬品販売制度改正検討部会",
@@ -420229,6 +419434,26 @@
         {
           "name": "第15回 議事要旨",
           "url": "https://warp.ndl.go.jp/info:ndljp/pid/12231838/www.mext.go.jp/b_menu/shingi/bunka/gijiroku/011/03112101.htm"
+        }
+      ]
+    },
+    {
+      "id": "cas-ondanka-20030829-010",
+      "councilId": "cas-ondanka",
+      "title": "第10回 地球温暖化対策推進本部",
+      "date": "2003/08/29",
+      "round": 10,
+      "roundStr": "第10回",
+      "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/ondanka/kaisai/030829/gijisidai.html",
+      "manualLock": true,
+      "materials": [
+        {
+          "title": "2001年度（平成13年度）の温室効果ガスの排出量について",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/ondanka/kaisai/030829/siryou1.pdf"
+        },
+        {
+          "title": "京都メカニズムの個別プロジェクトの承認結果等について",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/ondanka/kaisai/030829/siryou5.pdf"
         }
       ]
     },
@@ -429212,23 +428437,13 @@
       }
     },
     "cas-ondanka": {
-      "created_at": "2026-08-07 08:56:37",
-      "generator": "AI_Rule_Synthesis_Agent_v3",
-      "ministryQuirk": "内閣官房型: daiXX/gijisidai.html 形式の2段階ネスト構造",
-      "rule_id": "rule-cas-ondanka_64",
-      "rules": {
-        "date_regex": "20[2-9][0-9]年[0-1]?[0-9]月[0-3]?[0-9]日",
-        "detect_private_materials": false,
-        "encoding": "utf-8",
-        "extract_all_materials": true,
-        "extract_subpage_materials_primary": true,
-        "pdf_selector": "href=[\"\\']([^\"\\']+\\.pdf)[\"\\']",
-        "prefer_subpage_date": true,
-        "private_doc_keyword": "非公開",
-        "resolve_absolute_urls": true,
-        "subpage_discovery_pattern": "href=[\"\\']([^\"\\']*(?:dai\\d+|gijisidai|gijiroku)[^\"\\'#]*)[\"\\']",
-        "top_page_pdf_count": 34
-      }
+      "template": "tpl-ministry-hybrid-kaisai",
+      "deep_crawl_enabled": true,
+      "date_regex": "(?:令和|平成)\\s*\\d+年\\s*\\d+月\\s*\\d+日",
+      "subpage_discovery_pattern": "href=[\"\\'](https://www\\.cas\\.go\\.jp/jp/seisakukaigi/ondanka/kaisai/(?:dai\\d+|\\d{6})/(?:gijisidai|mochimawari)\\.html)[\"\\']",
+      "pdf_selector": "a[href*='.pdf'], a[href$='.pdf']",
+      "encoding": "cp932",
+      "manualLock": true
     },
     "cas-indexhtmlsuisin_kaigi_record": {
       "created_at": "2026-08-07 08:56:37",
@@ -437510,11 +436725,11 @@
       "subpage_discovery_pattern": "href=[\"\\']([^\"\\']*(?:proceedings|material|outline)/20\\d{6}[^\"\\']*)[\"\\']"
     },
     "cas-kokka_jouhou": {
+      "councilId": "cas-kokka_jouhou",
+      "officialUrl": "https://www.cas.go.jp/jp/gaiyou/jimu/nic_kaisai.html",
       "deep_crawl_enabled": true,
-      "date_regex": "(?:令和|平成)\\d+年\\d+月\\d+日|20\\d{2}年\\d+月\\d+日",
-      "pdf_selector": "href=[\"\\']([^\"\\']+\\.pdf)[\"\\']",
-      "manualLock": true,
-      "subpage_discovery_pattern": "href=[\"\\']([^\"\\']*(?:dai\\d+|\\d+kai|kaisai|gijisidai|gijiroku)[^\"\\']*)[\"\\']"
+      "date_regex": "(?:令和|平成)\\d+年\\d+月\\d+日",
+      "manualLock": true
     },
     "cas-datacenter_ricchi": {
       "deep_crawl_enabled": true,
@@ -437588,12 +436803,11 @@
       "subpage_discovery_pattern": "href=[\"\\'](https://www\\.mhlw\\.go\\.jp/stf/(?:newpage_\\d+|shingi2/\\d+_\\d+)\\.html)[\"\\']"
     },
     "mhlw-tokumei_iryou": {
-      "template": "tpl-ministry-hybrid-kaisai",
       "deep_crawl_enabled": true,
-      "date_regex": "(?:令和|平成|20)\\d+年\\d+月\\d+日",
-      "subpage_discovery_pattern": "href=[\"\\'](https://www\\.mhlw\\.go\\.jp/stf/(?:index_\\d+|shingi/index_\\d+|newpage_\\d+)\\.html)[\"\\']",
-      "pdf_selector": "main a[href*='.pdf'], #main a[href*='.pdf'], a[href$='.pdf'], .l-contentMain a[href*='.pdf']",
-      "manualLock": true
+      "date_regex": "(?:令和|平成)\\d+年\\d+月\\d+日|20\\d{2}年\\d+月\\d+日",
+      "pdf_selector": "href=[\"\\']([^\"\\']+\\.pdf)[\"\\']",
+      "manualLock": true,
+      "subpage_discovery_pattern": "href=[\"\\'](https://www\\.mhlw\\.go\\.jp/stf/(?:newpage_\\d+|shingi2/\\d+_\\d+)\\.html)[\"\\']"
     },
     "mhlw-kodomo_katei_fukushi": {
       "deep_crawl_enabled": true,
