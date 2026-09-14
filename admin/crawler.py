@@ -802,12 +802,13 @@ def is_generic_index_url(url, title=""):
         r'yusei_kaisai\.html',
         r'/kaisai/yusei/',
         r'menu_news/s-news',
-        r'b_menu/houdou'
+        r'b_menu/houdou',
+        r'da\.nra\.go\.jp/search\?.*f\.gi=.*f\.gi='
     ]
     for p in patterns:
         if re.search(p, u_lower):
             return True
-    if title and any(k in title for k in ["その他情報", "覚書等", "覚書", "有識者会議｜警察庁", "過去の国際会議", "研究会等一覧へのリンク", "会議資料詳細", "資料詳細", "会議詳細", "食の安全、を科学する"]):
+    if title and any(k in title for k in ["その他情報", "覚書等", "覚書", "有識者会議｜警察庁", "過去の国際会議", "研究会等一覧へのリンク", "会議資料詳細", "資料詳細", "会議詳細", "食の安全、を科学する", "審議会等"]):
         return True
     return False
 
