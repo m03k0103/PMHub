@@ -53,6 +53,29 @@ LOGS_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), "logs"))
 # 無効な日付プレフィックス（旧クローラー残骸などスコアリング対象外の日付パターン）
 INVALID_DATE_PREFIXES = ("1312",)
 
+# ジェネリックタイトル・ポータル見出しキーワード（会議名として不適切な汎用文字列）
+GENERIC_TITLE_KEYWORDS = ['会議資料詳細', '資料詳細', '会議詳細', 'トップページ', '目次', 'ホーム', '配付資料一覧']
+
+# 省庁コードと公式ドメインのマッピング（他省庁URLの誤混入ガード用）
+MINISTRY_DOMAINS = {
+    "MHLW": ["mhlw.go.jp"],
+    "METI": ["meti.go.jp"],
+    "MAFF": ["maff.go.jp"],
+    "MOJ": ["moj.go.jp"],
+    "CAO": ["cao.go.jp", "scj.go.jp"],
+    "CAS": ["cas.go.jp"],
+    "NPA": ["npa.go.jp"],
+    "FSA": ["fsa.go.jp"],
+    "MIC": ["soumu.go.jp"],
+    "MOF": ["mof.go.jp"],
+    "MEXT": ["mext.go.jp"],
+    "MLIT": ["mlit.go.jp"],
+    "ENV": ["env.go.jp"],
+    "MOD": ["mod.go.jp"],
+    "DIGITAL": ["digital.go.jp"],
+    "CFA": ["cfa.go.jp"]
+}
+
 # 429 Quota Exceeded 回避用のサーキットブレーカーフラグ
 LLM_QUOTA_BLOCKED = False
 
@@ -353,7 +376,6 @@ def _crawl_subpages(target_url, html, rule, quirk_note, pdf_pattern):
                         if sel_el:
                             sub_title = sel_el.get_text(" ", strip=True)
 
-                    GENERIC_TITLE_KEYWORDS = ['会議資料詳細', '資料詳細', '会議詳細', 'トップページ', '目次', 'ホーム', '配付資料一覧']
                     # title_selector で取れなかった場合、またはジェネリックタイトルの場合
                     if not sub_title or any(kw in sub_title for kw in GENERIC_TITLE_KEYWORDS):
                         # h2, h1, h3 を順に探して具体的な会議名を取得
@@ -850,6 +872,91 @@ def is_preliminary_notice_page(url, title=""):
     return False
 
 
+def _resolve_meeting_date(sub_dates, sub_title, sub_url):
+    """
+    サブページの抽出日付、タイトル、URLから開催日を特定し、
+    YYYY/MM/DD 形式の日付文字列と is_date_unconfirmed (未特定ダミー 2099/01/01 フラグ) を返す。
+    """
+    meet_date = ""
+    is_date_unconfirmed = False
+    if sub_dates:
+        dt = parse_japanese_date(sub_dates[0])
+        if dt:
+            meet_date = dt.strftime("%Y/%m/%d")
+        else:
+            m_iso = re.search(r'(\d{4})[/-](\d{1,2})[/-](\d{1,2})', str(sub_dates[0]))
+            if m_iso:
+                meet_date = f"{int(m_iso.group(1)):04d}/{int(m_iso.group(2)):02d}/{int(m_iso.group(3)):02d}"
+
+    if not meet_date and sub_title:
+        dt = parse_japanese_date(sub_title)
+        if dt:
+            meet_date = dt.strftime("%Y/%m/%d")
+
+    if not meet_date and sub_url:
+        # URL内の日付パターン (例: 20240820, 2024-08-20, 2024_08_20)
+        m_url = re.search(r'(?:^|[/_-])(20\d{2})[-_]?([01]\d)[-_]?([0-3]\d)(?:$|[._/-])', sub_url)
+        if m_url:
+            meet_date = f"{m_url.group(1)}/{m_url.group(2)}/{m_url.group(3)}"
+
+    # 開催日が特定できない場合は当日日付ではなくダミー日付(2099/01/01)を設定（管理画面で要確認対象とする）
+    if not meet_date:
+        meet_date = "2099/01/01"
+        is_date_unconfirmed = True
+
+    return meet_date, is_date_unconfirmed
+
+
+def _build_new_meeting(target, sub, clean_materials_list, sess_nums, meet_date, is_date_unconfirmed, existing_c_meets, added_count, existing_meeting_ids, council_parent_url):
+    """
+    新規開催回（meeting）オブジェクトを生成して返す。
+    4セグメントID生成、重複ID回避、タイトル正規化、公式URL解決を実施。
+    """
+    council_id = target["id"]
+    council_name = target["name"]
+    ministry = target.get("ministry", "")
+    sub_title = sub.get("title", "").strip()
+
+    # 会議IDの生成（4セグメント統一形式: {council_id}-{YYYYMMDD}-{回次000またはs00}）
+    clean_d = meet_date.replace("/", "").replace("-", "")
+    sess_suffix = f"{sorted(sess_nums)[0]:03d}" if sess_nums else f"s{len(existing_c_meets) + added_count + 1:02d}"
+    new_meet_id = f"{council_id}-{clean_d}-{sess_suffix}"
+
+    # 重複ID回避
+    if new_meet_id in existing_meeting_ids:
+        new_meet_id = f"{council_id}-{clean_d}-{sess_suffix}_{added_count+1}"
+
+    # タイトルの正規化
+    formatted_title = sub_title
+    if council_name not in formatted_title and sess_nums:
+        formatted_title = f"第{sorted(sess_nums)[0]}回 {council_name}"
+    elif not formatted_title or formatted_title.startswith("http"):
+        date_label = "開催日不明" if is_date_unconfirmed else meet_date
+        formatted_title = f"{council_name} ({date_label})"
+
+    if is_date_unconfirmed and "開催日不明" not in formatted_title:
+        formatted_title = f"{formatted_title} (開催日不明)"
+
+    # 汎用報道URLや資料未掲載の場合は親の会議体URLを設定
+    resolved_meet_url = sub.get("subpageUrl")
+    if not resolved_meet_url or is_generic_index_url(resolved_meet_url, sub_title):
+        resolved_meet_url = council_parent_url
+
+    return {
+        "id": new_meet_id,
+        "councilId": council_id,
+        "title": formatted_title,
+        "date": meet_date,
+        "officialUrl": resolved_meet_url,
+        "category": target.get("category", "COUNCIL"),
+        "ministry": ministry,
+        "materials": clean_materials_list,
+        "isNewlyDiscovered": True,
+        "isDateUnconfirmed": is_date_unconfirmed,
+        "discoveredAt": datetime.now().strftime("%Y/%m/%d %H:%M")
+    }
+
+
 def sync_new_meetings_from_crawl(data, target, scraped_item):
     """
     クロール時に検出されたサブページ（個別開催回）から、
@@ -873,6 +980,7 @@ def sync_new_meetings_from_crawl(data, target, scraped_item):
     existing_c_meets = [m for m in meetings if m.get("councilId") == council_id]
     existing_urls = {m.get("officialUrl", "").rstrip("/"): m for m in existing_c_meets if m.get("officialUrl")}
     existing_titles = {m.get("title", ""): m for m in existing_c_meets if m.get("title")}
+    existing_meeting_ids = {m.get("id") for m in meetings if m.get("id")}
     existing_sessions = set()
     for m in existing_c_meets:
         sess = extract_session_numbers(m.get("title", "") + " " + m.get("officialUrl", "") + " " + m.get("id", ""))
@@ -894,7 +1002,6 @@ def sync_new_meetings_from_crawl(data, target, scraped_item):
             continue
 
         # ジェネリックタイトルおよびポータルサイト名の登録遮断ガード
-        GENERIC_TITLE_KEYWORDS = ['会議資料詳細', '資料詳細', '会議詳細', 'トップページ', '目次', 'ホーム', '配付資料一覧']
         if any(kw == sub_title for kw in GENERIC_TITLE_KEYWORDS) or '食の安全、を科学する' in sub_title:
             continue
 
@@ -909,25 +1016,6 @@ def sync_new_meetings_from_crawl(data, target, scraped_item):
             parsed_sub = urllib.parse.urlparse(sub_url)
             sub_host = parsed_sub.netloc.lower()
             if "example.com" not in sub_host and "localhost" not in sub_host:
-                MINISTRY_DOMAINS = {
-                    "MHLW": ["mhlw.go.jp"],
-                    "METI": ["meti.go.jp"],
-                    "MAFF": ["maff.go.jp"],
-                    "MOJ": ["moj.go.jp"],
-                    "CAO": ["cao.go.jp", "scj.go.jp"],
-                    "CAS": ["cas.go.jp"],
-                    "NPA": ["npa.go.jp"],
-                    "FSA": ["fsa.go.jp"],
-                    "MIC": ["soumu.go.jp"],
-                    "MOF": ["mof.go.jp"],
-                    "MEXT": ["mext.go.jp"],
-                    "MLIT": ["mlit.go.jp"],
-                    "ENV": ["env.go.jp"],
-                    "MOD": ["mod.go.jp"],
-                    "DIGITAL": ["digital.go.jp"],
-                    "CFA": ["cfa.go.jp"]
-                }
-                # 他省庁の公式ドメインが含まれている場合は明らかなクロス省庁混入としてスキップ
                 other_ministry_domains = [d for m, dlist in MINISTRY_DOMAINS.items() if m != ministry_code for d in dlist]
                 if any(other_d in sub_host for other_d in other_ministry_domains):
                     continue
@@ -952,7 +1040,6 @@ def sync_new_meetings_from_crawl(data, target, scraped_item):
 
         # --- A. 既存会議の自動昇格・更新（資料未掲載・親URLだった会議が開催日後に個別資料ページを検出した場合） ---
         if sess_nums and any(s in existing_sessions for s in sess_nums):
-            # 該当する既存会議を探索
             matched_existing = []
             for m in existing_c_meets:
                 m_sess = extract_session_numbers(m.get("title", "") + " " + m.get("officialUrl", "") + " " + m.get("id", ""))
@@ -963,7 +1050,6 @@ def sync_new_meetings_from_crawl(data, target, scraped_item):
                 curr_url = ex_m.get("officialUrl", "").rstrip("/")
                 curr_mats = ex_m.get("materials", [])
                 
-                # 親URLまたは汎用報道URL、あるいは資料0件の場合で、今回具体的な個別資料ページ・資料が発見された場合
                 is_parent_or_generic = (curr_url == council_parent_url.rstrip("/") or is_generic_index_url(curr_url))
                 has_no_mats = len(curr_mats) == 0
                 has_new_valid_subpage = sub_url and not is_generic_index_url(sub_url, sub_title)
@@ -983,81 +1069,29 @@ def sync_new_meetings_from_crawl(data, target, scraped_item):
             continue
 
         # --- B. 新規開催回の追加 ---
-        # 日付の算出および YYYY/MM/DD への正規化
-        meet_date = ""
-        is_date_unconfirmed = False
-        if sub_dates:
-            dt = parse_japanese_date(sub_dates[0])
-            if dt:
-                meet_date = dt.strftime("%Y/%m/%d")
-            else:
-                m_iso = re.search(r'(\d{4})[/-](\d{1,2})[/-](\d{1,2})', str(sub_dates[0]))
-                if m_iso:
-                    meet_date = f"{int(m_iso.group(1)):04d}/{int(m_iso.group(2)):02d}/{int(m_iso.group(3)):02d}"
-        
-        if not meet_date and sub_title:
-            dt = parse_japanese_date(sub_title)
-            if dt:
-                meet_date = dt.strftime("%Y/%m/%d")
-
-        if not meet_date and sub_url:
-            # URL内の日付パターン (例: 20240820, 2024-08-20, 2024_08_20)
-            m_url = re.search(r'(?:^|[/_-])(20\d{2})[-_]?([01]\d)[-_]?([0-3]\d)(?:$|[._/-])', sub_url)
-            if m_url:
-                meet_date = f"{m_url.group(1)}/{m_url.group(2)}/{m_url.group(3)}"
-
-        # 開催日が特定できない場合は当日日付ではなくダミー日付(2099/01/01)を設定（管理画面で要確認対象とする）
-        if not meet_date:
-            meet_date = "2099/01/01"
-            is_date_unconfirmed = True
-
-        # 会議IDの生成（4セグメント統一形式: {council_id}-{YYYYMMDD}-{回次000またはs00}）
-        clean_d = meet_date.replace("/", "").replace("-", "")
-        sess_suffix = f"{sorted(sess_nums)[0]:03d}" if sess_nums else f"s{len(existing_c_meets) + added_count + 1:02d}"
-        new_meet_id = f"{council_id}-{clean_d}-{sess_suffix}"
-
-        # 重複ID回避
-        if any(m.get("id") == new_meet_id for m in meetings):
-            new_meet_id = f"{council_id}-{clean_d}-{sess_suffix}_{added_count+1}"
-
-        # タイトルの正規化
-        formatted_title = sub_title
-        if council_name not in formatted_title and sess_nums:
-            formatted_title = f"第{sorted(sess_nums)[0]}回 {council_name}"
-        elif not formatted_title or formatted_title.startswith("http"):
-            date_label = "開催日不明" if is_date_unconfirmed else meet_date
-            formatted_title = f"{council_name} ({date_label})"
-
-        if is_date_unconfirmed and "開催日不明" not in formatted_title:
-            formatted_title = f"{formatted_title} (開催日不明)"
-
-        # 汎用報道URLや資料未掲載の場合は親の会議体URLを設定
-        resolved_meet_url = sub.get("subpageUrl")
-        if not resolved_meet_url or is_generic_index_url(resolved_meet_url, sub_title):
-            resolved_meet_url = council_parent_url
-
-        new_meeting = {
-            "id": new_meet_id,
-            "councilId": council_id,
-            "title": formatted_title,
-            "date": meet_date,
-            "officialUrl": resolved_meet_url,
-            "category": target.get("category", "COUNCIL"),
-            "ministry": ministry,
-            "materials": clean_materials_list,
-            "isNewlyDiscovered": True,
-            "isDateUnconfirmed": is_date_unconfirmed,
-            "discoveredAt": datetime.now().strftime("%Y/%m/%d %H:%M")
-        }
+        meet_date, is_date_unconfirmed = _resolve_meeting_date(sub_dates, sub_title, sub_url)
+        new_meeting = _build_new_meeting(
+            target=target,
+            sub=sub,
+            clean_materials_list=clean_materials_list,
+            sess_nums=sess_nums,
+            meet_date=meet_date,
+            is_date_unconfirmed=is_date_unconfirmed,
+            existing_c_meets=existing_c_meets,
+            added_count=added_count,
+            existing_meeting_ids=existing_meeting_ids,
+            council_parent_url=council_parent_url
+        )
 
         meetings.append(new_meeting)
+        existing_meeting_ids.add(new_meeting["id"])
         existing_urls[sub_url] = new_meeting
-        existing_titles[formatted_title] = new_meeting
+        existing_titles[new_meeting["title"]] = new_meeting
         for s in sess_nums:
             existing_sessions.add(s)
         added_count += 1
         log_prefix = "⚠️ [開催日不明(2099/01/01)]" if is_date_unconfirmed else "✨ [新規開催回自動追加]"
-        print(f"  {log_prefix} [{meet_date}] {formatted_title} (ID: {new_meet_id}, 資料: {len(clean_materials_list)}件)")
+        print(f"  {log_prefix} [{meet_date}] {new_meeting['title']} (ID: {new_meeting['id']}, 資料: {len(clean_materials_list)}件)")
 
     if added_count > 0:
         # 日付降順に再ソート
