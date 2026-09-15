@@ -7951,7 +7951,7 @@
       "ministry": "DIGITAL",
       "category": "STUDY",
       "officialUrl": "https://www.digital.go.jp/councils/local-governments-common-features-identification-management-wt",
-      "pastYearCount": 0,
+      "pastYearCount": 2,
       "status": "approved",
       "crawlStatus": {
         "lastAttempt": "2026-09-05 08:26:15",
@@ -7962,7 +7962,8 @@
         "failureReason": "",
         "consecutiveFailures": 0,
         "manualLockActive": false
-      }
+      },
+      "manualLock": true
     },
     {
       "id": "digital-datalinkage_wt",
@@ -7970,7 +7971,7 @@
       "ministry": "DIGITAL",
       "category": "STUDY",
       "officialUrl": "https://www.digital.go.jp/councils/local-governments-common-features-datalinkage-wt",
-      "pastYearCount": 0,
+      "pastYearCount": 1,
       "status": "approved",
       "crawlStatus": {
         "lastAttempt": "2026-09-05 08:25:51",
@@ -7981,7 +7982,8 @@
         "failureReason": "",
         "consecutiveFailures": 0,
         "manualLockActive": false
-      }
+      },
+      "manualLock": true
     },
     {
       "id": "digital-honnin_kakunin_guideline",
@@ -8017,7 +8019,7 @@
       "ministry": "DIGITAL",
       "category": "COUNCIL",
       "officialUrl": "https://www.digital.go.jp/councils/local-governments",
-      "pastYearCount": 0,
+      "pastYearCount": 6,
       "status": "approved",
       "crawlStatus": {
         "lastAttempt": "2026-09-05 08:25:18",
@@ -8028,7 +8030,8 @@
         "failureReason": "",
         "consecutiveFailures": 0,
         "manualLockActive": false
-      }
+      },
+      "manualLock": true
     },
     {
       "id": "digital-kyoutsuu_kinou_gijutsu",
@@ -8036,7 +8039,7 @@
       "ministry": "DIGITAL",
       "category": "STUDY",
       "officialUrl": "https://www.digital.go.jp/councils/local-governments-common-features",
-      "pastYearCount": 0,
+      "pastYearCount": 3,
       "status": "approved",
       "crawlStatus": {
         "lastAttempt": "2026-09-05 08:25:40",
@@ -8047,7 +8050,8 @@
         "failureReason": "",
         "consecutiveFailures": 0,
         "manualLockActive": false
-      }
+      },
+      "manualLock": true
     },
     {
       "id": "digital-kyoutsuu_kinou_kadai",
@@ -8055,7 +8059,7 @@
       "ministry": "DIGITAL",
       "category": "STUDY",
       "officialUrl": "https://www.digital.go.jp/councils/local-governments-common-features-issue",
-      "pastYearCount": 0,
+      "pastYearCount": 4,
       "status": "approved",
       "crawlStatus": {
         "lastAttempt": "2026-09-05 08:25:29",
@@ -8066,7 +8070,8 @@
         "failureReason": "",
         "consecutiveFailures": 0,
         "manualLockActive": false
-      }
+      },
+      "manualLock": true
     },
     {
       "id": "digital-moji_hyoujunka",
@@ -8112,7 +8117,7 @@
       "ministry": "DIGITAL",
       "category": "STUDY",
       "officialUrl": "https://www.digital.go.jp/councils/local-governments-common-features-application-management-wt",
-      "pastYearCount": 0,
+      "pastYearCount": 3,
       "status": "approved",
       "crawlStatus": {
         "lastAttempt": "2026-09-05 08:26:03",
@@ -8123,7 +8128,8 @@
         "failureReason": "",
         "consecutiveFailures": 0,
         "manualLockActive": false
-      }
+      },
+      "manualLock": true
     },
     {
       "id": "digital-shitei_toshi_kadai",
@@ -8131,7 +8137,7 @@
       "ministry": "DIGITAL",
       "category": "STUDY",
       "officialUrl": "https://www.digital.go.jp/councils/standard-specifications-designated-city",
-      "pastYearCount": 0,
+      "pastYearCount": 1,
       "status": "approved",
       "crawlStatus": {
         "lastAttempt": "2026-09-05 08:26:26",
@@ -8142,7 +8148,8 @@
         "failureReason": "",
         "consecutiveFailures": 0,
         "manualLockActive": false
-      }
+      },
+      "manualLock": true
     },
     {
       "id": "digital-social_promotion",
@@ -86851,6 +86858,44 @@
       "manualLock": true
     },
     {
+      "id": "digital-kikan_system_touitsu-20251224-006",
+      "councilId": "digital-kikan_system_touitsu",
+      "title": "地方公共団体の基幹業務等システムの統一・標準化に関する関係省庁会議（第6回）",
+      "date": "2025/12/24",
+      "officialUrl": "https://www.digital.go.jp/councils/local-governments/94205823-8f13-4a9a-b6c8-7c19b27d8eb4",
+      "materials": [
+        {
+          "title": "資料",
+          "url": "https://www.digital.go.jp/resources"
+        },
+        {
+          "title": "議事次第（PDF／49KB）",
+          "url": "https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/94205823-8f13-4a9a-b6c8-7c19b27d8eb4/413de7f5/20251224_meeting_local_governments_outline_01.pdf"
+        },
+        {
+          "title": "資料1 標準化基準の策定について（PDF／3,065KB）",
+          "url": "https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/94205823-8f13-4a9a-b6c8-7c19b27d8eb4/f8ccd6c8/20251224_meeting_local_governments_outline_02.pdf"
+        },
+        {
+          "title": "資料2 制度改正等に対応した標準仕様書の改定等について（PDF／5,961KB）",
+          "url": "https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/94205823-8f13-4a9a-b6c8-7c19b27d8eb4/1c8958cf/20251224_meeting_local_governments_outline_03.pdf"
+        },
+        {
+          "title": "資料3 標準準拠システムへの円滑かつ安全な移行に係る留意事項について（PDF／235KB）",
+          "url": "https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/94205823-8f13-4a9a-b6c8-7c19b27d8eb4/2c7ca504/20251224_meeting_local_governments_outline_04.pdf"
+        },
+        {
+          "title": "参考資料1 地方公共団体の基幹業務等システムの統一・標準化に関する関係省庁会議（第6回）　出席者名簿（PDF／81KB）",
+          "url": "https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/94205823-8f13-4a9a-b6c8-7c19b27d8eb4/32e8299c/20251224_meeting_local_governments_outline_05.pdf"
+        },
+        {
+          "title": "参考資料2 地方公共団体の基幹業務等システムの統一・標準化に関する関係省庁会議の開催について（PDF／409KB）",
+          "url": "https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/94205823-8f13-4a9a-b6c8-7c19b27d8eb4/62fa25d7/20251224_meeting_local_governments_outline_06.pdf"
+        }
+      ],
+      "manualLock": true
+    },
+    {
       "id": "cas-nipponseichosenryaku-20251224-002",
       "councilId": "cas-nipponseichosenryaku",
       "title": "第2回 日本成長戦略会議",
@@ -113560,6 +113605,44 @@
       ]
     },
     {
+      "id": "digital-kikan_system_touitsu-20250616-005",
+      "councilId": "digital-kikan_system_touitsu",
+      "title": "地方公共団体の基幹業務等システムの統一・標準化に関する関係省庁会議（第5回）",
+      "date": "2025/06/16",
+      "officialUrl": "https://www.digital.go.jp/councils/local-governments/e9da3694-1711-401f-bfc3-222d2d923990",
+      "materials": [
+        {
+          "title": "資料",
+          "url": "https://www.digital.go.jp/resources"
+        },
+        {
+          "title": "議事次第（PDF／52KB）",
+          "url": "https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/e9da3694-1711-401f-bfc3-222d2d923990/369b944d/20250616_meeting_local_governments_agenda_00.pdf"
+        },
+        {
+          "title": "資料1 自治体情報システムの標準化・ガバメントクラウド移行後の運用経費に係る総合的な対策＜概要＞（PDF／1,160KB）",
+          "url": "https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/e9da3694-1711-401f-bfc3-222d2d923990/0c783185/20250616_meeting_local_governments_outline_01.pdf"
+        },
+        {
+          "title": "資料2 自治体情報システムの標準化・ガバメントクラウド移行後の運用経費に係る総合的な対策について(PDF／4,608KB)",
+          "url": "https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/e9da3694-1711-401f-bfc3-222d2d923990/8b09a979/20250616_meeting_local_governments_outline_02.pdf"
+        },
+        {
+          "title": "資料3 標準準拠システム移行後の制度改正等に伴う自治体システム改修経費の財政措置について（基本的な考え方）（PDF／547KB）",
+          "url": "https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/e9da3694-1711-401f-bfc3-222d2d923990/abbd7329/20250616_meeting_local_governments_outline_03.pdf"
+        },
+        {
+          "title": "参考資料1 地方公共団体の基幹業務等システムの統一・標準化に関する関係省庁会議（第5回） 出席者名簿（PDF／206KB）",
+          "url": "https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/e9da3694-1711-401f-bfc3-222d2d923990/dea62921/20250616_meeting_local_governments_outline_04.pdf"
+        },
+        {
+          "title": "参考資料2 地方公共団体の基幹業務等システムの統一・標準化に関する関係省庁会議の開催について（PDF／409KB）",
+          "url": "https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/e9da3694-1711-401f-bfc3-222d2d923990/65612c28/20250616_meeting_local_governments_outline_05.pdf"
+        }
+      ],
+      "manualLock": true
+    },
+    {
       "id": "ra-fukko_suishin-20250613-047",
       "councilId": "ra-fukko_suishin",
       "title": "第47回 復興推進委員会",
@@ -129378,6 +129461,28 @@
       "materials": []
     },
     {
+      "id": "digital-kyoutsuu_kinou_kadai-20250130-004",
+      "councilId": "digital-kyoutsuu_kinou_kadai",
+      "title": "地方公共団体の基幹業務システムの統一・標準化に関する共通機能等課題検討会（第4回）",
+      "date": "2025/01/30",
+      "officialUrl": "https://www.digital.go.jp/councils/local-governments-common-features-issue/c37b22fe-ec23-4f4d-8b5e-ca8bdce3d993",
+      "materials": [
+        {
+          "title": "資料",
+          "url": "https://www.digital.go.jp/resources"
+        },
+        {
+          "title": "第4回共通機能等課題検討会資料（PDF／747KB）",
+          "url": "https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/c37b22fe-ec23-4f4d-8b5e-ca8bdce3d993/8098b315/20250205_local-governments-common-features-issue_outline_01.pdf"
+        },
+        {
+          "title": "（別添1）（抜粋）「地方公共団体情報システム共通機能標準仕様書及びデータ要件・連携要件標準仕様書」に関するリファレンス（PDF／1,113KB）",
+          "url": "https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/c37b22fe-ec23-4f4d-8b5e-ca8bdce3d993/3bc30920/20250205_local-governments-common-features-issue_outline_02.pdf"
+        }
+      ],
+      "manualLock": true
+    },
+    {
       "id": "mic-denki_tsusin_bukai-20250129-152",
       "councilId": "mic-denki_tsusin_bukai",
       "title": "第152回 情報通信行政・郵政行政審議会 電気通信事業部会",
@@ -134885,6 +134990,52 @@
           "url": "https://www.mhlw.go.jp/stf/newpage_52523.html"
         }
       ]
+    },
+    {
+      "id": "digital-kikan_system_touitsu-20241219-004",
+      "councilId": "digital-kikan_system_touitsu",
+      "title": "地方公共団体の基幹業務等システムの統一・標準化に関する関係省庁会議（第4回）",
+      "date": "2024/12/19",
+      "officialUrl": "https://www.digital.go.jp/councils/local-governments/66264825-2451-43ce-8da5-1adce44c72b8",
+      "materials": [
+        {
+          "title": "資料",
+          "url": "https://www.digital.go.jp/resources"
+        },
+        {
+          "title": "議事次第（PDF／41KB）",
+          "url": "https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/66264825-2451-43ce-8da5-1adce44c72b8/02242f58/20241219_meeting_local_governments_agenda_00.pdf"
+        },
+        {
+          "title": "資料1 地方公共団体の基幹業務等システムの統一・標準化に関する関係府省会議幹事会の官職の指定について（PDF／77KB）",
+          "url": "https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/66264825-2451-43ce-8da5-1adce44c72b8/043afbbb/20241219_meeting_local_governments_outline_01.pdf"
+        },
+        {
+          "title": "資料2 地方公共団体情報システム標準化基本方針の改定案について（PDF／281KB）",
+          "url": "https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/66264825-2451-43ce-8da5-1adce44c72b8/efe6dac5/20241219_meeting_local_governments_outline_02.pdf"
+        },
+        {
+          "title": "資料3 地方公共団体情報システム標準化基本方針（改定案）（PDF／330KB）",
+          "url": "https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/66264825-2451-43ce-8da5-1adce44c72b8/cb2dcd66/20241219_meeting_local_governments_outline_03.pdf"
+        },
+        {
+          "title": "資料4 地方公共団体情報システム標準化基本方針（改定案）新旧対照表（PDF／384KB）",
+          "url": "https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/66264825-2451-43ce-8da5-1adce44c72b8/24cc7ebe/20241219_meeting_local_governments_outline_04.pdf"
+        },
+        {
+          "title": "資料5 移行後の経過措置（一部機能の移行後の実装等）について（PDF／181KB）",
+          "url": "https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/66264825-2451-43ce-8da5-1adce44c72b8/2f4e3f76/20241219_meeting_local_governments_outline_05.pdf"
+        },
+        {
+          "title": "参考資料1 地方公共団体の基幹業務等システムの統一・標準化に関する関係省庁会議（第4回）出席者名簿（PDF／76KB）",
+          "url": "https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/66264825-2451-43ce-8da5-1adce44c72b8/674b6a63/20241219_meeting_local_governments_outline_06.pdf"
+        },
+        {
+          "title": "参考資料2 地方公共団体の基幹業務等システムの統一・標準化に関する関係省庁会議の開催について（PDF／375KB）",
+          "url": "https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/66264825-2451-43ce-8da5-1adce44c72b8/5aac0abe/20241219_meeting_local_governments_outline_07.pdf"
+        }
+      ],
+      "manualLock": true
     },
     {
       "id": "cas-gx_senmonka_wg-20241219-010",
@@ -140610,6 +140761,36 @@
       "manualLock": true
     },
     {
+      "id": "digital-kyoutsuu_kinou_kadai-20241031-003",
+      "councilId": "digital-kyoutsuu_kinou_kadai",
+      "title": "地方公共団体の基幹業務システムの統一・標準化に関する共通機能等課題検討会（第3回）",
+      "date": "2024/10/31",
+      "officialUrl": "https://www.digital.go.jp/councils/local-governments-common-features-issue/6ab01f41-8b0e-4b22-a28a-6cdc95a9b03b",
+      "materials": [
+        {
+          "title": "資料",
+          "url": "https://www.digital.go.jp/resources"
+        },
+        {
+          "title": "議事次第（PDF／56KB）",
+          "url": "https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/6ab01f41-8b0e-4b22-a28a-6cdc95a9b03b/287f6d5a/20241101_local-governments-common-features-issue_agenda_01.pdf"
+        },
+        {
+          "title": "共通機能等課題検討会構成員等名簿（PDF／207KB）",
+          "url": "https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/6ab01f41-8b0e-4b22-a28a-6cdc95a9b03b/889a6c78/20241101_local-governments-common-features-issue_outline_02.pdf"
+        },
+        {
+          "title": "令和6年度 第3回共通機能等課題検討会資料（PDF／1,850KB）",
+          "url": "https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/6ab01f41-8b0e-4b22-a28a-6cdc95a9b03b/15d1c14e/20241101_local-governments-common-features-issue_outline_03.pdf"
+        },
+        {
+          "title": "議事要旨（PDF／254KB）",
+          "url": "https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/6ab01f41-8b0e-4b22-a28a-6cdc95a9b03b/712e2328/20241114_local-governments-common-features-issue_outline_01.pdf"
+        }
+      ],
+      "manualLock": true
+    },
+    {
       "id": "cas-sdgs_honbu-20241031-019",
       "councilId": "cas-sdgs_honbu",
       "title": "第19回 持続可能な開発目標（ＳＤＧｓ）推進本部",
@@ -146277,6 +146458,36 @@
       ]
     },
     {
+      "id": "digital-kyoutsuu_kinou_kadai-20240828-002",
+      "councilId": "digital-kyoutsuu_kinou_kadai",
+      "title": "地方公共団体の基幹業務システムの統一・標準化に関する共通機能等課題検討会（第2回）",
+      "date": "2024/08/28",
+      "officialUrl": "https://www.digital.go.jp/councils/local-governments-common-features-issue/05577db2-dfdd-4d90-b2c1-44d94639f44e",
+      "materials": [
+        {
+          "title": "資料",
+          "url": "https://www.digital.go.jp/resources"
+        },
+        {
+          "title": "議事次第（PDF／103KB）",
+          "url": "https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/05577db2-dfdd-4d90-b2c1-44d94639f44e/fbed718b/20240904_local-governments-common-features-issue_outline_02.pdf"
+        },
+        {
+          "title": "共通機能等課題検討会構成員等名簿（PDF／176KB）",
+          "url": "https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/05577db2-dfdd-4d90-b2c1-44d94639f44e/39da356f/20240904_local-governments-common-features-issue_outline_03.pdf"
+        },
+        {
+          "title": "令和6年度 第2回共通機能等課題検討会資料（PDF／1,328KB）",
+          "url": "https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/05577db2-dfdd-4d90-b2c1-44d94639f44e/9d5e4d8b/20240904_local-governments-common-features-issue_outline_04.pdf"
+        },
+        {
+          "title": "議事要旨（PDF／242KB）",
+          "url": "https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/05577db2-dfdd-4d90-b2c1-44d94639f44e/71c06916/20240904_local-governments-common-features-issue_outline_05.pdf"
+        }
+      ],
+      "manualLock": true
+    },
+    {
       "id": "digital-437-20240827-002",
       "councilId": "digital-437",
       "title": "第2回 国際データガバナンスアドバイザリー委員会",
@@ -150121,6 +150332,32 @@
         {
           "name": "議事録",
           "url": "https://www.soumu.go.jp/main_content/000959373.pdf"
+        }
+      ],
+      "manualLock": true
+    },
+    {
+      "id": "digital-kyoutsuu_kinou_kadai-20240626-001",
+      "councilId": "digital-kyoutsuu_kinou_kadai",
+      "title": "地方公共団体の基幹業務システムの統一・標準化に関する共通機能等課題検討会（第1回）",
+      "date": "2024/06/26",
+      "officialUrl": "https://www.digital.go.jp/councils/local-governments-common-features-issue/d64b42c6-b563-49ec-80dc-93693783a9bc",
+      "materials": [
+        {
+          "title": "資料",
+          "url": "https://www.digital.go.jp/resources"
+        },
+        {
+          "title": "令和6年度 第1回共通機能等課題検討会資料（PDF／443KB）",
+          "url": "https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/d64b42c6-b563-49ec-80dc-93693783a9bc/4ac0cd61/20240904_local-governments-common-features-issue_outline_01.pdf"
+        },
+        {
+          "title": "共通機能等課題検討会構成員等名簿（PDF／174KB）",
+          "url": "https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/d64b42c6-b563-49ec-80dc-93693783a9bc/8dce55bc/20240731_local-governments-common-features-issue_outline_02.pdf"
+        },
+        {
+          "title": "議事要旨（PDF／212KB）",
+          "url": "https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/d64b42c6-b563-49ec-80dc-93693783a9bc/ab6cfe21/20240731_local-governments-common-features-issue_summary_01.pdf"
         }
       ],
       "manualLock": true
@@ -184913,6 +185150,56 @@
       "category": "STUDY"
     },
     {
+      "id": "digital-kikan_system_touitsu-20230901-003",
+      "councilId": "digital-kikan_system_touitsu",
+      "title": "地方公共団体の基幹業務等システムの統一・標準化に関する関係省庁会議（第3回）",
+      "date": "2023/09/01",
+      "officialUrl": "https://www.digital.go.jp/councils/local-governments/87bea441-45fa-485a-b891-2866ffecd780",
+      "materials": [
+        {
+          "title": "資料",
+          "url": "https://www.digital.go.jp/resources"
+        },
+        {
+          "title": "議事次第（PDF／38KB）",
+          "url": "https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/87bea441-45fa-485a-b891-2866ffecd780/0ea1b5d8/20230908_meeting_local_governments_agenda_00.pdf"
+        },
+        {
+          "title": "資料1 地方公共団体の基幹業務等システムの統一・標準化に関する関係省庁会議の開催について（PDF／370KB）",
+          "url": "https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/87bea441-45fa-485a-b891-2866ffecd780/a22df4f0/20230908_meeting_local_governments_outline_01.pdf"
+        },
+        {
+          "title": "資料2 地方公共団体の基幹業務等システムの統一・標準化に関する関係省庁会議の開催について 新旧対照表（PDF／150KB）",
+          "url": "https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/87bea441-45fa-485a-b891-2866ffecd780/935963a7/20230908_meeting_local_governments_outline_02.pdf"
+        },
+        {
+          "title": "資料3 地方公共団体の基幹業務等システムの統一・標準化に関する関係省庁会議幹事会の官職の指定について（PDF／274KB）",
+          "url": "https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/87bea441-45fa-485a-b891-2866ffecd780/f25c8df3/20230908_meeting_local_governments_outline_03.pdf"
+        },
+        {
+          "title": "資料4 地方公共団体の基幹業務等システムの統一・標準化に関する関係省庁会議幹事会の官職の指定について 新旧対照表（PDF／131KB）",
+          "url": "https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/87bea441-45fa-485a-b891-2866ffecd780/9c595257/20230908_meeting_local_governments_outline_04.pdf"
+        },
+        {
+          "title": "資料5 地方公共団体情報システム標準化基本方針改定案の概要について（PDF／451KB）",
+          "url": "https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/87bea441-45fa-485a-b891-2866ffecd780/ac55fc06/20230908_meeting_local_governments_outline_05.pdf"
+        },
+        {
+          "title": "資料6 地方公共団体情報システム標準化基本方針（改定案）（PDF／370KB）",
+          "url": "https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/87bea441-45fa-485a-b891-2866ffecd780/0e358314/20230908_meeting_local_governments_outline_06.pdf"
+        },
+        {
+          "title": "資料7 地方公共団体の基幹業務システムの統一・標準化に関する今後の取組について（PDF／1,084KB）",
+          "url": "https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/87bea441-45fa-485a-b891-2866ffecd780/f71a9250/20230908_meeting_local_governments_outline_07.pdf"
+        },
+        {
+          "title": "議事概要（PDF／605KB）",
+          "url": "https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/87bea441-45fa-485a-b891-2866ffecd780/161b2827/20230908_meeting_local_governments_summary_08.pdf"
+        }
+      ],
+      "manualLock": true
+    },
+    {
       "id": "cas-osaka_kansai_banpaku-20230831-001",
       "councilId": "cas-osaka_kansai_banpaku",
       "councilName": "大阪・関西万博に関する関係者会合",
@@ -204463,6 +204750,32 @@
       ]
     },
     {
+      "id": "digital-kyoutsuu_kinou_gijutsu-20230201-003",
+      "councilId": "digital-kyoutsuu_kinou_gijutsu",
+      "title": "地方公共団体の基幹業務システムの統一・標準化に関する共通機能等技術要件検討会（第3回）",
+      "date": "2023/02/01",
+      "officialUrl": "https://www.digital.go.jp/councils/local-governments-common-features/2f863e05-c5f4-47be-ae74-181719a5b50e/",
+      "materials": [
+        {
+          "title": "資料",
+          "url": "https://www.digital.go.jp/resources"
+        },
+        {
+          "title": "議事次第（PDF／109KB）",
+          "url": "https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/2f863e05-c5f4-47be-ae74-181719a5b50e/6f199124/20230202_meeting_local_governments_common_features_agenda_00.pdf"
+        },
+        {
+          "title": "資料1 継続検討課題の検討_共通機能等技術要件検討会（PDF／1,596KB）",
+          "url": "https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/2f863e05-c5f4-47be-ae74-181719a5b50e/c2604afc/20230202_meeting_local_governments_common_features_outline_01.pdf"
+        },
+        {
+          "title": "議事概要（523KB)",
+          "url": "https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/2f863e05-c5f4-47be-ae74-181719a5b50e/83dbd19a/20230202_meeting_local_governments_common_features_summary_02.pdf"
+        }
+      ],
+      "manualLock": true
+    },
+    {
       "id": "mic-yusei_gyousei_bunkakai-20230131-083",
       "councilId": "mic-yusei_gyousei_bunkakai",
       "title": "第83回 情報通信行政・郵政行政審議会 郵政行政分科会",
@@ -206712,6 +207025,40 @@
       "manualLock": true
     },
     {
+      "id": "digital-kyoutsuu_kinou_gijutsu-20221223-002",
+      "councilId": "digital-kyoutsuu_kinou_gijutsu",
+      "title": "地方公共団体の基幹業務システムの統一・標準化に関する共通機能等技術要件検討会（第2回）",
+      "date": "2022/12/23",
+      "officialUrl": "https://www.digital.go.jp/councils/local-governments-common-features/783ffd9d-b2dc-4ff0-b628-35585d329279/",
+      "materials": [
+        {
+          "title": "資料",
+          "url": "https://www.digital.go.jp/resources"
+        },
+        {
+          "title": "議事次第（PDF／72KB）",
+          "url": "https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/783ffd9d-b2dc-4ff0-b628-35585d329279/cc7216da/20221226_meeting_local_governments_common_features_agenda_00.pdf"
+        },
+        {
+          "title": "資料1 報告書_共通機能等技術要件検討会（PDF／622KB）",
+          "url": "https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/783ffd9d-b2dc-4ff0-b628-35585d329279/467fefde/20221226_meeting_local_governments_common_features_outline_01.pdf"
+        },
+        {
+          "title": "資料2 統合収納管理・統合滞納管理の方針について（PDF／265KB）",
+          "url": "https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/783ffd9d-b2dc-4ff0-b628-35585d329279/19b7b41f/20221226_meeting_local_governments_common_features_outline_02.pdf"
+        },
+        {
+          "title": "資料3 文字要件に係る今後の検討の方針について（PDF／221KB）",
+          "url": "https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/783ffd9d-b2dc-4ff0-b628-35585d329279/5091216c/20221226_meeting_local_governments_common_features_outline_03.pdf"
+        },
+        {
+          "title": "議事概要（PDF／189KB）",
+          "url": "https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/783ffd9d-b2dc-4ff0-b628-35585d329279/316c7332/20221226_meeting_local_governments_common_features_summary_04.pdf"
+        }
+      ],
+      "manualLock": true
+    },
+    {
       "id": "cas-zensedai_shakaihosho_kochiku-20221223-006",
       "councilId": "cas-zensedai_shakaihosho_kochiku",
       "title": "第6回 全世代型社会保障構築本部",
@@ -207206,6 +207553,60 @@
       ],
       "isNewlyDiscovered": true,
       "discoveredAt": "2026/09/05 08:27",
+      "manualLock": true
+    },
+    {
+      "id": "digital-shinsei_kanri_wt-20221220-004",
+      "councilId": "digital-shinsei_kanri_wt",
+      "title": "地方公共団体の基幹業務システムの統一・標準化に関する共通機能等技術要件検討会　データ連携ワーキングチーム（第4回）兼申請管理ワーキングチーム（第3回）兼宛名管理ワーキングチーム（第3回）",
+      "date": "2022/12/20",
+      "officialUrl": "https://www.digital.go.jp/councils/local-governments-common-features-application-management-wt/2d1e689e-7a90-4238-99c1-527145038a0c/",
+      "materials": [
+        {
+          "title": "資料",
+          "url": "https://www.digital.go.jp/resources"
+        },
+        {
+          "title": "議事次第（PDF／80KB）",
+          "url": "https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/2d1e689e-7a90-4238-99c1-527145038a0c/9f5914e3/20221220_meeting_local-governments-application-management_agenda_00.pdf"
+        },
+        {
+          "title": "資料1 データ連携WT_検討概要（PDF／770KB）",
+          "url": "https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/2d1e689e-7a90-4238-99c1-527145038a0c/4dc22365/20221220_meeting_local-governments-application-management_outline_01.pdf"
+        },
+        {
+          "title": "資料2 データ連携WT_データ連携に関する課題 （PDF／1,267KB）",
+          "url": "https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/2d1e689e-7a90-4238-99c1-527145038a0c/675eb16a/20221220_meeting_local-governments-application-management_outline_02.pdf"
+        },
+        {
+          "title": "資料3 申請管理WT_検討概要 （PDF／461KB）",
+          "url": "https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/2d1e689e-7a90-4238-99c1-527145038a0c/0461989c/20221220_meeting_local-governments-application-management_outline_03.pdf"
+        },
+        {
+          "title": "資料4 申請管理WT_申請管理に関する課題（PDF／597KB）",
+          "url": "https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/2d1e689e-7a90-4238-99c1-527145038a0c/f6df0ef3/20221220_meeting_local-governments-application-management_outline_04.pdf"
+        },
+        {
+          "title": "資料5 宛名管理WT_検討概要（PDF／488KB）",
+          "url": "https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/2d1e689e-7a90-4238-99c1-527145038a0c/047e1ea6/20221220_meeting_local-governments-application-management_outline_05.pdf"
+        },
+        {
+          "title": "資料6 宛名管理WT_宛名管理に関する課題（PDF／860KB）",
+          "url": "https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/2d1e689e-7a90-4238-99c1-527145038a0c/2646166c/20221220_meeting_local-governments-application-management_outline_06.pdf"
+        },
+        {
+          "title": "資料7 データ要件・連携要件の今後の方針について （PDF／226KB）",
+          "url": "https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/2d1e689e-7a90-4238-99c1-527145038a0c/c4b90672/20221220_meeting_local-governments-application-management_outline_07.pdf"
+        },
+        {
+          "title": "資料8 データ要件の他業務情報グループの考え方について （PDF／227KB）",
+          "url": "https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/2d1e689e-7a90-4238-99c1-527145038a0c/f3b199b1/20221220_meeting_local-governments-application-management_outline_08.pdf"
+        },
+        {
+          "title": "議事概要（PDF／196KB）",
+          "url": "https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/2d1e689e-7a90-4238-99c1-527145038a0c/e4775536/20230113_meeting_local-governments-application-management_summary_01.pdf"
+        }
+      ],
       "manualLock": true
     },
     {
@@ -207799,6 +208200,36 @@
       ],
       "isNewlyDiscovered": true,
       "discoveredAt": "2026/09/05 08:28",
+      "manualLock": true
+    },
+    {
+      "id": "digital-atena_kanri_wt-20221213-002",
+      "councilId": "digital-atena_kanri_wt",
+      "title": "地方公共団体の基幹業務システムの統一・標準化に関する共通機能等技術要件検討会　宛名管理ワーキングチーム（第2回）",
+      "date": "2022/12/13",
+      "officialUrl": "https://www.digital.go.jp/councils/local-governments-common-features-identification-management-wt/583c50be-ddf8-455f-b200-d9bf9298259b/",
+      "materials": [
+        {
+          "title": "資料",
+          "url": "https://www.digital.go.jp/resources"
+        },
+        {
+          "title": "議事次第（PDF／119KB）",
+          "url": "https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/583c50be-ddf8-455f-b200-d9bf9298259b/6c60cbb6/20221213_meeting_local_governments_identification-management_agenda_00.pdf"
+        },
+        {
+          "title": "資料1 宛名管理WT_検討概要（PDF／1,028KB）",
+          "url": "https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/583c50be-ddf8-455f-b200-d9bf9298259b/5f1c829e/20221213_meeting_local_governments_identification-management_outline_01.pdf"
+        },
+        {
+          "title": "資料2 宛名管理WT_宛名管理に関する課題（PDF／2,447KB）",
+          "url": "https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/583c50be-ddf8-455f-b200-d9bf9298259b/6a76139f/20221213_meeting_local_governments_identification-management_outline_02.pdf"
+        },
+        {
+          "title": "議事概要（PDF／324KB）",
+          "url": "https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/583c50be-ddf8-455f-b200-d9bf9298259b/739cb110/20230113_meeting_local_governments_identification_management_summary_03.pdf"
+        }
+      ],
       "manualLock": true
     },
     {
@@ -209729,6 +210160,48 @@
         {
           "name": "議事録",
           "url": "https://www.soumu.go.jp/main_content/000856104.pdf"
+        }
+      ],
+      "manualLock": true
+    },
+    {
+      "id": "digital-shinsei_kanri_wt-20221129-002",
+      "councilId": "digital-shinsei_kanri_wt",
+      "title": "地方公共団体の基幹業務システムの統一・標準化に関する共通機能等技術要件検討会　申請管理ワーキングチーム（第2回）兼データ連携ワーキングチーム（第3回）",
+      "date": "2022/11/29",
+      "officialUrl": "https://www.digital.go.jp/councils/local-governments-common-features-application-management-wt/e850b29d-c125-4505-aaa1-846e82ec456e/",
+      "materials": [
+        {
+          "title": "資料",
+          "url": "https://www.digital.go.jp/resources"
+        },
+        {
+          "title": "議事次第（PDF／158KB）",
+          "url": "https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/e850b29d-c125-4505-aaa1-846e82ec456e/b35793b6/20221129_meeting_local_governments_datalinkage_agenda_00r.pdf"
+        },
+        {
+          "title": "資料1 開催要領・構成員等名簿（PDF／394KB）",
+          "url": "https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/e850b29d-c125-4505-aaa1-846e82ec456e/a1f0815d/20221129_meeting_local_governments_datalinkage_outline_01.pdf"
+        },
+        {
+          "title": "資料2 申請管理WT_検討概要（PDF／780KB）",
+          "url": "https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/e850b29d-c125-4505-aaa1-846e82ec456e/1f9a50e0/20221129_meeting_local_governments_datalinkage_outline_02.pdf"
+        },
+        {
+          "title": "資料3 申請管理WT_申請管理に関する課題（PDF／1,902KB）",
+          "url": "https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/e850b29d-c125-4505-aaa1-846e82ec456e/9a456e2d/20221129_meeting_local_governments_datalinkage_outline_03.pdf"
+        },
+        {
+          "title": "資料4 データ連携WT_検討概要（PDF／936KB）",
+          "url": "https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/e850b29d-c125-4505-aaa1-846e82ec456e/086a94b9/20221129_meeting_local_governments_datalinkage_outline_04.pdf"
+        },
+        {
+          "title": "資料5 データ連携WT_データ連携に関する課題（PDF／2,567KB）",
+          "url": "https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/e850b29d-c125-4505-aaa1-846e82ec456e/9bc01dd6/20221129_meeting_local_governments_datalinkage_outline_05.pdf"
+        },
+        {
+          "title": "議事概要（PDF／333KB）",
+          "url": "https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/e850b29d-c125-4505-aaa1-846e82ec456e/6938aa73/20221213_meeting_local_governments_datalinkage_summary_06.pdf"
         }
       ],
       "manualLock": true
@@ -213051,6 +213524,48 @@
       "councilName": "犯罪被害者支援弁護士制度検討会／犯罪被害者支援弁護士制度・実務者協議会"
     },
     {
+      "id": "digital-atena_kanri_wt-20221115-001",
+      "councilId": "digital-atena_kanri_wt",
+      "title": "地方公共団体の基幹業務システムの統一・標準化に関する共通機能等技術要件検討会　宛名管理ワーキングチーム（第1回）兼データ連携ワーキングチーム（第2回）",
+      "date": "2022/11/15",
+      "officialUrl": "https://www.digital.go.jp/councils/local-governments-common-features-identification-management-wt/a1220fe1-7745-46e0-b058-390d9233187e",
+      "materials": [
+        {
+          "title": "資料",
+          "url": "https://www.digital.go.jp/resources"
+        },
+        {
+          "title": "議事次第（PDF／160KB）",
+          "url": "https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/a1220fe1-7745-46e0-b058-390d9233187e/d4592ac1/20221115_meeting_local_governments_datalinkage_agenda_00.pdf"
+        },
+        {
+          "title": "資料1 開催要領・構成員等名簿（PDF／392KB）",
+          "url": "https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/a1220fe1-7745-46e0-b058-390d9233187e/ab3accdb/20221115_meeting_local_governments_datalinkage_member_01.pdf"
+        },
+        {
+          "title": "資料2 宛名管理WT_検討概要（PDF／981KB）",
+          "url": "https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/a1220fe1-7745-46e0-b058-390d9233187e/ee47126a/20221115_meeting_local_governments_datalinkage_outline_02.pdf"
+        },
+        {
+          "title": "資料3 宛名管理WT_宛名管理に関する課題（PDF／2,162KB）",
+          "url": "https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/a1220fe1-7745-46e0-b058-390d9233187e/dad9d1f8/20221118_meeting_local_governments_datalinkage_outline_03.pdf"
+        },
+        {
+          "title": "資料4 データ連携WT_検討概要（PDF／862KB）",
+          "url": "https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/a1220fe1-7745-46e0-b058-390d9233187e/2f334ca5/20221118_meeting_local_governments_datalinkage_outline_04.pdf"
+        },
+        {
+          "title": "資料5 データ連携WT_データ連携に関する課題（PDF／2,850KB）",
+          "url": "https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/a1220fe1-7745-46e0-b058-390d9233187e/edfd2f67/20221118_meeting_local_governments_datalinkage_outline_05.pdf"
+        },
+        {
+          "title": "議事概要（PDF／471KB）",
+          "url": "https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/a1220fe1-7745-46e0-b058-390d9233187e/bc5638b3/20221115_meeting_local_governments_datalinkage_summary_06.pdf"
+        }
+      ],
+      "manualLock": true
+    },
+    {
       "id": "mof-zaiseiseido_bunkakai-20221114-s01",
       "councilId": "mof-zaiseiseido_bunkakai",
       "councilName": "財政制度等審議会 財政制度分科会",
@@ -213729,6 +214244,32 @@
       ]
     },
     {
+      "id": "digital-shitei_toshi_kadai-20221108-001",
+      "councilId": "digital-shitei_toshi_kadai",
+      "title": "標準仕様の指定都市における課題等検討会（第1回）",
+      "date": "2022/11/08",
+      "officialUrl": "https://www.digital.go.jp/councils/standard-specifications-designated-city/e109bafd-f701-4a9d-b311-2236dc724f10/",
+      "materials": [
+        {
+          "title": "資料",
+          "url": "https://www.digital.go.jp/resources"
+        },
+        {
+          "title": "議事次第（PDF／31KB）",
+          "url": "https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/e109bafd-f701-4a9d-b311-2236dc724f10/4170eb6a/20221107_meeting_standard-specifications-designated-city_agenda_00.pdf"
+        },
+        {
+          "title": "資料　標準仕様の指定都市における課題の検討体制・手順（案）について（PDF／370KB）",
+          "url": "https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/e109bafd-f701-4a9d-b311-2236dc724f10/e236a752/20221107_meeting_standard-specifications-designated-city_outline_01.pdf"
+        },
+        {
+          "title": "議事概要（PDF／171KB）",
+          "url": "https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/e109bafd-f701-4a9d-b311-2236dc724f10/f60d0458/20221115_meeting_standard-specifications-designated-city_agenda_overview_02.pdf"
+        }
+      ],
+      "manualLock": true
+    },
+    {
       "id": "digital-429-20221108-006",
       "councilId": "digital-429",
       "title": "第6回 Web3.0研究会",
@@ -214010,6 +214551,36 @@
           "url": "https://www.fsc.go.jp/fsciis/attachedFile/download?retrievalId=kai20221104ki1&fileId=410"
         }
       ]
+    },
+    {
+      "id": "digital-shinsei_kanri_wt-20221104-001",
+      "councilId": "digital-shinsei_kanri_wt",
+      "title": "地方公共団体の基幹業務システムの統一・標準化に関する共通機能等技術要件検討会　申請管理ワーキングチーム（第1回）",
+      "date": "2022/11/04",
+      "officialUrl": "https://www.digital.go.jp/councils/local-governments-common-features-application-management-wt/97ffd85f-145c-4c96-a8bf-a21f6eaa0519",
+      "materials": [
+        {
+          "title": "資料",
+          "url": "https://www.digital.go.jp/resources"
+        },
+        {
+          "title": "議事次第（PDF／110KB）",
+          "url": "https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/97ffd85f-145c-4c96-a8bf-a21f6eaa0519/6d6b162f/20221107_meeting_local-governments-application-management_agenda_00.pdf"
+        },
+        {
+          "title": "資料1 申請管理WT_検討概要（PDF／1,034KB）",
+          "url": "https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/97ffd85f-145c-4c96-a8bf-a21f6eaa0519/98f220ed/20221107_meeting_local-governments-application-management_outline_01.pdf"
+        },
+        {
+          "title": "資料2 申請管理WT_申請管理に関する課題（PDF／1,989KB）",
+          "url": "https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/97ffd85f-145c-4c96-a8bf-a21f6eaa0519/ed84c667/20221107_meeting_local-governments-application-management_outline_02.pdf"
+        },
+        {
+          "title": "議事概要（PDF／307KB）",
+          "url": "https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/97ffd85f-145c-4c96-a8bf-a21f6eaa0519/14e47306/20221115_meeting_local-governments-application-management_summary_r2.pdf"
+        }
+      ],
+      "manualLock": true
     },
     {
       "id": "mhlw-shakai_hosho_seikatsu_hogo-20221102-049",
@@ -215124,6 +215695,48 @@
       "councilName": "中小企業・小規模事業者の人材戦略に関する有識者検討会"
     },
     {
+      "id": "digital-datalinkage_wt-20221021-001",
+      "councilId": "digital-datalinkage_wt",
+      "title": "地方公共団体の基幹業務システムの統一・標準化に関する共通機能等技術要件検討会　データ連携ワーキングチーム（第1回）",
+      "date": "2022/10/21",
+      "officialUrl": "https://www.digital.go.jp/councils/local-governments-common-features-datalinkage-wt/2fbde396-54c5-4321-a938-a6f35d98d4c5/",
+      "materials": [
+        {
+          "title": "資料",
+          "url": "https://www.digital.go.jp/resources"
+        },
+        {
+          "title": "議事次第（PDF／123KB）",
+          "url": "https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/2fbde396-54c5-4321-a938-a6f35d98d4c5/48a9b708/20221012_meeting_local_governments_datalinkage_agenda_00.pdf"
+        },
+        {
+          "title": "資料1 データ連携WT_検討概要（PDF／753KB）",
+          "url": "https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/2fbde396-54c5-4321-a938-a6f35d98d4c5/a4daff35/20221107_meeting_local_governments_datalinkage_outline_01.pdf"
+        },
+        {
+          "title": "資料2 データ連携WT_API連携に関する課題（PDF／2,481KB）",
+          "url": "https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/2fbde396-54c5-4321-a938-a6f35d98d4c5/d9a2594e/20221107_meeting_local_governments_datalinkage_outline_02.pdf"
+        },
+        {
+          "title": "資料3 データ連携WT_ファイル連携に関する課題（PDF／1,763KB）",
+          "url": "https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/2fbde396-54c5-4321-a938-a6f35d98d4c5/2dc51260/20221107_meeting_local_governments_datalinkage_outline_03.pdf"
+        },
+        {
+          "title": "資料4 データ連携WT_移行期間におけるデータ連携に関する課題（PDF／756KB）",
+          "url": "https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/2fbde396-54c5-4321-a938-a6f35d98d4c5/f41d5fc7/20221012_meeting_local_governments_datalinkage_outline_04.pdf"
+        },
+        {
+          "title": "議事概要（PDF／436KB）",
+          "url": "https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/2fbde396-54c5-4321-a938-a6f35d98d4c5/764ce231/20221012_meeting_local_governments_datalinkage_summary_06.pdf"
+        },
+        {
+          "title": "参考資料1 第1回検討会資料_会議後修正版（PDF／795KB）",
+          "url": "https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/2fbde396-54c5-4321-a938-a6f35d98d4c5/3f62e1a5/20221012_meeting_local_governments_datalinkage_outline_05.pdf"
+        }
+      ],
+      "manualLock": true
+    },
+    {
       "id": "digital-429-20221021-003",
       "councilId": "digital-429",
       "title": "第3回 Web3.0研究会",
@@ -215879,6 +216492,56 @@
         }
       ],
       "councilName": "規制改革推進会議"
+    },
+    {
+      "id": "digital-kyoutsuu_kinou_gijutsu-20221012-001",
+      "councilId": "digital-kyoutsuu_kinou_gijutsu",
+      "title": "地方公共団体の基幹業務システムの統一・標準化に関する共通機能等技術要件検討会（第1回）",
+      "date": "2022/10/12",
+      "officialUrl": "https://www.digital.go.jp/councils/local-governments-common-features/dea0e0ed-a5a9-4aa3-9be0-a2b50c647380/",
+      "materials": [
+        {
+          "title": "資料",
+          "url": "https://www.digital.go.jp/resources"
+        },
+        {
+          "title": "議事次第（PDF／132KB）",
+          "url": "https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/dea0e0ed-a5a9-4aa3-9be0-a2b50c647380/ee57631f/20221012_meeting_local_governments_common_features_agenda_00.pdf"
+        },
+        {
+          "title": "資料1 共通機能等技術要件検討会　開催要領・構成員等名簿（PDF／387KB）",
+          "url": "https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/dea0e0ed-a5a9-4aa3-9be0-a2b50c647380/33f46ab4/20221012_meeting_local_governments_common_features_member_01.pdf"
+        },
+        {
+          "title": "資料2 共通機能等技術要件検討会_概要（PDF／671KB）",
+          "url": "https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/dea0e0ed-a5a9-4aa3-9be0-a2b50c647380/f7f91921/20221012_meeting_local_governments_common_features_outline_02.pdf"
+        },
+        {
+          "title": "資料3 データ連携WT_検討概要（PDF／802KB）",
+          "url": "https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/dea0e0ed-a5a9-4aa3-9be0-a2b50c647380/da5ada20/20221012_meeting_local_governments_common_features_outline_03.pdf"
+        },
+        {
+          "title": "資料4 宛名管理WT_検討概要（PDF／612KB）",
+          "url": "https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/dea0e0ed-a5a9-4aa3-9be0-a2b50c647380/11d6fa9f/20221012_meeting_local_governments_common_features_outline_04.pdf"
+        },
+        {
+          "title": "資料5 申請管理WT_検討概要（PDF／713KB）",
+          "url": "https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/dea0e0ed-a5a9-4aa3-9be0-a2b50c647380/c72a3b43/20221012_meeting_local_governments_common_features_outline_05.pdf"
+        },
+        {
+          "title": "議事概要（PDF／226KB）",
+          "url": "https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/dea0e0ed-a5a9-4aa3-9be0-a2b50c647380/d8502146/20221012_meeting_local_governments_common_features_outline_08.pdf"
+        },
+        {
+          "title": "参考資料1 地方公共団体情報システム共通機能標準仕様書【第1.0版】（PDF／1,269KB）",
+          "url": "https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/dea0e0ed-a5a9-4aa3-9be0-a2b50c647380/d5f458e3/20221012_meeting_local_governments_common_features_outline_06.pdf"
+        },
+        {
+          "title": "参考資料2 地方公共団体情報システムデータ要件・連携要件標準仕様書【第1.0版】（PDF／247KB）",
+          "url": "https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/dea0e0ed-a5a9-4aa3-9be0-a2b50c647380/5c00ebe6/20221012_meeting_local_governments_common_features_outline_07.pdf"
+        }
+      ],
+      "manualLock": true
     },
     {
       "id": "digital-429-20221012-002",
@@ -216990,6 +217653,40 @@
         {
           "name": "資料2：「政府情報システムにおけるクラウドサービスの適切な利用に係る基本方針」の改定について（PDF／1,166KB）",
           "url": "https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/fb619f03-5fbd-4dd7-8bb1-114c6f63f0ba/32efc6c2/20220930_meeting_executive_02.pdf"
+        }
+      ],
+      "manualLock": true
+    },
+    {
+      "id": "digital-kikan_system_touitsu-20220930-002",
+      "councilId": "digital-kikan_system_touitsu",
+      "title": "地方公共団体の基幹業務等システムの統一・標準化に関する関係府省会議（第2回）",
+      "date": "2022/09/30",
+      "officialUrl": "https://www.digital.go.jp/councils/local-governments/00a070ae-e7a7-432b-b196-fec37c7063fa",
+      "materials": [
+        {
+          "title": "資料",
+          "url": "https://www.digital.go.jp/resources"
+        },
+        {
+          "title": "議事次第（PDF／64KB）",
+          "url": "https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/00a070ae-e7a7-432b-b196-fec37c7063fa/76e0e3cb/20210930_meeting_local_governments_01.pdf"
+        },
+        {
+          "title": "資料1　地方公共団体情報システム標準化基本方針（案）について（PDF／404KB）",
+          "url": "https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/00a070ae-e7a7-432b-b196-fec37c7063fa/5a77cad5/20221007_meeting_local_governments_outline_01.pdf"
+        },
+        {
+          "title": "資料2　地方公共団体情報システム標準化基本方針（案）（PDF／328KB）",
+          "url": "https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/00a070ae-e7a7-432b-b196-fec37c7063fa/90993aa2/20221007_meeting_local_governments_policy_02.pdf"
+        },
+        {
+          "title": "資料3　地方公共団体の基幹業務システムの標準化のために検討すべき点について（PDF／612KB）",
+          "url": "https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/00a070ae-e7a7-432b-b196-fec37c7063fa/c56be37f/20210930_meeting_local_governments_02.pdf"
+        },
+        {
+          "title": "議事概要（PDF／175KB）",
+          "url": "https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/00a070ae-e7a7-432b-b196-fec37c7063fa/9b164ad0/20221007_meeting_local_governments_summary_03.pdf"
         }
       ],
       "manualLock": true
@@ -248710,6 +249407,60 @@
       "officialUrl": "https://www.fsa.go.jp/singi/sustainable_finance/siryou/202100922.html",
       "hasMinutes": true,
       "docCount": 57,
+      "manualLock": true
+    },
+    {
+      "id": "digital-kikan_system_touitsu-20210922-001",
+      "councilId": "digital-kikan_system_touitsu",
+      "title": "地方公共団体の基幹業務等システムの統一・標準化に関する関係府省会議（第1回）",
+      "date": "2021/09/22",
+      "officialUrl": "https://www.digital.go.jp/councils/local-governments/gQ6Pun4A",
+      "materials": [
+        {
+          "title": "資料",
+          "url": "https://www.digital.go.jp/resources"
+        },
+        {
+          "title": "議事次第（PDF／136KB）",
+          "url": "https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/56d6e9f6-ed5c-45d6-b907-7a97b3186927/20210922_meeting_local_governments_01.pdf"
+        },
+        {
+          "title": "資料1　地方公共団体の基幹業務等システムの統一・標準化に関する関係府省会議の開催について（PDF／98KB）",
+          "url": "https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/56d6e9f6-ed5c-45d6-b907-7a97b3186927/20210922_meeting_local_governments_02.pdf"
+        },
+        {
+          "title": "資料2　地方公共団体の基幹業務等システムの統一・標準化に関する関係府省会議幹事会の官職の指定について（PDF／86KB）",
+          "url": "https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/56d6e9f6-ed5c-45d6-b907-7a97b3186927/20210922_meeting_local_governments_03.pdf"
+        },
+        {
+          "title": "資料3　地方公共団体情報システムの標準化に関する法律への対応について（PDF／240KB）",
+          "url": "https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/56d6e9f6-ed5c-45d6-b907-7a97b3186927/20210922_meeting_local_governments_04.pdf"
+        },
+        {
+          "title": "資料4　地方公共団体の基幹業務システムの標準化のために検討すべき点について（PDF／1,711KB）",
+          "url": "https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/56d6e9f6-ed5c-45d6-b907-7a97b3186927/20210922_meeting_local_governments_05.pdf"
+        },
+        {
+          "title": "議事概要（PDF／192KB）",
+          "url": "https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/56d6e9f6-ed5c-45d6-b907-7a97b3186927/20210922_meeting_local_governments_10.pdf"
+        },
+        {
+          "title": "参考資料1　地方公共団体の基幹業務システムの標準仕様における業務フローについて（PDF／498KB）",
+          "url": "https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/56d6e9f6-ed5c-45d6-b907-7a97b3186927/20210922_meeting_local_governments_06.pdf"
+        },
+        {
+          "title": "参考資料2　地方公共団体の基幹業務システムの標準仕様における機能要件の標準の定め方について（PDF／808KB）",
+          "url": "https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/56d6e9f6-ed5c-45d6-b907-7a97b3186927/20210922_meeting_local_governments_07.pdf"
+        },
+        {
+          "title": "参考資料3　地方公共団体の基幹業務システムの標準仕様における帳票要件の標準について（PDF／238KB）",
+          "url": "https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/56d6e9f6-ed5c-45d6-b907-7a97b3186927/20210922_meeting_local_governments_08.pdf"
+        },
+        {
+          "title": "参考資料4　地方公共団体の基幹業務システムの標準仕様におけるデータ要件・連携要件の標準のアウトプット（PDF／697KB）",
+          "url": "https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/56d6e9f6-ed5c-45d6-b907-7a97b3186927/20210922_meeting_local_governments_09.pdf"
+        }
+      ],
       "manualLock": true
     },
     {
@@ -436789,6 +437540,62 @@
       "councilId": "nra-me_suishoutai",
       "subpage_discovery_pattern": "/detail/NRA\\d+",
       "deep_crawl_enabled": true
+    },
+    "digital-kikan_system_touitsu": {
+      "template": "tpl-digital-council-subpage",
+      "deep_crawl_enabled": true,
+      "date_regex": "(?:令和|平成)\\s*\\d+年(?:（\\d+年）)?\\s*\\d+月\\s*\\d+日|\\d{4}年\\s*\\d+月\\s*\\d+日",
+      "subpage_discovery_pattern": "href=[\"\\'](/councils/local-governments/[a-zA-Z0-9_-]{8,})/?[\"\\']",
+      "pdf_selector": "a[href*='.pdf'], a[href$='.pdf']",
+      "manualLock": true
+    },
+    "digital-kyoutsuu_kinou_kadai": {
+      "template": "tpl-digital-council-subpage",
+      "deep_crawl_enabled": true,
+      "date_regex": "(?:令和|平成)\\s*\\d+年(?:（\\d+年）)?\\s*\\d+月\\s*\\d+日|\\d{4}年\\s*\\d+月\\s*\\d+日",
+      "subpage_discovery_pattern": "href=[\"\\'](/councils/local-governments-common-features-issue/[a-zA-Z0-9_-]{8,})/?[\"\\']",
+      "pdf_selector": "a[href*='.pdf'], a[href$='.pdf']",
+      "manualLock": true
+    },
+    "digital-kyoutsuu_kinou_gijutsu": {
+      "template": "tpl-digital-council-subpage",
+      "deep_crawl_enabled": true,
+      "date_regex": "(?:令和|平成)\\s*\\d+年(?:（\\d+年）)?\\s*\\d+月\\s*\\d+日|\\d{4}年\\s*\\d+月\\s*\\d+日",
+      "subpage_discovery_pattern": "href=[\"\\'](/councils/local-governments-common-features/[a-zA-Z0-9_-]{8,})/?[\"\\']",
+      "pdf_selector": "a[href*='.pdf'], a[href$='.pdf']",
+      "manualLock": true
+    },
+    "digital-datalinkage_wt": {
+      "template": "tpl-digital-council-subpage",
+      "deep_crawl_enabled": true,
+      "date_regex": "(?:令和|平成)\\s*\\d+年(?:（\\d+年）)?\\s*\\d+月\\s*\\d+日|\\d{4}年\\s*\\d+月\\s*\\d+日",
+      "subpage_discovery_pattern": "href=[\"\\'](/councils/local-governments-common-features-datalinkage-wt/[a-zA-Z0-9_-]{8,})/?[\"\\']",
+      "pdf_selector": "a[href*='.pdf'], a[href$='.pdf']",
+      "manualLock": true
+    },
+    "digital-shinsei_kanri_wt": {
+      "template": "tpl-digital-council-subpage",
+      "deep_crawl_enabled": true,
+      "date_regex": "(?:令和|平成)\\s*\\d+年(?:（\\d+年）)?\\s*\\d+月\\s*\\d+日|\\d{4}年\\s*\\d+月\\s*\\d+日",
+      "subpage_discovery_pattern": "href=[\"\\'](/councils/local-governments-common-features-application-management-wt/[a-zA-Z0-9_-]{8,})/?[\"\\']",
+      "pdf_selector": "a[href*='.pdf'], a[href$='.pdf']",
+      "manualLock": true
+    },
+    "digital-atena_kanri_wt": {
+      "template": "tpl-digital-council-subpage",
+      "deep_crawl_enabled": true,
+      "date_regex": "(?:令和|平成)\\s*\\d+年(?:（\\d+年）)?\\s*\\d+月\\s*\\d+日|\\d{4}年\\s*\\d+月\\s*\\d+日",
+      "subpage_discovery_pattern": "href=[\"\\'](/councils/local-governments-common-features-identification-management-wt/[a-zA-Z0-9_-]{8,})/?[\"\\']",
+      "pdf_selector": "a[href*='.pdf'], a[href$='.pdf']",
+      "manualLock": true
+    },
+    "digital-shitei_toshi_kadai": {
+      "template": "tpl-digital-council-subpage",
+      "deep_crawl_enabled": true,
+      "date_regex": "(?:令和|平成)\\s*\\d+年(?:（\\d+年）)?\\s*\\d+月\\s*\\d+日|\\d{4}年\\s*\\d+月\\s*\\d+日",
+      "subpage_discovery_pattern": "href=[\"\\'](/councils/standard-specifications-designated-city/[a-zA-Z0-9_-]{8,})/?[\"\\']",
+      "pdf_selector": "a[href*='.pdf'], a[href$='.pdf']",
+      "manualLock": true
     }
   },
   "discoveryKeywords": {
