@@ -8,6 +8,20 @@ from utils import setup_win32_utf8, save_data_json_with_backup, load_rejected_co
 setup_win32_utf8()
 
 
+def _apply_field_update(item_list, target_id, field, new_val, target_name):
+    """COUNCILS / MEETINGS のフィールド更新共通ハンドラ（manualLock チェック付き）"""
+    for item in item_list:
+        if item.get("id") == target_id:
+            if item.get("manualLock", False):
+                print(f"[SKIP] {target_name}.{target_id}.{field}: manualLock が設定されています（上書きスキップ）。解除するには manualLock: false を設定してください。")
+                return True, False
+            item[field] = new_val
+            print(f"Applied {target_name}.{target_id}.{field} -> {new_val}")
+            return True, True
+    print(f"Warning: {target_name} item {target_id} not found")
+    return False, False
+
+
 def apply_report_data(report_data, data_json_path=None):
     """
     辞書オブジェクト形式のレポートデータを受け取り、docs/data.json に反映する。
@@ -58,37 +72,11 @@ def apply_report_data(report_data, data_json_path=None):
                 else:
                     print(f"Warning: Ministry {target_id} not found")
 
-            elif target == "COUNCILS":
-                found = False
-                for c in councils:
-                    if c.get("id") == target_id:
-                        if c.get("manualLock", False):
-                            print(f"[SKIP] COUNCILS.{target_id}.{field}: manualLock が設定されています（上書きスキップ）。解除するには manualLock: false を設定してください。")
-                            found = True
-                            break
-                        c[field] = new_val
-                        applied_count += 1
-                        print(f"Applied COUNCILS.{target_id}.{field} -> {new_val}")
-                        found = True
-                        break
-                if not found:
-                    print(f"Warning: COUNCILS item {target_id} not found")
-
-            elif target == "MEETINGS":
-                found = False
-                for m in meetings:
-                    if m.get("id") == target_id:
-                        if m.get("manualLock", False):
-                            print(f"[SKIP] MEETINGS.{target_id}.{field}: manualLock が設定されています（上書きスキップ）。解除するには manualLock: false を設定してください。")
-                            found = True
-                            break
-                        m[field] = new_val
-                        applied_count += 1
-                        print(f"Applied MEETINGS.{target_id}.{field} -> {new_val}")
-                        found = True
-                        break
-                if not found:
-                    print(f"Warning: MEETINGS item {target_id} not found")
+            elif target in ("COUNCILS", "MEETINGS"):
+                target_list = councils if target == "COUNCILS" else meetings
+                found, updated = _apply_field_update(target_list, target_id, field, new_val, target)
+                if updated:
+                    applied_count += 1
 
         elif action == "remove_council" or action == "reject_council":
             # target_id はループ先頭で取得済み（二重代入を廃止）

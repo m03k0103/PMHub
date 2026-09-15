@@ -110,13 +110,13 @@ class TestCrawlerManualLockProtection(unittest.TestCase):
         temp_data = {
             "councils": [
                 {
-                    "id": "locked-council",
+                    "id": "test-locked_council",
                     "name": "手動保護会議体",
                     "officialUrl": "https://example.com/manual-url",
                     "manualLock": True
                 },
                 {
-                    "id": "unlocked-council",
+                    "id": "test-unlocked_council",
                     "name": "非保護会議体",
                     "officialUrl": "https://example.com/old-url",
                     "manualLock": False
@@ -124,8 +124,8 @@ class TestCrawlerManualLockProtection(unittest.TestCase):
             ],
             "meetings": [
                 {
-                    "id": "locked-meeting",
-                    "councilId": "locked-council",
+                    "id": "test-locked_council-20260101-001",
+                    "councilId": "test-locked_council",
                     "officialUrl": "https://example.com/manual-meeting",
                     "manualLock": True
                 }
@@ -142,21 +142,21 @@ class TestCrawlerManualLockProtection(unittest.TestCase):
                 {
                     "action": "update_field",
                     "target": "COUNCILS",
-                    "targetId": "locked-council",
+                    "targetId": "test-locked_council",
                     "field": "officialUrl",
                     "newValue": "https://example.com/overwritten"
                 },
                 {
                     "action": "update_field",
                     "target": "COUNCILS",
-                    "targetId": "unlocked-council",
+                    "targetId": "test-unlocked_council",
                     "field": "officialUrl",
                     "newValue": "https://example.com/new-url"
                 },
                 {
                     "action": "update_field",
                     "target": "MEETINGS",
-                    "targetId": "locked-meeting",
+                    "targetId": "test-locked_council-20260101-001",
                     "field": "officialUrl",
                     "newValue": "https://example.com/overwritten-meeting"
                 }
@@ -173,16 +173,16 @@ class TestCrawlerManualLockProtection(unittest.TestCase):
             with open(data_path, "r", encoding="utf-8") as res_f:
                 updated = json.load(res_f)
 
-            # locked-council は上書きされていないこと
-            lc = next(c for c in updated["councils"] if c["id"] == "locked-council")
+            # test-locked_council は上書きされていないこと
+            lc = next(c for c in updated["councils"] if c["id"] == "test-locked_council")
             self.assertEqual(lc["officialUrl"], "https://example.com/manual-url", "locked council の URL は保護されるべき")
 
-            # unlocked-council は更新されていること
-            uc = next(c for c in updated["councils"] if c["id"] == "unlocked-council")
+            # test-unlocked_council は更新されていること
+            uc = next(c for c in updated["councils"] if c["id"] == "test-unlocked_council")
             self.assertEqual(uc["officialUrl"], "https://example.com/new-url", "unlocked council は更新されるべき")
 
-            # locked-meeting は上書きされていないこと
-            lm = next(m for m in updated["meetings"] if m["id"] == "locked-meeting")
+            # test-locked_council-20260101-001 は上書きされていないこと
+            lm = next(m for m in updated["meetings"] if m["id"] == "test-locked_council-20260101-001")
             self.assertEqual(lm["officialUrl"], "https://example.com/manual-meeting", "locked meeting の URL は保護されるべき")
 
         finally:

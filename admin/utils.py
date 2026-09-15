@@ -92,6 +92,27 @@ def save_data_json_with_backup(data, target_file=DEFAULT_DATA_JSON_PATH, backup_
         return False
 
 
+# HTML デコード用文字コード別名マッピングおよびフォールバック候補
+_SJIS_ALIASES = frozenset({'shift_jis', 'shift-jis', 'sjis', 'x-sjis'})
+_EUCJP_ALIASES = frozenset({'euc-jp', 'eucjp'})
+_UTF8_ALIASES = frozenset({'utf-8', 'utf8'})
+_DEFAULT_FALLBACK_ENCODINGS = ('utf-8', 'cp932', 'euc-jp')
+
+
+def _resolve_charset_alias(raw_enc):
+    """charset 文字列から Python 標準エンコーディング名を解決する"""
+    if not raw_enc:
+        return None
+    c = raw_enc.strip('\'"').lower()
+    if c in _SJIS_ALIASES:
+        return 'cp932'
+    elif c in _EUCJP_ALIASES:
+        return 'euc-jp'
+    elif c in _UTF8_ALIASES:
+        return 'utf-8'
+    return None
+
+
 def decode_html_bytes(content_bytes, content_type_header=""):
     """
     HTTPヘッダー、metaタグ、各種エンコーディング（UTF-8, CP932/Shift_JIS, EUC-JP）を
@@ -105,13 +126,7 @@ def decode_html_bytes(content_bytes, content_type_header=""):
     if content_type_header:
         m = re.search(r'charset=([\'"]?[\w\-]+[\'"]?)', content_type_header, re.I)
         if m:
-            raw_enc = m.group(1).strip('\'"').lower()
-            if raw_enc in ('shift_jis', 'shift-jis', 'sjis', 'x-sjis'):
-                encoding = 'cp932'
-            elif raw_enc in ('euc-jp', 'eucjp'):
-                encoding = 'euc-jp'
-            elif raw_enc in ('utf-8', 'utf8'):
-                encoding = 'utf-8'
+            encoding = _resolve_charset_alias(m.group(1))
 
     # 2. HTMLの先頭2048バイトから <meta charset="..."> または <meta http-equiv=... charset=...> を抽出
     head_sample = content_bytes[:2048].decode('ascii', errors='ignore')
@@ -119,20 +134,14 @@ def decode_html_bytes(content_bytes, content_type_header=""):
     if not m_meta:
         m_meta = re.search(r'content=[\'"][^"\']*charset=([\w\-]+)', head_sample, re.I)
         
-    if m_meta:
-        meta_enc = m_meta.group(1).strip('\'"').lower()
-        if meta_enc in ('shift_jis', 'shift-jis', 'sjis', 'x-sjis'):
-            encoding = 'cp932'
-        elif meta_enc in ('euc-jp', 'eucjp'):
-            encoding = 'euc-jp'
-        elif meta_enc in ('utf-8', 'utf8'):
-            encoding = 'utf-8'
+    if m_meta and not encoding:
+        encoding = _resolve_charset_alias(m_meta.group(1))
 
     # 3. 試行デコード（検出されたエンコーディング最優先 -> UTF-8 -> CP932 -> EUC-JP）
     encodings_to_try = []
     if encoding:
         encodings_to_try.append(encoding)
-    encodings_to_try.extend(['utf-8', 'cp932', 'euc-jp'])
+    encodings_to_try.extend(_DEFAULT_FALLBACK_ENCODINGS)
     
     # 重複除去
     seen = set()

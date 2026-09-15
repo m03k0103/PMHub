@@ -42,14 +42,10 @@ document.addEventListener('DOMContentLoaded', async () => {
 
   const DEFAULT_CATEGORY_LABELS = {
     LIAISON: '関係閣僚会議',
-    MINISTERIAL_MEETING: '関係閣僚会議',
-    MINISTERIAL: '関係閣僚会議',
     COUNCIL: '審議会',
     ADVISORY: '諮問会議',
     HQ: '推進本部',
-    HEADQUARTERS: '推進本部',
     COMMITTEE: '委員会',
-    COMMISSION: '委員会',
     SUBCOMMITTEE: '分科会',
     SECTION: '部会',
     PANEL: '有識者会議',
@@ -57,6 +53,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     STUDY_GROUP: '検討会',
     ROUNDTABLE: '懇談会',
     WORKING_GROUP: '作業部会',
+    WG: '作業部会',
     EXPERT_COMMITTEE: '専門調査会',
     SPECIAL_COMMITTEE: '特別委員会',
     TASKFORCE: 'タスクフォース'

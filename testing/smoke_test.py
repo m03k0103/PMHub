@@ -19,11 +19,34 @@ import urllib.error
 import subprocess
 import argparse
 import shutil
+from html.parser import HTMLParser
 
 PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, os.path.join(PROJECT_ROOT, "admin"))
 from utils import setup_win32_utf8, get_browser_headers
 setup_win32_utf8()
+
+
+class DivBalanceChecker(HTMLParser):
+    """HTML 内の <div> タグの対応関係とネストバランスを検証（コメント・スクリプト内文字列を安全に除外）"""
+    def __init__(self):
+        super().__init__()
+        self.open_count = 0
+        self.close_count = 0
+        self.depth = 0
+        self.underflow = False
+
+    def handle_starttag(self, tag, attrs):
+        if tag.lower() == 'div':
+            self.open_count += 1
+            self.depth += 1
+
+    def handle_endtag(self, tag):
+        if tag.lower() == 'div':
+            self.close_count += 1
+            self.depth -= 1
+            if self.depth < 0:
+                self.underflow = True
 
 
 def get_node_command():
@@ -142,12 +165,17 @@ def check_syntax_errors():
                 print(f"  [FAIL] {rel_path} : {msg}")
                 errors_found += 1
         elif file_path.endswith(".html"):
-            open_divs = code.count('<div')
-            close_divs = code.count('</div>')
-            if open_divs == close_divs:
-                print(f"  [PASS] {rel_path} : HTML Structure & Div tag balance OK (div count: {open_divs})")
-            else:
-                print(f"  [FAIL] {rel_path} : HTML <div> tag mismatch (open: {open_divs}, close: {close_divs})")
+            checker = DivBalanceChecker()
+            try:
+                checker.feed(code)
+                if checker.open_count == checker.close_count and not checker.underflow:
+                    print(f"  [PASS] {rel_path} : HTML Structure & Div tag balance OK (div count: {checker.open_count})")
+                else:
+                    err_detail = "premature </div> tag" if checker.underflow else f"open: {checker.open_count}, close: {checker.close_count}"
+                    print(f"  [FAIL] {rel_path} : HTML <div> tag mismatch ({err_detail})")
+                    errors_found += 1
+            except Exception as e:
+                print(f"  [FAIL] {rel_path} : HTML parse error: {e}")
                 errors_found += 1
 
             # HTML内のインライン <script> タグの構文チェック
