@@ -16,7 +16,10 @@ import re
 import time
 from datetime import datetime, timedelta
 from bs4 import BeautifulSoup
-from utils import setup_win32_utf8, get_browser_headers, save_data_json_with_backup, decode_html_bytes, get_rejected_identifiers
+from utils import (
+    setup_win32_utf8, get_browser_headers, save_data_json_with_backup,
+    decode_html_bytes, get_rejected_identifiers, normalize_japanese_numbers, load_data_json
+)
 setup_win32_utf8()
 
 # LLM (Gemini API) の遅延初期化キャッシュ
@@ -55,6 +58,16 @@ INVALID_DATE_PREFIXES = ("1312",)
 
 # ジェネリックタイトル・ポータル見出しキーワード（会議名として不適切な汎用文字列）
 GENERIC_TITLE_KEYWORDS = ['会議資料詳細', '資料詳細', '会議詳細', 'トップページ', '目次', 'ホーム', '配付資料一覧']
+
+# 配付資料として不適切な汎用ナビゲーション・UIテキスト（事前除外用定数）
+EXCLUDE_MATERIAL_NAMES = frozenset({
+    '本文へ移動します', 'フッターへ移動します', '閉じる', 'メニューを閉じる',
+    'メニューを開く', 'このページの先頭へ', '前のページへ戻る', '前のページへ',
+    '先頭へ戻る', 'ページトップへ', 'ページ先頭へ', 'PAGE TOP', 'Page Top',
+    'pagetop', 'トップへ', 'トップ', 'HOME', 'Home', '戻る', '印刷', '印刷する',
+    '別ウィンドウで開く', '新しいウィンドウで開く', '（別ウィンドウで開く）',
+    'JavaScriptが無効です', 'JavaScriptを有効にしてください'
+})
 
 # 省庁コードと公式ドメインのマッピング（他省庁URLの誤混入ガード用）
 MINISTRY_DOMAINS = {
@@ -96,15 +109,9 @@ def init_crawler_logfile():
         return None, None, "", ""
 
 def load_crawler_config():
-    if os.path.exists(DATA_JSON_FILE):
-        try:
-            with open(DATA_JSON_FILE, "r", encoding="utf-8") as f:
-                data = json.load(f)
-                config = data.get("crawlerConfig", {})
-                return config.get("llm_mode", False)  # デフォルトは高速・安全な Heuristic モード
-        except Exception:
-            pass
-    return False
+    data = load_data_json(DATA_JSON_FILE)
+    config = data.get("crawlerConfig", {})
+    return config.get("llm_mode", False)  # デフォルトは高速・安全な Heuristic モード
 
 def load_councils_from_data_json():
     """docs/data.json から登録済みの全会議体 (COUNCILS) を読み込む（却下済み会議体・非アクティブ会議体はクロール対象外）"""
@@ -114,37 +121,32 @@ def load_councils_from_data_json():
     rejected_ids, _, _ = get_rejected_identifiers()
     print(f"[INFO] 却下済み会議体 {len(rejected_ids)} 件をクロール対象から除外します。")
 
-    if os.path.exists(DATA_JSON_FILE):
-        try:
-            with open(DATA_JSON_FILE, "r", encoding="utf-8") as f:
-                data = json.load(f)
-                raw_councils = data.get("councils", [])
-                scraping_rules = data.get("scrapingRules", {})
-                inactive_count = 0
-                for item in raw_councils:
-                    cid = item.get("id")
-                    if cid in rejected_ids:
-                        continue
-                    # 会議体マスターまたはスクレイピングルールで非アクティブ指定されている場合はスキップ
-                    rule = scraping_rules.get(cid, {}) if isinstance(scraping_rules, dict) else {}
-                    if (
-                        item.get("is_active") is False
-                        or item.get("isActive") is False
-                        or (isinstance(rule, dict) and (rule.get("is_active") is False or rule.get("isActive") is False))
-                    ):
-                        inactive_count += 1
-                        continue
-                    if item.get("officialUrl"):
-                        councils.append({
-                            "id": cid,
-                            "ministry": item.get("ministry"),
-                            "name": item.get("name"),
-                            "url": item.get("officialUrl")
-                        })
-                if inactive_count > 0:
-                    print(f"[INFO] 終了済み/非アクティブ会議体 {inactive_count} 件をクロール対象から除外します。")
-        except Exception as e:
-            print(f"[WARN] data.json 読み込み失敗: {e}", file=sys.stderr)
+    data = load_data_json(DATA_JSON_FILE)
+    raw_councils = data.get("councils", [])
+    scraping_rules = data.get("scrapingRules", {})
+    inactive_count = 0
+    for item in raw_councils:
+        cid = item.get("id")
+        if cid in rejected_ids:
+            continue
+        # 会議体マスターまたはスクレイピングルールで非アクティブ指定されている場合はスキップ
+        rule = scraping_rules.get(cid, {}) if isinstance(scraping_rules, dict) else {}
+        if (
+            item.get("is_active") is False
+            or item.get("isActive") is False
+            or (isinstance(rule, dict) and (rule.get("is_active") is False or rule.get("isActive") is False))
+        ):
+            inactive_count += 1
+            continue
+        if item.get("officialUrl"):
+            councils.append({
+                "id": cid,
+                "ministry": item.get("ministry"),
+                "name": item.get("name"),
+                "url": item.get("officialUrl")
+            })
+    if inactive_count > 0:
+        print(f"[INFO] 終了済み/非アクティブ会議体 {inactive_count} 件をクロール対象から除外します。")
     return councils
 
 def interleave_by_ministry(councils):
@@ -258,15 +260,6 @@ def parse_materials_from_html(html, base_url, pdf_selector=None):
         if el:
             el.extract()
 
-    EXCLUDE_MATERIAL_NAMES = {
-        '本文へ移動します', 'フッターへ移動します', '閉じる', 'メニューを閉じる',
-        'メニューを開く', 'このページの先頭へ', '前のページへ戻る', '前のページへ',
-        '先頭へ戻る', 'ページトップへ', 'ページ先頭へ', 'PAGE TOP', 'Page Top',
-        'pagetop', 'トップへ', 'トップ', 'HOME', 'Home', '戻る', '印刷', '印刷する',
-        '別ウィンドウで開く', '新しいウィンドウで開く', '（別ウィンドウで開く）',
-        'JavaScriptが無効です', 'JavaScriptを有効にしてください'
-    }
-
     seen_urls = set()
 
     # 3. リンク抽出 (PDF文書およびHTML議事録・要旨)
@@ -332,11 +325,6 @@ def parse_materials_from_html(html, base_url, pdf_selector=None):
         })
         
     return materials
-
-def normalize_japanese_numbers(text):
-    """全角英数字・漢数字を半角数値に正規化"""
-    tr_map = str.maketrans('０１２３４５６７８９', '0123456789')
-    return text.translate(tr_map)
 
 def _crawl_subpages(target_url, html, rule, quirk_note, pdf_pattern):
     """サブページの深掘りクロールロジック"""
@@ -498,7 +486,7 @@ def extract_clean_dates_from_html(html_str, date_regex_pattern=r'(?<![\d\w\/\-])
     """更新日・掲載日などのノイズや不正パターンを除去して会議開催日を抽出"""
     cleaned_html = clean_html_for_dates(html_str)
     # 全角数字を半角に正規化
-    cleaned_html = cleaned_html.translate(str.maketrans('０１２３４５６７８９', '0123456789'))
+    cleaned_html = normalize_japanese_numbers(cleaned_html)
     # 年号併記の括弧を除去 (例: 2026年（令和8年）3月24日 -> 2026年3月24日)
     cleaned_html = re.sub(r'(\d{4}年)[（\(][^）\)\n]+[）\)]\s*(\d{1,2}月\d{1,2}日)', r'\1\2', cleaned_html)
     cleaned_html = re.sub(r'((?:令和|平成)(?:\d+|元)年)[（\(][^）\)\n]+[）\)]\s*(\d{1,2}月\d{1,2}日)', r'\1\2', cleaned_html)
@@ -1331,11 +1319,8 @@ def run_meeting_crawler(progress_callback=None, stop_event=None):
     if log_filepath:
         emit(f"ログファイル出力先: {log_filepath}\n")
 
-    # data.json をまるごと読み込み（ステータス更新用）
-    data = {}
-    if os.path.exists(DATA_JSON_FILE):
-        with open(DATA_JSON_FILE, "r", encoding="utf-8") as f:
-            data = json.load(f)
+    # data.json を読み込み（ステータス更新用）
+    data = load_data_json(DATA_JSON_FILE)
 
     # クロール開始時に lastCrawlTime を即時更新・バックアップ保存
     data["lastCrawlTime"] = now_str

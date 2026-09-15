@@ -76,10 +76,10 @@ document.addEventListener('DOMContentLoaded', async () => {
     dateRangeFilter: 'PAST_YEAR',
     watchlistOnly: false,
     sortBy: 'NEWEST',
-    watchedCouncilIds: new Set(JSON.parse(localStorage.getItem('pmhub_watched')) || ['cao-ai_strategy', 'digital-suishin_kanjikai', 'cao-kisei_kaikaku', 'meti-sangyo_kozo', 'cas-zensedai_hosyo', 'mof-zaiseiseido_bunkakai']),
-    alertKeywords: JSON.parse(localStorage.getItem('pmhub_keywords')) || (typeof INITIAL_ALERT_KEYWORDS !== 'undefined' ? [...INITIAL_ALERT_KEYWORDS] : ['AI', 'デジタル', '規制改革', '社会保障', 'GX', '経済安全保障']),
-    theme: localStorage.getItem('pmhub_theme') || 'light',
-    enableAiSummary: localStorage.getItem('pmhub_enable_ai_summary') === 'true', // Default: false (Token cost control)
+    watchedCouncilIds: new Set(getStoredJson('pmhub_watched', ['cao-ai_strategy', 'digital-suishin_kanjikai', 'cao-kisei_kaikaku', 'meti-sangyo_kozo', 'cas-zensedai_hosyo', 'mof-zaiseiseido_bunkakai'])),
+    alertKeywords: getStoredJson('pmhub_keywords', (typeof INITIAL_ALERT_KEYWORDS !== 'undefined' ? [...INITIAL_ALERT_KEYWORDS] : ['AI', 'デジタル', '規制改革', '社会保障', 'GX', '経済安全保障'])),
+    theme: getStoredItem('pmhub_theme', 'light'),
+    enableAiSummary: getStoredItem('pmhub_enable_ai_summary', 'false') === 'true', // Default: false (Token cost control)
     activeModalMeeting: null,
     chartsInitialized: false
   };
@@ -234,14 +234,14 @@ document.addEventListener('DOMContentLoaded', async () => {
     state.theme = state.theme === 'dark' ? 'light' : 'dark';
     document.documentElement.setAttribute('data-theme', state.theme);
     el.body.setAttribute('data-theme', state.theme);
-    localStorage.setItem('pmhub_theme', state.theme);
+    setStoredItem('pmhub_theme', state.theme);
     showToast(`テーマを${state.theme === 'dark' ? 'ダーク' : 'ライト'}モードに切り替えました`);
   }
 
   // --- AI SUMMARY FEATURE FLAG TOGGLE ---
   function toggleAiSummaryFeature() {
     state.enableAiSummary = !state.enableAiSummary;
-    localStorage.setItem('pmhub_enable_ai_summary', state.enableAiSummary);
+    setStoredItem('pmhub_enable_ai_summary', String(state.enableAiSummary));
     updateAiSummaryButtonUI();
     renderMainView();
     showToast(`AI要約表示を ${state.enableAiSummary ? 'ON (有効)' : 'OFF (無効 / Tokenコスト制御)'} に切り替えました`);
@@ -542,8 +542,7 @@ document.addEventListener('DOMContentLoaded', async () => {
       // Free word search
       if (state.searchQuery) {
         const queries = state.searchQuery.toLowerCase().split(/[\s　]+/).filter(k => k);
-        const c = COUNCILS.find(c => c.id === meeting.councilId);
-        const cName = c ? c.name : '';
+        const cName = councilsByIdMap.get(meeting.councilId) || '';
         
         const match = queries.every(q => {
           const titleMatch = meeting.title.toLowerCase().includes(q);
@@ -1093,7 +1092,7 @@ document.addEventListener('DOMContentLoaded', async () => {
       showToast(`「${council?.name}」をウォッチリストに追加しました ⭐`);
     }
 
-    localStorage.setItem('pmhub_watched', JSON.stringify(Array.from(state.watchedCouncilIds)));
+    setStoredJson('pmhub_watched', Array.from(state.watchedCouncilIds));
     updateHeroStats();
     renderMainView();
     renderWatchlist();
@@ -1539,6 +1538,56 @@ document.addEventListener('DOMContentLoaded', async () => {
 });
 }
 
+// --- STORAGE SAFE HELPERS ---
+function getStoredJson(key, defaultValue) {
+  try {
+    if (typeof localStorage === 'undefined') return defaultValue;
+    const val = localStorage.getItem(key);
+    if (!val) return defaultValue;
+    return JSON.parse(val);
+  } catch (e) {
+    if (typeof console !== 'undefined' && console.warn) {
+      console.warn(`Failed to read ${key} from localStorage:`, e);
+    }
+    return defaultValue;
+  }
+}
+
+function setStoredJson(key, value) {
+  try {
+    if (typeof localStorage === 'undefined') return;
+    localStorage.setItem(key, JSON.stringify(value));
+  } catch (e) {
+    if (typeof console !== 'undefined' && console.warn) {
+      console.warn(`Failed to write ${key} to localStorage:`, e);
+    }
+  }
+}
+
+function getStoredItem(key, defaultValue) {
+  try {
+    if (typeof localStorage === 'undefined') return defaultValue;
+    const val = localStorage.getItem(key);
+    return val !== null ? val : defaultValue;
+  } catch (e) {
+    if (typeof console !== 'undefined' && console.warn) {
+      console.warn(`Failed to read ${key} from localStorage:`, e);
+    }
+    return defaultValue;
+  }
+}
+
+function setStoredItem(key, value) {
+  try {
+    if (typeof localStorage === 'undefined') return;
+    localStorage.setItem(key, value);
+  } catch (e) {
+    if (typeof console !== 'undefined' && console.warn) {
+      console.warn(`Failed to write ${key} to localStorage:`, e);
+    }
+  }
+}
+
 // Helper function
 function getFiscalYear(dateInput) {
   if (!dateInput) return null;
@@ -1605,6 +1654,8 @@ if (typeof module !== 'undefined' && module.exports) {
     formatDate,
     escapeHtml,
     sanitizeUrl,
-    capitalize
+    capitalize,
+    getStoredJson,
+    setStoredJson
   };
 }

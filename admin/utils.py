@@ -63,6 +63,34 @@ def get_browser_headers():
     }
 
 
+_ZEN_TO_HAN_DIGITS_TABLE = str.maketrans('０１２３４５６７８９', '0123456789')
+
+
+def normalize_japanese_numbers(text):
+    """
+    全角数字を半角数字に正規化する。
+    None や空文字の場合は空文字列を返す。
+    """
+    if not text:
+        return ""
+    return str(text).translate(_ZEN_TO_HAN_DIGITS_TABLE)
+
+
+def load_data_json(target_file=DEFAULT_DATA_JSON_PATH):
+    """
+    docs/data.json を安全に読み込み、辞書オブジェクトを返す。
+    ファイルが存在しないかエラーの場合は空辞書 {} を返す。
+    """
+    if os.path.exists(target_file):
+        try:
+            with open(target_file, "r", encoding="utf-8") as f:
+                data = json.load(f)
+                return data if isinstance(data, dict) else {}
+        except Exception as e:
+            print(f"[WARN] Failed to load {target_file}: {e}", file=sys.stderr)
+    return {}
+
+
 def save_data_json_with_backup(data, target_file=DEFAULT_DATA_JSON_PATH, backup_dir=DEFAULT_BACKUP_DIR, max_backups=30):
     """
     docs/data.json を更新する前に、タイムスタンプ付きで admin/backups/ に自動バックアップを作成し、

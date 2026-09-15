@@ -11,17 +11,12 @@ import sys
 from collections import defaultdict
 
 sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "admin"))
-from utils import setup_win32_utf8
+from utils import setup_win32_utf8, normalize_japanese_numbers
 setup_win32_utf8()
 
 
-def to_halfwidth(s):
-    if not s:
-        return ""
-    return str(s).translate(str.maketrans('０１２３４５６７８９', '0123456789'))
-
 def extract_round_and_type(title, council_name=""):
-    t_norm = to_halfwidth(title)
+    t_norm = normalize_japanese_numbers(title)
     
     sub_type = ""
     fy_m = re.search(r'(令和\d+年度[秋|春|前半|後半]?|平成\d+年度[秋|春|前半|後半]?|令和\d+年|平成\d+年|第\d+期)', t_norm)

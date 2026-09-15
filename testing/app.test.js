@@ -1,6 +1,6 @@
 const test = require('node:test');
 const assert = require('node:assert');
-const { escapeHtml, sanitizeUrl, formatDate, getFiscalYear } = require('../docs/app.js');
+const { escapeHtml, sanitizeUrl, formatDate, getFiscalYear, getStoredJson, setStoredJson } = require('../docs/app.js');
 
 test('sanitizeUrl utility function (Security / XSS prevention)', async (t) => {
   await t.test('allows safe http and https URLs', () => {
@@ -90,5 +90,32 @@ test('getFiscalYear utility function (Japanese Fiscal Year: Apr - Mar)', async (
     assert.strictEqual(getFiscalYear(undefined), null);
     assert.strictEqual(getFiscalYear('invalid-date'), null);
   });
+});
+
+test('getStoredJson & setStoredJson storage helper functions', async (t) => {
+  const originalLocalStorage = global.localStorage;
+  const mockStore = {};
+  global.localStorage = {
+    getItem: (k) => mockStore[k] !== undefined ? mockStore[k] : null,
+    setItem: (k, v) => { mockStore[k] = String(v); }
+  };
+
+  try {
+    await t.test('returns parsed JSON when valid JSON is stored', () => {
+      setStoredJson('test_key', ['a', 'b']);
+      assert.deepStrictEqual(getStoredJson('test_key', []), ['a', 'b']);
+    });
+
+    await t.test('returns default value when key does not exist', () => {
+      assert.deepStrictEqual(getStoredJson('nonexistent_key', { fallback: true }), { fallback: true });
+    });
+
+    await t.test('returns default value safely when stored string is corrupted/invalid JSON', () => {
+      global.localStorage.setItem('corrupt_key', '{invalid: json;');
+      assert.deepStrictEqual(getStoredJson('corrupt_key', ['default']), ['default']);
+    });
+  } finally {
+    global.localStorage = originalLocalStorage;
+  }
 });
 

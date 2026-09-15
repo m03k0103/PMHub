@@ -30,12 +30,12 @@ class TestCrawlerManualLockProtection(unittest.TestCase):
         """manualLock: true の会議は deduplicate_data_materials による資料削除・移動から保護されること"""
         mock_data = {
             "councils": [
-                {"id": "test-council-1", "name": "テスト会議体", "url": "https://example.com/portal"}
+                {"id": "test-council_1", "name": "テスト会議体", "url": "https://example.com/portal"}
             ],
             "meetings": [
                 {
-                    "id": "test-council-1-20260101-001",
-                    "councilId": "test-council-1",
+                    "id": "test-council_1-20260101-001",
+                    "councilId": "test-council_1",
                     "title": "第1回 テスト会議",
                     "date": "2026/01/01",
                     "manualLock": True,  # 手動保護
@@ -45,8 +45,8 @@ class TestCrawlerManualLockProtection(unittest.TestCase):
                     ]
                 },
                 {
-                    "id": "test-council-1-20260201-002",
-                    "councilId": "test-council-1",
+                    "id": "test-council_1-20260201-002",
+                    "councilId": "test-council_1",
                     "title": "第2回 テスト会議",
                     "date": "2026/02/01",
                     "manualLock": False,
@@ -60,7 +60,7 @@ class TestCrawlerManualLockProtection(unittest.TestCase):
         # クローラーの重複排除を実行
         deduplicate_data_materials(mock_data)
 
-        # test-council-1-20260101-001 (locked) の資料がすべて残っていることを検証
+        # test-council_1-20260101-001 (locked) の資料がすべて残っていることを検証
         m1 = mock_data["meetings"][0]
         self.assertEqual(len(m1["materials"]), 2, "manualLock: true の会議資料は削除されてはいけない")
         self.assertEqual(m1["materials"][0]["url"], "https://example.com/shared.pdf")
@@ -70,12 +70,12 @@ class TestCrawlerManualLockProtection(unittest.TestCase):
         """material 単体に manualLock: true が設定されている場合も重複排除から除外されること"""
         mock_data = {
             "councils": [
-                {"id": "test-council-2", "name": "テスト会議体2", "url": "https://example.com/portal"}
+                {"id": "test-council_2", "name": "テスト会議体2", "url": "https://example.com/portal"}
             ],
             "meetings": [
                 {
-                    "id": "test-council-2-20260101-001",
-                    "councilId": "test-council-2",
+                    "id": "test-council_2-20260101-001",
+                    "councilId": "test-council_2",
                     "title": "第1回 テスト会議",
                     "date": "2026/01/01",
                     "manualLock": False,
@@ -84,8 +84,8 @@ class TestCrawlerManualLockProtection(unittest.TestCase):
                     ]
                 },
                 {
-                    "id": "test-council-2-20260201-002",
-                    "councilId": "test-council-2",
+                    "id": "test-council_2-20260201-002",
+                    "councilId": "test-council_2",
                     "title": "第2回 テスト会議",
                     "date": "2026/02/01",
                     "manualLock": False,
@@ -98,7 +98,7 @@ class TestCrawlerManualLockProtection(unittest.TestCase):
 
         deduplicate_data_materials(mock_data)
 
-        # test-council-2-20260101-001 の手動保護資料が残っていること
+        # test-council_2-20260101-001 の手動保護資料が残っていること
         m2_1 = mock_data["meetings"][0]
         self.assertEqual(len(m2_1["materials"]), 1)
         self.assertEqual(m2_1["materials"][0]["name"], "手動保護資料")
