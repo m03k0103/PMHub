@@ -84,22 +84,47 @@ python -m http.server 8000
 
 ## テスト
 
-### Node.js テスト
+本プロジェクトでは以下の自動テストスイートを提供しており、データ更新やコード修正時の品質を多層的に保証します。
 
-```bash
-node --test testing/app.test.js
-```
-
-### Python スモークテスト
+### 1) 統合スモークテスト（推奨・全8大テスト一括実行）
 
 ```bash
 python testing/smoke_test.py
 ```
+- JS/HTML/Python/JSON の構文エラー検出・DOM 整合性検査（`HTMLParser` による div ネスト検査）
+- 変更 URL 中心の疎通確認
+- JS ユーティリティ単体テスト連携
+- 会議品質・回次整合性・重複排除検証
+- 会議体ID同期・除外リスト・完全整合性検証
+- UI 主要コンテナ・管理ダッシュボード全5タブ構造検証
+- クローラー手動保護（`manualLock`）回帰検証
+- JavaScript 実行時クラッシュ（TDZ・全画面描画）検証
 
-`smoke_test.py` では主に以下を確認します。
-- JS/HTML/Python/JSON の構文エラー検出・DOM整合性検査
-- 変更URL中心の疎通確認
-- 会議体ID同期・データ整合性・全5タブコンテナ検査
+### 2) 個別テストスイート
+
+- **JS ユーティリティ単体テスト**:
+  ```bash
+  node --test testing/app.test.js
+  ```
+  XSS 防止・URLサニタイズ、日付・年度計算関数の単体テスト。
+
+- **会議品質・回次整合性・重複排除検証**:
+  ```bash
+  python testing/test_no_duplicate_meetings.py
+  ```
+  全会議データの重複ゼロ・回次整合性・命名規則の厳格検証。
+
+- **クローラー手動データ保護回帰テスト**:
+  ```bash
+  python testing/test_crawler_regression.py
+  ```
+  `manualLock: true` データの上書き保護、重複排除の非破壊性、新規開催回の自動昇格を検証。
+
+- **JavaScript 実行時クラッシュ・全画面描画検証**:
+  ```bash
+  node testing/test_js_runtime.js
+  ```
+  公開ポータルおよび管理コンソールの全5タブ描画時におけるクラッシュ・TDZを検証。
 
 ## データ更新フロー（運用）
 
