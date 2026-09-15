@@ -7,7 +7,7 @@ import shutil
 import threading
 import urllib.parse
 from datetime import datetime
-from apply_report import apply_report
+from apply_report import apply_report, apply_report_data
 from discover_councils import run_discovery
 from crawler import run_meeting_crawler
 from utils import setup_win32_utf8, save_data_json_with_backup, load_rejected_councils, save_rejected_councils, get_rejected_identifiers, DEFAULT_REJECTED_COUNCILS_PATH
@@ -126,33 +126,40 @@ class CustomHandler(SimpleHTTPRequestHandler):
         self.send_response(200)
         self.end_headers()
 
+    def send_raw_json(self, raw_json_str, status=200):
+        self.send_response(status)
+        self.send_header('Content-Type', 'application/json; charset=utf-8')
+        self.end_headers()
+        self.wfile.write(raw_json_str.encode('utf-8') if isinstance(raw_json_str, str) else raw_json_str)
+
+    def send_json(self, payload, status=200):
+        self.send_raw_json(json.dumps(payload, ensure_ascii=False), status=status)
+
+    def read_json_body(self):
+        content_length = int(self.headers.get('Content-Length', 0))
+        if content_length <= 0:
+            return {}
+        post_data = self.rfile.read(content_length)
+        return json.loads(post_data.decode('utf-8'))
+
     def do_GET(self):
         parsed_url = urllib.parse.urlparse(self.path)
         path = parsed_url.path
 
         if path in ("/docs/data.json", "/data.json"):
-            self.send_response(200)
-            self.send_header('Content-Type', 'application/json; charset=utf-8')
-            self.end_headers()
             if os.path.exists(DATA_JSON_FILE):
                 with open(DATA_JSON_FILE, "r", encoding="utf-8") as f:
-                    self.wfile.write(f.read().encode('utf-8'))
+                    self.send_raw_json(f.read())
             else:
-                self.wfile.write(json.dumps({}).encode('utf-8'))
+                self.send_json({})
         elif path == "/api/discovery-keywords":
-            self.send_response(200)
-            self.send_header('Content-Type', 'application/json; charset=utf-8')
-            self.end_headers()
             if os.path.exists(DATA_JSON_FILE):
                 with open(DATA_JSON_FILE, "r", encoding="utf-8") as f:
                     data = json.load(f)
-                    self.wfile.write(json.dumps(data.get("discoveryKeywords", {})).encode('utf-8'))
+                self.send_json(data.get("discoveryKeywords", {}))
             else:
-                self.wfile.write(json.dumps({}).encode('utf-8'))
+                self.send_json({})
         elif path == "/api/discovered-councils":
-            self.send_response(200)
-            self.send_header('Content-Type', 'application/json; charset=utf-8')
-            self.end_headers()
             if os.path.exists(DATA_JSON_FILE):
                 with open(DATA_JSON_FILE, "r", encoding="utf-8") as f:
                     data = json.load(f)
@@ -167,39 +174,27 @@ class CustomHandler(SimpleHTTPRequestHandler):
                     and c.get("name", "").strip() not in rej_names
                     and (not c.get("officialUrl") or c.get("officialUrl").strip().rstrip("/") not in rej_urls)
                 ]
-                self.wfile.write(json.dumps({"councils": filtered}).encode('utf-8'))
+                self.send_json({"councils": filtered})
             else:
-                self.wfile.write(json.dumps({"councils": []}).encode('utf-8'))
+                self.send_json({"councils": []})
         elif path == "/api/verification-report":
-            self.send_response(200)
-            self.send_header('Content-Type', 'application/json; charset=utf-8')
-            self.end_headers()
             rep_file = os.path.join(BASE_DIR, "ai_verification_report.json")
             if os.path.exists(rep_file):
                 with open(rep_file, "r", encoding="utf-8") as f:
-                    self.wfile.write(f.read().encode('utf-8'))
+                    self.send_raw_json(f.read())
             else:
-                self.wfile.write(json.dumps({}).encode('utf-8'))
+                self.send_json({})
         elif path == "/api/rejected-councils":
-            self.send_response(200)
-            self.send_header('Content-Type', 'application/json; charset=utf-8')
-            self.end_headers()
             rejected_list = load_rejected_councils()
-            self.wfile.write(json.dumps(rejected_list).encode('utf-8'))
+            self.send_json(rejected_list)
         elif path == "/api/get-crawler-config":
-            self.send_response(200)
-            self.send_header('Content-Type', 'application/json; charset=utf-8')
-            self.end_headers()
             if os.path.exists(DATA_JSON_FILE):
                 with open(DATA_JSON_FILE, "r", encoding="utf-8") as f:
                     data = json.load(f)
-                    self.wfile.write(json.dumps(data.get("crawlerConfig", {"llm_mode": True})).encode('utf-8'))
+                self.send_json(data.get("crawlerConfig", {"llm_mode": True}))
             else:
-                self.wfile.write(json.dumps({"llm_mode": True}).encode('utf-8'))
+                self.send_json({"llm_mode": True})
         elif path == "/api/discovery-status":
-            self.send_response(200)
-            self.send_header('Content-Type', 'application/json; charset=utf-8')
-            self.end_headers()
             query = parsed_url.query
             params = urllib.parse.parse_qs(query)
             since_id = int(params.get("since_id", params.get("since", [0]))[0])
@@ -222,11 +217,8 @@ class CustomHandler(SimpleHTTPRequestHandler):
                 "result": discovery_state["result"],
                 "error": discovery_state["error"]
             }
-            self.wfile.write(json.dumps(res_payload, ensure_ascii=False).encode('utf-8'))
+            self.send_json(res_payload)
         elif path == "/api/crawler-status":
-            self.send_response(200)
-            self.send_header('Content-Type', 'application/json; charset=utf-8')
-            self.end_headers()
             query = parsed_url.query
             params = urllib.parse.parse_qs(query)
             since_id = int(params.get("since_id", params.get("since", [0]))[0])
@@ -250,11 +242,8 @@ class CustomHandler(SimpleHTTPRequestHandler):
                 "lastCrawlTime": crawler_state["lastCrawlTime"],
                 "log_file": crawler_state.get("log_file", "")
             }
-            self.wfile.write(json.dumps(res_payload, ensure_ascii=False).encode('utf-8'))
+            self.send_json(res_payload)
         elif path == "/api/new-meetings":
-            self.send_response(200)
-            self.send_header('Content-Type', 'application/json; charset=utf-8')
-            self.end_headers()
             new_list = []
             if os.path.exists(DATA_JSON_FILE):
                 try:
@@ -271,11 +260,8 @@ class CustomHandler(SimpleHTTPRequestHandler):
                             })
                 except Exception as e:
                     print(f"[WARN] Failed to read new meetings: {e}", file=sys.stderr)
-            self.wfile.write(json.dumps({"count": len(new_list), "meetings": new_list}, ensure_ascii=False).encode('utf-8'))
+            self.send_json({"count": len(new_list), "meetings": new_list})
         elif path == "/api/backups":
-            self.send_response(200)
-            self.send_header('Content-Type', 'application/json; charset=utf-8')
-            self.end_headers()
             backups = []
             if os.path.exists(BACKUP_DIR):
                 for f in sorted(os.listdir(BACKUP_DIR), reverse=True):
@@ -288,7 +274,7 @@ class CustomHandler(SimpleHTTPRequestHandler):
                             "sizeBytes": sz,
                             "createdAt": datetime.fromtimestamp(mtime).strftime("%Y/%m/%d %H:%M:%S")
                         })
-            self.wfile.write(json.dumps({"backups": backups}, ensure_ascii=False).encode('utf-8'))
+            self.send_json({"backups": backups})
         else:
             super().do_GET()
 
@@ -298,99 +284,57 @@ class CustomHandler(SimpleHTTPRequestHandler):
         path = parsed_url.path
 
         if path in ("/api/save-ministry-updates", "/api/save-verification-report"):
-            content_length = int(self.headers.get('Content-Length', 0))
-            post_data = self.rfile.read(content_length)
             try:
-                data = json.loads(post_data.decode('utf-8'))
+                data = self.read_json_body()
                 report = {
                     "_format": "pmhub-verification-report-v2",
                     "exportedAt": data.get("exportedAt"),
                     "targetFile": "docs/data.json",
                     "corrections": data.get("corrections", [])
                 }
-                temp_json = os.path.join(os.path.dirname(__file__), "_temp_update.json")
-                with open(temp_json, "w", encoding="utf-8") as f:
-                    json.dump(report, f, ensure_ascii=False, indent=2)
-
-                success = apply_report(temp_json)
-                if os.path.exists(temp_json):
-                    os.remove(temp_json)
-
+                success = apply_report_data(report)
                 if success:
-                    self.send_response(200)
-                    self.send_header('Content-Type', 'application/json; charset=utf-8')
-                    self.end_headers()
-                    self.wfile.write(json.dumps({"status": "ok", "message": "docs/data.json successfully updated!"}).encode('utf-8'))
+                    self.send_json({"status": "ok", "message": "docs/data.json successfully updated!"})
                 else:
-                    self.send_response(500)
-                    self.end_headers()
+                    self.send_json({"status": "error", "message": "Failed to apply report data."}, status=500)
             except Exception as e:
-                self.send_response(500)
-                self.send_header('Content-Type', 'application/json; charset=utf-8')
-                self.end_headers()
-                self.wfile.write(json.dumps({"status": "error", "message": str(e)}).encode('utf-8'))
+                self.send_json({"status": "error", "message": str(e)}, status=500)
 
         elif path == "/api/save-discovery-keywords":
-            content_length = int(self.headers.get('Content-Length', 0))
-            post_data = self.rfile.read(content_length)
             try:
-                data_kw = json.loads(post_data.decode('utf-8'))
+                data_kw = self.read_json_body()
                 if os.path.exists(DATA_JSON_FILE):
                     with open(DATA_JSON_FILE, "r", encoding="utf-8") as f:
                         data = json.load(f)
                     data["discoveryKeywords"] = data_kw
                     save_data_json_with_backup(data, DATA_JSON_FILE)
-                self.send_response(200)
-                self.send_header('Content-Type', 'application/json; charset=utf-8')
-                self.end_headers()
-                self.wfile.write(json.dumps({"status": "ok", "message": "Keywords updated in data.json"}).encode('utf-8'))
+                self.send_json({"status": "ok", "message": "Keywords updated in data.json"})
             except Exception as e:
-                self.send_response(500)
-                self.send_header('Content-Type', 'application/json; charset=utf-8')
-                self.end_headers()
-                self.wfile.write(json.dumps({"status": "error", "message": str(e)}).encode('utf-8'))
+                self.send_json({"status": "error", "message": str(e)}, status=500)
 
         elif path == "/api/save-crawler-config":
-            content_length = int(self.headers.get('Content-Length', 0))
-            post_data = self.rfile.read(content_length)
             try:
-                config_data = json.loads(post_data.decode('utf-8'))
+                config_data = self.read_json_body()
                 if os.path.exists(DATA_JSON_FILE):
                     with open(DATA_JSON_FILE, "r", encoding="utf-8") as f:
                         data = json.load(f)
                     data["crawlerConfig"] = config_data
                     save_data_json_with_backup(data, DATA_JSON_FILE)
-                self.send_response(200)
-                self.send_header('Content-Type', 'application/json; charset=utf-8')
-                self.end_headers()
-                self.wfile.write(json.dumps({"status": "ok", "message": "Crawler config updated in data.json"}).encode('utf-8'))
+                self.send_json({"status": "ok", "message": "Crawler config updated in data.json"})
             except Exception as e:
-                self.send_response(500)
-                self.send_header('Content-Type', 'application/json; charset=utf-8')
-                self.end_headers()
-                self.wfile.write(json.dumps({"status": "error", "message": str(e)}).encode('utf-8'))
+                self.send_json({"status": "error", "message": str(e)}, status=500)
 
         elif path == "/api/save-rejected-councils":
-            content_length = int(self.headers.get('Content-Length', 0))
-            post_data = self.rfile.read(content_length)
             try:
-                data = json.loads(post_data.decode('utf-8'))
+                data = self.read_json_body()
                 save_rejected_councils(data)
-                self.send_response(200)
-                self.send_header('Content-Type', 'application/json; charset=utf-8')
-                self.end_headers()
-                self.wfile.write(json.dumps({"status": "ok", "message": "Rejected councils updated"}).encode('utf-8'))
+                self.send_json({"status": "ok", "message": "Rejected councils updated"})
             except Exception as e:
-                self.send_response(500)
-                self.send_header('Content-Type', 'application/json; charset=utf-8')
-                self.end_headers()
-                self.wfile.write(json.dumps({"status": "error", "message": str(e)}).encode('utf-8'))
+                self.send_json({"status": "error", "message": str(e)}, status=500)
 
         elif path == "/api/reject-council":
-            content_length = int(self.headers.get('Content-Length', 0))
-            post_data = self.rfile.read(content_length)
             try:
-                payload = json.loads(post_data.decode('utf-8'))
+                payload = self.read_json_body()
                 target_id = payload.get("id")
                 reason = payload.get("reason", "Admin rejected council")
                 council_obj = payload.get("council")
@@ -429,21 +373,13 @@ class CustomHandler(SimpleHTTPRequestHandler):
                     rejected_list.append(rej_item)
                     save_rejected_councils(rejected_list)
 
-                self.send_response(200)
-                self.send_header('Content-Type', 'application/json; charset=utf-8')
-                self.end_headers()
-                self.wfile.write(json.dumps({"status": "ok", "message": f"Council {target_id} moved to rejected list"}).encode('utf-8'))
+                self.send_json({"status": "ok", "message": f"Council {target_id} moved to rejected list"})
             except Exception as e:
-                self.send_response(500)
-                self.send_header('Content-Type', 'application/json; charset=utf-8')
-                self.end_headers()
-                self.wfile.write(json.dumps({"status": "error", "message": str(e)}).encode('utf-8'))
+                self.send_json({"status": "error", "message": str(e)}, status=500)
 
         elif path == "/api/revert-rejected-council":
-            content_length = int(self.headers.get('Content-Length', 0))
-            post_data = self.rfile.read(content_length)
             try:
-                payload = json.loads(post_data.decode('utf-8'))
+                payload = self.read_json_body()
                 target_id = payload.get("id")
                 if not target_id:
                     raise ValueError("Council ID is required")
@@ -473,22 +409,13 @@ class CustomHandler(SimpleHTTPRequestHandler):
                         data["discoveredCouncils"] = [c for c in data["discoveredCouncils"] if c.get("id") != target_id]
                     save_data_json_with_backup(data, DATA_JSON_FILE)
 
-                self.send_response(200)
-                self.send_header('Content-Type', 'application/json; charset=utf-8')
-                self.end_headers()
-                self.wfile.write(json.dumps({"status": "ok", "message": f"Council {target_id} restored to councils as pending"}).encode('utf-8'))
+                self.send_json({"status": "ok", "message": f"Council {target_id} restored to councils as pending"})
             except Exception as e:
-                self.send_response(500)
-                self.send_header('Content-Type', 'application/json; charset=utf-8')
-                self.end_headers()
-                self.wfile.write(json.dumps({"status": "error", "message": str(e)}).encode('utf-8'))
+                self.send_json({"status": "error", "message": str(e)}, status=500)
 
         elif path == "/api/run-discovery":
             if discovery_state["running"]:
-                self.send_response(200)
-                self.send_header('Content-Type', 'application/json; charset=utf-8')
-                self.end_headers()
-                self.wfile.write(json.dumps({"status": "running", "message": "Already running"}).encode('utf-8'))
+                self.send_json({"status": "running", "message": "Already running"})
                 return
 
             # 初期化してバックグラウンドスレッドで起動
@@ -507,17 +434,11 @@ class CustomHandler(SimpleHTTPRequestHandler):
             t = threading.Thread(target=_discovery_worker, daemon=True)
             t.start()
 
-            self.send_response(200)
-            self.send_header('Content-Type', 'application/json; charset=utf-8')
-            self.end_headers()
-            self.wfile.write(json.dumps({"status": "started", "message": "Discovery started in background"}).encode('utf-8'))
+            self.send_json({"status": "started", "message": "Discovery started in background"})
 
         elif path == "/api/run-crawler":
             if crawler_state["running"]:
-                self.send_response(200)
-                self.send_header('Content-Type', 'application/json; charset=utf-8')
-                self.end_headers()
-                self.wfile.write(json.dumps({"status": "running", "message": "Crawler is already running"}).encode('utf-8'))
+                self.send_json({"status": "running", "message": "Crawler is already running"})
                 return
 
             crawler_stop_event.clear()
@@ -538,30 +459,20 @@ class CustomHandler(SimpleHTTPRequestHandler):
             t = threading.Thread(target=_crawler_worker, daemon=True)
             t.start()
 
-            self.send_response(200)
-            self.send_header('Content-Type', 'application/json; charset=utf-8')
-            self.end_headers()
-            self.wfile.write(json.dumps({"status": "started", "message": "Meeting crawler started in background"}).encode('utf-8'))
+            self.send_json({"status": "started", "message": "Meeting crawler started in background"})
 
         elif path == "/api/stop-crawler":
             if not crawler_state["running"]:
-                self.send_response(200)
-                self.send_header('Content-Type', 'application/json; charset=utf-8')
-                self.end_headers()
-                self.wfile.write(json.dumps({"status": "not_running", "message": "Crawler is not running"}).encode('utf-8'))
+                self.send_json({"status": "not_running", "message": "Crawler is not running"})
                 return
 
             crawler_stop_event.set()
             crawler_state["stopping"] = True
-            self.send_response(200)
-            self.send_header('Content-Type', 'application/json; charset=utf-8')
-            self.end_headers()
-            self.wfile.write(json.dumps({"status": "stopping", "message": "Crawler stop signal sent. Finalizing..."}).encode('utf-8'))
+            self.send_json({"status": "stopping", "message": "Crawler stop signal sent. Finalizing..."})
+
         elif path == "/api/toggle-manual-lock":
-            content_length = int(self.headers.get('Content-Length', 0))
-            post_data = self.rfile.read(content_length)
             try:
-                payload = json.loads(post_data.decode('utf-8'))
+                payload = self.read_json_body()
                 target_id = payload.get("id")
                 target_type = payload.get("type", "council")  # "council" or "meeting"
                 lock_value = payload.get("manualLock", True)
@@ -588,18 +499,13 @@ class CustomHandler(SimpleHTTPRequestHandler):
 
                     save_data_json_with_backup(data, DATA_JSON_FILE)
 
-                self.send_response(200)
-                self.send_header('Content-Type', 'application/json; charset=utf-8')
-                self.end_headers()
-                self.wfile.write(json.dumps({
+                self.send_json({
                     "status": "ok",
                     "message": f"{target_type} {target_id} manualLock set to {lock_value}"
-                }).encode('utf-8'))
+                })
             except Exception as e:
-                self.send_response(500)
-                self.send_header('Content-Type', 'application/json; charset=utf-8')
-                self.end_headers()
-                self.wfile.write(json.dumps({"status": "error", "message": str(e)}).encode('utf-8'))
+                self.send_json({"status": "error", "message": str(e)}, status=500)
+
         elif path == "/api/rollback-data":
             try:
                 if not os.path.exists(BACKUP_DIR):
@@ -629,10 +535,7 @@ class CustomHandler(SimpleHTTPRequestHandler):
                 m_count = len(restored_data.get("meetings", []))
                 last_crawl = restored_data.get("lastCrawlTime", "-")
 
-                self.send_response(200)
-                self.send_header('Content-Type', 'application/json; charset=utf-8')
-                self.end_headers()
-                self.wfile.write(json.dumps({
+                self.send_json({
                     "status": "ok",
                     "message": f"直前のバックアップ ({latest_backup_file}) から data.json を正常に復元しました。",
                     "backupFile": latest_backup_file,
@@ -640,12 +543,9 @@ class CustomHandler(SimpleHTTPRequestHandler):
                     "meetingsCount": m_count,
                     "lastCrawlTime": last_crawl,
                     "totalBackups": len(b_files)
-                }, ensure_ascii=False).encode('utf-8'))
+                })
             except Exception as e:
-                self.send_response(500)
-                self.send_header('Content-Type', 'application/json; charset=utf-8')
-                self.end_headers()
-                self.wfile.write(json.dumps({"status": "error", "message": str(e)}, ensure_ascii=False).encode('utf-8'))
+                self.send_json({"status": "error", "message": str(e)}, status=500)
         else:
             self.send_error(404)
 

@@ -81,7 +81,7 @@ def load_crawler_config():
     return False
 
 def load_councils_from_data_json():
-    """docs/data.json から登録済みの全会議体 (COUNCILS) を読み込む（却下済み会議体はクロール対象外）"""
+    """docs/data.json から登録済みの全会議体 (COUNCILS) を読み込む（却下済み会議体・非アクティブ会議体はクロール対象外）"""
     councils = []
     
     # 却下済みIDセットの読み込み
@@ -93,9 +93,20 @@ def load_councils_from_data_json():
             with open(DATA_JSON_FILE, "r", encoding="utf-8") as f:
                 data = json.load(f)
                 raw_councils = data.get("councils", [])
+                scraping_rules = data.get("scrapingRules", {})
+                inactive_count = 0
                 for item in raw_councils:
                     cid = item.get("id")
                     if cid in rejected_ids:
+                        continue
+                    # 会議体マスターまたはスクレイピングルールで非アクティブ指定されている場合はスキップ
+                    rule = scraping_rules.get(cid, {}) if isinstance(scraping_rules, dict) else {}
+                    if (
+                        item.get("is_active") is False
+                        or item.get("isActive") is False
+                        or (isinstance(rule, dict) and (rule.get("is_active") is False or rule.get("isActive") is False))
+                    ):
+                        inactive_count += 1
                         continue
                     if item.get("officialUrl"):
                         councils.append({
@@ -104,6 +115,8 @@ def load_councils_from_data_json():
                             "name": item.get("name"),
                             "url": item.get("officialUrl")
                         })
+                if inactive_count > 0:
+                    print(f"[INFO] 終了済み/非アクティブ会議体 {inactive_count} 件をクロール対象から除外します。")
         except Exception as e:
             print(f"[WARN] data.json 読み込み失敗: {e}", file=sys.stderr)
     return councils

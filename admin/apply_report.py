@@ -8,9 +8,13 @@ from utils import setup_win32_utf8, save_data_json_with_backup, load_rejected_co
 setup_win32_utf8()
 
 
-def apply_report(json_path, data_json_path=None):
-    if not os.path.exists(json_path):
-        print(f"Error: {json_path} does not exist.")
+def apply_report_data(report_data, data_json_path=None):
+    """
+    辞書オブジェクト形式のレポートデータを受け取り、docs/data.json に反映する。
+    ディスク一時ファイルを作らずにインメモリで直接反映可能。
+    """
+    if not isinstance(report_data, dict):
+        print("Error: Invalid report format (must be dict).")
         return False
 
     if not data_json_path:
@@ -21,12 +25,9 @@ def apply_report(json_path, data_json_path=None):
         print(f"Error: {data_json_path} does not exist.")
         return False
 
-    with open(json_path, "r", encoding="utf-8") as f:
-        report = json.load(f)
-
-    corrections = report.get("corrections", [])
+    corrections = report_data.get("corrections", [])
     if not corrections:
-        print("No corrections found in JSON.")
+        print("No corrections found in report.")
         return True
 
     with open(data_json_path, "r", encoding="utf-8") as f:
@@ -144,6 +145,22 @@ def apply_report(json_path, data_json_path=None):
 
     print(f"\nReport applied. {applied_count} out of {len(corrections)} changes saved to data.json")
     return True
+
+
+def apply_report(json_path, data_json_path=None):
+    """
+    JSONファイルパスからレポートを読み込み、apply_report_data に渡すラッパー（既存CLI・テスト互換）。
+    """
+    if not os.path.exists(json_path):
+        print(f"Error: {json_path} does not exist.")
+        return False
+    try:
+        with open(json_path, "r", encoding="utf-8") as f:
+            report_data = json.load(f)
+        return apply_report_data(report_data, data_json_path)
+    except Exception as e:
+        print(f"Error reading {json_path}: {e}")
+        return False
 
 if __name__ == "__main__":
     if len(sys.argv) < 2:
