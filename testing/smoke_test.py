@@ -561,7 +561,7 @@ def check_js_runtime_crash():
 def main():
     parser = argparse.ArgumentParser(description="PM-HUB Smoke Test Runner")
     parser.add_argument("--url", nargs="+", help="Explicit URLs to verify")
-    parser.add_argument("--all", action="store_true", help="Check all URLs in data.js")
+    parser.add_argument("--all", action="store_true", help="Check all URLs in data.json")
     args = parser.parse_args()
 
     print("==================================================")

@@ -50,6 +50,9 @@ DATA_JSON_FILE = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "
 BACKUP_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), "backups"))
 LOGS_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), "logs"))
 
+# 無効な日付プレフィックス（旧クローラー残骸などスコアリング対象外の日付パターン）
+INVALID_DATE_PREFIXES = ("1312",)
+
 # 429 Quota Exceeded 回避用のサーキットブレーカーフラグ
 LLM_QUOTA_BLOCKED = False
 
@@ -178,6 +181,9 @@ def load_scraping_rules():
                 
                 resolved_rules = {}
                 for cid, r in raw_rules.items():
+                    # is_active / isActive が明示的に False の場合はスキップ
+                    if isinstance(r, dict) and (r.get("is_active") is False or r.get("isActive") is False):
+                        continue
                     if isinstance(r, dict) and "template" in r and r["template"] in templates:
                         tpl_name = r["template"]
                         # テンプレートをベースに個別オーバーライドをマージ
@@ -1223,8 +1229,7 @@ def deduplicate_data_materials(data):
                     score += 5
 
                 m_date = m.get("date", "")
-                # "1312" で始まる日付は明らかな無効値（旧クローラー残骸）のみスキップ
-                if m_date and not m_date.startswith("1312"):
+                if m_date and not m_date.startswith(INVALID_DATE_PREFIXES):
                     score += 2
 
                 scored_candidates.append((score, m, mat))
