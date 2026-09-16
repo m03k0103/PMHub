@@ -18,7 +18,8 @@ from datetime import datetime, timedelta
 from bs4 import BeautifulSoup
 from utils import (
     setup_win32_utf8, get_browser_headers, save_data_json_with_backup,
-    decode_html_bytes, get_rejected_identifiers, normalize_japanese_numbers, load_data_json
+    decode_html_bytes, get_rejected_identifiers, normalize_japanese_numbers, load_data_json,
+    parse_japanese_date
 )
 setup_win32_utf8()
 
@@ -591,50 +592,6 @@ def extract_clean_dates_from_html(html_str, date_regex_pattern=r'(?<![\d\w\/\-])
         
     return filtered_dates
 
-def parse_japanese_date(date_str):
-    """和暦・西暦文字列を datetime オブジェクトに変換（元年対応・厳格検証）"""
-    if not date_str:
-        return None
-    date_str = normalize_japanese_numbers(date_str).strip()
-    m_reiwa = re.search(r'(?<!\d)令和(\d+|元)年(\d{1,2})月(\d{1,2})日(?!\d)', date_str)
-    if m_reiwa:
-        try:
-            yr_num = 1 if m_reiwa.group(1) == '元' else int(m_reiwa.group(1))
-            year = 2018 + yr_num
-            month = int(m_reiwa.group(2))
-            day = int(m_reiwa.group(3))
-            return datetime(year, month, day)
-        except Exception:
-            pass
-    m_heisei = re.search(r'(?<!\d)平成(\d+|元)年(\d{1,2})月(\d{1,2})日(?!\d)', date_str)
-    if m_heisei:
-        try:
-            yr_num = 1 if m_heisei.group(1) == '元' else int(m_heisei.group(1))
-            year = 1988 + yr_num
-            month = int(m_heisei.group(2))
-            day = int(m_heisei.group(3))
-            return datetime(year, month, day)
-        except Exception:
-            pass
-    m_seireki = re.search(r'(?<!\d)(\d{4})年(\d{1,2})月(\d{1,2})日(?!\d)', date_str)
-    if m_seireki:
-        try:
-            year = int(m_seireki.group(1))
-            month = int(m_seireki.group(2))
-            day = int(m_seireki.group(3))
-            return datetime(year, month, day)
-        except Exception:
-            pass
-    m_slash = re.search(r'(?<![\d\w])(\d{4})[/-](\d{1,2})[/-](\d{1,2})(?![\d\w])', date_str)
-    if m_slash:
-        try:
-            year = int(m_slash.group(1))
-            month = int(m_slash.group(2))
-            day = int(m_slash.group(3))
-            return datetime(year, month, day)
-        except Exception:
-            pass
-    return None
 
 def calculate_past_year_count(extracted_dates, ref_date=None):
     """抽出された日付から過去1年間の開催数を算出。トップページ等に日付がなければ ('-', False) を返す"""
@@ -1468,7 +1425,7 @@ def run_meeting_crawler(progress_callback=None, stop_event=None):
                         stats["new_meetings"] += new_added
                         now_str = datetime.now().strftime("%Y/%m/%d %H:%M")
                         data["lastCrawlTime"] = now_str
-                        save_data_json_with_backup(data)
+                        save_data_json_with_backup(data, create_backup=False)
                         emit(f"  -> 📦 新規会議 {new_added} 件を data.json の meetings に自動追加・同期しました。", {
                             "type": "new_meeting_added",
                             "council_id": target["id"],

@@ -13,6 +13,8 @@ import json
 import re
 import shutil
 from datetime import datetime
+import functools
+
 
 # パス定義
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
@@ -76,6 +78,64 @@ def normalize_japanese_numbers(text):
     return str(text).translate(_ZEN_TO_HAN_DIGITS_TABLE)
 
 
+# 和暦・西暦日付パース用事前コンパイル正規表現
+_RE_REIWA_DATE = re.compile(r'(?<!\d)令和(\d+|元)年(\d{1,2})月(\d{1,2})日(?!\d)')
+_RE_HEISEI_DATE = re.compile(r'(?<!\d)平成(\d+|元)年(\d{1,2})月(\d{1,2})日(?!\d)')
+_RE_SEIREKI_DATE = re.compile(r'(?<!\d)(\d{4})年(\d{1,2})月(\d{1,2})日(?!\d)')
+_RE_SLASH_DATE = re.compile(r'(?<![\d\w])(\d{4})[/-](\d{1,2})[/-](\d{1,2})(?![\d\w])')
+
+
+@functools.lru_cache(maxsize=2048)
+def parse_japanese_date(date_str):
+    """
+    和暦・西暦文字列を datetime オブジェクトに変換（元年対応・厳格検証）。
+    結果は lru_cache でキャッシュされ、頻出日付のパースを高速化する。
+    """
+    if not date_str:
+        return None
+    date_str = normalize_japanese_numbers(date_str).strip()
+    m_reiwa = _RE_REIWA_DATE.search(date_str)
+    if m_reiwa:
+        try:
+            yr_num = 1 if m_reiwa.group(1) == '元' else int(m_reiwa.group(1))
+            year = 2018 + yr_num
+            month = int(m_reiwa.group(2))
+            day = int(m_reiwa.group(3))
+            return datetime(year, month, day)
+        except Exception:
+            pass
+    m_heisei = _RE_HEISEI_DATE.search(date_str)
+    if m_heisei:
+        try:
+            yr_num = 1 if m_heisei.group(1) == '元' else int(m_heisei.group(1))
+            year = 1988 + yr_num
+            month = int(m_heisei.group(2))
+            day = int(m_heisei.group(3))
+            return datetime(year, month, day)
+        except Exception:
+            pass
+    m_seireki = _RE_SEIREKI_DATE.search(date_str)
+    if m_seireki:
+        try:
+            year = int(m_seireki.group(1))
+            month = int(m_seireki.group(2))
+            day = int(m_seireki.group(3))
+            return datetime(year, month, day)
+        except Exception:
+            pass
+    m_slash = _RE_SLASH_DATE.search(date_str)
+    if m_slash:
+        try:
+            year = int(m_slash.group(1))
+            month = int(m_slash.group(2))
+            day = int(m_slash.group(3))
+            return datetime(year, month, day)
+        except Exception:
+            pass
+    return None
+
+
+
 def load_data_json(target_file=DEFAULT_DATA_JSON_PATH):
     """
     docs/data.json を安全に読み込み、辞書オブジェクトを返す。
@@ -91,32 +151,43 @@ def load_data_json(target_file=DEFAULT_DATA_JSON_PATH):
     return {}
 
 
-def save_data_json_with_backup(data, target_file=DEFAULT_DATA_JSON_PATH, backup_dir=DEFAULT_BACKUP_DIR, max_backups=30):
+def save_data_json_with_backup(data, target_file=DEFAULT_DATA_JSON_PATH, backup_dir=DEFAULT_BACKUP_DIR, max_backups=30, create_backup=True):
     """
-    docs/data.json を更新する前に、タイムスタンプ付きで admin/backups/ に自動バックアップを作成し、
-    安全に上書き保存する（デフォルト過去30世代保持）。
+    docs/data.json をアトミックに安全保存する。
+    create_backup=True の場合、更新前にタイムスタンプ付きで admin/backups/ に自動バックアップを作成する（デフォルト過去30世代保持）。
+    書き込みは一時ファイル (.tmp) に行い、os.replace によるアトミック置換でファイル破損（0バイト化）を防止する。
     """
+    tmp_file = f"{target_file}.tmp"
     try:
-        os.makedirs(backup_dir, exist_ok=True)
-        if os.path.exists(target_file):
-            ts = datetime.now().strftime("%Y%m%d_%H%M%S")
-            backup_path = os.path.join(backup_dir, f"data_{ts}.json")
-            shutil.copy2(target_file, backup_path)
-            
-            # 過去 max_backups 世代を超える古いバックアップの自動整理
-            b_files = sorted([os.path.join(backup_dir, f) for f in os.listdir(backup_dir) if f.startswith("data_") and f.endswith(".json")])
-            if len(b_files) > max_backups:
-                for old_f in b_files[:-max_backups]:
-                    try:
-                        os.remove(old_f)
-                    except Exception:
-                        pass
+        if create_backup:
+            os.makedirs(backup_dir, exist_ok=True)
+            if os.path.exists(target_file):
+                ts = datetime.now().strftime("%Y%m%d_%H%M%S")
+                backup_path = os.path.join(backup_dir, f"data_{ts}.json")
+                shutil.copy2(target_file, backup_path)
+                
+                # 過去 max_backups 世代を超える古いバックアップの自動整理
+                b_files = sorted([os.path.join(backup_dir, f) for f in os.listdir(backup_dir) if f.startswith("data_") and f.endswith(".json")])
+                if len(b_files) > max_backups:
+                    for old_f in b_files[:-max_backups]:
+                        try:
+                            os.remove(old_f)
+                        except Exception:
+                            pass
 
-        with open(target_file, "w", encoding="utf-8") as f:
+        target_dir = os.path.dirname(os.path.abspath(target_file))
+        os.makedirs(target_dir, exist_ok=True)
+        with open(tmp_file, "w", encoding="utf-8") as f:
             json.dump(data, f, ensure_ascii=False, indent=2)
+        os.replace(tmp_file, target_file)
         return True
     except Exception as e:
         print(f"[ERROR] Failed to save data.json with backup: {e}", file=sys.stderr)
+        if os.path.exists(tmp_file):
+            try:
+                os.remove(tmp_file)
+            except Exception:
+                pass
         return False
 
 
@@ -217,15 +288,23 @@ def load_rejected_councils(rejected_file=DEFAULT_REJECTED_COUNCILS_PATH):
 
 def save_rejected_councils(rejected_data, rejected_file=DEFAULT_REJECTED_COUNCILS_PATH):
     """
-    admin/rejected_councils.json に却下済み会議体リストを整形保存する。
+    admin/rejected_councils.json に却下済み会議体リストをアトミックに整形保存する。
     """
+    tmp_file = f"{rejected_file}.tmp"
     try:
-        os.makedirs(os.path.dirname(os.path.abspath(rejected_file)), exist_ok=True)
-        with open(rejected_file, "w", encoding="utf-8") as f:
+        target_dir = os.path.dirname(os.path.abspath(rejected_file))
+        os.makedirs(target_dir, exist_ok=True)
+        with open(tmp_file, "w", encoding="utf-8") as f:
             json.dump(rejected_data, f, ensure_ascii=False, indent=2)
+        os.replace(tmp_file, rejected_file)
         return True
     except Exception as e:
         print(f"[ERROR] Failed to save {rejected_file}: {e}", file=sys.stderr)
+        if os.path.exists(tmp_file):
+            try:
+                os.remove(tmp_file)
+            except Exception:
+                pass
         return False
 
 
