@@ -57,7 +57,13 @@ LOGS_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), "logs"))
 INVALID_DATE_PREFIXES = ("1312",)
 
 # ジェネリックタイトル・ポータル見出しキーワード（会議名として不適切な汎用文字列）
-GENERIC_TITLE_KEYWORDS = ['会議資料詳細', '資料詳細', '会議詳細', 'トップページ', '目次', 'ホーム', '配付資料一覧']
+GENERIC_TITLE_KEYWORDS = frozenset({
+    '会議資料詳細', '資料詳細', '会議詳細', 'トップページ', '目次', 'ホーム', '配付資料一覧',
+    '政策について', '総務省の紹介', '国立国会図書館インターネット資料収集保存事業（WARP）',
+    '国立国会図書館インターネット資料収集保存事業', '議事次第', '配付資料', '配布資料',
+    '議題', '資料', '議事', '日時', 'メンバー', '会議資料一覧', '審議会・検討会・研究会等',
+    '審議会、検討会、研究会等', '令和３年改正個人情報保護法について', '原子力規制委員会'
+})
 
 # 配付資料として不適切な汎用ナビゲーション・UIテキスト（事前除外用定数）
 EXCLUDE_MATERIAL_NAMES = frozenset({
@@ -1061,6 +1067,27 @@ def sync_new_meetings_from_crawl(data, target, scraped_item):
 
         # --- B. 新規開催回の追加 ---
         meet_date, is_date_unconfirmed = _resolve_meeting_date(sub_dates, sub_title, sub_url)
+
+        # 開催日未確認（2099/01/01）の場合の厳格ガード（資料0件またはジェネリックタイトルは登録禁止）
+        if is_date_unconfirmed:
+            if not clean_materials_list:
+                continue
+            if any(kw in sub_title for kw in GENERIC_TITLE_KEYWORDS):
+                continue
+
+        # 同一会議体・同一日付の重複チェック（同日重複の自動防止および資料マージ）
+        if not is_date_unconfirmed:
+            same_date_meets = [m for m in existing_c_meets if m.get("date") == meet_date]
+            if same_date_meets:
+                # 既に同一日付の会議が存在する場合、資料のみを既存会議にマージして新規追加はスキップ
+                for ex_m in same_date_meets:
+                    ex_mats = ex_m.setdefault("materials", [])
+                    ex_mat_urls = {mat.get("url") for mat in ex_mats if mat.get("url")}
+                    for new_mat in clean_materials_list:
+                        if new_mat.get("url") not in ex_mat_urls:
+                            ex_mats.append(new_mat)
+                            ex_mat_urls.add(new_mat.get("url"))
+                continue
         new_meeting = _build_new_meeting(
             target=target,
             sub=sub,
@@ -1139,14 +1166,15 @@ def update_crawl_status(data, council_id, scraped_item, failure_reason=None):
 def extract_session_numbers(text):
     if not text:
         return set()
+    t_norm = normalize_japanese_numbers(str(text))
     nums = set()
-    matches = re.findall(r'第(\d+)回', text)
+    matches = re.findall(r'第\s*(\d+)\s*回', t_norm)
     for m in matches:
         nums.add(int(m))
-    matches_dai = re.findall(r'dai(\d+)', text, re.IGNORECASE)
+    matches_dai = re.findall(r'dai\s*(\d+)', t_norm, re.IGNORECASE)
     for m in matches_dai:
         nums.add(int(m))
-    matches_slash = re.findall(r'[/_](\d{1,3})(?:[_.]|pdf|giji)', text, re.IGNORECASE)
+    matches_slash = re.findall(r'[/_](\d{1,3})(?:[_.]|pdf|giji)', t_norm, re.IGNORECASE)
     for m in matches_slash:
         nums.add(int(m))
     return nums
@@ -1363,43 +1391,51 @@ def run_meeting_crawler(progress_callback=None, stop_event=None):
             "log_file": log_filepath
         })
         
-        html = fetch_url(target["url"])
-        stats["processed_councils"] += 1
-        
-        if html:
-            c_id = target["id"]
-            rule_obj = rules.get(c_id, {
-                "rule_id": "rule-fallback-v1",
-                "rules": {}
-            })
+        try:
+            html = fetch_url(target["url"])
+            stats["processed_councils"] += 1
             
-            item = execute_rule_retrieval(target, html, rule_obj, use_llm=use_llm)
-            results.append(item)
-            
-            cr = item.get("crawlResult", "failed")
-            stats[cr] = stats.get(cr, 0) + 1
-            
-            status_icon = {"success": "🟢", "partial": "🟡", "failed": "🔴"}.get(cr, "⚪")
-            emit(f"  -> {status_icon} [{cr.upper()}] タイトル: {item['pageTitle']}")
-            emit(f"  -> 資料: {item['totalExtractedMaterials']} 件, 日付: {item['extractedDates']}, 抽出方法: {item['extractionMethod']}")
-            
-            update_crawl_status(data, target["id"], item)
-            new_added = sync_new_meetings_from_crawl(data, target, item)
-            if new_added > 0:
-                stats["new_meetings"] += new_added
-                now_str = datetime.now().strftime("%Y/%m/%d %H:%M")
-                data["lastCrawlTime"] = now_str
-                save_data_json_with_backup(data)
-                emit(f"  -> 📦 新規会議 {new_added} 件を data.json の meetings に自動追加・同期しました。", {
-                    "type": "new_meeting_added",
-                    "council_id": target["id"],
-                    "council_name": c_name,
-                    "new_added": new_added
+            if html:
+                c_id = target["id"]
+                rule_obj = rules.get(c_id, {
+                    "rule_id": "rule-fallback-v1",
+                    "rules": {}
                 })
-        else:
-            stats["fetch_error"] += 1
-            emit(f"  -> 🔴 [FETCH ERROR] ネットワーク取得失敗")
-            update_crawl_status(data, target["id"], None, "Network fetch failed")
+                
+                item = execute_rule_retrieval(target, html, rule_obj, use_llm=use_llm)
+                results.append(item)
+                
+                cr = item.get("crawlResult", "failed")
+                stats[cr] = stats.get(cr, 0) + 1
+                
+                status_icon = {"success": "🟢", "partial": "🟡", "failed": "🔴"}.get(cr, "⚪")
+                emit(f"  -> {status_icon} [{cr.upper()}] タイトル: {item['pageTitle']}")
+                emit(f"  -> 資料: {item['totalExtractedMaterials']} 件, 日付: {item['extractedDates']}, 抽出方法: {item['extractionMethod']}")
+                
+                update_crawl_status(data, target["id"], item)
+                new_added = sync_new_meetings_from_crawl(data, target, item)
+                if new_added > 0:
+                    stats["new_meetings"] += new_added
+                    now_str = datetime.now().strftime("%Y/%m/%d %H:%M")
+                    data["lastCrawlTime"] = now_str
+                    save_data_json_with_backup(data)
+                    emit(f"  -> 📦 新規会議 {new_added} 件を data.json の meetings に自動追加・同期しました。", {
+                        "type": "new_meeting_added",
+                        "council_id": target["id"],
+                        "council_name": c_name,
+                        "new_added": new_added
+                    })
+            else:
+                stats["fetch_error"] += 1
+                emit(f"  -> 🔴 [FETCH ERROR] ネットワーク取得失敗")
+                update_crawl_status(data, target["id"], None, "Network fetch failed")
+        except Exception as council_err:
+            stats["failed"] += 1
+            emit(f"  -> 🔴 [UNEXPECTED ERROR] 会議体巡回中に予期せぬ例外が発生しました: {council_err}")
+            try:
+                update_crawl_status(data, target["id"], None, f"Unexpected error: {council_err}")
+            except Exception:
+                pass
         emit("-" * 65)
 
         # レートリミット（スロットリング: 行政サーバー負荷軽減 & WAFブロック回避）
@@ -1460,6 +1496,7 @@ def run_meeting_crawler(progress_callback=None, stop_event=None):
 
 def main():
     import threading
+    import traceback
     cli_stop_event = threading.Event()
     
     try:
@@ -1467,6 +1504,16 @@ def main():
     except KeyboardInterrupt:
         print("\n\n[INFO] キーボード割り込み (Ctrl+C) を検知しました。停止シグナルを発行します...")
         cli_stop_event.set()
+    except Exception as e:
+        print(f"\n\n[FATAL CRASH] クローラー実行中に未処理の例外が発生しました: {e}", file=sys.stderr)
+        traceback.print_exc()
+        try:
+            with open("admin/logs/crawler_crash.log", "a", encoding="utf-8") as cf:
+                cf.write(f"[{datetime.now()}] FATAL CRASH: {e}\n")
+                traceback.print_exc(file=cf)
+        except Exception:
+            pass
+        sys.exit(1)
 
 if __name__ == "__main__":
     main()
