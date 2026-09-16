@@ -170,30 +170,22 @@ class CustomHandler(SimpleHTTPRequestHandler):
             else:
                 self.send_json({})
         elif path == "/api/discovery-keywords":
-            if os.path.exists(DATA_JSON_FILE):
-                with open(DATA_JSON_FILE, "r", encoding="utf-8") as f:
-                    data = json.load(f)
-                self.send_json(data.get("discoveryKeywords", {}))
-            else:
-                self.send_json({})
+            data = load_data_json(DATA_JSON_FILE)
+            self.send_json(data.get("discoveryKeywords", {}))
         elif path == "/api/discovered-councils":
-            if os.path.exists(DATA_JSON_FILE):
-                with open(DATA_JSON_FILE, "r", encoding="utf-8") as f:
-                    data = json.load(f)
-                discovered = data.get("discoveredCouncils", [])
+            data = load_data_json(DATA_JSON_FILE)
+            discovered = data.get("discoveredCouncils", [])
 
-                # 却下済み会議体リストのロードと除外
-                rej_ids, rej_names, rej_urls = get_rejected_identifiers()
+            # 却下済み会議体リストのロードと除外
+            rej_ids, rej_names, rej_urls = get_rejected_identifiers()
 
-                filtered = [
-                    c for c in discovered
-                    if c.get("id") not in rej_ids
-                    and c.get("name", "").strip() not in rej_names
-                    and (not c.get("officialUrl") or c.get("officialUrl").strip().rstrip("/") not in rej_urls)
-                ]
-                self.send_json({"councils": filtered})
-            else:
-                self.send_json({"councils": []})
+            filtered = [
+                c for c in discovered
+                if c.get("id") not in rej_ids
+                and c.get("name", "").strip() not in rej_names
+                and (not c.get("officialUrl") or c.get("officialUrl").strip().rstrip("/") not in rej_urls)
+            ]
+            self.send_json({"councils": filtered})
         elif path == "/api/verification-report":
             rep_file = os.path.join(BASE_DIR, "ai_verification_report.json")
             if os.path.exists(rep_file):
@@ -300,9 +292,8 @@ class CustomHandler(SimpleHTTPRequestHandler):
         elif path == "/api/save-discovery-keywords":
             try:
                 data_kw = self.read_json_body()
-                if os.path.exists(DATA_JSON_FILE):
-                    with open(DATA_JSON_FILE, "r", encoding="utf-8") as f:
-                        data = json.load(f)
+                data = load_data_json(DATA_JSON_FILE)
+                if data:
                     data["discoveryKeywords"] = data_kw
                     save_data_json_with_backup(data, DATA_JSON_FILE)
                 self.send_json({"status": "ok", "message": "Keywords updated in data.json"})
@@ -312,9 +303,8 @@ class CustomHandler(SimpleHTTPRequestHandler):
         elif path == "/api/save-crawler-config":
             try:
                 config_data = self.read_json_body()
-                if os.path.exists(DATA_JSON_FILE):
-                    with open(DATA_JSON_FILE, "r", encoding="utf-8") as f:
-                        data = json.load(f)
+                data = load_data_json(DATA_JSON_FILE)
+                if data:
                     data["crawlerConfig"] = config_data
                     save_data_json_with_backup(data, DATA_JSON_FILE)
                 self.send_json({"status": "ok", "message": "Crawler config updated in data.json"})
@@ -377,23 +367,22 @@ class CustomHandler(SimpleHTTPRequestHandler):
                     target_rej = rejected_list.pop(r_idx)
                     save_rejected_councils(rejected_list)
 
-                if target_rej and os.path.exists(DATA_JSON_FILE):
-                    with open(DATA_JSON_FILE, "r", encoding="utf-8") as df:
-                        data = json.load(df)
-                    
-                    councils = data.setdefault("councils", [])
-                    if not any(c.get("id") == target_id for c in councils):
-                        councils.append({
-                            "id": target_rej.get("id"),
-                            "name": target_rej.get("name"),
-                            "ministry": target_rej.get("ministry"),
-                            "category": target_rej.get("category", "COUNCIL"),
-                            "officialUrl": target_rej.get("officialUrl", ""),
-                            "status": "pending"
-                        })
-                    if "discoveredCouncils" in data and isinstance(data["discoveredCouncils"], list):
-                        data["discoveredCouncils"] = [c for c in data["discoveredCouncils"] if c.get("id") != target_id]
-                    save_data_json_with_backup(data, DATA_JSON_FILE)
+                if target_rej:
+                    data = load_data_json(DATA_JSON_FILE)
+                    if data:
+                        councils = data.setdefault("councils", [])
+                        if not any(c.get("id") == target_id for c in councils):
+                            councils.append({
+                                "id": target_rej.get("id"),
+                                "name": target_rej.get("name"),
+                                "ministry": target_rej.get("ministry"),
+                                "category": target_rej.get("category", "COUNCIL"),
+                                "officialUrl": target_rej.get("officialUrl", ""),
+                                "status": "pending"
+                            })
+                        if "discoveredCouncils" in data and isinstance(data["discoveredCouncils"], list):
+                            data["discoveredCouncils"] = [c for c in data["discoveredCouncils"] if c.get("id") != target_id]
+                        save_data_json_with_backup(data, DATA_JSON_FILE)
 
                 self.send_json({"status": "ok", "message": f"Council {target_id} restored to councils as pending"})
             except Exception as e:
@@ -466,10 +455,8 @@ class CustomHandler(SimpleHTTPRequestHandler):
                 if not target_id:
                     raise ValueError("ID is required")
 
-                if os.path.exists(DATA_JSON_FILE):
-                    with open(DATA_JSON_FILE, "r", encoding="utf-8") as df:
-                        data = json.load(df)
-
+                data = load_data_json(DATA_JSON_FILE)
+                if data:
                     if target_type == "council":
                         for c in data.get("councils", []):
                             if c.get("id") == target_id:
@@ -514,8 +501,7 @@ class CustomHandler(SimpleHTTPRequestHandler):
                 shutil.copy2(latest_backup_path, DATA_JSON_FILE)
 
                 # 復元後のデータ概要を取得
-                with open(DATA_JSON_FILE, "r", encoding="utf-8") as f:
-                    restored_data = json.load(f)
+                restored_data = load_data_json(DATA_JSON_FILE)
 
                 c_count = len(restored_data.get("councils", []))
                 m_count = len(restored_data.get("meetings", []))
