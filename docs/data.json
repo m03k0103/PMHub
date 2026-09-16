@@ -22596,7 +22596,7 @@
       "ministry": "MHLW",
       "category": "SECTION",
       "officialUrl": "https://www.mhlw.go.jp/stf/shingi/shingi-rousei_126980_00007.html",
-      "pastYearCount": 5,
+      "pastYearCount": 25,
       "status": "approved",
       "crawlStatus": {
         "lastAttempt": "2026-09-16 09:19:44",
@@ -22607,7 +22607,8 @@
         "failureReason": "",
         "consecutiveFailures": 0,
         "manualLockActive": false
-      }
+      },
+      "manualLock": true
     },
     {
       "id": "mhlw-939",
@@ -31165,50 +31166,6 @@
   ],
   "meetings": [
     {
-      "id": "mhlw-938-20281001-s05",
-      "councilId": "mhlw-938",
-      "title": "政策について",
-      "date": "2028/10/01",
-      "officialUrl": "https://www.mhlw.go.jp/stf/newpage_70862.html",
-      "category": "COUNCIL",
-      "ministry": "MHLW",
-      "materials": [
-        {
-          "name": "第210回議事次第",
-          "url": "https://www.mhlw.go.jp/content/11601000/001739197.pdf",
-          "type": "PDF",
-          "isPrivate": false
-        },
-        {
-          "name": "【資料１】令和６年雇用保険制度改正（令和10年10月１日施行分）について",
-          "url": "https://www.mhlw.go.jp/content/11601000/001739198.pdf",
-          "type": "PDF",
-          "isPrivate": false
-        },
-        {
-          "name": "【資料２】 緊急時における雇用調整助成金の在り方の検討状況について （報告）",
-          "url": "https://www.mhlw.go.jp/content/11601000/001739199.pdf",
-          "type": "PDF",
-          "isPrivate": false
-        },
-        {
-          "name": "【資料３】雇用保険審査請求及び被保険者資格確認手続における公示のデジタル化について（報告）",
-          "url": "https://www.mhlw.go.jp/content/11601000/001739200.pdf",
-          "type": "PDF",
-          "isPrivate": false
-        },
-        {
-          "name": "【資料４】特定在留カードの創設に伴う届出書類の改正について（報告）",
-          "url": "https://www.mhlw.go.jp/content/11601000/001739201.pdf",
-          "type": "PDF",
-          "isPrivate": false
-        }
-      ],
-      "isNewlyDiscovered": true,
-      "isDateUnconfirmed": false,
-      "discoveredAt": "2026/09/16 09:19"
-    },
-    {
       "id": "fsa-jibaiseki_shingi-20261101-s03",
       "councilId": "fsa-jibaiseki_shingi",
       "title": "サイトマップ",
@@ -33124,6 +33081,88 @@
       "discoveredAt": "2026/09/16 09:14"
     },
     {
+      "id": "mhlw-938-20260904-211",
+      "councilId": "mhlw-938",
+      "title": "第211回 職業安定分科会雇用保険部会",
+      "date": "2026/09/04",
+      "officialUrl": "https://www.mhlw.go.jp/stf/newpage_75640.html",
+      "materials": [
+        {
+          "name": "第211回議事次第",
+          "url": "https://www.mhlw.go.jp/content/11601000/001745700.pdf",
+          "type": "PDF",
+          "isPrivate": false
+        },
+        {
+          "name": "【資料１】雇用保険制度の概要",
+          "url": "https://www.mhlw.go.jp/content/11601000/001745356.pdf",
+          "type": "PDF",
+          "isPrivate": false
+        },
+        {
+          "name": "【資料２】雇用保険制度の主要指標",
+          "url": "https://www.mhlw.go.jp/content/11601000/001745357.pdf",
+          "type": "PDF",
+          "isPrivate": false
+        },
+        {
+          "name": "【資料３】令和６年雇用保険法等改正について",
+          "url": "https://www.mhlw.go.jp/content/11601000/001745358.pdf",
+          "type": "PDF",
+          "isPrivate": false
+        },
+        {
+          "name": "【資料４】経済財政運営と改革の基本方針（骨太の方針）等について",
+          "url": "https://www.mhlw.go.jp/content/11601000/001745359.pdf",
+          "type": "PDF",
+          "isPrivate": false
+        },
+        {
+          "name": "【資料５】雇用保険部会の主な論点（案）",
+          "url": "https://www.mhlw.go.jp/content/11601000/001745360.pdf",
+          "type": "PDF",
+          "isPrivate": false
+        },
+        {
+          "name": "【資料６】雇用保険・厚生年金データの学術利用の事業（案）について",
+          "url": "https://www.mhlw.go.jp/content/11601000/001745361.pdf",
+          "type": "PDF",
+          "isPrivate": false
+        },
+        {
+          "name": "【参考資料１】制度改正の経緯",
+          "url": "https://www.mhlw.go.jp/content/11601000/001745362.pdf",
+          "type": "PDF",
+          "isPrivate": false
+        },
+        {
+          "name": "【参考資料２】雇用保険部会報告（令和６年１月10日）",
+          "url": "https://www.mhlw.go.jp/content/11601000/001745363.pdf",
+          "type": "PDF",
+          "isPrivate": false
+        },
+        {
+          "name": "【参考資料３】雇用保険・厚生年金データの学術利用の環境整備に関するヒアリング",
+          "url": "https://www.mhlw.go.jp/content/11601000/001745364.pdf",
+          "type": "PDF",
+          "isPrivate": false
+        },
+        {
+          "name": "【参考資料４】雇用保険・厚生年金データの学術利用の事業（案）の関係規程の概要",
+          "url": "https://www.mhlw.go.jp/content/11601000/001745365.pdf",
+          "type": "PDF",
+          "isPrivate": false
+        },
+        {
+          "name": "【参考資料５】雇用保険部会委員名簿",
+          "url": "https://www.mhlw.go.jp/content/11601000/001745366.pdf",
+          "type": "PDF",
+          "isPrivate": false
+        }
+      ],
+      "manualLock": true
+    },
+    {
       "id": "mhlw-shakai_hosho_kaigo_kyuufu-20260903-264",
       "councilId": "mhlw-shakai_hosho_kaigo_kyuufu",
       "title": "第264回 社会保障審議会 介護給付費分科会",
@@ -34309,26 +34348,6 @@
       "isNewlyDiscovered": true,
       "isDateUnconfirmed": false,
       "discoveredAt": "2026/09/16 09:15"
-    },
-    {
-      "id": "mhlw-938-20260828-s04",
-      "councilId": "mhlw-938",
-      "title": "１開催日時",
-      "date": "2026/08/28",
-      "officialUrl": "https://www.mhlw.go.jp/stf/newpage_75501.html",
-      "category": "COUNCIL",
-      "ministry": "MHLW",
-      "materials": [
-        {
-          "name": "傍聴される皆さまへの留意事項［54KB］",
-          "url": "https://www.mhlw.go.jp/content/11607000/000671510.pdf",
-          "type": "PDF",
-          "isPrivate": false
-        }
-      ],
-      "isNewlyDiscovered": true,
-      "isDateUnconfirmed": false,
-      "discoveredAt": "2026/09/16 09:19"
     },
     {
       "id": "mod-1088-20260827-002",
@@ -82886,40 +82905,6 @@
       "manualLock": true
     },
     {
-      "id": "mhlw-938-20260311-210",
-      "councilId": "mhlw-938",
-      "title": "第210回 職業安定分科会雇用保険部会",
-      "date": "2026/03/11",
-      "officialUrl": "https://www.mhlw.go.jp/stf/newpage_73248.html",
-      "materials": [
-        {
-          "name": "第210回議事次第［PDF形式：59KB］",
-          "url": "https://www.mhlw.go.jp/content/11601000/001739197.pdf"
-        },
-        {
-          "name": "【資料１】令和６年雇用保険制度改正（令和10年10月１日施行分）について［PDF形式：5.2MB］",
-          "url": "https://www.mhlw.go.jp/content/11601000/001739198.pdf"
-        },
-        {
-          "name": "【資料２】 緊急時における雇用調整助成金の在り方の検討状況について （報告）［PDF形式：38.7MB］",
-          "url": "https://www.mhlw.go.jp/content/11601000/001739199.pdf"
-        },
-        {
-          "name": "【資料３】雇用保険審査請求及び被保険者資格確認手続における公示のデジタル化について（報告）［PDF形式：2.2MB］",
-          "url": "https://www.mhlw.go.jp/content/11601000/001739200.pdf"
-        },
-        {
-          "name": "【資料４】特定在留カードの創設に伴う届出書類の改正について（報告）［PDF形式：2.1MB］",
-          "url": "https://www.mhlw.go.jp/content/11601000/001739201.pdf"
-        },
-        {
-          "name": "傍聴される皆さまへの留意事項［54KB］",
-          "url": "https://www.mhlw.go.jp/content/11607000/000671510.pdf"
-        }
-      ],
-      "manualLock": true
-    },
-    {
       "id": "mhlw-829-20260311-009",
       "councilId": "mhlw-829",
       "title": "第９回 匿名感染症関連情報の第三者提供に関する小委員会",
@@ -83163,6 +83148,51 @@
           "url": "https://www.bunka.go.jp/seisaku/bunkashingikai/chosakuken/shiyoryo/r07_05/pdf/94344001_01.pdf"
         }
       ]
+    },
+    {
+      "id": "mhlw-938-20260311-210",
+      "councilId": "mhlw-938",
+      "title": "第210回 職業安定分科会雇用保険部会",
+      "date": "2026/03/11",
+      "officialUrl": "https://www.mhlw.go.jp/stf/newpage_70862.html",
+      "materials": [
+        {
+          "name": "第210回議事次第",
+          "url": "https://www.mhlw.go.jp/content/11601000/001739197.pdf",
+          "type": "PDF",
+          "isPrivate": false
+        },
+        {
+          "name": "【資料１】令和６年雇用保険制度改正（令和10年10月１日施行分）について",
+          "url": "https://www.mhlw.go.jp/content/11601000/001739198.pdf",
+          "type": "PDF",
+          "isPrivate": false
+        },
+        {
+          "name": "【資料２】 緊急時における雇用調整助成金の在り方の検討状況について （報告）",
+          "url": "https://www.mhlw.go.jp/content/11601000/001739199.pdf",
+          "type": "PDF",
+          "isPrivate": false
+        },
+        {
+          "name": "【資料３】雇用保険審査請求及び被保険者資格確認手続における公示のデジタル化について（報告）",
+          "url": "https://www.mhlw.go.jp/content/11601000/001739200.pdf",
+          "type": "PDF",
+          "isPrivate": false
+        },
+        {
+          "name": "【資料４】特定在留カードの創設に伴う届出書類の改正について（報告）",
+          "url": "https://www.mhlw.go.jp/content/11601000/001739201.pdf",
+          "type": "PDF",
+          "isPrivate": false
+        },
+        {
+          "name": "第210回 職業安定分科会雇用保険部会 議事録",
+          "url": "https://www.mhlw.go.jp/stf/newpage_73248.html",
+          "type": "HTML"
+        }
+      ],
+      "manualLock": true
     },
     {
       "id": "smea-kigyo_torihiki-20260310-004",
@@ -92434,48 +92464,6 @@
       "manualLock": true
     },
     {
-      "id": "mhlw-938-20260130-209",
-      "councilId": "mhlw-938",
-      "title": "第209回 職業安定分科会雇用保険部会",
-      "date": "2026/01/30",
-      "officialUrl": "https://www.mhlw.go.jp/stf/newpage_71019.html",
-      "materials": [
-        {
-          "name": "第209回議事次第［PDF形式：56KB］",
-          "url": "https://www.mhlw.go.jp/content/11601000/001646195.pdf"
-        },
-        {
-          "name": "【資料１－１】労働保険の保険料の徴収等に関する法律第十二条第五項の規定に基づき失業等給付費等充当徴収保険率を変更する件案要綱［PDF形式：277KB］",
-          "url": "https://www.mhlw.go.jp/content/11601000/001646212.pdf"
-        },
-        {
-          "name": "【資料１－２】労働保険の保険料の徴収等に関する法律第十二条第五項の規定に基づき失業等給付費等充当徴収保険率を変更する件案概要［PDF形式：222KB］",
-          "url": "https://www.mhlw.go.jp/content/11601000/001646213.pdf"
-        },
-        {
-          "name": "【資料２－１】労働保険の保険料の徴収等に関する法律第十二条第八項の規定に基づき育児休業給付費充当徴収保険率を変更する件案要綱［PDF形式：271KB］",
-          "url": "https://www.mhlw.go.jp/content/11601000/001646214.pdf"
-        },
-        {
-          "name": "【資料２－２】労働保険の保険料の徴収等に関する法律第十二条第八項の規定に基づき育児休業給付費充当徴収保険率を変更する件案概要［PDF形式：222KB］",
-          "url": "https://www.mhlw.go.jp/content/11601000/001646215.pdf"
-        },
-        {
-          "name": "【資料３－１】雇用保険法施行規則の一部を改正する省令案要綱［PDF形式：281KB］",
-          "url": "https://www.mhlw.go.jp/content/11601000/001646216.pdf"
-        },
-        {
-          "name": "【資料３－２】雇用保険法施行規則の一部を改正する省令案概要［PDF形式：233KB］",
-          "url": "https://www.mhlw.go.jp/content/11601000/001646217.pdf"
-        },
-        {
-          "name": "傍聴される皆さまへの留意事項［54KB］",
-          "url": "https://www.mhlw.go.jp/content/11607000/000671510.pdf"
-        }
-      ],
-      "manualLock": true
-    },
-    {
       "id": "cas-keizai_anzen_hosyo-20260130-015",
       "councilId": "cas-keizai_anzen_hosyo",
       "title": "第15回 経済安全保障法制に関する有識者会議（令和４年度～）",
@@ -92531,6 +92519,63 @@
       "isNewlyDiscovered": true,
       "isDateUnconfirmed": false,
       "discoveredAt": "2026/09/16 09:11"
+    },
+    {
+      "id": "mhlw-938-20260130-209",
+      "councilId": "mhlw-938",
+      "title": "第209回 職業安定分科会雇用保険部会",
+      "date": "2026/01/30",
+      "officialUrl": "https://www.mhlw.go.jp/stf/newpage_68762.html",
+      "materials": [
+        {
+          "name": "第209回議事次第",
+          "url": "https://www.mhlw.go.jp/content/11601000/001646195.pdf",
+          "type": "PDF",
+          "isPrivate": false
+        },
+        {
+          "name": "【資料１－１】労働保険の保険料の徴収等に関する法律第十二条第五項の規定に基づき失業等給付費等充当徴収保険率を変更する件案要綱",
+          "url": "https://www.mhlw.go.jp/content/11601000/001646212.pdf",
+          "type": "PDF",
+          "isPrivate": false
+        },
+        {
+          "name": "【資料１－２】労働保険の保険料の徴収等に関する法律第十二条第五項の規定に基づき失業等給付費等充当徴収保険率を変更する件案概要",
+          "url": "https://www.mhlw.go.jp/content/11601000/001646213.pdf",
+          "type": "PDF",
+          "isPrivate": false
+        },
+        {
+          "name": "【資料２－１】労働保険の保険料の徴収等に関する法律第十二条第八項の規定に基づき育児休業給付費充当徴収保険率を変更する件案要綱",
+          "url": "https://www.mhlw.go.jp/content/11601000/001646214.pdf",
+          "type": "PDF",
+          "isPrivate": false
+        },
+        {
+          "name": "【資料２－２】労働保険の保険料の徴収等に関する法律第十二条第八項の規定に基づき育児休業給付費充当徴収保険率を変更する件案概要",
+          "url": "https://www.mhlw.go.jp/content/11601000/001646215.pdf",
+          "type": "PDF",
+          "isPrivate": false
+        },
+        {
+          "name": "【資料３－１】雇用保険法施行規則の一部を改正する省令案要綱",
+          "url": "https://www.mhlw.go.jp/content/11601000/001646216.pdf",
+          "type": "PDF",
+          "isPrivate": false
+        },
+        {
+          "name": "【資料３－２】雇用保険法施行規則の一部を改正する省令案概要",
+          "url": "https://www.mhlw.go.jp/content/11601000/001646217.pdf",
+          "type": "PDF",
+          "isPrivate": false
+        },
+        {
+          "name": "第209回 職業安定分科会雇用保険部会 議事録",
+          "url": "https://www.mhlw.go.jp/stf/newpage_71019.html",
+          "type": "HTML"
+        }
+      ],
+      "manualLock": true
     },
     {
       "id": "mic-tsusin_bangou_iinkai-20260129-013",
@@ -100524,6 +100569,33 @@
       ]
     },
     {
+      "id": "mhlw-938-20251219-208",
+      "councilId": "mhlw-938",
+      "title": "第208回 職業安定分科会雇用保険部会",
+      "date": "2025/12/19",
+      "officialUrl": "https://www.mhlw.go.jp/stf/newpage_66762.html",
+      "materials": [
+        {
+          "name": "第208回議事次第",
+          "url": "https://www.mhlw.go.jp/content/11601000/001615722.pdf",
+          "type": "PDF",
+          "isPrivate": false
+        },
+        {
+          "name": "【資料】財政運営について",
+          "url": "https://www.mhlw.go.jp/content/11601000/001615723.pdf",
+          "type": "PDF",
+          "isPrivate": false
+        },
+        {
+          "name": "第208回 職業安定分科会雇用保険部会 議事録",
+          "url": "https://www.mhlw.go.jp/stf/newpage_69433.html",
+          "type": "HTML"
+        }
+      ],
+      "manualLock": true
+    },
+    {
       "id": "nra-1203-20251218-020",
       "councilId": "nra-1203",
       "title": "第20回 原子炉安全基本部会・核燃料安全基本部会",
@@ -102401,6 +102473,81 @@
       "date": "2025/12/12",
       "officialUrl": "https://www.mhlw.go.jp/stf/newpage_68431.html",
       "materials": [],
+      "manualLock": true
+    },
+    {
+      "id": "mhlw-938-20251212-207",
+      "councilId": "mhlw-938",
+      "title": "第207回 職業安定分科会雇用保険部会",
+      "date": "2025/12/12",
+      "officialUrl": "https://www.mhlw.go.jp/stf/newpage_66552.html",
+      "materials": [
+        {
+          "name": "第207回　議事次第",
+          "url": "https://www.mhlw.go.jp/content/11601000/001609738.pdf",
+          "type": "PDF",
+          "isPrivate": false
+        },
+        {
+          "name": "【資料１】財政運営（失業等給付・雇用保険二事業②）について",
+          "url": "https://www.mhlw.go.jp/content/11601000/001609707.pdf",
+          "type": "PDF",
+          "isPrivate": false
+        },
+        {
+          "name": "【資料２】財政運営（育児休業給付②）について",
+          "url": "https://www.mhlw.go.jp/content/11601000/001609708.pdf",
+          "type": "PDF",
+          "isPrivate": false
+        },
+        {
+          "name": "【資料３】広域求職活動費の見直しについて",
+          "url": "https://www.mhlw.go.jp/content/11601000/001609709.pdf",
+          "type": "PDF",
+          "isPrivate": false
+        },
+        {
+          "name": "【資料４】雇用保険二事業について（報告）",
+          "url": "https://www.mhlw.go.jp/content/11601000/001609710.pdf",
+          "type": "PDF",
+          "isPrivate": false
+        },
+        {
+          "name": "【資料５】雇用保険二事業に基づく助成金の効果検証を踏まえた令和８年度概算要求における対応（報告）",
+          "url": "https://www.mhlw.go.jp/content/11601000/001609711.pdf",
+          "type": "PDF",
+          "isPrivate": false
+        },
+        {
+          "name": "【参考資料１】雇用保険制度の主要指標",
+          "url": "https://www.mhlw.go.jp/content/11601000/001609712.pdf",
+          "type": "PDF",
+          "isPrivate": false
+        },
+        {
+          "name": "【参考資料２】雇用保険二事業 令和６年度評価・令和７年度目標設定",
+          "url": "https://www.mhlw.go.jp/content/11601000/001609713.pdf",
+          "type": "PDF",
+          "isPrivate": false
+        },
+        {
+          "name": "【参考資料３】雇用保険二事業 令和６年度評価の令和８年度概算要求への反映状況（一覧）",
+          "url": "https://www.mhlw.go.jp/content/11601000/001609714.pdf",
+          "type": "PDF",
+          "isPrivate": false
+        },
+        {
+          "name": "【参考資料４】雇用保険部会委員名簿",
+          "url": "https://www.mhlw.go.jp/content/11601000/001609715.pdf",
+          "type": "PDF",
+          "isPrivate": false
+        },
+        {
+          "name": "第207回 職業安定分科会雇用保険部会 議事録",
+          "url": "https://www.mhlw.go.jp/stf/newpage_69432.html",
+          "type": "HTML"
+        }
+      ],
       "manualLock": true
     },
     {
@@ -111112,6 +111259,51 @@
       "discoveredAt": "2026/09/16 09:19"
     },
     {
+      "id": "mhlw-938-20251028-206",
+      "councilId": "mhlw-938",
+      "title": "第206回 職業安定分科会雇用保険部会",
+      "date": "2025/10/28",
+      "officialUrl": "https://www.mhlw.go.jp/stf/newpage_64724.html",
+      "materials": [
+        {
+          "name": "第206回　議事次第",
+          "url": "https://www.mhlw.go.jp/content/11601000/001586566.pdf",
+          "type": "PDF",
+          "isPrivate": false
+        },
+        {
+          "name": "【資料１】財政運営（失業等給付・雇用保険二事業）について",
+          "url": "https://www.mhlw.go.jp/content/11601000/001586567.pdf",
+          "type": "PDF",
+          "isPrivate": false
+        },
+        {
+          "name": "【資料２】財政運営（育児休業給付）について",
+          "url": "https://www.mhlw.go.jp/content/11601000/001586568.pdf",
+          "type": "PDF",
+          "isPrivate": false
+        },
+        {
+          "name": "【資料３】雇用保険手続きにおける電子化の進捗及び今後の方向性について",
+          "url": "https://www.mhlw.go.jp/content/11601000/001586569.pdf",
+          "type": "PDF",
+          "isPrivate": false
+        },
+        {
+          "name": "【参考資料】雇用保険制度の主要指標",
+          "url": "https://www.mhlw.go.jp/content/11601000/001586570.pdf",
+          "type": "PDF",
+          "isPrivate": false
+        },
+        {
+          "name": "第206回 職業安定分科会雇用保険部会 議事録",
+          "url": "https://www.mhlw.go.jp/stf/newpage_66178.html",
+          "type": "HTML"
+        }
+      ],
+      "manualLock": true
+    },
+    {
       "id": "mhlw-shakai_hosho_kaigo_hoken-20251027-127",
       "councilId": "mhlw-shakai_hosho_kaigo_hoken",
       "title": "第127回 社会保障審議会 介護保険部会",
@@ -119175,6 +119367,51 @@
           "url": "https://www.bunka.go.jp/seisaku/bunkashingikai/sokai/sokai_25/98/pdf/94258801_03.pdf"
         }
       ]
+    },
+    {
+      "id": "mhlw-938-20250820-205",
+      "councilId": "mhlw-938",
+      "title": "第205回 職業安定分科会雇用保険部会",
+      "date": "2025/08/20",
+      "officialUrl": "https://www.mhlw.go.jp/stf/newpage_60893.html",
+      "materials": [
+        {
+          "name": "第205回　議事次第",
+          "url": "https://www.mhlw.go.jp/content/11601000/001542886.pdf",
+          "type": "PDF",
+          "isPrivate": false
+        },
+        {
+          "name": "【資料１】令和６年雇用保険制度改正（令和10年10月１日施行分）について",
+          "url": "https://www.mhlw.go.jp/content/11601000/001542937.pdf",
+          "type": "PDF",
+          "isPrivate": false
+        },
+        {
+          "name": "【資料２】雇用保険制度の主要指標",
+          "url": "https://www.mhlw.go.jp/content/11601000/001542938.pdf",
+          "type": "PDF",
+          "isPrivate": false
+        },
+        {
+          "name": "【資料３】「経済財政運営と改革の基本方針2025」等について（報告）",
+          "url": "https://www.mhlw.go.jp/content/11601000/001542939.pdf",
+          "type": "PDF",
+          "isPrivate": false
+        },
+        {
+          "name": "【参考資料】雇用保険部会委員名簿",
+          "url": "https://www.mhlw.go.jp/content/11601000/001544443.pdf",
+          "type": "PDF",
+          "isPrivate": false
+        },
+        {
+          "name": "第205回 職業安定分科会雇用保険部会 議事録",
+          "url": "https://www.mhlw.go.jp/stf/newpage_64091.html",
+          "type": "HTML"
+        }
+      ],
+      "manualLock": true
     },
     {
       "id": "mhlw-rousei_roudoujouken-20250819-201",
@@ -138688,6 +138925,57 @@
       "manualLock": true
     },
     {
+      "id": "mhlw-938-20250312-204",
+      "councilId": "mhlw-938",
+      "title": "第204回 職業安定分科会雇用保険部会",
+      "date": "2025/03/12",
+      "officialUrl": "https://www.mhlw.go.jp/stf/newpage_53028.html",
+      "materials": [
+        {
+          "name": "第204回　議事次第",
+          "url": "https://www.mhlw.go.jp/content/11601000/001439700.pdf",
+          "type": "PDF",
+          "isPrivate": false
+        },
+        {
+          "name": "【資料１－１】雇用保険法施行規則等の一部を改正する省令案要綱",
+          "url": "https://www.mhlw.go.jp/content/11601000/001439978.pdf",
+          "type": "PDF",
+          "isPrivate": false
+        },
+        {
+          "name": "【資料１－２】雇用保険法施行規則等の一部を改正する省令案概要",
+          "url": "https://www.mhlw.go.jp/content/11601000/001439701.pdf",
+          "type": "PDF",
+          "isPrivate": false
+        },
+        {
+          "name": "【資料２】教育訓練受講のための新たな融資制度について",
+          "url": "https://www.mhlw.go.jp/content/11601000/001439702.pdf",
+          "type": "PDF",
+          "isPrivate": false
+        },
+        {
+          "name": "【資料３】広域求職活動費について（報告）",
+          "url": "https://www.mhlw.go.jp/content/11601000/001439703.pdf",
+          "type": "PDF",
+          "isPrivate": false
+        },
+        {
+          "name": "【参考資料】資料教育訓練休暇給付金について",
+          "url": "https://www.mhlw.go.jp/content/11601000/001439704.pdf",
+          "type": "PDF",
+          "isPrivate": false
+        },
+        {
+          "name": "第204回 職業安定分科会雇用保険部会 議事録",
+          "url": "https://www.mhlw.go.jp/stf/newpage_56105.html",
+          "type": "HTML"
+        }
+      ],
+      "manualLock": true
+    },
+    {
       "id": "mhlw-rousei_roudoujouken-20250311-195",
       "councilId": "mhlw-rousei_roudoujouken",
       "title": "第195回 労働政策審議会 労働条件分科会",
@@ -145141,6 +145429,69 @@
       "manualLock": true
     },
     {
+      "id": "mhlw-938-20250116-203",
+      "councilId": "mhlw-938",
+      "title": "第203回 職業安定分科会雇用保険部会",
+      "date": "2025/01/16",
+      "officialUrl": "https://www.mhlw.go.jp/stf/newpage_48691.html",
+      "materials": [
+        {
+          "name": "第203回　議事次第",
+          "url": "https://www.mhlw.go.jp/content/11601000/001375524.pdf",
+          "type": "PDF",
+          "isPrivate": false
+        },
+        {
+          "name": "【資料１－１】労働保険の保険料の徴収等に関する法律第十二条第五項の規定に基づき失業等給付費等充当徴収保険率を変更する告示案要綱",
+          "url": "https://www.mhlw.go.jp/content/11601000/001375525.pdf",
+          "type": "PDF",
+          "isPrivate": false
+        },
+        {
+          "name": "【資料１－２】労働保険の保険料の徴収等に関する法律第十二条第五項の規定に基づき失業等給付費等充当徴収保険率を変更する告示案概要",
+          "url": "https://www.mhlw.go.jp/content/11601000/001375526.pdf",
+          "type": "PDF",
+          "isPrivate": false
+        },
+        {
+          "name": "【資料２－１】労働保険の保険料の徴収等に関する法律第十二条第八項の規定に基づき育児休業給付費充当徴収保険率を変更する告示案要綱",
+          "url": "https://www.mhlw.go.jp/content/11601000/001375527.pdf",
+          "type": "PDF",
+          "isPrivate": false
+        },
+        {
+          "name": "【資料２－２】労働保険の保険料の徴収等に関する法律第十二条第八項の規定に基づき育児休業給付費充当徴収保険率を変更する告示案概要",
+          "url": "https://www.mhlw.go.jp/content/11601000/001375528.pdf",
+          "type": "PDF",
+          "isPrivate": false
+        },
+        {
+          "name": "【資料３】教育訓練休暇給付金について",
+          "url": "https://www.mhlw.go.jp/content/11601000/001375529.pdf",
+          "type": "PDF",
+          "isPrivate": false
+        },
+        {
+          "name": "【資料４】教育訓練受講のための新たな融資制度について",
+          "url": "https://www.mhlw.go.jp/content/11601000/001375530.pdf",
+          "type": "PDF",
+          "isPrivate": false
+        },
+        {
+          "name": "【参考資料】雇用保険制度の現状について",
+          "url": "https://www.mhlw.go.jp/content/11601000/001375531.pdf",
+          "type": "PDF",
+          "isPrivate": false
+        },
+        {
+          "name": "第203回 職業安定分科会雇用保険部会 議事録",
+          "url": "https://www.mhlw.go.jp/stf/newpage_52365.html",
+          "type": "HTML"
+        }
+      ],
+      "manualLock": true
+    },
+    {
       "id": "cas-sokuitiri-20250115-008",
       "councilId": "cas-sokuitiri",
       "title": "第8回 地理空間情報活用推進会議",
@@ -147120,6 +147471,33 @@
       "manualLock": true
     },
     {
+      "id": "mhlw-938-20241227-202",
+      "councilId": "mhlw-938",
+      "title": "第202回 職業安定分科会雇用保険部会",
+      "date": "2024/12/27",
+      "officialUrl": "https://www.mhlw.go.jp/stf/newpage_47272.html",
+      "materials": [
+        {
+          "name": "第202回　議事次第",
+          "url": "https://www.mhlw.go.jp/content/11601000/001365747.pdf",
+          "type": "PDF",
+          "isPrivate": false
+        },
+        {
+          "name": "【資料１】財政運営について",
+          "url": "https://www.mhlw.go.jp/content/11601000/001366332.pdf",
+          "type": "PDF",
+          "isPrivate": false
+        },
+        {
+          "name": "第202回 職業安定分科会雇用保険部会 議事録",
+          "url": "https://www.mhlw.go.jp/stf/newpage_51038.html",
+          "type": "HTML"
+        }
+      ],
+      "manualLock": true
+    },
+    {
       "id": "mhlw-shakai_hosho_iryou_hoken-20241226-191",
       "councilId": "mhlw-shakai_hosho_iryou_hoken",
       "title": "第191回 社会保障審議会 医療保険部会",
@@ -148709,6 +149087,33 @@
       "isNewlyDiscovered": true,
       "isDateUnconfirmed": false,
       "discoveredAt": "2026/09/16 09:11"
+    },
+    {
+      "id": "mhlw-938-20241223-201",
+      "councilId": "mhlw-938",
+      "title": "第201回 職業安定分科会雇用保険部会",
+      "date": "2024/12/23",
+      "officialUrl": "https://www.mhlw.go.jp/stf/newpage_46928.html",
+      "materials": [
+        {
+          "name": "第201回　議事次第",
+          "url": "https://www.mhlw.go.jp/content/11601000/001359917.pdf",
+          "type": "PDF",
+          "isPrivate": false
+        },
+        {
+          "name": "【資料１】財政運営について",
+          "url": "https://www.mhlw.go.jp/content/11601000/001359918.pdf",
+          "type": "PDF",
+          "isPrivate": false
+        },
+        {
+          "name": "第201回 職業安定分科会雇用保険部会 議事録",
+          "url": "https://www.mhlw.go.jp/stf/newpage_51025.html",
+          "type": "HTML"
+        }
+      ],
+      "manualLock": true
     },
     {
       "id": "mic-toukei_iinkai-20241220-212",
@@ -151772,6 +152177,57 @@
       "manualLock": true
     },
     {
+      "id": "mhlw-938-20241203-200",
+      "councilId": "mhlw-938",
+      "title": "第200回 職業安定分科会雇用保険部会",
+      "date": "2024/12/03",
+      "officialUrl": "https://www.mhlw.go.jp/stf/newpage_45977.html",
+      "materials": [
+        {
+          "name": "第200回　議事次第",
+          "url": "https://www.mhlw.go.jp/content/11601000/001343219.pdf",
+          "type": "PDF",
+          "isPrivate": false
+        },
+        {
+          "name": "【資料１】財政運営（失業等給付・雇用保険二事業②）について",
+          "url": "https://www.mhlw.go.jp/content/11601000/001343220.pdf",
+          "type": "PDF",
+          "isPrivate": false
+        },
+        {
+          "name": "【資料２】財政運営（育児休業給付②）について",
+          "url": "https://www.mhlw.go.jp/content/11601000/001343221.pdf",
+          "type": "PDF",
+          "isPrivate": false
+        },
+        {
+          "name": "【資料３-１】雇用保険二事業について（報告）",
+          "url": "https://www.mhlw.go.jp/content/11601000/001343222.pdf",
+          "type": "PDF",
+          "isPrivate": false
+        },
+        {
+          "name": "【資料３-２】雇用保険二事業に基づく助成金の効果検証の取組強化（報告）",
+          "url": "https://www.mhlw.go.jp/content/11601000/001343223.pdf",
+          "type": "PDF",
+          "isPrivate": false
+        },
+        {
+          "name": "【参考資料】雇用保険制度の主要指標",
+          "url": "https://www.mhlw.go.jp/content/11601000/001343224.pdf",
+          "type": "PDF",
+          "isPrivate": false
+        },
+        {
+          "name": "第200回 職業安定分科会雇用保険部会 議事録",
+          "url": "https://www.mhlw.go.jp/stf/newpage_48879.html",
+          "type": "HTML"
+        }
+      ],
+      "manualLock": true
+    },
+    {
       "id": "smea-yorozu-20241202-003",
       "councilId": "smea-yorozu",
       "title": "地域の経営支援力強化に向けたよろず支援拠点のあり方検討会 第3回",
@@ -153449,6 +153905,45 @@
       "isNewlyDiscovered": true,
       "isDateUnconfirmed": false,
       "discoveredAt": "2026/09/16 09:21"
+    },
+    {
+      "id": "mhlw-938-20241120-199",
+      "councilId": "mhlw-938",
+      "title": "第199回 職業安定分科会雇用保険部会",
+      "date": "2024/11/20",
+      "officialUrl": "https://www.mhlw.go.jp/stf/newpage_45259.html",
+      "materials": [
+        {
+          "name": "第199回　議事次第",
+          "url": "https://www.mhlw.go.jp/content/11601000/001334936.pdf",
+          "type": "PDF",
+          "isPrivate": false
+        },
+        {
+          "name": "【資料１】雇用保険制度の主要指標",
+          "url": "https://www.mhlw.go.jp/content/11601000/001334937.pdf",
+          "type": "PDF",
+          "isPrivate": false
+        },
+        {
+          "name": "【資料２】財政運営について（失業等給付・雇用保険二事業）",
+          "url": "https://www.mhlw.go.jp/content/11601000/001334938.pdf",
+          "type": "PDF",
+          "isPrivate": false
+        },
+        {
+          "name": "【資料３】財政運営について（育児休業給付）",
+          "url": "https://www.mhlw.go.jp/content/11601000/001334939.pdf",
+          "type": "PDF",
+          "isPrivate": false
+        },
+        {
+          "name": "第199回 職業安定分科会雇用保険部会 議事録",
+          "url": "https://www.mhlw.go.jp/stf/newpage_46832.html",
+          "type": "HTML"
+        }
+      ],
+      "manualLock": true
     },
     {
       "id": "smea-1307-20241119-005",
@@ -158703,6 +159198,69 @@
       "manualLock": true
     },
     {
+      "id": "mhlw-938-20240924-198",
+      "councilId": "mhlw-938",
+      "title": "第198回 職業安定分科会雇用保険部会",
+      "date": "2024/09/24",
+      "officialUrl": "https://www.mhlw.go.jp/stf/newpage_43647.html",
+      "materials": [
+        {
+          "name": "第198回　議事次第",
+          "url": "https://www.mhlw.go.jp/content/11601000/001306723.pdf",
+          "type": "PDF",
+          "isPrivate": false
+        },
+        {
+          "name": "【資料１－１】雇用保険法施行規則及び新型コロナウイルス感染症等の影響に対応するための雇用保険法の臨時特例等に関する法律施行規則の一部を改正する省令案要綱",
+          "url": "https://www.mhlw.go.jp/content/11601000/001306724.pdf",
+          "type": "PDF",
+          "isPrivate": false
+        },
+        {
+          "name": "【資料１－２】雇用保険法施行規則及び新型コロナウイルス感染症等の影響に対応するための雇用保険法の臨時特例等に関する法律施行規則の一部を改正する省令案概要",
+          "url": "https://www.mhlw.go.jp/content/11601000/001306725.pdf",
+          "type": "PDF",
+          "isPrivate": false
+        },
+        {
+          "name": "【資料２－１】雇用保険法施行規則等の一部を改正する省令案要綱",
+          "url": "https://www.mhlw.go.jp/content/11601000/001306726.pdf",
+          "type": "PDF",
+          "isPrivate": false
+        },
+        {
+          "name": "【資料２－２】雇用保険法施行規則等の一部を改正する省令案概要",
+          "url": "https://www.mhlw.go.jp/content/11601000/001306762.pdf",
+          "type": "PDF",
+          "isPrivate": false
+        },
+        {
+          "name": "【資料３】教育訓練給付制度の指定対象講座の拡充について",
+          "url": "https://www.mhlw.go.jp/content/11601000/001306728.pdf",
+          "type": "PDF",
+          "isPrivate": false
+        },
+        {
+          "name": "【参考資料１】令和６年雇用保険制度改正（令和７年４月１日施行分）について",
+          "url": "https://www.mhlw.go.jp/content/11601000/001306729.pdf",
+          "type": "PDF",
+          "isPrivate": false
+        },
+        {
+          "name": "【参考資料２】教育訓練の指定基準等の一部を改正する告示案要綱諮問文",
+          "url": "https://www.mhlw.go.jp/content/11601000/001306730.pdf",
+          "type": "PDF",
+          "isPrivate": false
+        },
+        {
+          "name": "第198回 職業安定分科会雇用保険部会 議事録",
+          "url": "https://www.mhlw.go.jp/stf/newpage_44412.html",
+          "type": "HTML"
+        }
+      ],
+      "manualLock": true
+    },
+    {
       "id": "mhlw-shakai_hosho_nenkin-20240920-018",
       "councilId": "mhlw-shakai_hosho_nenkin",
       "title": "第18回 社会保障審議会 年金部会",
@@ -161240,6 +161798,51 @@
           "url": "https://www.bunka.go.jp/seisaku/bunkashingikai/chosakuken/shiyoryo/r06_02/"
         }
       ]
+    },
+    {
+      "id": "mhlw-938-20240827-197",
+      "councilId": "mhlw-938",
+      "title": "第197回 職業安定分科会雇用保険部会",
+      "date": "2024/08/27",
+      "officialUrl": "https://www.mhlw.go.jp/stf/newpage_42610.html",
+      "materials": [
+        {
+          "name": "第197回　議事次第",
+          "url": "https://www.mhlw.go.jp/content/11601000/001293212.pdf",
+          "type": "PDF",
+          "isPrivate": false
+        },
+        {
+          "name": "【資料１】令和６年雇用保険制度改正（令和７年４月１日施行分）について",
+          "url": "https://www.mhlw.go.jp/content/11601000/001293213.pdf",
+          "type": "PDF",
+          "isPrivate": false
+        },
+        {
+          "name": "【資料２】教育訓練給付制度の指定対象講座の拡充について",
+          "url": "https://www.mhlw.go.jp/content/11601000/001293214.pdf",
+          "type": "PDF",
+          "isPrivate": false
+        },
+        {
+          "name": "【資料３】雇用関係助成金のDX化について",
+          "url": "https://www.mhlw.go.jp/content/11601000/001293215.pdf",
+          "type": "PDF",
+          "isPrivate": false
+        },
+        {
+          "name": "【資料４】「経済財政運営と改革の基本方針2024」、「新しい資本主義のグランドデザイン及び実行計画2024改訂版」及び「規制改革実施計画」の概要について（報告）",
+          "url": "https://www.mhlw.go.jp/content/11601000/001293216.pdf",
+          "type": "PDF",
+          "isPrivate": false
+        },
+        {
+          "name": "第197回 職業安定分科会雇用保険部会 議事録",
+          "url": "https://www.mhlw.go.jp/stf/newpage_43767.html",
+          "type": "HTML"
+        }
+      ],
+      "manualLock": true
     },
     {
       "id": "fsc-doubutu-20240826-273",
@@ -167170,6 +167773,63 @@
       "manualLock": true
     },
     {
+      "id": "mhlw-938-20240619-196",
+      "councilId": "mhlw-938",
+      "title": "第196回 職業安定分科会雇用保険部会",
+      "date": "2024/06/19",
+      "officialUrl": "https://www.mhlw.go.jp/stf/newpage_40671.html",
+      "materials": [
+        {
+          "name": "第196回　議事次第",
+          "url": "https://www.mhlw.go.jp/content/11601000/001263556.pdf",
+          "type": "PDF",
+          "isPrivate": false
+        },
+        {
+          "name": "【資料１－１】雇用保険法施行規則及び生活保護法別表第一に規定する厚生労働省令で定める情報を定める省令の一部を改正する省令案要綱",
+          "url": "https://www.mhlw.go.jp/content/11601000/001265424.pdf",
+          "type": "PDF",
+          "isPrivate": false
+        },
+        {
+          "name": "【資料１－２】雇用保険法施行規則及び生活保護法別表第一に規定する厚生労働省令で定める情報を定める省令の一部を改正する省令案概要",
+          "url": "https://www.mhlw.go.jp/content/11601000/001265720.pdf",
+          "type": "PDF",
+          "isPrivate": false
+        },
+        {
+          "name": "【資料２】「子ども・子育て支援法等の一部を改正する法律」の成立について（雇用保険関係部分）",
+          "url": "https://www.mhlw.go.jp/content/11601000/001263558.pdf",
+          "type": "PDF",
+          "isPrivate": false
+        },
+        {
+          "name": "【参考資料１】雇用保険部会報告",
+          "url": "https://www.mhlw.go.jp/content/11601000/001263561.pdf",
+          "type": "PDF",
+          "isPrivate": false
+        },
+        {
+          "name": "【参考資料２】子ども・子育て支援法等の一部を改正する法律案（雇用保険法等の一部改正関係）要綱",
+          "url": "https://www.mhlw.go.jp/content/11601000/001263562.pdf",
+          "type": "PDF",
+          "isPrivate": false
+        },
+        {
+          "name": "【参考資料３】第213回国会（令和６年常会）子ども・子育て支援法等の一部を改正する法律審議経過",
+          "url": "https://www.mhlw.go.jp/content/11601000/001265063.pdf",
+          "type": "PDF",
+          "isPrivate": false
+        },
+        {
+          "name": "第196回 職業安定分科会雇用保険部会 議事録",
+          "url": "https://www.mhlw.go.jp/stf/newpage_41601.html",
+          "type": "HTML"
+        }
+      ],
+      "manualLock": true
+    },
+    {
       "id": "mhlw-826-20240618-007",
       "councilId": "mhlw-826",
       "title": "第７回 エイズ・性感染症に関する小委員会",
@@ -170370,6 +171030,63 @@
           "url": "https://www.bunka.go.jp/seisaku/bunkashingikai/chosakuken/seisaku/r06_01/pdf/94057001_01.pdf"
         }
       ]
+    },
+    {
+      "id": "mhlw-938-20240520-195",
+      "councilId": "mhlw-938",
+      "title": "第195回 職業安定分科会雇用保険部会",
+      "date": "2024/05/20",
+      "officialUrl": "https://www.mhlw.go.jp/stf/newpage_40191.html",
+      "materials": [
+        {
+          "name": "第195回　議事次第",
+          "url": "https://www.mhlw.go.jp/content/11601000/001253546.pdf",
+          "type": "PDF",
+          "isPrivate": false
+        },
+        {
+          "name": "【資料１】「雇用保険法等の一部を改正する法律」の成立について",
+          "url": "https://www.mhlw.go.jp/content/11601000/001253533.pdf",
+          "type": "PDF",
+          "isPrivate": false
+        },
+        {
+          "name": "【資料２】ハローワークの就職支援機能の強化と失業認定におけるデジタル技術の活用について",
+          "url": "https://www.mhlw.go.jp/content/11601000/001253534.pdf",
+          "type": "PDF",
+          "isPrivate": false
+        },
+        {
+          "name": "【参考資料１－１】雇用保険部会報告",
+          "url": "https://www.mhlw.go.jp/content/11601000/001253535.pdf",
+          "type": "PDF",
+          "isPrivate": false
+        },
+        {
+          "name": "【参考資料１－２】雇用保険法等の一部を改正する法律案要綱",
+          "url": "https://www.mhlw.go.jp/content/11601000/001253536.pdf",
+          "type": "PDF",
+          "isPrivate": false
+        },
+        {
+          "name": "【参考資料１－３】第213回国会（令和6年常会）　雇用保険法等改正法案審議経過",
+          "url": "https://www.mhlw.go.jp/content/11601000/001253537.pdf",
+          "type": "PDF",
+          "isPrivate": false
+        },
+        {
+          "name": "雇用保険部会委員名簿",
+          "url": "https://www.mhlw.go.jp/content/11601000/001255472.pdf",
+          "type": "PDF",
+          "isPrivate": false
+        },
+        {
+          "name": "第195回 職業安定分科会雇用保険部会 議事録",
+          "url": "https://www.mhlw.go.jp/stf/newpage_40895.html",
+          "type": "HTML"
+        }
+      ],
+      "manualLock": true
     },
     {
       "id": "mhlw-shouni_mansei_taisaku_bukai-20240517-003",
@@ -177961,6 +178678,75 @@
         }
       ],
       "councilName": "規制改革推進会議 健康・医療・介護WG"
+    },
+    {
+      "id": "mhlw-938-20240314-194",
+      "councilId": "mhlw-938",
+      "title": "第194回 職業安定分科会雇用保険部会",
+      "date": "2024/03/14",
+      "officialUrl": "https://www.mhlw.go.jp/stf/newpage_38530.html",
+      "materials": [
+        {
+          "name": "第194回　議事次第",
+          "url": "https://www.mhlw.go.jp/content/11601000/001224971.pdf",
+          "type": "PDF",
+          "isPrivate": false
+        },
+        {
+          "name": "【資料１－１】雇用保険法施行規則の一部を改正する省令案要綱（育児休業給付関係）",
+          "url": "https://www.mhlw.go.jp/content/11601000/001224972.pdf",
+          "type": "PDF",
+          "isPrivate": false
+        },
+        {
+          "name": "【資料１－２】雇用保険法施行規則の一部を改正する省令案概要（育児休業給付関係）",
+          "url": "https://www.mhlw.go.jp/content/11601000/001224973.pdf",
+          "type": "PDF",
+          "isPrivate": false
+        },
+        {
+          "name": "【資料２－１】雇用保険法施行規則の一部を改正する省令案要綱（教育訓練給付関係）",
+          "url": "https://www.mhlw.go.jp/content/11601000/001224974.pdf",
+          "type": "PDF",
+          "isPrivate": false
+        },
+        {
+          "name": "【資料２－２】雇用保険法施行規則の一部を改正する省令案概要（教育訓練給付関係）",
+          "url": "https://www.mhlw.go.jp/content/11601000/001224975.pdf",
+          "type": "PDF",
+          "isPrivate": false
+        },
+        {
+          "name": "【資料３】失業認定におけるデジタル技術の活用について",
+          "url": "https://www.mhlw.go.jp/content/11601000/001224976.pdf",
+          "type": "PDF",
+          "isPrivate": false
+        },
+        {
+          "name": "【資料４】専門実践教育訓練の指定基準の見直しについて(報告）",
+          "url": "https://www.mhlw.go.jp/content/11601000/001224977.pdf",
+          "type": "PDF",
+          "isPrivate": false
+        },
+        {
+          "name": "【参考資料１】雇用保険法第六十条の二第一項に規定する厚生労働大臣が指定する教育訓練の指定基準の一部を改正する件案要綱",
+          "url": "https://www.mhlw.go.jp/content/11601000/001224978.pdf",
+          "type": "PDF",
+          "isPrivate": false
+        },
+        {
+          "name": "【参考資料２】教育訓練給付について",
+          "url": "https://www.mhlw.go.jp/content/11601000/001224979.pdf",
+          "type": "PDF",
+          "isPrivate": false
+        },
+        {
+          "name": "第194回 職業安定分科会雇用保険部会 議事録",
+          "url": "https://www.mhlw.go.jp/stf/newpage_39668.html",
+          "type": "HTML"
+        }
+      ],
+      "manualLock": true
     },
     {
       "id": "moj-1194-20240313-004",
@@ -186463,63 +187249,91 @@
       ]
     },
     {
-      "id": "mhlw-938-20240110-211",
+      "id": "mhlw-938-20240112-193",
       "councilId": "mhlw-938",
-      "title": "第211回 職業安定分科会雇用保険部会",
-      "date": "2024/01/10",
-      "officialUrl": "https://www.mhlw.go.jp/stf/newpage_75640.html",
+      "title": "第193回 職業安定分科会雇用保険部会",
+      "date": "2024/01/12",
+      "officialUrl": "https://www.mhlw.go.jp/stf/newpage_37293.html",
       "materials": [
         {
-          "name": "第211回議事次第［PDF形式：83KB］",
-          "url": "https://www.mhlw.go.jp/content/11601000/001745700.pdf"
+          "name": "第193回　議事次第",
+          "url": "https://www.mhlw.go.jp/content/11601000/001189268.pdf",
+          "type": "PDF",
+          "isPrivate": false
         },
         {
-          "name": "【資料１】雇用保険制度の概要［PDF形式：16.2MB］",
-          "url": "https://www.mhlw.go.jp/content/11601000/001745356.pdf"
+          "name": "【資料１】雇用保険法等の一部を改正する法律案要綱",
+          "url": "https://www.mhlw.go.jp/content/11601000/001189269.pdf",
+          "type": "PDF",
+          "isPrivate": false
         },
         {
-          "name": "【資料２】雇用保険制度の主要指標［PDF形式：11.5MB］",
-          "url": "https://www.mhlw.go.jp/content/11601000/001745357.pdf"
+          "name": "【資料２】子ども・子育て支援法等の一部を改正する法律案（雇用保険法等の一部改正関係）要綱",
+          "url": "https://www.mhlw.go.jp/content/11601000/001189270.pdf",
+          "type": "PDF",
+          "isPrivate": false
         },
         {
-          "name": "【資料３】令和６年雇用保険法等改正について［PDF形式：7.3MB］",
-          "url": "https://www.mhlw.go.jp/content/11601000/001745358.pdf"
+          "name": "【参考資料１】雇用保険部会報告",
+          "url": "https://www.mhlw.go.jp/content/11601000/001189271.pdf",
+          "type": "PDF",
+          "isPrivate": false
         },
         {
-          "name": "【資料４】経済財政運営と改革の基本方針（骨太の方針）等について［PDF形式：1.6MB］",
-          "url": "https://www.mhlw.go.jp/content/11601000/001745359.pdf"
+          "name": "【参考資料２】参考資料",
+          "url": "https://www.mhlw.go.jp/content/11601000/001189272.pdf",
+          "type": "PDF",
+          "isPrivate": false
         },
         {
-          "name": "【資料５】雇用保険部会の主な論点（案）［PDF形式：898KB］",
-          "url": "https://www.mhlw.go.jp/content/11601000/001745360.pdf"
+          "name": "【参考資料３】令和６年能登半島地震の激甚災害の指定及び雇用保険の特例について（１月11日報道発表資料）",
+          "url": "https://www.mhlw.go.jp/content/11601000/001189273.pdf",
+          "type": "PDF",
+          "isPrivate": false
         },
         {
-          "name": "【資料６】雇用保険・厚生年金データの学術利用の事業（案）について［PDF形式：2.2MB］",
-          "url": "https://www.mhlw.go.jp/content/11601000/001745361.pdf"
+          "name": "第193回 職業安定分科会雇用保険部会 議事録",
+          "url": "https://www.mhlw.go.jp/stf/newpage_37609.html",
+          "type": "HTML"
+        }
+      ],
+      "manualLock": true
+    },
+    {
+      "id": "mhlw-938-20240105-192",
+      "councilId": "mhlw-938",
+      "title": "第192回 職業安定分科会雇用保険部会",
+      "date": "2024/01/05",
+      "officialUrl": "https://www.mhlw.go.jp/stf/newpage_37135.html",
+      "materials": [
+        {
+          "name": "第192回　議事次第",
+          "url": "https://www.mhlw.go.jp/content/11601000/001186398.pdf",
+          "type": "PDF",
+          "isPrivate": false
         },
         {
-          "name": "【参考資料１】制度改正の経緯［PDF形式：2.7MB］",
-          "url": "https://www.mhlw.go.jp/content/11601000/001745362.pdf"
+          "name": "【資料１】雇用保険部会報告（案）",
+          "url": "https://www.mhlw.go.jp/content/11601000/001186399.pdf",
+          "type": "PDF",
+          "isPrivate": false
         },
         {
-          "name": "【参考資料２】雇用保険部会報告（令和６年１月10日）［PDF形式：3.5MB］",
-          "url": "https://www.mhlw.go.jp/content/11601000/001745363.pdf"
+          "name": "【参考資料１】第191回雇用保険部会提示の報告書案からの修正点",
+          "url": "https://www.mhlw.go.jp/content/11601000/001186400.pdf",
+          "type": "PDF",
+          "isPrivate": false
         },
         {
-          "name": "【参考資料３】雇用保険・厚生年金データの学術利用の環境整備に関するヒアリング［PDF形式：135KB］",
-          "url": "https://www.mhlw.go.jp/content/11601000/001745364.pdf"
+          "name": "【参考資料２】参考資料",
+          "url": "https://www.mhlw.go.jp/content/11601000/001186401.pdf",
+          "type": "PDF",
+          "isPrivate": false
         },
         {
-          "name": "【参考資料４】雇用保険・厚生年金データの学術利用の事業（案）の関係規程の概要［PDF形式：147KB］",
-          "url": "https://www.mhlw.go.jp/content/11601000/001745365.pdf"
-        },
-        {
-          "name": "【参考資料５】雇用保険部会委員名簿［PDF形式：72KB］",
-          "url": "https://www.mhlw.go.jp/content/11601000/001745366.pdf"
-        },
-        {
-          "name": "傍聴される皆さまへの留意事項［54KB］",
-          "url": "https://www.mhlw.go.jp/content/11607000/000671510.pdf"
+          "name": "第192回 職業安定分科会雇用保険部会 議事録",
+          "url": "https://www.mhlw.go.jp/stf/newpage_37608.html",
+          "type": "HTML"
         }
       ],
       "manualLock": true
@@ -187193,6 +188007,51 @@
         {
           "name": "議事録（PDF形式：400KB）",
           "url": "https://www.cao.go.jp/tochi-chosa/shingikai/doc/gijiroku8.pdf"
+        }
+      ],
+      "manualLock": true
+    },
+    {
+      "id": "mhlw-938-20231226-191",
+      "councilId": "mhlw-938",
+      "title": "第191回 職業安定分科会雇用保険部会",
+      "date": "2023/12/26",
+      "officialUrl": "https://www.mhlw.go.jp/stf/newpage_37028.html",
+      "materials": [
+        {
+          "name": "第191回　議事次第",
+          "url": "https://www.mhlw.go.jp/content/11601000/001183576.pdf",
+          "type": "PDF",
+          "isPrivate": false
+        },
+        {
+          "name": "【資料１】雇用保険部会報告（案）（第189回雇用保険部会提示の報告素案からの修正）",
+          "url": "https://www.mhlw.go.jp/content/11601000/001183683.pdf",
+          "type": "PDF",
+          "isPrivate": false
+        },
+        {
+          "name": "【資料２】雇用保険部会報告書案への追記箇所（抜粋）",
+          "url": "https://www.mhlw.go.jp/content/11601000/001183578.pdf",
+          "type": "PDF",
+          "isPrivate": false
+        },
+        {
+          "name": "【参考資料１】財政運営",
+          "url": "https://www.mhlw.go.jp/content/11601000/001183579.pdf",
+          "type": "PDF",
+          "isPrivate": false
+        },
+        {
+          "name": "【参考資料２】主な見直し内容",
+          "url": "https://www.mhlw.go.jp/content/11601000/001183580.pdf",
+          "type": "PDF",
+          "isPrivate": false
+        },
+        {
+          "name": "第191回 職業安定分科会雇用保険部会 議事録",
+          "url": "https://www.mhlw.go.jp/stf/newpage_37436.html",
+          "type": "HTML"
         }
       ],
       "manualLock": true
@@ -188069,6 +188928,39 @@
         }
       ],
       "councilName": "AI戦略会議"
+    },
+    {
+      "id": "mhlw-938-20231221-190",
+      "councilId": "mhlw-938",
+      "title": "第190回 職業安定分科会雇用保険部会",
+      "date": "2023/12/21",
+      "officialUrl": "https://www.mhlw.go.jp/stf/newpage_36890.html",
+      "materials": [
+        {
+          "name": "第190回　議事次第",
+          "url": "https://www.mhlw.go.jp/content/11601000/001181279.pdf",
+          "type": "PDF",
+          "isPrivate": false
+        },
+        {
+          "name": "【資料１】財政運営",
+          "url": "https://www.mhlw.go.jp/content/11601000/001181280.pdf",
+          "type": "PDF",
+          "isPrivate": false
+        },
+        {
+          "name": "【参考資料１】雇用保険部会報告(素案)",
+          "url": "https://www.mhlw.go.jp/content/11601000/001181281.pdf",
+          "type": "PDF",
+          "isPrivate": false
+        },
+        {
+          "name": "第190回 職業安定分科会雇用保険部会 議事録",
+          "url": "https://www.mhlw.go.jp/stf/newpage_37435.html",
+          "type": "HTML"
+        }
+      ],
+      "manualLock": true
     },
     {
       "id": "mod-cho_shin-20231220-185",
@@ -189436,6 +190328,45 @@
       "discoveredAt": "2026/09/16 09:17"
     },
     {
+      "id": "mhlw-938-20231213-189",
+      "councilId": "mhlw-938",
+      "title": "第189回 職業安定分科会雇用保険部会",
+      "date": "2023/12/13",
+      "officialUrl": "https://www.mhlw.go.jp/stf/newpage_36817.html",
+      "materials": [
+        {
+          "name": "第189回　議事次第",
+          "url": "https://www.mhlw.go.jp/content/11601000/001178076.pdf",
+          "type": "PDF",
+          "isPrivate": false
+        },
+        {
+          "name": "【資料１】雇用保険部会報告（素案）",
+          "url": "https://www.mhlw.go.jp/content/11601000/001178077.pdf",
+          "type": "PDF",
+          "isPrivate": false
+        },
+        {
+          "name": "【参考資料１】財政運営について",
+          "url": "https://www.mhlw.go.jp/content/11601000/001178210.pdf",
+          "type": "PDF",
+          "isPrivate": false
+        },
+        {
+          "name": "【参考資料２】主な見直し内容",
+          "url": "https://www.mhlw.go.jp/content/11601000/001178079.pdf",
+          "type": "PDF",
+          "isPrivate": false
+        },
+        {
+          "name": "第189回 職業安定分科会雇用保険部会 議事録",
+          "url": "https://www.mhlw.go.jp/stf/newpage_37216.html",
+          "type": "HTML"
+        }
+      ],
+      "manualLock": true
+    },
+    {
       "id": "moj-teikan_ninsho_kento-20231212-004",
       "councilId": "moj-teikan_ninsho_kento",
       "title": "第４回会議（令和５年１２月１２日）（起業家の負担軽減に向けた定款認証の見直しに関する検討会）",
@@ -189865,6 +190796,69 @@
         }
       ],
       "councilName": "規制改革推進会議 健康・医療・介護WG"
+    },
+    {
+      "id": "mhlw-938-20231211-188",
+      "councilId": "mhlw-938",
+      "title": "第188回 職業安定分科会雇用保険部会",
+      "date": "2023/12/11",
+      "officialUrl": "https://www.mhlw.go.jp/stf/newpage_36697.html",
+      "materials": [
+        {
+          "name": "第188回　議事次第",
+          "url": "https://www.mhlw.go.jp/content/11601000/001177122.pdf",
+          "type": "PDF",
+          "isPrivate": false
+        },
+        {
+          "name": "【資料１－１】雇用保険法施行規則の一部を改正する省令案要綱",
+          "url": "https://www.mhlw.go.jp/content/11601000/001177123.pdf",
+          "type": "PDF",
+          "isPrivate": false
+        },
+        {
+          "name": "【資料１－２】雇用保険法施行規則の一部を改正する省令案概要",
+          "url": "https://www.mhlw.go.jp/content/11601000/001177199.pdf",
+          "type": "PDF",
+          "isPrivate": false
+        },
+        {
+          "name": "【資料２】これまでの議論の整理及び具体的な制度設計案 （雇用保険の適用拡大）",
+          "url": "https://www.mhlw.go.jp/content/11601000/001177125.pdf",
+          "type": "PDF",
+          "isPrivate": false
+        },
+        {
+          "name": "【資料３】これまでの議論の整理及び具体的な制度設計案（育児休業給付等）",
+          "url": "https://www.mhlw.go.jp/content/11601000/001177126.pdf",
+          "type": "PDF",
+          "isPrivate": false
+        },
+        {
+          "name": "【資料４】これまでの議論の整理及び具体的な制度設計案（教育訓練給付等）",
+          "url": "https://www.mhlw.go.jp/content/11601000/001177127.pdf",
+          "type": "PDF",
+          "isPrivate": false
+        },
+        {
+          "name": "【資料５】高年齢雇用継続給付について",
+          "url": "https://www.mhlw.go.jp/content/11601000/001177128.pdf",
+          "type": "PDF",
+          "isPrivate": false
+        },
+        {
+          "name": "参考資料",
+          "url": "https://www.mhlw.go.jp/content/11601000/001177129.pdf",
+          "type": "PDF",
+          "isPrivate": false
+        },
+        {
+          "name": "第188回 職業安定分科会雇用保険部会 議事録",
+          "url": "https://www.mhlw.go.jp/stf/newpage_37215.html",
+          "type": "HTML"
+        }
+      ],
+      "manualLock": true
     },
     {
       "id": "moj-minji_hanketsu_db-20231208-012",
@@ -192475,6 +193469,57 @@
           "url": "https://www.bunka.go.jp/seisaku/bunkashingikai/chosakuken/shiyoryo/r05_03/"
         }
       ]
+    },
+    {
+      "id": "mhlw-938-20231122-187",
+      "councilId": "mhlw-938",
+      "title": "第187回 職業安定分科会雇用保険部会",
+      "date": "2023/11/22",
+      "officialUrl": "https://www.mhlw.go.jp/stf/newpage_36430.html",
+      "materials": [
+        {
+          "name": "第187回　議事次第",
+          "url": "https://www.mhlw.go.jp/content/11601000/001169701.pdf",
+          "type": "PDF",
+          "isPrivate": false
+        },
+        {
+          "name": "【資料１－１】これまでの議論の整理と見直しの方向性（適用拡大）",
+          "url": "https://www.mhlw.go.jp/content/11601000/001169702.pdf",
+          "type": "PDF",
+          "isPrivate": false
+        },
+        {
+          "name": "【資料１－２】適用拡大関係資料（参考資料）",
+          "url": "https://www.mhlw.go.jp/content/11601000/001169703.pdf",
+          "type": "PDF",
+          "isPrivate": false
+        },
+        {
+          "name": "【資料２】財政運営について",
+          "url": "https://www.mhlw.go.jp/content/11601000/001169727.pdf",
+          "type": "PDF",
+          "isPrivate": false
+        },
+        {
+          "name": "【資料３】雇用保険二事業について",
+          "url": "https://www.mhlw.go.jp/content/11601000/001169728.pdf",
+          "type": "PDF",
+          "isPrivate": false
+        },
+        {
+          "name": "【参考資料１】雇用保険の適用拡大について",
+          "url": "https://www.mhlw.go.jp/content/11601000/001169729.pdf",
+          "type": "PDF",
+          "isPrivate": false
+        },
+        {
+          "name": "第187回 職業安定分科会雇用保険部会 議事録",
+          "url": "https://www.mhlw.go.jp/stf/newpage_36948.html",
+          "type": "HTML"
+        }
+      ],
+      "manualLock": true
     },
     {
       "id": "moj-teikan_ninsho_kento-20231121-002",
@@ -454254,9 +455299,9 @@
     "mhlw-938": {
       "deep_crawl_enabled": true,
       "date_regex": "(?:令和|平成)\\d+年\\d+月\\d+日|20\\d{2}年\\d+月\\d+日",
-      "pdf_selector": "href=[\"\\']([^\"\\']+\\.pdf)[\"\\']",
+      "pdf_selector": "href=[\\\"']([^\\\"']+\\.pdf)[\\\"']",
       "manualLock": true,
-      "subpage_discovery_pattern": "href=[\"\\'](https://www\\.mhlw\\.go\\.jp/stf/(?:newpage_\\d+|shingi2/\\d+_\\d+)\\.html)[\"\\']"
+      "subpage_discovery_pattern": "href=[\\\"'](https://www\\.mhlw\\.go\\.jp/stf/(?:newpage_\\d+|shingi2/\\d+_\\d+)\\.html)[\\\"']"
     },
     "mhlw-939": {
       "deep_crawl_enabled": true,
