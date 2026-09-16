@@ -1071,10 +1071,10 @@ def sync_new_meetings_from_crawl(data, target, scraped_item):
         # 開催回番号の抽出
         sess_nums = extract_session_numbers(sub_title + " " + sub_url)
 
-        # 資料配列の構築
+        # 資料配列の構築（配付資料の名称属性は 'name' で厳格統一）
         clean_materials_list = []
         for mat in sub_mats:
-            mat_name = mat.get("name", "").strip()
+            mat_name = (mat.get("name") or mat.get("title") or "").strip()
             mat_url = mat.get("url", "").strip()
             mat_type = mat.get("type", "PDF")
             if not mat_url or mat_url == "#" or mat_url == sub_url:

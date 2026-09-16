@@ -132,6 +132,20 @@ def run_test():
     if bad_m_ids:
         errors.append(f"Invalid meetingId format (must be {{councilId}}-{{YYYYMMDD}}-{{round}} with 3 hyphens) ({len(bad_m_ids)} items): {bad_m_ids[:5]}")
 
+    # 10. Check materials schema (Strictly enforce 'name' attribute, ban 'title' key and empty names)
+    bad_materials_title_key = []
+    bad_materials_empty_name = []
+    for m in meetings:
+        for mat in m.get('materials', []):
+            if 'title' in mat:
+                bad_materials_title_key.append((m.get('id'), mat))
+            if not str(mat.get('name') or '').strip():
+                bad_materials_empty_name.append((m.get('id'), mat))
+    if bad_materials_title_key:
+        errors.append(f"Materials with deprecated 'title' key found ({len(bad_materials_title_key)} items): {[b[0] for b in bad_materials_title_key[:5]]}")
+    if bad_materials_empty_name:
+        errors.append(f"Materials with empty 'name' attribute found ({len(bad_materials_empty_name)} items): {[b[0] for b in bad_materials_empty_name[:5]]}")
+
     if errors:
         print(f"FAILED: {len(errors)} validation errors found:")
         for e in errors:
