@@ -580,36 +580,9 @@ document.addEventListener('DOMContentLoaded', async () => {
     });
   }
 
-  function sortMeetings(list) {
-    const mapped = list.map(item => ({
-      item,
-      time: item.date ? new Date(item.date.replace(/-/g, '/')).getTime() : 0
-    }));
-
-    mapped.sort((a, b) => {
-      if (state.sortBy === 'NEWEST') {
-        return b.time - a.time;
-      } else if (state.sortBy === 'OLDEST') {
-        return a.time - b.time;
-      } else if (state.sortBy === 'DOCS_DESC') {
-        return (b.item.materials ? b.item.materials.length : 0) - (a.item.materials ? a.item.materials.length : 0);
-      } else if (state.sortBy === 'DOCS_ASC') {
-        return (a.item.materials ? a.item.materials.length : 0) - (b.item.materials ? b.item.materials.length : 0);
-      } else if (state.sortBy === 'MEETINGS_DESC') {
-        return (meetingCounts[b.item.councilId] || 0) - (meetingCounts[a.item.councilId] || 0);
-      } else if (state.sortBy === 'MEETINGS_ASC') {
-        return (meetingCounts[a.item.councilId] || 0) - (meetingCounts[b.item.councilId] || 0);
-      }
-      return 0;
-    });
-
-    // 純粋関数: 引数を変更せず新配列を返す（副作用排除）
-    return mapped.map(x => x.item);
-  }
-
   function renderByDateView() {
     const filtered = filterMeetings();
-    const sorted = sortMeetings(filtered);
+    const sorted = sortMeetings(filtered, state.sortBy, meetingCounts);
 
     // Active Filter Tags Bar update
     renderActiveFilterTags(filtered.length);
@@ -901,44 +874,18 @@ document.addEventListener('DOMContentLoaded', async () => {
 
   function renderByCouncilView() {
     const list = filterCouncils();
-
-    // Sort councils
-    const ministryOrderKeys = Object.keys(MINISTRIES);
-    list.sort((a, b) => {
-      if (state.sortBy === 'NEWEST' || state.sortBy === 'OLDEST') {
-        const dateA = getCouncilLatestDate(a);
-        const dateB = getCouncilLatestDate(b);
-        if (dateA !== '-' && dateB !== '-') {
-          const cmp = state.sortBy === 'NEWEST' ? dateB.localeCompare(dateA) : dateA.localeCompare(dateB);
-          if (cmp !== 0) return cmp;
-        } else if (dateA !== '-') {
-          return state.sortBy === 'NEWEST' ? -1 : 1;
-        } else if (dateB !== '-') {
-          return state.sortBy === 'NEWEST' ? 1 : -1;
-        }
-        return a.name.localeCompare(b.name, 'ja');
-      } else if (state.sortBy === 'DOCS_DESC') {
-        const docsA = (meetingsByCouncilMap.get(a.id) || []).reduce((sum, m) => sum + (m.materials ? m.materials.length : 0), 0);
-        const docsB = (meetingsByCouncilMap.get(b.id) || []).reduce((sum, m) => sum + (m.materials ? m.materials.length : 0), 0);
-        return docsB - docsA;
-      } else if (state.sortBy === 'DOCS_ASC') {
-        const docsA = (meetingsByCouncilMap.get(a.id) || []).reduce((sum, m) => sum + (m.materials ? m.materials.length : 0), 0);
-        const docsB = (meetingsByCouncilMap.get(b.id) || []).reduce((sum, m) => sum + (m.materials ? m.materials.length : 0), 0);
-        return docsA - docsB;
-      } else if (state.sortBy === 'MEETINGS_DESC') {
-        return (meetingCounts[b.id] || 0) - (meetingCounts[a.id] || 0);
-      } else if (state.sortBy === 'MEETINGS_ASC') {
-        return (meetingCounts[a.id] || 0) - (meetingCounts[b.id] || 0);
-      }
-      return 0;
+    const sorted = sortCouncils(list, state.sortBy, {
+      getLatestDate: getCouncilLatestDate,
+      meetingsMap: meetingsByCouncilMap,
+      counts: meetingCounts
     });
 
     // Render active filter tags
-    renderActiveFilterTags(list.length);
+    renderActiveFilterTags(sorted.length);
 
     if (!el.councilsAccordionList) return;
 
-    if (list.length === 0) {
+    if (sorted.length === 0) {
       el.councilsAccordionList.innerHTML = `
         <div class="councils-no-results card-glass">
           <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="margin: 0 auto;">
@@ -952,7 +899,7 @@ document.addEventListener('DOMContentLoaded', async () => {
       return;
     }
 
-    el.councilsAccordionList.innerHTML = list.map(c => {
+    el.councilsAccordionList.innerHTML = sorted.map(c => {
       const minInfo = MINISTRIES[c.ministry] || { name: c.ministry };
       const isWatching = state.watchedCouncilIds.has(c.id);
       const pastYearDisplay = formatPastYearCountDisplay(c);
@@ -1652,6 +1599,81 @@ function isMeetingInDateRange(meeting, dateRangeFilter, refDate = new Date()) {
   return true;
 }
 
+function sortMeetings(list, sortBy = (typeof state !== 'undefined' ? state.sortBy : 'NEWEST'), counts = (typeof meetingCounts !== 'undefined' ? meetingCounts : {})) {
+  const mapped = (list || []).map(item => ({
+    item,
+    time: item.date ? new Date(item.date.replace(/-/g, '/')).getTime() : 0
+  }));
+
+  mapped.sort((a, b) => {
+    if (sortBy === 'NEWEST') {
+      return b.time - a.time;
+    } else if (sortBy === 'OLDEST') {
+      return a.time - b.time;
+    } else if (sortBy === 'DOCS_DESC') {
+      return (b.item.materials ? b.item.materials.length : 0) - (a.item.materials ? a.item.materials.length : 0);
+    } else if (sortBy === 'DOCS_ASC') {
+      return (a.item.materials ? a.item.materials.length : 0) - (b.item.materials ? b.item.materials.length : 0);
+    } else if (sortBy === 'MEETINGS_DESC') {
+      return (counts[b.item.councilId] || 0) - (counts[a.item.councilId] || 0);
+    } else if (sortBy === 'MEETINGS_ASC') {
+      return (counts[a.item.councilId] || 0) - (counts[b.item.councilId] || 0);
+    }
+    return 0;
+  });
+
+  return mapped.map(x => x.item);
+}
+
+function sortCouncils(list, sortBy = (typeof state !== 'undefined' ? state.sortBy : 'NEWEST'), options = {}) {
+  const {
+    getLatestDate = (typeof getCouncilLatestDate === 'function' ? getCouncilLatestDate : c => (c && c.latestDate) || '-'),
+    meetingsMap = (typeof meetingsByCouncilMap !== 'undefined' ? meetingsByCouncilMap : new Map()),
+    counts = (typeof meetingCounts !== 'undefined' ? meetingCounts : {})
+  } = options;
+
+  const mapped = (list || []).map(c => {
+    const councilMeetings = meetingsMap instanceof Map ? (meetingsMap.get(c.id) || []) : (meetingsMap[c.id] || []);
+    const docsCount = councilMeetings.reduce((sum, m) => sum + (m && m.materials ? m.materials.length : 0), 0);
+    const latestDate = typeof getLatestDate === 'function' ? getLatestDate(c) : (c && c.latestDate) || '-';
+    const meetingCount = counts[c.id] || 0;
+    return {
+      council: c,
+      docsCount,
+      latestDate: latestDate || '-',
+      meetingCount,
+      name: (c && c.name) || ''
+    };
+  });
+
+  mapped.sort((a, b) => {
+    if (sortBy === 'NEWEST' || sortBy === 'OLDEST') {
+      const dateA = a.latestDate;
+      const dateB = b.latestDate;
+      if (dateA !== '-' && dateB !== '-') {
+        const cmp = sortBy === 'NEWEST' ? dateB.localeCompare(dateA) : dateA.localeCompare(dateB);
+        if (cmp !== 0) return cmp;
+      } else if (dateA !== '-') {
+        return -1;
+      } else if (dateB !== '-') {
+        return 1;
+      }
+      return a.name.localeCompare(b.name, 'ja');
+    } else if (sortBy === 'DOCS_DESC') {
+      return b.docsCount - a.docsCount;
+    } else if (sortBy === 'DOCS_ASC') {
+      return a.docsCount - b.docsCount;
+    } else if (sortBy === 'MEETINGS_DESC') {
+      return b.meetingCount - a.meetingCount;
+    } else if (sortBy === 'MEETINGS_ASC') {
+      return a.meetingCount - b.meetingCount;
+    }
+    return 0;
+  });
+
+  return mapped.map(x => x.council);
+}
+
 if (typeof module !== 'undefined' && module.exports) {
   module.exports = {
     getFiscalYear,
@@ -1662,6 +1684,8 @@ if (typeof module !== 'undefined' && module.exports) {
     getStoredJson,
     setStoredJson,
     meetingMatchesDocType,
-    isMeetingInDateRange
+    isMeetingInDateRange,
+    sortMeetings,
+    sortCouncils
   };
 }

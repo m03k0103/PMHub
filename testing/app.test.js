@@ -1,6 +1,18 @@
 const test = require('node:test');
 const assert = require('node:assert');
-const { escapeHtml, sanitizeUrl, formatDate, getFiscalYear, getStoredJson, setStoredJson, meetingMatchesDocType, isMeetingInDateRange } = require('../docs/app.js');
+const {
+  escapeHtml,
+  sanitizeUrl,
+  formatDate,
+  getFiscalYear,
+  getStoredJson,
+  setStoredJson,
+  meetingMatchesDocType,
+  isMeetingInDateRange,
+  capitalize,
+  sortMeetings,
+  sortCouncils
+} = require('../docs/app.js');
 
 test('sanitizeUrl utility function (Security / XSS prevention)', async (t) => {
   await t.test('allows safe http and https URLs', () => {
@@ -174,6 +186,103 @@ test('isMeetingInDateRange helper function', async (t) => {
     assert.strictEqual(isMeetingInDateRange({ date: '2025/05/01' }, 'YEAR', baseRef), false);
     assert.strictEqual(isMeetingInDateRange({ date: '2025/05/01' }, 'PREV_YEAR', baseRef), true);
     assert.strictEqual(isMeetingInDateRange({ date: '2026/05/01' }, 'PREV_YEAR', baseRef), false);
+  });
+});
+
+test('capitalize utility function', async (t) => {
+  await t.test('capitalizes the first letter of string', () => {
+    assert.strictEqual(capitalize('hello'), 'Hello');
+    assert.strictEqual(capitalize('digital'), 'Digital');
+    assert.strictEqual(capitalize('A'), 'A');
+  });
+
+  await t.test('handles empty or non-string inputs', () => {
+    assert.strictEqual(capitalize(''), '');
+    assert.strictEqual(capitalize(null), '');
+    assert.strictEqual(capitalize(undefined), '');
+  });
+});
+
+test('sortMeetings pure function', async (t) => {
+  const sampleMeetings = [
+    { id: 'm1', date: '2026/09/10', councilId: 'c1', materials: [{ name: 'doc1' }] },
+    { id: 'm2', date: '2026/09/15', councilId: 'c2', materials: [{ name: 'doc1' }, { name: 'doc2' }, { name: 'doc3' }] },
+    { id: 'm3', date: '2026/09/01', councilId: 'c1', materials: [] }
+  ];
+  const meetingCounts = { c1: 5, c2: 2 };
+
+  await t.test('sorts by NEWEST (date descending)', () => {
+    const sorted = sortMeetings(sampleMeetings, 'NEWEST', meetingCounts);
+    assert.deepStrictEqual(sorted.map(m => m.id), ['m2', 'm1', 'm3']);
+  });
+
+  await t.test('sorts by OLDEST (date ascending)', () => {
+    const sorted = sortMeetings(sampleMeetings, 'OLDEST', meetingCounts);
+    assert.deepStrictEqual(sorted.map(m => m.id), ['m3', 'm1', 'm2']);
+  });
+
+  await t.test('sorts by DOCS_DESC and DOCS_ASC', () => {
+    const sortedDesc = sortMeetings(sampleMeetings, 'DOCS_DESC', meetingCounts);
+    assert.deepStrictEqual(sortedDesc.map(m => m.id), ['m2', 'm1', 'm3']);
+    const sortedAsc = sortMeetings(sampleMeetings, 'DOCS_ASC', meetingCounts);
+    assert.deepStrictEqual(sortedAsc.map(m => m.id), ['m3', 'm1', 'm2']);
+  });
+
+  await t.test('sorts by MEETINGS_DESC and MEETINGS_ASC', () => {
+    const sortedDesc = sortMeetings(sampleMeetings, 'MEETINGS_DESC', meetingCounts);
+    assert.deepStrictEqual(sortedDesc.map(m => m.id), ['m1', 'm3', 'm2']);
+    const sortedAsc = sortMeetings(sampleMeetings, 'MEETINGS_ASC', meetingCounts);
+    assert.deepStrictEqual(sortedAsc.map(m => m.id), ['m2', 'm1', 'm3']);
+  });
+
+  await t.test('does not mutate the original array (pure function)', () => {
+    const originalCopy = [...sampleMeetings];
+    sortMeetings(sampleMeetings, 'NEWEST', meetingCounts);
+    assert.deepStrictEqual(sampleMeetings, originalCopy);
+  });
+});
+
+test('sortCouncils pure function', async (t) => {
+  const sampleCouncils = [
+    { id: 'c1', name: '会議体B', latestDate: '2026/08/15' },
+    { id: 'c2', name: '会議体A', latestDate: '2026/09/01' },
+    { id: 'c3', name: '会議体C', latestDate: '-' }
+  ];
+  const meetingsMap = new Map([
+    ['c1', [{ materials: [{ name: '1' }] }]],
+    ['c2', [{ materials: [{ name: '1' }, { name: '2' }, { name: '3' }] }]],
+    ['c3', []]
+  ]);
+  const meetingCounts = { c1: 10, c2: 3, c3: 0 };
+
+  await t.test('sorts by NEWEST (date descending, - at end, tie-break by name)', () => {
+    const sorted = sortCouncils(sampleCouncils, 'NEWEST', { meetingsMap, counts: meetingCounts });
+    assert.deepStrictEqual(sorted.map(c => c.id), ['c2', 'c1', 'c3']);
+  });
+
+  await t.test('sorts by OLDEST (date ascending, - at end)', () => {
+    const sorted = sortCouncils(sampleCouncils, 'OLDEST', { meetingsMap, counts: meetingCounts });
+    assert.deepStrictEqual(sorted.map(c => c.id), ['c1', 'c2', 'c3']);
+  });
+
+  await t.test('sorts by DOCS_DESC and DOCS_ASC', () => {
+    const sortedDesc = sortCouncils(sampleCouncils, 'DOCS_DESC', { meetingsMap, counts: meetingCounts });
+    assert.deepStrictEqual(sortedDesc.map(c => c.id), ['c2', 'c1', 'c3']);
+    const sortedAsc = sortCouncils(sampleCouncils, 'DOCS_ASC', { meetingsMap, counts: meetingCounts });
+    assert.deepStrictEqual(sortedAsc.map(c => c.id), ['c3', 'c1', 'c2']);
+  });
+
+  await t.test('sorts by MEETINGS_DESC and MEETINGS_ASC', () => {
+    const sortedDesc = sortCouncils(sampleCouncils, 'MEETINGS_DESC', { meetingsMap, counts: meetingCounts });
+    assert.deepStrictEqual(sortedDesc.map(c => c.id), ['c1', 'c2', 'c3']);
+    const sortedAsc = sortCouncils(sampleCouncils, 'MEETINGS_ASC', { meetingsMap, counts: meetingCounts });
+    assert.deepStrictEqual(sortedAsc.map(c => c.id), ['c3', 'c2', 'c1']);
+  });
+
+  await t.test('does not mutate the original array (pure function)', () => {
+    const originalCopy = [...sampleCouncils];
+    sortCouncils(sampleCouncils, 'NEWEST', { meetingsMap, counts: meetingCounts });
+    assert.deepStrictEqual(sampleCouncils, originalCopy);
   });
 });
 
