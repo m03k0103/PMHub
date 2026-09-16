@@ -62,7 +62,10 @@ GENERIC_TITLE_KEYWORDS = frozenset({
     '政策について', '総務省の紹介', '国立国会図書館インターネット資料収集保存事業（WARP）',
     '国立国会図書館インターネット資料収集保存事業', '議事次第', '配付資料', '配布資料',
     '議題', '資料', '議事', '日時', 'メンバー', '会議資料一覧', '審議会・検討会・研究会等',
-    '審議会、検討会、研究会等', '令和３年改正個人情報保護法について', '原子力規制委員会'
+    '審議会、検討会、研究会等', '令和３年改正個人情報保護法について', '原子力規制委員会',
+    'サイトマップ', '開催案内', '開催について', '１開催日時', '１．日', '●日時', 'お知らせ',
+    '新着情報', '１．日時', '１　開催日時', '議事要旨等', 'Interim Report', '共同主催国際会議',
+    '議事次第・資料一覧', '配布資料一覧', '配付資料一覧'
 })
 
 # 配付資料として不適切な汎用ナビゲーション・UIテキスト（事前除外用定数）
@@ -74,6 +77,64 @@ EXCLUDE_MATERIAL_NAMES = frozenset({
     '別ウィンドウで開く', '新しいウィンドウで開く', '（別ウィンドウで開く）',
     'JavaScriptが無効です', 'JavaScriptを有効にしてください'
 })
+
+# デフォルトの日付抽出正規表現
+DEFAULT_DATE_REGEX = r'(?:令和|平成)(?:\d+|元)年\d+月\d+日|\d{4}年\d+月\d+日|\d{4}[/-]\d+[/-]\d+'
+
+# 汎用インデックス・ポータルURL除外用の事前コンパイル正規表現
+_GENERIC_INDEX_URL_PATTERNS = re.compile(
+    r'houdou/index\.html|'
+    r'houdou/houdou\.html|'
+    r'press/index\.html|'
+    r'topics/index\.html|'
+    r'news/index\.html|'
+    r'shingi/index\.html|'
+    r'/pressrelease/?$|'
+    r'/houdou_topics/?$|'
+    r'/houdou/?$|'
+    r'comittee/kaisai\.html|'
+    r'space/comittee/about\.html|'
+    r'/kaisai\.html$|'
+    r'indexshingi\.html|'
+    r'newpage_19921\.html|'
+    r'cas\.go\.jp/jp/s(?:i|hi)ryou?(?:/index\.html)?$|'
+    r'cas\.go\.jp/jp/s(?:i|hi)ryou?/|'
+    r'cyber/what-we-do/csmeeting\.html|'
+    r'/int/kaisai/kako\.html|'
+    r'study/dai3sya/index\.html|'
+    r'policymeeting/(?:index\.html)?$|'
+    r'gijiroku/zeicho/\d{4}/(?:index\.html)?$|'
+    r'fsc\.go\.jp/senmon/(?:[^/]+/)?$|'
+    r'kanbou_library_library\d+_\d+\.html|'
+    r'14th_congress_index\.html|'
+    r'menu_sosiki/singi/index\.html|'
+    r'sonota_index\.html|'
+    r'topics/bukyoku/syakai/soren/|'
+    r'bousai\.go\.jp/kohou/oshirase/|'
+    r'iinkaisai/iinkaisai\.html|'
+    r'bunkakaisai/bunkakaisai\.html|'
+    r'yusei_kaisai\.html|'
+    r'/kaisai/yusei/|'
+    r'menu_news/s-news|'
+    r'b_menu/houdou|'
+    r'da\.nra\.go\.jp/search\?.*f\.gi=.*f\.gi=|'
+    r'digital\.go\.jp/(?:en/)?councils/[^/]+/?$|'
+    r'digital\.go\.jp/en/|'
+    r'digital\.go\.jp/councils/procurement-agile-opensource/(?:agile|opensource)-review-meeting/?$|'
+    r'sitemap(?:\.html|\.xml|/)?$|'
+    r'/sitemap/|'
+    r'member(?:\.html|/)?$|'
+    r'meibo(?:\.html|/)?$',
+    re.IGNORECASE
+)
+
+# 汎用インデックス判定用の除外タイトルキーワード
+_GENERIC_INDEX_TITLE_KEYWORDS = frozenset({
+    "その他情報", "覚書等", "覚書", "有識者会議｜警察庁", "過去の国際会議",
+    "研究会等一覧へのリンク", "会議資料詳細", "資料詳細", "会議詳細",
+    "食の安全、を科学する", "審議会等", "｜デジタル庁", "｜Digital Agency", "Digital Agency"
+})
+
 
 # 省庁コードと公式ドメインのマッピング（他省庁URLの誤混入ガード用）
 MINISTRY_DOMAINS = {
@@ -332,6 +393,52 @@ def parse_materials_from_html(html, base_url, pdf_selector=None):
         
     return materials
 
+def extract_page_title(soup, rule=None, fallback_url=""):
+    """
+    HTML soupから会議名・ページタイトルを抽出する。
+    title_selector -> 見出しタグ (h2, h1, h3) -> <title> タグの順に探索し、ジェネリックタイトルを除外する。
+    """
+    try:
+        title = ""
+        if rule:
+            title_sel = rule.get("title_selector")
+            if title_sel:
+                sel_el = soup.select_one(title_sel)
+                if sel_el:
+                    title = sel_el.get_text(" ", strip=True)
+
+        # title_selector で取れなかった場合、またはジェネリックタイトルの場合
+        if not title or any(kw in title for kw in GENERIC_TITLE_KEYWORDS):
+            for tag_name in ['h2', 'h1', 'h3']:
+                found_tag = soup.find(tag_name)
+                if found_tag:
+                    t_cand = found_tag.get_text(" ", strip=True)
+                    if t_cand and not any(kw in t_cand for kw in GENERIC_TITLE_KEYWORDS):
+                        title = t_cand
+                        break
+
+        # それでもなければ <title> タグ
+        if not title and soup.title and soup.title.string:
+            cand_title = soup.title.string.strip()
+            # サフィックス・余分な空白の除去
+            cand_title = re.sub(r'｜.*$', '', cand_title).strip()
+            cand_title = re.sub(r' - .*$', '', cand_title).strip()
+            cand_title = re.sub(r'\s+', ' ', cand_title).strip()
+            if cand_title and not any(kw in cand_title for kw in GENERIC_TITLE_KEYWORDS):
+                title = cand_title
+
+        if title:
+            title = re.sub(r'｜.*$', '', title).strip()
+            title = re.sub(r' - .*$', '', title).strip()
+            title = re.sub(r'\s+', ' ', title).strip()
+            if any(kw == title for kw in GENERIC_TITLE_KEYWORDS):
+                title = ""
+
+        return title if title else fallback_url
+    except Exception:
+        return fallback_url
+
+
 def _crawl_subpages(target_url, html, rule, quirk_note, pdf_pattern):
     """サブページの深掘りクロールロジック"""
     subpage_meetings = []
@@ -360,35 +467,8 @@ def _crawl_subpages(target_url, html, rule, quirk_note, pdf_pattern):
 
             sub_html = fetch_url(sub_url)
             if sub_html:
-                try:
-                    sub_soup = BeautifulSoup(sub_html, 'html.parser')
-                    # タイトルの取得: title_selector が指定されていれば優先、もしくは h2/h1 から探す
-                    sub_title = ""
-                    title_sel = rule.get("title_selector")
-                    if title_sel:
-                        sel_el = sub_soup.select_one(title_sel)
-                        if sel_el:
-                            sub_title = sel_el.get_text(" ", strip=True)
-
-                    # title_selector で取れなかった場合、またはジェネリックタイトルの場合
-                    if not sub_title or any(kw in sub_title for kw in GENERIC_TITLE_KEYWORDS):
-                        # h2, h1, h3 を順に探して具体的な会議名を取得
-                        for tag_name in ['h2', 'h1', 'h3']:
-                            found_tag = sub_soup.find(tag_name)
-                            if found_tag:
-                                t_cand = found_tag.get_text(" ", strip=True)
-                                if t_cand and not any(kw in t_cand for kw in GENERIC_TITLE_KEYWORDS):
-                                    sub_title = t_cand
-                                    break
-
-                    # それでもなければ <title> タグ
-                    if not sub_title and sub_soup.title and sub_soup.title.string:
-                        sub_title = sub_soup.title.string.strip()
-
-                    if not sub_title:
-                        sub_title = sub_url
-                except Exception:
-                    sub_title = sub_url
+                sub_soup = BeautifulSoup(sub_html, 'html.parser')
+                sub_title = extract_page_title(sub_soup, rule, fallback_url=sub_url)
 
                 sub_materials = parse_materials_from_html(sub_html, sub_url, pdf_pattern)
                 
@@ -439,7 +519,7 @@ def _crawl_subpages(target_url, html, rule, quirk_note, pdf_pattern):
                                 if em.get('type') == 'PDF' and not any(m.get('url') == em.get('url') for m in sub_materials):
                                     sub_materials.append(em)
 
-                raw_sub_dates = extract_clean_dates_from_html(sub_html, rule.get("date_regex", r'(?:令和|平成)(?:\d+|元)年\d+月\d+日|\d{4}年\d+月\d+日|\d{4}[/-]\d+[/-]\d+'))
+                raw_sub_dates = extract_clean_dates_from_html(sub_html, rule.get("date_regex", DEFAULT_DATE_REGEX))
                 norm_sub_dates = [normalize_japanese_numbers(d) for d in raw_sub_dates]
                 all_extracted_dates.extend(norm_sub_dates)
 
@@ -747,7 +827,7 @@ def execute_rule_retrieval(target, html, rule_item, use_llm=False):
             seen_keys.add(key)
             unique_materials.append(m)
 
-    raw_date_matches = extract_clean_dates_from_html(html, rule.get("date_regex", r'(?:令和|平成)(?:\d+|元)年\d+月\d+日|\d{4}年\d+月\d+日|\d{4}[/-]\d+[/-]\d+'))
+    raw_date_matches = extract_clean_dates_from_html(html, rule.get("date_regex", DEFAULT_DATE_REGEX))
     top_norm_dates = [normalize_japanese_numbers(d) for d in raw_date_matches]
     all_extracted_dates.extend(top_norm_dates)
     norm_date_matches = list(dict.fromkeys(all_extracted_dates))
@@ -802,51 +882,9 @@ def is_generic_index_url(url, title=""):
     """報道発表インデックスやポータルトップ・開催状況一覧・「その他情報」等の汎用インデックスURLかどうかを判定する"""
     if not url:
         return True
-    u_lower = url.lower()
-    patterns = [
-        r'houdou/index\.html',
-        r'houdou/houdou\.html',
-        r'press/index\.html',
-        r'topics/index\.html',
-        r'news/index\.html',
-        r'shingi/index\.html',
-        r'/pressrelease/?$',
-        r'/houdou_topics/?$',
-        r'/houdou/?$',
-        r'comittee/kaisai\.html',
-        r'space/comittee/about\.html',
-        r'/kaisai\.html$',
-        r'indexshingi\.html',
-        r'newpage_19921\.html',
-        r'cas\.go\.jp/jp/s(?:i|hi)ryou?(?:/index\.html)?$',
-        r'cas\.go\.jp/jp/s(?:i|hi)ryou?/',
-        r'cyber/what-we-do/csmeeting\.html',
-        r'/int/kaisai/kako\.html',
-        r'study/dai3sya/index\.html',
-        r'policymeeting/(?:index\.html)?$',
-        r'gijiroku/zeicho/\d{4}/(?:index\.html)?$',
-        r'fsc\.go\.jp/senmon/(?:[^/]+/)?$',
-        r'kanbou_library_library\d+_\d+\.html',
-        r'14th_congress_index\.html',
-        r'menu_sosiki/singi/index\.html',
-        r'sonota_index\.html',
-        r'topics/bukyoku/syakai/soren/',
-        r'bousai\.go\.jp/kohou/oshirase/',
-        r'iinkaisai/iinkaisai\.html',
-        r'bunkakaisai/bunkakaisai\.html',
-        r'yusei_kaisai\.html',
-        r'/kaisai/yusei/',
-        r'menu_news/s-news',
-        r'b_menu/houdou',
-        r'da\.nra\.go\.jp/search\?.*f\.gi=.*f\.gi=',
-        r'digital\.go\.jp/(?:en/)?councils/[^/]+/?$',
-        r'digital\.go\.jp/en/',
-        r'digital\.go\.jp/councils/procurement-agile-opensource/(?:agile|opensource)-review-meeting/?$'
-    ]
-    for p in patterns:
-        if re.search(p, u_lower):
-            return True
-    if title and any(k in title for k in ["その他情報", "覚書等", "覚書", "有識者会議｜警察庁", "過去の国際会議", "研究会等一覧へのリンク", "会議資料詳細", "資料詳細", "会議詳細", "食の安全、を科学する", "審議会等", "｜デジタル庁", "｜Digital Agency", "Digital Agency"]):
+    if _GENERIC_INDEX_URL_PATTERNS.search(url.lower()):
+        return True
+    if title and any(k in title for k in _GENERIC_INDEX_TITLE_KEYWORDS):
         return True
     return False
 
@@ -925,11 +963,24 @@ def _build_new_meeting(target, sub, clean_materials_list, sess_nums, meet_date, 
 
     # タイトルの正規化
     formatted_title = sub_title
-    if council_name not in formatted_title and sess_nums:
+    # 開催案内プレフィックス/サフィックスのクリーンアップ
+    if formatted_title:
+        formatted_title = re.sub(r'「(.*?)」を開催します.*$', r'\1', formatted_title)
+        formatted_title = re.sub(r'を開催します.*$', '', formatted_title)
+        formatted_title = re.sub(r'（開催案内）$', '', formatted_title)
+        formatted_title = re.sub(r'\(開催案内\)$', '', formatted_title)
+        formatted_title = re.sub(r'の開催について$', '', formatted_title)
+        formatted_title = formatted_title.strip()
+
+    is_generic = not formatted_title or formatted_title.startswith("http") or any(kw == formatted_title for kw in GENERIC_TITLE_KEYWORDS)
+    if is_generic:
+        if sess_nums:
+            formatted_title = f"第{sorted(sess_nums)[0]}回 {council_name}"
+        else:
+            date_label = "開催日不明" if is_date_unconfirmed else meet_date
+            formatted_title = f"{council_name} ({date_label})"
+    elif council_name not in formatted_title and sess_nums:
         formatted_title = f"第{sorted(sess_nums)[0]}回 {council_name}"
-    elif not formatted_title or formatted_title.startswith("http"):
-        date_label = "開催日不明" if is_date_unconfirmed else meet_date
-        formatted_title = f"{council_name} ({date_label})"
 
     if is_date_unconfirmed and "開催日不明" not in formatted_title:
         formatted_title = f"{formatted_title} (開催日不明)"
@@ -1325,174 +1376,173 @@ def run_meeting_crawler(progress_callback=None, stop_event=None):
             except Exception as pe:
                 print(f"[WARN] progress_callback error: {pe}", file=sys.stderr)
 
-    dynamic_targets = load_councils_from_data_json()
-    if dynamic_targets:
-        CRAWL_TARGETS = interleave_by_ministry(dynamic_targets)
-        emit(f"[INFO] docs/data.json から {len(CRAWL_TARGETS)} 件の会議体を動的に読み込み、同一省庁連続アクセス防止のため省庁分散インターリーブ巡回順に並び替えました。")
-    else:
-        CRAWL_TARGETS = []
-        emit(f"[INFO] 会議体データが見つかりません。")
-        if log_f: log_f.close()
-        if latest_f: latest_f.close()
-        return {"success": 0, "partial": 0, "failed": 0, "fetch_error": 0, "new_meetings": 0, "log_file": log_filepath}
+    try:
+        dynamic_targets = load_councils_from_data_json()
+        if dynamic_targets:
+            CRAWL_TARGETS = interleave_by_ministry(dynamic_targets)
+            emit(f"[INFO] docs/data.json から {len(CRAWL_TARGETS)} 件の会議体を動的に読み込み、同一省庁連続アクセス防止のため省庁分散インターリーブ巡回順に並び替えました。")
+        else:
+            CRAWL_TARGETS = []
+            emit(f"[INFO] 会議体データが見つかりません。")
+            return {"success": 0, "partial": 0, "failed": 0, "fetch_error": 0, "new_meetings": 0, "log_file": log_filepath}
 
-    use_llm = load_crawler_config()
-    now_str = datetime.now().strftime("%Y/%m/%d %H:%M")
-    emit("=" * 60)
-    emit(" 政策会議ウォッチ (PM-HUB) クローラー")
-    emit("=" * 60)
-    emit(f"抽出モード: {'LLM抽出 (Gemini API) + フォールバック' if use_llm else '既存ルール (Heuristic)'}")
-    emit(f"取得実行時刻: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
-    emit(f"対象会議体数: {len(CRAWL_TARGETS)} 件")
-    if log_filepath:
-        emit(f"ログファイル出力先: {log_filepath}\n")
+        use_llm = load_crawler_config()
+        now_str = datetime.now().strftime("%Y/%m/%d %H:%M")
+        emit("=" * 60)
+        emit(" 政策会議ウォッチ (PM-HUB) クローラー")
+        emit("=" * 60)
+        emit(f"抽出モード: {'LLM抽出 (Gemini API) + フォールバック' if use_llm else '既存ルール (Heuristic)'}")
+        emit(f"取得実行時刻: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
+        emit(f"対象会議体数: {len(CRAWL_TARGETS)} 件")
+        if log_filepath:
+            emit(f"ログファイル出力先: {log_filepath}\n")
 
-    # data.json を読み込み（ステータス更新用）
-    data = load_data_json(DATA_JSON_FILE)
+        # data.json を読み込み（ステータス更新用）
+        data = load_data_json(DATA_JSON_FILE)
 
-    # クロール開始時に lastCrawlTime を即時更新・バックアップ保存
-    data["lastCrawlTime"] = now_str
-    save_data_json_with_backup(data)
+        # クロール開始時に lastCrawlTime を即時更新・バックアップ保存
+        data["lastCrawlTime"] = now_str
+        save_data_json_with_backup(data)
 
-    rules = load_scraping_rules()
-    results = []
-    stats = {
-        "success": 0,
-        "partial": 0,
-        "failed": 0,
-        "fetch_error": 0,
-        "new_meetings": 0,
-        "stopped": False,
-        "processed_councils": 0,
-        "newly_added_list": [],
-        "log_file": log_filepath
-    }
-    total_councils = len(CRAWL_TARGETS)
-
-    for idx, target in enumerate(CRAWL_TARGETS, 1):
-        # 途中停止チェック
-        if stop_event and stop_event.is_set():
-            emit(f"\n🛑 [STOP] ユーザーまたはシステムによる停止要求を受信しました。処理を安全に中断します（処理済み: {idx-1}/{total_councils} 件）。")
-            stats["stopped"] = True
-            break
-
-        pct = int((idx / max(total_councils, 1)) * 90)
-        c_name = target.get("name", target.get("id"))
-        c_min = target.get("ministry", "")
-        
-        emit(f"▶ [{idx}/{total_councils}] [{c_min}] HTTP GET: {c_name} ({target['url']})...", {
-            "type": "council_start",
-            "council_id": target["id"],
-            "council_name": c_name,
-            "ministry": c_min,
-            "progress": pct,
-            "current": idx,
-            "total": total_councils,
+        rules = load_scraping_rules()
+        results = []
+        stats = {
+            "success": 0,
+            "partial": 0,
+            "failed": 0,
+            "fetch_error": 0,
+            "new_meetings": 0,
+            "stopped": False,
+            "processed_councils": 0,
+            "newly_added_list": [],
             "log_file": log_filepath
+        }
+        total_councils = len(CRAWL_TARGETS)
+
+        for idx, target in enumerate(CRAWL_TARGETS, 1):
+            # 途中停止チェック
+            if stop_event and stop_event.is_set():
+                emit(f"\n🛑 [STOP] ユーザーまたはシステムによる停止要求を受信しました。処理を安全に中断します（処理済み: {idx-1}/{total_councils} 件）。")
+                stats["stopped"] = True
+                break
+
+            pct = int((idx / max(total_councils, 1)) * 90)
+            c_name = target.get("name", target.get("id"))
+            c_min = target.get("ministry", "")
+            
+            emit(f"▶ [{idx}/{total_councils}] [{c_min}] HTTP GET: {c_name} ({target['url']})...", {
+                "type": "council_start",
+                "council_id": target["id"],
+                "council_name": c_name,
+                "ministry": c_min,
+                "progress": pct,
+                "current": idx,
+                "total": total_councils,
+                "log_file": log_filepath
+            })
+            
+            try:
+                html = fetch_url(target["url"])
+                stats["processed_councils"] += 1
+                
+                if html:
+                    c_id = target["id"]
+                    rule_obj = rules.get(c_id, {
+                        "rule_id": "rule-fallback-v1",
+                        "rules": {}
+                    })
+                    
+                    item = execute_rule_retrieval(target, html, rule_obj, use_llm=use_llm)
+                    results.append(item)
+                    
+                    cr = item.get("crawlResult", "failed")
+                    stats[cr] = stats.get(cr, 0) + 1
+                    
+                    status_icon = {"success": "🟢", "partial": "🟡", "failed": "🔴"}.get(cr, "⚪")
+                    emit(f"  -> {status_icon} [{cr.upper()}] タイトル: {item['pageTitle']}")
+                    emit(f"  -> 資料: {item['totalExtractedMaterials']} 件, 日付: {item['extractedDates']}, 抽出方法: {item['extractionMethod']}")
+                    
+                    update_crawl_status(data, target["id"], item)
+                    new_added = sync_new_meetings_from_crawl(data, target, item)
+                    if new_added > 0:
+                        stats["new_meetings"] += new_added
+                        now_str = datetime.now().strftime("%Y/%m/%d %H:%M")
+                        data["lastCrawlTime"] = now_str
+                        save_data_json_with_backup(data)
+                        emit(f"  -> 📦 新規会議 {new_added} 件を data.json の meetings に自動追加・同期しました。", {
+                            "type": "new_meeting_added",
+                            "council_id": target["id"],
+                            "council_name": c_name,
+                            "new_added": new_added
+                        })
+                else:
+                    stats["fetch_error"] += 1
+                    emit(f"  -> 🔴 [FETCH ERROR] ネットワーク取得失敗")
+                    update_crawl_status(data, target["id"], None, "Network fetch failed")
+            except Exception as council_err:
+                stats["failed"] += 1
+                emit(f"  -> 🔴 [UNEXPECTED ERROR] 会議体巡回中に予期せぬ例外が発生しました: {council_err}")
+                try:
+                    update_crawl_status(data, target["id"], None, f"Unexpected error: {council_err}")
+                except Exception:
+                    pass
+            emit("-" * 65)
+
+            # レートリミット（スロットリング: 行政サーバー負荷軽減 & WAFブロック回避）
+            if idx < total_councils and not (stop_event and stop_event.is_set()):
+                time.sleep(0.35)
+
+        # サマリー表示
+        emit(f"\n{'='*60}")
+        if stats.get("stopped"):
+            emit(f" 🛑 クロール中断サマリー (途中停止)")
+        else:
+            emit(f" クロール結果サマリー (完了)")
+        emit(f"{'='*60}")
+        emit(f"  処理会議体数:          {stats['processed_councils']} / {total_councils} 件")
+        emit(f"  🟢 成功 (success):     {stats['success']} 件")
+        emit(f"  🟡 部分成功 (partial):    {stats['partial']} 件")
+        emit(f"  🔴 失敗 (failed):      {stats['failed']} 件")
+        emit(f"  🔴 取得エラー:         {stats['fetch_error']} 件")
+        emit(f"  📦 新規追加会議:       {stats['new_meetings']} 件")
+        if log_filepath:
+            emit(f"  📄 ログファイル:       {log_filepath}")
+        emit(f"{'='*60}")
+
+        # 全体データに対して資料リンクの重複排除・正規化を実施
+        deduplicate_data_materials(data)
+
+        # data.json にクロールステータスと最終タイムスタンプを保存（バックアップ付き）
+        now_str = datetime.now().strftime("%Y/%m/%d %H:%M")
+        data["lastCrawlTime"] = now_str
+        if save_data_json_with_backup(data):
+            emit(f"[更新成功] docs/data.json にクロール結果・ステータスと lastCrawlTime ({now_str}) を保存しました（自動バックアップ作成完了）。")
+        else:
+            emit(f"[WARN] data.json 更新失敗")
+
+        # 新規追加された会議リストを抽出してイベントに添付
+        newly_added = [m for m in data.get("meetings", []) if m.get("isNewlyDiscovered")]
+        stats["newly_added_list"] = newly_added[:20]
+
+        finish_type = "crawl_stopped" if stats.get("stopped") else "crawl_completed"
+        emit(f"処理終了: docs/data.json を更新しました。", {
+            "type": finish_type,
+            "progress": 100,
+            "stats": stats,
+            "newly_added_count": len(newly_added),
+            "lastCrawlTime": now_str,
+            "log_file": log_filepath,
+            "stopped": stats.get("stopped", False)
         })
         
-        try:
-            html = fetch_url(target["url"])
-            stats["processed_councils"] += 1
-            
-            if html:
-                c_id = target["id"]
-                rule_obj = rules.get(c_id, {
-                    "rule_id": "rule-fallback-v1",
-                    "rules": {}
-                })
-                
-                item = execute_rule_retrieval(target, html, rule_obj, use_llm=use_llm)
-                results.append(item)
-                
-                cr = item.get("crawlResult", "failed")
-                stats[cr] = stats.get(cr, 0) + 1
-                
-                status_icon = {"success": "🟢", "partial": "🟡", "failed": "🔴"}.get(cr, "⚪")
-                emit(f"  -> {status_icon} [{cr.upper()}] タイトル: {item['pageTitle']}")
-                emit(f"  -> 資料: {item['totalExtractedMaterials']} 件, 日付: {item['extractedDates']}, 抽出方法: {item['extractionMethod']}")
-                
-                update_crawl_status(data, target["id"], item)
-                new_added = sync_new_meetings_from_crawl(data, target, item)
-                if new_added > 0:
-                    stats["new_meetings"] += new_added
-                    now_str = datetime.now().strftime("%Y/%m/%d %H:%M")
-                    data["lastCrawlTime"] = now_str
-                    save_data_json_with_backup(data)
-                    emit(f"  -> 📦 新規会議 {new_added} 件を data.json の meetings に自動追加・同期しました。", {
-                        "type": "new_meeting_added",
-                        "council_id": target["id"],
-                        "council_name": c_name,
-                        "new_added": new_added
-                    })
-            else:
-                stats["fetch_error"] += 1
-                emit(f"  -> 🔴 [FETCH ERROR] ネットワーク取得失敗")
-                update_crawl_status(data, target["id"], None, "Network fetch failed")
-        except Exception as council_err:
-            stats["failed"] += 1
-            emit(f"  -> 🔴 [UNEXPECTED ERROR] 会議体巡回中に予期せぬ例外が発生しました: {council_err}")
-            try:
-                update_crawl_status(data, target["id"], None, f"Unexpected error: {council_err}")
-            except Exception:
-                pass
-        emit("-" * 65)
-
-        # レートリミット（スロットリング: 行政サーバー負荷軽減 & WAFブロック回避）
-        if idx < total_councils and not (stop_event and stop_event.is_set()):
-            time.sleep(0.35)
-
-    # サマリー表示
-    emit(f"\n{'='*60}")
-    if stats.get("stopped"):
-        emit(f" 🛑 クロール中断サマリー (途中停止)")
-    else:
-        emit(f" クロール結果サマリー (完了)")
-    emit(f"{'='*60}")
-    emit(f"  処理会議体数:          {stats['processed_councils']} / {total_councils} 件")
-    emit(f"  🟢 成功 (success):     {stats['success']} 件")
-    emit(f"  🟡 部分成功 (partial):    {stats['partial']} 件")
-    emit(f"  🔴 失敗 (failed):      {stats['failed']} 件")
-    emit(f"  🔴 取得エラー:         {stats['fetch_error']} 件")
-    emit(f"  📦 新規追加会議:       {stats['new_meetings']} 件")
-    if log_filepath:
-        emit(f"  📄 ログファイル:       {log_filepath}")
-    emit(f"{'='*60}")
-
-    # 全体データに対して資料リンクの重複排除・正規化を実施
-    deduplicate_data_materials(data)
-
-    # data.json にクロールステータスと最終タイムスタンプを保存（バックアップ付き）
-    now_str = datetime.now().strftime("%Y/%m/%d %H:%M")
-    data["lastCrawlTime"] = now_str
-    if save_data_json_with_backup(data):
-        emit(f"[更新成功] docs/data.json にクロール結果・ステータスと lastCrawlTime ({now_str}) を保存しました（自動バックアップ作成完了）。")
-    else:
-        emit(f"[WARN] data.json 更新失敗")
-
-    # 新規追加された会議リストを抽出してイベントに添付
-    newly_added = [m for m in data.get("meetings", []) if m.get("isNewlyDiscovered")]
-    stats["newly_added_list"] = newly_added[:20]
-
-    finish_type = "crawl_stopped" if stats.get("stopped") else "crawl_completed"
-    emit(f"処理終了: docs/data.json を更新しました。", {
-        "type": finish_type,
-        "progress": 100,
-        "stats": stats,
-        "newly_added_count": len(newly_added),
-        "lastCrawlTime": now_str,
-        "log_file": log_filepath,
-        "stopped": stats.get("stopped", False)
-    })
-    
-    if log_f:
-        try: log_f.close()
-        except Exception: pass
-    if latest_f:
-        try: latest_f.close()
-        except Exception: pass
-        
-    return stats
+        return stats
+    finally:
+        if log_f:
+            try: log_f.close()
+            except Exception: pass
+        if latest_f:
+            try: latest_f.close()
+            except Exception: pass
 
 def main():
     import threading
