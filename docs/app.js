@@ -16,7 +16,6 @@ document.addEventListener('DOMContentLoaded', async () => {
     window.MINISTRIES = data.ministries || {};
     window.CATEGORIES = data.categories || {};
     window.DOC_TYPES = data.docTypes || {};
-    window.INITIAL_ALERT_KEYWORDS = data.initialAlertKeywords || [];
     window.LAST_CRAWL_TIME = data.lastCrawlTime || '';
     window.DATA_LAST_MODIFIED = dataLastModified;
   } catch(e) {
@@ -26,7 +25,6 @@ document.addEventListener('DOMContentLoaded', async () => {
     window.MINISTRIES = {};
     window.CATEGORIES = {};
     window.DOC_TYPES = {};
-    window.INITIAL_ALERT_KEYWORDS = [];
     window.LAST_CRAWL_TIME = '';
     window.DATA_LAST_MODIFIED = '';
   }
@@ -36,7 +34,6 @@ document.addEventListener('DOMContentLoaded', async () => {
   const MINISTRIES = window.MINISTRIES || {};
   const CATEGORIES = window.CATEGORIES || {};
   const DOC_TYPES = window.DOC_TYPES || {};
-  const INITIAL_ALERT_KEYWORDS = window.INITIAL_ALERT_KEYWORDS || [];
   const LAST_CRAWL_TIME = window.LAST_CRAWL_TIME || '';
   const DATA_LAST_MODIFIED = window.DATA_LAST_MODIFIED || dataLastModified;
 
@@ -77,7 +74,6 @@ document.addEventListener('DOMContentLoaded', async () => {
     watchlistOnly: false,
     sortBy: 'NEWEST',
     watchedCouncilIds: new Set(getStoredJson('pmhub_watched', ['cao-ai_strategy', 'digital-suishin_kanjikai', 'cao-kisei_kaikaku', 'meti-sangyo_kozo', 'cas-zensedai_hosyo', 'mof-zaiseiseido_bunkakai'])),
-    alertKeywords: getStoredJson('pmhub_keywords', (typeof INITIAL_ALERT_KEYWORDS !== 'undefined' ? [...INITIAL_ALERT_KEYWORDS] : ['AI', 'デジタル', '規制改革', '社会保障', 'GX', '経済安全保障'])),
     theme: getStoredItem('pmhub_theme', 'light'),
     enableAiSummary: getStoredItem('pmhub_enable_ai_summary', 'false') === 'true', // Default: false (Token cost control)
     activeModalMeeting: null,
@@ -568,26 +564,16 @@ document.addEventListener('DOMContentLoaded', async () => {
       }
 
       // Doc Type filter
-      if (state.docTypeFilter !== 'ALL') {
-        if (state.docTypeFilter === 'MINUTES' && !meeting.hasMinutes) return false;
-        if (state.docTypeFilter === 'MATERIALS' && (!meeting.materials || meeting.materials.length === 0)) return false;
-        if (state.docTypeFilter === 'REPORT' && (!meeting.tags || !meeting.tags.includes('答申') && !meeting.tags.includes('報告書'))) return false;
+      if (!meetingMatchesDocType(meeting, state.docTypeFilter)) {
+        return false;
       }
 
       // Date Range filter
       if (state.dateRangeFilter !== 'ALL') {
-        if (!meeting.date || meeting.date === '-') return false;
-        const meetingDate = new Date(meeting.date.replace(/-/g, '/'));
-        if (isNaN(meetingDate.getTime())) return false;
         const refDate = getReferenceDate();
-        const diffDays = (refDate - meetingDate) / (1000 * 60 * 60 * 24);
-
-        if (state.dateRangeFilter === '7D' && (diffDays < 0 || diffDays > 7)) return false;
-        if (state.dateRangeFilter === '30D' && (diffDays < 0 || diffDays > 30)) return false;
-        if (state.dateRangeFilter === '90D' && (diffDays < 0 || diffDays > 90)) return false;
-        if (state.dateRangeFilter === 'PAST_YEAR' && (diffDays < 0 || diffDays > 365)) return false;
-        if (state.dateRangeFilter === 'YEAR' && getFiscalYear(meetingDate) !== getFiscalYear(refDate)) return false;
-        if (state.dateRangeFilter === 'PREV_YEAR' && getFiscalYear(meetingDate) !== (getFiscalYear(refDate) - 1)) return false;
+        if (!isMeetingInDateRange(meeting, state.dateRangeFilter, refDate)) {
+          return false;
+        }
       }
 
       return true;
@@ -645,7 +631,15 @@ document.addEventListener('DOMContentLoaded', async () => {
     if (state.watchlistOnly) activeTags.push({ label: '⭐ ウォッチ対象のみ', key: 'watchlistOnly' });
     if (state.ministryFilter !== 'ALL') activeTags.push({ label: `省庁: ${MINISTRIES[state.ministryFilter]?.name || state.ministryFilter}`, key: 'ministry' });
     if (state.categoryFilter !== 'ALL') activeTags.push({ label: `会議種別: ${getCategoryLabel(state.categoryFilter)}`, key: 'category' });
-    if (state.docTypeFilter !== 'ALL') activeTags.push({ label: `資料: ${state.docTypeFilter}`, key: 'docType' });
+    if (state.docTypeFilter !== 'ALL') {
+      const docTypeLabels = {
+        MINUTES: '議事録・要旨あり',
+        MATERIALS: '配付資料あり',
+        REPORT: '答申・報告書等'
+      };
+      const labelText = docTypeLabels[state.docTypeFilter] || state.docTypeFilter;
+      activeTags.push({ label: `資料: ${labelText}`, key: 'docType' });
+    }
     if (state.dateRangeFilter !== 'ALL') {
       const dateLabels = {
         'PAST_YEAR': '直近1年間',
@@ -870,18 +864,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         } else {
           const councilMeetings = meetingsByCouncilMap.get(council.id) || [];
           const refDate = getReferenceDate();
-          const hasMatchingMeeting = councilMeetings.some(m => {
-            if (!m.date || m.date === '-') return false;
-            const md = new Date(m.date.replace(/-/g, '/'));
-            if (isNaN(md.getTime())) return false;
-            const diffDays = (refDate - md) / (1000 * 60 * 60 * 24);
-            if (state.dateRangeFilter === '7D') return diffDays >= 0 && diffDays <= 7;
-            if (state.dateRangeFilter === '30D') return diffDays >= 0 && diffDays <= 30;
-            if (state.dateRangeFilter === '90D') return diffDays >= 0 && diffDays <= 90;
-            if (state.dateRangeFilter === 'YEAR') return getFiscalYear(md) === getFiscalYear(refDate);
-            if (state.dateRangeFilter === 'PREV_YEAR') return getFiscalYear(md) === (getFiscalYear(refDate) - 1);
-            return true;
-          });
+          const hasMatchingMeeting = councilMeetings.some(m => isMeetingInDateRange(m, state.dateRangeFilter, refDate));
           if (!hasMatchingMeeting) return false;
         }
       }
@@ -909,12 +892,7 @@ document.addEventListener('DOMContentLoaded', async () => {
       // If doc type filter is set, only show councils that have matching meetings
       if (state.docTypeFilter !== 'ALL') {
         const councilMeetings = meetingsByCouncilMap.get(council.id) || [];
-        const hasMatch = councilMeetings.some(m => {
-          if (state.docTypeFilter === 'MINUTES' && m.hasMinutes) return true;
-          if (state.docTypeFilter === 'MATERIALS' && m.materials && m.materials.length > 0) return true;
-          if (state.docTypeFilter === 'REPORT' && m.tags && (m.tags.includes('答申') || m.tags.includes('報告書'))) return true;
-          return false;
-        });
+        const hasMatch = councilMeetings.some(m => meetingMatchesDocType(m, state.docTypeFilter));
         if (!hasMatch) return false;
       }
       return true;
@@ -1648,6 +1626,32 @@ function capitalize(str) {
   return str.charAt(0).toUpperCase() + str.slice(1);
 }
 
+function meetingMatchesDocType(meeting, docTypeFilter) {
+  if (!docTypeFilter || docTypeFilter === 'ALL') return true;
+  if (!meeting) return false;
+  if (docTypeFilter === 'MINUTES') return Boolean(meeting.hasMinutes);
+  if (docTypeFilter === 'MATERIALS') return Boolean(meeting.materials && meeting.materials.length > 0);
+  if (docTypeFilter === 'REPORT') return Boolean(meeting.tags && (meeting.tags.includes('答申') || meeting.tags.includes('報告書')));
+  return true;
+}
+
+function isMeetingInDateRange(meeting, dateRangeFilter, refDate = new Date()) {
+  if (!dateRangeFilter || dateRangeFilter === 'ALL') return true;
+  if (!meeting || !meeting.date || meeting.date === '-') return false;
+  const meetingDate = new Date(meeting.date.replace(/-/g, '/'));
+  if (isNaN(meetingDate.getTime())) return false;
+  const reference = refDate instanceof Date ? refDate : new Date(refDate);
+  const diffDays = (reference - meetingDate) / (1000 * 60 * 60 * 24);
+
+  if (dateRangeFilter === '7D') return diffDays >= 0 && diffDays <= 7;
+  if (dateRangeFilter === '30D') return diffDays >= 0 && diffDays <= 30;
+  if (dateRangeFilter === '90D') return diffDays >= 0 && diffDays <= 90;
+  if (dateRangeFilter === 'PAST_YEAR') return diffDays >= 0 && diffDays <= 365;
+  if (dateRangeFilter === 'YEAR') return getFiscalYear(meetingDate) === getFiscalYear(reference);
+  if (dateRangeFilter === 'PREV_YEAR') return getFiscalYear(meetingDate) === (getFiscalYear(reference) - 1);
+  return true;
+}
+
 if (typeof module !== 'undefined' && module.exports) {
   module.exports = {
     getFiscalYear,
@@ -1656,6 +1660,8 @@ if (typeof module !== 'undefined' && module.exports) {
     sanitizeUrl,
     capitalize,
     getStoredJson,
-    setStoredJson
+    setStoredJson,
+    meetingMatchesDocType,
+    isMeetingInDateRange
   };
 }

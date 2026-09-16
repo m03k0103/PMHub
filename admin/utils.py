@@ -246,3 +246,29 @@ def get_rejected_identifiers(rejected_file=DEFAULT_REJECTED_COUNCILS_PATH):
         if rc.get("officialUrl"):
             rej_urls.add(rc.get("officialUrl").strip().rstrip("/"))
     return rej_ids, rej_names, rej_urls
+
+
+def add_to_rejected_councils(target_id, council=None, reason="Admin rejected council", rejected_at=None, rejected_file=DEFAULT_REJECTED_COUNCILS_PATH):
+    """
+    admin/rejected_councils.json に会議体を重複なく安全に追加・保存する共通関数。
+    追加された場合は True、既に存在していたか無効なIDの場合は False を返す。
+    """
+    if not target_id:
+        return False
+    target_id = target_id.strip()
+    rejected_list = load_rejected_councils(rejected_file)
+    if not any(rc.get("id") == target_id for rc in rejected_list):
+        c_obj = council or {}
+        rej_item = {
+            "id": target_id,
+            "name": c_obj.get("name") if c_obj.get("name") else target_id,
+            "ministry": c_obj.get("ministry") or "",
+            "category": c_obj.get("category", "COUNCIL") or "COUNCIL",
+            "officialUrl": c_obj.get("officialUrl") or "",
+            "rejectedAt": rejected_at or datetime.now().strftime("%Y-%m-%d"),
+            "reason": reason or "Admin rejected council"
+        }
+        rejected_list.append(rej_item)
+        return save_rejected_councils(rejected_list, rejected_file)
+    return False
+

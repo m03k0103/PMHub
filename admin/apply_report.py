@@ -4,7 +4,7 @@ import sys
 import shutil
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from utils import setup_win32_utf8, save_data_json_with_backup, load_rejected_councils, save_rejected_councils
+from utils import setup_win32_utf8, save_data_json_with_backup, load_rejected_councils, save_rejected_councils, add_to_rejected_councils
 setup_win32_utf8()
 
 
@@ -95,20 +95,13 @@ def apply_report_data(report_data, data_json_path=None):
 
                     # rejected_councils.json に記録・保存
                     try:
-                        rejected_list = load_rejected_councils()
-                        # 重複追加の防止
-                        if not any(rc.get("id") == target_id for rc in rejected_list):
-                            rej_item = {
-                                "id": target_id,
-                                "name": target_council.get("name") if target_council else target_id,
-                                "ministry": target_council.get("ministry") if target_council else "",
-                                "category": target_council.get("category", "COUNCIL") if target_council else "COUNCIL",
-                                "officialUrl": target_council.get("officialUrl") if target_council else "",
-                                "rejectedAt": corr.get("rejectedAt") or "2026-08-25",
-                                "reason": corr.get("reason") or "Admin rejected council"
-                            }
-                            rejected_list.append(rej_item)
-                            save_rejected_councils(rejected_list)
+                        added = add_to_rejected_councils(
+                            target_id=target_id,
+                            council=target_council,
+                            reason=corr.get("reason") or "Admin rejected council",
+                            rejected_at=corr.get("rejectedAt")
+                        )
+                        if added:
                             print(f"Saved rejected council {target_id} to rejected_councils.json")
                     except Exception as err:
                         print(f"Warning: Failed to update rejected_councils.json: {err}")

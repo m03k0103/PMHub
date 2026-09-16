@@ -9,9 +9,26 @@ import urllib.parse
 from datetime import datetime
 from apply_report import apply_report, apply_report_data
 from discover_councils import run_discovery
-from crawler import run_meeting_crawler
-from utils import setup_win32_utf8, save_data_json_with_backup, load_rejected_councils, save_rejected_councils, get_rejected_identifiers, DEFAULT_REJECTED_COUNCILS_PATH
+from utils import (
+    setup_win32_utf8, save_data_json_with_backup, load_data_json,
+    load_rejected_councils, save_rejected_councils, add_to_rejected_councils,
+    get_rejected_identifiers, DEFAULT_REJECTED_COUNCILS_PATH
+)
 setup_win32_utf8()
+
+
+def _extract_delta_logs(parsed_url, state):
+    """URLクエリから since_id を抽出し、該当ID以降の差分ログと最新ログIDを返す。"""
+    params = urllib.parse.parse_qs(parsed_url.query)
+    try:
+        since_id = int(params.get("since_id", params.get("since", [0]))[0])
+    except (ValueError, TypeError):
+        since_id = 0
+    all_logs = state.get("logs", [])
+    new_logs = [l for l in all_logs if l.get("id", 0) > since_id]
+    latest_id = all_logs[-1]["id"] if all_logs else 0
+    return new_logs, latest_id
+
 
 PORT = 8000
 BASE_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
@@ -188,21 +205,10 @@ class CustomHandler(SimpleHTTPRequestHandler):
             rejected_list = load_rejected_councils()
             self.send_json(rejected_list)
         elif path == "/api/get-crawler-config":
-            if os.path.exists(DATA_JSON_FILE):
-                with open(DATA_JSON_FILE, "r", encoding="utf-8") as f:
-                    data = json.load(f)
-                self.send_json(data.get("crawlerConfig", {"llm_mode": True}))
-            else:
-                self.send_json({"llm_mode": True})
+            data = load_data_json(DATA_JSON_FILE)
+            self.send_json(data.get("crawlerConfig", {"llm_mode": True}))
         elif path == "/api/discovery-status":
-            query = parsed_url.query
-            params = urllib.parse.parse_qs(query)
-            since_id = int(params.get("since_id", params.get("since", [0]))[0])
-            
-            all_logs = discovery_state["logs"]
-            new_logs = [l for l in all_logs if l["id"] > since_id]
-            latest_id = all_logs[-1]["id"] if all_logs else 0
-
+            new_logs, latest_id = _extract_delta_logs(parsed_url, discovery_state)
             res_payload = {
                 "running": discovery_state["running"],
                 "progress": discovery_state["progress"],
@@ -219,14 +225,7 @@ class CustomHandler(SimpleHTTPRequestHandler):
             }
             self.send_json(res_payload)
         elif path == "/api/crawler-status":
-            query = parsed_url.query
-            params = urllib.parse.parse_qs(query)
-            since_id = int(params.get("since_id", params.get("since", [0]))[0])
-            
-            all_logs = crawler_state["logs"]
-            new_logs = [l for l in all_logs if l["id"] > since_id]
-            latest_id = all_logs[-1]["id"] if all_logs else 0
-
+            new_logs, latest_id = _extract_delta_logs(parsed_url, crawler_state)
             res_payload = {
                 "running": crawler_state["running"],
                 "stopping": crawler_state.get("stopping", False),
@@ -245,21 +244,19 @@ class CustomHandler(SimpleHTTPRequestHandler):
             self.send_json(res_payload)
         elif path == "/api/new-meetings":
             new_list = []
-            if os.path.exists(DATA_JSON_FILE):
-                try:
-                    with open(DATA_JSON_FILE, "r", encoding="utf-8") as f:
-                        data = json.load(f)
-                    c_map = {c["id"]: c for c in data.get("councils", [])}
-                    for m in data.get("meetings", []):
-                        if m.get("isNewlyDiscovered"):
-                            c_info = c_map.get(m.get("councilId"), {})
-                            new_list.append({
-                                **m,
-                                "councilName": c_info.get("name", m.get("councilId")),
-                                "ministry": c_info.get("ministry", m.get("ministry", ""))
-                            })
-                except Exception as e:
-                    print(f"[WARN] Failed to read new meetings: {e}", file=sys.stderr)
+            try:
+                data = load_data_json(DATA_JSON_FILE)
+                c_map = {c["id"]: c for c in data.get("councils", [])}
+                for m in data.get("meetings", []):
+                    if m.get("isNewlyDiscovered"):
+                        c_info = c_map.get(m.get("councilId"), {})
+                        new_list.append({
+                            **m,
+                            "councilName": c_info.get("name", m.get("councilId")),
+                            "ministry": c_info.get("ministry", m.get("ministry", ""))
+                        })
+            except Exception as e:
+                print(f"[WARN] Failed to read new meetings: {e}", file=sys.stderr)
             self.send_json({"count": len(new_list), "meetings": new_list})
         elif path == "/api/backups":
             backups = []
@@ -342,15 +339,10 @@ class CustomHandler(SimpleHTTPRequestHandler):
                 if not target_id:
                     raise ValueError("Council ID is required")
 
-                rejected_list = load_rejected_councils()
-
                 target_council = council_obj
-                if os.path.exists(DATA_JSON_FILE):
-                    with open(DATA_JSON_FILE, "r", encoding="utf-8") as df:
-                        data = json.load(df)
-                    
+                data = load_data_json(DATA_JSON_FILE)
+                if data:
                     councils = data.get("councils", [])
-
                     c_idx = next((i for i, c in enumerate(councils) if c.get("id") == target_id), None)
                     if c_idx is not None:
                         target_council = councils.pop(c_idx)
@@ -360,18 +352,12 @@ class CustomHandler(SimpleHTTPRequestHandler):
 
                     save_data_json_with_backup(data, DATA_JSON_FILE)
 
-                if not any(rc.get("id") == target_id for rc in rejected_list):
-                    rej_item = {
-                        "id": target_id,
-                        "name": target_council.get("name") if target_council else target_id,
-                        "ministry": target_council.get("ministry") if target_council else "",
-                        "category": target_council.get("category", "COUNCIL") if target_council else "COUNCIL",
-                        "officialUrl": target_council.get("officialUrl") if target_council else "",
-                        "rejectedAt": payload.get("rejectedAt") or "2026-08-27",
-                        "reason": reason
-                    }
-                    rejected_list.append(rej_item)
-                    save_rejected_councils(rejected_list)
+                add_to_rejected_councils(
+                    target_id=target_id,
+                    council=target_council,
+                    reason=reason,
+                    rejected_at=payload.get("rejectedAt")
+                )
 
                 self.send_json({"status": "ok", "message": f"Council {target_id} moved to rejected list"})
             except Exception as e:

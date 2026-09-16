@@ -1,6 +1,6 @@
 const test = require('node:test');
 const assert = require('node:assert');
-const { escapeHtml, sanitizeUrl, formatDate, getFiscalYear, getStoredJson, setStoredJson } = require('../docs/app.js');
+const { escapeHtml, sanitizeUrl, formatDate, getFiscalYear, getStoredJson, setStoredJson, meetingMatchesDocType, isMeetingInDateRange } = require('../docs/app.js');
 
 test('sanitizeUrl utility function (Security / XSS prevention)', async (t) => {
   await t.test('allows safe http and https URLs', () => {
@@ -118,4 +118,63 @@ test('getStoredJson & setStoredJson storage helper functions', async (t) => {
     global.localStorage = originalLocalStorage;
   }
 });
+
+test('meetingMatchesDocType helper function', async (t) => {
+  await t.test('matches ALL docTypeFilter unconditionally', () => {
+    assert.strictEqual(meetingMatchesDocType({}, 'ALL'), true);
+    assert.strictEqual(meetingMatchesDocType(null, 'ALL'), true);
+  });
+
+  await t.test('matches MINUTES only when hasMinutes is true', () => {
+    assert.strictEqual(meetingMatchesDocType({ hasMinutes: true }, 'MINUTES'), true);
+    assert.strictEqual(meetingMatchesDocType({ hasMinutes: false }, 'MINUTES'), false);
+    assert.strictEqual(meetingMatchesDocType({}, 'MINUTES'), false);
+  });
+
+  await t.test('matches MATERIALS only when materials array has items', () => {
+    assert.strictEqual(meetingMatchesDocType({ materials: [{ name: 'Doc1' }] }, 'MATERIALS'), true);
+    assert.strictEqual(meetingMatchesDocType({ materials: [] }, 'MATERIALS'), false);
+    assert.strictEqual(meetingMatchesDocType({}, 'MATERIALS'), false);
+  });
+
+  await t.test('matches REPORT only when tags include 答申 or 報告書', () => {
+    assert.strictEqual(meetingMatchesDocType({ tags: ['答申'] }, 'REPORT'), true);
+    assert.strictEqual(meetingMatchesDocType({ tags: ['報告書', '中間整理'] }, 'REPORT'), true);
+    assert.strictEqual(meetingMatchesDocType({ tags: ['通常会合'] }, 'REPORT'), false);
+    assert.strictEqual(meetingMatchesDocType({}, 'REPORT'), false);
+  });
+});
+
+test('isMeetingInDateRange helper function', async (t) => {
+  const baseRef = new Date('2026/09/16');
+
+  await t.test('matches ALL filter unconditionally', () => {
+    assert.strictEqual(isMeetingInDateRange({ date: '2026/09/10' }, 'ALL', baseRef), true);
+    assert.strictEqual(isMeetingInDateRange(null, 'ALL', baseRef), true);
+  });
+
+  await t.test('rejects meetings with invalid or missing date', () => {
+    assert.strictEqual(isMeetingInDateRange({ date: '-' }, '7D', baseRef), false);
+    assert.strictEqual(isMeetingInDateRange({ date: '' }, '7D', baseRef), false);
+    assert.strictEqual(isMeetingInDateRange({}, '7D', baseRef), false);
+  });
+
+  await t.test('filters 7D, 30D, and PAST_YEAR relative to refDate', () => {
+    assert.strictEqual(isMeetingInDateRange({ date: '2026/09/12' }, '7D', baseRef), true);
+    assert.strictEqual(isMeetingInDateRange({ date: '2026/09/01' }, '7D', baseRef), false);
+    assert.strictEqual(isMeetingInDateRange({ date: '2026/09/01' }, '30D', baseRef), true);
+    assert.strictEqual(isMeetingInDateRange({ date: '2026/08/01' }, '30D', baseRef), false);
+    assert.strictEqual(isMeetingInDateRange({ date: '2025/10/01' }, 'PAST_YEAR', baseRef), true);
+    assert.strictEqual(isMeetingInDateRange({ date: '2025/08/01' }, 'PAST_YEAR', baseRef), false);
+  });
+
+  await t.test('filters Japanese Fiscal Year (YEAR, PREV_YEAR)', () => {
+    // 2026/09/16 -> FY2026
+    assert.strictEqual(isMeetingInDateRange({ date: '2026/05/01' }, 'YEAR', baseRef), true);
+    assert.strictEqual(isMeetingInDateRange({ date: '2025/05/01' }, 'YEAR', baseRef), false);
+    assert.strictEqual(isMeetingInDateRange({ date: '2025/05/01' }, 'PREV_YEAR', baseRef), true);
+    assert.strictEqual(isMeetingInDateRange({ date: '2026/05/01' }, 'PREV_YEAR', baseRef), false);
+  });
+});
+
 
