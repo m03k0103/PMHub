@@ -2575,7 +2575,7 @@
       "name": "公文書管理委員会",
       "ministry": "CAO",
       "category": "COMMITTEE",
-      "officialUrl": "https://www8.cao.go.jp/koubuniinkai/index.html",
+      "officialUrl": "https://www8.cao.go.jp/koubuniinkai/iinkaisai/iinkaisai.html",
       "pastYearCount": 0,
       "crawlStatus": {
         "lastAttempt": "2026-09-16 08:59:53",
@@ -2586,7 +2586,8 @@
         "failureReason": "",
         "consecutiveFailures": 0,
         "manualLockActive": false
-      }
+      },
+      "manualLock": true
     },
     {
       "id": "cao-232",
@@ -29284,6 +29285,748 @@
   ],
   "meetings": [
     {
+      "id": "cao-231-20260915-121",
+      "councilId": "cao-231",
+      "title": "第121回 公文書管理委員会",
+      "date": "2026/09/15",
+      "officialUrl": "https://www8.cao.go.jp/koubuniinkai/iinkaisai/2026/0915haifu.html",
+      "category": "COMMITTEE",
+      "ministry": "CAO",
+      "hasMinutes": false,
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "議事次第",
+          "url": "https://www8.cao.go.jp/koubuniinkai/iinkaisai/2026/0915/121shidai.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "公文書管理委員会委員名簿",
+          "url": "https://www8.cao.go.jp/koubuniinkai/iinkaisai/2026/0915/shiryou1.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "公文書管理法施行令の改正（案）について（概要）",
+          "url": "https://www8.cao.go.jp/koubuniinkai/iinkaisai/2026/0915/shiryou2-1.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "諮問書、案文・理由、新旧",
+          "url": "https://www8.cao.go.jp/koubuniinkai/iinkaisai/2026/0915/shiryou2-2.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "防災庁行政文書管理規則の制定及び一部改正について（概要）",
+          "url": "https://www8.cao.go.jp/koubuniinkai/iinkaisai/2026/0915/shiryou3-1.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "防災庁行政文書管理規則と「行政文書の管理に関するガイドライン」との相違点",
+          "url": "https://www8.cao.go.jp/koubuniinkai/iinkaisai/2026/0915/shiryou3-2.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "防災庁行政文書管理規則の一部改正案",
+          "url": "https://www8.cao.go.jp/koubuniinkai/iinkaisai/2026/0915/shiryou3-3.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "金融庁行政文書管理規則の一部を改正する訓令案について （概要）、諮問書",
+          "url": "https://www8.cao.go.jp/koubuniinkai/iinkaisai/2026/0915/shiryou4-1.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "金融庁行政文書管理規則の一部を改正する訓令案",
+          "url": "https://www8.cao.go.jp/koubuniinkai/iinkaisai/2026/0915/shiryou4-2.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "国立公文書館の活動状況",
+          "url": "https://www8.cao.go.jp/koubuniinkai/iinkaisai/2026/0915/shiryou5.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "議事要旨",
+          "url": "https://www8.cao.go.jp/koubuniinkai/iinkaisai/2026/0915/121youshi.pdf",
+          "type": "PDF"
+        }
+      ]
+    },
+    {
+      "id": "cao-231-20260723-120",
+      "councilId": "cao-231",
+      "title": "第120回 公文書管理委員会",
+      "date": "2026/07/23",
+      "officialUrl": "https://www8.cao.go.jp/koubuniinkai/iinkaisai/2026/0723haifu.html",
+      "category": "COMMITTEE",
+      "ministry": "CAO",
+      "hasMinutes": true,
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "議事次第",
+          "url": "https://www8.cao.go.jp/koubuniinkai/iinkaisai/2026/0723/120shidai.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "新たな文書管理システムの導入を見据えた各府省行政文書管理規則の改正について（概要）",
+          "url": "https://www8.cao.go.jp/koubuniinkai/iinkaisai/2026/0723/shiryou1-1.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "諮問書",
+          "url": "https://www8.cao.go.jp/koubuniinkai/iinkaisai/2026/0723/shiryou1-2.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "内閣官房行政文書管理規則の一部改正案",
+          "url": "https://www8.cao.go.jp/koubuniinkai/iinkaisai/2026/0723/shiryou1-3-1.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "内閣法制局行政文書管理規則の一部改正案",
+          "url": "https://www8.cao.go.jp/koubuniinkai/iinkaisai/2026/0723/shiryou1-3-2.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "郵政民営化委員会行政文書管理規則の一部改正案",
+          "url": "https://www8.cao.go.jp/koubuniinkai/iinkaisai/2026/0723/shiryou1-3-3.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "原子力防災会議行政文書管理規則の一部改正案",
+          "url": "https://www8.cao.go.jp/koubuniinkai/iinkaisai/2026/0723/shiryou1-3-4.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "特定複合観光施設区域整備推進本部行政文書管理規則の一部改正案",
+          "url": "https://www8.cao.go.jp/koubuniinkai/iinkaisai/2026/0723/shiryou1-3-5.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "船舶活用医療推進本部行政文書管理規則の一部改正案",
+          "url": "https://www8.cao.go.jp/koubuniinkai/iinkaisai/2026/0723/shiryou1-3-6.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "人事院行政文書管理規則の一部改正案",
+          "url": "https://www8.cao.go.jp/koubuniinkai/iinkaisai/2026/0723/shiryou1-3-7.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "内閣府本府行政文書管理規則の一部改正案",
+          "url": "https://www8.cao.go.jp/koubuniinkai/iinkaisai/2026/0723/shiryou1-3-8.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "宮内庁行政文書管理規則の一部改正案",
+          "url": "https://www8.cao.go.jp/koubuniinkai/iinkaisai/2026/0723/shiryou1-3-9.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "公正取引委員会行政文書管理規則の一部改正案",
+          "url": "https://www8.cao.go.jp/koubuniinkai/iinkaisai/2026/0723/shiryou1-3-10.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "国家公安委員会行政文書管理規則の一部改正案",
+          "url": "https://www8.cao.go.jp/koubuniinkai/iinkaisai/2026/0723/shiryou1-3-11.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "警察庁行政文書管理規則の一部改正案",
+          "url": "https://www8.cao.go.jp/koubuniinkai/iinkaisai/2026/0723/shiryou1-3-12.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "個人情報保護委員会行政文書管理規則の一部改正案",
+          "url": "https://www8.cao.go.jp/koubuniinkai/iinkaisai/2026/0723/shiryou1-3-13.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "カジノ管理委員会行政文書管理規則の一部改正案",
+          "url": "https://www8.cao.go.jp/koubuniinkai/iinkaisai/2026/0723/shiryou1-3-14.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "サイバー通信情報監理委員会行政文書管理規則の一部改正案",
+          "url": "https://www8.cao.go.jp/koubuniinkai/iinkaisai/2026/0723/shiryou1-3-15.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "金融庁行政文書管理規則の一部改正案",
+          "url": "https://www8.cao.go.jp/koubuniinkai/iinkaisai/2026/0723/shiryou1-3-16.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "消費者庁行政文書管理規則の一部改正案",
+          "url": "https://www8.cao.go.jp/koubuniinkai/iinkaisai/2026/0723/shiryou1-3-17.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "こども家庭庁行政文書管理規則の一部改正案",
+          "url": "https://www8.cao.go.jp/koubuniinkai/iinkaisai/2026/0723/shiryou1-3-18.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "デジタル庁行政文書管理規則の一部改正案",
+          "url": "https://www8.cao.go.jp/koubuniinkai/iinkaisai/2026/0723/shiryou1-3-19.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "復興庁行政文書管理規則の一部改正案",
+          "url": "https://www8.cao.go.jp/koubuniinkai/iinkaisai/2026/0723/shiryou1-3-20.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "総務省行政文書管理規則の一部改正案",
+          "url": "https://www8.cao.go.jp/koubuniinkai/iinkaisai/2026/0723/shiryou1-3-21.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "公害等調整委員会行政文書管理規則の一部改正案",
+          "url": "https://www8.cao.go.jp/koubuniinkai/iinkaisai/2026/0723/shiryou1-3-22.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "消防庁行政文書管理規則の一部改正案",
+          "url": "https://www8.cao.go.jp/koubuniinkai/iinkaisai/2026/0723/shiryou1-3-23.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "法務省行政文書管理規則の一部改正案",
+          "url": "https://www8.cao.go.jp/koubuniinkai/iinkaisai/2026/0723/shiryou1-3-24.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "出入国在留管理庁行政文書管理規則の一部改正案",
+          "url": "https://www8.cao.go.jp/koubuniinkai/iinkaisai/2026/0723/shiryou1-3-25.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "公安審査委員会行政文書管理規則の一部改正案",
+          "url": "https://www8.cao.go.jp/koubuniinkai/iinkaisai/2026/0723/shiryou1-3-26.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "公安調査庁行政文書管理規則の一部改正案",
+          "url": "https://www8.cao.go.jp/koubuniinkai/iinkaisai/2026/0723/shiryou1-3-27.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "最高検察庁行政文書管理規則の一部改正案",
+          "url": "https://www8.cao.go.jp/koubuniinkai/iinkaisai/2026/0723/shiryou1-3-28.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "東京高等検察庁行政文書管理規則の一部改正案",
+          "url": "https://www8.cao.go.jp/koubuniinkai/iinkaisai/2026/0723/shiryou1-3-29.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "大阪高等検察庁行政文書管理規則の一部改正案",
+          "url": "https://www8.cao.go.jp/koubuniinkai/iinkaisai/2026/0723/shiryou1-3-30.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "名古屋高等検察庁行政文書管理規則の一部改正案",
+          "url": "https://www8.cao.go.jp/koubuniinkai/iinkaisai/2026/0723/shiryou1-3-31.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "広島高等検察庁行政文書管理規則の一部改正案",
+          "url": "https://www8.cao.go.jp/koubuniinkai/iinkaisai/2026/0723/shiryou1-3-32.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "福岡高等検察庁行政文書管理規則の一部改正案",
+          "url": "https://www8.cao.go.jp/koubuniinkai/iinkaisai/2026/0723/shiryou1-3-33.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "仙台高等検察庁行政文書管理規則の一部改正案",
+          "url": "https://www8.cao.go.jp/koubuniinkai/iinkaisai/2026/0723/shiryou1-3-34.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "札幌高等検察庁行政文書管理規則の一部改正案",
+          "url": "https://www8.cao.go.jp/koubuniinkai/iinkaisai/2026/0723/shiryou1-3-35.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "高松高等検察庁行政文書管理規則の一部改正案",
+          "url": "https://www8.cao.go.jp/koubuniinkai/iinkaisai/2026/0723/shiryou1-3-36.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "東京地方検察庁行政文書管理規則の一部改正案",
+          "url": "https://www8.cao.go.jp/koubuniinkai/iinkaisai/2026/0723/shiryou1-3-37.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "横浜地方検察庁行政文書管理規則の一部改正案",
+          "url": "https://www8.cao.go.jp/koubuniinkai/iinkaisai/2026/0723/shiryou1-3-38.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "さいたま地方検察庁行政文書管理規則の一部改正案",
+          "url": "https://www8.cao.go.jp/koubuniinkai/iinkaisai/2026/0723/shiryou1-3-39.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "千葉地方検察庁行政文書管理規則の一部改正案",
+          "url": "https://www8.cao.go.jp/koubuniinkai/iinkaisai/2026/0723/shiryou1-3-40.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "水戸地方検察庁行政文書管理規則の一部改正案",
+          "url": "https://www8.cao.go.jp/koubuniinkai/iinkaisai/2026/0723/shiryou1-3-41.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "宇都宮地方検察庁行政文書管理規則の一部改正案",
+          "url": "https://www8.cao.go.jp/koubuniinkai/iinkaisai/2026/0723/shiryou1-3-42.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "前橋地方検察庁行政文書管理規則の一部改正案",
+          "url": "https://www8.cao.go.jp/koubuniinkai/iinkaisai/2026/0723/shiryou1-3-43.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "静岡地方検察庁行政文書管理規則の一部改正案",
+          "url": "https://www8.cao.go.jp/koubuniinkai/iinkaisai/2026/0723/shiryou1-3-44.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "甲府地方検察庁行政文書管理規則の一部改正案",
+          "url": "https://www8.cao.go.jp/koubuniinkai/iinkaisai/2026/0723/shiryou1-3-45.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "長野地方検察庁行政文書管理規則の一部改正案",
+          "url": "https://www8.cao.go.jp/koubuniinkai/iinkaisai/2026/0723/shiryou1-3-46.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "新潟地方検察庁行政文書管理規則の一部改正案",
+          "url": "https://www8.cao.go.jp/koubuniinkai/iinkaisai/2026/0723/shiryou1-3-47.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "大阪地方検察庁行政文書管理規則の一部改正案",
+          "url": "https://www8.cao.go.jp/koubuniinkai/iinkaisai/2026/0723/shiryou1-3-48.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "京都地方検察庁行政文書管理規則の一部改正案",
+          "url": "https://www8.cao.go.jp/koubuniinkai/iinkaisai/2026/0723/shiryou1-3-49.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "神戸地方検察庁行政文書管理規則の一部改正案",
+          "url": "https://www8.cao.go.jp/koubuniinkai/iinkaisai/2026/0723/shiryou1-3-50.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "奈良地方検察庁行政文書管理規則の一部改正案",
+          "url": "https://www8.cao.go.jp/koubuniinkai/iinkaisai/2026/0723/shiryou1-3-51.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "大津地方検察庁行政文書管理規則の一部改正案",
+          "url": "https://www8.cao.go.jp/koubuniinkai/iinkaisai/2026/0723/shiryou1-3-52.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "和歌山地方検察庁行政文書管理規則の一部改正案",
+          "url": "https://www8.cao.go.jp/koubuniinkai/iinkaisai/2026/0723/shiryou1-3-53.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "名古屋地方検察庁行政文書管理規則の一部改正案",
+          "url": "https://www8.cao.go.jp/koubuniinkai/iinkaisai/2026/0723/shiryou1-3-54.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "津地方検察庁行政文書管理規則の一部改正案",
+          "url": "https://www8.cao.go.jp/koubuniinkai/iinkaisai/2026/0723/shiryou1-3-55.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "岐阜地方検察庁行政文書管理規則の一部改正案",
+          "url": "https://www8.cao.go.jp/koubuniinkai/iinkaisai/2026/0723/shiryou1-3-56.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "福井地方検察庁行政文書管理規則の一部改正案",
+          "url": "https://www8.cao.go.jp/koubuniinkai/iinkaisai/2026/0723/shiryou1-3-57.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "金沢地方検察庁行政文書管理規則の一部改正案",
+          "url": "https://www8.cao.go.jp/koubuniinkai/iinkaisai/2026/0723/shiryou1-3-58.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "富山地方検察庁行政文書管理規則の一部改正案",
+          "url": "https://www8.cao.go.jp/koubuniinkai/iinkaisai/2026/0723/shiryou1-3-59.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "広島地方検察庁行政文書管理規則の一部改正案",
+          "url": "https://www8.cao.go.jp/koubuniinkai/iinkaisai/2026/0723/shiryou1-3-60.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "山口地方検察庁行政文書管理規則の一部改正案",
+          "url": "https://www8.cao.go.jp/koubuniinkai/iinkaisai/2026/0723/shiryou1-3-61.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "岡山地方検察庁行政文書管理規則の一部改正案",
+          "url": "https://www8.cao.go.jp/koubuniinkai/iinkaisai/2026/0723/shiryou1-3-62.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "鳥取地方検察庁行政文書管理規則の一部改正案",
+          "url": "https://www8.cao.go.jp/koubuniinkai/iinkaisai/2026/0723/shiryou1-3-63.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "松江地方検察庁行政文書管理規則の一部改正案",
+          "url": "https://www8.cao.go.jp/koubuniinkai/iinkaisai/2026/0723/shiryou1-3-64.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "福岡地方検察庁行政文書管理規則の一部改正案",
+          "url": "https://www8.cao.go.jp/koubuniinkai/iinkaisai/2026/0723/shiryou1-3-65.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "佐賀地方検察庁行政文書管理規則の一部改正案",
+          "url": "https://www8.cao.go.jp/koubuniinkai/iinkaisai/2026/0723/shiryou1-3-66.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "長崎地方検察庁行政文書管理規則の一部改正案",
+          "url": "https://www8.cao.go.jp/koubuniinkai/iinkaisai/2026/0723/shiryou1-3-67.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "大分地方検察庁行政文書管理規則の一部改正案",
+          "url": "https://www8.cao.go.jp/koubuniinkai/iinkaisai/2026/0723/shiryou1-3-68.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "熊本地方検察庁行政文書管理規則の一部改正案",
+          "url": "https://www8.cao.go.jp/koubuniinkai/iinkaisai/2026/0723/shiryou1-3-69.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "鹿児島地方検察庁行政文書管理規則の一部改正案",
+          "url": "https://www8.cao.go.jp/koubuniinkai/iinkaisai/2026/0723/shiryou1-3-70.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "宮崎地方検察庁行政文書管理規則の一部改正案",
+          "url": "https://www8.cao.go.jp/koubuniinkai/iinkaisai/2026/0723/shiryou1-3-71.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "那覇地方検察庁行政文書管理規則の一部改正案",
+          "url": "https://www8.cao.go.jp/koubuniinkai/iinkaisai/2026/0723/shiryou1-3-72.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "仙台地方検察庁行政文書管理規則の一部改正案",
+          "url": "https://www8.cao.go.jp/koubuniinkai/iinkaisai/2026/0723/shiryou1-3-73.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "福島地方検察庁行政文書管理規則の一部改正案",
+          "url": "https://www8.cao.go.jp/koubuniinkai/iinkaisai/2026/0723/shiryou1-3-74.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "山形地方検察庁行政文書管理規則の一部改正案",
+          "url": "https://www8.cao.go.jp/koubuniinkai/iinkaisai/2026/0723/shiryou1-3-75.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "盛岡地方検察庁行政文書管理規則の一部改正案",
+          "url": "https://www8.cao.go.jp/koubuniinkai/iinkaisai/2026/0723/shiryou1-3-76.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "秋田地方検察庁行政文書管理規則の一部改正案",
+          "url": "https://www8.cao.go.jp/koubuniinkai/iinkaisai/2026/0723/shiryou1-3-77.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "青森地方検察庁行政文書管理規則の一部改正案",
+          "url": "https://www8.cao.go.jp/koubuniinkai/iinkaisai/2026/0723/shiryou1-3-78.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "札幌地方検察庁行政文書管理規則の一部改正案",
+          "url": "https://www8.cao.go.jp/koubuniinkai/iinkaisai/2026/0723/shiryou1-3-79.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "函館地方検察庁行政文書管理規則の一部改正案",
+          "url": "https://www8.cao.go.jp/koubuniinkai/iinkaisai/2026/0723/shiryou1-3-80.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "旭川地方検察庁行政文書管理規則の一部改正案",
+          "url": "https://www8.cao.go.jp/koubuniinkai/iinkaisai/2026/0723/shiryou1-3-81.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "釧路地方検察庁行政文書管理規則の一部改正案",
+          "url": "https://www8.cao.go.jp/koubuniinkai/iinkaisai/2026/0723/shiryou1-3-82.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "高松地方検察庁行政文書管理規則の一部改正案",
+          "url": "https://www8.cao.go.jp/koubuniinkai/iinkaisai/2026/0723/shiryou1-3-83.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "徳島地方検察庁行政文書管理規則の一部改正案",
+          "url": "https://www8.cao.go.jp/koubuniinkai/iinkaisai/2026/0723/shiryou1-3-84.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "高知地方検察庁行政文書管理規則の一部改正案",
+          "url": "https://www8.cao.go.jp/koubuniinkai/iinkaisai/2026/0723/shiryou1-3-85.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "松山地方検察庁行政文書管理規則の一部改正案",
+          "url": "https://www8.cao.go.jp/koubuniinkai/iinkaisai/2026/0723/shiryou1-3-86.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "外務省行政文書管理規則の一部改正案",
+          "url": "https://www8.cao.go.jp/koubuniinkai/iinkaisai/2026/0723/shiryou1-3-87.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "財務省行政文書管理規則の一部改正案",
+          "url": "https://www8.cao.go.jp/koubuniinkai/iinkaisai/2026/0723/shiryou1-3-88.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "国税庁行政文書管理規則の一部改正案",
+          "url": "https://www8.cao.go.jp/koubuniinkai/iinkaisai/2026/0723/shiryou1-3-89.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "文部科学省行政文書管理規則の一部改正案",
+          "url": "https://www8.cao.go.jp/koubuniinkai/iinkaisai/2026/0723/shiryou1-3-90.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "厚生労働省行政文書管理規則の一部改正案",
+          "url": "https://www8.cao.go.jp/koubuniinkai/iinkaisai/2026/0723/shiryou1-3-91.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "中央労働委員会行政文書管理規則の一部改正案",
+          "url": "https://www8.cao.go.jp/koubuniinkai/iinkaisai/2026/0723/shiryou1-3-92.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "農林水産省行政文書管理規則の一部改正案",
+          "url": "https://www8.cao.go.jp/koubuniinkai/iinkaisai/2026/0723/shiryou1-3-93.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "経済産業省行政文書管理規則の一部改正案",
+          "url": "https://www8.cao.go.jp/koubuniinkai/iinkaisai/2026/0723/shiryou1-3-94.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "資源エネルギー庁行政文書管理規則の一部改正案",
+          "url": "https://www8.cao.go.jp/koubuniinkai/iinkaisai/2026/0723/shiryou1-3-95.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "特許庁行政文書管理規則の一部改正案",
+          "url": "https://www8.cao.go.jp/koubuniinkai/iinkaisai/2026/0723/shiryou1-3-96.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "中小企業庁行政文書管理規則の一部改正案",
+          "url": "https://www8.cao.go.jp/koubuniinkai/iinkaisai/2026/0723/shiryou1-3-97.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "国土交通省行政文書管理規則の一部改正案",
+          "url": "https://www8.cao.go.jp/koubuniinkai/iinkaisai/2026/0723/shiryou1-3-98.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "環境省行政文書管理規則の一部改正案",
+          "url": "https://www8.cao.go.jp/koubuniinkai/iinkaisai/2026/0723/shiryou1-3-99.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "原子力規制委員会行政文書管理規則の一部改正案",
+          "url": "https://www8.cao.go.jp/koubuniinkai/iinkaisai/2026/0723/shiryou1-3-100.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "防衛省行政文書管理規則の一部改正案",
+          "url": "https://www8.cao.go.jp/koubuniinkai/iinkaisai/2026/0723/shiryou1-3-101.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "防衛装備庁行政文書管理規則の一部改正案",
+          "url": "https://www8.cao.go.jp/koubuniinkai/iinkaisai/2026/0723/shiryou1-3-102.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "地方公共団体における公文書管理の取組調査について",
+          "url": "https://www8.cao.go.jp/koubuniinkai/iinkaisai/2026/0723/shiryou2.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "国立公文書館の活動状況",
+          "url": "https://www8.cao.go.jp/koubuniinkai/iinkaisai/2026/0723/shiryou3-1.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "令和8年夏の特別展「旅人は東を目指す―古典文学が描いた魅惑の東日本―」（国立公文書館）",
+          "url": "https://www8.cao.go.jp/koubuniinkai/iinkaisai/2026/0723/shiryou3-2.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "議事要旨",
+          "url": "https://www8.cao.go.jp/koubuniinkai/iinkaisai/2026/0723/120youshi.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "議事録",
+          "url": "https://www8.cao.go.jp/koubuniinkai/iinkaisai/2026/0723/120gijiroku.pdf",
+          "type": "PDF"
+        }
+      ]
+    },
+    {
+      "id": "cao-231-20260622-119",
+      "councilId": "cao-231",
+      "title": "第119回 公文書管理委員会",
+      "date": "2026/06/22",
+      "officialUrl": "https://www8.cao.go.jp/koubuniinkai/iinkaisai/2026/0622haifu.html",
+      "category": "COMMITTEE",
+      "ministry": "CAO",
+      "hasMinutes": true,
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "環境省行政文書管理規則の一部を改正する訓令案について（概要）、諮問書",
+          "url": "https://www8.cao.go.jp/koubuniinkai/iinkaisai/2026/0622/shiryou1-1.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "環境省行政文書管理規則の一部を改正する訓令案",
+          "url": "https://www8.cao.go.jp/koubuniinkai/iinkaisai/2026/0622/shiryou1-2.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "議事録",
+          "url": "https://www8.cao.go.jp/koubuniinkai/iinkaisai/2026/0622/119gijiroku.pdf",
+          "type": "PDF"
+        }
+      ]
+    },
+    {
+      "id": "cao-231-20260427-118",
+      "councilId": "cao-231",
+      "title": "第118回 公文書管理委員会",
+      "date": "2026/04/27",
+      "officialUrl": "https://www8.cao.go.jp/koubuniinkai/iinkaisai/2026/0427haifu.html",
+      "category": "COMMITTEE",
+      "ministry": "CAO",
+      "hasMinutes": true,
+      "manualLock": true,
+      "materials": [
+        {
+          "name": "議事次第",
+          "url": "https://www8.cao.go.jp/koubuniinkai/iinkaisai/2026/0427/118shidai.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "令和７年度における公文書監察の取組について（概要）",
+          "url": "https://www8.cao.go.jp/koubuniinkai/iinkaisai/2026/0427/shiryou1-1.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "令和７年度における公文書監察の取組について",
+          "url": "https://www8.cao.go.jp/koubuniinkai/iinkaisai/2026/0427/shiryou1-2.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "令和８年度における定期監査の方針",
+          "url": "https://www8.cao.go.jp/koubuniinkai/iinkaisai/2026/0427/shiryou1-3.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "新たな文書管理システムを見据えた​行政文書の管理に関する公文書管理課長通知の​見直しについて（概要）",
+          "url": "https://www8.cao.go.jp/koubuniinkai/iinkaisai/2026/0427/shiryou2-1.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "行政文書の管理に関する公文書管理課長通知（新旧）",
+          "url": "https://www8.cao.go.jp/koubuniinkai/iinkaisai/2026/0427/shiryou2-2.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "文書管理システムにおける行政文書の電子的管理（課長通知２－７案）",
+          "url": "https://www8.cao.go.jp/koubuniinkai/iinkaisai/2026/0427/shiryou2-3.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "人事院及び復興庁における行政文書の管理に関する定めの一部改正案について（概要）、諮問書",
+          "url": "https://www8.cao.go.jp/koubuniinkai/iinkaisai/2026/0427/shiryou3-1.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "人事院行政文書管理規程の一部改正案",
+          "url": "https://www8.cao.go.jp/koubuniinkai/iinkaisai/2026/0427/shiryou3-2.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "復興庁行政文書管理規則の一部を改正する訓令（案）",
+          "url": "https://www8.cao.go.jp/koubuniinkai/iinkaisai/2026/0427/shiryou3-3.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "国立公文書館の活動状況",
+          "url": "https://www8.cao.go.jp/koubuniinkai/iinkaisai/2026/0427/shiryou4-1.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "昭和100年記念特別展「昭和の日本人とフロンティアー南極・深海・宇宙への挑戦―」（国立公文書館）",
+          "url": "https://www8.cao.go.jp/koubuniinkai/iinkaisai/2026/0427/shiryou4-2.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "議事要旨",
+          "url": "https://www8.cao.go.jp/koubuniinkai/iinkaisai/2026/0427/118youshi.pdf",
+          "type": "PDF"
+        },
+        {
+          "name": "議事録",
+          "url": "https://www8.cao.go.jp/koubuniinkai/iinkaisai/2026/0427/118gijiroku.pdf",
+          "type": "PDF"
+        }
+      ]
+    },
+    {
       "id": "mhlw-shakai_hosho_kaigo_hoken-20260918-s31",
       "councilId": "mhlw-shakai_hosho_kaigo_hoken",
       "title": "第136回社会保障審議会介護保険部会",
@@ -29410,15 +30153,6 @@
       "materials": [],
       "isNewlyDiscovered": true,
       "discoveredAt": "2026/09/05 08:30",
-      "manualLock": true
-    },
-    {
-      "id": "cao-231-20260915-121",
-      "councilId": "cao-231",
-      "title": "第121回 公文書管理委員会",
-      "date": "2026/09/15",
-      "officialUrl": "https://www8.cao.go.jp/koubuniinkai/news2026/121iinkai.html",
-      "materials": [],
       "manualLock": true
     },
     {
@@ -424970,10 +425704,10 @@
     },
     "cao-231": {
       "deep_crawl_enabled": true,
-      "date_regex": "(?:令和|平成)\\d+年\\d+月\\d+日|20\\d{2}年\\d+月\\d+日",
-      "pdf_selector": "href=[\"\\']([^\"\\']+\\.pdf)[\"\\']",
-      "manualLock": true,
-      "subpage_discovery_pattern": "href=[\"\\']([^\"\\']*(?:dai\\d+|\\d+kai|kaisai|gijisidai|gijiroku)[^\"\\']*)[\"\\']"
+      "subpage_discovery_pattern": "href=[\\\"']([^\\\"']*(?:20\\d{2}\\.html|\\d{4}haifu\\.html|iinkaisai)[^\\\"'#]*)[\\\"']",
+      "date_regex": "(?:令和|平成|\\d{4}年)\\d+年?\\d+月\\d+日",
+      "pdf_selector": "href=[\\\"']([^\\\"']+\\.pdf)[\\\"']",
+      "manualLock": true
     },
     "cao-232": {
       "deep_crawl_enabled": true,
