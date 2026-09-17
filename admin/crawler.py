@@ -947,19 +947,20 @@ def _build_new_meeting(target, sub, clean_materials_list, sess_nums, meet_date, 
     if not resolved_meet_url or is_generic_index_url(resolved_meet_url, sub_title):
         resolved_meet_url = council_parent_url
 
-    return {
+    new_meeting_obj = {
         "id": new_meet_id,
         "councilId": council_id,
         "title": formatted_title,
         "date": meet_date,
         "officialUrl": resolved_meet_url,
-        "category": target.get("category", "COUNCIL"),
-        "ministry": ministry,
         "materials": clean_materials_list,
         "isNewlyDiscovered": True,
-        "isDateUnconfirmed": is_date_unconfirmed,
         "discoveredAt": datetime.now().strftime("%Y/%m/%d %H:%M")
     }
+    if is_date_unconfirmed:
+        new_meeting_obj["isDateUnconfirmed"] = True
+
+    return new_meeting_obj
 
 
 def sync_new_meetings_from_crawl(data, target, scraped_item):
@@ -1036,12 +1037,15 @@ def sync_new_meetings_from_crawl(data, target, scraped_item):
             mat_type = mat.get("type", "PDF")
             if not mat_url or mat_url == "#" or mat_url == sub_url:
                 continue
-            clean_materials_list.append({
+            mat_item = {
                 "name": mat_name if mat_name else os.path.basename(mat_url),
-                "url": mat_url,
-                "type": mat_type,
-                "isPrivate": mat.get("isPrivate", False)
-            })
+                "url": mat_url
+            }
+            if mat_type and mat_type not in ("PDF", "pdf"):
+                mat_item["type"] = mat_type
+            if mat.get("isPrivate"):
+                mat_item["isPrivate"] = True
+            clean_materials_list.append(mat_item)
 
         # --- A. 既存会議の自動昇格・更新（資料未掲載・親URLだった会議が開催日後に個別資料ページを検出した場合） ---
         if sess_nums and any(s in existing_sessions for s in sess_nums):

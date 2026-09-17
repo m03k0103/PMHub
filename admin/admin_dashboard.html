@@ -1127,7 +1127,7 @@ JSON データを読み込み中...
               <div>
                 <span class="badge" style="background: rgba(16,185,129,0.2); color:#10b981; margin-right: 0.4rem; font-size: 0.75rem;">NEW</span>
                 <span style="font-weight: 600; color: var(--text-primary); font-size: 0.95rem;">${m.title || m.id}</span>
-                <span style="color: var(--text-muted); font-size: 0.82rem; margin-left: 0.5rem;">(${m.councilName || m.councilId})</span>
+                <span style="color: var(--text-muted); font-size: 0.82rem; margin-left: 0.5rem;">(${m.councilName || ((typeof allCouncils !== 'undefined' ? allCouncils : []).find(c => c.id === m.councilId)?.name) || m.councilId})</span>
               </div>
               <span style="font-size: 0.8rem; color: #38bdf8; font-weight: 500; white-space: nowrap;">📅 ${m.date || '日付未定'}</span>
             </div>
@@ -1391,13 +1391,19 @@ JSON データを読み込み中...
       const fDocType   = document.getElementById('filterMeetingsDocType') ? document.getElementById('filterMeetingsDocType').value : '';
       const fUrlStatus = document.getElementById('filterMeetingsUrlStatus') ? document.getElementById('filterMeetingsUrlStatus').value : '';
 
+      const councilsList = typeof allCouncils !== 'undefined' ? allCouncils : (typeof baseCouncils !== 'undefined' ? baseCouncils : []);
+      const councilsMap = new Map(councilsList.map(c => [c.id, c]));
       let filtered = meetings.filter(m => {
-        const minName = ministries[m.ministry] ? ministries[m.ministry].name : m.ministry;
+        const cObj = councilsMap.get(m.councilId) || {};
+        const mMinistry = m.ministry || cObj.ministry || '';
+        const mCategory = m.category || cObj.category || 'COUNCIL';
+        const mCouncilName = m.councilName || cObj.name || m.title || '';
+        const minName = ministries[mMinistry] ? ministries[mMinistry].name : mMinistry;
         const matNames = (m.materials || []).map(mat => mat.name).join(' ');
-        const text = `${m.title} ${m.councilName || ''} ${m.id} ${m.date} ${minName} ${m.ministry} ${matNames}`.toLowerCase();
+        const text = `${m.title} ${mCouncilName} ${m.id} ${m.date} ${minName} ${mMinistry} ${matNames}`.toLowerCase();
         if (searchTerm && !text.includes(searchTerm)) return false;
-        if (fMinistry && m.ministry !== fMinistry) return false;
-        if (fCategory && m.category !== fCategory) return false;
+        if (fMinistry && mMinistry !== fMinistry) return false;
+        if (fCategory && mCategory !== fCategory) return false;
         if (fDocType === 'has_docs' && (!m.materials || m.materials.length === 0)) return false;
         if (fDocType === 'no_docs' && m.materials && m.materials.length > 0) return false;
         if (fUrlStatus) {
@@ -1439,9 +1445,13 @@ JSON データを読み込み中...
       }
 
       meetingsListEl.innerHTML = filtered.map((m, i) => {
-        const minName = ministries[m.ministry] ? ministries[m.ministry].name : m.ministry;
-        const catLabel = categories[m.category] || m.category;
-        const accentColor = getMinistryColor(m.ministry);
+        const cObj = councilsMap.get(m.councilId) || {};
+        const mMinistry = m.ministry || cObj.ministry || '';
+        const mCategory = m.category || cObj.category || 'COUNCIL';
+        const mCouncilName = m.councilName || cObj.name || m.title || '';
+        const minName = ministries[mMinistry] ? ministries[mMinistry].name : mMinistry;
+        const catLabel = categories[mCategory] || mCategory;
+        const accentColor = getMinistryColor(mMinistry);
         const mMats = m.materials || [];
 
         const mCorrected = meetingUrlCorrections[m.id] || '';
@@ -1463,12 +1473,13 @@ JSON データを読み込み中...
             if (ms === 'checking') msBadge = '<span class="url-status checking">⏳</span>';
             else if (ms === 'ok') msBadge = '<span class="url-status ok">✓ OK</span>';
             else if (ms === 'error') msBadge = '<span class="url-status error">✗ NG (エラー)</span>';
-            const typeClass = mat.type === 'PDF' ? 'mat-type-pdf' : mat.type === 'HTML' ? 'mat-type-html' : 'mat-type-other';
+            const matType = mat.type || (mat.url && mat.url.toLowerCase().endsWith('.pdf') ? 'PDF' : (mat.url ? 'HTML' : 'PDF'));
+            const typeClass = matType === 'PDF' ? 'mat-type-pdf' : matType === 'HTML' ? 'mat-type-html' : 'mat-type-other';
 
             return `<tr>
               <td style="width: 5%;">${mi + 1}</td>
               <td style="width: 45%;">${escHtml(mat.name)}</td>
-              <td style="width: 12%;"><span class="mat-type-badge ${typeClass}">${mat.type}</span></td>
+              <td style="width: 12%;"><span class="mat-type-badge ${typeClass}">${matType}</span></td>
               <td style="width: 28%;"><a href="${escAttr(mat.url)}" target="_blank" rel="noopener">${truncateUrl(mat.url, 45)}</a></td>
               <td style="width: 10%;">${msBadge}</td>
             </tr>`;
@@ -1492,7 +1503,7 @@ JSON データを読み込み中...
             <div class="card-title-area">
               <div class="card-idx">#${i + 1} / ${filtered.length} ｜ ${dateDisplay}</div>
               <div class="card-name" style="font-size: 1.05rem;">${m.title} ${isDateUnconfirmed ? '<span class="meta-chip" style="color:#f59e0b;border-color:rgba(245,158,11,0.4);background:rgba(245,158,11,0.1);font-size:0.75rem;">要確認</span>' : ''}</div>
-              <div class="card-id">ID: ${m.id} ｜ 会議体: ${m.councilName || m.councilId}</div>
+              <div class="card-id">ID: ${m.id} ｜ 会議体: ${mCouncilName || m.councilId}</div>
             </div>
             <div class="card-actions">
               ${mMats.length ? `<button class="btn-check-mats" onclick="checkMeetingMaterials('${m.councilId}', '${m.id}')">🔗 資料疎通チェック</button>` : ''}
@@ -1500,8 +1511,8 @@ JSON データを読み込み中...
           </div>
 
           <div class="card-meta" style="margin-top: 0.65rem;">
-            <span class="meta-chip"><span class="chip-icon">🏛</span> ${minName} (${m.ministry})</span>
-            <span class="category-badge cat-${m.category}">${catLabel}</span>
+            <span class="meta-chip"><span class="chip-icon">🏛</span> ${minName} (${mMinistry})</span>
+            <span class="category-badge cat-${mCategory}">${catLabel}</span>
             <span class="meta-chip"><span class="chip-icon">📎</span> 配布資料: ${mMats.length} 件</span>
           </div>
 

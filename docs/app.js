@@ -89,10 +89,26 @@ document.addEventListener('DOMContentLoaded', async () => {
     meetingsByCouncilMap.get(m.councilId).push(m);
   });
 
+  const councilsMap = new Map(COUNCILS.map(c => [c.id, c]));
   const councilsByIdMap = new Map(COUNCILS.map(c => [c.id, c.name]));
+  function getMeetingCouncil(meeting) {
+    if (!meeting) return null;
+    return councilsMap.get(meeting.councilId) || null;
+  }
   function getCouncilName(meeting) {
     if (!meeting) return '';
-    return meeting.councilName || councilsByIdMap.get(meeting.councilId) || meeting.title || '';
+    const parent = getMeetingCouncil(meeting);
+    return meeting.councilName || (parent && parent.name) || councilsByIdMap.get(meeting.councilId) || meeting.title || '';
+  }
+  function getMeetingMinistry(meeting) {
+    if (!meeting) return '';
+    const parent = getMeetingCouncil(meeting);
+    return meeting.ministry || (parent && parent.ministry) || '';
+  }
+  function getMeetingCategory(meeting) {
+    if (!meeting) return '';
+    const parent = getMeetingCouncil(meeting);
+    return meeting.category || (parent && parent.category) || 'COUNCIL';
   }
 
   // --- DOM ELEMENTS ---
@@ -554,12 +570,12 @@ document.addEventListener('DOMContentLoaded', async () => {
       }
 
       // Ministry filter
-      if (state.ministryFilter !== 'ALL' && meeting.ministry !== state.ministryFilter) {
+      if (state.ministryFilter !== 'ALL' && getMeetingMinistry(meeting) !== state.ministryFilter) {
         return false;
       }
 
       // Category filter
-      if (state.categoryFilter !== 'ALL' && meeting.category !== state.categoryFilter) {
+      if (state.categoryFilter !== 'ALL' && getMeetingCategory(meeting) !== state.categoryFilter) {
         return false;
       }
 
@@ -750,15 +766,20 @@ document.addEventListener('DOMContentLoaded', async () => {
   };
 
   function createTimelineCardHTML(meeting) {
-    const minInfo = MINISTRIES[meeting.ministry] || { name: meeting.ministry, color: '#3b82f6' };
-    const categoryName = getCategoryLabel(meeting.category);
+    const meetingMinistry = getMeetingMinistry(meeting);
+    const meetingCategory = getMeetingCategory(meeting);
+    const minInfo = MINISTRIES[meetingMinistry] || { name: meetingMinistry, color: '#3b82f6' };
+    const categoryName = getCategoryLabel(meetingCategory);
 
-    const docPillsHTML = (meeting.materials || []).map(doc => `
-      <a href="${escapeHtml(sanitizeUrl(doc.url))}" target="_blank" rel="noopener noreferrer" class="doc-pill" title="${escapeHtml(doc.name)} (${escapeHtml(doc.size)})">
-        <span class="doc-type-icon">${escapeHtml(doc.type)}</span>
+    const docPillsHTML = (meeting.materials || []).map(doc => {
+      const docType = doc.type || (doc.url && doc.url.toLowerCase().endsWith('.pdf') ? 'PDF' : (doc.url ? 'HTML' : 'PDF'));
+      return `
+      <a href="${escapeHtml(sanitizeUrl(doc.url))}" target="_blank" rel="noopener noreferrer" class="doc-pill" title="${escapeHtml(doc.name)}">
+        <span class="doc-type-icon">${escapeHtml(docType)}</span>
         <span>${escapeHtml(doc.name)}</span>
       </a>
-    `).join('');
+    `;
+    }).join('');
 
     const tagsHTML = (meeting.tags || []).map(t => `
       <span class="tag-item">#${escapeHtml(t)}</span>
@@ -768,7 +789,7 @@ document.addEventListener('DOMContentLoaded', async () => {
       <article class="timeline-card card-glass" id="meeting-${meeting.id}" style="--card-accent-color: ${minInfo.color}">
         <div class="card-top-row">
           <div class="card-badges">
-            <span class="badge-ministry ${meeting.ministry}">${minInfo.name}</span>
+            <span class="badge-ministry ${meetingMinistry}">${minInfo.name}</span>
             <span class="badge-category">${categoryName}</span>
           </div>
           <div class="card-date-badge" title="会議の開催年月日">
@@ -1116,7 +1137,8 @@ document.addEventListener('DOMContentLoaded', async () => {
       const counts = {};
       minKeys.forEach(k => counts[k] = 0);
       MEETINGS.forEach(m => {
-        if (counts[m.ministry] !== undefined) counts[m.ministry] += (m.materials ? m.materials.length : 0);
+        const min = getMeetingMinistry(m);
+        if (counts[min] !== undefined) counts[min] += (m.materials ? m.materials.length : 0);
       });
       COUNCILS.forEach(c => {
         if (counts[c.ministry] !== undefined) counts[c.ministry] += (c.materials ? c.materials.length : 0);
@@ -1130,7 +1152,8 @@ document.addEventListener('DOMContentLoaded', async () => {
       const counts = {};
       minKeys.forEach(k => counts[k] = 0);
       MEETINGS.forEach(m => {
-        if (counts[m.ministry] !== undefined) counts[m.ministry]++;
+        const min = getMeetingMinistry(m);
+        if (counts[min] !== undefined) counts[min]++;
       });
       dataValues = minKeys.map(k => counts[k]);
       metricLabel = '会議開催数 (回)';
@@ -1316,11 +1339,13 @@ document.addEventListener('DOMContentLoaded', async () => {
   // --- MODAL DIALOG ENGINE ---
   function openModal(meeting) {
     state.activeModalMeeting = meeting;
-    const minInfo = MINISTRIES[meeting.ministry] || { name: meeting.ministry };
+    const meetingMinistry = getMeetingMinistry(meeting);
+    const meetingCategory = getMeetingCategory(meeting);
+    const minInfo = MINISTRIES[meetingMinistry] || { name: meetingMinistry };
 
     el.modalBadges.innerHTML = `
-      <span class="badge-ministry ${meeting.ministry}">${minInfo.name}</span>
-      <span class="badge-category">${getCategoryLabel(meeting.category)}</span>
+      <span class="badge-ministry ${meetingMinistry}">${minInfo.name}</span>
+      <span class="badge-category">${getCategoryLabel(meetingCategory)}</span>
     `;
 
     el.modalTitle.textContent = meeting.title;
@@ -1388,7 +1413,8 @@ document.addEventListener('DOMContentLoaded', async () => {
   function copyCitationText() {
     if (!state.activeModalMeeting) return;
     const m = state.activeModalMeeting;
-    const minName = MINISTRIES[m.ministry]?.name || m.ministry;
+    const mMinistry = getMeetingMinistry(m);
+    const minName = MINISTRIES[mMinistry]?.name || mMinistry;
     const citation = `${minName}「${m.title}」（${formatDate(m.date)}開催）政策会議ウォッチ 参照: ${m.officialUrl}`;
     
     navigator.clipboard.writeText(citation);
@@ -1420,15 +1446,18 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     // 2. Export CSV (with UTF-8 BOM for Excel compatibility)
     const csvHeader = ["開催日", "所管省庁", "会議体名", "会議名", "資料件数", "一次ソースURL", "要約"];
-    const csvRows = list.map(m => [
-      `"${sanitizeCsvField(m.date)}"`,
-      `"${sanitizeCsvField(MINISTRIES[m.ministry]?.name || m.ministry)}"`,
-      `"${sanitizeCsvField(getCouncilName(m).replace(/"/g, '""'))}"`,
-      `"${sanitizeCsvField(m.title.replace(/"/g, '""'))}"`,
-      `"${sanitizeCsvField(m.materials ? String(m.materials.length) : '0')}"`,
-      `"${sanitizeCsvField(m.officialUrl)}"`,
-      `"${sanitizeCsvField((m.summary || '').replace(/"/g, '""'))}"`
-    ].join(','));
+    const csvRows = list.map(m => {
+      const mMin = getMeetingMinistry(m);
+      return [
+        `"${sanitizeCsvField(m.date)}"`,
+        `"${sanitizeCsvField(MINISTRIES[mMin]?.name || mMin)}"`,
+        `"${sanitizeCsvField(getCouncilName(m).replace(/"/g, '""'))}"`,
+        `"${sanitizeCsvField(m.title.replace(/"/g, '""'))}"`,
+        `"${sanitizeCsvField(m.materials ? String(m.materials.length) : '0')}"`,
+        `"${sanitizeCsvField(m.officialUrl)}"`,
+        `"${sanitizeCsvField((m.summary || '').replace(/"/g, '""'))}"`
+      ].join(',');
+    });
 
     const csvContent = "\uFEFF" + [csvHeader.join(','), ...csvRows].join('\n');
     const csvBlob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
