@@ -265,28 +265,26 @@ def interleave_by_ministry(councils):
 
 def load_scraping_rules():
     """docs/data.json の scrapingRules キーからスクレイピングルールを読み込み、必要に応じて scrapingRuleTemplates を展開・マージする"""
-    if os.path.exists(DATA_JSON_FILE):
+    data = load_data_json(DATA_JSON_FILE)
+    if data:
         try:
-            with open(DATA_JSON_FILE, "r", encoding="utf-8") as f:
-                data = json.load(f)
-                templates = data.get("scrapingRuleTemplates", {})
-                raw_rules = data.get("scrapingRules", {})
-                
-                resolved_rules = {}
-                for cid, r in raw_rules.items():
-                    # is_active / isActive が明示的に False の場合はスキップ
-                    if isinstance(r, dict) and (r.get("is_active") is False or r.get("isActive") is False):
-                        continue
-                    if isinstance(r, dict) and "template" in r and r["template"] in templates:
-                        tpl_name = r["template"]
-                        # テンプレートをベースに個別オーバーライドをマージ
-                        merged = dict(templates[tpl_name])
-                        merged.update(r)
-                        merged.pop("template", None)
-                        resolved_rules[cid] = merged
-                    else:
-                        resolved_rules[cid] = r
-                return resolved_rules
+            templates = data.get("scrapingRuleTemplates", {})
+            raw_rules = data.get("scrapingRules", {})
+            resolved_rules = {}
+            for cid, r in raw_rules.items():
+                # is_active / isActive が明示的に False の場合はスキップ
+                if isinstance(r, dict) and (r.get("is_active") is False or r.get("isActive") is False):
+                    continue
+                if isinstance(r, dict) and "template" in r and r["template"] in templates:
+                    tpl_name = r["template"]
+                    # テンプレートをベースに個別オーバーライドをマージ
+                    merged = dict(templates[tpl_name])
+                    merged.update(r)
+                    merged.pop("template", None)
+                    resolved_rules[cid] = merged
+                else:
+                    resolved_rules[cid] = r
+            return resolved_rules
         except Exception as e:
             print(f"[WARN] Failed to load scrapingRules from data.json: {e}", file=sys.stderr)
     return {}
@@ -437,6 +435,7 @@ def extract_page_title(soup, rule=None, fallback_url=""):
 
         return title if title else fallback_url
     except Exception:
+        # パース失敗やネットワーク異常時はフォールバックURLを安全に返却
         return fallback_url
 
 
@@ -1323,13 +1322,13 @@ def run_meeting_crawler(progress_callback=None, stop_event=None):
             try:
                 log_f.write(log_line)
                 log_f.flush()
-            except Exception:
+            except OSError:
                 pass
         if latest_f:
             try:
                 latest_f.write(log_line)
                 latest_f.flush()
-            except Exception:
+            except OSError:
                 pass
         if progress_callback:
             try:
@@ -1445,8 +1444,8 @@ def run_meeting_crawler(progress_callback=None, stop_event=None):
                 emit(f"  -> 🔴 [UNEXPECTED ERROR] 会議体巡回中に予期せぬ例外が発生しました: {council_err}")
                 try:
                     update_crawl_status(data, target["id"], None, f"Unexpected error: {council_err}")
-                except Exception:
-                    pass
+                except Exception as status_err:
+                    emit(f"  -> [WARN] update_crawl_status 記録失敗: {status_err}")
             emit("-" * 65)
 
             # レートリミット（スロットリング: 行政サーバー負荷軽減 & WAFブロック回避）
@@ -1500,10 +1499,10 @@ def run_meeting_crawler(progress_callback=None, stop_event=None):
     finally:
         if log_f:
             try: log_f.close()
-            except Exception: pass
+            except OSError: pass
         if latest_f:
             try: latest_f.close()
-            except Exception: pass
+            except OSError: pass
 
 def main():
     import threading
@@ -1522,7 +1521,7 @@ def main():
             with open("admin/logs/crawler_crash.log", "a", encoding="utf-8") as cf:
                 cf.write(f"[{datetime.now()}] FATAL CRASH: {e}\n")
                 traceback.print_exc(file=cf)
-        except Exception:
+        except OSError:
             pass
         sys.exit(1)
 

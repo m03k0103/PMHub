@@ -17,7 +17,7 @@ import time
 from datetime import datetime
 from bs4 import BeautifulSoup
 
-from utils import setup_win32_utf8, get_browser_headers, save_data_json_with_backup, decode_html_bytes, load_rejected_councils
+from utils import setup_win32_utf8, get_browser_headers, save_data_json_with_backup, decode_html_bytes, load_rejected_councils, load_data_json
 setup_win32_utf8()
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
@@ -26,14 +26,9 @@ DATA_JSON_PATH = os.path.join(PROJECT_ROOT, "docs", "data.json")
 
 
 def load_keywords():
-    if os.path.exists(DATA_JSON_PATH):
-        try:
-            with open(DATA_JSON_PATH, "r", encoding="utf-8") as f:
-                data = json.load(f)
-                if "discoveryKeywords" in data:
-                    return data["discoveryKeywords"]
-        except Exception as e:
-            print(f"[WARN] キーワード設定の読み込みエラー: {e}", file=sys.stderr)
+    data = load_data_json(DATA_JSON_PATH)
+    if data and "discoveryKeywords" in data:
+        return data["discoveryKeywords"]
     return {
         "commonKeywords": ["審議会", "検討会", "委員会", "部会", "分科会", "懇談会", "ワーキンググループ", "ワーキング・グループ", "スタディグループ", "スタディ・グループ", "WG", "SG", "審査会", "研究会", "プロジェクトチーム", "タスクフォース", "有識者会議", "本部", "推進会議", "円卓会議", "会議"],
         "commonExcludeKeywords": ["過去", "名簿", "委員名簿", "議事録", "議事要旨", "資料一覧", "配付資料", "法令", "設置根拠", "傍聴", "更新履歴", "PDF", "Excel", "プライバシーポリシー"],
@@ -43,20 +38,15 @@ def load_keywords():
 
 def parse_data_json():
     """docs/data.json から MINISTRIES, COUNCILS, CATEGORIES のデータを抽出する"""
-    if not os.path.exists(DATA_JSON_PATH):
-        print(f"[ERROR] {DATA_JSON_PATH} が見つかりません。", file=sys.stderr)
+    data = load_data_json(DATA_JSON_PATH)
+    if not data:
+        print(f"[ERROR] {DATA_JSON_PATH} の読み込みに失敗しました。", file=sys.stderr)
         return {}, [], {}
 
-    try:
-        with open(DATA_JSON_PATH, "r", encoding="utf-8") as f:
-            data = json.load(f)
-            ministries = data.get("ministries", {})
-            councils = data.get("councils", [])
-            categories = data.get("categories", {})
-            return ministries, councils, categories
-    except Exception as e:
-        print(f"[ERROR] failed to parse data.json: {e}", file=sys.stderr)
-        return {}, [], {}
+    ministries = data.get("ministries", {})
+    councils = data.get("councils", [])
+    categories = data.get("categories", {})
+    return ministries, councils, categories
 
 def infer_council_category(name_or_text, defined_categories=None):
     """
@@ -429,11 +419,9 @@ def run_discovery(progress_callback=None, target_ministry=None, dry_run=False):
         emit("\n[DRY RUN] dry-run モードのため、data.json への保存はスキップされました。")
         return discovered_list
 
-    if os.path.exists(DATA_JSON_PATH):
+    data = load_data_json(DATA_JSON_PATH)
+    if data:
         try:
-            with open(DATA_JSON_PATH, "r", encoding="utf-8") as f:
-                data = json.load(f)
-            
             existing_councils = data.get("councils", [])
             existing_dict = {c.get("id"): c for c in existing_councils if c.get("id")}
             

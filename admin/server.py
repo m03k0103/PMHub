@@ -157,7 +157,10 @@ class CustomHandler(SimpleHTTPRequestHandler):
         if content_length <= 0:
             return {}
         post_data = self.rfile.read(content_length)
-        return json.loads(post_data.decode('utf-8'))
+        try:
+            return json.loads(post_data.decode('utf-8'))
+        except (json.JSONDecodeError, UnicodeDecodeError) as e:
+            raise ValueError(f"Invalid JSON payload: {e}")
 
     def do_GET(self):
         parsed_url = urllib.parse.urlparse(self.path)

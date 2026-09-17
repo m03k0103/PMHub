@@ -667,12 +667,14 @@ document.addEventListener('DOMContentLoaded', async () => {
     const isHidden = contentEl.classList.contains('hidden');
     if (isHidden) {
       contentEl.classList.remove('hidden');
+      if (btn && btn.setAttribute) btn.setAttribute('aria-expanded', 'true');
       if (arrowEl) {
         arrowEl.textContent = '▲';
         arrowEl.style.transform = 'rotate(180deg)';
       }
     } else {
       contentEl.classList.add('hidden');
+      if (btn && btn.setAttribute) btn.setAttribute('aria-expanded', 'false');
       if (arrowEl) {
         arrowEl.textContent = '▼';
         arrowEl.style.transform = 'rotate(0deg)';
@@ -724,14 +726,14 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     return `
       <div class="materials-accordion">
-        <button class="materials-toggle-btn" onclick="toggleMaterialsAccordion(this, '${meetingId}')" type="button">
+        <button class="materials-toggle-btn" onclick="toggleMaterialsAccordion(this, '${meetingId}')" type="button" aria-expanded="false" aria-controls="materials-content-${meetingId}">
           <div class="materials-toggle-left">
             <span>📂 ${escapeHtml(label)}</span>
             <span class="materials-badge-count ${hasMaterials ? '' : 'no-materials'}">${hasMaterials ? `${filteredMaterials.length}件` : '資料なし'}</span>
           </div>
-          <span class="toggle-arrow" id="arrow-${meetingId}">▼</span>
+          <span class="toggle-arrow" id="arrow-${meetingId}" aria-hidden="true">▼</span>
         </button>
-        <div class="materials-collapse-content hidden" id="materials-content-${meetingId}">
+        <div class="materials-collapse-content hidden" id="materials-content-${meetingId}" role="region" aria-label="${escapeHtml(label)}">
           <ul class="materials-vertical-list">
             ${listItems}
           </ul>
@@ -974,7 +976,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
       return `
         <div class="council-accordion-card ${isExpanded ? 'expanded' : ''}" id="council-card-${c.id}">
-          <div class="council-accordion-header" onclick="toggleCouncilAccordion('${c.id}')">
+          <div class="council-accordion-header" onclick="toggleCouncilAccordion('${c.id}')" onkeydown="handleCouncilAccordionKeydown(event, '${c.id}')" role="button" tabindex="0" aria-expanded="${isExpanded ? 'true' : 'false'}" aria-controls="council-body-${c.id}">
             <div class="council-header-left">
               <div class="council-header-top-row">
                 <span class="badge-ministry ${c.ministry}">${minInfo.name}</span>
@@ -1001,7 +1003,7 @@ document.addEventListener('DOMContentLoaded', async () => {
               <span class="council-expand-arrow">▼</span>
             </div>
           </div>
-          <div class="council-meetings-body">
+          <div class="council-meetings-body" id="council-body-${c.id}" role="region" aria-label="${escapeHtml(c.name)}">
             ${(Array.isArray(c.materials) && c.materials.length > 0) ? `
               <div class="council-common-materials-wrapper">
                 ${renderMaterialsAccordionHTML(c.materials, 'council-' + c.id, c.officialUrl, '会議体の資料リストを開く（構成員名簿・設置根拠等）')}
@@ -1019,12 +1021,25 @@ document.addEventListener('DOMContentLoaded', async () => {
   window.toggleCouncilAccordion = function(councilId) {
     const cardEl = document.getElementById(`council-card-${councilId}`);
     if (!cardEl) return;
+    const headerEl = cardEl.querySelector('.council-accordion-header');
     if (state.expandedCouncilIds.has(councilId)) {
       state.expandedCouncilIds.delete(councilId);
       cardEl.classList.remove('expanded');
+      if (headerEl) headerEl.setAttribute('aria-expanded', 'false');
     } else {
       state.expandedCouncilIds.add(councilId);
       cardEl.classList.add('expanded');
+      if (headerEl) headerEl.setAttribute('aria-expanded', 'true');
+    }
+  };
+
+  window.handleCouncilAccordionKeydown = function(e, councilId) {
+    if (e.key === 'Enter' || e.key === ' ') {
+      if (e.target && (e.target.tagName === 'A' || e.target.tagName === 'BUTTON' || e.target.closest('a, button'))) {
+        return;
+      }
+      e.preventDefault();
+      toggleCouncilAccordion(councilId);
     }
   };
 
