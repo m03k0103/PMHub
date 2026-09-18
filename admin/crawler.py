@@ -104,6 +104,7 @@ _GENERIC_INDEX_URL_PATTERNS = re.compile(
     r'/int/kaisai/kako\.html|'
     r'study/dai3sya/index\.html|'
     r'policymeeting/(?:index\.html)?$|'
+    r'fiscal_system_council/[^/]+/(?:proceedings|report)/(?:index\.html)?$|'
     r'gijiroku/zeicho/\d{4}/(?:index\.html)?$|'
     r'fsc\.go\.jp/senmon/(?:[^/]+/)?$|'
     r'kanbou_library_library\d+_\d+\.html|'
