@@ -529,6 +529,7 @@ def _crawl_subpages(target_url, html, rule, quirk_note, pdf_pattern):
 
                 subpage_meetings.append({
                     "subpageUrl": sub_url,
+                    "name": sub_title,
                     "title": sub_title,
                     "extractedMaterialsCount": len(sub_materials),
                     "materials": sub_materials,
@@ -955,7 +956,6 @@ def _build_new_meeting(target, sub, clean_materials_list, sess_nums, meet_date, 
         "id": new_meet_id,
         "councilId": council_id,
         "name": formatted_title,
-        "title": formatted_title,
         "date": meet_date,
         "officialUrl": resolved_meet_url,
         "materials": clean_materials_list,
@@ -990,17 +990,17 @@ def sync_new_meetings_from_crawl(data, target, scraped_item):
 
     existing_c_meets = [m for m in meetings if m.get("councilId") == council_id]
     existing_urls = {m.get("officialUrl", "").rstrip("/"): m for m in existing_c_meets if m.get("officialUrl")}
-    existing_titles = {m.get("title", ""): m for m in existing_c_meets if m.get("title")}
+    existing_names = {m.get("name", ""): m for m in existing_c_meets if m.get("name")}
     existing_meeting_ids = {m.get("id") for m in meetings if m.get("id")}
     existing_sessions = set()
     for m in existing_c_meets:
-        sess = extract_session_numbers(m.get("title", "") + " " + m.get("officialUrl", "") + " " + m.get("id", ""))
+        sess = extract_session_numbers(m.get("name", "") + " " + m.get("officialUrl", "") + " " + m.get("id", ""))
         existing_sessions.update(sess)
 
     added_count = 0
     for sub in subpages:
         sub_url = sub.get("subpageUrl", "").rstrip("/")
-        sub_title = sub.get("title", "").strip()
+        sub_title = (sub.get("name") or sub.get("title") or "").strip()
         sub_mats = sub.get("materials", [])
         sub_dates = sub.get("extractedDates", [])
 
@@ -1059,7 +1059,7 @@ def sync_new_meetings_from_crawl(data, target, scraped_item):
         if sess_nums and any(s in existing_sessions for s in sess_nums):
             matched_existing = []
             for m in existing_c_meets:
-                m_sess = extract_session_numbers(m.get("title", "") + " " + m.get("officialUrl", "") + " " + m.get("id", ""))
+                m_sess = extract_session_numbers(m.get("name", "") + " " + m.get("officialUrl", "") + " " + m.get("id", ""))
                 if any(s in m_sess for s in sess_nums):
                     matched_existing.append(m)
 
@@ -1075,14 +1075,14 @@ def sync_new_meetings_from_crawl(data, target, scraped_item):
                     ex_m["officialUrl"] = sub.get("subpageUrl")
                     ex_m["materials"] = clean_materials_list
                     ex_m["lastUpdatedFromCrawl"] = datetime.now().strftime("%Y/%m/%d %H:%M")
-                    print(f"  [✨ 資料ページ自動更新] [{ex_m.get('date')}] {ex_m.get('title')} (URL: {sub_url}, 資料: {len(clean_materials_list)}件)")
+                    print(f"  [✨ 資料ページ自動更新] [{ex_m.get('date')}] {ex_m.get('name')} (URL: {sub_url}, 資料: {len(clean_materials_list)}件)")
                     added_count += 1
             continue
 
         # 既にURLまたはタイトルが完全一致している場合はスキップ
         if sub_url and sub_url in existing_urls:
             continue
-        if sub_title and sub_title in existing_titles:
+        if sub_title and sub_title in existing_names:
             continue
 
         # --- B. 新規開催回の追加 ---
@@ -1124,13 +1124,13 @@ def sync_new_meetings_from_crawl(data, target, scraped_item):
         meetings.append(new_meeting)
         existing_meeting_ids.add(new_meeting["id"])
         existing_urls[sub_url] = new_meeting
-        meet_title = new_meeting.get("title") or new_meeting.get("name") or ""
-        existing_titles[meet_title] = new_meeting
+        meet_name = new_meeting.get("name") or ""
+        existing_names[meet_name] = new_meeting
         for s in sess_nums:
             existing_sessions.add(s)
         added_count += 1
         log_prefix = "⚠️ [開催日不明(2099/01/01)]" if is_date_unconfirmed else "✨ [新規開催回自動追加]"
-        print(f"  {log_prefix} [{meet_date}] {meet_title} (ID: {new_meeting['id']}, 資料: {len(clean_materials_list)}件)")
+        print(f"  {log_prefix} [{meet_date}] {meet_name} (ID: {new_meeting['id']}, 資料: {len(clean_materials_list)}件)")
 
     if added_count > 0:
         # 日付降順に再ソート
@@ -1282,24 +1282,24 @@ def deduplicate_data_materials(data):
             scored_candidates = []
             for m, mat in insts:
                 score = 0
-                m_title = m.get("title", "")
+                m_name = m.get("name") or m.get("title", "")
                 m_id = m.get("id", "")
                 mat_name = mat.get("name", "")
 
-                m_sessions = extract_session_numbers(m_title + " " + m_id)
+                m_sessions = extract_session_numbers(m_name + " " + m_id)
                 mat_sessions = extract_session_numbers(mat_name + " " + url)
 
                 common_sessions = m_sessions.intersection(mat_sessions)
                 if common_sessions:
                     score += 100 * len(common_sessions)
 
-                m_years = extract_years(m.get("date", "") + " " + m_title)
+                m_years = extract_years(m.get("date", "") + " " + m_name)
                 mat_years = extract_years(mat_name + " " + url)
                 common_years = m_years.intersection(mat_years)
                 if common_years:
                     score += 10 * len(common_years)
 
-                if re.search(r'第\d+回', m_title):
+                if re.search(r'第\d+回', m_name):
                     score += 5
 
                 m_date = m.get("date", "")

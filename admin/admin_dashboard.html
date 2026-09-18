@@ -1164,7 +1164,7 @@ JSON データを読み込み中...
             <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 0.5rem;">
               <div>
                 <span class="badge" style="background: rgba(16,185,129,0.2); color:#10b981; margin-right: 0.4rem; font-size: 0.75rem;">NEW</span>
-                <span style="font-weight: 600; color: var(--text-primary); font-size: 0.95rem;">${m.title || m.id}</span>
+                <span style="font-weight: 600; color: var(--text-primary); font-size: 0.95rem;">${m.name || m.id}</span>
                 <span style="color: var(--text-muted); font-size: 0.82rem; margin-left: 0.5rem;">(${m.councilName || ((typeof allCouncils !== 'undefined' ? allCouncils : []).find(c => c.id === m.councilId)?.name) || m.councilId})</span>
               </div>
               <span style="font-size: 0.8rem; color: #38bdf8; font-weight: 500; white-space: nowrap;">📅 ${m.date || '日付未定'}</span>
@@ -1442,10 +1442,10 @@ JSON データを読み込み中...
         const cObj = councilsMap.get(m.councilId) || {};
         const mMinistry = m.ministry || cObj.ministry || '';
         const mCategory = m.category || cObj.category || 'COUNCIL';
-        const mCouncilName = m.councilName || cObj.name || m.title || '';
+        const mCouncilName = m.councilName || cObj.name || m.name || '';
         const minName = ministries[mMinistry] ? ministries[mMinistry].name : mMinistry;
         const matNames = (m.materials || []).map(mat => mat.name).join(' ');
-        const text = `${m.title} ${mCouncilName} ${m.id} ${m.date} ${minName} ${mMinistry} ${matNames}`.toLowerCase();
+        const text = `${m.name} ${mCouncilName} ${m.id} ${m.date} ${minName} ${mMinistry} ${matNames}`.toLowerCase();
         if (searchTerm && !text.includes(searchTerm)) return false;
         if (fMinistry && mMinistry !== fMinistry) return false;
         if (fCategory && mCategory !== fCategory) return false;
@@ -1499,7 +1499,7 @@ JSON データを読み込み中...
         const cObj = councilsMap.get(m.councilId) || {};
         const mMinistry = m.ministry || cObj.ministry || '';
         const mCategory = m.category || cObj.category || 'COUNCIL';
-        const mCouncilName = m.councilName || cObj.name || m.title || '';
+        const mCouncilName = m.councilName || cObj.name || m.name || '';
         const minName = ministries[mMinistry] ? ministries[mMinistry].name : mMinistry;
         const catLabel = categories[mCategory] || mCategory;
         const accentColor = getMinistryColor(mMinistry);
@@ -1553,7 +1553,7 @@ JSON データを読み込み中...
           <div class="card-top">
             <div class="card-title-area">
               <div class="card-idx">#${i + 1} / ${filtered.length} ｜ ${dateDisplay}</div>
-              <div class="card-name" style="font-size: 1.05rem;">${escHtml(m.title)} ${isDateUnconfirmed ? '<span class="meta-chip" style="color:#f59e0b;border-color:rgba(245,158,11,0.4);background:rgba(245,158,11,0.1);font-size:0.75rem;">要確認</span>' : ''}</div>
+              <div class="card-name" style="font-size: 1.05rem;">${escHtml(m.name)} ${isDateUnconfirmed ? '<span class="meta-chip" style="color:#f59e0b;border-color:rgba(245,158,11,0.4);background:rgba(245,158,11,0.1);font-size:0.75rem;">要確認</span>' : ''}</div>
               <div class="card-id">ID: ${escHtml(m.id)} ｜ 会議体: ${escHtml(mCouncilName || m.councilId)}</div>
             </div>
             <div class="card-actions">

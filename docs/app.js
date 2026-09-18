@@ -98,7 +98,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   function getCouncilName(meeting) {
     if (!meeting) return '';
     const parent = getMeetingCouncil(meeting);
-    return meeting.councilName || (parent && parent.name) || councilsByIdMap.get(meeting.councilId) || meeting.title || '';
+    return meeting.councilName || (parent && parent.name) || councilsByIdMap.get(meeting.councilId) || meeting.name || '';
   }
   function getMeetingMinistry(meeting) {
     if (!meeting) return '';
@@ -557,13 +557,14 @@ document.addEventListener('DOMContentLoaded', async () => {
         const cName = councilsByIdMap.get(meeting.councilId) || '';
         
         const match = queries.every(q => {
-          const titleMatch = meeting.title.toLowerCase().includes(q);
-          const councilMatch = cName.toLowerCase().includes(q);
+          const mName = meeting.name || '';
+          const nameMatch = mName.toLowerCase().includes(q);
+          const councilMatch = (cName || '').toLowerCase().includes(q);
           const summaryMatch = meeting.summary ? meeting.summary.toLowerCase().includes(q) : false;
-          const tagMatch = meeting.tags ? meeting.tags.some(t => t.toLowerCase().includes(q)) : false;
-          const agendaMatch = meeting.agenda ? meeting.agenda.some(a => a.toLowerCase().includes(q)) : false;
+          const tagMatch = meeting.tags ? meeting.tags.some(t => t && t.toLowerCase().includes(q)) : false;
+          const agendaMatch = meeting.agenda ? meeting.agenda.some(a => a && a.toLowerCase().includes(q)) : false;
           const matMatch = meeting.materials ? meeting.materials.some(m => (m.name || '').toLowerCase().includes(q)) : false;
-          return titleMatch || councilMatch || summaryMatch || tagMatch || agendaMatch || matMatch;
+          return nameMatch || councilMatch || summaryMatch || tagMatch || agendaMatch || matMatch;
         });
 
         if (!match) return false;
@@ -808,7 +809,7 @@ document.addEventListener('DOMContentLoaded', async () => {
             </a>
           </span>
           <h3 class="card-title">
-            ${escapeHtml(meeting.title)}
+            ${escapeHtml(meeting.name || '')}
             <a href="${escapeHtml(sanitizeUrl(meeting.officialUrl))}" target="_blank" rel="noopener noreferrer" class="inline-link-icon" title="一次ソースを開く">
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
             </a>
@@ -871,14 +872,15 @@ document.addEventListener('DOMContentLoaded', async () => {
         const councilMeetings = meetingsByCouncilMap.get(council.id) || [];
         
         const match = queries.every(q => {
-          const matchName = council.name.toLowerCase().includes(q);
-          const matchMin = minName.toLowerCase().includes(q);
+          const matchName = (council.name || '').toLowerCase().includes(q);
+          const matchMin = (minName || '').toLowerCase().includes(q);
           const matchDesc = (council.description || '').toLowerCase().includes(q);
           const matchMeetings = councilMeetings.some(m => {
-            return m.title.toLowerCase().includes(q) ||
-              (m.summary && m.summary.toLowerCase().includes(q)) ||
-              (m.tags && m.tags.some(t => t.toLowerCase().includes(q))) ||
-              (m.materials && m.materials.some(mat => (mat.name || '').toLowerCase().includes(q)));
+            const mName = m.name || '';
+            return mName.toLowerCase().includes(q) ||
+              (m.summary ? m.summary.toLowerCase().includes(q) : false) ||
+              (m.tags ? m.tags.some(t => t && t.toLowerCase().includes(q)) : false) ||
+              (m.materials ? m.materials.some(mat => (mat.name || '').toLowerCase().includes(q)) : false);
           });
           return matchName || matchMin || matchDesc || matchMeetings;
         });
@@ -937,18 +939,19 @@ document.addEventListener('DOMContentLoaded', async () => {
       if (state.searchQuery) {
         const queries = state.searchQuery.toLowerCase().split(/[\s　]+/).filter(k => k);
         const matchCouncil = queries.every(q => 
-          c.name.toLowerCase().includes(q) || 
-          minInfo.name.toLowerCase().includes(q) || 
+          (c.name || '').toLowerCase().includes(q) || 
+          (minInfo.name || '').toLowerCase().includes(q) || 
           (c.description || '').toLowerCase().includes(q)
         );
         // If the council itself doesn't match all keywords, filter its meetings so we only show the matching ones
         if (!matchCouncil) {
           councilMeetings = councilMeetings.filter(m => {
+            const mName = m.name || '';
             return queries.every(q => {
-              return m.title.toLowerCase().includes(q) ||
-                (m.summary && m.summary.toLowerCase().includes(q)) ||
-                (m.tags && m.tags.some(t => t.toLowerCase().includes(q))) ||
-                (m.materials && m.materials.some(mat => (mat.name || '').toLowerCase().includes(q)));
+              return mName.toLowerCase().includes(q) ||
+                (m.summary ? m.summary.toLowerCase().includes(q) : false) ||
+                (m.tags ? m.tags.some(t => t && t.toLowerCase().includes(q)) : false) ||
+                (m.materials ? m.materials.some(mat => (mat.name || '').toLowerCase().includes(q)) : false);
             });
           });
         }
@@ -959,7 +962,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         <div class="meeting-row">
           <div class="meeting-row-header">
             <span class="meeting-row-title">
-              ${escapeHtml(m.title)}
+              ${escapeHtml(m.name || '')}
               <a href="${escapeHtml(sanitizeUrl(m.officialUrl))}" target="_blank" rel="noopener noreferrer" class="inline-link-icon" title="一次ソースを開く" onclick="event.stopPropagation();">
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
               </a>
@@ -1372,7 +1375,7 @@ document.addEventListener('DOMContentLoaded', async () => {
       <span class="badge-category">${getCategoryLabel(meetingCategory)}</span>
     `;
 
-    el.modalTitle.textContent = meeting.title;
+    el.modalTitle.textContent = meeting.name || '';
     el.modalMinistry.textContent = `所管省庁: ${minInfo.name} (${getCouncilName(meeting)})`;
     el.modalDate.textContent = `📅 開催年月日: ${formatDate(meeting.date)}`;
     
@@ -1448,7 +1451,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     const m = state.activeModalMeeting;
     const mMinistry = getMeetingMinistry(m);
     const minName = MINISTRIES[mMinistry]?.name || mMinistry;
-    const citation = `${minName}「${m.title}」（${formatDate(m.date)}開催）政策会議ウォッチ 参照: ${m.officialUrl}`;
+    const citation = `${minName}「${m.name || ''}」（${formatDate(m.date)}開催）政策会議ウォッチ 参照: ${m.officialUrl}`;
     
     navigator.clipboard.writeText(citation);
     showToast('引用形式のテキストをクリップボードにコピーしました 📋');
@@ -1485,7 +1488,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         `"${sanitizeCsvField(m.date)}"`,
         `"${sanitizeCsvField(MINISTRIES[mMin]?.name || mMin)}"`,
         `"${sanitizeCsvField(getCouncilName(m).replace(/"/g, '""'))}"`,
-        `"${sanitizeCsvField(m.title.replace(/"/g, '""'))}"`,
+        `"${sanitizeCsvField((m.name || '').replace(/"/g, '""'))}"`,
         `"${sanitizeCsvField(m.materials ? String(m.materials.length) : '0')}"`,
         `"${sanitizeCsvField(m.officialUrl)}"`,
         `"${sanitizeCsvField((m.summary || '').replace(/"/g, '""'))}"`

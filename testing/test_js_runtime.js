@@ -182,9 +182,34 @@ async function testPublicPortalRuntime(sampleData) {
 
   if (elements['timelineFeed'] && elements['councilsAccordionList']) {
     logPass(`app.js 初期化＆描画完了 (COUNCILS: ${mockWin.COUNCILS?.length || 0} 件, MEETINGS: ${mockWin.MEETINGS?.length || 0} 件)`);
-    return true;
   } else {
     logFail("app.js 必須描画コンテナへの出力が確認できませんでした");
+    return false;
+  }
+
+  // 検索・フィルタリングの実行時クラッシュ検証（フリーワード検索）
+  const testKeywords = ['年金', 'デジタル', '令和', '労働', 'AI', '審議会', 'xyznonexistent'];
+  for (const kw of testKeywords) {
+    try {
+      if (elements['searchInput']) {
+        elements['searchInput'].value = kw;
+        elements['searchInput'].dispatchEvent({ type: 'input', target: { value: kw } });
+      }
+      logPass(`app.js フリーワード検索実行成功 (クエリ: "${kw}")`);
+    } catch (err) {
+      logFail(`app.js フリーワード検索実行時に例外発生 (クエリ: "${kw}"): ${err.stack || err.message}`);
+      return false;
+    }
+  }
+
+  try {
+    if (elements['clearSearchBtn']) {
+      elements['clearSearchBtn'].dispatchEvent({ type: 'click' });
+    }
+    logPass("app.js 検索クリアボタン実行成功");
+    return true;
+  } catch (err) {
+    logFail(`app.js 検索クリア時に例外発生: ${err.stack || err.message}`);
     return false;
   }
 }

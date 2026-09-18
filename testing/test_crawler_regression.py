@@ -36,7 +36,7 @@ class TestCrawlerManualLockProtection(unittest.TestCase):
                 {
                     "id": "test-council_1-20260101-001",
                     "councilId": "test-council_1",
-                    "title": "第1回 テスト会議",
+                    "name": "第1回 テスト会議",
                     "date": "2026/01/01",
                     "manualLock": True,  # 手動保護
                     "materials": [
@@ -47,7 +47,7 @@ class TestCrawlerManualLockProtection(unittest.TestCase):
                 {
                     "id": "test-council_1-20260201-002",
                     "councilId": "test-council_1",
-                    "title": "第2回 テスト会議",
+                    "name": "第2回 テスト会議",
                     "date": "2026/02/01",
                     "manualLock": False,
                     "materials": [
@@ -76,7 +76,7 @@ class TestCrawlerManualLockProtection(unittest.TestCase):
                 {
                     "id": "test-council_2-20260101-001",
                     "councilId": "test-council_2",
-                    "title": "第1回 テスト会議",
+                    "name": "第1回 テスト会議",
                     "date": "2026/01/01",
                     "manualLock": False,
                     "materials": [
@@ -86,7 +86,7 @@ class TestCrawlerManualLockProtection(unittest.TestCase):
                 {
                     "id": "test-council_2-20260201-002",
                     "councilId": "test-council_2",
-                    "title": "第2回 テスト会議",
+                    "name": "第2回 テスト会議",
                     "date": "2026/02/01",
                     "manualLock": False,
                     "materials": [
@@ -236,7 +236,7 @@ class TestCrawlerManualLockProtection(unittest.TestCase):
                 {
                     "id": "moj-test_council-20260324-001",
                     "councilId": "moj-test_council",
-                    "title": "第1回 法務省テスト検討会",
+                    "name": "第1回 法務省テスト検討会",
                     "date": "2026/03/24",
                     "officialUrl": "https://example.com/session1.html",
                     "manualLock": True,
@@ -253,14 +253,14 @@ class TestCrawlerManualLockProtection(unittest.TestCase):
                 # 既存の第1回（スキップされるべき）
                 {
                     "subpageUrl": "https://example.com/session1.html",
-                    "title": "第1回 法務省テスト検討会",
+                    "name": "第1回 法務省テスト検討会",
                     "materials": [{"name": "第1回 議事次第", "url": "https://example.com/mat1.pdf", "type": "PDF"}],
                     "extractedDates": ["2026/03/24"]
                 },
                 # 新しく発見された第2回（追加されるべき）
                 {
                     "subpageUrl": "https://example.com/session2.html",
-                    "title": "第2回 法務省テスト検討会",
+                    "name": "第2回 法務省テスト検討会",
                     "materials": [
                         {"name": "第2回 議事次第 (PDF)", "url": "https://example.com/mat2-1.pdf", "type": "PDF"},
                         {"name": "第2回 配布資料 (PDF)", "url": "https://example.com/mat2-2.pdf", "type": "PDF"}
@@ -307,7 +307,7 @@ class TestCrawlerManualLockProtection(unittest.TestCase):
                 {
                     "id": "mhlw-test_kaigo-20260828-263",
                     "councilId": "mhlw-test_kaigo",
-                    "title": "第263回 社会保障審議会 介護給付費分科会",
+                    "name": "第263回 社会保障審議会 介護給付費分科会",
                     "date": "2026/08/28",
                     "officialUrl": "https://www.mhlw.go.jp/stf/shingi/shingi-hosho_126698_00022.html", # 開催前で親URLのまま
                     "materials": [] # 資料未掲載
@@ -319,7 +319,7 @@ class TestCrawlerManualLockProtection(unittest.TestCase):
             "subpageMeetings": [
                 {
                     "subpageUrl": "https://www.mhlw.go.jp/stf/newpage_75439.html",
-                    "title": "第263回社会保障審議会介護給付費分科会（web会議）資料",
+                    "name": "第263回社会保障審議会介護給付費分科会（web会議）資料",
                     "extractedDates": ["令和8年8月28日"],
                     "materials": [
                         {"name": "議事次第", "url": "https://www.mhlw.go.jp/content/001743312.pdf", "type": "PDF"},

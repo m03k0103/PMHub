@@ -92,11 +92,11 @@ def run_test():
     # 2. Check duplicate (councilId, name, date)
     key_counts = defaultdict(int)
     for m in meetings:
-        m_title = m.get('name') or m.get('title') or ''
-        key_counts[(m.get('councilId'), m_title, m.get('date'))] += 1
+        m_name = m.get('name') or m.get('title') or ''
+        key_counts[(m.get('councilId'), m_name, m.get('date'))] += 1
     dup_keys = {k: v for k, v in key_counts.items() if v > 1}
     if dup_keys:
-        errors.append(f"Duplicate (councilId, title, date) found: {dup_keys}")
+        errors.append(f"Duplicate (councilId, name, date) found: {dup_keys}")
         
     # 3. Check duplicate 第n回 in same council
     meetings_by_council = defaultdict(list)
@@ -107,9 +107,9 @@ def run_test():
         c_name = councils.get(c_id, {}).get('name', c_id)
         round_map = defaultdict(list)
         for m in m_list:
-            m_title = m.get('name') or m.get('title') or ''
+            m_name = m.get('name') or m.get('title') or ''
             m_url = m.get('officialUrl', '')
-            r_num, sub_type = extract_round_and_type(m_title, c_name, m_url)
+            r_num, sub_type = extract_round_and_type(m_name, c_name, m_url)
             if r_num is not None:
                 round_map[(r_num, sub_type)].append(m)
                 
@@ -129,9 +129,17 @@ def run_test():
         errors.append(f"Invalid date formats found ({len(bad_dates)} items): {bad_dates[:5]}")
 
     # 6. Check for auto-extracted generic titles
-    bad_titles = [m.get('name') or m.get('title') for m in meetings if any(w in (m.get('name') or m.get('title') or '') for w in ['抽出', '最新回 (', '直近会合', '最新会合'])]
-    if bad_titles:
-        errors.append(f"Generic/auto-extracted meeting titles found ({len(bad_titles)} items): {bad_titles[:5]}")
+    bad_names = [m.get('name') or m.get('title') for m in meetings if any(w in (m.get('name') or m.get('title') or '') for w in ['抽出', '最新回 (', '直近会合', '最新会合'])]
+    if bad_names:
+        errors.append(f"Generic/auto-extracted meeting names found ({len(bad_names)} items): {bad_names[:5]}")
+
+    # 7. Check meeting name schema (Strictly enforce non-empty 'name' string, ban deprecated 'title' attribute)
+    missing_names = [m.get('id') for m in meetings if not m.get('name') or not isinstance(m.get('name'), str)]
+    if missing_names:
+        errors.append(f"Meetings missing valid 'name' property found ({len(missing_names)} items): {missing_names[:5]}")
+    erroneous_titles = [m.get('id') for m in meetings if 'title' in m]
+    if erroneous_titles:
+        errors.append(f"Meetings with deprecated 'title' attribute found ({len(erroneous_titles)} items): {erroneous_titles[:5]}")
 
     # 8. Check councilId format (Must have exactly 1 hyphen: {ministry}-{slug})
     bad_c_ids = [c_id for c_id in councils.keys() if c_id.count('-') != 1 or not re.match(r'^[a-z]+-[a-z0-9_]+$', c_id)]
