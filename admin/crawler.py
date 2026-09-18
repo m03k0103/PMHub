@@ -930,6 +930,7 @@ def _build_new_meeting(target, sub, clean_materials_list, sess_nums, meet_date, 
         formatted_title = re.sub(r'（開催案内）$', '', formatted_title)
         formatted_title = re.sub(r'\(開催案内\)$', '', formatted_title)
         formatted_title = re.sub(r'の開催について$', '', formatted_title)
+        formatted_title = re.sub(r'[（\(](?:令和|平成)(?:\d+|元)年度.*?[）\)]$', '', formatted_title)
         formatted_title = formatted_title.strip()
 
     is_generic = not formatted_title or formatted_title.startswith("http") or any(kw == formatted_title for kw in GENERIC_TITLE_KEYWORDS)
@@ -953,6 +954,7 @@ def _build_new_meeting(target, sub, clean_materials_list, sess_nums, meet_date, 
     new_meeting_obj = {
         "id": new_meet_id,
         "councilId": council_id,
+        "name": formatted_title,
         "title": formatted_title,
         "date": meet_date,
         "officialUrl": resolved_meet_url,
@@ -1122,12 +1124,13 @@ def sync_new_meetings_from_crawl(data, target, scraped_item):
         meetings.append(new_meeting)
         existing_meeting_ids.add(new_meeting["id"])
         existing_urls[sub_url] = new_meeting
-        existing_titles[new_meeting["title"]] = new_meeting
+        meet_title = new_meeting.get("title") or new_meeting.get("name") or ""
+        existing_titles[meet_title] = new_meeting
         for s in sess_nums:
             existing_sessions.add(s)
         added_count += 1
         log_prefix = "⚠️ [開催日不明(2099/01/01)]" if is_date_unconfirmed else "✨ [新規開催回自動追加]"
-        print(f"  {log_prefix} [{meet_date}] {new_meeting['title']} (ID: {new_meeting['id']}, 資料: {len(clean_materials_list)}件)")
+        print(f"  {log_prefix} [{meet_date}] {meet_title} (ID: {new_meeting['id']}, 資料: {len(clean_materials_list)}件)")
 
     if added_count > 0:
         # 日付降順に再ソート

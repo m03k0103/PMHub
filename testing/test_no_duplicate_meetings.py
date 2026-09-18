@@ -15,13 +15,19 @@ from utils import setup_win32_utf8, normalize_japanese_numbers, load_data_json
 setup_win32_utf8()
 
 
-def extract_round_and_type(title, council_name=""):
+def extract_round_and_type(title, council_name="", url=""):
     t_norm = normalize_japanese_numbers(title)
     
     sub_type = ""
     fy_m = re.search(r'(令和\d+年度[秋|春|前半|後半]?|平成\d+年度[秋|春|前半|後半]?|令和\d+年|平成\d+年|第\d+期)', t_norm)
     if fy_m and fy_m.group(1) not in council_name:
         sub_type += fy_m.group(1)
+
+    # 規制改革推進会議等の会期フォルダ (例: /meeting/wg/2501_01local/) による期別サブタイプ補完
+    if url and not sub_type:
+        wg_m = re.search(r'/meeting/wg/([^/]+)/', url)
+        if wg_m:
+            sub_type += f"_{wg_m.group(1)}"
 
     if '／' in council_name or '/' in council_name:
         for part in re.split(r'[／/]', council_name):
@@ -83,10 +89,11 @@ def run_test():
     if dup_ids:
         errors.append(f"Duplicate meeting IDs found: {dup_ids}")
         
-    # 2. Check duplicate (councilId, title, date)
+    # 2. Check duplicate (councilId, name, date)
     key_counts = defaultdict(int)
     for m in meetings:
-        key_counts[(m.get('councilId'), m.get('title'), m.get('date'))] += 1
+        m_title = m.get('name') or m.get('title') or ''
+        key_counts[(m.get('councilId'), m_title, m.get('date'))] += 1
     dup_keys = {k: v for k, v in key_counts.items() if v > 1}
     if dup_keys:
         errors.append(f"Duplicate (councilId, title, date) found: {dup_keys}")
@@ -100,7 +107,9 @@ def run_test():
         c_name = councils.get(c_id, {}).get('name', c_id)
         round_map = defaultdict(list)
         for m in m_list:
-            r_num, sub_type = extract_round_and_type(m.get('title', ''), c_name)
+            m_title = m.get('name') or m.get('title') or ''
+            m_url = m.get('officialUrl', '')
+            r_num, sub_type = extract_round_and_type(m_title, c_name, m_url)
             if r_num is not None:
                 round_map[(r_num, sub_type)].append(m)
                 
@@ -120,7 +129,7 @@ def run_test():
         errors.append(f"Invalid date formats found ({len(bad_dates)} items): {bad_dates[:5]}")
 
     # 6. Check for auto-extracted generic titles
-    bad_titles = [m.get('title') for m in meetings if any(w in m.get('title', '') for w in ['自動抽出', '最新資料 (', '直近会合', '最新会合'])]
+    bad_titles = [m.get('name') or m.get('title') for m in meetings if any(w in (m.get('name') or m.get('title') or '') for w in ['抽出', '最新回 (', '直近会合', '最新会合'])]
     if bad_titles:
         errors.append(f"Generic/auto-extracted meeting titles found ({len(bad_titles)} items): {bad_titles[:5]}")
 
