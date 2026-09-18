@@ -3459,25 +3459,6 @@
       }
     },
     {
-      "id": "cao-cstp_bridge_wg",
-      "name": "総合科学技術・イノベーション会議 BRIDGEワーキンググループ",
-      "ministry": "CAO",
-      "category": "WORKING_GROUP",
-      "description": "内閣府 総合科学技術・イノベーション会議（CSTP）の下に設置された、研究開発成果の社会実装・事業化（BRIDGE）に向けた施策の検討を行うワーキンググループ。",
-      "officialUrl": "https://www8.cao.go.jp/cstp/bridge/index.html",
-      "pastYearCount": 3,
-      "crawlStatus": {
-        "lastAttempt": "2026-09-16 09:10:43",
-        "result": "failed",
-        "extractionMethod": "none",
-        "materialsCount": 0,
-        "datesCount": 0,
-        "failureReason": "Both LLM and rule extraction returned 0 results",
-        "consecutiveFailures": 2,
-        "manualLockActive": false
-      }
-    },
-    {
       "id": "cao-genshiryoku_kisei_ikenkoukan",
       "name": "原子力規制委員会との意見交換会",
       "ministry": "CAO",
@@ -35093,37 +35074,6 @@
       "manualLock": true
     },
     {
-      "id": "cao-cstp_bridge_wg-20260807-003",
-      "councilId": "cao-cstp_bridge_wg",
-      "title": "第3回 総合科学技術・イノベーション会議 BRIDGEワーキンググループ",
-      "date": "2026/08/07",
-      "summary": "総合科学技術・イノベーション会議の開催。主要議題の推進状況及び今後の対応方針について審議が行われた。",
-      "agenda": [
-        "総合科学技術・イノベーション会議における主要施策の推進状況について",
-        "関係省庁間連携及び今後の対応方針"
-      ],
-      "materials": [],
-      "tags": [
-        "総合科学技術・イノベーション会議",
-        "BRIDGE",
-        "ワーキンググループ",
-        "CAO",
-        "内閣府"
-      ],
-      "officialUrl": "https://www8.cao.go.jp/cstp/kaisaiannai/2026/20260807brige_wg.html",
-      "hasMinutes": false
-    },
-    {
-      "id": "cao-cstp-20260807-003",
-      "councilId": "cao-cstp",
-      "title": "第3回 総合科学技術・イノベーション会議",
-      "date": "2026/08/07",
-      "officialUrl": "https://www8.cao.go.jp/cstp/kaisaiannai/2026/20260807brige_wg.html",
-      "materials": [],
-      "isNewlyDiscovered": true,
-      "discoveredAt": "2026/09/05 08:21"
-    },
-    {
       "id": "aca-kokugo_gairai-20260807-r08_003",
       "councilId": "aca-kokugo_gairai",
       "title": "令和8年 第3回 文化審議会国語分科会 外来語小委員会",
@@ -50995,37 +50945,6 @@
       "hasMinutes": false
     },
     {
-      "id": "cao-cstp_bridge_wg-20260623-002",
-      "councilId": "cao-cstp_bridge_wg",
-      "title": "第2回 総合科学技術・イノベーション会議 BRIDGEワーキンググループ",
-      "date": "2026/06/23",
-      "summary": "総合科学技術・イノベーション会議の開催。主要議題の推進状況及び今後の対応方針について審議が行われた。",
-      "agenda": [
-        "総合科学技術・イノベーション会議における主要施策の推進状況について",
-        "関係省庁間連携及び今後の対応方針"
-      ],
-      "materials": [],
-      "tags": [
-        "総合科学技術・イノベーション会議",
-        "BRIDGE",
-        "ワーキンググループ",
-        "CAO",
-        "内閣府"
-      ],
-      "officialUrl": "https://www8.cao.go.jp/cstp/kaisaiannai/2026/20260630brige_wg.html",
-      "hasMinutes": false
-    },
-    {
-      "id": "cao-cstp-20260623-002",
-      "councilId": "cao-cstp",
-      "title": "第2回 総合科学技術・イノベーション会議",
-      "date": "2026/06/23",
-      "officialUrl": "https://www8.cao.go.jp/cstp/kaisaiannai/2026/20260630brige_wg.html",
-      "materials": [],
-      "isNewlyDiscovered": true,
-      "discoveredAt": "2026/09/05 08:21"
-    },
-    {
       "id": "mhlw-nenkin_kouhou_kento-20260623-s25",
       "councilId": "mhlw-nenkin_kouhou_kento",
       "title": "１． 日時",
@@ -63479,37 +63398,6 @@
           "url": "https://www.fsc.go.jp/fsciis/attachedFile/download?retrievalId=kai20260522so1&fileId=610"
         }
       ]
-    },
-    {
-      "id": "cao-cstp_bridge_wg-20260522-001",
-      "councilId": "cao-cstp_bridge_wg",
-      "title": "第1回 総合科学技術・イノベーション会議 BRIDGEワーキンググループ",
-      "date": "2026/05/22",
-      "summary": "総合科学技術・イノベーション会議の開催。主要議題の推進状況及び今後の対応方針について審議が行われた。",
-      "agenda": [
-        "総合科学技術・イノベーション会議における主要施策の推進状況について",
-        "関係省庁間連携及び今後の対応方針"
-      ],
-      "materials": [],
-      "tags": [
-        "総合科学技術・イノベーション会議",
-        "BRIDGE",
-        "ワーキンググループ",
-        "CAO",
-        "内閣府"
-      ],
-      "officialUrl": "https://www8.cao.go.jp/cstp/kaisaiannai/2026/20260522brige_wg.html",
-      "hasMinutes": false
-    },
-    {
-      "id": "cao-cstp-20260522-001",
-      "councilId": "cao-cstp",
-      "title": "第1回 総合科学技術・イノベーション会議",
-      "date": "2026/05/22",
-      "officialUrl": "https://www8.cao.go.jp/cstp/kaisaiannai/2026/20260522brige_wg.html",
-      "materials": [],
-      "isNewlyDiscovered": true,
-      "discoveredAt": "2026/09/05 08:21"
     },
     {
       "id": "aca-bunkazai_bunkakai-20260522-r08_282",
@@ -177252,25 +177140,6 @@
           "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2310_05local/231212/local_ref08.pdf"
         }
       ]
-    },
-    {
-      "id": "cao-cstp-20231212-s01",
-      "councilId": "cao-cstp",
-      "title": "開催案内一覧 - 総合科学技術・イノベーション会議",
-      "date": "2023/12/12",
-      "summary": "総合科学技術・イノベーション会議の開催。主要議題の推進状況及び今後の対応方針について審議が行われた。",
-      "agenda": [
-        "総合科学技術・イノベーション会議における主要施策の推進状況について",
-        "関係省庁間連携及び今後の対応方針"
-      ],
-      "materials": [],
-      "tags": [
-        "総合科学技術",
-        "CAO",
-        "政策会議"
-      ],
-      "officialUrl": "https://www8.cao.go.jp/cstp/kaisaiannai/index.html",
-      "hasMinutes": false
     },
     {
       "id": "mhlw-shakai_hosho_nenkin-20231211-010",
@@ -423344,7 +423213,7 @@
         "prefer_subpage_date": true,
         "private_doc_keyword": "非公開",
         "resolve_absolute_urls": true,
-        "subpage_discovery_pattern": "href=[\"\\']([^\"\\']*(?:dai\\d+|\\d+kai|kaisai|gijisidai)[^\"\\'#]*)[\"\\']",
+        "subpage_discovery_pattern": "href=[\"\\']([^\"\\']*(?:haihu(?:i)?-\\d+|gijisidai)[^\"\\'#]*)[\"\\']",
         "top_page_pdf_count": 0
       }
     },

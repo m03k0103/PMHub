@@ -850,19 +850,19 @@ def is_generic_index_url(url, title=""):
 
 def is_preliminary_notice_page(url, title=""):
     """
-    開催案内・事前告知ページ（例: .../kaisai/index.html, 〜の開催について）や資料未添付の議事要旨・議事録単体ページであるかを判定。
+    開催案内・事前告知ページ（例: .../kaisai/index.html, .../kaisaiannai/..., 〜の開催について）や資料未添付の議事要旨・議事録単体ページであるかを判定。
     これらは資料が掲載される会議ページではないため、独立した会議として追加しない。
     """
     if not url and not title:
         return False
     u_lower = (url or "").lower()
-    # URLに /kaisai/ や /online_kaisai 等が含まれる場合
-    if re.search(r'/(?:kaisai|online_kaisai)/', u_lower) or u_lower.endswith('/kaisai.html'):
+    # URLに /kaisai/ や /kaisaiannai/ や /online_kaisai 等が含まれる場合
+    if re.search(r'/(?:kaisai|kaisaiannai|online_kaisai)/', u_lower) or u_lower.endswith('/kaisai.html') or 'kaisaiannai' in u_lower:
         return True
     # タイトルから末尾の省庁名サフィックスを除去して判定
     t_clean = (title or "").strip()
     t_clean = re.sub(r'[\s｜\|].*?(?:厚生労働省|内閣府|内閣官房|財務省|金融庁|法務省|経済産業省|文部科学省|総務省|外務省|農林水産省|国土交通省|環境省|防衛省|デジタル庁|こども家庭庁).*$', '', t_clean).strip()
-    if re.search(r'(?:の開催について|の開催案内|傍聴の案内|傍聴について|の開催概要について|議事要旨|議事録)$', t_clean):
+    if re.search(r'(?:の開催について|の開催案内|の開催のお知らせ|開催のお知らせ|開催案内|傍聴の案内|傍聴について|の開催概要について|議事要旨|議事録)$', t_clean):
         return True
     return False
 
@@ -1017,6 +1017,9 @@ def sync_new_meetings_from_crawl(data, target, scraped_item):
         # 親会議体への下部組織・専門家会合の誤混入ガード（例: 税制調査会(cao-zei_cho)にEBPM等の専門家会合が混入するのを防止）
         if council_id == "cao-zei_cho":
             if any(k in sub_url.lower() for k in ['/ebpm/', '/life/', '/digital-noukan/', '/noukan/', '/sozoku-zoyo/', '/renketsu/', '/rougo/', '/koku-han/', '/discussion']) or "専門家会合" in sub_title or "ディスカッショングループ" in sub_title:
+                continue
+        if council_id == "cao-cstp":
+            if any(k in sub_url.lower() for k in ['kaisaiannai', 'bridge', 'brige_wg']) or any(k in sub_title for k in ['ワーキンググループ', 'WG', 'BRIDGE', '中間評価']):
                 continue
 
         # 他省庁URLの誤混入ガード（例: MHLW会議体にMETIのURLが混入するのを防止）
