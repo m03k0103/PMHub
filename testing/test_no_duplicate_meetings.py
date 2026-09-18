@@ -133,6 +133,14 @@ def run_test():
     if bad_titles:
         errors.append(f"Generic/auto-extracted meeting titles found ({len(bad_titles)} items): {bad_titles[:5]}")
 
+    # 7. Check meeting title schema (Strictly enforce non-empty 'title' string, ban deprecated 'name' attribute)
+    missing_titles = [m.get('id') for m in meetings if not m.get('title') or not isinstance(m.get('title'), str)]
+    if missing_titles:
+        errors.append(f"Meetings missing valid 'title' property found ({len(missing_titles)} items): {missing_titles[:5]}")
+    erroneous_names = [m.get('id') for m in meetings if 'name' in m]
+    if erroneous_names:
+        errors.append(f"Meetings with deprecated 'name' attribute found ({len(erroneous_names)} items): {erroneous_names[:5]}")
+
     # 8. Check councilId format (Must have exactly 1 hyphen: {ministry}-{slug})
     bad_c_ids = [c_id for c_id in councils.keys() if c_id.count('-') != 1 or not re.match(r'^[a-z]+-[a-z0-9_]+$', c_id)]
     if bad_c_ids:
