@@ -11,7 +11,7 @@ import sys
 from collections import defaultdict
 
 sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "admin"))
-from utils import setup_win32_utf8, normalize_japanese_numbers
+from utils import setup_win32_utf8, normalize_japanese_numbers, load_data_json
 setup_win32_utf8()
 
 
@@ -65,8 +65,10 @@ def run_test():
         print(f"FAIL: {data_path} not found")
         return 1
         
-    with open(data_path, 'r', encoding='utf-8') as f:
-        data = json.load(f)
+    data = load_data_json(data_path)
+    if not data:
+        print(f"FAIL: Failed to load {data_path}")
+        return 1
         
     councils = {c['id']: c for c in data.get('councils', [])}
     meetings = data.get('meetings', [])

@@ -4,7 +4,7 @@ import sys
 import shutil
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from utils import setup_win32_utf8, save_data_json_with_backup, load_rejected_councils, save_rejected_councils, add_to_rejected_councils
+from utils import setup_win32_utf8, save_data_json_with_backup, load_rejected_councils, save_rejected_councils, add_to_rejected_councils, load_data_json
 setup_win32_utf8()
 
 
@@ -44,12 +44,10 @@ def apply_report_data(report_data, data_json_path=None):
         print("No corrections found in report.")
         return True
 
-    with open(data_json_path, "r", encoding="utf-8") as f:
-        try:
-            data = json.load(f)
-        except json.JSONDecodeError as e:
-            print(f"Error parsing data.json: {e}")
-            return False
+    data = load_data_json(data_json_path)
+    if not data:
+        print(f"Error loading {data_json_path}")
+        return False
 
     councils = data.get("councils", [])
     meetings = data.get("meetings", [])

@@ -156,6 +156,10 @@ MINISTRY_DOMAINS = {
     "DIGITAL": ["digital.go.jp"],
     "CFA": ["cfa.go.jp"]
 }
+_OTHER_MINISTRY_DOMAINS_MAP = {
+    m: tuple(d for om, dlist in MINISTRY_DOMAINS.items() if om != m for d in dlist)
+    for m in MINISTRY_DOMAINS
+}
 
 # 429 Quota Exceeded 回避用のサーキットブレーカーフラグ
 LLM_QUOTA_BLOCKED = False
@@ -1021,7 +1025,7 @@ def sync_new_meetings_from_crawl(data, target, scraped_item):
             parsed_sub = urllib.parse.urlparse(sub_url)
             sub_host = parsed_sub.netloc.lower()
             if "example.com" not in sub_host and "localhost" not in sub_host:
-                other_ministry_domains = [d for m, dlist in MINISTRY_DOMAINS.items() if m != ministry_code for d in dlist]
+                other_ministry_domains = _OTHER_MINISTRY_DOMAINS_MAP.get(ministry_code, ())
                 if any(other_d in sub_host for other_d in other_ministry_domains):
                     continue
 

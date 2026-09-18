@@ -719,6 +719,44 @@ JSON データを読み込み中...
 
 
   <script>
+  // ─── Utility & Sanitization Helpers (XSS Protection) ───
+  function sanitizeUrl(url) {
+    if (!url) return '#';
+    url = String(url).trim();
+    const sanitizedUrl = url.replace(/[\u0000-\u001F\u007F-\u009F]/g, '');
+    const lowerUrl = sanitizedUrl.toLowerCase();
+    if (lowerUrl.startsWith('http://') ||
+        lowerUrl.startsWith('https://') ||
+        lowerUrl.startsWith('/') ||
+        lowerUrl.startsWith('.') ||
+        lowerUrl.startsWith('?') ||
+        lowerUrl.startsWith('#')) {
+      return sanitizedUrl;
+    }
+    return '#';
+  }
+  window.sanitizeUrl = sanitizeUrl;
+
+  function escHtml(str) {
+    return (str || '')
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;')
+      .replace(/'/g, '&#39;');
+  }
+  window.escHtml = escHtml;
+
+  function escAttr(str) {
+    return (str || '')
+      .replace(/&/g, '&amp;')
+      .replace(/"/g, '&quot;')
+      .replace(/'/g, '&#39;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;');
+  }
+  window.escAttr = escAttr;
+
   // ─── Global Navigation Engine ───
   window.switchTab = function(tabId, btn) {
     document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
@@ -1136,7 +1174,7 @@ JSON データを読み込み中...
                 <span>配布資料: <strong style="color: var(--text-primary);">${matCount}</strong> 件 (PDF: <strong style="color:#10b981;">${matPdfCount}</strong> 件)</span>
                 ${m.discoveredAt ? `<span style="margin-left: 0.8rem; color: #94a3b8;">検知: ${m.discoveredAt}</span>` : ''}
               </div>
-              ${m.officialUrl ? `<a href="${m.officialUrl}" target="_blank" rel="noopener" style="color: #60a5fa; text-decoration: underline;">公式ページ ↗</a>` : ''}
+              ${m.officialUrl ? `<a href="${escAttr(sanitizeUrl(m.officialUrl))}" target="_blank" rel="noopener" style="color: #60a5fa; text-decoration: underline;">公式ページ ↗</a>` : ''}
             </div>
           </div>
         `;
@@ -1369,6 +1407,13 @@ JSON データを読み込み中...
 
     const listEl = document.getElementById('councilList');
     const meetingsListEl = document.getElementById('meetingsList');
+    let meetingsRenderLimit = 100;
+    let meetingsObserver = null;
+
+    window.loadMoreMeetings = function() {
+      meetingsRenderLimit += 100;
+      renderMeetingsList();
+    };
 
     function getMinistryColor(code) {
       const colorMap = {
@@ -1431,12 +1476,18 @@ JSON データを読み込み中...
       if (statMeetingsFiltered) statMeetingsFiltered.textContent = `${filtered.length} 件 / ${totalDocs} 点`;
       if (statMeetingsCorrected) statMeetingsCorrected.textContent = correctedCount;
 
+      const toRender = filtered.slice(0, meetingsRenderLimit);
+
       const badge = document.getElementById('filterMeetingsResultBadge');
       if (badge) {
-        badge.textContent = `表示中: 会議 ${filtered.length} 件 / 資料 ${totalDocs} 点`;
+        badge.textContent = `表示中: 会議 ${toRender.length} / ${filtered.length} 件 (資料 ${totalDocs} 点)`;
       }
 
       if (filtered.length === 0) {
+        if (meetingsObserver) {
+          meetingsObserver.disconnect();
+          meetingsObserver = null;
+        }
         meetingsListEl.innerHTML = `<div class="empty-state">
           <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
           <p>該当する会議データがありません</p>
@@ -1444,7 +1495,7 @@ JSON データを読み込み中...
         return;
       }
 
-      meetingsListEl.innerHTML = filtered.map((m, i) => {
+      const cardsHtml = toRender.map((m, i) => {
         const cObj = councilsMap.get(m.councilId) || {};
         const mMinistry = m.ministry || cObj.ministry || '';
         const mCategory = m.category || cObj.category || 'COUNCIL';
@@ -1480,7 +1531,7 @@ JSON データを読み込み中...
               <td style="width: 5%;">${mi + 1}</td>
               <td style="width: 45%;">${escHtml(mat.name)}</td>
               <td style="width: 12%;"><span class="mat-type-badge ${typeClass}">${matType}</span></td>
-              <td style="width: 28%;"><a href="${escAttr(mat.url)}" target="_blank" rel="noopener">${truncateUrl(mat.url, 45)}</a></td>
+              <td style="width: 28%;"><a href="${escAttr(sanitizeUrl(mat.url))}" target="_blank" rel="noopener">${truncateUrl(mat.url, 45)}</a></td>
               <td style="width: 10%;">${msBadge}</td>
             </tr>`;
           }).join('');
@@ -1502,17 +1553,17 @@ JSON データを読み込み中...
           <div class="card-top">
             <div class="card-title-area">
               <div class="card-idx">#${i + 1} / ${filtered.length} ｜ ${dateDisplay}</div>
-              <div class="card-name" style="font-size: 1.05rem;">${m.title} ${isDateUnconfirmed ? '<span class="meta-chip" style="color:#f59e0b;border-color:rgba(245,158,11,0.4);background:rgba(245,158,11,0.1);font-size:0.75rem;">要確認</span>' : ''}</div>
-              <div class="card-id">ID: ${m.id} ｜ 会議体: ${mCouncilName || m.councilId}</div>
+              <div class="card-name" style="font-size: 1.05rem;">${escHtml(m.title)} ${isDateUnconfirmed ? '<span class="meta-chip" style="color:#f59e0b;border-color:rgba(245,158,11,0.4);background:rgba(245,158,11,0.1);font-size:0.75rem;">要確認</span>' : ''}</div>
+              <div class="card-id">ID: ${escHtml(m.id)} ｜ 会議体: ${escHtml(mCouncilName || m.councilId)}</div>
             </div>
             <div class="card-actions">
-              ${mMats.length ? `<button class="btn-check-mats" onclick="checkMeetingMaterials('${m.councilId}', '${m.id}')">🔗 資料疎通チェック</button>` : ''}
+              ${mMats.length ? `<button class="btn-check-mats" onclick="checkMeetingMaterials('${escAttr(m.councilId)}', '${escAttr(m.id)}')">🔗 資料疎通チェック</button>` : ''}
             </div>
           </div>
 
           <div class="card-meta" style="margin-top: 0.65rem;">
-            <span class="meta-chip"><span class="chip-icon">🏛</span> ${minName} (${mMinistry})</span>
-            <span class="category-badge cat-${mCategory}">${catLabel}</span>
+            <span class="meta-chip"><span class="chip-icon">🏛</span> ${escHtml(minName)} (${escHtml(mMinistry)})</span>
+            <span class="category-badge cat-${escAttr(mCategory)}">${escHtml(catLabel)}</span>
             <span class="meta-chip"><span class="chip-icon">📎</span> 配布資料: ${mMats.length} 件</span>
           </div>
 
@@ -1521,8 +1572,8 @@ JSON データを読み込み中...
             <div class="uc-row">
               <input type="url" value="${escAttr(mCorrected)}" placeholder="${escAttr(m.officialUrl)}（変更不要ならそのまま）"
                 class="${mHasCorr ? 'has-value' : ''}"
-                oninput="setCorrectedMeetingUrl('${m.id}', this.value)" />
-              <button class="btn-open-url" onclick="openMeetingUrl('${m.id}')">開く ↗</button>
+                oninput="setCorrectedMeetingUrl('${escAttr(m.id)}', this.value)" />
+              <button class="btn-open-url" onclick="openMeetingUrl('${escAttr(m.id)}')">開く ↗</button>
             </div>
             ${mDiff}
           </div>
@@ -1535,6 +1586,44 @@ JSON データを読み込み中...
           </div>
         </div>`;
       }).join('');
+
+      let footerHtml = '';
+      if (filtered.length > toRender.length) {
+        const remaining = filtered.length - toRender.length;
+        const nextChunk = Math.min(100, remaining);
+        footerHtml = `<div id="meetingsLoadMoreContainer" style="text-align: center; padding: 2rem 1rem; margin: 1.5rem 0 3rem 0; background: rgba(30, 41, 59, 0.5); border-radius: 8px; border: 1px dashed var(--border-color, #334155);">
+          <div style="font-size: 0.9rem; color: var(--text-muted, #94a3b8); margin-bottom: 0.75rem;">
+            全 ${filtered.length.toLocaleString()} 件中 <strong>${toRender.length.toLocaleString()}</strong> 件を表示中（残り ${remaining.toLocaleString()} 件）
+          </div>
+          <button type="button" class="btn-primary" id="btnLoadMoreMeetings" onclick="loadMoreMeetings()" style="padding: 0.65rem 1.8rem; font-size: 0.9rem; font-weight: 600; cursor: pointer;">
+            さらに表示（次の ${nextChunk} 件） ⬇
+          </button>
+          <div id="meetingsScrollTrigger" style="height: 1px; width: 100%;"></div>
+        </div>`;
+      } else if (filtered.length > 100) {
+        footerHtml = `<div style="text-align: center; padding: 1.5rem 0; color: var(--text-muted, #94a3b8); font-size: 0.85rem;">
+          全 ${filtered.length.toLocaleString()} 件をすべて表示しました
+        </div>`;
+      }
+
+      meetingsListEl.innerHTML = cardsHtml + footerHtml;
+
+      // 自動スクロール追記（IntersectionObserver）
+      if (meetingsObserver) {
+        meetingsObserver.disconnect();
+        meetingsObserver = null;
+      }
+      if (filtered.length > toRender.length && typeof IntersectionObserver !== 'undefined') {
+        const triggerEl = document.getElementById('meetingsScrollTrigger');
+        if (triggerEl) {
+          meetingsObserver = new IntersectionObserver((entries) => {
+            if (entries[0] && entries[0].isIntersecting) {
+              loadMoreMeetings();
+            }
+          }, { rootMargin: '300px' });
+          meetingsObserver.observe(triggerEl);
+        }
+      }
     }
 
     // ─── Render Councils Management (TAB 3) ───
@@ -1700,7 +1789,7 @@ JSON データを読み込み中...
               <span style="font-size:0.8rem;">${mat.type === 'PDF' || (mat.url && mat.url.endsWith('.pdf')) ? '📄' : '🌐'}</span>
               <input type="text" value="${escAttr(mat.name)}" placeholder="資料名（例: 構成員名簿）" style="flex:2; font-size:0.78rem; padding:0.25rem 0.4rem; background:rgba(0,0,0,0.2); border:1px solid rgba(255,255,255,0.1); border-radius:4px; color:#fff;" onchange="updateCouncilMaterial('${c.id}', ${mi}, 'name', this.value)" />
               <input type="url" value="${escAttr(mat.url)}" placeholder="URL" style="flex:3; font-size:0.78rem; padding:0.25rem 0.4rem; background:rgba(0,0,0,0.2); border:1px solid rgba(255,255,255,0.1); border-radius:4px; color:#fff;" onchange="updateCouncilMaterial('${c.id}', ${mi}, 'url', this.value)" />
-              <button class="btn-open-url" style="padding:0.2rem 0.4rem; font-size:0.75rem;" onclick="window.open('${escAttr(mat.url)}', '_blank')">開く ↗</button>
+              <button class="btn-open-url" style="padding:0.2rem 0.4rem; font-size:0.75rem;" onclick="openSafeUrl('${escAttr(mat.url)}')">開く ↗</button>
               <button class="btn-remove-url" style="padding:0.2rem 0.4rem; font-size:0.75rem; background:rgba(239,68,68,0.2); color:#ef4444; border:1px solid rgba(239,68,68,0.3); border-radius:4px; cursor:pointer;" onclick="removeCouncilMaterial('${c.id}', ${mi})" title="削除">✕</button>
             </div>
           `).join('');
@@ -1727,7 +1816,7 @@ JSON データを読み込み中...
           <div class="card-meta">
             <span class="meta-chip"><span class="chip-icon">🏛</span> ${minName} (${c.ministry})</span>
             <span class="category-badge cat-${c.category}">${catLabel}</span>
-            <span class="meta-chip"><span class="chip-icon">🔗</span> <a href="${escAttr(c.officialUrl)}" target="_blank" rel="noopener">${truncateUrl(c.officialUrl, 55)}</a> ${urlBadge}</span>
+            <span class="meta-chip"><span class="chip-icon">🔗</span> <a href="${escAttr(sanitizeUrl(c.officialUrl))}" target="_blank" rel="noopener">${truncateUrl(c.officialUrl, 55)}</a> ${urlBadge}</span>
             <span class="meta-chip" style="cursor:pointer;" onclick="jumpToMeetingList('${c.id}')"><span class="chip-icon">📋</span> 会議数: ${cMeetings.length} 件 ↗</span>
           </div>
           ${nameCorrectionHtml}
@@ -1972,11 +2061,15 @@ JSON データを読み込み中...
       }
     });
 
-    if (document.getElementById('filterMeetingsSearch')) document.getElementById('filterMeetingsSearch').addEventListener('input', renderMeetingsList);
-    if (document.getElementById('filterMeetingsMinistry')) document.getElementById('filterMeetingsMinistry').addEventListener('change', renderMeetingsList);
-    if (document.getElementById('filterMeetingsCategory')) document.getElementById('filterMeetingsCategory').addEventListener('change', renderMeetingsList);
-    if (document.getElementById('filterMeetingsDocType')) document.getElementById('filterMeetingsDocType').addEventListener('change', renderMeetingsList);
-    if (document.getElementById('filterMeetingsUrlStatus')) document.getElementById('filterMeetingsUrlStatus').addEventListener('change', renderMeetingsList);
+    const resetMeetingsLimitAndRender = () => {
+      meetingsRenderLimit = 100;
+      renderMeetingsList();
+    };
+    if (document.getElementById('filterMeetingsSearch')) document.getElementById('filterMeetingsSearch').addEventListener('input', resetMeetingsLimitAndRender);
+    if (document.getElementById('filterMeetingsMinistry')) document.getElementById('filterMeetingsMinistry').addEventListener('change', resetMeetingsLimitAndRender);
+    if (document.getElementById('filterMeetingsCategory')) document.getElementById('filterMeetingsCategory').addEventListener('change', resetMeetingsLimitAndRender);
+    if (document.getElementById('filterMeetingsDocType')) document.getElementById('filterMeetingsDocType').addEventListener('change', resetMeetingsLimitAndRender);
+    if (document.getElementById('filterMeetingsUrlStatus')) document.getElementById('filterMeetingsUrlStatus').addEventListener('change', resetMeetingsLimitAndRender);
 
     if (document.getElementById('filterSearch')) document.getElementById('filterSearch').addEventListener('input', renderCards);
     if (document.getElementById('filterMinistry')) document.getElementById('filterMinistry').addEventListener('change', renderCards);
@@ -1990,10 +2083,20 @@ JSON データを読み込み中...
       return url.substring(0, max) + '…';
     }
     function escHtml(str) {
-      return (str || '').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+      return (str || '')
+        .replace(/&/g,'&amp;')
+        .replace(/</g,'&lt;')
+        .replace(/>/g,'&gt;')
+        .replace(/"/g,'&quot;')
+        .replace(/'/g,'&#39;');
     }
     function escAttr(str) {
-      return (str || '').replace(/&/g,'&amp;').replace(/"/g,'&quot;');
+      return (str || '')
+        .replace(/&/g,'&amp;')
+        .replace(/"/g,'&quot;')
+        .replace(/'/g,'&#39;')
+        .replace(/</g,'&lt;')
+        .replace(/>/g,'&gt;');
     }
 
     window.setVerdict = async function(id, verdict) {
@@ -2089,11 +2192,16 @@ JSON データを読み込み中...
     window.setCorrectedMeetingUrl = function(meetingId, url) {
       meetingUrlCorrections[meetingId] = url.trim();
     };
+    window.openSafeUrl = function(url) {
+      const s = sanitizeUrl(url);
+      if (s && s !== '#') window.open(s, '_blank', 'noopener,noreferrer');
+    };
     window.openMeetingUrl = function(meetingId) {
       const corrected = meetingUrlCorrections[meetingId];
       const meeting = meetings.find(m => m.id === meetingId);
-      const url = corrected || (meeting ? meeting.officialUrl : '');
-      if (url) window.open(url, '_blank');
+      const rawUrl = corrected || (meeting ? meeting.officialUrl : '');
+      const url = sanitizeUrl(rawUrl);
+      if (url && url !== '#') window.open(url, '_blank', 'noopener,noreferrer');
     };
 
     async function checkSingleMat(councilId, matUrl, skipRender = false) {
@@ -2545,7 +2653,7 @@ JSON データを読み込み中...
           <div class="card-meta">
             <span class="meta-chip"><span class="chip-icon">🏛</span> ${minName} (${c.ministry || '—'})</span>
             <span class="category-badge cat-${c.category || 'COUNCIL'}">${catLabel}</span>
-            <span class="meta-chip"><span class="chip-icon">🔗</span> <a href="${escAttr(c.officialUrl)}" target="_blank" rel="noopener">${truncateUrl(c.officialUrl, 55) || 'URLなし'}</a></span>
+            <span class="meta-chip"><span class="chip-icon">🔗</span> <a href="${escAttr(sanitizeUrl(c.officialUrl))}" target="_blank" rel="noopener">${truncateUrl(c.officialUrl, 55) || 'URLなし'}</a></span>
             <span class="meta-chip"><span class="chip-icon">📅</span> 却下日: ${c.rejectedAt || '—'}</span>
           </div>
           <div style="margin-top:0.75rem; padding:0.6rem 0.85rem; background:rgba(239,68,68,0.06); border:1px solid rgba(239,68,68,0.2); border-radius:var(--radius-md); font-size:0.8rem; color:#f87171;">

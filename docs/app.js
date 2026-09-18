@@ -1352,7 +1352,16 @@ document.addEventListener('DOMContentLoaded', async () => {
   }
 
   // --- MODAL DIALOG ENGINE ---
+  let lastActiveElement = null;
+
+  function handleModalKeyDown(e) {
+    if (e.key === 'Escape') {
+      closeModal();
+    }
+  }
+
   function openModal(meeting) {
+    lastActiveElement = document.activeElement;
     state.activeModalMeeting = meeting;
     const meetingMinistry = getMeetingMinistry(meeting);
     const meetingCategory = getMeetingCategory(meeting);
@@ -1418,11 +1427,20 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     el.modalOfficialLinkBtn.href = sanitizeUrl(meeting.officialUrl);
     el.documentModalOverlay.classList.remove('hidden');
+    if (el.modalCloseBtn && typeof el.modalCloseBtn.focus === 'function') {
+      el.modalCloseBtn.focus();
+    }
+    document.addEventListener('keydown', handleModalKeyDown);
   }
 
   function closeModal() {
     el.documentModalOverlay.classList.add('hidden');
     state.activeModalMeeting = null;
+    document.removeEventListener('keydown', handleModalKeyDown);
+    if (lastActiveElement && typeof lastActiveElement.focus === 'function') {
+      lastActiveElement.focus();
+      lastActiveElement = null;
+    }
   }
 
   function copyCitationText() {
