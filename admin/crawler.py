@@ -66,7 +66,9 @@ GENERIC_TITLE_KEYWORDS = frozenset({
     '審議会、検討会、研究会等', '令和３年改正個人情報保護法について', '原子力規制委員会',
     'サイトマップ', '開催案内', '開催について', '１開催日時', '１．日', '●日時', 'お知らせ',
     '新着情報', '１．日時', '１　開催日時', '議事要旨等', 'Interim Report', '共同主催国際会議',
-    '議事次第・資料一覧', '配布資料一覧', '配付資料一覧', '覚書等', '覚書'
+    '議事次第・資料一覧', '配布資料一覧', '配付資料一覧', '覚書等', '覚書',
+    '開催日', '開催日時', '開催期間', '議事次第等', '資料一覧', '配付資料等', '配布資料等',
+    '会議結果', '開催案内等', '配付資料について', '配布資料について', '会議概要'
 })
 
 # 配付資料として不適切な汎用ナビゲーション・UIテキスト（事前除外用定数）
@@ -409,17 +411,28 @@ def extract_page_title(soup, rule=None, fallback_url=""):
             if title_sel:
                 sel_el = soup.select_one(title_sel)
                 if sel_el:
-                    title = sel_el.get_text(" ", strip=True)
+                    cand = sel_el.get_text(" ", strip=True)
+                    if cand and not any(kw == cand or kw in cand for kw in GENERIC_TITLE_KEYWORDS):
+                        title = cand
 
         # title_selector で取れなかった場合、またはジェネリックタイトルの場合
-        if not title or any(kw in title for kw in GENERIC_TITLE_KEYWORDS):
+        if not title or any(kw == title for kw in GENERIC_TITLE_KEYWORDS):
             for tag_name in ['h2', 'h1', 'h3']:
-                found_tag = soup.find(tag_name)
-                if found_tag:
-                    t_cand = found_tag.get_text(" ", strip=True)
-                    if t_cand and not any(kw in t_cand for kw in GENERIC_TITLE_KEYWORDS):
-                        title = t_cand
-                        break
+                found_tags = soup.find_all(tag_name)
+                for ft in found_tags:
+                    t_cand = ft.get_text(" ", strip=True)
+                    # サフィックス・余分な空白の除去
+                    t_cand = re.sub(r'｜.*$', '', t_cand).strip()
+                    t_cand = re.sub(r' - .*$', '', t_cand).strip()
+                    t_cand = re.sub(r'\s+', ' ', t_cand).strip()
+                    if not t_cand or len(t_cand) <= 3:
+                        continue
+                    if any(kw == t_cand or (len(kw) >= 3 and kw in t_cand) for kw in GENERIC_TITLE_KEYWORDS):
+                        continue
+                    title = t_cand
+                    break
+                if title:
+                    break
 
         # それでもなければ <title> タグ
         if not title and soup.title and soup.title.string:
@@ -428,7 +441,7 @@ def extract_page_title(soup, rule=None, fallback_url=""):
             cand_title = re.sub(r'｜.*$', '', cand_title).strip()
             cand_title = re.sub(r' - .*$', '', cand_title).strip()
             cand_title = re.sub(r'\s+', ' ', cand_title).strip()
-            if cand_title and not any(kw in cand_title for kw in GENERIC_TITLE_KEYWORDS):
+            if cand_title and not any(kw == cand_title for kw in GENERIC_TITLE_KEYWORDS):
                 title = cand_title
 
         if title:
@@ -444,6 +457,35 @@ def extract_page_title(soup, rule=None, fallback_url=""):
         return fallback_url
 
 
+def _sort_subpage_urls_by_recency(urls):
+    """URL内の数字（回次・西暦・ファイル番号等）を元に最新と思われる順（降順）に並び替える"""
+    def key_fn(u):
+        nums = re.findall(r'\d+', u)
+        if nums:
+            last_num = int(nums[-1])
+            max_num = max(int(n) for n in nums)
+            return (last_num, max_num)
+        return (-1, -1)
+    return sorted(urls, key=key_fn, reverse=True)
+
+def _is_parent_or_nav_url(sub_url, target_url):
+    """ターゲットURLより上位のインデックスページや共通ナビゲーションであるかを判定"""
+    clean_sub = sub_url.rstrip('/')
+    clean_tgt = target_url.rstrip('/')
+    if clean_sub == clean_tgt:
+        return True
+    parsed_sub = urllib.parse.urlparse(clean_sub)
+    parsed_tgt = urllib.parse.urlparse(clean_tgt)
+    if parsed_sub.netloc == parsed_tgt.netloc:
+        sub_path = parsed_sub.path.rstrip('/')
+        tgt_path = parsed_tgt.path.rstrip('/')
+        # サブページのパスがターゲットより短く、index.html で終わる場合は上位一覧
+        if len(sub_path) < len(tgt_path) and (sub_path.endswith('/index.html') or sub_path.endswith('/index') or sub_path == ''):
+            return True
+        if sub_path in ('/shingikai/index.html', '/shingikai', '/index.html'):
+            return True
+    return False
+
 def _crawl_subpages(target_url, html, rule, quirk_note, pdf_pattern):
     """サブページの深掘りクロールロジック"""
     subpage_meetings = []
@@ -458,18 +500,26 @@ def _crawl_subpages(target_url, html, rule, quirk_note, pdf_pattern):
     subpage_links = re.findall(subpage_pattern, html, re.IGNORECASE)
 
     if subpage_links:
-        unique_subpages = list(dict.fromkeys([urllib.parse.urljoin(page_base_url, l) for l in subpage_links]))[:6]
-        print(f"   [2回目情報取得Engine ({quirk_note})] サブページ {len(unique_subpages)} 件を深掘り巡回中...")
+        # 重複排除と親インデックス等の事前除外
+        raw_subpages = list(dict.fromkeys([urllib.parse.urljoin(page_base_url, l) for l in subpage_links]))
+        filtered_subpages = [
+            u for u in raw_subpages
+            if not _is_parent_or_nav_url(u, target_url)
+            and not is_generic_index_url(u)
+            and not any(k in u.lower() for k in ['cas.go.jp/jp/siryou', 'cas.go.jp/jp/shiryo'])
+        ]
+        # 最新と思われる順（降順）にソートして最大25件まで巡回
+        sorted_subpages = _sort_subpage_urls_by_recency(filtered_subpages)[:25]
+        print(f"   [2回目情報取得Engine ({quirk_note})] サブページ {len(sorted_subpages)} 件を深掘り巡回中...")
 
-        for sub_url in unique_subpages:
+        for sub_url in sorted_subpages:
             parsed_url = urllib.parse.urlparse(sub_url)
             if parsed_url.scheme not in ('http', 'https'):
                 continue
             if sub_url.lower().endswith('.pdf'):
                 continue
-            if any(k in sub_url.lower() for k in ['cas.go.jp/jp/siryou', 'cas.go.jp/jp/shiryo']) or is_generic_index_url(sub_url):
-                continue
 
+            time.sleep(0.35)  # レートリミット遵守
             sub_html = fetch_url(sub_url)
             if sub_html:
                 sub_soup = BeautifulSoup(sub_html, 'html.parser')
@@ -477,22 +527,19 @@ def _crawl_subpages(target_url, html, rule, quirk_note, pdf_pattern):
 
                 sub_materials = parse_materials_from_html(sub_html, sub_url, pdf_pattern)
                 
-                # 2段階配付資料自動探索: もしPDF資料が0件（または議事録のみ）の場合、同一ディレクトリの随伴資料ページ（gijishidai.html等）を自動探索
+                # 2段階配付資料自動探索: もしPDF資料が0件（または議事録のみ）の場合、ページ内の明示的リンクを探索
                 has_pdf = any(m.get("type") == "PDF" for m in sub_materials)
                 if not has_pdf:
-                    folder_url = sub_url if sub_url.endswith('/') else urllib.parse.urljoin(sub_url, './')
-                    # 随伴資料ページの候補探索（同階層のgijishidai.htmlまたはページ内リンク）
                     companion_candidates = []
                     for a in sub_soup.find_all('a', href=True):
                         h_lower = a['href'].lower()
                         if any(k in h_lower for k in ['gijishidai', 'shiryo', 'siryou', 'haifu']) and not h_lower.endswith('.pdf'):
-                            companion_candidates.append(urllib.parse.urljoin(sub_url, a['href']))
-                    companion_candidates.append(urllib.parse.urljoin(folder_url, 'gijishidai.html'))
-                    companion_candidates.append(urllib.parse.urljoin(folder_url, 'index.html'))
+                            comp_abs = urllib.parse.urljoin(sub_url, a['href'])
+                            if comp_abs != sub_url and not _is_parent_or_nav_url(comp_abs, target_url) and not is_generic_index_url(comp_abs):
+                                companion_candidates.append(comp_abs)
                     
-                    for comp_url in list(dict.fromkeys(companion_candidates)):
-                        if comp_url == sub_url:
-                            continue
+                    for comp_url in list(dict.fromkeys(companion_candidates))[:3]:
+                        time.sleep(0.35)
                         comp_html = fetch_url(comp_url)
                         if comp_html:
                             comp_mats = parse_materials_from_html(comp_html, comp_url, pdf_pattern)
@@ -513,10 +560,11 @@ def _crawl_subpages(target_url, html, rule, quirk_note, pdf_pattern):
 
                 # 3段階配付資料自動展開: 抽出された資料リストに「会議資料」「資料」等のHTMLページがある場合、そのリンク先を取得して内部の末端PDF資料を展開
                 html_materials = [m for m in sub_materials if (m.get('url', '').endswith('.html') or m.get('url', '').endswith('.htm'))]
-                for hm in html_materials:
+                for hm in html_materials[:5]:
                     hm_url = hm.get('url')
                     hm_name = hm.get('name', '')
                     if any(k in hm_name for k in ['会議資料', '配付資料', '配布資料', '資料一覧', '資料']) or re.search(r'\d+kai\.html$', hm_url):
+                        time.sleep(0.35)
                         hm_html = fetch_url(hm_url)
                         if hm_html:
                             expanded_mats = parse_materials_from_html(hm_html, hm_url, pdf_pattern)
@@ -541,21 +589,50 @@ def _crawl_subpages(target_url, html, rule, quirk_note, pdf_pattern):
     return subpage_meetings, additional_materials, all_extracted_dates
 
 def clean_html_for_dates(html_str):
-    """ヘッダー・フッター・サイドバー・パンくず等のノイズを除去して本文ブロックを抽出"""
+    """ヘッダー・フッター・サイドバー・パンくず・スキップリンク等のノイズを除去して本文ブロックを抽出"""
     if not html_str:
         return ""
     try:
         soup = BeautifulSoup(html_str, 'html.parser')
+        # 1. ノイズタグの除去
         for tag in soup(['nav', 'aside', 'footer', 'script', 'style', 'header']):
             tag.decompose()
+
+        # 2. スキップリンク・ジャンプリンクの事前明示的除去
+        for a_tag in soup.find_all('a', href=True):
+            href = a_tag['href'].strip()
+            aid = a_tag.get('id', '')
+            acls = ' '.join(a_tag.get('class', []))
+            if href.startswith('#') and any(k in href.lower() for k in ['content', 'main', 'skip', 'jump']):
+                a_tag.decompose()
+            elif any(k in aid.lower() for k in ['jump', 'skip', 'navskip']):
+                a_tag.decompose()
+            elif any(k in acls.lower() for k in ['jump', 'skip', 'navskip']):
+                a_tag.decompose()
+
+        # 3. ナビゲーション・フッター系ID/Class要素の除去
         for el in soup.find_all(id=re.compile(r'(side|nav|footer|header|menu|breadcrumb)', re.I)):
             if el.name not in ('body', 'html'):
                 el.decompose()
         for el in soup.find_all(class_=re.compile(r'(side|nav|footer|header|menu|breadcrumb)', re.I)):
             if el.name not in ('body', 'html'):
                 el.decompose()
-        main_el = soup.find(id=re.compile(r'(main|content)', re.I)) or soup.find(class_=re.compile(r'(main|content)', re.I)) or soup.body
-        return str(main_el) if main_el else str(soup)
+
+        # 4. 本文ブロックコンテナの探索（インライン要素を除外し、十分なテキスト長を持つコンテナを優先）
+        block_tags = ['main', 'article', 'div', 'section']
+        candidates = []
+        for tag_name in block_tags:
+            for el in soup.find_all(tag_name, id=re.compile(r'(main|content)', re.I)):
+                candidates.append(el)
+            for el in soup.find_all(tag_name, class_=re.compile(r'(main|content)', re.I)):
+                candidates.append(el)
+
+        if candidates:
+            best_el = max(candidates, key=lambda el: len(el.get_text()))
+            if len(best_el.get_text(strip=True)) > 50:
+                return str(best_el)
+
+        return str(soup.body) if soup.body else str(soup)
     except Exception:
         return html_str
 
