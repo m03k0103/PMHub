@@ -612,6 +612,31 @@ def check_admin_server_api():
                     print(f"    {line}")
         return False
 
+def check_crawler_foundation():
+    """10. クローラー基盤テスト（CR-1 スキップリンク保護・CR-2 最新優先ソート・CR-4 ジェネリック見出し除外）"""
+    print("\n--------------------------------------------------")
+    print(" [テスト 10/10] クローラー基盤・誤判定防止テスト (test_crawler_foundation.py)")
+    print("--------------------------------------------------")
+    test_script = os.path.join(PROJECT_ROOT, "testing", "test_crawler_foundation.py")
+    if not os.path.exists(test_script):
+        print("  [SKIP] test_crawler_foundation.py が見つかりません")
+        return True
+
+    res = subprocess.run([sys.executable, test_script], capture_output=True, text=True, encoding='utf-8', errors='replace')
+    if res.returncode == 0:
+        print("  [PASS] クローラー基盤単体テスト（スキップリンク保護・最新ソート・ジェネリック除外）全件合格")
+        return True
+    else:
+        print("  [FAIL] クローラー基盤テストでエラーが検出されました:")
+        for line in res.stdout.splitlines():
+            if line.strip():
+                print(f"    {line}")
+        if res.stderr:
+            for line in res.stderr.splitlines():
+                if line.strip():
+                    print(f"    {line}")
+        return False
+
 def main():
     parser = argparse.ArgumentParser(description="PM-HUB Smoke Test Runner")
     parser.add_argument("--url", nargs="+", help="Explicit URLs to verify")
@@ -631,9 +656,11 @@ def main():
     crawler_ok = check_crawler_regression()
     runtime_ok = check_js_runtime_crash()
     server_api_ok = check_admin_server_api()
+    foundation_ok = check_crawler_foundation()
 
     print("\n==================================================")
-    if syntax_ok and links_ok and unit_ok and dedup_ok and sync_ok and view_ok and crawler_ok and runtime_ok and server_api_ok:
+    if (syntax_ok and links_ok and unit_ok and dedup_ok and sync_ok
+            and view_ok and crawler_ok and runtime_ok and server_api_ok and foundation_ok):
         print(" 【結果】全スモークテストに合格しました。修正コードは正常です。")
         sys.exit(0)
     else:
