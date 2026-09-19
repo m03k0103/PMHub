@@ -588,6 +588,130 @@ def _crawl_subpages(target_url, html, rule, quirk_note, pdf_pattern):
 
     return subpage_meetings, additional_materials, all_extracted_dates
 
+
+def _extract_meetings_from_parent_table(html, target_url, council_name, rule=None, pdf_pattern=None):
+    """
+    親ページ内のテーブル（<table>）を行（<tr>）単位で走査し、
+    各開催回の「回次・開催日・配付資料リスト」を一体抽出する。
+    """
+    if not html:
+        return []
+
+    soup = BeautifulSoup(html, 'html.parser')
+    base_tag = soup.find('base', href=True)
+    page_base = urllib.parse.urljoin(target_url, base_tag['href']) if base_tag else target_url
+
+    meetings = []
+    tables = soup.find_all('table')
+
+    for table in tables:
+        rows = table.find_all('tr')
+        if len(rows) < 2:
+            continue
+
+        # ヘッダー行の確認（回数、日時、開催日、資料、議題、議事、次第、年度等のキーワード）
+        header_text = ' '.join(r.get_text(' ', strip=True) for r in rows[:2])
+        is_candidate_table = any(k in header_text for k in ['回', '日', '資料', '議題', '議事', '次第', '年度', '開催'])
+        if not is_candidate_table:
+            continue
+
+        for row in rows:
+            cells = row.find_all(['td', 'th'])
+            if len(cells) < 2:
+                continue
+
+            row_text = row.get_text(' ', strip=True)
+            norm_text = normalize_japanese_numbers(row_text)
+            clean_search_text = re.sub(r'[\s\u2000-\u200f]+', '', norm_text)
+
+            # 1. 回次の抽出
+            sess_match = re.search(r'第\s*(\d+)\s*回', norm_text) or re.search(r'第(\d+)回', clean_search_text)
+            round_num = int(sess_match.group(1)) if sess_match else None
+
+            # 2. 日付の抽出（空白・全角スペース混入に対応した clean_search_text から抽出）
+            date_matches = re.findall(r'(?:令和|平成)(?:\d+|元)年\d{1,2}月\d{1,2}日|\d{4}年\d{1,2}月\d{1,2}日|\d{4}[/-]\d{1,2}[/-]\d{1,2}', clean_search_text)
+            if not date_matches:
+                date_matches = re.findall(r'(?:令和|平成)\s*(?:\d+|元)\s*年\s*\d{1,2}\s*月\s*\d{1,2}\s*日|\d{4}\s*年\s*\d{1,2}\s*月\s*\d{1,2}\s*日|\d{4}[/-]\d{1,2}[/-]\d{1,2}', norm_text)
+            meet_date = None
+            for d in date_matches:
+                clean_d = re.sub(r'[\s\u2000-\u200f]+', '', d)
+                val = validate_and_normalize_date(clean_d)
+                if val:
+                    dt = parse_japanese_date(val)
+                    if dt:
+                        meet_date = dt.strftime('%Y/%m/%d')
+                        break
+
+            # 回次も日付も取れない行はヘッダーや名簿等のためスキップ
+            if not round_num and not meet_date:
+                continue
+
+            # 3. 配付資料および個別URLの抽出
+            row_materials = []
+            row_official_url = target_url
+            for a in row.find_all('a', href=True):
+                href = a['href'].strip()
+                if not href or href.startswith('#') or href.startswith('javascript:'):
+                    continue
+                abs_url = urllib.parse.urljoin(page_base, href)
+                if is_generic_index_url(abs_url) or _is_parent_or_nav_url(abs_url, target_url):
+                    continue
+
+                raw_mat_name = a.get_text(' ', strip=True)
+                clean_mat_name = re.sub(r'[\（\(\［\[]PDF.*?[）\)\］\]]', '', raw_mat_name, flags=re.IGNORECASE).strip()
+
+                if not clean_mat_name or clean_mat_name in ('PDF', 'ダウンロード', 'リンク', 'こちら'):
+                    parent_cell = a.find_parent(['td', 'th'])
+                    if parent_cell:
+                        cell_txt = parent_cell.get_text(' ', strip=True)
+                        clean_cell_txt = re.sub(r'[\（\(]PDF[／/形式\:\s\d\.\,KBMB]+\s*[\）\)]', '', cell_txt).strip()
+                        clean_cell_txt = re.sub(r'［PDF形式：\d+.*?］', '', clean_cell_txt).strip()
+                        if clean_cell_txt and clean_cell_txt != clean_mat_name:
+                            clean_mat_name = clean_cell_txt[:60]
+
+                if not clean_mat_name:
+                    clean_mat_name = "配付資料"
+
+                is_pdf = href.lower().endswith(('.pdf', '.docx', '.xlsx', '.doc', '.xls')) or '/pdf/' in href.lower()
+                is_html_doc = any(k in href.lower() for k in ['gijiroku', 'gijiyoshi', 'proceedings']) or any(k in clean_mat_name for k in ['議事録', '議事要旨'])
+
+                if is_pdf:
+                    row_materials.append({
+                        "name": clean_mat_name,
+                        "url": abs_url,
+                        "type": "PDF"
+                    })
+                elif is_html_doc:
+                    row_materials.append({
+                        "name": clean_mat_name,
+                        "url": abs_url,
+                        "type": "HTML"
+                    })
+                elif (href.endswith('.html') or href.endswith('.htm')) and row_official_url == target_url:
+                    row_official_url = abs_url
+
+            # 資料も個別URLもない行はスキップ
+            if not row_materials and row_official_url == target_url:
+                continue
+
+            # 会議名・タイトルの決定
+            if round_num:
+                meet_title = f"第{round_num}回 {council_name}"
+            else:
+                meet_title = f"{council_name}"
+
+            meetings.append({
+                "subpageUrl": row_official_url,
+                "name": meet_title,
+                "title": meet_title,
+                "extractedMaterialsCount": len(row_materials),
+                "materials": row_materials,
+                "extractedDates": [meet_date] if meet_date else [],
+                "isFromParentTable": True
+            })
+
+    return meetings
+
 def clean_html_for_dates(html_str):
     """ヘッダー・フッター・サイドバー・パンくず・スキップリンク等のノイズを除去して本文ブロックを抽出"""
     if not html_str:
@@ -858,6 +982,15 @@ def execute_rule_retrieval(target, html, rule_item, use_llm=False):
     subpage_meetings.extend(new_meetings)
     top_materials.extend(new_materials)
     all_extracted_dates.extend(new_dates)
+
+    # 親ページテーブル解析の実行（テーブル構造から各開催回の回次・日付・資料を直接抽出）
+    table_meetings = _extract_meetings_from_parent_table(html, target["url"], target["name"], rule, pdf_pattern)
+    if table_meetings:
+        print(f"   [親ページテーブル解析] 親ページ内から {len(table_meetings)} 件の開催回を検出しました。")
+        subpage_meetings.extend(table_meetings)
+        for tm in table_meetings:
+            top_materials.extend(tm.get("materials", []))
+            all_extracted_dates.extend(tm.get("extractedDates", []))
 
     seen_keys = set()
     for m in top_materials:
@@ -1147,10 +1280,14 @@ def sync_new_meetings_from_crawl(data, target, scraped_item):
                 
                 is_parent_or_generic = (curr_url == council_parent_url.rstrip("/") or is_generic_index_url(curr_url))
                 has_no_mats = len(curr_mats) == 0
-                has_new_valid_subpage = sub_url and not is_generic_index_url(sub_url, sub_title)
+                has_new_valid_subpage = (sub_url and not is_generic_index_url(sub_url, sub_title) and sub_url != council_parent_url.rstrip("/"))
 
-                if (is_parent_or_generic or has_no_mats) and has_new_valid_subpage and clean_materials_list:
-                    ex_m["officialUrl"] = sub.get("subpageUrl")
+                can_upgrade_url = (is_parent_or_generic and has_new_valid_subpage)
+                can_update_mats = (has_no_mats and clean_materials_list)
+
+                if (can_upgrade_url or can_update_mats) and clean_materials_list:
+                    if can_upgrade_url:
+                        ex_m["officialUrl"] = sub.get("subpageUrl")
                     ex_m["materials"] = clean_materials_list
                     ex_m["lastUpdatedFromCrawl"] = datetime.now().strftime("%Y/%m/%d %H:%M")
                     print(f"  [✨ 資料ページ自動更新] [{ex_m.get('date')}] {ex_m.get('name')} (URL: {sub_url}, 資料: {len(clean_materials_list)}件)")
@@ -1158,7 +1295,9 @@ def sync_new_meetings_from_crawl(data, target, scraped_item):
             continue
 
         # 既にURLまたはタイトルが完全一致している場合はスキップ
-        if sub_url and sub_url in existing_urls:
+        # ※親URLと同じURL（親テーブル抽出等）の場合はURL一致スキップをパスし、回次・日付チェックへ進む
+        is_parent_url = (sub_url == council_parent_url.rstrip("/"))
+        if sub_url and not is_parent_url and sub_url in existing_urls:
             continue
         if sub_title and sub_title in existing_names:
             continue
