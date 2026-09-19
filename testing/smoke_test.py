@@ -769,6 +769,7 @@ def main():
     parser = argparse.ArgumentParser(description="PM-HUB Smoke Test Runner")
     parser.add_argument("--url", nargs="+", help="Explicit URLs to verify")
     parser.add_argument("--all", action="store_true", help="Check all URLs in data.json")
+    parser.add_argument("--skip-network", action="store_true", help="Skip network link health verification")
     args = parser.parse_args()
 
     print("==================================================")
@@ -776,7 +777,14 @@ def main():
     print("==================================================")
 
     syntax_ok = check_syntax_errors()
-    links_ok = check_link_health(explicit_urls=args.url, check_all=args.all)
+    if args.skip_network:
+        print("\n--------------------------------------------------")
+        print(" [テスト 2/17] リンク疎通確認")
+        print("--------------------------------------------------")
+        print("  [SKIP] --skip-network が指定されたため、ネットワーク疎通確認をスキップしました。")
+        links_ok = True
+    else:
+        links_ok = check_link_health(explicit_urls=args.url, check_all=args.all)
     unit_ok = check_js_unit_tests()
     dedup_ok = check_duplicate_meetings_quality()
     sync_ok = check_council_timeline_sync()

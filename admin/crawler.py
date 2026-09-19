@@ -12,6 +12,7 @@ import json
 import shutil
 import urllib.request
 import urllib.parse
+import ssl
 import re
 import time
 import threading
@@ -78,7 +79,9 @@ GENERIC_TITLE_KEYWORDS = frozenset({
     '法務省の個人情報保護について', '個人情報保護について', '法制審議会開催予定表', '開催予定表',
     '検査方針・研修実績等', '対象者別メニュー', '提供可能となる食品の情報',
     '新型コロナウイルス感染症に関する情報一覧', '感染症に関する情報一覧',
-    '審議会開催予定', '大臣等記者会見', '記者会見', '政策情報（会議・統計等）', '会議・委員会等'
+    '審議会開催予定', '大臣等記者会見', '記者会見', '政策情報（会議・統計等）', '会議・委員会等',
+    '能力開発基本調査', '調査の実施について', '問い合わせ先', '情報配信サービス', 'イベント概要',
+    'セミナーのご案内', 'セミナー案内', '労使関係セミナー', '公募情報', '意見募集', 'パブリックコメント'
 })
 
 # 組織常設資料（設置要綱・委員名簿・運営規程等）のキーワード（CR-20: 会議体資料であり開催回ではない）
@@ -96,7 +99,9 @@ COMMON_NAV_KEYWORDS = frozenset({
     '開催予定表', '検査方針・研修実績等', '対象者別メニュー', '提供可能となる食品の情報',
     '新型コロナウイルス感染症に関する情報一覧', '感染症に関する情報一覧',
     '審議会開催予定', '大臣等記者会見', '記者会見', '政策情報（会議・統計等）', '会議・委員会等',
-    'パンフレット', 'リーフレット', 'メールマガジン', 'メルマガ', 'ポスター'
+    'パンフレット', 'リーフレット', 'メールマガジン', 'メルマガ', 'ポスター',
+    '能力開発基本調査', '調査の実施について', '問い合わせ先', '情報配信サービス', 'イベント概要',
+    'セミナーのご案内', 'セミナー案内', '労使関係セミナー'
 })
 
 # 配付資料として不適切な汎用ナビゲーション・UIテキスト（事前除外用定数）
@@ -108,6 +113,26 @@ EXCLUDE_MATERIAL_NAMES = frozenset({
     '別ウィンドウで開く', '新しいウィンドウで開く', '（別ウィンドウで開く）',
     'JavaScriptが無効です', 'JavaScriptを有効にしてください'
 })
+
+# 省庁・行政機関名のサフィックス正規表現（全省庁・外局・委員会網羅）
+GOV_SUFFIX_REGEX = re.compile(
+    r'[\s\u3000]*[｜\|：:\-–—―]\s*(?:厚生労働省|内閣府|内閣官房|財務省|国税庁|金融庁|法務省|出入国在留管理庁|公安審査委員会|公安調査庁|外務省|文部科学省|文化庁|スポーツ庁|農林水産省|水産庁|林野庁|経済産業省|資源エネルギー庁|特許庁|中小企業庁|国土交通省|観光庁|気象庁|海上保安庁|環境省|原子力規制委員会|防衛省|防衛装備庁|デジタル庁|こども家庭庁|食品安全委員会|消費者庁|警察庁|消防庁|首相官邸.*|WARP.*)$'
+)
+
+def clean_meeting_title(title):
+    """
+    会議タイトルから末尾の省庁サフィックス、配付資料一覧、共通ノイズ等を除去・正規化する（CR-28）。
+    """
+    if not title:
+        return ""
+    t = str(title).strip()
+    # 1. 末尾の省庁・行政組織サフィックスの除去
+    t = GOV_SUFFIX_REGEX.sub('', t).strip()
+    # 2. 末尾の資料・配付資料・配付資料一覧等の除去
+    t = re.sub(r'[\s\u3000]*(?:配付|配布|会議)?資料(?:一覧)?$', '', t).strip()
+    # 3. 連続する空白を1つに正規化
+    t = re.sub(r'[\s\u3000]+', ' ', t).strip()
+    return t
 
 # デフォルトの日付抽出正規表現
 DEFAULT_DATE_REGEX = r'(?:令和|平成)(?:\d+|元)年\d+月\d+日|\d{4}年\d+月\d+日|\d{4}[/-]\d+[/-]\d+'
@@ -456,10 +481,35 @@ def _rate_limit_host(host):
     if sleep_needed > 0:
         time.sleep(sleep_needed)
 
+_SSL_CONTEXT = None
+def _get_ssl_context():
+    global _SSL_CONTEXT
+    if _SSL_CONTEXT is not None:
+        return _SSL_CONTEXT
+    ctx = ssl.create_default_context()
+    try:
+        import certifi
+        ctx.load_verify_locations(cafile=certifi.where())
+    except Exception:
+        pass
+    _SSL_CONTEXT = ctx
+    return _SSL_CONTEXT
+
+_SSL_FALLBACK_CONTEXT = None
+def _get_ssl_fallback_context():
+    global _SSL_FALLBACK_CONTEXT
+    if _SSL_FALLBACK_CONTEXT is not None:
+        return _SSL_FALLBACK_CONTEXT
+    ctx = ssl.create_default_context()
+    ctx.check_hostname = False
+    ctx.verify_mode = ssl.CERT_NONE
+    _SSL_FALLBACK_CONTEXT = ctx
+    return _SSL_FALLBACK_CONTEXT
+
 def fetch_url(url, timeout=12):
     parsed_url = urllib.parse.urlparse(url)
     if parsed_url.scheme not in ("http", "https"):
-        print(f"[ERROR] Invalid scheme: {url}", file=sys.stderr)
+        safe_emit_log(f"[ERROR] Invalid scheme: {url}")
         return None
 
     # CR-21, CR-26: 同一ホストへの過密アクセス防止（スレッドセーフ）
@@ -468,13 +518,31 @@ def fetch_url(url, timeout=12):
 
     headers = get_browser_headers()
     req = urllib.request.Request(url, headers=headers)
+    ctx = _get_ssl_context()
     try:
-        with urllib.request.urlopen(req, timeout=timeout) as response:
+        with urllib.request.urlopen(req, timeout=timeout, context=ctx) as response:
             content_type = response.headers.get('Content-Type', '')
             raw_bytes = response.read()
             return decode_html_bytes(raw_bytes, content_type)
+    except urllib.error.HTTPError as e:
+        safe_emit_log(f"  -> 🔴 [HTTP ERROR {e.code}] {url}: {e.reason}")
+        return None
+    except (ssl.SSLCertVerificationError, urllib.error.URLError) as e:
+        # 行政ドメインでのSSL証明書検証エラー時のみフォールバック試行
+        if ".go.jp" in host or "warp.da.ndl.go.jp" in host or "cao.go.jp" in host:
+            try:
+                fb_ctx = _get_ssl_fallback_context()
+                with urllib.request.urlopen(req, timeout=timeout, context=fb_ctx) as response:
+                    content_type = response.headers.get('Content-Type', '')
+                    raw_bytes = response.read()
+                    return decode_html_bytes(raw_bytes, content_type)
+            except Exception as fb_e:
+                safe_emit_log(f"  -> 🔴 [FETCH ERROR (SSL FB)] {url}: {fb_e}")
+                return None
+        safe_emit_log(f"  -> 🔴 [FETCH ERROR] {url}: {e}")
+        return None
     except Exception as e:
-        print(f"[ERROR] Failed to fetch {url}: {e}", file=sys.stderr)
+        safe_emit_log(f"  -> 🔴 [FETCH ERROR] {url}: {e}")
         return None
 
 def parse_materials_from_html(html, base_url, pdf_selector=None):
@@ -586,10 +654,7 @@ def extract_page_title(soup, rule=None, fallback_url=""):
                 found_tags = soup.find_all(tag_name)
                 for ft in found_tags:
                     t_cand = ft.get_text(" ", strip=True)
-                    # サフィックス・余分な空白の除去
-                    t_cand = re.sub(r'｜.*$', '', t_cand).strip()
-                    t_cand = re.sub(r' - .*$', '', t_cand).strip()
-                    t_cand = re.sub(r'\s+', ' ', t_cand).strip()
+                    t_cand = clean_meeting_title(t_cand)
                     if not t_cand or len(t_cand) <= 3:
                         continue
                     if any(kw == t_cand or (len(kw) >= 3 and kw in t_cand) for kw in GENERIC_TITLE_KEYWORDS):
@@ -602,17 +667,12 @@ def extract_page_title(soup, rule=None, fallback_url=""):
         # それでもなければ <title> タグ
         if not title and soup.title and soup.title.string:
             cand_title = soup.title.string.strip()
-            # サフィックス・余分な空白の除去
-            cand_title = re.sub(r'｜.*$', '', cand_title).strip()
-            cand_title = re.sub(r' - .*$', '', cand_title).strip()
-            cand_title = re.sub(r'\s+', ' ', cand_title).strip()
+            cand_title = clean_meeting_title(cand_title)
             if cand_title and not any(kw == cand_title for kw in GENERIC_TITLE_KEYWORDS):
                 title = cand_title
 
         if title:
-            title = re.sub(r'｜.*$', '', title).strip()
-            title = re.sub(r' - .*$', '', title).strip()
-            title = re.sub(r'\s+', ' ', title).strip()
+            title = clean_meeting_title(title)
             if any(kw == title for kw in GENERIC_TITLE_KEYWORDS):
                 title = ""
 
@@ -741,7 +801,7 @@ ROUND_OR_DATE_TEXT_PATTERN = re.compile(
 
 # デフォルトのサブページURL正規表現パターン（CR-14: 実在リンク判定用）
 DEFAULT_SUBPAGE_URL_REGEX = re.compile(
-    r'(?:dai\d+|\d+kai|kaisai|gijisidai|gijiroku|newpage_\d+|shingi2|session|meeting|siryou|bunkakai|\d{3,4}\.html?$|r0?\d+/|h\d+/)',
+    r'(?:dai\d+|\d+kai|kaisai|gijisidai|gijiroku|newpage_\d+|shingi2|session|meeting|siryou|bunkakai|\d{3,4}\.html?$|r0?\d+_\d+|r\d+kai|h\d+_\d+|r0?\d+-\d+)',
     re.IGNORECASE
 )
 
@@ -820,7 +880,17 @@ def extract_actual_subpage_links(html, target_url, rule=None, return_meta=False)
     target_domain = urllib.parse.urlparse(target_url).netloc.lower()
 
     custom_pattern = rule.get("subpage_discovery_pattern") if rule else None
-    custom_re = re.compile(custom_pattern, re.IGNORECASE) if custom_pattern else None
+    custom_re = None
+    if custom_pattern:
+        # href=["'](pattern)["'] や href="pattern" のプレフィックス・サフィックスを除去して純粋なURL正規表現に正規化
+        clean_pat = re.sub(r'^href\s*=\s*["\']?', '', custom_pattern, flags=re.IGNORECASE)
+        clean_pat = re.sub(r'["\']?$', '', clean_pat)
+        if clean_pat.startswith('(') and clean_pat.endswith(')') and clean_pat.count('(') == 1:
+            clean_pat = clean_pat[1:-1]
+        try:
+            custom_re = re.compile(clean_pat, re.IGNORECASE)
+        except Exception:
+            custom_re = None
 
     candidates = []
     meta_map = {}
@@ -876,6 +946,10 @@ def extract_actual_subpage_links(html, target_url, rule=None, return_meta=False)
         if is_preliminary_notice_page(abs_url, t_clean):
             continue
 
+        # 非会議リンク（調査、問い合わせ、イベント、セミナー等）の厳格除外
+        if any(kw in t_clean for kw in ['能力開発基本調査', '調査の実施について', '問い合わせ先', '情報配信サービス', 'イベント概要', 'セミナーのご案内', '労使関係セミナー', '公募情報']):
+            continue
+
         # 判定1: アンカーテキストに回次・開催・日付・資料キーワードが含まれるか
         is_subpage_by_text = bool(ROUND_OR_DATE_TEXT_PATTERN.search(t_clean))
 
@@ -883,9 +957,9 @@ def extract_actual_subpage_links(html, target_url, rule=None, return_meta=False)
         # ※アンカーテキストに会議要素がない場合、単なる数字HTML等の一般的URLは候補から除外
         is_subpage_by_url = False
         if custom_re:
-            is_subpage_by_url = bool(custom_re.search(href))
+            is_subpage_by_url = bool(custom_re.search(href) or custom_re.search(abs_url))
         elif DEFAULT_SUBPAGE_URL_REGEX.search(href):
-            has_strong_url_kw = bool(re.search(r'(?:dai\d+|\d+kai|kaisai|gijisidai|gijiroku|session|meeting|bunkakai|r0?\d+/|h\d+/)', href, re.IGNORECASE))
+            has_strong_url_kw = bool(re.search(r'(?:dai\d+|\d+kai|kaisai|gijisidai|gijiroku|session|meeting|bunkakai|r0?\d+_\d+|r\d+kai|h\d+_\d+|r0?\d+-\d+)', href, re.IGNORECASE))
             if is_subpage_by_text or has_strong_url_kw:
                 is_subpage_by_url = True
 
@@ -1569,21 +1643,38 @@ def is_generic_index_url(url, title=""):
 def is_preliminary_notice_page(url, title=""):
     """
     開催案内・事前告知ページ（例: .../kaisai/index.html, .../annai/..., .../kaisaiannai/..., 〜の開催について）や資料未添付の議事要旨・議事録単体ページであるかを判定。
-    これらは資料が掲載される会議ページではないため、独立した会議として追加しない。
+    これらは資料が掲載される会議ページではないため、独立した会議として追加しない（AGENTS.md 第11条・第12条）。
     """
     if not url and not title:
         return False
     u_lower = (url or "").lower()
-    # URLに /kaisai/ や /annai/ や /kaisaiannai/ や /online_kaisai 等が含まれる場合
-    if re.search(r'/(?:kaisai|kaisaiannai|online_kaisai|annai)/', u_lower) or u_lower.endswith('/kaisai.html') or 'kaisaiannai' in u_lower or '_annai_' in u_lower:
+    # URLに /annai/ や /kaisaiannai/ や /online_kaisai, /event/, /seminar/ 等が含まれる場合
+    if re.search(r'/(?:kaisaiannai|online_kaisai|annai|event|seminar)/', u_lower) or \
+       'kaisaiannai' in u_lower or '_annai_' in u_lower or \
+       'annai_' in u_lower or u_lower.endswith('/annai.html') or u_lower.endswith('/kaisai_annai.html') or \
+       'churoi/roushi' in u_lower:
         return True
-    # タイトルから末尾の省庁・委員会名サフィックスを除去して判定
-    t_clean = (title or "").strip()
-    t_clean = re.sub(r'[\s｜\|].*?(?:厚生労働省|内閣府|内閣官房|財務省|金融庁|法務省|経済産業省|文部科学省|総務省|外務省|農林水産省|国土交通省|環境省|防衛省|デジタル庁|こども家庭庁|食品安全委員会|原子力規制委員会|消費者庁|警察庁|文化庁|スポーツ庁|観光庁|気象庁|林野庁|水産庁).*$', '', t_clean).strip()
-    # 末尾の括弧表記（例: （非公開）、（WEB開催）、（持ち回り開催）等）を除去して判定
+
+    t_raw = (title or "").strip()
+    # 1. 末尾の省庁・行政機関名サフィックスを安全に除去（空白単体での過剰マッチを排除）
+    t_clean = GOV_SUFFIX_REGEX.sub('', t_raw).strip()
+    # 2. 末尾の括弧表記（例: （非公開）、（WEB開催）、（持ち回り開催）等）を一時的に除去
     t_clean = re.sub(r'[\(（][^\)）]+[\)）]$', '', t_clean).strip()
-    if re.search(r'(?:の開催について|の開催案内|の開催のお知らせ|開催のお知らせ|開催案内|傍聴の案内|傍聴について|の開催概要について|議事要旨|議事録)$', t_clean):
+
+    # 3. 末尾の開催案内・事前告知キーワード判定
+    if re.search(r'(?:の開催について|の開催案内|の開催のお知らせ|開催のお知らせ|開催案内|傍聴の案内|傍聴について|の開催概要について|傍聴の受付|議事要旨|議事録|のご案内|の案内|問い合わせ先|情報配信サービス)$', t_clean):
         return True
+
+    # 4. タイトル途中に「開催案内」「傍聴の案内」等が含まれる場合（例: 「第X回○○部会 開催案内」）
+    if re.search(r'(?:[\s\u3000]+|（|\()開催案内(?:[\s\u3000]+|）|\)|$)', t_raw):
+        return True
+    if re.search(r'(?:[\s\u3000]+|（|\()傍聴(?:の案内|について)?(?:[\s\u3000]+|）|\)|$)', t_raw):
+        return True
+
+    # 5. 非会議タイトル（セミナー、能力開発基本調査、問い合わせ先等）
+    if any(kw in t_raw for kw in ['能力開発基本調査', '調査の実施について', '問い合わせ先', '情報配信サービス', 'イベント概要', 'セミナーのご案内', '労使関係セミナー']):
+        return True
+
     return False
 
 
@@ -1652,6 +1743,7 @@ def _build_new_meeting(target, sub, clean_materials_list, sess_nums, meet_date, 
         formatted_title = re.sub(r'の開催について$', '', formatted_title)
         formatted_title = re.sub(r'[（\(](?:令和|平成)(?:\d+|元)年度.*?[）\)]$', '', formatted_title)
         formatted_title = formatted_title.strip()
+        formatted_title = clean_meeting_title(formatted_title)
 
     is_generic = not formatted_title or formatted_title.startswith("http") or any(kw == formatted_title for kw in GENERIC_TITLE_KEYWORDS)
     if is_generic:
@@ -1727,8 +1819,8 @@ def sync_new_meetings_from_crawl(data, target, scraped_item):
         if is_generic_index_url(sub_url, sub_title):
             continue
 
-        # 事前開催案内ページ（資料なしの事前告知）は会議ページとして登録しない
-        if is_preliminary_notice_page(sub_url, sub_title) and not sub_mats:
+        # 事前開催案内ページ（事前告知・傍聴案内等）は会議ページとして登録しない（AGENTS.md 第11条・第12条）
+        if is_preliminary_notice_page(sub_url, sub_title):
             continue
 
         # CR-19 / CR-20: 共通ナビ・広報リンク・組織常設資料およびジェネリックタイトルの登録遮断ガード
@@ -1824,6 +1916,19 @@ def sync_new_meetings_from_crawl(data, target, scraped_item):
             if not clean_materials_list:
                 continue
             if any(kw in sub_title for kw in GENERIC_TITLE_KEYWORDS) or any(kw in sub_title for kw in COMMON_NAV_KEYWORDS) or any(kw in sub_title for kw in ORGANIZATION_DOC_KEYWORDS):
+                continue
+
+        # 配付資料0件の場合の厳格ガード（AGENTS.md 第11条・第12条: 資料なし非会議ページの誤登録遮断）
+        if not clean_materials_list:
+            # 会議名キーワード（第X回、部会、分科会、委員会、検討会、有識者会議、審議会、協議会、WG等）が一切ない場合は除外
+            has_meeting_keyword = bool(re.search(
+                r'(?:第\s*[0-9０-９一二三四五六七八九十百]+\s*回|部会|分科会|委員会|検討会|有識者会議|審議会|協議会|ワーキンググループ|WG|小委員会|懇談会|会議)',
+                sub_title
+            ))
+            if not has_meeting_keyword:
+                continue
+            # タイトルに調査・セミナー等の非会議キーワードがある場合も除外
+            if any(kw in sub_title for kw in ['調査', 'アンケート', 'セミナー', '公募', '意見募集', '問い合わせ先', '情報配信サービス']):
                 continue
 
         # 同一会議体・同一日付の重複チェック（同日重複の自動防止および資料マージ）

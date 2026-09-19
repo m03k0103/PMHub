@@ -157,11 +157,101 @@ class TestCrawlerQualityV2Drop15(unittest.TestCase):
         self.assertFalse(is_generic_index_url("https://www.bunka.go.jp/seisaku/bunkashingikai/bijutsuhin/", title="文化審議会 美術品補償制度部会"))
 
 
+class TestCrawlerQualityFix20260919(unittest.TestCase):
+    """
+    2026-09-19 クロール品質修正・再発防止テスト
+    - 事前告知・開催案内ページの完全検出と除外（AGENTS.md 第11条・第12条）
+    - clean_meeting_title による省庁サフィックス・配付資料一覧ノイズの除去
+    - scrapingRules subpage_discovery_pattern の正規表現自動正規化
+    - 非会議リンク（能力開発基本調査等）の確実な除外
+    """
+
+    def test_preliminary_notice_detection(self):
+        from crawler import is_preliminary_notice_page
+        # 開催案内・告知パターン
+        self.assertTrue(is_preliminary_notice_page(
+            "https://www.mhlw.go.jp/stf/newpage_76036.html",
+            "第78回労働政策審議会人材開発分科会監理団体審査部会 開催案内｜厚生労働省"
+        ))
+        self.assertTrue(is_preliminary_notice_page(
+            "https://www.nta.go.jp/about/council/zeirishi/260818/120.htm",
+            "第120回　国税審議会 税理士分科会の開催について｜国税庁"
+        ))
+        self.assertTrue(is_preliminary_notice_page(
+            "https://www.mext.go.jp/b_menu/shingi/kokurituken/kaisai/1416001_00030.htm",
+            "国立研究開発法人審議会（第39回）の開催について：文部科学省"
+        ))
+        self.assertTrue(is_preliminary_notice_page(
+            "https://www.fsc.go.jp/senmon/sonota/annai/wg_amr_annai_64.html",
+            "薬剤耐性菌に関するワーキンググループ（第64回）の開催について（非公開） | 食品安全委員会"
+        ))
+        self.assertTrue(is_preliminary_notice_page(
+            "https://www.mhlw.go.jp/churoi/roushi/index.html",
+            "令和８年度 労使関係セミナーのご案内 (開催日不明)"
+        ))
+        self.assertTrue(is_preliminary_notice_page(
+            "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/koyou_roudou/jinzaikaihatsu/chousa/r1/index_00003.html",
+            "能力開発基本調査｜厚生労働省"
+        ))
+
+        # 本物の会議は除外されないこと（誤爆防止）
+        self.assertFalse(is_preliminary_notice_page(
+            "https://www.soumu.go.jp/main_sosiki/joho_tsusin/policyreports/denpa_kanri/kaisai/02kiban01_04000328.html",
+            "第1160回 電波監理審議会"
+        ))
+        self.assertFalse(is_preliminary_notice_page(
+            "https://www.mhlw.go.jp/stf/newpage_75356.html",
+            "第112回 厚生科学審議会予防接種・ワクチン分科会副反応検討部会"
+        ))
+
+    def test_clean_meeting_title(self):
+        from crawler import clean_meeting_title
+        # 1. 林野庁サフィックス・配付資料一覧
+        self.assertEqual(
+            clean_meeting_title("林政審議会施策部会（令和8年9月1日）配付資料一覧：林野庁"),
+            "林政審議会施策部会（令和8年9月1日）"
+        )
+        # 2. 厚労省サフィックス・資料
+        self.assertEqual(
+            clean_meeting_title("第264回社会保障審議会介護給付費分科会（web会議）資料｜厚生労働省"),
+            "第264回社会保障審議会介護給付費分科会（web会議）"
+        )
+        # 3. ALPS処理水・配付資料一覧
+        self.assertEqual(
+            clean_meeting_title("ＡＬＰＳ処理水の処分に関する基本方針の着実な実行に向けた関係閣僚等会議（第９回）配付資料一覧"),
+            "ＡＬＰＳ処理水の処分に関する基本方針の着実な実行に向けた関係閣僚等会議（第９回）"
+        )
+        # 4. 全角空白の正規化
+        self.assertEqual(
+            clean_meeting_title("第１０３７回　食品安全委員会"),
+            "第１０３７回 食品安全委員会"
+        )
+
+    def test_custom_rule_normalization_in_subpage_discovery(self):
+        """href=['\"](...)['\"] 形式のルールテンプレートが自動正規化されて実リンクを抽出できること"""
+        rule = {
+            "subpage_discovery_pattern": 'href=["\\\'](https://www\\.mhlw\\.go\\.jp/stf/(?:newpage_\\d+|shingi2/\\d+_\\d+)\\.html)["\\\']'
+        }
+        parent_url = "https://www.mhlw.go.jp/stf/shingi/shingi-hosho_126720.html"
+        mock_html = """
+        <html><body>
+            <a href="https://www.mhlw.go.jp/stf/newpage_75356.html">第112回会議資料</a>
+            <a href="https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/koyou_roudou/jinzaikaihatsu/chousa/r1/index_00003.html">能力開発基本調査</a>
+        </body></html>
+        """
+        discovered = extract_actual_subpage_links(mock_html, parent_url, rule=rule)
+        self.assertIn("https://www.mhlw.go.jp/stf/newpage_75356.html", discovered)
+        # 能力開発基本調査は非会議リンクとして除外されること
+        self.assertNotIn("https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/koyou_roudou/jinzaikaihatsu/chousa/r1/index_00003.html", discovered)
+
+
 def run_tests():
     print("==================================================")
     print(" Drop 15 クロール網羅性・品質向上テスト (test_crawler_quality_v2.py)")
     print("==================================================")
-    suite = unittest.TestLoader().loadTestsFromTestCase(TestCrawlerQualityV2Drop15)
+    suite = unittest.TestSuite()
+    suite.addTests(unittest.TestLoader().loadTestsFromTestCase(TestCrawlerQualityV2Drop15))
+    suite.addTests(unittest.TestLoader().loadTestsFromTestCase(TestCrawlerQualityFix20260919))
     runner = unittest.TextTestRunner(verbosity=2)
     result = runner.run(suite)
     return result.wasSuccessful()
