@@ -496,8 +496,71 @@ def _is_parent_or_nav_url(sub_url, target_url):
             return True
     return False
 
-def _crawl_subpages(target_url, html, rule, quirk_note, pdf_pattern):
-    """サブページの深掘りクロールロジック"""
+def _normalize_url_for_comparison(u):
+    """プロトコルや末尾スラッシュ・フラグメントの差異を吸収して比較用キーを生成"""
+    if not u or not isinstance(u, str):
+        return ""
+    u_clean = u.split('#')[0].strip()
+    parsed = urllib.parse.urlparse(u_clean)
+    netloc = parsed.netloc.lower()
+    path = parsed.path.rstrip('/')
+    query = parsed.query
+    return f"{netloc}{path}{'?' + query if query else ''}"
+
+def _filter_incremental_subpages(candidate_urls, existing_urls, max_unvisited=50, max_recent=2):
+    """
+    候補サブページ群を、登録済み開催回URLと照合して差分フィルタリングする。
+    - 未登録サブページ: 最大 max_unvisited 件（デフォルト50件）まで巡回
+    - 更新確認サブページ: 既登録のうち最新 max_recent 件（デフォルト2件）を巡回
+    - 既登録過去サブページ: スキップ（巡回しない）
+
+    戻り値:
+        target_urls: 巡回対象URLのリスト（最新順、未登録＋更新確認）
+        stats: {"unvisited": int, "recent_update": int, "skipped_known": int, "total_targets": int}
+    """
+    if not candidate_urls:
+        return [], {"unvisited": 0, "recent_update": 0, "skipped_known": 0, "total_targets": 0}
+
+    # 既登録URLの正規化セット
+    existing_set = set()
+    if existing_urls:
+        for eu in existing_urls:
+            norm_eu = _normalize_url_for_comparison(eu)
+            if norm_eu:
+                existing_set.add(norm_eu)
+
+    unvisited_selected = []
+    recent_selected = []
+    skipped_known = []
+
+    # candidate_urls は最新順（降順）にソート済みであることを前提とする
+    for u in candidate_urls:
+        norm_u = _normalize_url_for_comparison(u)
+        if not norm_u:
+            continue
+
+        if norm_u in existing_set:
+            if len(recent_selected) < max_recent:
+                recent_selected.append(u)
+            else:
+                skipped_known.append(u)
+        else:
+            if len(unvisited_selected) < max_unvisited:
+                unvisited_selected.append(u)
+
+    combined = unvisited_selected + recent_selected
+    target_urls = _sort_subpage_urls_by_recency(combined)
+
+    stats = {
+        "unvisited": len(unvisited_selected),
+        "recent_update": len(recent_selected),
+        "skipped_known": len(skipped_known),
+        "total_targets": len(target_urls)
+    }
+    return target_urls, stats
+
+def _crawl_subpages(target_url, html, rule, quirk_note, pdf_pattern, existing_urls=None):
+    """サブページの深掘りクロールロジック（スマート差分探索エンジン対応）"""
     subpage_meetings = []
     additional_materials = []
     all_extracted_dates = []
@@ -518,11 +581,20 @@ def _crawl_subpages(target_url, html, rule, quirk_note, pdf_pattern):
             and not is_generic_index_url(u)
             and not any(k in u.lower() for k in ['cas.go.jp/jp/siryou', 'cas.go.jp/jp/shiryo'])
         ]
-        # 最新と思われる順（降順）にソートして最大25件まで巡回
-        sorted_subpages = _sort_subpage_urls_by_recency(filtered_subpages)[:25]
-        print(f"   [2回目情報取得Engine ({quirk_note})] サブページ {len(sorted_subpages)} 件を深掘り巡回中...")
+        # 最新と思われる順（降順）にソートして差分巡回フィルタを適用
+        sorted_subpages = _sort_subpage_urls_by_recency(filtered_subpages)
+        target_subpages, inc_stats = _filter_incremental_subpages(
+            sorted_subpages,
+            existing_urls,
+            max_unvisited=50,
+            max_recent=2
+        )
+        if inc_stats["skipped_known"] > 0 or inc_stats["unvisited"] > 0:
+            print(f"   [差分巡回 ({quirk_note})] 未登録 {inc_stats['unvisited']} 件, 更新確認 {inc_stats['recent_update']} 件, 既登録スキップ {inc_stats['skipped_known']} 件 (探索対象: 計 {inc_stats['total_targets']} 件)")
+        else:
+            print(f"   [2回目情報取得Engine ({quirk_note})] サブページ {len(target_subpages)} 件を深掘り巡回中...")
 
-        for sub_url in sorted_subpages:
+        for sub_url in target_subpages:
             parsed_url = urllib.parse.urlparse(sub_url)
             if parsed_url.scheme not in ('http', 'https'):
                 continue
@@ -986,9 +1058,12 @@ def execute_rule_retrieval(target, html, rule_item, use_llm=False):
     pdf_pattern = rule.get("pdf_selector", r'href=["\']([^"\']+\.pdf)["\']')
     top_materials = parse_materials_from_html(html, target["url"], pdf_pattern)
     
-    # ディープクロールは常に実行（サブページを深掘りして配付資料を収集）
+    # ディープクロールは常に実行（スマート差分探索エンジンによりサブページを深掘りして配付資料を収集）
     all_extracted_dates = []
-    new_meetings, new_materials, new_dates = _crawl_subpages(target["url"], html, rule, quirk_note, pdf_pattern)
+    existing_urls = target.get("existing_meeting_urls")
+    new_meetings, new_materials, new_dates = _crawl_subpages(
+        target["url"], html, rule, quirk_note, pdf_pattern, existing_urls=existing_urls
+    )
     subpage_meetings.extend(new_meetings)
     top_materials.extend(new_materials)
     all_extracted_dates.extend(new_dates)
@@ -1614,6 +1689,16 @@ def run_meeting_crawler(progress_callback=None, stop_event=None):
             "newly_added_list": [],
             "log_file": log_filepath
         }
+        # 会議体ごとの既登録開催回URL（officialUrl）マップを事前構築（スマート差分探索エンジン用）
+        councils_meeting_urls = {}
+        for m in data.get("meetings", []):
+            cid = m.get("councilId")
+            u = m.get("officialUrl")
+            if cid and u:
+                if cid not in councils_meeting_urls:
+                    councils_meeting_urls[cid] = set()
+                councils_meeting_urls[cid].add(u)
+
         total_councils = len(CRAWL_TARGETS)
 
         for idx, target in enumerate(CRAWL_TARGETS, 1):
@@ -1644,6 +1729,7 @@ def run_meeting_crawler(progress_callback=None, stop_event=None):
                 
                 if html:
                     c_id = target["id"]
+                    target["existing_meeting_urls"] = councils_meeting_urls.get(c_id, set())
                     rule_obj = rules.get(c_id, {
                         "rule_id": "rule-fallback-v1",
                         "rules": {}
