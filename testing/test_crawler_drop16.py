@@ -20,11 +20,12 @@ import io
 import re
 
 sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "admin"))
-from utils import setup_win32_utf8
+from utils import setup_win32_utf8, load_data_json
 setup_win32_utf8()
 
 import crawler
 from crawler import (
+    safe_emit_log,
     interleave_by_host_and_ministry,
     _extract_council_host,
     extract_actual_subpage_links,
@@ -40,7 +41,7 @@ from cleanup_nav_meetings import is_junk_meeting
 class TestDrop16CrawlerRobustness(unittest.TestCase):
 
     def test_cr18_emit_stdout_safety(self):
-        """CR-18: stdout が OSError や UnicodeEncodeError を投げても emit() が例外を上位へ伝播させないこと"""
+        """CR-18: stdout が OSError や UnicodeEncodeError を投げても safe_emit_log() が例外を上位へ伝播させないこと"""
         class BrokenStdout(io.StringIO):
             def write(self, s):
                 raise OSError(22, "Invalid argument")
@@ -48,15 +49,8 @@ class TestDrop16CrawlerRobustness(unittest.TestCase):
         orig_stdout = sys.stdout
         try:
             sys.stdout = BrokenStdout()
-            # emit 関数の定義と同等の安全ガードをテスト
-            def safe_emit(msg):
-                try:
-                    print(msg)
-                except (OSError, UnicodeEncodeError):
-                    pass
-
-            # 例外が発生せず正常に復帰すること
-            safe_emit("テスト出力 📦 絵文字含む")
+            # 本番 crawler.py の safe_emit_log を直接検証
+            safe_emit_log("テスト出力 📦 絵文字含む")
         finally:
             sys.stdout = orig_stdout
 
@@ -101,8 +95,7 @@ class TestDrop16CrawlerRobustness(unittest.TestCase):
 
     def test_cr21_host_interleaving(self):
         """CR-21: interleave_by_host_and_ministry により同一ホストが連続しないこと（METI/ANRE分散検証）"""
-        with open(DATA_JSON_FILE, "r", encoding="utf-8") as f:
-            data = json.load(f)
+        data = load_data_json(DATA_JSON_FILE, cached=True)
         councils = data.get("councils", [])
 
         interleaved = interleave_by_host_and_ministry(councils)
@@ -125,8 +118,7 @@ class TestDrop16CrawlerRobustness(unittest.TestCase):
 
     def test_cr22_clean_and_repair_data_invariance(self):
         """CR-22: クリーンアップ後の docs/data.json にゴミ開催回・重複開催回が存在しないこと"""
-        with open(DATA_JSON_FILE, "r", encoding="utf-8") as f:
-            data = json.load(f)
+        data = load_data_json(DATA_JSON_FILE, cached=True)
         meetings = data.get("meetings", [])
 
         junk_count = sum(1 for m in meetings if is_junk_meeting(m)[0])

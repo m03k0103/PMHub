@@ -21,7 +21,7 @@ import threading
 from datetime import datetime, timedelta
 
 sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "admin"))
-from utils import setup_win32_utf8
+from utils import setup_win32_utf8, load_data_json
 setup_win32_utf8()
 
 import crawler
@@ -90,9 +90,7 @@ class TestDrop17CrawlerSpeedup(unittest.TestCase):
 
     def test_cr24_is_closed_filtering(self):
         """CR-24: isClosed: true の会議体がデフォルトで除外され、include_closed=True で抽出されること"""
-        # テスト用のダミー会議体マスターを読み込み確認
-        with open(DATA_JSON_FILE, "r", encoding="utf-8") as f:
-            data = json.load(f)
+        data = load_data_json(DATA_JSON_FILE, cached=True)
 
         # 一時的に先頭の会議体に isClosed: true を設定したデータで検証
         original_councils = data.get("councils", [])
@@ -114,8 +112,7 @@ class TestDrop17CrawlerSpeedup(unittest.TestCase):
 
     def test_cr25_manage_closed_councils_functions(self):
         """CR-25: manage_closed_councils の set/unset が dry-run で安全に動作すること"""
-        with open(DATA_JSON_FILE, "r", encoding="utf-8") as f:
-            data = json.load(f)
+        data = load_data_json(DATA_JSON_FILE, cached=True)
 
         councils = data.get("councils", [])
         self.assertTrue(len(councils) > 0)
@@ -135,25 +132,29 @@ class TestDrop17CrawlerSpeedup(unittest.TestCase):
         call_times = []
         lock = threading.Lock()
 
-        def worker():
-            _rate_limit_host(test_host)
-            with lock:
-                call_times.append(time.time())
+        # テスト高速化のため一時的に待機間隔を 0.05秒にモックパッチ（スレッドセーフ検証の本質は100%維持）
+        orig_interval = crawler._MIN_HOST_INTERVAL
+        crawler._MIN_HOST_INTERVAL = 0.05
+        try:
+            def worker():
+                _rate_limit_host(test_host)
+                with lock:
+                    call_times.append(time.time())
 
-        threads = [threading.Thread(target=worker) for _ in range(3)]
-        t_start = time.time()
-        for t in threads:
-            t.start()
-        for t in threads:
-            t.join()
+            threads = [threading.Thread(target=worker) for _ in range(3)]
+            for t in threads:
+                t.start()
+            for t in threads:
+                t.join()
 
-        # 3回の呼び出し間隔がそれぞれ _MIN_HOST_INTERVAL (0.5秒) 以上離れていること
-        call_times.sort()
-        self.assertEqual(len(call_times), 3)
-        for i in range(len(call_times) - 1):
-            interval = call_times[i + 1] - call_times[i]
-            # 許容誤差を考慮して 0.45秒以上
-            self.assertGreaterEqual(interval, _MIN_HOST_INTERVAL - 0.08, f"間隔が短すぎます: {interval:.3f}s")
+            # 3回の呼び出し間隔がそれぞれ _MIN_HOST_INTERVAL (0.05秒) 以上離れていること
+            call_times.sort()
+            self.assertEqual(len(call_times), 3)
+            for i in range(len(call_times) - 1):
+                interval = call_times[i + 1] - call_times[i]
+                self.assertGreaterEqual(interval, crawler._MIN_HOST_INTERVAL - 0.015, f"間隔が短すぎます: {interval:.3f}s")
+        finally:
+            crawler._MIN_HOST_INTERVAL = orig_interval
 
     def test_cr27_stop_event_interruption(self):
         """CR-27: stop_event がセットされた場合、直ちにクローラーが安全中断すること（本番JSON保護のためsaveはモック）"""

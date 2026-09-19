@@ -22,8 +22,13 @@ import shutil
 from html.parser import HTMLParser
 
 PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-sys.path.insert(0, os.path.join(PROJECT_ROOT, "admin"))
-from utils import setup_win32_utf8, get_browser_headers
+ADMIN_DIR = os.path.join(PROJECT_ROOT, "admin")
+TESTING_DIR = os.path.join(PROJECT_ROOT, "testing")
+for p in [ADMIN_DIR, TESTING_DIR]:
+    if p not in sys.path:
+        sys.path.insert(0, p)
+
+from utils import setup_win32_utf8, get_browser_headers, load_data_json, validate_council_id, validate_meeting_id
 setup_win32_utf8()
 
 
@@ -138,6 +143,7 @@ def check_syntax_errors():
         os.path.join(PROJECT_ROOT, "testing", "test_no_duplicate_meetings.py"),
         os.path.join(PROJECT_ROOT, "testing", "test_crawler_regression.py"),
         os.path.join(PROJECT_ROOT, "testing", "test_admin_server.py"),
+        os.path.join(PROJECT_ROOT, "testing", "test_crawler_suite.py"),
         os.path.join(PROJECT_ROOT, "testing", "test_crawler_foundation.py"),
         os.path.join(PROJECT_ROOT, "testing", "test_crawler_parent_table.py"),
         os.path.join(PROJECT_ROOT, "testing", "test_scraping_rules_reorg.py"),
@@ -293,7 +299,7 @@ def check_link_health(explicit_urls=None, check_all=False):
     import time
     from collections import defaultdict
     print("\n--------------------------------------------------")
-    print(" [テスト 2/14] リンク疎通確認 (追加・変更 URL のみ対象)")
+    print(" [テスト 2/17] リンク疎通確認 (追加・変更 URL のみ対象)")
     print("--------------------------------------------------")
 
     target_urls = []
@@ -385,7 +391,7 @@ def check_link_health(explicit_urls=None, check_all=False):
 def check_js_unit_tests():
     """3. JSユーティリティ関数（セキュリティ・サニタイズ・フォーマット）の単体テスト実行"""
     print("\n--------------------------------------------------")
-    print(" [テスト 3/14] JSユーティリティ単体テスト (app.test.js)")
+    print(" [テスト 3/17] JSユーティリティ単体テスト (app.test.js)")
     print("--------------------------------------------------")
     try:
         node_cmd = get_node_command()
@@ -409,7 +415,7 @@ def check_js_unit_tests():
 def check_duplicate_meetings_quality():
     """4. 会議レコード品質・回次整合性・重複排除の自動検証"""
     print("\n--------------------------------------------------")
-    print(" [テスト 4/14] 会議品質・回次整合性・重複排除検証 (test_no_duplicate_meetings.py)")
+    print(" [テスト 4/17] 会議品質・回次整合性・重複排除検証 (test_no_duplicate_meetings.py)")
     print("--------------------------------------------------")
     test_script = os.path.join(PROJECT_ROOT, "testing", "test_no_duplicate_meetings.py")
     if not os.path.exists(test_script):
@@ -434,18 +440,16 @@ def check_duplicate_meetings_quality():
 def check_council_timeline_sync():
     """5. 会議体一覧 (COUNCILS), タイムライン (MEETINGS) の ID整合性自動検証"""
     print("\n--------------------------------------------------")
-    print(" [テスト 5/14] 会議体・タイムライン・除外リスト ID完全整合性検証")
+    print(" [テスト 5/17] 会議体・タイムライン・除外リスト ID完全整合性検証")
     print("--------------------------------------------------")
 
     data_json_path = os.path.join(PROJECT_ROOT, "docs", "data.json")
     rejected_json_path = os.path.join(PROJECT_ROOT, "admin", "rejected_councils.json")
 
-    if not os.path.exists(data_json_path):
+    data = load_data_json(data_json_path, cached=True)
+    if not data:
         print("  [FAIL] data.json が見つかりません")
         return False
-
-    with open(data_json_path, "r", encoding="utf-8") as f:
-        data = json.load(f)
 
     councils = data.get("councils", [])
     meetings = data.get("meetings", [])
@@ -461,14 +465,14 @@ def check_council_timeline_sync():
 
     councils_set = set(councils_ids)
 
-    # Format check: councilId must have exactly 1 hyphen, meeting.id must have exactly 3 hyphens
-    invalid_c_ids = [cid for cid in councils_ids if cid.count('-') != 1 or not re.match(r'^[a-z]+-[a-z0-9_]+$', cid)]
+    # Format check: councilId must have exactly 1 hyphen, meeting.id must have exactly 3 hyphens (using utils validators)
+    invalid_c_ids = [cid for cid in councils_ids if not validate_council_id(cid)]
     if invalid_c_ids:
         print(f"  [FAIL] 不正な councilId フォーマット (要 1ハイフン): {invalid_c_ids[:5]}")
         return False
 
     meeting_ids = [m.get("id", "") for m in meetings]
-    invalid_m_ids = [mid for mid in meeting_ids if mid.count('-') != 3 or not re.match(r'^[a-z]+-[a-z0-9_]+-\d{8}-[a-z0-9_]+$', mid)]
+    invalid_m_ids = [mid for mid in meeting_ids if not validate_meeting_id(mid)]
     if invalid_m_ids:
         print(f"  [FAIL] 不正な meetingId フォーマット (要 3ハイフン/4セグメント): {invalid_m_ids[:5]}")
         return False
@@ -503,7 +507,7 @@ def check_council_timeline_sync():
 def check_view_rendering():
     """6. UI表示自動検証（公開ポータル＆管理ダッシュボードのDOM整合性チェック）"""
     print("\n--------------------------------------------------")
-    print(" [テスト 6/14] UI表示機能検証（ポータル＆管理ダッシュボード構造）")
+    print(" [テスト 6/17] UI表示機能検証（ポータル＆管理ダッシュボード構造）")
     print("--------------------------------------------------")
 
     app_js_path = os.path.join(PROJECT_ROOT, "docs", "app.js")
@@ -549,7 +553,7 @@ def check_view_rendering():
 def check_crawler_regression():
     """7. クローラーの手動保護回帰テストを実行"""
     print("\n--------------------------------------------------")
-    print(" [テスト 7/14] クローラー手動データ保護回帰テスト")
+    print(" [テスト 7/17] クローラー手動データ保護回帰テスト")
     print("--------------------------------------------------")
     test_script = os.path.join(PROJECT_ROOT, "testing", "test_crawler_regression.py")
     if not os.path.exists(test_script):
@@ -574,7 +578,7 @@ def check_crawler_regression():
 def check_js_runtime_crash():
     """8. JavaScript 実行時クラッシュ・TDZ・初期化検証（公開ポータル＆管理ダッシュボード）"""
     print("\n--------------------------------------------------")
-    print(" [テスト 8/14] JavaScript 実行時クラッシュ・TDZ・描画検証")
+    print(" [テスト 8/17] JavaScript 実行時クラッシュ・TDZ・描画検証")
     print("--------------------------------------------------")
     node_cmd = get_node_command()
     test_script = os.path.join(PROJECT_ROOT, "testing", "test_js_runtime.js")
@@ -600,7 +604,7 @@ def check_js_runtime_crash():
 def check_admin_server_api():
     """9. 管理サーバー (admin/server.py) の主要 API 自動単体・統合テストを実行"""
     print("\n--------------------------------------------------")
-    print(" [テスト 9/14] 管理サーバー API 単体・統合テスト (test_admin_server.py)")
+    print(" [テスト 9/17] 管理サーバー API 単体・統合テスト (test_admin_server.py)")
     print("--------------------------------------------------")
     test_script = os.path.join(PROJECT_ROOT, "testing", "test_admin_server.py")
     if not os.path.exists(test_script):
@@ -622,205 +626,144 @@ def check_admin_server_api():
                     print(f"    {line}")
         return False
 
+def _run_inprocess_or_fallback(test_case_class, script_filename, pass_msg, fail_title):
+    """単一プロセス内での高速実行を試行し、例外時は個別スクリプトへ安全フォールバック"""
+    try:
+        from test_crawler_suite import run_crawler_test_case
+        ok, out = run_crawler_test_case(test_case_class)
+        if ok:
+            print(f"  [PASS] {pass_msg}")
+            return True
+        else:
+            print(f"  [FAIL] {fail_title}でエラーが検出されました:")
+            for line in out.splitlines():
+                if line.strip():
+                    print(f"    {line}")
+            return False
+    except Exception:
+        test_script = os.path.join(PROJECT_ROOT, "testing", script_filename)
+        if not os.path.exists(test_script):
+            print(f"  [SKIP] {script_filename} が見つかりません")
+            return True
+
+        res = subprocess.run([sys.executable, test_script], capture_output=True, text=True, encoding='utf-8', errors='replace')
+        if res.returncode == 0:
+            print(f"  [PASS] {pass_msg}")
+            return True
+        else:
+            print(f"  [FAIL] {fail_title}でエラーが検出されました:")
+            for line in res.stdout.splitlines():
+                if line.strip():
+                    print(f"    {line}")
+            if res.stderr:
+                for line in res.stderr.splitlines():
+                    if line.strip():
+                        print(f"    {line}")
+            return False
+
 def check_crawler_foundation():
     """10. クローラー基盤テスト（CR-1 スキップリンク保護・CR-2 最新優先ソート・CR-4 ジェネリック見出し除外）"""
     print("\n--------------------------------------------------")
-    print(" [テスト 10/14] クローラー基盤・誤判定防止テスト (test_crawler_foundation.py)")
+    print(" [テスト 10/17] クローラー基盤・誤判定防止テスト (test_crawler_foundation.py)")
     print("--------------------------------------------------")
-    test_script = os.path.join(PROJECT_ROOT, "testing", "test_crawler_foundation.py")
-    if not os.path.exists(test_script):
-        print("  [SKIP] test_crawler_foundation.py が見つかりません")
-        return True
-
-    res = subprocess.run([sys.executable, test_script], capture_output=True, text=True, encoding='utf-8', errors='replace')
-    if res.returncode == 0:
-        print("  [PASS] クローラー基盤単体テスト（スキップリンク保護・最新ソート・ジェネリック除外）全件合格")
-        return True
-    else:
-        print("  [FAIL] クローラー基盤テストでエラーが検出されました:")
-        for line in res.stdout.splitlines():
-            if line.strip():
-                print(f"    {line}")
-        if res.stderr:
-            for line in res.stderr.splitlines():
-                if line.strip():
-                    print(f"    {line}")
-        return False
+    from test_crawler_foundation import TestCrawlerFoundationPhaseJ
+    return _run_inprocess_or_fallback(
+        TestCrawlerFoundationPhaseJ,
+        "test_crawler_foundation.py",
+        "クローラー基盤単体テスト（スキップリンク保護・最新ソート・ジェネリック除外）全件合格",
+        "クローラー基盤テスト"
+    )
 
 def check_crawler_parent_table():
     """11. 親テーブル開催回抽出テスト（CR-5 親テーブル解析・CR-6 開催回同期連携）"""
     print("\n--------------------------------------------------")
-    print(" [テスト 11/14] 親テーブル開催回抽出テスト (test_crawler_parent_table.py)")
+    print(" [テスト 11/17] 親テーブル開催回抽出テスト (test_crawler_parent_table.py)")
     print("--------------------------------------------------")
-    test_script = os.path.join(PROJECT_ROOT, "testing", "test_crawler_parent_table.py")
-    if not os.path.exists(test_script):
-        print("  [SKIP] test_crawler_parent_table.py が見つかりません")
-        return True
-
-    res = subprocess.run([sys.executable, test_script], capture_output=True, text=True, encoding='utf-8', errors='replace')
-    if res.returncode == 0:
-        print("  [PASS] 親テーブル開催回・配付資料抽出および同期連携テスト全件合格")
-        return True
-    else:
-        print("  [FAIL] 親テーブル開催回抽出テストでエラーが検出されました:")
-        for line in res.stdout.splitlines():
-            if line.strip():
-                print(f"    {line}")
-        if res.stderr:
-            for line in res.stderr.splitlines():
-                if line.strip():
-                    print(f"    {line}")
-        return False
+    from test_crawler_parent_table import TestCrawlerParentTableDrop11
+    return _run_inprocess_or_fallback(
+        TestCrawlerParentTableDrop11,
+        "test_crawler_parent_table.py",
+        "親テーブル開催回・配付資料抽出および同期連携テスト全件合格",
+        "親テーブル開催回抽出テスト"
+    )
 
 def check_scraping_rules_quality():
     """12. スクレイピングルール整合性テスト（CR-7 孤立削除・CR-8 テンプレート集約・CR-9 全件適用）"""
     print("\n--------------------------------------------------")
-    print(" [テスト 12/14] スクレイピングルール整合性検証 (test_scraping_rules_reorg.py)")
+    print(" [テスト 12/17] スクレイピングルール整合性検証 (test_scraping_rules_reorg.py)")
     print("--------------------------------------------------")
-    test_script = os.path.join(PROJECT_ROOT, "testing", "test_scraping_rules_reorg.py")
-    if not os.path.exists(test_script):
-        print("  [SKIP] test_scraping_rules_reorg.py が見つかりません")
-        return True
-
-    res = subprocess.run([sys.executable, test_script], capture_output=True, text=True, encoding='utf-8', errors='replace')
-    if res.returncode == 0:
-        print("  [PASS] 孤立ルール0件・全会議体100%ルール適用・テンプレート継承完全検証合格")
-        return True
-    else:
-        print("  [FAIL] スクレイピングルール整合性検証でエラーが検出されました:")
-        for line in res.stdout.splitlines():
-            if line.strip():
-                print(f"    {line}")
-        if res.stderr:
-            for line in res.stderr.splitlines():
-                if line.strip():
-                    print(f"    {line}")
-        return False
+    from test_scraping_rules_reorg import TestScrapingRulesReorganization
+    return _run_inprocess_or_fallback(
+        TestScrapingRulesReorganization,
+        "test_scraping_rules_reorg.py",
+        "孤立ルール0件・全会議体100%ルール適用・テンプレート継承完全検証合格",
+        "スクレイピングルール整合性検証"
+    )
 
 def check_crawler_incremental():
     """13. スマート差分探索エンジン単体テスト（CR-10 既登録スキップ・最新更新確認・CR-11 差分巡回）"""
     print("\n--------------------------------------------------")
-    print(" [テスト 13/14] スマート差分探索エンジン検証 (test_crawler_incremental.py)")
+    print(" [テスト 13/17] スマート差分探索エンジン検証 (test_crawler_incremental.py)")
     print("--------------------------------------------------")
-    test_script = os.path.join(PROJECT_ROOT, "testing", "test_crawler_incremental.py")
-    if not os.path.exists(test_script):
-        print("  [SKIP] test_crawler_incremental.py が見つかりません")
-        return True
-
-    res = subprocess.run([sys.executable, test_script], capture_output=True, text=True, encoding='utf-8', errors='replace')
-    if res.returncode == 0:
-        print("  [PASS] 既登録スキップ・最新更新確認・未登録最大50件差分巡回テスト全件合格")
-        return True
-    else:
-        print("  [FAIL] スマート差分探索エンジン検証でエラーが検出されました:")
-        for line in res.stdout.splitlines():
-            if line.strip():
-                print(f"    {line}")
-        if res.stderr:
-            for line in res.stderr.splitlines():
-                if line.strip():
-                    print(f"    {line}")
-        return False
+    from test_crawler_incremental import TestCrawlerIncrementalDrop13
+    return _run_inprocess_or_fallback(
+        TestCrawlerIncrementalDrop13,
+        "test_crawler_incremental.py",
+        "既登録スキップ・最新更新確認・未登録最大50件差分巡回テスト全件合格",
+        "スマート差分探索エンジン検証"
+    )
 
 def check_crawler_quality():
     """14. クロール品質判定・2099日付検知単体テスト（CR-12 成否判定精緻化・CR-13 プレースホルダー日付自動検知）"""
     print("\n--------------------------------------------------")
-    print(" [テスト 14/15] クロール品質判定・2099日付検知検証 (test_crawler_quality.py)")
+    print(" [テスト 14/17] クロール品質判定・2099日付検知検証 (test_crawler_quality.py)")
     print("--------------------------------------------------")
-    test_script = os.path.join(PROJECT_ROOT, "testing", "test_crawler_quality.py")
-    if not os.path.exists(test_script):
-        print("  [SKIP] test_crawler_quality.py が見つかりません")
-        return True
-
-    res = subprocess.run([sys.executable, test_script], capture_output=True, text=True, encoding='utf-8', errors='replace')
-    if res.returncode == 0:
-        print("  [PASS] 成否判定精緻化・判定理由記録・2099ダミー日付自動検知テスト全件合格")
-        return True
-    else:
-        print("  [FAIL] クロール品質判定・2099日付検知検証でエラーが検出されました:")
-        for line in res.stdout.splitlines():
-            if line.strip():
-                print(f"    {line}")
-        if res.stderr:
-            for line in res.stderr.splitlines():
-                if line.strip():
-                    print(f"    {line}")
-        return False
+    from test_crawler_quality import TestCrawlerQualityDrop14
+    return _run_inprocess_or_fallback(
+        TestCrawlerQualityDrop14,
+        "test_crawler_quality.py",
+        "成否判定精緻化・判定理由記録・2099ダミー日付自動検知テスト全件合格",
+        "クロール品質判定・2099日付検知検証"
+    )
 
 def check_crawler_quality_v2():
     """15. Drop 15 クロール網羅性・実リンク解析・archiveUrl・URL日付復元検証（CR-14〜CR-17）"""
     print("\n--------------------------------------------------")
-    print(" [テスト 15/15] クロール網羅性・実リンク解析・archiveUrl・URL日付復元検証 (test_crawler_quality_v2.py)")
+    print(" [テスト 15/17] クロール網羅性・実リンク解析・archiveUrl・URL日付復元検証 (test_crawler_quality_v2.py)")
     print("--------------------------------------------------")
-    test_script = os.path.join(PROJECT_ROOT, "testing", "test_crawler_quality_v2.py")
-    if not os.path.exists(test_script):
-        print("  [SKIP] test_crawler_quality_v2.py が見つかりません")
-        return True
-
-    res = subprocess.run([sys.executable, test_script], capture_output=True, text=True, encoding='utf-8', errors='replace')
-    if res.returncode == 0:
-        print("  [PASS] 実リンクアンカーテキスト抽出・archiveUrl起点・URL日付復元・ポータル除外テスト全件合格")
-        return True
-    else:
-        print("  [FAIL] クロール網羅性・実リンク解析検証でエラーが検出されました:")
-        for line in res.stdout.splitlines():
-            if line.strip():
-                print(f"    {line}")
-        if res.stderr:
-            for line in res.stderr.splitlines():
-                if line.strip():
-                    print(f"    {line}")
-        return False
+    from test_crawler_quality_v2 import TestCrawlerQualityV2Drop15
+    return _run_inprocess_or_fallback(
+        TestCrawlerQualityV2Drop15,
+        "test_crawler_quality_v2.py",
+        "実リンクアンカーテキスト抽出・archiveUrl起点・URL日付復元・ポータル除外テスト全件合格",
+        "クロール網羅性・実リンク解析検証"
+    )
 
 def check_crawler_drop16():
     """16. Drop 16 クロール堅牢化・共通ナビ除外・常設資料分離・ホストインターリーブ検証（CR-18〜CR-22）"""
     print("\n--------------------------------------------------")
-    print(" [テスト 16/16] クロール堅牢化・共通ナビ除外・ホスト分散検証 (test_crawler_drop16.py)")
+    print(" [テスト 16/17] クロール堅牢化・共通ナビ除外・ホスト分散検証 (test_crawler_drop16.py)")
     print("--------------------------------------------------")
-    test_script = os.path.join(PROJECT_ROOT, "testing", "test_crawler_drop16.py")
-    if not os.path.exists(test_script):
-        print("  [SKIP] test_crawler_drop16.py が見つかりません")
-        return True
-
-    res = subprocess.run([sys.executable, test_script], capture_output=True, text=True, encoding='utf-8', errors='replace')
-    if res.returncode == 0:
-        print("  [PASS] stdout保護・共通ナビ除外・組織常設資料分離・ホスト分散・データ整合性テスト全件合格")
-        return True
-    else:
-        print("  [FAIL] Drop 16 クロール堅牢化検証でエラーが検出されました:")
-        for line in res.stdout.splitlines():
-            if line.strip():
-                print(f"    {line}")
-        if res.stderr:
-            for line in res.stderr.splitlines():
-                if line.strip():
-                    print(f"    {line}")
-        return False
+    from test_crawler_drop16 import TestDrop16CrawlerRobustness
+    return _run_inprocess_or_fallback(
+        TestDrop16CrawlerRobustness,
+        "test_crawler_drop16.py",
+        "stdout保護・共通ナビ除外・組織常設資料分離・ホスト分散・データ整合性テスト全件合格",
+        "Drop 16 クロール堅牢化検証"
+    )
 
 def check_crawler_speedup():
     """17. Drop 17: クロール超高速化 & 直近アクティブ重点化エンジンの検証 (CR-23 〜 CR-27)"""
-    print("--------------------------------------------------")
+    print("\n--------------------------------------------------")
     print(" [テスト 17/17] Drop 17: クロール超高速化 & 直近アクティブ重点化エンジン検証 (CR-23 〜 CR-27)")
     print("--------------------------------------------------")
-    test_script = os.path.join(PROJECT_ROOT, "testing", "test_crawler_speedup.py")
-    if not os.path.exists(test_script):
-        print("  [SKIP] test_crawler_speedup.py が見つかりません")
-        return True
-
-    res = subprocess.run([sys.executable, test_script], capture_output=True, text=True, encoding='utf-8', errors='replace')
-    if res.returncode == 0:
-        print("  [PASS] 過去回再検査ゼロ化・最新1件更新確認・2年重点化・廃止会議体・並行レートリミット・中断耐性テスト全件合格")
-        return True
-    else:
-        print("  [FAIL] Drop 17 クロール高速化検証でエラーが検出されました:")
-        for line in res.stdout.splitlines():
-            if line.strip():
-                print(f"    {line}")
-        if res.stderr:
-            for line in res.stderr.splitlines():
-                if line.strip():
-                    print(f"    {line}")
-        return False
+    from test_crawler_speedup import TestDrop17CrawlerSpeedup
+    return _run_inprocess_or_fallback(
+        TestDrop17CrawlerSpeedup,
+        "test_crawler_speedup.py",
+        "過去回再検査ゼロ化・最新1件更新確認・2年重点化・廃止会議体・並行レートリミット・中断耐性テスト全件合格",
+        "Drop 17 クロール高速化検証"
+    )
 
 def main():
     parser = argparse.ArgumentParser(description="PM-HUB Smoke Test Runner")

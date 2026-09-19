@@ -136,19 +136,71 @@ def parse_japanese_date(date_str):
 
 
 
-def load_data_json(target_file=DEFAULT_DATA_JSON_PATH):
+_RE_COUNCIL_ID = re.compile(r'^[a-z]+-[a-z0-9_]+$')
+_RE_MEETING_ID = re.compile(r'^[a-z]+-[a-z0-9_]+-\d{8}-[a-z0-9_]+$')
+
+
+def validate_council_id(council_id):
+    """
+    AGENTS.md §3-1 準拠の会議体ID形式（{ministry}-{slug}、ハイフン厳格1個・2セグメント）を検証する。
+    """
+    if not council_id or not isinstance(council_id, str):
+        return False
+    return council_id.count('-') == 1 and bool(_RE_COUNCIL_ID.match(council_id))
+
+
+def validate_meeting_id(meeting_id):
+    """
+    AGENTS.md §3-2 準拠の開催回ID形式（{councilId}-{YYYYMMDD}-{round/session}、ハイフン厳格3個・4セグメント）を検証する。
+    """
+    if not meeting_id or not isinstance(meeting_id, str):
+        return False
+    return meeting_id.count('-') == 3 and bool(_RE_MEETING_ID.match(meeting_id))
+
+
+_DATA_JSON_CACHE = {}
+
+
+def clear_data_json_cache(target_file=None):
+    """load_data_json のメモリキャッシュをクリアする。"""
+    global _DATA_JSON_CACHE
+    if target_file is None:
+        _DATA_JSON_CACHE.clear()
+    else:
+        abs_path = os.path.abspath(target_file)
+        _DATA_JSON_CACHE.pop(abs_path, None)
+
+
+def load_data_json(target_file=DEFAULT_DATA_JSON_PATH, cached=False):
     """
     docs/data.json を安全に読み込み、辞書オブジェクトを返す。
+    cached=True の場合、mtime（ファイル最終更新日時）連動のインメモリキャッシュを返し、再パースをスキップする。
     ファイルが存在しないかエラーの場合は空辞書 {} を返す。
     """
-    if os.path.exists(target_file):
-        try:
-            with open(target_file, "r", encoding="utf-8") as f:
-                data = json.load(f)
-                return data if isinstance(data, dict) else {}
-        except Exception as e:
-            print(f"[WARN] Failed to load {target_file}: {e}", file=sys.stderr)
-    return {}
+    if not os.path.exists(target_file):
+        return {}
+
+    abs_path = os.path.abspath(target_file)
+    try:
+        mtime = os.path.getmtime(abs_path)
+    except OSError:
+        mtime = 0
+
+    if cached and abs_path in _DATA_JSON_CACHE:
+        cached_mtime, cached_data = _DATA_JSON_CACHE[abs_path]
+        if cached_mtime == mtime:
+            return cached_data
+
+    try:
+        with open(abs_path, "r", encoding="utf-8") as f:
+            data = json.load(f)
+            data_dict = data if isinstance(data, dict) else {}
+            if cached:
+                _DATA_JSON_CACHE[abs_path] = (mtime, data_dict)
+            return data_dict
+    except Exception as e:
+        print(f"[WARN] Failed to load {target_file}: {e}", file=sys.stderr)
+        return {}
 
 
 def save_data_json_with_backup(data, target_file=DEFAULT_DATA_JSON_PATH, backup_dir=DEFAULT_BACKUP_DIR, max_backups=30, create_backup=True):
@@ -180,6 +232,7 @@ def save_data_json_with_backup(data, target_file=DEFAULT_DATA_JSON_PATH, backup_
         with open(tmp_file, "w", encoding="utf-8") as f:
             json.dump(data, f, ensure_ascii=False, indent=2)
         os.replace(tmp_file, target_file)
+        clear_data_json_cache(target_file)
         return True
     except Exception as e:
         print(f"[ERROR] Failed to save data.json with backup: {e}", file=sys.stderr)

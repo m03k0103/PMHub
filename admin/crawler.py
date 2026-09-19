@@ -2053,6 +2053,23 @@ def deduplicate_data_materials(data):
     if removed_cross_dup > 0 or removed_portal > 0:
         print(f"[重複排除] 会議間重複資料 {removed_cross_dup} 件、ポータルリンク {removed_portal} 件を自動整理しました。")
 
+
+def safe_emit_log(msg):
+    """
+    CR-18: stdout への出力時に OSError（BrokenPipe / [Errno 22] 等）や
+    UnicodeEncodeError が発生しても上位に伝播させず、安全にフォールバック・抑制する。
+    """
+    try:
+        print(msg)
+    except (OSError, UnicodeEncodeError):
+        try:
+            enc = getattr(sys.stdout, 'encoding', None) or 'utf-8'
+            sys.stdout.write(msg.encode(enc, errors='replace').decode(enc) + '\n')
+            sys.stdout.flush()
+        except Exception:
+            pass
+
+
 def run_meeting_crawler(progress_callback=None, stop_event=None, workers=4, recent_years=2, recheck_recent=1, full_check=False, include_closed=False, resume=False):
     """
     審議会・会議体情報取得Engine（Drop 17 高速化・直近アクティブ重点化対応）
@@ -2069,15 +2086,7 @@ def run_meeting_crawler(progress_callback=None, stop_event=None, workers=4, rece
 
     def emit(msg, payload=None):
         with emit_lock:
-            try:
-                print(msg)
-            except (OSError, UnicodeEncodeError):
-                try:
-                    enc = getattr(sys.stdout, 'encoding', None) or 'utf-8'
-                    sys.stdout.write(msg.encode(enc, errors='replace').decode(enc) + '\n')
-                    sys.stdout.flush()
-                except Exception:
-                    pass
+            safe_emit_log(msg)
             now_ts = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
             log_line = f"[{now_ts}] {msg}\n"
             if log_f:

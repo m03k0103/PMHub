@@ -17,7 +17,7 @@ import unittest
 PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 ADMIN_DIR = os.path.join(PROJECT_ROOT, "admin")
 sys.path.insert(0, ADMIN_DIR)
-from utils import setup_win32_utf8
+from utils import setup_win32_utf8, load_data_json
 setup_win32_utf8()
 
 
@@ -194,8 +194,8 @@ class TestCrawlerManualLockProtection(unittest.TestCase):
         data_json_path = os.path.join(PROJECT_ROOT, "docs", "data.json")
         self.assertTrue(os.path.exists(data_json_path), "docs/data.json が存在すること")
 
-        with open(data_json_path, "r", encoding="utf-8") as f:
-            original_data = json.load(f)
+        original_data = load_data_json(data_json_path, cached=True)
+        self.assertTrue(bool(original_data), "docs/data.json が正常に読み込めること")
 
         locked_meetings_before = {
             m["id"]: copy.deepcopy(m)
@@ -205,11 +205,16 @@ class TestCrawlerManualLockProtection(unittest.TestCase):
 
         self.assertGreater(len(locked_meetings_before), 0, "手動ロックされた会議が存在すること (最低1件以上)")
 
-        test_copy = copy.deepcopy(original_data)
-        deduplicate_data_materials(test_copy)
+        # 40MB 全体の deepcopy を避け、手動ロック対象が存在する会議体・会議のサブセットに対して重複排除を実行
+        locked_council_ids = {m.get("councilId") for m in locked_meetings_before.values() if m.get("councilId")}
+        test_subset = {
+            "councils": [copy.deepcopy(c) for c in original_data.get("councils", []) if c.get("id") in locked_council_ids],
+            "meetings": [copy.deepcopy(m) for m in original_data.get("meetings", []) if m.get("councilId") in locked_council_ids]
+        }
+        deduplicate_data_materials(test_subset)
 
         for m_id, original_m in locked_meetings_before.items():
-            after_m = next((m for m in test_copy.get("meetings", []) if m["id"] == m_id), None)
+            after_m = next((m for m in test_subset.get("meetings", []) if m["id"] == m_id), None)
             self.assertIsNotNone(after_m, f"会議 {m_id} が維持されていること")
             self.assertEqual(
                 original_m["materials"],

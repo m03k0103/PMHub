@@ -11,7 +11,7 @@ import sys
 from collections import defaultdict
 
 sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "admin"))
-from utils import setup_win32_utf8, normalize_japanese_numbers, load_data_json
+from utils import setup_win32_utf8, normalize_japanese_numbers, load_data_json, validate_council_id, validate_meeting_id
 setup_win32_utf8()
 
 
@@ -71,7 +71,7 @@ def run_test():
         print(f"FAIL: {data_path} not found")
         return 1
         
-    data = load_data_json(data_path)
+    data = load_data_json(data_path, cached=True)
     if not data:
         print(f"FAIL: Failed to load {data_path}")
         return 1
@@ -142,12 +142,12 @@ def run_test():
         errors.append(f"Meetings with deprecated 'title' attribute found ({len(erroneous_titles)} items): {erroneous_titles[:5]}")
 
     # 8. Check councilId format (Must have exactly 1 hyphen: {ministry}-{slug})
-    bad_c_ids = [c_id for c_id in councils.keys() if c_id.count('-') != 1 or not re.match(r'^[a-z]+-[a-z0-9_]+$', c_id)]
+    bad_c_ids = [c_id for c_id in councils.keys() if not validate_council_id(c_id)]
     if bad_c_ids:
         errors.append(f"Invalid councilId format (must be {{ministry}}-{{slug}} with 1 hyphen) ({len(bad_c_ids)} items): {bad_c_ids[:5]}")
 
     # 9. Check meetingId format (Must have exactly 3 hyphens: {councilId}-{YYYYMMDD}-{round/session})
-    bad_m_ids = [m.get('id') for m in meetings if m.get('id', '').count('-') != 3 or not re.match(r'^[a-z]+-[a-z0-9_]+-\d{8}-[a-z0-9_]+$', m.get('id', ''))]
+    bad_m_ids = [m.get('id') for m in meetings if not validate_meeting_id(m.get('id', ''))]
     if bad_m_ids:
         errors.append(f"Invalid meetingId format (must be {{councilId}}-{{YYYYMMDD}}-{{round}} with 3 hyphens) ({len(bad_m_ids)} items): {bad_m_ids[:5]}")
 
