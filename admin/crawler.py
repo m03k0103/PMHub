@@ -279,18 +279,28 @@ def load_scraping_rules():
             raw_rules = data.get("scrapingRules", {})
             resolved_rules = {}
             for cid, r in raw_rules.items():
-                # is_active / isActive が明示的に False の場合はスキップ
-                if isinstance(r, dict) and (r.get("is_active") is False or r.get("isActive") is False):
+                if not isinstance(r, dict):
                     continue
-                if isinstance(r, dict) and "template" in r and r["template"] in templates:
+                # is_active / isActive が明示的に False の場合はスキップ
+                if r.get("is_active") is False or r.get("isActive") is False:
+                    continue
+                if "template" in r and r["template"] in templates:
                     tpl_name = r["template"]
                     # テンプレートをベースに個別オーバーライドをマージ
                     merged = dict(templates[tpl_name])
                     merged.update(r)
                     merged.pop("template", None)
-                    resolved_rules[cid] = merged
                 else:
-                    resolved_rules[cid] = r
+                    merged = dict(r)
+
+                # ネストされた rules 辞書が存在する場合はトップレベルにフラット化
+                if isinstance(merged.get("rules"), dict):
+                    nested = merged.pop("rules")
+                    for k, v in nested.items():
+                        if k not in merged:
+                            merged[k] = v
+
+                resolved_rules[cid] = merged
             return resolved_rules
         except Exception as e:
             print(f"[WARN] Failed to load scrapingRules from data.json: {e}", file=sys.stderr)
