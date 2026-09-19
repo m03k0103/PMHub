@@ -159,6 +159,8 @@ _GENERIC_INDEX_URL_PATTERNS = re.compile(
     r'digital\.go\.jp/councils/procurement-agile-opensource/(?:agile|opensource)-review-meeting/?$|'
     r'sitemap(?:\.html|\.xml|/)?$|'
     r'/sitemap/|'
+    r'agenda/meeting/[^/]+/archive(?:_\d+-\d+)?\.html$|'
+    r'archive_\d+-\d+\.html$|'
     r'member(?:\.html|/)?$|'
     r'meibo(?:\.html|/)?$',
     re.IGNORECASE
@@ -802,14 +804,15 @@ def _extract_date_from_url(url):
 
     return None
 
-def extract_actual_subpage_links(html, target_url, rule=None):
+def extract_actual_subpage_links(html, target_url, rule=None, return_meta=False):
     """
     親会議体URLまたはarchiveUrlのHTML内に実在するリンク（<a>タグ）から、
     アンカーテキストおよびURLパターンに基づき開催回サブページを確実に抽出する（CR-14）。
     URLの類推生成や投機的アクセスは一切行わない。
+    return_meta=True の場合、(candidates, meta_map) のタプルを返す。
     """
     if not html or not target_url:
-        return []
+        return ([], {}) if return_meta else []
 
     soup = BeautifulSoup(html, 'html.parser')
     base_tag = soup.find('base', href=True)
@@ -820,6 +823,7 @@ def extract_actual_subpage_links(html, target_url, rule=None):
     custom_re = re.compile(custom_pattern, re.IGNORECASE) if custom_pattern else None
 
     candidates = []
+    meta_map = {}
     seen = set()
 
     for a in soup.find_all('a', href=True):
@@ -889,6 +893,26 @@ def extract_actual_subpage_links(html, target_url, rule=None):
             seen.add(abs_clean)
             candidates.append(abs_url)
 
+            # 親ページ側のアンカーおよび行コンテナから開催日を先行抽出
+            parent_date = None
+            anchor_dates = extract_clean_dates_from_html(t_clean)
+            if anchor_dates:
+                parent_date = anchor_dates[0]
+            else:
+                parent_container = a.find_parent(['tr', 'li', 'dd', 'p', 'div'])
+                if parent_container:
+                    c_text = parent_container.get_text(' ', strip=True)
+                    c_dates = extract_clean_dates_from_html(c_text)
+                    if c_dates:
+                        parent_date = c_dates[0]
+
+            meta_map[abs_url] = {
+                "anchor_text": t_clean,
+                "parent_date": parent_date
+            }
+
+    if return_meta:
+        return candidates, meta_map
     return candidates
 
 def _crawl_subpages(target_url, html, rule, quirk_note, pdf_pattern, existing_urls=None, recheck_recent=1, full_check=False):
@@ -898,7 +922,7 @@ def _crawl_subpages(target_url, html, rule, quirk_note, pdf_pattern, existing_ur
     all_extracted_dates = []
 
     # CR-14: 親ページHTML内の実在リンク（<a>タグ）から、アンカーテキストとURLパターンでサブページを確実に抽出
-    filtered_subpages = extract_actual_subpage_links(html, target_url, rule)
+    filtered_subpages, subpage_meta = extract_actual_subpage_links(html, target_url, rule, return_meta=True)
 
     if filtered_subpages:
         # 最新と思われる順（降順）にソートして差分巡回フィルタを適用
@@ -977,7 +1001,13 @@ def _crawl_subpages(target_url, html, rule, quirk_note, pdf_pattern, existing_ur
 
                 raw_sub_dates = extract_clean_dates_from_html(sub_html, rule.get("date_regex", DEFAULT_DATE_REGEX))
                 norm_sub_dates = [normalize_japanese_numbers(d) for d in raw_sub_dates]
-                # CR-16: 本文から日付が取れなかった場合、サブページURLから日付をフォールバック復元
+                # 親ページ側（リンク行・アンカー）から先行抽出した開催日をフォールバック適用
+                if not norm_sub_dates and subpage_meta:
+                    p_info = subpage_meta.get(sub_url, {})
+                    p_date = p_info.get("parent_date")
+                    if p_date:
+                        norm_sub_dates.append(normalize_japanese_numbers(p_date))
+                # CR-16: 本文および親リンクから日付が取れなかった場合、サブページURLから日付をフォールバック復元
                 if not norm_sub_dates and sub_url:
                     url_date = _extract_date_from_url(sub_url)
                     if url_date:
@@ -1143,25 +1173,39 @@ def clean_html_for_dates(html_str):
                 a_tag.decompose()
 
         # 3. ナビゲーション・フッター系ID/Class要素の除去
-        for el in soup.find_all(id=re.compile(r'(side|nav|footer|header|menu|breadcrumb)', re.I)):
+        for el in soup.find_all(id=re.compile(r'(side|nav|footer|header|menu|breadcrumb|popup|modal)', re.I)):
             if el.name not in ('body', 'html'):
                 el.decompose()
-        for el in soup.find_all(class_=re.compile(r'(side|nav|footer|header|menu|breadcrumb)', re.I)):
+        for el in soup.find_all(class_=re.compile(r'(side|nav|footer|header|menu|breadcrumb|popup|modal)', re.I)):
             if el.name not in ('body', 'html'):
                 el.decompose()
 
-        # 4. 本文ブロックコンテナの探索（インライン要素を除外し、十分なテキスト長を持つコンテナを優先）
-        block_tags = ['main', 'article', 'div', 'section']
+        # 4. 本文ブロックコンテナの探索
+        # main または article タグが存在すれば最優先
+        main_tag = soup.find(['main', 'article'])
+        if main_tag and len(main_tag.get_text(strip=True)) > 50:
+            return str(main_tag)
+
+        # 特定クラス（p-details 等の会議詳細コンテナ）が存在すれば優先
+        detail_container = soup.find('div', class_=re.compile(r'(p-details|meeting-detail|kaigi-detail)', re.I))
+        if detail_container and len(detail_container.get_text(strip=True)) > 50:
+            return str(detail_container)
+
+        block_tags = ['div', 'section']
         candidates = []
+        # \b(main|content)\b に厳格マッチさせ、小さなパーツへの縮退を防止
         for tag_name in block_tags:
-            for el in soup.find_all(tag_name, id=re.compile(r'(main|content)', re.I)):
+            for el in soup.find_all(tag_name, id=re.compile(r'\b(main|content)\b|^l-(main|content)', re.I)):
                 candidates.append(el)
-            for el in soup.find_all(tag_name, class_=re.compile(r'(main|content)', re.I)):
+            for el in soup.find_all(tag_name, class_=re.compile(r'\b(main|content)\b|^l-(main|content)', re.I)):
                 candidates.append(el)
 
+        body_text_len = len(soup.body.get_text(strip=True)) if soup.body else 0
         if candidates:
-            best_el = max(candidates, key=lambda el: len(el.get_text()))
-            if len(best_el.get_text(strip=True)) > 50:
+            best_el = max(candidates, key=lambda el: len(el.get_text(strip=True)))
+            best_len = len(best_el.get_text(strip=True))
+            # 候補のテキストが極端に短くなく、かつbodyの重要部分を占めている場合のみ採用
+            if best_len > 100 and (body_text_len == 0 or best_len >= body_text_len * 0.3):
                 return str(best_el)
 
         return str(soup.body) if soup.body else str(soup)
@@ -1193,6 +1237,15 @@ def extract_clean_dates_from_html(html_str, date_regex_pattern=r'(?<![\d\w\/\-])
     cleaned_html = re.sub(r'((?:令和|平成)(?:\d+|元)年)[（\(][^）\)\n]+[）\)]\s*(\d{1,2}月\d{1,2}日)', r'\1\2', cleaned_html)
     raw_dates = re.findall(date_regex_pattern, cleaned_html)
     
+    # 優先判定: 「実施日」「開催日時」「開催日」に直結する日付文字列があれば最優先で抽出
+    explicit_matches = re.findall(r'(?:実施日|開催日|開催日時)\s*[:：]?\s*((?:(?:令和|平成)(?:\d+|元)年|\d{4}年)\d{1,2}月\d{1,2}日|\d{4}[/-]\d{1,2}[/-]\d{1,2})', html_str)
+    valid_explicit = []
+    if explicit_matches:
+        for em in explicit_matches:
+            vd = validate_and_normalize_date(normalize_japanese_numbers(em))
+            if vd and vd not in valid_explicit:
+                valid_explicit.append(vd)
+
     # 「更新日: 2024年X月X日」「掲載日: ...」などの直前ラベル付きの日付を除外
     filtered_dates = []
     for d in raw_dates:
@@ -1203,8 +1256,14 @@ def extract_clean_dates_from_html(html_str, date_regex_pattern=r'(?<![\d\w\/\-])
         valid_d = validate_and_normalize_date(d)
         if valid_d:
             filtered_dates.append(valid_d)
-        
-    return filtered_dates
+
+    # 明示的な開催日/実施日を最優先とし、残りの抽出日付を統合（順序保持・重複排除）
+    combined_dates = []
+    for vd in valid_explicit + filtered_dates:
+        if vd not in combined_dates:
+            combined_dates.append(vd)
+
+    return combined_dates
 
 
 def calculate_past_year_count(extracted_dates, ref_date=None):
@@ -1509,18 +1568,20 @@ def is_generic_index_url(url, title=""):
 
 def is_preliminary_notice_page(url, title=""):
     """
-    開催案内・事前告知ページ（例: .../kaisai/index.html, .../kaisaiannai/..., 〜の開催について）や資料未添付の議事要旨・議事録単体ページであるかを判定。
+    開催案内・事前告知ページ（例: .../kaisai/index.html, .../annai/..., .../kaisaiannai/..., 〜の開催について）や資料未添付の議事要旨・議事録単体ページであるかを判定。
     これらは資料が掲載される会議ページではないため、独立した会議として追加しない。
     """
     if not url and not title:
         return False
     u_lower = (url or "").lower()
-    # URLに /kaisai/ や /kaisaiannai/ や /online_kaisai 等が含まれる場合
-    if re.search(r'/(?:kaisai|kaisaiannai|online_kaisai)/', u_lower) or u_lower.endswith('/kaisai.html') or 'kaisaiannai' in u_lower:
+    # URLに /kaisai/ や /annai/ や /kaisaiannai/ や /online_kaisai 等が含まれる場合
+    if re.search(r'/(?:kaisai|kaisaiannai|online_kaisai|annai)/', u_lower) or u_lower.endswith('/kaisai.html') or 'kaisaiannai' in u_lower or '_annai_' in u_lower:
         return True
-    # タイトルから末尾の省庁名サフィックスを除去して判定
+    # タイトルから末尾の省庁・委員会名サフィックスを除去して判定
     t_clean = (title or "").strip()
-    t_clean = re.sub(r'[\s｜\|].*?(?:厚生労働省|内閣府|内閣官房|財務省|金融庁|法務省|経済産業省|文部科学省|総務省|外務省|農林水産省|国土交通省|環境省|防衛省|デジタル庁|こども家庭庁).*$', '', t_clean).strip()
+    t_clean = re.sub(r'[\s｜\|].*?(?:厚生労働省|内閣府|内閣官房|財務省|金融庁|法務省|経済産業省|文部科学省|総務省|外務省|農林水産省|国土交通省|環境省|防衛省|デジタル庁|こども家庭庁|食品安全委員会|原子力規制委員会|消費者庁|警察庁|文化庁|スポーツ庁|観光庁|気象庁|林野庁|水産庁).*$', '', t_clean).strip()
+    # 末尾の括弧表記（例: （非公開）、（WEB開催）、（持ち回り開催）等）を除去して判定
+    t_clean = re.sub(r'[\(（][^\)）]+[\)）]$', '', t_clean).strip()
     if re.search(r'(?:の開催について|の開催案内|の開催のお知らせ|開催のお知らせ|開催案内|傍聴の案内|傍聴について|の開催概要について|議事要旨|議事録)$', t_clean):
         return True
     return False
