@@ -14,6 +14,9 @@ import urllib.request
 import urllib.parse
 import re
 import time
+import threading
+import concurrent.futures
+import argparse
 from datetime import datetime, timedelta
 from bs4 import BeautifulSoup
 from utils import (
@@ -223,8 +226,14 @@ def load_crawler_config():
     config = data.get("crawlerConfig", {})
     return config.get("llm_mode", False)  # デフォルトは高速・安全な Heuristic モード
 
-def load_councils_from_data_json():
-    """docs/data.json から登録済みの全会議体 (COUNCILS) を読み込む（却下済み会議体・非アクティブ会議体はクロール対象外）"""
+def load_councils_from_data_json(recent_years=2, include_closed=False, resume=False):
+    """
+    docs/data.json から登録済みの全会議体 (COUNCILS) を読み込む。
+    - 却下済み会議体・非アクティブ会議体はクロール対象外
+    - CR-24: 法改正等で廃止された会議体（isClosed: true）はデフォルトでスキップ（include_closed=True で全件対象）
+    - CR-24: 直近開催年数フィルタリング（デフォルト2年以内、開催実績0件の新規会議体は探索対象として保持）
+    - CR-27: resume=True の場合、既に今回の実行で巡回済みの会議体をスキップ
+    """
     councils = []
     
     # 却下済みIDセットの読み込み
@@ -234,13 +243,43 @@ def load_councils_from_data_json():
     data = load_data_json(DATA_JSON_FILE)
     raw_councils = data.get("councils", [])
     scraping_rules = data.get("scrapingRules", {})
+    meetings = data.get("meetings", [])
+
+    # 会議体ごとの最新開催日（実在日付）を事前算出
+    council_latest_date = {}
+    for m in meetings:
+        mcid = m.get("councilId")
+        mdt = m.get("date", "")
+        if mdt and mdt != "2099/01/01":
+            if mcid not in council_latest_date or mdt > council_latest_date[mcid]:
+                council_latest_date[mcid] = mdt
+
+    # 直近開催年数の基準日（カットオフ日）の計算
+    cutoff_date = None
+    if recent_years is not None and str(recent_years).lower() not in ("all", "none", "0"):
+        try:
+            years_float = float(recent_years)
+            if years_float > 0:
+                cutoff_dt = datetime.now() - timedelta(days=int(years_float * 365.25))
+                cutoff_date = cutoff_dt.strftime('%Y/%m/%d')
+        except (ValueError, TypeError):
+            cutoff_date = None
+
+    last_crawl_time_str = data.get("lastCrawlTime", "")
+
     inactive_count = 0
+    closed_count = 0
+    dormant_count = 0
+    resumed_skip_count = 0
+
     for item in raw_councils:
         cid = item.get("id")
         if cid in rejected_ids:
             continue
-        # 会議体マスターまたはスクレイピングルールで非アクティブ指定されている場合はスキップ
+
         rule = scraping_rules.get(cid, {}) if isinstance(scraping_rules, dict) else {}
+
+        # 1. 非アクティブフラグのチェック
         if (
             item.get("is_active") is False
             or item.get("isActive") is False
@@ -248,6 +287,31 @@ def load_councils_from_data_json():
         ):
             inactive_count += 1
             continue
+
+        # 2. CR-24: 法改正等による廃止会議体（isClosed: true）のチェック
+        is_closed = item.get("isClosed") is True or (isinstance(rule, dict) and rule.get("isClosed") is True)
+        if is_closed and not include_closed:
+            closed_count += 1
+            continue
+
+        # 3. CR-24: 直近開催年数フィルタリング
+        if cutoff_date:
+            latest_date = council_latest_date.get(cid)
+            # 開催実績があるが、最新開催日が基準日より古い場合は休眠会議体としてスキップ
+            if latest_date and latest_date < cutoff_date:
+                dormant_count += 1
+                continue
+            # 開催実績がない（0件またはダミー日付のみ）会議体は新規探索のためスキップせず含める
+
+        # 4. CR-27: レジューム時の巡回済みスキップチェック
+        if resume and last_crawl_time_str:
+            c_status = item.get("crawlStatus", {})
+            c_last = c_status.get("lastCrawled", "") if isinstance(c_status, dict) else ""
+            # lastCrawled が前回のクロール開始以降の日付・時刻であれば巡回済みと判定
+            if c_last and c_last >= last_crawl_time_str[:10]:
+                resumed_skip_count += 1
+                continue
+
         if item.get("officialUrl") or item.get("archiveUrl"):
             councils.append({
                 "id": cid,
@@ -255,10 +319,19 @@ def load_councils_from_data_json():
                 "name": item.get("name"),
                 "url": (item.get("archiveUrl") or item.get("officialUrl", "")).strip(),
                 "officialUrl": (item.get("officialUrl") or "").strip(),
-                "archiveUrl": (item.get("archiveUrl") or "").strip()
+                "archiveUrl": (item.get("archiveUrl") or "").strip(),
+                "latestMeetingDate": council_latest_date.get(cid, "未開催/不明")
             })
+
     if inactive_count > 0:
-        print(f"[INFO] 終了済み/非アクティブ会議体 {inactive_count} 件をクロール対象から除外します。")
+        print(f"[INFO] 非アクティブ会議体 {inactive_count} 件をクロール対象から除外しました。")
+    if closed_count > 0:
+        print(f"[INFO] 法改正等廃止会議体（isClosed: true） {closed_count} 件をクロール対象から除外しました。")
+    if dormant_count > 0:
+        print(f"[INFO] 直近 {recent_years} 年未開催の休眠会議体 {dormant_count} 件をクロール対象からスキップしました（基準日: {cutoff_date} 以降を対象）。")
+    if resumed_skip_count > 0:
+        print(f"[INFO] レジューム再開: 巡回済み会議体 {resumed_skip_count} 件をスキップしました。")
+
     return councils
 
 def _extract_council_host(c):
@@ -355,8 +428,31 @@ def load_scraping_rules():
             print(f"[WARN] Failed to load scrapingRules from data.json: {e}", file=sys.stderr)
     return {}
 
+_RATE_LIMIT_LOCK = threading.Lock()
 _LAST_REQUEST_TIME_BY_HOST = {}
 _MIN_HOST_INTERVAL = 0.5  # 同一ホストへの最低アクセス間隔（秒）（AGENTS.md ルール9: 0.35秒以上のレートリミット遵守）
+
+def _rate_limit_host(host):
+    """
+    同一ホストへの過密アクセス防止（CR-21, CR-26: スレッドセーフなレートリミット）。
+    ロック内では予約時刻のみを更新し、実際の sleep はロック外で行うため、
+    異なるホストへのアクセスは一切ブロックされず完全並行で実行される。
+    """
+    if not host:
+        return
+    sleep_needed = 0.0
+    with _RATE_LIMIT_LOCK:
+        now_t = time.time()
+        last_t = _LAST_REQUEST_TIME_BY_HOST.get(host, 0.0)
+        elapsed = now_t - last_t
+        if elapsed < _MIN_HOST_INTERVAL:
+            sleep_needed = _MIN_HOST_INTERVAL - elapsed
+            _LAST_REQUEST_TIME_BY_HOST[host] = now_t + sleep_needed
+        else:
+            _LAST_REQUEST_TIME_BY_HOST[host] = now_t
+
+    if sleep_needed > 0:
+        time.sleep(sleep_needed)
 
 def fetch_url(url, timeout=12):
     parsed_url = urllib.parse.urlparse(url)
@@ -364,15 +460,9 @@ def fetch_url(url, timeout=12):
         print(f"[ERROR] Invalid scheme: {url}", file=sys.stderr)
         return None
 
-    # CR-21: 同一ホストへの過密アクセス防止（WAF遮断回避 & サーバー負荷軽減）
+    # CR-21, CR-26: 同一ホストへの過密アクセス防止（スレッドセーフ）
     host = parsed_url.netloc.lower()
-    if host:
-        now_t = time.time()
-        last_t = _LAST_REQUEST_TIME_BY_HOST.get(host, 0)
-        elapsed = now_t - last_t
-        if elapsed < _MIN_HOST_INTERVAL:
-            time.sleep(_MIN_HOST_INTERVAL - elapsed)
-        _LAST_REQUEST_TIME_BY_HOST[host] = time.time()
+    _rate_limit_host(host)
 
     headers = get_browser_headers()
     req = urllib.request.Request(url, headers=headers)
@@ -570,12 +660,12 @@ def _normalize_url_for_comparison(u):
     query = parsed.query
     return f"{netloc}{path}{'?' + query if query else ''}"
 
-def _filter_incremental_subpages(candidate_urls, existing_urls, max_unvisited=50, max_recent=2):
+def _filter_incremental_subpages(candidate_urls, existing_urls, max_unvisited=50, max_recent=1, full_check=False):
     """
-    候補サブページ群を、登録済み開催回URLと照合して差分フィルタリングする。
+    候補サブページ群を、登録済み開催回URLと照合して差分フィルタリングする（CR-10, CR-23）。
     - 未登録サブページ: 最大 max_unvisited 件（デフォルト50件）まで巡回
-    - 更新確認サブページ: 既登録のうち最新 max_recent 件（デフォルト2件）を巡回
-    - 既登録過去サブページ: スキップ（巡回しない）
+    - 更新確認サブページ: 既登録のうち最新 max_recent 件（デフォルト1件: 後日掲載資料対応）を巡回
+    - 既登録過去サブページ: スキップ（巡回しない。full_check=True の場合は全件再検査）
 
     戻り値:
         target_urls: 巡回対象URLのリスト（最新順、未登録＋更新確認）
@@ -583,6 +673,9 @@ def _filter_incremental_subpages(candidate_urls, existing_urls, max_unvisited=50
     """
     if not candidate_urls:
         return [], {"unvisited": 0, "recent_update": 0, "skipped_known": 0, "total_targets": 0}
+
+    # full_check が有効な場合は、既登録サブページも全件再検査対象とする
+    eff_max_recent = 999999 if full_check else max_recent
 
     # 既登録URLの正規化セット
     existing_set = set()
@@ -603,7 +696,7 @@ def _filter_incremental_subpages(candidate_urls, existing_urls, max_unvisited=50
             continue
 
         if norm_u in existing_set:
-            if len(recent_selected) < max_recent:
+            if len(recent_selected) < eff_max_recent:
                 recent_selected.append(u)
             else:
                 skipped_known.append(u)
@@ -798,8 +891,8 @@ def extract_actual_subpage_links(html, target_url, rule=None):
 
     return candidates
 
-def _crawl_subpages(target_url, html, rule, quirk_note, pdf_pattern, existing_urls=None):
-    """サブページの深掘りクロールロジック（CR-14: 親ページ実リンク解析型・スマート差分探索エンジン対応）"""
+def _crawl_subpages(target_url, html, rule, quirk_note, pdf_pattern, existing_urls=None, recheck_recent=1, full_check=False):
+    """サブページの深掘りクロールロジック（CR-14: 親ページ実リンク解析型・CR-23: 最新1件更新確認＆過去回再検査ゼロ化）"""
     subpage_meetings = []
     additional_materials = []
     all_extracted_dates = []
@@ -814,7 +907,8 @@ def _crawl_subpages(target_url, html, rule, quirk_note, pdf_pattern, existing_ur
             sorted_subpages,
             existing_urls,
             max_unvisited=50,
-            max_recent=2
+            max_recent=recheck_recent,
+            full_check=full_check
         )
         if inc_stats["skipped_known"] > 0 or inc_stats["unvisited"] > 0:
             print(f"   [差分巡回 ({quirk_note})] 未登録 {inc_stats['unvisited']} 件, 更新確認 {inc_stats['recent_update']} 件, 既登録スキップ {inc_stats['skipped_known']} 件 (探索対象: 計 {inc_stats['total_targets']} 件)")
@@ -1305,7 +1399,7 @@ def determine_crawl_result(unique_materials, norm_date_matches, subpage_meetings
 
     return "failed", "配付資料・開催日・個別開催回のいずれも検出できませんでした"
 
-def execute_rule_retrieval(target, html, rule_item, use_llm=False):
+def execute_rule_retrieval(target, html, rule_item, use_llm=False, recheck_recent=1, full_check=False):
     """多段情報取得Engine (高速Heuristicルール優先 → 未抽出時LLMフォールバック)"""
     global LLM_QUOTA_BLOCKED
     rule = rule_item.get("rules", {})
@@ -1327,7 +1421,8 @@ def execute_rule_retrieval(target, html, rule_item, use_llm=False):
     all_extracted_dates = []
     existing_urls = target.get("existing_meeting_urls")
     new_meetings, new_materials, new_dates = _crawl_subpages(
-        target["url"], html, rule, quirk_note, pdf_pattern, existing_urls=existing_urls
+        target["url"], html, rule, quirk_note, pdf_pattern, existing_urls=existing_urls,
+        recheck_recent=recheck_recent, full_check=full_check
     )
     subpage_meetings.extend(new_meetings)
     top_materials.extend(new_materials)
@@ -1897,35 +1992,45 @@ def deduplicate_data_materials(data):
     if removed_cross_dup > 0 or removed_portal > 0:
         print(f"[重複排除] 会議間重複資料 {removed_cross_dup} 件、ポータルリンク {removed_portal} 件を自動整理しました。")
 
-def run_meeting_crawler(progress_callback=None, stop_event=None):
+def run_meeting_crawler(progress_callback=None, stop_event=None, workers=4, recent_years=2, recheck_recent=1, full_check=False, include_closed=False, resume=False):
+    """
+    審議会・会議体情報取得Engine（Drop 17 高速化・直近アクティブ重点化対応）
+    - CR-23: 確定済み過去回の再検査ゼロ化 & 最新1件更新確認（recheck_recent, full_check）
+    - CR-24: 直近開催年数フィルタリング（recent_years）& 廃止会議体スキップ（include_closed）
+    - CR-26: ホスト単位マルチスレッド並行巡回エンジン（workers）
+    - CR-27: 中断耐性と安全チェックポイント保存（SIGINT/停止時即時保存 & resume 再開）
+    """
     global CRAWL_TARGETS
     
     log_f, latest_f, log_filepath, latest_filepath = init_crawler_logfile()
+    emit_lock = threading.Lock()
+    data_lock = threading.Lock()
 
     def emit(msg, payload=None):
-        try:
-            print(msg)
-        except (OSError, UnicodeEncodeError):
+        with emit_lock:
             try:
-                enc = getattr(sys.stdout, 'encoding', None) or 'utf-8'
-                sys.stdout.write(msg.encode(enc, errors='replace').decode(enc) + '\n')
-                sys.stdout.flush()
-            except Exception:
-                pass
-        now_ts = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
-        log_line = f"[{now_ts}] {msg}\n"
-        if log_f:
-            try:
-                log_f.write(log_line)
-                log_f.flush()
-            except OSError:
-                pass
-        if latest_f:
-            try:
-                latest_f.write(log_line)
-                latest_f.flush()
-            except OSError:
-                pass
+                print(msg)
+            except (OSError, UnicodeEncodeError):
+                try:
+                    enc = getattr(sys.stdout, 'encoding', None) or 'utf-8'
+                    sys.stdout.write(msg.encode(enc, errors='replace').decode(enc) + '\n')
+                    sys.stdout.flush()
+                except Exception:
+                    pass
+            now_ts = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+            log_line = f"[{now_ts}] {msg}\n"
+            if log_f:
+                try:
+                    log_f.write(log_line)
+                    log_f.flush()
+                except OSError:
+                    pass
+            if latest_f:
+                try:
+                    latest_f.write(log_line)
+                    latest_f.flush()
+                except OSError:
+                    pass
         if progress_callback:
             try:
                 progress_callback(msg, payload)
@@ -1936,21 +2041,28 @@ def run_meeting_crawler(progress_callback=None, stop_event=None):
                     pass
 
     try:
-        dynamic_targets = load_councils_from_data_json()
+        dynamic_targets = load_councils_from_data_json(
+            recent_years=recent_years,
+            include_closed=include_closed,
+            resume=resume
+        )
         if dynamic_targets:
             CRAWL_TARGETS = interleave_by_host_and_ministry(dynamic_targets)
             emit(f"[INFO] docs/data.json から {len(CRAWL_TARGETS)} 件の会議体を動的に読み込み、同一ホスト名・省庁連続アクセス防止のためホスト分散インターリーブ巡回順に並び替えました。")
         else:
             CRAWL_TARGETS = []
-            emit(f"[INFO] 会議体データが見つかりません。")
+            emit(f"[INFO] クロール対象の会議体が見つかりませんでした。")
             return {"success": 0, "partial": 0, "failed": 0, "fetch_error": 0, "new_meetings": 0, "log_file": log_filepath}
 
         use_llm = load_crawler_config()
         now_str = datetime.now().strftime("%Y/%m/%d %H:%M")
-        emit("=" * 60)
-        emit(" 政策会議ウォッチ (PM-HUB) クローラー")
-        emit("=" * 60)
+        emit("=" * 65)
+        emit(" 政策会議ウォッチ (PM-HUB) クローラー [Drop 17 高速化エンジン]")
+        emit("=" * 65)
         emit(f"抽出モード: {'LLM抽出 (Gemini API) + フォールバック' if use_llm else '既存ルール (Heuristic)'}")
+        emit(f"並行ワーカー数: {workers} スレッド (ホスト単位レートリミット: 0.5s)")
+        emit(f"直近開催年数絞り込み: {recent_years} 年以内 (新規0件含む)")
+        emit(f"開催回再検査設定: {'全件再検査 (--full-check)' if full_check else f'最新 {recheck_recent} 件のみ更新確認 (過去回ゼロ化)'}")
         emit(f"取得実行時刻: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
         emit(f"対象会議体数: {len(CRAWL_TARGETS)} 件")
         if log_filepath:
@@ -1976,6 +2088,7 @@ def run_meeting_crawler(progress_callback=None, stop_event=None):
             "newly_added_list": [],
             "log_file": log_filepath
         }
+
         # 会議体ごとの既登録開催回URL（officialUrl）マップを事前構築（スマート差分探索エンジン用）
         councils_meeting_urls = {}
         for m in data.get("meetings", []):
@@ -1987,18 +2100,18 @@ def run_meeting_crawler(progress_callback=None, stop_event=None):
                 councils_meeting_urls[cid].add(u)
 
         total_councils = len(CRAWL_TARGETS)
+        processed_counter = 0
+        checkpoint_interval = 25  # 25件ごとにチェックポイント安全保存
 
-        for idx, target in enumerate(CRAWL_TARGETS, 1):
-            # 途中停止チェック
+        def process_target(idx, target):
+            nonlocal processed_counter
             if stop_event and stop_event.is_set():
-                emit(f"\n🛑 [STOP] ユーザーまたはシステムによる停止要求を受信しました。処理を安全に中断します（処理済み: {idx-1}/{total_councils} 件）。")
-                stats["stopped"] = True
-                break
+                return None
 
             pct = int((idx / max(total_councils, 1)) * 90)
             c_name = target.get("name", target.get("id"))
             c_min = target.get("ministry", "")
-            
+
             emit(f"▶ [{idx}/{total_councils}] [{c_min}] HTTP GET: {c_name} ({target['url']})...", {
                 "type": "council_start",
                 "council_id": target["id"],
@@ -2009,10 +2122,9 @@ def run_meeting_crawler(progress_callback=None, stop_event=None):
                 "total": total_councils,
                 "log_file": log_filepath
             })
-            
+
             try:
                 html = fetch_url(target["url"])
-                stats["processed_councils"] += 1
                 
                 if html:
                     c_id = target["id"]
@@ -2021,56 +2133,103 @@ def run_meeting_crawler(progress_callback=None, stop_event=None):
                         "rule_id": "rule-fallback-v1",
                         "rules": {}
                     })
-                    
-                    item = execute_rule_retrieval(target, html, rule_obj, use_llm=use_llm)
-                    results.append(item)
-                    
+
+                    item = execute_rule_retrieval(
+                        target, html, rule_obj, use_llm=use_llm,
+                        recheck_recent=recheck_recent, full_check=full_check
+                    )
+
                     cr = item.get("crawlResult", "failed")
-                    stats[cr] = stats.get(cr, 0) + 1
-                    
                     status_icon = {"success": "🟢", "partial": "🟡", "failed": "🔴"}.get(cr, "⚪")
                     emit(f"  -> {status_icon} [{cr.upper()}] タイトル: {item['pageTitle']}")
                     if item.get("resultReason"):
                         emit(f"  -> 判定理由: {item['resultReason']}")
                     emit(f"  -> 資料: {item['totalExtractedMaterials']} 件, 日付: {item['extractedDates']}, 抽出方法: {item['extractionMethod']}")
-                    
-                    update_crawl_status(data, target["id"], item)
-                    new_added = sync_new_meetings_from_crawl(data, target, item)
-                    if new_added > 0:
-                        stats["new_meetings"] += new_added
-                        now_str = datetime.now().strftime("%Y/%m/%d %H:%M")
-                        data["lastCrawlTime"] = now_str
-                        save_data_json_with_backup(data, create_backup=False)
-                        emit(f"  -> 📦 新規会議 {new_added} 件を data.json の meetings に自動追加・同期しました。", {
-                            "type": "new_meeting_added",
-                            "council_id": target["id"],
-                            "council_name": c_name,
-                            "new_added": new_added
-                        })
-                else:
-                    stats["fetch_error"] += 1
-                    emit(f"  -> 🔴 [FETCH ERROR] ネットワーク取得失敗")
-                    update_crawl_status(data, target["id"], None, "Network fetch failed")
-            except Exception as council_err:
-                stats["failed"] += 1
-                emit(f"  -> 🔴 [UNEXPECTED ERROR] 会議体巡回中に予期せぬ例外が発生しました: {council_err}")
-                try:
-                    update_crawl_status(data, target["id"], None, f"Unexpected error: {council_err}")
-                except Exception as status_err:
-                    emit(f"  -> [WARN] update_crawl_status 記録失敗: {status_err}")
-            emit("-" * 65)
 
-            # レートリミット（スロットリング: 行政サーバー負荷軽減 & WAFブロック回避）
-            if idx < total_councils and not (stop_event and stop_event.is_set()):
-                time.sleep(0.35)
+                    with data_lock:
+                        stats["processed_councils"] += 1
+                        stats[cr] = stats.get(cr, 0) + 1
+                        results.append(item)
+                        update_crawl_status(data, target["id"], item)
+                        new_added = sync_new_meetings_from_crawl(data, target, item)
+                        if new_added > 0:
+                            stats["new_meetings"] += new_added
+                            emit(f"  -> 📦 新規会議 {new_added} 件を data.json の meetings に自動追加・同期しました。", {
+                                "type": "new_meeting_added",
+                                "council_id": target["id"],
+                                "council_name": c_name,
+                                "new_added": new_added
+                            })
+
+                        processed_counter += 1
+                        # チェックポイント保存（25件ごと、または新規会議追加時）
+                        if processed_counter % checkpoint_interval == 0 or new_added > 0:
+                            data["lastCrawlTime"] = datetime.now().strftime("%Y/%m/%d %H:%M")
+                            save_data_json_with_backup(data, create_backup=False)
+
+                    return item
+                else:
+                    emit(f"  -> 🔴 [FETCH ERROR] ネットワーク取得失敗: {c_name}")
+                    with data_lock:
+                        stats["processed_councils"] += 1
+                        stats["fetch_error"] += 1
+                        update_crawl_status(data, target["id"], None, "Network fetch failed")
+                        processed_counter += 1
+                        if processed_counter % checkpoint_interval == 0:
+                            save_data_json_with_backup(data, create_backup=False)
+                    return None
+            except Exception as council_err:
+                emit(f"  -> 🔴 [UNEXPECTED ERROR] 会議体巡回中に予期せぬ例外が発生しました ({c_name}): {council_err}")
+                with data_lock:
+                    stats["processed_councils"] += 1
+                    stats["failed"] += 1
+                    try:
+                        update_crawl_status(data, target["id"], None, f"Unexpected error: {council_err}")
+                    except Exception as status_err:
+                        emit(f"  -> [WARN] update_crawl_status 記録失敗: {status_err}")
+                    processed_counter += 1
+                return None
+            finally:
+                emit("-" * 65)
+
+        # 巡回実行ディスパッチ（直列 or ホスト単位マルチスレッド並行）
+        if workers <= 1:
+            for idx, target in enumerate(CRAWL_TARGETS, 1):
+                if stop_event and stop_event.is_set():
+                    emit(f"\n🛑 [STOP] ユーザーまたはシステムによる停止要求を受信しました。処理を安全に中断します（処理済み: {processed_counter}/{total_councils} 件）。")
+                    stats["stopped"] = True
+                    break
+                process_target(idx, target)
+                if idx < total_councils and not (stop_event and stop_event.is_set()):
+                    time.sleep(0.35)
+        else:
+            with concurrent.futures.ThreadPoolExecutor(max_workers=workers) as executor:
+                future_map = {}
+                for idx, target in enumerate(CRAWL_TARGETS, 1):
+                    if stop_event and stop_event.is_set():
+                        stats["stopped"] = True
+                        break
+                    future = executor.submit(process_target, idx, target)
+                    future_map[future] = target
+
+                for future in concurrent.futures.as_completed(future_map):
+                    if stop_event and stop_event.is_set():
+                        stats["stopped"] = True
+                        for f in future_map:
+                            f.cancel()
+                        break
+                    try:
+                        future.result()
+                    except Exception as e:
+                        emit(f"[ERROR] Worker thread unhandled exception: {e}", file=sys.stderr)
 
         # サマリー表示
-        emit(f"\n{'='*60}")
+        emit(f"\n{'='*65}")
         if stats.get("stopped"):
-            emit(f" 🛑 クロール中断サマリー (途中停止)")
+            emit(f" 🛑 クロール中断サマリー (途中停止・進捗安全保存済み)")
         else:
             emit(f" クロール結果サマリー (完了)")
-        emit(f"{'='*60}")
+        emit(f"{'='*65}")
         emit(f"  処理会議体数:          {stats['processed_councils']} / {total_councils} 件")
         emit(f"  🟢 成功 (success):     {stats['success']} 件")
         emit(f"  🟡 部分成功 (partial):    {stats['partial']} 件")
@@ -2083,16 +2242,16 @@ def run_meeting_crawler(progress_callback=None, stop_event=None):
             emit(f"  ⚠️  開催日未確定 (2099/01/01): {total_unconfirmed} 件 (要確認・修正推奨)")
         if log_filepath:
             emit(f"  📄 ログファイル:       {log_filepath}")
-        emit(f"{'='*60}")
+        emit(f"{'='*65}")
 
         # 全体データに対して資料リンクの重複排除・正規化を実施
         deduplicate_data_materials(data)
 
-        # data.json にクロールステータスと最終タイムスタンプを保存（バックアップ付き）
+        # data.json にクロールステータスと最終タイムスタンプを安全保存（バックアップ付き）
         now_str = datetime.now().strftime("%Y/%m/%d %H:%M")
         data["lastCrawlTime"] = now_str
         if save_data_json_with_backup(data):
-            emit(f"[更新成功] docs/data.json にクロール結果・ステータスと lastCrawlTime ({now_str}) を保存しました（自動バックアップ作成完了）。")
+            emit(f"[更新成功] docs/data.json にクロール結果・ステータスと lastCrawlTime ({now_str}) を安全に保存しました（自動バックアップ作成完了）。")
         else:
             emit(f"[WARN] data.json 更新失敗")
 
@@ -2121,12 +2280,29 @@ def run_meeting_crawler(progress_callback=None, stop_event=None):
             except OSError: pass
 
 def main():
-    import threading
     import traceback
+    
+    parser = argparse.ArgumentParser(description="政策会議ウォッチ (PM-HUB) クローラー [Drop 17]")
+    parser.add_argument("--workers", type=int, default=4, help="並行ワーカー数（デフォルト: 4。1で直列実行）")
+    parser.add_argument("--recent-years", default="2", help="最終開催日の年数絞り込み（デフォルト: 2。0 または all で全件）")
+    parser.add_argument("--recheck-recent", type=int, default=1, help="再検査する直近開催回数（デフォルト: 1。0 で完全ゼロ化）")
+    parser.add_argument("--full-check", action="store_true", help="すべての登録済み開催回を再検査する")
+    parser.add_argument("--include-closed", action="store_true", help="法改正等で廃止された会議体も含めて巡回する")
+    parser.add_argument("--resume", action="store_true", help="中断されたクロールを続きから再開する")
+    args = parser.parse_args()
+
     cli_stop_event = threading.Event()
     
     try:
-        run_meeting_crawler(stop_event=cli_stop_event)
+        run_meeting_crawler(
+            stop_event=cli_stop_event,
+            workers=args.workers,
+            recent_years=args.recent_years,
+            recheck_recent=args.recheck_recent,
+            full_check=args.full_check,
+            include_closed=args.include_closed,
+            resume=args.resume
+        )
     except KeyboardInterrupt:
         print("\n\n[INFO] キーボード割り込み (Ctrl+C) を検知しました。停止シグナルを発行します...")
         cli_stop_event.set()
