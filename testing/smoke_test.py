@@ -119,7 +119,7 @@ def check_js_syntax(code, file_path=""):
 def check_syntax_errors():
     """1. JS/Python/HTML/JSON ファイルの文法・タグ構造エラーを自動確認"""
     print("--------------------------------------------------")
-    print(" [テスト 1/14] コードの文法エラー (SyntaxError) 自動検証")
+    print(" [テスト 1/15] コードの文法エラー (SyntaxError) 自動検証")
     print("--------------------------------------------------")
     
     files_to_check = [
@@ -140,7 +140,8 @@ def check_syntax_errors():
         os.path.join(PROJECT_ROOT, "testing", "test_crawler_parent_table.py"),
         os.path.join(PROJECT_ROOT, "testing", "test_scraping_rules_reorg.py"),
         os.path.join(PROJECT_ROOT, "testing", "test_crawler_incremental.py"),
-        os.path.join(PROJECT_ROOT, "testing", "test_crawler_quality.py")
+        os.path.join(PROJECT_ROOT, "testing", "test_crawler_quality.py"),
+        os.path.join(PROJECT_ROOT, "testing", "test_crawler_quality_v2.py")
     ]
     
     errors_found = 0
@@ -720,7 +721,7 @@ def check_crawler_incremental():
 def check_crawler_quality():
     """14. クロール品質判定・2099日付検知単体テスト（CR-12 成否判定精緻化・CR-13 プレースホルダー日付自動検知）"""
     print("\n--------------------------------------------------")
-    print(" [テスト 14/14] クロール品質判定・2099日付検知検証 (test_crawler_quality.py)")
+    print(" [テスト 14/15] クロール品質判定・2099日付検知検証 (test_crawler_quality.py)")
     print("--------------------------------------------------")
     test_script = os.path.join(PROJECT_ROOT, "testing", "test_crawler_quality.py")
     if not os.path.exists(test_script):
@@ -733,6 +734,31 @@ def check_crawler_quality():
         return True
     else:
         print("  [FAIL] クロール品質判定・2099日付検知検証でエラーが検出されました:")
+        for line in res.stdout.splitlines():
+            if line.strip():
+                print(f"    {line}")
+        if res.stderr:
+            for line in res.stderr.splitlines():
+                if line.strip():
+                    print(f"    {line}")
+        return False
+
+def check_crawler_quality_v2():
+    """15. Drop 15 クロール網羅性・実リンク解析・archiveUrl・URL日付復元検証（CR-14〜CR-17）"""
+    print("\n--------------------------------------------------")
+    print(" [テスト 15/15] クロール網羅性・実リンク解析・archiveUrl・URL日付復元検証 (test_crawler_quality_v2.py)")
+    print("--------------------------------------------------")
+    test_script = os.path.join(PROJECT_ROOT, "testing", "test_crawler_quality_v2.py")
+    if not os.path.exists(test_script):
+        print("  [SKIP] test_crawler_quality_v2.py が見つかりません")
+        return True
+
+    res = subprocess.run([sys.executable, test_script], capture_output=True, text=True, encoding='utf-8', errors='replace')
+    if res.returncode == 0:
+        print("  [PASS] 実リンクアンカーテキスト抽出・archiveUrl起点・URL日付復元・ポータル除外テスト全件合格")
+        return True
+    else:
+        print("  [FAIL] クロール網羅性・実リンク解析検証でエラーが検出されました:")
         for line in res.stdout.splitlines():
             if line.strip():
                 print(f"    {line}")
@@ -766,12 +792,13 @@ def main():
     rules_ok = check_scraping_rules_quality()
     incremental_ok = check_crawler_incremental()
     quality_ok = check_crawler_quality()
+    quality_v2_ok = check_crawler_quality_v2()
 
     print("\n==================================================")
     if (syntax_ok and links_ok and unit_ok and dedup_ok and sync_ok
             and view_ok and crawler_ok and runtime_ok and server_api_ok
             and foundation_ok and parent_table_ok and rules_ok
-            and incremental_ok and quality_ok):
+            and incremental_ok and quality_ok and quality_v2_ok):
         print(" 【結果】全スモークテストに合格しました。修正コードは正常です。")
         sys.exit(0)
     else:

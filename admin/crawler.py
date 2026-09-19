@@ -91,7 +91,7 @@ _GENERIC_INDEX_URL_PATTERNS = re.compile(
     r'press/index\.html|'
     r'topics/index\.html|'
     r'news/index\.html|'
-    r'shingi/index\.html|'
+    r'shingi(?:kai)?/index\.html|'
     r'/pressrelease/?$|'
     r'/houdou_topics/?$|'
     r'/houdou/?$|'
@@ -102,6 +102,7 @@ _GENERIC_INDEX_URL_PATTERNS = re.compile(
     r'newpage_19921\.html|'
     r'cas\.go\.jp/jp/s(?:i|hi)ryou?(?:/index\.html)?$|'
     r'cas\.go\.jp/jp/s(?:i|hi)ryou?/|'
+    r'cas\.go\.jp/jp/seisakukaigi/index\.html|'
     r'cyber/what-we-do/csmeeting\.html|'
     r'/int/kaisai/kako\.html|'
     r'study/dai3sya/index\.html|'
@@ -113,6 +114,9 @@ _GENERIC_INDEX_URL_PATTERNS = re.compile(
     r'14th_congress_index\.html|'
     r'menu_sosiki/singi/index\.html|'
     r'sonota_index\.html|'
+    r'seisakusesaku_index\.html|'
+    r'shingi_index\.html|'
+    r'shingikai_index\.html|'
     r'topics/bukyoku/syakai/soren/|'
     r'bousai\.go\.jp/kohou/oshirase/|'
     r'iinkaisai/iinkaisai\.html|'
@@ -132,11 +136,17 @@ _GENERIC_INDEX_URL_PATTERNS = re.compile(
     re.IGNORECASE
 )
 
-# 汎用インデックス判定用の除外タイトルキーワード
+# 汎用インデックス判定用の除外タイトルキーワード（部分一致用）
 _GENERIC_INDEX_TITLE_KEYWORDS = frozenset({
     "その他情報", "覚書等", "覚書", "有識者会議｜警察庁", "過去の国際会議",
     "研究会等一覧へのリンク", "会議資料詳細", "資料詳細", "会議詳細",
-    "食の安全、を科学する", "審議会等", "｜デジタル庁", "｜Digital Agency", "Digital Agency"
+    "食の安全、を科学する", "審議会等", "｜デジタル庁", "｜Digital Agency", "Digital Agency",
+    "政策・審議会等", "省議・審議会等", "政策・審議会等トップへ", "審議会・研究会"
+})
+
+# 汎用インデックス判定用の完全一致除外タイトル（単体での登録排除用）
+_GENERIC_INDEX_EXACT_TITLES = frozenset({
+    "審議会", "政策・審議会等トップへ", "その他会議", "会議", "委員会"
 })
 
 
@@ -213,12 +223,14 @@ def load_councils_from_data_json():
         ):
             inactive_count += 1
             continue
-        if item.get("officialUrl"):
+        if item.get("officialUrl") or item.get("archiveUrl"):
             councils.append({
                 "id": cid,
                 "ministry": item.get("ministry"),
                 "name": item.get("name"),
-                "url": item.get("officialUrl")
+                "url": (item.get("archiveUrl") or item.get("officialUrl", "")).strip(),
+                "officialUrl": (item.get("officialUrl") or "").strip(),
+                "archiveUrl": (item.get("archiveUrl") or "").strip()
             })
     if inactive_count > 0:
         print(f"[INFO] 終了済み/非アクティブ会議体 {inactive_count} 件をクロール対象から除外します。")
@@ -559,28 +571,173 @@ def _filter_incremental_subpages(candidate_urls, existing_urls, max_unvisited=50
     }
     return target_urls, stats
 
-def _crawl_subpages(target_url, html, rule, quirk_note, pdf_pattern, existing_urls=None):
-    """サブページの深掘りクロールロジック（スマート差分探索エンジン対応）"""
-    subpage_meetings = []
-    additional_materials = []
-    all_extracted_dates = []
+# 非会議サブページの除外アンカーテキスト（CR-14）
+NAV_EXCLUDE_TEXTS = frozenset({
+    'ホーム', 'トップ', 'トップページ', 'トップへ', 'トップへ戻る', '目次', '政策について',
+    '組織案内', 'プライバシーポリシー', 'サイトマップ', 'english', 'アクセス', 'リンク集',
+    '戻る', '前のページへ戻る', '前のページへ', '次へ', '閉じる', 'メニュー', 'サイト内検索',
+    '利用規約', 'ご意見・ご要望', '本文へ移動', 'フッターへ移動', 'page top', 'pagetop',
+    '印刷', '印刷する', '文字サイズ', '拡大', '標準'
+})
+
+# 会議開催・回次・資料を示すアンカーテキスト判定パターン（CR-14: 投機的類推を排除し実リンクの文脈から判定）
+ROUND_OR_DATE_TEXT_PATTERN = re.compile(
+    r'(?:第\s*[0-9０-９一二三四五六七八九十百]+\s*(?:回|期|部会|分科会|WG|ワーキンググループ|委員会|会合)|'
+    r'配付資料|配布資料|議事次第|議事録|議事要旨|開催状況|資料一覧|開催案内等|'
+    r'(?:令和|平成)(?:\d+|元)年\d+月\d+日|\d{4}年\d+月\d+日|\d{4}[/-]\d+[/-]\d+)',
+    re.IGNORECASE
+)
+
+# デフォルトのサブページURL正規表現パターン（CR-14: 実在リンク判定用）
+DEFAULT_SUBPAGE_URL_REGEX = re.compile(
+    r'(?:dai\d+|\d+kai|kaisai|gijisidai|gijiroku|newpage_\d+|shingi2|session|meeting|siryou|bunkakai|\d{3,4}\.html?$|r0?\d+/|h\d+/)',
+    re.IGNORECASE
+)
+
+def _extract_date_from_url(url):
+    """
+    URL文字列から開催日（YYYY/MM/DD形式）を安全に抽出・復元する（CR-16: フォールバック用）。
+    西暦8桁、ハイフン/アンダースコア区切り、和暦形式（r050720, h290401等）に対応。
+    不正な日付（範囲外の月日）は厳格に除外し、妥当な日付のみを返す。
+    """
+    if not url or not isinstance(url, str):
+        return None
+
+    clean_u = url.split('?')[0].split('#')[0]
+
+    # 1. 西暦ハイフン/アンダースコア区切り: 2024-05-10, 2024_05_10
+    m_sep = re.search(r'(?:^|[/_-])(19\d{2}|20\d{2})[-_]([01]?\d)[-_]([0-3]?\d)(?:$|[._/-])', clean_u)
+    if m_sep:
+        try:
+            y, m, d = int(m_sep.group(1)), int(m_sep.group(2)), int(m_sep.group(3))
+            dt = datetime(y, m, d)
+            if 1995 <= y <= 2035:
+                return dt.strftime("%Y/%m/%d")
+        except ValueError:
+            pass
+
+    # 2. 西暦連続8桁: 20070208, 20240820
+    m_8 = re.search(r'(?:^|[/_-])(19\d{2}|20\d{2})([01]\d)([0-3]\d)(?:$|[._/-])', clean_u)
+    if m_8:
+        try:
+            y, m, d = int(m_8.group(1)), int(m_8.group(2)), int(m_8.group(3))
+            dt = datetime(y, m, d)
+            if 1995 <= y <= 2035:
+                return dt.strftime("%Y/%m/%d")
+        except ValueError:
+            pass
+
+    # 3. 令和形式: r050720, r5-07-20
+    m_r = re.search(r'(?:^|[/_-])r0?(\d{1,2})[-_]?([01]\d)[-_]?([0-3]\d)(?:$|[._/-])', clean_u, re.IGNORECASE)
+    if m_r:
+        try:
+            r_val, m, d = int(m_r.group(1)), int(m_r.group(2)), int(m_r.group(3))
+            y = 2018 + r_val
+            dt = datetime(y, m, d)
+            if 2019 <= y <= 2035:
+                return dt.strftime("%Y/%m/%d")
+        except ValueError:
+            pass
+
+    # 4. 平成形式: h290401, h190208
+    m_h = re.search(r'(?:^|[/_-])h0?(\d{1,2})[-_]?([01]\d)[-_]?([0-3]\d)(?:$|[._/-])', clean_u, re.IGNORECASE)
+    if m_h:
+        try:
+            h_val, m, d = int(m_h.group(1)), int(m_h.group(2)), int(m_h.group(3))
+            y = 1988 + h_val
+            dt = datetime(y, m, d)
+            if 1995 <= y <= 2019:
+                return dt.strftime("%Y/%m/%d")
+        except ValueError:
+            pass
+
+    return None
+
+def extract_actual_subpage_links(html, target_url, rule=None):
+    """
+    親会議体URLまたはarchiveUrlのHTML内に実在するリンク（<a>タグ）から、
+    アンカーテキストおよびURLパターンに基づき開催回サブページを確実に抽出する（CR-14）。
+    URLの類推生成や投機的アクセスは一切行わない。
+    """
+    if not html or not target_url:
+        return []
 
     soup = BeautifulSoup(html, 'html.parser')
     base_tag = soup.find('base', href=True)
     page_base_url = urllib.parse.urljoin(target_url, base_tag['href']) if base_tag else target_url
+    target_domain = urllib.parse.urlparse(target_url).netloc.lower()
 
-    subpage_pattern = rule.get("subpage_discovery_pattern", r'href=["\']([^"\']*(?:dai\d+|\d+kai|kaisai|gijisidai|gijiroku|newpage_\d+|shingi2|session|meeting|siryou|bunkakai)[^"\'#]*)["\']')
-    subpage_links = re.findall(subpage_pattern, html, re.IGNORECASE)
+    custom_pattern = rule.get("subpage_discovery_pattern") if rule else None
+    custom_re = re.compile(custom_pattern, re.IGNORECASE) if custom_pattern else None
 
-    if subpage_links:
-        # 重複排除と親インデックス等の事前除外
-        raw_subpages = list(dict.fromkeys([urllib.parse.urljoin(page_base_url, l) for l in subpage_links]))
-        filtered_subpages = [
-            u for u in raw_subpages
-            if not _is_parent_or_nav_url(u, target_url)
-            and not is_generic_index_url(u)
-            and not any(k in u.lower() for k in ['cas.go.jp/jp/siryou', 'cas.go.jp/jp/shiryo'])
-        ]
+    candidates = []
+    seen = set()
+
+    for a in soup.find_all('a', href=True):
+        href = a['href'].strip()
+        if not href or href.startswith('#') or href.startswith('javascript:') or href.startswith('mailto:'):
+            continue
+        if href.lower().endswith('.pdf') or href.lower().endswith('.zip'):
+            continue
+
+        abs_url = urllib.parse.urljoin(page_base_url, href)
+        parsed = urllib.parse.urlparse(abs_url)
+        if parsed.scheme not in ('http', 'https'):
+            continue
+
+        # 同一ドメインのみ（他省庁や外部リンクは除外）
+        if parsed.netloc.lower() != target_domain:
+            continue
+
+        # 同一ページや基底URLそのものは除外
+        abs_clean = abs_url.split('#')[0].rstrip('/')
+        target_clean = target_url.split('#')[0].rstrip('/')
+        if abs_clean == target_clean:
+            continue
+
+        # 汎用インデックスURLや親ナビURLの除外
+        if is_generic_index_url(abs_url) or _is_parent_or_nav_url(abs_url, target_url):
+            continue
+
+        if any(k in abs_url.lower() for k in ['cas.go.jp/jp/siryou', 'cas.go.jp/jp/shiryo']):
+            continue
+
+        if abs_clean in seen:
+            continue
+
+        text = a.get_text(' ', strip=True)
+        t_clean = re.sub(r'\s+', ' ', text).strip()
+
+        # ナビゲーション除外
+        if t_clean in NAV_EXCLUDE_TEXTS:
+            continue
+
+        # 開催告知・事前案内単体ページの除外
+        if is_preliminary_notice_page(abs_url, t_clean):
+            continue
+
+        # 判定1: アンカーテキストに回次・開催・日付・資料キーワードが含まれるか
+        is_subpage_by_text = bool(ROUND_OR_DATE_TEXT_PATTERN.search(t_clean))
+
+        # 判定2: URLパターンに合致するか
+        is_subpage_by_url = bool(custom_re.search(href) if custom_re else DEFAULT_SUBPAGE_URL_REGEX.search(href))
+
+        if is_subpage_by_text or is_subpage_by_url:
+            seen.add(abs_clean)
+            candidates.append(abs_url)
+
+    return candidates
+
+def _crawl_subpages(target_url, html, rule, quirk_note, pdf_pattern, existing_urls=None):
+    """サブページの深掘りクロールロジック（CR-14: 親ページ実リンク解析型・スマート差分探索エンジン対応）"""
+    subpage_meetings = []
+    additional_materials = []
+    all_extracted_dates = []
+
+    # CR-14: 親ページHTML内の実在リンク（<a>タグ）から、アンカーテキストとURLパターンでサブページを確実に抽出
+    filtered_subpages = extract_actual_subpage_links(html, target_url, rule)
+
+    if filtered_subpages:
         # 最新と思われる順（降順）にソートして差分巡回フィルタを適用
         sorted_subpages = _sort_subpage_urls_by_recency(filtered_subpages)
         target_subpages, inc_stats = _filter_incremental_subpages(
@@ -656,6 +813,11 @@ def _crawl_subpages(target_url, html, rule, quirk_note, pdf_pattern, existing_ur
 
                 raw_sub_dates = extract_clean_dates_from_html(sub_html, rule.get("date_regex", DEFAULT_DATE_REGEX))
                 norm_sub_dates = [normalize_japanese_numbers(d) for d in raw_sub_dates]
+                # CR-16: 本文から日付が取れなかった場合、サブページURLから日付をフォールバック復元
+                if not norm_sub_dates and sub_url:
+                    url_date = _extract_date_from_url(sub_url)
+                    if url_date:
+                        norm_sub_dates.append(url_date)
                 all_extracted_dates.extend(norm_sub_dates)
 
                 subpage_meetings.append({
@@ -902,39 +1064,8 @@ def calculate_past_year_count(extracted_dates, ref_date=None):
     return len(unique_past_year_dates), True
 
 def discover_subpage_links(html, base_url):
-    """トップページHTMLから会議の個別ページへのリンクを発見する"""
-    soup = BeautifulSoup(html, 'html.parser')
-    base_tag = soup.find('base', href=True)
-    if base_tag:
-        base_url = urllib.parse.urljoin(base_url, base_tag['href'])
-
-    # 会議サブページのパターン (dai1, 1kai, kaisai, gijisidai, newpage_XXX, shingi2, etc.)
-    subpage_pattern = re.compile(
-        r'(?:dai\d+|\d+kai|kaisai|gijisidai|gijiroku|kaigi|meeting|shiryo|siryou|newpage_\d+|shingi2|session|bunkakai)',
-        re.IGNORECASE
-    )
-    
-    candidates = []
-    seen = set()
-    for a_tag in soup.find_all('a', href=True):
-        href = a_tag['href']
-        if href.startswith('#') or href.startswith('javascript:'):
-            continue
-        if href.lower().endswith('.pdf'):
-            continue
-        abs_url = urllib.parse.urljoin(base_url, href)
-        parsed = urllib.parse.urlparse(abs_url)
-        if parsed.scheme not in ('http', 'https'):
-            continue
-        # 同一ドメインのみ
-        base_domain = urllib.parse.urlparse(base_url).netloc
-        if parsed.netloc != base_domain:
-            continue
-        if abs_url in seen or abs_url == base_url or any(k in abs_url.lower() for k in ['cas.go.jp/jp/siryou', 'cas.go.jp/jp/shiryo']) or is_generic_index_url(abs_url):
-            continue
-        if subpage_pattern.search(href):
-            seen.add(abs_url)
-            candidates.append(abs_url)
+    """トップページHTMLから会議の個別ページへの実在リンクを発見する（CR-14: 投機的類推排除）"""
+    candidates = extract_actual_subpage_links(html, base_url)
     
     # 優先度ソート: 議事次第（gijishidai）、配付資料（shiryo）、ディレクトリトップ（index.html/末尾スラッシュ）を議事録単体より優先
     def subpage_priority(url):
@@ -1203,8 +1334,12 @@ def is_generic_index_url(url, title=""):
         return True
     if _GENERIC_INDEX_URL_PATTERNS.search(url.lower()):
         return True
-    if title and any(k in title for k in _GENERIC_INDEX_TITLE_KEYWORDS):
-        return True
+    if title:
+        t_clean = title.strip()
+        if t_clean in _GENERIC_INDEX_EXACT_TITLES:
+            return True
+        if any(k in t_clean for k in _GENERIC_INDEX_TITLE_KEYWORDS):
+            return True
     return False
 
 def is_preliminary_notice_page(url, title=""):
@@ -1248,10 +1383,10 @@ def _resolve_meeting_date(sub_dates, sub_title, sub_url):
             meet_date = dt.strftime("%Y/%m/%d")
 
     if not meet_date and sub_url:
-        # URL内の日付パターン (例: 20240820, 2024-08-20, 2024_08_20)
-        m_url = re.search(r'(?:^|[/_-])(20\d{2})[-_]?([01]\d)[-_]?([0-3]\d)(?:$|[._/-])', sub_url)
-        if m_url:
-            meet_date = f"{m_url.group(1)}/{m_url.group(2)}/{m_url.group(3)}"
+        # CR-16: URL内の日付パターンから安全・厳格に抽出・復元
+        url_extracted = _extract_date_from_url(sub_url)
+        if url_extracted:
+            meet_date = url_extracted
 
     # 開催日が特定できない場合は当日日付ではなくダミー日付(2099/01/01)を設定（管理画面で要確認対象とする）
     if not meet_date:
