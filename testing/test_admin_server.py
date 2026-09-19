@@ -144,6 +144,16 @@ class TestAdminServer(unittest.TestCase):
         self.assertIn("backups", data)
         self.assertIsInstance(data["backups"], list)
 
+    def test_get_unconfirmed_meetings(self):
+        """GET /api/unconfirmed-meetings が 200 OK で count と meetings 配列を返すこと"""
+        status, _, body = self._request("/api/unconfirmed-meetings")
+        self.assertEqual(status, 200)
+        data = json.loads(body)
+        self.assertIsInstance(data, dict)
+        self.assertIn("count", data)
+        self.assertIn("meetings", data)
+        self.assertIsInstance(data["meetings"], list)
+
     def test_404_not_found(self):
         """未定義エンドポイントへの GET が 404 を返すこと"""
         status, _, _ = self._request("/api/non-existent-endpoint-xyz-999")

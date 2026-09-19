@@ -9,6 +9,7 @@ import urllib.parse
 from datetime import datetime
 from apply_report import apply_report, apply_report_data
 from discover_councils import run_discovery
+from crawler import run_meeting_crawler, get_unconfirmed_meetings_count
 from utils import (
     setup_win32_utf8, save_data_json_with_backup, load_data_json,
     load_rejected_councils, save_rejected_councils, add_to_rejected_councils,
@@ -221,6 +222,12 @@ class CustomHandler(SimpleHTTPRequestHandler):
             self.send_json(res_payload)
         elif path == "/api/crawler-status":
             new_logs, latest_id = _extract_delta_logs(parsed_url, crawler_state)
+            unconfirmed_count = 0
+            try:
+                d_data = load_data_json(DATA_JSON_FILE)
+                unconfirmed_count = get_unconfirmed_meetings_count(d_data)
+            except Exception:
+                pass
             res_payload = {
                 "running": crawler_state["running"],
                 "stopping": crawler_state.get("stopping", False),
@@ -234,9 +241,27 @@ class CustomHandler(SimpleHTTPRequestHandler):
                 "stats": crawler_state["stats"],
                 "error": crawler_state["error"],
                 "lastCrawlTime": crawler_state["lastCrawlTime"],
-                "log_file": crawler_state.get("log_file", "")
+                "log_file": crawler_state.get("log_file", ""),
+                "unconfirmedMeetingsCount": unconfirmed_count
             }
             self.send_json(res_payload)
+        elif path == "/api/unconfirmed-meetings":
+            unconfirmed_list = []
+            try:
+                data = load_data_json(DATA_JSON_FILE)
+                c_map = {c["id"]: c for c in data.get("councils", [])}
+                for m in data.get("meetings", []):
+                    d = str(m.get("date", "")).strip()
+                    if d.startswith("2099") or m.get("isDateUnconfirmed"):
+                        c_info = c_map.get(m.get("councilId"), {})
+                        unconfirmed_list.append({
+                            **m,
+                            "councilName": c_info.get("name", m.get("councilId")),
+                            "ministry": c_info.get("ministry", m.get("ministry", ""))
+                        })
+            except Exception as e:
+                print(f"[WARN] Failed to read unconfirmed meetings: {e}", file=sys.stderr)
+            self.send_json({"count": len(unconfirmed_list), "meetings": unconfirmed_list})
         elif path == "/api/new-meetings":
             new_list = []
             try:
