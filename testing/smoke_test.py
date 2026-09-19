@@ -119,7 +119,7 @@ def check_js_syntax(code, file_path=""):
 def check_syntax_errors():
     """1. JS/Python/HTML/JSON ファイルの文法・タグ構造エラーを自動確認"""
     print("--------------------------------------------------")
-    print(" [テスト 1/15] コードの文法エラー (SyntaxError) 自動検証")
+    print(" [テスト 1/16] コードの文法エラー (SyntaxError) 自動検証")
     print("--------------------------------------------------")
     
     files_to_check = [
@@ -129,6 +129,7 @@ def check_syntax_errors():
         os.path.join(PROJECT_ROOT, "admin", "crawler.py"),
         os.path.join(PROJECT_ROOT, "admin", "discover_councils.py"),
         os.path.join(PROJECT_ROOT, "admin", "apply_report.py"),
+        os.path.join(PROJECT_ROOT, "admin", "cleanup_nav_meetings.py"),
         os.path.join(PROJECT_ROOT, "admin", "admin_dashboard.html"),
         os.path.join(PROJECT_ROOT, "testing", "smoke_test.py"),
         os.path.join(PROJECT_ROOT, "testing", "test_js_runtime.js"),
@@ -141,7 +142,8 @@ def check_syntax_errors():
         os.path.join(PROJECT_ROOT, "testing", "test_scraping_rules_reorg.py"),
         os.path.join(PROJECT_ROOT, "testing", "test_crawler_incremental.py"),
         os.path.join(PROJECT_ROOT, "testing", "test_crawler_quality.py"),
-        os.path.join(PROJECT_ROOT, "testing", "test_crawler_quality_v2.py")
+        os.path.join(PROJECT_ROOT, "testing", "test_crawler_quality_v2.py"),
+        os.path.join(PROJECT_ROOT, "testing", "test_crawler_drop16.py")
     ]
     
     errors_found = 0
@@ -768,6 +770,31 @@ def check_crawler_quality_v2():
                     print(f"    {line}")
         return False
 
+def check_crawler_drop16():
+    """16. Drop 16 クロール堅牢化・共通ナビ除外・常設資料分離・ホストインターリーブ検証（CR-18〜CR-22）"""
+    print("\n--------------------------------------------------")
+    print(" [テスト 16/16] クロール堅牢化・共通ナビ除外・ホスト分散検証 (test_crawler_drop16.py)")
+    print("--------------------------------------------------")
+    test_script = os.path.join(PROJECT_ROOT, "testing", "test_crawler_drop16.py")
+    if not os.path.exists(test_script):
+        print("  [SKIP] test_crawler_drop16.py が見つかりません")
+        return True
+
+    res = subprocess.run([sys.executable, test_script], capture_output=True, text=True, encoding='utf-8', errors='replace')
+    if res.returncode == 0:
+        print("  [PASS] stdout保護・共通ナビ除外・組織常設資料分離・ホスト分散・データ整合性テスト全件合格")
+        return True
+    else:
+        print("  [FAIL] Drop 16 クロール堅牢化検証でエラーが検出されました:")
+        for line in res.stdout.splitlines():
+            if line.strip():
+                print(f"    {line}")
+        if res.stderr:
+            for line in res.stderr.splitlines():
+                if line.strip():
+                    print(f"    {line}")
+        return False
+
 def main():
     parser = argparse.ArgumentParser(description="PM-HUB Smoke Test Runner")
     parser.add_argument("--url", nargs="+", help="Explicit URLs to verify")
@@ -793,12 +820,13 @@ def main():
     incremental_ok = check_crawler_incremental()
     quality_ok = check_crawler_quality()
     quality_v2_ok = check_crawler_quality_v2()
+    drop16_ok = check_crawler_drop16()
 
     print("\n==================================================")
     if (syntax_ok and links_ok and unit_ok and dedup_ok and sync_ok
             and view_ok and crawler_ok and runtime_ok and server_api_ok
             and foundation_ok and parent_table_ok and rules_ok
-            and incremental_ok and quality_ok and quality_v2_ok):
+            and incremental_ok and quality_ok and quality_v2_ok and drop16_ok):
         print(" 【結果】全スモークテストに合格しました。修正コードは正常です。")
         sys.exit(0)
     else:

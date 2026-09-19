@@ -68,7 +68,32 @@ GENERIC_TITLE_KEYWORDS = frozenset({
     '新着情報', '１．日時', '１　開催日時', '議事要旨等', 'Interim Report', '共同主催国際会議',
     '議事次第・資料一覧', '配布資料一覧', '配付資料一覧', '覚書等', '覚書',
     '開催日', '開催日時', '開催期間', '議事次第等', '資料一覧', '配付資料等', '配布資料等',
-    '会議結果', '開催案内等', '配付資料について', '配布資料について', '会議概要'
+    '会議結果', '開催案内等', '配付資料について', '配布資料について', '会議概要',
+    '報道・広報', '広報', '関連リンク', 'リンク集', '災害への対応', '施策紹介', '最近の話題',
+    'オンライン利用率引上げ', '調査の概要', '外務省後援名義等の使用許可申請', '御意見・御感想',
+    'ご意見・ご感想', '大臣会見記録', '会見記録', '報道官会見記録', '広報印刷物', '赤れんが棟',
+    '法務省の個人情報保護について', '個人情報保護について', '法制審議会開催予定表', '開催予定表',
+    '検査方針・研修実績等', '対象者別メニュー', '提供可能となる食品の情報',
+    '新型コロナウイルス感染症に関する情報一覧', '感染症に関する情報一覧',
+    '審議会開催予定', '大臣等記者会見', '記者会見', '政策情報（会議・統計等）', '会議・委員会等'
+})
+
+# 組織常設資料（設置要綱・委員名簿・運営規程等）のキーワード（CR-20: 会議体資料であり開催回ではない）
+ORGANIZATION_DOC_KEYWORDS = frozenset({
+    '設置要綱', '設置要領', '設置根拠', '設置要項', '運営規程', '運営要領', '委員名簿', '構成員名簿',
+    '名簿', '根拠法令', '関係法令', '申し合わせ', '運営規律', '規約', '設置趣旨', '運営方針'
+})
+
+# 省庁共通ナビゲーション・広報リンク・非会議サブページのキーワード（CR-19: 開催回への誤登録を完全遮断）
+COMMON_NAV_KEYWORDS = frozenset({
+    '報道・広報', '広報', '関連リンク', 'リンク集', '災害への対応', '施策紹介', '最近の話題',
+    'オンライン利用率引上げ', '調査の依頼方法', '調査の概要', '外務省後援名義等の使用許可申請',
+    '御意見・御感想', 'ご意見・ご感想', '大臣会見記録', '会見記録', '報道官会見記録', '広報印刷物',
+    '赤れんが棟', '法務省の個人情報保護について', '個人情報保護について', '法制審議会開催予定表',
+    '開催予定表', '検査方針・研修実績等', '対象者別メニュー', '提供可能となる食品の情報',
+    '新型コロナウイルス感染症に関する情報一覧', '感染症に関する情報一覧',
+    '審議会開催予定', '大臣等記者会見', '記者会見', '政策情報（会議・統計等）', '会議・委員会等',
+    'パンフレット', 'リーフレット', 'メールマガジン', 'メルマガ', 'ポスター'
 })
 
 # 配付資料として不適切な汎用ナビゲーション・UIテキスト（事前除外用定数）
@@ -236,44 +261,54 @@ def load_councils_from_data_json():
         print(f"[INFO] 終了済み/非アクティブ会議体 {inactive_count} 件をクロール対象から除外します。")
     return councils
 
-def interleave_by_ministry(councils):
+def _extract_council_host(c):
+    u = c.get("officialUrl") or c.get("url") or ""
+    if u:
+        h = urllib.parse.urlparse(u).netloc.lower()
+        if h:
+            return h
+    return (c.get("ministry") or "OTHER").lower() + ".go.jp"
+
+def interleave_by_host_and_ministry(councils):
     """
-    同一省庁への連続アクセスを極力防止するため、省庁ごとに均等間隔（インターリーブ）で
-    巡回順序を並び替える。
+    同一ホスト名（ドメイン）および同一省庁への連続アクセスを防止するため、
+    ホスト名（netloc）を主キー、省庁を副キーとして均等間隔（インターリーブ）で
+    巡回順序を並び替える（CR-21）。
+    METIとANRE等の同一ドメイン（www.meti.go.jp）連続アクセスを根本回避する。
     """
     if not councils:
         return []
     from collections import defaultdict, deque
     buckets = defaultdict(deque)
     for c in councils:
-        m = c.get("ministry") or "OTHER"
-        buckets[m].append(c)
+        h = _extract_council_host(c)
+        buckets[h].append(c)
     
-    # 件数が多い順にソートした省庁リスト
-    sorted_ministries = sorted(buckets.keys(), key=lambda k: len(buckets[k]), reverse=True)
+    # 件数が多い順にソートしたホストリスト
+    sorted_hosts = sorted(buckets.keys(), key=lambda k: len(buckets[k]), reverse=True)
     
     # ラウンドロビン抽出
     interleaved = []
     while buckets:
-        for k in sorted_ministries:
-            if k in buckets and buckets[k]:
-                interleaved.append(buckets[k].popleft())
-                if not buckets[k]:
-                    del buckets[k]
+        for h in list(sorted_hosts):
+            if h in buckets and buckets[h]:
+                interleaved.append(buckets[h].popleft())
+                if not buckets[h]:
+                    del buckets[h]
                     
-    # 末尾に同一省庁が連続して残る場合、先頭側の別の省庁の間に挿入して分散
+    # 末尾に同一ホストが連続して残る場合、先頭側の別のホストの隙間に遡って挿入・分散
     final_list = []
     for item in interleaved:
-        if not final_list or final_list[-1].get("ministry") != item.get("ministry"):
+        item_host = _extract_council_host(item)
+        if not final_list or _extract_council_host(final_list[-1]) != item_host:
             final_list.append(item)
         else:
-            # 連続してしまう場合は、直前と異なる省庁の隙間に遡って挿入
+            # 連続してしまう場合は、直前・直後と異なるホストの隙間に遡って挿入
             inserted = False
             for idx in range(len(final_list) - 1, 0, -1):
-                prev_m = final_list[idx - 1].get("ministry")
-                curr_m = final_list[idx].get("ministry")
-                this_m = item.get("ministry")
-                if prev_m != this_m and curr_m != this_m:
+                prev_h = _extract_council_host(final_list[idx - 1])
+                curr_h = _extract_council_host(final_list[idx])
+                if prev_h != item_host and curr_h != item_host:
                     final_list.insert(idx, item)
                     inserted = True
                     break
@@ -281,6 +316,8 @@ def interleave_by_ministry(councils):
                 final_list.append(item)
                 
     return final_list
+
+interleave_by_ministry = interleave_by_host_and_ministry
 
 def load_scraping_rules():
     """docs/data.json の scrapingRules キーからスクレイピングルールを読み込み、必要に応じて scrapingRuleTemplates を展開・マージする"""
@@ -318,11 +355,25 @@ def load_scraping_rules():
             print(f"[WARN] Failed to load scrapingRules from data.json: {e}", file=sys.stderr)
     return {}
 
+_LAST_REQUEST_TIME_BY_HOST = {}
+_MIN_HOST_INTERVAL = 0.5  # 同一ホストへの最低アクセス間隔（秒）（AGENTS.md ルール9: 0.35秒以上のレートリミット遵守）
+
 def fetch_url(url, timeout=12):
     parsed_url = urllib.parse.urlparse(url)
     if parsed_url.scheme not in ("http", "https"):
         print(f"[ERROR] Invalid scheme: {url}", file=sys.stderr)
         return None
+
+    # CR-21: 同一ホストへの過密アクセス防止（WAF遮断回避 & サーバー負荷軽減）
+    host = parsed_url.netloc.lower()
+    if host:
+        now_t = time.time()
+        last_t = _LAST_REQUEST_TIME_BY_HOST.get(host, 0)
+        elapsed = now_t - last_t
+        if elapsed < _MIN_HOST_INTERVAL:
+            time.sleep(_MIN_HOST_INTERVAL - elapsed)
+        _LAST_REQUEST_TIME_BY_HOST[host] = time.time()
+
     headers = get_browser_headers()
     req = urllib.request.Request(url, headers=headers)
     try:
@@ -571,13 +622,18 @@ def _filter_incremental_subpages(candidate_urls, existing_urls, max_unvisited=50
     }
     return target_urls, stats
 
-# 非会議サブページの除外アンカーテキスト（CR-14）
+# 非会議サブページの除外アンカーテキスト（CR-14, CR-19, CR-20）
 NAV_EXCLUDE_TEXTS = frozenset({
     'ホーム', 'トップ', 'トップページ', 'トップへ', 'トップへ戻る', '目次', '政策について',
     '組織案内', 'プライバシーポリシー', 'サイトマップ', 'english', 'アクセス', 'リンク集',
     '戻る', '前のページへ戻る', '前のページへ', '次へ', '閉じる', 'メニュー', 'サイト内検索',
     '利用規約', 'ご意見・ご要望', '本文へ移動', 'フッターへ移動', 'page top', 'pagetop',
-    '印刷', '印刷する', '文字サイズ', '拡大', '標準'
+    '印刷', '印刷する', '文字サイズ', '拡大', '標準', '関連リンク', '施策紹介',
+    '広報印刷物', '赤れんが棟', '法務省の個人情報保護について', '個人情報保護について',
+    'オンライン利用率引上げ', '検査方針・研修実績等', '法制審議会開催予定表', '開催予定表',
+    '調査の依頼方法', '調査の概要', '対象者別メニュー', '提供可能となる食品の情報',
+    '新型コロナウイルス感染症に関する情報一覧', '感染症に関する情報一覧',
+    '後援名義等の使用許可申請', '御意見・御感想', 'ご意見・ご感想', '会見記録', '記者会見'
 })
 
 # 会議開催・回次・資料を示すアンカーテキスト判定パターン（CR-14: 投機的類推を排除し実リンクの文脈から判定）
@@ -707,9 +763,16 @@ def extract_actual_subpage_links(html, target_url, rule=None):
 
         text = a.get_text(' ', strip=True)
         t_clean = re.sub(r'\s+', ' ', text).strip()
+        t_stripped = re.sub(r'^[0-9０-９一二三四五六七八九十]+[．.、\s]+', '', t_clean).strip()
 
-        # ナビゲーション除外
-        if t_clean in NAV_EXCLUDE_TEXTS:
+        # CR-19 / CR-20: ナビゲーション・広報・組織常設資料の厳格除外
+        if t_clean in NAV_EXCLUDE_TEXTS or t_stripped in NAV_EXCLUDE_TEXTS:
+            continue
+        if any(kw in t_clean for kw in COMMON_NAV_KEYWORDS) or any(kw in t_stripped for kw in COMMON_NAV_KEYWORDS):
+            continue
+        if any(kw in t_clean for kw in ORGANIZATION_DOC_KEYWORDS) or any(kw in t_stripped for kw in ORGANIZATION_DOC_KEYWORDS):
+            continue
+        if any(kw == t_clean for kw in GENERIC_TITLE_KEYWORDS):
             continue
 
         # 開催告知・事前案内単体ページの除外
@@ -720,7 +783,14 @@ def extract_actual_subpage_links(html, target_url, rule=None):
         is_subpage_by_text = bool(ROUND_OR_DATE_TEXT_PATTERN.search(t_clean))
 
         # 判定2: URLパターンに合致するか
-        is_subpage_by_url = bool(custom_re.search(href) if custom_re else DEFAULT_SUBPAGE_URL_REGEX.search(href))
+        # ※アンカーテキストに会議要素がない場合、単なる数字HTML等の一般的URLは候補から除外
+        is_subpage_by_url = False
+        if custom_re:
+            is_subpage_by_url = bool(custom_re.search(href))
+        elif DEFAULT_SUBPAGE_URL_REGEX.search(href):
+            has_strong_url_kw = bool(re.search(r'(?:dai\d+|\d+kai|kaisai|gijisidai|gijiroku|session|meeting|bunkakai|r0?\d+/|h\d+/)', href, re.IGNORECASE))
+            if is_subpage_by_text or has_strong_url_kw:
+                is_subpage_by_url = True
 
         if is_subpage_by_text or is_subpage_by_url:
             seen.add(abs_clean)
@@ -1505,8 +1575,14 @@ def sync_new_meetings_from_crawl(data, target, scraped_item):
         if is_preliminary_notice_page(sub_url, sub_title) and not sub_mats:
             continue
 
-        # ジェネリックタイトルおよびポータルサイト名の登録遮断ガード
-        if any(kw == sub_title for kw in GENERIC_TITLE_KEYWORDS) or '食の安全、を科学する' in sub_title:
+        # CR-19 / CR-20: 共通ナビ・広報リンク・組織常設資料およびジェネリックタイトルの登録遮断ガード
+        sub_title_clean = re.sub(r'\s*\([^\)]*開催日不明[^\)]*\)$', '', sub_title).strip()
+        sub_title_clean = re.sub(r'^[0-9０-９一二三四五六七八九十]+[．.、\s]+', '', sub_title_clean).strip()
+        if any(kw in sub_title for kw in COMMON_NAV_KEYWORDS) or any(kw in sub_title_clean for kw in COMMON_NAV_KEYWORDS):
+            continue
+        if any(kw in sub_title for kw in ORGANIZATION_DOC_KEYWORDS) or any(kw in sub_title_clean for kw in ORGANIZATION_DOC_KEYWORDS):
+            continue
+        if any(kw == sub_title or kw == sub_title_clean for kw in GENERIC_TITLE_KEYWORDS) or '食の安全、を科学する' in sub_title:
             continue
 
         # 親会議体への下部組織・専門家会合の誤混入ガード（例: 税制調査会(cao-zei_cho)にEBPM等の専門家会合が混入するのを防止）
@@ -1591,7 +1667,7 @@ def sync_new_meetings_from_crawl(data, target, scraped_item):
         if is_date_unconfirmed:
             if not clean_materials_list:
                 continue
-            if any(kw in sub_title for kw in GENERIC_TITLE_KEYWORDS):
+            if any(kw in sub_title for kw in GENERIC_TITLE_KEYWORDS) or any(kw in sub_title for kw in COMMON_NAV_KEYWORDS) or any(kw in sub_title for kw in ORGANIZATION_DOC_KEYWORDS):
                 continue
 
         # 同一会議体・同一日付の重複チェック（同日重複の自動防止および資料マージ）
@@ -1827,7 +1903,15 @@ def run_meeting_crawler(progress_callback=None, stop_event=None):
     log_f, latest_f, log_filepath, latest_filepath = init_crawler_logfile()
 
     def emit(msg, payload=None):
-        print(msg)
+        try:
+            print(msg)
+        except (OSError, UnicodeEncodeError):
+            try:
+                enc = getattr(sys.stdout, 'encoding', None) or 'utf-8'
+                sys.stdout.write(msg.encode(enc, errors='replace').decode(enc) + '\n')
+                sys.stdout.flush()
+            except Exception:
+                pass
         now_ts = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
         log_line = f"[{now_ts}] {msg}\n"
         if log_f:
@@ -1846,13 +1930,16 @@ def run_meeting_crawler(progress_callback=None, stop_event=None):
             try:
                 progress_callback(msg, payload)
             except Exception as pe:
-                print(f"[WARN] progress_callback error: {pe}", file=sys.stderr)
+                try:
+                    print(f"[WARN] progress_callback error: {pe}", file=sys.stderr)
+                except Exception:
+                    pass
 
     try:
         dynamic_targets = load_councils_from_data_json()
         if dynamic_targets:
-            CRAWL_TARGETS = interleave_by_ministry(dynamic_targets)
-            emit(f"[INFO] docs/data.json から {len(CRAWL_TARGETS)} 件の会議体を動的に読み込み、同一省庁連続アクセス防止のため省庁分散インターリーブ巡回順に並び替えました。")
+            CRAWL_TARGETS = interleave_by_host_and_ministry(dynamic_targets)
+            emit(f"[INFO] docs/data.json から {len(CRAWL_TARGETS)} 件の会議体を動的に読み込み、同一ホスト名・省庁連続アクセス防止のためホスト分散インターリーブ巡回順に並び替えました。")
         else:
             CRAWL_TARGETS = []
             emit(f"[INFO] 会議体データが見つかりません。")
