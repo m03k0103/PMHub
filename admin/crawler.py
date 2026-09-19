@@ -1040,6 +1040,70 @@ def extract_via_llm(target_url, html, target_name):
     unique_dates = list(set(all_dates))
     return unique_materials, unique_dates
 
+def get_unconfirmed_meetings_count(data):
+    """docs/data.json の meetings 内で開催日未確定（2099/01/01 または isDateUnconfirmed: True）の開催回件数を集計"""
+    if not data or not isinstance(data, dict):
+        return 0
+    count = 0
+    for m in data.get("meetings", []):
+        d = str(m.get("date", "")).strip()
+        if d.startswith("2099") or m.get("isDateUnconfirmed"):
+            count += 1
+    return count
+
+def determine_crawl_result(unique_materials, norm_date_matches, subpage_meetings=None, page_title=""):
+    """
+    抽出された配付資料、開催日、開催回データ、ページタイトルの品質を総合評価し、
+    クロール成否（success / partial / failed）およびその理由（resultReason）を判定する。
+    """
+    materials = unique_materials or []
+    dates = norm_date_matches or []
+    subpages = subpage_meetings or []
+    title = (page_title or "").strip()
+
+    has_materials = len(materials) > 0
+    has_pdf = any(m.get("type") == "PDF" or str(m.get("url", "")).lower().endswith(".pdf") for m in materials)
+
+    # 正常な実在開催日（2099ダミーや無効プレフィックス 1312 を除く）
+    valid_dates = [
+        d for d in dates
+        if d and not str(d).startswith("2099") and not str(d).startswith("1312")
+    ]
+    has_valid_dates = len(valid_dates) > 0
+    has_subpages = len(subpages) > 0
+    is_generic_title = any(kw in title for kw in GENERIC_TITLE_KEYWORDS) if title else False
+
+    # 1. サブページ開催回または親テーブル開催回が抽出されている場合
+    if has_subpages:
+        sub_with_mats = any(len(s.get("materials", [])) > 0 for s in subpages)
+        sub_with_dates = any(len(s.get("extractedDates", [])) > 0 for s in subpages)
+        if sub_with_mats and (sub_with_dates or has_valid_dates):
+            return "success", f"開催回 {len(subpages)} 件を検出（資料・日付完備）"
+        elif sub_with_mats:
+            return "success", f"開催回 {len(subpages)} 件を検出（資料完備）"
+        else:
+            return "partial", f"開催回 {len(subpages)} 件を検出したが資料が0件"
+
+    # 2. トップページ単独での抽出
+    if has_materials and has_valid_dates:
+        if is_generic_title:
+            return "partial", f"資料 {len(materials)} 件・開催日 {len(valid_dates)} 件を検出したがタイトルが汎用見出し（{title}）"
+        if has_pdf:
+            return "success", f"PDF配付資料 {len(materials)} 件・開催日 {len(valid_dates)} 件を正常取得"
+        else:
+            return "success", f"配付資料 {len(materials)} 件・開催日 {len(valid_dates)} 件を正常取得"
+
+    if has_materials and not has_valid_dates:
+        reason = "開催日未取得（資料のみ検出）"
+        if dates and any(str(d).startswith("2099") for d in dates):
+            reason = "開催日が未確定（2099/01/01ダミー）かつ資料のみ検出"
+        return "partial", reason
+
+    if not has_materials and has_valid_dates:
+        return "partial", f"開催日のみ検出（資料0件: {valid_dates[0]}）"
+
+    return "failed", "配付資料・開催日・個別開催回のいずれも検出できませんでした"
+
 def execute_rule_retrieval(target, html, rule_item, use_llm=False):
     """多段情報取得Engine (高速Heuristicルール優先 → 未抽出時LLMフォールバック)"""
     global LLM_QUOTA_BLOCKED
@@ -1106,13 +1170,10 @@ def execute_rule_retrieval(target, html, rule_item, use_llm=False):
 
     past_year_count, has_top_page_dates = calculate_past_year_count(norm_date_matches)
 
-    # 抽出結果の判定
-    if unique_materials and norm_date_matches:
-        crawl_result = "success"
-    elif unique_materials or norm_date_matches:
-        crawl_result = "partial"
-    else:
-        crawl_result = "failed"
+    # 抽出結果の判定（CR-12: determine_crawl_result による品質・成否の精緻化）
+    crawl_result, result_reason = determine_crawl_result(
+        unique_materials, norm_date_matches, subpage_meetings, page_title
+    )
 
     scraped_item = {
         "councilId": target["id"],
@@ -1123,6 +1184,7 @@ def execute_rule_retrieval(target, html, rule_item, use_llm=False):
         "ruleApplied": rule_item.get("rule_id", "rule-default"),
         "extractionMethod": extraction_method,
         "crawlResult": crawl_result,
+        "resultReason": result_reason,
         "ministryQuirk": quirk_note,
         "pageTitle": page_title,
         "pastYearCount": past_year_count,
@@ -1465,6 +1527,7 @@ def update_crawl_status(data, council_id, scraped_item, failure_reason=None):
                 council["crawlStatus"] = {
                     "lastAttempt": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
                     "result": "failed",
+                    "resultReason": failure_reason or "Fetch failed",
                     "extractionMethod": "none",
                     "materialsCount": 0,
                     "datesCount": 0,
@@ -1474,13 +1537,15 @@ def update_crawl_status(data, council_id, scraped_item, failure_reason=None):
                 }
             else:
                 result = scraped_item.get("crawlResult", "failed")
+                result_reason = scraped_item.get("resultReason", "")
                 council["crawlStatus"] = {
                     "lastAttempt": scraped_item.get("scrapedAt", ""),
                     "result": result,
+                    "resultReason": result_reason,
                     "extractionMethod": scraped_item.get("extractionMethod", "none"),
                     "materialsCount": scraped_item.get("totalExtractedMaterials", 0),
                     "datesCount": len(scraped_item.get("extractedDates", [])),
-                    "failureReason": "" if result != "failed" else "Both LLM and rule extraction returned 0 results",
+                    "failureReason": "" if result != "failed" else (result_reason or "Both LLM and rule extraction returned 0 results"),
                     "consecutiveFailures": 0 if result != "failed" else prev_failures + 1,
                     "manualLockActive": is_locked
                 }
@@ -1743,6 +1808,8 @@ def run_meeting_crawler(progress_callback=None, stop_event=None):
                     
                     status_icon = {"success": "🟢", "partial": "🟡", "failed": "🔴"}.get(cr, "⚪")
                     emit(f"  -> {status_icon} [{cr.upper()}] タイトル: {item['pageTitle']}")
+                    if item.get("resultReason"):
+                        emit(f"  -> 判定理由: {item['resultReason']}")
                     emit(f"  -> 資料: {item['totalExtractedMaterials']} 件, 日付: {item['extractedDates']}, 抽出方法: {item['extractionMethod']}")
                     
                     update_crawl_status(data, target["id"], item)
@@ -1788,6 +1855,10 @@ def run_meeting_crawler(progress_callback=None, stop_event=None):
         emit(f"  🔴 失敗 (failed):      {stats['failed']} 件")
         emit(f"  🔴 取得エラー:         {stats['fetch_error']} 件")
         emit(f"  📦 新規追加会議:       {stats['new_meetings']} 件")
+        total_unconfirmed = get_unconfirmed_meetings_count(data)
+        stats["unconfirmed_meetings"] = total_unconfirmed
+        if total_unconfirmed > 0:
+            emit(f"  ⚠️  開催日未確定 (2099/01/01): {total_unconfirmed} 件 (要確認・修正推奨)")
         if log_filepath:
             emit(f"  📄 ログファイル:       {log_filepath}")
         emit(f"{'='*60}")
