@@ -11,7 +11,8 @@ const {
   isMeetingInDateRange,
   capitalize,
   sortMeetings,
-  sortCouncils
+  sortCouncils,
+  normalizeForSearch
 } = require('../docs/app.js');
 
 test('sanitizeUrl utility function (Security / XSS prevention)', async (t) => {
@@ -285,5 +286,27 @@ test('sortCouncils pure function', async (t) => {
     assert.deepStrictEqual(sampleCouncils, originalCopy);
   });
 });
+
+test('normalizeForSearch utility function (NFKC & Kangxi radicals / fullwidth absorption)', async (t) => {
+  await t.test('normalizes fullwidth alphanumeric to ASCII lowercase', () => {
+    assert.strictEqual(normalizeForSearch('ＡＩ推進'), 'ai推進');
+    assert.strictEqual(normalizeForSearch('ＷＧ'), 'wg');
+    assert.strictEqual(normalizeForSearch('第１回'), '第1回');
+  });
+
+  await t.test('normalizes Kangxi Radicals to standard CJK ideographs', () => {
+    // ⼈ (U+2F08) -> 人 (U+4EBA), ⽂ (U+2F42) -> 文 (U+6587)
+    assert.strictEqual(normalizeForSearch('⼈⼯知能'), '人工知能');
+    assert.strictEqual(normalizeForSearch('⽂化審議会'), '文化審議会');
+    assert.strictEqual(normalizeForSearch('１２⽉２７⽇'), '12月27日');
+  });
+
+  await t.test('handles empty or non-string inputs safely', () => {
+    assert.strictEqual(normalizeForSearch(''), '');
+    assert.strictEqual(normalizeForSearch(null), '');
+    assert.strictEqual(normalizeForSearch(undefined), '');
+  });
+});
+
 
 
