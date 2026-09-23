@@ -605,10 +605,11 @@ def parse_materials_from_html(html, base_url, pdf_selector=None):
     
     # 2. 共通ヘッダー・フッター・ナビゲーション領域の事前完全除去（スキップリンク・UIノイズの根本遮断）
     for noise_tag in soup(['header', 'footer', 'nav', 'aside', 'script', 'style']):
-        noise_tag.extract()
+        if noise_tag.name not in ('body', 'html', 'main', 'article'):
+            noise_tag.extract()
     for noise_id in ['header_navskip', 'js_drawer', 'header', 'footer', 'local_nav', 'gnavi', 'topic_path_head', 'sub_contents']:
         el = soup.find(id=noise_id)
-        if el:
+        if el and el.name not in ('body', 'html', 'main', 'article'):
             el.extract()
 
     seen_urls = set()
@@ -847,9 +848,9 @@ ROUND_OR_DATE_TEXT_PATTERN = re.compile(
     re.IGNORECASE
 )
 
-# デフォルトのサブページURL正規表現パターン（CR-14: 実在リンク判定用）
+# デフォルトのサブページURL正規表現パターン（CR-14 / CR-40: 実在リンク判定用）
 DEFAULT_SUBPAGE_URL_REGEX = re.compile(
-    r'(?:dai\d+|\d+kai|kaisai|gijisidai|gijiroku|newpage_\d+|shingi2|session|meeting|siryou|bunkakai|\d{3,4}\.html?$|r0?\d+_\d+|r\d+kai|h\d+_\d+|r0?\d+-\d+)',
+    r'(?:dai\d+|\d+kai|kaisai|gijisidai|gijiroku|newpage_\d+|shingi2|session|meeting|siryou|bunkakai|\d{3,4}\.html?$|r0?\d+_\d+|r\d+kai|h\d+_\d+|r0?\d+-\d+|02tsushin\d+_\d+|proceedings/(?:material|outline)/|councils/[^/]+/[0-9a-f]{8}-)',
     re.IGNORECASE
 )
 
@@ -931,12 +932,23 @@ def extract_actual_subpage_links(html, target_url, rule=None, return_meta=False)
     custom_re = None
     if custom_pattern:
         # href=["'](pattern)["'] や href="pattern" のプレフィックス・サフィックスを除去して純粋なURL正規表現に正規化
-        clean_pat = re.sub(r'^href\s*=\s*["\']?', '', custom_pattern, flags=re.IGNORECASE)
-        clean_pat = re.sub(r'["\']?$', '', clean_pat)
-        if clean_pat.startswith('(') and clean_pat.endswith(')') and clean_pat.count('(') == 1:
-            clean_pat = clean_pat[1:-1]
+        p = custom_pattern.strip()
+        p = re.sub(r'^href\s*=\s*(?:\[\\?["\']\\?["\']\]|["\']|\[["\']\])\s*', '', p, flags=re.I)
+        p = re.sub(r'\s*(?:\[\\?["\']\\?["\']\]|["\']|\[["\']\])$', '', p)
+        if p.startswith('(') and p.endswith(')'):
+            depth = 0
+            balanced = True
+            for ch in p[1:-1]:
+                if ch == '(': depth += 1
+                elif ch == ')':
+                    depth -= 1
+                    if depth < 0:
+                        balanced = False
+                        break
+            if balanced and depth == 0:
+                p = p[1:-1]
         try:
-            custom_re = re.compile(clean_pat, re.IGNORECASE)
+            custom_re = re.compile(p.strip(), re.IGNORECASE)
         except Exception:
             custom_re = None
 
@@ -982,7 +994,7 @@ def extract_actual_subpage_links(html, target_url, rule=None, return_meta=False)
         t_stripped = re.sub(r'^[0-9０-９一二三四五六七八九十]+[．.、\s]+', '', t_clean).strip()
 
         # 固有開催回URL（日付8桁やdai\d+など）である場合は、アンカーテキストが「配付資料」「配布資料」「議事要旨」等の一般的名称であっても除外せず探索対象とする
-        is_strong_meeting_url = bool(re.search(r'(?:\b(?:19|20)\d{6}\b|dai\d+|\d+kai|kaisai|session|meeting|r0?\d+-\d+|h\d+-\d+)', href_clean, re.I))
+        is_strong_meeting_url = bool(re.search(r'(?:\b(?:19|20)\d{6}\b|dai\d+|\d+kai|kaisai|session|meeting|r0?\d+-\d+|h\d+-\d+|02tsushin\d+_\d+|councils/[^/]+/[0-9a-f]{8}-)', href_clean, re.I))
 
         # CR-19 / CR-20: ナビゲーション・広報・組織常設資料の厳格除外
         if t_clean in NAV_EXCLUDE_TEXTS or t_stripped in NAV_EXCLUDE_TEXTS:
@@ -1014,7 +1026,7 @@ def extract_actual_subpage_links(html, target_url, rule=None, return_meta=False)
         if custom_re:
             is_subpage_by_url = bool(custom_re.search(href) or custom_re.search(abs_url))
         elif DEFAULT_SUBPAGE_URL_REGEX.search(href):
-            has_strong_url_kw = bool(re.search(r'(?:dai\d+|\d+kai|kaisai|gijisidai|gijiroku|session|meeting|bunkakai|r0?\d+_\d+|r\d+kai|h\d+_\d+|r0?\d+-\d+)', href, re.IGNORECASE))
+            has_strong_url_kw = bool(re.search(r'(?:dai\d+|\d+kai|kaisai|gijisidai|gijiroku|session|meeting|bunkakai|r0?\d+_\d+|r\d+kai|h\d+_\d+|r0?\d+-\d+|02tsushin\d+_\d+|proceedings|councils/[^/]+/[0-9a-f]{8}-)', href, re.IGNORECASE))
             if is_subpage_by_text or has_strong_url_kw:
                 is_subpage_by_url = True
 
