@@ -83,7 +83,9 @@ GENERIC_TITLE_KEYWORDS = frozenset({
     '新型コロナウイルス感染症に関する情報一覧', '感染症に関する情報一覧',
     '審議会開催予定', '大臣等記者会見', '記者会見', '政策情報（会議・統計等）', '会議・委員会等',
     '能力開発基本調査', '調査の実施について', '問い合わせ先', '情報配信サービス', 'イベント概要',
-    'セミナーのご案内', 'セミナー案内', '労使関係セミナー', '公募情報', '意見募集', 'パブリックコメント'
+    'セミナーのご案内', 'セミナー案内', '労使関係セミナー', '公募情報', '意見募集', 'パブリックコメント',
+    '１ 日時', '１　日時', '日時', '場所', '議題', '出席者', '出席者名簿', '１ 場所', '１　場所', '２ 場所', '２　場所',
+    '３ 議題', '３　議題', '傍聴', '傍聴案内', '傍聴について', '傍聴申込', '傍聴申し込み'
 })
 
 # 組織常設資料（設置要綱・委員名簿・運営規程等）のキーワード（CR-20: 会議体資料であり開催回ではない）
@@ -113,7 +115,9 @@ EXCLUDE_MATERIAL_NAMES = frozenset({
     '先頭へ戻る', 'ページトップへ', 'ページ先頭へ', 'PAGE TOP', 'Page Top',
     'pagetop', 'トップへ', 'トップ', 'HOME', 'Home', '戻る', '印刷', '印刷する',
     '別ウィンドウで開く', '新しいウィンドウで開く', '（別ウィンドウで開く）',
-    'JavaScriptが無効です', 'JavaScriptを有効にしてください'
+    'JavaScriptが無効です', 'JavaScriptを有効にしてください',
+    '傍聴される皆様への留意事項', '傍聴留意事項', '傍聴申込', '傍聴申込書', '傍聴申込用紙', '傍聴申込様式',
+    '上記の注意事項に同意し、傍聴を希望される方はこちらでお申込みください'
 })
 
 # 省庁・行政機関名のサフィックス正規表現（全省庁・外局・委員会網羅）
@@ -634,7 +638,7 @@ def parse_materials_from_html(html, base_url, pdf_selector=None):
         if not clean_name:
             clean_name = filename if filename else "配付資料"
 
-        if clean_name in EXCLUDE_MATERIAL_NAMES or any(k in clean_name for k in ['移動します', '公式ポータル', '公式ページ', '公式情報ポータル', '審議会・検討会等一覧', '公式掲載資料・ページ']):
+        if clean_name in EXCLUDE_MATERIAL_NAMES or any(k in clean_name for k in ['移動します', '公式ポータル', '公式ページ', '公式情報ポータル', '審議会・検討会等一覧', '公式掲載資料・ページ']) or any(kw in clean_name for kw in ['傍聴される皆様への留意事項', '傍聴留意事項', '傍聴申込', '傍聴希望', '傍聴案内', 'お申込みください', 'お申込みは', '傍聴される皆様へ']):
             continue
 
         # A. PDFおよび各種文書ファイル
@@ -691,12 +695,15 @@ def extract_page_title(soup, rule=None, fallback_url=""):
 
         # title_selector で取れなかった場合、またはジェネリックタイトルの場合
         if not title or any(kw == title for kw in GENERIC_TITLE_KEYWORDS):
-            for tag_name in ['h2', 'h1', 'h3']:
+            for tag_name in ['h1', 'h2', 'h3']:
                 found_tags = soup.find_all(tag_name)
                 for ft in found_tags:
                     t_cand = ft.get_text(" ", strip=True)
                     t_cand = clean_meeting_title(t_cand)
                     if not t_cand or len(t_cand) <= 3:
+                        continue
+                    # 事務的見出し（例: １ 日時、２ 場所、３ 議題、１．日時 等）をスキップ
+                    if re.match(r'^[0-9０-９一二三四五六七八九十]+[．.、\s\u3000]*(?:開催日時|日時|開催日|場所|議題|出席者|出席者名簿|傍聴|募集要項)', t_cand):
                         continue
                     if any(kw == t_cand or (len(kw) >= 3 and kw in t_cand) for kw in GENERIC_TITLE_KEYWORDS):
                         continue
@@ -1068,6 +1075,16 @@ def _crawl_subpages(target_url, html, rule, quirk_note, pdf_pattern, existing_ur
                 sub_soup = BeautifulSoup(sub_html, 'html.parser')
                 sub_title = extract_page_title(sub_soup, rule, fallback_url=sub_url)
 
+                # 開催案内・事前告知ページの即時判定と破棄（AGENTS.md 第11条・第12条）
+                sub_page_title = sub_soup.title.string.strip() if sub_soup.title and sub_soup.title.string else ""
+                h1_texts = [h.get_text(" ", strip=True) for h in sub_soup.find_all('h1')]
+                if (
+                    is_preliminary_notice_page(sub_url, sub_title) or
+                    is_preliminary_notice_page(sub_url, sub_page_title) or
+                    any(is_preliminary_notice_page(sub_url, h) for h in h1_texts)
+                ):
+                    continue
+
                 sub_materials = parse_materials_from_html(sub_html, sub_url, pdf_pattern)
                 
                 # 2段階配付資料自動探索: もしPDF資料が0件（または議事録のみ）の場合、ページ内の明示的リンクを探索
@@ -1134,6 +1151,7 @@ def _crawl_subpages(target_url, html, rule, quirk_note, pdf_pattern, existing_ur
                     "subpageUrl": sub_url,
                     "name": sub_title,
                     "title": sub_title,
+                    "pageTitle": sub_page_title,
                     "extractedMaterialsCount": len(sub_materials),
                     "materials": sub_materials,
                     "extractedDates": list(set(norm_sub_dates))[:2]
@@ -1706,19 +1724,26 @@ def is_preliminary_notice_page(url, title=""):
         return True
 
     t_raw = (title or "").strip()
-    # 1. 末尾の省庁・行政機関名サフィックスを安全に除去（空白単体での過剰マッチを排除）
+    # 1. 末尾の省庁・行政機関名サフィックスを安全に除去
     t_clean = GOV_SUFFIX_REGEX.sub('', t_raw).strip()
-    # 2. 末尾の括弧表記（例: （非公開）、（WEB開催）、（持ち回り開催）等）を一時的に除去
-    t_clean = re.sub(r'[\(（][^\)）]+[\)）]$', '', t_clean).strip()
+    # 2. 末尾の括弧表記（例: （非公開）、（WEB開催）、（ペーパーレス・Web併用）、（オンライン会議）等）を繰り返し安全に除去
+    while True:
+        m_paren = re.search(r'[\(（][^\)）]+[\)）]$', t_clean)
+        if m_paren:
+            t_clean = t_clean[:m_paren.start()].strip()
+        else:
+            break
 
     # 3. 末尾の開催案内・事前告知キーワード判定
-    if re.search(r'(?:の開催について|の開催案内|の開催のお知らせ|開催のお知らせ|開催案内|傍聴の案内|傍聴について|の開催概要について|傍聴の受付|議事要旨|議事録|のご案内|の案内|問い合わせ先|情報配信サービス)$', t_clean):
+    if re.search(r'(?:の開催案内について|開催案内について|の開催について|開催について|の開催告知について|開催告知について|の開催告知|開催告知|の開催のお知らせについて|開催のお知らせについて|の開催案内|開催案内|の開催のお知らせ|開催のお知らせ|傍聴の案内|傍聴について|傍聴される皆様への留意事項|の開催概要について|傍聴の受付|傍聴申込み|傍聴申込|議事要旨|議事録|のご案内|の案内|問い合わせ先|情報配信サービス)$', t_clean):
         return True
 
-    # 4. タイトル途中に「開催案内」「傍聴の案内」等が含まれる場合（例: 「第X回○○部会 開催案内」）
-    if re.search(r'(?:[\s\u3000]+|（|\()開催案内(?:[\s\u3000]+|）|\)|$)', t_raw):
+    # 4. タイトル途中に「開催案内」「傍聴の案内」「開催告知」等が含まれる場合
+    if any(kw in t_raw for kw in ['開催案内', '開催告知', '傍聴される皆様への留意事項', '傍聴留意事項', '傍聴申込', '傍聴の受付', '傍聴申込み']):
         return True
-    if re.search(r'(?:[\s\u3000]+|（|\()傍聴(?:の案内|について)?(?:[\s\u3000]+|）|\)|$)', t_raw):
+    if re.search(r'(?:[\s\u3000]+|（|\()傍聴(?:の案内|について|希望)?(?:[\s\u3000]+|）|\)|$)', t_raw):
+        return True
+    if re.search(r'を開催します[\s\u3000]*[\(（][^\)）]*案内', t_raw):
         return True
 
     # 5. 非会議タイトル（セミナー、能力開発基本調査、問い合わせ先等）
@@ -1870,7 +1895,8 @@ def sync_new_meetings_from_crawl(data, target, scraped_item):
             continue
 
         # 事前開催案内ページ（事前告知・傍聴案内等）は会議ページとして登録しない（AGENTS.md 第11条・第12条）
-        if is_preliminary_notice_page(sub_url, sub_title):
+        sub_page_title = sub.get("pageTitle", "")
+        if is_preliminary_notice_page(sub_url, sub_title) or (sub_page_title and is_preliminary_notice_page(sub_url, sub_page_title)):
             continue
 
         # CR-19 / CR-20: 共通ナビ・広報リンク・組織常設資料およびジェネリックタイトルの登録遮断ガード
