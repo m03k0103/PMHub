@@ -19,6 +19,7 @@ import threading
 import concurrent.futures
 import argparse
 import subprocess
+import unicodedata
 from datetime import datetime, timedelta
 from bs4 import BeautifulSoup
 from utils import (
@@ -1345,6 +1346,8 @@ def validate_and_normalize_date(date_str):
 def extract_clean_dates_from_html(html_str, date_regex_pattern=r'(?<![\d\w\/\-])(?:(?:令和|平成)(?:\d+|元)年\d{1,2}月\d{1,2}日|\d{4}年\d{1,2}月\d{1,2}日|\d{4}[/-]\d{1,2}[/-]\d{1,2})(?![\d\w\/\-])'):
     """更新日・掲載日などのノイズや不正パターンを除去して会議開催日を抽出"""
     cleaned_html = clean_html_for_dates(html_str)
+    # NFKC正規化（康煕部首・全角英数・記号の正規化）
+    cleaned_html = unicodedata.normalize('NFKC', cleaned_html)
     # 全角数字を半角に正規化
     cleaned_html = normalize_japanese_numbers(cleaned_html)
     # 和暦・西暦表記内の空白を除去 (例: 令和　８年　９月　７日 -> 令和8年9月7日)
