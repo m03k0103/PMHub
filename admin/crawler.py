@@ -835,7 +835,7 @@ NAV_EXCLUDE_TEXTS = frozenset({
 ROUND_OR_DATE_TEXT_PATTERN = re.compile(
     r'(?:第\s*[0-9０-９一二三四五六七八九十百]+\s*(?:回|期|部会|分科会|WG|ワーキンググループ|委員会|会合)|'
     r'配付資料|配布資料|議事次第|議事録|議事要旨|開催状況|資料一覧|開催案内等|'
-    r'(?:令和|平成)(?:\d+|元)年\d+月\d+日|\d{4}年\d+月\d+日|\d{4}[/-]\d+[/-]\d+)',
+    r'(?:令和|平成)\s*(?:\d+|元)\s*年\s*\d+\s*月\s*\d+\s*日|\d{4}\s*年\s*\d+\s*月\s*\d+\s*日|\d{4}[/-]\d+[/-]\d+)',
     re.IGNORECASE
 )
 
@@ -1347,13 +1347,19 @@ def extract_clean_dates_from_html(html_str, date_regex_pattern=r'(?<![\d\w\/\-])
     cleaned_html = clean_html_for_dates(html_str)
     # 全角数字を半角に正規化
     cleaned_html = normalize_japanese_numbers(cleaned_html)
+    # 和暦・西暦表記内の空白を除去 (例: 令和　８年　９月　７日 -> 令和8年9月7日)
+    cleaned_html = re.sub(
+        r'(?:(令和|平成)\s*(\d+|元)|\b(\d{4}))\s*年\s*(\d{1,2})\s*月\s*(\d{1,2})\s*日',
+        lambda m: f"{m.group(1)}{m.group(2)}年{m.group(4)}月{m.group(5)}日" if m.group(1) else f"{m.group(3)}年{m.group(4)}月{m.group(5)}日",
+        cleaned_html
+    )
     # 年号併記の括弧を除去 (例: 2026年（令和8年）3月24日 -> 2026年3月24日)
     cleaned_html = re.sub(r'(\d{4}年)[（\(][^）\)\n]+[）\)]\s*(\d{1,2}月\d{1,2}日)', r'\1\2', cleaned_html)
     cleaned_html = re.sub(r'((?:令和|平成)(?:\d+|元)年)[（\(][^）\)\n]+[）\)]\s*(\d{1,2}月\d{1,2}日)', r'\1\2', cleaned_html)
     raw_dates = re.findall(date_regex_pattern, cleaned_html)
     
     # 優先判定: 「実施日」「開催日時」「開催日」に直結する日付文字列があれば最優先で抽出
-    explicit_matches = re.findall(r'(?:実施日|開催日|開催日時)\s*[:：]?\s*((?:(?:令和|平成)(?:\d+|元)年|\d{4}年)\d{1,2}月\d{1,2}日|\d{4}[/-]\d{1,2}[/-]\d{1,2})', html_str)
+    explicit_matches = re.findall(r'(?:実施日|開催日|開催日時)\s*[:：]?\s*((?:(?:令和|平成)(?:\d+|元)年|\d{4}年)\d{1,2}月\d{1,2}日|\d{4}[/-]\d{1,2}[/-]\d{1,2})', cleaned_html)
     valid_explicit = []
     if explicit_matches:
         for em in explicit_matches:
