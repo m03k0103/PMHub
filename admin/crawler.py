@@ -981,6 +981,9 @@ def extract_actual_subpage_links(html, target_url, rule=None, return_meta=False)
         t_clean = re.sub(r'\s+', ' ', text).strip()
         t_stripped = re.sub(r'^[0-9０-９一二三四五六七八九十]+[．.、\s]+', '', t_clean).strip()
 
+        # 固有開催回URL（日付8桁やdai\d+など）である場合は、アンカーテキストが「配付資料」「配布資料」「議事要旨」等の一般的名称であっても除外せず探索対象とする
+        is_strong_meeting_url = bool(re.search(r'(?:\b(?:19|20)\d{6}\b|dai\d+|\d+kai|kaisai|session|meeting|r0?\d+-\d+|h\d+-\d+)', href_clean, re.I))
+
         # CR-19 / CR-20: ナビゲーション・広報・組織常設資料の厳格除外
         if t_clean in NAV_EXCLUDE_TEXTS or t_stripped in NAV_EXCLUDE_TEXTS:
             continue
@@ -988,7 +991,10 @@ def extract_actual_subpage_links(html, target_url, rule=None, return_meta=False)
             continue
         if any(kw in t_clean for kw in ORGANIZATION_DOC_KEYWORDS) or any(kw in t_stripped for kw in ORGANIZATION_DOC_KEYWORDS):
             continue
-        if any(kw == t_clean for kw in GENERIC_TITLE_KEYWORDS):
+        # 報告書公表ページ・活動状況等の組織常設資料（回次「第X回」を含まない単独報告書リンク）の除外
+        if (any(k in t_clean for k in ['報告書', '活動状況', '視察概要', '論点整理', '提言']) or any(k in abs_url.lower() for k in ['/report/', '/tosin/'])) and not re.search(r'第\s*\d+\s*回', t_clean):
+            continue
+        if not is_strong_meeting_url and any(kw == t_clean for kw in GENERIC_TITLE_KEYWORDS):
             continue
 
         # 開催告知・事前案内単体ページの除外
@@ -1012,12 +1018,13 @@ def extract_actual_subpage_links(html, target_url, rule=None, return_meta=False)
             if is_subpage_by_text or has_strong_url_kw:
                 is_subpage_by_url = True
 
-        if is_subpage_by_text or is_subpage_by_url:
+        if is_subpage_by_text or is_subpage_by_url or is_strong_meeting_url:
             seen.add(abs_clean)
             candidates.append(abs_url)
 
-            # 親ページ側のアンカーおよび行コンテナから開催日を先行抽出
+            # 親ページ側のアンカーおよび行コンテナから開催日とコンテキストテキストを先行抽出
             parent_date = None
+            context_text = t_clean
             anchor_dates = extract_clean_dates_from_html(t_clean)
             if anchor_dates:
                 parent_date = anchor_dates[0]
@@ -1028,9 +1035,13 @@ def extract_actual_subpage_links(html, target_url, rule=None, return_meta=False)
                     c_dates = extract_clean_dates_from_html(c_text)
                     if c_dates:
                         parent_date = c_dates[0]
+                    # 親コンテナに回次や会議名が含まれていればコンテキストとして活用
+                    if any(kw in c_text for kw in ['第', '回', '検討会', '委員会', '審議会', '懇談会']):
+                        c_first_line = c_text.splitlines()[0] if '\n' in c_text else c_text[:80]
+                        context_text = c_first_line.strip()
 
             meta_map[abs_url] = {
-                "anchor_text": t_clean,
+                "anchor_text": context_text,
                 "parent_date": parent_date
             }
 
@@ -1378,19 +1389,28 @@ def extract_clean_dates_from_html(html_str, date_regex_pattern=r'(?<![\d\w\/\-])
     cleaned_html = re.sub(r'(\d{4}年)[（\(][^）\)\n]+[）\)]\s*(\d{1,2}月\d{1,2}日)', r'\1\2', cleaned_html)
     cleaned_html = re.sub(r'((?:令和|平成)(?:\d+|元)年)[（\(][^）\)\n]+[）\)]\s*(\d{1,2}月\d{1,2}日)', r'\1\2', cleaned_html)
     raw_dates = re.findall(date_regex_pattern, cleaned_html)
+    flat_raw_dates = []
+    for item in raw_dates:
+        if isinstance(item, tuple):
+            non_empty = [s for s in item if s]
+            if non_empty:
+                flat_raw_dates.append(non_empty[0])
+        elif isinstance(item, str):
+            flat_raw_dates.append(item)
     
     # 優先判定: 「実施日」「開催日時」「開催日」に直結する日付文字列があれば最優先で抽出
     explicit_matches = re.findall(r'(?:実施日|開催日|開催日時)\s*[:：]?\s*((?:(?:令和|平成)(?:\d+|元)年|\d{4}年)\d{1,2}月\d{1,2}日|\d{4}[/-]\d{1,2}[/-]\d{1,2})', cleaned_html)
     valid_explicit = []
     if explicit_matches:
         for em in explicit_matches:
-            vd = validate_and_normalize_date(normalize_japanese_numbers(em))
+            em_str = em[0] if isinstance(em, tuple) else em
+            vd = validate_and_normalize_date(normalize_japanese_numbers(em_str))
             if vd and vd not in valid_explicit:
                 valid_explicit.append(vd)
 
     # 「更新日: 2024年X月X日」「掲載日: ...」などの直前ラベル付きの日付を除外
     filtered_dates = []
-    for d in raw_dates:
+    for d in flat_raw_dates:
         # 直前ラベルに「更新日」「掲載日」「公表日」「作成日」「施行期日」「適用期日」等が含まれる場合は除外
         escaped_d = re.escape(d)
         if re.search(r'(?:更新日|最終更新|掲載日|公表日|作成日|ページID|copyright|施行期日|施行日|施行|適用期日|適用日|公布の日|公布日|施行予定|適用予定)[^。\n]{0,30}' + escaped_d, cleaned_html, re.I):
