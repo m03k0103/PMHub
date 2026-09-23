@@ -91,7 +91,8 @@ GENERIC_TITLE_KEYWORDS = frozenset({
 # 組織常設資料（設置要綱・委員名簿・運営規程等）のキーワード（CR-20: 会議体資料であり開催回ではない）
 ORGANIZATION_DOC_KEYWORDS = frozenset({
     '設置要綱', '設置要領', '設置根拠', '設置要項', '運営規程', '運営要領', '委員名簿', '構成員名簿',
-    '名簿', '根拠法令', '関係法令', '申し合わせ', '運営規律', '規約', '設置趣旨', '運営方針'
+    '名簿', '根拠法令', '関係法令', '申し合わせ', '運営規律', '規約', '設置趣旨', '運営方針',
+    '構成員', '審議会の構成', '委員会の構成', 'の構成', '機構図', '組織図'
 })
 
 # 省庁共通ナビゲーション・広報リンク・非会議サブページのキーワード（CR-19: 開催回への誤登録を完全遮断）
@@ -512,6 +513,23 @@ def _get_ssl_fallback_context():
     _SSL_FALLBACK_CONTEXT = ctx
     return _SSL_FALLBACK_CONTEXT
 
+def is_waf_challenge(html_or_bytes, status_code=200):
+    """AWS WAF / Cloudflare 等の JavaScript チャレンジ画面を検知する（CR-43）"""
+    if not html_or_bytes:
+        return False
+    if status_code == 202:
+        return True
+    if isinstance(html_or_bytes, bytes):
+        lower = html_or_bytes.lower()
+        return (b'awswafcookie' in lower or b'aws-waf' in lower or
+                b'challenge-error-text' in lower or b'challenge-running' in lower or
+                b'cf-browser-verification' in lower)
+    else:
+        lower = html_or_bytes.lower()
+        return ('awswafcookie' in lower or 'aws-waf' in lower or
+                'challenge-error-text' in lower or 'challenge-running' in lower or
+                'cf-browser-verification' in lower)
+
 def _fetch_with_curl(url, timeout=12):
     """curl.exe を使用して WAF/Cloudflare 保護サイト等から HTML をフォールバック取得する"""
     try:
@@ -530,8 +548,8 @@ def _fetch_with_curl(url, timeout=12):
         ]
         res = subprocess.run(cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE, timeout=timeout + 3)
         if res.returncode == 0 and res.stdout:
-            # 正常なHTMLか判定（Cloudflare challenge ページ等を除外）
-            if b'<html' in res.stdout.lower() and b'challenge-error-text' not in res.stdout:
+            # 正常なHTMLか判定（Cloudflare / AWS WAF challenge ページ等を除外）
+            if b'<html' in res.stdout.lower() and not is_waf_challenge(res.stdout):
                 return decode_html_bytes(res.stdout, 'text/html; charset=utf-8')
     except Exception as e:
         safe_emit_log(f"  -> 🔴 [CURL FALLBACK ERROR] {url}: {e}")
@@ -554,7 +572,11 @@ def fetch_url(url, timeout=12):
         with urllib.request.urlopen(req, timeout=timeout, context=ctx) as response:
             content_type = response.headers.get('Content-Type', '')
             raw_bytes = response.read()
-            return decode_html_bytes(raw_bytes, content_type)
+            html = decode_html_bytes(raw_bytes, content_type)
+            if is_waf_challenge(html, response.status):
+                safe_emit_log(f"  -> 🔴 [WAF CHALLENGE BLOCKED] {url}: AWS/Cloudflare WAF challenge screen detected (Status: {response.status})")
+                return None
+            return html
     except urllib.error.HTTPError as e:
         # WAF/Cloudflare (403) 等での curl.exe フォールバック
         if e.code in (403, 429, 503):
