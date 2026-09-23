@@ -18,6 +18,7 @@ import time
 import threading
 import concurrent.futures
 import argparse
+import subprocess
 from datetime import datetime, timedelta
 from bs4 import BeautifulSoup
 from utils import (
@@ -506,6 +507,31 @@ def _get_ssl_fallback_context():
     _SSL_FALLBACK_CONTEXT = ctx
     return _SSL_FALLBACK_CONTEXT
 
+def _fetch_with_curl(url, timeout=12):
+    """curl.exe を使用して WAF/Cloudflare 保護サイト等から HTML をフォールバック取得する"""
+    try:
+        cmd = [
+            'curl.exe', '-s', '-L',
+            '-A', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36',
+            '-H', 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8',
+            '-H', 'Accept-Language: ja,en-US;q=0.9,en;q=0.8',
+            '-H', 'Upgrade-Insecure-Requests: 1',
+            '-H', 'Sec-Fetch-Dest: document',
+            '-H', 'Sec-Fetch-Mode: navigate',
+            '-H', 'Sec-Fetch-Site: none',
+            '-H', 'Sec-Fetch-User: ?1',
+            '--max-time', str(timeout),
+            url
+        ]
+        res = subprocess.run(cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE, timeout=timeout + 3)
+        if res.returncode == 0 and res.stdout:
+            # 正常なHTMLか判定（Cloudflare challenge ページ等を除外）
+            if b'<html' in res.stdout.lower() and b'challenge-error-text' not in res.stdout:
+                return decode_html_bytes(res.stdout, 'text/html; charset=utf-8')
+    except Exception as e:
+        safe_emit_log(f"  -> 🔴 [CURL FALLBACK ERROR] {url}: {e}")
+    return None
+
 def fetch_url(url, timeout=12):
     parsed_url = urllib.parse.urlparse(url)
     if parsed_url.scheme not in ("http", "https"):
@@ -525,6 +551,11 @@ def fetch_url(url, timeout=12):
             raw_bytes = response.read()
             return decode_html_bytes(raw_bytes, content_type)
     except urllib.error.HTTPError as e:
+        # WAF/Cloudflare (403) 等での curl.exe フォールバック
+        if e.code in (403, 429, 503):
+            curl_html = _fetch_with_curl(url, timeout=timeout)
+            if curl_html:
+                return curl_html
         safe_emit_log(f"  -> 🔴 [HTTP ERROR {e.code}] {url}: {e.reason}")
         return None
     except (ssl.SSLCertVerificationError, urllib.error.URLError) as e:
@@ -537,11 +568,20 @@ def fetch_url(url, timeout=12):
                     raw_bytes = response.read()
                     return decode_html_bytes(raw_bytes, content_type)
             except Exception as fb_e:
+                curl_html = _fetch_with_curl(url, timeout=timeout)
+                if curl_html:
+                    return curl_html
                 safe_emit_log(f"  -> 🔴 [FETCH ERROR (SSL FB)] {url}: {fb_e}")
                 return None
+        curl_html = _fetch_with_curl(url, timeout=timeout)
+        if curl_html:
+            return curl_html
         safe_emit_log(f"  -> 🔴 [FETCH ERROR] {url}: {e}")
         return None
     except Exception as e:
+        curl_html = _fetch_with_curl(url, timeout=timeout)
+        if curl_html:
+            return curl_html
         safe_emit_log(f"  -> 🔴 [FETCH ERROR] {url}: {e}")
         return None
 
@@ -900,7 +940,8 @@ def extract_actual_subpage_links(html, target_url, rule=None, return_meta=False)
         href = a['href'].strip()
         if not href or href.startswith('#') or href.startswith('javascript:') or href.startswith('mailto:'):
             continue
-        if href.lower().endswith('.pdf') or href.lower().endswith('.zip'):
+        href_clean = href.lower().split('?')[0].split('#')[0]
+        if href_clean.endswith(('.pdf', '.zip', '.doc', '.docx', '.xls', '.xlsx', '.jtd')):
             continue
 
         abs_url = urllib.parse.urljoin(page_base_url, href)
