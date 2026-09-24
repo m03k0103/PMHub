@@ -126,13 +126,62 @@ GOV_SUFFIX_REGEX = re.compile(
     r'[\s\u3000]*[｜\|：:\-–—―]\s*(?:厚生労働省|内閣府|内閣官房|財務省|国税庁|金融庁|法務省|出入国在留管理庁|公安審査委員会|公安調査庁|外務省|文部科学省|文化庁|スポーツ庁|農林水産省|水産庁|林野庁|経済産業省|資源エネルギー庁|特許庁|中小企業庁|国土交通省|観光庁|気象庁|海上保安庁|環境省|原子力規制委員会|防衛省|防衛装備庁|デジタル庁|こども家庭庁|食品安全委員会|消費者庁|警察庁|消防庁|首相官邸.*|WARP.*)$'
 )
 
+# CJK部首補助（U+2E80〜U+2EF3）の中でNFKCで通常漢字に分解されない文字のマッピングテーブル
+CJK_RADICAL_REPLACEMENTS = {
+    '\u2ea0': '民',  # CJK RADICAL CIVILIAN -> 民
+    '\u2e81': '人',  # CJK RADICAL PERSON -> 人
+    '\u2e84': 'ノ',
+    '\u2e85': '亻',
+    '\u2e88': '刀',
+    '\u2e8c': '小',
+    '\u2e90': '山',
+    '\u2e97': '心',
+    '\u2e98': '手',
+    '\u2e9d': '日',
+    '\u2ea1': '水',
+    '\u2ea2': '火',
+    '\u2ea3': '犬',
+    '\u2ea4': '王',
+    '\u2ea7': '礻',
+    '\u2ea8': '糸',
+    '\u2eae': '肉',
+    '\u2eb1': '艸',
+    '\u2eb2': '艹',
+    '\u2eb3': '衤',
+    '\u2eb6': '言',
+    '\u2eb7': '貝',
+    '\u2ebb': '車',
+    '\u2ec1': '金',
+    '\u2ec2': '長',
+    '\u2ec5': '門',
+    '\u2ecb': '雨',
+    '\u2ece': '青',
+    '\u2ed0': '食',
+    '\u2ed4': '首',
+    '\u2ed6': '高',
+    '\u2edd': '鬼',
+}
+
+def normalize_text(text):
+    """康煕部首（U+2F00〜U+2FD5）、CJK部首補助、全角英数・特殊異体字を標準文字へ NFKC 正規化する（CR-46）"""
+    if not text:
+        return ""
+    text_str = str(text)
+    for bad, good in CJK_RADICAL_REPLACEMENTS.items():
+        if bad in text_str:
+            text_str = text_str.replace(bad, good)
+    # NFKC 正規化により、康煕部首（⾦, ⽊, ⽔, ⾼, ⼩ 等）が標準漢字に変換され、全角英数が半角英数になる
+    normalized = unicodedata.normalize('NFKC', text_str)
+    # 連続空白を単一スペースに正規化し、前後の空白を除去
+    return re.sub(r'[\s\u3000]+', ' ', normalized).strip()
+
 def clean_meeting_title(title):
     """
-    会議タイトルから末尾の省庁サフィックス、配付資料一覧、共通ノイズ等を除去・正規化する（CR-28）。
+    会議タイトルから末尾の省庁サフィックス、配付資料一覧、共通ノイズ等を除去・正規化する（CR-28 / CR-46）。
     """
     if not title:
         return ""
-    t = str(title).strip()
+    t = normalize_text(title)
     # 1. 末尾の省庁・行政組織サフィックスの除去
     t = GOV_SUFFIX_REGEX.sub('', t).strip()
     # 2. 末尾の資料・配付資料・配付資料一覧等の除去
@@ -652,9 +701,10 @@ def parse_materials_from_html(html, base_url, pdf_selector=None):
         if any(k in abs_url.lower() for k in ['cas.go.jp/jp/siryou', 'cas.go.jp/jp/shiryo']) or is_generic_index_url(abs_url):
             continue
 
-        raw_text = a_tag.get_text(" ", strip=True)
+        raw_text = normalize_text(a_tag.get_text(" ", strip=True))
         clean_name = re.sub(r'[\（\(]PDF[／/形式\:\s\d\.\,KBMB]+\s*[\）\)]', '', raw_text).strip()
         clean_name = re.sub(r'［PDF形式：\d+.*?］', '', clean_name).strip()
+        clean_name = normalize_text(clean_name)
         
         parsed_path = urllib.parse.urlparse(abs_url).path
         filename = os.path.basename(parsed_path)
@@ -690,7 +740,7 @@ def parse_materials_from_html(html, base_url, pdf_selector=None):
             
     private_lines = re.findall(r'(資料\d+[\s\:\：]*[^\n<]+(?:非公開)[^\n<]*)', html)
     for p_text in private_lines:
-        clean_p_text = re.sub(r'<[^>]+>', '', p_text).strip()
+        clean_p_text = normalize_text(re.sub(r'<[^>]+>', '', p_text).strip())
         materials.append({
             "name": clean_p_text,
             "url": "#",
@@ -2156,7 +2206,7 @@ def update_crawl_status(data, council_id, scraped_item, failure_reason=None):
 def extract_session_numbers(text):
     if not text:
         return set()
-    t_norm = normalize_japanese_numbers(str(text))
+    t_norm = normalize_japanese_numbers(normalize_text(str(text)))
     nums = set()
     matches = re.findall(r'第\s*(\d+)\s*回', t_norm)
     for m in matches:
@@ -2172,8 +2222,9 @@ def extract_session_numbers(text):
 def extract_years(text):
     if not text:
         return set()
+    t_norm = normalize_text(str(text))
     years = set()
-    reiwa = re.findall(r'令和([元\d]+)年', text)
+    reiwa = re.findall(r'令和([元\d]+)年', t_norm)
     for r in reiwa:
         val = 1 if r == '元' else int(r)
         years.add(2018 + val)

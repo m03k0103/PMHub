@@ -124,7 +124,7 @@ def check_js_syntax(code, file_path=""):
 def check_syntax_errors():
     """1. JS/Python/HTML/JSON ファイルの文法・タグ構造エラーを自動確認"""
     print("--------------------------------------------------")
-    print(" [テスト 1/17] コードの文法エラー (SyntaxError) 自動検証")
+    print(" [テスト 1/18] コードの文法エラー (SyntaxError) 自動検証")
     print("--------------------------------------------------")
     
     files_to_check = [
@@ -299,7 +299,7 @@ def check_link_health(explicit_urls=None, check_all=False):
     import time
     from collections import defaultdict
     print("\n--------------------------------------------------")
-    print(" [テスト 2/17] リンク疎通確認 (追加・変更 URL のみ対象)")
+    print(" [テスト 2/18] リンク疎通確認 (追加・変更 URL のみ対象)")
     print("--------------------------------------------------")
 
     target_urls = []
@@ -391,7 +391,7 @@ def check_link_health(explicit_urls=None, check_all=False):
 def check_js_unit_tests():
     """3. JSユーティリティ関数（セキュリティ・サニタイズ・フォーマット）の単体テスト実行"""
     print("\n--------------------------------------------------")
-    print(" [テスト 3/17] JSユーティリティ単体テスト (app.test.js)")
+    print(" [テスト 3/18] JSユーティリティ単体テスト (app.test.js)")
     print("--------------------------------------------------")
     try:
         node_cmd = get_node_command()
@@ -415,7 +415,7 @@ def check_js_unit_tests():
 def check_duplicate_meetings_quality():
     """4. 会議レコード品質・回次整合性・重複排除の自動検証"""
     print("\n--------------------------------------------------")
-    print(" [テスト 4/17] 会議品質・回次整合性・重複排除検証 (test_no_duplicate_meetings.py)")
+    print(" [テスト 4/18] 会議品質・回次整合性・重複排除検証 (test_no_duplicate_meetings.py)")
     print("--------------------------------------------------")
     test_script = os.path.join(PROJECT_ROOT, "testing", "test_no_duplicate_meetings.py")
     if not os.path.exists(test_script):
@@ -440,7 +440,7 @@ def check_duplicate_meetings_quality():
 def check_council_timeline_sync():
     """5. 会議体一覧 (COUNCILS), タイムライン (MEETINGS) の ID整合性自動検証"""
     print("\n--------------------------------------------------")
-    print(" [テスト 5/17] 会議体・タイムライン・除外リスト ID完全整合性検証")
+    print(" [テスト 5/18] 会議体・タイムライン・除外リスト ID完全整合性検証")
     print("--------------------------------------------------")
 
     data_json_path = os.path.join(PROJECT_ROOT, "docs", "data.json")
@@ -507,7 +507,7 @@ def check_council_timeline_sync():
 def check_view_rendering():
     """6. UI表示自動検証（公開ポータル＆管理ダッシュボードのDOM整合性チェック）"""
     print("\n--------------------------------------------------")
-    print(" [テスト 6/17] UI表示機能検証（ポータル＆管理ダッシュボード構造）")
+    print(" [テスト 6/18] UI表示機能検証（ポータル＆管理ダッシュボード構造）")
     print("--------------------------------------------------")
 
     app_js_path = os.path.join(PROJECT_ROOT, "docs", "app.js")
@@ -553,7 +553,7 @@ def check_view_rendering():
 def check_crawler_regression():
     """7. クローラーの手動保護回帰テストを実行"""
     print("\n--------------------------------------------------")
-    print(" [テスト 7/17] クローラー手動データ保護回帰テスト")
+    print(" [テスト 7/18] クローラー手動データ保護回帰テスト")
     print("--------------------------------------------------")
     test_script = os.path.join(PROJECT_ROOT, "testing", "test_crawler_regression.py")
     if not os.path.exists(test_script):
@@ -578,7 +578,7 @@ def check_crawler_regression():
 def check_js_runtime_crash():
     """8. JavaScript 実行時クラッシュ・TDZ・初期化検証（公開ポータル＆管理ダッシュボード）"""
     print("\n--------------------------------------------------")
-    print(" [テスト 8/17] JavaScript 実行時クラッシュ・TDZ・描画検証")
+    print(" [テスト 8/18] JavaScript 実行時クラッシュ・TDZ・描画検証")
     print("--------------------------------------------------")
     node_cmd = get_node_command()
     test_script = os.path.join(PROJECT_ROOT, "testing", "test_js_runtime.js")
@@ -604,7 +604,7 @@ def check_js_runtime_crash():
 def check_admin_server_api():
     """9. 管理サーバー (admin/server.py) の主要 API 自動単体・統合テストを実行"""
     print("\n--------------------------------------------------")
-    print(" [テスト 9/17] 管理サーバー API 単体・統合テスト (test_admin_server.py)")
+    print(" [テスト 9/18] 管理サーバー API 単体・統合テスト (test_admin_server.py)")
     print("--------------------------------------------------")
     test_script = os.path.join(PROJECT_ROOT, "testing", "test_admin_server.py")
     if not os.path.exists(test_script):
@@ -664,7 +664,7 @@ def _run_inprocess_or_fallback(test_case_class, script_filename, pass_msg, fail_
 def check_crawler_foundation():
     """10. クローラー基盤テスト（CR-1 スキップリンク保護・CR-2 最新優先ソート・CR-4 ジェネリック見出し除外）"""
     print("\n--------------------------------------------------")
-    print(" [テスト 10/17] クローラー基盤・誤判定防止テスト (test_crawler_foundation.py)")
+    print(" [テスト 10/18] クローラー基盤・誤判定防止テスト (test_crawler_foundation.py)")
     print("--------------------------------------------------")
     from test_crawler_foundation import TestCrawlerFoundationPhaseJ
     return _run_inprocess_or_fallback(
@@ -677,7 +677,7 @@ def check_crawler_foundation():
 def check_crawler_parent_table():
     """11. 親テーブル開催回抽出テスト（CR-5 親テーブル解析・CR-6 開催回同期連携）"""
     print("\n--------------------------------------------------")
-    print(" [テスト 11/17] 親テーブル開催回抽出テスト (test_crawler_parent_table.py)")
+    print(" [テスト 11/18] 親テーブル開催回抽出テスト (test_crawler_parent_table.py)")
     print("--------------------------------------------------")
     from test_crawler_parent_table import TestCrawlerParentTableDrop11
     return _run_inprocess_or_fallback(
@@ -690,7 +690,7 @@ def check_crawler_parent_table():
 def check_scraping_rules_quality():
     """12. スクレイピングルール整合性テスト（CR-7 孤立削除・CR-8 テンプレート集約・CR-9 全件適用）"""
     print("\n--------------------------------------------------")
-    print(" [テスト 12/17] スクレイピングルール整合性検証 (test_scraping_rules_reorg.py)")
+    print(" [テスト 12/18] スクレイピングルール整合性検証 (test_scraping_rules_reorg.py)")
     print("--------------------------------------------------")
     from test_scraping_rules_reorg import TestScrapingRulesReorganization
     return _run_inprocess_or_fallback(
@@ -703,7 +703,7 @@ def check_scraping_rules_quality():
 def check_crawler_incremental():
     """13. スマート差分探索エンジン単体テスト（CR-10 既登録スキップ・最新更新確認・CR-11 差分巡回）"""
     print("\n--------------------------------------------------")
-    print(" [テスト 13/17] スマート差分探索エンジン検証 (test_crawler_incremental.py)")
+    print(" [テスト 13/18] スマート差分探索エンジン検証 (test_crawler_incremental.py)")
     print("--------------------------------------------------")
     from test_crawler_incremental import TestCrawlerIncrementalDrop13
     return _run_inprocess_or_fallback(
@@ -716,7 +716,7 @@ def check_crawler_incremental():
 def check_crawler_quality():
     """14. クロール品質判定・2099日付検知単体テスト（CR-12 成否判定精緻化・CR-13 プレースホルダー日付自動検知）"""
     print("\n--------------------------------------------------")
-    print(" [テスト 14/17] クロール品質判定・2099日付検知検証 (test_crawler_quality.py)")
+    print(" [テスト 14/18] クロール品質判定・2099日付検知検証 (test_crawler_quality.py)")
     print("--------------------------------------------------")
     from test_crawler_quality import TestCrawlerQualityDrop14
     return _run_inprocess_or_fallback(
@@ -729,7 +729,7 @@ def check_crawler_quality():
 def check_crawler_quality_v2():
     """15. Drop 15 クロール網羅性・実リンク解析・archiveUrl・URL日付復元検証（CR-14〜CR-17）"""
     print("\n--------------------------------------------------")
-    print(" [テスト 15/17] クロール網羅性・実リンク解析・archiveUrl・URL日付復元検証 (test_crawler_quality_v2.py)")
+    print(" [テスト 15/18] クロール網羅性・実リンク解析・archiveUrl・URL日付復元検証 (test_crawler_quality_v2.py)")
     print("--------------------------------------------------")
     from test_crawler_quality_v2 import TestCrawlerQualityV2Drop15
     return _run_inprocess_or_fallback(
@@ -742,7 +742,7 @@ def check_crawler_quality_v2():
 def check_crawler_drop16():
     """16. Drop 16 クロール堅牢化・共通ナビ除外・常設資料分離・ホストインターリーブ検証（CR-18〜CR-22）"""
     print("\n--------------------------------------------------")
-    print(" [テスト 16/17] クロール堅牢化・共通ナビ除外・ホスト分散検証 (test_crawler_drop16.py)")
+    print(" [テスト 16/18] クロール堅牢化・共通ナビ除外・ホスト分散検証 (test_crawler_drop16.py)")
     print("--------------------------------------------------")
     from test_crawler_drop16 import TestDrop16CrawlerRobustness
     return _run_inprocess_or_fallback(
@@ -755,7 +755,7 @@ def check_crawler_drop16():
 def check_crawler_speedup():
     """17. Drop 17: クロール超高速化 & 直近アクティブ重点化エンジンの検証 (CR-23 〜 CR-27)"""
     print("\n--------------------------------------------------")
-    print(" [テスト 17/17] Drop 17: クロール超高速化 & 直近アクティブ重点化エンジン検証 (CR-23 〜 CR-27)")
+    print(" [テスト 17/18] Drop 17: クロール超高速化 & 直近アクティブ重点化エンジン検証 (CR-23 〜 CR-27)")
     print("--------------------------------------------------")
     from test_crawler_speedup import TestDrop17CrawlerSpeedup
     return _run_inprocess_or_fallback(
@@ -763,6 +763,19 @@ def check_crawler_speedup():
         "test_crawler_speedup.py",
         "過去回再検査ゼロ化・最新1件更新確認・2年重点化・廃止会議体・並行レートリミット・中断耐性テスト全件合格",
         "Drop 17 クロール高速化検証"
+    )
+
+def check_drop22_normalization():
+    """18. Drop 22: 康煕部首・特殊文字 NFKC 正規化 & 検索漏れ根絶検証 (CR-46, CR-47)"""
+    print("\n--------------------------------------------------")
+    print(" [テスト 18/18] Drop 22: 康煕部首・特殊文字 NFKC 正規化 & 検索漏れ根絶検証 (CR-46, CR-47)")
+    print("--------------------------------------------------")
+    from test_drop22_normalization import TestDrop22Normalization
+    return _run_inprocess_or_fallback(
+        TestDrop22Normalization,
+        "test_drop22_normalization.py",
+        "康煕部首・CJK部首補助0件・NFKC文字正規化・データ整合性テスト全件合格",
+        "Drop 22 文字正規化検証"
     )
 
 def main():
@@ -779,7 +792,7 @@ def main():
     syntax_ok = check_syntax_errors()
     if args.skip_network:
         print("\n--------------------------------------------------")
-        print(" [テスト 2/17] リンク疎通確認")
+        print(" [テスト 2/18] リンク疎通確認")
         print("--------------------------------------------------")
         print("  [SKIP] --skip-network が指定されたため、ネットワーク疎通確認をスキップしました。")
         links_ok = True
@@ -800,12 +813,13 @@ def main():
     quality_v2_ok = check_crawler_quality_v2()
     drop16_ok = check_crawler_drop16()
     drop17_ok = check_crawler_speedup()
+    drop22_ok = check_drop22_normalization()
 
     print("\n==================================================")
     if (syntax_ok and links_ok and unit_ok and dedup_ok and sync_ok
             and view_ok and crawler_ok and runtime_ok and server_api_ok
             and foundation_ok and parent_table_ok and rules_ok
-            and incremental_ok and quality_ok and quality_v2_ok and drop16_ok and drop17_ok):
+            and incremental_ok and quality_ok and quality_v2_ok and drop16_ok and drop17_ok and drop22_ok):
         print(" 【結果】全スモークテストに合格しました。修正コードは正常です。")
         sys.exit(0)
     else:

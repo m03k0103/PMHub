@@ -553,17 +553,17 @@ document.addEventListener('DOMContentLoaded', async () => {
 
       // Free word search
       if (state.searchQuery) {
-        const queries = state.searchQuery.toLowerCase().split(/[\s　]+/).filter(k => k);
+        const queries = normalizeForSearch(state.searchQuery).split(/[\s　]+/).filter(k => k);
         const cName = councilsByIdMap.get(meeting.councilId) || '';
         
         const match = queries.every(q => {
           const mName = meeting.name || '';
-          const nameMatch = mName.toLowerCase().includes(q);
-          const councilMatch = (cName || '').toLowerCase().includes(q);
-          const summaryMatch = meeting.summary ? meeting.summary.toLowerCase().includes(q) : false;
-          const tagMatch = meeting.tags ? meeting.tags.some(t => t && t.toLowerCase().includes(q)) : false;
-          const agendaMatch = meeting.agenda ? meeting.agenda.some(a => a && a.toLowerCase().includes(q)) : false;
-          const matMatch = meeting.materials ? meeting.materials.some(m => (m.name || '').toLowerCase().includes(q)) : false;
+          const nameMatch = normalizeForSearch(mName).includes(q);
+          const councilMatch = normalizeForSearch(cName).includes(q);
+          const summaryMatch = meeting.summary ? normalizeForSearch(meeting.summary).includes(q) : false;
+          const tagMatch = meeting.tags ? meeting.tags.some(t => t && normalizeForSearch(t).includes(q)) : false;
+          const agendaMatch = meeting.agenda ? meeting.agenda.some(a => a && normalizeForSearch(a).includes(q)) : false;
+          const matMatch = meeting.materials ? meeting.materials.some(m => normalizeForSearch(m.name).includes(q)) : false;
           return nameMatch || councilMatch || summaryMatch || tagMatch || agendaMatch || matMatch;
         });
 
@@ -867,20 +867,20 @@ document.addEventListener('DOMContentLoaded', async () => {
       }
 
       if (state.searchQuery) {
-        const queries = state.searchQuery.toLowerCase().split(/[\s　]+/).filter(k => k);
+        const queries = normalizeForSearch(state.searchQuery).split(/[\s　]+/).filter(k => k);
         const minName = MINISTRIES[council.ministry]?.name || '';
         const councilMeetings = meetingsByCouncilMap.get(council.id) || [];
         
         const match = queries.every(q => {
-          const matchName = (council.name || '').toLowerCase().includes(q);
-          const matchMin = (minName || '').toLowerCase().includes(q);
-          const matchDesc = (council.description || '').toLowerCase().includes(q);
+          const matchName = normalizeForSearch(council.name).includes(q);
+          const matchMin = normalizeForSearch(minName).includes(q);
+          const matchDesc = normalizeForSearch(council.description).includes(q);
           const matchMeetings = councilMeetings.some(m => {
             const mName = m.name || '';
-            return mName.toLowerCase().includes(q) ||
-              (m.summary ? m.summary.toLowerCase().includes(q) : false) ||
-              (m.tags ? m.tags.some(t => t && t.toLowerCase().includes(q)) : false) ||
-              (m.materials ? m.materials.some(mat => (mat.name || '').toLowerCase().includes(q)) : false);
+            return normalizeForSearch(mName).includes(q) ||
+              (m.summary ? normalizeForSearch(m.summary).includes(q) : false) ||
+              (m.tags ? m.tags.some(t => t && normalizeForSearch(t).includes(q)) : false) ||
+              (m.materials ? m.materials.some(mat => normalizeForSearch(mat.name).includes(q)) : false);
           });
           return matchName || matchMin || matchDesc || matchMeetings;
         });
@@ -937,21 +937,21 @@ document.addEventListener('DOMContentLoaded', async () => {
       });
 
       if (state.searchQuery) {
-        const queries = state.searchQuery.toLowerCase().split(/[\s　]+/).filter(k => k);
+        const queries = normalizeForSearch(state.searchQuery).split(/[\s　]+/).filter(k => k);
         const matchCouncil = queries.every(q => 
-          (c.name || '').toLowerCase().includes(q) || 
-          (minInfo.name || '').toLowerCase().includes(q) || 
-          (c.description || '').toLowerCase().includes(q)
+          normalizeForSearch(c.name).includes(q) || 
+          normalizeForSearch(minInfo.name).includes(q) || 
+          normalizeForSearch(c.description).includes(q)
         );
         // If the council itself doesn't match all keywords, filter its meetings so we only show the matching ones
         if (!matchCouncil) {
           councilMeetings = councilMeetings.filter(m => {
             const mName = m.name || '';
             return queries.every(q => {
-              return mName.toLowerCase().includes(q) ||
-                (m.summary ? m.summary.toLowerCase().includes(q) : false) ||
-                (m.tags ? m.tags.some(t => t && t.toLowerCase().includes(q)) : false) ||
-                (m.materials ? m.materials.some(mat => (mat.name || '').toLowerCase().includes(q)) : false);
+              return normalizeForSearch(mName).includes(q) ||
+                (m.summary ? normalizeForSearch(m.summary).includes(q) : false) ||
+                (m.tags ? m.tags.some(t => t && normalizeForSearch(t).includes(q)) : false) ||
+                (m.materials ? m.materials.some(mat => normalizeForSearch(mat.name).includes(q)) : false);
             });
           });
         }
@@ -1604,6 +1604,11 @@ function formatDate(str) {
   return normalized;
 }
 
+function normalizeForSearch(str) {
+  if (!str) return '';
+  return String(str).normalize('NFKC').toLowerCase();
+}
+
 function escapeHtml(str) {
   if (!str) return '';
   return str
@@ -1751,6 +1756,7 @@ if (typeof module !== 'undefined' && module.exports) {
     meetingMatchesDocType,
     isMeetingInDateRange,
     sortMeetings,
-    sortCouncils
+    sortCouncils,
+    normalizeForSearch
   };
 }
