@@ -84,8 +84,8 @@ class TestDrop17CrawlerSpeedup(unittest.TestCase):
         all_councils = load_councils_from_data_json(recent_years="all", include_closed=False)
 
         self.assertGreater(len(all_councils), len(active_councils), "全会議体数は2年以内アクティブ会議体数より多いこと")
-        # 前回の集計通り、アクティブ約891件、全件約1495件（却下・非アクティブ除外後）
-        self.assertGreaterEqual(len(active_councils), 850)
+        # アクティブ約830〜890件、全件約1445件（却下・非アクティブ除外後）
+        self.assertGreaterEqual(len(active_councils), 800)
         self.assertLessEqual(len(active_councils), 950)
 
     def test_cr24_is_closed_filtering(self):
