@@ -513,23 +513,40 @@ def load_scraping_rules():
 
 _RATE_LIMIT_LOCK = threading.Lock()
 _LAST_REQUEST_TIME_BY_HOST = {}
-_MIN_HOST_INTERVAL = 0.5  # 同一ホストへの最低アクセス間隔（秒）（AGENTS.md ルール9: 0.35秒以上のレートリミット遵守）
+_DEFAULT_HOST_INTERVAL = 0.5  # 同一ホストへの最低アクセス間隔（秒）（AGENTS.md ルール9: 0.35秒以上のレートリミット遵守）
+_MIN_HOST_INTERVAL = _DEFAULT_HOST_INTERVAL  # 後方互換用
+
+# CR-49: ドメイン別アクセス間隔テーブル（WAF保護サイト等へのアクセス平滑化）
+HOST_RATE_LIMITS = {
+    'www.meti.go.jp': 1.5,  # METI/ANRE: AWS WAF / CloudFront Bot Control 保護のため 1.5 秒を確保
+    'meti.go.jp': 1.5,
+}
+
+def _get_host_interval(host):
+    """ホストごとの適正アクセス間隔（秒）を取得する（CR-49）"""
+    if not host:
+        return _DEFAULT_HOST_INTERVAL
+    for domain, interval in HOST_RATE_LIMITS.items():
+        if host == domain or host.endswith('.' + domain):
+            return interval
+    return _DEFAULT_HOST_INTERVAL
 
 def _rate_limit_host(host):
     """
-    同一ホストへの過密アクセス防止（CR-21, CR-26: スレッドセーフなレートリミット）。
+    同一ホストへの過密アクセス防止（CR-21, CR-26, CR-49: スレッドセーフな動的レートリミット）。
     ロック内では予約時刻のみを更新し、実際の sleep はロック外で行うため、
     異なるホストへのアクセスは一切ブロックされず完全並行で実行される。
     """
     if not host:
         return
     sleep_needed = 0.0
+    interval = _get_host_interval(host)
     with _RATE_LIMIT_LOCK:
         now_t = time.time()
         last_t = _LAST_REQUEST_TIME_BY_HOST.get(host, 0.0)
         elapsed = now_t - last_t
-        if elapsed < _MIN_HOST_INTERVAL:
-            sleep_needed = _MIN_HOST_INTERVAL - elapsed
+        if elapsed < interval:
+            sleep_needed = interval - elapsed
             _LAST_REQUEST_TIME_BY_HOST[host] = now_t + sleep_needed
         else:
             _LAST_REQUEST_TIME_BY_HOST[host] = now_t
@@ -604,13 +621,13 @@ def _fetch_with_curl(url, timeout=12):
         safe_emit_log(f"  -> 🔴 [CURL FALLBACK ERROR] {url}: {e}")
     return None
 
-def fetch_url(url, timeout=12):
+def fetch_url(url, timeout=12, max_retries=1, retry_count=0):
     parsed_url = urllib.parse.urlparse(url)
     if parsed_url.scheme not in ("http", "https"):
         safe_emit_log(f"[ERROR] Invalid scheme: {url}")
         return None
 
-    # CR-21, CR-26: 同一ホストへの過密アクセス防止（スレッドセーフ）
+    # CR-21, CR-26, CR-49: 同一ホストへの過密アクセス防止（スレッドセーフ動的レートリミット）
     host = parsed_url.netloc.lower()
     _rate_limit_host(host)
 
@@ -623,10 +640,22 @@ def fetch_url(url, timeout=12):
             raw_bytes = response.read()
             html = decode_html_bytes(raw_bytes, content_type)
             if is_waf_challenge(html, response.status):
+                # CR-48: HTTP 202 チャレンジまたは一時スロットリング時はクールダウン待機してリトライ
+                if response.status == 202 and retry_count < max_retries:
+                    safe_emit_log(f"  -> ⚠️ [WAF 202 CHALLENGE] {url}: 一時スロットリング検知。待機(2.5s)後に自動リトライします...")
+                    time.sleep(2.5)
+                    return fetch_url(url, timeout=timeout, max_retries=max_retries, retry_count=retry_count + 1)
                 safe_emit_log(f"  -> 🔴 [WAF CHALLENGE BLOCKED] {url}: AWS/Cloudflare WAF challenge screen detected (Status: {response.status})")
                 return None
             return html
     except urllib.error.HTTPError as e:
+        # CR-48: 403/429 でのクールダウンリトライ
+        if e.code in (403, 429) and retry_count < max_retries and ('.go.jp' in host):
+            safe_emit_log(f"  -> ⚠️ [HTTP {e.code}] {url}: 一時遮断検知。待機(2.5s)後に自動リトライします...")
+            time.sleep(2.5)
+            retry_res = fetch_url(url, timeout=timeout, max_retries=max_retries, retry_count=retry_count + 1)
+            if retry_res:
+                return retry_res
         # WAF/Cloudflare (403) 等での curl.exe フォールバック
         if e.code in (403, 429, 503):
             curl_html = _fetch_with_curl(url, timeout=timeout)
