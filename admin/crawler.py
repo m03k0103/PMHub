@@ -85,7 +85,8 @@ GENERIC_TITLE_KEYWORDS = frozenset({
     '能力開発基本調査', '調査の実施について', '問い合わせ先', '情報配信サービス', 'イベント概要',
     'セミナーのご案内', 'セミナー案内', '労使関係セミナー', '公募情報', '意見募集', 'パブリックコメント',
     '１ 日時', '１　日時', '日時', '場所', '議題', '出席者', '出席者名簿', '１ 場所', '１　場所', '２ 場所', '２　場所',
-    '３ 議題', '３　議題', '傍聴', '傍聴案内', '傍聴について', '傍聴申込', '傍聴申し込み'
+    '３ 議題', '３　議題', '傍聴', '傍聴案内', '傍聴について', '傍聴申込', '傍聴申し込み',
+    '監査監督機関国際フォーラム', 'IFIAR', '議事録・資料等'
 })
 
 # 組織常設資料（設置要綱・委員名簿・運営規程等）のキーワード（CR-20: 会議体資料であり開催回ではない）
@@ -106,7 +107,8 @@ COMMON_NAV_KEYWORDS = frozenset({
     '審議会開催予定', '大臣等記者会見', '記者会見', '政策情報（会議・統計等）', '会議・委員会等',
     'パンフレット', 'リーフレット', 'メールマガジン', 'メルマガ', 'ポスター',
     '能力開発基本調査', '調査の実施について', '問い合わせ先', '情報配信サービス', 'イベント概要',
-    'セミナーのご案内', 'セミナー案内', '労使関係セミナー'
+    'セミナーのご案内', 'セミナー案内', '労使関係セミナー',
+    '監査監督機関国際フォーラム', 'IFIAR', '議事録・資料等'
 })
 
 # 配付資料として不適切な汎用ナビゲーション・UIテキスト（事前除外用定数）
@@ -242,6 +244,10 @@ _GENERIC_INDEX_URL_PATTERNS = re.compile(
     r'/sitemap/|'
     r'agenda/meeting/[^/]+/archive(?:_\d+-\d+)?\.html$|'
     r'archive_\d+-\d+\.html$|'
+    r'/ifiar/|'
+    r'base_gijiroku\.html|'
+    r'top_gijiroku\.html|'
+    r'bunkakai_index\.html|'
     r'member(?:\.html|/)?$|'
     r'meibo(?:\.html|/)?$',
     re.IGNORECASE
@@ -252,12 +258,14 @@ _GENERIC_INDEX_TITLE_KEYWORDS = frozenset({
     "その他情報", "覚書等", "覚書", "有識者会議｜警察庁", "過去の国際会議",
     "研究会等一覧へのリンク", "会議資料詳細", "資料詳細", "会議詳細",
     "食の安全、を科学する", "審議会等", "｜デジタル庁", "｜Digital Agency", "Digital Agency",
-    "政策・審議会等", "省議・審議会等", "政策・審議会等トップへ", "審議会・研究会"
+    "政策・審議会等", "省議・審議会等", "政策・審議会等トップへ", "審議会・研究会",
+    "監査監督機関国際フォーラム", "IFIAR", "議事録・資料等", "目次"
 })
 
 # 汎用インデックス判定用の完全一致除外タイトル（単体での登録排除用）
 _GENERIC_INDEX_EXACT_TITLES = frozenset({
-    "審議会", "政策・審議会等トップへ", "その他会議", "会議", "委員会"
+    "審議会", "政策・審議会等トップへ", "その他会議", "会議", "委員会",
+    "目次", "<目次>", "議事録・資料等"
 })
 
 
@@ -309,19 +317,22 @@ def load_crawler_config():
     config = data.get("crawlerConfig", {})
     return config.get("llm_mode", False)  # デフォルトは高速・安全な Heuristic モード
 
-def load_councils_from_data_json(recent_years=2, include_closed=False, resume=False):
+def load_councils_from_data_json(recent_years=2, include_closed=False, resume=False, ministry=None):
     """
     docs/data.json から登録済みの全会議体 (COUNCILS) を読み込む。
     - 却下済み会議体・非アクティブ会議体はクロール対象外
     - CR-24: 法改正等で廃止された会議体（isClosed: true）はデフォルトでスキップ（include_closed=True で全件対象）
     - CR-24: 直近開催年数フィルタリング（デフォルト2年以内、開催実績0件の新規会議体は探索対象として保持）
     - CR-27: resume=True の場合、既に今回の実行で巡回済みの会議体をスキップ
+    - ministry: 指定された省庁コード（例: FSA, MOF）のみに絞り込み
     """
     councils = []
     
     # 却下済みIDセットの読み込み
     rejected_ids, _, _ = get_rejected_identifiers()
     print(f"[INFO] 却下済み会議体 {len(rejected_ids)} 件をクロール対象から除外します。")
+    if ministry:
+        print(f"[INFO] 省庁フィルタ: {ministry.upper()} のみ対象にします。")
 
     data = load_data_json(DATA_JSON_FILE)
     raw_councils = data.get("councils", [])
@@ -358,6 +369,10 @@ def load_councils_from_data_json(recent_years=2, include_closed=False, resume=Fa
     for item in raw_councils:
         cid = item.get("id")
         if cid in rejected_ids:
+            continue
+
+        # 0. 省庁フィルタのチェック
+        if ministry and item.get("ministry", "").upper() != ministry.upper():
             continue
 
         rule = scraping_rules.get(cid, {}) if isinstance(scraping_rules, dict) else {}
@@ -1077,22 +1092,19 @@ def extract_actual_subpage_links(html, target_url, rule=None, return_meta=False)
         # 同一ページや基底URLそのものは除外
         abs_clean = abs_url.split('#')[0].rstrip('/')
         target_clean = target_url.split('#')[0].rstrip('/')
-        if abs_clean == target_clean:
-            continue
-
-        # 汎用インデックスURLや親ナビURLの除外
-        if is_generic_index_url(abs_url) or _is_parent_or_nav_url(abs_url, target_url):
-            continue
-
-        if any(k in abs_url.lower() for k in ['cas.go.jp/jp/siryou', 'cas.go.jp/jp/shiryo']):
-            continue
-
         if abs_clean in seen:
             continue
 
         text = a.get_text(' ', strip=True)
         t_clean = re.sub(r'\s+', ' ', text).strip()
         t_stripped = re.sub(r'^[0-9０-９一二三四五六七八九十]+[．.、\s]+', '', t_clean).strip()
+
+        # 汎用インデックスURLや親ナビURLの除外
+        if is_generic_index_url(abs_url, t_clean) or _is_parent_or_nav_url(abs_url, target_url):
+            continue
+
+        if any(k in abs_url.lower() for k in ['cas.go.jp/jp/siryou', 'cas.go.jp/jp/shiryo']):
+            continue
 
         # 固有開催回URL（日付8桁やdai\d+など）である場合は、アンカーテキストが「配付資料」「配布資料」「議事要旨」等の一般的名称であっても除外せず探索対象とする
         is_strong_meeting_url = bool(re.search(r'(?:\b(?:19|20)\d{6}\b|dai\d+|\d+kai|kaisai|session|meeting|r0?\d+-\d+|h\d+-\d+|02tsushin\d+_\d+|councils/[^/]+/[0-9a-f]{8}-)', href_clean, re.I))
@@ -2416,7 +2428,7 @@ def safe_emit_log(msg):
             pass
 
 
-def run_meeting_crawler(progress_callback=None, stop_event=None, workers=4, recent_years=2, recheck_recent=1, full_check=False, include_closed=False, resume=False):
+def run_meeting_crawler(progress_callback=None, stop_event=None, workers=4, recent_years=2, recheck_recent=1, full_check=False, include_closed=False, resume=False, ministry=None):
     """
     審議会・会議体情報取得Engine（Drop 17 高速化・直近アクティブ重点化対応）
     - CR-23: 確定済み過去回の再検査ゼロ化 & 最新1件更新確認（recheck_recent, full_check）
@@ -2460,7 +2472,8 @@ def run_meeting_crawler(progress_callback=None, stop_event=None, workers=4, rece
         dynamic_targets = load_councils_from_data_json(
             recent_years=recent_years,
             include_closed=include_closed,
-            resume=resume
+            resume=resume,
+            ministry=ministry
         )
         if dynamic_targets:
             CRAWL_TARGETS = interleave_by_host_and_ministry(dynamic_targets)
@@ -2705,6 +2718,7 @@ def main():
     parser.add_argument("--full-check", action="store_true", help="すべての登録済み開催回を再検査する")
     parser.add_argument("--include-closed", action="store_true", help="法改正等で廃止された会議体も含めて巡回する")
     parser.add_argument("--resume", action="store_true", help="中断されたクロールを続きから再開する")
+    parser.add_argument("--ministry", type=str, default=None, help="巡回対象の省庁コード（例: FSA, MOF, METI）")
     args = parser.parse_args()
 
     cli_stop_event = threading.Event()
@@ -2717,7 +2731,8 @@ def main():
             recheck_recent=args.recheck_recent,
             full_check=args.full_check,
             include_closed=args.include_closed,
-            resume=args.resume
+            resume=args.resume,
+            ministry=args.ministry
         )
     except KeyboardInterrupt:
         print("\n\n[INFO] キーボード割り込み (Ctrl+C) を検知しました。停止シグナルを発行します...")

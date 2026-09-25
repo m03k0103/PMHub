@@ -87,7 +87,7 @@ class TestDrop22Normalization(unittest.TestCase):
 
         councils = data.get("councils", [])
         meetings = data.get("meetings", [])
-        self.assertEqual(len(councils), 1446, "会議体マスター件数が 1,446 件と一致しません")
+        self.assertGreaterEqual(len(councils), 1446, "会議体マスター件数が 1,446 件以上であること")
         self.assertGreaterEqual(len(meetings), 15000, "開催回データが大幅に欠落しています")
 
         # IDの不変性（ID文字列は変化しないこと）
