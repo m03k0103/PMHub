@@ -123,7 +123,7 @@ EXCLUDE_MATERIAL_NAMES = frozenset({
 
 # 省庁・行政機関名のサフィックス正規表現（全省庁・外局・委員会網羅）
 GOV_SUFFIX_REGEX = re.compile(
-    r'[\s\u3000]*[｜\|：:\-–—―]\s*(?:厚生労働省|内閣府|内閣官房|財務省|国税庁|金融庁|法務省|出入国在留管理庁|公安審査委員会|公安調査庁|外務省|文部科学省|文化庁|スポーツ庁|農林水産省|水産庁|林野庁|経済産業省|資源エネルギー庁|特許庁|中小企業庁|国土交通省|観光庁|気象庁|海上保安庁|環境省|原子力規制委員会|防衛省|防衛装備庁|デジタル庁|こども家庭庁|食品安全委員会|消費者庁|警察庁|消防庁|首相官邸.*|WARP.*)$'
+    r'[\s\u3000]*[｜\|：:\-–—―]\s*(?:厚生労働省|内閣府|内閣官房|財務省|国税庁|金融庁|法務省|出入国在留管理庁|公安審査委員会|公安調査庁|外務省|文部科学省|文化庁|スポーツ庁|農林水産省|水産庁|林野庁|経済産業省|資源エネルギー庁|特許庁|中小企業庁|国土交通省|観光庁|気象庁|海上保安庁|環境省|原子力規制委員会|防衛省|防衛装備庁|デジタル庁|こども家庭庁|食品安全委員会|消費者庁|警察庁|消防庁|首相官邸.*|WARP.*)(?:ホームページ|HP|公式ホームページ)?$'
 )
 
 # CJK部首補助（U+2E80〜U+2EF3）の中でNFKCで通常漢字に分解されない文字のマッピングテーブル
@@ -1344,6 +1344,7 @@ def _extract_meetings_from_parent_table(html, target_url, council_name, rule=Non
 
             # 3. 配付資料および個別URLの抽出
             row_materials = []
+            candidate_html_pages = []
             row_official_url = target_url
             for a in row.find_all('a', href=True):
                 href = a['href'].strip()
@@ -1355,6 +1356,7 @@ def _extract_meetings_from_parent_table(html, target_url, council_name, rule=Non
 
                 raw_mat_name = a.get_text(' ', strip=True)
                 clean_mat_name = re.sub(r'[\（\(\［\[]PDF.*?[）\)\］\]]', '', raw_mat_name, flags=re.IGNORECASE).strip()
+                clean_mat_name = re.sub(r'NEW\s*\d+月\d+日', '', clean_mat_name).strip()
 
                 if not clean_mat_name or clean_mat_name in ('PDF', 'ダウンロード', 'リンク', 'こちら'):
                     parent_cell = a.find_parent(['td', 'th'])
@@ -1368,8 +1370,10 @@ def _extract_meetings_from_parent_table(html, target_url, council_name, rule=Non
                 if not clean_mat_name:
                     clean_mat_name = "配付資料"
 
+                clean_mat_name = normalize_text(clean_mat_name)
+
                 is_pdf = href.lower().endswith(('.pdf', '.docx', '.xlsx', '.doc', '.xls')) or '/pdf/' in href.lower()
-                is_html_doc = any(k in href.lower() for k in ['gijiroku', 'gijiyoshi', 'proceedings']) or any(k in clean_mat_name for k in ['議事録', '議事要旨'])
+                is_pure_minutes = any(k in href.lower() for k in ['gijiroku', 'gijiyoshi', 'proceedings']) or any(k in clean_mat_name for k in ['議事録', '議事要旨'])
 
                 if is_pdf:
                     row_materials.append({
@@ -1377,14 +1381,40 @@ def _extract_meetings_from_parent_table(html, target_url, council_name, rule=Non
                         "url": abs_url,
                         "type": "PDF"
                     })
-                elif is_html_doc:
+                elif is_pure_minutes:
                     row_materials.append({
                         "name": clean_mat_name,
                         "url": abs_url,
                         "type": "HTML"
                     })
-                elif (href.endswith('.html') or href.endswith('.htm')) and row_official_url == target_url:
-                    row_official_url = abs_url
+                elif href.endswith('.html') or href.endswith('.htm'):
+                    candidate_html_pages.append({
+                        "name": clean_mat_name,
+                        "url": abs_url
+                    })
+                    if row_official_url == target_url:
+                        row_official_url = abs_url
+
+            # 4. 行内に直接 PDF がない場合、candidate_html_pages から展開
+            if not any(m.get('type') == 'PDF' for m in row_materials) and candidate_html_pages:
+                for cand in candidate_html_pages[:3]:
+                    c_url = cand['url']
+                    c_html = fetch_url(c_url, timeout=6)
+                    if c_html:
+                        sub_mats = parse_materials_from_html(c_html, c_url, pdf_pattern)
+                        pdf_sub_mats = [sm for sm in sub_mats if sm.get('type') == 'PDF']
+                        if pdf_sub_mats:
+                            for psm in pdf_sub_mats:
+                                if not any(rm['url'] == psm['url'] for rm in row_materials):
+                                    row_materials.append(psm)
+                        else:
+                            # PDF がない場合は、この HTML ページ自体を資料として採用
+                            if not any(rm['url'] == c_url for rm in row_materials):
+                                row_materials.append({
+                                    "name": cand['name'] or "資料",
+                                    "url": c_url,
+                                    "type": "HTML"
+                                })
 
             # 資料も個別URLもない行はスキップ
             if not row_materials and row_official_url == target_url:
@@ -1700,7 +1730,8 @@ def determine_crawl_result(unique_materials, norm_date_matches, subpage_meetings
     ]
     has_valid_dates = len(valid_dates) > 0
     has_subpages = len(subpages) > 0
-    is_generic_title = any(kw in title for kw in GENERIC_TITLE_KEYWORDS) if title else False
+    clean_title = clean_meeting_title(title)
+    is_generic_title = any(kw == clean_title or (len(kw) >= 3 and kw in clean_title) for kw in GENERIC_TITLE_KEYWORDS) if clean_title else False
 
     # 1. サブページ開催回または親テーブル開催回が抽出されている場合
     if has_subpages:
