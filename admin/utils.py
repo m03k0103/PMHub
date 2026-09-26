@@ -84,12 +84,14 @@ _RE_REIWA_DATE = re.compile(r'(?<!\d)令和(\d+|元)年(\d{1,2})月(\d{1,2})日(
 _RE_HEISEI_DATE = re.compile(r'(?<!\d)平成(\d+|元)年(\d{1,2})月(\d{1,2})日(?!\d)')
 _RE_SEIREKI_DATE = re.compile(r'(?<!\d)(\d{4})年(\d{1,2})月(\d{1,2})日(?!\d)')
 _RE_SLASH_DATE = re.compile(r'(?<![\d\w])(\d{4})[/-](\d{1,2})[/-](\d{1,2})(?![\d\w])')
+# CR-54: 元号アルファベット略記（例: R3.12.6, H30.11.28, H22.12.14, R06/05/20 等）
+_RE_GENGOU_SHORT_DATE = re.compile(r'(?<![a-zA-Z\d])([RHSrhs])\s*(\d+|元)[./-](\d{1,2})[./-](\d{1,2})(?![a-zA-Z\d])')
 
 
 @functools.lru_cache(maxsize=2048)
 def parse_japanese_date(date_str):
     """
-    和暦・西暦文字列を datetime オブジェクトに変換（元年対応・厳格検証）。
+    和暦・西暦文字列を datetime オブジェクトに変換（元年対応・元号アルファベット略記対応・厳格検証）。
     結果は lru_cache でキャッシュされ、頻出日付のパースを高速化する。
     """
     if not date_str:
@@ -137,6 +139,26 @@ def parse_japanese_date(date_str):
             month = int(m_slash.group(2))
             day = int(m_slash.group(3))
             return datetime(year, month, day)
+        except Exception:
+            pass
+    m_gengou_short = _RE_GENGOU_SHORT_DATE.search(date_str)
+    if m_gengou_short:
+        try:
+            era = m_gengou_short.group(1).upper()
+            yr_val = m_gengou_short.group(2)
+            yr_num = 1 if yr_val == '元' else int(yr_val)
+            if era == 'R':
+                year = 2018 + yr_num
+            elif era == 'H':
+                year = 1988 + yr_num
+            elif era == 'S':
+                year = 1925 + yr_num
+            else:
+                year = None
+            if year:
+                month = int(m_gengou_short.group(3))
+                day = int(m_gengou_short.group(4))
+                return datetime(year, month, day)
         except Exception:
             pass
     return None

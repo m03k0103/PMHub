@@ -1336,10 +1336,10 @@ def _extract_meetings_from_parent_table(html, target_url, council_name, rule=Non
             sess_match = re.search(r'第\s*(\d+)\s*回', norm_text) or re.search(r'第(\d+)回', clean_search_text)
             round_num = int(sess_match.group(1)) if sess_match else None
 
-            # 2. 日付の抽出（空白・全角スペース混入に対応した clean_search_text から抽出）
-            date_matches = re.findall(r'(?:令和|平成)(?:\d+|元)年\d{1,2}月\d{1,2}日|\d{4}年\d{1,2}月\d{1,2}日|\d{4}[/-]\d{1,2}[/-]\d{1,2}', clean_search_text)
+            # 2. 日付の抽出（空白・全角スペース混入に対応した clean_search_text から抽出、CR-54 元号略記対応）
+            date_matches = re.findall(r'(?:令和|平成)(?:\d+|元)年\d{1,2}月\d{1,2}日|\d{4}年\d{1,2}月\d{1,2}日|\d{4}[/-]\d{1,2}[/-]\d{1,2}|(?<![a-zA-Z\d])[RHSrhs]\s*(?:\d+|元)[./-]\d{1,2}[./-]\d{1,2}(?![a-zA-Z\d])', clean_search_text)
             if not date_matches:
-                date_matches = re.findall(r'(?:令和|平成)\s*(?:\d+|元)\s*年\s*\d{1,2}\s*月\s*\d{1,2}\s*日|\d{4}\s*年\s*\d{1,2}\s*月\s*\d{1,2}\s*日|\d{4}[/-]\d{1,2}[/-]\d{1,2}', norm_text)
+                date_matches = re.findall(r'(?:令和|平成)\s*(?:\d+|元)\s*年\s*\d{1,2}\s*月\s*\d{1,2}\s*日|\d{4}\s*年\s*\d{1,2}\s*月\s*\d{1,2}\s*日|\d{4}[/-]\d{1,2}[/-]\d{1,2}|(?<![a-zA-Z\d])[RHSrhs]\s*(?:\d+|元)[./-]\d{1,2}[./-]\d{1,2}(?![a-zA-Z\d])', norm_text)
             meet_date = None
             for d in date_matches:
                 clean_d = re.sub(r'[\s\u2000-\u200f]+', '', d)
