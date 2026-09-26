@@ -249,7 +249,8 @@ _GENERIC_INDEX_URL_PATTERNS = re.compile(
     r'top_gijiroku\.html|'
     r'bunkakai_index\.html|'
     r'member(?:\.html|/)?$|'
-    r'meibo(?:\.html|/)?$',
+    r'meibo(?:\.html|/)?$|'
+    r'b_menu/b004\.htm',
     re.IGNORECASE
 )
 
@@ -265,7 +266,7 @@ _GENERIC_INDEX_TITLE_KEYWORDS = frozenset({
 # 汎用インデックス判定用の完全一致除外タイトル（単体での登録排除用）
 _GENERIC_INDEX_EXACT_TITLES = frozenset({
     "審議会", "政策・審議会等トップへ", "その他会議", "会議", "委員会",
-    "目次", "<目次>", "議事録・資料等"
+    "目次", "<目次>", "議事録・資料等", "政策・審議会"
 })
 
 
