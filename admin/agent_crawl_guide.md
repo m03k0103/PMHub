@@ -31,8 +31,8 @@
 - 実行結果（各開催回および配付資料リンク、`crawlStatus`、`lastCrawlTime`）が `docs/data.json` に直接保存されます。
 
 ### Step 3: 自動テストによる検証
-- データ更新後は必ず以下のテストを実行し、エラーが0件であることを確認：
+- データ更新後は必ず以下の統合テストスイートを実行し、エラーが0件であることを確認：
   ```bash
-  python testing/smoke_test.py
-  node --test testing/app.test.js
+  python testing/run_test_suite.py --skip-network
   ```
+

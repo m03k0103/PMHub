@@ -24,8 +24,8 @@ PMHub/
 │   ├── agent_crawl_guide.md     # AIエージェント用 クロール・データ更新作業手順書
 │   └── rejected_councils.json   # 却下・クロール除外会議体リスト
 │
-├── testing/                     # 【テスト用リソース】自動スモークテスト・単体テスト
-│   ├── smoke_test.py            # 自動スモークテストスイート（構文・リンク・ID同期・タブ検証）
+├── testing/                     # 【テスト用リソース】自動テストスイート・単体テスト
+│   ├── run_test_suite.py        # 統合テストスイート（構文・リンク・全18ケース一括検証）
 │   ├── test_escapeHtml.js       # セキュリティユーティリティ単体テストスクリプト
 │   ├── test_no_duplicate_meetings.py # 会議重複・データ整合性テスト
 │   └── app.test.js              # フロントエンドロジックユニットテスト
@@ -90,4 +90,4 @@ PMHub/
    - `admin/` ディレクトリはWeb非公開領域とし、サーバー内部のバッチ処理（Cron等）または管理者用ローカル環境でのみ実行します。
 
 2. **データ同期フロー**:
-   - 管理者環境で `admin/crawler.py` を実行 ➔ `docs/data.json` を直接更新 ➔ 検証テスト（`testing/smoke_test.py`）を実行して公開します。
+   - 管理者環境で `admin/crawler.py` を実行 ➔ `docs/data.json` を直接更新 ➔ 検証テスト（`testing/run_test_suite.py`）を実行して公開します。

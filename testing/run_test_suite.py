@@ -1,12 +1,27 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-政策会議ウォッチ (PM-HUB) - Automated Smoke Test Suite
+政策会議ウォッチ (PM-HUB) - 統合テストスイート (Comprehensive Test Suite)
 
-【テスト要件】
-1. 必須：コードの文法エラー (SyntaxError / 括弧の不整合) 自動確認
-2. 必須：追加・変更された URL のみのリンク疎通確認 (HTTP Status 検証)
-3. スキップ：変更のない既存 URL の疎通確認は不要 (テスト高速化・サーバー負荷低減)
+【テストスイート要件】
+1. コード文法・構文整合性自動確認 (SyntaxError / 括弧不整合 / HTMLタグ整合性)
+2. ネットワークリンク疎通確認 (HTTP Status 検証 / キャッシュ・レートリミット保護)
+3. フロントエンド・セキュリティ単体テスト (Node.js test runner)
+4. 会議品質・回次整合性・重複完全排除検証 (16,500件超全件走査)
+5. 会議体・タイムライン・除外リスト ID完全排他性・整合性検証
+6. UI表示DOMコンテナ・主要要素整合性検証
+7. クローラー手動保護回帰テスト (manualLock 非破壊性)
+8. JavaScript 実行時クラッシュ・TDZ・全画面描画検証
+9. 管理サーバー API エンドポイント単体・結合テスト
+10. クローラー基盤・誤判定防止テスト (スキップリンク・最新ソート・ジェネリック除外)
+11. 親テーブル開催回・配付資料抽出および同期連携テスト
+12. スクレイピングルール整合性検証 (孤立ルール0件・全会議体100%ルール適用)
+13. スマート差分探索エンジン検証 (既登録スキップ・最新更新確認・差分巡回)
+14. クロール品質判定・2099プレースホルダー日付検知検証
+15. クロール網羅性・実リンク解析・archiveUrl・URL日付復元検証
+16. クロール堅牢化・共通ナビ除外・組織常設資料分離・ホスト分散検証
+17. クロール超高速化 & 直近アクティブ重点化検証
+18. 康煕部首・特殊異体字 NFKC 正規化 & 検索漏れ根絶検証
 """
 
 import sys
@@ -137,7 +152,7 @@ def check_syntax_errors():
         os.path.join(PROJECT_ROOT, "admin", "apply_report.py"),
         os.path.join(PROJECT_ROOT, "admin", "cleanup_nav_meetings.py"),
         os.path.join(PROJECT_ROOT, "admin", "admin_dashboard.html"),
-        os.path.join(PROJECT_ROOT, "testing", "smoke_test.py"),
+        os.path.join(PROJECT_ROOT, "testing", "run_test_suite.py"),
         os.path.join(PROJECT_ROOT, "testing", "test_js_runtime.js"),
         os.path.join(PROJECT_ROOT, "testing", "app.test.js"),
         os.path.join(PROJECT_ROOT, "testing", "test_no_duplicate_meetings.py"),
@@ -779,14 +794,14 @@ def check_drop22_normalization():
     )
 
 def main():
-    parser = argparse.ArgumentParser(description="PM-HUB Smoke Test Runner")
+    parser = argparse.ArgumentParser(description="PM-HUB Comprehensive Test Suite Runner")
     parser.add_argument("--url", nargs="+", help="Explicit URLs to verify")
     parser.add_argument("--all", action="store_true", help="Check all URLs in data.json")
     parser.add_argument("--skip-network", action="store_true", help="Skip network link health verification")
     args = parser.parse_args()
 
     print("==================================================")
-    print(" 政策会議ウォッチ (PM-HUB) 自動スモークテスト実行 ")
+    print(" 政策会議ウォッチ (PM-HUB) 統合テストスイート実行 ")
     print("==================================================")
 
     syntax_ok = check_syntax_errors()
@@ -820,10 +835,10 @@ def main():
             and view_ok and crawler_ok and runtime_ok and server_api_ok
             and foundation_ok and parent_table_ok and rules_ok
             and incremental_ok and quality_ok and quality_v2_ok and drop16_ok and drop17_ok and drop22_ok):
-        print(" 【結果】全スモークテストに合格しました。修正コードは正常です。")
+        print(" 【結果】全テストスイート（18ケース）に合格しました。修正コードは正常です。")
         sys.exit(0)
     else:
-        print(" 【結果】スモークテストにてエラーが検出されました。コードの再確認が必要です。")
+        print(" 【結果】テストスイートにてエラーが検出されました。コードの再確認が必要です。")
         sys.exit(1)
 
 if __name__ == "__main__":

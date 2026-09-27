@@ -55,7 +55,7 @@ PMHub/
 │   └── RESOURCE_MAP.md
 └── testing/
     ├── app.test.js
-    ├── smoke_test.py
+    ├── run_test_suite.py
     ├── test_no_duplicate_meetings.py
     ├── test_crawler_regression.py
     └── test_js_runtime.js
@@ -86,19 +86,21 @@ python -m http.server 8000
 
 本プロジェクトでは以下の自動テストスイートを提供しており、データ更新やコード修正時の品質を多層的に保証します。
 
-### 1) 統合スモークテスト（推奨・全8大テスト一括実行）
+### 1) 統合テストスイート（推奨・全18ケース一括実行）
 
 ```bash
-python testing/smoke_test.py
+python testing/run_test_suite.py
 ```
 - JS/HTML/Python/JSON の構文エラー検出・DOM 整合性検査（`HTMLParser` による div ネスト検査）
-- 変更 URL 中心の疎通確認
-- JS ユーティリティ単体テスト連携
-- 会議品質・回次整合性・重複排除検証
+- 変更 URL 中心の疎通確認（`--skip-network` でスキップ可能）
+- JS ユーティリティ単体テスト連携（`app.test.js`）
+- 会議品質・回次整合性・重複排除検証（`test_no_duplicate_meetings.py`）
 - 会議体ID同期・除外リスト・完全整合性検証
 - UI 主要コンテナ・管理ダッシュボード全5タブ構造検証
-- クローラー手動保護（`manualLock`）回帰検証
-- JavaScript 実行時クラッシュ（TDZ・全画面描画）検証
+- クローラー手動保護（`manualLock`）回帰検証（`test_crawler_regression.py`）
+- JavaScript 実行時クラッシュ（TDZ・全画面描画）検証（`test_js_runtime.js`）
+- 管理サーバー API エンドポイント単体・結合テスト
+- クローラー基盤・誤判定防止・親テーブル・差分巡回・品質判定・文字正規化検証
 
 ### 2) 個別テストスイート
 
@@ -143,7 +145,7 @@ python crawler.py
 ```
 
 3. クロール結果は `docs/data.json` に直接安全に反映・保存されます
-4. `testing/smoke_test.py` と Node.js テストを実行
+4. `testing/run_test_suite.py` を実行
 5. 問題なければコミット・公開
 
 詳細は以下を参照してください。

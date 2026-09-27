@@ -52,4 +52,4 @@ python crawler.py
    - **唯一のデータソース (`docs/data.json`)**: 会議体マスター、開催回・配布資料、スクレイピング設定、ディスカバリーキーワード設定、クローラー設定はすべて `docs/data.json` に一元管理されます。
    - **クローラー巡回結果**: クローラーの実行結果は中間ファイルを経由せず、直接 `docs/data.json` へ安全に反映・保存されます。
    - **却下会議体**: 管理者コンソールで却下された会議体は `docs/data.json` から削除され、`admin/rejected_councils.json` に移動・隔離されます。クローラー巡回および公開ポータルから完全に除外されます。
-   - 更新後は必ず `python testing/smoke_test.py` を実行してデータの整合性を確認します。
+   - 更新後は必ず `python testing/run_test_suite.py --skip-network` を実行してデータの整合性を確認します。
