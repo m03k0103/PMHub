@@ -77,6 +77,7 @@ PMHub/
 | :--- | :--- | :--- |
 | [guide/admin_guide.md](file:///d:/dev/PMHub/guide/admin_guide.md) | 人間用 | 定期自動巡回（Windowsタスクスケジューラ / Linux Cron）の構築手順、管理者ツールの運用マニュアル。 |
 | [guide/RESOURCE_MAP.md](file:///d:/dev/PMHub/guide/RESOURCE_MAP.md) | 人間用 | 各リソースファイルの役割・権限区分・ディレクトリ構成の全容説明書（本ドキュメント）。 |
+| [guide/TEST_SUITE_SPECIFICATION.md](file:///d:/dev/PMHub/guide/TEST_SUITE_SPECIFICATION.md) | 人間用 | 統合テストスイート（run_test_suite.py）の全18テストケース解説、妥当性評価、効率化提案仕様書。 |
 | [guide/CRAWLER_ARCHITECTURE.md](file:///d:/dev/PMHub/guide/CRAWLER_ARCHITECTURE.md) | 人間用 | Webクローラーの動作原理、HTTPリクエスト・文字コード判定・和暦/西暦正規表現抽出・絶対URL復元ロジックの詳細仕様書。 |
 | [AGENTS.md](file:///d:/dev/PMHub/AGENTS.md) | エージェント用 | AIエージェント（Antigravity）向け行動規範、Plan作成ルール、自動テスト実行義務規程。 |
 | [README.md](file:///d:/dev/PMHub/README.md) | 全般 | プロジェクトの全体目的、全21省庁＋内閣官房のカバー範囲、起動方法、機能一覧。 |

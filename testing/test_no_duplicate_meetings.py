@@ -63,18 +63,19 @@ def extract_round_and_type(title, council_name="", url=""):
     return (int(m.group(1)), sub_type) if m else (None, "")
 
 
-def run_test():
-    base_dir = os.path.dirname(os.path.abspath(__file__))
-    data_path = os.path.abspath(os.path.join(base_dir, "..", "docs", "data.json"))
-    
-    if not os.path.exists(data_path):
-        print(f"FAIL: {data_path} not found")
-        return 1
+def run_test(data=None):
+    if data is None:
+        base_dir = os.path.dirname(os.path.abspath(__file__))
+        data_path = os.path.abspath(os.path.join(base_dir, "..", "docs", "data.json"))
         
-    data = load_data_json(data_path, cached=True)
-    if not data:
-        print(f"FAIL: Failed to load {data_path}")
-        return 1
+        if not os.path.exists(data_path):
+            print(f"FAIL: {data_path} not found")
+            return 1
+            
+        data = load_data_json(data_path, cached=True)
+        if not data:
+            print(f"FAIL: Failed to load {data_path}")
+            return 1
         
     councils = {c['id']: c for c in data.get('councils', [])}
     meetings = data.get('meetings', [])
