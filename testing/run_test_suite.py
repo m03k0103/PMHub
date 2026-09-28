@@ -563,7 +563,7 @@ def check_duplicate_meetings_quality(data=None):
         with redirect_stdout(f_out), redirect_stderr(f_err):
             code = run_test(data=data)
         if code == 0:
-            print("  [PASS] 会議ID重複・回次重複・日付フォーマット・クローラー一時データ混入0件を検証完了")
+            print("  [PASS] 会議ID重複・回次重複・クロス会議体重複URL・会議体マスター重複・孤立会議データ0件を検証完了")
             return True
         else:
             print("  [FAIL] 会議データ品質・重複排除検証でエラーが検出されました:")
@@ -579,7 +579,7 @@ def check_duplicate_meetings_quality(data=None):
 
         res = subprocess.run([sys.executable, test_script], capture_output=True, text=True, encoding='utf-8', errors='replace')
         if res.returncode == 0:
-            print("  [PASS] 会議ID重複・回次重複・日付フォーマット・クローラー一時データ混入0件を検証完了")
+            print("  [PASS] 会議ID重複・回次重複・クロス会議体重複URL・会議体マスター重複・孤立会議データ0件を検証完了")
             return True
         else:
             print("  [FAIL] 会議データ品質・重複排除検証でエラーが検出されました:")
