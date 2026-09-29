@@ -278,37 +278,14 @@ def run_test(data=None):
         'cas-katsuryoku_koujou',
         'mhlw-iryou_shitsukoujou',
     )
+    # Strictly limited to legitimate co-located ministerial councils sharing the same portal section
     known_council_url_sharing = {
-        'https://www.bunka.go.jp/seisaku/bunkashingikai/index.html',
-        'https://www.reconstruction.go.jp/topics/cat-11/cat-47/cat-158/000815/',
         'https://www.cas.go.jp/jp/seisakukaigi/hairo_osensui/index.html',
         'https://www.cas.go.jp/jp/seisakukaigi/keikyou/index.html',
-        'https://www.fsa.go.jp/singi/kinyukiki/index.html',
         'https://www.cas.go.jp/jp/gaiyou/jimu/jyouhoutyousa/intelligence_taisei.html',
         'https://www.gov-online.go.jp/prg/prg9364.html',
         'https://www.cas.go.jp/jp/seisaku/chyutoujyousei/index.html',
-        'https://www.jfa.maff.go.jp/j/council/index.html',
-        'https://www.maff.go.jp/j/pr/event/kaigi.release.html',
-        'https://www.jfa.maff.go.jp/j/council/suisanbukai/index.html',
-        'https://www.mext.go.jp/sports/b_menu/shingi/index.htm',
-        'https://www.maff.go.jp/j/council/index.html',
-        'https://www.maff.go.jp/j/study/index.html',
-        'https://www.maff.go.jp/nval/syonin_sinsa/gijiroku/index.html',
-        'https://www.rinya.maff.go.jp/j/ken_sidou/shingikai/index.html',
-        'https://www.meti.go.jp/shingikai/sankoshin/sokai/index.html',
         'https://www.mext.go.jp/b_menu/shingi/chukyo/chukyo0/index.htm',
-        'https://www.mhlw.go.jp/stf/shingi/shingi-hosho_126721.html',
-        'https://www.mhlw.go.jp/stf/shingi/shingi-hosho_126730.html',
-        'https://www.mhlw.go.jp/stf/shingi/shingi-hosho_126734.html',
-        'https://www.mhlw.go.jp/stf/shingi/shingi-kousei_127717.html',
-        'https://www.mhlw.go.jp/stf/shingi/shingi-hosho_126700.html',
-        'https://www.mhlw.go.jp/stf/shingi/shingi-hosho_126709.html',
-        'https://www.mhlw.go.jp/stf/shingi/shingi-hosho_491253_1.html',
-        'https://www.mhlw.go.jp/stf/shingi/shingi-hosho_249296.html',
-        'https://www.mhlw.go.jp/stf/shingi/shingi-hosho_164149.html',
-        'https://www.mhlw.go.jp/stf/shingi/shingi-hosho_126716.html',
-        'https://www.mhlw.go.jp/stf/shingi/shingi-hosho_126693.html',
-        'https://www.mhlw.go.jp/stf/shingi/shingi-hosho_126698_00022.html',
         'https://www.moj.go.jp/hisho/seisakuhyouka/hisho04_00050.html',
     }
     councils_by_url = defaultdict(list)
@@ -332,6 +309,50 @@ def run_test(data=None):
     orphaned_m_ids = [m.get('id') for m in meetings if m.get('councilId') not in councils]
     if orphaned_m_ids:
         errors.append(f"Orphaned meetings referencing non-existent councilId found ({len(orphaned_m_ids)} items): {orphaned_m_ids[:5]}")
+
+    # 14. Check exact and short-suffix duplicate council names within same ministry
+    by_ministry = defaultdict(list)
+    for c in councils.values():
+        by_ministry[c.get('ministry')].append(c)
+
+    sub_keywords = ('部会', '分科会', '小委員会', '委員会', 'ワーキンググループ', '検討会', '研究会', '審査会', '専門家会合', 'タスクフォース')
+    known_allowed_similar_names = {
+        ('mhlw-785', 'mhlw-879'),  # 医療部会 vs 生殖補助医療部会 (別組織)
+        ('mhlw-959', 'mhlw-968'),  # 医師分科会 vs 歯科医師分科会 (別組織)
+        ('cao-zeicho_noukan_senmonka', 'cao-zeicho_digital_noukan_senmonka'),  # 納税環境整備に関する専門家会合 vs 経済社会のデジタル化... (別組織)
+        ('fsa-stewardship_h28', 'fsa-japan_stewardship'),  # 第1期検討会 vs 日本版検討会
+        ('mhlw-iryou_bunkakai', 'mhlw-1044'),  # 医療分科会 vs 原子爆弾被爆者医療分科会 (別組織)
+        ('mhlw-871', 'mhlw-hosho_shouni'),  # 疾病対策部会 vs 社会保障審議会 小児慢性特定疾病対策部会
+        ('mhlw-824', 'mhlw-kousei_influ'),  # 新型インフルエンザ対策に関する小委員会 (過去期別)
+        ('mhlw-912', 'mhlw-855'),  # ヒト幹細胞臨床研究 (過去期別)
+        ('mhlw-930', 'mhlw-rousei_anzeneisei'),  # 安全衛生分科会 (過去期別)
+        ('mhlw-955', 'mhlw-927'),  # 争議行為 (過去期別)
+    }
+
+    similar_name_errors = []
+    for m_code, clist in by_ministry.items():
+        for i in range(len(clist)):
+            c1 = clist[i]
+            n1 = re.sub(r'\s+', '', c1['name'])
+            for j in range(i + 1, len(clist)):
+                c2 = clist[j]
+                n2 = re.sub(r'\s+', '', c2['name'])
+
+                pair_key = (min(c1['id'], c2['id']), max(c1['id'], c2['id']))
+                pair_key_rev = (max(c1['id'], c2['id']), min(c1['id'], c2['id']))
+                if pair_key in known_allowed_similar_names or pair_key_rev in known_allowed_similar_names:
+                    continue
+
+                if n1 == n2:
+                    similar_name_errors.append(f"Exact council name duplicate in {m_code}: '{c1['name']}' ({c1['id']} and {c2['id']})")
+                    continue
+
+                if len(n1) >= 4 and len(n2) >= 4 and any(k in n1 for k in sub_keywords) and any(k in n2 for k in sub_keywords):
+                    if (n2.endswith(n1) and not n2.startswith(n1)) or (n1.endswith(n2) and not n1.startswith(n2)):
+                        similar_name_errors.append(f"Short suffix council name duplicate in {m_code}: '{c1['name']}' ({c1['id']}) vs '{c2['name']}' ({c2['id']})")
+
+    if similar_name_errors:
+        errors.append(f"Duplicate/similar council names found within same ministry ({len(similar_name_errors)} cases): {similar_name_errors[:5]}")
 
     if errors:
         print(f"FAILED: {len(errors)} validation errors found:")

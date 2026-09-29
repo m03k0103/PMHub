@@ -2692,5 +2692,248 @@
     "name": "法制審議会",
     "url": "https://www.moj.go.jp/shingi1/shingikai_soukai.html",
     "reason": "重複会議体マスターのため正規スラグID（moj-housei_*）へ集約統合・除外"
+  },
+  {
+    "id": "mhlw-822",
+    "name": "感染症部会",
+    "ministry": "MHLW",
+    "category": "SECTION",
+    "officialUrl": "https://www.mhlw.go.jp/stf/shingi/shingi-kousei_127717.html",
+    "rejectedAt": "2026-09-29",
+    "reason": "同一URL・重複会議体のため mhlw-kousei_kansenshou へ集約統合・削除 (Drop 32)"
+  },
+  {
+    "id": "mhlw-789",
+    "name": "年金部会",
+    "ministry": "MHLW",
+    "category": "SECTION",
+    "officialUrl": "https://www.mhlw.go.jp/stf/shingi/shingi-hosho_126721.html",
+    "rejectedAt": "2026-09-29",
+    "reason": "同一URL・重複会議体のため mhlw-shakai_hosho_nenkin へ集約統合・削除 (Drop 32)"
+  },
+  {
+    "id": "mhlw-802",
+    "name": "障害者部会",
+    "ministry": "MHLW",
+    "category": "SECTION",
+    "officialUrl": "https://www.mhlw.go.jp/stf/shingi/shingi-hosho_126730.html",
+    "rejectedAt": "2026-09-29",
+    "reason": "同一URL・重複会議体のため mhlw-shakai_hosho_shougaisha へ集約統合・削除 (Drop 32)"
+  },
+  {
+    "id": "mhlw-807",
+    "name": "介護保険部会",
+    "ministry": "MHLW",
+    "category": "SECTION",
+    "officialUrl": "https://www.mhlw.go.jp/stf/shingi/shingi-hosho_126734.html",
+    "rejectedAt": "2026-09-29",
+    "reason": "同一URL・重複会議体のため mhlw-shakai_hosho_kaigo_hoken へ集約統合・削除 (Drop 32)"
+  },
+  {
+    "id": "mhlw-kaigo_kyuufu_bunkakai",
+    "name": "介護給付費分科会",
+    "ministry": "MHLW",
+    "category": "SUBCOMMITTEE",
+    "officialUrl": "https://www.mhlw.go.jp/stf/shingi/shingi-hosho_126698_00022.html",
+    "rejectedAt": "2026-09-29",
+    "reason": "同一URL・重複会議体のため mhlw-shakai_hosho_kaigo_kyuufu へ集約統合・削除 (Drop 32)"
+  },
+  {
+    "id": "mhlw-fukushi_bukai",
+    "name": "福祉部会",
+    "ministry": "MHLW",
+    "category": "SECTION",
+    "officialUrl": "https://www.mhlw.go.jp/stf/shingi/shingi-hosho_126700.html",
+    "rejectedAt": "2026-09-29",
+    "reason": "同一URL・重複会議体のため mhlw-hosho_fukushi へ集約統合・削除 (Drop 32)"
+  },
+  {
+    "id": "mhlw-jidou_bukai",
+    "name": "児童部会",
+    "ministry": "MHLW",
+    "category": "SECTION",
+    "officialUrl": "https://www.mhlw.go.jp/stf/shingi/shingi-hosho_126709.html",
+    "rejectedAt": "2026-09-29",
+    "reason": "同一URL・重複会議体のため mhlw-hosho_jidou へ集約統合・削除 (Drop 32)"
+  },
+  {
+    "id": "mhlw-toukei_bunkakai",
+    "name": "統計分科会",
+    "ministry": "MHLW",
+    "category": "SUBCOMMITTEE",
+    "officialUrl": "https://www.mhlw.go.jp/stf/shingi/shingi-hosho_126693.html",
+    "rejectedAt": "2026-09-29",
+    "reason": "同一URL・重複会議体のため mhlw-hosho_toukei へ集約統合・削除 (Drop 32)"
+  },
+  {
+    "id": "mhlw-houkago_jidoukan_wg",
+    "name": "児童部会放課後児童対策に関する専門委員会児童館のあり方に関する検討ワーキンググループ",
+    "ministry": "MHLW",
+    "category": "SECTION",
+    "officialUrl": "https://www.mhlw.go.jp/stf/shingi/shingi-hosho_491253_1.html",
+    "rejectedAt": "2026-09-29",
+    "reason": "同一URL・重複会議体のため mhlw-hosho_jidoukan へ集約統合・削除 (Drop 32)"
+  },
+  {
+    "id": "mhlw-shiin_sentaku_kento_wg",
+    "name": "社会保障審議会 統計分科会疾病、傷害及び死因分類専門委員会死因選択検討ワーキンググループ",
+    "ministry": "MHLW",
+    "category": "SUBCOMMITTEE",
+    "officialUrl": "https://www.mhlw.go.jp/stf/shingi/shingi-hosho_249296.html",
+    "rejectedAt": "2026-09-29",
+    "reason": "同一URL・重複会議体のため mhlw-hosho_shiinsentaku へ集約統合・削除 (Drop 32)"
+  },
+  {
+    "id": "mhlw-toukei_shikkan_shougai",
+    "name": "統計分科会疾病、傷害及び死因分類部会",
+    "ministry": "MHLW",
+    "category": "SECTION",
+    "officialUrl": "https://www.mhlw.go.jp/stf/shingi/shingi-hosho_164149.html",
+    "rejectedAt": "2026-09-29",
+    "reason": "同一URL・重複会議体のため mhlw-hosho_shippei へ集約統合・削除 (Drop 32)"
+  },
+  {
+    "id": "mhlw-shouni_mansei_shien",
+    "name": "児童部会小児慢性特定疾患児への支援の在り方に関する専門委員会",
+    "ministry": "MHLW",
+    "category": "SECTION",
+    "officialUrl": "https://www.mhlw.go.jp/stf/shingi/shingi-hosho_126716.html",
+    "rejectedAt": "2026-09-29",
+    "reason": "同一URL・重複会議体のため mhlw-hosho_shouni へ集約統合・削除 (Drop 32)"
+  },
+  {
+    "id": "cas-313",
+    "name": "[統合廃止] 金融危機対応会議 (旧cas-313)",
+    "ministry": "CAS",
+    "category": "COUNCIL",
+    "officialUrl": "https://www.fsa.go.jp/singi/kinyukiki/index.html",
+    "rejectedAt": "2026-09-29",
+    "reason": "同一URL・重複会議体のため fsa-kinyu_kiki_taiou へ集約統合・削除 (Drop 32)"
+  },
+  {
+    "id": "cas-1942",
+    "name": "[統合廃止] 復興推進会議 (旧cas-1942)",
+    "ministry": "CAS",
+    "category": "HQ",
+    "officialUrl": "https://www.reconstruction.go.jp/topics/cat-11/cat-47/cat-158/000815/",
+    "rejectedAt": "2026-09-29",
+    "reason": "同一URL・重複会議体のため ra-fukko_suishin_kaigi へ集約統合・削除 (Drop 32)"
+  },
+  {
+    "id": "maff-670",
+    "name": "林野部会",
+    "ministry": "MAFF",
+    "category": "SECTION",
+    "officialUrl": "https://www.rinya.maff.go.jp/j/ken_sidou/shingikai/index.html",
+    "rejectedAt": "2026-09-29",
+    "reason": "同一URL・重複会議体のため rinya-1279 へ集約統合・削除 (Drop 32)"
+  },
+  {
+    "id": "maff-672",
+    "name": "薬事・食品衛生審議会動物用医薬品等部会[動物医薬品検査所へのリンク]",
+    "ministry": "MAFF",
+    "category": "SECTION",
+    "officialUrl": "https://www.maff.go.jp/nval/syonin_sinsa/gijiroku/index.html",
+    "rejectedAt": "2026-09-29",
+    "reason": "同一URL・重複会議体のため maff-656 へ集約統合・削除 (Drop 32)"
+  },
+  {
+    "id": "maff-712",
+    "name": "審議会一覧へリンク",
+    "ministry": "MAFF",
+    "category": "COUNCIL",
+    "officialUrl": "https://www.maff.go.jp/j/council/index.html",
+    "rejectedAt": "2026-09-29",
+    "reason": "不要な目次・リンク集会議体のため削除 (Drop 32)"
+  },
+  {
+    "id": "maff-682",
+    "name": "研究会等一覧へのリンク",
+    "ministry": "MAFF",
+    "category": "STUDY",
+    "officialUrl": "https://www.maff.go.jp/j/study/index.html",
+    "rejectedAt": "2026-09-29",
+    "reason": "不要な目次・リンク集会議体のため削除 (Drop 32)"
+  },
+  {
+    "id": "mext-719",
+    "name": "文化審議会(文化庁HPへ)",
+    "ministry": "MEXT",
+    "category": "COUNCIL",
+    "officialUrl": "https://www.bunka.go.jp/seisaku/bunkashingikai/index.html",
+    "rejectedAt": "2026-09-29",
+    "reason": "不要な目次・リンク集会議体のため削除 (Drop 32)"
+  },
+  {
+    "id": "meti-sangyo_kozo",
+    "name": "[統合廃止] 産業構造審議会 新産業構造部会 (旧meti-sangyo_kozo)",
+    "ministry": "METI",
+    "category": "COUNCIL",
+    "officialUrl": "https://www.meti.go.jp/shingikai/sankoshin/sokai/index.html",
+    "rejectedAt": "2026-09-29",
+    "reason": "同一URL・重複会議体のため meti-sankoushin へ集約統合・削除 (Drop 32)"
+  },
+  {
+    "id": "jfa-2174",
+    "name": "[統合廃止] 審議会 (旧jfa-2174)",
+    "ministry": "JFA",
+    "category": "COUNCIL",
+    "officialUrl": "https://www.jfa.maff.go.jp/j/council/index.html",
+    "rejectedAt": "2026-09-29",
+    "reason": "同一URL・重複会議体のため maff-653 へ集約統合・削除 (Drop 32)"
+  },
+  {
+    "id": "maff-671",
+    "name": "水産部会",
+    "ministry": "MAFF",
+    "category": "SECTION",
+    "officialUrl": "https://www.jfa.maff.go.jp/j/council/suisanbukai/index.html",
+    "rejectedAt": "2026-09-29",
+    "reason": "同一URL・重複会議体のため jfa-592 へ集約統合・削除 (Drop 32)"
+  },
+  {
+    "id": "jfa-590",
+    "name": "[統合廃止] 会議等の開催情報 (旧jfa-590)",
+    "ministry": "JFA",
+    "category": "COUNCIL",
+    "officialUrl": "https://www.maff.go.jp/j/pr/event/kaigi.release.html",
+    "rejectedAt": "2026-09-29",
+    "reason": "同一URL・重複会議体のため maff-649 へ集約統合・削除 (Drop 32)"
+  },
+  {
+    "id": "mext-718",
+    "name": "スポーツ審議会(スポーツ庁HPへ)",
+    "ministry": "MEXT",
+    "category": "COUNCIL",
+    "officialUrl": "https://www.mext.go.jp/sports/b_menu/shingi/index.htm",
+    "rejectedAt": "2026-09-29",
+    "reason": "同一URL・重複会議体のため jsa-611 へ集約統合・削除 (Drop 32)"
+  },
+  {
+    "id": "mof-1130",
+    "name": "財政制度分科会",
+    "ministry": "MOF",
+    "category": "SUBCOMMITTEE",
+    "officialUrl": "https://www.mof.go.jp/about_mof/councils/fiscal_system_council/sub-of_fiscal_system/index.html",
+    "rejectedAt": "2026-09-29",
+    "reason": "同一会議体・重複マスターのため mof-zaiseiseido_bunkakai へ集約統合・削除 (Drop 32)"
+  },
+  {
+    "id": "mhlw-shouni_mansei_taisaku_bukai",
+    "name": "小児慢性特定疾病対策部会",
+    "ministry": "MHLW",
+    "category": "SECTION",
+    "officialUrl": "https://www.mhlw.go.jp/stf/shingi/shingi-hosho_126709_00002.html",
+    "rejectedAt": "2026-09-29",
+    "reason": "同一会議体・重複マスターのため mhlw-hosho_shouni へ集約統合・削除 (Drop 32)"
+  },
+  {
+    "id": "mhlw-shakai_hosho_iryou",
+    "name": "[統合廃止] 社会保障審議会 医療部会 (旧mhlw-shakai_hosho_iryou)",
+    "ministry": "MHLW",
+    "category": "SUBCOMMITTEE",
+    "officialUrl": "https://www.mhlw.go.jp/stf/shingi/shingi-hosho_126698.html",
+    "rejectedAt": "2026-09-29",
+    "reason": "介護給付費分科会URL誤設定・重複会議体のため mhlw-shakai_hosho_kaigo_kyuufu へ統合・削除 (Drop 32)"
   }
 ]
