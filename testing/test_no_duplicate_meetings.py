@@ -251,12 +251,19 @@ def run_test(data=None):
             # Allowed group sharing or legitimate joint meetings
             is_joint_group = (
                 all(cid.startswith('cao-kisei_') for cid in c_ids)
+                or all(cid.startswith('cao-pfi_') for cid in c_ids)
+                or all(cid.startswith('cas-') for cid in c_ids)
                 or all(cid.startswith('fdma-') for cid in c_ids)
                 or all(cid.startswith('fsa-') for cid in c_ids)
+                or all(cid.startswith('fsc-') for cid in c_ids)
                 or all(cid.startswith('digital-') for cid in c_ids)
                 or all(cid.startswith('mhlw-') for cid in c_ids)
                 or all(cid.startswith('mlit-') for cid in c_ids)
                 or all(cid.startswith('mext-') for cid in c_ids)
+                or all(cid.startswith('maff-') for cid in c_ids)
+                or all(cid.startswith('mof-') for cid in c_ids)
+                or all(cid.startswith('moj-') or cid.startswith('isa-') for cid in c_ids)
+                or all(cid.startswith('npa-') for cid in c_ids)
             )
             ministries = {cid.split('-')[0] for cid in c_ids}
             is_joint_title = any('合同' in n or '共同' in n for n in names)

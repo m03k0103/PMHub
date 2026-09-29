@@ -220,6 +220,8 @@ _GENERIC_INDEX_URL_PATTERNS = re.compile(
     r'policymeeting/(?:index\.html)?$|'
     r'fiscal_system_council/[^/]+/(?:proceedings|report)/(?:index\.html)?$|'
     r'gijiroku/zeicho/\d{4}/(?:index\.html)?$|'
+    r'gijiroku/ebpm/\d{4}/(?:index\.html)?$|'
+    r'kokurituken/gijiroku/attach/|'
     r'fsc\.go\.jp/senmon/(?:[^/]+/)?$|'
     r'kanbou_library_library\d+_\d+\.html|'
     r'14th_congress_index\.html|'
