@@ -252,6 +252,9 @@ _GENERIC_INDEX_URL_PATTERNS = re.compile(
     r'bunkakai_index\.html|'
     r'member(?:\.html|/)?$|'
     r'meibo(?:\.html|/)?$|'
+    r'_backno(?:\.html|/)?$|'
+    r'index_backno(?:\.html|/)?$|'
+    r'backnumber(?:\.html|/)?$|'
     r'b_menu/b004\.htm',
     re.IGNORECASE
 )
