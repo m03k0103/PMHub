@@ -255,7 +255,12 @@ _GENERIC_INDEX_URL_PATTERNS = re.compile(
     r'_backno(?:\.html|/)?$|'
     r'index_backno(?:\.html|/)?$|'
     r'backnumber(?:\.html|/)?$|'
-    r'b_menu/b004\.htm',
+    r'b_menu/b004\.htm|'
+    r'kaisai_yotei(?:/index\.html)?$|'
+    r'/kaisai_yotei/|'
+    r'/kaisaiyotei(?:\.html)?$|'
+    r'shingi/kaisaiyotei(?:\.html)?|'
+    r'/kaisai_yotei\.html$',
     re.IGNORECASE
 )
 
@@ -265,13 +270,15 @@ _GENERIC_INDEX_TITLE_KEYWORDS = frozenset({
     "研究会等一覧へのリンク", "会議資料詳細", "資料詳細", "会議詳細",
     "食の安全、を科学する", "審議会等", "｜デジタル庁", "｜Digital Agency", "Digital Agency",
     "政策・審議会等", "省議・審議会等", "政策・審議会等トップへ", "審議会・研究会",
-    "監査監督機関国際フォーラム", "IFIAR", "議事録・資料等", "目次"
+    "監査監督機関国際フォーラム", "IFIAR", "議事録・資料等", "目次",
+    "会議開催予定", "開催予定一覧"
 })
 
 # 汎用インデックス判定用の完全一致除外タイトル（単体での登録排除用）
 _GENERIC_INDEX_EXACT_TITLES = frozenset({
     "審議会", "政策・審議会等トップへ", "その他会議", "会議", "委員会",
-    "目次", "<目次>", "議事録・資料等", "政策・審議会"
+    "目次", "<目次>", "議事録・資料等", "政策・審議会",
+    "会議開催予定", "開催予定", "次回開催予定"
 })
 
 
@@ -1946,10 +1953,12 @@ def is_preliminary_notice_page(url, title=""):
     if not url and not title:
         return False
     u_lower = (url or "").lower()
-    # URLに /annai/ や /kaisaiannai/ や /online_kaisai, /event/, /seminar/ 等が含まれる場合
-    if re.search(r'/(?:kaisaiannai|online_kaisai|annai|event|seminar)/', u_lower) or \
+    # URLに /annai/ や /kaisaiannai/ や /online_kaisai, /event/, /seminar/, /kaisai_yotei/ 等が含まれる場合
+    if re.search(r'/(?:kaisaiannai|online_kaisai|annai|event|seminar|kaisai_yotei|kaisaiyotei)/', u_lower) or \
        'kaisaiannai' in u_lower or '_annai_' in u_lower or \
-       'annai_' in u_lower or u_lower.endswith('/annai.html') or u_lower.endswith('/kaisai_annai.html') or \
+       'annai_' in u_lower or 'kaisai_yotei' in u_lower or 'kaisaiyotei' in u_lower or \
+       u_lower.endswith('/annai.html') or u_lower.endswith('/kaisai_annai.html') or \
+       u_lower.endswith('/kaisai_yotei.html') or u_lower.endswith('/kaisaiyotei.html') or \
        'churoi/roushi' in u_lower:
         return True
 
@@ -1964,12 +1973,16 @@ def is_preliminary_notice_page(url, title=""):
         else:
             break
 
-    # 3. 末尾の開催案内・事前告知キーワード判定
-    if re.search(r'(?:の開催案内について|開催案内について|の開催について|開催について|の開催告知について|開催告知について|の開催告知|開催告知|の開催のお知らせについて|開催のお知らせについて|の開催案内|開催案内|の開催のお知らせ|開催のお知らせ|傍聴の案内|傍聴について|傍聴される皆様への留意事項|の開催概要について|傍聴の受付|傍聴申込み|傍聴申込|議事要旨|議事録|のご案内|の案内|問い合わせ先|情報配信サービス)$', t_clean):
+    # 2.5 タイトル完全一致での開催予定・案内判定
+    if t_clean in ['会議開催予定', '開催予定', '次回開催予定', '開催案内']:
         return True
 
-    # 4. タイトル途中に「開催案内」「傍聴の案内」「開催告知」等が含まれる場合
-    if any(kw in t_raw for kw in ['開催案内', '開催告知', '傍聴される皆様への留意事項', '傍聴留意事項', '傍聴申込', '傍聴の受付', '傍聴申込み']):
+    # 3. 末尾の開催案内・事前告知キーワード判定
+    if re.search(r'(?:の開催予定について|開催予定について|の開催案内について|開催案内について|の開催について|開催について|の開催告知について|開催告知について|の開催告知|開催告知|の開催のお知らせについて|開催のお知らせについて|の開催案内|開催案内|の開催のお知らせ|開催のお知らせ|傍聴の案内|傍聴について|傍聴される皆様への留意事項|の開催概要について|傍聴の受付|傍聴申込み|傍聴申込|議事要旨|議事録|のご案内|の案内|問い合わせ先|情報配信サービス)$', t_clean):
+        return True
+
+    # 4. タイトル途中に「開催案内」「傍聴の案内」「開催告知」「会議開催予定」等が含まれる場合
+    if any(kw in t_raw for kw in ['開催案内', '開催告知', '会議開催予定', '傍聴される皆様への留意事項', '傍聴留意事項', '傍聴申込', '傍聴の受付', '傍聴申込み']):
         return True
     if re.search(r'(?:[\s\u3000]+|（|\()傍聴(?:の案内|について|希望)?(?:[\s\u3000]+|）|\)|$)', t_raw):
         return True
