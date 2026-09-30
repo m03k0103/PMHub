@@ -19,7 +19,8 @@ def extract_round_and_type(title, council_name="", url=""):
     t_norm = normalize_japanese_numbers(title)
     
     sub_type = ""
-    fy_m = re.search(r'(令和\d+年度[秋|春|前半|後半]?|平成\d+年度[秋|春|前半|後半]?|令和\d+年|平成\d+年|第\d+期)', t_norm)
+    # Support Western years, Japanese eras (including 元年), and fiscal years
+    fy_m = re.search(r'(20\d\d年度?|19\d\d年度?|令和[0-9元]+年度?[秋|春|前半|後半]?|平成[0-9元]+年度?[秋|春|前半|後半]?|令和[0-9元]+年|平成[0-9元]+年|第\d+期)', t_norm)
     if fy_m and fy_m.group(1) not in council_name:
         sub_type += fy_m.group(1)
 
@@ -36,7 +37,22 @@ def extract_round_and_type(title, council_name="", url=""):
                 sub_type += f"_{part}"
                 break
 
-    if '総会' in t_norm and '総会' not in council_name:
+    # Sub-entities under parent councils
+    if ('アドホックグループ' in t_norm or 'アドホック' in t_norm) and 'アドホック' not in council_name:
+        ah_m = re.search(r'([A-Za-z0-9_\.一-龥]+(?:アドホックグループ|アドホック))', t_norm)
+        sub_type += f"_{ah_m.group(1)}" if ah_m else "_アドホック"
+    elif ('サブ・ワーキング・グループ' in t_norm or 'サブワーキンググループ' in t_norm or 'サブWG' in t_norm) and 'サブ' not in council_name:
+        swg_m = re.search(r'([A-Za-z0-9_\.一-龥]+(?:サブ・ワーキング・グループ|サブワーキンググループ|サブWG))', t_norm)
+        sub_type += f"_{swg_m.group(1)}" if swg_m else "_サブWG"
+    elif ('タスクグループ' in t_norm or 'タスクフォース' in t_norm or ' TF' in t_norm) and ('タスク' not in council_name and 'TF' not in council_name):
+        tf_m = re.search(r'([A-Za-z0-9_\.一-龥]+(?:タスクグループ|タスクフォース|TF))', t_norm)
+        sub_type += f"_{tf_m.group(1)}" if tf_m else "_タスクフォース"
+    elif '作業班' in t_norm and '作業班' not in council_name:
+        wg_m = re.search(r'([A-Za-z0-9_\.一-龥]+作業班)', t_norm)
+        sub_type += f"_{wg_m.group(1)}" if wg_m else "_作業班"
+    elif ('ワーキンググループ' in t_norm or ' WG' in t_norm) and ('WG' not in council_name and 'ワーキンググループ' not in council_name):
+        sub_type += "_WG"
+    elif '総会' in t_norm and '総会' not in council_name:
         sub_type += "_総会"
     elif ('専門小委員会' in t_norm or '専門委員会' in t_norm) and ('専門小委員会' not in council_name and '専門委員会' not in council_name):
         sub_type += "_専門小委員会"
@@ -54,12 +70,22 @@ def extract_round_and_type(title, council_name="", url=""):
         sub_type += "_協議会"
     elif '検討会' in t_norm and '検討会' not in council_name:
         sub_type += "_検討会"
-    elif ('ワーキンググループ' in t_norm or ' WG' in t_norm) and ('WG' not in council_name and 'ワーキンググループ' not in council_name):
-        sub_type += "_WG"
     elif '分科会' in t_norm and '分科会' not in council_name:
         sub_type += "_分科会"
 
-    m = re.search(r'第\s*(\d+)\s*回', t_norm)
+    if '合同会合' in t_norm or '合同会議' in t_norm:
+        sub_type += "_合同"
+
+    m = None
+    if council_name:
+        short_c = council_name.split()[-1]
+        m_spec = re.search(re.escape(short_c) + r'[^第\(（]*[（\(]?第\s*(\d+)\s*回', t_norm)
+        if m_spec:
+            m = m_spec
+
+    if not m:
+        m = re.search(r'第\s*(\d+)\s*回', t_norm)
+
     return (int(m.group(1)), sub_type) if m else (None, "")
 
 
@@ -146,6 +172,17 @@ def run_test(data=None):
     bad_c_ids = [c_id for c_id in councils.keys() if not validate_council_id(c_id)]
     if bad_c_ids:
         errors.append(f"Invalid councilId format (must be {{ministry}}-{{slug}} with 1 hyphen) ({len(bad_c_ids)} items): {bad_c_ids[:5]}")
+
+    # 8b. Check council ministry attribute (Strictly enforce valid ministry code string)
+    bad_c_ministries = []
+    for c_id, c in councils.items():
+        min_val = c.get('ministry')
+        if not min_val or not isinstance(min_val, str) or not min_val.strip():
+            bad_c_ministries.append((c_id, 'missing'))
+        elif min_val != min_val.upper() or not re.match(r'^[A-Z0-9_]+$', min_val):
+            bad_c_ministries.append((c_id, f'invalid format: {min_val}'))
+    if bad_c_ministries:
+        errors.append(f"Councils with missing or invalid 'ministry' attribute found ({len(bad_c_ministries)} items): {bad_c_ministries[:5]}")
 
     # 9. Check meetingId format (Must have exactly 3 hyphens: {councilId}-{YYYYMMDD}-{round/session})
     bad_m_ids = [m.get('id') for m in meetings if not validate_meeting_id(m.get('id', ''))]
