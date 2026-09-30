@@ -1133,6 +1133,31 @@ def extract_actual_subpage_links(html, target_url, rule=None, return_meta=False)
         if any(kw in t_clean for kw in ['能力開発基本調査', '調査の実施について', '問い合わせ先', '情報配信サービス', 'イベント概要', 'セミナーのご案内', '労使関係セミナー', '公募情報']):
             continue
 
+        # 親ページテーブル内のリンクで、回数列が存在し回数がハイフン/空の行（公表資料等）はサブページ探索から除外
+        parent_tr = a.find_parent('tr')
+        if parent_tr:
+            parent_tbl = parent_tr.find_parent('table')
+            if parent_tbl:
+                tbl_rows = parent_tbl.find_all('tr')
+                if len(tbl_rows) >= 2:
+                    hdr_cells = [c.get_text(strip=True) for c in tbl_rows[0].find_all(['th', 'td'])]
+                    r_col_idx = None
+                    for c_idx, c_txt in enumerate(hdr_cells):
+                        if any(k in c_txt for k in ['回数', '回次', '開催回']) or c_txt == '回':
+                            r_col_idx = c_idx
+                            break
+                    if r_col_idx is not None:
+                        tr_cells = parent_tr.find_all(['td', 'th'])
+                        if len(tr_cells) > r_col_idx:
+                            r_cell_txt = tr_cells[r_col_idx].get_text(strip=True)
+                            tbl_has_rounds = any(
+                                re.search(r'第\s*\d+\s*回', normalize_japanese_numbers(r.get_text(' ', strip=True)))
+                                for r in tbl_rows[1:]
+                            )
+                            if tbl_has_rounds and (not r_cell_txt or re.match(r'^[-―ー–\s・/]+$', r_cell_txt) or not re.search(r'\d+', r_cell_txt)):
+                                # 回数が存在しない資料行のリンクはサブページ探索候補から除外
+                                continue
+
         # 判定1: アンカーテキストに回次・開催・日付・資料キーワードが含まれるか
         is_subpage_by_text = bool(ROUND_OR_DATE_TEXT_PATTERN.search(t_clean))
 
@@ -1326,10 +1351,29 @@ def _extract_meetings_from_parent_table(html, target_url, council_name, rule=Non
         if not is_candidate_table:
             continue
 
+        # ヘッダー内の回数列インデックス特定およびテーブル全体の第X回存在判定
+        header_cells = [c.get_text(strip=True) for c in rows[0].find_all(['th', 'td'])]
+        round_col_idx = None
+        for c_idx, c_txt in enumerate(header_cells):
+            if any(k in c_txt for k in ['回数', '回次', '開催回']) or c_txt == '回':
+                round_col_idx = c_idx
+                break
+
+        table_has_round_numbers = any(
+            re.search(r'第\s*\d+\s*回', normalize_japanese_numbers(r.get_text(' ', strip=True)))
+            for r in rows[1:]
+        )
+
         for row in rows:
             cells = row.find_all(['td', 'th'])
             if len(cells) < 2:
                 continue
+
+            # 回数列が存在しテーブル内に第X回が存在する場合、回数セルが空またはハイフン等の行は公表資料行として除外
+            if table_has_round_numbers and round_col_idx is not None and len(cells) > round_col_idx:
+                round_cell_text = cells[round_col_idx].get_text(strip=True)
+                if not round_cell_text or re.match(r'^[-―ー–\s・/]+$', round_cell_text) or not re.search(r'\d+', round_cell_text):
+                    continue
 
             row_text = row.get_text(' ', strip=True)
             norm_text = normalize_japanese_numbers(row_text)
@@ -1355,6 +1399,10 @@ def _extract_meetings_from_parent_table(html, target_url, council_name, rule=Non
 
             # 回次も日付も取れない行はヘッダーや名簿等のためスキップ
             if not round_num and not meet_date:
+                continue
+
+            # テーブル内に正規回次（第X回）が存在するテーブルで、回次が取れない行（公表資料等）はスキップ
+            if table_has_round_numbers and not round_num:
                 continue
 
             # 3. 配付資料および個別URLの抽出
@@ -1925,8 +1973,12 @@ def is_preliminary_notice_page(url, title=""):
     if re.search(r'を開催します[\s\u3000]*[\(（][^\)）]*案内', t_raw):
         return True
 
-    # 5. 非会議タイトル（セミナー、能力開発基本調査、問い合わせ先等）
-    if any(kw in t_raw for kw in ['能力開発基本調査', '調査の実施について', '問い合わせ先', '情報配信サービス', 'イベント概要', 'セミナーのご案内', '労使関係セミナー']):
+    # 5. 非会議タイトル（セミナー、能力開発基本調査、公表資料・告示・意見等）
+    if any(kw in t_raw for kw in [
+        '能力開発基本調査', '調査の実施について', '問い合わせ先', '情報配信サービス',
+        'イベント概要', 'セミナーのご案内', '労使関係セミナー',
+        '指定研修機関の指定等について', '研修内容に関する意見', '基準に関する意見'
+    ]):
         return True
 
     return False
