@@ -18,9 +18,12 @@
 | **直近の修正済Drop**<br>(品質完全化 & ガード) | **統計委員会 会議開催予定削除 & 開催予定ページのクロール除外恒久ガード**<br>統計委員会「会議開催予定」開催回（mic-toukei_iinkai-20260928-s140）削除、全会議体横展開スキャンによる類似ゴミレコード（moj-2735, mhlw-1054）削除、ppc検討会第7回タイトル適正化、crawler.py における開催予定・事前告知ページ除外ガード恒久強化 | **事前告知ゴミ開催回排除 & ガード恒久化** | **Drop 35** | **【完了】** |
 | **直近の修正済Drop**<br>(品質完全化 & 日付是正) | **2099/1/1開催回データの実在開催日是正 & DROPS.md再編**<br>2099/01/01 ダミー日付全4件（厚労省1件・総務省3件）の一次資料調査に基づく実在開催日（2023年・2009年・2008年）特定・IDおよびタイトル是正、2099/01/01 ダミー日付残存0件達成、DROPS.md再編（ロードマップ廃止・サマリー直近化・過去Dropアーカイブ集約） | **2099/01/01日付 0件完全達成** | **Drop 36** | **【完了】** |
 | **直近の修正済Drop**<br>(不要資産削減 & 健全化) | **リファクタリング領域A: 公開静的サイト資産のクリーンアップ & 不要データ完全排除**<br>`docs/` 配下に残存していた過去の巨大バックアップ・一時データ（計101.2MB）の安全削除、文字化け破損残骸 `docs/rejected_councils.json` の完全排除（`admin/` 側への一元化担保） | **公開容量 101.2MB 削減 & 二重管理解消** | **Drop 37** | **【完了】** |
-| **今回の修正**<br>(構造改善 & DRY化) | **リファクタリング領域C: 管理UIスクリプト外部化 & 共通正規化ユーティリティ集約（DRY化）**<br>`admin/admin_dashboard.html` 内のインラインJS（約2,760行）を `admin/admin_dashboard.js` へ分離、`admin/utils.py` に `normalize_text` と `CJK_RADICAL_REPLACEMENTS` を集約して `crawler.py` と `batch_normalize_data.py` の定義重複を解消 | **HTML軽量化（723行化） & 正規化一元化** | **Drop 38** | **【完了】** |
-| **今後の修正予定**<br>(全文検索基盤) | **配付資料テキスト（PDF/HTML）自動抽出パイプライン & 全文検索インデックス基盤**<br>配付資料（PDF/HTML）本文テキスト軽量抽出パーサー、主要政策キーワード・タグ自動生成、フロントエンド用全文検索インデックス生成パイプライン | **全文政策検索エンジン化** | **Drop 39** | **【構想】** |
-| **今後の修正予定**<br>(政策分析・連携) | **省庁横断政策テーマ連携 & AI 議題要約・タイムライン可視化**<br>親組織・分科会・部会・WGの親子階層オントロジー定義、省庁横断政策テーマタグ連携、AI 時系列タイムライン分析エンジン | **省庁横断政策分析支援** | **Drop 40** | **【構想】** |
+| **直近の修正済Drop**<br>(構造改善 & DRY化) | **リファクタリング領域C: 管理UIスクリプト外部化 & 共通正規化ユーティリティ集約（DRY化）**<br>`admin/admin_dashboard.html` 内のインラインJS（約2,760行）を `admin/admin_dashboard.js` へ分離、`admin/utils.py` に `normalize_text` と `CJK_RADICAL_REPLACEMENTS` を集約して `crawler.py` と `batch_normalize_data.py` の定義重複を解消 | **HTML軽量化（723行化） & 正規化一元化** | **Drop 38** | **【完了】** |
+| **今後の修正予定**<br>(テスト網羅性向上) | **リファクタリング領域B: Drop 23〜25 単体テストの統合テストスイート（run_test_suite.py）統合**<br>Drop 23（WAF耐性・動的レートリミット）、Drop 24（親テーブル資料展開）、Drop 25（防衛省元号パース）の単体テスト（計7テスト）を `run_test_suite.py` の実行フローに正式統合 | **回帰テスト網羅性の向上** | **Drop 39** | **【構想】** |
+| **今後の修正予定**<br>(通信量最適化 & 設定分離) | **リファクタリング領域D: クローラー設定分離 & 公開JSONの minified 化による通信量最適化**<br>`docs/data.json` からフロント未使用のクローラー専用設定（`scrapingRules` 0.35MB 等）を `admin/scraping_rules.json` へ分離、公開用 JSON の minified 化（約7.9MB削減・22.8MB化） | **初回DL通信量 7.9MB 削減 & 設定分離** | **Drop 40** | **【構想】** |
+| **今後の修正予定**<br>(モジュール分割 & 整理) | **リファクタリング領域E: クローラー本体（crawler.py）の責務分離 & scratch/ クリーンアップ**<br>`admin/crawler.py`（約2,750行）のパーサー・探索戦略・データ同期モジュール分割、1,231ファイル（66MB）の `scratch/` 整理および `.gitignore` 追加による作業ツリークリーン化 | **クローラー軽量化 & 開発環境整備** | **Drop 41** | **【構想】** |
+| **今後の修正予定**<br>(全文検索基盤) | **配付資料テキスト（PDF/HTML）自動抽出パイプライン & 全文検索インデックス基盤**<br>配付資料（PDF/HTML）本文テキスト軽量抽出パーサー、主要政策キーワード・タグ自動生成、フロントエンド用全文検索インデックス生成パイプライン | **全文政策検索エンジン化** | **Drop 42** | **【構想】** |
+| **今後の修正予定**<br>(政策分析・連携) | **省庁横断政策テーマ連携 & AI 議題要約・タイムライン可視化**<br>親組織・分科会・部会・WGの親子階層オントロジー定義、省庁横断政策テーマタグ連携、AI 時系列タイムライン分析エンジン | **省庁横断政策分析支援** | **Drop 43** | **【構想】** |
 
 ---
 
@@ -322,6 +325,38 @@
 |:---|:---:|:---|:---|:---:|
 | **CR-85** | UI構造改善 | **管理ダッシュボード JavaScript の外部ファイル化（`admin_dashboard.js`）**<br>`admin_dashboard.html` から約2,760行のスクリプトを分離・外部化し、HTMLとロジックの責務を分離。構文チェック（`run_test_suite.py`）および実行時検証（`test_js_runtime.js`）を外部スクリプト対応に更新 | `admin/admin_dashboard.html`<br>`admin/admin_dashboard.js`<br>`testing/run_test_suite.py`<br>`testing/test_js_runtime.js` | 完了 |
 | **CR-86** | DRY化・共通化 | **文字列正規化ロジックの `admin/utils.py` への集約・一元化**<br>`normalize_text` および `CJK_RADICAL_REPLACEMENTS` を `admin/utils.py` に集約し、`crawler.py` と `batch_normalize_data.py` の重複定義を解消 | `admin/utils.py`<br>`admin/crawler.py`<br>`admin/batch_normalize_data.py` | 完了 |
+
+---
+
+### 【Drop 39】リファクタリング領域B: Drop 23〜25 単体テストの統合テストスイート（run_test_suite.py）統合（構想）
+
+Drop 23（WAF 202チャレンジ耐性・動的レートリミット）、Drop 24（親テーブルHTML資料展開）、Drop 25（防衛省アルファベット元号パース）で作成された単体テストスクリプト（計7テスト）が現在 `run_test_suite.py` の全18ケースの実行フローに含まれておらず、日常の回帰テストで実行されていない。これらを既存のクローラー基盤テスト（ケース11・12等）に統合し、日常の品質ゲートで自動検証可能にする。
+
+| ID | 分類 | 内容 | 対象ファイル | 状態 |
+|:---|:---:|:---|:---|:---:|
+| **CR-87** | テスト網羅性 | **WAF耐性・親テーブル展開・防衛省パース単体テストの run_test_suite.py 統合**<br>`test_drop23_waf_resilience.py`（3テスト）、`test_drop24_parent_table_expansion.py`（2テスト）、`test_drop25_mod_date_parsing.py`（2テスト）を `run_test_suite.py` の実行フローに正式統合し、リグレッション防止を確実化 | `testing/run_test_suite.py`<br>`testing/test_crawler_foundation.py`<br>`testing/test_crawler_parent_table.py` | 構想中 |
+
+---
+
+### 【Drop 40】リファクタリング領域D: クローラー設定分離 & 公開JSONの minified 化による通信量最適化（構想）
+
+`docs/data.json`（30.7MB）に同居しているフロントエンド未使用のクローラー専用設定（`scrapingRules` 0.35MB、`scrapingRuleTemplates`、`crawlerConfig`、`discoveryKeywords`等）を `admin/` 側の独立設定ファイルへ分離。さらに、公開静的配信用にインデントなし（minified）の JSON を生成・配信することで、初回ダウンロード通信量を約 7.9 MB 削減（30.7MB $\to$ 22.8MB）し、静的ポータルの表示高速化と責務分離を両立する。
+
+| ID | 分類 | 内容 | 対象ファイル | 状態 |
+|:---|:---:|:---|:---|:---:|
+| **CR-88** | 設定分離 | **クローラー内部設定の `admin/scraping_rules.json` への分離**<br>`scrapingRules`、`scrapingRuleTemplates`、`crawlerConfig` を外部設定ファイルへ抽出し、公開データとクローラー設定の責務を分離 | `docs/data.json`<br>`admin/scraping_rules.json`<br>`admin/crawler.py` | 構想中 |
+| **CR-89** | 通信量最適化 | **公開用 `docs/data.json` の minified 化による通信量削減（約7.9MB削減）**<br>不要フィールドを除外した上でインデントを除去した軽量 JSON を生成・配信し、初回ロード時のネットワーク転送量を削減 | `docs/data.json`<br>`admin/utils.py`<br>`docs/app.js` | 構想中 |
+
+---
+
+### 【Drop 41】リファクタリング領域E: クローラー本体（crawler.py）の責務分離 & scratch/ クリーンアップ（構想）
+
+約 2,750 行に肥大化している `admin/crawler.py` を、HTML/テーブルパース（`crawler_parsers.py`）、差分探索戦略（`crawler_strategy.py`）、開催回・資料同期（`crawler_sync.py`）に責務分割し、`crawler.py` を軽量オーケストレーター化する。また、1,231ファイル（66MB）に達している `scratch/` ディレクトリの不要ファイルを整理し、`.gitignore` に追加して日常の `git status` ノイズを排除する。
+
+| ID | 分類 | 内容 | 対象ファイル | 状態 |
+|:---|:---:|:---|:---|:---:|
+| **CR-90** | モジュール分割 | **`admin/crawler.py` のパーサー・探索戦略・データ同期モジュール分割**<br>単一責任原則に基づき、パース・差分巡回・データマージ同期を独立モジュールへ抽出し、テスト容易性と保守性を向上 | `admin/crawler.py`<br>`admin/crawler_parsers.py`<br>`admin/crawler_strategy.py`<br>`admin/crawler_sync.py` | 構想中 |
+| **CR-91** | 開発環境整備 | **`scratch/` 整理 & `.gitignore` 追加による作業ツリークリーン化**<br>過去の一時スクリプト・データを整理し、`.gitignore` に `scratch/` を登録して Git 追跡外のノイズを完全に抑制 | `.gitignore`<br>`scratch/` | 構想中 |
 
 ---
 
