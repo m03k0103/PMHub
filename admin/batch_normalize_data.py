@@ -25,16 +25,20 @@ if hasattr(sys.stdout, 'reconfigure'):
 # PMHub 共通モジュールのインポート
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'admin')))
 try:
-    from crawler import DATA_JSON_FILE, save_data_json_with_backup, normalize_text
+    from utils import save_data_json_with_backup, normalize_text
+    from crawler import DATA_JSON_FILE
 except ImportError:
-    DATA_JSON_FILE = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'docs', 'data.json'))
-    save_data_json_with_backup = None
+    try:
+        from crawler import DATA_JSON_FILE, save_data_json_with_backup, normalize_text
+    except ImportError:
+        DATA_JSON_FILE = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'docs', 'data.json'))
+        save_data_json_with_backup = None
 
-    def normalize_text(text):
-        if not text:
-            return ""
-        norm = unicodedata.normalize('NFKC', str(text))
-        return re.sub(r'[\s\u3000]+', ' ', norm).strip()
+        def normalize_text(text):
+            if not text:
+                return ""
+            norm = unicodedata.normalize('NFKC', str(text))
+            return re.sub(r'[\s\u3000]+', ' ', norm).strip()
 
 
 def is_kangxi_or_supplement(ch):

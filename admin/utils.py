@@ -66,6 +66,57 @@ def get_browser_headers():
     }
 
 
+# CJK部首補助（U+2E80〜U+2EF3）の中でNFKCで通常漢字に分解されない文字のマッピングテーブル
+CJK_RADICAL_REPLACEMENTS = {
+    '\u2ea0': '民',  # CJK RADICAL CIVILIAN -> 民
+    '\u2e81': '人',  # CJK RADICAL PERSON -> 人
+    '\u2e84': 'ノ',
+    '\u2e85': '亻',
+    '\u2e88': '刀',
+    '\u2e8c': '小',
+    '\u2e90': '山',
+    '\u2e97': '心',
+    '\u2e98': '手',
+    '\u2e9d': '日',
+    '\u2ea1': '水',
+    '\u2ea2': '火',
+    '\u2ea3': '犬',
+    '\u2ea4': '王',
+    '\u2ea7': '礻',
+    '\u2ea8': '糸',
+    '\u2eae': '肉',
+    '\u2eb1': '艸',
+    '\u2eb2': '艹',
+    '\u2eb3': '衤',
+    '\u2eb6': '言',
+    '\u2eb7': '貝',
+    '\u2ebb': '車',
+    '\u2ec1': '金',
+    '\u2ec2': '長',
+    '\u2ec5': '門',
+    '\u2ecb': '雨',
+    '\u2ece': '青',
+    '\u2ed0': '食',
+    '\u2ed4': '首',
+    '\u2ed6': '高',
+    '\u2edd': '鬼',
+}
+
+
+def normalize_text(text):
+    """康煕部首（U+2F00〜U+2FD5）、CJK部首補助、全角英数・特殊異体字を標準文字へ NFKC 正規化する（CR-46）"""
+    if not text:
+        return ""
+    text_str = str(text)
+    for bad, good in CJK_RADICAL_REPLACEMENTS.items():
+        if bad in text_str:
+            text_str = text_str.replace(bad, good)
+    # NFKC 正規化により、康煕部首（⾦, ⽊, ⽔, ⾼, ⼩ 等）が標準漢字に変換され、全角英数が半角英数になる
+    normalized = unicodedata.normalize('NFKC', text_str)
+    # 連続空白を単一スペースに正規化し、前後の空白を除去
+    return re.sub(r'[\s\u3000]+', ' ', normalized).strip()
+
+
 _ZEN_TO_HAN_DIGITS_TABLE = str.maketrans('０１２３４５６７８９', '0123456789')
 
 

@@ -173,6 +173,7 @@ def check_syntax_errors():
         os.path.join(PROJECT_ROOT, "admin", "apply_report.py"),
         os.path.join(PROJECT_ROOT, "admin", "cleanup_nav_meetings.py"),
         os.path.join(PROJECT_ROOT, "admin", "admin_dashboard.html"),
+        os.path.join(PROJECT_ROOT, "admin", "admin_dashboard.js"),
         os.path.join(PROJECT_ROOT, "testing", "run_test_suite.py"),
         os.path.join(PROJECT_ROOT, "testing", "test_js_runtime.js"),
         os.path.join(PROJECT_ROOT, "testing", "app.test.js"),

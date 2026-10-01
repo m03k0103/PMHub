@@ -230,20 +230,41 @@ async function testAdminDashboardRuntime(sampleData, sampleRejected) {
   global.Chart = mockWin.Chart;
 
   const adminHtml = fs.readFileSync(ADMIN_HTML_PATH, 'utf8');
-  const scriptMatches = [...adminHtml.matchAll(/<script(?![^>]*src=)>([\s\S]*?)<\/script>/gi)];
+  const srcMatches = [...adminHtml.matchAll(/<script[^>]*src=["']([^"']+)["'][^>]*>/gi)];
+  const inlineMatches = [...adminHtml.matchAll(/<script(?![^>]*src=)>([\s\S]*?)<\/script>/gi)];
 
-  if (scriptMatches.length === 0) {
-    logFail("admin_dashboard.html 内にインライン <script> が見つかりません");
+  if (srcMatches.length === 0 && inlineMatches.length === 0) {
+    logFail("admin_dashboard.html 内に <script> が見つかりません");
     return false;
   }
 
   let executionError = null;
-  for (const m of scriptMatches) {
-    try {
-      eval(m[1]);
-    } catch (err) {
-      executionError = err;
-      break;
+  // 1. 外部スクリプトの実行（admin_dashboard.js 等）
+  for (const sm of srcMatches) {
+    const srcPath = path.resolve(path.dirname(ADMIN_HTML_PATH), sm[1]);
+    if (fs.existsSync(srcPath)) {
+      try {
+        const srcCode = fs.readFileSync(srcPath, 'utf8');
+        eval(srcCode);
+      } catch (err) {
+        executionError = err;
+        break;
+      }
+    } else {
+      logFail(`admin_dashboard.html で指定された外部スクリプトが見つかりません: ${sm[1]}`);
+      return false;
+    }
+  }
+
+  // 2. インラインスクリプトの実行
+  if (!executionError) {
+    for (const m of inlineMatches) {
+      try {
+        eval(m[1]);
+      } catch (err) {
+        executionError = err;
+        break;
+      }
     }
   }
 
