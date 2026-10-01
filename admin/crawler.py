@@ -89,6 +89,32 @@ GENERIC_TITLE_KEYWORDS = frozenset({
     '監査監督機関国際フォーラム', 'IFIAR', '議事録・資料等'
 })
 
+# 会議名の一部に含まれうるため、完全一致のみでジェネリック判定すべき語句
+GENERIC_EXACT_ONLY_KEYWORDS = frozenset({
+    '開催について', '開催案内', '開催告知', '開催案内等', '開催日', '開催日時', '開催期間',
+    '議事', '資料', '議題', '日時', '場所', '傍聴', '傍聴案内', '傍聴について', 'メンバー',
+    '配付資料について', '配布資料について', '議事要旨等', '議事次第等', '会議概要', '会議結果',
+    '１開催日時', '１．日', '●日時', '１．日時', '１　開催日時', '１ 日時', '１　日時',
+    '１ 場所', '１　場所', '２ 場所', '２　場所', '３ 議題', '３　議題', '出席者', '出席者名簿'
+})
+
+def is_generic_title_text(text):
+    """
+    会議名として不適切な汎用見出し（ジェネリックタイトル）であるかを判定。
+    完全一致専用語句（開催について、議事、資料等）と部分一致許用語句（トップページ、目次、会議資料詳細等）を厳格に区別。
+    """
+    if not text:
+        return True
+    t = text.strip()
+    if t in GENERIC_EXACT_ONLY_KEYWORDS or t in GENERIC_TITLE_KEYWORDS:
+        return True
+    for kw in GENERIC_TITLE_KEYWORDS:
+        if kw in GENERIC_EXACT_ONLY_KEYWORDS:
+            continue
+        if len(kw) >= 3 and kw in t:
+            return True
+    return False
+
 # 組織常設資料（設置要綱・委員名簿・運営規程等）のキーワード（CR-20: 会議体資料であり開催回ではない）
 ORGANIZATION_DOC_KEYWORDS = frozenset({
     '設置要綱', '設置要領', '設置根拠', '設置要項', '運営規程', '運営要領', '委員名簿', '構成員名簿',
@@ -773,11 +799,11 @@ def extract_page_title(soup, rule=None, fallback_url=""):
                 sel_el = soup.select_one(title_sel)
                 if sel_el:
                     cand = sel_el.get_text(" ", strip=True)
-                    if cand and not any(kw == cand or kw in cand for kw in GENERIC_TITLE_KEYWORDS):
+                    if cand and not is_generic_title_text(cand):
                         title = cand
 
         # title_selector で取れなかった場合、またはジェネリックタイトルの場合
-        if not title or any(kw == title for kw in GENERIC_TITLE_KEYWORDS):
+        if not title or is_generic_title_text(title):
             for tag_name in ['h1', 'h2', 'h3']:
                 found_tags = soup.find_all(tag_name)
                 for ft in found_tags:
@@ -788,7 +814,7 @@ def extract_page_title(soup, rule=None, fallback_url=""):
                     # 事務的見出し（例: １ 日時、２ 場所、３ 議題、１．日時 等）をスキップ
                     if re.match(r'^[0-9０-９一二三四五六七八九十]+[．.、\s\u3000]*(?:開催日時|日時|開催日|場所|議題|出席者|出席者名簿|傍聴|募集要項)', t_cand):
                         continue
-                    if any(kw == t_cand or (len(kw) >= 3 and kw in t_cand) for kw in GENERIC_TITLE_KEYWORDS):
+                    if is_generic_title_text(t_cand):
                         continue
                     title = t_cand
                     break
@@ -799,12 +825,12 @@ def extract_page_title(soup, rule=None, fallback_url=""):
         if not title and soup.title and soup.title.string:
             cand_title = soup.title.string.strip()
             cand_title = clean_meeting_title(cand_title)
-            if cand_title and not any(kw == cand_title for kw in GENERIC_TITLE_KEYWORDS):
+            if cand_title and not is_generic_title_text(cand_title):
                 title = cand_title
 
         if title:
             title = clean_meeting_title(title)
-            if any(kw == title for kw in GENERIC_TITLE_KEYWORDS):
+            if is_generic_title_text(title):
                 title = ""
 
         return title if title else fallback_url
@@ -1096,14 +1122,37 @@ def extract_actual_subpage_links(html, target_url, rule=None, return_meta=False)
         if any(kw in t_clean for kw in ['能力開発基本調査', '調査の実施について', '問い合わせ先', '情報配信サービス', 'イベント概要', 'セミナーのご案内', '労使関係セミナー', '公募情報']):
             continue
 
-        # 親ページテーブル内のリンクで、回数列が存在し回数がハイフン/空の行（公表資料等）はサブページ探索から除外
+        # 親ページテーブル内のリンクの除外ガード
         parent_tr = a.find_parent('tr')
         if parent_tr:
             parent_tbl = parent_tr.find_parent('table')
             if parent_tbl:
                 tbl_rows = parent_tbl.find_all('tr')
                 if len(tbl_rows) >= 2:
-                    hdr_cells = [c.get_text(strip=True) for c in tbl_rows[0].find_all(['th', 'td'])]
+                    # ヘッダー行を特定（最初の th を含む行、または tbl_rows[0]）
+                    hdr_row = None
+                    for r in tbl_rows[:3]:
+                        if r.find_all('th'):
+                            hdr_row = r
+                            break
+                    if not hdr_row:
+                        hdr_row = tbl_rows[0]
+                    hdr_cells = [c.get_text(strip=True) for c in hdr_row.find_all(['th', 'td'])]
+
+                    # 1. 列ヘッダー判定: 「開催案内」「案内」「傍聴」列に配置されたリンクは事前告知のため除外
+                    parent_td = a.find_parent(['td', 'th'])
+                    if parent_td and hdr_cells:
+                        row_cells = parent_tr.find_all(['td', 'th'])
+                        try:
+                            cell_idx = row_cells.index(parent_td)
+                            if cell_idx < len(hdr_cells):
+                                col_hdr = hdr_cells[cell_idx]
+                                if any(k in col_hdr for k in ['開催案内', '案内', '傍聴', '開催告知']) and not any(k in col_hdr for k in ['資料', '議事', '次第', '結果', '概要']):
+                                    continue
+                        except ValueError:
+                            pass
+
+                    # 2. 回数列が存在し回数がハイフン/空の行（公表資料等）はサブページ探索から除外
                     r_col_idx = None
                     for c_idx, c_txt in enumerate(hdr_cells):
                         if any(k in c_txt for k in ['回数', '回次', '開催回']) or c_txt == '回':
@@ -1204,11 +1253,11 @@ def _crawl_subpages(target_url, html, rule, quirk_note, pdf_pattern, existing_ur
 
                 # 開催案内・事前告知ページの即時判定と破棄（AGENTS.md 第11条・第12条）
                 sub_page_title = sub_soup.title.string.strip() if sub_soup.title and sub_soup.title.string else ""
-                h1_texts = [h.get_text(" ", strip=True) for h in sub_soup.find_all('h1')]
+                h_texts = [h.get_text(" ", strip=True) for h in sub_soup.find_all(['h1', 'h2'])]
                 if (
                     is_preliminary_notice_page(sub_url, sub_title) or
                     is_preliminary_notice_page(sub_url, sub_page_title) or
-                    any(is_preliminary_notice_page(sub_url, h) for h in h1_texts)
+                    any(is_preliminary_notice_page(sub_url, h) for h in h_texts)
                 ):
                     continue
 
@@ -1373,6 +1422,18 @@ def _extract_meetings_from_parent_table(html, target_url, council_name, rule=Non
             candidate_html_pages = []
             row_official_url = target_url
             for a in row.find_all('a', href=True):
+                # 列ヘッダー判定: 「開催案内」「案内」「傍聴」列に配置されたリンクは事前告知のため除外
+                parent_cell = a.find_parent(['td', 'th'])
+                if parent_cell and header_cells:
+                    try:
+                        cell_idx = cells.index(parent_cell)
+                        if cell_idx < len(header_cells):
+                            col_hdr = header_cells[cell_idx]
+                            if any(k in col_hdr for k in ['開催案内', '案内', '傍聴', '開催告知']) and not any(k in col_hdr for k in ['資料', '議事', '次第', '結果', '概要']):
+                                continue
+                    except ValueError:
+                        pass
+
                 href = a['href'].strip()
                 if not href or href.startswith('#') or href.startswith('javascript:'):
                     continue
@@ -1757,7 +1818,7 @@ def determine_crawl_result(unique_materials, norm_date_matches, subpage_meetings
     has_valid_dates = len(valid_dates) > 0
     has_subpages = len(subpages) > 0
     clean_title = clean_meeting_title(title)
-    is_generic_title = any(kw == clean_title or (len(kw) >= 3 and kw in clean_title) for kw in GENERIC_TITLE_KEYWORDS) if clean_title else False
+    is_generic_title = is_generic_title_text(clean_title) if clean_title else False
 
     # 1. サブページ開催回または親テーブル開催回が抽出されている場合
     if has_subpages:
@@ -1934,8 +1995,13 @@ def is_preliminary_notice_page(url, title=""):
     if re.search(r'(?:の開催予定について|開催予定について|の開催案内について|開催案内について|の開催について|開催について|の開催告知について|開催告知について|の開催告知|開催告知|の開催のお知らせについて|開催のお知らせについて|の開催案内|開催案内|の開催のお知らせ|開催のお知らせ|傍聴の案内|傍聴について|傍聴される皆様への留意事項|の開催概要について|傍聴の受付|傍聴申込み|傍聴申込|議事要旨|議事録|のご案内|の案内|問い合わせ先|情報配信サービス)$', t_clean):
         return True
 
-    # 4. タイトル途中に「開催案内」「傍聴の案内」「開催告知」「会議開催予定」等が含まれる場合
-    if any(kw in t_raw for kw in ['開催案内', '開催告知', '会議開催予定', '傍聴される皆様への留意事項', '傍聴留意事項', '傍聴申込', '傍聴の受付', '傍聴申込み']):
+    # 4. タイトル途中に「開催案内」「傍聴の案内」「開催告知」「会議開催予定」「標記の会議について」「下記のとおり開催」等が含まれる場合
+    if any(kw in t_raw for kw in [
+        '開催案内', '開催告知', '会議開催予定', '傍聴される皆様への留意事項', '傍聴留意事項', '傍聴申込', '傍聴の受付', '傍聴申込み',
+        '標記の会議について', '下記のとおり開催', '以下のとおり開催', 'を開催します', 'を開催いたします'
+    ]):
+        return True
+    if re.search(r'[（\(](?:第\d+回)?開催案内[）\)]', t_raw) or '[開催案内]' in t_raw or '【開催案内】' in t_raw:
         return True
     if re.search(r'(?:[\s\u3000]+|（|\()傍聴(?:の案内|について|希望)?(?:[\s\u3000]+|）|\)|$)', t_raw):
         return True
@@ -2106,7 +2172,7 @@ def sync_new_meetings_from_crawl(data, target, scraped_item):
             continue
         if any(kw in sub_title for kw in ORGANIZATION_DOC_KEYWORDS) or any(kw in sub_title_clean for kw in ORGANIZATION_DOC_KEYWORDS):
             continue
-        if any(kw == sub_title or kw == sub_title_clean for kw in GENERIC_TITLE_KEYWORDS) or '食の安全、を科学する' in sub_title:
+        if is_generic_title_text(sub_title) or is_generic_title_text(sub_title_clean) or '食の安全、を科学する' in sub_title:
             continue
 
         # 親会議体への下部組織・専門家会合の誤混入ガード（例: 税制調査会(cao-zei_cho)にEBPM等の専門家会合が混入するのを防止）
@@ -2191,7 +2257,7 @@ def sync_new_meetings_from_crawl(data, target, scraped_item):
         if is_date_unconfirmed:
             if not clean_materials_list:
                 continue
-            if any(kw in sub_title for kw in GENERIC_TITLE_KEYWORDS) or any(kw in sub_title for kw in COMMON_NAV_KEYWORDS) or any(kw in sub_title for kw in ORGANIZATION_DOC_KEYWORDS):
+            if is_generic_title_text(sub_title) or any(kw in sub_title for kw in COMMON_NAV_KEYWORDS) or any(kw in sub_title for kw in ORGANIZATION_DOC_KEYWORDS):
                 continue
 
         # 配付資料0件の場合の厳格ガード（AGENTS.md 第11条・第12条: 資料なし非会議ページの誤登録遮断）
