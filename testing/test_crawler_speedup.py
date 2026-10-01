@@ -158,11 +158,12 @@ class TestDrop17CrawlerSpeedup(unittest.TestCase):
 
     def test_cr27_stop_event_interruption(self):
         """CR-27: stop_event がセットされた場合、直ちにクローラーが安全中断すること（本番JSON保護のためsaveはモック）"""
+        import io
         from unittest.mock import patch
         stop_event = threading.Event()
         stop_event.set()  # 事前に停止シグナルを発行
 
-        with patch('crawler.save_data_json_with_backup', return_value=True):
+        with patch('crawler.save_data_json_with_backup', return_value=True), patch('sys.stdout', new_callable=io.StringIO):
             stats = crawler.run_meeting_crawler(
                 stop_event=stop_event,
                 workers=1,

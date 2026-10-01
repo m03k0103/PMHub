@@ -31,6 +31,9 @@ from test_crawler_quality import TestCrawlerQualityDrop14
 from test_crawler_quality_v2 import TestCrawlerQualityV2Drop15
 from test_crawler_drop16 import TestDrop16CrawlerRobustness
 from test_crawler_speedup import TestDrop17CrawlerSpeedup
+from test_drop23_waf_resilience import TestDrop23WafResilience
+from test_drop24_parent_table_expansion import TestDrop24ParentTableExpansion
+from test_drop25_mod_date_parsing import TestDrop25ModDateParsing
 
 
 CRAWLER_TEST_CLASSES = [
@@ -42,6 +45,9 @@ CRAWLER_TEST_CLASSES = [
     ("テスト 15: クロール網羅性・実リンク解析・URL日付復元 (CR-14 〜 CR-17)", TestCrawlerQualityV2Drop15),
     ("テスト 16: クロール堅牢化・共通ナビ除外・ホスト分散 (CR-18 〜 CR-22)", TestDrop16CrawlerRobustness),
     ("テスト 17: クロール超高速化 & 直近重点化 (CR-23 〜 CR-27)", TestDrop17CrawlerSpeedup),
+    ("テスト 18: WAF 202耐性 & 動的レートリミット (CR-48, CR-49)", TestDrop23WafResilience),
+    ("テスト 19: 親テーブルHTML資料展開 (CR-51)", TestDrop24ParentTableExpansion),
+    ("テスト 20: 防衛省元号略記日付パース (CR-54)", TestDrop25ModDateParsing),
 ]
 
 
