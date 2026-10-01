@@ -108,6 +108,10 @@ def is_generic_title_text(text):
     t = text.strip()
     if t in GENERIC_EXACT_ONLY_KEYWORDS or t in GENERIC_TITLE_KEYWORDS:
         return True
+    if re.match(r'^\d+\s*[\.．]\s*(概要|趣旨|経緯|意見公募|背景|諮問事項|料率検証)', t):
+        return True
+    if any(k in t for k in ['金融行政方針', 'ご意見等連絡先']):
+        return True
     for kw in GENERIC_TITLE_KEYWORDS:
         if kw in GENERIC_EXACT_ONLY_KEYWORDS:
             continue
@@ -239,7 +243,9 @@ _GENERIC_INDEX_URL_PATTERNS = re.compile(
     r'/kaisai_yotei/|'
     r'/kaisaiyotei(?:\.html)?$|'
     r'shingi/kaisaiyotei(?:\.html)?|'
-    r'/kaisai_yotei\.html$',
+    r'/kaisai_yotei\.html$|'
+    r'260915\.html|'
+    r'strategic_priorities',
     re.IGNORECASE
 )
 
@@ -250,7 +256,8 @@ _GENERIC_INDEX_TITLE_KEYWORDS = frozenset({
     "食の安全、を科学する", "審議会等", "｜デジタル庁", "｜Digital Agency", "Digital Agency",
     "政策・審議会等", "省議・審議会等", "政策・審議会等トップへ", "審議会・研究会",
     "監査監督機関国際フォーラム", "IFIAR", "議事録・資料等", "目次",
-    "会議開催予定", "開催予定一覧"
+    "会議開催予定", "開催予定一覧", "金融行政方針", "事務年度金融行政方針",
+    "パブリックコメントの結果", "意見公募の趣旨", "ご意見等連絡先"
 })
 
 # 汎用インデックス判定用の完全一致除外タイトル（単体での登録排除用）
