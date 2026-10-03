@@ -110,7 +110,7 @@ def is_generic_title_text(text):
         return True
     if re.match(r'^\d+\s*[\.．]\s*(概要|趣旨|経緯|意見公募|背景|諮問事項|料率検証)', t):
         return True
-    if any(k in t for k in ['金融行政方針', 'ご意見等連絡先']):
+    if any(k in t.lower() for k in ['the tax commission', 'tax commission', '金融行政方針', 'ご意見等連絡先']):
         return True
     for kw in GENERIC_TITLE_KEYWORDS:
         if kw in GENERIC_EXACT_ONLY_KEYWORDS:
@@ -257,7 +257,8 @@ _GENERIC_INDEX_TITLE_KEYWORDS = frozenset({
     "政策・審議会等", "省議・審議会等", "政策・審議会等トップへ", "審議会・研究会",
     "監査監督機関国際フォーラム", "IFIAR", "議事録・資料等", "目次",
     "会議開催予定", "開催予定一覧", "金融行政方針", "事務年度金融行政方針",
-    "パブリックコメントの結果", "意見公募の趣旨", "ご意見等連絡先"
+    "パブリックコメントの結果", "意見公募の趣旨", "ご意見等連絡先",
+    "The Tax Commission", "Tax Commission"
 })
 
 # 汎用インデックス判定用の完全一致除外タイトル（単体での登録排除用）
@@ -2238,8 +2239,12 @@ def sync_new_meetings_from_crawl(data, target, scraped_item):
         if is_generic_title_text(sub_title) or is_generic_title_text(sub_title_clean) or '食の安全、を科学する' in sub_title:
             continue
 
-        # 親会議体への下部組織・専門家会合の誤混入ガード（例: 税制調査会(cao-zei_cho)にEBPM等の専門家会合が混入するのを防止）
+        # 親会議体への下部組織・専門家会合・ポータル自己参照の誤混入ガード（例: 税制調査会(cao-zei_cho)）
         if council_id == "cao-zei_cho":
+            clean_sub = sub_url.rstrip('/')
+            clean_tgt = (official_url or target_url or "").rstrip('/')
+            if clean_sub == clean_tgt or "tax commission" in sub_title.lower() or "tax commission" in (sub_page_title or "").lower():
+                continue
             if any(k in sub_url.lower() for k in ['/ebpm/', '/life/', '/digital-noukan/', '/noukan/', '/sozoku-zoyo/', '/renketsu/', '/rougo/', '/koku-han/', '/discussion']) or "専門家会合" in sub_title or "ディスカッショングループ" in sub_title:
                 continue
         if council_id == "cao-cstp":
