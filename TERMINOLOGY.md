@@ -26,7 +26,7 @@
 | **却下会議体** | Rejected Council (`rejected_councils.json`) | ディスカバリーで検出されたが会議体ではないリンク（報道発表一覧、他省庁ポータル等）を永続的に除外・再検出防止するリスト。 | `admin/rejected_councils.json` |
 | **ロールバック** | Rollback (`POST /api/rollback-data`) | `admin/backups/` 配下に自動保存された過去30世代から、直前世代の `data.json` を安全に復元する機能。 | 管理コンソール TAB 1 のロールバックボタン |
 | **開催日不明** | Unconfirmed Date (`2099/01/01`) | クローラーで最新開催回を検知した際、開催日が特定できない場合に設定する**要確認ダミー日付**（当日日付設定は禁止）。 | `"date": "2099/01/01"` |
-| **実装計画** | Implementation Plan (`implementation_plan.md`) | コード・データ修正作業前に作成・提示し、ユーザーの事前承認を得るための設計書（**Proceedボタン必須**）。 | アーティファクト (`RequestFeedback: true`) |
+| **実装計画** | Implementation Plan (`implementation_plan.md`) | コード・データ修正作業前に作成・提示し、ユーザーの事前承認を得るための設計書。 | アーティファクト (`implementation_plan.md`) |
 | **成果報告** | Walkthrough (`walkthrough.md`) | 開発・テスト完了後に実施内容と検証結果をユーザーに報告する完了ドキュメント。 | アーティファクト (`UserFacing: true`) |
 | **レートリミット** | Rate Limit (0.35秒スロットリング) | 行政サーバー負荷軽減およびWAF遮断防止のため、リクエスト間に必ず挟む待機時間（**最低0.35秒以上**）。 | クローラー通信ループ (`time.sleep(0.35)`) |
 
@@ -88,8 +88,7 @@
 
 ### 6.1. 実装計画（Implementation Plan）
 - コードやデータの修正作業を行う前に、必ず `implementation_plan.md` を作成・提示する。
-- 提示時はアーティファクトメタデータに `RequestFeedback: true` を指定し、UI上に **Proceedボタン** を表示させる。
-- ユーザーの明示的承認（Proceed）を得るまで、本番コードの修正に着手してはならない。
+- 提示後、ユーザーの明示的承認（「進めてください」「OKです」等のチャット返信）を得るまで、本番コードの修正に着手してはならない。
 
 ### 6.2. 成果報告（Walkthrough）
 - 専用フィーチャーブランチでの開発・テスト完了後、修正内容と検証結果を `walkthrough.md` で報告する。
