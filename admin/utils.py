@@ -12,6 +12,7 @@ import io
 import json
 import re
 import shutil
+import urllib.parse
 from datetime import datetime
 import functools
 import unicodedata
@@ -483,4 +484,41 @@ def add_to_rejected_councils(target_id, council=None, reason="Admin rejected cou
         rejected_list.append(rej_item)
         return save_rejected_councils(rejected_list, rejected_file)
     return False
+
+
+def normalize_url_for_matching(url):
+    """
+    CR-91 / CR-92: 会議体URLの照合・逆引き用の正規化を行う。
+    - 前後空白の除去
+    - http:// -> https:// への統一
+    - スキーム・ホスト部の小文字化
+    - フラグメント (#...) の除去
+    - パス末尾のインデックスファイル（index.html, index.htm, index.shtml, index.php）の除去
+    - パス末尾の連続スラッシュの除去
+    - クエリパラメータのキー順ソート
+    """
+    if not url or not isinstance(url, str):
+        return ""
+    u = url.strip().split('#')[0].strip()
+    if not u:
+        return ""
+    try:
+        parsed = urllib.parse.urlsplit(u)
+        scheme = parsed.scheme.lower()
+        if scheme in ('http', 'https'):
+            scheme = 'https'
+        netloc = parsed.netloc.lower()
+        path = parsed.path
+        # パス末尾のインデックスファイル除去
+        path = re.sub(r'/index\.(?:html?|shtml|php)$', '/', path, flags=re.IGNORECASE)
+        # パス末尾のスラッシュ正規化（末尾スラッシュ除去）
+        path = re.sub(r'/+$', '', path)
+        query = parsed.query
+        if query:
+            q_pairs = sorted(urllib.parse.parse_qsl(query, keep_blank_values=True))
+            query = urllib.parse.urlencode(q_pairs)
+            return urllib.parse.urlunsplit((scheme, netloc, path, query, ''))
+        return urllib.parse.urlunsplit((scheme, netloc, path, '', ''))
+    except Exception:
+        return u.rstrip('/')
 

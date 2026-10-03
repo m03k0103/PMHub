@@ -25,7 +25,7 @@ from bs4 import BeautifulSoup
 from utils import (
     setup_win32_utf8, get_browser_headers, save_data_json_with_backup,
     decode_html_bytes, get_rejected_identifiers, normalize_japanese_numbers, load_data_json,
-    parse_japanese_date, normalize_text, CJK_RADICAL_REPLACEMENTS
+    parse_japanese_date, normalize_text, CJK_RADICAL_REPLACEMENTS, normalize_url_for_matching
 )
 setup_win32_utf8()
 
@@ -375,6 +375,8 @@ def load_councils_from_data_json(recent_years=2, include_closed=False, resume=Fa
             continue
 
         rule = scraping_rules.get(cid, {}) if isinstance(scraping_rules, dict) else {}
+        if not rule and isinstance(scraping_rules, dict):
+            rule = get_rule_for_target(scraping_rules, item)
 
         # 1. 非アクティブフラグのチェック
         if (
@@ -519,11 +521,64 @@ def load_scraping_rules():
                         if k not in merged:
                             merged[k] = v
 
+                merged["_council_id"] = cid
                 resolved_rules[cid] = merged
             return resolved_rules
         except Exception as e:
             print(f"[WARN] Failed to load scrapingRules from data.json: {e}", file=sys.stderr)
     return {}
+
+
+def build_url_rule_index(rules):
+    """
+    CR-91: ルール辞書から正規化公式URLによる逆引きマップを構築する。
+    """
+    url_map = {}
+    if not isinstance(rules, dict):
+        return url_map
+    for cid, r in rules.items():
+        if not isinstance(r, dict):
+            continue
+        for url_field in ("officialUrl", "target_url", "url", "archiveUrl"):
+            u = r.get(url_field)
+            if u and isinstance(u, str):
+                nu = normalize_url_for_matching(u)
+                if nu and nu not in url_map:
+                    url_map[nu] = r
+    return url_map
+
+
+def get_rule_for_target(rules, target, url_rule_index=None):
+    """
+    CR-91: 会議体 target に対する最適なスクレイピングルールを取得する。
+    1. 会議体ID (target["id"]) による直接取得
+    2. 1で見つからない場合、公式URL (target["url"] / target["officialUrl"]) の正規化照合による逆引き
+    3. 2で見つからない場合、archiveUrl の正規化照合による逆引き
+    4. 全て見つからない場合は標準フォールバックルールを返す
+    """
+    if not isinstance(target, dict):
+        return {"rule_id": "rule-fallback-v1", "rules": {}}
+
+    c_id = target.get("id")
+    if c_id and c_id in rules:
+        return rules[c_id]
+
+    if url_rule_index is None:
+        url_rule_index = build_url_rule_index(rules)
+
+    # URL逆引きフォールバック
+    for u in (target.get("url"), target.get("officialUrl"), target.get("archiveUrl")):
+        if u and isinstance(u, str):
+            nu = normalize_url_for_matching(u)
+            if nu and nu in url_rule_index:
+                inherited = dict(url_rule_index[nu])
+                inherited["_inherited_from_url"] = u
+                return inherited
+
+    return {
+        "rule_id": "rule-fallback-v1",
+        "rules": {}
+    }
 
 _RATE_LIMIT_LOCK = threading.Lock()
 _LAST_REQUEST_TIME_BY_HOST = {}
@@ -1999,18 +2054,19 @@ def is_preliminary_notice_page(url, title=""):
         return True
 
     # 3. 末尾の開催案内・事前告知キーワード判定
-    if re.search(r'(?:の開催予定について|開催予定について|の開催案内について|開催案内について|の開催について|開催について|の開催告知について|開催告知について|の開催告知|開催告知|の開催のお知らせについて|開催のお知らせについて|の開催案内|開催案内|の開催のお知らせ|開催のお知らせ|傍聴の案内|傍聴について|傍聴される皆様への留意事項|の開催概要について|傍聴の受付|傍聴申込み|傍聴申込|議事要旨|議事録|のご案内|の案内|問い合わせ先|情報配信サービス)$', t_clean):
+    if re.search(r'(?:の開催予定について|開催予定について|の開催案内について|開催案内について|の開催について|開催について|の開催告知について|開催告知について|の開催告知|開催告知|の開催のお知らせについて|開催のお知らせについて|の開催案内|開催案内|の開催のお知らせ|開催のお知らせ|傍聴の案内|傍聴について|傍聴される皆様への留意事項|の開催概要について|傍聴の受付|傍聴申込み|傍聴申込|傍聴の申込について|傍聴の申込みについて|議事要旨|議事録|のご案内|の案内|問い合わせ先|情報配信サービス|取材の案内について|取材について)$', t_clean):
         return True
 
     # 4. タイトル途中に「開催案内」「傍聴の案内」「開催告知」「会議開催予定」「標記の会議について」「下記のとおり開催」等が含まれる場合
     if any(kw in t_raw for kw in [
         '開催案内', '開催告知', '会議開催予定', '傍聴される皆様への留意事項', '傍聴留意事項', '傍聴申込', '傍聴の受付', '傍聴申込み',
+        '傍聴の申込', '傍聴の申込み', '取材の案内', '取材申込み', '取材申込',
         '標記の会議について', '下記のとおり開催', '以下のとおり開催', 'を開催します', 'を開催いたします'
     ]):
         return True
     if re.search(r'[（\(](?:第\d+回)?開催案内[）\)]', t_raw) or '[開催案内]' in t_raw or '【開催案内】' in t_raw:
         return True
-    if re.search(r'(?:[\s\u3000]+|（|\()傍聴(?:の案内|について|希望)?(?:[\s\u3000]+|）|\)|$)', t_raw):
+    if re.search(r'(?:[\s\u3000]+|（|\()(?:傍聴|取材)(?:の案内|について|希望|申込|申込み)?(?:[\s\u3000]+|）|\)|$)', t_raw):
         return True
     if re.search(r'を開催します[\s\u3000]*[\(（][^\)）]*案内', t_raw):
         return True
@@ -2602,6 +2658,7 @@ def run_meeting_crawler(progress_callback=None, stop_event=None, workers=4, rece
         save_data_json_with_backup(data)
 
         rules = load_scraping_rules()
+        url_rule_index = build_url_rule_index(rules)
         results = []
         stats = {
             "success": 0,
@@ -2655,10 +2712,10 @@ def run_meeting_crawler(progress_callback=None, stop_event=None, workers=4, rece
                 if html:
                     c_id = target["id"]
                     target["existing_meeting_urls"] = councils_meeting_urls.get(c_id, set())
-                    rule_obj = rules.get(c_id, {
-                        "rule_id": "rule-fallback-v1",
-                        "rules": {}
-                    })
+                    rule_obj = get_rule_for_target(rules, target, url_rule_index)
+                    if rule_obj.get("_inherited_from_url"):
+                        inherited_from = rule_obj.get("_council_id", "url_match")
+                        emit(f"  ℹ️ [URL RULE INHERITED] 会議体ID {c_id} に対し、URL照合から既存探索ルール ({inherited_from}) を自動適用しました。")
 
                     item = execute_rule_retrieval(
                         target, html, rule_obj, use_llm=use_llm,

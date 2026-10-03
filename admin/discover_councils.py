@@ -17,7 +17,10 @@ import time
 from datetime import datetime
 from bs4 import BeautifulSoup
 
-from utils import setup_win32_utf8, get_browser_headers, save_data_json_with_backup, decode_html_bytes, load_rejected_councils, load_data_json
+from utils import (
+    setup_win32_utf8, get_browser_headers, save_data_json_with_backup,
+    decode_html_bytes, load_rejected_councils, load_data_json, normalize_url_for_matching
+)
 setup_win32_utf8()
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
@@ -37,16 +40,17 @@ def load_keywords():
     }
 
 def parse_data_json():
-    """docs/data.json から MINISTRIES, COUNCILS, CATEGORIES のデータを抽出する"""
+    """docs/data.json から MINISTRIES, COUNCILS, CATEGORIES, SCRAPING_RULES のデータを抽出する"""
     data = load_data_json(DATA_JSON_PATH)
     if not data:
         print(f"[ERROR] {DATA_JSON_PATH} の読み込みに失敗しました。", file=sys.stderr)
-        return {}, [], {}
+        return {}, [], {}, {}
 
     ministries = data.get("ministries", {})
     councils = data.get("councils", [])
     categories = data.get("categories", {})
-    return ministries, councils, categories
+    scraping_rules = data.get("scrapingRules", {})
+    return ministries, councils, categories, scraping_rules
 
 def infer_council_category(name_or_text, defined_categories=None):
     """
@@ -200,8 +204,30 @@ def run_discovery(progress_callback=None, target_ministry=None, dry_run=False):
     min_add_kw = keywords_cfg.get("ministryAddKeywords", {})
     min_exc_kw = keywords_cfg.get("ministryExcludeKeywords", {})
 
-    ministries, existing_councils, categories_def = parse_data_json()
+    ministries, existing_councils, categories_def, scraping_rules = parse_data_json()
     emit(f"登録済み省庁数: {len(ministries)} 組織, 既存会議体数: {len(existing_councils)} 件, カテゴリー定義数: {len(categories_def)} 種類\n")
+
+    # CR-92: 既存URL -> スラグIDマップの構築（既存スラグID自動継承用）
+    url_to_slug_map = {}
+    for c in existing_councils:
+        cid = c.get("id")
+        if not cid:
+            continue
+        for u in (c.get("officialUrl"), c.get("url"), c.get("archiveUrl")):
+            if u and isinstance(u, str):
+                nu = normalize_url_for_matching(u)
+                if nu and nu not in url_to_slug_map:
+                    url_to_slug_map[nu] = cid
+
+    for cid, r in scraping_rules.items():
+        if not isinstance(r, dict):
+            continue
+        for u in (r.get("officialUrl"), r.get("target_url"), r.get("url"), r.get("archiveUrl")):
+            if u and isinstance(u, str):
+                nu = normalize_url_for_matching(u)
+                if nu and nu not in url_to_slug_map:
+                    url_to_slug_map[nu] = cid
+    emit(f"既存スラグID照合用URLインデックス: {len(url_to_slug_map)} 件を構築しました（スラグID自動継承）")
 
     # 却下済み会議体データの読み込み（再検出・再登録をブロック）
     rejected_data = load_rejected_councils()
@@ -367,9 +393,20 @@ def run_discovery(progress_callback=None, target_ministry=None, dry_run=False):
                         "appliedCategory": category
                     })
 
-                # 採番規則: 省庁コード小文字 + 連番 (例: cao-184, mhlw-185)
-                council_id = f"{min_code.lower()}-{next_seq}"
-                next_seq += 1
+                # 採番規則 (CR-92):
+                # 既存URLマップに合致するスラグIDが存在する場合は、新規連番を消費せず既存スラグIDを自動継承する
+                target_url_cand = final_council_url if not is_meeting_pattern else page_url
+                norm_final_url = normalize_url_for_matching(target_url_cand)
+                norm_page_url = normalize_url_for_matching(page_url)
+                inherited_slug = url_to_slug_map.get(norm_final_url) or url_to_slug_map.get(norm_page_url)
+
+                if inherited_slug:
+                    council_id = inherited_slug
+                    is_inherited = True
+                else:
+                    council_id = f"{min_code.lower()}-{next_seq}"
+                    next_seq += 1
+                    is_inherited = False
 
                 if is_default and unmatched_category_councils:
                     unmatched_category_councils[-1]["id"] = council_id
@@ -379,14 +416,15 @@ def run_discovery(progress_callback=None, target_ministry=None, dry_run=False):
                     "name": target_council_name,
                     "ministry": min_code,
                     "category": category,
-                    "officialUrl": final_council_url if not is_meeting_pattern else page_url,
+                    "officialUrl": target_url_cand,
                     "isNew": True
                 }
 
                 discovered_list.append(council_item)
                 found_count_in_page += 1
                 cat_label = categories_def.get(category, category)
-                emit(f"      ✨ [新規会議体検出] [{cat_label}] {council_id}: {link_text} -> {final_council_url}", {
+                action_label = "既存スラグID継承" if is_inherited else "新規会議体検出"
+                emit(f"      ✨ [{action_label}] [{cat_label}] {council_id}: {link_text} -> {target_url_cand}", {
                     "type": "council_discovered",
                     "council": council_item
                 })
@@ -460,6 +498,22 @@ def run_discovery(progress_callback=None, target_ministry=None, dry_run=False):
             data["councils"] = list(filtered_existing_dict.values())
             if "discoveredCouncils" in data:
                 del data["discoveredCouncils"]
+
+            # CR-92: 新規登録された会議体の scrapingRules 自動連動登録 (AGENTS.md 第5条)
+            scraping_rules_in_data = data.setdefault("scrapingRules", {})
+            new_rules_count = 0
+            for new_c in discovered_list:
+                cid = new_c.get("id")
+                if cid and cid not in scraping_rules_in_data:
+                    scraping_rules_in_data[cid] = {
+                        "template": "tpl-cas-gijisidai-nested",
+                        "manualLock": True,
+                        "officialUrl": new_c.get("officialUrl", ""),
+                        "extract_from_parent_table": True
+                    }
+                    new_rules_count += 1
+            if new_rules_count > 0:
+                print(f"新規会議体 {new_rules_count} 件に scrapingRules を自動連動登録しました。")
             
             if save_data_json_with_backup(data):
                 print(f"結果を data.json の councils に保存しました（自動バックアップ作成完了）。")
