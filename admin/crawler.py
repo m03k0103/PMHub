@@ -147,6 +147,8 @@ EXCLUDE_MATERIAL_NAMES = frozenset({
     'メニューを開く', 'このページの先頭へ', '前のページへ戻る', '前のページへ',
     '先頭へ戻る', 'ページトップへ', 'ページ先頭へ', 'PAGE TOP', 'Page Top',
     'pagetop', 'トップへ', 'トップ', 'HOME', 'Home', '戻る', '印刷', '印刷する',
+    '全ページを印刷する', '印刷する(新しいウィンドウで表示)', 'コンテンツへスキップ',
+    '標準', '拡大', '色変更・音声読み上げ・ルビ振り', '文字サイズ', '文字の大きさ',
     '別ウィンドウで開く', '新しいウィンドウで開く', '（別ウィンドウで開く）',
     'JavaScriptが無効です', 'JavaScriptを有効にしてください',
     '傍聴される皆様への留意事項', '傍聴留意事項', '傍聴申込', '傍聴申込書', '傍聴申込用紙', '傍聴申込様式',
@@ -160,13 +162,52 @@ GOV_SUFFIX_REGEX = re.compile(
 
 # CJK_RADICAL_REPLACEMENTS および normalize_text は admin/utils.py に一元集約（CR-86 / DRY原則徹底）
 
+# SNS・広報アカウントトップURLパターン（審議生中継動画は除外せず広報トップのみ遮断）
+_SNS_PR_DOMAINS = ('twitter.com', 'x.com', 'facebook.com', 'instagram.com', 'line.me')
+
+def is_sns_pr_url(url):
+    """
+    SNS広報リンク（公式Twitter/X, Facebook等）および動画チャンネルトップであるかを判定。
+    審議会中継等の動画リンク（youtube.com/live/..., watch?v=...）は除外しない。
+    """
+    if not url:
+        return False
+    u_lower = url.lower()
+    for domain in _SNS_PR_DOMAINS:
+        if domain in u_lower:
+            return True
+    if 'youtube.com' in u_lower:
+        # YouTubeのチャンネル/ユーザー/トップページは除外（live/やwatch?v=は配付資料として許容）
+        if any(p in u_lower for p in ['/user/', '/channel/', '/c/', '/@']) and not any(p in u_lower for p in ['/live/', 'watch?v=', '/embed/']):
+            return True
+    return False
+
+def is_non_pdf_anchor_url(url):
+    """
+    配付資料URLが同一ページ内のアンカーリンク（#siryou, #contents 等）であるかを判定。
+    PDF末尾の #page=1 等は正当なPDFへのアンカーのため除外しない。
+    """
+    if not url:
+        return False
+    u_clean = url.strip()
+    if u_clean.startswith('#'):
+        return True
+    if '#' in u_clean:
+        base, frag = u_clean.split('#', 1)
+        base_lower = base.lower()
+        if not base_lower.endswith(('.pdf', '.docx', '.xlsx', '.doc', '.xls')) and '/pdf/' not in base_lower:
+            return True
+    return False
+
 def clean_meeting_title(title):
     """
-    会議タイトルから末尾の省庁サフィックス、配付資料一覧、共通ノイズ等を除去・正規化する（CR-28 / CR-46）。
+    会議タイトルからHTMLタグ、末尾の省庁サフィックス、配付資料一覧、共通ノイズ等を除去・正規化する（CR-28 / CR-46 / CR-101）。
     """
     if not title:
         return ""
-    t = normalize_text(title)
+    # HTMLタグ（<br>, <span>等）を除去
+    t = re.sub(r'<[^>]+>', ' ', title)
+    t = normalize_text(t)
     # 1. 末尾の省庁・行政組織サフィックスの除去
     t = GOV_SUFFIX_REGEX.sub('', t).strip()
     # 2. 末尾の資料・配付資料・配付資料一覧等の除去
@@ -796,6 +837,8 @@ def parse_materials_from_html(html, base_url, pdf_selector=None):
 
         abs_url = urllib.parse.urljoin(base_url, href)
         if abs_url == base_url or abs_url in seen_urls:
+            continue
+        if abs_url.startswith('javascript:') or is_sns_pr_url(abs_url) or is_non_pdf_anchor_url(abs_url):
             continue
         if any(k in abs_url.lower() for k in ['cas.go.jp/jp/siryou', 'cas.go.jp/jp/shiryo']) or is_generic_index_url(abs_url):
             continue
@@ -1501,6 +1544,8 @@ def _extract_meetings_from_parent_table(html, target_url, council_name, rule=Non
                 if not href or href.startswith('#') or href.startswith('javascript:'):
                     continue
                 abs_url = urllib.parse.urljoin(page_base, href)
+                if abs_url.startswith('javascript:') or is_sns_pr_url(abs_url) or is_non_pdf_anchor_url(abs_url):
+                    continue
                 if is_generic_index_url(abs_url) or _is_parent_or_nav_url(abs_url, target_url):
                     continue
 
@@ -1521,6 +1566,9 @@ def _extract_meetings_from_parent_table(html, target_url, council_name, rule=Non
                     clean_mat_name = "配付資料"
 
                 clean_mat_name = normalize_text(clean_mat_name)
+
+                if clean_mat_name in EXCLUDE_MATERIAL_NAMES or any(k in clean_mat_name for k in ['移動します', '公式ポータル', '公式ページ', '公式情報ポータル', '審議会・検討会等一覧', '公式掲載資料・ページ']) or any(kw in clean_mat_name for kw in ['傍聴される皆様への留意事項', '傍聴留意事項', '傍聴申込', '傍聴希望', '傍聴案内', 'お申込みください', 'お申込みは', '傍聴される皆様へ']):
+                    continue
 
                 is_pdf = href.lower().endswith(('.pdf', '.docx', '.xlsx', '.doc', '.xls')) or '/pdf/' in href.lower()
                 is_pure_minutes = any(k in href.lower() for k in ['gijiroku', 'gijiyoshi', 'proceedings']) or any(k in clean_mat_name for k in ['議事録', '議事要旨'])
@@ -2274,14 +2322,23 @@ def sync_new_meetings_from_crawl(data, target, scraped_item):
 
         # 資料配列の構築（配付資料の名称属性は 'name' で厳格統一）
         clean_materials_list = []
+        seen_mat_urls = set()
         for mat in sub_mats:
             mat_name = (mat.get("name") or mat.get("title") or "").strip()
             mat_url = mat.get("url", "").strip()
             mat_type = mat.get("type", "PDF")
             if not mat_url or mat_url == "#" or mat_url == sub_url:
                 continue
+            if mat_url.startswith("javascript:") or is_sns_pr_url(mat_url) or is_non_pdf_anchor_url(mat_url):
+                continue
+            clean_name = normalize_text(mat_name)
+            if clean_name in EXCLUDE_MATERIAL_NAMES or any(k in clean_name for k in ['移動します', '公式ポータル', '公式ページ', '公式情報ポータル', '審議会・検討会等一覧', '公式掲載資料・ページ']) or any(kw in clean_name for kw in ['傍聴される皆様への留意事項', '傍聴留意事項', '傍聴申込', '傍聴希望', '傍聴案内', 'お申込みください', 'お申込みは', '傍聴される皆様へ']):
+                continue
+            if mat_url in seen_mat_urls:
+                continue
+            seen_mat_urls.add(mat_url)
             mat_item = {
-                "name": mat_name if mat_name else os.path.basename(mat_url),
+                "name": clean_name if clean_name else os.path.basename(mat_url),
                 "url": mat_url
             }
             if mat_type and mat_type not in ("PDF", "pdf"):
@@ -2503,12 +2560,13 @@ def deduplicate_data_materials(data):
         c_info = councils.get(c_id, {})
         c_url = (c_info.get("officialUrl") or c_info.get("url", "")).strip()
 
-        # 1. ポータル・公式ページ・一覧ページの資料リンクを除外
+        # 1. ポータル・公式ページ・一覧ページの資料リンクを除外、同一回内重複排除、および各種ノイズ排除
         for m in m_list:
             # manualLock: true の会議はそのまま保護（重複排除・移動対象外）
             if m.get("manualLock", False):
                 continue
             clean_mats = []
+            seen_in_meeting = set()
             for mat in m.get("materials", []):
                 # manualLock: true の個別資料も保護
                 if mat.get("manualLock", False):
@@ -2519,6 +2577,16 @@ def deduplicate_data_materials(data):
                 if (c_url and url == c_url) or any(k in name for k in ["公式ポータル", "公式ページ", "公式情報ポータル", "審議会・検討会等一覧", "公式掲載資料・ページ"]):
                     removed_portal += 1
                     continue
+                if url.startswith("javascript:") or is_sns_pr_url(url) or is_non_pdf_anchor_url(url):
+                    removed_portal += 1
+                    continue
+                if name in EXCLUDE_MATERIAL_NAMES or any(k in name for k in ['移動します', '公式ポータル', '公式ページ', '公式情報ポータル', '審議会・検討会等一覧', '公式掲載資料・ページ']) or any(kw in name for kw in ['傍聴される皆様への留意事項', '傍聴留意事項', '傍聴申込', '傍聴希望', '傍聴案内', 'お申込みください', 'お申込みは', '傍聴される皆様へ']):
+                    removed_portal += 1
+                    continue
+                if url in seen_in_meeting:
+                    removed_portal += 1
+                    continue
+                seen_in_meeting.add(url)
                 clean_mats.append(mat)
             m["materials"] = clean_mats
 

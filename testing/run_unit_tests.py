@@ -180,6 +180,12 @@ UNIT_TEST_REGISTRY = {
             "test_cr26_thread_safe_rate_limiting",
             "test_cr27_stop_event_interruption"
         ])
+    },
+    "u_drop46": {
+        "id": "U13",
+        "name": "ノイズ排除・文字化け復元・データ整合性テスト (test_drop46_data_cleanup.py)",
+        "description": "is_sns_pr_url, is_non_pdf_anchor_url, HTMLタグ除去, 文字化け復元, 開催回内重複排除",
+        "runner": lambda: _run_py_class("test_drop46_data_cleanup", "TestDrop46DataCleanup")
     }
 }
 

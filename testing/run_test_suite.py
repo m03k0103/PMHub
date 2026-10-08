@@ -205,7 +205,8 @@ def check_syntax_errors():
         os.path.join(PROJECT_ROOT, "testing", "test_drop23_waf_resilience.py"),
         os.path.join(PROJECT_ROOT, "testing", "test_drop24_parent_table_expansion.py"),
         os.path.join(PROJECT_ROOT, "testing", "test_drop25_mod_date_parsing.py"),
-        os.path.join(PROJECT_ROOT, "testing", "test_drop41_fallback_and_discovery.py")
+        os.path.join(PROJECT_ROOT, "testing", "test_drop41_fallback_and_discovery.py"),
+        os.path.join(PROJECT_ROOT, "testing", "test_drop46_data_cleanup.py")
     ]
     
     errors_found = 0
@@ -1006,6 +1007,9 @@ def detect_required_unit_tests(changed_files):
         if any(w in diff_out for w in ["clean_html_for_dates", "_sort_subpage_urls_by_recency", "extract_page_title"]):
             required_keys.add("u_crawler_foundation")
             matched = True
+        if any(w in diff_out for w in ["is_sns_pr_url", "is_non_pdf_anchor_url", "EXCLUDE_MATERIAL_NAMES"]):
+            required_keys.add("u_drop46")
+            matched = True
         if any(w in diff_out for w in ["safe_emit_log", "COMMON_NAV_KEYWORDS", "ORGANIZATION_DOC_KEYWORDS"]):
             required_keys.add("u_robustness")
             matched = True
@@ -1014,7 +1018,7 @@ def detect_required_unit_tests(changed_files):
             matched = True
 
         if not matched:
-            for k in ["u_crawler_foundation", "u_parent_table", "u_incremental", "u_quality_eval", "u_subpage_links", "u_waf", "u_table_html_expand", "u_date_parsing", "u_url_matching_fallback", "u_robustness", "u_speedup"]:
+            for k in ["u_crawler_foundation", "u_parent_table", "u_incremental", "u_quality_eval", "u_subpage_links", "u_waf", "u_table_html_expand", "u_date_parsing", "u_url_matching_fallback", "u_robustness", "u_speedup", "u_drop46"]:
                 required_keys.add(k)
 
     return required_keys
