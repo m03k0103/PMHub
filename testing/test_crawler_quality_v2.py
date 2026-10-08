@@ -206,25 +206,25 @@ class TestCrawlerQualityFix20260919(unittest.TestCase):
 
     def test_clean_meeting_title(self):
         from crawler import clean_meeting_title
-        # 1. 林野庁サフィックス・配付資料一覧
+        # 1. 林野庁サフィックス・配付資料一覧（NFKCにより半角括弧）
         self.assertEqual(
             clean_meeting_title("林政審議会施策部会（令和8年9月1日）配付資料一覧：林野庁"),
-            "林政審議会施策部会（令和8年9月1日）"
+            "林政審議会施策部会(令和8年9月1日)"
         )
-        # 2. 厚労省サフィックス・資料
+        # 2. 厚労省サフィックス・資料（NFKCにより半角括弧）
         self.assertEqual(
             clean_meeting_title("第264回社会保障審議会介護給付費分科会（web会議）資料｜厚生労働省"),
-            "第264回社会保障審議会介護給付費分科会（web会議）"
+            "第264回社会保障審議会介護給付費分科会(web会議)"
         )
-        # 3. ALPS処理水・配付資料一覧
+        # 3. ALPS処理水・配付資料一覧（NFKCにより半角英数・半角括弧・半角数字）
         self.assertEqual(
             clean_meeting_title("ＡＬＰＳ処理水の処分に関する基本方針の着実な実行に向けた関係閣僚等会議（第９回）配付資料一覧"),
-            "ＡＬＰＳ処理水の処分に関する基本方針の着実な実行に向けた関係閣僚等会議（第９回）"
+            "ALPS処理水の処分に関する基本方針の着実な実行に向けた関係閣僚等会議(第9回)"
         )
-        # 4. 全角空白の正規化
+        # 4. 全角空白の正規化（NFKCにより半角数字）
         self.assertEqual(
             clean_meeting_title("第１０３７回　食品安全委員会"),
-            "第１０３７回 食品安全委員会"
+            "第1037回 食品安全委員会"
         )
 
     def test_custom_rule_normalization_in_subpage_discovery(self):
