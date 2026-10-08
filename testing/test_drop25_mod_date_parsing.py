@@ -23,6 +23,14 @@ class TestDrop25ModDateParsing(unittest.TestCase):
             ("H22.12.14", datetime(2010, 12, 14)),
             ("R06/05/20", datetime(2024, 5, 20)),
             ("H23-05-17", datetime(2011, 5, 17)),
+            ("08.8.13", datetime(2026, 8, 13)),
+            ("08.2.27", datetime(2026, 2, 27)),
+            ("07.12.18", datetime(2025, 12, 18)),
+            ("07.8.21", datetime(2025, 8, 21)),
+            ("07.8.5", datetime(2025, 8, 5)),
+            ("07.2.26", datetime(2025, 2, 26)),
+            ("07.1.10", datetime(2025, 1, 10)),
+            ("18.3.7", datetime(2006, 3, 7)),
         ]
         for inp, expected in cases:
             with self.subTest(inp=inp):

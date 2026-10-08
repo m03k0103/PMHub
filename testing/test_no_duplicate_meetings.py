@@ -150,10 +150,13 @@ def run_test(data=None):
     if crawler_subs:
         errors.append(f"Unmerged crawler fragment records found ({len(crawler_subs)} items): {crawler_subs[:5]}...")
         
-    # 5. Check date format
+    # 5. Check date format and placeholder dates
     bad_dates = [m.get('date') for m in meetings if not re.match(r'^\d{4}/\d{2}/\d{2}$', m.get('date', ''))]
     if bad_dates:
         errors.append(f"Invalid date formats found ({len(bad_dates)} items): {bad_dates[:5]}")
+    placeholder_dates = [m.get('id') for m in meetings if str(m.get('date', '')).startswith('2099')]
+    if placeholder_dates:
+        errors.append(f"Unconfirmed dummy placeholder dates (2099/01/01) found ({len(placeholder_dates)} items): {placeholder_dates[:5]}")
 
     # 6. Check for auto-extracted generic titles
     bad_names = [m.get('name') or m.get('title') for m in meetings if any(w in (m.get('name') or m.get('title') or '') for w in ['抽出', '最新回 (', '直近会合', '最新会合'])]

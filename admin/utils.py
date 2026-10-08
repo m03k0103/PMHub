@@ -138,6 +138,8 @@ _RE_SEIREKI_DATE = re.compile(r'(?<!\d)(\d{4})年(\d{1,2})月(\d{1,2})日(?!\d)'
 _RE_SLASH_DATE = re.compile(r'(?<![\d\w])(\d{4})[/-](\d{1,2})[/-](\d{1,2})(?![\d\w])')
 # CR-54: 元号アルファベット略記（例: R3.12.6, H30.11.28, H22.12.14, R06/05/20 等）
 _RE_GENGOU_SHORT_DATE = re.compile(r'(?<![a-zA-Z\d])([RHSrhs])\s*(\d+|元)[./-](\d{1,2})[./-](\d{1,2})(?![a-zA-Z\d])')
+# CR-100: 元号省略ドット日付（例: 08.8.13, 08.2.27, 07.12.18, 18.3.7 等の防衛省等独自略記）
+_RE_DOT_DATE = re.compile(r'(?<![a-zA-Z\d])(\d{1,2})\.(\d{1,2})\.(\d{1,2})(?![a-zA-Z\d])')
 
 
 @functools.lru_cache(maxsize=2048)
@@ -210,6 +212,22 @@ def parse_japanese_date(date_str):
             if year:
                 month = int(m_gengou_short.group(3))
                 day = int(m_gengou_short.group(4))
+                return datetime(year, month, day)
+        except Exception:
+            pass
+    m_dot = _RE_DOT_DATE.search(date_str)
+    if m_dot:
+        try:
+            yr_val = int(m_dot.group(1))
+            month = int(m_dot.group(2))
+            day = int(m_dot.group(3))
+            if 1 <= yr_val <= 15:
+                year = 2018 + yr_val
+            elif 16 <= yr_val <= 31:
+                year = 1988 + yr_val
+            else:
+                year = None
+            if year and 1 <= month <= 12 and 1 <= day <= 31:
                 return datetime(year, month, day)
         except Exception:
             pass

@@ -107,6 +107,26 @@ class TestCrawlerQualityDrop14(unittest.TestCase):
         self.assertEqual(get_unconfirmed_meetings_count({}), 0)
         self.assertEqual(get_unconfirmed_meetings_count(None), 0)
 
+    def test_no_2099_placeholder_meetings_in_production_data(self):
+        """CR-104: 本番 docs/data.json 内に 2099/01/01 ダミー日付プレースホルダー開催回が存在しないこと"""
+        from utils import load_data_json
+        from crawler import DATA_JSON_FILE
+
+        self.assertTrue(os.path.exists(DATA_JSON_FILE), "docs/data.json が存在すること")
+        data = load_data_json(DATA_JSON_FILE, cached=True)
+        self.assertTrue(bool(data), "docs/data.json が正常に読み込めること")
+
+        placeholder_meetings = [
+            m for m in data.get("meetings", [])
+            if str(m.get("date", "")).startswith("2099")
+        ]
+        self.assertEqual(
+            len(placeholder_meetings),
+            0,
+            f"本番 docs/data.json 内に 2099 プレースホルダー開催回が {len(placeholder_meetings)} 件残存しています: "
+            f"{[m.get('id') for m in placeholder_meetings[:5]]}"
+        )
+
 
 if __name__ == '__main__':
     unittest.main()
