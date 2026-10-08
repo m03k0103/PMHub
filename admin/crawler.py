@@ -2251,6 +2251,14 @@ def sync_new_meetings_from_crawl(data, target, scraped_item):
             if any(k in sub_url.lower() for k in ['kaisaiannai', 'bridge', 'brige_wg']) or any(k in sub_title for k in ['ワーキンググループ', 'WG', 'BRIDGE', '中間評価']):
                 continue
 
+        # 金融庁フォローアップ会議（第1回〜第30回のみで完結・Drop 40規約）およびスチュワードシップ各検討会のニュース除外ガード
+        if council_id == "fsa-code_followup":
+            if "/news/" in sub_url.lower() or "singi" not in sub_url.lower():
+                continue
+        if council_id in ("fsa-japan_stewardship", "fsa-stewardship_h28", "fsa-stewardship_r01", "fsa-stewardship_r06"):
+            if "/news/" in sub_url.lower():
+                continue
+
         # 他省庁URLの誤混入ガード（例: MHLW会議体にMETIのURLが混入するのを防止）
         ministry_code = (ministry or "").upper()
         if ministry_code:
@@ -2321,11 +2329,13 @@ def sync_new_meetings_from_crawl(data, target, scraped_item):
         # --- B. 新規開催回の追加 ---
         meet_date, is_date_unconfirmed = _resolve_meeting_date(sub_dates, sub_title, sub_url)
 
-        # 開催日未確認（2099/01/01）の場合の厳格ガード（資料0件またはジェネリックタイトルは登録禁止）
+        # 開催日未確認（2099/01/01）の場合の厳格ガード（資料0件・回次なしまたはジェネリックタイトルは登録禁止）
         if is_date_unconfirmed:
-            if not clean_materials_list:
+            if not clean_materials_list or not sess_nums:
                 continue
             if is_generic_title_text(sub_title) or any(kw in sub_title for kw in COMMON_NAV_KEYWORDS) or any(kw in sub_title for kw in ORGANIZATION_DOC_KEYWORDS):
+                continue
+            if any(kw in sub_title for kw in ['現在の会議', '年度', '関連', 'ニュース', '利用について', 'カメラ']):
                 continue
 
         # 配付資料0件の場合の厳格ガード（AGENTS.md 第11条・第12条: 資料なし非会議ページの誤登録遮断）
@@ -2368,6 +2378,7 @@ def sync_new_meetings_from_crawl(data, target, scraped_item):
         )
 
         meetings.append(new_meeting)
+        existing_c_meets.append(new_meeting)
         existing_meeting_ids.add(new_meeting["id"])
         existing_urls[sub_url] = new_meeting
         meet_name = new_meeting.get("name") or ""
