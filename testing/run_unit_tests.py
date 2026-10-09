@@ -186,6 +186,12 @@ UNIT_TEST_REGISTRY = {
         "name": "ノイズ排除・文字化け復元・データ整合性テスト (test_drop46_data_cleanup.py)",
         "description": "is_sns_pr_url, is_non_pdf_anchor_url, HTMLタグ除去, 文字化け復元, 開催回内重複排除",
         "runner": lambda: _run_py_class("test_drop46_data_cleanup", "TestDrop46DataCleanup")
+    },
+    "u_drop47": {
+        "id": "U14",
+        "name": "ジェネリック配付資料スマートコンテキスト復元テスト (test_drop47_context_recovery.py)",
+        "description": "is_generic_material_name, recover_material_context, data.json 残存ゼロ検証",
+        "runner": lambda: _run_py_class("test_drop47_context_recovery", "TestDrop47ContextRecovery")
     }
 }
 

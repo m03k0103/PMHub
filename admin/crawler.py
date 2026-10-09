@@ -155,6 +155,114 @@ EXCLUDE_MATERIAL_NAMES = frozenset({
     '上記の注意事項に同意し、傍聴を希望される方はこちらでお申込みください'
 })
 
+# コンテキスト復元対象となるジェネリック配付資料名（CR-110）
+GENERIC_MATERIAL_NAMES = frozenset({
+    'PDF', 'pdf', '資料', 'ダウンロード', 'リンク', 'こちら', '配付資料', '配布資料',
+    '別紙', '別添', '添付', '添付資料', '一覧', '詳細'
+})
+
+def is_generic_material_name(name):
+    """資料名が「PDF」「資料」等のジェネリック単体文字列であるかを判定"""
+    if not name:
+        return True
+    n = name.strip()
+    if n in GENERIC_MATERIAL_NAMES:
+        return True
+    # 括弧のみ、または括弧内がジェネリック語句
+    clean_paren = re.sub(r'^[\[\(\（\［【\s]+|[\]\)\）\］】\s]+$', '', n).strip()
+    if not clean_paren or clean_paren in GENERIC_MATERIAL_NAMES:
+        return True
+    # ［PDF形式：120KB］等の形式・容量のみ
+    if re.match(r'^PDF(?:形式)?[\:：\s\u3000／/\d\.\,KBMBkbmb]+$', clean_paren, flags=re.IGNORECASE):
+        return True
+    return False
+
+def recover_material_context(a_tag, initial_name=""):
+    """
+    リンクテキストが「PDF」「資料」等のジェネリック名である場合に、
+    先行テキスト、親セル、同一テーブル行ヘッダー等から本来の資料名をスマート復元する（CR-110）。
+    """
+    cand_name = initial_name
+
+    # 1. 直前の兄弟テキスト / 要素から資料番号・先行テキストを取得
+    prefix_parts = []
+    for prev in a_tag.previous_siblings:
+        if prev.name == 'a':
+            break
+        if isinstance(prev, str):
+            prefix_parts.append(prev)
+        else:
+            prefix_parts.append(prev.get_text(' ', strip=True))
+    prefix = ' '.join(reversed(prefix_parts)).strip()
+    prefix = re.sub(r'[\（\(]PDF[／/形式\:\s\d\.\,KBMB]+\s*[\）\)]', '', prefix, flags=re.IGNORECASE).strip()
+    prefix = re.sub(r'［PDF形式：\d+.*?］', '', prefix).strip()
+    prefix = normalize_text(prefix)
+    prefix = re.sub(r'^[\[\(\（\［【\s・:：]+|[\]\)\）\］】\s・:：]+$', '', prefix).strip()
+
+    # 2. 同一テーブル行 (tr) の先行セル（th / td）の見出しテキスト
+    tr = a_tag.find_parent('tr')
+    tr_prefix = ''
+    if tr:
+        cells = tr.find_all(['td', 'th'])
+        parent_cell = a_tag.find_parent(['td', 'th'])
+        if parent_cell and parent_cell in cells:
+            idx = cells.index(parent_cell)
+            if idx > 0:
+                header_texts = [c.get_text(' ', strip=True) for c in cells[:idx]]
+                tr_prefix = ' '.join(t for t in header_texts if t and t not in ('PDF', '資料')).strip()
+                tr_prefix = normalize_text(tr_prefix)
+                tr_prefix = re.sub(r'[\（\(]PDF[／/形式\:\s\d\.\,KBMB]+\s*[\）\)]', '', tr_prefix, flags=re.IGNORECASE).strip()
+                tr_prefix = re.sub(r'［PDF形式：\d+.*?］', '', tr_prefix).strip()
+                # 単なる回次や日付（またはその組み合わせ）のみの場合は資料名ではないため除外
+                if re.match(r'^(?:第[\d〇一二三四五六七八九十百]+回)?[\s\u3000]*(?:(?:令和|平成|昭和|\d{4}年)[\s\d年月日時分秒/・\-–—―\(\)（）]*)+$', tr_prefix):
+                    tr_prefix = ''
+                elif re.match(r'^第[\d〇一二三四五六七八九十百]+回$', tr_prefix):
+                    tr_prefix = ''
+
+    # 3. 親ブロック要素 (td, li, p, dd) のテキスト
+    parent_block = a_tag.find_parent(['td', 'th', 'li', 'p', 'dd', 'dt'])
+    parent_text = ''
+    if parent_block:
+        p_txt = parent_block.get_text(' ', strip=True)
+        p_txt = re.sub(r'[\（\(]PDF[／/形式\:\s\d\.\,KBMB]+\s*[\）\)]', '', p_txt, flags=re.IGNORECASE).strip()
+        p_txt = re.sub(r'［PDF形式：\d+.*?］', '', p_txt).strip()
+        p_txt = normalize_text(p_txt)
+        # 他のリンクテキストが大量に混ざっていないかチェック
+        other_links = parent_block.find_all('a')
+        if len(other_links) <= 2:
+            p_txt = re.sub(r'\bPDF\b', '', p_txt, flags=re.IGNORECASE).strip()
+            p_txt = re.sub(r'^[\[\(\（\［【\s・:：]+|[\]\)\）\］】\s・:：]+$', '', p_txt).strip()
+            if len(p_txt) >= 2 and not is_generic_material_name(p_txt):
+                parent_text = p_txt
+
+    # 4. コンテキストの合成と選定
+    recovered = ''
+    if tr_prefix and prefix:
+        recovered = f"{tr_prefix} {prefix}"
+    elif prefix and len(prefix) >= 2 and not is_generic_material_name(prefix):
+        recovered = prefix
+    elif tr_prefix and len(tr_prefix) >= 2 and not is_generic_material_name(tr_prefix):
+        recovered = tr_prefix
+    elif parent_text:
+        recovered = parent_text
+
+    # 前後のノイズ記号のクリーンアップ（閉じ括弧は正当なテキスト末尾でありうるため除外）
+    if recovered:
+        recovered = re.sub(r'^[\[\(\（\［【\s・:：\-–—―\.]+|[\]\［】\s・:：\-–—―\.]+$', '', recovered).strip()
+        # 末尾の未閉じ開き括弧の除去（例: "資料名(" -> "資料名"）
+        if (recovered.endswith('(') or recovered.endswith('（')) and not (recovered.startswith('(') or recovered.startswith('（')):
+            recovered = recovered[:-1].strip()
+        if len(recovered) >= 2 and not is_generic_material_name(recovered):
+            return recovered
+
+    # 復元できずジェネリックなままで、URL/ファイル名に gijiroku が含まれる場合は「議事録」へフォールバック
+    href = a_tag.get('href', '')
+    fn = os.path.basename(urllib.parse.urlparse(href).path)
+    if 'gijiroku' in fn.lower():
+        return "議事録"
+
+    return cand_name
+
 # 省庁・行政機関名のサフィックス正規表現（全省庁・外局・委員会網羅）
 GOV_SUFFIX_REGEX = re.compile(
     r'[\s\u3000]*[｜\|：:\-–—―]\s*(?:厚生労働省|内閣府|内閣官房|財務省|国税庁|金融庁|法務省|出入国在留管理庁|公安審査委員会|公安調査庁|外務省|文部科学省|文化庁|スポーツ庁|農林水産省|水産庁|林野庁|経済産業省|資源エネルギー庁|特許庁|中小企業庁|国土交通省|観光庁|気象庁|海上保安庁|環境省|原子力規制委員会|防衛省|防衛装備庁|デジタル庁|こども家庭庁|食品安全委員会|消費者庁|警察庁|消防庁|首相官邸.*|WARP.*)(?:ホームページ|HP|公式ホームページ)?$'
@@ -848,9 +956,15 @@ def parse_materials_from_html(html, base_url, pdf_selector=None):
         clean_name = re.sub(r'［PDF形式：\d+.*?］', '', clean_name).strip()
         clean_name = normalize_text(clean_name)
         
+        # ジェネリック資料名（「PDF」「資料」等）の場合、親行・周辺テキストから本来の資料名をスマート復元（CR-110）
+        if is_generic_material_name(clean_name):
+            clean_name = recover_material_context(a_tag, initial_name=clean_name)
+
         parsed_path = urllib.parse.urlparse(abs_url).path
         filename = os.path.basename(parsed_path)
-        if not clean_name:
+        if 'gijiroku' in filename.lower() and (is_generic_material_name(clean_name) or clean_name in ('資料', '配付資料', '配布資料')):
+            clean_name = "議事録"
+        elif not clean_name:
             clean_name = filename if filename else "配付資料"
 
         if clean_name in EXCLUDE_MATERIAL_NAMES or any(k in clean_name for k in ['移動します', '公式ポータル', '公式ページ', '公式情報ポータル', '審議会・検討会等一覧', '公式掲載資料・ページ']) or any(kw in clean_name for kw in ['傍聴される皆様への留意事項', '傍聴留意事項', '傍聴申込', '傍聴希望', '傍聴案内', 'お申込みください', 'お申込みは', '傍聴される皆様へ']):
@@ -1553,16 +1667,13 @@ def _extract_meetings_from_parent_table(html, target_url, council_name, rule=Non
                 clean_mat_name = re.sub(r'[\（\(\［\[]PDF.*?[）\)\］\]]', '', raw_mat_name, flags=re.IGNORECASE).strip()
                 clean_mat_name = re.sub(r'NEW\s*\d+月\d+日', '', clean_mat_name).strip()
 
-                if not clean_mat_name or clean_mat_name in ('PDF', 'ダウンロード', 'リンク', 'こちら'):
-                    parent_cell = a.find_parent(['td', 'th'])
-                    if parent_cell:
-                        cell_txt = parent_cell.get_text(' ', strip=True)
-                        clean_cell_txt = re.sub(r'[\（\(]PDF[／/形式\:\s\d\.\,KBMB]+\s*[\）\)]', '', cell_txt).strip()
-                        clean_cell_txt = re.sub(r'［PDF形式：\d+.*?］', '', clean_cell_txt).strip()
-                        if clean_cell_txt and clean_cell_txt != clean_mat_name:
-                            clean_mat_name = clean_cell_txt[:60]
+                if is_generic_material_name(clean_mat_name):
+                    clean_mat_name = recover_material_context(a, initial_name=clean_mat_name)
 
-                if not clean_mat_name:
+                fn = os.path.basename(urllib.parse.urlparse(abs_url).path)
+                if 'gijiroku' in fn.lower() and (is_generic_material_name(clean_mat_name) or clean_mat_name in ('資料', '配付資料', '配布資料')):
+                    clean_mat_name = "議事録"
+                elif not clean_mat_name:
                     clean_mat_name = "配付資料"
 
                 clean_mat_name = normalize_text(clean_mat_name)
@@ -2337,8 +2448,20 @@ def sync_new_meetings_from_crawl(data, target, scraped_item):
             if mat_url in seen_mat_urls:
                 continue
             seen_mat_urls.add(mat_url)
+            
+            # ジェネリック資料名（「PDF」「資料」等）の場合はファイル名等を活用してフォールバック（CR-112）
+            final_mat_name = clean_name
+            fn = os.path.basename(urllib.parse.urlparse(mat_url).path)
+            if 'gijiroku' in fn.lower() and (is_generic_material_name(final_mat_name) or final_mat_name in ('資料', '配付資料', '配布資料')):
+                final_mat_name = "議事録"
+            elif is_generic_material_name(final_mat_name):
+                if fn and not is_generic_material_name(fn):
+                    final_mat_name = f"{sub_title} 資料 ({fn})" if sub_title else fn
+                else:
+                    final_mat_name = f"{sub_title} 配付資料" if sub_title else "配付資料"
+
             mat_item = {
-                "name": clean_name if clean_name else os.path.basename(mat_url),
+                "name": final_mat_name if final_mat_name else os.path.basename(mat_url),
                 "url": mat_url
             }
             if mat_type and mat_type not in ("PDF", "pdf"):
