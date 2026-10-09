@@ -512,10 +512,10 @@
 
 | ID | 分類 | 内容 | 対象ファイル | 完了日 |
 |:---|:---:|:---|:---|:---:|
-| **CR-110** | コンテキスト抽出 | **スマートコンテキスト復元エンジン実装（親セル・親行・先行テキスト抽出）**<br>`admin/crawler.py` に `is_generic_material_name` および `recover_material_context` を実装。リンクテキストがジェネリック（「PDF」「資料」等）な場合に、親タグ（`td`, `li`, `p`）の先行テキストやテーブル同一行の先行セル（`th`/`td`）から資料名を自動抽出・合成するロジックを配備。`parse_materials_from_html` および `_extract_meetings_from_parent_table` に組み込み | `admin/crawler.py` | 2026-10-09 |
-| **CR-111** | 一括データ復元 | **既存 docs/data.json におけるジェネリック配付資料名（2,096件）の一括復元**<br>厚労省・財務省等の公式ページ 288 ページをレートリミット（>=0.35s）遵守で巡回・解析し、1,800 件をスマートコンテキスト復元、296 件を構造化フォールバック（会議体名・ファイル名等を反映）により適正化。残存件数を 0 件（100%解消）へ是正 | `docs/data.json` | 2026-10-09 |
-| **CR-112** | 再混入防止ガード | **クローラー受入時のジェネリック配付資料名フォールバック・遮断ガード**<br>`sync_new_meetings_from_crawl` および `_extract_meetings_from_parent_table` において、コンテキスト復元後もジェネリック名が残る場合、ファイル名・会議タイトルを活用して具体的名称を生成し、「PDF」「資料」単体での登録を遮断 | `admin/crawler.py` | 2026-10-09 |
-| **CR-113** | テスト検証 | **Drop 47 単体テスト新設 & 統合テストスイート（全14ケース＋単体14種）整合性検証**<br>`testing/test_drop47_context_recovery.py`（5テスト）を新設。厚労省型・財務省型・リスト型の各HTML復元テスト、および `docs/data.json` 内ジェネリック残存ゼロ検証を実装。`run_unit_tests.py` に U14 を追加し、統合テストスイート（全14ケース＋単体14種）完全合格を確認 | `testing/test_drop47_context_recovery.py`<br>`testing/run_unit_tests.py`<br>`testing/run_test_suite.py` | 2026-10-09 |
+| **CR-110** | コンテキスト抽出 | **スマートコンテキスト復元エンジン実装（親セル・親行・先行テキスト抽出 & gijiroku 議事録化）**<br>`admin/crawler.py` に `is_generic_material_name` および `recover_material_context` を実装。リンクテキストがジェネリック（「PDF」「資料」等）な場合に、親タグ（`td`, `li`, `p`）の先行テキストやテーブル同一行の先行セル（`th`/`td`）から資料名を自動抽出・合成するロジックを配備。URL/ファイル名に `gijiroku` が含まれる場合に自動的に「議事録」と命名するルールを実装。`parse_materials_from_html` および `_extract_meetings_from_parent_table` に組み込み | `admin/crawler.py` | 2026-10-10 |
+| **CR-111** | 一括データ復元 | **既存 docs/data.json におけるジェネリック配付資料名（2,096件）の一括復元 & 議事録適正化**<br>厚労省・財務省等の公式ページ 288 ページをレートリミット（>=0.35s）遵守で巡回・解析し、1,800 件をスマートコンテキスト復元、296 件を構造化フォールバック（会議体名・ファイル名等を反映）により適正化。さらにファイル名に `gijiroku` を含む配付資料（177件）を一括して「議事録」へ適正化。残存件数を 0 件（100%解消）へ是正 | `docs/data.json` | 2026-10-10 |
+| **CR-112** | 再混入防止ガード | **クローラー受入時のジェネリック配付資料名フォールバック・遮断ガード**<br>`sync_new_meetings_from_crawl` および `_extract_meetings_from_parent_table` において、コンテキスト復元後もジェネリック名が残る場合、ファイル名（`gijiroku` の場合は「議事録」）や会議タイトルを活用して具体的名称を生成し、「PDF」「資料」単体での登録を遮断 | `admin/crawler.py` | 2026-10-10 |
+| **CR-113** | テスト検証 | **Drop 47 単体テスト新設 & 統合テストスイート（全14ケース＋単体14種）整合性検証**<br>`testing/test_drop47_context_recovery.py`（6テスト）を新設。厚労省型・財務省型・リスト型の各HTML復元テスト、gijiroku ファイル名からの議事録自動命名テスト、および `docs/data.json` 内ジェネリック残存ゼロ検証を実装。`run_unit_tests.py` に U14 を追加し、統合テストスイート（全14ケース＋単体14種）完全合格を確認 | `testing/test_drop47_context_recovery.py`<br>`testing/run_unit_tests.py`<br>`testing/run_test_suite.py` | 2026-10-10 |
 
 ---
 

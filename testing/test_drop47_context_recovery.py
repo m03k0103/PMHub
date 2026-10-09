@@ -96,6 +96,18 @@ class TestDrop47ContextRecovery(unittest.TestCase):
         recovered = recover_material_context(a_tag, initial_name="資料")
         self.assertIn("デジタル行財政改革の推進状況について", recovered)
 
+    def test_recover_gijiroku_filename_pattern(self):
+        """ファイル名に gijiroku を含む場合の「議事録」フォールバック自動命名検証"""
+        html = """
+        <div>
+            <a href="https://www.cao.go.jp/consumer/content/260806_gijiroku.pdf">PDF形式:152KB</a>
+        </div>
+        """
+        soup = BeautifulSoup(html, 'html.parser')
+        a_tag = soup.find('a')
+        recovered = recover_material_context(a_tag, initial_name="PDF形式:152KB")
+        self.assertEqual(recovered, "議事録")
+
     def test_data_json_generic_materials_zero(self):
         """docs/data.json 内の全配付資料におけるジェネリック資料名残存ゼロ検証 (CR-111)"""
         data_path = os.path.join(REPO_ROOT, 'docs', 'data.json')

@@ -255,6 +255,12 @@ def recover_material_context(a_tag, initial_name=""):
         if len(recovered) >= 2 and not is_generic_material_name(recovered):
             return recovered
 
+    # 復元できずジェネリックなままで、URL/ファイル名に gijiroku が含まれる場合は「議事録」へフォールバック
+    href = a_tag.get('href', '')
+    fn = os.path.basename(urllib.parse.urlparse(href).path)
+    if 'gijiroku' in fn.lower():
+        return "議事録"
+
     return cand_name
 
 # 省庁・行政機関名のサフィックス正規表現（全省庁・外局・委員会網羅）
@@ -956,7 +962,9 @@ def parse_materials_from_html(html, base_url, pdf_selector=None):
 
         parsed_path = urllib.parse.urlparse(abs_url).path
         filename = os.path.basename(parsed_path)
-        if not clean_name:
+        if 'gijiroku' in filename.lower() and (is_generic_material_name(clean_name) or clean_name in ('資料', '配付資料', '配布資料')):
+            clean_name = "議事録"
+        elif not clean_name:
             clean_name = filename if filename else "配付資料"
 
         if clean_name in EXCLUDE_MATERIAL_NAMES or any(k in clean_name for k in ['移動します', '公式ポータル', '公式ページ', '公式情報ポータル', '審議会・検討会等一覧', '公式掲載資料・ページ']) or any(kw in clean_name for kw in ['傍聴される皆様への留意事項', '傍聴留意事項', '傍聴申込', '傍聴希望', '傍聴案内', 'お申込みください', 'お申込みは', '傍聴される皆様へ']):
@@ -1662,7 +1670,10 @@ def _extract_meetings_from_parent_table(html, target_url, council_name, rule=Non
                 if is_generic_material_name(clean_mat_name):
                     clean_mat_name = recover_material_context(a, initial_name=clean_mat_name)
 
-                if not clean_mat_name:
+                fn = os.path.basename(urllib.parse.urlparse(abs_url).path)
+                if 'gijiroku' in fn.lower() and (is_generic_material_name(clean_mat_name) or clean_mat_name in ('資料', '配付資料', '配布資料')):
+                    clean_mat_name = "議事録"
+                elif not clean_mat_name:
                     clean_mat_name = "配付資料"
 
                 clean_mat_name = normalize_text(clean_mat_name)
@@ -2440,8 +2451,10 @@ def sync_new_meetings_from_crawl(data, target, scraped_item):
             
             # ジェネリック資料名（「PDF」「資料」等）の場合はファイル名等を活用してフォールバック（CR-112）
             final_mat_name = clean_name
-            if is_generic_material_name(final_mat_name):
-                fn = os.path.basename(urllib.parse.urlparse(mat_url).path)
+            fn = os.path.basename(urllib.parse.urlparse(mat_url).path)
+            if 'gijiroku' in fn.lower() and (is_generic_material_name(final_mat_name) or final_mat_name in ('資料', '配付資料', '配布資料')):
+                final_mat_name = "議事録"
+            elif is_generic_material_name(final_mat_name):
                 if fn and not is_generic_material_name(fn):
                     final_mat_name = f"{sub_title} 資料 ({fn})" if sub_title else fn
                 else:
