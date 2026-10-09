@@ -257,11 +257,102 @@ def recover_material_context(a_tag, initial_name=""):
 
     # 復元できずジェネリックなままで、URL/ファイル名に gijiroku が含まれる場合は「議事録」へフォールバック
     href = a_tag.get('href', '')
-    fn = os.path.basename(urllib.parse.urlparse(href).path)
+    parsed_path = urllib.parse.urlparse(href).path
+    fn = os.path.basename(parsed_path)
     if 'gijiroku' in fn.lower():
         return "議事録"
 
+    # URLのディレクトリ名からコンテキストを補完（例: kanjikai_dai1 -> 幹事会 配布資料）
+    dir_name = os.path.basename(os.path.dirname(parsed_path)).lower()
+    if 'kanjikai' in dir_name:
+        return f"幹事会 {cand_name}"
+    elif 'startup' in dir_name:
+        return f"スタートアップ育成WG {cand_name}"
+
     return cand_name
+
+def parse_txt_minutes(text, url=""):
+    """
+    議事録・議事次第等のテキストファイル（.txt）から開催日、回次、タイトル、および配付資料レコードを抽出する（CR-114）。
+    Returns: dict with 'date', 'round_number', 'title', 'materials'
+    """
+    if not text:
+        return {"date": None, "round_number": None, "title": None, "materials": []}
+
+    lines = [normalize_text(line.strip()) for line in text.splitlines() if line.strip()]
+    header_text = ' '.join(lines[:15])
+
+    # 1. 開催日抽出
+    date = None
+    # パターンA: 冒頭の "07/04/26" 形式 (YY/MM/DD)
+    m_short_date = re.search(r'\b(\d{2})/(\d{1,2})/(\d{1,2})\b', header_text)
+    if m_short_date:
+        yy, mm, dd = m_short_date.groups()
+        full_year = 2000 + int(yy) if int(yy) < 50 else 1900 + int(yy)
+        date = f"{full_year:04d}/{int(mm):02d}/{int(dd):02d}"
+
+    # パターンB: 和暦 "平成19年4月26日", "令和3年5月10日"
+    if not date:
+        m_era = re.search(r'(平成|令和)(\d+|元)年\s*(\d{1,2})月\s*(\d{1,2})日', header_text)
+        if m_era:
+            era, y, mm, dd = m_era.groups()
+            y_val = 1 if y == '元' else int(y)
+            base_y = 2018 if era == '令和' else 1988
+            full_year = base_y + y_val
+            date = f"{full_year:04d}/{int(mm):02d}/{int(dd):02d}"
+
+    # パターンC: 西暦 "2007年4月26日"
+    if not date:
+        m_seireki = re.search(r'(\d{4})年\s*(\d{1,2})月\s*(\d{1,2})日', header_text)
+        if m_seireki:
+            yyyy, mm, dd = m_seireki.groups()
+            date = f"{int(yyyy):04d}/{int(mm):02d}/{int(dd):02d}"
+
+    # 2. 回次およびタイトル抽出
+    round_number = None
+    title = None
+    doc_kind = "議事録"
+    if url and any(k in url.lower() for k in ['sidai', 'shidai', 'gijisidai', 'gijishidai']):
+        doc_kind = "議事次第"
+
+    for line in lines[:8]:
+        # 回次抽出
+        m_round = re.search(r'第\s*([0-9０-９一二三四五六七八九十百]+)\s*回', line)
+        if m_round:
+            r_raw = m_round.group(1)
+            r_norm = normalize_japanese_numbers(r_raw)
+            if r_norm.isdigit():
+                round_number = int(r_norm)
+            
+            clean_l = re.sub(r'^\d{2}/\d{2}/\d{2}\s*', '', line).strip()
+            clean_l = re.sub(r'(?:議事録|議事要旨|議事次第)$', '', clean_l).strip()
+            clean_l = re.sub(r'^[（\(]+|[）\)]+$', '', clean_l).strip()
+            if clean_l and len(clean_l) >= 4:
+                title = clean_l
+                break
+
+    # 回次が見つかったがタイトルが取れなかった場合
+    if round_number and not title and lines:
+        first_line = re.sub(r'^\d{2}/\d{2}/\d{2}\s*', '', lines[0]).strip()
+        first_line = re.sub(r'(?:議事録|議事要旨|議事次第)$', '', first_line).strip()
+        if len(first_line) >= 4:
+            title = first_line
+
+    materials = []
+    if url:
+        materials.append({
+            "name": doc_kind,
+            "url": url,
+            "type": "TXT",
+            "manualLock": True
+        })
+
+    return {
+        "date": date,
+        "round_number": round_number,
+        "title": title,
+        "materials": materials
+    }
 
 # 省庁・行政機関名のサフィックス正規表現（全省庁・外局・委員会網羅）
 GOV_SUFFIX_REGEX = re.compile(
@@ -914,6 +1005,11 @@ def parse_materials_from_html(html, base_url, pdf_selector=None):
     materials = []
     if not html:
         return materials
+
+    # CR-114: .txt テキスト議事録の場合はテキストパーサーで直接資料化
+    if base_url and base_url.lower().endswith('.txt'):
+        parsed = parse_txt_minutes(html, base_url)
+        return parsed.get("materials", [])
         
     soup = BeautifulSoup(html, 'html.parser')
     
@@ -993,17 +1089,7 @@ def parse_materials_from_html(html, base_url, pdf_selector=None):
                 "type": "HTML",
                 "isPrivate": False
             })
-            
-    private_lines = re.findall(r'(資料\d+[\s\:\：]*[^\n<]+(?:非公開)[^\n<]*)', html)
-    for p_text in private_lines:
-        clean_p_text = normalize_text(re.sub(r'<[^>]+>', '', p_text).strip())
-        materials.append({
-            "name": clean_p_text,
-            "url": "#",
-            "type": "非公開",
-            "isPrivate": True
-        })
-        
+
     return materials
 
 def extract_page_title(soup, rule=None, fallback_url=""):

@@ -192,6 +192,12 @@ UNIT_TEST_REGISTRY = {
         "name": "ジェネリック配付資料スマートコンテキスト復元テスト (test_drop47_context_recovery.py)",
         "description": "is_generic_material_name, recover_material_context, data.json 残存ゼロ検証",
         "runner": lambda: _run_py_class("test_drop47_context_recovery", "TestDrop47ContextRecovery")
+    },
+    "u_drop48": {
+        "id": "U15",
+        "name": "配付資料0件開催回救済・議事録テキスト正式資料化単体テスト (test_drop48_zero_materials_rescue.py)",
+        "description": "parse_txt_minutes, .txt 配付資料登録, 0件開催回救済削減",
+        "runner": lambda: _run_py_class("test_drop48_zero_materials_rescue", "TestDrop48ZeroMaterialsRescue")
     }
 }
 
