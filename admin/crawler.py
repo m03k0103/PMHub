@@ -485,6 +485,7 @@ _GENERIC_INDEX_URL_PATTERNS = re.compile(
     r'shingi/kaisaiyotei(?:\.html)?|'
     r'/kaisai_yotei\.html$|'
     r'260915\.html|'
+    r'singi_kento/kento/\d{4}/(?:index\.html)?$|'
     r'strategic_priorities',
     re.IGNORECASE
 )
@@ -492,7 +493,7 @@ _GENERIC_INDEX_URL_PATTERNS = re.compile(
 # 汎用インデックス判定用の除外タイトルキーワード（部分一致用）
 _GENERIC_INDEX_TITLE_KEYWORDS = frozenset({
     "その他情報", "覚書等", "覚書", "有識者会議｜警察庁", "過去の国際会議",
-    "研究会等一覧へのリンク", "会議資料詳細", "資料詳細", "会議詳細",
+    "研究会等一覧へのリンク", "会議資料詳細", "資料詳細", "会議詳細", "検討会等",
     "食の安全、を科学する", "審議会等", "｜デジタル庁", "｜Digital Agency", "Digital Agency",
     "政策・審議会等", "省議・審議会等", "政策・審議会等トップへ", "審議会・研究会",
     "監査監督機関国際フォーラム", "IFIAR", "議事録・資料等", "目次",
@@ -1414,6 +1415,10 @@ def extract_actual_subpage_links(html, target_url, rule=None, return_meta=False)
             continue
         if any(kw in t_clean for kw in ORGANIZATION_DOC_KEYWORDS) or any(kw in t_stripped for kw in ORGANIZATION_DOC_KEYWORDS):
             continue
+        # 年度別一覧・年度アーカイブリンクの除外（例: 令和8年度, 2026年度, 令和元年度/平成31年度 等）
+        if re.search(r'^(?:令和|平成|\d{4})\s*(?:度|年度)(?:/(?:令和|平成|\d{4})\s*(?:度|年度))?$', t_clean):
+            continue
+
         # 報告書公表ページ・活動状況等の組織常設資料（回次「第X回」を含まない単独報告書リンク）の除外
         if (any(k in t_clean for k in ['報告書', '活動状況', '視察概要', '論点整理', '提言']) or any(k in abs_url.lower() for k in ['/report/', '/tosin/'])) and not re.search(r'第\s*\d+\s*回', t_clean):
             continue
@@ -1427,6 +1432,14 @@ def extract_actual_subpage_links(html, target_url, rule=None, return_meta=False)
         # 非会議リンク（調査、問い合わせ、イベント、セミナー等）の厳格除外
         if any(kw in t_clean for kw in ['能力開発基本調査', '調査の実施について', '問い合わせ先', '情報配信サービス', 'イベント概要', 'セミナーのご案内', '労使関係セミナー', '公募情報']):
             continue
+
+        # 「関連リンク」「リンク集」等のセクション配下に配置された他施策・他会議リンクの除外
+        prev_h = a.find_previous(['h1', 'h2', 'h3', 'h4'])
+        if prev_h:
+            prev_h_text = normalize_text(prev_h.get_text(' ', strip=True))
+            if any(k in prev_h_text for k in ['関連リンク', 'リンク集', 'おすすめリンク', '関連施策', '関連情報']):
+                continue
+
 
         # 親ページテーブル内のリンクの除外ガード
         parent_tr = a.find_parent('tr')
@@ -1833,6 +1846,177 @@ def _extract_meetings_from_parent_table(html, target_url, council_name, rule=Non
 
     return meetings
 
+
+def _extract_meetings_from_parent_sections(html, target_url, council_name, rule=None, pdf_pattern=None):
+    """
+    親ページ内の見出し（<h2>, <h3>, <h4>）を行・ブロック単位で走査し、
+    各開催回（第X回〜）の「回次・開催日・配付資料リスト」を一体抽出する。
+    消防庁や内閣官房等の見出し直下に資料リストが並ぶ構造に対応。
+    """
+    if not html:
+        return []
+
+    soup = BeautifulSoup(html, 'html.parser')
+    base_tag = soup.find('base', href=True)
+    page_base = urllib.parse.urljoin(target_url, base_tag['href']) if base_tag else target_url
+
+    # ノイズ要素（nav, aside, footer, header 等）を除去
+    for tag in soup(['nav', 'aside', 'footer', 'script', 'style', 'header']):
+        tag.decompose()
+    for el in soup.find_all(id=re.compile(r'(side|nav|footer|header|menu|breadcrumb|popup|modal)', re.I)):
+        if el.name not in ('body', 'html'):
+            el.decompose()
+    for el in soup.find_all(class_=re.compile(r'(side|nav|footer|header|menu|breadcrumb|related)', re.I)):
+        if el.name not in ('body', 'html'):
+            el.decompose()
+
+    headings = soup.find_all(['h2', 'h3', 'h4'])
+    meetings = []
+    report_materials = []
+
+    for h in headings:
+        h_text = h.get_text(' ', strip=True)
+        norm_h = normalize_japanese_numbers(h_text)
+
+        # 報告書・とりまとめ見出しの検知
+        if any(k in norm_h for k in ['報告書', '取りまとめ', 'とりまとめ']) and not re.search(r'第\s*\d+\s*回', norm_h):
+            cur = h.next_sibling
+            while cur:
+                if getattr(cur, 'name', None) in ['h2', 'h3', 'h4']:
+                    break
+                if getattr(cur, 'name', None):
+                    for a in cur.find_all('a', href=True):
+                        href = a['href'].strip()
+                        if href.endswith('.pdf'):
+                            abs_url = urllib.parse.urljoin(page_base, href)
+                            mat_name = normalize_text(a.get_text(' ', strip=True)) or '報告書'
+                            report_materials.append({'name': mat_name, 'url': abs_url, 'type': 'PDF'})
+                cur = cur.next_sibling
+            continue
+
+        sess_match = re.search(r'第\s*(\d+)\s*回', norm_h)
+        if not sess_match:
+            continue
+
+        round_num = int(sess_match.group(1))
+
+        # 日付抽出（元号・西暦対応）
+        clean_search_text = re.sub(r'[\s\u2000-\u200f]+', '', norm_h)
+        date_matches = re.findall(r'(?:令和|平成)(?:\d+|元)年\d{1,2}月\d{1,2}日|\d{4}年\d{1,2}月\d{1,2}日|\d{4}[/-]\d{1,2}[/-]\d{1,2}', clean_search_text)
+        meet_date = None
+        for d in date_matches:
+            val = validate_and_normalize_date(d)
+            if val:
+                dt = parse_japanese_date(val)
+                if dt:
+                    meet_date = dt.strftime('%Y/%m/%d')
+                    break
+
+        # 直下の資料探索
+        mats = []
+        candidate_html_pages = []
+        cur = h.next_sibling
+        while cur:
+            if getattr(cur, 'name', None) in ['h2', 'h3', 'h4']:
+                break
+            if getattr(cur, 'name', None):
+                for a in cur.find_all('a', href=True):
+                    href = a['href'].strip()
+                    if not href or href.startswith('#') or href.startswith('javascript:'):
+                        continue
+                    abs_url = urllib.parse.urljoin(page_base, href)
+                    if abs_url.startswith('javascript:') or is_sns_pr_url(abs_url) or is_non_pdf_anchor_url(abs_url):
+                        continue
+                    if is_generic_index_url(abs_url) or _is_parent_or_nav_url(abs_url, target_url):
+                        continue
+
+                    raw_mat_name = a.get_text(' ', strip=True)
+                    clean_mat_name = re.sub(r'[\（\(\［\[]PDF.*?[）\)\］\]]', '', raw_mat_name, flags=re.IGNORECASE).strip()
+                    clean_mat_name = re.sub(r'NEW\s*\d+月\d+日', '', clean_mat_name).strip()
+
+                    if is_generic_material_name(clean_mat_name):
+                        clean_mat_name = recover_material_context(a, initial_name=clean_mat_name)
+
+                    fn = os.path.basename(urllib.parse.urlparse(abs_url).path)
+                    if 'gijiroku' in fn.lower() and (is_generic_material_name(clean_mat_name) or clean_mat_name in ('資料', '配付資料', '配布資料')):
+                        clean_mat_name = "議事録"
+                    elif not clean_mat_name:
+                        clean_mat_name = "配付資料"
+
+                    clean_mat_name = normalize_text(clean_mat_name)
+
+                    if clean_mat_name in EXCLUDE_MATERIAL_NAMES or any(k in clean_mat_name for k in ['移動します', '公式ポータル', '公式ページ', '公式情報ポータル', '審議会・検討会等一覧', '公式掲載資料・ページ']) or any(kw in clean_mat_name for kw in ['傍聴される皆様への留意事項', '傍聴留意事項', '傍聴申込', '傍聴希望', '傍聴案内', 'お申込みください', 'お申込みは', '傍聴される皆様へ']):
+                        continue
+
+                    is_pdf = href.lower().endswith(('.pdf', '.docx', '.xlsx', '.doc', '.xls')) or '/pdf/' in href.lower()
+                    is_pure_minutes = any(k in href.lower() for k in ['gijiroku', 'gijiyoshi', 'proceedings']) or any(k in clean_mat_name for k in ['議事録', '議事要旨'])
+
+                    if is_pdf:
+                        mats.append({
+                            "name": clean_mat_name,
+                            "url": abs_url,
+                            "type": "PDF"
+                        })
+                    elif is_pure_minutes:
+                        mats.append({
+                            "name": clean_mat_name,
+                            "url": abs_url,
+                            "type": "HTML"
+                        })
+                    elif href.endswith('.html') or href.endswith('.htm'):
+                        candidate_html_pages.append({
+                            "name": clean_mat_name,
+                            "url": abs_url
+                        })
+            cur = cur.next_sibling
+
+        # 資料も日付もない場合はスキップ
+        if not mats and not candidate_html_pages and not meet_date:
+            continue
+
+        # 直下にPDFがなくHTML候補がある場合
+        if not any(m.get('type') == 'PDF' for m in mats) and candidate_html_pages:
+            for cand in candidate_html_pages[:3]:
+                c_url = cand['url']
+                c_html = fetch_url(c_url, timeout=6)
+                if c_html:
+                    sub_mats = parse_materials_from_html(c_html, c_url, pdf_pattern)
+                    pdf_sub_mats = [sm for sm in sub_mats if sm.get('type') == 'PDF']
+                    if pdf_sub_mats:
+                        for psm in pdf_sub_mats:
+                            if not any(rm['url'] == psm['url'] for rm in mats):
+                                mats.append(psm)
+                    else:
+                        if not any(rm['url'] == c_url for rm in mats):
+                            mats.append({
+                                "name": cand['name'] or "資料",
+                                "url": c_url,
+                                "type": "HTML"
+                            })
+
+        meet_title = f"第{round_num}回 {council_name}"
+        meetings.append({
+            "subpageUrl": target_url,
+            "round_num": round_num,
+            "name": meet_title,
+            "title": meet_title,
+            "extractedMaterialsCount": len(mats),
+            "materials": mats,
+            "extractedDates": [meet_date] if meet_date else [],
+            "isFromParentSection": True
+        })
+
+    # 報告書資料があれば最終回に付与
+    if report_materials and meetings:
+        last_m = max(meetings, key=lambda m: m.get('round_num', 0))
+        for rm in report_materials:
+            if not any(m['url'] == rm['url'] for m in last_m['materials']):
+                last_m['materials'].append(rm)
+                last_m['extractedMaterialsCount'] = len(last_m['materials'])
+
+    return meetings
+
+
 def clean_html_for_dates(html_str):
     """ヘッダー・フッター・サイドバー・パンくず・スキップリンク等のノイズを除去して本文ブロックを抽出"""
     if not html_str:
@@ -2197,6 +2381,27 @@ def execute_rule_retrieval(target, html, rule_item, use_llm=False, recheck_recen
             top_materials.extend(tm.get("materials", []))
             all_extracted_dates.extend(tm.get("extractedDates", []))
 
+    # 親ページセクション解析の実行（h2/h3等の見出し構造から各開催回の回次・日付・資料を直接抽出）
+    section_meetings = _extract_meetings_from_parent_sections(html, target["url"], target["name"], rule, pdf_pattern)
+    if section_meetings:
+        # 既にテーブルから抽出された回次と重複しないものだけを追加
+        existing_rounds = set()
+        for tm in table_meetings:
+            sess = extract_session_numbers(tm.get("name", ""))
+            existing_rounds.update(sess)
+        filtered_sections = []
+        for sm in section_meetings:
+            s_sess = extract_session_numbers(sm.get("name", ""))
+            if not s_sess or not any(s in existing_rounds for s in s_sess):
+                filtered_sections.append(sm)
+        if filtered_sections:
+            print(f"   [親ページセクション解析] 親ページ見出し構造から {len(filtered_sections)} 件の開催回を検出しました。")
+            subpage_meetings.extend(filtered_sections)
+            for sm in filtered_sections:
+                top_materials.extend(sm.get("materials", []))
+                all_extracted_dates.extend(sm.get("extractedDates", []))
+
+
     seen_keys = set()
     for m in top_materials:
         key = m["url"] if m["url"] != "#" else m["name"]
@@ -2257,7 +2462,10 @@ def is_generic_index_url(url, title=""):
     """報道発表インデックスやポータルトップ・開催状況一覧・「その他情報」等の汎用インデックスURLかどうかを判定する"""
     if not url:
         return True
-    if _GENERIC_INDEX_URL_PATTERNS.search(url.lower()):
+    u_low = url.lower()
+    if u_low.endswith(('.pdf', '.docx', '.xlsx', '.doc', '.xls')) or '/pdf/' in u_low:
+        return False
+    if _GENERIC_INDEX_URL_PATTERNS.search(u_low):
         return True
     if title:
         t_clean = title.strip()
