@@ -208,7 +208,8 @@ def check_syntax_errors():
         os.path.join(PROJECT_ROOT, "testing", "test_drop41_fallback_and_discovery.py"),
         os.path.join(PROJECT_ROOT, "testing", "test_drop46_data_cleanup.py"),
         os.path.join(PROJECT_ROOT, "testing", "test_drop47_context_recovery.py"),
-        os.path.join(PROJECT_ROOT, "testing", "test_drop48_zero_materials_rescue.py")
+        os.path.join(PROJECT_ROOT, "testing", "test_drop48_zero_materials_rescue.py"),
+        os.path.join(PROJECT_ROOT, "testing", "test_drop49_meeting_id_normalization.py")
     ]
     
     errors_found = 0
@@ -961,6 +962,7 @@ def detect_required_unit_tests(changed_files):
         "test_drop46_data_cleanup.py": ["u_drop46"],
         "test_drop47_context_recovery.py": ["u_drop47"],
         "test_drop48_zero_materials_rescue.py": ["u_drop48"],
+        "test_drop49_meeting_id_normalization.py": ["u_drop49"],
         "run_unit_tests.py": list(UNIT_TEST_REGISTRY.keys())
     }
     for f in changed_files:
@@ -976,6 +978,7 @@ def detect_required_unit_tests(changed_files):
     if any("admin/utils.py" in f for f in changed_files):
         required_keys.add("u_date_parsing")
         required_keys.add("u_url_matching_fallback")
+        required_keys.add("u_drop49")
 
     # クローラー本体の仕様コード変更 (admin/crawler.py)
     if any("admin/crawler.py" in f for f in changed_files):
@@ -1021,6 +1024,9 @@ def detect_required_unit_tests(changed_files):
         if "parse_txt_minutes" in diff_out:
             required_keys.add("u_drop48")
             matched = True
+        if any(w in diff_out for w in ["sess_suffix", "new_meet_id"]):
+            required_keys.add("u_drop49")
+            matched = True
         if any(w in diff_out for w in ["safe_emit_log", "COMMON_NAV_KEYWORDS", "ORGANIZATION_DOC_KEYWORDS"]):
             required_keys.add("u_robustness")
             matched = True
@@ -1029,7 +1035,7 @@ def detect_required_unit_tests(changed_files):
             matched = True
 
         if not matched:
-            for k in ["u_crawler_foundation", "u_parent_table", "u_incremental", "u_quality_eval", "u_subpage_links", "u_waf", "u_table_html_expand", "u_date_parsing", "u_url_matching_fallback", "u_robustness", "u_speedup", "u_drop46", "u_drop47", "u_drop48"]:
+            for k in ["u_crawler_foundation", "u_parent_table", "u_incremental", "u_quality_eval", "u_subpage_links", "u_waf", "u_table_html_expand", "u_date_parsing", "u_url_matching_fallback", "u_robustness", "u_speedup", "u_drop46", "u_drop47", "u_drop48", "u_drop49"]:
                 required_keys.add(k)
 
     return required_keys

@@ -2373,14 +2373,22 @@ def _build_new_meeting(target, sub, clean_materials_list, sess_nums, meet_date, 
     ministry = target.get("ministry", "")
     sub_title = sub.get("title", "").strip()
 
-    # 会議IDの生成（4セグメント統一形式: {council_id}-{YYYYMMDD}-{回次000またはs00}）
+    # 会議IDの生成（4セグメント統一形式: {council_id}-{YYYYMMDD}-{回次3〜4桁またはs00〜s999}）
     clean_d = meet_date.replace("/", "").replace("-", "")
-    sess_suffix = f"{sorted(sess_nums)[0]:03d}" if sess_nums else f"s{len(existing_c_meets) + added_count + 1:02d}"
+    if sess_nums:
+        min_s = sorted(sess_nums)[0]
+        sess_suffix = f"{min_s:04d}" if min_s >= 1000 else f"{min_s:03d}"
+    else:
+        seq = len(existing_c_meets) + added_count + 1
+        sess_suffix = f"s{seq:03d}" if seq >= 100 else f"s{seq:02d}"
     new_meet_id = f"{council_id}-{clean_d}-{sess_suffix}"
 
-    # 重複ID回避
+    # 重複ID回避（規約外アンダースコア _2 ではなく、臨時会合体系 s01.. で一意化）
     if new_meet_id in existing_meeting_ids:
-        new_meet_id = f"{council_id}-{clean_d}-{sess_suffix}_{added_count+1}"
+        alt_seq = 1
+        while f"{council_id}-{clean_d}-s{alt_seq:02d}" in existing_meeting_ids:
+            alt_seq += 1
+        new_meet_id = f"{council_id}-{clean_d}-s{alt_seq:02d}"
 
     # タイトルの正規化
     formatted_title = sub_title

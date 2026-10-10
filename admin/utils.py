@@ -235,8 +235,8 @@ def parse_japanese_date(date_str):
 
 
 
-_RE_COUNCIL_ID = re.compile(r'^[a-z]+-[a-z0-9_]+$')
-_RE_MEETING_ID = re.compile(r'^[a-z]+-[a-z0-9_]+-\d{8}-[a-z0-9_]+$')
+_RE_COUNCIL_ID = re.compile(r'^[a-z0-9]+-[a-z0-9_]+$')
+_RE_MEETING_ID = re.compile(r'^[a-z0-9]+-[a-z0-9_]+-\d{8}-(\d{3,4}|[a-z]\d{2,3})$')
 
 
 def validate_council_id(council_id):

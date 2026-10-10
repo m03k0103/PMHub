@@ -198,6 +198,12 @@ UNIT_TEST_REGISTRY = {
         "name": "配付資料0件開催回救済・議事録テキスト正式資料化単体テスト (test_drop48_zero_materials_rescue.py)",
         "description": "parse_txt_minutes, .txt 配付資料登録, 0件開催回救済削減",
         "runner": lambda: _run_py_class("test_drop48_zero_materials_rescue", "TestDrop48ZeroMaterialsRescue")
+    },
+    "u_drop49": {
+        "id": "U16",
+        "name": "開催回ID命名規約整合化・4桁回次許容単体テスト (test_drop49_meeting_id_normalization.py)",
+        "description": "validate_meeting_id, 年度プレフィックス排除, 重複ゼロ, 4桁回次・3桁臨時回次許容",
+        "runner": lambda: _run_py_class("test_drop49_meeting_id_normalization", "TestDrop49MeetingIdNormalization")
     }
 }
 
