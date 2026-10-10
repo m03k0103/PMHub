@@ -283,11 +283,17 @@ def clear_data_json_cache(target_file=None):
         _DATA_JSON_CACHE.pop(abs_path, None)
 
 
+DEFAULT_ADMIN_DATA_JSON_PATH = os.path.join(BASE_DIR, "admin_data.json")
+
+
 def load_data_json(target_file=DEFAULT_DATA_JSON_PATH, cached=False):
     """
     docs/data.json を安全に読み込み、辞書オブジェクトを返す。
     cached=True の場合、mtime（ファイル最終更新日時）連動のインメモリキャッシュを返し、再パースをスキップする。
     ファイルが存在しないかエラーの場合は空辞書 {} を返す。
+    Drop 62: admin/admin_data.json が存在する場合、管理用キー（scrapingRules, scrapingRuleTemplates,
+    discoveryKeywords, crawlerConfig, rejectedCouncils, initialAlertKeywords, crawlStatuses）を透過的にマージして
+    既存テストおよびバックエンドコードの後方互換性を完全に維持する。
     """
     if not os.path.exists(target_file):
         return {}
@@ -298,18 +304,60 @@ def load_data_json(target_file=DEFAULT_DATA_JSON_PATH, cached=False):
     except OSError:
         mtime = 0
 
+    admin_path = os.path.abspath(DEFAULT_ADMIN_DATA_JSON_PATH)
+    admin_mtime = 0
+    if os.path.exists(admin_path):
+        try:
+            admin_mtime = os.path.getmtime(admin_path)
+        except OSError:
+            admin_mtime = 0
+
+    cache_key = (abs_path, mtime, admin_mtime)
+
     if cached and abs_path in _DATA_JSON_CACHE:
-        cached_mtime, cached_data = _DATA_JSON_CACHE[abs_path]
-        if cached_mtime == mtime:
+        cached_meta, cached_data = _DATA_JSON_CACHE[abs_path]
+        if cached_meta == cache_key:
             return cached_data
 
     try:
         with open(abs_path, "r", encoding="utf-8") as f:
             data = json.load(f)
             data_dict = data if isinstance(data, dict) else {}
-            if cached:
-                _DATA_JSON_CACHE[abs_path] = (mtime, data_dict)
-            return data_dict
+
+        # admin_data.json が存在し、読み込み対象が data.json の場合は管理情報をマージ
+        is_main_data_json = (
+            abs_path == os.path.abspath(DEFAULT_DATA_JSON_PATH)
+            or os.path.basename(abs_path) == "data.json"
+        )
+        if is_main_data_json and os.path.exists(admin_path):
+            try:
+                with open(admin_path, "r", encoding="utf-8") as af:
+                    admin_dict = json.load(af)
+                    if isinstance(admin_dict, dict):
+                        merge_keys = [
+                            "scrapingRuleTemplates",
+                            "scrapingRules",
+                            "discoveryKeywords",
+                            "crawlerConfig",
+                            "rejectedCouncils",
+                            "initialAlertKeywords"
+                        ]
+                        for k in merge_keys:
+                            if k in admin_dict and k not in data_dict:
+                                data_dict[k] = admin_dict[k]
+
+                        crawl_statuses = admin_dict.get("crawlStatuses", {})
+                        if crawl_statuses and "councils" in data_dict:
+                            for c in data_dict["councils"]:
+                                cid = c.get("id")
+                                if cid and "crawlStatus" not in c and cid in crawl_statuses:
+                                    c["crawlStatus"] = crawl_statuses[cid]
+            except Exception as e_admin:
+                print(f"[WARN] Failed to merge admin_data.json: {e_admin}", file=sys.stderr)
+
+        if cached:
+            _DATA_JSON_CACHE[abs_path] = (cache_key, data_dict)
+        return data_dict
     except Exception as e:
         print(f"[WARN] Failed to load {target_file}: {e}", file=sys.stderr)
         return {}

@@ -23,3 +23,10 @@ admin/logs/
 *.bak
 _temp_*.json
 testing/.url_cache.json
+
+# Local SQLite Databases (Git-untracked, built from seed_db.py)
+admin/pmhub.db
+*.db
+*.sqlite
+*.db-wal
+*.db-shm

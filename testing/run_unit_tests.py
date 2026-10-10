@@ -204,6 +204,12 @@ UNIT_TEST_REGISTRY = {
         "name": "開催回ID命名規約整合化・4桁回次許容単体テスト (test_drop49_meeting_id_normalization.py)",
         "description": "validate_meeting_id, 年度プレフィックス排除, 重複ゼロ, 4桁回次・3桁臨時回次許容",
         "runner": lambda: _run_py_class("test_drop49_meeting_id_normalization", "TestDrop49MeetingIdNormalization")
+    },
+    "u_drop62": {
+        "id": "U17",
+        "name": "DBマスター・2系統エクスポート・可逆性単体テスト (test_drop62_db_and_export.py)",
+        "description": "schema.sql DDL, seed_db, export_data 2系統分離, 双方向可逆性検証",
+        "runner": lambda: _run_py_class("test_drop62_db_and_export", "TestDrop62DatabaseAndExport")
     }
 }
 

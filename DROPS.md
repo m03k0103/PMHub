@@ -15,24 +15,60 @@
 
 | 対応 Drop | 施策区分 | 主な対象・内容 | クロール成功率 / 成果 | ステータス |
 |:---:|:---|:---|:---:|:---:|
-| **Drop 61** | **直近の修正済Drop**<br>(開催回分離・配付資料適正化) | **水産庁 水産物消費拡大実行計画会議 第1回〜第6回 開催回分離・配付資料適正化 & スラグ規約正規化**<br>水産庁「水産物消費拡大実行計画会議（旧 `jfa-603` $\to$ `jfa-suisan_shouhi_kakudai`）」について、単一回にバンドルされていた54件の配付資料を解消し、第1回（令和3年9月17日）から第6回（令和8年3月19日）までの全6開催回へ完全分離。全65件の正規配付資料（PDF）を開催回ごとに完全配分、不要UIリンク排除、親テーブル型スクレイピングルールの連動反映 | **全6開催回完全分離 & 全65配付資料完全紐づけ・規約スラグID正規化** | 完了 |
+| **Drop 61** | **過去の修正済Drop**<br>(開催回分離・配付資料適正化) | **水産庁 水産物消費拡大実行計画会議 第1回〜第6回 開催回分離・配付資料適正化 & スラグ規約正規化**<br>水産庁「水産物消費拡大実行計画会議（旧 `jfa-603` $\to$ `jfa-suisan_shouhi_kakudai`）」について、単一回にバンドルされていた54件の配付資料を解消し、第1回（令和3年9月17日）から第6回（令和8年3月19日）までの全6開催回へ完全分離。全65件の正規配付資料（PDF）を開催回ごとに完全配分、不要UIリンク排除、親テーブル型スクレイピングルールの連動反映 | **全6開催回完全分離 & 全65配付資料完全紐づけ・規約スラグID正規化** | 完了 |
+| **Drop 62** | **最新の完了Drop**<br>(DBマスター化 & 2系統エクスポート) | **SQLite マスターデータソース構築 & リバーシブル2系統JSONエクスポート基盤の実装（Track [Database] / Track [Search] 基盤）**<br>単一巨大 `data.json` から SQLite（`admin/pmhub.db`）マスター構成へ転換。公開用スリム化 `docs/data.json`（30.12MB、約1.7MBスリム化）とクローラー・管理用 `admin/admin_data.json`（2.36MB）への決定論的2系統エクスポート、および完全リバーシブルシードツールの構築 | **DBマスター化 & 2系統エクスポート基盤確立・完全可逆性実証** | **完了** |
 
 ---
 
-## 2. 今後の開発構想（Tracks）
+## 2. 今後の開発構想（Tracks ロードマップ）
 
 | Track ID | 構想テーマ | 主な対象・内容 | 到達成果・期待価値 | ステータス |
 |:---:|:---|:---|:---:|:---:|
-| **Track [Search]** | **次期リリース検討**<br>(全文検索基盤) | **配付資料テキスト（PDF/HTML）自動抽出パイプライン & 全文検索インデックス基盤**<br>PMM（`D:\dev\PMM\docs`）のダウンロード済ファイル群（全省庁PDF等）を活用した高速テキスト抽出、キャッシュ基盤、主要政策キーワード抽出、フロントエンド用全文検索インデックス生成パイプライン | **全文政策検索エンジン化** | 次期リリース検討 |
+| **Track [Database]**<br>(フェーズ 1 & 2) | **データ基盤刷新**<br>(DBマスター化 & 2系統エクスポート) | **【フェーズ 1】スキーマ定義 & 双方向同期ツール構築（Drop 62）**<br>`admin/db/schema.sql`, `seed_db.py`, `export_data.py` 実装、公開用 `docs/data.json` と管理用 `admin/admin_data.json` 分割エクスポート、リバーシブル検証<br>**【フェーズ 2】クローラー & 管理サーバーの DB 接続**<br>`admin/server.py` および `admin/crawler.py` のデータ読み書きを DB 経由に切り替え、クロール完了時自動エクスポートパイプライン確立 | **ACIDトランザクション・完全リバーシブル同期・公開JSONスリム化** | **【フェーズ1: 完了】**<br>【フェーズ2: 構想】 |
+| **Track [Search]**<br>(フェーズ 3) | **全文検索エンジン化**<br>(PMM資産連携 FTS5基盤) | **【フェーズ 3】PMM テキスト抽出 & FTS5 構築・全文検索 API 稼働**<br>PMM（`D:\dev\PMM\docs`）の 10.7 万件から本文テキストを並列抽出し、SQLite FTS5（trigram）仮想テーブル `fts_materials` に投入。管理サーバー `/api/search` 全文検索 API および公開ポータル連携 | **10.7万件配付資料の横断全文検索・該当ページ即時ジャンプ** | 構想（次期リリース） |
 | **Track [Architecture]** | **今後の開発構想**<br>(モジュール分割) | **リファクタリング領域E: クローラー本体（crawler.py）の責務分離 & scratch/ クリーンアップ**<br>`admin/crawler.py`（約2,900行）のパーサー・探索戦略・データ同期モジュール分割、1,231ファイル（66MB）の `scratch/` 整理および `.gitignore` 追加による作業ツリークリーン化 | **クローラー軽量化 & 開発環境整備** | 構想 |
-| **Track [Optimization]** | **今後の開発構想**<br>(通信量最適化) | **リファクタリング領域D: クローラー設定分離 & 公開JSONの minified 化による通信量最適化**（当面見送り）<br>`docs/data.json` からフロント未使用のクローラー専用設定（`scrapingRules` 0.35MB 等）を `admin/scraping_rules.json` へ分離、公開用 JSON の minified 化（約7.9MB削減・22.8MB化） | **初回DL通信量 7.9MB 削減 & 設定分離** | 構想（保留） |
 | **Track [Policy-AI]** | **今後の開発構想**<br>(政策分析・連携) | **省庁横断政策テーマ連携 & AI 議題要約・タイムライン可視化**<br>親組織・分科会・部会・ワーキンググループの階層オントロジー定義、省庁横断政策テーマタグ連携、AI 時系列タイムライン分析エンジン | **省庁横断政策分析支援** | 構想 |
 
 ---
 
-### 【次期リリース検討】Track [Search]: 配付資料テキスト（PDF/HTML）自動抽出パイプライン & 全文検索インデックス基盤
+### 【Drop 62】Track [Database] フェーズ 1: SQLite マスターデータソース構築 & 双方向同期ツール（完了）
 
-配付資料（PDF/HTML 約11.7万件）の本文テキストを抽出し、政策キーワードの自動抽出およびフロントエンド（公開ポータル）で高速検索可能な全文検索インデックスを生成する基盤を構築する。
+単一の巨大な `docs/data.json`（約31.8MB）からローカル SQLite データベース（`admin/pmhub.db`）をマスターデータソースとするアーキテクチャへ転換。公開用スリム化 `docs/data.json`（30.12MB、約1.7MBスリム化）とクローラー・管理用 `admin/admin_data.json`（2.36MB）への決定論的2系統エクスポート、および完全リバーシブルシードツールを構築し、Track [Search] の強固な土台を確立した。
+
+- **フェーズ 1 の成果**:
+  1. `admin/db/schema.sql`、`admin/db/seed_db.py`、`admin/db/export_data.py` を実装完了。
+  2. 既存の `docs/data.json` から DB へ 7.92秒で一括高速シードし、DB から 2 つの JSON へ 0.73秒で決定論的エクスポート。
+  3. `admin/utils.py` の `load_data_json()` において `admin_data.json` の透過的マージ機構を配備し、100%の後方互換性を担保。
+  4. 新設した単体テスト `test_drop62_db_and_export.py`（U17）を含む、統合テストスイート（全14ケース＋単体17種）に完全合格。
+
+| ID | 分類 | 内容 | 対象ファイル | 状態 |
+|:---|:---:|:---|:---|:---:|
+| **CR-151** | DBスキーマ定義 | **SQLite マスターDBスキーマ定義 & リバーシブルDDL構築**<br>`councils`, `meetings`, `materials`, `council_materials`, `scraping_rules`, `crawl_statuses`, `admin_configs` テーブル、および Track [Search] 用 `fts_materials`（FTS5 trigram）テーブルを定義。`.gitignore` に `admin/pmhub.db` を追加 | `admin/db/schema.sql`<br>`.gitignore` | 完了 |
+| **CR-152** | 2系統エクスポート | **決定論的 2 系統 JSON エクスポートツールの実装**<br>`admin/pmhub.db` から公開用 `docs/data.json`（スリム化・ソート済み）および管理用 `admin/admin_data.json`（ルール・設定・手動ロック明細）を決定論的（差分最小化）に出力する `export_data.py` を実装 | `admin/db/export_data.py` | 完了 |
+| **CR-153** | リバーシブルシード | **完全リバーシブル・シードツールの実装**<br>`docs/data.json` および `admin/admin_data.json` から `admin/pmhub.db` をゼロから高速に完全再構築する `seed_db.py` を実装。初回移行時（現行の単一 `data.json` からのシード）にも完全対応 | `admin/db/seed_db.py` | 完了 |
+| **CR-154** | テスト検証 | **Drop 62 単体テスト新設 & 統合テストスイート整合性検証**<br>`testing/test_drop62_db_and_export.py`（U17）を新設。DDL初期化、シード $\to$ エクスポートの双方向可逆性（ロスレス）、2系統JSONのキー整合性を検証。統合テストスイート（全14ケース＋単体17種）完全合格を確認 | `testing/test_drop62_db_and_export.py`<br>`testing/run_unit_tests.py`<br>`testing/run_test_suite.py`<br>`admin/utils.py` | 完了 |
+
+---
+
+### 【次期リリース構想】Track [Database] フェーズ 2: クローラー & 管理サーバーの DB 接続
+
+フェーズ 1 で確立したマスターDB基盤に基づき、運用系ツール（`admin/crawler.py`, `admin/server.py`）のデータアクセス層を DB 直接接続へ切り替える。
+
+- **フェーズ 2 のスコープ**:
+  1. `admin/server.py` および `admin/crawler.py` のデータ読み書きを DB 経由に切り替え。
+  2. クロール完了時に `export_data.py` を自動実行し、Git 管理対象の 2 つの JSON を自動更新・出力するパイプラインを確立。
+  3. `docs/data.json` と `admin/admin_data.json` の同時更新をアトミックに担保。
+
+---
+
+### 【次期リリース構想】Track [Search] フェーズ 3: PMM テキスト抽出 & FTS5 構築・全文検索 API 稼働
+
+PMM プロジェクト（`D:\dev\PMM\docs`）に蓄積された全 33 省庁・1,491 会議体・18,044 開催回のダウンロード済配付資料ファイル群（PDF/HTML 約 10.7 万件・107GB）を活用し、完全ローカル高速I/Oで全文検索インデックスを構築する。
+
+- **フェーズ 3 のスコープ**:
+  1. `D:\dev\PMM\docs` の 10.7 万件から抽出した本文テキストを SQLite FTS5 仮想テーブル `fts_materials` に投入。
+  2. 管理サーバー（`admin/server.py`）に `/api/search` 全文検索エンドポイントを配備し、管理ダッシュボードで即座に本文横断検索を可能化。
+  3. 公開ポータル（`docs/app.js`）向けに直近 2024〜2026 年の重要トピック軽量静的 Sharded Index を生成・連携。
 
 > [!TIP]
 > **PMM 既存資産（`D:\dev\PMM\docs`）の最大活用方針**:
