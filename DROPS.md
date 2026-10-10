@@ -85,7 +85,7 @@
 過去に完了した全実装済み Drop（Drop 1 〜 Drop 61）の記録です。
 
 <details>
-<summary><b>1. 過去の施策ステップ・到達成果サマリー（Drop 1 〜 61）（クリックで開閉）</b></summary>
+<summary>1. 過去の施策ステップ・到達成果サマリー（Drop 1 〜 61）（クリックで開閉）</summary>
 
 ### 1-1. クロール成功率向上ロードマップ（施策ステップと到達予測）
 
@@ -155,12 +155,12 @@
   - **Drop 42**: 税制調査会 ポータル誤登録開催回（The Tax Commission）削除 & クロール再混入防止ガード。内閣府「税制調査会」（cao-zei_cho）においてトップポータルページが誤登録されていた開催回「税制調査会 The Tax Commission」（cao-zei_cho-20260901-001）を完全削除、crawler.py における再混入防止ガード（`The Tax Commission` / `Tax Commission` の汎用タイトル除外および親URL自己参照除外）、全会議体横展開スキャンによる類似英語組織名・ポータル誤登録の根絶検証完了。
   - **Drop 43**: 内閣府 経済財政諮問会議 2026年開催回・配付資料完全同期 & アーカイブ起点化。内閣府「経済財政諮問会議」（`cao-keizai_shimon`）において、2026年開催回一覧ページ（`https://www5.cao.go.jp/keizai-shimon/kaigi/minutes/2026/index.html`）および各回個別配付資料ページ（`*agenda.html`）から第1回〜第13回の全13開催回および全119件の配付資料（議事次第・説明資料・参考資料・有識者議員提出資料・議事要旨・大臣会見要旨）を完全同期、`archiveUrl` 起点化およびスクレイピングルールの連動反映完了。
 
----
-
 </details>
 
+<br>
+
 <details>
-<summary><b>2. Drop 19 〜 61 実装詳細記録（クリックで開閉）</b></summary>
+<summary>2. Drop 19 〜 61 実装詳細記録（クリックで開閉）</summary>
 
 ### 【Drop 19】クローラー精度飛躍的向上 & METI/ANRE重複統合・FSA同期（全5件・完了）
 
