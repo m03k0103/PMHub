@@ -12,7 +12,8 @@ const {
   capitalize,
   sortMeetings,
   sortCouncils,
-  normalizeForSearch
+  normalizeForSearch,
+  getReferenceDate
 } = require('../docs/app.js');
 
 test('sanitizeUrl utility function (Security / XSS prevention)', async (t) => {
@@ -305,6 +306,31 @@ test('normalizeForSearch utility function (NFKC & Kangxi radicals / fullwidth ab
     assert.strictEqual(normalizeForSearch(''), '');
     assert.strictEqual(normalizeForSearch(null), '');
     assert.strictEqual(normalizeForSearch(undefined), '');
+  });
+});
+
+test('getReferenceDate utility function (Reference date for date filters and past year counts)', async (t) => {
+  await t.test('returns a valid Date object representing current time', () => {
+    const before = new Date();
+    const ref = getReferenceDate();
+    const after = new Date();
+
+    assert.ok(ref instanceof Date, 'should be instance of Date');
+    assert.strictEqual(isNaN(ref.getTime()), false, 'should have valid timestamp');
+    assert.ok(ref.getTime() >= before.getTime(), 'should be >= timestamp before invocation');
+    assert.ok(ref.getTime() <= after.getTime(), 'should be <= timestamp after invocation');
+  });
+
+  await t.test('integrates with isMeetingInDateRange default refDate parameter', () => {
+    const today = new Date();
+    const y = today.getFullYear();
+    const m = String(today.getMonth() + 1).padStart(2, '0');
+    const d = String(today.getDate()).padStart(2, '0');
+    const todayStr = `${y}/${m}/${d}`;
+
+    const todayMeeting = { date: todayStr };
+    assert.strictEqual(isMeetingInDateRange(todayMeeting, '7D'), true, 'today meeting should be within 7D of current time');
+    assert.strictEqual(isMeetingInDateRange(todayMeeting, 'PAST_YEAR'), true, 'today meeting should be within PAST_YEAR of current time');
   });
 });
 

@@ -510,11 +510,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
   // --- DATE REFERENCE & PAST YEAR HELPERS ---
   function getReferenceDate() {
-    // データの最終クロール日時または現在時刻を基準日とする
-    if (typeof LAST_CRAWL_TIME !== 'undefined' && LAST_CRAWL_TIME) {
-      const d = new Date(LAST_CRAWL_TIME.replace(/-/g, '/'));
-      if (!isNaN(d.getTime())) return d;
-    }
+    // 基準日をユーザーアクセス時の現在時刻とする
     return new Date();
   }
 
@@ -1744,6 +1740,10 @@ function sortCouncils(list, sortBy = (typeof state !== 'undefined' ? state.sortB
   return mapped.map(x => x.council);
 }
 
+function getReferenceDate() {
+  return new Date();
+}
+
 if (typeof module !== 'undefined' && module.exports) {
   module.exports = {
     getFiscalYear,
@@ -1757,6 +1757,7 @@ if (typeof module !== 'undefined' && module.exports) {
     isMeetingInDateRange,
     sortMeetings,
     sortCouncils,
-    normalizeForSearch
+    normalizeForSearch,
+    getReferenceDate
   };
 }
