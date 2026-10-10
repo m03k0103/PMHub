@@ -84,7 +84,7 @@
 
 過去に完了した全実装済み Drop（Drop 1 〜 Drop 61）の記録です。
 
-<details>
+<details open>
 <summary>1. 過去の施策ステップ・到達成果サマリー（Drop 1 〜 61）（クリックで開閉）</summary>
 
 ### 1-1. クロール成功率向上ロードマップ（施策ステップと到達予測）
@@ -157,7 +157,7 @@
 
 </details>
 
-<details>
+<details open>
 <summary>2. Drop 19 〜 61 実装詳細記録（クリックで開閉）</summary>
 
 ### 【Drop 19】クローラー精度飛躍的向上 & METI/ANRE重複統合・FSA同期（全5件・完了）
