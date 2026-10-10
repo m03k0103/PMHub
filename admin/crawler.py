@@ -1902,7 +1902,12 @@ def _extract_meetings_from_parent_sections(html, target_url, council_name, rule=
 
         # 日付抽出（元号・西暦対応）
         clean_search_text = re.sub(r'[\s\u2000-\u200f]+', '', norm_h)
+        # CR-126: 行政サイト日付誤植補正（例: 令和元年11年15日 -> 令和元年11月15日）
+        clean_search_text = re.sub(r'((?:令和|平成|昭和)(?:\d+|元)年)\s*(\d{1,2})年(\d{1,2}日)', r'\1\2月\3', clean_search_text)
+        # CR-126: 複数日範囲表記の開始日抽出補正（例: 4月13～17日 -> 4月13日, 4月18～19日 -> 4月18日）
+        clean_search_text = re.sub(r'(\d{1,2}月\d{1,2})\s*[～~ー―\-\u301C\uFF5E]\s*(?:\d{1,2}月)?\d{1,2}日', r'\1日', clean_search_text)
         date_matches = re.findall(r'(?:令和|平成)(?:\d+|元)年\d{1,2}月\d{1,2}日|\d{4}年\d{1,2}月\d{1,2}日|\d{4}[/-]\d{1,2}[/-]\d{1,2}', clean_search_text)
+
         meet_date = None
         for d in date_matches:
             val = validate_and_normalize_date(d)
@@ -2101,12 +2106,25 @@ def extract_clean_dates_from_html(html_str, date_regex_pattern=r'(?<![\d\w\/\-])
     cleaned_html = unicodedata.normalize('NFKC', cleaned_html)
     # 全角数字を半角に正規化
     cleaned_html = normalize_japanese_numbers(cleaned_html)
+    # CR-126: 行政サイト日付誤植補正（例: 令和元年11年15日 -> 令和元年11月15日）
+    cleaned_html = re.sub(
+        r'((?:令和|平成|昭和)\s*(?:\d+|元)\s*年|\b\d{4}\s*年)\s*(\d{1,2})\s*年\s*(\d{1,2})\s*日',
+        r'\1\2月\3日',
+        cleaned_html
+    )
+    # CR-126: 複数日範囲表記の開始日抽出補正（例: 4月13～17日 -> 4月13日, 4月18～19日 -> 4月18日）
+    cleaned_html = re.sub(
+        r'(\d{1,2})\s*月\s*(\d{1,2})\s*[～~ー―\-\u301C\uFF5E]\s*(?:\d{1,2}\s*月\s*)?\d{1,2}\s*日',
+        r'\1月\2日',
+        cleaned_html
+    )
     # 和暦・西暦表記内の空白を除去 (例: 令和　８年　９月　７日 -> 令和8年9月7日)
     cleaned_html = re.sub(
         r'(?:(令和|平成)\s*(\d+|元)|\b(\d{4}))\s*年\s*(\d{1,2})\s*月\s*(\d{1,2})\s*日',
         lambda m: f"{m.group(1)}{m.group(2)}年{m.group(4)}月{m.group(5)}日" if m.group(1) else f"{m.group(3)}年{m.group(4)}月{m.group(5)}日",
         cleaned_html
     )
+
     # 年号併記の括弧を除去 (例: 2026年（令和8年）3月24日 -> 2026年3月24日)
     cleaned_html = re.sub(r'(\d{4}年)[（\(][^）\)\n]+[）\)]\s*(\d{1,2}月\d{1,2}日)', r'\1\2', cleaned_html)
     cleaned_html = re.sub(r'((?:令和|平成)(?:\d+|元)年)[（\(][^）\)\n]+[）\)]\s*(\d{1,2}月\d{1,2}日)', r'\1\2', cleaned_html)

@@ -152,11 +152,24 @@ def parse_japanese_date(date_str):
         return None
     date_str = unicodedata.normalize('NFKC', str(date_str))
     date_str = normalize_japanese_numbers(date_str).strip()
+    # CR-126: 行政サイト日付誤植補正（例: 令和元年11年15日 -> 令和元年11月15日）
+    date_str = re.sub(
+        r'((?:令和|平成|昭和)\s*(?:\d+|元)\s*年|\b\d{4}\s*年)\s*(\d{1,2})\s*年\s*(\d{1,2})\s*日',
+        r'\1\2月\3日',
+        date_str
+    )
+    # CR-126: 複数日範囲表記の開始日抽出補正（例: 4月13～17日 -> 4月13日, 4月18～19日 -> 4月18日）
+    date_str = re.sub(
+        r'(\d{1,2})\s*月\s*(\d{1,2})\s*[～~ー―\-\u301C\uFF5E]\s*(?:\d{1,2}\s*月\s*)?\d{1,2}\s*日',
+        r'\1月\2日',
+        date_str
+    )
     date_str = re.sub(
         r'(?:(令和|平成)\s*(\d+|元)|\b(\d{4}))\s*年\s*(\d{1,2})\s*月\s*(\d{1,2})\s*日',
         lambda m: f"{m.group(1)}{m.group(2)}年{m.group(4)}月{m.group(5)}日" if m.group(1) else f"{m.group(3)}年{m.group(4)}月{m.group(5)}日",
         date_str
     )
+
     m_reiwa = _RE_REIWA_DATE.search(date_str)
     if m_reiwa:
         try:
