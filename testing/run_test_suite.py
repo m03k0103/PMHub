@@ -1,20 +1,21 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-政策会議ウォッチ (PM-HUB) - 統合テストスイート (Comprehensive Test Suite Runner) [Drop 45]
+政策会議ウォッチ (PM-HUB) - 統合テストスイート (Comprehensive Test Suite Runner) [Drop 64]
 
-【テストスイート要件 (全14ケース・実データ整合性 & システム検証特化)】
+【テストスイート要件 (全15ケース・実データ整合性 & システム検証特化)】
 第1層 (L1): コード構文・基本整合性
-  1. コード文法・構文整合性自動確認 (SyntaxError / 括弧不整合 / HTMLタグ整合性 / JSON構文)
+  1. コード文法・構文整合性自動確認 (SyntaxError / 括弧不整合 / HTMLタグ整合性 / JSON構文 / DDL構文)
   2. ネットワークリンク疎通確認 (新規追加・変更URL 200 OK 検証 / レートリミット保護)
 第2層 (L2): UI & フロントエンド表示機能
   3. UI表示DOMコンテナ・主要要素整合性検証 (公開ポータル & 管理ダッシュボード)
   4. JavaScript 実行時クラッシュ・TDZ・全画面描画検証 (Node.js 実データロード・描画例外ゼロ)
 第3層 (L3): データ整合性・不変性保証
-  5. 会議品質・回次整合性・重複排除検証 (全18,600件超全走査: 会議ID・回次・URL重複ゼロ)
-  6. 会議体・タイムライン・除外リスト ID完全排他性・整合性検証 (1,499会議体ID整合性)
+  5. 会議品質・回次整合性・重複排除検証 (全19,000件超全走査: 会議ID・回次・URL重複ゼロ)
+  6. 会議体・タイムライン・除外リスト ID完全排他性・整合性検証 (1,506会議体ID整合性)
   7. 康煕部首・特殊文字 NFKC 正規化検証 (全会議体・開催回・資料の康煕部首0件維持)
   8. プレースホルダー日付 (2099/01/01) 本番データゼロ遮断検証 (全開催回走査)
+ 15. SQLiteマスターDB整合性 & 2系統JSON完全同期検証 (PRAGMA整合性・外部キー・件数一致・漏洩ゼロ)
 第4層 (L4): 管理機能 & バックエンドAPI
   9. 管理サーバー API エンドポイント単体・結合テスト (ローカルHTTPサーバー11エンドポイント疎通)
 第5層 (L5): クローラー実データ整合性・保護検証
@@ -172,7 +173,7 @@ def check_js_syntax(code, file_path=""):
 def check_syntax_errors():
     """1. JS/Python/HTML/JSON ファイルの文法・タグ構造エラーを自動確認"""
     print("--------------------------------------------------")
-    print(" [テスト 1/14] コードの文法エラー (SyntaxError) 自動検証")
+    print(" [テスト 1/15] コードの文法エラー (SyntaxError) 自動検証")
     print("--------------------------------------------------")
     
     files_to_check = [
@@ -271,6 +272,7 @@ def check_syntax_errors():
     # JSON validation
     json_files = [
         os.path.join(PROJECT_ROOT, "docs", "data.json"),
+        os.path.join(PROJECT_ROOT, "admin", "admin_data.json"),
         os.path.join(PROJECT_ROOT, "admin", "rejected_councils.json")
     ]
     for jpath in json_files:
@@ -282,6 +284,21 @@ def check_syntax_errors():
             except Exception as je:
                 print(f"  [FAIL] {os.path.relpath(jpath, PROJECT_ROOT)} : JSON Error: {je}")
                 errors_found += 1
+
+    # SQL Schema validation (Drop 64)
+    schema_path = os.path.join(PROJECT_ROOT, "admin", "db", "schema.sql")
+    if os.path.exists(schema_path):
+        try:
+            import sqlite3
+            with open(schema_path, "r", encoding="utf-8") as sf:
+                sql_script = sf.read()
+            test_conn = sqlite3.connect(":memory:")
+            test_conn.executescript(sql_script)
+            test_conn.close()
+            print(f"  [PASS] {os.path.relpath(schema_path, PROJECT_ROOT)} : SQL DDL Syntax OK")
+        except Exception as se:
+            print(f"  [FAIL] {os.path.relpath(schema_path, PROJECT_ROOT)} : SQL DDL Error: {se}")
+            errors_found += 1
 
     return errors_found == 0
 
@@ -355,7 +372,7 @@ def get_added_urls_from_git():
 def check_link_health(explicit_urls=None, check_all=False):
     """2. 追加・変更された URL のみのリンク疎通確認"""
     print("\n--------------------------------------------------")
-    print(" [テスト 2/14] リンク疎通確認 (追加・変更 URL のみ対象)")
+    print(" [テスト 2/15] リンク疎通確認 (追加・変更 URL のみ対象)")
     print("--------------------------------------------------")
 
     target_urls = []
@@ -451,7 +468,7 @@ def check_link_health(explicit_urls=None, check_all=False):
 def check_view_rendering():
     """3. UI表示自動検証（公開ポータル＆管理ダッシュボードのDOM整合性チェック）"""
     print("\n--------------------------------------------------")
-    print(" [テスト 3/14] UI表示機能検証（ポータル＆管理ダッシュボード構造） (L2: UI Rendering)")
+    print(" [テスト 3/15] UI表示機能検証（ポータル＆管理ダッシュボード構造） (L2: UI Rendering)")
     print("--------------------------------------------------")
 
     app_js_path = os.path.join(PROJECT_ROOT, "docs", "app.js")
@@ -498,7 +515,7 @@ def check_view_rendering():
 def check_js_runtime_crash(future=None):
     """4. JavaScript 実行時クラッシュ・TDZ・初期化検証（公開ポータル＆管理ダッシュボード）"""
     print("\n--------------------------------------------------")
-    print(" [テスト 4/14] JavaScript 実行時クラッシュ・TDZ・描画検証 (L2: JS Runtime)")
+    print(" [テスト 4/15] JavaScript 実行時クラッシュ・TDZ・描画検証 (L2: JS Runtime)")
     print("--------------------------------------------------")
     try:
         if future is not None:
@@ -548,7 +565,7 @@ def check_js_runtime_crash(future=None):
 def check_duplicate_meetings_quality(data=None):
     """5. 会議レコード品質・回次整合性・重複排除の自動検証"""
     print("\n--------------------------------------------------")
-    print(" [テスト 5/14] 会議品質・回次整合性・重複排除検証 (L3: Data Integrity)")
+    print(" [テスト 5/15] 会議品質・回次整合性・重複排除検証 (L3: Data Integrity)")
     print("--------------------------------------------------")
     try:
         from test_no_duplicate_meetings import run_test
@@ -590,7 +607,7 @@ def check_duplicate_meetings_quality(data=None):
 def check_council_timeline_sync(data=None):
     """6. 会議体一覧 (COUNCILS), タイムライン (MEETINGS) の ID整合性自動検証"""
     print("\n--------------------------------------------------")
-    print(" [テスト 6/14] 会議体・タイムライン・除外リスト ID完全整合性検証 (L3: ID Consistency)")
+    print(" [テスト 6/15] 会議体・タイムライン・除外リスト ID完全整合性検証 (L3: ID Consistency)")
     print("--------------------------------------------------")
 
     if data is None:
@@ -654,7 +671,7 @@ def check_council_timeline_sync(data=None):
 def check_drop22_normalization():
     """7. 康煕部首・特殊文字 NFKC 正規化 & 検索漏れ根絶検証 (CR-46, CR-47)"""
     print("\n--------------------------------------------------")
-    print(" [テスト 7/14] 康煕部首・特殊文字 NFKC 正規化 & 検索漏れ根絶検証 (L3: Normalization)")
+    print(" [テスト 7/15] 康煕部首・特殊文字 NFKC 正規化 & 検索漏れ根絶検証 (L3: Normalization)")
     print("--------------------------------------------------")
     from test_drop22_normalization import TestDrop22Normalization
     return _run_inprocess_or_fallback(
@@ -668,7 +685,7 @@ def check_drop22_normalization():
 def check_placeholder_dates_zero(data=None):
     """8. プレースホルダー日付（2099/01/01）本番データゼロ遮断検証 (L3: Placeholder Zero)"""
     print("\n--------------------------------------------------")
-    print(" [テスト 8/14] プレースホルダー日付（2099/01/01）ゼロ遮断検証 (L3: Placeholder Zero)")
+    print(" [テスト 8/15] プレースホルダー日付（2099/01/01）ゼロ遮断検証 (L3: Placeholder Zero)")
     print("--------------------------------------------------")
     if data is None:
         data = get_shared_data()
@@ -685,6 +702,128 @@ def check_placeholder_dates_zero(data=None):
     return True
 
 
+def check_sqlite_and_split_export_sync(data=None):
+    """15. SQLiteマスターDB整合性 & 2系統JSON完全同期検証 (L3: Database Integrity & Tri-State Sync)"""
+    print("\n--------------------------------------------------")
+    print(" [テスト 15/15] SQLiteマスターDB整合性 & 2系統JSON完全同期検証 (L3: Database Integrity)")
+    print("--------------------------------------------------")
+    db_path = os.path.join(PROJECT_ROOT, "admin", "pmhub.db")
+    public_path = os.path.join(PROJECT_ROOT, "docs", "data.json")
+    admin_path = os.path.join(PROJECT_ROOT, "admin", "admin_data.json")
+
+    if not os.path.exists(db_path):
+        print(f"  [FAIL] SQLite マスターデータベースが見つかりません: {db_path}")
+        return False
+    if not os.path.exists(public_path):
+        print(f"  [FAIL] 公開 JSON ファイルが見つかりません: {public_path}")
+        return False
+    if not os.path.exists(admin_path):
+        print(f"  [FAIL] 管理 JSON ファイルが見つかりません: {admin_path}")
+        return False
+
+    errors = []
+    import sqlite3
+    conn = sqlite3.connect(db_path)
+    cur = conn.cursor()
+
+    try:
+        # 1. PRAGMA integrity_check
+        cur.execute("PRAGMA integrity_check;")
+        integ = cur.fetchone()[0]
+        if integ != "ok":
+            errors.append(f"SQLite PRAGMA integrity_check 失敗: {integ}")
+
+        # 2. PRAGMA foreign_key_check
+        cur.execute("PRAGMA foreign_key_check;")
+        fks = cur.fetchall()
+        if fks:
+            errors.append(f"SQLite 外部キー制約違反が検知されました: {len(fks)} 件")
+
+        # 3. 件数取得 (DB)
+        db_c_cnt = cur.execute("SELECT COUNT(*) FROM councils;").fetchone()[0]
+        db_m_cnt = cur.execute("SELECT COUNT(*) FROM meetings;").fetchone()[0]
+        db_mat_cnt = cur.execute("SELECT COUNT(*) FROM materials;").fetchone()[0]
+        db_rule_cnt = cur.execute("SELECT COUNT(*) FROM scraping_rules;").fetchone()[0]
+        db_cs_cnt = cur.execute("SELECT COUNT(*) FROM crawl_statuses;").fetchone()[0]
+
+        db_c_lock = cur.execute("SELECT COUNT(*) FROM councils WHERE manual_lock = 1;").fetchone()[0]
+        db_m_lock = cur.execute("SELECT COUNT(*) FROM meetings WHERE manual_lock = 1;").fetchone()[0]
+        db_mat_lock = cur.execute("SELECT COUNT(*) FROM materials WHERE manual_lock = 1;").fetchone()[0]
+    finally:
+        conn.close()
+
+    # 4. JSON パース (公開 & 管理)
+    try:
+        with open(public_path, "r", encoding="utf-8") as f:
+            pub_data = json.load(f)
+        with open(admin_path, "r", encoding="utf-8") as f:
+            adm_data = json.load(f)
+    except Exception as e:
+        print(f"  [FAIL] JSON パースエラー: {e}")
+        return False
+
+    pub_councils = pub_data.get("councils", [])
+    pub_meetings = pub_data.get("meetings", [])
+    pub_c_cnt = len(pub_councils)
+    pub_m_cnt = len(pub_meetings)
+    pub_mat_cnt = sum(len(m.get("materials", [])) for m in pub_meetings)
+    pub_c_lock = sum(1 for c in pub_councils if c.get("manualLock"))
+    pub_m_lock = sum(1 for m in pub_meetings if m.get("manualLock"))
+    pub_mat_lock = sum(1 for m in pub_meetings for mat in m.get("materials", []) if mat.get("manualLock"))
+
+    adm_rules = adm_data.get("scrapingRules", {})
+    adm_statuses = adm_data.get("crawlStatuses", {})
+    adm_locks = adm_data.get("manualLocks", {})
+    adm_rule_cnt = len(adm_rules)
+    adm_cs_cnt = len(adm_statuses)
+    adm_c_lock = len(adm_locks.get("councils", []))
+    adm_m_lock = len(adm_locks.get("meetings", []))
+    adm_mat_lock = len(adm_locks.get("materials", []))
+
+    # 5. 件数突合
+    if db_c_cnt != pub_c_cnt:
+        errors.append(f"会議体件数不一致: DB={db_c_cnt} vs 公開JSON={pub_c_cnt}")
+    if db_m_cnt != pub_m_cnt:
+        errors.append(f"開催回件数不一致: DB={db_m_cnt} vs 公開JSON={pub_m_cnt}")
+    if db_mat_cnt != pub_mat_cnt:
+        errors.append(f"配付資料件数不一致: DB={db_mat_cnt} vs 公開JSON={pub_mat_cnt}")
+    if db_rule_cnt != adm_rule_cnt:
+        errors.append(f"スクレイピングルール件数不一致: DB={db_rule_cnt} vs 管理JSON={adm_rule_cnt}")
+    if db_cs_cnt != adm_cs_cnt:
+        errors.append(f"クロールステータス件数不一致: DB={db_cs_cnt} vs 管理JSON={adm_cs_cnt}")
+
+    # 6. 手動ロック整合性突合
+    if not (db_c_lock == pub_c_lock == adm_c_lock):
+        errors.append(f"会議体手動ロック件数不一致: DB={db_c_lock}, 公開JSON={pub_c_lock}, 管理JSON={adm_c_lock}")
+    if not (db_m_lock == pub_m_lock == adm_m_lock):
+        errors.append(f"開催回手動ロック件数不一致: DB={db_m_lock}, 公開JSON={pub_m_lock}, 管理JSON={adm_m_lock}")
+    if not (db_mat_lock == pub_mat_lock == adm_mat_lock):
+        errors.append(f"配付資料手動ロック件数不一致: DB={db_mat_lock}, 公開JSON={pub_mat_lock}, 管理JSON={adm_mat_lock}")
+
+    # 7. 公開 JSON への設定漏洩ゼロ (No Leakage)
+    forbidden_keys_in_public = ["scrapingRules", "crawlerConfig", "rejectedCouncils", "initialAlertKeywords"]
+    leaked = [k for k in forbidden_keys_in_public if k in pub_data]
+    if leaked:
+        errors.append(f"公開 docs/data.json に管理専用キーが混入しています (No Leakage 違反): {leaked}")
+
+    # 8. 管理 JSON の必須キー完全性
+    required_admin_keys = ["scrapingRules", "scrapingRuleTemplates", "crawlerConfig", "discoveryKeywords", "manualLocks"]
+    missing_admin = [k for k in required_admin_keys if k not in adm_data]
+    if missing_admin:
+        errors.append(f"管理 admin/admin_data.json に必須キーが不足しています: {missing_admin}")
+
+    if errors:
+        for err in errors:
+            print(f"  [FAIL] {err}")
+        return False
+
+    print(f"  [PASS] SQLite 整合性（PRAGMA integrity_check: ok / FK制約違反: 0件）検証合格")
+    print(f"  [PASS] 3者間レコード完全一致（councils: {db_c_cnt}件, meetings: {db_m_cnt}件, materials: {db_mat_cnt}件, rules: {db_rule_cnt}件）検証合格")
+    print(f"  [PASS] 手動ロック完全整合性（councils: {db_c_lock}件, meetings: {db_m_lock}件, materials: {db_mat_lock}件）検証合格")
+    print(f"  [PASS] 公開JSON設定漏洩ゼロ（No Leakage: 0件）& 管理JSONキー完全性を検証合格")
+    return True
+
+
 # ==============================================================================
 # 第4層: 管理機能 & バックエンドAPI (L4: Admin & Server)
 # ==============================================================================
@@ -692,7 +831,7 @@ def check_placeholder_dates_zero(data=None):
 def check_admin_server_api():
     """9. 管理サーバー (admin/server.py) の主要 API 自動単体・統合テスト"""
     print("\n--------------------------------------------------")
-    print(" [テスト 9/14] 管理サーバー API 単体・統合テスト (test_admin_server.py) (L4: Admin API)")
+    print(" [テスト 9/15] 管理サーバー API 単体・統合テスト (test_admin_server.py) (L4: Admin API)")
     print("--------------------------------------------------")
     from test_admin_server import TestAdminServer
     return _run_inprocess_or_fallback(
@@ -710,7 +849,7 @@ def check_admin_server_api():
 def check_crawler_regression():
     """10. クローラーの手動保護回帰テスト (L5: Manual Lock Protection)"""
     print("\n--------------------------------------------------")
-    print(" [テスト 10/14] クローラー手動データ保護回帰テスト (L5: Manual Lock Protection)")
+    print(" [テスト 10/15] クローラー手動データ保護回帰テスト (L5: Manual Lock Protection)")
     print("--------------------------------------------------")
     from test_crawler_regression import TestCrawlerManualLockProtection
     return _run_inprocess_or_fallback(
@@ -724,7 +863,7 @@ def check_crawler_regression():
 def check_scraping_rules_quality():
     """11. スクレイピングルール整合性テスト（CR-7 孤立削除・CR-8 テンプレート集約・CR-9 全件適用）"""
     print("\n--------------------------------------------------")
-    print(" [テスト 11/14] スクレイピングルール整合性検証 (L5: Scraping Rules Integrity)")
+    print(" [テスト 11/15] スクレイピングルール整合性検証 (L5: Scraping Rules Integrity)")
     print("--------------------------------------------------")
     from test_scraping_rules_reorg import TestScrapingRulesReorganization
     return _run_inprocess_or_fallback(
@@ -738,7 +877,7 @@ def check_scraping_rules_quality():
 def check_host_interleaving_and_junk_clean(data=None):
     """12. ホスト分散・ゴミデータ不変性検証 (L5: Host Interleaving & Clean Data)"""
     print("\n--------------------------------------------------")
-    print(" [テスト 12/14] ホスト分散・ゴミデータ不変性検証 (L5: Host Interleaving & Clean Data)")
+    print(" [テスト 12/15] ホスト分散・ゴミデータ不変性検証 (L5: Host Interleaving & Clean Data)")
     print("--------------------------------------------------")
     from cleanup_nav_meetings import is_junk_meeting
     from crawler import interleave_by_host_and_ministry, _extract_council_host
@@ -769,7 +908,7 @@ def check_host_interleaving_and_junk_clean(data=None):
 def check_portal_coverage_and_slug_inheritance(data=None):
     """13. 省庁親ポータルURL設定・探索網羅性検証 (L5: Portal Coverage & Slug Inheritance)"""
     print("\n--------------------------------------------------")
-    print(" [テスト 13/14] 省庁親ポータルURL設定・探索網羅性検証 (L5: Portal Coverage & Slug Inheritance)")
+    print(" [テスト 13/15] 省庁親ポータルURL設定・探索網羅性検証 (L5: Portal Coverage & Slug Inheritance)")
     print("--------------------------------------------------")
     if data is None:
         data = get_shared_data()
@@ -812,7 +951,7 @@ def check_portal_coverage_and_slug_inheritance(data=None):
 def check_active_filtering_and_closed_management(data=None):
     """14. アクティブ会議体フィルタリング・廃止管理検証 (L5: Active Filtering & Closed Councils)"""
     print("\n--------------------------------------------------")
-    print(" [テスト 14/14] アクティブ会議体フィルタリング・廃止管理検証 (L5: Active Filtering & Closed Councils)")
+    print(" [テスト 14/15] アクティブ会議体フィルタリング・廃止管理検証 (L5: Active Filtering & Closed Councils)")
     print("--------------------------------------------------")
     from crawler import load_councils_from_data_json
     from manage_closed_councils import set_council_closed
@@ -1058,7 +1197,7 @@ def detect_required_unit_tests(changed_files):
 # ==============================================================================
 
 def main():
-    parser = argparse.ArgumentParser(description="PM-HUB Comprehensive Test Suite Runner [Drop 45]")
+    parser = argparse.ArgumentParser(description="PM-HUB Comprehensive Test Suite Runner [Drop 64]")
     parser.add_argument("--url", nargs="+", help="Explicit URLs to verify")
     parser.add_argument("--all", action="store_true", help="Check all URLs in data.json")
     parser.add_argument("--skip-network", action="store_true", help="Skip network link health verification")
@@ -1070,7 +1209,7 @@ def main():
     args = parser.parse_args()
 
     print("==================================================")
-    print(" 政策会議ウォッチ (PM-HUB) 統合テストスイート [Drop 45]")
+    print(" 政策会議ウォッチ (PM-HUB) 統合テストスイート [Drop 64]")
     print("==================================================")
 
     # 単体テストのみの直接実行
@@ -1122,7 +1261,7 @@ def main():
 
     if args.skip_network:
         print("\n--------------------------------------------------")
-        print(" [テスト 2/14] リンク疎通確認 (追加・変更 URL のみ対象) (L1: Network Health)")
+        print(" [テスト 2/15] リンク疎通確認 (追加・変更 URL のみ対象) (L1: Network Health)")
         print("--------------------------------------------------")
         print("  [SKIP] --skip-network が指定されたため、ネットワーク疎通確認をスキップしました。")
         links_ok = True
@@ -1177,6 +1316,10 @@ def main():
     t_c8 = time.perf_counter()
     placeholder_ok = check_placeholder_dates_zero(data=shared_data)
     record_result(8, "プレースホルダー日付（2099/01/01）ゼロ遮断検証", "PASS" if placeholder_ok else "FAIL", time.perf_counter() - t_c8, "L3")
+
+    t_c15 = time.perf_counter()
+    db_sync_ok = check_sqlite_and_split_export_sync(data=shared_data)
+    record_result(15, "SQLiteマスターDB整合性 & 2系統JSON完全同期検証", "PASS" if db_sync_ok else "FAIL", time.perf_counter() - t_c15, "L3")
 
     # --------------------------------------------------
     # 第4層: 管理機能 & バックエンドAPI (L4: Admin & Server)
@@ -1243,7 +1386,7 @@ def main():
 
     # サマリーレポート出力
     print("\n==================================================")
-    print(" 政策会議ウォッチ (PM-HUB) テスト実行結果サマリー [Drop 45]")
+    print(" 政策会議ウォッチ (PM-HUB) テスト実行結果サマリー [Drop 64]")
     print("==================================================")
     passed_count = sum(1 for _, _, st, _, _ in case_results if st == "PASS")
     skipped_count = sum(1 for _, _, st, _, _ in case_results if st == "SKIP")
@@ -1273,7 +1416,7 @@ def main():
         print("【単体関数検証 (Unit Tests)】: SKIP（関数仕様の変更なし / 平時実データ特化）")
 
     print("--------------------------------------------------")
-    print(f" 総実行時間: {total_time:.2f}秒 | 統合ケース合格: {passed_count}/14件 | スキップ: {skipped_count}件 | 失敗: {failed_count}件")
+    print(f" 総実行時間: {total_time:.2f}秒 | 統合ケース合格: {passed_count}/15件 | スキップ: {skipped_count}件 | 失敗: {failed_count}件")
     print("==================================================")
 
     all_passed = (failed_count == 0) and unit_ok

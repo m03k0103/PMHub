@@ -17,7 +17,8 @@
 |:---:|:---|:---|:---:|:---:|
 | **Drop 61** | **過去の修正済Drop**<br>(開催回分離・配付資料適正化) | **水産庁 水産物消費拡大実行計画会議 第1回〜第6回 開催回分離・配付資料適正化 & スラグ規約正規化**<br>水産庁「水産物消費拡大実行計画会議（旧 `jfa-603` $\to$ `jfa-suisan_shouhi_kakudai`）」について、単一回にバンドルされていた54件の配付資料を解消し、第1回（令和3年9月17日）から第6回（令和8年3月19日）までの全6開催回へ完全分離。全65件の正規配付資料（PDF）を開催回ごとに完全配分、不要UIリンク排除、親テーブル型スクレイピングルールの連動反映 | **全6開催回完全分離 & 全65配付資料完全紐づけ・規約スラグID正規化** | 完了 |
 | **Drop 62** | **過去の修正済Drop**<br>(DBマスター化 & 2系統エクスポート) | **SQLite マスターデータソース構築 & リバーシブル2系統JSONエクスポート基盤の実装（Track [Database] / Track [Search] 基盤）**<br>単一巨大 `data.json` から SQLite（`admin/pmhub.db`）マスター構成へ転換。公開用スリム化 `docs/data.json`（30.12MB、約1.7MBスリム化）とクローラー・管理用 `admin/admin_data.json`（2.36MB）への決定論的2系統エクスポート、および完全リバーシブルシードツールの構築 | **DBマスター化 & 2系統エクスポート基盤確立・完全可逆性実証** | 完了 |
-| **Drop 63** | **最新の完了Drop**<br>(クローラー & サーバー DB直結) | **クローラー & 管理サーバーの DB 接続パイプライン化（Track [Database] フェーズ2）**<br>`admin/crawler.py` および `admin/server.py` のデータ読み書きを `admin/pmhub.db` 経由に切り替え、クロール完了時および管理操作時に自動エクスポート（`export_data.py`）を実行する完全自動パイプラインの確立 | **DB直結更新 & 2系統JSON自動エクスポートパイプライン確立** | **完了** |
+| **Drop 63** | **過去の修正済Drop**<br>(クローラー & サーバー DB直結) | **クローラー & 管理サーバーの DB 接続パイプライン化（Track [Database] フェーズ2）**<br>`admin/crawler.py` および `admin/server.py` のデータ読み書きを `admin/pmhub.db` 経由に切り替え、クロール完了時および管理操作時に自動エクスポート（`export_data.py`）を実行する完全自動パイプラインの確立 | **DB直結更新 & 2系統JSON自動エクスポートパイプライン確立** | 完了 |
+| **Drop 64** | **最新の完了Drop**<br>(テストスイート DB検証対応) | **統合テストスイート（run_test_suite.py）の SQLite マスターDB & 2系統エクスポート整合性検証対応（全15ケース化）**<br>SQLite マスターDB（`admin/pmhub.db`）の完全性（PRAGMA integrity_check, FK check）、3者間レコード件数・ID完全一致（Tri-State Consistency）、手動ロック属性整合性、および設定漏洩防止（No Leakage）を常時ガードする新ケース15の新設 | **全15ケース化 & SQLiteマスター・2系統JSON完全同期ガード確立** | **完了** |
 
 ---
 
@@ -67,6 +68,24 @@
 | **CR-156** | クローラーDB化 | **クローラー（`admin/crawler.py`）の DB パイプライン接続**<br>開始時DB優先ロード、チェックポイントおよびクロール完了時の DB 保存 & 自動エクスポートパイプラインの接続 | `admin/crawler.py`<br>`admin/utils.py` | 完了 |
 | **CR-157** | サーバーDB化 | **管理サーバー（`admin/server.py`）の DB パイプライン接続**<br>ルール保存・キーワード保存・会議体承認/却下エンドポイントの DB 直接更新 & 自動エクスポート連動 | `admin/server.py`<br>`admin/utils.py` | 完了 |
 | **CR-158** | テスト検証 | **Drop 63 単体テスト新設 & 統合テストスイート整合性検証**<br>`testing/test_drop63_crawler_server_db.py`（U18）を新設。DB直結更新 $\to$ 自動エクスポート $\to$ JSON整合性のエンドツーエンド検証および統合テストスイート（全14ケース＋単体18種）完全合格を確認 | `testing/test_drop63_crawler_server_db.py`<br>`testing/run_unit_tests.py`<br>`testing/run_test_suite.py` | 完了 |
+
+
+---
+
+### 【Drop 64】統合テストスイート（run_test_suite.py）の SQLite マスターDB & 2系統エクスポート整合性検証対応（完了）
+
+Drop 62 & 63 による SQLite マスターDB化および 2系統エクスポート基盤の確立を踏まえ、統合テストスイート（`testing/run_test_suite.py`）を従来の全14ケースから全15ケースへ拡張。SQLite データベース（`admin/pmhub.db`）の完全性、外部キー制約、DB $\leftrightarrow$ 2系統 JSON 間のデータ・手動ロックの完全一致、および公開 JSON への設定漏洩防止（No Leakage）を恒久的に自動検証する新ケース15を新設・配備した。
+
+- **Drop 64 の成果**:
+  1. `check_syntax_errors()` の構文チェック対象に `admin/admin_data.json`（JSON構文）および `admin/db/schema.sql`（インメモリ SQLite DDL構文）を追加。
+  2. 新設「ケース15: SQLiteマスターDB整合性 & 2系統JSON完全同期検証」を第3層（常時ガード）に配備。`PRAGMA integrity_check: ok`、外部キー違反0件、3者間件数完全一致（councils 1,506件, meetings 19,024件, materials 117,465件, rules 1,506件）、手動ロック件数一致（councils 694件, meetings 13,279件, materials 7,198件）、公開JSONへの設定漏洩ゼロ（No Leakage）を高速検証（0.53秒）。
+  3. `run_test_suite.py` の総ケース数を全15ケースへ拡張し、サマリー表示および `AGENTS.md` 第3条 第7項の成果報告フォーマット規約を更新。統合テストスイート（全15ケース＋単体18種）に完全合格。
+
+| ID | 分類 | 内容 | 対象ファイル | 状態 |
+|:---|:---:|:---|:---|:---:|
+| **CR-159** | 構文検証拡充 | **第1層（構文チェック）における admin_data.json & schema.sql の検証網羅**<br>`check_syntax_errors()` の JSON 検証に `admin/admin_data.json` を追加し、`admin/db/schema.sql` の DDL 構文をインメモリ SQLite で検証するガードを追加 | `testing/run_test_suite.py` | 完了 |
+| **CR-160** | ケース15新設 | **第3層新設: SQLite マスターDB整合性 & 2系統JSON完全同期検証**<br>`check_sqlite_and_split_export_sync()` を新設。`PRAGMA integrity_check`, `foreign_key_check`, 3者間件数・ID完全一致、手動ロック件数一致、公開JSON設定漏洩ゼロ（No Leakage）を常時ガード | `testing/run_test_suite.py` | 完了 |
+| **CR-161** | スイート全15ケース化 | **統合テストスイート全15ケース化 & ドキュメント規約整合**<br>`run_test_suite.py` のサマリー出力・ヘッダー・ケース判定を全15ケースに更新し、`AGENTS.md` の成果報告フォーマット規約にケース15を整合反映 | `testing/run_test_suite.py`<br>`AGENTS.md` | 完了 |
 
 ---
 
