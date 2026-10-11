@@ -3361,7 +3361,7 @@ def run_meeting_crawler(progress_callback=None, stop_event=None, workers=4, rece
         now_str = datetime.now().strftime("%Y/%m/%d %H:%M")
         data["lastCrawlTime"] = now_str
         if save_data_json_with_backup(data):
-            emit(f"[更新成功] docs/data.json にクロール結果・ステータスと lastCrawlTime ({now_str}) を安全に保存しました（自動バックアップ作成完了）。")
+            emit(f"[更新成功] SQLite マスターDB (admin/pmhub.db) および 2系統 JSON (docs/data.json, admin/admin_data.json) にクロール結果・ステータスと lastCrawlTime ({now_str}) を安全に保存・自動エクスポートしました。")
         else:
             emit(f"[WARN] data.json 更新失敗")
 
@@ -3370,7 +3370,7 @@ def run_meeting_crawler(progress_callback=None, stop_event=None, workers=4, rece
         stats["newly_added_list"] = newly_added[:20]
 
         finish_type = "crawl_stopped" if stats.get("stopped") else "crawl_completed"
-        emit(f"処理終了: docs/data.json を更新しました。", {
+        emit(f"処理終了: SQLite マスターDBおよび 2系統 JSON を更新しました。", {
             "type": finish_type,
             "progress": 100,
             "stats": stats,

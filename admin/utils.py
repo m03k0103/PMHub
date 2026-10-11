@@ -16,6 +16,7 @@ import urllib.parse
 from datetime import datetime
 import functools
 import unicodedata
+from pathlib import Path
 
 
 # パス定義
@@ -324,11 +325,27 @@ def load_data_json(target_file=DEFAULT_DATA_JSON_PATH, cached=False):
             data = json.load(f)
             data_dict = data if isinstance(data, dict) else {}
 
-        # admin_data.json が存在し、読み込み対象が data.json の場合は管理情報をマージ
+        # Drop 63: メインデータかつ SQLite DB が存在する場合は DB から優先ロード
         is_main_data_json = (
             abs_path == os.path.abspath(DEFAULT_DATA_JSON_PATH)
             or os.path.basename(abs_path) == "data.json"
         )
+        db_path = os.path.join(BASE_DIR, "pmhub.db")
+        if is_main_data_json and os.path.exists(db_path):
+            try:
+                try:
+                    from db.db_manager import load_data_from_db
+                except ImportError:
+                    from admin.db.db_manager import load_data_from_db
+                db_data = load_data_from_db(Path(db_path))
+                if db_data and "councils" in db_data:
+                    if cached:
+                        _DATA_JSON_CACHE[abs_path] = (cache_key, db_data)
+                    return db_data
+            except Exception as e_db:
+                print(f"[WARN] Failed to load data from SQLite DB ({e_db}), falling back to JSON files.", file=sys.stderr)
+
+        # admin_data.json が存在し、読み込み対象が data.json の場合は管理情報をマージ
         if is_main_data_json and os.path.exists(admin_path):
             try:
                 with open(admin_path, "r", encoding="utf-8") as af:
@@ -363,13 +380,21 @@ def load_data_json(target_file=DEFAULT_DATA_JSON_PATH, cached=False):
         return {}
 
 
-def save_data_json_with_backup(data, target_file=DEFAULT_DATA_JSON_PATH, backup_dir=DEFAULT_BACKUP_DIR, max_backups=30, create_backup=True):
+def save_data_json_with_backup(data, target_file=DEFAULT_DATA_JSON_PATH, backup_dir=DEFAULT_BACKUP_DIR, max_backups=30, create_backup=True, sync_db=True):
     """
     docs/data.json をアトミックに安全保存する。
-    create_backup=True の場合、更新前にタイムスタンプ付きで admin/backups/ に自動バックアップを作成する（デフォルト過去30世代保持）。
-    書き込みは一時ファイル (.tmp) に行い、os.replace によるアトミック置換でファイル破損（0バイト化）を防止する。
+    Drop 63: target_file がメインの docs/data.json かつ sync_db=True の場合、
+    SQLite マスターDB (admin/pmhub.db) に直接トランザクション同期し、
+    自動エクスポートパイプラインによって docs/data.json と admin/admin_data.json を同時最新化する。
+    書き込みは一時ファイル (.tmp) または DB エクスポートで行い、ファイル破損（0バイト化）を防止する。
     """
     tmp_file = f"{target_file}.tmp"
+    abs_target = os.path.abspath(target_file)
+    is_main_data_json = (
+        abs_target == os.path.abspath(DEFAULT_DATA_JSON_PATH)
+        or os.path.basename(abs_target) == "data.json"
+    )
+
     try:
         if create_backup:
             os.makedirs(backup_dir, exist_ok=True)
@@ -387,7 +412,22 @@ def save_data_json_with_backup(data, target_file=DEFAULT_DATA_JSON_PATH, backup_
                         except Exception:
                             pass
 
-        target_dir = os.path.dirname(os.path.abspath(target_file))
+        # Drop 63: メインデータの場合は SQLite マスターDBへ同期し自動エクスポート
+        if is_main_data_json and sync_db:
+            try:
+                try:
+                    from db.db_manager import save_data_to_db
+                except ImportError:
+                    from admin.db.db_manager import save_data_to_db
+                db_success = save_data_to_db(data, run_export=True)
+                if db_success:
+                    clear_data_json_cache(target_file)
+                    return True
+            except Exception as e_db:
+                print(f"[WARN] DB sync failed in save_data_json_with_backup ({e_db}), falling back to direct JSON save.", file=sys.stderr)
+
+        # フォールバックまたは非メインファイル向けアトミック保存
+        target_dir = os.path.dirname(abs_target)
         os.makedirs(target_dir, exist_ok=True)
         with open(tmp_file, "w", encoding="utf-8") as f:
             json.dump(data, f, ensure_ascii=False, indent=2)

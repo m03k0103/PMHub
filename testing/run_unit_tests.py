@@ -210,6 +210,12 @@ UNIT_TEST_REGISTRY = {
         "name": "DBマスター・2系統エクスポート・可逆性単体テスト (test_drop62_db_and_export.py)",
         "description": "schema.sql DDL, seed_db, export_data 2系統分離, 双方向可逆性検証",
         "runner": lambda: _run_py_class("test_drop62_db_and_export", "TestDrop62DatabaseAndExport")
+    },
+    "u_drop63": {
+        "id": "U18",
+        "name": "クローラー&サーバーDB直結パイプライン単体テスト (test_drop63_crawler_server_db.py)",
+        "description": "db_manager CRUD, クローラー/サーバー保存直結, 自動エクスポート, フェイルセーフ復元",
+        "runner": lambda: _run_py_class("test_drop63_crawler_server_db", "TestDrop63CrawlerServerDB")
     }
 }
 

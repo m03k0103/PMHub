@@ -16,7 +16,8 @@
 | 対応 Drop | 施策区分 | 主な対象・内容 | クロール成功率 / 成果 | ステータス |
 |:---:|:---|:---|:---:|:---:|
 | **Drop 61** | **過去の修正済Drop**<br>(開催回分離・配付資料適正化) | **水産庁 水産物消費拡大実行計画会議 第1回〜第6回 開催回分離・配付資料適正化 & スラグ規約正規化**<br>水産庁「水産物消費拡大実行計画会議（旧 `jfa-603` $\to$ `jfa-suisan_shouhi_kakudai`）」について、単一回にバンドルされていた54件の配付資料を解消し、第1回（令和3年9月17日）から第6回（令和8年3月19日）までの全6開催回へ完全分離。全65件の正規配付資料（PDF）を開催回ごとに完全配分、不要UIリンク排除、親テーブル型スクレイピングルールの連動反映 | **全6開催回完全分離 & 全65配付資料完全紐づけ・規約スラグID正規化** | 完了 |
-| **Drop 62** | **最新の完了Drop**<br>(DBマスター化 & 2系統エクスポート) | **SQLite マスターデータソース構築 & リバーシブル2系統JSONエクスポート基盤の実装（Track [Database] / Track [Search] 基盤）**<br>単一巨大 `data.json` から SQLite（`admin/pmhub.db`）マスター構成へ転換。公開用スリム化 `docs/data.json`（30.12MB、約1.7MBスリム化）とクローラー・管理用 `admin/admin_data.json`（2.36MB）への決定論的2系統エクスポート、および完全リバーシブルシードツールの構築 | **DBマスター化 & 2系統エクスポート基盤確立・完全可逆性実証** | **完了** |
+| **Drop 62** | **過去の修正済Drop**<br>(DBマスター化 & 2系統エクスポート) | **SQLite マスターデータソース構築 & リバーシブル2系統JSONエクスポート基盤の実装（Track [Database] / Track [Search] 基盤）**<br>単一巨大 `data.json` から SQLite（`admin/pmhub.db`）マスター構成へ転換。公開用スリム化 `docs/data.json`（30.12MB、約1.7MBスリム化）とクローラー・管理用 `admin/admin_data.json`（2.36MB）への決定論的2系統エクスポート、および完全リバーシブルシードツールの構築 | **DBマスター化 & 2系統エクスポート基盤確立・完全可逆性実証** | 完了 |
+| **Drop 63** | **最新の完了Drop**<br>(クローラー & サーバー DB直結) | **クローラー & 管理サーバーの DB 接続パイプライン化（Track [Database] フェーズ2）**<br>`admin/crawler.py` および `admin/server.py` のデータ読み書きを `admin/pmhub.db` 経由に切り替え、クロール完了時および管理操作時に自動エクスポート（`export_data.py`）を実行する完全自動パイプラインの確立 | **DB直結更新 & 2系統JSON自動エクスポートパイプライン確立** | **完了** |
 
 ---
 
@@ -24,7 +25,7 @@
 
 | Track ID | 構想テーマ | 主な対象・内容 | 到達成果・期待価値 | ステータス |
 |:---:|:---|:---|:---:|:---:|
-| **Track [Database]**<br>(フェーズ 1 & 2) | **データ基盤刷新**<br>(DBマスター化 & 2系統エクスポート) | **【フェーズ 1】スキーマ定義 & 双方向同期ツール構築（Drop 62）**<br>`admin/db/schema.sql`, `seed_db.py`, `export_data.py` 実装、公開用 `docs/data.json` と管理用 `admin/admin_data.json` 分割エクスポート、リバーシブル検証<br>**【フェーズ 2】クローラー & 管理サーバーの DB 接続**<br>`admin/server.py` および `admin/crawler.py` のデータ読み書きを DB 経由に切り替え、クロール完了時自動エクスポートパイプライン確立 | **ACIDトランザクション・完全リバーシブル同期・公開JSONスリム化** | **【フェーズ1: 完了】**<br>【フェーズ2: 構想】 |
+| **Track [Database]**<br>(フェーズ 1 & 2) | **データ基盤刷新**<br>(DBマスター化 & 2系統エクスポート) | **【フェーズ 1】スキーマ定義 & 双方向同期ツール構築（Drop 62）**<br>`admin/db/schema.sql`, `seed_db.py`, `export_data.py` 実装、公開用 `docs/data.json` と管理用 `admin/admin_data.json` 分割エクスポート、リバーシブル検証<br>**【フェーズ 2】クローラー & 管理サーバーの DB 接続（Drop 63）**<br>`admin/server.py` および `admin/crawler.py` のデータ読み書きを DB 経由に切り替え、クロール完了時自動エクスポートパイプライン確立 | **ACIDトランザクション・完全リバーシブル同期・公開JSONスリム化** | **【フェーズ1: 完了】**<br>**【フェーズ2: 完了】** |
 | **Track [Search]**<br>(フェーズ 3) | **全文検索エンジン化**<br>(PMM資産連携 FTS5基盤) | **【フェーズ 3】PMM テキスト抽出 & FTS5 構築・全文検索 API 稼働**<br>PMM（`D:\dev\PMM\docs`）の 10.7 万件から本文テキストを並列抽出し、SQLite FTS5（trigram）仮想テーブル `fts_materials` に投入。管理サーバー `/api/search` 全文検索 API および公開ポータル連携 | **10.7万件配付資料の横断全文検索・該当ページ即時ジャンプ** | 構想（次期リリース） |
 | **Track [Architecture]** | **今後の開発構想**<br>(モジュール分割) | **リファクタリング領域E: クローラー本体（crawler.py）の責務分離 & scratch/ クリーンアップ**<br>`admin/crawler.py`（約2,900行）のパーサー・探索戦略・データ同期モジュール分割、1,231ファイル（66MB）の `scratch/` 整理および `.gitignore` 追加による作業ツリークリーン化 | **クローラー軽量化 & 開発環境整備** | 構想 |
 | **Track [Policy-AI]** | **今後の開発構想**<br>(政策分析・連携) | **省庁横断政策テーマ連携 & AI 議題要約・タイムライン可視化**<br>親組織・分科会・部会・ワーキンググループの階層オントロジー定義、省庁横断政策テーマタグ連携、AI 時系列タイムライン分析エンジン | **省庁横断政策分析支援** | 構想 |
@@ -50,14 +51,22 @@
 
 ---
 
-### 【次期リリース構想】Track [Database] フェーズ 2: クローラー & 管理サーバーの DB 接続
+### 【Drop 63】Track [Database] フェーズ 2: クローラー & 管理サーバーの DB 接続パイプライン化（完了）
 
-フェーズ 1 で確立したマスターDB基盤に基づき、運用系ツール（`admin/crawler.py`, `admin/server.py`）のデータアクセス層を DB 直接接続へ切り替える。
+フェーズ 1 で確立したマスターDB基盤に基づき、運用系ツール（`admin/crawler.py`, `admin/server.py`）のデータアクセス層を DB 直接接続へ切り替えた。クロール完了時および管理操作時に自動エクスポート（`export_data.py`）を実行し、Git 管理対象の 2 つの JSON を自動更新・出力する完全自動パイプラインを確立した。
 
-- **フェーズ 2 のスコープ**:
-  1. `admin/server.py` および `admin/crawler.py` のデータ読み書きを DB 経由に切り替え。
-  2. クロール完了時に `export_data.py` を自動実行し、Git 管理対象の 2 つの JSON を自動更新・出力するパイプラインを確立。
-  3. `docs/data.json` と `admin/admin_data.json` の同時更新をアトミックに担保。
+- **フェーズ 2 の成果**:
+  1. `admin/db/db_manager.py`（DBリポジトリ & 自動エクスポートマネージャー）を新設。
+  2. `admin/utils.py` の `load_data_json()` および `save_data_json_with_backup()` を改修し、`admin/pmhub.db` へのトランザクション同期および 2系統自動エクスポートパイプラインを統合。
+  3. クローラー（`admin/crawler.py`）および管理サーバー（`admin/server.py`）の全データ更新が自動的に DB と 2系統 JSON に同期されるパイプラインを確立。
+  4. 専用単体テスト `test_drop63_crawler_server_db.py`（U18）を新設し、統合テストスイート（全14ケース＋単体18種）に完全合格。
+
+| ID | 分類 | 内容 | 対象ファイル | 状態 |
+|:---|:---:|:---|:---|:---:|
+| **CR-155** | DBリポジトリ | **DBリポジトリ & 同期マネージャーの実装**<br>`admin/db/db_manager.py` を新設し、DBからの高速ロード（`load_data_from_db`）、トランザクション更新（`save_data_to_db`）、自動エクスポートパイプライン（`export_pipeline`）、およびDB非存在時の自動シード復元を実装 | `admin/db/db_manager.py`<br>`admin/db/__init__.py` | 完了 |
+| **CR-156** | クローラーDB化 | **クローラー（`admin/crawler.py`）の DB パイプライン接続**<br>開始時DB優先ロード、チェックポイントおよびクロール完了時の DB 保存 & 自動エクスポートパイプラインの接続 | `admin/crawler.py`<br>`admin/utils.py` | 完了 |
+| **CR-157** | サーバーDB化 | **管理サーバー（`admin/server.py`）の DB パイプライン接続**<br>ルール保存・キーワード保存・会議体承認/却下エンドポイントの DB 直接更新 & 自動エクスポート連動 | `admin/server.py`<br>`admin/utils.py` | 完了 |
+| **CR-158** | テスト検証 | **Drop 63 単体テスト新設 & 統合テストスイート整合性検証**<br>`testing/test_drop63_crawler_server_db.py`（U18）を新設。DB直結更新 $\to$ 自動エクスポート $\to$ JSON整合性のエンドツーエンド検証および統合テストスイート（全14ケース＋単体18種）完全合格を確認 | `testing/test_drop63_crawler_server_db.py`<br>`testing/run_unit_tests.py`<br>`testing/run_test_suite.py` | 完了 |
 
 ---
 

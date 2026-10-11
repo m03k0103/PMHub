@@ -210,9 +210,11 @@ def check_syntax_errors():
         os.path.join(PROJECT_ROOT, "testing", "test_drop47_context_recovery.py"),
         os.path.join(PROJECT_ROOT, "admin", "db", "seed_db.py"),
         os.path.join(PROJECT_ROOT, "admin", "db", "export_data.py"),
+        os.path.join(PROJECT_ROOT, "admin", "db", "db_manager.py"),
         os.path.join(PROJECT_ROOT, "testing", "test_drop48_zero_materials_rescue.py"),
         os.path.join(PROJECT_ROOT, "testing", "test_drop49_meeting_id_normalization.py"),
-        os.path.join(PROJECT_ROOT, "testing", "test_drop62_db_and_export.py")
+        os.path.join(PROJECT_ROOT, "testing", "test_drop62_db_and_export.py"),
+        os.path.join(PROJECT_ROOT, "testing", "test_drop63_crawler_server_db.py")
     ]
     
     errors_found = 0
@@ -967,6 +969,7 @@ def detect_required_unit_tests(changed_files):
         "test_drop48_zero_materials_rescue.py": ["u_drop48"],
         "test_drop49_meeting_id_normalization.py": ["u_drop49"],
         "test_drop62_db_and_export.py": ["u_drop62"],
+        "test_drop63_crawler_server_db.py": ["u_drop63"],
         "run_unit_tests.py": list(UNIT_TEST_REGISTRY.keys())
     }
     for f in changed_files:
@@ -977,6 +980,7 @@ def detect_required_unit_tests(changed_files):
     # データベース・エクスポート基盤仕様コード変更 (admin/db/)
     if any("admin/db/" in f or "admin\\db\\" in f for f in changed_files):
         required_keys.add("u_drop62")
+        required_keys.add("u_drop63")
 
     # フロントエンド関数仕様コード変更 (docs/app.js)
     if any(f.endswith("docs/app.js") or f == "docs/app.js" for f in changed_files):
