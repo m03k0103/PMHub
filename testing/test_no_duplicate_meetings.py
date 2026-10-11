@@ -373,7 +373,8 @@ def run_test(data=None):
         ('mhlw-824', 'mhlw-kousei_influ'),  # 新型インフルエンザ対策に関する小委員会 (過去期別)
         ('mhlw-912', 'mhlw-855'),  # ヒト幹細胞臨床研究 (過去期別)
         ('mhlw-930', 'mhlw-rousei_anzeneisei'),  # 安全衛生分科会 (過去期別)
-        ('mhlw-955', 'mhlw-927'),  # 争議行為 (過去期別)
+        ('mhlw-955', 'mhlw-927'),
+        ('mic-onkyu_shinsa02', 'mic-taisyoku_onkyu'),  # 恩給審査会 vs 退職手当・恩給審査会 (別組織)  # 争議行為 (過去期別)
     }
 
     similar_name_errors = []

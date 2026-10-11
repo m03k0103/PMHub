@@ -1420,7 +1420,7 @@ def extract_actual_subpage_links(html, target_url, rule=None, return_meta=False)
             continue
 
         # 報告書公表ページ・活動状況等の組織常設資料（回次「第X回」を含まない単独報告書リンク）の除外
-        if (any(k in t_clean for k in ['報告書', '活動状況', '視察概要', '論点整理', '提言']) or any(k in abs_url.lower() for k in ['/report/', '/tosin/'])) and not re.search(r'第\s*\d+\s*回', t_clean):
+        if (any(k in t_clean for k in ['報告書', '活動状況', '視察概要', '論点整理', '提言']) or any(k in abs_url.lower() for k in ['/report/', '/tosin/', '/katsudou/'])) and not re.search(r'第\s*\d+\s*回', t_clean):
             continue
         if not is_strong_meeting_url and any(kw == t_clean for kw in GENERIC_TITLE_KEYWORDS):
             continue

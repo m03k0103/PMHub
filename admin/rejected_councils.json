@@ -2935,5 +2935,59 @@
     "officialUrl": "https://www.mhlw.go.jp/stf/shingi/shingi-hosho_126698.html",
     "rejectedAt": "2026-09-29",
     "reason": "介護給付費分科会URL誤設定・重複会議体のため mhlw-shakai_hosho_kaigo_kyuufu へ統合・削除 (Drop 32)"
+  },
+  {
+    "id": "moj-sonota_index",
+    "name": "その他会議",
+    "ministry": "MOJ",
+    "category": "COUNCIL",
+    "officialUrl": "https://www.moj.go.jp/sonota_index.html",
+    "rejectedAt": "2026-10-11",
+    "reason": "共通インデックス・ポータル（その他会議）のため却下"
+  },
+  {
+    "id": "isa-policies_index",
+    "name": "政策情報（会議・統計等）",
+    "ministry": "ISA",
+    "category": "COUNCIL",
+    "officialUrl": "https://www.moj.go.jp/isa/policies/index.html",
+    "rejectedAt": "2026-10-11",
+    "reason": "共通インデックス・ポータル（政策情報（会議・統計等））のため却下"
+  },
+  {
+    "id": "isa-seisaku_index",
+    "name": "会議・委員会等",
+    "ministry": "ISA",
+    "category": "COMMITTEE",
+    "officialUrl": "https://www.moj.go.jp/isa/policies/conference/seisaku_index.html",
+    "rejectedAt": "2026-10-11",
+    "reason": "共通インデックス・ポータル（会議・委員会等）のため却下"
+  },
+  {
+    "id": "mic-soukai_shiryou",
+    "name": "会議資料",
+    "ministry": "MIC",
+    "category": "COUNCIL",
+    "officialUrl": "https://www.soumu.go.jp/main_sosiki/joho_tsusin/policyreports/joho_tsusin/soukai.html",
+    "rejectedAt": "2026-10-11",
+    "reason": "共通インデックス・ポータル（会議資料）のため却下"
+  },
+  {
+    "id": "mofa-shingikai_index",
+    "name": "審議会等",
+    "ministry": "MOFA",
+    "category": "COUNCIL",
+    "officialUrl": "https://www.mofa.go.jp/mofaj/annai/shingikai/index.html",
+    "rejectedAt": "2026-10-11",
+    "reason": "共通インデックス・ポータル（審議会等）のため却下"
+  },
+  {
+    "id": "anre-energy_env_index",
+    "name": "その他、各種研究会・検討会等はこちら（経済産業省WEBサイト）",
+    "ministry": "ANRE",
+    "category": "STUDY",
+    "officialUrl": "https://www.meti.go.jp/shingikai/energy_environment/",
+    "rejectedAt": "2026-10-11",
+    "reason": "共通インデックス・ポータル（各種研究会・検討会一覧）のため却下"
   }
 ]
