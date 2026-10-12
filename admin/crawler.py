@@ -1040,7 +1040,7 @@ def parse_materials_from_html(html, base_url, pdf_selector=None):
         if '#' in href and any(h in href.lower() for h in ['#contents', '#block_', '#header', '#footer', '#skip', '#main', '#page']):
             continue
 
-        abs_url = urllib.parse.urljoin(base_url, href)
+        abs_url = urllib.parse.urljoin(base_url, href).replace(' ', '%20')
         if abs_url == base_url or abs_url in seen_urls:
             continue
         if abs_url.startswith('javascript:') or is_sns_pr_url(abs_url) or is_non_pdf_anchor_url(abs_url):
@@ -1379,7 +1379,7 @@ def extract_actual_subpage_links(html, target_url, rule=None, return_meta=False)
         if href_clean.endswith(('.pdf', '.zip', '.doc', '.docx', '.xls', '.xlsx', '.jtd')):
             continue
 
-        abs_url = urllib.parse.urljoin(page_base_url, href)
+        abs_url = urllib.parse.urljoin(page_base_url, href).replace(' ', '%20')
         parsed = urllib.parse.urlparse(abs_url)
         if parsed.scheme not in ('http', 'https'):
             continue
@@ -1756,7 +1756,7 @@ def _extract_meetings_from_parent_table(html, target_url, council_name, rule=Non
                 href = a['href'].strip()
                 if not href or href.startswith('#') or href.startswith('javascript:'):
                     continue
-                abs_url = urllib.parse.urljoin(page_base, href)
+                abs_url = urllib.parse.urljoin(page_base, href).replace(' ', '%20')
                 if abs_url.startswith('javascript:') or is_sns_pr_url(abs_url) or is_non_pdf_anchor_url(abs_url):
                     continue
                 if is_generic_index_url(abs_url) or _is_parent_or_nav_url(abs_url, target_url):
@@ -1888,7 +1888,7 @@ def _extract_meetings_from_parent_sections(html, target_url, council_name, rule=
                     for a in cur.find_all('a', href=True):
                         href = a['href'].strip()
                         if href.endswith('.pdf'):
-                            abs_url = urllib.parse.urljoin(page_base, href)
+                            abs_url = urllib.parse.urljoin(page_base, href).replace(' ', '%20')
                             mat_name = normalize_text(a.get_text(' ', strip=True)) or '報告書'
                             report_materials.append({'name': mat_name, 'url': abs_url, 'type': 'PDF'})
                 cur = cur.next_sibling
@@ -1929,7 +1929,7 @@ def _extract_meetings_from_parent_sections(html, target_url, council_name, rule=
                     href = a['href'].strip()
                     if not href or href.startswith('#') or href.startswith('javascript:'):
                         continue
-                    abs_url = urllib.parse.urljoin(page_base, href)
+                    abs_url = urllib.parse.urljoin(page_base, href).replace(' ', '%20')
                     if abs_url.startswith('javascript:') or is_sns_pr_url(abs_url) or is_non_pdf_anchor_url(abs_url):
                         continue
                     if is_generic_index_url(abs_url) or _is_parent_or_nav_url(abs_url, target_url):
