@@ -59,7 +59,7 @@ def infer_council_category(name_or_text, defined_categories=None):
     """
     text = name_or_text or ""
     # 優先度の高い特定キーワードから順に判定
-    if "専門調査会" in text or "専門委員会" in text:
+    if "専門調査会" in text or "専門委員会" in text or "専門審査会" in text:
         cat = "EXPERT_COMMITTEE"
     elif "特別委員会" in text:
         cat = "SPECIAL_COMMITTEE"
@@ -69,7 +69,7 @@ def infer_council_category(name_or_text, defined_categories=None):
         cat = "SUBCOMMITTEE"
     elif "部会" in text:
         cat = "SECTION"
-    elif "ワーキンググループ" in text or "ワーキング・グループ" in text or "作業部会" in text or "WG" in text:
+    elif "ワーキンググループ" in text or "ワーキング・グループ" in text or "作業部会" in text or "作業班" in text or "WG" in text:
         cat = "WORKING_GROUP"
     elif "有識者会議" in text:
         cat = "PANEL"

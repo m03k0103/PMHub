@@ -659,8 +659,9 @@ PMM プロジェクト（`D:\dev\PMM\docs`）に蓄積された全 33 省庁・1
   1. `admin/crawler.py` に `--from-ministry-news`（短縮名 `--from-news`）を実装完了。全省庁ポータル定義、meta refresh 自動追従、年月サブページ自動解決、MHLW審議会一覧の `NEW` マーカー検知を配備。
   2. 省庁新着情報からのディスカバリークロールを実行し、新規開催回 **38 件**（内閣府9件、国交省8件、厚労省7件、法務省4件、財務省3件、金融庁3件、文科省1件、防衛省1件、規制委1件、食品安全委1件）、配付資料 **233 件** を自動追加（登録総数 19,776開催回・120,833資料到達）。
   3. プレースホルダー日付（2099/01/01）0件、ジェネリックタイトル0件、既存手動登録データ（`manualLock: true`）の非破壊性を完全維持。
-  4. SQLite マスターDB（`admin/pmhub.db`）および 2系統JSON（`docs/data.json`, `admin/admin_data.json`）の完全同期を達成。
-  5. 統合テストスイート（`python testing/run_test_suite.py --all-layers`、全15ケース＋全18単体テスト）に完全合格。
+  4. 登録済会議体カテゴリ適正化（連絡会議の `LIAISON`、特定ラジオマイク作業班および総務省全作業班55件の `WORKING_GROUP`、原子炉安全専門審査会の `EXPERT_COMMITTEE`、眼の水晶体検討部会の `SECTION`、審査会7件の `COMMITTEE` 整合化、および `discover_councils.py` 自動判定ロジック拡充）を完遂。
+  5. SQLite マスターDB（`admin/pmhub.db`）および 2系統JSON（`docs/data.json`, `admin/admin_data.json`）の完全同期を達成。
+  6. 統合テストスイート（`python testing/run_test_suite.py --all-layers`、全15ケース＋全18単体テスト）に完全合格。
 
 | ID | 分類 | 内容 | 対象ファイル | 状態 |
 |:---|:---:|:---|:---|:---:|
@@ -669,6 +670,7 @@ PMM プロジェクト（`D:\dev\PMM\docs`）に蓄積された全 33 省庁・1
 | **CR-162** | ディスカバリー実行 | **省庁お知らせ検知 & 登録済会議体ディスカバリークロール実行**<br>新オプションを用いて各府省庁から最新開催回（38件）および新着配付資料（233件）を自動検知・追加 | `admin/pmhub.db`<br>`docs/data.json`<br>`admin/admin_data.json` | 完了 |
 | **CR-163** | データ品質ガード | **プレースホルダー日付ゼロ・ジェネリックタイトル排除・手動保護非破壊**<br>2099ダミー日付・当日日付プレースホルダー遮断、UIノイズ排除、手動登録データ（`manualLock: true`）の完全保護 | `admin/crawler.py` | 完了 |
 | **CR-164** | DB同期 & テスト検証 | **SQLite マスターDB & 2系統JSON完全同期 & 統合15ケース＋単体18種完全合格**<br>`pmhub.db` へ反映し 2系統JSON へ同期出力。統合テストスイート `run_test_suite.py --all-layers` 完全合格 | `admin/pmhub.db`<br>`docs/data.json`<br>`admin/admin_data.json` | 完了 |
+| **CR-165** | カテゴリ適正化 | **会議体カテゴリ整合（連絡会議・作業部会・専門審査会）& 自動判定キーワード拡充**<br>`cas-shouhizei_futankeigen` を `LIAISON`、`mic-radiomic_wg` 含む作業班55件を `WORKING_GROUP`、`nra-ro_anzen_shinsa` を `EXPERT_COMMITTEE`、`nra-me_suishoutai` を `SECTION`、審査会7件を `COMMITTEE` に是正し、`discover_councils.py` に「専門審査会」「作業班」の自動判定ガードを追加 | `admin/discover_councils.py`<br>`admin/pmhub.db`<br>`docs/data.json` | 完了 |
 
 
 

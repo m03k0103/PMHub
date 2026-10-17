@@ -4285,7 +4285,7 @@
     {
       "id": "cas-shouhizei_futankeigen",
       "ministry": "CAS",
-      "category": "OTHER",
+      "category": "LIAISON",
       "name": "飲食料品に係る消費税率の臨時的な引下げ及び就業者負担軽減支援金の導入に関する関係府省庁連絡会議",
       "manualLock": true,
       "officialUrl": "https://www.cas.go.jp/jp/seisaku/shouhizei_futankeigenshienkin/index.html",
@@ -9433,7 +9433,7 @@
     {
       "id": "maff-nougyogyou_hoken",
       "ministry": "MAFF",
-      "category": "EXAMINATION_COMMITTEE",
+      "category": "COMMITTEE",
       "name": "農漁業保険審査会",
       "manualLock": true,
       "officialUrl": "https://www.maff.go.jp/j/council/hoken/index.html",
@@ -12078,7 +12078,7 @@
     {
       "id": "mhlw-engo_shinsa",
       "ministry": "MHLW",
-      "category": "EXAMINATION_COMMITTEE",
+      "category": "COMMITTEE",
       "name": "援護審査会",
       "manualLock": true,
       "officialUrl": "https://www.mhlw.go.jp/stf/shingi/shingi-engo_128221.html",
@@ -12113,7 +12113,7 @@
     {
       "id": "mhlw-hansen_kazoku_hoshou",
       "ministry": "MHLW",
-      "category": "EXAMINATION_COMMITTEE",
+      "category": "COMMITTEE",
       "name": "ハンセン病元患者家族補償金認定審査会",
       "manualLock": true,
       "officialUrl": "https://www.mhlw.go.jp/stf/newpage_09427.html",
@@ -12521,7 +12521,7 @@
     {
       "id": "mhlw-kyu_yusei_ichijikin",
       "ministry": "MHLW",
-      "category": "EXAMINATION_COMMITTEE",
+      "category": "COMMITTEE",
       "name": "旧優生保護法一時金認定審査会",
       "manualLock": true,
       "officialUrl": "https://www.mhlw.go.jp/stf/newpage_05687.html",
@@ -12601,7 +12601,7 @@
     {
       "id": "mhlw-roudou_hoken_shinsa",
       "ministry": "MHLW",
-      "category": "EXAMINATION_COMMITTEE",
+      "category": "COMMITTEE",
       "name": "労働保険審査会",
       "manualLock": true,
       "officialUrl": "https://www.mhlw.go.jp/topics/bukyoku/shinsa/roudou/index.html",
@@ -12803,7 +12803,7 @@
     {
       "id": "mhlw-shippei_shougai",
       "ministry": "MHLW",
-      "category": "EXAMINATION_COMMITTEE",
+      "category": "COMMITTEE",
       "name": "疾病・障害認定審査会",
       "manualLock": true,
       "officialUrl": "https://www.mhlw.go.jp/stf/shingi/shingi-shippei_127695.html",
@@ -12903,7 +12903,7 @@
     {
       "id": "mic-22ghz_fwa_wg",
       "ministry": "MIC",
-      "category": "COMMITTEE",
+      "category": "WORKING_GROUP",
       "name": "情報通信審議会 情報通信技術分科会 陸上無線通信委員会 22GHz帯FWA高度化作業班",
       "manualLock": true,
       "officialUrl": "https://www.soumu.go.jp/main_sosiki/joho_tsusin/policyreports/joho_tsusin/idou/22ghz_fwa.html",
@@ -12913,7 +12913,7 @@
     {
       "id": "mic-400mhz_saigai_wg",
       "ministry": "MIC",
-      "category": "COMMITTEE",
+      "category": "WORKING_GROUP",
       "name": "情報通信審議会 情報通信技術分科会 陸上無線通信委員会 400MHz帯災害対策用可搬型無線システム作業班",
       "manualLock": true,
       "officialUrl": "https://www.soumu.go.jp/main_sosiki/joho_tsusin/policyreports/joho_tsusin/idou/400mhz.html",
@@ -12923,7 +12923,7 @@
     {
       "id": "mic-4k8k_fpu_wg",
       "ministry": "MIC",
-      "category": "COMMITTEE",
+      "category": "WORKING_GROUP",
       "name": "情報通信審議会 放送システム委員会 4K・8K用FPU作業班",
       "manualLock": true,
       "officialUrl": "https://www.soumu.go.jp/main_sosiki/joho_tsusin/policyreports/joho_tsusin/housou_system/hosou_system/4k8k_fpu.html",
@@ -12933,7 +12933,7 @@
     {
       "id": "mic-5_2_6ghz_lan_wg",
       "ministry": "MIC",
-      "category": "COMMITTEE",
+      "category": "WORKING_GROUP",
       "name": "情報通信審議会 情報通信技術分科会 陸上無線通信委員会 5.2GHz帯及び6GHz帯無線LAN作業班",
       "manualLock": true,
       "officialUrl": "https://www.soumu.go.jp/main_sosiki/joho_tsusin/policyreports/joho_tsusin/idou/5-2_6LAN.html",
@@ -12943,7 +12943,7 @@
     {
       "id": "mic-5g_basic_concept_wg",
       "ministry": "MIC",
-      "category": "COMMITTEE",
+      "category": "WORKING_GROUP",
       "name": "情報通信審議会 新世代モバイル通信システム委員会 基本コンセプト作業班",
       "manualLock": true,
       "officialUrl": "https://www.soumu.go.jp/main_sosiki/joho_tsusin/policyreports/joho_tsusin/5th_generation/basic_concept/index.html",
@@ -12963,7 +12963,7 @@
     {
       "id": "mic-5g_sky_use_wg",
       "ministry": "MIC",
-      "category": "COMMITTEE",
+      "category": "WORKING_GROUP",
       "name": "情報通信審議会 新世代モバイル通信システム委員会 上空利用検討作業班",
       "manualLock": true,
       "officialUrl": "https://www.soumu.go.jp/main_sosiki/joho_tsusin/policyreports/joho_tsusin/5th_generation/sky_use/index.html",
@@ -12973,7 +12973,7 @@
     {
       "id": "mic-5g_technical_wg",
       "ministry": "MIC",
-      "category": "COMMITTEE",
+      "category": "WORKING_GROUP",
       "name": "情報通信審議会 新世代モバイル通信システム委員会 技術検討作業班",
       "manualLock": true,
       "officialUrl": "https://www.soumu.go.jp/main_sosiki/joho_tsusin/policyreports/joho_tsusin/5th_generation/technical/index.html",
@@ -12983,7 +12983,7 @@
     {
       "id": "mic-5ghz_lan_wg",
       "ministry": "MIC",
-      "category": "COMMITTEE",
+      "category": "WORKING_GROUP",
       "name": "情報通信審議会 情報通信技術分科会 陸上無線通信委員会 5GHz帯無線LAN作業班",
       "manualLock": true,
       "officialUrl": "https://www.soumu.go.jp/main_sosiki/joho_tsusin/policyreports/joho_tsusin/idou/5GHz.html",
@@ -12993,7 +12993,7 @@
     {
       "id": "mic-60ghz_wg",
       "ministry": "MIC",
-      "category": "COMMITTEE",
+      "category": "WORKING_GROUP",
       "name": "情報通信審議会 情報通信技術分科会 陸上無線通信委員会 60GHz帯無線設備作業班",
       "manualLock": true,
       "officialUrl": "https://www.soumu.go.jp/main_sosiki/joho_tsusin/policyreports/joho_tsusin/idou/60ghz.html",
@@ -13003,7 +13003,7 @@
     {
       "id": "mic-700mhz_eisei_wg",
       "ministry": "MIC",
-      "category": "COMMITTEE",
+      "category": "WORKING_GROUP",
       "name": "情報通信審議会 衛星通信システム委員会 700MHz帯衛星ダイレクト通信検討作業班",
       "manualLock": true,
       "officialUrl": "https://www.soumu.go.jp/main_sosiki/joho_tsusin/policyreports/joho_tsusin/idou_eisei/700MHztaieiseidairekuto.html",
@@ -13013,7 +13013,7 @@
     {
       "id": "mic-76ghz_radar_wg",
       "ministry": "MIC",
-      "category": "COMMITTEE",
+      "category": "WORKING_GROUP",
       "name": "情報通信審議会 情報通信技術分科会 陸上無線通信委員会 76GHz帯小電力ミリ波レーダー高度化作業班",
       "manualLock": true,
       "officialUrl": "https://www.soumu.go.jp/main_sosiki/joho_tsusin/policyreports/joho_tsusin/idou/76ghz.html",
@@ -13023,7 +13023,7 @@
     {
       "id": "mic-79ghz_radar_wg",
       "ministry": "MIC",
-      "category": "COMMITTEE",
+      "category": "WORKING_GROUP",
       "name": "情報通信審議会 情報通信技術分科会 陸上無線通信委員会 79GHz帯高分解能レーダー作業班",
       "manualLock": true,
       "officialUrl": "https://www.soumu.go.jp/main_sosiki/joho_tsusin/policyreports/joho_tsusin/its_radio_system/79ghz.html",
@@ -13033,7 +13033,7 @@
     {
       "id": "mic-900mhz_jieiyo_wg",
       "ministry": "MIC",
-      "category": "COMMITTEE",
+      "category": "WORKING_GROUP",
       "name": "情報通信審議会 情報通信技術分科会 陸上無線通信委員会 900MHz帯自営用無線システム高度化作業班",
       "manualLock": true,
       "officialUrl": "https://www.soumu.go.jp/main_sosiki/joho_tsusin/policyreports/joho_tsusin/idou/900MHz.html",
@@ -13043,7 +13043,7 @@
     {
       "id": "mic-920mhz_tag_wg",
       "ministry": "MIC",
-      "category": "COMMITTEE",
+      "category": "WORKING_GROUP",
       "name": "情報通信審議会 情報通信技術分科会 陸上無線通信委員会 920MHz帯電子タグシステム等作業班",
       "manualLock": true,
       "officialUrl": "https://www.soumu.go.jp/main_sosiki/joho_tsusin/policyreports/joho_tsusin/idou/920mhz.html",
@@ -13053,7 +13053,7 @@
     {
       "id": "mic-all_optical_wg",
       "ministry": "MIC",
-      "category": "COMMITTEE",
+      "category": "WORKING_GROUP",
       "name": "情報通信審議会 技術戦略委員会 オール光ネットワーク共通基盤技術WG",
       "manualLock": true,
       "officialUrl": "https://www.soumu.go.jp/main_sosiki/joho_tsusin/policyreports/joho_tsusin/gijutsusenryaku/apn_kyotsu/index.html",
@@ -13073,7 +13073,7 @@
     {
       "id": "mic-chidigi_koudoka_wg",
       "ministry": "MIC",
-      "category": "COMMITTEE",
+      "category": "WORKING_GROUP",
       "name": "情報通信審議会 放送システム委員会 地上デジタル放送方式高度化作業班",
       "manualLock": true,
       "officialUrl": "https://www.soumu.go.jp/main_sosiki/joho_tsusin/policyreports/joho_tsusin/housou_system/hosou_system/chidigi_koudoka.html",
@@ -13189,7 +13189,7 @@
     {
       "id": "mic-dejidoho_wg",
       "ministry": "MIC",
-      "category": "COMMITTEE",
+      "category": "WORKING_GROUP",
       "name": "情報通信審議会 情報通信技術分科会 陸上無線通信委員会 デジタル同報低廉化検討アドホックグループ",
       "manualLock": true,
       "officialUrl": "https://www.soumu.go.jp/main_sosiki/joho_tsusin/policyreports/joho_tsusin/idou/ad_hoc_group/index.html",
@@ -13246,7 +13246,7 @@
     {
       "id": "mic-denpa_joku_wg",
       "ministry": "MIC",
-      "category": "COMMITTEE",
+      "category": "WORKING_GROUP",
       "name": "情報通信審議会 情報通信技術分科会 電波有効利用委員会 電波上空利用作業班",
       "manualLock": true,
       "officialUrl": "https://www.soumu.go.jp/main_sosiki/joho_tsusin/policyreports/joho_tsusin/denpa_yukoriyo/dempajokuriyo/index.html",
@@ -13256,7 +13256,7 @@
     {
       "id": "mic-denpa_kankyo_wg",
       "ministry": "MIC",
-      "category": "COMMITTEE",
+      "category": "WORKING_GROUP",
       "name": "情報通信審議会 情報通信技術分科会 電波有効利用委員会 電波環境分野の在り方検討作業班",
       "manualLock": true,
       "officialUrl": "https://www.soumu.go.jp/main_sosiki/joho_tsusin/policyreports/joho_tsusin/denpa_yukoriyo/dempakankyo/index.html",
@@ -13284,7 +13284,7 @@
     {
       "id": "mic-denpa_kanshi_wg",
       "ministry": "MIC",
-      "category": "COMMITTEE",
+      "category": "WORKING_GROUP",
       "name": "情報通信審議会 情報通信技術分科会 電波有効利用委員会 電波監視作業班",
       "manualLock": true,
       "officialUrl": "https://www.soumu.go.jp/main_sosiki/joho_tsusin/policyreports/joho_tsusin/denpa_yukoriyo/kanshisagyo/index.html",
@@ -13314,7 +13314,7 @@
     {
       "id": "mic-digital_codeless_wg",
       "ministry": "MIC",
-      "category": "COMMITTEE",
+      "category": "WORKING_GROUP",
       "name": "情報通信審議会 情報通信技術分科会 陸上無線通信委員会 デジタルコードレス電話作業班",
       "manualLock": true,
       "officialUrl": "https://www.soumu.go.jp/main_sosiki/joho_tsusin/policyreports/joho_tsusin/idou/digital_codeless.html",
@@ -13371,7 +13371,7 @@
     {
       "id": "mic-haps_wg",
       "ministry": "MIC",
-      "category": "COMMITTEE",
+      "category": "WORKING_GROUP",
       "name": "情報通信審議会 新世代モバイル通信システム委員会 HAPS検討作業班",
       "manualLock": true,
       "officialUrl": "https://www.soumu.go.jp/main_sosiki/joho_tsusin/policyreports/joho_tsusin/5th_generation/haps/index.html",
@@ -13381,7 +13381,7 @@
     {
       "id": "mic-helisat_wg",
       "ministry": "MIC",
-      "category": "COMMITTEE",
+      "category": "WORKING_GROUP",
       "name": "情報通信審議会 衛星通信システム委員会 ヘリサット作業班",
       "manualLock": true,
       "officialUrl": "https://www.soumu.go.jp/main_sosiki/joho_tsusin/policyreports/joho_tsusin/idou_eisei/helisat.html",
@@ -13439,7 +13439,7 @@
     {
       "id": "mic-its_musen_wg",
       "ministry": "MIC",
-      "category": "COMMITTEE",
+      "category": "WORKING_GROUP",
       "name": "情報通信審議会 情報通信技術分科会 陸上無線通信委員会 ITS無線システム作業班",
       "manualLock": true,
       "officialUrl": "https://www.soumu.go.jp/main_sosiki/joho_tsusin/policyreports/joho_tsusin/its_radio_system/its_r_s_koudoka.html",
@@ -13520,7 +13520,7 @@
     {
       "id": "mic-juten_gijutsu_wg",
       "ministry": "MIC",
-      "category": "COMMITTEE",
+      "category": "WORKING_GROUP",
       "name": "情報通信審議会 情報通信技術分科会 電波有効利用委員会 重点技術作業班",
       "manualLock": true,
       "officialUrl": "https://www.soumu.go.jp/main_sosiki/joho_tsusin/policyreports/joho_tsusin/denpa_yukoriyo/jutengijutsu/index.html",
@@ -13539,7 +13539,7 @@
     {
       "id": "mic-kagaku_kyoso_wg",
       "ministry": "MIC",
-      "category": "COMMITTEE",
+      "category": "WORKING_GROUP",
       "name": "情報通信審議会 情報通信技術分科会 電波有効利用委員会 価額競争の実施方法に関する検討作業班",
       "manualLock": true,
       "officialUrl": "https://www.soumu.go.jp/main_sosiki/joho_tsusin/policyreports/joho_tsusin/denpa_yukoriyo/kagakukyoso/index.html",
@@ -13549,7 +13549,7 @@
     {
       "id": "mic-kaiyou_radar_wg",
       "ministry": "MIC",
-      "category": "COMMITTEE",
+      "category": "WORKING_GROUP",
       "name": "情報通信審議会 航空・海上無線通信委員会 海洋レーダー作業班",
       "manualLock": true,
       "officialUrl": "https://www.soumu.go.jp/main_sosiki/joho_tsusin/policyreports/joho_tsusin/koukuu_kaijo_musen/or_sagyouhan.html",
@@ -13578,7 +13578,7 @@
     {
       "id": "mic-keitai_yukoriyo_wg",
       "ministry": "MIC",
-      "category": "COMMITTEE",
+      "category": "WORKING_GROUP",
       "name": "情報通信審議会 情報通信技術分科会 電波有効利用委員会 携帯電話等周波数の有効利用に関する検討作業班",
       "manualLock": true,
       "officialUrl": "https://www.soumu.go.jp/main_sosiki/joho_tsusin/policyreports/joho_tsusin/denpa_yukoriyo/keitai_yukoriyo/index.html",
@@ -13597,7 +13597,7 @@
     {
       "id": "mic-kikankeimusen_wg",
       "ministry": "MIC",
-      "category": "COMMITTEE",
+      "category": "WORKING_GROUP",
       "name": "情報通信審議会 情報通信技術分科会 陸上無線通信委員会 基幹系無線システム作業班",
       "manualLock": true,
       "officialUrl": "https://www.soumu.go.jp/main_sosiki/joho_tsusin/policyreports/joho_tsusin/idou/kikankeimusen/index.html",
@@ -13607,7 +13607,7 @@
     {
       "id": "mic-kokyo_musen_wg",
       "ministry": "MIC",
-      "category": "COMMITTEE",
+      "category": "WORKING_GROUP",
       "name": "情報通信審議会 情報通信技術分科会 陸上無線通信委員会 公共業務用無線システム作業班",
       "manualLock": true,
       "officialUrl": "https://www.soumu.go.jp/main_sosiki/joho_tsusin/policyreports/joho_tsusin/idou/kokyogyomuyomusen/index.html",
@@ -13638,7 +13638,7 @@
     {
       "id": "mic-koukuu_musen_wg",
       "ministry": "MIC",
-      "category": "COMMITTEE",
+      "category": "WORKING_GROUP",
       "name": "情報通信審議会 航空・海上無線通信委員会 航空無線電話・航法システム作業班",
       "manualLock": true,
       "officialUrl": "https://www.soumu.go.jp/main_sosiki/joho_tsusin/policyreports/joho_tsusin/koukuu_kaijo_musen/cn_sagyouhan.html",
@@ -13648,7 +13648,7 @@
     {
       "id": "mic-kousoku_denryoku_wg",
       "ministry": "MIC",
-      "category": "COMMITTEE",
+      "category": "WORKING_GROUP",
       "name": "情報通信審議会 電波利用環境委員会 高速電力線搬送通信設備作業班",
       "manualLock": true,
       "officialUrl": "https://www.soumu.go.jp/main_sosiki/joho_tsusin/policyreports/joho_tsusin/denpa_kankyou/kousoku.html",
@@ -13666,7 +13666,7 @@
     {
       "id": "mic-kyoso_innovation_wg",
       "ministry": "MIC",
-      "category": "COMMITTEE",
+      "category": "WORKING_GROUP",
       "name": "情報通信審議会 技術戦略委員会 共創イノベーションWG",
       "manualLock": true,
       "officialUrl": "https://www.soumu.go.jp/main_sosiki/joho_tsusin/policyreports/joho_tsusin/gijutsusenryaku/kyoso/index.html",
@@ -13676,7 +13676,7 @@
     {
       "id": "mic-local_5g_wg",
       "ministry": "MIC",
-      "category": "COMMITTEE",
+      "category": "WORKING_GROUP",
       "name": "情報通信審議会 新世代モバイル通信システム委員会 ローカル5G検討作業班",
       "manualLock": true,
       "officialUrl": "https://www.soumu.go.jp/main_sosiki/joho_tsusin/policyreports/joho_tsusin/5th_generation/local_5g/index.html",
@@ -13695,7 +13695,7 @@
     {
       "id": "mic-musen_jujisha_wg",
       "ministry": "MIC",
-      "category": "COMMITTEE",
+      "category": "WORKING_GROUP",
       "name": "情報通信審議会 情報通信技術分科会 電波有効利用委員会 無線従事者制度の在り方検討作業班",
       "manualLock": true,
       "officialUrl": "https://www.soumu.go.jp/main_sosiki/joho_tsusin/policyreports/joho_tsusin/denpa_yukoriyo/musenjujisha/index.html",
@@ -13738,7 +13738,7 @@
     {
       "id": "mic-nhk_haishin_wg",
       "ministry": "MIC",
-      "category": "COMMITTEE",
+      "category": "WORKING_GROUP",
       "name": "情報通信審議会 放送システム委員会 NHK配信用設備作業班",
       "manualLock": true,
       "officialUrl": "https://www.soumu.go.jp/main_sosiki/joho_tsusin/policyreports/joho_tsusin/housou_system/hosou_system/nhk_haishin.html",
@@ -13748,7 +13748,7 @@
     {
       "id": "mic-ninsho_sagyo_wg",
       "ministry": "MIC",
-      "category": "COMMITTEE",
+      "category": "WORKING_GROUP",
       "name": "情報通信審議会 情報通信技術分科会 電波有効利用委員会 無線設備の認証の在り方検討作業班",
       "manualLock": true,
       "officialUrl": "https://www.soumu.go.jp/main_sosiki/joho_tsusin/policyreports/joho_tsusin/denpa_yukoriyo/ninshousagyo/index.html",
@@ -13767,7 +13767,7 @@
     {
       "id": "mic-public_bb_mobile_wg",
       "ministry": "MIC",
-      "category": "COMMITTEE",
+      "category": "WORKING_GROUP",
       "name": "情報通信審議会 情報通信技術分科会 陸上無線通信委員会 公共ブロードバンド移動通信システム高度化作業班",
       "manualLock": true,
       "officialUrl": "https://www.soumu.go.jp/main_sosiki/joho_tsusin/policyreports/joho_tsusin/idou/public_broadband_mobile.html",
@@ -13777,7 +13777,7 @@
     {
       "id": "mic-radiomic_wg",
       "ministry": "MIC",
-      "category": "COMMITTEE",
+      "category": "WORKING_GROUP",
       "name": "情報通信審議会 情報通信技術分科会 陸上無線通信委員会 特定ラジオマイク作業班",
       "manualLock": true,
       "officialUrl": "https://www.soumu.go.jp/main_sosiki/joho_tsusin/policyreports/joho_tsusin/idou/radiomic.html",
@@ -13797,7 +13797,7 @@
     {
       "id": "mic-robot_wg",
       "ministry": "MIC",
-      "category": "COMMITTEE",
+      "category": "WORKING_GROUP",
       "name": "情報通信審議会 情報通信技術分科会 陸上無線通信委員会 ロボット作業班",
       "manualLock": true,
       "officialUrl": "https://www.soumu.go.jp/main_sosiki/joho_tsusin/policyreports/joho_tsusin/idou/robot/index.html",
@@ -13807,7 +13807,7 @@
     {
       "id": "mic-saigairobot_wg",
       "ministry": "MIC",
-      "category": "COMMITTEE",
+      "category": "WORKING_GROUP",
       "name": "情報通信審議会 情報通信技術分科会 陸上無線通信委員会 災害ロボット作業班",
       "manualLock": true,
       "officialUrl": "https://www.soumu.go.jp/main_sosiki/joho_tsusin/policyreports/joho_tsusin/idou/saigairobot/index.html",
@@ -13859,7 +13859,7 @@
     {
       "id": "mic-senpaku_radar_wg",
       "ministry": "MIC",
-      "category": "COMMITTEE",
+      "category": "WORKING_GROUP",
       "name": "情報通信審議会 航空・海上無線通信委員会 船舶用固体素子レーダー作業班",
       "manualLock": true,
       "officialUrl": "https://www.soumu.go.jp/main_sosiki/joho_tsusin/policyreports/joho_tsusin/koukuu_kaijo_musen/ssr_sagyouhan.html",
@@ -13888,7 +13888,7 @@
     {
       "id": "mic-shakai_jissou_wg",
       "ministry": "MIC",
-      "category": "COMMITTEE",
+      "category": "WORKING_GROUP",
       "name": "情報通信審議会 技術戦略委員会 社会実装加速化WG",
       "manualLock": true,
       "officialUrl": "https://www.soumu.go.jp/main_sosiki/joho_tsusin/policyreports/joho_tsusin/gijutsusenryaku/syakai/index.html",
@@ -13907,7 +13907,7 @@
     {
       "id": "mic-shisutemu_wg",
       "ministry": "MIC",
-      "category": "COMMITTEE",
+      "category": "WORKING_GROUP",
       "name": "情報通信審議会 情報通信技術分科会 陸上無線通信委員会 業務用陸上無線システム作業班",
       "manualLock": true,
       "officialUrl": "https://www.soumu.go.jp/main_sosiki/joho_tsusin/policyreports/joho_tsusin/idou/shisutemu/index.html",
@@ -13917,7 +13917,7 @@
     {
       "id": "mic-shoden_system_wg",
       "ministry": "MIC",
-      "category": "COMMITTEE",
+      "category": "WORKING_GROUP",
       "name": "情報通信審議会 情報通信技術分科会 陸上無線通信委員会 小電力システム作業班",
       "manualLock": true,
       "officialUrl": "https://www.soumu.go.jp/main_sosiki/joho_tsusin/policyreports/joho_tsusin/idou/shoden.html",
@@ -13937,7 +13937,7 @@
     {
       "id": "mic-shortwave_digital_wg",
       "ministry": "MIC",
-      "category": "COMMITTEE",
+      "category": "WORKING_GROUP",
       "name": "情報通信審議会 情報通信技術分科会 陸上無線通信委員会 短波帯デジタル固定局作業班",
       "manualLock": true,
       "officialUrl": "https://www.soumu.go.jp/main_sosiki/joho_tsusin/policyreports/joho_tsusin/idou/shortwave_digital.html",
@@ -13965,7 +13965,7 @@
     {
       "id": "mic-stl_ttl_tsl_wg",
       "ministry": "MIC",
-      "category": "COMMITTEE",
+      "category": "WORKING_GROUP",
       "name": "情報通信審議会 放送システム委員会 STL/TTL/TSL高度化作業班",
       "manualLock": true,
       "officialUrl": "https://www.soumu.go.jp/main_sosiki/joho_tsusin/policyreports/joho_tsusin/housou_system/hosou_system/stl_ttl_tsl_koudoka.html",
@@ -14001,7 +14001,7 @@
     {
       "id": "mic-tpms_rke_wg",
       "ministry": "MIC",
-      "category": "COMMITTEE",
+      "category": "WORKING_GROUP",
       "name": "情報通信審議会 情報通信技術分科会 陸上無線通信委員会 TPMS・RKEシステムアドホックグループ",
       "manualLock": true,
       "officialUrl": "https://www.soumu.go.jp/main_sosiki/joho_tsusin/policyreports/joho_tsusin/idou/tpms_rke_ah/index.html",
@@ -14039,7 +14039,7 @@
     {
       "id": "mic-uwb_musen_wg",
       "ministry": "MIC",
-      "category": "COMMITTEE",
+      "category": "WORKING_GROUP",
       "name": "情報通信審議会 情報通信技術分科会 陸上無線通信委員会 UWB無線システム屋外利用検討作業班",
       "manualLock": true,
       "officialUrl": "https://www.soumu.go.jp/main_sosiki/joho_tsusin/policyreports/joho_tsusin/idou/uwb.html",
@@ -14049,7 +14049,7 @@
     {
       "id": "mic-v_high_wg",
       "ministry": "MIC",
-      "category": "COMMITTEE",
+      "category": "WORKING_GROUP",
       "name": "情報通信審議会 情報通信技術分科会 陸上無線通信委員会 V-High帯公共BB／狭帯域無線システム作業班",
       "manualLock": true,
       "officialUrl": "https://www.soumu.go.jp/main_sosiki/joho_tsusin/policyreports/joho_tsusin/idou/v_high/index.html",
@@ -14059,7 +14059,7 @@
     {
       "id": "mic-vhf_band_wg",
       "ministry": "MIC",
-      "category": "COMMITTEE",
+      "category": "WORKING_GROUP",
       "name": "情報通信審議会 情報通信技術分科会 陸上無線通信委員会 VHF帯加入者系無線システム作業班",
       "manualLock": true,
       "officialUrl": "https://www.soumu.go.jp/main_sosiki/joho_tsusin/policyreports/joho_tsusin/idou/vhf_band.html",
@@ -14069,7 +14069,7 @@
     {
       "id": "mic-weather_radar_wg",
       "ministry": "MIC",
-      "category": "COMMITTEE",
+      "category": "WORKING_GROUP",
       "name": "情報通信審議会 情報通信技術分科会 陸上無線通信委員会 気象レーダー作業班",
       "manualLock": true,
       "officialUrl": "https://www.soumu.go.jp/main_sosiki/joho_tsusin/policyreports/joho_tsusin/idou/weather_radar.html",
@@ -14079,7 +14079,7 @@
     {
       "id": "mic-wlesslan_wg",
       "ministry": "MIC",
-      "category": "COMMITTEE",
+      "category": "WORKING_GROUP",
       "name": "情報通信審議会 情報通信技術分科会 陸上無線通信委員会 無線LANシステム作業班",
       "manualLock": true,
       "officialUrl": "https://www.soumu.go.jp/main_sosiki/joho_tsusin/policyreports/joho_tsusin/idou/wlesslan.html",
@@ -14089,7 +14089,7 @@
     {
       "id": "mic-wpt_kankyou_wg",
       "ministry": "MIC",
-      "category": "COMMITTEE",
+      "category": "WORKING_GROUP",
       "name": "情報通信審議会 電波利用環境委員会 ワイヤレス電力伝送作業班",
       "manualLock": true,
       "officialUrl": "https://www.soumu.go.jp/main_sosiki/joho_tsusin/policyreports/joho_tsusin/denpa_kankyou/wpt.html",
@@ -14099,7 +14099,7 @@
     {
       "id": "mic-wpt_wg",
       "ministry": "MIC",
-      "category": "COMMITTEE",
+      "category": "WORKING_GROUP",
       "name": "情報通信審議会 情報通信技術分科会 陸上無線通信委員会 空間伝送型ワイヤレス電力伝送システム作業班",
       "manualLock": true,
       "officialUrl": "https://www.soumu.go.jp/main_sosiki/joho_tsusin/policyreports/joho_tsusin/idou/b_wpt_wg.html",
@@ -14214,7 +14214,7 @@
     {
       "id": "mlit-chuo_kensetsu_koushi_shinsa",
       "ministry": "MLIT",
-      "category": "EXAMINATION_COMMITTEE",
+      "category": "COMMITTEE",
       "name": "中央建設工事紛争審査会",
       "manualLock": true,
       "officialUrl": "https://www.mlit.go.jp/totikensangyo/const/totikensangyo_const_mn1_000101.html",
@@ -16136,7 +16136,7 @@
     {
       "id": "nra-me_suishoutai",
       "ministry": "NRA",
-      "category": "",
+      "category": "SECTION",
       "name": "眼の水晶体の放射線防護検討部会",
       "manualLock": true,
       "officialUrl": "https://www.da.nra.go.jp/search?fuse=1&f.gi=M003_009",
@@ -16145,7 +16145,7 @@
     {
       "id": "nra-ro_anzen_shinsa",
       "ministry": "NRA",
-      "category": "",
+      "category": "EXPERT_COMMITTEE",
       "name": "原子炉安全専門審査会・核燃料安全専門審査会",
       "manualLock": true,
       "officialUrl": "https://www.da.nra.go.jp/search?fuse=1&f.gi=M003_004",
