@@ -7094,14 +7094,6 @@
       "officialUrl": "https://www.maff.go.jp/j/study/suitou_syukakuryo/index.html",
       "pdf_selector": "a[href*='.pdf'], a[href*='.PDF']"
     },
-    "maff-tochikujou_seido": {
-      "officialUrl": "https://www.maff.go.jp/j/study/tochikujou.html",
-      "template": "tpl-parent-section-direct",
-      "subpage_discovery_pattern": "[^\"\\']*(?:tochikujou|attach)[^\"\\']*",
-      "date_regex": "(?:令和|平成)\\d+年\\d+月\\d+日|20\\d{2}年\\d+月\\d+日",
-      "pdf_selector": "a[href*='.pdf'], a[href*='.PDF']",
-      "manualLock": true
-    },
     "meti-1664": {
       "subpage_discovery_pattern": "[^\"\\']*(?:\\d{3}\\.html|[\\w_-]+/\\d{3}\\.html)",
       "title_selector": "main h1, #contents h1, h1, .main_title",
@@ -10225,6 +10217,14 @@
       "extract_from_parent_table": true,
       "officialUrl": "https://www.mhlw.go.jp/stf/shingi/shingi-hosho_336720.html",
       "pdf_selector": "a[href*='.pdf'], a[href*='.PDF']"
+    },
+    "mhlw-tochikujou_seido": {
+      "officialUrl": "https://www.mhlw.go.jp/stf/newpage_76379.html",
+      "template": "tpl-parent-table-direct",
+      "subpage_discovery_pattern": "[^\"\\']*(?:newpage|content)[^\"\\']*",
+      "date_regex": "(?:令和|平成)\\d+年\\d+月\\d+日|20\\d{2}年\\d+月\\d+日",
+      "pdf_selector": "a[href*='.pdf'], a[href*='.PDF']",
+      "manualLock": true
     },
     "mhlw-tokumei_iryou": {
       "date_regex": "(?:令和|平成)\\d+年\\d+月\\d+日|20\\d{2}年\\d+月\\d+日",
@@ -32945,7 +32945,6 @@
       "maff-shokuiku_mieruka_wg",
       "maff-shokuiku_suishin_hyouka_iinkai",
       "maff-shokuiku_suishin_kaigi",
-      "maff-tochikujou_seido",
       "meti-1664",
       "meti-1666",
       "meti-1673",
@@ -33066,6 +33065,7 @@
       "mhlw-shakai_yougo_arikata",
       "mhlw-shakai_youiku_system_wg",
       "mhlw-shippei_shougai",
+      "mhlw-tochikujou_seido",
       "mhlw-tsumitatekin_kihon_shishin_kento",
       "mhlw-unyou_iinkai_junbi_kaigou",
       "mic-22ghz_fwa_wg",
@@ -39982,7 +39982,6 @@
       "maff-sizai_kensa_bukai-20131021-014",
       "maff-sizai_kikaika_bunkakai-20131021-014",
       "maff-sizai_shubyo_bunkakai-20131021-014",
-      "maff-tochikujou_seido-20260101-001",
       "meti-1664-20240529-001",
       "meti-1664-20240619-002",
       "meti-1664-20240726-003",
@@ -42604,6 +42603,7 @@
       "mhlw-shippei_shougai-20230224-012",
       "mhlw-shippei_shougai-20250226-013",
       "mhlw-sougu_ryouyouhi-20260206-010",
+      "mhlw-tochikujou_seido-20261005-001",
       "mhlw-tokumei_iryou-20250604-029",
       "mhlw-tokumei_iryou-20250825-032",
       "mhlw-tokumei_iryou-20251121-036",
@@ -52656,8 +52656,6 @@
       "maff-sizai_kensa_bukai-20131021-014:https://www.maff.go.jp/j/council/sizai/nouyaku/14/pdf/gijiroku_140304.pdf",
       "maff-sizai_kikaika_bunkakai-20131021-014:https://www.maff.go.jp/j/council/sizai/nouyaku/14/pdf/gijiroku_140304.pdf",
       "maff-sizai_shubyo_bunkakai-20131021-014:https://www.maff.go.jp/j/council/sizai/nouyaku/14/pdf/gijiroku_140304.pdf",
-      "maff-tochikujou_seido-20260101-001:https://www.mhlw.go.jp/topics/bukyoku/syakai/soren/",
-      "maff-tochikujou_seido-20260101-001:https://www.mhlw.go.jp/toukei_hakusho/hakusho/",
       "meti-denryoku_gas_kanshi-20260731-614:https://www.egc.meti.go.jp/activity/emsc/604_haifu.html",
       "meti-denryoku_gas_kanshi-20260731-614:https://www.egc.meti.go.jp/activity/emsc/605_haifu.html",
       "meti-denryoku_gas_kanshi-20260731-614:https://www.egc.meti.go.jp/activity/emsc/606_haifu.html",
@@ -55357,6 +55355,12 @@
       "mhlw-shippei_shougai-20230224-012:https://www.mhlw.go.jp/stf/newpage_32131.html",
       "mhlw-shippei_shougai-20250226-013:https://www.mhlw.go.jp/stf/newpage_52700.html",
       "mhlw-shippei_shougai-20250226-013:https://www.mhlw.go.jp/stf/newpage_55436.html",
+      "mhlw-tochikujou_seido-20261005-001:https://www.mhlw.go.jp/content/10906000/001756546.pdf",
+      "mhlw-tochikujou_seido-20261005-001:https://www.mhlw.go.jp/content/10906000/001756547.pdf",
+      "mhlw-tochikujou_seido-20261005-001:https://www.mhlw.go.jp/content/10906000/001756548.pdf",
+      "mhlw-tochikujou_seido-20261005-001:https://www.mhlw.go.jp/content/10906000/001756549.pdf",
+      "mhlw-tochikujou_seido-20261005-001:https://www.mhlw.go.jp/content/10906000/001756550.pdf",
+      "mhlw-tochikujou_seido-20261005-001:https://www.mhlw.go.jp/content/10906000/001756551.pdf",
       "mhlw-unyou_iinkai_junbi_kaigou-20050720-001:https://www.mhlw.go.jp/shingi/2005/07/s0720-11.html",
       "mhlw-unyou_iinkai_junbi_kaigou-20050916-002:https://www.mhlw.go.jp/shingi/2005/09/s0916-6.html",
       "mhlw-unyou_iinkai_junbi_kaigou-20051017-003:https://www.mhlw.go.jp/shingi/2005/10/s1017-8.html",

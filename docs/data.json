@@ -9597,15 +9597,6 @@
       "pastYearCount": 0
     },
     {
-      "id": "maff-tochikujou_seido",
-      "ministry": "MAFF",
-      "category": "STUDY_GROUP",
-      "name": "と畜場の制度に関する研究会",
-      "manualLock": true,
-      "officialUrl": "https://www.maff.go.jp/j/study/tochikujou.html",
-      "pastYearCount": 0
-    },
-    {
       "id": "meti-1664",
       "ministry": "METI",
       "category": "HQ",
@@ -12833,6 +12824,15 @@
       "name": "医療保険部会 治療用装具療養費検討専門委員会",
       "officialUrl": "https://www.mhlw.go.jp/stf/shingi/shingi-hosho_336720.html",
       "pastYearCount": 2
+    },
+    {
+      "id": "mhlw-tochikujou_seido",
+      "ministry": "MHLW",
+      "category": "STUDY_GROUP",
+      "name": "と畜場の制度に関する研究会",
+      "manualLock": true,
+      "officialUrl": "https://www.mhlw.go.jp/stf/newpage_76379.html",
+      "pastYearCount": 0
     },
     {
       "id": "mhlw-tokumei_iryou",
@@ -17310,6 +17310,47 @@
         {
           "name": "資料6 村木構成員提出資料[PDF形式:275KB]",
           "url": "https://www.mhlw.go.jp/content/12201000/001755734.pdf"
+        }
+      ]
+    },
+    {
+      "id": "mhlw-tochikujou_seido-20261005-001",
+      "councilId": "mhlw-tochikujou_seido",
+      "name": "第1回 と畜場の制度に関する研究会",
+      "date": "2026/10/05",
+      "manualLock": true,
+      "round": 1,
+      "officialUrl": "https://www.mhlw.go.jp/stf/newpage_76383.html",
+      "materials": [
+        {
+          "name": "議事次第",
+          "url": "https://www.mhlw.go.jp/content/10906000/001756546.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "資料１ 開催要領及び構成員名簿",
+          "url": "https://www.mhlw.go.jp/content/10906000/001756547.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "資料２ 説明資料（と畜場をめぐる情勢）",
+          "url": "https://www.mhlw.go.jp/content/10906000/001756548.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "参考資料１ と畜場関連法令",
+          "url": "https://www.mhlw.go.jp/content/10906000/001756549.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "参考資料２ と畜・食鳥検査等に関する実態調査",
+          "url": "https://www.mhlw.go.jp/content/10906000/001756550.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "参考資料３ と畜場の施設及び設備に関するガイドラインについて",
+          "url": "https://www.mhlw.go.jp/content/10906000/001756551.pdf",
+          "manualLock": true
         }
       ]
     },
@@ -100454,29 +100495,6 @@
         {
           "name": "参考資料9　配布冊子データ（一括）",
           "url": "https://www.fdma.go.jp/singi_kento/kento/items/1/02/sankou9.pdf",
-          "manualLock": true
-        }
-      ]
-    },
-    {
-      "id": "maff-tochikujou_seido-20260101-001",
-      "councilId": "maff-tochikujou_seido",
-      "name": "（外部リンク）「第1回と畜場の制度に関する研究会」の開催について",
-      "date": "2026/01/01",
-      "manualLock": true,
-      "round": 1,
-      "officialUrl": "https://www.mhlw.go.jp/stf/newpage_76377.html",
-      "materials": [
-        {
-          "name": "ロシア連邦政府等から提供された抑留者に関する資料について",
-          "url": "https://www.mhlw.go.jp/topics/bukyoku/syakai/soren/",
-          "type": "HTML",
-          "manualLock": true
-        },
-        {
-          "name": "白書、年次報告書",
-          "url": "https://www.mhlw.go.jp/toukei_hakusho/hakusho/",
-          "type": "HTML",
           "manualLock": true
         }
       ]
