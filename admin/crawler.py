@@ -95,7 +95,8 @@ GENERIC_EXACT_ONLY_KEYWORDS = frozenset({
     '議事', '資料', '議題', '日時', '場所', '傍聴', '傍聴案内', '傍聴について', 'メンバー',
     '配付資料について', '配布資料について', '議事要旨等', '議事次第等', '会議概要', '会議結果',
     '１開催日時', '１．日', '●日時', '１．日時', '１　開催日時', '１ 日時', '１　日時',
-    '１ 場所', '１　場所', '２ 場所', '２　場所', '３ 議題', '３　議題', '出席者', '出席者名簿'
+    '１ 場所', '１　場所', '２ 場所', '２　場所', '３ 議題', '３　議題', '出席者', '出席者名簿',
+    '原子力規制委員会'
 })
 
 def is_generic_title_text(text):
@@ -532,6 +533,79 @@ MINISTRY_DOMAINS = {
 _OTHER_MINISTRY_DOMAINS_MAP = {
     m: tuple(d for om, dlist in MINISTRY_DOMAINS.items() if om != m for d in dlist)
     for m in MINISTRY_DOMAINS
+}
+
+# 各府省庁の新着情報・報道発表・審議会ポータル定義（Drop 68: お知らせからの会議検知オプション用）
+MINISTRY_NEWS_PORTALS = {
+    "MHLW": [
+        {"url": "https://www.mhlw.go.jp/stf/new-info/", "type": "news_feed"},
+        {"url": "https://www.mhlw.go.jp/stf/new-info/shingi.html", "type": "news_feed"},
+        {"url": "https://www.mhlw.go.jp/stf/shingi/indexshingi.html", "type": "mhlw_indexshingi"},
+    ],
+    "FSA": [
+        {"url": "https://www.fsa.go.jp/news/index.html", "type": "deep_portal", "subpage_pattern": r"r\d+_news_menu\.html"},
+    ],
+    "MOF": [
+        {"url": "https://www.mof.go.jp/public_relations/whats_new/index.htm", "type": "deep_portal", "subpage_pattern": r"whats_new/\d{6}\.html"},
+    ],
+    "MLIT": [
+        {"url": "https://www.mlit.go.jp/report/press/index.html", "type": "meta_refresh"},
+    ],
+    "NRA": [
+        {"url": "https://www.nra.go.jp/news/index.html", "type": "deep_portal", "subpage_pattern": r"news/\d{6}\.html"},
+    ],
+    "METI": [
+        {"url": "https://www.meti.go.jp/press/index.html", "type": "news_feed"},
+    ],
+    "MIC": [
+        {"url": "https://www.soumu.go.jp/menu_news/s-news/index.html", "type": "news_feed"},
+    ],
+    "MAFF": [
+        {"url": "https://www.maff.go.jp/j/press/index.html", "type": "news_feed"},
+    ],
+    "MEXT": [
+        {"url": "https://www.mext.go.jp/b_menu/houdou/index.htm", "type": "news_feed"},
+    ],
+    "CAO": [
+        {"url": "https://www.cao.go.jp/press/houdou.html", "type": "news_feed"},
+    ],
+    "CAS": [
+        {"url": "https://www.cas.go.jp/jp/houdou/index.html", "type": "news_feed"},
+    ],
+    "FDMA": [
+        {"url": "https://www.fdma.go.jp/pressrelease/", "type": "news_feed"},
+    ],
+    "ENV": [
+        {"url": "https://www.env.go.jp/press/index.html", "type": "news_feed"},
+    ],
+    "DIGITAL": [
+        {"url": "https://www.digital.go.jp/news", "type": "news_feed"},
+    ],
+    "CFA": [
+        {"url": "https://www.cfa.go.jp/news", "type": "news_feed"},
+    ],
+    "MOJ": [
+        {"url": "https://www.moj.go.jp/list_info.html", "type": "news_feed"},
+        {"url": "https://www.moj.go.jp/press_index.html", "type": "news_feed"},
+    ],
+    "MOD": [
+        {"url": "https://www.mod.go.jp/j/press/news/index.html", "type": "news_feed"},
+    ],
+    "PPC": [
+        {"url": "https://www.ppc.go.jp/news/press/", "type": "deep_portal", "subpage_pattern": r"press/\d{4}"},
+    ],
+    "RINYA": [
+        {"url": "https://www.rinya.maff.go.jp/j/press/", "type": "news_feed"},
+    ],
+    "JFA": [
+        {"url": "https://www.jfa.maff.go.jp/j/press/index.html", "type": "news_feed"},
+    ],
+    "CAA": [
+        {"url": "https://www.caa.go.jp/notice/", "type": "news_feed"},
+    ],
+    "FSC": [
+        {"url": "https://www.fsc.go.jp/", "type": "news_feed"},
+    ],
 }
 
 # 429 Quota Exceeded 回避用のサーキットブレーカーフラグ
@@ -3389,10 +3463,365 @@ def run_meeting_crawler(progress_callback=None, stop_event=None, workers=4, rece
             try: latest_f.close()
             except OSError: pass
 
+
+def resolve_news_portal_urls(portal_def):
+    """ポータルURLから最新年・月のサブページURLを自動解決（Drop 68）"""
+    url = portal_def["url"]
+    ptype = portal_def.get("type", "news_feed")
+
+    if ptype in ("news_feed", "mhlw_indexshingi"):
+        return [url]
+
+    html = fetch_url(url, timeout=10)
+    if not html:
+        return [url]
+
+    soup = BeautifulSoup(html, "html.parser")
+
+    # meta refresh の自動追従 (MLIT 等)
+    if ptype == "meta_refresh":
+        meta_refresh = soup.find("meta", attrs={"http-equiv": re.compile(r"refresh", re.I)})
+        if meta_refresh and "content" in meta_refresh.attrs:
+            m = re.search(r"url=([^;]+)", meta_refresh["content"], re.I)
+            if m:
+                target_url = urllib.parse.urljoin(url, m.group(1).strip())
+                return [target_url]
+        return [url]
+
+    # deep_portal: 最新年・月サブページの探索
+    if ptype == "deep_portal":
+        sub_pattern = portal_def.get("subpage_pattern")
+        found_urls = []
+        for a in soup.find_all("a", href=True):
+            href = a["href"].strip()
+            text = a.get_text(strip=True)
+            if sub_pattern and re.search(sub_pattern, href):
+                full_url = urllib.parse.urljoin(url, href)
+                found_urls.append((full_url, text, href))
+            elif any(k in text or k in href for k in ["令和8", "令和８", "202610", "202609", "10月"]):
+                full_url = urllib.parse.urljoin(url, href)
+                found_urls.append((full_url, text, href))
+
+        if found_urls:
+            def score_url(item):
+                furl, txt, h = item
+                if "r8_news_menu" in furl:
+                    return 202611
+                m = re.search(r'2026(10|09|08|07|06|05|04|03|02|01)', furl)
+                if m:
+                    return int(m.group(0))
+                if "10月" in txt:
+                    return 202610
+                if "9月" in txt:
+                    return 202609
+                if "r8" in furl:
+                    return 202608
+                return 0
+
+            sorted_urls = sorted(found_urls, key=score_url, reverse=True)
+            unique = list(dict.fromkeys(u[0] for u in sorted_urls))
+            return unique[:2]
+
+    return [url]
+
+
+def extract_news_items_from_html(html, page_url, ministry_code, ptype):
+    """HTMLから会議関連のニュース記事項目を抽出（Drop 68）"""
+    soup = BeautifulSoup(html, "html.parser")
+    items = []
+
+    # 1. 厚労省 indexshingi.html の NEW マーカー検知
+    if ptype == "mhlw_indexshingi":
+        for em in soup.find_all(lambda tag: tag.name in ['em', 'span'] and 'new' in tag.get_text().strip().lower()):
+            parent = em.find_parent(['li', 'tr', 'div', 'p'])
+            if not parent:
+                continue
+            a = parent.find('a', href=True)
+            if not a:
+                continue
+            link_url = urllib.parse.urljoin(page_url, a['href'])
+            link_text = normalize_text(a.get_text())
+            time_tag = parent.find('time')
+            date_str = time_tag.get('datetime', '') if time_tag else ''
+            items.append({
+                "title": link_text,
+                "url": link_url,
+                "date": date_str,
+                "is_shingi_index": True,
+                "ministry": ministry_code
+            })
+        return items
+
+    # 2. 一般ニュース・新着フィード
+    keywords = ["審議会", "検討会", "研究会", "委員会", "部会", "ワーキング", "タスクフォース", "懇談会", "協議会", "有識者会議"]
+    for a in soup.find_all("a", href=True):
+        text = normalize_text(a.get_text())
+        href = a["href"].strip()
+        if not text or not href:
+            continue
+        if href.startswith(("javascript:", "#", "mailto:", "tel:")):
+            continue
+
+        full_url = urllib.parse.urljoin(page_url, href)
+
+        if any(kw in text for kw in keywords) or any(re.search(p, text) for p in [r'第\s*\d+\s*回', r'開催', r'配付資料', r'議事録', r'議事次第']):
+            if any(nav in text for nav in ["トップページ", "目次", "プライバシーポリシー", "アクセシビリティ", "リンク集", "公募", "採用", "職員募集", "人事異動"]):
+                continue
+            items.append({
+                "title": text,
+                "url": full_url,
+                "date": "",
+                "is_shingi_index": False,
+                "ministry": ministry_code
+            })
+
+    return items
+
+
+def match_council_from_news_item(item, councils_by_url, councils_by_min):
+    """ニュース項目から登録済み会議体（councils）を高精度名寄せマッチング（Drop 68）"""
+    url = item.get("url", "").rstrip("/")
+    title = item.get("title", "")
+    min_code = item.get("ministry", "")
+
+    # 1. URL完全一致
+    if url in councils_by_url:
+        return councils_by_url[url], "URL_EXACT"
+
+    norm_title = normalize_text(title)
+    clean_norm_title = norm_title.replace(" ", "").replace("　", "")
+    cand_councils = councils_by_min.get(min_code, [])
+    cand_councils = sorted(cand_councils, key=lambda c: len(c.get("name", "")), reverse=True)
+
+    # 2. 鉤括弧名一致
+    brackets = re.findall(r'[「『【]([^」』】]+)[」』】]', norm_title)
+    for b in brackets:
+        b_clean = normalize_text(b).replace(" ", "").replace("　", "")
+        for c in cand_councils:
+            c_clean = normalize_text(c.get("name", "")).replace(" ", "").replace("　", "")
+            if c_clean and (c_clean == b_clean or c_clean in b_clean or b_clean in c_clean):
+                return c, "BRACKET_NAME"
+
+    # 3. 会議体名部分一致（空白除去・最長一致）
+    for c in cand_councils:
+        c_clean = normalize_text(c.get("name", "")).replace(" ", "").replace("　", "")
+        if len(c_clean) >= 4 and c_clean in clean_norm_title:
+            return c, "TEXT_CONTAINS"
+
+    # 4. URLパス・ディレクトリ一致（同一ドメイン・同一省庁内）
+    parsed_u = urllib.parse.urlparse(url)
+    for c in cand_councils:
+        c_url = c.get("officialUrl", "")
+        if c_url:
+            parsed_c = urllib.parse.urlparse(c_url)
+            if parsed_c.netloc == parsed_u.netloc:
+                dir_c = os.path.dirname(parsed_c.path)
+                if dir_c and len(dir_c) > 10 and dir_c in parsed_u.path:
+                    return c, "URL_PATH_MATCH"
+
+    return None, None
+
+
+def run_ministry_news_discovery(progress_callback=None, stop_event=None, ministry=None):
+    """
+    各府省庁トップページおよび新着情報一覧から最近開催された会議を検知し、
+    開催回・配付資料を取得する（Drop 68: --from-ministry-news オプション）
+    """
+    log_f, latest_f, log_filepath, latest_filepath = init_crawler_logfile()
+    emit_lock = threading.Lock()
+
+    def emit(msg, payload=None):
+        with emit_lock:
+            safe_emit_log(msg)
+            now_ts = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+            log_line = f"[{now_ts}] {msg}\n"
+            if log_f:
+                try: log_f.write(log_line); log_f.flush()
+                except OSError: pass
+            if latest_f:
+                try: latest_f.write(log_line); latest_f.flush()
+                except OSError: pass
+        if progress_callback:
+            try: progress_callback(msg, payload)
+            except Exception: pass
+
+    try:
+        emit("=" * 65)
+        emit(" 政策会議ウォッチ (PM-HUB) 省庁新着お知らせ会議検知ディスカバリー [Drop 68]")
+        emit("=" * 65)
+
+        data = load_data_json(DATA_JSON_FILE)
+        councils = data.get("councils", [])
+        rules = data.get("scrapingRules", {})
+        meetings = data.get("meetings", [])
+
+        # 会議体インデックス構築
+        councils_by_min = {}
+        councils_by_url = {}
+        for c in councils:
+            m = c.get("ministry", "")
+            councils_by_min.setdefault(m, []).append(c)
+            if c.get("officialUrl"):
+                councils_by_url[c.get("officialUrl").rstrip("/")] = c
+
+        # 走査対象省庁の決定
+        target_mins = [ministry.upper()] if ministry else list(MINISTRY_NEWS_PORTALS.keys())
+        emit(f"[INFO] 対象省庁: {', '.join(target_mins)} (計 {len(target_mins)} 省庁)")
+
+        detected_councils_to_crawl = {}  # council_id -> (council, reason, date_hint)
+        direct_meetings_to_add = []     # (council, subpage_item)
+
+        for min_code in target_mins:
+            if stop_event and stop_event.is_set():
+                emit("[INFO] 停止シグナルを検知したため走査を中断します。")
+                break
+
+            portal_defs = MINISTRY_NEWS_PORTALS.get(min_code, [])
+            if not portal_defs:
+                continue
+
+            emit(f"\n--- [{min_code}] 新着情報・報道発表ポータル走査開始 ---")
+            for pdef in portal_defs:
+                resolved_urls = resolve_news_portal_urls(pdef)
+                for rurl in resolved_urls:
+                    emit(f"  走査中: {rurl} ({pdef.get('type')})")
+                    html = fetch_url(rurl, timeout=12)
+                    if not html:
+                        emit(f"    [WARN] フェッチ失敗: {rurl}")
+                        continue
+
+                    items = extract_news_items_from_html(html, rurl, min_code, pdef.get("type"))
+                    emit(f"    -> 会議関連お知らせ {len(items)} 件を検出")
+
+                    for item in items:
+                        matched_c, mtype = match_council_from_news_item(item, councils_by_url, councils_by_min)
+                        if not matched_c:
+                            continue
+
+                        cid = matched_c["id"]
+                        item_url = item["url"]
+                        item_title = item["title"]
+
+                        # 1. 厚労省 indexshingi または親ページの場合はピンポイントクロール
+                        if item.get("is_shingi_index") or item_url.rstrip("/") == matched_c.get("officialUrl", "").rstrip("/"):
+                            if cid not in detected_councils_to_crawl:
+                                detected_councils_to_crawl[cid] = (matched_c, f"{mtype} ({item_title})", item.get("date", ""))
+                            continue
+
+                        # 2. 記事URLがPDF直リンクまたは末端配付資料ページか確認
+                        if item_url.lower().endswith(".pdf"):
+                            dates = [item["date"]] if item.get("date") else extract_clean_dates_from_html(item_title)
+                            if dates and dates[0] != "2099/01/01":
+                                direct_meetings_to_add.append((matched_c, {
+                                    "subpageUrl": item_url,
+                                    "name": item_title,
+                                    "title": item_title,
+                                    "materials": [{"name": item_title, "url": item_url, "type": "pdf"}],
+                                    "extractedDates": dates,
+                                    "pageTitle": item_title
+                                }))
+                        else:
+                            # 記事ページをフェッチして配付資料が含まれるか確認
+                            art_html = fetch_url(item_url, timeout=10)
+                            if art_html:
+                                mats = parse_materials_from_html(art_html, item_url)
+                                art_soup = BeautifulSoup(art_html, "html.parser")
+                                h_tag = art_soup.find(["h1", "h2", "h3"]) or art_soup.title
+                                p_title = h_tag.get_text(strip=True) if h_tag else item_title
+                                art_dates = extract_clean_dates_from_html(art_html)
+                                clean_t = clean_meeting_title(p_title)
+                                if is_generic_title_text(clean_t) or clean_t == matched_c["name"]:
+                                    fallback_t = re.sub(r'の?(?:配[付布]資料|資料|議事録|議事次第)?(?:を?[公掲]開(?:しました)?)?$', '', item_title).strip()
+                                    fallback_t = re.sub(r'の?開催について$', '', fallback_t).strip()
+                                    clean_t = clean_meeting_title(fallback_t)
+
+                                # 日付が存在し、資料がある場合（かつ事前案内のみでない場合）は直接追加
+                                if mats and art_dates and not is_preliminary_notice_page(item_url, clean_t):
+                                    direct_meetings_to_add.append((matched_c, {
+                                        "subpageUrl": item_url,
+                                        "name": clean_t,
+                                        "title": clean_t,
+                                        "materials": mats,
+                                        "extractedDates": art_dates,
+                                        "pageTitle": clean_t
+                                    }))
+                                else:
+                                    # 事前案内または資料0件の場合は親会議体をピンポイントクロール対象に追加
+                                    if cid not in detected_councils_to_crawl:
+                                        detected_councils_to_crawl[cid] = (matched_c, f"{mtype} (事前告知誘導: {item_title})", "")
+
+        emit(f"\n[検知結果サマリー]")
+        emit(f"  ・直接資料抽出対象: {len(direct_meetings_to_add)} 件")
+        emit(f"  ・ピンポイント巡回対象会議体: {len(detected_councils_to_crawl)} 件")
+
+        new_meetings_total = 0
+
+        # 直接資料抽出ミーティングの反映
+        for matched_c, sub_item in direct_meetings_to_add:
+            scraped_mock = {
+                "subpageMeetings": [sub_item],
+                "materials": sub_item.get("materials", [])
+            }
+            c_target = dict(matched_c)
+            c_target.setdefault("url", matched_c.get("officialUrl", ""))
+            added = sync_new_meetings_from_crawl(data, c_target, scraped_mock)
+            if added > 0:
+                emit(f"  ✨ [直接追加] [{matched_c['id']}] {matched_c['name']}: {sub_item.get('name')[:40]} (+{added}回)")
+                new_meetings_total += added
+
+        # ピンポイント巡回会議体のクロール実行
+        rule_url_index = build_url_rule_index(rules)
+        for cid, (c_obj, reason, d_hint) in detected_councils_to_crawl.items():
+            if stop_event and stop_event.is_set():
+                break
+
+            emit(f"\n>>> ピンポイントクロール実行: [{cid}] {c_obj['name']} (契機: {reason})")
+            target_url = c_obj.get("officialUrl")
+            if not target_url:
+                continue
+
+            html = fetch_url(target_url, timeout=12)
+            if not html:
+                emit(f"  [WARN] フェッチ失敗: {target_url}")
+                continue
+
+            c_target = dict(c_obj)
+            c_target.setdefault("url", c_obj.get("officialUrl", ""))
+
+            rule_item = get_rule_for_target(rules, c_target, rule_url_index)
+            res = execute_rule_retrieval(c_target, html, rule_item, use_llm=False, recheck_recent=1)
+            scraped_item = res.get("scraped_item")
+            if scraped_item:
+                added = sync_new_meetings_from_crawl(data, c_target, scraped_item)
+                if added > 0:
+                    emit(f"  ✨ [ピンポイント追加] [{cid}] {c_obj['name']}: +{added} 開催回")
+                    new_meetings_total += added
+
+        # 重複排除 & 保存
+        deduplicate_data_materials(data)
+        now_str = datetime.now().strftime("%Y/%m/%d %H:%M")
+        data["lastCrawlTime"] = now_str
+        save_success = save_data_json_with_backup(data)
+
+        emit("\n" + "=" * 65)
+        emit(f" [Drop 68 検知完了] 新規追加開催回: {new_meetings_total} 件")
+        emit(f" SQLite マスターDB および 2系統JSON 保存: {'成功' if save_success else '失敗'}")
+        emit("=" * 65)
+
+        return {"new_meetings": new_meetings_total, "log_file": log_filepath}
+    finally:
+        if log_f:
+            try: log_f.close()
+            except OSError: pass
+        if latest_f:
+            try: latest_f.close()
+            except OSError: pass
+
+
 def main():
     import traceback
     
-    parser = argparse.ArgumentParser(description="政策会議ウォッチ (PM-HUB) クローラー [Drop 17]")
+    parser = argparse.ArgumentParser(description="政策会議ウォッチ (PM-HUB) クローラー [Drop 17 / Drop 68]")
     parser.add_argument("--workers", type=int, default=4, help="並行ワーカー数（デフォルト: 4。1で直列実行）")
     parser.add_argument("--recent-years", default="2", help="最終開催日の年数絞り込み（デフォルト: 2。0 または all で全件）")
     parser.add_argument("--recheck-recent", type=int, default=1, help="再検査する直近開催回数（デフォルト: 1。0 で完全ゼロ化）")
@@ -3400,21 +3829,28 @@ def main():
     parser.add_argument("--include-closed", action="store_true", help="法改正等で廃止された会議体も含めて巡回する")
     parser.add_argument("--resume", action="store_true", help="中断されたクロールを続きから再開する")
     parser.add_argument("--ministry", type=str, default=None, help="巡回対象の省庁コード（例: FSA, MOF, METI）")
+    parser.add_argument("--from-ministry-news", "--from-news", dest="from_ministry_news", action="store_true", help="各府省庁トップページおよび新着情報一覧から最近開催された会議を検知し、開催回情報を取得する [Drop 68]")
     args = parser.parse_args()
 
     cli_stop_event = threading.Event()
     
     try:
-        run_meeting_crawler(
-            stop_event=cli_stop_event,
-            workers=args.workers,
-            recent_years=args.recent_years,
-            recheck_recent=args.recheck_recent,
-            full_check=args.full_check,
-            include_closed=args.include_closed,
-            resume=args.resume,
-            ministry=args.ministry
-        )
+        if args.from_ministry_news:
+            run_ministry_news_discovery(
+                stop_event=cli_stop_event,
+                ministry=args.ministry
+            )
+        else:
+            run_meeting_crawler(
+                stop_event=cli_stop_event,
+                workers=args.workers,
+                recent_years=args.recent_years,
+                recheck_recent=args.recheck_recent,
+                full_check=args.full_check,
+                include_closed=args.include_closed,
+                resume=args.resume,
+                ministry=args.ministry
+            )
     except KeyboardInterrupt:
         print("\n\n[INFO] キーボード割り込み (Ctrl+C) を検知しました。停止シグナルを発行します...")
         cli_stop_event.set()
