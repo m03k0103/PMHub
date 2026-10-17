@@ -2989,5 +2989,113 @@
     "officialUrl": "https://www.meti.go.jp/shingikai/energy_environment/",
     "rejectedAt": "2026-10-11",
     "reason": "共通インデックス・ポータル（各種研究会・検討会一覧）のため却下"
+  },
+  {
+    "id": "cas-portal_seisakukaigi",
+    "name": "政策会議等の活動情報",
+    "ministry": "CAS",
+    "category": "OTHER",
+    "officialUrl": "https://www.cas.go.jp/jp/seisaku/seisakukaigi/index.html",
+    "rejectedAt": "2026-10-17",
+    "reason": "AI判定: 会議体本体ではなく共通インデックス・ポータルのため却下"
+  },
+  {
+    "id": "cas-portal_tpp",
+    "name": "TPP等政府対策本部 活動情報",
+    "ministry": "CAS",
+    "category": "OTHER",
+    "officialUrl": "https://www.cas.go.jp/jp/tpp/tppinfo/index.html",
+    "rejectedAt": "2026-10-17",
+    "reason": "AI判定: 会議体本体ではなく共通インデックス・ポータルのため却下"
+  },
+  {
+    "id": "mlit-portal_shingikai",
+    "name": "審議会・委員会等",
+    "ministry": "MLIT",
+    "category": "OTHER",
+    "officialUrl": "https://www.mlit.go.jp/policy/shingikaiList.html",
+    "rejectedAt": "2026-10-17",
+    "reason": "AI判定: 会議体本体ではなく省庁審議会総合ポータルのため却下"
+  },
+  {
+    "id": "moj-portal_seisakusesaku",
+    "name": "政策・施策・審議会等",
+    "ministry": "MOJ",
+    "category": "OTHER",
+    "officialUrl": "https://www.moj.go.jp/housei/seisakusesaku_index.html",
+    "rejectedAt": "2026-10-17",
+    "reason": "AI判定: 会議体本体ではなく法務省政策・審議会共通ポータルのため却下"
+  },
+  {
+    "id": "moj-portal_shingi",
+    "name": "審議会等",
+    "ministry": "MOJ",
+    "category": "OTHER",
+    "officialUrl": "https://www.moj.go.jp/housei/shingi_index.html",
+    "rejectedAt": "2026-10-17",
+    "reason": "AI判定: 会議体本体ではなく法務省審議会等ポータルのため却下"
+  },
+  {
+    "id": "moj-portal_shingikai",
+    "name": "法務省所管審議会等",
+    "ministry": "MOJ",
+    "category": "OTHER",
+    "officialUrl": "https://www.moj.go.jp/housei/shingikai_index.html",
+    "rejectedAt": "2026-10-17",
+    "reason": "AI判定: 会議体本体ではなく法務省所管審議会ポータルのため却下"
+  },
+  {
+    "id": "mic-portal_joho_tsusin",
+    "name": "情報通信審議会・情報通信行政・郵政行政審議会",
+    "ministry": "MIC",
+    "category": "OTHER",
+    "officialUrl": "https://www.soumu.go.jp/policyreports/joho_tsusin/index.html",
+    "rejectedAt": "2026-10-17",
+    "reason": "AI判定: 会議体本体ではなく情報通信ポータルのため却下"
+  },
+  {
+    "id": "mic-onkyu_shinsa",
+    "name": "恩給審査会（制度廃止案内旧ページ）",
+    "ministry": "MIC",
+    "category": "COUNCIL",
+    "officialUrl": "https://www.soumu.go.jp/main_sosiki/onkyu_shinsa/index.html",
+    "rejectedAt": "2026-10-17",
+    "reason": "AI判定: 制度廃止（恩給法改正）に伴う旧静的案内のため却下"
+  },
+  {
+    "id": "mhlw-engo_shinsa_seido",
+    "name": "援護審査会 制度概要",
+    "ministry": "MHLW",
+    "category": "COUNCIL",
+    "officialUrl": "https://www.mhlw.go.jp/bunya/engo/seido03/index.html",
+    "rejectedAt": "2026-10-17",
+    "reason": "AI判定: 制度案内静的ページ（会議資料は別ページで新規登録）のため却下"
+  },
+  {
+    "id": "mhlw-shakai_hoken_shinsa",
+    "name": "社会保険審査会",
+    "ministry": "MHLW",
+    "category": "COUNCIL",
+    "officialUrl": "https://www.mhlw.go.jp/stf/shingi/shingi-shakai_127847.html",
+    "rejectedAt": "2026-10-17",
+    "reason": "AI判定: 準司法機関であり会合資料・開催回非公開静的ページのため却下"
+  },
+  {
+    "id": "mlit-chuo_kenchikushi_shinsa",
+    "name": "中央建築士審査会",
+    "ministry": "MLIT",
+    "category": "COUNCIL",
+    "officialUrl": "https://www.mlit.go.jp/jutakukentiku/jutakukentiku_house_tk_000045.html",
+    "rejectedAt": "2026-10-17",
+    "reason": "AI判定: 資格試験審査機関であり会合資料・開催回非公開静的ページのため却下"
+  },
+  {
+    "id": "moj-kyoto_congress_event",
+    "name": "京都コングレス プレイベント",
+    "ministry": "MOJ",
+    "category": "OTHER",
+    "officialUrl": "https://www.moj.go.jp/kyotocongress2020/news/20210226_01.html",
+    "rejectedAt": "2026-10-17",
+    "reason": "AI判定: 単発イベント告知ニュースページのため却下"
   }
 ]
