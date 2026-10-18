@@ -9,28 +9,13 @@
 
 ---
 
-## 1. クロールルール & エンジン改革サマリー
-
-### 1-1. 直近の修正済Drop
-
-| 対応 Drop | 施策区分 | 主な対象・内容 | クロール成功率 / 成果 | ステータス |
-|:---:|:---|:---|:---:|:---:|
-| **Drop 61** | **過去の修正済Drop**<br>(開催回分離・配付資料適正化) | **水産庁 水産物消費拡大実行計画会議 第1回〜第6回 開催回分離・配付資料適正化 & スラグ規約正規化**<br>水産庁「水産物消費拡大実行計画会議（旧 `jfa-603` $\to$ `jfa-suisan_shouhi_kakudai`）」について、単一回にバンドルされていた54件の配付資料を解消し、第1回（令和3年9月17日）から第6回（令和8年3月19日）までの全6開催回へ完全分離。全65件の正規配付資料（PDF）を開催回ごとに完全配分、不要UIリンク排除、親テーブル型スクレイピングルールの連動反映 | **全6開催回完全分離 & 全65配付資料完全紐づけ・規約スラグID正規化** | 完了 |
-| **Drop 62** | **過去の修正済Drop**<br>(DBマスター化 & 2系統エクスポート) | **SQLite マスターデータソース構築 & リバーシブル2系統JSONエクスポート基盤の実装（Track [Database] / Track [Search] 基盤）**<br>単一巨大 `data.json` から SQLite（`admin/pmhub.db`）マスター構成へ転換。公開用スリム化 `docs/data.json`（30.12MB、約1.7MBスリム化）とクローラー・管理用 `admin/admin_data.json`（2.36MB）への決定論的2系統エクスポート、および完全リバーシブルシードツールの構築 | **DBマスター化 & 2系統エクスポート基盤確立・完全可逆性実証** | 完了 |
-| **Drop 63** | **過去の修正済Drop**<br>(クローラー & サーバー DB直結) | **クローラー & 管理サーバーの DB 接続パイプライン化（Track [Database] フェーズ2）**<br>`admin/crawler.py` および `admin/server.py` のデータ読み書きを `admin/pmhub.db` 経由に切り替え、クロール完了時および管理操作時に自動エクスポート（`export_data.py`）を実行する完全自動パイプラインの確立 | **DB直結更新 & 2系統JSON自動エクスポートパイプライン確立** | 完了 |
-| **Drop 64** | **過去の完了Drop**<br>(テストスイート DB検証対応) | **統合テストスイート（run_test_suite.py）の SQLite マスターDB & 2系統エクスポート整合性検証対応（全15ケース化）**<br>SQLite マスターDB（`admin/pmhub.db`）の完全性（PRAGMA integrity_check, FK check）、3者間レコード件数・ID完全一致（Tri-State Consistency）、手動ロック属性整合性、および設定漏洩防止（No Leakage）を常時ガードする新ケース15の新設 | **全15ケース化 & SQLiteマスター・2系統JSON完全同期ガード確立** | **完了** |
-| **Drop 65** | **過去の完了Drop**<br>(新規有望会議体追加 & DB同期) | **新規有望会議体（21会議体・177開催回・397資料）のワンストップ追加 & SQLiteマスター・2系統同期**<br>文化庁著作権分科会傘下小委員会12件、総務省審査会群4件、直近アクティブ有望5件の計21会議体をワンストップ追加（ルール・資料・手動保護含む）。除外ポータル6件を却下リスト登録。同省庁類似名称（恩給審査会）の整合化、年次活動報告書除外ガード（`/katsudou/`）新設、SQLite DB（`admin/pmhub.db`）と 2系統JSON 完全同期 | **21会議体・177開催回・397資料追加 & 統合15ケース＋単体18種完全合格** | 【完了】 |
-| **Drop 66** | **過去の完了Drop**<br>(開催回ディスカバリー & URLガード) | **登録済会議体 開催回ディスカバリー（新規258開催回・1,555資料追加） & URLスペースエンコードガード**<br>直近アクティブ809会議体を対象とした最新開催回ディスカバリークロールを実行。新規258開催回・1,555資料を検出・追加（FSC 160件、厚労省 46件等）。2099日付プレースホルダー7件排除、環境省石綿飛散防止小委員会第3回議事録（`%20` エンコード形式）追加、`crawler.py` におけるURLスペース自動エンコード（再発防止ガード）実装、SQLite DB と 2系統JSON 完全同期 | **新規258開催回・1,555資料追加 & 統合15ケース＋単体18種完全合格** | 【完了】 |
-| **Drop 67** | **過去の完了Drop**<br>(新規会議体登録 & 重複統合) | **新規会議体（21会議体・280開催回・900超資料）ワンストップ登録・林政審議会重複統合 & 除外ポータル（12件）却下登録**<br>公式Webファクトチェック済み新規21会議体の包括追加（マスター・開催回・資料・ルール・手動保護）。厚労省「と畜場の制度に関する研究会」公式配付資料（全6点PDF）および開催日（2026/10/05）完全反映。林野庁「林政審議会（旧 maff-652 と rinya-1278）」の完全重複統合（正規ID rinya-rinsei_shingikai へ一本化）。除外ポータル・重複URL12件の却下リスト登録。SQLite pmhub.db と 2系統JSON 完全同期 | **新規21会議体登録・林政審議会重複統合・全15ケース＋単体18種完全合格** | **【完了】** |
-| **Drop 68** | **最新の完了Drop**<br>(開催回ディスカバリー) | **登録済会議体 開催回ディスカバリークロール & 省庁トップお知らせ会議検知オプション追加**<br>各府省庁トップページやお知らせ・新着情報（MHLW `indexshingi.html` の NEW マーカー検知、MLIT `meta_refresh` 自動追従、FSA/MOF/NRA の最新年月サブページ自動解決含む）から最新会議を自動検知し開催回・配付資料を取得する新オプション（`--from-ministry-news`）の実装、全省庁ディスカバリークロール実行（新規38開催回・233配付資料追加）、プレースホルダー日付（2099/01/01）ゼロ検証、manualLock 非破壊性保護、SQLite マスターDB & 2系統JSON完全同期 | **新規38開催回・233資料追加 & 統合15ケース＋単体18種完全合格** | **【完了】** |
-
-
 ---
 
-## 2. 今後の開発構想（Tracks ロードマップ）
+## 1. 今後の改善・開発構想（Tracks ロードマップ）
 
 | Track ID | 構想テーマ | 主な対象・内容 | 到達成果・期待価値 | ステータス |
 |:---:|:---|:---|:---:|:---:|
+| **Track [Testing]** | **テストスイート高速化 & 厳格化**<br>(重複I/O解消・検証精度向上) | **【次期 Drop 候補】統合テストスイートの高速化・重複I/O解消 & 検証精度厳格化**<br>U18/U17 のテスト毎フルシード解消（軽量フィクスチャ化・本番DB副作用ゼロ化）、load_data_json() の無駄な2重パース解消、ケース15への council_materials・全管理キー漏洩防止検証追加、ケース14のアクティブ動的集計化、dmin/db/ 変更時の L4/L5 自動連動 | **実行時間 60% 短縮（約48s $	o$ 約18s）・検証精度とDB安全性の恒久向上** | 構想（次期候補） |
 | **Track [Database]**<br>(フェーズ 1 & 2) | **データ基盤刷新**<br>(DBマスター化 & 2系統エクスポート) | **【フェーズ 1】スキーマ定義 & 双方向同期ツール構築（Drop 62）**<br>`admin/db/schema.sql`, `seed_db.py`, `export_data.py` 実装、公開用 `docs/data.json` と管理用 `admin/admin_data.json` 分割エクスポート、リバーシブル検証<br>**【フェーズ 2】クローラー & 管理サーバーの DB 接続（Drop 63）**<br>`admin/server.py` および `admin/crawler.py` のデータ読み書きを DB 経由に切り替え、クロール完了時自動エクスポートパイプライン確立 | **ACIDトランザクション・完全リバーシブル同期・公開JSONスリム化** | **【フェーズ1: 完了】**<br>**【フェーズ2: 完了】** |
 | **Track [Search]**<br>(フェーズ 3) | **全文検索エンジン化**<br>(PMM資産連携 FTS5基盤) | **【フェーズ 3】PMM テキスト抽出 & FTS5 構築・全文検索 API 稼働**<br>PMM（`D:\dev\PMM\docs`）の 10.7 万件から本文テキストを並列抽出し、SQLite FTS5（trigram）仮想テーブル `fts_materials` に投入。管理サーバー `/api/search` 全文検索 API および公開ポータル連携 | **10.7万件配付資料の横断全文検索・該当ページ即時ジャンプ** | 構想（次期リリース） |
 | **Track [Architecture]** | **今後の開発構想**<br>(モジュール分割) | **リファクタリング領域E: クローラー本体（crawler.py）の責務分離 & scratch/ クリーンアップ**<br>`admin/crawler.py`（約2,900行）のパーサー・探索戦略・データ同期モジュール分割、1,231ファイル（66MB）の `scratch/` 整理および `.gitignore` 追加による作業ツリークリーン化 | **クローラー軽量化 & 開発環境整備** | 構想 |
@@ -38,59 +23,26 @@
 
 ---
 
-### 【Drop 62】Track [Database] フェーズ 1: SQLite マスターデータソース構築 & 双方向同期ツール（完了）
-
-単一の巨大な `docs/data.json`（約31.8MB）からローカル SQLite データベース（`admin/pmhub.db`）をマスターデータソースとするアーキテクチャへ転換。公開用スリム化 `docs/data.json`（30.12MB、約1.7MBスリム化）とクローラー・管理用 `admin/admin_data.json`（2.36MB）への決定論的2系統エクスポート、および完全リバーシブルシードツールを構築し、Track [Search] の強固な土台を確立した。
-
-- **フェーズ 1 の成果**:
-  1. `admin/db/schema.sql`、`admin/db/seed_db.py`、`admin/db/export_data.py` を実装完了。
-  2. 既存の `docs/data.json` から DB へ 7.92秒で一括高速シードし、DB から 2 つの JSON へ 0.73秒で決定論的エクスポート。
-  3. `admin/utils.py` の `load_data_json()` において `admin_data.json` の透過的マージ機構を配備し、100%の後方互換性を担保。
-  4. 新設した単体テスト `test_drop62_db_and_export.py`（U17）を含む、統合テストスイート（全14ケース＋単体17種）に完全合格。
-
-| ID | 分類 | 内容 | 対象ファイル | 状態 |
-|:---|:---:|:---|:---|:---:|
-| **CR-151** | DBスキーマ定義 | **SQLite マスターDBスキーマ定義 & リバーシブルDDL構築**<br>`councils`, `meetings`, `materials`, `council_materials`, `scraping_rules`, `crawl_statuses`, `admin_configs` テーブル、および Track [Search] 用 `fts_materials`（FTS5 trigram）テーブルを定義。`.gitignore` に `admin/pmhub.db` を追加 | `admin/db/schema.sql`<br>`.gitignore` | 完了 |
-| **CR-152** | 2系統エクスポート | **決定論的 2 系統 JSON エクスポートツールの実装**<br>`admin/pmhub.db` から公開用 `docs/data.json`（スリム化・ソート済み）および管理用 `admin/admin_data.json`（ルール・設定・手動ロック明細）を決定論的（差分最小化）に出力する `export_data.py` を実装 | `admin/db/export_data.py` | 完了 |
-| **CR-153** | リバーシブルシード | **完全リバーシブル・シードツールの実装**<br>`docs/data.json` および `admin/admin_data.json` から `admin/pmhub.db` をゼロから高速に完全再構築する `seed_db.py` を実装。初回移行時（現行の単一 `data.json` からのシード）にも完全対応 | `admin/db/seed_db.py` | 完了 |
-| **CR-154** | テスト検証 | **Drop 62 単体テスト新設 & 統合テストスイート整合性検証**<br>`testing/test_drop62_db_and_export.py`（U17）を新設。DDL初期化、シード $\to$ エクスポートの双方向可逆性（ロスレス）、2系統JSONのキー整合性を検証。統合テストスイート（全14ケース＋単体17種）完全合格を確認 | `testing/test_drop62_db_and_export.py`<br>`testing/run_unit_tests.py`<br>`testing/run_test_suite.py`<br>`admin/utils.py` | 完了 |
-
 ---
 
-### 【Drop 63】Track [Database] フェーズ 2: クローラー & 管理サーバーの DB 接続パイプライン化（完了）
+## 2. 各Trackの詳細
 
-フェーズ 1 で確立したマスターDB基盤に基づき、運用系ツール（`admin/crawler.py`, `admin/server.py`）のデータアクセス層を DB 直接接続へ切り替えた。クロール完了時および管理操作時に自動エクスポート（`export_data.py`）を実行し、Git 管理対象の 2 つの JSON を自動更新・出力する完全自動パイプラインを確立した。
+### 【Track: Testing】統合テストスイートの高速化・重複I/O解消 & 検証精度厳格化（次期 Drop 構想）
 
-- **フェーズ 2 の成果**:
-  1. `admin/db/db_manager.py`（DBリポジトリ & 自動エクスポートマネージャー）を新設。
-  2. `admin/utils.py` の `load_data_json()` および `save_data_json_with_backup()` を改修し、`admin/pmhub.db` へのトランザクション同期および 2系統自動エクスポートパイプラインを統合。
-  3. クローラー（`admin/crawler.py`）および管理サーバー（`admin/server.py`）の全データ更新が自動的に DB と 2系統 JSON に同期されるパイプラインを確立。
-  4. 専用単体テスト `test_drop63_crawler_server_db.py`（U18）を新設し、統合テストスイート（全14ケース＋単体18種）に完全合格。
+Drop 62〜64 による SQLite マスターDB化および 2系統エクスポート基盤の確立に伴い、テスト実行時間の 70% 超を占める重複I/O・再シードボトルネックを解消し、検証ロジックの死角を恒久的に排除する。
 
-| ID | 分類 | 内容 | 対象ファイル | 状態 |
-|:---|:---:|:---|:---|:---:|
-| **CR-155** | DBリポジトリ | **DBリポジトリ & 同期マネージャーの実装**<br>`admin/db/db_manager.py` を新設し、DBからの高速ロード（`load_data_from_db`）、トランザクション更新（`save_data_to_db`）、自動エクスポートパイプライン（`export_pipeline`）、およびDB非存在時の自動シード復元を実装 | `admin/db/db_manager.py`<br>`admin/db/__init__.py` | 完了 |
-| **CR-156** | クローラーDB化 | **クローラー（`admin/crawler.py`）の DB パイプライン接続**<br>開始時DB優先ロード、チェックポイントおよびクロール完了時の DB 保存 & 自動エクスポートパイプラインの接続 | `admin/crawler.py`<br>`admin/utils.py` | 完了 |
-| **CR-157** | サーバーDB化 | **管理サーバー（`admin/server.py`）の DB パイプライン接続**<br>ルール保存・キーワード保存・会議体承認/却下エンドポイントの DB 直接更新 & 自動エクスポート連動 | `admin/server.py`<br>`admin/utils.py` | 完了 |
-| **CR-158** | テスト検証 | **Drop 63 単体テスト新設 & 統合テストスイート整合性検証**<br>`testing/test_drop63_crawler_server_db.py`（U18）を新設。DB直結更新 $\to$ 自動エクスポート $\to$ JSON整合性のエンドツーエンド検証および統合テストスイート（全14ケース＋単体18種）完全合格を確認 | `testing/test_drop63_crawler_server_db.py`<br>`testing/run_unit_tests.py`<br>`testing/run_test_suite.py` | 完了 |
-
-
----
-
-### 【Drop 64】統合テストスイート（run_test_suite.py）の SQLite マスターDB & 2系統エクスポート整合性検証対応（完了）
-
-Drop 62 & 63 による SQLite マスターDB化および 2系統エクスポート基盤の確立を踏まえ、統合テストスイート（`testing/run_test_suite.py`）を従来の全14ケースから全15ケースへ拡張。SQLite データベース（`admin/pmhub.db`）の完全性、外部キー制約、DB $\leftrightarrow$ 2系統 JSON 間のデータ・手動ロックの完全一致、および公開 JSON への設定漏洩防止（No Leakage）を恒久的に自動検証する新ケース15を新設・配備した。
-
-- **Drop 64 の成果**:
-  1. `check_syntax_errors()` の構文チェック対象に `admin/admin_data.json`（JSON構文）および `admin/db/schema.sql`（インメモリ SQLite DDL構文）を追加。
-  2. 新設「ケース15: SQLiteマスターDB整合性 & 2系統JSON完全同期検証」を第3層（常時ガード）に配備。`PRAGMA integrity_check: ok`、外部キー違反0件、3者間件数完全一致（councils 1,506件, meetings 19,024件, materials 117,465件, rules 1,506件）、手動ロック件数一致（councils 694件, meetings 13,279件, materials 7,198件）、公開JSONへの設定漏洩ゼロ（No Leakage）を高速検証（0.53秒）。
-  3. `run_test_suite.py` の総ケース数を全15ケースへ拡張し、サマリー表示および `AGENTS.md` 第3条 第7項の成果報告フォーマット規約を更新。統合テストスイート（全15ケース＋単体18種）に完全合格。
+- **Track [Testing] のスコープ**:
+  1. **単体テスト高速化・副作用排除**: U18（	est_drop63_crawler_server_db.py）の毎テストフルシード解消（軽量フィクスチャ化、約15.3秒 $	o$ 約2秒）、U17（	est_drop62_db_and_export.py）の本番DB上書き再シード排除（インメモリ化、約12.3秒 $	o$ 約0.5秒）。
+  2. **重複I/O・二重パース解消**: dmin/utils.py の load_data_json() における「30MB JSON パース後の DB ロード」による二重読み込みを解消。統合テスト各ケースへの共有データオブジェクト引き渡し統一。
+  3. **検証精度の厳格化**: ケース15への council_materials 件数突合および全管理キー漏洩防止（No Leakage）網羅、ケース6の孤立会議データ厳格FAIL化、ケース14のアクティブ会議体動的集計化、ケース2の通信例外ハンドリング強化。
+  4. **差分検知自動化**: dmin/db/* 変更時の L4/L5 自動連動、ケース1の構文チェック対象自動探索化。
 
 | ID | 分類 | 内容 | 対象ファイル | 状態 |
 |:---|:---:|:---|:---|:---:|
-| **CR-159** | 構文検証拡充 | **第1層（構文チェック）における admin_data.json & schema.sql の検証網羅**<br>`check_syntax_errors()` の JSON 検証に `admin/admin_data.json` を追加し、`admin/db/schema.sql` の DDL 構文をインメモリ SQLite で検証するガードを追加 | `testing/run_test_suite.py` | 完了 |
-| **CR-160** | ケース15新設 | **第3層新設: SQLite マスターDB整合性 & 2系統JSON完全同期検証**<br>`check_sqlite_and_split_export_sync()` を新設。`PRAGMA integrity_check`, `foreign_key_check`, 3者間件数・ID完全一致、手動ロック件数一致、公開JSON設定漏洩ゼロ（No Leakage）を常時ガード | `testing/run_test_suite.py` | 完了 |
-| **CR-161** | スイート全15ケース化 | **統合テストスイート全15ケース化 & ドキュメント規約整合**<br>`run_test_suite.py` のサマリー出力・ヘッダー・ケース判定を全15ケースに更新し、`AGENTS.md` の成果報告フォーマット規約にケース15を整合反映 | `testing/run_test_suite.py`<br>`AGENTS.md` | 完了 |
+| **CR-166** | 単体テスト高速化 | **U18/U17 のテスト毎フルシード解消 & 本番DB副作用排除**<br>軽量フィクスチャ導入による U18 の高速化（約15秒 $	o$ 2秒）、および U17 のインメモリ/一時環境化による本番DB上書き副作用排除 | 	esting/test_drop63_crawler_server_db.py<br>	esting/test_drop62_db_and_export.py | 構想（次期候補） |
+| **CR-167** | 重複I/O削減 | **load_data_json() の2重ロード解消 & 共有データキャッシュ適用拡大**<br>pmhub.db 存在時の JSON 先行パース破棄を是正し DB 先行ロード化。ケース7/11/15での data.json 再パースを廃止し get_shared_data() 共有 | dmin/utils.py<br>	esting/run_test_suite.py | 構想（次期候補） |
+| **CR-168** | 検証精度厳格化 | **ケース15網羅拡大（council_materials・No Leakage） & ケース6/14/2 判定厳格化**<br>ケース15の突合対象拡大、ケース6孤立会議FAIL化、ケース14動的期待値化、ケース2例外握りつぶし解消 | 	esting/run_test_suite.py | 構想（次期候補） |
+| **CR-169** | 差分検知自動化 | **DB変更時 L4/L5 連動判定 & 構文チェック探索自動化**<br>dmin/db/* 変更時に管理サーバー・クローラー層を自動実行。ケース1のファイル一覧手動管理を glob 自動探索化 | 	esting/run_test_suite.py | 構想（次期候補） |
 
 ---
 
@@ -139,11 +91,29 @@ PMM プロジェクト（`D:\dev\PMM\docs`）に蓄積された全 33 省庁・1
 
 ---
 
-## 3. アーカイブ：実装済み一覧
+---
 
-過去に完了した全実装済み Drop（Drop 1 〜 Drop 61）の記録です。
+## 3. 実装済 Drop一覧
 
-### 3-1. 過去の施策ステップ・到達成果サマリー（Drop 1 〜 61）
+### 3-1. 直近の完了Drop一覧（Drop 61 〜 Drop 68）
+
+| 対応 Drop | 施策区分 | 主な対象・内容 | クロール成功率 / 成果 | ステータス |
+|:---:|:---|:---|:---:|:---:|
+| **Drop 61** | **過去の修正済Drop**<br>(開催回分離・配付資料適正化) | **水産庁 水産物消費拡大実行計画会議 第1回〜第6回 開催回分離・配付資料適正化 & スラグ規約正規化**<br>水産庁「水産物消費拡大実行計画会議（旧 `jfa-603` $\to$ `jfa-suisan_shouhi_kakudai`）」について、単一回にバンドルされていた54件の配付資料を解消し、第1回（令和3年9月17日）から第6回（令和8年3月19日）までの全6開催回へ完全分離。全65件の正規配付資料（PDF）を開催回ごとに完全配分、不要UIリンク排除、親テーブル型スクレイピングルールの連動反映 | **全6開催回完全分離 & 全65配付資料完全紐づけ・規約スラグID正規化** | 完了 |
+| **Drop 62** | **過去の修正済Drop**<br>(DBマスター化 & 2系統エクスポート) | **SQLite マスターデータソース構築 & リバーシブル2系統JSONエクスポート基盤の実装（Track [Database] / Track [Search] 基盤）**<br>単一巨大 `data.json` から SQLite（`admin/pmhub.db`）マスター構成へ転換。公開用スリム化 `docs/data.json`（30.12MB、約1.7MBスリム化）とクローラー・管理用 `admin/admin_data.json`（2.36MB）への決定論的2系統エクスポート、および完全リバーシブルシードツールの構築 | **DBマスター化 & 2系統エクスポート基盤確立・完全可逆性実証** | 完了 |
+| **Drop 63** | **過去の修正済Drop**<br>(クローラー & サーバー DB直結) | **クローラー & 管理サーバーの DB 接続パイプライン化（Track [Database] フェーズ2）**<br>`admin/crawler.py` および `admin/server.py` のデータ読み書きを `admin/pmhub.db` 経由に切り替え、クロール完了時および管理操作時に自動エクスポート（`export_data.py`）を実行する完全自動パイプラインの確立 | **DB直結更新 & 2系統JSON自動エクスポートパイプライン確立** | 完了 |
+| **Drop 64** | **過去の完了Drop**<br>(テストスイート DB検証対応) | **統合テストスイート（run_test_suite.py）の SQLite マスターDB & 2系統エクスポート整合性検証対応（全15ケース化）**<br>SQLite マスターDB（`admin/pmhub.db`）の完全性（PRAGMA integrity_check, FK check）、3者間レコード件数・ID完全一致（Tri-State Consistency）、手動ロック属性整合性、および設定漏洩防止（No Leakage）を常時ガードする新ケース15の新設 | **全15ケース化 & SQLiteマスター・2系統JSON完全同期ガード確立** | **完了** |
+| **Drop 65** | **過去の完了Drop**<br>(新規有望会議体追加 & DB同期) | **新規有望会議体（21会議体・177開催回・397資料）のワンストップ追加 & SQLiteマスター・2系統同期**<br>文化庁著作権分科会傘下小委員会12件、総務省審査会群4件、直近アクティブ有望5件の計21会議体をワンストップ追加（ルール・資料・手動保護含む）。除外ポータル6件を却下リスト登録。同省庁類似名称（恩給審査会）の整合化、年次活動報告書除外ガード（`/katsudou/`）新設、SQLite DB（`admin/pmhub.db`）と 2系統JSON 完全同期 | **21会議体・177開催回・397資料追加 & 統合15ケース＋単体18種完全合格** | 【完了】 |
+| **Drop 66** | **過去の完了Drop**<br>(開催回ディスカバリー & URLガード) | **登録済会議体 開催回ディスカバリー（新規258開催回・1,555資料追加） & URLスペースエンコードガード**<br>直近アクティブ809会議体を対象とした最新開催回ディスカバリークロールを実行。新規258開催回・1,555資料を検出・追加（FSC 160件、厚労省 46件等）。2099日付プレースホルダー7件排除、環境省石綿飛散防止小委員会第3回議事録（`%20` エンコード形式）追加、`crawler.py` におけるURLスペース自動エンコード（再発防止ガード）実装、SQLite DB と 2系統JSON 完全同期 | **新規258開催回・1,555資料追加 & 統合15ケース＋単体18種完全合格** | 【完了】 |
+| **Drop 67** | **過去の完了Drop**<br>(新規会議体登録 & 重複統合) | **新規会議体（21会議体・280開催回・900超資料）ワンストップ登録・林政審議会重複統合 & 除外ポータル（12件）却下登録**<br>公式Webファクトチェック済み新規21会議体の包括追加（マスター・開催回・資料・ルール・手動保護）。厚労省「と畜場の制度に関する研究会」公式配付資料（全6点PDF）および開催日（2026/10/05）完全反映。林野庁「林政審議会（旧 maff-652 と rinya-1278）」の完全重複統合（正規ID rinya-rinsei_shingikai へ一本化）。除外ポータル・重複URL12件の却下リスト登録。SQLite pmhub.db と 2系統JSON 完全同期 | **新規21会議体登録・林政審議会重複統合・全15ケース＋単体18種完全合格** | **【完了】** |
+| **Drop 68** | **最新の完了Drop**<br>(開催回ディスカバリー) | **登録済会議体 開催回ディスカバリークロール & 省庁トップお知らせ会議検知オプション追加**<br>各府省庁トップページやお知らせ・新着情報（MHLW `indexshingi.html` の NEW マーカー検知、MLIT `meta_refresh` 自動追従、FSA/MOF/NRA の最新年月サブページ自動解決含む）から最新会議を自動検知し開催回・配付資料を取得する新オプション（`--from-ministry-news`）の実装、全省庁ディスカバリークロール実行（新規38開催回・233配付資料追加）、プレースホルダー日付（2099/01/01）ゼロ検証、manualLock 非破壊性保護、SQLite マスターDB & 2系統JSON完全同期 | **新規38開催回・233資料追加 & 統合15ケース＋単体18種完全合格** | **【完了】** |
+
+
+---
+
+---
+
+### 3-2. 過去の施策ステップ・到達成果サマリー（Drop 1 〜 60）
 
 #### 3-1-1. クロール成功率向上ロードマップ（施策ステップと到達予測）
 
@@ -217,7 +187,148 @@ PMM プロジェクト（`D:\dev\PMM\docs`）に蓄積された全 33 省庁・1
   - 文字品質: 康煕部首（72箇所）・CJK部首補助の NFKC 自動正規化により表記揺れ・康煕部首 0 件維持。
   - 整合性検証: クロス会議体重複検知（Check 11）・同一URL重複検知（Check 12）・省庁内類似名称重複検知（Check 14）を含む統合テストスイート全件合格を確立。
 
-### 3-2. Drop 19 〜 61 実装詳細記録
+---
+
+## 4. アーカイブ：実装済み一覧（詳細）
+
+### 4-1. 直近完了 Drop 詳細（Drop 61 〜 Drop 68）
+
+### 【Drop 68】登録済会議体 開催回ディスカバリークロール & 省庁トップお知らせ検知オプション（完了）
+
+直近2年アクティブ会議体を対象とした最新開催回ディスカバリークロールに加え、各府省庁トップページおよび専用の新着情報一覧（厚生労働省 `https://www.mhlw.go.jp/stf/new-info/` や `shingi.html`、審議会一覧 `indexshingi.html` の NEW マーカー検知、金融庁 `r8_news_menu.html`、財務省 `whats_new/202610.html` 等の最新年・月サブページディープクロール含む）・報道発表一覧から最近開催・公表された会議を自動検知し、その開催回情報（開催日・回次・末端PDF/HTML配付資料）を取得する新オプション（`--from-ministry-news`）を `admin/crawler.py` に実装した。省庁コンテキストに基づく高精度な登録済会議体名寄せマッチング、直リンクからの資料抽出および親会議体ピンポイント探索のハイブリッド連携、プレースホルダー日付（2099/01/01）ゼロ検証、ジェネリックタイトル排除、手動保護（`manualLock: true`）の非破壊性維持、SQLiteマスターDB（`admin/pmhub.db`）と2系統JSONの完全同期を完遂した。
+
+- **Drop 68 の成果**:
+  1. `admin/crawler.py` に `--from-ministry-news`（短縮名 `--from-news`）を実装完了。全省庁ポータル定義、meta refresh 自動追従、年月サブページ自動解決、MHLW審議会一覧の `NEW` マーカー検知を配備。
+  2. 省庁新着情報からのディスカバリークロールを実行し、新規開催回 **38 件**（内閣府9件、国交省8件、厚労省7件、法務省4件、財務省3件、金融庁3件、文科省1件、防衛省1件、規制委1件、食品安全委1件）、配付資料 **233 件** を自動追加（登録総数 19,776開催回・120,833資料到達）。
+  3. プレースホルダー日付（2099/01/01）0件、ジェネリックタイトル0件、既存手動登録データ（`manualLock: true`）の非破壊性を完全維持。
+  4. 登録済会議体カテゴリ適正化（連絡会議の `LIAISON`、特定ラジオマイク作業班および総務省全作業班55件の `WORKING_GROUP`、原子炉安全専門審査会の `EXPERT_COMMITTEE`、眼の水晶体検討部会の `SECTION`、審査会7件の `COMMITTEE` 整合化、および `discover_councils.py` 自動判定ロジック拡充）を完遂。
+  5. SQLite マスターDB（`admin/pmhub.db`）および 2系統JSON（`docs/data.json`, `admin/admin_data.json`）の完全同期を達成。
+  6. 統合テストスイート（`python testing/run_test_suite.py --all-layers`、全15ケース＋全18単体テスト）に完全合格。
+
+| ID | 分類 | 内容 | 対象ファイル | 状態 |
+|:---|:---:|:---|:---|:---:|
+| **CR-160** | クローラー機能拡張 | **各省庁新着情報一覧・お知らせ検知オプション（`--from-ministry-news`）の実装**<br>`admin/crawler.py` に各府省庁トップページおよび専用の新着情報一覧・報道発表一覧を走査し、最新の会議案内・資料発表を検知する新CLIオプションおよび実行基盤を追加 | `admin/crawler.py` | 完了 |
+| **CR-161** | 検知・マッチング | **お知らせタイトルからの登録済会議体名寄せ & 開催回・配付資料抽出エンジン**<br>鉤括弧・部会名・省庁コンテキストを活用した登録済会議体（`councils`）との高精度マッチング、個別配付資料（PDF/HTML）および親ページ誘導ハイブリッド抽出を実装 | `admin/crawler.py`<br>`admin/utils.py` | 完了 |
+| **CR-162** | ディスカバリー実行 | **省庁お知らせ検知 & 登録済会議体ディスカバリークロール実行**<br>新オプションを用いて各府省庁から最新開催回（38件）および新着配付資料（233件）を自動検知・追加 | `admin/pmhub.db`<br>`docs/data.json`<br>`admin/admin_data.json` | 完了 |
+| **CR-163** | データ品質ガード | **プレースホルダー日付ゼロ・ジェネリックタイトル排除・手動保護非破壊**<br>2099ダミー日付・当日日付プレースホルダー遮断、UIノイズ排除、手動登録データ（`manualLock: true`）の完全保護 | `admin/crawler.py` | 完了 |
+| **CR-164** | DB同期 & テスト検証 | **SQLite マスターDB & 2系統JSON完全同期 & 統合15ケース＋単体18種完全合格**<br>`pmhub.db` へ反映し 2系統JSON へ同期出力。統合テストスイート `run_test_suite.py --all-layers` 完全合格 | `admin/pmhub.db`<br>`docs/data.json`<br>`admin/admin_data.json` | 完了 |
+| **CR-165** | カテゴリ適正化 | **会議体カテゴリ整合（連絡会議・作業部会・専門審査会）& 自動判定キーワード拡充**<br>`cas-shouhizei_futankeigen` を `LIAISON`、`mic-radiomic_wg` 含む作業班55件を `WORKING_GROUP`、`nra-ro_anzen_shinsa` を `EXPERT_COMMITTEE`、`nra-me_suishoutai` を `SECTION`、審査会7件を `COMMITTEE` に是正し、`discover_councils.py` に「専門審査会」「作業班」の自動判定ガードを追加 | `admin/discover_councils.py`<br>`admin/pmhub.db`<br>`docs/data.json` | 完了 |
+
+---
+
+### 【Drop 67】新規会議体（21会議体・280開催回・900超資料）ワンストップ登録・林政審議会重複統合 & 除外ポータル（12件）却下登録（完了）
+
+新規会議体ディスカバリー（`admin/discover_councils.py`）により検出された41候補について、府省庁公式サイトを唯一の一次情報源とするファクトチェックを行い、新規21会議体をワンストップ（マスター・開催回・末端PDF/HTML配付資料・スクレイピングルール・手動保護）で追加。厚生労働省・農林水産省共管の「と畜場の制度に関する研究会」について、厚労省配付資料ページ（`newpage_76383.html`）より全6点PDF配付資料および開催日（2026/10/05）を完全反映。既存データで判明した林野庁「林政審議会（旧 `maff-652` 9回 と `rinya-1278` 56回）」の二重登録を正規ID `rinya-rinsei_shingikai` へ一本化・重複解消。共通ポータルや単発ニュース等12件を `admin/rejected_councils.json` へ登録。SQLite マスターDB（`admin/pmhub.db`）と 2系統JSON を完全同期した。
+
+| ID | 分類 | 内容 | 対象ファイル | 状態 |
+|:---|:---:|:---|:---|:---:|
+| **CR-155** | 新規会議体ワンストップ追加 | **新規21会議体・280開催回・900超資料の包括追加 & 手動保護**<br>文化庁（8件）、内閣官房（1件）、法務省（1件）、消防庁（2件）、農水省（2件）、厚労省（6件）、国交省（1件）の計21会議体を公式URLより取得・登録。全レコードに `manualLock: true` を付与 | `docs/data.json`<br>`admin/admin_data.json` | 完了 |
+| **CR-156** | と畜場研究会厚労省資料反映 | **「と畜場の制度に関する研究会」厚労省配付資料（全6点PDF）および開催日（2026/10/05）反映**<br>共管先厚労省の公式配付資料ページより全6点PDF資料および開催案内を紐付け、`mhlw-tochikujou_seido` として正規化 | `docs/data.json`<br>`admin/admin_data.json` | 完了 |
+| **CR-157** | 林政審議会重複統合 | **林野庁「林政審議会」二重登録（旧 maff-652 と rinya-1278）の統合・正規化**<br>旧2レコードを削除し、正規ID `rinya-rinsei_shingikai` へ一本化。同一日付・回次の開催回および配付資料をマージ・正規化 | `docs/data.json`<br>`admin/admin_data.json` | 完了 |
+| **CR-158** | 却下リスト登録 | **除外ポータル・重複URL（12件）の却下リスト登録（352件 $\to$ 364件）**<br>共通インデックスポータル、非公開静的案内ページ、単発告知ニュース等12件を `admin/rejected_councils.json` へ登録 | `admin/rejected_councils.json` | 完了 |
+| **CR-159** | DB同期 & テスト検証 | **SQLite マスターDB & 2系統JSON完全同期 & 統合15ケース＋単体18種完全合格**<br>`pmhub.db` へトランザクション反映し、`docs/data.json` と `admin/admin_data.json` へ自動エクスポート。`run_test_suite.py --all-layers` 完全合格 | `admin/pmhub.db`<br>`docs/data.json`<br>`admin/admin_data.json` | 完了 |
+
+---
+
+### 【Drop 66】登録済会議体 開催回ディスカバリー（新規258開催回・1,555資料追加） & URLスペースエンコードガード（完了）
+
+直近アクティブ809会議体を対象とした最新開催回ディスカバリークロールを実行。新規258開催回・1,555資料を検出・追加（FSC 160件、厚労省 46件等）。2099日付プレースホルダー7件排除、環境省石綿飛散防止小委員会第3回議事録（%20 エンコード形式）追加、crawler.py におけるURLスペース自動エンコード（再発防止ガード）実装、SQLite DB と 2系統JSON を完全同期した。
+
+| ID | 分類 | 内容 | 対象ファイル | 状態 |
+|:---|:---:|:---|:---|:---:|
+| **CR-152** | ディスカバリークロール | **直近アクティブ809会議体対象 開催回ディスカバリークロール実行**<br>新規258開催回・1,555資料を自動検出・追加（FSC 160件、厚労省 46件、経産省 18件等）。2099プレースホルダー7件の完全排除 | docs/data.json<br>dmin/admin_data.json | 完了 |
+| **CR-153** | 再発防止ガード | **URL内スペース自動エンコード（%20）恒久ガード実装**<br>環境省等で発生したURL内スペースによる404/パース失敗を防止するため、crawler.py のURL正規化・フェッチ処理にスペース自動エンコードガードを実装 | dmin/crawler.py<br>dmin/utils.py | 完了 |
+| **CR-154** | DB同期 & テスト検証 | **SQLite マスターDB & 2系統JSON完全同期 & 統合15ケース＋単体18種完全合格**<br>pmhub.db へ反映し、docs/data.json と dmin/admin_data.json へ自動エクスポート。
+un_test_suite.py --all-layers 完全合格 | dmin/pmhub.db<br>docs/data.json<br>dmin/admin_data.json | 完了 |
+
+---
+
+### 【Drop 65】新規有望会議体（21会議体・177開催回・397資料）のワンストップ追加 & SQLiteマスター・2系統同期（完了）
+
+文化庁著作権分科会傘下小委員会12件、総務省審査会群4件、直近アクティブ有望5件の計21会議体をワンストップ追加（マスター・開催回・末端PDF/HTML配付資料・スクレイピングルール・手動保護）で登録。除外ポータル6件を dmin/rejected_councils.json へ登録。同省庁類似名称（恩給審査会）の整合化、年次活動報告書除外ガード（/katsudou/）新設、SQLite マスターDB（dmin/pmhub.db）と 2系統JSON を完全同期した。
+
+| ID | 分類 | 内容 | 対象ファイル | 状態 |
+|:---|:---:|:---|:---|:---:|
+| **CR-149** | 新規有望会議体追加 | **文化庁小委員会・総務省審査会等 21会議体・177開催回・397資料のワンストップ追加**<br>文化庁著作権小委員会12件、総務省審査会群4件、直近アクティブ5件の計21会議体を公式URLより取得・登録。全レコードに manualLock: true を付与 | docs/data.json<br>dmin/admin_data.json | 完了 |
+| **CR-150** | 類似名称整合 & 除外ガード | **恩給審査会類似名称整合・活動報告書除外ガード（/katsudou/）新設 & 却下リスト登録**<br>同省庁類似名称の整合化、年次活動報告書除外ガード新設、除外ポータル6件を 
+ejected_councils.json へ登録 | dmin/crawler.py<br>dmin/rejected_councils.json | 完了 |
+| **CR-151** | DB同期 & テスト検証 | **SQLite マスターDB & 2系統JSON完全同期 & 統合15ケース＋単体18種完全合格**<br>pmhub.db へ反映し、docs/data.json と dmin/admin_data.json へ自動エクスポート。
+un_test_suite.py --all-layers 完全合格 | dmin/pmhub.db<br>docs/data.json<br>dmin/admin_data.json | 完了 |
+
+---
+
+### 【Drop 62】Track [Database] フェーズ 1: SQLite マスターデータソース構築 & 双方向同期ツール（完了）
+
+単一の巨大な `docs/data.json`（約31.8MB）からローカル SQLite データベース（`admin/pmhub.db`）をマスターデータソースとするアーキテクチャへ転換。公開用スリム化 `docs/data.json`（30.12MB、約1.7MBスリム化）とクローラー・管理用 `admin/admin_data.json`（2.36MB）への決定論的2系統エクスポート、および完全リバーシブルシードツールを構築し、Track [Search] の強固な土台を確立した。
+
+- **フェーズ 1 の成果**:
+  1. `admin/db/schema.sql`、`admin/db/seed_db.py`、`admin/db/export_data.py` を実装完了。
+  2. 既存の `docs/data.json` から DB へ 7.92秒で一括高速シードし、DB から 2 つの JSON へ 0.73秒で決定論的エクスポート。
+  3. `admin/utils.py` の `load_data_json()` において `admin_data.json` の透過的マージ機構を配備し、100%の後方互換性を担保。
+  4. 新設した単体テスト `test_drop62_db_and_export.py`（U17）を含む、統合テストスイート（全14ケース＋単体17種）に完全合格。
+
+| ID | 分類 | 内容 | 対象ファイル | 状態 |
+|:---|:---:|:---|:---|:---:|
+| **CR-151** | DBスキーマ定義 | **SQLite マスターDBスキーマ定義 & リバーシブルDDL構築**<br>`councils`, `meetings`, `materials`, `council_materials`, `scraping_rules`, `crawl_statuses`, `admin_configs` テーブル、および Track [Search] 用 `fts_materials`（FTS5 trigram）テーブルを定義。`.gitignore` に `admin/pmhub.db` を追加 | `admin/db/schema.sql`<br>`.gitignore` | 完了 |
+| **CR-152** | 2系統エクスポート | **決定論的 2 系統 JSON エクスポートツールの実装**<br>`admin/pmhub.db` から公開用 `docs/data.json`（スリム化・ソート済み）および管理用 `admin/admin_data.json`（ルール・設定・手動ロック明細）を決定論的（差分最小化）に出力する `export_data.py` を実装 | `admin/db/export_data.py` | 完了 |
+| **CR-153** | リバーシブルシード | **完全リバーシブル・シードツールの実装**<br>`docs/data.json` および `admin/admin_data.json` から `admin/pmhub.db` をゼロから高速に完全再構築する `seed_db.py` を実装。初回移行時（現行の単一 `data.json` からのシード）にも完全対応 | `admin/db/seed_db.py` | 完了 |
+| **CR-154** | テスト検証 | **Drop 62 単体テスト新設 & 統合テストスイート整合性検証**<br>`testing/test_drop62_db_and_export.py`（U17）を新設。DDL初期化、シード $\to$ エクスポートの双方向可逆性（ロスレス）、2系統JSONのキー整合性を検証。統合テストスイート（全14ケース＋単体17種）完全合格を確認 | `testing/test_drop62_db_and_export.py`<br>`testing/run_unit_tests.py`<br>`testing/run_test_suite.py`<br>`admin/utils.py` | 完了 |
+
+---
+
+### 【Drop 63】Track [Database] フェーズ 2: クローラー & 管理サーバーの DB 接続パイプライン化（完了）
+
+フェーズ 1 で確立したマスターDB基盤に基づき、運用系ツール（`admin/crawler.py`, `admin/server.py`）のデータアクセス層を DB 直接接続へ切り替えた。クロール完了時および管理操作時に自動エクスポート（`export_data.py`）を実行し、Git 管理対象の 2 つの JSON を自動更新・出力する完全自動パイプラインを確立した。
+
+- **フェーズ 2 の成果**:
+  1. `admin/db/db_manager.py`（DBリポジトリ & 自動エクスポートマネージャー）を新設。
+  2. `admin/utils.py` の `load_data_json()` および `save_data_json_with_backup()` を改修し、`admin/pmhub.db` へのトランザクション同期および 2系統自動エクスポートパイプラインを統合。
+  3. クローラー（`admin/crawler.py`）および管理サーバー（`admin/server.py`）の全データ更新が自動的に DB と 2系統 JSON に同期されるパイプラインを確立。
+  4. 専用単体テスト `test_drop63_crawler_server_db.py`（U18）を新設し、統合テストスイート（全14ケース＋単体18種）に完全合格。
+
+| ID | 分類 | 内容 | 対象ファイル | 状態 |
+|:---|:---:|:---|:---|:---:|
+| **CR-155** | DBリポジトリ | **DBリポジトリ & 同期マネージャーの実装**<br>`admin/db/db_manager.py` を新設し、DBからの高速ロード（`load_data_from_db`）、トランザクション更新（`save_data_to_db`）、自動エクスポートパイプライン（`export_pipeline`）、およびDB非存在時の自動シード復元を実装 | `admin/db/db_manager.py`<br>`admin/db/__init__.py` | 完了 |
+| **CR-156** | クローラーDB化 | **クローラー（`admin/crawler.py`）の DB パイプライン接続**<br>開始時DB優先ロード、チェックポイントおよびクロール完了時の DB 保存 & 自動エクスポートパイプラインの接続 | `admin/crawler.py`<br>`admin/utils.py` | 完了 |
+| **CR-157** | サーバーDB化 | **管理サーバー（`admin/server.py`）の DB パイプライン接続**<br>ルール保存・キーワード保存・会議体承認/却下エンドポイントの DB 直接更新 & 自動エクスポート連動 | `admin/server.py`<br>`admin/utils.py` | 完了 |
+| **CR-158** | テスト検証 | **Drop 63 単体テスト新設 & 統合テストスイート整合性検証**<br>`testing/test_drop63_crawler_server_db.py`（U18）を新設。DB直結更新 $\to$ 自動エクスポート $\to$ JSON整合性のエンドツーエンド検証および統合テストスイート（全14ケース＋単体18種）完全合格を確認 | `testing/test_drop63_crawler_server_db.py`<br>`testing/run_unit_tests.py`<br>`testing/run_test_suite.py` | 完了 |
+
+
+---
+
+### 【Drop 64】統合テストスイート（run_test_suite.py）の SQLite マスターDB & 2系統エクスポート整合性検証対応（完了）
+
+Drop 62 & 63 による SQLite マスターDB化および 2系統エクスポート基盤の確立を踏まえ、統合テストスイート（`testing/run_test_suite.py`）を従来の全14ケースから全15ケースへ拡張。SQLite データベース（`admin/pmhub.db`）の完全性、外部キー制約、DB $\leftrightarrow$ 2系統 JSON 間のデータ・手動ロックの完全一致、および公開 JSON への設定漏洩防止（No Leakage）を恒久的に自動検証する新ケース15を新設・配備した。
+
+- **Drop 64 の成果**:
+  1. `check_syntax_errors()` の構文チェック対象に `admin/admin_data.json`（JSON構文）および `admin/db/schema.sql`（インメモリ SQLite DDL構文）を追加。
+  2. 新設「ケース15: SQLiteマスターDB整合性 & 2系統JSON完全同期検証」を第3層（常時ガード）に配備。`PRAGMA integrity_check: ok`、外部キー違反0件、3者間件数完全一致（councils 1,506件, meetings 19,024件, materials 117,465件, rules 1,506件）、手動ロック件数一致（councils 694件, meetings 13,279件, materials 7,198件）、公開JSONへの設定漏洩ゼロ（No Leakage）を高速検証（0.53秒）。
+  3. `run_test_suite.py` の総ケース数を全15ケースへ拡張し、サマリー表示および `AGENTS.md` 第3条 第7項の成果報告フォーマット規約を更新。統合テストスイート（全15ケース＋単体18種）に完全合格。
+
+| ID | 分類 | 内容 | 対象ファイル | 状態 |
+|:---|:---:|:---|:---|:---:|
+| **CR-159** | 構文検証拡充 | **第1層（構文チェック）における admin_data.json & schema.sql の検証網羅**<br>`check_syntax_errors()` の JSON 検証に `admin/admin_data.json` を追加し、`admin/db/schema.sql` の DDL 構文をインメモリ SQLite で検証するガードを追加 | `testing/run_test_suite.py` | 完了 |
+| **CR-160** | ケース15新設 | **第3層新設: SQLite マスターDB整合性 & 2系統JSON完全同期検証**<br>`check_sqlite_and_split_export_sync()` を新設。`PRAGMA integrity_check`, `foreign_key_check`, 3者間件数・ID完全一致、手動ロック件数一致、公開JSON設定漏洩ゼロ（No Leakage）を常時ガード | `testing/run_test_suite.py` | 完了 |
+| **CR-161** | スイート全15ケース化 | **統合テストスイート全15ケース化 & ドキュメント規約整合**<br>`run_test_suite.py` のサマリー出力・ヘッダー・ケース判定を全15ケースに更新し、`AGENTS.md` の成果報告フォーマット規約にケース15を整合反映 | `testing/run_test_suite.py`<br>`AGENTS.md` | 完了 |
+
+---
+
+---
+
+### 【Drop 61】水産庁 水産物消費拡大実行計画会議 第1回〜第6回 開催回分離・配付資料適正化 & スラグ規約正規化
+
+水産庁「水産物消費拡大実行計画会議（旧 `jfa-603`）」について、全6回分の配付資料が「第1回」の単一レコードに54件まとめてバンドル・文字化けしていた状態から、公式ページ（`jikkoukeikaku.html`）の回次別セクションを正確にパースし、第1回（令和3年9月17日）から最新の第6回（令和8年3月19日）までの全6開催回へ完全分離。全65件の正規配付資料（PDF）を開催回ごとに正しく配分・紐づけ（共通フッターUIリンク等のノイズは完全排除）し、会議体IDをAGENTS.md 第3条規約準拠のスラグ（`jfa-603` $\to$ `jfa-suisan_shouhi_kakudai`）へ正規化。手動保護 `manualLock: true` およびスクレイピングルールを連動反映する。
+
+| ID | 分類 | 内容 | 対象ファイル | 状態 |
+|:---|:---:|:---|:---|:---:|
+| **CR-141** | 会議体ID・名称正規化 | **会議体IDのスラグ規約正規化（`jfa-603` $\to$ `jfa-suisan_shouhi_kakudai`） & 文字化け解消**<br>レガシー数値スラグ `jfa-603` を規約準拠スラグへ更新し、文字化け名称を「水産物消費拡大実行計画会議」へ修復 | `docs/data.json` | 完了 |
+| **CR-142** | 開催回分離・資料配分 | **全6開催回（第1回〜第6回）への完全分離 & 配付資料（全65件）適正紐づけ**<br>単一バンドル回（54資料）を解消し、第1回（9件）、第2回（10件）、第3回（10件）、第4回（12件）、第5回（13件）、第6回（11件）へ分離。各回に `manualLock: true` を設定 | `docs/data.json` | 完了 |
+| **CR-143** | ルール連動 | **親テーブル型スクレイピングルールの連動登録・更新**<br>`jfa-suisan_shouhi_kakudai` に対して親ページ直接抽出テンプレートルール（`tpl-parent-table-direct`）を設定 | `docs/data.json` | 完了 |
+| **CR-144** | テスト検証 | **統合テストスイート（全14ケース＋単体16種）整合性検証**<br>`python testing/run_test_suite.py --all-layers` を実行し、全ケース完全合格を確認 | `testing/run_test_suite.py` | 完了 |
+
+---
+
+### 4-2. 過去完了 Drop 詳細（Drop 19 〜 Drop 60）
 
 ### 【Drop 19】クローラー精度飛躍的向上 & METI/ANRE重複統合・FSA同期（全5件・完了）
 
@@ -621,57 +732,3 @@ PMM プロジェクト（`D:\dev\PMM\docs`）に蓄積された全 33 省庁・1
 | **CR-138** | ディープクロール網羅化 | **全9組織・全413開催回のディープクロール & 末端配付資料（4,250件）網羅的登録**<br>各部会の開催回リストから個別開催回URL（`post_*.html`）をクロールし、議事次第・説明資料PDF・議事録HTML等の末端資料を網羅取得して各回に完全紐づけ。`manualLock: true` を設定 | `docs/data.json` | 完了 |
 | **CR-139** | ルール連動 | **9組織に対するスクレイピングルールの連動登録・更新**<br>`moe-chuo_kankyo_*` に対して各部会URL、`tpl-general-round-subpage`、個別開催回走査パターンを設定 | `docs/data.json` | 完了 |
 | **CR-140** | テスト検証 | **統合テストスイート（全14ケース＋単体16種）整合性検証**<br>`python testing/run_test_suite.py --all-layers` を実行し、全ケース完全合格を確認 | `testing/run_test_suite.py` | 完了 |
-
-<hr>
-
-### 【Drop 61】水産庁 水産物消費拡大実行計画会議 第1回〜第6回 開催回分離・配付資料適正化 & スラグ規約正規化
-
-水産庁「水産物消費拡大実行計画会議（旧 `jfa-603`）」について、全6回分の配付資料が「第1回」の単一レコードに54件まとめてバンドル・文字化けしていた状態から、公式ページ（`jikkoukeikaku.html`）の回次別セクションを正確にパースし、第1回（令和3年9月17日）から最新の第6回（令和8年3月19日）までの全6開催回へ完全分離。全65件の正規配付資料（PDF）を開催回ごとに正しく配分・紐づけ（共通フッターUIリンク等のノイズは完全排除）し、会議体IDをAGENTS.md 第3条規約準拠のスラグ（`jfa-603` $\to$ `jfa-suisan_shouhi_kakudai`）へ正規化。手動保護 `manualLock: true` およびスクレイピングルールを連動反映する。
-
-| ID | 分類 | 内容 | 対象ファイル | 状態 |
-|:---|:---:|:---|:---|:---:|
-| **CR-141** | 会議体ID・名称正規化 | **会議体IDのスラグ規約正規化（`jfa-603` $\to$ `jfa-suisan_shouhi_kakudai`） & 文字化け解消**<br>レガシー数値スラグ `jfa-603` を規約準拠スラグへ更新し、文字化け名称を「水産物消費拡大実行計画会議」へ修復 | `docs/data.json` | 完了 |
-| **CR-142** | 開催回分離・資料配分 | **全6開催回（第1回〜第6回）への完全分離 & 配付資料（全65件）適正紐づけ**<br>単一バンドル回（54資料）を解消し、第1回（9件）、第2回（10件）、第3回（10件）、第4回（12件）、第5回（13件）、第6回（11件）へ分離。各回に `manualLock: true` を設定 | `docs/data.json` | 完了 |
-| **CR-143** | ルール連動 | **親テーブル型スクレイピングルールの連動登録・更新**<br>`jfa-suisan_shouhi_kakudai` に対して親ページ直接抽出テンプレートルール（`tpl-parent-table-direct`）を設定 | `docs/data.json` | 完了 |
-| **CR-144** | テスト検証 | **統合テストスイート（全14ケース＋単体16種）整合性検証**<br>`python testing/run_test_suite.py --all-layers` を実行し、全ケース完全合格を確認 | `testing/run_test_suite.py` | 完了 |
-
-<hr>
-
-### 【Drop 67】新規会議体（21会議体・280開催回・900超資料）ワンストップ登録・林政審議会重複統合 & 除外ポータル（12件）却下登録（完了）
-
-新規会議体ディスカバリー（`admin/discover_councils.py`）により検出された41候補について、府省庁公式サイトを唯一の一次情報源とするファクトチェックを行い、新規21会議体をワンストップ（マスター・開催回・末端PDF/HTML配付資料・スクレイピングルール・手動保護）で追加。厚生労働省・農林水産省共管の「と畜場の制度に関する研究会」について、厚労省配付資料ページ（`newpage_76383.html`）より全6点PDF配付資料および開催日（2026/10/05）を完全反映。既存データで判明した林野庁「林政審議会（旧 `maff-652` 9回 と `rinya-1278` 56回）」の二重登録を正規ID `rinya-rinsei_shingikai` へ一本化・重複解消。共通ポータルや単発ニュース等12件を `admin/rejected_councils.json` へ登録。SQLite マスターDB（`admin/pmhub.db`）と 2系統JSON を完全同期した。
-
-| ID | 分類 | 内容 | 対象ファイル | 状態 |
-|:---|:---:|:---|:---|:---:|
-| **CR-155** | 新規会議体ワンストップ追加 | **新規21会議体・280開催回・900超資料の包括追加 & 手動保護**<br>文化庁（8件）、内閣官房（1件）、法務省（1件）、消防庁（2件）、農水省（2件）、厚労省（6件）、国交省（1件）の計21会議体を公式URLより取得・登録。全レコードに `manualLock: true` を付与 | `docs/data.json`<br>`admin/admin_data.json` | 完了 |
-| **CR-156** | と畜場研究会厚労省資料反映 | **「と畜場の制度に関する研究会」厚労省配付資料（全6点PDF）および開催日（2026/10/05）反映**<br>共管先厚労省の公式配付資料ページより全6点PDF資料および開催案内を紐付け、`mhlw-tochikujou_seido` として正規化 | `docs/data.json`<br>`admin/admin_data.json` | 完了 |
-| **CR-157** | 林政審議会重複統合 | **林野庁「林政審議会」二重登録（旧 maff-652 と rinya-1278）の統合・正規化**<br>旧2レコードを削除し、正規ID `rinya-rinsei_shingikai` へ一本化。同一日付・回次の開催回および配付資料をマージ・正規化 | `docs/data.json`<br>`admin/admin_data.json` | 完了 |
-| **CR-158** | 却下リスト登録 | **除外ポータル・重複URL（12件）の却下リスト登録（352件 $\to$ 364件）**<br>共通インデックスポータル、非公開静的案内ページ、単発告知ニュース等12件を `admin/rejected_councils.json` へ登録 | `admin/rejected_councils.json` | 完了 |
-| **CR-159** | DB同期 & テスト検証 | **SQLite マスターDB & 2系統JSON完全同期 & 統合15ケース＋単体18種完全合格**<br>`pmhub.db` へトランザクション反映し、`docs/data.json` と `admin/admin_data.json` へ自動エクスポート。`run_test_suite.py --all-layers` 完全合格 | `admin/pmhub.db`<br>`docs/data.json`<br>`admin/admin_data.json` | 完了 |
-
-<hr>
-
-### 【Drop 68】登録済会議体 開催回ディスカバリークロール & 省庁トップお知らせ検知オプション（完了）
-
-直近2年アクティブ会議体を対象とした最新開催回ディスカバリークロールに加え、各府省庁トップページおよび専用の新着情報一覧（厚生労働省 `https://www.mhlw.go.jp/stf/new-info/` や `shingi.html`、審議会一覧 `indexshingi.html` の NEW マーカー検知、金融庁 `r8_news_menu.html`、財務省 `whats_new/202610.html` 等の最新年・月サブページディープクロール含む）・報道発表一覧から最近開催・公表された会議を自動検知し、その開催回情報（開催日・回次・末端PDF/HTML配付資料）を取得する新オプション（`--from-ministry-news`）を `admin/crawler.py` に実装した。省庁コンテキストに基づく高精度な登録済会議体名寄せマッチング、直リンクからの資料抽出および親会議体ピンポイント探索のハイブリッド連携、プレースホルダー日付（2099/01/01）ゼロ検証、ジェネリックタイトル排除、手動保護（`manualLock: true`）の非破壊性維持、SQLiteマスターDB（`admin/pmhub.db`）と2系統JSONの完全同期を完遂した。
-
-- **Drop 68 の成果**:
-  1. `admin/crawler.py` に `--from-ministry-news`（短縮名 `--from-news`）を実装完了。全省庁ポータル定義、meta refresh 自動追従、年月サブページ自動解決、MHLW審議会一覧の `NEW` マーカー検知を配備。
-  2. 省庁新着情報からのディスカバリークロールを実行し、新規開催回 **38 件**（内閣府9件、国交省8件、厚労省7件、法務省4件、財務省3件、金融庁3件、文科省1件、防衛省1件、規制委1件、食品安全委1件）、配付資料 **233 件** を自動追加（登録総数 19,776開催回・120,833資料到達）。
-  3. プレースホルダー日付（2099/01/01）0件、ジェネリックタイトル0件、既存手動登録データ（`manualLock: true`）の非破壊性を完全維持。
-  4. 登録済会議体カテゴリ適正化（連絡会議の `LIAISON`、特定ラジオマイク作業班および総務省全作業班55件の `WORKING_GROUP`、原子炉安全専門審査会の `EXPERT_COMMITTEE`、眼の水晶体検討部会の `SECTION`、審査会7件の `COMMITTEE` 整合化、および `discover_councils.py` 自動判定ロジック拡充）を完遂。
-  5. SQLite マスターDB（`admin/pmhub.db`）および 2系統JSON（`docs/data.json`, `admin/admin_data.json`）の完全同期を達成。
-  6. 統合テストスイート（`python testing/run_test_suite.py --all-layers`、全15ケース＋全18単体テスト）に完全合格。
-
-| ID | 分類 | 内容 | 対象ファイル | 状態 |
-|:---|:---:|:---|:---|:---:|
-| **CR-160** | クローラー機能拡張 | **各省庁新着情報一覧・お知らせ検知オプション（`--from-ministry-news`）の実装**<br>`admin/crawler.py` に各府省庁トップページおよび専用の新着情報一覧・報道発表一覧を走査し、最新の会議案内・資料発表を検知する新CLIオプションおよび実行基盤を追加 | `admin/crawler.py` | 完了 |
-| **CR-161** | 検知・マッチング | **お知らせタイトルからの登録済会議体名寄せ & 開催回・配付資料抽出エンジン**<br>鉤括弧・部会名・省庁コンテキストを活用した登録済会議体（`councils`）との高精度マッチング、個別配付資料（PDF/HTML）および親ページ誘導ハイブリッド抽出を実装 | `admin/crawler.py`<br>`admin/utils.py` | 完了 |
-| **CR-162** | ディスカバリー実行 | **省庁お知らせ検知 & 登録済会議体ディスカバリークロール実行**<br>新オプションを用いて各府省庁から最新開催回（38件）および新着配付資料（233件）を自動検知・追加 | `admin/pmhub.db`<br>`docs/data.json`<br>`admin/admin_data.json` | 完了 |
-| **CR-163** | データ品質ガード | **プレースホルダー日付ゼロ・ジェネリックタイトル排除・手動保護非破壊**<br>2099ダミー日付・当日日付プレースホルダー遮断、UIノイズ排除、手動登録データ（`manualLock: true`）の完全保護 | `admin/crawler.py` | 完了 |
-| **CR-164** | DB同期 & テスト検証 | **SQLite マスターDB & 2系統JSON完全同期 & 統合15ケース＋単体18種完全合格**<br>`pmhub.db` へ反映し 2系統JSON へ同期出力。統合テストスイート `run_test_suite.py --all-layers` 完全合格 | `admin/pmhub.db`<br>`docs/data.json`<br>`admin/admin_data.json` | 完了 |
-| **CR-165** | カテゴリ適正化 | **会議体カテゴリ整合（連絡会議・作業部会・専門審査会）& 自動判定キーワード拡充**<br>`cas-shouhizei_futankeigen` を `LIAISON`、`mic-radiomic_wg` 含む作業班55件を `WORKING_GROUP`、`nra-ro_anzen_shinsa` を `EXPERT_COMMITTEE`、`nra-me_suishoutai` を `SECTION`、審査会7件を `COMMITTEE` に是正し、`discover_councils.py` に「専門審査会」「作業班」の自動判定ガードを追加 | `admin/discover_councils.py`<br>`admin/pmhub.db`<br>`docs/data.json` | 完了 |
-
-
-
-
