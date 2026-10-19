@@ -300,6 +300,23 @@
     const progressFill = document.getElementById('adminProgressFill');
     const logs = document.getElementById('adminTerminalLogs');
 
+    // ユーザー選択オプションの収集 (Drop 69)
+    const modeSelect = document.getElementById('crawlModeSelect');
+    const ministrySelect = document.getElementById('crawlMinistrySelect');
+    const recentYearsSelect = document.getElementById('crawlRecentYearsSelect');
+    const recheckRecentSelect = document.getElementById('crawlRecheckRecentSelect');
+    const fullCheckCheckbox = document.getElementById('crawlFullCheckOption');
+    const includeClosedCheckbox = document.getElementById('crawlIncludeClosedOption');
+
+    const crawlOptions = {
+      mode: modeSelect ? modeSelect.value : 'normal',
+      ministry: (ministrySelect && ministrySelect.value !== 'ALL') ? ministrySelect.value : null,
+      recent_years: recentYearsSelect ? recentYearsSelect.value : '2',
+      recheck_recent: recheckRecentSelect ? parseInt(recheckRecentSelect.value, 10) : 1,
+      full_check: fullCheckCheckbox ? fullCheckCheckbox.checked : false,
+      include_closed: includeClosedCheckbox ? includeClosedCheckbox.checked : false
+    };
+
     if (btn) {
       btn.disabled = true;
       btn.textContent = '⏳ クロール中…';
@@ -322,11 +339,18 @@
       logs.scrollTop = logs.scrollHeight;
     };
 
+    const modeLabel = crawlOptions.mode === 'ministry_news' ? '【省庁新着検知】' : '【通常個別探索】';
+    const targetLabel = crawlOptions.ministry ? `対象: ${crawlOptions.ministry}` : '対象: 全府省庁 (ALL)';
     logLine('バックエンドの Python クローラー (admin/crawler.py) を起動しています...');
+    logLine(`実行設定: ${modeLabel} ${targetLabel} (年数: ${crawlOptions.recent_years}年, 再検査: ${crawlOptions.recheck_recent}回)`);
 
     try {
-      // 1. サーバーAPIにクロール開始を要求
-      const res = await fetch('/api/run-crawler', { method: 'POST' });
+      // 1. サーバーAPIにクロール開始を要求 (オプションJSON送信)
+      const res = await fetch('/api/run-crawler', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(crawlOptions)
+      });
       if (!res.ok) {
         throw new Error(`サーバーエラー (HTTP ${res.status}): ローカルサーバーが起動しているか確認してください。`);
       }
@@ -2737,6 +2761,36 @@
     }
 
     renderCrawlStatusDashboard();
+
+    // ─── 4. Crawler Options UI Sync (Drop 69) ───
+    function initCrawlerOptionsListeners() {
+      const modeSelect = document.getElementById('crawlModeSelect');
+      const advWrapper = document.getElementById('crawlAdvancedOptionsWrapper');
+      const desc = document.getElementById('crawlModeDescription');
+      if (!modeSelect) return;
+
+      const updateUI = () => {
+        const isNews = modeSelect.value === 'ministry_news';
+        if (advWrapper) {
+          advWrapper.style.opacity = isNews ? '0.35' : '1';
+          advWrapper.style.pointerEvents = isNews ? 'none' : 'auto';
+          advWrapper.querySelectorAll('select, input').forEach(el => {
+            el.disabled = isNews;
+          });
+        }
+        if (desc) {
+          if (isNews) {
+            desc.innerHTML = '※ 各府省庁トップページやお知らせ・新着情報（厚労省審議会一覧NEWマーカー等）から最近開催された会議を自動検知して取得します（<code>--from-ministry-news</code> オプション）。';
+          } else {
+            desc.innerHTML = '※ 承認済みの各会議体トップページURLを巡回し、最新の開催回と配付資料（PDF/HTML）を自動取得・更新します。';
+          }
+        }
+      };
+
+      modeSelect.addEventListener('change', updateUI);
+      updateUI();
+    }
+    initCrawlerOptionsListeners();
 
     // 全タブの初回データ一括描画を確実に実行
     if (typeof renderCards === 'function') renderCards();

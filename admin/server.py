@@ -9,7 +9,7 @@ import urllib.parse
 from datetime import datetime
 from apply_report import apply_report, apply_report_data
 from discover_councils import run_discovery
-from crawler import run_meeting_crawler, get_unconfirmed_meetings_count
+from crawler import run_meeting_crawler, run_ministry_news_discovery, get_unconfirmed_meetings_count
 from utils import (
     setup_win32_utf8, save_data_json_with_backup, load_data_json,
     load_rejected_councils, save_rejected_councils, add_to_rejected_councils,
@@ -68,8 +68,21 @@ crawler_state = {
     "log_file": ""
 }
 
-def _crawler_worker():
+def _crawler_worker(options=None):
     global crawler_state, crawler_stop_event
+    options = options or {}
+    mode = options.get("mode", "normal")
+    ministry = options.get("ministry")
+    workers = int(options.get("workers", 4))
+    recent_years = options.get("recent_years", "2")
+    recheck_recent = int(options.get("recheck_recent", 1))
+    full_check = bool(options.get("full_check", False))
+    include_closed = bool(options.get("include_closed", False))
+    resume = bool(options.get("resume", False))
+
+    crawler_state["mode"] = mode
+    crawler_state["target_ministry"] = ministry or "ALL"
+
     def on_progress(msg, data=None):
         if data:
             if data.get("type") == "council_start":
@@ -89,7 +102,24 @@ def _crawler_worker():
             crawler_state["logs"] = crawler_state["logs"][-500:]
 
     try:
-        stats = run_meeting_crawler(progress_callback=on_progress, stop_event=crawler_stop_event)
+        if mode == "ministry_news":
+            stats = run_ministry_news_discovery(
+                progress_callback=on_progress,
+                stop_event=crawler_stop_event,
+                ministry=ministry
+            )
+        else:
+            stats = run_meeting_crawler(
+                progress_callback=on_progress,
+                stop_event=crawler_stop_event,
+                workers=workers,
+                recent_years=recent_years,
+                recheck_recent=recheck_recent,
+                full_check=full_check,
+                include_closed=include_closed,
+                resume=resume,
+                ministry=ministry
+            )
         crawler_state["stats"] = stats
         crawler_state["progress"] = 100
         crawler_state["running"] = False
@@ -231,6 +261,8 @@ class CustomHandler(SimpleHTTPRequestHandler):
             res_payload = {
                 "running": crawler_state["running"],
                 "stopping": crawler_state.get("stopping", False),
+                "mode": crawler_state.get("mode", "normal"),
+                "target_ministry": crawler_state.get("target_ministry", "ALL"),
                 "progress": crawler_state["progress"],
                 "current_council": crawler_state["current_council"],
                 "current_idx": crawler_state["current_idx"],
@@ -444,10 +476,20 @@ class CustomHandler(SimpleHTTPRequestHandler):
                 self.send_json({"status": "running", "message": "Crawler is already running"})
                 return
 
+            req_options = {}
+            try:
+                body_json = self.read_json_body()
+                if isinstance(body_json, dict):
+                    req_options = body_json
+            except Exception:
+                req_options = {}
+
             crawler_stop_event.clear()
             crawler_state = {
                 "running": True,
                 "stopping": False,
+                "mode": req_options.get("mode", "normal"),
+                "target_ministry": req_options.get("ministry") or "ALL",
                 "progress": 5,
                 "current_idx": 0,
                 "total_councils": 0,
@@ -459,10 +501,15 @@ class CustomHandler(SimpleHTTPRequestHandler):
                 "lastCrawlTime": "",
                 "log_file": ""
             }
-            t = threading.Thread(target=_crawler_worker, daemon=True)
+            t = threading.Thread(target=_crawler_worker, args=(req_options,), daemon=True)
             t.start()
 
-            self.send_json({"status": "started", "message": "Meeting crawler started in background"})
+            mode_name = "省庁新着検知" if req_options.get("mode") == "ministry_news" else "個別探索"
+            self.send_json({
+                "status": "started",
+                "message": f"Meeting crawler started in background ({mode_name})",
+                "options": req_options
+            })
 
         elif path == "/api/stop-crawler":
             if not crawler_state["running"]:

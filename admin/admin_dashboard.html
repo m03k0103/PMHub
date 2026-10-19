@@ -467,6 +467,90 @@
           </div>
         </div>
 
+        <!-- クロール実行オプション設定パネル (Drop 69) -->
+        <div class="crawler-options-panel" style="margin-top: 1rem; padding: 1rem; background: rgba(0,0,0,0.25); border: 1px solid var(--border-color); border-radius: var(--radius-md);">
+          <div style="display: flex; flex-wrap: wrap; gap: 1rem; align-items: flex-end;">
+            <!-- モード選択 -->
+            <div style="flex: 1; min-width: 260px;">
+              <label for="crawlModeSelect" style="display: block; font-size: 0.8rem; font-weight: 600; color: #94a3b8; margin-bottom: 0.35rem;">
+                🎯 探索モード
+              </label>
+              <select id="crawlModeSelect" class="form-control" style="width: 100%; padding: 0.5rem 0.75rem; background: rgba(15, 23, 42, 0.8); border: 1px solid var(--border-color); color: var(--text-primary); border-radius: var(--radius-sm); font-size: 0.88rem;">
+                <option value="normal" selected>【通常巡回】承認済会議体の公式URL個別探索 (デフォルト)</option>
+                <option value="ministry_news">【省庁新着検知】府省庁トップ・報道発表から自動検知 (--from-ministry-news)</option>
+              </select>
+            </div>
+
+            <!-- 対象省庁選択 -->
+            <div style="width: 180px;">
+              <label for="crawlMinistrySelect" style="display: block; font-size: 0.8rem; font-weight: 600; color: #94a3b8; margin-bottom: 0.35rem;">
+                🏛 対象府省庁
+              </label>
+              <select id="crawlMinistrySelect" class="form-control" style="width: 100%; padding: 0.5rem 0.75rem; background: rgba(15, 23, 42, 0.8); border: 1px solid var(--border-color); color: var(--text-primary); border-radius: var(--radius-sm); font-size: 0.88rem;">
+                <option value="ALL" selected>すべての府省庁 (ALL)</option>
+                <option value="CAO">内閣府 (CAO)</option>
+                <option value="CAS">内閣官房 (CAS)</option>
+                <option value="FSA">金融庁 (FSA)</option>
+                <option value="MOF">財務省 (MOF)</option>
+                <option value="MHLW">厚生労働省 (MHLW)</option>
+                <option value="METI">経済産業省 (METI)</option>
+                <option value="MLIT">国土交通省 (MLIT)</option>
+                <option value="MIC">総務省 (MIC)</option>
+                <option value="MEXT">文部科学省 (MEXT)</option>
+                <option value="MOJ">法務省 (MOJ)</option>
+                <option value="MOD">防衛省 (MOD)</option>
+                <option value="NRA">原子力規制委員会 (NRA)</option>
+                <option value="FSC">食品安全委員会 (FSC)</option>
+                <option value="PPC">個人情報保護委員会 (PPC)</option>
+                <option value="CAA">消費者庁 (CAA)</option>
+                <option value="DIGITAL">デジタル庁 (DIGITAL)</option>
+                <option value="DA">こども家庭庁 (DA)</option>
+                <option value="MAFF">農林水産省 (MAFF)</option>
+                <option value="ENV">環境省 (ENV)</option>
+                <option value="MOFA">外務省 (MOFA)</option>
+              </select>
+            </div>
+
+            <!-- 通常巡回用詳細オプション -->
+            <div id="crawlAdvancedOptionsWrapper" style="display: flex; flex-wrap: wrap; gap: 1rem; align-items: flex-end; transition: opacity 0.2s;">
+              <div style="width: 150px;">
+                <label for="crawlRecentYearsSelect" style="display: block; font-size: 0.8rem; font-weight: 600; color: #94a3b8; margin-bottom: 0.35rem;">
+                  📅 対象年数
+                </label>
+                <select id="crawlRecentYearsSelect" class="form-control" style="width: 100%; padding: 0.5rem 0.75rem; background: rgba(15, 23, 42, 0.8); border: 1px solid var(--border-color); color: var(--text-primary); border-radius: var(--radius-sm); font-size: 0.88rem;">
+                  <option value="2" selected>直近2年 (推奨)</option>
+                  <option value="1">直近1年</option>
+                  <option value="3">直近3年</option>
+                  <option value="0">全期間 (0)</option>
+                </select>
+              </div>
+
+              <div style="width: 160px;">
+                <label for="crawlRecheckRecentSelect" style="display: block; font-size: 0.8rem; font-weight: 600; color: #94a3b8; margin-bottom: 0.35rem;" title="既に登録済みの開催回のうち、最新何回分を資料更新確認するか">
+                  🔄 直近再検査回数
+                </label>
+                <select id="crawlRecheckRecentSelect" class="form-control" style="width: 100%; padding: 0.5rem 0.75rem; background: rgba(15, 23, 42, 0.8); border: 1px solid var(--border-color); color: var(--text-primary); border-radius: var(--radius-sm); font-size: 0.88rem;">
+                  <option value="1" selected>最新 1 回 (推奨)</option>
+                  <option value="0">0 回 (完全スキップ)</option>
+                  <option value="3">最新 3 回</option>
+                </select>
+              </div>
+
+              <div style="display: flex; gap: 1rem; align-items: center; padding-bottom: 0.45rem;">
+                <label style="display: flex; align-items: center; gap: 0.35rem; font-size: 0.82rem; color: #cbd5e1; cursor: pointer;">
+                  <input type="checkbox" id="crawlFullCheckOption"> 全件再検査
+                </label>
+                <label style="display: flex; align-items: center; gap: 0.35rem; font-size: 0.82rem; color: #cbd5e1; cursor: pointer;">
+                  <input type="checkbox" id="crawlIncludeClosedOption"> 廃止会議体含む
+                </label>
+              </div>
+            </div>
+          </div>
+          <div id="crawlModeDescription" style="margin-top: 0.65rem; font-size: 0.78rem; color: #64748b; line-height: 1.4;">
+            ※ 承認済みの各会議体トップページURLを巡回し、最新の開催回と配付資料（PDF/HTML）を自動取得・更新します。
+          </div>
+        </div>
+
         <div style="margin-top: 1rem;">
           <div id="adminCrawlerLogFileInfo" style="display: none; font-size: 0.75rem; color: #94a3b8; margin-bottom: 0.5rem; font-family: monospace;">
             📄 ログファイル: <span id="adminCrawlerLogFilePath" style="color: #60a5fa; font-weight: bold;"></span>

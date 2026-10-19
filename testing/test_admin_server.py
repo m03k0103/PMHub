@@ -180,6 +180,29 @@ class TestAdminServer(unittest.TestCase):
         self.assertEqual(data.get("status"), "error")
         self.assertIn("Invalid JSON payload", data.get("message", ""))
 
+    def test_post_run_crawler_with_options(self):
+        """POST /api/run-crawler がオプション付きペイロードを受け取り正しく起動すること (Drop 69)"""
+        from unittest.mock import patch
+        with patch.object(server, "_crawler_worker", return_value=None):
+            server.crawler_state["running"] = False
+            payload = {
+                "mode": "ministry_news",
+                "ministry": "MHLW",
+                "recent_years": "2",
+                "recheck_recent": 1,
+                "full_check": False,
+                "include_closed": False
+            }
+            status, _, body = self._request("/api/run-crawler", method="POST", data=payload)
+            self.assertEqual(status, 200)
+            data = json.loads(body)
+            self.assertEqual(data.get("status"), "started")
+            self.assertIn("省庁新着検知", data.get("message", ""))
+            self.assertEqual(data.get("options", {}).get("mode"), "ministry_news")
+            self.assertEqual(data.get("options", {}).get("ministry"), "MHLW")
+            server.crawler_state["running"] = False
+
 
 if __name__ == "__main__":
     unittest.main()
+
