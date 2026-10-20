@@ -3664,6 +3664,17 @@ def run_ministry_news_discovery(progress_callback=None, stop_event=None, ministr
             if c.get("officialUrl"):
                 councils_by_url[c.get("officialUrl").rstrip("/")] = c
 
+        # 既登録開催回URLの会議体別セットおよび全件URLセット構築（差分スキップ・高速化用）
+        councils_meeting_urls = {}
+        all_meeting_urls = set()
+        for m in meetings:
+            cid = m.get("councilId") or m.get("council_id")
+            u = m.get("officialUrl")
+            if u:
+                all_meeting_urls.add(u.rstrip("/"))
+            if cid and u:
+                councils_meeting_urls.setdefault(cid, set()).add(u)
+
         # 走査対象省庁の決定
         target_mins = [ministry.upper()] if ministry else list(MINISTRY_NEWS_PORTALS.keys())
         emit(f"[INFO] 対象省庁: {', '.join(target_mins)} (計 {len(target_mins)} 省庁)")
@@ -3706,6 +3717,10 @@ def run_ministry_news_discovery(progress_callback=None, stop_event=None, ministr
                         if item.get("is_shingi_index") or item_url.rstrip("/") == matched_c.get("officialUrl", "").rstrip("/"):
                             if cid not in detected_councils_to_crawl:
                                 detected_councils_to_crawl[cid] = (matched_c, f"{mtype} ({item_title})", item.get("date", ""))
+                            continue
+
+                        # 既知の開催回URLであれば再度フェッチする必要はないためスキップ（高速化）
+                        if item_url.rstrip("/") in all_meeting_urls:
                             continue
 
                         # 2. 記事URLがPDF直リンクまたは末端配付資料ページか確認
@@ -3787,11 +3802,14 @@ def run_ministry_news_discovery(progress_callback=None, stop_event=None, ministr
 
             c_target = dict(c_obj)
             c_target.setdefault("url", c_obj.get("officialUrl", ""))
+            c_target["existing_meeting_urls"] = councils_meeting_urls.get(cid, set())
 
             rule_item = get_rule_for_target(rules, c_target, rule_url_index)
             res = execute_rule_retrieval(c_target, html, rule_item, use_llm=False, recheck_recent=1)
-            scraped_item = res.get("scraped_item")
+            # execute_rule_retrieval は scraped_item 辞書そのものを返す
+            scraped_item = res.get("scraped_item") if (isinstance(res, dict) and "scraped_item" in res) else res
             if scraped_item:
+                update_crawl_status(data, cid, scraped_item)
                 added = sync_new_meetings_from_crawl(data, c_target, scraped_item)
                 if added > 0:
                     emit(f"  ✨ [ピンポイント追加] [{cid}] {c_obj['name']}: +{added} 開催回")
