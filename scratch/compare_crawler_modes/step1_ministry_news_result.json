@@ -1,0 +1,1372 @@
+{
+  "mode": "ministry_news",
+  "description": "各府省庁トップページ・新着情報・報道発表・審議会一覧からの自動検知",
+  "start_time": "2026-10-20T20:14:35.635553",
+  "end_time": "2026-10-20T20:30:37.870119",
+  "duration_seconds": 962.23,
+  "portals_scanned_count": 22,
+  "target_ministries": [
+    "MHLW",
+    "FSA",
+    "MOF",
+    "MLIT",
+    "NRA",
+    "METI",
+    "MIC",
+    "MAFF",
+    "MEXT",
+    "CAO",
+    "CAS",
+    "FDMA",
+    "ENV",
+    "DIGITAL",
+    "CFA",
+    "MOJ",
+    "MOD",
+    "PPC",
+    "RINYA",
+    "JFA",
+    "CAA",
+    "FSC"
+  ],
+  "counts": {
+    "total_meetings_after": 19781,
+    "total_materials_after": 120856,
+    "new_meetings_count": 5,
+    "new_materials_count": 23
+  },
+  "new_meetings": [
+    {
+      "id": "mof-seisaku_hyouka-20261020-087",
+      "council_id": "mof-seisaku_hyouka",
+      "name": "第87回 財務省政策評価懇談会(10月20日開催)",
+      "date": "2026/10/20",
+      "round": null,
+      "official_url": "https://www.mof.go.jp/about_mof/councils/policy_evaluation/proceedings/material/20261013101617.html",
+      "summary": "",
+      "tags_json": null,
+      "is_date_unconfirmed": 0,
+      "is_newly_discovered": 1,
+      "discovered_at": "2026/10/20 20:20",
+      "last_updated_from_crawl": "",
+      "manual_lock": 0,
+      "created_at": "2026-10-20 11:30:23",
+      "updated_at": "2026-10-20 11:30:23",
+      "materials": [
+        {
+          "id": 120835,
+          "meeting_id": "mof-seisaku_hyouka-20261020-087",
+          "name": "議事次第",
+          "url": "https://www.mof.go.jp/about_mof/councils/policy_evaluation/proceedings/material/87seihyoukon00.pdf",
+          "type": "PDF",
+          "is_private": 0,
+          "manual_lock": 0,
+          "created_at": "2026-10-20 11:30:24"
+        },
+        {
+          "id": 120836,
+          "meeting_id": "mof-seisaku_hyouka-20261020-087",
+          "name": "資料1・令和7事務年度国税庁実績評価の概要(案)",
+          "url": "https://www.mof.go.jp/about_mof/councils/policy_evaluation/proceedings/material/87seihyoukon01.pdf",
+          "type": "PDF",
+          "is_private": 0,
+          "manual_lock": 0,
+          "created_at": "2026-10-20 11:30:24"
+        },
+        {
+          "id": 120837,
+          "meeting_id": "mof-seisaku_hyouka-20261020-087",
+          "name": "資料2・令和8年度財務省政策評価実施計画等の変更(案)の概要",
+          "url": "https://www.mof.go.jp/about_mof/councils/policy_evaluation/proceedings/material/87seihyoukon02.pdf",
+          "type": "PDF",
+          "is_private": 0,
+          "manual_lock": 0,
+          "created_at": "2026-10-20 11:30:24"
+        },
+        {
+          "id": 120838,
+          "meeting_id": "mof-seisaku_hyouka-20261020-087",
+          "name": "資料3・令和7事務年度国税庁実績評価書(案)",
+          "url": "https://www.mof.go.jp/about_mof/councils/policy_evaluation/proceedings/material/87seihyoukon03.pdf",
+          "type": "PDF",
+          "is_private": 0,
+          "manual_lock": 0,
+          "created_at": "2026-10-20 11:30:24"
+        },
+        {
+          "id": 120839,
+          "meeting_id": "mof-seisaku_hyouka-20261020-087",
+          "name": "資料4・令和8年度財務省政策評価の事前分析表(抄)(案)",
+          "url": "https://www.mof.go.jp/about_mof/councils/policy_evaluation/proceedings/material/87seihyoukon04.pdf",
+          "type": "PDF",
+          "is_private": 0,
+          "manual_lock": 0,
+          "created_at": "2026-10-20 11:30:24"
+        },
+        {
+          "id": 120840,
+          "meeting_id": "mof-seisaku_hyouka-20261020-087",
+          "name": "資料5・財務省政策評価懇談会委員名簿",
+          "url": "https://www.mof.go.jp/about_mof/councils/policy_evaluation/proceedings/material/87seihyoukon05.pdf",
+          "type": "PDF",
+          "is_private": 0,
+          "manual_lock": 0,
+          "created_at": "2026-10-20 11:30:24"
+        }
+      ]
+    },
+    {
+      "id": "mlit-shakai_shingikai-20261020-s10",
+      "council_id": "mlit-shakai_shingikai",
+      "name": "社会資本整備審議会・交通政策審議会「今後のインフラのマネジメントのあり方について」中間答申の手交日時の変更について",
+      "date": "2026/10/20",
+      "round": null,
+      "official_url": "https://www.mlit.go.jp/report/press/sogo03_hh_000390.html",
+      "summary": "",
+      "tags_json": null,
+      "is_date_unconfirmed": 0,
+      "is_newly_discovered": 1,
+      "discovered_at": "2026/10/20 20:20",
+      "last_updated_from_crawl": "",
+      "manual_lock": 0,
+      "created_at": "2026-10-20 11:30:23",
+      "updated_at": "2026-10-20 11:30:23",
+      "materials": [
+        {
+          "id": 120841,
+          "meeting_id": "mlit-shakai_shingikai-20261020-s10",
+          "name": "報道発表資料",
+          "url": "https://www.mlit.go.jp/report/press/content/002027592.pdf",
+          "type": "PDF",
+          "is_private": 0,
+          "manual_lock": 0,
+          "created_at": "2026-10-20 11:30:24"
+        }
+      ]
+    },
+    {
+      "id": "digital-jinzai_ikusei-20261020-002",
+      "council_id": "digital-jinzai_ikusei",
+      "name": "今後のデジタル人材育成政策に関する検討会(第2回)",
+      "date": "2026/10/20",
+      "round": null,
+      "official_url": "https://www.digital.go.jp/councils/digital-talent-development-policy/773e7837-8bf8-4599-bbba-c31e813c4ad7",
+      "summary": "",
+      "tags_json": null,
+      "is_date_unconfirmed": 0,
+      "is_newly_discovered": 1,
+      "discovered_at": "2026/10/20 20:20",
+      "last_updated_from_crawl": "",
+      "manual_lock": 0,
+      "created_at": "2026-10-20 11:30:23",
+      "updated_at": "2026-10-20 11:30:23",
+      "materials": [
+        {
+          "id": 120842,
+          "meeting_id": "digital-jinzai_ikusei-20261020-002",
+          "name": "議事次第",
+          "url": "https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/773e7837-8bf8-4599-bbba-c31e813c4ad7/fec4e21c/20261020_council_digital-talent-development-policy_agenda.pdf",
+          "type": "PDF",
+          "is_private": 0,
+          "manual_lock": 0,
+          "created_at": "2026-10-20 11:30:24"
+        },
+        {
+          "id": 120843,
+          "meeting_id": "digital-jinzai_ikusei-20261020-002",
+          "name": "資料1 前回の検討会での主な意見",
+          "url": "https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/773e7837-8bf8-4599-bbba-c31e813c4ad7/cbb494d1/20261020_council_digital-talent-development-policy_documents_01.pdf",
+          "type": "PDF",
+          "is_private": 0,
+          "manual_lock": 0,
+          "created_at": "2026-10-20 11:30:24"
+        },
+        {
+          "id": 120844,
+          "meeting_id": "digital-jinzai_ikusei-20261020-002",
+          "name": "資料2 今後のスケジュール",
+          "url": "https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/773e7837-8bf8-4599-bbba-c31e813c4ad7/18b3c98c/20261020_council_digital-talent-development-policy_documents_02.pdf",
+          "type": "PDF",
+          "is_private": 0,
+          "manual_lock": 0,
+          "created_at": "2026-10-20 11:30:24"
+        },
+        {
+          "id": 120845,
+          "meeting_id": "digital-jinzai_ikusei-20261020-002",
+          "name": "資料3 文部科学省説明資料",
+          "url": "https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/773e7837-8bf8-4599-bbba-c31e813c4ad7/363c1da3/20261020_council_digital-talent-development-policy_documents_03.pdf",
+          "type": "PDF",
+          "is_private": 0,
+          "manual_lock": 0,
+          "created_at": "2026-10-20 11:30:24"
+        },
+        {
+          "id": 120846,
+          "meeting_id": "digital-jinzai_ikusei-20261020-002",
+          "name": "資料4 厚生労働省説明資料",
+          "url": "https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/773e7837-8bf8-4599-bbba-c31e813c4ad7/d96b81b8/20261020_council_digital-talent-development-policy_documents_04.pdf",
+          "type": "PDF",
+          "is_private": 0,
+          "manual_lock": 0,
+          "created_at": "2026-10-20 11:30:24"
+        },
+        {
+          "id": 120847,
+          "meeting_id": "digital-jinzai_ikusei-20261020-002",
+          "name": "資料5 経済産業省・IPA説明資料",
+          "url": "https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/773e7837-8bf8-4599-bbba-c31e813c4ad7/31cf79dc/20261020_council_digital-talent-development-policy_documents_05.pdf",
+          "type": "PDF",
+          "is_private": 0,
+          "manual_lock": 0,
+          "created_at": "2026-10-20 11:30:24"
+        },
+        {
+          "id": 120848,
+          "meeting_id": "digital-jinzai_ikusei-20261020-002",
+          "name": "参考資料 デジタル社会の実現に向けた重点計画(令和8年7月21日閣議決定)重点政策一覧(デジタル人材関係施策抜粋",
+          "url": "https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/773e7837-8bf8-4599-bbba-c31e813c4ad7/6b10b7b7/20261020_council_digital-talent-development-policy_documents_06.pdf",
+          "type": "PDF",
+          "is_private": 0,
+          "manual_lock": 0,
+          "created_at": "2026-10-20 11:30:24"
+        }
+      ]
+    },
+    {
+      "id": "mof-1132-20261019-s07",
+      "council_id": "mof-1132",
+      "name": "財政投融資分科会(令和8年10月19日開催)",
+      "date": "2026/10/19",
+      "round": null,
+      "official_url": "https://www.mof.go.jp/about_mof/councils/fiscal_system_council/sub-of_filp/proceedings/material/zaitoa20261019.html",
+      "summary": "",
+      "tags_json": null,
+      "is_date_unconfirmed": 0,
+      "is_newly_discovered": 1,
+      "discovered_at": "2026/10/20 20:20",
+      "last_updated_from_crawl": "",
+      "manual_lock": 0,
+      "created_at": "2026-10-20 11:30:23",
+      "updated_at": "2026-10-20 11:30:23",
+      "materials": [
+        {
+          "id": 120849,
+          "meeting_id": "mof-1132-20261019-s07",
+          "name": "一括ダウンロード",
+          "url": "https://www.mof.go.jp/about_mof/councils/fiscal_system_council/sub-of_filp/proceedings/material/zaitoa20261019/zaito20261019_all.pdf",
+          "type": "PDF",
+          "is_private": 0,
+          "manual_lock": 0,
+          "created_at": "2026-10-20 11:30:24"
+        },
+        {
+          "id": 120850,
+          "meeting_id": "mof-1132-20261019-s07",
+          "name": "資料1-1",
+          "url": "https://www.mof.go.jp/about_mof/councils/fiscal_system_council/sub-of_filp/proceedings/material/zaitoa20261019/zaito20261019_01.pdf",
+          "type": "PDF",
+          "is_private": 0,
+          "manual_lock": 0,
+          "created_at": "2026-10-20 11:30:24"
+        },
+        {
+          "id": 120851,
+          "meeting_id": "mof-1132-20261019-s07",
+          "name": "資料1-2",
+          "url": "https://www.mof.go.jp/about_mof/councils/fiscal_system_council/sub-of_filp/proceedings/material/zaitoa20261019/zaito20261019_02.pdf",
+          "type": "PDF",
+          "is_private": 0,
+          "manual_lock": 0,
+          "created_at": "2026-10-20 11:30:24"
+        },
+        {
+          "id": 120852,
+          "meeting_id": "mof-1132-20261019-s07",
+          "name": "資料1-3",
+          "url": "https://www.mof.go.jp/about_mof/councils/fiscal_system_council/sub-of_filp/proceedings/material/zaitoa20261019/zaito20261019_03.pdf",
+          "type": "PDF",
+          "is_private": 0,
+          "manual_lock": 0,
+          "created_at": "2026-10-20 11:30:24"
+        },
+        {
+          "id": 120853,
+          "meeting_id": "mof-1132-20261019-s07",
+          "name": "資料1-4",
+          "url": "https://www.mof.go.jp/about_mof/councils/fiscal_system_council/sub-of_filp/proceedings/material/zaitoa20261019/zaito20261019_04.pdf",
+          "type": "PDF",
+          "is_private": 0,
+          "manual_lock": 0,
+          "created_at": "2026-10-20 11:30:24"
+        },
+        {
+          "id": 120854,
+          "meeting_id": "mof-1132-20261019-s07",
+          "name": "資料2-1",
+          "url": "https://www.mof.go.jp/about_mof/councils/fiscal_system_council/sub-of_filp/proceedings/material/zaitoa20261019/zaito20261019_05.pdf",
+          "type": "PDF",
+          "is_private": 0,
+          "manual_lock": 0,
+          "created_at": "2026-10-20 11:30:24"
+        },
+        {
+          "id": 120855,
+          "meeting_id": "mof-1132-20261019-s07",
+          "name": "資料2-2",
+          "url": "https://www.mof.go.jp/about_mof/councils/fiscal_system_council/sub-of_filp/proceedings/material/zaitoa20261019/zaito20261019_06.pdf",
+          "type": "PDF",
+          "is_private": 0,
+          "manual_lock": 0,
+          "created_at": "2026-10-20 11:30:24"
+        },
+        {
+          "id": 120856,
+          "meeting_id": "mof-1132-20261019-s07",
+          "name": "意見書(山内委員)",
+          "url": "https://www.mof.go.jp/about_mof/councils/fiscal_system_council/sub-of_filp/proceedings/material/zaitoa20261019/zaito20261019_07.pdf",
+          "type": "PDF",
+          "is_private": 0,
+          "manual_lock": 0,
+          "created_at": "2026-10-20 11:30:24"
+        }
+      ]
+    },
+    {
+      "id": "cfa-kodomo_shingikai-20261019-016",
+      "council_id": "cfa-kodomo_shingikai",
+      "name": "こども家庭審議会 幼児期までのこどもの育ち部会(第16回)について",
+      "date": "2026/10/19",
+      "round": null,
+      "official_url": "https://www.cfa.go.jp/press/f19217c3-341d-4451-812e-16127aac5216",
+      "summary": "",
+      "tags_json": null,
+      "is_date_unconfirmed": 0,
+      "is_newly_discovered": 1,
+      "discovered_at": "2026/10/20 20:20",
+      "last_updated_from_crawl": "",
+      "manual_lock": 0,
+      "created_at": "2026-10-20 11:30:23",
+      "updated_at": "2026-10-20 11:30:23",
+      "materials": [
+        {
+          "id": 120857,
+          "meeting_id": "cfa-kodomo_shingikai-20261019-016",
+          "name": "こども家庭審議会 幼児期までのこどもの育ち部会(第16回)について",
+          "url": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/f19217c3-341d-4451-812e-16127aac5216/2cc67b73/20261015_press_f19217c3-341d-4451-812e-16127aac5216_01.pdf",
+          "type": "PDF",
+          "is_private": 0,
+          "manual_lock": 0,
+          "created_at": "2026-10-20 11:30:24"
+        }
+      ]
+    }
+  ],
+  "logs": [
+    {
+      "time": "20:14:35",
+      "msg": "=================================================================",
+      "payload": null
+    },
+    {
+      "time": "20:14:35",
+      "msg": " 政策会議ウォッチ (PM-HUB) 省庁新着お知らせ会議検知ディスカバリー [Drop 68]",
+      "payload": null
+    },
+    {
+      "time": "20:14:35",
+      "msg": "=================================================================",
+      "payload": null
+    },
+    {
+      "time": "20:14:37",
+      "msg": "[INFO] 対象省庁: MHLW, FSA, MOF, MLIT, NRA, METI, MIC, MAFF, MEXT, CAO, CAS, FDMA, ENV, DIGITAL, CFA, MOJ, MOD, PPC, RINYA, JFA, CAA, FSC (計 22 省庁)",
+      "payload": null
+    },
+    {
+      "time": "20:14:37",
+      "msg": "\n--- [MHLW] 新着情報・報道発表ポータル走査開始 ---",
+      "payload": null
+    },
+    {
+      "time": "20:14:37",
+      "msg": "  走査中: https://www.mhlw.go.jp/stf/new-info/ (news_feed)",
+      "payload": null
+    },
+    {
+      "time": "20:14:38",
+      "msg": "    -> 会議関連お知らせ 246 件を検出",
+      "payload": null
+    },
+    {
+      "time": "20:15:51",
+      "msg": "  走査中: https://www.mhlw.go.jp/stf/new-info/shingi.html (news_feed)",
+      "payload": null
+    },
+    {
+      "time": "20:15:51",
+      "msg": "    -> 会議関連お知らせ 204 件を検出",
+      "payload": null
+    },
+    {
+      "time": "20:17:01",
+      "msg": "  走査中: https://www.mhlw.go.jp/stf/shingi/indexshingi.html (mhlw_indexshingi)",
+      "payload": null
+    },
+    {
+      "time": "20:17:02",
+      "msg": "    -> 会議関連お知らせ 57 件を検出",
+      "payload": null
+    },
+    {
+      "time": "20:17:02",
+      "msg": "\n--- [FSA] 新着情報・報道発表ポータル走査開始 ---",
+      "payload": null
+    },
+    {
+      "time": "20:17:02",
+      "msg": "  走査中: https://www.fsa.go.jp/news/r8_news_menu.html (deep_portal)",
+      "payload": null
+    },
+    {
+      "time": "20:17:02",
+      "msg": "    -> 会議関連お知らせ 56 件を検出",
+      "payload": null
+    },
+    {
+      "time": "20:17:16",
+      "msg": "  走査中: https://www.fsa.go.jp/news/r8/202609/260915.html#sp_summary (deep_portal)",
+      "payload": null
+    },
+    {
+      "time": "20:17:17",
+      "msg": "    -> 会議関連お知らせ 15 件を検出",
+      "payload": null
+    },
+    {
+      "time": "20:17:17",
+      "msg": "\n--- [MOF] 新着情報・報道発表ポータル走査開始 ---",
+      "payload": null
+    },
+    {
+      "time": "20:17:17",
+      "msg": "  走査中: https://www.mof.go.jp/public_relations/whats_new/202610.html (deep_portal)",
+      "payload": null
+    },
+    {
+      "time": "20:17:18",
+      "msg": "    -> 会議関連お知らせ 58 件を検出",
+      "payload": null
+    },
+    {
+      "time": "20:17:22",
+      "msg": "  走査中: https://www.mof.go.jp/public_relations/whats_new/202510.html (deep_portal)",
+      "payload": null
+    },
+    {
+      "time": "20:17:22",
+      "msg": "    -> 会議関連お知らせ 78 件を検出",
+      "payload": null
+    },
+    {
+      "time": "20:17:28",
+      "msg": "\n--- [MLIT] 新着情報・報道発表ポータル走査開始 ---",
+      "payload": null
+    },
+    {
+      "time": "20:17:28",
+      "msg": "  走査中: https://www.mlit.go.jp/report/press/houdou202610.html (meta_refresh)",
+      "payload": null
+    },
+    {
+      "time": "20:17:29",
+      "msg": "    -> 会議関連お知らせ 60 件を検出",
+      "payload": null
+    },
+    {
+      "time": "20:17:33",
+      "msg": "\n--- [NRA] 新着情報・報道発表ポータル走査開始 ---",
+      "payload": null
+    },
+    {
+      "time": "20:17:33",
+      "msg": "  走査中: https://www.nra.go.jp/news/index.html (deep_portal)",
+      "payload": null
+    },
+    {
+      "time": "20:17:34",
+      "msg": "    -> 会議関連お知らせ 4 件を検出",
+      "payload": null
+    },
+    {
+      "time": "20:17:34",
+      "msg": "  走査中: https://www.nra.go.jp/procedure/examination/reactor/20261019.html (deep_portal)",
+      "payload": null
+    },
+    {
+      "time": "20:17:35",
+      "msg": "    -> 会議関連お知らせ 1 件を検出",
+      "payload": null
+    },
+    {
+      "time": "20:17:35",
+      "msg": "\n--- [METI] 新着情報・報道発表ポータル走査開始 ---",
+      "payload": null
+    },
+    {
+      "time": "20:17:35",
+      "msg": "  走査中: https://www.meti.go.jp/press/index.html (news_feed)",
+      "payload": null
+    },
+    {
+      "time": "20:17:35",
+      "msg": "    -> 会議関連お知らせ 2 件を検出",
+      "payload": null
+    },
+    {
+      "time": "20:17:35",
+      "msg": "\n--- [MIC] 新着情報・報道発表ポータル走査開始 ---",
+      "payload": null
+    },
+    {
+      "time": "20:17:35",
+      "msg": "  走査中: https://www.soumu.go.jp/menu_news/s-news/index.html (news_feed)",
+      "payload": null
+    },
+    {
+      "time": "20:17:35",
+      "msg": "    -> 会議関連お知らせ 14 件を検出",
+      "payload": null
+    },
+    {
+      "time": "20:17:36",
+      "msg": "\n--- [MAFF] 新着情報・報道発表ポータル走査開始 ---",
+      "payload": null
+    },
+    {
+      "time": "20:17:36",
+      "msg": "  走査中: https://www.maff.go.jp/j/press/index.html (news_feed)",
+      "payload": null
+    },
+    {
+      "time": "20:17:36",
+      "msg": "    -> 会議関連お知らせ 20 件を検出",
+      "payload": null
+    },
+    {
+      "time": "20:17:36",
+      "msg": "\n--- [MEXT] 新着情報・報道発表ポータル走査開始 ---",
+      "payload": null
+    },
+    {
+      "time": "20:17:36",
+      "msg": "  走査中: https://www.mext.go.jp/b_menu/houdou/index.htm (news_feed)",
+      "payload": null
+    },
+    {
+      "time": "20:17:36",
+      "msg": "    -> 会議関連お知らせ 14 件を検出",
+      "payload": null
+    },
+    {
+      "time": "20:17:38",
+      "msg": "\n--- [CAO] 新着情報・報道発表ポータル走査開始 ---",
+      "payload": null
+    },
+    {
+      "time": "20:17:38",
+      "msg": "  走査中: https://www.cao.go.jp/press/houdou.html (news_feed)",
+      "payload": null
+    },
+    {
+      "time": "20:17:38",
+      "msg": "    -> 会議関連お知らせ 289 件を検出",
+      "payload": null
+    },
+    {
+      "time": "20:18:37",
+      "msg": "\n--- [CAS] 新着情報・報道発表ポータル走査開始 ---",
+      "payload": null
+    },
+    {
+      "time": "20:18:37",
+      "msg": "  走査中: https://www.cas.go.jp/jp/houdou/index.html (news_feed)",
+      "payload": null
+    },
+    {
+      "time": "20:18:38",
+      "msg": "    -> 会議関連お知らせ 0 件を検出",
+      "payload": null
+    },
+    {
+      "time": "20:18:38",
+      "msg": "\n--- [FDMA] 新着情報・報道発表ポータル走査開始 ---",
+      "payload": null
+    },
+    {
+      "time": "20:18:38",
+      "msg": "  走査中: https://www.fdma.go.jp/pressrelease/ (news_feed)",
+      "payload": null
+    },
+    {
+      "time": "20:18:38",
+      "msg": "    -> 会議関連お知らせ 16 件を検出",
+      "payload": null
+    },
+    {
+      "time": "20:18:38",
+      "msg": "\n--- [ENV] 新着情報・報道発表ポータル走査開始 ---",
+      "payload": null
+    },
+    {
+      "time": "20:18:38",
+      "msg": "  走査中: https://www.env.go.jp/press/index.html (news_feed)",
+      "payload": null
+    },
+    {
+      "time": "20:18:38",
+      "msg": "    -> 会議関連お知らせ 46 件を検出",
+      "payload": null
+    },
+    {
+      "time": "20:18:38",
+      "msg": "\n--- [DIGITAL] 新着情報・報道発表ポータル走査開始 ---",
+      "payload": null
+    },
+    {
+      "time": "20:18:38",
+      "msg": "  走査中: https://www.digital.go.jp/news (news_feed)",
+      "payload": null
+    },
+    {
+      "time": "20:18:38",
+      "msg": "    -> 会議関連お知らせ 3 件を検出",
+      "payload": null
+    },
+    {
+      "time": "20:18:39",
+      "msg": "\n--- [CFA] 新着情報・報道発表ポータル走査開始 ---",
+      "payload": null
+    },
+    {
+      "time": "20:18:39",
+      "msg": "  走査中: https://www.cfa.go.jp/news (news_feed)",
+      "payload": null
+    },
+    {
+      "time": "20:18:39",
+      "msg": "    -> 会議関連お知らせ 7 件を検出",
+      "payload": null
+    },
+    {
+      "time": "20:18:39",
+      "msg": "\n--- [MOJ] 新着情報・報道発表ポータル走査開始 ---",
+      "payload": null
+    },
+    {
+      "time": "20:18:39",
+      "msg": "  走査中: https://www.moj.go.jp/list_info.html (news_feed)",
+      "payload": null
+    },
+    {
+      "time": "20:18:40",
+      "msg": "    -> 会議関連お知らせ 376 件を検出",
+      "payload": null
+    },
+    {
+      "time": "20:19:09",
+      "msg": "  走査中: https://www.moj.go.jp/press_index.html (news_feed)",
+      "payload": null
+    },
+    {
+      "time": "20:19:09",
+      "msg": "    -> 会議関連お知らせ 9 件を検出",
+      "payload": null
+    },
+    {
+      "time": "20:19:11",
+      "msg": "\n--- [MOD] 新着情報・報道発表ポータル走査開始 ---",
+      "payload": null
+    },
+    {
+      "time": "20:19:11",
+      "msg": "  走査中: https://www.mod.go.jp/j/press/news/index.html (news_feed)",
+      "payload": null
+    },
+    {
+      "time": "20:19:11",
+      "msg": "    -> 会議関連お知らせ 95 件を検出",
+      "payload": null
+    },
+    {
+      "time": "20:20:42",
+      "msg": "\n--- [PPC] 新着情報・報道発表ポータル走査開始 ---",
+      "payload": null
+    },
+    {
+      "time": "20:20:42",
+      "msg": "  走査中: https://www.ppc.go.jp/news/press/2026/261007_houdou (deep_portal)",
+      "payload": null
+    },
+    {
+      "time": "20:20:43",
+      "msg": "    -> 会議関連お知らせ 18 件を検出",
+      "payload": null
+    },
+    {
+      "time": "20:20:44",
+      "msg": "  走査中: https://www.ppc.go.jp/personalinfo/legal/r8kaiseihogohou?ref=gnavi (deep_portal)",
+      "payload": null
+    },
+    {
+      "time": "20:20:45",
+      "msg": "    -> 会議関連お知らせ 19 件を検出",
+      "payload": null
+    },
+    {
+      "time": "20:20:46",
+      "msg": "\n--- [RINYA] 新着情報・報道発表ポータル走査開始 ---",
+      "payload": null
+    },
+    {
+      "time": "20:20:46",
+      "msg": "  走査中: https://www.rinya.maff.go.jp/j/press/ (news_feed)",
+      "payload": null
+    },
+    {
+      "time": "20:20:46",
+      "msg": "    -> 会議関連お知らせ 43 件を検出",
+      "payload": null
+    },
+    {
+      "time": "20:20:46",
+      "msg": "\n--- [JFA] 新着情報・報道発表ポータル走査開始 ---",
+      "payload": null
+    },
+    {
+      "time": "20:20:46",
+      "msg": "  走査中: https://www.jfa.maff.go.jp/j/press/index.html (news_feed)",
+      "payload": null
+    },
+    {
+      "time": "20:20:46",
+      "msg": "    -> 会議関連お知らせ 59 件を検出",
+      "payload": null
+    },
+    {
+      "time": "20:20:46",
+      "msg": "\n--- [CAA] 新着情報・報道発表ポータル走査開始 ---",
+      "payload": null
+    },
+    {
+      "time": "20:20:46",
+      "msg": "  走査中: https://www.caa.go.jp/notice/ (news_feed)",
+      "payload": null
+    },
+    {
+      "time": "20:20:46",
+      "msg": "    -> 会議関連お知らせ 7 件を検出",
+      "payload": null
+    },
+    {
+      "time": "20:20:48",
+      "msg": "\n--- [FSC] 新着情報・報道発表ポータル走査開始 ---",
+      "payload": null
+    },
+    {
+      "time": "20:20:48",
+      "msg": "  走査中: https://www.fsc.go.jp/ (news_feed)",
+      "payload": null
+    },
+    {
+      "time": "20:20:48",
+      "msg": "    -> 会議関連お知らせ 12 件を検出",
+      "payload": null
+    },
+    {
+      "time": "20:20:52",
+      "msg": "\n[検知結果サマリー]",
+      "payload": null
+    },
+    {
+      "time": "20:20:52",
+      "msg": "  ・直接資料抽出対象: 210 件",
+      "payload": null
+    },
+    {
+      "time": "20:20:52",
+      "msg": "  ・ピンポイント巡回対象会議体: 105 件",
+      "payload": null
+    },
+    {
+      "time": "20:20:53",
+      "msg": "  ✨ [直接追加] [mof-seisaku_hyouka] 財務省政策評価懇談会: 第87回 財務省政策評価懇談会(10月20日開催) (+1回)",
+      "payload": null
+    },
+    {
+      "time": "20:20:53",
+      "msg": "  ✨ [直接追加] [mof-1132] 財政投融資分科会: 財政投融資分科会(令和8年10月19日開催) (+1回)",
+      "payload": null
+    },
+    {
+      "time": "20:20:53",
+      "msg": "  ✨ [直接追加] [mlit-shakai_shingikai] 社会資本整備審議会: 社会資本整備審議会・交通政策審議会「今後のインフラのマネジメントのあり方について (+1回)",
+      "payload": null
+    },
+    {
+      "time": "20:20:53",
+      "msg": "  ✨ [直接追加] [digital-jinzai_ikusei] 今後のデジタル人材育成政策に関する検討会: 今後のデジタル人材育成政策に関する検討会(第2回) (+1回)",
+      "payload": null
+    },
+    {
+      "time": "20:20:53",
+      "msg": "  ✨ [直接追加] [cfa-kodomo_shingikai] こども家庭審議会: こども家庭審議会 幼児期までのこどもの育ち部会(第16回)について (+1回)",
+      "payload": null
+    },
+    {
+      "time": "20:20:53",
+      "msg": "\n>>> ピンポイントクロール実行: [mhlw-896] 食品衛生監視部会機能性表示食品等の健康被害情報への対応に関する小委員会紅麹関連製品に係る事案の健康被害情報への対応に関するワーキンググループ (契機: URL_PATH_MATCH (事前告知誘導: 審議会・研究会等))",
+      "payload": null
+    },
+    {
+      "time": "20:20:53",
+      "msg": "\n>>> ピンポイントクロール実行: [mhlw-729] 中央労働委員会 (契機: URL_EXACT (中央労働委員会))",
+      "payload": null
+    },
+    {
+      "time": "20:20:55",
+      "msg": "\n>>> ピンポイントクロール実行: [mhlw-shakai_hosho_kaigo_hoken] 社会保障審議会 介護保険部会 (契機: TEXT_CONTAINS (事前告知誘導: 審議会等 2026年9月18日 第136回社会保障審議会介護保険部会 議事録 NEW))",
+      "payload": null
+    },
+    {
+      "time": "20:20:56",
+      "msg": "\n>>> ピンポイントクロール実行: [mhlw-916] 医薬品医療機器制度部会 (契機: TEXT_CONTAINS (事前告知誘導: 審議会等 令和8年度第2回 厚生科学審議会医薬品医療機器制度部会の開催について(Web併用) NEW))",
+      "payload": null
+    },
+    {
+      "time": "20:20:57",
+      "msg": "\n>>> ピンポイントクロール実行: [mhlw-947] 人材開発分科会監理団体審査部会 (契機: TEXT_CONTAINS (事前告知誘導: 審議会等 第79回労働政策審議会人材開発分科会監理団体審査部会 開催案内 NEW))",
+      "payload": null
+    },
+    {
+      "time": "20:20:58",
+      "msg": "\n>>> ピンポイントクロール実行: [mhlw-939] 職業安定分科会労働力需給制度部会 (契機: TEXT_CONTAINS (事前告知誘導: 審議会等 第399回労働政策審議会職業安定分科会労働力需給制度部会 資料 NEW))",
+      "payload": null
+    },
+    {
+      "time": "20:21:00",
+      "msg": "\n>>> ピンポイントクロール実行: [mhlw-934] 勤労者生活分科会 (契機: BRACKET_NAME (事前告知誘導: 審議会等 「第37回 労働政策審議会勤労者生活分科会」を開催します(開催案内) NEW))",
+      "payload": null
+    },
+    {
+      "time": "20:21:07",
+      "msg": "\n>>> ピンポイントクロール実行: [mhlw-928] 労働条件分科会組織再編に伴う労働関係の調整に関する部会 (契機: BRACKET_NAME (事前告知誘導: 審議会等 第9回労働政策審議会労働条件分科会「組織再編に伴う労働関係の調整に関する部会」(開催案内) NEW))",
+      "payload": null
+    },
+    {
+      "time": "20:21:08",
+      "msg": "\n>>> ピンポイントクロール実行: [mhlw-1044] 原子爆弾被爆者医療分科会 (契機: BRACKET_NAME (事前告知誘導: 審議会等 「第305回原子爆弾被爆者医療分科会」の開催について NEW))",
+      "payload": null
+    },
+    {
+      "time": "20:21:09",
+      "msg": "\n>>> ピンポイントクロール実行: [mhlw-roudou_seisaku_shingikai] 労働政策審議会 (契機: TEXT_CONTAINS (事前告知誘導: 審議会等 第93回労働政策審議会雇用環境・均等分科会(ペーパーレス会議)を開催します(開催案内) NEW))",
+      "payload": null
+    },
+    {
+      "time": "20:21:09",
+      "msg": "\n>>> ピンポイントクロール実行: [mhlw-999] 医療機器・体外診断薬部会 (契機: TEXT_CONTAINS (事前告知誘導: 審議会等 薬事審議会 医療機器・体外診断薬部会を開催します NEW))",
+      "payload": null
+    },
+    {
+      "time": "20:21:11",
+      "msg": "\n>>> ピンポイントクロール実行: [mhlw-shakai_hosho_kaigo_kyuufu] 社会保障審議会 介護給付費分科会 (契機: TEXT_CONTAINS (事前告知誘導: 審議会等 第271回社会保障審議会介護給付費分科会(Web会議)を開催します NEW))",
+      "payload": null
+    },
+    {
+      "time": "20:21:17",
+      "msg": "\n>>> ピンポイントクロール実行: [mhlw-rousei_roudoujouken] 労働政策審議会 労働条件分科会 (契機: TEXT_CONTAINS (事前告知誘導: 審議会等 第213回労働政策審議会労働条件分科会 開催案内 NEW))",
+      "payload": null
+    },
+    {
+      "time": "20:21:20",
+      "msg": "\n>>> ピンポイントクロール実行: [mhlw-1009] 中央最低賃金審議会 (契機: URL_EXACT (審議会等 中央最低賃金審議会 (中央最低賃金審議会) NEW))",
+      "payload": null
+    },
+    {
+      "time": "20:21:22",
+      "msg": "\n>>> ピンポイントクロール実行: [mhlw-817] 予防接種・ワクチン分科会 予防接種基本方針部会 ワクチン評価に関する小委員会 (契機: TEXT_CONTAINS (事前告知誘導: 審議会等 第37回厚生科学審議会予防接種・ワクチン分科会予防接種基本方針部会ワクチン評価に関する小委員会の開催について NEW))",
+      "payload": null
+    },
+    {
+      "time": "20:21:30",
+      "msg": "\n>>> ピンポイントクロール実行: [mhlw-938] 職業安定分科会雇用保険部会 (契機: TEXT_CONTAINS (事前告知誘導: 審議会等 第214回労働政策審議会職業安定分科会雇用保険部会(開催案内) NEW))",
+      "payload": null
+    },
+    {
+      "time": "20:21:32",
+      "msg": "\n>>> ピンポイントクロール実行: [mhlw-818] 予防接種・ワクチン分科会 副反応検討部会 (契機: TEXT_CONTAINS (事前告知誘導: 審議会等 第112回厚生科学審議会予防接種・ワクチン分科会副反応検討部会、令和8年度第4回薬事審議会医薬品等安全対策部会安全対策調査会(合同開催)(ペーパーレス、Web会議)の開催について NEW))",
+      "payload": null
+    },
+    {
+      "time": "20:21:36",
+      "msg": "\n>>> ピンポイントクロール実行: [mhlw-shakai_hosho_iryou_hoken] 社会保障審議会 医療保険部会 (契機: TEXT_CONTAINS (事前告知誘導: 審議会等 第218回社会保障審議会医療保険部会(ペーパーレス)の開催について NEW))",
+      "payload": null
+    },
+    {
+      "time": "20:21:55",
+      "msg": "\n>>> ピンポイントクロール実行: [mhlw-945] 障害者雇用分科会 (契機: BRACKET_NAME (事前告知誘導: 審議会等 「第144回労働政策審議会障害者雇用分科会」を開催します(開催案内) NEW))",
+      "payload": null
+    },
+    {
+      "time": "20:21:58",
+      "msg": "\n>>> ピンポイントクロール実行: [mhlw-937] 職業安定分科会 (契機: TEXT_CONTAINS (事前告知誘導: 審議会等 第228回労働政策審議会職業安定分科会を開催します NEW))",
+      "payload": null
+    },
+    {
+      "time": "20:22:00",
+      "msg": "\n>>> ピンポイントクロール実行: [mhlw-814] 厚生科学審議会 (契機: TEXT_CONTAINS (事前告知誘導: 審議会等 第17回厚生科学審議会結核部会 資料 NEW))",
+      "payload": null
+    },
+    {
+      "time": "20:22:04",
+      "msg": "\n>>> ピンポイントクロール実行: [mhlw-940] 職業安定分科会地方連携部会 (契機: TEXT_CONTAINS (事前告知誘導: 審議会等 第10回労働政策審議会職業安定分科会地方連携部会を開催します NEW))",
+      "payload": null
+    },
+    {
+      "time": "20:22:05",
+      "msg": "\n>>> ピンポイントクロール実行: [mhlw-995] 医薬品第一部会 (契機: TEXT_CONTAINS (事前告知誘導: 審議会等 薬事審議会 医薬品第一部会を開催します NEW))",
+      "payload": null
+    },
+    {
+      "time": "20:22:05",
+      "msg": "\n>>> ピンポイントクロール実行: [mhlw-1001] 再生医療等製品・生物由来技術部会 (契機: TEXT_CONTAINS (事前告知誘導: 審議会等 薬事審議会 再生医療等製品・生物由来技術部会を開催します NEW))",
+      "payload": null
+    },
+    {
+      "time": "20:22:07",
+      "msg": "\n>>> ピンポイントクロール実行: [mhlw-hansen_kazoku_hoshou] ハンセン病元患者家族補償金認定審査会 (契機: TEXT_CONTAINS (事前告知誘導: 審議会等 第80回ハンセン病元患者家族補償金認定審査会 NEW))",
+      "payload": null
+    },
+    {
+      "time": "20:22:08",
+      "msg": "\n>>> ピンポイントクロール実行: [mhlw-1004] 医薬品等安全対策部会 (契機: TEXT_CONTAINS (事前告知誘導: その他 令和8年度第5回医薬品等安全対策部会安全対策調査会 議事録 NEW))",
+      "payload": null
+    },
+    {
+      "time": "20:22:09",
+      "msg": "\n>>> ピンポイントクロール実行: [mhlw-824] 新型インフルエンザ対策に関する小委員会 (契機: TEXT_CONTAINS (事前告知誘導: 審議会等 厚生科学審議会感染症部会第27回新型インフルエンザ対策に関する小委員会 ・第12回危機対応医薬品等に関する小委員会についてを開催します NEW))",
+      "payload": null
+    },
+    {
+      "time": "20:22:31",
+      "msg": "\n>>> ピンポイントクロール実行: [mhlw-996] 医薬品第二部会 (契機: TEXT_CONTAINS (事前告知誘導: 審議会等 薬事審議会 医薬品第二部会を開催します NEW))",
+      "payload": null
+    },
+    {
+      "time": "20:22:32",
+      "msg": "\n>>> ピンポイントクロール実行: [mhlw-ishiwata_higai_shinsa] 特定石綿被害建設業務労働者等認定審査会専門委員会 (契機: TEXT_CONTAINS (事前告知誘導: 審議会等 第38回特定石綿被害建設業務労働者等認定審査会専門委員会 開催案内 NEW))",
+      "payload": null
+    },
+    {
+      "time": "20:22:49",
+      "msg": "\n>>> ピンポイントクロール実行: [mhlw-872] 疾病対策部会臓器移植委員会 (契機: TEXT_CONTAINS (事前告知誘導: 審議会等 第82回厚生科学審議会疾病対策部会臓器移植委員会 (Web会議) を開催します NEW))",
+      "payload": null
+    },
+    {
+      "time": "20:22:58",
+      "msg": "\n>>> ピンポイントクロール実行: [mhlw-874] 疾病対策部会指定難病検討委員会 (契機: TEXT_CONTAINS (事前告知誘導: 審議会等 第68回厚生科学審議会疾病対策部会指定難病検討委員会 議事録 NEW))",
+      "payload": null
+    },
+    {
+      "time": "20:23:02",
+      "msg": "\n>>> ピンポイントクロール実行: [mhlw-shakai_hosho_seikatsu_hogo] 社会保障審議会 生活保護基準部会 (契機: TEXT_CONTAINS (事前告知誘導: 審議会等 第62回社会保障審議会生活保護基準部会 資料 NEW))",
+      "payload": null
+    },
+    {
+      "time": "20:23:05",
+      "msg": "\n>>> ピンポイントクロール実行: [mhlw-816] 予防接種・ワクチン分科会 予防接種基本方針部会 (契機: TEXT_CONTAINS (事前告知誘導: 審議会等 第78回厚生科学審議会予防接種・ワクチン分科会予防接種基本方針部会の開催について))",
+      "payload": null
+    },
+    {
+      "time": "20:23:27",
+      "msg": "\n>>> ピンポイントクロール実行: [mhlw-1008] 化学物質安全対策部会 (契機: BRACKET_NAME (事前告知誘導: 審議会等 「令和8年度 第1回 薬事審議会 化学物質安全対策部会 家庭用品安全対策調査会」 を開催します(開催案内)))",
+      "payload": null
+    },
+    {
+      "time": "20:23:27",
+      "msg": "\n>>> ピンポイントクロール実行: [mhlw-861] ヒト受精胚を用いる遺伝性・先天性疾患研究に関する専門委員会 (契機: TEXT_CONTAINS (事前告知誘導: 審議会等 第5回ゲノム編集技術等を用いたヒト受精胚等の取扱い等に関する合同会議(第13回ゲノム編集技術等を用いたヒト受精胚等の臨床利用のあり方に関する専門委員会、第26回ヒト受精胚を用いる遺伝性・先天性疾患研究に関する専門委員会)の開催について))",
+      "payload": null
+    },
+    {
+      "time": "20:23:30",
+      "msg": "\n>>> ピンポイントクロール実行: [mhlw-tochikujou_seido] と畜場の制度に関する研究会 (契機: BRACKET_NAME (事前告知誘導: 審議会等 「第1回と畜場の制度に関する研究会」の開催について))",
+      "payload": null
+    },
+    {
+      "time": "20:23:31",
+      "msg": "\n>>> ピンポイントクロール実行: [mhlw-konnan_josei_shien_kento] 困難な問題を抱える女性への支援に関する検討会 (契機: TEXT_CONTAINS (事前告知誘導: 審議会等 第3回 困難な問題を抱える女性への支援に関する検討会を開催します))",
+      "payload": null
+    },
+    {
+      "time": "20:23:33",
+      "msg": "\n>>> ピンポイントクロール実行: [mhlw-952] 労働政策基本部会 (契機: TEXT_CONTAINS (事前告知誘導: 審議会等 第41回労働政策審議会労働政策基本部会を開催します))",
+      "payload": null
+    },
+    {
+      "time": "20:23:34",
+      "msg": "\n>>> ピンポイントクロール実行: [mhlw-936] 勤労者生活分科会中小企業退職金共済部会 (契機: BRACKET_NAME (事前告知誘導: 審議会等 「第94回 労働政策審議会勤労者生活分科会中小企業退職金共済部会」を開催します(開催案内)))",
+      "payload": null
+    },
+    {
+      "time": "20:23:39",
+      "msg": "\n>>> ピンポイントクロール実行: [mhlw-1007] 毒物劇物部会 (契機: TEXT_CONTAINS (事前告知誘導: 審議会等 令和8年度第1回薬事審議会 毒物劇物部会 毒物劇物調査会))",
+      "payload": null
+    },
+    {
+      "time": "20:23:40",
+      "msg": "\n>>> ピンポイントクロール実行: [mhlw-809] 匿名介護情報等の提供に関する専門委員会 (契機: TEXT_CONTAINS (事前告知誘導: 審議会等 第24回匿名介護情報等の提供に関する専門委員会))",
+      "payload": null
+    },
+    {
+      "time": "20:23:41",
+      "msg": "\n>>> ピンポイントクロール実行: [mhlw-1002] 要指導・一般用医薬品部会 (契機: TEXT_CONTAINS (事前告知誘導: 審議会等 薬事審議会 要指導・一般用医薬品部会を開催します))",
+      "payload": null
+    },
+    {
+      "time": "20:23:42",
+      "msg": "\n>>> ピンポイントクロール実行: [mhlw-rousei_anzeneisei] 労働政策審議会 安全衛生分科会 (契機: TEXT_CONTAINS (事前告知誘導: 審議会等 第189回労働政策審議会安全衛生分科会(開催案内)))",
+      "payload": null
+    },
+    {
+      "time": "20:23:45",
+      "msg": "\n>>> ピンポイントクロール実行: [mhlw-997] 血液事業部会 (契機: TEXT_CONTAINS (事前告知誘導: 審議会等 薬事審議会血液事業部会令和8年度第2回運営委員会(ペーパーレス・Web併用)の開催について))",
+      "payload": null
+    },
+    {
+      "time": "20:23:45",
+      "msg": "\n>>> ピンポイントクロール実行: [mhlw-tokumei_iryou_kaigo] 匿名医療・介護情報等の提供に関する委員会 (契機: TEXT_CONTAINS (事前告知誘導: 審議会等 第26回匿名医療・介護情報等の提供に関する委員会 開催案内))",
+      "payload": null
+    },
+    {
+      "time": "20:23:54",
+      "msg": "\n>>> ピンポイントクロール実行: [mhlw-894] 食品衛生監視部会 (契機: BRACKET_NAME (事前告知誘導: 審議会等 「食品衛生監視部会伝達性海綿状脳症対策に関する小委員会」の開催について))",
+      "payload": null
+    },
+    {
+      "time": "20:23:54",
+      "msg": "\n>>> ピンポイントクロール実行: [mhlw-991] 薬事審議会 (契機: TEXT_CONTAINS (事前告知誘導: 審議会等 薬事審議会を開催します))",
+      "payload": null
+    },
+    {
+      "time": "20:23:58",
+      "msg": "\n>>> ピンポイントクロール実行: [mhlw-iyakuhin_gyousei_monitoring] 医薬品等行政評価・監視委員会 (契機: TEXT_CONTAINS (事前告知誘導: 審議会等 第25回医薬品等行政評価・監視委員会を開催します))",
+      "payload": null
+    },
+    {
+      "time": "20:23:59",
+      "msg": "\n>>> ピンポイントクロール実行: [mhlw-shakai_hosho] 社会保障審議会 (契機: TEXT_CONTAINS (事前告知誘導: 審議会等 第111回社会保障審議会年金数理部会の開催について(オンラインセミナー形式)))",
+      "payload": null
+    },
+    {
+      "time": "20:24:15",
+      "msg": "\n>>> ピンポイントクロール実行: [mhlw-963] 医師分科会医師専門研修部会 (契機: TEXT_CONTAINS (事前告知誘導: 審議会等 令和8年度第2回医道審議会医師分科会医師専門研修部会))",
+      "payload": null
+    },
+    {
+      "time": "20:24:16",
+      "msg": "\n>>> ピンポイントクロール実行: [mhlw-908] 再生医療等評価部会 (契機: TEXT_CONTAINS (事前告知誘導: 審議会等 (開催案内)第120回厚生科学審議会 再生医療等評価部会))",
+      "payload": null
+    },
+    {
+      "time": "20:24:25",
+      "msg": "\n>>> ピンポイントクロール実行: [mhlw-dai3gou_hihoken] 国民年金第3号被保険者制度等に関する検討会 (契機: URL_EXACT (審議会等 国民年金第3号被保険者制度等に関する検討会))",
+      "payload": null
+    },
+    {
+      "time": "20:24:26",
+      "msg": "\n>>> ピンポイントクロール実行: [mhlw-788] 年金数理部会 (契機: TEXT_CONTAINS (事前告知誘導: 審議会等 年金数理部会の役割について(2024年度公的年金財政状況資料を追加しました)))",
+      "payload": null
+    },
+    {
+      "time": "20:24:56",
+      "msg": "\n>>> ピンポイントクロール実行: [mhlw-815] 予防接種・ワクチン分科会 (契機: TEXT_CONTAINS (事前告知誘導: 審議会等 第67回厚生科学審議会予防接種・ワクチン分科会の開催について))",
+      "payload": null
+    },
+    {
+      "time": "20:25:12",
+      "msg": "\n>>> ピンポイントクロール実行: [mhlw-876] 疾病対策部会造血幹細胞移植委員会 (契機: TEXT_CONTAINS (事前告知誘導: 審議会等 第62回厚生科学審議会疾病対策部会造血幹細胞移植委員会 (Web会議) を開催します))",
+      "payload": null
+    },
+    {
+      "time": "20:25:13",
+      "msg": "\n>>> ピンポイントクロール実行: [mhlw-785] 社会保障審議会 医療部会 (契機: TEXT_CONTAINS (事前告知誘導: 審議会等 第130回社会保障審議会医療部会の開催について))",
+      "payload": null
+    },
+    {
+      "time": "20:25:15",
+      "msg": "\n>>> ピンポイントクロール実行: [mhlw-tokumei_iryou] 匿名医療情報等の提供に関する専門委員会 (契機: TEXT_CONTAINS (事前告知誘導: 審議会等 第46回匿名医療情報等の提供に関する専門委員会の開催について))",
+      "payload": null
+    },
+    {
+      "time": "20:25:25",
+      "msg": "\n>>> ピンポイントクロール実行: [mhlw-949] 雇用環境・均等分科会(旧雇用均等分科会) (契機: URL_EXACT (雇用環境・均等分科会(旧雇用均等分科会)))",
+      "payload": null
+    },
+    {
+      "time": "20:25:27",
+      "msg": "\n>>> ピンポイントクロール実行: [mhlw-993] 副作用・感染等被害判定第一部会 (契機: URL_EXACT (副作用・感染等被害判定第一部会))",
+      "payload": null
+    },
+    {
+      "time": "20:25:28",
+      "msg": "\n>>> ピンポイントクロール実行: [fsa-transition_finance] トランジション・ファイナンス環境整備検討会 (契機: BRACKET_NAME (事前告知誘導: 「トランジション・ファイナンス環境整備検討会」(第14回)議事要旨の公表))",
+      "payload": null
+    },
+    {
+      "time": "20:25:42",
+      "msg": "\n>>> ピンポイントクロール実行: [fsa-kinyu_seityousikin_wg] 成長企業への資金供給の在り方等に関するワーキング・グループ (契機: BRACKET_NAME (事前告知誘導: 金融審議会「成長企業への資金供給の在り方等に関するワーキング・グループ」(第1回)議事録の公表))",
+      "payload": null
+    },
+    {
+      "time": "20:25:45",
+      "msg": "\n>>> ピンポイントクロール実行: [fsa-kinyu_shingi] 金融審議会 総会 (契機: TEXT_CONTAINS (事前告知誘導: 第57回金融審議会総会・第45回金融分科会合同会合議事録))",
+      "payload": null
+    },
+    {
+      "time": "20:26:11",
+      "msg": "\n>>> ピンポイントクロール実行: [fsa-kinyu_kinou_kyouka] 金融機能強化審査会 (契機: TEXT_CONTAINS (事前告知誘導: 第34回金融機能強化審査会 議事要旨))",
+      "payload": null
+    },
+    {
+      "time": "20:26:11",
+      "msg": "\n>>> ピンポイントクロール実行: [fsa-kigyou_kansa_bukai] 企業会計審議会 監査部会 (契機: TEXT_CONTAINS (事前告知誘導: 企業会計審議会監査部会(第57回)の開催))",
+      "payload": null
+    },
+    {
+      "time": "20:26:37",
+      "msg": "\n>>> ピンポイントクロール実行: [fsa-kinyu_hokenseido_wg] 保険制度ワーキング・グループ (契機: BRACKET_NAME (事前告知誘導: 金融審議会「保険制度ワーキング・グループ」(第1回)の開催))",
+      "payload": null
+    },
+    {
+      "time": "20:26:38",
+      "msg": "\n>>> ピンポイントクロール実行: [fsa-kigyou_kaikei_shingi] 企業会計審議会 (契機: TEXT_CONTAINS (事前告知誘導: 企業会計審議会第2回サステナビリティ情報保証部会議事録))",
+      "payload": null
+    },
+    {
+      "time": "20:26:39",
+      "msg": "\n>>> ピンポイントクロール実行: [fsa-kinyu_dai1_disclose_wg] 金融分科会 第一部会 ディスクロージャーワーキング・グループ (契機: BRACKET_NAME (事前告知誘導: 金融審議会「ディスクロージャーワーキング・グループ」(第6回)の開催))",
+      "payload": null
+    },
+    {
+      "time": "20:26:42",
+      "msg": "\n>>> ピンポイントクロール実行: [fsa-sustainable_finance] サステナブルファイナンス有識者会議 (契機: BRACKET_NAME (事前告知誘導: 「サステナブルファイナンス有識者会議」(第30回)議事録))",
+      "payload": null
+    },
+    {
+      "time": "20:27:08",
+      "msg": "\n>>> ピンポイントクロール実行: [fsa-venture_capital] ベンチャーキャピタルに関する有識者会議 (契機: BRACKET_NAME (事前告知誘導: 「ベンチャーキャピタルに関する有識者会議」(第4回)議事録))",
+      "payload": null
+    },
+    {
+      "time": "20:27:13",
+      "msg": "\n>>> ピンポイントクロール実行: [fsa-jibaiseki_shingi] 自動車損害賠償責任保険審議会 (契機: TEXT_CONTAINS (事前告知誘導: 第153回自動車損害賠償責任保険審議会議事録))",
+      "payload": null
+    },
+    {
+      "time": "20:27:34",
+      "msg": "\n>>> ピンポイントクロール実行: [mof-1135] 関税・外国為替等審議会 (契機: TEXT_CONTAINS (事前告知誘導: 関税制度 関税・外国為替等審議会 関税分科会 特殊関税部会 (令和8年10月19日開催)配付資料))",
+      "payload": null
+    },
+    {
+      "time": "20:27:34",
+      "msg": "\n>>> ピンポイントクロール実行: [mof-1132] 財政投融資分科会 (契機: TEXT_CONTAINS (事前告知誘導: 財政投融資 財政投融資分科会(令和8年9月18日開催)議事要旨))",
+      "payload": null
+    },
+    {
+      "time": "20:27:35",
+      "msg": "\n>>> ピンポイントクロール実行: [mof-study_on_chain] 国債のオンチェーン対応に関する研究会 (契機: URL_EXACT (国債 国債のオンチェーン対応に関する研究会))",
+      "payload": null
+    },
+    {
+      "time": "20:27:35",
+      "msg": "\n>>> ピンポイントクロール実行: [mof-jgbsp] 国債市場特別参加者会合 (契機: TEXT_CONTAINS (事前告知誘導: 国債 国債市場特別参加者会合(第120回)議事要旨))",
+      "payload": null
+    },
+    {
+      "time": "20:27:36",
+      "msg": "\n>>> ピンポイントクロール実行: [mof-cbdc_renraku_kaigi] CBDC(中央銀行デジタル通貨)に関する関係府省庁・日本銀行連絡会議 (契機: TEXT_CONTAINS (事前告知誘導: 通貨 第6回CBDC(中央銀行デジタル通貨)に関する関係府省庁・日本銀行連絡会議 配布資料))",
+      "payload": null
+    },
+    {
+      "time": "20:27:41",
+      "msg": "\n>>> ピンポイントクロール実行: [mof-seisaku_hyouka] 財務省政策評価懇談会 (契機: TEXT_CONTAINS (事前告知誘導: その他 第84回 財務省政策評価懇談会(10月14日開催)議事要旨))",
+      "payload": null
+    },
+    {
+      "time": "20:27:42",
+      "msg": "\n>>> ピンポイントクロール実行: [mof-syogaku_yunyu_wg] 急増する少額輸入貨物への対応に関するワーキンググループ (契機: TEXT_CONTAINS (事前告知誘導: その他 第3回急増する少額輸入貨物への対応に関するワーキンググループ(令和7年10月17日開催)配付資料))",
+      "payload": null
+    },
+    {
+      "time": "20:27:43",
+      "msg": "\n>>> ピンポイントクロール実行: [mof-1149] 不当廉売関税の迂回防止に関するワーキンググループ (契機: TEXT_CONTAINS (事前告知誘導: その他 第2回不当廉売関税の迂回防止に関するワーキンググループ(令和7年10月10日開催)配付資料))",
+      "payload": null
+    },
+    {
+      "time": "20:27:43",
+      "msg": "\n>>> ピンポイントクロール実行: [maff-648] 持続的な畜産物生産の在り方検討会 (契機: URL_EXACT (持続的な畜産物生産の在り方検討会))",
+      "payload": null
+    },
+    {
+      "time": "20:27:44",
+      "msg": "\n>>> ピンポイントクロール実行: [maff-649] 会議等の開催情報 (契機: URL_EXACT (会議等の開催情報))",
+      "payload": null
+    },
+    {
+      "time": "20:27:46",
+      "msg": "\n>>> ピンポイントクロール実行: [maff-2236] 審議会 (契機: URL_EXACT (審議会))",
+      "payload": null
+    },
+    {
+      "time": "20:27:47",
+      "msg": "\n>>> ピンポイントクロール実行: [maff-651] 研究会等 (契機: URL_EXACT (研究会等))",
+      "payload": null
+    },
+    {
+      "time": "20:27:48",
+      "msg": "\n>>> ピンポイントクロール実行: [mext-chukyo] 中央教育審議会 (契機: TEXT_CONTAINS (事前告知誘導: 中央教育審議会教育振興基本計画部会(第1回)の開催について))",
+      "payload": null
+    },
+    {
+      "time": "20:27:52",
+      "msg": "\n>>> ピンポイントクロール実行: [cao-shouhisha_iinkai] 消費者委員会 (契機: TEXT_CONTAINS (事前告知誘導: 第501回消費者委員会本会議【10月27日開催】))",
+      "payload": null
+    },
+    {
+      "time": "20:28:03",
+      "msg": "\n>>> ピンポイントクロール実行: [cao-ai_technology_senmon] 人工知能(AI)技術の利用と消費者問題に関する専門調査会 (契機: TEXT_CONTAINS (事前告知誘導: 第12回人工知能(AI)技術の利用と消費者問題に関する専門調査会【10月22日開催】))",
+      "payload": null
+    },
+    {
+      "time": "20:28:09",
+      "msg": "\n>>> ピンポイントクロール実行: [cao-payment_senmon] 支払手段の多様化と消費者問題に関する専門調査会 (契機: TEXT_CONTAINS (事前告知誘導: 第20回支払手段の多様化と消費者問題に関する専門調査会【9月8日開催】))",
+      "payload": null
+    },
+    {
+      "time": "20:28:16",
+      "msg": "\n>>> ピンポイントクロール実行: [cao-shokuhin_hyouji_bukai] 食品表示部会 (契機: TEXT_CONTAINS (事前告知誘導: 第82回食品表示部会 議事録掲載【8月6日開催】))",
+      "payload": null
+    },
+    {
+      "time": "20:28:22",
+      "msg": "\n>>> ピンポイントクロール実行: [cao-kokyoryokin_senmon] 公共料金等専門調査会 (契機: TEXT_CONTAINS (事前告知誘導: 第93回公共料金等専門調査会【3月17日開催】))",
+      "payload": null
+    },
+    {
+      "time": "20:28:28",
+      "msg": "\n>>> ピンポイントクロール実行: [moj-2735] 国際連合犯罪防止刑事司法会議(京都コングレス) (契機: TEXT_CONTAINS (事前告知誘導: 第14回国際連合犯罪防止刑事司法会議(京都コングレス)))",
+      "payload": null
+    },
+    {
+      "time": "20:28:28",
+      "msg": "\n>>> ピンポイントクロール実行: [moj-jizoku_hogoshi] 持続可能な保護司制度の確立に向けた検討会 (契機: URL_PATH_MATCH (事前告知誘導: 第76回“社会を明るくする運動” 丸善雄松堂株式会社及び株式会社丸善ジュンク堂書店による広報協力等について))",
+      "payload": null
+    },
+    {
+      "time": "20:28:36",
+      "msg": "\n>>> ピンポイントクロール実行: [moj-kyoujuu_shien_kento] 住宅確保要配慮者に対する居住支援機能等のあり方に関する検討会 (契機: URL_PATH_MATCH (事前告知誘導: 第76回“社会を明るくする運動” 「まなびでつながる更生保護シンポジウム」を開催します。))",
+      "payload": null
+    },
+    {
+      "time": "20:28:39",
+      "msg": "\n>>> ピンポイントクロール実行: [mod-1073] 防衛人事審議会 (契機: TEXT_CONTAINS (事前告知誘導: 防衛人事審議会公正審査分科会の持ち回り開催について))",
+      "payload": null
+    },
+    {
+      "time": "20:28:41",
+      "msg": "\n>>> ピンポイントクロール実行: [mod-1088] 退職自衛隊員・家族に対する支援の強化に関する検討委員会 (契機: BRACKET_NAME (事前告知誘導: 「第2回退職自衛隊員・家族に対する支援の強化に関する検討委員会」の開催について))",
+      "payload": null
+    },
+    {
+      "time": "20:28:57",
+      "msg": "\n>>> ピンポイントクロール実行: [mod-1076] 公正入札調査会議 (契機: TEXT_CONTAINS (事前告知誘導: 公正入札調査会議の開催について))",
+      "payload": null
+    },
+    {
+      "time": "20:29:00",
+      "msg": "\n>>> ピンポイントクロール実行: [mod-drastic_reinforcement] 防衛力の抜本的強化に関する有識者会議 (契機: BRACKET_NAME (事前告知誘導: 「防衛力の抜本的強化に関する有識者会議」の開催について))",
+      "payload": null
+    },
+    {
+      "time": "20:29:03",
+      "msg": "\n>>> ピンポイントクロール実行: [mod-1082] 特定秘密漏えい事案等に係る再発防止策に関する有識者会議 (契機: BRACKET_NAME (事前告知誘導: 「特定秘密漏えい事案等に係る再発防止策に関する有識者会議」の開催について))",
+      "payload": null
+    },
+    {
+      "time": "20:29:06",
+      "msg": "\n>>> ピンポイントクロール実行: [ppc-ai_privacy] 生成AIと個人情報保護に関する専門委員会 (契機: URL_EXACT (委員会について))",
+      "payload": null
+    },
+    {
+      "time": "20:29:12",
+      "msg": "\n>>> ピンポイントクロール実行: [maff-709] その他森林・林業・木材産業関連審議会等一覧 (契機: URL_EXACT (審議会等))",
+      "payload": null
+    },
+    {
+      "time": "20:29:15",
+      "msg": "\n>>> ピンポイントクロール実行: [maff-653] 水産政策審議会 (契機: URL_EXACT (審議会))",
+      "payload": null
+    },
+    {
+      "time": "20:29:15",
+      "msg": "\n>>> ピンポイントクロール実行: [caa-209] 審議会・研究会 (契機: URL_EXACT (審議会・研究会))",
+      "payload": null
+    },
+    {
+      "time": "20:29:18",
+      "msg": "\n>>> ピンポイントクロール実行: [caa-shouhisha_anzen_chousa] 消費者安全調査委員会 (契機: URL_EXACT (消費者安全調査委員会))",
+      "payload": null
+    },
+    {
+      "time": "20:29:21",
+      "msg": "\n>>> ピンポイントクロール実行: [fsc-bakuro_wg] 食事由来の化学物質のばく露評価ワーキンググループ (契機: URL_PATH_MATCH (事前告知誘導: > ワーキンググループ))",
+      "payload": null
+    },
+    {
+      "time": "20:29:28",
+      "msg": "\n>>> ピンポイントクロール実行: [fsc-honkaigi] 食品安全委員会 (契機: TEXT_CONTAINS (事前告知誘導: > 食品安全委員会による評価書・QA等一覧(50音順)))",
+      "payload": null
+    },
+    {
+      "time": "20:29:54",
+      "msg": "\n>>> ピンポイントクロール実行: [fsc-eiyotenkabutu_wg] 栄養成分関連添加物ワーキンググループ (契機: TEXT_CONTAINS (事前告知誘導: 栄養成分関連添加物ワーキンググループ(第25回)の開催について【10月26日開催】))",
+      "payload": null
+    },
+    {
+      "time": "20:30:12",
+      "msg": "\n>>> ピンポイントクロール実行: [fsc-bpa_wg] ビスフェノールAワーキンググループ (契機: TEXT_CONTAINS (事前告知誘導: ビスフェノールAワーキンググループ(第7回)の開催について【10月21日開催】))",
+      "payload": null
+    },
+    {
+      "time": "20:30:37",
+      "msg": "\n=================================================================",
+      "payload": null
+    },
+    {
+      "time": "20:30:37",
+      "msg": " [Drop 68 検知完了] 新規追加開催回: 5 件",
+      "payload": null
+    },
+    {
+      "time": "20:30:37",
+      "msg": " SQLite マスターDB および 2系統JSON 保存: 成功",
+      "payload": null
+    },
+    {
+      "time": "20:30:37",
+      "msg": "=================================================================",
+      "payload": null
+    }
+  ]
+}

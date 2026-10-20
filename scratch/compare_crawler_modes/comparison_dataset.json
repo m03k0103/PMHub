@@ -1,0 +1,1746 @@
+{
+  "generated_at": "2026-10-20T20:53:33.101837",
+  "summary": {
+    "step1_ministry_news": {
+      "duration_seconds": 962.23,
+      "new_meetings_detected": 5,
+      "new_materials_detected": 23
+    },
+    "step2_normal_crawl": {
+      "duration_seconds": 1295.34,
+      "new_meetings_detected": 161,
+      "new_materials_detected": 700,
+      "updated_existing_meetings": 44
+    }
+  },
+  "step1_new_meetings": [
+    {
+      "id": "mof-seisaku_hyouka-20261020-087",
+      "name": "第87回 財務省政策評価懇談会(10月20日開催)",
+      "date": "2026/10/20",
+      "council_id": "mof-seisaku_hyouka",
+      "officialUrl": "https://www.mof.go.jp/about_mof/councils/policy_evaluation/proceedings/material/20261013101617.html",
+      "material_count": 6
+    },
+    {
+      "id": "mlit-shakai_shingikai-20261020-s10",
+      "name": "社会資本整備審議会・交通政策審議会「今後のインフラのマネジメントのあり方について」中間答申の手交日時の変更について",
+      "date": "2026/10/20",
+      "council_id": "mlit-shakai_shingikai",
+      "officialUrl": "https://www.mlit.go.jp/report/press/sogo03_hh_000390.html",
+      "material_count": 1
+    },
+    {
+      "id": "digital-jinzai_ikusei-20261020-002",
+      "name": "今後のデジタル人材育成政策に関する検討会(第2回)",
+      "date": "2026/10/20",
+      "council_id": "digital-jinzai_ikusei",
+      "officialUrl": "https://www.digital.go.jp/councils/digital-talent-development-policy/773e7837-8bf8-4599-bbba-c31e813c4ad7",
+      "material_count": 7
+    },
+    {
+      "id": "mof-1132-20261019-s07",
+      "name": "財政投融資分科会(令和8年10月19日開催)",
+      "date": "2026/10/19",
+      "council_id": "mof-1132",
+      "officialUrl": "https://www.mof.go.jp/about_mof/councils/fiscal_system_council/sub-of_filp/proceedings/material/zaitoa20261019.html",
+      "material_count": 8
+    },
+    {
+      "id": "cfa-kodomo_shingikai-20261019-016",
+      "name": "こども家庭審議会 幼児期までのこどもの育ち部会(第16回)について",
+      "date": "2026/10/19",
+      "council_id": "cfa-kodomo_shingikai",
+      "officialUrl": "https://www.cfa.go.jp/press/f19217c3-341d-4451-812e-16127aac5216",
+      "material_count": 1
+    }
+  ],
+  "step2_new_meetings": [
+    {
+      "id": "mhlw-939-20261023-399",
+      "name": "第399回 職業安定分科会労働力需給制度部会",
+      "date": "2026/10/23",
+      "council_id": "mhlw-939",
+      "officialUrl": "https://www.mhlw.go.jp/stf/newpage_76436.html",
+      "material_count": 0
+    },
+    {
+      "id": "maff-701-20261022-009",
+      "name": "第9回 農業の労働環境改善に向けた政策の在り方に関する検討会",
+      "date": "2026/10/22",
+      "council_id": "maff-701",
+      "officialUrl": "https://www.maff.go.jp/j/study/work_kaizen.html",
+      "material_count": 0
+    },
+    {
+      "id": "mhlw-938-20261022-214",
+      "name": "第214回 職業安定分科会雇用保険部会",
+      "date": "2026/10/22",
+      "council_id": "mhlw-938",
+      "officialUrl": "https://www.mhlw.go.jp/stf/newpage_76593.html",
+      "material_count": 0
+    },
+    {
+      "id": "mhlw-945-20261021-144",
+      "name": "第144回 障害者雇用分科会",
+      "date": "2026/10/21",
+      "council_id": "mhlw-945",
+      "officialUrl": "https://www.mhlw.go.jp/stf/newpage_76825.html",
+      "material_count": 5
+    },
+    {
+      "id": "cao-zeicho_digital_noukan_senmonka-20261020-005",
+      "name": "第5回 経済社会のデジタル化への対応と納税環境整備に関する専門家会合(2026年10月20日)",
+      "date": "2026/10/20",
+      "council_id": "cao-zeicho_digital_noukan_senmonka",
+      "officialUrl": "https://www.cao.go.jp/zei-cho/gijiroku/digital-noukan/2026/8digital-noukan5kai.html",
+      "material_count": 4
+    },
+    {
+      "id": "mext-chukyo-20261020-145",
+      "name": "第145回 中央教育審議会",
+      "date": "2026/10/20",
+      "council_id": "mext-chukyo",
+      "officialUrl": "https://www.mext.go.jp/b_menu/shingi/chukyo/chukyo0/index.htm",
+      "material_count": 0
+    },
+    {
+      "id": "mext-chuo_kyoiku-20261020-145",
+      "name": "第145回 中央教育審議会 初等中等教育分科会",
+      "date": "2026/10/20",
+      "council_id": "mext-chuo_kyoiku",
+      "officialUrl": "https://www.mext.go.jp/b_menu/shingi/chukyo/chukyo0/index.htm",
+      "material_count": 0
+    },
+    {
+      "id": "mhlw-shakai_hosho_shougaisha-20261020-160",
+      "name": "第160回 社会保障審議会 障害者部会",
+      "date": "2026/10/20",
+      "council_id": "mhlw-shakai_hosho_shougaisha",
+      "officialUrl": "https://www.mhlw.go.jp/stf/newpage_76820.html",
+      "material_count": 7
+    },
+    {
+      "id": "nra-teireikai-20261019-068",
+      "name": "第68回 原子力規制委員会",
+      "date": "2026/10/19",
+      "council_id": "nra-teireikai",
+      "officialUrl": "https://www.nra.go.jp/procedure/examination/reactor/20261019.html",
+      "material_count": 2
+    },
+    {
+      "id": "meti-denryoku_gas_kanshi-20261019-621",
+      "name": "第621回 電力・ガス取引監視等委員会",
+      "date": "2026/10/19",
+      "council_id": "meti-denryoku_gas_kanshi",
+      "officialUrl": "https://www.egc.meti.go.jp/activity/emsc/621_haifu.html",
+      "material_count": 0
+    },
+    {
+      "id": "mext-chukyo-20261019-s11",
+      "name": "教育振興基本計画部会(第13期~)",
+      "date": "2026/10/19",
+      "council_id": "mext-chukyo",
+      "officialUrl": "https://www.mext.go.jp/b_menu/shingi/chukyo/chukyo18/index.html",
+      "material_count": 0
+    },
+    {
+      "id": "mext-chuo_kyoiku-20261019-s14",
+      "name": "教育振興基本計画部会(第13期~)",
+      "date": "2026/10/19",
+      "council_id": "mext-chuo_kyoiku",
+      "officialUrl": "https://www.mext.go.jp/b_menu/shingi/chukyo/chukyo18/index.html",
+      "material_count": 0
+    },
+    {
+      "id": "mhlw-shakai_hosho_kaigo_kyuufu-20261019-271",
+      "name": "第271回 社会保障審議会 介護給付費分科会",
+      "date": "2026/10/19",
+      "council_id": "mhlw-shakai_hosho_kaigo_kyuufu",
+      "officialUrl": "https://www.mhlw.go.jp/stf/newpage_76626.html",
+      "material_count": 10
+    },
+    {
+      "id": "mic-toukei_iinkai-20261019-234",
+      "name": "第234回統計委員会",
+      "date": "2026/10/19",
+      "council_id": "mic-toukei_iinkai",
+      "officialUrl": "https://www.soumu.go.jp/main_sosiki/singi/toukei/kaigi/02shingi05_02000837.html",
+      "material_count": 15
+    },
+    {
+      "id": "mhlw-shakai_hosho_iryou_hoken-20261016-218",
+      "name": "第218回 社会保障審議会 医療保険部会",
+      "date": "2026/10/16",
+      "council_id": "mhlw-shakai_hosho_iryou_hoken",
+      "officialUrl": "https://www.mhlw.go.jp/stf/newpage_76752.html",
+      "material_count": 6
+    },
+    {
+      "id": "mhlw-kansen_yobousesshu_shinsa-20261016-045",
+      "name": "第45回 感染症・予防接種審査分科会 及び 感染症・予防接種審査分科会新型コロナウイルス感染症予防接種健康被害審査部会",
+      "date": "2026/10/16",
+      "council_id": "mhlw-kansen_yobousesshu_shinsa",
+      "officialUrl": "https://www.mhlw.go.jp/stf/newpage_76802.html",
+      "material_count": 3
+    },
+    {
+      "id": "mhlw-940-20261016-010",
+      "name": "第10回 職業安定分科会地方連携部会",
+      "date": "2026/10/16",
+      "council_id": "mhlw-940",
+      "officialUrl": "https://www.mhlw.go.jp/stf/newpage_76622.html",
+      "material_count": 4
+    },
+    {
+      "id": "cas-senryaku-20261016-005",
+      "name": "戦略分野分科会(第5回)",
+      "date": "2026/10/16",
+      "council_id": "cas-senryaku",
+      "officialUrl": "https://www.cas.go.jp/jp/seisaku/nipponseichosenryaku/senryaku/dai5/gijishidai.html",
+      "material_count": 3
+    },
+    {
+      "id": "mic-musen_jujisha_wg-20261015-002",
+      "name": "情報通信審議会 情報通信技術分科会 電波有効利用委員会 無線従事者制度の在り方検討作業班(第2回)",
+      "date": "2026/10/15",
+      "council_id": "mic-musen_jujisha_wg",
+      "officialUrl": "https://www.soumu.go.jp/main_sosiki/joho_tsusin/policyreports/joho_tsusin/denpa_yukoriyo/musenjujisha/02kiban09_04000742.html",
+      "material_count": 5
+    },
+    {
+      "id": "mhlw-830-20261015-017",
+      "name": "第17回 結核部会",
+      "date": "2026/10/15",
+      "council_id": "mhlw-830",
+      "officialUrl": "https://www.mhlw.go.jp/stf/newpage_76689.html",
+      "material_count": 7
+    },
+    {
+      "id": "mhlw-ishiwata_higai_shinsa-20261015-038",
+      "name": "第38回 特定石綿被害建設業務労働者等認定審査会専門委員会",
+      "date": "2026/10/15",
+      "council_id": "mhlw-ishiwata_higai_shinsa",
+      "officialUrl": "https://www.mhlw.go.jp/stf/newpage_76765.html",
+      "material_count": 0
+    },
+    {
+      "id": "cas-indexhtmlsuisin_kaigi_record-20261015-016",
+      "name": "第16回 地域働き方・職場改革等推進会議",
+      "date": "2026/10/15",
+      "council_id": "cas-indexhtmlsuisin_kaigi_record",
+      "officialUrl": "https://www.cas.go.jp/jp/seisaku/chiikihatarakikata/index.html#suisin-kaigi-record",
+      "material_count": 3
+    },
+    {
+      "id": "mhlw-shakai_hosho_kaigo_kyuufu-20261014-270",
+      "name": "第270回 社会保障審議会 介護給付費分科会",
+      "date": "2026/10/14",
+      "council_id": "mhlw-shakai_hosho_kaigo_kyuufu",
+      "officialUrl": "https://www.mhlw.go.jp/stf/newpage_76633.html",
+      "material_count": 8
+    },
+    {
+      "id": "mhlw-825-20261014-015",
+      "name": "第15回 薬剤耐性(AMR)に関する小委員会",
+      "date": "2026/10/14",
+      "council_id": "mhlw-825",
+      "officialUrl": "https://www.mhlw.go.jp/stf/newpage_76569.html",
+      "material_count": 14
+    },
+    {
+      "id": "mhlw-828-20261014-012",
+      "name": "第12回 危機対応医薬品等に関する小委員会",
+      "date": "2026/10/14",
+      "council_id": "mhlw-828",
+      "officialUrl": "https://www.mhlw.go.jp/stf/newpage_76692.html",
+      "material_count": 5
+    },
+    {
+      "id": "cas-sdgs_honbu-20261014-022",
+      "name": "第22回 持続可能な開発目標(SDGs)推進本部",
+      "date": "2026/10/14",
+      "council_id": "cas-sdgs_honbu",
+      "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/sdgs/entakukaigi_dai22/gijishidai.html",
+      "material_count": 1
+    },
+    {
+      "id": "fsc-honkaigi-20261013-1039",
+      "name": "第1039回 食品安全委員会",
+      "date": "2026/10/13",
+      "council_id": "fsc-honkaigi",
+      "officialUrl": "https://www.fsc.go.jp/fsciis/meetingMaterial/show/kai20261013fsc",
+      "material_count": 0
+    },
+    {
+      "id": "fsa-transition_finance-20261009-s19",
+      "name": "トランジション・ファイナンス環境整備検討会 (2026/10/09)",
+      "date": "2026/10/09",
+      "council_id": "fsa-transition_finance",
+      "officialUrl": "https://www.fsa.go.jp/singi/transition_finance/siryou/20260821.html",
+      "material_count": 3
+    },
+    {
+      "id": "cas-kyuyo_kakuryo-20261009-s13",
+      "name": "給与関係閣僚会議",
+      "date": "2026/10/09",
+      "council_id": "cas-kyuyo_kakuryo",
+      "officialUrl": "https://www.cas.go.jp/jp/seisaku/kyuyo/index.html",
+      "material_count": 1
+    },
+    {
+      "id": "mic-kanmin_kyousou-20261002-772",
+      "name": "第772回 官民競争入札等監理委員会",
+      "date": "2026/10/02",
+      "council_id": "mic-kanmin_kyousou",
+      "officialUrl": "https://www.soumu.go.jp/main_sosiki/singi/kanmin/02shingi06_02001100.html",
+      "material_count": 4
+    },
+    {
+      "id": "mof-1132-20260918-s08",
+      "name": "財政投融資分科会(令和8年9月18日開催)",
+      "date": "2026/09/18",
+      "council_id": "mof-1132",
+      "officialUrl": "https://www.mof.go.jp/about_mof/councils/fiscal_system_council/sub-of_filp/proceedings/material/zaitoa20260918.html",
+      "material_count": 3
+    },
+    {
+      "id": "nra-teireikai-20260910-044",
+      "name": "第44回 原子力規制委員会",
+      "date": "2026/09/10",
+      "council_id": "nra-teireikai",
+      "officialUrl": "https://www.nra.go.jp/activity/anzen/seika/20261014.html",
+      "material_count": 0
+    },
+    {
+      "id": "fdma-bousai_jinzai_ikusei-20260907-002",
+      "name": "第2回 消防学校の教育訓練に関する検討会",
+      "date": "2026/09/07",
+      "council_id": "fdma-bousai_jinzai_ikusei",
+      "officialUrl": "https://www.fdma.go.jp/singi_kento/kento/post-197.html",
+      "material_count": 12
+    },
+    {
+      "id": "cas-kokuminkaigi_kunitochihou-20260831-s32",
+      "name": "「給付付き税額控除」に関する国と地方の協議の場 (2026/08/31)",
+      "date": "2026/08/31",
+      "council_id": "cas-kokuminkaigi_kunitochihou",
+      "officialUrl": "https://www.cas.go.jp/jp/seisaku/kokuminkaigi/contents/20260831/index.html",
+      "material_count": 3
+    },
+    {
+      "id": "cas-kokuminkaigi_jitsumu-20260805-s32",
+      "name": "社会保障国民会議 給付付き税額控除等に関する実務者会議 (2026/08/05)",
+      "date": "2026/08/05",
+      "council_id": "cas-kokuminkaigi_jitsumu",
+      "officialUrl": "https://www.cas.go.jp/jp/seisaku/kokuminkaigi/contents/20260810/index.html",
+      "material_count": 4
+    },
+    {
+      "id": "cas-kokuminkaigi_yushikisha-20260805-s32",
+      "name": "社会保障国民会議 有識者会議 (2026/08/05)",
+      "date": "2026/08/05",
+      "council_id": "cas-kokuminkaigi_yushikisha",
+      "officialUrl": "https://www.cas.go.jp/jp/seisaku/kokuminkaigi/contents/20260810/index.html",
+      "material_count": 4
+    },
+    {
+      "id": "mof-1132-20260715-s10",
+      "name": "財政投融資分科会(令和8年7月15日開催)",
+      "date": "2026/07/15",
+      "council_id": "mof-1132",
+      "officialUrl": "https://www.mof.go.jp/about_mof/councils/fiscal_system_council/sub-of_filp/proceedings/material/zaitoa20260715.html",
+      "material_count": 25
+    },
+    {
+      "id": "mof-1132-20260618-s12",
+      "name": "財政投融資分科会(令和8年6月18日開催)",
+      "date": "2026/06/18",
+      "council_id": "mof-1132",
+      "officialUrl": "https://www.mof.go.jp/about_mof/councils/fiscal_system_council/sub-of_filp/proceedings/material/zaitoa20260618.html",
+      "material_count": 11
+    },
+    {
+      "id": "cas-kokuminkaigi_yushikisha-20260325-s34",
+      "name": "社会保障国民会議 有識者会議 (2026/03/25)",
+      "date": "2026/03/25",
+      "council_id": "cas-kokuminkaigi_yushikisha",
+      "officialUrl": "https://www.cas.go.jp/jp/seisaku/kokuminkaigi/contents/20260325/index.html",
+      "material_count": 8
+    },
+    {
+      "id": "mof-1132-20260323-s14",
+      "name": "財政投融資分科会(令和8年3月23日~26日開催)",
+      "date": "2026/03/23",
+      "council_id": "mof-1132",
+      "officialUrl": "https://www.mof.go.jp/about_mof/councils/fiscal_system_council/sub-of_filp/proceedings/material/zaitoa20260326.html",
+      "material_count": 3
+    },
+    {
+      "id": "mof-1132-20260216-s16",
+      "name": "財政投融資分科会(令和8年2月16日~19日開催)",
+      "date": "2026/02/16",
+      "council_id": "mof-1132",
+      "officialUrl": "https://www.mof.go.jp/about_mof/councils/fiscal_system_council/sub-of_filp/proceedings/material/zaitoa20260219.html",
+      "material_count": 3
+    },
+    {
+      "id": "mof-1132-20251225-s18",
+      "name": "財政投融資分科会(令和7年12月25日開催)",
+      "date": "2025/12/25",
+      "council_id": "mof-1132",
+      "officialUrl": "https://www.mof.go.jp/about_mof/councils/fiscal_system_council/sub-of_filp/proceedings/material/zaitoa20251225.html",
+      "material_count": 10
+    },
+    {
+      "id": "mof-1132-20251205-s20",
+      "name": "財政投融資分科会(令和7年12月5日開催)",
+      "date": "2025/12/05",
+      "council_id": "mof-1132",
+      "officialUrl": "https://www.mof.go.jp/about_mof/councils/fiscal_system_council/sub-of_filp/proceedings/material/zaitoa20251205.html",
+      "material_count": 4
+    },
+    {
+      "id": "mof-1132-20251125-s22",
+      "name": "財政投融資分科会(令和7年11月25日~27日開催)",
+      "date": "2025/11/25",
+      "council_id": "mof-1132",
+      "officialUrl": "https://www.mof.go.jp/about_mof/councils/fiscal_system_council/sub-of_filp/proceedings/material/zaitoa20251127.html",
+      "material_count": 6
+    },
+    {
+      "id": "mof-1132-20251121-s24",
+      "name": "財政投融資分科会(令和7年11月21日開催)",
+      "date": "2025/11/21",
+      "council_id": "mof-1132",
+      "officialUrl": "https://www.mof.go.jp/about_mof/councils/fiscal_system_council/sub-of_filp/proceedings/material/zaitoa20251121.html",
+      "material_count": 3
+    },
+    {
+      "id": "mof-1132-20251029-s26",
+      "name": "財政投融資分科会(令和7年10月29日開催)",
+      "date": "2025/10/29",
+      "council_id": "mof-1132",
+      "officialUrl": "https://www.mof.go.jp/about_mof/councils/fiscal_system_council/sub-of_filp/proceedings/material/zaitoa20251029.html",
+      "material_count": 3
+    },
+    {
+      "id": "mof-1132-20250731-s28",
+      "name": "財政投融資分科会(令和7年7月31日開催)",
+      "date": "2025/07/31",
+      "council_id": "mof-1132",
+      "officialUrl": "https://www.mof.go.jp/about_mof/councils/fiscal_system_council/sub-of_filp/proceedings/material/zaitoa20250731.html",
+      "material_count": 10
+    },
+    {
+      "id": "mof-1132-20250625-s30",
+      "name": "財政投融資分科会(令和7年6月25日開催)",
+      "date": "2025/06/25",
+      "council_id": "mof-1132",
+      "officialUrl": "https://www.mof.go.jp/about_mof/councils/fiscal_system_council/sub-of_filp/proceedings/material/zaitoa20250625.html",
+      "material_count": 15
+    },
+    {
+      "id": "mof-1132-20250324-s32",
+      "name": "財政投融資分科会(令和7年3月24日開催)",
+      "date": "2025/03/24",
+      "council_id": "mof-1132",
+      "officialUrl": "https://www.mof.go.jp/about_mof/councils/fiscal_system_council/sub-of_filp/proceedings/material/zaitoa20250324.html",
+      "material_count": 5
+    },
+    {
+      "id": "mof-1132-20241226-s34",
+      "name": "財政投融資分科会(令和6年12月26日開催)",
+      "date": "2024/12/26",
+      "council_id": "mof-1132",
+      "officialUrl": "https://www.mof.go.jp/about_mof/councils/fiscal_system_council/sub-of_filp/proceedings/material/zaitoa20241226.html",
+      "material_count": 9
+    },
+    {
+      "id": "mof-1132-20241212-s36",
+      "name": "財政投融資分科会(令和6年12月12日開催)",
+      "date": "2024/12/12",
+      "council_id": "mof-1132",
+      "officialUrl": "https://www.mof.go.jp/about_mof/councils/fiscal_system_council/sub-of_filp/proceedings/material/zaitoa20241212.html",
+      "material_count": 6
+    },
+    {
+      "id": "mof-1132-20241125-s38",
+      "name": "財政投融資分科会(令和6年11月25日~27日開催)",
+      "date": "2024/11/25",
+      "council_id": "mof-1132",
+      "officialUrl": "https://www.mof.go.jp/about_mof/councils/fiscal_system_council/sub-of_filp/proceedings/material/zaitoa20241127.html",
+      "material_count": 6
+    },
+    {
+      "id": "mof-1132-20241115-s40",
+      "name": "財政投融資分科会(令和6年11月15日開催)",
+      "date": "2024/11/15",
+      "council_id": "mof-1132",
+      "officialUrl": "https://www.mof.go.jp/about_mof/councils/fiscal_system_council/sub-of_filp/proceedings/material/zaitoa20241115.html",
+      "material_count": 5
+    },
+    {
+      "id": "mof-1132-20241030-s42",
+      "name": "財政投融資分科会(令和6年10月30日開催)",
+      "date": "2024/10/30",
+      "council_id": "mof-1132",
+      "officialUrl": "https://www.mof.go.jp/about_mof/councils/fiscal_system_council/sub-of_filp/proceedings/material/zaitoa20241030.html",
+      "material_count": 3
+    },
+    {
+      "id": "mof-1132-20241018-s44",
+      "name": "財政投融資分科会(令和6年10月18日開催)",
+      "date": "2024/10/18",
+      "council_id": "mof-1132",
+      "officialUrl": "https://www.mof.go.jp/about_mof/councils/fiscal_system_council/sub-of_filp/proceedings/material/zaitoa20241018.html",
+      "material_count": 4
+    },
+    {
+      "id": "mof-1132-20240729-s46",
+      "name": "財政投融資分科会(令和6年7月29日開催)",
+      "date": "2024/07/29",
+      "council_id": "mof-1132",
+      "officialUrl": "https://www.mof.go.jp/about_mof/councils/fiscal_system_council/sub-of_filp/proceedings/material/zaitoa20240729.html",
+      "material_count": 8
+    },
+    {
+      "id": "mof-1132-20240705-s48",
+      "name": "財政投融資分科会(令和6年6月17日開催)",
+      "date": "2024/07/05",
+      "council_id": "mof-1132",
+      "officialUrl": "https://www.mof.go.jp/about_mof/councils/fiscal_system_council/sub-of_filp/proceedings/material/zaitoa20240617.html",
+      "material_count": 11
+    },
+    {
+      "id": "mof-1132-20240524-s50",
+      "name": "財政投融資分科会(令和6年5月24日開催)",
+      "date": "2024/05/24",
+      "council_id": "mof-1132",
+      "officialUrl": "https://www.mof.go.jp/about_mof/councils/fiscal_system_council/sub-of_filp/proceedings/material/zaitoa20240524.html",
+      "material_count": 7
+    },
+    {
+      "id": "mof-1132-20240521-s52",
+      "name": "財政制度分科会(令和6年5月21日開催)",
+      "date": "2024/05/21",
+      "council_id": "mof-1132",
+      "officialUrl": "https://www.mof.go.jp/about_mof/councils/fiscal_system_council/sub-of_fiscal_system/proceedings/material/20240521zaiseia.html",
+      "material_count": 0
+    },
+    {
+      "id": "mof-1132-20240419-s54",
+      "name": "財政投融資分科会(令和6年4月19日開催)",
+      "date": "2024/04/19",
+      "council_id": "mof-1132",
+      "officialUrl": "https://www.mof.go.jp/about_mof/councils/fiscal_system_council/sub-of_filp/proceedings/material/zaitoa20240419.html",
+      "material_count": 4
+    },
+    {
+      "id": "mof-1132-20240325-s56",
+      "name": "財政投融資分科会(令和6年3月25日開催)",
+      "date": "2024/03/25",
+      "council_id": "mof-1132",
+      "officialUrl": "https://www.mof.go.jp/about_mof/councils/fiscal_system_council/sub-of_filp/proceedings/material/zaitoa20240325.html",
+      "material_count": 3
+    },
+    {
+      "id": "mof-1132-20231221-s58",
+      "name": "財政投融資分科会(令和5年12月21日開催)",
+      "date": "2023/12/21",
+      "council_id": "mof-1132",
+      "officialUrl": "https://www.mof.go.jp/about_mof/councils/fiscal_system_council/sub-of_filp/proceedings/material/zaitoa20231221.html",
+      "material_count": 15
+    },
+    {
+      "id": "mof-1132-20231117-s60",
+      "name": "財政投融資分科会(令和5年11月17日開催)",
+      "date": "2023/11/17",
+      "council_id": "mof-1132",
+      "officialUrl": "https://www.mof.go.jp/about_mof/councils/fiscal_system_council/sub-of_filp/proceedings/material/zaitoa20231117.html",
+      "material_count": 10
+    },
+    {
+      "id": "mof-1132-20231106-s62",
+      "name": "財政投融資分科会(令和5年11月6日~8日開催)",
+      "date": "2023/11/06",
+      "council_id": "mof-1132",
+      "officialUrl": "https://www.mof.go.jp/about_mof/councils/fiscal_system_council/sub-of_filp/proceedings/material/zaitoa20231108.html",
+      "material_count": 6
+    },
+    {
+      "id": "mof-1132-20231026-s64",
+      "name": "財政投融資分科会(令和5年10月26日開催)",
+      "date": "2023/10/26",
+      "council_id": "mof-1132",
+      "officialUrl": "https://www.mof.go.jp/about_mof/councils/fiscal_system_council/sub-of_filp/proceedings/material/zaitoa20231026.html",
+      "material_count": 4
+    },
+    {
+      "id": "mof-1132-20231018-s66",
+      "name": "財政投融資分科会(令和5年10月18日開催)",
+      "date": "2023/10/18",
+      "council_id": "mof-1132",
+      "officialUrl": "https://www.mof.go.jp/about_mof/councils/fiscal_system_council/sub-of_filp/proceedings/material/zaitoa20231018.html",
+      "material_count": 6
+    },
+    {
+      "id": "mof-1132-20230731-s68",
+      "name": "財政投融資分科会(令和5年7月31日開催)",
+      "date": "2023/07/31",
+      "council_id": "mof-1132",
+      "officialUrl": "https://www.mof.go.jp/about_mof/councils/fiscal_system_council/sub-of_filp/proceedings/material/zaitoa20230731.html",
+      "material_count": 7
+    },
+    {
+      "id": "mof-1132-20230621-s70",
+      "name": "財政投融資分科会(令和5年6月21日開催)",
+      "date": "2023/06/21",
+      "council_id": "mof-1132",
+      "officialUrl": "https://www.mof.go.jp/about_mof/councils/fiscal_system_council/sub-of_filp/proceedings/material/zaitoa050621.html",
+      "material_count": 16
+    },
+    {
+      "id": "mof-1132-20230317-s72",
+      "name": "財政投融資分科会(令和5年3月17日~24日開催)",
+      "date": "2023/03/17",
+      "council_id": "mof-1132",
+      "officialUrl": "https://www.mof.go.jp/about_mof/councils/fiscal_system_council/sub-of_filp/proceedings/material/zaitoa050324.html",
+      "material_count": 3
+    },
+    {
+      "id": "mof-1132-20221221-s74",
+      "name": "財政投融資分科会(令和4年12月21日開催)",
+      "date": "2022/12/21",
+      "council_id": "mof-1132",
+      "officialUrl": "https://www.mof.go.jp/about_mof/councils/fiscal_system_council/sub-of_filp/proceedings/material/zaitoa041221.html",
+      "material_count": 15
+    },
+    {
+      "id": "mof-1132-20221209-s76",
+      "name": "財政投融資分科会(令和4年12月9日開催)",
+      "date": "2022/12/09",
+      "council_id": "mof-1132",
+      "officialUrl": "https://www.mof.go.jp/about_mof/councils/fiscal_system_council/sub-of_filp/proceedings/material/zaitoa041209.html",
+      "material_count": 5
+    },
+    {
+      "id": "mof-1132-20221122-s78",
+      "name": "財政投融資分科会(令和4年11月22日開催)",
+      "date": "2022/11/22",
+      "council_id": "mof-1132",
+      "officialUrl": "https://www.mof.go.jp/about_mof/councils/fiscal_system_council/sub-of_filp/proceedings/material/zaitoa041122.html",
+      "material_count": 8
+    },
+    {
+      "id": "mof-1132-20221104-s80",
+      "name": "財政投融資分科会(令和4年11月4日開催)",
+      "date": "2022/11/04",
+      "council_id": "mof-1132",
+      "officialUrl": "https://www.mof.go.jp/about_mof/councils/fiscal_system_council/sub-of_filp/proceedings/material/zaitoa041104.html",
+      "material_count": 6
+    },
+    {
+      "id": "mof-1132-20221031-s82",
+      "name": "財政投融資分科会(令和4年10月31日開催)",
+      "date": "2022/10/31",
+      "council_id": "mof-1132",
+      "officialUrl": "https://www.mof.go.jp/about_mof/councils/fiscal_system_council/sub-of_filp/proceedings/material/zaitoa041031.html",
+      "material_count": 7
+    },
+    {
+      "id": "mof-1132-20221014-s84",
+      "name": "財政投融資分科会(令和4年10月14日開催)",
+      "date": "2022/10/14",
+      "council_id": "mof-1132",
+      "officialUrl": "https://www.mof.go.jp/about_mof/councils/fiscal_system_council/sub-of_filp/proceedings/material/zaitoa041014.html",
+      "material_count": 5
+    },
+    {
+      "id": "mof-1132-20220810-s86",
+      "name": "財政投融資分科会(令和4年7月28日開催)",
+      "date": "2022/08/10",
+      "council_id": "mof-1132",
+      "officialUrl": "https://www.mof.go.jp/about_mof/councils/fiscal_system_council/sub-of_filp/proceedings/material/zaitoa040728.html",
+      "material_count": 8
+    },
+    {
+      "id": "mof-1132-20220620-s88",
+      "name": "財政投融資分科会",
+      "date": "2022/06/20",
+      "council_id": "mof-1132",
+      "officialUrl": "https://www.mof.go.jp/about_mof/councils/fiscal_system_council/sub-of_filp/proceedings/material/zaitoa040620.html",
+      "material_count": 8
+    },
+    {
+      "id": "fsc-idensi-20220422-224",
+      "name": "第224回 遺伝子組換え食品等専門調査会(非公開)",
+      "date": "2022/04/22",
+      "council_id": "fsc-idensi",
+      "officialUrl": "https://www.fsc.go.jp/fsciis/meetingMaterial/show/kai20220422id1",
+      "material_count": 1
+    },
+    {
+      "id": "fsc-honkaigi-20190924-758",
+      "name": "第758回 食品安全委員会",
+      "date": "2019/09/24",
+      "council_id": "fsc-honkaigi",
+      "officialUrl": "https://www.fsc.go.jp/fsciis/meetingMaterial/show/kai20190924fsc",
+      "material_count": 1
+    },
+    {
+      "id": "fsc-honkaigi-20190917-757",
+      "name": "第757回 食品安全委員会",
+      "date": "2019/09/17",
+      "council_id": "fsc-honkaigi",
+      "officialUrl": "https://www.fsc.go.jp/fsciis/meetingMaterial/show/kai20190917fsc",
+      "material_count": 1
+    },
+    {
+      "id": "fsc-honkaigi-20190910-756",
+      "name": "第756回 食品安全委員会",
+      "date": "2019/09/10",
+      "council_id": "fsc-honkaigi",
+      "officialUrl": "https://www.fsc.go.jp/fsciis/meetingMaterial/show/kai20190910fsc",
+      "material_count": 1
+    },
+    {
+      "id": "fsc-honkaigi-20190903-755",
+      "name": "第755回 食品安全委員会",
+      "date": "2019/09/03",
+      "council_id": "fsc-honkaigi",
+      "officialUrl": "https://www.fsc.go.jp/fsciis/meetingMaterial/show/kai20190903fsc",
+      "material_count": 1
+    },
+    {
+      "id": "fsc-honkaigi-20190827-754",
+      "name": "第754回 食品安全委員会",
+      "date": "2019/08/27",
+      "council_id": "fsc-honkaigi",
+      "officialUrl": "https://www.fsc.go.jp/fsciis/meetingMaterial/show/kai20190827fsc",
+      "material_count": 1
+    },
+    {
+      "id": "fsc-honkaigi-20190820-753",
+      "name": "第753回 食品安全委員会",
+      "date": "2019/08/20",
+      "council_id": "fsc-honkaigi",
+      "officialUrl": "https://www.fsc.go.jp/fsciis/meetingMaterial/show/kai20190820fsc",
+      "material_count": 1
+    },
+    {
+      "id": "fsc-honkaigi-20190806-752",
+      "name": "第752回 食品安全委員会",
+      "date": "2019/08/06",
+      "council_id": "fsc-honkaigi",
+      "officialUrl": "https://www.fsc.go.jp/fsciis/meetingMaterial/show/kai20190806fsc",
+      "material_count": 1
+    },
+    {
+      "id": "fsc-honkaigi-20190730-751",
+      "name": "第751回 食品安全委員会",
+      "date": "2019/07/30",
+      "council_id": "fsc-honkaigi",
+      "officialUrl": "https://www.fsc.go.jp/fsciis/meetingMaterial/show/kai20190730fsc",
+      "material_count": 1
+    },
+    {
+      "id": "fsc-honkaigi-20190723-750",
+      "name": "第750回 食品安全委員会",
+      "date": "2019/07/23",
+      "council_id": "fsc-honkaigi",
+      "officialUrl": "https://www.fsc.go.jp/fsciis/meetingMaterial/show/kai20190723fsc",
+      "material_count": 1
+    },
+    {
+      "id": "fsc-honkaigi-20190709-749",
+      "name": "第749回 食品安全委員会",
+      "date": "2019/07/09",
+      "council_id": "fsc-honkaigi",
+      "officialUrl": "https://www.fsc.go.jp/fsciis/meetingMaterial/show/kai20190709fsc",
+      "material_count": 1
+    },
+    {
+      "id": "fsc-honkaigi-20190702-748",
+      "name": "第748回 食品安全委員会",
+      "date": "2019/07/02",
+      "council_id": "fsc-honkaigi",
+      "officialUrl": "https://www.fsc.go.jp/fsciis/meetingMaterial/show/kai20190702fsc",
+      "material_count": 1
+    },
+    {
+      "id": "fsc-honkaigi-20190625-747",
+      "name": "第747回 食品安全委員会",
+      "date": "2019/06/25",
+      "council_id": "fsc-honkaigi",
+      "officialUrl": "https://www.fsc.go.jp/fsciis/meetingMaterial/show/kai20190625fsc",
+      "material_count": 1
+    },
+    {
+      "id": "fsc-honkaigi-20190618-746",
+      "name": "第746回 食品安全委員会",
+      "date": "2019/06/18",
+      "council_id": "fsc-honkaigi",
+      "officialUrl": "https://www.fsc.go.jp/fsciis/meetingMaterial/show/kai20190618fsc",
+      "material_count": 1
+    },
+    {
+      "id": "fsc-honkaigi-20190611-745",
+      "name": "第745回 食品安全委員会",
+      "date": "2019/06/11",
+      "council_id": "fsc-honkaigi",
+      "officialUrl": "https://www.fsc.go.jp/fsciis/meetingMaterial/show/kai20190611fsc",
+      "material_count": 1
+    },
+    {
+      "id": "fsc-honkaigi-20190604-744",
+      "name": "第744回 食品安全委員会",
+      "date": "2019/06/04",
+      "council_id": "fsc-honkaigi",
+      "officialUrl": "https://www.fsc.go.jp/fsciis/meetingMaterial/show/kai20190604fsc",
+      "material_count": 1
+    },
+    {
+      "id": "fsc-honkaigi-20190528-743",
+      "name": "第743回 食品安全委員会",
+      "date": "2019/05/28",
+      "council_id": "fsc-honkaigi",
+      "officialUrl": "https://www.fsc.go.jp/fsciis/meetingMaterial/show/kai20190528fsc",
+      "material_count": 1
+    },
+    {
+      "id": "fsc-honkaigi-20190521-742",
+      "name": "第742回 食品安全委員会",
+      "date": "2019/05/21",
+      "council_id": "fsc-honkaigi",
+      "officialUrl": "https://www.fsc.go.jp/fsciis/meetingMaterial/show/kai20190521fsc",
+      "material_count": 1
+    },
+    {
+      "id": "fsc-honkaigi-20190514-741",
+      "name": "第741回 食品安全委員会",
+      "date": "2019/05/14",
+      "council_id": "fsc-honkaigi",
+      "officialUrl": "https://www.fsc.go.jp/fsciis/meetingMaterial/show/kai20190514fsc",
+      "material_count": 1
+    },
+    {
+      "id": "fsc-doubutu-20180628-215",
+      "name": "第215回 動物用医薬品専門調査会",
+      "date": "2018/06/28",
+      "council_id": "fsc-doubutu",
+      "officialUrl": "https://www.fsc.go.jp/fsciis/meetingMaterial/show/kai20180629do1",
+      "material_count": 1
+    },
+    {
+      "id": "aca-bunkazai_bunkakai-20180401-s191",
+      "name": "第18期(平成30年4月1日~平成31年3月31日)",
+      "date": "2018/04/01",
+      "council_id": "aca-bunkazai_bunkakai",
+      "officialUrl": "https://www.bunka.go.jp/seisaku/bunkashingikai/bunkazai/18/",
+      "material_count": 11
+    },
+    {
+      "id": "cao-228-20170912-s06",
+      "name": "公益信託の設定を目的とする「遺言書」の記載事項について(意見照会)",
+      "date": "2017/09/12",
+      "council_id": "cao-228",
+      "officialUrl": "https://www.koeki-info.go.jp/trust/irmpg4iwob.html",
+      "material_count": 144
+    },
+    {
+      "id": "aca-bunkazai_bunkakai-20170401-s193",
+      "name": "第17期(平成29年4月1日~平成30年3月31日)",
+      "date": "2017/04/01",
+      "council_id": "aca-bunkazai_bunkakai",
+      "officialUrl": "https://www.bunka.go.jp/seisaku/bunkashingikai/bunkazai/17/",
+      "material_count": 13
+    },
+    {
+      "id": "fsc-idensi-20160516-148",
+      "name": "第148回 遺伝子組換え食品等専門調査会(非公開)",
+      "date": "2016/05/16",
+      "council_id": "fsc-idensi",
+      "officialUrl": "https://www.fsc.go.jp/fsciis/meetingMaterial/show/kai20160516id1",
+      "material_count": 1
+    },
+    {
+      "id": "fsc-doubutu-20141030-170",
+      "name": "第170回 動物用医薬品専門調査会",
+      "date": "2014/10/30",
+      "council_id": "fsc-doubutu",
+      "officialUrl": "https://www.fsc.go.jp/fsciis/meetingMaterial/show/kai20141031do1",
+      "material_count": 1
+    },
+    {
+      "id": "fsc-doubutu-20140612-165",
+      "name": "第165回 動物用医薬品専門調査会",
+      "date": "2014/06/12",
+      "council_id": "fsc-doubutu",
+      "officialUrl": "https://www.fsc.go.jp/fsciis/meetingMaterial/show/kai20140613do1",
+      "material_count": 1
+    },
+    {
+      "id": "fsc-honkaigi-20130603-s319",
+      "name": "食品安全委員会 開催実績(平成15年7月から平成31年4月まで)",
+      "date": "2013/06/03",
+      "council_id": "fsc-honkaigi",
+      "officialUrl": "https://www.fsc.go.jp/iinkai_annai/jisseki_20030701_20190423.html",
+      "material_count": 0
+    },
+    {
+      "id": "aca-bunkazai_bunkakai-20130311-s195",
+      "name": "第12期(平成24年3月12日~平成25年3月11日)",
+      "date": "2013/03/11",
+      "council_id": "aca-bunkazai_bunkakai",
+      "officialUrl": "https://www.bunka.go.jp/seisaku/bunkashingikai/bunkazai/12/",
+      "material_count": 11
+    },
+    {
+      "id": "fsc-doubutu-20121108-145",
+      "name": "第145回 動物用医薬品専門調査会(非公開)",
+      "date": "2012/11/08",
+      "council_id": "fsc-doubutu",
+      "officialUrl": "https://www.fsc.go.jp/fsciis/meetingMaterial/show/kai20121108do1",
+      "material_count": 1
+    },
+    {
+      "id": "fsc-idensi-20120521-104",
+      "name": "第104回 遺伝子組換え食品等専門調査会(非公開)",
+      "date": "2012/05/21",
+      "council_id": "fsc-idensi",
+      "officialUrl": "https://www.fsc.go.jp/fsciis/meetingMaterial/show/kai20120521id1",
+      "material_count": 1
+    },
+    {
+      "id": "fsc-idensi-20110307-089",
+      "name": "第89回遺伝子組換え食品等専門調査会(非公開)",
+      "date": "2011/03/07",
+      "council_id": "fsc-idensi",
+      "officialUrl": "https://www.fsc.go.jp/fsciis/meetingMaterial/show/kai20110307id1",
+      "material_count": 1
+    },
+    {
+      "id": "fsc-idensi-20110107-088",
+      "name": "第88回遺伝子組換え食品等専門調査会(非公開)",
+      "date": "2011/01/07",
+      "council_id": "fsc-idensi",
+      "officialUrl": "https://www.fsc.go.jp/fsciis/meetingMaterial/show/kai20110107id1",
+      "material_count": 1
+    },
+    {
+      "id": "fsc-idensi-20101213-087",
+      "name": "第87回遺伝子組換え食品等専門調査会(非公開)",
+      "date": "2010/12/13",
+      "council_id": "fsc-idensi",
+      "officialUrl": "https://www.fsc.go.jp/fsciis/meetingMaterial/show/kai20101213id1",
+      "material_count": 1
+    },
+    {
+      "id": "fsc-idensi-20101116-086",
+      "name": "第86回遺伝子組換え食品等専門調査会(非公開)",
+      "date": "2010/11/16",
+      "council_id": "fsc-idensi",
+      "officialUrl": "https://www.fsc.go.jp/fsciis/meetingMaterial/show/kai20101116id1",
+      "material_count": 1
+    },
+    {
+      "id": "fsc-idensi-20101027-085",
+      "name": "第85回遺伝子組換え食品等専門調査会(非公開)",
+      "date": "2010/10/27",
+      "council_id": "fsc-idensi",
+      "officialUrl": "https://www.fsc.go.jp/fsciis/meetingMaterial/show/kai20101027id1",
+      "material_count": 1
+    },
+    {
+      "id": "fsc-idensi-20100906-084",
+      "name": "第84回遺伝子組換え食品等専門調査会(非公開)",
+      "date": "2010/09/06",
+      "council_id": "fsc-idensi",
+      "officialUrl": "https://www.fsc.go.jp/fsciis/meetingMaterial/show/kai20100906id1",
+      "material_count": 1
+    },
+    {
+      "id": "fsc-idensi-20100723-083",
+      "name": "第83回遺伝子組換え食品等専門調査会(非公開)",
+      "date": "2010/07/23",
+      "council_id": "fsc-idensi",
+      "officialUrl": "https://www.fsc.go.jp/fsciis/meetingMaterial/show/kai20100723id1",
+      "material_count": 1
+    },
+    {
+      "id": "fsc-idensi-20100623-082",
+      "name": "第82回遺伝子組換え食品等専門調査会(非公開)",
+      "date": "2010/06/23",
+      "council_id": "fsc-idensi",
+      "officialUrl": "https://www.fsc.go.jp/fsciis/meetingMaterial/show/kai20100623id1",
+      "material_count": 1
+    },
+    {
+      "id": "fsc-doubutu-20100426-124",
+      "name": "第124回動物用医薬品専門調査会(公開)",
+      "date": "2010/04/26",
+      "council_id": "fsc-doubutu",
+      "officialUrl": "https://www.fsc.go.jp/fsciis/meetingMaterial/show/kai20100427do1",
+      "material_count": 1
+    },
+    {
+      "id": "fsc-idensi-20100419-081",
+      "name": "第81回遺伝子組換え食品等専門調査会(非公開)",
+      "date": "2010/04/19",
+      "council_id": "fsc-idensi",
+      "officialUrl": "https://www.fsc.go.jp/fsciis/meetingMaterial/show/kai20100419id1",
+      "material_count": 1
+    },
+    {
+      "id": "fsc-idensi-20100310-080",
+      "name": "第80回遺伝子組換え食品等専門調査会(非公開)",
+      "date": "2010/03/10",
+      "council_id": "fsc-idensi",
+      "officialUrl": "https://www.fsc.go.jp/fsciis/meetingMaterial/show/kai20100310id1",
+      "material_count": 1
+    },
+    {
+      "id": "fsc-idensi-20100118-078",
+      "name": "第78回遺伝子組換え食品等専門調査会(非公開)",
+      "date": "2010/01/18",
+      "council_id": "fsc-idensi",
+      "officialUrl": "https://www.fsc.go.jp/fsciis/meetingMaterial/show/kai20100118id1",
+      "material_count": 1
+    },
+    {
+      "id": "fsc-idensi-20091214-077",
+      "name": "第77回遺伝子組換え食品等専門調査会(非公開)",
+      "date": "2009/12/14",
+      "council_id": "fsc-idensi",
+      "officialUrl": "https://www.fsc.go.jp/fsciis/meetingMaterial/show/kai20091214id1",
+      "material_count": 1
+    },
+    {
+      "id": "fsc-idensi-20091116-076",
+      "name": "第76回遺伝子組換え食品等専門調査会(非公開)",
+      "date": "2009/11/16",
+      "council_id": "fsc-idensi",
+      "officialUrl": "https://www.fsc.go.jp/fsciis/meetingMaterial/show/kai20091116id1",
+      "material_count": 1
+    },
+    {
+      "id": "fsc-doubutu-20090928-115",
+      "name": "第115回動物用医薬品専門調査会",
+      "date": "2009/09/28",
+      "council_id": "fsc-doubutu",
+      "officialUrl": "https://www.fsc.go.jp/fsciis/meetingMaterial/show/kai20090929do1",
+      "material_count": 1
+    },
+    {
+      "id": "fsc-idensi-20090914-073",
+      "name": "第73回遺伝子組換え食品等専門調査会(非公開)",
+      "date": "2009/09/14",
+      "council_id": "fsc-idensi",
+      "officialUrl": "https://www.fsc.go.jp/fsciis/meetingMaterial/show/kai20090914id1",
+      "material_count": 1
+    },
+    {
+      "id": "fsc-doubutu-20090817-113",
+      "name": "第113回動物用医薬品専門調査会",
+      "date": "2009/08/17",
+      "council_id": "fsc-doubutu",
+      "officialUrl": "https://www.fsc.go.jp/fsciis/meetingMaterial/show/kai20090818do1",
+      "material_count": 1
+    },
+    {
+      "id": "fsc-doubutu-20090729-013",
+      "name": "第13回動物用医薬品専門調査会確認評価部会",
+      "date": "2009/07/29",
+      "council_id": "fsc-doubutu",
+      "officialUrl": "https://www.fsc.go.jp/fsciis/meetingMaterial/show/kai20090729do1",
+      "material_count": 1
+    },
+    {
+      "id": "fsc-idensi-20090710-072",
+      "name": "第72回遺伝子組換え食品等専門調査会(非公開)",
+      "date": "2009/07/10",
+      "council_id": "fsc-idensi",
+      "officialUrl": "https://www.fsc.go.jp/fsciis/meetingMaterial/show/kai20090710id1",
+      "material_count": 1
+    },
+    {
+      "id": "fsc-idensi-20090619-071",
+      "name": "第71回遺伝子組換え食品等専門調査会(非公開)",
+      "date": "2009/06/19",
+      "council_id": "fsc-idensi",
+      "officialUrl": "https://www.fsc.go.jp/fsciis/meetingMaterial/show/kai20090619id1",
+      "material_count": 1
+    },
+    {
+      "id": "fsc-idensi-20090519-070",
+      "name": "第70回遺伝子組換え食品等専門調査会(非公開)",
+      "date": "2009/05/19",
+      "council_id": "fsc-idensi",
+      "officialUrl": "https://www.fsc.go.jp/fsciis/meetingMaterial/show/kai20090519id1",
+      "material_count": 1
+    },
+    {
+      "id": "fsc-doubutu-20090417-011",
+      "name": "第11回動物用医薬品専門調査会確認評価部会",
+      "date": "2009/04/17",
+      "council_id": "fsc-doubutu",
+      "officialUrl": "https://www.fsc.go.jp/fsciis/meetingMaterial/show/kai20090417do1",
+      "material_count": 1
+    },
+    {
+      "id": "fsc-doubutu-20090317-010",
+      "name": "第10回動物用医薬品専門調査会確認評価部会",
+      "date": "2009/03/17",
+      "council_id": "fsc-doubutu",
+      "officialUrl": "https://www.fsc.go.jp/fsciis/meetingMaterial/show/kai20090317do1",
+      "material_count": 1
+    },
+    {
+      "id": "fsc-idensi-20090310-069",
+      "name": "第69回遺伝子組換え食品等専門調査会(非公開)",
+      "date": "2009/03/10",
+      "council_id": "fsc-idensi",
+      "officialUrl": "https://www.fsc.go.jp/fsciis/meetingMaterial/show/kai20090310id1",
+      "material_count": 1
+    },
+    {
+      "id": "fsc-doubutu-20090217-107",
+      "name": "第107回動物用医薬品専門調査会(非公開)",
+      "date": "2009/02/17",
+      "council_id": "fsc-doubutu",
+      "officialUrl": "https://www.fsc.go.jp/fsciis/meetingMaterial/show/kai20090218do1",
+      "material_count": 1
+    },
+    {
+      "id": "fsc-idensi-20090217-068",
+      "name": "第68回遺伝子組換え食品等専門調査会(非公開)",
+      "date": "2009/02/17",
+      "council_id": "fsc-idensi",
+      "officialUrl": "https://www.fsc.go.jp/fsciis/meetingMaterial/show/kai20090217id1",
+      "material_count": 1
+    },
+    {
+      "id": "fsc-idensi-20090127-067",
+      "name": "第67回遺伝子組換え食品等専門調査会(非公開)",
+      "date": "2009/01/27",
+      "council_id": "fsc-idensi",
+      "officialUrl": "https://www.fsc.go.jp/fsciis/meetingMaterial/show/kai20090127id1",
+      "material_count": 1
+    },
+    {
+      "id": "fsc-doubutu-20090115-105",
+      "name": "第105回動物用医薬品専門調査会",
+      "date": "2009/01/15",
+      "council_id": "fsc-doubutu",
+      "officialUrl": "https://www.fsc.go.jp/fsciis/meetingMaterial/show/kai20090116do1",
+      "material_count": 1
+    },
+    {
+      "id": "fsc-doubutu-20081224-104",
+      "name": "第104回動物用医薬品専門調査会",
+      "date": "2008/12/24",
+      "council_id": "fsc-doubutu",
+      "officialUrl": "https://www.fsc.go.jp/fsciis/meetingMaterial/show/kai20081224do1",
+      "material_count": 1
+    },
+    {
+      "id": "fsc-doubutu-20081125-004",
+      "name": "第4回 動物用医薬品専門調査会",
+      "date": "2008/11/25",
+      "council_id": "fsc-doubutu",
+      "officialUrl": "https://www.fsc.go.jp/fsciis/meetingMaterial/show/kai20081125bv1",
+      "material_count": 1
+    },
+    {
+      "id": "fsc-doubutu-20081027-099",
+      "name": "第99回動物用医薬品専門調査会",
+      "date": "2008/10/27",
+      "council_id": "fsc-doubutu",
+      "officialUrl": "https://www.fsc.go.jp/fsciis/meetingMaterial/show/kai20081028do1",
+      "material_count": 1
+    },
+    {
+      "id": "fsc-doubutu-20080930-098",
+      "name": "第98回動物用医薬品専門調査会(非公開)",
+      "date": "2008/09/30",
+      "council_id": "fsc-doubutu",
+      "officialUrl": "https://www.fsc.go.jp/fsciis/meetingMaterial/show/kai20080930do1",
+      "material_count": 1
+    },
+    {
+      "id": "fsc-doubutu-20080522-094",
+      "name": "第94回動物用医薬品専門調査会(非公開)",
+      "date": "2008/05/22",
+      "council_id": "fsc-doubutu",
+      "officialUrl": "https://www.fsc.go.jp/fsciis/meetingMaterial/show/kai20080523do1",
+      "material_count": 1
+    },
+    {
+      "id": "fsc-idensi-20080418-061",
+      "name": "第61回遺伝子組換え食品等専門調査会(非公開)",
+      "date": "2008/04/18",
+      "council_id": "fsc-idensi",
+      "officialUrl": "https://www.fsc.go.jp/fsciis/meetingMaterial/show/kai20080418id1",
+      "material_count": 1
+    },
+    {
+      "id": "fsc-doubutu-20080324-090",
+      "name": "第90回動物用医薬品専門調査会",
+      "date": "2008/03/24",
+      "council_id": "fsc-doubutu",
+      "officialUrl": "https://www.fsc.go.jp/fsciis/meetingMaterial/show/kai20080325do1",
+      "material_count": 1
+    },
+    {
+      "id": "fsc-doubutu-20080228-089",
+      "name": "第89回動物用医薬品専門調査会",
+      "date": "2008/02/28",
+      "council_id": "fsc-doubutu",
+      "officialUrl": "https://www.fsc.go.jp/fsciis/meetingMaterial/show/kai20080229do1",
+      "material_count": 1
+    },
+    {
+      "id": "fsc-idensi-20080121-056",
+      "name": "第56回遺伝子組換え食品等専門調査会",
+      "date": "2008/01/21",
+      "council_id": "fsc-idensi",
+      "officialUrl": "https://www.fsc.go.jp/fsciis/meetingMaterial/show/kai20080121id1",
+      "material_count": 1
+    },
+    {
+      "id": "fsc-idensi-20071105-055",
+      "name": "第55回遺伝子組換え食品等専門調査会",
+      "date": "2007/11/05",
+      "council_id": "fsc-idensi",
+      "officialUrl": "https://www.fsc.go.jp/fsciis/meetingMaterial/show/kai20071105id1",
+      "material_count": 1
+    },
+    {
+      "id": "fsc-doubutu-20071022-082",
+      "name": "第82回動物用医薬品専門調査会",
+      "date": "2007/10/22",
+      "council_id": "fsc-doubutu",
+      "officialUrl": "https://www.fsc.go.jp/fsciis/meetingMaterial/show/kai20071023do1",
+      "material_count": 1
+    },
+    {
+      "id": "fsc-idensi-20070911-052",
+      "name": "第52回遺伝子組換え食品等専門調査会",
+      "date": "2007/09/11",
+      "council_id": "fsc-idensi",
+      "officialUrl": "https://www.fsc.go.jp/fsciis/meetingMaterial/show/kai20070911id1",
+      "material_count": 1
+    },
+    {
+      "id": "fsc-idensi-20070827-079",
+      "name": "第79回遺伝子組換え食品等専門調査会(非公開)",
+      "date": "2007/08/27",
+      "council_id": "fsc-idensi",
+      "officialUrl": "https://www.fsc.go.jp/fsciis/meetingMaterial/show/kai20100208id1",
+      "material_count": 1
+    },
+    {
+      "id": "fsc-idensi-20070803-051",
+      "name": "第51回遺伝子組換え食品等専門調査会",
+      "date": "2007/08/03",
+      "council_id": "fsc-idensi",
+      "officialUrl": "https://www.fsc.go.jp/fsciis/meetingMaterial/show/kai20070803id1",
+      "material_count": 1
+    },
+    {
+      "id": "fsc-doubutu-20070719-078",
+      "name": "第78回動物用医薬品専門調査会",
+      "date": "2007/07/19",
+      "council_id": "fsc-doubutu",
+      "officialUrl": "https://www.fsc.go.jp/fsciis/meetingMaterial/show/kai20070720do1",
+      "material_count": 1
+    },
+    {
+      "id": "fsc-doubutu-20070621-076",
+      "name": "第76回動物用医薬品専門調査会",
+      "date": "2007/06/21",
+      "council_id": "fsc-doubutu",
+      "officialUrl": "https://www.fsc.go.jp/fsciis/meetingMaterial/show/kai20070622do1",
+      "material_count": 1
+    },
+    {
+      "id": "fsc-doubutu-20070530-075",
+      "name": "第75回動物用医薬品専門調査会",
+      "date": "2007/05/30",
+      "council_id": "fsc-doubutu",
+      "officialUrl": "https://www.fsc.go.jp/fsciis/meetingMaterial/show/kai20070530do1",
+      "material_count": 5
+    },
+    {
+      "id": "fsc-doubutu-20070323-022",
+      "name": "第22回 動物用医薬品専門調査会",
+      "date": "2007/03/23",
+      "council_id": "fsc-doubutu",
+      "officialUrl": "https://www.fsc.go.jp/fsciis/meetingMaterial/show/kai20070323bi1",
+      "material_count": 1
+    },
+    {
+      "id": "fsc-doubutu-20060413-002",
+      "name": "第2回 動物用医薬品専門調査会",
+      "date": "2006/04/13",
+      "council_id": "fsc-doubutu",
+      "officialUrl": "https://www.fsc.go.jp/fsciis/meetingMaterial/show/kai20071106bv1",
+      "material_count": 1
+    },
+    {
+      "id": "fsc-sinkaihatu-20040830-015",
+      "name": "第15回新開発食品専門調査会",
+      "date": "2004/08/30",
+      "council_id": "fsc-sinkaihatu",
+      "officialUrl": "https://www.fsc.go.jp/fsciis/meetingMaterial/show/kai20040830sh1",
+      "material_count": 1
+    },
+    {
+      "id": "fsc-hisiryou-20040329-007",
+      "name": "第7回 肥料・飼料等専門調査会",
+      "date": "2004/03/29",
+      "council_id": "fsc-hisiryou",
+      "officialUrl": "https://www.fsc.go.jp/fsciis/meetingMaterial/show/kai20040329ff1",
+      "material_count": 1
+    },
+    {
+      "id": "fsc-hisiryou-20031208-003",
+      "name": "第3回 肥料・飼料等専門調査会",
+      "date": "2003/12/08",
+      "council_id": "fsc-hisiryou",
+      "officialUrl": "https://www.fsc.go.jp/fsciis/meetingMaterial/show/kai20031212ff1",
+      "material_count": 1
+    },
+    {
+      "id": "fsc-hisiryou-20031114-002",
+      "name": "第2回 肥料・飼料等専門調査会",
+      "date": "2003/11/14",
+      "council_id": "fsc-hisiryou",
+      "officialUrl": "https://www.fsc.go.jp/fsciis/meetingMaterial/show/kai20031114ff1",
+      "material_count": 1
+    },
+    {
+      "id": "fsc-sinkaihatu-20031028-018",
+      "name": "第18回新開発食品専門調査会",
+      "date": "2003/10/28",
+      "council_id": "fsc-sinkaihatu",
+      "officialUrl": "https://www.fsc.go.jp/fsciis/meetingMaterial/show/kai20041213sh1",
+      "material_count": 2
+    },
+    {
+      "id": "fsc-hisiryou-20030805-001",
+      "name": "第1回 肥料・飼料等専門調査会",
+      "date": "2003/08/05",
+      "council_id": "fsc-hisiryou",
+      "officialUrl": "https://www.fsc.go.jp/fsciis/meetingMaterial/show/kai20031014ff1",
+      "material_count": 1
+    },
+    {
+      "id": "fsc-sinkaihatu-20030701-006",
+      "name": "第6回新開発食品専門調査会",
+      "date": "2003/07/01",
+      "council_id": "fsc-sinkaihatu",
+      "officialUrl": "https://www.fsc.go.jp/fsciis/meetingMaterial/show/kai20040218sh1",
+      "material_count": 1
+    }
+  ],
+  "step2_updated_meetings": [
+    {
+      "id": "mhlw-824-20261014-s27",
+      "name": "厚生科学審議会 (新型インフルエンザ対策に関する小委員会)",
+      "date": "2026/10/14",
+      "council_id": "mhlw-824",
+      "old_material_count": 49,
+      "new_material_count": 54,
+      "added_materials": 5
+    },
+    {
+      "id": "fsc-honkaigi-20261006-1038",
+      "name": "第1038回 食品安全委員会",
+      "date": "2026/10/06",
+      "council_id": "fsc-honkaigi",
+      "old_material_count": 0,
+      "new_material_count": 1,
+      "added_materials": 1
+    },
+    {
+      "id": "mhlw-788-20260904-111",
+      "name": "第111回 年金数理部会",
+      "date": "2026/09/04",
+      "council_id": "mhlw-788",
+      "old_material_count": 0,
+      "new_material_count": 6,
+      "added_materials": 6
+    },
+    {
+      "id": "cas-kokumin_kaigi-20260805-s01",
+      "name": "社会保障国民会議",
+      "date": "2026/08/05",
+      "council_id": "cas-kokumin_kaigi",
+      "old_material_count": 16,
+      "new_material_count": 20,
+      "added_materials": 4
+    },
+    {
+      "id": "cao-231-20260723-120",
+      "name": "第120回 公文書管理委員会",
+      "date": "2026/07/23",
+      "council_id": "cao-231",
+      "old_material_count": 116,
+      "new_material_count": 117,
+      "added_materials": 1
+    },
+    {
+      "id": "aca-bunkazai_bunkakai-20260522-282",
+      "name": "令和8年 第282回 文化審議会 文化財分科会",
+      "date": "2026/05/22",
+      "council_id": "aca-bunkazai_bunkakai",
+      "old_material_count": 2,
+      "new_material_count": 4,
+      "added_materials": 2
+    },
+    {
+      "id": "cas-influenza-20260325-s01",
+      "name": "鳥インフルエンザ関係閣僚会議 関係府省庁連絡会議[持ち回り](令和8年3月25日)",
+      "date": "2026/03/25",
+      "council_id": "cas-influenza",
+      "old_material_count": 1,
+      "new_material_count": 27,
+      "added_materials": 26
+    },
+    {
+      "id": "jsa-618-20250728-002",
+      "name": "第2回 運動・スポーツ中の安全確保対策に関する検討会",
+      "date": "2025/07/28",
+      "council_id": "jsa-618",
+      "old_material_count": 1,
+      "new_material_count": 5,
+      "added_materials": 4
+    },
+    {
+      "id": "aca-bunkazai_bunkakai-20250221-268",
+      "name": "令和7年 第268回 文化審議会 文化財分科会",
+      "date": "2025/02/21",
+      "council_id": "aca-bunkazai_bunkakai",
+      "old_material_count": 1,
+      "new_material_count": 12,
+      "added_materials": 11
+    },
+    {
+      "id": "mext-chukyo-20250221-141",
+      "name": "第141回 中央教育審議会",
+      "date": "2025/02/21",
+      "council_id": "mext-chukyo",
+      "old_material_count": 0,
+      "new_material_count": 1,
+      "added_materials": 1
+    },
+    {
+      "id": "mext-chuo_kyoiku-20250214-141",
+      "name": "第141回 中央教育審議会 初等中等教育分科会",
+      "date": "2025/02/14",
+      "council_id": "mext-chuo_kyoiku",
+      "old_material_count": 0,
+      "new_material_count": 1,
+      "added_materials": 1
+    },
+    {
+      "id": "cas-shingijutsu_kouka_hyouka-20211207-001",
+      "name": "新技術等効果評価委員会 第1回",
+      "date": "2021/12/07",
+      "council_id": "cas-shingijutsu_kouka_hyouka",
+      "old_material_count": 4,
+      "new_material_count": 38,
+      "added_materials": 34
+    },
+    {
+      "id": "cao-pfi_jigyou_suishin-20201019-005",
+      "name": "第5回 PFI推進委員会事業推進部会",
+      "date": "2020/10/19",
+      "council_id": "cao-pfi_jigyou_suishin",
+      "old_material_count": 11,
+      "new_material_count": 21,
+      "added_materials": 10
+    },
+    {
+      "id": "fsc-doubutu-20200518-234",
+      "name": "第234回 動物用医薬品専門調査会",
+      "date": "2020/05/18",
+      "council_id": "fsc-doubutu",
+      "old_material_count": 3,
+      "new_material_count": 5,
+      "added_materials": 2
+    },
+    {
+      "id": "fsc-doubutu-20200518-236",
+      "name": "第236回 動物用医薬品専門調査会",
+      "date": "2020/05/18",
+      "council_id": "fsc-doubutu",
+      "old_material_count": 3,
+      "new_material_count": 5,
+      "added_materials": 2
+    },
+    {
+      "id": "mlit-shakai_shingikai-20190206-010",
+      "name": "第10回 社会資本整備審議会",
+      "date": "2019/02/06",
+      "council_id": "mlit-shakai_shingikai",
+      "old_material_count": 13,
+      "new_material_count": 19,
+      "added_materials": 6
+    },
+    {
+      "id": "cao-pfi_keikaku-20180417-013",
+      "name": "第13回 PFI推進委員会計画部会",
+      "date": "2018/04/17",
+      "council_id": "cao-pfi_keikaku",
+      "old_material_count": 12,
+      "new_material_count": 22,
+      "added_materials": 10
+    },
+    {
+      "id": "aca-bunkazai_bunkakai-20160422-169",
+      "name": "平成28年 第169回 文化審議会 文化財分科会",
+      "date": "2016/04/22",
+      "council_id": "aca-bunkazai_bunkakai",
+      "old_material_count": 1,
+      "new_material_count": 11,
+      "added_materials": 10
+    },
+    {
+      "id": "aca-bunkazai_bunkakai-20151120-164",
+      "name": "平成27年 第164回 文化審議会 文化財分科会",
+      "date": "2015/11/20",
+      "council_id": "aca-bunkazai_bunkakai",
+      "old_material_count": 1,
+      "new_material_count": 11,
+      "added_materials": 10
+    },
+    {
+      "id": "aca-bunkazai_bunkakai-20131213-143",
+      "name": "平成25年 第143回 文化審議会 文化財分科会",
+      "date": "2013/12/13",
+      "council_id": "aca-bunkazai_bunkakai",
+      "old_material_count": 1,
+      "new_material_count": 12,
+      "added_materials": 11
+    },
+    {
+      "id": "moe-chuo_kankyo_shizen-20111026-014",
+      "name": "第14回 中央環境審議会 自然環境部会",
+      "date": "2011/10/26",
+      "council_id": "moe-chuo_kankyo_shizen",
+      "old_material_count": 1,
+      "new_material_count": 14,
+      "added_materials": 13
+    },
+    {
+      "id": "aca-bunkazai_bunkakai-20110916-118",
+      "name": "平成23年 第118回 文化審議会 文化財分科会",
+      "date": "2011/09/16",
+      "council_id": "aca-bunkazai_bunkakai",
+      "old_material_count": 1,
+      "new_material_count": 12,
+      "added_materials": 11
+    },
+    {
+      "id": "aca-bunka_shingikai_sokai-20100607-051",
+      "name": "第51回 文化審議会 総会",
+      "date": "2010/06/07",
+      "council_id": "aca-bunka_shingikai_sokai",
+      "old_material_count": 1,
+      "new_material_count": 2,
+      "added_materials": 1
+    },
+    {
+      "id": "aca-bunkazai_bunkakai-20100416-103",
+      "name": "平成22年 第103回 文化審議会 文化財分科会",
+      "date": "2010/04/16",
+      "council_id": "aca-bunkazai_bunkakai",
+      "old_material_count": 1,
+      "new_material_count": 12,
+      "added_materials": 11
+    },
+    {
+      "id": "fsc-idensi-20091019-075",
+      "name": "第75回遺伝子組換え食品等専門調査会(非公開)",
+      "date": "2009/10/19",
+      "council_id": "fsc-idensi",
+      "old_material_count": 1,
+      "new_material_count": 2,
+      "added_materials": 1
+    },
+    {
+      "id": "fsc-doubutu-20090619-112",
+      "name": "第112回動物用医薬品専門調査会(非公開)",
+      "date": "2009/06/19",
+      "council_id": "fsc-doubutu",
+      "old_material_count": 1,
+      "new_material_count": 2,
+      "added_materials": 1
+    },
+    {
+      "id": "fsc-doubutu-20090515-110",
+      "name": "第110回動物用医薬品専門調査会(非公開)",
+      "date": "2009/05/15",
+      "council_id": "fsc-doubutu",
+      "old_material_count": 2,
+      "new_material_count": 3,
+      "added_materials": 1
+    },
+    {
+      "id": "fsc-idensi-20081203-066",
+      "name": "第66回遺伝子組換え食品等専門調査会",
+      "date": "2008/12/03",
+      "council_id": "fsc-idensi",
+      "old_material_count": 1,
+      "new_material_count": 2,
+      "added_materials": 1
+    },
+    {
+      "id": "fsc-doubutu-20081201-103",
+      "name": "第103回動物用医薬品専門調査会(非公開)",
+      "date": "2008/12/01",
+      "council_id": "fsc-doubutu",
+      "old_material_count": 1,
+      "new_material_count": 2,
+      "added_materials": 1
+    },
+    {
+      "id": "fsc-doubutu-20080423-093",
+      "name": "第93回動物用医薬品専門調査会(非公開)",
+      "date": "2008/04/23",
+      "council_id": "fsc-doubutu",
+      "old_material_count": 1,
+      "new_material_count": 2,
+      "added_materials": 1
+    },
+    {
+      "id": "fsc-idensi-20080317-060",
+      "name": "第60回遺伝子組換え食品等専門調査会(非公開)",
+      "date": "2008/03/17",
+      "council_id": "fsc-idensi",
+      "old_material_count": 1,
+      "new_material_count": 2,
+      "added_materials": 1
+    },
+    {
+      "id": "fsc-idensi-20080218-057",
+      "name": "第57回遺伝子組換え食品等専門調査会",
+      "date": "2008/02/18",
+      "council_id": "fsc-idensi",
+      "old_material_count": 1,
+      "new_material_count": 2,
+      "added_materials": 1
+    },
+    {
+      "id": "fsc-doubutu-20071218-086",
+      "name": "第86回動物用医薬品専門調査会(非公開)",
+      "date": "2007/12/18",
+      "council_id": "fsc-doubutu",
+      "old_material_count": 1,
+      "new_material_count": 2,
+      "added_materials": 1
+    },
+    {
+      "id": "fsc-doubutu-20071127-085",
+      "name": "第85回動物用医薬品専門調査会",
+      "date": "2007/11/27",
+      "council_id": "fsc-doubutu",
+      "old_material_count": 1,
+      "new_material_count": 2,
+      "added_materials": 1
+    },
+    {
+      "id": "fsc-idensi-20071009-054",
+      "name": "第54回遺伝子組換え食品等専門調査会",
+      "date": "2007/10/09",
+      "council_id": "fsc-idensi",
+      "old_material_count": 1,
+      "new_material_count": 2,
+      "added_materials": 1
+    },
+    {
+      "id": "fsc-doubutu-20070427-074",
+      "name": "第74回動物用医薬品専門調査会",
+      "date": "2007/04/27",
+      "council_id": "fsc-doubutu",
+      "old_material_count": 1,
+      "new_material_count": 5,
+      "added_materials": 4
+    },
+    {
+      "id": "fsc-doubutu-20070313-071",
+      "name": "第71回動物用医薬品専門調査会 (非公開)",
+      "date": "2007/03/13",
+      "council_id": "fsc-doubutu",
+      "old_material_count": 1,
+      "new_material_count": 2,
+      "added_materials": 1
+    },
+    {
+      "id": "fsc-doubutu-20070223-069",
+      "name": "第69回動物用医薬品専門調査会",
+      "date": "2007/02/23",
+      "council_id": "fsc-doubutu",
+      "old_material_count": 1,
+      "new_material_count": 2,
+      "added_materials": 1
+    },
+    {
+      "id": "fsc-idensi-20031002-166",
+      "name": "第166回 遺伝子組換え食品等専門調査会(非公開)",
+      "date": "2003/10/02",
+      "council_id": "fsc-idensi",
+      "old_material_count": 4,
+      "new_material_count": 5,
+      "added_materials": 1
+    },
+    {
+      "id": "fsc-sinkaihatu-20030530-009",
+      "name": "第9回新開発食品専門調査会",
+      "date": "2003/05/30",
+      "council_id": "fsc-sinkaihatu",
+      "old_material_count": 1,
+      "new_material_count": 3,
+      "added_materials": 2
+    },
+    {
+      "id": "fsc-sinkaihatu-20030530-011",
+      "name": "第11回新開発食品専門調査会",
+      "date": "2003/05/30",
+      "council_id": "fsc-sinkaihatu",
+      "old_material_count": 1,
+      "new_material_count": 3,
+      "added_materials": 2
+    },
+    {
+      "id": "aca-bunka_shingikai_sokai-20020716-025",
+      "name": "第25回 文化審議会 総会",
+      "date": "2002/07/16",
+      "council_id": "aca-bunka_shingikai_sokai",
+      "old_material_count": 1,
+      "new_material_count": 14,
+      "added_materials": 13
+    },
+    {
+      "id": "aca-bunka_shingikai_sokai-20011017-013",
+      "name": "第13回 文化審議会 総会",
+      "date": "2001/10/17",
+      "council_id": "aca-bunka_shingikai_sokai",
+      "old_material_count": 1,
+      "new_material_count": 19,
+      "added_materials": 18
+    },
+    {
+      "id": "cao-pfi_suishin-19991116-002",
+      "name": "第2回 民間資金等活用事業推進委員会",
+      "date": "1999/11/16",
+      "council_id": "cao-pfi_suishin",
+      "old_material_count": 4,
+      "new_material_count": 14,
+      "added_materials": 10
+    }
+  ]
+}
