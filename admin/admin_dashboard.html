@@ -659,6 +659,28 @@
         </div>
       </section>
 
+      <!-- 3.7. PMM LOCAL MATERIALS DASHBOARD (Drop 71) -->
+      <section class="admin-card card-glass" style="margin-top: 1.5rem; border-color: rgba(59, 130, 246, 0.4); background: rgba(59, 130, 246, 0.03);">
+        <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 1rem;">
+          <div>
+            <h3 style="color: #60a5fa;">📁 配付資料・会議体資料 ローカル保存状況 (PMM)</h3>
+            <p class="text-sm" style="margin-top: 0.3rem; color: var(--text-muted);">
+              <code>local_docs/</code> 配下のローカル保存資産統計（省庁別直列・1.0s間隔ダウンロード）
+            </p>
+          </div>
+          <button class="btn-bulk" id="btnStartPmmDownload" onclick="if(window.startPmmDownload){ window.startPmmDownload(); } else { alert('PMM not ready'); }" style="background: rgba(59,130,246,0.15); color: #60a5fa; border: 1px solid rgba(59,130,246,0.5); padding: 0.6rem 1.25rem; font-size: 0.9rem; font-weight: 700; border-radius: var(--radius-md); cursor: pointer;">
+            ⚡ 未取得資料の一括ローカル保存を開始
+          </button>
+        </div>
+
+        <div class="summary-grid" style="margin-top: 1.25rem;" id="pmmStatusSummary">
+          <div class="summary-stat"><span class="stat-label">🟢 取得済ファイル数</span><span class="stat-value" style="color:#10b981;" id="statPmmDownloaded">—</span></div>
+          <div class="summary-stat"><span class="stat-label">🟡 未取得ファイル数</span><span class="stat-value" style="color:#f59e0b;" id="statPmmPending">—</span></div>
+          <div class="summary-stat"><span class="stat-label">🔴 失敗数</span><span class="stat-value" style="color:#ef4444;" id="statPmmFailed">—</span></div>
+          <div class="summary-stat"><span class="stat-label">💾 ローカル総容量</span><span class="stat-value" style="color:#38bdf8;" id="statPmmSize">—</span></div>
+        </div>
+      </section>
+
       <!-- 4. DATA STATUS INSPECTOR -->
       <section class="admin-card card-glass">
         <h3>📄 最新クロール・データステータス (`docs/data.json`)</h3>

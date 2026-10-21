@@ -3182,7 +3182,7 @@ def safe_emit_log(msg):
             pass
 
 
-def run_meeting_crawler(progress_callback=None, stop_event=None, workers=4, recent_years=2, recheck_recent=1, full_check=False, include_closed=False, resume=False, ministry=None):
+def run_meeting_crawler(progress_callback=None, stop_event=None, workers=4, recent_years=2, recheck_recent=1, full_check=False, include_closed=False, resume=False, ministry=None, skip_download=False):
     """
     審議会・会議体情報取得Engine（Drop 17 高速化・直近アクティブ重点化対応）
     - CR-23: 確定済み過去回の再検査ゼロ化 & 最新1件更新確認（recheck_recent, full_check）
@@ -3439,6 +3439,18 @@ def run_meeting_crawler(progress_callback=None, stop_event=None, workers=4, rece
         else:
             emit(f"[WARN] data.json 更新失敗")
 
+        # Drop 71: 新規・更新配付資料のローカル自動保存 (PMM 連動)
+        if not stats.get("stopped") and not skip_download and stats.get("new_meetings", 0) > 0:
+            new_m_ids = [m["id"] for m in data.get("meetings", []) if m.get("isNewlyDiscovered")]
+            if new_m_ids:
+                try:
+                    emit(f"[PMM] 新規・更新された開催回（{len(new_m_ids)}件）の配付資料をローカル (local_docs/) へ自動保存中...")
+                    from admin.pmm.downloader import download_materials
+                    dl_stats = download_materials(meeting_ids=new_m_ids)
+                    emit(f"[PMM] ローカル保存完了: {dl_stats.get('downloaded', 0)} 件取得, {dl_stats.get('skipped', 0)} 件既存, {dl_stats.get('failed', 0)} 件失敗")
+                except Exception as e_pmm:
+                    emit(f"[PMM WARN] ローカル自動保存中に軽微な警告が発生しました: {e_pmm}")
+
         # 新規追加された会議リストを抽出してイベントに添付
         newly_added = [m for m in data.get("meetings", []) if m.get("isNewlyDiscovered")]
         stats["newly_added_list"] = newly_added[:20]
@@ -3622,7 +3634,7 @@ def match_council_from_news_item(item, councils_by_url, councils_by_min):
     return None, None
 
 
-def run_ministry_news_discovery(progress_callback=None, stop_event=None, ministry=None):
+def run_ministry_news_discovery(progress_callback=None, stop_event=None, ministry=None, skip_download=False):
     """
     各府省庁トップページおよび新着情報一覧から最近開催された会議を検知し、
     開催回・配付資料を取得する（Drop 68: --from-ministry-news オプション）
@@ -3803,6 +3815,18 @@ def run_ministry_news_discovery(progress_callback=None, stop_event=None, ministr
         data["lastCrawlTime"] = now_str
         save_success = save_data_json_with_backup(data)
 
+        # Drop 71: 新規・更新配付資料のローカル自動保存 (PMM 連動)
+        if not skip_download and new_meetings_total > 0:
+            try:
+                emit(f"[PMM] 新規・更新された開催回（{new_meetings_total}件）の配付資料をローカル (local_docs/) へ自動保存中...")
+                from admin.pmm.downloader import download_materials
+                new_m_ids = [m["id"] for m in data.get("meetings", []) if m.get("isNewlyDiscovered")]
+                if new_m_ids:
+                    dl_stats = download_materials(meeting_ids=new_m_ids)
+                    emit(f"[PMM] ローカル保存完了: {dl_stats.get('downloaded', 0)} 件取得, {dl_stats.get('skipped', 0)} 件既存, {dl_stats.get('failed', 0)} 件失敗")
+            except Exception as e_pmm:
+                emit(f"[PMM WARN] ローカル自動保存中に軽微な警告が発生しました: {e_pmm}")
+
         emit("\n" + "=" * 65)
         emit(f" [Drop 68 検知完了] 新規追加開催回: {new_meetings_total} 件")
         emit(f" SQLite マスターDB および 2系統JSON 保存: {'成功' if save_success else '失敗'}")
@@ -3830,6 +3854,7 @@ def main():
     parser.add_argument("--resume", action="store_true", help="中断されたクロールを続きから再開する")
     parser.add_argument("--ministry", type=str, default=None, help="巡回対象の省庁コード（例: FSA, MOF, METI）")
     parser.add_argument("--from-ministry-news", "--from-news", dest="from_ministry_news", action="store_true", help="各府省庁トップページおよび新着情報一覧から最近開催された会議を検知し、開催回情報を取得する [Drop 68]")
+    parser.add_argument("--skip-download", action="store_true", help="クロール完了時の配付資料ローカル自動保存 (PMM) をスキップする [Drop 71]")
     args = parser.parse_args()
 
     cli_stop_event = threading.Event()
@@ -3838,7 +3863,8 @@ def main():
         if args.from_ministry_news:
             run_ministry_news_discovery(
                 stop_event=cli_stop_event,
-                ministry=args.ministry
+                ministry=args.ministry,
+                skip_download=args.skip_download
             )
         else:
             run_meeting_crawler(
@@ -3849,7 +3875,8 @@ def main():
                 full_check=args.full_check,
                 include_closed=args.include_closed,
                 resume=args.resume,
-                ministry=args.ministry
+                ministry=args.ministry,
+                skip_download=args.skip_download
             )
     except KeyboardInterrupt:
         print("\n\n[INFO] キーボード割り込み (Ctrl+C) を検知しました。停止シグナルを発行します...")

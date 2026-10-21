@@ -138,6 +138,60 @@
     }
   };
 
+  // ─── 0.5. PMM Local Materials Manager (Drop 71) ───
+  window.loadPmmStatus = async function() {
+    try {
+      const res = await fetch('/api/materials/status');
+      if (!res.ok) return;
+      const data = await res.json();
+      if (data.status !== 'success' || !data.summary) return;
+      const s = data.summary;
+      const totalDownloaded = s.downloadedCount ?? ((s.downloaded_count || 0) + (s.council_downloaded_count || 0));
+      const totalPending = s.pendingCount ?? ((s.pending_count || 0) + (s.council_pending_count || 0));
+      const totalFailed = s.failedCount ?? ((s.failed_count || 0) + (s.council_failed_count || 0));
+      const totalSizeMb = (s.totalSizeBytes ?? ((s.total_size_bytes || 0) + (s.council_total_size_bytes || 0))) / (1024 * 1024);
+      
+      const elDownloaded = document.getElementById('statPmmDownloaded');
+      const elPending = document.getElementById('statPmmPending');
+      const elFailed = document.getElementById('statPmmFailed');
+      const elSize = document.getElementById('statPmmSize');
+      
+      if (elDownloaded) elDownloaded.textContent = `${totalDownloaded.toLocaleString()} 件`;
+      if (elPending) elPending.textContent = `${totalPending.toLocaleString()} 件`;
+      if (elFailed) elFailed.textContent = `${totalFailed.toLocaleString()} 件`;
+      if (elSize) elSize.textContent = totalSizeMb >= 1024 ? `${(totalSizeMb / 1024).toFixed(2)} GB` : `${totalSizeMb.toFixed(1)} MB`;
+    } catch (e) {
+      console.warn('Failed to load PMM status:', e);
+    }
+  };
+
+  window.startPmmDownload = async function() {
+    const btn = document.getElementById('btnStartPmmDownload');
+    if (!confirm('【PMM】未取得の配付資料・会議体資料をローカル（local_docs/）へダウンロードしますか？\n\n※ 省庁ごとに1.0秒間隔で順次安全に取得されます。')) {
+      return;
+    }
+    if (btn) {
+      btn.disabled = true;
+      btn.textContent = '⏳ ローカル保存処理中…';
+    }
+    try {
+      const res = await fetch('/api/materials/download', { method: 'POST' });
+      const data = await res.json();
+      if (!res.ok || data.status === 'error') {
+        throw new Error(data.message || `HTTP ${res.status}`);
+      }
+      alert(`⚡ ローカル保存タスクを開始しました。\n\n${data.message || '完了までバックグラウンドで実行されます。'}`);
+      if (window.loadPmmStatus) window.loadPmmStatus();
+    } catch (e) {
+      alert(`❌ ローカル保存開始失敗: ${e.message || e}`);
+    } finally {
+      if (btn) {
+        btn.disabled = false;
+        btn.textContent = '⚡ 未取得資料の一括ローカル保存を開始';
+      }
+    }
+  };
+
   // ─── 1. Council Discovery Engine (Global scope definition) ───
   let isRunningDiscovery = false;
     window.startDiscovery = async function() {
@@ -493,14 +547,19 @@
 
     let data = { councils: [], meetings: [], ministries: {}, categories: {}, docTypes: {}, initialAlertKeywords: [], lastCrawlTime: '' };
     try {
-      let dataRes = await fetch(`../docs/data.json?t=${new Date().getTime()}`).catch(() => null);
+      // 1. ローカル管理サーバー（SQLiteマスター DB + local_path 等完全データ）からの優先ロード
+      let dataRes = await fetch(`/api/admin-data?t=${new Date().getTime()}`).catch(() => null);
       if (!dataRes || !dataRes.ok) {
-        dataRes = await fetch(`/docs/data.json?t=${new Date().getTime()}`).catch(() => null);
+        // 2. フォールバック: 静的 data.json の読み込み
+        dataRes = await fetch(`../docs/data.json?t=${new Date().getTime()}`).catch(() => null);
+        if (!dataRes || !dataRes.ok) {
+          dataRes = await fetch(`/docs/data.json?t=${new Date().getTime()}`).catch(() => null);
+        }
       }
       if (dataRes && dataRes.ok) {
         data = await dataRes.json();
       } else {
-        console.error('Failed to load data.json');
+        console.error('Failed to load admin-data / data.json');
       }
 
       const rejRes = await fetch(`/api/rejected-councils?t=${new Date().getTime()}`).catch(() => null);
@@ -509,6 +568,9 @@
         rejectedCouncils = Array.isArray(rejJson) ? rejJson : [];
         window.rejectedCouncils = rejectedCouncils;
       }
+
+      // PMM ステータス取得
+      if (window.loadPmmStatus) window.loadPmmStatus();
     } catch(e) {
       console.error('Data loading error:', e);
     }
@@ -830,11 +892,17 @@
             const matType = mat.type || (mat.url && mat.url.toLowerCase().endsWith('.pdf') ? 'PDF' : (mat.url ? 'HTML' : 'PDF'));
             const typeClass = matType === 'PDF' ? 'mat-type-pdf' : matType === 'HTML' ? 'mat-type-html' : 'mat-type-other';
 
+            let localLink = '';
+            if (mat.local_path) {
+              const viewUrl = `/api/materials/view?path=${encodeURIComponent(mat.local_path)}`;
+              localLink = `<a href="${escAttr(viewUrl)}" target="_blank" rel="noopener" style="margin-left: 6px; color: #10b981; font-weight: 600; text-decoration: none;" title="ローカル保存ファイルを開く">📁 開く</a>`;
+            }
+
             return `<tr>
               <td style="width: 5%;">${mi + 1}</td>
               <td style="width: 45%;">${escHtml(mat.name)}</td>
               <td style="width: 12%;"><span class="mat-type-badge ${typeClass}">${matType}</span></td>
-              <td style="width: 28%;"><a href="${escAttr(sanitizeUrl(mat.url))}" target="_blank" rel="noopener">${truncateUrl(mat.url, 45)}</a></td>
+              <td style="width: 28%;"><a href="${escAttr(sanitizeUrl(mat.url))}" target="_blank" rel="noopener">${truncateUrl(mat.url, 40)}</a>${localLink}</td>
               <td style="width: 10%;">${msBadge}</td>
             </tr>`;
           }).join('');
@@ -1087,15 +1155,23 @@
         const cMaterials = c.materials || [];
         let cMatRowsHtml = '';
         if (cMaterials.length > 0) {
-          cMatRowsHtml = cMaterials.map((mat, mi) => `
+          cMatRowsHtml = cMaterials.map((mat, mi) => {
+            let localBtn = '';
+            if (mat.local_path) {
+              const viewUrl = `/api/materials/view?path=${encodeURIComponent(mat.local_path)}`;
+              localBtn = `<a href="${escAttr(viewUrl)}" target="_blank" rel="noopener" class="btn-open-url" style="padding:0.2rem 0.4rem; font-size:0.75rem; background:rgba(16,185,129,0.2); color:#10b981; border:1px solid rgba(16,185,129,0.4); border-radius:4px; text-decoration:none;" title="ローカル保存ファイルを開く">📁 開く</a>`;
+            }
+            return `
             <div class="c-mat-row" style="display:flex; align-items:center; gap:0.4rem; margin-top:0.3rem;">
               <span style="font-size:0.8rem;">${mat.type === 'PDF' || (mat.url && mat.url.endsWith('.pdf')) ? '📄' : '🌐'}</span>
               <input type="text" value="${escAttr(mat.name)}" placeholder="資料名（例: 構成員名簿）" style="flex:2; font-size:0.78rem; padding:0.25rem 0.4rem; background:rgba(0,0,0,0.2); border:1px solid rgba(255,255,255,0.1); border-radius:4px; color:#fff;" onchange="updateCouncilMaterial('${c.id}', ${mi}, 'name', this.value)" />
               <input type="url" value="${escAttr(mat.url)}" placeholder="URL" style="flex:3; font-size:0.78rem; padding:0.25rem 0.4rem; background:rgba(0,0,0,0.2); border:1px solid rgba(255,255,255,0.1); border-radius:4px; color:#fff;" onchange="updateCouncilMaterial('${c.id}', ${mi}, 'url', this.value)" />
-              <button class="btn-open-url" style="padding:0.2rem 0.4rem; font-size:0.75rem;" onclick="openSafeUrl('${escAttr(mat.url)}')">開く ↗</button>
+              <button class="btn-open-url" style="padding:0.2rem 0.4rem; font-size:0.75rem;" onclick="openSafeUrl('${escAttr(mat.url)}')">公式 ↗</button>
+              ${localBtn}
               <button class="btn-remove-url" style="padding:0.2rem 0.4rem; font-size:0.75rem; background:rgba(239,68,68,0.2); color:#ef4444; border:1px solid rgba(239,68,68,0.3); border-radius:4px; cursor:pointer;" onclick="removeCouncilMaterial('${c.id}', ${mi})" title="削除">✕</button>
             </div>
-          `).join('');
+          `;
+          }).join('');
         }
         const cMaterialsHtml = `
           <div class="council-materials-box" style="margin-top:0.5rem; padding:0.5rem 0.7rem; background:rgba(255,255,255,0.02); border:1px solid rgba(255,255,255,0.06); border-radius:6px;">

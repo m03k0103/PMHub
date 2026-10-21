@@ -216,6 +216,12 @@ UNIT_TEST_REGISTRY = {
         "name": "クローラー&サーバーDB直結パイプライン単体テスト (test_drop63_crawler_server_db.py)",
         "description": "db_manager CRUD, クローラー/サーバー保存直結, 自動エクスポート, フェイルセーフ復元",
         "runner": lambda: _run_py_class("test_drop63_crawler_server_db", "TestDrop63CrawlerServerDB")
+    },
+    "u_pmm": {
+        "id": "U19",
+        "name": "PMM配付資料ローカル資産管理単体テスト (test_pmm.py)",
+        "description": "Windows禁止文字置換, 資料名クレンジング, フォルダ命名規約, 安全ファイル操作",
+        "runner": lambda: _run_py_class("test_pmm", "TestPmmCommonUtilities")
     }
 }
 

@@ -202,6 +202,48 @@ class TestAdminServer(unittest.TestCase):
             self.assertEqual(data.get("options", {}).get("ministry"), "MHLW")
             server.crawler_state["running"] = False
 
+    def test_get_admin_data(self):
+        """GET /api/admin-data が 200 OK で DB マスター由来の完全データを返すこと (Drop 71)"""
+        status, _, body = self._request("/api/admin-data")
+        self.assertEqual(status, 200)
+        data = json.loads(body)
+        self.assertIsInstance(data, dict)
+        self.assertIn("councils", data)
+        self.assertIn("meetings", data)
+        self.assertIn("ministries", data)
+        self.assertIn("categories", data)
+        self.assertIn("scrapingRules", data)
+
+    def test_get_materials_status(self):
+        """GET /api/materials/status が 200 OK でローカル保存統計を返すこと (Drop 71)"""
+        status, _, body = self._request("/api/materials/status")
+        self.assertEqual(status, 200)
+        data = json.loads(body)
+        self.assertEqual(data.get("status"), "success")
+        self.assertIn("summary", data)
+        summary = data["summary"]
+        self.assertTrue("downloadedCount" in summary or "downloaded_count" in summary)
+        self.assertTrue("pendingCount" in summary or "pending_count" in summary)
+
+    def test_get_materials_view_security(self):
+        """GET /api/materials/view のパストラバーサル防止セキュリティ検証 (Drop 71)"""
+        # 不正なトラバーサルパス
+        status, _, body = self._request("/api/materials/view?path=../../windows/system32/cmd.exe")
+        self.assertIn(status, [400, 403, 404])
+        # 存在しないパス
+        status_404, _, _ = self._request("/api/materials/view?path=non_existent_file.pdf")
+        self.assertEqual(status_404, 404)
+
+    def test_post_materials_download(self):
+        """POST /api/materials/download がバックグラウンド保存タスクを安全に起動すること (Drop 71)"""
+        from unittest.mock import patch
+        with patch.object(server, "download_materials", return_value={"downloaded": 0, "failed": 0}):
+            status, _, body = self._request("/api/materials/download", method="POST", data={})
+            self.assertEqual(status, 200)
+            data = json.loads(body)
+            self.assertEqual(data.get("status"), "started")
+            self.assertIn("Local materials download", data.get("message", ""))
+
 
 if __name__ == "__main__":
     unittest.main()

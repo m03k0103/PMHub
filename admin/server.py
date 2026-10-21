@@ -1,3 +1,12 @@
+from db.db_manager import (
+    load_admin_full_data_from_db,
+    get_materials_download_summary,
+    load_data_from_db,
+    update_materials_download_batch,
+    update_council_materials_download_batch,
+)
+from pmm.downloader import download_materials
+from pmm.pmm_common import DEFAULT_OUTPUT_DIR
 import http.server
 from http.server import ThreadingHTTPServer, SimpleHTTPRequestHandler
 import json
@@ -79,6 +88,7 @@ def _crawler_worker(options=None):
     full_check = bool(options.get("full_check", False))
     include_closed = bool(options.get("include_closed", False))
     resume = bool(options.get("resume", False))
+    skip_download = bool(options.get("skip_download", False))
 
     crawler_state["mode"] = mode
     crawler_state["target_ministry"] = ministry or "ALL"
@@ -106,7 +116,8 @@ def _crawler_worker(options=None):
             stats = run_ministry_news_discovery(
                 progress_callback=on_progress,
                 stop_event=crawler_stop_event,
-                ministry=ministry
+                ministry=ministry,
+                skip_download=skip_download
             )
         else:
             stats = run_meeting_crawler(
@@ -118,7 +129,8 @@ def _crawler_worker(options=None):
                 full_check=full_check,
                 include_closed=include_closed,
                 resume=resume,
-                ministry=ministry
+                ministry=ministry,
+                skip_download=skip_download
             )
         crawler_state["stats"] = stats
         crawler_state["progress"] = 100
@@ -203,6 +215,48 @@ class CustomHandler(SimpleHTTPRequestHandler):
                     self.send_raw_json(f.read())
             else:
                 self.send_json({})
+        elif path == "/api/admin-data":
+            try:
+                full_admin_data = load_admin_full_data_from_db()
+                self.send_json(full_admin_data)
+            except Exception as e:
+                self.send_json({"error": str(e)}, status=500)
+        elif path == "/api/materials/status":
+            try:
+                summary = get_materials_download_summary()
+                self.send_json({"status": "success", "summary": summary})
+            except Exception as e:
+                self.send_json({"status": "error", "error": str(e)}, status=500)
+        elif path == "/api/materials/view":
+            try:
+                params = urllib.parse.parse_qs(parsed_url.query)
+                rel_path = params.get("path", [""])[0]
+                if not rel_path:
+                    self.send_error(400, "Missing path parameter")
+                    return
+                safe_base = DEFAULT_OUTPUT_DIR.resolve()
+                target_file = (safe_base / rel_path).resolve()
+                if not str(target_file).startswith(str(safe_base)) or not target_file.is_file():
+                    self.send_error(404, "File not found or access denied")
+                    return
+                ctype = "application/pdf"
+                low_ext = target_file.suffix.lower()
+                if low_ext in (".html", ".htm"):
+                    ctype = "text/html; charset=utf-8"
+                elif low_ext == ".txt":
+                    ctype = "text/plain; charset=utf-8"
+                elif low_ext in (".xlsx", ".xls"):
+                    ctype = "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+                elif low_ext in (".docx", ".doc"):
+                    ctype = "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+                self.send_response(200)
+                self.send_header("Content-Type", ctype)
+                self.send_header("Content-Length", str(target_file.stat().st_size))
+                self.end_headers()
+                with open(target_file, "rb") as f:
+                    shutil.copyfileobj(f, self.wfile)
+            except Exception as e:
+                self.send_error(500, f"Error serving material: {e}")
         elif path == "/api/discovery-keywords":
             data = load_data_json(DATA_JSON_FILE)
             self.send_json(data.get("discoveryKeywords", {}))
@@ -332,7 +386,22 @@ class CustomHandler(SimpleHTTPRequestHandler):
         parsed_url = urllib.parse.urlparse(self.path)
         path = parsed_url.path
 
-        if path in ("/api/save-ministry-updates", "/api/save-verification-report"):
+        if path == "/api/materials/download":
+            try:
+                payload = self.read_json_body()
+                c_id = payload.get("councilId") or payload.get("council_id")
+                m_id = payload.get("meetingId") or payload.get("meeting_id")
+                c_ids = [c_id] if c_id else None
+                m_ids = [m_id] if m_id else None
+                threading.Thread(
+                    target=download_materials,
+                    kwargs={"council_ids": c_ids, "meeting_ids": m_ids},
+                    daemon=True
+                ).start()
+                self.send_json({"status": "started", "message": "Local materials download task started in background."})
+            except Exception as e:
+                self.send_json({"status": "error", "message": str(e)}, status=500)
+        elif path in ("/api/save-ministry-updates", "/api/save-verification-report"):
             try:
                 data = self.read_json_body()
                 report = {

@@ -495,7 +495,13 @@ def check_view_rendering():
 
     print("  [PASS] 公開ポータルの主要コンテナ (timelineFeed, councilsAccordionList, dateRangeSelect) を検証完了")
 
-    # 2. 管理コンソールのタブ・コンテナ検証
+    # 1.5. 公開ポータルからの管理ダッシュボード露出ゼロ検証 (Drop 71)
+    if 'admin_dashboard.html' in html_text or '管理コンソール' in html_text:
+        print("  [FAIL] 公開ポータル (docs/index.html) に管理コンソール (admin_dashboard.html) へのリンクが露出しています")
+        return False
+    print("  [PASS] 公開ポータルからの管理画面リンク露出ゼロ (ローカル専用化) を検証完了")
+
+    # 2. 管理コンソールのタブ・コンテナ・PMM要素検証
     admin_tab_ids = ['tab-crawler', 'tab-meetings', 'tab-councils', 'tab-rejected', 'tab-ministries']
     for tid in admin_tab_ids:
         if f'id="{tid}"' not in admin_text:
@@ -508,7 +514,11 @@ def check_view_rendering():
             print(f"  [FAIL] 管理ダッシュボードの描画先コンテナ ({cid}) が不足しています")
             return False
 
-    print("  [PASS] 管理ダッシュボードの全5タブおよびリスト描画先コンテナを検証完了")
+    # PMM ローカル資料ダッシュボード要素の検証 (Drop 71)
+    if 'id="pmmStatusSummary"' not in admin_text or 'id="btnStartPmmDownload"' not in admin_text:
+        print("  [FAIL] 管理ダッシュボードの PMM 要素 (pmmStatusSummary / btnStartPmmDownload) が不足しています")
+        return False
+    print("  [PASS] 管理ダッシュボードの全5タブ、描画先コンテナおよび PMM 要素を検証完了")
     return True
 
 
@@ -806,6 +816,26 @@ def check_sqlite_and_split_export_sync(data=None):
     if leaked:
         errors.append(f"公開 docs/data.json に管理専用キーが混入しています (No Leakage 違反): {leaked}")
 
+    # PMM ローカル管理属性 (local_path, download_status 等) の公開 JSON 非漏洩検証 (Drop 71)
+    pmm_leak = False
+    for m in pub_meetings:
+        for mat in m.get("materials", []):
+            if "local_path" in mat or "download_status" in mat:
+                pmm_leak = True
+                break
+        if pmm_leak:
+            break
+    if not pmm_leak:
+        for c in pub_councils:
+            for mat in c.get("materials", []):
+                if "local_path" in mat or "download_status" in mat:
+                    pmm_leak = True
+                    break
+            if pmm_leak:
+                break
+    if pmm_leak:
+        errors.append("公開 docs/data.json に PMM ローカル管理属性 (local_path / download_status) が混入しています (No Leakage 違反)")
+
     # 8. 管理 JSON の必須キー完全性
     required_admin_keys = ["scrapingRules", "scrapingRuleTemplates", "crawlerConfig", "discoveryKeywords", "manualLocks"]
     missing_admin = [k for k in required_admin_keys if k not in adm_data]
@@ -1063,8 +1093,8 @@ def detect_changed_layers_and_unit_tests():
             or "app.test.js" in f or "test_js_runtime.js" in f or "admin/admin_dashboard" in f):
             active_layers.add("L2")
 
-        # L4: 管理サーバー関連
-        if f.startswith("admin/server.py") or "test_admin_server.py" in f:
+        # L4: 管理サーバー関連 & PMM
+        if f.startswith("admin/server.py") or "test_admin_server.py" in f or "admin/pmm/" in f or "test_pmm" in f:
             active_layers.add("L4")
 
         # L5: クローラー関連
@@ -1109,12 +1139,17 @@ def detect_required_unit_tests(changed_files):
         "test_drop49_meeting_id_normalization.py": ["u_drop49"],
         "test_drop62_db_and_export.py": ["u_drop62"],
         "test_drop63_crawler_server_db.py": ["u_drop63"],
+        "test_pmm.py": ["u_pmm"],
         "run_unit_tests.py": list(UNIT_TEST_REGISTRY.keys())
     }
     for f in changed_files:
         for fname, keys in unit_file_map.items():
             if fname in f:
                 required_keys.update(keys)
+
+    # PMM 配付資料ローカル資産管理仕様コード変更 (admin/pmm/)
+    if any("admin/pmm/" in f or "test_pmm.py" in f for f in changed_files):
+        required_keys.add("u_pmm")
 
     # データベース・エクスポート基盤仕様コード変更 (admin/db/)
     if any("admin/db/" in f or "admin\\db\\" in f for f in changed_files):

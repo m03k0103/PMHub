@@ -58,12 +58,17 @@ CREATE TABLE IF NOT EXISTS materials (
     type TEXT DEFAULT 'PDF',
     is_private INTEGER DEFAULT 0,
     manual_lock INTEGER DEFAULT 0,
+    local_path TEXT,
+    download_status TEXT DEFAULT 'pending',
+    file_size INTEGER,
+    downloaded_at TEXT,
     created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
     UNIQUE(meeting_id, url)
 );
 
 CREATE INDEX IF NOT EXISTS idx_materials_meeting_id ON materials(meeting_id);
 CREATE INDEX IF NOT EXISTS idx_materials_type ON materials(type);
+CREATE INDEX IF NOT EXISTS idx_materials_status ON materials(download_status);
 
 -- 4. 会議体常設資料テーブル (council_materials: 名簿・設置根拠等)
 CREATE TABLE IF NOT EXISTS council_materials (
@@ -73,11 +78,16 @@ CREATE TABLE IF NOT EXISTS council_materials (
     url TEXT NOT NULL,
     type TEXT DEFAULT 'PDF',
     manual_lock INTEGER DEFAULT 0,
+    local_path TEXT,
+    download_status TEXT DEFAULT 'pending',
+    file_size INTEGER,
+    downloaded_at TEXT,
     created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
     UNIQUE(council_id, url)
 );
 
 CREATE INDEX IF NOT EXISTS idx_council_materials_council_id ON council_materials(council_id);
+CREATE INDEX IF NOT EXISTS idx_council_materials_status ON council_materials(download_status);
 
 -- 5. クローラー・管理用テーブル (admin_data.json 用)
 CREATE TABLE IF NOT EXISTS scraping_rules (

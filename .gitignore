@@ -30,3 +30,8 @@ admin/pmhub.db
 *.sqlite
 *.db-wal
 *.db-shm
+
+# Local Materials Storage (PMM Local Storage - Git-untracked & Non-public)
+local_docs/
+admin/data_backup/
+admin/reports/
