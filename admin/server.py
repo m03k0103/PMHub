@@ -310,8 +310,8 @@ class CustomHandler(SimpleHTTPRequestHandler):
             try:
                 d_data = load_data_json(DATA_JSON_FILE)
                 unconfirmed_count = get_unconfirmed_meetings_count(d_data)
-            except Exception:
-                pass
+            except Exception as e_unc:
+                print(f"[WARN] Failed to get unconfirmed meetings count: {e_unc}", file=sys.stderr)
             res_payload = {
                 "running": crawler_state["running"],
                 "stopping": crawler_state.get("stopping", False),

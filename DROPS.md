@@ -1,6 +1,6 @@
 # PMHub 改善・機能拡充（Drop）マスタードキュメント (DROPS.md)
 
-> 最終更新: 2026-10-21  
+> 最終更新: 2026-10-22  
 > 開発・改善単位の呼称を **「Drop（ドロップ）」** に統一しています。未着手の将来構想テーマについては、順序が前後・並行する可能性があるため **「Track（トラック）」** として管理し、着手・完了時にその時点の最新連番（Drop）を付与してアーカイブ化します。  
 > 本ドキュメントは、PMHub の継続的改善ロードマップおよび実施記録を一元管理するマスタードキュメントです。  
 > **【運用指針】**
@@ -17,7 +17,6 @@
 
 | Track ID | 構想テーマ | 主な対象・内容 | 到達成果・期待価値 | ステータス |
 |:---:|:---|:---|:---:|:---:|
-| **Track [Storage-PMM]** | **配付資料ローカル資産管理 & 管理画面二重管理解消**<br>(PMM機能完全統合) | **【Drop 71 実施中】PMM（D:\dev\PMM）の全機能を PMHub に一本化**<br>配付資料・会議体資料（00_会議体資料）の local_docs/ ローカル保存、省庁別直列（1.0s間隔）ダウンローダー（admin/pmm/）、クローラー完了時自動差分保存、SQLite DB（local_path/download_status）管理、admin_dashboard.html のローカル専用・DB直結化による二重管理解消 | **10.7万件資産統合 & クローラー即時連動ローカル保存 & 管理画面単一マスター化** | 着手中（Drop 71） |
 | **Track [Testing]** | **テストスイート高速化 & 厳格化**<br>(重複I/O解消・検証精度向上) | **【次期 Drop 候補】統合テストスイートの高速化・重複I/O解消 & 検証精度厳格化**<br>U18/U17 のテスト毎フルシード解消（軽量フィクスチャ化・本番DB副作用ゼロ化）、`load_data_json()` の無駄な2重パース解消、ケース15への `council_materials`・全管理キー漏洩防止検証追加、ケース14のアクティブ動的集計化、`admin/db/` 変更時の L4/L5 自動連動 | **実行時間 60% 短縮（約48s $\to$ 約18s）・検証精度とDB安全性の恒久向上** | 構想（次期候補） |
 | **Track [Search]**<br>(フェーズ 3) | **全文検索エンジン化**<br>(PMM資産連携 FTS5基盤) | **【フェーズ 3】PMM テキスト抽出 & FTS5 構築・全文検索 API 稼働**<br>PMM（`D:\dev\PMM\docs`）の 10.7 万件から本文テキストを並列抽出し、SQLite FTS5（trigram）仮想テーブル `fts_materials` に投入。管理サーバー `/api/search` 全文検索 API および公開ポータル連携 | **10.7万件配付資料の横断全文検索・該当ページ即時ジャンプ** | 構想（次期リリース） |
 | **Track [Architecture]** | **今後の開発構想**<br>(モジュール分割) | **リファクタリング領域E: クローラー本体（crawler.py）の責務分離 & scratch/ クリーンアップ**<br>`admin/crawler.py`（約2,900行）のパーサー・探索戦略・データ同期モジュール分割、1,231ファイル（66MB）の `scratch/` 整理および `.gitignore` 追加による作業ツリークリーン化 | **クローラー軽量化 & 開発環境整備** | 構想 |
@@ -27,6 +26,7 @@
 
 | Track ID | 施策テーマ | 実装内容と対応 Drop | 達成された成果・恒久価値 | 完了ステータス |
 |:---:|:---|:---|:---:|:---:|
+| **Track [Storage-PMM]** | **配付資料ローカル資産管理 & 管理画面二重管理解消**<br>(PMM機能完全統合) | **【Drop 71】** `D:\dev\PMM` の全資産（10.7万件・107GB）を `local_docs/` へ統合。省庁別直列（1.0s間隔）ダウンローダー（`admin/pmm/`）、クローラー連動ローカル自動保存、SQLite DB 管理（`materials` / `council_materials`）、`admin_dashboard.html` ローカルAPI直結による二重管理完全解消 | **10.7万件資産統合 & クローラー即時連動ローカル保存 & 管理画面単一マスター化** | **【完了】**<br>(Drop 71) |
 | **Track [Database]**<br>(フェーズ 1 & 2) | **データ基盤刷新**<br>(DBマスター化 & 2系統エクスポート) | **【フェーズ 1: Drop 62】** スキーマ定義（`admin/db/schema.sql`）、可逆シードツール（`seed_db.py`）、2系統エクスポート（`export_data.py`）構築<br>**【フェーズ 2: Drop 63】** クローラー（`crawler.py`）および管理サーバー（`server.py`）の DB 直接接続化（`db_manager.py`）、クロール時自動エクスポートパイプライン確立<br>**【整合性ガード: Drop 64】** 統合テストスイート（`run_test_suite.py`）ケース15新設（PRAGMA整合性・外部キー・件数一致・漏洩ゼロ常時ガード） | **ACIDトランザクション確立・完全リバーシブル同期（DB $\leftrightarrow$ 2系統JSON）・公開用JSON 1.7MBスリム化** | **【完了】**<br>(Drop 62〜64) |
 
 ---
@@ -103,7 +103,7 @@ PMM プロジェクト（`D:\dev\PMM\docs`）に蓄積された全 33 省庁・1
 
 ## 3. 実装済 Drop一覧
 
-### 3-1. 直近の完了Drop一覧（Drop 61 〜 Drop 69）
+### 3-1. 直近の完了Drop一覧（Drop 61 〜 Drop 72）
 
 | 対応 Drop | 施策区分 | 主な対象・内容 | クロール成功率 / 成果 | ステータス |
 |:---:|:---|:---|:---:|:---:|
@@ -116,8 +116,9 @@ PMM プロジェクト（`D:\dev\PMM\docs`）に蓄積された全 33 省庁・1
 | **Drop 67** | **過去の完了Drop**<br>(新規会議体登録 & 重複統合) | **新規会議体（21会議体・280開催回・900超資料）ワンストップ登録・林政審議会重複統合 & 除外ポータル（12件）却下登録**<br>公式Webファクトチェック済み新規21会議体の包括追加（マスター・開催回・資料・ルール・手動保護）。厚労省「と畜場の制度に関する研究会」公式配付資料（全6点PDF）および開催日（2026/10/05）完全反映。林野庁「林政審議会（旧 maff-652 と rinya-1278）」の完全重複統合（正規ID rinya-rinsei_shingikai へ一本化）。除外ポータル・重複URL12件の却下リスト登録。SQLite pmhub.db と 2系統JSON 完全同期 | **新規21会議体登録・林政審議会重複統合・全15ケース＋単体18種完全合格** | **【完了】** |
 | **Drop 68** | **過去の完了Drop**<br>(開催回ディスカバリー) | **登録済会議体 開催回ディスカバリークロール & 省庁トップお知らせ会議検知オプション追加**<br>各府省庁トップページやお知らせ・新着情報（MHLW `indexshingi.html` の NEW マーカー検知、MLIT `meta_refresh` 自動追従、FSA/MOF/NRA の最新年月サブページ自動解決含む）から最新会議を自動検知し開催回・配付資料を取得する新オプション（`--from-ministry-news`）の実装、全省庁ディスカバリークロール実行（新規38開催回・233配付資料追加）、プレースホルダー日付（2099/01/01）ゼロ検証、manualLock 非破壊性保護、SQLite マスターDB & 2系統JSON完全同期 | **新規38開催回・233資料追加 & 統合15ケース＋単体18種完全合格** | **【完了】** |
 | **Drop 69** | **過去の完了Drop**<br>(規約再編・共通規範集約) | **DROPS.md 4大構成再編 & GLOBAL_RULES.md 共通開発運用規約拡充 & AGENTS.md 責務分離・スリム化**<br>DROPS.md を標準4大構成（Tracksロードマップ・各Track詳細・実装済Drop一覧・アーカイブ詳細）へ抜本再編。全プロジェクト共通規範（Implementation Plan 事前承認・調査許容範囲、コマンド自律実行、Gitブランチ運用・即時リモートpush、自動テスト＆Markdown単独テスト省略例外、手動データ保護＆DBマスター同期原則、不具合・データ修正時の再発防止ガード＋横展開確認、scratch隔離、文字コード自動判定等）を GLOBAL_RULES.md へ集約・拡充。AGENTS.md を PMHub 固有ドメイン規約（用語厳格遵守、IDフォーマット、15ケース統合テスト・報告フォーマット等）に特化・重複排除 | **全共通開発規範集約 & AGENTS.md 重複排除・保守性向上** | **【完了】** |
-| **Drop 71** | **機能統合・基盤強化**<br>(PMM完全統合 & 二重管理解消) | **配付資料・会議体資料ローカル資産管理システム（PMM）完全統合 & admin_dashboard.html ローカル専用化・二重管理解消**<br>`D:\dev\PMM` の全資産（10.7万件・107GB）を `local_docs/` へ移行。`admin/pmm/` パッケージ（共通関数、ダウンローダー、フォルダ正規化、クリーンアップ、重複検知）新設、親組織の「会議体資料（`00_会議体資料`）」ローカル保存対応、クローラー完了直後の新規・更新分自動保存連動、SQLite DB（`materials` / `council_materials`）のローカルパス・ステータス管理（公開JSON漏洩ゼロ）、公開ポータル（`docs/index.html`）からの管理画面リンク排除、および `admin/admin_dashboard.html` のローカルAPI（`/api/admin-data`）直結による二重管理完全解消 | **PMM機能完全統合 & ローカル自動保存連動 & 管理画面二重管理解消** | **【着手中】** |
-| **Drop 70** | **最新の完了Drop**<br>(管理UI & API拡張) | **管理ダッシュボード 登録済会議体 開催回ディスカバリーオプション選択UI & API連携**<br>管理画面（`admin/admin_dashboard.html`）において、登録済会議体 開催回ディスカバリー実行時に探索モード（通常個別探索 vs 省庁新着検知 `--from-ministry-news`）、対象府省庁（全省庁 / 個別省庁）、巡回対象年数（直近2年/1年/3年/全件）、直近再検査回数（1回/0回/3回）、全件再検査、廃止会議体巡回フラグを選択可能化。モード連動UI制御（`admin_dashboard.js`）、`/api/run-crawler` のオプション受け取り & バックグラウンド分岐実行（`admin/server.py`）、単体テスト拡充（`test_admin_server.py`） | **管理画面からの探索モード・省庁・年数・再検査オプション自在制御 & API連動確立** | **【完了】** |
+| **Drop 70** | **過去の完了Drop**<br>(管理UI & API拡張) | **管理ダッシュボード 登録済会議体 開催回ディスカバリーオプション選択UI & API連携**<br>管理画面（`admin/admin_dashboard.html`）において、登録済会議体 開催回ディスカバリー実行時に探索モード（通常個別探索 vs 省庁新着検知 `--from-ministry-news`）、対象府省庁（全省庁 / 個別省庁）、巡回対象年数（直近2年/1年/3年/全件）、直近再検査回数（1回/0回/3回）、全件再検査、廃止会議体巡回フラグを選択可能化。モード連動UI制御（`admin_dashboard.js`）、`/api/run-crawler` のオプション受け取り & バックグラウンド分岐実行（`admin/server.py`）、単体テスト拡充（`test_admin_server.py`） | **管理画面からの探索モード・省庁・年数・再検査オプション自在制御 & API連動確立** | **【完了】** |
+| **Drop 71** | **過去の完了Drop**<br>(PMM完全統合 & 二重管理解消) | **配付資料・会議体資料ローカル資産管理システム（PMM）完全統合 & admin_dashboard.html ローカル専用化・二重管理解消**<br>`D:\dev\PMM` の全資産（10.7万件・107GB）を `local_docs/` へ移行。`admin/pmm/` パッケージ（共通関数、ダウンローダー、フォルダ正規化、クリーンアップ、重複検知）新設、親組織の「会議体資料（`00_会議体資料`）」ローカル保存対応、クローラー完了直後の新規・更新分自動保存連動、SQLite DB（`materials` / `council_materials`）のローカルパス・ステータス管理（公開JSON漏洩ゼロ）、公開ポータル（`docs/index.html`）からの管理画面リンク排除、および `admin/admin_dashboard.html` のローカルAPI（`/api/admin-data`）直結による二重管理完全解消 | **PMM機能完全統合 & ローカル自動保存連動 & 管理画面二重管理解消** | **【完了】** |
+| **Drop 72** | **最新の完了Drop**<br>(コード品質向上 & DB層重複排除) | **DB読込共通コア抽出による重複排除（R-1） & 例外処理厳格化・テキスト正規化一元化（R-5）**<br>`admin/db/db_manager.py` において類似度84%で重複していた `load_data_from_db` と `load_admin_full_data_from_db` を共通コア `_load_dataset_from_db` に集約・一本化し、約155行のコード削減と完全互換性を達成。`admin/batch_normalize_data.py` のインライン `normalize_text` 再定義を撤廃し `admin/utils.py` へ一本化。`admin/utils.py`（日付パース・一時ファイル削除）、`admin/server.py`（未確定会議数取得）、`admin/db/db_manager.py`（tagsパース）の `except Exception: pass` を具体的例外型（`ValueError`, `OSError`, `JSONDecodeError` 等）またはログ記録へ是正 | **DB読込155行重複排除・完全互換 & 例外破棄是正・統合15ケース＋単体19種完全合格** | **【完了】** |
 
 
 ---
@@ -202,7 +203,52 @@ PMM プロジェクト（`D:\dev\PMM\docs`）に蓄積された全 33 省庁・1
 
 ## 4. アーカイブ：実装済み一覧（詳細）
 
-### 4-1. 直近完了 Drop 詳細（Drop 61 〜 Drop 69）
+### 4-1. 直近完了 Drop 詳細（Drop 61 〜 Drop 72）
+
+### 【Drop 72】DB読込共通コア抽出による重複排除（R-1） & 例外処理厳格化・テキスト正規化一元化（R-5）（完了）
+
+コードベースの肥大化と重複を解消するため、優先度と安全性の高いリファクタリング（R-1 + R-5）を実施した。`admin/db/db_manager.py` において類似度84%で重複していた公開用 `load_data_from_db` と管理用 `load_admin_full_data_from_db` を内部共通関数 `_load_dataset_from_db` に集約・一本化し、約155行のコード削減と完全互換性を達成した。また、`admin/batch_normalize_data.py` のインライン `normalize_text` 再定義を撤廃して `admin/utils.py` へ一本化し、`admin/utils.py`（日付パース・一時ファイル削除）、`admin/server.py`（未確定会議数取得）、`admin/db/db_manager.py`（tagsパース）における `except Exception: pass` を具体的例外型（`ValueError`, `TypeError`, `OSError`, `JSONDecodeError` 等）またはログ記録へ是正した。
+
+- **Drop 72 の成果**:
+  1. `admin/db/db_manager.py` に `_load_dataset_from_db(cur, include_pmm_details=False)` を新設。共通のテーブル取得・オブジェクト構築ロジックを集約し、155行の重複コードを削減。
+  2. `load_data_from_db` および `load_admin_full_data_from_db` の既存インターフェース・戻り値スキーマの100%互換性を維持。
+  3. `admin/batch_normalize_data.py` から冗長なインライン `normalize_text` を削除し、`admin/utils.py` の正規化関数（CJK異体字・NFKC完全対応）へ一本化。
+  4. `admin/utils.py` の日付パースにおける例外捕捉を `(ValueError, TypeError, IndexError)` へ限定化、一時ファイル削除を `OSError` へ限定化。
+  5. `admin/server.py` の未確定会議数取得失敗時に `print("[WARN] ...", file=sys.stderr)` を追加し、例外の無通知握りつぶしを解消。
+  6. 統合テストスイート（`python testing/run_test_suite.py`、全15ケース＋連動単体19種）に完全合格。
+
+| ID | 分類 | 内容 | 対象ファイル | 状態 |
+|:---|:---:|:---|:---|:---:|
+| **CR-182** | DB読込コア集約 (R-1) | **`db_manager.py` データ読込処理の共通コア `_load_dataset_from_db` 抽出**<br>`load_data_from_db` と `load_admin_full_data_from_db` の重複を排除し、完全互換性を維持したまま155行削減 | `admin/db/db_manager.py` | 完了 |
+| **CR-183** | テキスト正規化一元化 (R-5) | **`batch_normalize_data.py` の `normalize_text` 再定義撤廃 & `utils.py` 一本化**<br>フォールバック用のインライン再定義を削除し、`admin/utils.py` の完全版正規化関数を直接使用 | `admin/batch_normalize_data.py` | 完了 |
+| **CR-184** | 例外処理厳格化 (R-5) | **日付パース・ファイル削除・サーバーAPIの例外型限定 & ログ記録**<br>`except Exception: pass` を具体的例外型（`ValueError`, `OSError` 等）へ是正し、無通知例外破棄を解消 | `admin/utils.py`<br>`admin/server.py`<br>`admin/db/db_manager.py` | 完了 |
+| **CR-185** | 回帰テスト検証 | **単体テスト連動 & 統合テストスイート（全15ケース＋全19単体テスト）完全合格**<br>U17/U18/U19/U9 含む単体テスト全種、および統合テスト全15ケースの完全合格を確認 | `testing/run_test_suite.py` | 完了 |
+
+<hr>
+
+### 【Drop 71】配付資料・会議体資料ローカル資産管理システム（PMM）完全統合 & admin_dashboard.html ローカル専用化・二重管理解消（完了）
+
+`D:\dev\PMM` に蓄積された全 33 省庁・1,491 会議体・18,044 開催回のダウンロード済配付資料ファイル群（PDF/HTML 約 10.7 万件・107GB）を PMHub に統合。`admin/pmm/` パッケージ（共通関数、ダウンローダー、フォルダ正規化、クリーンアップ、重複検知）を新設し、親組織の常設資料「会議体資料（`00_会議体資料`）」ローカル保存対応、クローラー完了直後の新規・更新分自動保存連動、SQLite DB（`materials` / `council_materials`）のローカルパス・ステータス管理（公開JSON漏洩ゼロ）、公開ポータル（`docs/index.html`）からの管理画面リンク排除、および `admin/admin_dashboard.html` のローカルAPI（`/api/admin-data`）直結による二重管理完全解消を完遂した。
+
+- **Drop 71 の成果**:
+  1. `admin/pmm/` パッケージ（`pmm_common.py`, `downloader.py`, `normalize_folders.py`, `cleanup.py`, `duplicate_finder.py`）を新設。
+  2. 省庁別直列（1.0秒間隔）・省庁間並列（4ワーカー）の負荷軽減ダウンローダーを実装。
+  3. 親組織常設資料「会議体資料（`00_会議体資料`）」のローカル保存構造を配備。
+  4. クローラー完了直後の新規・更新資料の自動保存パイプライン（`--save-local` オプション）を連動。
+  5. SQLite DB（`materials` / `council_materials`）に `local_path`, `download_status`, `file_size`, `downloaded_at` を追加。公開用 `docs/data.json` には一切漏洩させない 2系統エクスポート完全分離を維持。
+  6. 公開ポータル（`docs/index.html`）から管理画面へのリンクを完全排除し、ローカル管理専用化を徹底。
+  7. 管理ダッシュボード（`admin/admin_dashboard.html`, `admin_dashboard.js`）のデータ取得元を `/api/admin-data` に一本化し、`localStorage` や公開JSONによる二重管理を解消。
+  8. 単体テスト U19（`test_pmm.py`）新設および統合テストスイート（全15ケース＋単体19種）完全合格。
+
+| ID | 分類 | 内容 | 対象ファイル | 状態 |
+|:---|:---:|:---|:---|:---:|
+| **CR-177** | PMMパッケージ新設 | **PMM資産管理エンジン（`admin/pmm/`）の移植・実装**<br>共通関数、ダウンローダー、フォルダ正規化、クリーンアップ、重複検知モジュールを構築 | `admin/pmm/` | 完了 |
+| **CR-178** | DB拡張 & 漏洩防止 | **SQLite DB へのローカルパス・ステータス管理カラム追加 & 2系統エクスポート分離**<br>`materials` / `council_materials` へのカラム追加と、公開用 `docs/data.json` への非公開ガード維持 | `admin/db/schema.sql`<br>`admin/db/db_manager.py`<br>`admin/db/export_data.py` | 完了 |
+| **CR-179** | クローラー連動 | **クローラー完了時 自動ローカル保存連動パイプライン（`--save-local`）**<br>クローラー実行完了時に新着資料を自動で `local_docs/` へダウンロード保存する連携処理を実装 | `admin/crawler.py` | 完了 |
+| **CR-180** | 管理画面ローカル専用化 | **公開ポータルからのリンク排除 & 管理画面ローカルAPI直結による二重管理解消**<br>`docs/index.html` のリンク削除、`admin/server.py` の `/api/admin-data` 提供、`admin_dashboard.js` のDB直結化 | `docs/index.html`<br>`admin/server.py`<br>`admin/admin_dashboard.js` | 完了 |
+| **CR-181** | テスト検証 | **PMM単体テスト（U19）新設 & 統合テストスイート（全15ケース＋単体19種）完全合格**<br>`testing/test_pmm.py` を追加し、`run_unit_tests.py` および `run_test_suite.py` の全ケース合格を確認 | `testing/test_pmm.py`<br>`testing/run_unit_tests.py`<br>`testing/run_test_suite.py` | 完了 |
+
+<hr>
 
 ### 【Drop 69】DROPS.md 4大構成再編 & GLOBAL_RULES.md 共通開発運用規約拡充 & AGENTS.md 責務分離・スリム化（完了）
 

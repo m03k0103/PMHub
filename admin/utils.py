@@ -179,7 +179,7 @@ def parse_japanese_date(date_str):
             month = int(m_reiwa.group(2))
             day = int(m_reiwa.group(3))
             return datetime(year, month, day)
-        except Exception:
+        except (ValueError, TypeError, IndexError):
             pass
     m_heisei = _RE_HEISEI_DATE.search(date_str)
     if m_heisei:
@@ -189,7 +189,7 @@ def parse_japanese_date(date_str):
             month = int(m_heisei.group(2))
             day = int(m_heisei.group(3))
             return datetime(year, month, day)
-        except Exception:
+        except (ValueError, TypeError, IndexError):
             pass
     m_seireki = _RE_SEIREKI_DATE.search(date_str)
     if m_seireki:
@@ -198,7 +198,7 @@ def parse_japanese_date(date_str):
             month = int(m_seireki.group(2))
             day = int(m_seireki.group(3))
             return datetime(year, month, day)
-        except Exception:
+        except (ValueError, TypeError, IndexError):
             pass
     m_slash = _RE_SLASH_DATE.search(date_str)
     if m_slash:
@@ -207,7 +207,7 @@ def parse_japanese_date(date_str):
             month = int(m_slash.group(2))
             day = int(m_slash.group(3))
             return datetime(year, month, day)
-        except Exception:
+        except (ValueError, TypeError, IndexError):
             pass
     m_gengou_short = _RE_GENGOU_SHORT_DATE.search(date_str)
     if m_gengou_short:
@@ -227,7 +227,7 @@ def parse_japanese_date(date_str):
                 month = int(m_gengou_short.group(3))
                 day = int(m_gengou_short.group(4))
                 return datetime(year, month, day)
-        except Exception:
+        except (ValueError, TypeError, IndexError):
             pass
     m_dot = _RE_DOT_DATE.search(date_str)
     if m_dot:
@@ -243,7 +243,7 @@ def parse_japanese_date(date_str):
                 year = None
             if year and 1 <= month <= 12 and 1 <= day <= 31:
                 return datetime(year, month, day)
-        except Exception:
+        except (ValueError, TypeError, IndexError):
             pass
     return None
 
@@ -409,7 +409,7 @@ def save_data_json_with_backup(data, target_file=DEFAULT_DATA_JSON_PATH, backup_
                     for old_f in b_files[:-max_backups]:
                         try:
                             os.remove(old_f)
-                        except Exception:
+                        except OSError:
                             pass
 
         # Drop 63: メインデータの場合は SQLite マスターDBへ同期し自動エクスポート
@@ -439,7 +439,7 @@ def save_data_json_with_backup(data, target_file=DEFAULT_DATA_JSON_PATH, backup_
         if os.path.exists(tmp_file):
             try:
                 os.remove(tmp_file)
-            except Exception:
+            except OSError:
                 pass
         return False
 
@@ -556,7 +556,7 @@ def save_rejected_councils(rejected_data, rejected_file=DEFAULT_REJECTED_COUNCIL
         if os.path.exists(tmp_file):
             try:
                 os.remove(tmp_file)
-            except Exception:
+            except OSError:
                 pass
         return False
 

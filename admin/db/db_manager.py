@@ -72,6 +72,231 @@ def ensure_database(
     return True
 
 
+def _load_dataset_from_db(cur: sqlite3.Cursor, include_pmm_details: bool = False) -> Dict[str, Any]:
+    """
+    Internal core loader extracting data dictionary directly from SQLite cursor.
+    If include_pmm_details is True, includes PMM local material attributes
+    (local_path, download_status, file_size, downloaded_at) and crawlStatuses.
+    """
+    # 1. Metadata
+    meta_rows = cur.execute("SELECT key, value FROM metadata;").fetchall()
+    metadata = {r["key"]: r["value"] for r in meta_rows}
+    last_crawl_time = metadata.get("lastCrawlTime", "")
+
+    # 2. Configurations
+    cfg_rows = cur.execute("SELECT key, value_json FROM admin_configs;").fetchall()
+    configs = {}
+    for r in cfg_rows:
+        try:
+            configs[r["key"]] = json.loads(r["value_json"])
+        except (json.JSONDecodeError, TypeError, ValueError):
+            configs[r["key"]] = {}
+
+    ministries = configs.get("ministries", {})
+    categories = configs.get("categories", {})
+    doc_types = configs.get("docTypes", {})
+    templates = configs.get("scrapingRuleTemplates", {})
+    discovery_keywords = configs.get("discoveryKeywords", [])
+    crawler_config = configs.get("crawlerConfig", {})
+    rejected_councils = configs.get("rejectedCouncils", [])
+    initial_alert_keywords = configs.get("initialAlertKeywords", [])
+
+    # 3. Scraping Rules
+    rule_rows = cur.execute("SELECT council_id, rule_json FROM scraping_rules;").fetchall()
+    scraping_rules = {}
+    for r in rule_rows:
+        try:
+            scraping_rules[r["council_id"]] = json.loads(r["rule_json"])
+        except (json.JSONDecodeError, TypeError, ValueError):
+            scraping_rules[r["council_id"]] = {}
+
+    # 4. Crawl Statuses
+    cs_rows = cur.execute("""
+        SELECT council_id, last_attempt, result, result_reason, extraction_method,
+               materials_count, dates_count, failure_reason, consecutive_failures, manual_lock_active
+        FROM crawl_statuses;
+    """).fetchall()
+    crawl_statuses = {}
+    for r in cs_rows:
+        crawl_statuses[r["council_id"]] = {
+            "lastAttempt": r["last_attempt"] or "",
+            "result": r["result"] or "success",
+            "resultReason": r["result_reason"] or "",
+            "extractionMethod": r["extraction_method"] or "rule",
+            "materialsCount": r["materials_count"] or 0,
+            "datesCount": r["dates_count"] or 0,
+            "failureReason": r["failure_reason"] or "",
+            "consecutiveFailures": r["consecutive_failures"] or 0,
+            "manualLockActive": bool(r["manual_lock_active"])
+        }
+
+    # 5. Council Materials
+    if include_pmm_details:
+        c_mat_rows = cur.execute("""
+            SELECT council_id, name, url, type, manual_lock, local_path, download_status, file_size, downloaded_at
+            FROM council_materials
+            ORDER BY id ASC;
+        """).fetchall()
+    else:
+        c_mat_rows = cur.execute("""
+            SELECT council_id, name, url, type, manual_lock
+            FROM council_materials
+            ORDER BY id ASC;
+        """).fetchall()
+
+    c_mats_map = {}
+    for r in c_mat_rows:
+        m_item = {"name": r["name"], "url": r["url"]}
+        if r["type"] and r["type"].upper() != "PDF":
+            m_item["type"] = r["type"].upper()
+        if r["manual_lock"]:
+            m_item["manualLock"] = True
+        if include_pmm_details:
+            m_item["localPath"] = r["local_path"]
+            m_item["downloadStatus"] = r["download_status"] or "pending"
+            m_item["fileSize"] = r["file_size"]
+            m_item["downloadedAt"] = r["downloaded_at"]
+        c_mats_map.setdefault(r["council_id"], []).append(m_item)
+
+    # 6. Councils
+    c_rows = cur.execute("""
+        SELECT id, ministry, category, name, official_url, archive_url, description,
+               past_year_count, is_closed, closed_reason, manual_lock
+        FROM councils
+        ORDER BY id ASC;
+    """).fetchall()
+
+    councils = []
+    for r in c_rows:
+        cid = r["id"]
+        c_dict = {
+            "id": cid,
+            "ministry": r["ministry"],
+            "category": r["category"],
+            "name": r["name"]
+        }
+        if r["official_url"]:
+            c_dict["officialUrl"] = r["official_url"]
+        if r["archive_url"]:
+            c_dict["archiveUrl"] = r["archive_url"]
+        if r["description"]:
+            c_dict["description"] = r["description"]
+        c_dict["pastYearCount"] = r["past_year_count"] if r["past_year_count"] is not None else 0
+        if r["manual_lock"]:
+            c_dict["manualLock"] = True
+        if r["is_closed"]:
+            c_dict["isClosed"] = True
+            if r["closed_reason"]:
+                c_dict["closedReason"] = r["closed_reason"]
+
+        mats = c_mats_map.get(cid, [])
+        if include_pmm_details:
+            c_dict["materials"] = mats
+            c_dict["crawlStatus"] = crawl_statuses.get(cid, {})
+        else:
+            if mats:
+                c_dict["materials"] = mats
+            if cid in crawl_statuses:
+                c_dict["crawlStatus"] = crawl_statuses[cid]
+
+        councils.append(c_dict)
+
+    # 7. Meeting Materials
+    if include_pmm_details:
+        mat_rows = cur.execute("""
+            SELECT meeting_id, name, url, type, is_private, manual_lock, local_path, download_status, file_size, downloaded_at
+            FROM materials
+            ORDER BY id ASC;
+        """).fetchall()
+    else:
+        mat_rows = cur.execute("""
+            SELECT meeting_id, name, url, type, is_private, manual_lock
+            FROM materials
+            ORDER BY id ASC;
+        """).fetchall()
+
+    mats_map = {}
+    for r in mat_rows:
+        mid = r["meeting_id"]
+        mat_item = {"name": r["name"], "url": r["url"]}
+        if r["type"] and r["type"].upper() != "PDF":
+            mat_item["type"] = r["type"].upper()
+        if r["is_private"]:
+            mat_item["isPrivate"] = True
+        if r["manual_lock"]:
+            mat_item["manualLock"] = True
+        if include_pmm_details:
+            mat_item["localPath"] = r["local_path"]
+            mat_item["downloadStatus"] = r["download_status"] or "pending"
+            mat_item["fileSize"] = r["file_size"]
+            mat_item["downloadedAt"] = r["downloaded_at"]
+        mats_map.setdefault(mid, []).append(mat_item)
+
+    # 8. Meetings
+    m_rows = cur.execute("""
+        SELECT id, council_id, name, date, round, official_url, summary,
+               tags_json, is_date_unconfirmed, is_newly_discovered,
+               discovered_at, last_updated_from_crawl, manual_lock
+        FROM meetings
+        ORDER BY date DESC, id ASC;
+    """).fetchall()
+
+    meetings = []
+    for r in m_rows:
+        mid = r["id"]
+        m_dict = {
+            "id": mid,
+            "councilId": r["council_id"],
+            "name": r["name"],
+            "date": r["date"]
+        }
+        if r["round"] is not None:
+            m_dict["round"] = r["round"]
+        if r["official_url"]:
+            m_dict["officialUrl"] = r["official_url"]
+        if r["summary"]:
+            m_dict["summary"] = r["summary"]
+        if r["manual_lock"]:
+            m_dict["manualLock"] = True
+        if r["tags_json"]:
+            try:
+                tags = json.loads(r["tags_json"])
+                if tags:
+                    m_dict["tags"] = tags
+            except (json.JSONDecodeError, TypeError, ValueError):
+                pass
+        if r["is_date_unconfirmed"]:
+            m_dict["isDateUnconfirmed"] = True
+        if r["is_newly_discovered"]:
+            m_dict["isNewlyDiscovered"] = True
+        if r["discovered_at"]:
+            m_dict["discoveredAt"] = r["discovered_at"]
+        if r["last_updated_from_crawl"]:
+            m_dict["lastUpdatedFromCrawl"] = r["last_updated_from_crawl"]
+
+        m_dict["materials"] = mats_map.get(mid, [])
+        meetings.append(m_dict)
+
+    dataset = {
+        "ministries": ministries,
+        "councils": councils,
+        "meetings": meetings,
+        "categories": categories,
+        "docTypes": doc_types,
+        "lastCrawlTime": last_crawl_time,
+        "scrapingRuleTemplates": templates,
+        "scrapingRules": scraping_rules,
+        "discoveryKeywords": discovery_keywords,
+        "crawlerConfig": crawler_config,
+        "rejectedCouncils": rejected_councils,
+        "initialAlertKeywords": initial_alert_keywords
+    }
+    if include_pmm_details:
+        dataset["crawlStatuses"] = crawl_statuses
+
+    return dataset
+
+
 def load_data_from_db(db_path: Path = DEFAULT_DB_PATH) -> Dict[str, Any]:
     """
     Load complete data dictionary directly from SQLite database.
@@ -85,195 +310,9 @@ def load_data_from_db(db_path: Path = DEFAULT_DB_PATH) -> Dict[str, Any]:
     cur = conn.cursor()
 
     try:
-        # 1. Metadata
-        meta_rows = cur.execute("SELECT key, value FROM metadata;").fetchall()
-        metadata = {r["key"]: r["value"] for r in meta_rows}
-        last_crawl_time = metadata.get("lastCrawlTime", "")
-
-        # 2. Configurations
-        cfg_rows = cur.execute("SELECT key, value_json FROM admin_configs;").fetchall()
-        configs = {}
-        for r in cfg_rows:
-            try:
-                configs[r["key"]] = json.loads(r["value_json"])
-            except Exception:
-                configs[r["key"]] = {}
-
-        ministries = configs.get("ministries", {})
-        categories = configs.get("categories", {})
-        doc_types = configs.get("docTypes", {})
-        templates = configs.get("scrapingRuleTemplates", {})
-        discovery_keywords = configs.get("discoveryKeywords", [])
-        crawler_config = configs.get("crawlerConfig", {})
-        rejected_councils = configs.get("rejectedCouncils", [])
-        initial_alert_keywords = configs.get("initialAlertKeywords", [])
-
-        # 3. Scraping Rules
-        rule_rows = cur.execute("SELECT council_id, rule_json FROM scraping_rules;").fetchall()
-        scraping_rules = {}
-        for r in rule_rows:
-            try:
-                scraping_rules[r["council_id"]] = json.loads(r["rule_json"])
-            except Exception:
-                scraping_rules[r["council_id"]] = {}
-
-        # 4. Crawl Statuses
-        cs_rows = cur.execute("""
-            SELECT council_id, last_attempt, result, result_reason, extraction_method,
-                   materials_count, dates_count, failure_reason, consecutive_failures, manual_lock_active
-            FROM crawl_statuses;
-        """).fetchall()
-        crawl_statuses = {}
-        for r in cs_rows:
-            crawl_statuses[r["council_id"]] = {
-                "lastAttempt": r["last_attempt"] or "",
-                "result": r["result"] or "success",
-                "resultReason": r["result_reason"] or "",
-                "extractionMethod": r["extraction_method"] or "rule",
-                "materialsCount": r["materials_count"] or 0,
-                "datesCount": r["dates_count"] or 0,
-                "failureReason": r["failure_reason"] or "",
-                "consecutiveFailures": r["consecutive_failures"] or 0,
-                "manualLockActive": bool(r["manual_lock_active"])
-            }
-
-        # 5. Council Materials
-        c_mat_rows = cur.execute("""
-            SELECT council_id, name, url, type, manual_lock
-            FROM council_materials
-            ORDER BY id ASC;
-        """).fetchall()
-        c_mats_map = {}
-        for r in c_mat_rows:
-            m_item = {"name": r["name"], "url": r["url"]}
-            if r["type"] and r["type"].upper() != "PDF":
-                m_item["type"] = r["type"].upper()
-            if r["manual_lock"]:
-                m_item["manualLock"] = True
-            c_mats_map.setdefault(r["council_id"], []).append(m_item)
-
-        # 6. Councils
-        c_rows = cur.execute("""
-            SELECT id, ministry, category, name, official_url, archive_url, description,
-                   past_year_count, is_closed, closed_reason, manual_lock
-            FROM councils
-            ORDER BY id ASC;
-        """).fetchall()
-
-        councils = []
-        for r in c_rows:
-            cid = r["id"]
-            c_dict = {
-                "id": cid,
-                "ministry": r["ministry"],
-                "category": r["category"],
-                "name": r["name"]
-            }
-            if r["official_url"]:
-                c_dict["officialUrl"] = r["official_url"]
-            if r["archive_url"]:
-                c_dict["archiveUrl"] = r["archive_url"]
-            if r["description"]:
-                c_dict["description"] = r["description"]
-            c_dict["pastYearCount"] = r["past_year_count"] if r["past_year_count"] is not None else 0
-            if r["manual_lock"]:
-                c_dict["manualLock"] = True
-            if r["is_closed"]:
-                c_dict["isClosed"] = True
-                if r["closed_reason"]:
-                    c_dict["closedReason"] = r["closed_reason"]
-
-            mats = c_mats_map.get(cid, [])
-            if mats:
-                c_dict["materials"] = mats
-
-            if cid in crawl_statuses:
-                c_dict["crawlStatus"] = crawl_statuses[cid]
-
-            councils.append(c_dict)
-
-        # 7. Meeting Materials
-        mat_rows = cur.execute("""
-            SELECT meeting_id, name, url, type, is_private, manual_lock
-            FROM materials
-            ORDER BY id ASC;
-        """).fetchall()
-        mats_map = {}
-        for r in mat_rows:
-            mid = r["meeting_id"]
-            mat_item = {"name": r["name"], "url": r["url"]}
-            if r["type"] and r["type"].upper() != "PDF":
-                mat_item["type"] = r["type"].upper()
-            if r["is_private"]:
-                mat_item["isPrivate"] = True
-            if r["manual_lock"]:
-                mat_item["manualLock"] = True
-            mats_map.setdefault(mid, []).append(mat_item)
-
-        # 8. Meetings
-        m_rows = cur.execute("""
-            SELECT id, council_id, name, date, round, official_url, summary,
-                   tags_json, is_date_unconfirmed, is_newly_discovered,
-                   discovered_at, last_updated_from_crawl, manual_lock
-            FROM meetings
-            ORDER BY date DESC, id ASC;
-        """).fetchall()
-
-        meetings = []
-        for r in m_rows:
-            mid = r["id"]
-            m_dict = {
-                "id": mid,
-                "councilId": r["council_id"],
-                "name": r["name"],
-                "date": r["date"]
-            }
-            if r["round"] is not None:
-                m_dict["round"] = r["round"]
-            if r["official_url"]:
-                m_dict["officialUrl"] = r["official_url"]
-            if r["summary"]:
-                m_dict["summary"] = r["summary"]
-            if r["manual_lock"]:
-                m_dict["manualLock"] = True
-            if r["tags_json"]:
-                try:
-                    tags = json.loads(r["tags_json"])
-                    if tags:
-                        m_dict["tags"] = tags
-                except Exception:
-                    pass
-            if r["is_date_unconfirmed"]:
-                m_dict["isDateUnconfirmed"] = True
-            if r["is_newly_discovered"]:
-                m_dict["isNewlyDiscovered"] = True
-            if r["discovered_at"]:
-                m_dict["discoveredAt"] = r["discovered_at"]
-            if r["last_updated_from_crawl"]:
-                m_dict["lastUpdatedFromCrawl"] = r["last_updated_from_crawl"]
-
-            m_dict["materials"] = mats_map.get(mid, [])
-            meetings.append(m_dict)
-
-        data = {
-            "ministries": ministries,
-            "councils": councils,
-            "meetings": meetings,
-            "categories": categories,
-            "docTypes": doc_types,
-            "lastCrawlTime": last_crawl_time,
-            "scrapingRuleTemplates": templates,
-            "scrapingRules": scraping_rules,
-            "discoveryKeywords": discovery_keywords,
-            "crawlerConfig": crawler_config,
-            "rejectedCouncils": rejected_councils,
-            "initialAlertKeywords": initial_alert_keywords
-        }
-        return data
-
+        return _load_dataset_from_db(cur, include_pmm_details=False)
     finally:
         conn.close()
-
 
 def save_data_to_db(
     data: Dict[str, Any],
@@ -640,202 +679,8 @@ def load_admin_full_data_from_db(db_path: Path = DEFAULT_DB_PATH) -> Dict[str, A
     cur = conn.cursor()
 
     try:
-        # 1. Metadata
-        meta_rows = cur.execute("SELECT key, value FROM metadata;").fetchall()
-        metadata = {r["key"]: r["value"] for r in meta_rows}
-        last_crawl_time = metadata.get("lastCrawlTime", "")
-
-        # 2. Configurations
-        cfg_rows = cur.execute("SELECT key, value_json FROM admin_configs;").fetchall()
-        configs = {}
-        for r in cfg_rows:
-            try:
-                configs[r["key"]] = json.loads(r["value_json"])
-            except Exception:
-                configs[r["key"]] = {}
-
-        ministries = configs.get("ministries", {})
-        categories = configs.get("categories", {})
-        doc_types = configs.get("docTypes", {})
-        templates = configs.get("scrapingRuleTemplates", {})
-        discovery_keywords = configs.get("discoveryKeywords", [])
-        crawler_config = configs.get("crawlerConfig", {})
-        rejected_councils = configs.get("rejectedCouncils", [])
-        initial_alert_keywords = configs.get("initialAlertKeywords", [])
-
-        # 3. Scraping Rules
-        rule_rows = cur.execute("SELECT council_id, rule_json FROM scraping_rules;").fetchall()
-        scraping_rules = {}
-        for r in rule_rows:
-            try:
-                scraping_rules[r["council_id"]] = json.loads(r["rule_json"])
-            except Exception:
-                scraping_rules[r["council_id"]] = {}
-
-        # 4. Crawl Statuses
-        cs_rows = cur.execute("""
-            SELECT council_id, last_attempt, result, result_reason, extraction_method,
-                   materials_count, dates_count, failure_reason, consecutive_failures, manual_lock_active
-            FROM crawl_statuses;
-        """).fetchall()
-        crawl_statuses = {}
-        for r in cs_rows:
-            crawl_statuses[r["council_id"]] = {
-                "lastAttempt": r["last_attempt"] or "",
-                "result": r["result"] or "success",
-                "resultReason": r["result_reason"] or "",
-                "extractionMethod": r["extraction_method"] or "rule",
-                "materialsCount": r["materials_count"] or 0,
-                "datesCount": r["dates_count"] or 0,
-                "failureReason": r["failure_reason"] or "",
-                "consecutiveFailures": r["consecutive_failures"] or 0,
-                "manualLockActive": bool(r["manual_lock_active"])
-            }
-
-        # 5. Council Materials (including local_path, download_status)
-        c_mat_rows = cur.execute("""
-            SELECT council_id, name, url, type, manual_lock, local_path, download_status, file_size, downloaded_at
-            FROM council_materials
-            ORDER BY id ASC;
-        """).fetchall()
-        c_mats_map = {}
-        for r in c_mat_rows:
-            m_item = {
-                "name": r["name"],
-                "url": r["url"],
-                "localPath": r["local_path"],
-                "downloadStatus": r["download_status"] or "pending",
-                "fileSize": r["file_size"],
-                "downloadedAt": r["downloaded_at"]
-            }
-            if r["type"] and r["type"].upper() != "PDF":
-                m_item["type"] = r["type"].upper()
-            if r["manual_lock"]:
-                m_item["manualLock"] = True
-            c_mats_map.setdefault(r["council_id"], []).append(m_item)
-
-        # 6. Councils
-        c_rows = cur.execute("""
-            SELECT id, ministry, category, name, official_url, archive_url, description,
-                   past_year_count, is_closed, closed_reason, manual_lock
-            FROM councils
-            ORDER BY id ASC;
-        """).fetchall()
-
-        councils = []
-        for r in c_rows:
-            cid = r["id"]
-            c_dict = {
-                "id": cid,
-                "ministry": r["ministry"],
-                "category": r["category"],
-                "name": r["name"]
-            }
-            if r["official_url"]:
-                c_dict["officialUrl"] = r["official_url"]
-            if r["archive_url"]:
-                c_dict["archiveUrl"] = r["archive_url"]
-            if r["description"]:
-                c_dict["description"] = r["description"]
-            c_dict["pastYearCount"] = r["past_year_count"] if r["past_year_count"] is not None else 0
-            if r["is_closed"]:
-                c_dict["isClosed"] = True
-                if r["closed_reason"]:
-                    c_dict["closedReason"] = r["closed_reason"]
-            if r["manual_lock"]:
-                c_dict["manualLock"] = True
-
-            c_dict["materials"] = c_mats_map.get(cid, [])
-            c_dict["crawlStatus"] = crawl_statuses.get(cid, {})
-            councils.append(c_dict)
-
-        # 7. Materials (including local_path, download_status)
-        mat_rows = cur.execute("""
-            SELECT meeting_id, name, url, type, is_private, manual_lock, local_path, download_status, file_size, downloaded_at
-            FROM materials
-            ORDER BY id ASC;
-        """).fetchall()
-        mats_map = {}
-        for r in mat_rows:
-            mid = r["meeting_id"]
-            mat_item = {
-                "name": r["name"],
-                "url": r["url"],
-                "localPath": r["local_path"],
-                "downloadStatus": r["download_status"] or "pending",
-                "fileSize": r["file_size"],
-                "downloadedAt": r["downloaded_at"]
-            }
-            if r["type"] and r["type"].upper() != "PDF":
-                mat_item["type"] = r["type"].upper()
-            if r["is_private"]:
-                mat_item["isPrivate"] = True
-            if r["manual_lock"]:
-                mat_item["manualLock"] = True
-            mats_map.setdefault(mid, []).append(mat_item)
-
-        # 8. Meetings
-        m_rows = cur.execute("""
-            SELECT id, council_id, name, date, round, official_url, summary,
-                   tags_json, is_date_unconfirmed, is_newly_discovered,
-                   discovered_at, last_updated_from_crawl, manual_lock
-            FROM meetings
-            ORDER BY date DESC, id ASC;
-        """).fetchall()
-
-        meetings = []
-        for r in m_rows:
-            mid = r["id"]
-            m_dict = {
-                "id": mid,
-                "councilId": r["council_id"],
-                "name": r["name"],
-                "date": r["date"]
-            }
-            if r["round"] is not None:
-                m_dict["round"] = r["round"]
-            if r["official_url"]:
-                m_dict["officialUrl"] = r["official_url"]
-            if r["summary"]:
-                m_dict["summary"] = r["summary"]
-
-            if r["tags_json"]:
-                try:
-                    tags = json.loads(r["tags_json"])
-                    if tags:
-                        m_dict["tags"] = tags
-                except Exception:
-                    pass
-
-            if r["is_date_unconfirmed"]:
-                m_dict["isDateUnconfirmed"] = True
-            if r["is_newly_discovered"]:
-                m_dict["isNewlyDiscovered"] = True
-            if r["discovered_at"]:
-                m_dict["discoveredAt"] = r["discovered_at"]
-            if r["last_updated_from_crawl"]:
-                m_dict["lastUpdatedFromCrawl"] = r["last_updated_from_crawl"]
-            if r["manual_lock"]:
-                m_dict["manualLock"] = True
-
-            m_dict["materials"] = mats_map.get(mid, [])
-            meetings.append(m_dict)
-
-        return {
-            "ministries": ministries,
-            "councils": councils,
-            "meetings": meetings,
-            "categories": categories,
-            "docTypes": doc_types,
-            "scrapingRuleTemplates": templates,
-            "scrapingRules": scraping_rules,
-            "crawlStatuses": crawl_statuses,
-            "discoveryKeywords": discovery_keywords,
-            "crawlerConfig": crawler_config,
-            "rejectedCouncils": rejected_councils,
-            "initialAlertKeywords": initial_alert_keywords,
-            "lastCrawlTime": last_crawl_time,
-            "downloadSummary": get_materials_download_summary(db_path=db_path)
-        }
+        data = _load_dataset_from_db(cur, include_pmm_details=True)
+        data["downloadSummary"] = get_materials_download_summary(db_path=db_path)
+        return data
     finally:
         conn.close()

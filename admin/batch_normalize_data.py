@@ -23,22 +23,19 @@ if hasattr(sys.stdout, 'reconfigure'):
     sys.stdout.reconfigure(encoding='utf-8')
 
 # PMHub 共通モジュールのインポート
-sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'admin')))
+admin_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'admin'))
+if admin_dir not in sys.path:
+    sys.path.insert(0, admin_dir)
+
 try:
     from utils import save_data_json_with_backup, normalize_text
+except ImportError:
+    from admin.utils import save_data_json_with_backup, normalize_text
+
+try:
     from crawler import DATA_JSON_FILE
 except ImportError:
-    try:
-        from crawler import DATA_JSON_FILE, save_data_json_with_backup, normalize_text
-    except ImportError:
-        DATA_JSON_FILE = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'docs', 'data.json'))
-        save_data_json_with_backup = None
-
-        def normalize_text(text):
-            if not text:
-                return ""
-            norm = unicodedata.normalize('NFKC', str(text))
-            return re.sub(r'[\s\u3000]+', ' ', norm).strip()
+    DATA_JSON_FILE = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'docs', 'data.json'))
 
 
 def is_kangxi_or_supplement(ch):
