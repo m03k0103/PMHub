@@ -20,7 +20,7 @@ class TestScrapingRulesReorganization(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
         data_path = os.path.join(PROJECT_ROOT, "docs", "data.json")
-        cls.data = load_data_json(data_path)
+        cls.data = load_data_json(data_path, cached=True)
         cls.councils = {c["id"]: c for c in cls.data.get("councils", [])}
         cls.raw_rules = cls.data.get("scrapingRules", {})
         cls.templates = cls.data.get("scrapingRuleTemplates", {})

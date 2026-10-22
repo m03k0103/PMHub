@@ -40,12 +40,73 @@ class TestDrop63CrawlerServerDB(unittest.TestCase):
         self.admin_json = self.temp_path / "admin_data.json"
         self.schema_path = ADMIN_DIR / "db" / "schema.sql"
 
-        # 本番のスキーマとデータからテスト用 DB を高速初期化
-        real_public = PROJECT_ROOT / "docs" / "data.json"
-        real_admin = ADMIN_DIR / "admin_data.json"
-        shutil.copy2(real_public, self.public_json)
-        if real_admin.exists():
-            shutil.copy2(real_admin, self.admin_json)
+        # 軽量フィクスチャを用いてテスト用 DB を超高速初期化（CR-166）
+        fixture_public = {
+            "ministries": [{"id": "test", "name": "テスト省"}],
+            "categories": ["審議会等"],
+            "docTypes": ["議事次第", "配付資料", "議事録"],
+            "lastCrawlTime": "2026-10-23T00:00:00",
+            "councils": [
+                {
+                    "id": "test-c1",
+                    "ministry": "test",
+                    "category": "審議会等",
+                    "name": "テスト審議会1",
+                    "officialUrl": "https://example.com/c1",
+                    "pastYearCount": 2,
+                    "manualLock": False
+                },
+                {
+                    "id": "test-c2",
+                    "ministry": "test",
+                    "category": "審議会等",
+                    "name": "テスト審議会2",
+                    "officialUrl": "https://example.com/c2",
+                    "pastYearCount": 0,
+                    "manualLock": False
+                }
+            ],
+            "meetings": [
+                {
+                    "id": "test-c1-20260101-001",
+                    "councilId": "test-c1",
+                    "name": "第1回 テスト会合",
+                    "date": "2026/01/01",
+                    "round": 1,
+                    "officialUrl": "https://example.com/c1-01",
+                    "manualLock": False,
+                    "materials": [
+                        {"name": "議事次第", "url": "https://example.com/c1-01.pdf", "type": "PDF"}
+                    ]
+                }
+            ]
+        }
+        fixture_admin = {
+            "scrapingRuleTemplates": {},
+            "scrapingRules": {
+                "test-c1": {
+                    "officialUrl": "https://example.com/c1",
+                    "subpage_discovery_pattern": "",
+                    "date_regex": ""
+                }
+            },
+            "crawlerConfig": {"max_workers": 2},
+            "discoveryKeywords": ["審議会"],
+            "rejectedCouncils": [],
+            "crawlStatuses": {
+                "test-c1": {
+                    "lastCrawl": "2026-10-23T00:00:00",
+                    "status": "success",
+                    "meetingCount": 1
+                }
+            },
+            "manualLocks": {"councils": [], "meetings": [], "materials": []}
+        }
+
+        with open(self.public_json, "w", encoding="utf-8") as f:
+            json.dump(fixture_public, f, ensure_ascii=False, indent=2)
+        with open(self.admin_json, "w", encoding="utf-8") as f:
+            json.dump(fixture_admin, f, ensure_ascii=False, indent=2)
 
         ensure_database(
             db_path=self.db_path,
@@ -98,15 +159,15 @@ class TestDrop63CrawlerServerDB(unittest.TestCase):
 
         # 新規開催回をシミュレート追加
         new_meeting = {
-            "id": "test-drop63_council-20261011-001",
-            "councilId": "test-drop63_council",
-            "name": "第1回 Drop 63 テスト会合",
+            "id": "test-c1-20261011-002",
+            "councilId": "test-c1",
+            "name": "第2回 Drop 63 テスト会合",
             "date": "2026/10/11",
-            "round": 1,
-            "officialUrl": "https://example.com/test63-001",
+            "round": 2,
+            "officialUrl": "https://example.com/test63-002",
             "isNewlyDiscovered": True,
             "materials": [
-                {"name": "議事次第", "url": "https://example.com/test63_01.pdf", "type": "PDF"}
+                {"name": "議事次第", "url": "https://example.com/test63_02.pdf", "type": "PDF"}
             ]
         }
         data["meetings"].append(new_meeting)
@@ -127,7 +188,7 @@ class TestDrop63CrawlerServerDB(unittest.TestCase):
             exported_public = json.load(f)
 
         m_ids = [m["id"] for m in exported_public["meetings"]]
-        self.assertIn("test-drop63_council-20261011-001", m_ids)
+        self.assertIn("test-c1-20261011-002", m_ids)
         self.assertEqual(len(exported_public["meetings"]), orig_count + 1)
 
     def test_db_nonexistent_auto_recovery(self):
@@ -148,7 +209,7 @@ class TestDrop63CrawlerServerDB(unittest.TestCase):
 
         # ロードして正常性を確認
         data = load_data_from_db(self.db_path)
-        self.assertGreater(len(data.get("councils", [])), 1000)
+        self.assertGreater(len(data.get("councils", [])), 0)
 
 
 if __name__ == "__main__":

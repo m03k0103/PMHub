@@ -313,37 +313,44 @@ def load_data_json(target_file=DEFAULT_DATA_JSON_PATH, cached=False):
         except OSError:
             admin_mtime = 0
 
-    cache_key = (abs_path, mtime, admin_mtime)
+    db_path = os.path.join(BASE_DIR, "pmhub.db")
+    db_mtime = 0
+    if os.path.exists(db_path):
+        try:
+            db_mtime = os.path.getmtime(db_path)
+        except OSError:
+            db_mtime = 0
+
+    cache_key = (abs_path, mtime, admin_mtime, db_mtime)
 
     if cached and abs_path in _DATA_JSON_CACHE:
         cached_meta, cached_data = _DATA_JSON_CACHE[abs_path]
         if cached_meta == cache_key:
             return cached_data
 
+    # Drop 63 & CR-167: メインデータかつ SQLite DB が存在する場合は JSON パースを行わず DB から最優先ロード
+    is_main_data_json = (
+        abs_path == os.path.abspath(DEFAULT_DATA_JSON_PATH)
+        or os.path.basename(abs_path) == "data.json"
+    )
+    if is_main_data_json and os.path.exists(db_path):
+        try:
+            try:
+                from db.db_manager import load_data_from_db
+            except ImportError:
+                from admin.db.db_manager import load_data_from_db
+            db_data = load_data_from_db(Path(db_path))
+            if db_data and "councils" in db_data:
+                if cached:
+                    _DATA_JSON_CACHE[abs_path] = (cache_key, db_data)
+                return db_data
+        except Exception as e_db:
+            print(f"[WARN] Failed to load data from SQLite DB ({e_db}), falling back to JSON files.", file=sys.stderr)
+
     try:
         with open(abs_path, "r", encoding="utf-8") as f:
             data = json.load(f)
             data_dict = data if isinstance(data, dict) else {}
-
-        # Drop 63: メインデータかつ SQLite DB が存在する場合は DB から優先ロード
-        is_main_data_json = (
-            abs_path == os.path.abspath(DEFAULT_DATA_JSON_PATH)
-            or os.path.basename(abs_path) == "data.json"
-        )
-        db_path = os.path.join(BASE_DIR, "pmhub.db")
-        if is_main_data_json and os.path.exists(db_path):
-            try:
-                try:
-                    from db.db_manager import load_data_from_db
-                except ImportError:
-                    from admin.db.db_manager import load_data_from_db
-                db_data = load_data_from_db(Path(db_path))
-                if db_data and "councils" in db_data:
-                    if cached:
-                        _DATA_JSON_CACHE[abs_path] = (cache_key, db_data)
-                    return db_data
-            except Exception as e_db:
-                print(f"[WARN] Failed to load data from SQLite DB ({e_db}), falling back to JSON files.", file=sys.stderr)
 
         # admin_data.json が存在し、読み込み対象が data.json の場合は管理情報をマージ
         if is_main_data_json and os.path.exists(admin_path):

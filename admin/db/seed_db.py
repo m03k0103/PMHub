@@ -275,5 +275,18 @@ def seed_db(
 
 
 if __name__ == "__main__":
-    success = seed_db()
+    import argparse
+    parser = argparse.ArgumentParser(description="PMHub Database Seeder")
+    parser.add_argument("--db", type=Path, default=DEFAULT_DB_PATH, help="Path to SQLite database")
+    parser.add_argument("--schema", type=Path, default=DEFAULT_SCHEMA_PATH, help="Path to schema.sql")
+    parser.add_argument("--public-json", type=Path, default=DEFAULT_PUBLIC_JSON, help="Path to docs/data.json")
+    parser.add_argument("--admin-json", type=Path, default=DEFAULT_ADMIN_JSON, help="Path to admin/admin_data.json")
+    args = parser.parse_args()
+
+    success = seed_db(
+        db_path=args.db,
+        schema_path=args.schema,
+        public_json_path=args.public_json,
+        admin_json_path=args.admin_json
+    )
     sys.exit(0 if success else 1)

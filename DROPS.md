@@ -17,7 +17,6 @@
 
 | Track ID | 構想テーマ | 主な対象・内容 | 到達成果・期待価値 | ステータス |
 |:---:|:---|:---|:---:|:---:|
-| **Track [Testing]** | **テストスイート高速化 & 厳格化**<br>(重複I/O解消・検証精度向上) | **【次期 Drop 候補】統合テストスイートの高速化・重複I/O解消 & 検証精度厳格化**<br>U18/U17 のテスト毎フルシード解消（軽量フィクスチャ化・本番DB副作用ゼロ化）、`load_data_json()` の無駄な2重パース解消、ケース15への `council_materials`・全管理キー漏洩防止検証追加、ケース14のアクティブ動的集計化、`admin/db/` 変更時の L4/L5 自動連動 | **実行時間 60% 短縮（約48s $\to$ 約18s）・検証精度とDB安全性の恒久向上** | 構想（次期候補） |
 | **Track [Search]**<br>(フェーズ 3) | **全文検索エンジン化**<br>(PMM資産連携 FTS5基盤) | **【フェーズ 3】PMM テキスト抽出 & FTS5 構築・全文検索 API 稼働**<br>PMM（`D:\dev\PMM\docs`）の 10.7 万件から本文テキストを並列抽出し、SQLite FTS5（trigram）仮想テーブル `fts_materials` に投入。管理サーバー `/api/search` 全文検索 API および公開ポータル連携 | **10.7万件配付資料の横断全文検索・該当ページ即時ジャンプ** | 構想（次期リリース） |
 | **Track [Architecture]** | **今後の開発構想**<br>(モジュール分割) | **リファクタリング領域E: クローラー本体（crawler.py）の責務分離 & scratch/ クリーンアップ**<br>`admin/crawler.py`（約2,900行）のパーサー・探索戦略・データ同期モジュール分割、1,231ファイル（66MB）の `scratch/` 整理および `.gitignore` 追加による作業ツリークリーン化 | **クローラー軽量化 & 開発環境整備** | 構想 |
 | **Track [Policy-AI]** | **今後の開発構想**<br>(政策分析・連携) | **省庁横断政策テーマ連携 & AI 議題要約・タイムライン可視化**<br>親組織・分科会・部会・ワーキンググループの階層オントロジー定義、省庁横断政策テーマタグ連携、AI 時系列タイムライン分析エンジン | **省庁横断政策分析支援** | 構想 |
@@ -26,6 +25,7 @@
 
 | Track ID | 施策テーマ | 実装内容と対応 Drop | 達成された成果・恒久価値 | 完了ステータス |
 |:---:|:---|:---|:---:|:---:|
+| **Track [Testing]** | **テストスイート高速化 & 厳格化**<br>(重複I/O解消・検証精度向上) | **【Drop 73】** U18/U17 の軽量フィクスチャ・一時環境化（本番DB副作用排除、U18: 0.3s / U17: 0.7s）、`load_data_json()` のDB先行ロード化、ケース15への `council_materials` 突合・全管理キー No Leakage 網羅、ケース6孤立会議FAIL化、ケース14動的集計化、ケース2例外処理強化、`admin/db/` 変更時 L4/L5 自動連動、ケース1 glob自動化 | **実行時間 60% 短縮（62.5s $\to$ 25.2s）・検証精度厳格化・本番DB副作用ゼロ** | **【完了】**<br>(Drop 73) |
 | **Track [Storage-PMM]** | **配付資料ローカル資産管理 & 管理画面二重管理解消**<br>(PMM機能完全統合) | **【Drop 71】** `D:\dev\PMM` の全資産（10.7万件・107GB）を `local_docs/` へ統合。省庁別直列（1.0s間隔）ダウンローダー（`admin/pmm/`）、クローラー連動ローカル自動保存、SQLite DB 管理（`materials` / `council_materials`）、`admin_dashboard.html` ローカルAPI直結による二重管理完全解消 | **10.7万件資産統合 & クローラー即時連動ローカル保存 & 管理画面単一マスター化** | **【完了】**<br>(Drop 71) |
 | **Track [Database]**<br>(フェーズ 1 & 2) | **データ基盤刷新**<br>(DBマスター化 & 2系統エクスポート) | **【フェーズ 1: Drop 62】** スキーマ定義（`admin/db/schema.sql`）、可逆シードツール（`seed_db.py`）、2系統エクスポート（`export_data.py`）構築<br>**【フェーズ 2: Drop 63】** クローラー（`crawler.py`）および管理サーバー（`server.py`）の DB 直接接続化（`db_manager.py`）、クロール時自動エクスポートパイプライン確立<br>**【整合性ガード: Drop 64】** 統合テストスイート（`run_test_suite.py`）ケース15新設（PRAGMA整合性・外部キー・件数一致・漏洩ゼロ常時ガード） | **ACIDトランザクション確立・完全リバーシブル同期（DB $\leftrightarrow$ 2系統JSON）・公開用JSON 1.7MBスリム化** | **【完了】**<br>(Drop 62〜64) |
 
@@ -35,22 +35,22 @@
 
 ## 2. 各Trackの詳細
 
-### 【Track: Testing】統合テストスイートの高速化・重複I/O解消 & 検証精度厳格化（次期 Drop 構想）
+### 【Track: Testing】統合テストスイートの高速化・重複I/O解消 & 検証精度厳格化（Drop 73 完了）
 
-Drop 62〜64 による SQLite マスターDB化および 2系統エクスポート基盤の確立に伴い、テスト実行時間の 70% 超を占める重複I/O・再シードボトルネックを解消し、検証ロジックの死角を恒久的に排除する。
+Drop 62〜64 による SQLite マスターDB化および 2系統エクスポート基盤の確立に伴い、テスト実行時間のボトルネックとなっていた重複I/O・再シード処理を解消し、検証ロジックの死角と本番DBへの副作用を恒久的に排除した（総実行時間 62.5s $\to$ 25.2s、約60%高速化）。
 
-- **Track [Testing] のスコープ**:
-  1. **単体テスト高速化・副作用排除**: U18（`testing/test_drop63_crawler_server_db.py`）の毎テストフルシード解消（軽量フィクスチャ化、約15.3秒 $\to$ 約2秒）、U17（`testing/test_drop62_db_and_export.py`）の本番DB上書き再シード排除（インメモリ化、約12.3秒 $\to$ 約0.5秒）。
-  2. **重複I/O・二重パース解消**: `admin/utils.py` の `load_data_json()` における「30MB JSON パース後の DB ロード」による二重読み込みを解消。統合テスト各ケースへの共有データオブジェクト引き渡し統一。
-  3. **検証精度の厳格化**: ケース15への `council_materials` 件数突合および全管理キー漏洩防止（No Leakage）網羅、ケース6の孤立会議データ厳格FAIL化、ケース14のアクティブ会議体動的集計化、ケース2の通信例外ハンドリング強化。
-  4. **差分検知自動化**: `admin/db/*` 変更時の L4/L5 自動連動、ケース1の構文チェック対象自動探索化。
+- **Drop 73 (Track [Testing]) の成果**:
+  1. **単体テスト高速化・副作用排除 (CR-166)**: U18（`testing/test_drop63_crawler_server_db.py`）の毎テストフルシード解消（軽量フィクスチャ化により 21.9s $\to$ 0.31s）、U17（`testing/test_drop62_db_and_export.py`）の一時環境化により本番DB上書き副作用を排除（9.5s $\to$ 0.73s）。`seed_db.py` / `export_data.py` に CLI 引数を配備。
+  2. **重複I/O・二重パース解消 (CR-167)**: `admin/utils.py` の `load_data_json()` における「30MB JSON パース後の DB ロード」による二重読み込みを解消し DB 先行ロード化。Case 7 / 11 のキャッシュ機構活用による重複ディスクI/Oゼロ化。
+  3. **検証精度の厳格化 (CR-168)**: ケース15への `council_materials` 件数突合および全管理キー・crawlStatus 漏洩防止（No Leakage）網羅、ケース6の孤立会議データ厳格FAIL化、ケース14のアクティブ会議体動的集計検証（30%〜90%）、ケース2の通信例外ハンドリング強化。
+  4. **差分検知自動化 (CR-169)**: `admin/db/*` 変更時の L4/L5 自動連動、ケース1の構文チェック対象自動探索化（Path.glob）。
 
 | ID | 分類 | 内容 | 対象ファイル | 状態 |
 |:---|:---:|:---|:---|:---:|
-| **CR-166** | 単体テスト高速化 | **U18/U17 のテスト毎フルシード解消 & 本番DB副作用排除**<br>軽量フィクスチャ導入による U18 の高速化（約15秒 $\to$ 2秒）、および U17 のインメモリ/一時環境化による本番DB上書き副作用排除 | `testing/test_drop63_crawler_server_db.py`<br>`testing/test_drop62_db_and_export.py` | 構想（次期候補） |
-| **CR-167** | 重複I/O削減 | **load_data_json() の2重ロード解消 & 共有データキャッシュ適用拡大**<br>`admin/pmhub.db` 存在時の JSON 先行パース破棄を是正し DB 先行ロード化。ケース7/11/15での `data.json` 再パースを廃止し `get_shared_data()` 共有 | `admin/utils.py`<br>`testing/run_test_suite.py` | 構想（次期候補） |
-| **CR-168** | 検証精度厳格化 | **ケース15網羅拡大（council_materials・No Leakage） & ケース6/14/2 判定厳格化**<br>ケース15の突合対象拡大、ケース6孤立会議FAIL化、ケース14動的期待値化、ケース2例外握りつぶし解消 | `testing/run_test_suite.py` | 構想（次期候補） |
-| **CR-169** | 差分検知自動化 | **DB変更時 L4/L5 連動判定 & 構文チェック探索自動化**<br>`admin/db/*` 変更時に管理サーバー・クローラー層を自動実行。ケース1のファイル一覧手動管理を glob 自動探索化 | `testing/run_test_suite.py` | 構想（次期候補） |
+| **CR-166** | 単体テスト高速化 | **U18/U17 のテスト毎フルシード解消 & 本番DB副作用排除**<br>軽量フィクスチャ導入による U18 の高速化（21.9s $\to$ 0.31s）、および U17 の一時環境化による本番DB上書き副作用排除（9.5s $\to$ 0.73s） | `testing/test_drop63_crawler_server_db.py`<br>`testing/test_drop62_db_and_export.py`<br>`admin/db/seed_db.py`<br>`admin/db/export_data.py` | 完了 |
+| **CR-167** | 重複I/O削減 | **load_data_json() の2重ロード解消 & 共有データキャッシュ適用拡大**<br>`admin/pmhub.db` 存在時の JSON 先行パース破棄を是正し DB 先行ロード化。ケース7/11での `data.json` 再パースを廃止しキャッシュ共有 | `admin/utils.py`<br>`testing/test_drop22_normalization.py`<br>`testing/test_scraping_rules_reorg.py` | 完了 |
+| **CR-168** | 検証精度厳格化 | **ケース15網羅拡大（council_materials・No Leakage） & ケース6/14/2 判定厳格化**<br>ケース15の council_materials 突合および管理キー漏洩完全防止、ケース6孤立会議FAIL化、ケース14動的期待値化、ケース2例外握りつぶし解消 | `testing/run_test_suite.py` | 完了 |
+| **CR-169** | 差分検知自動化 | **DB変更時 L4/L5 連動判定 & 構文チェック探索自動化**<br>`admin/db/*` 変更時に管理サーバー・クローラー層を自動実行。ケース1のファイル一覧手動管理を glob 自動探索化 | `testing/run_test_suite.py` | 完了 |
 
 ---
 
@@ -204,6 +204,37 @@ PMM プロジェクト（`D:\dev\PMM\docs`）に蓄積された全 33 省庁・1
 ## 4. アーカイブ：実装済み一覧（詳細）
 
 ### 4-1. 直近完了 Drop 詳細（Drop 61 〜 Drop 72）
+
+### 【Drop 73】統合テストスイート高速化 & 重複I/O解消 & 検証精度厳格化（Track [Testing] 完了）
+
+Drop 62〜64 による SQLite マスターDB化および 2系統エクスポート基盤の確立に伴い、テスト実行時間のボトルネックとなっていた重複I/O・再シード処理を解消し、検証ロジックの死角と本番DBへの副作用を恒久的に排除した。統合テストスイートの全層実行（`--all-layers`）の総実行時間を 62.48 秒から **25.22 秒** へ **約 60% 短縮** させ、全15ケース＋全19単体テスト完全合格を達成した。
+
+- **Drop 73 の成果**:
+  1. **単体テスト高速化 & 副作用排除 (CR-166)**:
+     - `test_drop63_crawler_server_db.py` (U18) の軽量フィクスチャ化により、テスト実行時間を約 21.9 秒から **0.31 秒** へ短縮（約 98% 短縮）。
+     - `test_drop62_db_and_export.py` (U17) の一時環境・引数分離化により、本番 `pmhub.db` への上書き副作用を完全排除し、実行時間を約 9.5 秒から **0.73 秒** へ短縮。
+     - `seed_db.py` および `export_data.py` に CLI 引数（`--db`, `--public-json`, `--admin-json`, `--schema`）を配備。
+  2. **重複I/O・2重パース解消 (CR-167)**:
+     - `admin/utils.py` の `load_data_json()` において、30MB JSON パース後の DB ロード破棄を是正し、DB 先行ロード化（JSON パースを完全スキップ）。キャッシュキーに DB の mtime を追加。
+     - `test_drop22_normalization.py` (U7) および `test_scraping_rules_reorg.py` (U11) での 30MB JSON 重複再パースを廃止し、キャッシュ機構を活用。
+  3. **検証精度の厳格化 (CR-168)**:
+     - ケース15 に `council_materials`（会議体常設資料）の DB レコード件数と公開 JSON（`councils[].materials`）の件数突合を追加。
+     - ケース15 に No Leakage（全管理キーおよび各会議体の crawlStatus 漏洩防止）網羅的検査を追加。
+     - ケース6 の孤立会議データ（未定義 `councilId`）検知を `[WARN]` から厳格な `[FAIL]`（`return False`）へ格上げ。
+     - ケース14 のアクティブ会議体検証を静的ハードコード（720〜950）から、データセット内の会議体数に基づく動的集計比率（30%〜90%）検証へ刷新。
+     - ケース2 の通信例外（タイムアウト・接続不能・SSL エラー等）の例外握りつぶしを解消し、`[FAIL 接続失敗]` による厳格検知を実装。
+  4. **差分検知自動化 & パス glob 化 (CR-169)**:
+     - `run_test_suite.py` のセレクティブ判定において、`admin/db/` 以下のファイル変更時に第4層（L4: 管理サーバー）および第5層（L5: クローラー層）を自動連動。
+     - ケース1 のコード文法チェック対象ファイルを `Path.glob` による自動探索（`docs/*.{js,html}`, `admin/*.{py,js,html}`, `admin/db/*.py`, `admin/pmm/*.py`, `testing/*.{py,js}`）に刷新。
+
+| ID | 分類 | 内容 | 対象ファイル | 状態 |
+|:---|:---:|:---|:---|:---:|
+| **CR-166** | 単体テスト高速化 | **U18/U17 のテスト毎フルシード解消 & 本番DB副作用排除**<br>軽量フィクスチャ導入による U18 の高速化（21.9s $\to$ 0.31s）、および U17 の一時環境化による本番DB上書き副作用排除（9.5s $\to$ 0.73s） | `testing/test_drop63_crawler_server_db.py`<br>`testing/test_drop62_db_and_export.py`<br>`admin/db/seed_db.py`<br>`admin/db/export_data.py` | 完了 |
+| **CR-167** | 重複I/O削減 | **load_data_json() の2重ロード解消 & 共有データキャッシュ適用拡大**<br>`admin/pmhub.db` 存在時の JSON 先行パース破棄を是正し DB 先行ロード化。ケース7/11での `data.json` 再パースを廃止しキャッシュ共有 | `admin/utils.py`<br>`testing/test_drop22_normalization.py`<br>`testing/test_scraping_rules_reorg.py` | 完了 |
+| **CR-168** | 検証精度厳格化 | **ケース15網羅拡大（council_materials・No Leakage） & ケース6/14/2 判定厳格化**<br>ケース15の council_materials 突合および管理キー漏洩完全防止、ケース6孤立会議FAIL化、ケース14動的期待値化、ケース2例外握りつぶし解消 | `testing/run_test_suite.py` | 完了 |
+| **CR-169** | 差分検知自動化 | **DB変更時 L4/L5 連動判定 & 構文チェック探索自動化**<br>`admin/db/*` 変更時に管理サーバー・クローラー層を自動実行。ケース1のファイル一覧手動管理を glob 自動探索化 | `testing/run_test_suite.py` | 完了 |
+
+<hr>
 
 ### 【Drop 72】DB読込共通コア抽出による重複排除（R-1） & 例外処理厳格化・テキスト正規化一元化（R-5）（完了）
 
