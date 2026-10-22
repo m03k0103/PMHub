@@ -32,6 +32,7 @@
 
 import sys
 import os
+from pathlib import Path
 import json
 import re
 import urllib.parse
@@ -176,47 +177,27 @@ def check_syntax_errors():
     print(" [テスト 1/15] コードの文法エラー (SyntaxError) 自動検証")
     print("--------------------------------------------------")
     
-    files_to_check = [
-        os.path.join(PROJECT_ROOT, "docs", "app.js"),
-        os.path.join(PROJECT_ROOT, "docs", "index.html"),
-        os.path.join(PROJECT_ROOT, "admin", "server.py"),
-        os.path.join(PROJECT_ROOT, "admin", "crawler.py"),
-        os.path.join(PROJECT_ROOT, "admin", "manage_closed_councils.py"),
-        os.path.join(PROJECT_ROOT, "admin", "discover_councils.py"),
-        os.path.join(PROJECT_ROOT, "admin", "apply_report.py"),
-        os.path.join(PROJECT_ROOT, "admin", "cleanup_nav_meetings.py"),
-        os.path.join(PROJECT_ROOT, "admin", "admin_dashboard.html"),
-        os.path.join(PROJECT_ROOT, "admin", "admin_dashboard.js"),
-        os.path.join(PROJECT_ROOT, "testing", "run_test_suite.py"),
-        os.path.join(PROJECT_ROOT, "testing", "run_unit_tests.py"),
-        os.path.join(PROJECT_ROOT, "testing", "test_js_runtime.js"),
-        os.path.join(PROJECT_ROOT, "testing", "app.test.js"),
-        os.path.join(PROJECT_ROOT, "testing", "test_no_duplicate_meetings.py"),
-        os.path.join(PROJECT_ROOT, "testing", "test_crawler_regression.py"),
-        os.path.join(PROJECT_ROOT, "testing", "test_admin_server.py"),
-        os.path.join(PROJECT_ROOT, "testing", "test_crawler_suite.py"),
-        os.path.join(PROJECT_ROOT, "testing", "test_crawler_foundation.py"),
-        os.path.join(PROJECT_ROOT, "testing", "test_crawler_parent_table.py"),
-        os.path.join(PROJECT_ROOT, "testing", "test_scraping_rules_reorg.py"),
-        os.path.join(PROJECT_ROOT, "testing", "test_crawler_incremental.py"),
-        os.path.join(PROJECT_ROOT, "testing", "test_crawler_quality.py"),
-        os.path.join(PROJECT_ROOT, "testing", "test_crawler_quality_v2.py"),
-        os.path.join(PROJECT_ROOT, "testing", "test_crawler_drop16.py"),
-        os.path.join(PROJECT_ROOT, "testing", "test_crawler_speedup.py"),
-        os.path.join(PROJECT_ROOT, "testing", "test_drop23_waf_resilience.py"),
-        os.path.join(PROJECT_ROOT, "testing", "test_drop24_parent_table_expansion.py"),
-        os.path.join(PROJECT_ROOT, "testing", "test_drop25_mod_date_parsing.py"),
-        os.path.join(PROJECT_ROOT, "testing", "test_drop41_fallback_and_discovery.py"),
-        os.path.join(PROJECT_ROOT, "testing", "test_drop46_data_cleanup.py"),
-        os.path.join(PROJECT_ROOT, "testing", "test_drop47_context_recovery.py"),
-        os.path.join(PROJECT_ROOT, "admin", "db", "seed_db.py"),
-        os.path.join(PROJECT_ROOT, "admin", "db", "export_data.py"),
-        os.path.join(PROJECT_ROOT, "admin", "db", "db_manager.py"),
-        os.path.join(PROJECT_ROOT, "testing", "test_drop48_zero_materials_rescue.py"),
-        os.path.join(PROJECT_ROOT, "testing", "test_drop49_meeting_id_normalization.py"),
-        os.path.join(PROJECT_ROOT, "testing", "test_drop62_db_and_export.py"),
-        os.path.join(PROJECT_ROOT, "testing", "test_drop63_crawler_server_db.py")
+    # CR-169: ハードコードリストを廃止し、対象ディレクトリの glob 自動探索に刷新
+    discovered_files = set()
+    patterns = [
+        ("docs", "*.js"),
+        ("docs", "*.html"),
+        ("admin", "*.py"),
+        ("admin", "*.js"),
+        ("admin", "*.html"),
+        ("admin/db", "*.py"),
+        ("admin/pmm", "*.py"),
+        ("testing", "*.py"),
+        ("testing", "*.js")
     ]
+    for sub, pat in patterns:
+        base = os.path.join(PROJECT_ROOT, sub)
+        if os.path.exists(base):
+            for p in Path(base).glob(pat):
+                if p.is_file() and not p.name.startswith("."):
+                    discovered_files.add(str(p.resolve()))
+
+    files_to_check = sorted(list(discovered_files))
     
     errors_found = 0
 
@@ -440,6 +421,7 @@ def check_link_health(explicit_urls=None, check_all=False):
                 print(f"  [FAIL リンク切れ ({e.code})] {url}")
                 broken_links += 1
         except Exception as e:
+            ssl_fallback_ok = False
             if "CERTIFICATE_VERIFY_FAILED" in str(e):
                 try:
                     import ssl
@@ -448,9 +430,13 @@ def check_link_health(explicit_urls=None, check_all=False):
                     with urllib.request.urlopen(req, timeout=10, context=ctx) as resp:
                         if resp.status in (200, 301, 302, 202):
                             print(f"  [200 OK (SSL検証フォールバック)] {url}")
-                            continue
+                            url_cache[url] = {"t": time.time(), "status": resp.status}
+                            ssl_fallback_ok = True
                 except Exception:
                     pass
+            if not ssl_fallback_ok:
+                print(f"  [FAIL 接続失敗 ({e})] {url}")
+                broken_links += 1
     try:
         with open(cache_path, "w", encoding="utf-8") as cf:
             json.dump(url_cache, cf)
@@ -654,7 +640,8 @@ def check_council_timeline_sync(data=None):
 
     orphaned_meetings = meetings_council_ids - councils_set
     if orphaned_meetings:
-        print(f"  [WARN] 定義されていない会議体IDを持つ会議データがタイムラインに存在します: {sorted(orphaned_meetings)}")
+        print(f"  [FAIL] 定義されていない会議体IDを持つ会議データがタイムラインに存在します (CR-168 厳格FAIL化): {sorted(orphaned_meetings)[:5]}")
+        return False
 
     if os.path.exists(rejected_json_path):
         with open(rejected_json_path, "r", encoding="utf-8") as rf:
@@ -753,6 +740,7 @@ def check_sqlite_and_split_export_sync(data=None):
         db_c_cnt = cur.execute("SELECT COUNT(*) FROM councils;").fetchone()[0]
         db_m_cnt = cur.execute("SELECT COUNT(*) FROM meetings;").fetchone()[0]
         db_mat_cnt = cur.execute("SELECT COUNT(*) FROM materials;").fetchone()[0]
+        db_cm_cnt = cur.execute("SELECT COUNT(*) FROM council_materials;").fetchone()[0]
         db_rule_cnt = cur.execute("SELECT COUNT(*) FROM scraping_rules;").fetchone()[0]
         db_cs_cnt = cur.execute("SELECT COUNT(*) FROM crawl_statuses;").fetchone()[0]
 
@@ -762,7 +750,7 @@ def check_sqlite_and_split_export_sync(data=None):
     finally:
         conn.close()
 
-    # 4. JSON パース (公開 & 管理)
+    # 4. JSON パース (公開 docs/data.json & 管理 admin/admin_data.json の生のディスク状態を直接検証)
     try:
         with open(public_path, "r", encoding="utf-8") as f:
             pub_data = json.load(f)
@@ -777,6 +765,7 @@ def check_sqlite_and_split_export_sync(data=None):
     pub_c_cnt = len(pub_councils)
     pub_m_cnt = len(pub_meetings)
     pub_mat_cnt = sum(len(m.get("materials", [])) for m in pub_meetings)
+    pub_cm_cnt = sum(len(c.get("materials", [])) for c in pub_councils)
     pub_c_lock = sum(1 for c in pub_councils if c.get("manualLock"))
     pub_m_lock = sum(1 for m in pub_meetings if m.get("manualLock"))
     pub_mat_lock = sum(1 for m in pub_meetings for mat in m.get("materials", []) if mat.get("manualLock"))
@@ -790,13 +779,15 @@ def check_sqlite_and_split_export_sync(data=None):
     adm_m_lock = len(adm_locks.get("meetings", []))
     adm_mat_lock = len(adm_locks.get("materials", []))
 
-    # 5. 件数突合
+    # 5. 件数突合 (CR-168: council_materials 突合追加)
     if db_c_cnt != pub_c_cnt:
         errors.append(f"会議体件数不一致: DB={db_c_cnt} vs 公開JSON={pub_c_cnt}")
     if db_m_cnt != pub_m_cnt:
         errors.append(f"開催回件数不一致: DB={db_m_cnt} vs 公開JSON={pub_m_cnt}")
     if db_mat_cnt != pub_mat_cnt:
         errors.append(f"配付資料件数不一致: DB={db_mat_cnt} vs 公開JSON={pub_mat_cnt}")
+    if db_cm_cnt != pub_cm_cnt:
+        errors.append(f"会議体常設資料件数不一致: DB={db_cm_cnt} vs 公開JSON={pub_cm_cnt}")
     if db_rule_cnt != adm_rule_cnt:
         errors.append(f"スクレイピングルール件数不一致: DB={db_rule_cnt} vs 管理JSON={adm_rule_cnt}")
     if db_cs_cnt != adm_cs_cnt:
@@ -810,11 +801,19 @@ def check_sqlite_and_split_export_sync(data=None):
     if not (db_mat_lock == pub_mat_lock == adm_mat_lock):
         errors.append(f"配付資料手動ロック件数不一致: DB={db_mat_lock}, 公開JSON={pub_mat_lock}, 管理JSON={adm_mat_lock}")
 
-    # 7. 公開 JSON への設定漏洩ゼロ (No Leakage)
-    forbidden_keys_in_public = ["scrapingRules", "crawlerConfig", "rejectedCouncils", "initialAlertKeywords"]
+    # 7. 公開 JSON への設定漏洩ゼロ (CR-168: 全管理キー No Leakage 網羅検証)
+    forbidden_keys_in_public = [
+        "scrapingRules", "scrapingRuleTemplates", "crawlerConfig",
+        "rejectedCouncils", "initialAlertKeywords", "discoveryKeywords",
+        "manualLocks", "crawlStatuses"
+    ]
     leaked = [k for k in forbidden_keys_in_public if k in pub_data]
     if leaked:
         errors.append(f"公開 docs/data.json に管理専用キーが混入しています (No Leakage 違反): {leaked}")
+
+    c_leak = [c.get("id") for c in pub_councils if "crawlStatus" in c]
+    if c_leak:
+        errors.append(f"公開 docs/data.json の会議体に crawlStatus が混入しています (No Leakage 違反): {c_leak[:3]}")
 
     # PMM ローカル管理属性 (local_path, download_status 等) の公開 JSON 非漏洩検証 (Drop 71)
     pmm_leak = False
@@ -992,11 +991,23 @@ def check_active_filtering_and_closed_management(data=None):
     active_councils = load_councils_from_data_json(recent_years=2, include_closed=False)
     all_councils = load_councils_from_data_json(recent_years="all", include_closed=False)
 
-    if not (720 <= len(active_councils) <= 950):
-        print(f"  [FAIL] 直近2年以内アクティブ会議体数 ({len(active_councils)}) が想定範囲外です (720〜950件)")
+    total_c = len(all_councils)
+    act_c = len(active_councils)
+
+    if total_c == 0:
+        print("  [FAIL] 全会議体数が 0 件です")
         return False
-    if len(all_councils) <= len(active_councils):
-        print(f"  [FAIL] 全会議体数 ({len(all_councils)}) がアクティブ会議体数以下です")
+    if act_c == 0:
+        print("  [FAIL] アクティブ会議体数が 0 件です")
+        return False
+    if total_c <= act_c:
+        print(f"  [FAIL] 全会議体数 ({total_c}) がアクティブ会議体数 ({act_c}) 以下です")
+        return False
+
+    # CR-168: 動的集計によるアクティブ比率健全性検証 (全会議体の 30%〜90% の範囲内であること)
+    active_ratio = (act_c / total_c) * 100
+    if not (30.0 <= active_ratio <= 90.0):
+        print(f"  [FAIL] アクティブ会議体比率 ({active_ratio:.1f}%, {act_c}/{total_c}) が健全範囲 (30%〜90%) 外です")
         return False
 
     councils = data.get("councils", [])
@@ -1093,16 +1104,20 @@ def detect_changed_layers_and_unit_tests():
             or "app.test.js" in f or "test_js_runtime.js" in f or "admin/admin_dashboard" in f):
             active_layers.add("L2")
 
-        # L4: 管理サーバー関連 & PMM
-        if f.startswith("admin/server.py") or "test_admin_server.py" in f or "admin/pmm/" in f or "test_pmm" in f:
+        # L4: 管理サーバー関連 & PMM & DB基盤 (CR-169)
+        if (f.startswith("admin/server.py") or "test_admin_server.py" in f
+            or "admin/pmm/" in f or "test_pmm" in f
+            or "admin/db/" in f or "admin\\db\\" in f
+            or "test_drop62" in f or "test_drop63" in f):
             active_layers.add("L4")
 
-        # L5: クローラー関連
+        # L5: クローラー関連 & DB基盤 (CR-169)
         if (f.startswith("admin/crawler.py") or f.startswith("admin/utils.py")
             or f.startswith("admin/manage_closed_councils.py")
             or f.startswith("admin/discover_councils.py")
             or f.startswith("admin/apply_report.py")
             or f.startswith("admin/cleanup_nav_meetings.py")
+            or "admin/db/" in f or "admin\\db\\" in f
             or "test_crawler" in f or "test_drop" in f or "scraping_rules" in f):
             active_layers.add("L5")
 

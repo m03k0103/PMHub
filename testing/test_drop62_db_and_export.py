@@ -16,6 +16,7 @@ import os
 import sqlite3
 import subprocess
 import sys
+import tempfile
 import unittest
 from pathlib import Path
 
@@ -108,29 +109,122 @@ class TestDrop62DatabaseAndExport(unittest.TestCase):
         self.assertNotIn("crawlStatus", sample_c, "Council in public JSON should not have crawlStatus")
 
     def test_04_bidirectional_lossless_reversibility(self):
-        """Test that seed_db -> export_data produces 100% identical JSON outputs."""
-        pub_before = PUBLIC_JSON.read_bytes()
-        adm_before = ADMIN_JSON.read_bytes()
+        """Test that seed_db -> export_data produces 100% identical JSON outputs (isolated temp fixture)."""
+        with tempfile.TemporaryDirectory(prefix="pmhub_test_drop62_") as tmpdir:
+            tmp_path = Path(tmpdir)
+            tmp_db = tmp_path / "pmhub_test.db"
+            tmp_pub = tmp_path / "data.json"
+            tmp_adm = tmp_path / "admin_data.json"
 
-        hash_pub_before = hashlib.sha256(pub_before).hexdigest()
-        hash_adm_before = hashlib.sha256(adm_before).hexdigest()
+            # テスト用初期フィクスチャ (CR-166: 本番DBへの副作用排除 & 高速化)
+            fixture_pub = {
+                "categories": ["審議会等"],
+                "councils": [
+                    {
+                        "category": "審議会等",
+                        "id": "test-c1",
+                        "manualLock": False,
+                        "materials": [
+                            {"name": "会議体資料1", "url": "https://example.com/cm1.pdf"}
+                        ],
+                        "ministry": "test",
+                        "name": "テスト審議会1",
+                        "officialUrl": "https://example.com/c1",
+                        "pastYearCount": 1
+                    }
+                ],
+                "docTypes": ["議事次第", "配付資料", "議事録"],
+                "lastCrawlTime": "2026-10-23T00:00:00",
+                "meetings": [
+                    {
+                        "councilId": "test-c1",
+                        "date": "2026/01/01",
+                        "id": "test-c1-20260101-001",
+                        "manualLock": False,
+                        "materials": [
+                            {"name": "議事次第", "type": "PDF", "url": "https://example.com/c1-01.pdf"}
+                        ],
+                        "name": "第1回 テスト会合",
+                        "officialUrl": "https://example.com/c1-01",
+                        "round": 1
+                    }
+                ],
+                "ministries": [{"id": "test", "name": "テスト省"}]
+            }
+            fixture_adm = {
+                "crawlStatuses": {
+                    "test-c1": {
+                        "lastCrawl": "2026-10-23T00:00:00",
+                        "meetingCount": 1,
+                        "status": "success"
+                    }
+                },
+                "crawlerConfig": {"max_workers": 2},
+                "discoveryKeywords": ["審議会"],
+                "initialAlertKeywords": [],
+                "manualLocks": {"councils": [], "materials": [], "meetings": []},
+                "rejectedCouncils": [],
+                "scrapingRuleTemplates": {},
+                "scrapingRules": {
+                    "test-c1": {
+                        "officialUrl": "https://example.com/c1"
+                    }
+                }
+            }
 
-        # Run seed_db
-        res_seed = subprocess.run([sys.executable, str(SEED_SCRIPT)], capture_output=True, text=True)
-        self.assertEqual(res_seed.returncode, 0, f"seed_db failed: {res_seed.stderr}")
+            # 最初のシード & エクスポートで決定論的フォーマットに初期整形
+            with open(tmp_pub, "w", encoding="utf-8") as f:
+                json.dump(fixture_pub, f, ensure_ascii=False, indent=2)
+            with open(tmp_adm, "w", encoding="utf-8") as f:
+                json.dump(fixture_adm, f, ensure_ascii=False, indent=2)
 
-        # Run export_data
-        res_exp = subprocess.run([sys.executable, str(EXPORT_SCRIPT)], capture_output=True, text=True)
-        self.assertEqual(res_exp.returncode, 0, f"export_data failed: {res_exp.stderr}")
+            res_init_seed = subprocess.run([
+                sys.executable, str(SEED_SCRIPT),
+                "--db", str(tmp_db),
+                "--schema", str(SCHEMA_PATH),
+                "--public-json", str(tmp_pub),
+                "--admin-json", str(tmp_adm)
+            ], capture_output=True, text=True)
+            self.assertEqual(res_init_seed.returncode, 0, f"init seed_db failed: {res_init_seed.stderr}")
 
-        pub_after = PUBLIC_JSON.read_bytes()
-        adm_after = ADMIN_JSON.read_bytes()
+            res_init_exp = subprocess.run([
+                sys.executable, str(EXPORT_SCRIPT),
+                "--db", str(tmp_db),
+                "--public-json", str(tmp_pub),
+                "--admin-json", str(tmp_adm)
+            ], capture_output=True, text=True)
+            self.assertEqual(res_init_exp.returncode, 0, f"init export_data failed: {res_init_exp.stderr}")
 
-        hash_pub_after = hashlib.sha256(pub_after).hexdigest()
-        hash_adm_after = hashlib.sha256(adm_after).hexdigest()
+            pub_before = tmp_pub.read_bytes()
+            adm_before = tmp_adm.read_bytes()
+            hash_pub_before = hashlib.sha256(pub_before).hexdigest()
+            hash_adm_before = hashlib.sha256(adm_before).hexdigest()
 
-        self.assertEqual(hash_pub_before, hash_pub_after, "Public JSON must remain bitwise identical after re-export")
-        self.assertEqual(hash_adm_before, hash_adm_after, "Admin JSON must remain bitwise identical after re-export")
+            # 2回目の再シード & 再エクスポート（完全可逆性の検証）
+            res_seed = subprocess.run([
+                sys.executable, str(SEED_SCRIPT),
+                "--db", str(tmp_db),
+                "--schema", str(SCHEMA_PATH),
+                "--public-json", str(tmp_pub),
+                "--admin-json", str(tmp_adm)
+            ], capture_output=True, text=True)
+            self.assertEqual(res_seed.returncode, 0, f"seed_db failed: {res_seed.stderr}")
+
+            res_exp = subprocess.run([
+                sys.executable, str(EXPORT_SCRIPT),
+                "--db", str(tmp_db),
+                "--public-json", str(tmp_pub),
+                "--admin-json", str(tmp_adm)
+            ], capture_output=True, text=True)
+            self.assertEqual(res_exp.returncode, 0, f"export_data failed: {res_exp.stderr}")
+
+            pub_after = tmp_pub.read_bytes()
+            adm_after = tmp_adm.read_bytes()
+            hash_pub_after = hashlib.sha256(pub_after).hexdigest()
+            hash_adm_after = hashlib.sha256(adm_after).hexdigest()
+
+            self.assertEqual(hash_pub_before, hash_pub_after, "Public JSON must remain bitwise identical after re-export")
+            self.assertEqual(hash_adm_before, hash_adm_after, "Admin JSON must remain bitwise identical after re-export")
 
 
 if __name__ == "__main__":

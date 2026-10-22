@@ -26,12 +26,18 @@ PROJECT_ROOT = os.path.abspath(os.path.join(TEST_DIR, '..'))
 DATA_JSON_PATH = os.path.join(PROJECT_ROOT, 'docs', 'data.json')
 
 sys.path.insert(0, os.path.join(PROJECT_ROOT, 'admin'))
+from utils import load_data_json
 from crawler import normalize_text, CJK_RADICAL_REPLACEMENTS
 from batch_normalize_data import is_kangxi_or_supplement, count_kangxi_chars, scan_dataset_kangxi_stats
 
 
 class TestDrop22Normalization(unittest.TestCase):
     """Drop 22 文字正規化テストスイート"""
+
+    @classmethod
+    def setUpClass(cls):
+        # CR-167: 共有キャッシュ機構を活用してディスクからの 30MB 再読み込みを排除
+        cls.data = load_data_json(DATA_JSON_PATH, cached=True)
 
     def test_cr46_normalize_text_kangxi_and_supplements(self):
         """CR-46: 康煕部首およびCJK部首補助が通常の標準漢字へ正しく変換されること"""
@@ -70,8 +76,7 @@ class TestDrop22Normalization(unittest.TestCase):
     def test_cr47_no_kangxi_radicals_in_data_json(self):
         """CR-47: docs/data.json 内に康煕部首およびCJK部首補助が 0 件であること（不変性検証）"""
         self.assertTrue(os.path.exists(DATA_JSON_PATH), f"data.json が見つかりません: {DATA_JSON_PATH}")
-        with open(DATA_JSON_PATH, "r", encoding="utf-8") as f:
-            data = json.load(f)
+        data = self.data
 
         stats = scan_dataset_kangxi_stats(data)
         self.assertEqual(
@@ -82,8 +87,7 @@ class TestDrop22Normalization(unittest.TestCase):
 
     def test_cr47_data_integrity(self):
         """CR-47: 正規化後も全会議体マスター（1,446件）および開催回数が維持されていること"""
-        with open(DATA_JSON_PATH, "r", encoding="utf-8") as f:
-            data = json.load(f)
+        data = self.data
 
         councils = data.get("councils", [])
         meetings = data.get("meetings", [])
