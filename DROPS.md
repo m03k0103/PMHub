@@ -1,6 +1,6 @@
 # PMHub 改善・機能拡充（Drop）マスタードキュメント (DROPS.md)
 
-> 最終更新: 2026-10-22  
+> 最終更新: 2026-10-23  
 > 開発・改善単位の呼称を **「Drop（ドロップ）」** に統一しています。未着手の将来構想テーマについては、順序が前後・並行する可能性があるため **「Track（トラック）」** として管理し、着手・完了時にその時点の最新連番（Drop）を付与してアーカイブ化します。  
 > 本ドキュメントは、PMHub の継続的改善ロードマップおよび実施記録を一元管理するマスタードキュメントです。  
 > **【運用指針】**
@@ -103,7 +103,7 @@ PMM プロジェクト（`D:\dev\PMM\docs`）に蓄積された全 33 省庁・1
 
 ## 3. 実装済 Drop一覧
 
-### 3-1. 直近の完了Drop一覧（Drop 61 〜 Drop 72）
+### 3-1. 直近の完了Drop一覧（Drop 61 〜 Drop 74）
 
 | 対応 Drop | 施策区分 | 主な対象・内容 | クロール成功率 / 成果 | ステータス |
 |:---:|:---|:---|:---:|:---:|
@@ -118,7 +118,9 @@ PMM プロジェクト（`D:\dev\PMM\docs`）に蓄積された全 33 省庁・1
 | **Drop 69** | **過去の完了Drop**<br>(規約再編・共通規範集約) | **DROPS.md 4大構成再編 & GLOBAL_RULES.md 共通開発運用規約拡充 & AGENTS.md 責務分離・スリム化**<br>DROPS.md を標準4大構成（Tracksロードマップ・各Track詳細・実装済Drop一覧・アーカイブ詳細）へ抜本再編。全プロジェクト共通規範（Implementation Plan 事前承認・調査許容範囲、コマンド自律実行、Gitブランチ運用・即時リモートpush、自動テスト＆Markdown単独テスト省略例外、手動データ保護＆DBマスター同期原則、不具合・データ修正時の再発防止ガード＋横展開確認、scratch隔離、文字コード自動判定等）を GLOBAL_RULES.md へ集約・拡充。AGENTS.md を PMHub 固有ドメイン規約（用語厳格遵守、IDフォーマット、15ケース統合テスト・報告フォーマット等）に特化・重複排除 | **全共通開発規範集約 & AGENTS.md 重複排除・保守性向上** | **【完了】** |
 | **Drop 70** | **過去の完了Drop**<br>(管理UI & API拡張) | **管理ダッシュボード 登録済会議体 開催回ディスカバリーオプション選択UI & API連携**<br>管理画面（`admin/admin_dashboard.html`）において、登録済会議体 開催回ディスカバリー実行時に探索モード（通常個別探索 vs 省庁新着検知 `--from-ministry-news`）、対象府省庁（全省庁 / 個別省庁）、巡回対象年数（直近2年/1年/3年/全件）、直近再検査回数（1回/0回/3回）、全件再検査、廃止会議体巡回フラグを選択可能化。モード連動UI制御（`admin_dashboard.js`）、`/api/run-crawler` のオプション受け取り & バックグラウンド分岐実行（`admin/server.py`）、単体テスト拡充（`test_admin_server.py`） | **管理画面からの探索モード・省庁・年数・再検査オプション自在制御 & API連動確立** | **【完了】** |
 | **Drop 71** | **過去の完了Drop**<br>(PMM完全統合 & 二重管理解消) | **配付資料・会議体資料ローカル資産管理システム（PMM）完全統合 & admin_dashboard.html ローカル専用化・二重管理解消**<br>`D:\dev\PMM` の全資産（10.7万件・107GB）を `local_docs/` へ移行。`admin/pmm/` パッケージ（共通関数、ダウンローダー、フォルダ正規化、クリーンアップ、重複検知）新設、親組織の「会議体資料（`00_会議体資料`）」ローカル保存対応、クローラー完了直後の新規・更新分自動保存連動、SQLite DB（`materials` / `council_materials`）のローカルパス・ステータス管理（公開JSON漏洩ゼロ）、公開ポータル（`docs/index.html`）からの管理画面リンク排除、および `admin/admin_dashboard.html` のローカルAPI（`/api/admin-data`）直結による二重管理完全解消 | **PMM機能完全統合 & ローカル自動保存連動 & 管理画面二重管理解消** | **【完了】** |
-| **Drop 72** | **最新の完了Drop**<br>(コード品質向上 & DB層重複排除) | **DB読込共通コア抽出による重複排除（R-1） & 例外処理厳格化・テキスト正規化一元化（R-5）**<br>`admin/db/db_manager.py` において類似度84%で重複していた `load_data_from_db` と `load_admin_full_data_from_db` を共通コア `_load_dataset_from_db` に集約・一本化し、約155行のコード削減と完全互換性を達成。`admin/batch_normalize_data.py` のインライン `normalize_text` 再定義を撤廃し `admin/utils.py` へ一本化。`admin/utils.py`（日付パース・一時ファイル削除）、`admin/server.py`（未確定会議数取得）、`admin/db/db_manager.py`（tagsパース）の `except Exception: pass` を具体的例外型（`ValueError`, `OSError`, `JSONDecodeError` 等）またはログ記録へ是正 | **DB読込155行重複排除・完全互換 & 例外破棄是正・統合15ケース＋単体19種完全合格** | **【完了】** |
+| **Drop 72** | **過去の完了Drop**<br>(コード品質向上 & DB層重複排除) | **DB読込共通コア抽出による重複排除（R-1） & 例外処理厳格化・テキスト正規化一元化（R-5）**<br>`admin/db/db_manager.py` において類似度84%で重複していた `load_data_from_db` と `load_admin_full_data_from_db` を共通コア `_load_dataset_from_db` に集約・一本化し、約155行のコード削減と完全互換性を達成。`admin/batch_normalize_data.py` のインライン `normalize_text` 再定義を撤廃し `admin/utils.py` へ一本化。`admin/utils.py`（日付パース・一時ファイル削除）、`admin/server.py`（未確定会議数取得）、`admin/db/db_manager.py`（tagsパース）の `except Exception: pass` を具体的例外型（`ValueError`, `OSError`, `JSONDecodeError` 等）またはログ記録へ是正 | **DB読込155行重複排除・完全互換 & 例外破棄是正・統合15ケース＋単体19種完全合格** | **【完了】** |
+| **Drop 73** | **過去の完了Drop**<br>(テスト高速化 & 厳格化) | **統合テストスイート高速化・重複I/O解消 & 検証精度厳格化（Track [Testing]）**<br>U18/U17 のテスト毎フルシード解消（軽量フィクスチャ・一時環境化、21.9s $\to$ 0.31s / 9.5s $\to$ 0.73s）、`load_data_json()` の DB 先行ロード化、ケース15への `council_materials` 突合・全管理キー No Leakage 網羅、ケース6/14/2 判定厳格化、`admin/db/*` 変更時 L4/L5 連動判定、ケース1構文チェック探索自動化 | **実行時間 60% 短縮（62.5s $\to$ 25.2s）・検証精度厳格化・本番DB副作用ゼロ** | **【完了】** |
+| **Drop 74** | **最新の完了Drop**<br>(新規ディスカバリー拡張 & 名称是正) | **新規会議体ディスカバリー省庁新着検知オプション追加 & 開催回クロール名称是正**<br>新規会議体ディスカバリー（`admin/discover_councils.py`）に省庁新着お知らせページ（`MINISTRY_NEWS_PORTALS`）を巡回して新設会議体・懇談会を自動検知する新着検知モード（`--from-ministry-news` / `--mode ministry_news`）を実装。管理画面（`admin/admin_dashboard.html` / `js`）に探索モード切替・省庁選択オプションパネルを追加。サーバーAPI（`/api/run-discovery`）のオプション引数受け取り対応。あわせて「開催回ディスカバリー」の呼称を「開催回クロール」へ完全是正（UI / JS / TERMINOLOGY.md） | **新規会議体新着検知エンジン確立 & 開催回クロール用語是正・統合15ケース＋単体19種完全合格** | **【完了】** |
 
 
 ---

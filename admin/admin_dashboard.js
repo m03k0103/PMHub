@@ -197,7 +197,15 @@
     window.startDiscovery = async function() {
       if (isRunningDiscovery) return;
       isRunningDiscovery = true;
-      alert('【審議会ディスカバリー開始】全省庁の審議会等ページURLへの検出巡回を開始します。\n（実際のページへHTTPアクセスしてリダイレクト後の最終正規URLを検証します）');
+
+      const modeSelect = document.getElementById('discoveryModeSelect');
+      const ministrySelect = document.getElementById('discoveryMinistrySelect');
+      const discMode = modeSelect ? modeSelect.value : 'normal';
+      const discMinistry = (ministrySelect && ministrySelect.value !== 'ALL') ? ministrySelect.value : null;
+
+      const modeLabel = discMode === 'ministry_news' ? '【省庁新着検知】' : '【通常一覧巡回】';
+      const targetLabel = discMinistry ? `対象省庁: ${discMinistry}` : '対象: 全府省庁 (ALL)';
+      alert(`【審議会ディスカバリー開始】${modeLabel} ${targetLabel} の検出巡回を開始します。`);
 
       const btn = document.getElementById('btnStartDiscovery');
       const fillEl = document.getElementById('discoveryProgressFill');
@@ -223,13 +231,21 @@
         logsEl.scrollTop = logsEl.scrollHeight;
       };
 
-      logLine('全省庁の審議会等一覧ページ (councilsUrls) の巡回を開始します...');
+      if (discMode === 'ministry_news') {
+        logLine(`各府省庁トップページおよび報道発表ポータルからの新着検知を開始します (${targetLabel})...`);
+      } else {
+        logLine(`全省庁の審議会等一覧ページ (councilsUrls) の巡回を開始します (${targetLabel})...`);
+      }
 
       try {
         if (fillEl) fillEl.style.width = '5%';
         logLine('サーバー側ディスカバリーエンジン (discover_councils.py) を開始中...');
 
-        const startRes = await fetch('/api/run-discovery', { method: 'POST' });
+        const startRes = await fetch('/api/run-discovery', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ mode: discMode, ministry: discMinistry })
+        });
         if (!startRes.ok) {
           throw new Error('ディスカバリー開始リクエストに失敗しました');
         }
@@ -2838,7 +2854,28 @@
 
     renderCrawlStatusDashboard();
 
-    // ─── 4. Crawler Options UI Sync (Drop 69) ───
+    // ─── 4. Discovery & Crawler Options UI Sync (Drop 70, Drop 74) ───
+    function initDiscoveryOptionsListeners() {
+      const modeSelect = document.getElementById('discoveryModeSelect');
+      const desc = document.getElementById('discoveryModeDescription');
+      if (!modeSelect) return;
+
+      const updateUI = () => {
+        const isNews = modeSelect.value === 'ministry_news';
+        if (desc) {
+          if (isNews) {
+            desc.innerHTML = '※ 各府省庁トップページや報道発表・新着情報ポータルを走査し、新設された検討会・懇談会・有識者会議等の新規会議体を自動検知します（<code>--from-ministry-news</code> オプション）。';
+          } else {
+            desc.innerHTML = '※ 全府省庁の「審議会等ページURL」を自動巡回し、未登録の会議体名称およびトップページURLを自動抽出・検出します。';
+          }
+        }
+      };
+
+      modeSelect.addEventListener('change', updateUI);
+      updateUI();
+    }
+    initDiscoveryOptionsListeners();
+
     function initCrawlerOptionsListeners() {
       const modeSelect = document.getElementById('crawlModeSelect');
       const advWrapper = document.getElementById('crawlAdvancedOptionsWrapper');

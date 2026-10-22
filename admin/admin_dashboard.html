@@ -385,6 +385,56 @@
           </button>
         </div>
 
+        <!-- 新規会議体ディスカバリー 実行オプション設定パネル (Drop 74) -->
+        <div class="discovery-options-panel" style="margin-top: 1rem; padding: 1rem; background: rgba(0,0,0,0.25); border: 1px solid var(--border-color); border-radius: var(--radius-md);">
+          <div style="display: flex; flex-wrap: wrap; gap: 1rem; align-items: flex-end;">
+            <!-- モード選択 -->
+            <div style="flex: 1; min-width: 260px;">
+              <label for="discoveryModeSelect" style="display: block; font-size: 0.8rem; font-weight: 600; color: #94a3b8; margin-bottom: 0.35rem;">
+                🎯 探索モード
+              </label>
+              <select id="discoveryModeSelect" class="form-control" style="width: 100%; padding: 0.5rem 0.75rem; background: rgba(15, 23, 42, 0.8); border: 1px solid var(--border-color); color: var(--text-primary); border-radius: var(--radius-sm); font-size: 0.88rem;">
+                <option value="normal" selected>【通常巡回】全省庁の審議会等一覧ページから検出 (デフォルト)</option>
+                <option value="ministry_news">【省庁新着検知】府省庁トップ・報道発表ポータルから新設会議体を検知 (--from-ministry-news)</option>
+              </select>
+            </div>
+
+            <!-- 対象省庁選択 -->
+            <div style="width: 180px;">
+              <label for="discoveryMinistrySelect" style="display: block; font-size: 0.8rem; font-weight: 600; color: #94a3b8; margin-bottom: 0.35rem;">
+                🏛 対象府省庁
+              </label>
+              <select id="discoveryMinistrySelect" class="form-control" style="width: 100%; padding: 0.5rem 0.75rem; background: rgba(15, 23, 42, 0.8); border: 1px solid var(--border-color); color: var(--text-primary); border-radius: var(--radius-sm); font-size: 0.88rem;">
+                <option value="ALL" selected>すべての府省庁 (ALL)</option>
+                <option value="CAO">内閣府 (CAO)</option>
+                <option value="CAS">内閣官房 (CAS)</option>
+                <option value="FSA">金融庁 (FSA)</option>
+                <option value="MOF">財務省 (MOF)</option>
+                <option value="MHLW">厚生労働省 (MHLW)</option>
+                <option value="METI">経済産業省 (METI)</option>
+                <option value="MLIT">国土交通省 (MLIT)</option>
+                <option value="MIC">総務省 (MIC)</option>
+                <option value="MEXT">文部科学省 (MEXT)</option>
+                <option value="MOJ">法務省 (MOJ)</option>
+                <option value="MOD">防衛省 (MOD)</option>
+                <option value="NRA">原子力規制委員会 (NRA)</option>
+                <option value="FSC">食品安全委員会 (FSC)</option>
+                <option value="PPC">個人情報保護委員会 (PPC)</option>
+                <option value="CAA">消費者庁 (CAA)</option>
+                <option value="DIGITAL">デジタル庁 (DIGITAL)</option>
+                <option value="DA">こども家庭庁 (DA)</option>
+                <option value="MAFF">農林水産省 (MAFF)</option>
+                <option value="ENV">環境省 (ENV)</option>
+                <option value="MOFA">外務省 (MOFA)</option>
+                <option value="FDMA">消防庁 (FDMA)</option>
+              </select>
+            </div>
+          </div>
+          <div id="discoveryModeDescription" style="margin-top: 0.65rem; font-size: 0.78rem; color: #64748b; line-height: 1.4;">
+            ※ 全府省庁の「審議会等ページURL」を自動巡回し、未登録の会議体名称およびトップページURLを自動抽出・検出します。
+          </div>
+        </div>
+
         <div style="margin-top: 1rem;">
           <div class="crawler-progress-bar" style="height: 6px; background: rgba(255,255,255,0.08); border-radius: 4px; overflow: hidden; margin-bottom: 0.75rem;">
             <div class="crawler-progress-fill" id="discoveryProgressFill" style="height: 100%; width: 0%; background: #3b82f6; transition: width 0.2s;"></div>
@@ -445,13 +495,13 @@
         </details>
       </section>
 
-      <!-- 2. 登録済会議体 開催回ディスカバリー -->
+      <!-- 2. 登録済会議体 開催回クロール -->
       <section class="admin-card card-glass">
         <div class="section-header" style="display: flex; align-items: flex-start; justify-content: space-between; flex-wrap: wrap; gap: 1rem;">
           <div>
             <h2 class="admin-header-title">
               <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/></svg>
-              📄 登録済会議体 開催回ディスカバリー
+              📄 登録済会議体 開催回クロール
             </h2>
             <p class="section-subtitle" style="margin-top:0.3rem; color:var(--text-muted);">
               承認済会議体（<code>COUNCILS</code>）のトップページURLを巡回し、各会議（開催回、開催日、アジェンダ、PDF・HTML資料リンク等）の最新情報を自動抽出・更新します。

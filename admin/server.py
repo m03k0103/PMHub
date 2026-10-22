@@ -143,7 +143,7 @@ def _crawler_worker(options=None):
         crawler_state["running"] = False
         crawler_state["stopping"] = False
 
-def _discovery_worker():
+def _discovery_worker(mode="normal", target_ministry=None):
     global discovery_state
     def on_progress(msg, data=None):
         if data:
@@ -161,7 +161,11 @@ def _discovery_worker():
             discovery_state["logs"] = discovery_state["logs"][-500:]
 
     try:
-        discovered = run_discovery(progress_callback=on_progress)
+        discovered = run_discovery(
+            progress_callback=on_progress,
+            target_ministry=target_ministry,
+            mode=mode
+        )
         discovery_state["result"] = discovered
         discovery_state["progress"] = 100
         discovery_state["running"] = False
@@ -522,23 +526,47 @@ class CustomHandler(SimpleHTTPRequestHandler):
                 self.send_json({"status": "running", "message": "Already running"})
                 return
 
-            # 初期化してバックグラウンドスレッドで起動
+            req_options = {}
+            try:
+                req_options = self.read_json_body()
+            except Exception:
+                req_options = {}
+
+            disc_mode = req_options.get("mode", "normal")
+            disc_min = req_options.get("ministry")
+            if disc_min == "ALL" or not disc_min:
+                disc_min = None
+
+            # 初期化してバックグラウンドスレッドで起動 (Drop 74: モード・省庁指定連動)
             discovery_state = {
                 "running": True,
                 "progress": 5,
+                "mode": disc_mode,
+                "target_ministry": disc_min,
                 "current_ministry": "",
                 "ministry_name": "",
                 "current_idx": 0,
                 "total_ministries": 0,
                 "discovered_count": 0,
                 "logs": [],
+                "log_seq": 0,
                 "result": None,
                 "error": None
             }
-            t = threading.Thread(target=_discovery_worker, daemon=True)
+            t = threading.Thread(
+                target=_discovery_worker,
+                kwargs={"mode": disc_mode, "target_ministry": disc_min},
+                daemon=True
+            )
             t.start()
 
-            self.send_json({"status": "started", "message": "Discovery started in background"})
+            mode_name = "省庁新着検知" if disc_mode == "ministry_news" else "通常巡回"
+            self.send_json({
+                "status": "started",
+                "message": f"Discovery ({mode_name}) started in background",
+                "mode": disc_mode,
+                "ministry": disc_min
+            })
 
         elif path == "/api/run-crawler":
             if crawler_state["running"]:
