@@ -11,6 +11,7 @@ Deterministic output: Sorted keys and items to guarantee reproducible diffs.
 """
 
 import json
+import os
 import sqlite3
 import sys
 import time
@@ -259,16 +260,32 @@ def export_data(
             }
         }
 
-        # Deterministic JSON export
+        # Deterministic JSON export with atomic write & retry (Windows safe)
+        def _safe_write_json(file_path, data_obj):
+            file_path.parent.mkdir(parents=True, exist_ok=True)
+            tmp_path = file_path.with_suffix(".tmp")
+            for attempt in range(5):
+                try:
+                    with open(tmp_path, "w", encoding="utf-8") as f:
+                        json.dump(data_obj, f, ensure_ascii=False, indent=2)
+                    if file_path.exists():
+                        try:
+                            file_path.unlink()
+                        except OSError:
+                            pass
+                    os.replace(tmp_path, file_path)
+                    return True
+                except (PermissionError, OSError) as e:
+                    if attempt == 4:
+                        raise e
+                    time.sleep(0.35)
+            return False
+
         print(f"[INFO] Writing public JSON to {public_json_path}...")
-        public_json_path.parent.mkdir(parents=True, exist_ok=True)
-        with open(public_json_path, "w", encoding="utf-8") as f:
-            json.dump(public_dataset, f, ensure_ascii=False, indent=2)
+        _safe_write_json(public_json_path, public_dataset)
 
         print(f"[INFO] Writing admin JSON to {admin_json_path}...")
-        admin_json_path.parent.mkdir(parents=True, exist_ok=True)
-        with open(admin_json_path, "w", encoding="utf-8") as f:
-            json.dump(admin_dataset, f, ensure_ascii=False, indent=2)
+        _safe_write_json(admin_json_path, admin_dataset)
 
         elapsed = time.time() - start_time
         pub_size_mb = public_json_path.stat().st_size / (1024 * 1024)
