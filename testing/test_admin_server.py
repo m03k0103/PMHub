@@ -244,6 +244,18 @@ class TestAdminServer(unittest.TestCase):
             self.assertEqual(data.get("status"), "started")
             self.assertIn("Local materials download", data.get("message", ""))
 
+    def test_post_materials_sync_status(self):
+        """POST /api/materials/sync-status がローカル格納状況を安全に同期すること (Drop 72)"""
+        from unittest.mock import patch
+        mock_stats = {"matched": 10, "pending": 2, "total": 12, "total_size_bytes": 1024}
+        with patch.object(server, "sync_local_materials_status", return_value=mock_stats):
+            status, _, body = self._request("/api/materials/sync-status", method="POST", data={})
+            self.assertEqual(status, 200)
+            data = json.loads(body)
+            self.assertEqual(data.get("status"), "success")
+            self.assertIn("stats", data)
+            self.assertIn("summary", data)
+
 
 if __name__ == "__main__":
     unittest.main()

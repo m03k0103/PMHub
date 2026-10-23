@@ -5,7 +5,7 @@ from db.db_manager import (
     update_materials_download_batch,
     update_council_materials_download_batch,
 )
-from pmm.downloader import download_materials
+from pmm.downloader import download_materials, sync_local_materials_status
 from pmm.pmm_common import DEFAULT_OUTPUT_DIR
 import http.server
 from http.server import ThreadingHTTPServer, SimpleHTTPRequestHandler
@@ -403,6 +403,13 @@ class CustomHandler(SimpleHTTPRequestHandler):
                     daemon=True
                 ).start()
                 self.send_json({"status": "started", "message": "Local materials download task started in background."})
+            except Exception as e:
+                self.send_json({"status": "error", "message": str(e)}, status=500)
+        elif path == "/api/materials/sync-status":
+            try:
+                stats = sync_local_materials_status()
+                summary = get_materials_download_summary()
+                self.send_json({"status": "success", "stats": stats, "summary": summary})
             except Exception as e:
                 self.send_json({"status": "error", "message": str(e)}, status=500)
         elif path in ("/api/save-ministry-updates", "/api/save-verification-report"):
