@@ -165,6 +165,31 @@
     }
   };
 
+  window.syncPmmStatus = async function() {
+    const btn = document.getElementById('btnSyncPmmStatus');
+    if (btn) {
+      btn.disabled = true;
+      btn.textContent = '⏳ ローカル実体スキャン中…';
+    }
+    try {
+      const res = await fetch('/api/materials/sync-status', { method: 'POST' });
+      const data = await res.json();
+      if (!res.ok || data.status === 'error') {
+        throw new Error(data.message || `HTTP ${res.status}`);
+      }
+      const st = data.stats || {};
+      alert(`✅ ローカル格納状況の同期が完了しました！\n\n・取得済ファイル: ${st.matched?.toLocaleString() || 0} 件\n・未取得ファイル: ${st.pending?.toLocaleString() || 0} 件\n・ローカル総容量: ${st.total_size_gb || 0} GB`);
+      if (window.loadPmmStatus) window.loadPmmStatus();
+    } catch (e) {
+      alert(`❌ 格納状況同期失敗: ${e.message || e}`);
+    } finally {
+      if (btn) {
+        btn.disabled = false;
+        btn.textContent = '🔄 格納状況を再スキャンして同期';
+      }
+    }
+  };
+
   window.startPmmDownload = async function() {
     const btn = document.getElementById('btnStartPmmDownload');
     if (!confirm('【PMM】未取得の配付資料・会議体資料をローカル（local_docs/）へダウンロードしますか？\n\n※ 省庁ごとに1.0秒間隔で順次安全に取得されます。')) {

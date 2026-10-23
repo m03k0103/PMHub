@@ -17,6 +17,7 @@ ADMIN_DIR = os.path.join(PROJECT_ROOT, "admin")
 if ADMIN_DIR not in sys.path:
     sys.path.insert(0, ADMIN_DIR)
 
+from pmm.downloader import sync_local_materials_status
 from pmm.pmm_common import (
     sanitize_filename,
     clean_material_name,
@@ -120,6 +121,74 @@ class TestPmmCommonUtilities(unittest.TestCase):
             sub_dir.mkdir()
             self.assertTrue(safe_rmdir(sub_dir))
             self.assertFalse(sub_dir.exists())
+        finally:
+            shutil.rmtree(temp_dir, ignore_errors=True)
+
+
+    def test_sync_local_materials_status(self):
+        """sync_local_materials_status が通信なしでローカル格納状況をスキャン・更新できること (Drop 72)"""
+        import sqlite3
+        temp_dir = tempfile.mkdtemp()
+        try:
+            temp_db = Path(temp_dir) / "test.db"
+            temp_out = Path(temp_dir) / "local_docs"
+            temp_out.mkdir()
+
+            # Create test DB schema via schema.sql
+            schema_file = Path(PROJECT_ROOT) / "admin" / "db" / "schema.sql"
+            conn = sqlite3.connect(str(temp_db))
+            conn.executescript(schema_file.read_text(encoding="utf-8"))
+            cur = conn.cursor()
+            cur.execute("""
+                INSERT INTO admin_configs (key, value_json) VALUES
+                ('ministries', '{"CAO": {"name": "内閣府"}}');
+            """)
+            cur.execute("""
+                INSERT INTO councils (id, ministry, category, name, official_url, manual_lock)
+                VALUES ('cao-ai_hq', 'CAO', 'COUNCIL', '人工知能戦略会議', 'https://example.com', 0);
+            """)
+            cur.execute("""
+                INSERT INTO council_materials (council_id, name, url, type)
+                VALUES ('cao-ai_hq', '構成員名簿', 'https://example.com/meibo.pdf', 'PDF');
+            """)
+            cur.execute("""
+                INSERT INTO meetings (id, council_id, name, date, round, manual_lock)
+                VALUES ('cao-ai_hq-20260415-024', 'cao-ai_hq', '第24回 人工知能戦略会議', '2026/04/15', 24, 0);
+            """)
+            cur.execute("""
+                INSERT INTO materials (meeting_id, name, url, type)
+                VALUES ('cao-ai_hq-20260415-024', '議事次第', 'https://example.com/shisai.pdf', 'PDF');
+            """)
+            conn.commit()
+            conn.close()
+
+            # Place dummy file on disk for meeting material only
+            mat_folder = temp_out / "内閣府" / "人工知能戦略会議" / "20260415_第24回"
+            mat_folder.mkdir(parents=True)
+            dummy_file = mat_folder / "議事次第.pdf"
+            dummy_file.write_bytes(b"%PDF-1.4 dummy test content")
+
+            # Execute sync_local_materials_status
+            stats = sync_local_materials_status(output_base=temp_out, db_path=temp_db)
+            self.assertEqual(stats["matched"], 1)
+            self.assertEqual(stats["pending"], 1)
+            self.assertEqual(stats["total"], 2)
+            self.assertGreater(stats["total_size_bytes"], 0)
+
+            # Check DB updated records
+            conn = sqlite3.connect(str(temp_db))
+            conn.row_factory = sqlite3.Row
+            cur = conn.cursor()
+            m_row = cur.execute("SELECT * FROM materials WHERE meeting_id = 'cao-ai_hq-20260415-024';").fetchone()
+            self.assertEqual(m_row["download_status"], "downloaded")
+            self.assertIsNotNone(m_row["local_path"])
+            self.assertIn("内閣府/人工知能戦略会議/20260415_第24回/議事次第.pdf", m_row["local_path"])
+            self.assertGreater(m_row["file_size"], 0)
+
+            cm_row = cur.execute("SELECT * FROM council_materials WHERE council_id = 'cao-ai_hq';").fetchone()
+            self.assertEqual(cm_row["download_status"], "pending")
+            self.assertIsNone(cm_row["local_path"])
+            conn.close()
         finally:
             shutil.rmtree(temp_dir, ignore_errors=True)
 

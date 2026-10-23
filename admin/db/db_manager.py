@@ -552,7 +552,7 @@ def update_materials_download_batch(
                 r.get("local_path"),
                 r.get("download_status", "downloaded"),
                 r.get("file_size"),
-                r.get("downloaded_at") or datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
+                r.get("downloaded_at") or (datetime.now().strftime("%Y-%m-%d %H:%M:%S") if r.get("download_status") == "downloaded" else None),
                 r.get("meeting_id"),
                 r.get("url")
             )
@@ -596,7 +596,7 @@ def update_council_materials_download_batch(
                 r.get("local_path"),
                 r.get("download_status", "downloaded"),
                 r.get("file_size"),
-                r.get("downloaded_at") or datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
+                r.get("downloaded_at") or (datetime.now().strftime("%Y-%m-%d %H:%M:%S") if r.get("download_status") == "downloaded" else None),
                 r.get("council_id"),
                 r.get("url")
             )

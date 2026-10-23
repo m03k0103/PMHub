@@ -486,14 +486,194 @@ def download_materials(
     return overall_stats
 
 
+
+
+def sync_local_materials_status(
+    output_base: Path = DEFAULT_OUTPUT_DIR,
+    db_path: Path = DEFAULT_DB_PATH,
+    logger: Optional[logging.Logger] = None,
+) -> Dict[str, Any]:
+    """
+    Scan existing files in local_docs/ without any network requests,
+    and update download_status, local_path, file_size, downloaded_at in database.
+    """
+    if logger is None:
+        logger = setup_logger("status_sync")
+
+    output_base = output_base.resolve()
+    logger.info(f"Scanning local materials in {output_base} and updating database {db_path}...")
+    data = load_data_from_db(db_path)
+    if not data:
+        logger.error("Failed to load data from database.")
+        return {"matched": 0, "pending": 0, "total": 0, "total_size_bytes": 0}
+
+    ministries_dict = data.get("ministries", {})
+    councils_dict = {c["id"]: c for c in data.get("councils", []) if "id" in c}
+    meetings = data.get("meetings", [])
+
+    all_meeting_updates = []
+    all_council_updates = []
+    matched_count = 0
+    total_size = 0
+    total_count = 0
+
+    # 1. Council permanent materials (00_会議体資料)
+    for c in data.get("councils", []):
+        cid = c.get("id", "")
+        min_code = c.get("ministry", "UNKNOWN")
+        min_name = ministries_dict.get(min_code, {}).get("name") or min_code
+        c_name = c.get("name") or "会議体不明"
+        council_dir = get_council_materials_dir(output_base, min_name, c_name)
+
+        seen_urls = set()
+        name_counts: Dict[Tuple[str, str], int] = defaultdict(int)
+
+        for mat in c.get("materials", []):
+            url = (mat.get("url") or "").strip()
+            if not url or url in seen_urls:
+                continue
+            seen_urls.add(url)
+            total_count += 1
+
+            mat_name = mat.get("name", "資料")
+            mat_type = mat.get("type")
+            cleaned = clean_material_name(mat_name)
+            ext = guess_extension_from_url_or_type(url, mat_type)
+            s_base = sanitize_filename(cleaned, max_len=120)
+
+            name_counts[(s_base, ext)] += 1
+            idx = name_counts[(s_base, ext)]
+            suffix = f"_{idx}" if idx > 1 else ""
+            filename = f"{s_base}{suffix}{ext}"
+            target_path = council_dir / filename
+
+            existing = resolve_existing_target_path(target_path)
+            if existing and existing.is_file():
+                rel_path = str(existing.relative_to(output_base)).replace("\\", "/")
+                size = existing.stat().st_size
+                mtime_str = datetime.fromtimestamp(existing.stat().st_mtime).strftime("%Y-%m-%d %H:%M:%S")
+                matched_count += 1
+                total_size += size
+                all_council_updates.append({
+                    "council_id": cid,
+                    "url": url,
+                    "local_path": rel_path,
+                    "download_status": "downloaded",
+                    "file_size": size,
+                    "downloaded_at": mtime_str,
+                })
+            else:
+                all_council_updates.append({
+                    "council_id": cid,
+                    "url": url,
+                    "local_path": None,
+                    "download_status": "pending",
+                    "file_size": 0,
+                    "downloaded_at": None,
+                })
+
+    # 2. Meeting materials
+    for m in meetings:
+        mid = m.get("id", "")
+        cid = m.get("councilId", "")
+        c_info = councils_dict.get(cid, {})
+        min_code = m.get("ministry") or c_info.get("ministry") or "UNKNOWN"
+        min_name = ministries_dict.get(min_code, {}).get("name") or min_code
+        c_name = c_info.get("name") or m.get("councilName") or "会議体不明"
+        meeting_dir = get_meeting_dir(output_base, min_name, c_name, m)
+        m_folder = format_meeting_folder_name(m, c_name)
+
+        seen_urls = set()
+        name_counts = defaultdict(int)
+
+        for mat in m.get("materials", []):
+            url = (mat.get("url") or "").strip()
+            if not url or url in seen_urls:
+                continue
+            seen_urls.add(url)
+            total_count += 1
+
+            mat_name = mat.get("name", "資料")
+            mat_type = mat.get("type")
+            cleaned = clean_material_name(mat_name)
+            ext = guess_extension_from_url_or_type(url, mat_type)
+            s_base = sanitize_filename(cleaned, max_len=120)
+
+            name_counts[(s_base, ext)] += 1
+            idx = name_counts[(s_base, ext)]
+            suffix = f"_{idx}" if idx > 1 else ""
+            filename = f"{s_base}{suffix}{ext}"
+            target_path = meeting_dir / filename
+
+            existing = resolve_existing_target_path(target_path)
+            # If not found directly, check legacy folders in same council directory
+            if not existing and meeting_dir.parent.exists():
+                try:
+                    for entry in os.scandir(meeting_dir.parent):
+                        if entry.is_dir() and entry.name != COUNCIL_MATERIALS_FOLDER and not entry.name.startswith((".", "_")):
+                            cand = Path(entry.path) / filename
+                            c_exist = resolve_existing_target_path(cand)
+                            if c_exist and c_exist.is_file():
+                                existing = c_exist
+                                break
+                except OSError:
+                    pass
+
+            if existing and existing.is_file():
+                rel_path = str(existing.relative_to(output_base)).replace("\\", "/")
+                size = existing.stat().st_size
+                mtime_str = datetime.fromtimestamp(existing.stat().st_mtime).strftime("%Y-%m-%d %H:%M:%S")
+                matched_count += 1
+                total_size += size
+                all_meeting_updates.append({
+                    "meeting_id": mid,
+                    "url": url,
+                    "local_path": rel_path,
+                    "download_status": "downloaded",
+                    "file_size": size,
+                    "downloaded_at": mtime_str,
+                })
+            else:
+                all_meeting_updates.append({
+                    "meeting_id": mid,
+                    "url": url,
+                    "local_path": None,
+                    "download_status": "pending",
+                    "file_size": 0,
+                    "downloaded_at": None,
+                })
+
+    # Update database
+    logger.info(f"Writing status updates to database: {matched_count} downloaded / {total_count} total ({total_size / (1024*1024*1024):.2f} GB)...")
+    update_materials_download_batch(all_meeting_updates, db_path=db_path)
+    update_council_materials_download_batch(all_council_updates, db_path=db_path)
+
+    stats = {
+        "matched": matched_count,
+        "pending": total_count - matched_count,
+        "total": total_count,
+        "total_size_bytes": total_size,
+        "total_size_mb": round(total_size / (1024 * 1024), 2),
+        "total_size_gb": round(total_size / (1024 * 1024 * 1024), 2),
+    }
+    logger.info(f"Status sync completed: {stats}")
+    return stats
+
+
 def main():
     parser = argparse.ArgumentParser(description="PMHub Materials Downloader (PMM)")
     parser.add_argument("--workers", type=int, default=4, help="Number of concurrent ministry workers (default: 4)")
     parser.add_argument("--delay", type=float, default=1.0, help="Delay between requests to same ministry (default: 1.0s)")
     parser.add_argument("--council-id", type=str, default=None, help="Filter to a specific councilId")
     parser.add_argument("--dry-run", action="store_true", help="Perform a dry-run without writing files")
+    parser.add_argument("--scan-only", action="store_true", help="Scan existing local files and update database status without downloading")
     parser.add_argument("--output-dir", type=str, default=str(DEFAULT_OUTPUT_DIR), help="Output directory path")
     args = parser.parse_args()
+
+    out_base = Path(args.output_dir)
+    if args.scan_only:
+        sync_local_materials_status(output_base=out_base)
+        return
 
     c_ids = [args.council_id] if args.council_id else None
     download_materials(
@@ -501,7 +681,7 @@ def main():
         workers=args.workers,
         delay=args.delay,
         dry_run=args.dry_run,
-        output_base=Path(args.output_dir),
+        output_base=out_base,
     )
 
 

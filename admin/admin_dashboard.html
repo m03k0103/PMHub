@@ -718,9 +718,14 @@
               <code>local_docs/</code> 配下のローカル保存資産統計（省庁別直列・1.0s間隔ダウンロード）
             </p>
           </div>
-          <button class="btn-bulk" id="btnStartPmmDownload" onclick="if(window.startPmmDownload){ window.startPmmDownload(); } else { alert('PMM not ready'); }" style="background: rgba(59,130,246,0.15); color: #60a5fa; border: 1px solid rgba(59,130,246,0.5); padding: 0.6rem 1.25rem; font-size: 0.9rem; font-weight: 700; border-radius: var(--radius-md); cursor: pointer;">
-            ⚡ 未取得資料の一括ローカル保存を開始
-          </button>
+          <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+            <button class="btn-bulk" id="btnSyncPmmStatus" onclick="if(window.syncPmmStatus){ window.syncPmmStatus(); } else { alert('PMM not ready'); }" style="background: rgba(16,185,129,0.15); color: #10b981; border: 1px solid rgba(16,185,129,0.5); padding: 0.6rem 1.1rem; font-size: 0.88rem; font-weight: 700; border-radius: var(--radius-md); cursor: pointer;" title="ダウンロードを行わず、local_docs/ 配下の実ファイルを走査してDBステータスを最新化します">
+              🔄 格納状況を再スキャンして同期
+            </button>
+            <button class="btn-bulk" id="btnStartPmmDownload" onclick="if(window.startPmmDownload){ window.startPmmDownload(); } else { alert('PMM not ready'); }" style="background: rgba(59,130,246,0.15); color: #60a5fa; border: 1px solid rgba(59,130,246,0.5); padding: 0.6rem 1.1rem; font-size: 0.88rem; font-weight: 700; border-radius: var(--radius-md); cursor: pointer;">
+              ⚡ 未取得資料の一括ローカル保存を開始
+            </button>
+          </div>
         </div>
 
         <div class="summary-grid" style="margin-top: 1.25rem;" id="pmmStatusSummary">
