@@ -289,6 +289,23 @@ class TestDrop75TitleStemSimilarityGuard(unittest.TestCase):
             cname, existing
         ))
 
+        # 3. 会議体名との類似度ガード検証（原子力規制委員会の学会受賞ニュース）
+        nra_cname = "原子力規制委員会"
+        nra_existing = [
+            "第62回 原子力規制委員会",
+            "米国原子力学会 原子力臨界安全部会 最優秀論文賞を受賞"  # 既存ノイズが混入していても
+        ]
+        # 既存ノイズとの類似度(0.40)があっても、親会議体名との類似度(0.0606 < 0.40)により除外
+        self.assertTrue(is_title_inconsistent_with_council(
+            "2025年米国機械学会 圧力容器・配管の国際会議で複数の賞を受賞",
+            nra_cname, nra_existing
+        ))
+        # 正規開催回は親会議体名と一致するため合格
+        self.assertFalse(is_title_inconsistent_with_council(
+            "第63回 原子力規制委員会",
+            nra_cname, nra_existing
+        ))
+
 def run_tests():
     print("==================================================")
     print(" Drop 15 クロール網羅性・品質向上テスト (test_crawler_quality_v2.py)")

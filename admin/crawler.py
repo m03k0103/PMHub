@@ -2761,34 +2761,36 @@ def extract_title_stem(title):
 
 def is_title_inconsistent_with_council(candidate_title, council_name, existing_titles, threshold=0.40):
     """
-    既存の開催回タイトル幹（Stem）との類似度検証（Drop 75）。
-    既存の開催回タイトル群および親会議体名と全く異なる異質なタイトルであるかを判定する。
+    開催回タイトル幹（Stem）と親会議体名および既存開催回群との類似度検証（Drop 75改定）。
+    1. 会議体名幹との類似度が閾値未満の場合は異質タイトル（ノイズ）として除外（親会議体名ガード）。
+    2. 既存開催回群が既に存在する場合、既存開催回幹群との最大類似度が閾値未満の場合も除外。
     """
     cand_stem = extract_title_stem(candidate_title)
     if not cand_stem:
         return True
 
-    # 既存開催回が未登録の場合は比較対象がないため通過
-    if not existing_titles:
-        return False
-
-    existing_stems = [extract_title_stem(t) for t in existing_titles if extract_title_stem(t)]
-    if not existing_stems:
-        return False
-
     council_stem = extract_title_stem(council_name)
+    if council_stem:
+        if cand_stem == council_stem:
+            c_sim = 1.0
+        else:
+            c_sim = difflib.SequenceMatcher(None, cand_stem, council_stem).ratio()
 
-    # 親会議体幹または既存開催回幹と完全一致・同一である場合は整合（合格）
-    if cand_stem == council_stem or any(cand_stem == s for s in existing_stems):
-        return False
+        # 会議体名と比較して閾値（0.40）未満なら除外
+        if c_sim < threshold:
+            return True
 
-    # 既存開催回幹群および親会議体幹との最大類似度を算出
-    max_sim_existing = max(difflib.SequenceMatcher(None, cand_stem, s).ratio() for s in existing_stems)
-    c_sim = difflib.SequenceMatcher(None, cand_stem, council_stem).ratio() if council_stem else 0
-    best_score = max(max_sim_existing, c_sim)
+    # 既存開催回群との検証（既存開催回がある場合）
+    if existing_titles:
+        existing_stems = [extract_title_stem(t) for t in existing_titles if extract_title_stem(t)]
+        if existing_stems:
+            if cand_stem == council_stem or any(cand_stem == s for s in existing_stems):
+                return False
+            max_sim_existing = max(difflib.SequenceMatcher(None, cand_stem, s).ratio() for s in existing_stems)
+            if max_sim_existing < threshold:
+                return True
 
-    # 類似度が閾値（デフォルト0.40）未満の場合は「既存タイトルと全く異なる」と判定
-    return best_score < threshold
+    return False
 
 
 def sync_new_meetings_from_crawl(data, target, scraped_item):
