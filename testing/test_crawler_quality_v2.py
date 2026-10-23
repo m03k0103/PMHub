@@ -306,6 +306,14 @@ class TestDrop75TitleStemSimilarityGuard(unittest.TestCase):
             nra_cname, nra_existing
         ))
 
+        # 4. 区分B（純粋な回次・日付表記リンク）のバイパス許可検証
+        # 候補タイトルが親会議体名を含まず回次・日付のみの場合でも、正当な開催回リンクとして許可（不整合判定 False）されること
+        self.assertFalse(is_title_inconsistent_with_council("第10回", cname, existing))
+        self.assertFalse(is_title_inconsistent_with_council("平成24年第7回（2013年2月6日）", cname, existing))
+        self.assertFalse(is_title_inconsistent_with_council("第1回（持ち回り開催）", cname, existing))
+        self.assertFalse(is_title_inconsistent_with_council("2026年10月8日", cname, existing))
+
+
 def run_tests():
     print("==================================================")
     print(" Drop 15 クロール網羅性・品質向上テスト (test_crawler_quality_v2.py)")

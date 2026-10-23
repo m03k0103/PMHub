@@ -911,3 +911,18 @@ Drop 62 & 63 による SQLite マスターDB化および 2系統エクスポー�
 | **CR-138** | ディープクロール網羅化 | **全9組織・全413開催回のディープクロール & 末端配付資料（4,250件）網羅的登録**<br>各部会の開催回リストから個別開催回URL（`post_*.html`）をクロールし、議事次第・説明資料PDF・議事録HTML等の末端資料を網羅取得して各回に完全紐づけ。`manualLock: true` を設定 | `docs/data.json` | 完了 |
 | **CR-139** | ルール連動 | **9組織に対するスクレイピングルールの連動登録・更新**<br>`moe-chuo_kankyo_*` に対して各部会URL、`tpl-general-round-subpage`、個別開催回走査パターンを設定 | `docs/data.json` | 完了 |
 | **CR-140** | テスト検証 | **統合テストスイート（全14ケース＋単体16種）整合性検証**<br>`python testing/run_test_suite.py --all-layers` を実行し、全ケース完全合格を確認 | `testing/run_test_suite.py` | 完了 |
+
+<hr>
+
+### 【Drop 75】親会議体名タイトル幹（Stem）類似度検証ガード & 区分Bバイパス許可 & 区分A（ノイズ258件）完全クレンジング
+
+直近の巡回や新着検知において混入していた、お知らせ・報道発表・学会賞受賞・中間答申手交・市長意見交換動静・親ポータル目次リンク等の非会議ノイズ（区分 A）に対し、親会議体名幹との類似度検証ガード（`is_title_inconsistent_with_council`、閾値0.40未満遮断）を導入。
+同時に、リンク名が「第10回」や「平成24年第7回（2013年2月6日）」など純粋な回次・日付表記のみで構成される正規開催回（区分 B）が類似度不足で誤検知・遮断されないよう、純粋回次・日付判定バイパス（`is_pure_session_or_date_title`）を配備。
+さらに、マスターDB（`admin/pmhub.db`）に現存していた区分 A の非会議ノイズ全 258 件（および紐づく配付資料 1,979 件）を完全にクレンジングし、公開・管理用 JSON に同期反映した。
+
+| ID | 分類 | 内容 | 対象ファイル | 状態 |
+|:---|:---:|:---|:---|:---:|
+| **CR-141** | クローラー再発防止ガード | **親会議体名タイトル幹類似度検証ガード（閾値0.40）の実装**<br>`is_title_inconsistent_with_council` において、候補タイトル幹（Stem）と親会議体名幹の類似度（SequenceMatcher ratio）を検証し、閾値 0.40 未満の異質タイトルをノイズとして遮断 | `admin/crawler.py` | 完了 |
+| **CR-142** | クローラー誤検知防止 | **区分B（純粋回次・日付リンク）の安全バイパス許可機能の実装**<br>`is_pure_session_or_date_title` を新設し、リンクテキストが回次・年号・月日・開催種別のみで構成される正規開催回リンクを親会議体名類似度検証から安全にバイパスして登録・フォーマットを許可 | `admin/crawler.py` | 完了 |
+| **CR-143** | データ整合化・クレンジング | **区分A（明確な非会議ノイズ258件・配付資料1,979件）のマスターDB完全削除 & 同期**<br>マスターDB（`admin/pmhub.db`）からお知らせ・受賞・答申手交・親ポータル目次等の非会議レコード 258 件を完全削除し、`admin/db/export_data.py` で JSON に同期 | `admin/pmhub.db`<br>`docs/data.json`<br>`admin/admin_data.json` | 完了 |
+| **CR-144** | テスト検証 | **統合テストスイート（全15ケース＋単体20種）完全合格検証**<br>`python testing/run_test_suite.py --all-layers` を実行し、全15層テストおよび新設単体テスト（区分Bバイパス検証等）全20種に完全合格することを確認 | `testing/run_test_suite.py`<br>`testing/test_crawler_quality_v2.py`<br>`testing/test_drop49_meeting_id_normalization.py` | 完了 |

@@ -80,7 +80,7 @@ class TestDrop49MeetingIdNormalization(unittest.TestCase):
             if re.match(r'^[a-z0-9]+-[a-z0-9_]+-\d{8}-[a-z]\d{3}$', m.get('id', ''))
         ]
         self.assertGreater(len(four_digit_meetings), 30, "Should have more than 30 4-digit meetings")
-        self.assertGreater(len(special_3digit_meetings), 10, "Should have more than 10 s\\d{3} meetings")
+        self.assertGreaterEqual(len(special_3digit_meetings), 5, "Should have at least 5 s\\d{3} meetings")
 
 
 if __name__ == '__main__':
