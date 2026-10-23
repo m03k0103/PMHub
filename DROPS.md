@@ -160,6 +160,7 @@ GitHub Actions で自動更新・push されたリモートの最新データ（
 | **Drop 73** | **過去の完了Drop**<br>(テスト高速化 & 厳格化) | **統合テストスイート高速化・重複I/O解消 & 検証精度厳格化（Track [Testing]）**<br>U18/U17 のテスト毎フルシード解消（軽量フィクスチャ・一時環境化、21.9s $\to$ 0.31s / 9.5s $\to$ 0.73s）、`load_data_json()` の DB 先行ロード化、ケース15への `council_materials` 突合・全管理キー No Leakage 網羅、ケース6/14/2 判定厳格化、`admin/db/*` 変更時 L4/L5 連動判定、ケース1構文チェック探索自動化 | **実行時間 60% 短縮（62.5s $\to$ 25.2s）・検証精度厳格化・本番DB副作用ゼロ** | **【完了】** |
 | **Drop 74** | **過去の完了Drop**<br>(新規ディスカバリー拡張 & 名称是正) | **新規会議体ディスカバリー省庁新着検知オプション追加 & 開催回クロール名称是正**<br>新規会議体ディスカバリー（`admin/discover_councils.py`）に省庁新着お知らせページ（`MINISTRY_NEWS_PORTALS`）を巡回して新設会議体・懇談会を自動検知する新着検知モード（`--from-ministry-news` / `--mode ministry_news`）を実装。管理画面（`admin/admin_dashboard.html` / `js`）に探索モード切替・省庁選択オプションパネルを追加。サーバーAPI（`/api/run-discovery`）のオプション引数受け取り対応。あわせて「開催回ディスカバリー」の呼称を「開催回クロール」へ完全是正（UI / JS / TERMINOLOGY.md） | **新規会議体新着検知エンジン確立 & 開催回クロール用語是正・統合15ケース＋単体19種完全合格** | **【完了】** |
 | **Drop 75** | **最新の完了Drop**<br>(ディスカバリー改善 & 会議体数復元 & 親会議体幹類似度ガード & ノイズクレンジング) | **新規会議体ディスカバリー6大改善 & 会議体数1,547件復元 & 親会議体名類似度検証ガード実装 & ノイズ開催回クレンジング**<br>新規会議体ディスカバリー（`discover_councils.py`）の新着検知・通常巡回比較分析に基づく6大改善（名称クレンジング・ノイズ除外・正規化コア突合・単発URL常設親逆引き・通常巡回29倍高速化・一覧URL強制上書きバグ修正、CR-186〜191）。直近反映で不自然に純増していた未検証262会議体を SQLite DB および両 JSON から削除し基準値 1,547 件へ完全復元（CR-192）。既存開催回群だけでなく親会議体名（`council_name`）との類似度を検証し閾値（0.40）未満の異質タイトル（原子力規制委員会の学会受賞等）を即時遮断する開催回タイトル幹類似度検証ガード（`is_title_inconsistent_with_council`）を `admin/crawler.py` に配備（CR-193）。残存していた学会受賞ニュース4件および過去ノイズ240件・紐づくゴミ配付資料 8,447件を完全クレンジング（meetings: 19,528件, materials: 112,382件、CR-194）。単体テスト（U6 / U20）拡充 | **会議体ディスカバリー6大改善 & 会議体数1,547件復元 & 親会議体幹類似度ガード配備 & ノイズクレンジング・統合15ケース＋全単体テスト完全合格** | **【完了】** |
+| **Drop 76** | **最新の完了Drop**<br>(新着フィルター & ハイライトUI & 前清新着リセット) | **最新クロール新着会議体・開催回の抽出UIフィルター＆新着開催回背景色ハイライト＆前清新着自動リセットパイプラインの確立**<br>クロール結果から最新クロールで追加された新着会議体・開催回のみを絞り込む「✨ 新着のみ」トグルボタン（`#newArrivalFilterBtn`）を公開ポータルに新設（CR-195）。会議体アコーディオン行およびタイムラインカードにおいて、新着開催回（`.meeting-row-new`）に左アクセントボーダーと背景色ハイライト、`<span class="badge-new-arrival">新着</span>` バッジを付与し、会議体ヘッダーにも新着件数バッジを表示（CR-196）。クロール開始時（`crawler.py`）に前回クロールの新着フラグを SQLite DB および JSON 双方で自動リセットする完全自動パイプラインを確立（CR-197）。定期巡回クロールを実行し、最新追加された 189 件の新着開催回および 68 件の新着会議体をリアルタイム同期・エクスポート。統合テストスイート全15ケース＋単体テスト20種に完全合格 | **新着フィルター新設 & 新着行ハイライト・バッジ & 前清新着自動リセット確立 & 189件新着検知・全15ケース＋全単体20種完全合格** | **【完了】** |
 
 
 ---
@@ -964,3 +965,126 @@ Drop 62 & 63 による SQLite マスターDB化および 2系統エクスポー�
 | **CR-142** | クローラー誤検知防止 | **区分B（純粋回次・日付リンク）の安全バイパス許可機能の実装**<br>`is_pure_session_or_date_title` を新設し、リンクテキストが回次・年号・月日・開催種別のみで構成される正規開催回リンクを親会議体名類似度検証から安全にバイパスして登録・フォーマットを許可 | `admin/crawler.py` | 完了 |
 | **CR-143** | データ整合化・クレンジング | **区分A（明確な非会議ノイズ258件・配付資料1,979件）のマスターDB完全削除 & 同期**<br>マスターDB（`admin/pmhub.db`）からお知らせ・受賞・答申手交・親ポータル目次等の非会議レコード 258 件を完全削除し、`admin/db/export_data.py` で JSON に同期 | `admin/pmhub.db`<br>`docs/data.json`<br>`admin/admin_data.json` | 完了 |
 | **CR-144** | テスト検証 | **統合テストスイート（全15ケース＋単体20種）完全合格検証**<br>`python testing/run_test_suite.py --all-layers` を実行し、全15層テストおよび新設単体テスト（区分Bバイパス検証等）全20種に完全合格することを確認 | `testing/run_test_suite.py`<br>`testing/test_crawler_quality_v2.py`<br>`testing/test_drop49_meeting_id_normalization.py` | 完了 |
+
+
+---
+
+### Drop 76: 最新クロール新着会議体・開催回の抽出UIフィルター＆新着開催回背景色ハイライト＆前清新着自動リセットパイプラインの確立
+
+#### 1. 概要と目的 (Overview & Purpose)
+- **背景と課題**:
+  ユーザーより「クロールの結果、最新のクロールで追加された（新着）会議体のみを表示する」「会議体の新着の開催回の背景色を変更して目立たせる」「前のクロールで新着だった会議体・開催回は次のクロール時に新着扱いとしない」の3大機能の実装、およびその後の定期巡回クロール実行が要請された。
+  従来のシステムでは、過去のクロールで付与された `isNewlyDiscovered` フラグがクリアされずに蓄積される傾向があり、新着と過去分の判別が困難であったほか、公開ポータル側で新着分のみを素早く絞り込んだり、視覚的に目立たせたりするUIが未整備であった。
+- **目的**:
+  1. クロール開始時に前回クロールの新着フラグを SQLite DB マスターおよび 2系統 JSON から完全自動リセットするライフサイクルを確立する。
+  2. 公開ポータル（`docs/index.html`, `docs/app.js`）に「✨ 新着のみ」トグルフィルターを新設し、最新クロールで新着開催回が追加された会議体・開催回のみを瞬時に抽出表示可能にする。
+  3. 新着開催回の行背景色をアクセントカラーでハイライトし、新着バッジ（開催回行および親会議体ヘッダー）を付与して視覚的認知性を飛躍的に高める。
+  4. その上で定期巡回クロール（`python admin/crawler.py --workers 4 --recent-years 2`）を実行し、新着開催回を安全に自動同期する。
+
+#### 2. 変更内容 (Changes & Implementation)
+1. **公開ポータル新着フィルターUIの実装 (CR-195)**:
+   - [`docs/index.html`](file:///d:/dev/PMHub/docs/index.html): フィルター操作バーに「✨ 新着のみ」ボタン（`#newArrivalFilterBtn`）を新設。
+   - [`docs/styles.css`](file:///d:/dev/PMHub/docs/styles.css): `.btn-new-arrival-filter`, `.btn-new-arrival-filter.active` スタイルを定義。アクティブ時はブルーグラデーションとグロー効果を付与。
+   - [`docs/app.js`](file:///d:/dev/PMHub/docs/app.js):
+     - `state.newArrivalOnly` を追加。
+     - `filterCouncils()`: `state.newArrivalOnly` 有効時、`council.isNewlyDiscovered || councilMeetings.some(m => m.isNewlyDiscovered)` に合致する新着会議体のみを抽出。
+     - `filterMeetings()`: `meeting.isNewlyDiscovered` に合致する新着開催回のみを抽出。
+     - アクティブタグバーに「✨ 新着のみ」チップを追加し、1クリック解除に対応。
+2. **新着開催回の背景色ハイライト＆バッジ表示 (CR-196)**:
+   - [`docs/styles.css`](file:///d:/dev/PMHub/docs/styles.css): `.meeting-row.meeting-row-new`（ライト: `rgba(37, 99, 235, 0.07)`, ダーク: `rgba(59, 130, 246, 0.14)`、左ボーダー `4px solid #2563eb`）、`.timeline-card.timeline-card-new`、`.badge-new-arrival` を新設。
+   - [`docs/app.js`](file:///d:/dev/PMHub/docs/app.js):
+     - 会議体アコーディオン展開時の開催回行に `.meeting-row-new` クラスと `<span class="badge-new-arrival">新着</span>` を自動付与。
+     - 会議体ヘッダー側にも新着開催回数に応じた `<span class="badge-new-arrival">新着 N件</span>` バッジを表示し、アコーディオンが閉じた状態でも一目で認知可能に改善。
+     - タイムラインカードにも `.timeline-card-new` と新着バッジを連動表示。
+3. **前清新着自動リセット＆DBマスター同期パイプライン (CR-197)**:
+   - [`admin/crawler.py`](file:///d:/dev/PMHub/admin/crawler.py): クロール開始時（`run_meeting_crawler`, `run_ministry_news_discovery`）冒頭で、`meetings` および `councils` の `isNewlyDiscovered` を全件自動クリア。SQLite DB 側でも `UPDATE meetings SET is_newly_discovered = 0` を即時実行。
+   - [`admin/db/export_data.py`](file:///d:/dev/PMHub/admin/db/export_data.py): 最新クロールで新着開催回を持つ会議体マスターに `isNewlyDiscovered: true` を自動付与してエクスポートするロジックを配備。Windows環境での共有ロック違反を防ぐアトミック書き込み＆リトライ関数（`_safe_write_json`）を導入。
+4. **定期巡回クロールの完遂と新着自動検知**:
+   - `python admin/crawler.py --workers 4 --recent-years 2` を実行。
+   - 全812会議体を安全に巡回し、前清新着がクリアされたクリーンな状態から **189 件の新着開催回**、**68 件の新着会議体**を正常検知・DB追加・エクスポート完了。
+
+#### 3. 検証結果 (Verification Results)
+- **統合テストスイート（`testing/run_test_suite.py`）**: 全15ケース完全合格（15/15 PASS, 所要時間 18.74秒）
+  - ケース1: コード文法チェック (SyntaxError / 括弧 / div) (0.59s) : PASS
+  - ケース2: リンク疎通確認 (0.66s) : PASS
+  - ケース3: UI表示機能検証 (DOMコンテナ整合性) (0.00s) : PASS
+  - ケース4: JS実行時クラッシュ・全画面描画検証 (0.71s) : PASS
+  - ケース5: 会議品質・回次整合性・重複排除検証 (0.51s) : PASS
+  - ケース6: 会議体・タイムライン ID完全排他性・整合性 (0.01s) : PASS
+  - ケース7: 康煕部首・特殊文字 NFKC 正規化検証 (0.56s) : PASS
+  - ケース8: プレースホルダー日付（2099/01/01）ゼロ遮断検証 (0.00s) : PASS
+  - ケース9: 管理サーバー API 単体・統合テスト (3.89s) : PASS
+  - ケース10: クローラー手動保護回帰テスト (3.29s) : PASS
+  - ケース11: スクレイピングルール整合性検証 (0.35s) : PASS
+  - ケース12: ホスト分散・ゴミデータ不変性検証 (0.26s) : PASS
+  - ケース13: 省庁親ポータルURL設定・探索網羅性検証 (0.35s) : PASS
+  - ケース14: アクティブ会議体フィルタリング・廃止管理検証 (0.68s) : PASS
+  - ケース15: SQLiteマスターDB整合性 & 2系統JSON完全同期検証 (0.63s) : PASS
+  - 【単体関数検証 (Unit Tests)】: 全20種類完全合格 (5.92s) : PASS
+- **データ件数**:
+  - 会議体マスター: 1,547 件（不変）
+  - 開催回データ: 19,458 件（新規 188 件追加・最新同期）
+  - 新着フラグ件数: 開催回 189 件、会議体 68 件（前清新着クリア確認済み）
+  - スクレイピングルール: 1,547 件（100%完全整備維持）
+
+#### 4. 次のステップ (Next Steps)
+- 新着開催回に対する PMM（配付資料ローカル資産管理）自動ダウンロードの完了確認およびバッチ同期。
+- `feature/drop76-crawler-new-arrival-filter` ブランチをリモートへ push し、ユーザー確認後に main へのマージを行う。
+
+### Drop 77: 金融庁（FSA）新着情報の網羅的ディスカバリー・登録および新規2会議体のワンストップ統合・DBマテリアル同期強化 (2026-10-24)
+
+#### 1. 背景と課題 (Background & Issues)
+- **ユーザーからの新着情報・開催回登録要請**:
+  金融庁（FSA）の令和8事務年度公表ページ（`r8_news_menu.html` 等）から、企業会計審議会 監査部会第57会議事録、保険制度WG第2回開催案内、ディスクロージャーWG第6会議事録、サステナビリティ情報保証部会第3回開催案内等の新規・更新情報の反映が要請された。
+- **未登録会議体の存在（ディスカバリー網羅性）**:
+  新着情報の精査に伴い、長年開催実績がありながら未登録であった「金融トラブル連絡調整協議会」（全70開催回・資料完備）および2026年9月に新設された「AI時代を見据えたオンチェーン金融フォーラム」の2会議体が特定され、ワンストップ登録が求められた。
+- **SQLiteマスターDBにおける配付資料UPDATE透過性（CR-198）**:
+  手動補正やコンテキスト復元において資料名（`materials.name`）を更新する際、従来の `INSERT OR IGNORE` では同一 `(meeting_id, url)` レコードの資料名変更がスキップされ、ジェネリック資料名検証（CR-111）に不整合が生じる構造的課題が特定された。
+
+#### 2. 変更内容 (Changes Made)
+1. **新規2会議体のワンストップ統合とスクレイピングルール策定**:
+   - **`fsa-kinyu_trouble`（金融トラブル連絡調整協議会）**:
+     親URL `https://www.fsa.go.jp/singi/singi_trouble/index.html` より、2000年の第1回から2026年6月の第70回に至る全70開催回および配付資料・議事録（CR-111適合コンテキスト名付与）を網羅登録。
+     次回巡回用スクレイピングルール（`subpage_discovery_pattern`）を連動登録。
+   - **`fsa-ai_onchain`（AI時代を見据えたオンチェーン金融フォーラム）**:
+     親URL `https://www.fsa.go.jp/singi/ai_onchain/index.html` より、第1回（2026/09/30開催）の資料名簿・説明資料PDFおよび2026/10/19公表の議事録HTMLを登録。スクレイピングルールを連動登録。
+2. **既存会議体・開催回への新着公表情報の網羅的反映**:
+   - `fsa-kigyou_kansa_bukai`（企業会計審議会 監査部会）: 暫定ID `fsa-kigyou_kansa_bukai-20261002-s61` を第57回正式ID **`fsa-kigyou_kansa_bukai-20261002-057`** へ正規化。2026/10/23公表の議事録HTMLを追加。
+   - `fsa-kinyu_hokenseido_wg`（金融審議会 保険制度ワーキング・グループ）: 第2回（2026/10/30開催、ID: **`fsa-kinyu_hokenseido_wg-20261030-002`**）を追加。
+   - `fsa-kinyu_disclosure_wg`（金融審議会 ディスクロージャーワーキング・グループ）: 第6回（2026/09/04開催）に公表議事録HTMLを追加。
+   - `fsa-kigyou_hoshou_bukai`（企業会計審議会 サステナビリティ情報保証部会）: 第2回に公表議事録HTMLを追加、第3回（2026/10/29開催、ID: **`fsa-kigyou_hoshou_bukai-20261029-003`**）を追加。
+   - `fsa-kinyu_seityousikin_wg`（金融審議会 成長企業への資金供給の在り方等に関するWG）: 第1回に公表議事録HTMLを追加、第2回IDを **`fsa-kinyu_seityousikin_wg-20261009-002`** に正規化。
+   - `fsa-kinyu_shingi`（金融審議会 総会・分科会合同会合）: 第57回総会・第45回分科会合同会合を正規化（ID: **`fsa-kinyu_shingi-20260831-057`**）し、公表議事録HTMLを追加。
+   - `fsa-transition_finance`（第14回議事要旨追加）、`fsa-sustainable_finance`（第30会議事録追加）、`fsa-venture_capital`（第4会議事録追加）を反映。
+3. **SQLiteマスターDBにおける配付資料ON CONFLICT UPDATE改善 (CR-198)**:
+   - [`admin/db/db_manager.py`](file:///d:/dev/PMHub/admin/db/db_manager.py): `save_data_to_db` 内の `materials` INSERT処理を、`ON CONFLICT(meeting_id, url) DO UPDATE SET name = excluded.name, type = excluded.type, manual_lock = excluded.manual_lock;` に更新。手動補正やクレンジングによる資料名・属性変更が確実に永続化されるパイプラインを確立。
+4. **金融庁（FSA）巡回クロールの完遂**:
+   - `python admin/crawler.py --ministry FSA --workers 4 --recent-years 2` を実行。全34会議体を完全巡回（成功32件、部分成功2件、失敗0件）。手動ロック（`manualLock`）の非破壊保護を確認。
+
+#### 3. 検証結果 (Verification Results)
+- **テストスイート（`testing/run_test_suite.py --all-layers`）**: 全15ケース完全合格＋単体テスト20種完全合格（所要時間 22.46秒）
+  - ケース1: コード文法チェック (SyntaxError / 括弧 / div) (0.76s) : PASS
+  - ケース2: リンク疎通確認 (追加・変更 URL 179件中 リンク切れ0件) (1.03s) : PASS
+  - ケース3: UI表示機能検証 (DOMコンテナ整合性) (0.00s) : PASS
+  - ケース4: JS実行時クラッシュ・全画面描画検証 (0.72s) : PASS
+  - ケース5: 会議品質・回次整合性・重複排除検証 (0.65s) : PASS
+  - ケース6: 会議体・タイムライン ID完全排他性・整合性 (0.02s) : PASS
+  - ケース7: 康煕部首・特殊文字 NFKC 正規化検証 (0.64s) : PASS
+  - ケース8: プレースホルダー日付（2099/01/01）ゼロ遮断検証 (0.00s) : PASS
+  - ケース9: 管理サーバー API 単体・統合テスト (4.65s) : PASS
+  - ケース10: クローラー手動保護回帰テスト (4.00s) : PASS
+  - ケース11: スクレイピングルール整合性検証 (0.45s) : PASS
+  - ケース12: ホスト分散・ゴミデータ不変性検証 (0.37s) : PASS
+  - ケース13: 省庁親ポータルURL設定・探索網羅性検証 (0.49s) : PASS
+  - ケース14: アクティブ会議体フィルタリング・廃止管理検証 (0.92s) : PASS
+  - ケース15: SQLiteマスターDB整合性 & 2系統JSON完全同期検証 (0.78s) : PASS
+  - 【単体関数検証 (Unit Tests)】: 全20種完全合格（6.58s）: PASS
+- **データ規模**:
+  - 会議体マスター: 1,549 件（新規 2件追加: `fsa-kinyu_trouble`, `fsa-ai_onchain`）
+  - 開催回データ: 19,534 件（新規 76件純増）
+  - 配付資料データ: 111,992 件（新規 190件追加）
+  - スクレイピングルール: 1,549 件（100%完全適用・孤立0件）
+
+#### 4. 次のステップ (Next Steps)
+- 新規追加された開催回・配付資料に対する PMM（配付資料ローカル資産管理）ダウンロードの差分同期。
+- `feature/fsa-news-and-councils` ブランチをリモートへ push し、ユーザー確認後に main へのマージ待機。

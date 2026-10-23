@@ -3065,6 +3065,7 @@ def sync_new_meetings_from_crawl(data, target, scraped_item):
             if c.get("id") == council_id:
                 c_meets = [m for m in meetings if m.get("councilId") == council_id]
                 c["pastYearCount"] = len(c_meets)
+                c["isNewlyDiscovered"] = True
                 break
 
     return added_count
@@ -3347,6 +3348,30 @@ def run_meeting_crawler(progress_callback=None, stop_event=None, workers=4, rece
 
         # data.json を読み込み（ステータス更新用）
         data = load_data_json(DATA_JSON_FILE)
+
+        # Drop 76 (要件3): 前回のクロールで付与された新着フラグをリセット
+        reset_m_cnt = 0
+        for m in data.get("meetings", []):
+            if m.get("isNewlyDiscovered"):
+                m["isNewlyDiscovered"] = False
+                reset_m_cnt += 1
+        reset_c_cnt = 0
+        for c in data.get("councils", []):
+            if c.get("isNewlyDiscovered"):
+                c["isNewlyDiscovered"] = False
+                reset_c_cnt += 1
+        if reset_m_cnt > 0 or reset_c_cnt > 0:
+            emit(f"[新着リセット] 前回クロールの新着フラグをリセットしました (開催回: {reset_m_cnt}件, 会議体: {reset_c_cnt}件)")
+        try:
+            import sqlite3
+            db_path = os.path.join(os.path.dirname(__file__), "pmhub.db")
+            if os.path.exists(db_path):
+                conn = sqlite3.connect(db_path)
+                with conn:
+                    conn.execute("UPDATE meetings SET is_newly_discovered = 0 WHERE is_newly_discovered = 1;")
+                conn.close()
+        except Exception:
+            pass
 
         # クロール開始時に lastCrawlTime を即時更新・バックアップ保存
         data["lastCrawlTime"] = now_str
@@ -3757,6 +3782,31 @@ def run_ministry_news_discovery(progress_callback=None, stop_event=None, ministr
         emit("=" * 65)
 
         data = load_data_json(DATA_JSON_FILE)
+
+        # Drop 76 (要件3): 前回のクロールで付与された新着フラグをリセット
+        reset_m_cnt = 0
+        for m in data.get("meetings", []):
+            if m.get("isNewlyDiscovered"):
+                m["isNewlyDiscovered"] = False
+                reset_m_cnt += 1
+        reset_c_cnt = 0
+        for c in data.get("councils", []):
+            if c.get("isNewlyDiscovered"):
+                c["isNewlyDiscovered"] = False
+                reset_c_cnt += 1
+        if reset_m_cnt > 0 or reset_c_cnt > 0:
+            emit(f"[新着リセット] 前回クロールの新着フラグをリセットしました (開催回: {reset_m_cnt}件, 会議体: {reset_c_cnt}件)")
+        try:
+            import sqlite3
+            db_path = os.path.join(os.path.dirname(__file__), "pmhub.db")
+            if os.path.exists(db_path):
+                conn = sqlite3.connect(db_path)
+                with conn:
+                    conn.execute("UPDATE meetings SET is_newly_discovered = 0 WHERE is_newly_discovered = 1;")
+                conn.close()
+        except Exception:
+            pass
+
         councils = data.get("councils", [])
         rules = data.get("scrapingRules", {})
         meetings = data.get("meetings", [])

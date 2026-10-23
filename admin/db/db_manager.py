@@ -496,12 +496,15 @@ def save_data_to_db(
                 ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);
             """, m_rows)
 
-            # To avoid duplicates in materials while maintaining ACID safety,
-            # we delete materials for the modified meetings or batch insert with IGNORE
+            # Insert or update materials, ensuring name and manual_lock changes are applied
             cur.executemany("""
-                INSERT OR IGNORE INTO materials (
+                INSERT INTO materials (
                     meeting_id, name, url, type, is_private, manual_lock
-                ) VALUES (?, ?, ?, ?, ?, ?);
+                ) VALUES (?, ?, ?, ?, ?, ?)
+                ON CONFLICT(meeting_id, url) DO UPDATE SET
+                    name = excluded.name,
+                    type = excluded.type,
+                    manual_lock = excluded.manual_lock;
             """, mat_rows)
 
         conn.commit()

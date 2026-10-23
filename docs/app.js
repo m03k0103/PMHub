@@ -72,6 +72,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     docTypeFilter: 'ALL',
     dateRangeFilter: 'PAST_YEAR',
     watchlistOnly: false,
+    newArrivalOnly: false,
     sortBy: 'NEWEST',
     watchedCouncilIds: new Set(getStoredJson('pmhub_watched', ['cao-ai_strategy', 'digital-suishin_kanjikai', 'cao-kisei_kaikaku', 'meti-sangyo_kozo', 'cas-zensedai_hosyo', 'mof-zaiseiseido_bunkakai'])),
     theme: getStoredItem('pmhub_theme', 'light'),
@@ -136,6 +137,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     categorySelect: document.getElementById('categorySelect'),
     docTypeSelect: document.getElementById('docTypeSelect'),
     dateRangeSelect: document.getElementById('dateRangeSelect'),
+    newArrivalFilterBtn: document.getElementById('newArrivalFilterBtn'),
     watchlistFilterBtn: document.getElementById('watchlistFilterBtn'),
     watchlistFilterBadge: document.getElementById('watchlistFilterBadge'),
     resetFiltersBtn: document.getElementById('resetFiltersBtn'),
@@ -359,6 +361,20 @@ document.addEventListener('DOMContentLoaded', async () => {
     el.resetFiltersBtn.addEventListener('click', resetFilters);
     if (el.noResultsResetBtn) el.noResultsResetBtn.addEventListener('click', resetFilters);
 
+    if (el.newArrivalFilterBtn) {
+      el.newArrivalFilterBtn.addEventListener('click', () => {
+        state.newArrivalOnly = !state.newArrivalOnly;
+        if (state.newArrivalOnly) {
+          el.newArrivalFilterBtn.classList.add('active');
+          showToast('最新クロールの新着（会議体・開催回）に絞り込みました ✨');
+        } else {
+          el.newArrivalFilterBtn.classList.remove('active');
+          showToast('全件表示に戻しました');
+        }
+        renderMainView();
+      });
+    }
+
     if (el.watchlistFilterBtn) {
       el.watchlistFilterBtn.addEventListener('click', () => {
         state.watchlistOnly = !state.watchlistOnly;
@@ -488,6 +504,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     state.docTypeFilter = 'ALL';
     state.dateRangeFilter = 'ALL';
     state.watchlistOnly = false;
+    state.newArrivalOnly = false;
     state.sortBy = 'NEWEST';
 
     el.searchInput.value = '';
@@ -498,6 +515,9 @@ document.addEventListener('DOMContentLoaded', async () => {
     el.dateRangeSelect.value = 'ALL';
     el.sortBySelect.value = 'NEWEST';
 
+    if (el.newArrivalFilterBtn) {
+      el.newArrivalFilterBtn.classList.remove('active');
+    }
     if (el.watchlistFilterBtn) {
       el.watchlistFilterBtn.classList.remove('active');
     }
@@ -542,6 +562,11 @@ document.addEventListener('DOMContentLoaded', async () => {
 
   function filterMeetings() {
     return MEETINGS.filter(meeting => {
+      // New Arrival filter (Drop 76 / 要件1)
+      if (state.newArrivalOnly && !meeting.isNewlyDiscovered) {
+        return false;
+      }
+
       // Watchlist filter
       if (state.watchlistOnly && !state.watchedCouncilIds.has(meeting.councilId)) {
         return false;
@@ -614,6 +639,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     const activeTags = [];
 
     if (state.searchQuery) activeTags.push({ label: `検索: "${state.searchQuery}"`, key: 'search' });
+    if (state.newArrivalOnly) activeTags.push({ label: '✨ 新着のみ', key: 'newArrivalOnly' });
     if (state.watchlistOnly) activeTags.push({ label: '⭐ ウォッチ対象のみ', key: 'watchlistOnly' });
     if (state.ministryFilter !== 'ALL') activeTags.push({ label: `省庁: ${MINISTRIES[state.ministryFilter]?.name || state.ministryFilter}`, key: 'ministry' });
     if (state.categoryFilter !== 'ALL') activeTags.push({ label: `会議種別: ${getCategoryLabel(state.categoryFilter)}`, key: 'category' });
@@ -757,6 +783,9 @@ document.addEventListener('DOMContentLoaded', async () => {
     } else if (key === 'dateRange') {
       state.dateRangeFilter = 'ALL';
       el.dateRangeSelect.value = 'ALL';
+    } else if (key === 'newArrivalOnly') {
+      state.newArrivalOnly = false;
+      if (el.newArrivalFilterBtn) el.newArrivalFilterBtn.classList.remove('active');
     } else if (key === 'watchlistOnly') {
       state.watchlistOnly = false;
       if (el.watchlistFilterBtn) el.watchlistFilterBtn.classList.remove('active');
@@ -765,6 +794,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   };
 
   function createTimelineCardHTML(meeting) {
+    const isNew = Boolean(meeting.isNewlyDiscovered);
     const meetingMinistry = getMeetingMinistry(meeting);
     const meetingCategory = getMeetingCategory(meeting);
     const minInfo = MINISTRIES[meetingMinistry] || { name: meetingMinistry, color: '#3b82f6' };
@@ -785,11 +815,12 @@ document.addEventListener('DOMContentLoaded', async () => {
     `).join('');
 
     return `
-      <article class="timeline-card card-glass" id="meeting-${meeting.id}" style="--card-accent-color: ${minInfo.color}">
+      <article class="timeline-card card-glass ${isNew ? 'timeline-card-new' : ''}" id="meeting-${meeting.id}" style="--card-accent-color: ${minInfo.color}">
         <div class="card-top-row">
           <div class="card-badges">
             <span class="badge-ministry ${meetingMinistry}">${minInfo.name}</span>
             <span class="badge-category">${categoryName}</span>
+            ${isNew ? '<span class="badge-new-arrival">新着</span>' : ''}
           </div>
           <div class="card-date-badge" title="会議の開催年月日">
             <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
@@ -845,6 +876,13 @@ document.addEventListener('DOMContentLoaded', async () => {
 
   function filterCouncils() {
     return COUNCILS.filter(council => {
+      // New Arrival filter (Drop 76 / 要件1)
+      if (state.newArrivalOnly) {
+        const councilMeetings = meetingsByCouncilMap.get(council.id) || [];
+        const hasNewMeeting = Boolean(council.isNewlyDiscovered) || councilMeetings.some(m => m.isNewlyDiscovered);
+        if (!hasNewMeeting) return false;
+      }
+
       if (state.watchlistOnly && !state.watchedCouncilIds.has(council.id)) return false;
       if (state.ministryFilter !== 'ALL' && council.ministry !== state.ministryFilter) return false;
       if (state.categoryFilter !== 'ALL' && council.category !== state.categoryFilter) return false;
@@ -954,10 +992,13 @@ document.addEventListener('DOMContentLoaded', async () => {
       }
 
       // 会議体カードを展開した際は、その会議体のすべての回の資料を表示（ただし検索キーワードに合致するもののみに絞り込み）
-      const meetingsHTML = councilMeetings.length > 0 ? councilMeetings.map(m => `
-        <div class="meeting-row">
+      const meetingsHTML = councilMeetings.length > 0 ? councilMeetings.map(m => {
+        const isNew = Boolean(m.isNewlyDiscovered);
+        return `
+        <div class="meeting-row ${isNew ? 'meeting-row-new' : ''}">
           <div class="meeting-row-header">
             <span class="meeting-row-title">
+              ${isNew ? '<span class="badge-new-arrival" style="margin-right: 0.35rem;">新着</span>' : ''}
               ${escapeHtml(m.name || '')}
               <a href="${escapeHtml(sanitizeUrl(m.officialUrl))}" target="_blank" rel="noopener noreferrer" class="inline-link-icon" title="一次ソースを開く" onclick="event.stopPropagation();">
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
@@ -971,7 +1012,8 @@ document.addEventListener('DOMContentLoaded', async () => {
           ${(state.enableAiSummary && m.summary) ? `<div class="meeting-row-summary">${escapeHtml(m.summary)}</div>` : ''}
           ${renderMaterialsAccordionHTML(m.materials, m.id, m.officialUrl)}
         </div>
-      `).join('') : `<div class="meeting-row-no-data">開催記録はありません</div>`;
+      `;
+      }).join('') : `<div class="meeting-row-no-data">開催記録はありません</div>`;
 
       return `
         <div class="council-accordion-card ${isExpanded ? 'expanded' : ''}" id="council-card-${c.id}">
@@ -980,6 +1022,7 @@ document.addEventListener('DOMContentLoaded', async () => {
               <div class="council-header-top-row">
                 <span class="badge-ministry ${c.ministry}">${minInfo.name}</span>
                 <span class="badge-category">${getCategoryLabel(c.category)}</span>
+                ${(Boolean(c.isNewlyDiscovered) || councilMeetings.some(m => m.isNewlyDiscovered)) ? `<span class="badge-new-arrival">新着${councilMeetings.filter(m => m.isNewlyDiscovered).length > 0 ? ` ${councilMeetings.filter(m => m.isNewlyDiscovered).length}件` : ''}</span>` : ''}
                 <button class="btn-watchlist-toggle ${isWatching ? 'watching' : ''}" style="margin-left: auto;" onclick="event.stopPropagation(); toggleWatchlist('${c.id}')">
                   <svg width="14" height="14" viewBox="0 0 24 24" fill="${isWatching ? 'currentColor' : 'none'}" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
                   ${isWatching ? 'ウォッチ中' : 'ウォッチ'}
