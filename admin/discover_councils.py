@@ -2,8 +2,9 @@
 # -*- coding: utf-8 -*-
 """
 政策会議ウォッチ (PM-HUB) - 審議会・会議体ディスカバリーエンジン (Council Discovery Engine)
-省庁の審議会等一覧ページURL (councilsUrls) を巡回し、そこに含まれるすべての会議体（本体、部会、分科会、検討会等）の
-実際の個別のトップページURLへHTTPアクセスして「最終的な正規URL」を特定し、独立した会議体レコードとして自動検出・登録する。
+省庁の審議会等一覧ページURL (councilsUrls) や新着ポータル (MINISTRY_NEWS_PORTALS) を巡回し、
+そこに含まれるすべての会議体（本体、部会、分科会、検討会等）の個別のトップページURLを特定し、
+独立した会議体レコードとして自動検出・登録する。
 """
 
 import sys
@@ -16,6 +17,8 @@ import urllib.parse
 import time
 from datetime import datetime
 from bs4 import BeautifulSoup
+import concurrent.futures
+from urllib.parse import urljoin, urlparse
 
 from utils import (
     setup_win32_utf8, get_browser_headers, save_data_json_with_backup,
@@ -26,6 +29,36 @@ setup_win32_utf8()
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 PROJECT_ROOT = os.path.dirname(BASE_DIR)
 DATA_JSON_PATH = os.path.join(PROJECT_ROOT, "docs", "data.json")
+
+# 非会議体ノイズキーワード・パターン定義 (CR-187)
+NOISE_PERSON_ROLES = r"(?:大臣|副大臣|政務官|長官|総理|知事|教授|名誉教授|代表|委員)"
+NOISE_ACTION_PATTERNS = [
+    re.compile(rf"{NOISE_PERSON_ROLES}が"),
+    re.compile(rf"{NOISE_PERSON_ROLES}と.*(?:会談|面会|意見交換|表敬)"),
+    re.compile(r"大臣発言"),
+    re.compile(r"(?:意見交換|研究課題発表)を(?:実施|行い)"),
+    re.compile(r"日本人初】"),
+]
+
+NOISE_INTERNATIONAL_AND_ORGS = [
+    # 国際機関・国際会議・条約会合
+    "世銀", "IMF", "FATF", "金融活動作業部会", "国際通貨金融委員会", "WTO", "CITES", "ワシントン条約",
+    "生物多様性条約", "気候変動枠組条約", "締約国会議", "国連総会", "国連犯罪防止", "国連国際商取引",
+    "国際かんがい排水", "日米合同委員会", "日米政府の戦略的投資", "日米サイバー", "日米加", "日・ベトナム",
+    "日ロ漁業", "北太平洋漁業", "アジア・アフリカ法律", "アジア矯正", "海運先進国", "ウクライナ汚職",
+    "世界保護司", "欧州委員会", "大韓民国", "フィンランド", "豪州政府", "プレCOP",
+    # 国会・政党・一般法人
+    "参議院", "衆議院", "自由民主党", "一般社団法人", "公益社団法人", "公益財団法人", "独立行政法人", "株式会社"
+]
+NOISE_INTERNATIONAL_REGEX = re.compile(
+    r"(?:COP\d+|" + "|".join(re.escape(k) for k in NOISE_INTERNATIONAL_AND_ORGS) + r")"
+)
+
+NOISE_PORTAL_EXACT = {
+    "政策・審議会", "省議・審議会", "審議会・委員会", "審議会等", "政策・審議会等", "省議・審議会等",
+    "政策・審議会等トップへ", "各種本部・会議等の活動情報", "本審議会 トップページ", "公害等調整委員会",
+    "中央環境審議会", "法制審議会会議", "審議会情報", "度"
+}
 
 
 def load_keywords():
@@ -113,35 +146,109 @@ def fetch_page_and_final_url(url):
             html_text = decode_html_bytes(html_bytes, content_type)
             return html_text, final_url
     except Exception as e:
-        print(f"   [HTTP ERROR] {url}: {e}")
         return None, url
 
 def clean_council_name(name):
     """
     「第X回」や日付プレフィックス、末尾の「配布資料」「議事概要」などを除去して
-    親会議体名（1つの会議体レコード）を抽出する。
+    親会議体名（1つの会議体レコード）を抽出する。(CR-186)
     """
     if not name:
         return ""
-    n = name.strip()
+    try:
+        from crawler import normalize_text
+    except ImportError:
+        from admin.crawler import normalize_text
+    n = normalize_text(name).strip()
     
-    # 1. プレフィックスの除去 (日付・年度・回数)
-    n = re.sub(r'^(令和\d+年\d+月\d+日開催|令和\d+年\d+月\d+日|令和\d+年|平成\d+年|\b\d{4}年\d+月\d+日開催?|\b\d{4}年)\s*', '', n)
-    n = re.sub(r'^(第[0-9０-９一-九]+回|第[0-9０-９一-九]+回\s*)\s*', '', n)
-    n = re.sub(r'^(令和\d+年\s*第[0-9０-９一-九]+回|平成\d+年\s*第[0-9０-９一-九]+回)\s*', '', n)
+    # 0. 省庁カテゴリ・ラベルプレフィックスの除去 (CR-186)
+    n = re.sub(r'^(?:審議会等|報道発表|会議等|その他|国際政策|財総研|お知らせ|新着情報|トピックス|プレスリリース)[\s　:：]+', '', n)
     
-    # 2. 括弧付き回数・開催案内の除去 (例: （第1034回）の開催について【8月18日開催】, (第49回～))
+    # 1. 日付・更新ラベル・年度・期数プレフィックスの除去 (CR-186)
+    n = re.sub(r'^(?:〈[^〉]+〉|＜[^＞]+＞|【[^】]+】|\[[^\]]+\])(?:\s*[(（]更新[)）])?\s*', '', n)
+    n = re.sub(r'^(?:令和|平成)\s*[0-9０-９一-九元]+\s*年\s*[0-9０-９一-九]+\s*月\s*[0-9０-９一-九]+\s*日(?:開催)?\s*', '', n)
+    n = re.sub(r'^(?:令和|平成)\s*[0-9０-９一-九元]+\s*年度\s*', '', n)
+    n = re.sub(r'^\b\d{4}\s*年度\s*', '', n)
+    n = re.sub(r'^第\s*[0-9０-９一-九]+\s*期\s*', '', n)
+    n = re.sub(r'^(?:第[0-9０-９一-九]+回|第[0-9０-９一-九]+回\s*)\s*', '', n)
+    
+    # 2. 括弧付き回数・開催案内の除去
     n = re.sub(r'[（(]第[0-9０-９一-九]+回.*?[）)]', '', n)
     n = re.sub(r'【\d+月\d+日開催】', '', n)
     n = re.sub(r'【\d{4}/\d{1,2}/\d{1,2}開催】', '', n)
     
-    # 3. 中間・末尾の回数・議事概要の除去 (例: 研究会 第5回議事概要, 第1回合同会議)
+    # 3. 中間・末尾の回数・議事概要の除去
     n = re.sub(r'\s*第[0-9０-９一-九]+回.*', '', n)
-    n = re.sub(r'\s*(の開催について|開催について|の開催案内|開催案内).*', '', n)
-    n = re.sub(r'\s*(報告書について|報告書).*', '', n)
-    n = re.sub(r'\s*(配布資料|配付資料|取りまとめ.*|について|開催概要|議事要旨|議事録|議事概要)$', '', n)
+    n = re.sub(r'\s*(?:の開催について|開催について|の開催案内|開催案内).*', '', n)
+    n = re.sub(r'\s*(?:報告書について|報告書).*', '', n)
+    n = re.sub(r'\s*(?:配布資料|配付資料|取りまとめ.*|について|開催概要|議事要旨|議事録|議事次第|議事概要)$', '', n)
+
+    # 4. 前後の孤立括弧・空白の補正
+    # ※末尾の閉じていない括弧（例: "恩給審査会（平成21年度廃止前"）も除去できるように配慮
+    n = re.sub(r'^[「『【\[\(（\s]+', '', n)
+    n = re.sub(r'[」』】\]\)）\s]+$', '', n)
     
     return n.strip()
+
+def get_core_council_name(name: str) -> str:
+    """
+    表記揺れ（空白、全角半角、年度、期数、「について」、括弧補足）を除去した
+    正規化コア名称を生成する (CR-188)。
+    """
+    if not name:
+        return ""
+    try:
+        from crawler import normalize_text
+    except ImportError:
+        from admin.crawler import normalize_text
+    c = normalize_text(name).strip()
+    # 括弧内の補足を除去 (例: （令和8年～）, (平成21年度廃止前), （京都コングレス）)
+    c = re.sub(r'[（(][^）)]*[）)]?', '', c)
+    c = clean_council_name(c)
+    # 先頭の年度・期数
+    c = re.sub(r'^(?:令和|平成|\d{4})\S*年度?\s*', '', c)
+    c = re.sub(r'^第\s*\d+\s*期\s*', '', c)
+    # 末尾の「について」
+    c = re.sub(r'について$', '', c)
+    # 空白、中黒、記号を除去
+    c = re.sub(r'[\s　・~～―－\-_:：/／()（）]', '', c)
+    return c.strip().lower()
+
+def is_non_council_noise(name: str, raw_text: str = "", url: str = "") -> bool:
+    """
+    非会議体ノイズ（大臣動静・国際会議・条約会合・国会・一般法人・ナビ要素・PDF直リンク）を判定 (CR-187)
+    """
+    text_check = f"{name} {raw_text}".strip()
+    clean_name = clean_council_name(name)
+
+    # 1. 最小文字数ガード (4文字未満は除外, 例: '度')
+    if len(clean_name) < 4:
+        return True
+
+    # 2. 完全一致ポータル・ナビ名称
+    if clean_name in NOISE_PORTAL_EXACT or name.strip() in NOISE_PORTAL_EXACT:
+        return True
+
+    # 3. ナビゲーション・個別ヒアリング末尾・パターン
+    if re.search(r"(?:トップページ|トップへ|活動情報|主査ヒアリング|公聴会|意見募集)$", clean_name):
+        return True
+    if re.search(r"^(?:政策・審議会|省議・審議会|審議会・委員会|審議会等)", clean_name):
+        return True
+
+    # 4. 人物・大臣動静・イベントアクション判定
+    for pat in NOISE_ACTION_PATTERNS:
+        if pat.search(text_check):
+            return True
+
+    # 5. 国際会議・条約会合・国会・一般法人判定
+    if NOISE_INTERNATIONAL_REGEX.search(text_check):
+        return True
+
+    # 6. PDF/ドキュメント直リンクURLの除外
+    if url and re.search(r"\.(pdf|docx?|xlsx?|pptx?|jpe?g|png|gif|zip)$", url, re.I):
+        return True
+
+    return False
 
 
 def normalize_url(url):
@@ -180,43 +287,160 @@ def get_max_seq(councils):
     return max_num
 
 def extract_council_name_from_news_title(title: str, keywords: list) -> str:
-    """ニュース記事タイトルから会議体名称を抽出・クレンジング"""
+    """ニュース記事タイトルから会議体名称を抽出・クレンジング (CR-186)"""
     try:
         from crawler import normalize_text
     except ImportError:
         from admin.crawler import normalize_text
     t = normalize_text(title).strip()
 
+    # 0. 省庁カテゴリラベルの除去 (CR-186)
+    t = re.sub(r'^(?:審議会等|報道発表|会議等|その他|国際政策|財総研|お知らせ|新着情報|トピックス|プレスリリース)[\s　:：]+', '', t)
+
+    # 0.5 サブタイトル・キャッチコピー区切りの分割 (CR-186)
+    # 例: 「上下水道政策の基本的な方向性を議論します~上下水道政策の基本的なあり方検討会」 -> 後半を優先
+    sub_delim_m = re.search(r'[~～―－](?=[^~～―－]+(?:' + '|'.join(re.escape(k) for k in keywords) + r'))', t)
+    if sub_delim_m:
+        t = t[sub_delim_m.end():].strip()
+
     # 1. 鉤括弧「」『』【】内の会議体名を優先抽出
     brackets = re.findall(r'[「『【]([^」』】]+)[」』】]', t)
     for b in brackets:
-        b_clean = b.strip()
-        b_clean = re.sub(r'[(（]?第\s*[\d\w一二三四五六七八九十百千]+\s*回[)）]?', '', b_clean).strip()
-        b_clean = re.sub(r'の?(?:開催|設置|取りまとめ|公表|報告書|配[付布]資料|資料|議事録|議事次第)?(?:について|の公表|の開催)?$', '', b_clean).strip()
+        b_clean = clean_council_name(b)
         if any(kw in b_clean for kw in keywords) and len(b_clean) >= 4:
             return b_clean
 
     # 2. 接尾辞や開催案内語句の除去
-    t = re.sub(r'[(（]?第\s*[\d\w一二三四五六七八九十百千]+\s*回[)）]?', '', t)
-    t = re.sub(r'の?(?:開催|設置|取りまとめ|公表|報告書|配[付布]資料|資料|議事録|議事次第)?(?:について|の公表|の開催)?$', '', t).strip()
-    t = re.sub(r'^(?:令和|平成|20\d\d)\S*年度?\s*', '', t).strip()
+    t_clean = clean_council_name(t)
 
-    # 3. 会議体キーワードを含む部分の切り出し
+    # 3. 会議体キーワードを含む部分の切り出し (末尾までの探索)
     for kw in sorted(keywords, key=len, reverse=True):
-        pos = t.find(kw)
+        pos = t_clean.find(kw)
         if pos != -1:
-            cand = t[:pos + len(kw)].strip()
-            cand = re.sub(r'^[【「『\[\(（\s]+', '', cand)
-            cand = re.sub(r'^[0-9]+月[0-9]+日\s*', '', cand)
+            cand = t_clean[:pos + len(kw)].strip()
+            cand = clean_council_name(cand)
             if len(cand) >= 4 and any(k in cand for k in keywords):
                 return cand
 
     return ""
 
+
+def resolve_parent_url_from_press_release(press_url: str, cand_name: str, min_code: str) -> str:
+    """
+    単発プレスリリースHTML内の関連リンクから、常設親ページURLを1ホップ自動逆引き探索する (CR-189)
+    親ページが見つかった場合はそのURL、見つからない場合は元の press_url を返す。
+    """
+    # 単発プレスリリースURLパターンの判定
+    is_press_release = bool(re.search(
+        r'(?:/stf/newpage_\d+\.html|/report/press/|/press/|/menu_news/s-news/|/news/|/hisho/kouhou/)',
+        press_url
+    ))
+    if not is_press_release:
+        return press_url
+
+    try:
+        from crawler import fetch_url
+    except ImportError:
+        from admin.crawler import fetch_url
+
+    html = fetch_url(press_url, timeout=10)
+    if not html:
+        return press_url
+
+    soup = BeautifulSoup(html, "html.parser")
+    parsed_base = urlparse(press_url)
+    clean_cand = clean_council_name(cand_name)
+
+    best_url = None
+    best_score = -1
+
+    for a in soup.find_all("a", href=True):
+        href = a["href"].strip()
+        if not href or href.startswith("#") or href.startswith("javascript:") or href.startswith("mailto:"):
+            continue
+        abs_u = urljoin(press_url, href)
+        parsed_target = urlparse(abs_u)
+
+        # 同一省庁ドメインのみ対象
+        if parsed_target.netloc.lower() != parsed_base.netloc.lower():
+            continue
+        # ドキュメント直リンクや別プレスリリースは除外
+        if re.search(r"\.(pdf|docx?|xlsx?|pptx?|jpe?g|png|gif|zip)$", abs_u, re.I):
+            continue
+        if abs_u == press_url or re.search(r'(?:/stf/newpage_\d+|/report/press/|/press/|/menu_news/s-news/)', abs_u):
+            continue
+
+        link_text = a.get_text(separator=" ", strip=True)
+        link_title = a.get("title", "").strip()
+        combined_text = f"{link_text} {link_title}"
+
+        score = 0
+        # 会議体名そのものを含むリンク
+        if clean_cand and clean_cand in combined_text:
+            score += 10
+        # 常設ディレクトリパターンを含む
+        if re.search(r'/(?:shingikai|seisakunitsuite|council|singi|policy|councils|b_menu/shingi)/', abs_u):
+            score += 5
+        # リンク文言に親ページ示唆語句を含む
+        if any(w in combined_text for w in ["開催状況", "過去の開催", "審議会等", "検討会はこちら", "ホームページはこちら", "会議資料"]):
+            score += 3
+
+        if score > best_score and score >= 5:
+            best_score = score
+            best_url = abs_u
+
+    return best_url or press_url
+
+
+def is_already_registered_or_rejected(
+    cand_name: str, cand_url: str, min_code: str,
+    existing_names: set, existing_urls: set, existing_core_names: set, existing_councils_by_min: dict,
+    rejected_names: set, rejected_urls: set, rejected_core_names: set, rejected_clean_keys: set
+) -> bool:
+    """
+    完全一致に加え、正規化コア名称および同一省庁内の部会サフィックス一致で既存・却下判定 (CR-188)
+    """
+    clean_name = clean_council_name(cand_name)
+    core_name = get_core_council_name(cand_name)
+    norm_url = normalize_url(cand_url)
+    clean_key = get_url_clean_key(cand_url)
+
+    # 1. URLによる突合
+    if norm_url in existing_urls or (clean_key and clean_key in rejected_clean_keys):
+        return True
+    if norm_url in rejected_urls:
+        return True
+
+    # 2. 完全一致名称による突合
+    if cand_name in existing_names or clean_name in existing_names:
+        return True
+    if cand_name in rejected_names or clean_name in rejected_names:
+        return True
+
+    # 3. 正規化コア名称（Core Name）による突合
+    if core_name:
+        if core_name in existing_core_names:
+            return True
+        if core_name in rejected_core_names:
+            return True
+
+    # 4. 同一省庁内の「親審議会名＋部会・分科会・委員会名」サフィックス一致判定 (CR-188)
+    # 例: cand_name = '電波利用環境委員会' -> 既存 '情報通信審議会 情報通信技術分科会 電波利用環境委員会'
+    if min_code and len(clean_name) >= 5:
+        min_existing = existing_councils_by_min.get(min_code.upper(), [])
+        for c in min_existing:
+            ex_name = c.get("name", "")
+            if ex_name.endswith(clean_name) or clean_name.endswith(ex_name):
+                return True
+
+    return False
+
+
 def _discover_from_ministry_news(
     emit, target_ministry, ministries, existing_councils,
     categories_def, url_to_slug_map, existing_urls, existing_names,
-    rejected_names, rejected_urls, common_keywords, next_seq
+    rejected_names, rejected_urls, rejected_clean_keys, common_keywords, next_seq,
+    used_council_ids
 ):
     try:
         from crawler import (
@@ -237,11 +461,18 @@ def _discover_from_ministry_news(
 
     councils_by_min = {}
     councils_by_url = {}
+    existing_core_names = set()
     for c in existing_councils:
         m = c.get("ministry", "")
         councils_by_min.setdefault(m, []).append(c)
         if c.get("officialUrl"):
             councils_by_url[c.get("officialUrl").rstrip("/")] = c
+        if c.get("name"):
+            core_k = get_core_council_name(c.get("name"))
+            if core_k:
+                existing_core_names.add(core_k)
+
+    rejected_core_names = {get_core_council_name(rn) for rn in rejected_names if get_core_council_name(rn)}
 
     search_kws = common_keywords + ["会議", "有識者会議", "タスクフォース", "プロジェクトチーム", "協議会"]
     discovered_list = []
@@ -273,53 +504,69 @@ def _discover_from_ministry_news(
                     continue
                 items = extract_news_items_from_html(html, rurl, min_code, pdef.get("type"))
                 for item in items:
-                    matched_c, _ = match_council_from_news_item(item, councils_by_url, councils_by_min)
-                    if matched_c:
-                        continue
-
-                    cand_name = extract_council_name_from_news_title(item.get("title", ""), search_kws)
+                    raw_title = item.get("title", "")
+                    cand_name = extract_council_name_from_news_title(raw_title, search_kws)
                     if not cand_name or len(cand_name) < 4:
                         continue
 
-                    cand_clean = clean_council_name(cand_name)
-                    norm_cand_url = normalize_url(item.get("url", ""))
-
-                    # 既存・却下判定
-                    if cand_name in existing_names or cand_clean in existing_names or norm_cand_url in existing_urls:
-                        continue
-                    if (cand_name in rejected_names or cand_clean in rejected_names or norm_cand_url in rejected_urls):
+                    # ノイズ判定 (CR-187)
+                    if is_non_council_noise(cand_name, raw_title, item.get("url", "")):
                         continue
 
-                    key_pair = (min_code, cand_name)
+                    # 既存・却下判定 (CR-188)
+                    if is_already_registered_or_rejected(
+                        cand_name, item.get("url", ""), min_code,
+                        existing_names, existing_urls, existing_core_names, councils_by_min,
+                        rejected_names, rejected_urls, rejected_core_names, rejected_clean_keys
+                    ):
+                        continue
+
+                    key_pair = (min_code, get_core_council_name(cand_name))
                     if key_pair in seen_in_this_run:
                         continue
                     seen_in_this_run.add(key_pair)
 
-                    category, _ = infer_council_category(f"{cand_name} {item.get('title', '')}", categories_def)
+                    # 単発プレスリリースからの常設親ページURL自動逆引き (CR-189)
+                    resolved_url = resolve_parent_url_from_press_release(item.get("url", ""), cand_name, min_code)
+                    if resolved_url != item.get("url", ""):
+                        # 逆引き後のURLで既存・却下を再チェック
+                        if is_already_registered_or_rejected(
+                            cand_name, resolved_url, min_code,
+                            existing_names, existing_urls, existing_core_names, councils_by_min,
+                            rejected_names, rejected_urls, rejected_core_names, rejected_clean_keys
+                        ):
+                            continue
+
+                    category, _ = infer_council_category(f"{cand_name} {raw_title}", categories_def)
                     category_counts[category] = category_counts.get(category, 0) + 1
 
-                    norm_item_url = normalize_url_for_matching(item.get("url", ""))
+                    norm_item_url = normalize_url_for_matching(resolved_url)
                     inherited_slug = url_to_slug_map.get(norm_item_url)
-                    if inherited_slug:
+                    if inherited_slug and inherited_slug not in used_council_ids:
                         council_id = inherited_slug
                         action_label = "既存スラグID継承"
                     else:
                         council_id = f"{min_code.lower()}-{next_seq}"
+                        while council_id in used_council_ids:
+                            next_seq += 1
+                            council_id = f"{min_code.lower()}-{next_seq}"
                         next_seq += 1
                         action_label = "新規会議体検出"
+
+                    used_council_ids.add(council_id)
 
                     council_item = {
                         "id": council_id,
                         "name": cand_name,
                         "ministry": min_code,
                         "category": category,
-                        "officialUrl": item.get("url", ""),
+                        "officialUrl": resolved_url,
                         "isNew": True
                     }
                     discovered_list.append(council_item)
                     found_in_min += 1
                     cat_label = categories_def.get(category, category)
-                    emit(f"      ✨ [{action_label}] [{cat_label}] {council_id}: {cand_name} -> {item.get('url', '')}", {
+                    emit(f"      ✨ [{action_label}] [{cat_label}] {council_id}: {cand_name} -> {resolved_url}", {
                         "type": "council_discovered",
                         "council": council_item
                     })
@@ -327,6 +574,115 @@ def _discover_from_ministry_news(
         emit(f"   -> 検出数: {found_in_min} 件")
 
     return discovered_list, category_counts
+
+
+def _discover_normal_for_single_ministry(
+    min_code, min_info, add_kw, exc_kw, common_keywords,
+    categories_def, url_to_slug_map, existing_urls, existing_names, existing_core_names, councils_by_min,
+    rejected_names, rejected_urls, rejected_core_names, rejected_clean_keys,
+    resolved_url_cache
+):
+    """
+    1省庁分の通常審議会一覧巡回タスク (並列ワーカー対応・同一省庁内は直列かつディレイ遵守) (CR-190)
+    """
+    councils_urls = min_info.get("councilsUrls", [])
+    target_kw = common_keywords + add_kw
+    discovered_in_min = []
+    seen_in_min = set()
+
+    for page_url in councils_urls:
+        page_url = page_url.strip()
+        if not page_url or not page_url.startswith("http"):
+            continue
+
+        html, final_page_url = fetch_page_and_final_url(page_url)
+        if not html:
+            continue
+
+        soup = BeautifulSoup(html, "html.parser")
+        links = soup.find_all("a", href=True)
+
+        for a in links:
+            href = a["href"].strip()
+            raw_text = a.get_text(separator=" ", strip=True)
+            title_attr = a.get("title", "").strip()
+            link_text = raw_text or title_attr
+
+            if not link_text or len(link_text) < 3 or len(link_text) > 100:
+                continue
+
+            if href.startswith("#") or href.startswith("javascript:") or href.startswith("mailto:"):
+                continue
+
+            # キーワード照合
+            if not any(kw in link_text for kw in target_kw):
+                continue
+            # 除外キーワード照合
+            if any(ex in link_text for ex in exc_kw):
+                continue
+
+            # 絶対URLに変換
+            abs_url = urllib.parse.urljoin(final_page_url, href)
+
+            # ノイズ・ドキュメント直リンク判定 (CR-187)
+            if is_non_council_noise(link_text, "", abs_url):
+                continue
+
+            # 会議体名のクレンジング (CR-186)
+            is_meet_pat = bool(re.search(r'[(（]?第\s*[0-9０-９一-九]+\s*回[)）]?', link_text))
+            cand_name = clean_council_name(link_text) if is_meet_pat else link_text.strip()
+            if not cand_name or len(cand_name) < 4:
+                continue
+
+            if is_non_council_noise(cand_name, link_text, abs_url):
+                continue
+
+            # HTTPアクセス前の事前フィルタ (CR-190)
+            if is_already_registered_or_rejected(
+                cand_name, abs_url, min_code,
+                existing_names, existing_urls, existing_core_names, councils_by_min,
+                rejected_names, rejected_urls, rejected_core_names, rejected_clean_keys
+            ):
+                continue
+
+            core_k = get_core_council_name(cand_name)
+            if core_k in seen_in_min:
+                continue
+
+            # HTTPアクセスして最終正規URLを取得（キャッシュ活用）
+            if abs_url in resolved_url_cache:
+                final_council_url = resolved_url_cache[abs_url]
+            else:
+                _, final_council_url = fetch_page_and_final_url(abs_url)
+                if not final_council_url:
+                    final_council_url = abs_url
+                resolved_url_cache[abs_url] = final_council_url
+
+            # 最終URLでの既存・却下判定
+            if is_already_registered_or_rejected(
+                cand_name, final_council_url, min_code,
+                existing_names, existing_urls, existing_core_names, councils_by_min,
+                rejected_names, rejected_urls, rejected_core_names, rejected_clean_keys
+            ):
+                continue
+
+            seen_in_min.add(core_k)
+
+            category, is_default = infer_council_category(f"{cand_name} {link_text}", categories_def)
+
+            # target_url_cand の決定 (CR-191: 一覧URL強制上書きバグを廃止)
+            target_url_cand = final_council_url
+
+            discovered_in_min.append({
+                "cand_name": cand_name,
+                "link_text": link_text,
+                "target_url_cand": target_url_cand,
+                "category": category,
+                "is_default": is_default,
+                "min_code": min_code
+            })
+
+    return min_code, discovered_in_min
 
 
 def run_discovery(progress_callback=None, target_ministry=None, dry_run=False, mode="normal"):
@@ -360,7 +716,15 @@ def run_discovery(progress_callback=None, target_ministry=None, dry_run=False, m
     ministries, existing_councils, categories_def, scraping_rules = parse_data_json()
     emit(f"登録済み省庁数: {len(ministries)} 組織, 既存会議体数: {len(existing_councils)} 件, カテゴリー定義数: {len(categories_def)} 種類\n")
 
-    # CR-92: 既存URL -> スラグIDマップの構築（既存スラグID自動継承用）
+    # 全省庁の審議会一覧トップURL（councilsUrls）のセット (CR-191: スラグ継承汚染防止)
+    all_portal_urls = set()
+    for min_info in ministries.values():
+        for u in min_info.get("councilsUrls", []):
+            if u:
+                all_portal_urls.add(normalize_url_for_matching(u))
+                all_portal_urls.add(normalize_url(u))
+
+    # CR-92 / CR-191: 既存URL -> スラグIDマップの構築（審議会一覧ポータルURLは除外）
     url_to_slug_map = {}
     for c in existing_councils:
         cid = c.get("id")
@@ -369,7 +733,7 @@ def run_discovery(progress_callback=None, target_ministry=None, dry_run=False, m
         for u in (c.get("officialUrl"), c.get("url"), c.get("archiveUrl")):
             if u and isinstance(u, str):
                 nu = normalize_url_for_matching(u)
-                if nu and nu not in url_to_slug_map:
+                if nu and nu not in url_to_slug_map and nu not in all_portal_urls:
                     url_to_slug_map[nu] = cid
 
     for cid, r in scraping_rules.items():
@@ -378,7 +742,7 @@ def run_discovery(progress_callback=None, target_ministry=None, dry_run=False, m
         for u in (r.get("officialUrl"), r.get("target_url"), r.get("url"), r.get("archiveUrl")):
             if u and isinstance(u, str):
                 nu = normalize_url_for_matching(u)
-                if nu and nu not in url_to_slug_map:
+                if nu and nu not in url_to_slug_map and nu not in all_portal_urls:
                     url_to_slug_map[nu] = cid
     emit(f"既存スラグID照合用URLインデックス: {len(url_to_slug_map)} 件を構築しました（スラグID自動継承）")
 
@@ -388,6 +752,7 @@ def run_discovery(progress_callback=None, target_ministry=None, dry_run=False, m
     rejected_urls = set()
     rejected_clean_keys = set()
     rejected_names = set()
+    rejected_core_names = set()
     for rc in rejected_data:
         if rc.get("id"):
             rejected_ids.add(rc.get("id").strip())
@@ -402,15 +767,22 @@ def run_discovery(progress_callback=None, target_ministry=None, dry_run=False, m
             n_clean = clean_council_name(n_raw)
             if n_clean:
                 rejected_names.add(n_clean)
+            c_core = get_core_council_name(n_raw)
+            if c_core:
+                rejected_core_names.add(c_core)
     emit(f"却下済み会議体除外リスト: {len(rejected_data)} 件をロードしました（巡回検出対象外として完全除外）")
 
     # 既存の会議体URLと名前のセット（重複判定用）
     existing_urls = {normalize_url(c.get("officialUrl", "")) for c in existing_councils if c.get("officialUrl")}
     existing_names = {c.get("name", "").strip() for c in existing_councils if c.get("name")}
+    existing_core_names = {get_core_council_name(c.get("name")) for c in existing_councils if c.get("name") and get_core_council_name(c.get("name"))}
+    councils_by_min = {}
+    for c in existing_councils:
+        councils_by_min.setdefault(c.get("ministry", "").upper(), []).append(c)
 
     next_seq = get_max_seq(existing_councils) + 1
+    used_council_ids = {c.get("id") for c in existing_councils if c.get("id")}
     discovered_list = []
-    seen_in_this_run = set()
     category_counts = {}
     unmatched_category_councils = []
 
@@ -418,180 +790,117 @@ def run_discovery(progress_callback=None, target_ministry=None, dry_run=False, m
         discovered_list, category_counts = _discover_from_ministry_news(
             emit, target_ministry, ministries, existing_councils,
             categories_def, url_to_slug_map, existing_urls, existing_names,
-            rejected_names, rejected_urls, common_keywords, next_seq
+            rejected_names, rejected_urls, rejected_clean_keys, common_keywords, next_seq,
+            used_council_ids
         )
     else:
         active_ministries = [m for code, m in ministries.items() if m.get("hasCouncils", True) and m.get("councilsUrls") and (not target_ministry or code.upper() == target_ministry.upper())]
         total_ministries = len(active_ministries)
-        current_min_idx = 0
+        emit(f"走査対象府省庁: {total_ministries} 省庁 (省庁間並列ワーカー + 事前フィルタ高速化)")
+
+        resolved_url_cache = {}
+        tasks = []
 
         for min_code, min_info in sorted(ministries.items()):
             if target_ministry and min_code.upper() != target_ministry.upper():
                 continue
-            min_name = min_info.get("name", min_code)
             has_councils = min_info.get("hasCouncils", True)
             councils_urls = min_info.get("councilsUrls", [])
-
             if not has_councils or not councils_urls:
                 continue
 
-            current_min_idx += 1
-            pct = int((current_min_idx / max(total_ministries, 1)) * 90)
-
             add_kw = min_add_kw.get(min_code, [])
             exc_kw = min_exc_kw.get(min_code, []) + common_excludes
-            target_kw = common_keywords + add_kw
+            tasks.append((min_code, min_info, add_kw, exc_kw))
 
-            emit(f"▶ [{current_min_idx}/{total_ministries}] [{min_code}] {min_name} (審議会一覧: {len(councils_urls)} 件)", {
-                "type": "ministry_start",
-                "ministry": min_code,
-                "ministryName": min_name,
-                "progress": pct,
-                "current": current_min_idx,
-                "total": total_ministries
-            })
+        # 省庁間並列ワーカーで実行 (CR-190)
+        max_workers = min(6, len(tasks)) if tasks else 1
+        emit(f"並列スレッド数: {max_workers} ワーカーで巡回開始...")
 
-            for page_url in councils_urls:
-                page_url = page_url.strip()
-                if not page_url or not page_url.startswith("http"):
-                    continue
+        results_by_min = {}
+        with concurrent.futures.ThreadPoolExecutor(max_workers=max_workers) as executor:
+            future_to_min = {
+                executor.submit(
+                    _discover_normal_for_single_ministry,
+                    t[0], t[1], t[2], t[3], common_keywords,
+                    categories_def, url_to_slug_map, existing_urls, existing_names, existing_core_names, councils_by_min,
+                    rejected_names, rejected_urls, rejected_core_names, rejected_clean_keys,
+                    resolved_url_cache
+                ): t[0] for t in tasks
+            }
+            completed_count = 0
+            for future in concurrent.futures.as_completed(future_to_min):
+                m_code = future_to_min[future]
+                completed_count += 1
+                try:
+                    m_code_ret, disc_items = future.result()
+                    results_by_min[m_code_ret] = disc_items
+                    m_name = ministries.get(m_code_ret, {}).get("name", m_code_ret)
+                    pct = int((completed_count / max(total_ministries, 1)) * 90)
+                    emit(f"   [{completed_count}/{total_ministries}] [{m_code_ret}] {m_name} 完了 (候補 {len(disc_items)} 件)", {
+                        "type": "ministry_done",
+                        "ministry": m_code_ret,
+                        "progress": pct
+                    })
+                except Exception as e:
+                    emit(f"   [ERROR] [{m_code}] 巡回中にエラー発生: {e}")
 
-                emit(f"   [GET] 審議会等一覧ページ巡回: {page_url}", {
-                    "type": "page_fetch",
-                    "url": page_url,
-                    "ministry": min_code
-                })
-                html, final_page_url = fetch_page_and_final_url(page_url)
-                if not html:
-                    continue
+        # 結果の統合とID採番 (CR-191)
+        for min_code, min_info in sorted(ministries.items()):
+            disc_items = results_by_min.get(min_code, [])
+            for item in disc_items:
+                cand_name = item["cand_name"]
+                link_text = item["link_text"]
+                target_url_cand = item["target_url_cand"]
+                category = item["category"]
+                is_default = item["is_default"]
 
-                soup = BeautifulSoup(html, "html.parser")
-                links = soup.find_all("a", href=True)
-
-                found_count_in_page = 0
-                for a in links:
-                    href = a["href"].strip()
-                    raw_text = a.get_text(separator=" ", strip=True)
-                    title_attr = a.get("title", "").strip()
-                    link_text = raw_text or title_attr
-
-                    if not link_text or len(link_text) < 3 or len(link_text) > 100:
-                        continue
-
-                    if href.startswith("#") or href.startswith("javascript:") or href.startswith("mailto:"):
-                        continue
-
-                    # キーワード照合（「審議会」「分科会」「部会」「検討会」などを検知）
-                    has_match = any(kw in link_text for kw in target_kw)
-                    if not has_match:
-                        continue
-
-                    # 除外キーワード照合
-                    is_excluded = any(ex in link_text for ex in exc_kw)
-                    if is_excluded:
-                        continue
-
-                    # 絶対URLに変換
-                    abs_url = urllib.parse.urljoin(final_page_url, href)
-
-                    # PDF/Excel/画像などのドキュメント直リンクは除外
-                    if re.search(r"\.(pdf|docx?|xlsx?|pptx?|jpe?g|png|gif|zip)$", abs_url, re.I):
-                        continue
-
-                    # 会議体ページへ実際にアクセスして最終的な正規URL（リダイレクト後）を特定
-                    _, final_council_url = fetch_page_and_final_url(abs_url)
-                    if not final_council_url:
-                        final_council_url = abs_url
-
-                    norm_final_url = normalize_url(final_council_url)
-
-                    # 会議体名の正規化（「第X回」などの個別の開催回名が含まれる場合は親会議体名を抽出）
-                    is_meeting_pattern = bool(re.search(r'(第[0-9０-９一-九]+回|令和\d+年|\d{4}年\d+月\d+日)', link_text))
-                    target_council_name = clean_council_name(link_text) if is_meeting_pattern else link_text
-                    if not target_council_name:
-                        target_council_name = link_text
-
-                    # 重複判定: 既に登録済みの正規URLまたは同名かチェック
-                    if norm_final_url in existing_urls:
-                        continue
-                    if target_council_name in existing_names:
-                        continue
-
-                    # 却下済み会議体の除外判定（多層防御: 正規化URL, クリーンURLキー, 名称, リンクテキスト）
-                    clean_final_k = get_url_clean_key(final_council_url)
-                    clean_abs_k = get_url_clean_key(abs_url)
-
-                    is_rejected = (
-                        norm_final_url in rejected_urls
-                        or normalize_url(abs_url) in rejected_urls
-                        or (clean_final_k and clean_final_k in rejected_clean_keys)
-                        or (clean_abs_k and clean_abs_k in rejected_clean_keys)
-                        or target_council_name in rejected_names
-                        or link_text in rejected_names
-                        or clean_council_name(link_text) in rejected_names
-                    )
-                    if is_rejected:
-                        emit(f"      🚫 [却下済み除外] {link_text} ({norm_final_url}) は過去に却下されているためスキップ")
-                        continue
-
-                    # 今回のクロール内での重複チェック
-                    key_pair = (min_code, target_council_name)
-                    if key_pair in seen_in_this_run:
-                        continue
-                    seen_in_this_run.add(key_pair)
-
-                    # カテゴリの自動推定（定義済み categories から厳密に判定）
-                    category, is_default = infer_council_category(f"{target_council_name} {link_text}", categories_def)
-                    category_counts[category] = category_counts.get(category, 0) + 1
-
-                    if is_default:
-                        unmatched_category_councils.append({
-                            "id": None,  # 採番後に設定
-                            "name": target_council_name,
-                            "url": final_council_url if not is_meeting_pattern else page_url,
-                            "ministry": min_code,
-                            "appliedCategory": category
-                        })
-
-                    # 採番規則 (CR-92):
-                    # 既存URLマップに合致するスラグIDが存在する場合は、新規連番を消費せず既存スラグIDを自動継承する
-                    target_url_cand = final_council_url if not is_meeting_pattern else page_url
-                    norm_final_url = normalize_url_for_matching(target_url_cand)
-                    norm_page_url = normalize_url_for_matching(page_url)
-                    inherited_slug = url_to_slug_map.get(norm_final_url) or url_to_slug_map.get(norm_page_url)
-
-                    if inherited_slug:
-                        council_id = inherited_slug
-                        is_inherited = True
-                    else:
-                        council_id = f"{min_code.lower()}-{next_seq}"
-                        next_seq += 1
-                        is_inherited = False
-
-                    if is_default and unmatched_category_councils:
-                        unmatched_category_councils[-1]["id"] = council_id
-
-                    council_item = {
-                        "id": council_id,
-                        "name": target_council_name,
+                category_counts[category] = category_counts.get(category, 0) + 1
+                if is_default:
+                    unmatched_category_councils.append({
+                        "id": None,
+                        "name": cand_name,
+                        "url": target_url_cand,
                         "ministry": min_code,
-                        "category": category,
-                        "officialUrl": target_url_cand,
-                        "isNew": True
-                    }
-
-                    discovered_list.append(council_item)
-                    found_count_in_page += 1
-                    cat_label = categories_def.get(category, category)
-                    action_label = "既存スラグID継承" if is_inherited else "新規会議体検出"
-                    emit(f"      ✨ [{action_label}] [{cat_label}] {council_id}: {link_text} -> {target_url_cand}", {
-                        "type": "council_discovered",
-                        "council": council_item
+                        "appliedCategory": category
                     })
 
-                emit(f"   -> 検出数: {found_count_in_page} 件")
+                norm_final_url = normalize_url_for_matching(target_url_cand)
+                inherited_slug = url_to_slug_map.get(norm_final_url)
 
-    
+                if inherited_slug and inherited_slug not in used_council_ids:
+                    council_id = inherited_slug
+                    is_inherited = True
+                else:
+                    council_id = f"{min_code.lower()}-{next_seq}"
+                    while council_id in used_council_ids:
+                        next_seq += 1
+                        council_id = f"{min_code.lower()}-{next_seq}"
+                    next_seq += 1
+                    is_inherited = False
+
+                used_council_ids.add(council_id)
+
+                if is_default and unmatched_category_councils:
+                    unmatched_category_councils[-1]["id"] = council_id
+
+                council_item = {
+                    "id": council_id,
+                    "name": cand_name,
+                    "ministry": min_code,
+                    "category": category,
+                    "officialUrl": target_url_cand,
+                    "isNew": True
+                }
+
+                discovered_list.append(council_item)
+                cat_label = categories_def.get(category, category)
+                action_label = "既存スラグID継承" if is_inherited else "新規会議体検出"
+                emit(f"      ✨ [{action_label}] [{cat_label}] {council_id}: {cand_name} -> {target_url_cand}", {
+                    "type": "council_discovered",
+                    "council": council_item
+                })
+
     emit("\n" + "=" * 70)
     emit(f"ディスカバリー巡回完了: 合計 {len(discovered_list)} 件の新規会議体レコードを作成しました。")
     emit("-" * 70)

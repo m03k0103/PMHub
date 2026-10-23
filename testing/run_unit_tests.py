@@ -222,6 +222,12 @@ UNIT_TEST_REGISTRY = {
         "name": "PMM配付資料ローカル資産管理単体テスト (test_pmm.py)",
         "description": "Windows禁止文字置換, 資料名クレンジング, フォルダ命名規約, 安全ファイル操作",
         "runner": lambda: _run_py_class("test_pmm", "TestPmmCommonUtilities")
+    },
+    "u_discover": {
+        "id": "U20",
+        "name": "新規会議体ディスカバリー精度向上・親URL逆引き単体テスト (test_discover_councils.py)",
+        "description": "名称クレンジング, 西暦テーマ保護, ノイズ除外, コア名称・サフィックス突合, 一覧URL非破壊, ID重複防止",
+        "runner": lambda: _run_py_class("test_discover_councils", "TestDiscoverCouncilsDrop75")
     }
 }
 
