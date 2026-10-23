@@ -932,12 +932,13 @@ Drop 62 & 63 による SQLite マスターDB化および 2系統エクスポー�
 ### 【Drop 76】GitHub Actions による定時自動クロール・新着検知パイプライン構想・運用設計
 
 手動運用で行われていた各府省庁の会議体・新着情報巡回を、GitHub Actions 上で平日定時（毎朝 JST 7:00 等）に完全自動実行し、自律的に最新開催回・配付資料を検知して公開サイト（GitHub Pages）を更新する定時自動クロール基盤の構想・設計を策定。
-SQLite マスターDBが Git 管理外（`.gitignore`）であるアーキテクチャ特性を踏まえ、CI ランナー上で公開用 JSON から一時 SQLite を即時再構築してクロールを実行し、エクスポート $\to$ 統合テスト全件合格 $\to$ 自動 Git Push へと至る「Zero-Storage VM アーキテクチャ」を確立。
-さらに、GitHub 共有 IP からのアクセスによる各省庁サーバーへの負荷増大や WAF/429 遮断を防止するため、配付資料バイナリダウンロードの除外（`--skip-download`）、省庁別直列ディレイ制御、新着ポータル検知（`--from-ministry-news`）とアクティブ会議体差分巡回（`--recent-years 2`）の段階的実行ポリシーを設計した。
+クロール運用は運用負荷と相手方サーバー負荷を最適化するため、**「1. Daily（平日・省庁新着検知のみ）」「2. Weekly（土曜・直近2年通常巡回）」「3. Monthly（第1日曜・全期間網羅検査）」の3層マルチスケジュール**として体系化。
+さらに、異常検知時（テストスイート失敗や致命的パースエラー等）に破壊的データが公開・プッシュされるのを防止するとともに、**次回以降の自動実行を即時安全スキップする「サーキットブレーカー（自動キルスイッチ）」機構**を設計。
+SQLite マスターDBが Git 管理外（`.gitignore`）であるアーキテクチャ特性を踏まえ、CI ランナー上で公開用 JSON から一時 SQLite を即時再構築してクロールを実行し、エクスポート $\to$ 統合テスト全件合格 $\to$ 自動 Git Push へと至る「Zero-Storage VM アーキテクチャ」を確立した。
 
 | ID | 分類 | 内容 | 対象ファイル | 状態 |
 |:---|:---:|:---|:---|:---:|
-| **CR-145** | ワークフロー設計 | **GitHub Actions ワークフロー定義（定時 cron & 手動 dispatch）の構想策定**<br>平日 JST 7:00（UTC 22:00）の自動定期実行スケジュールおよび、省庁コード（`MINISTRY`）や実行モード（`news_only`, `active_only`, `full`）を指定可能な手動トリガー（`workflow_dispatch`）の入力仕様を策定 | `.github/workflows/scheduled_crawl.yml`<br>`DROPS.md` | 構想・設計完了 |
+| **CR-145** | ワークフロー設計 | **3層マルチスケジュール（Daily / Weekly / Monthly）ワークフロー定義の策定**<br>① Daily（月〜金 JST 7:00: `--from-ministry-news` で高速新着検知）<br>② Weekly（毎週土曜 JST 7:00: `--recent-years 2` で直近2年通常巡回）<br>③ Monthly（第1日曜 JST 7:00: `--recent-years 0 --full-check` で全期間網羅検査）<br>および省庁・モード指定可能な手動トリガー（`workflow_dispatch`）を設計 | `.github/workflows/scheduled_crawl.yml`<br>`DROPS.md` | 構想・設計完了 |
 | **CR-146** | CI/DB パイプライン設計 | **Zero-Storage VM アーキテクチャ（seed_db $\to$ crawl $\to$ export $\to$ test）の設計**<br>CI ランナー起動時に `docs/data.json` / `admin/admin_data.json` から `seed_db.py` により即時 SQLite マスターを復元し、クロール完了後に `export_data.py` で 2 系統 JSON へ同期する完全可逆パイプラインを確立 | `admin/db/seed_db.py`<br>`admin/db/export_data.py`<br>`admin/crawler.py` | 構想・設計完了 |
 | **CR-147** | 負荷制御・セキュリティ設計 | **省庁 WAF/429 回避・アクセスレートリミット・差分実行ポリシーの策定**<br>CI 上でのバイナリ保存除外（`--skip-download`）によるリポジトリ容量保護、同一省庁直列ディレイ（1.0秒以上）、新着情報高速検知および直近 2 年アクティブ会議体への絞り込みによる短時間・低負荷クロール規約を規定 | `admin/crawler.py`<br>`AGENTS.md` | 構想・設計完了 |
-| **CR-148** | 品質保証・自動 push 設計 | **統合テストスイート（全15ケース）完全合格判定 & 自動コミット・プッシュ規約**<br>クロール完了後に `python testing/run_test_suite.py` を実行し、構文・重複排除・手動ロック保護・康煕部首正規化等に完全合格した場合に限り、差分を自動コミット（`[skip ci]`）して main へ push する安全停止ガードを規定 | `testing/run_test_suite.py`<br>`.github/workflows/scheduled_crawl.yml` | 構想・設計完了 |
+| **CR-148** | 異常検知・安全停止設計 | **サーキットブレーカー（異常検知時次回以降自動Skipキルスイッチ）& 品質保証自動 push 規約の設計**<br>統合テスト（全15ケース）失敗等の異常検知時に GitHub Issue（ラベル: `circuit-breaker-active`）を自動起票して push を即時遮断。次回以降の全スケジュール実行冒頭で未解決アラート Issue を検知しクロールを自動 Skip するキルスイッチ機構を規定（人手による原因確認・Issue Close で自動復帰） | `testing/run_test_suite.py`<br>`.github/workflows/scheduled_crawl.yml` | 構想・設計完了 |
