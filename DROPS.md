@@ -20,16 +20,7 @@
 | **Track [Search]**<br>(フェーズ 3) | **全文検索エンジン化**<br>(PMM資産連携 FTS5基盤) | **【フェーズ 3】PMM テキスト抽出 & FTS5 構築・全文検索 API 稼働**<br>PMM（`D:\dev\PMM\docs`）の 10.7 万件から本文テキストを並列抽出し、SQLite FTS5（trigram）仮想テーブル `fts_materials` に投入。管理サーバー `/api/search` 全文検索 API および公開ポータル連携 | **10.7万件配付資料の横断全文検索・該当ページ即時ジャンプ** | 構想（次期リリース） |
 | **Track [Architecture]** | **今後の開発構想**<br>(モジュール分割) | **リファクタリング領域E: クローラー本体（crawler.py）の責務分離 & scratch/ クリーンアップ**<br>`admin/crawler.py`（約2,900行）のパーサー・探索戦略・データ同期モジュール分割、1,231ファイル（66MB）の `scratch/` 整理および `.gitignore` 追加による作業ツリークリーン化 | **クローラー軽量化 & 開発環境整備** | 構想 |
 | **Track [Policy-AI]** | **今後の開発構想**<br>(政策分析・連携) | **省庁横断政策テーマ連携 & AI 議題要約・タイムライン可視化**<br>親組織・分科会・部会・ワーキンググループの階層オントロジー定義、省庁横断政策テーマタグ連携、AI 時系列タイムライン分析エンジン | **省庁横断政策分析支援** | 構想 |
-
-### 1-2. 完了済み Track 実績
-
-| Track ID | 施策テーマ | 実装内容と対応 Drop | 達成された成果・恒久価値 | 完了ステータス |
-|:---:|:---|:---|:---:|:---:|
-| **Track [Testing]** | **テストスイート高速化 & 厳格化**<br>(重複I/O解消・検証精度向上) | **【Drop 73】** U18/U17 の軽量フィクスチャ・一時環境化（本番DB副作用排除、U18: 0.3s / U17: 0.7s）、`load_data_json()` のDB先行ロード化、ケース15への `council_materials` 突合・全管理キー No Leakage 網羅、ケース6孤立会議FAIL化、ケース14動的集計化、ケース2例外処理強化、`admin/db/` 変更時 L4/L5 自動連動、ケース1 glob自動化 | **実行時間 60% 短縮（62.5s $\to$ 25.2s）・検証精度厳格化・本番DB副作用ゼロ** | **【完了】**<br>(Drop 73) |
-| **Track [Storage-PMM]** | **配付資料ローカル資産管理 & 管理画面二重管理解消**<br>(PMM機能完全統合) | **【Drop 71】** `D:\dev\PMM` の全資産（10.7万件・107GB）を `local_docs/` へ統合。省庁別直列（1.0s間隔）ダウンローダー（`admin/pmm/`）、クローラー連動ローカル自動保存、SQLite DB 管理（`materials` / `council_materials`）、`admin_dashboard.html` ローカルAPI直結による二重管理完全解消 | **10.7万件資産統合 & クローラー即時連動ローカル保存 & 管理画面単一マスター化** | **【完了】**<br>(Drop 71) |
-| **Track [Database]**<br>(フェーズ 1 & 2) | **データ基盤刷新**<br>(DBマスター化 & 2系統エクスポート) | **【フェーズ 1: Drop 62】** スキーマ定義（`admin/db/schema.sql`）、可逆シードツール（`seed_db.py`）、2系統エクスポート（`export_data.py`）構築<br>**【フェーズ 2: Drop 63】** クローラー（`crawler.py`）および管理サーバー（`server.py`）の DB 直接接続化（`db_manager.py`）、クロール時自動エクスポートパイプライン確立<br>**【整合性ガード: Drop 64】** 統合テストスイート（`run_test_suite.py`）ケース15新設（PRAGMA整合性・外部キー・件数一致・漏洩ゼロ常時ガード） | **ACIDトランザクション確立・完全リバーシブル同期（DB $\leftrightarrow$ 2系統JSON）・公開用JSON 1.7MBスリム化** | **【完了】**<br>(Drop 62〜64) |
-
----
+| **Track [Automation]** | **定時自動クロール & ローカル同期**<br>(GitHub Actions 連携) | **GitHub Actions 3層マルチスケジュール & ローカルDB自律同期基盤**<br>平日 Daily（新着検知）/ 毎週土曜 Weekly（直近2年通常巡回）/ 毎月第1日曜 Monthly（全期間網羅検査）の定時自動実行。異常検知時自動Skip（サーキットブレーカー）および、`git pull` 時に `docs/data.json` からローカル SQLite（`pmhub.db`）へ差分を非破壊同期するパイプラインを確立 | **定時完全自律クロール & ローカルDB完全同期** | 構想（設計完了） |
 
 ---
 
@@ -98,6 +89,53 @@ PMM プロジェクト（`D:\dev\PMM\docs`）に蓄積された全 33 省庁・1
 親組織・分科会・部会・ワーキンググループの階層オントロジーを定義し、省庁横断の政策テーマ連携や AI による時系列タイムライン分析・議題要約を提供する。
 
 ---
+
+---
+
+### 【構想・設計】Track [Automation]: GitHub Actions 定時自動クロール & ローカルDB自律同期基盤
+
+各府省庁の会議体・新着情報巡回を GitHub Actions 上で完全自動化し、自律的に最新開催回・配付資料を検知して公開サイト（GitHub Pages）を更新するとともに、更新された最新データを開発者のローカル側 SQLite マスターDB（`admin/pmhub.db`）へ非破壊に差分マージする自動同期パイプラインの総合設計。
+
+#### 1. 3層マルチスケジュール設計
+- **① Daily (Weekday) 省庁新着検知のみ**:
+  - スケジュール: 月〜金 JST 7:00（UTC 日〜木 22:00: `cron: '0 22 * * 0-4'`）
+  - 実行コマンド: `python admin/crawler.py --from-ministry-news --skip-download`
+  - 目的: 各府省庁の新着情報・報道発表から新規開催回を高速ピンポイント検知（数分で完了、相手方サーバー負荷極小）。
+- **② Weekly (Sat) 通常巡回（直近2年）**:
+  - スケジュール: 毎週土曜 JST 7:00（UTC 金曜 22:00: `cron: '0 22 * * 5'`）
+  - 実行コマンド: `python admin/crawler.py --skip-download --recent-years 2 --recheck-recent 1`
+  - 目的: 直近2年以内に開催実績のあるアクティブ会議体（約700件）の最新開催回更新確認および新規開催回差分探索（所要時間約30〜45分）。
+- **③ Monthly (First Sunday) 全期間網羅検査**:
+  - スケジュール: 毎月第1日曜日 JST 7:00（UTC 土曜 22:00、日付 1〜7 日判定ステップ）
+  - 実行コマンド: `python admin/crawler.py --skip-download --recent-years 0 --full-check`
+  - 目的: 全1,547会議体・全期間の網羅的再検査および過去資料の取りこぼし完全リカバリ。
+- **手動実行 (workflow_dispatch)**: 省庁コード（`MINISTRY`）やクロールモード（`news_only`, `active_only`, `full`）を指定可能な手動トリガーを常備。
+
+#### 2. 異常検知時自動Skip機能（サーキットブレーカー / キルスイッチ）
+- **トリップ条件**: クローラー実行時の致命的例外、または統合テストスイート（`testing/run_test_suite.py` 全15ケース）での FAIL 検出（プレースホルダー日付漏洩、重複検知、手動ロック破壊、SQLite整合性エラー等）。
+- **自動遮断＆Skipメカニズム**:
+  1. 異常検知時、Git push を即時遮断し、GitHub CLI（`gh`）経由でラベル `circuit-breaker-active` を持つアラート Issue を自動起票。
+  2. 次回以降の全スケジュール（Daily, Weekly, Monthly）実行冒頭で未解決のアラート Issue を確認し、オープンなアラートが存在する場合は「サーキットブレーカー作動中」としてクロール処理全体を即座に安全スキップ（`exit 0` / 破損拡大防止）。
+  3. 管理者が原因を確認・修正後に該当 Issue を Close することで、次回のスケジュールから自動的にクロールが安全に再開される。
+
+#### 3. Zero-Storage VM アーキテクチャ（CI ランナー環境）
+- CI ランナー起動時に `docs/data.json` および `admin/admin_data.json` から `python admin/db/seed_db.py` により即時 SQLite マスター（`admin/pmhub.db`）を復元（約0.7秒）。
+- クロール完了後に `python admin/db/export_data.py` で 2系統 JSON へ同期し、統合テスト合格時のみ Git コミット（`[skip ci]`）および push を実行。
+
+#### 4. GitHub Actions 更新情報のローカル側DB自律同期メカニズム
+GitHub Actions で自動更新・push されたリモートの最新データ（`docs/data.json` / `admin/admin_data.json`）を、ローカルの開発環境の SQLite マスターDB（`admin/pmhub.db`）へ非破壊に差分マージする仕組み：
+- **同期エンジン (`admin/db/sync_from_json.py`)**:
+  - リモートから pull した `data.json` とローカルの `pmhub.db` を照合。
+  - `councils`: リモート側で追加された新規会議体を INSERT（ローカルの `manual_lock = 1` は保護）。
+  - `meetings`: リモート側で検知された新規開催回（`meeting.id` 基準）を INSERT（ローカルの `manual_lock = 1` は保護）。
+  - `materials`: 既存開催回に対してリモート側で新たに検知された配付資料（`meeting_id` と `url` 基準）を追記 INSERT。
+  - `scraping_rules`: 新規・更新ルールをマージ。
+  - トランザクション内で `PRAGMA foreign_key_check` および `PRAGMA integrity_check` を検証。
+- **自動同期トリガー (Git post-merge hook)**:
+  - リポジトリに `.githooks/post-merge` を配備。開発者が `git pull` を実行した際、`docs/data.json` または `admin/admin_data.json` に変更差分があればフックが自動発火し、`python admin/db/sync_from_json.py` を呼び出してローカル DB を自動同期。
+- **巻き戻り防止ガード (サーバー・クローラー起動時整合性チェック)**:
+  - ローカルの管理サーバー（`admin/server.py`）起動時やクローラー（`admin/crawler.py`）実行冒頭で、`docs/data.json` の更新タイムスタンプ/ハッシュとローカル DB のメタデータを照合。リモート由来の新着データが存在する場合は自動同期または同期案内を提示し、古いローカルDBによる上書き事故を未然に防止。
+
 
 ---
 
@@ -926,19 +964,3 @@ Drop 62 & 63 による SQLite マスターDB化および 2系統エクスポー�
 | **CR-142** | クローラー誤検知防止 | **区分B（純粋回次・日付リンク）の安全バイパス許可機能の実装**<br>`is_pure_session_or_date_title` を新設し、リンクテキストが回次・年号・月日・開催種別のみで構成される正規開催回リンクを親会議体名類似度検証から安全にバイパスして登録・フォーマットを許可 | `admin/crawler.py` | 完了 |
 | **CR-143** | データ整合化・クレンジング | **区分A（明確な非会議ノイズ258件・配付資料1,979件）のマスターDB完全削除 & 同期**<br>マスターDB（`admin/pmhub.db`）からお知らせ・受賞・答申手交・親ポータル目次等の非会議レコード 258 件を完全削除し、`admin/db/export_data.py` で JSON に同期 | `admin/pmhub.db`<br>`docs/data.json`<br>`admin/admin_data.json` | 完了 |
 | **CR-144** | テスト検証 | **統合テストスイート（全15ケース＋単体20種）完全合格検証**<br>`python testing/run_test_suite.py --all-layers` を実行し、全15層テストおよび新設単体テスト（区分Bバイパス検証等）全20種に完全合格することを確認 | `testing/run_test_suite.py`<br>`testing/test_crawler_quality_v2.py`<br>`testing/test_drop49_meeting_id_normalization.py` | 完了 |
-
-<hr>
-
-### 【Drop 76】GitHub Actions による定時自動クロール・新着検知パイプライン構想・運用設計
-
-手動運用で行われていた各府省庁の会議体・新着情報巡回を、GitHub Actions 上で平日定時（毎朝 JST 7:00 等）に完全自動実行し、自律的に最新開催回・配付資料を検知して公開サイト（GitHub Pages）を更新する定時自動クロール基盤の構想・設計を策定。
-クロール運用は運用負荷と相手方サーバー負荷を最適化するため、**「1. Daily（平日・省庁新着検知のみ）」「2. Weekly（土曜・直近2年通常巡回）」「3. Monthly（第1日曜・全期間網羅検査）」の3層マルチスケジュール**として体系化。
-さらに、異常検知時（テストスイート失敗や致命的パースエラー等）に破壊的データが公開・プッシュされるのを防止するとともに、**次回以降の自動実行を即時安全スキップする「サーキットブレーカー（自動キルスイッチ）」機構**を設計。
-SQLite マスターDBが Git 管理外（`.gitignore`）であるアーキテクチャ特性を踏まえ、CI ランナー上で公開用 JSON から一時 SQLite を即時再構築してクロールを実行し、エクスポート $\to$ 統合テスト全件合格 $\to$ 自動 Git Push へと至る「Zero-Storage VM アーキテクチャ」を確立した。
-
-| ID | 分類 | 内容 | 対象ファイル | 状態 |
-|:---|:---:|:---|:---|:---:|
-| **CR-145** | ワークフロー設計 | **3層マルチスケジュール（Daily / Weekly / Monthly）ワークフロー定義の策定**<br>① Daily（月〜金 JST 7:00: `--from-ministry-news` で高速新着検知）<br>② Weekly（毎週土曜 JST 7:00: `--recent-years 2` で直近2年通常巡回）<br>③ Monthly（第1日曜 JST 7:00: `--recent-years 0 --full-check` で全期間網羅検査）<br>および省庁・モード指定可能な手動トリガー（`workflow_dispatch`）を設計 | `.github/workflows/scheduled_crawl.yml`<br>`DROPS.md` | 構想・設計完了 |
-| **CR-146** | CI/DB パイプライン設計 | **Zero-Storage VM アーキテクチャ（seed_db $\to$ crawl $\to$ export $\to$ test）の設計**<br>CI ランナー起動時に `docs/data.json` / `admin/admin_data.json` から `seed_db.py` により即時 SQLite マスターを復元し、クロール完了後に `export_data.py` で 2 系統 JSON へ同期する完全可逆パイプラインを確立 | `admin/db/seed_db.py`<br>`admin/db/export_data.py`<br>`admin/crawler.py` | 構想・設計完了 |
-| **CR-147** | 負荷制御・セキュリティ設計 | **省庁 WAF/429 回避・アクセスレートリミット・差分実行ポリシーの策定**<br>CI 上でのバイナリ保存除外（`--skip-download`）によるリポジトリ容量保護、同一省庁直列ディレイ（1.0秒以上）、新着情報高速検知および直近 2 年アクティブ会議体への絞り込みによる短時間・低負荷クロール規約を規定 | `admin/crawler.py`<br>`AGENTS.md` | 構想・設計完了 |
-| **CR-148** | 異常検知・安全停止設計 | **サーキットブレーカー（異常検知時次回以降自動Skipキルスイッチ）& 品質保証自動 push 規約の設計**<br>統合テスト（全15ケース）失敗等の異常検知時に GitHub Issue（ラベル: `circuit-breaker-active`）を自動起票して push を即時遮断。次回以降の全スケジュール実行冒頭で未解決アラート Issue を検知しクロールを自動 Skip するキルスイッチ機構を規定（人手による原因確認・Issue Close で自動復帰） | `testing/run_test_suite.py`<br>`.github/workflows/scheduled_crawl.yml` | 構想・設計完了 |
