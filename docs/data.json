@@ -3660,7 +3660,7 @@
       "name": "地域働き方・職場改革等推進会議",
       "officialUrl": "https://www.cas.go.jp/jp/seisaku/chiikihatarakikata/index.html#suisin-kaigi-record",
       "description": "地域働き方・職場改革等推進会議の基本方針、施策の推進状況および関係省庁間の連携・個別課題について審議する会議。",
-      "pastYearCount": 20
+      "pastYearCount": 17
     },
     {
       "id": "cas-influenza",
@@ -11522,7 +11522,7 @@
       "category": "SUBCOMMITTEE",
       "name": "勤労者生活分科会",
       "officialUrl": "https://www.mhlw.go.jp/stf/shingi/shingi-rousei_126976.html",
-      "pastYearCount": 2
+      "pastYearCount": 38
     },
     {
       "id": "mhlw-935",
@@ -11555,7 +11555,7 @@
       "name": "職業安定分科会雇用保険部会",
       "manualLock": true,
       "officialUrl": "https://www.mhlw.go.jp/stf/shingi/shingi-rousei_126980_00007.html",
-      "pastYearCount": 27
+      "pastYearCount": 28
     },
     {
       "id": "mhlw-939",
@@ -11564,7 +11564,7 @@
       "name": "職業安定分科会労働力需給制度部会",
       "manualLock": true,
       "officialUrl": "https://www.mhlw.go.jp/stf/shingi/shingi-rousei_126981.html",
-      "pastYearCount": 12
+      "pastYearCount": 21
     },
     {
       "id": "mhlw-940",
@@ -11572,7 +11572,7 @@
       "category": "SECTION",
       "name": "職業安定分科会地方連携部会",
       "officialUrl": "https://www.mhlw.go.jp/stf/shingi/shingi-rousei_466498.html",
-      "pastYearCount": 0
+      "pastYearCount": 11
     },
     {
       "id": "mhlw-941",
@@ -12415,7 +12415,7 @@
       "name": "感染症・予防接種審査分科会 及び 感染症・予防接種審査分科会新型コロナウイルス感染症予防接種健康被害審査部会",
       "manualLock": true,
       "officialUrl": "https://www.mhlw.go.jp/stf/shingi/shingi-shippei_127696_00006.html",
-      "pastYearCount": 24
+      "pastYearCount": 63
     },
     {
       "id": "mhlw-kigyou_nenkin_mieruka_kondan",
@@ -13988,7 +13988,7 @@
       "name": "統計委員会",
       "manualLock": true,
       "officialUrl": "https://www.soumu.go.jp/main_sosiki/singi/toukei/kaigi/kaigi.html",
-      "pastYearCount": 12
+      "pastYearCount": 140
     },
     {
       "id": "mic-toukei_singikai",
@@ -14024,7 +14024,7 @@
       "name": "情報通信行政・郵政行政審議会 ユニバーサルサービス委員会",
       "manualLock": true,
       "officialUrl": "https://www.soumu.go.jp/main_sosiki/joho_tsusin/policyreports/joho_tsusin/yusei/universal_service/index.html",
-      "pastYearCount": 4
+      "pastYearCount": 16
     },
     {
       "id": "mic-universal_service_seisaku_iinkai",
@@ -16384,22 +16384,6 @@
   ],
   "meetings": [
     {
-      "id": "cas-futenma_ginowan-20990101-002",
-      "councilId": "cas-futenma_ginowan",
-      "name": "第2回 普天間飛行場の運用等に伴う宜野湾市民の住民の生活環境等の保全の課題に関する協議会 (開催日不明)",
-      "date": "2099/01/01",
-      "officialUrl": "https://www.city.ginowan.lg.jp/soshiki/kikaku/1/1/2/1/18457.html",
-      "isDateUnconfirmed": true,
-      "isNewlyDiscovered": true,
-      "discoveredAt": "2026/10/24 07:04",
-      "materials": [
-        {
-          "name": "議事要旨",
-          "url": "https://www.city.ginowan.lg.jp/material/files/group/10/gijiyoshi02.pdf"
-        }
-      ]
-    },
-    {
       "id": "maff-gyocen_2028-20261027-001",
       "councilId": "maff-gyocen_2028",
       "name": "第1回 2028年漁業センサス研究会",
@@ -16412,6 +16396,33 @@
           "name": "委員会名簿(PDF : 177KB)",
           "url": "https://www.maff.go.jp/j/study/2028gyocen_/attach/pdf/index-1.pdf",
           "manualLock": true
+        }
+      ]
+    },
+    {
+      "id": "mhlw-934-20261026-037",
+      "councilId": "mhlw-934",
+      "name": "第37回 勤労者生活分科会",
+      "date": "2026/10/26",
+      "officialUrl": "https://www.mhlw.go.jp/stf/newpage_76879.html",
+      "isNewlyDiscovered": true,
+      "discoveredAt": "2026/10/24 07:21",
+      "materials": [
+        {
+          "name": "議事次第[78KB]",
+          "url": "https://www.mhlw.go.jp/content/11909000/001762728.pdf"
+        },
+        {
+          "name": "資料1 産業競争力強化法の規定による認定労働者協同組合から株式会社への組織変更に関する省令(案)について[PDF形式:1.6MB]",
+          "url": "https://www.mhlw.go.jp/content/11909000/001761643.pdf"
+        },
+        {
+          "name": "資料2 財形制度に関する今後の検討における主な視点(2)[PDF形式:5.9MB]",
+          "url": "https://www.mhlw.go.jp/content/11909000/001761644.pdf"
+        },
+        {
+          "name": "参考資料1 労働政策審議会勤労者生活分科会委員名簿[PDF形式:76KB]",
+          "url": "https://www.mhlw.go.jp/content/11909000/001761649.pdf"
         }
       ]
     },
@@ -16811,6 +16822,29 @@
       ]
     },
     {
+      "id": "mhlw-939-20261023-399",
+      "councilId": "mhlw-939",
+      "name": "第399回 職業安定分科会労働力需給制度部会",
+      "date": "2026/10/23",
+      "officialUrl": "https://www.mhlw.go.jp/stf/newpage_76436.html",
+      "isNewlyDiscovered": true,
+      "discoveredAt": "2026/10/24 07:22",
+      "materials": [
+        {
+          "name": "議事次第[PDF形式:63KB]",
+          "url": "https://www.mhlw.go.jp/content/11650000/001762025.pdf"
+        },
+        {
+          "name": "資料1 特定募集情報等提供事業の届出状況等について[PDF形式:496KB]",
+          "url": "https://www.mhlw.go.jp/content/11650000/001762026.pdf"
+        },
+        {
+          "name": "職業安定分科会労働力需給制度部会 委員名簿[PDF形式:87KB]",
+          "url": "https://www.mhlw.go.jp/content/11650000/001762027.pdf"
+        }
+      ]
+    },
+    {
       "id": "mhlw-rousei_roudoujouken-20261023-213",
       "councilId": "mhlw-rousei_roudoujouken",
       "name": "第213回 労働政策審議会 労働条件分科会",
@@ -16936,6 +16970,37 @@
       ]
     },
     {
+      "id": "mhlw-938-20261022-214",
+      "councilId": "mhlw-938",
+      "name": "第214回 職業安定分科会雇用保険部会",
+      "date": "2026/10/22",
+      "officialUrl": "https://www.mhlw.go.jp/stf/newpage_76593.html",
+      "isNewlyDiscovered": true,
+      "discoveredAt": "2026/10/24 07:22",
+      "materials": [
+        {
+          "name": "第214回議事次第[PDF形式:55KB]",
+          "url": "https://www.mhlw.go.jp/content/11601000/001761824.pdf"
+        },
+        {
+          "name": "【資料】求職者給付等について➁[PDF形式:11.3MB]",
+          "url": "https://www.mhlw.go.jp/content/11601000/001761825.pdf"
+        },
+        {
+          "name": "【参考資料1】雇用保険制度の概要[PDF形式:16.2MB]",
+          "url": "https://www.mhlw.go.jp/content/11601000/001761893.pdf"
+        },
+        {
+          "name": "【参考資料2】雇用保険制度の主要指標[PDF形式:11.5MB]",
+          "url": "https://www.mhlw.go.jp/content/11601000/001761894.pdf"
+        },
+        {
+          "name": "【参考資料3】求職者給付等について[PDF形式:12.9MB]",
+          "url": "https://www.mhlw.go.jp/content/11601000/001761895.pdf"
+        }
+      ]
+    },
+    {
       "id": "mhlw-hansen_kazoku_hoshou-20261022-080",
       "councilId": "mhlw-hansen_kazoku_hoshou",
       "name": "第80回 ハンセン病元患者家族補償金認定審査会",
@@ -17013,6 +17078,26 @@
         {
           "name": "構成員一覧",
           "url": "https://www.soumu.go.jp/main_content/001097410.pdf"
+        }
+      ]
+    },
+    {
+      "id": "mic-universal_service_iinkai-20261022-016",
+      "councilId": "mic-universal_service_iinkai",
+      "name": "第16回 情報通信行政・郵政行政審議会 ユニバーサルサービス委員会",
+      "date": "2026/10/22",
+      "officialUrl": "https://www.soumu.go.jp/main_sosiki/joho_tsusin/policyreports/joho_tsusin/yusei/universal_service/02kiban07_04000114.html",
+      "isNewlyDiscovered": true,
+      "discoveredAt": "2026/10/24 07:20",
+      "materials": [
+        {
+          "name": "資料・議事録等",
+          "url": "https://www.soumu.go.jp/main_sosiki/singi/yusei/kaigi.html",
+          "type": "HTML"
+        },
+        {
+          "name": "電気通信事業法施行規則等の一部を改正する省令案等(新たなユニバーサルサービス制度に係る規定の整備)【諮問第3220号】",
+          "url": "https://www.soumu.go.jp/main_content/001097624.pdf"
         }
       ]
     },
@@ -17303,6 +17388,77 @@
       ]
     },
     {
+      "id": "mic-toukei_iinkai-20261019-234",
+      "councilId": "mic-toukei_iinkai",
+      "name": "第234回統計委員会",
+      "date": "2026/10/19",
+      "officialUrl": "https://www.soumu.go.jp/main_sosiki/singi/toukei/kaigi/02shingi05_02000837.html",
+      "isNewlyDiscovered": true,
+      "discoveredAt": "2026/10/24 07:20",
+      "materials": [
+        {
+          "name": "議事次第",
+          "url": "https://www.soumu.go.jp/main_content/001096723.pdf"
+        },
+        {
+          "name": "諮問第208号の答申「社会教育調査の変更について」(案)",
+          "url": "https://www.soumu.go.jp/main_content/001096722.pdf"
+        },
+        {
+          "name": "諮問第214号「労働力調査の変更について」の概要",
+          "url": "https://www.soumu.go.jp/main_content/001096721.pdf"
+        },
+        {
+          "name": "諮問第214号「労働力調査の変更について」",
+          "url": "https://www.soumu.go.jp/main_content/001096720.pdf"
+        },
+        {
+          "name": "諮問第215号「就業構造基本調査の変更について」の概要",
+          "url": "https://www.soumu.go.jp/main_content/001096719.pdf"
+        },
+        {
+          "name": "諮問第215号「就業構造基本調査の変更について」",
+          "url": "https://www.soumu.go.jp/main_content/001096718.pdf"
+        },
+        {
+          "name": "諮問第216号「作物統計調査の変更について」の概要",
+          "url": "https://www.soumu.go.jp/main_content/001096716.pdf"
+        },
+        {
+          "name": "諮問第216号「作物統計調査の変更について」",
+          "url": "https://www.soumu.go.jp/main_content/001096715.pdf"
+        },
+        {
+          "name": "人口・社会統計部会の審議状況について(報告)「学校基本調査」",
+          "url": "https://www.soumu.go.jp/main_content/001096714.pdf"
+        },
+        {
+          "name": "人口・社会統計部会の審議状況について(報告)「船員労働統計調査」",
+          "url": "https://www.soumu.go.jp/main_content/001096713.pdf"
+        },
+        {
+          "name": "産業統計部会の審議状況について(報告)「ガス事業生産動態統計調査」",
+          "url": "https://www.soumu.go.jp/main_content/001096712.pdf"
+        },
+        {
+          "name": "統計基準部会の審議状況について(報告)「日本標準職業分類」",
+          "url": "https://www.soumu.go.jp/main_content/001096711.pdf"
+        },
+        {
+          "name": "各府省の統計調査における令和8年熊本地震による災害への対応状況について",
+          "url": "https://www.soumu.go.jp/main_content/001096842.pdf"
+        },
+        {
+          "name": "令和7年国勢調査結果の集計・公表について",
+          "url": "https://www.soumu.go.jp/main_content/001096709.pdf"
+        },
+        {
+          "name": "基幹統計調査の承認の状況",
+          "url": "https://www.soumu.go.jp/main_content/001096708.pdf"
+        }
+      ]
+    },
+    {
       "id": "mof-1132-20261019-s07",
       "councilId": "mof-1132",
       "name": "財政投融資分科会(令和8年10月19日開催)",
@@ -17342,6 +17498,56 @@
         {
           "name": "意見書(山内委員)",
           "url": "https://www.mof.go.jp/about_mof/councils/fiscal_system_council/sub-of_filp/proceedings/material/zaitoa20261019/zaito20261019_07.pdf"
+        }
+      ]
+    },
+    {
+      "id": "mhlw-940-20261016-010",
+      "councilId": "mhlw-940",
+      "name": "第10回 職業安定分科会地方連携部会",
+      "date": "2026/10/16",
+      "officialUrl": "https://www.mhlw.go.jp/stf/newpage_76622.html",
+      "isNewlyDiscovered": true,
+      "discoveredAt": "2026/10/24 07:22",
+      "materials": [
+        {
+          "name": "議事次第[PDF形式:36KB]",
+          "url": "https://www.mhlw.go.jp/content/11600000/001756976.pdf"
+        },
+        {
+          "name": "資料1 委員名簿[PDF形式:95KB]",
+          "url": "https://www.mhlw.go.jp/content/11600000/001756977.pdf"
+        },
+        {
+          "name": "資料2 雇用に関する国と地方公共団体との連携状況等について[PDF形式:3.9MB]",
+          "url": "https://www.mhlw.go.jp/content/11600000/001756978.pdf"
+        },
+        {
+          "name": "資料3 熊本における国と地方公共団体との連携状況等について[PDF形式:3.2MB]",
+          "url": "https://www.mhlw.go.jp/content/11600000/001759453.pdf"
+        }
+      ]
+    },
+    {
+      "id": "mhlw-kansen_yobousesshu_shinsa-20261016-045",
+      "councilId": "mhlw-kansen_yobousesshu_shinsa",
+      "name": "第45回 感染症・予防接種審査分科会 及び 感染症・予防接種審査分科会新型コロナウイルス感染症予防接種健康被害審査部会",
+      "date": "2026/10/16",
+      "officialUrl": "https://www.mhlw.go.jp/stf/newpage_76802.html",
+      "isNewlyDiscovered": true,
+      "discoveredAt": "2026/10/24 07:20",
+      "materials": [
+        {
+          "name": "審議結果[PDF形式:166KB]",
+          "url": "https://www.mhlw.go.jp/content/10900000/001760542.pdf"
+        },
+        {
+          "name": "遵守事項等資料(寄附金等受取)[PDF形式:263KB]",
+          "url": "https://www.mhlw.go.jp/content/10900000/001760573.pdf"
+        },
+        {
+          "name": "遵守事項等資料(申請資料関与)[PDF形式:66KB]",
+          "url": "https://www.mhlw.go.jp/content/10900000/001760574.pdf"
         }
       ]
     },
@@ -17426,6 +17632,29 @@
         {
           "name": "外交・デジタル",
           "url": "https://www.mof.go.jp/about_mof/councils/fiscal_system_council/sub-of_fiscal_system/proceedings/material/zaiseia20261016/03.pdf"
+        }
+      ]
+    },
+    {
+      "id": "cas-indexhtmlsuisin_kaigi_record-20261015-016",
+      "councilId": "cas-indexhtmlsuisin_kaigi_record",
+      "name": "第16回 地域働き方・職場改革等推進会議",
+      "date": "2026/10/15",
+      "officialUrl": "https://www.cas.go.jp/jp/seisaku/chiikihatarakikata/index.html#suisin-kaigi-record",
+      "isNewlyDiscovered": true,
+      "discoveredAt": "2026/10/24 07:20",
+      "materials": [
+        {
+          "name": "第16回勉強会(酒田市、門真市) 令和8年10月15日(木)",
+          "url": "https://www.cas.go.jp/jp/seisaku/chiikihatarakikata/contents/20261015/261015_material_1.pdf"
+        },
+        {
+          "name": "酒田市資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/chiikihatarakikata/contents/20261015/261015_material_2.pdf"
+        },
+        {
+          "name": "門真市資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/chiikihatarakikata/contents/20261015/261015_material_3.pdf"
         }
       ]
     },
@@ -65122,6 +65351,7 @@
       "councilId": "cas-futenma_ginowan",
       "name": "第2回 普天間飛行場の運用に伴う宜野湾市の住民の生活環境の保全の課題に関する協議会",
       "date": "2026/04/23",
+      "manualLock": true,
       "officialUrl": "https://www.city.ginowan.lg.jp/soshiki/kikaku/1/1/2/1/18457.html",
       "isDateUnconfirmed": true,
       "isNewlyDiscovered": true,
@@ -139374,25 +139604,6 @@
       "summary": "普天間飛行場の運用等に伴う宜野湾市民の住民の生活環境等の保全の課題に関する協議会が開催され、第1回における政策課題および各種推進方針について審議が行われた。",
       "tags": [
         "普天間飛行場の運",
-        "CAS",
-        "政策会議"
-      ],
-      "materials": [
-        {
-          "name": "議事要旨 (PDFファイル: 270.2KB)",
-          "url": "https://www.city.ginowan.lg.jp/material/files/group/10/gijiyoshi01.pdf"
-        }
-      ]
-    },
-    {
-      "id": "cas-futenma_ginowan-20250617-s01",
-      "councilId": "cas-futenma_ginowan",
-      "name": "普天間飛行場の運用等に伴う宜野湾市民の住民の生活環境等の保全の課題に関する協議会",
-      "date": "2025/06/17",
-      "officialUrl": "https://www.city.ginowan.lg.jp/soshiki/kikaku/1/1/2/1/18457.html",
-      "summary": "普天間飛行場の運用等に伴う宜野湾市民の住民の生活環境等の保全の課題に関する協議会の開催。主要議題の推進状況及び今後の対応方針について審議が行われた。",
-      "tags": [
-        "普天間飛行場",
         "CAS",
         "政策会議"
       ],
@@ -686694,5 +686905,5 @@
     "MATERIALS": "配布資料",
     "REPORT": "答申・報告書"
   },
-  "lastCrawlTime": "2026/10/24 07:20"
+  "lastCrawlTime": "2026/10/24 07:22"
 }
