@@ -20,6 +20,7 @@ import concurrent.futures
 import argparse
 import subprocess
 import unicodedata
+import difflib
 from datetime import datetime, timedelta
 from bs4 import BeautifulSoup
 from utils import (
@@ -2737,6 +2738,59 @@ def _build_new_meeting(target, sub, clean_materials_list, sess_nums, meet_date, 
     return new_meeting_obj
 
 
+
+def extract_title_stem(title):
+    """
+    開催回タイトルから回次・元号・西暦・開催日等の変動要素を除去し、核となる幹文字列（Stem）を抽出する（Drop 75）。
+    """
+    if not title:
+        return ""
+    t = normalize_text(title)
+    # 1. 回次表記の除去: 第X回, (第X回), （第X回）等
+    t = re.sub(r'[\(（]?\s*第\s*\d+\s*回\s*[\)）]?', '', t)
+    # 2. 元号・西暦表記の除去: 令和X年(度), 平成X年(度), 2026年(度)等
+    t = re.sub(r'令和\s*\d+\s*年(?:度)?|平成\s*\d+\s*年(?:度)?|\d{4}\s*年(?:度)?', '', t)
+    # 3. 日付・状態括弧表記の除去: （2026年10月開催）, （非公開）, （開催日不明）等
+    t = re.sub(r'[\(（][^\)）]*(?:開催|非公開|不明)[^\)）]*[\)）]', '', t)
+    # 4. 先頭の箇条書き番号の除去: 1., 1　等
+    t = re.sub(r'^[0-9０-９一二三四五六七八九十]+[．.、\s]+', '', t)
+    # 5. 空白・区切り記号の正規化除去
+    t = re.sub(r'[\s\u3000・_／/]', '', t)
+    return t.strip()
+
+
+def is_title_inconsistent_with_council(candidate_title, council_name, existing_titles, threshold=0.40):
+    """
+    既存の開催回タイトル幹（Stem）との類似度検証（Drop 75）。
+    既存の開催回タイトル群および親会議体名と全く異なる異質なタイトルであるかを判定する。
+    """
+    cand_stem = extract_title_stem(candidate_title)
+    if not cand_stem:
+        return True
+
+    # 既存開催回が未登録の場合は比較対象がないため通過
+    if not existing_titles:
+        return False
+
+    existing_stems = [extract_title_stem(t) for t in existing_titles if extract_title_stem(t)]
+    if not existing_stems:
+        return False
+
+    council_stem = extract_title_stem(council_name)
+
+    # 親会議体幹または既存開催回幹と完全一致・同一である場合は整合（合格）
+    if cand_stem == council_stem or any(cand_stem == s for s in existing_stems):
+        return False
+
+    # 既存開催回幹群および親会議体幹との最大類似度を算出
+    max_sim_existing = max(difflib.SequenceMatcher(None, cand_stem, s).ratio() for s in existing_stems)
+    c_sim = difflib.SequenceMatcher(None, cand_stem, council_stem).ratio() if council_stem else 0
+    best_score = max(max_sim_existing, c_sim)
+
+    # 類似度が閾値（デフォルト0.40）未満の場合は「既存タイトルと全く異なる」と判定
+    return best_score < threshold
+
+
 def sync_new_meetings_from_crawl(data, target, scraped_item):
     """
     クロール時に検出されたサブページ（個別開催回）から、
@@ -2791,6 +2845,11 @@ def sync_new_meetings_from_crawl(data, target, scraped_item):
             continue
         if is_generic_title_text(sub_title) or is_generic_title_text(sub_title_clean) or '食の安全、を科学する' in sub_title:
             continue
+        # Drop 75: 既存の開催回タイトル幹（Stem）との類似度検証ガード
+        # 既存開催回タイトル群および親会議体名と全く異なる異質タイトルは開催回として認識しない
+        if is_title_inconsistent_with_council(sub_title, council_name, [m.get("name", "") for m in existing_c_meets]):
+            continue
+
 
         # 親会議体への下部組織・専門家会合・ポータル自己参照の誤混入ガード（例: 税制調査会(cao-zei_cho)）
         if council_id == "cao-zei_cho":
@@ -3747,6 +3806,13 @@ def run_ministry_news_discovery(progress_callback=None, stop_event=None, ministr
                                     fallback_t = re.sub(r'の?開催について$', '', fallback_t).strip()
                                     clean_t = clean_meeting_title(fallback_t)
 
+                                
+                                # Drop 75: 既存開催回タイトル幹との類似度検証
+                                existing_meets_for_c = [m for m in meetings if m.get("councilId") == cid]
+                                if is_title_inconsistent_with_council(clean_t, matched_c["name"], [m.get("name", "") for m in existing_meets_for_c]):
+                                    if cid not in detected_councils_to_crawl:
+                                        detected_councils_to_crawl[cid] = (matched_c, f"{mtype} (タイトル不整合・親ページ巡回誘導: {item_title})", "")
+                                    continue
                                 # 日付が存在し、資料がある場合（かつ事前案内のみでない場合）は直接追加
                                 if mats and art_dates and not is_preliminary_notice_page(item_url, clean_t):
                                     direct_meetings_to_add.append((matched_c, {

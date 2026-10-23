@@ -22,6 +22,8 @@ if ADMIN_DIR not in sys.path:
     sys.path.insert(0, ADMIN_DIR)
 
 from crawler import (
+    extract_title_stem,
+    is_title_inconsistent_with_council,
     extract_actual_subpage_links,
     _extract_date_from_url,
     _resolve_meeting_date,
@@ -245,6 +247,48 @@ class TestCrawlerQualityFix20260919(unittest.TestCase):
         self.assertNotIn("https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/koyou_roudou/jinzaikaihatsu/chousa/r1/index_00003.html", discovered)
 
 
+
+
+class TestDrop75TitleStemSimilarityGuard(unittest.TestCase):
+    """Drop 75: 既存開催回タイトル幹（Stem）類似度検証ガードの単体テスト"""
+
+    def test_extract_title_stem(self):
+        self.assertEqual(extract_title_stem("第10回 社会資本整備審議会"), "社会資本整備審議会")
+        self.assertEqual(extract_title_stem("令和8年 第282回 文化審議会 文化財分科会"), "文化審議会文化財分科会")
+        self.assertEqual(extract_title_stem("第290回 動物用医薬品専門調査会(非公開)"), "動物用医薬品専門調査会")
+        self.assertEqual(extract_title_stem("1. 第1回 検討会"), "検討会")
+
+    def test_title_inconsistency_guard(self):
+        cname = "社会資本整備審議会"
+        existing = [
+            "第10回 社会資本整備審議会",
+            "第9回 社会資本整備審議会",
+            "第8回 社会資本整備審議会",
+            "社会資本整備審議会:基本問題小委員会"
+        ]
+        # 1. 正常な新開催回（合格: 不整合ではない）
+        self.assertFalse(is_title_inconsistent_with_council("第11回 社会資本整備審議会", cname, existing))
+        self.assertFalse(is_title_inconsistent_with_council("社会資本整備審議会（第11回）", cname, existing))
+        self.assertFalse(is_title_inconsistent_with_council("第2回 社会資本整備審議会:基本問題小委員会", cname, existing))
+
+        # 2. 異質・全く異なる報道発表・告知タイトル（遮断: 不整合判定 True）
+        self.assertTrue(is_title_inconsistent_with_council(
+            "社会資本整備審議会・交通政策審議会「今後のインフラのマネジメントのあり方について」中間答申の手交について",
+            cname, existing
+        ))
+        self.assertTrue(is_title_inconsistent_with_council(
+            "モビリティとインフラを活用したエネルギーの自律性向上 に向けた議論を行います ~社会資本整備審議会環境部会・交通政策審議会交通体系分科会環境部会 エネルギー・経済安全保障小委員会第3回合同会議を開催~",
+            cname, existing
+        ))
+        self.assertTrue(is_title_inconsistent_with_council(
+            "最上川水系、赤川水系、紀の川水系及び川内川水系に係る河川整備基本方針の変更等について審議します~社会資本整備審議会河川分科会(第78回)を開催~",
+            cname, existing
+        ))
+        self.assertTrue(is_title_inconsistent_with_council(
+            "AI活用を通じたイノベーション・エコシステムの好循環・加速化に向けて議論を行います!~社会資本整備審議会・交通政策審議会技術分科会 第41回技術部会を開催~",
+            cname, existing
+        ))
+
 def run_tests():
     print("==================================================")
     print(" Drop 15 クロール網羅性・品質向上テスト (test_crawler_quality_v2.py)")
@@ -252,6 +296,7 @@ def run_tests():
     suite = unittest.TestSuite()
     suite.addTests(unittest.TestLoader().loadTestsFromTestCase(TestCrawlerQualityV2Drop15))
     suite.addTests(unittest.TestLoader().loadTestsFromTestCase(TestCrawlerQualityFix20260919))
+    suite.addTests(unittest.TestLoader().loadTestsFromTestCase(TestDrop75TitleStemSimilarityGuard))
     runner = unittest.TextTestRunner(verbosity=2)
     result = runner.run(suite)
     return result.wasSuccessful()
