@@ -180,6 +180,14 @@ class TestDiscoverCouncilsDrop75(unittest.TestCase):
             set(), set(), set(), set()
         ))
 
+        # Check 14 準拠: 同一省庁内の短縮サフィックス（イノベーション小委員会 vs 研究開発・イノベーション小委員会）がブロックされること
+        existing_councils_by_min["METI"] = [{"name": "産業構造審議会 産業技術環境分科会 研究開発・イノベーション小委員会"}]
+        self.assertTrue(discover_councils.is_already_registered_or_rejected(
+            "イノベーション小委員会", "https://example.com/inno", "METI",
+            existing_names, set(), existing_core_names, existing_councils_by_min,
+            set(), set(), set(), set()
+        ))
+
         # 別省庁や無関係なものはブロックされないこと
         self.assertFalse(discover_councils.is_already_registered_or_rejected(
             "電波利用環境委員会", "https://example.com/denpa", "METI",

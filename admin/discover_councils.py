@@ -398,7 +398,7 @@ def is_already_registered_or_rejected(
     rejected_names: set, rejected_urls: set, rejected_core_names: set, rejected_clean_keys: set
 ) -> bool:
     """
-    完全一致に加え、正規化コア名称および同一省庁内の部会サフィックス一致で既存・却下判定 (CR-188)
+    完全一致に加え、正規化コア名称および同一省庁内の部会サフィックス一致で既存・却下判定 (CR-188, Drop 75)
     """
     clean_name = clean_council_name(cand_name)
     core_name = get_core_council_name(cand_name)
@@ -424,14 +424,23 @@ def is_already_registered_or_rejected(
         if core_name in rejected_core_names:
             return True
 
-    # 4. 同一省庁内の「親審議会名＋部会・分科会・委員会名」サフィックス一致判定 (CR-188)
-    # 例: cand_name = '電波利用環境委員会' -> 既存 '情報通信審議会 情報通信技術分科会 電波利用環境委員会'
-    if min_code and len(clean_name) >= 5:
+    # 4. 同一省庁内の「親審議会名＋部会・分科会・委員会名」サフィックス一致判定 (Check 14準拠)
+    # 例: cand_name = 'イノベーション小委員会' vs '研究開発・イノベーション小委員会'
+    sub_keywords = ('部会', '分科会', '小委員会', '委員会', 'ワーキンググループ', '検討会', '研究会', '審査会', '専門家会合', 'タスクフォース')
+    if min_code:
+        n1 = re.sub(r'\s+', '', cand_name)
+        n1_clean = re.sub(r'\s+', '', clean_name)
         min_existing = existing_councils_by_min.get(min_code.upper(), [])
         for c in min_existing:
             ex_name = c.get("name", "")
-            if ex_name.endswith(clean_name) or clean_name.endswith(ex_name):
+            n2 = re.sub(r'\s+', '', ex_name)
+            if n1 == n2 or n1_clean == n2:
                 return True
+            for cand_cand in (n1, n1_clean):
+                if len(cand_cand) >= 4 and len(n2) >= 4:
+                    if any(k in cand_cand for k in sub_keywords) and any(k in n2 for k in sub_keywords):
+                        if (n2.endswith(cand_cand) and not n2.startswith(cand_cand)) or (cand_cand.endswith(n2) and not cand_cand.startswith(n2)):
+                            return True
 
     return False
 
@@ -440,8 +449,10 @@ def _discover_from_ministry_news(
     emit, target_ministry, ministries, existing_councils,
     categories_def, url_to_slug_map, existing_urls, existing_names,
     rejected_names, rejected_urls, rejected_clean_keys, common_keywords, next_seq,
-    used_council_ids
+    used_council_ids, all_portal_urls=None
 ):
+    if all_portal_urls is None:
+        all_portal_urls = set()
     try:
         from crawler import (
             MINISTRY_NEWS_PORTALS, resolve_news_portal_urls,
@@ -477,6 +488,7 @@ def _discover_from_ministry_news(
     search_kws = common_keywords + ["会議", "有識者会議", "タスクフォース", "プロジェクトチーム", "協議会"]
     discovered_list = []
     seen_in_this_run = set()
+    seen_urls_in_this_run = set()
     category_counts = {}
 
     for current_min_idx, min_code in enumerate(target_mins, start=1):
@@ -528,14 +540,52 @@ def _discover_from_ministry_news(
 
                     # 単発プレスリリースからの常設親ページURL自動逆引き (CR-189)
                     resolved_url = resolve_parent_url_from_press_release(item.get("url", ""), cand_name, min_code)
-                    if resolved_url != item.get("url", ""):
-                        # 逆引き後のURLで既存・却下を再チェック
-                        if is_already_registered_or_rejected(
-                            cand_name, resolved_url, min_code,
-                            existing_names, existing_urls, existing_core_names, councils_by_min,
-                            rejected_names, rejected_urls, rejected_core_names, rejected_clean_keys
-                        ):
-                            continue
+                    orig_item_url = item.get("url", "")
+
+                    # 親ポータルURLや既存URL、重複URLへの誤誘導防止ガード (Check 12対策)
+                    norm_resolved = normalize_url(resolved_url)
+                    norm_orig = normalize_url(orig_item_url)
+                    clean_res = get_url_clean_key(resolved_url)
+
+                    # 逆引きURLが一覧ポータルまたは既に登録/検出済みなら元の単発URLにフォールバック
+                    if (norm_resolved in existing_urls or
+                        norm_resolved in all_portal_urls or
+                        norm_resolved in seen_urls_in_this_run or
+                        (clean_res and clean_res in rejected_clean_keys)):
+                        resolved_url = orig_item_url
+                        norm_resolved = norm_orig
+
+                    # 最終URLが依然として既存または今回重複ならスキップ
+                    if norm_resolved in existing_urls or norm_resolved in seen_urls_in_this_run or norm_resolved in all_portal_urls:
+                        continue
+
+                    # 最終URLでの既存・却下を再チェック
+                    if is_already_registered_or_rejected(
+                        cand_name, resolved_url, min_code,
+                        existing_names, existing_urls, existing_core_names, councils_by_min,
+                        rejected_names, rejected_urls, rejected_core_names, rejected_clean_keys
+                    ):
+                        continue
+
+                    # 今回の検出リスト間でのサフィックス重複排除 (Check 14対策)
+                    sub_keywords = ('部会', '分科会', '小委員会', '委員会', 'ワーキンググループ', '検討会', '研究会', '審査会', '専門家会合', 'タスクフォース')
+                    n1 = re.sub(r'\s+', '', cand_name)
+                    is_dup_with_cand = False
+                    for existing_cand in discovered_list:
+                        if existing_cand.get("ministry", "").upper() == min_code.upper():
+                            n2 = re.sub(r'\s+', '', existing_cand.get("name", ""))
+                            if n1 == n2:
+                                is_dup_with_cand = True
+                                break
+                            if len(n1) >= 4 and len(n2) >= 4:
+                                if any(k in n1 for k in sub_keywords) and any(k in n2 for k in sub_keywords):
+                                    if (n2.endswith(n1) and not n2.startswith(n1)) or (n1.endswith(n2) and not n1.startswith(n2)):
+                                        is_dup_with_cand = True
+                                        break
+                    if is_dup_with_cand:
+                        continue
+
+                    seen_urls_in_this_run.add(norm_resolved)
 
                     category, _ = infer_council_category(f"{cand_name} {raw_title}", categories_def)
                     category_counts[category] = category_counts.get(category, 0) + 1
@@ -791,7 +841,7 @@ def run_discovery(progress_callback=None, target_ministry=None, dry_run=False, m
             emit, target_ministry, ministries, existing_councils,
             categories_def, url_to_slug_map, existing_urls, existing_names,
             rejected_names, rejected_urls, rejected_clean_keys, common_keywords, next_seq,
-            used_council_ids
+            used_council_ids, all_portal_urls=all_portal_urls
         )
     else:
         active_ministries = [m for code, m in ministries.items() if m.get("hasCouncils", True) and m.get("councilsUrls") and (not target_ministry or code.upper() == target_ministry.upper())]
@@ -845,7 +895,10 @@ def run_discovery(progress_callback=None, target_ministry=None, dry_run=False, m
                 except Exception as e:
                     emit(f"   [ERROR] [{m_code}] 巡回中にエラー発生: {e}")
 
-        # 結果の統合とID採番 (CR-191)
+        # 結果の統合とID採番 (CR-191, Check 12/14重複排除)
+        seen_urls_in_normal = set()
+        sub_keywords = ('部会', '分科会', '小委員会', '委員会', 'ワーキンググループ', '検討会', '研究会', '審査会', '専門家会合', 'タスクフォース')
+
         for min_code, min_info in sorted(ministries.items()):
             disc_items = results_by_min.get(min_code, [])
             for item in disc_items:
@@ -855,6 +908,29 @@ def run_discovery(progress_callback=None, target_ministry=None, dry_run=False, m
                 category = item["category"]
                 is_default = item["is_default"]
 
+                norm_cand_url = normalize_url(target_url_cand)
+                # URL重複防止 (Check 12)
+                if norm_cand_url in existing_urls or norm_cand_url in seen_urls_in_normal or norm_cand_url in all_portal_urls:
+                    continue
+
+                # 同一省庁内での新規候補間サフィックス重複防止 (Check 14)
+                n1 = re.sub(r'\s+', '', cand_name)
+                is_suffix_dup = False
+                for ex_cand in discovered_list:
+                    if ex_cand.get("ministry", "").upper() == min_code.upper():
+                        n2 = re.sub(r'\s+', '', ex_cand.get("name", ""))
+                        if n1 == n2:
+                            is_suffix_dup = True
+                            break
+                        if len(n1) >= 4 and len(n2) >= 4:
+                            if any(k in n1 for k in sub_keywords) and any(k in n2 for k in sub_keywords):
+                                if (n2.endswith(n1) and not n2.startswith(n1)) or (n1.endswith(n2) and not n1.startswith(n2)):
+                                    is_suffix_dup = True
+                                    break
+                if is_suffix_dup:
+                    continue
+
+                seen_urls_in_normal.add(norm_cand_url)
                 category_counts[category] = category_counts.get(category, 0) + 1
                 if is_default:
                     unmatched_category_councils.append({
@@ -948,12 +1024,29 @@ def run_discovery(progress_callback=None, target_ministry=None, dry_run=False, m
                     continue
                 filtered_existing_dict[cid] = c
 
+            # 重複防止用セット (Check 12 & Check 14 厳格ガード)
+            saved_urls = {normalize_url(c.get("officialUrl", "")) for c in filtered_existing_dict.values() if c.get("officialUrl")}
+            saved_names_by_min = {}
+            for c in filtered_existing_dict.values():
+                saved_names_by_min.setdefault(c.get("ministry", "").upper(), []).append(c)
+
+            sub_keywords = ('部会', '分科会', '小委員会', '委員会', 'ワーキンググループ', '検討会', '研究会', '審査会', '専門家会合', 'タスクフォース')
+
+            added_count = 0
             for new_c in discovered_list:
                 cid = new_c.get("id")
+                norm_u = normalize_url(new_c.get("officialUrl", ""))
+                clean_k = get_url_clean_key(new_c.get("officialUrl", ""))
+                raw_n = new_c.get("name", "").strip()
+                clean_n = clean_council_name(raw_n)
+                m_code = new_c.get("ministry", "").upper()
+
+                # 却下判定
                 if (cid in rejected_ids or
-                    normalize_url(new_c.get("officialUrl", "")) in rejected_urls or
-                    get_url_clean_key(new_c.get("officialUrl", "")) in rejected_clean_keys or
-                    new_c.get("name", "").strip() in rejected_names):
+                    norm_u in rejected_urls or
+                    (clean_k and clean_k in rejected_clean_keys) or
+                    raw_n in rejected_names or
+                    (clean_n and clean_n in rejected_names)):
                     continue
 
                 if cid in filtered_existing_dict:
@@ -961,36 +1054,95 @@ def run_discovery(progress_callback=None, target_ministry=None, dry_run=False, m
                     new_c["status"] = filtered_existing_dict[cid].get("status", "approved")
                     new_c["manualLock"] = filtered_existing_dict[cid].get("manualLock", False)
                     new_c["pastYearCount"] = filtered_existing_dict[cid].get("pastYearCount", 0)
-                else:
-                    new_c["status"] = "pending"
+                    filtered_existing_dict[cid] = new_c
+                    continue
+
+                # 1. URL重複チェック (Check 12)
+                if norm_u in saved_urls or norm_u in all_portal_urls:
+                    continue
+
+                # 2. 同一省庁内の短縮サフィックス重複チェック (Check 14)
+                n1 = re.sub(r'\s+', '', raw_n)
+                n1_clean = re.sub(r'\s+', '', clean_n)
+                is_suffix_dup = False
+                for ex_c in saved_names_by_min.get(m_code, []):
+                    ex_name = ex_c.get("name", "")
+                    n2 = re.sub(r'\s+', '', ex_name)
+                    if n1 == n2 or n1_clean == n2:
+                        is_suffix_dup = True
+                        break
+                    for cand_cand in (n1, n1_clean):
+                        if len(cand_cand) >= 4 and len(n2) >= 4:
+                            if any(k in cand_cand for k in sub_keywords) and any(k in n2 for k in sub_keywords):
+                                if (n2.endswith(cand_cand) and not n2.startswith(cand_cand)) or (cand_cand.endswith(n2) and not cand_cand.startswith(n2)):
+                                    is_suffix_dup = True
+                                    break
+                    if is_suffix_dup:
+                        break
+                if is_suffix_dup:
+                    continue
+
+                new_c["status"] = "pending"
                 filtered_existing_dict[cid] = new_c
+                saved_urls.add(norm_u)
+                saved_names_by_min.setdefault(m_code, []).append(new_c)
+                added_count += 1
             
             data["councils"] = list(filtered_existing_dict.values())
             if "discoveredCouncils" in data:
                 del data["discoveredCouncils"]
 
-            # CR-92: 新規登録された会議体の scrapingRules 自動連動登録 (AGENTS.md 第5条)
+            # CR-92: 新規登録された会議体の scrapingRules 自動連動登録 (Case 11 & Case 15)
+            # 必ず filtered_existing_dict (councilsマスター) に存在する会議体のみを対象とする
             scraping_rules_in_data = data.setdefault("scrapingRules", {})
             new_rules_count = 0
-            for new_c in discovered_list:
-                cid = new_c.get("id")
+            for cid, c_obj in filtered_existing_dict.items():
                 if cid and cid not in scraping_rules_in_data:
                     scraping_rules_in_data[cid] = {
                         "template": "tpl-cas-gijisidai-nested",
                         "manualLock": True,
-                        "officialUrl": new_c.get("officialUrl", ""),
+                        "officialUrl": c_obj.get("officialUrl", ""),
                         "extract_from_parent_table": True
                     }
                     new_rules_count += 1
+
+            # 孤立ルールを完全にパージ (FK制約保護)
+            orphan_count = 0
+            for r_cid in list(scraping_rules_in_data.keys()):
+                if r_cid not in filtered_existing_dict:
+                    del scraping_rules_in_data[r_cid]
+                    orphan_count += 1
+
             if new_rules_count > 0:
                 print(f"新規会議体 {new_rules_count} 件に scrapingRules を自動連動登録しました。")
+            if orphan_count > 0:
+                print(f"孤立 scrapingRules {orphan_count} 件をパージしました。")
             
             if save_data_json_with_backup(data):
-                print(f"結果を data.json の councils に保存しました（自動バックアップ作成完了）。")
+                print(f"結果を data.json の councils に保存しました（新規追加: {added_count} 件）。")
+
+                # SQLite マスターDBへの同期シード ＆ 2系統エクスポート
+                try:
+                    from db.seed_db import seed_db
+                    from db.export_data import export_data
+                except ImportError:
+                    from admin.db.seed_db import seed_db
+                    from admin.db.export_data import export_data
+
+                print("[DB SYNC] SQLite マスターDB (admin/pmhub.db) への同期シードを実行中...")
+                if seed_db():
+                    print("[DB SYNC] 2系統 JSON への決定論的エクスポートを実行中...")
+                    export_data()
+                    print("[DB SYNC] SQLite マスターDB & 2系統 JSON の完全同期が完了しました。")
+                else:
+                    print("[WARN] SQLite マスターDBへのシードに失敗しました。")
             else:
                 print(f"[WARN] data.json の保存に失敗しました。")
         except Exception as e:
             print(f"[ERROR] data.json の更新に失敗しました: {e}")
+            import traceback
+            traceback.print_exc()
+    return discovered_list
     return discovered_list
 
 if __name__ == "__main__":

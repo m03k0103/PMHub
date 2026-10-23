@@ -1348,6 +1348,12 @@
       "officialUrl": "https://www.caa.go.jp/policies/council/",
       "pdf_selector": "a[href*='.pdf'], a[href*='.PDF']"
     },
+    "caa-3119": {
+      "template": "tpl-cas-gijisidai-nested",
+      "manualLock": true,
+      "officialUrl": "https://www.caa.go.jp/notice/conference/",
+      "extract_from_parent_table": true
+    },
     "caa-kaigi_kenkyu": {
       "template": "tpl-general-round-subpage",
       "manualLock": true,
@@ -1761,6 +1767,66 @@
       "manualLock": true,
       "extract_from_parent_table": true,
       "officialUrl": "https://www.cao.go.jp/others/soumu/pitch2m/results.html"
+    },
+    "cao-3064": {
+      "template": "tpl-cas-gijisidai-nested",
+      "manualLock": true,
+      "officialUrl": "https://www.esri.cao.go.jp/jp/stat/di/di_ken.html",
+      "extract_from_parent_table": true
+    },
+    "cao-3065": {
+      "template": "tpl-cas-gijisidai-nested",
+      "manualLock": true,
+      "officialUrl": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_04startup/260617/startup15_agenda.html",
+      "extract_from_parent_table": true
+    },
+    "cao-3066": {
+      "template": "tpl-cas-gijisidai-nested",
+      "manualLock": true,
+      "officialUrl": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_05gx/260526/gx03_agenda.html",
+      "extract_from_parent_table": true
+    },
+    "cao-3067": {
+      "template": "tpl-cas-gijisidai-nested",
+      "manualLock": true,
+      "officialUrl": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_03human/260521/human09_agenda.html",
+      "extract_from_parent_table": true
+    },
+    "cao-3068": {
+      "template": "tpl-cas-gijisidai-nested",
+      "manualLock": true,
+      "officialUrl": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_01local/260519/local11_agenda.html",
+      "extract_from_parent_table": true
+    },
+    "cao-3069": {
+      "template": "tpl-cas-gijisidai-nested",
+      "manualLock": true,
+      "officialUrl": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_02medical/260515/medical12_agenda.html",
+      "extract_from_parent_table": true
+    },
+    "cao-3070": {
+      "template": "tpl-cas-gijisidai-nested",
+      "manualLock": true,
+      "officialUrl": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_06ai/260515/ai10_agenda.html",
+      "extract_from_parent_table": true
+    },
+    "cao-3071": {
+      "template": "tpl-cas-gijisidai-nested",
+      "manualLock": true,
+      "officialUrl": "https://www.cao.go.jp/keizai_anzen_hosho/zosen/zosen.html",
+      "extract_from_parent_table": true
+    },
+    "cao-3072": {
+      "template": "tpl-cas-gijisidai-nested",
+      "manualLock": true,
+      "officialUrl": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_03human/260109/human05_agenda.html",
+      "extract_from_parent_table": true
+    },
+    "cao-3073": {
+      "template": "tpl-cas-gijisidai-nested",
+      "manualLock": true,
+      "officialUrl": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_06ai/260109/ai06_agenda.html",
+      "extract_from_parent_table": true
     },
     "cao-ai_hq": {
       "date_regex": "(令和\\d+年\\d+月\\d+日|平成\\d+年\\d+月\\d+日|\\d{4}年\\d{1,2}月\\d{1,2}日)",
@@ -2211,6 +2277,18 @@
       "extract_from_parent_table": true,
       "officialUrl": "https://www.cas.go.jp/jp/seisaku/2027_hakurankai/index.html",
       "pdf_selector": "a[href*='.pdf'], a[href*='.PDF']"
+    },
+    "cas-2854": {
+      "template": "tpl-cas-gijisidai-nested",
+      "manualLock": true,
+      "officialUrl": "https://www.digital.go.jp/councils/ai_digital",
+      "extract_from_parent_table": true
+    },
+    "cas-2855": {
+      "template": "tpl-cas-gijisidai-nested",
+      "manualLock": true,
+      "officialUrl": "https://www.cas.go.jp/jp/seisaku/axkaigi/index.html",
+      "extract_from_parent_table": true
     },
     "cas-296": {
       "date_regex": "(?:令和|平成)\\d+年\\d+月\\d+日|20\\d{2}年\\d+月\\d+日",
@@ -3926,6 +4004,18 @@
       "template": "tpl-general-round-subpage",
       "officialUrl": "https://www.cas.go.jp/jp/seisaku/zensedai_shakaihosho_kochiku/index.html"
     },
+    "cfa-3085": {
+      "template": "tpl-cas-gijisidai-nested",
+      "manualLock": true,
+      "officialUrl": "https://www.cfa.go.jp/councils/hoshokin-yuseishujutsu/fadbc2c9",
+      "extract_from_parent_table": true
+    },
+    "cfa-3086": {
+      "template": "tpl-cas-gijisidai-nested",
+      "manualLock": true,
+      "officialUrl": "https://www.cfa.go.jp/press/57551703-bf00-4a79-94df-628dc8f2ae25",
+      "extract_from_parent_table": true
+    },
     "cfa-kodomo_shingikai": {
       "date_regex": "(令和\\d+年\\d+月\\d+日|平成\\d+年\\d+月\\d+日|\\d{4}年\\d{1,2}月\\d{1,2}日)",
       "manualLock": true,
@@ -4434,6 +4524,72 @@
       "manualLock": true,
       "officialUrl": "https://www.digital.go.jp/councils/social-promotion-executive",
       "pdf_selector": "a[href*='.pdf'], a[href*='.PDF']"
+    },
+    "env-3074": {
+      "template": "tpl-cas-gijisidai-nested",
+      "manualLock": true,
+      "officialUrl": "https://www.env.go.jp/council/index.html",
+      "extract_from_parent_table": true
+    },
+    "env-3075": {
+      "template": "tpl-cas-gijisidai-nested",
+      "manualLock": true,
+      "officialUrl": "https://www.env.go.jp/press/press_05724.html",
+      "extract_from_parent_table": true
+    },
+    "env-3076": {
+      "template": "tpl-cas-gijisidai-nested",
+      "manualLock": true,
+      "officialUrl": "https://www.env.go.jp/press/press_05711.html",
+      "extract_from_parent_table": true
+    },
+    "env-3077": {
+      "template": "tpl-cas-gijisidai-nested",
+      "manualLock": true,
+      "officialUrl": "https://www.env.go.jp/press/press_05672.html",
+      "extract_from_parent_table": true
+    },
+    "env-3078": {
+      "template": "tpl-cas-gijisidai-nested",
+      "manualLock": true,
+      "officialUrl": "https://www.env.go.jp/press/press_05691.html",
+      "extract_from_parent_table": true
+    },
+    "env-3079": {
+      "template": "tpl-cas-gijisidai-nested",
+      "manualLock": true,
+      "officialUrl": "https://www.env.go.jp/press/press_05669.html",
+      "extract_from_parent_table": true
+    },
+    "env-3080": {
+      "template": "tpl-cas-gijisidai-nested",
+      "manualLock": true,
+      "officialUrl": "https://www.env.go.jp/press/press_05663.html",
+      "extract_from_parent_table": true
+    },
+    "env-3081": {
+      "template": "tpl-cas-gijisidai-nested",
+      "manualLock": true,
+      "officialUrl": "https://www.env.go.jp/press/press_05658.html",
+      "extract_from_parent_table": true
+    },
+    "env-3082": {
+      "template": "tpl-cas-gijisidai-nested",
+      "manualLock": true,
+      "officialUrl": "https://www.env.go.jp/press/press_05623.html",
+      "extract_from_parent_table": true
+    },
+    "env-3083": {
+      "template": "tpl-cas-gijisidai-nested",
+      "manualLock": true,
+      "officialUrl": "https://www.env.go.jp/press/press_05568.html",
+      "extract_from_parent_table": true
+    },
+    "env-3084": {
+      "template": "tpl-cas-gijisidai-nested",
+      "manualLock": true,
+      "officialUrl": "https://www.env.go.jp/council/20ari-yatsu/yoshi20.html",
+      "extract_from_parent_table": true
     },
     "fdma-anzenben_gas_kakusan": {
       "template": "tpl-general-round-subpage",
@@ -5002,6 +5158,30 @@
       "extract_from_parent_table": true,
       "officialUrl": "https://www.fdma.go.jp/singi_kento/kento/post-203.html",
       "pdf_selector": "a[href*='.pdf'], a[href*='.PDF']"
+    },
+    "fsa-3014": {
+      "template": "tpl-cas-gijisidai-nested",
+      "manualLock": true,
+      "officialUrl": "https://www.fsa.go.jp/policy/kashikin/tajusaimukondankai/20261028/20261028.html",
+      "extract_from_parent_table": true
+    },
+    "fsa-3015": {
+      "template": "tpl-cas-gijisidai-nested",
+      "manualLock": true,
+      "officialUrl": "https://www.fsa.go.jp/news/r8/20260918/20260918.html",
+      "extract_from_parent_table": true
+    },
+    "fsa-3016": {
+      "template": "tpl-cas-gijisidai-nested",
+      "manualLock": true,
+      "officialUrl": "https://www.fsa.go.jp/singi/singi_trouble/gijiroku/20260619.html",
+      "extract_from_parent_table": true
+    },
+    "fsa-3017": {
+      "template": "tpl-cas-gijisidai-nested",
+      "manualLock": true,
+      "officialUrl": "https://www.fsa.go.jp/news/r8/singi/20260805.html",
+      "extract_from_parent_table": true
     },
     "fsa-arikataken": {
       "template": "tpl-ministry-hybrid-kaisai",
@@ -6197,6 +6377,24 @@
       "officialUrl": "https://www.jfa.maff.go.jp/j/study/saibai8_kentokai.html",
       "pdf_selector": "a[href*='.pdf'], a[href*='.PDF']"
     },
+    "jfa-3116": {
+      "template": "tpl-cas-gijisidai-nested",
+      "manualLock": true,
+      "officialUrl": "https://www.jfa.maff.go.jp/j/policy/index.html",
+      "extract_from_parent_table": true
+    },
+    "jfa-3117": {
+      "template": "tpl-cas-gijisidai-nested",
+      "manualLock": true,
+      "officialUrl": "https://www.jfa.maff.go.jp/j/press/keikaku/251212.html",
+      "extract_from_parent_table": true
+    },
+    "jfa-3118": {
+      "template": "tpl-cas-gijisidai-nested",
+      "manualLock": true,
+      "officialUrl": "https://www.jfa.maff.go.jp/j/press/keikaku/240628.html",
+      "extract_from_parent_table": true
+    },
     "jfa-592": {
       "date_regex": "(?:令和|平成)\\d+年\\d+月\\d+日|20\\d{2}年\\d+月\\d+日",
       "manualLock": true,
@@ -6605,6 +6803,12 @@
       "template": "tpl-general-round-subpage",
       "officialUrl": "https://warp.ndl.go.jp/web/20171022000000/www.maff.go.jp/j/study/syunyu_kento/syunyu_kento.html",
       "pdf_selector": "a[href*='.pdf'], a[href*='.PDF']"
+    },
+    "maff-3056": {
+      "template": "tpl-cas-gijisidai-nested",
+      "manualLock": true,
+      "officialUrl": "https://www.maff.go.jp/j/keiei/ikusei_kyogikai.html",
+      "extract_from_parent_table": true
     },
     "maff-648": {
       "date_regex": "(?:令和|平成)\\d+年\\d+月\\d+日|20\\d{2}年\\d+月\\d+日",
@@ -7369,6 +7573,360 @@
       "official_url": "https://www.meti.go.jp/shingikai/energy_environment/suiso_nenryo/index.html",
       "officialUrl": "https://www.meti.go.jp/shingikai/energy_environment/suiso_nenryo/index.html"
     },
+    "meti-2856": {
+      "template": "tpl-cas-gijisidai-nested",
+      "manualLock": true,
+      "officialUrl": "https://www.meti.go.jp/shingikai/sankoshin/mirai_kaitaku/index.html",
+      "extract_from_parent_table": true
+    },
+    "meti-2857": {
+      "template": "tpl-cas-gijisidai-nested",
+      "manualLock": true,
+      "officialUrl": "https://www.meti.go.jp/shingikai/sankoshin/keieiryoku_kojo/index.html",
+      "extract_from_parent_table": true
+    },
+    "meti-2858": {
+      "template": "tpl-cas-gijisidai-nested",
+      "manualLock": true,
+      "officialUrl": "https://www.meti.go.jp/shingikai/sankoshin/green_innovation/index.html",
+      "extract_from_parent_table": true
+    },
+    "meti-2859": {
+      "template": "tpl-cas-gijisidai-nested",
+      "manualLock": true,
+      "officialUrl": "https://www.meti.go.jp/shingikai/sankoshin/green_innovation/energy_structure/index.html",
+      "extract_from_parent_table": true
+    },
+    "meti-2860": {
+      "template": "tpl-cas-gijisidai-nested",
+      "manualLock": true,
+      "officialUrl": "https://www.meti.go.jp/shingikai/sankoshin/green_innovation/industrial_restructuring/index.html",
+      "extract_from_parent_table": true
+    },
+    "meti-2861": {
+      "template": "tpl-cas-gijisidai-nested",
+      "manualLock": true,
+      "officialUrl": "https://www.meti.go.jp/shingikai/sankoshin/green_innovation/green_power/index.html",
+      "extract_from_parent_table": true
+    },
+    "meti-2862": {
+      "template": "tpl-cas-gijisidai-nested",
+      "manualLock": true,
+      "officialUrl": "https://www.meti.go.jp/shingikai/sankoshin/shin_kijiku/index.html",
+      "extract_from_parent_table": true
+    },
+    "meti-2863": {
+      "template": "tpl-cas-gijisidai-nested",
+      "manualLock": true,
+      "officialUrl": "https://www.meti.go.jp/shingikai/sankoshin/shin_kijiku/business_restructuring/index.html",
+      "extract_from_parent_table": true
+    },
+    "meti-2864": {
+      "template": "tpl-cas-gijisidai-nested",
+      "manualLock": true,
+      "officialUrl": "https://www.meti.go.jp/shingikai/sankoshin/shin_kijiku/value_creation/index.html",
+      "extract_from_parent_table": true
+    },
+    "meti-2865": {
+      "template": "tpl-cas-gijisidai-nested",
+      "manualLock": true,
+      "officialUrl": "https://www.meti.go.jp/shingikai/sankoshin/chiiki_keizai/index.html",
+      "extract_from_parent_table": true
+    },
+    "meti-2866": {
+      "template": "tpl-cas-gijisidai-nested",
+      "manualLock": true,
+      "officialUrl": "https://www.meti.go.jp/shingikai/sankoshin/chiiki_keizai/kojo_ritchi/index.html",
+      "extract_from_parent_table": true
+    },
+    "meti-2867": {
+      "template": "tpl-cas-gijisidai-nested",
+      "manualLock": true,
+      "officialUrl": "https://www.meti.go.jp/shingikai/sankoshin/chiiki_keizai/kogyoyo_suido/index.html",
+      "extract_from_parent_table": true
+    },
+    "meti-2868": {
+      "template": "tpl-cas-gijisidai-nested",
+      "manualLock": true,
+      "officialUrl": "https://www.meti.go.jp/shingikai/sankoshin/chiiki_keizai/maintaining_local_life/index.html",
+      "extract_from_parent_table": true
+    },
+    "meti-2869": {
+      "template": "tpl-cas-gijisidai-nested",
+      "manualLock": true,
+      "officialUrl": "https://www.meti.go.jp/shingikai/sankoshin/tsusho_boeki/index.html",
+      "extract_from_parent_table": true
+    },
+    "meti-2870": {
+      "template": "tpl-cas-gijisidai-nested",
+      "manualLock": true,
+      "officialUrl": "https://www.meti.go.jp/shingikai/sankoshin/tsusho_boeki/fukosei_boeki/index.html",
+      "extract_from_parent_table": true
+    },
+    "meti-2871": {
+      "template": "tpl-cas-gijisidai-nested",
+      "manualLock": true,
+      "officialUrl": "https://www.meti.go.jp/shingikai/sankoshin/tsusho_boeki/keizai_kyoryoku/index.html",
+      "extract_from_parent_table": true
+    },
+    "meti-2872": {
+      "template": "tpl-cas-gijisidai-nested",
+      "manualLock": true,
+      "officialUrl": "https://www.meti.go.jp/shingikai/sankoshin/tsusho_boeki/tokushu_boeki/index.html",
+      "extract_from_parent_table": true
+    },
+    "meti-2873": {
+      "template": "tpl-cas-gijisidai-nested",
+      "manualLock": true,
+      "officialUrl": "https://www.meti.go.jp/shingikai/sankoshin/tsusho_boeki/anzen_hosho/index.html",
+      "extract_from_parent_table": true
+    },
+    "meti-2874": {
+      "template": "tpl-cas-gijisidai-nested",
+      "manualLock": true,
+      "officialUrl": "https://www.meti.go.jp/shingikai/sankoshin/sangyo_gijutsu/index.html",
+      "extract_from_parent_table": true
+    },
+    "meti-2875": {
+      "template": "tpl-cas-gijisidai-nested",
+      "manualLock": true,
+      "officialUrl": "https://www.meti.go.jp/shingikai/sankoshin/sangyo_gijutsu/innovation/index.html",
+      "extract_from_parent_table": true
+    },
+    "meti-2876": {
+      "template": "tpl-cas-gijisidai-nested",
+      "manualLock": true,
+      "officialUrl": "https://www.meti.go.jp/shingikai/sankoshin/sangyo_gijutsu/kenkyu_hyoka/index.html",
+      "extract_from_parent_table": true
+    },
+    "meti-2877": {
+      "template": "tpl-cas-gijisidai-nested",
+      "manualLock": true,
+      "officialUrl": "https://www.meti.go.jp/shingikai/sankoshin/sangyo_gijutsu/kijun_ninsho/index.html",
+      "extract_from_parent_table": true
+    },
+    "meti-2878": {
+      "template": "tpl-cas-gijisidai-nested",
+      "manualLock": true,
+      "officialUrl": "https://www.meti.go.jp/shingikai/sankoshin/sangyo_gijutsu/chikyu_kankyo/index.html",
+      "extract_from_parent_table": true
+    },
+    "meti-2879": {
+      "template": "tpl-cas-gijisidai-nested",
+      "manualLock": true,
+      "officialUrl": "https://www.meti.go.jp/shingikai/sankoshin/sangyo_gijutsu/haikibutsu_recycle/index.html",
+      "extract_from_parent_table": true
+    },
+    "meti-2880": {
+      "template": "tpl-cas-gijisidai-nested",
+      "manualLock": true,
+      "officialUrl": "https://www.meti.go.jp/shingikai/sankoshin/sangyo_gijutsu/resource_circulation/index.html",
+      "extract_from_parent_table": true
+    },
+    "meti-2881": {
+      "template": "tpl-cas-gijisidai-nested",
+      "manualLock": true,
+      "officialUrl": "https://www.meti.go.jp/shingikai/sankoshin/sangyo_gijutsu/sangyo_kankyo/index.html",
+      "extract_from_parent_table": true
+    },
+    "meti-2882": {
+      "template": "tpl-cas-gijisidai-nested",
+      "manualLock": true,
+      "officialUrl": "https://www.meti.go.jp/shingikai/sankoshin/sangyo_gijutsu/chiteki_kiban/index.html",
+      "extract_from_parent_table": true
+    },
+    "meti-2883": {
+      "template": "tpl-cas-gijisidai-nested",
+      "manualLock": true,
+      "officialUrl": "https://www.meti.go.jp/shingikai/sankoshin/sangyo_gijutsu/green_transformation/index.html",
+      "extract_from_parent_table": true
+    },
+    "meti-2884": {
+      "template": "tpl-cas-gijisidai-nested",
+      "manualLock": true,
+      "officialUrl": "https://www.meti.go.jp/shingikai/sankoshin/sangyo_gijutsu/emissions_trading/index.html",
+      "extract_from_parent_table": true
+    },
+    "meti-2885": {
+      "template": "tpl-cas-gijisidai-nested",
+      "manualLock": true,
+      "officialUrl": "https://www.meti.go.jp/shingikai/sankoshin/seizo_sangyo/index.html",
+      "extract_from_parent_table": true
+    },
+    "meti-2886": {
+      "template": "tpl-cas-gijisidai-nested",
+      "manualLock": true,
+      "officialUrl": "https://www.meti.go.jp/shingikai/sankoshin/seizo_sangyo/kagaku_busshitsu/index.html",
+      "extract_from_parent_table": true
+    },
+    "meti-2887": {
+      "template": "tpl-cas-gijisidai-nested",
+      "manualLock": true,
+      "officialUrl": "https://www.meti.go.jp/shingikai/sankoshin/seizo_sangyo/bio/index.html",
+      "extract_from_parent_table": true
+    },
+    "meti-2888": {
+      "template": "tpl-cas-gijisidai-nested",
+      "manualLock": true,
+      "officialUrl": "https://www.meti.go.jp/shingikai/sankoshin/seizo_sangyo/space_industry/index.html",
+      "extract_from_parent_table": true
+    },
+    "meti-2889": {
+      "template": "tpl-cas-gijisidai-nested",
+      "manualLock": true,
+      "officialUrl": "https://www.meti.go.jp/shingikai/sankoshin/seizo_sangyo/kokuki_uchu/index.html",
+      "extract_from_parent_table": true
+    },
+    "meti-2891": {
+      "template": "tpl-cas-gijisidai-nested",
+      "manualLock": true,
+      "officialUrl": "https://www.meti.go.jp/shingikai/sankoshin/seizo_sangyo/dentoteki_kogeihin/index.html",
+      "extract_from_parent_table": true
+    },
+    "meti-2892": {
+      "template": "tpl-cas-gijisidai-nested",
+      "manualLock": true,
+      "officialUrl": "https://www.meti.go.jp/shingikai/sankoshin/seizo_sangyo/koku_kojo/index.html",
+      "extract_from_parent_table": true
+    },
+    "meti-2893": {
+      "template": "tpl-cas-gijisidai-nested",
+      "manualLock": true,
+      "officialUrl": "https://www.meti.go.jp/shingikai/sankoshin/seizo_sangyo/textile_industry/index.html",
+      "extract_from_parent_table": true
+    },
+    "meti-2894": {
+      "template": "tpl-cas-gijisidai-nested",
+      "manualLock": true,
+      "officialUrl": "https://www.meti.go.jp/shingikai/sankoshin/seizo_sangyo/mining/index.html",
+      "extract_from_parent_table": true
+    },
+    "meti-2895": {
+      "template": "tpl-cas-gijisidai-nested",
+      "manualLock": true,
+      "officialUrl": "https://www.meti.go.jp/shingikai/sankoshin/shomu_ryutsu/index.html",
+      "extract_from_parent_table": true
+    },
+    "meti-2896": {
+      "template": "tpl-cas-gijisidai-nested",
+      "manualLock": true,
+      "officialUrl": "https://www.meti.go.jp/shingikai/sankoshin/shomu_ryutsu/smartcommerce/index.html",
+      "extract_from_parent_table": true
+    },
+    "meti-2897": {
+      "template": "tpl-cas-gijisidai-nested",
+      "manualLock": true,
+      "officialUrl": "https://www.meti.go.jp/shingikai/sankoshin/shomu_ryutsu/joho_keizai/index.html",
+      "extract_from_parent_table": true
+    },
+    "meti-2898": {
+      "template": "tpl-cas-gijisidai-nested",
+      "manualLock": true,
+      "officialUrl": "https://www.meti.go.jp/shingikai/sankoshin/shomu_ryutsu/kappu_hambai/index.html",
+      "extract_from_parent_table": true
+    },
+    "meti-2899": {
+      "template": "tpl-cas-gijisidai-nested",
+      "manualLock": true,
+      "officialUrl": "https://www.meti.go.jp/shingikai/sankoshin/shomu_ryutsu/distribution/index.html",
+      "extract_from_parent_table": true
+    },
+    "meti-2900": {
+      "template": "tpl-cas-gijisidai-nested",
+      "manualLock": true,
+      "officialUrl": "https://www.meti.go.jp/shingikai/sankoshin/shomu_ryutsu/next_generation_semiconductor/index.html",
+      "extract_from_parent_table": true
+    },
+    "meti-2901": {
+      "template": "tpl-cas-gijisidai-nested",
+      "manualLock": true,
+      "officialUrl": "https://www.meti.go.jp/shingikai/sankoshin/hoan_shohi/index.html",
+      "extract_from_parent_table": true
+    },
+    "meti-2902": {
+      "template": "tpl-cas-gijisidai-nested",
+      "manualLock": true,
+      "officialUrl": "https://www.meti.go.jp/shingikai/sankoshin/hoan_shohi/seihin_anzen/index.html",
+      "extract_from_parent_table": true
+    },
+    "meti-2903": {
+      "template": "tpl-cas-gijisidai-nested",
+      "manualLock": true,
+      "officialUrl": "https://www.meti.go.jp/shingikai/sankoshin/hoan_shohi/koatsu_gas/index.html",
+      "extract_from_parent_table": true
+    },
+    "meti-2904": {
+      "template": "tpl-cas-gijisidai-nested",
+      "manualLock": true,
+      "officialUrl": "https://www.meti.go.jp/shingikai/sankoshin/hoan_shohi/gas_anzen/index.html",
+      "extract_from_parent_table": true
+    },
+    "meti-2905": {
+      "template": "tpl-cas-gijisidai-nested",
+      "manualLock": true,
+      "officialUrl": "https://www.meti.go.jp/shingikai/sankoshin/hoan_shohi/ekika_sekiyu/index.html",
+      "extract_from_parent_table": true
+    },
+    "meti-2906": {
+      "template": "tpl-cas-gijisidai-nested",
+      "manualLock": true,
+      "officialUrl": "https://www.meti.go.jp/shingikai/sankoshin/hoan_shohi/denryoku_anzen/index.html",
+      "extract_from_parent_table": true
+    },
+    "meti-2907": {
+      "template": "tpl-cas-gijisidai-nested",
+      "manualLock": true,
+      "officialUrl": "https://www.meti.go.jp/shingikai/sankoshin/hoan_shohi/kayaku/index.html",
+      "extract_from_parent_table": true
+    },
+    "meti-2908": {
+      "template": "tpl-cas-gijisidai-nested",
+      "manualLock": true,
+      "officialUrl": "https://www.meti.go.jp/shingikai/sankoshin/hoan_shohi/sangyo_hoan_kihon/index.html",
+      "extract_from_parent_table": true
+    },
+    "meti-2909": {
+      "template": "tpl-cas-gijisidai-nested",
+      "manualLock": true,
+      "officialUrl": "https://www.meti.go.jp/shingikai/sankoshin/hoan_shohi/hydrogen/index.html",
+      "extract_from_parent_table": true
+    },
+    "meti-2910": {
+      "template": "tpl-cas-gijisidai-nested",
+      "manualLock": true,
+      "officialUrl": "https://www.meti.go.jp/shingikai/sankoshin/hoan_shohi/carbon_dioxide/index.html",
+      "extract_from_parent_table": true
+    },
+    "meti-2911": {
+      "template": "tpl-cas-gijisidai-nested",
+      "manualLock": true,
+      "officialUrl": "https://www.meti.go.jp/shingikai/sankoshin/chiteki_zaisan/index.html",
+      "extract_from_parent_table": true
+    },
+    "meti-2912": {
+      "template": "tpl-cas-gijisidai-nested",
+      "manualLock": true,
+      "officialUrl": "https://www.meti.go.jp/shingikai/sankoshin/chiteki_zaisan/eigyo_himitsu/index.html",
+      "extract_from_parent_table": true
+    },
+    "meti-2913": {
+      "template": "tpl-cas-gijisidai-nested",
+      "manualLock": true,
+      "officialUrl": "https://www.meti.go.jp/shingikai/sankoshin/chiteki_zaisan/fusei_kyoso/index.html",
+      "extract_from_parent_table": true
+    },
+    "meti-2914": {
+      "template": "tpl-cas-gijisidai-nested",
+      "manualLock": true,
+      "officialUrl": "https://www.meti.go.jp/shingikai/sankoshin/seicho_senryaku/index.html",
+      "extract_from_parent_table": true
+    },
+    "meti-2915": {
+      "template": "tpl-cas-gijisidai-nested",
+      "manualLock": true,
+      "officialUrl": "https://www.meti.go.jp/shingikai/sankoshin/2050_keizai/index.html",
+      "extract_from_parent_table": true
+    },
     "meti-ax_skill_wg": {
       "subpage_discovery_pattern": "[^\"\\']*(?:\\d{3}\\.html|[\\w_-]+/\\d{3}\\.html)",
       "title_selector": "main h1, #contents h1, h1, .main_title",
@@ -7466,6 +8024,48 @@
       "manualLock": true,
       "official_url": "https://warp.ndl.go.jp/web/20180913000000/www.meti.go.jp/shingikai/yutorishin/index.html",
       "officialUrl": "https://warp.ndl.go.jp/web/20180913000000/www.meti.go.jp/shingikai/yutorishin/index.html"
+    },
+    "mext-3057": {
+      "template": "tpl-cas-gijisidai-nested",
+      "manualLock": true,
+      "officialUrl": "https://www.mext.go.jp/b_menu/shingi/chukyo/chukyo3/kaisai/mext_00157.html",
+      "extract_from_parent_table": true
+    },
+    "mext-3058": {
+      "template": "tpl-cas-gijisidai-nested",
+      "manualLock": true,
+      "officialUrl": "https://www.mext.go.jp/b_menu/shingi/gijyutu/gijyutu2/113/kaisai/mext_00006.html",
+      "extract_from_parent_table": true
+    },
+    "mext-3059": {
+      "template": "tpl-cas-gijisidai-nested",
+      "manualLock": true,
+      "officialUrl": "https://www.mext.go.jp/unesco/001/2014/1347530_00012.htm",
+      "extract_from_parent_table": true
+    },
+    "mext-3060": {
+      "template": "tpl-cas-gijisidai-nested",
+      "manualLock": true,
+      "officialUrl": "https://www.mext.go.jp/b_menu/shingi/gijyutu/gijyutu7/kaisai/mext_00006.html",
+      "extract_from_parent_table": true
+    },
+    "mext-3061": {
+      "template": "tpl-cas-gijisidai-nested",
+      "manualLock": true,
+      "officialUrl": "https://www.mext.go.jp/b_menu/shingi/gijyutu/gijyutu4/053/kaisai/0004_00006.html",
+      "extract_from_parent_table": true
+    },
+    "mext-3062": {
+      "template": "tpl-cas-gijisidai-nested",
+      "manualLock": true,
+      "officialUrl": "https://www.mext.go.jp/b_menu/shingi/chousa/koutou/136/mext_00007.html",
+      "extract_from_parent_table": true
+    },
+    "mext-3063": {
+      "template": "tpl-cas-gijisidai-nested",
+      "manualLock": true,
+      "officialUrl": "https://www.mext.go.jp/b_menu/shingi/gijyutu/gijyutu28/002/kaisai/mext_0005_00001.html",
+      "extract_from_parent_table": true
     },
     "mext-714": {
       "councilId": "mext-714",
@@ -7891,6 +8491,294 @@
       "extract_from_parent_table": true,
       "officialUrl": "https://www.mhlw.go.jp/seisakunitsuite/seisakukaigi/",
       "pdf_selector": "a[href*='.pdf'], a[href*='.PDF']"
+    },
+    "mhlw-2916": {
+      "template": "tpl-cas-gijisidai-nested",
+      "manualLock": true,
+      "officialUrl": "https://www.mhlw.go.jp/stf/newpage_75968.html",
+      "extract_from_parent_table": true
+    },
+    "mhlw-2917": {
+      "template": "tpl-cas-gijisidai-nested",
+      "manualLock": true,
+      "officialUrl": "https://www.mhlw.go.jp/stf/newpage_23508.html",
+      "extract_from_parent_table": true
+    },
+    "mhlw-2968": {
+      "template": "tpl-cas-gijisidai-nested",
+      "manualLock": true,
+      "officialUrl": "https://www.mhlw.go.jp/stf/shingi/other-syokunou_331579.html",
+      "extract_from_parent_table": true
+    },
+    "mhlw-2969": {
+      "template": "tpl-cas-gijisidai-nested",
+      "manualLock": true,
+      "officialUrl": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/kenkou_iryou/index.html",
+      "extract_from_parent_table": true
+    },
+    "mhlw-2970": {
+      "template": "tpl-cas-gijisidai-nested",
+      "manualLock": true,
+      "officialUrl": "https://www.mhlw.go.jp/stf/newpage_76805.html",
+      "extract_from_parent_table": true
+    },
+    "mhlw-2971": {
+      "template": "tpl-cas-gijisidai-nested",
+      "manualLock": true,
+      "officialUrl": "https://www.mhlw.go.jp/stf/shingi2/0000212875_00007.html",
+      "extract_from_parent_table": true
+    },
+    "mhlw-2972": {
+      "template": "tpl-cas-gijisidai-nested",
+      "manualLock": true,
+      "officialUrl": "https://www.mhlw.go.jp/stf/shingi/other-isei_436723_00018.html",
+      "extract_from_parent_table": true
+    },
+    "mhlw-2973": {
+      "template": "tpl-cas-gijisidai-nested",
+      "manualLock": true,
+      "officialUrl": "https://www.mhlw.go.jp/stf/newpage_76843.html",
+      "extract_from_parent_table": true
+    },
+    "mhlw-2974": {
+      "template": "tpl-cas-gijisidai-nested",
+      "manualLock": true,
+      "officialUrl": "https://www.mhlw.go.jp/stf/shingi/other-isei_436723_00021.html",
+      "extract_from_parent_table": true
+    },
+    "mhlw-2975": {
+      "template": "tpl-cas-gijisidai-nested",
+      "manualLock": true,
+      "officialUrl": "https://www.mhlw.go.jp/stf/shingi/other-kenkou_128605.html",
+      "extract_from_parent_table": true
+    },
+    "mhlw-2976": {
+      "template": "tpl-cas-gijisidai-nested",
+      "manualLock": true,
+      "officialUrl": "https://www.mhlw.go.jp/stf/newpage_76739.html",
+      "extract_from_parent_table": true
+    },
+    "mhlw-2977": {
+      "template": "tpl-cas-gijisidai-nested",
+      "manualLock": true,
+      "officialUrl": "https://www.mhlw.go.jp/stf/nenkin_kenkyuukai-siryo02_00166.html",
+      "extract_from_parent_table": true
+    },
+    "mhlw-2978": {
+      "template": "tpl-cas-gijisidai-nested",
+      "manualLock": true,
+      "officialUrl": "https://www.mhlw.go.jp/stf/shingi/other-roudou_128811.html",
+      "extract_from_parent_table": true
+    },
+    "mhlw-2979": {
+      "template": "tpl-cas-gijisidai-nested",
+      "manualLock": true,
+      "officialUrl": "https://www.mhlw.go.jp/stf/shingi/other-roudou_128880.html",
+      "extract_from_parent_table": true
+    },
+    "mhlw-2980": {
+      "template": "tpl-cas-gijisidai-nested",
+      "manualLock": true,
+      "officialUrl": "https://www.mhlw.go.jp/stf/shingi/other-kenkou_128512.html",
+      "extract_from_parent_table": true
+    },
+    "mhlw-2981": {
+      "template": "tpl-cas-gijisidai-nested",
+      "manualLock": true,
+      "officialUrl": "https://www.mhlw.go.jp/stf/shingi/youseikakuho_72181.html",
+      "extract_from_parent_table": true
+    },
+    "mhlw-2982": {
+      "template": "tpl-cas-gijisidai-nested",
+      "manualLock": true,
+      "officialUrl": "https://www.mhlw.go.jp/stf/newpage_76567.html",
+      "extract_from_parent_table": true
+    },
+    "mhlw-2983": {
+      "template": "tpl-cas-gijisidai-nested",
+      "manualLock": true,
+      "officialUrl": "https://www.mhlw.go.jp/stf/newpage_76576.html",
+      "extract_from_parent_table": true
+    },
+    "mhlw-2984": {
+      "template": "tpl-cas-gijisidai-nested",
+      "manualLock": true,
+      "officialUrl": "https://www.mhlw.go.jp/stf/newpage_76584.html",
+      "extract_from_parent_table": true
+    },
+    "mhlw-2985": {
+      "template": "tpl-cas-gijisidai-nested",
+      "manualLock": true,
+      "officialUrl": "https://www.mhlw.go.jp/stf/shingi/other-isei_547700_00003.html",
+      "extract_from_parent_table": true
+    },
+    "mhlw-2986": {
+      "template": "tpl-cas-gijisidai-nested",
+      "manualLock": true,
+      "officialUrl": "https://www.mhlw.go.jp/stf/shingi/0001210262_00104.html",
+      "extract_from_parent_table": true
+    },
+    "mhlw-2987": {
+      "template": "tpl-cas-gijisidai-nested",
+      "manualLock": true,
+      "officialUrl": "https://www.mhlw.go.jp/stf/shingi/newpage_00067.html",
+      "extract_from_parent_table": true
+    },
+    "mhlw-2988": {
+      "template": "tpl-cas-gijisidai-nested",
+      "manualLock": true,
+      "officialUrl": "https://www.mhlw.go.jp/stf/newpage_76512.html",
+      "extract_from_parent_table": true
+    },
+    "mhlw-2989": {
+      "template": "tpl-cas-gijisidai-nested",
+      "manualLock": true,
+      "officialUrl": "https://www.mhlw.go.jp/stf/shingi/shingi-kanen_128247.html",
+      "extract_from_parent_table": true
+    },
+    "mhlw-2990": {
+      "template": "tpl-cas-gijisidai-nested",
+      "manualLock": true,
+      "officialUrl": "https://www.mhlw.go.jp/stf/newpage_76236.html",
+      "extract_from_parent_table": true
+    },
+    "mhlw-2991": {
+      "template": "tpl-cas-gijisidai-nested",
+      "manualLock": true,
+      "officialUrl": "https://www.mhlw.go.jp/stf/shingi/other-hoken_474087_00009.html",
+      "extract_from_parent_table": true
+    },
+    "mhlw-2992": {
+      "template": "tpl-cas-gijisidai-nested",
+      "manualLock": true,
+      "officialUrl": "https://www.mhlw.go.jp/stf/newpage_76368.html",
+      "extract_from_parent_table": true
+    },
+    "mhlw-2993": {
+      "template": "tpl-cas-gijisidai-nested",
+      "manualLock": true,
+      "officialUrl": "https://www.mhlw.go.jp/stf/newpage_74911.html",
+      "extract_from_parent_table": true
+    },
+    "mhlw-2994": {
+      "template": "tpl-cas-gijisidai-nested",
+      "manualLock": true,
+      "officialUrl": "https://www.mhlw.go.jp/stf/newpage_76077.html",
+      "extract_from_parent_table": true
+    },
+    "mhlw-2995": {
+      "template": "tpl-cas-gijisidai-nested",
+      "manualLock": true,
+      "officialUrl": "https://www.mhlw.go.jp/stf/newpage_76155.html",
+      "extract_from_parent_table": true
+    },
+    "mhlw-2996": {
+      "template": "tpl-cas-gijisidai-nested",
+      "manualLock": true,
+      "officialUrl": "https://www.mhlw.go.jp/stf/shingi/newpage_12481.html",
+      "extract_from_parent_table": true
+    },
+    "mhlw-2997": {
+      "template": "tpl-cas-gijisidai-nested",
+      "manualLock": true,
+      "officialUrl": "https://www.mhlw.go.jp/stf/shingi/other-hoken_129195.html",
+      "extract_from_parent_table": true
+    },
+    "mhlw-2998": {
+      "template": "tpl-cas-gijisidai-nested",
+      "manualLock": true,
+      "officialUrl": "https://www.mhlw.go.jp/stf/shingi/hoken_system_wg_00003.html",
+      "extract_from_parent_table": true
+    },
+    "mhlw-2999": {
+      "template": "tpl-cas-gijisidai-nested",
+      "manualLock": true,
+      "officialUrl": "https://www.mhlw.go.jp/stf/newpage_76212.html",
+      "extract_from_parent_table": true
+    },
+    "mhlw-3000": {
+      "template": "tpl-cas-gijisidai-nested",
+      "manualLock": true,
+      "officialUrl": "https://www.mhlw.go.jp/stf/newpage_76210.html",
+      "extract_from_parent_table": true
+    },
+    "mhlw-3001": {
+      "template": "tpl-cas-gijisidai-nested",
+      "manualLock": true,
+      "officialUrl": "https://www.mhlw.go.jp/stf/shingi/0001210262_00103.html",
+      "extract_from_parent_table": true
+    },
+    "mhlw-3002": {
+      "template": "tpl-cas-gijisidai-nested",
+      "manualLock": true,
+      "officialUrl": "https://www.mhlw.go.jp/stf/newpage_76089.html",
+      "extract_from_parent_table": true
+    },
+    "mhlw-3003": {
+      "template": "tpl-cas-gijisidai-nested",
+      "manualLock": true,
+      "officialUrl": "https://www.mhlw.go.jp/stf/shingi/other-engo_496627.html",
+      "extract_from_parent_table": true
+    },
+    "mhlw-3004": {
+      "template": "tpl-cas-gijisidai-nested",
+      "manualLock": true,
+      "officialUrl": "https://www.mhlw.go.jp/stf/newpage_76013.html",
+      "extract_from_parent_table": true
+    },
+    "mhlw-3005": {
+      "template": "tpl-cas-gijisidai-nested",
+      "manualLock": true,
+      "officialUrl": "https://www.mhlw.go.jp/stf/shingi/other-kenkou_128564.html",
+      "extract_from_parent_table": true
+    },
+    "mhlw-3006": {
+      "template": "tpl-cas-gijisidai-nested",
+      "manualLock": true,
+      "officialUrl": "https://www.mhlw.go.jp/stf/shingi/other-kenkou_470796.html",
+      "extract_from_parent_table": true
+    },
+    "mhlw-3007": {
+      "template": "tpl-cas-gijisidai-nested",
+      "manualLock": true,
+      "officialUrl": "https://www.mhlw.go.jp/stf/74hosougu_00004.html",
+      "extract_from_parent_table": true
+    },
+    "mhlw-3008": {
+      "template": "tpl-cas-gijisidai-nested",
+      "manualLock": true,
+      "officialUrl": "https://www.mhlw.go.jp/stf/shingi/other-kousei_311652_00001.html",
+      "extract_from_parent_table": true
+    },
+    "mhlw-3009": {
+      "template": "tpl-cas-gijisidai-nested",
+      "manualLock": true,
+      "officialUrl": "https://www.mhlw.go.jp/stf/newpage_75884.html",
+      "extract_from_parent_table": true
+    },
+    "mhlw-3010": {
+      "template": "tpl-cas-gijisidai-nested",
+      "manualLock": true,
+      "officialUrl": "https://www.mhlw.go.jp/stf/shingi/shingi-Allergy_327078.html",
+      "extract_from_parent_table": true
+    },
+    "mhlw-3011": {
+      "template": "tpl-cas-gijisidai-nested",
+      "manualLock": true,
+      "officialUrl": "https://www.mhlw.go.jp/stf/shingi/other-iyaku_128701.html",
+      "extract_from_parent_table": true
+    },
+    "mhlw-3012": {
+      "template": "tpl-cas-gijisidai-nested",
+      "manualLock": true,
+      "officialUrl": "https://www.mhlw.go.jp/stf/shingi/other-kenkou_128563.html",
+      "extract_from_parent_table": true
+    },
+    "mhlw-3013": {
+      "template": "tpl-cas-gijisidai-nested",
+      "manualLock": true,
+      "officialUrl": "https://www.mhlw.go.jp/stf/shingi/shingi-tingin_127940.html",
+      "extract_from_parent_table": true
     },
     "mhlw-729": {
       "date_regex": "(?:令和|平成)\\d+年\\d+月\\d+日|20\\d{2}年\\d+月\\d+日",
@@ -10282,6 +11170,42 @@
       "manualLock": true,
       "officialUrl": "https://www.soumu.go.jp/main_sosiki/joho_tsusin/policyreports/joho_tsusin/idou/22ghz_fwa.html"
     },
+    "mic-2918": {
+      "template": "tpl-cas-gijisidai-nested",
+      "manualLock": true,
+      "officialUrl": "https://www.soumu.go.jp/main_sosiki/singi/yusei/yusei.html",
+      "extract_from_parent_table": true
+    },
+    "mic-2919": {
+      "template": "tpl-cas-gijisidai-nested",
+      "manualLock": true,
+      "officialUrl": "https://www.soumu.go.jp/main_sosiki/joho_tsusin/policyreports/joho_tsusin/5th_generation/local_5g/02kiban14_04001376.html",
+      "extract_from_parent_table": true
+    },
+    "mic-2920": {
+      "template": "tpl-cas-gijisidai-nested",
+      "manualLock": true,
+      "officialUrl": "https://www.soumu.go.jp/main_sosiki/joho_tsusin/policyreports/joho_tsusin/docs_Broadcast/02ryutsu08_04000621.html",
+      "extract_from_parent_table": true
+    },
+    "mic-2921": {
+      "template": "tpl-cas-gijisidai-nested",
+      "manualLock": true,
+      "officialUrl": "https://www.soumu.go.jp/main_sosiki/joho_tsusin/policyreports/joho_tsusin/housou_seisaku/02ryutsu07_04000599.html",
+      "extract_from_parent_table": true
+    },
+    "mic-3054": {
+      "template": "tpl-cas-gijisidai-nested",
+      "manualLock": true,
+      "officialUrl": "https://www.soumu.go.jp/menu_news/s-news/01kiban14_02000807.html",
+      "extract_from_parent_table": true
+    },
+    "mic-3055": {
+      "template": "tpl-cas-gijisidai-nested",
+      "manualLock": true,
+      "officialUrl": "https://www.soumu.go.jp/menu_news/s-news/01kiban18_01000296.html",
+      "extract_from_parent_table": true
+    },
     "mic-400mhz_saigai_wg": {
       "subpage_discovery_pattern": "/(?:02kiban|02ryutsu|02kousei|\\d+)[^/]*\\.html$",
       "date_regex": "(\\d{4})年\\s*(\\d{1,2})月\\s*(\\d{1,2})日",
@@ -11271,6 +12195,222 @@
       "officialUrl": "https://www.mlit.go.jp/singikai/kensetusingikai_.html",
       "pdf_selector": "a[href*='.pdf'], a[href*='.PDF']"
     },
+    "mlit-2922": {
+      "template": "tpl-cas-gijisidai-nested",
+      "manualLock": true,
+      "officialUrl": "https://www.mlit.go.jp/report/press/house05_hh_001161.html",
+      "extract_from_parent_table": true
+    },
+    "mlit-2923": {
+      "template": "tpl-cas-gijisidai-nested",
+      "manualLock": true,
+      "officialUrl": "https://www.mlit.go.jp/policy/shingikai/s504_roumuhikijun01.html",
+      "extract_from_parent_table": true
+    },
+    "mlit-2924": {
+      "template": "tpl-cas-gijisidai-nested",
+      "manualLock": true,
+      "officialUrl": "https://www.mlit.go.jp/policy/shingikai/s104_kikakumonitoring.html",
+      "extract_from_parent_table": true
+    },
+    "mlit-2925": {
+      "template": "tpl-cas-gijisidai-nested",
+      "manualLock": true,
+      "officialUrl": "https://www.mlit.go.jp/policy/shingikai/s503_kaijyokowankoku01.html",
+      "extract_from_parent_table": true
+    },
+    "mlit-3022": {
+      "template": "tpl-cas-gijisidai-nested",
+      "manualLock": true,
+      "officialUrl": "https://www.mlit.go.jp/report/press/road01_hh_002161.html",
+      "extract_from_parent_table": true
+    },
+    "mlit-3023": {
+      "template": "tpl-cas-gijisidai-nested",
+      "manualLock": true,
+      "officialUrl": "https://www.mlit.go.jp/report/press/kouku05_hh_000248.html",
+      "extract_from_parent_table": true
+    },
+    "mlit-3024": {
+      "template": "tpl-cas-gijisidai-nested",
+      "manualLock": true,
+      "officialUrl": "https://www.mlit.go.jp/report/press/kouku02_hh_000297.html",
+      "extract_from_parent_table": true
+    },
+    "mlit-3025": {
+      "template": "tpl-cas-gijisidai-nested",
+      "manualLock": true,
+      "officialUrl": "https://www.mlit.go.jp/report/press/tochi_fudousan_kensetsugyo13_hh_000001_00365.html",
+      "extract_from_parent_table": true
+    },
+    "mlit-3026": {
+      "template": "tpl-cas-gijisidai-nested",
+      "manualLock": true,
+      "officialUrl": "https://www.mlit.go.jp/report/press/tetsudo09_hh_000264.html",
+      "extract_from_parent_table": true
+    },
+    "mlit-3027": {
+      "template": "tpl-cas-gijisidai-nested",
+      "manualLock": true,
+      "officialUrl": "https://www.mlit.go.jp/report/press/sogo09_hh_000442.html",
+      "extract_from_parent_table": true
+    },
+    "mlit-3028": {
+      "template": "tpl-cas-gijisidai-nested",
+      "manualLock": true,
+      "officialUrl": "https://www.mlit.go.jp/report/press/tokatsu01_hh_001044.html",
+      "extract_from_parent_table": true
+    },
+    "mlit-3029": {
+      "template": "tpl-cas-gijisidai-nested",
+      "manualLock": true,
+      "officialUrl": "https://www.mlit.go.jp/report/press/road01_hh_002157.html",
+      "extract_from_parent_table": true
+    },
+    "mlit-3030": {
+      "template": "tpl-cas-gijisidai-nested",
+      "manualLock": true,
+      "officialUrl": "https://www.mlit.go.jp/report/press/kaiji02_hh_000297.html",
+      "extract_from_parent_table": true
+    },
+    "mlit-3031": {
+      "template": "tpl-cas-gijisidai-nested",
+      "manualLock": true,
+      "officialUrl": "https://www.mlit.go.jp/report/press/road01_hh_002155.html",
+      "extract_from_parent_table": true
+    },
+    "mlit-3032": {
+      "template": "tpl-cas-gijisidai-nested",
+      "manualLock": true,
+      "officialUrl": "https://www.mlit.go.jp/report/press/house05_hh_001156.html",
+      "extract_from_parent_table": true
+    },
+    "mlit-3033": {
+      "template": "tpl-cas-gijisidai-nested",
+      "manualLock": true,
+      "officialUrl": "https://www.mlit.go.jp/report/press/house05_hh_001155.html",
+      "extract_from_parent_table": true
+    },
+    "mlit-3034": {
+      "template": "tpl-cas-gijisidai-nested",
+      "manualLock": true,
+      "officialUrl": "https://www.mlit.go.jp/report/press/sogo11_hh_000097.html",
+      "extract_from_parent_table": true
+    },
+    "mlit-3035": {
+      "template": "tpl-cas-gijisidai-nested",
+      "manualLock": true,
+      "officialUrl": "https://www.mlit.go.jp/report/press/mizukokudo03_hh_001368.html",
+      "extract_from_parent_table": true
+    },
+    "mlit-3036": {
+      "template": "tpl-cas-gijisidai-nested",
+      "manualLock": true,
+      "officialUrl": "https://www.mlit.go.jp/report/press/jidosha04_hh_000369.html",
+      "extract_from_parent_table": true
+    },
+    "mlit-3037": {
+      "template": "tpl-cas-gijisidai-nested",
+      "manualLock": true,
+      "officialUrl": "https://www.mlit.go.jp/report/press/kouku02_hh_000296.html",
+      "extract_from_parent_table": true
+    },
+    "mlit-3038": {
+      "template": "tpl-cas-gijisidai-nested",
+      "manualLock": true,
+      "officialUrl": "https://www.mlit.go.jp/report/press/mizukokudo04_hh_000325.html",
+      "extract_from_parent_table": true
+    },
+    "mlit-3039": {
+      "template": "tpl-cas-gijisidai-nested",
+      "manualLock": true,
+      "officialUrl": "https://www.mlit.go.jp/report/press/toshi09_hh_000144.html",
+      "extract_from_parent_table": true
+    },
+    "mlit-3040": {
+      "template": "tpl-cas-gijisidai-nested",
+      "manualLock": true,
+      "officialUrl": "https://www.mlit.go.jp/report/press/mizukokudo13_hh_000765.html",
+      "extract_from_parent_table": true
+    },
+    "mlit-3041": {
+      "template": "tpl-cas-gijisidai-nested",
+      "manualLock": true,
+      "officialUrl": "https://www.mlit.go.jp/report/press/toshi05_hh_000532.html",
+      "extract_from_parent_table": true
+    },
+    "mlit-3042": {
+      "template": "tpl-cas-gijisidai-nested",
+      "manualLock": true,
+      "officialUrl": "https://www.mlit.go.jp/report/press/port05_hh_000453.html",
+      "extract_from_parent_table": true
+    },
+    "mlit-3043": {
+      "template": "tpl-cas-gijisidai-nested",
+      "manualLock": true,
+      "officialUrl": "https://www.mlit.go.jp/report/press/house03_hh_000284.html",
+      "extract_from_parent_table": true
+    },
+    "mlit-3044": {
+      "template": "tpl-cas-gijisidai-nested",
+      "manualLock": true,
+      "officialUrl": "https://www.mlit.go.jp/report/press/kanbo11_hh_000172.html",
+      "extract_from_parent_table": true
+    },
+    "mlit-3045": {
+      "template": "tpl-cas-gijisidai-nested",
+      "manualLock": true,
+      "officialUrl": "https://www.mlit.go.jp/report/press/house04_hh_001360.html",
+      "extract_from_parent_table": true
+    },
+    "mlit-3046": {
+      "template": "tpl-cas-gijisidai-nested",
+      "manualLock": true,
+      "officialUrl": "http://www.mlit.go.jp/policy/shingikai/s203_taisaku01.html",
+      "extract_from_parent_table": true
+    },
+    "mlit-3047": {
+      "template": "tpl-cas-gijisidai-nested",
+      "manualLock": true,
+      "officialUrl": "https://www.mlit.go.jp/report/press/tetsudo09_hh_000263.html",
+      "extract_from_parent_table": true
+    },
+    "mlit-3048": {
+      "template": "tpl-cas-gijisidai-nested",
+      "manualLock": true,
+      "officialUrl": "https://www.mlit.go.jp/report/press/sabo01_hh_000218.html",
+      "extract_from_parent_table": true
+    },
+    "mlit-3049": {
+      "template": "tpl-cas-gijisidai-nested",
+      "manualLock": true,
+      "officialUrl": "https://www.mlit.go.jp/report/press/house04_hh_001362.html",
+      "extract_from_parent_table": true
+    },
+    "mlit-3050": {
+      "template": "tpl-cas-gijisidai-nested",
+      "manualLock": true,
+      "officialUrl": "https://www.mlit.go.jp/report/press/tetsudo08_hh_000118.html",
+      "extract_from_parent_table": true
+    },
+    "mlit-3051": {
+      "template": "tpl-cas-gijisidai-nested",
+      "manualLock": true,
+      "officialUrl": "https://www.mlit.go.jp/report/press/jidosha09_hh_000366.html",
+      "extract_from_parent_table": true
+    },
+    "mlit-3052": {
+      "template": "tpl-cas-gijisidai-nested",
+      "manualLock": true,
+      "officialUrl": "https://www.mlit.go.jp/report/press/kouku08_hh_000090.html",
+      "extract_from_parent_table": true
+    },
+    "mlit-3053": {
+      "template": "tpl-cas-gijisidai-nested",
+      "manualLock": true,
+      "officialUrl": "https://www.mlit.go.jp/report/press/kouku09_hh_000340.html",
+      "extract_from_parent_table": true
+    },
     "mlit-amami_shinkou": {
       "template": "tpl-general-round-subpage",
       "manualLock": true,
@@ -11808,6 +12948,24 @@
       "officialUrl": "https://www.mod.go.jp/j/policy/agenda/meeting/dangou/index.html",
       "pdf_selector": "a[href*='.pdf'], a[href*='.PDF']"
     },
+    "mod-3108": {
+      "template": "tpl-cas-gijisidai-nested",
+      "manualLock": true,
+      "officialUrl": "https://www.mod.go.jp/j/press/news/2026/09/01b.html",
+      "extract_from_parent_table": true
+    },
+    "mod-3109": {
+      "template": "tpl-cas-gijisidai-nested",
+      "manualLock": true,
+      "officialUrl": "https://www.mod.go.jp/j/press/news/2026/08/21a.html",
+      "extract_from_parent_table": true
+    },
+    "mod-3110": {
+      "template": "tpl-cas-gijisidai-nested",
+      "manualLock": true,
+      "officialUrl": "https://www.mod.go.jp/j/press/news/2026/08/03b.html",
+      "extract_from_parent_table": true
+    },
     "mod-bousan_gijutsu": {
       "template": "tpl-general-round-subpage",
       "manualLock": true,
@@ -12193,6 +13351,30 @@
       "officialUrl": "https://warp.ndl.go.jp/web/20190106000000/www.mof.go.jp/about_mof/councils/shoukenka/index.html",
       "pdf_selector": "a[href*='.pdf'], a[href*='.PDF']"
     },
+    "mof-3018": {
+      "template": "tpl-cas-gijisidai-nested",
+      "manualLock": true,
+      "officialUrl": "https://www.mof.go.jp/about_mof/councils/customs_foreign_exchange/sub-of_customs/proceedings_tokusyu/material/kanb20261019.html",
+      "extract_from_parent_table": true
+    },
+    "mof-3019": {
+      "template": "tpl-cas-gijisidai-nested",
+      "manualLock": true,
+      "officialUrl": "https://www.mof.go.jp/pri/research/conference/china_research_conference/china2026.html",
+      "extract_from_parent_table": true
+    },
+    "mof-3020": {
+      "template": "tpl-cas-gijisidai-nested",
+      "manualLock": true,
+      "officialUrl": "https://www.mof.go.jp/pri/research/conference/fy2025/bunpai.html",
+      "extract_from_parent_table": true
+    },
+    "mof-3021": {
+      "template": "tpl-cas-gijisidai-nested",
+      "manualLock": true,
+      "officialUrl": "https://www.mof.go.jp/about_mof/councils/customs_foreign_exchange/sub-of_customs/proceedings_customs/material/20251003/20251003oshirase1.html",
+      "extract_from_parent_table": true
+    },
     "mof-bop": {
       "rule_id": "rule-mof-bop",
       "subpage_discovery_pattern": "https://www\\.mof\\.go\\.jp/policy/international_policy/councils/bop/outline/.*",
@@ -12483,6 +13665,132 @@
       "officialUrl": "https://www.moj.go.jp/kentoukai_index.html",
       "pdf_selector": "a[href*='.pdf'], a[href*='.PDF']"
     },
+    "moj-3087": {
+      "template": "tpl-cas-gijisidai-nested",
+      "manualLock": true,
+      "officialUrl": "https://www.moj.go.jp/kyousei1/kyousei08_00208.html",
+      "extract_from_parent_table": true
+    },
+    "moj-3088": {
+      "template": "tpl-cas-gijisidai-nested",
+      "manualLock": true,
+      "officialUrl": "https://www.moj.go.jp/kyousei1/_00008.html",
+      "extract_from_parent_table": true
+    },
+    "moj-3089": {
+      "template": "tpl-cas-gijisidai-nested",
+      "manualLock": true,
+      "officialUrl": "https://www.moj.go.jp/kyousei1/kyousei08_00207.html",
+      "extract_from_parent_table": true
+    },
+    "moj-3090": {
+      "template": "tpl-cas-gijisidai-nested",
+      "manualLock": true,
+      "officialUrl": "https://www.moj.go.jp/hisho/seisakuhyouka/hisho05_00090.html",
+      "extract_from_parent_table": true
+    },
+    "moj-3091": {
+      "template": "tpl-cas-gijisidai-nested",
+      "manualLock": true,
+      "officialUrl": "https://www.moj.go.jp/hogo1/soumu/hogo01_00046.html",
+      "extract_from_parent_table": true
+    },
+    "moj-3092": {
+      "template": "tpl-cas-gijisidai-nested",
+      "manualLock": true,
+      "officialUrl": "https://www.moj.go.jp/hisho/kouhou/hisho06_00841.html",
+      "extract_from_parent_table": true
+    },
+    "moj-3093": {
+      "template": "tpl-cas-gijisidai-nested",
+      "manualLock": true,
+      "officialUrl": "https://www.moj.go.jp/shingi1/shingi06100001_00068.html",
+      "extract_from_parent_table": true
+    },
+    "moj-3094": {
+      "template": "tpl-cas-gijisidai-nested",
+      "manualLock": true,
+      "officialUrl": "https://www.moj.go.jp/shingi1/koseki20220926_00001.html",
+      "extract_from_parent_table": true
+    },
+    "moj-3095": {
+      "template": "tpl-cas-gijisidai-nested",
+      "manualLock": true,
+      "officialUrl": "https://www.moj.go.jp/keiji1/keiji07_00026.html",
+      "extract_from_parent_table": true
+    },
+    "moj-3096": {
+      "template": "tpl-cas-gijisidai-nested",
+      "manualLock": true,
+      "officialUrl": "https://www.moj.go.jp/kyousei1/kyousei03_00015.html",
+      "extract_from_parent_table": true
+    },
+    "moj-3097": {
+      "template": "tpl-cas-gijisidai-nested",
+      "manualLock": true,
+      "officialUrl": "https://www.moj.go.jp/keiji1/keiji12_00179.html",
+      "extract_from_parent_table": true
+    },
+    "moj-3098": {
+      "template": "tpl-cas-gijisidai-nested",
+      "manualLock": true,
+      "officialUrl": "https://www.moj.go.jp/hisho/seisakuhyouka/hisho04_00052.html",
+      "extract_from_parent_table": true
+    },
+    "moj-3099": {
+      "template": "tpl-cas-gijisidai-nested",
+      "manualLock": true,
+      "officialUrl": "https://www.moj.go.jp/MINJI/minji06_00044.html",
+      "extract_from_parent_table": true
+    },
+    "moj-3100": {
+      "template": "tpl-cas-gijisidai-nested",
+      "manualLock": true,
+      "officialUrl": "https://www.moj.go.jp/hisho/saihanboushi/hisho04_00029.html",
+      "extract_from_parent_table": true
+    },
+    "moj-3101": {
+      "template": "tpl-cas-gijisidai-nested",
+      "manualLock": true,
+      "officialUrl": "https://www.moj.go.jp/hogo1/soumu/hogo12_00002.html",
+      "extract_from_parent_table": true
+    },
+    "moj-3102": {
+      "template": "tpl-cas-gijisidai-nested",
+      "manualLock": true,
+      "officialUrl": "https://www.moj.go.jp/hisho/seisakuhyouka/hisho05_00053.html",
+      "extract_from_parent_table": true
+    },
+    "moj-3103": {
+      "template": "tpl-cas-gijisidai-nested",
+      "manualLock": true,
+      "officialUrl": "https://www.moj.go.jp/hogo1/kouseihogoshinkou/hogo03_00081.html",
+      "extract_from_parent_table": true
+    },
+    "moj-3104": {
+      "template": "tpl-cas-gijisidai-nested",
+      "manualLock": true,
+      "officialUrl": "https://www.moj.go.jp/housei/gaiben/housei07_00032.html",
+      "extract_from_parent_table": true
+    },
+    "moj-3105": {
+      "template": "tpl-cas-gijisidai-nested",
+      "manualLock": true,
+      "officialUrl": "https://www.moj.go.jp/keiji1/keiji12_00117.html",
+      "extract_from_parent_table": true
+    },
+    "moj-3106": {
+      "template": "tpl-cas-gijisidai-nested",
+      "manualLock": true,
+      "officialUrl": "https://www.moj.go.jp/housei/adr/housei09_00059.html",
+      "extract_from_parent_table": true
+    },
+    "moj-3107": {
+      "template": "tpl-cas-gijisidai-nested",
+      "manualLock": true,
+      "officialUrl": "https://www.moj.go.jp/JINKEN/jinken03_00151.html",
+      "extract_from_parent_table": true
+    },
     "moj-baibaisyun_kento": {
       "ministryQuirk": "法務省 売買春検討会 サブページ巡回",
       "rule_id": "rule-moj-baibaisyun_kento",
@@ -12739,6 +14047,12 @@
       "officialUrl": "https://www.npa.go.jp/bureau/soumu/kentoukai/shiryou.html",
       "pdf_selector": "a[href*='.pdf'], a[href*='.PDF']"
     },
+    "npa-2926": {
+      "template": "tpl-cas-gijisidai-nested",
+      "manualLock": true,
+      "officialUrl": "https://www.npa.go.jp/bureau/safetylife/stalker/index.html",
+      "extract_from_parent_table": true
+    },
     "npa-seisaku_hyoka_kenkyukai": {
       "template": "tpl-cao-zeicho-senmonka",
       "manualLock": true,
@@ -12971,6 +14285,36 @@
       "officialUrl": "https://warp.ndl.go.jp/web/20240306000000/www.rinya.maff.go.jp/j/riyou/jyukyuu/index.html",
       "pdf_selector": "a[href*='.pdf'], a[href*='.PDF']"
     },
+    "rinya-3111": {
+      "template": "tpl-cas-gijisidai-nested",
+      "manualLock": true,
+      "officialUrl": "https://www.rinya.maff.go.jp/j/press/tokuyou/260730.html",
+      "extract_from_parent_table": true
+    },
+    "rinya-3112": {
+      "template": "tpl-cas-gijisidai-nested",
+      "manualLock": true,
+      "officialUrl": "https://www.rinya.maff.go.jp/j/press/gyoumu/260626.html",
+      "extract_from_parent_table": true
+    },
+    "rinya-3113": {
+      "template": "tpl-cas-gijisidai-nested",
+      "manualLock": true,
+      "officialUrl": "https://www.rinya.maff.go.jp/j/press/sin_riyou/251216.html",
+      "extract_from_parent_table": true
+    },
+    "rinya-3114": {
+      "template": "tpl-cas-gijisidai-nested",
+      "manualLock": true,
+      "officialUrl": "https://www.rinya.maff.go.jp/j/press/kikaku/250919.html",
+      "extract_from_parent_table": true
+    },
+    "rinya-3115": {
+      "template": "tpl-cas-gijisidai-nested",
+      "manualLock": true,
+      "officialUrl": "https://www.rinya.maff.go.jp/j/press/ken_sidou/240724.html",
+      "extract_from_parent_table": true
+    },
     "rinya-rinsei_shingikai": {
       "officialUrl": "https://www.rinya.maff.go.jp/j/rinsei/singikai/index.html",
       "template": "tpl-parent-table-direct",
@@ -13063,6 +14407,234 @@
       "pdf_selector": "ul.lnkLst a, ul.linkD a, ul.p-list__link--horizon a, a[href$='.pdf']",
       "extract_from_parent_table": true,
       "officialUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/kenkyu/2003/030509kinyu_tayouka.html"
+    },
+    "smea-2927": {
+      "template": "tpl-cas-gijisidai-nested",
+      "manualLock": true,
+      "officialUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/seichoken/r7_001/001.html",
+      "extract_from_parent_table": true
+    },
+    "smea-2928": {
+      "template": "tpl-cas-gijisidai-nested",
+      "manualLock": true,
+      "officialUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/seichoken/r6_004/004.html",
+      "extract_from_parent_table": true
+    },
+    "smea-2929": {
+      "template": "tpl-cas-gijisidai-nested",
+      "manualLock": true,
+      "officialUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/shikin_junkan/001.html",
+      "extract_from_parent_table": true
+    },
+    "smea-2930": {
+      "template": "tpl-cas-gijisidai-nested",
+      "manualLock": true,
+      "officialUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/local_zebra/004/004.html",
+      "extract_from_parent_table": true
+    },
+    "smea-2931": {
+      "template": "tpl-cas-gijisidai-nested",
+      "manualLock": true,
+      "officialUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/ecosystem/005.html",
+      "extract_from_parent_table": true
+    },
+    "smea-2933": {
+      "template": "tpl-cas-gijisidai-nested",
+      "manualLock": true,
+      "officialUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/kigyo_torihiki/r8_001/001.html",
+      "extract_from_parent_table": true
+    },
+    "smea-2934": {
+      "template": "tpl-cas-gijisidai-nested",
+      "manualLock": true,
+      "officialUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/chizaitorihiki_wg/report/260313report.html",
+      "extract_from_parent_table": true
+    },
+    "smea-2936": {
+      "template": "tpl-cas-gijisidai-nested",
+      "manualLock": true,
+      "officialUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/chizaitorihiki/210226chizaitorihiki.html",
+      "extract_from_parent_table": true
+    },
+    "smea-2938": {
+      "template": "tpl-cas-gijisidai-nested",
+      "manualLock": true,
+      "officialUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/jigyo_kyodo/002.html",
+      "extract_from_parent_table": true
+    },
+    "smea-2939": {
+      "template": "tpl-cas-gijisidai-nested",
+      "manualLock": true,
+      "officialUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/shokibo_jinzai_management/260319/260319.html",
+      "extract_from_parent_table": true
+    },
+    "smea-2940": {
+      "template": "tpl-cas-gijisidai-nested",
+      "manualLock": true,
+      "officialUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/shokibo_jinzai/005.html",
+      "extract_from_parent_table": true
+    },
+    "smea-2941": {
+      "template": "tpl-cas-gijisidai-nested",
+      "manualLock": true,
+      "officialUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/DataRikatsuyou/2019/190311DataRikatsuyou.html",
+      "extract_from_parent_table": true
+    },
+    "smea-2942": {
+      "template": "tpl-cas-gijisidai-nested",
+      "manualLock": true,
+      "officialUrl": "https://www.meti.go.jp/press/2026/05/20260522003/20260522003.html",
+      "extract_from_parent_table": true
+    },
+    "smea-2943": {
+      "template": "tpl-cas-gijisidai-nested",
+      "manualLock": true,
+      "officialUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/shokibo_kaseguchikara/004/004.html",
+      "extract_from_parent_table": true
+    },
+    "smea-2944": {
+      "template": "tpl-cas-gijisidai-nested",
+      "manualLock": true,
+      "officialUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/shokei_ma/001.html",
+      "extract_from_parent_table": true
+    },
+    "smea-2945": {
+      "template": "tpl-cas-gijisidai-nested",
+      "manualLock": true,
+      "officialUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/shinzoku/006.html",
+      "extract_from_parent_table": true
+    },
+    "smea-2946": {
+      "template": "tpl-cas-gijisidai-nested",
+      "manualLock": true,
+      "officialUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/ma_shijou/005.html",
+      "extract_from_parent_table": true
+    },
+    "smea-2947": {
+      "template": "tpl-cas-gijisidai-nested",
+      "manualLock": true,
+      "officialUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/ma_guideline/005.html",
+      "extract_from_parent_table": true
+    },
+    "smea-2948": {
+      "template": "tpl-cas-gijisidai-nested",
+      "manualLock": true,
+      "officialUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/hikitugigl/200228hikitugigl.html",
+      "extract_from_parent_table": true
+    },
+    "smea-2949": {
+      "template": "tpl-cas-gijisidai-nested",
+      "manualLock": true,
+      "officialUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/innovation_produce_suishin/001/001.html",
+      "extract_from_parent_table": true
+    },
+    "smea-2950": {
+      "template": "tpl-cas-gijisidai-nested",
+      "manualLock": true,
+      "officialUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/innovation_producer/003.html",
+      "extract_from_parent_table": true
+    },
+    "smea-2951": {
+      "template": "tpl-cas-gijisidai-nested",
+      "manualLock": true,
+      "officialUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/seicho_innovation/005/005.html",
+      "extract_from_parent_table": true
+    },
+    "smea-2952": {
+      "template": "tpl-cas-gijisidai-nested",
+      "manualLock": true,
+      "officialUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/innovation/005.html",
+      "extract_from_parent_table": true
+    },
+    "smea-2953": {
+      "template": "tpl-cas-gijisidai-nested",
+      "manualLock": true,
+      "officialUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/smartsme/190724smartsme.html",
+      "extract_from_parent_table": true
+    },
+    "smea-2954": {
+      "template": "tpl-cas-gijisidai-nested",
+      "manualLock": true,
+      "officialUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/sbir/191107sbir.html",
+      "extract_from_parent_table": true
+    },
+    "smea-2955": {
+      "template": "tpl-cas-gijisidai-nested",
+      "manualLock": true,
+      "officialUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/bansou/005.html",
+      "extract_from_parent_table": true
+    },
+    "smea-2956": {
+      "template": "tpl-cas-gijisidai-nested",
+      "manualLock": true,
+      "officialUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/kyoujin/210611kyoujin.html",
+      "extract_from_parent_table": true
+    },
+    "smea-2957": {
+      "template": "tpl-cas-gijisidai-nested",
+      "manualLock": true,
+      "officialUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/jigyousyoukei/140724torimatome.html",
+      "extract_from_parent_table": true
+    },
+    "smea-2958": {
+      "template": "tpl-cas-gijisidai-nested",
+      "manualLock": true,
+      "officialUrl": "https://www.meti.go.jp/press/2026/04/20260421002/20260421002.html",
+      "extract_from_parent_table": true
+    },
+    "smea-2959": {
+      "template": "tpl-cas-gijisidai-nested",
+      "manualLock": true,
+      "officialUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/saisei_ma/001.html",
+      "extract_from_parent_table": true
+    },
+    "smea-2960": {
+      "template": "tpl-cas-gijisidai-nested",
+      "manualLock": true,
+      "officialUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/businessmodel_syokoutyukin/007.html",
+      "extract_from_parent_table": true
+    },
+    "smea-2961": {
+      "template": "tpl-cas-gijisidai-nested",
+      "manualLock": true,
+      "officialUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/syokoutyukinkikitaiou/220803report.html",
+      "extract_from_parent_table": true
+    },
+    "smea-2962": {
+      "template": "tpl-cas-gijisidai-nested",
+      "manualLock": true,
+      "officialUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/kinyuedi/170302kinyuedi.html",
+      "extract_from_parent_table": true
+    },
+    "smea-2963": {
+      "template": "tpl-cas-gijisidai-nested",
+      "manualLock": true,
+      "officialUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/chishiki/2012/1204HS.html",
+      "extract_from_parent_table": true
+    },
+    "smea-2964": {
+      "template": "tpl-cas-gijisidai-nested",
+      "manualLock": true,
+      "officialUrl": "https://www.chusho.meti.go.jp/zaimu/kaikei/2010/100930InterimReport.html",
+      "extract_from_parent_table": true
+    },
+    "smea-2965": {
+      "template": "tpl-cas-gijisidai-nested",
+      "manualLock": true,
+      "officialUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/kaikei/100917HS.html",
+      "extract_from_parent_table": true
+    },
+    "smea-2966": {
+      "template": "tpl-cas-gijisidai-nested",
+      "manualLock": true,
+      "officialUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/kaigai/120309HS.html",
+      "extract_from_parent_table": true
+    },
+    "smea-2967": {
+      "template": "tpl-cas-gijisidai-nested",
+      "manualLock": true,
+      "officialUrl": "https://www.chusho.meti.go.jp/koukai/kenkyukai/2010/100528HS.html",
+      "extract_from_parent_table": true
     },
     "smea-keiei_shien_bunkakai": {
       "template": "tpl-general-round-subpage",
