@@ -91,6 +91,10 @@ def export_data(
             ORDER BY id ASC;
         """).fetchall()
 
+        # 最新クロールで新着開催回が追加された会議体IDセット (Drop 76 / 要件1)
+        new_c_rows = cur.execute("SELECT DISTINCT council_id FROM meetings WHERE is_newly_discovered = 1;").fetchall()
+        councils_with_new_meetings = {row["council_id"] for row in new_c_rows}
+
         councils_public = []
         council_locks = []
         for r in c_rows:
@@ -122,6 +126,9 @@ def export_data(
                 c_dict["isClosed"] = True
                 if r["closed_reason"]:
                     c_dict["closedReason"] = r["closed_reason"]
+
+            if cid in councils_with_new_meetings:
+                c_dict["isNewlyDiscovered"] = True
 
             councils_public.append(c_dict)
 
