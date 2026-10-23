@@ -926,3 +926,18 @@ Drop 62 & 63 による SQLite マスターDB化および 2系統エクスポー�
 | **CR-142** | クローラー誤検知防止 | **区分B（純粋回次・日付リンク）の安全バイパス許可機能の実装**<br>`is_pure_session_or_date_title` を新設し、リンクテキストが回次・年号・月日・開催種別のみで構成される正規開催回リンクを親会議体名類似度検証から安全にバイパスして登録・フォーマットを許可 | `admin/crawler.py` | 完了 |
 | **CR-143** | データ整合化・クレンジング | **区分A（明確な非会議ノイズ258件・配付資料1,979件）のマスターDB完全削除 & 同期**<br>マスターDB（`admin/pmhub.db`）からお知らせ・受賞・答申手交・親ポータル目次等の非会議レコード 258 件を完全削除し、`admin/db/export_data.py` で JSON に同期 | `admin/pmhub.db`<br>`docs/data.json`<br>`admin/admin_data.json` | 完了 |
 | **CR-144** | テスト検証 | **統合テストスイート（全15ケース＋単体20種）完全合格検証**<br>`python testing/run_test_suite.py --all-layers` を実行し、全15層テストおよび新設単体テスト（区分Bバイパス検証等）全20種に完全合格することを確認 | `testing/run_test_suite.py`<br>`testing/test_crawler_quality_v2.py`<br>`testing/test_drop49_meeting_id_normalization.py` | 完了 |
+
+<hr>
+
+### 【Drop 76】GitHub Actions による定時自動クロール・新着検知パイプライン構想・運用設計
+
+手動運用で行われていた各府省庁の会議体・新着情報巡回を、GitHub Actions 上で平日定時（毎朝 JST 7:00 等）に完全自動実行し、自律的に最新開催回・配付資料を検知して公開サイト（GitHub Pages）を更新する定時自動クロール基盤の構想・設計を策定。
+SQLite マスターDBが Git 管理外（`.gitignore`）であるアーキテクチャ特性を踏まえ、CI ランナー上で公開用 JSON から一時 SQLite を即時再構築してクロールを実行し、エクスポート $\to$ 統合テスト全件合格 $\to$ 自動 Git Push へと至る「Zero-Storage VM アーキテクチャ」を確立。
+さらに、GitHub 共有 IP からのアクセスによる各省庁サーバーへの負荷増大や WAF/429 遮断を防止するため、配付資料バイナリダウンロードの除外（`--skip-download`）、省庁別直列ディレイ制御、新着ポータル検知（`--from-ministry-news`）とアクティブ会議体差分巡回（`--recent-years 2`）の段階的実行ポリシーを設計した。
+
+| ID | 分類 | 内容 | 対象ファイル | 状態 |
+|:---|:---:|:---|:---|:---:|
+| **CR-145** | ワークフロー設計 | **GitHub Actions ワークフロー定義（定時 cron & 手動 dispatch）の構想策定**<br>平日 JST 7:00（UTC 22:00）の自動定期実行スケジュールおよび、省庁コード（`MINISTRY`）や実行モード（`news_only`, `active_only`, `full`）を指定可能な手動トリガー（`workflow_dispatch`）の入力仕様を策定 | `.github/workflows/scheduled_crawl.yml`<br>`DROPS.md` | 構想・設計完了 |
+| **CR-146** | CI/DB パイプライン設計 | **Zero-Storage VM アーキテクチャ（seed_db $\to$ crawl $\to$ export $\to$ test）の設計**<br>CI ランナー起動時に `docs/data.json` / `admin/admin_data.json` から `seed_db.py` により即時 SQLite マスターを復元し、クロール完了後に `export_data.py` で 2 系統 JSON へ同期する完全可逆パイプラインを確立 | `admin/db/seed_db.py`<br>`admin/db/export_data.py`<br>`admin/crawler.py` | 構想・設計完了 |
+| **CR-147** | 負荷制御・セキュリティ設計 | **省庁 WAF/429 回避・アクセスレートリミット・差分実行ポリシーの策定**<br>CI 上でのバイナリ保存除外（`--skip-download`）によるリポジトリ容量保護、同一省庁直列ディレイ（1.0秒以上）、新着情報高速検知および直近 2 年アクティブ会議体への絞り込みによる短時間・低負荷クロール規約を規定 | `admin/crawler.py`<br>`AGENTS.md` | 構想・設計完了 |
+| **CR-148** | 品質保証・自動 push 設計 | **統合テストスイート（全15ケース）完全合格判定 & 自動コミット・プッシュ規約**<br>クロール完了後に `python testing/run_test_suite.py` を実行し、構文・重複排除・手動ロック保護・康煕部首正規化等に完全合格した場合に限り、差分を自動コミット（`[skip ci]`）して main へ push する安全停止ガードを規定 | `testing/run_test_suite.py`<br>`.github/workflows/scheduled_crawl.yml` | 構想・設計完了 |
