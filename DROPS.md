@@ -1030,3 +1030,61 @@ Drop 62 & 63 による SQLite マスターDB化および 2系統エクスポー�
 #### 4. 次のステップ (Next Steps)
 - 新着開催回に対する PMM（配付資料ローカル資産管理）自動ダウンロードの完了確認およびバッチ同期。
 - `feature/drop76-crawler-new-arrival-filter` ブランチをリモートへ push し、ユーザー確認後に main へのマージを行う。
+
+### Drop 77: 金融庁（FSA）新着情報の網羅的ディスカバリー・登録および新規2会議体のワンストップ統合・DBマテリアル同期強化 (2026-10-24)
+
+#### 1. 背景と課題 (Background & Issues)
+- **ユーザーからの新着情報・開催回登録要請**:
+  金融庁（FSA）の令和8事務年度公表ページ（`r8_news_menu.html` 等）から、企業会計審議会 監査部会第57会議事録、保険制度WG第2回開催案内、ディスクロージャーWG第6会議事録、サステナビリティ情報保証部会第3回開催案内等の新規・更新情報の反映が要請された。
+- **未登録会議体の存在（ディスカバリー網羅性）**:
+  新着情報の精査に伴い、長年開催実績がありながら未登録であった「金融トラブル連絡調整協議会」（全70開催回・資料完備）および2026年9月に新設された「AI時代を見据えたオンチェーン金融フォーラム」の2会議体が特定され、ワンストップ登録が求められた。
+- **SQLiteマスターDBにおける配付資料UPDATE透過性（CR-198）**:
+  手動補正やコンテキスト復元において資料名（`materials.name`）を更新する際、従来の `INSERT OR IGNORE` では同一 `(meeting_id, url)` レコードの資料名変更がスキップされ、ジェネリック資料名検証（CR-111）に不整合が生じる構造的課題が特定された。
+
+#### 2. 変更内容 (Changes Made)
+1. **新規2会議体のワンストップ統合とスクレイピングルール策定**:
+   - **`fsa-kinyu_trouble`（金融トラブル連絡調整協議会）**:
+     親URL `https://www.fsa.go.jp/singi/singi_trouble/index.html` より、2000年の第1回から2026年6月の第70回に至る全70開催回および配付資料・議事録（CR-111適合コンテキスト名付与）を網羅登録。
+     次回巡回用スクレイピングルール（`subpage_discovery_pattern`）を連動登録。
+   - **`fsa-ai_onchain`（AI時代を見据えたオンチェーン金融フォーラム）**:
+     親URL `https://www.fsa.go.jp/singi/ai_onchain/index.html` より、第1回（2026/09/30開催）の資料名簿・説明資料PDFおよび2026/10/19公表の議事録HTMLを登録。スクレイピングルールを連動登録。
+2. **既存会議体・開催回への新着公表情報の網羅的反映**:
+   - `fsa-kigyou_kansa_bukai`（企業会計審議会 監査部会）: 暫定ID `fsa-kigyou_kansa_bukai-20261002-s61` を第57回正式ID **`fsa-kigyou_kansa_bukai-20261002-057`** へ正規化。2026/10/23公表の議事録HTMLを追加。
+   - `fsa-kinyu_hokenseido_wg`（金融審議会 保険制度ワーキング・グループ）: 第2回（2026/10/30開催、ID: **`fsa-kinyu_hokenseido_wg-20261030-002`**）を追加。
+   - `fsa-kinyu_disclosure_wg`（金融審議会 ディスクロージャーワーキング・グループ）: 第6回（2026/09/04開催）に公表議事録HTMLを追加。
+   - `fsa-kigyou_hoshou_bukai`（企業会計審議会 サステナビリティ情報保証部会）: 第2回に公表議事録HTMLを追加、第3回（2026/10/29開催、ID: **`fsa-kigyou_hoshou_bukai-20261029-003`**）を追加。
+   - `fsa-kinyu_seityousikin_wg`（金融審議会 成長企業への資金供給の在り方等に関するWG）: 第1回に公表議事録HTMLを追加、第2回IDを **`fsa-kinyu_seityousikin_wg-20261009-002`** に正規化。
+   - `fsa-kinyu_shingi`（金融審議会 総会・分科会合同会合）: 第57回総会・第45回分科会合同会合を正規化（ID: **`fsa-kinyu_shingi-20260831-057`**）し、公表議事録HTMLを追加。
+   - `fsa-transition_finance`（第14回議事要旨追加）、`fsa-sustainable_finance`（第30会議事録追加）、`fsa-venture_capital`（第4会議事録追加）を反映。
+3. **SQLiteマスターDBにおける配付資料ON CONFLICT UPDATE改善 (CR-198)**:
+   - [`admin/db/db_manager.py`](file:///d:/dev/PMHub/admin/db/db_manager.py): `save_data_to_db` 内の `materials` INSERT処理を、`ON CONFLICT(meeting_id, url) DO UPDATE SET name = excluded.name, type = excluded.type, manual_lock = excluded.manual_lock;` に更新。手動補正やクレンジングによる資料名・属性変更が確実に永続化されるパイプラインを確立。
+4. **金融庁（FSA）巡回クロールの完遂**:
+   - `python admin/crawler.py --ministry FSA --workers 4 --recent-years 2` を実行。全34会議体を完全巡回（成功32件、部分成功2件、失敗0件）。手動ロック（`manualLock`）の非破壊保護を確認。
+
+#### 3. 検証結果 (Verification Results)
+- **テストスイート（`testing/run_test_suite.py --all-layers`）**: 全15ケース完全合格＋単体テスト20種完全合格（所要時間 22.46秒）
+  - ケース1: コード文法チェック (SyntaxError / 括弧 / div) (0.76s) : PASS
+  - ケース2: リンク疎通確認 (追加・変更 URL 179件中 リンク切れ0件) (1.03s) : PASS
+  - ケース3: UI表示機能検証 (DOMコンテナ整合性) (0.00s) : PASS
+  - ケース4: JS実行時クラッシュ・全画面描画検証 (0.72s) : PASS
+  - ケース5: 会議品質・回次整合性・重複排除検証 (0.65s) : PASS
+  - ケース6: 会議体・タイムライン ID完全排他性・整合性 (0.02s) : PASS
+  - ケース7: 康煕部首・特殊文字 NFKC 正規化検証 (0.64s) : PASS
+  - ケース8: プレースホルダー日付（2099/01/01）ゼロ遮断検証 (0.00s) : PASS
+  - ケース9: 管理サーバー API 単体・統合テスト (4.65s) : PASS
+  - ケース10: クローラー手動保護回帰テスト (4.00s) : PASS
+  - ケース11: スクレイピングルール整合性検証 (0.45s) : PASS
+  - ケース12: ホスト分散・ゴミデータ不変性検証 (0.37s) : PASS
+  - ケース13: 省庁親ポータルURL設定・探索網羅性検証 (0.49s) : PASS
+  - ケース14: アクティブ会議体フィルタリング・廃止管理検証 (0.92s) : PASS
+  - ケース15: SQLiteマスターDB整合性 & 2系統JSON完全同期検証 (0.78s) : PASS
+  - 【単体関数検証 (Unit Tests)】: 全20種完全合格（6.58s）: PASS
+- **データ規模**:
+  - 会議体マスター: 1,549 件（新規 2件追加: `fsa-kinyu_trouble`, `fsa-ai_onchain`）
+  - 開催回データ: 19,534 件（新規 76件純増）
+  - 配付資料データ: 111,992 件（新規 190件追加）
+  - スクレイピングルール: 1,549 件（100%完全適用・孤立0件）
+
+#### 4. 次のステップ (Next Steps)
+- 新規追加された開催回・配付資料に対する PMM（配付資料ローカル資産管理）ダウンロードの差分同期。
+- `feature/fsa-news-and-councils` ブランチをリモートへ push し、ユーザー確認後に main へのマージ待機。
