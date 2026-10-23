@@ -1,5 +1,5 @@
 {
-  "lastCrawlTime": "2026/10/24 07:17",
+  "lastCrawlTime": "2026/10/24 07:19",
   "scrapingRuleTemplates": {
     "tpl-cas-gijisidai-nested": {
       "date_regex": "(令和\\d+年\\d+月\\d+日|平成\\d+年\\d+月\\d+日|\\d{4}年\\d{1,2}月\\d{1,2}日)",
@@ -16365,7 +16365,7 @@
       "manualLockActive": false
     },
     "cas-ebola_taisaku": {
-      "lastAttempt": "2026-10-12 09:28:05",
+      "lastAttempt": "2026-10-24 07:18:13",
       "result": "success",
       "resultReason": "PDF配付資料 4 件・開催日 1 件を正常取得",
       "extractionMethod": "rule",
@@ -16376,7 +16376,7 @@
       "manualLockActive": true
     },
     "cas-enerugi_kiban": {
-      "lastAttempt": "2026-10-12 09:28:20",
+      "lastAttempt": "2026-10-24 07:18:18",
       "result": "success",
       "resultReason": "開催回 4 件を検出（資料・日付完備）",
       "extractionMethod": "rule",
@@ -16387,7 +16387,7 @@
       "manualLockActive": false
     },
     "cas-ful": {
-      "lastAttempt": "2026-10-12 09:28:39",
+      "lastAttempt": "2026-10-24 07:18:37",
       "result": "success",
       "resultReason": "開催回 100 件を検出（資料・日付完備）",
       "extractionMethod": "rule",
@@ -16409,7 +16409,7 @@
       "manualLockActive": false
     },
     "cas-gaikokujinzai_kanjikai": {
-      "lastAttempt": "2026-10-12 09:28:35",
+      "lastAttempt": "2026-10-24 07:18:31",
       "result": "success",
       "resultReason": "開催回 1 件を検出（資料・日付完備）",
       "extractionMethod": "rule",
@@ -16420,7 +16420,7 @@
       "manualLockActive": false
     },
     "cas-gambletou_izonsho_honbu": {
-      "lastAttempt": "2026-10-12 09:28:51",
+      "lastAttempt": "2026-10-24 07:18:40",
       "result": "success",
       "resultReason": "開催回 7 件を検出（資料・日付完備）",
       "extractionMethod": "rule",
@@ -16431,7 +16431,7 @@
       "manualLockActive": false
     },
     "cas-genshiryoku_bousai": {
-      "lastAttempt": "2026-10-12 09:29:13",
+      "lastAttempt": "2026-10-24 07:19:00",
       "result": "success",
       "resultReason": "開催回 70 件を検出（資料・日付完備）",
       "extractionMethod": "rule",
@@ -16442,7 +16442,7 @@
       "manualLockActive": true
     },
     "cas-genshiryoku_kakuryo_kaigi": {
-      "lastAttempt": "2026-10-12 09:29:04",
+      "lastAttempt": "2026-10-24 07:18:47",
       "result": "success",
       "resultReason": "開催回 15 件を検出（資料・日付完備）",
       "extractionMethod": "rule",
@@ -16453,7 +16453,7 @@
       "manualLockActive": false
     },
     "cas-genshiryoku_kankeifusho_renrakukaigi": {
-      "lastAttempt": "2026-10-12 09:29:07",
+      "lastAttempt": "2026-10-24 07:18:58",
       "result": "success",
       "resultReason": "PDF配付資料 12 件・開催日 13 件を正常取得",
       "extractionMethod": "rule",
@@ -16464,7 +16464,7 @@
       "manualLockActive": true
     },
     "cas-grassroots_tf": {
-      "lastAttempt": "2026-10-12 09:29:21",
+      "lastAttempt": "2026-10-24 07:19:21",
       "result": "success",
       "resultReason": "開催回 11 件を検出（資料・日付完備）",
       "extractionMethod": "rule",
@@ -16475,7 +16475,7 @@
       "manualLockActive": false
     },
     "cas-gx_jikkou": {
-      "lastAttempt": "2026-10-12 09:29:51",
+      "lastAttempt": "2026-10-24 07:19:30",
       "result": "success",
       "resultReason": "開催回 22 件を検出（資料・日付完備）",
       "extractionMethod": "rule",
@@ -23306,7 +23306,7 @@
       "manualLockActive": false
     },
     "mhlw-836": {
-      "lastAttempt": "2026-10-12 09:28:02",
+      "lastAttempt": "2026-10-24 07:18:18",
       "result": "success",
       "resultReason": "開催回 50 件を検出（資料・日付完備）",
       "extractionMethod": "rule",
@@ -23317,7 +23317,7 @@
       "manualLockActive": false
     },
     "mhlw-837": {
-      "lastAttempt": "2026-10-12 09:28:04",
+      "lastAttempt": "2026-10-24 07:18:17",
       "result": "success",
       "resultReason": "開催回 5 件を検出（資料・日付完備）",
       "extractionMethod": "rule",
@@ -23328,7 +23328,7 @@
       "manualLockActive": false
     },
     "mhlw-838": {
-      "lastAttempt": "2026-10-12 09:28:16",
+      "lastAttempt": "2026-10-24 07:18:27",
       "result": "success",
       "resultReason": "開催回 35 件を検出（資料・日付完備）",
       "extractionMethod": "rule",
@@ -23339,7 +23339,7 @@
       "manualLockActive": false
     },
     "mhlw-839": {
-      "lastAttempt": "2026-10-12 09:28:27",
+      "lastAttempt": "2026-10-24 07:18:28",
       "result": "success",
       "resultReason": "開催回 23 件を検出（資料・日付完備）",
       "extractionMethod": "rule",
@@ -23559,7 +23559,7 @@
       "manualLockActive": false
     },
     "mhlw-859": {
-      "lastAttempt": "2026-10-12 09:28:34",
+      "lastAttempt": "2026-10-24 07:18:33",
       "result": "success",
       "resultReason": "開催回 4 件を検出（資料・日付完備）",
       "extractionMethod": "rule",
@@ -23581,7 +23581,7 @@
       "manualLockActive": false
     },
     "mhlw-861": {
-      "lastAttempt": "2026-10-12 09:28:48",
+      "lastAttempt": "2026-10-24 07:18:42",
       "result": "success",
       "resultReason": "開催回 26 件を検出（資料・日付完備）",
       "extractionMethod": "rule",
@@ -23658,7 +23658,7 @@
       "manualLockActive": false
     },
     "mhlw-868": {
-      "lastAttempt": "2026-10-12 09:28:54",
+      "lastAttempt": "2026-10-24 07:18:44",
       "result": "success",
       "resultReason": "開催回 12 件を検出（資料・日付完備）",
       "extractionMethod": "rule",
@@ -23680,7 +23680,7 @@
       "manualLockActive": false
     },
     "mhlw-870": {
-      "lastAttempt": "2026-10-12 09:29:05",
+      "lastAttempt": "2026-10-24 07:18:57",
       "result": "success",
       "resultReason": "開催回 26 件を検出（資料・日付完備）",
       "extractionMethod": "rule",
@@ -23691,7 +23691,7 @@
       "manualLockActive": false
     },
     "mhlw-871": {
-      "lastAttempt": "2026-10-12 09:29:21",
+      "lastAttempt": "2026-10-24 07:19:21",
       "result": "success",
       "resultReason": "開催回 20 件を検出（資料・日付完備）",
       "extractionMethod": "rule",
@@ -25142,6 +25142,17 @@
       "consecutiveFailures": 0,
       "manualLockActive": true
     },
+    "mhlw-hansen_kazoku_hoshou": {
+      "lastAttempt": "2026-10-24 07:19:23",
+      "result": "success",
+      "resultReason": "開催回 80 件を検出（資料・日付完備）",
+      "extractionMethod": "rule",
+      "materialsCount": 86,
+      "datesCount": 5,
+      "failureReason": "",
+      "consecutiveFailures": 0,
+      "manualLockActive": true
+    },
     "mhlw-hikouchi_jidou_gyakutai_bunseki_wg": {
       "lastAttempt": "2026-09-16 09:15:22",
       "result": "success",
@@ -25187,9 +25198,9 @@
       "manualLockActive": true
     },
     "mhlw-hosho_fukushi": {
-      "lastAttempt": "2026-10-12 09:29:43",
+      "lastAttempt": "2026-10-24 07:19:24",
       "result": "success",
-      "resultReason": "開催回 54 件を検出（資料・日付完備）",
+      "resultReason": "開催回 57 件を検出（資料・日付完備）",
       "extractionMethod": "rule",
       "materialsCount": 107,
       "datesCount": 5,
@@ -25209,7 +25220,7 @@
       "manualLockActive": true
     },
     "mhlw-hosho_jidoukan": {
-      "lastAttempt": "2026-10-12 09:29:05",
+      "lastAttempt": "2026-10-24 07:18:41",
       "result": "success",
       "resultReason": "開催回 3 件を検出（資料・日付完備）",
       "extractionMethod": "rule",
@@ -25231,7 +25242,7 @@
       "manualLockActive": true
     },
     "mhlw-hosho_shikinunyou": {
-      "lastAttempt": "2026-10-12 09:29:00",
+      "lastAttempt": "2026-10-24 07:18:36",
       "result": "success",
       "resultReason": "開催回 31 件を検出（資料・日付完備）",
       "extractionMethod": "rule",
@@ -25242,7 +25253,7 @@
       "manualLockActive": true
     },
     "mhlw-hosho_shippei": {
-      "lastAttempt": "2026-10-12 09:28:58",
+      "lastAttempt": "2026-10-24 07:18:34",
       "result": "success",
       "resultReason": "開催回 8 件を検出（資料・日付完備）",
       "extractionMethod": "rule",
@@ -25253,7 +25264,7 @@
       "manualLockActive": true
     },
     "mhlw-hosho_shouni": {
-      "lastAttempt": "2026-10-12 09:28:44",
+      "lastAttempt": "2026-10-24 07:18:26",
       "result": "success",
       "resultReason": "開催回 49 件を検出（資料・日付完備）",
       "extractionMethod": "rule",
@@ -25264,7 +25275,7 @@
       "manualLockActive": true
     },
     "mhlw-hosho_toukei": {
-      "lastAttempt": "2026-10-12 09:28:28",
+      "lastAttempt": "2026-10-24 07:18:19",
       "result": "success",
       "resultReason": "開催回 7 件を検出（資料・日付完備）",
       "extractionMethod": "rule",
@@ -25297,7 +25308,7 @@
       "manualLockActive": false
     },
     "mhlw-ideco_fukyuu_tokubetsu_kaigi": {
-      "lastAttempt": "2026-10-12 09:28:22",
+      "lastAttempt": "2026-10-24 07:18:15",
       "result": "success",
       "resultReason": "開催回 1 件を検出（資料・日付完備）",
       "extractionMethod": "rule",
@@ -25308,7 +25319,7 @@
       "manualLockActive": true
     },
     "mhlw-iryou_bunkakai": {
-      "lastAttempt": "2026-10-12 09:28:24",
+      "lastAttempt": "2026-10-24 07:18:13",
       "result": "success",
       "resultReason": "開催回 43 件を検出（資料・日付完備）",
       "extractionMethod": "rule",
@@ -25319,11 +25330,11 @@
       "manualLockActive": false
     },
     "mhlw-ishiwata_higai_shinsa": {
-      "lastAttempt": "2026-10-12 09:28:50",
+      "lastAttempt": "2026-10-24 07:18:19",
       "result": "success",
-      "resultReason": "開催回 37 件を検出（資料・日付完備）",
+      "resultReason": "開催回 38 件を検出（資料・日付完備）",
       "extractionMethod": "rule",
-      "materialsCount": 40,
+      "materialsCount": 41,
       "datesCount": 5,
       "failureReason": "",
       "consecutiveFailures": 0,
@@ -26749,7 +26760,7 @@
       "manualLockActive": false
     },
     "mic-nhk_haishin_wg": {
-      "lastAttempt": "2026-10-12 09:28:03",
+      "lastAttempt": "2026-10-24 07:18:02",
       "result": "success",
       "resultReason": "開催回 1 件を検出（資料・日付完備）",
       "extractionMethod": "rule",
@@ -26760,7 +26771,7 @@
       "manualLockActive": true
     },
     "mic-ninsho_sagyo_wg": {
-      "lastAttempt": "2026-10-12 09:28:08",
+      "lastAttempt": "2026-10-24 07:18:16",
       "result": "success",
       "resultReason": "開催回 1 件を検出（資料・日付完備）",
       "extractionMethod": "rule",
@@ -26771,7 +26782,7 @@
       "manualLockActive": true
     },
     "mic-onkyu_shinsa02": {
-      "lastAttempt": "2026-10-12 09:28:22",
+      "lastAttempt": "2026-10-24 07:18:19",
       "result": "success",
       "resultReason": "開催回 1 件を検出（資料・日付完備）",
       "extractionMethod": "rule",
@@ -26782,18 +26793,18 @@
       "manualLockActive": true
     },
     "mic-radiomic_wg": {
-      "lastAttempt": "2026-10-12 09:28:29",
+      "lastAttempt": "2026-10-24 07:18:26",
       "result": "success",
-      "resultReason": "開催回 2 件を検出（資料・日付完備）",
+      "resultReason": "開催回 1 件を検出（資料・日付完備）",
       "extractionMethod": "rule",
-      "materialsCount": 9,
+      "materialsCount": 5,
       "datesCount": 5,
       "failureReason": "",
       "consecutiveFailures": 0,
       "manualLockActive": true
     },
     "mic-rikujo_musen_iinkai": {
-      "lastAttempt": "2026-10-12 09:28:39",
+      "lastAttempt": "2026-10-24 07:18:31",
       "result": "success",
       "resultReason": "開催回 1 件を検出（資料・日付完備）",
       "extractionMethod": "rule",
@@ -26804,7 +26815,7 @@
       "manualLockActive": true
     },
     "mic-seiji_shikin_tekiseika": {
-      "lastAttempt": "2026-10-12 09:28:52",
+      "lastAttempt": "2026-10-24 07:18:37",
       "result": "success",
       "resultReason": "PDF配付資料 1 件・開催日 7 件を正常取得",
       "extractionMethod": "rule",
@@ -26837,7 +26848,7 @@
       "manualLockActive": false
     },
     "mic-seisaku_hyouka_singikai": {
-      "lastAttempt": "2026-10-12 09:28:58",
+      "lastAttempt": "2026-10-24 07:18:41",
       "result": "success",
       "resultReason": "配付資料 3 件・開催日 8 件を正常取得",
       "extractionMethod": "rule",
@@ -26859,7 +26870,7 @@
       "manualLockActive": true
     },
     "mic-setsuzoku_iinkai": {
-      "lastAttempt": "2026-10-12 09:29:06",
+      "lastAttempt": "2026-10-24 07:18:48",
       "result": "success",
       "resultReason": "開催回 2 件を検出（資料・日付完備）",
       "extractionMethod": "rule",
@@ -26870,7 +26881,7 @@
       "manualLockActive": true
     },
     "mic-setsuzoku_seisaku_iinkai": {
-      "lastAttempt": "2026-10-12 09:29:14",
+      "lastAttempt": "2026-10-24 07:19:01",
       "result": "success",
       "resultReason": "開催回 1 件を検出（資料・日付完備）",
       "extractionMethod": "rule",
@@ -26881,7 +26892,7 @@
       "manualLockActive": true
     },
     "mic-shakai_jissou_wg": {
-      "lastAttempt": "2026-10-12 09:29:44",
+      "lastAttempt": "2026-10-24 07:19:26",
       "result": "success",
       "resultReason": "開催回 1 件を検出（資料・日付完備）",
       "extractionMethod": "rule",

@@ -12155,7 +12155,8 @@
       "name": "ハンセン病元患者家族補償金認定審査会",
       "manualLock": true,
       "officialUrl": "https://www.mhlw.go.jp/stf/newpage_09427.html",
-      "pastYearCount": 0
+      "pastYearCount": 80,
+      "isNewlyDiscovered": true
     },
     {
       "id": "mhlw-hikouchi_jidou_gyakutai_bunseki_wg",
@@ -12316,7 +12317,8 @@
       "category": "COMMITTEE",
       "name": "特定石綿被害建設業務労働者等認定審査会専門委員会",
       "officialUrl": "https://www.mhlw.go.jp/stf/newpage_26379.html",
-      "pastYearCount": 9
+      "pastYearCount": 38,
+      "isNewlyDiscovered": true
     },
     {
       "id": "mhlw-iyakuhin_gyousei_monitoring",
@@ -16993,6 +16995,21 @@
       ]
     },
     {
+      "id": "mhlw-hansen_kazoku_hoshou-20261022-080",
+      "councilId": "mhlw-hansen_kazoku_hoshou",
+      "name": "第80回 ハンセン病元患者家族補償金認定審査会",
+      "date": "2026/10/22",
+      "officialUrl": "https://www.mhlw.go.jp/stf/newpage_09427.html",
+      "isNewlyDiscovered": true,
+      "discoveredAt": "2026/10/24 07:19",
+      "materials": [
+        {
+          "name": "議事要旨",
+          "url": "https://www.mhlw.go.jp/content/10900000/001762441.pdf"
+        }
+      ]
+    },
+    {
       "id": "mic-ipnet_iinkai-20261022-096",
       "councilId": "mic-ipnet_iinkai",
       "name": "情報通信審議会 情報通信技術分科会 IPネットワーク設備委員会(第96回)",
@@ -17478,6 +17495,16 @@
           "url": "https://www.mhlw.go.jp/content/10900000/001759248.pdf"
         }
       ]
+    },
+    {
+      "id": "mhlw-ishiwata_higai_shinsa-20261015-038",
+      "councilId": "mhlw-ishiwata_higai_shinsa",
+      "name": "第38回 特定石綿被害建設業務労働者等認定審査会専門委員会",
+      "date": "2026/10/15",
+      "officialUrl": "https://www.mhlw.go.jp/stf/newpage_76765.html",
+      "isNewlyDiscovered": true,
+      "discoveredAt": "2026/10/24 07:18",
+      "materials": []
     },
     {
       "id": "mic-musen_jujisha_wg-20261015-002",
@@ -686695,5 +686722,5 @@
     "MATERIALS": "配布資料",
     "REPORT": "答申・報告書"
   },
-  "lastCrawlTime": "2026/10/24 07:17"
+  "lastCrawlTime": "2026/10/24 07:19"
 }
