@@ -3097,5 +3097,26 @@
     "officialUrl": "https://www.moj.go.jp/kyotocongress2020/news/20210226_01.html",
     "rejectedAt": "2026-10-17",
     "reason": "AI判定: 単発イベント告知ニュースページのため却下"
+  },
+  {
+    "id": "aca-1735",
+    "name": "文化審議会・懇談会等",
+    "ministry": "ACA",
+    "url": "https://www.bunka.go.jp/seisaku/bunkashingikai/index.html",
+    "reason": "親組織一覧ポータルのため除外（個別部会等へ分離・整理）"
+  },
+  {
+    "id": "cas-1895",
+    "name": "大雪に関する関係閣僚会議",
+    "ministry": "CAS",
+    "url": "https://www.kantei.go.jp/jp/pages/heavysnow20260121.html",
+    "reason": "特設ニュース型ページのため除外（独立会議体ではない）"
+  },
+  {
+    "id": "moj-2735",
+    "name": "国際連合犯罪防止刑事司法会議(京都コングレス)",
+    "ministry": "MOJ",
+    "url": "https://www.moj.go.jp/shingikai_index.html",
+    "reason": "国際会議であるため除外（国内政策会議体マスター対象外）"
   }
 ]
