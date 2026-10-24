@@ -1511,3 +1511,55 @@ flowchart LR
 > **次回着手予定**: **【Drop 83】**
 > - 対象: **Track [LLM-Assist]（フェーズ 2）** または **Track [Automation]**
 > - 内容: 開催回クロールにおける 3段階ファネル・異常検知バッチLLM抽出フォールバック、または GitHub Actions クローラー（3階層マルチスケジュール）& ローカルDB同期エンジンの配備
+
+---
+
+### Drop 80: 税制調査会系列 6会議体の中間HTML配付資料の完全排除 & 末端PDF一括展開・再発防止ガード新設 (2026-10-25)
+
+#### 1. 背景と課題 (Background & Issues)
+- **中間HTMLリンク混入の是正と横展開確認の徹底 (`GLOBAL_RULES.md` §6)**:
+  「経済社会のデジタル化への対応と納税環境整備に関する専門家会合」において、第1回〜第4回の配付資料として「会議資料」という名称で個別資料ページ（HTML）が登録されていた問題を受け、同親組織（税制調査会）配下の全専門家会合および総会を網羅走査（横展開確認）。
+  以下の 6会議体・計15開催回で、個別資料ページ内に末端PDF（次第、各省庁説明資料、意見書等）が存在するにもかかわらず、中間HTMLリンクが登録されていたり、資料が存在しない非公開/起草会合に不要な中間リンクが残存していた問題を特定し、一括是正。
+  1. `cao-zeicho_digital_noukan_senmonka`（デジタル化・納税環境整備専門家会合: 第1回〜第4回）
+  2. `cao-zeicho_life_senmonka`（ライフコースに中立な税制に関する専門家会合: 第1回〜第3回）
+  3. `cao-zeicho_sozoku_zoyo_senmonka`（相続税・贈与税に関する専門家会合: 第1回〜第3回）
+  4. `cao-zeicho_koku_han_kaigou`（国税犯則調査手続の見直しに関する会合: 第1回〜第2回）
+  5. `cao-zeicho_rougo_shisan_senmonka`（老後の資産形成等に関する専門家会合: 第1回）
+  6. `cao-zei_cho`（税制調査会総会: 第5回、第6回）
+
+#### 2. 変更内容 (Changes Made)
+1. **中間HTMLリンク「会議資料」の完全削除 & 末端PDF資料の一括展開・登録 (CR-209)**:
+   - 各個別資料ページを巡回し、実際の配付資料（次第、財務省・国税庁・総務省等の説明資料、特別委員意見書等の末端PDF）を直接取得して `manualLock: true` で登録。
+   - 非公開・起草会合（相続税贈与税第3回、国税犯則第2回）の不要な中間HTMLリンクを削除し実態に即したデータへクレンジング。
+   - 資料名からファイル形式・サイズ表記（`(PDF形式:98KB)` 等）をクレンジング。
+2. **各開催回公式URL（`officialUrl`）の個別資料ページ適正化**:
+   - 会議体トップや全体目次ではなく、各回の配付資料個別ページ（`7digital-noukan4kai.html`, `7zen5kai.html` 等）へと更新。
+3. **中間HTML配付資料の再発防止ガード新設 (CR-210)**:
+   - [`testing/test_drop80_intermediate_material_guard.py`](file:///d:/dev/PMHub/testing/test_drop80_intermediate_material_guard.py): 税制調査会系列 6会議体における中間HTML資料ゼロ保証および `is_intermediate_html_material()` 判定ロジックを検証する単体テスト（U23）を新設。
+   - [`testing/test_no_duplicate_meetings.py`](file:///d:/dev/PMHub/testing/test_no_duplicate_meetings.py): 統合テスト第3層（ケース5）に、対象会議体で中間HTML配付資料を検知して遮断するバリデーションガードを恒久配備。
+   - [`testing/run_unit_tests.py`](file:///d:/dev/PMHub/testing/run_unit_tests.py): U23 単体テストをランナーに連動登録。
+4. **SQLiteマスターDB & 2系統JSONアトミック完全同期**:
+   - `admin/db/export_data.py` により同期（1,703 councils, 19,997 meetings）。
+
+#### 3. 検証結果 (Verification Results)
+- **統合テストスイート（`testing/run_test_suite.py --all-layers`）**:
+  - 全15ケース完全合格＋単体テスト23種完全合格（所要時間 39.98秒）
+  - ケース1: コード文法チェック (SyntaxError / 括弧 / div 0件) : PASS
+  - ケース2: リンク疎通確認 (新規追加・変更URL 58件 全件 200 OK 検証済) : PASS
+  - ケース3: UI表示機能検証 (DOMコンテナ整合性) : PASS
+  - ケース4: JS実行時クラッシュ・全画面描画検証 : PASS
+  - ケース5: 会議品質・回次整合性・重複排除・中間HTML配付資料遮断検証 : PASS
+  - ケース6: 会議体・タイムライン ID完全排他性・整合性 (1,703会議体一致) : PASS
+  - ケース7: 康煕部首・特殊文字 NFKC 正規化検証 : PASS
+  - ケース8: プレースホルダー日付（2099/01/01）ゼロ遮断検証 : PASS
+  - ケース9: 管理サーバー API 単体・統合テスト (全11テスト合格) : PASS
+  - ケース10: クローラー手動保護回帰テスト (manualLock 非破壊性合格) : PASS
+  - ケース11: スクレイピングルール整合性検証 : PASS
+  - ケース12: ホスト分散・ゴミデータ不変性検証 : PASS
+  - ケース13: 省庁親ポータルURL設定・探索網羅性検証 : PASS
+  - ケース14: アクティブ会議体フィルタリング・廃止管理検証 : PASS
+  - ケース15: SQLiteマスターDB整合性 & 2系統JSON完全同期検証 : PASS
+  - 【単体関数検証 (Unit Tests)】: 全23種類完全合格（U23 中間HTML資料遮断ガード含む） : PASS
+
+#### 4. 次のステップ (Next Steps)
+- `feature/drop80-expand-terminal-materials-and-guard` ブランチをリモートへ push し、ユーザー確認・指示を待機（ユーザー承認後に main へマージ）。

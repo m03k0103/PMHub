@@ -399,6 +399,29 @@ def run_test(data=None):
                     if (n2.endswith(n1) and not n2.startswith(n1)) or (n1.endswith(n2) and not n1.startswith(n2)):
                         similar_name_errors.append(f"Short suffix council name duplicate in {m_code}: '{c1['name']}' ({c1['id']}) vs '{c2['name']}' ({c2['id']})")
 
+
+    # Drop 80 Guard: Intermediate HTML material container check
+    intermediate_guard_councils = {
+        'cao-zeicho_digital_noukan_senmonka',
+        'cao-zeicho_life_senmonka',
+        'cao-zeicho_sozoku_zoyo_senmonka',
+        'cao-zeicho_koku_han_kaigou',
+        'cao-zeicho_rougo_shisan_senmonka',
+        'cao-zei_cho'
+    }
+    intermediate_violations = []
+    generic_names = {'会議資料', '配付資料', '配布資料', '資料一覧', '配付資料一覧', '配布資料一覧', '会議資料一覧', '提出資料 (HTML)', '配付資料 (HTML)'}
+    for m in meetings:
+        if m.get('councilId') in intermediate_guard_councils:
+            for mat in m.get('materials', []):
+                u = mat.get('url', '').lower()
+                n = mat.get('name', '').strip()
+                if (u.endswith('.html') or u.endswith('.htm') or '/' in u) and not u.endswith('.pdf'):
+                    if n in generic_names:
+                        intermediate_violations.append(f"{m['id']}: material '{n}' -> {mat.get('url')}")
+    if intermediate_violations:
+        errors.append(f"Intermediate HTML materials found in guarded councils ({len(intermediate_violations)} cases): {intermediate_violations[:5]}")
+
     if similar_name_errors:
         errors.append(f"Duplicate/similar council names found within same ministry ({len(similar_name_errors)} cases): {similar_name_errors[:5]}")
 
