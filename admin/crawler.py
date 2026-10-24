@@ -904,6 +904,10 @@ _MIN_HOST_INTERVAL = _DEFAULT_HOST_INTERVAL  # 後方互換用
 
 # CR-49: ドメイン別アクセス間隔テーブル（WAF保護サイト等へのアクセス平滑化）
 HOST_RATE_LIMITS = {
+    'www.cas.go.jp': 1.0,   # CAS/Kantei: AWS WAF 保護サイト
+    'cas.go.jp': 1.0,
+    'www.kantei.go.jp': 1.0,
+    'kantei.go.jp': 1.0,
     'www.meti.go.jp': 1.5,  # METI/ANRE: AWS WAF / CloudFront Bot Control 保護のため 1.5 秒を確保
     'meti.go.jp': 1.5,
 }
@@ -1026,11 +1030,19 @@ def fetch_url(url, timeout=12, max_retries=1, retry_count=0):
             raw_bytes = response.read()
             html = decode_html_bytes(raw_bytes, content_type)
             if is_waf_challenge(html, response.status):
-                # CR-48: HTTP 202 チャレンジまたは一時スロットリング時はクールダウン待機してリトライ
+                # CR-48, Drop 78: HTTP 202 チャレンジまたは一時スロットリング時はクールダウン待機してリトライ
                 if response.status == 202 and retry_count < max_retries:
-                    safe_emit_log(f"  -> ⚠️ [WAF 202 CHALLENGE] {url}: 一時スロットリング検知。待機(2.5s)後に自動リトライします...")
-                    time.sleep(2.5)
-                    return fetch_url(url, timeout=timeout, max_retries=max_retries, retry_count=retry_count + 1)
+                    backoff_wait = 2.5 * (retry_count + 1)
+                    safe_emit_log(f"  -> ⚠️ [WAF 202 CHALLENGE] {url}: 一時スロットリング検知。待機({backoff_wait:.1f}s)後に自動リトライします...")
+                    time.sleep(backoff_wait)
+                    retry_res = fetch_url(url, timeout=timeout, max_retries=max_retries, retry_count=retry_count + 1)
+                    if retry_res:
+                        return retry_res
+                # Drop 78: WAF 202 チャレンジまたは JS チャレンジ画面検知時の curl フォールバック試行
+                curl_html = _fetch_with_curl(url, timeout=timeout)
+                if curl_html:
+                    safe_emit_log(f"  -> 🟢 [WAF CURL FALLBACK] {url}: curl.exe による WAF チャレンジ突破に成功しました")
+                    return curl_html
                 safe_emit_log(f"  -> 🔴 [WAF CHALLENGE BLOCKED] {url}: AWS/Cloudflare WAF challenge screen detected (Status: {response.status})")
                 return None
             return html
@@ -2889,7 +2901,7 @@ def sync_new_meetings_from_crawl(data, target, scraped_item):
         # 親会議体への下部組織・専門家会合・ポータル自己参照の誤混入ガード（例: 税制調査会(cao-zei_cho)）
         if council_id == "cao-zei_cho":
             clean_sub = sub_url.rstrip('/')
-            clean_tgt = (official_url or target_url or "").rstrip('/')
+            clean_tgt = (target_url or "").rstrip('/')
             if clean_sub == clean_tgt or "tax commission" in sub_title.lower() or "tax commission" in (sub_page_title or "").lower():
                 continue
             if any(k in sub_url.lower() for k in ['/ebpm/', '/life/', '/digital-noukan/', '/noukan/', '/sozoku-zoyo/', '/renketsu/', '/rougo/', '/koku-han/', '/discussion']) or "専門家会合" in sub_title or "ディスカッショングループ" in sub_title:
