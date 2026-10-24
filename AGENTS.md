@@ -4,7 +4,7 @@
 
 > [!IMPORTANT]
 > **共通行動規範・開発運用ルールの遵守**:
-> コミュニケーション規範、Windows文字コード、**Implementation Plan の事前承認**、**コマンドの自律実行**、**Git ブランチ運用・即時リモート push**、**DROPS.md の標準4大構成**、**データ修正時の2大責務（再発防止ガード＋横展開確認）**、**Webスクレイピング原則（標準ヘッダー・0.35秒以上レートリミット・文字化け自動判定）**、**客観的表現の徹底** 等の共通規範は、すべて [`GLOBAL_RULES.md`](file:///C:/Users/m03k0/.gemini/antigravity/rules/GLOBAL_RULES.md) に定義されています。エージェントはこれらを完全に遵守してください。
+> コミュニケーション規範、Windows文字コード、**Implementation Plan の事前承認**、**コマンドの自律実行**、**Git ブランチ運用・即時リモート push**、**DROPS.md の標準4大構成**、**データ修正時の2大責務（再発防止ガード＋横展開確認）**、**アトミック保存原則**、**客観的表現の徹底** 等の共通規範は、すべて [`GLOBAL_RULES.md`](file:///C:/Users/m03k0/.gemini/antigravity/rules/GLOBAL_RULES.md) に定義されています。エージェントはこれらを完全に遵守してください（本リポジトリ固有の2系統同期およびスクレイピング・アクセス制御原則は本ドキュメント §4・§5 を遵守すること）。
 
 ---
 
@@ -122,3 +122,26 @@
 7. **管理画面（`admin/admin_dashboard.html`）のローカル専用・単一マスターDB原則（二重管理の禁止）**
    - 管理画面は `admin/server.py`（`http://localhost:8000/admin/admin_dashboard.html`）経由のローカル専用として運用し、一般公開サイト（`docs/index.html`）には管理画面へのリンクを掲載しない。
    - データ管理は SQLite マスターDB（`admin/pmhub.db`）に完全一元化し、公開用 JSON の手動インポート/エクスポートや `localStorage` キャッシュによる二重管理を行わない。
+   - **マスターDBと2系統配信ファイル（`data.json` / `data.js`）の同期・アトミック書き込み原則**:
+     - サーバーレス環境でのローカル `file://` 直開き（ブラウザの CORS 制約回避）と HTTP 配信（GitHub Pages 等）の両立を目的として、`docs/data.json` とペアで window オブジェクトへ代入する `.js` ラッパー（`docs/data.js`）を出力する構成において、派生ファイル側のみを手動・個別スクリプトで書き換えてはならない。
+     - 必ずマスターDB（`admin/pmhub.db`）を更新した上で正規のエクスポート処理（`admin/db/export_data.py`）を実行し、両者を同一トランザクションで同時更新すること。
+     - 公開 JSON および `.js` ラッパーを更新する際は、直接上書きによる破損を防ぐため、一時ファイルへ書き出した上で `os.replace()` によりアトミックに置換し、Windows 環境における一時的なハンドルロック（`[WinError 5]` / `[WinError 32]`）に対処するための短時間スリープ付きリトライ処理を組み込むこと。
+
+---
+
+## 5. Webスクレイピング・通信・アクセス制御原則
+
+1. **標準ブラウザヘッダー（User-Agent）の設定（必須）**
+   - Webスクレイピング、情報取得クローラー、およびURL疎通確認を行う際は、Akamai / Cloudflare / WAF等のアクセス遮断（403 Forbidden）を回避するため、非標準・カスタムBot用User-Agentを避け、常に最新の標準ブラウザ同等のヘッダー（Chrome現行世代相当）および関連ヘッダーを必ず設定すること：
+     - `User-Agent`: `Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36`
+     - `Accept`: `text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8`
+     - `Accept-Language`: `ja,en-US;q=0.9,en;q=0.8`
+     - `Sec-Ch-Ua`, `Sec-Ch-Ua-Mobile`, `Sec-Ch-Ua-Platform`, `Upgrade-Insecure-Requests`
+     - `User-Agent` と `Sec-Ch-Ua` のメジャーバージョン番号は必ず一致させること。
+
+2. **サーバー負荷軽減およびブロック防止のためのレートリミット・同一ホスト直列化（0.35秒以上のスロットリング・必須）**
+   - 行政機関や外部Webサーバーに対するスクレイピング・巡回・URL検証時は、対象サーバーへの過度な負荷軽減およびアクセス遮断（429 Too Many Requests / 403 Forbidden）を防止するため、短時間の連続大量アクセスを厳禁とし、**リクエスト間に必ず最低 0.35 秒以上（0.35〜1.0 秒程度）のスリープ（レートリミット / スロットリング）を設けること**。
+   - `ThreadPoolExecutor` 等で並列クローラー・ダウンローダーを実装する際は、**同一ホスト（または同一省庁）に対するリクエストが複数スレッドで同時実行されないようホスト単位で直列化（またはホスト別ロック・キューで排他制御）**し、ホスト単位でのリクエスト間隔（0.35秒以上）を確実に保証すること。
+
+3. **文字化け防止とエンコーディング自動判定**
+   - 日本語サイト（行政・公共機関等を含む）のスクレイピング・HTML取得時は、`Shift_JIS` / `CP932` / `EUC-JP` / `UTF-8` のエンコーディング判定を厳格に行い、文字化けを防止すること。レスポンスの HTTP ヘッダー、HTML の `<meta charset>`、およびバイト列判定（`charset-normalizer` / `chardet` 等）を組み合わせて正しくデコードすること。
