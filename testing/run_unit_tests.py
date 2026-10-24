@@ -240,6 +240,12 @@ UNIT_TEST_REGISTRY = {
         "name": "PMMローカル資料ステータス永続保護・CASCADE破壊防止単体テスト (test_drop82_pmm_preservation.py)",
         "description": "seed_db事前退避&復元, save_data_to_db非破壊ON CONFLICT, CASCADE DELETE遮断",
         "runner": lambda: _run_py_class("test_drop82_pmm_preservation", "TestPmmPreservation")
+    },
+    "u_intermediate_guard": {
+        "id": "U23",
+        "name": "中間HTML配付資料混入遮断 & 末端PDF展開完全性単体テスト (test_drop80_intermediate_material_guard.py)",
+        "description": "税制調査会等における中間HTMLリンクゼロ保証, 末端PDF抽出, 配付資料名クレンジング, 中間HTML判定ロジック検証",
+        "runner": lambda: _run_py_class("test_drop80_intermediate_material_guard", "TestDrop80IntermediateMaterialGuard")
     }
 }
 
