@@ -487,15 +487,6 @@
       "pastYearCount": 0
     },
     {
-      "id": "aca-1735",
-      "ministry": "ACA",
-      "category": "STUDY",
-      "name": "文化審議会・懇談会等",
-      "manualLock": true,
-      "officialUrl": "https://www.bunka.go.jp/seisaku/bunkashingikai/index.html",
-      "pastYearCount": 1
-    },
-    {
       "id": "aca-186",
       "ministry": "ACA",
       "category": "SECTION",
@@ -2592,15 +2583,6 @@
       "officialUrl": "https://www.cao.go.jp/zei-cho/gijiroku/sozoku-zoyo/index.html",
       "description": "資産移転の時期に中立的な税制の構築や高齢化社会における富の再配分・相続税・贈与税のあり方を議論する専門家会合。",
       "pastYearCount": 0
-    },
-    {
-      "id": "cas-1895",
-      "ministry": "CAS",
-      "category": "COUNCIL",
-      "name": "大雪に関する関係閣僚会議",
-      "manualLock": true,
-      "officialUrl": "https://www.kantei.go.jp/jp/pages/heavysnow20260121.html",
-      "pastYearCount": 1
     },
     {
       "id": "cas-2027_hakurankai",
@@ -15053,7 +15035,7 @@
       "category": "SUBCOMMITTEE",
       "name": "国家公務員共済組合分科会",
       "manualLock": true,
-      "officialUrl": "https://www.mof.go.jp/about_mof/councils/fiscal_system_council/sub-of_kkr/index.html",
+      "officialUrl": "https://www.mof.go.jp/about_mof/councils/fiscal_system_council/sub-of_kkr/proceedings/index.html",
       "pastYearCount": 1
     },
     {
@@ -15628,15 +15610,6 @@
       "pastYearCount": 0
     },
     {
-      "id": "moj-2735",
-      "ministry": "MOJ",
-      "category": "COUNCIL",
-      "name": "国際連合犯罪防止刑事司法会議(京都コングレス)",
-      "manualLock": true,
-      "officialUrl": "https://www.moj.go.jp/shingikai_index.html",
-      "pastYearCount": 0
-    },
-    {
       "id": "moj-2742",
       "ministry": "MOJ",
       "category": "STUDY",
@@ -16011,7 +15984,7 @@
       "category": "PANEL",
       "name": "警察庁政策評価研究会",
       "manualLock": true,
-      "officialUrl": "https://www.npa.go.jp/policies/council/index.html",
+      "officialUrl": "https://www.npa.go.jp/policies/evaluation/kenkyuukai.html",
       "description": "警察行政の政策評価、警察活動の事後評価・目標達成度検証、有識者からの意見聴取・改善提言を審議。",
       "pastYearCount": 0
     },
@@ -43104,6 +43077,26 @@
         {
           "name": "議事録",
           "url": "https://www.soumu.go.jp/main_content/001089530.pdf"
+        }
+      ]
+    },
+    {
+      "id": "npa-seisaku_hyoka_kenkyukai-20260702-043",
+      "councilId": "npa-seisaku_hyoka_kenkyukai",
+      "name": "第43回 警察庁政策評価研究会",
+      "date": "2026/07/02",
+      "manualLock": true,
+      "officialUrl": "https://www.npa.go.jp/policies/evaluation/kenkyuukai.html",
+      "materials": [
+        {
+          "name": "議事録",
+          "url": "https://www.npa.go.jp/policies/evaluation/06kenkyuukai/43/r8_kenkyukai_gijiroku.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "意見聴取要旨",
+          "url": "https://www.npa.go.jp/policies/evaluation/06kenkyuukai/43/r8_43_ikenyoushi.pdf",
+          "manualLock": true
         }
       ]
     },
@@ -70980,20 +70973,6 @@
       ]
     },
     {
-      "id": "aca-1735-20260331-001",
-      "councilId": "aca-1735",
-      "name": "文化審議会",
-      "date": "2026/03/31",
-      "manualLock": true,
-      "officialUrl": "https://www.bunka.go.jp/seisaku/bunkashingikai/index.html",
-      "materials": [
-        {
-          "name": "文化審議会令及び運営規則",
-          "url": "https://www.bunka.go.jp/seisaku/bunkashingikai/index.html"
-        }
-      ]
-    },
-    {
       "id": "cao-218-20260331-001",
       "councilId": "cao-218",
       "name": "宇宙政策委員会",
@@ -98155,34 +98134,6 @@
       ]
     },
     {
-      "id": "cas-1895-20260101-001",
-      "councilId": "cas-1895",
-      "name": "大雪関係閣僚会議",
-      "date": "2026/01/01",
-      "manualLock": true,
-      "officialUrl": "https://www.kantei.go.jp/jp/pages/heavysnow20260121.html",
-      "materials": [
-        {
-          "name": "大雪関係閣僚会議 被害状況及び政府対応方針",
-          "url": "https://www.kantei.go.jp/jp/pages/heavysnow20260121.html"
-        }
-      ]
-    },
-    {
-      "id": "cas-299-20260101-001",
-      "councilId": "cas-299",
-      "name": "アフリカ豚熱関係閣僚会議",
-      "date": "2026/01/01",
-      "manualLock": true,
-      "officialUrl": "https://www.cas.go.jp/jp/seisaku/africa-butanetsu/index.html",
-      "materials": [
-        {
-          "name": "アフリカ豚熱関係閣僚会議 設置要綱及び対応方針",
-          "url": "https://www.cas.go.jp/jp/seisaku/africa-butanetsu/index.html"
-        }
-      ]
-    },
-    {
       "id": "cas-318-20260101-001",
       "councilId": "cas-318",
       "name": "口蹄疫対策関係閣僚会議",
@@ -111627,36 +111578,73 @@
       ]
     },
     {
-      "id": "mof-1131-20251117-001",
+      "id": "mof-1131-20251117-006",
       "councilId": "mof-1131",
-      "name": "第1回 国家公務員共済組合分科会",
+      "name": "第6回 国家公務員共済組合分科会",
       "date": "2025/11/17",
       "manualLock": true,
       "officialUrl": "https://www.mof.go.jp/about_mof/councils/fiscal_system_council/sub-of_kkr/proceedings/index.html",
       "materials": [
         {
-          "name": "20240521zaiseia.html",
-          "url": "https://www.mof.go.jp/about_mof/councils/fiscal_system_council/sub-of_fiscal_system/proceedings/material/20240521zaiseia.html"
+          "name": "分科会長の選任、分科会長代理の指名",
+          "url": "https://www.mof.go.jp/about_mof/councils/fiscal_system_council/sub-of_kkr/proceedings/material/kyosai20251117-1.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "令和６年度業務概況書（概要版）",
+          "url": "https://www.mof.go.jp/about_mof/councils/fiscal_system_council/sub-of_kkr/proceedings/material/kyosai20251117-2-1.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "アセットオーナー・プリンシプルの取組方針の進捗状況等について",
+          "url": "https://www.mof.go.jp/about_mof/councils/fiscal_system_council/sub-of_kkr/proceedings/material/kyosai20251117-2-2.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "厚生年金保険法第七十九条の八第二項に基づく国家公務員共済組合連合会にかかる管理積立金の管理及び運用の状況についての評価の結果（案）概要",
+          "url": "https://www.mof.go.jp/about_mof/councils/fiscal_system_council/sub-of_kkr/proceedings/material/kyosai20251117-3.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "厚生年金保険法第七十九条の八第二項に基づく国家公務員共済組合連合会にかかる管理積立金の管理及び運用の状況についての評価の結果　概要※審議後一部修正（表紙、P2の黄色ハイライト箇所）",
+          "url": "https://www.mof.go.jp/about_mof/councils/fiscal_system_council/sub-of_kkr/proceedings/material/kyosai20251117-3syusei.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "国家公務員共済組合制度について",
+          "url": "https://www.mof.go.jp/about_mof/councils/fiscal_system_council/sub-of_kkr/proceedings/material/20251117sanko1.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "令和６年度業務概況書（厚生年金保険給付積立金",
+          "url": "https://www.mof.go.jp/about_mof/councils/fiscal_system_council/sub-of_kkr/proceedings/material/20251117sanko2-1.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "令和６年度業務概況書（退職等年金給付積立金）",
+          "url": "https://www.mof.go.jp/about_mof/councils/fiscal_system_council/sub-of_kkr/proceedings/material/20251117sanko2-2.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "令和６年度業務概況書（経過的長期給付積立金）",
+          "url": "https://www.mof.go.jp/about_mof/councils/fiscal_system_council/sub-of_kkr/proceedings/material/20251117sanko2-3.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "厚生年金保険法第七十九条の八第二項に基づく国家公務員共済組合連合会にかかる管理積立金の管理及び運用の状況についての評価の結果（案）",
+          "url": "https://www.mof.go.jp/about_mof/councils/fiscal_system_council/sub-of_kkr/proceedings/material/kyosai20251117sanko3.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "厚生年金保険法第七十九条の八第二項に基づく国家公務員共済組合連合会にかかる管理積立金の管理及び運用の状況についての評価の結果※審議後一部修正（表紙、P2、P3、P21の黄色ハイライト箇所）",
+          "url": "https://www.mof.go.jp/about_mof/councils/fiscal_system_council/sub-of_kkr/proceedings/material/kyosai20251117sanko3syusei.pdf",
+          "manualLock": true
         },
         {
           "name": "議事録",
-          "url": "https://www.mof.go.jp/about_mof/councils/fiscal_system_council/sub-of_kkr/proceedings/kyosaigijiroku20251117.html"
-        },
-        {
-          "name": "議事録",
-          "url": "https://www.mof.go.jp/about_mof/councils/fiscal_system_council/sub-of_kkr/proceedings/kyosaigijiroku20241127.html"
-        },
-        {
-          "name": "議事録",
-          "url": "https://www.mof.go.jp/about_mof/councils/fiscal_system_council/sub-of_kkr/proceedings/kyosaigijiroku20231204.html"
-        },
-        {
-          "name": "議事録",
-          "url": "https://www.mof.go.jp/about_mof/councils/fiscal_system_council/sub-of_kkr/proceedings/kyosaigijiroku20221125.html"
-        },
-        {
-          "name": "議事録",
-          "url": "https://www.mof.go.jp/about_mof/councils/fiscal_system_council/sub-of_kkr/proceedings/kyosaigijiroku20211201.html"
+          "url": "https://www.mof.go.jp/about_mof/councils/fiscal_system_council/sub-of_kkr/proceedings/kyosaigijiroku20251117.html",
+          "type": "HTML",
+          "manualLock": true
         }
       ]
     },
@@ -135050,23 +135038,18 @@
       "councilId": "npa-seisaku_hyoka_kenkyukai",
       "name": "第42回 警察庁政策評価研究会",
       "date": "2025/07/09",
-      "officialUrl": "https://www.npa.go.jp/policies/council/index.html",
-      "summary": "第42回研究会が開催され、令和6年度警察行政における政策評価施策の実施状況、有識者意見聴取要旨および議事録が公表された。",
-      "tags": [
-        "警察庁",
-        "政策評価",
-        "第42回",
-        "意見聴取要旨",
-        "議事録"
-      ],
+      "manualLock": true,
+      "officialUrl": "https://www.npa.go.jp/policies/evaluation/kenkyuukai.html",
       "materials": [
         {
-          "name": "第42回 議事録 (PDF)",
-          "url": "https://www.npa.go.jp/policies/evaluation/06kenkyuukai/42/r7_kenkyukai_gijiroku.pdf"
+          "name": "議事録",
+          "url": "https://www.npa.go.jp/policies/evaluation/06kenkyuukai/42/r7_kenkyukai_gijiroku.pdf",
+          "manualLock": true
         },
         {
-          "name": "意見聴取要旨 (PDF)",
-          "url": "https://www.npa.go.jp/policies/evaluation/06kenkyuukai/r7_42_ikenyoushi.pdf"
+          "name": "意見聴取要旨",
+          "url": "https://www.npa.go.jp/policies/evaluation/06kenkyuukai/r7_42_ikenyoushi.pdf",
+          "manualLock": true
         }
       ]
     },
@@ -176747,6 +176730,62 @@
       ]
     },
     {
+      "id": "mof-1131-20241127-005",
+      "councilId": "mof-1131",
+      "name": "第5回 国家公務員共済組合分科会",
+      "date": "2024/11/27",
+      "manualLock": true,
+      "officialUrl": "https://www.mof.go.jp/about_mof/councils/fiscal_system_council/sub-of_kkr/proceedings/index.html",
+      "materials": [
+        {
+          "name": "令和５年度業務概況書（概要版）(PDF:760KB)",
+          "url": "https://www.mof.go.jp/about_mof/councils/fiscal_system_council/sub-of_kkr/proceedings/material/kyosai20241127-1.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "厚生年金保険法第七十九条の八第二項に基づく国家公務員共済組合連合会にかかる管理積立金の管理及び運用の状況についての評価の結果（案）概要(PDF:188KB)",
+          "url": "https://www.mof.go.jp/about_mof/councils/fiscal_system_council/sub-of_kkr/proceedings/material/kyosai20241127-2-1.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "アセットオーナーをめぐる議論の状況(PDF:2644KB)",
+          "url": "https://www.mof.go.jp/about_mof/councils/fiscal_system_council/sub-of_kkr/proceedings/material/kyosai20241127-2-2.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "令和５年度業務概況書（厚生年金保険給付積立金）(PDF:1777KB)",
+          "url": "https://www.mof.go.jp/about_mof/councils/fiscal_system_council/sub-of_kkr/proceedings/material/kyosai20241127sanko1-1.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "令和５年度業務概況書（退職等年金給付積立金）(PDF:363KB)",
+          "url": "https://www.mof.go.jp/about_mof/councils/fiscal_system_council/sub-of_kkr/proceedings/material/kyosai20241127sanko1-2.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "令和５年度業務概況書（経過的長期給付積立金）(PDF:301KB)",
+          "url": "https://www.mof.go.jp/about_mof/councils/fiscal_system_council/sub-of_kkr/proceedings/material/kyosai20241127sanko1-3.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "厚生年金保険法第七十九条の八第二項に基づく国家公務員共済組合連合会にかかる管理積立金の管理及び運用の状況についての評価の結果（案）(PDF:906KB)",
+          "url": "https://www.mof.go.jp/about_mof/councils/fiscal_system_council/sub-of_kkr/proceedings/material/kyosai20241127sanko2.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "国家公務員共済組合制度について(PDF:322KB)",
+          "url": "https://www.mof.go.jp/about_mof/councils/fiscal_system_council/sub-of_kkr/proceedings/material/kyosai20241127sanko3.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "議事録",
+          "url": "https://www.mof.go.jp/about_mof/councils/fiscal_system_council/sub-of_kkr/proceedings/kyosaigijiroku20241127.html",
+          "type": "HTML",
+          "manualLock": true
+        }
+      ]
+    },
+    {
       "id": "mof-kokusai_toushika-20241127-095",
       "councilId": "mof-kokusai_toushika",
       "name": "第95回 国債投資家懇談会",
@@ -197379,23 +197418,18 @@
       "councilId": "npa-seisaku_hyoka_kenkyukai",
       "name": "第41回 警察庁政策評価研究会",
       "date": "2024/07/09",
-      "officialUrl": "https://www.npa.go.jp/policies/council/index.html",
-      "summary": "第41回研究会が開催され、令和5年度政策評価結果のレビューおよび有識者による意見聴取要旨、議事録がとりまとめられた。",
-      "tags": [
-        "警察庁",
-        "政策評価",
-        "第41回",
-        "意見聴取要旨",
-        "議事録"
-      ],
+      "manualLock": true,
+      "officialUrl": "https://www.npa.go.jp/policies/evaluation/kenkyuukai.html",
       "materials": [
         {
-          "name": "第41回 議事録 (PDF)",
-          "url": "https://www.npa.go.jp/policies/evaluation/06kenkyuukai/r6_kenkyukai_gijiroku.pdf"
+          "name": "議事録",
+          "url": "https://www.npa.go.jp/policies/evaluation/06kenkyuukai/r6_kenkyukai_gijiroku.pdf",
+          "manualLock": true
         },
         {
-          "name": "意見聴取要旨 (PDF)",
-          "url": "https://www.npa.go.jp/policies/evaluation/06kenkyuukai/41/R6_41_ikenyoushi.pdf"
+          "name": "意見聴取要旨",
+          "url": "https://www.npa.go.jp/policies/evaluation/06kenkyuukai/41/R6_41_ikenyoushi.pdf",
+          "manualLock": true
         }
       ]
     },
@@ -233469,6 +233503,82 @@
       ]
     },
     {
+      "id": "mof-1131-20231204-004",
+      "councilId": "mof-1131",
+      "name": "第4回 国家公務員共済組合分科会",
+      "date": "2023/12/04",
+      "manualLock": true,
+      "officialUrl": "https://www.mof.go.jp/about_mof/councils/fiscal_system_council/sub-of_kkr/proceedings/index.html",
+      "materials": [
+        {
+          "name": "分科会長の選任、分科会長代理の指名(PDF:416KB)",
+          "url": "https://www.mof.go.jp/about_mof/councils/fiscal_system_council/sub-of_kkr/proceedings/material/kyosai20231204-1.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "令和４年度業務概況書（概要版）(PDF:763KB)",
+          "url": "https://www.mof.go.jp/about_mof/councils/fiscal_system_council/sub-of_kkr/proceedings/material/kyosai20231204-2.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "厚生年金保険法第七十九条の八第二項に基づく国家公務員共済組合連合会にかかる管理積立金の管理及び運用の状況についての評価の結果（案）概要(PDF:215KB)",
+          "url": "https://www.mof.go.jp/about_mof/councils/fiscal_system_council/sub-of_kkr/proceedings/material/kyosai20231204-3.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "厚生年金保険法第七十九条の八第二項に基づく国家公務員共済組合連合会にかかる管理積立金の管理及び運用の状況についての評価の結果　概要(PDF:214KB)",
+          "url": "https://www.mof.go.jp/about_mof/councils/fiscal_system_council/sub-of_kkr/proceedings/material/kyosai20231204-3r.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "ＥＳＧに関する取組み状況(PDF:439KB)",
+          "url": "https://www.mof.go.jp/about_mof/councils/fiscal_system_council/sub-of_kkr/proceedings/material/kyosai20231204-4-1.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "ＥＳＧ投資について(PDF:2718KB)",
+          "url": "https://www.mof.go.jp/about_mof/councils/fiscal_system_council/sub-of_kkr/proceedings/material/kyosai20231204-4-2.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "国家公務員共済組合制度について(PDF:461KB)",
+          "url": "https://www.mof.go.jp/about_mof/councils/fiscal_system_council/sub-of_kkr/proceedings/material/kyosai20231204sanko1.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "令和４年度業務概況書（厚生年金保険給付積立金）(PDF:1244KB)",
+          "url": "https://www.mof.go.jp/about_mof/councils/fiscal_system_council/sub-of_kkr/proceedings/material/kyosai20231204sanko2.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "令和４年度業務概況書（退職等年金給付積立金）(PDF:598KB)",
+          "url": "https://www.mof.go.jp/about_mof/councils/fiscal_system_council/sub-of_kkr/proceedings/material/kyosai20231204sanko3.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "令和４年度業務概況書（経過的長期給付積立金）(PDF:556KB)",
+          "url": "https://www.mof.go.jp/about_mof/councils/fiscal_system_council/sub-of_kkr/proceedings/material/kyosai20231204sanko4.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "厚生年金保険法第七十九条の八第二項に基づく国家公務員共済組合連合会にかかる管理積立金の管理及び運用の状況についての評価の結果（案）(PDF:1383KB)",
+          "url": "https://www.mof.go.jp/about_mof/councils/fiscal_system_council/sub-of_kkr/proceedings/material/kyosai20231204sanko5.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "厚生年金保険法第七十九条の八第二項に基づく国家公務員共済組合連合会にかかる管理積立金の管理及び運用の状況についての評価の結果(PDF:1361KB)",
+          "url": "https://www.mof.go.jp/about_mof/councils/fiscal_system_council/sub-of_kkr/proceedings/material/kyosai20231204sanko5r.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "議事録",
+          "url": "https://www.mof.go.jp/about_mof/councils/fiscal_system_council/sub-of_kkr/proceedings/kyosaigijiroku20231204.html",
+          "type": "HTML",
+          "manualLock": true
+        }
+      ]
+    },
+    {
       "id": "npa-1200-20231204-003",
       "councilId": "npa-1200",
       "name": "第3回 高齢運転者交通事故防止対策に関する有識者会議",
@@ -251615,23 +251725,18 @@
       "councilId": "npa-seisaku_hyoka_kenkyukai",
       "name": "第40回 警察庁政策評価研究会",
       "date": "2023/07/31",
-      "officialUrl": "https://www.npa.go.jp/policies/council/index.html",
-      "summary": "第40回研究会が開催され、治安向上・サイバー対策等に関する政策評価指標の点検、意見聴取要旨および議事録が公表された。",
-      "tags": [
-        "警察庁",
-        "政策評価",
-        "第40回",
-        "意見聴取要旨",
-        "議事録"
-      ],
+      "manualLock": true,
+      "officialUrl": "https://www.npa.go.jp/policies/evaluation/kenkyuukai.html",
       "materials": [
         {
-          "name": "第40回 議事録 (PDF)",
-          "url": "https://www.npa.go.jp/policies/evaluation/06kenkyuukai/40/r5_40_gijiroku.pdf"
+          "name": "議事録",
+          "url": "https://www.npa.go.jp/policies/evaluation/06kenkyuukai/40/r5_40_gijiroku.pdf",
+          "manualLock": true
         },
         {
-          "name": "意見聴取要旨 (PDF)",
-          "url": "https://www.npa.go.jp/policies/evaluation/R5_ikenyoushi.pdf"
+          "name": "意見聴取要旨",
+          "url": "https://www.npa.go.jp/policies/evaluation/R5_ikenyoushi.pdf",
+          "manualLock": true
         }
       ]
     },
@@ -288539,6 +288644,72 @@
       ]
     },
     {
+      "id": "mof-1131-20221125-003",
+      "councilId": "mof-1131",
+      "name": "第3回 国家公務員共済組合分科会",
+      "date": "2022/11/25",
+      "manualLock": true,
+      "officialUrl": "https://www.mof.go.jp/about_mof/councils/fiscal_system_council/sub-of_kkr/proceedings/index.html",
+      "materials": [
+        {
+          "name": "令和３年度業務概況書（概要版）(PDF:602KB)",
+          "url": "https://www.mof.go.jp/about_mof/councils/fiscal_system_council/sub-of_kkr/proceedings/material/kyosai20221125-1.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "厚生年金保険法第七十九条の八第二項に基づく国家公務員共済組合連合会にかかる管理積立金の管理及び運用の状況についての評価の結果（案）概要(PDF:143KB)",
+          "url": "https://www.mof.go.jp/about_mof/councils/fiscal_system_council/sub-of_kkr/proceedings/material/kyosai20221125-2.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "ＥＳＧに関する取組み状況(PDF:126KB)",
+          "url": "https://www.mof.go.jp/about_mof/councils/fiscal_system_council/sub-of_kkr/proceedings/material/kyosai20221125-3-1.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "ＥＳＧ投資について(PDF:3134KB)",
+          "url": "https://www.mof.go.jp/about_mof/councils/fiscal_system_council/sub-of_kkr/proceedings/material/kyosai20221125-3-2.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "マイナンバーカードによる健康保険証利用について(PDF:424KB)",
+          "url": "https://www.mof.go.jp/about_mof/councils/fiscal_system_council/sub-of_kkr/proceedings/material/kyosai20221125-4.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "短時間労働者への国家公務員共済組合制度の適用拡大状況について(PDF:403KB)",
+          "url": "https://www.mof.go.jp/about_mof/councils/fiscal_system_council/sub-of_kkr/proceedings/material/kyosai20221125-5.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "令和３年度業務概況書（厚生年金保険給付積立金）(PDF:1790KB)",
+          "url": "https://www.mof.go.jp/about_mof/councils/fiscal_system_council/sub-of_kkr/proceedings/material/kyosai20221125sanko1.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "令和３年度業務概況書（退職等年金給付積立金）(PDF:358KB)",
+          "url": "https://www.mof.go.jp/about_mof/councils/fiscal_system_council/sub-of_kkr/proceedings/material/kyosai20221125sanko2.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "令和３年度業務概況書（経過的長期給付積立金）(PDF:326KB)",
+          "url": "https://www.mof.go.jp/about_mof/councils/fiscal_system_council/sub-of_kkr/proceedings/material/kyosai20221125sanko3.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "厚生年金保険法第七十九条の八第二項に基づく国家公務員共済組合連合会にかかる管理積立金の管理及び運用の状況についての評価の結果（案）(PDF:1049KB)",
+          "url": "https://www.mof.go.jp/about_mof/councils/fiscal_system_council/sub-of_kkr/proceedings/material/kyosai20221125sanko4.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "議事録",
+          "url": "https://www.mof.go.jp/about_mof/councils/fiscal_system_council/sub-of_kkr/proceedings/kyosaigijiroku20221125.html",
+          "type": "HTML",
+          "manualLock": true
+        }
+      ]
+    },
+    {
       "id": "cao-kisei_hatarakikata_wg-20221124-004",
       "councilId": "cao-kisei_hatarakikata_wg",
       "name": "第4回 規制改革推進会議 働き方・人への投資WG(令和4年度)",
@@ -308655,6 +308826,31 @@
         {
           "name": "議事録",
           "url": "https://www.soumu.go.jp/main_content/000835278.pdf"
+        }
+      ]
+    },
+    {
+      "id": "npa-seisaku_hyoka_kenkyukai-20220629-039",
+      "councilId": "npa-seisaku_hyoka_kenkyukai",
+      "name": "第39回 警察庁政策評価研究会",
+      "date": "2022/06/29",
+      "manualLock": true,
+      "officialUrl": "https://www.npa.go.jp/policies/evaluation/kenkyuukai.html",
+      "materials": [
+        {
+          "name": "議事要旨",
+          "url": "https://www.npa.go.jp/policies/evaluation/06kenkyuukai/39/r4_39_gijiyoushi.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "議事録",
+          "url": "https://www.npa.go.jp/policies/evaluation/06kenkyuukai/39/r4_39_gijiroku.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "追加意見聴取要旨",
+          "url": "https://www.npa.go.jp/policies/evaluation/06kenkyuukai/39/r4_39_tuikayoushi.pdf",
+          "manualLock": true
         }
       ]
     },
@@ -341251,6 +341447,68 @@
       ]
     },
     {
+      "id": "mof-1131-20211201-002",
+      "councilId": "mof-1131",
+      "name": "第2回 国家公務員共済組合分科会",
+      "date": "2021/12/01",
+      "manualLock": true,
+      "officialUrl": "https://www.mof.go.jp/about_mof/councils/fiscal_system_council/sub-of_kkr/proceedings/index.html",
+      "materials": [
+        {
+          "name": "令和２年度業務概況書（概要版）(PDF:703KB)",
+          "url": "https://www.mof.go.jp/about_mof/councils/fiscal_system_council/sub-of_kkr/proceedings/material/kyosai20211201-1.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "ＥＳＧに関する取組み状況(PDF:659KB)",
+          "url": "https://www.mof.go.jp/about_mof/councils/fiscal_system_council/sub-of_kkr/proceedings/material/kyosai20211201-3-1.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "ＥＳＧ投資について(PDF:3053KB)",
+          "url": "https://www.mof.go.jp/about_mof/councils/fiscal_system_council/sub-of_kkr/proceedings/material/kyosai20211201-3-2.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "オンライン資格確認（マイナンバーカードの健康保険証利用）の対応状況(PDF:557KB)",
+          "url": "https://www.mof.go.jp/about_mof/councils/fiscal_system_council/sub-of_kkr/proceedings/material/kyosai20211201-4.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "令和２年度業務概況書（厚生年金保険給付積立金）(PDF:1587KB)",
+          "url": "https://www.mof.go.jp/about_mof/councils/fiscal_system_council/sub-of_kkr/proceedings/material/kyosai20211201sanko1.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "令和２年度業務概況書（退職等年金給付積立金）(PDF:520KB)",
+          "url": "https://www.mof.go.jp/about_mof/councils/fiscal_system_council/sub-of_kkr/proceedings/material/kyosai20211201sanko2.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "令和２年度業務概況書（経過的長期給付積立金）(PDF:480KB)",
+          "url": "https://www.mof.go.jp/about_mof/councils/fiscal_system_council/sub-of_kkr/proceedings/material/kyosai20211201sanko3.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "寺井臨時委員　意見書(PDF:211KB)",
+          "url": "https://www.mof.go.jp/about_mof/councils/fiscal_system_council/sub-of_kkr/proceedings/material/kyosai20211201-iken.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "議事要旨",
+          "url": "https://www.mof.go.jp/about_mof/councils/fiscal_system_council/sub-of_kkr/proceedings/kyosaiyousi20211201.html",
+          "type": "HTML",
+          "manualLock": true
+        },
+        {
+          "name": "議事録",
+          "url": "https://www.mof.go.jp/about_mof/councils/fiscal_system_council/sub-of_kkr/proceedings/kyosaigijiroku20211201.html",
+          "type": "HTML",
+          "manualLock": true
+        }
+      ]
+    },
+    {
       "id": "anre-1776-20211130-004",
       "councilId": "anre-1776",
       "name": "令和3年度 第4回 経済産業分野におけるトランジション・ファイナンス推進のためのロードマップ策定検討会",
@@ -355651,6 +355909,26 @@
       ]
     },
     {
+      "id": "npa-seisaku_hyoka_kenkyukai-20210707-038",
+      "councilId": "npa-seisaku_hyoka_kenkyukai",
+      "name": "第38回 警察庁政策評価研究会",
+      "date": "2021/07/07",
+      "manualLock": true,
+      "officialUrl": "https://www.npa.go.jp/policies/evaluation/kenkyuukai.html",
+      "materials": [
+        {
+          "name": "議事要旨",
+          "url": "https://www.npa.go.jp/policies/evaluation/06kenkyuukai/38/r3_38_gijiyoushi.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "議事録",
+          "url": "https://www.npa.go.jp/policies/evaluation/06kenkyuukai/38/r3_38_gijiroku.pdf",
+          "manualLock": true
+        }
+      ]
+    },
+    {
       "id": "fdma-boukasoubi_guideline-20210706-001",
       "councilId": "fdma-boukasoubi_guideline",
       "name": "令和3年度 第1回 消防隊員用個人防火装備に係るガイドラインの見直しに関する検討会",
@@ -359675,6 +359953,58 @@
           "name": "議事要旨",
           "url": "https://www.mhlw.go.jp/stf/shingi2/newpage_56961.html",
           "type": "HTML"
+        }
+      ]
+    },
+    {
+      "id": "mof-1131-20210603-001",
+      "councilId": "mof-1131",
+      "name": "第1回 国家公務員共済組合分科会",
+      "date": "2021/06/03",
+      "manualLock": true,
+      "officialUrl": "https://www.mof.go.jp/about_mof/councils/fiscal_system_council/sub-of_kkr/proceedings/index.html",
+      "materials": [
+        {
+          "name": "分科会長の選任、分科会長代理の指名(PDF:379KB)",
+          "url": "https://www.mof.go.jp/about_mof/councils/fiscal_system_council/sub-of_kkr/proceedings/material/kyousai20210603-1.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "令和２年度の運用環境（ＫＫＲ）(PDF:621KB)",
+          "url": "https://www.mof.go.jp/about_mof/councils/fiscal_system_council/sub-of_kkr/proceedings/material/kyousai20210603-2.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "ＥＳＧに関する取組みの進捗について（ＫＫＲ）(PDF:595KB)",
+          "url": "https://www.mof.go.jp/about_mof/councils/fiscal_system_council/sub-of_kkr/proceedings/material/kyousai20210603-3-1.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "ＥＳＧ投資について(PDF:3721KB)",
+          "url": "https://www.mof.go.jp/about_mof/councils/fiscal_system_council/sub-of_kkr/proceedings/material/kyousai20210603-3-2.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "短時間労働者への国家公務員共済組合制度の適用拡大について(PDF:572KB)",
+          "url": "https://www.mof.go.jp/about_mof/councils/fiscal_system_council/sub-of_kkr/proceedings/material/kyousai20210603-4.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "共済手続における書面・押印・対面見直し状況について(PDF:630KB)",
+          "url": "https://www.mof.go.jp/about_mof/councils/fiscal_system_council/sub-of_kkr/proceedings/material/kyousai20210603-5.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "議事要旨",
+          "url": "https://www.mof.go.jp/about_mof/councils/fiscal_system_council/sub-of_kkr/proceedings/kyosaiyousi20210603.html",
+          "type": "HTML",
+          "manualLock": true
+        },
+        {
+          "name": "議事録",
+          "url": "https://www.mof.go.jp/about_mof/councils/fiscal_system_council/sub-of_kkr/proceedings/kyosaigiziroku20210603.html",
+          "type": "HTML",
+          "manualLock": true
         }
       ]
     },
@@ -391166,15 +391496,6 @@
       "materials": []
     },
     {
-      "id": "moj-2735-20200731-014",
-      "councilId": "moj-2735",
-      "name": "第14回 国際連合犯罪防止刑事司法会議(京都コングレス)",
-      "date": "2020/07/31",
-      "manualLock": true,
-      "officialUrl": "https://www.moj.go.jp/14th_congress_index.html",
-      "materials": []
-    },
-    {
       "id": "moj-2742-20200731-014",
       "councilId": "moj-2742",
       "name": "第14回 検討会等",
@@ -393055,6 +393376,21 @@
         {
           "name": "「小電力の無線システムの高度化に必要な技術的条件」のうち「60GHz帯の周波数の電波を使用する無線設備の多様化に係る技術的条件」に関する調査の進め方（案）",
           "url": "https://www.soumu.go.jp/main_content/000786280.pdf"
+        }
+      ]
+    },
+    {
+      "id": "npa-seisaku_hyoka_kenkyukai-20200709-037",
+      "councilId": "npa-seisaku_hyoka_kenkyukai",
+      "name": "第37回 警察庁政策評価研究会",
+      "date": "2020/07/09",
+      "manualLock": true,
+      "officialUrl": "https://www.npa.go.jp/policies/evaluation/kenkyuukai.html",
+      "materials": [
+        {
+          "name": "議事要旨",
+          "url": "https://www.npa.go.jp/policies/evaluation/06kenkyuukai/37/37_gijiyoushi.pdf",
+          "manualLock": true
         }
       ]
     },
@@ -430043,6 +430379,26 @@
       ]
     },
     {
+      "id": "npa-seisaku_hyoka_kenkyukai-20190627-036",
+      "councilId": "npa-seisaku_hyoka_kenkyukai",
+      "name": "第36回 警察庁政策評価研究会",
+      "date": "2019/06/27",
+      "manualLock": true,
+      "officialUrl": "https://www.npa.go.jp/policies/evaluation/kenkyuukai.html",
+      "materials": [
+        {
+          "name": "議事要旨",
+          "url": "https://www.npa.go.jp/policies/evaluation/06kenkyuukai/36/36_gijiyoushi.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "議事録",
+          "url": "https://www.npa.go.jp/policies/evaluation/06kenkyuukai/36/36_gijiroku.pdf",
+          "manualLock": true
+        }
+      ]
+    },
+    {
       "id": "cao-293-20190626-055",
       "councilId": "cao-293",
       "name": "第55回 Pitch to the Minister 懇談会 “HIRAI Pitch”（ユーザー利便性第一のGovTechの取組）",
@@ -457269,6 +457625,26 @@
       ]
     },
     {
+      "id": "npa-seisaku_hyoka_kenkyukai-20180619-035",
+      "councilId": "npa-seisaku_hyoka_kenkyukai",
+      "name": "第35回 警察庁政策評価研究会",
+      "date": "2018/06/19",
+      "manualLock": true,
+      "officialUrl": "https://www.npa.go.jp/policies/evaluation/kenkyuukai.html",
+      "materials": [
+        {
+          "name": "議事要旨",
+          "url": "https://www.npa.go.jp/policies/evaluation/06kenkyuukai/35/35_gijiyoushi.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "議事録",
+          "url": "https://www.npa.go.jp/policies/evaluation/06kenkyuukai/35/35_gijiroku.pdf",
+          "manualLock": true
+        }
+      ]
+    },
+    {
       "id": "aca-bunkazai_bunkakai-20180615-193",
       "councilId": "aca-bunkazai_bunkakai",
       "name": "平成30年 第193回 文化審議会 文化財分科会",
@@ -479269,6 +479645,26 @@
       ]
     },
     {
+      "id": "npa-seisaku_hyoka_kenkyukai-20170619-034",
+      "councilId": "npa-seisaku_hyoka_kenkyukai",
+      "name": "第34回 警察庁政策評価研究会",
+      "date": "2017/06/19",
+      "manualLock": true,
+      "officialUrl": "https://www.npa.go.jp/policies/evaluation/kenkyuukai.html",
+      "materials": [
+        {
+          "name": "議事要旨",
+          "url": "https://www.npa.go.jp/policies/evaluation/06kenkyuukai/34/34gijiyousi.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "議事録",
+          "url": "https://www.npa.go.jp/policies/evaluation/06kenkyuukai/34/34gijiroku.pdf",
+          "manualLock": true
+        }
+      ]
+    },
+    {
       "id": "aca-bunkazai_bunkakai-20170616-182",
       "councilId": "aca-bunkazai_bunkakai",
       "name": "平成29年 第182回 文化審議会 文化財分科会",
@@ -488532,6 +488928,26 @@
           "name": "議事録",
           "url": "https://www.env.go.jp/council/01chuo/y010-24a.html",
           "type": "HTML"
+        }
+      ]
+    },
+    {
+      "id": "npa-seisaku_hyoka_kenkyukai-20170208-033",
+      "councilId": "npa-seisaku_hyoka_kenkyukai",
+      "name": "第33回 警察庁政策評価研究会",
+      "date": "2017/02/08",
+      "manualLock": true,
+      "officialUrl": "https://www.npa.go.jp/policies/evaluation/kenkyuukai.html",
+      "materials": [
+        {
+          "name": "議事要旨",
+          "url": "https://www.npa.go.jp/policies/evaluation/06kenkyuukai/33/33gijiyousi.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "議事録",
+          "url": "https://www.npa.go.jp/policies/evaluation/06kenkyuukai/33/33gijiroku.pdf",
+          "manualLock": true
         }
       ]
     },
@@ -502099,6 +502515,26 @@
       ]
     },
     {
+      "id": "npa-seisaku_hyoka_kenkyukai-20160617-032",
+      "councilId": "npa-seisaku_hyoka_kenkyukai",
+      "name": "第32回 警察庁政策評価研究会",
+      "date": "2016/06/17",
+      "manualLock": true,
+      "officialUrl": "https://www.npa.go.jp/policies/evaluation/kenkyuukai.html",
+      "materials": [
+        {
+          "name": "議事要旨",
+          "url": "https://www.npa.go.jp/policies/evaluation/06kenkyuukai/32/youshi.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "議事録",
+          "url": "https://www.npa.go.jp/policies/evaluation/06kenkyuukai/32/gijiroku.pdf",
+          "manualLock": true
+        }
+      ]
+    },
+    {
       "id": "cas-chotatsu-20160616-003",
       "councilId": "cas-chotatsu",
       "name": "第3回 政府調達の自主的措置に関する関係省庁等会議",
@@ -509650,6 +510086,26 @@
           "name": "議事録",
           "url": "https://www.mhlw.go.jp/stf/shingi2/0000117285.html",
           "type": "HTML"
+        }
+      ]
+    },
+    {
+      "id": "npa-seisaku_hyoka_kenkyukai-20160219-031",
+      "councilId": "npa-seisaku_hyoka_kenkyukai",
+      "name": "第31回 警察庁政策評価研究会",
+      "date": "2016/02/19",
+      "manualLock": true,
+      "officialUrl": "https://www.npa.go.jp/policies/evaluation/kenkyuukai.html",
+      "materials": [
+        {
+          "name": "議事要旨",
+          "url": "https://www.npa.go.jp/policies/evaluation/06kenkyuukai/31/youshi.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "議事録",
+          "url": "https://www.npa.go.jp/policies/evaluation/06kenkyuukai/31/gijiroku.pdf",
+          "manualLock": true
         }
       ]
     },
@@ -523538,6 +523994,26 @@
       ]
     },
     {
+      "id": "npa-seisaku_hyoka_kenkyukai-20150616-030",
+      "councilId": "npa-seisaku_hyoka_kenkyukai",
+      "name": "第30回 警察庁政策評価研究会",
+      "date": "2015/06/16",
+      "manualLock": true,
+      "officialUrl": "https://www.npa.go.jp/policies/evaluation/kenkyuukai.html",
+      "materials": [
+        {
+          "name": "議事要旨",
+          "url": "https://www.npa.go.jp/policies/evaluation/06kenkyuukai/30/youshi.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "議事録",
+          "url": "https://www.npa.go.jp/policies/evaluation/06kenkyuukai/30/gijiroku.pdf",
+          "manualLock": true
+        }
+      ]
+    },
+    {
       "id": "fsa-kinyu_trouble-20150615-049",
       "councilId": "fsa-kinyu_trouble",
       "name": "第49回 金融トラブル連絡調整協議会",
@@ -529147,6 +529623,26 @@
         {
           "name": "今後のスケジュールについて",
           "url": "https://www.soumu.go.jp/main_content/000345145.pdf"
+        }
+      ]
+    },
+    {
+      "id": "npa-seisaku_hyoka_kenkyukai-20150220-029",
+      "councilId": "npa-seisaku_hyoka_kenkyukai",
+      "name": "第29回 警察庁政策評価研究会",
+      "date": "2015/02/20",
+      "manualLock": true,
+      "officialUrl": "https://www.npa.go.jp/policies/evaluation/kenkyuukai.html",
+      "materials": [
+        {
+          "name": "議事要旨",
+          "url": "https://www.npa.go.jp/policies/evaluation/06kenkyuukai/29/youshi.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "議事録",
+          "url": "https://www.npa.go.jp/policies/evaluation/06kenkyuukai/29/gijiroku.pdf",
+          "manualLock": true
         }
       ]
     },
@@ -544273,6 +544769,26 @@
       ]
     },
     {
+      "id": "npa-seisaku_hyoka_kenkyukai-20140613-028",
+      "councilId": "npa-seisaku_hyoka_kenkyukai",
+      "name": "第28回 警察庁政策評価研究会",
+      "date": "2014/06/13",
+      "manualLock": true,
+      "officialUrl": "https://www.npa.go.jp/policies/evaluation/kenkyuukai.html",
+      "materials": [
+        {
+          "name": "議事要旨",
+          "url": "https://www.npa.go.jp/policies/evaluation/06kenkyuukai/28/youshi.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "議事録",
+          "url": "https://www.npa.go.jp/policies/evaluation/06kenkyuukai/28/gijiroku.pdf",
+          "manualLock": true
+        }
+      ]
+    },
+    {
       "id": "fsc-doubutu-20140612-165",
       "councilId": "fsc-doubutu",
       "name": "第165回 動物用医薬品専門調査会",
@@ -550070,6 +550586,26 @@
         {
           "name": "医療用データ伝送システムの技術的条件等に関する委員会報告（案）",
           "url": "https://www.soumu.go.jp/main_content/000361591.pdf"
+        }
+      ]
+    },
+    {
+      "id": "npa-seisaku_hyoka_kenkyukai-20140228-027",
+      "councilId": "npa-seisaku_hyoka_kenkyukai",
+      "name": "第27回 警察庁政策評価研究会",
+      "date": "2014/02/28",
+      "manualLock": true,
+      "officialUrl": "https://www.npa.go.jp/policies/evaluation/kenkyuukai.html",
+      "materials": [
+        {
+          "name": "議事要旨",
+          "url": "https://www.npa.go.jp/policies/evaluation/06kenkyuukai/27/kenkyuukai-youshi27.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "議事録",
+          "url": "https://www.npa.go.jp/policies/evaluation/06kenkyuukai/27/kenkyuukai-gijiroku27.pdf",
+          "manualLock": true
         }
       ]
     },
@@ -563225,6 +563761,26 @@
       ]
     },
     {
+      "id": "npa-seisaku_hyoka_kenkyukai-20130614-026",
+      "councilId": "npa-seisaku_hyoka_kenkyukai",
+      "name": "第26回 警察庁政策評価研究会",
+      "date": "2013/06/14",
+      "manualLock": true,
+      "officialUrl": "https://www.npa.go.jp/policies/evaluation/kenkyuukai.html",
+      "materials": [
+        {
+          "name": "議事要旨",
+          "url": "https://www.npa.go.jp/policies/evaluation/06kenkyuukai/26/kenkyuukai-youshi26.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "議事録",
+          "url": "https://www.npa.go.jp/policies/evaluation/06kenkyuukai/26/kenkyuukai-gijiroku26.pdf",
+          "manualLock": true
+        }
+      ]
+    },
+    {
       "id": "aca-chosakuken_shuppan_shoiinkai-20130613-003",
       "councilId": "aca-chosakuken_shuppan_shoiinkai",
       "name": "平成25年第3回(2013年6月13日)",
@@ -568866,6 +569422,26 @@
         {
           "name": "法制審議会委員等名簿",
           "url": "https://www.moj.go.jp/content/000107449.pdf"
+        }
+      ]
+    },
+    {
+      "id": "npa-seisaku_hyoka_kenkyukai-20130208-025",
+      "councilId": "npa-seisaku_hyoka_kenkyukai",
+      "name": "第25回 警察庁政策評価研究会",
+      "date": "2013/02/08",
+      "manualLock": true,
+      "officialUrl": "https://www.npa.go.jp/policies/evaluation/kenkyuukai.html",
+      "materials": [
+        {
+          "name": "議事要旨",
+          "url": "https://www.npa.go.jp/policies/evaluation/06kenkyuukai/25/kenkyuukai-youshi25.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "議事録",
+          "url": "https://www.npa.go.jp/policies/evaluation/06kenkyuukai/25/kenkyuukai-gijiroku25.pdf",
+          "manualLock": true
         }
       ]
     },
@@ -578643,6 +579219,26 @@
       ]
     },
     {
+      "id": "npa-seisaku_hyoka_kenkyukai-20120622-024",
+      "councilId": "npa-seisaku_hyoka_kenkyukai",
+      "name": "第24回 警察庁政策評価研究会",
+      "date": "2012/06/22",
+      "manualLock": true,
+      "officialUrl": "https://www.npa.go.jp/policies/evaluation/kenkyuukai.html",
+      "materials": [
+        {
+          "name": "議事要旨",
+          "url": "https://www.npa.go.jp/policies/evaluation/06kenkyuukai/24/kenkyuukai-youshi24.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "議事録",
+          "url": "https://www.npa.go.jp/policies/evaluation/06kenkyuukai/24/kenkyuukai-gijiroku24.pdf",
+          "manualLock": true
+        }
+      ]
+    },
+    {
       "id": "mhlw-1029-20120620-001",
       "councilId": "mhlw-1029",
       "name": "第1回 中央社会保険医療協議会診療報酬調査専門組織(医療機関等における消費税負担に関する分科会)",
@@ -584265,6 +584861,26 @@
         {
           "name": "資料7-2-3　委員会報告（案）参考資料（79GHz帯高分解能レーダの技術的条件）",
           "url": "https://www.soumu.go.jp/main_content/000159473.pdf"
+        }
+      ]
+    },
+    {
+      "id": "npa-seisaku_hyoka_kenkyukai-20120217-023",
+      "councilId": "npa-seisaku_hyoka_kenkyukai",
+      "name": "第23回 警察庁政策評価研究会",
+      "date": "2012/02/17",
+      "manualLock": true,
+      "officialUrl": "https://www.npa.go.jp/policies/evaluation/kenkyuukai.html",
+      "materials": [
+        {
+          "name": "議事要旨",
+          "url": "https://www.npa.go.jp/policies/evaluation/06kenkyuukai/23/kenkyuukai-youshi23.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "議事録",
+          "url": "https://www.npa.go.jp/policies/evaluation/06kenkyuukai/23/kenkyuukai-gijiroku23.pdf",
+          "manualLock": true
         }
       ]
     },
@@ -594991,6 +595607,26 @@
       ]
     },
     {
+      "id": "npa-seisaku_hyoka_kenkyukai-20110622-022",
+      "councilId": "npa-seisaku_hyoka_kenkyukai",
+      "name": "第22回 警察庁政策評価研究会",
+      "date": "2011/06/22",
+      "manualLock": true,
+      "officialUrl": "https://www.npa.go.jp/policies/evaluation/kenkyuukai.html",
+      "materials": [
+        {
+          "name": "議事要旨",
+          "url": "https://www.npa.go.jp/policies/evaluation/06kenkyuukai/22/kenkyuukaiyoushi22.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "議事録",
+          "url": "https://www.npa.go.jp/policies/evaluation/06kenkyuukai/22/kenkyuukaigijiroku22.pdf",
+          "manualLock": true
+        }
+      ]
+    },
+    {
       "id": "aca-kokugo_mondai_h23_h24-20110621-002",
       "councilId": "aca-kokugo_mondai_h23_h24",
       "name": "平成23年 第2回 国語分科会 問題点整理小委員会(平成23年5月25日~平成24年1月17日)",
@@ -599632,6 +600268,21 @@
         {
           "name": "会議用資料 法制審議会委員等名簿",
           "url": "https://www.moj.go.jp/content/000069480.pdf"
+        }
+      ]
+    },
+    {
+      "id": "npa-seisaku_hyoka_kenkyukai-20110215-021",
+      "councilId": "npa-seisaku_hyoka_kenkyukai",
+      "name": "第21回 警察庁政策評価研究会",
+      "date": "2011/02/15",
+      "manualLock": true,
+      "officialUrl": "https://www.npa.go.jp/policies/evaluation/kenkyuukai.html",
+      "materials": [
+        {
+          "name": "議事要旨",
+          "url": "https://www.npa.go.jp/policies/evaluation/06kenkyuukai/21/kenkyuukaiyoushi21.pdf",
+          "manualLock": true
         }
       ]
     },
@@ -607964,6 +608615,21 @@
       ]
     },
     {
+      "id": "npa-seisaku_hyoka_kenkyukai-20100611-020",
+      "councilId": "npa-seisaku_hyoka_kenkyukai",
+      "name": "第20回 警察庁政策評価研究会",
+      "date": "2010/06/11",
+      "manualLock": true,
+      "officialUrl": "https://www.npa.go.jp/policies/evaluation/kenkyuukai.html",
+      "materials": [
+        {
+          "name": "議事要旨",
+          "url": "https://www.npa.go.jp/policies/evaluation/06kenkyuukai/20/kenkyuukaiyoushi20.pdf",
+          "manualLock": true
+        }
+      ]
+    },
+    {
       "id": "fsa-kigyou_naibu_bukai-20100610-018",
       "councilId": "fsa-kigyou_naibu_bukai",
       "name": "第18回 企業会計審議会 内部統制部会",
@@ -613256,6 +613922,21 @@
         {
           "name": "会議用資料 法制審議会委員等名簿",
           "url": "https://www.moj.go.jp/content/000023365.pdf"
+        }
+      ]
+    },
+    {
+      "id": "npa-seisaku_hyoka_kenkyukai-20100205-019",
+      "councilId": "npa-seisaku_hyoka_kenkyukai",
+      "name": "第19回 警察庁政策評価研究会",
+      "date": "2010/02/05",
+      "manualLock": true,
+      "officialUrl": "https://www.npa.go.jp/policies/evaluation/kenkyuukai.html",
+      "materials": [
+        {
+          "name": "議事要旨",
+          "url": "https://www.npa.go.jp/policies/evaluation/06kenkyuukai/19/19-youshi.pdf",
+          "manualLock": true
         }
       ]
     },
@@ -620319,6 +621000,21 @@
           "name": "議事録",
           "url": "https://www.env.go.jp/council/14animal/y140-24a.html",
           "type": "HTML"
+        }
+      ]
+    },
+    {
+      "id": "npa-seisaku_hyoka_kenkyukai-20090612-018",
+      "councilId": "npa-seisaku_hyoka_kenkyukai",
+      "name": "第18回 警察庁政策評価研究会",
+      "date": "2009/06/12",
+      "manualLock": true,
+      "officialUrl": "https://www.npa.go.jp/policies/evaluation/kenkyuukai.html",
+      "materials": [
+        {
+          "name": "議事要旨",
+          "url": "https://www.npa.go.jp/policies/evaluation/06kenkyuukai/18/21gizirokuyousi.pdf",
+          "manualLock": true
         }
       ]
     },
@@ -627694,6 +628390,21 @@
       ]
     },
     {
+      "id": "npa-seisaku_hyoka_kenkyukai-20081105-017",
+      "councilId": "npa-seisaku_hyoka_kenkyukai",
+      "name": "第17回 警察庁政策評価研究会",
+      "date": "2008/11/05",
+      "manualLock": true,
+      "officialUrl": "https://www.npa.go.jp/policies/evaluation/kenkyuukai.html",
+      "materials": [
+        {
+          "name": "議事要旨",
+          "url": "https://www.npa.go.jp/policies/evaluation/06kenkyuukai/17/17-youshi.pdf",
+          "manualLock": true
+        }
+      ]
+    },
+    {
       "id": "fsc-prion-20081031-052",
       "councilId": "fsc-prion",
       "name": "第52回食品安全委員会プリオン専門調査会",
@@ -632069,6 +632780,21 @@
         {
           "name": "議事録",
           "url": "https://www.bunka.go.jp/seisaku/bunkashingikai/kokugo/kanji_kako/23/pdf/gijiroku.pdf"
+        }
+      ]
+    },
+    {
+      "id": "npa-seisaku_hyoka_kenkyukai-20080613-016",
+      "councilId": "npa-seisaku_hyoka_kenkyukai",
+      "name": "第16回 警察庁政策評価研究会",
+      "date": "2008/06/13",
+      "manualLock": true,
+      "officialUrl": "https://www.npa.go.jp/policies/evaluation/kenkyuukai.html",
+      "materials": [
+        {
+          "name": "議事要旨",
+          "url": "https://www.npa.go.jp/policies/evaluation/06kenkyuukai/16/16-youshi.pdf",
+          "manualLock": true
         }
       ]
     },
@@ -637865,6 +638591,21 @@
       ]
     },
     {
+      "id": "npa-seisaku_hyoka_kenkyukai-20071114-015",
+      "councilId": "npa-seisaku_hyoka_kenkyukai",
+      "name": "第15回 警察庁政策評価研究会",
+      "date": "2007/11/14",
+      "manualLock": true,
+      "officialUrl": "https://www.npa.go.jp/policies/evaluation/kenkyuukai.html",
+      "materials": [
+        {
+          "name": "議事要旨",
+          "url": "https://www.npa.go.jp/policies/evaluation/06kenkyuukai/15/15-youshi.pdf",
+          "manualLock": true
+        }
+      ]
+    },
+    {
       "id": "fsc-tenkabutu-20071109-050",
       "councilId": "fsc-tenkabutu",
       "name": "第50回添加物専門調査会",
@@ -641977,6 +642718,21 @@
           "name": "議事録",
           "url": "https://warp.ndl.go.jp/info:ndljp/pid/12231838/www.mext.go.jp/b_menu/shingi/bunka/gijiroku/020/07061916.htm",
           "type": "HTML",
+          "manualLock": true
+        }
+      ]
+    },
+    {
+      "id": "npa-seisaku_hyoka_kenkyukai-20070615-014",
+      "councilId": "npa-seisaku_hyoka_kenkyukai",
+      "name": "第14回 警察庁政策評価研究会",
+      "date": "2007/06/15",
+      "manualLock": true,
+      "officialUrl": "https://www.npa.go.jp/policies/evaluation/kenkyuukai.html",
+      "materials": [
+        {
+          "name": "議事要旨",
+          "url": "https://www.npa.go.jp/policies/evaluation/06kenkyuukai/14/14kai_gijiyoushi.pdf",
           "manualLock": true
         }
       ]
@@ -646562,6 +647318,21 @@
       ]
     },
     {
+      "id": "npa-seisaku_hyoka_kenkyukai-20061106-013",
+      "councilId": "npa-seisaku_hyoka_kenkyukai",
+      "name": "第13回 警察庁政策評価研究会",
+      "date": "2006/11/06",
+      "manualLock": true,
+      "officialUrl": "https://www.npa.go.jp/policies/evaluation/kenkyuukai.html",
+      "materials": [
+        {
+          "name": "議事要旨",
+          "url": "https://www.npa.go.jp/policies/evaluation/06kenkyuukai/13/20061106.pdf",
+          "manualLock": true
+        }
+      ]
+    },
+    {
       "id": "mhlw-788-20061102-027",
       "councilId": "mhlw-788",
       "name": "年金数理部会 (2006/11/02)",
@@ -650208,6 +650979,21 @@
         {
           "name": "議事録 (PDF形式:39.9KB)",
           "url": "https://www.bousai.go.jp/kaigirep/chuobou/18/pdf/gijiroku.pdf"
+        }
+      ]
+    },
+    {
+      "id": "npa-seisaku_hyoka_kenkyukai-20060602-012",
+      "councilId": "npa-seisaku_hyoka_kenkyukai",
+      "name": "第12回 警察庁政策評価研究会",
+      "date": "2006/06/02",
+      "manualLock": true,
+      "officialUrl": "https://www.npa.go.jp/policies/evaluation/kenkyuukai.html",
+      "materials": [
+        {
+          "name": "議事要旨",
+          "url": "https://www.npa.go.jp/policies/evaluation/06kenkyuukai/12/180602.pdf",
+          "manualLock": true
         }
       ]
     },
@@ -654592,6 +655378,21 @@
         {
           "name": "議事録",
           "url": "https://www.fsa.go.jp/singi/singi_kinyu/gijiroku/kinyu/dai1/f-20051130_giji.html"
+        }
+      ]
+    },
+    {
+      "id": "npa-seisaku_hyoka_kenkyukai-20051130-011",
+      "councilId": "npa-seisaku_hyoka_kenkyukai",
+      "name": "第11回 警察庁政策評価研究会",
+      "date": "2005/11/30",
+      "manualLock": true,
+      "officialUrl": "https://www.npa.go.jp/policies/evaluation/kenkyuukai.html",
+      "materials": [
+        {
+          "name": "議事要旨",
+          "url": "https://www.npa.go.jp/policies/evaluation/06kenkyuukai/11/20051228.pdf",
+          "manualLock": true
         }
       ]
     },
@@ -660616,6 +661417,21 @@
         {
           "name": "議事録",
           "url": "https://www.fsa.go.jp/singi/singi_kigyou/gijiroku/kansa/20050715_kansa.pdf"
+        }
+      ]
+    },
+    {
+      "id": "npa-seisaku_hyoka_kenkyukai-20050715-010",
+      "councilId": "npa-seisaku_hyoka_kenkyukai",
+      "name": "第10回 警察庁政策評価研究会",
+      "date": "2005/07/15",
+      "manualLock": true,
+      "officialUrl": "https://www.npa.go.jp/policies/evaluation/kenkyuukai.html",
+      "materials": [
+        {
+          "name": "議事要旨",
+          "url": "https://www.npa.go.jp/policies/evaluation/06kenkyuukai/10/10thkenkyukai.pdf",
+          "manualLock": true
         }
       ]
     },
@@ -667738,6 +668554,21 @@
       ]
     },
     {
+      "id": "npa-seisaku_hyoka_kenkyukai-20041129-009",
+      "councilId": "npa-seisaku_hyoka_kenkyukai",
+      "name": "第9回 警察庁政策評価研究会",
+      "date": "2004/11/29",
+      "manualLock": true,
+      "officialUrl": "https://www.npa.go.jp/policies/evaluation/kenkyuukai.html",
+      "materials": [
+        {
+          "name": "議事要旨",
+          "url": "https://www.npa.go.jp/policies/evaluation/06kenkyuukai/09/giji-9.pdf",
+          "manualLock": true
+        }
+      ]
+    },
+    {
       "id": "aca-hosei_mondai_shoiinkai-20041126-004",
       "councilId": "aca-hosei_mondai_shoiinkai",
       "name": "平成16年第4回（2004年11月26日）",
@@ -670200,6 +671031,21 @@
           "name": "開催案内",
           "url": "https://www.mhlw.go.jp/stf/shingi2/0000060682.html",
           "type": "HTML"
+        }
+      ]
+    },
+    {
+      "id": "npa-seisaku_hyoka_kenkyukai-20040623-008",
+      "councilId": "npa-seisaku_hyoka_kenkyukai",
+      "name": "第8回 警察庁政策評価研究会",
+      "date": "2004/06/23",
+      "manualLock": true,
+      "officialUrl": "https://www.npa.go.jp/policies/evaluation/kenkyuukai.html",
+      "materials": [
+        {
+          "name": "議事要旨",
+          "url": "https://www.npa.go.jp/policies/evaluation/06kenkyuukai/08/giji-8.pdf",
+          "manualLock": true
         }
       ]
     },
@@ -673725,6 +674571,21 @@
       ]
     },
     {
+      "id": "npa-seisaku_hyoka_kenkyukai-20031202-007",
+      "councilId": "npa-seisaku_hyoka_kenkyukai",
+      "name": "第7回 警察庁政策評価研究会",
+      "date": "2003/12/02",
+      "manualLock": true,
+      "officialUrl": "https://www.npa.go.jp/policies/evaluation/kenkyuukai.html",
+      "materials": [
+        {
+          "name": "議事要旨",
+          "url": "https://www.npa.go.jp/policies/evaluation/06kenkyuukai/07/giji-7.pdf",
+          "manualLock": true
+        }
+      ]
+    },
+    {
       "id": "aca-hosei_mondai_shoiinkai-20031128-007",
       "councilId": "aca-hosei_mondai_shoiinkai",
       "name": "平成15年第7回（2003年11月28日）",
@@ -677146,6 +678007,22 @@
       ]
     },
     {
+      "id": "npa-seisaku_hyoka_kenkyukai-20030516-006",
+      "councilId": "npa-seisaku_hyoka_kenkyukai",
+      "name": "第6回 警察庁政策評価研究会",
+      "date": "2003/05/16",
+      "manualLock": true,
+      "officialUrl": "https://www.npa.go.jp/policies/evaluation/kenkyuukai.html",
+      "materials": [
+        {
+          "name": "議事要旨",
+          "url": "https://www.npa.go.jp/policies/evaluation/06kenkyuukai/06/gijiyousi.htm",
+          "type": "HTML",
+          "manualLock": true
+        }
+      ]
+    },
+    {
       "id": "mhlw-shakai_hosho_nenkin-20030513-018",
       "councilId": "mhlw-shakai_hosho_nenkin",
       "name": "社会保障審議会 年金部会 (2003/05/13)",
@@ -679203,6 +680080,22 @@
       ]
     },
     {
+      "id": "npa-seisaku_hyoka_kenkyukai-20021211-005",
+      "councilId": "npa-seisaku_hyoka_kenkyukai",
+      "name": "第5回 警察庁政策評価研究会",
+      "date": "2002/12/11",
+      "manualLock": true,
+      "officialUrl": "https://www.npa.go.jp/policies/evaluation/kenkyuukai.html",
+      "materials": [
+        {
+          "name": "議事要旨",
+          "url": "https://www.npa.go.jp/policies/evaluation/06kenkyuukai/05/giji-5.htm",
+          "type": "HTML",
+          "manualLock": true
+        }
+      ]
+    },
+    {
       "id": "fsa-kigyou_dai1_bukai-20021206-023",
       "councilId": "fsa-kigyou_dai1_bukai",
       "name": "第23回 企業会計審議会 第一部会",
@@ -680693,6 +681586,22 @@
         {
           "name": "第29回 議事要旨",
           "url": "https://warp.ndl.go.jp/info:ndljp/pid/12231838/www.mext.go.jp/b_menu/shingi/bunka/gijiroku/001/021002.htm"
+        }
+      ]
+    },
+    {
+      "id": "npa-seisaku_hyoka_kenkyukai-20020925-004",
+      "councilId": "npa-seisaku_hyoka_kenkyukai",
+      "name": "第4回 警察庁政策評価研究会",
+      "date": "2002/09/25",
+      "manualLock": true,
+      "officialUrl": "https://www.npa.go.jp/policies/evaluation/kenkyuukai.html",
+      "materials": [
+        {
+          "name": "議事要旨",
+          "url": "https://www.npa.go.jp/policies/evaluation/06kenkyuukai/04/giji-4.htm",
+          "type": "HTML",
+          "manualLock": true
         }
       ]
     },
@@ -682958,6 +683867,22 @@
       ]
     },
     {
+      "id": "npa-seisaku_hyoka_kenkyukai-20020311-003",
+      "councilId": "npa-seisaku_hyoka_kenkyukai",
+      "name": "第3回 警察庁政策評価研究会",
+      "date": "2002/03/11",
+      "manualLock": true,
+      "officialUrl": "https://www.npa.go.jp/policies/evaluation/kenkyuukai.html",
+      "materials": [
+        {
+          "name": "議事要旨",
+          "url": "https://www.npa.go.jp/policies/evaluation/06kenkyuukai/03/giji-3.htm",
+          "type": "HTML",
+          "manualLock": true
+        }
+      ]
+    },
+    {
       "id": "fsa-kigyou_dai2_bukai-20020308-026",
       "councilId": "fsa-kigyou_dai2_bukai",
       "name": "第26回 企業会計審議会 第二部会",
@@ -683926,6 +684851,22 @@
       ]
     },
     {
+      "id": "npa-seisaku_hyoka_kenkyukai-20011214-002",
+      "councilId": "npa-seisaku_hyoka_kenkyukai",
+      "name": "第2回 警察庁政策評価研究会",
+      "date": "2001/12/14",
+      "manualLock": true,
+      "officialUrl": "https://www.npa.go.jp/policies/evaluation/kenkyuukai.html",
+      "materials": [
+        {
+          "name": "議事要旨",
+          "url": "https://www.npa.go.jp/policies/evaluation/06kenkyuukai/02/giji-2.htm",
+          "type": "HTML",
+          "manualLock": true
+        }
+      ]
+    },
+    {
       "id": "mhlw-shakai_hosho-20011213-004",
       "councilId": "mhlw-shakai_hosho",
       "name": "第4回 社会保障審議会",
@@ -684580,6 +685521,22 @@
         {
           "name": "圧縮ファイル(Lzhファイル)",
           "url": "https://www.moj.go.jp/content/000021911.lzh"
+        }
+      ]
+    },
+    {
+      "id": "npa-seisaku_hyoka_kenkyukai-20011019-001",
+      "councilId": "npa-seisaku_hyoka_kenkyukai",
+      "name": "第1回 警察庁政策評価研究会",
+      "date": "2001/10/19",
+      "manualLock": true,
+      "officialUrl": "https://www.npa.go.jp/policies/evaluation/kenkyuukai.html",
+      "materials": [
+        {
+          "name": "議事要旨",
+          "url": "https://www.npa.go.jp/policies/evaluation/06kenkyuukai/01/giji-1.htm",
+          "type": "HTML",
+          "manualLock": true
         }
       ]
     },
