@@ -234,6 +234,12 @@ UNIT_TEST_REGISTRY = {
         "name": "決定論的1ファイル新着ダイジェスト & LLMディスカバリー単体テスト (test_drop81_llm_discovery.py)",
         "description": "SHA-256ダイジェスト不変性, 5段階事前フィルタ, ID参照限定ハルシネーション遮断, 呼出予算上限(3/10/30)&SQLiteキャッシュ, 新着フラグ保護",
         "runner": lambda: _run_py_class("test_drop81_llm_discovery", "TestDrop81LlmDiscovery")
+    },
+    "u_drop82": {
+        "id": "U22",
+        "name": "PMMローカル資料ステータス永続保護・CASCADE破壊防止単体テスト (test_drop82_pmm_preservation.py)",
+        "description": "seed_db事前退避&復元, save_data_to_db非破壊ON CONFLICT, CASCADE DELETE遮断",
+        "runner": lambda: _run_py_class("test_drop82_pmm_preservation", "TestPmmPreservation")
     }
 }
 

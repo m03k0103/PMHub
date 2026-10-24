@@ -105,24 +105,7 @@ def ensure_database(
 
         conn.commit()
 
-        # Drop 82: Ensure PMM download status is synced if local_docs exists but DB has 0 downloaded
-        local_docs_dir = BASE_DIR / "local_docs"
-        if local_docs_dir.exists():
-            try:
-                d_cnt = cur.execute("SELECT COUNT(*) FROM materials WHERE download_status = 'downloaded';").fetchone()[0]
-                if d_cnt == 0:
-                    has_files = any(f for f in local_docs_dir.iterdir() if not f.name.startswith("."))
-                    if has_files:
-                        conn.close()
-                        try:
-                            from admin.pmm.downloader import sync_local_materials_status
-                            print("[INFO] PMM download status in DB is 0 but local_docs exists. Auto-syncing status...", file=sys.stderr)
-                            sync_local_materials_status(output_base=local_docs_dir, db_path=db_path)
-                        except Exception as e_sync:
-                            print(f"[WARN] Auto-sync of local materials status failed: {e_sync}", file=sys.stderr)
-                        return True
-            except Exception:
-                pass
+
 
         conn.close()
     except Exception as e:
@@ -489,12 +472,27 @@ def save_data_to_db(
                         1 if cs.get("manualLockActive") else 0
                     ))
 
+            # Drop 82: In-place update preserving child rows (meetings, materials) without firing CASCADE DELETE
             cur.executemany("""
-                INSERT OR REPLACE INTO councils (
+                INSERT INTO councils (
                     id, ministry, category, name, official_url, archive_url, description,
                     past_year_count, is_closed, closed_reason, manual_lock,
                     is_newly_discovered, discovered_at, discovery_source
-                ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);
+                ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+                ON CONFLICT(id) DO UPDATE SET
+                    ministry = excluded.ministry,
+                    category = excluded.category,
+                    name = excluded.name,
+                    official_url = excluded.official_url,
+                    archive_url = excluded.archive_url,
+                    description = excluded.description,
+                    past_year_count = excluded.past_year_count,
+                    is_closed = excluded.is_closed,
+                    closed_reason = excluded.closed_reason,
+                    manual_lock = excluded.manual_lock,
+                    is_newly_discovered = excluded.is_newly_discovered,
+                    discovered_at = excluded.discovered_at,
+                    discovery_source = excluded.discovery_source;
             """, c_rows)
 
             if c_mat_rows:
@@ -561,12 +559,26 @@ def save_data_to_db(
                             1 if mat.get("manualLock") else 0
                         ))
 
+            # Drop 82: In-place update preserving child rows (materials) without firing CASCADE DELETE
             cur.executemany("""
-                INSERT OR REPLACE INTO meetings (
+                INSERT INTO meetings (
                     id, council_id, name, date, round, official_url, summary,
                     tags_json, is_date_unconfirmed, is_newly_discovered,
                     discovered_at, last_updated_from_crawl, manual_lock
-                ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);
+                ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+                ON CONFLICT(id) DO UPDATE SET
+                    council_id = excluded.council_id,
+                    name = excluded.name,
+                    date = excluded.date,
+                    round = excluded.round,
+                    official_url = excluded.official_url,
+                    summary = excluded.summary,
+                    tags_json = excluded.tags_json,
+                    is_date_unconfirmed = excluded.is_date_unconfirmed,
+                    is_newly_discovered = excluded.is_newly_discovered,
+                    discovered_at = excluded.discovered_at,
+                    last_updated_from_crawl = excluded.last_updated_from_crawl,
+                    manual_lock = excluded.manual_lock;
             """, m_rows)
 
             # Insert or update materials, ensuring name and manual_lock changes are applied

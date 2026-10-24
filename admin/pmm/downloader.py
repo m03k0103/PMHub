@@ -295,7 +295,16 @@ def download_materials(
             logger.error("No data available to download.")
             return {"downloaded": 0, "skipped": 0, "failed": 0, "total": 0}
 
-    ministries_dict = data.get("ministries", {})
+    ministries_raw = data.get("ministries", {})
+    if isinstance(ministries_raw, list):
+        ministries_dict = {
+            (m.get("id") or m.get("slug") or m.get("code") or "").upper(): m
+            for m in ministries_raw if isinstance(m, dict)
+        }
+    elif isinstance(ministries_raw, dict):
+        ministries_dict = ministries_raw
+    else:
+        ministries_dict = {}
     councils_dict = {c["id"]: c for c in data.get("councils", []) if "id" in c}
     meetings = data.get("meetings", [])
 
@@ -507,7 +516,16 @@ def sync_local_materials_status(
         logger.error("Failed to load data from database.")
         return {"matched": 0, "pending": 0, "total": 0, "total_size_bytes": 0}
 
-    ministries_dict = data.get("ministries", {})
+    ministries_raw = data.get("ministries", {})
+    if isinstance(ministries_raw, list):
+        ministries_dict = {
+            (m.get("id") or m.get("slug") or m.get("code") or "").upper(): m
+            for m in ministries_raw if isinstance(m, dict)
+        }
+    elif isinstance(ministries_raw, dict):
+        ministries_dict = ministries_raw
+    else:
+        ministries_dict = {}
     councils_dict = {c["id"]: c for c in data.get("councils", []) if "id" in c}
     meetings = data.get("meetings", [])
 
@@ -572,6 +590,28 @@ def sync_local_materials_status(
                     "downloaded_at": None,
                 })
 
+    # Drop 82: Cache indexed files per council directory to accelerate legacy lookup
+    council_files_cache: Dict[Path, Dict[str, Path]] = {}
+
+    def get_council_files_index(c_dir: Path) -> Dict[str, Path]:
+        if c_dir in council_files_cache:
+            return council_files_cache[c_dir]
+        file_map: Dict[str, Path] = {}
+        if c_dir.exists():
+            try:
+                for entry in os.scandir(c_dir):
+                    if entry.is_dir() and entry.name != COUNCIL_MATERIALS_FOLDER and not entry.name.startswith((".", "_")):
+                        try:
+                            for f_entry in os.scandir(entry.path):
+                                if f_entry.is_file():
+                                    file_map[f_entry.name] = Path(f_entry.path)
+                        except OSError:
+                            pass
+            except OSError:
+                pass
+        council_files_cache[c_dir] = file_map
+        return file_map
+
     # 2. Meeting materials
     for m in meetings:
         mid = m.get("id", "")
@@ -606,18 +646,14 @@ def sync_local_materials_status(
             target_path = meeting_dir / filename
 
             existing = resolve_existing_target_path(target_path)
-            # If not found directly, check legacy folders in same council directory
+            # Drop 82: Check legacy folders in same council directory via cached index (O(1) fast lookup)
             if not existing and meeting_dir.parent.exists():
-                try:
-                    for entry in os.scandir(meeting_dir.parent):
-                        if entry.is_dir() and entry.name != COUNCIL_MATERIALS_FOLDER and not entry.name.startswith((".", "_")):
-                            cand = Path(entry.path) / filename
-                            c_exist = resolve_existing_target_path(cand)
-                            if c_exist and c_exist.is_file():
-                                existing = c_exist
-                                break
-                except OSError:
-                    pass
+                c_index = get_council_files_index(meeting_dir.parent)
+                cand_path = c_index.get(filename)
+                if not cand_path and filename.lower().endswith(".pdf"):
+                    cand_path = c_index.get(filename[:-4] + ".html")
+                if cand_path:
+                    existing = resolve_existing_target_path(cand_path)
 
             if existing and existing.is_file():
                 rel_path = str(existing.relative_to(output_base)).replace("\\", "/")

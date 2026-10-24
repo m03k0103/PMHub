@@ -724,6 +724,19 @@ if __name__ == "__main__":
     print(f"Starting PM-Hub Local Admin Server at http://localhost:{PORT}")
     print(f"Access Admin Dashboard at: http://localhost:{PORT}/admin/admin_dashboard.html")
     server_address = ("", PORT)
+    # Drop 82: If DB has 0 downloaded materials but local_docs exists, start background sync
+    try:
+        from admin.db.db_manager import get_materials_download_summary
+        summary = get_materials_download_summary()
+        if summary.get("downloadedCount", 0) == 0:
+            local_docs_dir = Path(__file__).resolve().parent.parent / "local_docs"
+            if local_docs_dir.exists() and any(f for f in local_docs_dir.iterdir() if not f.name.startswith(".")):
+                import threading
+                print("[PMM] Local docs detected with un-synced DB. Starting background status sync...", flush=True)
+                threading.Thread(target=sync_local_materials_status, daemon=True).start()
+    except Exception as e_srv:
+        pass
+
     ThreadingHTTPServer.allow_reuse_address = True
     with ThreadingHTTPServer(server_address, CustomHandler) as httpd:
         try:
