@@ -31,6 +31,17 @@ PROJECT_ROOT = os.path.dirname(BASE_DIR)
 DATA_JSON_PATH = os.path.join(PROJECT_ROOT, "docs", "data.json")
 ADMIN_DATA_PATH = os.path.join(BASE_DIR, "admin_data.json")
 
+# 省庁コード正規化マップ (再発防止ガード: ENV -> MOE 等)
+MINISTRY_CODE_NORMALIZATION = {
+    "ENV": "MOE",
+}
+
+def normalize_ministry_code(code: str) -> str:
+    if not code:
+        return ""
+    c = code.upper().strip()
+    return MINISTRY_CODE_NORMALIZATION.get(c, c)
+
 # 非会議体ノイズキーワード・パターン定義 (CR-187)
 NOISE_PERSON_ROLES = r"(?:大臣|副大臣|政務官|長官|総理|知事|教授|名誉教授|代表|委員)"
 NOISE_ACTION_PATTERNS = [
@@ -472,7 +483,7 @@ def _discover_from_ministry_news(
             match_council_from_news_item, normalize_text
         )
 
-    target_mins = [target_ministry.upper()] if target_ministry else list(MINISTRY_NEWS_PORTALS.keys())
+    target_mins = [normalize_ministry_code(target_ministry)] if target_ministry else list(dict.fromkeys(normalize_ministry_code(k) for k in MINISTRY_NEWS_PORTALS.keys()))
     total_ministries = len(target_mins)
     emit(f"走査対象府省庁: {', '.join(target_mins)} (計 {total_ministries} 省庁)")
 
@@ -696,7 +707,7 @@ def _discover_from_ministry_news(
 
             sub_keywords = ('部会', '分科会', '小委員会', '委員会', 'ワーキンググループ', '検討会', '研究会', '審査会', '専門家会合', 'タスクフォース')
             for llm_cand in judge_res.get("candidates", []):
-                min_code = llm_cand.get("ministry", "").upper()
+                min_code = normalize_ministry_code(llm_cand.get("ministry", ""))
                 cand_name = llm_cand.get("name", "").strip()
                 orig_item_url = llm_cand.get("url", "").strip()
                 raw_title = llm_cand.get("raw_title", "")

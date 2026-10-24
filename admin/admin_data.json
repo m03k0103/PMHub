@@ -1,5 +1,5 @@
 {
-  "lastCrawlTime": "2026/10/24 08:05",
+  "lastCrawlTime": "2026/10/24 17:58",
   "scrapingRuleTemplates": {
     "tpl-cas-gijisidai-nested": {
       "date_regex": "(令和\\d+年\\d+月\\d+日|平成\\d+年\\d+月\\d+日|\\d{4}年\\d{1,2}月\\d{1,2}日)",
@@ -4503,72 +4503,6 @@
       "manualLock": true,
       "officialUrl": "https://www.digital.go.jp/councils/social-promotion-executive",
       "pdf_selector": "a[href*='.pdf'], a[href*='.PDF']"
-    },
-    "env-2961": {
-      "template": "tpl-cas-gijisidai-nested",
-      "manualLock": true,
-      "officialUrl": "https://www.env.go.jp/council/index.html",
-      "extract_from_parent_table": true
-    },
-    "env-2962": {
-      "template": "tpl-cas-gijisidai-nested",
-      "manualLock": true,
-      "officialUrl": "https://www.env.go.jp/press/press_05724.html",
-      "extract_from_parent_table": true
-    },
-    "env-2963": {
-      "template": "tpl-cas-gijisidai-nested",
-      "manualLock": true,
-      "officialUrl": "https://www.env.go.jp/press/press_05711.html",
-      "extract_from_parent_table": true
-    },
-    "env-2964": {
-      "template": "tpl-cas-gijisidai-nested",
-      "manualLock": true,
-      "officialUrl": "https://www.env.go.jp/press/press_05672.html",
-      "extract_from_parent_table": true
-    },
-    "env-2965": {
-      "template": "tpl-cas-gijisidai-nested",
-      "manualLock": true,
-      "officialUrl": "https://www.env.go.jp/press/press_05691.html",
-      "extract_from_parent_table": true
-    },
-    "env-2966": {
-      "template": "tpl-cas-gijisidai-nested",
-      "manualLock": true,
-      "officialUrl": "https://www.env.go.jp/press/press_05669.html",
-      "extract_from_parent_table": true
-    },
-    "env-2967": {
-      "template": "tpl-cas-gijisidai-nested",
-      "manualLock": true,
-      "officialUrl": "https://www.env.go.jp/press/press_05663.html",
-      "extract_from_parent_table": true
-    },
-    "env-2968": {
-      "template": "tpl-cas-gijisidai-nested",
-      "manualLock": true,
-      "officialUrl": "https://www.env.go.jp/press/press_05658.html",
-      "extract_from_parent_table": true
-    },
-    "env-2969": {
-      "template": "tpl-cas-gijisidai-nested",
-      "manualLock": true,
-      "officialUrl": "https://www.env.go.jp/press/press_05623.html",
-      "extract_from_parent_table": true
-    },
-    "env-2970": {
-      "template": "tpl-cas-gijisidai-nested",
-      "manualLock": true,
-      "officialUrl": "https://www.env.go.jp/press/press_05568.html",
-      "extract_from_parent_table": true
-    },
-    "env-2971": {
-      "template": "tpl-cas-gijisidai-nested",
-      "manualLock": true,
-      "officialUrl": "https://www.env.go.jp/council/20ari-yatsu/yoshi20.html",
-      "extract_from_parent_table": true
     },
     "fdma-anzenben_gas_kakusan": {
       "template": "tpl-general-round-subpage",
@@ -12666,6 +12600,75 @@
       "officialUrl": "https://www.mod.go.jp/j/policy/agenda/meeting/space_domain/index.html",
       "pdf_selector": "a[href*='.pdf'], a[href*='.PDF']"
     },
+    "moe-2961": {
+      "template": "tpl-cas-gijisidai-nested",
+      "manualLock": true,
+      "officialUrl": "https://www.env.go.jp/council/index.html",
+      "extract_from_parent_table": true
+    },
+    "moe-2962": {
+      "template": "tpl-cas-gijisidai-nested",
+      "manualLock": true,
+      "officialUrl": "https://www.env.go.jp/press/press_05724.html",
+      "extract_from_parent_table": true
+    },
+    "moe-2963": {
+      "template": "tpl-cas-gijisidai-nested",
+      "manualLock": true,
+      "officialUrl": "https://www.env.go.jp/press/press_05711.html",
+      "extract_from_parent_table": true
+    },
+    "moe-2964": {
+      "template": "tpl-cas-gijisidai-nested",
+      "manualLock": true,
+      "officialUrl": "https://www.env.go.jp/press/press_05672.html",
+      "extract_from_parent_table": true
+    },
+    "moe-2965": {
+      "template": "tpl-cas-gijisidai-nested",
+      "manualLock": true,
+      "officialUrl": "https://www.env.go.jp/press/press_05691.html",
+      "extract_from_parent_table": true
+    },
+    "moe-2966": {
+      "template": "tpl-cas-gijisidai-nested",
+      "manualLock": true,
+      "officialUrl": "https://www.env.go.jp/press/press_05669.html",
+      "extract_from_parent_table": true
+    },
+    "moe-2967": {
+      "template": "tpl-cas-gijisidai-nested",
+      "manualLock": true,
+      "officialUrl": "https://www.env.go.jp/press/press_05663.html",
+      "extract_from_parent_table": true
+    },
+    "moe-2968": {
+      "template": "tpl-cas-gijisidai-nested",
+      "manualLock": true,
+      "officialUrl": "https://www.env.go.jp/press/press_05658.html",
+      "extract_from_parent_table": true
+    },
+    "moe-2969": {
+      "template": "tpl-cas-gijisidai-nested",
+      "manualLock": true,
+      "officialUrl": "https://www.env.go.jp/press/press_05623.html",
+      "extract_from_parent_table": true
+    },
+    "moe-2970": {
+      "template": "tpl-cas-gijisidai-nested",
+      "manualLock": true,
+      "officialUrl": "https://www.env.go.jp/press/press_05568.html",
+      "extract_from_parent_table": true,
+      "subpage_discovery_pattern": "committee/(?:generalmeeting_|bcwg_|bf_|rcf_)[^/]+/",
+      "pdf_selector": "href=[\"\\']([^\"\\']+\\.pdf)[\"\\']",
+      "date_regex": "(\\d{4}年\\d{1,2}月\\d{1,2}日|令和\\d+年\\d{1,2}月\\d{1,2}日)"
+    },
+    "moe-2971": {
+      "template": "tpl-cas-gijisidai-nested",
+      "manualLock": true,
+      "officialUrl": "https://www.env.go.jp/council/20ari-yatsu/yoshi20.html",
+      "extract_from_parent_table": true
+    },
     "moe-chuo_kankyo_chikyu": {
       "date_regex": "(?:令和|平成)\\d+年\\d+月\\d+日|20\\d{2}年\\d+月\\d+日",
       "manualLock": true,
@@ -15049,6 +15052,17 @@
       "consecutiveFailures": 0,
       "manualLockActive": false
     },
+    "caa-3007": {
+      "lastAttempt": "2026-10-24 17:53:10",
+      "result": "success",
+      "resultReason": "開催回 12 件を検出（資料・日付完備）",
+      "extractionMethod": "rule",
+      "materialsCount": 40,
+      "datesCount": 5,
+      "failureReason": "",
+      "consecutiveFailures": 0,
+      "manualLockActive": false
+    },
     "caa-kaigi_kenkyu": {
       "lastAttempt": "2026-10-24 07:05:08",
       "result": "success",
@@ -15631,6 +15645,116 @@
       "failureReason": "",
       "consecutiveFailures": 0,
       "manualLockActive": true
+    },
+    "cao-2951": {
+      "lastAttempt": "2026-10-24 17:52:52",
+      "result": "success",
+      "resultReason": "開催回 22 件を検出（資料・日付完備）",
+      "extractionMethod": "rule",
+      "materialsCount": 101,
+      "datesCount": 5,
+      "failureReason": "",
+      "consecutiveFailures": 0,
+      "manualLockActive": false
+    },
+    "cao-2952": {
+      "lastAttempt": "2026-10-24 17:52:51",
+      "result": "success",
+      "resultReason": "開催回 1 件を検出（資料・日付完備）",
+      "extractionMethod": "rule",
+      "materialsCount": 511,
+      "datesCount": 5,
+      "failureReason": "",
+      "consecutiveFailures": 0,
+      "manualLockActive": false
+    },
+    "cao-2953": {
+      "lastAttempt": "2026-10-24 17:53:15",
+      "result": "success",
+      "resultReason": "開催回 1 件を検出（資料・日付完備）",
+      "extractionMethod": "rule",
+      "materialsCount": 511,
+      "datesCount": 5,
+      "failureReason": "",
+      "consecutiveFailures": 0,
+      "manualLockActive": false
+    },
+    "cao-2954": {
+      "lastAttempt": "2026-10-24 17:53:34",
+      "result": "success",
+      "resultReason": "開催回 1 件を検出（資料・日付完備）",
+      "extractionMethod": "rule",
+      "materialsCount": 510,
+      "datesCount": 5,
+      "failureReason": "",
+      "consecutiveFailures": 0,
+      "manualLockActive": false
+    },
+    "cao-2955": {
+      "lastAttempt": "2026-10-24 17:53:47",
+      "result": "success",
+      "resultReason": "開催回 1 件を検出（資料・日付完備）",
+      "extractionMethod": "rule",
+      "materialsCount": 514,
+      "datesCount": 5,
+      "failureReason": "",
+      "consecutiveFailures": 0,
+      "manualLockActive": false
+    },
+    "cao-2956": {
+      "lastAttempt": "2026-10-24 17:54:02",
+      "result": "success",
+      "resultReason": "開催回 1 件を検出（資料・日付完備）",
+      "extractionMethod": "rule",
+      "materialsCount": 522,
+      "datesCount": 5,
+      "failureReason": "",
+      "consecutiveFailures": 0,
+      "manualLockActive": false
+    },
+    "cao-2957": {
+      "lastAttempt": "2026-10-24 17:54:13",
+      "result": "success",
+      "resultReason": "開催回 1 件を検出（資料・日付完備）",
+      "extractionMethod": "rule",
+      "materialsCount": 517,
+      "datesCount": 5,
+      "failureReason": "",
+      "consecutiveFailures": 0,
+      "manualLockActive": false
+    },
+    "cao-2958": {
+      "lastAttempt": "2026-10-24 17:52:56",
+      "result": "partial",
+      "resultReason": "開催日未取得（資料のみ検出）",
+      "extractionMethod": "rule",
+      "materialsCount": 5,
+      "datesCount": 0,
+      "failureReason": "",
+      "consecutiveFailures": 0,
+      "manualLockActive": false
+    },
+    "cao-2959": {
+      "lastAttempt": "2026-10-24 17:54:16",
+      "result": "success",
+      "resultReason": "開催回 1 件を検出（資料・日付完備）",
+      "extractionMethod": "rule",
+      "materialsCount": 513,
+      "datesCount": 5,
+      "failureReason": "",
+      "consecutiveFailures": 0,
+      "manualLockActive": false
+    },
+    "cao-2960": {
+      "lastAttempt": "2026-10-24 17:54:26",
+      "result": "success",
+      "resultReason": "開催回 1 件を検出（資料・日付完備）",
+      "extractionMethod": "rule",
+      "materialsCount": 514,
+      "datesCount": 5,
+      "failureReason": "",
+      "consecutiveFailures": 0,
+      "manualLockActive": false
     },
     "cao-ai_hq": {
       "lastAttempt": "2026-10-24 07:07:08",
@@ -18173,6 +18297,28 @@
       "consecutiveFailures": 0,
       "manualLockActive": true
     },
+    "cfa-2973": {
+      "lastAttempt": "2026-10-24 17:52:52",
+      "result": "success",
+      "resultReason": "PDF配付資料 5 件・開催日 1 件を正常取得",
+      "extractionMethod": "rule",
+      "materialsCount": 5,
+      "datesCount": 1,
+      "failureReason": "",
+      "consecutiveFailures": 0,
+      "manualLockActive": false
+    },
+    "cfa-2974": {
+      "lastAttempt": "2026-10-24 17:53:25",
+      "result": "success",
+      "resultReason": "PDF配付資料 1 件・開催日 1 件を正常取得",
+      "extractionMethod": "rule",
+      "materialsCount": 1,
+      "datesCount": 1,
+      "failureReason": "",
+      "consecutiveFailures": 0,
+      "manualLockActive": false
+    },
     "cfa-kodomo_shingikai": {
       "lastAttempt": "2026-10-24 07:03:51",
       "result": "success",
@@ -18205,6 +18351,17 @@
       "failureReason": "",
       "consecutiveFailures": 0,
       "manualLockActive": true
+    },
+    "digital-2972": {
+      "lastAttempt": "2026-10-24 17:52:56",
+      "result": "success",
+      "resultReason": "PDF配付資料 11 件・開催日 1 件を正常取得",
+      "extractionMethod": "rule",
+      "materialsCount": 11,
+      "datesCount": 1,
+      "failureReason": "",
+      "consecutiveFailures": 0,
+      "manualLockActive": false
     },
     "digital-385": {
       "lastAttempt": "2026-10-24 07:03:41",
@@ -19731,6 +19888,39 @@
       "extractionMethod": "rule",
       "materialsCount": 8,
       "datesCount": 5,
+      "failureReason": "",
+      "consecutiveFailures": 0,
+      "manualLockActive": false
+    },
+    "fsa-2902": {
+      "lastAttempt": "2026-10-24 17:52:49",
+      "result": "partial",
+      "resultReason": "開催日のみ検出（資料0件: 令和8年10月21日）",
+      "extractionMethod": "rule",
+      "materialsCount": 0,
+      "datesCount": 2,
+      "failureReason": "",
+      "consecutiveFailures": 0,
+      "manualLockActive": false
+    },
+    "fsa-2903": {
+      "lastAttempt": "2026-10-24 17:53:19",
+      "result": "partial",
+      "resultReason": "開催日のみ検出（資料0件: 令和8年9月18日）",
+      "extractionMethod": "rule",
+      "materialsCount": 0,
+      "datesCount": 1,
+      "failureReason": "",
+      "consecutiveFailures": 0,
+      "manualLockActive": false
+    },
+    "fsa-2904": {
+      "lastAttempt": "2026-10-24 17:53:37",
+      "result": "success",
+      "resultReason": "PDF配付資料 2 件・開催日 2 件を正常取得",
+      "extractionMethod": "rule",
+      "materialsCount": 2,
+      "datesCount": 2,
       "failureReason": "",
       "consecutiveFailures": 0,
       "manualLockActive": false
@@ -21495,6 +21685,39 @@
       "consecutiveFailures": 0,
       "manualLockActive": true
     },
+    "jfa-3004": {
+      "lastAttempt": "2026-10-24 17:54:05",
+      "result": "failed",
+      "resultReason": "配付資料・開催日・個別開催回のいずれも検出できませんでした",
+      "extractionMethod": "none",
+      "materialsCount": 0,
+      "datesCount": 0,
+      "failureReason": "配付資料・開催日・個別開催回のいずれも検出できませんでした",
+      "consecutiveFailures": 1,
+      "manualLockActive": false
+    },
+    "jfa-3005": {
+      "lastAttempt": "2026-10-24 17:53:22",
+      "result": "partial",
+      "resultReason": "開催日のみ検出（資料0件: 令和7年12月12日）",
+      "extractionMethod": "rule",
+      "materialsCount": 0,
+      "datesCount": 4,
+      "failureReason": "",
+      "consecutiveFailures": 0,
+      "manualLockActive": false
+    },
+    "jfa-3006": {
+      "lastAttempt": "2026-10-24 17:53:40",
+      "result": "success",
+      "resultReason": "PDF配付資料 2 件・開催日 2 件を正常取得",
+      "extractionMethod": "rule",
+      "materialsCount": 2,
+      "datesCount": 2,
+      "failureReason": "",
+      "consecutiveFailures": 0,
+      "manualLockActive": false
+    },
     "jfa-592": {
       "lastAttempt": "2026-10-24 07:03:43",
       "result": "success",
@@ -22077,6 +22300,17 @@
       "failureReason": "",
       "consecutiveFailures": 0,
       "manualLockActive": true
+    },
+    "maff-2943": {
+      "lastAttempt": "2026-10-24 17:52:57",
+      "result": "success",
+      "resultReason": "開催回 1 件を検出（資料・日付完備）",
+      "extractionMethod": "rule",
+      "materialsCount": 50,
+      "datesCount": 5,
+      "failureReason": "",
+      "consecutiveFailures": 0,
+      "manualLockActive": false
     },
     "maff-648": {
       "lastAttempt": "2026-10-24 07:04:20",
@@ -23123,6 +23357,83 @@
       "consecutiveFailures": 0,
       "manualLockActive": false
     },
+    "mext-2944": {
+      "lastAttempt": "2026-10-24 17:52:47",
+      "result": "partial",
+      "resultReason": "開催日のみ検出（資料0件: 令和8年10月30日）",
+      "extractionMethod": "rule",
+      "materialsCount": 0,
+      "datesCount": 2,
+      "failureReason": "",
+      "consecutiveFailures": 0,
+      "manualLockActive": false
+    },
+    "mext-2945": {
+      "lastAttempt": "2026-10-24 17:53:15",
+      "result": "partial",
+      "resultReason": "開催日のみ検出（資料0件: 令和8年10月28日）",
+      "extractionMethod": "rule",
+      "materialsCount": 0,
+      "datesCount": 1,
+      "failureReason": "",
+      "consecutiveFailures": 0,
+      "manualLockActive": false
+    },
+    "mext-2946": {
+      "lastAttempt": "2026-10-24 17:53:30",
+      "result": "partial",
+      "resultReason": "開催日のみ検出（資料0件: 令和8年10月28日）",
+      "extractionMethod": "rule",
+      "materialsCount": 0,
+      "datesCount": 2,
+      "failureReason": "",
+      "consecutiveFailures": 0,
+      "manualLockActive": false
+    },
+    "mext-2947": {
+      "lastAttempt": "2026-10-24 17:53:50",
+      "result": "partial",
+      "resultReason": "開催日のみ検出（資料0件: 令和8年10月27日）",
+      "extractionMethod": "rule",
+      "materialsCount": 0,
+      "datesCount": 1,
+      "failureReason": "",
+      "consecutiveFailures": 0,
+      "manualLockActive": false
+    },
+    "mext-2948": {
+      "lastAttempt": "2026-10-24 17:53:58",
+      "result": "partial",
+      "resultReason": "開催日のみ検出（資料0件: 令和8年10月26日）",
+      "extractionMethod": "rule",
+      "materialsCount": 0,
+      "datesCount": 1,
+      "failureReason": "",
+      "consecutiveFailures": 0,
+      "manualLockActive": false
+    },
+    "mext-2949": {
+      "lastAttempt": "2026-10-24 17:54:10",
+      "result": "partial",
+      "resultReason": "開催日のみ検出（資料0件: 令和8年10月21日）",
+      "extractionMethod": "rule",
+      "materialsCount": 0,
+      "datesCount": 1,
+      "failureReason": "",
+      "consecutiveFailures": 0,
+      "manualLockActive": false
+    },
+    "mext-2950": {
+      "lastAttempt": "2026-10-24 17:54:19",
+      "result": "partial",
+      "resultReason": "開催日のみ検出（資料0件: 令和8年10月22日）",
+      "extractionMethod": "rule",
+      "materialsCount": 0,
+      "datesCount": 1,
+      "failureReason": "",
+      "consecutiveFailures": 0,
+      "manualLockActive": false
+    },
     "mext-714": {
       "lastAttempt": "2026-10-24 07:08:47",
       "result": "failed",
@@ -23716,6 +24027,545 @@
       "failureReason": "",
       "consecutiveFailures": 0,
       "manualLockActive": true
+    },
+    "mhlw-2854": {
+      "lastAttempt": "2026-10-24 17:53:20",
+      "result": "success",
+      "resultReason": "開催回 35 件を検出（資料・日付完備）",
+      "extractionMethod": "rule",
+      "materialsCount": 258,
+      "datesCount": 5,
+      "failureReason": "",
+      "consecutiveFailures": 0,
+      "manualLockActive": false
+    },
+    "mhlw-2855": {
+      "lastAttempt": "2026-10-24 17:54:51",
+      "result": "failed",
+      "resultReason": "配付資料・開催日・個別開催回のいずれも検出できませんでした",
+      "extractionMethod": "none",
+      "materialsCount": 0,
+      "datesCount": 0,
+      "failureReason": "配付資料・開催日・個別開催回のいずれも検出できませんでした",
+      "consecutiveFailures": 1,
+      "manualLockActive": false
+    },
+    "mhlw-2856": {
+      "lastAttempt": "2026-10-24 17:53:26",
+      "result": "success",
+      "resultReason": "PDF配付資料 1 件・開催日 3 件を正常取得",
+      "extractionMethod": "rule",
+      "materialsCount": 1,
+      "datesCount": 3,
+      "failureReason": "",
+      "consecutiveFailures": 0,
+      "manualLockActive": false
+    },
+    "mhlw-2857": {
+      "lastAttempt": "2026-10-24 17:53:44",
+      "result": "success",
+      "resultReason": "開催回 28 件を検出（資料・日付完備）",
+      "extractionMethod": "rule",
+      "materialsCount": 111,
+      "datesCount": 5,
+      "failureReason": "",
+      "consecutiveFailures": 0,
+      "manualLockActive": false
+    },
+    "mhlw-2858": {
+      "lastAttempt": "2026-10-24 17:53:53",
+      "result": "partial",
+      "resultReason": "開催日のみ検出（資料0件: 2026-10-21）",
+      "extractionMethod": "rule",
+      "materialsCount": 0,
+      "datesCount": 3,
+      "failureReason": "",
+      "consecutiveFailures": 0,
+      "manualLockActive": false
+    },
+    "mhlw-2859": {
+      "lastAttempt": "2026-10-24 17:54:00",
+      "result": "success",
+      "resultReason": "開催回 4 件を検出（資料・日付完備）",
+      "extractionMethod": "rule",
+      "materialsCount": 8,
+      "datesCount": 5,
+      "failureReason": "",
+      "consecutiveFailures": 0,
+      "manualLockActive": false
+    },
+    "mhlw-2860": {
+      "lastAttempt": "2026-10-24 17:54:10",
+      "result": "success",
+      "resultReason": "PDF配付資料 11 件・開催日 1 件を正常取得",
+      "extractionMethod": "rule",
+      "materialsCount": 11,
+      "datesCount": 1,
+      "failureReason": "",
+      "consecutiveFailures": 0,
+      "manualLockActive": false
+    },
+    "mhlw-2861": {
+      "lastAttempt": "2026-10-24 17:54:22",
+      "result": "success",
+      "resultReason": "開催回 2 件を検出（資料・日付完備）",
+      "extractionMethod": "rule",
+      "materialsCount": 9,
+      "datesCount": 5,
+      "failureReason": "",
+      "consecutiveFailures": 0,
+      "manualLockActive": false
+    },
+    "mhlw-2862": {
+      "lastAttempt": "2026-10-24 17:54:28",
+      "result": "success",
+      "resultReason": "開催回 28 件を検出（資料・日付完備）",
+      "extractionMethod": "rule",
+      "materialsCount": 49,
+      "datesCount": 5,
+      "failureReason": "",
+      "consecutiveFailures": 0,
+      "manualLockActive": false
+    },
+    "mhlw-2863": {
+      "lastAttempt": "2026-10-24 17:54:36",
+      "result": "partial",
+      "resultReason": "資料 1 件・開催日 1 件を検出したがタイトルが汎用見出し（有料老人ホームにおける望ましいサービス提供のあり方に関する検討会（第９回）議事録｜厚生労働省）",
+      "extractionMethod": "rule",
+      "materialsCount": 1,
+      "datesCount": 1,
+      "failureReason": "",
+      "consecutiveFailures": 0,
+      "manualLockActive": false
+    },
+    "mhlw-2864": {
+      "lastAttempt": "2026-10-24 17:54:40",
+      "result": "success",
+      "resultReason": "PDF配付資料 3 件・開催日 3 件を正常取得",
+      "extractionMethod": "rule",
+      "materialsCount": 3,
+      "datesCount": 3,
+      "failureReason": "",
+      "consecutiveFailures": 0,
+      "manualLockActive": false
+    },
+    "mhlw-2865": {
+      "lastAttempt": "2026-10-24 17:54:45",
+      "result": "success",
+      "resultReason": "開催回 31 件を検出（資料・日付完備）",
+      "extractionMethod": "rule",
+      "materialsCount": 62,
+      "datesCount": 5,
+      "failureReason": "",
+      "consecutiveFailures": 0,
+      "manualLockActive": false
+    },
+    "mhlw-2866": {
+      "lastAttempt": "2026-10-24 17:55:25",
+      "result": "success",
+      "resultReason": "開催回 35 件を検出（資料・日付完備）",
+      "extractionMethod": "rule",
+      "materialsCount": 35,
+      "datesCount": 5,
+      "failureReason": "",
+      "consecutiveFailures": 0,
+      "manualLockActive": false
+    },
+    "mhlw-2867": {
+      "lastAttempt": "2026-10-24 17:55:37",
+      "result": "success",
+      "resultReason": "開催回 36 件を検出（資料・日付完備）",
+      "extractionMethod": "rule",
+      "materialsCount": 58,
+      "datesCount": 5,
+      "failureReason": "",
+      "consecutiveFailures": 0,
+      "manualLockActive": false
+    },
+    "mhlw-2868": {
+      "lastAttempt": "2026-10-24 17:55:08",
+      "result": "success",
+      "resultReason": "開催回 6 件を検出（資料・日付完備）",
+      "extractionMethod": "rule",
+      "materialsCount": 20,
+      "datesCount": 5,
+      "failureReason": "",
+      "consecutiveFailures": 0,
+      "manualLockActive": false
+    },
+    "mhlw-2869": {
+      "lastAttempt": "2026-10-24 17:55:21",
+      "result": "success",
+      "resultReason": "PDF配付資料 13 件・開催日 1 件を正常取得",
+      "extractionMethod": "rule",
+      "materialsCount": 13,
+      "datesCount": 1,
+      "failureReason": "",
+      "consecutiveFailures": 0,
+      "manualLockActive": false
+    },
+    "mhlw-2870": {
+      "lastAttempt": "2026-10-24 17:55:23",
+      "result": "success",
+      "resultReason": "PDF配付資料 1 件・開催日 4 件を正常取得",
+      "extractionMethod": "rule",
+      "materialsCount": 1,
+      "datesCount": 4,
+      "failureReason": "",
+      "consecutiveFailures": 0,
+      "manualLockActive": false
+    },
+    "mhlw-2871": {
+      "lastAttempt": "2026-10-24 17:55:28",
+      "result": "success",
+      "resultReason": "PDF配付資料 1 件・開催日 4 件を正常取得",
+      "extractionMethod": "rule",
+      "materialsCount": 1,
+      "datesCount": 4,
+      "failureReason": "",
+      "consecutiveFailures": 0,
+      "manualLockActive": false
+    },
+    "mhlw-2872": {
+      "lastAttempt": "2026-10-24 17:55:36",
+      "result": "success",
+      "resultReason": "開催回 9 件を検出（資料・日付完備）",
+      "extractionMethod": "rule",
+      "materialsCount": 38,
+      "datesCount": 5,
+      "failureReason": "",
+      "consecutiveFailures": 0,
+      "manualLockActive": false
+    },
+    "mhlw-2873": {
+      "lastAttempt": "2026-10-24 17:55:45",
+      "result": "partial",
+      "resultReason": "開催日のみ検出（資料0件: 令和8年10月19日）",
+      "extractionMethod": "rule",
+      "materialsCount": 0,
+      "datesCount": 2,
+      "failureReason": "",
+      "consecutiveFailures": 0,
+      "manualLockActive": false
+    },
+    "mhlw-2874": {
+      "lastAttempt": "2026-10-24 17:55:49",
+      "result": "partial",
+      "resultReason": "開催日のみ検出（資料0件: 2026-10-06）",
+      "extractionMethod": "rule",
+      "materialsCount": 0,
+      "datesCount": 3,
+      "failureReason": "",
+      "consecutiveFailures": 0,
+      "manualLockActive": false
+    },
+    "mhlw-2875": {
+      "lastAttempt": "2026-10-24 17:55:53",
+      "result": "partial",
+      "resultReason": "開催日のみ検出（資料0件: 令和8年10月1日）",
+      "extractionMethod": "rule",
+      "materialsCount": 0,
+      "datesCount": 2,
+      "failureReason": "",
+      "consecutiveFailures": 0,
+      "manualLockActive": false
+    },
+    "mhlw-2876": {
+      "lastAttempt": "2026-10-24 17:55:57",
+      "result": "success",
+      "resultReason": "開催回 39 件を検出（資料・日付完備）",
+      "extractionMethod": "rule",
+      "materialsCount": 87,
+      "datesCount": 5,
+      "failureReason": "",
+      "consecutiveFailures": 0,
+      "manualLockActive": false
+    },
+    "mhlw-2877": {
+      "lastAttempt": "2026-10-24 17:55:55",
+      "result": "partial",
+      "resultReason": "開催日のみ検出（資料0件: 2026-08-25）",
+      "extractionMethod": "rule",
+      "materialsCount": 0,
+      "datesCount": 3,
+      "failureReason": "",
+      "consecutiveFailures": 0,
+      "manualLockActive": false
+    },
+    "mhlw-2878": {
+      "lastAttempt": "2026-10-24 17:55:56",
+      "result": "success",
+      "resultReason": "開催回 1 件を検出（資料・日付完備）",
+      "extractionMethod": "rule",
+      "materialsCount": 2,
+      "datesCount": 3,
+      "failureReason": "",
+      "consecutiveFailures": 0,
+      "manualLockActive": false
+    },
+    "mhlw-2879": {
+      "lastAttempt": "2026-10-24 17:58:12",
+      "result": "partial",
+      "resultReason": "開催日のみ検出（資料0件: 2026-09-14）",
+      "extractionMethod": "llm",
+      "materialsCount": 0,
+      "datesCount": 1,
+      "failureReason": "",
+      "consecutiveFailures": 0,
+      "manualLockActive": false
+    },
+    "mhlw-2880": {
+      "lastAttempt": "2026-10-24 17:56:07",
+      "result": "partial",
+      "resultReason": "開催日のみ検出（資料0件: 2026-09-24）",
+      "extractionMethod": "rule",
+      "materialsCount": 0,
+      "datesCount": 3,
+      "failureReason": "",
+      "consecutiveFailures": 0,
+      "manualLockActive": false
+    },
+    "mhlw-2881": {
+      "lastAttempt": "2026-10-24 17:56:08",
+      "result": "partial",
+      "resultReason": "開催日のみ検出（資料0件: 2026-09-24）",
+      "extractionMethod": "rule",
+      "materialsCount": 0,
+      "datesCount": 3,
+      "failureReason": "",
+      "consecutiveFailures": 0,
+      "manualLockActive": false
+    },
+    "mhlw-2882": {
+      "lastAttempt": "2026-10-24 17:56:08",
+      "result": "partial",
+      "resultReason": "開催日のみ検出（資料0件: 2026-09-18）",
+      "extractionMethod": "rule",
+      "materialsCount": 0,
+      "datesCount": 4,
+      "failureReason": "",
+      "consecutiveFailures": 0,
+      "manualLockActive": false
+    },
+    "mhlw-2883": {
+      "lastAttempt": "2026-10-24 17:56:18",
+      "result": "success",
+      "resultReason": "開催回 28 件を検出（資料・日付完備）",
+      "extractionMethod": "rule",
+      "materialsCount": 41,
+      "datesCount": 5,
+      "failureReason": "",
+      "consecutiveFailures": 0,
+      "manualLockActive": false
+    },
+    "mhlw-2884": {
+      "lastAttempt": "2026-10-24 17:56:12",
+      "result": "success",
+      "resultReason": "開催回 28 件を検出（資料・日付完備）",
+      "extractionMethod": "rule",
+      "materialsCount": 56,
+      "datesCount": 5,
+      "failureReason": "",
+      "consecutiveFailures": 0,
+      "manualLockActive": false
+    },
+    "mhlw-2885": {
+      "lastAttempt": "2026-10-24 17:56:20",
+      "result": "success",
+      "resultReason": "開催回 12 件を検出（資料・日付完備）",
+      "extractionMethod": "rule",
+      "materialsCount": 12,
+      "datesCount": 5,
+      "failureReason": "",
+      "consecutiveFailures": 0,
+      "manualLockActive": false
+    },
+    "mhlw-2886": {
+      "lastAttempt": "2026-10-24 17:56:27",
+      "result": "partial",
+      "resultReason": "開催日のみ検出（資料0件: 令和8年9月15日）",
+      "extractionMethod": "rule",
+      "materialsCount": 0,
+      "datesCount": 4,
+      "failureReason": "",
+      "consecutiveFailures": 0,
+      "manualLockActive": false
+    },
+    "mhlw-2887": {
+      "lastAttempt": "2026-10-24 17:55:55",
+      "result": "partial",
+      "resultReason": "開催日のみ検出（資料0件: 2026-09-25）",
+      "extractionMethod": "rule",
+      "materialsCount": 0,
+      "datesCount": 5,
+      "failureReason": "",
+      "consecutiveFailures": 0,
+      "manualLockActive": false
+    },
+    "mhlw-2888": {
+      "lastAttempt": "2026-10-24 17:55:53",
+      "result": "success",
+      "resultReason": "PDF配付資料 1 件・開催日 4 件を正常取得",
+      "extractionMethod": "rule",
+      "materialsCount": 1,
+      "datesCount": 4,
+      "failureReason": "",
+      "consecutiveFailures": 0,
+      "manualLockActive": false
+    },
+    "mhlw-2889": {
+      "lastAttempt": "2026-10-24 17:55:54",
+      "result": "partial",
+      "resultReason": "開催日のみ検出（資料0件: 令和8年9月16日）",
+      "extractionMethod": "rule",
+      "materialsCount": 0,
+      "datesCount": 2,
+      "failureReason": "",
+      "consecutiveFailures": 0,
+      "manualLockActive": false
+    },
+    "mhlw-2890": {
+      "lastAttempt": "2026-10-24 17:55:48",
+      "result": "partial",
+      "resultReason": "開催日未取得（資料のみ検出）",
+      "extractionMethod": "rule",
+      "materialsCount": 6,
+      "datesCount": 0,
+      "failureReason": "",
+      "consecutiveFailures": 0,
+      "manualLockActive": false
+    },
+    "mhlw-2891": {
+      "lastAttempt": "2026-10-24 17:55:41",
+      "result": "success",
+      "resultReason": "開催回 15 件を検出（資料・日付完備）",
+      "extractionMethod": "rule",
+      "materialsCount": 27,
+      "datesCount": 5,
+      "failureReason": "",
+      "consecutiveFailures": 0,
+      "manualLockActive": false
+    },
+    "mhlw-2893": {
+      "lastAttempt": "2026-10-24 17:55:33",
+      "result": "success",
+      "resultReason": "開催回 21 件を検出（資料・日付完備）",
+      "extractionMethod": "rule",
+      "materialsCount": 56,
+      "datesCount": 5,
+      "failureReason": "",
+      "consecutiveFailures": 0,
+      "manualLockActive": false
+    },
+    "mhlw-2894": {
+      "lastAttempt": "2026-10-24 17:55:24",
+      "result": "success",
+      "resultReason": "開催回 12 件を検出（資料・日付完備）",
+      "extractionMethod": "rule",
+      "materialsCount": 24,
+      "datesCount": 5,
+      "failureReason": "",
+      "consecutiveFailures": 0,
+      "manualLockActive": false
+    },
+    "mhlw-2895": {
+      "lastAttempt": "2026-10-24 17:55:21",
+      "result": "partial",
+      "resultReason": "開催日のみ検出（資料0件: 2026-09-01）",
+      "extractionMethod": "rule",
+      "materialsCount": 0,
+      "datesCount": 3,
+      "failureReason": "",
+      "consecutiveFailures": 0,
+      "manualLockActive": false
+    },
+    "mhlw-2896": {
+      "lastAttempt": "2026-10-24 17:55:16",
+      "result": "success",
+      "resultReason": "開催回 3 件を検出（資料・日付完備）",
+      "extractionMethod": "rule",
+      "materialsCount": 6,
+      "datesCount": 5,
+      "failureReason": "",
+      "consecutiveFailures": 0,
+      "manualLockActive": false
+    },
+    "mhlw-2897": {
+      "lastAttempt": "2026-10-24 17:55:05",
+      "result": "partial",
+      "resultReason": "開催日のみ検出（資料0件: 令和8年9月3日）",
+      "extractionMethod": "rule",
+      "materialsCount": 0,
+      "datesCount": 2,
+      "failureReason": "",
+      "consecutiveFailures": 0,
+      "manualLockActive": false
+    },
+    "mhlw-2898": {
+      "lastAttempt": "2026-10-24 17:54:56",
+      "result": "success",
+      "resultReason": "開催回 21 件を検出（資料・日付完備）",
+      "extractionMethod": "rule",
+      "materialsCount": 50,
+      "datesCount": 5,
+      "failureReason": "",
+      "consecutiveFailures": 0,
+      "manualLockActive": false
+    },
+    "mhlw-2899": {
+      "lastAttempt": "2026-10-24 17:54:54",
+      "result": "success",
+      "resultReason": "開催回 19 件を検出（資料・日付完備）",
+      "extractionMethod": "rule",
+      "materialsCount": 59,
+      "datesCount": 5,
+      "failureReason": "",
+      "consecutiveFailures": 0,
+      "manualLockActive": false
+    },
+    "mhlw-2900": {
+      "lastAttempt": "2026-10-24 17:54:46",
+      "result": "success",
+      "resultReason": "開催回 47 件を検出（資料・日付完備）",
+      "extractionMethod": "rule",
+      "materialsCount": 108,
+      "datesCount": 5,
+      "failureReason": "",
+      "consecutiveFailures": 0,
+      "manualLockActive": false
+    },
+    "mhlw-2901": {
+      "lastAttempt": "2026-10-24 17:54:40",
+      "result": "success",
+      "resultReason": "開催回 14 件を検出（資料・日付完備）",
+      "extractionMethod": "rule",
+      "materialsCount": 28,
+      "datesCount": 5,
+      "failureReason": "",
+      "consecutiveFailures": 0,
+      "manualLockActive": false
+    },
+    "mhlw-3008": {
+      "lastAttempt": "2026-10-24 17:54:39",
+      "result": "partial",
+      "resultReason": "開催日のみ検出（資料0件: 令和8年8月5日）",
+      "extractionMethod": "rule",
+      "materialsCount": 0,
+      "datesCount": 1,
+      "failureReason": "",
+      "consecutiveFailures": 0,
+      "manualLockActive": false
+    },
+    "mhlw-3010": {
+      "lastAttempt": "2026-10-24 17:54:33",
+      "result": "partial",
+      "resultReason": "開催日未取得（資料のみ検出）",
+      "extractionMethod": "rule",
+      "materialsCount": 4,
+      "datesCount": 0,
+      "failureReason": "",
+      "consecutiveFailures": 0,
+      "manualLockActive": false
     },
     "mhlw-729": {
       "lastAttempt": "2026-10-24 07:13:03",
@@ -26962,6 +27812,28 @@
       "consecutiveFailures": 0,
       "manualLockActive": true
     },
+    "mic-2941": {
+      "lastAttempt": "2026-10-24 17:52:52",
+      "result": "partial",
+      "resultReason": "資料 3 件・開催日 4 件を検出したがタイトルが汎用見出し（総務省｜報道資料｜電波法施行規則及び無線局免許手続規則の一部を改正する省令案等に関する意見募集の結果及び電波監理審議会からの答申）",
+      "extractionMethod": "rule",
+      "materialsCount": 3,
+      "datesCount": 4,
+      "failureReason": "",
+      "consecutiveFailures": 0,
+      "manualLockActive": false
+    },
+    "mic-2942": {
+      "lastAttempt": "2026-10-24 17:53:26",
+      "result": "success",
+      "resultReason": "PDF配付資料 1 件・開催日 2 件を正常取得",
+      "extractionMethod": "rule",
+      "materialsCount": 1,
+      "datesCount": 2,
+      "failureReason": "",
+      "consecutiveFailures": 0,
+      "manualLockActive": false
+    },
     "mic-5_2_6ghz_lan_wg": {
       "lastAttempt": "2026-10-24 07:05:03",
       "result": "success",
@@ -28095,6 +28967,358 @@
       "consecutiveFailures": 0,
       "manualLockActive": true
     },
+    "mlit-2909": {
+      "lastAttempt": "2026-10-24 17:52:47",
+      "result": "success",
+      "resultReason": "PDF配付資料 1 件・開催日 2 件を正常取得",
+      "extractionMethod": "rule",
+      "materialsCount": 1,
+      "datesCount": 2,
+      "failureReason": "",
+      "consecutiveFailures": 0,
+      "manualLockActive": false
+    },
+    "mlit-2910": {
+      "lastAttempt": "2026-10-24 17:53:10",
+      "result": "success",
+      "resultReason": "PDF配付資料 1 件・開催日 2 件を正常取得",
+      "extractionMethod": "rule",
+      "materialsCount": 1,
+      "datesCount": 2,
+      "failureReason": "",
+      "consecutiveFailures": 0,
+      "manualLockActive": false
+    },
+    "mlit-2911": {
+      "lastAttempt": "2026-10-24 17:53:27",
+      "result": "success",
+      "resultReason": "開催回 1 件を検出（資料・日付完備）",
+      "extractionMethod": "rule",
+      "materialsCount": 15,
+      "datesCount": 5,
+      "failureReason": "",
+      "consecutiveFailures": 0,
+      "manualLockActive": false
+    },
+    "mlit-2912": {
+      "lastAttempt": "2026-10-24 17:53:43",
+      "result": "success",
+      "resultReason": "PDF配付資料 1 件・開催日 2 件を正常取得",
+      "extractionMethod": "rule",
+      "materialsCount": 1,
+      "datesCount": 2,
+      "failureReason": "",
+      "consecutiveFailures": 0,
+      "manualLockActive": false
+    },
+    "mlit-2913": {
+      "lastAttempt": "2026-10-24 17:53:54",
+      "result": "success",
+      "resultReason": "PDF配付資料 3 件・開催日 2 件を正常取得",
+      "extractionMethod": "rule",
+      "materialsCount": 3,
+      "datesCount": 2,
+      "failureReason": "",
+      "consecutiveFailures": 0,
+      "manualLockActive": false
+    },
+    "mlit-2914": {
+      "lastAttempt": "2026-10-24 17:54:06",
+      "result": "success",
+      "resultReason": "PDF配付資料 1 件・開催日 3 件を正常取得",
+      "extractionMethod": "rule",
+      "materialsCount": 1,
+      "datesCount": 3,
+      "failureReason": "",
+      "consecutiveFailures": 0,
+      "manualLockActive": false
+    },
+    "mlit-2915": {
+      "lastAttempt": "2026-10-24 17:54:11",
+      "result": "success",
+      "resultReason": "PDF配付資料 2 件・開催日 2 件を正常取得",
+      "extractionMethod": "rule",
+      "materialsCount": 2,
+      "datesCount": 2,
+      "failureReason": "",
+      "consecutiveFailures": 0,
+      "manualLockActive": false
+    },
+    "mlit-2916": {
+      "lastAttempt": "2026-10-24 17:54:22",
+      "result": "success",
+      "resultReason": "PDF配付資料 1 件・開催日 2 件を正常取得",
+      "extractionMethod": "rule",
+      "materialsCount": 1,
+      "datesCount": 2,
+      "failureReason": "",
+      "consecutiveFailures": 0,
+      "manualLockActive": false
+    },
+    "mlit-2917": {
+      "lastAttempt": "2026-10-24 17:54:30",
+      "result": "success",
+      "resultReason": "開催回 1 件を検出（資料・日付完備）",
+      "extractionMethod": "rule",
+      "materialsCount": 6,
+      "datesCount": 3,
+      "failureReason": "",
+      "consecutiveFailures": 0,
+      "manualLockActive": false
+    },
+    "mlit-2918": {
+      "lastAttempt": "2026-10-24 17:54:36",
+      "result": "success",
+      "resultReason": "PDF配付資料 1 件・開催日 2 件を正常取得",
+      "extractionMethod": "rule",
+      "materialsCount": 1,
+      "datesCount": 2,
+      "failureReason": "",
+      "consecutiveFailures": 0,
+      "manualLockActive": false
+    },
+    "mlit-2919": {
+      "lastAttempt": "2026-10-24 17:54:44",
+      "result": "success",
+      "resultReason": "PDF配付資料 1 件・開催日 2 件を正常取得",
+      "extractionMethod": "rule",
+      "materialsCount": 1,
+      "datesCount": 2,
+      "failureReason": "",
+      "consecutiveFailures": 0,
+      "manualLockActive": false
+    },
+    "mlit-2920": {
+      "lastAttempt": "2026-10-24 17:54:49",
+      "result": "success",
+      "resultReason": "PDF配付資料 1 件・開催日 2 件を正常取得",
+      "extractionMethod": "rule",
+      "materialsCount": 1,
+      "datesCount": 2,
+      "failureReason": "",
+      "consecutiveFailures": 0,
+      "manualLockActive": false
+    },
+    "mlit-2921": {
+      "lastAttempt": "2026-10-24 17:54:53",
+      "result": "success",
+      "resultReason": "PDF配付資料 1 件・開催日 2 件を正常取得",
+      "extractionMethod": "rule",
+      "materialsCount": 1,
+      "datesCount": 2,
+      "failureReason": "",
+      "consecutiveFailures": 0,
+      "manualLockActive": false
+    },
+    "mlit-2922": {
+      "lastAttempt": "2026-10-24 17:55:04",
+      "result": "success",
+      "resultReason": "PDF配付資料 1 件・開催日 2 件を正常取得",
+      "extractionMethod": "rule",
+      "materialsCount": 1,
+      "datesCount": 2,
+      "failureReason": "",
+      "consecutiveFailures": 0,
+      "manualLockActive": false
+    },
+    "mlit-2923": {
+      "lastAttempt": "2026-10-24 17:55:11",
+      "result": "success",
+      "resultReason": "PDF配付資料 2 件・開催日 2 件を正常取得",
+      "extractionMethod": "rule",
+      "materialsCount": 2,
+      "datesCount": 2,
+      "failureReason": "",
+      "consecutiveFailures": 0,
+      "manualLockActive": false
+    },
+    "mlit-2924": {
+      "lastAttempt": "2026-10-24 17:55:20",
+      "result": "success",
+      "resultReason": "PDF配付資料 1 件・開催日 2 件を正常取得",
+      "extractionMethod": "rule",
+      "materialsCount": 1,
+      "datesCount": 2,
+      "failureReason": "",
+      "consecutiveFailures": 0,
+      "manualLockActive": false
+    },
+    "mlit-2925": {
+      "lastAttempt": "2026-10-24 17:55:22",
+      "result": "success",
+      "resultReason": "PDF配付資料 2 件・開催日 2 件を正常取得",
+      "extractionMethod": "rule",
+      "materialsCount": 2,
+      "datesCount": 2,
+      "failureReason": "",
+      "consecutiveFailures": 0,
+      "manualLockActive": false
+    },
+    "mlit-2927": {
+      "lastAttempt": "2026-10-24 17:55:31",
+      "result": "success",
+      "resultReason": "PDF配付資料 2 件・開催日 2 件を正常取得",
+      "extractionMethod": "rule",
+      "materialsCount": 2,
+      "datesCount": 2,
+      "failureReason": "",
+      "consecutiveFailures": 0,
+      "manualLockActive": false
+    },
+    "mlit-2928": {
+      "lastAttempt": "2026-10-24 17:55:37",
+      "result": "success",
+      "resultReason": "PDF配付資料 1 件・開催日 2 件を正常取得",
+      "extractionMethod": "rule",
+      "materialsCount": 1,
+      "datesCount": 2,
+      "failureReason": "",
+      "consecutiveFailures": 0,
+      "manualLockActive": false
+    },
+    "mlit-2929": {
+      "lastAttempt": "2026-10-24 17:55:49",
+      "result": "success",
+      "resultReason": "開催回 1 件を検出（資料・日付完備）",
+      "extractionMethod": "rule",
+      "materialsCount": 3,
+      "datesCount": 2,
+      "failureReason": "",
+      "consecutiveFailures": 0,
+      "manualLockActive": false
+    },
+    "mlit-2930": {
+      "lastAttempt": "2026-10-24 17:55:49",
+      "result": "success",
+      "resultReason": "PDF配付資料 1 件・開催日 2 件を正常取得",
+      "extractionMethod": "rule",
+      "materialsCount": 1,
+      "datesCount": 2,
+      "failureReason": "",
+      "consecutiveFailures": 0,
+      "manualLockActive": false
+    },
+    "mlit-2931": {
+      "lastAttempt": "2026-10-24 17:55:52",
+      "result": "success",
+      "resultReason": "PDF配付資料 1 件・開催日 1 件を正常取得",
+      "extractionMethod": "rule",
+      "materialsCount": 1,
+      "datesCount": 1,
+      "failureReason": "",
+      "consecutiveFailures": 0,
+      "manualLockActive": false
+    },
+    "mlit-2932": {
+      "lastAttempt": "2026-10-24 17:55:53",
+      "result": "success",
+      "resultReason": "PDF配付資料 1 件・開催日 2 件を正常取得",
+      "extractionMethod": "rule",
+      "materialsCount": 1,
+      "datesCount": 2,
+      "failureReason": "",
+      "consecutiveFailures": 0,
+      "manualLockActive": false
+    },
+    "mlit-2933": {
+      "lastAttempt": "2026-10-24 17:55:56",
+      "result": "success",
+      "resultReason": "開催回 1 件を検出（資料・日付完備）",
+      "extractionMethod": "rule",
+      "materialsCount": 21,
+      "datesCount": 5,
+      "failureReason": "",
+      "consecutiveFailures": 0,
+      "manualLockActive": false
+    },
+    "mlit-2934": {
+      "lastAttempt": "2026-10-24 17:56:00",
+      "result": "success",
+      "resultReason": "PDF配付資料 2 件・開催日 2 件を正常取得",
+      "extractionMethod": "rule",
+      "materialsCount": 2,
+      "datesCount": 2,
+      "failureReason": "",
+      "consecutiveFailures": 0,
+      "manualLockActive": false
+    },
+    "mlit-2935": {
+      "lastAttempt": "2026-10-24 17:56:07",
+      "result": "success",
+      "resultReason": "PDF配付資料 2 件・開催日 2 件を正常取得",
+      "extractionMethod": "rule",
+      "materialsCount": 2,
+      "datesCount": 2,
+      "failureReason": "",
+      "consecutiveFailures": 0,
+      "manualLockActive": false
+    },
+    "mlit-2936": {
+      "lastAttempt": "2026-10-24 17:56:08",
+      "result": "success",
+      "resultReason": "PDF配付資料 2 件・開催日 2 件を正常取得",
+      "extractionMethod": "rule",
+      "materialsCount": 2,
+      "datesCount": 2,
+      "failureReason": "",
+      "consecutiveFailures": 0,
+      "manualLockActive": false
+    },
+    "mlit-2937": {
+      "lastAttempt": "2026-10-24 17:56:08",
+      "result": "success",
+      "resultReason": "PDF配付資料 1 件・開催日 3 件を正常取得",
+      "extractionMethod": "rule",
+      "materialsCount": 1,
+      "datesCount": 3,
+      "failureReason": "",
+      "consecutiveFailures": 0,
+      "manualLockActive": false
+    },
+    "mlit-2938": {
+      "lastAttempt": "2026-10-24 17:56:09",
+      "result": "success",
+      "resultReason": "PDF配付資料 1 件・開催日 2 件を正常取得",
+      "extractionMethod": "rule",
+      "materialsCount": 1,
+      "datesCount": 2,
+      "failureReason": "",
+      "consecutiveFailures": 0,
+      "manualLockActive": false
+    },
+    "mlit-2939": {
+      "lastAttempt": "2026-10-24 17:56:09",
+      "result": "success",
+      "resultReason": "PDF配付資料 1 件・開催日 3 件を正常取得",
+      "extractionMethod": "rule",
+      "materialsCount": 1,
+      "datesCount": 3,
+      "failureReason": "",
+      "consecutiveFailures": 0,
+      "manualLockActive": false
+    },
+    "mlit-2940": {
+      "lastAttempt": "2026-10-24 17:56:16",
+      "result": "success",
+      "resultReason": "開催回 1 件を検出（資料・日付完備）",
+      "extractionMethod": "rule",
+      "materialsCount": 2,
+      "datesCount": 5,
+      "failureReason": "",
+      "consecutiveFailures": 0,
+      "manualLockActive": false
+    },
+    "mlit-3009": {
+      "lastAttempt": "2026-10-24 17:56:23",
+      "result": "success",
+      "resultReason": "PDF配付資料 1 件・開催日 2 件を正常取得",
+      "extractionMethod": "rule",
+      "materialsCount": 1,
+      "datesCount": 2,
+      "failureReason": "",
+      "consecutiveFailures": 0,
+      "manualLockActive": false
+    },
     "mlit-amami_shinkou": {
       "lastAttempt": "2026-10-12 09:15:26",
       "result": "success",
@@ -28810,6 +30034,39 @@
       "consecutiveFailures": 0,
       "manualLockActive": false
     },
+    "mod-2996": {
+      "lastAttempt": "2026-10-24 17:52:52",
+      "result": "success",
+      "resultReason": "PDF配付資料 1 件・開催日 2 件を正常取得",
+      "extractionMethod": "rule",
+      "materialsCount": 1,
+      "datesCount": 2,
+      "failureReason": "",
+      "consecutiveFailures": 0,
+      "manualLockActive": false
+    },
+    "mod-2997": {
+      "lastAttempt": "2026-10-24 17:53:28",
+      "result": "success",
+      "resultReason": "PDF配付資料 1 件・開催日 2 件を正常取得",
+      "extractionMethod": "rule",
+      "materialsCount": 1,
+      "datesCount": 2,
+      "failureReason": "",
+      "consecutiveFailures": 0,
+      "manualLockActive": false
+    },
+    "mod-2998": {
+      "lastAttempt": "2026-10-24 17:53:43",
+      "result": "success",
+      "resultReason": "PDF配付資料 1 件・開催日 1 件を正常取得",
+      "extractionMethod": "rule",
+      "materialsCount": 1,
+      "datesCount": 1,
+      "failureReason": "",
+      "consecutiveFailures": 0,
+      "manualLockActive": false
+    },
     "mod-bousan_gijutsu": {
       "lastAttempt": "2026-09-16 09:09:49",
       "result": "success",
@@ -28952,6 +30209,127 @@
       "failureReason": "",
       "consecutiveFailures": 0,
       "manualLockActive": true
+    },
+    "moe-2961": {
+      "lastAttempt": "2026-10-24 17:52:48",
+      "result": "partial",
+      "resultReason": "開催回 1 件を検出したが資料が0件",
+      "extractionMethod": "rule",
+      "materialsCount": 0,
+      "datesCount": 2,
+      "failureReason": "",
+      "consecutiveFailures": 0,
+      "manualLockActive": false
+    },
+    "moe-2962": {
+      "lastAttempt": "2026-10-24 17:53:11",
+      "result": "partial",
+      "resultReason": "開催日のみ検出（資料0件: 2026年10月22日）",
+      "extractionMethod": "rule",
+      "materialsCount": 0,
+      "datesCount": 3,
+      "failureReason": "",
+      "consecutiveFailures": 0,
+      "manualLockActive": false
+    },
+    "moe-2963": {
+      "lastAttempt": "2026-10-24 17:53:30",
+      "result": "partial",
+      "resultReason": "開催日のみ検出（資料0件: 2026年10月20日）",
+      "extractionMethod": "rule",
+      "materialsCount": 0,
+      "datesCount": 3,
+      "failureReason": "",
+      "consecutiveFailures": 0,
+      "manualLockActive": false
+    },
+    "moe-2964": {
+      "lastAttempt": "2026-10-24 17:53:43",
+      "result": "partial",
+      "resultReason": "開催日のみ検出（資料0件: 2026年10月19日）",
+      "extractionMethod": "rule",
+      "materialsCount": 0,
+      "datesCount": 5,
+      "failureReason": "",
+      "consecutiveFailures": 0,
+      "manualLockActive": false
+    },
+    "moe-2965": {
+      "lastAttempt": "2026-10-24 17:53:58",
+      "result": "partial",
+      "resultReason": "開催日のみ検出（資料0件: 2026年10月13日）",
+      "extractionMethod": "rule",
+      "materialsCount": 0,
+      "datesCount": 2,
+      "failureReason": "",
+      "consecutiveFailures": 0,
+      "manualLockActive": false
+    },
+    "moe-2966": {
+      "lastAttempt": "2026-10-24 17:54:09",
+      "result": "partial",
+      "resultReason": "開催日のみ検出（資料0件: 2026年10月09日）",
+      "extractionMethod": "rule",
+      "materialsCount": 0,
+      "datesCount": 2,
+      "failureReason": "",
+      "consecutiveFailures": 0,
+      "manualLockActive": false
+    },
+    "moe-2967": {
+      "lastAttempt": "2026-10-24 17:54:12",
+      "result": "partial",
+      "resultReason": "開催日のみ検出（資料0件: 2026年10月08日）",
+      "extractionMethod": "rule",
+      "materialsCount": 0,
+      "datesCount": 2,
+      "failureReason": "",
+      "consecutiveFailures": 0,
+      "manualLockActive": false
+    },
+    "moe-2968": {
+      "lastAttempt": "2026-10-24 17:54:22",
+      "result": "partial",
+      "resultReason": "開催日のみ検出（資料0件: 2026年10月05日）",
+      "extractionMethod": "rule",
+      "materialsCount": 0,
+      "datesCount": 5,
+      "failureReason": "",
+      "consecutiveFailures": 0,
+      "manualLockActive": false
+    },
+    "moe-2969": {
+      "lastAttempt": "2026-10-24 17:54:33",
+      "result": "partial",
+      "resultReason": "開催回 1 件を検出したが資料が0件",
+      "extractionMethod": "rule",
+      "materialsCount": 0,
+      "datesCount": 4,
+      "failureReason": "",
+      "consecutiveFailures": 0,
+      "manualLockActive": false
+    },
+    "moe-2970": {
+      "lastAttempt": "2026-10-24 17:53:03",
+      "result": "success",
+      "resultReason": "開催回 5 件を検出（資料・日付完備）",
+      "extractionMethod": "rule",
+      "materialsCount": 17,
+      "datesCount": 5,
+      "failureReason": "",
+      "consecutiveFailures": 0,
+      "manualLockActive": false
+    },
+    "moe-2971": {
+      "lastAttempt": "2026-10-24 17:55:07",
+      "result": "success",
+      "resultReason": "開催回 50 件を検出（資料・日付完備）",
+      "extractionMethod": "rule",
+      "materialsCount": 854,
+      "datesCount": 5,
+      "failureReason": "",
+      "consecutiveFailures": 0,
+      "manualLockActive": false
     },
     "moe-chuo_kankyo_chikyu": {
       "lastAttempt": "2026-10-24 07:03:42",
@@ -29327,6 +30705,50 @@
       "consecutiveFailures": 0,
       "manualLockActive": true
     },
+    "mof-2905": {
+      "lastAttempt": "2026-10-24 17:52:48",
+      "result": "partial",
+      "resultReason": "開催日未取得（資料のみ検出）",
+      "extractionMethod": "rule",
+      "materialsCount": 7,
+      "datesCount": 0,
+      "failureReason": "",
+      "consecutiveFailures": 0,
+      "manualLockActive": false
+    },
+    "mof-2906": {
+      "lastAttempt": "2026-10-24 17:53:15",
+      "result": "success",
+      "resultReason": "開催回 1 件を検出（資料・日付完備）",
+      "extractionMethod": "rule",
+      "materialsCount": 1,
+      "datesCount": 2,
+      "failureReason": "",
+      "consecutiveFailures": 0,
+      "manualLockActive": false
+    },
+    "mof-2907": {
+      "lastAttempt": "2026-10-24 17:53:30",
+      "result": "success",
+      "resultReason": "開催回 7 件を検出（資料・日付完備）",
+      "extractionMethod": "rule",
+      "materialsCount": 14,
+      "datesCount": 5,
+      "failureReason": "",
+      "consecutiveFailures": 0,
+      "manualLockActive": false
+    },
+    "mof-2908": {
+      "lastAttempt": "2026-10-24 17:53:53",
+      "result": "partial",
+      "resultReason": "開催日のみ検出（資料0件: 令和7年10月8日）",
+      "extractionMethod": "rule",
+      "materialsCount": 0,
+      "datesCount": 2,
+      "failureReason": "",
+      "consecutiveFailures": 0,
+      "manualLockActive": false
+    },
     "mof-bop": {
       "lastAttempt": "2026-09-23 18:19:51",
       "result": "success",
@@ -29664,6 +31086,259 @@
       "extractionMethod": "rule",
       "materialsCount": 3,
       "datesCount": 3,
+      "failureReason": "",
+      "consecutiveFailures": 0,
+      "manualLockActive": false
+    },
+    "moj-2975": {
+      "lastAttempt": "2026-10-24 17:52:47",
+      "result": "success",
+      "resultReason": "PDF配付資料 2 件・開催日 1 件を正常取得",
+      "extractionMethod": "rule",
+      "materialsCount": 2,
+      "datesCount": 1,
+      "failureReason": "",
+      "consecutiveFailures": 0,
+      "manualLockActive": false
+    },
+    "moj-2976": {
+      "lastAttempt": "2026-10-24 17:53:11",
+      "result": "success",
+      "resultReason": "PDF配付資料 2 件・開催日 1 件を正常取得",
+      "extractionMethod": "rule",
+      "materialsCount": 2,
+      "datesCount": 1,
+      "failureReason": "",
+      "consecutiveFailures": 0,
+      "manualLockActive": false
+    },
+    "moj-2977": {
+      "lastAttempt": "2026-10-24 17:53:30",
+      "result": "success",
+      "resultReason": "PDF配付資料 2 件・開催日 1 件を正常取得",
+      "extractionMethod": "rule",
+      "materialsCount": 2,
+      "datesCount": 1,
+      "failureReason": "",
+      "consecutiveFailures": 0,
+      "manualLockActive": false
+    },
+    "moj-2978": {
+      "lastAttempt": "2026-10-24 17:53:43",
+      "result": "success",
+      "resultReason": "PDF配付資料 4 件・開催日 1 件を正常取得",
+      "extractionMethod": "rule",
+      "materialsCount": 4,
+      "datesCount": 1,
+      "failureReason": "",
+      "consecutiveFailures": 0,
+      "manualLockActive": false
+    },
+    "moj-2979": {
+      "lastAttempt": "2026-10-24 17:53:58",
+      "result": "partial",
+      "resultReason": "開催回 1 件を検出したが資料が0件",
+      "extractionMethod": "rule",
+      "materialsCount": 1,
+      "datesCount": 5,
+      "failureReason": "",
+      "consecutiveFailures": 0,
+      "manualLockActive": false
+    },
+    "moj-2980": {
+      "lastAttempt": "2026-10-24 17:54:12",
+      "result": "success",
+      "resultReason": "開催回 1 件を検出（資料・日付完備）",
+      "extractionMethod": "rule",
+      "materialsCount": 1,
+      "datesCount": 1,
+      "failureReason": "",
+      "consecutiveFailures": 0,
+      "manualLockActive": false
+    },
+    "moj-2981": {
+      "lastAttempt": "2026-10-24 17:54:11",
+      "result": "success",
+      "resultReason": "PDF配付資料 1 件・開催日 2 件を正常取得",
+      "extractionMethod": "rule",
+      "materialsCount": 1,
+      "datesCount": 2,
+      "failureReason": "",
+      "consecutiveFailures": 0,
+      "manualLockActive": false
+    },
+    "moj-2982": {
+      "lastAttempt": "2026-10-24 17:54:22",
+      "result": "success",
+      "resultReason": "PDF配付資料 3 件・開催日 1 件を正常取得",
+      "extractionMethod": "rule",
+      "materialsCount": 3,
+      "datesCount": 1,
+      "failureReason": "",
+      "consecutiveFailures": 0,
+      "manualLockActive": false
+    },
+    "moj-2983": {
+      "lastAttempt": "2026-10-24 17:54:29",
+      "result": "success",
+      "resultReason": "PDF配付資料 3 件・開催日 1 件を正常取得",
+      "extractionMethod": "rule",
+      "materialsCount": 3,
+      "datesCount": 1,
+      "failureReason": "",
+      "consecutiveFailures": 0,
+      "manualLockActive": false
+    },
+    "moj-2984": {
+      "lastAttempt": "2026-10-24 17:54:39",
+      "result": "success",
+      "resultReason": "PDF配付資料 2 件・開催日 1 件を正常取得",
+      "extractionMethod": "rule",
+      "materialsCount": 2,
+      "datesCount": 1,
+      "failureReason": "",
+      "consecutiveFailures": 0,
+      "manualLockActive": false
+    },
+    "moj-2985": {
+      "lastAttempt": "2026-10-24 17:54:44",
+      "result": "success",
+      "resultReason": "PDF配付資料 3 件・開催日 1 件を正常取得",
+      "extractionMethod": "rule",
+      "materialsCount": 3,
+      "datesCount": 1,
+      "failureReason": "",
+      "consecutiveFailures": 0,
+      "manualLockActive": false
+    },
+    "moj-2986": {
+      "lastAttempt": "2026-10-24 17:54:53",
+      "result": "success",
+      "resultReason": "PDF配付資料 3 件・開催日 1 件を正常取得",
+      "extractionMethod": "rule",
+      "materialsCount": 3,
+      "datesCount": 1,
+      "failureReason": "",
+      "consecutiveFailures": 0,
+      "manualLockActive": false
+    },
+    "moj-2987": {
+      "lastAttempt": "2026-10-24 17:54:59",
+      "result": "success",
+      "resultReason": "PDF配付資料 7 件・開催日 2 件を正常取得",
+      "extractionMethod": "rule",
+      "materialsCount": 7,
+      "datesCount": 2,
+      "failureReason": "",
+      "consecutiveFailures": 0,
+      "manualLockActive": false
+    },
+    "moj-2988": {
+      "lastAttempt": "2026-10-24 17:55:06",
+      "result": "partial",
+      "resultReason": "開催日未取得（資料のみ検出）",
+      "extractionMethod": "rule",
+      "materialsCount": 6,
+      "datesCount": 0,
+      "failureReason": "",
+      "consecutiveFailures": 0,
+      "manualLockActive": false
+    },
+    "moj-2989": {
+      "lastAttempt": "2026-10-24 17:55:19",
+      "result": "success",
+      "resultReason": "PDF配付資料 3 件・開催日 10 件を正常取得",
+      "extractionMethod": "rule",
+      "materialsCount": 3,
+      "datesCount": 5,
+      "failureReason": "",
+      "consecutiveFailures": 0,
+      "manualLockActive": false
+    },
+    "moj-2990": {
+      "lastAttempt": "2026-10-24 17:55:21",
+      "result": "success",
+      "resultReason": "PDF配付資料 1 件・開催日 3 件を正常取得",
+      "extractionMethod": "rule",
+      "materialsCount": 1,
+      "datesCount": 3,
+      "failureReason": "",
+      "consecutiveFailures": 0,
+      "manualLockActive": false
+    },
+    "moj-2991": {
+      "lastAttempt": "2026-10-24 17:56:40",
+      "result": "partial",
+      "resultReason": "開催日のみ検出（資料0件: 2017-09-12）",
+      "extractionMethod": "llm",
+      "materialsCount": 0,
+      "datesCount": 3,
+      "failureReason": "",
+      "consecutiveFailures": 0,
+      "manualLockActive": false
+    },
+    "moj-2992": {
+      "lastAttempt": "2026-10-24 17:55:31",
+      "result": "success",
+      "resultReason": "PDF配付資料 2 件・開催日 3 件を正常取得",
+      "extractionMethod": "rule",
+      "materialsCount": 2,
+      "datesCount": 3,
+      "failureReason": "",
+      "consecutiveFailures": 0,
+      "manualLockActive": false
+    },
+    "moj-2993": {
+      "lastAttempt": "2026-10-24 17:55:44",
+      "result": "success",
+      "resultReason": "PDF配付資料 4 件・開催日 1 件を正常取得",
+      "extractionMethod": "rule",
+      "materialsCount": 4,
+      "datesCount": 1,
+      "failureReason": "",
+      "consecutiveFailures": 0,
+      "manualLockActive": false
+    },
+    "moj-2994": {
+      "lastAttempt": "2026-10-24 17:55:48",
+      "result": "success",
+      "resultReason": "PDF配付資料 1 件・開催日 1 件を正常取得",
+      "extractionMethod": "rule",
+      "materialsCount": 1,
+      "datesCount": 1,
+      "failureReason": "",
+      "consecutiveFailures": 0,
+      "manualLockActive": false
+    },
+    "moj-2995": {
+      "lastAttempt": "2026-10-24 17:55:52",
+      "result": "success",
+      "resultReason": "PDF配付資料 19 件・開催日 1 件を正常取得",
+      "extractionMethod": "rule",
+      "materialsCount": 19,
+      "datesCount": 1,
+      "failureReason": "",
+      "consecutiveFailures": 0,
+      "manualLockActive": false
+    },
+    "moj-3011": {
+      "lastAttempt": "2026-10-24 17:55:53",
+      "result": "success",
+      "resultReason": "PDF配付資料 11 件・開催日 2 件を正常取得",
+      "extractionMethod": "rule",
+      "materialsCount": 11,
+      "datesCount": 2,
+      "failureReason": "",
+      "consecutiveFailures": 0,
+      "manualLockActive": false
+    },
+    "moj-3012": {
+      "lastAttempt": "2026-10-24 17:55:54",
+      "result": "success",
+      "resultReason": "PDF配付資料 11 件・開催日 2 件を正常取得",
+      "extractionMethod": "rule",
+      "materialsCount": 11,
+      "datesCount": 2,
       "failureReason": "",
       "consecutiveFailures": 0,
       "manualLockActive": false
@@ -30305,6 +31980,61 @@
       "failureReason": "",
       "consecutiveFailures": 0,
       "manualLockActive": true
+    },
+    "rinya-2999": {
+      "lastAttempt": "2026-10-24 17:52:48",
+      "result": "partial",
+      "resultReason": "開催日のみ検出（資料0件: 令和8年7月30日）",
+      "extractionMethod": "rule",
+      "materialsCount": 0,
+      "datesCount": 3,
+      "failureReason": "",
+      "consecutiveFailures": 0,
+      "manualLockActive": false
+    },
+    "rinya-3000": {
+      "lastAttempt": "2026-10-24 17:53:15",
+      "result": "success",
+      "resultReason": "PDF配付資料 2 件・開催日 3 件を正常取得",
+      "extractionMethod": "rule",
+      "materialsCount": 2,
+      "datesCount": 3,
+      "failureReason": "",
+      "consecutiveFailures": 0,
+      "manualLockActive": false
+    },
+    "rinya-3001": {
+      "lastAttempt": "2026-10-24 17:53:30",
+      "result": "partial",
+      "resultReason": "開催日のみ検出（資料0件: 令和7年12月16日）",
+      "extractionMethod": "rule",
+      "materialsCount": 0,
+      "datesCount": 2,
+      "failureReason": "",
+      "consecutiveFailures": 0,
+      "manualLockActive": false
+    },
+    "rinya-3002": {
+      "lastAttempt": "2026-10-24 17:53:54",
+      "result": "success",
+      "resultReason": "開催回 2 件を検出（資料・日付完備）",
+      "extractionMethod": "rule",
+      "materialsCount": 4,
+      "datesCount": 5,
+      "failureReason": "",
+      "consecutiveFailures": 0,
+      "manualLockActive": false
+    },
+    "rinya-3003": {
+      "lastAttempt": "2026-10-24 17:53:59",
+      "result": "success",
+      "resultReason": "PDF配付資料 1 件・開催日 3 件を正常取得",
+      "extractionMethod": "rule",
+      "materialsCount": 1,
+      "datesCount": 3,
+      "failureReason": "",
+      "consecutiveFailures": 0,
+      "manualLockActive": false
     },
     "rinya-rinsei_shingikai": {
       "lastAttempt": "2026-10-24 07:06:12",
@@ -46920,6 +48650,11 @@
       "mod-space_domain-20250728-001",
       "mod-space_domain-20260409-002",
       "mod-space_domain-20260728-003",
+      "moe-2970-20230228-001",
+      "moe-2970-20230912-002",
+      "moe-2970-20240909-003",
+      "moe-2970-20250909-004",
+      "moe-2970-20260914-005",
       "moe-chuo_kankyo_chikyu-20220126-148",
       "moe-chuo_kankyo_chikyu-20220628-149",
       "moe-chuo_kankyo_chikyu-20230126-150",
@@ -56487,6 +58222,53 @@
       "mod-shisetsu-20260410-s01:https://www.mod.go.jp/j/policy/agenda/meeting/bouei_shisetsu/pdf/08_gijiyoshi.pdf",
       "mod-shisetsu-20260410-s01:https://www.mod.go.jp/j/policy/agenda/meeting/bouei_shisetsu/pdf/09_gijiyoshi.pdf",
       "mod-shisetsu-20260410-s01:https://www.mod.go.jp/j/policy/agenda/meeting/bouei_shisetsu/pdf/10_gijiyoshi.pdf",
+      "moe-2970-20230228-001:https://policies.env.go.jp/nature/biodiversity/j-gbf/committee/generalmeeting_001/pdf/j-gbf_sokai1_1-1.pdf",
+      "moe-2970-20230228-001:https://policies.env.go.jp/nature/biodiversity/j-gbf/committee/generalmeeting_001/pdf/j-gbf_sokai1_1-2.pdf",
+      "moe-2970-20230228-001:https://policies.env.go.jp/nature/biodiversity/j-gbf/committee/generalmeeting_001/pdf/j-gbf_sokai1_1-3.pdf",
+      "moe-2970-20230228-001:https://policies.env.go.jp/nature/biodiversity/j-gbf/committee/generalmeeting_001/pdf/j-gbf_sokai1_2.pdf",
+      "moe-2970-20230228-001:https://policies.env.go.jp/nature/biodiversity/j-gbf/committee/generalmeeting_001/pdf/j-gbf_sokai1_meibo_r.pdf",
+      "moe-2970-20230228-001:https://policies.env.go.jp/nature/biodiversity/j-gbf/committee/generalmeeting_001/pdf/j-gbf_sokai1_nature-positive.pdf",
+      "moe-2970-20230228-001:https://policies.env.go.jp/nature/biodiversity/j-gbf/committee/generalmeeting_001/pdf/j-gbf_sokai1_resume.pdf",
+      "moe-2970-20230228-001:https://policies.env.go.jp/nature/biodiversity/j-gbf/committee/generalmeeting_001/pdf/j-gbf_sokai1_youkou-.pdf",
+      "moe-2970-20230228-001:https://policies.env.go.jp/nature/biodiversity/j-gbf/committee/generalmeeting_001/pdf/j-gbf_sokai1_zaseki_r.pdf",
+      "moe-2970-20230912-002:https://policies.env.go.jp/nature/biodiversity/j-gbf/committee/generalmeeting_002/pdf/j-gbf_sokai2_1-1.pdf",
+      "moe-2970-20230912-002:https://policies.env.go.jp/nature/biodiversity/j-gbf/committee/generalmeeting_002/pdf/j-gbf_sokai2_1-2.pdf",
+      "moe-2970-20230912-002:https://policies.env.go.jp/nature/biodiversity/j-gbf/committee/generalmeeting_002/pdf/j-gbf_sokai2_1-3.pdf",
+      "moe-2970-20230912-002:https://policies.env.go.jp/nature/biodiversity/j-gbf/committee/generalmeeting_002/pdf/j-gbf_sokai2_2-1.pdf",
+      "moe-2970-20230912-002:https://policies.env.go.jp/nature/biodiversity/j-gbf/committee/generalmeeting_002/pdf/j-gbf_sokai2_2-2.pdf",
+      "moe-2970-20230912-002:https://policies.env.go.jp/nature/biodiversity/j-gbf/committee/generalmeeting_002/pdf/j-gbf_sokai2_gaiyou.pdf",
+      "moe-2970-20230912-002:https://policies.env.go.jp/nature/biodiversity/j-gbf/committee/generalmeeting_002/pdf/j-gbf_sokai2_resume.pdf",
+      "moe-2970-20240909-003:https://policies.env.go.jp/nature/biodiversity/j-gbf/committee/generalmeeting_003/pdf/j-gbf_sokai3_1-1.pdf",
+      "moe-2970-20240909-003:https://policies.env.go.jp/nature/biodiversity/j-gbf/committee/generalmeeting_003/pdf/j-gbf_sokai3_1-2.pdf",
+      "moe-2970-20240909-003:https://policies.env.go.jp/nature/biodiversity/j-gbf/committee/generalmeeting_003/pdf/j-gbf_sokai3_1-3.pdf",
+      "moe-2970-20240909-003:https://policies.env.go.jp/nature/biodiversity/j-gbf/committee/generalmeeting_003/pdf/j-gbf_sokai3_2-1.pdf",
+      "moe-2970-20240909-003:https://policies.env.go.jp/nature/biodiversity/j-gbf/committee/generalmeeting_003/pdf/j-gbf_sokai3_2-2.pdf",
+      "moe-2970-20240909-003:https://policies.env.go.jp/nature/biodiversity/j-gbf/committee/generalmeeting_003/pdf/j-gbf_sokai3_ref1.pdf",
+      "moe-2970-20240909-003:https://policies.env.go.jp/nature/biodiversity/j-gbf/committee/generalmeeting_003/pdf/j-gbf_sokai3_ref2.pdf",
+      "moe-2970-20240909-003:https://policies.env.go.jp/nature/biodiversity/j-gbf/committee/generalmeeting_003/pdf/j-gbf_sokai3_ref3.pdf",
+      "moe-2970-20240909-003:https://policies.env.go.jp/nature/biodiversity/j-gbf/committee/generalmeeting_003/pdf/j-gbf_sokai3_ref4.pdf",
+      "moe-2970-20240909-003:https://policies.env.go.jp/nature/biodiversity/j-gbf/committee/generalmeeting_003/pdf/j-gbf_sokai3_ref5.pdf",
+      "moe-2970-20240909-003:https://policies.env.go.jp/nature/biodiversity/j-gbf/committee/generalmeeting_003/pdf/j-gbf_sokai3_resume.pdf",
+      "moe-2970-20240909-003:https://policies.env.go.jp/nature/biodiversity/j-gbf/tool/pdf/gbf_smart.pdf",
+      "moe-2970-20250909-004:https://policies.env.go.jp/nature/biodiversity/j-gbf/committee/generalmeeting_004/pdf/j-gbf_sokai4_1-1.pdf",
+      "moe-2970-20250909-004:https://policies.env.go.jp/nature/biodiversity/j-gbf/committee/generalmeeting_004/pdf/j-gbf_sokai4_1-2.pdf",
+      "moe-2970-20250909-004:https://policies.env.go.jp/nature/biodiversity/j-gbf/committee/generalmeeting_004/pdf/j-gbf_sokai4_1-3.pdf",
+      "moe-2970-20250909-004:https://policies.env.go.jp/nature/biodiversity/j-gbf/committee/generalmeeting_004/pdf/j-gbf_sokai4_2-1.pdf",
+      "moe-2970-20250909-004:https://policies.env.go.jp/nature/biodiversity/j-gbf/committee/generalmeeting_004/pdf/j-gbf_sokai4_2-2.pdf",
+      "moe-2970-20250909-004:https://policies.env.go.jp/nature/biodiversity/j-gbf/committee/generalmeeting_004/pdf/j-gbf_sokai4_2-3.pdf",
+      "moe-2970-20250909-004:https://policies.env.go.jp/nature/biodiversity/j-gbf/committee/generalmeeting_004/pdf/j-gbf_sokai4_2-4.pdf",
+      "moe-2970-20250909-004:https://policies.env.go.jp/nature/biodiversity/j-gbf/committee/generalmeeting_004/pdf/j-gbf_sokai4_ref1.pdf",
+      "moe-2970-20250909-004:https://policies.env.go.jp/nature/biodiversity/j-gbf/committee/generalmeeting_004/pdf/j-gbf_sokai4_resume.pdf",
+      "moe-2970-20260914-005:https://policies.env.go.jp/nature/biodiversity/j-gbf/committee/generalmeeting_005/pdf/j-gbf_sokai5_1-1.pdf",
+      "moe-2970-20260914-005:https://policies.env.go.jp/nature/biodiversity/j-gbf/committee/generalmeeting_005/pdf/j-gbf_sokai5_1-2.pdf",
+      "moe-2970-20260914-005:https://policies.env.go.jp/nature/biodiversity/j-gbf/committee/generalmeeting_005/pdf/j-gbf_sokai5_1-3.pdf",
+      "moe-2970-20260914-005:https://policies.env.go.jp/nature/biodiversity/j-gbf/committee/generalmeeting_005/pdf/j-gbf_sokai5_2-1.pdf",
+      "moe-2970-20260914-005:https://policies.env.go.jp/nature/biodiversity/j-gbf/committee/generalmeeting_005/pdf/j-gbf_sokai5_2-2.pdf",
+      "moe-2970-20260914-005:https://policies.env.go.jp/nature/biodiversity/j-gbf/committee/generalmeeting_005/pdf/j-gbf_sokai5_2-3.pdf",
+      "moe-2970-20260914-005:https://policies.env.go.jp/nature/biodiversity/j-gbf/committee/generalmeeting_005/pdf/j-gbf_sokai5_2-4.pdf",
+      "moe-2970-20260914-005:https://policies.env.go.jp/nature/biodiversity/j-gbf/committee/generalmeeting_005/pdf/j-gbf_sokai5_ref1.pdf",
+      "moe-2970-20260914-005:https://policies.env.go.jp/nature/biodiversity/j-gbf/committee/generalmeeting_005/pdf/j-gbf_sokai5_ref2.pdf",
+      "moe-2970-20260914-005:https://policies.env.go.jp/nature/biodiversity/j-gbf/committee/generalmeeting_005/pdf/j-gbf_sokai5_resume.pdf",
       "mof-1131-20210603-001:https://www.mof.go.jp/about_mof/councils/fiscal_system_council/sub-of_kkr/proceedings/kyosaigiziroku20210603.html",
       "mof-1131-20210603-001:https://www.mof.go.jp/about_mof/councils/fiscal_system_council/sub-of_kkr/proceedings/kyosaiyousi20210603.html",
       "mof-1131-20210603-001:https://www.mof.go.jp/about_mof/councils/fiscal_system_council/sub-of_kkr/proceedings/material/kyousai20210603-1.pdf",

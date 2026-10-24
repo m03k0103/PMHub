@@ -58,6 +58,7 @@ def get_gemini_model():
 
 
 DATA_JSON_FILE = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "docs", "data.json"))
+ADMIN_DATA_FILE = os.path.abspath(os.path.join(os.path.dirname(__file__), "admin_data.json"))
 BACKUP_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), "backups"))
 LOGS_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), "logs"))
 
@@ -576,7 +577,7 @@ MINISTRY_NEWS_PORTALS = {
     "FDMA": [
         {"url": "https://www.fdma.go.jp/pressrelease/", "type": "news_feed"},
     ],
-    "ENV": [
+    "MOE": [
         {"url": "https://www.env.go.jp/press/index.html", "type": "news_feed"},
     ],
     "DIGITAL": [
@@ -629,11 +630,11 @@ def init_crawler_logfile():
         return None, None, "", ""
 
 def load_crawler_config():
-    data = load_data_json(DATA_JSON_FILE)
+    data = load_data_json(ADMIN_DATA_FILE) or load_data_json(DATA_JSON_FILE) or {}
     config = data.get("crawlerConfig", {})
     return bool(config.get("crawl_llm_mode", config.get("llm_mode", False)))  # デフォルトは高速・安全な Heuristic モード
 
-def load_councils_from_data_json(recent_years=2, include_closed=False, resume=False, ministry=None):
+def load_councils_from_data_json(recent_years=2, include_closed=False, resume=False, ministry=None, new_only=False):
     """
     docs/data.json から登録済みの全会議体 (COUNCILS) を読み込む。
     - 却下済み会議体・非アクティブ会議体はクロール対象外
@@ -689,6 +690,10 @@ def load_councils_from_data_json(recent_years=2, include_closed=False, resume=Fa
 
         # 0. 省庁フィルタのチェック
         if ministry and item.get("ministry", "").upper() != ministry.upper():
+            continue
+
+        # 新着限定フィルタ
+        if new_only and not item.get("isNewlyDiscovered"):
             continue
 
         rule = scraping_rules.get(cid, {}) if isinstance(scraping_rules, dict) else {}
@@ -3289,7 +3294,7 @@ def safe_emit_log(msg):
             pass
 
 
-def run_meeting_crawler(progress_callback=None, stop_event=None, workers=4, recent_years=2, recheck_recent=1, full_check=False, include_closed=False, resume=False, ministry=None, skip_download=False):
+def run_meeting_crawler(progress_callback=None, stop_event=None, workers=4, recent_years=2, recheck_recent=1, full_check=False, include_closed=False, resume=False, ministry=None, skip_download=False, new_only=False, enable_llm=None):
     """
     審議会・会議体情報取得Engine（Drop 17 高速化・直近アクティブ重点化対応）
     - CR-23: 確定済み過去回の再検査ゼロ化 & 最新1件更新確認（recheck_recent, full_check）
@@ -3334,7 +3339,8 @@ def run_meeting_crawler(progress_callback=None, stop_event=None, workers=4, rece
             recent_years=recent_years,
             include_closed=include_closed,
             resume=resume,
-            ministry=ministry
+            ministry=ministry,
+            new_only=new_only
         )
         if dynamic_targets:
             CRAWL_TARGETS = interleave_by_host_and_ministry(dynamic_targets)
@@ -3344,7 +3350,7 @@ def run_meeting_crawler(progress_callback=None, stop_event=None, workers=4, rece
             emit(f"[INFO] クロール対象の会議体が見つかりませんでした。")
             return {"success": 0, "partial": 0, "failed": 0, "fetch_error": 0, "new_meetings": 0, "log_file": log_filepath}
 
-        use_llm = load_crawler_config()
+        use_llm = bool(enable_llm) if enable_llm is not None else load_crawler_config()
         now_str = datetime.now().strftime("%Y/%m/%d %H:%M")
         emit("=" * 65)
         emit(" 政策会議ウォッチ (PM-HUB) クローラー [Drop 17 高速化エンジン]")
@@ -4041,6 +4047,9 @@ def main():
     parser.add_argument("--ministry", type=str, default=None, help="巡回対象の省庁コード（例: FSA, MOF, METI）")
     parser.add_argument("--from-ministry-news", "--from-news", dest="from_ministry_news", action="store_true", help="各府省庁トップページおよび新着情報一覧から最近開催された会議を検知し、開催回情報を取得する [Drop 68]")
     parser.add_argument("--skip-download", action="store_true", help="クロール完了時の配付資料ローカル自動保存 (PMM) をスキップする [Drop 71]")
+    parser.add_argument("--new-only", action="store_true", help="新着（isNewlyDiscovered: true）の会議体のみを対象にクロール")
+    parser.add_argument("--llm", action="store_true", help="LLMフォールバックモードを強制ON")
+    parser.add_argument("--no-llm", action="store_true", help="LLMフォールバックモードをOFF")
     args = parser.parse_args()
 
     cli_stop_event = threading.Event()
@@ -4053,6 +4062,7 @@ def main():
                 skip_download=args.skip_download
             )
         else:
+            enable_llm = True if args.llm else (False if args.no_llm else None)
             run_meeting_crawler(
                 stop_event=cli_stop_event,
                 workers=args.workers,
@@ -4062,7 +4072,9 @@ def main():
                 include_closed=args.include_closed,
                 resume=args.resume,
                 ministry=args.ministry,
-                skip_download=args.skip_download
+                skip_download=args.skip_download,
+                new_only=args.new_only,
+                enable_llm=enable_llm
             )
     except KeyboardInterrupt:
         print("\n\n[INFO] キーボード割り込み (Ctrl+C) を検知しました。停止シグナルを発行します...")

@@ -644,6 +644,13 @@ def check_council_timeline_sync(data=None):
         print(f"  [FAIL] 定義されていない会議体IDを持つ会議データがタイムラインに存在します (CR-168 厳格FAIL化): {sorted(orphaned_meetings)[:5]}")
         return False
 
+    valid_ministries = set(data.get("ministries", {}).keys())
+    if valid_ministries:
+        invalid_min_councils = [c.get("id") for c in councils if c.get("ministry") not in valid_ministries]
+        if invalid_min_councils:
+            print(f"  [FAIL] ministries に未定義の不正な省庁コードを持つ会議体が存在します: {invalid_min_councils[:5]}")
+            return False
+
     if os.path.exists(rejected_json_path):
         with open(rejected_json_path, "r", encoding="utf-8") as rf:
             rejected = json.load(rf)
