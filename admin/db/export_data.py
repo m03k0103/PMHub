@@ -111,7 +111,8 @@ def export_data(
 
         c_rows = cur.execute("""
             SELECT id, ministry, category, name, official_url, archive_url, description,
-                   past_year_count, is_closed, closed_reason, manual_lock
+                   past_year_count, is_closed, closed_reason, manual_lock,
+                   is_newly_discovered, discovered_at, discovery_source
             FROM councils
             ORDER BY id ASC;
         """).fetchall()
@@ -152,8 +153,12 @@ def export_data(
                 if r["closed_reason"]:
                     c_dict["closedReason"] = r["closed_reason"]
 
-            if cid in councils_with_new_meetings:
+            if r["is_newly_discovered"] or cid in councils_with_new_meetings:
                 c_dict["isNewlyDiscovered"] = True
+            if r["discovered_at"]:
+                c_dict["discoveredAt"] = r["discovered_at"]
+            if r["discovery_source"]:
+                c_dict["discoverySource"] = r["discovery_source"]
 
             councils_public.append(c_dict)
 

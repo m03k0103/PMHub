@@ -18,6 +18,9 @@ CREATE TABLE IF NOT EXISTS councils (
     is_closed INTEGER DEFAULT 0,
     closed_reason TEXT,
     manual_lock INTEGER DEFAULT 0,
+    is_newly_discovered INTEGER DEFAULT 0,
+    discovered_at TEXT,
+    discovery_source TEXT,
     created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
     updated_at DATETIME DEFAULT CURRENT_TIMESTAMP
 );
@@ -138,7 +141,17 @@ CREATE TABLE IF NOT EXISTS rejected_councils (
 CREATE INDEX IF NOT EXISTS idx_rejected_councils_ministry ON rejected_councils(ministry);
 CREATE INDEX IF NOT EXISTS idx_rejected_councils_url ON rejected_councils(official_url);
 
--- 7. Track [Search] 配付資料全文検索仮想テーブル (FTS5 trigram)
+-- 7. Track [LLM-Assist] LLM判定・ダイジェスト応答キャッシュテーブル (llm_cache)
+CREATE TABLE IF NOT EXISTS llm_cache (
+    digest_hash TEXT PRIMARY KEY,
+    purpose TEXT NOT NULL,
+    response_json TEXT NOT NULL,
+    created_at DATETIME DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE INDEX IF NOT EXISTS idx_llm_cache_purpose ON llm_cache(purpose);
+
+-- 8. Track [Search] 配付資料全文検索仮想テーブル (FTS5 trigram)
 CREATE VIRTUAL TABLE IF NOT EXISTS fts_materials USING fts5(
     material_id UNINDEXED,
     meeting_id UNINDEXED,

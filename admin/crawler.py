@@ -631,7 +631,7 @@ def init_crawler_logfile():
 def load_crawler_config():
     data = load_data_json(DATA_JSON_FILE)
     config = data.get("crawlerConfig", {})
-    return config.get("llm_mode", False)  # デフォルトは高速・安全な Heuristic モード
+    return bool(config.get("crawl_llm_mode", config.get("llm_mode", False)))  # デフォルトは高速・安全な Heuristic モード
 
 def load_councils_from_data_json(recent_years=2, include_closed=False, resume=False, ministry=None):
     """
@@ -3361,7 +3361,9 @@ def run_meeting_crawler(progress_callback=None, stop_event=None, workers=4, rece
         # data.json を読み込み（ステータス更新用）
         data = load_data_json(DATA_JSON_FILE)
 
-        # Drop 76 (要件3): 前回のクロールで付与された新着フラグをリセット
+        # Drop 76 (要件3) & Drop 81: 前回のクロールで付与された新着フラグをリセット
+        # (ただし前回クロール時刻より後にディスカバリーで新規追加された会議体は保護)
+        prev_last_crawl = str(data.get("lastCrawlTime") or "").replace("-", "/")
         reset_m_cnt = 0
         for m in data.get("meetings", []):
             if m.get("isNewlyDiscovered"):
@@ -3370,6 +3372,9 @@ def run_meeting_crawler(progress_callback=None, stop_event=None, workers=4, rece
         reset_c_cnt = 0
         for c in data.get("councils", []):
             if c.get("isNewlyDiscovered"):
+                disc_at = str(c.get("discoveredAt") or "").replace("-", "/")
+                if prev_last_crawl and disc_at and disc_at > prev_last_crawl:
+                    continue
                 c["isNewlyDiscovered"] = False
                 reset_c_cnt += 1
         if reset_m_cnt > 0 or reset_c_cnt > 0:
@@ -3381,6 +3386,13 @@ def run_meeting_crawler(progress_callback=None, stop_event=None, workers=4, rece
                 conn = sqlite3.connect(db_path)
                 with conn:
                     conn.execute("UPDATE meetings SET is_newly_discovered = 0 WHERE is_newly_discovered = 1;")
+                    if prev_last_crawl:
+                        conn.execute(
+                            "UPDATE councils SET is_newly_discovered = 0 WHERE is_newly_discovered = 1 AND (discovered_at IS NULL OR discovered_at = '' OR REPLACE(discovered_at, '-', '/') <= ?);",
+                            (prev_last_crawl,)
+                        )
+                    else:
+                        conn.execute("UPDATE councils SET is_newly_discovered = 0 WHERE is_newly_discovered = 1;")
                 conn.close()
         except Exception:
             pass
@@ -3795,7 +3807,8 @@ def run_ministry_news_discovery(progress_callback=None, stop_event=None, ministr
 
         data = load_data_json(DATA_JSON_FILE)
 
-        # Drop 76 (要件3): 前回のクロールで付与された新着フラグをリセット
+        # Drop 76 (要件3) & Drop 81: 前回のクロールで付与された新着フラグをリセット
+        prev_last_crawl = str(data.get("lastCrawlTime") or "").replace("-", "/")
         reset_m_cnt = 0
         for m in data.get("meetings", []):
             if m.get("isNewlyDiscovered"):
@@ -3804,6 +3817,9 @@ def run_ministry_news_discovery(progress_callback=None, stop_event=None, ministr
         reset_c_cnt = 0
         for c in data.get("councils", []):
             if c.get("isNewlyDiscovered"):
+                disc_at = str(c.get("discoveredAt") or "").replace("-", "/")
+                if prev_last_crawl and disc_at and disc_at > prev_last_crawl:
+                    continue
                 c["isNewlyDiscovered"] = False
                 reset_c_cnt += 1
         if reset_m_cnt > 0 or reset_c_cnt > 0:
@@ -3815,6 +3831,13 @@ def run_ministry_news_discovery(progress_callback=None, stop_event=None, ministr
                 conn = sqlite3.connect(db_path)
                 with conn:
                     conn.execute("UPDATE meetings SET is_newly_discovered = 0 WHERE is_newly_discovered = 1;")
+                    if prev_last_crawl:
+                        conn.execute(
+                            "UPDATE councils SET is_newly_discovered = 0 WHERE is_newly_discovered = 1 AND (discovered_at IS NULL OR discovered_at = '' OR REPLACE(discovered_at, '-', '/') <= ?);",
+                            (prev_last_crawl,)
+                        )
+                    else:
+                        conn.execute("UPDATE councils SET is_newly_discovered = 0 WHERE is_newly_discovered = 1;")
                 conn.close()
         except Exception:
             pass

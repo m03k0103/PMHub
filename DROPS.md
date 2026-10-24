@@ -1,8 +1,8 @@
 # PMHub 改善・機能実装（Drop）マスタードキュメント (DROPS.md)
 
 > **最終更新**: 2026-10-24  
-> **実装済最新 Drop**: **Drop 80**（2026-10-24 完了）  
-> **次回着手予定 Drop**: **Drop 81**  
+> **実装済最新 Drop**: **Drop 81**（2026-10-24 完了）  
+> **次回着手予定 Drop**: **Drop 82**  
 > 
 > 本ドキュメントは、PMHub の継続的改善ロードマップおよび実装記録を一元管理するマスタードキュメントです。  
 > 今後の構想テーマは **「Track（トラック）」** として管理し、着手・個別実装単位は最新連番を付与した **「Drop（ドロップ）」** として連番アーカイブします。  
@@ -20,7 +20,8 @@
 | Track ID | 構想テーマ | 主な対象・内容 | 到達目標・期待効果 | ステータス |
 |:---:|:---|:---|:---:|:---:|
 | **Track [Database]**<br>(フェーズ 3) | **却下会議体マスターの SQLite DB 一元化 & 3者間同期パイプライン確立** | **`admin/rejected_councils.json` の SQLite DB 完全移行**<br>`pmhub.db` に専用テーブル `rejected_councils` を新設し、全367件のシード・一意性制約・URLインデックスによる $O(1)$ 判定、管理サーバーAPIおよびユーティリティのDB直接接続、`export_data.py` の双方向エクスポートパイプラインの確立 | **単一マスターDB（SSOT）化の完遂 & 二重管理の根絶** | **【完了】**<br>（Drop 80 にて達成） |
-| **Track [Automation]** | **定時巡回クローラー & ローカルDB同期**<br>(GitHub Actions 連携) | **3階層マルチスケジュール定期実行・異常検知時Skip・ローカルDB自動同期**<br>1. Daily (平朝): 省庁新着検知のみ<br>2. Weekly (土曜): 通常巡回（直近2年重点）<br>3. Monthly (第1日曜): 全期間包括走査<br>連鎖失敗・重大エラー検知時のIssue発行＆次回以降Skip機能、Zero-Storage VM運用、ローカル環境への安全な同期エンジン（`sync_from_json.py` + post-merge hook）の配備 | **定期自動巡回・省力化 & ローカル資産整合性担保** | **【構想中】**<br>（Drop 81 以降） |
+| **Track [LLM-Assist]** | **決定論的1ファイル新着ダイジェスト & LLM判定・クロール階層型フォールバック** | **【フェーズ 1】ディスカバリー 1ファイル集約・単一リクエストLLM判定 & 新着分類永続化（Drop 81 完了）**<br>**【フェーズ 2】開催回クロール 3段階ファネル・異常検知フォールバック & バッチLLM抽出**<br>API呼出上限（Daily 3回 / Weekly 10回 / Monthly 30回）とSQLite `llm_cache`（SHA-256ダイジェストキャッシュ）により、最小APIコールで新規会議体検知と0件以外を含むクロール欠落補完を実現 | **最小APIコールでの新規会議体検知 & クロール補完** | **【進行中】**<br>（フェーズ 1: Drop 81 完了 / フェーズ 2 構想中） |
+| **Track [Automation]** | **定時巡回クローラー & ローカルDB同期**<br>(GitHub Actions 連携) | **3階層マルチスケジュール定期実行・異常検知時Skip・ローカルDB自動同期**<br>1. Daily (平朝): 省庁新着検知のみ<br>2. Weekly (土曜): 通常巡回（直近2年重点）<br>3. Monthly (第1日曜): 全期間包括走査<br>連鎖失敗・重大エラー検知時のIssue発行＆次回以降Skip機能、Zero-Storage VM運用、ローカル環境への安全な同期エンジン（`sync_from_json.py` + post-merge hook）の配備 | **定期自動巡回・省力化 & ローカル資産整合性担保** | **【構想中】**<br>（Drop 82 以降） |
 | **Track [Search]**<br>(フェーズ 3) | **全文検索エンジン統合**<br>(PMM資産連携 FTS5構築) | **【フェーズ 3】PMM ローカルPDF資産を活用した全文検索エンジンの構築**<br>`admin/pmm/text_extractor.py` によるPDF本文抽出、SQLite FTS5 仮想テーブル（`fts_materials`）への trigram インデックス構築、サーバー検索API（`/api/search?q=キーワード`）およびフロントエンド検索UI・抜粋ハイライトの実装 | **約11万件の政策資料PDF本文横断検索の実現** | **【構想中】**<br>（Track [Database] 完了後着手） |
 | **Track [Portal-Norm]** | **省庁ポータル一覧・目次URL正常化**<br>(傘下会議体の個別化・パース規則最適化) | **省庁組織・目次・一覧ポータル設定会議体の個別会議体分離・スクレイピング最適化**<br>文化庁・消防庁・文科省等、親ポータルURLが設定されたまま個別開催回が未分離の会議体について、組織ツリーを辿り個別会議体（または開催回）へと正常化する包括的施策 | **Failed会議体の根絶 & 網羅的開催回収集** | **【進行中】**<br>（Drop 79 で着手開始、継続推進） |
 | **Track [Architecture]** | **設計刷新構想**<br>(モジュール責務分離) | **リファクタリング領域E: クローラー本体（crawler.py）の責務分離 & scratch/ クリーンアップ**<br>巨大化したクローラー（約2,900行）を HTTP通信・パース・DB保存・エクスポート等にモジュール分割し、保守性を劇的に向上。蓄積した `scratch/` スクリプトの完全整理・アーカイブ | **単体テスト容易性向上 & コード肥大化の解消** | **【構想中】** |
@@ -41,6 +42,23 @@
   3. `export_data.py` により、DB の `rejected_councils` テーブルから `admin/rejected_councils.json` および `admin/admin_data.json`（`rejectedCouncils`）へ決定論的（ID昇順）に同時出力。
   4. `admin/utils.py` および `admin/server.py` の却下関連 API・関数を DB 直結化。
   5. 統合テストスイート（ケース 6 & 15）に排他性および 3者間完全同期の常時検証ガードを追加。
+
+---
+
+#### 【Track: LLM-Assist】決定論的1ファイル新着ダイジェスト & LLM判定・クロール階層型フォールバック
+
+- **背景と課題**:
+  1. 従来、`crawlerConfig.llm_mode` は開催回クロール（`admin/crawler.py`）でルール抽出が 0 件だった会議体にのみ適用され、新規会議体ディスカバリー（`admin/discover_councils.py`）には一切適用されていなかった。
+  2. 新規検出された会議体が SQLite DB（`councils` テーブル）へのシード・エクスポート時に `isNewlyDiscovered: true` を保持しておらず、さらに次回クロール開始時に一律リセットされていたため、公開ポータルの「新着」フィルタに分類されない問題があった。
+  3. 省庁ごと・ページごとに個別 LLM API コールを行う方式では 429 Quota エラーや実行時間増大を招くため、決定論的 1 ファイル集約と厳格な呼び出し上限管理が不可欠であった。
+- **フェーズ構成と目標仕様**:
+  - **フェーズ 1（Drop 81 にて実装完了）**:
+    1. **新規発見会議体の「新着」分類永続化**: `councils` テーブルに `is_newly_discovered`, `discovered_at`, `discovery_source` (`'rule' | 'llm' | 'both'`) を新設し、前回クロール時刻より後に発見された会議体の新着フラグを保護。
+    2. **決定論的 1ファイル新着ダイジェスト生成 (`admin/llm/digest.py`)**: 全府省庁の新着情報を5段階決定論フィルタ（日付・重複・既登録会議体開催回・却下リスト・強ノイズ）で絞り込み、連番ID（`N001`〜）と同一省庁内の類似会議体Top3を付与して単一JSON（`admin/discovery/digest_YYYYMMDD.json`）と正規化 SHA-256 ハッシュを出力。
+    3. **単一リクエスト LLM 判定 & ハルシネーション遮断 (`admin/llm/client.py`, `admin/llm/discovery_judge.py`)**: LLM には `item_id` のみ参照させ（URL出力禁止）、確信度 `>= 0.80`・ノイズ/既登録/却下再検証・親ページURL逆引きを経て即掲載（新着分類）。
+    4. **呼び出し予算上限 & SQLite キャッシュ**: 1回あたり上限（`Daily: 3回 / Weekly: 10回 / Monthly: 30回`）と `llm_cache` テーブルによる同一ダイジェスト再送ゼロ化。
+  - **フェーズ 2（次回以降構想）**:
+    - 開催回クロールにおいて、ルール抽出結果が「0件」の場合だけでなく、「最新開催日が古いのにページ上位に新着日付がある」「複数開催回で配付資料が0件（PARTIAL）」「ジェネリックタイトル過多」の異常スコア会議体を検知し、簡潔な構造化DOMスニペットをバッチ化して1回のLLMリクエストで最大5〜8会議体を一括補完する階層型フォールバック機構。
 
 ---
 
@@ -128,10 +146,10 @@ GitHub Actions で自動更新・push されたリモートの最新データ（
 ## 2. 実装済 Drop
 
 > [!IMPORTANT]
-> - **実装済最新 Drop**: **Drop 80**（2026-10-24 完了）  
-> - **次回着手予定 Drop**: **Drop 81**  
+> - **実装済最新 Drop**: **Drop 81**（2026-10-24 完了）  
+> - **次回着手予定 Drop**: **Drop 82**  
 > 
-> 本セクションでは、これまでに完了したすべての Drop 施策（Drop 19 〜 Drop 80）を**昇順（時系列順）**で掲載・アーカイブしています。  
+> 本セクションでは、これまでに完了したすべての Drop 施策（Drop 19 〜 Drop 81）を**昇順（時系列順）**で掲載・アーカイブしています。  
 > 全施策が完了済みであるため、一覧のフォーマットを4列（Drop ID / カテゴリ・種別 / 施策概要・主な改修内容 / 到達成果・検証結果）に統一しています。
 
 ### 2-1. 実装済 Drop一覧
@@ -190,6 +208,7 @@ GitHub Actions で自動更新・push されたリモートの最新データ（
 | **Drop 78** | **過去の完了Drop**<br>(WAF耐性強化 & バグ修正 & 親ポータルTrack策定) | **クローラーWAFリトライ・バックオフ耐性強化および税制調査会NameErrorバグ修正・親ポータルURL適正化Track策定**<br>クロール失敗56会議体の監査に基づき、AWS WAF（CloudFront 202 Challenge）遮断に対する指数バックオフ待機強化（`2.5 * (retry_count + 1)`秒）および Windows ネイティブ `curl` フォールバック（TLSフィンガープリント耐性向上）を実装（CR-199）。税制調査会（`cao-zei_cho`）の未定義変数 `official_url` を `target_url` へ是正し `NameError` を解消。残存親ポータルURL設定9会議体の個別化・パース適正化（Track [Portal-Norm]）を策定 | **WAF 202チャレンジ耐性強化・税調NameError解消・統合15ケース＋全単体20種完全合格** |
 | **Drop 79** | **最新の完了Drop**<br>(親ポータルURL個別化 & 開催回ワンストップ登録) | **親ポータル・目次URL設定会議体の個別化・パース適正化 & 警察庁政策評価研究会等全開催回ワンストップ登録**<br>失敗（Failed）となっていた親ポータルURL設定会議体を精査。不要・親ポータル型会議体3件（`aca-1735`, `cas-1895`, `moj-2735`）を削除し却下リスト（`admin/rejected_councils.json`）へ登録。アフリカ豚熱閣僚会議（`cas-299`）の誤認開催回クレンジング。警察庁政策評価研究会（`npa-seisaku_hyoka_kenkyukai`）の全43開催回・配付資料ワンストップ登録（CR-200）。国家公務員共済組合分科会（`mof-1131`）の議事要旨一覧URL差し替え & 令和3〜7年度全開催回・末端PDF配付資料登録およびスクレイピングルール適正化 | **親ポータルURL個別化適正化・警察庁政策評価研究会43回登録・統合15ケース＋全単体20種完全合格** |
 | **Drop 80** | **データベース基盤**<br>(却下会議体 SQLite 一元化 & 3者間同期) | **`admin/rejected_councils.json` の SQLite DB 完全移行（Track [Database] フェーズ 3）**<br>専用テーブル `rejected_councils` 新設、全367件シード（乖離3件完全解消）、B-tree INDEX配備による $O(1)$ 判定、`export_data.py` 双方向自動エクスポート、管理サーバー API・ユーティリティの DB 直結化、ケース 6 & 15 常時検証ガード新設 | **単一マスターDB（SSOT）化完遂 & 3者間データ完全同期（乖離0件）** |
+| **Drop 81** | **LLM支援ディスカバリー基盤**<br>(決定論的1ファイル新着ダイジェスト & 単一コールLLM判定 & 新着分類永続化) | **Track [LLM-Assist] フェーズ 1: 省庁新着1ファイル集約・単一リクエストLLM判定・新着会議体フラグ永続化**<br>`councils` テーブルへの `is_newly_discovered`, `discovered_at`, `discovery_source` カラム追加と新着リセット保護、`llm_cache` テーブル新設。全省庁新着情報の決定論的5段階フィルタ＆1ファイル集約（`admin/llm/digest.py`）、ID参照限定ハルシネーション遮断＆予算上限（Daily 3 / Weekly 10 / Monthly 30）付き一括LLM判定（`admin/llm/client.py`, `discovery_judge.py`）、管理画面のディスカバリー/クロールLLM独立トグル化、単体テストU21新設 | **1ファイル単一APIコールでのLLMディスカバリー実現 & 新着分類完全永続化（統合15ケース＋全単体21種完全合格）** |
 
 ---
 
@@ -1356,8 +1375,76 @@ flowchart TD
 
 ---
 
+<hr>
+
+---
+
+### 【Drop 81】決定論的1ファイル新着ダイジェスト & 単一コールLLMディスカバリー判定・新着会議体分類永続化（Track [LLM-Assist] フェーズ 1・完了）
+
+> **ステータス**: **【完了】** (2026-10-24 実装・検証完了)  
+> **対象トラック**: **Track [LLM-Assist]**（フェーズ 1）
+
+#### 1. 背景と課題 (Background & Issues)
+1. **ディスカバリーにおける LLM 未適用と API コール肥大化リスク**:
+   - 管理画面の「クローラー全件LLM抽出モード（`crawlerConfig.llm_mode`）」は開催回クロール（`admin/crawler.py`）にのみ連動しており、新規会議体ディスカバリー（`admin/discover_councils.py`）では正規表現・キーワードルールのみで判定されていた。
+   - 一方で、各府省庁の新着記事ごとに個別 API コールを行うと 429 Quota 超過や長時間の待機が発生するため、全府省庁の新着情報を決定論的に 1 ファイルへ集約した上で、単一リクエストで LLM 判定を行う仕組みが求められた。
+2. **新規発見会議体が「新着」に分類されない構造的欠落**:
+   - 公開ポータル（`docs/app.js`）の「新着」フィルタは `council.isNewlyDiscovered` または配下開催回の `isNewlyDiscovered` を参照するが、`discover_councils.py` は `isNewlyDiscovered` を設定しておらず、さらに SQLite `councils` テーブルにも該当カラムが存在しなかった。また `crawler.py` がクロール開始時に全会議体の `isNewlyDiscovered` を一律 `False` にリセットしていたため、ディスカバリー直後の会議体が即座に「新着」から外れていた。
+
+---
+
+#### 2. 改修内容と実装アーキテクチャ (Architecture & Implementation)
+
+```mermaid
+flowchart LR
+    subgraph Step1["Step 1: 決定論的1ファイル集約 (admin/llm/digest.py)"]
+        Raw["各府省庁の新着情報
+(MINISTRY_NEWS_PORTALS)"] --> Filter["5段階決定論フィルタ
+(日付/重複/既登録開催回/却下/強ノイズ)"]
+        Filter --> Sim["同一省庁内の類似会議体Top3付与
++ 連番ID採番 (N001, N002...)"]
+        Sim --> Digest["admin/discovery/digest_YYYYMMDD.json
+(正規化 SHA-256 digest_hash)"]
+    end
+
+    subgraph Step2["Step 2: 予算管理 & 1コールLLM判定 (admin/llm/)"]
+        Digest --> Cache{"SQLite llm_cache
+(digest_hash 一致?)"}
+        Cache -- "Hit (APIコール 0回)" --> Judge["judge_discovery_digest"]
+        Cache -- "Miss (Daily≤3 / Weekly≤10 / Monthly≤30)" --> Gemini["Gemini API
+(1ファイル一括 JSON 構造化判定)"]
+        Gemini --> Judge
+    end
+
+    subgraph Step3["Step 3: 3条件検証 & 即掲載・新着分類"]
+        Judge --> Val["ID参照限定URL解決 (ハルシネーション遮断)
++ confidence>=0.80 + 親URL逆引き"]
+        Val --> DB["SQLite councils テーブル
+(is_newly_discovered=1, discovery_source)"]
+    end
+```
+
+| CR ID | 変更区分 | 改修項目・技術仕様 | 変更ファイル | 成果・検証 |
+|:---:|:---|:---|:---|:---:|
+| **CR-205** | DBスキーマ & 新着保護 | **会議体「新着」分類の SQLite 永続化 & クロールリセット保護**<br>`councils` テーブルに `is_newly_discovered`, `discovered_at`, `discovery_source` (`'rule' \| 'llm' \| 'both'`) を追加し、`llm_cache` テーブルを新設。`seed_db.py` / `export_data.py` / `db_manager.py` で双方向同期。`crawler.py` の新着リセット時に前回クロール時刻（`lastCrawlTime`）より後に発見された会議体を保護。 | `admin/db/schema.sql`<br>`admin/db/db_manager.py`<br>`admin/db/seed_db.py`<br>`admin/db/export_data.py`<br>`admin/crawler.py` | 済 |
+| **CR-206** | ダイジェスト生成 | **決定論的 1ファイル省庁新着ダイジェスト生成エンジン (`admin/llm/digest.py`)**<br>全府省庁の新着項目を集約し、①日付カットオフ、②URL・タイトル重複排除、③既登録会議体の開催回告知除外、④却下リスト除外、⑤強ノイズ（大臣会見・人事・入札・パブコメ・統計等）除外の5段階フィルタを適用。ソート順固定・連番ID（`N001`〜）・類似既存会議体Top3を付与し、SHA-256 `digest_hash` 付きで `admin/discovery/digest_YYYYMMDD.json` に出力。 | `admin/llm/__init__.py`<br>`admin/llm/digest.py`<br>`.gitignore` | 済 |
+| **CR-207** | LLM判定 & 予算制御 | **単一リクエスト LLM 判定・ハルシネーション遮断・呼出上限ガード**<br>`LLMClient` でスケジュール階層別上限（`Daily: 3回 / Weekly: 10回 / Monthly: 30回`）と SQLite `llm_cache` を実装。`judge_discovery_digest` で LLM 出力を `item_id` 参照のみに限定（URL生成を構造的に禁止）し、`confidence >= 0.80`・ノイズ再検証・親URL逆引きを経て `discover_councils.py` へ統合。 | `admin/llm/client.py`<br>`admin/llm/discovery_judge.py`<br>`admin/discover_councils.py` | 済 |
+| **CR-208** | 管理UI & 単体テストU21 | **ディスカバリー/クロール LLM 独立トグル & 単体テスト U21 新設**<br>`admin/server.py`, `admin_dashboard.html`, `admin_dashboard.js` で `discovery_llm_mode` と `crawl_llm_mode` を独立制御可能にし、会議体カードに `discoverySource` バッジを表示。`testing/test_drop81_llm_discovery.py`（U21）を新設し統合テストスイートへ登録。 | `admin/server.py`<br>`admin/admin_dashboard.html`<br>`admin/admin_dashboard.js`<br>`testing/test_drop81_llm_discovery.py`<br>`testing/run_unit_tests.py`<br>`testing/run_test_suite.py` | 済 |
+
+---
+
+#### 3. 到達成果・検証結果 (Verification Results)
+- **最小 API コール設計の確立**:
+  - 23省庁の新着情報を決定論的 1 ファイルに集約し、**1 回のディスカバリー実行あたり API コール 1 回（変化なし時は SQLite キャッシュヒットにより 0 回）**で新規会議体の LLM 検知を実現。
+- **新規発見会議体の「新着」即時分類**:
+  - ルール検知・LLM検知の双方で検出された新規会議体に `isNewlyDiscovered: true`, `discoveredAt`, `discoverySource` が付与され、公開ポータル「新着」フィルタおよび管理画面で即座に識別可能。
+- **テストスイート完全合格**:
+  - `python testing/run_test_suite.py --all-layers` : **PASSED（統合15ケース＋単体21種完全合格）**
+
+---
+
 > [!NOTE]
-> **次回着手予定**: **【Drop 81】**
-> - 対象: **Track [Automation]**
-> - 内容: GitHub Actions 定期巡回クローラー（3階層マルチスケジュール）& 異常検知時Skip & ローカルDB自動同期エンジンの配備
+> **次回着手予定**: **【Drop 82】**
+> - 対象: **Track [LLM-Assist]（フェーズ 2）** または **Track [Automation]**
+> - 内容: 開催回クロールにおける 3段階ファネル・異常検知バッチLLM抽出フォールバック、または GitHub Actions 定期巡回クローラー（3階層マルチスケジュール）& ローカルDB自動同期エンジンの配備
 

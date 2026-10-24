@@ -228,6 +228,12 @@ UNIT_TEST_REGISTRY = {
         "name": "新規会議体ディスカバリー精度向上・親URL逆引き単体テスト (test_discover_councils.py)",
         "description": "名称クレンジング, 西暦テーマ保護, ノイズ除外, コア名称・サフィックス突合, 一覧URL非破壊, ID重複防止",
         "runner": lambda: _run_py_class("test_discover_councils", "TestDiscoverCouncilsDrop75")
+    },
+    "u_drop81": {
+        "id": "U21",
+        "name": "決定論的1ファイル新着ダイジェスト & LLMディスカバリー単体テスト (test_drop81_llm_discovery.py)",
+        "description": "SHA-256ダイジェスト不変性, 5段階事前フィルタ, ID参照限定ハルシネーション遮断, 呼出予算上限(3/10/30)&SQLiteキャッシュ, 新着フラグ保護",
+        "runner": lambda: _run_py_class("test_drop81_llm_discovery", "TestDrop81LlmDiscovery")
     }
 }
 

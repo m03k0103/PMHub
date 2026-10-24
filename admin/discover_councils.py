@@ -449,10 +449,15 @@ def _discover_from_ministry_news(
     emit, target_ministry, ministries, existing_councils,
     categories_def, url_to_slug_map, existing_urls, existing_names,
     rejected_names, rejected_urls, rejected_clean_keys, common_keywords, next_seq,
-    used_council_ids, all_portal_urls=None
+    used_council_ids, all_portal_urls=None, rejected_ids=None,
+    crawler_config=None, mock_llm_responder=None
 ):
     if all_portal_urls is None:
         all_portal_urls = set()
+    if rejected_ids is None:
+        rejected_ids = set()
+    if crawler_config is None:
+        crawler_config = {}
     try:
         from crawler import (
             MINISTRY_NEWS_PORTALS, resolve_news_portal_urls,
@@ -490,6 +495,10 @@ def _discover_from_ministry_news(
     seen_in_this_run = set()
     seen_urls_in_this_run = set()
     category_counts = {}
+    all_raw_news_items = []
+    rule_cand_by_key = {}
+    rule_cand_by_url = {}
+    now_ts_slash = datetime.now().strftime("%Y/%m/%d %H:%M")
 
     for current_min_idx, min_code in enumerate(target_mins, start=1):
         portal_defs = MINISTRY_NEWS_PORTALS.get(min_code, [])
@@ -517,6 +526,12 @@ def _discover_from_ministry_news(
                 items = extract_news_items_from_html(html, rurl, min_code, pdef.get("type"))
                 for item in items:
                     raw_title = item.get("title", "")
+                    all_raw_news_items.append({
+                        "title": raw_title,
+                        "url": item.get("url", ""),
+                        "date": item.get("date", ""),
+                        "ministry": min_code
+                    })
                     cand_name = extract_council_name_from_news_title(raw_title, search_kws)
                     if not cand_name or len(cand_name) < 4:
                         continue
@@ -611,9 +626,15 @@ def _discover_from_ministry_news(
                         "ministry": min_code,
                         "category": category,
                         "officialUrl": resolved_url,
-                        "isNew": True
+                        "isNew": True,
+                        "isNewlyDiscovered": True,
+                        "discoveredAt": now_ts_slash,
+                        "discoverySource": "rule"
                     }
                     discovered_list.append(council_item)
+                    rule_cand_by_key[key_pair] = council_item
+                    rule_cand_by_url[norm_resolved] = council_item
+                    rule_cand_by_url[norm_orig] = council_item
                     found_in_min += 1
                     cat_label = categories_def.get(category, category)
                     emit(f"      ✨ [{action_label}] [{cat_label}] {council_id}: {cand_name} -> {resolved_url}", {
@@ -622,6 +643,162 @@ def _discover_from_ministry_news(
                     })
 
         emit(f"   -> 検出数: {found_in_min} 件")
+
+    # Drop 81: 決定論的 1ファイル 新着ダイジェスト生成 & 単一リクエスト LLM 判定
+    try:
+        try:
+            from llm.digest import build_discovery_digest
+            from llm.client import LLMClient
+            from llm.discovery_judge import judge_discovery_digest
+        except ImportError:
+            from admin.llm.digest import build_discovery_digest
+            from admin.llm.client import LLMClient
+            from admin.llm.discovery_judge import judge_discovery_digest
+
+        digest_doc = build_discovery_digest(
+            raw_items=all_raw_news_items,
+            existing_councils=existing_councils,
+            rejected_ids=rejected_ids,
+            rejected_names=rejected_names,
+            rejected_urls=rejected_urls,
+            rejected_clean_keys=rejected_clean_keys,
+            save_file=True
+        )
+        d_stats = digest_doc.get("stats", {})
+        emit(
+            f"\n[Digest] 省庁新着ダイジェスト生成完了: 原データ {d_stats.get('raw_count', 0)} 件 -> "
+            f"候補 {d_stats.get('candidate_count', 0)} 件 (hash={digest_doc.get('digest_hash', '')[:12]})"
+        )
+
+        llm_enabled = bool(
+            crawler_config.get("discovery_llm_mode", crawler_config.get("llm_mode", False))
+        ) or (mock_llm_responder is not None)
+
+        if llm_enabled and digest_doc.get("items"):
+            emit("[LLM-Assist] ダイジェスト1ファイル一括LLM判定を実行中...")
+            llm_client = LLMClient(
+                schedule_tier=crawler_config.get("schedule_tier", "daily"),
+                budget_config=crawler_config.get("llm_budget"),
+                mock_responder=mock_llm_responder
+            )
+            judge_res = judge_discovery_digest(
+                digest_doc=digest_doc,
+                llm_client=llm_client,
+                min_confidence=0.80
+            )
+            j_stats = judge_res.get("stats", {})
+            emit(
+                f"[LLM-Assist] 判定完了 (status={judge_res.get('status')}): "
+                f"API呼出 {j_stats.get('llm_calls', 0)} 回 (キャッシュ {j_stats.get('cache_hits', 0)} 回), "
+                f"新規会議体候補 {j_stats.get('accepted_count', 0)} 件"
+            )
+
+            sub_keywords = ('部会', '分科会', '小委員会', '委員会', 'ワーキンググループ', '検討会', '研究会', '審査会', '専門家会合', 'タスクフォース')
+            for llm_cand in judge_res.get("candidates", []):
+                min_code = llm_cand.get("ministry", "").upper()
+                cand_name = llm_cand.get("name", "").strip()
+                orig_item_url = llm_cand.get("url", "").strip()
+                raw_title = llm_cand.get("raw_title", "")
+                if not min_code or not cand_name or not orig_item_url:
+                    continue
+
+                key_pair = (min_code, get_core_council_name(cand_name))
+                norm_orig = normalize_url(orig_item_url)
+
+                matched_rule_cand = rule_cand_by_key.get(key_pair) or rule_cand_by_url.get(norm_orig)
+                if matched_rule_cand is not None:
+                    matched_rule_cand["discoverySource"] = "both"
+                    continue
+
+                if key_pair in seen_in_this_run:
+                    continue
+
+                if is_already_registered_or_rejected(
+                    cand_name, orig_item_url, min_code,
+                    existing_names, existing_urls, existing_core_names, councils_by_min,
+                    rejected_names, rejected_urls, rejected_core_names, rejected_clean_keys
+                ):
+                    continue
+
+                resolved_url = resolve_parent_url_from_press_release(orig_item_url, cand_name, min_code)
+                norm_resolved = normalize_url(resolved_url)
+                clean_res = get_url_clean_key(resolved_url)
+
+                if (norm_resolved in existing_urls or
+                    norm_resolved in all_portal_urls or
+                    norm_resolved in seen_urls_in_this_run or
+                    (clean_res and clean_res in rejected_clean_keys)):
+                    resolved_url = orig_item_url
+                    norm_resolved = norm_orig
+
+                if norm_resolved in existing_urls or norm_resolved in seen_urls_in_this_run or norm_resolved in all_portal_urls:
+                    continue
+
+                if is_already_registered_or_rejected(
+                    cand_name, resolved_url, min_code,
+                    existing_names, existing_urls, existing_core_names, councils_by_min,
+                    rejected_names, rejected_urls, rejected_core_names, rejected_clean_keys
+                ):
+                    continue
+
+                n1 = re.sub(r'\s+', '', cand_name)
+                is_dup_with_cand = False
+                for existing_cand in discovered_list:
+                    if existing_cand.get("ministry", "").upper() == min_code.upper():
+                        n2 = re.sub(r'\s+', '', existing_cand.get("name", ""))
+                        if n1 == n2:
+                            is_dup_with_cand = True
+                            break
+                        if len(n1) >= 4 and len(n2) >= 4:
+                            if any(k in n1 for k in sub_keywords) and any(k in n2 for k in sub_keywords):
+                                if (n2.endswith(n1) and not n2.startswith(n1)) or (n1.endswith(n2) and not n1.startswith(n2)):
+                                    is_dup_with_cand = True
+                                    break
+                if is_dup_with_cand:
+                    continue
+
+                seen_in_this_run.add(key_pair)
+                seen_urls_in_this_run.add(norm_resolved)
+
+                category, is_def_cat = infer_council_category(f"{cand_name} {raw_title}", categories_def)
+                if is_def_cat and llm_cand.get("category") in categories_def:
+                    category = llm_cand["category"]
+                category_counts[category] = category_counts.get(category, 0) + 1
+
+                norm_item_url = normalize_url_for_matching(resolved_url)
+                inherited_slug = url_to_slug_map.get(norm_item_url)
+                if inherited_slug and inherited_slug not in used_council_ids:
+                    council_id = inherited_slug
+                    action_label = "LLMスラグID継承"
+                else:
+                    council_id = f"{min_code.lower()}-{next_seq}"
+                    while council_id in used_council_ids:
+                        next_seq += 1
+                        council_id = f"{min_code.lower()}-{next_seq}"
+                    next_seq += 1
+                    action_label = "LLM新規会議体検出"
+
+                used_council_ids.add(council_id)
+
+                council_item = {
+                    "id": council_id,
+                    "name": cand_name,
+                    "ministry": min_code,
+                    "category": category,
+                    "officialUrl": resolved_url,
+                    "isNew": True,
+                    "isNewlyDiscovered": True,
+                    "discoveredAt": now_ts_slash,
+                    "discoverySource": "llm"
+                }
+                discovered_list.append(council_item)
+                cat_label = categories_def.get(category, category)
+                emit(f"      🤖 [{action_label}] [{cat_label}] {council_id}: {cand_name} -> {resolved_url}", {
+                    "type": "council_discovered",
+                    "council": council_item
+                })
+    except Exception as e:
+        emit(f"[WARN] ダイジェスト生成・LLM判定中に警告が発生しました: {e}")
 
     return discovered_list, category_counts
 
@@ -735,7 +912,7 @@ def _discover_normal_for_single_ministry(
     return min_code, discovered_in_min
 
 
-def run_discovery(progress_callback=None, target_ministry=None, dry_run=False, mode="normal"):
+def run_discovery(progress_callback=None, target_ministry=None, dry_run=False, mode="normal", mock_llm_responder=None):
     def emit(msg, data=None):
         print(msg)
         if progress_callback:
@@ -836,12 +1013,17 @@ def run_discovery(progress_callback=None, target_ministry=None, dry_run=False, m
     category_counts = {}
     unmatched_category_councils = []
 
+    raw_data_for_cfg = load_data_json(DATA_JSON_PATH) or {}
+    crawler_config = raw_data_for_cfg.get("crawlerConfig", {})
+
     if mode == "ministry_news":
         discovered_list, category_counts = _discover_from_ministry_news(
             emit, target_ministry, ministries, existing_councils,
             categories_def, url_to_slug_map, existing_urls, existing_names,
             rejected_names, rejected_urls, rejected_clean_keys, common_keywords, next_seq,
-            used_council_ids, all_portal_urls=all_portal_urls
+            used_council_ids, all_portal_urls=all_portal_urls,
+            rejected_ids=rejected_ids, crawler_config=crawler_config,
+            mock_llm_responder=mock_llm_responder
         )
     else:
         active_ministries = [m for code, m in ministries.items() if m.get("hasCouncils", True) and m.get("councilsUrls") and (not target_ministry or code.upper() == target_ministry.upper())]
@@ -960,13 +1142,17 @@ def run_discovery(progress_callback=None, target_ministry=None, dry_run=False, m
                 if is_default and unmatched_category_councils:
                     unmatched_category_councils[-1]["id"] = council_id
 
+                now_ts_slash = datetime.now().strftime("%Y/%m/%d %H:%M")
                 council_item = {
                     "id": council_id,
                     "name": cand_name,
                     "ministry": min_code,
                     "category": category,
                     "officialUrl": target_url_cand,
-                    "isNew": True
+                    "isNew": True,
+                    "isNewlyDiscovered": True,
+                    "discoveredAt": now_ts_slash,
+                    "discoverySource": "rule"
                 }
 
                 discovered_list.append(council_item)
@@ -1050,10 +1236,20 @@ def run_discovery(progress_callback=None, target_ministry=None, dry_run=False, m
                     continue
 
                 if cid in filtered_existing_dict:
-                    # 既存の会議体はステータスを維持
-                    new_c["status"] = filtered_existing_dict[cid].get("status", "approved")
-                    new_c["manualLock"] = filtered_existing_dict[cid].get("manualLock", False)
-                    new_c["pastYearCount"] = filtered_existing_dict[cid].get("pastYearCount", 0)
+                    # 既存の会議体は既存の新着状態・ロック状態・件数を維持
+                    ex_rec = filtered_existing_dict[cid]
+                    new_c.pop("status", None)
+                    new_c["isNewlyDiscovered"] = bool(ex_rec.get("isNewlyDiscovered", False))
+                    if ex_rec.get("discoveredAt"):
+                        new_c["discoveredAt"] = ex_rec["discoveredAt"]
+                    else:
+                        new_c.pop("discoveredAt", None)
+                    if ex_rec.get("discoverySource"):
+                        new_c["discoverySource"] = ex_rec["discoverySource"]
+                    else:
+                        new_c.pop("discoverySource", None)
+                    new_c["manualLock"] = ex_rec.get("manualLock", False)
+                    new_c["pastYearCount"] = ex_rec.get("pastYearCount", 0)
                     filtered_existing_dict[cid] = new_c
                     continue
 
@@ -1082,7 +1278,10 @@ def run_discovery(progress_callback=None, target_ministry=None, dry_run=False, m
                 if is_suffix_dup:
                     continue
 
-                new_c["status"] = "pending"
+                new_c.pop("status", None)
+                new_c["isNewlyDiscovered"] = True
+                new_c["discoveredAt"] = new_c.get("discoveredAt") or datetime.now().strftime("%Y/%m/%d %H:%M")
+                new_c["discoverySource"] = new_c.get("discoverySource") or "rule"
                 filtered_existing_dict[cid] = new_c
                 saved_urls.add(norm_u)
                 saved_names_by_min.setdefault(m_code, []).append(new_c)

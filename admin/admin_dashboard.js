@@ -1189,7 +1189,8 @@
           ? '<span class="meta-chip" style="color:#ef4444;border-color:rgba(239,68,68,0.3);background:rgba(239,68,68,0.08);">✗ 却下</span>'
           : '<span class="meta-chip" style="color:#f59e0b;border-color:rgba(245,158,11,0.3);background:rgba(245,158,11,0.08);">⏳ 未レビュー</span>';
 
-        const isNewChip = c.isNew ? '<span class="meta-chip" style="color:#ec4899;border-color:rgba(236,72,153,0.3);background:rgba(236,72,153,0.08);">✨ 新規検出</span>' : '';
+        const srcLabel = c.discoverySource === 'llm' ? ' (LLM検出)' : (c.discoverySource === 'both' ? ' (ルール+LLM)' : '');
+        const isNewChip = (c.isNew || c.isNewlyDiscovered) ? `<span class="meta-chip" style="color:#ec4899;border-color:rgba(236,72,153,0.3);background:rgba(236,72,153,0.08);">✨ 新着${srcLabel}</span>` : '';
         const lockBadge = isManualLocked ? '<span class="meta-chip" style="color:#fbbf24;border-color:rgba(251,191,36,0.3);background:rgba(251,191,36,0.08);">🔒 手動保護中</span>' : '';
         const lockedClass = isManualLocked ? 'manual-locked' : '';
 
@@ -2717,14 +2718,20 @@
 
     const llmToggleBtn = document.getElementById('adminLlmToggleBtn');
     const llmToggleLabel = document.getElementById('adminLlmToggleLabel');
-    let llmEnabled = true; // Default
+    const discLlmToggleBtn = document.getElementById('adminDiscoveryLlmToggleBtn');
+    const discLlmToggleLabel = document.getElementById('adminDiscoveryLlmToggleLabel');
+    let llmEnabled = true;
+    let discoveryLlmEnabled = true;
+    let llmBudget = { daily: 3, weekly: 10, monthly: 30 };
 
     async function loadLlmConfig() {
       try {
         const res = await fetch('/api/get-crawler-config');
         if (res.ok) {
           const config = await res.json();
-          llmEnabled = config.llm_mode !== false; // true unless explicitly false
+          llmEnabled = (config.crawl_llm_mode !== undefined ? config.crawl_llm_mode : config.llm_mode) !== false;
+          discoveryLlmEnabled = (config.discovery_llm_mode !== undefined ? config.discovery_llm_mode : config.llm_mode) !== false;
+          if (config.llm_budget) llmBudget = config.llm_budget;
         }
       } catch (e) {
         console.warn('Could not load crawler config', e);
@@ -2733,36 +2740,76 @@
     }
 
     function updateLlmUI() {
-      if (llmEnabled) {
-        llmToggleLabel.textContent = '状態: ON (LLM抽出)';
-        llmToggleBtn.style.background = 'rgba(16, 185, 129, 0.2)';
-        llmToggleBtn.style.borderColor = '#10b981';
-        llmToggleBtn.style.color = '#10b981';
-      } else {
-        llmToggleLabel.textContent = '状態: OFF (既存ルール抽出)';
-        llmToggleBtn.style.background = 'rgba(255, 255, 255, 0.08)';
-        llmToggleBtn.style.borderColor = 'var(--border-color)';
-        llmToggleBtn.style.color = 'var(--text-secondary)';
+      if (llmToggleBtn && llmToggleLabel) {
+        if (llmEnabled) {
+          llmToggleLabel.textContent = '状態: ON (LLM抽出)';
+          llmToggleBtn.style.background = 'rgba(16, 185, 129, 0.2)';
+          llmToggleBtn.style.borderColor = '#10b981';
+          llmToggleBtn.style.color = '#10b981';
+        } else {
+          llmToggleLabel.textContent = '状態: OFF (既存ルール抽出)';
+          llmToggleBtn.style.background = 'rgba(255, 255, 255, 0.08)';
+          llmToggleBtn.style.borderColor = 'var(--border-color)';
+          llmToggleBtn.style.color = 'var(--text-secondary)';
+        }
+      }
+      if (discLlmToggleBtn && discLlmToggleLabel) {
+        if (discoveryLlmEnabled) {
+          discLlmToggleLabel.textContent = '状態: ON (1ファイルLLM判定)';
+          discLlmToggleBtn.style.background = 'rgba(16, 185, 129, 0.2)';
+          discLlmToggleBtn.style.borderColor = '#10b981';
+          discLlmToggleBtn.style.color = '#10b981';
+        } else {
+          discLlmToggleLabel.textContent = '状態: OFF (決定論ルールのみ)';
+          discLlmToggleBtn.style.background = 'rgba(255, 255, 255, 0.08)';
+          discLlmToggleBtn.style.borderColor = 'var(--border-color)';
+          discLlmToggleBtn.style.color = 'var(--text-secondary)';
+        }
       }
     }
 
-    llmToggleBtn.addEventListener('click', async () => {
-      llmEnabled = !llmEnabled;
-      updateLlmUI();
-      try {
-        const res = await fetch('/api/save-crawler-config', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ llm_mode: llmEnabled })
-        });
-        if (!res.ok) throw new Error('Network error');
-        alert(`LLM抽出モードを ${llmEnabled ? 'ON' : 'OFF'} に設定しました。次回クローラー実行時から適用されます。`);
-      } catch (e) {
-        alert('設定の保存に失敗しました。ローカルサーバーが起動しているか確認してください。');
-        llmEnabled = !llmEnabled; // rollback
+    async function saveCombinedCrawlerConfig(changedLabel) {
+      const res = await fetch('/api/save-crawler-config', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          llm_mode: llmEnabled,
+          crawl_llm_mode: llmEnabled,
+          discovery_llm_mode: discoveryLlmEnabled,
+          llm_budget: llmBudget
+        })
+      });
+      if (!res.ok) throw new Error('Network error');
+      alert(`${changedLabel}設定を保存しました。次回実行時から適用されます。`);
+    }
+
+    if (llmToggleBtn) {
+      llmToggleBtn.addEventListener('click', async () => {
+        llmEnabled = !llmEnabled;
         updateLlmUI();
-      }
-    });
+        try {
+          await saveCombinedCrawlerConfig(`開催回クロールLLM抽出モード (${llmEnabled ? 'ON' : 'OFF'}) `);
+        } catch (e) {
+          alert('設定の保存に失敗しました。ローカルサーバーが起動しているか確認してください。');
+          llmEnabled = !llmEnabled;
+          updateLlmUI();
+        }
+      });
+    }
+
+    if (discLlmToggleBtn) {
+      discLlmToggleBtn.addEventListener('click', async () => {
+        discoveryLlmEnabled = !discoveryLlmEnabled;
+        updateLlmUI();
+        try {
+          await saveCombinedCrawlerConfig(`ディスカバリー1ファイルLLM判定モード (${discoveryLlmEnabled ? 'ON' : 'OFF'}) `);
+        } catch (e) {
+          alert('設定の保存に失敗しました。ローカルサーバーが起動しているか確認してください。');
+          discoveryLlmEnabled = !discoveryLlmEnabled;
+          updateLlmUI();
+        }
+      });
+    }
 
     loadLlmConfig();
 

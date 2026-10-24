@@ -646,14 +646,23 @@
         </div>
       </section>
 
-      <!-- 3.5. LLM EXTRACTION TOGGLE -->
+      <!-- 3.5. LLM EXTRACTION TOGGLE (Drop 81: Discovery & Crawl Independent Control) -->
       <section class="admin-card card-glass" style="margin-top: 1.5rem;">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; padding-bottom: 1rem; border-bottom: 1px solid var(--border-color);">
+          <div>
+            <strong style="font-size: 1rem;">🔍 ディスカバリー 1ファイル一括LLM判定モード</strong>
+            <p class="text-sm" style="color:var(--text-muted); margin-top:0.2rem;">各府省庁の新着情報を決定論的に1ファイル（<code>digest_YYYYMMDD.json</code>）へ集約し、単一リクエストで新規会議体をLLM検知します（呼出上限目安: Daily 3回 / Weekly 10回 / Monthly 30回）。</p>
+          </div>
+          <button class="btn-secondary" id="adminDiscoveryLlmToggleBtn" style="padding:0.5rem 1rem; white-space: nowrap;">
+            <span id="adminDiscoveryLlmToggleLabel">状態: 読込中...</span>
+          </button>
+        </div>
         <div style="display: flex; justify-content: space-between; align-items: center;">
           <div>
-            <strong style="font-size: 1rem;">🧠 クローラー全件LLM抽出モード</strong>
-            <p class="text-sm" style="color:var(--text-muted); margin-top:0.2rem;">有効にすると、既存ルール（正規表現等）の代わりにGemini APIを使って高精度に全件情報を抽出します（推奨）。</p>
+            <strong style="font-size: 1rem;">🧠 開催回クロール LLM抽出フォールバックモード</strong>
+            <p class="text-sm" style="color:var(--text-muted); margin-top:0.2rem;">有効にすると、登録済会議体の開催回クロール時にGemini APIによる高精度抽出・フォールバックを適用します。</p>
           </div>
-          <button class="btn-secondary" id="adminLlmToggleBtn" style="padding:0.5rem 1rem;">
+          <button class="btn-secondary" id="adminLlmToggleBtn" style="padding:0.5rem 1rem; white-space: nowrap;">
             <span id="adminLlmToggleLabel">状態: 読込中...</span>
           </button>
         </div>

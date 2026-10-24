@@ -290,7 +290,16 @@ class CustomHandler(SimpleHTTPRequestHandler):
             self.send_json(rejected_list)
         elif path == "/api/get-crawler-config":
             data = load_data_json(DATA_JSON_FILE)
-            self.send_json(data.get("crawlerConfig", {"llm_mode": True}))
+            raw_cfg = data.get("crawlerConfig", {}) if data else {}
+            default_budget = {"daily": 3, "weekly": 10, "monthly": 30}
+            crawl_llm = bool(raw_cfg.get("crawl_llm_mode", raw_cfg.get("llm_mode", True)))
+            disc_llm = bool(raw_cfg.get("discovery_llm_mode", raw_cfg.get("llm_mode", True)))
+            self.send_json({
+                "llm_mode": crawl_llm,
+                "crawl_llm_mode": crawl_llm,
+                "discovery_llm_mode": disc_llm,
+                "llm_budget": raw_cfg.get("llm_budget", default_budget)
+            })
         elif path == "/api/discovery-status":
             new_logs, latest_id = _extract_delta_logs(parsed_url, discovery_state)
             res_payload = {
@@ -445,7 +454,17 @@ class CustomHandler(SimpleHTTPRequestHandler):
                 config_data = self.read_json_body()
                 data = load_data_json(DATA_JSON_FILE)
                 if data:
-                    data["crawlerConfig"] = config_data
+                    existing_cfg = data.get("crawlerConfig", {})
+                    if not isinstance(existing_cfg, dict):
+                        existing_cfg = {}
+                    existing_cfg.update(config_data)
+                    if "crawl_llm_mode" in config_data and "llm_mode" not in config_data:
+                        existing_cfg["llm_mode"] = bool(config_data["crawl_llm_mode"])
+                    elif "llm_mode" in config_data and "crawl_llm_mode" not in config_data:
+                        existing_cfg["crawl_llm_mode"] = bool(config_data["llm_mode"])
+                    existing_cfg.setdefault("discovery_llm_mode", existing_cfg.get("llm_mode", True))
+                    existing_cfg.setdefault("llm_budget", {"daily": 3, "weekly": 10, "monthly": 30})
+                    data["crawlerConfig"] = existing_cfg
                     save_data_json_with_backup(data, DATA_JSON_FILE)
                 self.send_json({"status": "ok", "message": "Crawler config updated in data.json"})
             except Exception as e:

@@ -186,6 +186,7 @@ def check_syntax_errors():
         ("admin", "*.js"),
         ("admin", "*.html"),
         ("admin/db", "*.py"),
+        ("admin/llm", "*.py"),
         ("admin/pmm", "*.py"),
         ("testing", "*.py"),
         ("testing", "*.js")
@@ -1158,6 +1159,7 @@ def detect_required_unit_tests(changed_files):
         "test_drop63_crawler_server_db.py": ["u_drop63"],
         "test_pmm.py": ["u_pmm"],
         "test_discover_councils.py": ["u_discover"],
+        "test_drop81_llm_discovery.py": ["u_drop81"],
         "run_unit_tests.py": list(UNIT_TEST_REGISTRY.keys())
     }
     for f in changed_files:
@@ -1165,9 +1167,10 @@ def detect_required_unit_tests(changed_files):
             if fname in f:
                 required_keys.update(keys)
 
-    # ディスカバリーエンジン仕様コード変更 (admin/discover_councils.py)
-    if any("admin/discover_councils.py" in f or "discover_councils" in f for f in changed_files):
+    # ディスカバリーエンジン・LLM支援仕様コード変更 (admin/discover_councils.py, admin/llm/)
+    if any("admin/discover_councils.py" in f or "discover_councils" in f or "admin/llm/" in f for f in changed_files):
         required_keys.add("u_discover")
+        required_keys.add("u_drop81")
 
     # PMM 配付資料ローカル資産管理仕様コード変更 (admin/pmm/)
     if any("admin/pmm/" in f or "test_pmm.py" in f for f in changed_files):

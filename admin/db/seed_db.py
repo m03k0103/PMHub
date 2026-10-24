@@ -72,6 +72,26 @@ def seed_db(
     else:
         print("[INFO] Admin JSON not found; falling back to keys in public JSON (initial migration mode).")
 
+    # Drop 82: Preserve existing local download statuses before re-initializing database
+    saved_mats_status = {}
+    saved_c_mats_status = {}
+    if db_path.exists():
+        try:
+            old_conn = sqlite3.connect(str(db_path))
+            m_cols = [r[1] for r in old_conn.execute("PRAGMA table_info(materials);").fetchall()]
+            if "download_status" in m_cols:
+                for row in old_conn.execute("SELECT meeting_id, url, local_path, download_status, file_size, downloaded_at FROM materials WHERE download_status != 'pending';"):
+                    saved_mats_status[(row[0], row[1])] = (row[2], row[3], row[4], row[5])
+            cm_cols = [r[1] for r in old_conn.execute("PRAGMA table_info(council_materials);").fetchall()]
+            if "download_status" in cm_cols:
+                for row in old_conn.execute("SELECT council_id, url, local_path, download_status, file_size, downloaded_at FROM council_materials WHERE download_status != 'pending';"):
+                    saved_c_mats_status[(row[0], row[1])] = (row[2], row[3], row[4], row[5])
+            old_conn.close()
+            if saved_mats_status or saved_c_mats_status:
+                print(f"[INFO] Preserving existing download statuses: {len(saved_mats_status)} materials, {len(saved_c_mats_status)} council materials.")
+        except Exception as e_pres:
+            print(f"[WARN] Failed to preserve previous download statuses from {db_path}: {e_pres}", file=sys.stderr)
+
     conn = init_db(db_path, schema_path)
     cur = conn.cursor()
 
@@ -127,6 +147,7 @@ def seed_db(
                 continue
             is_closed = 1 if c.get("isClosed") else 0
             manual_lock = 1 if c.get("manualLock") else 0
+            is_new_c = 1 if c.get("isNewlyDiscovered") else 0
             c_rows.append((
                 cid,
                 c.get("ministry", ""),
@@ -138,7 +159,10 @@ def seed_db(
                 c.get("pastYearCount", 0),
                 is_closed,
                 c.get("closedReason", ""),
-                manual_lock
+                manual_lock,
+                is_new_c,
+                c.get("discoveredAt", ""),
+                c.get("discoverySource", "")
             ))
 
             # Council permanent materials
@@ -173,8 +197,9 @@ def seed_db(
         cur.executemany("""
             INSERT OR REPLACE INTO councils (
                 id, ministry, category, name, official_url, archive_url, description,
-                past_year_count, is_closed, closed_reason, manual_lock
-            ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);
+                past_year_count, is_closed, closed_reason, manual_lock,
+                is_newly_discovered, discovered_at, discovery_source
+            ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);
         """, c_rows)
 
         cur.executemany("""
@@ -281,7 +306,37 @@ def seed_db(
             ) VALUES (?, ?, ?, ?, ?, ?, ?);
         """, rej_rows)
 
+        # Drop 82: Restore preserved download statuses
+        if saved_mats_status:
+            cur.executemany("""
+                UPDATE materials
+                SET local_path = ?, download_status = ?, file_size = ?, downloaded_at = ?
+                WHERE meeting_id = ? AND url = ?;
+            """, [(v[0], v[1], v[2], v[3], k[0], k[1]) for k, v in saved_mats_status.items()])
+            print(f"[INFO] Restored {len(saved_mats_status)} material download statuses from previous database.")
+
+        if saved_c_mats_status:
+            cur.executemany("""
+                UPDATE council_materials
+                SET local_path = ?, download_status = ?, file_size = ?, downloaded_at = ?
+                WHERE council_id = ? AND url = ?;
+            """, [(v[0], v[1], v[2], v[3], k[0], k[1]) for k, v in saved_c_mats_status.items()])
+            print(f"[INFO] Restored {len(saved_c_mats_status)} council material download statuses from previous database.")
+
         conn.commit()
+
+        # Drop 82: If no statuses were preserved (fresh DB) and local_docs exists on disk, auto-sync
+        if not saved_mats_status and not saved_c_mats_status:
+            local_docs_dir = BASE_DIR / "local_docs"
+            if local_docs_dir.exists() and any(f for f in local_docs_dir.iterdir() if not f.name.startswith(".")):
+                conn.close()
+                try:
+                    from admin.pmm.downloader import sync_local_materials_status
+                    print("[INFO] Fresh database seeded and local_docs exists. Synchronizing local material status...", file=sys.stderr)
+                    sync_local_materials_status(output_base=local_docs_dir, db_path=db_path)
+                except Exception as e_sync:
+                    print(f"[WARN] Auto-sync of local materials failed: {e_sync}", file=sys.stderr)
+                return True
 
         # Stats verification
         c_cnt = cur.execute("SELECT COUNT(*) FROM councils;").fetchone()[0]

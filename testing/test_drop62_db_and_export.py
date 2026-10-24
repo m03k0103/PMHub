@@ -55,7 +55,8 @@ class TestDrop62DatabaseAndExport(unittest.TestCase):
             "admin_configs",
             "metadata",
             "fts_materials",
-            "rejected_councils"
+            "rejected_councils",
+            "llm_cache"
         }
         for tbl in expected_tables:
             self.assertIn(tbl, tables, f"Expected table '{tbl}' not found in created schema")

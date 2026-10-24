@@ -82,7 +82,48 @@ def ensure_database(
         cur.execute("CREATE INDEX IF NOT EXISTS idx_rejected_councils_ministry ON rejected_councils(ministry);")
         cur.execute("CREATE INDEX IF NOT EXISTS idx_rejected_councils_url ON rejected_councils(official_url);")
 
+        # Drop 81 schema migration: Ensure councils new-arrival columns and llm_cache table exist
+        c_cols = [r[1] for r in cur.execute("PRAGMA table_info(councils);").fetchall()]
+        c_cols_to_add = [
+            ("is_newly_discovered", "INTEGER", "0"),
+            ("discovered_at", "TEXT", "NULL"),
+            ("discovery_source", "TEXT", "NULL")
+        ]
+        for col, typ, dflt in c_cols_to_add:
+            if col not in c_cols:
+                cur.execute(f"ALTER TABLE councils ADD COLUMN {col} {typ} DEFAULT {dflt};")
+
+        cur.execute("""
+            CREATE TABLE IF NOT EXISTS llm_cache (
+                digest_hash TEXT PRIMARY KEY,
+                purpose TEXT NOT NULL,
+                response_json TEXT NOT NULL,
+                created_at DATETIME DEFAULT CURRENT_TIMESTAMP
+            );
+        """)
+        cur.execute("CREATE INDEX IF NOT EXISTS idx_llm_cache_purpose ON llm_cache(purpose);")
+
         conn.commit()
+
+        # Drop 82: Ensure PMM download status is synced if local_docs exists but DB has 0 downloaded
+        local_docs_dir = BASE_DIR / "local_docs"
+        if local_docs_dir.exists():
+            try:
+                d_cnt = cur.execute("SELECT COUNT(*) FROM materials WHERE download_status = 'downloaded';").fetchone()[0]
+                if d_cnt == 0:
+                    has_files = any(f for f in local_docs_dir.iterdir() if not f.name.startswith("."))
+                    if has_files:
+                        conn.close()
+                        try:
+                            from admin.pmm.downloader import sync_local_materials_status
+                            print("[INFO] PMM download status in DB is 0 but local_docs exists. Auto-syncing status...", file=sys.stderr)
+                            sync_local_materials_status(output_base=local_docs_dir, db_path=db_path)
+                        except Exception as e_sync:
+                            print(f"[WARN] Auto-sync of local materials status failed: {e_sync}", file=sys.stderr)
+                        return True
+            except Exception:
+                pass
+
         conn.close()
     except Exception as e:
         print(f"[WARN] Schema migration check notice: {e}", file=sys.stderr)
@@ -179,7 +220,8 @@ def _load_dataset_from_db(cur: sqlite3.Cursor, include_pmm_details: bool = False
     # 6. Councils
     c_rows = cur.execute("""
         SELECT id, ministry, category, name, official_url, archive_url, description,
-               past_year_count, is_closed, closed_reason, manual_lock
+               past_year_count, is_closed, closed_reason, manual_lock,
+               is_newly_discovered, discovered_at, discovery_source
         FROM councils
         ORDER BY id ASC;
     """).fetchall()
@@ -206,6 +248,12 @@ def _load_dataset_from_db(cur: sqlite3.Cursor, include_pmm_details: bool = False
             c_dict["isClosed"] = True
             if r["closed_reason"]:
                 c_dict["closedReason"] = r["closed_reason"]
+        if r["is_newly_discovered"]:
+            c_dict["isNewlyDiscovered"] = True
+        if r["discovered_at"]:
+            c_dict["discoveredAt"] = r["discovered_at"]
+        if r["discovery_source"]:
+            c_dict["discoverySource"] = r["discovery_source"]
 
         mats = c_mats_map.get(cid, [])
         if include_pmm_details:
@@ -409,7 +457,10 @@ def save_data_to_db(
                     c.get("pastYearCount", 0),
                     1 if c.get("isClosed") else 0,
                     c.get("closedReason", ""),
-                    1 if c.get("manualLock") else 0
+                    1 if c.get("manualLock") else 0,
+                    1 if c.get("isNewlyDiscovered") else 0,
+                    c.get("discoveredAt", ""),
+                    c.get("discoverySource", "")
                 ))
 
                 for mat in c.get("materials", []):
@@ -441,17 +492,21 @@ def save_data_to_db(
             cur.executemany("""
                 INSERT OR REPLACE INTO councils (
                     id, ministry, category, name, official_url, archive_url, description,
-                    past_year_count, is_closed, closed_reason, manual_lock
-                ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);
+                    past_year_count, is_closed, closed_reason, manual_lock,
+                    is_newly_discovered, discovered_at, discovery_source
+                ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);
             """, c_rows)
 
             if c_mat_rows:
-                # Refresh council materials
-                cur.execute("DELETE FROM council_materials;")
+                # Drop 82: Refresh council materials non-destructively preserving download_status
                 cur.executemany("""
                     INSERT INTO council_materials (
                         council_id, name, url, type, manual_lock
-                    ) VALUES (?, ?, ?, ?, ?);
+                    ) VALUES (?, ?, ?, ?, ?)
+                    ON CONFLICT(council_id, url) DO UPDATE SET
+                        name = excluded.name,
+                        type = excluded.type,
+                        manual_lock = excluded.manual_lock;
                 """, c_mat_rows)
 
             if cs_rows:
