@@ -1,8 +1,8 @@
 # PMHub 改善・機能実装（Drop）マスタードキュメント (DROPS.md)
 
 > **最終更新**: 2026-10-24  
-> **実装済最新 Drop**: **Drop 79**（2026-10-24 完了）  
-> **次回着手予定 Drop**: **Drop 80**  
+> **実装済最新 Drop**: **Drop 80**（2026-10-24 完了）  
+> **次回着手予定 Drop**: **Drop 81**  
 > 
 > 本ドキュメントは、PMHub の継続的改善ロードマップおよび実装記録を一元管理するマスタードキュメントです。  
 > 今後の構想テーマは **「Track（トラック）」** として管理し、着手・個別実装単位は最新連番を付与した **「Drop（ドロップ）」** として連番アーカイブします。  
@@ -19,7 +19,7 @@
 
 | Track ID | 構想テーマ | 主な対象・内容 | 到達目標・期待効果 | ステータス |
 |:---:|:---|:---|:---:|:---:|
-| **Track [Database]**<br>(フェーズ 3) | **却下会議体マスターの SQLite DB 一元化 & 3者間同期パイプライン確立** | **`admin/rejected_councils.json` の SQLite DB 完全移行**<br>`pmhub.db` に専用テーブル `rejected_councils` を新設し、全367件のシード・一意性制約・URLインデックスによる $O(1)$ 判定、管理サーバーAPIおよびユーティリティのDB直接接続、`export_data.py` の双方向エクスポートパイプラインの確立 | **単一マスターDB（SSOT）化の完遂 & 二重管理の根絶** | **【着手準備中】**<br>（次回 Drop 80 にて実装） |
+| **Track [Database]**<br>(フェーズ 3) | **却下会議体マスターの SQLite DB 一元化 & 3者間同期パイプライン確立** | **`admin/rejected_councils.json` の SQLite DB 完全移行**<br>`pmhub.db` に専用テーブル `rejected_councils` を新設し、全367件のシード・一意性制約・URLインデックスによる $O(1)$ 判定、管理サーバーAPIおよびユーティリティのDB直接接続、`export_data.py` の双方向エクスポートパイプラインの確立 | **単一マスターDB（SSOT）化の完遂 & 二重管理の根絶** | **【完了】**<br>（Drop 80 にて達成） |
 | **Track [Automation]** | **定時巡回クローラー & ローカルDB同期**<br>(GitHub Actions 連携) | **3階層マルチスケジュール定期実行・異常検知時Skip・ローカルDB自動同期**<br>1. Daily (平朝): 省庁新着検知のみ<br>2. Weekly (土曜): 通常巡回（直近2年重点）<br>3. Monthly (第1日曜): 全期間包括走査<br>連鎖失敗・重大エラー検知時のIssue発行＆次回以降Skip機能、Zero-Storage VM運用、ローカル環境への安全な同期エンジン（`sync_from_json.py` + post-merge hook）の配備 | **定期自動巡回・省力化 & ローカル資産整合性担保** | **【構想中】**<br>（Drop 81 以降） |
 | **Track [Search]**<br>(フェーズ 3) | **全文検索エンジン統合**<br>(PMM資産連携 FTS5構築) | **【フェーズ 3】PMM ローカルPDF資産を活用した全文検索エンジンの構築**<br>`admin/pmm/text_extractor.py` によるPDF本文抽出、SQLite FTS5 仮想テーブル（`fts_materials`）への trigram インデックス構築、サーバー検索API（`/api/search?q=キーワード`）およびフロントエンド検索UI・抜粋ハイライトの実装 | **約11万件の政策資料PDF本文横断検索の実現** | **【構想中】**<br>（Track [Database] 完了後着手） |
 | **Track [Portal-Norm]** | **省庁ポータル一覧・目次URL正常化**<br>(傘下会議体の個別化・パース規則最適化) | **省庁組織・目次・一覧ポータル設定会議体の個別会議体分離・スクレイピング最適化**<br>文化庁・消防庁・文科省等、親ポータルURLが設定されたまま個別開催回が未分離の会議体について、組織ツリーを辿り個別会議体（または開催回）へと正常化する包括的施策 | **Failed会議体の根絶 & 網羅的開催回収集** | **【進行中】**<br>（Drop 79 で着手開始、継続推進） |
@@ -128,10 +128,10 @@ GitHub Actions で自動更新・push されたリモートの最新データ（
 ## 2. 実装済 Drop
 
 > [!IMPORTANT]
-> - **実装済最新 Drop**: **Drop 79**（2026-10-24 完了）  
-> - **次回着手予定 Drop**: **Drop 80**  
+> - **実装済最新 Drop**: **Drop 80**（2026-10-24 完了）  
+> - **次回着手予定 Drop**: **Drop 81**  
 > 
-> 本セクションでは、これまでに完了したすべての Drop 施策（Drop 19 〜 Drop 79）を**昇順（時系列順）**で掲載・アーカイブしています。  
+> 本セクションでは、これまでに完了したすべての Drop 施策（Drop 19 〜 Drop 80）を**昇順（時系列順）**で掲載・アーカイブしています。  
 > 全施策が完了済みであるため、一覧のフォーマットを4列（Drop ID / カテゴリ・種別 / 施策概要・主な改修内容 / 到達成果・検証結果）に統一しています。
 
 ### 2-1. 実装済 Drop一覧
@@ -189,6 +189,7 @@ GitHub Actions で自動更新・push されたリモートの最新データ（
 | **Drop 77** | **過去の完了Drop**<br>(FSA新着登録 & 2会議体ワンストップ統合 & DBマテリアル同期) | **金融庁（FSA）新着情報の網羅的ディスカバリー・登録および新規2会議体のワンストップ統合・DBマテリアル同期強化**<br>金融庁令和8事務年度公表ページから企業会計審議会監査部会第57回、保険制度WG第2回、ディスクロージャーWG第6回、サステナビリティ情報保証部会第3回等の新着開催回・資料を反映。未登録であった「金融トラブル連絡調整協議会」（全70開催回・資料完備）および新設「AI時代を見据えたオンチェーン金融フォーラム」の2会議体をワンストップ登録。SQLiteマスターDBにおける配付資料名UPDATEの透過性強化（`INSERT OR REPLACE` 整合化、CR-198） | **金融庁新着反映・2会議体ワンストップ統合・DBマテリアルUPDATE透過性確立・統合15ケース＋全単体20種完全合格** |
 | **Drop 78** | **過去の完了Drop**<br>(WAF耐性強化 & バグ修正 & 親ポータルTrack策定) | **クローラーWAFリトライ・バックオフ耐性強化および税制調査会NameErrorバグ修正・親ポータルURL適正化Track策定**<br>クロール失敗56会議体の監査に基づき、AWS WAF（CloudFront 202 Challenge）遮断に対する指数バックオフ待機強化（`2.5 * (retry_count + 1)`秒）および Windows ネイティブ `curl` フォールバック（TLSフィンガープリント耐性向上）を実装（CR-199）。税制調査会（`cao-zei_cho`）の未定義変数 `official_url` を `target_url` へ是正し `NameError` を解消。残存親ポータルURL設定9会議体の個別化・パース適正化（Track [Portal-Norm]）を策定 | **WAF 202チャレンジ耐性強化・税調NameError解消・統合15ケース＋全単体20種完全合格** |
 | **Drop 79** | **最新の完了Drop**<br>(親ポータルURL個別化 & 開催回ワンストップ登録) | **親ポータル・目次URL設定会議体の個別化・パース適正化 & 警察庁政策評価研究会等全開催回ワンストップ登録**<br>失敗（Failed）となっていた親ポータルURL設定会議体を精査。不要・親ポータル型会議体3件（`aca-1735`, `cas-1895`, `moj-2735`）を削除し却下リスト（`admin/rejected_councils.json`）へ登録。アフリカ豚熱閣僚会議（`cas-299`）の誤認開催回クレンジング。警察庁政策評価研究会（`npa-seisaku_hyoka_kenkyukai`）の全43開催回・配付資料ワンストップ登録（CR-200）。国家公務員共済組合分科会（`mof-1131`）の議事要旨一覧URL差し替え & 令和3〜7年度全開催回・末端PDF配付資料登録およびスクレイピングルール適正化 | **親ポータルURL個別化適正化・警察庁政策評価研究会43回登録・統合15ケース＋全単体20種完全合格** |
+| **Drop 80** | **データベース基盤**<br>(却下会議体 SQLite 一元化 & 3者間同期) | **`admin/rejected_councils.json` の SQLite DB 完全移行（Track [Database] フェーズ 3）**<br>専用テーブル `rejected_councils` 新設、全367件シード（乖離3件完全解消）、B-tree INDEX配備による $O(1)$ 判定、`export_data.py` 双方向自動エクスポート、管理サーバー API・ユーティリティの DB 直結化、ケース 6 & 15 常時検証ガード新設 | **単一マスターDB（SSOT）化完遂 & 3者間データ完全同期（乖離0件）** |
 
 ---
 
@@ -1294,8 +1295,69 @@ Drop 62〜64 による SQLite マスターDB化および 2系統エクスポー�
 
 ---
 
+#### 【Drop 80】却下会議体マスターの SQLite DB 一元化 & 3者間同期パイプライン確立 (2026-10-24)
+
+#### 1. 背景と課題 (Background & Issues)
+- **JSON 直接参照運用の残存と3者間データ乖離**:
+  PMHub では Drop 62〜64 において、公開用（`docs/data.json`）および管理用（`admin/admin_data.json`）のマスターデータを SQLite マスターDB（`admin/pmhub.db`）へ完全一元化したが、却下・除外会議体リスト（`admin/rejected_councils.json`）に関しては JSON 直接読み書きの運用が残存していた。
+  その結果、以下の **3者間データ乖離（3件の不足）** が生じていた：
+  - `admin/rejected_councils.json`: **367 件**
+  - `admin/pmhub.db` (`admin_configs.rejectedCouncils`): **364 件**（3件不足: `cas-1895`, `aca-1735`, `moj-2735`）
+  - `admin/admin_data.json` (`rejectedCouncils`): **364 件**（3件不足）
+- **単一情報源（SSOT）化と自動同期の要求**:
+  管理サーバー API やディスカバリー処理が DB を直接経由することで二重管理を解消し、Git での差分追跡性を維持しながら 3者間が 100% 同期される決定論的エクスポートパイプラインの確立が不可欠であった。
+
+---
+
+#### 2. 改修内容と実装アーキテクチャ (Architecture & Implementation)
+
+```mermaid
+flowchart TD
+    subgraph DataMaster["SQLite マスターDB (admin/pmhub.db)"]
+        T_Councils["councils (1,546件)"]
+        T_Meetings["meetings (19,575件)"]
+        T_Materials["materials (112,105件)"]
+        T_Rejected["rejected_councils (367件)\n【新規正規化テーブル】"]
+    end
+
+    subgraph Operations["操作・参照系 (Drop 80 DB直結)"]
+        Server["admin/server.py\n(/api/reject-council 等)"] -->|ACID トランザクション| T_Rejected
+        Discover["admin/discover_councils.py"] -->|INDEX O(1) 高速判定| T_Rejected
+        Utils["admin/utils.py\n(load/add/save)"] -->|DB 直結| T_Rejected
+    end
+
+    subgraph ExportPipeline["自動エクスポート (export_data.py)"]
+        T_Rejected -->|決定論的出力| Out_Rej["admin/rejected_councils.json\n(Git 差分追跡 / 367件)"]
+        T_Rejected -->|管理者JSON統合| Out_Admin["admin/admin_data.json\n(rejectedCouncils / 367件)"]
+    end
+```
+
+| CR ID | 変更区分 | 改修項目・技術仕様 | 変更ファイル | 成果・検証 |
+|:---:|:---|:---|:---|:---:|
+| **CR-201** | DBスキーマ & マイグレーション | **`rejected_councils` 正規化テーブル新設 & インデックス配備**<br>`admin/db/schema.sql` に DDL 追加。`db_manager.py` の `ensure_database` 内で自動マイグレーション機構を配備。`ministry` および `official_url` に B-tree INDEX を作成し $O(1)$ 高速照合を実現。 | `admin/db/schema.sql`<br>`admin/db/db_manager.py` | 済 |
+| **CR-202** | シード & エクスポート | **完全可逆シード & 双方向決定論的エクスポートパイプラインの確立**<br>`seed_db.py` により `rejected_councils.json`（全367件）から DB へ漏れなくシード（不足3件を完全解消）。`export_data.py` により、DB の `rejected_councils` から `rejected_councils.json` および `admin_data.json` の双方へ ID 昇順で決定論的アトミック出力。 | `admin/db/seed_db.py`<br>`admin/db/export_data.py` | 済 |
+| **CR-203** | ユーティリティ & サーバー API | **ユーティリティ・管理サーバー API の DB 直結化**<br>`admin/utils.py` の `load_rejected_councils`, `save_rejected_councils`, `add_to_rejected_councils`, `get_rejected_identifiers` を DB 優先・自動エクスポート連動に改修。`admin/server.py` の却下関連 API を完全 DB 直結化。 | `admin/utils.py`<br>`admin/server.py` | 済 |
+| **CR-204** | テスト基盤 & 常時ガード | **ケース 6・ケース 15・U17 への常時検証ガード新設**<br>`run_test_suite.py` のケース 15 に `pmhub.db` (367件) == `admin_data.json` (367件) == `rejected_councils.json` (367件) の完全一致ガード新設。ケース 6 に DB 排他性検証追加。U17 にスキーマ DDL および可逆性検証を追加。 | `testing/run_test_suite.py`<br>`testing/test_drop62_db_and_export.py` | 済 |
+
+---
+
+#### 3. 到達成果・検証結果 (Verification Results)
+- **3者間データ完全同期の達成**:
+  - `admin/pmhub.db` (`rejected_councils`): **367 件**
+  - `admin/rejected_councils.json`: **367 件**
+  - `admin/admin_data.json` (`rejectedCouncils`): **367 件**
+  （過去に不足していた `cas-1895`, `aca-1735`, `moj-2735` の3件を完全同期）
+- **テストスイート完全合格**:
+  - `python testing/run_test_suite.py --all-layers` : **PASSED（統合15ケース＋単体20種合格 / 所要時間 27.49秒）**
+    - ケース 15: PRAGMA 整合性 & 外部キー制約 & 却下会議体3者間同期（367件）& 公開/管理/DB 完全同期検証完了 (差分 0件)
+    - ケース 6: 却下会議体 367 件の分離・公開データとの完全排他を検証完了
+    - U17: `test_drop62_db_and_export.py`（DDL整合性 & 可逆性ビットレベル完全一致）合格
+    - ケース 9: 管理サーバー API（全18テスト）全件合格
+
+---
+
 > [!NOTE]
-> **次回着手予定**: **【Drop 80】**
-> - 対象: **Track [Database] フェーズ 3**
-> - 内容: `admin/rejected_councils.json` の SQLite マスターDB（`admin/pmhub.db`）完全一元化 & 双方向同期パイプライン確立
+> **次回着手予定**: **【Drop 81】**
+> - 対象: **Track [Automation]**
+> - 内容: GitHub Actions 定期巡回クローラー（3階層マルチスケジュール）& 異常検知時Skip & ローカルDB自動同期エンジンの配備
 

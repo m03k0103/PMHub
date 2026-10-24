@@ -25,6 +25,7 @@ PROJECT_ROOT = os.path.dirname(BASE_DIR)
 DEFAULT_DATA_JSON_PATH = os.path.join(PROJECT_ROOT, "docs", "data.json")
 DEFAULT_BACKUP_DIR = os.path.join(BASE_DIR, "backups")
 DEFAULT_REJECTED_COUNCILS_PATH = os.path.join(BASE_DIR, "rejected_councils.json")
+DEFAULT_DB_PATH = os.path.join(BASE_DIR, "pmhub.db")
 
 
 def setup_win32_utf8():
@@ -531,11 +532,19 @@ def decode_html_bytes(content_bytes, content_type_header=""):
     return content_bytes.decode('utf-8', errors='replace')
 
 
-def load_rejected_councils(rejected_file=DEFAULT_REJECTED_COUNCILS_PATH):
+def load_rejected_councils(rejected_file=DEFAULT_REJECTED_COUNCILS_PATH, db_path=DEFAULT_DB_PATH):
     """
-    admin/rejected_councils.json を安全に読み込み、却下済み会議体のリストを返す。
-    ファイルが存在しないかエラーの場合は空リスト [] を返す。
+    却下済み会議体のリストを返す（Drop 80: SQLite DB 優先、フォールバックで JSON 参照）。
     """
+    if os.path.exists(db_path):
+        try:
+            from admin.db.db_manager import load_rejected_councils_from_db
+            res = load_rejected_councils_from_db(Path(db_path))
+            if res:
+                return res
+        except Exception as e_db:
+            print(f"[WARN] Failed to load rejected councils from DB, falling back to JSON: {e_db}", file=sys.stderr)
+
     if os.path.exists(rejected_file):
         try:
             with open(rejected_file, "r", encoding="utf-8") as f:
@@ -546,10 +555,17 @@ def load_rejected_councils(rejected_file=DEFAULT_REJECTED_COUNCILS_PATH):
     return []
 
 
-def save_rejected_councils(rejected_data, rejected_file=DEFAULT_REJECTED_COUNCILS_PATH):
+def save_rejected_councils(rejected_data, rejected_file=DEFAULT_REJECTED_COUNCILS_PATH, db_path=DEFAULT_DB_PATH):
     """
-    admin/rejected_councils.json に却下済み会議体リストをアトミックに整形保存する。
+    却下済み会議体リストを保存する（Drop 80: SQLite DB 優先 & export_data 連動、フォールバックで JSON 保存）。
     """
+    if os.path.exists(db_path):
+        try:
+            from admin.db.db_manager import save_rejected_councils_to_db
+            return save_rejected_councils_to_db(rejected_data, Path(db_path), export=True)
+        except Exception as e_db:
+            print(f"[WARN] Failed to save rejected councils to DB, falling back to JSON: {e_db}", file=sys.stderr)
+
     tmp_file = f"{rejected_file}.tmp"
     try:
         target_dir = os.path.dirname(os.path.abspath(rejected_file))
@@ -568,12 +584,21 @@ def save_rejected_councils(rejected_data, rejected_file=DEFAULT_REJECTED_COUNCIL
         return False
 
 
-def get_rejected_identifiers(rejected_file=DEFAULT_REJECTED_COUNCILS_PATH):
+def get_rejected_identifiers(rejected_file=DEFAULT_REJECTED_COUNCILS_PATH, db_path=DEFAULT_DB_PATH):
     """
-    却下済み会議体から (ids_set, names_set, urls_set) のタプルを取得する。
+    却下済み会議体から (ids_set, names_set, urls_set) のタプルを取得する（Drop 80: SQLite B-tree 高速取得）。
     URLは末尾スラッシュを除去した正規化形式で保持する。
     """
-    rej_list = load_rejected_councils(rejected_file)
+    if os.path.exists(db_path):
+        try:
+            from admin.db.db_manager import get_rejected_identifiers_from_db
+            ids, names, urls = get_rejected_identifiers_from_db(Path(db_path))
+            if ids or names or urls:
+                return ids, names, urls
+        except Exception as e_db:
+            print(f"[WARN] Failed to get rejected identifiers from DB: {e_db}", file=sys.stderr)
+
+    rej_list = load_rejected_councils(rejected_file, db_path)
     rej_ids = set()
     rej_names = set()
     rej_urls = set()
@@ -587,28 +612,40 @@ def get_rejected_identifiers(rejected_file=DEFAULT_REJECTED_COUNCILS_PATH):
     return rej_ids, rej_names, rej_urls
 
 
-def add_to_rejected_councils(target_id, council=None, reason="Admin rejected council", rejected_at=None, rejected_file=DEFAULT_REJECTED_COUNCILS_PATH):
+def add_to_rejected_councils(target_id, council=None, reason="Admin rejected council", rejected_at=None, rejected_file=DEFAULT_REJECTED_COUNCILS_PATH, db_path=DEFAULT_DB_PATH):
     """
-    admin/rejected_councils.json に会議体を重複なく安全に追加・保存する共通関数。
+    会議体を重複なく安全に却下リストへ追加・保存する共通関数（Drop 80: SQLite DB ACID トランザクション対応）。
     追加された場合は True、既に存在していたか無効なIDの場合は False を返す。
     """
     if not target_id:
         return False
     target_id = target_id.strip()
-    rejected_list = load_rejected_councils(rejected_file)
+
+    c_obj = council or {}
+    rej_item = {
+        "id": target_id,
+        "name": c_obj.get("name") if c_obj.get("name") else target_id,
+        "ministry": c_obj.get("ministry") or (target_id.split("-")[0].upper() if "-" in target_id else ""),
+        "category": c_obj.get("category", "COUNCIL") or "COUNCIL",
+        "officialUrl": c_obj.get("officialUrl") or c_obj.get("url") or "",
+        "rejectedAt": rejected_at or datetime.now().strftime("%Y-%m-%d"),
+        "reason": reason or "Admin rejected council"
+    }
+
+    if os.path.exists(db_path):
+        try:
+            from admin.db.db_manager import add_rejected_council_to_db, get_rejected_identifiers_from_db
+            rej_ids, _, _ = get_rejected_identifiers_from_db(Path(db_path))
+            if target_id in rej_ids:
+                return False
+            return add_rejected_council_to_db(rej_item, Path(db_path), export=True)
+        except Exception as e_db:
+            print(f"[WARN] Failed to add rejected council to DB: {e_db}", file=sys.stderr)
+
+    rejected_list = load_rejected_councils(rejected_file, db_path)
     if not any(rc.get("id") == target_id for rc in rejected_list):
-        c_obj = council or {}
-        rej_item = {
-            "id": target_id,
-            "name": c_obj.get("name") if c_obj.get("name") else target_id,
-            "ministry": c_obj.get("ministry") or "",
-            "category": c_obj.get("category", "COUNCIL") or "COUNCIL",
-            "officialUrl": c_obj.get("officialUrl") or "",
-            "rejectedAt": rejected_at or datetime.now().strftime("%Y-%m-%d"),
-            "reason": reason or "Admin rejected council"
-        }
         rejected_list.append(rej_item)
-        return save_rejected_councils(rejected_list, rejected_file)
+        return save_rejected_councils(rejected_list, rejected_file, db_path)
     return False
 
 

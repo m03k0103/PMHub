@@ -23,6 +23,7 @@ DEFAULT_DB_PATH = BASE_DIR / "admin" / "pmhub.db"
 DEFAULT_SCHEMA_PATH = BASE_DIR / "admin" / "db" / "schema.sql"
 DEFAULT_PUBLIC_JSON = BASE_DIR / "docs" / "data.json"
 DEFAULT_ADMIN_JSON = BASE_DIR / "admin" / "admin_data.json"
+DEFAULT_REJECTED_JSON = BASE_DIR / "admin" / "rejected_councils.json"
 
 
 def init_db(db_path: Path, schema_path: Path) -> sqlite3.Connection:
@@ -49,7 +50,8 @@ def seed_db(
     db_path: Path = DEFAULT_DB_PATH,
     schema_path: Path = DEFAULT_SCHEMA_PATH,
     public_json_path: Path = DEFAULT_PUBLIC_JSON,
-    admin_json_path: Path = DEFAULT_ADMIN_JSON
+    admin_json_path: Path = DEFAULT_ADMIN_JSON,
+    rejected_json_path: Path = DEFAULT_REJECTED_JSON
 ) -> bool:
     """Seed pmhub.db from public and admin JSON files."""
     start_time = time.time()
@@ -84,6 +86,17 @@ def seed_db(
 
         # 2. Master & Admin Configurations
         # We store master lookups (ministries, categories, docTypes) and crawler configs in admin_configs
+        # Load rejected_councils from dedicated JSON file (master) or fallback
+        rejected_councils_list = []
+        if rejected_json_path.exists():
+            try:
+                with open(rejected_json_path, "r", encoding="utf-8") as rf:
+                    rejected_councils_list = json.load(rf)
+            except Exception as e_rej:
+                print(f"[WARN] Failed to load {rejected_json_path}: {e_rej}", file=sys.stderr)
+        if not rejected_councils_list:
+            rejected_councils_list = admin_data.get("rejectedCouncils") or public_data.get("rejectedCouncils", [])
+
         configs_to_store = {
             "ministries": public_data.get("ministries", {}),
             "categories": public_data.get("categories", {}),
@@ -91,7 +104,7 @@ def seed_db(
             "scrapingRuleTemplates": admin_data.get("scrapingRuleTemplates") or public_data.get("scrapingRuleTemplates", {}),
             "discoveryKeywords": admin_data.get("discoveryKeywords") or public_data.get("discoveryKeywords", []),
             "crawlerConfig": admin_data.get("crawlerConfig") or public_data.get("crawlerConfig", {}),
-            "rejectedCouncils": admin_data.get("rejectedCouncils") or public_data.get("rejectedCouncils", []),
+            "rejectedCouncils": rejected_councils_list,
             "initialAlertKeywords": admin_data.get("initialAlertKeywords") or public_data.get("initialAlertKeywords", [])
         }
 
@@ -248,6 +261,26 @@ def seed_db(
             ) VALUES (?, ?, ?, ?, ?, ?);
         """, mat_rows)
 
+        # 4. Seed rejected_councils table
+        rej_rows = []
+        for item in rejected_councils_list:
+            cid = item.get("id", "").strip()
+            if not cid:
+                continue
+            name = item.get("name", "")
+            ministry = item.get("ministry") or (cid.split("-")[0].upper() if "-" in cid else "")
+            category = item.get("category") or "COUNCIL"
+            url = item.get("officialUrl") or item.get("url") or ""
+            rejected_at = item.get("rejectedAt") or ""
+            reason = item.get("reason") or ""
+            rej_rows.append((cid, name, ministry, category, url, rejected_at, reason))
+
+        cur.executemany("""
+            INSERT OR REPLACE INTO rejected_councils (
+                id, name, ministry, category, official_url, rejected_at, reason
+            ) VALUES (?, ?, ?, ?, ?, ?, ?);
+        """, rej_rows)
+
         conn.commit()
 
         # Stats verification
@@ -255,6 +288,7 @@ def seed_db(
         m_cnt = cur.execute("SELECT COUNT(*) FROM meetings;").fetchone()[0]
         mat_cnt = cur.execute("SELECT COUNT(*) FROM materials;").fetchone()[0]
         r_cnt = cur.execute("SELECT COUNT(*) FROM scraping_rules;").fetchone()[0]
+        rej_cnt = cur.execute("SELECT COUNT(*) FROM rejected_councils;").fetchone()[0]
         elapsed = time.time() - start_time
 
         print(f"[SUCCESS] Database seeded successfully in {elapsed:.2f}s!")
@@ -262,6 +296,7 @@ def seed_db(
         print(f"  Meetings: {m_cnt}")
         print(f"  Materials: {mat_cnt}")
         print(f"  Scraping Rules: {r_cnt}")
+        print(f"  Rejected Councils: {rej_cnt}")
         return True
 
     except Exception as e:
@@ -281,12 +316,14 @@ if __name__ == "__main__":
     parser.add_argument("--schema", type=Path, default=DEFAULT_SCHEMA_PATH, help="Path to schema.sql")
     parser.add_argument("--public-json", type=Path, default=DEFAULT_PUBLIC_JSON, help="Path to docs/data.json")
     parser.add_argument("--admin-json", type=Path, default=DEFAULT_ADMIN_JSON, help="Path to admin/admin_data.json")
+    parser.add_argument("--rejected-json", type=Path, default=DEFAULT_REJECTED_JSON, help="Path to admin/rejected_councils.json")
     args = parser.parse_args()
 
     success = seed_db(
         db_path=args.db,
         schema_path=args.schema,
         public_json_path=args.public_json,
-        admin_json_path=args.admin_json
+        admin_json_path=args.admin_json,
+        rejected_json_path=args.rejected_json
     )
     sys.exit(0 if success else 1)

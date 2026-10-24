@@ -54,7 +54,8 @@ class TestDrop62DatabaseAndExport(unittest.TestCase):
             "crawl_statuses",
             "admin_configs",
             "metadata",
-            "fts_materials"
+            "fts_materials",
+            "rejected_councils"
         }
         for tbl in expected_tables:
             self.assertIn(tbl, tables, f"Expected table '{tbl}' not found in created schema")
@@ -115,6 +116,7 @@ class TestDrop62DatabaseAndExport(unittest.TestCase):
             tmp_db = tmp_path / "pmhub_test.db"
             tmp_pub = tmp_path / "data.json"
             tmp_adm = tmp_path / "admin_data.json"
+            tmp_rej = tmp_path / "rejected_councils.json"
 
             # テスト用初期フィクスチャ (CR-166: 本番DBへの副作用排除 & 高速化)
             fixture_pub = {
@@ -173,17 +175,31 @@ class TestDrop62DatabaseAndExport(unittest.TestCase):
             }
 
             # 最初のシード & エクスポートで決定論的フォーマットに初期整形
+            fixture_rej = [
+                {
+                    "id": "test-rej1",
+                    "name": "却下テスト会議体1",
+                    "ministry": "TEST",
+                    "category": "COUNCIL",
+                    "officialUrl": "https://example.com/rej1",
+                    "rejectedAt": "2026-10-24",
+                    "reason": "テスト用却下理由"
+                }
+            ]
             with open(tmp_pub, "w", encoding="utf-8") as f:
                 json.dump(fixture_pub, f, ensure_ascii=False, indent=2)
             with open(tmp_adm, "w", encoding="utf-8") as f:
                 json.dump(fixture_adm, f, ensure_ascii=False, indent=2)
+            with open(tmp_rej, "w", encoding="utf-8") as f:
+                json.dump(fixture_rej, f, ensure_ascii=False, indent=2)
 
             res_init_seed = subprocess.run([
                 sys.executable, str(SEED_SCRIPT),
                 "--db", str(tmp_db),
                 "--schema", str(SCHEMA_PATH),
                 "--public-json", str(tmp_pub),
-                "--admin-json", str(tmp_adm)
+                "--admin-json", str(tmp_adm),
+                "--rejected-json", str(tmp_rej)
             ], capture_output=True, text=True)
             self.assertEqual(res_init_seed.returncode, 0, f"init seed_db failed: {res_init_seed.stderr}")
 
@@ -191,14 +207,17 @@ class TestDrop62DatabaseAndExport(unittest.TestCase):
                 sys.executable, str(EXPORT_SCRIPT),
                 "--db", str(tmp_db),
                 "--public-json", str(tmp_pub),
-                "--admin-json", str(tmp_adm)
+                "--admin-json", str(tmp_adm),
+                "--rejected-json", str(tmp_rej)
             ], capture_output=True, text=True)
             self.assertEqual(res_init_exp.returncode, 0, f"init export_data failed: {res_init_exp.stderr}")
 
             pub_before = tmp_pub.read_bytes()
             adm_before = tmp_adm.read_bytes()
+            rej_before = tmp_rej.read_bytes()
             hash_pub_before = hashlib.sha256(pub_before).hexdigest()
             hash_adm_before = hashlib.sha256(adm_before).hexdigest()
+            hash_rej_before = hashlib.sha256(rej_before).hexdigest()
 
             # 2回目の再シード & 再エクスポート（完全可逆性の検証）
             res_seed = subprocess.run([
@@ -206,7 +225,8 @@ class TestDrop62DatabaseAndExport(unittest.TestCase):
                 "--db", str(tmp_db),
                 "--schema", str(SCHEMA_PATH),
                 "--public-json", str(tmp_pub),
-                "--admin-json", str(tmp_adm)
+                "--admin-json", str(tmp_adm),
+                "--rejected-json", str(tmp_rej)
             ], capture_output=True, text=True)
             self.assertEqual(res_seed.returncode, 0, f"seed_db failed: {res_seed.stderr}")
 
@@ -214,7 +234,8 @@ class TestDrop62DatabaseAndExport(unittest.TestCase):
                 sys.executable, str(EXPORT_SCRIPT),
                 "--db", str(tmp_db),
                 "--public-json", str(tmp_pub),
-                "--admin-json", str(tmp_adm)
+                "--admin-json", str(tmp_adm),
+                "--rejected-json", str(tmp_rej)
             ], capture_output=True, text=True)
             self.assertEqual(res_exp.returncode, 0, f"export_data failed: {res_exp.stderr}")
 
@@ -223,8 +244,12 @@ class TestDrop62DatabaseAndExport(unittest.TestCase):
             hash_pub_after = hashlib.sha256(pub_after).hexdigest()
             hash_adm_after = hashlib.sha256(adm_after).hexdigest()
 
+            rej_after = tmp_rej.read_bytes()
+            hash_rej_after = hashlib.sha256(rej_after).hexdigest()
+
             self.assertEqual(hash_pub_before, hash_pub_after, "Public JSON must remain bitwise identical after re-export")
             self.assertEqual(hash_adm_before, hash_adm_after, "Admin JSON must remain bitwise identical after re-export")
+            self.assertEqual(hash_rej_before, hash_rej_after, "Rejected councils JSON must remain bitwise identical after re-export")
 
 
 if __name__ == "__main__":

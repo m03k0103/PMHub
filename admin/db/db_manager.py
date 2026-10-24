@@ -64,6 +64,24 @@ def ensure_database(
 
         cur.execute("CREATE INDEX IF NOT EXISTS idx_materials_status ON materials(download_status);")
         cur.execute("CREATE INDEX IF NOT EXISTS idx_council_materials_status ON council_materials(download_status);")
+
+        # Drop 80 schema migration: Ensure rejected_councils table and indexes exist
+        cur.execute("""
+            CREATE TABLE IF NOT EXISTS rejected_councils (
+                id TEXT PRIMARY KEY,
+                name TEXT NOT NULL,
+                ministry TEXT,
+                category TEXT DEFAULT 'COUNCIL',
+                official_url TEXT,
+                rejected_at TEXT,
+                reason TEXT,
+                created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+                updated_at DATETIME DEFAULT CURRENT_TIMESTAMP
+            );
+        """)
+        cur.execute("CREATE INDEX IF NOT EXISTS idx_rejected_councils_ministry ON rejected_councils(ministry);")
+        cur.execute("CREATE INDEX IF NOT EXISTS idx_rejected_councils_url ON rejected_councils(official_url);")
+
         conn.commit()
         conn.close()
     except Exception as e:
@@ -685,5 +703,211 @@ def load_admin_full_data_from_db(db_path: Path = DEFAULT_DB_PATH) -> Dict[str, A
         data = _load_dataset_from_db(cur, include_pmm_details=True)
         data["downloadSummary"] = get_materials_download_summary(db_path=db_path)
         return data
+    finally:
+        conn.close()
+
+# ---------------------------------------------------------------------------
+# Drop 80: Dedicated Rejected Councils (Single Source of Truth in SQLite)
+# ---------------------------------------------------------------------------
+
+def load_rejected_councils_from_db(db_path: Path = DEFAULT_DB_PATH) -> List[Dict[str, Any]]:
+    """
+    Load all rejected councils directly from SQLite rejected_councils table.
+    Returns list of dictionaries compatible with admin/rejected_councils.json.
+    """
+    if not ensure_database(db_path):
+        return []
+
+    conn = sqlite3.connect(str(db_path))
+    conn.row_factory = sqlite3.Row
+    cur = conn.cursor()
+    try:
+        rows = cur.execute("""
+            SELECT id, name, ministry, category, official_url, rejected_at, reason
+            FROM rejected_councils
+            ORDER BY id ASC;
+        """).fetchall()
+
+        result = []
+        for r in rows:
+            result.append({
+                "id": r["id"],
+                "name": r["name"],
+                "ministry": r["ministry"] or "",
+                "category": r["category"] or "COUNCIL",
+                "officialUrl": r["official_url"] or "",
+                "rejectedAt": r["rejected_at"] or "",
+                "reason": r["reason"] or ""
+            })
+        return result
+    except Exception as e:
+        print(f"[WARN] Failed to load rejected councils from DB: {e}", file=sys.stderr)
+        return []
+    finally:
+        conn.close()
+
+
+def save_rejected_councils_to_db(
+    rejected_list: List[Dict[str, Any]],
+    db_path: Path = DEFAULT_DB_PATH,
+    export: bool = True
+) -> bool:
+    """
+    Save rejected councils list to DB inside an ACID transaction,
+    synchronize admin_configs, and trigger deterministic export_data pipeline.
+    """
+    if not ensure_database(db_path):
+        return False
+
+    conn = sqlite3.connect(str(db_path))
+    cur = conn.cursor()
+    try:
+        cur.execute("BEGIN TRANSACTION;")
+        cur.execute("DELETE FROM rejected_councils;")
+
+        rows_to_insert = []
+        for item in rejected_list:
+            cid = item.get("id", "").strip()
+            if not cid:
+                continue
+            name = item.get("name", "")
+            ministry = item.get("ministry") or (cid.split("-")[0].upper() if "-" in cid else "")
+            category = item.get("category") or "COUNCIL"
+            url = item.get("officialUrl") or item.get("url") or ""
+            rejected_at = item.get("rejectedAt") or ""
+            reason = item.get("reason") or ""
+            rows_to_insert.append((cid, name, ministry, category, url, rejected_at, reason))
+
+        cur.executemany("""
+            INSERT INTO rejected_councils (
+                id, name, ministry, category, official_url, rejected_at, reason
+            ) VALUES (?, ?, ?, ?, ?, ?, ?);
+        """, rows_to_insert)
+
+        # Synchronize admin_configs for backward compatibility
+        cur.execute(
+            "INSERT OR REPLACE INTO admin_configs (key, value_json) VALUES (?, ?);",
+            ("rejectedCouncils", json.dumps(rejected_list, ensure_ascii=False))
+        )
+
+        conn.commit()
+    except Exception as e:
+        conn.rollback()
+        print(f"[ERROR] Failed to save rejected councils to DB: {e}", file=sys.stderr)
+        return False
+    finally:
+        conn.close()
+
+    if export:
+        export_data(db_path=db_path)
+    return True
+
+
+def add_rejected_council_to_db(
+    council_data: Dict[str, Any],
+    db_path: Path = DEFAULT_DB_PATH,
+    export: bool = True
+) -> bool:
+    """
+    Add or update a single rejected council record in SQLite DB and export.
+    """
+    cid = council_data.get("id", "").strip()
+    if not cid:
+        return False
+
+    if not ensure_database(db_path):
+        return False
+
+    conn = sqlite3.connect(str(db_path))
+    cur = conn.cursor()
+    try:
+        name = council_data.get("name", "") or cid
+        ministry = council_data.get("ministry") or (cid.split("-")[0].upper() if "-" in cid else "")
+        category = council_data.get("category") or "COUNCIL"
+        url = council_data.get("officialUrl") or council_data.get("url") or ""
+        rejected_at = council_data.get("rejectedAt") or time.strftime("%Y-%m-%d")
+        reason = council_data.get("reason") or "Admin rejected council"
+
+        cur.execute("""
+            INSERT OR REPLACE INTO rejected_councils (
+                id, name, ministry, category, official_url, rejected_at, reason
+            ) VALUES (?, ?, ?, ?, ?, ?, ?);
+        """, (cid, name, ministry, category, url, rejected_at, reason))
+        conn.commit()
+    except Exception as e:
+        conn.rollback()
+        print(f"[ERROR] Failed to add rejected council to DB: {e}", file=sys.stderr)
+        return False
+    finally:
+        conn.close()
+
+    if export:
+        export_data(db_path=db_path)
+    return True
+
+
+def delete_rejected_council_from_db(
+    target_id: str,
+    db_path: Path = DEFAULT_DB_PATH,
+    export: bool = True
+) -> bool:
+    """
+    Delete a single rejected council record from SQLite DB and export.
+    """
+    if not target_id:
+        return False
+    target_id = target_id.strip()
+
+    if not ensure_database(db_path):
+        return False
+
+    conn = sqlite3.connect(str(db_path))
+    cur = conn.cursor()
+    try:
+        cur.execute("DELETE FROM rejected_councils WHERE id = ?;", (target_id,))
+        conn.commit()
+    except Exception as e:
+        conn.rollback()
+        print(f"[ERROR] Failed to delete rejected council from DB: {e}", file=sys.stderr)
+        return False
+    finally:
+        conn.close()
+
+    if export:
+        export_data(db_path=db_path)
+    return True
+
+
+def get_rejected_identifiers_from_db(
+    db_path: Path = DEFAULT_DB_PATH
+) -> Tuple[set, set, set]:
+    """
+    Get (ids_set, names_set, urls_set) directly from SQLite DB using B-tree index.
+    Returns (rej_ids, rej_names, rej_urls).
+    """
+    if not ensure_database(db_path):
+        return set(), set(), set()
+
+    conn = sqlite3.connect(str(db_path))
+    cur = conn.cursor()
+    try:
+        rows = cur.execute("""
+            SELECT id, name, official_url FROM rejected_councils;
+        """).fetchall()
+
+        rej_ids = set()
+        rej_names = set()
+        rej_urls = set()
+        for r in rows:
+            if r[0]:
+                rej_ids.add(r[0].strip())
+            if r[1]:
+                rej_names.add(r[1].strip())
+            if r[2]:
+                rej_urls.add(r[2].strip().rstrip("/"))
+        return rej_ids, rej_names, rej_urls
+    except Exception as e:
+        print(f"[WARN] Failed to get rejected identifiers from DB: {e}", file=sys.stderr)
+        return set(), set(), set()
     finally:
         conn.close()

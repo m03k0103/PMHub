@@ -23,12 +23,14 @@ BASE_DIR = Path(__file__).resolve().parent.parent.parent
 DEFAULT_DB_PATH = BASE_DIR / "admin" / "pmhub.db"
 DEFAULT_PUBLIC_JSON = BASE_DIR / "docs" / "data.json"
 DEFAULT_ADMIN_JSON = BASE_DIR / "admin" / "admin_data.json"
+DEFAULT_REJECTED_JSON = BASE_DIR / "admin" / "rejected_councils.json"
 
 
 def export_data(
     db_path: Path = DEFAULT_DB_PATH,
     public_json_path: Path = DEFAULT_PUBLIC_JSON,
-    admin_json_path: Path = DEFAULT_ADMIN_JSON
+    admin_json_path: Path = DEFAULT_ADMIN_JSON,
+    rejected_json_path: Path = DEFAULT_REJECTED_JSON
 ) -> bool:
     """Export SQLite database to public and admin JSON files."""
     start_time = time.time()
@@ -62,8 +64,31 @@ def export_data(
         templates = configs.get("scrapingRuleTemplates", {})
         discovery_keywords = configs.get("discoveryKeywords", [])
         crawler_config = configs.get("crawlerConfig", {})
-        rejected_councils = configs.get("rejectedCouncils", [])
         initial_alert_keywords = configs.get("initialAlertKeywords", [])
+
+        # Fetch rejected councils from dedicated table (Drop 80 SSOT)
+        rejected_councils = []
+        try:
+            r_rows = cur.execute("""
+                SELECT id, name, ministry, category, official_url, rejected_at, reason
+                FROM rejected_councils
+                ORDER BY id ASC;
+            """).fetchall()
+            for r in r_rows:
+                rejected_councils.append({
+                    "id": r["id"],
+                    "name": r["name"],
+                    "ministry": r["ministry"] or "",
+                    "category": r["category"] or "COUNCIL",
+                    "officialUrl": r["official_url"] or "",
+                    "rejectedAt": r["rejected_at"] or "",
+                    "reason": r["reason"] or ""
+                })
+        except Exception as e_rej_load:
+            print(f"[WARN] Failed to load rejected_councils from table: {e_rej_load}", file=sys.stderr)
+
+        if not rejected_councils:
+            rejected_councils = configs.get("rejectedCouncils", [])
 
         # 3. Councils & Council Materials
         c_mat_rows = cur.execute("""
@@ -294,13 +319,18 @@ def export_data(
         print(f"[INFO] Writing admin JSON to {admin_json_path}...")
         _safe_write_json(admin_json_path, admin_dataset)
 
+        print(f"[INFO] Writing rejected councils JSON to {rejected_json_path}...")
+        _safe_write_json(rejected_json_path, rejected_councils)
+
         elapsed = time.time() - start_time
         pub_size_mb = public_json_path.stat().st_size / (1024 * 1024)
         adm_size_mb = admin_json_path.stat().st_size / (1024 * 1024)
 
         print(f"[SUCCESS] Export completed successfully in {elapsed:.2f}s!")
-        print(f"  Public JSON: {pub_size_mb:.2f} MB ({len(councils_public)} councils, {len(meetings_public)} meetings)")
-        print(f"  Admin JSON:  {adm_size_mb:.2f} MB ({len(scraping_rules)} rules, {len(crawl_statuses)} statuses)")
+        rej_size_kb = rejected_json_path.stat().st_size / 1024 if rejected_json_path.exists() else 0
+        print(f"  Public JSON:   {pub_size_mb:.2f} MB ({len(councils_public)} councils, {len(meetings_public)} meetings)")
+        print(f"  Admin JSON:    {adm_size_mb:.2f} MB ({len(scraping_rules)} rules, {len(crawl_statuses)} statuses)")
+        print(f"  Rejected JSON: {rej_size_kb:.2f} KB ({len(rejected_councils)} rejected councils)")
         return True
 
     except Exception as e:
@@ -318,11 +348,13 @@ if __name__ == "__main__":
     parser.add_argument("--db", type=Path, default=DEFAULT_DB_PATH, help="Path to SQLite database")
     parser.add_argument("--public-json", type=Path, default=DEFAULT_PUBLIC_JSON, help="Path to docs/data.json")
     parser.add_argument("--admin-json", type=Path, default=DEFAULT_ADMIN_JSON, help="Path to admin/admin_data.json")
+    parser.add_argument("--rejected-json", type=Path, default=DEFAULT_REJECTED_JSON, help="Path to admin/rejected_councils.json")
     args = parser.parse_args()
 
     success = export_data(
         db_path=args.db,
         public_json_path=args.public_json,
-        admin_json_path=args.admin_json
+        admin_json_path=args.admin_json,
+        rejected_json_path=args.rejected_json
     )
     sys.exit(0 if success else 1)

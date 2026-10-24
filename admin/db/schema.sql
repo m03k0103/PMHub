@@ -122,7 +122,23 @@ CREATE TABLE IF NOT EXISTS metadata (
     updated_at DATETIME DEFAULT CURRENT_TIMESTAMP
 );
 
--- 6. Track [Search] 配付資料全文検索仮想テーブル (FTS5 trigram)
+-- 6. 却下会議体テーブル (rejected_councils)
+CREATE TABLE IF NOT EXISTS rejected_councils (
+    id TEXT PRIMARY KEY,
+    name TEXT NOT NULL,
+    ministry TEXT,
+    category TEXT DEFAULT 'COUNCIL',
+    official_url TEXT,
+    rejected_at TEXT,
+    reason TEXT,
+    created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+    updated_at DATETIME DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE INDEX IF NOT EXISTS idx_rejected_councils_ministry ON rejected_councils(ministry);
+CREATE INDEX IF NOT EXISTS idx_rejected_councils_url ON rejected_councils(official_url);
+
+-- 7. Track [Search] 配付資料全文検索仮想テーブル (FTS5 trigram)
 CREATE VIRTUAL TABLE IF NOT EXISTS fts_materials USING fts5(
     material_id UNINDEXED,
     meeting_id UNINDEXED,

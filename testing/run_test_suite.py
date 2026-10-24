@@ -747,6 +747,8 @@ def check_sqlite_and_split_export_sync(data=None):
         db_c_lock = cur.execute("SELECT COUNT(*) FROM councils WHERE manual_lock = 1;").fetchone()[0]
         db_m_lock = cur.execute("SELECT COUNT(*) FROM meetings WHERE manual_lock = 1;").fetchone()[0]
         db_mat_lock = cur.execute("SELECT COUNT(*) FROM materials WHERE manual_lock = 1;").fetchone()[0]
+        db_rej_cnt = cur.execute("SELECT COUNT(*) FROM rejected_councils;").fetchone()[0]
+        db_rej_ids = set(r[0] for r in cur.execute("SELECT id FROM rejected_councils;").fetchall())
     finally:
         conn.close()
 
