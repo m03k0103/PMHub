@@ -172,12 +172,27 @@ class LLMClient:
                 raw_text = raw_text[:-3]
             raw_text = raw_text.strip()
 
-            parsed = json.loads(raw_text)
+            parsed = None
+            try:
+                parsed = json.loads(raw_text)
+            except Exception:
+                import re
+                m = re.search(r'\{\s*"decisions"\s*:\s*\[(.*)', raw_text, re.DOTALL)
+                if m:
+                    inner = m.group(1).rstrip()
+                    last_brace = inner.rfind("}")
+                    if last_brace != -1:
+                        repaired = '{"decisions": [' + inner[:last_brace + 1] + "]}"
+                        try:
+                            parsed = json.loads(repaired)
+                        except Exception:
+                            parsed = None
+
             if isinstance(parsed, dict):
                 if digest_hash:
                     self.save_cached_response(digest_hash, purpose, parsed)
                 return {"status": "ok", "data": parsed}
-            return {"status": "error", "data": {}, "error": "Response is not a JSON object"}
+            return {"status": "error", "data": {}, "error": "Response is not a valid JSON object"}
         except Exception as e:
             err_str = str(e)
             if "429" in err_str or "quota" in err_str.lower() or "resourceexhausted" in err_str.lower():

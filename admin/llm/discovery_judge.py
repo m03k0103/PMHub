@@ -73,18 +73,16 @@ def _build_discovery_prompt(items: List[Dict[str, Any]]) -> str:
 【厳守ルール】
 1. 出力には必ず入力の `id`（例: "N001"）を指定してください。URLは絶対に出力しないでください。
 2. `council_name` には、「第1回」「（第3回）」「の開催について」「議事録」「配付資料」等の回次やイベント表現を除いた**親会議体の正式名称のみ**を記載してください。
-3. 入力の `similar_existing` に含まれる既登録会議体と実質的に同一（またはその開催回告知）である場合は、`is_new_council: false` とし、`matches_existing_id` に該当IDを設定してください。
-4. 大臣会見・人事・入札・パブコメ単体・統計公表・国際会議・二国間会談・シンポジウム・セミナー等の非会議体ノイズは `is_new_council: false` としてください。
-5. Markdownコードブロックは含めず、以下のJSONスキーマのみを出力してください。
+3. **新規の会議体（または新設された検討会・ワーキンググループ等の初回会合告知）に該当するもののみ**を `decisions` 配列に出力してください。非会議体ノイズや既存会議体と一致するものは出力に含めないでください（出力件数を最小化するため）。
+4. 大臣会見・人事・入札・パブコメ単体・統計公表・国際会議・二国間会談・シンポジウム・セミナー等の非会議体ノイズは絶対に対象外（出力不要）としてください。
+5. Markdownコードブロックは含めず、以下のJSONスキーマのみを出力してください。新規会議体がない場合は `{{"decisions": []}}` としてください。
 
 {{
   "decisions": [
     {{
       "item_id": "N001",
-      "is_new_council": true,
       "council_name": "親会議体の正式名称",
-      "matches_existing_id": null,
-      "category": "COUNCIL | STUDY_GROUP | WORKING_GROUP | SUBCOMMITTEE | HEADQUARTERS",
+      "category": "COUNCIL | STUDY | WORKING_GROUP | SUBCOMMITTEE | HQ | PANEL | COMMITTEE",
       "confidence": 0.92,
       "reason": "判定理由（簡潔に）"
     }}
@@ -100,7 +98,7 @@ def judge_discovery_digest(
     digest_doc: Dict[str, Any],
     llm_client: Optional[LLMClient] = None,
     min_confidence: float = 0.80,
-    max_items_per_chunk: int = 800,
+    max_items_per_chunk: int = 350,
 ) -> Dict[str, Any]:
     """
     Judge candidate news items in digest_doc using LLMClient.
@@ -181,7 +179,7 @@ def judge_discovery_digest(
             stats["ignored_unknown_id"] += 1
             continue
 
-        if not dec.get("is_new_council"):
+        if "is_new_council" in dec and not dec.get("is_new_council"):
             continue
 
         if dec.get("matches_existing_id"):

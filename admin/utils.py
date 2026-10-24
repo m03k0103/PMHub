@@ -538,7 +538,10 @@ def load_rejected_councils(rejected_file=DEFAULT_REJECTED_COUNCILS_PATH, db_path
     """
     if os.path.exists(db_path):
         try:
-            from admin.db.db_manager import load_rejected_councils_from_db
+            try:
+                from db.db_manager import load_rejected_councils_from_db
+            except ImportError:
+                from admin.db.db_manager import load_rejected_councils_from_db
             res = load_rejected_councils_from_db(Path(db_path))
             if res:
                 return res
@@ -561,7 +564,10 @@ def save_rejected_councils(rejected_data, rejected_file=DEFAULT_REJECTED_COUNCIL
     """
     if os.path.exists(db_path):
         try:
-            from admin.db.db_manager import save_rejected_councils_to_db
+            try:
+                from db.db_manager import save_rejected_councils_to_db
+            except ImportError:
+                from admin.db.db_manager import save_rejected_councils_to_db
             return save_rejected_councils_to_db(rejected_data, Path(db_path), export=True)
         except Exception as e_db:
             print(f"[WARN] Failed to save rejected councils to DB, falling back to JSON: {e_db}", file=sys.stderr)
@@ -591,7 +597,10 @@ def get_rejected_identifiers(rejected_file=DEFAULT_REJECTED_COUNCILS_PATH, db_pa
     """
     if os.path.exists(db_path):
         try:
-            from admin.db.db_manager import get_rejected_identifiers_from_db
+            try:
+                from db.db_manager import get_rejected_identifiers_from_db
+            except ImportError:
+                from admin.db.db_manager import get_rejected_identifiers_from_db
             ids, names, urls = get_rejected_identifiers_from_db(Path(db_path))
             if ids or names or urls:
                 return ids, names, urls
@@ -634,7 +643,10 @@ def add_to_rejected_councils(target_id, council=None, reason="Admin rejected cou
 
     if os.path.exists(db_path):
         try:
-            from admin.db.db_manager import add_rejected_council_to_db, get_rejected_identifiers_from_db
+            try:
+                from db.db_manager import add_rejected_council_to_db, get_rejected_identifiers_from_db
+            except ImportError:
+                from admin.db.db_manager import add_rejected_council_to_db, get_rejected_identifiers_from_db
             rej_ids, _, _ = get_rejected_identifiers_from_db(Path(db_path))
             if target_id in rej_ids:
                 return False

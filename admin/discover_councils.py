@@ -29,6 +29,7 @@ setup_win32_utf8()
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 PROJECT_ROOT = os.path.dirname(BASE_DIR)
 DATA_JSON_PATH = os.path.join(PROJECT_ROOT, "docs", "data.json")
+ADMIN_DATA_PATH = os.path.join(BASE_DIR, "admin_data.json")
 
 # 非会議体ノイズキーワード・パターン定義 (CR-187)
 NOISE_PERSON_ROLES = r"(?:大臣|副大臣|政務官|長官|総理|知事|教授|名誉教授|代表|委員)"
@@ -912,7 +913,7 @@ def _discover_normal_for_single_ministry(
     return min_code, discovered_in_min
 
 
-def run_discovery(progress_callback=None, target_ministry=None, dry_run=False, mode="normal", mock_llm_responder=None):
+def run_discovery(progress_callback=None, target_ministry=None, dry_run=False, mode="normal", mock_llm_responder=None, enable_llm=None):
     def emit(msg, data=None):
         print(msg)
         if progress_callback:
@@ -1013,8 +1014,10 @@ def run_discovery(progress_callback=None, target_ministry=None, dry_run=False, m
     category_counts = {}
     unmatched_category_councils = []
 
-    raw_data_for_cfg = load_data_json(DATA_JSON_PATH) or {}
-    crawler_config = raw_data_for_cfg.get("crawlerConfig", {})
+    admin_data_cfg = load_data_json(ADMIN_DATA_PATH) or {}
+    crawler_config = admin_data_cfg.get("crawlerConfig") or (load_data_json(DATA_JSON_PATH) or {}).get("crawlerConfig", {})
+    if enable_llm is not None:
+        crawler_config["discovery_llm_mode"] = bool(enable_llm)
 
     if mode == "ministry_news":
         discovered_list, category_counts = _discover_from_ministry_news(
@@ -1351,6 +1354,9 @@ if __name__ == "__main__":
     parser.add_argument("--dry-run", action="store_true", help="data.json を更新せず、検出結果の表示のみを行う")
     parser.add_argument("--mode", choices=["normal", "ministry_news"], default="normal", help="探索モード (normal: 審議会等一覧巡回, ministry_news: 省庁新着情報検知)")
     parser.add_argument("--from-ministry-news", dest="from_news", action="store_true", help="省庁新着情報・報道発表から新規会議体を検知")
+    parser.add_argument("--llm", action="store_true", help="LLM判定モードを強制ON")
+    parser.add_argument("--no-llm", action="store_true", help="LLM判定モードをOFF")
     args = parser.parse_args()
     mode = "ministry_news" if args.from_news or args.mode == "ministry_news" else "normal"
-    run_discovery(target_ministry=args.ministry, dry_run=args.dry_run, mode=mode)
+    enable_llm = True if args.llm else (False if args.no_llm else None)
+    run_discovery(target_ministry=args.ministry, dry_run=args.dry_run, mode=mode, enable_llm=enable_llm)
