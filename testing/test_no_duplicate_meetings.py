@@ -571,7 +571,19 @@ def run_test(data=None):
             'mlit-amami_shinkou',
             'mlit-dokuritsu_gyosei_hyoka',
             'mlit-kokudo_shingikai',
-            'mlit-tochi_kantei'
+            'mlit-tochi_kantei',
+            # 原子力規制委員会 (Drop 88: 11会議体)
+            'nra-ro_anzen_shinsa',
+            'nra-1205',
+            'nra-1203',
+            'nra-1204',
+            'nra-1206',
+            'nra-me_suishoutai',
+            'nra-1209',
+            'nra-1213',
+            'nra-1212',
+            'nra-1211',
+            'nra-teireikai'
     }
     intermediate_violations = []
     generic_names = {'会議資料', '配付資料', '配布資料', '資料一覧', '配付資料一覧', '配布資料一覧', '会議資料一覧', '提出資料 (HTML)', '配付資料 (HTML)'}
