@@ -100,6 +100,7 @@ CJK_RADICAL_REPLACEMENTS = {
     '\u2ecb': '雨',
     '\u2ece': '青',
     '\u2ed0': '食',
+    '\u2ed1': '長',  # CJK RADICAL C-SIMPLIFIED LONG -> 長
     '\u2ed4': '首',
     '\u2ed6': '高',
     '\u2edd': '鬼',

@@ -36,7 +36,7 @@ class TestDrop80IntermediateMaterialGuard(unittest.TestCase):
         self.meetings = data.get('meetings', [])
         
     def test_guarded_councils_have_zero_intermediate_materials(self):
-        """CR-209 / CR-211: 税制調査会系列全13会議体および内閣官房2会議体に中間HTML配付資料が混入していないこと"""
+        """CR-209 / CR-211 / CR-212: 税制調査会系列全13会議体、内閣官房2会議体、および財務省15会議体に中間HTML配付資料が混入していないこと"""
         guarded_councils = {
             # 税制調査会系列
             'cao-zeicho_digital_noukan_senmonka',
@@ -54,7 +54,23 @@ class TestDrop80IntermediateMaterialGuard(unittest.TestCase):
             'cao-zeicho_discussion2_mynumber',
             # 内閣官房
             'cas-kokusentoc',
-            'cas-kagayakujosei'
+            'cas-kagayakujosei',
+            # 財務省 (Drop 84)
+            'mof-2717',
+            'mof-zaiseiseido_bunkakai',
+            'mof-1135',
+            'mof-1136',
+            'mof-1134',
+            'mof-1133',
+            'mof-seisaku_hyouka',
+            'mof-1132',
+            'mof-1731',
+            'mof-1161',
+            'mof-bop',
+            'mof-jishin_benkyoukai',
+            'mof-1153',
+            'mof-fdi',
+            'mof-shinkahei_arikata'
         }
         
         violations = []
