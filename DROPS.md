@@ -19,7 +19,6 @@
 
 | Track ID | 構想テーマ | 主な対象・内容 | 到達目標・期待効果 | ステータス |
 |:---:|:---|:---|:---:|:---:|
-| **Track [Database]**<br>(フェーズ 3) | **却下会議体マスターの SQLite DB 一元化 & 3者間同期パイプライン確立** | **`admin/rejected_councils.json` の SQLite DB 完全移行**<br>`pmhub.db` に専用テーブル `rejected_councils` を新設し、全367件のシード・一意性制約・URLインデックスによる $O(1)$ 判定、管理サーバーAPIおよびユーティリティのDB直接接続、`export_data.py` の双方向エクスポートパイプラインの確立 | **単一マスターDB（SSOT）化の完遂 & 二重管理の根絶** | **【完了】**<br>（Drop 80 にて達成） |
 | **Track [LLM-Assist]** | **決定論的1ファイル新着ダイジェスト & LLM判定・クロール階層型フォールバック** | **【フェーズ 1】ディスカバリー 1ファイル集約・単一リクエストLLM判定 & 新着分類永続化（Drop 81 完了）**<br>**【フェーズ 2】開催回クロール 3段階ファネル・異常検知フォールバック & バッチLLM抽出**<br>API呼出上限（Daily 3回 / Weekly 10回 / Monthly 30回）とSQLite `llm_cache`（SHA-256ダイジェストキャッシュ）により、最小APIコールで新規会議体検知と0件以外を含むクロール欠落補完を実現 | **最小APIコールでの新規会議体検知 & クロール補完** | **【進行中】**<br>（フェーズ 1: Drop 81 完了 / フェーズ 2 構想中） |
 | **Track [Automation]** | **定時巡回クローラー & ローカルDB同期**<br>(GitHub Actions 連携) | **3階層マルチスケジュール定期実行・異常検知時Skip・ローカルDB自動同期**<br>1. Daily (平朝): 省庁新着検知のみ<br>2. Weekly (土曜): 通常巡回（直近2年重点）<br>3. Monthly (第1日曜): 全期間包括走査<br>連鎖失敗・重大エラー検知時のIssue発行＆次回以降Skip機能、Zero-Storage VM運用、ローカル環境への安全な同期エンジン（`sync_from_json.py` + post-merge hook）の配備 | **定期自動巡回・省力化 & ローカル資産整合性担保** | **【構想中】**<br>（Drop 82 以降） |
 | **Track [Search]**<br>(フェーズ 3) | **全文検索エンジン統合**<br>(PMM資産連携 FTS5構築) | **【フェーズ 3】PMM ローカルPDF資産を活用した全文検索エンジンの構築**<br>`admin/pmm/text_extractor.py` によるPDF本文抽出、SQLite FTS5 仮想テーブル（`fts_materials`）への trigram インデックス構築、サーバー検索API（`/api/search?q=キーワード`）およびフロントエンド検索UI・抜粋ハイライトの実装 | **約11万件の政策資料PDF本文横断検索の実現** | **【構想中】**<br>（Track [Database] 完了後着手） |
@@ -31,19 +30,6 @@
 
 ### 1-2. 各Trackの詳細
 
-#### 【Track: Database】（フェーズ 3）却下会議体マスターの SQLite DB 一元化 & 3者間同期パイプライン確立【完了】（Drop 80 にて達成）
-
-- **背景と課題（解消済）**:
-  PMHub では Drop 62〜64 において、公開用データ（`docs/data.json`）および管理用データ（`admin/admin_data.json`）のマスターデータを SQLite データベース（`admin/pmhub.db`）へ完全一元化し、単一マスターDB原則（AGENTS.md §4-7）を確立した。
-  しかし、却下・除外会議体リスト（`admin/rejected_councils.json`）に関しては、管理画面 API（`admin/server.py`）やユーティリティ関数（`admin/utils.py`）が SQLite を経由せず、JSON ファイルを直接読み書きする運用が残存しており、3者間データ乖離（ファイル 367件 vs DB 364件、欠落: `cas-1895`, `aca-1735`, `moj-2735`）が発生していた。
-- **実装完了仕様（Drop 80 にて全項目達成済み・未実装なし）**:
-  1. **専用テーブル新設**: `admin/db/schema.sql` に専用テーブル `rejected_councils` を新設し、`official_url` および `ministry` の B-tree インデックスを完全配備。
-  2. **DB初期シード完遂**: `seed_db.py` により `admin/rejected_councils.json`（全367件）から DB へ移行し、乖離・欠落3件を完全解消。
-  3. **双方向エクスポートパイプライン確立**: `export_data.py` により、DB の `rejected_councils` テーブルから `admin/rejected_councils.json` および `admin/admin_data.json`（`rejectedCouncils`）へ決定論的（ID昇順）に常時同時出力。
-  4. **API・ユーティリティのDB直結化**: `admin/utils.py`（`load_rejected_councils`, `save_rejected_councils`, `add_to_rejected_councils`）および `admin/server.py`（`/api/rejected-councils`, `/api/reject-council` 等）を SQLite DB 直接接続へ完全移行。
-  5. **常時検証ガード稼働**: 統合テストスイート（ケース 6: 会議体マスターと却下リストの完全排他性、ケース 15: DB・公開JSON・管理JSONの3者間完全一致 & 漏洩ゼロ）を配備・全件合格維持。
-
----
 
 #### 【Track: LLM-Assist】決定論的1ファイル新着ダイジェスト & LLM判定・クロール階層型フォールバック
 
@@ -150,7 +136,19 @@ GitHub Actions で自動更新・push されたリモートの最新データ（
 > ※ 実装済最新 Drop および次回着手予定 Drop は、ドキュメント冒頭のヘッダーに一元記載されています。  
 > 全施策が完了済みであるため、一覧のフォーマットを4列（Drop ID / カテゴリ・種別 / 施策概要・主な改修内容 / 到達成果・検証結果）に統一しています。
 
-### 2-1. 実装済 Drop一覧
+### 2-1. 完了済 Track 実績: Track [Database]（単一マスターDB一元化・全3フェーズ達成）
+
+PMHub のデータ管理を SQLite データベース（`admin/pmhub.db`）へ完全一元化し、単一マスターDB原則（AGENTS.md §4-7）および二重管理根絶を達成した包括的構造刷新。全3フェーズを完遂。
+
+| フェーズ | 達成 Drop | 施策名称・実装内容 | 到達成果・検証 |
+|:---:|:---:|:---|:---|
+| **フェーズ 1** | **Drop 62** | **SQLite マスターデータソース構築 & エクスポートツール開発**<br>`schema.sql`、`seed_db.py`（ACID トランザクション・全データシード）、`export_data.py`（決定論的 2系統JSON エクスポートパイプライン）、単体テスト U17 配備 | マスターDB構築 & 2系統JSON完全可逆性実証 |
+| **フェーズ 2** | **Drop 63** | **クローラー & 管理サーバーの DB 直結パイプライン確立**<br>`crawler.py` の `save_data_to_db()` 新設、`server.py` の REST API を SQLite へ直結、単体テスト U18 配備 | クロール〜APIの単一マスターDB（SSOT）化完遂 |
+| **フェーズ 3** | **Drop 80** | **却下会議体マスターの SQLite DB 完全移行 & 3者間同期確立**<br>専用テーブル `rejected_councils` 新設、全367件シード（乖離3件完全解消）、B-tree INDEX配備、`export_data.py` 双方向出力、管理API・ユーティリティのDB直結化、統合テスト（ケース 6 & 15）常時検証ガード | 却下リストのSSOT化完遂 & 3者間データ完全一致 |
+
+---
+
+### 2-2. 実装済 Drop一覧
 
 | Drop ID | カテゴリ・種別 | 施策概要・主な改修内容 | 到達成果・検証結果 |
 |:---:|:---|:---|:---|
@@ -214,7 +212,7 @@ GitHub Actions で自動更新・push されたリモートの最新データ（
 
 ---
 
-### 2-2. 各 Dropの詳細
+### 2-3. 各 Dropの詳細
 
 #### 【Drop 19】クローラー精度飛躍的向上 & METI/ANRE重複統合・FSA同期（全5件・完了）
 
