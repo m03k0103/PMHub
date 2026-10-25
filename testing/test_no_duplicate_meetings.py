@@ -400,7 +400,7 @@ def run_test(data=None):
                         similar_name_errors.append(f"Short suffix council name duplicate in {m_code}: '{c1['name']}' ({c1['id']}) vs '{c2['name']}' ({c2['id']})")
 
 
-    # Drop 80 / 83 / 84 Guard: Intermediate HTML material container check
+    # Drop 80 / 83 / 84 / 85 Guard: Intermediate HTML material container check
     intermediate_guard_councils = {
         # 税制調査会系列
         'cao-zeicho_digital_noukan_senmonka',
@@ -434,7 +434,18 @@ def run_test(data=None):
         'mof-jishin_benkyoukai',
         'mof-1153',
         'mof-fdi',
-        'mof-shinkahei_arikata'
+        'mof-shinkahei_arikata',
+        # 金融庁・厚生労働省 (Drop 85)
+        'fsa-kinyu_trouble',
+        'mhlw-nenkin_shikin_unyou_bunkakai',
+        'mhlw-jidou_gyakutai_shinken_senmon',
+        'mhlw-911',
+        'mhlw-943',
+        'mhlw-971',
+        'mhlw-1039',
+        'mhlw-845',
+        'mhlw-898',
+        'mhlw-kousei_influ'
     }
     intermediate_violations = []
     generic_names = {'会議資料', '配付資料', '配布資料', '資料一覧', '配付資料一覧', '配布資料一覧', '会議資料一覧', '提出資料 (HTML)', '配付資料 (HTML)'}
