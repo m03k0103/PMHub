@@ -198,6 +198,24 @@
     "reason": "AI判定: 登録済み会議体（消費者庁発足以前の情報・発足経緯 (旧国民生活局・消費者行政推進会議)）と重複しているため却下"
   },
   {
+    "id": "caa-3007",
+    "name": "会議・研究会",
+    "ministry": "CAA",
+    "category": "STUDY",
+    "officialUrl": "https://www.caa.go.jp/notice/conference/",
+    "rejectedAt": "2026-10-25",
+    "reason": "消費者庁 会議・研究会等一覧ポータル（個別会議体ではないため除外）"
+  },
+  {
+    "id": "caa-kaigi_kenkyu",
+    "name": "会議・研究会等一覧",
+    "ministry": "CAA",
+    "category": "STUDY",
+    "officialUrl": "https://www.caa.go.jp/notice/conference/2026/",
+    "rejectedAt": "2026-10-25",
+    "reason": "消費者庁 2026年度会議・研究会一覧ポータル（個別会議体ではないため除外）"
+  },
+  {
     "id": "cao-1815",
     "name": "経済社会構造に関する有識者会議",
     "ministry": "CAO",
@@ -630,6 +648,15 @@
     "reason": "同一URL・重複会議体のため fsa-kinyu_kiki_taiou へ集約統合・削除 (Drop 32)"
   },
   {
+    "id": "cas-319",
+    "name": "合同情報会議",
+    "ministry": "CAS",
+    "category": "COUNCIL",
+    "officialUrl": "https://www.cas.go.jp/jp/gaiyou/jimu/jyouhoutyousa/intelligence_taisei.html",
+    "rejectedAt": "2026-10-25",
+    "reason": "内閣官房 合同情報会議（URL変更・非公開治安情報機関のため除外）"
+  },
+  {
     "id": "cas-329",
     "name": "省エネルギー・省資源対策推進会議",
     "ministry": "CAS",
@@ -682,6 +709,15 @@
     "officialUrl": "https://www.cfa.go.jp/councils",
     "rejectedAt": "2026-08-29",
     "reason": "審議会・検討会の個別マスターではなくポータルの汎用ナビゲーションリンクのため除外"
+  },
+  {
+    "id": "cfa-shingikai_kentoukai",
+    "name": "審議会、検討会、研究会等",
+    "ministry": "CFA",
+    "category": "STUDY",
+    "officialUrl": "https://www.cfa.go.jp/councils/meetings",
+    "rejectedAt": "2026-10-25",
+    "reason": "こども家庭庁 審議会・検討会・研究会等一覧ポータル（個別会議体ではないため除外）"
   },
   {
     "id": "digital-383",
@@ -1404,6 +1440,15 @@
     "reason": "共通インデックス・ポータル（会議・委員会等）のため却下"
   },
   {
+    "id": "jcrc-2171",
+    "name": "カジノ管理委員会 委員会の活動等ポータル",
+    "ministry": "JCRC",
+    "category": "COMMITTEE",
+    "officialUrl": "https://www.jcrc.go.jp/activity/holding.html",
+    "rejectedAt": "2026-10-25",
+    "reason": "カジノ管理委員会の活動等ポータル（本体jcrc-587へ集約統合）"
+  },
+  {
     "id": "jfa-2174",
     "name": "[統合廃止] 審議会 (旧jfa-2174)",
     "ministry": "JFA",
@@ -1485,6 +1530,15 @@
     "reason": "親組織一覧ポータルから誤生成されたジェネリック会議体（飼料分科会等の重複保持）のため除外"
   },
   {
+    "id": "maff-649",
+    "name": "会議等の開催情報",
+    "ministry": "MAFF",
+    "category": "COUNCIL",
+    "officialUrl": "https://www.maff.go.jp/j/pr/event/kaigi.release.html",
+    "rejectedAt": "2026-10-25",
+    "reason": "農林水産省 会議等の開催情報プレスリリース目次（個別会議体ではないため除外）"
+  },
+  {
     "id": "maff-670",
     "name": "林野部会",
     "ministry": "MAFF",
@@ -1519,6 +1573,15 @@
     "officialUrl": "https://www.maff.go.jp/j/study/index.html",
     "rejectedAt": "2026-09-29",
     "reason": "不要な目次・リンク集会議体のため削除 (Drop 32)"
+  },
+  {
+    "id": "maff-710",
+    "name": "水産関連検討会等一覧",
+    "ministry": "MAFF",
+    "category": "STUDY",
+    "officialUrl": "https://www.jfa.maff.go.jp/j/study/",
+    "rejectedAt": "2026-10-25",
+    "reason": "水産庁 水産関連検討会等一覧ポータル（個別会議体ではないため除外）"
   },
   {
     "id": "maff-712",
@@ -2032,6 +2095,15 @@
     "officialUrl": "https://warp.ndl.go.jp/web/20190106000000/www.mof.go.jp/about_mof/councils/shoukenkajitsumu/index.html",
     "rejectedAt": "2026-08-25",
     "reason": "AI判定: 国立国会図書館WARPアーカイブ（過去保管データ）のため却下"
+  },
+  {
+    "id": "mof-2908",
+    "name": "関税・外国為替等審議会 関税分科会 配付資料一覧(令和7年10月3日開催",
+    "ministry": "MOF",
+    "category": "SUBCOMMITTEE",
+    "officialUrl": "https://www.mof.go.jp/about_mof/councils/customs_foreign_exchange/sub-of_customs/proceedings_customs/material/20251003/20251003oshirase1.html",
+    "rejectedAt": "2026-10-25",
+    "reason": "財務省 単一開催案内ページの誤登録（関税分科会として別途集約）"
   },
   {
     "id": "mof-2927",

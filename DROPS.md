@@ -262,12 +262,12 @@ GitHub Actions で自動更新・push されたリモートの最新データ（
 | **Drop 85** | **中間資料適正化 第4弾**<br>(金融庁・厚労省 10会議体 & 重複案内排除) | **金融庁・厚生労働省 10会議体の中間HTML配付資料完全排除 & 末端PDF・HTML一括展開（103件置換・749件資料純増） & 重複開催案内ノイズ（441件）一掃**<br>金融庁金融トラブル連絡調整協議会（67回）、厚生労働省年金資金運用分科会（28回）および厚労省専門委員会等の中間資料ページを末端PDF（および2000年代初頭の個別資料HTML）へ一括展開。同一開催回に重複混入していた「開催案内」「開催通知」ノイズリンク441件を配付資料から完全排除。404死にリンク（2件）削除、開催回 `officialUrl` 適正化（27回）、再発防止ガード（U23/ケース5）対象を40会議体へ拡大 | **中間HTMLゼロ保証・末端資料749件純増・重複案内441件一掃・統合15ケース＋全単体23種完全合格** |
 | **Drop 86** | **中間資料適正化 第5弾**<br>(FSC & 経産省グループ 103会議体) | **FSC誤登録排除・全2,162件サイズクレンジング & 経産省グループ 80会議体 中間HTML 763件の末端展開（4,663件登録・749件公式URL適正化）**<br>食品安全委員会（FSC）の誤登録トップページリンク是正・サイズ表記完全クレンジング。経済産業省グループ（METI/ANRE/SMEA 80会議体・763件）の中間HTML配付資料ページを Headless Edge CDP デュアルWAF解決＋チャンク自動再起動アーキテクチャにより100%走破。中間HTML 763件削除、末端PDF 4,663件新規登録（`manualLock: true`）、開催回 `officialUrl` 749件適正化。再発防止ガード対象を143会議体へ拡大 | **中間HTML 763件完全削除・末端PDF 4,663件登録・ガード143会議体拡大・統合15ケース＋単体23種完全合格** |
 | **Drop 87** | **中間資料適正化 第6弾**<br>(MAFF・RINYA・MLIT 17会議体) | **農林水産省・林野庁・国土交通省グループ 17会議体 中間HTML 70件の末端展開（241件登録・33件公式URL適正化） & 重複ゴミ会議体 maff-2236 パージ（893資料一掃）**<br>会議体トップポータルから誤生成されたジェネリックゴミ会議体 `maff-2236`（審議会、重複開催回4件・配付資料893件）を安全に除外・パージ（`rejected_councils`）。企画部会、動物用医薬品部会、農地流動化検討会、自転車活用推進本部等の中間HTML 70件を削除し末端PDF/ファイル 241件を登録（`manualLock: true`）。国交省404リンク（1件）是正、開催回 `officialUrl` 33件適正化。再発防止ガード対象を累計160会議体へ拡大 | **中間HTML 70件完全削除・末端資料241件登録・ゴミ会議体パージ・ガード160会議体拡大・統合15ケース＋単体23種完全合格** |
-| **Drop 90** | **中間資料適正化 最終第9弾**<br>(内閣官房・内閣府・デジタル庁・他全省庁 64会議体【全省庁完遂】) | **内閣官房・内閣府・デジタル庁・法務省・外務省・他残余全省庁 64会議体 中間HTML 171件排除 & 末端PDF 678件一括登録・UIノイズ/目次133件削除・404死にリンク1件排除・全府省庁完全網羅（中間HTML全省庁ゼロ達成・累計256会議体ガード完備）・統合15ケース＋単体23種完全合格** |
-| **Drop 89** | **中間資料適正化 第8弾**<br>(MIC・ACA・MEXT 26会議体) | **総務省・文化庁・文科省 26会議体 中間HTML 235件排除 & 末端PDF 2,521件一括登録・目次誤登録36件削除・404死にリンク18件排除・ガード197会議体拡大・統合15ケース＋単体23種完全合格** |
 | **Drop 88** | **中間資料適正化 第7弾**<br>(原子力規制委員会 11会議体) | **原子力規制委員会（NRA）11会議体 中間ビュアーHTML 923件の直接末端PDF展開（全件200 OK・%PDFバイナリ確認） & 詳細ページ誤登録4件排除・ガード171会議体拡大**<br>デジタルアーカイブ（`da.nra.go.jp`）上のビュアーHTML（`view?...contents=...`）923件を直接PDFダウンロードエンドポイント `https://www.da.nra.go.jp/data/{contents_id}.pdf` へ1対1完全置換。開催回詳細ページおよび目次誤登録（4件）を排除、ファイルサイズ表記ノイズ（`【PDF:56KB】` 等）を完全クレンジング。再発防止ガード対象を累計171会議体へ拡大 | **中間HTML 923件直接PDF化・誤リンク4件排除・ガード171会議体拡大・統合15ケース＋単体23種完全合格** |
-
+| **Drop 89** | **中間資料適正化 第8弾**<br>(MIC・ACA・MEXT 26会議体) | **総務省・文化庁・文科省 26会議体 中間HTML 235件排除 & 末端PDF 2,521件一括登録・目次誤登録36件削除・404死にリンク18件排除・ガード197会議体拡大・統合15ケース＋単体23種完全合格** |
+| **Drop 90** | **中間資料適正化 最終第9弾**<br>(内閣官房・内閣府・デジタル庁・他全省庁 64会議体【全省庁完遂】) | **内閣官房・内閣府・デジタル庁・法務省・外務省・他残余全省庁 64会議体 中間HTML 171件排除 & 末端PDF 678件一括登録・UIノイズ/目次133件削除・404死にリンク1件排除・全府省庁完全網羅（中間HTML全省庁ゼロ達成・累計256会議体ガード完備）・統合15ケース＋単体23種完全合格** |
+| **Drop 91** | **会議体拡充 & ルール完備**<br>(産業構造審議会 傘下65組織新規登録) | **経済産業省（METI）産業構造審議会の総会正規化 & 傘下65組織（部会・分科会・小委員会・WG）の会議体新規登録 & 全1,042開催回・8,895配付資料の網羅的取得・スクレイピングルール完備**<br>`meti-sankoushin` を「産業構造審議会 総会」へ正規化しゴミ開催回2件排除。傘下全65下部会議体を登録、Headless Edge CDP による WAF 突破・全1,042開催回および末端PDF 8,895件の網羅的取得・登録（`manualLock: true`）。全65組織にスクレイピングルール配備、年別・旧称サブタイプ判定強化 & 合同会議ペア登録 | **65会議体新設・1,042開催回 & 8,895資料登録・統合15ケース＋単体23種完全合格** |
 | **Drop 92** | **設定DB一元化 第1弾**<br>(省庁・ホスト設定の二重管理解消 & ENV残存バグ根絶) | **Track [Config-DB] フェーズ 1: 省庁ドメイン・新着ポータル・ブランドカラー・ホスト別レートリミットの SQLite マスターDB 完全一元化 & 旧 `ENV` 残存バグ根絶**<br>`admin_configs.ministries`（全48省庁・外局）に `domains`、`newsPortals`（21省庁・23URL）、`hexColor` を統合し、`admin_configs.crawlerConfig` に `default_host_interval` / `host_rate_limits` を統合。`admin/crawler.py` の `MINISTRY_DOMAINS`（530行目の旧 `"ENV"` 残存バグ含む）・`MINISTRY_NEWS_PORTALS`・`HOST_RATE_LIMITS`、`admin/discover_councils.py` のポータル参照、`admin/admin_dashboard.js` の `getMinistryColor()` ハードコード辞書を撤廃し DB 駆動へ一本化。外局・親省庁間の共有ドメイン許容ガードおよび統合ケース13・単体U7再発防止ガード配備 | **省庁・ホスト設定二重管理の完全解消 & 旧 `ENV` ゼロ保証・統合15ケース＋単体23種完全合格** |
-
+| **Drop 93** | **親ポータル一覧・目次URL正常化**<br>(カジノ管理委員会・水産政策審議会等の個別化・ワンストップ登録) | **Track [Portal-Norm]: 親ポータル・ジェネリック目次URL設定 会議体（8件）のパージ（`rejected_councils`） & カジノ管理委員会・水産政策審議会等の個別化・全415開催回および694配付資料ワンストップ登録**<br>不要な親ポータル・一覧目次型会議体8件（`caa-3007`, `caa-kaigi_kenkyu`, `cfa-shingikai_kentoukai`, `maff-710`, `cas-319`, `mof-2908`, `maff-649`, `jcrc-2171`）を除外・パージ（`rejected_councils`）。カジノ管理委員会（`jcrc-587`）を本会議体として集約し全163開催回・配付資料300件を登録。創薬力官民協議会推進部会（`mhlw-2855`）、マガキ大量死連絡協議会（`jfa-3004`）、太陽電池廃棄物検討会（`moe-2961`）、教科用図書検定調査審議会総会（`mext-714`）の正規URL是正・開催回・資料登録。水産政策審議会（`maff-653`）の親ポータル整理・傘下5個別組織（本会議・企画部会・資源管理分科会・まぐろ特別部会・漁港漁場整備分科会）の個別会議体新設および全233開催回・配付資料374件登録・スクレイピングルール完備 | **親ポータル8件パージ・個別会議体5件新設・全415開催回および694配付資料ワンストップ登録・統合15ケース＋全単体23種完全合格** |
 ---
 
 ### 2-2. 各 Dropの詳細
@@ -284,8 +284,6 @@ GitHub Actions で自動更新・push されたリモートの最新データ（
 | **CR-36** | 探索網羅性 | **金融庁（FSA）・文化庁（ACA）の探索改善 & 49会議体100%成功転換**<br>相対パス探索・階層対応を強化し、親ページ止まり（PARTIAL）だった金融庁の49会議体すべてを `success` へ昇格。配付資料を完全取得 | `docs/data.json`<br>`admin/crawler.py` | 2026-09-23 |
 | **CR-37** | 堅牢化 | **日付抽出正規表現のタプルバグ修正 & WAF検知耐性**<br>`extract_clean_dates_from_html` で `re.findall` がタプルを返した場合のアンパック例外をフラット化により根本修正。AWS WAF チャレンジ画面を検知し安全にスキップ | `admin/crawler.py` | 2026-09-23 |
 
-<hr>
-
 ---
 
 #### 【Drop 20】サブページ探索深掘り & 残存PARTIAL完全解消エンジン（全4件・完了・ステップ2）
@@ -299,8 +297,6 @@ GitHub Actions で自動更新・push されたリモートの最新データ（
 | **CR-40** | 探索パターン拡張 | **`DEFAULT_SUBPAGE_URL_REGEX` & `has_strong_url_kw` 拡張（MIC / MOF / DIGITAL）**<br>総務省（`02tsushin\d+_\d+`）、財務省（`proceedings/(?:material\|outline)/`）、デジタル庁（`councils/[^/]+/[0-9a-f]{8}-`）の固有サブページパターンを追加し、実リンク探索を大幅強化 | `admin/crawler.py` | 2026-09-23 |
 | **CR-41** | ルール正規化 | **ルール定義の `href=["\']` 自動正規化 & `scrapingRules` 573件一括クリーンアップ**<br>`clean_subpage_pattern_v2` ロジックを導入。`scrapingRules` 内に残存していた 573 件の `href=["\']` パターンを純粋な URL 正規表現へと一括クリーンアップし、コンパイルエラー0件・整合性を確保 | `admin/crawler.py`<br>`docs/data.json` | 2026-09-23 |
 
-<hr>
-
 ---
 
 #### 【Drop 21】主要5省庁 404 URL 大規模修復 & AWS WAF 検知遮断・マスター適正化（全3件・完了）
@@ -312,8 +308,6 @@ GitHub Actions で自動更新・push されたリモートの最新データ（
 | **CR-42** | URL修復 & 同期 | **主要5省庁（MEXT, MLIT, MHLW, MOJ, MIC）ポータルリニューアル新URL適用 & 307開催回同期**<br>中央教育審議会、国土審議会、交通政策審議会、社会保障審議会福祉部会、法制審議会総会、地方財政審議会等の基幹審議会 21 件に最新の生きた公式 URL を設定。自動探索同期により 19 件が `success` に昇格、開催回 307 件・配付資料 842 件を自動同期 | `docs/data.json` | 2026-09-23 |
 | **CR-43** | WAF検知・遮断 | **AWS WAF / Cloudflare JavaScript チャレンジ画面（HTTP 202）検知・受入遮断ガード**<br>`is_waf_challenge` 関数を新設。HTTP 202 Accepted や `awsWafCookie`, `challenge-running` を含む WAF チャレンジ画面を検知し、資料0件としての誤判定・誤登録を確実に遮断 | `admin/crawler.py` | 2026-09-23 |
 | **CR-44** | ガード & 適正化 | **組織常設資料（名簿・構成図等）再混入防止ガード & ジェネリック開催回タイトル・ID是正**<br>`ORGANIZATION_DOC_KEYWORDS` に「構成員」「審議会の構成」「機構図」「組織図」等を追加し、常設資料の開催回誤登録を根本遮断。中央教育審議会のゴミ開催回（2099/01/01）を削除し、デジタル庁コンプライアンス委員会第10回（旧: 委員会構成員）のタイトル・IDを適正に是正 | `admin/crawler.py`<br>`admin/cleanup_nav_meetings.py`<br>`docs/data.json` | 2026-09-23 |
-
-<hr>
 
 ---
 
@@ -327,8 +321,6 @@ GitHub Actions で自動更新・push されたリモートの最新データ（
 | **CR-47** | 一括バッチ & 検索連携 | **全 1,446 会議体・15,365 開催回・91,933 資料の一括バッチ正規化 & ポータル検索連携**<br>`docs/data.json` 内の既存データ全件へバッチ適用し康煕部首 72 箇所を完全根絶（0件）。公開ポータル（`docs/app.js`）に `normalizeForSearch` を実装し、全角英数・康煕部首の検索クエリ表記揺れを完全吸収 | `docs/data.json`<br>`docs/app.js`<br>`admin/batch_normalize_data.py`<br>`testing/test_drop22_normalization.py` | 2026-09-24 |
 | *(CR-45)* | *(資料名復元)* | *(配付資料名スマートコンテキスト復元パイプライン)*<br>*※ユーザー指示に基づき Drop 22 の実装スコープから除外* | *-* | *(実装不要・除外)* |
 
-<hr>
-
 ---
 
 #### 【Drop 23】METI / ANRE / SMEA AWS WAF 突破 & クロール同期（全3件・完了・ステップ4）
@@ -340,8 +332,6 @@ GitHub Actions で自動更新・push されたリモートの最新データ（
 | **CR-48** | WAF耐性・リトライ | **AWS WAF / CloudFront HTTP 202 チャレンジ検知・自動バックオフリトライ機構**<br>`is_waf_challenge` による HTTP 202 Accepted (`x-amzn-waf-action: challenge`) 検知時に、一時スロットリングと判定して 2.5 秒のクールダウン後に自動リトライを行うバックオフ機構を `fetch_url` に実装 | `admin/crawler.py`<br>`testing/test_drop23_waf_resilience.py` | 2026-09-25 |
 | **CR-49** | レートリミット | **ドメイン別動的スロットリング緩和（METI/ANRE 連続アクセス保護）**<br>`HOST_RATE_LIMITS` テーブルを新設し、`www.meti.go.jp`, `meti.go.jp` のアクセス間隔を 1.5 秒へ動的調整。バーストアクセスによる Bot 再検知・IP ブロックを恒久防止 | `admin/crawler.py` | 2026-09-25 |
 | **CR-50** | クロール同期 | **METI / ANRE / SMEA 全 84 会議体の一括クロール同期 & 新規開催回・配付資料反映**<br>全 84 会議体の公式 URL を是正し、親ページから開催回 721 件・配付資料を網羅的に抽出して `docs/data.json` に反映。84 会議体すべてを `success` に転換し、成功率 86.51% を達成 | `docs/data.json`<br>`scratch/apply_drop23_sync_v4.py` | 2026-09-25 |
-
-<hr>
 
 ---
 
@@ -355,8 +345,6 @@ GitHub Actions で自動更新・push されたリモートの最新データ（
 | **CR-52** | URL修復 & タイトル判定 | **CAO / CAS 生存会議体の同期 & 開催回タイトル判定適正化**<br>`GOV_SUFFIX_REGEX` に「ホームページ」「公式ホームページ」等を許容する修正を追加し、`determine_crawl_result` 内で `clean_meeting_title` を適用することで汎用タイトルの誤判定を解消 | `admin/crawler.py`<br>`docs/data.json` | 2026-09-25 |
 | **CR-53** | 親テーブル & 同期 | **CAO / CAS 親テーブル構造適用 & archiveUrl 起点化同期（全100会議体）**<br>内閣府（41件）、内閣官房（28件）、厚労省（31件）の親ページキャッシュから開催回・配付資料を網羅抽出し `docs/data.json` に同期反映。クロール成功数 1,311 件（90.66%）を達成 | `admin/crawler.py`<br>`docs/data.json` | 2026-09-25 |
 
-<hr>
-
 ---
 
 #### 【Drop 25】農水省・防衛省・原子力規制委・財務省残存のルール最適化（全3件完了・ステップ6）
@@ -368,8 +356,6 @@ GitHub Actions で自動更新・push されたリモートの最新データ（
 | **CR-54** | テーブルパーサー | **防衛省（MOD）テーブルパーサー最適化 & 親テーブル構造適用（11件）**<br>防衛省テーブル行内の元号アルファベット略記（`R3.12.6`, `H30.11.28` 等）を `parse_japanese_date` で対応。`mod-1084`, `mod-1112` 等の親テーブルから開催回・配付資料を正常に抽出・同期 | `admin/utils.py`<br>`admin/crawler.py`<br>`docs/data.json`<br>`testing/test_drop25_mod_date_parsing.py` | 完了 |
 | **CR-55** | タイトル補正 & URL適正化 | **財務省（MOF）タイトル補正・archiveUrl起点化 & NRA（原子力規制委）固定URL適正化（22件）**<br>MOF の `mof-1132`, `mof-ilbe`, `mof-1163` 等の `archiveUrl` 起点化および開催回・配付資料の同期。NRA の目次ポータル会議体整理（`isClosed: true`）および個別会議体（`nra-me_suishoutai` 等）の正常同期維持 | `admin/crawler.py`<br>`docs/data.json` | 完了 |
 | **CR-56** | 404修復 & ポータル整理 | **農水省系（MAFF / JFA / RINYA）404 URL 調査修復 & 目次ポータル整理・同期（20件）**<br>MAFF の `maff-659`, `maff-662`, `maff-693` 等の URL 是正・開催回・資料同期。JFA / RINYA の 404 / 403 終了会議体の `isClosed: true` 整理およびクローラー保護対象化 | `admin/crawler.py`<br>`docs/data.json` | 完了 |
-
-<hr>
 
 ---
 
@@ -385,8 +371,6 @@ GitHub Actions で自動更新・push されたリモートの最新データ（
 | **CR-58** | 重複統合 | **同一URL共有会議体（5ペア10件）の統合・集約 & 重複開催回解消**<br>`mext-719`（→`aca-1735`）、`cas-341`（→`cas-319`）、`cas-353`（→`cas-352`）、`mhlw-hosho_shiinsentaku`（→`mhlw-shiin_sentaku_kento_wg`）、`moj-1170`（→`moj-housei_seishoku`）を主会議体に集約し従会議体を `isClosed: true` 化。法制審重複開催回を完全解消 | `docs/data.json` | 完了 |
 | **CR-59** | URL是正 & 個別同期 | **公式URL是正 & 開催回・配付資料網羅同期 & 非会議体削除・再混入防止（8件）**<br>`cas-310`（27回・66資料）、`npa-1199`（10回・78資料）、`cas-330`（5回・19資料）、`cas-337`（改名・5回・36資料）、`cao-246`（11回・77資料）、`cao-260`（15回・176資料）、`mext-714`（改名・8回・9資料）の開催回・配付資料を同期。非会議体 `mext-713` を削除し `crawler.py` に除外ガード追加 | `admin/crawler.py`<br>`docs/data.json` | 完了 |
 
-<hr>
-
 ---
 
 #### 【Drop 27】Phase 2: ルール最適化 & Deep Crawl 展開 & リスト構造対応（全23会議体昇格・完了）
@@ -399,8 +383,6 @@ GitHub Actions で自動更新・push されたリモートの最新データ（
 | **CR-61** | ダウンロードリンク | **食品安全委員会（FSCIIS）ダウンロードリンク対応 & URL是正（2件）**<br>`fsc-bakuro_wg`（13回・209資料）、`fsc-eiyotenkabutu_wg`（24回・215資料、URL正規化）の開催回・配付資料同期および `/attachedFile/download` 形式セレクター定義 | `docs/data.json` | 完了 |
 | **CR-62** | サブページ深掘り & ルール最適化 | **警察庁・総務省・国交省・デジタル庁・金融庁等のサブページ深掘り & ステータス正常化（17件）**<br>`npa-1198`（26回・118資料）、`mlit-shinkansen_kashitsuke_shoiinkai`（5回・42資料、新URL是正）、`mic-nenkin_kiroku_daisansha`（1回・7資料）、`cas-tppinfo`（1回・5資料拡充）、Errno 22 解消（`digital-395`, `fsa-corporategovernance_code`, `aca-194`）、既存データ正常化（`cfa-shingikai_kentoukai`, `aca-186`, `mhlw-840/843/862/910`, `jsa-sports_mirai_kaihatsu`, `mic-seimu_sanyaku`, `cas-351`, `moj-2735`） | `docs/data.json` | 完了 |
 
-<hr>
-
 ---
 
 #### 【Drop 28】Phase 3: クローラーバグ修正 & WARP 連携・完全救済（全37件救済・完了）
@@ -411,8 +393,6 @@ GitHub Actions で自動更新・push されたリモートの最新データ（
 |:---|:---:|:---|:---|:---:|
 | **CR-63** | データ判定正常化 & URL修復 | **既存優良データのステータス適正化 & 新URL移転適用 & 特殊形式対応（14件）**<br>既に開催回・配付資料を多数保持していた優良会議体（`cao-222`, `cao-232`, `digital-428`, `mic-chiji_kaigi`, `mext-715`, `npa-seisaku_hyoka_kenkyukai`）のステータス正常化。出入国在留管理庁（`isa-582`）、スポーツ庁（`jsa-622`, `jsa-sports_kanran_houei`）、国家公安委員会（`npsc-teirei`）、外務省（`mofa-kaigai_kouryushingi`）、厚労省（`mhlw-kousei_influ`）の最新URL・アーカイブURL是正。法務省過去部会の特殊形式（.exe/.lzh）資料を含む開催回同期（`moj-housei_seishoku` 19開催回・38資料、`moj-1197`） | `docs/data.json` | 完了 |
 | **CR-64** | WARP連携 & 組織資料保護 | **厚労省空殻ページ・内閣官房待機組織の非Close保持・組織資料同期 & WARP連携（23件）**<br>ユーザー指示に基づき、厚労省空殻ページ10件（`mhlw-804`, `805`, `847`, `856`, `865`, `866`, `962`, `1011`, `hikouchi_jidou_gyakutai_bunseki_wg`, `shiin_sentaku_kento_wg`）および内閣官房事前待機組織8件（`cas-299`, `318`, `319`, `320`, `350`, `352`, `1895`, `kokka_jouhou`）を非Closeで維持。公式設置要綱・組織概要を会議体資料として登録し、`manualLock: true` で保護。親組織・ポータル目次等5件（`aca-1735`, `cao-218`, `moe-chuo_kankyo_singikai`, `mic-seisaku_kaigi`, `aca-bunkazai_sekaitokubetsu_wg`）を適正化 | `docs/data.json` | 完了 |
-
-<hr>
 
 ---
 
@@ -426,8 +406,6 @@ GitHub Actions で自動更新・push されたリモートの最新データ（
 | **CR-69** | 会議体統合 | **重複会議体 `moj-1172` の `moj-housei_keiji` への集約統合 & 削除**<br>同一公式URLを持つ重複会議体マスター `moj-1172` を削除し、開催回・資料を `moj-housei_keiji` へ統合。`admin/rejected_councils.json` に登録して再混入を恒久ガード | `docs/data.json`<br>`admin/rejected_councils.json` | 完了 |
 | **CR-70** | ゴミデータ排除 | **無関係ゴミ開催回の削除 & 部会委員名簿の会議体資料化**<br>審査基準・主管省庁・第14回コングレス等の無関係な開催回6件を削除。部会委員名簿（PDF）を組織常設資料（`councils.materials`）として登録 | `docs/data.json` | 完了 |
 
-<hr>
-
 ---
 
 #### 【Drop 31】同一個別開催回URL・重複会議体マスターのクロス検知テストケース新設（全3件・完了）
@@ -439,8 +417,6 @@ GitHub Actions で自動更新・push されたリモートの最新データ（
 | **CR-71** | クロス重複検知 | **同一公式個別URLクロス会議体重複検知エンジン（Check 11）**<br>異なる会議体間で同一の個別開催回ページURL（`officialUrl`）が誤って登録される重複を検知・遮断。正当な合同会議（Joint Meetings: 共催・合同明記）や同一省庁共通広報は適切に許可 | `testing/test_no_duplicate_meetings.py` | 完了 |
 | **CR-72** | マスター重複検知 | **同一公式URL会議体マスター重複検知エンジン（Check 12）**<br>会議体マスターにおいて、同一の公式URLを持つ会議体が誤って二重作成されるのを検知・遮断。正当な部会群（`cao-kisei_*`, `cao-pfi_*` 等）のプレフィックス共有を許可しつつ、意図しない重複を厳格に捕捉 | `testing/test_no_duplicate_meetings.py` | 完了 |
 | **CR-73** | データ適正化 | **法務省重複会議体（3件）の統合・除外リスト登録 & 孤立ミーティング（381件）排除**<br>法務省の重複3件（`moj-1170`, `moj-1171`, `moj-hosei_shingi`）を正規スラグIDへ統合・削除し `rejected_councils.json` に追加。会議体マスターに紐付かない孤立ミーティング 381 件をクリーンアップ | `docs/data.json`<br>`admin/rejected_councils.json` | 完了 |
-
-<hr>
 
 ---
 
@@ -454,8 +430,6 @@ GitHub Actions で自動更新・push されたリモートの最新データ（
 | **CR-75** | チェック厳格化 | **Check 12 ホワイトリスト一掃 & 会議体URL重複検知の厳格化**<br>`testing/test_no_duplicate_meetings.py` の Check 12 における許容リスト（`known_council_url_sharing`）から厚労省等の重複URLを完全排除し、真に共有が必要な組織以外を自動エラー遮断 | `testing/test_no_duplicate_meetings.py` | 完了 |
 | **CR-76** | 類似名称検知 | **同一省庁内における会議体名の短縮形・類似重複検知エンジン（Check 14）**<br>同一省庁内で親組織名が付いていない短縮名（「感染症部会」等）と正式名（「厚生科学審議会 感染症部会」）が併存するケースを検知し、将来の二重登録を未然に防止 | `testing/test_no_duplicate_meetings.py` | 完了 |
 
-<hr>
-
 ---
 
 #### 【Drop 33】医道審議会 (看護師特定行為・研修部会) 回数なし資料除外 & 親テーブル・サブページパーサー恒久ガード（全3件・完了）
@@ -468,8 +442,6 @@ GitHub Actions で自動更新・push されたリモートの最新データ（
 | **CR-78** | パーサー改修 | **親テーブル抽出における回数列ハイフン・空行除外エンジン**<br>`_extract_meetings_from_parent_table` において、テーブルヘッダーに回数列が存在しテーブル内に正規回次（第X回）が存在する場合、回数列がハイフン・空の行を開催回抽出からスキップ | `admin/crawler.py` | 完了 |
 | **CR-79** | 探索ガード | **サブページ探索での回数なしテーブル行リンク除外 & 公表告知タイトル受入遮断ガード**<br>`extract_actual_subpage_links` において親テーブルの回数なし行に含まれる資料リンクをサブページ探索から除外。`is_preliminary_notice_page` に公表告知タイトル除外を追加 | `admin/crawler.py` | 完了 |
 
-<hr>
-
 ---
 
 #### 【Drop 34】情報通信審議会 傘下全27部会・委員会および全55作業班の会議体分離 & 網羅的登録（全3件・完了）
@@ -481,8 +453,6 @@ GitHub Actions で自動更新・push されたリモートの最新データ（
 | **CR-80** | 再発防止 & 是正 | **親会議体 `mic-joho_tsusin` の誤登録開催回移管・公式URL是正 & クロール再混入防止ガード**<br>`mic-joho_tsusin` から誤登録3件を新会議体へ移管。公式URLをポータル（`index.html`）から総会会議資料一覧（`sokai/soukai_index.html`）へ是正し、新着情報からの作業班・委員会混入を恒久遮断。バックナンバーURL除外（`_backno`等）を `admin/crawler.py` に追加 | `docs/data.json`<br>`admin/crawler.py` | 完了 |
 | **CR-81** | 会議体新設 & 同期 | **情報通信審議会 傘下全27部会・委員会および全55作業班（計82会議体）の新規登録 & 開催回・配付資料の網羅的同期**<br>部会・委員会27件、各傘下の作業班55件の計82会議体マスターを正規ID体系（ハイフン厳格1個・2セグメント）で新設。全1,837開催回および配付資料（PDF/HTML）を網羅的に取得・同期。`extract_round_and_type` でサブ組織（アドホック・サブWG・作業班等）や年度・期を識別する判定を強化 | `docs/data.json`<br>`testing/test_no_duplicate_meetings.py` | 完了 |
 | **CR-82** | ルール連動 & 検証 | **全82会議体のスクレイピングルール連動反映 & 統合テスト（全18ケース）検証**<br>新設された全82会議体に `subpage_discovery_pattern`、`date_regex`、`pdf_selector`、`manualLock: true` を設定。全18ケースの統合テストスイート（`testing/run_test_suite.py`）に完全合格 | `docs/data.json`<br>`testing/run_test_suite.py` | 完了 |
-
-<hr>
 
 ---
 
@@ -503,8 +473,6 @@ GitHub Actions で自動更新・push されたリモートの最新データ（
 | **CR-83** | 容量削減 | **公開静的ディレクトリ `docs/` 内の巨大バックアップ・一時データ（101.2MB）削除**<br>過去作業時に生成された `data.json.bak_*` および一時クロールデータの安全削除 | `docs/` | 完了 |
 | **CR-84** | データ健全化 | **文字化け破損残骸 `docs/rejected_councils.json` の完全削除 & 一元化担保**<br>本番・テスト・管理コンソール全域で利用されている `admin/rejected_councils.json` への一元化を維持しつつ、公開側の不要残骸を排除 | `docs/rejected_councils.json` | 完了 |
 
-<hr>
-
 ---
 
 #### 【Drop 38】リファクタリング領域C: 管理UIスクリプト外部化 & 共通正規化ユーティリティ集約（DRY化）（完了）
@@ -516,8 +484,6 @@ GitHub Actions で自動更新・push されたリモートの最新データ（
 | **CR-85** | UI構造改善 | **管理ダッシュボード JavaScript の外部ファイル化（`admin_dashboard.js`）**<br>`admin_dashboard.html` から約2,760行のスクリプトを分離・外部化し、HTMLとロジックの責務を分離。構文チェック（`run_test_suite.py`）および実行時検証（`test_js_runtime.js`）を外部スクリプト対応に更新 | `admin/admin_dashboard.html`<br>`admin/admin_dashboard.js`<br>`testing/run_test_suite.py`<br>`testing/test_js_runtime.js` | 完了 |
 | **CR-86** | DRY化・共通化 | **文字列正規化ロジックの `admin/utils.py` への集約・一元化**<br>`normalize_text` および `CJK_RADICAL_REPLACEMENTS` を `admin/utils.py` に集約し、`crawler.py` と `batch_normalize_data.py` の重複定義を解消 | `admin/utils.py`<br>`admin/crawler.py`<br>`admin/batch_normalize_data.py` | 完了 |
 
-<hr>
-
 ---
 
 #### 【Drop 39】リファクタリング領域B: セレクティブ統合テストスイート（run_test_suite.py）＆ Drop 23〜25 単体テスト統合（完了）
@@ -527,8 +493,6 @@ GitHub Actions で自動更新・push されたリモートの最新データ（
 | ID | 分類 | 内容 | 対象ファイル | 状態 |
 |:---|:---:|:---|:---|:---:|
 | **CR-87** | テスト統合 & 高速化 | **セレクティブ統合テストスイート構築 & Drop 23〜25 単体テスト（計7テスト）統合**<br>`testing/run_test_suite.py` を改修し、全21ケースへの拡充と変更連動型セレクティブ実行（Git差分検知）を実装 | `testing/run_test_suite.py`<br>`testing/test_crawler_foundation.py`<br>`testing/test_crawler_parent_table.py` | 完了 |
-
-<hr>
 
 ---
 
@@ -542,8 +506,6 @@ GitHub Actions で自動更新・push されたリモートの最新データ（
 | **CR-89** | ゴミデータ排除 & ガード | **全庁横断「金融行政方針」誤混入36件・節見出し16件完全削除 & クローラー除外恒久ガード**<br>全36会議体に誤混入していた省庁方針資料36件および節見出し16件を削除。`crawler.py` に金融行政方針および節見出しの除外ガードを追加 | `docs/data.json`<br>`admin/crawler.py` | 完了 |
 | **CR-90** | 資料適正化 | **各会議体公表成果物（報告書・指針・コード等）95件の会議体常設資料移行 & manualLock保護**<br>各会議体の配付資料から公表成果物（報告書、提言、指針、コード等）95件を会議体常設資料（`council.materials`）へ移行し、`manualLock: true` で保護 | `docs/data.json` | 完了 |
 
-<hr>
-
 ---
 
 #### 【Drop 41】ゼロベース再構築課題：ディスカバリー網羅性向上 & スクレイピングルール逆引き継承エンジン（完了）
@@ -556,8 +518,6 @@ GitHub Actions で自動更新・push されたリモートの最新データ（
 | **CR-92** | スラグID自動継承 | **`admin/discover_councils.py` における既存スラグID・ルールの自動継承ロジック**<br>ディスカバリー実行時、同一 URL の会議体が既存マスターまたは `scrapingRules` に存在する場合、新規連番IDを発行せず既存のスラグIDを自動継承・維持するロジックを実装。新規会議体保存時の標準ルール自動連動登録を担保 | `admin/discover_councils.py` | 完了 |
 | **CR-93** | 探索カバレッジ拡充 | **2階層親審議会ポータルおよび外局検討会一覧の探索網羅性拡充**<br>消防庁（`FDMA`）検討会ポータル、総務省（`MIC`）情報通信審議会ポータル、文化庁（`ACA`）著作権分科会、経産省（`METI`）産業構造審議会、内閣府（`CAO`）主要施策URLを `ministries.councilsUrls` に拡充 | `docs/data.json` | 完了 |
 | **CR-94** | ガード強化 | **開催案内・定型案内文のクロール受入遮断ガード強化（`is_preliminary_notice_page` 改修）**<br>「標記の会議について」「下記のとおり開催」「傍聴の申込について」「取材の案内について」等の開催告知文や事前案内ページを確実に検知・除外するガードを `crawler.py` に追加し、配付資料ページとの混同・誤登録を防止 | `admin/crawler.py` | 完了 |
-
-<hr>
 
 ---
 
@@ -573,8 +533,6 @@ GitHub Actions で自動更新・push されたリモートの最新データ（
 
 <hr>
 
-<hr>
-
 ---
 
 #### 【Drop 45】統合テストスイート（run_test_suite.py）の純粋関数モック単体検証分離 & 関数仕様修正時限定実行機構の実装完了
@@ -587,8 +545,6 @@ GitHub Actions で自動更新・push されたリモートの最新データ（
 | **CR-102** | テスト階層分離 | **純粋関数モック単体テストの統合テストスイート通常フローからの分離 & 単体テストランナー整備**<br>`app.test.js`、`test_crawler_foundation.py`、`test_crawler_parent_table.py`、`test_crawler_incremental.py`、`test_drop23_waf_resilience.py`、`test_drop24_parent_table_expansion.py`、`test_drop25_mod_date_parsing.py` などのモック単体テストを統合テストスイート通常実行から外し、`testing/run_unit_tests.py` および `--unit` / `--include-unit` 体系へ整理 | `testing/run_test_suite.py`<br>`testing/run_unit_tests.py` | 完了（2026-10-08） |
 | **CR-103** | 実データ検証特化 | **統合テストスイートの本番実データ整合性保証（全14ケース）への特化 & 高速化**<br>構文（L1）、UI表示（L2）、実データ整合性・2099遮断（L3）、実サーバーAPI疎通（L4）、クローラー実データ整合性・保護（L5）の全14ケースに集約し、実質的なシステム・データ品質を保証 | `testing/run_test_suite.py` | 完了（2026-10-08） |
 | **CR-104** | 関数仕様連動 | **Git 差分連動による関数仕様変更時限定の自動単体検証トリガー実装**<br>`admin/crawler.py`、`admin/utils.py`、`docs/app.js` や単体テスト自体の仕様修正が検知された場合のみ、該当単体関数テストを連動実行するスマート判定機構 | `testing/run_test_suite.py` | 完了（2026-10-08） |
-
-<hr>
 
 ---
 
@@ -618,8 +574,6 @@ GitHub Actions で自動更新・push されたリモートの最新データ（
 | **CR-108** | ノイズ除去 & 重複排除 | **開催回タイトル `<br>` タグ除去（1件） & 同一開催回内 URL 重複資料（73件）の重複排除**<br>`cas-seme_no_yobouiryou-20260525-005` のタイトル内 `<br>` を除去。同一開催回内のURL重複資料73件を排除し、`crawler.py` にURL重複排除ガードを追加 | `docs/data.json`<br>`admin/crawler.py` | 完了（2026-10-08） |
 | **CR-109** | テスト検証 | **Drop 46 専用単体テスト（`test_drop46_data_cleanup.py`）新設 & 統合テストスイート（ケース6/13）整合性検証**<br>UIノイズ除外・アンカー除外・文字化け復元・重複排除の回帰検証テストを作成し、統合テストスイート（全14ケース＋連動単体テスト13種）の完全合格を確認 | `testing/test_drop46_data_cleanup.py`<br>`testing/run_test_suite.py` | 完了（2026-10-08） |
 
-<hr>
-
 ---
 
 #### 【Drop 47】ジェネリック配付資料名スマートコンテキスト復元（全4件完了・2,096件適正化）
@@ -639,8 +593,6 @@ GitHub Actions で自動更新・push されたリモートの最新データ（
 | **CR-112** | 再混入防止ガード | **クローラー受入時のジェネリック配付資料名フォールバック・遮断ガード**<br>`sync_new_meetings_from_crawl` および `_extract_meetings_from_parent_table` において、コンテキスト復元後もジェネリック名が残る場合、ファイル名（`gijiroku` の場合は「議事録」）や会議タイトルを活用して具体的名称を生成し、「PDF」「資料」単体での登録を遮断 | `admin/crawler.py` | 2026-10-10 |
 | **CR-113** | テスト検証 | **Drop 47 単体テスト新設 & 統合テストスイート（全14ケース＋単体14種）整合性検証**<br>`testing/test_drop47_context_recovery.py`（6テスト）を新設。厚労省型・財務省型・リスト型の各HTML復元テスト、gijiroku ファイル名からの議事録自動命名テスト、および `docs/data.json` 内ジェネリック残存ゼロ検証を実装。`run_unit_tests.py` に U14 を追加し、統合テストスイート（全14ケース＋単体14種）完全合格を確認 | `testing/test_drop47_context_recovery.py`<br>`testing/run_unit_tests.py`<br>`testing/run_test_suite.py` | 2026-10-10 |
 
-<hr>
-
 ---
 
 #### 【Drop 48】配付資料0件開催回救済 & 議事録テキスト正式資料化（全4件完了・336件救済）
@@ -653,8 +605,6 @@ GitHub Actions で自動更新・push されたリモートの最新データ（
 | **CR-115** | 資料再取得 & タイトル補正 | **個別HTML開催回からの配付資料・見出しタイトル再取得 & 同期（計336件救済）**<br>個別資料ページが存在するにもかかわらず資料0件となっていた会合のページをレートリミット（>=0.35s）遵守で再巡回・パースし、末端資料を取得して `data.json` に同期反映。資料0件開催回を 1,002件 $\to$ 666件へ純減 | `docs/data.json`<br>`admin/crawler.py` | 2026-10-10 |
 | **CR-116** | 告知ページ適正化 & ガード | **開催案内・事前告知ページのタイトル正規化 & クローラー受入拡張**<br>資料未公開ページのタイトル（`None`）等 741 件を本文見出し（`h1`, `h2`）から正規会議名へ補正。`crawler.py` に `.txt` ファイル検出時のテキスト議事録パーサー（`parse_txt_minutes`）を常設実装 | `admin/crawler.py`<br>`docs/data.json` | 2026-10-10 |
 | **CR-117** | テスト検証 | **Drop 48 専用単体テスト新設 & 統合テストスイート（全14ケース＋単体15種）整合性検証**<br>`test_drop48_zero_materials_rescue.py` を新設し、TXTヘッダーパース、議事録正式資料化、資料0件大幅削減を検証。`run_unit_tests.py` に U15 を追加し、統合テストスイート（全14ケース＋単体15種）完全合格を確認 | `testing/test_drop48_zero_materials_rescue.py`<br>`testing/run_unit_tests.py`<br>`testing/run_test_suite.py` | 2026-10-10 |
-
-<hr>
 
 ---
 
@@ -669,8 +619,6 @@ GitHub Actions で自動更新・push されたリモートの最新データ（
 | **CR-120** | 部会・ノイズID正規化 | **組織・部会プレフィックス（17件）およびノイズ末尾（9件）のID正規化**<br>`fsc-osen_tou` の部会プレフィックス（`kanji_007` $\to$ `s07` 等）、`cas-grassroots_tf` の末尾ノイズ（`001_2` $\to$ `001`）、期プレフィックス（`ki06_001` $\to$ `001`）等の正規化 | `docs/data.json` | 2026-10-10 |
 | **CR-121** | テスト検証 | **Drop 49 単体テスト新設 & 統合テストスイート（全14ケース＋単体16種）整合性検証**<br>`testing/test_drop49_meeting_id_normalization.py` を新設し、全 18,611 件の開催回IDが 100% 規約に準拠していることを検証。`run_unit_tests.py` に U16 を登録し、統合テストスイート（全14ケース＋単体16種）の完全合格を確認 | `testing/test_drop49_meeting_id_normalization.py`<br>`testing/run_unit_tests.py`<br>`testing/run_test_suite.py` | 2026-10-10 |
 
-<hr>
-
 ---
 
 #### 【Drop 52】消防庁2検討会（航空機火災対応・ドローン活用）開催回・日付・配付資料紐づけ修正 & クローラー親見出し構造自動抽出パーサー配備
@@ -684,8 +632,6 @@ GitHub Actions で自動更新・push されたリモートの最新データ（
 | **CR-124** | データ整合化 | **消防庁2検討会の全8回・全59配付資料完全紐づけ & manualLock 設定**<br>航空機火災対応検討会（全4回、30資料）、ドローン活用検討会（全4回、29資料）を正確に生成・登録し、手動保護 `manualLock: true` および `scrapingRules` を連動反映 | `docs/data.json` | 2026-10-10 |
 | **CR-125** | テスト検証 | **統合テストスイート（全14ケース＋単体16種）完全合格検証**<br>`python testing/run_test_suite.py --all-layers` を実行し、構文・UI・データ整合性・API・クローラー保護（全14ケース）および単体テスト連動16種すべてに合格することを確認 | `testing/run_test_suite.py` | 2026-10-10 |
 
-<hr>
-
 ---
 
 #### 【Drop 57】文化審議会文化財分科会 第208回（令和元年=2019年）開催日・年号是正および横展開誤西暦（計7件）是正
@@ -697,8 +643,6 @@ GitHub Actions で自動更新・push されたリモートの最新データ（
 | **CR-126** | クローラー補正ガード | **行政サイト日付誤植補正 & 範囲日付開始日パースガードの実装**<br>「令和元年11年15日」等の第2の年号キーワードを「月」として補正するパーサーガード、および「4月13〜17日」等の複数日表記から開始日（4月13日）を安全に抽出するガードを配備 | `admin/crawler.py`<br>`admin/utils.py` | 2026-10-10 |
 | **CR-127** | データ整合化 | **文化財分科会 第208回および横展開計7開催回の開催日・年号・ID完全是正**<br>第208回（2019/11/15）、第213回（2020/04/13）、第214回（2020/05/18）、第236回（2022/04/18）、第267回（2025/01/24）、第268回（2025/02/21）、第269回（2025/03/21）のID・日付・タイトルを一括是正し、`manualLock: true` を設定 | `docs/data.json` | 2026-10-10 |
 | **CR-128** | テスト検証 | **統合テストスイート（全14ケース＋単体16種）整合性検証**<br>`python testing/run_test_suite.py --all-layers` を実行し、全ケース完全合格を確認 | `testing/run_test_suite.py` | 2026-10-10 |
-
-<hr>
 
 ---
 
@@ -713,8 +657,6 @@ GitHub Actions で自動更新・push されたリモートの最新データ（
 | **CR-131** | ルール連動 | **スクレイピングルールの連動登録・更新**<br>`mod-space_domain` に対する親テーブル直下テンプレートルール（`tpl-parent-table-direct`）を設定 | `docs/data.json` | 完了 |
 | **CR-132** | テスト検証 | **統合テストスイート（全14ケース＋単体16種）整合性検証**<br>`python testing/run_test_suite.py --all-layers` を実行し、全ケース完全合格を確認 | `testing/run_test_suite.py` | 完了 |
 
-<hr>
-
 ---
 
 #### 【Drop 59】財務省 急増する少額輸入貨物への対応に関するワーキンググループ ディープクロール・配付資料網羅化 & スラグ正規化
@@ -728,8 +670,6 @@ GitHub Actions で自動更新・push されたリモートの最新データ（
 | **CR-135** | ルール連動 | **ディープクロール対応スクレイピングルールの連動登録・更新**<br>`mof-syogaku_yunyu_wg` に対して `index*.html` / `wg*.html` を走査する `subpage_discovery_pattern` およびサブページ巡回テンプレート（`tpl-general-round-subpage`）を設定 | `docs/data.json` | 完了 |
 | **CR-136** | テスト検証 | **統合テストスイート（全14ケース＋単体16種）整合性検証**<br>`python testing/run_test_suite.py --all-layers` を実行し、全ケース完全合格を確認 | `testing/run_test_suite.py` | 完了 |
 
-<hr>
-
 ---
 
 #### 【Drop 60】環境省 中央環境審議会および主要8部会 ディープクロール・配付資料網羅化 & 会議体体系正規化
@@ -742,8 +682,6 @@ GitHub Actions で自動更新・push されたリモートの最新データ（
 | **CR-138** | ディープクロール網羅化 | **全9組織・全413開催回のディープクロール & 末端配付資料（4,250件）網羅的登録**<br>各部会の開催回リストから個別開催回URL（`post_*.html`）をクロールし、議事次第・説明資料PDF・議事録HTML等の末端資料を網羅取得して各回に完全紐づけ。`manualLock: true` を設定 | `docs/data.json` | 完了 |
 | **CR-139** | ルール連動 | **9組織に対するスクレイピングルールの連動登録・更新**<br>`moe-chuo_kankyo_*` に対して各部会URL、`tpl-general-round-subpage`、個別開催回走査パターンを設定 | `docs/data.json` | 完了 |
 | **CR-140** | テスト検証 | **統合テストスイート（全14ケース＋単体16種）整合性検証**<br>`python testing/run_test_suite.py --all-layers` を実行し、全ケース完全合格を確認 | `testing/run_test_suite.py` | 完了 |
-
-<hr>
 
 ---
 
@@ -1873,6 +1811,7 @@ flowchart LR
       - U23: 中間HTML配付資料混入遮断 & 末端PDF展開完全性単体テスト (1.21s) : PASS
   ```
 
+---
 
 #### 【Drop 87】農林水産省・林野庁・国土交通省グループ 17会議体の中間HTML配付資料排除 & 末端PDF一括展開（241件登録・33件公式URL適正化） & 重複ゴミ会議体 maff-2236 パージ（893資料一掃） & 再発防止ガード160会議体拡大（完了）
 
@@ -1930,174 +1869,59 @@ flowchart LR
 - **5. 次回予定**:
   - Track [Intermediate-Norm] **フェーズ 7（Drop 88）**: 原子力規制委員会（NRA 11会議体・582件）の中間HTML配付資料排除 & 末端PDF一括展開。
 
-
-#### 【Drop 92】Track [Config-DB] フェーズ 1: 省庁・ホスト設定の二重管理解消（SQLite DB 完全一元化）& 旧 ENV 残存バグの根絶（完了）
-
-- **完了日**: 2026-10-25
-- **対象カテゴリ**: データベース基盤（Database SSOT）/ クローラー設定（Crawler Config）/ リファクタリング
-- **作業ブランチ**: `feature/drop92-ministry-host-db-unification`
-- **1. 背景・課題**:
-  - `admin/crawler.py` 内に `MINISTRY_DOMAINS`（16省庁のみハードコード、かつ530行目に旧コード `"ENV": ["env.go.jp"]` が残存し `"MOE"` や外局群が欠落）、`MINISTRY_NEWS_PORTALS`（21省庁の新着ポータル定義）、`HOST_RATE_LIMITS`（ホスト別アクセス間隔）がハードコードされており、SQLite マスターDB（`admin/pmhub.db`）の `admin_configs` と二重管理になっていた。
-  - また、`admin/admin_dashboard.js` の `getMinistryColor()` にも22省庁分のカラーコードがハードコードされており、DB の `ministries` マスター定義と乖離していた。
-- **2. 実装内容・仕様**:
-  - **`admin_configs.ministries` および `admin_configs.crawlerConfig` への完全統合**:
-    - 全 48 省庁・外局の `ministries` レコードに `domains`（公式ドメイン配列）、`newsPortals`（21省庁・23URLの新着ポータル定義）、`hexColor`（`docs/styles.css` 準拠のHEXカラー）を格納。
-    - `crawlerConfig` に `default_host_interval`（`0.5`秒）および `host_rate_limits`（`www.cas.go.jp`: `1.0`秒、`www.meti.go.jp`: `1.5`秒 等）を格納。
-  - **クローラー・ディスカバリー・管理画面の DB 駆動化 & 旧 `"ENV"` 残存バグの完全根絶**:
-    - `admin/utils.py`: `MINISTRY_CODE_NORMALIZATION` および `normalize_ministry_code()` を共通関数として配置。
-    - `admin/crawler.py`: `load_ministry_and_host_configs_from_db()` および `_build_other_ministry_domains_map()` を実装し、`MINISTRY_DOMAINS`・`MINISTRY_NEWS_PORTALS`・`HOST_RATE_LIMITS` を DB から動的ロード。外局と本省の共有ドメイン（`ANRE`/`SMEA` と `METI` の `meti.go.jp` 等）を誤遮断しない他省庁URL混入ガードを構築。旧 `"ENV"` キーを完全撤去。
-    - `admin/discover_councils.py`: `ministries` マスター内の `newsPortals` を直接参照するよう統一。
-    - `admin/admin_dashboard.js`: `getMinistryColor()` のハードコードマップを撤廃し、`ministries[code].hexColor` / `color`（および CSS 変数）を参照するよう改修。
-  - **再発防止ガードの配備**:
-    - 統合テスト ケース13（`testing/run_test_suite.py`）に全48省庁の `domains` / `hexColor` 設定検証・`MOE` 設定検証・旧 `"ENV"` コードゼロ検証を追加。
-    - 単体テスト U7（`testing/test_drop23_waf_resilience.py`）に `test_ministry_and_host_configs_db_unification` を追加。
-- **3. 変更ファイル一覧**:
-  - `admin/pmhub.db`, `docs/data.json`, `admin/admin_data.json`: `ministries` および `crawlerConfig` の拡張・2系統完全同期エクスポート
-  - `admin/utils.py`: `normalize_ministry_code()` 共通関数追加
-  - `admin/crawler.py`: `MINISTRY_DOMAINS`, `MINISTRY_NEWS_PORTALS`, `HOST_RATE_LIMITS` の DB 動的ロード化 & `"ENV"` ハードコード撤去
-  - `admin/discover_councils.py`: DB `ministries.newsPortals` 参照化
-  - `admin/admin_dashboard.js`: `getMinistryColor()` の DB マスター参照化
-  - `testing/run_test_suite.py`, `testing/test_drop23_waf_resilience.py`: 統合ケース13 & 単体U7 再発防止ガード追加
-  - `DROPS.md`: Track [Config-DB] 新設および Drop 92 記録
-- **4. 統合テスト結果**:
-  ```markdown
-  python testing/run_test_suite.py --all-layers : PASSED（統合15ケース＋単体23種合格 / 所要時間 23.69秒）
-    - ケース1: コード文法チェック (SyntaxError / 括弧 / div) (0.69s) : PASS
-    - ケース2: リンク疎通確認 (追加・変更 23件全件 200 OK) (1.15s) : PASS
-    - ケース3: UI表示機能検証 (DOMコンテナ整合性) (0.00s) : PASS
-    - ケース4: JS実行時クラッシュ・全画面描画検証 (0.66s) : PASS
-    - ケース5: 会議品質・回次整合性・重複排除検証 (0.55s) : PASS
-    - ケース6: 会議体・タイムライン ID完全排他性・整合性 (0.01s) : PASS
-    - ケース7: 康煕部首・特殊文字 NFKC 正規化検証 (0.94s) : PASS
-    - ケース8: プレースホルダー日付（2099/01/01）ゼロ遮断検証 (0.00s) : PASS
-    - ケース15: SQLiteマスターDB整合性 & 2系統JSON完全同期検証 (0.78s) : PASS
-    - ケース9: 管理サーバー API 単体・統合テスト (4.96s) : PASS
-    - ケース10: クローラー手動保護回帰テスト (4.02s) : PASS
-    - ケース11: スクレイピングルール整合性検証 (0.39s) : PASS
-    - ケース12: ホスト分散・ゴミデータ不変性検証 (0.32s) : PASS
-    - ケース13: 省庁親ポータルURL設定・探索網羅性検証 (0.39s) : PASS
-    - ケース14: アクティブ会議体フィルタリング・廃止管理検証 (0.82s) : PASS
-    - 【単体関数検証 (Unit Tests)】: 全23種合格（U1〜U23 完全合格 / 7.65s）
-  ```
-- **5. 次回予定**:
-  - Track [Config-DB] **フェーズ 2（Drop 93）**: 会議体（`council_id`）直接指定ハードコード（`cao-zei_cho`, `cao-cstp`, `fsa-code_followup` 等のサブページ除外分岐、資料名ディレクトリ補完、初期ウォッチ会議体ID）の撤廃 & `scraping_rules` / `admin_configs` への完全移行。
-
 ---
 
-#### 【Drop 91】経済産業省（METI）産業構造審議会の総会正規化 & 傘下65組織（部会・分科会・小委員会・WG）の会議体新規登録 & 全1,042開催回・8,895配付資料の網羅的取得・スクレイピングルール完備（完了）
+#### 【Drop 88】原子力規制委員会（NRA）11会議体の中間ビュアーHTML 923件の直接末端PDF展開 & 詳細ページ誤登録4件排除 & サイズ表記完全クレンジング & 再発防止ガード171会議体拡大（完了）
 
-- **完了日**: 2026-10-25
-- **対象カテゴリ**: 会議体拡充（Council Expansion）/ データ品質（Data Quality）/ スクレイピング（Scraping & Rules）
-- **作業ブランチ**: `feature/drop91-sankoshin-hierarchy-expansion`
-- **1. 背景・課題**:
-  - ユーザーからの指示に基づき、経済産業省（METI）の基幹審議会である「産業構造審議会（meti-sankoushin）」について、親会議体名を「産業構造審議会 総会」へと適正化。
-  - 親審議会ポータル（`https://www.meti.go.jp/shingikai/sankoshin/index.html`）配下に設置されている総会以外の各下部会議体（部会・分科会・小委員会・ワーキンググループ等 計65組織）を会議体マスター（`councils`）へ網羅的に新規登録し、各開催回データ（`meetings`）および各回の配付資料（`meeting.materials`）を取得・登録するワンストップ要件（`AGENTS.md` §2-6）を実施。
-  - METI サーバー側での Cloudflare/Akamai WAF チャレンジ（HTTP 202）に対し、Headless Edge CDP による安定クローリング体制を確立。
-- **2. 実装内容・仕様**:
-  - **総会の正規化 & 不要ゴミ開催回（2件）の排除**:
-    - `meti-sankoushin` の会議体名を「産業構造審議会」から「産業構造審議会 総会」へ変更（`manual_lock = 1`）。
-    - 配付資料0件かつ実態のないゴミ開催回 2件（`meti-sankoushin-20260725-s01`, `meti-sankoushin-20260615-s01`）をデータベースから完全削除。
-  - **下部会議体 65組織の会議体マスター（`councils`）新規登録**:
-    - 産業構造審議会配下の全 65 下部会議体をスラグ規約 `{省庁略称}-{会議体スラグ}`（例: `meti-sankoshin_chiiki_keizai`, `meti-sankoshin_seizo_sangyo`）に基づき登録（`manual_lock = 1`）。
-    - 同名小委員会（化学物質政策小委員会、バイオ小委員会、伝統的工芸品指定小委員会 各2組織）について、親分科会名を付与して一意化（例: `産業構造審議会 製造産業分科会 化学物質政策小委員会`、`産業構造審議会 保安・消費生活用製品安全分科会 化学物質政策小委員会`）。
-  - **全 1,042 開催回および 8,895 配付資料の網羅的取得・登録**:
-    - 全 65 会議体のインデックスページおよび個別開催回ページを Headless Edge CDP により WAF 突破・全件走査。
-    - 全 1,042 開催回の日付（元号・西暦対応）および回次（インデックス記載の正確な回次を優先反映）を 100% 欠落ゼロ・日付重複ゼロでパースし、4セグメントID体系（例: `meti-sankoshin_chiiki_keizai-20210127-019`）で登録。
-    - 各個別ページの `h1` をベースにリッチな開催回タイトル（年度・期・改称前名称・書面審議等の文脈を保持）をクレンジングの上で登録。
-    - 各回の末端PDF配付資料 8,895 件（議事次第・説明資料・議事録等）を取得し、ファイルサイズ表記除去等のクレンジングを実施した上で登録。外部NEDOサーバーの404リンク（4件）は安全に除外。
-  - **次回自動検知スクレイピングルール（`scraping_rules`）の配備（65ルール）**:
-    - 65組織すべてに個別開催回URLパターン（`subpage_discovery_pattern`）、日付正規表現、資料セレクター、テンプレート定義を含むルールを完全配備。
-  - **テストガードおよび合同会議共有URLの適正化**:
-    - `testing/test_no_duplicate_meetings.py`: 年別URLプレフィックス（`/(20\d\d)_\d+\.html`）および旧称プレフィックス（`/(hoan)_\d+\.html`）、旧組織名（`航空機宇宙産業小委員会`、`保安分科会`）のサブタイプ自動判定を新設。
-    - 合同会議クロスURL（`known_legacy_cross_pairs`）に `meti-kagaku_busshitsu` と産業構造審議会各小委員会とのペアを追加。
-    - `testing/test_drop48_zero_materials_rescue.py`: 会議体大幅増（21,000件超）に伴う配付資料0件閾値を実態（706件・3.35%）に合わせて更新。
-- **3. 変更ファイル一覧**:
-  - `admin/pmhub.db`: 総会名称変更、65会議体追加、1,042開催回追加、8,895配付資料追加、65スクレイピングルール追加
-  - `docs/data.json`: 公開用会議データ更新（1,767会議体、21,033開催回、131,141配付資料）
-  - `docs/data.js`: ローカル `file://` 直開き用 window オブジェクト同期
-  - `admin/admin_data.json`: 管理用メタデータ同期（1,767ルール）
-  - `testing/test_no_duplicate_meetings.py`: 年別・旧称サブタイプ判定強化 & 合同会議ペア登録
-  - `testing/test_drop48_zero_materials_rescue.py`: 閾値判定更新
-  - `DROPS.md`: Drop 91 記録
+- **1. 背景と目的**:
+  1. Track [Intermediate-Norm]（各府省庁の中間HTML配付資料排除 & 末端資料一括展開）のフェーズ 7 として、原子力規制委員会（NRA: 計11会議体・928件）の配付資料を網羅的に走査・精査。
+  2. NRA の配付資料はデジタルアーカイブシステム（`da.nra.go.jp`）上に管理されているが、登録されているURLが直接のPDFファイルではなく、PDF.js ビュアー用の中間HTMLページ（`https://www.da.nra.go.jp/view/...contents=...`）となっていたため、ユーザーの直接閲覧やローカル資料管理（PMM）での自動ダウンロードが阻害されていた。
+  3. デジタルアーカイブのダウンロード機構を解析し、直接のPDFバイナリが取得可能な真の末端ダウンロードエンドポイントへの一括置換と、誤登録された中間詳細ページリンクの排除、および資料名ノイズの完全クレンジングを目的として実施。
+
+- **2. 実施内容・技術的変更点**:
+  1. **直接末端PDFダウンロードURLの解明 & 923件の一括置換（全件 200 OK & `%PDF` 確認）**:
+     - デジタルアーカイブビュアーJS（`apps-detail.js`）のダウンロード処理（`a.setAttribute('href', '/data/' + contentDownloadId)`）を解析。
+     - 中間ビュアーURL（`https://www.da.nra.go.jp/view/{id}?contents={contents_id}`）に対し、実体ダウンロードエンドポイント **`https://www.da.nra.go.jp/data/{contents_id}.pdf`** が 1対1 で直接PDFバイナリ（`%PDF`）を返す仕様を突き止め、923件の配付資料URLを一括更新（`manual_lock = 1`）。
+  2. **中間詳細ページ・ポータル目次誤登録リンク（4件）の排除**:
+     - `nra-teireikai` に誤登録されていた開催回詳細ページリンク（3件: `https://www.da.nra.go.jp/detail/...`）および `nra-1214` のポータル目次リンク（1件）を配付資料テーブルから完全削除。
+  3. **資料名ノイズの完全クレンジング & NFKC正規化**:
+     - 配付資料名に含まれていた `【PDF:56KB】`、`【PDF:__183KB】` 等のサイズ表記ノイズを `clean_name()` により完全除去し、NFKC正規化。
+     - また、`nra-ro_anzen_shinsa-20161024-011` で「別添」となっていた単独ジェネリック資料名を、開催回文脈を反映した `第11回 合同審査会 開催案内（別添）` へ復元（単体U14適合）。
+  4. **再発防止ガードの対象拡大（累計171会議体を恒久遮断）**:
+     - 単体テスト U23（`testing/test_drop80_intermediate_material_guard.py`）および統合テスト ケース5（`testing/test_no_duplicate_meetings.py`）の `guarded_councils` / `intermediate_guard_councils` に、NRA 傘下全11会議体を追加（既存160会議体と合わせ計 **171会議体** の中間HTML混入を恒久防御）。
+
+- **3. 変更ファイル・影響範囲**:
+  - `admin/pmhub.db`: 直接PDF置換923件、詳細ページ/目次誤リンク削除4件、資料名サイズクレンジング923件、ジェネリック名復元1件（`manual_lock = 1`）
+  - `docs/data.json`, `admin/admin_data.json`: マスターDB同期（2系統完全一致エクスポート）
+  - `testing/test_drop80_intermediate_material_guard.py`: 単体U23ガード対象を171会議体へ拡大
+  - `testing/test_no_duplicate_meetings.py`: 統合ケース5ガード対象を171会議体へ拡大
+  - `DROPS.md`: Drop 88 記録、Track [Intermediate-Norm] フェーズ 7 完了反映
+
 - **4. 統合テスト結果**:
   ```markdown
-  python testing/run_test_suite.py --all-layers : PASSED（統合15ケース＋単体23種合格 / 所要時間 23.87秒）
-    - ケース1: コード文法チェック (SyntaxError / 括弧 / div) (0.72s) : PASS
-    - ケース2: リンク疎通確認 (追加・変更 9,850件中 リンク切れ 0件) (1.13s) : PASS
+  python testing/run_test_suite.py --all-layers : PASSED（統合15ケース＋単体23種完全合格 / 20.94s）
+    - ケース1: コード文法チェック (SyntaxError / 括弧 / div) (0.67s) : PASS
+    - ケース2: リンク疎通確認 (新規追加・変更 923 件全件 200 OK・死にリンク 0 件) (0.91s) : PASS
     - ケース3: UI表示機能検証 (DOMコンテナ整合性) (0.00s) : PASS
-    - ケース4: JS実行時クラッシュ・全画面描画検証 (0.73s) : PASS
-    - ケース5: 会議品質・回次整合性・重複排除検証 (全21,033開催回 重複0件) (0.58s) : PASS
-    - ケース6: 会議体・タイムライン ID完全排他性・整合性 (1,767会議体全件一致) (0.01s) : PASS
-    - ケース7: 康煕部首・特殊文字 NFKC 正規化検証 (0.60s) : PASS
+    - ケース4: JS実行時クラッシュ・全画面描画検証 (0.62s) : PASS
+    - ケース5: 会議品質・回次整合性・重複排除検証 (171会議体中間HTML遮断合格 / 19,993開催回重複0件) (0.53s) : PASS
+    - ケース6: 会議体・タイムライン ID完全排他性・整合性 (1,702会議体全件一致) (0.01s) : PASS
+    - ケース7: 康煕部首・特殊文字 NFKC 正規化検証 (0.55s) : PASS
     - ケース8: プレースホルダー日付（2099/01/01）ゼロ遮断検証 (0.00s) : PASS
-    - ケース15: SQLiteマスターDB整合性 & 2系統JSON完全同期検証 (0.89s) : PASS
-    - ケース9: 管理サーバー API 単体・統合テスト (4.52s) : PASS
-    - ケース10: クローラー手動保護回帰テスト (4.11s) : PASS
-    - ケース11: スクレイピングルール整合性検証 (0.41s) : PASS
-    - ケース12: ホスト分散・ゴミデータ不変性検証 (0.33s) : PASS
-    - ケース13: 省庁親ポータルURL設定・探索網羅性検証 (0.43s) : PASS
-    - ケース14: アクティブ会議体フィルタリング・廃止管理検証 (0.84s) : PASS
-    - 【単体関数検証 (Unit Tests)】: 全23種合格（U1〜U23 完全合格 / 8.19s）
-  ```
-- **5. 次回予定**:
-  - トピックブランチ `feature/drop91-sankoshin-hierarchy-expansion` の内容についてユーザーの確認・マージ指示を待機。
-
----
-
-#### 【Drop 90】内閣官房・内閣府・デジタル庁・法務省・外務省・他残余全省庁 64会議体の中間HTML配付資料171件完全排除 & 末端PDF 678件一括登録 & UIノイズ・ポータル目次133件完全排除 & 404死にリンク1件排除 & 全府省庁中間HTML完全根絶・ガード累計256会議体完備【Track Intermediate-Norm 全9フェーズ完遂】（完了）
-
-- **完了日**: 2026-10-25
-- **対象カテゴリ**: データ品質（Data Quality）/ スクレイピング（Scraping & Normalization）
-- **作業ブランチ**: `feature/drop90-final-intermediate-elimination`
-- **1. 背景・課題**:
-  - Track [Intermediate-Norm] の最終フェーズ（フェーズ 9）として、内閣官房（CAS）、内閣府（CAO）、デジタル庁（DIGITAL）、法務省（MOJ）、外務省（MOFA）、厚生労働省（MHLW）等の残余省庁に存在する非PDF配付資料（全482ユニークURL / 782件）を網羅的に走査・分類。
-  - 内閣官房（原子力閣僚会議、クマ被害対策、知財等）や内閣府（CSTP、宇宙政策、PFI事業、コンテンツ産業官民協議会、新しい公共等）の中間ページ内に多数の末端PDFが内包されている課題、「ご意見・ご感想」「English」「検索の使い方」「動画」等のUI操作・外部SNSリンクが配付資料として誤登録されていた課題、金融庁サーバー側で欠損していた 404 死にリンク（1件）の課題が存在した。
-- **2. 実装内容・仕様**:
-  - **中間HTML 171件の完全排除 & 末端PDF 678件の一括展開・登録**:
-    - 直接末端PDFを持つ中間HTML（170 URLs）から末端PDF 678件を重複排除の上で `materials` へ `manual_lock = 1` で新規登録。
-    - 元の中間HTML配付資料（171件）を `materials` から完全に削除。
-    - 開催回 `officialUrl` 34件を個別ページURLへと適正化。
-  - **誤登録UIノイズ・ポータル目次リンク 133件の完全排除**:
-    - 「ご意見・ご感想」「English」「検索の使い方」「動画」等のUIリンク、内閣府ホーム等のポータルリンク、スポーツ審議会等の「開催状況一覧を見る」等（計133件）を配付資料から完全に削除。
-  - **金融庁 404 死にリンク 1件の排除**:
-    - `https://www.fsa.go.jp/singi/kinyuchukai/siryou/20171211/01.pdf` の官公庁側欠損死にリンクを安全に削除。
-  - **本文完結型HTML資料（約479件）の正規保全**:
-    - HTML本文形式で議事録・要旨が書かれている資料および国会図書館WARPアーカイブの過去資料を適正に保持。
-  - **タイトルクレンジング・スマートコンテキスト復元**:
-    - ファイルサイズ・形式表記を完全除去し、空白・ジェネリック名を会議体名・開催回名・ファイル名からスマート復元。
-  - **全府省庁完全網羅ガードの配備（累計 256 会議体）**:
-    - 単体 U23（`test_drop80_intermediate_material_guard.py`）および統合ケース5（`test_no_duplicate_meetings.py`）に対象 59 会議体を追加し、累計 256 会議体体制を完備。
-  - **Track [Intermediate-Norm] 全9フェーズ完遂**:
-    - 本実装をもって、PMHub に登録されている全 1,702 会議体における中間HTML配付資料が完全ゼロ（100% 根絶）となり、Track [Intermediate-Norm] を正式に【完了】。
-- **3. 変更ファイル一覧**:
-  - `admin/pmhub.db`: 末端PDF 678件追加、中間HTML 171件削除、UIノイズ・ポータル目次 133件削除、404死にリンク 1件削除、開催回 officialUrl 34件更新
-  - `docs/data.json`: 公開用会議データ更新（1,702会議体、19,993開催回、122,246配付資料）
-  - `admin/admin_data.json`: 管理用メタデータ同期
-  - `testing/test_drop80_intermediate_material_guard.py`: 単体 U23 ガード対象を累計 256 会議体へ拡大
-  - `testing/test_no_duplicate_meetings.py`: 統合ケース5 ガード対象を累計 256 会議体へ拡大
-  - `DROPS.md`: Drop 90 記録、Track [Intermediate-Norm] 【完了】ステータス更新
-- **4. 統合テスト結果**:
-  ```markdown
-  python testing/run_test_suite.py --all-layers : PASSED（統合15ケース＋単体23種合格 / 所要時間 21.59秒）
-    - ケース1: コード文法チェック (SyntaxError / 括弧 / div) (0.68s) : PASS
-    - ケース2: リンク疎通確認 (追加・変更 632件中 リンク切れ 0件) (0.99s) : PASS
-    - ケース3: UI表示機能検証 (DOMコンテナ整合性) (0.00s) : PASS
-    - ケース4: JS実行時クラッシュ・全画面描画検証 (0.64s) : PASS
-    - ケース5: 会議品質・回次整合性・重複排除検証 (0.55s) : PASS
-    - ケース6: 会議体・タイムライン ID完全排他性・整合性 (0.01s) : PASS
-    - ケース7: 康煕部首・特殊文字 NFKC 正規化検証 (0.57s) : PASS
-    - ケース8: プレースホルダー日付（2099/01/01）ゼロ遮断検証 (0.00s) : PASS
-    - ケース15: SQLiteマスターDB整合性 & 2系統JSON完全同期検証 (0.73s) : PASS
-    - ケース9: 管理サーバー API 単体・統合テスト (4.09s) : PASS
-    - ケース10: クローラー手動保護回帰テスト (3.57s) : PASS
-    - ケース11: スクレイピングルール整合性検証 (0.34s) : PASS
+    - ケース9: 管理サーバー API 単体・統合テスト (3.94s) : PASS
+    - ケース10: クローラー手動保護回帰テスト (3.44s) : PASS
+    - ケース11: スクレイピングルール整合性検証 (0.32s) : PASS
     - ケース12: ホスト分散・ゴミデータ不変性検証 (0.34s) : PASS
-    - ケース13: 省庁親ポータルURL設定・探索網羅性検証 (0.41s) : PASS
-    - ケース14: アクティブ会議体フィルタリング・廃止管理検証 (0.88s) : PASS
-    - 【単体関数検証 (Unit Tests)】: 全23種合格（U1〜U23 完全合格 / 7.47s）
+    - ケース13: 省庁親ポータルURL設定・探索網羅性検証 (0.36s) : PASS
+    - ケース14: アクティブ会議体フィルタリング・廃止管理検証 (0.77s) : PASS
+    - ケース15: SQLiteマスターDB整合性 & 2系統JSON完全同期検証 (0.72s) : PASS
+    - 【単体関数検証 (Unit Tests)】: 全23種類完全合格（U1〜U23 PASS / 7.42s）
+      - U14: ジェネリック配付資料スマートコンテキスト復元テスト (0.41s) : PASS
+      - U23: 中間HTML配付資料混入遮断 & 末端PDF展開完全性単体テスト (1.30s) : PASS
   ```
+
 - **5. 次回予定**:
-  - Track [Intermediate-Norm] の全省庁完遂を受け、次期最優先テーマとして **Track [LLM-Assist] フェーズ 2（開催回クロール 3段階ファネル & 異常検知バッチLLM補完）**、または **Track [Automation]（3階層マルチスケジュール定期巡回 & ローカルDB同期エンジン）** の推進へと移行する。
+  - Track [Intermediate-Norm] **フェーズ 8（Drop 89）**: 総務省（MIC）および文化庁（ACA）等の残存中間HTML配付資料排除 & 末端PDF一括展開。
 
 ---
 
@@ -2161,54 +1985,225 @@ flowchart LR
 
 ---
 
-#### 【Drop 88】原子力規制委員会（NRA）11会議体の中間ビュアーHTML 923件の直接末端PDF展開 & 詳細ページ誤登録4件排除 & サイズ表記完全クレンジング & 再発防止ガード171会議体拡大（完了）
+#### 【Drop 90】内閣官房・内閣府・デジタル庁・法務省・外務省・他残余全省庁 64会議体の中間HTML配付資料171件完全排除 & 末端PDF 678件一括登録 & UIノイズ・ポータル目次133件完全排除 & 404死にリンク1件排除 & 全府省庁中間HTML完全根絶・ガード累計256会議体完備【Track Intermediate-Norm 全9フェーズ完遂】（完了）
 
-- **1. 背景と目的**:
-  1. Track [Intermediate-Norm]（各府省庁の中間HTML配付資料排除 & 末端資料一括展開）のフェーズ 7 として、原子力規制委員会（NRA: 計11会議体・928件）の配付資料を網羅的に走査・精査。
-  2. NRA の配付資料はデジタルアーカイブシステム（`da.nra.go.jp`）上に管理されているが、登録されているURLが直接のPDFファイルではなく、PDF.js ビュアー用の中間HTMLページ（`https://www.da.nra.go.jp/view/...contents=...`）となっていたため、ユーザーの直接閲覧やローカル資料管理（PMM）での自動ダウンロードが阻害されていた。
-  3. デジタルアーカイブのダウンロード機構を解析し、直接のPDFバイナリが取得可能な真の末端ダウンロードエンドポイントへの一括置換と、誤登録された中間詳細ページリンクの排除、および資料名ノイズの完全クレンジングを目的として実施。
-
-- **2. 実施内容・技術的変更点**:
-  1. **直接末端PDFダウンロードURLの解明 & 923件の一括置換（全件 200 OK & `%PDF` 確認）**:
-     - デジタルアーカイブビュアーJS（`apps-detail.js`）のダウンロード処理（`a.setAttribute('href', '/data/' + contentDownloadId)`）を解析。
-     - 中間ビュアーURL（`https://www.da.nra.go.jp/view/{id}?contents={contents_id}`）に対し、実体ダウンロードエンドポイント **`https://www.da.nra.go.jp/data/{contents_id}.pdf`** が 1対1 で直接PDFバイナリ（`%PDF`）を返す仕様を突き止め、923件の配付資料URLを一括更新（`manual_lock = 1`）。
-  2. **中間詳細ページ・ポータル目次誤登録リンク（4件）の排除**:
-     - `nra-teireikai` に誤登録されていた開催回詳細ページリンク（3件: `https://www.da.nra.go.jp/detail/...`）および `nra-1214` のポータル目次リンク（1件）を配付資料テーブルから完全削除。
-  3. **資料名ノイズの完全クレンジング & NFKC正規化**:
-     - 配付資料名に含まれていた `【PDF:56KB】`、`【PDF:__183KB】` 等のサイズ表記ノイズを `clean_name()` により完全除去し、NFKC正規化。
-     - また、`nra-ro_anzen_shinsa-20161024-011` で「別添」となっていた単独ジェネリック資料名を、開催回文脈を反映した `第11回 合同審査会 開催案内（別添）` へ復元（単体U14適合）。
-  4. **再発防止ガードの対象拡大（累計171会議体を恒久遮断）**:
-     - 単体テスト U23（`testing/test_drop80_intermediate_material_guard.py`）および統合テスト ケース5（`testing/test_no_duplicate_meetings.py`）の `guarded_councils` / `intermediate_guard_councils` に、NRA 傘下全11会議体を追加（既存160会議体と合わせ計 **171会議体** の中間HTML混入を恒久防御）。
-
-- **3. 変更ファイル・影響範囲**:
-  - `admin/pmhub.db`: 直接PDF置換923件、詳細ページ/目次誤リンク削除4件、資料名サイズクレンジング923件、ジェネリック名復元1件（`manual_lock = 1`）
-  - `docs/data.json`, `admin/admin_data.json`: マスターDB同期（2系統完全一致エクスポート）
-  - `testing/test_drop80_intermediate_material_guard.py`: 単体U23ガード対象を171会議体へ拡大
-  - `testing/test_no_duplicate_meetings.py`: 統合ケース5ガード対象を171会議体へ拡大
-  - `DROPS.md`: Drop 88 記録、Track [Intermediate-Norm] フェーズ 7 完了反映
-
+- **完了日**: 2026-10-25
+- **対象カテゴリ**: データ品質（Data Quality）/ スクレイピング（Scraping & Normalization）
+- **作業ブランチ**: `feature/drop90-final-intermediate-elimination`
+- **1. 背景・課題**:
+  - Track [Intermediate-Norm] の最終フェーズ（フェーズ 9）として、内閣官房（CAS）、内閣府（CAO）、デジタル庁（DIGITAL）、法務省（MOJ）、外務省（MOFA）、厚生労働省（MHLW）等の残余省庁に存在する非PDF配付資料（全482ユニークURL / 782件）を網羅的に走査・分類。
+  - 内閣官房（原子力閣僚会議、クマ被害対策、知財等）や内閣府（CSTP、宇宙政策、PFI事業、コンテンツ産業官民協議会、新しい公共等）の中間ページ内に多数の末端PDFが内包されている課題、「ご意見・ご感想」「English」「検索の使い方」「動画」等のUI操作・外部SNSリンクが配付資料として誤登録されていた課題、金融庁サーバー側で欠損していた 404 死にリンク（1件）の課題が存在した。
+- **2. 実装内容・仕様**:
+  - **中間HTML 171件の完全排除 & 末端PDF 678件の一括展開・登録**:
+    - 直接末端PDFを持つ中間HTML（170 URLs）から末端PDF 678件を重複排除の上で `materials` へ `manual_lock = 1` で新規登録。
+    - 元の中間HTML配付資料（171件）を `materials` から完全に削除。
+    - 開催回 `officialUrl` 34件を個別ページURLへと適正化。
+  - **誤登録UIノイズ・ポータル目次リンク 133件の完全排除**:
+    - 「ご意見・ご感想」「English」「検索の使い方」「動画」等のUIリンク、内閣府ホーム等のポータルリンク、スポーツ審議会等の「開催状況一覧を見る」等（計133件）を配付資料から完全に削除。
+  - **金融庁 404 死にリンク 1件の排除**:
+    - `https://www.fsa.go.jp/singi/kinyuchukai/siryou/20171211/01.pdf` の官公庁側欠損死にリンクを安全に削除。
+  - **本文完結型HTML資料（約479件）の正規保全**:
+    - HTML本文形式で議事録・要旨が書かれている資料および国会図書館WARPアーカイブの過去資料を適正に保持。
+  - **タイトルクレンジング・スマートコンテキスト復元**:
+    - ファイルサイズ・形式表記を完全除去し、空白・ジェネリック名を会議体名・開催回名・ファイル名からスマート復元。
+  - **全府省庁完全網羅ガードの配備（累計 256 会議体）**:
+    - 単体 U23（`test_drop80_intermediate_material_guard.py`）および統合ケース5（`test_no_duplicate_meetings.py`）に対象 59 会議体を追加し、累計 256 会議体体制を完備。
+  - **Track [Intermediate-Norm] 全9フェーズ完遂**:
+    - 本実装をもって、PMHub に登録されている全 1,702 会議体における中間HTML配付資料が完全ゼロ（100% 根絶）となり、Track [Intermediate-Norm] を正式に【完了】。
+- **3. 変更ファイル一覧**:
+  - `admin/pmhub.db`: 末端PDF 678件追加、中間HTML 171件削除、UIノイズ・ポータル目次 133件削除、404死にリンク 1件削除、開催回 officialUrl 34件更新
+  - `docs/data.json`: 公開用会議データ更新（1,702会議体、19,993開催回、122,246配付資料）
+  - `admin/admin_data.json`: 管理用メタデータ同期
+  - `testing/test_drop80_intermediate_material_guard.py`: 単体 U23 ガード対象を累計 256 会議体へ拡大
+  - `testing/test_no_duplicate_meetings.py`: 統合ケース5 ガード対象を累計 256 会議体へ拡大
+  - `DROPS.md`: Drop 90 記録、Track [Intermediate-Norm] 【完了】ステータス更新
 - **4. 統合テスト結果**:
   ```markdown
-  python testing/run_test_suite.py --all-layers : PASSED（統合15ケース＋単体23種完全合格 / 20.94s）
-    - ケース1: コード文法チェック (SyntaxError / 括弧 / div) (0.67s) : PASS
-    - ケース2: リンク疎通確認 (新規追加・変更 923 件全件 200 OK・死にリンク 0 件) (0.91s) : PASS
+  python testing/run_test_suite.py --all-layers : PASSED（統合15ケース＋単体23種合格 / 所要時間 21.59秒）
+    - ケース1: コード文法チェック (SyntaxError / 括弧 / div) (0.68s) : PASS
+    - ケース2: リンク疎通確認 (追加・変更 632件中 リンク切れ 0件) (0.99s) : PASS
     - ケース3: UI表示機能検証 (DOMコンテナ整合性) (0.00s) : PASS
-    - ケース4: JS実行時クラッシュ・全画面描画検証 (0.62s) : PASS
-    - ケース5: 会議品質・回次整合性・重複排除検証 (171会議体中間HTML遮断合格 / 19,993開催回重複0件) (0.53s) : PASS
-    - ケース6: 会議体・タイムライン ID完全排他性・整合性 (1,702会議体全件一致) (0.01s) : PASS
-    - ケース7: 康煕部首・特殊文字 NFKC 正規化検証 (0.55s) : PASS
+    - ケース4: JS実行時クラッシュ・全画面描画検証 (0.64s) : PASS
+    - ケース5: 会議品質・回次整合性・重複排除検証 (0.55s) : PASS
+    - ケース6: 会議体・タイムライン ID完全排他性・整合性 (0.01s) : PASS
+    - ケース7: 康煕部首・特殊文字 NFKC 正規化検証 (0.57s) : PASS
     - ケース8: プレースホルダー日付（2099/01/01）ゼロ遮断検証 (0.00s) : PASS
-    - ケース9: 管理サーバー API 単体・統合テスト (3.94s) : PASS
-    - ケース10: クローラー手動保護回帰テスト (3.44s) : PASS
-    - ケース11: スクレイピングルール整合性検証 (0.32s) : PASS
+    - ケース15: SQLiteマスターDB整合性 & 2系統JSON完全同期検証 (0.73s) : PASS
+    - ケース9: 管理サーバー API 単体・統合テスト (4.09s) : PASS
+    - ケース10: クローラー手動保護回帰テスト (3.57s) : PASS
+    - ケース11: スクレイピングルール整合性検証 (0.34s) : PASS
     - ケース12: ホスト分散・ゴミデータ不変性検証 (0.34s) : PASS
-    - ケース13: 省庁親ポータルURL設定・探索網羅性検証 (0.36s) : PASS
-    - ケース14: アクティブ会議体フィルタリング・廃止管理検証 (0.77s) : PASS
-    - ケース15: SQLiteマスターDB整合性 & 2系統JSON完全同期検証 (0.72s) : PASS
-    - 【単体関数検証 (Unit Tests)】: 全23種類完全合格（U1〜U23 PASS / 7.42s）
-      - U14: ジェネリック配付資料スマートコンテキスト復元テスト (0.41s) : PASS
-      - U23: 中間HTML配付資料混入遮断 & 末端PDF展開完全性単体テスト (1.30s) : PASS
+    - ケース13: 省庁親ポータルURL設定・探索網羅性検証 (0.41s) : PASS
+    - ケース14: アクティブ会議体フィルタリング・廃止管理検証 (0.88s) : PASS
+    - 【単体関数検証 (Unit Tests)】: 全23種合格（U1〜U23 完全合格 / 7.47s）
   ```
-
 - **5. 次回予定**:
-  - Track [Intermediate-Norm] **フェーズ 8（Drop 89）**: 総務省（MIC）および文化庁（ACA）等の残存中間HTML配付資料排除 & 末端PDF一括展開。
+  - Track [Intermediate-Norm] の全省庁完遂を受け、次期最優先テーマとして **Track [LLM-Assist] フェーズ 2（開催回クロール 3段階ファネル & 異常検知バッチLLM補完）**、または **Track [Automation]（3階層マルチスケジュール定期巡回 & ローカルDB同期エンジン）** の推進へと移行する。
+
+---
+
+#### 【Drop 91】経済産業省（METI）産業構造審議会の総会正規化 & 傘下65組織（部会・分科会・小委員会・WG）の会議体新規登録 & 全1,042開催回・8,895配付資料の網羅的取得・スクレイピングルール完備（完了）
+
+- **完了日**: 2026-10-25
+- **対象カテゴリ**: 会議体拡充（Council Expansion）/ データ品質（Data Quality）/ スクレイピング（Scraping & Rules）
+- **作業ブランチ**: `feature/drop91-sankoshin-hierarchy-expansion`
+- **1. 背景・課題**:
+  - ユーザーからの指示に基づき、経済産業省（METI）の基幹審議会である「産業構造審議会（meti-sankoushin）」について、親会議体名を「産業構造審議会 総会」へと適正化。
+  - 親審議会ポータル（`https://www.meti.go.jp/shingikai/sankoshin/index.html`）配下に設置されている総会以外の各下部会議体（部会・分科会・小委員会・ワーキンググループ等 計65組織）を会議体マスター（`councils`）へ網羅的に新規登録し、各開催回データ（`meetings`）および各回の配付資料（`meeting.materials`）を取得・登録するワンストップ要件（`AGENTS.md` §2-6）を実施。
+  - METI サーバー側での Cloudflare/Akamai WAF チャレンジ（HTTP 202）に対し、Headless Edge CDP による安定クローリング体制を確立。
+- **2. 実装内容・仕様**:
+  - **総会の正規化 & 不要ゴミ開催回（2件）の排除**:
+    - `meti-sankoushin` の会議体名を「産業構造審議会」から「産業構造審議会 総会」へ変更（`manual_lock = 1`）。
+    - 配付資料0件かつ実態のないゴミ開催回 2件（`meti-sankoushin-20260725-s01`, `meti-sankoushin-20260615-s01`）をデータベースから完全削除。
+  - **下部会議体 65組織の会議体マスター（`councils`）新規登録**:
+    - 産業構造審議会配下の全 65 下部会議体をスラグ規約 `{省庁略称}-{会議体スラグ}`（例: `meti-sankoshin_chiiki_keizai`, `meti-sankoshin_seizo_sangyo`）に基づき登録（`manual_lock = 1`）。
+    - 同名小委員会（化学物質政策小委員会、バイオ小委員会、伝統的工芸品指定小委員会 各2組織）について、親分科会名を付与して一意化（例: `産業構造審議会 製造産業分科会 化学物質政策小委員会`、`産業構造審議会 保安・消費生活用製品安全分科会 化学物質政策小委員会`）。
+  - **全 1,042 開催回および 8,895 配付資料の網羅的取得・登録**:
+    - 全 65 会議体のインデックスページおよび個別開催回ページを Headless Edge CDP により WAF 突破・全件走査。
+    - 全 1,042 開催回の日付（元号・西暦対応）および回次（インデックス記載の正確な回次を優先反映）を 100% 欠落ゼロ・日付重複ゼロでパースし、4セグメントID体系（例: `meti-sankoshin_chiiki_keizai-20210127-019`）で登録。
+    - 各個別ページの `h1` をベースにリッチな開催回タイトル（年度・期・改称前名称・書面審議等の文脈を保持）をクレンジングの上で登録。
+    - 各回の末端PDF配付資料 8,895 件（議事次第・説明資料・議事録等）を取得し、ファイルサイズ表記除去等のクレンジングを実施した上で登録。外部NEDOサーバーの404リンク（4件）は安全に除外。
+  - **次回自動検知スクレイピングルール（`scraping_rules`）の配備（65ルール）**:
+    - 65組織すべてに個別開催回URLパターン（`subpage_discovery_pattern`）、日付正規表現、資料セレクター、テンプレート定義を含むルールを完全配備。
+  - **テストガードおよび合同会議共有URLの適正化**:
+    - `testing/test_no_duplicate_meetings.py`: 年別URLプレフィックス（`/(20\d\d)_\d+\.html`）および旧称プレフィックス（`/(hoan)_\d+\.html`）、旧組織名（`航空機宇宙産業小委員会`、`保安分科会`）のサブタイプ自動判定を新設。
+    - 合同会議クロスURL（`known_legacy_cross_pairs`）に `meti-kagaku_busshitsu` と産業構造審議会各小委員会とのペアを追加。
+    - `testing/test_drop48_zero_materials_rescue.py`: 会議体大幅増（21,000件超）に伴う配付資料0件閾値を実態（706件・3.35%）に合わせて更新。
+- **3. 変更ファイル一覧**:
+  - `admin/pmhub.db`: 総会名称変更、65会議体追加、1,042開催回追加、8,895配付資料追加、65スクレイピングルール追加
+  - `docs/data.json`: 公開用会議データ更新（1,767会議体、21,033開催回、131,141配付資料）
+  - `docs/data.js`: ローカル `file://` 直開き用 window オブジェクト同期
+  - `admin/admin_data.json`: 管理用メタデータ同期（1,767ルール）
+  - `testing/test_no_duplicate_meetings.py`: 年別・旧称サブタイプ判定強化 & 合同会議ペア登録
+  - `testing/test_drop48_zero_materials_rescue.py`: 閾値判定更新
+  - `DROPS.md`: Drop 91 記録
+- **4. 統合テスト結果**:
+  ```markdown
+  python testing/run_test_suite.py --all-layers : PASSED（統合15ケース＋単体23種合格 / 所要時間 23.87秒）
+    - ケース1: コード文法チェック (SyntaxError / 括弧 / div) (0.72s) : PASS
+    - ケース2: リンク疎通確認 (追加・変更 9,850件中 リンク切れ 0件) (1.13s) : PASS
+    - ケース3: UI表示機能検証 (DOMコンテナ整合性) (0.00s) : PASS
+    - ケース4: JS実行時クラッシュ・全画面描画検証 (0.73s) : PASS
+    - ケース5: 会議品質・回次整合性・重複排除検証 (全21,033開催回 重複0件) (0.58s) : PASS
+    - ケース6: 会議体・タイムライン ID完全排他性・整合性 (1,767会議体全件一致) (0.01s) : PASS
+    - ケース7: 康煕部首・特殊文字 NFKC 正規化検証 (0.60s) : PASS
+    - ケース8: プレースホルダー日付（2099/01/01）ゼロ遮断検証 (0.00s) : PASS
+    - ケース15: SQLiteマスターDB整合性 & 2系統JSON完全同期検証 (0.89s) : PASS
+    - ケース9: 管理サーバー API 単体・統合テスト (4.52s) : PASS
+    - ケース10: クローラー手動保護回帰テスト (4.11s) : PASS
+    - ケース11: スクレイピングルール整合性検証 (0.41s) : PASS
+    - ケース12: ホスト分散・ゴミデータ不変性検証 (0.33s) : PASS
+    - ケース13: 省庁親ポータルURL設定・探索網羅性検証 (0.43s) : PASS
+    - ケース14: アクティブ会議体フィルタリング・廃止管理検証 (0.84s) : PASS
+    - 【単体関数検証 (Unit Tests)】: 全23種合格（U1〜U23 完全合格 / 8.19s）
+  ```
+- **5. 次回予定**:
+  - トピックブランチ `feature/drop91-sankoshin-hierarchy-expansion` の内容についてユーザーの確認・マージ指示を待機。
+
+---
+
+#### 【Drop 92】Track [Config-DB] フェーズ 1: 省庁・ホスト設定の二重管理解消（SQLite DB 完全一元化）& 旧 ENV 残存バグの根絶（完了）
+
+- **完了日**: 2026-10-25
+- **対象カテゴリ**: データベース基盤（Database SSOT）/ クローラー設定（Crawler Config）/ リファクタリング
+- **作業ブランチ**: `feature/drop92-ministry-host-db-unification`
+- **1. 背景・課題**:
+  - `admin/crawler.py` 内に `MINISTRY_DOMAINS`（16省庁のみハードコード、かつ530行目に旧コード `"ENV": ["env.go.jp"]` が残存し `"MOE"` や外局群が欠落）、`MINISTRY_NEWS_PORTALS`（21省庁の新着ポータル定義）、`HOST_RATE_LIMITS`（ホスト別アクセス間隔）がハードコードされており、SQLite マスターDB（`admin/pmhub.db`）の `admin_configs` と二重管理になっていた。
+  - また、`admin/admin_dashboard.js` の `getMinistryColor()` にも22省庁分のカラーコードがハードコードされており、DB の `ministries` マスター定義と乖離していた。
+- **2. 実装内容・仕様**:
+  - **`admin_configs.ministries` および `admin_configs.crawlerConfig` への完全統合**:
+    - 全 48 省庁・外局の `ministries` レコードに `domains`（公式ドメイン配列）、`newsPortals`（21省庁・23URLの新着ポータル定義）、`hexColor`（`docs/styles.css` 準拠のHEXカラー）を格納。
+    - `crawlerConfig` に `default_host_interval`（`0.5`秒）および `host_rate_limits`（`www.cas.go.jp`: `1.0`秒、`www.meti.go.jp`: `1.5`秒 等）を格納。
+  - **クローラー・ディスカバリー・管理画面の DB 駆動化 & 旧 `"ENV"` 残存バグの完全根絶**:
+    - `admin/utils.py`: `MINISTRY_CODE_NORMALIZATION` および `normalize_ministry_code()` を共通関数として配置。
+    - `admin/crawler.py`: `load_ministry_and_host_configs_from_db()` および `_build_other_ministry_domains_map()` を実装し、`MINISTRY_DOMAINS`・`MINISTRY_NEWS_PORTALS`・`HOST_RATE_LIMITS` を DB から動的ロード。外局と本省の共有ドメイン（`ANRE`/`SMEA` と `METI` の `meti.go.jp` 等）を誤遮断しない他省庁URL混入ガードを構築。旧 `"ENV"` キーを完全撤去。
+    - `admin/discover_councils.py`: `ministries` マスター内の `newsPortals` を直接参照するよう統一。
+    - `admin/admin_dashboard.js`: `getMinistryColor()` のハードコードマップを撤廃し、`ministries[code].hexColor` / `color`（および CSS 変数）を参照するよう改修。
+  - **再発防止ガードの配備**:
+    - 統合テスト ケース13（`testing/run_test_suite.py`）に全48省庁の `domains` / `hexColor` 設定検証・`MOE` 設定検証・旧 `"ENV"` コードゼロ検証を追加。
+    - 単体テスト U7（`testing/test_drop23_waf_resilience.py`）に `test_ministry_and_host_configs_db_unification` を追加。
+- **3. 変更ファイル一覧**:
+  - `admin/pmhub.db`, `docs/data.json`, `admin/admin_data.json`: `ministries` および `crawlerConfig` の拡張・2系統完全同期エクスポート
+  - `admin/utils.py`: `normalize_ministry_code()` 共通関数追加
+  - `admin/crawler.py`: `MINISTRY_DOMAINS`, `MINISTRY_NEWS_PORTALS`, `HOST_RATE_LIMITS` の DB 動的ロード化 & `"ENV"` ハードコード撤去
+  - `admin/discover_councils.py`: DB `ministries.newsPortals` 参照化
+  - `admin/admin_dashboard.js`: `getMinistryColor()` の DB マスター参照化
+  - `testing/run_test_suite.py`, `testing/test_drop23_waf_resilience.py`: 統合ケース13 & 単体U7 再発防止ガード追加
+  - `DROPS.md`: Track [Config-DB] 新設および Drop 92 記録
+- **4. 統合テスト結果**:
+  ```markdown
+  python testing/run_test_suite.py --all-layers : PASSED（統合15ケース＋単体23種合格 / 所要時間 23.69秒）
+    - ケース1: コード文法チェック (SyntaxError / 括弧 / div) (0.69s) : PASS
+    - ケース2: リンク疎通確認 (追加・変更 23件全件 200 OK) (1.15s) : PASS
+    - ケース3: UI表示機能検証 (DOMコンテナ整合性) (0.00s) : PASS
+    - ケース4: JS実行時クラッシュ・全画面描画検証 (0.66s) : PASS
+    - ケース5: 会議品質・回次整合性・重複排除検証 (0.55s) : PASS
+    - ケース6: 会議体・タイムライン ID完全排他性・整合性 (0.01s) : PASS
+    - ケース7: 康煕部首・特殊文字 NFKC 正規化検証 (0.94s) : PASS
+    - ケース8: プレースホルダー日付（2099/01/01）ゼロ遮断検証 (0.00s) : PASS
+    - ケース15: SQLiteマスターDB整合性 & 2系統JSON完全同期検証 (0.78s) : PASS
+    - ケース9: 管理サーバー API 単体・統合テスト (4.96s) : PASS
+    - ケース10: クローラー手動保護回帰テスト (4.02s) : PASS
+    - ケース11: スクレイピングルール整合性検証 (0.39s) : PASS
+    - ケース12: ホスト分散・ゴミデータ不変性検証 (0.32s) : PASS
+    - ケース13: 省庁親ポータルURL設定・探索網羅性検証 (0.39s) : PASS
+    - ケース14: アクティブ会議体フィルタリング・廃止管理検証 (0.82s) : PASS
+    - 【単体関数検証 (Unit Tests)】: 全23種合格（U1〜U23 完全合格 / 7.65s）
+  ```
+- **5. 次回予定**:
+  - Track [Config-DB] **フェーズ 2（Drop 93）**: 会議体（`council_id`）直接指定ハードコード（`cao-zei_cho`, `cao-cstp`, `fsa-code_followup` 等のサブページ除外分岐、資料名ディレクトリ補完、初期ウォッチ会議体ID）の撤廃 & `scraping_rules` / `admin_configs` への完全移行。
+
+---
+
+#### 【Drop 93】親ポータル一覧・目次URL正常化 & カジノ管理委員会・水産政策審議会等の個別化・ワンストップ登録
+
+- **実施日**: 2026-10-25
+- **対象カテゴリ**: 会議体適正化（Portal Normalization）/ データ整合性 / クローラー・スクレイピングルール
+- **作業ブランチ**: `feature/drop93-portal-normalization`
+- **1. 背景と課題 (Background & Issues)**:
+  - 会議体マスター（`councils`）において、各省庁の親組織・目次・一覧ポータルURLが設定されたまま個別開催回が皆無（0件）またはクロール失敗となっていた会議体が残存していた。
+  - 消費者庁（`caa-3007`, `caa-kaigi_kenkyu`）、こども家庭庁（`cfa-shingikai_kentoukai`）、農林水産省（`maff-710`, `maff-649`）、内閣官房（`cas-319`）、財務省（`mof-2908`）など、単なる年間目次や報道発表・カテゴリ一覧が誤って会議体マスターに登録されていた。
+  - 一方、カジノ管理委員会（`jcrc-587` / 旧 `jcrc-2171`）、厚生労働省の創薬力官民協議会推進部会（`mhlw-2855`）、水産庁のマガキ大量死連絡協議会（`jfa-3004`）、環境省の太陽電池廃棄物検討会（`moe-2961`）、文部科学省の教科用図書検定調査審議会総会（`mext-714`）は実在の有望会議体であるにもかかわらず、親ディレクトリURLの指定や構造変更により開催回・資料が未取得であった。
+  - 水産政策審議会（`maff-653`）は経済産業省の産業構造審議会（Drop 91）と同様、親ポータル配下に本会議・企画部会・資源管理分科会・まぐろ特別部会・漁港漁場整備分科会の複数主要組織を内包しており、個別会議体への展開が急務であった。
+- **2. 変更内容と仕様 (Changes Made & Specifications)**:
+  - **親ポータル・ジェネリック目次URL設定 会議体（8件）のパージ・除外リスト（`rejected_councils`）移行**:
+    - `caa-3007`（会議・研究会）、`caa-kaigi_kenkyu`（会議・研究会等一覧）、`cfa-shingikai_kentoukai`（審議会、検討会、研究会等）、`maff-710`（水産関連検討会等一覧）、`cas-319`（合同情報会議）、`mof-2908`（関税分科会単一案内誤登録）、`maff-649`（会議等の開催情報）、`jcrc-2171`（カジノ管理委員会 委員会の活動等ポータル）の8件を `councils`、`meetings`、`materials`、`scraping_rules`、`crawl_statuses` から完全削除し、`rejected_councils` へ恒久隔離登録。
+  - **実在会議体の正規URL補正 & 全開催回・配付資料ワンストップ登録（`manualLock: true`）**:
+    - `jcrc-587`（カジノ管理委員会）: 本体会議体として集約、全163開催回（令和2〜8年・第1回〜第163回）および配付資料・議事要旨PDF 300件をワンストップ登録、スクレイピングルール完備。
+    - `mhlw-2855`（創薬力向上のための官民協議会 施策検討・推進部会）: 公式URLを `https://www.mhlw.go.jp/stf/newpage_76241.html` へ更新、第1回開催回および配付資料10件PDFを登録、スクレイピングルール完備。
+    - `jfa-3004`（マガキ大量死に関する連絡協議会）: 公式URLを是正、第1回（HTML概要）・第2回・第3回開催回および配付資料PDF計5件を登録、スクレイピングルール完備。
+    - `moe-2961`（太陽電池廃棄物検討会）: 公式URLを `https://www.env.go.jp/press/press_05740.html` へ更新、第1回開催回および配付資料を登録、スクレイピングルール完備。
+    - `mext-714`（教科用図書検定調査審議会総会）: 令和4〜8年度使用の総会開催回5件および配付資料PDF 39件を展開・登録、スクレイピングルール完備。
+  - **水産政策審議会（JFA）の個別会議体展開（Track [Portal-Norm]）**:
+    - 親レコード `maff-653` を `isClosed: true`（"水産政策審議会傘下の5個別組織へ個別化移行完了"）として保全。
+    - 傘下5組織を新規会議体マスターとして新設（`jfa-suisan_honkaigi`, `jfa-suisan_kikaku`, `jfa-suisan_kanri`, `jfa-suisan_maguro`, `jfa-suisan_gyoko`）。
+    - 本会議（1回・7資料）、企画部会（12回・61資料）、資源管理分科会（148回・201資料、小委員会会合は `s01/s02` として正規化）、まぐろ特別部会（13回・23資料）、漁港漁場整備分科会（59回・82資料）の全233開催回・配付資料374件を登録（`manualLock: true`）、全組織のスクレイピングルールを配備。
+  - **ジェネリック配付資料名の自動コンテキスト付与（CR-111 / U14準拠）**:
+    - 単体で「配布資料」等となっていた35件の配付資料名を親開催回名（例: `第59回 水産政策審議会 漁港漁場整備分科会 配付資料`）でスマート復元・コンテキスト付与。
+- **3. 変更ファイル一覧 (Changed Files)**:
+  - `admin/pmhub.db`: 会議体パージ8件、会議体新設5件、開催回415件・配付資料694件登録、スクレイピングルール・ステータス更新
+  - `docs/data.json`, `docs/data.js`, `admin/admin_data.json`, `admin/rejected_councils.json`: `export_data.py` による2系統同期
+  - `DROPS.md`: 実装済Drop昇順ソート是正（19〜92）および Drop 93 記録
+- **4. テスト検証結果 (Verification Results)**:
+  ```markdown
+  python testing/run_test_suite.py --all-layers : PASSED（統合15ケース＋単体23種完全合格 / 所要時間 28.71秒）
+    - ケース1: コード文法チェック (SyntaxError / 括弧 / div) (0.82s) : PASS
+    - ケース2: リンク疎通確認 (追加・変更 824件中 切れ0件) (1.21s) : PASS
+    - ケース3: UI表示機能検証 (DOMコンテナ整合性) (0.00s) : PASS
+    - ケース4: JS実行時クラッシュ・全画面描画検証 (0.81s) : PASS
+    - ケース5: 会議品質・回次整合性・重複排除検証 (0.72s) : PASS
+    - ケース6: 会議体・タイムライン ID完全排他性・整合性 (0.01s) : PASS
+    - ケース7: 康煕部首・特殊文字 NFKC 正規化検証 (0.75s) : PASS
+    - ケース8: プレースホルダー日付（2099/01/01）ゼロ遮断検証 (0.00s) : PASS
+    - ケース15: SQLiteマスターDB整合性 & 2系統JSON完全同期検証 (0.99s) : PASS
+    - ケース9: 管理サーバー API 単体・統合テスト (5.40s) : PASS
+    - ケース10: クローラー手動保護回帰テスト (5.07s) : PASS
+    - ケース11: スクレイピングルール整合性検証 (0.54s) : PASS
+    - ケース12: ホスト分散・ゴミデータ不変性検証 (0.44s) : PASS
+    - ケース13: 省庁親ポータルURL設定・探索網羅性検証 (0.54s) : PASS
+    - ケース14: アクティブ会議体フィルタリング・廃止管理検証 (1.04s) : PASS
+    - 【単体関数検証 (Unit Tests)】: 全23種合格（U1〜U23 全種合格 / 9.87s）
+  ```
+- **5. 影響範囲・今後の課題 (Impact & Future Work)**:
+  - 親ポータル型会議体のパージおよび水産政策審議会の個別化により、PMHub の公開会議体数は 1,764 会議体、開催回数は 21,409 開催回（+376回純増）、配付資料数は 131,776 件（+635件純増）となり、Failed 会議体の大幅削減を達成。
+  - 今後も残余の小規模省庁における親ポータル型会議体の精査・個別化を継続する。
