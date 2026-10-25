@@ -1476,6 +1476,15 @@
     "reason": "ディスカバリー精査: ポータル一覧・特定開催回・報告書・アンカー重複のため却下"
   },
   {
+    "id": "maff-2236",
+    "name": "審議会",
+    "ministry": "MAFF",
+    "category": "COUNCIL",
+    "officialUrl": "https://www.maff.go.jp/j/council/index.html",
+    "rejectedAt": "2026-10-25 06:16:38",
+    "reason": "親組織一覧ポータルから誤生成されたジェネリック会議体（飼料分科会等の重複保持）のため除外"
+  },
+  {
     "id": "maff-670",
     "name": "林野部会",
     "ministry": "MAFF",

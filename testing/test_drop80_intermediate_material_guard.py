@@ -188,7 +188,26 @@ class TestDrop80IntermediateMaterialGuard(unittest.TestCase):
             'smea-1310',
             'smea-1311',
             'smea-1620',
-            'smea-keiei_shien_bunkakai'
+            'smea-keiei_shien_bunkakai',
+            # 農林水産省・林野庁 (Drop 87: 10会議体)
+            'maff-659',
+            'maff-656',
+            'maff-704',
+            'maff-687',
+            'maff-nougyogyou_hoken',
+            'maff-shokuryou_sangyou_bukai',
+            'maff-shokuryo_nogyo',
+            'maff-nougyou_sizai_shingikai',
+            'maff-sizai_noyaku_bunkakai',
+            'rinya-1284',
+            # 国土交通省 (Drop 87: 7会議体)
+            'mlit-meeting',
+            'mlit-infra_management_wg',
+            'mlit-energy_anzenhosho_wg',
+            'mlit-amami_shinkou',
+            'mlit-dokuritsu_gyosei_hyoka',
+            'mlit-kokudo_shingikai',
+            'mlit-tochi_kantei'
         }
         
         violations = []
