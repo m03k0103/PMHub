@@ -698,3 +698,17 @@ def normalize_url_for_matching(url):
     except Exception:
         return u.rstrip('/')
 
+
+
+# 省庁コードの旧表記・別名正規化マップ (Drop 92: ENV -> MOE 等の一元正規化)
+MINISTRY_CODE_NORMALIZATION = {
+    "ENV": "MOE",
+}
+
+
+def normalize_ministry_code(code):
+    """省庁コードを標準コードへ正規化する（例: 'ENV' / 'env' -> 'MOE'）"""
+    if not code:
+        return ""
+    c = str(code).upper().strip()
+    return MINISTRY_CODE_NORMALIZATION.get(c, c)

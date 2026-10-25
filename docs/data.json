@@ -12,7 +12,26 @@
         "https://www8.cao.go.jp/pfi/iinkai/iinkai_index.html",
         "https://www.cao.go.jp/consumer/iinkai/index.html"
       ],
-      "hasCouncils": true
+      "hasCouncils": true,
+      "domains": [
+        "cao.go.jp",
+        "scj.go.jp",
+        "cas.go.jp",
+        "kantei.go.jp",
+        "bousai.go.jp",
+        "chisou.go.jp",
+        "gender.go.jp",
+        "aec.go.jp",
+        "koeki-info.go.jp",
+        "npo-homepage.go.jp"
+      ],
+      "hexColor": "#a855f7",
+      "newsPortals": [
+        {
+          "url": "https://www.cao.go.jp/press/houdou.html",
+          "type": "news_feed"
+        }
+      ]
     },
     "CAS": {
       "name": "内閣官房",
@@ -22,7 +41,23 @@
       "councilsUrls": [
         "https://www.cas.go.jp/jp/seisakukaigi/"
       ],
-      "hasCouncils": true
+      "hasCouncils": true,
+      "domains": [
+        "cas.go.jp",
+        "kantei.go.jp",
+        "cao.go.jp",
+        "bousai.go.jp",
+        "chisou.go.jp",
+        "cyber.go.jp",
+        "gov-online.go.jp"
+      ],
+      "hexColor": "#4f46e5",
+      "newsPortals": [
+        {
+          "url": "https://www.cas.go.jp/jp/houdou/index.html",
+          "type": "news_feed"
+        }
+      ]
     },
     "CLB": {
       "name": "内閣法制局",
@@ -30,7 +65,11 @@
       "color": "var(--color-clb)",
       "officialUrl": "https://www.clb.go.jp/",
       "councilsUrls": [],
-      "hasCouncils": false
+      "hasCouncils": false,
+      "domains": [
+        "clb.go.jp"
+      ],
+      "hexColor": "#475569"
     },
     "JINJI": {
       "name": "人事院",
@@ -38,7 +77,11 @@
       "color": "var(--color-jinji)",
       "officialUrl": "https://www.jinji.go.jp/",
       "councilsUrls": [],
-      "hasCouncils": false
+      "hasCouncils": false,
+      "domains": [
+        "jinji.go.jp"
+      ],
+      "hexColor": "#475569"
     },
     "KUNAICHO": {
       "name": "宮内庁",
@@ -46,7 +89,11 @@
       "color": "var(--color-kunaicho)",
       "officialUrl": "https://www.kunaicho.go.jp/",
       "councilsUrls": [],
-      "hasCouncils": false
+      "hasCouncils": false,
+      "domains": [
+        "kunaicho.go.jp"
+      ],
+      "hexColor": "#475569"
     },
     "DIGITAL": {
       "name": "デジタル庁",
@@ -56,7 +103,18 @@
       "councilsUrls": [
         "https://www.digital.go.jp/councils"
       ],
-      "hasCouncils": true
+      "hasCouncils": true,
+      "domains": [
+        "digital.go.jp",
+        "cio.go.jp"
+      ],
+      "hexColor": "#06b6d4",
+      "newsPortals": [
+        {
+          "url": "https://www.digital.go.jp/news",
+          "type": "news_feed"
+        }
+      ]
     },
     "CFA": {
       "name": "こども家庭庁",
@@ -66,7 +124,17 @@
       "councilsUrls": [
         "https://www.cfa.go.jp/councils"
       ],
-      "hasCouncils": true
+      "hasCouncils": true,
+      "domains": [
+        "cfa.go.jp"
+      ],
+      "hexColor": "#ec4899",
+      "newsPortals": [
+        {
+          "url": "https://www.cfa.go.jp/news",
+          "type": "news_feed"
+        }
+      ]
     },
     "RA": {
       "name": "復興庁",
@@ -74,7 +142,11 @@
       "color": "var(--color-ra)",
       "officialUrl": "https://www.reconstruction.go.jp",
       "councilsUrls": [],
-      "hasCouncils": false
+      "hasCouncils": false,
+      "domains": [
+        "reconstruction.go.jp"
+      ],
+      "hexColor": "#eab308"
     },
     "JFTC": {
       "name": "公正取引委員会",
@@ -82,7 +154,11 @@
       "color": "var(--color-jftc)",
       "officialUrl": "https://www.jftc.go.jp/",
       "councilsUrls": [],
-      "hasCouncils": false
+      "hasCouncils": false,
+      "domains": [
+        "jftc.go.jp"
+      ],
+      "hexColor": "#6366f1"
     },
     "NPSC": {
       "name": "国家公安委員会",
@@ -90,7 +166,12 @@
       "color": "var(--color-npsc)",
       "officialUrl": "https://www.npsc.go.jp",
       "councilsUrls": [],
-      "hasCouncils": false
+      "hasCouncils": false,
+      "domains": [
+        "npsc.go.jp",
+        "npa.go.jp"
+      ],
+      "hexColor": "#1d4ed8"
     },
     "NPA": {
       "name": "警察庁",
@@ -100,7 +181,12 @@
       "councilsUrls": [
         "https://www.npa.go.jp/policies/council/index.html"
       ],
-      "hasCouncils": true
+      "hasCouncils": true,
+      "domains": [
+        "npa.go.jp",
+        "npsc.go.jp"
+      ],
+      "hexColor": "#1e3a8a"
     },
     "PPC": {
       "name": "個人情報保護委員会",
@@ -110,7 +196,18 @@
       "councilsUrls": [
         "https://www.ppc.go.jp/enforcement/minutes/"
       ],
-      "hasCouncils": true
+      "hasCouncils": true,
+      "domains": [
+        "ppc.go.jp"
+      ],
+      "hexColor": "#0891b2",
+      "newsPortals": [
+        {
+          "url": "https://www.ppc.go.jp/news/press/",
+          "type": "deep_portal",
+          "subpage_pattern": "press/\\d{4}"
+        }
+      ]
     },
     "JCRC": {
       "name": "カジノ管理委員会",
@@ -120,7 +217,11 @@
       "councilsUrls": [
         "https://www.jcrc.go.jp/activity/holding.html"
       ],
-      "hasCouncils": true
+      "hasCouncils": true,
+      "domains": [
+        "jcrc.go.jp"
+      ],
+      "hexColor": "#475569"
     },
     "FSA": {
       "name": "金融庁",
@@ -133,7 +234,18 @@
         "https://www.fsa.go.jp/singi/singi_kigyou/top_gijiroku.html",
         "https://www.fsa.go.jp/cpaaob/shinsakai/index.html"
       ],
-      "hasCouncils": true
+      "hasCouncils": true,
+      "domains": [
+        "fsa.go.jp"
+      ],
+      "hexColor": "#2563eb",
+      "newsPortals": [
+        {
+          "url": "https://www.fsa.go.jp/news/index.html",
+          "type": "deep_portal",
+          "subpage_pattern": "r\\d+_news_menu\\.html"
+        }
+      ]
     },
     "CAA": {
       "name": "消費者庁",
@@ -143,7 +255,17 @@
       "councilsUrls": [
         "https://www.caa.go.jp/policies/council/"
       ],
-      "hasCouncils": true
+      "hasCouncils": true,
+      "domains": [
+        "caa.go.jp"
+      ],
+      "hexColor": "#f97316",
+      "newsPortals": [
+        {
+          "url": "https://www.caa.go.jp/notice/",
+          "type": "news_feed"
+        }
+      ]
     },
     "FSC": {
       "name": "食品安全委員会",
@@ -153,7 +275,17 @@
       "councilsUrls": [
         "https://www.fsc.go.jp/senmon/"
       ],
-      "hasCouncils": true
+      "hasCouncils": true,
+      "domains": [
+        "fsc.go.jp"
+      ],
+      "hexColor": "#16a34a",
+      "newsPortals": [
+        {
+          "url": "https://www.fsc.go.jp/",
+          "type": "news_feed"
+        }
+      ]
     },
     "MIC": {
       "name": "総務省",
@@ -164,7 +296,17 @@
         "https://www.soumu.go.jp/menu_sosiki/singi/",
         "https://www.soumu.go.jp/main_sosiki/joho_tsusin/policyreports/joho_tsusin/index.html"
       ],
-      "hasCouncils": true
+      "hasCouncils": true,
+      "domains": [
+        "soumu.go.jp"
+      ],
+      "hexColor": "#f43f5e",
+      "newsPortals": [
+        {
+          "url": "https://www.soumu.go.jp/menu_news/s-news/index.html",
+          "type": "news_feed"
+        }
+      ]
     },
     "CCAC": {
       "name": "公害等調整委員会",
@@ -172,7 +314,11 @@
       "color": "var(--color-ccac)",
       "officialUrl": "https://www.soumu.go.jp/kouchoi/",
       "councilsUrls": [],
-      "hasCouncils": false
+      "hasCouncils": false,
+      "domains": [
+        "soumu.go.jp"
+      ],
+      "hexColor": "#475569"
     },
     "FDMA": {
       "name": "消防庁",
@@ -182,7 +328,18 @@
       "councilsUrls": [
         "https://www.fdma.go.jp/singi_kento/kento/"
       ],
-      "hasCouncils": true
+      "hasCouncils": true,
+      "domains": [
+        "fdma.go.jp",
+        "soumu.go.jp"
+      ],
+      "hexColor": "#e11d48",
+      "newsPortals": [
+        {
+          "url": "https://www.fdma.go.jp/pressrelease/",
+          "type": "news_feed"
+        }
+      ]
     },
     "MOJ": {
       "name": "法務省",
@@ -194,7 +351,21 @@
         "https://www.moj.go.jp/kentoukai_index.html",
         "https://www.moj.go.jp/sonota_index.html"
       ],
-      "hasCouncils": true
+      "hasCouncils": true,
+      "domains": [
+        "moj.go.jp"
+      ],
+      "hexColor": "#64748b",
+      "newsPortals": [
+        {
+          "url": "https://www.moj.go.jp/list_info.html",
+          "type": "news_feed"
+        },
+        {
+          "url": "https://www.moj.go.jp/press_index.html",
+          "type": "news_feed"
+        }
+      ]
     },
     "ISA": {
       "name": "出入国在留管理庁",
@@ -204,7 +375,12 @@
       "councilsUrls": [
         "https://www.moj.go.jp/isa/policies/conference/seisaku_index.html"
       ],
-      "hasCouncils": true
+      "hasCouncils": true,
+      "domains": [
+        "moj.go.jp",
+        "isa.go.jp"
+      ],
+      "hexColor": "#475569"
     },
     "KOUANSHIN": {
       "name": "公安審査委員会",
@@ -212,7 +388,11 @@
       "color": "var(--color-kouanshin)",
       "officialUrl": "https://www.moj.go.jp/kouanshin/kouanshinsa_index.html",
       "councilsUrls": [],
-      "hasCouncils": false
+      "hasCouncils": false,
+      "domains": [
+        "moj.go.jp"
+      ],
+      "hexColor": "#475569"
     },
     "PSIA": {
       "name": "公安調査庁",
@@ -220,7 +400,11 @@
       "color": "var(--color-psia)",
       "officialUrl": "https://www.moj.go.jp/psia/",
       "councilsUrls": [],
-      "hasCouncils": false
+      "hasCouncils": false,
+      "domains": [
+        "moj.go.jp"
+      ],
+      "hexColor": "#475569"
     },
     "MOFA": {
       "name": "外務省",
@@ -230,7 +414,11 @@
       "councilsUrls": [
         "https://www.mofa.go.jp/mofaj/annai/shingikai/"
       ],
-      "hasCouncils": true
+      "hasCouncils": true,
+      "domains": [
+        "mofa.go.jp"
+      ],
+      "hexColor": "#0284c7"
     },
     "MOF": {
       "name": "財務省",
@@ -240,7 +428,18 @@
       "councilsUrls": [
         "https://www.mof.go.jp/about_mof/councils/"
       ],
-      "hasCouncils": true
+      "hasCouncils": true,
+      "domains": [
+        "mof.go.jp"
+      ],
+      "hexColor": "#3b82f6",
+      "newsPortals": [
+        {
+          "url": "https://www.mof.go.jp/public_relations/whats_new/index.htm",
+          "type": "deep_portal",
+          "subpage_pattern": "whats_new/\\d{6}\\.html"
+        }
+      ]
     },
     "NTA": {
       "name": "国税庁",
@@ -250,7 +449,12 @@
       "councilsUrls": [
         "https://www.nta.go.jp/about/council/kenkyu.htm"
       ],
-      "hasCouncils": true
+      "hasCouncils": true,
+      "domains": [
+        "nta.go.jp",
+        "mof.go.jp"
+      ],
+      "hexColor": "#475569"
     },
     "MEXT": {
       "name": "文部科学省",
@@ -260,7 +464,17 @@
       "councilsUrls": [
         "https://www.mext.go.jp/b_menu/shingi/main_b5.htm"
       ],
-      "hasCouncils": true
+      "hasCouncils": true,
+      "domains": [
+        "mext.go.jp"
+      ],
+      "hexColor": "#d946ef",
+      "newsPortals": [
+        {
+          "url": "https://www.mext.go.jp/b_menu/houdou/index.htm",
+          "type": "news_feed"
+        }
+      ]
     },
     "JSA": {
       "name": "スポーツ庁",
@@ -270,7 +484,11 @@
       "councilsUrls": [
         "https://www.mext.go.jp/sports/b_menu/shingi/"
       ],
-      "hasCouncils": true
+      "hasCouncils": true,
+      "domains": [
+        "mext.go.jp"
+      ],
+      "hexColor": "#475569"
     },
     "ACA": {
       "name": "文化庁",
@@ -283,7 +501,12 @@
         "https://www.bunka.go.jp/seisaku/bunkashingikai/kokugo/",
         "https://www.bunka.go.jp/seisaku/bunkashingikai/bunkazai/"
       ],
-      "hasCouncils": true
+      "hasCouncils": true,
+      "domains": [
+        "bunka.go.jp",
+        "mext.go.jp"
+      ],
+      "hexColor": "#475569"
     },
     "MHLW": {
       "name": "厚生労働省",
@@ -294,7 +517,25 @@
         "https://www.mhlw.go.jp/stf/shingi/indexshingi.html",
         "https://www.mhlw.go.jp/stf/shingi/indexshingiother_129216.html"
       ],
-      "hasCouncils": true
+      "hasCouncils": true,
+      "domains": [
+        "mhlw.go.jp"
+      ],
+      "hexColor": "#f59e0b",
+      "newsPortals": [
+        {
+          "url": "https://www.mhlw.go.jp/stf/new-info/",
+          "type": "news_feed"
+        },
+        {
+          "url": "https://www.mhlw.go.jp/stf/new-info/shingi.html",
+          "type": "news_feed"
+        },
+        {
+          "url": "https://www.mhlw.go.jp/stf/shingi/indexshingi.html",
+          "type": "mhlw_indexshingi"
+        }
+      ]
     },
     "CLRC": {
       "name": "中央労働委員会",
@@ -302,7 +543,11 @@
       "color": "var(--color-clrc)",
       "officialUrl": "https://www.mhlw.go.jp/churoi/",
       "councilsUrls": [],
-      "hasCouncils": false
+      "hasCouncils": false,
+      "domains": [
+        "mhlw.go.jp"
+      ],
+      "hexColor": "#475569"
     },
     "MAFF": {
       "name": "農林水産省",
@@ -313,7 +558,17 @@
         "https://www.maff.go.jp/j/council/",
         "https://www.maff.go.jp/j/study/"
       ],
-      "hasCouncils": true
+      "hasCouncils": true,
+      "domains": [
+        "maff.go.jp"
+      ],
+      "hexColor": "#16a34a",
+      "newsPortals": [
+        {
+          "url": "https://www.maff.go.jp/j/press/index.html",
+          "type": "news_feed"
+        }
+      ]
     },
     "RINYA": {
       "name": "林野庁",
@@ -323,7 +578,18 @@
       "councilsUrls": [
         "https://www.rinya.maff.go.jp/j/kouhou/singikai.html"
       ],
-      "hasCouncils": true
+      "hasCouncils": true,
+      "domains": [
+        "rinya.maff.go.jp",
+        "maff.go.jp"
+      ],
+      "hexColor": "#475569",
+      "newsPortals": [
+        {
+          "url": "https://www.rinya.maff.go.jp/j/press/",
+          "type": "news_feed"
+        }
+      ]
     },
     "JFA": {
       "name": "水産庁",
@@ -334,7 +600,18 @@
         "https://www.jfa.maff.go.jp/j/council/",
         "https://www.jfa.maff.go.jp/j/study/"
       ],
-      "hasCouncils": true
+      "hasCouncils": true,
+      "domains": [
+        "jfa.maff.go.jp",
+        "maff.go.jp"
+      ],
+      "hexColor": "#475569",
+      "newsPortals": [
+        {
+          "url": "https://www.jfa.maff.go.jp/j/press/index.html",
+          "type": "news_feed"
+        }
+      ]
     },
     "METI": {
       "name": "経済産業省",
@@ -346,7 +623,17 @@
         "https://www.meti.go.jp/shingikai/energy_environment/",
         "https://www.meti.go.jp/shingikai/sankoshin/index.html"
       ],
-      "hasCouncils": true
+      "hasCouncils": true,
+      "domains": [
+        "meti.go.jp"
+      ],
+      "hexColor": "#10b981",
+      "newsPortals": [
+        {
+          "url": "https://www.meti.go.jp/press/index.html",
+          "type": "news_feed"
+        }
+      ]
     },
     "ANRE": {
       "name": "資源エネルギー庁",
@@ -358,7 +645,12 @@
         "https://www.enecho.meti.go.jp/committee/studygroup/",
         "https://www.meti.go.jp/shingikai/energy_environment/"
       ],
-      "hasCouncils": true
+      "hasCouncils": true,
+      "domains": [
+        "enecho.meti.go.jp",
+        "meti.go.jp"
+      ],
+      "hexColor": "#475569"
     },
     "JPO": {
       "name": "特許庁",
@@ -366,7 +658,12 @@
       "color": "var(--color-jpo)",
       "officialUrl": "https://www.jpo.go.jp/index.html",
       "councilsUrls": [],
-      "hasCouncils": false
+      "hasCouncils": false,
+      "domains": [
+        "jpo.go.jp",
+        "meti.go.jp"
+      ],
+      "hexColor": "#475569"
     },
     "SMEA": {
       "name": "中小企業庁",
@@ -377,7 +674,12 @@
         "https://www.chusho.meti.go.jp/koukai/shingikai/",
         "https://www.chusho.meti.go.jp/koukai/kenkyukai/index.html"
       ],
-      "hasCouncils": true
+      "hasCouncils": true,
+      "domains": [
+        "chusho.meti.go.jp",
+        "meti.go.jp"
+      ],
+      "hexColor": "#475569"
     },
     "MLIT": {
       "name": "国土交通省",
@@ -387,7 +689,17 @@
       "councilsUrls": [
         "https://www.mlit.go.jp/policy/shingikai/shingikaiList.html"
       ],
-      "hasCouncils": true
+      "hasCouncils": true,
+      "domains": [
+        "mlit.go.jp"
+      ],
+      "hexColor": "#0d9488",
+      "newsPortals": [
+        {
+          "url": "https://www.mlit.go.jp/report/press/index.html",
+          "type": "meta_refresh"
+        }
+      ]
     },
     "JTA": {
       "name": "観光庁",
@@ -395,7 +707,11 @@
       "color": "var(--color-jta)",
       "officialUrl": "https://www.mlit.go.jp/kankocho/index.html",
       "councilsUrls": [],
-      "hasCouncils": false
+      "hasCouncils": false,
+      "domains": [
+        "mlit.go.jp"
+      ],
+      "hexColor": "#475569"
     },
     "JMA": {
       "name": "気象庁",
@@ -403,7 +719,12 @@
       "color": "var(--color-jma)",
       "officialUrl": "https://www.jma.go.jp/jma/index.html",
       "councilsUrls": [],
-      "hasCouncils": false
+      "hasCouncils": false,
+      "domains": [
+        "jma.go.jp",
+        "mlit.go.jp"
+      ],
+      "hexColor": "#475569"
     },
     "JTSB": {
       "name": "運輸安全委員会",
@@ -411,7 +732,11 @@
       "color": "var(--color-jtsb)",
       "officialUrl": "https://www.mlit.go.jp/jtsb/index.html",
       "councilsUrls": [],
-      "hasCouncils": false
+      "hasCouncils": false,
+      "domains": [
+        "mlit.go.jp"
+      ],
+      "hexColor": "#475569"
     },
     "JCG": {
       "name": "海上保安庁",
@@ -419,7 +744,12 @@
       "color": "var(--color-jcg)",
       "officialUrl": "https://www.kaiho.mlit.go.jp/",
       "councilsUrls": [],
-      "hasCouncils": false
+      "hasCouncils": false,
+      "domains": [
+        "kaiho.mlit.go.jp",
+        "mlit.go.jp"
+      ],
+      "hexColor": "#475569"
     },
     "MOE": {
       "name": "環境省",
@@ -430,7 +760,17 @@
         "https://www.env.go.jp/council/b_info.html",
         "https://www.env.go.jp/council/sonota.html"
       ],
-      "hasCouncils": false
+      "hasCouncils": false,
+      "domains": [
+        "env.go.jp"
+      ],
+      "hexColor": "#84cc16",
+      "newsPortals": [
+        {
+          "url": "https://www.env.go.jp/press/index.html",
+          "type": "news_feed"
+        }
+      ]
     },
     "NRA": {
       "name": "原子力規制委員会",
@@ -440,7 +780,19 @@
       "councilsUrls": [
         "https://www.nra.go.jp/Selection/meeting_index.html"
       ],
-      "hasCouncils": true
+      "hasCouncils": true,
+      "domains": [
+        "nra.go.jp",
+        "da.nra.go.jp"
+      ],
+      "hexColor": "#dc2626",
+      "newsPortals": [
+        {
+          "url": "https://www.nra.go.jp/news/index.html",
+          "type": "deep_portal",
+          "subpage_pattern": "news/\\d{6}\\.html"
+        }
+      ]
     },
     "MOD": {
       "name": "防衛省",
@@ -450,7 +802,17 @@
       "councilsUrls": [
         "https://www.mod.go.jp/j/policy/agenda/meeting/"
       ],
-      "hasCouncils": true
+      "hasCouncils": true,
+      "domains": [
+        "mod.go.jp"
+      ],
+      "hexColor": "#475569",
+      "newsPortals": [
+        {
+          "url": "https://www.mod.go.jp/j/press/news/index.html",
+          "type": "news_feed"
+        }
+      ]
     },
     "ATLA": {
       "name": "防衛装備庁",
@@ -458,7 +820,11 @@
       "color": "var(--color-atla)",
       "officialUrl": "https://www.mod.go.jp/atla/",
       "councilsUrls": [],
-      "hasCouncils": false
+      "hasCouncils": false,
+      "domains": [
+        "mod.go.jp"
+      ],
+      "hexColor": "#475569"
     },
     "BOAJ": {
       "name": "会計検査院",
@@ -466,7 +832,11 @@
       "color": "var(--color-boaj)",
       "officialUrl": "https://www.jbaudit.go.jp",
       "councilsUrls": [],
-      "hasCouncils": false
+      "hasCouncils": false,
+      "domains": [
+        "jbaudit.go.jp"
+      ],
+      "hexColor": "#475569"
     }
   },
   "councils": [

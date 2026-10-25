@@ -32914,7 +32914,16 @@
     "ministryExcludeKeywords": {}
   },
   "crawlerConfig": {
-    "llm_mode": true
+    "llm_mode": true,
+    "default_host_interval": 0.5,
+    "host_rate_limits": {
+      "www.cas.go.jp": 1.0,
+      "cas.go.jp": 1.0,
+      "www.kantei.go.jp": 1.0,
+      "kantei.go.jp": 1.0,
+      "www.meti.go.jp": 1.5,
+      "meti.go.jp": 1.5
+    }
   },
   "rejectedCouncils": [
     {

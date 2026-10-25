@@ -26,7 +26,8 @@ from bs4 import BeautifulSoup
 from utils import (
     setup_win32_utf8, get_browser_headers, save_data_json_with_backup,
     decode_html_bytes, get_rejected_identifiers, normalize_japanese_numbers, load_data_json,
-    parse_japanese_date, normalize_text, CJK_RADICAL_REPLACEMENTS, normalize_url_for_matching
+    parse_japanese_date, normalize_text, CJK_RADICAL_REPLACEMENTS, normalize_url_for_matching,
+    normalize_ministry_code
 )
 setup_win32_utf8()
 
@@ -513,102 +514,145 @@ _GENERIC_INDEX_EXACT_TITLES = frozenset({
 })
 
 
-# 省庁コードと公式ドメインのマッピング（他省庁URLの誤混入ガード用）
-MINISTRY_DOMAINS = {
+# ---------------------------------------------------------------------------
+# Drop 92 (Track [Config-DB] Phase 1): 省庁ドメイン・新着ポータル・ホスト設定のDB一元化
+# ---------------------------------------------------------------------------
+_FALLBACK_MINISTRY_DOMAINS = {
     "MHLW": ["mhlw.go.jp"],
     "METI": ["meti.go.jp"],
     "MAFF": ["maff.go.jp"],
     "MOJ": ["moj.go.jp"],
-    "CAO": ["cao.go.jp", "scj.go.jp"],
-    "CAS": ["cas.go.jp"],
+    "CAO": ["cao.go.jp", "scj.go.jp", "cas.go.jp", "kantei.go.jp"],
+    "CAS": ["cas.go.jp", "kantei.go.jp", "cao.go.jp"],
     "NPA": ["npa.go.jp"],
     "FSA": ["fsa.go.jp"],
     "MIC": ["soumu.go.jp"],
     "MOF": ["mof.go.jp"],
     "MEXT": ["mext.go.jp"],
     "MLIT": ["mlit.go.jp"],
-    "ENV": ["env.go.jp"],
+    "MOE": ["env.go.jp"],
     "MOD": ["mod.go.jp"],
     "DIGITAL": ["digital.go.jp"],
-    "CFA": ["cfa.go.jp"]
-}
-_OTHER_MINISTRY_DOMAINS_MAP = {
-    m: tuple(d for om, dlist in MINISTRY_DOMAINS.items() if om != m for d in dlist)
-    for m in MINISTRY_DOMAINS
+    "CFA": ["cfa.go.jp"],
 }
 
-# 各府省庁の新着情報・報道発表・審議会ポータル定義（Drop 68: お知らせからの会議検知オプション用）
-MINISTRY_NEWS_PORTALS = {
-    "MHLW": [
-        {"url": "https://www.mhlw.go.jp/stf/new-info/", "type": "news_feed"},
-        {"url": "https://www.mhlw.go.jp/stf/new-info/shingi.html", "type": "news_feed"},
-        {"url": "https://www.mhlw.go.jp/stf/shingi/indexshingi.html", "type": "mhlw_indexshingi"},
-    ],
-    "FSA": [
-        {"url": "https://www.fsa.go.jp/news/index.html", "type": "deep_portal", "subpage_pattern": r"r\d+_news_menu\.html"},
-    ],
-    "MOF": [
-        {"url": "https://www.mof.go.jp/public_relations/whats_new/index.htm", "type": "deep_portal", "subpage_pattern": r"whats_new/\d{6}\.html"},
-    ],
-    "MLIT": [
-        {"url": "https://www.mlit.go.jp/report/press/index.html", "type": "meta_refresh"},
-    ],
-    "NRA": [
-        {"url": "https://www.nra.go.jp/news/index.html", "type": "deep_portal", "subpage_pattern": r"news/\d{6}\.html"},
-    ],
-    "METI": [
-        {"url": "https://www.meti.go.jp/press/index.html", "type": "news_feed"},
-    ],
-    "MIC": [
-        {"url": "https://www.soumu.go.jp/menu_news/s-news/index.html", "type": "news_feed"},
-    ],
-    "MAFF": [
-        {"url": "https://www.maff.go.jp/j/press/index.html", "type": "news_feed"},
-    ],
-    "MEXT": [
-        {"url": "https://www.mext.go.jp/b_menu/houdou/index.htm", "type": "news_feed"},
-    ],
-    "CAO": [
-        {"url": "https://www.cao.go.jp/press/houdou.html", "type": "news_feed"},
-    ],
-    "CAS": [
-        {"url": "https://www.cas.go.jp/jp/houdou/index.html", "type": "news_feed"},
-    ],
-    "FDMA": [
-        {"url": "https://www.fdma.go.jp/pressrelease/", "type": "news_feed"},
-    ],
-    "MOE": [
-        {"url": "https://www.env.go.jp/press/index.html", "type": "news_feed"},
-    ],
-    "DIGITAL": [
-        {"url": "https://www.digital.go.jp/news", "type": "news_feed"},
-    ],
-    "CFA": [
-        {"url": "https://www.cfa.go.jp/news", "type": "news_feed"},
-    ],
-    "MOJ": [
-        {"url": "https://www.moj.go.jp/list_info.html", "type": "news_feed"},
-        {"url": "https://www.moj.go.jp/press_index.html", "type": "news_feed"},
-    ],
-    "MOD": [
-        {"url": "https://www.mod.go.jp/j/press/news/index.html", "type": "news_feed"},
-    ],
-    "PPC": [
-        {"url": "https://www.ppc.go.jp/news/press/", "type": "deep_portal", "subpage_pattern": r"press/\d{4}"},
-    ],
-    "RINYA": [
-        {"url": "https://www.rinya.maff.go.jp/j/press/", "type": "news_feed"},
-    ],
-    "JFA": [
-        {"url": "https://www.jfa.maff.go.jp/j/press/index.html", "type": "news_feed"},
-    ],
-    "CAA": [
-        {"url": "https://www.caa.go.jp/notice/", "type": "news_feed"},
-    ],
-    "FSC": [
-        {"url": "https://www.fsc.go.jp/", "type": "news_feed"},
-    ],
+_FALLBACK_HOST_RATE_LIMITS = {
+    "www.cas.go.jp": 1.0,
+    "cas.go.jp": 1.0,
+    "www.kantei.go.jp": 1.0,
+    "kantei.go.jp": 1.0,
+    "www.meti.go.jp": 1.5,
+    "meti.go.jp": 1.5,
 }
+
+
+def _build_other_ministry_domains_map(ministry_domains_dict):
+    """
+    各省庁について、自省庁（および親省庁・外局の共有ドメイン）以外の他省庁ドメイン一覧を構築する。
+    例: ANRE (enecho.meti.go.jp, meti.go.jp) の場合、meti.go.jp 系は除外し他省庁ドメインのみを返す。
+    """
+    all_domains = sorted({
+        d.lower().strip()
+        for dlist in ministry_domains_dict.values()
+        for d in (dlist or [])
+        if d and isinstance(d, str)
+    })
+    other_map = {}
+    for m_code, own_list in ministry_domains_dict.items():
+        own_norm = [d.lower().strip() for d in (own_list or []) if d and isinstance(d, str)]
+        others = []
+        for d in all_domains:
+            if any(d == od or d.endswith("." + od) or od.endswith("." + d) for od in own_norm):
+                continue
+            others.append(d)
+        other_map[m_code] = tuple(others)
+    return other_map
+
+
+MINISTRY_DOMAINS = {}
+_OTHER_MINISTRY_DOMAINS_MAP = {}
+MINISTRY_NEWS_PORTALS = {}
+
+
+def load_ministry_and_host_configs_from_db(db_path=None, data=None):
+    """
+    SQLite マスターDB (admin/pmhub.db -> admin_configs) またはロード済み data 辞書から
+    省庁別ドメイン (MINISTRY_DOMAINS)、新着ポータル (MINISTRY_NEWS_PORTALS)、
+    およびホスト別レートリミット (HOST_RATE_LIMITS) を動的にロード・同期する。
+    """
+    global MINISTRY_DOMAINS, _OTHER_MINISTRY_DOMAINS_MAP, MINISTRY_NEWS_PORTALS
+    global HOST_RATE_LIMITS, _DEFAULT_HOST_INTERVAL, _MIN_HOST_INTERVAL
+
+    ministries_cfg = {}
+    crawler_cfg = {}
+
+    if isinstance(data, dict):
+        ministries_cfg = data.get("ministries") or {}
+        crawler_cfg = data.get("crawlerConfig") or {}
+
+    if not ministries_cfg or not crawler_cfg:
+        target_db = db_path or os.path.join(os.path.dirname(os.path.abspath(__file__)), "pmhub.db")
+        if os.path.exists(target_db):
+            try:
+                import sqlite3
+                conn = sqlite3.connect(target_db)
+                cur = conn.cursor()
+                rows = dict(cur.execute(
+                    "SELECT key, value_json FROM admin_configs WHERE key IN ('ministries', 'crawlerConfig');"
+                ).fetchall())
+                conn.close()
+                if not ministries_cfg and "ministries" in rows:
+                    ministries_cfg = json.loads(rows["ministries"])
+                if not crawler_cfg and "crawlerConfig" in rows:
+                    crawler_cfg = json.loads(rows["crawlerConfig"])
+            except Exception:
+                pass
+
+    new_domains = {}
+    new_portals = {}
+    if isinstance(ministries_cfg, dict) and ministries_cfg:
+        for raw_code, m_info in ministries_cfg.items():
+            if not isinstance(m_info, dict):
+                continue
+            code = normalize_ministry_code(raw_code)
+            d_list = list(m_info.get("domains") or [])
+            if not d_list and m_info.get("officialUrl"):
+                host = urllib.parse.urlparse(m_info["officialUrl"]).netloc.lower()
+                if host.startswith("www."):
+                    host = host[4:]
+                if host:
+                    d_list.append(host)
+            if d_list:
+                new_domains[code] = d_list
+            p_list = m_info.get("newsPortals")
+            if isinstance(p_list, list) and p_list:
+                new_portals[code] = p_list
+
+    if not new_domains:
+        new_domains = dict(_FALLBACK_MINISTRY_DOMAINS)
+
+    MINISTRY_DOMAINS.clear()
+    MINISTRY_DOMAINS.update(new_domains)
+    _OTHER_MINISTRY_DOMAINS_MAP.clear()
+    _OTHER_MINISTRY_DOMAINS_MAP.update(_build_other_ministry_domains_map(MINISTRY_DOMAINS))
+
+    if new_portals:
+        MINISTRY_NEWS_PORTALS.clear()
+        MINISTRY_NEWS_PORTALS.update(new_portals)
+
+    if isinstance(crawler_cfg, dict):
+        def_interval = crawler_cfg.get("default_host_interval")
+        if isinstance(def_interval, (int, float)) and def_interval >= 0.35:
+            _DEFAULT_HOST_INTERVAL = float(def_interval)
+            _MIN_HOST_INTERVAL = _DEFAULT_HOST_INTERVAL
+        hr_limits = crawler_cfg.get("host_rate_limits")
+        if isinstance(hr_limits, dict) and hr_limits:
+            HOST_RATE_LIMITS.clear()
+            for h_key, h_val in hr_limits.items():
+                if isinstance(h_val, (int, float)) and h_val >= 0.35:
+                    HOST_RATE_LIMITS[str(h_key).lower().strip()] = float(h_val)
+
+    return MINISTRY_DOMAINS, MINISTRY_NEWS_PORTALS
 
 # 429 Quota Exceeded 回避用のサーキットブレーカーフラグ
 LLM_QUOTA_BLOCKED = False
@@ -907,15 +951,9 @@ _LAST_REQUEST_TIME_BY_HOST = {}
 _DEFAULT_HOST_INTERVAL = 0.5  # 同一ホストへの最低アクセス間隔（秒）（AGENTS.md ルール9: 0.35秒以上のレートリミット遵守）
 _MIN_HOST_INTERVAL = _DEFAULT_HOST_INTERVAL  # 後方互換用
 
-# CR-49: ドメイン別アクセス間隔テーブル（WAF保護サイト等へのアクセス平滑化）
-HOST_RATE_LIMITS = {
-    'www.cas.go.jp': 1.0,   # CAS/Kantei: AWS WAF 保護サイト
-    'cas.go.jp': 1.0,
-    'www.kantei.go.jp': 1.0,
-    'kantei.go.jp': 1.0,
-    'www.meti.go.jp': 1.5,  # METI/ANRE: AWS WAF / CloudFront Bot Control 保護のため 1.5 秒を確保
-    'meti.go.jp': 1.5,
-}
+# CR-49 / Drop 92: ドメイン別アクセス間隔テーブル（SQLite admin_configs.crawlerConfig から動的ロード）
+HOST_RATE_LIMITS = dict(_FALLBACK_HOST_RATE_LIMITS)
+load_ministry_and_host_configs_from_db()
 
 def _get_host_interval(host):
     """ホストごとの適正アクセス間隔（秒）を取得する（CR-49）"""
@@ -2924,7 +2962,7 @@ def sync_new_meetings_from_crawl(data, target, scraped_item):
                 continue
 
         # 他省庁URLの誤混入ガード（例: MHLW会議体にMETIのURLが混入するのを防止）
-        ministry_code = (ministry or "").upper()
+        ministry_code = normalize_ministry_code(ministry or "")
         if ministry_code:
             parsed_sub = urllib.parse.urlparse(sub_url)
             sub_host = parsed_sub.netloc.lower()
@@ -3851,18 +3889,19 @@ def run_ministry_news_discovery(progress_callback=None, stop_event=None, ministr
         councils = data.get("councils", [])
         rules = data.get("scrapingRules", {})
         meetings = data.get("meetings", [])
+        load_ministry_and_host_configs_from_db(data=data)
 
         # 会議体インデックス構築
         councils_by_min = {}
         councils_by_url = {}
         for c in councils:
-            m = c.get("ministry", "")
+            m = normalize_ministry_code(c.get("ministry", ""))
             councils_by_min.setdefault(m, []).append(c)
             if c.get("officialUrl"):
                 councils_by_url[c.get("officialUrl").rstrip("/")] = c
 
         # 走査対象省庁の決定
-        target_mins = [ministry.upper()] if ministry else list(MINISTRY_NEWS_PORTALS.keys())
+        target_mins = [normalize_ministry_code(ministry)] if ministry else list(MINISTRY_NEWS_PORTALS.keys())
         emit(f"[INFO] 対象省庁: {', '.join(target_mins)} (計 {len(target_mins)} 省庁)")
 
         detected_councils_to_crawl = {}  # council_id -> (council, reason, date_hint)
