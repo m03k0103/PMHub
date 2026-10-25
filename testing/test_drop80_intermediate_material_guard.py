@@ -207,7 +207,19 @@ class TestDrop80IntermediateMaterialGuard(unittest.TestCase):
             'mlit-amami_shinkou',
             'mlit-dokuritsu_gyosei_hyoka',
             'mlit-kokudo_shingikai',
-            'mlit-tochi_kantei'
+            'mlit-tochi_kantei',
+            # 原子力規制委員会 (Drop 88: 11会議体)
+            'nra-ro_anzen_shinsa',
+            'nra-1205',
+            'nra-1203',
+            'nra-1204',
+            'nra-1206',
+            'nra-me_suishoutai',
+            'nra-1209',
+            'nra-1213',
+            'nra-1212',
+            'nra-1211',
+            'nra-teireikai'
         }
         
         violations = []
