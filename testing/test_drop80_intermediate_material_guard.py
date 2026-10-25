@@ -70,7 +70,18 @@ class TestDrop80IntermediateMaterialGuard(unittest.TestCase):
             'mof-jishin_benkyoukai',
             'mof-1153',
             'mof-fdi',
-            'mof-shinkahei_arikata'
+            'mof-shinkahei_arikata',
+            # 金融庁・厚生労働省 (Drop 85)
+            'fsa-kinyu_trouble',
+            'mhlw-nenkin_shikin_unyou_bunkakai',
+            'mhlw-jidou_gyakutai_shinken_senmon',
+            'mhlw-911',
+            'mhlw-943',
+            'mhlw-971',
+            'mhlw-1039',
+            'mhlw-845',
+            'mhlw-898',
+            'mhlw-kousei_influ'
         }
         
         violations = []
