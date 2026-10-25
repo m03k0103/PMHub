@@ -31,17 +31,17 @@
 
 ### 1-2. 各Trackの詳細
 
-#### 【Track: Database】（フェーズ 3）却下会議体マスターの SQLite DB 一元化 & 3者間同期パイプライン確立（次期 Drop 80）
+#### 【Track: Database】（フェーズ 3）却下会議体マスターの SQLite DB 一元化 & 3者間同期パイプライン確立【完了】（Drop 80 にて達成）
 
-- **背景と課題**:
+- **背景と課題（解消済）**:
   PMHub では Drop 62〜64 において、公開用データ（`docs/data.json`）および管理用データ（`admin/admin_data.json`）のマスターデータを SQLite データベース（`admin/pmhub.db`）へ完全一元化し、単一マスターDB原則（AGENTS.md §4-7）を確立した。
-  しかし、却下・除外会議体リスト（`admin/rejected_councils.json`）に関しては、管理画面 API（`admin/server.py`）やユーティリティ関数（`admin/utils.py`）が SQLite を経由せず、JSON ファイルを直接読み書きする運用が残存しており、3者間データ乖離（ファイル 367件 vs DB 364件、欠落: `cas-1895`, `aca-1735`, `moj-2735`）が発生している。
-- **目標仕様**:
-  1. `admin/db/schema.sql` に専用テーブル `rejected_councils` を新設し、`official_url` および `ministry` の B-tree インデックスを配備。
-  2. `seed_db.py` により `admin/rejected_councils.json`（全367件）から DB へ初期移行し、欠落3件を解消。
-  3. `export_data.py` により、DB の `rejected_councils` テーブルから `admin/rejected_councils.json` および `admin/admin_data.json`（`rejectedCouncils`）へ決定論的（ID昇順）に同時出力。
-  4. `admin/utils.py` および `admin/server.py` の却下関連 API・関数を DB 直結化。
-  5. 統合テストスイート（ケース 6 & 15）に排他性および 3者間完全同期の常時検証ガードを追加。
+  しかし、却下・除外会議体リスト（`admin/rejected_councils.json`）に関しては、管理画面 API（`admin/server.py`）やユーティリティ関数（`admin/utils.py`）が SQLite を経由せず、JSON ファイルを直接読み書きする運用が残存しており、3者間データ乖離（ファイル 367件 vs DB 364件、欠落: `cas-1895`, `aca-1735`, `moj-2735`）が発生していた。
+- **実装完了仕様（Drop 80 にて全項目達成済み・未実装なし）**:
+  1. **専用テーブル新設**: `admin/db/schema.sql` に専用テーブル `rejected_councils` を新設し、`official_url` および `ministry` の B-tree インデックスを完全配備。
+  2. **DB初期シード完遂**: `seed_db.py` により `admin/rejected_councils.json`（全367件）から DB へ移行し、乖離・欠落3件を完全解消。
+  3. **双方向エクスポートパイプライン確立**: `export_data.py` により、DB の `rejected_councils` テーブルから `admin/rejected_councils.json` および `admin/admin_data.json`（`rejectedCouncils`）へ決定論的（ID昇順）に常時同時出力。
+  4. **API・ユーティリティのDB直結化**: `admin/utils.py`（`load_rejected_councils`, `save_rejected_councils`, `add_to_rejected_councils`）および `admin/server.py`（`/api/rejected-councils`, `/api/reject-council` 等）を SQLite DB 直接接続へ完全移行。
+  5. **常時検証ガード稼働**: 統合テストスイート（ケース 6: 会議体マスターと却下リストの完全排他性、ケース 15: DB・公開JSON・管理JSONの3者間完全一致 & 漏洩ゼロ）を配備・全件合格維持。
 
 ---
 
@@ -146,10 +146,8 @@ GitHub Actions で自動更新・push されたリモートの最新データ（
 ## 2. 実装済 Drop
 
 > [!IMPORTANT]
-> - **実装済最新 Drop**: **Drop 81**（2026-10-24 完了）  
-> - **次回着手予定 Drop**: **Drop 82**  
-> 
-> 本セクションでは、これまでに完了したすべての Drop 施策（Drop 19 〜 Drop 81）を**昇順（時系列順）**で掲載・アーカイブしています。  
+> 本セクションでは、これまでに完了したすべての Drop 施策を**昇順（時系列順）**で掲載・アーカイブしています。  
+> ※ 実装済最新 Drop および次回着手予定 Drop は、ドキュメント冒頭のヘッダーに一元記載されています。  
 > 全施策が完了済みであるため、一覧のフォーマットを4列（Drop ID / カテゴリ・種別 / 施策概要・主な改修内容 / 到達成果・検証結果）に統一しています。
 
 ### 2-1. 実装済 Drop一覧
@@ -210,6 +208,9 @@ GitHub Actions で自動更新・push されたリモートの最新データ（
 | **Drop 80** | **データベース基盤**<br>(却下会議体 SQLite 一元化 & 3者間同期) | **`admin/rejected_councils.json` の SQLite DB 完全移行（Track [Database] フェーズ 3）**<br>専用テーブル `rejected_councils` 新設、全367件シード（乖離3件完全解消）、B-tree INDEX配備による $O(1)$ 判定、`export_data.py` 双方向自動エクスポート、管理サーバー API・ユーティリティの DB 直結化、ケース 6 & 15 常時検証ガード新設 | **単一マスターDB（SSOT）化完遂 & 3者間データ完全同期（乖離0件）** |
 | **Drop 81** | **LLM支援ディスカバリー基盤**<br>(決定論的1ファイル新着ダイジェスト & 単一コールLLM判定 & 新着分類永続化) | **Track [LLM-Assist] フェーズ 1: 省庁新着1ファイル集約・単一リクエストLLM判定・新着会議体フラグ永続化**<br>`councils` テーブルへの `is_newly_discovered`, `discovered_at`, `discovery_source` カラム追加と新着リセット保護、`llm_cache` テーブル新設。全省庁新着情報の決定論的5段階フィルタ＆1ファイル集約（`admin/llm/digest.py`）、ID参照限定ハルシネーション遮断＆予算上限（Daily 3 / Weekly 10 / Monthly 30）付き一括LLM判定（`admin/llm/client.py`, `discovery_judge.py`）、管理画面のディスカバリー/クロールLLM独立トグル化、単体テストU21新設 | **1ファイル単一APIコールでのLLMディスカバリー実現 & 新着分類完全永続化（統合15ケース＋全単体21種完全合格）** |
 | **Drop 82** | **ローカル資料ステータス永続保護**<br>(PMM & CASCADE破壊防止) | **PMM ローカル資料ステータス永続保護・CASCADE DELETE 遮断 & 探索高速化**<br>DB 再シード時の `materials` / `council_materials` 取得状況事前退避＆一括復元（`seed_db.py`）。`councils` および `meetings` の `INSERT OR REPLACE` 廃止と `ON CONFLICT DO UPDATE` 化による SQLite `ON DELETE CASCADE` 破壊的初期化の完全根絶（`db_manager.py`）。未取得資料探索の会議体ディレクトリ事前インデックス化による同期処理高速化（3〜4分 $	o$ 約37秒、`downloader.py`）。管理サーバー起動時自動復旧ガード。単体テスト U22 新設 | **PMM ダウンロード状況の完全永続保護 & CASCADE破壊根絶 & 同期高速化（統合15ケース＋全単体22種完全合格）** |
+| **Drop 82b**<br>(Drop 80b) | **中間資料適正化 第1弾**<br>(税制調査会 6会議体) | **税制調査会系列 6会議体の中間HTML配付資料完全排除 & 末端PDF一括展開・再発防止ガード新設**<br>納税環境整備専門家会合等の配付資料に中間HTMLリンク（「会議資料」等）が登録されていた問題を是正。6会議体・15開催回で末端PDFを展開・登録し、不要中間リンクを排除。単体テスト U23（`test_drop80_intermediate_material_guard.py`）および統合ケース5ガード新設 | **中間HTML混入0件保証・税調系列末端PDF化・統合15ケース＋全単体23種完全合格** |
+| **Drop 83** | **中間資料適正化 第2弾**<br>(内閣官房 & 税制調査会残り7会合) | **内閣官房・内閣府税制調査会 9会議体の中間HTML配付資料完全排除 & 末端PDF一括展開（134件置換・1,429件PDF登録）**<br>国家戦略特別区域諮問会議（`cas-kokusentoc` 69回）および女性が輝く社会づくり本部（`cas-kagayakujosei` 16回）、税制調査会残り7専門家会合の中間HTMLリンクを全件削除し末端PDFへ展開。スキップリンク・UIノイズ排除、公式URL適正化、再発防止ガード（U23/ケース5）対象を15会議体へ拡大 | **内閣官房・税調全15会議体の中間HTMLゼロ保証・末端PDF 1,429件展開・統合15ケース＋全単体23種完全合格** |
+| **Drop 84** | **中間資料適正化 第3弾**<br>(財務省 15会議体 & CJK部首補助) | **財務省 15会議体の中間HTML配付資料完全排除 & 末端PDF一括展開（320件置換・1,019件PDF純増） & 康煕部首正規化**<br>財政制度等審議会系列・関税分科会等15会議体の中間資料ページ（320件）を末端PDFへ一括展開。空文字リンクタグの文脈復元、正誤表別紙補正、テンプレート過去残骸404リンク（12件）完全排除。`CJK_RADICAL_REPLACEMENTS` に `\u2ed1: '長'` を新設し特殊文字634件を完全正規化。再発防止ガード対象を30会議体に拡大 | **財務省含む30会議体の中間HTMLゼロ保証・末端PDF 1,019件純増・統合15ケース＋全単体23種完全合格** |
 
 ---
 
@@ -1514,7 +1515,7 @@ flowchart LR
 
 ---
 
-### Drop 80: 税制調査会系列 6会議体の中間HTML配付資料の完全排除 & 末端PDF一括展開・再発防止ガード新設 (2026-10-25)
+### Drop 82b (Drop 80b): 税制調査会系列 6会議体の中間HTML配付資料の完全排除 & 末端PDF一括展開・再発防止ガード新設 (2026-10-25)
 
 #### 1. 背景と課題 (Background & Issues)
 - **中間HTMLリンク混入の是正と横展開確認の徹底 (`GLOBAL_RULES.md` §6)**:
