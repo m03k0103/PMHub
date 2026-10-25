@@ -1,8 +1,8 @@
 # PMHub 改善・機能実装（Drop）マスタードキュメント (DROPS.md)
 
 > **最終更新**: 2026-10-25  
-> **実装済最新 Drop**: **Drop 91**（2026-10-25 完了）  
-> **次回着手予定 Drop**: **Drop 92**  
+> **実装済最新 Drop**: **Drop 92**（2026-10-25 完了）  
+> **次回着手予定 Drop**: **Drop 93**  
 > 
 > 本ドキュメントは、PMHub の継続的改善ロードマップおよび実装記録を一元管理するマスタードキュメントです。  
 > 今後の構想テーマは **「Track（トラック）」** として管理し、着手・個別実装単位は最新連番を付与した **「Drop（ドロップ）」** として連番アーカイブします。  
@@ -23,7 +23,8 @@
 | **Track [LLM-Assist]** | **決定論的1ファイル新着ダイジェスト & LLM判定・クロール階層型フォールバック** | **【フェーズ 1】ディスカバリー 1ファイル集約・単一リクエストLLM判定 & 新着分類永続化（Drop 81 完了）**<br>**【フェーズ 2】開催回クロール 3段階ファネル・異常検知フォールバック & バッチLLM抽出**<br>API呼出上限（Daily 3回 / Weekly 10回 / Monthly 30回）とSQLite `llm_cache`（SHA-256ダイジェストキャッシュ）により、最小APIコールで新規会議体検知と0件以外を含むクロール欠落補完を実現 | **最小APIコールでの新規会議体検知 & クロール補完** | **【進行中】**<br>（フェーズ 1: Drop 81 完了 / フェーズ 2 構想中） |
 | **Track [Automation]** | **定時巡回クローラー & ローカルDB同期**<br>(GitHub Actions 連携) | **3階層マルチスケジュール定期実行・異常検知時Skip・ローカルDB自動同期**<br>1. Daily (平朝): 省庁新着検知のみ<br>2. Weekly (土曜): 通常巡回（直近2年重点）<br>3. Monthly (第1日曜): 全期間包括走査<br>連鎖失敗・重大エラー検知時のIssue発行＆次回以降Skip機能、Zero-Storage VM運用、ローカル環境への安全な同期エンジン（`sync_from_json.py` + post-merge hook）の配備 | **定期自動巡回・省力化 & ローカル資産整合性担保** | **【構想中】**<br>（Drop 82 以降） |
 | **Track [Search]**<br>(フェーズ 3) | **全文検索エンジン統合**<br>(PMM資産連携 FTS5構築) | **【フェーズ 3】PMM ローカルPDF資産を活用した全文検索エンジンの構築**<br>`admin/pmm/text_extractor.py` によるPDF本文抽出、SQLite FTS5 仮想テーブル（`fts_materials`）への trigram インデックス構築、サーバー検索API（`/api/search?q=キーワード`）およびフロントエンド検索UI・抜粋ハイライトの実装 | **約11万件の政策資料PDF本文横断検索の実現** | **【構想中】**<br>（Track [Database] 完了後着手） |
-| **Track [Portal-Norm]** | **省庁ポータル一覧・目次URL正常化**<br>(傘下会議体の個別化・パース規則最適化) | **省庁組織・目次・一覧ポータル設定会議体の個別会議体分離・スクレイピング最適化**<br>文化庁・消防庁・文科省等、親ポータルURLが設定されたまま個別開催回が未分離の会議体について、組織ツリーを辿り個別会議体（または開催回）へと正常化する包括的施策 | **Failed会議体の根絶 & 網羅的開催回収集** | **【進行中】**<br>（Drop 79 で着手開始、継続推進） |
+| **Track [Portal-Norm]** | **省庁ポータル一覧・目次URL正常化**<br>(傘下会議体の個別化・パース規則最適化) | **省庁組織・目次・一覧ポータル設定会議体の個別会議体分離・スクレイピング最適化**<br>文化庁・消防庁・文科省等、親ポータルURLが設定されたまま個別開催回が未分離の会議体について、組織ツリーを辿り個別会議体（または開催回）へと正常化する包括的施策 | **Failed会議体の根絶 & 網羅的開催回収集** | **【進行中】**<br>（Drop 79, 91 で推進中） |
+| **Track [Config-DB]** | **会議体・省庁・クローラー設定のハードコード撤廃 & SQLite マスターDB完全一元化** | **【フェーズ 1】省庁・ホスト設定の二重管理解消 & ENV残存バグ根絶（Drop 92 完了）**<br>**【フェーズ 2】会議体（`council_id`）直接指定ハードコードの撤廃 & `scraping_rules` / `admin_configs` 移行**<br>**【フェーズ 3】汎用除外リスト内に混入している特定会議体・特定ページ固有パターンの分離・DB化**<br>ソースコード内に直書きされた省庁ドメイン・新着ポータル・ホスト間隔・会議体別除外ルール・初期ウォッチ会議体ID等を `admin/pmhub.db` へ完全移行し、コードとDBの二重管理を根絶 | **設定二重管理の完全解消 & ルール駆動型クローラー確立** | **【進行中】**<br>（フェーズ 1: Drop 92 完了 / フェーズ 2 次回着手） |
 | **Track [Architecture]** | **設計刷新構想**<br>(モジュール責務分離) | **リファクタリング領域E: クローラー本体（crawler.py）の責務分離 & scratch/ クリーンアップ**<br>巨大化したクローラー（約2,900行）を HTTP通信・パース・DB保存・エクスポート等にモジュール分割し、保守性を劇的に向上。蓄積した `scratch/` スクリプトの完全整理・アーカイブ | **単体テスト容易性向上 & コード肥大化の解消** | **【構想中】** |
 | **Track [Optimization]** | **配信最適化構想**<br>(公開データ軽量化) | **リファクタリング領域D: クローラー設定分離 & 公開JSONの minified 化による通信量最適化**<br>公開用静的サイトの配信効率向上のため、公開用 JSON の minified 化および通信量圧縮 | **初回ページロード高速化 & 帯域削減** | **【構想中】** |
 | **Track [Policy-AI]** | **政策分析連携構想**<br>(知見創出・AI連携) | **省庁横断テーマ連携 & AI 審議要約・タイムライン比較**<br>各省庁に分散する同一政策テーマ（GX、AI、少子化等）の会議体を横断的に可視化し、AIによる要約や論点対比を提供する高度分析機能 | **政策横断的インサイトの創出** | **【長期構想】** |
@@ -140,7 +141,29 @@ GitHub Actions で自動更新・push されたリモートの最新データ（
 
 #### 【Track: Portal-Norm】親ポータル一覧・目次URL設定 残存会議体の個別化・パース適正化
 
-クロールステータスダッシュボードで失敗（Failed）となっていた会議体のうち、親組織一覧や特設ニュース一覧が設定されていた会議体について、Drop 79 において主要会議体（警察庁政策評価研究会 `npa-seisaku_hyoka_kenkyukai`、公務員共済組合分科会 `mof-1131`、除外3件等）の処置を完了。残存する親ポータル型会議体について、個別開催回・配付資料PDFの網羅的ワンストップ登録を順次推進する。
+クロールステータスダッシュボードで失敗（Failed）となっていた会議体のうち、親組織一覧や特設ニュース一覧が設定されていた会議体について、Drop 79 において主要会議体（警察庁政策評価研究会 `npa-seisaku_hyoka_kenkyukai`、公務員共済組合分科会 `mof-1131`、除外3件等）、Drop 91 において経済産業省「産業構造審議会」傘下65組織の処置を完了。残存する親ポータル型会議体について、個別開催回・配付資料PDFの網羅的ワンストップ登録を順次推進する。
+
+---
+
+#### 【Track: Config-DB】会議体・省庁・クローラー設定のハードコード撤廃 & SQLite マスターDB 完全一元化
+
+- **背景と課題**:
+  1. `admin/crawler.py` や `admin/admin_dashboard.js`、`docs/app.js` 等のソースコード内に、省庁ドメイン（`MINISTRY_DOMAINS`）、省庁新着ポータル（`MINISTRY_NEWS_PORTALS`）、ホスト別アクセス間隔（`HOST_RATE_LIMITS`）、省庁バッジカラー（`getMinistryColor`）、特定会議体ID（`cao-zei_cho`, `cao-cstp`, `fsa-code_followup` 等）のサブページ除外分岐、初期ウォッチ会議体ID（`watchedCouncilIds`）などがハードコーディングされていた。
+  2. その結果、SQLite マスターDB（`admin/pmhub.db`）の `admin_configs` / `scraping_rules` とソースコードの間で二重管理が発生し、`MINISTRY_DOMAINS` に旧省庁コード `"ENV"` が残存して `"MOE"` や外局群が欠落するバグや、初期ウォッチリストに旧IDが残存する不整合を引き起こしていた。
+- **フェーズ構成と目標仕様**:
+  - **フェーズ 1（Drop 92 完了）: 省庁・ホスト設定の二重管理解消 & ENV 残存バグの根絶**:
+    1. `admin_configs.ministries`（全48省庁・外局）の各レコードに `domains`（公式ドメイン配列）、`newsPortals`（新着・報道発表ポータル定義配列）、`hexColor`（ブランドカラーHEX値）を統合。
+    2. `admin_configs.crawlerConfig` に `default_host_interval` および `host_rate_limits`（ドメイン別レートリミット設定）を統合。
+    3. `admin/crawler.py` の `MINISTRY_DOMAINS`（旧 `"ENV"` 残存バグ含む）・`MINISTRY_NEWS_PORTALS`・`HOST_RATE_LIMITS`、および `admin/discover_councils.py` の新着ポータル参照を DB（`admin_configs`）からの動的ロードへ一本化。外局・親省庁間の共有ドメイン（`meti.go.jp`, `maff.go.jp`, `mext.go.jp`, `moj.go.jp`, `mhlw.go.jp`, `mlit.go.jp`, `soumu.go.jp`, `mod.go.jp`, `cao.go.jp` / `cas.go.jp` 等）を考慮した他省庁URL誤混入ガードを構築。
+    4. `admin/admin_dashboard.js` の `getMinistryColor()` からハードコードされた省庁カラー辞書を撤廃し、DB の `ministries` マスター定義（および CSS 変数）を参照するよう統一。
+    5. 統合テスト（ケース13）および単体テスト（U24）に省庁・ホスト設定の DB 完全同期・旧 `"ENV"` コードゼロ保証ガードを新設。
+  - **フェーズ 2（次回以降）: 会議体（`council_id`）直接指定ハードコードの撤廃 & `scraping_rules` / `admin_configs` 移行**:
+    1. `admin/crawler.py` の `sync_new_meetings_from_crawl()` 内の特定7会議体（`cao-zei_cho`, `cao-cstp`, `fsa-code_followup`, `fsa-stewardship_*`）の `if council_id == ...` 分岐を廃止し、`scraping_rules.rule_json` の `subpage_exclude_url_patterns` / `subpage_require_url_patterns` / `subpage_exclude_title_keywords` へ移行。
+    2. `recover_material_context()` のディレクトリ名プレフィックス補完（`startup` → `"スタートアップ育成WG"` 等）を `scraping_rules.rule_json` の `material_dir_prefix_map` へ移行。
+    3. `docs/app.js` の初期ウォッチ会議体ID（`watchedCouncilIds`）を `admin_configs.initialWatchedCouncilIds` へ移行し、実在会議体IDとの整合性検証を統合テストケース6に追加。
+    4. `admin/cleanup_nav_meetings.py` の特定開催回IDハードコードを撤去し、`scraping_rules`（`material_exclude_url_patterns`）へ移行。
+  - **フェーズ 3（次回以降）: 汎用除外リスト内に混入している特定会議体・特定ページ固有パターンの分離・DB化**:
+    1. `_GENERIC_INDEX_URL_PATTERNS` および `_GENERIC_INDEX_TITLE_KEYWORDS` 内に混入している個別会議体向けの除外パターンを各会議体の `scraping_rules` と `admin_configs.crawlerConfig` へ分離・整理。
 
 ---
 
@@ -242,6 +265,8 @@ GitHub Actions で自動更新・push されたリモートの最新データ（
 | **Drop 90** | **中間資料適正化 最終第9弾**<br>(内閣官房・内閣府・デジタル庁・他全省庁 64会議体【全省庁完遂】) | **内閣官房・内閣府・デジタル庁・法務省・外務省・他残余全省庁 64会議体 中間HTML 171件排除 & 末端PDF 678件一括登録・UIノイズ/目次133件削除・404死にリンク1件排除・全府省庁完全網羅（中間HTML全省庁ゼロ達成・累計256会議体ガード完備）・統合15ケース＋単体23種完全合格** |
 | **Drop 89** | **中間資料適正化 第8弾**<br>(MIC・ACA・MEXT 26会議体) | **総務省・文化庁・文科省 26会議体 中間HTML 235件排除 & 末端PDF 2,521件一括登録・目次誤登録36件削除・404死にリンク18件排除・ガード197会議体拡大・統合15ケース＋単体23種完全合格** |
 | **Drop 88** | **中間資料適正化 第7弾**<br>(原子力規制委員会 11会議体) | **原子力規制委員会（NRA）11会議体 中間ビュアーHTML 923件の直接末端PDF展開（全件200 OK・%PDFバイナリ確認） & 詳細ページ誤登録4件排除・ガード171会議体拡大**<br>デジタルアーカイブ（`da.nra.go.jp`）上のビュアーHTML（`view?...contents=...`）923件を直接PDFダウンロードエンドポイント `https://www.da.nra.go.jp/data/{contents_id}.pdf` へ1対1完全置換。開催回詳細ページおよび目次誤登録（4件）を排除、ファイルサイズ表記ノイズ（`【PDF:56KB】` 等）を完全クレンジング。再発防止ガード対象を累計171会議体へ拡大 | **中間HTML 923件直接PDF化・誤リンク4件排除・ガード171会議体拡大・統合15ケース＋単体23種完全合格** |
+
+| **Drop 92** | **設定DB一元化 第1弾**<br>(省庁・ホスト設定の二重管理解消 & ENV残存バグ根絶) | **Track [Config-DB] フェーズ 1: 省庁ドメイン・新着ポータル・ブランドカラー・ホスト別レートリミットの SQLite マスターDB 完全一元化 & 旧 `ENV` 残存バグ根絶**<br>`admin_configs.ministries`（全48省庁・外局）に `domains`、`newsPortals`（21省庁・23URL）、`hexColor` を統合し、`admin_configs.crawlerConfig` に `default_host_interval` / `host_rate_limits` を統合。`admin/crawler.py` の `MINISTRY_DOMAINS`（530行目の旧 `"ENV"` 残存バグ含む）・`MINISTRY_NEWS_PORTALS`・`HOST_RATE_LIMITS`、`admin/discover_councils.py` のポータル参照、`admin/admin_dashboard.js` の `getMinistryColor()` ハードコード辞書を撤廃し DB 駆動へ一本化。外局・親省庁間の共有ドメイン許容ガードおよび統合ケース13・単体U7再発防止ガード配備 | **省庁・ホスト設定二重管理の完全解消 & 旧 `ENV` ゼロ保証・統合15ケース＋単体23種完全合格** |
 
 ---
 
@@ -1905,6 +1930,59 @@ flowchart LR
 - **5. 次回予定**:
   - Track [Intermediate-Norm] **フェーズ 7（Drop 88）**: 原子力規制委員会（NRA 11会議体・582件）の中間HTML配付資料排除 & 末端PDF一括展開。
 
+
+#### 【Drop 92】Track [Config-DB] フェーズ 1: 省庁・ホスト設定の二重管理解消（SQLite DB 完全一元化）& 旧 ENV 残存バグの根絶（完了）
+
+- **完了日**: 2026-10-25
+- **対象カテゴリ**: データベース基盤（Database SSOT）/ クローラー設定（Crawler Config）/ リファクタリング
+- **作業ブランチ**: `feature/drop92-ministry-host-db-unification`
+- **1. 背景・課題**:
+  - `admin/crawler.py` 内に `MINISTRY_DOMAINS`（16省庁のみハードコード、かつ530行目に旧コード `"ENV": ["env.go.jp"]` が残存し `"MOE"` や外局群が欠落）、`MINISTRY_NEWS_PORTALS`（21省庁の新着ポータル定義）、`HOST_RATE_LIMITS`（ホスト別アクセス間隔）がハードコードされており、SQLite マスターDB（`admin/pmhub.db`）の `admin_configs` と二重管理になっていた。
+  - また、`admin/admin_dashboard.js` の `getMinistryColor()` にも22省庁分のカラーコードがハードコードされており、DB の `ministries` マスター定義と乖離していた。
+- **2. 実装内容・仕様**:
+  - **`admin_configs.ministries` および `admin_configs.crawlerConfig` への完全統合**:
+    - 全 48 省庁・外局の `ministries` レコードに `domains`（公式ドメイン配列）、`newsPortals`（21省庁・23URLの新着ポータル定義）、`hexColor`（`docs/styles.css` 準拠のHEXカラー）を格納。
+    - `crawlerConfig` に `default_host_interval`（`0.5`秒）および `host_rate_limits`（`www.cas.go.jp`: `1.0`秒、`www.meti.go.jp`: `1.5`秒 等）を格納。
+  - **クローラー・ディスカバリー・管理画面の DB 駆動化 & 旧 `"ENV"` 残存バグの完全根絶**:
+    - `admin/utils.py`: `MINISTRY_CODE_NORMALIZATION` および `normalize_ministry_code()` を共通関数として配置。
+    - `admin/crawler.py`: `load_ministry_and_host_configs_from_db()` および `_build_other_ministry_domains_map()` を実装し、`MINISTRY_DOMAINS`・`MINISTRY_NEWS_PORTALS`・`HOST_RATE_LIMITS` を DB から動的ロード。外局と本省の共有ドメイン（`ANRE`/`SMEA` と `METI` の `meti.go.jp` 等）を誤遮断しない他省庁URL混入ガードを構築。旧 `"ENV"` キーを完全撤去。
+    - `admin/discover_councils.py`: `ministries` マスター内の `newsPortals` を直接参照するよう統一。
+    - `admin/admin_dashboard.js`: `getMinistryColor()` のハードコードマップを撤廃し、`ministries[code].hexColor` / `color`（および CSS 変数）を参照するよう改修。
+  - **再発防止ガードの配備**:
+    - 統合テスト ケース13（`testing/run_test_suite.py`）に全48省庁の `domains` / `hexColor` 設定検証・`MOE` 設定検証・旧 `"ENV"` コードゼロ検証を追加。
+    - 単体テスト U7（`testing/test_drop23_waf_resilience.py`）に `test_ministry_and_host_configs_db_unification` を追加。
+- **3. 変更ファイル一覧**:
+  - `admin/pmhub.db`, `docs/data.json`, `admin/admin_data.json`: `ministries` および `crawlerConfig` の拡張・2系統完全同期エクスポート
+  - `admin/utils.py`: `normalize_ministry_code()` 共通関数追加
+  - `admin/crawler.py`: `MINISTRY_DOMAINS`, `MINISTRY_NEWS_PORTALS`, `HOST_RATE_LIMITS` の DB 動的ロード化 & `"ENV"` ハードコード撤去
+  - `admin/discover_councils.py`: DB `ministries.newsPortals` 参照化
+  - `admin/admin_dashboard.js`: `getMinistryColor()` の DB マスター参照化
+  - `testing/run_test_suite.py`, `testing/test_drop23_waf_resilience.py`: 統合ケース13 & 単体U7 再発防止ガード追加
+  - `DROPS.md`: Track [Config-DB] 新設および Drop 92 記録
+- **4. 統合テスト結果**:
+  ```markdown
+  python testing/run_test_suite.py --all-layers : PASSED（統合15ケース＋単体23種合格 / 所要時間 23.69秒）
+    - ケース1: コード文法チェック (SyntaxError / 括弧 / div) (0.69s) : PASS
+    - ケース2: リンク疎通確認 (追加・変更 23件全件 200 OK) (1.15s) : PASS
+    - ケース3: UI表示機能検証 (DOMコンテナ整合性) (0.00s) : PASS
+    - ケース4: JS実行時クラッシュ・全画面描画検証 (0.66s) : PASS
+    - ケース5: 会議品質・回次整合性・重複排除検証 (0.55s) : PASS
+    - ケース6: 会議体・タイムライン ID完全排他性・整合性 (0.01s) : PASS
+    - ケース7: 康煕部首・特殊文字 NFKC 正規化検証 (0.94s) : PASS
+    - ケース8: プレースホルダー日付（2099/01/01）ゼロ遮断検証 (0.00s) : PASS
+    - ケース15: SQLiteマスターDB整合性 & 2系統JSON完全同期検証 (0.78s) : PASS
+    - ケース9: 管理サーバー API 単体・統合テスト (4.96s) : PASS
+    - ケース10: クローラー手動保護回帰テスト (4.02s) : PASS
+    - ケース11: スクレイピングルール整合性検証 (0.39s) : PASS
+    - ケース12: ホスト分散・ゴミデータ不変性検証 (0.32s) : PASS
+    - ケース13: 省庁親ポータルURL設定・探索網羅性検証 (0.39s) : PASS
+    - ケース14: アクティブ会議体フィルタリング・廃止管理検証 (0.82s) : PASS
+    - 【単体関数検証 (Unit Tests)】: 全23種合格（U1〜U23 完全合格 / 7.65s）
+  ```
+- **5. 次回予定**:
+  - Track [Config-DB] **フェーズ 2（Drop 93）**: 会議体（`council_id`）直接指定ハードコード（`cao-zei_cho`, `cao-cstp`, `fsa-code_followup` 等のサブページ除外分岐、資料名ディレクトリ補完、初期ウォッチ会議体ID）の撤廃 & `scraping_rules` / `admin_configs` への完全移行。
+
+---
 
 #### 【Drop 91】経済産業省（METI）産業構造審議会の総会正規化 & 傘下65組織（部会・分科会・小委員会・WG）の会議体新規登録 & 全1,042開催回・8,895配付資料の網羅的取得・スクレイピングルール完備（完了）
 

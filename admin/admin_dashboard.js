@@ -822,14 +822,13 @@
     };
 
     function getMinistryColor(code) {
-      const colorMap = {
-        CAO:'#a855f7', CAS:'#4f46e5', DIGITAL:'#06b6d4', CFA:'#ec4899',
-        MIC:'#f43f5e', MOJ:'#64748b', MOFA:'#0284c7', MOF:'#3b82f6', MEXT:'#d946ef',
-        MHLW:'#f59e0b', MAFF:'#16a34a', METI:'#10b981', MLIT:'#0d9488', MOE:'#84cc16',
-        MOD:'#475569', NPA:'#1e3a8a', FSA:'#2563eb', FSC:'#f97316', NPSC:'#64748b',
-        CAA:'#f97316', PPC:'#0891b2', NRA:'#dc2626'
-      };
-      return colorMap[code] || '#3b82f6';
+      if (!code) return '#3b82f6';
+      const normCode = (code === 'ENV') ? 'MOE' : String(code).toUpperCase();
+      if (typeof ministries !== 'undefined' && ministries && ministries[normCode]) {
+        if (ministries[normCode].hexColor) return ministries[normCode].hexColor;
+        if (ministries[normCode].color) return ministries[normCode].color;
+      }
+      return `var(--color-${normCode.toLowerCase()}, #3b82f6)`;
     }
 
     // ─── Render Meetings Management (TAB 2) ───

@@ -965,6 +965,19 @@ def check_portal_coverage_and_slug_inheritance(data=None):
             print(f"  [FAIL] {min_key} の親ポータルURLに '{pattern}' が含まれていません")
             return False
 
+    # Drop 92: 省庁ドメイン・新着ポータル・カラー設定のDB一元化および ENV 残存バグゼロ検証
+    if "ENV" in min_map:
+        print("  [FAIL] ministries に旧省庁コード 'ENV' が残存しています ('MOE' に統一必須)")
+        return False
+    missing_domains = [k for k, v in min_map.items() if not isinstance(v, dict) or not v.get("domains") or not v.get("hexColor")]
+    if missing_domains:
+        print(f"  [FAIL] ministries 内で domains または hexColor が未設定の省庁があります: {missing_domains}")
+        return False
+    moe_entry = min_map.get("MOE", {})
+    if "env.go.jp" not in moe_entry.get("domains", []) or not moe_entry.get("newsPortals"):
+        print("  [FAIL] MOE (環境省) の domains または newsPortals 設定が不正です")
+        return False
+
     from utils import normalize_url_for_matching
     from discover_councils import parse_data_json
     try:
@@ -1218,7 +1231,7 @@ def detect_required_unit_tests(changed_files):
             required_keys.add("u_parent_table")
             required_keys.add("u_table_html_expand")
             matched = True
-        if any(w in diff_out for w in ["is_waf_challenge", "_get_host_interval", "_rate_limit_host"]):
+        if any(w in diff_out for w in ["is_waf_challenge", "_get_host_interval", "_rate_limit_host", "load_ministry_and_host_configs_from_db", "_build_other_ministry_domains_map"]):
             required_keys.add("u_waf")
             matched = True
         if any(w in diff_out for w in ["_filter_incremental_subpages", "_normalize_url_for_comparison"]):

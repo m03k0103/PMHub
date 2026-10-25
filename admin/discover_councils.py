@@ -472,18 +472,27 @@ def _discover_from_ministry_news(
         crawler_config = {}
     try:
         from crawler import (
-            MINISTRY_NEWS_PORTALS, resolve_news_portal_urls,
-            extract_news_items_from_html, fetch_url,
+            MINISTRY_NEWS_PORTALS, load_ministry_and_host_configs_from_db,
+            resolve_news_portal_urls, extract_news_items_from_html, fetch_url,
             match_council_from_news_item, normalize_text
         )
     except ImportError:
         from admin.crawler import (
-            MINISTRY_NEWS_PORTALS, resolve_news_portal_urls,
-            extract_news_items_from_html, fetch_url,
+            MINISTRY_NEWS_PORTALS, load_ministry_and_host_configs_from_db,
+            resolve_news_portal_urls, extract_news_items_from_html, fetch_url,
             match_council_from_news_item, normalize_text
         )
 
-    target_mins = [normalize_ministry_code(target_ministry)] if target_ministry else list(dict.fromkeys(normalize_ministry_code(k) for k in MINISTRY_NEWS_PORTALS.keys()))
+    load_ministry_and_host_configs_from_db(data={"ministries": ministries, "crawlerConfig": crawler_config})
+    portals_by_min = {
+        normalize_ministry_code(k): (v.get("newsPortals") or MINISTRY_NEWS_PORTALS.get(normalize_ministry_code(k), []))
+        for k, v in (ministries or {}).items()
+        if isinstance(v, dict) and (v.get("newsPortals") or MINISTRY_NEWS_PORTALS.get(normalize_ministry_code(k)))
+    }
+    if not portals_by_min:
+        portals_by_min = {normalize_ministry_code(k): v for k, v in MINISTRY_NEWS_PORTALS.items()}
+
+    target_mins = [normalize_ministry_code(target_ministry)] if target_ministry else list(dict.fromkeys(portals_by_min.keys()))
     total_ministries = len(target_mins)
     emit(f"走査対象府省庁: {', '.join(target_mins)} (計 {total_ministries} 省庁)")
 
@@ -513,7 +522,7 @@ def _discover_from_ministry_news(
     now_ts_slash = datetime.now().strftime("%Y/%m/%d %H:%M")
 
     for current_min_idx, min_code in enumerate(target_mins, start=1):
-        portal_defs = MINISTRY_NEWS_PORTALS.get(min_code, [])
+        portal_defs = portals_by_min.get(min_code, [])
         if not portal_defs:
             continue
 

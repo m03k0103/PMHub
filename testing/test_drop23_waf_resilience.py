@@ -23,6 +23,20 @@ class TestDrop23WafResilience(unittest.TestCase):
         self.assertEqual(crawler._get_host_interval("www.cao.go.jp"), 0.5)
         self.assertEqual(crawler._get_host_interval(""), 0.5)
 
+    def test_ministry_and_host_configs_db_unification(self):
+        """Drop 92: 省庁ドメイン・新着ポータル・ホスト設定のDB一元化とENV残存バグ根絶検証"""
+        crawler.load_ministry_and_host_configs_from_db()
+        self.assertNotIn("ENV", crawler.MINISTRY_DOMAINS, "Legacy 'ENV' key must not exist in MINISTRY_DOMAINS")
+        self.assertIn("MOE", crawler.MINISTRY_DOMAINS)
+        self.assertIn("env.go.jp", crawler.MINISTRY_DOMAINS["MOE"])
+        self.assertGreaterEqual(len(crawler.MINISTRY_DOMAINS), 45, "All ministries in DB should have domains loaded")
+        self.assertIn("MOE", crawler.MINISTRY_NEWS_PORTALS)
+        self.assertNotIn("ENV", crawler.MINISTRY_NEWS_PORTALS)
+        # 外局と本省の共有ドメイン（ANRE / METI 等）が他省庁ドメインとして誤遮断されないことを検証
+        self.assertNotIn("meti.go.jp", crawler._OTHER_MINISTRY_DOMAINS_MAP.get("ANRE", ()))
+        self.assertNotIn("env.go.jp", crawler._OTHER_MINISTRY_DOMAINS_MAP.get("MOE", ()))
+        self.assertIn("mhlw.go.jp", crawler._OTHER_MINISTRY_DOMAINS_MAP.get("METI", ()))
+
     def test_is_waf_challenge(self):
         """CR-43 / CR-48: AWS WAF / Cloudflare チャレンジ画面の検知検証"""
         self.assertTrue(crawler.is_waf_challenge(b"anything", status_code=202))
