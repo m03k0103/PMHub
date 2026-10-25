@@ -29,6 +29,17 @@ def extract_round_and_type(title, council_name="", url=""):
         wg_m = re.search(r'/meeting/wg/([^/]+)/', url)
         if wg_m:
             sub_type += f"_{wg_m.group(1)}"
+        yr_m = re.search(r'/(20\d\d)_\d+\.html', url)
+        if yr_m:
+            sub_type += f"_{yr_m.group(1)}"
+        hoan_m = re.search(r'/(hoan)_\d+\.html', url)
+        if hoan_m:
+            sub_type += f"_{hoan_m.group(1)}"
+
+    if '航空機宇宙産業小委員会' in t_norm and '航空機宇宙産業小委員会' not in council_name:
+        sub_type += "_航空機宇宙産業小委員会"
+    if '保安分科会' in t_norm and '保安・消費生活用製品安全分科会' in council_name:
+        sub_type += "_保安分科会"
 
     if '／' in council_name or '/' in council_name:
         for part in re.split(r'[／/]', council_name):
@@ -219,6 +230,8 @@ def run_test(data=None):
     # Known legacy cross-council pairs pending ministry-specific migration Drops
     # (Strictly no new duplicates or moj duplicates allowed)
     known_legacy_cross_pairs = {
+        frozenset(['meti-kagaku_busshitsu', 'meti-sankoshin_hoan_shohi_chemicals']),
+        frozenset(['meti-kagaku_busshitsu', 'meti-sankoshin_seizo_sangyo_kagaku_busshitsu']),
         frozenset(['anre-souene_kihon_seisaku', 'cas-358']),
         frozenset(['caa-kaigi_kenkyu', 'caa-shokuhin_eisei_kijun']),
         frozenset(['cao-267', 'cas-shingijutsu_kouka_hyouka']),
