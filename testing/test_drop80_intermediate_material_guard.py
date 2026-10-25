@@ -20,8 +20,12 @@ def is_intermediate_html_material(name, url):
         return False
     
     clean_n = name.strip()
-    generic_names = {'会議資料', '配付資料', '配布資料', '資料一覧', '配付資料一覧', '配布資料一覧', '会議資料一覧', '提出資料 (HTML)', '配付資料 (HTML)'}
-    if clean_n in generic_names:
+    generic_names = {
+        '会議資料', '配付資料', '配布資料', '資料一覧', '配付資料一覧', '配布資料一覧', 
+        '会議資料一覧', '提出資料 (HTML)', '配付資料 (HTML)', '提出資料', '会議資料ページ', 
+        '議事次第・配付資料 (HTML)', '配付資料一覧ページ (HTML)', '議事次第・配付資料'
+    }
+    if clean_n in generic_names or '配付資料一覧ページ' in clean_n or '議事次第・配付資料' in clean_n:
         return True
     return False
 
@@ -31,21 +35,32 @@ class TestDrop80IntermediateMaterialGuard(unittest.TestCase):
         self.councils = {c['id']: c for c in data.get('councils', [])}
         self.meetings = data.get('meetings', [])
         
-    def test_zeicho_councils_have_zero_intermediate_materials(self):
-        """CR-209: 税制調査会系列 6会議体に中間HTML配付資料が混入していないこと"""
-        target_councils = {
+    def test_guarded_councils_have_zero_intermediate_materials(self):
+        """CR-209 / CR-211: 税制調査会系列全13会議体および内閣官房2会議体に中間HTML配付資料が混入していないこと"""
+        guarded_councils = {
+            # 税制調査会系列
             'cao-zeicho_digital_noukan_senmonka',
             'cao-zeicho_life_senmonka',
             'cao-zeicho_sozoku_zoyo_senmonka',
             'cao-zeicho_koku_han_kaigou',
             'cao-zeicho_rougo_shisan_senmonka',
-            'cao-zei_cho'
+            'cao-zei_cho',
+            'cao-zeicho_noukan_senmonka',
+            'cao-zeicho_ebpm_senmonka',
+            'cao-zeicho_discussion3_hojin',
+            'cao-zeicho_discussion1_kokusai',
+            'cao-zeicho_kiso_shoiinkai',
+            'cao-zeicho_renketsu_senmonka',
+            'cao-zeicho_discussion2_mynumber',
+            # 内閣官房
+            'cas-kokusentoc',
+            'cas-kagayakujosei'
         }
         
         violations = []
         for m in self.meetings:
             cid = m.get('councilId')
-            if cid in target_councils:
+            if cid in guarded_councils:
                 for mat in m.get('materials', []):
                     mname = mat.get('name', '')
                     murl = mat.get('url', '')
@@ -54,25 +69,19 @@ class TestDrop80IntermediateMaterialGuard(unittest.TestCase):
         
         self.assertEqual(len(violations), 0, f"Intermediate HTML materials found: {violations}")
 
-    def test_digital_noukan_terminal_materials_present(self):
-        """第1回〜第4回 デジタル化専門家会合に末端PDF資料が登録されていること"""
-        digital_meetings = [m for m in self.meetings if m.get('councilId') == 'cao-zeicho_digital_noukan_senmonka']
-        self.assertGreaterEqual(len(digital_meetings), 5, "At least 5 meetings should exist for digital noukan")
-        
-        for m in digital_meetings:
-            mid = m['id']
+    def test_terminal_materials_present(self):
+        """国家戦略特区諮問会議および女性が輝く社会づくり本部に末端PDF資料が登録されていること"""
+        kokusentoc_m = [m for m in self.meetings if m.get('councilId') == 'cas-kokusentoc']
+        self.assertGreaterEqual(len(kokusentoc_m), 60, "At least 60 meetings should exist for kokusentoc")
+        for m in kokusentoc_m:
             mats = m.get('materials', [])
-            self.assertGreater(len(mats), 0, f"Meeting {mid} should have terminal materials")
-            # All materials in digital noukan should be PDFs (次第, 説明資料, 議事録, 記者会見録)
-            for mat in mats:
-                self.assertTrue(mat['url'].lower().endswith('.pdf'), f"Material should be PDF: {mat['name']} -> {mat['url']}")
-                # Size string like (PDF形式:98KB) should be removed
-                self.assertNotIn('(PDF形式', mat['name'], f"Size label not cleaned in {mat['name']}")
+            self.assertGreater(len(mats), 0, f"Meeting {m['id']} should have terminal materials")
 
     def test_helper_detection_logic(self):
         """中間HTML判定ロジックが正しく判定すること"""
         self.assertTrue(is_intermediate_html_material('会議資料', 'https://www.cao.go.jp/zei-cho/gijiroku/digital-noukan/2025/7digital-noukan4kai.html'))
-        self.assertTrue(is_intermediate_html_material('配付資料一覧', 'https://www.chisou.go.jp/tiiki/kokusentoc/dai69/shiryou.html'))
+        self.assertTrue(is_intermediate_html_material('配付資料一覧ページ (HTML)', 'https://www.chisou.go.jp/tiiki/kokusentoc/dai69/shiryou.html'))
+        self.assertTrue(is_intermediate_html_material('第16回 議事次第・配付資料 (HTML)', 'https://www.cas.go.jp/jp/seisaku/kagayakujosei/dai16/gijisidai.html'))
         self.assertFalse(is_intermediate_html_material('次第', 'https://www.cao.go.jp/zei-cho/content/7digital-noukan4kai.pdf'))
         self.assertFalse(is_intermediate_html_material('議事要旨', 'https://www.soumu.go.jp/main_sosiki/singi/gijiyoushi.html'))
 

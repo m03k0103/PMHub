@@ -1563,3 +1563,58 @@ flowchart LR
 
 #### 4. 次のステップ (Next Steps)
 - `feature/drop80-expand-terminal-materials-and-guard` ブランチをリモートへ push し、ユーザー確認・指示を待機（ユーザー承認後に main へマージ）。
+
+---
+
+### Drop 83: 他省庁（内閣官房・税制調査会残り全会合）中間HTML配付資料の末端PDF一括展開 & 再発防止ガード拡大 (2026-10-25)
+
+#### 1. 背景と課題 (Background & Issues)
+- **他省庁の中間ナビゲーションリンク是正と横展開確認 (`GLOBAL_RULES.md` §6)**:
+  Drop 80 に続き、他省庁で中間ナビゲーションリンク（「配付資料一覧ページ」「会議資料」等）が配付資料として登録されていた事例を順次是正。
+  内閣官房（CAS）の主要2会議体（全86開催回）および内閣府・税制調査会（CAO）の残り全7専門家会合・小委員会（全54開催回）を対象に、各個別資料ページを巡回して実際の末端PDF（次第、各省庁説明資料、意見書等）を一括取得・展開。
+  1. `cas-kokusentoc`（国家戦略特別区域諮問会議: 全70開催回）
+  2. `cas-kagayakujosei`（すべての女性が輝く社会づくり本部: 全16開催回）
+  3. `cao-zeicho_noukan_senmonka`（納税環境整備に関する専門家会合: 全13開催回）
+  4. `cao-zeicho_ebpm_senmonka`（税制のEBPMに関する専門家会合: 全8開催回）
+  5. `cao-zeicho_discussion3_hojin`（法人課税ディスカッショングループ: 全7開催回）
+  6. `cao-zeicho_discussion1_kokusai`（国際課税ディスカッショングループ: 全8開催回）
+  7. `cao-zeicho_kiso_shoiinkai`（政府税制調査会 基礎問題小委員会: 全6開催回）
+  8. `cao-zeicho_renketsu_senmonka`（連結納税制度に関する専門家会合: 全5開催回）
+  9. `cao-zeicho_discussion2_mynumber`（マイナンバー・税務執行ディスカッショングループ: 全5開催回）
+
+#### 2. 変更内容 (Changes Made)
+1. **中間HTMLリンク 134件の削除 & 末端PDF資料 1,429件の一括展開・登録 (CR-211)**:
+   - 各個別資料ページから、実際の配付資料（資料1〜N、重点方針、各省庁説明資料等の末端PDF 計1,429件）を直接取得して `manualLock: true` で登録。
+   - スキップリンク（「このページの本文へ移動」等 69件）を完全排除（`AGENTS.md` §2-8 準拠）。
+   - ジェネリック資料名「添付資料」2件をページ文脈に基づき `[法D4-2] 添付資料`、`[法D3-4] 添付資料` へ補正。
+   - 資料名からファイル形式・サイズ表記（`(PDF形式:98KB)` 等）をクレンジング。
+2. **各開催回公式URL（`officialUrl`）の個別資料ページ適正化**:
+   - 会議体トップや一覧ポータルから、各回の配付資料個別ページ（`dai69/shiryou.html`、`dai16/gijisidai.html` 等）へ更新（全138開催回）。
+3. **中間HTML配付資料の再発防止ガード対象拡大 (CR-212)**:
+   - [`testing/test_drop80_intermediate_material_guard.py`](file:///d:/dev/PMHub/testing/test_drop80_intermediate_material_guard.py)（単体テスト U23）および [`testing/test_no_duplicate_meetings.py`](file:///d:/dev/PMHub/testing/test_no_duplicate_meetings.py)（統合テスト第3層ケース5）のガード対象に、上記 9会議体を追加し、合計 15会議体において中間HTML配付資料の混入ゼロを恒久保証。
+4. **SQLiteマスターDB & 2系統JSONアトミック完全同期**:
+   - `admin/db/export_data.py` により同期（1,703 councils, 19,997 meetings, 115,567 materials）。
+
+#### 3. 検証結果 (Verification Results)
+- **統合テストスイート（`testing/run_test_suite.py --all-layers`）**:
+  - 全15ケース完全合格＋単体テスト23種完全合格
+  - ケース1: コード文法チェック (SyntaxError / 括弧 / div 0件) : PASS
+  - ケース2: リンク疎通確認 (新規追加・変更URL 433件 全件 200 OK 検証済) : PASS
+  - ケース3: UI表示機能検証 (DOMコンテナ整合性) : PASS
+  - ケース4: JS実行時クラッシュ・全画面描画検証 : PASS
+  - ケース5: 会議品質・回次整合性・重複排除・中間HTML配付資料遮断検証 (全19,997件 重複0件・中間リンク混入0件) : PASS
+  - ケース6: 会議体・タイムライン ID完全排他性・整合性 (1,703会議体一致) : PASS
+  - ケース7: 康煕部首・特殊文字 NFKC 正規化検証 : PASS
+  - ケース8: プレースホルダー日付（2099/01/01）ゼロ遮断検証 : PASS
+  - ケース9: 管理サーバー API 単体・統合テスト (全11テスト合格) : PASS
+  - ケース10: クローラー手動保護回帰テスト (manualLock 非破壊性合格) : PASS
+  - ケース11: スクレイピングルール整合性検証 : PASS
+  - ケース12: ホスト分散・ゴミデータ不変性検証 : PASS
+  - ケース13: 省庁親ポータルURL設定・探索網羅性検証 : PASS
+  - ケース14: アクティブ会議体フィルタリング・廃止管理検証 : PASS
+  - ケース15: SQLiteマスターDB整合性 & 2系統JSON完全同期検証 : PASS
+  - 【単体関数検証 (Unit Tests)】: 全23種類完全合格（U13ノイズ排除, U14コンテキスト復元, U23中間HTML遮断ガード等含む） : PASS
+
+#### 4. 次のステップ (Next Steps)
+- `feature/drop83-expand-cas-cao-terminal-materials` ブランチをリモートへ push し、ユーザー確認・指示を待機（ユーザー承認後に main へマージ）。
+- 継続課題として、財務省（MOF: 財政制度等審議会系列 計190件）の末端PDF一括展開を Drop 84 として順次実施。
