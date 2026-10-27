@@ -102,10 +102,10 @@ GENERIC_EXACT_ONLY_KEYWORDS = frozenset({
     '原子力規制委員会'
 })
 
-def is_generic_title_text(text):
+def is_generic_title_text(text, ministry=None, rule=None):
     """
     会議名として不適切な汎用見出し（ジェネリックタイトル）であるかを判定。
-    完全一致専用語句（開催について、議事、資料等）と部分一致許用語句（トップページ、目次、会議資料詳細等）を厳格に区別。
+    Drop 96: 汎用キーワード判定に加え、省庁別除外設定（admin_configs）および会議体ルール（scraping_rules）を動的照合。
     """
     if not text:
         return True
@@ -114,13 +114,28 @@ def is_generic_title_text(text):
         return True
     if re.match(r'^\d+\s*[\.．]\s*(概要|趣旨|経緯|意見公募|背景|諮問事項|料率検証)', t):
         return True
-    if any(k in t.lower() for k in ['the tax commission', 'tax commission', '金融行政方針', 'ご意見等連絡先']):
+    if 'ご意見等連絡先' in t:
         return True
     for kw in GENERIC_TITLE_KEYWORDS:
         if kw in GENERIC_EXACT_ONLY_KEYWORDS:
             continue
         if len(kw) >= 3 and kw in t:
             return True
+
+    # Drop 96: 省庁別除外タイトルキーワードの動的照合
+    if ministry:
+        m_code = normalize_ministry_code(ministry)
+        m_cfg = _MINISTRY_EXCLUSIONS_MAP.get(m_code, {})
+        for kw in m_cfg.get("exclude_title_keywords", ()):
+            if kw in t or kw.lower() in t.lower():
+                return True
+
+    # Drop 96: 会議体別除外タイトルキーワードの動的照合
+    if rule and isinstance(rule, dict):
+        for kw in rule.get("exclude_subpage_title_keywords", ()):
+            if kw in t or kw.lower() in t.lower():
+                return True
+
     return False
 
 # 組織常設資料（設置要綱・委員名簿・運営規程等）のキーワード（CR-20: 会議体資料であり開催回ではない）
@@ -130,19 +145,19 @@ ORGANIZATION_DOC_KEYWORDS = frozenset({
     '構成員', '審議会の構成', '委員会の構成', 'の構成', '機構図', '組織図'
 })
 
-# 省庁共通ナビゲーション・広報リンク・非会議サブページのキーワード（CR-19: 開催回への誤登録を完全遮断）
+# 省庁共通ナビゲーション・広報リンク・非会議サブページのキーワード（CR-19 & Drop 96: 真の汎用に純化）
 COMMON_NAV_KEYWORDS = frozenset({
     '報道・広報', '広報', '関連リンク', 'リンク集', '災害への対応', '施策紹介', '最近の話題',
-    'オンライン利用率引上げ', '調査の依頼方法', '調査の概要', '外務省後援名義等の使用許可申請',
+    'オンライン利用率引上げ', '調査の依頼方法', '調査の概要',
     '御意見・御感想', 'ご意見・ご感想', '大臣会見記録', '会見記録', '報道官会見記録', '広報印刷物',
-    '赤れんが棟', '法務省の個人情報保護について', '個人情報保護について', '法制審議会開催予定表',
+    '個人情報保護について',
     '開催予定表', '検査方針・研修実績等', '対象者別メニュー', '提供可能となる食品の情報',
     '新型コロナウイルス感染症に関する情報一覧', '感染症に関する情報一覧',
     '審議会開催予定', '大臣等記者会見', '記者会見', '政策情報（会議・統計等）', '会議・委員会等',
     'パンフレット', 'リーフレット', 'メールマガジン', 'メルマガ', 'ポスター',
-    '能力開発基本調査', '調査の実施について', '問い合わせ先', '情報配信サービス', 'イベント概要',
-    'セミナーのご案内', 'セミナー案内', '労使関係セミナー',
-    '監査監督機関国際フォーラム', 'IFIAR', '議事録・資料等'
+    '調査の実施について', '問い合わせ先', '情報配信サービス', 'イベント概要',
+    'セミナーのご案内', 'セミナー案内',
+    '議事録・資料等'
 })
 
 # 配付資料として不適切な汎用ナビゲーション・UIテキスト（事前除外用定数）
@@ -422,7 +437,7 @@ def clean_meeting_title(title):
 # デフォルトの日付抽出正規表現
 DEFAULT_DATE_REGEX = r'(?:令和|平成)(?:\d+|元)年\d+月\d+日|\d{4}年\d+月\d+日|\d{4}[/-]\d+[/-]\d+'
 
-# 汎用インデックス・ポータルURL除外用の事前コンパイル正規表現
+# 汎用インデックス・ポータルURL除外用の事前コンパイル正規表現（Drop 96: 真の汎用に純化）
 _GENERIC_INDEX_URL_PATTERNS = re.compile(
     r'houdou/index\.html|'
     r'houdou/houdou\.html|'
@@ -438,42 +453,23 @@ _GENERIC_INDEX_URL_PATTERNS = re.compile(
     r'/kaisai\.html$|'
     r'indexshingi\.html|'
     r'newpage_19921\.html|'
-    r'cas\.go\.jp/jp/s(?:i|hi)ryou?(?:/index\.html)?$|'
-    r'cas\.go\.jp/jp/s(?:i|hi)ryou?/|'
-    r'cas\.go\.jp/jp/seisakukaigi/index\.html|'
-    r'cyber/what-we-do/csmeeting\.html|'
     r'/int/kaisai/kako\.html|'
-    r'study/dai3sya/index\.html|'
     r'policymeeting/(?:index\.html)?$|'
-    r'fiscal_system_council/[^/]+/(?:proceedings|report)/(?:index\.html)?$|'
-    r'gijiroku/zeicho/\d{4}/(?:index\.html)?$|'
-    r'gijiroku/ebpm/\d{4}/(?:index\.html)?$|'
-    r'kokurituken/gijiroku/attach/|'
-    r'fsc\.go\.jp/senmon/(?:[^/]+/)?$|'
-    r'kanbou_library_library\d+_\d+\.html|'
-    r'14th_congress_index\.html|'
     r'menu_sosiki/singi/index\.html|'
     r'sonota_index\.html|'
     r'seisakusesaku_index\.html|'
     r'shingi_index\.html|'
     r'shingikai_index\.html|'
-    r'topics/bukyoku/syakai/soren/|'
-    r'bousai\.go\.jp/kohou/oshirase/|'
     r'iinkaisai/iinkaisai\.html|'
     r'bunkakaisai/bunkakaisai\.html|'
     r'yusei_kaisai\.html|'
     r'/kaisai/yusei/|'
     r'menu_news/s-news|'
     r'b_menu/houdou|'
-    r'da\.nra\.go\.jp/search\?.*f\.gi=.*f\.gi=|'
-    r'digital\.go\.jp/(?:en/)?councils/[^/]+/?$|'
-    r'digital\.go\.jp/en/|'
-    r'digital\.go\.jp/councils/procurement-agile-opensource/(?:agile|opensource)-review-meeting/?$|'
     r'sitemap(?:\.html|\.xml|/)?$|'
     r'/sitemap/|'
     r'agenda/meeting/[^/]+/archive(?:_\d+-\d+)?\.html$|'
     r'archive_\d+-\d+\.html$|'
-    r'/ifiar/|'
     r'base_gijiroku\.html|'
     r'top_gijiroku\.html|'
     r'bunkakai_index\.html|'
@@ -489,21 +485,19 @@ _GENERIC_INDEX_URL_PATTERNS = re.compile(
     r'shingi/kaisaiyotei(?:\.html)?|'
     r'/kaisai_yotei\.html$|'
     r'260915\.html|'
-    r'singi_kento/kento/\d{4}/(?:index\.html)?$|'
-    r'strategic_priorities',
+    r'singi_kento/kento/\d{4}/(?:index\.html)?$',
     re.IGNORECASE
 )
 
-# 汎用インデックス判定用の除外タイトルキーワード（部分一致用）
+# 汎用インデックス判定用の除外タイトルキーワード（部分一致用・Drop 96: 真の汎用に純化）
 _GENERIC_INDEX_TITLE_KEYWORDS = frozenset({
-    "その他情報", "覚書等", "覚書", "有識者会議｜警察庁", "過去の国際会議",
+    "覚書等", "覚書", "過去の国際会議",
     "研究会等一覧へのリンク", "会議資料詳細", "資料詳細", "会議詳細", "検討会等",
-    "食の安全、を科学する", "審議会等", "｜デジタル庁", "｜Digital Agency", "Digital Agency",
+    "審議会等",
     "政策・審議会等", "省議・審議会等", "政策・審議会等トップへ", "審議会・研究会",
-    "監査監督機関国際フォーラム", "IFIAR", "議事録・資料等", "目次",
-    "会議開催予定", "開催予定一覧", "金融行政方針", "事務年度金融行政方針",
-    "パブリックコメントの結果", "意見公募の趣旨", "ご意見等連絡先",
-    "The Tax Commission", "Tax Commission"
+    "議事録・資料等", "目次",
+    "会議開催予定", "開催予定一覧",
+    "パブリックコメントの結果", "意見公募の趣旨", "ご意見等連絡先"
 })
 
 # 汎用インデックス判定用の完全一致除外タイトル（単体での登録排除用）
@@ -572,6 +566,50 @@ def _build_other_ministry_domains_map(ministry_domains_dict):
 MINISTRY_DOMAINS = {}
 _OTHER_MINISTRY_DOMAINS_MAP = {}
 MINISTRY_NEWS_PORTALS = {}
+_MINISTRY_EXCLUSIONS_MAP = {}
+
+# Drop 96: フォールバック用省庁別除外設定
+_FALLBACK_MINISTRY_EXCLUSIONS = {
+    "FSC": {
+        "exclude_url_patterns": ["fsc.go.jp/senmon/"],
+        "exclude_title_keywords": ["食の安全、を科学する"]
+    },
+    "DIGITAL": {
+        "exclude_url_patterns": ["digital.go.jp/en/", "digital.go.jp/councils/procurement-agile-opensource/"],
+        "exclude_title_keywords": ["｜デジタル庁", "｜Digital Agency", "Digital Agency"]
+    },
+    "NPA": {
+        "exclude_title_keywords": ["有識者会議｜警察庁"]
+    },
+    "FSA": {
+        "exclude_url_patterns": ["strategic_priorities", "/ifiar/"],
+        "exclude_title_keywords": ["金融行政方針", "事務年度金融行政方針", "監査監督機関国際フォーラム", "IFIAR"]
+    },
+    "MOJ": {
+        "exclude_url_patterns": ["kanbou_library_library", "14th_congress_index"],
+        "exclude_title_keywords": ["法務省の個人情報保護について", "赤れんが棟", "法制審議会開催予定表"]
+    },
+    "MOFA": {
+        "exclude_title_keywords": ["外務省後援名義等の使用許可申請"]
+    },
+    "CAS": {
+        "exclude_url_patterns": ["cas.go.jp/jp/s(?:i|hi)ryou", "cas.go.jp/jp/seisakukaigi/index.html"],
+        "exclude_title_keywords": ["その他情報"]
+    },
+    "NRA": {
+        "exclude_url_patterns": ["da.nra.go.jp/search"]
+    },
+    "CAO": {
+        "exclude_url_patterns": ["bousai.go.jp/kohou/oshirase/"]
+    },
+    "MHLW": {
+        "exclude_url_patterns": ["topics/bukyoku/syakai/soren/", "kokurituken/gijiroku/attach/"],
+        "exclude_title_keywords": ["労使関係セミナー", "能力開発基本調査"]
+    },
+    "MIC": {
+        "exclude_url_patterns": ["study/dai3sya/index.html"]
+    }
+}
 
 
 def load_ministry_and_host_configs_from_db(db_path=None, data=None):
@@ -580,7 +618,7 @@ def load_ministry_and_host_configs_from_db(db_path=None, data=None):
     省庁別ドメイン (MINISTRY_DOMAINS)、新着ポータル (MINISTRY_NEWS_PORTALS)、
     およびホスト別レートリミット (HOST_RATE_LIMITS) を動的にロード・同期する。
     """
-    global MINISTRY_DOMAINS, _OTHER_MINISTRY_DOMAINS_MAP, MINISTRY_NEWS_PORTALS
+    global MINISTRY_DOMAINS, _OTHER_MINISTRY_DOMAINS_MAP, MINISTRY_NEWS_PORTALS, _MINISTRY_EXCLUSIONS_MAP
     global HOST_RATE_LIMITS, _DEFAULT_HOST_INTERVAL, _MIN_HOST_INTERVAL
 
     ministries_cfg = {}
@@ -639,6 +677,24 @@ def load_ministry_and_host_configs_from_db(db_path=None, data=None):
     if new_portals:
         MINISTRY_NEWS_PORTALS.clear()
         MINISTRY_NEWS_PORTALS.update(new_portals)
+
+    # Drop 96: 省庁別除外設定のロード
+    new_exclusions = {k: dict(v) for k, v in _FALLBACK_MINISTRY_EXCLUSIONS.items()}
+    if isinstance(ministries_cfg, dict):
+        for raw_code, m_info in ministries_cfg.items():
+            if not isinstance(m_info, dict):
+                continue
+            code = normalize_ministry_code(raw_code)
+            u_pats = list(m_info.get("exclude_url_patterns") or [])
+            t_kws = list(m_info.get("exclude_title_keywords") or [])
+            if u_pats or t_kws:
+                cur_ex = new_exclusions.setdefault(code, {})
+                if u_pats:
+                    cur_ex["exclude_url_patterns"] = u_pats
+                if t_kws:
+                    cur_ex["exclude_title_keywords"] = t_kws
+    _MINISTRY_EXCLUSIONS_MAP.clear()
+    _MINISTRY_EXCLUSIONS_MAP.update(new_exclusions)
 
     if isinstance(crawler_cfg, dict):
         def_interval = crawler_cfg.get("default_host_interval")
@@ -953,6 +1009,7 @@ _MIN_HOST_INTERVAL = _DEFAULT_HOST_INTERVAL  # 後方互換用
 
 # CR-49 / Drop 92: ドメイン別アクセス間隔テーブル（SQLite admin_configs.crawlerConfig から動的ロード）
 HOST_RATE_LIMITS = dict(_FALLBACK_HOST_RATE_LIMITS)
+_MINISTRY_EXCLUSIONS_MAP = {k: dict(v) for k, v in _FALLBACK_MINISTRY_EXCLUSIONS.items()}
 load_ministry_and_host_configs_from_db()
 
 def _get_host_interval(host):
@@ -2606,8 +2663,11 @@ def execute_rule_retrieval(target, html, rule_item, use_llm=False, recheck_recen
     return scraped_item
 
 
-def is_generic_index_url(url, title=""):
-    """報道発表インデックスやポータルトップ・開催状況一覧・「その他情報」等の汎用インデックスURLかどうかを判定する"""
+def is_generic_index_url(url, title="", ministry=None, rule=None):
+    """
+    報道発表インデックスやポータルトップ・開催状況一覧等の汎用インデックスURLかどうかを判定する。
+    Drop 96: 汎用パターンに加え、省庁別除外設定（admin_configs）および会議体ルール（scraping_rules）を動的照合。
+    """
     if not url:
         return True
     u_low = url.lower()
@@ -2621,6 +2681,42 @@ def is_generic_index_url(url, title=""):
             return True
         if any(k in t_clean for k in _GENERIC_INDEX_TITLE_KEYWORDS):
             return True
+
+    # Drop 96: 省庁別除外URLパターンおよびタイトルキーワード照合
+    matched_ministries = []
+    if ministry:
+        matched_ministries.append(normalize_ministry_code(ministry))
+    else:
+        try:
+            parsed_host = urllib.parse.urlparse(url).netloc.lower()
+            if parsed_host.startswith("www."):
+                parsed_host = parsed_host[4:]
+            for cand_code, doms in MINISTRY_DOMAINS.items():
+                if any(parsed_host == d or parsed_host.endswith('.' + d) for d in doms):
+                    matched_ministries.append(normalize_ministry_code(cand_code))
+        except Exception:
+            pass
+
+    for m_code in matched_ministries:
+        m_cfg = _MINISTRY_EXCLUSIONS_MAP.get(m_code, {})
+        for pat in m_cfg.get("exclude_url_patterns", ()):
+            if re.search(pat, u_low, re.IGNORECASE):
+                return True
+        if title:
+            for kw in m_cfg.get("exclude_title_keywords", ()):
+                if kw in title:
+                    return True
+
+    # Drop 96: 会議体別除外URLパターン照合
+    if rule and isinstance(rule, dict):
+        for pat in rule.get("exclude_subpage_url_patterns", ()):
+            if pat.lower() in u_low:
+                return True
+        if title:
+            for kw in rule.get("exclude_subpage_title_keywords", ()):
+                if kw.lower() in title.lower():
+                    return True
+
     return False
 
 def is_preliminary_notice_page(url, title=""):
@@ -2919,8 +3015,8 @@ def sync_new_meetings_from_crawl(data, target, scraped_item):
         sub_mats = sub.get("materials", [])
         sub_dates = sub.get("extractedDates", [])
 
-        # 汎用インデックスURLや内閣官房「その他情報」等は会議ページとして登録しない
-        if is_generic_index_url(sub_url, sub_title):
+        # 汎用インデックスURL等は会議ページとして登録しない（Drop 96: 省庁・会議体設定連動）
+        if is_generic_index_url(sub_url, sub_title, ministry=ministry, rule=target_rule):
             continue
 
         # 事前開催案内ページ（事前告知・傍聴案内等）は会議ページとして登録しない（AGENTS.md 第11条・第12条）
@@ -2935,7 +3031,7 @@ def sync_new_meetings_from_crawl(data, target, scraped_item):
             continue
         if any(kw in sub_title for kw in ORGANIZATION_DOC_KEYWORDS) or any(kw in sub_title_clean for kw in ORGANIZATION_DOC_KEYWORDS):
             continue
-        if is_generic_title_text(sub_title) or is_generic_title_text(sub_title_clean) or '食の安全、を科学する' in sub_title:
+        if is_generic_title_text(sub_title, ministry=ministry, rule=target_rule) or is_generic_title_text(sub_title_clean, ministry=ministry, rule=target_rule):
             continue
         # Drop 75: 既存の開催回タイトル幹（Stem）との類似度検証ガード
         # 既存開催回タイトル群および親会議体名と全く異なる異質タイトルは開催回として認識しない

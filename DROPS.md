@@ -1,8 +1,8 @@
 # PMHub 改善・機能実装（Drop）マスタードキュメント (DROPS.md)
 
 > **最終更新**: 2026-10-27  
-> **実装済最新 Drop**: **Drop 95**（2026-10-27 完了）  
-> **次回着手予定 Drop**: **Drop 96**（Track [Config-DB] フェーズ 3: 汎用除外リスト内特定パターンの分離 または Track [Portal-Norm] 推進）  
+> **実装済最新 Drop**: **Drop 96**（2026-10-27 完了）  
+> **次回着手予定 Drop**: **Drop 97**（Track [Portal-Norm] 推進 または Track [Config-DB] フェーズ 4）  
 > 
 > 本ドキュメントは、PMHub の継続的改善ロードマップおよび実装記録を一元管理するマスタードキュメントです。  
 > 今後の構想テーマは **「Track（トラック）」** として管理し、着手・個別実装単位は最新連番を付与した **「Drop（ドロップ）」** として連番アーカイブします。  
@@ -24,7 +24,7 @@
 | **Track [Automation]** | **定時巡回クローラー & ローカルDB同期**<br>(GitHub Actions 連携) | **3階層マルチスケジュール定期実行・異常検知時Skip・ローカルDB自動同期**<br>1. Daily (平朝): 省庁新着検知のみ<br>2. Weekly (土曜): 通常巡回（直近2年重点）<br>3. Monthly (第1日曜): 全期間包括走査<br>連鎖失敗・重大エラー検知時のIssue発行＆次回以降Skip機能、Zero-Storage VM運用、ローカル環境への安全な同期エンジン（`sync_from_json.py` + post-merge hook）の配備 | **定期自動巡回・省力化 & ローカル資産整合性担保** | **【構想中】**<br>（Drop 82 以降） |
 | **Track [Search]**<br>(フェーズ 3) | **全文検索エンジン統合**<br>(PMM資産連携 FTS5構築) | **【フェーズ 3】PMM ローカルPDF資産を活用した全文検索エンジンの構築**<br>`admin/pmm/text_extractor.py` によるPDF本文抽出、SQLite FTS5 仮想テーブル（`fts_materials`）への trigram インデックス構築、サーバー検索API（`/api/search?q=キーワード`）およびフロントエンド検索UI・抜粋ハイライトの実装 | **約11万件の政策資料PDF本文横断検索の実現** | **【構想中】**<br>（Track [Database] 完了後着手） |
 | **Track [Portal-Norm]** | **省庁ポータル一覧・目次URL正常化**<br>(傘下会議体の個別化・パース規則最適化) | **省庁組織・目次・一覧ポータル設定会議体の個別会議体分離・スクレイピング最適化**<br>文化庁・消防庁・文科省等、親ポータルURLが設定されたまま個別開催回が未分離の会議体について、組織ツリーを辿り個別会議体（または開催回）へと正常化する包括的施策 | **Failed会議体の根絶 & 網羅的開催回収集** | **【進行中】**<br>（Drop 79, 91 で推進中） |
-| **Track [Config-DB]** | **会議体・省庁・クローラー設定のハードコード撤廃 & SQLite マスターDB完全一元化** | **【フェーズ 1】省庁・ホスト設定の二重管理解消 & ENV残存バグ根絶（Drop 92 完了）**<br>**【フェーズ 2】会議体（`council_id`）直接指定ハードコードの撤廃 & `scraping_rules` 移行（Drop 95 完了）**<br>**【フェーズ 3】汎用除外リスト内に混入している特定会議体・特定ページ固有パターンの分離・DB化**<br>ソースコード内に直書きされた省庁ドメイン・新着ポータル・ホスト間隔・会議体別除外ルール・初期ウォッチ会議体ID等を `admin/pmhub.db` へ完全移行し、コードとDBの二重管理を根絶 | **設定二重管理の完全解消 & ルール駆動型クローラー確立** | **【進行中】**<br>（フェーズ 1: Drop 92 完了 / フェーズ 2: Drop 95 完了 / フェーズ 3 次回構想） |
+| **Track [Config-DB]** | **会議体・省庁・クローラー設定のハードコード撤廃 & SQLite マスターDB完全一元化** | **【フェーズ 1】省庁・ホスト設定の二重管理解消 & ENV残存バグ根絶（Drop 92 完了）**<br>**【フェーズ 2】会議体（`council_id`）直接指定ハードコードの撤廃 & `scraping_rules` 移行（Drop 95 完了）**<br>**【フェーズ 3】汎用除外リスト内に混入している特定会議体・特定ページ固有パターンの分離・DB化（Drop 96 完了）**<br>ソースコード内に直書きされた省庁ドメイン・新着ポータル・ホスト間隔・会議体別除外ルール・初期ウォッチ会議体ID等を `admin/pmhub.db` へ完全移行し、コードとDBの二重管理を根絶 | **設定二重管理の完全解消 & ルール駆動型クローラー確立** | **【進行中】**<br>（フェーズ 1: Drop 92 完了 / フェーズ 2: Drop 95 完了 / フェーズ 3: Drop 96 完了） |
 | **Track [Test-DB]** | **SQLite マスターDB（SSOT）時代に向けたテストスイート刷新 & 整合性ガード強化** | **レガシーJSON直書き・インメモリ辞書テストのDB直結化、単体テスト内の実データ全件走査重複解消、ケース15の未比較バグ是正 & `admin_configs` / `fts_materials` 完全同期検証新設**<br>`apply_report`・`manage_closed_councils` のDB直結テスト化、U13/U14/U16/U23の純粋関数単体テスト純化とケース5への実データ検証集約、`utils.load_data_json` / `save_data_json_with_backup` のテストDBパス判定・分離ガード、`detect_required_unit_tests` のU22/U23登録補完、未参照旧テストファイルの整理（Drop 94 完遂） | **SQLite SSOT 整合性保証 & 単体/統合テストの責務純化・高速化** | **【完了】**<br>（Drop 94 完遂） |
 | **Track [Architecture]** | **設計刷新構想**<br>(モジュール責務分離) | **リファクタリング領域E: クローラー本体（crawler.py）の責務分離 & scratch/ クリーンアップ**<br>巨大化したクローラー（約2,900行）を HTTP通信・パース・DB保存・エクスポート等にモジュール分割し、保守性を劇的に向上。蓄積した `scratch/` スクリプトの完全整理・アーカイブ | **単体テスト容易性向上 & コード肥大化の解消** | **【構想中】** |
 | **Track [Optimization]** | **配信最適化構想**<br>(公開データ軽量化) | **リファクタリング領域D: クローラー設定分離 & 公開JSONの minified 化による通信量最適化**<br>公開用静的サイトの配信効率向上のため、公開用 JSON の minified 化および通信量圧縮 | **初回ページロード高速化 & 帯域削減** | **【構想中】** |
@@ -2350,3 +2350,55 @@ flowchart LR
 - **5. 影響範囲・今後の課題 (Impact & Future Work)**:
   - `admin/crawler.py` から `council_id` による個別判定が1行残らず根絶され、ルール定義の追加・変更のみでサブページ除外やURL必須条件を柔軟に制御できる設計が確立された。
   - 次回構想（フェーズ 3）では、`_GENERIC_INDEX_URL_PATTERNS` や `COMMON_NAV_KEYWORDS` 等に混入している特定会議体・特定ページURL/キーワードの分離・DB化を進める。
+---
+
+### Drop 96: Track [Config-DB] フェーズ 3 - 汎用除外リスト内特定パターンの分離 & 省庁/会議体ルールDB化（2026-10-27 完了）
+
+- **1. 背景・課題 (Background & Issues)**:
+  - クローラー（`admin/crawler.py`）内の汎用除外定数（`COMMON_NAV_KEYWORDS`, `_GENERIC_INDEX_TITLE_KEYWORDS`, `_GENERIC_INDEX_URL_PATTERNS`）および除外判定関数（`is_generic_title_text()`）に、本来汎用（全省庁共通）ではない特定省庁・特定会議体固有のパスやキーワード（例: `fsc/senmon/`、`cao-zei_cho` の公聴会除外、法務省や警察庁の広報・採用キーワード等）が長年直接ハードコードされていた。
+  - この結果、コードとDBの二重管理が発生し、会議体や省庁ごとの除外ルール変更時に Python コードの修正とデプロイが必要となっていた。
+- **2. 実施内容・設計 (Implementation & Architecture)**:
+  - **汎用除外定数の純化・分離**:
+    - `COMMON_NAV_KEYWORDS`, `_GENERIC_INDEX_TITLE_KEYWORDS`, `_GENERIC_INDEX_URL_PATTERNS`, `is_generic_title_text()` から特定省庁・特定会議体向けの文字列・正規表現を完全にパージし、全省庁共通の汎用定数として純化。
+  - **会議体レベル除外ルールのDB化**:
+    - 会議体固有の除外パターン（`cao-zei_cho` の公聴会、`mof-zaiseiseido_bunkakai` の基礎資料、`cas-cyber_security_honbu` のセキュリティ関連リンク等）を SQLite マスターDB（`scraping_rules` テーブル）の `exclude_subpage_url_patterns` / `exclude_title_keywords` カラムへ移行。
+  - **省庁レベル除外ルールのDB化**:
+    - 省庁共通だが他省庁には適用すべきでない除外パターン（DIGITAL, NPA, FSA, MOJ, MOFA, CAS, NRA, CAO, MHLW, MIC, FSC）を SQLite マスターDB（`admin_configs` テーブル, `key='ministries'`）の `exclude_url_patterns` / `exclude_title_keywords` へ移行。
+  - **ハイブリッド除外判定エンジンの実装**:
+    - `is_generic_index_url(url, title, ministry=None, rule=None)` および `is_generic_title_text(text, ministry=None, rule=None)` を改修。
+    - 汎用定数による判定に加え、引数 `ministry`（省略時は URL ホストから `MINISTRY_DOMAINS` を逆引きして合致する全省庁を自動推定）の省庁ルール、および引数 `rule` の会議体ルールを動的にマージして判定するハイブリッド判定方式を導入。ドメイン共有省庁（CAO / CAS 等）にも安全に対応。
+  - **クローラー本体およびエクスポート連動**:
+    - `sync_new_meetings_from_crawl` から `is_generic_index_url` / `is_generic_title_text` を呼び出す際、`ministry=ministry, rule=target_rule` を渡すように連携。
+    - `export_data.py` を実行し、`admin/pmhub.db` の最新設定を `admin/admin_data.json` および `docs/data.json` へ完全同期。
+  - **回帰テスト & 純粋性テストの配備**:
+    - `testing/test_crawler_regression.py` に `test_drop96_hybrid_generic_index_filtering`（汎用・省庁別・会議体別判定）および `test_drop96_generic_constants_purity`（汎用定数内に特定パターンが残存していないことをアサートする純粋性検証）を追加。
+- **3. 変更ファイル一覧 (Changed Files)**:
+  - `admin/crawler.py`: 汎用除外定数の純化、省庁・会議体除外マップのDB連動ロード、ハイブリッド除外判定の実装
+  - `admin/pmhub.db`: `scraping_rules` および `admin_configs`（`ministries`）への除外ルール登録
+  - `admin/admin_data.json`: SQLite マスターDBからの同期エクスポート
+  - `docs/data.json`: SQLite マスターDBからの同期エクスポート
+  - `testing/test_crawler_regression.py`: ハイブリッド判定および汎用定数純粋性の回帰テスト追加
+  - `DROPS.md`: Track [Config-DB] Drop 96 記録
+- **4. テスト検証結果 (Verification Results)**:
+  ```markdown
+  python testing/run_test_suite.py --all-layers : PASSED（統合15ケース＋単体23種合格 / 所要時間 約21秒）
+    - ケース1: コード文法チェック（SyntaxError / 括弧不整合 / DDL構文 0件） (1.81s) : PASS
+    - ケース2: リンク疎通確認（追加・変更URL 200 OK） (0.75s) : PASS
+    - ケース3: UI表示機能検証（DOMコンテナ構造） (0.00s) : PASS
+    - ケース4: JS実行時クラッシュ・全画面描画検証 (1.61s) : PASS
+    - ケース5: 会議品質・回次整合性・重複排除検証 (1.02s) : PASS
+    - ケース6: 会議体・タイムライン ID完全整合性検証 (0.01s) : PASS
+    - ケース7: リンク・特殊文字 NFKC 正規化検証 (0.78s) : PASS
+    - ケース8: プレースホルダー日付（2099/01/01）ゼロ遮断検証 (0.00s) : PASS
+    - ケース15: SQLiteマスターDB整合性 & 2系統JSON完全同期検証 (0.83s) : PASS
+    - ケース9: 管理サーバー API 単体・統合テスト (4.37s) : PASS
+    - ケース10: クローラー手動保護回帰テスト (3.92s) : PASS
+    - ケース11: スクレイピングルール整合性検証 (0.42s) : PASS
+    - ケース12: ホスト分散・ゴミデータ不変性検証 (0.40s) : PASS
+    - ケース13: 省庁親ポータルURL設定・探索網羅性検証 (0.41s) : PASS
+    - ケース14: アクティブ会議体フィルタリング・廃止管理検証 (1.03s) : PASS
+    - 【単体関数検証 (Unit Tests)】: 全23種合格（U1〜U23 全種合格 / 4.39s）
+  ```
+- **5. 影響範囲・今後の課題 (Impact & Future Work)**:
+  - 汎用定数が全省庁共通の真の汎用パターンのみとなり、会議体・省庁個別の除外調整はすべて SQLite DB（`scraping_rules` / `admin_configs`）を介してコード無修正で動的に制御可能となった。
+  - Track [Config-DB] の主要なハードコード撤廃（省庁・ホスト設定、会議体ID分岐、汎用除外リスト混入）が完了したため、次回以降は Track [Portal-Norm] の未分離ポータルの正規化、または初期ウォッチ会議体ID等のDB化（フェーズ 4）へと進展可能。

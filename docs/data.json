@@ -31,6 +31,9 @@
           "url": "https://www.cao.go.jp/press/houdou.html",
           "type": "news_feed"
         }
+      ],
+      "exclude_url_patterns": [
+        "bousai.go.jp/kohou/oshirase/"
       ]
     },
     "CAS": {
@@ -57,6 +60,13 @@
           "url": "https://www.cas.go.jp/jp/houdou/index.html",
           "type": "news_feed"
         }
+      ],
+      "exclude_url_patterns": [
+        "cas.go.jp/jp/s(?:i|hi)ryou",
+        "cas.go.jp/jp/seisakukaigi/index.html"
+      ],
+      "exclude_title_keywords": [
+        "その他情報"
       ]
     },
     "CLB": {
@@ -114,6 +124,15 @@
           "url": "https://www.digital.go.jp/news",
           "type": "news_feed"
         }
+      ],
+      "exclude_url_patterns": [
+        "digital.go.jp/en/",
+        "digital.go.jp/councils/procurement-agile-opensource/"
+      ],
+      "exclude_title_keywords": [
+        "｜デジタル庁",
+        "｜Digital Agency",
+        "Digital Agency"
       ]
     },
     "CFA": {
@@ -186,7 +205,10 @@
         "npa.go.jp",
         "npsc.go.jp"
       ],
-      "hexColor": "#1e3a8a"
+      "hexColor": "#1e3a8a",
+      "exclude_title_keywords": [
+        "有識者会議｜警察庁"
+      ]
     },
     "PPC": {
       "name": "個人情報保護委員会",
@@ -245,6 +267,16 @@
           "type": "deep_portal",
           "subpage_pattern": "r\\d+_news_menu\\.html"
         }
+      ],
+      "exclude_url_patterns": [
+        "strategic_priorities",
+        "/ifiar/"
+      ],
+      "exclude_title_keywords": [
+        "金融行政方針",
+        "事務年度金融行政方針",
+        "監査監督機関国際フォーラム",
+        "IFIAR"
       ]
     },
     "CAA": {
@@ -285,6 +317,12 @@
           "url": "https://www.fsc.go.jp/",
           "type": "news_feed"
         }
+      ],
+      "exclude_url_patterns": [
+        "fsc.go.jp/senmon/"
+      ],
+      "exclude_title_keywords": [
+        "食の安全、を科学する"
       ]
     },
     "MIC": {
@@ -306,6 +344,9 @@
           "url": "https://www.soumu.go.jp/menu_news/s-news/index.html",
           "type": "news_feed"
         }
+      ],
+      "exclude_url_patterns": [
+        "study/dai3sya/index.html"
       ]
     },
     "CCAC": {
@@ -365,6 +406,15 @@
           "url": "https://www.moj.go.jp/press_index.html",
           "type": "news_feed"
         }
+      ],
+      "exclude_url_patterns": [
+        "kanbou_library_library",
+        "14th_congress_index"
+      ],
+      "exclude_title_keywords": [
+        "法務省の個人情報保護について",
+        "赤れんが棟",
+        "法制審議会開催予定表"
       ]
     },
     "ISA": {
@@ -418,7 +468,10 @@
       "domains": [
         "mofa.go.jp"
       ],
-      "hexColor": "#0284c7"
+      "hexColor": "#0284c7",
+      "exclude_title_keywords": [
+        "外務省後援名義等の使用許可申請"
+      ]
     },
     "MOF": {
       "name": "財務省",
@@ -535,6 +588,14 @@
           "url": "https://www.mhlw.go.jp/stf/shingi/indexshingi.html",
           "type": "mhlw_indexshingi"
         }
+      ],
+      "exclude_url_patterns": [
+        "topics/bukyoku/syakai/soren/",
+        "kokurituken/gijiroku/attach/"
+      ],
+      "exclude_title_keywords": [
+        "労使関係セミナー",
+        "能力開発基本調査"
       ]
     },
     "CLRC": {
@@ -792,6 +853,9 @@
           "type": "deep_portal",
           "subpage_pattern": "news/\\d{6}\\.html"
         }
+      ],
+      "exclude_url_patterns": [
+        "da.nra.go.jp/search"
       ]
     },
     "MOD": {
@@ -17016,7 +17080,8 @@
       "ministry": "MOD",
       "category": "COMMITTEE",
       "name": "防衛施設中央審議会",
-      "officialUrl": "https://www.mod.go.jp/j/approach/agenda/meeting/shisetsu/index.html",
+      "manualLock": true,
+      "officialUrl": "https://www.mod.go.jp/j/policy/agenda/meeting/shi-chu/index.html",
       "description": "防衛施設中央審議会に関する調査審議・検討を行う。",
       "pastYearCount": 2,
       "isClosed": true
@@ -36530,20 +36595,6 @@
         {
           "name": "参考資料2 厚生労働省国立研究開発法人等審議会令[PDF形式:95KB]",
           "url": "https://www.mhlw.go.jp/content/10601000/001721736.pdf"
-        }
-      ]
-    },
-    {
-      "id": "mod-shisetsu-20260804-s02",
-      "councilId": "mod-shisetsu",
-      "name": "防衛施設中央審議会の委員について",
-      "date": "2026/08/04",
-      "officialUrl": "https://www.mod.go.jp/j/press/news/2026/08/04b.html",
-      "discoveredAt": "2026/10/17 15:47",
-      "materials": [
-        {
-          "name": "印刷用",
-          "url": "https://www.mod.go.jp/j/press/news/2026/08/04b.pdf"
         }
       ]
     },
@@ -77859,72 +77910,6 @@
         {
           "name": "参考資料2 「独立行政法人の業務管理及び内部管理について」(令和4年4月8日独立行政法人評価制度委員会決定)",
           "url": "https://www.soumu.go.jp/main_content/001067877.pdf"
-        }
-      ]
-    },
-    {
-      "id": "mod-shisetsu-20260410-s01",
-      "councilId": "mod-shisetsu",
-      "name": "防衛施設中央審議会(2026/04/10開催)",
-      "date": "2026/04/10",
-      "manualLock": true,
-      "officialUrl": "https://www.mod.go.jp/j/policy/agenda/meeting/bouei_shisetsu/index.html",
-      "summary": "防衛施設中央審議会の開催。主要議題の推進状況および関係省庁間の連携について協議。",
-      "tags": [
-        "防衛施設中央",
-        "MOD",
-        "政策会議"
-      ],
-      "materials": [
-        {
-          "name": "第10回議事概要",
-          "url": "https://www.mod.go.jp/j/policy/agenda/meeting/bouei_shisetsu/pdf/10_gijiyoshi.pdf",
-          "manualLock": true
-        },
-        {
-          "name": "第9回議事概要",
-          "url": "https://www.mod.go.jp/j/policy/agenda/meeting/bouei_shisetsu/pdf/09_gijiyoshi.pdf",
-          "manualLock": true
-        },
-        {
-          "name": "第8回議事概要",
-          "url": "https://www.mod.go.jp/j/policy/agenda/meeting/bouei_shisetsu/pdf/08_gijiyoshi.pdf",
-          "manualLock": true
-        },
-        {
-          "name": "第7回議事概要",
-          "url": "https://warp.da.ndl.go.jp/info:ndljp/pid/14054743/www.mod.go.jp/j/policy/agenda/meeting/bouei_shisetsu/pdf/07_gijiyoshi.pdf",
-          "manualLock": true
-        },
-        {
-          "name": "第6回議事概要",
-          "url": "https://warp.da.ndl.go.jp/info:ndljp/pid/14054743/www.mod.go.jp/j/policy/agenda/meeting/bouei_shisetsu/pdf/06_gijiyoshi.pdf",
-          "manualLock": true
-        },
-        {
-          "name": "第5回議事概要",
-          "url": "https://warp.da.ndl.go.jp/info:ndljp/pid/14054743/www.mod.go.jp/j/policy/agenda/meeting/bouei_shisetsu/pdf/05_gijiyoshi.pdf",
-          "manualLock": true
-        },
-        {
-          "name": "第4回議事概要",
-          "url": "https://warp.da.ndl.go.jp/info:ndljp/pid/14054743/www.mod.go.jp/j/policy/agenda/meeting/bouei_shisetsu/pdf/04_gijiyoshi.pdf",
-          "manualLock": true
-        },
-        {
-          "name": "第3回議事概要",
-          "url": "https://warp.da.ndl.go.jp/info:ndljp/pid/14054743/www.mod.go.jp/j/policy/agenda/meeting/bouei_shisetsu/pdf/03_gijiyoshi.pdf",
-          "manualLock": true
-        },
-        {
-          "name": "第2回議事概要",
-          "url": "https://warp.da.ndl.go.jp/info:ndljp/pid/14054743/www.mod.go.jp/j/policy/agenda/meeting/bouei_shisetsu/pdf/02_gijiyoshi.pdf",
-          "manualLock": true
-        },
-        {
-          "name": "第1回議事概要",
-          "url": "https://warp.da.ndl.go.jp/info:ndljp/pid/14054743/www.mod.go.jp/j/policy/agenda/meeting/bouei_shisetsu/pdf/01_gijigaiyo.pdf",
-          "manualLock": true
         }
       ]
     },
@@ -237495,6 +237480,36 @@
         {
           "name": "議事要旨",
           "url": "https://www.mhlw.go.jp/content/10900000/001249052.pdf",
+          "manualLock": true
+        }
+      ]
+    },
+    {
+      "id": "mod-shisetsu-20240423-010",
+      "councilId": "mod-shisetsu",
+      "name": "第10回 防衛施設中央審議会",
+      "date": "2024/04/23",
+      "manualLock": true,
+      "officialUrl": "https://www.mod.go.jp/j/policy/agenda/meeting/shi-chu/index.html",
+      "materials": [
+        {
+          "name": "議事次第等",
+          "url": "https://www.mod.go.jp/j/policy/agenda/meeting/shi-chu/pdf/10-1.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "第10回防衛施設中央審議会議事録",
+          "url": "https://www.mod.go.jp/j/policy/agenda/meeting/shi-chu/pdf/giji_10.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "駐留軍用地特措法の施行状況",
+          "url": "https://www.mod.go.jp/j/policy/agenda/meeting/shi-chu/pdf/10-2.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "米軍再編の進捗状況について",
+          "url": "https://www.mod.go.jp/j/policy/agenda/meeting/shi-chu/pdf/10-3.pdf",
           "manualLock": true
         }
       ]
@@ -431350,6 +431365,36 @@
       ]
     },
     {
+      "id": "mod-shisetsu-20210415-009",
+      "councilId": "mod-shisetsu",
+      "name": "第9回 防衛施設中央審議会",
+      "date": "2021/04/15",
+      "manualLock": true,
+      "officialUrl": "https://www.mod.go.jp/j/policy/agenda/meeting/shi-chu/index.html",
+      "materials": [
+        {
+          "name": "議事次第等",
+          "url": "https://warp.da.ndl.go.jp/info:ndljp/pid/14054743/www.mod.go.jp/j/policy/agenda/meeting/shi-chu/pdf/9-1.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "第9回防衛施設中央審議会議事録",
+          "url": "https://warp.da.ndl.go.jp/info:ndljp/pid/14054743/www.mod.go.jp/j/policy/agenda/meeting/shi-chu/pdf/giji_09.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "駐留軍用地特措法の施行状況",
+          "url": "https://warp.da.ndl.go.jp/info:ndljp/pid/14054743/www.mod.go.jp/j/policy/agenda/meeting/shi-chu/pdf/9-2.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "米軍再編の進捗状況について",
+          "url": "https://warp.da.ndl.go.jp/info:ndljp/pid/14054743/www.mod.go.jp/j/policy/agenda/meeting/shi-chu/pdf/9-3.pdf",
+          "manualLock": true
+        }
+      ]
+    },
+    {
       "id": "mof-zaiseiseido_bunkakai-20210415-s01",
       "councilId": "mof-zaiseiseido_bunkakai",
       "name": "財政制度等審議会 財政制度分科会(令和3年4月15日)",
@@ -540470,6 +540515,36 @@
       ]
     },
     {
+      "id": "mod-shisetsu-20180528-008",
+      "councilId": "mod-shisetsu",
+      "name": "第8回 防衛施設中央審議会",
+      "date": "2018/05/28",
+      "manualLock": true,
+      "officialUrl": "https://www.mod.go.jp/j/policy/agenda/meeting/shi-chu/index.html",
+      "materials": [
+        {
+          "name": "議事次第等",
+          "url": "https://warp.da.ndl.go.jp/info:ndljp/pid/11623291/www.mod.go.jp/j/approach/agenda/meeting/materials/shi-chu/sonota/pdf/8-1.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "第8回防衛施設中央審議会議事録",
+          "url": "https://warp.da.ndl.go.jp/info:ndljp/pid/11623291/www.mod.go.jp/j/approach/agenda/meeting/materials/shi-chu/giji/giji_08.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "駐留軍用地特措法の施行状況",
+          "url": "https://warp.da.ndl.go.jp/info:ndljp/pid/11623291/www.mod.go.jp/j/approach/agenda/meeting/materials/shi-chu/sonota/pdf/8-2.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "米軍再編の進捗状況",
+          "url": "https://warp.da.ndl.go.jp/info:ndljp/pid/11623291/www.mod.go.jp/j/approach/agenda/meeting/materials/shi-chu/sonota/pdf/8-3.pdf",
+          "manualLock": true
+        }
+      ]
+    },
+    {
       "id": "moe-chuo_kankyo_shizen-20180528-035",
       "councilId": "moe-chuo_kankyo_shizen",
       "name": "第35回 中央環境審議会 自然環境部会",
@@ -618907,6 +618982,36 @@
       ]
     },
     {
+      "id": "mod-shisetsu-20150529-007",
+      "councilId": "mod-shisetsu",
+      "name": "第7回 防衛施設中央審議会",
+      "date": "2015/05/29",
+      "manualLock": true,
+      "officialUrl": "https://www.mod.go.jp/j/policy/agenda/meeting/shi-chu/index.html",
+      "materials": [
+        {
+          "name": "議事次第等",
+          "url": "https://warp.da.ndl.go.jp/info:ndljp/pid/11623291/www.mod.go.jp/j/approach/agenda/meeting/materials/shi-chu/sonota/pdf/7-1.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "第7回防衛施設中央審議会議事録",
+          "url": "https://warp.da.ndl.go.jp/info:ndljp/pid/11623291/www.mod.go.jp/j/approach/agenda/meeting/materials/shi-chu/giji/giji_07.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "駐留軍用地特措法の施行状況",
+          "url": "https://warp.da.ndl.go.jp/info:ndljp/pid/11623291/www.mod.go.jp/j/approach/agenda/meeting/materials/shi-chu/sonota/pdf/7-2.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "米軍再編関係",
+          "url": "https://warp.da.ndl.go.jp/info:ndljp/pid/11623291/www.mod.go.jp/j/approach/agenda/meeting/materials/shi-chu/sonota/pdf/7-3.pdf",
+          "manualLock": true
+        }
+      ]
+    },
+    {
       "id": "aca-kokugo_nihongo-20150528-067",
       "councilId": "aca-kokugo_nihongo",
       "name": "平成27年 第67回 文化審議会国語分科会 日本語教育小委員会",
@@ -685221,6 +685326,36 @@
       ]
     },
     {
+      "id": "mod-shisetsu-20120516-006",
+      "councilId": "mod-shisetsu",
+      "name": "第6回 防衛施設中央審議会",
+      "date": "2012/05/16",
+      "manualLock": true,
+      "officialUrl": "https://www.mod.go.jp/j/policy/agenda/meeting/shi-chu/index.html",
+      "materials": [
+        {
+          "name": "議事次第等",
+          "url": "https://warp.da.ndl.go.jp/info:ndljp/pid/11623291/www.mod.go.jp/j/approach/agenda/meeting/materials/shi-chu/sonota/pdf/6-1.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "第6回防衛施設中央審議会議事録",
+          "url": "https://warp.da.ndl.go.jp/info:ndljp/pid/11623291/www.mod.go.jp/j/approach/agenda/meeting/materials/shi-chu/giji/giji_06.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "駐留軍用地特措法の施行状況",
+          "url": "https://warp.da.ndl.go.jp/info:ndljp/pid/11623291/www.mod.go.jp/j/approach/agenda/meeting/materials/shi-chu/sonota/pdf/6-2.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "在日米軍の再編について",
+          "url": "https://warp.da.ndl.go.jp/info:ndljp/pid/11623291/www.mod.go.jp/j/approach/agenda/meeting/materials/shi-chu/sonota/pdf/6-3.pdf",
+          "manualLock": true
+        }
+      ]
+    },
+    {
       "id": "smea-1620-20120516-003",
       "councilId": "smea-1620",
       "name": "平成24年 ワーキンググループ 第3回 “日本の未来”応援会議~小さな企業が日本を変える~(“ちいさな企業”)未来会議",
@@ -735899,6 +736034,41 @@
       ]
     },
     {
+      "id": "mod-shisetsu-20090428-005",
+      "councilId": "mod-shisetsu",
+      "name": "第5回 防衛施設中央審議会",
+      "date": "2009/04/28",
+      "manualLock": true,
+      "officialUrl": "https://www.mod.go.jp/j/policy/agenda/meeting/shi-chu/index.html",
+      "materials": [
+        {
+          "name": "第5回防衛施設中央審議会議事録",
+          "url": "https://warp.da.ndl.go.jp/info:ndljp/pid/11623291/www.mod.go.jp/j/approach/agenda/meeting/materials/shi-chu/giji/giji_05.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "在日米軍の再編について",
+          "url": "https://warp.da.ndl.go.jp/info:ndljp/pid/11623291/www.mod.go.jp/j/approach/agenda/meeting/materials/shi-chu/sonota/pdf/6-3.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "駐留軍用地特措法の施行状況 その1",
+          "url": "https://warp.da.ndl.go.jp/info:ndljp/pid/11623291/www.mod.go.jp/j/approach/agenda/meeting/materials/shi-chu/sonota/pdf/5-2-1.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "駐留軍用地特措法の施行状況 その2",
+          "url": "https://warp.da.ndl.go.jp/info:ndljp/pid/11623291/www.mod.go.jp/j/approach/agenda/meeting/materials/shi-chu/sonota/pdf/5-2-2.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "米軍再編の進捗状況について",
+          "url": "https://warp.da.ndl.go.jp/info:ndljp/pid/11623291/www.mod.go.jp/j/approach/agenda/meeting/materials/shi-chu/sonota/pdf/5-3.pdf",
+          "manualLock": true
+        }
+      ]
+    },
+    {
       "id": "fsa-kinyu_dai2_hoken_wg-20090424-051",
       "councilId": "fsa-kinyu_dai2_hoken_wg",
       "name": "第51回 金融分科会 第二部会 保険の基本問題に関するワーキング・グループ",
@@ -768985,6 +769155,76 @@
       ]
     },
     {
+      "id": "mod-shisetsu-20060419-004",
+      "councilId": "mod-shisetsu",
+      "name": "第4回 防衛施設中央審議会",
+      "date": "2006/04/19",
+      "manualLock": true,
+      "officialUrl": "https://www.mod.go.jp/j/policy/agenda/meeting/shi-chu/index.html",
+      "materials": [
+        {
+          "name": "議事次第等",
+          "url": "https://warp.da.ndl.go.jp/info:ndljp/pid/11623291/www.mod.go.jp/j/approach/agenda/meeting/materials/shi-chu/sonota/pdf/4-1.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "第4回防衛施設中央審議会議事録",
+          "url": "https://warp.da.ndl.go.jp/info:ndljp/pid/11623291/www.mod.go.jp/j/approach/agenda/meeting/materials/shi-chu/giji/giji_04.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "防衛施設庁入札談合事案について その1",
+          "url": "https://warp.da.ndl.go.jp/info:ndljp/pid/11623291/www.mod.go.jp/j/approach/agenda/meeting/materials/shi-chu/sonota/pdf/4-2-1.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "防衛施設庁入札談合事案について その2",
+          "url": "https://warp.da.ndl.go.jp/info:ndljp/pid/11623291/www.mod.go.jp/j/approach/agenda/meeting/materials/shi-chu/sonota/pdf/4-2-2.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "防衛施設庁入札談合事案について その3",
+          "url": "https://warp.da.ndl.go.jp/info:ndljp/pid/11623291/www.mod.go.jp/j/approach/agenda/meeting/materials/shi-chu/sonota/pdf/4-2-3.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "防衛施設庁入札談合事案について その4",
+          "url": "https://warp.da.ndl.go.jp/info:ndljp/pid/11623291/www.mod.go.jp/j/approach/agenda/meeting/materials/shi-chu/sonota/pdf/4-2-4.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "防衛施設庁入札談合事案について その5",
+          "url": "https://warp.da.ndl.go.jp/info:ndljp/pid/11623291/www.mod.go.jp/j/approach/agenda/meeting/materials/shi-chu/sonota/pdf/4-2-5.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "駐留軍特措法関係資料",
+          "url": "https://warp.da.ndl.go.jp/info:ndljp/pid/11623291/www.mod.go.jp/j/approach/agenda/meeting/materials/shi-chu/sonota/pdf/4-3.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "未来のための変革と再編~新たな時代に対応した日米同盟をめざして~〔パンフレット〕",
+          "url": "https://warp.da.ndl.go.jp/info:ndljp/pid/11623291/www.mod.go.jp/j/approach/agenda/meeting/materials/shi-chu/sonota/pdf/4-4.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "日米同盟:未来のための変革と再編(仮訳)",
+          "url": "https://warp.da.ndl.go.jp/info:ndljp/pid/11623291/www.mod.go.jp/j/approach/agenda/meeting/materials/shi-chu/sonota/pdf/4-5.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "在日米軍の兵力態勢再編に係る地元調整等の状況について その1",
+          "url": "https://warp.da.ndl.go.jp/info:ndljp/pid/11623291/www.mod.go.jp/j/approach/agenda/meeting/materials/shi-chu/sonota/pdf/4-6-1.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "在日米軍の兵力態勢再編に係る地元調整等の状況について その2",
+          "url": "https://warp.da.ndl.go.jp/info:ndljp/pid/11623291/www.mod.go.jp/j/approach/agenda/meeting/materials/shi-chu/sonota/pdf/4-6-2.pdf",
+          "manualLock": true
+        }
+      ]
+    },
+    {
       "id": "fsa-kashingyou_seido-20060418-016",
       "councilId": "fsa-kashingyou_seido",
       "name": "第16回 貸金業制度等に関する懇談会",
@@ -797595,6 +797835,21 @@
       ]
     },
     {
+      "id": "mod-shisetsu-20030410-003",
+      "councilId": "mod-shisetsu",
+      "name": "第3回 防衛施設中央審議会",
+      "date": "2003/04/10",
+      "manualLock": true,
+      "officialUrl": "https://www.mod.go.jp/j/policy/agenda/meeting/shi-chu/index.html",
+      "materials": [
+        {
+          "name": "第3回防衛施設中央審議会議事録",
+          "url": "https://warp.da.ndl.go.jp/info:ndljp/pid/11723019/www.mod.go.jp/j/approach/agenda/meeting/shi-chu/giji/giji_03.html",
+          "manualLock": true
+        }
+      ]
+    },
+    {
       "id": "jfa-suisan_kanri-20030408-010",
       "councilId": "jfa-suisan_kanri",
       "name": "第10回 水産政策審議会 資源管理分科会",
@@ -808226,6 +808481,31 @@
       ]
     },
     {
+      "id": "mod-shisetsu-20010417-002",
+      "councilId": "mod-shisetsu",
+      "name": "第2回 防衛施設中央審議会",
+      "date": "2001/04/17",
+      "manualLock": true,
+      "officialUrl": "https://www.mod.go.jp/j/policy/agenda/meeting/shi-chu/index.html",
+      "materials": [
+        {
+          "name": "第2回防衛施設中央審議会議事録",
+          "url": "https://warp.da.ndl.go.jp/info:ndljp/pid/11723019/www.mod.go.jp/j/approach/agenda/meeting/shi-chu/giji/giji_02.html",
+          "manualLock": true
+        },
+        {
+          "name": "施設中央審議会資料1",
+          "url": "https://warp.da.ndl.go.jp/info:ndljp/pid/11623291/www.mod.go.jp/j/approach/agenda/meeting/materials/shi-chu/sonota/pdf/sonota_01.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "施設中央審議会資料2",
+          "url": "https://warp.da.ndl.go.jp/info:ndljp/pid/11623291/www.mod.go.jp/j/approach/agenda/meeting/materials/shi-chu/sonota/pdf/sonota_02.pdf",
+          "manualLock": true
+        }
+      ]
+    },
+    {
       "id": "aca-bunka_shingikai_sokai-20010416-003",
       "councilId": "aca-bunka_shingikai_sokai",
       "name": "第3回 文化審議会 総会",
@@ -809925,6 +810205,21 @@
           "name": "議事録",
           "url": "https://www.fsc.go.jp/fsciis/attachedFile/download?retrievalId=kai20221024id1&fileId=410",
           "type": "HTML"
+        }
+      ]
+    },
+    {
+      "id": "mod-shisetsu-20000412-001",
+      "councilId": "mod-shisetsu",
+      "name": "第1回 防衛施設中央審議会",
+      "date": "2000/04/12",
+      "manualLock": true,
+      "officialUrl": "https://www.mod.go.jp/j/policy/agenda/meeting/shi-chu/index.html",
+      "materials": [
+        {
+          "name": "第1回防衛施設中央審議会議事録",
+          "url": "https://warp.da.ndl.go.jp/info:ndljp/pid/11723019/www.mod.go.jp/j/approach/agenda/meeting/shi-chu/giji/giji_01.html",
+          "manualLock": true
         }
       ]
     },
