@@ -476,6 +476,64 @@ class TestCrawlerManualLockProtection(unittest.TestCase):
             f"crawler.py に council_id の直接ハードコード分岐が検出されました: {matches}"
         )
 
+    def test_drop96_hybrid_generic_index_filtering(self):
+        """Drop 96: is_generic_index_url / is_generic_title_text が汎用・省庁別・会議体別設定をハイブリッド適用すること"""
+        from crawler import is_generic_index_url, is_generic_title_text
+
+        # 1. 汎用パターンの判定
+        self.assertTrue(is_generic_index_url("https://example.com/press/index.html"))
+        self.assertTrue(is_generic_index_url("https://example.com/sitemap.html"))
+        self.assertTrue(is_generic_index_url("https://example.com/other", title="会議開催予定"))
+        self.assertTrue(is_generic_title_text("トップページ"))
+        self.assertTrue(is_generic_title_text("会議資料詳細"))
+
+        # 2. 省庁別除外設定（DIGITAL, FSA, FSC）の動的照合
+        self.assertTrue(is_generic_index_url("https://digital.go.jp/en/something.html", ministry="DIGITAL"))
+        self.assertTrue(is_generic_title_text("有識者会議｜デジタル庁", ministry="DIGITAL"))
+        self.assertTrue(is_generic_index_url("https://www.fsa.go.jp/strategic_priorities/index.html", ministry="FSA"))
+        self.assertTrue(is_generic_title_text("令和8事務年度金融行政方針", ministry="FSA"))
+        self.assertTrue(is_generic_title_text("食の安全、を科学する", ministry="FSC"))
+
+        # 他省庁コンテキストでは誤爆しないこと
+        self.assertFalse(is_generic_title_text("食の安全、を科学する", ministry="MOF"))
+
+        # 3. 会議体別除外ルールの動的照合
+        rule = {
+            "exclude_subpage_url_patterns": ["custom_special_sub/"],
+            "exclude_subpage_title_keywords": ["ディスカッション特別セッション"]
+        }
+        self.assertTrue(is_generic_index_url("https://example.com/custom_special_sub/p1.html", rule=rule))
+        self.assertTrue(is_generic_title_text("ディスカッション特別セッション", rule=rule))
+        self.assertFalse(is_generic_title_text("第1回 正常な会議タイトル", rule=rule))
+
+    def test_drop96_generic_constants_purity(self):
+        """Drop 96: crawler.py の汎用定数内に特定省庁・特定会議体パターンが混入していないこと"""
+        import re
+        crawler_path = os.path.join(ADMIN_DIR, "crawler.py")
+        with open(crawler_path, "r", encoding="utf-8") as f:
+            crawler_code = f.read()
+
+        # COMMON_NAV_KEYWORDS の純度検証
+        m_nav = re.search(r'COMMON_NAV_KEYWORDS = frozenset\(\{([^}]+)\}\)', crawler_code)
+        self.assertIsNotNone(m_nav, "COMMON_NAV_KEYWORDS definition not found")
+        nav_str = m_nav.group(1)
+        for prohibited in ['外務省後援名義', '赤れんが棟', '法務省の個人情報保護', '法制審議会開催予定表', '能力開発基本調査', '労使関係セミナー', '監査監督機関国際フォーラム', 'IFIAR']:
+            self.assertNotIn(prohibited, nav_str, f"COMMON_NAV_KEYWORDS に特定省庁/会議体語句 '{prohibited}' が残存しています")
+
+        # _GENERIC_INDEX_TITLE_KEYWORDS の純度検証
+        m_title = re.search(r'_GENERIC_INDEX_TITLE_KEYWORDS = frozenset\(\{([^}]+)\}\)', crawler_code)
+        self.assertIsNotNone(m_title, "_GENERIC_INDEX_TITLE_KEYWORDS definition not found")
+        title_str = m_title.group(1)
+        for prohibited in ['有識者会議｜警察庁', '食の安全、を科学する', '｜デジタル庁', 'Digital Agency', '金融行政方針', 'The Tax Commission', 'Tax Commission']:
+            self.assertNotIn(prohibited, title_str, f"_GENERIC_INDEX_TITLE_KEYWORDS に特定省庁/会議体語句 '{prohibited}' が残存しています")
+
+        # _GENERIC_INDEX_URL_PATTERNS の純度検証
+        m_url = re.search(r"_GENERIC_INDEX_URL_PATTERNS = re\.compile\(\s*r'(.*?)',\s*re\.IGNORECASE\s*\)", crawler_code, re.DOTALL)
+        self.assertIsNotNone(m_url, "_GENERIC_INDEX_URL_PATTERNS definition not found")
+        url_str = m_url.group(1)
+        for prohibited in ['zeicho', 'fiscal_system_council', 'fsc.go.jp/senmon', 'kanbou_library', '14th_congress', 'da.nra.go.jp', 'digital.go.jp', 'strategic_priorities']:
+            self.assertNotIn(prohibited, url_str, f"_GENERIC_INDEX_URL_PATTERNS に特定URLパターン '{prohibited}' が残存しています")
+
 def run_tests():
 
     print("==================================================")
