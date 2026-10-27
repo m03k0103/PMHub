@@ -21,7 +21,7 @@ from utils import setup_win32_utf8, load_data_json
 setup_win32_utf8()
 
 
-from crawler import deduplicate_data_materials, update_crawl_status
+from crawler import deduplicate_data_materials, update_crawl_status, sync_new_meetings_from_crawl
 from apply_report import apply_report
 
 class TestCrawlerManualLockProtection(unittest.TestCase):
@@ -383,6 +383,98 @@ class TestCrawlerManualLockProtection(unittest.TestCase):
         self.assertEqual(m263["officialUrl"], "https://www.mhlw.go.jp/stf/newpage_75439.html", "officialUrl が個別資料ページURLに更新されていること")
         self.assertEqual(len(m263["materials"]), 2, "資料2件が同期されていること")
         self.assertEqual(m263["materials"][0]["url"], "https://www.mhlw.go.jp/content/001743312.pdf")
+
+    def test_drop95_rule_driven_subpage_filtering(self):
+        """Drop 95: スクレイピングルールによる汎用サブページ除外・必須判定が正しく動作すること"""
+        mock_data = {
+            "councils": [
+                {
+                    "id": "test-rule_council",
+                    "name": "テストルール会議体",
+                    "officialUrl": "https://example.com/parent_portal",
+                    "ministry": "TEST"
+                }
+            ],
+            "meetings": [],
+            "scrapingRules": {
+                "test-rule_council": {
+                    "disallow_self_url": True,
+                    "exclude_subpage_url_patterns": ["/sub_excluded/", "bridge_wg"],
+                    "exclude_subpage_title_keywords": ["ワーキンググループ", "tax commission"],
+                    "require_subpage_url_patterns": ["singi"]
+                }
+            }
+        }
+
+        mock_scraped = {
+            "subpageMeetings": [
+                # 1. 自己URL参照（disallow_self_url で除外）
+                {
+                    "subpageUrl": "https://example.com/parent_portal",
+                    "name": "第1回 テストルール会議体",
+                    "materials": [{"name": "資料1", "url": "https://example.com/p1.pdf"}]
+                },
+                # 2. URL除外パターン一致（/sub_excluded/ で除外）
+                {
+                    "subpageUrl": "https://example.com/singi/sub_excluded/m01.html",
+                    "name": "第2回 テストルール会議体",
+                    "materials": [{"name": "資料2", "url": "https://example.com/p2.pdf"}]
+                },
+                # 3. タイトル除外キーワード一致（ワーキンググループ で除外）
+                {
+                    "subpageUrl": "https://example.com/singi/valid_wg.html",
+                    "name": "第1回 テストルール会議体 ワーキンググループ",
+                    "materials": [{"name": "資料3", "url": "https://example.com/p3.pdf"}]
+                },
+                # 4. 必須URLパターン不一致（singi を含まないため除外）
+                {
+                    "subpageUrl": "https://example.com/news/m04.html",
+                    "name": "第3回 テストルール会議体",
+                    "materials": [{"name": "資料4", "url": "https://example.com/p4.pdf"}]
+                },
+                # 5. 正規開催回（全条件クリアで追加対象）
+                {
+                    "subpageUrl": "https://example.com/singi/m05.html",
+                    "name": "第4回 テストルール会議体",
+                    "extractedDates": ["令和8年5月10日"],
+                    "materials": [{"name": "資料5", "url": "https://example.com/p5.pdf"}]
+                }
+            ]
+        }
+
+        target = mock_data["councils"][0]
+        added = sync_new_meetings_from_crawl(mock_data, target, mock_scraped)
+
+        self.assertEqual(added, 1, "フィルタを通過した1件のみが追加されること")
+        self.assertEqual(len(mock_data["meetings"]), 1)
+        self.assertEqual(mock_data["meetings"][0]["name"], "第4回 テストルール会議体")
+        self.assertEqual(mock_data["meetings"][0]["officialUrl"], "https://example.com/singi/m05.html")
+
+    def test_drop95_zero_council_id_hardcodes_in_crawler(self):
+        """Drop 95: crawler.py 内に特定会議体IDのハードコード分岐が一切存在しないこと"""
+        import re
+        crawler_path = os.path.join(ADMIN_DIR, "crawler.py")
+        with open(crawler_path, "r", encoding="utf-8") as f:
+            crawler_code = f.read()
+
+        prohibited_councils = [
+            "cao-zei_cho", "cao-cstp", "fsa-code_followup",
+            "fsa-japan_stewardship", "fsa-stewardship_h28",
+            "fsa-stewardship_r01", "fsa-stewardship_r06"
+        ]
+        for cid in prohibited_councils:
+            self.assertNotIn(
+                cid, crawler_code,
+                f"crawler.py に特定会議体ID '{cid}' がハードコードされています。scraping_rules へ移行してください。"
+            )
+
+        # council_id == "..." や council_id in (...) のハードコード判定が0件であること
+        pattern = r'''council_id\s*(?:==|in)\s*['"\(\[]'''
+        matches = re.findall(pattern, crawler_code)
+        self.assertEqual(
+            len(matches), 0,
+            f"crawler.py に council_id の直接ハードコード分岐が検出されました: {matches}"
+        )
 
 def run_tests():
 

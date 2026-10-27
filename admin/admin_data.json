@@ -1884,7 +1884,18 @@
       "template": "tpl-general-round-subpage",
       "manualLock": true,
       "officialUrl": "https://www8.cao.go.jp/cstp/",
-      "pdf_selector": "a[href*='.pdf'], a[href*='.PDF']"
+      "pdf_selector": "a[href*='.pdf'], a[href*='.PDF']",
+      "exclude_subpage_url_patterns": [
+        "kaisaiannai",
+        "bridge",
+        "brige_wg"
+      ],
+      "exclude_subpage_title_keywords": [
+        "ワーキンググループ",
+        "WG",
+        "BRIDGE",
+        "中間評価"
+      ]
     },
     "cao-genshiryoku_kisei_ikenkoukan": {
       "rule_id": "rule-cao-genshiryoku_kisei_ikenkoukan",
@@ -2156,7 +2167,24 @@
       "manualLock": true,
       "extract_from_parent_table": true,
       "officialUrl": "https://www.cao.go.jp/zei-cho/",
-      "pdf_selector": "a[href*='.pdf'], a[href*='.PDF']"
+      "pdf_selector": "a[href*='.pdf'], a[href*='.PDF']",
+      "disallow_self_url": true,
+      "exclude_subpage_url_patterns": [
+        "/ebpm/",
+        "/life/",
+        "/digital-noukan/",
+        "/noukan/",
+        "/sozoku-zoyo/",
+        "/renketsu/",
+        "/rougo/",
+        "/koku-han/",
+        "/discussion"
+      ],
+      "exclude_subpage_title_keywords": [
+        "tax commission",
+        "専門家会合",
+        "ディスカッショングループ"
+      ]
     },
     "cao-zeicho_digital_noukan_senmonka": {
       "template": "tpl-parent-table-direct",
@@ -5119,7 +5147,13 @@
       "extract_from_parent_table": true,
       "officialUrl": "https://www.fsa.go.jp/singi/follow-up/index.html",
       "subpage_discovery_pattern": ".*/follow-up/siryou/\\d{8}\\.html",
-      "pdf_selector": "a[href*='.pdf'], a[href*='.PDF']"
+      "pdf_selector": "a[href*='.pdf'], a[href*='.PDF']",
+      "exclude_subpage_url_patterns": [
+        "/news/"
+      ],
+      "require_subpage_url_patterns": [
+        "singi"
+      ]
     },
     "fsa-corporategovernance_code": {
       "template": "tpl-ministry-hybrid-kaisai",
@@ -5189,7 +5223,10 @@
       "manualLock": true,
       "extract_from_parent_table": true,
       "officialUrl": "https://www.fsa.go.jp/singi/stewardship/index.html#stewardship_h25",
-      "pdf_selector": "a[href*='.pdf'], a[href*='.PDF']"
+      "pdf_selector": "a[href*='.pdf'], a[href*='.PDF']",
+      "exclude_subpage_url_patterns": [
+        "/news/"
+      ]
     },
     "fsa-jibaiseki_shingi": {
       "template": "tpl-ministry-hybrid-kaisai",
@@ -5867,21 +5904,30 @@
       "manualLock": true,
       "pdf_selector": "main a[href*='.pdf'], #main a[href*='.pdf'], a[href*='siryou/']",
       "extract_from_parent_table": true,
-      "officialUrl": "https://www.fsa.go.jp/singi/stewardship/index.html"
+      "officialUrl": "https://www.fsa.go.jp/singi/stewardship/index.html",
+      "exclude_subpage_url_patterns": [
+        "/news/"
+      ]
     },
     "fsa-stewardship_r01": {
       "template": "tpl-preset-pattern-13",
       "manualLock": true,
       "pdf_selector": "main a[href*='.pdf'], #main a[href*='.pdf'], a[href*='siryou/']",
       "extract_from_parent_table": true,
-      "officialUrl": "https://www.fsa.go.jp/singi/stewardship/index.html"
+      "officialUrl": "https://www.fsa.go.jp/singi/stewardship/index.html",
+      "exclude_subpage_url_patterns": [
+        "/news/"
+      ]
     },
     "fsa-stewardship_r06": {
       "template": "tpl-preset-pattern-13",
       "manualLock": true,
       "pdf_selector": "main a[href*='.pdf'], #main a[href*='.pdf'], a[href*='siryou/']",
       "extract_from_parent_table": true,
-      "officialUrl": "https://www.fsa.go.jp/singi/stewardship/index.html"
+      "officialUrl": "https://www.fsa.go.jp/singi/stewardship/index.html",
+      "exclude_subpage_url_patterns": [
+        "/news/"
+      ]
     },
     "fsa-suisai_ryoritsu": {
       "template": "tpl-ministry-hybrid-kaisai",
