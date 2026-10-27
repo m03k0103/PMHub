@@ -2900,6 +2900,8 @@ def sync_new_meetings_from_crawl(data, target, scraped_item):
     council_parent_url = target.get("officialUrl") or target.get("url", "")
     ministry = target["ministry"]
     meetings = data.setdefault("meetings", [])
+    rules = data.get("scrapingRules", {})
+    target_rule = get_rule_for_target(rules, target) if rules else (target.get("scrapingRule") or {})
 
     existing_c_meets = [m for m in meetings if m.get("councilId") == council_id]
     existing_urls = {m.get("officialUrl", "").rstrip("/"): m for m in existing_c_meets if m.get("officialUrl")}
@@ -2941,25 +2943,22 @@ def sync_new_meetings_from_crawl(data, target, scraped_item):
             continue
 
 
-        # 親会議体への下部組織・専門家会合・ポータル自己参照の誤混入ガード（例: 税制調査会(cao-zei_cho)）
-        if council_id == "cao-zei_cho":
-            clean_sub = sub_url.rstrip('/')
-            clean_tgt = (target_url or "").rstrip('/')
-            if clean_sub == clean_tgt or "tax commission" in sub_title.lower() or "tax commission" in (sub_page_title or "").lower():
-                continue
-            if any(k in sub_url.lower() for k in ['/ebpm/', '/life/', '/digital-noukan/', '/noukan/', '/sozoku-zoyo/', '/renketsu/', '/rougo/', '/koku-han/', '/discussion']) or "専門家会合" in sub_title or "ディスカッショングループ" in sub_title:
-                continue
-        if council_id == "cao-cstp":
-            if any(k in sub_url.lower() for k in ['kaisaiannai', 'bridge', 'brige_wg']) or any(k in sub_title for k in ['ワーキンググループ', 'WG', 'BRIDGE', '中間評価']):
+        # 会議体スクレイピングルール固有のサブページ除外・必須フィルタリング（Drop 95: ハードコード撤廃）
+        if target_rule.get("disallow_self_url") and council_parent_url:
+            if sub_url.rstrip('/').lower() == council_parent_url.rstrip('/').lower():
                 continue
 
-        # 金融庁フォローアップ会議（第1回〜第30回のみで完結・Drop 40規約）およびスチュワードシップ各検討会のニュース除外ガード
-        if council_id == "fsa-code_followup":
-            if "/news/" in sub_url.lower() or "singi" not in sub_url.lower():
-                continue
-        if council_id in ("fsa-japan_stewardship", "fsa-stewardship_h28", "fsa-stewardship_r01", "fsa-stewardship_r06"):
-            if "/news/" in sub_url.lower():
-                continue
+        exclude_sub_urls = target_rule.get("exclude_subpage_url_patterns") or []
+        if any(pat.lower() in sub_url.lower() for pat in exclude_sub_urls):
+            continue
+
+        exclude_sub_titles = target_rule.get("exclude_subpage_title_keywords") or []
+        if any(kw.lower() in sub_title.lower() or (sub_page_title and kw.lower() in sub_page_title.lower()) for kw in exclude_sub_titles):
+            continue
+
+        require_sub_urls = target_rule.get("require_subpage_url_patterns") or []
+        if require_sub_urls and not any(pat.lower() in sub_url.lower() for pat in require_sub_urls):
+            continue
 
         # 他省庁URLの誤混入ガード（例: MHLW会議体にMETIのURLが混入するのを防止）
         ministry_code = normalize_ministry_code(ministry or "")
