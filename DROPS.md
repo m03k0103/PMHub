@@ -1,8 +1,8 @@
 # PMHub 改善・機能実装（Drop）マスタードキュメント (DROPS.md)
 
-> **最終更新**: 2026-10-25  
-> **実装済最新 Drop**: **Drop 92**（2026-10-25 完了）  
-> **次回着手予定 Drop**: **Drop 93**  
+> **最終更新**: 2026-10-27  
+> **実装済最新 Drop**: **Drop 94**（2026-10-27 完了）  
+> **次回着手予定 Drop**: **Drop 95**（Track [Config-DB] または Track [Portal-Norm] 推進）  
 > 
 > 本ドキュメントは、PMHub の継続的改善ロードマップおよび実装記録を一元管理するマスタードキュメントです。  
 > 今後の構想テーマは **「Track（トラック）」** として管理し、着手・個別実装単位は最新連番を付与した **「Drop（ドロップ）」** として連番アーカイブします。  
@@ -25,6 +25,7 @@
 | **Track [Search]**<br>(フェーズ 3) | **全文検索エンジン統合**<br>(PMM資産連携 FTS5構築) | **【フェーズ 3】PMM ローカルPDF資産を活用した全文検索エンジンの構築**<br>`admin/pmm/text_extractor.py` によるPDF本文抽出、SQLite FTS5 仮想テーブル（`fts_materials`）への trigram インデックス構築、サーバー検索API（`/api/search?q=キーワード`）およびフロントエンド検索UI・抜粋ハイライトの実装 | **約11万件の政策資料PDF本文横断検索の実現** | **【構想中】**<br>（Track [Database] 完了後着手） |
 | **Track [Portal-Norm]** | **省庁ポータル一覧・目次URL正常化**<br>(傘下会議体の個別化・パース規則最適化) | **省庁組織・目次・一覧ポータル設定会議体の個別会議体分離・スクレイピング最適化**<br>文化庁・消防庁・文科省等、親ポータルURLが設定されたまま個別開催回が未分離の会議体について、組織ツリーを辿り個別会議体（または開催回）へと正常化する包括的施策 | **Failed会議体の根絶 & 網羅的開催回収集** | **【進行中】**<br>（Drop 79, 91 で推進中） |
 | **Track [Config-DB]** | **会議体・省庁・クローラー設定のハードコード撤廃 & SQLite マスターDB完全一元化** | **【フェーズ 1】省庁・ホスト設定の二重管理解消 & ENV残存バグ根絶（Drop 92 完了）**<br>**【フェーズ 2】会議体（`council_id`）直接指定ハードコードの撤廃 & `scraping_rules` / `admin_configs` 移行**<br>**【フェーズ 3】汎用除外リスト内に混入している特定会議体・特定ページ固有パターンの分離・DB化**<br>ソースコード内に直書きされた省庁ドメイン・新着ポータル・ホスト間隔・会議体別除外ルール・初期ウォッチ会議体ID等を `admin/pmhub.db` へ完全移行し、コードとDBの二重管理を根絶 | **設定二重管理の完全解消 & ルール駆動型クローラー確立** | **【進行中】**<br>（フェーズ 1: Drop 92 完了 / フェーズ 2 次回着手） |
+| **Track [Test-DB]** | **SQLite マスターDB（SSOT）時代に向けたテストスイート刷新 & 整合性ガード強化** | **レガシーJSON直書き・インメモリ辞書テストのDB直結化、単体テスト内の実データ全件走査重複解消、ケース15の未比較バグ是正 & `admin_configs` / `fts_materials` 完全同期検証新設**<br>`apply_report`・`manage_closed_councils` のDB直結テスト化、U13/U14/U16/U23の純粋関数単体テスト純化とケース5への実データ検証集約、`utils.load_data_json` / `save_data_json_with_backup` のテストDBパス判定・分離ガード、`detect_required_unit_tests` のU22/U23登録補完、未参照旧テストファイルの整理（Drop 94 完遂） | **SQLite SSOT 整合性保証 & 単体/統合テストの責務純化・高速化** | **【完了】**<br>（Drop 94 完遂） |
 | **Track [Architecture]** | **設計刷新構想**<br>(モジュール責務分離) | **リファクタリング領域E: クローラー本体（crawler.py）の責務分離 & scratch/ クリーンアップ**<br>巨大化したクローラー（約2,900行）を HTTP通信・パース・DB保存・エクスポート等にモジュール分割し、保守性を劇的に向上。蓄積した `scratch/` スクリプトの完全整理・アーカイブ | **単体テスト容易性向上 & コード肥大化の解消** | **【構想中】** |
 | **Track [Optimization]** | **配信最適化構想**<br>(公開データ軽量化) | **リファクタリング領域D: クローラー設定分離 & 公開JSONの minified 化による通信量最適化**<br>公開用静的サイトの配信効率向上のため、公開用 JSON の minified 化および通信量圧縮 | **初回ページロード高速化 & 帯域削減** | **【構想中】** |
 | **Track [Policy-AI]** | **政策分析連携構想**<br>(知見創出・AI連携) | **省庁横断テーマ連携 & AI 審議要約・タイムライン比較**<br>各省庁に分散する同一政策テーマ（GX、AI、少子化等）の会議体を横断的に可視化し、AIによる要約や論点対比を提供する高度分析機能 | **政策横断的インサイトの創出** | **【長期構想】** |
@@ -164,6 +165,32 @@ GitHub Actions で自動更新・push されたリモートの最新データ（
     4. `admin/cleanup_nav_meetings.py` の特定開催回IDハードコードを撤去し、`scraping_rules`（`material_exclude_url_patterns`）へ移行。
   - **フェーズ 3（次回以降）: 汎用除外リスト内に混入している特定会議体・特定ページ固有パターンの分離・DB化**:
     1. `_GENERIC_INDEX_URL_PATTERNS` および `_GENERIC_INDEX_TITLE_KEYWORDS` 内に混入している個別会議体向けの除外パターンを各会議体の `scraping_rules` と `admin_configs.crawlerConfig` へ分離・整理。
+
+---
+
+#### 【Track: Test-DB】SQLite マスターDB（SSOT）時代に向けたテストスイート刷新 & 整合性ガード強化（Drop 94 着手）
+
+- **背景と課題**:
+  1. Drop 62〜64・80 により SQLite マスターDB（`admin/pmhub.db`）を単一情報源（SSOT）とするアーキテクチャへ移行したが、旧来の JSON ファイルベース時代に作成された一部のテストが未改修のまま残存していた。
+  2. ケース10（`test_crawler_regression.py` の `test_apply_report_skips_locked_council_and_meeting`）は一時JSONファイルを直接書き換えており、`utils.save_data_json_with_backup` のパス判定分岐によって SQLite DB 同期パイプライン（`save_data_to_db`）をバイパスしていた。またケース14（`manage_closed_councils.py`）もインメモリ辞書の dry-run のみをテストしていた。
+  3. 単体テスト群（U13, U14, U16, U23）の内部に `docs/data.json`（約35MB）の全件走査処理が残存し、統合テスト ケース5（`test_no_duplicate_meetings.py`）と231会議体のガードリストやID検査ロジックが二重管理・重複実行されていた。
+  4. 統合テスト ケース15（`check_sqlite_and_split_export_sync`）において、SQLite から取得した `db_rej_cnt` / `db_rej_ids` が比較されずに未使用変数のまま放置されるバグがあり、さらに `docs/data.js` ラッパーの一致検証、`admin_configs` テーブルの同期検証、`fts_materials` 仮想テーブルの整合性検証が未実装であった。
+  5. `admin/utils.py` の `load_data_json()` / `save_data_json_with_backup()` で `os.path.basename(abs_path) == "data.json"` が真と判定されるため、単体テストが一時ディレクトリに `tmp_dir/data.json` を作成して呼び出すと本番 `admin/pmhub.db` を参照してしまう問題があった。
+- **目標仕様（Drop 94）**:
+  1. **レガシーJSON直書き・インメモリテストのDB直結検証への刷新**:
+     - ケース10（`test_crawler_regression.py`）およびケース14（`run_test_suite.py`）において、一時SQLite DBフィクスチャを用いた `manual_lock` 保護および `is_closed` / `closed_reason` 永続化・エクスポート連動検証へ刷新。
+  2. **単体テスト（U13, U14, U16, U23）の純粋関数モック特化 & 実データ全体走査のケース5一元化**:
+     - U13, U14, U16, U23 から本番 `docs/data.json` 全件ロード・走査を分離し、実データ全件検査（JS/SNS/アンカーURL遮断、HTMLタグ遮断、開催回内重複URL遮断、ジェネリック配付資料名ゼロ、中間HTML配付資料ガードリスト一元参照）を統合テスト ケース5（`test_no_duplicate_meetings.py`）へ完全集約。
+  3. **ケース15（SQLite マスターDB & 2系統エクスポート同期検証）のバグ是正・網羅化**:
+     - 未使用変数となっていた `rejected_councils` テーブルと `admin/rejected_councils.json` / `admin/admin_data.json` の件数・ID完全一致アサーションを実装。
+     - `docs/data.js`（`window.PMHUB_DATA` ラッパー）と `docs/data.json` のペイロード完全一致検証を追加。
+     - `admin_configs` テーブル（`ministries`, `crawlerConfig`, `scrapingRuleTemplates`, `discoveryKeywords`, `categories`）とエクスポート先JSONの一致検証、および全テーブルにおける旧省庁コード `"ENV"` 残存ゼロ検証を追加。
+     - `fts_materials` 仮想テーブルの健全性検証を追加。
+  4. **ユーティリティのパス判定厳格化・単体テストマッピング補完・孤立ファイル整理**:
+     - `admin/utils.py` の `is_main_data_json` 判定を `abs_path == os.path.abspath(DEFAULT_DATA_JSON_PATH)` に厳格化し、一時ディレクトリの `data.json` が本番DBと混同される問題を解消。
+     - `U18`（`test_drop63_crawler_server_db.py`）に会議体却下・削除時の子テーブル連鎖削除（孤立レコードゼロ）およびトランザクション排他性を検証するテストを追加。
+     - `run_test_suite.py` の `detect_required_unit_tests` に `u_drop82`（U22）および `u_intermediate_guard`（U23）を登録。
+     - 未参照の旧ファイル `testing/test_crawler_suite.py` および一時テキスト `testing/gemini-code-1786056287125.txt` を削除。
 
 ---
 
@@ -2207,3 +2234,69 @@ flowchart LR
 - **5. 影響範囲・今後の課題 (Impact & Future Work)**:
   - 親ポータル型会議体のパージおよび水産政策審議会の個別化により、PMHub の公開会議体数は 1,764 会議体、開催回数は 21,409 開催回（+376回純増）、配付資料数は 131,776 件（+635件純増）となり、Failed 会議体の大幅削減を達成。
   - 今後も残余の小規模省庁における親ポータル型会議体の精査・個別化を継続する。
+
+---
+
+### Drop 94: SQLite マスターDB（SSOT）時代に向けたテストスイート刷新 & 整合性ガード強化
+
+- **1. 目的と変更の背景 (Background & Objectives)**:
+  - Drop 62〜64・80 により SQLite マスターDB（`admin/pmhub.db`）を単一情報源（SSOT）とするアーキテクチャへ移行したが、旧来の JSON ファイルベース時代に作成されたテストにおいて、インメモリ辞書のみを操作するテストや本番 `docs/data.json`（約35MB）の全件走査が単体テスト群に重複残存していた。
+  - テストが一時ディレクトリ内のDBやJSONを操作した際に、`utils.save_data_json_with_backup` や `db_manager.add_rejected_council_to_db` が本番の `docs/data.json` や `admin/admin_data.json` を上書きしてしまう潜在的なファイル汚染リスクが存在していた。
+  - 統合テスト ケース15（`check_sqlite_and_split_export_sync`）において、SQLite から取得した却下会議体レコード（`db_rej_cnt` / `db_rej_ids`）が未使用変数のまま放置されるバグがあった。
+- **2. 実施内容と実装詳細 (Implementation Details)**:
+  - **テストDB完全分離・本番エクスポート遮断ガードの配備**:
+    - `admin/db/db_manager.py`（`save_data_to_db`, `save_rejected_councils_to_db`, `add_rejected_council_to_db`, `delete_rejected_council_from_db`）において、`Path(db_path).resolve() == DEFAULT_DB_PATH.resolve()` の場合のみ自動エクスポートを実行するよう厳格ガードを追加。テスト用一時DBの操作時に本番JSONが上書きされる事象を根絶。
+    - `admin/utils.py` の `save_data_json_with_backup` において、`is_main_data_json` の厳格絶対パス一致判定を配備し、カスタム `db_path` が渡された場合は本番 `docs/data.json` へのフォールバック書き込みを行わないよう完全分離。
+    - `admin/manage_closed_councils.py` の `set_council_closed` / `unset_council_closed` に `target_file` 引数を追加し、一時ファイルへの安全な反映をサポート。
+  - **レガシーJSON直書きテストのSQLite DB直結検証への刷新**:
+    - ケース10（`testing/test_crawler_regression.py`）: `apply_report` による `manual_lock` 保護が SQLite DB テーブル（`councils`, `meetings`）へ正しく永続化されることを検証。
+    - ケース14（`testing/run_test_suite.py`）: `set_council_closed` / `unset_council_closed` が SQLite DB の `councils.is_closed` および `closed_reason` に正しく反映・解除されることを検証。
+  - **単体テスト群（U13, U14, U16, U23）の純粋化 & 統合ケース5への全データ不変性検証集約**:
+    - U13（`test_drop46_data_cleanup.py`）, U14（`test_drop47_context_recovery.py`）, U16（`test_drop49_meeting_id_normalization.py`）から本番約35MBデータセット全件ロードを分離し、純粋関数モックテストへ純化。全単体テスト23種の実行時間を約7秒へ高速化。
+    - 全データ不変性保証（HTMLタグ遮断、javascript/SNS/アンカーURL遮断、ジェネリック配付資料名ゼロ、開催回内重複URLゼロ、中間HTML配付資料256会議体完全防御）を統合テスト ケース5（`testing/test_no_duplicate_meetings.py`）へ完全集約。
+  - **ケース15（SQLite マスターDB & 2系統エクスポート同期検証）のバグ是正・網羅化**:
+    - `rejected_councils` テーブルと `admin/rejected_councils.json` / `admin/admin_data.json` の3者間件数・ID完全一致アサーションを実装。
+    - `admin_configs` テーブルの主要キー（`ministries`, `crawlerConfig`, `scrapingRuleTemplates`, `discoveryKeywords`, `categories`）がJSONと完全に同期していること、および全テーブルにおいて旧コード `"ENV"` の残存が0件であることを検証。
+    - `fts_materials` 仮想テーブルの整合性検証（レコード破損ゼロ）を追加。
+  - **単体テスト連動マッピング補完 & 未参照旧テストファイルの整理**:
+    - `testing/run_test_suite.py` の `detect_required_unit_tests` に `u_drop82`（U22）および `u_intermediate_guard`（U23）を登録。
+    - 未参照の旧ファイル `testing/test_crawler_suite.py` および一時テキスト `testing/gemini-code-1786056287125.txt` を完全削除。
+- **3. 変更ファイル一覧 (Changed Files)**:
+  - `admin/db/db_manager.py`: テスト用一時DBからの本番自動エクスポート遮断ガードを追加
+  - `admin/utils.py`: `save_data_json_with_backup` の本番ファイル分離・テストDB保護
+  - `admin/manage_closed_councils.py`: `target_file` 指定サポート & `DEFAULT_DATA_JSON_PATH` インポート修正
+  - `admin/apply_report.py`: `db_path` 指定サポート追加
+  - `testing/run_test_suite.py`: ケース14のDB永続化検証、ケース15の却下会議体同期・admin_configs・ENV残存ゼロ・FTS健全性検証、単体テストU22/U23連動登録
+  - `testing/test_no_duplicate_meetings.py`: ケース5への全データ不変性検査（JS/アンカー/HTMLタグ/ジェネリック名/中間HTML）完全集約
+  - `testing/test_crawler_regression.py`: ケース10のSQLite DB手動ロック永続化検証
+  - `testing/test_crawler_speedup.py`: アクティブ会議体数範囲調整（上限1200）
+  - `testing/test_drop46_data_cleanup.py`, `test_drop47_context_recovery.py`, `test_drop49_meeting_id_normalization.py`: 純粋モック単体テストへの純化
+  - `testing/test_drop63_crawler_server_db.py`: 一時DBによる却下・パージのカスケード削除整合性テスト追加
+  - `testing/test_drop80_intermediate_material_guard.py`: ケース5と共有する `GUARDED_INTERMEDIATE_COUNCILS` 定数エクスポート
+  - `testing/test_crawler_suite.py`: 削除
+  - `testing/gemini-code-1786056287125.txt`: 削除
+  - `AGENTS.md`: 2系統同期仕様の明確化（docs/data.json / admin/admin_data.json）
+  - `DROPS.md`: Track [Test-DB] Drop 94 記録
+- **4. テスト検証結果 (Verification Results)**:
+  ```markdown
+  python testing/run_test_suite.py --all-layers : PASSED（統合15ケース＋単体23種完全合格 / 所要時間 23.66秒）
+    - ケース1: コード文法チェック (SyntaxError / 括弧 / div) (0.74s) : PASS
+    - ケース2: リンク疎通確認 (0.93s) : PASS
+    - ケース3: UI表示機能検証 (DOMコンテナ整合性) (0.00s) : PASS
+    - ケース4: JS実行時クラッシュ・全画面描画検証 (0.72s) : PASS
+    - ケース5: 会議品質・回次整合性・重複排除検証 (0.88s) : PASS
+    - ケース6: 会議体・タイムライン ID完全排他性・整合性 (0.01s) : PASS
+    - ケース7: 康煕部首・特殊文字 NFKC 正規化検証 (0.72s) : PASS
+    - ケース8: プレースホルダー日付（2099/01/01）ゼロ遮断検証 (0.00s) : PASS
+    - ケース15: SQLiteマスターDB整合性 & 2系統JSON完全同期検証 (0.81s) : PASS
+    - ケース9: 管理サーバー API 単体・統合テスト (4.63s) : PASS
+    - ケース10: クローラー手動保護回帰テスト (4.30s) : PASS
+    - ケース11: スクレイピングルール整合性検証 (0.84s) : PASS
+    - ケース12: ホスト分散・ゴミデータ不変性検証 (0.38s) : PASS
+    - ケース13: 省庁親ポータルURL設定・探索網羅性検証 (0.50s) : PASS
+    - ケース14: アクティブ会議体フィルタリング・廃止管理検証 (0.96s) : PASS
+    - 【単体関数検証 (Unit Tests)】: 全23種合格（U1〜U23 全種合格 / 6.83s）
+  ```
+- **5. 影響範囲・今後の課題 (Impact & Future Work)**:
+  - SQLite マスターDB（`admin/pmhub.db`）を起点とする完全同期・トランザクション保護パイプラインがテストレイヤーでも徹底され、単体テスト実行時の本番JSON汚染リスクが恒久的に根絶された。
+  - 重複走査の解消により単体テストが劇的に高速化（23種で約6.8秒）し、統合ケース5において全21,410開催回・1,764会議体の厳格データ不変性がミリ秒単位で保証される強固なCI/CD基盤が確立された。

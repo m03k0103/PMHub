@@ -12,6 +12,8 @@ from collections import defaultdict
 
 sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "admin"))
 from utils import setup_win32_utf8, normalize_japanese_numbers, load_data_json, validate_council_id, validate_meeting_id
+from crawler import is_sns_pr_url, is_non_pdf_anchor_url, is_generic_material_name
+from test_drop80_intermediate_material_guard import GUARDED_INTERMEDIATE_COUNCILS, is_intermediate_html_material
 setup_win32_utf8()
 
 
@@ -174,7 +176,11 @@ def run_test(data=None):
     if bad_names:
         errors.append(f"Generic/auto-extracted meeting names found ({len(bad_names)} items): {bad_names[:5]}")
 
-    # 7. Check meeting name schema (Strictly enforce non-empty 'name' string, ban deprecated 'title' attribute)
+    # 7. Check meeting name schema (Strictly enforce non-empty 'name' string, ban deprecated 'title' attribute, ban HTML tags)
+    html_tag_titles = [m.get('id') for m in meetings if ('<br' in (m.get('name') or '').lower() or '<span' in (m.get('name') or '').lower())]
+    if html_tag_titles:
+        errors.append(f"Meeting names containing HTML tags (<br>, <span>) found ({len(html_tag_titles)} items): {html_tag_titles[:5]}")
+
     missing_names = [m.get('id') for m in meetings if not m.get('name') or not isinstance(m.get('name'), str)]
     if missing_names:
         errors.append(f"Meetings missing valid 'name' property found ({len(missing_names)} items): {missing_names[:5]}")
@@ -203,19 +209,54 @@ def run_test(data=None):
     if bad_m_ids:
         errors.append(f"Invalid meetingId format (must be {{councilId}}-{{YYYYMMDD}}-{{round}} with 3 hyphens) ({len(bad_m_ids)} items): {bad_m_ids[:5]}")
 
-    # 10. Check materials schema (Strictly enforce 'name' attribute, ban 'title' key and empty names)
+    # 10. Check materials schema (Strictly enforce 'name', ban 'title'/empty, ban JS/SNS/anchor URLs, generic names, intra-meeting duplicates)
+    bad_materials_js_urls = []
+    bad_materials_sns_urls = []
+    bad_materials_anchor_urls = []
+    bad_materials_generic_names = []
+    intra_meeting_dup_urls = []
+
     bad_materials_title_key = []
     bad_materials_empty_name = []
     for m in meetings:
+        seen_mat_urls = set()
         for mat in m.get('materials', []):
+            m_id = m.get('id')
+            mat_name = str(mat.get('name') or '').strip()
+            mat_url = str(mat.get('url') or '').strip()
+
             if 'title' in mat:
-                bad_materials_title_key.append((m.get('id'), mat))
-            if not str(mat.get('name') or '').strip():
-                bad_materials_empty_name.append((m.get('id'), mat))
+                bad_materials_title_key.append((m_id, mat))
+            if not mat_name:
+                bad_materials_empty_name.append((m_id, mat))
+
+            if mat_url.startswith('javascript:'):
+                bad_materials_js_urls.append((m_id, mat_name, mat_url))
+            if is_sns_pr_url(mat_url):
+                bad_materials_sns_urls.append((m_id, mat_name, mat_url))
+            if is_non_pdf_anchor_url(mat_url):
+                bad_materials_anchor_urls.append((m_id, mat_name, mat_url))
+            if is_generic_material_name(mat_name):
+                bad_materials_generic_names.append((m_id, mat_name, mat_url))
+
+            if mat_url and mat_url != '#':
+                if mat_url in seen_mat_urls:
+                    intra_meeting_dup_urls.append((m_id, mat_url))
+                seen_mat_urls.add(mat_url)
     if bad_materials_title_key:
         errors.append(f"Materials with deprecated 'title' key found ({len(bad_materials_title_key)} items): {[b[0] for b in bad_materials_title_key[:5]]}")
     if bad_materials_empty_name:
         errors.append(f"Materials with empty 'name' attribute found ({len(bad_materials_empty_name)} items): {[b[0] for b in bad_materials_empty_name[:5]]}")
+    if bad_materials_js_urls:
+        errors.append(f"Materials with javascript: URLs found ({len(bad_materials_js_urls)} items): {[b[0] for b in bad_materials_js_urls[:5]]}")
+    if bad_materials_sns_urls:
+        errors.append(f"Materials with SNS/PR URLs found ({len(bad_materials_sns_urls)} items): {[b[0] for b in bad_materials_sns_urls[:5]]}")
+    if bad_materials_anchor_urls:
+        errors.append(f"Materials with non-PDF anchor URLs found ({len(bad_materials_anchor_urls)} items): {[b[0] for b in bad_materials_anchor_urls[:5]]}")
+    if bad_materials_generic_names:
+        errors.append(f"Materials with generic names found ({len(bad_materials_generic_names)} items): {[b[1] for b in bad_materials_generic_names[:5]]}")
+    if intra_meeting_dup_urls:
+        errors.append(f"Intra-meeting duplicate material URLs found ({len(intra_meeting_dup_urls)} items): {intra_meeting_dup_urls[:5]}")
 
     # 11. Check cross-council duplicate meeting officialUrls (Must not share specific meeting subpage URLs across different councils)
     generic_meeting_url_patterns = re.compile(
@@ -413,288 +454,15 @@ def run_test(data=None):
                         similar_name_errors.append(f"Short suffix council name duplicate in {m_code}: '{c1['name']}' ({c1['id']}) vs '{c2['name']}' ({c2['id']})")
 
 
-    # Drop 80 / 83 / 84 / 85 Guard: Intermediate HTML material container check
-    intermediate_guard_councils = {
-        # 税制調査会系列
-        'cao-zeicho_digital_noukan_senmonka',
-        'cao-zeicho_life_senmonka',
-        'cao-zeicho_sozoku_zoyo_senmonka',
-        'cao-zeicho_koku_han_kaigou',
-        'cao-zeicho_rougo_shisan_senmonka',
-        'cao-zei_cho',
-        'cao-zeicho_noukan_senmonka',
-        'cao-zeicho_ebpm_senmonka',
-        'cao-zeicho_discussion3_hojin',
-        'cao-zeicho_discussion1_kokusai',
-        'cao-zeicho_kiso_shoiinkai',
-        'cao-zeicho_renketsu_senmonka',
-        'cao-zeicho_discussion2_mynumber',
-        # 内閣官房
-        'cas-kokusentoc',
-        'cas-kagayakujosei',
-        # 財務省 (Drop 84)
-        'mof-2717',
-        'mof-zaiseiseido_bunkakai',
-        'mof-1135',
-        'mof-1136',
-        'mof-1134',
-        'mof-1133',
-        'mof-seisaku_hyouka',
-        'mof-1132',
-        'mof-1731',
-        'mof-1161',
-        'mof-bop',
-        'mof-jishin_benkyoukai',
-        'mof-1153',
-        'mof-fdi',
-        'mof-shinkahei_arikata',
-        # 金融庁・厚生労働省 (Drop 85)
-        'fsa-kinyu_trouble',
-        'mhlw-nenkin_shikin_unyou_bunkakai',
-        'mhlw-jidou_gyakutai_shinken_senmon',
-        'mhlw-911',
-        'mhlw-943',
-        'mhlw-971',
-        'mhlw-1039',
-        'mhlw-845',
-        'mhlw-898',
-        'mhlw-kousei_influ',
-            # 食品安全委員会 (Drop 86: 全23会議体)
-            'fsc-bakuro_wg',
-            'fsc-biseibutu_virus',
-            'fsc-bpa_wg',
-            'fsc-doubutu',
-            'fsc-eiyotenkabutu_wg',
-            'fsc-hisiryou',
-            'fsc-honkaigi',
-            'fsc-hyoukagijyutukikaku_wg',
-            'fsc-idensi',
-            'fsc-kabi_shizen',
-            'fsc-kiguyouki',
-            'fsc-kikaku_tou',
-            'fsc-nouyaku_dai1',
-            'fsc-nouyaku_dai2',
-            'fsc-nouyaku_dai3',
-            'fsc-nouyaku_dai4',
-            'fsc-nouyaku_dai5',
-            'fsc-osen_tou',
-            'fsc-pfas_wg',
-            'fsc-prion',
-            'fsc-sinkaihatu',
-            'fsc-tenkabutu',
-            'fsc-yakuzaitaiseikin_wg',
-            # 経済産業省 (Drop 86: 33会議体)
-            'meti-1664',
-            'meti-1666',
-            'meti-1673',
-            'meti-1675',
-            'meti-1676',
-            'meti-1677',
-            'meti-1678',
-            'meti-1679',
-            'meti-1680',
-            'meti-1681',
-            'meti-1682',
-            'meti-1684',
-            'meti-1692',
-            'meti-1694',
-            'meti-1698',
-            'meti-1702',
-            'meti-1703',
-            'meti-1705',
-            'meti-1708',
-            'meti-1710',
-            'meti-1714',
-            'meti-1716',
-            'meti-1718',
-            'meti-1725',
-            'meti-1728',
-            'meti-ax_skill_wg',
-            'meti-denryoku_gas_kanshi',
-            'meti-kagaku_busshitsu',
-            'meti-keiryou_gyousei',
-            'meti-sankoushin',
-            'meti-shinsangyo_kozo',
-            'meti-shouhi_keizai',
-            'meti-suiso_daidoumyaku',
-            # 資源エネルギー庁 (Drop 86: 41会議体)
-            'anre-1748',
-            'anre-1749',
-            'anre-1750',
-            'anre-1751',
-            'anre-1752',
-            'anre-1753',
-            'anre-1754',
-            'anre-1755',
-            'anre-1756',
-            'anre-1757',
-            'anre-1758',
-            'anre-1759',
-            'anre-1760',
-            'anre-1762',
-            'anre-1763',
-            'anre-1764',
-            'anre-1765',
-            'anre-1766',
-            'anre-1768',
-            'anre-1769',
-            'anre-1771',
-            'anre-1772',
-            'anre-1773',
-            'anre-1774',
-            'anre-1775',
-            'anre-1776',
-            'anre-1777',
-            'anre-1779',
-            'anre-1780',
-            'anre-1781',
-            'anre-1783',
-            'anre-1785',
-            'anre-1787',
-            'anre-1789',
-            'anre-1790',
-            'anre-1791',
-            'anre-1792',
-            'anre-1793',
-            'anre-1794',
-            'anre-1795',
-            'anre-1796',
-            # 中小企業庁 (Drop 86: 6会議体)
-            'smea-1307',
-            'smea-1308',
-            'smea-1310',
-            'smea-1311',
-            'smea-1620',
-            'smea-keiei_shien_bunkakai',
-            # 農林水産省・林野庁 (Drop 87: 10会議体)
-            'maff-659',
-            'maff-656',
-            'maff-704',
-            'maff-687',
-            'maff-nougyogyou_hoken',
-            'maff-shokuryou_sangyou_bukai',
-            'maff-shokuryo_nogyo',
-            'maff-nougyou_sizai_shingikai',
-            'maff-sizai_noyaku_bunkakai',
-            'rinya-1284',
-            # 国土交通省 (Drop 87: 7会議体)
-            'mlit-meeting',
-            'mlit-infra_management_wg',
-            'mlit-energy_anzenhosho_wg',
-            'mlit-amami_shinkou',
-            'mlit-dokuritsu_gyosei_hyoka',
-            'mlit-kokudo_shingikai',
-            'mlit-tochi_kantei',
-            # 原子力規制委員会 (Drop 88: 11会議体)
-            'nra-ro_anzen_shinsa',
-            'nra-1205',
-            'nra-1203',
-            'nra-1204',
-            'nra-1206',
-            'nra-me_suishoutai',
-            'nra-1209',
-            'nra-1213',
-            'nra-1212',
-            'nra-1211',
-            'nra-teireikai',
-        # 総務省・文化庁・文部科学省 (Drop 89: 26会議体)
-            'aca-187',
-            'aca-188',
-            'aca-bunka_shingikai_sokai',
-            'aca-bunkazai_hogojoyaku',
-            'aca-bunkazai_sekaitokubetsu',
-            'aca-kokugo_bunkakai',
-            'aca-kokugo_gairai',
-            'aca-kokugo_gengo',
-            'aca-kokugo_kadai',
-            'aca-kokugo_nihongo',
-            'aca-kokugo_nihongo_wg_h29',
-            'aca-kokugo_shido_wg_h24',
-            'aca-kokugo_shuro_nihongo_wg',
-            'aca-needs_working_team_sagyou',
-            'mext-714',
-            'mext-chukyo',
-            'mext-chuo_kyoiku',
-            'mext-gijyutu',
-            'mext-kokuritsu_daigaku_hyouka',
-            'mext-kokuritsu_kenkyuu_shingi',
-            'mic-dokuritsu_gyousei_hyouka',
-            'mic-joho_tsusin',
-            'mic-onkyu_shinsa02',
-            'mic-seisaku_kaigi',
-            'mic-toukei_iinkai',
-            'mic-toukei_singikai',
-        # 内閣官房・内閣府・デジタル庁・他残余全省庁 (Drop 90: 59会議体)
-            'cao-232',
-            'cao-258',
-            'cao-259',
-            'cao-260',
-            'cao-278',
-            'cao-contents_kyougikai',
-            'cao-cstp',
-            'cao-genshiryoku_kisei_ikenkoukan',
-            'cao-pfi_suishin',
-            'cao-space_anpo',
-            'cas-296',
-            'cas-347',
-            'cas-351',
-            'cas-atarashii_shihon_kaigi',
-            'cas-chiikimirai',
-            'cas-chuobou',
-            'cas-digital_gyozaikaikaku',
-            'cas-genshiryoku_kakuryo_kaigi',
-            'cas-hanzai',
-            'cas-jinko_senryaku',
-            'cas-kokka_jouhou',
-            'cas-kumahigai_taisaku',
-            'cas-nousui',
-            'cas-ondanka',
-            'cas-shingijutsu_kouka_hyouka',
-            'cas-titeki2',
-            'digital-atena_kanri_wt',
-            'digital-datalinkage_wt',
-            'digital-kikan_system_touitsu',
-            'digital-kyoutsuu_kinou_gijutsu',
-            'digital-kyoutsuu_kinou_kadai',
-            'digital-shinsei_kanri_wt',
-            'digital-shitei_toshi_kadai',
-            'fdma-chiiki_bousai_shien',
-            'fsa-keizaikachi_solvency',
-            'fsa-kigyou_kikaku_bukai',
-            'fsa-kinyu_chukai',
-            'fsa-kinyu_shingi',
-            'fsa-monitoring',
-            'fsa-suisai_ryoritsu',
-            'jsa-611',
-            'jsa-646',
-            'jsa-sports_guideline',
-            'jsa-sports_mirai_kaihatsu',
-            'mhlw-1009',
-            'mhlw-2862',
-            'mhlw-2876',
-            'mhlw-2878',
-            'mhlw-937',
-            'mhlw-gpif_unei_kento',
-            'mhlw-hosho_fukushi',
-            'mhlw-jcho_houjin_seido_kento',
-            'mhlw-shakai_hosho',
-            'mhlw-shakai_hosho_kaigo_kyuufu',
-            'mhlw-unyou_iinkai_junbi_kaigou',
-            'mlit-shakai_shingikai',
-            'mofa-gaimu_jinji',
-            'moj-fuhoukoui_hosei',
-            'ra-fukko_suishin_kaigi',
-    }
+    # Drop 80 / 83 / 84 / 85 / 94 Guard: Intermediate HTML material container check (SSOT shared with U23)
     intermediate_violations = []
-    generic_names = {'会議資料', '配付資料', '配布資料', '資料一覧', '配付資料一覧', '配布資料一覧', '会議資料一覧', '提出資料 (HTML)', '配付資料 (HTML)'}
     for m in meetings:
-        if m.get('councilId') in intermediate_guard_councils:
+        if m.get('councilId') in GUARDED_INTERMEDIATE_COUNCILS:
             for mat in m.get('materials', []):
-                u = mat.get('url', '').lower()
-                n = mat.get('name', '').strip()
-                if (u.endswith('.html') or u.endswith('.htm') or '/' in u) and not u.endswith('.pdf'):
-                    if n in generic_names:
-                        intermediate_violations.append(f"{m['id']}: material '{n}' -> {mat.get('url')}")
+                u = mat.get('url', '')
+                n = mat.get('name', '')
+                if is_intermediate_html_material(n, u):
+                    intermediate_violations.append(f"{m['id']}: material '{n}' -> {u}")
     if intermediate_violations:
         errors.append(f"Intermediate HTML materials found in guarded councils ({len(intermediate_violations)} cases): {intermediate_violations[:5]}")
 

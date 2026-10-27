@@ -126,8 +126,8 @@
 8. **管理画面（`admin/admin_dashboard.html`）のローカル専用・単一マスターDB原則（二重管理の禁止）**
    - 管理画面は `admin/server.py`（`http://localhost:8000/admin/admin_dashboard.html`）経由のローカル専用として運用し、一般公開サイト（`docs/index.html`）には管理画面へのリンクを掲載しない。
    - データ管理は SQLite マスターDB（`admin/pmhub.db`）に完全一元化し、公開用 JSON の手動インポート/エクスポートや `localStorage` キャッシュによる二重管理を行わない。
-   - **マスターDBと2系統配信ファイル（`data.json` / `data.js`）の同期・アトミック書き込み原則**:
-     - サーバーレス環境でのローカル `file://` 直開き（ブラウザの CORS 制約回避）と HTTP 配信（GitHub Pages 等）の両立を目的として、`docs/data.json` とペアで window オブジェクトへ代入する `.js` ラッパー（`docs/data.js`）を出力する構成において、派生ファイル側のみを手動・個別スクリプトで書き換えてはならない。
+   - **マスターDBと2系統エクスポートファイル（`docs/data.json` / `admin/admin_data.json`）の同期・アトミック書き込み原則**:
+     - 公開用ポータル（`docs/data.json`）とクローラー管理用（`admin/admin_data.json`）の2系統分離エクスポート構成において、派生ファイル側のみを手動・個別スクリプトで直接書き換えてはならない。
      - 必ずマスターDB（`admin/pmhub.db`）を更新した上で正規のエクスポート処理（`admin/db/export_data.py`）を実行し、両者を同一トランザクションで同時更新すること。
      - 公開 JSON および `.js` ラッパーを更新する際は、直接上書きによる破損を防ぐため、一時ファイルへ書き出した上で `os.replace()` によりアトミックに置換し、Windows 環境における一時的なハンドルロック（`[WinError 5]` / `[WinError 32]`）に対処するための短時間スリープ付きリトライ処理を組み込むこと。
 

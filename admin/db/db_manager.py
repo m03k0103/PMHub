@@ -602,12 +602,14 @@ def save_data_to_db(
 
     # Automatic deterministic export pipeline
     if run_export:
-        t0 = time.time()
-        success = export_data(db_path=db_path)
-        if success:
-            dur = time.time() - t0
-            print(f"[AUTO-EXPORT] docs/data.json & admin/admin_data.json exported successfully in {dur:.2f}s.")
-        return success
+        if Path(db_path).resolve() == DEFAULT_DB_PATH.resolve():
+            t0 = time.time()
+            success = export_data(db_path=db_path)
+            if success:
+                dur = time.time() - t0
+                print(f"[AUTO-EXPORT] docs/data.json & admin/admin_data.json exported successfully in {dur:.2f}s.")
+            return success
+        return True
 
     return True
 
@@ -866,7 +868,8 @@ def save_rejected_councils_to_db(
         conn.close()
 
     if export:
-        export_data(db_path=db_path)
+        if Path(db_path).resolve() == DEFAULT_DB_PATH.resolve():
+            export_data(db_path=db_path)
     return True
 
 
@@ -909,7 +912,8 @@ def add_rejected_council_to_db(
         conn.close()
 
     if export:
-        export_data(db_path=db_path)
+        if Path(db_path).resolve() == DEFAULT_DB_PATH.resolve():
+            export_data(db_path=db_path)
     return True
 
 
@@ -941,7 +945,8 @@ def delete_rejected_council_from_db(
         conn.close()
 
     if export:
-        export_data(db_path=db_path)
+        if Path(db_path).resolve() == DEFAULT_DB_PATH.resolve():
+            export_data(db_path=db_path)
     return True
 
 

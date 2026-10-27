@@ -29,15 +29,7 @@ def is_intermediate_html_material(name, url):
         return True
     return False
 
-class TestDrop80IntermediateMaterialGuard(unittest.TestCase):
-    def setUp(self):
-        data = load_data_json()
-        self.councils = {c['id']: c for c in data.get('councils', [])}
-        self.meetings = data.get('meetings', [])
-        
-    def test_guarded_councils_have_zero_intermediate_materials(self):
-        """CR-209 / CR-211 / CR-212: 税制調査会系列全13会議体、内閣官房2会議体、および財務省15会議体に中間HTML配付資料が混入していないこと"""
-        guarded_councils = {
+GUARDED_INTERMEDIATE_COUNCILS = {
             # 税制調査会系列
             'cao-zeicho_digital_noukan_senmonka',
             'cao-zeicho_life_senmonka',
@@ -308,6 +300,16 @@ class TestDrop80IntermediateMaterialGuard(unittest.TestCase):
             'moj-fuhoukoui_hosei',
             'ra-fukko_suishin_kaigi',
         }
+
+class TestDrop80IntermediateMaterialGuard(unittest.TestCase):
+    def setUp(self):
+        data = load_data_json()
+        self.councils = {c['id']: c for c in data.get('councils', [])}
+        self.meetings = data.get('meetings', [])
+        
+    def test_guarded_councils_have_zero_intermediate_materials(self):
+        """CR-209 / CR-211 / CR-212: 中間HTML配付資料ガード対象会議体に中間HTMLが混入していないこと"""
+        guarded_councils = GUARDED_INTERMEDIATE_COUNCILS
         
         violations = []
         for m in self.meetings:

@@ -104,19 +104,36 @@ class TestCrawlerManualLockProtection(unittest.TestCase):
         self.assertEqual(m2_1["materials"][0]["name"], "手動保護資料")
 
     def test_apply_report_skips_locked_council_and_meeting(self):
-        """apply_report は manualLock: true の会議体および会議のフィールドを上書きしないこと"""
+        """apply_report は manualLock: true の会議体および会議を JSON および SQLite DB 双方で保護すること (Drop 94)"""
         import tempfile
+        import sqlite3
+        from pathlib import Path
+        try:
+            from db.db_manager import ensure_database, save_data_to_db
+        except ImportError:
+            from admin.db.db_manager import ensure_database, save_data_to_db
+
+        temp_dir = tempfile.mkdtemp(prefix="pmhub_test_apply_")
+        t_path = Path(temp_dir)
+        data_path = str(t_path / "data.json")
+        admin_path = str(t_path / "admin_data.json")
+        db_path = str(t_path / "test.db")
+        schema_path = os.path.join(ADMIN_DIR, "db", "schema.sql")
 
         temp_data = {
             "councils": [
                 {
                     "id": "test-locked_council",
+                    "ministry": "TEST",
+                    "category": "審議会等",
                     "name": "手動保護会議体",
                     "officialUrl": "https://example.com/manual-url",
                     "manualLock": True
                 },
                 {
                     "id": "test-unlocked_council",
+                    "ministry": "TEST",
+                    "category": "審議会等",
                     "name": "非保護会議体",
                     "officialUrl": "https://example.com/old-url",
                     "manualLock": False
@@ -126,15 +143,21 @@ class TestCrawlerManualLockProtection(unittest.TestCase):
                 {
                     "id": "test-locked_council-20260101-001",
                     "councilId": "test-locked_council",
+                    "name": "第1回 テスト会合",
+                    "date": "2026/01/01",
                     "officialUrl": "https://example.com/manual-meeting",
-                    "manualLock": True
+                    "manualLock": True,
+                    "materials": []
                 }
             ]
         }
 
-        with tempfile.NamedTemporaryFile(mode='w', suffix='.json', delete=False, encoding='utf-8') as df:
+        with open(data_path, "w", encoding="utf-8") as df:
             json.dump(temp_data, df, ensure_ascii=False, indent=2)
-            data_path = df.name
+        with open(admin_path, "w", encoding="utf-8") as af:
+            json.dump({}, af, ensure_ascii=False, indent=2)
+
+        ensure_database(db_path=Path(db_path), public_json_path=Path(data_path), admin_json_path=Path(admin_path), schema_path=Path(schema_path))
 
         report_data = {
             "_format": "pmhub-verification-report-v2",
@@ -163,31 +186,47 @@ class TestCrawlerManualLockProtection(unittest.TestCase):
             ]
         }
 
-        with tempfile.NamedTemporaryFile(mode='w', suffix='.json', delete=False, encoding='utf-8') as rf:
+        report_path = str(t_path / "report.json")
+        with open(report_path, "w", encoding="utf-8") as rf:
             json.dump(report_data, rf, ensure_ascii=False, indent=2)
-            report_path = rf.name
 
         try:
-            apply_report(report_path, data_json_path=data_path)
+            apply_report(report_path, data_json_path=data_path, db_path=db_path)
 
             with open(data_path, "r", encoding="utf-8") as res_f:
                 updated = json.load(res_f)
 
-            # test-locked_council は上書きされていないこと
+            # JSON 検証: test-locked_council は上書きされていないこと
             lc = next(c for c in updated["councils"] if c["id"] == "test-locked_council")
             self.assertEqual(lc["officialUrl"], "https://example.com/manual-url", "locked council の URL は保護されるべき")
 
-            # test-unlocked_council は更新されていること
+            # JSON 検証: test-unlocked_council は更新されていること
             uc = next(c for c in updated["councils"] if c["id"] == "test-unlocked_council")
             self.assertEqual(uc["officialUrl"], "https://example.com/new-url", "unlocked council は更新されるべき")
 
-            # test-locked_council-20260101-001 は上書きされていないこと
+            # JSON 検証: test-locked_council-20260101-001 は上書きされていないこと
             lm = next(m for m in updated["meetings"] if m["id"] == "test-locked_council-20260101-001")
             self.assertEqual(lm["officialUrl"], "https://example.com/manual-meeting", "locked meeting の URL は保護されるべき")
 
+            # SQLite DB 検証: DB 内のレコードも manualLock を遵守して更新/保護されていること
+            conn = sqlite3.connect(db_path)
+            cur = conn.cursor()
+            db_lc = cur.execute("SELECT official_url, manual_lock FROM councils WHERE id = 'test-locked_council';").fetchone()
+            self.assertEqual(db_lc[0], "https://example.com/manual-url", "DB 内の locked council URL が保護されていること")
+            self.assertEqual(db_lc[1], 1)
+
+            db_uc = cur.execute("SELECT official_url, manual_lock FROM councils WHERE id = 'test-unlocked_council';").fetchone()
+            self.assertEqual(db_uc[0], "https://example.com/new-url", "DB 内の unlocked council URL が更新されていること")
+            self.assertEqual(db_uc[1], 0)
+
+            db_lm = cur.execute("SELECT official_url, manual_lock FROM meetings WHERE id = 'test-locked_council-20260101-001';").fetchone()
+            self.assertEqual(db_lm[0], "https://example.com/manual-meeting", "DB 内の locked meeting URL が保護されていること")
+            self.assertEqual(db_lm[1], 1)
+            conn.close()
+
         finally:
-            if os.path.exists(data_path): os.remove(data_path)
-            if os.path.exists(report_path): os.remove(report_path)
+            import shutil
+            shutil.rmtree(temp_dir, ignore_errors=True)
 
     def test_production_data_json_invariance_under_deduplication(self):
         """本番 docs/data.json の手動ロックデータに対し deduplicate_data_materials を適用しても一切変化しないこと"""
