@@ -9137,7 +9137,7 @@
       "category": "STUDY",
       "name": "マガキ大量死に関する連絡協議会",
       "manualLock": true,
-      "officialUrl": "https://www.jfa.maff.go.jp/j/press/kenkyu/260403.html",
+      "officialUrl": "https://www.jfa.maff.go.jp/j/kenkyu/magaki_kyogikai.html",
       "description": "マガキのへい死被害に関する情報共有及び今後の対応策等の検討を行うための連絡協議会。",
       "pastYearCount": 0,
       "discoveredAt": "2026/10/24 17:12",
@@ -17036,7 +17036,7 @@
       "category": "STUDY",
       "name": "太陽電池廃棄物の再資源化等の推進に関する法律」の下位法令の策定等に係る検討会",
       "manualLock": true,
-      "officialUrl": "https://www.env.go.jp/press/press_05740.html",
+      "officialUrl": "https://www.env.go.jp/council/03recycle/yoshi03-16_00001.html",
       "description": "太陽電池廃棄物の再資源化等の推進に関する法律の下位法令の策定等に向けた有識者検討会。",
       "pastYearCount": 0,
       "discoveredAt": "2026/10/24 17:12",
@@ -18912,7 +18912,7 @@
       "date": "2026/10/30",
       "manualLock": true,
       "round": 1,
-      "officialUrl": "https://www.env.go.jp/press/press_05740.html",
+      "officialUrl": "https://www.env.go.jp/council/03recycle/yoshi03-16_00001.html",
       "materials": [
         {
           "name": "「太陽電池廃棄物の再資源化等の推進に関する法律」の下位法令の策定等に係る検討会（第１回）の開催について",
@@ -30403,6 +30403,22 @@
         {
           "name": "食品安全委員会の公開について",
           "url": "https://www.fsc.go.jp/iinkai/iinkai_koukai.pdf"
+        }
+      ]
+    },
+    {
+      "id": "jfa-3004-20260831-004",
+      "councilId": "jfa-3004",
+      "name": "第4回 マガキ大量死に関する連絡協議会",
+      "date": "2026/08/31",
+      "manualLock": true,
+      "round": 4,
+      "officialUrl": "https://www.jfa.maff.go.jp/j/kenkyu/magaki_kyogikai.html",
+      "materials": [
+        {
+          "name": "養殖マガキの大量へい死の発生状況等の調査、原因究明と対策にかかる緊急研究 中間報告",
+          "url": "https://www.jfa.maff.go.jp/j/kenkyu/attach/pdf/magaki_kyogikai-1.pdf",
+          "manualLock": true
         }
       ]
     },
@@ -79197,22 +79213,6 @@
       ]
     },
     {
-      "id": "jfa-3004-20260403-003",
-      "councilId": "jfa-3004",
-      "name": "第3回 マガキ大量死に関する連絡協議会",
-      "date": "2026/04/03",
-      "manualLock": true,
-      "round": 3,
-      "officialUrl": "https://www.jfa.maff.go.jp/j/press/kenkyu/260403.html",
-      "materials": [
-        {
-          "name": "https://www.jfa.maff.go.jp/j/saibai/attach/pdf/kaki_youshoku-24.pdf",
-          "url": "https://www.jfa.maff.go.jp/j/saibai/attach/pdf/kaki_youshoku-24.pdf",
-          "manualLock": true
-        }
-      ]
-    },
-    {
       "id": "meti-sankoshin_sangyo_gijutsu_resource_circulation-20260403-013",
       "councilId": "meti-sankoshin_sangyo_gijutsu_resource_circulation",
       "name": "第13回 産業構造審議会 イノベーション・環境分科会 資源循環経済小委員会",
@@ -85534,6 +85534,22 @@
         {
           "name": "議事概要",
           "url": "https://www.fsc.go.jp/fsciis/attachedFile/download?retrievalId=kai20260319so1&fileId=510"
+        }
+      ]
+    },
+    {
+      "id": "jfa-3004-20260319-003",
+      "councilId": "jfa-3004",
+      "name": "第3回 マガキ大量死に関する連絡協議会",
+      "date": "2026/03/19",
+      "manualLock": true,
+      "round": 3,
+      "officialUrl": "https://www.jfa.maff.go.jp/j/kenkyu/magaki_kyogikai.html",
+      "materials": [
+        {
+          "name": "各府県の令和8年度のへい死軽減等に向けた取り組み計画の概要について",
+          "url": "https://www.jfa.maff.go.jp/j/saibai/attach/pdf/kaki_youshoku-24.pdf",
+          "manualLock": true
         }
       ]
     },
@@ -103416,32 +103432,6 @@
       ]
     },
     {
-      "id": "jfa-3004-20260202-002",
-      "councilId": "jfa-3004",
-      "name": "第2回 マガキ大量死に関する連絡協議会",
-      "date": "2026/02/02",
-      "manualLock": true,
-      "round": 2,
-      "officialUrl": "https://www.jfa.maff.go.jp/j/press/kenkyu/260202.html",
-      "materials": [
-        {
-          "name": "https://www.jfa.maff.go.jp/j/saibai/attach/pdf/kaki_youshoku-15.pdf",
-          "url": "https://www.jfa.maff.go.jp/j/saibai/attach/pdf/kaki_youshoku-15.pdf",
-          "manualLock": true
-        },
-        {
-          "name": "https://www.jfa.maff.go.jp/j/saibai/attach/pdf/kaki_youshoku-10.pdf",
-          "url": "https://www.jfa.maff.go.jp/j/saibai/attach/pdf/kaki_youshoku-10.pdf",
-          "manualLock": true
-        },
-        {
-          "name": "https://www.jfa.maff.go.jp/j/saibai/attach/pdf/kaki_youshoku-12.pdf",
-          "url": "https://www.jfa.maff.go.jp/j/saibai/attach/pdf/kaki_youshoku-12.pdf",
-          "manualLock": true
-        }
-      ]
-    },
-    {
       "id": "maff-669-20260202-037",
       "councilId": "maff-669",
       "name": "第37回 農業部会",
@@ -106185,6 +106175,32 @@
         {
           "name": "都道府県別メディカルコントロール協議会概要",
           "url": "https://www.fdma.go.jp/singi_kento/kento/items/r7-2/01/260119_kyuuki_26.pdf"
+        }
+      ]
+    },
+    {
+      "id": "jfa-3004-20260123-002",
+      "councilId": "jfa-3004",
+      "name": "第2回 マガキ大量死に関する連絡協議会",
+      "date": "2026/01/23",
+      "manualLock": true,
+      "round": 2,
+      "officialUrl": "https://www.jfa.maff.go.jp/j/kenkyu/magaki_kyogikai.html",
+      "materials": [
+        {
+          "name": "現時点で推定される瀬戸内海各地のへい死要因",
+          "url": "https://www.jfa.maff.go.jp/j/saibai/attach/pdf/kaki_youshoku-15.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "令和7年カキへい死の推定要因と対処方法",
+          "url": "https://www.jfa.maff.go.jp/j/saibai/attach/pdf/kaki_youshoku-10.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "マガキ適正養殖管理のためのチェックシート",
+          "url": "https://www.jfa.maff.go.jp/j/saibai/attach/pdf/kaki_youshoku-20.pdf",
+          "manualLock": true
         }
       ]
     },
@@ -117489,23 +117505,6 @@
       ]
     },
     {
-      "id": "jfa-3004-20251211-001",
-      "councilId": "jfa-3004",
-      "name": "第1回 マガキ大量死に関する連絡協議会",
-      "date": "2025/12/11",
-      "manualLock": true,
-      "round": 1,
-      "officialUrl": "https://www.jfa.maff.go.jp/j/press/kenkyu/251211.html",
-      "materials": [
-        {
-          "name": "第1回 マガキ大量死に関する連絡協議会の概要について",
-          "url": "https://www.jfa.maff.go.jp/j/press/kenkyu/251211.html",
-          "type": "HTML",
-          "manualLock": true
-        }
-      ]
-    },
-    {
       "id": "mhlw-2883-20251211-026",
       "councilId": "mhlw-2883",
       "name": "第26回 所属集団判定会議",
@@ -120293,6 +120292,23 @@
         {
           "name": "参考資料8 大規模地震時の電気火災の発生抑制に関する検討会(第1回)資料抜粋 (PDF)",
           "url": "https://www.fdma.go.jp/singi_kento/kento/items/post-166/03/sankou8.pdf"
+        }
+      ]
+    },
+    {
+      "id": "jfa-3004-20251203-001",
+      "councilId": "jfa-3004",
+      "name": "第1回 マガキ大量死に関する連絡協議会",
+      "date": "2025/12/03",
+      "manualLock": true,
+      "round": 1,
+      "officialUrl": "https://www.jfa.maff.go.jp/j/kenkyu/magaki_kyogikai.html",
+      "materials": [
+        {
+          "name": "第1回 マガキ大量死に関する連絡協議会の概要について",
+          "url": "https://www.jfa.maff.go.jp/j/press/kenkyu/251211.html",
+          "type": "HTML",
+          "manualLock": true
         }
       ]
     },

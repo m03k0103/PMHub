@@ -6270,7 +6270,7 @@
       "date_regex": "(?:令和|平成)\\d+年\\d+月\\d+日",
       "manualLock": true,
       "template": "tpl-general-round-subpage",
-      "officialUrl": "https://www.jfa.maff.go.jp/j/press/kenkyu/260403.html",
+      "officialUrl": "https://www.jfa.maff.go.jp/j/kenkyu/magaki_kyogikai.html",
       "pdf_selector": "a[href*='.pdf'], a[href*='/pdf/']"
     },
     "jfa-3005": {
@@ -13296,7 +13296,7 @@
       "date_regex": "(?:令和|平成)\\d+年\\d+月\\d+日",
       "manualLock": true,
       "template": "tpl-general-round-subpage",
-      "officialUrl": "https://www.env.go.jp/press/press_05740.html",
+      "officialUrl": "https://www.env.go.jp/council/03recycle/yoshi03-16_00001.html",
       "pdf_selector": "a[href*='.pdf']"
     },
     "moe-2962": {
@@ -22318,12 +22318,12 @@
       "manualLockActive": true
     },
     "jfa-3004": {
-      "lastAttempt": "2026-10-25 23:39:53",
+      "lastAttempt": "2026-10-27 20:30:00",
       "result": "success",
-      "resultReason": "配付資料 5 件・開催日 3 件を正常取得",
+      "resultReason": "配付資料 6 件・開催日 4 件を正常取得",
       "extractionMethod": "rule",
-      "materialsCount": 5,
-      "datesCount": 3,
+      "materialsCount": 6,
+      "datesCount": 4,
       "failureReason": "",
       "consecutiveFailures": 0,
       "manualLockActive": true
@@ -30865,7 +30865,7 @@
       "manualLockActive": true
     },
     "moe-2961": {
-      "lastAttempt": "2026-10-25 23:39:53",
+      "lastAttempt": "2026-10-27 20:30:00",
       "result": "success",
       "resultReason": "個別開催回 1 件・配付資料を正常取得",
       "extractionMethod": "rule",
@@ -43752,9 +43752,10 @@
       "jcrc-587-20260828-161",
       "jcrc-587-20260904-162",
       "jcrc-587-20260918-163",
-      "jfa-3004-20251211-001",
-      "jfa-3004-20260202-002",
-      "jfa-3004-20260403-003",
+      "jfa-3004-20251203-001",
+      "jfa-3004-20260123-002",
+      "jfa-3004-20260319-003",
+      "jfa-3004-20260831-004",
       "jfa-592-20260722-001",
       "jfa-594-20200811-001",
       "jfa-595-20181023-001",
@@ -62245,11 +62246,12 @@
       "jcrc-587-20260904-162:https://www.jcrc.go.jp/content/000002962.pdf",
       "jcrc-587-20260918-163:https://www.jcrc.go.jp/content/000002971.pdf",
       "jcrc-587-20260918-163:https://www.jcrc.go.jp/content/000002972.pdf",
-      "jfa-3004-20251211-001:https://www.jfa.maff.go.jp/j/press/kenkyu/251211.html",
-      "jfa-3004-20260202-002:https://www.jfa.maff.go.jp/j/saibai/attach/pdf/kaki_youshoku-10.pdf",
-      "jfa-3004-20260202-002:https://www.jfa.maff.go.jp/j/saibai/attach/pdf/kaki_youshoku-12.pdf",
-      "jfa-3004-20260202-002:https://www.jfa.maff.go.jp/j/saibai/attach/pdf/kaki_youshoku-15.pdf",
-      "jfa-3004-20260403-003:https://www.jfa.maff.go.jp/j/saibai/attach/pdf/kaki_youshoku-24.pdf",
+      "jfa-3004-20251203-001:https://www.jfa.maff.go.jp/j/press/kenkyu/251211.html",
+      "jfa-3004-20260123-002:https://www.jfa.maff.go.jp/j/saibai/attach/pdf/kaki_youshoku-10.pdf",
+      "jfa-3004-20260123-002:https://www.jfa.maff.go.jp/j/saibai/attach/pdf/kaki_youshoku-15.pdf",
+      "jfa-3004-20260123-002:https://www.jfa.maff.go.jp/j/saibai/attach/pdf/kaki_youshoku-20.pdf",
+      "jfa-3004-20260319-003:https://www.jfa.maff.go.jp/j/saibai/attach/pdf/kaki_youshoku-24.pdf",
+      "jfa-3004-20260831-004:https://www.jfa.maff.go.jp/j/kenkyu/attach/pdf/magaki_kyogikai-1.pdf",
       "jfa-598-20260616-001:https://www.jfa.maff.go.jp/j/study/enoki/attach/pdf/kuromaguro-3.pdf",
       "jfa-600-20260310-001:https://www.jfa.maff.go.jp/j/saibai/yousyoku/attach/pdf/140116-73.pdf",
       "jfa-600-20260310-001:https://www.jfa.maff.go.jp/j/saibai/yousyoku/attach/pdf/140116-79.pdf",
