@@ -2178,12 +2178,15 @@
         "/renketsu/",
         "/rougo/",
         "/koku-han/",
-        "/discussion"
+        "/discussion",
+        "gijiroku/zeicho/"
       ],
       "exclude_subpage_title_keywords": [
         "tax commission",
         "専門家会合",
-        "ディスカッショングループ"
+        "ディスカッショングループ",
+        "The Tax Commission",
+        "Tax Commission"
       ]
     },
     "cao-zeicho_digital_noukan_senmonka": {
@@ -3056,7 +3059,10 @@
       "template": "tpl-general-round-subpage",
       "manualLock": true,
       "officialUrl": "https://www.cyber.go.jp/council/cs/index.html",
-      "pdf_selector": "a[href*='.pdf'], a[href*='.PDF']"
+      "pdf_selector": "a[href*='.pdf'], a[href*='.PDF']",
+      "exclude_subpage_url_patterns": [
+        "cyber/what-we-do/csmeeting.html"
+      ]
     },
     "cas-dai1": {
       "created_at": "2026-08-07 08:56:36",
@@ -13325,10 +13331,12 @@
     },
     "mod-shisetsu": {
       "template": "tpl-general-multiministry-session",
+      "officialUrl": "https://www.mod.go.jp/j/policy/agenda/meeting/shi-chu/index.html",
+      "official_url": "https://www.mod.go.jp/j/policy/agenda/meeting/shi-chu/index.html",
       "manualLock": true,
       "extract_from_parent_table": true,
-      "officialUrl": "https://www.mod.go.jp/j/approach/agenda/meeting/shisetsu/index.html",
-      "pdf_selector": "a[href*='.pdf'], a[href*='.PDF']"
+      "pdf_selector": "a[href*='.pdf'], a[href*='.PDF'], a[href*='giji_']",
+      "rule_id": "rule-mod-shisetsu"
     },
     "mod-space_domain": {
       "date_regex": "(?:令和|平成)\\d+年\\d+月\\d+日|20\\d{2}年\\d+月\\d+日",
@@ -13916,7 +13924,10 @@
       "manualLock": true,
       "extract_from_parent_table": true,
       "officialUrl": "https://www.mof.go.jp/about_mof/councils/fiscal_system_council/sub-of_fiscal_system/proceedings/index.html",
-      "pdf_selector": "a[href*='.pdf'], a[href*='.PDF']"
+      "pdf_selector": "a[href*='.pdf'], a[href*='.PDF']",
+      "exclude_subpage_url_patterns": [
+        "fiscal_system_council/"
+      ]
     },
     "mofa-gaimu_jinji": {
       "date_regex": "(?:令和|平成)\\d+年\\d+月\\d+日|20\\d{2}年\\d+月\\d+日",
@@ -37042,6 +37053,7 @@
       "mod-defense_industry_wg",
       "mod-drastic_reinforcement",
       "mod-rinri_shinsa",
+      "mod-shisetsu",
       "mod-space_domain",
       "moe-2961",
       "moe-chuo_kankyo_chikyu",
@@ -51038,7 +51050,16 @@
       "mod-seisaku_hyouka-20050727-010",
       "mod-seisaku_hyouka-20060309-011",
       "mod-seisaku_hyouka-20070313-012",
-      "mod-shisetsu-20260410-s01",
+      "mod-shisetsu-20000412-001",
+      "mod-shisetsu-20010417-002",
+      "mod-shisetsu-20030410-003",
+      "mod-shisetsu-20060419-004",
+      "mod-shisetsu-20090428-005",
+      "mod-shisetsu-20120516-006",
+      "mod-shisetsu-20150529-007",
+      "mod-shisetsu-20180528-008",
+      "mod-shisetsu-20210415-009",
+      "mod-shisetsu-20240423-010",
       "mod-space_domain-20250728-001",
       "mod-space_domain-20260409-002",
       "mod-space_domain-20260728-003",
@@ -79318,16 +79339,48 @@
       "mod-rinri_shinsa-20240729-103:https://www.mod.go.jp/j/policy/agenda/meeting/rinri/pdf/giji_103.pdf",
       "mod-rinri_shinsa-20241021-104:https://www.mod.go.jp/j/policy/agenda/meeting/rinri/pdf/giji_104.pdf",
       "mod-rinri_shinsa-20241211-105:https://www.mod.go.jp/j/policy/agenda/meeting/rinri/pdf/giji_105.pdf",
-      "mod-shisetsu-20260410-s01:https://warp.da.ndl.go.jp/info:ndljp/pid/14054743/www.mod.go.jp/j/policy/agenda/meeting/bouei_shisetsu/pdf/01_gijigaiyo.pdf",
-      "mod-shisetsu-20260410-s01:https://warp.da.ndl.go.jp/info:ndljp/pid/14054743/www.mod.go.jp/j/policy/agenda/meeting/bouei_shisetsu/pdf/02_gijiyoshi.pdf",
-      "mod-shisetsu-20260410-s01:https://warp.da.ndl.go.jp/info:ndljp/pid/14054743/www.mod.go.jp/j/policy/agenda/meeting/bouei_shisetsu/pdf/03_gijiyoshi.pdf",
-      "mod-shisetsu-20260410-s01:https://warp.da.ndl.go.jp/info:ndljp/pid/14054743/www.mod.go.jp/j/policy/agenda/meeting/bouei_shisetsu/pdf/04_gijiyoshi.pdf",
-      "mod-shisetsu-20260410-s01:https://warp.da.ndl.go.jp/info:ndljp/pid/14054743/www.mod.go.jp/j/policy/agenda/meeting/bouei_shisetsu/pdf/05_gijiyoshi.pdf",
-      "mod-shisetsu-20260410-s01:https://warp.da.ndl.go.jp/info:ndljp/pid/14054743/www.mod.go.jp/j/policy/agenda/meeting/bouei_shisetsu/pdf/06_gijiyoshi.pdf",
-      "mod-shisetsu-20260410-s01:https://warp.da.ndl.go.jp/info:ndljp/pid/14054743/www.mod.go.jp/j/policy/agenda/meeting/bouei_shisetsu/pdf/07_gijiyoshi.pdf",
-      "mod-shisetsu-20260410-s01:https://www.mod.go.jp/j/policy/agenda/meeting/bouei_shisetsu/pdf/08_gijiyoshi.pdf",
-      "mod-shisetsu-20260410-s01:https://www.mod.go.jp/j/policy/agenda/meeting/bouei_shisetsu/pdf/09_gijiyoshi.pdf",
-      "mod-shisetsu-20260410-s01:https://www.mod.go.jp/j/policy/agenda/meeting/bouei_shisetsu/pdf/10_gijiyoshi.pdf",
+      "mod-shisetsu-20000412-001:https://warp.da.ndl.go.jp/info:ndljp/pid/11723019/www.mod.go.jp/j/approach/agenda/meeting/shi-chu/giji/giji_01.html",
+      "mod-shisetsu-20010417-002:https://warp.da.ndl.go.jp/info:ndljp/pid/11623291/www.mod.go.jp/j/approach/agenda/meeting/materials/shi-chu/sonota/pdf/sonota_01.pdf",
+      "mod-shisetsu-20010417-002:https://warp.da.ndl.go.jp/info:ndljp/pid/11623291/www.mod.go.jp/j/approach/agenda/meeting/materials/shi-chu/sonota/pdf/sonota_02.pdf",
+      "mod-shisetsu-20010417-002:https://warp.da.ndl.go.jp/info:ndljp/pid/11723019/www.mod.go.jp/j/approach/agenda/meeting/shi-chu/giji/giji_02.html",
+      "mod-shisetsu-20030410-003:https://warp.da.ndl.go.jp/info:ndljp/pid/11723019/www.mod.go.jp/j/approach/agenda/meeting/shi-chu/giji/giji_03.html",
+      "mod-shisetsu-20060419-004:https://warp.da.ndl.go.jp/info:ndljp/pid/11623291/www.mod.go.jp/j/approach/agenda/meeting/materials/shi-chu/giji/giji_04.pdf",
+      "mod-shisetsu-20060419-004:https://warp.da.ndl.go.jp/info:ndljp/pid/11623291/www.mod.go.jp/j/approach/agenda/meeting/materials/shi-chu/sonota/pdf/4-1.pdf",
+      "mod-shisetsu-20060419-004:https://warp.da.ndl.go.jp/info:ndljp/pid/11623291/www.mod.go.jp/j/approach/agenda/meeting/materials/shi-chu/sonota/pdf/4-2-1.pdf",
+      "mod-shisetsu-20060419-004:https://warp.da.ndl.go.jp/info:ndljp/pid/11623291/www.mod.go.jp/j/approach/agenda/meeting/materials/shi-chu/sonota/pdf/4-2-2.pdf",
+      "mod-shisetsu-20060419-004:https://warp.da.ndl.go.jp/info:ndljp/pid/11623291/www.mod.go.jp/j/approach/agenda/meeting/materials/shi-chu/sonota/pdf/4-2-3.pdf",
+      "mod-shisetsu-20060419-004:https://warp.da.ndl.go.jp/info:ndljp/pid/11623291/www.mod.go.jp/j/approach/agenda/meeting/materials/shi-chu/sonota/pdf/4-2-4.pdf",
+      "mod-shisetsu-20060419-004:https://warp.da.ndl.go.jp/info:ndljp/pid/11623291/www.mod.go.jp/j/approach/agenda/meeting/materials/shi-chu/sonota/pdf/4-2-5.pdf",
+      "mod-shisetsu-20060419-004:https://warp.da.ndl.go.jp/info:ndljp/pid/11623291/www.mod.go.jp/j/approach/agenda/meeting/materials/shi-chu/sonota/pdf/4-3.pdf",
+      "mod-shisetsu-20060419-004:https://warp.da.ndl.go.jp/info:ndljp/pid/11623291/www.mod.go.jp/j/approach/agenda/meeting/materials/shi-chu/sonota/pdf/4-4.pdf",
+      "mod-shisetsu-20060419-004:https://warp.da.ndl.go.jp/info:ndljp/pid/11623291/www.mod.go.jp/j/approach/agenda/meeting/materials/shi-chu/sonota/pdf/4-5.pdf",
+      "mod-shisetsu-20060419-004:https://warp.da.ndl.go.jp/info:ndljp/pid/11623291/www.mod.go.jp/j/approach/agenda/meeting/materials/shi-chu/sonota/pdf/4-6-1.pdf",
+      "mod-shisetsu-20060419-004:https://warp.da.ndl.go.jp/info:ndljp/pid/11623291/www.mod.go.jp/j/approach/agenda/meeting/materials/shi-chu/sonota/pdf/4-6-2.pdf",
+      "mod-shisetsu-20090428-005:https://warp.da.ndl.go.jp/info:ndljp/pid/11623291/www.mod.go.jp/j/approach/agenda/meeting/materials/shi-chu/giji/giji_05.pdf",
+      "mod-shisetsu-20090428-005:https://warp.da.ndl.go.jp/info:ndljp/pid/11623291/www.mod.go.jp/j/approach/agenda/meeting/materials/shi-chu/sonota/pdf/5-2-1.pdf",
+      "mod-shisetsu-20090428-005:https://warp.da.ndl.go.jp/info:ndljp/pid/11623291/www.mod.go.jp/j/approach/agenda/meeting/materials/shi-chu/sonota/pdf/5-2-2.pdf",
+      "mod-shisetsu-20090428-005:https://warp.da.ndl.go.jp/info:ndljp/pid/11623291/www.mod.go.jp/j/approach/agenda/meeting/materials/shi-chu/sonota/pdf/5-3.pdf",
+      "mod-shisetsu-20090428-005:https://warp.da.ndl.go.jp/info:ndljp/pid/11623291/www.mod.go.jp/j/approach/agenda/meeting/materials/shi-chu/sonota/pdf/6-3.pdf",
+      "mod-shisetsu-20120516-006:https://warp.da.ndl.go.jp/info:ndljp/pid/11623291/www.mod.go.jp/j/approach/agenda/meeting/materials/shi-chu/giji/giji_06.pdf",
+      "mod-shisetsu-20120516-006:https://warp.da.ndl.go.jp/info:ndljp/pid/11623291/www.mod.go.jp/j/approach/agenda/meeting/materials/shi-chu/sonota/pdf/6-1.pdf",
+      "mod-shisetsu-20120516-006:https://warp.da.ndl.go.jp/info:ndljp/pid/11623291/www.mod.go.jp/j/approach/agenda/meeting/materials/shi-chu/sonota/pdf/6-2.pdf",
+      "mod-shisetsu-20120516-006:https://warp.da.ndl.go.jp/info:ndljp/pid/11623291/www.mod.go.jp/j/approach/agenda/meeting/materials/shi-chu/sonota/pdf/6-3.pdf",
+      "mod-shisetsu-20150529-007:https://warp.da.ndl.go.jp/info:ndljp/pid/11623291/www.mod.go.jp/j/approach/agenda/meeting/materials/shi-chu/giji/giji_07.pdf",
+      "mod-shisetsu-20150529-007:https://warp.da.ndl.go.jp/info:ndljp/pid/11623291/www.mod.go.jp/j/approach/agenda/meeting/materials/shi-chu/sonota/pdf/7-1.pdf",
+      "mod-shisetsu-20150529-007:https://warp.da.ndl.go.jp/info:ndljp/pid/11623291/www.mod.go.jp/j/approach/agenda/meeting/materials/shi-chu/sonota/pdf/7-2.pdf",
+      "mod-shisetsu-20150529-007:https://warp.da.ndl.go.jp/info:ndljp/pid/11623291/www.mod.go.jp/j/approach/agenda/meeting/materials/shi-chu/sonota/pdf/7-3.pdf",
+      "mod-shisetsu-20180528-008:https://warp.da.ndl.go.jp/info:ndljp/pid/11623291/www.mod.go.jp/j/approach/agenda/meeting/materials/shi-chu/giji/giji_08.pdf",
+      "mod-shisetsu-20180528-008:https://warp.da.ndl.go.jp/info:ndljp/pid/11623291/www.mod.go.jp/j/approach/agenda/meeting/materials/shi-chu/sonota/pdf/8-1.pdf",
+      "mod-shisetsu-20180528-008:https://warp.da.ndl.go.jp/info:ndljp/pid/11623291/www.mod.go.jp/j/approach/agenda/meeting/materials/shi-chu/sonota/pdf/8-2.pdf",
+      "mod-shisetsu-20180528-008:https://warp.da.ndl.go.jp/info:ndljp/pid/11623291/www.mod.go.jp/j/approach/agenda/meeting/materials/shi-chu/sonota/pdf/8-3.pdf",
+      "mod-shisetsu-20210415-009:https://warp.da.ndl.go.jp/info:ndljp/pid/14054743/www.mod.go.jp/j/policy/agenda/meeting/shi-chu/pdf/9-1.pdf",
+      "mod-shisetsu-20210415-009:https://warp.da.ndl.go.jp/info:ndljp/pid/14054743/www.mod.go.jp/j/policy/agenda/meeting/shi-chu/pdf/9-2.pdf",
+      "mod-shisetsu-20210415-009:https://warp.da.ndl.go.jp/info:ndljp/pid/14054743/www.mod.go.jp/j/policy/agenda/meeting/shi-chu/pdf/9-3.pdf",
+      "mod-shisetsu-20210415-009:https://warp.da.ndl.go.jp/info:ndljp/pid/14054743/www.mod.go.jp/j/policy/agenda/meeting/shi-chu/pdf/giji_09.pdf",
+      "mod-shisetsu-20240423-010:https://www.mod.go.jp/j/policy/agenda/meeting/shi-chu/pdf/10-1.pdf",
+      "mod-shisetsu-20240423-010:https://www.mod.go.jp/j/policy/agenda/meeting/shi-chu/pdf/10-2.pdf",
+      "mod-shisetsu-20240423-010:https://www.mod.go.jp/j/policy/agenda/meeting/shi-chu/pdf/10-3.pdf",
+      "mod-shisetsu-20240423-010:https://www.mod.go.jp/j/policy/agenda/meeting/shi-chu/pdf/giji_10.pdf",
       "moe-2961-20261030-001:https://www.env.go.jp/press/press_05740.html",
       "moe-2970-20230228-001:https://policies.env.go.jp/nature/biodiversity/j-gbf/committee/generalmeeting_001/pdf/j-gbf_sokai1_1-1.pdf",
       "moe-2970-20230228-001:https://policies.env.go.jp/nature/biodiversity/j-gbf/committee/generalmeeting_001/pdf/j-gbf_sokai1_1-2.pdf",
