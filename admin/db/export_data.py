@@ -65,6 +65,7 @@ def export_data(
         discovery_keywords = configs.get("discoveryKeywords", [])
         crawler_config = configs.get("crawlerConfig", {})
         initial_alert_keywords = configs.get("initialAlertKeywords", [])
+        initial_watched_council_ids = configs.get("initialWatchedCouncilIds", [])
 
         # Fetch rejected councils from dedicated table (Drop 80 SSOT)
         rejected_councils = []
@@ -276,6 +277,7 @@ def export_data(
             "meetings": meetings_public,
             "categories": categories,
             "docTypes": doc_types,
+            "initialWatchedCouncilIds": initial_watched_council_ids,
             "lastCrawlTime": last_crawl_time
         }
 

@@ -74,8 +74,16 @@ NOISE_PORTAL_EXACT = {
 
 
 def load_keywords():
+    if os.path.exists(ADMIN_DATA_PATH):
+        try:
+            with open(ADMIN_DATA_PATH, "r", encoding="utf-8") as f:
+                adm_data = json.load(f)
+            if isinstance(adm_data.get("discoveryKeywords"), dict) and adm_data["discoveryKeywords"]:
+                return adm_data["discoveryKeywords"]
+        except Exception:
+            pass
     data = load_data_json(DATA_JSON_PATH)
-    if data and "discoveryKeywords" in data:
+    if data and isinstance(data.get("discoveryKeywords"), dict) and data["discoveryKeywords"]:
         return data["discoveryKeywords"]
     return {
         "commonKeywords": ["審議会", "検討会", "委員会", "部会", "分科会", "懇談会", "ワーキンググループ", "ワーキング・グループ", "スタディグループ", "スタディ・グループ", "WG", "SG", "審査会", "研究会", "プロジェクトチーム", "タスクフォース", "有識者会議", "本部", "推進会議", "円卓会議", "会議"],
@@ -85,7 +93,7 @@ def load_keywords():
     }
 
 def parse_data_json():
-    """docs/data.json から MINISTRIES, COUNCILS, CATEGORIES, SCRAPING_RULES のデータを抽出する"""
+    """docs/data.json および admin/admin_data.json から MINISTRIES, COUNCILS, CATEGORIES, SCRAPING_RULES のデータを抽出する"""
     data = load_data_json(DATA_JSON_PATH)
     if not data:
         print(f"[ERROR] {DATA_JSON_PATH} の読み込みに失敗しました。", file=sys.stderr)
@@ -95,6 +103,12 @@ def parse_data_json():
     councils = data.get("councils", [])
     categories = data.get("categories", {})
     scraping_rules = data.get("scrapingRules", {})
+    if not scraping_rules and os.path.exists(ADMIN_DATA_PATH):
+        try:
+            with open(ADMIN_DATA_PATH, "r", encoding="utf-8") as f:
+                scraping_rules = json.load(f).get("scrapingRules", {})
+        except Exception:
+            pass
     return ministries, councils, categories, scraping_rules
 
 def infer_council_category(name_or_text, defined_categories=None):

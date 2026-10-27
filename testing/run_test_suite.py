@@ -651,6 +651,16 @@ def check_council_timeline_sync(data=None):
             print(f"  [FAIL] ministries に未定義の不正な省庁コードを持つ会議体が存在します: {invalid_min_councils[:5]}")
             return False
 
+    # Drop 99: 初期ウォッチ会議体ID (initialWatchedCouncilIds) の実在性検証
+    initial_watched = data.get("initialWatchedCouncilIds", [])
+    if not initial_watched:
+        print("  [FAIL] docs/data.json に initialWatchedCouncilIds が設定されていません")
+        return False
+    missing_watched = [wid for wid in initial_watched if wid not in councils_set]
+    if missing_watched:
+        print(f"  [FAIL] initialWatchedCouncilIds に実在しない会議体IDが含まれています: {missing_watched}")
+        return False
+
     if os.path.exists(rejected_json_path):
         with open(rejected_json_path, "r", encoding="utf-8") as rf:
             rejected = json.load(rf)
@@ -869,11 +879,13 @@ def check_sqlite_and_split_export_sync(data=None):
     cur = conn.cursor()
     try:
         cfg_rows = dict(cur.execute("SELECT key, value_json FROM admin_configs;").fetchall())
-        for cfg_k in ["ministries", "categories"]:
+        for cfg_k in ["ministries", "categories", "initialWatchedCouncilIds"]:
             if cfg_k in cfg_rows and cfg_k in pub_data:
                 db_val = json.loads(cfg_rows[cfg_k])
                 if len(db_val) != len(pub_data[cfg_k]):
                     errors.append(f"admin_configs.{cfg_k} 件数不一致: DB={len(db_val)} vs 公開JSON={len(pub_data[cfg_k])}")
+        if "initialWatchedCouncilIds" not in cfg_rows:
+            errors.append("admin_configs に initialWatchedCouncilIds が存在しません")
         for adm_k in ["crawlerConfig", "scrapingRuleTemplates", "discoveryKeywords"]:
             if adm_k in cfg_rows and adm_k in adm_data:
                 db_val = json.loads(cfg_rows[adm_k])

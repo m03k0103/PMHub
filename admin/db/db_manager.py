@@ -143,6 +143,7 @@ def _load_dataset_from_db(cur: sqlite3.Cursor, include_pmm_details: bool = False
     crawler_config = configs.get("crawlerConfig", {})
     rejected_councils = configs.get("rejectedCouncils", [])
     initial_alert_keywords = configs.get("initialAlertKeywords", [])
+    initial_watched_council_ids = configs.get("initialWatchedCouncilIds", [])
 
     # 3. Scraping Rules
     rule_rows = cur.execute("SELECT council_id, rule_json FROM scraping_rules;").fetchall()
@@ -339,7 +340,8 @@ def _load_dataset_from_db(cur: sqlite3.Cursor, include_pmm_details: bool = False
         "discoveryKeywords": discovery_keywords,
         "crawlerConfig": crawler_config,
         "rejectedCouncils": rejected_councils,
-        "initialAlertKeywords": initial_alert_keywords
+        "initialAlertKeywords": initial_alert_keywords,
+        "initialWatchedCouncilIds": initial_watched_council_ids
     }
     if include_pmm_details:
         dataset["crawlStatuses"] = crawl_statuses
@@ -398,7 +400,8 @@ def save_data_to_db(
             "discoveryKeywords": data.get("discoveryKeywords", []),
             "crawlerConfig": data.get("crawlerConfig", {}),
             "rejectedCouncils": data.get("rejectedCouncils", []),
-            "initialAlertKeywords": data.get("initialAlertKeywords", [])
+            "initialAlertKeywords": data.get("initialAlertKeywords", []),
+            "initialWatchedCouncilIds": data.get("initialWatchedCouncilIds", [])
         }
         for k, v in configs.items():
             if v is not None:

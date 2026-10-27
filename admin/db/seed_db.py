@@ -125,7 +125,8 @@ def seed_db(
             "discoveryKeywords": admin_data.get("discoveryKeywords") or public_data.get("discoveryKeywords", []),
             "crawlerConfig": admin_data.get("crawlerConfig") or public_data.get("crawlerConfig", {}),
             "rejectedCouncils": rejected_councils_list,
-            "initialAlertKeywords": admin_data.get("initialAlertKeywords") or public_data.get("initialAlertKeywords", [])
+            "initialAlertKeywords": admin_data.get("initialAlertKeywords") or public_data.get("initialAlertKeywords", []),
+            "initialWatchedCouncilIds": public_data.get("initialWatchedCouncilIds") or admin_data.get("initialWatchedCouncilIds", [])
         }
 
         for k, v in configs_to_store.items():
