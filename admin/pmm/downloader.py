@@ -212,12 +212,18 @@ def process_ministry_queue(
     delay_seconds: float,
     dry_run: bool,
     output_base: Path,
+    db_path: Path = DEFAULT_DB_PATH,
+    db_lock: Optional[threading.Lock] = None,
+    update_db: bool = True,
+    flush_interval: int = 25,
 ) -> Tuple[Dict[str, int], List[Dict[str, Any]], List[Dict[str, Any]]]:
-    """Process all tasks for a specific ministry sequentially with delay."""
+    """Process all tasks for a specific ministry sequentially with delay, flushing DB updates incrementally."""
     session = create_requests_session()
     stats = {"downloaded": 0, "skipped": 0, "failed": 0}
     meeting_db_updates = []
     council_db_updates = []
+    pending_m_updates = []
+    pending_c_updates = []
 
     logger.info(f"[{ministry_name}] Starting queue ({len(tasks)} items)")
 
@@ -242,9 +248,21 @@ def process_ministry_queue(
         if task.task_type == "meeting":
             record["meeting_id"] = task.parent_id
             meeting_db_updates.append(record)
+            pending_m_updates.append(record)
         else:
             record["council_id"] = task.parent_id
             council_db_updates.append(record)
+            pending_c_updates.append(record)
+
+        # AGENTS.md §4-5: Incremental DB commit every flush_interval items
+        if update_db and not dry_run and db_lock and (len(pending_m_updates) + len(pending_c_updates) >= flush_interval):
+            with db_lock:
+                if pending_m_updates:
+                    update_materials_download_batch(pending_m_updates, db_path=db_path)
+                    pending_m_updates = []
+                if pending_c_updates:
+                    update_council_materials_download_batch(pending_c_updates, db_path=db_path)
+                    pending_c_updates = []
 
         if status == "DOWNLOADED":
             stats["downloaded"] += 1
@@ -258,6 +276,16 @@ def process_ministry_queue(
 
         if status != "SKIPPED" and i < len(tasks) and not dry_run:
             time.sleep(delay_seconds)
+
+    # Flush any remaining updates for this ministry
+    if update_db and not dry_run and db_lock:
+        with db_lock:
+            if pending_m_updates:
+                update_materials_download_batch(pending_m_updates, db_path=db_path)
+                pending_m_updates = []
+            if pending_c_updates:
+                update_council_materials_download_batch(pending_c_updates, db_path=db_path)
+                pending_c_updates = []
 
     logger.info(
         f"[{ministry_name}] Finished: {stats['downloaded']} downloaded, "
@@ -455,7 +483,8 @@ def download_materials(
     all_meeting_updates = []
     all_council_updates = []
 
-    # Step 3: Run multi-ministry parallel workers
+    # Step 3: Run multi-ministry parallel workers with thread-safe incremental DB flush
+    db_lock = threading.Lock()
     with concurrent.futures.ThreadPoolExecutor(max_workers=workers) as executor:
         futures = {
             executor.submit(
@@ -466,6 +495,10 @@ def download_materials(
                 delay,
                 dry_run,
                 output_base,
+                db_path=db_path,
+                db_lock=db_lock,
+                update_db=update_db,
+                flush_interval=25,
             ): min_name
             for min_name, t_list in tasks_by_ministry.items()
         }
@@ -482,11 +515,8 @@ def download_materials(
             except Exception as e:
                 logger.error(f"Worker for ministry '{min_name}' raised unhandled exception: {e}")
 
-    # Step 4: Batch update SQLite database
-    if update_db and not dry_run:
-        logger.info(f"Syncing download status to database ({len(all_meeting_updates)} meeting materials, {len(all_council_updates)} council materials)...")
-        update_materials_download_batch(all_meeting_updates, db_path=db_path)
-        update_council_materials_download_batch(all_council_updates, db_path=db_path)
+    # Step 4: Final verification and summary (all batches flushed incrementally during execution)
+    logger.info(f"Completed download queues across {len(tasks_by_ministry)} ministries.")
 
     logger.info(
         f"All tasks completed: {overall_stats['downloaded']} downloaded, "
