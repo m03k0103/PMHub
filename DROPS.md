@@ -1,8 +1,8 @@
 # PMHub 改善・機能実装（Drop）マスタードキュメント (DROPS.md)
 
-> **最終更新**: 2026-10-27  
-> **実装済最新 Drop**: **Drop 97**（2026-10-27 完了）  
-> **次回着手予定 Drop**: **Drop 98**（Track [Config-DB] フェーズ 3 または Track [Portal-Norm] 推進）  
+> **最終更新**: 2026-10-28  
+> **実装済最新 Drop**: **Drop 98**（2026-10-28 完了）  
+> **次回着手予定 Drop**: **Drop 99**（Track [Config-DB] フェーズ 3 または Track [Portal-Norm] 推進）  
 > 
 > 本ドキュメントは、PMHub の継続的改善ロードマップおよび実装記録を一元管理するマスタードキュメントです。  
 > 今後の構想テーマは **「Track（トラック）」** として管理し、着手・個別実装単位は最新連番を付与した **「Drop（ドロップ）」** として連番アーカイブします。  
@@ -2400,3 +2400,51 @@ flowchart LR
     - ケース14: アクティブ会議体フィルタリング・廃止管理検証 (0.99s) : PASS
     - ケース15: SQLiteマスターDB整合性 & 2系統JSON完全同期検証 (0.77s) : PASS
     - 【単体関数検証 (Unit Tests)】: 全23種完全合格 (6.69s) : PASS
+
+
+### Drop 98: 防衛省 防衛施設整備に関する有識者会議の全10開催回・議事録等（議事概要）配付資料の適正化および完全手動保護（2026-10-28 完了）
+
+- **1. 目的と変更の背景 (Background & Objectives)**:
+  - 防衛省の会議体「防衛施設整備に関する有識者会議」（councilId: mod-1077）において、会議体マスターの manualLock が未設定（manual_lock = 0）であったため、自動クロールによる上書きリスクが存在していた。
+  - また、開催回データ（meetings）において第1回（2017/06/14）および第2回（2018/03/28）の officialUrl が個別資料ページではなくトップページ（index.html）のままであり、配付資料（materials）の全10開催回の議事録等（議事概要 PDF 10件）にも手動保護（manualLock: true）が未設定の状態であった。
+  - 公式ページ（https://www.mod.go.jp/j/policy/agenda/meeting/bouei_shisetsu/index.html）に基づき、全10開催回および配付資料（全10件）の公式URL、個別資料リンク、手動保護フラグを適正化し、データ品質の恒久保護を確立することを目的とする。
+
+- **2. 実施内容と実装詳細 (Implementation Details)**:
+  1. **会議体マスター（councils）の手動保護設定**:
+     - mod-1077（防衛施設整備に関する有識者会議）の manual_lock = 1（manualLock: true）を設定し、自動クロールによる上書きを恒久防止。
+  2. **開催回データ（meetings）の公式URL適正化 & manualLock 設定**:
+     - 第1回および第2回の official_url をトップページから各回の個別資料リンク（WARP 国立国会図書館アーカイブ URL: 01_gijigaiyo.pdf, 02_gijiyoshi.pdf）へ正常化。
+     - 第1回から第10回までの全10開催回に manual_lock = 1（manualLock: true）を設定。
+  3. **配付資料（materials）の全件保護 & 資料名正規化**:
+     - 全10開催回の配付資料（議事録等・議事概要 PDF 10件）の名称について、全角数字（例: 第１０回議事概要）を半角数字（第10回議事概要）へ正規化。
+     - 全10件に manual_lock = 1（manualLock: true）を設定。
+     - 全10件の URL 疎通確認（HTTP 200 OK・第1回〜第7回は公式掲載の WARP アーカイブ、第8回〜第10回は防衛省ライブURL）を確認済み。
+  4. **スクレイピングルール（scraping_rules）の最適化反映**:
+     - mod-1077 のルールに extract_from_parent_table: true, manualLock: true を設定し連動反映。
+  5. **SQLite マスターDB & 2系統エクスポート同期**:
+     - admin/pmhub.db を更新後、正規のエクスポートパイプライン（python -m admin.db.export_data）を実行し、docs/data.json および admin/admin_data.json を完全同期。
+
+- **3. 影響範囲と検証結果 (Impact & Verification)**:
+  - **対象会議体**: 防衛省 防衛施設整備に関する有識者会議 (mod-1077)
+  - **開催回数**: 10件（第1回〜第10回、全件 manualLock: true、公式URL適正化完了）
+  - **配付資料数**: 10件（全件 manualLock: true、名称正規化完了、HTTP 200 OK 疎通確認済）
+  - **データ整合性**: 会議重複0件（全21,418件中 重複0件）、2099プレースホルダー日付0件、手動ロック100%保護。
+
+- **4. 統合テスト結果 (Integration Test Results)**:
+  - python testing/run_test_suite.py --all-layers : **PASSED**（統合15ケース＋単体23種完全合格 / 所要時間 22.65秒）
+    - ケース1: コード文法チェック（SyntaxError / 括弧不整合 / DDL構文 0件） (0.73s) : PASS
+    - ケース2: リンク疎通確認 (0.92s) : PASS
+    - ケース3: UI表示機能検証（DOMコンテナ整合性・管理画面露出ゼロ） (0.00s) : PASS
+    - ケース4: JS実行時クラッシュ・TDZ・全画面描画検証 (0.70s) : PASS
+    - ケース5: 会議品質・回次整合性・重複排除検証（21,418件 重複0件） (0.96s) : PASS
+    - ケース6: 会議体・タイムライン ID完全排他性・整合性 (0.01s) : PASS
+    - ケース7: 康煕部首・特殊文字 NFKC 正規化検証 (0.32s) : PASS
+    - ケース8: プレースホルダー日付（2099/01/01）ゼロ遮断検証 (0.00s) : PASS
+    - ケース9: 管理サーバー API 単体・統合テスト (4.65s) : PASS
+    - ケース10: クローラー手動保護回帰テスト（manualLock 非破壊性合格） (4.24s) : PASS
+    - ケース11: スクレイピングルール整合性検証 (0.46s) : PASS
+    - ケース12: ホスト分散・ゴミデータ不変性検証 (0.36s) : PASS
+    - ケース13: 省庁親ポータルURL設定・探索網羅性検証 (0.43s) : PASS
+    - ケース14: アクティブ会議体フィルタリング・廃止管理検証 (0.90s) : PASS
+    - ケース15: SQLiteマスターDB整合性 & 2系統JSON完全同期検証 (0.81s) : PASS
+    - 【単体関数検証 (Unit Tests)】: 全23種完全合格 (6.72s) : PASS
