@@ -4508,7 +4508,11 @@
       "subpage_discovery_pattern": "https://www\\.digital\\.go\\.jp/councils/social-promotion-executive/[^\"'#]+",
       "manualLock": true,
       "officialUrl": "https://www.digital.go.jp/councils/social-promotion-executive",
-      "pdf_selector": "a[href*='.pdf'], a[href*='.PDF']"
+      "pdf_selector": "a[href*='.pdf'], a[href*='.PDF']",
+      "material_dir_prefix_map": {
+        "kanjikai": "幹事会",
+        "startup": "スタートアップ育成WG"
+      }
     },
     "fdma-anzenben_gas_kakusan": {
       "template": "tpl-general-round-subpage",
@@ -6505,7 +6509,10 @@
       "template": "tpl-general-round-subpage",
       "extract_from_parent_table": true,
       "officialUrl": "https://www.mext.go.jp/sports/b_menu/shingi/010_index/index.htm",
-      "pdf_selector": "a[href*='.pdf'], a[href*='.PDF']"
+      "pdf_selector": "a[href*='.pdf'], a[href*='.PDF']",
+      "material_exclude_url_patterns": [
+        "1380735_"
+      ]
     },
     "jsa-611": {
       "date_regex": "(?:令和|平成)\\d+年\\d+月\\d+日|20\\d{2}年\\d+月\\d+日",

@@ -16,6 +16,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     window.MINISTRIES = data.ministries || {};
     window.CATEGORIES = data.categories || {};
     window.DOC_TYPES = data.docTypes || {};
+    window.INITIAL_WATCHED_COUNCIL_IDS = data.initialWatchedCouncilIds || [];
     window.LAST_CRAWL_TIME = data.lastCrawlTime || '';
     window.DATA_LAST_MODIFIED = dataLastModified;
   } catch(e) {
@@ -25,6 +26,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     window.MINISTRIES = {};
     window.CATEGORIES = {};
     window.DOC_TYPES = {};
+    window.INITIAL_WATCHED_COUNCIL_IDS = [];
     window.LAST_CRAWL_TIME = '';
     window.DATA_LAST_MODIFIED = '';
   }
@@ -34,8 +36,10 @@ document.addEventListener('DOMContentLoaded', async () => {
   const MINISTRIES = window.MINISTRIES || {};
   const CATEGORIES = window.CATEGORIES || {};
   const DOC_TYPES = window.DOC_TYPES || {};
+  const INITIAL_WATCHED_COUNCIL_IDS = window.INITIAL_WATCHED_COUNCIL_IDS || [];
   const LAST_CRAWL_TIME = window.LAST_CRAWL_TIME || '';
   const DATA_LAST_MODIFIED = window.DATA_LAST_MODIFIED || dataLastModified;
+  const validCouncilIdsSet = new Set(COUNCILS.map(c => c.id));
 
   const DEFAULT_CATEGORY_LABELS = {
     LIAISON: '関係閣僚会議',
@@ -74,7 +78,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     watchlistOnly: false,
     newArrivalOnly: false,
     sortBy: 'NEWEST',
-    watchedCouncilIds: new Set(getStoredJson('pmhub_watched', ['cao-ai_strategy', 'digital-suishin_kanjikai', 'cao-kisei_kaikaku', 'meti-sangyo_kozo', 'cas-zensedai_hosyo', 'mof-zaiseiseido_bunkakai'])),
+    watchedCouncilIds: new Set(getStoredJson('pmhub_watched', INITIAL_WATCHED_COUNCIL_IDS).filter(id => validCouncilIdsSet.size === 0 || validCouncilIdsSet.has(id))),
     theme: getStoredItem('pmhub_theme', 'light'),
     enableAiSummary: getStoredItem('pmhub_enable_ai_summary', 'false') === 'true', // Default: false (Token cost control)
     activeModalMeeting: null,

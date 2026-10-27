@@ -66,30 +66,30 @@ LOGS_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), "logs"))
 # 無効な日付プレフィックス（旧クローラー残骸などスコアリング対象外の日付パターン）
 INVALID_DATE_PREFIXES = ("1312",)
 
-# ジェネリックタイトル・ポータル見出しキーワード（会議名として不適切な汎用文字列）
+# ジェネリックタイトル・ポータル見出しキーワード（会議名として不適切な汎用文字列 / Drop 99: 全省庁共通に純化）
 GENERIC_TITLE_KEYWORDS = frozenset({
     '会議資料詳細', '資料詳細', '会議詳細', 'トップページ', '目次', 'ホーム', '配付資料一覧',
-    '政策について', '総務省の紹介', '国立国会図書館インターネット資料収集保存事業（WARP）',
+    '政策について', '国立国会図書館インターネット資料収集保存事業（WARP）',
     '国立国会図書館インターネット資料収集保存事業', '議事次第', '配付資料', '配布資料',
     '議題', '資料', '議事', '日時', 'メンバー', '会議資料一覧', '審議会・検討会・研究会等',
-    '審議会、検討会、研究会等', '令和３年改正個人情報保護法について', '原子力規制委員会',
+    '審議会、検討会、研究会等',
     'サイトマップ', '開催案内', '開催について', '１開催日時', '１．日', '●日時', 'お知らせ',
     '新着情報', '１．日時', '１　開催日時', '議事要旨等', 'Interim Report', '共同主催国際会議',
     '議事次第・資料一覧', '配布資料一覧', '配付資料一覧', '覚書等', '覚書',
     '開催日', '開催日時', '開催期間', '議事次第等', '資料一覧', '配付資料等', '配布資料等',
     '会議結果', '開催案内等', '配付資料について', '配布資料について', '会議概要',
     '報道・広報', '広報', '関連リンク', 'リンク集', '災害への対応', '施策紹介', '最近の話題',
-    'オンライン利用率引上げ', '調査の概要', '外務省後援名義等の使用許可申請', '御意見・御感想',
-    'ご意見・ご感想', '大臣会見記録', '会見記録', '報道官会見記録', '広報印刷物', '赤れんが棟',
-    '法務省の個人情報保護について', '個人情報保護について', '法制審議会開催予定表', '開催予定表',
+    'オンライン利用率引上げ', '調査の概要', '御意見・御感想',
+    'ご意見・ご感想', '大臣会見記録', '会見記録', '報道官会見記録', '広報印刷物',
+    '個人情報保護について', '開催予定表',
     '検査方針・研修実績等', '対象者別メニュー', '提供可能となる食品の情報',
     '新型コロナウイルス感染症に関する情報一覧', '感染症に関する情報一覧',
     '審議会開催予定', '大臣等記者会見', '記者会見', '政策情報（会議・統計等）', '会議・委員会等',
-    '能力開発基本調査', '調査の実施について', '問い合わせ先', '情報配信サービス', 'イベント概要',
-    'セミナーのご案内', 'セミナー案内', '労使関係セミナー', '公募情報', '意見募集', 'パブリックコメント',
+    '調査の実施について', '問い合わせ先', '情報配信サービス', 'イベント概要',
+    'セミナーのご案内', 'セミナー案内', '公募情報', '意見募集', 'パブリックコメント',
     '１ 日時', '１　日時', '日時', '場所', '議題', '出席者', '出席者名簿', '１ 場所', '１　場所', '２ 場所', '２　場所',
     '３ 議題', '３　議題', '傍聴', '傍聴案内', '傍聴について', '傍聴申込', '傍聴申し込み',
-    '監査監督機関国際フォーラム', 'IFIAR', '議事録・資料等'
+    '議事録・資料等'
 })
 
 # 会議名の一部に含まれうるため、完全一致のみでジェネリック判定すべき語句
@@ -98,8 +98,7 @@ GENERIC_EXACT_ONLY_KEYWORDS = frozenset({
     '議事', '資料', '議題', '日時', '場所', '傍聴', '傍聴案内', '傍聴について', 'メンバー',
     '配付資料について', '配布資料について', '議事要旨等', '議事次第等', '会議概要', '会議結果',
     '１開催日時', '１．日', '●日時', '１．日時', '１　開催日時', '１ 日時', '１　日時',
-    '１ 場所', '１　場所', '２ 場所', '２　場所', '３ 議題', '３　議題', '出席者', '出席者名簿',
-    '原子力規制委員会'
+    '１ 場所', '１　場所', '２ 場所', '２　場所', '３ 議題', '３　議題', '出席者', '出席者名簿'
 })
 
 def is_generic_title_text(text, ministry=None, rule=None):
@@ -196,7 +195,10 @@ def is_generic_material_name(name):
         return True
     return False
 
-def recover_material_context(a_tag, initial_name=""):
+# Drop 99: 会議体ルール (scraping_rules.material_dir_prefix_map) からロードされるディレクトリ名補完マップ
+_MATERIAL_DIR_PREFIX_MAP = {}
+
+def recover_material_context(a_tag, initial_name="", rule=None):
     """
     リンクテキストが「PDF」「資料」等のジェネリック名である場合に、
     先行テキスト、親セル、同一テーブル行ヘッダー等から本来の資料名をスマート復元する（CR-110）。
@@ -281,12 +283,16 @@ def recover_material_context(a_tag, initial_name=""):
     if 'gijiroku' in fn.lower():
         return "議事録"
 
-    # URLのディレクトリ名からコンテキストを補完（例: kanjikai_dai1 -> 幹事会 配布資料）
+    # Drop 99: URLのディレクトリ名からコンテキストを補完（scraping_rules.material_dir_prefix_map 駆動）
     dir_name = os.path.basename(os.path.dirname(parsed_path)).lower()
-    if 'kanjikai' in dir_name:
-        return f"幹事会 {cand_name}"
-    elif 'startup' in dir_name:
-        return f"スタートアップ育成WG {cand_name}"
+    prefix_map = {}
+    if isinstance(rule, dict) and isinstance(rule.get("material_dir_prefix_map"), dict):
+        prefix_map = rule["material_dir_prefix_map"]
+    elif _MATERIAL_DIR_PREFIX_MAP:
+        prefix_map = _MATERIAL_DIR_PREFIX_MAP
+    for dir_key, label_prefix in prefix_map.items():
+        if dir_key.lower() in dir_name:
+            return f"{label_prefix} {cand_name}"
 
     return cand_name
 
@@ -590,24 +596,32 @@ _FALLBACK_MINISTRY_EXCLUSIONS = {
         "exclude_title_keywords": ["法務省の個人情報保護について", "赤れんが棟", "法制審議会開催予定表"]
     },
     "MOFA": {
-        "exclude_title_keywords": ["外務省後援名義等の使用許可申請"]
+        "exclude_title_keywords": ["外務省後援名義等の使用許可申請", "後援名義等の使用許可申請"]
     },
     "CAS": {
         "exclude_url_patterns": ["cas.go.jp/jp/s(?:i|hi)ryou", "cas.go.jp/jp/seisakukaigi/index.html"],
         "exclude_title_keywords": ["その他情報"]
     },
     "NRA": {
-        "exclude_url_patterns": ["da.nra.go.jp/search"]
+        "exclude_url_patterns": ["da.nra.go.jp/search"],
+        "exclude_title_keywords": ["原子力規制委員会"]
+    },
+    "PPC": {
+        "exclude_title_keywords": ["令和３年改正個人情報保護法について"]
+    },
+    "BUNKA": {
+        "exclude_title_keywords": ["文化庁の紹介"]
     },
     "CAO": {
         "exclude_url_patterns": ["bousai.go.jp/kohou/oshirase/"]
     },
     "MHLW": {
-        "exclude_url_patterns": ["topics/bukyoku/syakai/soren/", "kokurituken/gijiroku/attach/"],
+        "exclude_url_patterns": ["topics/bukyoku/syakai/soren/", "kokurituken/gijiroku/attach/", "churoi/roushi"],
         "exclude_title_keywords": ["労使関係セミナー", "能力開発基本調査"]
     },
     "MIC": {
-        "exclude_url_patterns": ["study/dai3sya/index.html"]
+        "exclude_url_patterns": ["study/dai3sya/index.html"],
+        "exclude_title_keywords": ["総務省の紹介"]
     }
 }
 
@@ -707,6 +721,29 @@ def load_ministry_and_host_configs_from_db(db_path=None, data=None):
             for h_key, h_val in hr_limits.items():
                 if isinstance(h_val, (int, float)) and h_val >= 0.35:
                     HOST_RATE_LIMITS[str(h_key).lower().strip()] = float(h_val)
+
+    # Drop 99: scraping_rules から material_dir_prefix_map をロード
+    new_dir_prefix_map = {}
+    if isinstance(data, dict) and isinstance(data.get("scrapingRules"), dict):
+        for r_obj in data["scrapingRules"].values():
+            if isinstance(r_obj, dict) and isinstance(r_obj.get("material_dir_prefix_map"), dict):
+                new_dir_prefix_map.update(r_obj["material_dir_prefix_map"])
+    if not new_dir_prefix_map:
+        target_db = db_path or os.path.join(os.path.dirname(os.path.abspath(__file__)), "pmhub.db")
+        if os.path.exists(target_db):
+            try:
+                import sqlite3
+                conn = sqlite3.connect(target_db)
+                cur = conn.cursor()
+                for (r_json,) in cur.execute("SELECT rule_json FROM scraping_rules WHERE rule_json LIKE '%material_dir_prefix_map%';"):
+                    r_obj = json.loads(r_json)
+                    if isinstance(r_obj.get("material_dir_prefix_map"), dict):
+                        new_dir_prefix_map.update(r_obj["material_dir_prefix_map"])
+                conn.close()
+            except Exception:
+                pass
+    _MATERIAL_DIR_PREFIX_MAP.clear()
+    _MATERIAL_DIR_PREFIX_MAP.update(new_dir_prefix_map)
 
     return MINISTRY_DOMAINS, MINISTRY_NEWS_PORTALS
 
@@ -1232,7 +1269,7 @@ def parse_materials_from_html(html, base_url, pdf_selector=None):
             continue
         if abs_url.startswith('javascript:') or is_sns_pr_url(abs_url) or is_non_pdf_anchor_url(abs_url):
             continue
-        if any(k in abs_url.lower() for k in ['cas.go.jp/jp/siryou', 'cas.go.jp/jp/shiryo']) or is_generic_index_url(abs_url):
+        if is_generic_index_url(abs_url):
             continue
 
         raw_text = normalize_text(a_tag.get_text(" ", strip=True))
@@ -1428,18 +1465,18 @@ def _filter_incremental_subpages(candidate_urls, existing_urls, max_unvisited=50
     }
     return target_urls, stats
 
-# 非会議サブページの除外アンカーテキスト（CR-14, CR-19, CR-20）
+# 非会議サブページの除外アンカーテキスト（CR-14, CR-19, CR-20 & Drop 99: 全省庁共通に純化）
 NAV_EXCLUDE_TEXTS = frozenset({
     'ホーム', 'トップ', 'トップページ', 'トップへ', 'トップへ戻る', '目次', '政策について',
     '組織案内', 'プライバシーポリシー', 'サイトマップ', 'english', 'アクセス', 'リンク集',
     '戻る', '前のページへ戻る', '前のページへ', '次へ', '閉じる', 'メニュー', 'サイト内検索',
     '利用規約', 'ご意見・ご要望', '本文へ移動', 'フッターへ移動', 'page top', 'pagetop',
     '印刷', '印刷する', '文字サイズ', '拡大', '標準', '関連リンク', '施策紹介',
-    '広報印刷物', '赤れんが棟', '法務省の個人情報保護について', '個人情報保護について',
-    'オンライン利用率引上げ', '検査方針・研修実績等', '法制審議会開催予定表', '開催予定表',
+    '広報印刷物', '個人情報保護について',
+    'オンライン利用率引上げ', '検査方針・研修実績等', '開催予定表',
     '調査の依頼方法', '調査の概要', '対象者別メニュー', '提供可能となる食品の情報',
     '新型コロナウイルス感染症に関する情報一覧', '感染症に関する情報一覧',
-    '後援名義等の使用許可申請', '御意見・御感想', 'ご意見・ご感想', '会見記録', '記者会見'
+    '御意見・御感想', 'ご意見・ご感想', '会見記録', '記者会見'
 })
 
 # 会議開催・回次・資料を示すアンカーテキスト判定パターン（CR-14: 投機的類推を排除し実リンクの文脈から判定）
@@ -1585,11 +1622,8 @@ def extract_actual_subpage_links(html, target_url, rule=None, return_meta=False)
         t_clean = re.sub(r'\s+', ' ', text).strip()
         t_stripped = re.sub(r'^[0-9０-９一二三四五六七八九十]+[．.、\s]+', '', t_clean).strip()
 
-        # 汎用インデックスURLや親ナビURLの除外
-        if is_generic_index_url(abs_url, t_clean) or _is_parent_or_nav_url(abs_url, target_url):
-            continue
-
-        if any(k in abs_url.lower() for k in ['cas.go.jp/jp/siryou', 'cas.go.jp/jp/shiryo']):
+        # 汎用インデックスURLや親ナビURLの除外（省庁・会議体ルール連動）
+        if is_generic_index_url(abs_url, t_clean, rule=rule) or _is_parent_or_nav_url(abs_url, target_url):
             continue
 
         # 固有開催回URL（日付8桁やdai\d+など）である場合は、アンカーテキストが「配付資料」「配布資料」「議事要旨」等の一般的名称であっても除外せず探索対象とする
@@ -2732,8 +2766,7 @@ def is_preliminary_notice_page(url, title=""):
        'kaisaiannai' in u_lower or '_annai_' in u_lower or \
        'annai_' in u_lower or 'kaisai_yotei' in u_lower or 'kaisaiyotei' in u_lower or \
        u_lower.endswith('/annai.html') or u_lower.endswith('/kaisai_annai.html') or \
-       u_lower.endswith('/kaisai_yotei.html') or u_lower.endswith('/kaisaiyotei.html') or \
-       'churoi/roushi' in u_lower:
+       u_lower.endswith('/kaisai_yotei.html') or u_lower.endswith('/kaisaiyotei.html'):
         return True
 
     t_raw = (title or "").strip()
@@ -2769,12 +2802,15 @@ def is_preliminary_notice_page(url, title=""):
     if re.search(r'を開催します[\s\u3000]*[\(（][^\)）]*案内', t_raw):
         return True
 
-    # 5. 非会議タイトル（セミナー、能力開発基本調査、公表資料・告示・意見等）
+    # 5. 非会議タイトル（セミナー、調査、公表資料・告示・意見等 & 省庁別除外設定連動）
     if any(kw in t_raw for kw in [
-        '能力開発基本調査', '調査の実施について', '問い合わせ先', '情報配信サービス',
-        'イベント概要', 'セミナーのご案内', '労使関係セミナー',
+        '調査の実施について', '問い合わせ先', '情報配信サービス',
+        'イベント概要', 'セミナーのご案内',
         '指定研修機関の指定等について', '研修内容に関する意見', '基準に関する意見'
     ]):
+        return True
+
+    if url and is_generic_index_url(url, t_raw):
         return True
 
     return False

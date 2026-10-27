@@ -534,6 +534,38 @@ class TestCrawlerManualLockProtection(unittest.TestCase):
         for prohibited in ['zeicho', 'fiscal_system_council', 'fsc.go.jp/senmon', 'kanbou_library', '14th_congress', 'da.nra.go.jp', 'digital.go.jp', 'strategic_priorities']:
             self.assertNotIn(prohibited, url_str, f"_GENERIC_INDEX_URL_PATTERNS に特定URLパターン '{prohibited}' が残存しています")
 
+        # Drop 99: GENERIC_TITLE_KEYWORDS / GENERIC_EXACT_ONLY_KEYWORDS / NAV_EXCLUDE_TEXTS の純度検証
+        for const_name in ['GENERIC_TITLE_KEYWORDS', 'GENERIC_EXACT_ONLY_KEYWORDS', 'NAV_EXCLUDE_TEXTS']:
+            m_const = re.search(rf'{const_name} = frozenset\(\{{([^}}]+)\}}\)', crawler_code)
+            self.assertIsNotNone(m_const, f"{const_name} definition not found")
+            const_str = m_const.group(1)
+            for prohibited in ['総務省の紹介', '令和３年改正個人情報保護法', '原子力規制委員会', '後援名義等の使用許可申請', '赤れんが棟', '法務省の個人情報保護', '法制審議会開催予定表', '能力開発基本調査', '労使関係セミナー', '監査監督機関国際フォーラム', 'IFIAR']:
+                self.assertNotIn(prohibited, const_str, f"{const_name} に特定省庁/会議体語句 '{prohibited}' が残存しています")
+
+    def test_drop99_rule_driven_material_context_and_watched_ids(self):
+        """Drop 99: recover_material_context のルール駆動補完および docs/app.js 初期ウォッチIDのDB一元化検証"""
+        from bs4 import BeautifulSoup
+        from crawler import recover_material_context
+
+        # 1. DBロード済みルール (digital-suishin_kanjikai: kanjikai / startup) による復元
+        soup1 = BeautifulSoup('<a href="/councils/kanjikai_dai1/siryou1.pdf">配布資料</a>', 'html.parser')
+        self.assertEqual(recover_material_context(soup1.find('a'), initial_name="配布資料"), "幹事会 配布資料")
+
+        soup2 = BeautifulSoup('<a href="/councils/startup_wg/siryou2.pdf">資料</a>', 'html.parser')
+        self.assertEqual(recover_material_context(soup2.find('a'), initial_name="資料"), "スタートアップ育成WG 資料")
+
+        # 2. カスタム rule 引数指定による動的ディレクトリプレフィックス補完
+        custom_rule = {"material_dir_prefix_map": {"custom_tf": "特別タスクフォース"}}
+        soup3 = BeautifulSoup('<a href="/meetings/custom_tf_01/doc.pdf">配付資料</a>', 'html.parser')
+        self.assertEqual(recover_material_context(soup3.find('a'), initial_name="配付資料", rule=custom_rule), "特別タスクフォース 配付資料")
+
+        # 3. docs/app.js に旧会議体ID 'meti-sangyo_kozo' 等のハードコードが存在しないこと
+        app_js_path = os.path.join(os.path.dirname(ADMIN_DIR), "docs", "app.js")
+        with open(app_js_path, "r", encoding="utf-8") as f:
+            app_js_code = f.read()
+        self.assertNotIn("meti-sangyo_kozo", app_js_code, "docs/app.js に廃止済み旧会議体ID 'meti-sangyo_kozo' がハードコードされています")
+        self.assertIn("INITIAL_WATCHED_COUNCIL_IDS", app_js_code, "docs/app.js が INITIAL_WATCHED_COUNCIL_IDS を参照していません")
+
 def run_tests():
 
     print("==================================================")

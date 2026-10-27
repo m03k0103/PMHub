@@ -229,6 +229,9 @@
           "type": "deep_portal",
           "subpage_pattern": "press/\\d{4}"
         }
+      ],
+      "exclude_title_keywords": [
+        "令和３年改正個人情報保護法について"
       ]
     },
     "JCRC": {
@@ -347,6 +350,9 @@
       ],
       "exclude_url_patterns": [
         "study/dai3sya/index.html"
+      ],
+      "exclude_title_keywords": [
+        "総務省の紹介"
       ]
     },
     "CCAC": {
@@ -470,7 +476,8 @@
       ],
       "hexColor": "#0284c7",
       "exclude_title_keywords": [
-        "外務省後援名義等の使用許可申請"
+        "外務省後援名義等の使用許可申請",
+        "後援名義等の使用許可申請"
       ]
     },
     "MOF": {
@@ -591,7 +598,8 @@
       ],
       "exclude_url_patterns": [
         "topics/bukyoku/syakai/soren/",
-        "kokurituken/gijiroku/attach/"
+        "kokurituken/gijiroku/attach/",
+        "churoi/roushi"
       ],
       "exclude_title_keywords": [
         "労使関係セミナー",
@@ -856,6 +864,9 @@
       ],
       "exclude_url_patterns": [
         "da.nra.go.jp/search"
+      ],
+      "exclude_title_keywords": [
+        "原子力規制委員会"
       ]
     },
     "MOD": {
@@ -810863,5 +810874,13 @@
     "MATERIALS": "配布資料",
     "REPORT": "答申・報告書"
   },
+  "initialWatchedCouncilIds": [
+    "cao-ai_strategy",
+    "digital-suishin_kanjikai",
+    "cao-kisei_kaikaku",
+    "meti-sankoushin",
+    "cas-zensedai_hosyo",
+    "mof-zaiseiseido_bunkakai"
+  ],
   "lastCrawlTime": "2026/10/24 17:58"
 }
