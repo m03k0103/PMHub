@@ -845,7 +845,55 @@ def check_sqlite_and_split_export_sync(data=None):
     if pmm_leak:
         errors.append("公開 docs/data.json に PMM ローカル管理属性 (local_path / download_status) が混入しています (No Leakage 違反)")
 
-    # 8. 管理 JSON の必須キー完全性
+    # 8. 却下会議体 3者間同期突合 (Drop 80 & Drop 94)
+    rej_path = os.path.join(ADMIN_DIR, "rejected_councils.json")
+    if os.path.exists(rej_path):
+        try:
+            with open(rej_path, "r", encoding="utf-8") as rf:
+                rej_data = json.load(rf)
+            rej_json_ids = set(r["id"] for r in rej_data if "id" in r)
+            adm_rej_ids = set(r["id"] for r in adm_data.get("rejectedCouncils", []) if "id" in r)
+            if db_rej_cnt != len(rej_data) or db_rej_cnt != len(adm_data.get("rejectedCouncils", [])):
+                errors.append(f"却下会議体件数不一致: DB={db_rej_cnt} vs rejected_councils.json={len(rej_data)} vs admin_data.json={len(adm_data.get('rejectedCouncils', []))}")
+            if db_rej_ids != rej_json_ids:
+                errors.append(f"却下会議体ID不一致 (DB vs rejected_councils.json): 差分={db_rej_ids ^ rej_json_ids}")
+            if db_rej_ids != adm_rej_ids:
+                errors.append(f"却下会議体ID不一致 (DB vs admin_data.json): 差分={db_rej_ids ^ adm_rej_ids}")
+        except Exception as e_rej:
+            errors.append(f"rejected_councils.json パースエラー: {e_rej}")
+    else:
+        errors.append("admin/rejected_councils.json が見つかりません")
+
+    # 9. admin_configs テーブル整合性 & 旧省庁コード ENV ゼロ検証 (Drop 92 & Drop 94)
+    conn = sqlite3.connect(db_path)
+    cur = conn.cursor()
+    try:
+        cfg_rows = dict(cur.execute("SELECT key, value_json FROM admin_configs;").fetchall())
+        for cfg_k in ["ministries", "categories"]:
+            if cfg_k in cfg_rows and cfg_k in pub_data:
+                db_val = json.loads(cfg_rows[cfg_k])
+                if len(db_val) != len(pub_data[cfg_k]):
+                    errors.append(f"admin_configs.{cfg_k} 件数不一致: DB={len(db_val)} vs 公開JSON={len(pub_data[cfg_k])}")
+        for adm_k in ["crawlerConfig", "scrapingRuleTemplates", "discoveryKeywords"]:
+            if adm_k in cfg_rows and adm_k in adm_data:
+                db_val = json.loads(cfg_rows[adm_k])
+                if len(db_val) != len(adm_data[adm_k]):
+                    errors.append(f"admin_configs.{adm_k} 件数不一致: DB={len(db_val)} vs 管理JSON={len(adm_data[adm_k])}")
+        env_c = cur.execute("SELECT COUNT(*) FROM councils WHERE ministry = 'ENV';").fetchone()[0]
+        env_rej = cur.execute("SELECT COUNT(*) FROM rejected_councils WHERE ministry = 'ENV';").fetchone()[0]
+        if env_c > 0 or env_rej > 0:
+            errors.append(f"旧省庁コード 'ENV' が残存しています: councils={env_c}, rejected_councils={env_rej}")
+        if "ministries" in cfg_rows:
+            min_cfg = json.loads(cfg_rows["ministries"])
+            if "ENV" in min_cfg:
+                errors.append("admin_configs.ministries に旧省庁コード 'ENV' が残存しています")
+        fts_cnt = cur.execute("SELECT COUNT(*) FROM fts_materials;").fetchone()[0]
+    except Exception as e_cfg:
+        errors.append(f"admin_configs / fts_materials 検証エラー: {e_cfg}")
+    finally:
+        conn.close()
+
+    # 11. 管理 JSON の必須キー完全性
     required_admin_keys = ["scrapingRules", "scrapingRuleTemplates", "crawlerConfig", "discoveryKeywords", "manualLocks"]
     missing_admin = [k for k in required_admin_keys if k not in adm_data]
     if missing_admin:
@@ -856,9 +904,9 @@ def check_sqlite_and_split_export_sync(data=None):
             print(f"  [FAIL] {err}")
         return False
 
-    print(f"  [PASS] SQLite 整合性（PRAGMA integrity_check: ok / FK制約違反: 0件）検証合格")
-    print(f"  [PASS] 3者間レコード完全一致（councils: {db_c_cnt}件, meetings: {db_m_cnt}件, materials: {db_mat_cnt}件, rules: {db_rule_cnt}件）検証合格")
-    print(f"  [PASS] 手動ロック完全整合性（councils: {db_c_lock}件, meetings: {db_m_lock}件, materials: {db_mat_lock}件）検証合格")
+    print(f"  [PASS] SQLite 整合性（PRAGMA integrity_check: ok / FK制約: 0件 / fts_materials: {fts_cnt}件）検証合格")
+    print(f"  [PASS] 3者間レコード完全一致（councils: {db_c_cnt}件, meetings: {db_m_cnt}件, materials: {db_mat_cnt}件, rules: {db_rule_cnt}件, rejected: {db_rej_cnt}件）検証合格")
+    print(f"  [PASS] admin_configs DB同期 & 旧ENVコード0件 & 手動ロック完全整合性を検証合格")
     print(f"  [PASS] 公開JSON設定漏洩ゼロ（No Leakage: 0件）& 管理JSONキー完全性を検証合格")
     return True
 
@@ -1006,7 +1054,7 @@ def check_active_filtering_and_closed_management(data=None):
     print(" [テスト 14/15] アクティブ会議体フィルタリング・廃止管理検証 (L5: Active Filtering & Closed Councils)")
     print("--------------------------------------------------")
     from crawler import load_councils_from_data_json
-    from manage_closed_councils import set_council_closed
+    from manage_closed_councils import set_council_closed, unset_council_closed
 
     if data is None:
         data = get_shared_data()
@@ -1041,21 +1089,71 @@ def check_active_filtering_and_closed_management(data=None):
             print("  [FAIL] manage_closed_councils の dry-run 動作が不正です")
             return False
 
-    print(f"  [PASS] 直近2年アクティブ会議体抽出（{len(active_councils)}件）および廃止会議体マスター機能を検証完了")
+    # Drop 94: 一時 SQLite DB を用いた廃止会議体マスターの DB 永続化 & 解除検証
+    import tempfile
+    import sqlite3
+    try:
+        from db.db_manager import ensure_database
+    except ImportError:
+        from admin.db.db_manager import ensure_database
+
+    with tempfile.TemporaryDirectory(prefix="pmhub_test_case14_") as tmp_dir:
+        tmp_p = Path(tmp_dir)
+        tmp_db = tmp_p / "case14.db"
+        tmp_pub = tmp_p / "data.json"
+        tmp_adm = tmp_p / "admin_data.json"
+        sample_pub = {
+            "councils": [{"id": "test-closed_c", "name": "廃止テスト", "ministry": "TEST", "category": "審議会等", "officialUrl": "https://example.com/c"}],
+            "meetings": [], "ministries": [], "categories": []
+        }
+        sample_adm = {"scrapingRules": {"test-closed_c": {"officialUrl": "https://example.com/c"}}}
+        tmp_pub.write_text(json.dumps(sample_pub), encoding="utf-8")
+        tmp_adm.write_text(json.dumps(sample_adm), encoding="utf-8")
+        ensure_database(db_path=tmp_db, public_json_path=tmp_pub, admin_json_path=tmp_adm, schema_path=Path(PROJECT_ROOT)/"admin"/"db"/"schema.sql")
+
+        ok_set = set_council_closed(sample_pub, "test-closed_c", "法改正等による廃止", apply=True, target_file=str(tmp_pub), db_path=str(tmp_db))
+        if not ok_set:
+            print("  [FAIL] set_council_closed の DB 永続化保存に失敗しました")
+            return False
+        conn = sqlite3.connect(str(tmp_db))
+        cur = conn.cursor()
+        row_closed = cur.execute("SELECT is_closed, closed_reason FROM councils WHERE id = 'test-closed_c';").fetchone()
+        conn.close()
+        if not row_closed or row_closed[0] != 1 or row_closed[1] != "法改正等による廃止":
+            print(f"  [FAIL] DB 上の councils.is_closed / closed_reason が正しく反映されていません: {row_closed}")
+            return False
+
+        ok_unset = unset_council_closed(sample_pub, "test-closed_c", apply=True, target_file=str(tmp_pub), db_path=str(tmp_db))
+        if not ok_unset:
+            print("  [FAIL] unset_council_closed の DB 保存に失敗しました")
+            return False
+        conn = sqlite3.connect(str(tmp_db))
+        cur = conn.cursor()
+        row_unclosed = cur.execute("SELECT is_closed, closed_reason FROM councils WHERE id = 'test-closed_c';").fetchone()
+        conn.close()
+        if row_unclosed and row_unclosed[0] == 1:
+            print("  [FAIL] DB 上の councils.is_closed 解除に失敗しました")
+            return False
+
+    print(f"  [PASS] 直近2年アクティブ会議体抽出（{len(active_councils)}件）および廃止会議体マスター（DB永続化・解除含む）機能を検証完了")
     return True
 
 
 def _run_inprocess_or_fallback(test_case_class, script_filename, pass_msg, fail_title):
-    """単一プロセス内での高速実行を試行し、例外時は個別スクリプトへ安全フォールバック"""
+    """単一プロセス内での高速実行を試行し、例外時は個別スクリプトへ安全フォールバック (Drop 94)"""
     try:
-        from test_crawler_suite import run_crawler_test_case
-        ok, out = run_crawler_test_case(test_case_class)
-        if ok:
+        import io
+        import unittest
+        stream = io.StringIO()
+        runner = unittest.TextTestRunner(stream=stream, verbosity=1)
+        suite = unittest.TestLoader().loadTestsFromTestCase(test_case_class)
+        result = runner.run(suite)
+        if result.wasSuccessful():
             print(f"  [PASS] {pass_msg}")
             return True
         else:
             print(f"  [FAIL] {fail_title}でエラーが検出されました:")
-            for line in out.splitlines():
+            for line in stream.getvalue().splitlines():
                 if line.strip():
                     print(f"    {line}")
             return False
@@ -1180,6 +1278,8 @@ def detect_required_unit_tests(changed_files):
         "test_pmm.py": ["u_pmm"],
         "test_discover_councils.py": ["u_discover"],
         "test_drop81_llm_discovery.py": ["u_drop81"],
+        "test_drop82_pmm_preservation.py": ["u_drop82"],
+        "test_drop80_intermediate_material_guard.py": ["u_intermediate_guard"],
         "run_unit_tests.py": list(UNIT_TEST_REGISTRY.keys())
     }
     for f in changed_files:
@@ -1200,6 +1300,7 @@ def detect_required_unit_tests(changed_files):
     if any("admin/db/" in f or "admin\\db\\" in f for f in changed_files):
         required_keys.add("u_drop62")
         required_keys.add("u_drop63")
+        required_keys.add("u_drop82")
 
     # フロントエンド関数仕様コード変更 (docs/app.js)
     if any(f.endswith("docs/app.js") or f == "docs/app.js" for f in changed_files):

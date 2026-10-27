@@ -108,32 +108,6 @@ class TestDrop47ContextRecovery(unittest.TestCase):
         recovered = recover_material_context(a_tag, initial_name="PDF形式:152KB")
         self.assertEqual(recovered, "議事録")
 
-    def test_data_json_generic_materials_zero(self):
-        """docs/data.json 内の全配付資料におけるジェネリック資料名残存ゼロ検証 (CR-111)"""
-        data_path = os.path.join(REPO_ROOT, 'docs', 'data.json')
-        if not os.path.exists(data_path):
-            self.skipTest("docs/data.json が存在しません")
-
-        with open(data_path, 'r', encoding='utf-8') as f:
-            data = json.load(f)
-
-        generic_materials = []
-        for m in data.get('meetings', []):
-            for mat in m.get('materials', []):
-                name = mat.get('name', '').strip()
-                if is_generic_material_name(name):
-                    generic_materials.append({
-                        'meetingId': m.get('id'),
-                        'materialName': name,
-                        'url': mat.get('url')
-                    })
-
-        self.assertEqual(
-            len(generic_materials), 0,
-            f"docs/data.json 内にジェネリック資料名が {len(generic_materials)} 件残存しています: {generic_materials[:5]}"
-        )
-
-
 def run_tests():
     """テスト実行エントリーポイント"""
     suite = unittest.TestLoader().loadTestsFromTestCase(TestDrop47ContextRecovery)

@@ -26,7 +26,7 @@ if str(ADMIN_DIR) not in sys.path:
 
 from db.db_manager import ensure_database, load_data_from_db, save_data_to_db
 from db.export_data import export_data
-from utils import load_data_json, save_data_json_with_backup
+from utils import load_data_json, save_data_json_with_backup, add_to_rejected_councils
 
 
 class TestDrop63CrawlerServerDB(unittest.TestCase):
@@ -210,6 +210,61 @@ class TestDrop63CrawlerServerDB(unittest.TestCase):
         # ロードして正常性を確認
         data = load_data_from_db(self.db_path)
         self.assertGreater(len(data.get("councils", [])), 0)
+
+
+    def test_reject_and_purge_council_cascade_integrity(self):
+        """4. 会議体却下・削除時の子テーブル連鎖削除 & 孤立レコードゼロ検証 (Drop 94)"""
+        conn = sqlite3.connect(str(self.db_path))
+        conn.execute("PRAGMA foreign_keys = ON;")
+        cur = conn.cursor()
+        
+        m_cnt = cur.execute("SELECT COUNT(*) FROM meetings WHERE council_id = 'test-c1';").fetchone()[0]
+        mat_cnt = cur.execute("SELECT COUNT(*) FROM materials WHERE meeting_id LIKE 'test-c1%';").fetchone()[0]
+        self.assertEqual(m_cnt, 1)
+        self.assertEqual(mat_cnt, 1)
+
+        rej_json = self.temp_path / "rejected_councils.json"
+        add_success = add_to_rejected_councils(
+            target_id="test-c1",
+            council={"name": "テスト審議会1", "ministry": "TEST", "officialUrl": "https://example.com/c1"},
+            reason="テスト用却下理由",
+            rejected_file=str(rej_json),
+            db_path=str(self.db_path)
+        )
+        self.assertTrue(add_success)
+
+        cur.execute("DELETE FROM councils WHERE id = 'test-c1';")
+        conn.commit()
+
+        post_c = cur.execute("SELECT COUNT(*) FROM councils WHERE id = 'test-c1';").fetchone()[0]
+        post_m = cur.execute("SELECT COUNT(*) FROM meetings WHERE council_id = 'test-c1';").fetchone()[0]
+        post_mat = cur.execute("SELECT COUNT(*) FROM materials WHERE meeting_id LIKE 'test-c1%';").fetchone()[0]
+        post_rule = cur.execute("SELECT COUNT(*) FROM scraping_rules WHERE council_id = 'test-c1';").fetchone()[0]
+        post_rej = cur.execute("SELECT COUNT(*) FROM rejected_councils WHERE id = 'test-c1';").fetchone()[0]
+        conn.close()
+
+        self.assertEqual(post_c, 0, "councils から削除されていること")
+        self.assertEqual(post_m, 0, "meetings から連鎖削除されていること")
+        self.assertEqual(post_mat, 0, "materials から連鎖削除されていること")
+        self.assertEqual(post_rule, 0, "scraping_rules から連鎖削除されていること")
+        self.assertEqual(post_rej, 1, "rejected_councils に登録されていること")
+
+        export_success = export_data(
+            db_path=self.db_path,
+            public_json_path=self.public_json,
+            admin_json_path=self.admin_json,
+            rejected_json_path=rej_json
+        )
+        self.assertTrue(export_success)
+
+        with open(self.public_json, "r", encoding="utf-8") as f:
+            pub = json.load(f)
+        with open(self.admin_json, "r", encoding="utf-8") as f:
+            adm = json.load(f)
+
+        self.assertNotIn("test-c1", [c["id"] for c in pub["councils"]])
+        self.assertNotIn("test-c1-20260101-001", [m["id"] for m in pub["meetings"]])
+        self.assertIn("test-c1", [r["id"] for r in adm["rejectedCouncils"]])
 
 
 if __name__ == "__main__":

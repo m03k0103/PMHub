@@ -22,7 +22,7 @@ def _apply_field_update(item_list, target_id, field, new_val, target_name):
     return False, False
 
 
-def apply_report_data(report_data, data_json_path=None):
+def apply_report_data(report_data, data_json_path=None, db_path=None):
     """
     辞書オブジェクト形式のレポートデータを受け取り、docs/data.json に反映する。
     ディスク一時ファイルを作らずにインメモリで直接反映可能。
@@ -120,13 +120,13 @@ def apply_report_data(report_data, data_json_path=None):
                     print(f"Warning: Council {c_id} already exists")
 
     # 保存前に admin/backups/ にタイムスタンプ付き世代バックアップを作成して安全に上書き保存
-    save_data_json_with_backup(data, data_json_path)
+    save_data_json_with_backup(data, data_json_path, db_path=db_path)
 
     print(f"\nReport applied. {applied_count} out of {len(corrections)} changes saved to data.json")
     return True
 
 
-def apply_report(json_path, data_json_path=None):
+def apply_report(json_path, data_json_path=None, db_path=None):
     """
     JSONファイルパスからレポートを読み込み、apply_report_data に渡すラッパー（既存CLI・テスト互換）。
     """
@@ -136,7 +136,7 @@ def apply_report(json_path, data_json_path=None):
     try:
         with open(json_path, "r", encoding="utf-8") as f:
             report_data = json.load(f)
-        return apply_report_data(report_data, data_json_path)
+        return apply_report_data(report_data, data_json_path, db_path=db_path)
     except Exception as e:
         print(f"Error reading {json_path}: {e}")
         return False

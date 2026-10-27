@@ -31,7 +31,7 @@ import argparse
 from datetime import datetime
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from utils import setup_win32_utf8, load_data_json, save_data_json_with_backup
+from utils import setup_win32_utf8, load_data_json, save_data_json_with_backup, DEFAULT_DATA_JSON_PATH
 
 setup_win32_utf8()
 
@@ -60,7 +60,7 @@ def list_closed_councils(data):
     return closed_list
 
 
-def set_council_closed(data, council_id, reason, apply=False):
+def set_council_closed(data, council_id, reason, apply=False, target_file=DEFAULT_DATA_JSON_PATH, db_path=None):
     """会議体に isClosed: true を設定"""
     councils = data.get("councils", [])
     target = None
@@ -89,7 +89,7 @@ def set_council_closed(data, council_id, reason, apply=False):
     if council_id in scraping_rules and isinstance(scraping_rules[council_id], dict):
         scraping_rules[council_id]["isClosed"] = True
 
-    if save_data_json_with_backup(data):
+    if save_data_json_with_backup(data, target_file=target_file, db_path=db_path):
         print(f"✅ [SUCCESS] 会議体 '{council_id}' を廃止（isClosed: true）として保存しました。")
         return True
     else:
@@ -97,7 +97,7 @@ def set_council_closed(data, council_id, reason, apply=False):
         return False
 
 
-def unset_council_closed(data, council_id, apply=False):
+def unset_council_closed(data, council_id, apply=False, target_file=DEFAULT_DATA_JSON_PATH, db_path=None):
     """会議体の isClosed フラグを解除"""
     councils = data.get("councils", [])
     target = None
@@ -129,7 +129,7 @@ def unset_council_closed(data, council_id, apply=False):
     if council_id in scraping_rules and isinstance(scraping_rules[council_id], dict):
         scraping_rules[council_id].pop("isClosed", None)
 
-    if save_data_json_with_backup(data):
+    if save_data_json_with_backup(data, target_file=target_file, db_path=db_path):
         print(f"✅ [SUCCESS] 会議体 '{council_id}' の isClosed 設定を解除しました。")
         return True
     else:

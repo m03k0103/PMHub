@@ -331,10 +331,7 @@ def load_data_json(target_file=DEFAULT_DATA_JSON_PATH, cached=False):
             return cached_data
 
     # Drop 63 & CR-167: メインデータかつ SQLite DB が存在する場合は JSON パースを行わず DB から最優先ロード
-    is_main_data_json = (
-        abs_path == os.path.abspath(DEFAULT_DATA_JSON_PATH)
-        or os.path.basename(abs_path) == "data.json"
-    )
+    is_main_data_json = (abs_path == os.path.abspath(DEFAULT_DATA_JSON_PATH))
     if is_main_data_json and os.path.exists(db_path):
         try:
             try:
@@ -389,7 +386,7 @@ def load_data_json(target_file=DEFAULT_DATA_JSON_PATH, cached=False):
         return {}
 
 
-def save_data_json_with_backup(data, target_file=DEFAULT_DATA_JSON_PATH, backup_dir=DEFAULT_BACKUP_DIR, max_backups=30, create_backup=True, sync_db=True):
+def save_data_json_with_backup(data, target_file=DEFAULT_DATA_JSON_PATH, backup_dir=DEFAULT_BACKUP_DIR, max_backups=30, create_backup=True, sync_db=True, db_path=None):
     """
     docs/data.json をアトミックに安全保存する。
     Drop 63: target_file がメインの docs/data.json かつ sync_db=True の場合、
@@ -399,10 +396,7 @@ def save_data_json_with_backup(data, target_file=DEFAULT_DATA_JSON_PATH, backup_
     """
     tmp_file = f"{target_file}.tmp"
     abs_target = os.path.abspath(target_file)
-    is_main_data_json = (
-        abs_target == os.path.abspath(DEFAULT_DATA_JSON_PATH)
-        or os.path.basename(abs_target) == "data.json"
-    )
+    is_main_data_json = (abs_target == os.path.abspath(DEFAULT_DATA_JSON_PATH))
 
     try:
         if create_backup:
@@ -421,8 +415,8 @@ def save_data_json_with_backup(data, target_file=DEFAULT_DATA_JSON_PATH, backup_
                         except OSError:
                             pass
 
-        # Drop 63: メインデータの場合は SQLite マスターDBへ同期し自動エクスポート
-        if is_main_data_json and sync_db:
+        # Drop 63 & Drop 94: メインデータの場合は SQLite マスターDBへ同期し自動エクスポート
+        if is_main_data_json and sync_db and not db_path:
             try:
                 try:
                     from db.db_manager import save_data_to_db
@@ -434,6 +428,19 @@ def save_data_json_with_backup(data, target_file=DEFAULT_DATA_JSON_PATH, backup_
                     return True
             except Exception as e_db:
                 print(f"[WARN] DB sync failed in save_data_json_with_backup ({e_db}), falling back to direct JSON save.", file=sys.stderr)
+        elif db_path and sync_db:
+            try:
+                try:
+                    from db.db_manager import save_data_to_db
+                except ImportError:
+                    from admin.db.db_manager import save_data_to_db
+                save_data_to_db(data, db_path=Path(db_path), run_export=False)
+            except Exception as e_db:
+                print(f"[WARN] Custom DB save failed in save_data_json_with_backup ({e_db})", file=sys.stderr)
+            if is_main_data_json:
+                # Custom DB fixture was used without a custom target JSON file:
+                # Strictly protect production docs/data.json from being overwritten!
+                return True
 
         # フォールバックまたは非メインファイル向けアトミック保存
         target_dir = os.path.dirname(abs_target)

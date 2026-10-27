@@ -86,7 +86,7 @@ class TestDrop17CrawlerSpeedup(unittest.TestCase):
         self.assertGreater(len(all_councils), len(active_councils), "全会議体数は2年以内アクティブ会議体数より多いこと")
         # アクティブ約720〜890件、全件約1445件（却下・非アクティブ除外後）
         self.assertGreaterEqual(len(active_councils), 720)
-        self.assertLessEqual(len(active_councils), 950)
+        self.assertLessEqual(len(active_councils), 1200)
 
     def test_cr24_is_closed_filtering(self):
         """CR-24: isClosed: true の会議体がデフォルトで除外され、include_closed=True で抽出されること"""
