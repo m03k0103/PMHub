@@ -1959,14 +1959,6 @@
       "pastYearCount": 2
     },
     {
-      "id": "caa-seisaku_kaigi",
-      "ministry": "CAA",
-      "category": "COUNCIL",
-      "name": "政策会議等",
-      "officialUrl": "https://www.caa.go.jp/policies/council/category",
-      "pastYearCount": 8
-    },
-    {
       "id": "caa-shohisha_seisaku",
       "ministry": "CAA",
       "category": "SECTION",
@@ -3137,14 +3129,6 @@
       ]
     },
     {
-      "id": "cas-296",
-      "ministry": "CAS",
-      "category": "HQ",
-      "name": "廃止した本部・会議等の一覧",
-      "officialUrl": "https://www.cas.go.jp/jp/seisaku/abolition_list.html",
-      "pastYearCount": 1
-    },
-    {
       "id": "cas-297",
       "ministry": "CAS",
       "category": "COUNCIL",
@@ -3349,7 +3333,9 @@
           "name": "事態対処専門委員会 構成員名簿",
           "url": "https://www.cas.go.jp/jp/seisakukaigi/jitaitaisyo/kousei.html"
         }
-      ]
+      ],
+      "isClosed": true,
+      "closedReason": "非公開専門委員会（安全保障会議設置法第10条に基づく防衛秘密審議機関のため配付資料非公開）"
     },
     {
       "id": "cas-326",
@@ -4916,9 +4902,9 @@
       "id": "cas-tppinfo",
       "ministry": "CAS",
       "category": "HQ",
-      "name": "「TPP等総合対策本部」(旧TPPに関する主要閣僚会議)",
+      "name": "ＴＰＰ等総合対策本部",
       "manualLock": true,
-      "officialUrl": "https://www.cas.go.jp/jp/tpp/tppinfo/2026/index.html",
+      "officialUrl": "https://www.cas.go.jp/jp/tpp/tppinfo/taiko/torikumihonbu/index.html",
       "description": "「TPP等総合対策本部」(旧TPPに関する主要閣僚会議)の基本方針、施策の推進状況および関係省庁間の連携・個別課題について審議する会議。",
       "pastYearCount": 1
     },
@@ -9436,14 +9422,6 @@
       "pastYearCount": 1
     },
     {
-      "id": "jsa-612",
-      "ministry": "JSA",
-      "category": "COUNCIL",
-      "name": "政策分野別の審議会情報を見る",
-      "officialUrl": "https://www.mext.go.jp/sports/b_menu/shingi/category/1361487_19053.html",
-      "pastYearCount": 0
-    },
-    {
       "id": "jsa-616",
       "ministry": "JSA",
       "category": "COUNCIL",
@@ -9979,15 +9957,6 @@
       "pastYearCount": 0
     },
     {
-      "id": "maff-708",
-      "ministry": "MAFF",
-      "category": "COMMITTEE",
-      "name": "各種委員会等情報",
-      "manualLock": true,
-      "officialUrl": "https://www.affrc.maff.go.jp/docs/commitee.htm",
-      "pastYearCount": 1
-    },
-    {
       "id": "maff-709",
       "ministry": "MAFF",
       "category": "COUNCIL",
@@ -10232,6 +10201,15 @@
       "name": "種苗分科会",
       "officialUrl": "https://www.maff.go.jp/j/council/sizai/index.html#a-3",
       "pastYearCount": 0
+    },
+    {
+      "id": "maff-sugikafunmai",
+      "ministry": "MAFF",
+      "category": "COUNCIL",
+      "name": "スギ花粉米の実用化に向けた官民連携検討会",
+      "manualLock": true,
+      "officialUrl": "https://www.affrc.maff.go.jp/docs/sugikahunnmai/240123_15.html",
+      "pastYearCount": 1
     },
     {
       "id": "maff-suitou_shuukaku_chousa",
@@ -35618,32 +35596,6 @@
         {
           "name": "議事要旨(PDF/371KB)",
           "url": "https://www.cas.go.jp/jp/seisaku/kokuminkaigi/contents/20260519/minutes.pdf"
-        }
-      ]
-    },
-    {
-      "id": "maff-708-20260805-001",
-      "councilId": "maff-708",
-      "name": "第1回 各種委員会等情報",
-      "date": "2026/08/05",
-      "manualLock": true,
-      "officialUrl": "https://www.affrc.maff.go.jp/docs/commitee.htm",
-      "materials": [
-        {
-          "name": "動物の伝達性海綿状脳症の実験指針(PDF : 202KB)",
-          "url": "https://www.affrc.maff.go.jp/docs/attach/pdf/commitee-1.pdf"
-        },
-        {
-          "name": "第1種使用規程承認組換え作物栽培実験指針(PDF : 146KB)",
-          "url": "https://www.affrc.maff.go.jp/docs/attach/pdf/commitee-2.pdf"
-        },
-        {
-          "name": "動物の伝達性海綿状脳症実験指針検討会報告書(PDF : 45KB)",
-          "url": "https://www.affrc.maff.go.jp/docs/attach/pdf/commitee-3.pdf"
-        },
-        {
-          "name": "欧米における新たな育種技術の開発・規制政策や開発動向等に関する調査業務報告書(PDF : 1,421KB)",
-          "url": "https://www.affrc.maff.go.jp/docs/attach/pdf/commitee-4.pdf"
         }
       ]
     },
@@ -114001,306 +113953,6 @@
         {
           "name": "経済対策におけるAI施策について(PDF形式:695KB)",
           "url": "https://www8.cao.go.jp/cstp/ai/ai_hq/3kai/shiryo2.pdf"
-        }
-      ]
-    },
-    {
-      "id": "cas-296-20251219-001",
-      "councilId": "cas-296",
-      "name": "第1回 廃止した本部・会議等の一覧",
-      "date": "2025/12/19",
-      "manualLock": true,
-      "officialUrl": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/wgkaisai/index.html",
-      "materials": [
-        {
-          "name": "コンテンツ産業官民協議会の開催について",
-          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/wgkaisai/contents_konkyo.pdf"
-        },
-        {
-          "name": "コンテンツ産業官民協議会の開催についての廃止について",
-          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/wgkaisai/contents_haisi.pdf"
-        },
-        {
-          "name": "映画戦略企画委員会の開催について",
-          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/wgkaisai/eiga_konkyo.pdf"
-        },
-        {
-          "name": "非財務情報可視化研究会の開催について",
-          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/wgkaisai/hizaimu_konkyo.pdf"
-        },
-        {
-          "name": "スマート農林水産業ワーキンググループの開催について",
-          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/wgkaisai/nougyou_konkyo.pdf"
-        },
-        {
-          "name": "コンセッション等に関するワーキンググループの開催について",
-          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/wgkaisai/concession_konkyo.pdf"
-        },
-        {
-          "name": "新しい資本主義実現本部幹事会の開催について",
-          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/wgkaisai/kanjikai_konkyo.pdf"
-        },
-        {
-          "name": "「新しい資本主義実現本部幹事会の開催について」の廃止について",
-          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/wgkaisai/kanjikai_haisi.pdf"
-        },
-        {
-          "name": "スタートアップ創出調整連絡会議の開催について",
-          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/wgkaisai/startup_konkyo.pdf"
-        },
-        {
-          "name": "現場人材におけるスキル評価制度の構築のための関係省庁連絡会議について",
-          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/wgkaisai/skillhyouka_konkyo.pdf"
-        },
-        {
-          "name": "労務費の適切な転嫁のための関係省庁連絡会議について",
-          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/wgkaisai/roumuhitenka_konkyo.pdf"
-        },
-        {
-          "name": "省力化投資促進プランの策定と実行のための関係府省連絡会議の開催について",
-          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/wgkaisai/shouryokukatousi_konkyo.pdf"
-        },
-        {
-          "name": "「省力化投資促進プランの策定と実行のための関係府省連絡会議の開催について」の廃止について",
-          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/wgkaisai/shouryokukatousi_haisi.pdf"
-        },
-        {
-          "name": "議事次第",
-          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/wgkaisai/contents_dai2/gijisidai.pdf"
-        },
-        {
-          "name": "議事要旨",
-          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/wgkaisai/contents_dai2/gijiyousi.pdf"
-        },
-        {
-          "name": "議事次第",
-          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/wgkaisai/contents_dai1/gijisidai.pdf"
-        },
-        {
-          "name": "議事要旨",
-          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/wgkaisai/contents_dai1/gijiyousi.pdf"
-        },
-        {
-          "name": "議事次第",
-          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/wgkaisai/eiga_dai3/gijisidai.pdf"
-        },
-        {
-          "name": "議事要旨",
-          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/wgkaisai/eiga_dai3/gijiyousi.pdf"
-        },
-        {
-          "name": "人的資本可視化指針(PDF)",
-          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/wgkaisai/jinteki/sisin.pdf"
-        },
-        {
-          "name": "付録(PDF)",
-          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/wgkaisai/jinteki/furoku.pdf"
-        },
-        {
-          "name": "議事次第",
-          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/wgkaisai/hizaimu_dai6/gijisidai.pdf"
-        },
-        {
-          "name": "議事要旨",
-          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/wgkaisai/hizaimu_dai6/gijiyousi.pdf"
-        },
-        {
-          "name": "議事次第",
-          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/wgkaisai/hizaimu_dai5/gijisidai.pdf"
-        },
-        {
-          "name": "議事要旨",
-          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/wgkaisai/hizaimu_dai5/gijiyousi.pdf"
-        },
-        {
-          "name": "議事次第",
-          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/wgkaisai/hizaimu_dai4/gijisidai.pdf"
-        },
-        {
-          "name": "議事要旨",
-          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/wgkaisai/hizaimu_dai4/gijiyousi.pdf"
-        },
-        {
-          "name": "議事次第",
-          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/wgkaisai/hizaimu_dai3/gijisidai.pdf"
-        },
-        {
-          "name": "議事要旨",
-          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/wgkaisai/hizaimu_dai3/gijiyousi.pdf"
-        },
-        {
-          "name": "議事次第",
-          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/wgkaisai/hizaimu_dai2/gijisidair.pdf"
-        },
-        {
-          "name": "議事要旨",
-          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/wgkaisai/hizaimu_dai2/gijiyousi.pdf"
-        },
-        {
-          "name": "議事次第",
-          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/wgkaisai/hizaimu_dai1/gijisidair.pdf"
-        },
-        {
-          "name": "議事要旨",
-          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/wgkaisai/hizaimu_dai1/gijiyousi.pdf"
-        },
-        {
-          "name": "議事次第",
-          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/wgkaisai/nougyou_dai3/gijisidair.pdf"
-        },
-        {
-          "name": "議事要旨",
-          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/wgkaisai/nougyou_dai3/gijiyousi.pdf"
-        },
-        {
-          "name": "議事次第",
-          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/wgkaisai/nougyou_dai2/gijisidairr.pdf"
-        },
-        {
-          "name": "議事要旨",
-          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/wgkaisai/nougyou_dai2/gijiyousi.pdf"
-        },
-        {
-          "name": "議事次第",
-          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/wgkaisai/nougyou_dai1/gijisidai.pdf"
-        },
-        {
-          "name": "議事要旨",
-          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/wgkaisai/nougyou_dai1/gijiyousir2.pdf"
-        },
-        {
-          "name": "議事次第",
-          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/wgkaisai/concession_dai2/gijisidai.pdf"
-        },
-        {
-          "name": "議事要旨",
-          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/wgkaisai/concession_dai2/gijiyousi.pdf"
-        },
-        {
-          "name": "議事次第",
-          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/wgkaisai/concession_dai1/gijisidai.pdf"
-        },
-        {
-          "name": "議事要旨",
-          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/wgkaisai/concession_dai1/gijiyousi.pdf"
-        },
-        {
-          "name": "第1回 令和4年 8月 4日",
-          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/wgkaisai/kanjikai_dai1/haifusiryou.pdf",
-          "manualLock": true
-        },
-        {
-          "name": "議事次第",
-          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/wgkaisai/startup_dai7/gijisidai.pdf"
-        },
-        {
-          "name": "議事次第",
-          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/wgkaisai/startup_dai6/gijisidai.pdf"
-        },
-        {
-          "name": "議事次第",
-          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/wgkaisai/startup_dai5/gijisidai.pdf"
-        },
-        {
-          "name": "議事次第",
-          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/wgkaisai/startup_dai4/gijisidai.pdf"
-        },
-        {
-          "name": "議事次第",
-          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/wgkaisai/startup_dai3/gijisidai.pdf"
-        },
-        {
-          "name": "議事次第",
-          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/wgkaisai/startup_dai2/gijisidai.pdf"
-        },
-        {
-          "name": "第1回 令和4年 8月 1日",
-          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/wgkaisai/startup_dai1/haifusiryou.pdf",
-          "manualLock": true
-        },
-        {
-          "name": "議事次第",
-          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/wgkaisai/roumuhitenka_dai5/gijisidai.pdf"
-        },
-        {
-          "name": "議事要旨",
-          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/wgkaisai/roumuhitenka_dai5/gijiyousi.pdf"
-        },
-        {
-          "name": "議事次第",
-          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/wgkaisai/roumuhitenka_dai4/gijisidai.pdf"
-        },
-        {
-          "name": "議事要旨",
-          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/wgkaisai/roumuhitenka_dai4/gijiyousi.pdf"
-        },
-        {
-          "name": "議事次第",
-          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/wgkaisai/roumuhitenka_dai3/gijisidai.pdf"
-        },
-        {
-          "name": "議事要旨",
-          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/wgkaisai/roumuhitenka_dai3/gijiyousi.pdf"
-        },
-        {
-          "name": "議事次第",
-          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/wgkaisai/roumuhitenka_dai2/gijisidai.pdf"
-        },
-        {
-          "name": "議事要旨",
-          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/wgkaisai/roumuhitenka_dai2/gijiyousi.pdf"
-        },
-        {
-          "name": "議事次第",
-          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/wgkaisai/roumuhitenka_dai1/gijisidai.pdf"
-        },
-        {
-          "name": "議事要旨",
-          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/wgkaisai/roumuhitenka_dai1/gijiyousi.pdf"
-        },
-        {
-          "name": "議事次第",
-          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/wgkaisai/skillhyouka_dai2/gijisidai.pdf"
-        },
-        {
-          "name": "議事要旨",
-          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/wgkaisai/skillhyouka_dai2/gijiyousi.pdf"
-        },
-        {
-          "name": "議事次第",
-          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/wgkaisai/skillhyouka_dai1/gijisidai.pdf"
-        },
-        {
-          "name": "議事要旨",
-          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/wgkaisai/skillhyouka_dai1/gijiyousi.pdf"
-        },
-        {
-          "name": "議事次第",
-          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/wgkaisai/shouryokukatousi_dai2/gijisidai.pdf"
-        },
-        {
-          "name": "議事次第",
-          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/wgkaisai/shouryokukatousi_dai1/gijisidai.pdf"
-        },
-        {
-          "name": "議事要旨",
-          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/wgkaisai/shouryokukatousi_dai1/gijiyousi.pdf"
-        },
-        {
-          "name": "概要版",
-          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/wgkaisai/bc_houkokusyo/gaiyouban.pdf"
-        },
-        {
-          "name": "本体",
-          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/wgkaisai/bc_houkokusyo/hontai.pdf"
-        },
-        {
-          "name": "議事次第",
-          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/jobgatajinji/dai1/shidai.pdf"
-        },
-        {
-          "name": "各社のジョブ型人事の取組について",
-          "url": "https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/jobgatajinji/dai1/shiryou.pdf"
         }
       ]
     },
@@ -232433,6 +232085,27 @@
       ]
     },
     {
+      "id": "maff-sugikafunmai-20240530-003",
+      "councilId": "maff-sugikafunmai",
+      "name": "第3回 検討会",
+      "date": "2024/05/30",
+      "manualLock": true,
+      "round": 3,
+      "officialUrl": "https://www.affrc.maff.go.jp/docs/sugikahunnmai/240123_15.html",
+      "materials": [
+        {
+          "name": "議事要旨",
+          "url": "https://www.affrc.maff.go.jp/docs/sugikahunnmai/attach/pdf/240123_15-4.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "議事次第",
+          "url": "https://www.affrc.maff.go.jp/docs/sugikahunnmai/attach/pdf/240123_15-5.pdf",
+          "manualLock": true
+        }
+      ]
+    },
+    {
       "id": "mhlw-829-20240530-001",
       "councilId": "mhlw-829",
       "name": "第1回 匿名感染症関連情報の第三者提供に関する小委員会",
@@ -242055,6 +241728,27 @@
         {
           "name": "北九州市説明資料",
           "url": "https://www.fsa.go.jp/singi/sustainable_finance/siryou/20240328/03.pdf"
+        }
+      ]
+    },
+    {
+      "id": "maff-sugikafunmai-20240328-002",
+      "councilId": "maff-sugikafunmai",
+      "name": "第2回 検討会",
+      "date": "2024/03/28",
+      "manualLock": true,
+      "round": 2,
+      "officialUrl": "https://www.affrc.maff.go.jp/docs/sugikahunnmai/240123_15.html",
+      "materials": [
+        {
+          "name": "議事要旨",
+          "url": "https://www.affrc.maff.go.jp/docs/sugikahunnmai/attach/pdf/240123_15-3.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "議事次第",
+          "url": "https://www.affrc.maff.go.jp/docs/sugikahunnmai/attach/pdf/240123_15-2.pdf",
+          "manualLock": true
         }
       ]
     },
@@ -258220,6 +257914,62 @@
         {
           "name": "議事概要",
           "url": "https://www.fsc.go.jp/fsciis/attachedFile/download?retrievalId=kai20240122no1&fileId=310"
+        }
+      ]
+    },
+    {
+      "id": "maff-sugikafunmai-20240122-001",
+      "councilId": "maff-sugikafunmai",
+      "name": "第1回 検討会",
+      "date": "2024/01/22",
+      "manualLock": true,
+      "round": 1,
+      "officialUrl": "https://www.affrc.maff.go.jp/docs/sugikahunnmai/240123.html",
+      "materials": [
+        {
+          "name": "議事要旨",
+          "url": "https://www.affrc.maff.go.jp/docs/sugikahunnmai/attach/pdf/240123_15-1.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "議事次第",
+          "url": "https://www.affrc.maff.go.jp/docs/sugikahunnmai/attach/pdf/240123-1.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "資料1 「スギ花粉米の実用化に向けた官民連携検討会」の設置について",
+          "url": "https://www.affrc.maff.go.jp/docs/sugikahunnmai/attach/pdf/240123-2.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "資料2 スギ花粉米の実用化に向けた状況",
+          "url": "https://www.affrc.maff.go.jp/docs/sugikahunnmai/attach/pdf/240123-3.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "資料3 スギ花粉米のこれまでの研究概要",
+          "url": "https://www.affrc.maff.go.jp/docs/sugikahunnmai/attach/pdf/240123-10.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "資料4 アレルゲン免疫療法薬市場",
+          "url": "https://www.affrc.maff.go.jp/docs/sugikahunnmai/attach/pdf/240123-5.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "資料5 スギ花粉米の実用化に向けて検討すべき課題",
+          "url": "https://www.affrc.maff.go.jp/docs/sugikahunnmai/attach/pdf/240123-9.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "資料6 「スギ花粉米の実用化に向けた官民連携検討会」専門チームの設置について",
+          "url": "https://www.affrc.maff.go.jp/docs/sugikahunnmai/attach/pdf/240123-7.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "資料7 検討会の今後の進め方",
+          "url": "https://www.affrc.maff.go.jp/docs/sugikahunnmai/attach/pdf/240123-8.pdf",
+          "manualLock": true
         }
       ]
     },
@@ -424038,16 +423788,6 @@
       ]
     },
     {
-      "id": "caa-seisaku_kaigi-20210615-s40",
-      "councilId": "caa-seisaku_kaigi",
-      "name": "消費者政策会議",
-      "date": "2021/06/15",
-      "manualLock": true,
-      "officialUrl": "https://www.caa.go.jp/policies/policy/consumer_policy/meeting_materials/review_meeting_001",
-      "discoveredAt": "2026/09/30 07:39",
-      "materials": []
-    },
-    {
       "id": "cao-zeicho_noukan_senmonka-20210615-005",
       "councilId": "cao-zeicho_noukan_senmonka",
       "name": "第5回 納税環境整備に関する専門家会合",
@@ -450094,6 +449834,27 @@
         {
           "name": "PPP/PFI推進アクションプラン(令和2年改定版)の取組状況について(PDF形式:463KB)",
           "url": "https://www8.cao.go.jp/pfi/iinkai/kaisai/iinkai/54kai/pdf/iinkai_shiryo_a5413.pdf",
+          "manualLock": true
+        }
+      ]
+    },
+    {
+      "id": "cas-tppinfo-20201208-007",
+      "councilId": "cas-tppinfo",
+      "name": "第7回会合",
+      "date": "2020/12/08",
+      "manualLock": true,
+      "round": 7,
+      "officialUrl": "https://www.cas.go.jp/jp/tpp/tppinfo/taiko/torikumihonbu/index.html",
+      "materials": [
+        {
+          "name": "「総合的なＴＰＰ等関連政策大綱（改訂案）",
+          "url": "https://www.cas.go.jp/jp/tpp/tppinfo/2020/pdf/20201208_tpp_taikoukaiteian.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "「総合的なＴＰＰ等関連政策大綱（改訂案）のポイント",
+          "url": "https://www.cas.go.jp/jp/tpp/tppinfo/2020/pdf/20201208_tpp_taikoukaiteipoint_an.pdf",
           "manualLock": true
         }
       ]
@@ -486357,6 +486118,37 @@
       ]
     },
     {
+      "id": "cas-tppinfo-20191205-006",
+      "councilId": "cas-tppinfo",
+      "name": "第6回会合",
+      "date": "2019/12/05",
+      "manualLock": true,
+      "round": 6,
+      "officialUrl": "https://www.cas.go.jp/jp/tpp/tppinfo/taiko/torikumihonbu/index.html",
+      "materials": [
+        {
+          "name": "議事次第",
+          "url": "https://www.cas.go.jp/jp/tpp/tppinfo/taiko/torikumihonbu/pdf/20191205_tpp_gijishidai.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "議事録",
+          "url": "https://www.cas.go.jp/jp/tpp/tppinfo/taiko/torikumihonbu/pdf/20191205_tpp_gijiroku.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "「総合的なＴＰＰ等関連政策大綱（改訂案）",
+          "url": "https://www.cas.go.jp/jp/tpp/tppinfo/taiko/torikumihonbu/pdf/20191205_tpp_taikoukaiteian.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "「総合的なＴＰＰ等関連政策大綱（改訂案）のポイント",
+          "url": "https://www.cas.go.jp/jp/tpp/tppinfo/taiko/torikumihonbu/pdf/20191205_tpp_taikoukaiteipoint_an.pdf",
+          "manualLock": true
+        }
+      ]
+    },
+    {
       "id": "meti-sankoshin_hoan_shohi_denryoku_anzen-20191205-021",
       "councilId": "meti-sankoshin_hoan_shohi_denryoku_anzen",
       "name": "第21回 産業構造審議会 保安・消費生活用製品安全分科会 電力安全小委員会",
@@ -494314,6 +494106,32 @@
         {
           "name": "【議事録】第28回消費者教育推進会議[PDF:420KB]",
           "url": "https://www.caa.go.jp/policies/council/cepc/meeting_materials_4/assets/consumer_education_203_210216_01.pdf"
+        }
+      ]
+    },
+    {
+      "id": "cas-tppinfo-20191001-005",
+      "councilId": "cas-tppinfo",
+      "name": "第5回会合",
+      "date": "2019/10/01",
+      "manualLock": true,
+      "round": 5,
+      "officialUrl": "https://www.cas.go.jp/jp/tpp/tppinfo/taiko/torikumihonbu/index.html",
+      "materials": [
+        {
+          "name": "議事次第",
+          "url": "https://www.cas.go.jp/jp/tpp/tppinfo/taiko/torikumihonbu/pdf/20191001_tpp_gijishidai.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "議事録",
+          "url": "https://www.cas.go.jp/jp/tpp/tppinfo/taiko/torikumihonbu/pdf/20191001_tpp_gijiroku.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "「総合的なＴＰＰ等関連政策大綱改訂に係る基本方針」",
+          "url": "https://www.cas.go.jp/jp/tpp/tppinfo/taiko/torikumihonbu/pdf/20191001_tpp_kihonhoushin.pdf",
+          "manualLock": true
         }
       ]
     },
@@ -551083,414 +550901,6 @@
       ]
     },
     {
-      "id": "cas-296-20171222-003",
-      "councilId": "cas-296",
-      "name": "第3回 廃止した本部・会議等の一覧",
-      "date": "2017/12/22",
-      "manualLock": true,
-      "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/kankorikkoku/kaisai.html",
-      "materials": [
-        {
-          "name": "議事次第 (PDF/38KB)",
-          "url": "https://www.cas.go.jp/jp/seisakukaigi/kankorikkoku/dai1/gijisidai.pdf"
-        },
-        {
-          "name": "議事要旨 (PDF/144KB)",
-          "url": "https://www.cas.go.jp/jp/seisakukaigi/kankorikkoku/dai1/gijiyousi.pdf"
-        },
-        {
-          "name": "議事次第 (PDF/70KB)",
-          "url": "https://www.cas.go.jp/jp/seisakukaigi/kankorikkoku/dai2/gijisidai.pdf"
-        },
-        {
-          "name": "議事要旨 (PDF/138KB)",
-          "url": "https://www.cas.go.jp/jp/seisakukaigi/kankorikkoku/dai2/gijiyousi.pdf"
-        },
-        {
-          "name": "議事次第 (PDF/49KB)",
-          "url": "https://www.cas.go.jp/jp/seisakukaigi/kankorikkoku/dai3/gijisidai.pdf"
-        },
-        {
-          "name": "議事要旨 (PDF/221KB)",
-          "url": "https://www.cas.go.jp/jp/seisakukaigi/kankorikkoku/dai3/gijiyousi.pdf"
-        },
-        {
-          "name": "議事次第 (PDF/33KB)",
-          "url": "https://www.cas.go.jp/jp/seisakukaigi/kankorikkoku/dai4/gijisidai.pdf"
-        },
-        {
-          "name": "配布資料 (PDF/2,400KB)",
-          "url": "https://www.cas.go.jp/jp/seisakukaigi/kankorikkoku/dai4/siryou.pdf"
-        },
-        {
-          "name": "議事要旨 (PDF/111KB)",
-          "url": "https://www.cas.go.jp/jp/seisakukaigi/kankorikkoku/dai4/gijiyousi.pdf"
-        },
-        {
-          "name": "議事次第 (PDF/36KB)",
-          "url": "https://www.cas.go.jp/jp/seisakukaigi/kankorikkoku/dai5/gijisidai.pdf"
-        },
-        {
-          "name": "配布資料 (PDF/2,731KB)",
-          "url": "https://www.cas.go.jp/jp/seisakukaigi/kankorikkoku/dai5/siryou.pdf"
-        },
-        {
-          "name": "議事要旨 (PDF/119KB)",
-          "url": "https://www.cas.go.jp/jp/seisakukaigi/kankorikkoku/dai5/gijiyousi.pdf"
-        },
-        {
-          "name": "議事次第 (PDF/92KB)",
-          "url": "https://www.cas.go.jp/jp/seisakukaigi/kankorikkoku/dai6/gijisidai.pdf"
-        },
-        {
-          "name": "配布資料 (PDF/1,040KB)",
-          "url": "https://www.cas.go.jp/jp/seisakukaigi/kankorikkoku/dai6/siryou.pdf"
-        },
-        {
-          "name": "議事次第 (PDF/90KB)",
-          "url": "https://www.cas.go.jp/jp/seisakukaigi/kankorikkoku/dai7/gijisidai.pdf"
-        },
-        {
-          "name": "配布資料 (PDF/1,037KB)",
-          "url": "https://www.cas.go.jp/jp/seisakukaigi/kankorikkoku/dai7/siryou.pdf"
-        },
-        {
-          "name": "議事次第 (PDF/96KB)",
-          "url": "https://www.cas.go.jp/jp/seisakukaigi/kankorikkoku/dai8/gijisidai.pdf"
-        },
-        {
-          "name": "配布資料 (PDF/312KB)",
-          "url": "https://www.cas.go.jp/jp/seisakukaigi/kankorikkoku/dai8/siryou.pdf"
-        },
-        {
-          "name": "議事要旨 (PDF/153KB)",
-          "url": "https://www.cas.go.jp/jp/seisakukaigi/kankorikkoku/dai8/gijiyousi.pdf"
-        },
-        {
-          "name": "議事次第 (PDF/90KB)",
-          "url": "https://www.cas.go.jp/jp/seisakukaigi/kankorikkoku/dai9/gijisidai.pdf"
-        },
-        {
-          "name": "配布資料 (PDF/2,335KB)",
-          "url": "https://www.cas.go.jp/jp/seisakukaigi/kankorikkoku/dai9/siryou.pdf"
-        },
-        {
-          "name": "議事次第 (PDF/23KB)",
-          "url": "https://www.cas.go.jp/jp/seisakukaigi/kankorikkoku/dai10/gijisidai.pdf"
-        },
-        {
-          "name": "配布資料 (PDF/89KB)",
-          "url": "https://www.cas.go.jp/jp/seisakukaigi/kankorikkoku/dai10/siryou.pdf"
-        },
-        {
-          "name": "議事次第 (PDF/5KB)",
-          "url": "https://www.cas.go.jp/jp/seisakukaigi/kankorikkoku/dai11/gijisidai.pdf"
-        },
-        {
-          "name": "配布資料 (PDF/3,382KB)",
-          "url": "https://www.cas.go.jp/jp/seisakukaigi/kankorikkoku/dai11/siryou.pdf"
-        },
-        {
-          "name": "議事次第 (PDF/137KB)",
-          "url": "https://www.cas.go.jp/jp/seisakukaigi/kankorikkoku/dai12/gijisidai.pdf"
-        },
-        {
-          "name": "配布資料 (PDF/186KB)",
-          "url": "https://www.cas.go.jp/jp/seisakukaigi/kankorikkoku/dai12/siryou.pdf"
-        },
-        {
-          "name": "議事次第 (PDF/68KB)",
-          "url": "https://www.cas.go.jp/jp/seisakukaigi/kankorikkoku/dai13/gijisidai.pdf"
-        },
-        {
-          "name": "配布資料 (PDF/2,193KB)",
-          "url": "https://www.cas.go.jp/jp/seisakukaigi/kankorikkoku/dai13/siryou.pdf"
-        },
-        {
-          "name": "議事次第 (PDF/64KB)",
-          "url": "https://www.cas.go.jp/jp/seisakukaigi/kankorikkoku/dai14/gijisidai.pdf"
-        },
-        {
-          "name": "配布資料 (PDF/51KB)",
-          "url": "https://www.cas.go.jp/jp/seisakukaigi/kankorikkoku/dai14/siryou.pdf"
-        },
-        {
-          "name": "議事次第 (PDF/61KB)",
-          "url": "https://www.cas.go.jp/jp/seisakukaigi/kankorikkoku/dai15/gijisidai.pdf"
-        },
-        {
-          "name": "配布資料 (PDF/213KB)",
-          "url": "https://www.cas.go.jp/jp/seisakukaigi/kankorikkoku/dai15/siryou.pdf"
-        },
-        {
-          "name": "議事次第 (PDF/49KB)",
-          "url": "https://www.cas.go.jp/jp/seisakukaigi/kankorikkoku/dai16/gijisidai.pdf"
-        },
-        {
-          "name": "配布資料 (PDF/1,376KB)",
-          "url": "https://www.cas.go.jp/jp/seisakukaigi/kankorikkoku/dai16/siryou.pdf"
-        },
-        {
-          "name": "議事要旨 (PDF/262KB)",
-          "url": "https://www.cas.go.jp/jp/seisakukaigi/kankorikkoku/dai16/gijiyousi.pdf"
-        },
-        {
-          "name": "議事次第 (PDF/131KB)",
-          "url": "https://www.cas.go.jp/jp/seisakukaigi/kankorikkoku/dai17/gijisidai.pdf"
-        },
-        {
-          "name": "配布資料 (PDF/880KB)",
-          "url": "https://www.cas.go.jp/jp/seisakukaigi/kankorikkoku/dai17/siryou.pdf"
-        },
-        {
-          "name": "議事次第 (PDF/174KB)",
-          "url": "https://www.cas.go.jp/jp/seisakukaigi/kankorikkoku/dai18/gijisidai.pdf"
-        },
-        {
-          "name": "配布資料 (PDF/242KB)",
-          "url": "https://www.cas.go.jp/jp/seisakukaigi/kankorikkoku/dai18/siryou.pdf"
-        },
-        {
-          "name": "議事次第 (PDF/48KB)",
-          "url": "https://www.cas.go.jp/jp/seisakukaigi/kankorikkoku/dai19/gijisidai.pdf"
-        },
-        {
-          "name": "配布資料 (PDF/1,790KB)",
-          "url": "https://www.cas.go.jp/jp/seisakukaigi/kankorikkoku/dai19/siryou.pdf"
-        },
-        {
-          "name": "議事要旨 (PDF/108KB)",
-          "url": "https://www.cas.go.jp/jp/seisakukaigi/kankorikkoku/dai19/gijiyousi.pdf"
-        },
-        {
-          "name": "議事次第 (PDF/26KB)",
-          "url": "https://www.cas.go.jp/jp/seisakukaigi/kankorikkoku/dai20/gijisidai.pdf"
-        },
-        {
-          "name": "配布資料 (PDF/1,381KB)",
-          "url": "https://www.cas.go.jp/jp/seisakukaigi/kankorikkoku/dai20/siryou.pdf"
-        },
-        {
-          "name": "議事要旨 (PDF/274KB)",
-          "url": "https://www.cas.go.jp/jp/seisakukaigi/kankorikkoku/dai20/gijiyousi.pdf"
-        },
-        {
-          "name": "議事次第 (PDF/25KB)",
-          "url": "https://www.cas.go.jp/jp/seisakukaigi/kankorikkoku/dai21/gijisidai.pdf"
-        },
-        {
-          "name": "配布資料 (PDF/7,065KB)",
-          "url": "https://www.cas.go.jp/jp/seisakukaigi/kankorikkoku/dai21/siryou.pdf"
-        },
-        {
-          "name": "議事要旨 (PDF/300KB)",
-          "url": "https://www.cas.go.jp/jp/seisakukaigi/kankorikkoku/dai21/gijiyousi.pdf"
-        },
-        {
-          "name": "議事次第 (PDF/38KB)",
-          "url": "https://www.cas.go.jp/jp/seisakukaigi/kankorikkoku/dai22/gijisidai.pdf"
-        },
-        {
-          "name": "配布資料 (PDF/136KB)",
-          "url": "https://www.cas.go.jp/jp/seisakukaigi/kankorikkoku/dai22/siryou.pdf"
-        },
-        {
-          "name": "議事次第 PDF/101KB)",
-          "url": "https://www.cas.go.jp/jp/seisakukaigi/kankorikkoku/dai23/gijisidai.pdf"
-        },
-        {
-          "name": "議事要旨 (PDF/309KB)",
-          "url": "https://www.cas.go.jp/jp/seisakukaigi/kankorikkoku/dai23/gijiyousi.pdf"
-        },
-        {
-          "name": "議事次第 (PDF/69KB)",
-          "url": "https://www.cas.go.jp/jp/seisakukaigi/kankorikkoku/dai24/gijisidai.pdf"
-        },
-        {
-          "name": "議事要旨 (PDF/344KB)",
-          "url": "https://www.cas.go.jp/jp/seisakukaigi/kankorikkoku/dai24/gijiyousi.pdf"
-        },
-        {
-          "name": "議事次第 (PDF/41KB)",
-          "url": "https://www.cas.go.jp/jp/seisakukaigi/kankorikkoku/dai25/gijisidai.pdf"
-        },
-        {
-          "name": "配布資料 (PDF/133KB)",
-          "url": "https://www.cas.go.jp/jp/seisakukaigi/kankorikkoku/dai25/siryou.pdf"
-        },
-        {
-          "name": "議事次第 (PDF/7.9KB)",
-          "url": "https://www.cas.go.jp/jp/seisakukaigi/kankorikkoku/dai26/gijisidai.pdf"
-        },
-        {
-          "name": "配布資料 (PDF/5.4MB)",
-          "url": "https://www.cas.go.jp/jp/seisakukaigi/kankorikkoku/dai26/siryou.pdf"
-        },
-        {
-          "name": "議事要旨 (PDF/310KB)",
-          "url": "https://www.cas.go.jp/jp/seisakukaigi/kankorikkoku/dai26/gijiyousi.pdf"
-        },
-        {
-          "name": "議事次第 (PDF/29KB)",
-          "url": "https://www.cas.go.jp/jp/seisakukaigi/kankorikkoku/dai27/gijishidai.pdf"
-        },
-        {
-          "name": "配布資料 (PDF/84KB)",
-          "url": "https://www.cas.go.jp/jp/seisakukaigi/kankorikkoku/dai27/shiryo.pdf"
-        },
-        {
-          "name": "議事次第 (PDF/55KB)",
-          "url": "https://www.cas.go.jp/jp/seisakukaigi/kankorikkoku/dai28/gijishidai.pdf"
-        },
-        {
-          "name": "配布資料 (PDF/1,256KB)",
-          "url": "https://www.cas.go.jp/jp/seisakukaigi/kankorikkoku/dai28/shiryo.pdf"
-        },
-        {
-          "name": "議事次第 (PDF/41KB)",
-          "url": "https://www.cas.go.jp/jp/seisakukaigi/kankorikkoku/ap_dai1/gijisidai.pdf"
-        },
-        {
-          "name": "配布資料 (PDF/13.3MB)",
-          "url": "https://www.cas.go.jp/jp/seisakukaigi/kankorikkoku/ap_dai1/siryou.pdf"
-        },
-        {
-          "name": "議事要旨 (PDF/360KB)",
-          "url": "https://www.cas.go.jp/jp/seisakukaigi/kankorikkoku/ap_dai1/gijiyousi.pdf"
-        },
-        {
-          "name": "観光立国推進閣僚会議の開催について",
-          "url": "https://www.cas.go.jp/jp/seisakukaigi/kankorikkoku/dai1/siryou01.pdf",
-          "manualLock": true
-        },
-        {
-          "name": "観光をめぐる現状について",
-          "url": "https://www.cas.go.jp/jp/seisakukaigi/kankorikkoku/dai1/siryou02.pdf",
-          "manualLock": true
-        },
-        {
-          "name": "今後の進め方について(案)",
-          "url": "https://www.cas.go.jp/jp/seisakukaigi/kankorikkoku/dai1/siryou03.pdf",
-          "manualLock": true
-        },
-        {
-          "name": "観光立国推進ワーキングチームの開催について",
-          "url": "https://www.cas.go.jp/jp/seisakukaigi/kankorikkoku/dai1/siryou04.pdf",
-          "manualLock": true
-        },
-        {
-          "name": "観光立国実現に向けたアクション・プログラム(案)",
-          "url": "https://www.cas.go.jp/jp/seisakukaigi/kankorikkoku/dai2/siryou1.pdf",
-          "manualLock": true
-        },
-        {
-          "name": "観光立国推進ワーキングチームの開催について",
-          "url": "https://www.cas.go.jp/jp/seisakukaigi/kankorikkoku/dai2/siryou2.pdf",
-          "manualLock": true
-        },
-        {
-          "name": "観光立国推進閣僚会議の開催について",
-          "url": "https://www.cas.go.jp/jp/seisakukaigi/kankorikkoku/dai2/sankou1.pdf",
-          "manualLock": true
-        },
-        {
-          "name": "観光立国推進ワーキングチーム及び観光立国推進有識者会議開催状況",
-          "url": "https://www.cas.go.jp/jp/seisakukaigi/kankorikkoku/dai2/sankou2.pdf",
-          "manualLock": true
-        },
-        {
-          "name": "観光立国推進有識者会議メンバー",
-          "url": "https://www.cas.go.jp/jp/seisakukaigi/kankorikkoku/dai2/sankou3.pdf",
-          "manualLock": true
-        },
-        {
-          "name": "観光をめぐる現状について",
-          "url": "https://www.cas.go.jp/jp/seisakukaigi/kankorikkoku/dai3/siryou1.pdf",
-          "manualLock": true
-        },
-        {
-          "name": "今後の進め方について",
-          "url": "https://www.cas.go.jp/jp/seisakukaigi/kankorikkoku/dai3/siryou2.pdf",
-          "manualLock": true
-        },
-        {
-          "name": "今後の進め方について(案)",
-          "url": "https://www.cas.go.jp/jp/seisakukaigi/kankorikkoku/dai3/sankou1.pdf",
-          "manualLock": true
-        },
-        {
-          "name": "観光立国推進ワーキングチームの開催について",
-          "url": "https://www.cas.go.jp/jp/seisakukaigi/kankorikkoku/dai3/sankou2.pdf",
-          "manualLock": true
-        },
-        {
-          "name": "観光の現状について",
-          "url": "https://www.cas.go.jp/jp/seisakukaigi/kankorikkoku/dai23/siryou1.pdf",
-          "manualLock": true
-        },
-        {
-          "name": "今後の取組について",
-          "url": "https://www.cas.go.jp/jp/seisakukaigi/kankorikkoku/dai23/siryou2.pdf",
-          "manualLock": true
-        },
-        {
-          "name": "法務省資料",
-          "url": "https://www.cas.go.jp/jp/seisakukaigi/kankorikkoku/dai23/siryou3.pdf",
-          "manualLock": true
-        },
-        {
-          "name": "文部科学省資料(PDF/1,273KB)",
-          "url": "https://www.cas.go.jp/jp/seisakukaigi/kankorikkoku/dai23/siryou4.pdf",
-          "manualLock": true
-        },
-        {
-          "name": "農林水産省資料(PDF/1,524KB)",
-          "url": "https://www.cas.go.jp/jp/seisakukaigi/kankorikkoku/dai23/siryou5.pdf",
-          "manualLock": true
-        },
-        {
-          "name": "経済産業省資料",
-          "url": "https://www.cas.go.jp/jp/seisakukaigi/kankorikkoku/dai23/siryou6.pdf",
-          "manualLock": true
-        },
-        {
-          "name": "環境省資料(PDF/1,512KB)",
-          "url": "https://www.cas.go.jp/jp/seisakukaigi/kankorikkoku/dai23/siryou7.pdf",
-          "manualLock": true
-        },
-        {
-          "name": "デジタル庁資料",
-          "url": "https://www.cas.go.jp/jp/seisakukaigi/kankorikkoku/dai23/siryou8.pdf",
-          "manualLock": true
-        },
-        {
-          "name": "観光の現状について(PDF/1,334KB)",
-          "url": "https://www.cas.go.jp/jp/seisakukaigi/kankorikkoku/dai24/siryou1.pdf",
-          "manualLock": true
-        },
-        {
-          "name": "今後の取組について",
-          "url": "https://www.cas.go.jp/jp/seisakukaigi/kankorikkoku/dai24/siryou2.pdf",
-          "manualLock": true
-        },
-        {
-          "name": "文部科学省資料(PDF/1,563KB)",
-          "url": "https://www.cas.go.jp/jp/seisakukaigi/kankorikkoku/dai24/siryou3.pdf",
-          "manualLock": true
-        },
-        {
-          "name": "環境省資料(PDF/1,056KB)",
-          "url": "https://www.cas.go.jp/jp/seisakukaigi/kankorikkoku/dai24/siryou4.pdf",
-          "manualLock": true
-        },
-        {
-          "name": "法務省資料",
-          "url": "https://www.cas.go.jp/jp/seisakukaigi/kankorikkoku/dai24/siryou5.pdf",
-          "manualLock": true
-        }
-      ]
-    },
-    {
       "id": "cas-308-20171222-009",
       "councilId": "cas-308",
       "name": "官民ファンドの活用推進に関する関係閣僚会議(第9回)議事次第|内閣官房ホームページ",
@@ -554203,6 +553613,37 @@
         {
           "name": "C帯サブ・ワーキング・グループ構成員名簿",
           "url": "https://www.soumu.go.jp/main_content/000521750.pdf"
+        }
+      ]
+    },
+    {
+      "id": "cas-tppinfo-20171124-004",
+      "councilId": "cas-tppinfo",
+      "name": "第4回会合",
+      "date": "2017/11/24",
+      "manualLock": true,
+      "round": 4,
+      "officialUrl": "https://www.cas.go.jp/jp/tpp/tppinfo/taiko/torikumihonbu/index.html",
+      "materials": [
+        {
+          "name": "議事次第",
+          "url": "https://www.cas.go.jp/jp/tpp/tppinfo/taiko/torikumihonbu/pdf/20171124_tpp_kaigou_gijisidai.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "議事録",
+          "url": "https://www.cas.go.jp/jp/tpp/tppinfo/taiko/torikumihonbu/pdf/20171124_tpp_kaigou_gijiroku.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "「総合的なＴＰＰ等関連政策大綱（案）」",
+          "url": "https://www.cas.go.jp/jp/tpp/tppinfo/taiko/torikumihonbu/pdf/20171124_tpp_kaigou1.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "「総合的なＴＰＰ等関連政策大綱」のポイント」",
+          "url": "https://www.cas.go.jp/jp/tpp/tppinfo/taiko/torikumihonbu/pdf/20171124_tpp_kaigou2.pdf",
+          "manualLock": true
         }
       ]
     },
@@ -562368,6 +561809,42 @@
         {
           "name": "ワーキンググループの検討の進め方について(案)",
           "url": "https://www.bunka.go.jp/seisaku/bunkashingikai/kokugo/nihongo_wg/02/pdf/sanko1.pdf",
+          "manualLock": true
+        }
+      ]
+    },
+    {
+      "id": "cas-tppinfo-20170714-003",
+      "councilId": "cas-tppinfo",
+      "name": "第3回会合",
+      "date": "2017/07/14",
+      "manualLock": true,
+      "round": 3,
+      "officialUrl": "https://www.cas.go.jp/jp/tpp/tppinfo/taiko/torikumihonbu/index.html",
+      "materials": [
+        {
+          "name": "議事次第",
+          "url": "https://www.cas.go.jp/jp/tpp/tppinfo/taiko/torikumihonbu/pdf/20170714_tpp_kaigou_gijisidai.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "議事録",
+          "url": "https://www.cas.go.jp/jp/tpp/tppinfo/taiko/torikumihonbu/pdf/20170714_tpp_kaigou_gaiyo.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "「ＴＰＰ（環太平洋パートナーシップ）等総合対策本部の設置について」",
+          "url": "https://www.cas.go.jp/jp/tpp/tppinfo/taiko/torikumihonbu/pdf/20170714_tpp_kaigou1.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "「日ＥＵ経済連携協定（ＥＰＡ）交渉の大枠合意を踏まえた総合的な政策対応に関する基本方針（案）」",
+          "url": "https://www.cas.go.jp/jp/tpp/tppinfo/taiko/torikumihonbu/pdf/20170714_tpp_kaigou2.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "「ＴＰＰ高級事務レベル会合の結果概要」",
+          "url": "https://www.cas.go.jp/jp/tpp/tppinfo/taiko/torikumihonbu/pdf/20170714_tpp_kaigou3.pdf",
           "manualLock": true
         }
       ]
@@ -607329,6 +606806,42 @@
       ]
     },
     {
+      "id": "cas-tppinfo-20151125-002",
+      "councilId": "cas-tppinfo",
+      "name": "第2回会合",
+      "date": "2015/11/25",
+      "manualLock": true,
+      "round": 2,
+      "officialUrl": "https://www.cas.go.jp/jp/tpp/tppinfo/taiko/torikumihonbu/index.html",
+      "materials": [
+        {
+          "name": "議事次第",
+          "url": "https://www.cas.go.jp/jp/tpp/tppinfo/taiko/torikumihonbu/pdf/151125_sougoukaigou02_giji.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "議事録",
+          "url": "https://www.cas.go.jp/jp/tpp/tppinfo/taiko/torikumihonbu/pdf/151125_sougoukaigou02_gijiroku.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "「総合的なＴＰＰ関連政策大綱（案）」",
+          "url": "https://www.cas.go.jp/jp/tpp/tppinfo/taiko/torikumihonbu/pdf/151125_sougoukaigou02_siryou1.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "「総合的なＴＰＰ関連政策大綱概要」",
+          "url": "https://www.cas.go.jp/jp/tpp/tppinfo/taiko/torikumihonbu/pdf/151125_sougoukaigou02_siryou2.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "「参考資料」",
+          "url": "https://www.cas.go.jp/jp/tpp/tppinfo/taiko/torikumihonbu/pdf/151125_sougoukaigou02_siryou3.pdf",
+          "manualLock": true
+        }
+      ]
+    },
+    {
       "id": "fsa-kinyu_kessai_wg-20151125-005",
       "councilId": "fsa-kinyu_kessai_wg",
       "name": "第5回 決済業務等の高度化に関するワーキング・グループ",
@@ -610110,6 +609623,37 @@
         {
           "name": "農林水産業・地域の活力創造本部幹事会(局長級会合)設置要領(一部改正(案))",
           "url": "https://www.cas.go.jp/jp/seisakukaigi/nousui/dai16/siryou4.pdf"
+        }
+      ]
+    },
+    {
+      "id": "cas-tppinfo-20151009-001",
+      "councilId": "cas-tppinfo",
+      "name": "第1回会合",
+      "date": "2015/10/09",
+      "manualLock": true,
+      "round": 1,
+      "officialUrl": "https://www.cas.go.jp/jp/tpp/tppinfo/taiko/torikumihonbu/index.html",
+      "materials": [
+        {
+          "name": "議事次第",
+          "url": "https://www.cas.go.jp/jp/tpp/tppinfo/taiko/torikumihonbu/pdf/151009_sougoukaigou01_giji.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "議事録）",
+          "url": "https://www.cas.go.jp/jp/tpp/tppinfo/taiko/torikumihonbu/pdf/151009_sougoukaigou01_gijiroku.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "ＴＰＰ（環太平洋パートナーシップ）総合対策本部の設置について",
+          "url": "https://www.cas.go.jp/jp/tpp/tppinfo/taiko/torikumihonbu/pdf/151009_sougoukaigou01_siryou1.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "環太平洋パートナーシップ（ＴＰＰ）協定交渉の大筋合意を踏まえた総合的な政策対応に関する基本方針（案）」）",
+          "url": "https://www.cas.go.jp/jp/tpp/tppinfo/taiko/torikumihonbu/pdf/151009_sougoukaigou01_siryou2.pdf",
+          "manualLock": true
         }
       ]
     },

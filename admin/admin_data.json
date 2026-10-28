@@ -1340,13 +1340,6 @@
       "officialUrl": "https://www.caa.go.jp/policies/council/",
       "pdf_selector": "a[href*='.pdf'], a[href*='.PDF']"
     },
-    "caa-seisaku_kaigi": {
-      "template": "tpl-general-round-subpage",
-      "manualLock": true,
-      "extract_from_parent_table": true,
-      "officialUrl": "https://www.caa.go.jp/policies/council/category",
-      "pdf_selector": "a[href*='.pdf'], a[href*='.PDF']"
-    },
     "caa-shohisha_seisaku": {
       "template": "tpl-ministry-hybrid-kaisai",
       "manualLock": true,
@@ -2278,14 +2271,6 @@
       "manualLock": true,
       "extract_from_parent_table": true,
       "officialUrl": "https://www.cas.go.jp/jp/seisaku/2027_hakurankai/index.html",
-      "pdf_selector": "a[href*='.pdf'], a[href*='.PDF']"
-    },
-    "cas-296": {
-      "date_regex": "(?:令和|平成)\\d+年\\d+月\\d+日|20\\d{2}年\\d+月\\d+日",
-      "manualLock": true,
-      "template": "tpl-general-round-subpage",
-      "extract_from_parent_table": true,
-      "officialUrl": "https://www.cas.go.jp/jp/seisaku/abolition_list.html",
       "pdf_selector": "a[href*='.pdf'], a[href*='.PDF']"
     },
     "cas-297": {
@@ -3964,11 +3949,11 @@
       "pdf_selector": "a[href*='.pdf'], a[href*='.PDF']"
     },
     "cas-tppinfo": {
-      "template": "tpl-preset-pattern-16",
+      "officialUrl": "https://www.cas.go.jp/jp/tpp/tppinfo/taiko/torikumihonbu/index.html",
       "manualLock": true,
+      "template": "tpl-general-round-subpage",
       "extract_from_parent_table": true,
-      "pdf_selector": "a[href$=\".pdf\"]",
-      "officialUrl": "https://www.cas.go.jp/jp/tpp/tppinfo/2026/index.html"
+      "pdf_selector": "a[href*='.pdf'], a[href*='.PDF']"
     },
     "cas-zensedai_hosyo": {
       "date_regex": "(令和\\d+年\\d+月\\d+日|\\d{4}年\\d{1,2}月\\d{1,2}日)",
@@ -6522,14 +6507,6 @@
       "officialUrl": "https://www.mext.go.jp/sports/b_menu/shingi/index.htm",
       "pdf_selector": "a[href*='.pdf'], a[href*='.PDF']"
     },
-    "jsa-612": {
-      "date_regex": "(?:令和|平成)\\d+年\\d+月\\d+日|20\\d{2}年\\d+月\\d+日",
-      "manualLock": true,
-      "subpage_discovery_pattern": "[^\"\\']*(?:dai\\d+|\\d+kai|kaisai|gijisidai|gijiroku|\\b\\d{3,4}\\.html)[^\"\\']*",
-      "template": "tpl-general-round-subpage",
-      "officialUrl": "https://www.mext.go.jp/sports/b_menu/shingi/category/1361487_19053.html",
-      "pdf_selector": "a[href*='.pdf'], a[href*='.PDF']"
-    },
     "jsa-616": {
       "date_regex": "(?:令和|平成)\\d+年\\d+月\\d+日|20\\d{2}年\\d+月\\d+日",
       "manualLock": true,
@@ -7028,14 +7005,6 @@
       "officialUrl": "https://www.maff.go.jp/j/study/tochi_kento/index.html",
       "pdf_selector": "a[href*='.pdf'], a[href*='.PDF']"
     },
-    "maff-708": {
-      "date_regex": "(?:令和|平成)\\d+年\\d+月\\d+日|20\\d{2}年\\d+月\\d+日",
-      "manualLock": true,
-      "template": "tpl-general-round-subpage",
-      "extract_from_parent_table": true,
-      "officialUrl": "https://www.affrc.maff.go.jp/docs/commitee.htm",
-      "pdf_selector": "a[href*='.pdf'], a[href*='.PDF']"
-    },
     "maff-709": {
       "date_regex": "(?:令和|平成)\\d+年\\d+月\\d+日|20\\d{2}年\\d+月\\d+日",
       "manualLock": true,
@@ -7249,6 +7218,13 @@
       "manualLock": true,
       "extract_from_parent_table": true,
       "officialUrl": "https://www.maff.go.jp/j/council/sizai/index.html#a-3",
+      "pdf_selector": "a[href*='.pdf'], a[href*='.PDF']"
+    },
+    "maff-sugikafunmai": {
+      "officialUrl": "https://www.affrc.maff.go.jp/docs/sugikahunnmai/240123_15.html",
+      "manualLock": true,
+      "template": "tpl-general-round-subpage",
+      "extract_from_parent_table": true,
       "pdf_selector": "a[href*='.pdf'], a[href*='.PDF']"
     },
     "maff-suitou_shuukaku_chousa": {
@@ -15805,17 +15781,6 @@
       "consecutiveFailures": 0,
       "manualLockActive": false
     },
-    "caa-seisaku_kaigi": {
-      "lastAttempt": "2026-10-12 09:16:10",
-      "result": "success",
-      "resultReason": "開催回 7 件を検出（資料・日付完備）",
-      "extractionMethod": "rule",
-      "materialsCount": 17,
-      "datesCount": 5,
-      "failureReason": "",
-      "consecutiveFailures": 0,
-      "manualLockActive": false
-    },
     "caa-shohisha_seisaku": {
       "lastAttempt": "2026-10-24 07:05:32",
       "result": "success",
@@ -17098,17 +17063,6 @@
       "resultReason": "開催回 6 件を検出（資料・日付完備）",
       "extractionMethod": "rule",
       "materialsCount": 21,
-      "datesCount": 5,
-      "failureReason": "",
-      "consecutiveFailures": 0,
-      "manualLockActive": false
-    },
-    "cas-296": {
-      "lastAttempt": "2026-10-24 07:04:13",
-      "result": "success",
-      "resultReason": "開催回 2 件を検出（資料・日付完備）",
-      "extractionMethod": "rule",
-      "materialsCount": 74,
       "datesCount": 5,
       "failureReason": "",
       "consecutiveFailures": 0,
@@ -22669,17 +22623,6 @@
       "consecutiveFailures": 0,
       "manualLockActive": false
     },
-    "jsa-612": {
-      "lastAttempt": "2026-10-24 07:04:40",
-      "result": "partial",
-      "resultReason": "開催日のみ検出（資料0件: 平成27年9月30日）",
-      "extractionMethod": "rule",
-      "materialsCount": 0,
-      "datesCount": 1,
-      "failureReason": "",
-      "consecutiveFailures": 0,
-      "manualLockActive": false
-    },
     "jsa-616": {
       "lastAttempt": "2026-10-24 07:05:17",
       "result": "success",
@@ -23383,17 +23326,6 @@
       "failureReason": "",
       "consecutiveFailures": 0,
       "manualLockActive": false
-    },
-    "maff-708": {
-      "lastAttempt": "2026-10-24 07:04:58",
-      "result": "partial",
-      "resultReason": "開催日未取得（資料のみ検出）",
-      "extractionMethod": "rule",
-      "materialsCount": 4,
-      "datesCount": 0,
-      "failureReason": "",
-      "consecutiveFailures": 0,
-      "manualLockActive": true
     },
     "maff-709": {
       "lastAttempt": "2026-09-26 15:52:33",
@@ -33156,6 +33088,15 @@
       "reason": "消費者庁 2026年度会議・研究会一覧ポータル（個別会議体ではないため除外）"
     },
     {
+      "id": "caa-seisaku_kaigi",
+      "name": "政策会議等",
+      "ministry": "CAA",
+      "category": "COUNCIL",
+      "officialUrl": "https://www.caa.go.jp/policies/council/category",
+      "rejectedAt": "2026-10-28",
+      "reason": "消費者庁 政策会議等一覧ポータル（消費者政策会議 cas-330 と重複のため除外）"
+    },
+    {
       "id": "cao-1815",
       "name": "経済社会構造に関する有識者会議",
       "ministry": "CAO",
@@ -33550,6 +33491,15 @@
       "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/",
       "rejectedAt": "2026-09-12",
       "reason": "ディスカバリー精査: ポータル一覧・特定開催回・報告書・アンカー重複のため却下"
+    },
+    {
+      "id": "cas-296",
+      "name": "廃止した本部・会議等の一覧",
+      "ministry": "CAS",
+      "category": "COUNCIL",
+      "officialUrl": "https://www.cas.go.jp/jp/seisaku/abolition_list.html",
+      "rejectedAt": "2026-10-28",
+      "reason": "内閣官房 廃止した本部・会議等の一覧（ポータル目次ページのため除外）"
     },
     {
       "id": "cas-298",
@@ -34461,6 +34411,15 @@
       "reason": "ディスカバリー精査: ポータル一覧・特定開催回・報告書・アンカー重複のため却下"
     },
     {
+      "id": "jsa-612",
+      "name": "政策分野別の審議会情報を見る",
+      "ministry": "JSA",
+      "category": "COUNCIL",
+      "officialUrl": "https://www.mext.go.jp/sports/b_menu/shingi/category/1361487_19053.html",
+      "rejectedAt": "2026-10-28",
+      "reason": "スポーツ庁 政策分野別審議会情報ポータル（ナビゲーションUIリンクのため除外）"
+    },
+    {
       "id": "maff-2236",
       "name": "審議会",
       "ministry": "MAFF",
@@ -34513,6 +34472,15 @@
       "officialUrl": "https://www.maff.go.jp/j/study/index.html",
       "rejectedAt": "2026-09-29",
       "reason": "不要な目次・リンク集会議体のため削除 (Drop 32)"
+    },
+    {
+      "id": "maff-708",
+      "name": "各種委員会等情報",
+      "ministry": "MAFF",
+      "category": "COUNCIL",
+      "officialUrl": "https://www.affrc.maff.go.jp/docs/commitee.htm",
+      "rejectedAt": "2026-10-28",
+      "reason": "農林水産技術会議 各種委員会等一覧ポータル（個別会議体 maff-sugikafunmai へ分離移行）"
     },
     {
       "id": "maff-710",
@@ -36724,7 +36692,6 @@
       "maff-659",
       "maff-662",
       "maff-681",
-      "maff-708",
       "maff-709",
       "maff-711",
       "maff-daisansha_iinkai",
@@ -36733,6 +36700,7 @@
       "maff-shokuiku_mieruka_wg",
       "maff-shokuiku_suishin_hyouka_iinkai",
       "maff-shokuiku_suishin_kaigi",
+      "maff-sugikafunmai",
       "meti-1664",
       "meti-1666",
       "meti-1673",
@@ -38758,7 +38726,6 @@
       "anre-souene_kihon_seisaku-20240722-001",
       "anre-souene_kihon_seisaku-20240816-002",
       "caa-209-20260612-001",
-      "caa-seisaku_kaigi-20210615-s40",
       "caa-shokuhin_eisei_kijun-20250929-s05",
       "caa-shokuhin_eisei_kijun-20251118-s06",
       "caa-shokuhin_eisei_kijun-20260714-s06",
@@ -39815,8 +39782,6 @@
       "cao-zeicho_sozoku_zoyo_senmonka-20221005-001",
       "cao-zeicho_sozoku_zoyo_senmonka-20221021-002",
       "cao-zeicho_sozoku_zoyo_senmonka-20221026-003",
-      "cas-296-20171222-003",
-      "cas-296-20251219-001",
       "cas-297-20240619-001",
       "cas-297-20240808-002",
       "cas-297-20241007-003",
@@ -41069,6 +41034,13 @@
       "cas-tiikisaisei-20240830-039",
       "cas-tiikisaisei-20250324-040",
       "cas-tiikisaisei-20260324-041",
+      "cas-tppinfo-20151009-001",
+      "cas-tppinfo-20151125-002",
+      "cas-tppinfo-20170714-003",
+      "cas-tppinfo-20171124-004",
+      "cas-tppinfo-20191001-005",
+      "cas-tppinfo-20191205-006",
+      "cas-tppinfo-20201208-007",
       "cas-zensedai_hosyo-20211109-001",
       "cas-zensedai_hosyo-20220309-002",
       "cas-zensedai_hosyo-20220329-003",
@@ -44260,7 +44232,6 @@
       "maff-706-20220401-006",
       "maff-706-20220401-007",
       "maff-707-20220401-001",
-      "maff-708-20260805-001",
       "maff-709-20150306-046",
       "maff-chikusan_bukai-20240129-003",
       "maff-daisansha_iinkai-20240603-001",
@@ -44325,6 +44296,9 @@
       "maff-sizai_kikaika_bunkakai-20131021-014",
       "maff-sizai_noyaku_bunkakai-20191223-019",
       "maff-sizai_shubyo_bunkakai-20131021-014",
+      "maff-sugikafunmai-20240122-001",
+      "maff-sugikafunmai-20240328-002",
+      "maff-sugikafunmai-20240530-003",
       "meti-1664-20240529-001",
       "meti-1664-20240619-002",
       "meti-1664-20240726-003",
@@ -59522,34 +59496,6 @@
       "cao-zeicho_sozoku_zoyo_senmonka-20221021-002:https://www.cao.go.jp/zei-cho/gijiroku/sozoku-zoyo/2022/4sozoku-zoyo2kai1-9.pdf",
       "cao-zeicho_sozoku_zoyo_senmonka-20221026-003:https://www.cao.go.jp/zei-cho/content/4sozoku-zoyo3kaigiji.pdf",
       "cao-zeicho_sozoku_zoyo_senmonka-20221026-003:https://www.cao.go.jp/zei-cho/content/4sozoku-zoyo3kaiken.pdf",
-      "cas-296-20171222-003:https://www.cas.go.jp/jp/seisakukaigi/kankorikkoku/dai1/siryou01.pdf",
-      "cas-296-20171222-003:https://www.cas.go.jp/jp/seisakukaigi/kankorikkoku/dai1/siryou02.pdf",
-      "cas-296-20171222-003:https://www.cas.go.jp/jp/seisakukaigi/kankorikkoku/dai1/siryou03.pdf",
-      "cas-296-20171222-003:https://www.cas.go.jp/jp/seisakukaigi/kankorikkoku/dai1/siryou04.pdf",
-      "cas-296-20171222-003:https://www.cas.go.jp/jp/seisakukaigi/kankorikkoku/dai2/sankou1.pdf",
-      "cas-296-20171222-003:https://www.cas.go.jp/jp/seisakukaigi/kankorikkoku/dai2/sankou2.pdf",
-      "cas-296-20171222-003:https://www.cas.go.jp/jp/seisakukaigi/kankorikkoku/dai2/sankou3.pdf",
-      "cas-296-20171222-003:https://www.cas.go.jp/jp/seisakukaigi/kankorikkoku/dai2/siryou1.pdf",
-      "cas-296-20171222-003:https://www.cas.go.jp/jp/seisakukaigi/kankorikkoku/dai2/siryou2.pdf",
-      "cas-296-20171222-003:https://www.cas.go.jp/jp/seisakukaigi/kankorikkoku/dai23/siryou1.pdf",
-      "cas-296-20171222-003:https://www.cas.go.jp/jp/seisakukaigi/kankorikkoku/dai23/siryou2.pdf",
-      "cas-296-20171222-003:https://www.cas.go.jp/jp/seisakukaigi/kankorikkoku/dai23/siryou3.pdf",
-      "cas-296-20171222-003:https://www.cas.go.jp/jp/seisakukaigi/kankorikkoku/dai23/siryou4.pdf",
-      "cas-296-20171222-003:https://www.cas.go.jp/jp/seisakukaigi/kankorikkoku/dai23/siryou5.pdf",
-      "cas-296-20171222-003:https://www.cas.go.jp/jp/seisakukaigi/kankorikkoku/dai23/siryou6.pdf",
-      "cas-296-20171222-003:https://www.cas.go.jp/jp/seisakukaigi/kankorikkoku/dai23/siryou7.pdf",
-      "cas-296-20171222-003:https://www.cas.go.jp/jp/seisakukaigi/kankorikkoku/dai23/siryou8.pdf",
-      "cas-296-20171222-003:https://www.cas.go.jp/jp/seisakukaigi/kankorikkoku/dai24/siryou1.pdf",
-      "cas-296-20171222-003:https://www.cas.go.jp/jp/seisakukaigi/kankorikkoku/dai24/siryou2.pdf",
-      "cas-296-20171222-003:https://www.cas.go.jp/jp/seisakukaigi/kankorikkoku/dai24/siryou3.pdf",
-      "cas-296-20171222-003:https://www.cas.go.jp/jp/seisakukaigi/kankorikkoku/dai24/siryou4.pdf",
-      "cas-296-20171222-003:https://www.cas.go.jp/jp/seisakukaigi/kankorikkoku/dai24/siryou5.pdf",
-      "cas-296-20171222-003:https://www.cas.go.jp/jp/seisakukaigi/kankorikkoku/dai3/sankou1.pdf",
-      "cas-296-20171222-003:https://www.cas.go.jp/jp/seisakukaigi/kankorikkoku/dai3/sankou2.pdf",
-      "cas-296-20171222-003:https://www.cas.go.jp/jp/seisakukaigi/kankorikkoku/dai3/siryou1.pdf",
-      "cas-296-20171222-003:https://www.cas.go.jp/jp/seisakukaigi/kankorikkoku/dai3/siryou2.pdf",
-      "cas-296-20251219-001:https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/wgkaisai/kanjikai_dai1/haifusiryou.pdf",
-      "cas-296-20251219-001:https://www.cas.go.jp/jp/seisaku/atarashii_sihonsyugi/wgkaisai/startup_dai1/haifusiryou.pdf",
       "cas-339-20210408-002:https://www.cas.go.jp/jp/seisaku/taii_tokurei/dai1/gijiroku.pdf",
       "cas-339-20210421-006:https://www.cas.go.jp/jp/seisaku/taii_tokurei/dai3/gijiroku.pdf",
       "cas-339-20210510-004:https://www.cas.go.jp/jp/seisaku/taii_tokurei/dai2/gijiroku.pdf",
@@ -60902,6 +60848,33 @@
       "cas-titeki2-20260612-s01:https://www.cas.go.jp/jp/seisakukaigi/titeki2/260612/siryou1.pdf",
       "cas-titeki2-20260612-s01:https://www.cas.go.jp/jp/seisakukaigi/titeki2/260612/siryou2.pdf",
       "cas-titeki2-20260612-s01:https://www.cas.go.jp/jp/seisakukaigi/titeki2/tizu.pdf",
+      "cas-tppinfo-20151009-001:https://www.cas.go.jp/jp/tpp/tppinfo/taiko/torikumihonbu/pdf/151009_sougoukaigou01_giji.pdf",
+      "cas-tppinfo-20151009-001:https://www.cas.go.jp/jp/tpp/tppinfo/taiko/torikumihonbu/pdf/151009_sougoukaigou01_gijiroku.pdf",
+      "cas-tppinfo-20151009-001:https://www.cas.go.jp/jp/tpp/tppinfo/taiko/torikumihonbu/pdf/151009_sougoukaigou01_siryou1.pdf",
+      "cas-tppinfo-20151009-001:https://www.cas.go.jp/jp/tpp/tppinfo/taiko/torikumihonbu/pdf/151009_sougoukaigou01_siryou2.pdf",
+      "cas-tppinfo-20151125-002:https://www.cas.go.jp/jp/tpp/tppinfo/taiko/torikumihonbu/pdf/151125_sougoukaigou02_giji.pdf",
+      "cas-tppinfo-20151125-002:https://www.cas.go.jp/jp/tpp/tppinfo/taiko/torikumihonbu/pdf/151125_sougoukaigou02_gijiroku.pdf",
+      "cas-tppinfo-20151125-002:https://www.cas.go.jp/jp/tpp/tppinfo/taiko/torikumihonbu/pdf/151125_sougoukaigou02_siryou1.pdf",
+      "cas-tppinfo-20151125-002:https://www.cas.go.jp/jp/tpp/tppinfo/taiko/torikumihonbu/pdf/151125_sougoukaigou02_siryou2.pdf",
+      "cas-tppinfo-20151125-002:https://www.cas.go.jp/jp/tpp/tppinfo/taiko/torikumihonbu/pdf/151125_sougoukaigou02_siryou3.pdf",
+      "cas-tppinfo-20170714-003:https://www.cas.go.jp/jp/tpp/tppinfo/taiko/torikumihonbu/pdf/20170714_tpp_kaigou1.pdf",
+      "cas-tppinfo-20170714-003:https://www.cas.go.jp/jp/tpp/tppinfo/taiko/torikumihonbu/pdf/20170714_tpp_kaigou2.pdf",
+      "cas-tppinfo-20170714-003:https://www.cas.go.jp/jp/tpp/tppinfo/taiko/torikumihonbu/pdf/20170714_tpp_kaigou3.pdf",
+      "cas-tppinfo-20170714-003:https://www.cas.go.jp/jp/tpp/tppinfo/taiko/torikumihonbu/pdf/20170714_tpp_kaigou_gaiyo.pdf",
+      "cas-tppinfo-20170714-003:https://www.cas.go.jp/jp/tpp/tppinfo/taiko/torikumihonbu/pdf/20170714_tpp_kaigou_gijisidai.pdf",
+      "cas-tppinfo-20171124-004:https://www.cas.go.jp/jp/tpp/tppinfo/taiko/torikumihonbu/pdf/20171124_tpp_kaigou1.pdf",
+      "cas-tppinfo-20171124-004:https://www.cas.go.jp/jp/tpp/tppinfo/taiko/torikumihonbu/pdf/20171124_tpp_kaigou2.pdf",
+      "cas-tppinfo-20171124-004:https://www.cas.go.jp/jp/tpp/tppinfo/taiko/torikumihonbu/pdf/20171124_tpp_kaigou_gijiroku.pdf",
+      "cas-tppinfo-20171124-004:https://www.cas.go.jp/jp/tpp/tppinfo/taiko/torikumihonbu/pdf/20171124_tpp_kaigou_gijisidai.pdf",
+      "cas-tppinfo-20191001-005:https://www.cas.go.jp/jp/tpp/tppinfo/taiko/torikumihonbu/pdf/20191001_tpp_gijiroku.pdf",
+      "cas-tppinfo-20191001-005:https://www.cas.go.jp/jp/tpp/tppinfo/taiko/torikumihonbu/pdf/20191001_tpp_gijishidai.pdf",
+      "cas-tppinfo-20191001-005:https://www.cas.go.jp/jp/tpp/tppinfo/taiko/torikumihonbu/pdf/20191001_tpp_kihonhoushin.pdf",
+      "cas-tppinfo-20191205-006:https://www.cas.go.jp/jp/tpp/tppinfo/taiko/torikumihonbu/pdf/20191205_tpp_gijiroku.pdf",
+      "cas-tppinfo-20191205-006:https://www.cas.go.jp/jp/tpp/tppinfo/taiko/torikumihonbu/pdf/20191205_tpp_gijishidai.pdf",
+      "cas-tppinfo-20191205-006:https://www.cas.go.jp/jp/tpp/tppinfo/taiko/torikumihonbu/pdf/20191205_tpp_taikoukaiteian.pdf",
+      "cas-tppinfo-20191205-006:https://www.cas.go.jp/jp/tpp/tppinfo/taiko/torikumihonbu/pdf/20191205_tpp_taikoukaiteipoint_an.pdf",
+      "cas-tppinfo-20201208-007:https://www.cas.go.jp/jp/tpp/tppinfo/2020/pdf/20201208_tpp_taikoukaiteian.pdf",
+      "cas-tppinfo-20201208-007:https://www.cas.go.jp/jp/tpp/tppinfo/2020/pdf/20201208_tpp_taikoukaiteipoint_an.pdf",
       "fdma-chiiki_bousai_shien-20240401-001:https://www.fdma.go.jp/publication/materials/item/materials001_syota_manual.pdf",
       "fdma-chiiki_bousai_shien-20240401-001:https://www.fdma.go.jp/publication/materials/item/materials001_syota_style_guide.pdf",
       "fdma-chiiki_bousai_shien-20240401-001:https://www.fdma.go.jp/publication/materials/item/materials006_nuri1.pdf",
@@ -63153,6 +63126,19 @@
       "maff-sizai_kikaika_bunkakai-20131021-014:https://www.maff.go.jp/j/council/sizai/nouyaku/14/pdf/gijiroku_140304.pdf",
       "maff-sizai_noyaku_bunkakai-20191223-019:https://www.maff.go.jp/j/council/sizai/syubyou/19/attach/pdf/report-1.pdf",
       "maff-sizai_shubyo_bunkakai-20131021-014:https://www.maff.go.jp/j/council/sizai/nouyaku/14/pdf/gijiroku_140304.pdf",
+      "maff-sugikafunmai-20240122-001:https://www.affrc.maff.go.jp/docs/sugikahunnmai/attach/pdf/240123-1.pdf",
+      "maff-sugikafunmai-20240122-001:https://www.affrc.maff.go.jp/docs/sugikahunnmai/attach/pdf/240123-10.pdf",
+      "maff-sugikafunmai-20240122-001:https://www.affrc.maff.go.jp/docs/sugikahunnmai/attach/pdf/240123-2.pdf",
+      "maff-sugikafunmai-20240122-001:https://www.affrc.maff.go.jp/docs/sugikahunnmai/attach/pdf/240123-3.pdf",
+      "maff-sugikafunmai-20240122-001:https://www.affrc.maff.go.jp/docs/sugikahunnmai/attach/pdf/240123-5.pdf",
+      "maff-sugikafunmai-20240122-001:https://www.affrc.maff.go.jp/docs/sugikahunnmai/attach/pdf/240123-7.pdf",
+      "maff-sugikafunmai-20240122-001:https://www.affrc.maff.go.jp/docs/sugikahunnmai/attach/pdf/240123-8.pdf",
+      "maff-sugikafunmai-20240122-001:https://www.affrc.maff.go.jp/docs/sugikahunnmai/attach/pdf/240123-9.pdf",
+      "maff-sugikafunmai-20240122-001:https://www.affrc.maff.go.jp/docs/sugikahunnmai/attach/pdf/240123_15-1.pdf",
+      "maff-sugikafunmai-20240328-002:https://www.affrc.maff.go.jp/docs/sugikahunnmai/attach/pdf/240123_15-2.pdf",
+      "maff-sugikafunmai-20240328-002:https://www.affrc.maff.go.jp/docs/sugikahunnmai/attach/pdf/240123_15-3.pdf",
+      "maff-sugikafunmai-20240530-003:https://www.affrc.maff.go.jp/docs/sugikahunnmai/attach/pdf/240123_15-4.pdf",
+      "maff-sugikafunmai-20240530-003:https://www.affrc.maff.go.jp/docs/sugikahunnmai/attach/pdf/240123_15-5.pdf",
       "meti-1664-20240529-001:https://www.meti.go.jp/shingikai/energy_environment/perovskite_solar_cell/pdf/001_00_01.pdf",
       "meti-1664-20240529-001:https://www.meti.go.jp/shingikai/energy_environment/perovskite_solar_cell/pdf/001_00_02.pdf",
       "meti-1664-20240529-001:https://www.meti.go.jp/shingikai/energy_environment/perovskite_solar_cell/pdf/001_00_03.pdf",
