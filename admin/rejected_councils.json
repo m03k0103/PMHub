@@ -216,6 +216,15 @@
     "reason": "消費者庁 2026年度会議・研究会一覧ポータル（個別会議体ではないため除外）"
   },
   {
+    "id": "caa-seisaku_kaigi",
+    "name": "政策会議等",
+    "ministry": "CAA",
+    "category": "COUNCIL",
+    "officialUrl": "https://www.caa.go.jp/policies/council/category",
+    "rejectedAt": "2026-10-28",
+    "reason": "消費者庁 政策会議等一覧ポータル（消費者政策会議 cas-330 と重複のため除外）"
+  },
+  {
     "id": "cao-1815",
     "name": "経済社会構造に関する有識者会議",
     "ministry": "CAO",
@@ -610,6 +619,15 @@
     "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/",
     "rejectedAt": "2026-09-12",
     "reason": "ディスカバリー精査: ポータル一覧・特定開催回・報告書・アンカー重複のため却下"
+  },
+  {
+    "id": "cas-296",
+    "name": "廃止した本部・会議等の一覧",
+    "ministry": "CAS",
+    "category": "COUNCIL",
+    "officialUrl": "https://www.cas.go.jp/jp/seisaku/abolition_list.html",
+    "rejectedAt": "2026-10-28",
+    "reason": "内閣官房 廃止した本部・会議等の一覧（ポータル目次ページのため除外）"
   },
   {
     "id": "cas-298",
@@ -1521,6 +1539,15 @@
     "reason": "ディスカバリー精査: ポータル一覧・特定開催回・報告書・アンカー重複のため却下"
   },
   {
+    "id": "jsa-612",
+    "name": "政策分野別の審議会情報を見る",
+    "ministry": "JSA",
+    "category": "COUNCIL",
+    "officialUrl": "https://www.mext.go.jp/sports/b_menu/shingi/category/1361487_19053.html",
+    "rejectedAt": "2026-10-28",
+    "reason": "スポーツ庁 政策分野別審議会情報ポータル（ナビゲーションUIリンクのため除外）"
+  },
+  {
     "id": "maff-2236",
     "name": "審議会",
     "ministry": "MAFF",
@@ -1573,6 +1600,15 @@
     "officialUrl": "https://www.maff.go.jp/j/study/index.html",
     "rejectedAt": "2026-09-29",
     "reason": "不要な目次・リンク集会議体のため削除 (Drop 32)"
+  },
+  {
+    "id": "maff-708",
+    "name": "各種委員会等情報",
+    "ministry": "MAFF",
+    "category": "COUNCIL",
+    "officialUrl": "https://www.affrc.maff.go.jp/docs/commitee.htm",
+    "rejectedAt": "2026-10-28",
+    "reason": "農林水産技術会議 各種委員会等一覧ポータル（個別会議体 maff-sugikafunmai へ分離移行）"
   },
   {
     "id": "maff-710",

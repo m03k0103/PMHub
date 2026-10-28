@@ -2508,3 +2508,57 @@ flowchart LR
     - ケース14: アクティブ会議体フィルタリング・廃止管理検証 (0.94s) : PASS
     - 【単体関数検証 (Unit Tests)】: 全23種合格（U1〜U23 全種合格 / 6.41s）
   ```
+
+---
+
+### Drop 100: Track [Portal-Norm] 推進 - 親ポータル型会議体の整理・却下移動 & TPP等総合対策本部・スギ花粉米検討会の網羅的ワンストップ登録（2026-10-28 済）
+
+- **1. 背景・課題 (Background & Issues)**:
+  - 過去の自動収集によって親組織一覧やナビゲーション目次URLのまま会議体マスター（`councils`）に登録されていたレコードについて、以下の課題を是正：
+    1. 消費者庁「政策会議等」（`caa-seisaku_kaigi`）が、既に5開催回が登録されている「消費者政策会議」（`cas-330`）の目次URLと重複してゴミ登録されていた。
+    2. 内閣官房「廃止した本部・会議等の一覧」（`cas-296`）が、実在する観光立国推進閣僚会議（`cas-310`）および新しい資本主義実現会議（`cas-atarashii_shihon_kaigi`）の開催回を誤混入したままポータルとして存在していた。
+    3. スポーツ庁「政策分野別の審議会情報を見る」（`jsa-612`）が、ナビゲーションリンク文字列（開催回0件）のまま登録されていた。
+    4. 農林水産技術会議「各種委員会等情報」（`maff-708`）が、傘下検討会の一覧ポータル（ダミー開催回1件・資料0件）となっていた。
+    5. 内閣官房「事態対処専門委員会」（`cas-325`）が、安全保障会議設置法に基づく非公開機関（設置根拠・構成員のみ公表、配付資料非公開）であるにもかかわらずアクティブ扱いとなっていた。
+    6. 内閣官房「ＴＰＰ等総合対策本部」（`cas-tppinfo`）の公式URLが年次ニュースURL（`/2026/index.html`）に設定され、開催回0件となっていた。
+
+- **2. 実施内容・設計 (Implementation & Architecture)**:
+  1. **親ポータル・目次型4会議体の却下移動（`rejected_councils`）**:
+     - `caa-seisaku_kaigi`, `cas-296`, `jsa-612`, `maff-708` の4会議体および紐付いていたゴミ開催回4件・関連ステータスを削除し、理由付きで `rejected_councils` へ移行。
+  2. **非公開防衛専門委員会（`cas-325`）の廃止・非公開管理整理**:
+     - `is_closed = 1`, `closed_reason = '非公開専門委員会（安全保障会議設置法第10条に基づく防衛秘密審議機関のため配付資料非公開）'`, `manual_lock = 1` を設定。
+  3. **ＴＰＰ等総合対策本部（`cas-tppinfo`）の正規化 & 第1回〜第7回ワンストップ登録**:
+     - 会議体名を「ＴＰＰ等総合対策本部」へ正規化し、公式URLを開催実績ページ（`https://www.cas.go.jp/jp/tpp/tppinfo/taiko/torikumihonbu/index.html`）へ更新。
+     - 第1回会合（2015/10/09）から第7回会合（2020/12/08）までの全7開催回を規約ID（`cas-tppinfo-{YYYYMMDD}-{round:03d}`）にて網羅登録。
+     - 各回の議事次第、議事録、政策大綱案、基本方針等の末端PDF全27件（全件 HTTP 200 OK 検証済）を `manualLock: true` で登録し、`scraping_rules` を設定。
+  4. **スギ花粉米の実用化に向けた官民連携検討会（`maff-sugikafunmai`）の分離新設 & ワンストップ登録**:
+     - `maff-708` から分離し新規会議体 `maff-sugikafunmai`（`https://www.affrc.maff.go.jp/docs/sugikahunnmai/240123_15.html`）として登録。
+     - 第1回〜第3回（全3開催回: 2024/01/22 〜 2024/05/30）および議事要旨、議事次第、配付資料1〜7等の末端PDF全13件（全件 HTTP 200 OK 検証済）を `manualLock: true` で登録し、`scraping_rules` を設定。
+  5. **SQLite マスターDB & 2系統エクスポート同期**:
+     - `admin/pmhub.db` を更新後、`admin.db.export_data` を実行し、`docs/data.json`（34.64 MB, 1,761会議体, 21,433開催回）、`admin/admin_data.json`（5.77 MB）、`admin/rejected_councils.json`（380件）を完全同期。
+
+- **3. 変更ファイル一覧 (Changed Files)**:
+  - `admin/pmhub.db`: 4会議体却下移動、`cas-325` 閉鎖管理、`cas-tppinfo` 正規化・7開催回・27資料登録、`maff-sugikafunmai` 新設・3開催回・13資料登録、スクレイピングルール反映
+  - `docs/data.json`, `docs/data.js`, `admin/admin_data.json`, `admin/rejected_councils.json`: SQLite マスターDB からの2系統完全同期
+  - `DROPS.md`: Drop 100 実績記録および Track [Portal-Norm] 進行状況更新
+
+- **4. テスト検証結果 (Verification Results)**:
+  ```markdown
+  python testing/run_test_suite.py --all-layers : PASSED（統合15ケース＋単体23種合格 / 所要時間 22.42秒）
+    - ケース1: コード文法チェック（SyntaxError / 括弧不整合 / DDL構文 0件） (0.71s) : PASS
+    - ケース2: リンク疎通確認（追加・変更URL 43件 200 OK・リンク切れ0件） (1.07s) : PASS
+    - ケース3: UI表示機能検証（DOMコンテナ整合性） (0.00s) : PASS
+    - ケース4: JS実行時クラッシュ・全画面描画検証 (0.68s) : PASS
+    - ケース5: 会議品質・回次整合性・重複排除検証 (0.88s) : PASS
+    - ケース6: 会議体・タイムライン ID完全排他性・整合性 (0.01s) : PASS
+    - ケース7: 康煕部首・特殊文字 NFKC 正規化検証 (0.31s) : PASS
+    - ケース8: プレースホルダー日付（2099/01/01）ゼロ遮断検証 (0.00s) : PASS
+    - ケース15: SQLiteマスターDB整合性 & 2系統JSON完全同期検証 (0.88s) : PASS
+    - ケース9: 管理サーバー API 単体・統合テスト（全11テスト合格） (4.43s) : PASS
+    - ケース10: クローラー手動保護回帰テスト（manualLock 非破壊性合格） (4.13s) : PASS
+    - ケース11: スクレイピングルール整合性検証（100%ルール適用） (0.44s) : PASS
+    - ケース12: ホスト分散・ゴミデータ不変性検証 (0.34s) : PASS
+    - ケース13: 省庁親ポータルURL設定・探索網羅性検証 (0.43s) : PASS
+    - ケース14: アクティブ会議体フィルタリング・廃止管理検証 (1.00s) : PASS
+    - 【単体関数検証 (Unit Tests)】: 全23種合格（連動 23 種類実施 / 6.69s） : PASS
+  ```
