@@ -2100,14 +2100,6 @@
       "pastYearCount": 0
     },
     {
-      "id": "cao-233",
-      "ministry": "CAO",
-      "category": "COUNCIL",
-      "name": "国会等移転審議会(国土交通省)",
-      "officialUrl": "https://www.mlit.go.jp/kokudokeikaku/iten/information/council/index.html",
-      "pastYearCount": 0
-    },
-    {
       "id": "cao-237",
       "ministry": "CAO",
       "category": "COUNCIL",
@@ -3143,7 +3135,9 @@
       "name": "アフリカ豚熱関係閣僚会議",
       "manualLock": true,
       "officialUrl": "https://www.cas.go.jp/jp/seisaku/africa-butanetsu/index.html",
-      "pastYearCount": 1
+      "pastYearCount": 1,
+      "isClosed": true,
+      "closedReason": "開催実績なし（農林水産省所管施策案内のみ）"
     },
     {
       "id": "cas-300",
@@ -16401,6 +16395,17 @@
       ]
     },
     {
+      "id": "mlit-kokkaitou_iten",
+      "ministry": "MLIT",
+      "category": "COUNCIL",
+      "name": "国会等移転審議会",
+      "manualLock": true,
+      "officialUrl": "https://www.mlit.go.jp/kokudokeikaku/iten/information/council/shingi_siryo/index.html",
+      "pastYearCount": 0,
+      "isClosed": true,
+      "closedReason": "審議終了・内閣総理大臣への答申提出に伴う完了組織"
+    },
+    {
       "id": "mlit-kokudo",
       "ministry": "MLIT",
       "category": "COMMITTEE",
@@ -18516,7 +18521,9 @@
       "manualLock": true,
       "officialUrl": "https://warp.ndl.go.jp/info:ndljp/pid/12768099/www.npsc.go.jp/about/chairman/activity/index.html",
       "description": "国家公安委員会 定例会議に関する調査審議・検討を行う。",
-      "pastYearCount": 0
+      "pastYearCount": 0,
+      "isClosed": true,
+      "closedReason": "非公開委員会（定例会議事・配付資料非公開）"
     },
     {
       "id": "nra-1203",
@@ -810554,6 +810561,40 @@
       ]
     },
     {
+      "id": "mlit-kokkaitou_iten-20000215-032",
+      "councilId": "mlit-kokkaitou_iten",
+      "name": "第32回 国会等移転審議会",
+      "date": "2000/02/15",
+      "manualLock": true,
+      "round": 32,
+      "officialUrl": "https://www.mlit.go.jp/kokudokeikaku/iten/information/council/shingi_siryo/iten32.html",
+      "materials": [
+        {
+          "name": "議事要旨",
+          "url": "https://www.mlit.go.jp/kokudokeikaku/iten/information/council/shingi_siryo/iten32.html",
+          "type": "HTML",
+          "manualLock": true
+        }
+      ]
+    },
+    {
+      "id": "mlit-kokkaitou_iten-20000215-b22",
+      "councilId": "mlit-kokkaitou_iten",
+      "name": "第22回 国会等移転審議会 調査部会",
+      "date": "2000/02/15",
+      "manualLock": true,
+      "round": "b22",
+      "officialUrl": "https://www.mlit.go.jp/kokudokeikaku/iten/information/council/shingi_siryo/iten32.html",
+      "materials": [
+        {
+          "name": "議事要旨",
+          "url": "https://www.mlit.go.jp/kokudokeikaku/iten/information/council/shingi_siryo/iten32.html",
+          "type": "HTML",
+          "manualLock": true
+        }
+      ]
+    },
+    {
       "id": "mic-kotei_shisan_hyouka-20000209-007",
       "councilId": "mic-kotei_shisan_hyouka",
       "name": "第7回 固定資産評価審議会",
@@ -810561,6 +810602,57 @@
       "manualLock": true,
       "officialUrl": "https://www.soumu.go.jp/singi/No15.html#7",
       "materials": []
+    },
+    {
+      "id": "mlit-kokkaitou_iten-19991220-031",
+      "councilId": "mlit-kokkaitou_iten",
+      "name": "第31回 国会等移転審議会",
+      "date": "1999/12/20",
+      "manualLock": true,
+      "round": 31,
+      "officialUrl": "https://www.mlit.go.jp/kokudokeikaku/iten/information/council/shingi_siryo/iten31.html",
+      "materials": [
+        {
+          "name": "議事要旨",
+          "url": "https://www.mlit.go.jp/kokudokeikaku/iten/information/council/shingi_siryo/iten31.html",
+          "type": "HTML",
+          "manualLock": true
+        }
+      ]
+    },
+    {
+      "id": "mlit-kokkaitou_iten-19991217-030",
+      "councilId": "mlit-kokkaitou_iten",
+      "name": "第30回 国会等移転審議会",
+      "date": "1999/12/17",
+      "manualLock": true,
+      "round": 30,
+      "officialUrl": "https://www.mlit.go.jp/kokudokeikaku/iten/information/council/shingi_siryo/iten30.html",
+      "materials": [
+        {
+          "name": "議事要旨",
+          "url": "https://www.mlit.go.jp/kokudokeikaku/iten/information/council/shingi_siryo/iten30.html",
+          "type": "HTML",
+          "manualLock": true
+        }
+      ]
+    },
+    {
+      "id": "mlit-kokkaitou_iten-19991208-029",
+      "councilId": "mlit-kokkaitou_iten",
+      "name": "第29回 国会等移転審議会",
+      "date": "1999/12/08",
+      "manualLock": true,
+      "round": 29,
+      "officialUrl": "https://www.mlit.go.jp/kokudokeikaku/iten/information/council/shingi_siryo/iten29.html",
+      "materials": [
+        {
+          "name": "議事要旨",
+          "url": "https://www.mlit.go.jp/kokudokeikaku/iten/information/council/shingi_siryo/iten29.html",
+          "type": "HTML",
+          "manualLock": true
+        }
+      ]
     },
     {
       "id": "cao-pfi_suishin-19991201-003",
@@ -810584,6 +810676,40 @@
         {
           "name": "基本方針(案)(PDF形式:21KB)",
           "url": "https://www8.cao.go.jp/pfi/iinkai/kaisai/iinkai/3kai/pdf/shiryo_a_3_1.pdf",
+          "manualLock": true
+        }
+      ]
+    },
+    {
+      "id": "mlit-kokkaitou_iten-19991130-028",
+      "councilId": "mlit-kokkaitou_iten",
+      "name": "第28回 国会等移転審議会",
+      "date": "1999/11/30",
+      "manualLock": true,
+      "round": 28,
+      "officialUrl": "https://www.mlit.go.jp/kokudokeikaku/iten/information/council/shingi_siryo/iten28.html",
+      "materials": [
+        {
+          "name": "議事要旨",
+          "url": "https://www.mlit.go.jp/kokudokeikaku/iten/information/council/shingi_siryo/iten28.html",
+          "type": "HTML",
+          "manualLock": true
+        }
+      ]
+    },
+    {
+      "id": "mlit-kokkaitou_iten-19991125-027",
+      "councilId": "mlit-kokkaitou_iten",
+      "name": "第27回 国会等移転審議会",
+      "date": "1999/11/25",
+      "manualLock": true,
+      "round": 27,
+      "officialUrl": "https://www.mlit.go.jp/kokudokeikaku/iten/information/council/shingi_siryo/iten27.html",
+      "materials": [
+        {
+          "name": "議事要旨",
+          "url": "https://www.mlit.go.jp/kokudokeikaku/iten/information/council/shingi_siryo/iten27.html",
+          "type": "HTML",
           "manualLock": true
         }
       ]
@@ -810620,6 +810746,23 @@
       ]
     },
     {
+      "id": "mlit-kokkaitou_iten-19991110-026",
+      "councilId": "mlit-kokkaitou_iten",
+      "name": "第26回 国会等移転審議会",
+      "date": "1999/11/10",
+      "manualLock": true,
+      "round": 26,
+      "officialUrl": "https://www.mlit.go.jp/kokudokeikaku/iten/information/council/shingi_siryo/iten26.html",
+      "materials": [
+        {
+          "name": "議事要旨",
+          "url": "https://www.mlit.go.jp/kokudokeikaku/iten/information/council/shingi_siryo/iten26.html",
+          "type": "HTML",
+          "manualLock": true
+        }
+      ]
+    },
+    {
       "id": "mic-kotei_shisan_hyouka-19991102-006",
       "councilId": "mic-kotei_shisan_hyouka",
       "name": "第6回 固定資産評価審議会",
@@ -810627,6 +810770,40 @@
       "manualLock": true,
       "officialUrl": "https://www.soumu.go.jp/singi/No15.html#6",
       "materials": []
+    },
+    {
+      "id": "mlit-kokkaitou_iten-19991026-025",
+      "councilId": "mlit-kokkaitou_iten",
+      "name": "第25回 国会等移転審議会",
+      "date": "1999/10/26",
+      "manualLock": true,
+      "round": 25,
+      "officialUrl": "https://www.mlit.go.jp/kokudokeikaku/iten/information/council/shingi_siryo/iten25.html",
+      "materials": [
+        {
+          "name": "議事要旨",
+          "url": "https://www.mlit.go.jp/kokudokeikaku/iten/information/council/shingi_siryo/iten25.html",
+          "type": "HTML",
+          "manualLock": true
+        }
+      ]
+    },
+    {
+      "id": "mlit-kokkaitou_iten-19991021-024",
+      "councilId": "mlit-kokkaitou_iten",
+      "name": "第24回 国会等移転審議会",
+      "date": "1999/10/21",
+      "manualLock": true,
+      "round": 24,
+      "officialUrl": "https://www.mlit.go.jp/kokudokeikaku/iten/information/council/shingi_siryo/iten24.html",
+      "materials": [
+        {
+          "name": "議事要旨",
+          "url": "https://www.mlit.go.jp/kokudokeikaku/iten/information/council/shingi_siryo/iten24.html",
+          "type": "HTML",
+          "manualLock": true
+        }
+      ]
     },
     {
       "id": "cao-pfi_suishin-19991008-001",
@@ -810685,6 +810862,108 @@
       ]
     },
     {
+      "id": "mlit-kokkaitou_iten-19991007-023",
+      "councilId": "mlit-kokkaitou_iten",
+      "name": "第23回 国会等移転審議会",
+      "date": "1999/10/07",
+      "manualLock": true,
+      "round": 23,
+      "officialUrl": "https://www.mlit.go.jp/kokudokeikaku/iten/information/council/shingi_siryo/iten23.html",
+      "materials": [
+        {
+          "name": "議事要旨",
+          "url": "https://www.mlit.go.jp/kokudokeikaku/iten/information/council/shingi_siryo/iten23.html",
+          "type": "HTML",
+          "manualLock": true
+        }
+      ]
+    },
+    {
+      "id": "mlit-kokkaitou_iten-19991007-b21",
+      "councilId": "mlit-kokkaitou_iten",
+      "name": "第21回 国会等移転審議会 調査部会",
+      "date": "1999/10/07",
+      "manualLock": true,
+      "round": "b21",
+      "officialUrl": "https://www.mlit.go.jp/kokudokeikaku/iten/information/council/shingi_siryo/iten23.html",
+      "materials": [
+        {
+          "name": "議事要旨",
+          "url": "https://www.mlit.go.jp/kokudokeikaku/iten/information/council/shingi_siryo/iten23.html",
+          "type": "HTML",
+          "manualLock": true
+        }
+      ]
+    },
+    {
+      "id": "mlit-kokkaitou_iten-19990928-022",
+      "councilId": "mlit-kokkaitou_iten",
+      "name": "第22回 国会等移転審議会",
+      "date": "1999/09/28",
+      "manualLock": true,
+      "round": 22,
+      "officialUrl": "https://www.mlit.go.jp/kokudokeikaku/iten/information/council/shingi_siryo/iten22.html",
+      "materials": [
+        {
+          "name": "議事要旨",
+          "url": "https://www.mlit.go.jp/kokudokeikaku/iten/information/council/shingi_siryo/iten22.html",
+          "type": "HTML",
+          "manualLock": true
+        }
+      ]
+    },
+    {
+      "id": "mlit-kokkaitou_iten-19990928-b20",
+      "councilId": "mlit-kokkaitou_iten",
+      "name": "第20回 国会等移転審議会 調査部会",
+      "date": "1999/09/28",
+      "manualLock": true,
+      "round": "b20",
+      "officialUrl": "https://www.mlit.go.jp/kokudokeikaku/iten/information/council/shingi_siryo/iten22.html",
+      "materials": [
+        {
+          "name": "議事要旨",
+          "url": "https://www.mlit.go.jp/kokudokeikaku/iten/information/council/shingi_siryo/iten22.html",
+          "type": "HTML",
+          "manualLock": true
+        }
+      ]
+    },
+    {
+      "id": "mlit-kokkaitou_iten-19990909-021",
+      "councilId": "mlit-kokkaitou_iten",
+      "name": "第21回 国会等移転審議会",
+      "date": "1999/09/09",
+      "manualLock": true,
+      "round": 21,
+      "officialUrl": "https://www.mlit.go.jp/kokudokeikaku/iten/information/council/shingi_siryo/iten21.html",
+      "materials": [
+        {
+          "name": "議事要旨",
+          "url": "https://www.mlit.go.jp/kokudokeikaku/iten/information/council/shingi_siryo/iten21.html",
+          "type": "HTML",
+          "manualLock": true
+        }
+      ]
+    },
+    {
+      "id": "mlit-kokkaitou_iten-19990906-b19",
+      "councilId": "mlit-kokkaitou_iten",
+      "name": "第19回 国会等移転審議会 調査部会",
+      "date": "1999/09/06",
+      "manualLock": true,
+      "round": "b19",
+      "officialUrl": "https://www.mlit.go.jp/kokudokeikaku/iten/information/council/shingi_siryo/itenc19.html",
+      "materials": [
+        {
+          "name": "議事要旨",
+          "url": "https://www.mlit.go.jp/kokudokeikaku/iten/information/council/shingi_siryo/itenc19.html",
+          "type": "HTML",
+          "manualLock": true
+        }
+      ]
+    },
+    {
       "id": "cao-2951-19990723-001",
       "councilId": "cao-2951",
       "name": "第1回 景気動向指数研究会",
@@ -810699,6 +810978,57 @@
       ]
     },
     {
+      "id": "mlit-kokkaitou_iten-19990722-020",
+      "councilId": "mlit-kokkaitou_iten",
+      "name": "第20回 国会等移転審議会",
+      "date": "1999/07/22",
+      "manualLock": true,
+      "round": 20,
+      "officialUrl": "https://www.mlit.go.jp/kokudokeikaku/iten/information/council/shingi_siryo/iten20.html",
+      "materials": [
+        {
+          "name": "議事要旨",
+          "url": "https://www.mlit.go.jp/kokudokeikaku/iten/information/council/shingi_siryo/iten20.html",
+          "type": "HTML",
+          "manualLock": true
+        }
+      ]
+    },
+    {
+      "id": "mlit-kokkaitou_iten-19990715-b18",
+      "councilId": "mlit-kokkaitou_iten",
+      "name": "第18回 国会等移転審議会 調査部会",
+      "date": "1999/07/15",
+      "manualLock": true,
+      "round": "b18",
+      "officialUrl": "https://www.mlit.go.jp/kokudokeikaku/iten/information/council/shingi_siryo/itenc18.html",
+      "materials": [
+        {
+          "name": "議事要旨",
+          "url": "https://www.mlit.go.jp/kokudokeikaku/iten/information/council/shingi_siryo/itenc18.html",
+          "type": "HTML",
+          "manualLock": true
+        }
+      ]
+    },
+    {
+      "id": "mlit-kokkaitou_iten-19990701-b17",
+      "councilId": "mlit-kokkaitou_iten",
+      "name": "第17回 国会等移転審議会 調査部会",
+      "date": "1999/07/01",
+      "manualLock": true,
+      "round": "b17",
+      "officialUrl": "https://www.mlit.go.jp/kokudokeikaku/iten/information/council/shingi_siryo/itenc17.html",
+      "materials": [
+        {
+          "name": "議事要旨",
+          "url": "https://www.mlit.go.jp/kokudokeikaku/iten/information/council/shingi_siryo/itenc17.html",
+          "type": "HTML",
+          "manualLock": true
+        }
+      ]
+    },
+    {
       "id": "mic-kotei_shisan_hyouka-19990628-005",
       "councilId": "mic-kotei_shisan_hyouka",
       "name": "第5回 固定資産評価審議会",
@@ -810706,6 +811036,142 @@
       "manualLock": true,
       "officialUrl": "https://www.soumu.go.jp/singi/No15.html#5",
       "materials": []
+    },
+    {
+      "id": "mlit-kokkaitou_iten-19990617-019",
+      "councilId": "mlit-kokkaitou_iten",
+      "name": "第19回 国会等移転審議会",
+      "date": "1999/06/17",
+      "manualLock": true,
+      "round": 19,
+      "officialUrl": "https://www.mlit.go.jp/kokudokeikaku/iten/information/council/shingi_siryo/iten19.html",
+      "materials": [
+        {
+          "name": "議事要旨",
+          "url": "https://www.mlit.go.jp/kokudokeikaku/iten/information/council/shingi_siryo/iten19.html",
+          "type": "HTML",
+          "manualLock": true
+        }
+      ]
+    },
+    {
+      "id": "mlit-kokkaitou_iten-19990617-b16",
+      "councilId": "mlit-kokkaitou_iten",
+      "name": "第16回 国会等移転審議会 調査部会",
+      "date": "1999/06/17",
+      "manualLock": true,
+      "round": "b16",
+      "officialUrl": "https://www.mlit.go.jp/kokudokeikaku/iten/information/council/shingi_siryo/iten19.html",
+      "materials": [
+        {
+          "name": "議事要旨",
+          "url": "https://www.mlit.go.jp/kokudokeikaku/iten/information/council/shingi_siryo/iten19.html",
+          "type": "HTML",
+          "manualLock": true
+        }
+      ]
+    },
+    {
+      "id": "mlit-kokkaitou_iten-19990520-018",
+      "councilId": "mlit-kokkaitou_iten",
+      "name": "第18回 国会等移転審議会",
+      "date": "1999/05/20",
+      "manualLock": true,
+      "round": 18,
+      "officialUrl": "https://www.mlit.go.jp/kokudokeikaku/iten/information/council/shingi_siryo/iten18.html",
+      "materials": [
+        {
+          "name": "議事要旨",
+          "url": "https://www.mlit.go.jp/kokudokeikaku/iten/information/council/shingi_siryo/iten18.html",
+          "type": "HTML",
+          "manualLock": true
+        }
+      ]
+    },
+    {
+      "id": "mlit-kokkaitou_iten-19990520-b15",
+      "councilId": "mlit-kokkaitou_iten",
+      "name": "第15回 国会等移転審議会 調査部会",
+      "date": "1999/05/20",
+      "manualLock": true,
+      "round": "b15",
+      "officialUrl": "https://www.mlit.go.jp/kokudokeikaku/iten/information/council/shingi_siryo/iten18.html",
+      "materials": [
+        {
+          "name": "議事要旨",
+          "url": "https://www.mlit.go.jp/kokudokeikaku/iten/information/council/shingi_siryo/iten18.html",
+          "type": "HTML",
+          "manualLock": true
+        }
+      ]
+    },
+    {
+      "id": "mlit-kokkaitou_iten-19990416-017",
+      "councilId": "mlit-kokkaitou_iten",
+      "name": "第17回 国会等移転審議会",
+      "date": "1999/04/16",
+      "manualLock": true,
+      "round": 17,
+      "officialUrl": "https://www.mlit.go.jp/kokudokeikaku/iten/information/council/shingi_siryo/iten17.html",
+      "materials": [
+        {
+          "name": "議事要旨",
+          "url": "https://www.mlit.go.jp/kokudokeikaku/iten/information/council/shingi_siryo/iten17.html",
+          "type": "HTML",
+          "manualLock": true
+        }
+      ]
+    },
+    {
+      "id": "mlit-kokkaitou_iten-19990416-b14",
+      "councilId": "mlit-kokkaitou_iten",
+      "name": "第14回 国会等移転審議会 調査部会",
+      "date": "1999/04/16",
+      "manualLock": true,
+      "round": "b14",
+      "officialUrl": "https://www.mlit.go.jp/kokudokeikaku/iten/information/council/shingi_siryo/iten17.html",
+      "materials": [
+        {
+          "name": "議事要旨",
+          "url": "https://www.mlit.go.jp/kokudokeikaku/iten/information/council/shingi_siryo/iten17.html",
+          "type": "HTML",
+          "manualLock": true
+        }
+      ]
+    },
+    {
+      "id": "mlit-kokkaitou_iten-19990317-016",
+      "councilId": "mlit-kokkaitou_iten",
+      "name": "第16回 国会等移転審議会",
+      "date": "1999/03/17",
+      "manualLock": true,
+      "round": 16,
+      "officialUrl": "https://www.mlit.go.jp/kokudokeikaku/iten/information/council/shingi_siryo/iten16.html",
+      "materials": [
+        {
+          "name": "議事要旨",
+          "url": "https://www.mlit.go.jp/kokudokeikaku/iten/information/council/shingi_siryo/iten16.html",
+          "type": "HTML",
+          "manualLock": true
+        }
+      ]
+    },
+    {
+      "id": "mlit-kokkaitou_iten-19990317-b13",
+      "councilId": "mlit-kokkaitou_iten",
+      "name": "第13回 国会等移転審議会 調査部会",
+      "date": "1999/03/17",
+      "manualLock": true,
+      "round": "b13",
+      "officialUrl": "https://www.mlit.go.jp/kokudokeikaku/iten/information/council/shingi_siryo/iten16.html",
+      "materials": [
+        {
+          "name": "議事要旨",
+          "url": "https://www.mlit.go.jp/kokudokeikaku/iten/information/council/shingi_siryo/iten16.html",
+          "type": "HTML",
+          "manualLock": true
+        }
+      ]
     },
     {
       "id": "mic-kotei_shisan_hyouka-19990224-004",
@@ -810724,6 +811190,74 @@
       "manualLock": true,
       "officialUrl": "https://www.soumu.go.jp/singi/No15.html#3",
       "materials": []
+    },
+    {
+      "id": "mlit-kokkaitou_iten-19990120-015",
+      "councilId": "mlit-kokkaitou_iten",
+      "name": "第15回 国会等移転審議会",
+      "date": "1999/01/20",
+      "manualLock": true,
+      "round": 15,
+      "officialUrl": "https://www.mlit.go.jp/kokudokeikaku/iten/information/council/shingi_siryo/iten15.html",
+      "materials": [
+        {
+          "name": "議事要旨",
+          "url": "https://www.mlit.go.jp/kokudokeikaku/iten/information/council/shingi_siryo/iten15.html",
+          "type": "HTML",
+          "manualLock": true
+        }
+      ]
+    },
+    {
+      "id": "mlit-kokkaitou_iten-19990118-b12",
+      "councilId": "mlit-kokkaitou_iten",
+      "name": "第12回 国会等移転審議会 調査部会",
+      "date": "1999/01/18",
+      "manualLock": true,
+      "round": "b12",
+      "officialUrl": "https://www.mlit.go.jp/kokudokeikaku/iten/information/council/shingi_siryo/itenc12.html",
+      "materials": [
+        {
+          "name": "議事要旨",
+          "url": "https://www.mlit.go.jp/kokudokeikaku/iten/information/council/shingi_siryo/itenc12.html",
+          "type": "HTML",
+          "manualLock": true
+        }
+      ]
+    },
+    {
+      "id": "mlit-kokkaitou_iten-19981207-b11",
+      "councilId": "mlit-kokkaitou_iten",
+      "name": "第11回 国会等移転審議会 調査部会",
+      "date": "1998/12/07",
+      "manualLock": true,
+      "round": "b11",
+      "officialUrl": "https://www.mlit.go.jp/kokudokeikaku/iten/information/council/shingi_siryo/itenc11.html",
+      "materials": [
+        {
+          "name": "議事要旨",
+          "url": "https://www.mlit.go.jp/kokudokeikaku/iten/information/council/shingi_siryo/itenc11.html",
+          "type": "HTML",
+          "manualLock": true
+        }
+      ]
+    },
+    {
+      "id": "mlit-kokkaitou_iten-19981116-014",
+      "councilId": "mlit-kokkaitou_iten",
+      "name": "第14回 国会等移転審議会",
+      "date": "1998/11/16",
+      "manualLock": true,
+      "round": 14,
+      "officialUrl": "https://www.mlit.go.jp/kokudokeikaku/iten/information/council/shingi_siryo/iten14.html",
+      "materials": [
+        {
+          "name": "議事要旨",
+          "url": "https://www.mlit.go.jp/kokudokeikaku/iten/information/council/shingi_siryo/iten14.html",
+          "type": "HTML",
+          "manualLock": true
+        }
+      ]
     },
     {
       "id": "mic-kotei_shisan_hyouka-19981026-002",
@@ -810782,6 +811316,176 @@
       "materials": []
     },
     {
+      "id": "mlit-kokkaitou_iten-19980619-013",
+      "councilId": "mlit-kokkaitou_iten",
+      "name": "第13回 国会等移転審議会",
+      "date": "1998/06/19",
+      "manualLock": true,
+      "round": 13,
+      "officialUrl": "https://www.mlit.go.jp/kokudokeikaku/iten/information/council/shingi_siryo/iten13.html",
+      "materials": [
+        {
+          "name": "議事要旨",
+          "url": "https://www.mlit.go.jp/kokudokeikaku/iten/information/council/shingi_siryo/iten13.html",
+          "type": "HTML",
+          "manualLock": true
+        }
+      ]
+    },
+    {
+      "id": "mlit-kokkaitou_iten-19980525-012",
+      "councilId": "mlit-kokkaitou_iten",
+      "name": "第12回 国会等移転審議会",
+      "date": "1998/05/25",
+      "manualLock": true,
+      "round": 12,
+      "officialUrl": "https://www.mlit.go.jp/kokudokeikaku/iten/information/council/shingi_siryo/iten12.html",
+      "materials": [
+        {
+          "name": "議事要旨",
+          "url": "https://www.mlit.go.jp/kokudokeikaku/iten/information/council/shingi_siryo/iten12.html",
+          "type": "HTML",
+          "manualLock": true
+        }
+      ]
+    },
+    {
+      "id": "mlit-kokkaitou_iten-19980525-b10",
+      "councilId": "mlit-kokkaitou_iten",
+      "name": "第10回 国会等移転審議会 調査部会",
+      "date": "1998/05/25",
+      "manualLock": true,
+      "round": "b10",
+      "officialUrl": "https://www.mlit.go.jp/kokudokeikaku/iten/information/council/shingi_siryo/iten12.html",
+      "materials": [
+        {
+          "name": "議事要旨",
+          "url": "https://www.mlit.go.jp/kokudokeikaku/iten/information/council/shingi_siryo/iten12.html",
+          "type": "HTML",
+          "manualLock": true
+        }
+      ]
+    },
+    {
+      "id": "mlit-kokkaitou_iten-19980422-011",
+      "councilId": "mlit-kokkaitou_iten",
+      "name": "第11回 国会等移転審議会",
+      "date": "1998/04/22",
+      "manualLock": true,
+      "round": 11,
+      "officialUrl": "https://www.mlit.go.jp/kokudokeikaku/iten/information/council/shingi_siryo/iten11.html",
+      "materials": [
+        {
+          "name": "議事要旨",
+          "url": "https://www.mlit.go.jp/kokudokeikaku/iten/information/council/shingi_siryo/iten11.html",
+          "type": "HTML",
+          "manualLock": true
+        }
+      ]
+    },
+    {
+      "id": "mlit-kokkaitou_iten-19980422-b09",
+      "councilId": "mlit-kokkaitou_iten",
+      "name": "第9回 国会等移転審議会 調査部会",
+      "date": "1998/04/22",
+      "manualLock": true,
+      "round": "b09",
+      "officialUrl": "https://www.mlit.go.jp/kokudokeikaku/iten/information/council/shingi_siryo/iten11.html",
+      "materials": [
+        {
+          "name": "議事要旨",
+          "url": "https://www.mlit.go.jp/kokudokeikaku/iten/information/council/shingi_siryo/iten11.html",
+          "type": "HTML",
+          "manualLock": true
+        }
+      ]
+    },
+    {
+      "id": "mlit-kokkaitou_iten-19980421-010",
+      "councilId": "mlit-kokkaitou_iten",
+      "name": "第10回 国会等移転審議会",
+      "date": "1998/04/21",
+      "manualLock": true,
+      "round": 10,
+      "officialUrl": "https://www.mlit.go.jp/kokudokeikaku/iten/information/council/shingi_siryo/iten10.html",
+      "materials": [
+        {
+          "name": "議事要旨",
+          "url": "https://www.mlit.go.jp/kokudokeikaku/iten/information/council/shingi_siryo/iten10.html",
+          "type": "HTML",
+          "manualLock": true
+        }
+      ]
+    },
+    {
+      "id": "mlit-kokkaitou_iten-19980421-b08",
+      "councilId": "mlit-kokkaitou_iten",
+      "name": "第8回 国会等移転審議会 調査部会",
+      "date": "1998/04/21",
+      "manualLock": true,
+      "round": "b08",
+      "officialUrl": "https://www.mlit.go.jp/kokudokeikaku/iten/information/council/shingi_siryo/iten10.html",
+      "materials": [
+        {
+          "name": "議事要旨",
+          "url": "https://www.mlit.go.jp/kokudokeikaku/iten/information/council/shingi_siryo/iten10.html",
+          "type": "HTML",
+          "manualLock": true
+        }
+      ]
+    },
+    {
+      "id": "mlit-kokkaitou_iten-19980320-b07",
+      "councilId": "mlit-kokkaitou_iten",
+      "name": "第7回 国会等移転審議会 調査部会",
+      "date": "1998/03/20",
+      "manualLock": true,
+      "round": "b07",
+      "officialUrl": "https://www.mlit.go.jp/kokudokeikaku/iten/information/council/shingi_siryo/itenc07.html",
+      "materials": [
+        {
+          "name": "議事要旨",
+          "url": "https://www.mlit.go.jp/kokudokeikaku/iten/information/council/shingi_siryo/itenc07.html",
+          "type": "HTML",
+          "manualLock": true
+        }
+      ]
+    },
+    {
+      "id": "mlit-kokkaitou_iten-19980116-009",
+      "councilId": "mlit-kokkaitou_iten",
+      "name": "第9回 国会等移転審議会",
+      "date": "1998/01/16",
+      "manualLock": true,
+      "round": 9,
+      "officialUrl": "https://www.mlit.go.jp/kokudokeikaku/iten/information/council/shingi_siryo/iten09.html",
+      "materials": [
+        {
+          "name": "議事要旨",
+          "url": "https://www.mlit.go.jp/kokudokeikaku/iten/information/council/shingi_siryo/iten09.html",
+          "type": "HTML",
+          "manualLock": true
+        }
+      ]
+    },
+    {
+      "id": "mlit-kokkaitou_iten-19971208-b06",
+      "councilId": "mlit-kokkaitou_iten",
+      "name": "第6回 国会等移転審議会 調査部会",
+      "date": "1997/12/08",
+      "manualLock": true,
+      "round": "b06",
+      "officialUrl": "https://www.mlit.go.jp/kokudokeikaku/iten/information/council/shingi_siryo/itenc06.html",
+      "materials": [
+        {
+          "name": "議事要旨",
+          "url": "https://www.mlit.go.jp/kokudokeikaku/iten/information/council/shingi_siryo/itenc06.html",
+          "type": "HTML",
+          "manualLock": true
+        }
+      ]
+    },
+    {
       "id": "cao-246-19971126-004",
       "councilId": "cao-246",
       "name": "男女共同参画推進連携会議 第4回全体会議",
@@ -810790,6 +811494,91 @@
       "officialUrl": "https://www.gender.go.jp/kaigi/renkei/zentai/4/index.html",
       "discoveredAt": "2026/09/30 07:39",
       "materials": []
+    },
+    {
+      "id": "mlit-kokkaitou_iten-19971111-b05",
+      "councilId": "mlit-kokkaitou_iten",
+      "name": "第5回 国会等移転審議会 調査部会",
+      "date": "1997/11/11",
+      "manualLock": true,
+      "round": "b05",
+      "officialUrl": "https://www.mlit.go.jp/kokudokeikaku/iten/information/council/shingi_siryo/itenc05.html",
+      "materials": [
+        {
+          "name": "議事要旨",
+          "url": "https://www.mlit.go.jp/kokudokeikaku/iten/information/council/shingi_siryo/itenc05.html",
+          "type": "HTML",
+          "manualLock": true
+        }
+      ]
+    },
+    {
+      "id": "mlit-kokkaitou_iten-19971008-008",
+      "councilId": "mlit-kokkaitou_iten",
+      "name": "第8回 国会等移転審議会",
+      "date": "1997/10/08",
+      "manualLock": true,
+      "round": 8,
+      "officialUrl": "https://www.mlit.go.jp/kokudokeikaku/iten/information/council/shingi_siryo/iten08.html",
+      "materials": [
+        {
+          "name": "議事要旨",
+          "url": "https://www.mlit.go.jp/kokudokeikaku/iten/information/council/shingi_siryo/iten08.html",
+          "type": "HTML",
+          "manualLock": true
+        }
+      ]
+    },
+    {
+      "id": "mlit-kokkaitou_iten-19971002-b04",
+      "councilId": "mlit-kokkaitou_iten",
+      "name": "第4回 国会等移転審議会 調査部会",
+      "date": "1997/10/02",
+      "manualLock": true,
+      "round": "b04",
+      "officialUrl": "https://www.mlit.go.jp/kokudokeikaku/iten/information/council/shingi_siryo/itenc04.html",
+      "materials": [
+        {
+          "name": "議事要旨",
+          "url": "https://www.mlit.go.jp/kokudokeikaku/iten/information/council/shingi_siryo/itenc04.html",
+          "type": "HTML",
+          "manualLock": true
+        }
+      ]
+    },
+    {
+      "id": "mlit-kokkaitou_iten-19970722-007",
+      "councilId": "mlit-kokkaitou_iten",
+      "name": "第7回 国会等移転審議会",
+      "date": "1997/07/22",
+      "manualLock": true,
+      "round": 7,
+      "officialUrl": "https://www.mlit.go.jp/kokudokeikaku/iten/information/council/shingi_siryo/iten07.html",
+      "materials": [
+        {
+          "name": "議事要旨",
+          "url": "https://www.mlit.go.jp/kokudokeikaku/iten/information/council/shingi_siryo/iten07.html",
+          "type": "HTML",
+          "manualLock": true
+        }
+      ]
+    },
+    {
+      "id": "mlit-kokkaitou_iten-19970708-b03",
+      "councilId": "mlit-kokkaitou_iten",
+      "name": "第3回 国会等移転審議会 調査部会",
+      "date": "1997/07/08",
+      "manualLock": true,
+      "round": "b03",
+      "officialUrl": "https://www.mlit.go.jp/kokudokeikaku/iten/information/council/shingi_siryo/itenc03.html",
+      "materials": [
+        {
+          "name": "議事要旨",
+          "url": "https://www.mlit.go.jp/kokudokeikaku/iten/information/council/shingi_siryo/itenc03.html",
+          "type": "HTML",
+          "manualLock": true
+        }
+      ]
     },
     {
       "id": "cao-246-19970627-003",
@@ -810802,6 +811591,91 @@
       "materials": []
     },
     {
+      "id": "mlit-kokkaitou_iten-19970620-006",
+      "councilId": "mlit-kokkaitou_iten",
+      "name": "第6回 国会等移転審議会",
+      "date": "1997/06/20",
+      "manualLock": true,
+      "round": 6,
+      "officialUrl": "https://www.mlit.go.jp/kokudokeikaku/iten/information/council/shingi_siryo/iten06.html",
+      "materials": [
+        {
+          "name": "議事要旨",
+          "url": "https://www.mlit.go.jp/kokudokeikaku/iten/information/council/shingi_siryo/iten06.html",
+          "type": "HTML",
+          "manualLock": true
+        }
+      ]
+    },
+    {
+      "id": "mlit-kokkaitou_iten-19970521-005",
+      "councilId": "mlit-kokkaitou_iten",
+      "name": "第5回 国会等移転審議会",
+      "date": "1997/05/21",
+      "manualLock": true,
+      "round": 5,
+      "officialUrl": "https://www.mlit.go.jp/kokudokeikaku/iten/information/council/shingi_siryo/iten05.html",
+      "materials": [
+        {
+          "name": "議事要旨",
+          "url": "https://www.mlit.go.jp/kokudokeikaku/iten/information/council/shingi_siryo/iten05.html",
+          "type": "HTML",
+          "manualLock": true
+        }
+      ]
+    },
+    {
+      "id": "mlit-kokkaitou_iten-19970507-b02",
+      "councilId": "mlit-kokkaitou_iten",
+      "name": "第2回 国会等移転審議会 調査部会",
+      "date": "1997/05/07",
+      "manualLock": true,
+      "round": "b02",
+      "officialUrl": "https://www.mlit.go.jp/kokudokeikaku/iten/information/council/shingi_siryo/itenc02.html",
+      "materials": [
+        {
+          "name": "議事要旨",
+          "url": "https://www.mlit.go.jp/kokudokeikaku/iten/information/council/shingi_siryo/itenc02.html",
+          "type": "HTML",
+          "manualLock": true
+        }
+      ]
+    },
+    {
+      "id": "mlit-kokkaitou_iten-19970403-004",
+      "councilId": "mlit-kokkaitou_iten",
+      "name": "第4回 国会等移転審議会",
+      "date": "1997/04/03",
+      "manualLock": true,
+      "round": 4,
+      "officialUrl": "https://www.mlit.go.jp/kokudokeikaku/iten/information/council/shingi_siryo/iten04.html",
+      "materials": [
+        {
+          "name": "議事要旨",
+          "url": "https://www.mlit.go.jp/kokudokeikaku/iten/information/council/shingi_siryo/iten04.html",
+          "type": "HTML",
+          "manualLock": true
+        }
+      ]
+    },
+    {
+      "id": "mlit-kokkaitou_iten-19970402-b01",
+      "councilId": "mlit-kokkaitou_iten",
+      "name": "第1回 国会等移転審議会 調査部会",
+      "date": "1997/04/02",
+      "manualLock": true,
+      "round": "b01",
+      "officialUrl": "https://www.mlit.go.jp/kokudokeikaku/iten/information/council/shingi_siryo/itenc01.html",
+      "materials": [
+        {
+          "name": "議事要旨",
+          "url": "https://www.mlit.go.jp/kokudokeikaku/iten/information/council/shingi_siryo/itenc01.html",
+          "type": "HTML",
+          "manualLock": true
+        }
+      ]
+    },
+    {
       "id": "cao-246-19970317-002",
       "councilId": "cao-246",
       "name": "男女共同参画推進連携会議 第2回全体会議",
@@ -810812,72 +811686,53 @@
       "materials": []
     },
     {
-      "id": "cao-233-19961219-001",
-      "councilId": "cao-233",
-      "name": "第1回 国会等移転審議会(国土交通省)",
-      "date": "1996/12/19",
+      "id": "mlit-kokkaitou_iten-19970224-003",
+      "councilId": "mlit-kokkaitou_iten",
+      "name": "第3回 国会等移転審議会",
+      "date": "1997/02/24",
       "manualLock": true,
-      "officialUrl": "https://www.mlit.go.jp/kokudokeikaku/iten/information/council/index.html",
+      "round": 3,
+      "officialUrl": "https://www.mlit.go.jp/kokudokeikaku/iten/information/council/shingi_siryo/iten03.html",
       "materials": [
         {
-          "name": "答申",
-          "url": "https://www.mlit.go.jp/kokudokeikaku/iten/information/council/pdf/toushin.pdf"
-        },
+          "name": "議事要旨",
+          "url": "https://www.mlit.go.jp/kokudokeikaku/iten/information/council/shingi_siryo/iten03.html",
+          "type": "HTML",
+          "manualLock": true
+        }
+      ]
+    },
+    {
+      "id": "mlit-kokkaitou_iten-19970114-002",
+      "councilId": "mlit-kokkaitou_iten",
+      "name": "第2回 国会等移転審議会",
+      "date": "1997/01/14",
+      "manualLock": true,
+      "round": 2,
+      "officialUrl": "https://www.mlit.go.jp/kokudokeikaku/iten/information/council/shingi_siryo/iten02.html",
+      "materials": [
         {
-          "name": "答申（参考資料）",
-          "url": "https://www.mlit.go.jp/kokudokeikaku/iten/information/council/pdf/toushin_sankou.pdf"
-        },
+          "name": "議事要旨",
+          "url": "https://www.mlit.go.jp/kokudokeikaku/iten/information/council/shingi_siryo/iten02.html",
+          "type": "HTML",
+          "manualLock": true
+        }
+      ]
+    },
+    {
+      "id": "mlit-kokkaitou_iten-19961219-001",
+      "councilId": "mlit-kokkaitou_iten",
+      "name": "第1回 国会等移転審議会",
+      "date": "1996/12/19",
+      "manualLock": true,
+      "round": 1,
+      "officialUrl": "https://www.mlit.go.jp/kokudokeikaku/iten/information/council/shingi_siryo/iten01.html",
+      "materials": [
         {
-          "name": "PDF形式(約70KB)(新しいウィンドウで表示)",
-          "url": "https://www.mlit.go.jp/kokudokeikaku/iten/information/council/pdf/keii.pdf"
-        },
-        {
-          "name": "PDF形式(約90KB)(新しいウィンドウで表示)",
-          "url": "https://www.mlit.go.jp/kokudokeikaku/iten/information/council/pdf/hajimeni.pdf"
-        },
-        {
-          "name": "PDF形式(約360KB)(新しいウィンドウで表示)",
-          "url": "https://www.mlit.go.jp/kokudokeikaku/iten/information/council/pdf/kentoukekka.pdf"
-        },
-        {
-          "name": "PDF形式(約340KB)(新しいウィンドウで表示)",
-          "url": "https://www.mlit.go.jp/kokudokeikaku/iten/information/council/pdf/1-1.pdf"
-        },
-        {
-          "name": "PDF形式(約1,490KB)(新しいウィンドウで表示)",
-          "url": "https://www.mlit.go.jp/kokudokeikaku/iten/information/council/pdf/1-2.pdf"
-        },
-        {
-          "name": "PDF形式(約1,763KB)(新しいウィンドウで表示)",
-          "url": "https://www.mlit.go.jp/kokudokeikaku/iten/information/council/pdf/1-3.pdf"
-        },
-        {
-          "name": "PDF形式(約2,418KB)(新しいウィンドウで表示)",
-          "url": "https://www.mlit.go.jp/kokudokeikaku/iten/information/council/pdf/1-4.pdf"
-        },
-        {
-          "name": "PDF形式(約2,258KB)(新しいウィンドウで表示)",
-          "url": "https://www.mlit.go.jp/kokudokeikaku/iten/information/council/pdf/1-5.pdf"
-        },
-        {
-          "name": "PDF形式(約1,431KB)(新しいウィンドウで表示)",
-          "url": "https://www.mlit.go.jp/kokudokeikaku/iten/information/council/pdf/2-1.pdf"
-        },
-        {
-          "name": "PDF形式(約2,063KB)(新しいウィンドウで表示)",
-          "url": "https://www.mlit.go.jp/kokudokeikaku/iten/information/council/pdf/2-2.pdf"
-        },
-        {
-          "name": "PDF形式(約193KB)(新しいウィンドウで表示)",
-          "url": "https://www.mlit.go.jp/kokudokeikaku/iten/information/council/pdf/2-3.pdf"
-        },
-        {
-          "name": "PDF形式(約413KB)(新しいウィンドウで表示)",
-          "url": "https://www.mlit.go.jp/kokudokeikaku/iten/information/council/pdf/2-4.pdf"
-        },
-        {
-          "name": "PDF形式(約942KB)(新しいウィンドウで表示)",
-          "url": "https://www.mlit.go.jp/kokudokeikaku/iten/information/council/pdf/2-sankou.pdf"
+          "name": "議事要旨",
+          "url": "https://www.mlit.go.jp/kokudokeikaku/iten/information/council/shingi_siryo/iten01.html",
+          "type": "HTML",
+          "manualLock": true
         }
       ]
     },
