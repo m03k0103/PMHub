@@ -540,6 +540,78 @@
     "reason": "AI判定: HTTPエラー 404（アクセス不可）のため却下"
   },
   {
+    "id": "cao-2952",
+    "name": "規制改革推進会議スタートアップ・イノベーション促進ワーキング・グループ",
+    "ministry": "cao",
+    "category": "COUNCIL",
+    "officialUrl": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_04startup/260617/startup15_agenda.html",
+    "rejectedAt": "2026-10-28 20:59:33",
+    "reason": "規制改革推進会議スタートアップ・イノベーション促進WGの単一アジェンダURLのため本体組織（cao-kisei_startup_wg）へ統合"
+  },
+  {
+    "id": "cao-2953",
+    "name": "規制改革推進会議GX・サステナビリティサブワーキング・グループ",
+    "ministry": "cao",
+    "category": "COUNCIL",
+    "officialUrl": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_05gx/260526/gx03_agenda.html",
+    "rejectedAt": "2026-10-28 20:59:33",
+    "reason": "規制改革推進会議GX・サステナビリティサブWGの単一アジェンダURLのため本体組織（cao-kisei_gx_subwg）へ統合"
+  },
+  {
+    "id": "cao-2954",
+    "name": "規制改革推進会議働き方・人への投資ワーキング・グループ",
+    "ministry": "cao",
+    "category": "COUNCIL",
+    "officialUrl": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_03human/260521/human09_agenda.html",
+    "rejectedAt": "2026-10-28 20:59:33",
+    "reason": "規制改革推進会議働き方・人への投資WGの単一アジェンダURLのため本体組織（cao-kisei_hatarakikata_wg）へ統合"
+  },
+  {
+    "id": "cao-2955",
+    "name": "規制改革推進会議地域活性化・人手不足対応ワーキング・グループ",
+    "ministry": "cao",
+    "category": "COUNCIL",
+    "officialUrl": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_01local/260519/local11_agenda.html",
+    "rejectedAt": "2026-10-28 20:59:33",
+    "reason": "規制改革推進会議地域活性化・人手不足対応WGの単一アジェンダURLのため本体組織（cao-kisei_chiiki_wg）へ統合"
+  },
+  {
+    "id": "cao-2956",
+    "name": "規制改革推進会議健康・医療・介護ワーキング・グループ",
+    "ministry": "cao",
+    "category": "COUNCIL",
+    "officialUrl": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_02medical/260515/medical12_agenda.html",
+    "rejectedAt": "2026-10-28 20:59:33",
+    "reason": "規制改革推進会議健康・医療・介護WGの単一アジェンダURLのため本体組織（cao-kisei_iryou_wg）へ統合"
+  },
+  {
+    "id": "cao-2957",
+    "name": "規制改革推進会議デジタル・AIワーキング・グループ",
+    "ministry": "cao",
+    "category": "COUNCIL",
+    "officialUrl": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_06ai/260515/ai10_agenda.html",
+    "rejectedAt": "2026-10-28 20:59:33",
+    "reason": "規制改革推進会議デジタル・AI WGの単一アジェンダURLのため本体組織（cao-kisei_digital_ai_wg）へ統合"
+  },
+  {
+    "id": "cao-2959",
+    "name": "働き方・人への投資ワーキング・グループ",
+    "ministry": "cao",
+    "category": "COUNCIL",
+    "officialUrl": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_03human/260109/human05_agenda.html",
+    "rejectedAt": "2026-10-28 20:59:33",
+    "reason": "規制改革推進会議働き方・人への投資WGの単一アジェンダURLのため本体組織（cao-kisei_hatarakikata_wg）へ統合"
+  },
+  {
+    "id": "cao-2960",
+    "name": "デジタル・AIワーキング・グループ",
+    "ministry": "cao",
+    "category": "COUNCIL",
+    "officialUrl": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_06ai/260109/ai06_agenda.html",
+    "rejectedAt": "2026-10-28 20:59:33",
+    "reason": "規制改革推進会議デジタル・AI WGの単一アジェンダURLのため本体組織（cao-kisei_digital_ai_wg）へ統合"
+  },
+  {
     "id": "cao-cstp_bridge_wg",
     "name": "総合科学技術・イノベーション会議 BRIDGEワーキンググループ",
     "ministry": "CAO",
@@ -1132,6 +1204,24 @@
     "officialUrl": "https://www.fdma.go.jp/singi_kento/kento/1995/",
     "rejectedAt": "2026-08-28",
     "reason": "Admin rejected council"
+  },
+  {
+    "id": "fsa-2903",
+    "name": "家計の見える化検討会議",
+    "ministry": "fsa",
+    "category": "COUNCIL",
+    "officialUrl": "https://www.fsa.go.jp/news/r8/20260918/20260918.html",
+    "rejectedAt": "2026-10-28 20:59:33",
+    "reason": "外部法人（金融経済教育推進機構：J-FLEC）検討会議報告書の報道発表URLのため非審議会として除外"
+  },
+  {
+    "id": "fsa-2904",
+    "name": "サステナブルファイナンス有識者会議意見要旨",
+    "ministry": "fsa",
+    "category": "COUNCIL",
+    "officialUrl": "https://www.fsa.go.jp/news/r8/singi/20260805.html",
+    "rejectedAt": "2026-10-28 20:59:33",
+    "reason": "fsa-sustainable_finance（サステナブルファイナンス有識者会議）第30回意見要旨の報道発表URLのため本体組織へ統合"
   },
   {
     "id": "fsa-498",
