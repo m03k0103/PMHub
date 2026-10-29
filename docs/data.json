@@ -5275,11 +5275,12 @@
       "pastYearCount": 2
     },
     {
-      "id": "digital-agile_opensource",
+      "id": "digital-agile_kentoukai",
       "ministry": "DIGITAL",
-      "category": "STUDY",
-      "name": "情報システム調達におけるアジャイル開発やオープンソース化等に係る有識者検討会",
-      "officialUrl": "https://www.digital.go.jp/councils/procurement-agile-opensource",
+      "category": "COUNCIL",
+      "name": "アジャイル開発に関する有識者検討会",
+      "manualLock": true,
+      "officialUrl": "https://www.digital.go.jp/councils/procurement-agile-opensource/agile-review-meeting",
       "pastYearCount": 0
     },
     {
@@ -5359,6 +5360,15 @@
       "name": "地方公共団体情報システムにおける文字の標準化に関する有識者会議",
       "officialUrl": "https://www.digital.go.jp/councils/local-governments-character-specification-revise-experts-meeting",
       "pastYearCount": 1
+    },
+    {
+      "id": "digital-oss_kentoukai",
+      "ministry": "DIGITAL",
+      "category": "COUNCIL",
+      "name": "オープンソース化・OSS利活用に関する有識者検討会",
+      "manualLock": true,
+      "officialUrl": "https://www.digital.go.jp/councils/procurement-agile-opensource/opensource-review-meeting",
+      "pastYearCount": 0
     },
     {
       "id": "digital-seido_kaikaku",
@@ -9087,26 +9097,6 @@
       "discoverySource": "rule"
     },
     {
-      "id": "jfa-3005",
-      "ministry": "JFA",
-      "category": "STUDY",
-      "name": "海業推進全国協議会",
-      "officialUrl": "https://www.jfa.maff.go.jp/j/press/keikaku/251212.html",
-      "pastYearCount": 0,
-      "discoveredAt": "2026/10/24 17:12",
-      "discoverySource": "rule"
-    },
-    {
-      "id": "jfa-3006",
-      "ministry": "JFA",
-      "category": "STUDY",
-      "name": "令和6年能登半島地震漁業地域復旧・復興技術検討会",
-      "officialUrl": "https://www.jfa.maff.go.jp/j/press/keikaku/240628.html",
-      "pastYearCount": 0,
-      "discoveredAt": "2026/10/24 17:12",
-      "discoverySource": "rule"
-    },
-    {
       "id": "jfa-592",
       "ministry": "JFA",
       "category": "SECTION",
@@ -9220,6 +9210,15 @@
       "pastYearCount": 0
     },
     {
+      "id": "jfa-noto_fukkyuu_kentoukai",
+      "ministry": "JFA",
+      "category": "COUNCIL",
+      "name": "令和6年能登半島地震漁業地域復旧・復興技術検討会",
+      "manualLock": true,
+      "officialUrl": "https://www.jfa.maff.go.jp/j/gyoko_gyozyo/g_zyoho_bako/gizyutu_kentokai/gizyutu_kentokai.html",
+      "pastYearCount": 0
+    },
+    {
       "id": "jfa-shigen_kanri_houshin",
       "ministry": "JFA",
       "category": "STUDY",
@@ -9286,6 +9285,15 @@
       "officialUrl": "https://www.jfa.maff.go.jp/j/study/jikkoukeikaku.html",
       "description": "水産物の消費拡大施策に関する官民協働の推進機関として設置された計画会議。",
       "pastYearCount": 1
+    },
+    {
+      "id": "jfa-umigyo_kyougikai",
+      "ministry": "JFA",
+      "category": "COUNCIL",
+      "name": "海業推進全国協議会",
+      "manualLock": true,
+      "officialUrl": "https://www.jfa.maff.go.jp/j/keikaku/umigyo_kyougikai.html",
+      "pastYearCount": 0
     },
     {
       "id": "jsa-2227",
@@ -9865,6 +9873,7 @@
       "ministry": "MAFF",
       "category": "STUDY",
       "name": "2025年農林業センサス研究会",
+      "manualLock": true,
       "officialUrl": "https://www.maff.go.jp/j/study/census/2025/index.html",
       "pastYearCount": 0
     },
@@ -9873,6 +9882,7 @@
       "ministry": "MAFF",
       "category": "STUDY",
       "name": "2023年漁業センサス研究会",
+      "manualLock": true,
       "officialUrl": "https://www.maff.go.jp/j/study/2023_gyocen/index.html",
       "pastYearCount": 0
     },
@@ -11002,76 +11012,6 @@
       "pastYearCount": 0
     },
     {
-      "id": "mext-2944",
-      "ministry": "MEXT",
-      "category": "SECTION",
-      "name": "教育課程部会",
-      "officialUrl": "https://www.mext.go.jp/b_menu/shingi/chukyo/chukyo3/kaisai/mext_00157.html",
-      "pastYearCount": 0,
-      "discoveredAt": "2026/10/24 17:12",
-      "discoverySource": "rule"
-    },
-    {
-      "id": "mext-2945",
-      "ministry": "MEXT",
-      "category": "SECTION",
-      "name": "ライフサイエンス委員会",
-      "officialUrl": "https://www.mext.go.jp/b_menu/shingi/gijyutu/gijyutu2/113/kaisai/mext_00006.html",
-      "pastYearCount": 0,
-      "discoveredAt": "2026/10/24 17:12",
-      "discoverySource": "rule"
-    },
-    {
-      "id": "mext-2946",
-      "ministry": "MEXT",
-      "category": "COUNCIL",
-      "name": "ポスト2030教育に関するユースアジェンダ起草会議",
-      "officialUrl": "https://www.mext.go.jp/unesco/001/2014/1347530_00012.htm",
-      "pastYearCount": 0,
-      "discoveredAt": "2026/10/24 17:12",
-      "discoverySource": "rule"
-    },
-    {
-      "id": "mext-2947",
-      "ministry": "MEXT",
-      "category": "SUBCOMMITTEE",
-      "name": "技術士分科会",
-      "officialUrl": "https://www.mext.go.jp/b_menu/shingi/gijyutu/gijyutu7/kaisai/mext_00006.html",
-      "pastYearCount": 0,
-      "discoveredAt": "2026/10/24 17:12",
-      "discoverySource": "rule"
-    },
-    {
-      "id": "mext-2948",
-      "ministry": "MEXT",
-      "category": "SECTION",
-      "name": "研究費部会",
-      "officialUrl": "https://www.mext.go.jp/b_menu/shingi/gijyutu/gijyutu4/053/kaisai/0004_00006.html",
-      "pastYearCount": 0,
-      "discoveredAt": "2026/10/24 17:12",
-      "discoverySource": "rule"
-    },
-    {
-      "id": "mext-2949",
-      "ministry": "MEXT",
-      "category": "STUDY",
-      "name": "高等専門学校の機能強化に関する検討会",
-      "officialUrl": "https://www.mext.go.jp/b_menu/shingi/chousa/koutou/136/mext_00007.html",
-      "pastYearCount": 0,
-      "discoveredAt": "2026/10/24 17:12",
-      "discoverySource": "rule"
-    },
-    {
-      "id": "mext-2950",
-      "ministry": "MEXT",
-      "category": "COMMITTEE",
-      "name": "先端研究開発基盤強化委員会",
-      "officialUrl": "https://www.mext.go.jp/b_menu/shingi/gijyutu/gijyutu28/002/kaisai/mext_0005_00001.html",
-      "pastYearCount": 0,
-      "discoveredAt": "2026/10/24 17:12",
-      "discoverySource": "rule"
-    },
-    {
       "id": "mext-714",
       "ministry": "MEXT",
       "category": "COUNCIL",
@@ -11541,16 +11481,6 @@
       "discoverySource": "rule"
     },
     {
-      "id": "mhlw-2856",
-      "ministry": "MHLW",
-      "category": "STUDY",
-      "name": "医療扶助・健康管理支援等に関する検討会",
-      "officialUrl": "https://www.mhlw.go.jp/stf/newpage_76805.html",
-      "pastYearCount": 0,
-      "discoveredAt": "2026/10/24 17:12",
-      "discoverySource": "rule"
-    },
-    {
       "id": "mhlw-2857",
       "ministry": "MHLW",
       "category": "COUNCIL",
@@ -11561,32 +11491,12 @@
       "discoverySource": "rule"
     },
     {
-      "id": "mhlw-2858",
-      "ministry": "MHLW",
-      "category": "COMMITTEE",
-      "name": "特定石綿被害建設業務労働者等認定審査会",
-      "officialUrl": "https://www.mhlw.go.jp/stf/newpage_76516.html",
-      "pastYearCount": 0,
-      "discoveredAt": "2026/10/24 17:12",
-      "discoverySource": "rule"
-    },
-    {
       "id": "mhlw-2859",
       "ministry": "MHLW",
       "category": "STUDY",
       "name": "医療関係職種の安定的な養成・確保に関する検討会",
       "officialUrl": "https://www.mhlw.go.jp/stf/shingi/other-isei_436723_00018.html",
       "pastYearCount": 4,
-      "discoveredAt": "2026/10/24 17:12",
-      "discoverySource": "rule"
-    },
-    {
-      "id": "mhlw-2860",
-      "ministry": "MHLW",
-      "category": "SECTION",
-      "name": "創薬力向上のための官民協議会",
-      "officialUrl": "https://www.mhlw.go.jp/stf/newpage_76843.html",
-      "pastYearCount": 0,
       "discoveredAt": "2026/10/24 17:12",
       "discoverySource": "rule"
     },
@@ -11607,26 +11517,6 @@
       "name": "肝炎治療戦略会議",
       "officialUrl": "https://www.mhlw.go.jp/stf/shingi/other-kenkou_128605.html",
       "pastYearCount": 18,
-      "discoveredAt": "2026/10/24 17:12",
-      "discoverySource": "rule"
-    },
-    {
-      "id": "mhlw-2863",
-      "ministry": "MHLW",
-      "category": "STUDY",
-      "name": "有料老人ホームにおける望ましいサービス提供のあり方に関する検討会",
-      "officialUrl": "https://www.mhlw.go.jp/stf/newpage_76739.html",
-      "pastYearCount": 0,
-      "discoveredAt": "2026/10/24 17:12",
-      "discoverySource": "rule"
-    },
-    {
-      "id": "mhlw-2864",
-      "ministry": "MHLW",
-      "category": "STUDY",
-      "name": "国民年金システム標準化研究会",
-      "officialUrl": "https://www.mhlw.go.jp/stf/nenkin_kenkyuukai-siryo02_00166.html",
-      "pastYearCount": 0,
       "discoveredAt": "2026/10/24 17:12",
       "discoverySource": "rule"
     },
@@ -11671,72 +11561,12 @@
       "discoverySource": "rule"
     },
     {
-      "id": "mhlw-2869",
-      "ministry": "MHLW",
-      "category": "EXPERT_COMMITTEE",
-      "name": "ゲノム編集技術等を用いたヒト受精胚等の取扱い等に関する合同会議",
-      "officialUrl": "https://www.mhlw.go.jp/stf/newpage_76567.html",
-      "pastYearCount": 0,
-      "discoveredAt": "2026/10/24 17:12",
-      "discoverySource": "rule"
-    },
-    {
-      "id": "mhlw-2870",
-      "ministry": "MHLW",
-      "category": "STUDY",
-      "name": "化学物質管理に係る専門家検討会",
-      "officialUrl": "https://www.mhlw.go.jp/stf/newpage_76576.html",
-      "pastYearCount": 0,
-      "discoveredAt": "2026/10/24 17:12",
-      "discoverySource": "rule"
-    },
-    {
-      "id": "mhlw-2871",
-      "ministry": "MHLW",
-      "category": "COUNCIL",
-      "name": "地域・職域連携推進関係者会議",
-      "officialUrl": "https://www.mhlw.go.jp/stf/newpage_76584.html",
-      "pastYearCount": 0,
-      "discoveredAt": "2026/10/24 17:12",
-      "discoverySource": "rule"
-    },
-    {
       "id": "mhlw-2872",
       "ministry": "MHLW",
       "category": "STUDY",
       "name": "歯科技工士の業務のあり方等に関する検討会",
       "officialUrl": "https://www.mhlw.go.jp/stf/shingi/other-isei_547700_00003.html",
       "pastYearCount": 9,
-      "discoveredAt": "2026/10/24 17:12",
-      "discoverySource": "rule"
-    },
-    {
-      "id": "mhlw-2873",
-      "ministry": "MHLW",
-      "category": "WORKING_GROUP",
-      "name": "健康・医療・介護情報利活用検討会 医療等情報利活用ワーキンググループ",
-      "officialUrl": "https://www.mhlw.go.jp/stf/shingi/0001210262_00104.html",
-      "pastYearCount": 0,
-      "discoveredAt": "2026/10/24 17:12",
-      "discoverySource": "rule"
-    },
-    {
-      "id": "mhlw-2874",
-      "ministry": "MHLW",
-      "category": "WORKING_GROUP",
-      "name": "法的脳死判定基準に関する作業班(Web会議",
-      "officialUrl": "https://www.mhlw.go.jp/stf/shingi/newpage_00067.html",
-      "pastYearCount": 0,
-      "discoveredAt": "2026/10/24 17:12",
-      "discoverySource": "rule"
-    },
-    {
-      "id": "mhlw-2875",
-      "ministry": "MHLW",
-      "category": "SECTION",
-      "name": "薬事審議会 化学物質安全対策部会 家庭用品安全対策調査会",
-      "officialUrl": "https://www.mhlw.go.jp/stf/newpage_76512.html",
-      "pastYearCount": 0,
       "discoveredAt": "2026/10/24 17:12",
       "discoverySource": "rule"
     },
@@ -11751,62 +11581,12 @@
       "discoverySource": "rule"
     },
     {
-      "id": "mhlw-2877",
-      "ministry": "MHLW",
-      "category": "STUDY",
-      "name": "電離放射線障害の業務上外に関する検討会",
-      "officialUrl": "https://www.mhlw.go.jp/stf/newpage_76236.html",
-      "pastYearCount": 0,
-      "discoveredAt": "2026/10/24 17:12",
-      "discoverySource": "rule"
-    },
-    {
       "id": "mhlw-2878",
       "ministry": "MHLW",
       "category": "STUDY",
       "name": "妊娠・出産・産後における診療やケアの内容等に関する検討会",
       "officialUrl": "https://www.mhlw.go.jp/stf/shingi/other-hoken_474087_00009.html",
       "pastYearCount": 1,
-      "discoveredAt": "2026/10/24 17:12",
-      "discoverySource": "rule"
-    },
-    {
-      "id": "mhlw-2879",
-      "ministry": "MHLW",
-      "category": "COMMITTEE",
-      "name": "UHCナレッジハブの第六回調整委員会",
-      "officialUrl": "https://www.mhlw.go.jp/stf/newpage_76368.html",
-      "pastYearCount": 0,
-      "discoveredAt": "2026/10/24 17:12",
-      "discoverySource": "rule"
-    },
-    {
-      "id": "mhlw-2880",
-      "ministry": "MHLW",
-      "category": "COUNCIL",
-      "name": "身元特定DNA鑑定会議",
-      "officialUrl": "https://www.mhlw.go.jp/stf/newpage_74911.html",
-      "pastYearCount": 0,
-      "discoveredAt": "2026/10/24 17:12",
-      "discoverySource": "rule"
-    },
-    {
-      "id": "mhlw-2881",
-      "ministry": "MHLW",
-      "category": "WORKING_GROUP",
-      "name": "日本人のための食事ガイド(仮称)ワーキンググループ",
-      "officialUrl": "https://www.mhlw.go.jp/stf/newpage_76077.html",
-      "pastYearCount": 0,
-      "discoveredAt": "2026/10/24 17:12",
-      "discoverySource": "rule"
-    },
-    {
-      "id": "mhlw-2882",
-      "ministry": "MHLW",
-      "category": "ROUNDTABLE",
-      "name": "薬剤師のキャリアパスに関する懇談会",
-      "officialUrl": "https://www.mhlw.go.jp/stf/newpage_76155.html",
-      "pastYearCount": 0,
       "discoveredAt": "2026/10/24 17:12",
       "discoverySource": "rule"
     },
@@ -11841,56 +11621,6 @@
       "discoverySource": "rule"
     },
     {
-      "id": "mhlw-2886",
-      "ministry": "MHLW",
-      "category": "STUDY",
-      "name": "コーデックス連絡協議会",
-      "officialUrl": "https://www.mhlw.go.jp/stf/newpage_76212.html",
-      "pastYearCount": 0,
-      "discoveredAt": "2026/10/24 17:12",
-      "discoverySource": "rule"
-    },
-    {
-      "id": "mhlw-2887",
-      "ministry": "MHLW",
-      "category": "HQ",
-      "name": "死因究明等推進計画検証等推進会議",
-      "officialUrl": "https://www.mhlw.go.jp/stf/newpage_76210.html",
-      "pastYearCount": 0,
-      "discoveredAt": "2026/10/24 17:12",
-      "discoverySource": "rule"
-    },
-    {
-      "id": "mhlw-2888",
-      "ministry": "MHLW",
-      "category": "SECTION",
-      "name": "食品衛生監視部会伝達性海綿状脳症対策に関する小委員会",
-      "officialUrl": "https://www.mhlw.go.jp/stf/other-kenkou_128610_00042.html",
-      "pastYearCount": 0,
-      "discoveredAt": "2026/10/24 17:12",
-      "discoverySource": "rule"
-    },
-    {
-      "id": "mhlw-2889",
-      "ministry": "MHLW",
-      "category": "WORKING_GROUP",
-      "name": "健康・医療・介護情報利活用検討会 医療等情報の二次利用に関するワーキンググループ",
-      "officialUrl": "https://www.mhlw.go.jp/stf/shingi/0001210262_00103.html",
-      "pastYearCount": 0,
-      "discoveredAt": "2026/10/24 17:12",
-      "discoverySource": "rule"
-    },
-    {
-      "id": "mhlw-2890",
-      "ministry": "MHLW",
-      "category": "STUDY",
-      "name": "医師の働き方改革の推進等に関する検討会",
-      "officialUrl": "https://www.mhlw.go.jp/stf/newpage_76089.html",
-      "pastYearCount": 0,
-      "discoveredAt": "2026/10/24 17:12",
-      "discoverySource": "rule"
-    },
-    {
       "id": "mhlw-2891",
       "ministry": "MHLW",
       "category": "PANEL",
@@ -11921,32 +11651,12 @@
       "discoverySource": "rule"
     },
     {
-      "id": "mhlw-2895",
-      "ministry": "MHLW",
-      "category": "STUDY",
-      "name": "補装具評価検討会",
-      "officialUrl": "https://www.mhlw.go.jp/stf/74hosougu_00004.html",
-      "pastYearCount": 0,
-      "discoveredAt": "2026/10/24 17:12",
-      "discoverySource": "rule"
-    },
-    {
       "id": "mhlw-2896",
       "ministry": "MHLW",
       "category": "STUDY",
       "name": "ゲノムデータの個人識別性に関する検討会",
       "officialUrl": "https://www.mhlw.go.jp/stf/shingi/other-kousei_311652_00001.html",
       "pastYearCount": 3,
-      "discoveredAt": "2026/10/24 17:12",
-      "discoverySource": "rule"
-    },
-    {
-      "id": "mhlw-2897",
-      "ministry": "MHLW",
-      "category": "SECTION",
-      "name": "薬事審議会 毒物劇物部会 毒物劇物調査会",
-      "officialUrl": "https://www.mhlw.go.jp/stf/newpage_75884.html",
-      "pastYearCount": 0,
       "discoveredAt": "2026/10/24 17:12",
       "discoverySource": "rule"
     },
@@ -100485,6 +100195,31 @@
       ]
     },
     {
+      "id": "digital-agile_kentoukai-20260213-008",
+      "councilId": "digital-agile_kentoukai",
+      "name": "第8回 アジャイル開発に関する有識者検討会",
+      "date": "2026/02/13",
+      "manualLock": true,
+      "officialUrl": "https://www.digital.go.jp/councils/procurement-agile-opensource/agile-review-meeting/ec225afa-a029-418c-ad81-20989f61868c",
+      "materials": [
+        {
+          "name": "議事次第",
+          "url": "https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/ec225afa-a029-418c-ad81-20989f61868c/f969b3ef/20260213_meeting_procurement_reform_agile-opensource_agile_agenda.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "資料1 アジャイル開発に関する有識者検討会の開催について",
+          "url": "https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/ec225afa-a029-418c-ad81-20989f61868c/29a76ce0/20260213_meeting_procurement_reform_agile-opensource_agile_eventabstract.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "資料2 アジャイル開発に関する有識者検討会(第8回)事務局 提出資料",
+          "url": "https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/ec225afa-a029-418c-ad81-20989f61868c/bbbec1e3/20260213_meeting_procurement_reform_agile-opensource_agile_documents.pdf",
+          "manualLock": true
+        }
+      ]
+    },
+    {
       "id": "fsc-kikaku_tou-20260213-047",
       "councilId": "fsc-kikaku_tou",
       "name": "第47回企画等専門調査会",
@@ -105121,6 +104856,31 @@
       ]
     },
     {
+      "id": "digital-agile_kentoukai-20260128-007",
+      "councilId": "digital-agile_kentoukai",
+      "name": "第7回 アジャイル開発に関する有識者検討会",
+      "date": "2026/01/28",
+      "manualLock": true,
+      "officialUrl": "https://www.digital.go.jp/councils/procurement-agile-opensource/agile-review-meeting/46a036e6-a531-4655-b146-76a1d340feb5",
+      "materials": [
+        {
+          "name": "議事次第",
+          "url": "https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/46a036e6-a531-4655-b146-76a1d340feb5/c093cdc5/20260128_meeting_procurement_reform_agile-opensource_agile_agenda.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "資料1 アジャイル開発に関する有識者検討会の開催について",
+          "url": "https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/46a036e6-a531-4655-b146-76a1d340feb5/cddc99ec/20260128_meeting_procurement_reform_agile-opensource_agile_eventabstract.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "資料2 アジャイル開発に関する有識者検討会(第7回)事務局 提出資料",
+          "url": "https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/46a036e6-a531-4655-b146-76a1d340feb5/610a31ce/20260128_meeting_procurement_reform_agile-opensource_agile_documents.pdf",
+          "manualLock": true
+        }
+      ]
+    },
+    {
       "id": "isa-581-20260128-001",
       "councilId": "isa-581",
       "name": "第1回 出入国在留管理政策懇談会",
@@ -106717,6 +106477,31 @@
       ]
     },
     {
+      "id": "digital-oss_kentoukai-20260123-005",
+      "councilId": "digital-oss_kentoukai",
+      "name": "第5回 オープンソース化・OSS利活用に関する有識者検討会",
+      "date": "2026/01/23",
+      "manualLock": true,
+      "officialUrl": "https://www.digital.go.jp/councils/procurement-agile-opensource/opensource-review-meeting/d90e5cd7-8a26-4d5e-8c8e-e6802c3c663b",
+      "materials": [
+        {
+          "name": "議事次第",
+          "url": "https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/d90e5cd7-8a26-4d5e-8c8e-e6802c3c663b/b28db0bc/20260123_meeting_procurement_reform_agile-opensource_opensource_agenda.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "資料1 オープンソース化・OSS 利活用に関する有識者検討会の開催について",
+          "url": "https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/d90e5cd7-8a26-4d5e-8c8e-e6802c3c663b/d1f26f25/20260123_meeting_procurement_reform_agile-opensource_opensource_eventabstract.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "資料2 オープンソース化・OSS 利活用に関する有識者検討会(第5回)事務局提出資料",
+          "url": "https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/d90e5cd7-8a26-4d5e-8c8e-e6802c3c663b/7ea9c1b6/20260123_meeting_procurement_reform_agile-opensource_opensource_documents.pdf",
+          "manualLock": true
+        }
+      ]
+    },
+    {
       "id": "fdma-rinya_kasai_yobou-20260123-003",
       "councilId": "fdma-rinya_kasai_yobou",
       "name": "第3回 消防機関における航空機火災対応に関する検討会",
@@ -107462,6 +107247,51 @@
         {
           "name": "議事録(PDF/579KB)",
           "url": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/f1e48c87-1be5-46c9-908d-b6e93dc09f6b/2ce7e02c/20260212_councils_shingikai_f1e48c87_10.pdf"
+        }
+      ]
+    },
+    {
+      "id": "jfa-umigyo_kyougikai-20260122-003",
+      "councilId": "jfa-umigyo_kyougikai",
+      "name": "第3回 海業推進全国協議会",
+      "date": "2026/01/22",
+      "manualLock": true,
+      "officialUrl": "https://www.jfa.maff.go.jp/j/keikaku/umigyo_kyougikai.html",
+      "materials": [
+        {
+          "name": "議事次第",
+          "url": "https://www.jfa.maff.go.jp/j/keikaku/attach/pdf/umigyo_kyougikai-19.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "海業推進に向けた政策について(水産庁計画・海業政策課海業振興室)(資料)",
+          "url": "https://www.jfa.maff.go.jp/j/keikaku/attach/pdf/umigyo_kyougikai-26.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "玉川大学観光学部 教授 谷脇 茂樹氏(資料)",
+          "url": "https://www.jfa.maff.go.jp/j/keikaku/attach/pdf/umigyo_kyougikai-21.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "由良地域協議会「ゆらまちっく戦略会議」 会長 齋藤 勝三氏(資料)",
+          "url": "https://www.jfa.maff.go.jp/j/keikaku/attach/pdf/umigyo_kyougikai-22.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "ブルーパーク阿納 事務局長 岸本 昇氏(資料)",
+          "url": "https://www.jfa.maff.go.jp/j/keikaku/attach/pdf/umigyo_kyougikai-23.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "一般社団法人フィッシャーマン・ジャパン Co-Founder 長谷川 琢也氏(資料)",
+          "url": "https://www.jfa.maff.go.jp/j/keikaku/attach/pdf/umigyo_kyougikai-24.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "NPO法人海に学ぶ体験活動協議会(CNAC) 副代表理事 大塚 英治(資料)",
+          "url": "https://www.jfa.maff.go.jp/j/keikaku/attach/pdf/umigyo_kyougikai-25.pdf",
+          "manualLock": true
         }
       ]
     },
@@ -110255,6 +110085,31 @@
       ]
     },
     {
+      "id": "digital-oss_kentoukai-20260109-004",
+      "councilId": "digital-oss_kentoukai",
+      "name": "第4回 オープンソース化・OSS利活用に関する有識者検討会",
+      "date": "2026/01/09",
+      "manualLock": true,
+      "officialUrl": "https://www.digital.go.jp/councils/procurement-agile-opensource/opensource-review-meeting/4731f669-d712-4995-b616-df87fa9444cc",
+      "materials": [
+        {
+          "name": "議事次第",
+          "url": "https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/4731f669-d712-4995-b616-df87fa9444cc/38af6c35/20260109_meeting_procurement_reform_agile-opensource_opensource_agenda.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "資料1 オープンソース化・OSS 利活用に関する有識者検討会の開催について",
+          "url": "https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/4731f669-d712-4995-b616-df87fa9444cc/047f9b99/20260109_meeting_procurement_reform_agile-opensource_opensource_eventabstract.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "資料2 オープンソース化・OSS 利活用に関する有識者検討会(第4回)事務局提出資料",
+          "url": "https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/4731f669-d712-4995-b616-df87fa9444cc/8ef9df98/20260109_meeting_procurement_reform_agile-opensource_opensource_documents.pdf",
+          "manualLock": true
+        }
+      ]
+    },
+    {
       "id": "jcrc-587-20260109-144",
       "councilId": "jcrc-587",
       "name": "第144回 カジノ管理委員会",
@@ -110380,6 +110235,31 @@
         {
           "name": "議事要旨(PDF/274KB)",
           "url": "https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/29552555-423a-4383-9078-32ca8cd836f7/0f2a2919/20260108_meeting_vc-diw-governance-wg-tec_summary_01.pdf"
+        }
+      ]
+    },
+    {
+      "id": "digital-agile_kentoukai-20260108-006",
+      "councilId": "digital-agile_kentoukai",
+      "name": "第6回 アジャイル開発に関する有識者検討会",
+      "date": "2026/01/08",
+      "manualLock": true,
+      "officialUrl": "https://www.digital.go.jp/councils/procurement-agile-opensource/agile-review-meeting/19486d47-c024-4289-899d-4358c8c34b26",
+      "materials": [
+        {
+          "name": "議事次第",
+          "url": "https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/19486d47-c024-4289-899d-4358c8c34b26/7df650bb/20260108_meeting_procurement_reform_agile-opensource_agile_agenda.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "資料1 アジャイル開発に関する有識者検討会の開催について",
+          "url": "https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/19486d47-c024-4289-899d-4358c8c34b26/ee2b8830/20260108_meeting_procurement_reform_agile-opensource_agile_eventabstract.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "資料2 アジャイル開発に関する有識者検討会(第6回)事務局 提出資料",
+          "url": "https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/19486d47-c024-4289-899d-4358c8c34b26/50ac20f3/20260108_meeting_procurement_reform_agile-opensource_agile_documents.pdf",
+          "manualLock": true
         }
       ]
     },
@@ -112901,6 +112781,31 @@
       ]
     },
     {
+      "id": "digital-agile_kentoukai-20251224-005",
+      "councilId": "digital-agile_kentoukai",
+      "name": "第5回 アジャイル開発に関する有識者検討会",
+      "date": "2025/12/24",
+      "manualLock": true,
+      "officialUrl": "https://www.digital.go.jp/councils/procurement-agile-opensource/agile-review-meeting/75b6aca0-27c7-457f-8513-b4127b9d04e9",
+      "materials": [
+        {
+          "name": "議事次第",
+          "url": "https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/75b6aca0-27c7-457f-8513-b4127b9d04e9/aa4e9bf6/20251224_meeting_procurement_reform_agile-opensource_agile_agenda.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "資料1 アジャイル開発に関する有識者検討会の開催について",
+          "url": "https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/75b6aca0-27c7-457f-8513-b4127b9d04e9/cca5ed91/20251224_meeting_procurement_reform_agile-opensource_agile_eventabstract.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "資料2 アジャイル開発に関する有識者検討会(第5回)事務局 提出資料",
+          "url": "https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/75b6aca0-27c7-457f-8513-b4127b9d04e9/85fb6fe6/20251224_meeting_procurement_reform_agile-opensource_agile_documents.pdf",
+          "manualLock": true
+        }
+      ]
+    },
+    {
       "id": "digital-kikan_system_touitsu-20251224-006",
       "councilId": "digital-kikan_system_touitsu",
       "name": "地方公共団体の基幹業務等システムの統一・標準化に関する関係省庁会議(第6回)",
@@ -113660,6 +113565,31 @@
         {
           "name": "議事概要",
           "url": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/67d01cf7-b14c-4255-a63b-5e868f3cec5e/3f05844a/20251223_councils_shingikai_kodomo_kosodate_67d01cf7_12.pdf",
+          "manualLock": true
+        }
+      ]
+    },
+    {
+      "id": "digital-oss_kentoukai-20251223-003",
+      "councilId": "digital-oss_kentoukai",
+      "name": "第3回 オープンソース化・OSS利活用に関する有識者検討会",
+      "date": "2025/12/23",
+      "manualLock": true,
+      "officialUrl": "https://www.digital.go.jp/councils/procurement-agile-opensource/opensource-review-meeting/7deca9be-2e97-4a8e-8b7b-297b933d6a7a",
+      "materials": [
+        {
+          "name": "議事次第",
+          "url": "https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/7deca9be-2e97-4a8e-8b7b-297b933d6a7a/1a500c77/20251223_meeting_procurement_reform_agile-opensource_opensource_agenda.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "資料1 オープンソース化・OSS 利活用に関する有識者検討会の開催について",
+          "url": "https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/7deca9be-2e97-4a8e-8b7b-297b933d6a7a/961062e9/20251223_meeting_procurement_reform_agile-opensource_opensource_eventabstract.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "資料2 オープンソース化・OSS 利活用に関する有識者検討会(第3回)事務局提出資料",
+          "url": "https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/7deca9be-2e97-4a8e-8b7b-297b933d6a7a/fed13613/20251223_meeting_procurement_reform_agile-opensource_opensource_documents.pdf",
           "manualLock": true
         }
       ]
@@ -115693,6 +115623,31 @@
         {
           "name": "第13回 令和7年12月18日 議事次第(PDF/45KB) 配布資料 議事概要(PDF/475KB)",
           "url": "https://www.cas.go.jp/jp/seisaku/gx_jikkou_kaigi/senmonka_wg/dai13/gijishidai.pdf"
+        }
+      ]
+    },
+    {
+      "id": "digital-oss_kentoukai-20251218-002",
+      "councilId": "digital-oss_kentoukai",
+      "name": "第2回 オープンソース化・OSS利活用に関する有識者検討会",
+      "date": "2025/12/18",
+      "manualLock": true,
+      "officialUrl": "https://www.digital.go.jp/councils/procurement-agile-opensource/opensource-review-meeting/812ec71d-cc5f-418f-84c3-8df4d0b1a9e7",
+      "materials": [
+        {
+          "name": "議事次第",
+          "url": "https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/812ec71d-cc5f-418f-84c3-8df4d0b1a9e7/64673c14/20251218_meeting_procurement_reform_agile-opensource_opensource_agenda.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "資料1 オープンソース化・OSS 利活用に関する有識者検討会の開催について",
+          "url": "https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/812ec71d-cc5f-418f-84c3-8df4d0b1a9e7/ff18de9a/20251218_meeting_procurement_reform_agile-opensource_opensource_eventabstract.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "資料2 オープンソース化・OSS 利活用に関する有識者検討会(第2回)事務局提出資料",
+          "url": "https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/812ec71d-cc5f-418f-84c3-8df4d0b1a9e7/360fb6b7/20251218_meeting_procurement_reform_agile-opensource_opensource_documents.pdf",
+          "manualLock": true
         }
       ]
     },
@@ -118878,6 +118833,31 @@
         {
           "name": "議事要旨",
           "url": "https://www5.cao.go.jp/kanshi/kaisai/pdf/kaisai/dai217kai/youshi.pdf"
+        }
+      ]
+    },
+    {
+      "id": "digital-agile_kentoukai-20251208-004",
+      "councilId": "digital-agile_kentoukai",
+      "name": "第4回 アジャイル開発に関する有識者検討会",
+      "date": "2025/12/08",
+      "manualLock": true,
+      "officialUrl": "https://www.digital.go.jp/councils/procurement-agile-opensource/agile-review-meeting/002ab9ab-bb15-48f1-ad4c-6286b78d7dcf",
+      "materials": [
+        {
+          "name": "議事次第",
+          "url": "https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/002ab9ab-bb15-48f1-ad4c-6286b78d7dcf/562c7a34/20251208_meeting_procurement_reform_agile-opensource_agile_agenda.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "資料1 アジャイル開発に関する有識者検討会の開催について",
+          "url": "https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/002ab9ab-bb15-48f1-ad4c-6286b78d7dcf/fdd9dce5/20251208_meeting_procurement_reform_agile-opensource_agile_eventabstract.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "資料2 アジャイル開発に関する有識者検討会(第4回)事務局 提出資料",
+          "url": "https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/002ab9ab-bb15-48f1-ad4c-6286b78d7dcf/ecfd263b/20251208_meeting_procurement_reform_agile-opensource_agile_documents.pdf",
+          "manualLock": true
         }
       ]
     },
@@ -122632,6 +122612,31 @@
       ]
     },
     {
+      "id": "digital-agile_kentoukai-20251126-003",
+      "councilId": "digital-agile_kentoukai",
+      "name": "第3回 アジャイル開発に関する有識者検討会",
+      "date": "2025/11/26",
+      "manualLock": true,
+      "officialUrl": "https://www.digital.go.jp/councils/procurement-agile-opensource/agile-review-meeting/dc67f9c0-32dc-4911-8d43-6ed7faa3af46",
+      "materials": [
+        {
+          "name": "議事次第",
+          "url": "https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/dc67f9c0-32dc-4911-8d43-6ed7faa3af46/6562c4d8/20251126_meeting_procurement_reform_agile-opensource_agile_agenda.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "資料1 アジャイル開発に関する有識者検討会の開催について",
+          "url": "https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/dc67f9c0-32dc-4911-8d43-6ed7faa3af46/5709e58f/20251126_meeting_procurement_reform_agile-opensource_agile_eventabstract.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "資料2 アジャイル開発に関する有識者検討会(第3回)事務局 提出資料",
+          "url": "https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/dc67f9c0-32dc-4911-8d43-6ed7faa3af46/b6ad8bd9/20251126_meeting_procurement_reform_agile-opensource_agile_documents.pdf",
+          "manualLock": true
+        }
+      ]
+    },
+    {
       "id": "fsa-kinyu_angoshisan_wg-20251126-006",
       "councilId": "fsa-kinyu_angoshisan_wg",
       "name": "第6回 暗号資産制度に関するワーキング・グループ",
@@ -124938,6 +124943,31 @@
         {
           "name": "社会保障改革の推進について(総理指示) (PDF / 113KB)",
           "url": "https://www.cas.go.jp/jp/seisaku/jinko_senryaku/contents/20251118/02_ref01.pdf"
+        }
+      ]
+    },
+    {
+      "id": "digital-oss_kentoukai-20251118-001",
+      "councilId": "digital-oss_kentoukai",
+      "name": "第1回 オープンソース化・OSS利活用に関する有識者検討会",
+      "date": "2025/11/18",
+      "manualLock": true,
+      "officialUrl": "https://www.digital.go.jp/councils/procurement-agile-opensource/opensource-review-meeting/74b670a0-389e-4ad8-bcee-fbfa65d44f8d",
+      "materials": [
+        {
+          "name": "議事次第",
+          "url": "https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/74b670a0-389e-4ad8-bcee-fbfa65d44f8d/33304a6f/20251118_meeting_procurement_reform_agile-opensource_opensource_agenda.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "資料1 オープンソース化・OSS利活用に関する有識者検討会の開催について",
+          "url": "https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/113598cb-aa62-4f42-ac4f-8f6cf3e3f606/894b7b11/20251118_meeting_procurement_reform_agile-opensource_opensource_eventabstract.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "資料2 オープンソース化・OSS 利活用に関する有識者検討会(第1回)事務局提出資料",
+          "url": "https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/74b670a0-389e-4ad8-bcee-fbfa65d44f8d/a584e226/20251118_meeting_procurement_reform_agile-opensource_opensource_documents2.pdf",
+          "manualLock": true
         }
       ]
     },
@@ -127943,6 +127973,31 @@
       ]
     },
     {
+      "id": "digital-agile_kentoukai-20251107-002",
+      "councilId": "digital-agile_kentoukai",
+      "name": "第2回 アジャイル開発に関する有識者検討会",
+      "date": "2025/11/07",
+      "manualLock": true,
+      "officialUrl": "https://www.digital.go.jp/councils/procurement-agile-opensource/agile-review-meeting/aa839dca-8811-4040-9d53-83eae686867f",
+      "materials": [
+        {
+          "name": "議事次第",
+          "url": "https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/aa839dca-8811-4040-9d53-83eae686867f/fdef9ae1/20251107_meeting_procurement_reform_agile-opensource_agile_agenda.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "資料1 アジャイル開発に関する有識者検討会の開催について",
+          "url": "https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/aa839dca-8811-4040-9d53-83eae686867f/5d8cdbe3/20251107_meeting_procurement_reform_agile-opensource_agile_eventabstract.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "資料2 アジャイル開発に関する有識者検討会(第2回)事務局 提出資料",
+          "url": "https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/aa839dca-8811-4040-9d53-83eae686867f/0635bddd/20251107_meeting_procurement_reform_agile-opensource_agile_documents.pdf",
+          "manualLock": true
+        }
+      ]
+    },
+    {
       "id": "fsa-kinyu_angoshisan_wg-20251107-005",
       "councilId": "fsa-kinyu_angoshisan_wg",
       "name": "第5回 暗号資産制度に関するワーキング・グループ",
@@ -129364,6 +129419,31 @@
         {
           "name": "議事録(PDF形式:250KB)",
           "url": "https://www.meti.go.jp/shingikai/sankoshin/shomu_ryutsu/next_generation_semiconductor/pdf/007_gijiroku.pdf",
+          "manualLock": true
+        }
+      ]
+    },
+    {
+      "id": "digital-agile_kentoukai-20251031-001",
+      "councilId": "digital-agile_kentoukai",
+      "name": "第1回 アジャイル開発に関する有識者検討会",
+      "date": "2025/10/31",
+      "manualLock": true,
+      "officialUrl": "https://www.digital.go.jp/councils/procurement-agile-opensource/agile-review-meeting/03d62639-9af9-49c1-b01c-a6091ee3aee8",
+      "materials": [
+        {
+          "name": "議事次第",
+          "url": "https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/03d62639-9af9-49c1-b01c-a6091ee3aee8/8565dbfd/20251031_meeting_procurement_reform_agile-opensource_agile_agenda.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "資料1 アジャイル開発に関する有識者検討会の開催について",
+          "url": "https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/03d62639-9af9-49c1-b01c-a6091ee3aee8/88162f95/20251031_meeting_procurement_reform_agile-opensource_agile_eventabstract.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "資料2 アジャイル開発に関する有識者検討会(第1回)事務局 提出資料",
+          "url": "https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/03d62639-9af9-49c1-b01c-a6091ee3aee8/a8f07f3d/20251031_meeting_procurement_reform_agile-opensource_agile_documents2.pdf",
           "manualLock": true
         }
       ]
@@ -188208,6 +188288,56 @@
       ]
     },
     {
+      "id": "jfa-umigyo_kyougikai-20250203-002",
+      "councilId": "jfa-umigyo_kyougikai",
+      "name": "第2回 海業推進全国協議会",
+      "date": "2025/02/03",
+      "manualLock": true,
+      "officialUrl": "https://www.jfa.maff.go.jp/j/keikaku/umigyo_kyougikai.html",
+      "materials": [
+        {
+          "name": "議事次第",
+          "url": "https://www.jfa.maff.go.jp/j/keikaku/attach/pdf/umigyo_kyougikai-17.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "海業推進に向けた政策について(水産庁計画・海業政策課)(資料)",
+          "url": "https://www.jfa.maff.go.jp/j/keikaku/attach/pdf/umigyo_kyougikai-15.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "国立大学法人東京海洋大学 教授 工藤 貴史氏(資料)",
+          "url": "https://www.jfa.maff.go.jp/j/keikaku/attach/pdf/umigyo_kyougikai-10.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "公益財団法人笹川平和財団 経営企画部 特任部長 小林 正典氏(資料)",
+          "url": "https://www.jfa.maff.go.jp/j/keikaku/attach/pdf/umigyo_kyougikai-16.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "静岡県西伊豆町 産業振興課 係長 松浦 城太郎氏(資料)",
+          "url": "https://www.jfa.maff.go.jp/j/keikaku/attach/pdf/umigyo_kyougikai-11.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "魚津漁業協同組合 代表理事組合長 濱住 博之氏(資料)",
+          "url": "https://www.jfa.maff.go.jp/j/keikaku/attach/pdf/umigyo_kyougikai-12.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "有限会社日間賀観光ホテル 顧問 中山 勝比古氏(資料)",
+          "url": "https://www.jfa.maff.go.jp/j/keikaku/attach/pdf/umigyo_kyougikai-13.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "株式会社結屋 代表取締役 川村 結里子氏(資料)",
+          "url": "https://www.jfa.maff.go.jp/j/keikaku/attach/pdf/umigyo_kyougikai-18.pdf",
+          "manualLock": true
+        }
+      ]
+    },
+    {
       "id": "maff-701-20250203-003",
       "councilId": "maff-701",
       "name": "第3回 農業の労働環境改善に向けた政策の在り方に関する検討会",
@@ -226432,6 +226562,36 @@
         {
           "name": "配付資料6 (PDF)",
           "url": "https://www.cas.go.jp/jp/seisakukaigi/grassrootsTF/followup_dai7/shiryou6.pdf"
+        }
+      ]
+    },
+    {
+      "id": "jfa-noto_fukkyuu_kentoukai-20240704-003",
+      "councilId": "jfa-noto_fukkyuu_kentoukai",
+      "name": "第3回 令和6年能登半島地震漁業地域復旧・復興技術検討会",
+      "date": "2024/07/04",
+      "manualLock": true,
+      "officialUrl": "https://www.jfa.maff.go.jp/j/gyoko_gyozyo/g_zyoho_bako/gizyutu_kentokai/gizyutu_kentokai.html",
+      "materials": [
+        {
+          "name": "技術検討会の概要",
+          "url": "https://www.jfa.maff.go.jp/j/gyoko_gyozyo/g_zyoho_bako/gizyutu_kentokai/attach/pdf/gizyutsu_kentokai_gaiyou.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "漁業地域復旧・復興技術検討資料(概要版)",
+          "url": "https://www.jfa.maff.go.jp/j/gyoko_gyozyo/g_zyoho_bako/gizyutu_kentokai/attach/pdf/kento_siryou.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "漁業地域復旧・復興技術検討資料(詳細版)",
+          "url": "https://www.jfa.maff.go.jp/j/gyoko_gyozyo/g_zyoho_bako/gizyutu_kentokai/attach/pdf/kento_siryou_syosai.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "漁業地域復旧・復興技術検討資料(参考資料)",
+          "url": "https://www.jfa.maff.go.jp/j/gyoko_gyozyo/g_zyoho_bako/gizyutu_kentokai/attach/pdf/kento_siryou_sankou.pdf",
+          "manualLock": true
         }
       ]
     },
@@ -265444,6 +265604,61 @@
         {
           "name": "資料:齋藤経済調査部長説明資料",
           "url": "https://www.fsa.go.jp/singi/chuukinken/siryou/1213fsa.pdf"
+        }
+      ]
+    },
+    {
+      "id": "jfa-umigyo_kyougikai-20231213-001",
+      "councilId": "jfa-umigyo_kyougikai",
+      "name": "第1回 海業推進全国協議会",
+      "date": "2023/12/13",
+      "manualLock": true,
+      "officialUrl": "https://www.jfa.maff.go.jp/j/keikaku/umigyo_kyougikai.html",
+      "materials": [
+        {
+          "name": "議事次第",
+          "url": "https://www.jfa.maff.go.jp/j/keikaku/attach/pdf/umigyo_kyougikai-2.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "海業推進に向けた政策について(水産庁計画課)(資料)",
+          "url": "https://www.jfa.maff.go.jp/j/keikaku/attach/pdf/umigyo_kyougikai-1.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "国立大学法人東京海洋大学 副学長 婁 小波氏(資料)",
+          "url": "https://www.jfa.maff.go.jp/j/keikaku/attach/pdf/umigyo_kyougikai-9.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "神奈川県三浦市 市長室長 徳江 卓氏(資料)",
+          "url": "https://www.jfa.maff.go.jp/j/keikaku/attach/pdf/umigyo_kyougikai-3.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "田尻漁業協同組合 参事 上野 公敬氏(資料)",
+          "url": "https://www.jfa.maff.go.jp/j/keikaku/attach/pdf/umigyo_kyougikai-4.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "高知県漁業協同組合上ノ加江支所 支所長 大髙 明氏(資料)",
+          "url": "https://www.jfa.maff.go.jp/j/keikaku/attach/pdf/umigyo_kyougikai-5.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "NPO法人かまえブルーツーリズム研究会 理事長 橋本 正惠氏(資料)",
+          "url": "https://www.jfa.maff.go.jp/j/keikaku/attach/pdf/umigyo_kyougikai-8.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "株式会社デジサーフ 代表取締役社長 高橋 佳伸氏(資料)",
+          "url": "https://www.jfa.maff.go.jp/j/keikaku/attach/pdf/umigyo_kyougikai-6.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "JTB和歌山支店 営業課長 颯田 康一氏(資料)",
+          "url": "https://www.jfa.maff.go.jp/j/keikaku/attach/pdf/umigyo_kyougikai-7.pdf",
+          "manualLock": true
         }
       ]
     },
@@ -317802,6 +318017,92 @@
       ]
     },
     {
+      "id": "maff-census_2025-20230221-005",
+      "councilId": "maff-census_2025",
+      "name": "第5回 2025年農林業センサス研究会",
+      "date": "2023/02/21",
+      "manualLock": true,
+      "officialUrl": "https://www.maff.go.jp/j/study/census/2025/2025/index.html",
+      "materials": [
+        {
+          "name": "議事次第",
+          "url": "https://www.maff.go.jp/j/study/census/2025/2025/attach/pdf/index-13.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "出席者名簿",
+          "url": "https://www.maff.go.jp/j/study/census/2025/2025/attach/pdf/index-16.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "資料1_農業集落調査の修正案",
+          "url": "https://www.maff.go.jp/j/study/census/2025/2025/attach/pdf/index-1.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "資料1の別添_地域計画(人・農地プラン)の策定",
+          "url": "https://www.maff.go.jp/j/study/census/2025/2025/attach/pdf/index-5.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "資料2_2020年農林業センサスにおける農業集落精通者の把握状況",
+          "url": "https://www.maff.go.jp/j/study/census/2025/2025/attach/pdf/index-9.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "資料3_2020年農林業センサスの調査計画における農山村地域調査集計事項一覧",
+          "url": "https://www.maff.go.jp/j/study/census/2025/2025/attach/pdf/index-6.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "資料4_農業集落調査結果の利活用状況について",
+          "url": "https://www.maff.go.jp/j/study/census/2025/2025/attach/pdf/index-2.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "資料5_第4回研究会における委員意見に対する見解及び対応方向について(農林業経営体調査)",
+          "url": "https://www.maff.go.jp/j/study/census/2025/2025/attach/pdf/index-4.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "参考資料1_2025年農林業センサス 農林業経営体調査票(素案)",
+          "url": "https://www.maff.go.jp/j/study/census/2025/2025/attach/pdf/index-7.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "参考資料2_2025年農林業センサス農山村地域調査票(農業集落用)(素案)",
+          "url": "https://www.maff.go.jp/j/study/census/2025/2025/attach/pdf/index-8.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "参考資料3_2020年農林業センサス 農林業経営体調査客体候補一覧表",
+          "url": "https://www.maff.go.jp/j/study/census/2025/2025/attach/pdf/index-10.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "参考資料4_農山村地域調査(農業集落調査)の概念図",
+          "url": "https://www.maff.go.jp/j/study/census/2025/2025/attach/pdf/index-11.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "委員提出資料 農業集落調査第3次案に関する意見",
+          "url": "https://www.maff.go.jp/j/study/census/2025/2025/attach/pdf/index-14.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "参考資料4の修正版 ̳農山村地域調査(農業集落調査)の概念図",
+          "url": "https://www.maff.go.jp/j/study/census/2025/2025/attach/pdf/index-15.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "議事録",
+          "url": "https://www.maff.go.jp/j/study/gijiroku5.html",
+          "type": "HTML",
+          "manualLock": true
+        }
+      ]
+    },
+    {
       "id": "mhlw-2854-20230221-026",
       "councilId": "mhlw-2854",
       "name": "第26回 キャリアコンサルタント登録制度等に関する検討会",
@@ -330742,6 +331043,147 @@
       ]
     },
     {
+      "id": "maff-census_2025-20221206-004",
+      "councilId": "maff-census_2025",
+      "name": "第4回 2025年農林業センサス研究会",
+      "date": "2022/12/06",
+      "manualLock": true,
+      "officialUrl": "https://www.maff.go.jp/j/study/census/2025/221206/index.html",
+      "materials": [
+        {
+          "name": "議事次第",
+          "url": "https://www.maff.go.jp/j/study/census/2025/221206/attach/pdf/index-1.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "出席者名簿",
+          "url": "https://www.maff.go.jp/j/study/census/2025/221206/attach/pdf/index-13.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "座席表",
+          "url": "https://www.maff.go.jp/j/study/census/2025/221206/attach/pdf/index-19.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "資料1 農林業センサスデータの高度利用について",
+          "url": "https://www.maff.go.jp/j/study/census/2025/221206/attach/pdf/index-6.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "資料1-1 統計法33条第1項に基づく研究者からの調査票情報の二次利用申請状況(平成28年以降分)",
+          "url": "https://www.maff.go.jp/j/study/census/2025/221206/attach/pdf/index-24.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "資料1-2 平成28年経済センサスー活動調査を活用した2015年農林業センサス(農林業経営体調査)の組替集計について",
+          "url": "https://www.maff.go.jp/j/study/census/2025/221206/attach/pdf/index-23.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "資料1-3 平成27年集落営農実態調査結果を活用した2015年農林業センサス(農林業経営体調査)の組替集計について",
+          "url": "https://www.maff.go.jp/j/study/census/2025/221206/attach/pdf/index-16.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "資料1-4 活かすDBの概要",
+          "url": "https://www.maff.go.jp/j/study/census/2025/221206/attach/pdf/index-20.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "資料1-5 活かすDBを使用して分析が簡単にできます",
+          "url": "https://www.maff.go.jp/j/study/census/2025/221206/attach/pdf/index-18.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "資料1-6 使ってみませんか 「地域の農業を見て・知って・活かすDB」",
+          "url": "https://www.maff.go.jp/j/study/census/2025/221206/attach/pdf/index-11.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "資料1-7 地域の農業を見て・知って・活かすDB掲載データ一覧",
+          "url": "https://www.maff.go.jp/j/study/census/2025/221206/attach/pdf/index-12.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "資料1-8 農林業センサスデータ提供の充実の検討",
+          "url": "https://www.maff.go.jp/j/study/census/2025/221206/attach/pdf/index-17.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "資料2 主副業別統計の区分・名称の見直しについて",
+          "url": "https://www.maff.go.jp/j/study/census/2025/221206/attach/pdf/index-25.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "資料2-1 農林業センサスにおける農家分類の変遷",
+          "url": "https://www.maff.go.jp/j/study/census/2025/221206/attach/pdf/index-7.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "資料2-2 農業経営統計調査の審議を契機とする部会長メモ",
+          "url": "https://www.maff.go.jp/j/study/census/2025/221206/attach/pdf/index-10.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "資料2-3 65歳を基準として作成された統計",
+          "url": "https://www.maff.go.jp/j/study/census/2025/221206/attach/pdf/index-5.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "資料2-4 主副業別統計区分の見直し(案)",
+          "url": "https://www.maff.go.jp/j/study/census/2025/221206/attach/pdf/index-8.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "資料3 第3回研究会における委員意見に対する見解及び対応方向について(農林業経営体調査)",
+          "url": "https://www.maff.go.jp/j/study/census/2025/221206/attach/pdf/index-3.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "資料4 農山村地域調査(農業集落調査)について",
+          "url": "https://www.maff.go.jp/j/study/census/2025/221206/attach/pdf/index-9.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "資料4-1 第3回研究会における委員意見に対する見解及び対応方向について(農業集落調査の代替案関係)",
+          "url": "https://www.maff.go.jp/j/study/census/2025/221206/attach/pdf/index-21.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "資料4-2 農業集落調査方法の代替案の見直しについて",
+          "url": "https://www.maff.go.jp/j/study/census/2025/221206/attach/pdf/index-14.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "参考資料1 2025年農林業センサス 農林業経営体調査票(素案)",
+          "url": "https://www.maff.go.jp/j/study/census/2025/221206/attach/pdf/index-22.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "参考資料2 2025年農林業センサス 農山村地域調査票(農業集落用)(素案)",
+          "url": "https://www.maff.go.jp/j/study/census/2025/221206/attach/pdf/index-15.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "参考資料3 2020年農林業センサス 農林業経営体調査票",
+          "url": "https://www.maff.go.jp/j/study/census/2025/221206/attach/pdf/index-4.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "参考資料4 2020年農林業センサス 農山村地域調査票(農業集落用)",
+          "url": "https://www.maff.go.jp/j/study/census/2025/221206/attach/pdf/index-2.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "議事録",
+          "url": "https://www.maff.go.jp/j/study/gijiroku3.html",
+          "type": "HTML",
+          "manualLock": true
+        }
+      ]
+    },
+    {
       "id": "mhlw-shakai_hosho_seikatsu_hogo-20221206-051",
       "councilId": "mhlw-shakai_hosho_seikatsu_hogo",
       "name": "第51回 社会保障審議会 生活保護基準部会",
@@ -336005,6 +336447,112 @@
       ]
     },
     {
+      "id": "maff-census_2025-20221108-003",
+      "councilId": "maff-census_2025",
+      "name": "第3回 2025年農林業センサス研究会",
+      "date": "2022/11/08",
+      "manualLock": true,
+      "officialUrl": "https://www.maff.go.jp/j/study/census/2025/221108/index.html",
+      "materials": [
+        {
+          "name": "議事次第",
+          "url": "https://www.maff.go.jp/j/study/census/2025/221108/attach/pdf/index-10.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "出席者名簿",
+          "url": "https://www.maff.go.jp/j/study/census/2025/221108/attach/pdf/index-17.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "座席表",
+          "url": "https://www.maff.go.jp/j/study/census/2025/221108/attach/pdf/index-16.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "資料1 2025年農林業センサスの効果的な広報活動について",
+          "url": "https://www.maff.go.jp/j/study/census/2025/221108/attach/pdf/index-12.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "資料1-1 2020年農林業センサスにおける広報活動実績一覧",
+          "url": "https://www.maff.go.jp/j/study/census/2025/221108/attach/pdf/index-2.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "資料1-2 国勢調査、経済センサス活動調査の主なメディア広報展開",
+          "url": "https://www.maff.go.jp/j/study/census/2025/221108/attach/pdf/index-4.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "資料1-3 令和2年国勢調査実施状況(広報・協力依頼編)",
+          "url": "https://www.maff.go.jp/j/study/census/2025/221108/attach/pdf/index-13.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "資料2 農林業経営体調査の調査項目の見直しについて",
+          "url": "https://www.maff.go.jp/j/study/census/2025/221108/attach/pdf/index-5.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "資料2-1 主な調査項目の見直し(案)【削除する調査項目】",
+          "url": "https://www.maff.go.jp/j/study/census/2025/221108/attach/pdf/index-7.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "資料2-2 主な調査項目の見直し(案)【簡素化する調査項目】",
+          "url": "https://www.maff.go.jp/j/study/census/2025/221108/attach/pdf/index-11.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "資料2-3 主な調査項目の見直し(案)【新規追加する調査項目】",
+          "url": "https://www.maff.go.jp/j/study/census/2025/221108/attach/pdf/index-8.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "資料2-4 主な調査項目の見直し(案)【拡充する調査項目】",
+          "url": "https://www.maff.go.jp/j/study/census/2025/221108/attach/pdf/index-6.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "資料3 農山村地域調査(農業集落調査)について(案)",
+          "url": "https://www.maff.go.jp/j/study/census/2025/221108/attach/pdf/index-9.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "別添 2025年農林業センサス(農林業経営体調査票)(案)",
+          "url": "https://www.maff.go.jp/j/study/census/2025/221108/attach/pdf/index-3.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "資料4 第2回2025 年農林業センサス研究会における委員意見に対する見解及び対応方向について",
+          "url": "https://www.maff.go.jp/j/study/census/2025/221108/attach/pdf/index-1.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "参考資料1 2025年農林業センサス 農林業経営体調査票(素案)",
+          "url": "https://www.maff.go.jp/j/study/census/2025/221108/attach/pdf/index-18.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "参考資料2 2020年農林業センサス 農林業経営体調査票",
+          "url": "https://www.maff.go.jp/j/study/census/2025/221108/attach/pdf/index-14.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "参考資料3 2020年農林業センサス 農山村地域調査票(農業集落用)",
+          "url": "https://www.maff.go.jp/j/study/census/2025/221108/attach/pdf/index-15.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "議事録",
+          "url": "https://www.maff.go.jp/j/study/census/2025/gijiroku3.html",
+          "type": "HTML",
+          "manualLock": true
+        }
+      ]
+    },
+    {
       "id": "mhlw-816-20221108-050",
       "councilId": "mhlw-816",
       "name": "第50回 予防接種・ワクチン分科会 予防接種基本方針部会",
@@ -340959,6 +341507,111 @@
       ]
     },
     {
+      "id": "maff-census_gyogyou_2023-20221007-004",
+      "councilId": "maff-census_gyogyou_2023",
+      "name": "第4回 2023年漁業センサス研究会",
+      "date": "2022/10/07",
+      "manualLock": true,
+      "officialUrl": "https://www.maff.go.jp/j/study/2023_gyocen/4/index.html",
+      "materials": [
+        {
+          "name": "議事次第",
+          "url": "https://www.maff.go.jp/j/study/2023_gyocen/4/attach/pdf/index-3.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "出席者名簿",
+          "url": "https://www.maff.go.jp/j/study/2023_gyocen/4/attach/pdf/index-17.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "資料1 第3回2023年漁業センサス研究会における委員意見に対する見解及び対応方向について",
+          "url": "https://www.maff.go.jp/j/study/2023_gyocen/4/attach/pdf/index-1.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "資料2 2023年漁業センサスに向けた課題と対応方針",
+          "url": "https://www.maff.go.jp/j/study/2023_gyocen/4/attach/pdf/index-7.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "資料3 民間委託による調査手法・調査内容等の検証結果について",
+          "url": "https://www.maff.go.jp/j/study/2023_gyocen/4/attach/pdf/index-14.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "(分割版1)",
+          "url": "https://www.maff.go.jp/j/study/2023_gyocen/4/attach/pdf/index-4.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "(分割版2)",
+          "url": "https://www.maff.go.jp/j/study/2023_gyocen/4/attach/pdf/index-18.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "(分割版3)",
+          "url": "https://www.maff.go.jp/j/study/2023_gyocen/4/attach/pdf/index-2.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "(分割版4)",
+          "url": "https://www.maff.go.jp/j/study/2023_gyocen/4/attach/pdf/index-15.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "資料4 2023 年漁業センサス調査手法等の見直しについて",
+          "url": "https://www.maff.go.jp/j/study/2023_gyocen/4/attach/pdf/index-12.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "資料5-1 2023年漁業センサス調査票(案)",
+          "url": "https://www.maff.go.jp/j/study/2023_gyocen/4/attach/pdf/index-10.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "資料5-2 2023年漁業センサス調査票(案)新旧対照表",
+          "url": "https://www.maff.go.jp/j/study/2023_gyocen/4/attach/pdf/index-16.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "資料6-1 調査項目の変更に伴う集計項目の変更(案)(令和4年10月時点)",
+          "url": "https://www.maff.go.jp/j/study/2023_gyocen/4/attach/pdf/index-9.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "資料6-2 2023年漁業センサス集計事項一覧(案)",
+          "url": "https://www.maff.go.jp/j/study/2023_gyocen/4/attach/pdf/index-19.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "資料7 2023年漁業センサス研究会現地実態把握の報告",
+          "url": "https://www.maff.go.jp/j/study/2023_gyocen/4/attach/pdf/index-13.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "参考資料 2018年漁業センサス調査資材",
+          "url": "https://www.maff.go.jp/j/study/2023_gyocen/4/attach/pdf/index-5.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "(分割版1)",
+          "url": "https://www.maff.go.jp/j/study/2023_gyocen/4/attach/pdf/index-8.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "(分割版2)",
+          "url": "https://www.maff.go.jp/j/study/2023_gyocen/4/attach/pdf/index-11.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "議事録",
+          "url": "https://www.maff.go.jp/j/study/2023_gyocen/attach/pdf/index-5.pdf",
+          "manualLock": true
+        }
+      ]
+    },
+    {
       "id": "mhlw-815-20221007-038",
       "councilId": "mhlw-815",
       "name": "第38回 予防接種・ワクチン分科会",
@@ -343773,6 +344426,102 @@
           "name": "議事録",
           "url": "https://www.fsc.go.jp/fsciis/attachedFile/download?retrievalId=kai20220922ff2&fileId=510",
           "type": "HTML"
+        }
+      ]
+    },
+    {
+      "id": "maff-census_2025-20220922-002",
+      "councilId": "maff-census_2025",
+      "name": "第2回 2025年農林業センサス研究会",
+      "date": "2022/09/22",
+      "manualLock": true,
+      "officialUrl": "https://www.maff.go.jp/j/study/census/2025/040909/index.html",
+      "materials": [
+        {
+          "name": "議事次第",
+          "url": "https://www.maff.go.jp/j/study/census/2025/040909/attach/pdf/index-5.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "出席者名簿",
+          "url": "https://www.maff.go.jp/j/study/census/2025/040909/attach/pdf/index-4.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "資料1 農林業経営体調査の調査項目の見直しについて",
+          "url": "https://www.maff.go.jp/j/study/census/2025/040909/attach/pdf/index-16.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "資料1-1 令和5年度全国要望文(抜粋)",
+          "url": "https://www.maff.go.jp/j/study/census/2025/040909/attach/pdf/index-8.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "資料1-2 リアル行政手続きリポートBOXに寄せられた意見(抜粋)",
+          "url": "https://www.maff.go.jp/j/study/census/2025/040909/attach/pdf/index-3.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "資料1-3 主な調査項目の見直し案【削除する調査項目】",
+          "url": "https://www.maff.go.jp/j/study/census/2025/040909/attach/pdf/index-9.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "資料1-4 主な調査項目の見直し案【簡素化する調査項目】",
+          "url": "https://www.maff.go.jp/j/study/census/2025/040909/attach/pdf/index-7.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "資料1-5 主な調査項目の見直し案【新規追加する調査項目】",
+          "url": "https://www.maff.go.jp/j/study/census/2025/040909/attach/pdf/index-10.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "資料1-6 主な調査項目の見直し案【拡充する調査項目】",
+          "url": "https://www.maff.go.jp/j/study/census/2025/040909/attach/pdf/index-12.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "資料2 農業集落調査の廃止について",
+          "url": "https://www.maff.go.jp/j/study/census/2025/040909/attach/pdf/index-15.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "資料2-1 中山間地域等直接支払い制度中間年評価【第4期対策】(平成30年6月)の抜粋",
+          "url": "https://www.maff.go.jp/j/study/census/2025/040909/attach/pdf/index-13.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "資料2-2 地域の農業を見て・知って・活かすDB パンフレット",
+          "url": "https://www.maff.go.jp/j/study/census/2025/040909/attach/pdf/index-2.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "資料2-3 農業集落調査の廃止に対する委員提案による新たな調査方法の検討について",
+          "url": "https://www.maff.go.jp/j/study/census/2025/040909/attach/pdf/index-1.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "資料3 第1回2025年農林業センサス研究会における委員意見に対する見解及び対応方向について",
+          "url": "https://www.maff.go.jp/j/study/census/2025/040909/attach/pdf/index-11.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "参考資料1 2020年農林業センサス農林業経営体調査票",
+          "url": "https://www.maff.go.jp/j/study/census/2025/040909/attach/pdf/index-6.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "参考資料2 2020年農林業センサス農山村地域調査票(農業集落用)",
+          "url": "https://www.maff.go.jp/j/study/census/2025/040909/attach/pdf/index-14.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "議事録",
+          "url": "https://www.maff.go.jp/j/study/census/2025/221107.html",
+          "type": "HTML",
+          "manualLock": true
         }
       ]
     },
@@ -351705,6 +352454,117 @@
       ]
     },
     {
+      "id": "maff-census_2025-20220728-001",
+      "councilId": "maff-census_2025",
+      "name": "第1回 2025年農林業センサス研究会",
+      "date": "2022/07/28",
+      "manualLock": true,
+      "officialUrl": "https://www.maff.go.jp/j/study/census/2025/1/index.html",
+      "materials": [
+        {
+          "name": "議事次第",
+          "url": "https://www.maff.go.jp/j/study/census/2025/1/attach/pdf/index-15.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "出席者名簿",
+          "url": "https://www.maff.go.jp/j/study/census/2025/1/attach/pdf/index-10.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "資料1 2025年農林業センサス研究会開催要領",
+          "url": "https://www.maff.go.jp/j/study/census/2025/1/attach/pdf/index-16.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "資料2 2025年農林業センサス研究会計画(案)",
+          "url": "https://www.maff.go.jp/j/study/census/2025/1/attach/pdf/index-5.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "資料3 農林業センサスの概要",
+          "url": "https://www.maff.go.jp/j/study/census/2025/1/attach/pdf/index-7.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "資料4 農林業センサスの課題と対応方向(案)",
+          "url": "https://www.maff.go.jp/j/study/census/2025/1/attach/pdf/index-19.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "資料5 農林業センサスに向けた検討の方向性(案)",
+          "url": "https://www.maff.go.jp/j/study/census/2025/1/attach/pdf/index-13.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "参考資料1 諮問第114号の答申",
+          "url": "https://www.maff.go.jp/j/study/census/2025/1/attach/pdf/index-14.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "参考資料2 農業経営統計調査の審議を契機とする部会長メモ",
+          "url": "https://www.maff.go.jp/j/study/census/2025/1/attach/pdf/index-12.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "参考資料3-1 2020年農林業センサス農林業経営体調査客体候補名簿",
+          "url": "https://www.maff.go.jp/j/study/census/2025/1/attach/pdf/index-8.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "参考資料3-2 2020年農林業センサス農林業経営体調査票",
+          "url": "https://www.maff.go.jp/j/study/census/2025/1/attach/pdf/index-11.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "参考資料3-3 2020年農林業センサス農山村地域調査票(市区町村用)",
+          "url": "https://www.maff.go.jp/j/study/census/2025/1/attach/pdf/index-17.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "参考資料3-4 2020年農林業センサス農山村地域調査票(農業集落用)",
+          "url": "https://www.maff.go.jp/j/study/census/2025/1/attach/pdf/index-18.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "参考資料4 2020年農林業センサス公表事項一覧表",
+          "url": "https://www.maff.go.jp/j/study/census/2025/1/attach/pdf/index-6.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "参考資料5 農林業センサス等に用いる用語の解説",
+          "url": "https://www.maff.go.jp/j/study/census/2025/1/attach/pdf/index-2.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "参考資料6 2020年農林業センサス農林業経営体調査ご協力のお願い",
+          "url": "https://www.maff.go.jp/j/study/census/2025/1/attach/pdf/index-1.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "(分割版1)",
+          "url": "https://www.maff.go.jp/j/study/census/2025/1/attach/pdf/index-9.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "(分割版2)",
+          "url": "https://www.maff.go.jp/j/study/census/2025/1/attach/pdf/index-3.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "参考資料8 2025年農林業センサスに向けた5か年計画について",
+          "url": "https://www.maff.go.jp/j/study/census/2025/1/attach/pdf/index-4.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "議事録",
+          "url": "https://www.maff.go.jp/j/study/census/2025/gijiroku.html",
+          "type": "HTML",
+          "manualLock": true
+        }
+      ]
+    },
+    {
       "id": "mhlw-kousei_kagaku_hyouka-20220728-012",
       "councilId": "mhlw-kousei_kagaku_hyouka",
       "name": "第12回 厚生科学研究評価部会",
@@ -358934,6 +359794,82 @@
           "name": "議事録",
           "url": "https://www.fsc.go.jp/fsciis/attachedFile/download?retrievalId=kai20220614fsc&fileId=300",
           "type": "HTML"
+        }
+      ]
+    },
+    {
+      "id": "maff-census_gyogyou_2023-20220614-003",
+      "councilId": "maff-census_gyogyou_2023",
+      "name": "第3回 2023年漁業センサス研究会",
+      "date": "2022/06/14",
+      "manualLock": true,
+      "officialUrl": "https://www.maff.go.jp/j/study/2023_gyocen/3/index.html",
+      "materials": [
+        {
+          "name": "議事次第",
+          "url": "https://www.maff.go.jp/j/study/2023_gyocen/3/attach/pdf/index-1.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "出席者名簿",
+          "url": "https://www.maff.go.jp/j/study/2023_gyocen/3/attach/pdf/index-11.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "資料1 新たな水産基本計画(令和4年3月25日閣議決定)の概要について",
+          "url": "https://www.maff.go.jp/j/study/2023_gyocen/3/attach/pdf/index-2.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "資料2 第2回2023年漁業センサス研究会における委員意見に対する見解及び対応方向について",
+          "url": "https://www.maff.go.jp/j/study/2023_gyocen/3/attach/pdf/index-8.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "資料3 養殖業経営体の対象調査について",
+          "url": "https://www.maff.go.jp/j/study/2023_gyocen/3/attach/pdf/index-10.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "資料4 調査項目の変更(案)(令和4年6月時点)",
+          "url": "https://www.maff.go.jp/j/study/2023_gyocen/3/attach/pdf/index-3.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "資料5 調査項目(案)の新旧対照表(追加・変更項目のみ)(案)",
+          "url": "https://www.maff.go.jp/j/study/2023_gyocen/3/attach/pdf/index-9.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "資料6 調査項目の変更に伴う集計項目の変更(案)(令和4年6月時点)",
+          "url": "https://www.maff.go.jp/j/study/2023_gyocen/3/attach/pdf/index-7.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "資料7 漁業地区及び漁業集落の見直しの検討について(案)",
+          "url": "https://www.maff.go.jp/j/study/2023_gyocen/3/attach/pdf/index-6.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "資料8 内水面漁業地域及び内水面漁業集落の見直しの検討について(案)",
+          "url": "https://www.maff.go.jp/j/study/2023_gyocen/3/attach/pdf/index-4.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "資料9 現地実態把握について(案)",
+          "url": "https://www.maff.go.jp/j/study/2023_gyocen/3/attach/pdf/index-12.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "参考 2018年漁業センサス調査票",
+          "url": "https://www.maff.go.jp/j/study/2023_gyocen/3/attach/pdf/index-5.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "議事録",
+          "url": "https://www.maff.go.jp/j/study/2023_gyocen/3/gijiroku.html",
+          "type": "HTML",
+          "manualLock": true
         }
       ]
     },
@@ -392486,6 +393422,97 @@
       ]
     },
     {
+      "id": "maff-census_gyogyou_2023-20211217-002",
+      "councilId": "maff-census_gyogyou_2023",
+      "name": "第2回 2023年漁業センサス研究会",
+      "date": "2021/12/17",
+      "manualLock": true,
+      "officialUrl": "https://www.maff.go.jp/j/study/2023_gyocen/2/index.html",
+      "materials": [
+        {
+          "name": "議事次第及び資料一覧",
+          "url": "https://www.maff.go.jp/j/study/2023_gyocen/2/attach/pdf/index-2.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "出席者名簿",
+          "url": "https://www.maff.go.jp/j/study/2023_gyocen/2/attach/pdf/index-3.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "資料1 調査項目の見直し検討(案)(令和3月12月時点)",
+          "url": "https://www.maff.go.jp/j/study/2023_gyocen/2/attach/pdf/index-9.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "資料2 第1回研究会における委員意見に対する見解及び対応方向について",
+          "url": "https://www.maff.go.jp/j/study/2023_gyocen/2/attach/pdf/index-12.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "資料3 試行調査に代わる民間委託による調査手法、調査内容等の検証について(案)",
+          "url": "https://www.maff.go.jp/j/study/2023_gyocen/2/attach/pdf/index-4.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "資料4 現地実態把握について",
+          "url": "https://www.maff.go.jp/j/study/2023_gyocen/2/attach/pdf/index-8.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "参考1 2018年漁業センサス集計事項一覧",
+          "url": "https://www.maff.go.jp/j/study/2023_gyocen/2/attach/pdf/index-13.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "参考2 2018年漁業センサス調査票",
+          "url": "https://www.maff.go.jp/j/study/2023_gyocen/2/attach/pdf/index-7.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "参考3 2018年漁業センサス記入の仕方",
+          "url": "https://www.maff.go.jp/j/study/2023_gyocen/2/attach/pdf/index-15.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "(分割版1)",
+          "url": "https://www.maff.go.jp/j/study/2023_gyocen/2/attach/pdf/index-10.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "(分割版2)",
+          "url": "https://www.maff.go.jp/j/study/2023_gyocen/2/attach/pdf/index-5.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "(分割版3)",
+          "url": "https://www.maff.go.jp/j/study/2023_gyocen/2/attach/pdf/index-11.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "(分割版4)",
+          "url": "https://www.maff.go.jp/j/study/2023_gyocen/2/attach/pdf/index-14.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "(分割版5)",
+          "url": "https://www.maff.go.jp/j/study/2023_gyocen/2/attach/pdf/index-1.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "参考4 2018年漁業センサスへのご協力のお願い",
+          "url": "https://www.maff.go.jp/j/study/2023_gyocen/2/attach/pdf/index-6.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "議事録",
+          "url": "https://www.maff.go.jp/j/study/2023_gyocen/2/gijiroku.html",
+          "type": "HTML",
+          "manualLock": true
+        }
+      ]
+    },
+    {
       "id": "meti-sankoshin_hoan_shohi-20211217-007",
       "councilId": "meti-sankoshin_hoan_shohi",
       "name": "第7回 産業構造審議会 保安・消費生活用製品安全分科会",
@@ -404454,6 +405481,122 @@
         {
           "name": "議事録",
           "url": "https://www.fsa.go.jp/singi/singi_kinyu/shikinkessai_wg/gijiroku/20211013.html"
+        }
+      ]
+    },
+    {
+      "id": "maff-census_gyogyou_2023-20211013-001",
+      "councilId": "maff-census_gyogyou_2023",
+      "name": "第1回 2023年漁業センサス研究会",
+      "date": "2021/10/13",
+      "manualLock": true,
+      "officialUrl": "https://www.maff.go.jp/j/study/2023_gyocen/1/index.html",
+      "materials": [
+        {
+          "name": "議事次第及び資料一覧",
+          "url": "https://www.maff.go.jp/j/study/2023_gyocen/1/attach/pdf/index-18.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "資料1 2023年漁業センサス研究会開催要領",
+          "url": "https://www.maff.go.jp/j/study/2023_gyocen/1/attach/pdf/index-1.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "資料2 2023年漁業センサス研究会開催計画(案)",
+          "url": "https://www.maff.go.jp/j/study/2023_gyocen/1/attach/pdf/index-6.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "資料3 漁業センサスの概要",
+          "url": "https://www.maff.go.jp/j/study/2023_gyocen/1/attach/pdf/index-22.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "(分割版1)",
+          "url": "https://www.maff.go.jp/j/study/2023_gyocen/1/attach/pdf/index-8.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "(分割版2)",
+          "url": "https://www.maff.go.jp/j/study/2023_gyocen/1/attach/pdf/index-3.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "(分割版3)",
+          "url": "https://www.maff.go.jp/j/study/2023_gyocen/1/attach/pdf/index-12.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "(分割版4)",
+          "url": "https://www.maff.go.jp/j/study/2023_gyocen/1/attach/pdf/index-21.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "(分割版5)",
+          "url": "https://www.maff.go.jp/j/study/2023_gyocen/1/attach/pdf/index-10.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "資料4 水産政策の改革の進捗状況",
+          "url": "https://www.maff.go.jp/j/study/2023_gyocen/1/attach/pdf/index-2.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "資料5 「活かすDB」の活用について",
+          "url": "https://www.maff.go.jp/j/study/2023_gyocen/1/attach/pdf/index-20.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "(分割版1)",
+          "url": "https://www.maff.go.jp/j/study/2023_gyocen/1/attach/pdf/index-14.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "(分割版2)",
+          "url": "https://www.maff.go.jp/j/study/2023_gyocen/1/attach/pdf/index-19.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "(分割版3)",
+          "url": "https://www.maff.go.jp/j/study/2023_gyocen/1/attach/pdf/index-4.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "(分割版4)",
+          "url": "https://www.maff.go.jp/j/study/2023_gyocen/1/attach/pdf/index-11.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "資料6 集計結果の公表に当たって留意すべき事項と対応状況",
+          "url": "https://www.maff.go.jp/j/study/2023_gyocen/1/attach/pdf/index-15.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "資料7 2023年漁業センサスに向けた課題と対応方針(案)",
+          "url": "https://www.maff.go.jp/j/study/2023_gyocen/1/attach/pdf/index-16.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "参考1 諮問第111号の答申(漁業センサス)",
+          "url": "https://www.maff.go.jp/j/study/2023_gyocen/1/attach/pdf/index-5.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "参考2 漁業センサスについて留意が必要な事項について",
+          "url": "https://www.maff.go.jp/j/study/2023_gyocen/1/attach/pdf/index-17.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "参考3 2018年漁業センサス調査票",
+          "url": "https://www.maff.go.jp/j/study/2023_gyocen/1/attach/pdf/index-13.pdf",
+          "manualLock": true
+        },
+        {
+          "name": "議事録",
+          "url": "https://www.maff.go.jp/j/study/2023_gyocen/1/gijiroku.html",
+          "type": "HTML",
+          "manualLock": true
         }
       ]
     },

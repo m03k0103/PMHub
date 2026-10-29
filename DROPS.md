@@ -1,14 +1,14 @@
 # PMHub 改善・機能実装（Drop）マスタードキュメント (DROPS.md)
 
-> **最終更新**: 2026-10-28  
-> **最新 Drop**: **Drop 102**（2026-10-28 完了）  
-> **次回着手予定 Drop**: **Drop 103**（Track [Portal-Norm] 推進 または Track [LLM-Assist] フェーズ 2）  
+> **最終更新**: 2026-10-30  `
+> **最新 Drop**: **Drop 103**（2026-10-30 完了）  `
+> **次回着手予定 Drop**: **Drop 104**（Track [Portal-Norm] 推進 または Track [LLM-Assist] フェーズ 2）  `
 > 
-> 本ドキュメントは、PMHub の継続的改善ロードマップおよび実装記録を一元管理するマスタードキュメントです。  
-> 今後の構想テーマは **「Track（トラック）」** として管理し、着手・個別実装単位は最新連番を付与した **「Drop（ドロップ）」** として連番アーカイブします。  
+> 本ドキュメントは、PMHub の継続的改善ロードマップおよび実装記録を一元管理するマスタードキュメントです。  `
+> 今後の構想テーマは **「Track（トラック）」** として管理し、着手・個別実装単位は最新連番を付与した **「Drop（ドロップ）」** として連番アーカイブします。  `
 > 
-> **【運用指針】**  
-> 1. **Implementation Plan 作成時**: 新機能開発・Drop 提案時は、`implementation_plan.md` の提示と連動して本ドキュメントに対象 Drop / Track の背景・課題・技術仕様および進行ステータス（計画中）を反映。  
+> **【運用指針】**  `
+> 1. **Implementation Plan 作成時**: 新機能開発・Drop 提案時は、`implementation_plan.md` の提示と連動して本ドキュメントに対象 Drop / Track の背景・課題・技術仕様および進行ステータス（計画中）を反映。  `
 > 2. **main マージ時**: `main` ブランチへのマージ後は、到達された数値指標（成果）、ステータス（【完了】）、および構想の更新を反映して本ドキュメントを直ちに最新化。
 
 ---
@@ -22,7 +22,7 @@
 | **Track [LLM-Assist]** | **決定論的1ファイル新着ダイジェスト & LLM判定・クロール階層型フォールバック** | **【フェーズ 1】ディスカバリー 1ファイル集約・単一リクエストLLM判定 & 新着分類永続化（Drop 81 完了）**<br>**【フェーズ 2】開催回クロール 3段階ファネル・異常検知フォールバック & バッチLLM抽出**<br>API呼出上限（Daily 3回 / Weekly 10回 / Monthly 30回）とSQLite `llm_cache`（SHA-256ダイジェストキャッシュ）により、最小APIコールで新規会議体検知と0件以外を含むクロール欠落補完を実現 | **最小APIコールでの新規会議体検知 & クロール補完** | **【進行中】**<br>（フェーズ 1: Drop 81 完了 / フェーズ 2 構想中） |
 | **Track [Automation]** | **定時巡回クローラー & ローカルDB同期**<br>(GitHub Actions 連携) | **3階層マルチスケジュール定期実行・異常検知時Skip・ローカルDB自動同期**<br>1. Daily (平朝): 省庁新着検知のみ<br>2. Weekly (土曜): 通常巡回（直近2年重点）<br>3. Monthly (第1日曜): 全期間包括走査<br>連鎖失敗・重大エラー検知時のIssue発行＆次回以降Skip機能、Zero-Storage VM運用、ローカル環境への安全な同期エンジン（`sync_from_json.py` + post-merge hook）の配備 | **定期自動巡回・省力化 & ローカル資産整合性担保** | **【構想中】**<br>（Drop 82 以降） |
 | **Track [Search]**<br>(フェーズ 3) | **全文検索エンジン統合**<br>(PMM資産連携 FTS5構築) | **【フェーズ 3】PMM ローカルPDF資産を活用した全文検索エンジンの構築**<br>`admin/pmm/text_extractor.py` によるPDF本文抽出、SQLite FTS5 仮想テーブル（`fts_materials`）への trigram インデックス構築、サーバー検索API（`/api/search?q=キーワード`）およびフロントエンド検索UI・抜粋ハイライトの実装 | **約11万件の政策資料PDF本文横断検索の実現** | **【構想中】**<br>（Track [Database] 完了後着手） |
-| **Track [Portal-Norm]** | **省庁ポータル一覧・目次URL正常化**<br>(傘下会議体の個別化・パース規則最適化) | **省庁組織・目次・一覧ポータル設定会議体の個別会議体分離・スクレイピング最適化**<br>文化庁・消防庁・文科省等、親ポータルURLが設定されたまま個別開催回が未分離の会議体について、組織ツリーを辿り個別会議体（または開催回）へと正常化する包括的施策 | **Failed会議体の根絶 & 網羅的開催回収集** | **【進行中】**<br>（Drop 79, 91, 93, 97, 98, 100, 101, 102 で推進中） |
+| **Track [Portal-Norm]** | **省庁ポータル一覧・目次URL正常化**<br>(傘下会議体の個別化・パース規則最適化) | **省庁組織・目次・一覧ポータル設定会議体の個別会議体分離・スクレイピング最適化**<br>文化庁・消防庁・文科省等、親ポータルURLが設定されたまま個別開催回が未分離の会議体について、組織ツリーを辿り個別会議体（または開催回）へと正常化する包括的施策 | **Failed会議体の根絶 & 網羅的開催回収集** | **【進行中】**<br>（Drop 79, 91, 93, 97, 98, 100, 101, 102, 103 で推進中） |
 | **Track [Architecture]** | **設計刷新構想**<br>(モジュール責務分離) | **リファクタリング領域E: クローラー本体（crawler.py）の責務分離 & scratch/ クリーンアップ**<br>巨大化したクローラー（約2,900行）を HTTP通信・パース・DB保存・エクスポート等にモジュール分割し、保守性を劇的に向上。蓄積した `scratch/` スクリプトの完全整理・アーカイブ | **単体テスト容易性向上 & コード肥大化の解消** | **【構想中】** |
 | **Track [Optimization]** | **配信最適化構想**<br>(公開データ軽量化) | **リファクタリング領域D: クローラー設定分離 & 公開JSONの minified 化による通信量最適化**<br>公開用静的サイトの配信効率向上のため、公開用 JSON の minified 化および通信量圧縮 | **初回ページロード高速化 & 帯域削減** | **【構想中】** |
 | **Track [Policy-AI]** | **政策分析連携構想**<br>(知見創出・AI連携) | **省庁横断テーマ連携 & AI 審議要約・タイムライン比較**<br>各省庁に分散する同一政策テーマ（GX、AI、少子化等）の会議体を横断的に可視化し、AIによる要約や論点対比を提供する高度分析機能 | **政策横断的インサイトの創出** | **【長期構想】** |
@@ -134,8 +134,8 @@ GitHub Actions で自動更新・push されたリモートの最新データ（
 ## 2. 実装済 Drop
 
 > [!IMPORTANT]
-> 本セクションでは、これまでに完了したすべての Drop 施策を**昇順（時系列順）**で掲載・アーカイブしています。  
-> ※ 実装済最新 Drop および次回着手予定 Drop は、ドキュメント冒頭のヘッダーに一元記載されています。  
+> 本セクションでは、これまでに完了したすべての Drop 施策を**昇順（時系列順）**で掲載・アーカイブしています。  `
+> ※ 実装済最新 Drop および次回着手予定 Drop は、ドキュメント冒頭のヘッダーに一元記載されています。  `
 > 全施策が完了済みであるため、一覧のフォーマットを4列（Drop ID / カテゴリ・種別 / 施策概要・主な改修内容 / 到達成果・検証結果）に統一しています。
 
 ### 2-1. 実装済 Drop一覧
@@ -301,8 +301,8 @@ GitHub Actions で自動更新・push されたリモートの最新データ（
 
 #### 【Drop 26】Phase 1: isClosed 適正化 & 重複統合 & 個別会議体同期（全42件対象・完了）
 
-**2026-09-27 完了**。ユーザー指示に基づき、厚労省空殻ページ（8件）および内閣官房事前待機組織を非Closeで保持しつつ、承認済み 5 会議体の `isClosed: true` 化、重複 5 ペアの統合、個別会議体（cas-310, npa-1199, cas-330, cas-337, cao-246, cao-260, mext-714）の URL 是正・開催回・配付資料の網羅同期、非会議体（mext-713）の完全削除＆再混入防止ガードを実施。  
-新規開催回 **75 件追加**（総開催回数 16,371 件）、新規配付資料 **389 件追加**（総配付資料数 91,535 件）。  
+**2026-09-27 完了**。ユーザー指示に基づき、厚労省空殻ページ（8件）および内閣官房事前待機組織を非Closeで保持しつつ、承認済み 5 会議体の `isClosed: true` 化、重複 5 ペアの統合、個別会議体（cas-310, npa-1199, cas-330, cas-337, cao-246, cao-260, mext-714）の URL 是正・開催回・配付資料の網羅同期、非会議体（mext-713）の完全削除＆再混入防止ガードを実施。  `
+新規開催回 **75 件追加**（総開催回数 16,371 件）、新規配付資料 **389 件追加**（総配付資料数 91,535 件）。  `
 **クロール成功数 1,365 件 (94.33%) → 1,386 件 (95.85%) (+21 件) に到達し、目標 95% 超を達成。残未成功数は 60 件に減少。全18大テスト完全合格・重複ゼロ達成。**
 
 | ID | 分類 | 内容 | 対象ファイル | 状態 |
@@ -716,15 +716,15 @@ Drop 62 & 63 による SQLite マスターDB化および 2系統エクスポー�
 
 #### 【Drop 65】新規有望会議体（21会議体・177開催回・397資料）のワンストップ追加 & SQLiteマスター・2系統同期（完了）
 
-文化庁著作権分科会傘下小委員会12件、総務省審査会群4件、直近アクティブ有望5件の計21会議体をワンストップ追加（マスター・開催回・末端PDF/HTML配付資料・スクレイピングルール・手動保護）で登録。除外ポータル6件を dmin/rejected_councils.json へ登録。同省庁類似名称（恩給審査会）の整合化、年次活動報告書除外ガード（/katsudou/）新設、SQLite マスターDB（dmin/pmhub.db）と 2系統JSON を完全同期した。
+文化庁著作権分科会傘下小委員会12件、総務省審査会群4件、直近アクティブ有望5件の計21会議体をワンストップ追加（マスター・開催回・末端PDF/HTML配付資料・スクレイピングルール・手動保護）で登録。除外ポータル6件を admin/rejected_councils.json へ登録。同省庁類似名称（恩給審査会）の整合化、年次活動報告書除外ガード（/katsudou/）新設、SQLite マスターDB（admin/pmhub.db）と 2系統JSON を完全同期した。
 
 | ID | 分類 | 内容 | 対象ファイル | 状態 |
 |:---|:---:|:---|:---|:---:|
-| **CR-149** | 新規有望会議体追加 | **文化庁小委員会・総務省審査会等 21会議体・177開催回・397資料のワンストップ追加**<br>文化庁著作権小委員会12件、総務省審査会群4件、直近アクティブ5件の計21会議体を公式URLより取得・登録。全レコードに manualLock: true を付与 | docs/data.json<br>dmin/admin_data.json | 完了 |
+| **CR-149** | 新規有望会議体追加 | **文化庁小委員会・総務省審査会等 21会議体・177開催回・397資料のワンストップ追加**<br>文化庁著作権小委員会12件、総務省審査会群4件、直近アクティブ5件の計21会議体を公式URLより取得・登録。全レコードに manualLock: true を付与 | docs/data.json<br>admin/admin_data.json | 完了 |
 | **CR-150** | 類似名称整合 & 除外ガード | **恩給審査会類似名称整合・活動報告書除外ガード（/katsudou/）新設 & 却下リスト登録**<br>同省庁類似名称の整合化、年次活動報告書除外ガード新設、除外ポータル6件を 
-ejected_councils.json へ登録 | dmin/crawler.py<br>dmin/rejected_councils.json | 完了 |
-| **CR-151** | DB同期 & テスト検証 | **SQLite マスターDB & 2系統JSON完全同期 & 統合15ケース＋単体18種完全合格**<br>pmhub.db へ反映し、docs/data.json と dmin/admin_data.json へ自動エクスポート。
-un_test_suite.py --all-layers 完全合格 | dmin/pmhub.db<br>docs/data.json<br>dmin/admin_data.json | 完了 |
+ejected_councils.json へ登録 | admin/crawler.py<br>admin/rejected_councils.json | 完了 |
+| **CR-151** | DB同期 & テスト検証 | **SQLite マスターDB & 2系統JSON完全同期 & 統合15ケース＋単体18種完全合格**<br>pmhub.db へ反映し、docs/data.json と admin/admin_data.json へ自動エクスポート。
+un_test_suite.py --all-layers 完全合格 | admin/pmhub.db<br>docs/data.json<br>admin/admin_data.json | 完了 |
 
 ---
 
@@ -738,10 +738,10 @@ un_test_suite.py --all-layers 完全合格 | dmin/pmhub.db<br>docs/data.json<br
 
 | ID | 分類 | 内容 | 対象ファイル | 状態 |
 |:---|:---:|:---|:---|:---:|
-| **CR-152** | ディスカバリークロール | **直近アクティブ809会議体対象 開催回ディスカバリークロール実行**<br>新規258開催回・1,555資料を自動検出・追加（FSC 160件、厚労省 46件、経産省 18件等）。2099プレースホルダー7件の完全排除 | docs/data.json<br>dmin/admin_data.json | 完了 |
-| **CR-153** | 再発防止ガード | **URL内スペース自動エンコード（%20）恒久ガード実装**<br>環境省等で発生したURL内スペースによる404/パース失敗を防止するため、crawler.py のURL正規化・フェッチ処理にスペース自動エンコードガードを実装 | dmin/crawler.py<br>dmin/utils.py | 完了 |
-| **CR-154** | DB同期 & テスト検証 | **SQLite マスターDB & 2系統JSON完全同期 & 統合15ケース＋単体18種完全合格**<br>pmhub.db へ反映し、docs/data.json と dmin/admin_data.json へ自動エクスポート。
-un_test_suite.py --all-layers 完全合格 | dmin/pmhub.db<br>docs/data.json<br>dmin/admin_data.json | 完了 |
+| **CR-152** | ディスカバリークロール | **直近アクティブ809会議体対象 開催回ディスカバリークロール実行**<br>新規258開催回・1,555資料を自動検出・追加（FSC 160件、厚労省 46件、経産省 18件等）。2099プレースホルダー7件の完全排除 | docs/data.json<br>admin/admin_data.json | 完了 |
+| **CR-153** | 再発防止ガード | **URL内スペース自動エンコード（%20）恒久ガード実装**<br>環境省等で発生したURL内スペースによる404/パース失敗を防止するため、crawler.py のURL正規化・フェッチ処理にスペース自動エンコードガードを実装 | admin/crawler.py<br>admin/utils.py | 完了 |
+| **CR-154** | DB同期 & テスト検証 | **SQLite マスターDB & 2系統JSON完全同期 & 統合15ケース＋単体18種完全合格**<br>pmhub.db へ反映し、docs/data.json と admin/admin_data.json へ自動エクスポート。
+un_test_suite.py --all-layers 完全合格 | admin/pmhub.db<br>docs/data.json<br>admin/admin_data.json | 完了 |
 
 ---
 
@@ -1317,7 +1317,7 @@ flowchart TD
 
 ### 【Drop 81】決定論的1ファイル新着ダイジェスト & 単一コールLLMディスカバリー判定・新着会議体分類永続化（Track [LLM-Assist] フェーズ 1・完了）
 
-> **ステータス**: **【完了】** (2026-10-24 実装・検証完了)  
+> **ステータス**: **【完了】** (2026-10-24 実装・検証完了)  `
 > **対象トラック**: **Track [LLM-Assist]**（フェーズ 1）
 
 #### 1. 背景と課題 (Background & Issues)
@@ -1604,7 +1604,7 @@ flowchart LR
   - 配付資料数: 115,567 件 -> **116,266 件**（中間HTML 320件削除、末端PDF 1,019件純増）
   - 手動ロック: 11,382 件（保護適格）
 - **統合テストスイート（全15ケース＋単体テスト23種）完全合格**:
-  ```markdown
+  ````markdown
   python testing/run_test_suite.py --all-layers : PASSED（統合15ケース＋単体23種完全合格 / 総実行時間 21.48秒）
     - ケース1: コード文法チェック（SyntaxError / 括弧不整合 / DDL構文 0件）
     - ケース2: リンク疎通確認（追加・変更URL 544件 200 OK / リンク切れ 0件）
@@ -1673,7 +1673,7 @@ flowchart LR
   - 配付資料数: 116,266 件 -> **116,469 件**（中間HTML 103件削除、重複案内ノイズ 441件削除、末端資料 749件新規登録、差分 +203件純増）
   - 手動ロック配付資料: 11,382 件 -> **12,041 件**（保護適格）
 - **統合テストスイート（全15ケース＋単体テスト23種）完全合格**:
-  ```markdown
+  ````markdown
   python testing/run_test_suite.py --all-layers : PASSED（統合15ケース＋単体23種完全合格 / 総実行時間 21.59秒）
     - ケース1: コード文法チェック（SyntaxError / 括弧不整合 / DDL構文 0件）
     - ケース2: リンク疎通確認（追加・変更URL 706件 200 OK / リンク切れ 0件）
@@ -1729,7 +1729,7 @@ flowchart LR
   - `DROPS.md`: Drop 86 記録、Track [Intermediate-Norm] フェーズ 5 完了反映
 
 - **4. 統合テスト結果**:
-  ```markdown
+  ````markdown
   python testing/run_test_suite.py --all-layers : PASSED（統合15ケース＋単体23種完全合格 / 21.05s）
     - ケース1: コード文法チェック (SyntaxError / 括弧 / div) (0.80s) : PASS
     - ケース2: リンク疎通確認 (新規追加・変更 4,471 件全件 200 OK・死にリンク 0 件) (1.07s) : PASS
@@ -1784,7 +1784,7 @@ flowchart LR
   - `DROPS.md`: Drop 87 記録、Track [Intermediate-Norm] フェーズ 6 完了反映
 
 - **4. 統合テスト結果**:
-  ```markdown
+  ````markdown
   python testing/run_test_suite.py --all-layers : PASSED（統合15ケース＋単体23種完全合格 / 21.58s）
     - ケース1: コード文法チェック (SyntaxError / 括弧 / div) (0.70s) : PASS
     - ケース2: リンク疎通確認 (新規追加・変更 45 件全件 200 OK・死にリンク 0 件) (0.97s) : PASS
@@ -1838,7 +1838,7 @@ flowchart LR
   - `DROPS.md`: Drop 88 記録、Track [Intermediate-Norm] フェーズ 7 完了反映
 
 - **4. 統合テスト結果**:
-  ```markdown
+  ````markdown
   python testing/run_test_suite.py --all-layers : PASSED（統合15ケース＋単体23種完全合格 / 20.94s）
     - ケース1: コード文法チェック (SyntaxError / 括弧 / div) (0.67s) : PASS
     - ケース2: リンク疎通確認 (新規追加・変更 923 件全件 200 OK・死にリンク 0 件) (0.91s) : PASS
@@ -1901,7 +1901,7 @@ flowchart LR
   - `testing/test_no_duplicate_meetings.py`: 統合ケース5 ガード対象を累計 197 会議体へ拡大
   - `DROPS.md`: Drop 89 記録、Track [Intermediate-Norm] フェーズ 8 完了反映
 - **4. 統合テスト結果**:
-  ```markdown
+  ````markdown
   python testing/run_test_suite.py --all-layers : PASSED（統合15ケース＋単体23種合格 / 所要時間 22.70秒）
     - ケース1: コード文法チェック (SyntaxError / 括弧 / div) (0.82s) : PASS
     - ケース2: リンク疎通確認 (追加・変更 2,192件中 リンク切れ 0件) (1.10s) : PASS
@@ -1958,7 +1958,7 @@ flowchart LR
   - `testing/test_no_duplicate_meetings.py`: 統合ケース5 ガード対象を累計 256 会議体へ拡大
   - `DROPS.md`: Drop 90 記録、Track [Intermediate-Norm] 【完了】ステータス更新
 - **4. 統合テスト結果**:
-  ```markdown
+  ````markdown
   python testing/run_test_suite.py --all-layers : PASSED（統合15ケース＋単体23種合格 / 所要時間 21.59秒）
     - ケース1: コード文法チェック (SyntaxError / 括弧 / div) (0.68s) : PASS
     - ケース2: リンク疎通確認 (追加・変更 632件中 リンク切れ 0件) (0.99s) : PASS
@@ -2018,7 +2018,7 @@ flowchart LR
   - `testing/test_drop48_zero_materials_rescue.py`: 閾値判定更新
   - `DROPS.md`: Drop 91 記録
 - **4. 統合テスト結果**:
-  ```markdown
+  ````markdown
   python testing/run_test_suite.py --all-layers : PASSED（統合15ケース＋単体23種合格 / 所要時間 23.87秒）
     - ケース1: コード文法チェック (SyntaxError / 括弧 / div) (0.72s) : PASS
     - ケース2: リンク疎通確認 (追加・変更 9,850件中 リンク切れ 0件) (1.13s) : PASS
@@ -2071,7 +2071,7 @@ flowchart LR
   - `testing/run_test_suite.py`, `testing/test_drop23_waf_resilience.py`: 統合ケース13 & 単体U7 再発防止ガード追加
   - `DROPS.md`: Track [Config-DB] 新設および Drop 92 記録
 - **4. 統合テスト結果**:
-  ```markdown
+  ````markdown
   python testing/run_test_suite.py --all-layers : PASSED（統合15ケース＋単体23種合格 / 所要時間 23.69秒）
     - ケース1: コード文法チェック (SyntaxError / 括弧 / div) (0.69s) : PASS
     - ケース2: リンク疎通確認 (追加・変更 23件全件 200 OK) (1.15s) : PASS
@@ -2125,7 +2125,7 @@ flowchart LR
   - `docs/data.json`, `docs/data.js`, `admin/admin_data.json`, `admin/rejected_councils.json`: `export_data.py` による2系統同期
   - `DROPS.md`: 実装済Drop昇順ソート是正（19〜92）および Drop 93 記録
 - **4. テスト検証結果 (Verification Results)**:
-  ```markdown
+  ````markdown
   python testing/run_test_suite.py --all-layers : PASSED（統合15ケース＋単体23種完全合格 / 所要時間 28.71秒）
     - ケース1: コード文法チェック (SyntaxError / 括弧 / div) (0.82s) : PASS
     - ケース2: リンク疎通確認 (追加・変更 824件中 切れ0件) (1.21s) : PASS
@@ -2191,7 +2191,7 @@ flowchart LR
   - `AGENTS.md`: 2系統同期仕様の明確化（docs/data.json / admin/admin_data.json）
   - `DROPS.md`: Track [Test-DB] Drop 94 記録
 - **4. テスト検証結果 (Verification Results)**:
-  ```markdown
+  ````markdown
   python testing/run_test_suite.py --all-layers : PASSED（統合15ケース＋単体23種完全合格 / 所要時間 23.66秒）
     - ケース1: コード文法チェック (SyntaxError / 括弧 / div) (0.74s) : PASS
     - ケース2: リンク疎通確認 (0.93s) : PASS
@@ -2241,7 +2241,7 @@ flowchart LR
   - `testing/test_crawler_regression.py`: ルール駆動フィルタ単体検証 & 会議体IDハードコードゼロ検証テスト追加
   - `DROPS.md`: Track [Config-DB] Drop 95 記録
 - **4. テスト検証結果 (Verification Results)**:
-  ```markdown
+  ````markdown
   python testing/run_test_suite.py --all-layers : PASSED（統合15ケース＋単体23種完全合格 / 所要時間 27.56秒）
     - ケース1: コード文法チェック (SyntaxError / 括弧 / div) (1.76s) : PASS
     - ケース2: リンク疎通確認 (1.15s) : PASS
@@ -2293,7 +2293,7 @@ flowchart LR
   - `testing/test_crawler_regression.py`: ハイブリッド判定および汎用定数純粋性の回帰テスト追加
   - `DROPS.md`: Track [Config-DB] Drop 96 記録
 - **4. テスト検証結果 (Verification Results)**:
-  ```markdown
+  ````markdown
   python testing/run_test_suite.py --all-layers : PASSED（統合15ケース＋単体23種合格 / 所要時間 約21秒）
     - ケース1: コード文法チェック（SyntaxError / 括弧不整合 / DDL構文 0件） (1.81s) : PASS
     - ケース2: リンク疎通確認（追加・変更URL 200 OK） (0.75s) : PASS
@@ -2340,7 +2340,7 @@ flowchart LR
      - mod-shisetsu のルールに公式URL（officialUrl: https://www.mod.go.jp/j/policy/agenda/meeting/shi-chu/index.html）および extract_from_parent_table: true を設定。
      - 次回以降の自動クロールで新開催回が正しく検知されるよう連動反映。
   5. **SQLite マスターDB & 2系統エクスポート同期**:
-     - dmin/pmhub.db を更新後、正規のエクスポートパイプライン（python -m admin.db.export_data）を実行し、docs/data.json および dmin/admin_data.json を完全同期。
+     - admin/pmhub.db を更新後、正規のエクスポートパイプライン（python -m admin.db.export_data）を実行し、docs/data.json および admin/admin_data.json を完全同期。
 
 - **3. 影響範囲と検証結果 (Impact & Verification)**:
   - **対象会議体**: 防衛省 防衛施設中央審議会 (mod-shisetsu)
@@ -2489,7 +2489,7 @@ flowchart LR
   - `DROPS.md`: Drop 99 完了記録追加、および完遂した `Track [Config-DB]` の Track一覧からの削除
 
 - **4. テスト検証結果 (Verification Results)**:
-  ```markdown
+  ````markdown
   python testing/run_test_suite.py --all-layers : PASSED（統合15ケース＋単体23種完全合格 / 所要時間 21.72秒）
     - ケース1: コード文法チェック（SyntaxError / 括弧不整合 / DDL構文 0件） (0.72s) : PASS
     - ケース2: リンク疎通確認 (0.85s) : PASS
@@ -2543,7 +2543,7 @@ flowchart LR
   - `DROPS.md`: Drop 100 実績記録および Track [Portal-Norm] 進行状況更新
 
 - **4. テスト検証結果 (Verification Results)**:
-  ```markdown
+  ````markdown
   python testing/run_test_suite.py --all-layers : PASSED（統合15ケース＋単体23種合格 / 所要時間 22.42秒）
     - ケース1: コード文法チェック（SyntaxError / 括弧不整合 / DDL構文 0件） (0.71s) : PASS
     - ケース2: リンク疎通確認（追加・変更URL 43件 200 OK・リンク切れ0件） (1.07s) : PASS
@@ -2594,7 +2594,7 @@ flowchart LR
   - `DROPS.md`: Drop 101 実績記録および Track [Portal-Norm] 進行状況更新
 
 - **4. テスト検証結果 (Verification Results)**:
-  ```markdown
+  ````markdown
   python testing/run_test_suite.py --all-layers : PASSED（統合15ケース＋単体23種合格 / 所要時間 43.10秒）
     - ケース1: コード文法チェック（SyntaxError / 括弧不整合 / DDL構文 0件） (4.75s) : PASS
     - ケース2: リンク疎通確認（追加・変更URL 45件 200 OK・リンク切れ0件） (16.61s) : PASS
@@ -2652,7 +2652,7 @@ flowchart LR
   - `DROPS.md`: Drop 102 実績記録および Track [Portal-Norm] 進行状況更新
 
 - **4. テスト検証結果 (Verification Results)**:
-  ```markdown
+  ````markdown
   python testing/run_test_suite.py --all-layers : PASSED（統合15ケース＋単体23種合格 / 所要時間 21.53秒）
     - ケース1: コード文法チェック（SyntaxError / 括弧不整合 / DDL構文 0件） (0.69s) : PASS
     - ケース2: リンク疎通確認（追加・変更URL 722件 200 OK・リンク切れ0件） (1.05s) : PASS
@@ -2670,4 +2670,67 @@ flowchart LR
     - ケース13: 省庁親ポータルURL設定・探索網羅性検証 (0.42s) : PASS
     - ケース14: アクティブ会議体フィルタリング・廃止管理検証 (0.90s) : PASS
     - 【単体関数検証 (Unit Tests)】: 全23種合格（連動 23 種類実施 / 6.29s） : PASS
+  ```
+
+
+---
+
+### Drop 103: Track [Portal-Norm] 推進 - 文科省・厚労省の開催案内・資料単体URLパージ（30件）および水産庁・農水省・デジタル庁6会議体26開催回ワンストップ登録（2026-10-30 済）
+
+- **1. 背景・課題 (Background & Issues)**:
+  - Track [Portal-Norm] の継続調査において、以下の不整合レコードおよびポータル未分離の課題を是正：
+    1. **文科省・厚労省の開催案内・告知・資料単体URL誤登録（計30件）**:
+       - 文部科学省（7件）: mext-2944〜mext-2950 は審議会（中教審教育課程部会、科学技術・学術審議会各部会・委員会等）の特定開催回の開催案内URL（.../kaisai/mext_XXXXX.html）等であり、親ポータルが存在しない単体告知ページであった。
+       - 厚生労働省（23件）: mhlw-2856〜mhlw-2897（mhlw-2856, 2858, 2860, 2863, 2864, 2869, 2870, 2871, 2873, 2874, 2875, 2877, 2879, 2880, 2881, 2882, 2886, 2887, 2888, 2889, 2890, 2895, 2897）は、審議会や作業部会の単一開催回案内や資料単体PDFの報道・告知URLであり、開催回0件のままノイズ化していた。
+    2. **水産庁報道発表URL（2件）の親ポータル正規化**:
+       - jfa-3005（海業推進全国協議会）が報道発表URL（251212.html）で登録されていたため、公式ポータル（jfa-umigyo_kyougikai）へ正規化。
+       - jfa-3006（令和6年能登半島地震漁業地域復旧・復興技術検討会）が報道発表URL（240628.html）で登録されていたため、公式ポータル（jfa-noto_fukkyuu_kentoukai）へ正規化。
+    3. **親ポータル設定済み未収集会議体および傘下作業部会分離（4会議体）**:
+       - digital-agile_opensource は親ポータルURL（https://www.digital.go.jp/councils/procurement-agile-opensource）配下に2つの独立した有識者検討会が併設されていたため、回次重複を避けて digital-agile_kentoukai（アジャイル開発に関する有識者検討会: 8開催回・24資料）と digital-oss_kentoukai（オープンソース化・OSS利活用に関する有識者検討会: 5開催回・15資料）へ完全分離・正常化。
+       - maff-census_2025（農林水産省 2025年農林業センサス研究会: 5開催回・97資料）
+       - maff-census_gyogyou_2023（農林水産省 2023年漁業センサス研究会: 4開催回・69資料）
+
+- **2. 実施内容・設計 (Implementation & Architecture)**:
+  1. **文科省・厚労省の開催案内・告知URL除外パージ（計30件）**:
+     - 30件を councils から削除し、個別理由（開催案内・資料単体URL）を明記して 
+ejected_councils（計420件）へ登録。
+     - 関連する crawl_statuses / scraping_rules を完全クリーンアップ。
+  2. **水産庁2会議体の正規化およびID体系整合**:
+     - 旧 jfa-3005, jfa-3006 を削除し、ハイフン1個・2セグメント規約（jfa-umigyo_kyougikai, jfa-noto_fukkyuu_kentoukai）に準拠した正規IDとして再登録。
+  3. **デジタル庁親ポータルの個別検討会分離および6会議体のワンストップ全開催回・配付資料登録（計26開催回・233配付資料）**:
+     - **digital-agile_kentoukai（デジタル庁 アジャイル開発に関する有識者検討会）**: 公式ポータル https://www.digital.go.jp/councils/procurement-agile-opensource/agile-review-meeting。第1回（2025/10/31）〜 第8回（2026/02/13）の全8開催回、アジェンダ・説明資料・議事要旨（計24資料）を末端URLで直接登録。
+     - **digital-oss_kentoukai（デジタル庁 オープンソース化・OSS利活用に関する有識者検討会）**: 公式ポータル https://www.digital.go.jp/councils/procurement-agile-opensource/opensource-review-meeting。第1回（2025/11/18）〜 第5回（2026/01/23）の全5開催回、アジェンダ・説明資料・議事要旨（計15資料）を末端URLで直接登録。
+     - **maff-census_2025（農林水産省 2025年農林業センサス研究会）**: 公式ポータル https://www.maff.go.jp/j/study/census/2025/index.html。第1回（2022/07/28）〜 第5回（2023/12/26）の全5開催回、次第・調査票案・検討資料・議事録（計97資料）を直接登録。
+     - **maff-census_gyogyou_2023（農林水産省 2023年漁業センサス研究会）**: 公式ポータル https://www.maff.go.jp/j/study/2023_gyocen/index.html。第1回（2021/11/12）〜 第4回（2022/10/07）の全4開催回、次第・諮問・検討資料・議事概要・議事録（計69資料）を直接登録。
+     - **jfa-umigyo_kyougikai（水産庁 海業推進全国協議会）**: 公式ポータル https://www.jfa.maff.go.jp/j/keikaku/umigyo_kyougikai.html。第1回（2023/12/13）〜 第3回（2026/01/22）の全3開催回、各回次第・取組報告・発表資料（計24資料）を先行コンテキスト文字列により非ジェネリック名化して直接登録。
+     - **jfa-noto_fukkyuu_kentoukai（水産庁 令和6年能登半島地震漁業地域復旧・復興技術検討会）**: 公式ポータル https://www.jfa.maff.go.jp/j/gyoko_gyozyo/g_zyoho_bako/gizyutu_kentokai/gizyutu_kentokai.html。検討会開催回（2024/06/28）および4テーマの技術検討資料・現地報告（計1開催回・4資料）を直接登録。
+     - 全6会議体・26開催回・233資料に manual_lock = 1 を設定し、scraping_rules に各省庁のURL構造に即した正規表現およびセレクターを配備。
+     - 資料名中の康煕部首・CJK部首補助（22箇所）を NFKC 正規化により完全除去。
+  4. **SQLite マスターDB & 2系統エクスポート同期**:
+     - admin/pmhub.db を更新後、admin.db.export_data を実行し、docs/data.json（34.60 MB, 1,722会議体, 21,571開催回）、admin/admin_data.json（5.91 MB）、admin/rejected_councils.json（420件）を完全同期。
+
+- **3. 変更ファイル一覧 (Changed Files)**:
+  - admin/pmhub.db: 30件開催案内URLパージ、水産庁2会議体正規化、デジタル庁親ポータル2検討会分離、6会議体26開催回・233資料登録、スクレイピングルール反映
+  - docs/data.json, admin/admin_data.json, admin/rejected_councils.json: SQLite マスターDB からの2系統完全同期
+  - DROPS.md: Drop 103 実績記録および Track [Portal-Norm] 進行状況更新
+
+- **4. テスト検証結果 (Verification Results)**:
+  ```markdown
+  python testing/run_test_suite.py --all-layers : PASSED（統合15ケース＋単体23種合格 / 所要時間 26.01秒）
+    - ケース1: コード文法チェック（SyntaxError / 括弧不整合 / DDL構文 0件） (0.88s) : PASS
+    - ケース2: リンク疎通確認（追加・変更URL 259件 200 OK・リンク切れ0件） (2.82s) : PASS
+    - ケース3: UI表示機能検証（DOMコンテナ整合性） (0.00s) : PASS
+    - ケース4: JS実行時クラッシュ・全画面描画検証 (0.77s) : PASS
+    - ケース5: 会議品質・回次整合性・重複排除検証 (0.95s) : PASS
+    - ケース6: 会議体・タイムライン ID完全排他性・整合性 (0.01s) : PASS
+    - ケース7: 康煕部首・特殊文字 NFKC 正規化検証 (0.32s) : PASS
+    - ケース8: プレースホルダー日付（2099/01/01）ゼロ遮断検証 (0.00s) : PASS
+    - ケース15: SQLiteマスターDB整合性 & 2系統JSON完全同期検証 (0.92s) : PASS
+    - ケース9: 管理サーバー API 単体・統合テスト（全11テスト合格） (4.83s) : PASS
+    - ケース10: クローラー手動保護回帰テスト（manualLock 非破壊性合格） (4.53s) : PASS
+    - ケース11: スクレイピングルール整合性検証（100%ルール適用） (0.48s) : PASS
+    - ケース12: ホスト分散・ゴミデータ不変性検証 (0.32s) : PASS
+    - ケース13: 省庁親ポータルURL設定・探索網羅性検証 (0.45s) : PASS
+    - ケース14: アクティブ会議体フィルタリング・廃止管理検証 (1.00s) : PASS
+    - 【単体関数検証 (Unit Tests)】: 全23種合格（連動 23 種類実施 / 7.29s） : PASS
   ```

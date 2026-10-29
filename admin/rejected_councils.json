@@ -1773,6 +1773,69 @@
     "reason": "AI判定: 国立国会図書館WARPアーカイブ（過去保管データ）のため却下"
   },
   {
+    "id": "mext-2944",
+    "name": "教育課程部会",
+    "ministry": "MEXT",
+    "category": "COUNCIL",
+    "officialUrl": "https://www.mext.go.jp/b_menu/shingi/chukyo/chukyo3/kaisai/mext_00157.html",
+    "rejectedAt": "2026-10-30 07:45:17",
+    "reason": "中央教育審議会教育課程企画特別部会（第22回）の開催案内URLのため非審議会として除外"
+  },
+  {
+    "id": "mext-2945",
+    "name": "ライフサイエンス委員会",
+    "ministry": "MEXT",
+    "category": "COUNCIL",
+    "officialUrl": "https://www.mext.go.jp/b_menu/shingi/gijyutu/gijyutu2/113/kaisai/mext_00006.html",
+    "rejectedAt": "2026-10-30 07:45:17",
+    "reason": "科学技術・学術審議会ライフサイエンス委員会次世代医療実現作業部会（第6回）の開催案内URLのため非審議会として除外"
+  },
+  {
+    "id": "mext-2946",
+    "name": "ポスト2030教育に関するユースアジェンダ起草会議",
+    "ministry": "MEXT",
+    "category": "COUNCIL",
+    "officialUrl": "https://www.mext.go.jp/unesco/001/2014/1347530_00012.htm",
+    "rejectedAt": "2026-10-30 07:45:17",
+    "reason": "起草会議開催告知の報道発表URLのため非審議会として除外"
+  },
+  {
+    "id": "mext-2947",
+    "name": "技術士分科会",
+    "ministry": "MEXT",
+    "category": "COUNCIL",
+    "officialUrl": "https://www.mext.go.jp/b_menu/shingi/gijyutu/gijyutu7/kaisai/mext_00006.html",
+    "rejectedAt": "2026-10-30 07:45:17",
+    "reason": "科学技術・学術審議会技術士分科会（第54回）の開催案内URLのため非審議会として除外"
+  },
+  {
+    "id": "mext-2948",
+    "name": "研究費部会",
+    "ministry": "MEXT",
+    "category": "COUNCIL",
+    "officialUrl": "https://www.mext.go.jp/b_menu/shingi/gijyutu/gijyutu4/053/kaisai/0004_00006.html",
+    "rejectedAt": "2026-10-30 07:45:17",
+    "reason": "科学技術・学術審議会研究費部会（第7回）の開催案内URLのため非審議会として除外"
+  },
+  {
+    "id": "mext-2949",
+    "name": "高等専門学校の機能強化に関する検討会",
+    "ministry": "MEXT",
+    "category": "COUNCIL",
+    "officialUrl": "https://www.mext.go.jp/b_menu/shingi/chousa/koutou/136/mext_00007.html",
+    "rejectedAt": "2026-10-30 07:45:17",
+    "reason": "高等専門学校の機能強化に関する検討会（第6回）の開催案内URLのため非審議会として除外"
+  },
+  {
+    "id": "mext-2950",
+    "name": "先端研究開発基盤強化委員会",
+    "ministry": "MEXT",
+    "category": "COUNCIL",
+    "officialUrl": "https://www.mext.go.jp/b_menu/shingi/gijyutu/gijyutu28/002/kaisai/mext_0005_00001.html",
+    "rejectedAt": "2026-10-30 07:45:17",
+    "reason": "科学技術・学術審議会先端研究開発基盤強化委員会（第6回）の開催案内URLのため非審議会として除外"
+  },
+  {
     "id": "mext-718",
     "name": "スポーツ審議会(スポーツ庁HPへ)",
     "ministry": "MEXT",
@@ -1863,6 +1926,195 @@
     "reason": "Admin rejected council"
   },
   {
+    "id": "mhlw-2856",
+    "name": "医療扶助・健康管理支援等に関する検討会",
+    "ministry": "MHLW",
+    "category": "COUNCIL",
+    "officialUrl": "https://www.mhlw.go.jp/stf/newpage_76805.html",
+    "rejectedAt": "2026-10-30 07:45:17",
+    "reason": "個別検討会の開催案内URLのため非審議会として除外"
+  },
+  {
+    "id": "mhlw-2858",
+    "name": "特定石綿被害建設業務労働者等認定審査会",
+    "ministry": "MHLW",
+    "category": "COUNCIL",
+    "officialUrl": "https://www.mhlw.go.jp/stf/newpage_76516.html",
+    "rejectedAt": "2026-10-30 07:45:17",
+    "reason": "第57回認定審査会開催案内URLのため非審議会として除外"
+  },
+  {
+    "id": "mhlw-2860",
+    "name": "創薬力向上のための官民協議会",
+    "ministry": "MHLW",
+    "category": "COUNCIL",
+    "officialUrl": "https://www.mhlw.go.jp/stf/newpage_76843.html",
+    "rejectedAt": "2026-10-30 07:45:17",
+    "reason": "第2回施策検討・推進部会資料単体URLのため非審議会として除外"
+  },
+  {
+    "id": "mhlw-2863",
+    "name": "有料老人ホームにおける望ましいサービス提供のあり方に関する検討会",
+    "ministry": "MHLW",
+    "category": "COUNCIL",
+    "officialUrl": "https://www.mhlw.go.jp/stf/newpage_76739.html",
+    "rejectedAt": "2026-10-30 07:45:17",
+    "reason": "第9回議事録単体URLのため非審議会として除外"
+  },
+  {
+    "id": "mhlw-2864",
+    "name": "国民年金システム標準化研究会",
+    "ministry": "MHLW",
+    "category": "COUNCIL",
+    "officialUrl": "https://www.mhlw.go.jp/stf/nenkin_kenkyuukai-siryo02_00166.html",
+    "rejectedAt": "2026-10-30 07:45:17",
+    "reason": "基幹業務等システム標準化推進案内URLのため非審議会として除外"
+  },
+  {
+    "id": "mhlw-2869",
+    "name": "ゲノム編集技術等を用いたヒト受精胚等の取扱い等に関する合同会議",
+    "ministry": "MHLW",
+    "category": "COUNCIL",
+    "officialUrl": "https://www.mhlw.go.jp/stf/newpage_76567.html",
+    "rejectedAt": "2026-10-30 07:45:17",
+    "reason": "第5回合同会議資料単体URLのため非審議会として除外"
+  },
+  {
+    "id": "mhlw-2870",
+    "name": "化学物質管理に係る専門家検討会",
+    "ministry": "MHLW",
+    "category": "COUNCIL",
+    "officialUrl": "https://www.mhlw.go.jp/stf/newpage_76576.html",
+    "rejectedAt": "2026-10-30 07:45:17",
+    "reason": "令和8年度第6回専門家検討会開催案内URLのため非審議会として除外"
+  },
+  {
+    "id": "mhlw-2871",
+    "name": "地域・職域連携推進関係者会議",
+    "ministry": "MHLW",
+    "category": "COUNCIL",
+    "officialUrl": "https://www.mhlw.go.jp/stf/newpage_76584.html",
+    "rejectedAt": "2026-10-30 07:45:17",
+    "reason": "令和8年度関係者会議開催案内URLのため非審議会として除外"
+  },
+  {
+    "id": "mhlw-2873",
+    "name": "健康・医療・介護情報利活用検討会 医療等情報利活用ワーキンググループ",
+    "ministry": "MHLW",
+    "category": "COUNCIL",
+    "officialUrl": "https://www.mhlw.go.jp/stf/shingi/0001210262_00104.html",
+    "rejectedAt": "2026-10-30 07:45:17",
+    "reason": "第1回歯科情報技術作業班開催案内URLのため非審議会として除外"
+  },
+  {
+    "id": "mhlw-2874",
+    "name": "法的脳死判定基準に関する作業班(Web会議",
+    "ministry": "MHLW",
+    "category": "COUNCIL",
+    "officialUrl": "https://www.mhlw.go.jp/stf/shingi/newpage_00067.html",
+    "rejectedAt": "2026-10-30 07:45:17",
+    "reason": "第2回作業班Web会議開催案内URLのため非審議会として除外"
+  },
+  {
+    "id": "mhlw-2875",
+    "name": "薬事審議会 化学物質安全対策部会 家庭用品安全対策調査会",
+    "ministry": "MHLW",
+    "category": "COUNCIL",
+    "officialUrl": "https://www.mhlw.go.jp/stf/newpage_76512.html",
+    "rejectedAt": "2026-10-30 07:45:17",
+    "reason": "令和8年度第1回調査会開催案内URLのため非審議会として除外"
+  },
+  {
+    "id": "mhlw-2877",
+    "name": "電離放射線障害の業務上外に関する検討会",
+    "ministry": "MHLW",
+    "category": "COUNCIL",
+    "officialUrl": "https://www.mhlw.go.jp/stf/newpage_76236.html",
+    "rejectedAt": "2026-10-30 07:45:17",
+    "reason": "第105回検討会開催案内URLのため非審議会として除外"
+  },
+  {
+    "id": "mhlw-2879",
+    "name": "UHCナレッジハブの第六回調整委員会",
+    "ministry": "MHLW",
+    "category": "COUNCIL",
+    "officialUrl": "https://www.mhlw.go.jp/stf/newpage_76368.html",
+    "rejectedAt": "2026-10-30 07:45:17",
+    "reason": "第6回調整委員会開催案内URLのため非審議会として除外"
+  },
+  {
+    "id": "mhlw-2880",
+    "name": "身元特定DNA鑑定会議",
+    "ministry": "MHLW",
+    "category": "COUNCIL",
+    "officialUrl": "https://www.mhlw.go.jp/stf/newpage_74911.html",
+    "rejectedAt": "2026-10-30 07:45:17",
+    "reason": "第33回鑑定会議開催案内URLのため非審議会として除外"
+  },
+  {
+    "id": "mhlw-2881",
+    "name": "日本人のための食事ガイド(仮称)ワーキンググループ",
+    "ministry": "MHLW",
+    "category": "COUNCIL",
+    "officialUrl": "https://www.mhlw.go.jp/stf/newpage_76077.html",
+    "rejectedAt": "2026-10-30 07:45:17",
+    "reason": "第2回WG開催案内URLのため非審議会として除外"
+  },
+  {
+    "id": "mhlw-2882",
+    "name": "薬剤師のキャリアパスに関する懇談会",
+    "ministry": "MHLW",
+    "category": "COUNCIL",
+    "officialUrl": "https://www.mhlw.go.jp/stf/newpage_76155.html",
+    "rejectedAt": "2026-10-30 07:45:17",
+    "reason": "第2回懇談会案内URLのため非審議会として除外"
+  },
+  {
+    "id": "mhlw-2886",
+    "name": "コーデックス連絡協議会",
+    "ministry": "MHLW",
+    "category": "COUNCIL",
+    "officialUrl": "https://www.mhlw.go.jp/stf/newpage_76212.html",
+    "rejectedAt": "2026-10-30 07:45:17",
+    "reason": "第125回連絡協議会開催案内URLのため非審議会として除外"
+  },
+  {
+    "id": "mhlw-2887",
+    "name": "死因究明等推進計画検証等推進会議",
+    "ministry": "MHLW",
+    "category": "COUNCIL",
+    "officialUrl": "https://www.mhlw.go.jp/stf/newpage_76210.html",
+    "rejectedAt": "2026-10-30 07:45:17",
+    "reason": "第3回推進会議開催案内URLのため非審議会として除外"
+  },
+  {
+    "id": "mhlw-2888",
+    "name": "食品衛生監視部会伝達性海綿状脳症対策に関する小委員会",
+    "ministry": "MHLW",
+    "category": "COUNCIL",
+    "officialUrl": "https://www.mhlw.go.jp/stf/other-kenkou_128610_00042.html",
+    "rejectedAt": "2026-10-30 07:45:17",
+    "reason": "小委員会開催案内URLのため非審議会として除外"
+  },
+  {
+    "id": "mhlw-2889",
+    "name": "健康・医療・介護情報利活用検討会 医療等情報の二次利用に関するワーキンググループ",
+    "ministry": "MHLW",
+    "category": "COUNCIL",
+    "officialUrl": "https://www.mhlw.go.jp/stf/shingi/0001210262_00103.html",
+    "rejectedAt": "2026-10-30 07:45:17",
+    "reason": "第6回二次利用WG開催案内URLのため非審議会として除外"
+  },
+  {
+    "id": "mhlw-2890",
+    "name": "医師の働き方改革の推進等に関する検討会",
+    "ministry": "MHLW",
+    "category": "COUNCIL",
+    "officialUrl": "https://www.mhlw.go.jp/stf/newpage_76089.html",
+    "rejectedAt": "2026-10-30 07:45:17",
+    "reason": "第2回検討会資料単体URLのため非審議会として除外"
+  },
+  {
     "id": "mhlw-2892",
     "name": "審議会・研究会等開催予定一覧",
     "ministry": "MHLW",
@@ -1870,6 +2122,24 @@
     "officialUrl": "https://www.mhlw.go.jp/topics/event/open_doors.html",
     "rejectedAt": "2026-09-12",
     "reason": "ディスカバリー精査: ポータル・開催予定一覧リンクのため却下"
+  },
+  {
+    "id": "mhlw-2895",
+    "name": "補装具評価検討会",
+    "ministry": "MHLW",
+    "category": "COUNCIL",
+    "officialUrl": "https://www.mhlw.go.jp/stf/74hosougu_00004.html",
+    "rejectedAt": "2026-10-30 07:45:17",
+    "reason": "第78回検討会開催案内URLのため非審議会として除外"
+  },
+  {
+    "id": "mhlw-2897",
+    "name": "薬事審議会 毒物劇物部会 毒物劇物調査会",
+    "ministry": "MHLW",
+    "category": "COUNCIL",
+    "officialUrl": "https://www.mhlw.go.jp/stf/newpage_75884.html",
+    "rejectedAt": "2026-10-30 07:45:17",
+    "reason": "令和8年度第1回調査会開催案内URLのため非審議会として除外"
   },
   {
     "id": "mhlw-726",
