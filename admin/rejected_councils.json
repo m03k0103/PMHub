@@ -2142,6 +2142,24 @@
     "reason": "令和8年度第1回調査会開催案内URLのため非審議会として除外"
   },
   {
+    "id": "mhlw-3008",
+    "name": "事業場における労働者の健康保持増進の在り方に関する検討会",
+    "ministry": "MHLW",
+    "category": "COUNCIL",
+    "officialUrl": "https://www.mhlw.go.jp/stf/newpage_76013.html",
+    "rejectedAt": "2026-10-30 08:13:22",
+    "reason": "第1回検討会の開催案内URLのため非審議会として除外"
+  },
+  {
+    "id": "mhlw-3010",
+    "name": "歯科情報に関する技術作業班",
+    "ministry": "MHLW",
+    "category": "COUNCIL",
+    "officialUrl": "https://www.mhlw.go.jp/stf/newpage_76671.html",
+    "rejectedAt": "2026-10-30 08:13:22",
+    "reason": "第1回技術作業班の開催案内URLのため非審議会として除外"
+  },
+  {
     "id": "mhlw-726",
     "name": "行事・会議の予定",
     "ministry": "MHLW",
@@ -2349,6 +2367,15 @@
     "reason": "ディスカバリー精査: ポータル一覧・特定開催回・報告書・アンカー重複のため却下"
   },
   {
+    "id": "mic-2941",
+    "name": "電波法施行規則及び無線局免許手続規則の一部を改正する省令案等に関する意見募集の結果及び電波監理審議会",
+    "ministry": "MIC",
+    "category": "COUNCIL",
+    "officialUrl": "https://www.soumu.go.jp/menu_news/s-news/01kiban14_02000807.html",
+    "rejectedAt": "2026-10-30 08:13:22",
+    "reason": "パブリックコメント結果報道発表URLのため非審議会として除外（本体組織 mic-denpa_kanri 存在）"
+  },
+  {
     "id": "mic-onkyu_shinsa",
     "name": "恩給審査会（制度廃止案内旧ページ）",
     "ministry": "MIC",
@@ -2448,6 +2475,69 @@
     "reason": "AI判定: 会議体本体ではなく省庁審議会総合ポータルのため却下"
   },
   {
+    "id": "moe-2962",
+    "name": "水道における微生物問題検討会",
+    "ministry": "MOE",
+    "category": "COUNCIL",
+    "officialUrl": "https://www.env.go.jp/press/press_05724.html",
+    "rejectedAt": "2026-10-30 08:13:22",
+    "reason": "第1回検討会の開催案内報道発表URLのため非審議会として除外"
+  },
+  {
+    "id": "moe-2963",
+    "name": "環境保健サーベイランス・局地的大気汚染健康影響検討会",
+    "ministry": "MOE",
+    "category": "COUNCIL",
+    "officialUrl": "https://www.env.go.jp/press/press_05711.html",
+    "rejectedAt": "2026-10-30 08:13:22",
+    "reason": "第1回検討会の開催案内報道発表URLのため非審議会として除外"
+  },
+  {
+    "id": "moe-2964",
+    "name": "石綿健康被害判定小委員会",
+    "ministry": "MOE",
+    "category": "COUNCIL",
+    "officialUrl": "https://www.env.go.jp/press/press_05672.html",
+    "rejectedAt": "2026-10-30 08:13:22",
+    "reason": "第216回小委員会の開催案内報道発表URLのため非審議会として除外"
+  },
+  {
+    "id": "moe-2965",
+    "name": "再生可能エネルギー熱「地中熱」に関する懇談会",
+    "ministry": "MOE",
+    "category": "COUNCIL",
+    "officialUrl": "https://www.env.go.jp/press/press_05691.html",
+    "rejectedAt": "2026-10-30 08:13:22",
+    "reason": "第3回懇談会の開催案内報道発表URLのため非審議会として除外"
+  },
+  {
+    "id": "moe-2966",
+    "name": "温室効果ガス排出量算定・報告・公表制度における算定方法検討会",
+    "ministry": "MOE",
+    "category": "COUNCIL",
+    "officialUrl": "https://www.env.go.jp/press/press_05669.html",
+    "rejectedAt": "2026-10-30 08:13:22",
+    "reason": "令和8年度第1回検討会の開催案内報道発表URLのため非審議会として除外"
+  },
+  {
+    "id": "moe-2967",
+    "name": "爬虫類飼養管理ワーキンググループ",
+    "ministry": "MOE",
+    "category": "COUNCIL",
+    "officialUrl": "https://www.env.go.jp/press/press_05663.html",
+    "rejectedAt": "2026-10-30 08:13:22",
+    "reason": "第3回WGの開催案内報道発表URLのため非審議会として除外"
+  },
+  {
+    "id": "moe-2968",
+    "name": "残留性有機汚染物質検討委員会",
+    "ministry": "MOE",
+    "category": "COUNCIL",
+    "officialUrl": "https://www.env.go.jp/press/press_05658.html",
+    "rejectedAt": "2026-10-30 08:13:22",
+    "reason": "第21回検討委員会の開催案内報道発表URLのため非審議会として除外"
+  },
+  {
     "id": "mof-1130",
     "name": "財政制度分科会",
     "ministry": "MOF",
@@ -2491,6 +2581,15 @@
     "officialUrl": "https://warp.ndl.go.jp/web/20190106000000/www.mof.go.jp/about_mof/councils/shoukenkajitsumu/index.html",
     "rejectedAt": "2026-08-25",
     "reason": "AI判定: 国立国会図書館WARPアーカイブ（過去保管データ）のため却下"
+  },
+  {
+    "id": "mof-2905",
+    "name": "関税制度 関税・外国為替等審議会",
+    "ministry": "MOF",
+    "category": "COUNCIL",
+    "officialUrl": "https://www.mof.go.jp/about_mof/councils/customs_foreign_exchange/sub-of_customs/proceedings_tokusyu/material/kanb20261019.html",
+    "rejectedAt": "2026-10-30 08:13:22",
+    "reason": "特殊関税部会単一回資料ページURLのため非審議会として除外"
   },
   {
     "id": "mof-2908",
@@ -3463,6 +3562,51 @@
     "officialUrl": "https://warp.ndl.go.jp/web/20131106000000/www.rinya.maff.go.jp/j/riyou/soumu/jyukyuu0.html",
     "rejectedAt": "2026-08-25",
     "reason": "AI判定: 国立国会図書館WARPアーカイブ（過去保管データ）のため却下"
+  },
+  {
+    "id": "rinya-2999",
+    "name": "きのこ生産の持続性強化に向けた方策検討会",
+    "ministry": "RINYA",
+    "category": "COUNCIL",
+    "officialUrl": "https://www.rinya.maff.go.jp/j/press/tokuyou/260730.html",
+    "rejectedAt": "2026-10-30 08:13:22",
+    "reason": "第1回検討会の開催案内報道発表URLのため非審議会として除外"
+  },
+  {
+    "id": "rinya-3000",
+    "name": "帰還困難区域における森林整備の本格実施に向けたスマート林業現地検討会",
+    "ministry": "RINYA",
+    "category": "COUNCIL",
+    "officialUrl": "https://www.rinya.maff.go.jp/j/press/gyoumu/260626.html",
+    "rejectedAt": "2026-10-30 08:13:22",
+    "reason": "現地検討会の開催案内報道発表URLのため非審議会として除外"
+  },
+  {
+    "id": "rinya-3001",
+    "name": "三大都市圏花粉発生源対策推進会議",
+    "ministry": "RINYA",
+    "category": "COUNCIL",
+    "officialUrl": "https://www.rinya.maff.go.jp/j/press/sin_riyou/251216.html",
+    "rejectedAt": "2026-10-30 08:13:22",
+    "reason": "令和7年度推進会議の開催案内報道発表URLのため非審議会として除外"
+  },
+  {
+    "id": "rinya-3002",
+    "name": "森林(もり)づくり全国推進会議",
+    "ministry": "RINYA",
+    "category": "COUNCIL",
+    "officialUrl": "https://www.rinya.maff.go.jp/j/press/kikaku/250919.html",
+    "rejectedAt": "2026-10-30 08:13:22",
+    "reason": "令和7年度推進会議の開催案内報道発表URLのため非審議会として除外"
+  },
+  {
+    "id": "rinya-3003",
+    "name": "林業機械の自動運転・遠隔操作に関する安全対策検討会",
+    "ministry": "RINYA",
+    "category": "COUNCIL",
+    "officialUrl": "https://www.rinya.maff.go.jp/j/press/ken_sidou/240724.html",
+    "rejectedAt": "2026-10-30 08:13:22",
+    "reason": "第1回検討会の開催案内報道発表URLのため非審議会として除外"
   },
   {
     "id": "smea-1659",
