@@ -491,6 +491,8 @@ _GENERIC_INDEX_URL_PATTERNS = re.compile(
     r'shingi/kaisaiyotei(?:\.html)?|'
     r'/kaisai_yotei\.html$|'
     r'260915\.html|'
+    r'/proceedings(?:_[a-z0-9_]+)?/(?:index\.html?)?$|'
+    r'/proceedings/?$|'
     r'singi_kento/kento/\d{4}/(?:index\.html)?$',
     re.IGNORECASE
 )
