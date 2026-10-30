@@ -106,7 +106,6 @@ def export_data(
             if r["type"] and r["type"].upper() != "PDF":
                 mat_item["type"] = r["type"].upper()
             if r["manual_lock"]:
-                mat_item["manualLock"] = True
                 council_mat_locks.append(f"{cid}:{r['url']}")
             council_mats_map.setdefault(cid, []).append(mat_item)
 
@@ -124,6 +123,7 @@ def export_data(
 
         councils_public = []
         council_locks = []
+        council_crawl_meta = {}
         for r in c_rows:
             cid = r["id"]
             c_dict = {
@@ -133,7 +133,6 @@ def export_data(
                 "name": r["name"]
             }
             if r["manual_lock"]:
-                c_dict["manualLock"] = True
                 council_locks.append(cid)
             if r["official_url"]:
                 c_dict["officialUrl"] = r["official_url"]
@@ -156,10 +155,14 @@ def export_data(
 
             if r["is_newly_discovered"] or cid in councils_with_new_meetings:
                 c_dict["isNewlyDiscovered"] = True
+
+            c_meta = {}
             if r["discovered_at"]:
-                c_dict["discoveredAt"] = r["discovered_at"]
+                c_meta["discoveredAt"] = r["discovered_at"]
             if r["discovery_source"]:
-                c_dict["discoverySource"] = r["discovery_source"]
+                c_meta["discoverySource"] = r["discovery_source"]
+            if c_meta:
+                council_crawl_meta[cid] = c_meta
 
             councils_public.append(c_dict)
 
@@ -218,7 +221,6 @@ def export_data(
             if r["is_private"]:
                 mat_item["isPrivate"] = True
             if r["manual_lock"]:
-                mat_item["manualLock"] = True
                 mat_locks.append(f"{mid}:{r['url']}")
             mats_map.setdefault(mid, []).append(mat_item)
 
@@ -232,6 +234,7 @@ def export_data(
 
         meetings_public = []
         meeting_locks = []
+        meeting_crawl_meta = {}
         for r in m_rows:
             mid = r["id"]
             m_dict = {
@@ -241,7 +244,6 @@ def export_data(
                 "date": r["date"]
             }
             if r["manual_lock"]:
-                m_dict["manualLock"] = True
                 meeting_locks.append(mid)
             if r["round"] is not None:
                 m_dict["round"] = r["round"]
@@ -262,10 +264,14 @@ def export_data(
                 m_dict["isDateUnconfirmed"] = True
             if r["is_newly_discovered"]:
                 m_dict["isNewlyDiscovered"] = True
+
+            m_meta = {}
             if r["discovered_at"]:
-                m_dict["discoveredAt"] = r["discovered_at"]
+                m_meta["discoveredAt"] = r["discovered_at"]
             if r["last_updated_from_crawl"]:
-                m_dict["lastUpdatedFromCrawl"] = r["last_updated_from_crawl"]
+                m_meta["lastUpdatedFromCrawl"] = r["last_updated_from_crawl"]
+            if m_meta:
+                meeting_crawl_meta[mid] = m_meta
 
             m_dict["materials"] = mats_map.get(mid, [])
             meetings_public.append(m_dict)
@@ -296,7 +302,9 @@ def export_data(
                 "meetings": sorted(meeting_locks),
                 "materials": sorted(mat_locks),
                 "councilMaterials": sorted(council_mat_locks)
-            }
+            },
+            "councilCrawlMeta": {k: council_crawl_meta[k] for k in sorted(council_crawl_meta.keys())},
+            "meetingCrawlMeta": {k: meeting_crawl_meta[k] for k in sorted(meeting_crawl_meta.keys())}
         }
 
         # Deterministic JSON export with atomic write & retry (Windows safe)

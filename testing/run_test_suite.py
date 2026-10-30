@@ -765,6 +765,7 @@ def check_sqlite_and_split_export_sync(data=None):
         db_c_lock = cur.execute("SELECT COUNT(*) FROM councils WHERE manual_lock = 1;").fetchone()[0]
         db_m_lock = cur.execute("SELECT COUNT(*) FROM meetings WHERE manual_lock = 1;").fetchone()[0]
         db_mat_lock = cur.execute("SELECT COUNT(*) FROM materials WHERE manual_lock = 1;").fetchone()[0]
+        db_cm_lock = cur.execute("SELECT COUNT(*) FROM council_materials WHERE manual_lock = 1;").fetchone()[0]
         db_rej_cnt = cur.execute("SELECT COUNT(*) FROM rejected_councils;").fetchone()[0]
         db_rej_ids = set(r[0] for r in cur.execute("SELECT id FROM rejected_councils;").fetchall())
     finally:
@@ -798,6 +799,7 @@ def check_sqlite_and_split_export_sync(data=None):
     adm_c_lock = len(adm_locks.get("councils", []))
     adm_m_lock = len(adm_locks.get("meetings", []))
     adm_mat_lock = len(adm_locks.get("materials", []))
+    adm_cm_lock = len(adm_locks.get("councilMaterials", []))
 
     # 5. 件数突合 (CR-168: council_materials 突合追加)
     if db_c_cnt != pub_c_cnt:
@@ -813,13 +815,34 @@ def check_sqlite_and_split_export_sync(data=None):
     if db_cs_cnt != adm_cs_cnt:
         errors.append(f"クロールステータス件数不一致: DB={db_cs_cnt} vs 管理JSON={adm_cs_cnt}")
 
-    # 6. 手動ロック整合性突合
-    if not (db_c_lock == pub_c_lock == adm_c_lock):
-        errors.append(f"会議体手動ロック件数不一致: DB={db_c_lock}, 公開JSON={pub_c_lock}, 管理JSON={adm_c_lock}")
-    if not (db_m_lock == pub_m_lock == adm_m_lock):
-        errors.append(f"開催回手動ロック件数不一致: DB={db_m_lock}, 公開JSON={pub_m_lock}, 管理JSON={adm_m_lock}")
-    if not (db_mat_lock == pub_mat_lock == adm_mat_lock):
-        errors.append(f"配付資料手動ロック件数不一致: DB={db_mat_lock}, 公開JSON={pub_mat_lock}, 管理JSON={adm_mat_lock}")
+    # 6. 手動ロック整合性突合 (Drop 106: DB master == admin_data.json)
+    if db_c_lock != adm_c_lock:
+        errors.append(f"会議体手動ロック件数不一致: DB={db_c_lock} vs 管理JSON={adm_c_lock}")
+    if db_m_lock != adm_m_lock:
+        errors.append(f"開催回手動ロック件数不一致: DB={db_m_lock} vs 管理JSON={adm_m_lock}")
+    if db_mat_lock != adm_mat_lock:
+        errors.append(f"配付資料手動ロック件数不一致: DB={db_mat_lock} vs 管理JSON={adm_mat_lock}")
+    if db_cm_lock != adm_cm_lock:
+        errors.append(f"会議体資料手動ロック件数不一致: DB={db_cm_lock} vs 管理JSON={adm_cm_lock}")
+
+    # 公開 docs/data.json に管理専用フィールド manualLock が漏洩していないこと (Drop 106 No Leakage)
+    if pub_c_lock > 0:
+        errors.append(f"公開 docs/data.json の会議体に manualLock が混入しています (No Leakage 違反): {pub_c_lock} 件")
+    if pub_m_lock > 0:
+        errors.append(f"公開 docs/data.json の開催回に manualLock が混入しています (No Leakage 違反): {pub_m_lock} 件")
+    if pub_mat_lock > 0:
+        errors.append(f"公開 docs/data.json の配付資料に manualLock が混入しています (No Leakage 違反): {pub_mat_lock} 件")
+    pub_cm_lock = sum(1 for c in pub_councils for mat in c.get("materials", []) if mat.get("manualLock"))
+    if pub_cm_lock > 0:
+        errors.append(f"公開 docs/data.json の会議体資料に manualLock が混入しています (No Leakage 違反): {pub_cm_lock} 件")
+
+    c_disc_leak = sum(1 for c in pub_councils if "discoveredAt" in c or "discoverySource" in c)
+    if c_disc_leak > 0:
+        errors.append(f"公開 docs/data.json の会議体に discoveredAt / discoverySource が混入しています (No Leakage 違反): {c_disc_leak} 件")
+
+    m_crawl_leak = sum(1 for m in pub_meetings if "discoveredAt" in m or "lastUpdatedFromCrawl" in m)
+    if m_crawl_leak > 0:
+        errors.append(f"公開 docs/data.json の開催回に discoveredAt / lastUpdatedFromCrawl が混入しています (No Leakage 違反): {m_crawl_leak} 件")
 
     # 7. 公開 JSON への設定漏洩ゼロ (CR-168: 全管理キー No Leakage 網羅検証)
     forbidden_keys_in_public = [
@@ -906,7 +929,7 @@ def check_sqlite_and_split_export_sync(data=None):
         conn.close()
 
     # 11. 管理 JSON の必須キー完全性
-    required_admin_keys = ["scrapingRules", "scrapingRuleTemplates", "crawlerConfig", "discoveryKeywords", "manualLocks"]
+    required_admin_keys = ["scrapingRules", "scrapingRuleTemplates", "crawlerConfig", "discoveryKeywords", "manualLocks", "councilCrawlMeta", "meetingCrawlMeta"]
     missing_admin = [k for k in required_admin_keys if k not in adm_data]
     if missing_admin:
         errors.append(f"管理 admin/admin_data.json に必須キーが不足しています: {missing_admin}")

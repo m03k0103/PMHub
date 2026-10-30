@@ -105,10 +105,23 @@ class TestDrop62DatabaseAndExport(unittest.TestCase):
         self.assertIn("crawlerConfig", adm_data)
         self.assertIn("rejectedCouncils", adm_data)
         self.assertIn("manualLocks", adm_data)
+        self.assertIn("councilCrawlMeta", adm_data)
+        self.assertIn("meetingCrawlMeta", adm_data)
 
-        # Councils in public data must not have heavy internal crawlStatus dict
+        # Drop 106: Public JSON must NOT contain management-only metadata (No Leakage)
         sample_c = pub_data["councils"][0] if pub_data["councils"] else {}
         self.assertNotIn("crawlStatus", sample_c, "Council in public JSON should not have crawlStatus")
+        self.assertNotIn("manualLock", sample_c, "Council in public JSON should not have manualLock")
+        self.assertNotIn("discoveredAt", sample_c, "Council in public JSON should not have discoveredAt")
+        self.assertNotIn("discoverySource", sample_c, "Council in public JSON should not have discoverySource")
+
+        sample_m = pub_data["meetings"][0] if pub_data["meetings"] else {}
+        self.assertNotIn("manualLock", sample_m, "Meeting in public JSON should not have manualLock")
+        self.assertNotIn("discoveredAt", sample_m, "Meeting in public JSON should not have discoveredAt")
+        self.assertNotIn("lastUpdatedFromCrawl", sample_m, "Meeting in public JSON should not have lastUpdatedFromCrawl")
+
+        if sample_m.get("materials"):
+            self.assertNotIn("manualLock", sample_m["materials"][0], "Material in public JSON should not have manualLock")
 
     def test_04_bidirectional_lossless_reversibility(self):
         """Test that seed_db -> export_data produces 100% identical JSON outputs (isolated temp fixture)."""
@@ -126,7 +139,6 @@ class TestDrop62DatabaseAndExport(unittest.TestCase):
                     {
                         "category": "審議会等",
                         "id": "test-c1",
-                        "manualLock": False,
                         "materials": [
                             {"name": "会議体資料1", "url": "https://example.com/cm1.pdf"}
                         ],
@@ -143,7 +155,6 @@ class TestDrop62DatabaseAndExport(unittest.TestCase):
                         "councilId": "test-c1",
                         "date": "2026/01/01",
                         "id": "test-c1-20260101-001",
-                        "manualLock": False,
                         "materials": [
                             {"name": "議事次第", "type": "PDF", "url": "https://example.com/c1-01.pdf"}
                         ],
@@ -165,7 +176,9 @@ class TestDrop62DatabaseAndExport(unittest.TestCase):
                 "crawlerConfig": {"max_workers": 2},
                 "discoveryKeywords": ["審議会"],
                 "initialAlertKeywords": [],
-                "manualLocks": {"councils": [], "materials": [], "meetings": []},
+                "manualLocks": {"councilMaterials": ["test-c1:https://example.com/cm1.pdf"], "councils": ["test-c1"], "materials": ["test-c1-20260101-001:https://example.com/c1-01.pdf"], "meetings": ["test-c1-20260101-001"]},
+                "councilCrawlMeta": {"test-c1": {"discoveredAt": "2026/01/01 10:00", "discoverySource": "rule"}},
+                "meetingCrawlMeta": {"test-c1-20260101-001": {"discoveredAt": "2026/01/01 10:00", "lastUpdatedFromCrawl": "2026/01/01 12:00"}},
                 "rejectedCouncils": [],
                 "scrapingRuleTemplates": {},
                 "scrapingRules": {
