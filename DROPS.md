@@ -21,11 +21,11 @@
 |:---:|:---|:---|:---:|:---:|
 | **Track [LLM-Assist]** | **決定論的1ファイル新着ダイジェスト & LLM判定・クロール階層型フォールバック** | **【フェーズ 1】ディスカバリー 1ファイル集約・単一リクエストLLM判定 & 新着分類永続化（Drop 81 完了）**<br>**【フェーズ 2】開催回クロール 3段階ファネル・異常検知フォールバック & バッチLLM抽出**<br>API呼出上限（Daily 3回 / Weekly 10回 / Monthly 30回）とSQLite `llm_cache`（SHA-256ダイジェストキャッシュ）により、最小APIコールで新規会議体検知と0件以外を含むクロール欠落補完を実現 | **最小APIコールでの新規会議体検知 & クロール補完** | **【進行中】**<br>（フェーズ 1: Drop 81 完了 / フェーズ 2 構想中） |
 | **Track [Automation]** | **定時巡回クローラー & ローカルDB同期**<br>(GitHub Actions 連携) | **3階層マルチスケジュール定期実行・異常検知時Skip・ローカルDB自動同期**<br>1. Daily (平朝): 省庁新着検知のみ<br>2. Weekly (土曜): 通常巡回（直近2年重点）<br>3. Monthly (第1日曜): 全期間包括走査<br>連鎖失敗・重大エラー検知時のIssue発行＆次回以降Skip機能、Zero-Storage VM運用、ローカル環境への安全な同期エンジン（`sync_from_json.py` + post-merge hook）の配備 | **定期自動巡回・省力化 & ローカル資産整合性担保** | **【構想中】**<br>（Drop 82 以降） |
-| **Track [Search]**<br>(フェーズ 3) | **全文検索エンジン統合**<br>(PMM資産連携 FTS5構築) | **【フェーズ 3】PMM ローカルPDF資産を活用した全文検索エンジンの構築**<br>`admin/pmm/text_extractor.py` によるPDF本文抽出、SQLite FTS5 仮想テーブル（`fts_materials`）への trigram インデックス構築、サーバー検索API（`/api/search?q=キーワード`）およびフロントエンド検索UI・抜粋ハイライトの実装 | **約11万件の政策資料PDF本文横断検索の実現** | **【構想中】**<br>（Track [Database] 完了後着手） |
+| **Track [Search]** | **全文検索エンジン統合**<br>(PMM資産連携・分離FTS5 DB構築) | **PMM ローカル資産（PDF/HTML・約13.3万件）を活用した分離型全文検索エンジンの構築**<br>マスターDB（`admin/pmhub.db`）の肥大化を防ぐため全文検索専用DB（`admin/pmhub_fts.db`）を分離・`ATTACH` 結合するアーキテクチャを採用。`admin/pmm/text_extractor.py` によるインクリメンタル本文抽出（中断耐性付き）、FTS5 `trigram` インデックス構築、検索API（`/api/search`）、およびローカル管理画面（`admin/admin_dashboard.html`）を主軸としつつローカルサーバー起動時は公開ポータルUIからも全文検索可能なハイブリッドUIの実装（No Leakage 原則厳守） | **約13.3万件の配付資料・会議体資料の高速本文横断検索** | **【構想中】**<br>（DB・PMM基盤完了済 / 着手可能） |
 | **Track [Portal-Norm]** | **省庁ポータル一覧・目次URL正常化**<br>(傘下会議体の個別化・パース規則最適化) | **省庁組織・目次・一覧ポータル設定会議体の個別会議体分離・スクレイピング最適化**<br>文化庁・消防庁・文科省等、親ポータルURLが設定されたまま個別開催回が未分離の会議体について、組織ツリーを辿り個別会議体（または開催回）へと正常化する包括的施策 | **Failed会議体の根絶 & 網羅的開催回収集** | **【進行中】**<br>（Drop 79, 91, 93, 97, 98, 100, 101, 102, 103, 104 で推進中） |
-| **Track [Architecture]** | **設計刷新構想**<br>(モジュール責務分離) | **リファクタリング領域E: クローラー本体（crawler.py）の責務分離 & scratch/ クリーンアップ**<br>巨大化したクローラー（約2,900行）を HTTP通信・パース・DB保存・エクスポート等にモジュール分割し、保守性を劇的に向上。蓄積した `scratch/` スクリプトの完全整理・アーカイブ | **単体テスト容易性向上 & コード肥大化の解消** | **【構想中】** |
+| **Track [Architecture]** | **設計刷新構想**<br>(モジュール責務分離 & DBツール標準化) | **クローラー・ディスカバリー・DB管理層の責務分離 & ワンストップDB登録CLI標準化・`scratch/` クリーンアップ**<br>DB設定一元化（Track [Config-DB]）完了を踏まえ、肥大化した `admin/crawler.py`（約4,270行）および `discover_councils.py`（約1,400行）から共通HTTP/WAF通信・抽出器・探索戦略・オーケストレーターを `admin/crawler/` パッケージへ分割（単体テスト後方互換ファサード維持）。併せて `admin/db/db_manager.py`（約1,000行）のDAO整理、定型DB登録CLIヘルパーの整備、および蓄積した `scratch/`（約370ファイル）の完全整理を実施 | **単体テスト保守性向上 & ワンオフスクリプト乱造防止** | **【構想中】** |
 | **Track [Optimization]** | **公開データ純化 & 可逆復元統一 & ポータル高速化** | **公開JSON内部管理フィールド完全除外 & admin_data.json集約・seed_db.py完全可逆復元統一 & フロントエンド検索インデックス・HTTPキャッシュ最適化**<br>docs/data.json から manualLock, discoveredAt, lastUpdatedFromCrawl, discoverySource を除外して admin/admin_data.json に集約、seed_db.py による100%可逆復元を保証。app.js の HTTPキャッシュ有効化、検索インデックス遅延正規化キャッシュ・入力デバウンス、過去1年開催数キャッシュを実装 | **docs/data.json -1.79 MB（-9万行）削減 & 検索高速化 & 100%完全可逆性** | **【完了】**<br>（Drop 106 完了） |
-| **Track [Policy-AI]** | **政策分析連携構想**<br>(知見創出・AI連携) | **省庁横断テーマ連携 & AI 審議要約・タイムライン比較**<br>各省庁に分散する同一政策テーマ（GX、AI、少子化等）の会議体を横断的に可視化し、AIによる要約や論点対比を提供する高度分析機能 | **政策横断的インサイトの創出** | **【長期構想】** |
+| **Track [Policy-AI]** | **政策分析連携構想**<br>(DB・PMM実資料・LLM統合分析) | **SQLite マスターDB・PMM実資料テキスト・`llm_cache` を統合した省庁横断政策インテリジェンス**<br>1. 省庁横断政策テーマ（GX、AI、経済安保、少子化等）および審議フェーズ（諮問・中間整理・答申等）の自動タギング（`meetings.tags_json` 活用）<br>2. PMM ローカル資料（議事要旨・主要資料）の実本文に基づく構造化AI要約生成（`meetings.summary` & SHA-256 `llm_cache` 活用）<br>3. 上位会議から各省庁審議会への政策波及タイムライン比較と、軽量サマリー/タグのみの公開JSON（`docs/data.json`）への安全な2系統還元（No Leakage 厳守） | **実資料に基づく政策横断的インサイトの創出** | **【長期構想】**<br>（Track [Search] 連携） |
 
 
 ### 1-2. 各Trackの詳細
@@ -88,15 +88,24 @@ GitHub Actions で自動更新・push されたリモートの最新データ（
 
 ---
 
-#### 【Track: Search】フェーズ 3: PMM テキスト抽出 & FTS5 構築・全文検索 API 稼働
+#### 【Track: Search】PMM ローカル資産連携・分離型 FTS5 全文検索エンジン & ハイブリッド検索UI構築
 
 - **背景と課題**:
-  政策会議ウォッチに登録されている配付資料（PDF/HTML等）は 11万件超に達しているが、現行の検索機能は会議体名・開催回名・資料名のタイトル部分一致にとどまり、「資料本文中に登場する特定の政策用語・法律名・議論箇所」を横断検索することができない。
+  1. 政策会議ウォッチに登録・ローカル保存（`local_docs/`）されている配付資料（`materials`: 132,589件）および会議体資料（`council_materials`: 491件）は計約13.3万件（112.5GB）に達しているが、現行の検索機能は会議体名・開催回名・資料名のタイトル部分一致にとどまり、「資料本文中に登場する特定の政策用語・法律名・議論箇所」を横断検索することができない。
+  2. 一方で、約13.3万件（数百万ページ相当）の本文テキストをマスターDB（`admin/pmhub.db`）内の仮想テーブルに直接格納すると、マスターDBが数GB〜10GB超へ肥大化し、日常のクローラー更新や統合テストスイート（ケース15の整合性検証等）のI/O速度を著しく低下させるリスクがある。
+  3. また、`AGENTS.md` §4-1・§4-8 の「No Leakage 原則（ローカル専用・Git非公開）」に基づき、GitHub Pages 上の静的公開サイトにはローカルパスや全文データを漏洩させず、かつローカル環境ではシームレスに全文検索・資料閲覧を行えるUI設計が必要である。
 - **技術仕様**:
-  1. `admin/pmm/text_extractor.py` により、ローカル配付資料（`local_docs/`）から PDF 本文テキストをページ単位で抽出（PyMuPDF / pdfplumber 活用）。
-  2. `admin/db/schema.sql` で定義済みの FTS5 仮想テーブル `fts_materials`（trigram トークナイザー）へページ単位で登録。
-  3. `admin/server.py` に全文検索 API（`/api/search?q=キーワード`）を配備し、ハイライトスニペット・該当ページ番号を高速返却。
-  4. フロントエンド（`docs/index.html` / `app.js`）に「資料本文検索」タブ・モーダルを新設。
+  1. **全文検索専用セカンダリDB（`admin/pmhub_fts.db`）の分離 & `ATTACH` 結合アーキテクチャ**:
+     - マスターDB（`admin/pmhub.db`）の軽量・高速性を維持するため、FTS5 仮想テーブル `fts_materials`（`tokenize = 'trigram'`）は専用DB `admin/pmhub_fts.db`（`.gitignore` 指定）に分離構築する。
+     - 検索クエリ実行時は `ATTACH DATABASE 'admin/pmhub_fts.db' AS fts` によりマスターDBの `councils` / `meetings` / `materials` / `council_materials` と高速結合してメタデータと本文抜粋を一括取得する。
+  2. **インクリメンタル本文抽出パイプライン（`admin/pmm/text_extractor.py`）**:
+     - `download_status = 'downloaded'` かつ未抽出のローカル資料（PDF: PyMuPDF / HTML: BeautifulSoup）を対象に、ページ単位（HTMLはセクション単位）で本文テキストを抽出・NFKC正規化して `fts_materials` へ登録。
+     - PMM ダウンローダーと同様、一定件数（25〜50件）完了ごとの即時DBコミット（中断耐性・差分再開対応）を実装し、会議体常設資料（`00_会議体資料`）も検索対象に包含する。
+  3. **全文検索 API（`admin/server.py`）**:
+     - `/api/search?q=キーワード&ministry=...&council_id=...&date_from=...` エンドポイントを配備し、FTS5 `snippet()` によるハイライト抜粋、該当ページ番号、およびローカルファイル直接プレビュー用リンクを高速返却。
+  4. **ハイブリッド検索UI（管理画面主軸＋ローカルサーバー起動時ポータル連携）**:
+     - ローカル専用の管理画面（`admin/admin_dashboard.html`）に全文検索・ローカルPDF/HTML直接プレビューコンソールを主軸実装。
+     - 併せて、公開ポータルUI（`docs/index.html` / `docs/app.js`）でもローカルサーバー（`http://localhost:8000`）経由でアクセスされた場合（API疎通検知時）に限り「資料本文検索（ローカルDB連携）」モードが自動有効化されるハイブリッド方式を採用し、静的公開時（GitHub Pages）の No Leakage 原則とローカル分析の利便性を両立する。
 
 ---
 
@@ -107,13 +116,23 @@ GitHub Actions で自動更新・push されたリモートの最新データ（
 ---
 
 
-#### 【Track: Architecture】リファクタリング領域E: クローラー本体（crawler.py）の責務分離 & scratch/ クリーンアップ（構想）
+#### 【Track: Architecture】クローラー・DB管理層のモジュール責務分離 & ワンストップDB登録ツール標準化・`scratch/` クリーンアップ
 
 - **背景と課題**:
-  `admin/crawler.py`（約2,900行）に HTTP 通信・WAF 判定・HTML パース・日付抽出・DB 保存・エクスポート実行などの多岐にわたる責務が集約されており、単体テスト・モック検証の保守性が低下している。また、`scratch/` 直下に過去の調査スクリプトが多数蓄積されている。
+  1. Track [Database]（Drop 62〜64）および Track [Config-DB]（Drop 92〜99）により、DB保存・エクスポートおよびハードコード設定群の SQLite マスターDB（`admin/pmhub.db`）への移行は完了したが、`admin/crawler.py`（約4,270行）および `admin/discover_councils.py`（約1,400行）には依然として HTTP/WAF 通信、文字コード判定、HTML/テーブル解析、日付・回次抽出、探索戦略、LLMフォールバック、PMM連携が集約されており、両者間でロジックの重複や密結合が生じている。
+  2. `admin/db/db_manager.py`（約1,000行）にも会議体CRUD・クローラー状態・PMMステータス・システム設定が単一ファイルに同居している。
+  3. さらに、Track [Portal-Norm] 等の手動データ登録・修正のたびにワンオフスクリプトが作成され、`scratch/` 直下に約370ファイルが蓄積されている。
 - **目標仕様**:
-  1. `crawler.py` を `admin/crawler/` パッケージ（`fetcher.py`, `parser.py`, `date_extractor.py`, `strategy.py`, `pipeline.py`）へ責務分割。
-  2. `scratch/` 配下の古いワンオフスクリプトを安全に整理・アーカイブ化。
+  1. **クローラーのパッケージ分割と単体テスト後方互換ファサード**:
+     - `admin/crawler.py` を `admin/crawler/` パッケージへ分割しつつ、既存の統合テスト（15ケース）および単体テスト（全23種）の `from admin.crawler import ...` を無破壊で維持する再エクスポート・ファサードを保持する：
+       - `http_client.py`: WAF チャレンジ解決、ホスト別直列スロットリング、文字コード自動判定（`discover_councils.py` と共通利用）
+       - `extractors.py`: 日付正規化、回次抽出、タイトルクレンジング、UIスキップリンク・中間HTML排除
+       - `strategies.py`: 親テーブル抽出、サブページ深層探索、アーカイブ追跡、LLMフォールバック連携
+       - `runner.py`: SQLite DB（`scraping_rules` / `admin_configs`）からの動的設定ロード、巡回オーケストレーション、PMM 自動ダウンロード連携
+  2. **DBデータアクセス層（`admin/db/`）の整理**:
+     - `db_manager.py` の責務（会議体・開催回・資料CRUD、クローラーステータス、PMMローカル資料管理、システム設定）を論理的に整理し、トランザクション境界と2系統エクスポート同期の一貫性を強化。
+  3. **ワンストップDB登録CLIヘルパーの標準化 & `scratch/` 完全クリーンアップ**:
+     - 会議体・開催回・配付資料・`scrapingRules` の `admin/pmhub.db` へのアトミック登録（`manualLock: true` 自動付与）＋2系統JSONエクスポートを定型実行する共通CLI/ヘルパーを整備し、場当たり的なワンオフスクリプト乱造を根絶した上で、`scratch/` 配下の古いスクリプト群を安全に整理・パージする。
 
 ---
 
@@ -123,9 +142,19 @@ GitHub Actions で自動更新・push されたリモートの最新データ（
 
 ---
 
-#### 【Track: Policy-AI】省庁横断政策テーマ連携 & AI 議題要約・タイムライン可視化（構想）
+#### 【Track: Policy-AI】SQLite マスターDB・PMM実資料・LLM基盤を統合した省庁横断政策分析 & 構造化要約還元
 
-府省庁横断での政策連携・タイムライン分析を支援する知能化機能。
+- **背景と課題**:
+  1. 従来は公開JSON上の会議体名・開催回タイトルのみを手がかりとする抽象的構想にとどまっていたが、現在は **① SQLite マスターDB（`admin/pmhub.db`：1,707会議体・21,712開催回・約13.3万資料の構造化データ）**、**② PMM ローカル資料資産（`local_docs/` 112.5GB の実PDF/HTML）**、および **③ Track [LLM-Assist] の SHA-256 キャッシュ付きLLM基盤（`llm_cache` テーブル）** の3大基盤が確立されている。
+  2. また、`admin/db/schema.sql` の `meetings` テーブルには既に `summary TEXT` および `tags_json TEXT` カラムが定義され、`export_data.py` による出力にも対応済みであるが、実データ生成パイプラインが未稼働となっている。
+- **フェーズ構成と目標仕様**:
+  1. **フェーズ 1: 省庁横断政策テーマ・審議フェーズ自動タギング（`meetings.tags_json` 活用）**:
+     - 各府省庁に分散する同一政策アジェンダ（GX・脱炭素、AIガバナンス、経済安全保障、少子化・こども政策、医療・介護DX、防災・国土強靱化等）および審議マイルストーン（「諮問」「中間とりまとめ」「パブコメ」「答申・最終報告書」）を決定論的キーワード＋LLM判定で分類し、SQLite DB の `meetings.tags_json`（および会議体テーマタグ）へ格納する。
+  2. **フェーズ 2: PMM ローカル実資料（議事要旨・主要資料）に基づく構造化AI要約（`meetings.summary` & `llm_cache` 活用）**:
+     - 会議タイトルからの推測ではなく、ローカル保存済みの「議事要旨・議事録・概要資料」の抽出テキスト（Track [Search] 連携）を入力として、主要論点・決定事項・今後のスケジュールを数行の構造化サマリーとして生成し、`meetings.summary` に格納する（SHA-256 `llm_cache` により同一資料への重複APIコールを完全遮断）。
+  3. **フェーズ 3: 省庁横断政策タイムライン比較 & 2系統安全還元（No Leakage 原則厳守）**:
+     - 内閣官房・内閣府の上位会議における基本方針決定から、各省庁の審議会・部会・WGでの制度設計・法改正議論への波及（Policy Lineage）を時系列スイムレーンで横断可視化。
+     - ローカルの原資料ファイル（`local_docs/`）は非公開を厳守しつつ、生成された軽量な構造化タグ（`tags_json`）と要約（`summary`）のみを `export_data.py` 経由で `docs/data.json` に還元し、ローカル管理画面と公開ポータルの双方で高度な政策横断分析を提供する。
 
 ---
 
