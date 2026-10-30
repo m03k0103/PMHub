@@ -375,6 +375,42 @@ def load_data_json(target_file=DEFAULT_DATA_JSON_PATH, cached=False):
                                 cid = c.get("id")
                                 if cid and "crawlStatus" not in c and cid in crawl_statuses:
                                     c["crawlStatus"] = crawl_statuses[cid]
+
+                        manual_locks = admin_dict.get("manualLocks", {})
+                        if manual_locks:
+                            locked_councils = set(manual_locks.get("councils", []))
+                            locked_meetings = set(manual_locks.get("meetings", []))
+                            locked_materials = set(manual_locks.get("materials", []))
+                            locked_council_materials = set(manual_locks.get("councilMaterials", []))
+
+                            council_crawl_meta = admin_dict.get("councilCrawlMeta", {})
+                            meeting_crawl_meta = admin_dict.get("meetingCrawlMeta", {})
+
+                            for c in data_dict.get("councils", []):
+                                cid = c.get("id")
+                                if cid in locked_councils:
+                                    c["manualLock"] = True
+                                c_meta = council_crawl_meta.get(cid, {})
+                                if "discoveredAt" in c_meta and "discoveredAt" not in c:
+                                    c["discoveredAt"] = c_meta["discoveredAt"]
+                                if "discoverySource" in c_meta and "discoverySource" not in c:
+                                    c["discoverySource"] = c_meta["discoverySource"]
+                                for mat in c.get("materials", []):
+                                    if f"{cid}:{mat.get('url')}" in locked_council_materials:
+                                        mat["manualLock"] = True
+
+                            for m in data_dict.get("meetings", []):
+                                mid = m.get("id")
+                                if mid in locked_meetings:
+                                    m["manualLock"] = True
+                                m_meta = meeting_crawl_meta.get(mid, {})
+                                if "discoveredAt" in m_meta and "discoveredAt" not in m:
+                                    m["discoveredAt"] = m_meta["discoveredAt"]
+                                if "lastUpdatedFromCrawl" in m_meta and "lastUpdatedFromCrawl" not in m:
+                                    m["lastUpdatedFromCrawl"] = m_meta["lastUpdatedFromCrawl"]
+                                for mat in m.get("materials", []):
+                                    if f"{mid}:{mat.get('url')}" in locked_materials:
+                                        mat["manualLock"] = True
             except Exception as e_admin:
                 print(f"[WARN] Failed to merge admin_data.json: {e_admin}", file=sys.stderr)
 

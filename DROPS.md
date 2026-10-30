@@ -1,8 +1,8 @@
 # PMHub 改善・機能実装（Drop）マスタードキュメント (DROPS.md)
 
-> **最終更新**: 2026-10-30  `
-> **最新 Drop**: **Drop 103**（2026-10-30 完了）  `
-> **次回着手予定 Drop**: **Drop 104**（Track [Portal-Norm] 推進 または Track [LLM-Assist] フェーズ 2）  `
+> **最終更新**: 2026-10-31  `
+> **最新 Drop**: **Drop 106**（2026-10-31 完了）  `
+> **次回着手予定 Drop**: **Drop 107**（Track [Portal-Norm] 推進 または Track [LLM-Assist] フェーズ 2）  `
 > 
 > 本ドキュメントは、PMHub の継続的改善ロードマップおよび実装記録を一元管理するマスタードキュメントです。  `
 > 今後の構想テーマは **「Track（トラック）」** として管理し、着手・個別実装単位は最新連番を付与した **「Drop（ドロップ）」** として連番アーカイブします。  `
@@ -24,7 +24,7 @@
 | **Track [Search]**<br>(フェーズ 3) | **全文検索エンジン統合**<br>(PMM資産連携 FTS5構築) | **【フェーズ 3】PMM ローカルPDF資産を活用した全文検索エンジンの構築**<br>`admin/pmm/text_extractor.py` によるPDF本文抽出、SQLite FTS5 仮想テーブル（`fts_materials`）への trigram インデックス構築、サーバー検索API（`/api/search?q=キーワード`）およびフロントエンド検索UI・抜粋ハイライトの実装 | **約11万件の政策資料PDF本文横断検索の実現** | **【構想中】**<br>（Track [Database] 完了後着手） |
 | **Track [Portal-Norm]** | **省庁ポータル一覧・目次URL正常化**<br>(傘下会議体の個別化・パース規則最適化) | **省庁組織・目次・一覧ポータル設定会議体の個別会議体分離・スクレイピング最適化**<br>文化庁・消防庁・文科省等、親ポータルURLが設定されたまま個別開催回が未分離の会議体について、組織ツリーを辿り個別会議体（または開催回）へと正常化する包括的施策 | **Failed会議体の根絶 & 網羅的開催回収集** | **【進行中】**<br>（Drop 79, 91, 93, 97, 98, 100, 101, 102, 103, 104 で推進中） |
 | **Track [Architecture]** | **設計刷新構想**<br>(モジュール責務分離) | **リファクタリング領域E: クローラー本体（crawler.py）の責務分離 & scratch/ クリーンアップ**<br>巨大化したクローラー（約2,900行）を HTTP通信・パース・DB保存・エクスポート等にモジュール分割し、保守性を劇的に向上。蓄積した `scratch/` スクリプトの完全整理・アーカイブ | **単体テスト容易性向上 & コード肥大化の解消** | **【構想中】** |
-| **Track [Optimization]** | **配信最適化構想**<br>(公開データ軽量化) | **リファクタリング領域D: クローラー設定分離 & 公開JSONの minified 化による通信量最適化**<br>公開用静的サイトの配信効率向上のため、公開用 JSON の minified 化および通信量圧縮 | **初回ページロード高速化 & 帯域削減** | **【構想中】** |
+| **Track [Optimization]** | **公開データ純化 & 可逆復元統一 & ポータル高速化** | **公開JSON内部管理フィールド完全除外 & admin_data.json集約・seed_db.py完全可逆復元統一 & フロントエンド検索インデックス・HTTPキャッシュ最適化**<br>docs/data.json から manualLock, discoveredAt, lastUpdatedFromCrawl, discoverySource を除外して admin/admin_data.json に集約、seed_db.py による100%可逆復元を保証。app.js の HTTPキャッシュ有効化、検索インデックス遅延正規化キャッシュ・入力デバウンス、過去1年開催数キャッシュを実装 | **docs/data.json -1.79 MB（-9万行）削減 & 検索高速化 & 100%完全可逆性** | **【完了】**<br>（Drop 106 完了） |
 | **Track [Policy-AI]** | **政策分析連携構想**<br>(知見創出・AI連携) | **省庁横断テーマ連携 & AI 審議要約・タイムライン比較**<br>各省庁に分散する同一政策テーマ（GX、AI、少子化等）の会議体を横断的に可視化し、AIによる要約や論点対比を提供する高度分析機能 | **政策横断的インサイトの創出** | **【長期構想】** |
 
 
@@ -2849,4 +2849,61 @@ ejected_councils（計420件）へ登録。
     - ケース13: 省庁親ポータルURL設定・探索網羅性検証（各省庁親ポータル設定・スラグID継承合格） (0.52s) : PASS
     - ケース14: アクティブ会議体フィルタリング・廃止管理検証（直近2年フィルタリング・廃止マスター合格） (1.09s) : PASS
     - 【単体関数検証 (Unit Tests)】: 全23種合格（連動 23 種類実施 / 7.64s） : PASS
+  ```
+
+## Drop 106: Track [Optimization] 公開データ純化・管理メタデータ集約 & seed_db 100%可逆復元統一 & 公開ポータル検索・キャッシュ高速化（2026-10-31 完了）
+
+- **1. 背景・課題 (Background & Issues)**:
+  - 公開用ポータルデータ（`docs/data.json`）内に、クローラーや管理画面専用のメタデータである `manualLock`（会議体・開催回・配付資料・会議体資料の計約37,000箇所）、`discoveredAt`（約13,800箇所）、`lastUpdatedFromCrawl`（約1,180箇所）、`discoverySource` が混入・二重出力されており、約90,000行（約1.79 MB）の不要なペイロードを生んでいた。
+  - 一方で `admin/db/seed_db.py` が `docs/data.json` 側のインライン属性を参照して SQLite DB を復元していたため、公開 JSON から管理属性を安全に除外できない構造的課題があった。
+  - 公開ポータル（`docs/app.js`）において `fetch('data.json?t=' + ...)` によりブラウザキャッシュが毎回無効化されていたほか、フリーワード検索時に21,712開催回・132,589配付資料に対して毎キーストローク `normalizeForSearch()` が繰り返し実行され、UI描画負荷となっていた。
+
+- **2. 実施内容・設計 (Implementation & Architecture)**:
+  1. **公開データ（`docs/data.json`）の純化とサイズ削減（`admin/db/export_data.py`）**:
+     - `councils`（会議体）、`meetings`（開催回）、`materials`（配付資料）、`council_materials`（会議体資料）から `manualLock`, `discoveredAt`, `lastUpdatedFromCrawl`, `discoverySource` の出力を完全除外（No Leakage）。
+     - 公開 JSON のファイルサイズを **35.01 MB から 33.22 MB（-1.79 MB / -5.1% / -90,000行削減）** へ大幅スリム化。
+     - 公開ポータルの新着表示に必要な `isNewlyDiscovered: true` および `isDateUnconfirmed` は維持。
+  2. **管理データ（`admin/admin_data.json`）への集約と `seed_db.py` 完全可逆復元統一**:
+     - `admin/admin_data.json` に既存の `manualLocks`（全4種ソート済みID）に加え、`councilCrawlMeta` および `meetingCrawlMeta` を新設して決定論的に集約。
+     - `admin/db/seed_db.py` において、`admin/admin_data.json` の `manualLocks`（4種セット）および `councilCrawlMeta` / `meetingCrawlMeta` を参照して SQLite DB の各カラムを 100% 完全可逆復元するパイプラインを確立（旧形式 JSON に対するインライン属性フォールバックも維持）。
+     - `admin/utils.py` の `load_data_json()` フォールバック時にも `admin_data.json` から透過的にマージして完全な後方互換性を保証。
+     - 本番データ全件（1,707会議体・21,712開催回・132,589配付資料）を用いた往復検証により、**SHA-256 ビット完全一致（100% bitwise identical）** を実証。
+  3. **公開ポータル（`docs/app.js`）のキャッシュ・検索・描画最適化**:
+     - `fetch('data.json')` に変更し、GitHub Pages CDN の標準ブラウザキャッシュおよび条件付きリクエスト（`ETag` / `304 Not Modified`）を有効化。
+     - 各開催回の全検索対象テキスト（会議体名・開催回名・要約・タグ・議題・配付資料名）を初回検索時に結合・正規化キャッシュ（`meeting._searchTextCache`）する遅延インデックス化を配備。2回目以降の検索を $O(1)$ 文字列照合へ最適化。
+     - 実際のユーザーキータイピング時（`e.isTrusted === true`）に 150ms デバウンスを適用（テスト等のプログラムディスパッチ時は即時同期実行）。
+     - 会議体ごとの過去1年開催回数計算に `councilPastYearCountCache`（`Map`）を導入し、アコーディオン描画やソート時の日付再パースを排除。
+  4. **テストスイート検証強化**:
+     - ケース15（`run_test_suite.py`）に「公開 JSON への管理専用フィールド非漏洩（No Leakage: manualLock 0件、crawlMeta 0件）」および「DB master == admin_data.json 手動ロック突合」を新設・常時検証化。
+     - `test_drop62_db_and_export.py`（U17）を新仕様に適合させ、全4テスト合格を達成。
+
+- **3. 変更ファイル一覧 (Changed Files)**:
+  - `admin/db/export_data.py`: 公開 JSON からの管理専用フィールド除外、`admin_data.json` への crawlMeta 集約
+  - `admin/db/seed_db.py`: `admin_data.json` の `manualLocks` / `crawlMeta` からの完全可逆復元パイプライン構築
+  - `admin/utils.py`: `load_data_json()` フォールバック時の管理情報透過的マージ
+  - `docs/app.js`: HTTPキャッシュ有効化、検索インデックス遅延キャッシュ、入力デバウンス、過去1年開催数キャッシュ配備
+  - `docs/data.json`, `admin/admin_data.json`: SQLite マスターDB より最新2系統エクスポート同期（-1.79 MB 削減）
+  - `testing/run_test_suite.py`: ケース15 No Leakage & 手動ロック突合検証強化
+  - `testing/test_drop62_db_and_export.py`: U17 単体テスト追従 & 完全可逆性検証
+  - `DROPS.md`: Track [Optimization] 完了記録および Drop 106 記録
+
+- **4. テスト検証結果 (Verification Results)**:
+  ```markdown
+  python testing/run_test_suite.py --all-layers : PASSED（統合15ケース＋単体23種合格 / 所要時間 23.13秒）
+    - ケース1: コード文法チェック（SyntaxError / 括弧不整合 / DDL構文 0件） (0.70s) : PASS
+    - ケース2: リンク疎通確認（追加・変更URL 0件・既存スキップ） (0.89s) : PASS
+    - ケース3: UI表示機能検証（DOMコンテナ整合性・公開＆管理構造） (0.00s) : PASS
+    - ケース4: JS実行時クラッシュ・全画面描画検証（Node.js描画エラー0件） (0.68s) : PASS
+    - ケース5: 会議品質・回次整合性・重複排除検証（21,712件 重複0件） (0.87s) : PASS
+    - ケース6: 会議体・タイムライン ID完全排他性・整合性（1,707会議体 全件一致） (0.01s) : PASS
+    - ケース7: 康煕部首・特殊文字 NFKC 正規化検証（康煕部首0件維持） (0.36s) : PASS
+    - ケース8: プレースホルダー日付（2099/01/01）ゼロ遮断検証（2099日付0件） (0.00s) : PASS
+    - ケース15: SQLiteマスターDB整合性 & 2系統JSON完全同期検証（PRAGMA整合性・外部キー・No Leakage 0件合格） (0.86s) : PASS
+    - ケース9: 管理サーバー API 単体・統合テスト（全11テスト合格） (4.79s) : PASS
+    - ケース10: クローラー手動保護回帰テスト（manualLock 非破壊性合格） (4.62s) : PASS
+    - ケース11: スクレイピングルール整合性検証（1,707会議体 100%ルール適用） (0.45s) : PASS
+    - ケース12: ホスト分散・ゴミデータ不変性検証（ホスト連続0件・ゴミ0件走査） (0.29s) : PASS
+    - ケース13: 省庁親ポータルURL設定・探索網羅性検証（各省庁親ポータル設定・スラグID継承合格） (0.45s) : PASS
+    - ケース14: アクティブ会議体フィルタリング・廃止管理検証（直近2年フィルタリング・廃止マスター合格） (0.90s) : PASS
+    - 【単体関数検証 (Unit Tests)】: 全23種合格（連動 23 種類実施 / 6.85s） : PASS
   ```

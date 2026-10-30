@@ -7,7 +7,7 @@ if (typeof document !== 'undefined') {
 document.addEventListener('DOMContentLoaded', async () => {
   let dataLastModified = '';
   try {
-    const res = await fetch(`data.json?t=${new Date().getTime()}`);
+    const res = await fetch('data.json');
     if (!res.ok) throw new Error('Failed to load data.json');
     dataLastModified = (res.headers && typeof res.headers.get === 'function') ? (res.headers.get('Last-Modified') || '') : '';
     const data = await res.json();
@@ -94,6 +94,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     meetingsByCouncilMap.get(m.councilId).push(m);
   });
 
+  const councilPastYearCountCache = new Map();
   const councilsMap = new Map(COUNCILS.map(c => [c.id, c]));
   const councilsByIdMap = new Map(COUNCILS.map(c => [c.id, c.name]));
   function getMeetingCouncil(meeting) {
@@ -329,13 +330,22 @@ document.addEventListener('DOMContentLoaded', async () => {
     });
 
     // Search & Filter listeners
+    let searchDebounceTimer = null;
     el.searchInput.addEventListener('input', (e) => {
       state.searchQuery = e.target.value.trim();
       el.clearSearchBtn.classList.toggle('hidden', state.searchQuery === '');
-      renderMainView();
+      if (e && e.isTrusted) {
+        clearTimeout(searchDebounceTimer);
+        searchDebounceTimer = setTimeout(() => {
+          renderMainView();
+        }, 150);
+      } else {
+        renderMainView();
+      }
     });
 
     el.clearSearchBtn.addEventListener('click', () => {
+      clearTimeout(searchDebounceTimer);
       el.searchInput.value = '';
       state.searchQuery = '';
       el.clearSearchBtn.classList.add('hidden');
@@ -539,29 +549,49 @@ document.addEventListener('DOMContentLoaded', async () => {
   }
 
   function getCouncilPastYearCount(council) {
+    if (!council || !council.id) return 0;
+    if (councilPastYearCountCache.has(council.id)) {
+      return councilPastYearCountCache.get(council.id);
+    }
     const councilMeetings = meetingsByCouncilMap.get(council.id) || [];
     const meetingsWithDates = councilMeetings.filter(m => m.date && m.date !== '-');
+    let count = 0;
     if (meetingsWithDates.length > 0) {
       const refDate = getReferenceDate();
       const oneYearAgo = new Date(refDate);
       oneYearAgo.setFullYear(oneYearAgo.getFullYear() - 1);
-      let count = 0;
       meetingsWithDates.forEach(m => {
         const d = new Date(m.date.replace(/-/g, '/'));
         if (!isNaN(d.getTime()) && d >= oneYearAgo && d <= refDate) {
           count++;
         }
       });
-      return count;
-    }
-    if (typeof council.pastYearCount === 'number') {
-      return council.pastYearCount;
-    }
-    if (typeof council.pastYearCount === 'string') {
+    } else if (typeof council.pastYearCount === 'number') {
+      count = council.pastYearCount;
+    } else if (typeof council.pastYearCount === 'string') {
       const parsed = parseInt(council.pastYearCount.replace(/[^0-9]/g, ''), 10);
-      return !isNaN(parsed) ? parsed : 0;
+      count = !isNaN(parsed) ? parsed : 0;
     }
-    return 0;
+    councilPastYearCountCache.set(council.id, count);
+    return count;
+  }
+
+  function getMeetingSearchText(meeting) {
+    if (meeting._searchTextCache !== undefined) {
+      return meeting._searchTextCache;
+    }
+    const cName = councilsByIdMap.get(meeting.councilId) || '';
+    const parts = [
+      meeting.name || '',
+      cName,
+      meeting.summary || '',
+      (meeting.tags || []).join(' '),
+      (meeting.agenda || []).join(' '),
+      (meeting.materials || []).map(m => m.name || '').join(' ')
+    ];
+    const text = normalizeForSearch(parts.join(' '));
+    meeting._searchTextCache = text;
+    return text;
   }
 
   function filterMeetings() {
@@ -576,22 +606,11 @@ document.addEventListener('DOMContentLoaded', async () => {
         return false;
       }
 
-      // Free word search
+      // Free word search (Optimized via memoized search index)
       if (state.searchQuery) {
         const queries = normalizeForSearch(state.searchQuery).split(/[\s　]+/).filter(k => k);
-        const cName = councilsByIdMap.get(meeting.councilId) || '';
-        
-        const match = queries.every(q => {
-          const mName = meeting.name || '';
-          const nameMatch = normalizeForSearch(mName).includes(q);
-          const councilMatch = normalizeForSearch(cName).includes(q);
-          const summaryMatch = meeting.summary ? normalizeForSearch(meeting.summary).includes(q) : false;
-          const tagMatch = meeting.tags ? meeting.tags.some(t => t && normalizeForSearch(t).includes(q)) : false;
-          const agendaMatch = meeting.agenda ? meeting.agenda.some(a => a && normalizeForSearch(a).includes(q)) : false;
-          const matMatch = meeting.materials ? meeting.materials.some(m => normalizeForSearch(m.name).includes(q)) : false;
-          return nameMatch || councilMatch || summaryMatch || tagMatch || agendaMatch || matMatch;
-        });
-
+        const text = getMeetingSearchText(meeting);
+        const match = queries.every(q => text.includes(q));
         if (!match) return false;
       }
 

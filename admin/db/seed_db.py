@@ -138,6 +138,15 @@ def seed_db(
         # 3. Councils & Council Materials & Crawl Statuses
         councils = public_data.get("councils", [])
         crawl_statuses_from_admin = admin_data.get("crawlStatuses", {})
+        manual_locks = admin_data.get("manualLocks", {})
+        locked_councils = set(manual_locks.get("councils", []))
+        locked_meetings = set(manual_locks.get("meetings", []))
+        locked_materials = set(manual_locks.get("materials", []))
+        locked_council_materials = set(manual_locks.get("councilMaterials", []))
+
+        council_crawl_meta = admin_data.get("councilCrawlMeta", {})
+        meeting_crawl_meta = admin_data.get("meetingCrawlMeta", {})
+
         c_rows = []
         c_mat_rows = []
         crawl_status_rows = []
@@ -147,8 +156,11 @@ def seed_db(
             if not cid:
                 continue
             is_closed = 1 if c.get("isClosed") else 0
-            manual_lock = 1 if c.get("manualLock") else 0
+            manual_lock = 1 if (cid in locked_councils or c.get("manualLock")) else 0
             is_new_c = 1 if c.get("isNewlyDiscovered") else 0
+            c_meta = council_crawl_meta.get(cid, {})
+            discovered_at = c_meta.get("discoveredAt") or c.get("discoveredAt") or ""
+            discovery_source = c_meta.get("discoverySource") or c.get("discoverySource") or ""
             c_rows.append((
                 cid,
                 c.get("ministry", ""),
@@ -162,8 +174,8 @@ def seed_db(
                 c.get("closedReason", ""),
                 manual_lock,
                 is_new_c,
-                c.get("discoveredAt", ""),
-                c.get("discoverySource", "")
+                discovered_at,
+                discovery_source
             ))
 
             # Council permanent materials
@@ -171,12 +183,13 @@ def seed_db(
                 m_url = mat.get("url")
                 if not m_url:
                     continue
+                cm_lock = 1 if (f"{cid}:{m_url}" in locked_council_materials or mat.get("manualLock")) else 0
                 c_mat_rows.append((
                     cid,
                     mat.get("name", ""),
                     m_url,
                     mat.get("type", "PDF"),
-                    1 if mat.get("manualLock") else 0
+                    cm_lock
                 ))
 
             # Crawl Status (from admin_data or legacy council record)
@@ -242,7 +255,10 @@ def seed_db(
             tags_json = json.dumps(tags, ensure_ascii=False) if tags else None
             is_unconfirmed = 1 if (m.get("isDateUnconfirmed") or m.get("date") == "2099/01/01") else 0
             is_new = 1 if m.get("isNewlyDiscovered") else 0
-            m_lock = 1 if m.get("manualLock") else 0
+            m_lock = 1 if (mid in locked_meetings or m.get("manualLock")) else 0
+            m_meta = meeting_crawl_meta.get(mid, {})
+            m_discovered_at = m_meta.get("discoveredAt") or m.get("discoveredAt") or ""
+            m_last_updated = m_meta.get("lastUpdatedFromCrawl") or m.get("lastUpdatedFromCrawl") or ""
 
             m_rows.append((
                 mid,
@@ -255,8 +271,8 @@ def seed_db(
                 tags_json,
                 is_unconfirmed,
                 is_new,
-                m.get("discoveredAt", ""),
-                m.get("lastUpdatedFromCrawl", ""),
+                m_discovered_at,
+                m_last_updated,
                 m_lock
             ))
 
@@ -264,13 +280,14 @@ def seed_db(
                 mat_url = mat.get("url")
                 if not mat_url:
                     continue
+                mat_lock = 1 if (f"{mid}:{mat_url}" in locked_materials or mat.get("manualLock")) else 0
                 mat_rows.append((
                     mid,
                     mat.get("name", ""),
                     mat_url,
                     mat.get("type", "PDF"),
                     1 if mat.get("isPrivate") else 0,
-                    1 if mat.get("manualLock") else 0
+                    mat_lock
                 ))
 
         cur.executemany("""
