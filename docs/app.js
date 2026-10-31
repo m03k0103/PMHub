@@ -669,8 +669,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     if (state.docTypeFilter !== 'ALL') {
       const docTypeLabels = {
         MINUTES: '議事録・要旨あり',
-        MATERIALS: '配付資料あり',
-        REPORT: '答申・報告書等'
+        MATERIALS: '配付資料あり'
       };
       const labelText = docTypeLabels[state.docTypeFilter] || state.docTypeFilter;
       activeTags.push({ label: `資料: ${labelText}`, key: 'docType' });
@@ -1710,7 +1709,6 @@ function meetingMatchesDocType(meeting, docTypeFilter) {
   if (!meeting) return false;
   if (docTypeFilter === 'MINUTES') return Boolean(meeting.hasMinutes);
   if (docTypeFilter === 'MATERIALS') return Boolean(meeting.materials && meeting.materials.length > 0);
-  if (docTypeFilter === 'REPORT') return Boolean(meeting.tags && (meeting.tags.includes('答申') || meeting.tags.includes('報告書')));
   return true;
 }
 

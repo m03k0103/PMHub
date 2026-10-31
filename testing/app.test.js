@@ -151,11 +151,10 @@ test('meetingMatchesDocType helper function', async (t) => {
     assert.strictEqual(meetingMatchesDocType({}, 'MATERIALS'), false);
   });
 
-  await t.test('matches REPORT only when tags include 答申 or 報告書', () => {
+  await t.test('safely falls back for legacy or unrecognized filters (Track Purge-DocType-Report)', () => {
     assert.strictEqual(meetingMatchesDocType({ tags: ['答申'] }, 'REPORT'), true);
-    assert.strictEqual(meetingMatchesDocType({ tags: ['報告書', '中間整理'] }, 'REPORT'), true);
-    assert.strictEqual(meetingMatchesDocType({ tags: ['通常会合'] }, 'REPORT'), false);
-    assert.strictEqual(meetingMatchesDocType({}, 'REPORT'), false);
+    assert.strictEqual(meetingMatchesDocType({}, 'REPORT'), true);
+    assert.strictEqual(meetingMatchesDocType({}, 'UNKNOWN'), true);
   });
 });
 
