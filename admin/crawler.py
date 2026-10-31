@@ -1604,7 +1604,14 @@ def extract_actual_subpage_links(html, target_url, rule=None, return_meta=False)
         if not href or href.startswith('#') or href.startswith('javascript:') or href.startswith('mailto:'):
             continue
         href_clean = href.lower().split('?')[0].split('#')[0]
-        if href_clean.endswith(('.pdf', '.zip', '.doc', '.docx', '.xls', '.xlsx', '.jtd')):
+        # Drop 112: 不要静的アセット（画像、CSS、JS、フォント、メディア等）を水際で除外
+        if href_clean.endswith((
+            '.pdf', '.zip', '.doc', '.docx', '.xls', '.xlsx', '.jtd',
+            '.jpg', '.jpeg', '.png', '.gif', '.svg', '.webp', '.ico', '.bmp',
+            '.css', '.js', '.json', '.xml', '.rss',
+            '.woff', '.woff2', '.ttf', '.eot', '.otf',
+            '.mp4', '.mp3', '.wav', '.mov', '.avi'
+        )):
             continue
 
         abs_url = urllib.parse.urljoin(page_base_url, href).replace(' ', '%20')
@@ -1789,7 +1796,7 @@ def _crawl_subpages(target_url, html, rule, quirk_note, pdf_pattern, existing_ur
             if sub_url.lower().endswith('.pdf'):
                 continue
 
-            time.sleep(0.35)  # レートリミット遵守
+            # Drop 112: fetch_url() 内部の _rate_limit_host() に一元化（二重スリープ遅延を撤廃）
             sub_html = fetch_url(sub_url)
             if sub_html:
                 sub_soup = BeautifulSoup(sub_html, 'html.parser')
@@ -1819,7 +1826,7 @@ def _crawl_subpages(target_url, html, rule, quirk_note, pdf_pattern, existing_ur
                                 companion_candidates.append(comp_abs)
                     
                     for comp_url in list(dict.fromkeys(companion_candidates))[:3]:
-                        time.sleep(0.35)
+                        # Drop 112: fetch_url() 内部の _rate_limit_host() に一元化
                         comp_html = fetch_url(comp_url)
                         if comp_html:
                             comp_mats = parse_materials_from_html(comp_html, comp_url, pdf_pattern)
@@ -3601,13 +3608,23 @@ def run_meeting_crawler(progress_callback=None, stop_event=None, workers=4, rece
 
         # 会議体ごとの既登録開催回URL（officialUrl）マップを事前構築（スマート差分探索エンジン用）
         councils_meeting_urls = {}
+        # Drop 112: officialUrl に加え subpageUrl や個別資料URLも含めてスマート差分探索の照合精度を向上
         for m in data.get("meetings", []):
             cid = m.get("councilId")
+            if not cid:
+                continue
+            if cid not in councils_meeting_urls:
+                councils_meeting_urls[cid] = set()
             u = m.get("officialUrl")
-            if cid and u:
-                if cid not in councils_meeting_urls:
-                    councils_meeting_urls[cid] = set()
+            if u:
                 councils_meeting_urls[cid].add(u)
+            sub_u = m.get("subpageUrl")
+            if sub_u:
+                councils_meeting_urls[cid].add(sub_u)
+            for mat in m.get("materials", []):
+                mat_u = mat.get("url")
+                if mat_u and not mat_u.lower().endswith('.pdf'):
+                    councils_meeting_urls[cid].add(mat_u)
 
         total_councils = len(CRAWL_TARGETS)
         processed_counter = 0
