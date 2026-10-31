@@ -18,6 +18,12 @@ for p in (_root_dir, _admin_dir):
     if p not in sys.path:
         sys.path.insert(0, p)
 
+from .http_client import (
+    fetch_html_page,
+    fetch_raw_response,
+    apply_host_rate_limit,
+)
+
 from .host_manager import (
     interleave_by_host_and_ministry,
     interleave_by_ministry,
@@ -64,6 +70,9 @@ _GENERIC_MATERIAL_NAMES = GENERIC_MATERIAL_NAMES
 _GENERIC_TITLE_PATTERNS = GENERIC_TITLE_KEYWORDS
 
 __all__ = [
+    "fetch_html_page",
+    "fetch_raw_response",
+    "apply_host_rate_limit",
     "interleave_by_host_and_ministry",
     "interleave_by_ministry",
     "get_council_host",

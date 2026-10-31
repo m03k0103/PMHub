@@ -26,51 +26,70 @@ from utils import (
 )
 setup_win32_utf8()
 
+# -------------------------------------------------------------
+# Drop 116: モジュール分割（ディスカバリー責務分離 & ファサード互換保証）
+# -------------------------------------------------------------
+try:
+    from admin.discovery_modules import (
+        normalize_ministry_code,
+        infer_council_category,
+        clean_council_name,
+        get_core_council_name,
+        extract_council_name_from_news_title,
+        MINISTRY_CODE_NORMALIZATION,
+        NOISE_PERSON_ROLES,
+        NOISE_ACTION_PATTERNS,
+        NOISE_INTERNATIONAL_AND_ORGS,
+        NOISE_INTERNATIONAL_REGEX,
+        NOISE_PORTAL_EXACT,
+        PRESS_RELEASE_EXCLUSIVE_PATTERNS,
+        PRESS_RELEASE_EXCLUSIVE_REGEX,
+        is_single_press_or_notice_url,
+        is_non_council_noise,
+        normalize_url,
+        get_url_clean_key,
+        get_max_seq,
+        is_already_registered_or_rejected,
+        fetch_page_and_final_url,
+        resolve_parent_url_from_press_release,
+    )
+except ImportError:
+    from discovery_modules import (
+        normalize_ministry_code,
+        infer_council_category,
+        clean_council_name,
+        get_core_council_name,
+        extract_council_name_from_news_title,
+        MINISTRY_CODE_NORMALIZATION,
+        NOISE_PERSON_ROLES,
+        NOISE_ACTION_PATTERNS,
+        NOISE_INTERNATIONAL_AND_ORGS,
+        NOISE_INTERNATIONAL_REGEX,
+        NOISE_PORTAL_EXACT,
+        PRESS_RELEASE_EXCLUSIVE_PATTERNS,
+        PRESS_RELEASE_EXCLUSIVE_REGEX,
+        is_single_press_or_notice_url,
+        is_non_council_noise,
+        normalize_url,
+        get_url_clean_key,
+        get_max_seq,
+        is_already_registered_or_rejected,
+        fetch_page_and_final_url,
+        resolve_parent_url_from_press_release,
+    )
+
+
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 PROJECT_ROOT = os.path.dirname(BASE_DIR)
 DATA_JSON_PATH = os.path.join(PROJECT_ROOT, "docs", "data.json")
 ADMIN_DATA_PATH = os.path.join(BASE_DIR, "admin_data.json")
 
 # 省庁コード正規化マップ (再発防止ガード: ENV -> MOE 等)
-MINISTRY_CODE_NORMALIZATION = {
-    "ENV": "MOE",
-}
 
-def normalize_ministry_code(code: str) -> str:
-    if not code:
-        return ""
-    c = code.upper().strip()
-    return MINISTRY_CODE_NORMALIZATION.get(c, c)
 
 # 非会議体ノイズキーワード・パターン定義 (CR-187)
-NOISE_PERSON_ROLES = r"(?:大臣|副大臣|政務官|長官|総理|知事|教授|名誉教授|代表|委員)"
-NOISE_ACTION_PATTERNS = [
-    re.compile(rf"{NOISE_PERSON_ROLES}が"),
-    re.compile(rf"{NOISE_PERSON_ROLES}と.*(?:会談|面会|意見交換|表敬)"),
-    re.compile(r"大臣発言"),
-    re.compile(r"(?:意見交換|研究課題発表)を(?:実施|行い)"),
-    re.compile(r"日本人初】"),
-]
 
-NOISE_INTERNATIONAL_AND_ORGS = [
-    # 国際機関・国際会議・条約会合
-    "世銀", "IMF", "FATF", "金融活動作業部会", "国際通貨金融委員会", "WTO", "CITES", "ワシントン条約",
-    "生物多様性条約", "気候変動枠組条約", "締約国会議", "国連総会", "国連犯罪防止", "国連国際商取引",
-    "国際かんがい排水", "日米合同委員会", "日米政府の戦略的投資", "日米サイバー", "日米加", "日・ベトナム",
-    "日ロ漁業", "北太平洋漁業", "アジア・アフリカ法律", "アジア矯正", "海運先進国", "ウクライナ汚職",
-    "世界保護司", "欧州委員会", "大韓民国", "フィンランド", "豪州政府", "プレCOP",
-    # 国会・政党・一般法人
-    "参議院", "衆議院", "自由民主党", "一般社団法人", "公益社団法人", "公益財団法人", "独立行政法人", "株式会社"
-]
-NOISE_INTERNATIONAL_REGEX = re.compile(
-    r"(?:COP\d+|" + "|".join(re.escape(k) for k in NOISE_INTERNATIONAL_AND_ORGS) + r")"
-)
 
-NOISE_PORTAL_EXACT = {
-    "政策・審議会", "省議・審議会", "審議会・委員会", "審議会等", "政策・審議会等", "省議・審議会等",
-    "政策・審議会等トップへ", "各種本部・会議等の活動情報", "本審議会 トップページ", "公害等調整委員会",
-    "中央環境審議会", "法制審議会会議", "審議会情報", "度"
-}
 
 
 def load_keywords():
@@ -111,388 +130,24 @@ def parse_data_json():
             pass
     return ministries, councils, categories, scraping_rules
 
-def infer_council_category(name_or_text, defined_categories=None):
-    """
-    会議体名称またはリンクテキストから、定義済み categories に合致するカテゴリIDを判定。
-    戻り値: (category_id, is_default_fallback)
-    """
-    text = name_or_text or ""
-    # 優先度の高い特定キーワードから順に判定
-    if "専門調査会" in text or "専門委員会" in text or "専門審査会" in text:
-        cat = "EXPERT_COMMITTEE"
-    elif "特別委員会" in text:
-        cat = "SPECIAL_COMMITTEE"
-    elif "タスクフォース" in text or "TF" in text:
-        cat = "TASKFORCE"
-    elif "分科会" in text:
-        cat = "SUBCOMMITTEE"
-    elif "部会" in text:
-        cat = "SECTION"
-    elif "ワーキンググループ" in text or "ワーキング・グループ" in text or "作業部会" in text or "作業班" in text or "WG" in text:
-        cat = "WORKING_GROUP"
-    elif "有識者会議" in text:
-        cat = "PANEL"
-    elif "懇談会" in text:
-        cat = "ROUNDTABLE"
-    elif "スタディグループ" in text or "スタディ・グループ" in text or "SG" in text or "検討会" in text or "研究会" in text or "検討会議" in text or "協議会" in text:
-        cat = "STUDY"
-    elif "関係閣僚会議" in text or "連絡会議" in text:
-        cat = "LIAISON"
-    elif "推進本部" in text or "本部" in text or "推進会議" in text:
-        cat = "HQ"
-    elif "諮問会議" in text:
-        cat = "ADVISORY"
-    elif "審査会" in text or "委員会" in text:
-        cat = "COMMITTEE"
-    elif "審議会" in text or "会合" in text:
-        cat = "COUNCIL"
-    else:
-        cat = "COUNCIL"
-        return (cat, True)
-    
-    if defined_categories and cat not in defined_categories:
-        return ("COUNCIL", True)
-    return (cat, False)
-
-def fetch_page_and_final_url(url):
-    """
-    指定URLへ実際にHTTPアクセスし、転送（リダイレクト）を追跡して
-    「最終的な正規URL」およびHTMLテキストを取得する。
-    """
-    time.sleep(0.35)  # 0.35s rate limit to prevent overloading target servers
-    req = urllib.request.Request(
-        url,
-        headers=get_browser_headers()
-    )
-    try:
-        with urllib.request.urlopen(req, timeout=10) as res:
-            final_url = res.geturl()  # リダイレクト後の最終正規URL
-            content_type = res.headers.get("Content-Type", "")
-            html_bytes = res.read()
-            html_text = decode_html_bytes(html_bytes, content_type)
-            return html_text, final_url
-    except Exception as e:
-        return None, url
-
-def clean_council_name(name):
-    """
-    「第X回」や日付プレフィックス、末尾の「配布資料」「議事概要」などを除去して
-    親会議体名（1つの会議体レコード）を抽出する。(CR-186)
-    """
-    if not name:
-        return ""
-    try:
-        from crawler import normalize_text
-    except ImportError:
-        from admin.crawler import normalize_text
-    n = normalize_text(name).strip()
-    
-    # 0. 省庁カテゴリ・ラベルプレフィックスの除去 (CR-186)
-    n = re.sub(r'^(?:審議会等|報道発表|会議等|その他|国際政策|財総研|お知らせ|新着情報|トピックス|プレスリリース)[\s　:：]+', '', n)
-    
-    # 1. 日付・更新ラベル・年度・期数プレフィックスの除去 (CR-186)
-    n = re.sub(r'^(?:〈[^〉]+〉|＜[^＞]+＞|【[^】]+】|\[[^\]]+\])(?:\s*[(（]更新[)）])?\s*', '', n)
-    n = re.sub(r'^(?:令和|平成)\s*[0-9０-９一-九元]+\s*年\s*[0-9０-９一-九]+\s*月\s*[0-9０-９一-九]+\s*日(?:開催)?\s*', '', n)
-    n = re.sub(r'^(?:令和|平成)\s*[0-9０-９一-九元]+\s*年度\s*', '', n)
-    n = re.sub(r'^\b\d{4}\s*年度\s*', '', n)
-    n = re.sub(r'^第\s*[0-9０-９一-九]+\s*期\s*', '', n)
-    n = re.sub(r'^(?:第[0-9０-９一-九]+回|第[0-9０-９一-九]+回\s*)\s*', '', n)
-    
-    # 2. 括弧付き回数・開催案内の除去
-    n = re.sub(r'[（(]第[0-9０-９一-九]+回.*?[）)]', '', n)
-    n = re.sub(r'【\d+月\d+日開催】', '', n)
-    n = re.sub(r'【\d{4}/\d{1,2}/\d{1,2}開催】', '', n)
-    
-    # 3. 中間・末尾の回数・議事概要の除去
-    n = re.sub(r'\s*第[0-9０-９一-九]+回.*', '', n)
-    n = re.sub(r'\s*(?:の開催について|開催について|の開催案内|開催案内).*', '', n)
-    n = re.sub(r'\s*(?:報告書について|報告書).*', '', n)
-    n = re.sub(r'\s*(?:配布資料|配付資料|取りまとめ.*|について|開催概要|議事要旨|議事録|議事次第|議事概要)$', '', n)
-
-    # 4. 前後の孤立括弧・空白の補正
-    # ※末尾の閉じていない括弧（例: "恩給審査会（平成21年度廃止前"）も除去できるように配慮
-    n = re.sub(r'^[「『【\[\(（\s]+', '', n)
-    n = re.sub(r'[」』】\]\)）\s]+$', '', n)
-    
-    return n.strip()
-
-def get_core_council_name(name: str) -> str:
-    """
-    表記揺れ（空白、全角半角、年度、期数、「について」、括弧補足）を除去した
-    正規化コア名称を生成する (CR-188)。
-    """
-    if not name:
-        return ""
-    try:
-        from crawler import normalize_text
-    except ImportError:
-        from admin.crawler import normalize_text
-    c = normalize_text(name).strip()
-    # 括弧内の補足を除去 (例: （令和8年～）, (平成21年度廃止前), （京都コングレス）)
-    c = re.sub(r'[（(][^）)]*[）)]?', '', c)
-    c = clean_council_name(c)
-    # 先頭の年度・期数
-    c = re.sub(r'^(?:令和|平成|\d{4})\S*年度?\s*', '', c)
-    c = re.sub(r'^第\s*\d+\s*期\s*', '', c)
-    # 末尾の「について」
-    c = re.sub(r'について$', '', c)
-    # 空白、中黒、記号を除去
-    c = re.sub(r'[\s　・~～―－\-_:：/／()（）]', '', c)
-    return c.strip().lower()
 
 
-PRESS_RELEASE_EXCLUSIVE_PATTERNS = [
-    r'/report/press/',                # MLIT 報道発表
-    r'/j/press/',                    # MOD, MAFF, Rinya, JFA 等 報道発表
-    r'/menu_news/s-news/',           # MIC 報道資料
-    r'/press/press_',                # MOE 報道発表
-    r'/press/20\d{2}/',              # METI / その他 ニュースリリース
-    r'/news/20\d{2}/',               # 各省庁 ニュースリリース
-    r'/b_menu/houdou/',              # MEXT 報道発表
-    r'/houdou/20\d{2}/',             # 報道発表アーカイブ
-    r'/hisho/kouhou/',               # MOJ 記者会見・報道
-    r'/kaiken/',                     # 記者会見
-    r'/pressrelease/',               # プレスリリース
-]
-PRESS_RELEASE_EXCLUSIVE_REGEX = re.compile('|'.join(PRESS_RELEASE_EXCLUSIVE_PATTERNS), re.IGNORECASE)
 
 
-def is_single_press_or_notice_url(url: str) -> bool:
-    """単発報道発表・記者会見専用URLパターンを判定 (Drop 107)"""
-    if not url:
-        return False
-    return bool(PRESS_RELEASE_EXCLUSIVE_REGEX.search(url))
 
 
-def is_non_council_noise(name: str, raw_text: str = "", url: str = "") -> bool:
-    """
-    非会議体ノイズ（大臣動静・国際会議・条約会合・国会・一般法人・ナビ要素・PDF直リンク）を判定 (CR-187)
-    """
-    text_check = f"{name} {raw_text}".strip()
-    clean_name = clean_council_name(name)
-
-    # 1. 最小文字数ガード (4文字未満は除外, 例: '度')
-    if len(clean_name) < 4:
-        return True
-
-    # 2. 完全一致ポータル・ナビ名称
-    if clean_name in NOISE_PORTAL_EXACT or name.strip() in NOISE_PORTAL_EXACT:
-        return True
-
-    # 3. ナビゲーション・個別ヒアリング末尾・パターン
-    if re.search(r"(?:トップページ|トップへ|活動情報|主査ヒアリング|公聴会|意見募集)$", clean_name):
-        return True
-    if re.search(r"^(?:政策・審議会|省議・審議会|審議会・委員会|審議会等)", clean_name):
-        return True
-
-    # 4. 人物・大臣動静・イベントアクション判定
-    for pat in NOISE_ACTION_PATTERNS:
-        if pat.search(text_check):
-            return True
-
-    # 5. 国際会議・条約会合・国会・一般法人判定
-    if NOISE_INTERNATIONAL_REGEX.search(text_check):
-        return True
-
-    # 6. PDF/ドキュメント直リンクURLの除外
-    if url and re.search(r"\.(pdf|docx?|xlsx?|pptx?|jpe?g|png|gif|zip)$", url, re.I):
-        return True
-
-    return False
 
 
-def normalize_url(url):
-    """URLの末尾スラッシュやフラグメント(#)を除去して正規化"""
-    if not url:
-        return ""
-    p = urllib.parse.urlparse(url)
-    clean_path = p.path.rstrip("/")
-    return f"{p.scheme}://{p.netloc}{clean_path}"
-
-def get_url_clean_key(url):
-    """http/https や末尾スラッシュ、クエリ、フラグメントを除去したURLの比較キーを生成"""
-    if not url:
-        return ""
-    try:
-        parsed = urllib.parse.urlparse(url)
-        netloc = parsed.netloc.lower()
-        path = parsed.path.rstrip("/")
-        return f"{netloc}{path}"
-    except Exception:
-        return url.strip().lower()
-
-def get_max_seq(councils):
-    """既存COUNCILSから最大のID連番を取得する (例: cao-184 -> 184)"""
-    max_num = 183
-    for c in councils:
-        cid = c.get("id", "")
-        num_m = re.search(r"-(\d+)$", cid)
-        if num_m:
-            try:
-                n = int(num_m.group(1))
-                if n > max_num:
-                    max_num = n
-            except ValueError:
-                pass
-    return max_num
-
-def extract_council_name_from_news_title(title: str, keywords: list) -> str:
-    """ニュース記事タイトルから会議体名称を抽出・クレンジング (CR-186)"""
-    try:
-        from crawler import normalize_text
-    except ImportError:
-        from admin.crawler import normalize_text
-    t = normalize_text(title).strip()
-
-    # 0. 省庁カテゴリラベルの除去 (CR-186)
-    t = re.sub(r'^(?:審議会等|報道発表|会議等|その他|国際政策|財総研|お知らせ|新着情報|トピックス|プレスリリース)[\s　:：]+', '', t)
-
-    # 0.5 サブタイトル・キャッチコピー区切りの分割 (CR-186)
-    # 例: 「上下水道政策の基本的な方向性を議論します~上下水道政策の基本的なあり方検討会」 -> 後半を優先
-    sub_delim_m = re.search(r'[~～―－](?=[^~～―－]+(?:' + '|'.join(re.escape(k) for k in keywords) + r'))', t)
-    if sub_delim_m:
-        t = t[sub_delim_m.end():].strip()
-
-    # 1. 鉤括弧「」『』【】内の会議体名を優先抽出
-    brackets = re.findall(r'[「『【]([^」』】]+)[」』】]', t)
-    for b in brackets:
-        b_clean = clean_council_name(b)
-        if any(kw in b_clean for kw in keywords) and len(b_clean) >= 4:
-            return b_clean
-
-    # 2. 接尾辞や開催案内語句の除去
-    t_clean = clean_council_name(t)
-
-    # 3. 会議体キーワードを含む部分の切り出し (末尾までの探索)
-    for kw in sorted(keywords, key=len, reverse=True):
-        pos = t_clean.find(kw)
-        if pos != -1:
-            cand = t_clean[:pos + len(kw)].strip()
-            cand = clean_council_name(cand)
-            if len(cand) >= 4 and any(k in cand for k in keywords):
-                return cand
-
-    return ""
 
 
-def resolve_parent_url_from_press_release(press_url: str, cand_name: str, min_code: str) -> str:
-    """
-    単発プレスリリースHTML内の関連リンクから、常設親ページURLを1ホップ自動逆引き探索する (CR-189)
-    親ページが見つかった場合はそのURL、見つからない場合は元の press_url を返す。
-    """
-    # 単発プレスリリースURLパターンの判定 (Drop 107)
-    is_press_release = bool(
-        is_single_press_or_notice_url(press_url) or
-        re.search(r'(?:/stf/newpage_\d+\.html|/report/press/|/press/|/menu_news/s-news/|/news/|/hisho/kouhou/)', press_url)
-    )
-    if not is_press_release:
-        return press_url
-
-    try:
-        from crawler import fetch_url
-    except ImportError:
-        from admin.crawler import fetch_url
-
-    html = fetch_url(press_url, timeout=10)
-    if not html:
-        return press_url
-
-    soup = BeautifulSoup(html, "html.parser")
-    parsed_base = urlparse(press_url)
-    clean_cand = clean_council_name(cand_name)
-
-    best_url = None
-    best_score = -1
-
-    for a in soup.find_all("a", href=True):
-        href = a["href"].strip()
-        if not href or href.startswith("#") or href.startswith("javascript:") or href.startswith("mailto:"):
-            continue
-        abs_u = urljoin(press_url, href)
-        parsed_target = urlparse(abs_u)
-
-        # 同一省庁ドメインのみ対象
-        if parsed_target.netloc.lower() != parsed_base.netloc.lower():
-            continue
-        # ドキュメント直リンクや別プレスリリースは除外
-        if re.search(r"\.(pdf|docx?|xlsx?|pptx?|jpe?g|png|gif|zip)$", abs_u, re.I):
-            continue
-        if abs_u == press_url or is_single_press_or_notice_url(abs_u) or re.search(r'(?:/stf/newpage_\d+|/report/press/|/press/|/menu_news/s-news/)', abs_u):
-            continue
-
-        link_text = a.get_text(separator=" ", strip=True)
-        link_title = a.get("title", "").strip()
-        combined_text = f"{link_text} {link_title}"
-
-        score = 0
-        # 会議体名そのものを含むリンク
-        if clean_cand and clean_cand in combined_text:
-            score += 10
-        # 常設ディレクトリパターンを含む (Drop 107: 主要省庁常設パス拡充)
-        if re.search(r'/(?:shingikai|seisakunitsuite|council|singi|policy|councils|b_menu/shingi|koku|maritime|road|jutakukentiku|toshi|mizukokudo|sogoseisaku|tetudo|jidosha|port|tochi_fudousan_kensetsugyo|nature)/', abs_u):
-            score += 5
-        # リンク文言に親ページ示唆語句を含む
-        if any(w in combined_text for w in ["開催状況", "過去の開催", "審議会等", "検討会はこちら", "ホームページはこちら", "会議資料"]):
-            score += 3
-
-        if score > best_score and score >= 5:
-            best_score = score
-            best_url = abs_u
-
-    return best_url or press_url
 
 
-def is_already_registered_or_rejected(
-    cand_name: str, cand_url: str, min_code: str,
-    existing_names: set, existing_urls: set, existing_core_names: set, existing_councils_by_min: dict,
-    rejected_names: set, rejected_urls: set, rejected_core_names: set, rejected_clean_keys: set
-) -> bool:
-    """
-    完全一致に加え、正規化コア名称および同一省庁内の部会サフィックス一致で既存・却下判定 (CR-188, Drop 75)
-    """
-    clean_name = clean_council_name(cand_name)
-    core_name = get_core_council_name(cand_name)
-    norm_url = normalize_url(cand_url)
-    clean_key = get_url_clean_key(cand_url)
 
-    # 1. URLによる突合
-    if norm_url in existing_urls or (clean_key and clean_key in rejected_clean_keys):
-        return True
-    if norm_url in rejected_urls:
-        return True
 
-    # 2. 完全一致名称による突合
-    if cand_name in existing_names or clean_name in existing_names:
-        return True
-    if cand_name in rejected_names or clean_name in rejected_names:
-        return True
 
-    # 3. 正規化コア名称（Core Name）による突合
-    if core_name:
-        if core_name in existing_core_names:
-            return True
-        if core_name in rejected_core_names:
-            return True
 
-    # 4. 同一省庁内の「親審議会名＋部会・分科会・委員会名」サフィックス一致判定 (Check 14準拠)
-    # 例: cand_name = 'イノベーション小委員会' vs '研究開発・イノベーション小委員会'
-    sub_keywords = ('部会', '分科会', '小委員会', '委員会', 'ワーキンググループ', '検討会', '研究会', '審査会', '専門家会合', 'タスクフォース')
-    if min_code:
-        n1 = re.sub(r'\s+', '', cand_name)
-        n1_clean = re.sub(r'\s+', '', clean_name)
-        min_existing = existing_councils_by_min.get(min_code.upper(), [])
-        for c in min_existing:
-            ex_name = c.get("name", "")
-            n2 = re.sub(r'\s+', '', ex_name)
-            if n1 == n2 or n1_clean == n2:
-                return True
-            for cand_cand in (n1, n1_clean):
-                if len(cand_cand) >= 4 and len(n2) >= 4:
-                    if any(k in cand_cand for k in sub_keywords) and any(k in n2 for k in sub_keywords):
-                        if (n2.endswith(cand_cand) and not n2.startswith(cand_cand)) or (cand_cand.endswith(n2) and not cand_cand.startswith(n2)):
-                            return True
 
-    return False
+
 
 
 def _discover_from_ministry_news(

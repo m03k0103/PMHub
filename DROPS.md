@@ -1,8 +1,8 @@
 # PMHub 改善・機能実装（Drop）マスタードキュメント (DROPS.md)
 
 > **最終更新**: 2026-10-31  `
-> **最新 Drop**: **Drop 115**（2026-10-31 完了）  `
-> **次期予定 Drop**: **Drop 116**（Track [Core-Policy-Filter]「重要政策会議のみ」絞り込み機能の配備 または Track [Architecture] Phase 2）  `
+> **最新 Drop**: **Drop 116**（2026-10-31 完了）  `
+> **次期予定 Drop**: **Drop 117**（Track [Core-Policy-Filter]「重要政策会議のみ」絞り込み機能の配備 または Track [Purge-DocType-Report]）  `
 > 
 > 本ドキュメントは、PMHub の継続的改善ロードマップおよび実装記録を一元管理するマスタードキュメントです。  `
 > 今後の構想テーマは **「Track（トラック）」** として管理し、着手・個別実装単位は最新連番を付与した **「Drop（ドロップ）」** として連番アーカイブします。  `
@@ -25,7 +25,6 @@
 | **Track [LLM-Assist]** | **決定論的1ファイル新着ダイジェスト & LLM判定・クロール階層型フォールバック** | **【フェーズ 1】ディスカバリー 1ファイル集約・単一リクエストLLM判定 & 新着分類永続化（Drop 81 完了）**<br>**【フェーズ 2】開催回クロール 3段階ファネル・異常検知フォールバック & バッチLLM抽出**<br>API呼出上限（Daily 3回 / Weekly 10回 / Monthly 30回）とSQLite `llm_cache`（SHA-256ダイジェストキャッシュ）により、最小APIコールで新規会議体検知と0件以外を含むクロール欠落補完を実現 | **最小APIコールでの新規会議体検知 & クロール補完** | **【構想中】**<br>（フェーズ 1: Drop 81 完了 / フェーズ 2 構想中） |
 | **Track [Automation]** | **定時巡回クローラー & ローカルDB同期**<br>(GitHub Actions 連携) | **3階層マルチスケジュール定期実行・異常検知時Skip・ローカルDB自動同期**<br>1. Daily (平朝): 省庁新着検知のみ<br>2. Weekly (土曜): 通常巡回（直近2年重点）<br>3. Monthly (第1日曜): 全期間包括走査<br>連鎖失敗・重大エラー検知時のIssue発行＆次回以降Skip機能、Zero-Storage VM運用、ローカル環境への安全な同期エンジン（`sync_from_json.py` + post-merge hook）の配備 | **定期自動巡回・省力化 & ローカル資産整合性担保** | **【構想中】**<br>（Drop 82 以降） |
 | **Track [Search]** | **全文検索エンジン統合**<br>(PMM資産連携・分離FTS5 DB構築) | **PMM ローカル資産（PDF/HTML・約13.3万件）を活用した分離型全文検索エンジンの構築**<br>マスターDB（`admin/pmhub.db`）の肥大化を防ぐため全文検索専用DB（`admin/pmhub_fts.db`）を分離・`ATTACH` 結合するアーキテクチャを採用。`admin/pmm/text_extractor.py` によるインクリメンタル本文抽出（中断耐性付き）、FTS5 `trigram` インデックス構築、検索API（`/api/search`）、およびローカル管理画面（`admin/admin_dashboard.html`）を主軸としつつローカルサーバー起動時は公開ポータルUIからも全文検索可能なハイブリッドUIの実装（No Leakage 原則厳守） | **約13.3万件の配付資料・会議体資料の高速本文横断検索** | **【構想中】**<br>（DB・PMM基盤完了済 / 着手可能） |
-| **Track [Architecture]** | **設計刷新構想**<br>(モジュール責務分離 & DBツール標準化) | **クローラー・ディスカバリー・DB管理層の責務分離 & ワンストップDB登録CLI標準化・`scratch/` クリーンアップ**<br>DB設定一元化（Track [Config-DB]）を踏まえ、肥大化した `admin/crawler.py`（約4,360行）からホスト分散・各種フィルタ・抽出ロジックを `admin/crawler_modules/` へ分離（既存テスト互換ファサード維持）。またワンストップDB登録CLI `admin/tools/register_council.py` の新設、および過去114 Dropで蓄積した `scratch/`（560余ファイル）の完全整理・`.gitignore` 管理を実施 | **Phase 1 完遂（クローラー責務分離・ワンストップDB登録CLI新設・scratchクリーンアップ）** | **【進行中（Phase 1 完遂・Drop 115）】** |
 | **Track [Policy-AI]** | **政策分析連携構想**<br>(DB・PMM実資料・LLM統合分析) | **SQLite マスターDB・PMM実資料テキスト・`llm_cache` を統合した省庁横断政策インテリジェンス**<br>1. 省庁横断政策テーマ（GX、AI、経済安保、少子化等）および審議フェーズ（諮問・中間整理・答申等）の自動タギング（`meetings.tags_json` 活用）<br>2. PMM ローカル資料（議事要旨・主要資料）の実本文に基づく構造化AI要約生成（`meetings.summary` & SHA-256 `llm_cache` 活用）<br>3. 上位会議から各省庁審議会への政策波及タイムライン比較と、軽量サマリー/タグのみの公開JSON（`docs/data.json`）への安全な2系統還元（No Leakage 厳守） | **実資料に基づく政策横断的インサイトの創出** | **【長期構想】**<br>（Track [Search] 連携） |
 
 ### 1-2. 各Trackの詳細
@@ -130,27 +129,6 @@ GitHub Actions で自動更新・push されたリモートの最新データ（
      - ローカル専用の管理画面（`admin/admin_dashboard.html`）に全文検索・ローカルPDF/HTML直接プレビューコンソールを主軸実装。
      - 併せて、公開ポータルUI（`docs/index.html` / `docs/app.js`）でもローカルサーバー（`http://localhost:8000`）経由でアクセスされた場合（API疎通検知時）に限り「資料本文検索（ローカルDB連携）」モードが自動有効化されるハイブリッド方式を採用し、静的公開時（GitHub Pages）の No Leakage 原則とローカル分析の利便性を両立する。
 
-#### 【Track: Architecture】クローラー・DB管理層のモジュール責務分離 & ワンストップDB登録ツール標準化・`scratch/` クリーンアップ
-
-- **背景と課題**:
-  1. Track [Database]（Drop 62〜64）および Track [Config-DB]（Drop 92〜99）により、DB保存・エクスポートおよびハードコード設定群の SQLite マスターDB（`admin/pmhub.db`）への移行は完了したが、`admin/crawler.py`（約4,270行）および `admin/discover_councils.py`（約1,400行）には依然として HTTP/WAF 通信、文字コード判定、HTML/テーブル解析、日付・回次抽出、探索戦略、LLMフォールバック、PMM連携が集約されており、両者間でロジックの重複や密結合が生じている。
-  2. `admin/db/db_manager.py`（約1,000行）にも会議体CRUD・クローラー状態・PMMステータス・システム設定が単一ファイルに同居している。
-  3. さらに、Track [Portal-Norm] 等の手動データ登録・修正のたびにワンオフスクリプトが作成され、`scratch/` 直下に約370ファイルが蓄積されている。
-- **目標仕様**:
-  1. **クローラーのパッケージ分割と単体テスト後方互換ファサード**:
-     - `admin/crawler.py` を `admin/crawler/` パッケージへ分割しつつ、既存の統合テスト（15ケース）および単体テスト（全23種）の `from admin.crawler import ...` を無破壊で維持する再エクスポート・ファサードを保持する：
-       - `http_client.py`: WAF チャレンジ解決、ホスト別直列スロットリング、文字コード自動判定（`discover_councils.py` と共通利用）
-       - `extractors.py`: 日付正規化、回次抽出、タイトルクレンジング、UIスキップリンク・中間HTML排除
-       - `strategies.py`: 親テーブル抽出、サブページ深層探索、アーカイブ追跡、LLMフォールバック連携
-       - `runner.py`: SQLite DB（`scraping_rules` / `admin_configs`）からの動的設定ロード、巡回オーケストレーション、PMM 自動ダウンロード連携
-  2. **DBデータアクセス層（`admin/db/`）の整理**:
-     - `db_manager.py` の責務（会議体・開催回・資料CRUD、クローラーステータス、PMMローカル資料管理、システム設定）を論理的に整理し、トランザクション境界と2系統エクスポート同期の一貫性を強化。
-  3. **ワンストップDB登録CLIヘルパーの標準化 & `scratch/` 完全クリーンアップ**:
-     - 会議体・開催回・配付資料・`scrapingRules` の `admin/pmhub.db` へのアトミック登録（`manualLock: true` 自動付与）＋2系統JSONエクスポートを定型実行する共通CLI/ヘルパーを整備し、場当たり的なワンオフスクリプト乱造を根絶した上で、`scratch/` 配下の古いスクリプト群を安全に整理・パージする。
-
-- **進捗状況・ステータス**: 【進行中（Phase 1 完遂・Drop 115）】
-  - Phase 1（Drop 115 完遂）: クローラーの責務分離（`admin/crawler_modules/` 新設 & ファサード互換保証）、標準ワンストップDB登録CLI `admin/tools/register_council.py` 新設、`scratch/` の560余ファイル完全クリーンアップ & `.gitignore` 管理
-  - Phase 2（次期構想）: `admin/discover_councils.py` のモジュール化、共通HTTP/WAFクライアントの共通化
 
 #### 【Track: Policy-AI】SQLite マスターDB・PMM実資料・LLM基盤を統合した省庁横断政策分析 & 構造化要約還元
 
@@ -266,6 +244,8 @@ GitHub Actions で自動更新・push されたリモートの最新データ（
 | **Drop 112** | **クローラー高速化 & 不要アセット遮断**<br>(Track [Optimization] フェーズ 2) | サブページ探索での二重スリープ撤廃、静的アセット（画像/CSS/JS/フォント/メディア）水際遮断、スマート差分照合強化（Track [Optimization] 完遂） | **定期巡回高速化・Track完遂** |
 | **Drop 113** | **終了・廃止会議体クロール除外 & 水際ガード**<br>(内閣府 #done01 & 内閣官房 abolition_list) | 内閣府34件（内閣官房含む）の終了・廃止会議体を `is_closed = 1` に更新してクローラー巡回から除外、ディスカバリーでの `#done01` および `abolition_list.html` 除外ガード配備 | **34会議体クロール除外・水際ガード配備** |
 | **Drop 114** | **残存特大規模親ポータル5件の網羅的正常化（全省庁アクティブ0件会議体完全ゼロ化）** | **Track [Grand-Portals] 完遂・開催回0件アクティブ親ポータル5件の網羅的データ取得 & スクレイピングルール配備**<br>PMHub 内で唯一開催回が0件として残存していた親ポータル型会議体5件（`meti-sankoshin_chiteki_zaisan` 特許庁知的財産分科会、`cao-252` 日本学術会議幹事会、`jfa-shigen_kanri_houshin` 水産庁資源管理方針検討会、`mic-fufuku_shinsa` 総務省行政不服審査会、`mext-715` 文科省大学設置・学校法人審議会）の実態を完全解明。各公式ページから計132件の開催回および493件の配付資料PDFをワンストップ登録（`manualLock: true`）し、新規スクレイピングルールを配備。 | **【全省庁アクティブ0件会議体ゼロ達成】**<br>・5親ポータル計132開催回・493配付資料をワンストップ登録<br>・PMHub 内のアクティブ0件会議体が完全に **0件** となり開催回網羅率 100% 達成<br>・魚種・系群一意化 & ジェネリック資料名スマート補正により回次重複0件維持<br>・統合テスト全15ケース＋全単体23種完全合格（23.61s） |
+| **Drop 115** | **クローラー責務分離・ワンストップDB登録CLI新設・環境クリーンアップ**<br>(Track [Architecture] Phase 1) | 肥大化した crawler.py（4,367行）から責務別モジュール（host_manager, filters, extractors）を crawler_modules/ に切り出し、後方互換100%ファサード化し約650行スリム化。ワンストップ登録CLI register_council.py 新設。scratch/ の 560 余の一時ファイルを完全クリーンアップし .gitignore に追加。 | 統合テスト全15ケース＋全単体23種完全合格（22.10s）。ファサード互換性により既存の全テスト・クローラー機能が100%正常動作維持。 |
+| **Drop 116** | **ディスカバリー責務分離・共通HTTP通信層確立**<br>(Track [Architecture] 完遂) | 肥大化した discover_councils.py（約1,440行）から名称正規化・ノイズ除外・親URL逆引きを discovery_modules/ に分離しファサード化（約400行スリム化）。クローラー・ディスカバリー共通の http_client.py 新設。 | 統合テスト全15ケース＋全単体23種完全合格（21.79s）。Track [Architecture] 完全達成。 |
 ---
 
 ### 2-2. 各 Dropの詳細
@@ -3507,5 +3487,64 @@ python testing/run_test_suite.py --all-layers : PASSED（統合15ケース＋全
   - ケース13: 省庁親ポータルURL設定・探索網羅性検証（各省庁親ポータル設定合格） (0.43s) : PASS
   - ケース14: アクティブ会議体フィルタリング・廃止管理検証（直近2年・廃止マスター合格） (0.88s) : PASS
   - 【単体関数検証 (Unit Tests)】: 全23種合格（全連動 23 種実施 / 6.41s） : PASS
+```
+
+---
+
+### Drop 116: ディスカバリー責務分離・共通HTTP通信層確立（Track [Architecture] 完遂）
+
+- **1. 背景と目的 (Background & Objective)**:
+  - Drop 115 において、クローラー本体の責務分離（`admin/crawler_modules/`）とワンストップDB登録CLIの新設、および `scratch/` の環境クリーンアップを完了した。
+  - 本 Drop 116 では Track [Architecture] のフェーズ 2 として、肥大化していた新規会議体ディスカバリーエンジン（`admin/discover_councils.py`・約1,440行）の責務分離と、クローラー・ディスカバリー双方で共有可能な共通HTTP通信層（`admin/crawler_modules/http_client.py`）の新設を実施し、Track [Architecture] を完全に完遂することを目的とした。
+
+- **2. 主要な実装・改修内容 (Key Implementations)**:
+  - **共通HTTP通信モジュール `admin/crawler_modules/http_client.py` の新設**:
+    - 標準ブラウザヘッダー（Chrome現行世代 UA, `Sec-Ch-Ua`）、同一ホスト直列化（レートリミット最低0.35秒保証）、文字コード自動判定（Shift-JIS / CP932 / EUC-JP / UTF-8）を備えた安全な HTTP 取得関数 `fetch_html_page`, `fetch_raw_response`, `apply_host_rate_limit` を配備。
+    - クローラーおよびディスカバリー双方から利用可能な共通通信層として確立。
+  - **ディスカバリーエンジンの責務分離（`admin/discovery_modules/` 新設）**:
+    - 名称正規化・コア名抽出・カテゴリ判定: `admin/discovery_modules/name_cleaner.py`（`clean_council_name`, `get_core_council_name`, `infer_council_category`, `extract_council_name_from_news_title`）
+    - ノイズ判定・単一プレスURL判定・登録済判定: `admin/discovery_modules/noise_filters.py`（`is_non_council_noise`, `is_single_press_or_notice_url`, `is_already_registered_or_rejected`, `normalize_url`, `get_url_clean_key`, `get_max_seq` 等）
+    - 親URL逆引き: `admin/discovery_modules/parent_resolver.py`（`resolve_parent_url_from_press_release`, `fetch_page_and_final_url`）
+    - パッケージ初期化: `admin/discovery_modules/__init__.py`（全公開シンボルを再エクスポート）
+  - **`admin/discover_councils.py` の後方互換ファサード化（Facade）**:
+    - `admin/discover_councils.py` 本体の重複関数・定数を削除して約400行スリム化（1,493行 $	o$ 1,095行）。
+    - `admin/discovery_modules` からインポート・再エクスポートすることで、外部テストコード（`testing/test_discover_councils.py`・U20）との 100% 互換性を保証。
+  - **Track [Architecture] の完了処理（AGENTS.md §3-3 準拠）**:
+    - Track [Architecture] が Phase 1（Drop 115）および Phase 2（Drop 116）をもって完全達成されたため、第1章の「1-1. Track一覧」および「1-2. 各Trackの詳細」から除外整理。
+
+- **3. 次回クロールへの影響 (Crawler Impact & Behavior)**:
+  - **手動登録データの保護挙動**: 既存の会議体・開催回・配付資料の `manualLock: true` フラグおよび SQLite マスターDB（`admin/pmhub.db`）のデータ構造には一切変更を加えないため、次回クロール時にも手動登録データは完全に保護される。
+  - **新着検知・ディスカバリーの挙動**: ディスカバリー判定ロジック（名称クレンジング、ノイズ除外、親URL逆引き）は 100% 同一のアルゴリズムを維持するため、新規会議体検知精度や却下リスト（`admin/rejected_councils.json`）との照合挙動は完全に不変維持される。
+  - **クローラー・ディスカバリーの負荷・通信への影響**: 共通HTTPクライアント導入後も同一ホスト直列化（レートリミット最低0.35秒以上）が確実に保証され、行政機関サーバーへの負荷やアクセス制限回避性能が安定維持される。
+
+- **4. 変更ファイル一覧 (Changed Files)**:
+  - `admin/crawler_modules/http_client.py`: 共通HTTP通信モジュール（新規）
+  - `admin/crawler_modules/__init__.py`: `http_client` 関数の再エクスポート
+  - `admin/discovery_modules/__init__.py`: ディスカバリーサブパッケージ初期化・エクスポート（新規）
+  - `admin/discovery_modules/name_cleaner.py`: 会議体名正規化・コア名抽出モジュール（新規）
+  - `admin/discovery_modules/noise_filters.py`: ノイズ判定・URL正規化・登録済判定モジュール（新規）
+  - `admin/discovery_modules/parent_resolver.py`: プレスリリースから常設親ページURL逆引きモジュール（新規）
+  - `admin/discover_councils.py`: サブモジュールからのインポート & 後方互換ファサード化（約400行スリム化）
+  - `DROPS.md`: 最新 Drop 116、次期予定 Drop 117、Track [Architecture] 完遂除外、Drop 116 詳細追記
+
+- **5. 検証結果 (Verification Results)**:
+```markdown
+python testing/run_test_suite.py --all-layers : PASSED（統合15ケース＋全単体23種合格 / 所要時間 約22秒）
+  - ケース1: コード文法チェック（SyntaxError / 括弧 / div / DDL構文 0件） (0.70s) : PASS
+  - ケース2: リンク疎通確認（既存URLスキップ合格） (0.85s) : PASS
+  - ケース3: UI表示機能検証（DOMコンテナ・公開＆管理構造OK） (0.00s) : PASS
+  - ケース4: JS実行時クラッシュ・全画面描画検証（Node.js構文エラー0件） (0.64s) : PASS
+  - ケース5: 会議品質・回次整合性・重複排除検証（全22,135件 重複0件） (0.84s) : PASS
+  - ケース6: 会議体・タイムライン ID完全排他性・整合性（1,663会議体 全件一致） (0.01s) : PASS
+  - ケース7: 康煕部首・特殊文字 NFKC 正規化検証（康煕部首0件維持） (0.30s) : PASS
+  - ケース8: プレースホルダー日付（2099/01/01）ゼロ遮断検証（2099日付0件） (0.00s) : PASS
+  - ケース15: SQLiteマスターDB整合性 & 2系統JSON完全同期検証（PRAGMA・FK・全件一致） (0.82s) : PASS
+  - ケース9: 管理サーバー API 単体・統合テスト（全11テスト合格） (4.42s) : PASS
+  - ケース10: クローラー手動保護回帰テスト（manualLock 非破壊性合格） (4.37s) : PASS
+  - ケース11: スクレイピングルール整合性検証（孤立ルール0件・全1,663会議体100%ルール適用） (0.43s) : PASS
+  - ケース12: ホスト分散・ゴミデータ不変性検証（同一ホスト連続0件・ゴミ0件走査） (0.31s) : PASS
+  - ケース13: 省庁親ポータルURL設定・探索網羅性検証（各省庁親ポータル設定合格） (0.47s) : PASS
+  - ケース14: アクティブ会議体フィルタリング・廃止管理検証（直近2年・廃止マスター合格） (0.89s) : PASS
+  - 【単体関数検証 (Unit Tests)】: 全23種合格（全連動 23 種実施 / 6.36s） : PASS
 ```
 
