@@ -16198,43 +16198,11 @@
       "pastYearCount": 0
     },
     {
-      "id": "moj-2975",
-      "ministry": "MOJ",
-      "category": "COMMITTEE",
-      "name": "少年鑑別所視察委員会",
-      "officialUrl": "https://www.moj.go.jp/kyousei1/kyousei08_00208.html",
-      "pastYearCount": 0
-    },
-    {
-      "id": "moj-2976",
-      "ministry": "MOJ",
-      "category": "COMMITTEE",
-      "name": "少年院視察委員会",
-      "officialUrl": "https://www.moj.go.jp/kyousei1/_00008.html",
-      "pastYearCount": 0
-    },
-    {
-      "id": "moj-2977",
-      "ministry": "MOJ",
-      "category": "COMMITTEE",
-      "name": "刑事施設視察委員会",
-      "officialUrl": "https://www.moj.go.jp/kyousei1/kyousei08_00207.html",
-      "pastYearCount": 0
-    },
-    {
       "id": "moj-2978",
       "ministry": "MOJ",
       "category": "PANEL",
       "name": "法務省政策評価有識者会議",
-      "officialUrl": "https://www.moj.go.jp/hisho/seisakuhyouka/hisho05_00090.html",
-      "pastYearCount": 0
-    },
-    {
-      "id": "moj-2979",
-      "ministry": "MOJ",
-      "category": "STUDY",
-      "name": "住まい支援の連携強化のための連絡協議会",
-      "officialUrl": "https://www.moj.go.jp/hogo1/soumu/hogo01_00046.html",
+      "officialUrl": "https://www.moj.go.jp/hisho/seisakuhyouka/kanbou_hyouka_hyouka01-04.html",
       "pastYearCount": 0
     },
     {
@@ -16243,7 +16211,9 @@
       "category": "STUDY",
       "name": "罪を犯した18歳及び19歳の者に対する矯正教育(仮)に係る検討会",
       "officialUrl": "https://www.moj.go.jp/kyousei1/kyousei03_00015.html",
-      "pastYearCount": 0
+      "pastYearCount": 0,
+      "isClosed": true,
+      "closedReason": "検討会報告書の公表に伴い完結"
     },
     {
       "id": "moj-2987",
@@ -16251,39 +16221,39 @@
       "category": "STUDY",
       "name": "商業登記所における法人の実質的支配者情報の把握促進に関する研究会",
       "officialUrl": "https://www.moj.go.jp/MINJI/minji06_00044.html",
-      "pastYearCount": 0
+      "pastYearCount": 0,
+      "isClosed": true,
+      "closedReason": "議論の取りまとめ公表に伴い完結"
     },
     {
       "id": "moj-2988",
       "ministry": "MOJ",
       "category": "WORKING_GROUP",
       "name": "性犯罪に関する施策検討に向けた実態調査ワーキンググループ",
-      "officialUrl": "https://www.moj.go.jp/hisho/saihanboushi/hisho04_00029.html",
-      "pastYearCount": 0
-    },
-    {
-      "id": "moj-2990",
-      "ministry": "MOJ",
-      "category": "ROUNDTABLE",
-      "name": "法務省政策評価懇談会",
-      "officialUrl": "https://www.moj.go.jp/hisho/seisakuhyouka/hisho05_00053.html",
-      "pastYearCount": 0
+      "officialUrl": "https://www.moj.go.jp/shingi1/shingi00400006.html",
+      "pastYearCount": 0,
+      "isClosed": true,
+      "closedReason": "ワーキンググループの検討期間終了に伴い完結"
     },
     {
       "id": "moj-2992",
       "ministry": "MOJ",
       "category": "STUDY",
       "name": "外国法事務弁護士制度に係る検討会",
-      "officialUrl": "https://www.moj.go.jp/housei/gaiben/housei07_00032.html",
-      "pastYearCount": 0
+      "officialUrl": "https://www.moj.go.jp/housei/gaiben/housei07_00013.html",
+      "pastYearCount": 0,
+      "isClosed": true,
+      "closedReason": "検討会報告書の取りまとめに伴い完結"
     },
     {
       "id": "moj-2994",
       "ministry": "MOJ",
       "category": "STUDY",
       "name": "ADR法に関する検討会",
-      "officialUrl": "https://www.moj.go.jp/housei/adr/housei09_00059.html",
-      "pastYearCount": 0
+      "officialUrl": "https://www.moj.go.jp/housei/adr/housei09_00036.html",
+      "pastYearCount": 0,
+      "isClosed": true,
+      "closedReason": "検討会報告書の取りまとめに伴い完結"
     },
     {
       "id": "moj-baibaisyun_kento",
@@ -33089,6 +33059,19 @@
         {
           "name": "議事概要",
           "url": "https://www.mhlw.go.jp/content/001743463.pdf"
+        }
+      ]
+    },
+    {
+      "id": "moj-2978-20260807-080",
+      "councilId": "moj-2978",
+      "name": "法務省政策評価有識者会議 第80回",
+      "date": "2026/08/07",
+      "officialUrl": "https://www.moj.go.jp/content/001471147.pdf",
+      "materials": [
+        {
+          "name": "第80回 政策評価有識者会議 議事要旨",
+          "url": "https://www.moj.go.jp/content/001471147.pdf"
         }
       ]
     },
@@ -54705,6 +54688,39 @@
         {
           "name": "進捗報告(案)(概要)",
           "url": "https://www.mof.go.jp/about_mof/councils/meeting_of_cbdcre/contents/pdf/index_2.pdf"
+        }
+      ]
+    },
+    {
+      "id": "moj-2978-20260619-079",
+      "councilId": "moj-2978",
+      "name": "法務省政策評価有識者会議 第79回",
+      "date": "2026/06/19",
+      "officialUrl": "https://www.moj.go.jp/hisho/seisakuhyouka/hisho05_00090.html",
+      "materials": [
+        {
+          "name": "資料１－１：法教育の推進",
+          "url": "https://www.moj.go.jp/content/001464516.pdf"
+        },
+        {
+          "name": "資料１－２：法曹養成制度の充実",
+          "url": "https://www.moj.go.jp/content/001464517.pdf"
+        },
+        {
+          "name": "参考資料１：法務省政策評価に関する基本計画",
+          "url": "https://www.moj.go.jp/content/001464525.pdf"
+        },
+        {
+          "name": "参考資料２：令和８年度法務省事後評価の実施に関する計画",
+          "url": "https://www.moj.go.jp/content/001464518.pdf"
+        },
+        {
+          "name": "第79回 政策評価有識者会議 議事録",
+          "url": "https://www.moj.go.jp/content/001466981.pdf"
+        },
+        {
+          "name": "第79回 政策評価有識者会議 議事要旨",
+          "url": "https://www.moj.go.jp/content/001467089.pdf"
         }
       ]
     },
@@ -104378,6 +104394,19 @@
       ]
     },
     {
+      "id": "moj-2978-20260106-078",
+      "councilId": "moj-2978",
+      "name": "法務省政策評価有識者会議 第78回",
+      "date": "2026/01/06",
+      "officialUrl": "https://www.moj.go.jp/content/001458850.pdf",
+      "materials": [
+        {
+          "name": "第78回 政策評価有識者会議 議事要旨",
+          "url": "https://www.moj.go.jp/content/001458850.pdf"
+        }
+      ]
+    },
+    {
       "id": "digital-honnin_kakunin_guideline-20260105-002",
       "councilId": "digital-honnin_kakunin_guideline",
       "name": "第2回 本人確認ガイドラインの改定:本人確認実務の課題・事例・手法とそのガイドラインに関する有識者会議",
@@ -134241,6 +134270,19 @@
       ]
     },
     {
+      "id": "moj-2978-20250909-077",
+      "councilId": "moj-2978",
+      "name": "法務省政策評価有識者会議 第77回",
+      "date": "2025/09/09",
+      "officialUrl": "https://www.moj.go.jp/content/001450196.pdf",
+      "materials": [
+        {
+          "name": "第77回 政策評価有識者会議 議事要旨",
+          "url": "https://www.moj.go.jp/content/001450196.pdf"
+        }
+      ]
+    },
+    {
       "id": "anre-1759-20250908-013",
       "councilId": "anre-1759",
       "name": "令和7年度 第13回 次世代の分散型電力システムに関する検討会",
@@ -149685,6 +149727,39 @@
         {
           "name": "第195回 議事録",
           "url": "https://www.mhlw.go.jp/stf/newpage_59880.html"
+        }
+      ]
+    },
+    {
+      "id": "moj-2978-20250619-076",
+      "councilId": "moj-2978",
+      "name": "法務省政策評価有識者会議 第76回",
+      "date": "2025/06/19",
+      "officialUrl": "https://www.moj.go.jp/hisho/seisakuhyouka/hisho05_00083.html",
+      "materials": [
+        {
+          "name": "資料１ー１：検察権行使を支える事務の適正な運営",
+          "url": "https://www.moj.go.jp/content/001441324.pdf"
+        },
+        {
+          "name": "資料１ー２：国の利害に関係のある争訟の適正・迅速な処理",
+          "url": "https://www.moj.go.jp/content/001441325.pdf"
+        },
+        {
+          "name": "参考資料１：法務省政策評価に関する基本計画",
+          "url": "https://www.moj.go.jp/content/001419861.pdf"
+        },
+        {
+          "name": "参考資料２：令和７年度法務省事後評価の実施に関する計画",
+          "url": "https://www.moj.go.jp/content/001441328.pdf"
+        },
+        {
+          "name": "第76回 政策評価有識者会議 議事録",
+          "url": "https://www.moj.go.jp/content/001444564.pdf"
+        },
+        {
+          "name": "第76回 政策評価有識者会議 議事要旨",
+          "url": "https://www.moj.go.jp/content/001444792.pdf"
         }
       ]
     },
@@ -174221,6 +174296,47 @@
         {
           "name": "資料 放-56-10（参考資料）2024 年11 月 ITU-R SG6 会合後に承認された勧告等",
           "url": "https://www.soumu.go.jp/main_content/000994323.pdf"
+        }
+      ]
+    },
+    {
+      "id": "moj-2978-20250214-075",
+      "councilId": "moj-2978",
+      "name": "法務省政策評価有識者会議 第75回",
+      "date": "2025/02/14",
+      "officialUrl": "https://www.moj.go.jp/hisho/seisakuhyouka/hisho05_00081.html",
+      "materials": [
+        {
+          "name": "資料１：令和７年度法務省事後評価の実施に関する計画（案）",
+          "url": "https://www.moj.go.jp/content/001433625.pdf"
+        },
+        {
+          "name": "資料２－１：規制の事後評価書（案）（債権管理回収業に関する特別措置法部分）",
+          "url": "https://www.moj.go.jp/content/001433626.pdf"
+        },
+        {
+          "name": "資料２－２：規制の事後評価書（案）（裁判外紛争解決手続の利用の促進に関する法律部分）",
+          "url": "https://www.moj.go.jp/content/001433627.pdf"
+        },
+        {
+          "name": "資料２－３：規制の事後評価書（案）（沖縄弁護士に関する政令部分）",
+          "url": "https://www.moj.go.jp/content/001433628.pdf"
+        },
+        {
+          "name": "資料３：令和７年度法務省事後評価の実施に関する計画（案）に対する質問・意見",
+          "url": "https://www.moj.go.jp/content/001433629.pdf"
+        },
+        {
+          "name": "【追加】第75回法務省政策評価有識者会議における質問・意見",
+          "url": "https://www.moj.go.jp/content/001435079.pdf"
+        },
+        {
+          "name": "第75回 政策評価有識者会議 議事録",
+          "url": "https://www.moj.go.jp/content/001435082.pdf"
+        },
+        {
+          "name": "第75回 政策評価有識者会議 議事要旨",
+          "url": "https://www.moj.go.jp/content/001435083.pdf"
         }
       ]
     },
@@ -210549,6 +210665,19 @@
       ]
     },
     {
+      "id": "moj-2978-20240730-074",
+      "councilId": "moj-2978",
+      "name": "法務省政策評価有識者会議 第74回",
+      "date": "2024/07/30",
+      "officialUrl": "https://www.moj.go.jp/content/001426315.pdf",
+      "materials": [
+        {
+          "name": "第74回 政策評価有識者会議 議事要旨",
+          "url": "https://www.moj.go.jp/content/001426315.pdf"
+        }
+      ]
+    },
+    {
       "id": "aca-kokugo_roman-20240729-002",
       "councilId": "aca-kokugo_roman",
       "name": "令和6年 第2回 文化審議会国語分科会 ローマ字小委員会",
@@ -219569,6 +219698,43 @@
         {
           "name": "e20240607e.pdf",
           "url": "https://www.mof.go.jp/about_mof/councils/meeting_of_jgbtr/proceedings/material/e20240607e.pdf"
+        }
+      ]
+    },
+    {
+      "id": "moj-2978-20240607-073",
+      "councilId": "moj-2978",
+      "name": "法務省政策評価有識者会議 第73回",
+      "date": "2024/06/07",
+      "officialUrl": "https://www.moj.go.jp/hisho/seisakuhyouka/hisho05_00077.html",
+      "materials": [
+        {
+          "name": "資料１ー１：裁判外紛争解決手続の拡充・活性化",
+          "url": "https://www.moj.go.jp/content/001419857.pdf"
+        },
+        {
+          "name": "資料１ー２：民事行政の適正円滑な処理（相続土地国庫帰属制度の円滑な運用）",
+          "url": "https://www.moj.go.jp/content/001419858.pdf"
+        },
+        {
+          "name": "資料１ー３：法務行政における国際協力の推進",
+          "url": "https://www.moj.go.jp/content/001419859.pdf"
+        },
+        {
+          "name": "参考資料１：法務省政策評価に関する基本計画",
+          "url": "https://www.moj.go.jp/content/001419861.pdf"
+        },
+        {
+          "name": "参考資料２：令和６年度法務省事後評価の実施に関する計画",
+          "url": "https://www.moj.go.jp/content/001419860.pdf"
+        },
+        {
+          "name": "第73回 政策評価有識者会議 議事録",
+          "url": "https://www.moj.go.jp/content/001421691.pdf"
+        },
+        {
+          "name": "第73回 政策評価有識者会議 議事要旨",
+          "url": "https://www.moj.go.jp/content/001421692.pdf"
         }
       ]
     },
@@ -242725,6 +242891,19 @@
         {
           "name": "情報通信審議会 情報通信技術分科会 航空・海上無線通信委員会（第26回）議事要旨",
           "url": "https://www.soumu.go.jp/main_content/000929620.pdf"
+        }
+      ]
+    },
+    {
+      "id": "moj-2978-20240209-072",
+      "councilId": "moj-2978",
+      "name": "法務省政策評価有識者会議 第72回",
+      "date": "2024/02/09",
+      "officialUrl": "https://www.moj.go.jp/content/001416339.pdf",
+      "materials": [
+        {
+          "name": "第72回 政策評価有識者会議 議事要旨",
+          "url": "https://www.moj.go.jp/content/001416339.pdf"
         }
       ]
     },
@@ -272889,6 +273068,19 @@
       ]
     },
     {
+      "id": "moj-2978-20230728-071",
+      "councilId": "moj-2978",
+      "name": "法務省政策評価有識者会議 第71回",
+      "date": "2023/07/28",
+      "officialUrl": "https://www.moj.go.jp/content/001406547.pdf",
+      "materials": [
+        {
+          "name": "第71回 政策評価有識者会議 議事要旨",
+          "url": "https://www.moj.go.jp/content/001406547.pdf"
+        }
+      ]
+    },
+    {
       "id": "nra-1206-20230728-159",
       "councilId": "nra-1206",
       "name": "会議 第159回放射線審議会総会 ID: NRA005000002",
@@ -279716,6 +279908,47 @@
         {
           "name": "資料5・財務省政策評価懇談会委員名簿",
           "url": "https://www.mof.go.jp/about_mof/councils/policy_evaluation/proceedings/material/77seihyoukon06.pdf"
+        }
+      ]
+    },
+    {
+      "id": "moj-2978-20230614-070",
+      "councilId": "moj-2978",
+      "name": "法務省政策評価有識者会議 第70回",
+      "date": "2023/06/14",
+      "officialUrl": "https://www.moj.go.jp/hisho/seisakuhyouka/hisho05_00071.html",
+      "materials": [
+        {
+          "name": "資料１ー１：国際仲裁の活性化に向けた基盤整備",
+          "url": "https://www.moj.go.jp/content/001397928.pdf"
+        },
+        {
+          "name": "資料１ー２：人権尊重思想の普及高揚並びに人権侵害による被害の救済及び予防",
+          "url": "https://www.moj.go.jp/content/001397931.pdf"
+        },
+        {
+          "name": "資料１ー３：破壊的団体及び無差別大量殺人行為を行った団体の規制に関する調査等",
+          "url": "https://www.moj.go.jp/content/001397932.pdf"
+        },
+        {
+          "name": "参考資料１：法務省政策評価に関する基本計画",
+          "url": "https://www.moj.go.jp/content/001398157.pdf"
+        },
+        {
+          "name": "参考資料２：令和５年度法務省事後評価の実施に関する計画",
+          "url": "https://www.moj.go.jp/content/001398158.pdf"
+        },
+        {
+          "name": "参考資料３：事前の質問・意見及び回答について",
+          "url": "https://www.moj.go.jp/content/001398159.pdf"
+        },
+        {
+          "name": "第70回 政策評価有識者会議 議事録",
+          "url": "https://www.moj.go.jp/content/001400661.pdf"
+        },
+        {
+          "name": "第70回 政策評価有識者会議 議事要旨",
+          "url": "https://www.moj.go.jp/content/001400662.pdf"
         }
       ]
     },
@@ -297755,6 +297988,51 @@
         {
           "name": "議事次第",
           "url": "https://www.mod.go.jp/j/policy/agenda/meeting/seisaku/pdf/gijishidai45.pdf"
+        }
+      ]
+    },
+    {
+      "id": "moj-2978-20230302-069",
+      "councilId": "moj-2978",
+      "name": "法務省政策評価有識者会議 第69回",
+      "date": "2023/03/02",
+      "officialUrl": "https://www.moj.go.jp/hisho/seisakuhyouka/hisho05_00061.html",
+      "materials": [
+        {
+          "name": "資料１：法務省政策評価に関する基本計画（案）",
+          "url": "https://www.moj.go.jp/content/001391425.pdf"
+        },
+        {
+          "name": "資料２：令和５年度法務省事後評価の実施に関する計画（案）",
+          "url": "https://www.moj.go.jp/content/001391681.pdf"
+        },
+        {
+          "name": "資料３：基本計画の主な改訂内容について",
+          "url": "https://www.moj.go.jp/content/001391427.pdf"
+        },
+        {
+          "name": "参考資料１－１：法務省政策評価に関する基本計画（案）新旧対照表",
+          "url": "https://www.moj.go.jp/content/001391428.pdf"
+        },
+        {
+          "name": "参考資料１－２：政策評価懇談会質問・意見及び回答（法務省政策評価に関する基本計画（案）及び令和５年度法務省事後評価の実施に関する計画（案））",
+          "url": "https://www.moj.go.jp/content/001391429.pdf"
+        },
+        {
+          "name": "参考資料２－１：規制の事後評価書（案）",
+          "url": "https://www.moj.go.jp/content/001391616.pdf"
+        },
+        {
+          "name": "参考資料２－２：政策評価懇談会質問・意見及び回答（規制の事後評価書（案））",
+          "url": "https://www.moj.go.jp/content/001391431.pdf"
+        },
+        {
+          "name": "第69回 政策評価有識者会議 議事録",
+          "url": "https://www.moj.go.jp/content/001393644.pdf"
+        },
+        {
+          "name": "第69回 政策評価有識者会議 議事要旨",
+          "url": "https://www.moj.go.jp/content/001393645.pdf"
         }
       ]
     },
@@ -333805,6 +334083,19 @@
       ]
     },
     {
+      "id": "moj-2978-20220725-068",
+      "councilId": "moj-2978",
+      "name": "法務省政策評価有識者会議 第68回",
+      "date": "2022/07/25",
+      "officialUrl": "https://www.moj.go.jp/content/001379617.pdf",
+      "materials": [
+        {
+          "name": "第68回 政策評価有識者会議 議事要旨",
+          "url": "https://www.moj.go.jp/content/001379617.pdf"
+        }
+      ]
+    },
+    {
       "id": "aca-bunkazai_bunkakai-20220722-240",
       "councilId": "aca-bunkazai_bunkakai",
       "name": "令和4年 第240回 文化審議会 文化財分科会",
@@ -334299,6 +334590,47 @@
         {
           "name": "議事要旨",
           "url": "https://www.mhlw.go.jp/content/10900000/000967655.pdf"
+        }
+      ]
+    },
+    {
+      "id": "moj-2978-20220721-067",
+      "councilId": "moj-2978",
+      "name": "法務省政策評価有識者会議 第67回",
+      "date": "2022/07/21",
+      "officialUrl": "https://www.moj.go.jp/hisho/seisakuhyouka/hisho05_00055.html",
+      "materials": [
+        {
+          "name": "資料１－１：令和３年度法務省事後評価実施結果報告書（案）",
+          "url": "https://www.moj.go.jp/content/001377095.pdf"
+        },
+        {
+          "name": "資料１－２：令和３年度法務省事後評価実施結果報告書（案）に対する質問・意見及び回答",
+          "url": "https://www.moj.go.jp/content/001377096.pdf"
+        },
+        {
+          "name": "資料２－１：法務省政策評価に関する基本計画見直しの方向性（案）",
+          "url": "https://www.moj.go.jp/content/001377097.pdf"
+        },
+        {
+          "name": "資料２－２：法務省における政策評価制度見直しの方向性について",
+          "url": "https://www.moj.go.jp/content/001377098.pdf"
+        },
+        {
+          "name": "参考資料１：法務省政策評価に関する基本計画",
+          "url": "https://www.moj.go.jp/content/001377101.pdf"
+        },
+        {
+          "name": "参考資料２：令和３年度法務省事後評価の実施に関する計画",
+          "url": "https://www.moj.go.jp/content/001377102.pdf"
+        },
+        {
+          "name": "第67回 政策評価有識者会議 議事録",
+          "url": "https://www.moj.go.jp/content/001378671.pdf"
+        },
+        {
+          "name": "第67回 政策評価有識者会議 議事要旨",
+          "url": "https://www.moj.go.jp/content/001378670.pdf"
         }
       ]
     },
@@ -359923,6 +360255,51 @@
         {
           "name": "6GHz帯無線LANの導入のための技術的条件に関する委員会報告（概要）",
           "url": "https://www.soumu.go.jp/main_content/000797246.pdf"
+        }
+      ]
+    },
+    {
+      "id": "moj-2978-20220228-066",
+      "councilId": "moj-2978",
+      "name": "法務省政策評価有識者会議 第66回",
+      "date": "2022/02/28",
+      "officialUrl": "https://www.moj.go.jp/hisho/seisakuhyouka/hisho05_00034.html",
+      "materials": [
+        {
+          "name": "資料１－１：令和４年度法務省事後評価の実施に関する計画（案）",
+          "url": "https://www.moj.go.jp/content/001367716.pdf"
+        },
+        {
+          "name": "資料１－２：令和４年度法務省事後評価の実施に関する計画（案）に対する質問・意見及び回答",
+          "url": "https://www.moj.go.jp/content/001367717.pdf"
+        },
+        {
+          "name": "資料２－１：国からの指定等に基づき法人が実施する事務・事業に関する評価実施結果報告書（案）",
+          "url": "https://www.moj.go.jp/content/001367718.pdf"
+        },
+        {
+          "name": "資料２－２：国からの指定等に基づき法人が実施する事務・事業に関する評価実施結果報告書（案）に対する質問・意見及び回答",
+          "url": "https://www.moj.go.jp/content/001367719.pdf"
+        },
+        {
+          "name": "資料３：総務省説明資料",
+          "url": "https://www.moj.go.jp/content/001367720.pdf"
+        },
+        {
+          "name": "資料４：政策評価制度の在り方の見直しを踏まえた法務省の対応状況について",
+          "url": "https://www.moj.go.jp/content/001367721.pdf"
+        },
+        {
+          "name": "参考資料：法務省政策評価に関する基本計画",
+          "url": "https://www.moj.go.jp/content/001367722.pdf"
+        },
+        {
+          "name": "第66回 政策評価有識者会議 議事録",
+          "url": "https://www.moj.go.jp/content/001370222.pdf"
+        },
+        {
+          "name": "第66回 政策評価有識者会議 議事要旨",
+          "url": "https://www.moj.go.jp/content/001370223.pdf"
         }
       ]
     },
@@ -390212,6 +390589,19 @@
       ]
     },
     {
+      "id": "moj-2978-20210730-065",
+      "councilId": "moj-2978",
+      "name": "法務省政策評価有識者会議 第65回",
+      "date": "2021/07/30",
+      "officialUrl": "https://www.moj.go.jp/content/001355044.pdf",
+      "materials": [
+        {
+          "name": "第65回 政策評価有識者会議 議事要旨",
+          "url": "https://www.moj.go.jp/content/001355044.pdf"
+        }
+      ]
+    },
+    {
       "id": "aca-chosakuken_shiyouryou_bukai-20210729-001",
       "councilId": "aca-chosakuken_shiyouryou_bukai",
       "name": "令和3年 第1回 著作権分科会 使用料部会",
@@ -392135,6 +392525,39 @@
           "name": "議事録",
           "url": "https://www.mhlw.go.jp/stf/newpage_21280.html",
           "type": "HTML"
+        }
+      ]
+    },
+    {
+      "id": "moj-2978-20210715-064",
+      "councilId": "moj-2978",
+      "name": "法務省政策評価有識者会議 第64回",
+      "date": "2021/07/15",
+      "officialUrl": "https://www.moj.go.jp/hisho/seisakuhyouka/hisho05_00022.html",
+      "materials": [
+        {
+          "name": "資料１：令和２年度法務省事後評価実施結果報告書（案）",
+          "url": "https://www.moj.go.jp/content/001352714.pdf"
+        },
+        {
+          "name": "資料２：法務省政策評価に関する基本計画",
+          "url": "https://www.moj.go.jp/content/001352715.pdf"
+        },
+        {
+          "name": "資料３：令和２年度法務省事後評価の実施に関する計画",
+          "url": "https://www.moj.go.jp/content/001352716.pdf"
+        },
+        {
+          "name": "補足資料：令和２年度法務省事後評価実施結果報告書（案）に対する質問・意見",
+          "url": "https://www.moj.go.jp/content/001352717.pdf"
+        },
+        {
+          "name": "第64回 政策評価有識者会議 議事録",
+          "url": "https://www.moj.go.jp/content/001354660.pdf"
+        },
+        {
+          "name": "第64回 政策評価有識者会議 議事要旨",
+          "url": "https://www.moj.go.jp/content/001354534.pdf"
         }
       ]
     },
@@ -398129,6 +398552,23 @@
         {
           "name": "議事要旨",
           "url": "https://www.soumu.go.jp/main_content/000758870.pdf"
+        }
+      ]
+    },
+    {
+      "id": "moj-2984-20210528-001",
+      "councilId": "moj-2984",
+      "name": "罪を犯した18歳及び19歳の者に対する矯正教育(仮)に係る検討会 第1回",
+      "date": "2021/05/28",
+      "officialUrl": "https://www.moj.go.jp/kyousei1/kyousei03_00015.html",
+      "materials": [
+        {
+          "name": "１８歳・１９歳に対する矯正教育の充実",
+          "url": "https://www.moj.go.jp/content/001348760.pdf"
+        },
+        {
+          "name": "「罪を犯した１８歳及び１９歳の者に対する矯正教育（仮）に係る検討会」報告書",
+          "url": "https://www.moj.go.jp/content/001348761.pdf"
         }
       ]
     },
@@ -412534,6 +412974,47 @@
       ]
     },
     {
+      "id": "moj-2978-20210216-063",
+      "councilId": "moj-2978",
+      "name": "法務省政策評価有識者会議 第63回",
+      "date": "2021/02/16",
+      "officialUrl": "https://www.moj.go.jp/hisho/seisakuhyouka/hisho05_00020.html",
+      "materials": [
+        {
+          "name": "資料１：令和３年度法務省事後評価の実施に関する計画（案）",
+          "url": "https://www.moj.go.jp/content/001341340.pdf"
+        },
+        {
+          "name": "資料２－１：規制の事前評価書（案）",
+          "url": "https://www.moj.go.jp/content/001341341.pdf"
+        },
+        {
+          "name": "資料２－２：規制の事前評価書（案）.",
+          "url": "https://www.moj.go.jp/content/001341342.pdf"
+        },
+        {
+          "name": "資料３：法務省政策評価に関する基本計画",
+          "url": "https://www.moj.go.jp/content/001341343.pdf"
+        },
+        {
+          "name": "補足資料１：令和３年度法務省事後評価の実施に関する計画（案）に対する質問・意見.",
+          "url": "https://www.moj.go.jp/content/001341344.pdf"
+        },
+        {
+          "name": "補足資料２：規制の事前評価書（案）に対する質問・意見",
+          "url": "https://www.moj.go.jp/content/001341345.pdf"
+        },
+        {
+          "name": "第63回 政策評価有識者会議 議事録",
+          "url": "https://www.moj.go.jp/content/001345322.pdf"
+        },
+        {
+          "name": "第63回 政策評価有識者会議 議事要旨",
+          "url": "https://www.moj.go.jp/content/001345323.pdf"
+        }
+      ]
+    },
+    {
       "id": "moj-seihanzai_keijihou-20210216-012",
       "councilId": "moj-seihanzai_keijihou",
       "name": "第12回会議",
@@ -426110,6 +426591,19 @@
       ]
     },
     {
+      "id": "moj-2978-20201021-062",
+      "councilId": "moj-2978",
+      "name": "法務省政策評価有識者会議 第62回",
+      "date": "2020/10/21",
+      "officialUrl": "https://www.moj.go.jp/content/001342118.pdf",
+      "materials": [
+        {
+          "name": "第62回 政策評価有識者会議 議事要旨",
+          "url": "https://www.moj.go.jp/content/001342118.pdf"
+        }
+      ]
+    },
+    {
       "id": "fsa-code_followup-20201020-020",
       "councilId": "fsa-code_followup",
       "name": "「スチュワードシップ・コード及びコーポレートガバナンス・コードのフォローアップ会議」(第20回)議事次第",
@@ -432565,6 +433059,19 @@
       ]
     },
     {
+      "id": "moj-2978-20200819-061",
+      "councilId": "moj-2978",
+      "name": "法務省政策評価有識者会議 第61回",
+      "date": "2020/08/19",
+      "officialUrl": "https://www.moj.go.jp/content/001329667.pdf",
+      "materials": [
+        {
+          "name": "第61回 政策評価有識者会議 議事要旨",
+          "url": "https://www.moj.go.jp/content/001329667.pdf"
+        }
+      ]
+    },
+    {
       "id": "fsc-honkaigi-20200818-787",
       "councilId": "fsc-honkaigi",
       "name": "第787回 食品安全委員会",
@@ -435453,6 +435960,47 @@
         {
           "name": "参考資料3 委員名簿",
           "url": "https://www.mhlw.go.jp/content/11925000/000650647.pdf"
+        }
+      ]
+    },
+    {
+      "id": "moj-2978-20200720-060",
+      "councilId": "moj-2978",
+      "name": "法務省政策評価有識者会議 第60回",
+      "date": "2020/07/20",
+      "officialUrl": "https://www.moj.go.jp/hisho/seisakuhyouka/hisho05_00005.html",
+      "materials": [
+        {
+          "name": "資料１：令和元年度法務省事後評価実施結果報告書（案)",
+          "url": "https://www.moj.go.jp/content/001324307.pdf"
+        },
+        {
+          "name": "資料２：法務省政策評価に関する基本計画",
+          "url": "https://www.moj.go.jp/content/001315006.pdf"
+        },
+        {
+          "name": "資料３：令和元年度法務省事後評価の実施に関する計画",
+          "url": "https://www.moj.go.jp/content/001315007.pdf"
+        },
+        {
+          "name": "補足資料：令和元年度法務省事後評価実施結果報告書（案）に対する質問・意見",
+          "url": "https://www.moj.go.jp/content/001329176.pdf"
+        },
+        {
+          "name": "説明資料１：矯正施設における新型コロナウイルス感染症対策",
+          "url": "https://www.moj.go.jp/content/001324190.pdf"
+        },
+        {
+          "name": "説明資料２：入管施設における新型コロナウイルス感染症対策",
+          "url": "https://www.moj.go.jp/content/001324191.pdf"
+        },
+        {
+          "name": "第60回 政策評価有識者会議 議事録",
+          "url": "https://www.moj.go.jp/content/001329363.pdf"
+        },
+        {
+          "name": "第60回 政策評価有識者会議 議事要旨",
+          "url": "https://www.moj.go.jp/content/001329174.pdf"
         }
       ]
     },
@@ -439803,6 +440351,35 @@
       ]
     },
     {
+      "id": "moj-2987-20200529-002",
+      "councilId": "moj-2987",
+      "name": "商業登記所における法人の実質的支配者情報の把握促進に関する研究会 第2回",
+      "date": "2020/05/29",
+      "officialUrl": "https://www.moj.go.jp/MINJI/minji06_00044.html",
+      "materials": [
+        {
+          "name": "第2回研究会 議事概要",
+          "url": "https://www.moj.go.jp/content/001322679.pdf"
+        },
+        {
+          "name": "議論の取りまとめ",
+          "url": "https://www.moj.go.jp/content/001324022.pdf"
+        },
+        {
+          "name": "議論の取りまとめ【別添】法人の実質的支配者リストサンプル",
+          "url": "https://www.moj.go.jp/content/001324011.pdf"
+        },
+        {
+          "name": "議論の取りまとめ概要",
+          "url": "https://www.moj.go.jp/content/001324012.pdf"
+        },
+        {
+          "name": "Proposals on the Measures to Identify Beneficial Owners of Legal Persons at Commercial Registries in Japan（議論の取りまとめ英文概要）",
+          "url": "https://www.moj.go.jp/content/001324013.pdf"
+        }
+      ]
+    },
+    {
       "id": "jcrc-587-20200528-013",
       "councilId": "jcrc-587",
       "name": "第13回 カジノ管理委員会",
@@ -442078,6 +442655,23 @@
       ]
     },
     {
+      "id": "moj-2987-20200424-001",
+      "councilId": "moj-2987",
+      "name": "商業登記所における法人の実質的支配者情報の把握促進に関する研究会 第1回",
+      "date": "2020/04/24",
+      "officialUrl": "https://www.moj.go.jp/MINJI/minji06_00044.html",
+      "materials": [
+        {
+          "name": "第1回研究会 議事概要",
+          "url": "https://www.moj.go.jp/content/001320636.pdf"
+        },
+        {
+          "name": "研究会参加有識者名簿",
+          "url": "https://www.moj.go.jp/content/001319243.pdf"
+        }
+      ]
+    },
+    {
       "id": "mic-chihou_seido_32-20200423-037",
       "councilId": "mic-chihou_seido_32",
       "name": "第37回 第32次地方制度調査会 専門小委員会",
@@ -443822,6 +444416,91 @@
         {
           "name": "議事録",
           "url": "https://www.soumu.go.jp/main_content/000715935.pdf"
+        }
+      ]
+    },
+    {
+      "id": "moj-2988-20200330-014",
+      "councilId": "moj-2988",
+      "name": "性犯罪に関する施策検討に向けた実態調査ワーキンググループ 第14回",
+      "date": "2020/03/30",
+      "officialUrl": "https://www.moj.go.jp/hisho/saihanboushi/hisho04_00032.html",
+      "materials": [
+        {
+          "name": "第１４回　議事次第",
+          "url": "https://www.moj.go.jp/content/001318171.pdf"
+        },
+        {
+          "name": "法務省「性犯罪に関する施策検討に向けた実態調査ワーキンググループ」取りまとめ報告書概要：各種調査研究及びヒアリング指摘事項",
+          "url": "https://www.moj.go.jp/content/001318152.pdf"
+        },
+        {
+          "name": "性犯罪に関する施策検討に向けた実態調査ワーキンググループ取りまとめ報告書",
+          "url": "https://www.moj.go.jp/content/001318153.pdf"
+        },
+        {
+          "name": "性犯罪に関する施策検討に向けた実態調査ワーキンググループ取りまとめ報告書別紙一覧",
+          "url": "https://www.moj.go.jp/content/001318154.pdf"
+        },
+        {
+          "name": "１　　 刑法の一部を改正する法律の概要",
+          "url": "https://www.moj.go.jp/content/001318155.pdf"
+        },
+        {
+          "name": "２　　 衆議院法務委員会における附帯決議",
+          "url": "https://www.moj.go.jp/content/001318156.pdf"
+        },
+        {
+          "name": "３ 　　参議院法務委員会における附帯決議",
+          "url": "https://www.moj.go.jp/content/001318157.pdf"
+        },
+        {
+          "name": "４ 　　性犯罪に関する施策検討に向けた実態調査ワーキンググループの設置について",
+          "url": "https://www.moj.go.jp/content/001318158.pdf"
+        },
+        {
+          "name": "５　　 「性犯罪に関する施策検討に向けた実態調査ワーキンググループ」の活動状況",
+          "url": "https://www.moj.go.jp/content/001318159.pdf"
+        },
+        {
+          "name": "６　　 「性犯罪に係る事案の実態に即した対処を行うための施策の在り方」を検討するための調査研究について",
+          "url": "https://www.moj.go.jp/content/001318160.pdf"
+        },
+        {
+          "name": "７　　 第５ 回犯罪被害実態（ 暗数） 調査のうち「性的な被害」に係る調査結果（ 概要）",
+          "url": "https://www.moj.go.jp/content/001318161.pdf"
+        },
+        {
+          "name": "８　　 平成３ ０ 年度法務研究「性犯罪被害者の心理に関する心理学的・精神医学的知見と捜査・公判におけるその活用について」（ 概要）",
+          "url": "https://www.moj.go.jp/content/001318162.pdf"
+        },
+        {
+          "name": "９ 　　平成２ ９ 年刑法改正後の規定の施行状況についての調査結果等",
+          "url": "https://www.moj.go.jp/content/001318163.pdf"
+        },
+        {
+          "name": "１ ０　性犯罪に係る裁判例調査",
+          "url": "https://www.moj.go.jp/content/001318164.pdf"
+        },
+        {
+          "name": "１ １　性犯罪に係る不起訴事件調査",
+          "url": "https://www.moj.go.jp/content/001318165.pdf"
+        },
+        {
+          "name": "性犯罪に係る不起訴事件調査別表",
+          "url": "https://www.moj.go.jp/content/001318166.pdf"
+        },
+        {
+          "name": "１ ２　諸外国の性犯罪に関する罰則（ 概要）",
+          "url": "https://www.moj.go.jp/content/001318167.pdf"
+        },
+        {
+          "name": "フィンランド性犯罪関連条文和訳（仮訳）（令和元年12月時点）",
+          "url": "https://www.moj.go.jp/content/001320846.pdf"
+        },
+        {
+          "name": "スウェーデン性犯罪関連条文和訳（仮訳）（令和元年12月時点）",
+          "url": "https://www.moj.go.jp/content/001320845.pdf"
         }
       ]
     },
@@ -447404,6 +448083,59 @@
       ]
     },
     {
+      "id": "moj-2988-20200303-013",
+      "councilId": "moj-2988",
+      "name": "性犯罪に関する施策検討に向けた実態調査ワーキンググループ 第13回",
+      "date": "2020/03/03",
+      "officialUrl": "https://www.moj.go.jp/hisho/saihanboushi/hisho04_00030.html",
+      "materials": [
+        {
+          "name": "第１３回　議事次第",
+          "url": "https://www.moj.go.jp/content/001316543.pdf"
+        },
+        {
+          "name": "視察・ヒアリングの概要",
+          "url": "https://www.moj.go.jp/content/001317715.pdf"
+        },
+        {
+          "name": "配布資料１",
+          "url": "https://www.moj.go.jp/content/001317716.pdf"
+        },
+        {
+          "name": "配布資料２",
+          "url": "https://www.moj.go.jp/content/001317717.pdf"
+        },
+        {
+          "name": "配布資料３",
+          "url": "https://www.moj.go.jp/content/001317718.pdf"
+        },
+        {
+          "name": "視察・ヒアリングの概要",
+          "url": "https://www.moj.go.jp/content/001317719.pdf"
+        },
+        {
+          "name": "性暴力被害者支援センター・ふくおか視察・ヒアリング 配付資料",
+          "url": "https://www.moj.go.jp/content/001317721.pdf"
+        },
+        {
+          "name": "視察・ヒアリングの概要",
+          "url": "https://www.moj.go.jp/content/001318258.pdf"
+        },
+        {
+          "name": "性暴力救援センター・日赤なごやなごみ視察・ヒアリング 配付資料",
+          "url": "https://www.moj.go.jp/content/001318259.pdf"
+        },
+        {
+          "name": "ヒアリングの概要",
+          "url": "https://www.moj.go.jp/content/001318260.pdf"
+        },
+        {
+          "name": "性犯罪に関する施策検討に向けた実態調査ワーキンググループ取りまとめ骨子（案）",
+          "url": "https://www.moj.go.jp/content/001316534.pdf"
+        }
+      ]
+    },
+    {
       "id": "smea-1310-20200303-015",
       "councilId": "smea-1310",
       "name": "令和1年度 第15回 共済小委員会",
@@ -447849,6 +448581,35 @@
           "name": "議事録",
           "url": "https://www.fsc.go.jp/fsciis/attachedFile/download?retrievalId=kai20200225fsc&fileId=400",
           "type": "HTML"
+        }
+      ]
+    },
+    {
+      "id": "moj-2978-20200225-059",
+      "councilId": "moj-2978",
+      "name": "法務省政策評価有識者会議 第59回",
+      "date": "2020/02/25",
+      "officialUrl": "https://www.moj.go.jp/hisho/seisakuhyouka/hisho05_00002.html",
+      "materials": [
+        {
+          "name": "資料１：令和２年度法務省事後評価の実施に関する計画（案）.pdf",
+          "url": "https://www.moj.go.jp/content/001315052.pdf"
+        },
+        {
+          "name": "資料２：法務省政策評価に関する基本計画",
+          "url": "https://www.moj.go.jp/content/001315006.pdf"
+        },
+        {
+          "name": "説明資料：京都コングレスの開催について",
+          "url": "https://www.moj.go.jp/content/001315007.pdf"
+        },
+        {
+          "name": "第59回 政策評価有識者会議 議事録",
+          "url": "https://www.moj.go.jp/content/001318228.pdf"
+        },
+        {
+          "name": "第59回 政策評価有識者会議 議事要旨",
+          "url": "https://www.moj.go.jp/content/001318229.pdf"
         }
       ]
     },
@@ -453238,6 +453999,39 @@
       ]
     },
     {
+      "id": "moj-2988-20191226-012",
+      "councilId": "moj-2988",
+      "name": "性犯罪に関する施策検討に向けた実態調査ワーキンググループ 第12回",
+      "date": "2019/12/26",
+      "officialUrl": "https://www.moj.go.jp/hisho/saihanboushi/hisho04_00029.html",
+      "materials": [
+        {
+          "name": "議事録",
+          "url": "https://www.moj.go.jp/content/001318101.pdf"
+        },
+        {
+          "name": "第12回次第",
+          "url": "https://www.moj.go.jp/content/001312548.pdf"
+        },
+        {
+          "name": "配布資料１",
+          "url": "https://www.moj.go.jp/content/001318102.pdf"
+        },
+        {
+          "name": "配布資料２",
+          "url": "https://www.moj.go.jp/content/001318103.pdf"
+        },
+        {
+          "name": "配布資料３－１",
+          "url": "https://www.moj.go.jp/content/001318104.pdf"
+        },
+        {
+          "name": "配布資料３－２",
+          "url": "https://www.moj.go.jp/content/001318105.pdf"
+        }
+      ]
+    },
+    {
       "id": "fdma-awa_shouka_tenken-20191225-002",
       "councilId": "fdma-awa_shouka_tenken",
       "name": "第2回 全出力50kWを超える電気自動車用急速充電設備の安全対策に関する検討部会",
@@ -457474,6 +458268,35 @@
       ]
     },
     {
+      "id": "moj-2988-20191127-011",
+      "councilId": "moj-2988",
+      "name": "性犯罪に関する施策検討に向けた実態調査ワーキンググループ 第11回",
+      "date": "2019/11/27",
+      "officialUrl": "https://www.moj.go.jp/hisho/saihanboushi/hisho04_00026.html",
+      "materials": [
+        {
+          "name": "議事録",
+          "url": "https://www.moj.go.jp/content/001314731.pdf"
+        },
+        {
+          "name": "第11回次第",
+          "url": "https://www.moj.go.jp/content/001310008.pdf"
+        },
+        {
+          "name": "配布資料１",
+          "url": "https://www.moj.go.jp/content/001314732.pdf"
+        },
+        {
+          "name": "配布資料２",
+          "url": "https://www.moj.go.jp/content/001314733.pdf"
+        },
+        {
+          "name": "配布資料３",
+          "url": "https://www.moj.go.jp/content/001314736.pdf"
+        }
+      ]
+    },
+    {
       "id": "moj-housei_shonen_keiji-20191127-020",
       "councilId": "moj-housei_shonen_keiji",
       "name": "少年法・刑事法(少年年齢・犯罪者処遇関係)部会 第20回会議",
@@ -460457,6 +461280,35 @@
         {
           "name": "議事録",
           "url": "https://www.mhlw.go.jp/stf/shingi2/0000204770_00023.html"
+        }
+      ]
+    },
+    {
+      "id": "moj-2988-20191028-010",
+      "councilId": "moj-2988",
+      "name": "性犯罪に関する施策検討に向けた実態調査ワーキンググループ 第10回",
+      "date": "2019/10/28",
+      "officialUrl": "https://www.moj.go.jp/hisho/saihanboushi/hisho04_00002.html",
+      "materials": [
+        {
+          "name": "議事録",
+          "url": "https://www.moj.go.jp/content/001316344.pdf"
+        },
+        {
+          "name": "第10回次第",
+          "url": "https://www.moj.go.jp/content/001308644.pdf"
+        },
+        {
+          "name": "配付資料１",
+          "url": "https://www.moj.go.jp/content/001316275.pdf"
+        },
+        {
+          "name": "配付資料２",
+          "url": "https://www.moj.go.jp/content/001316276.pdf"
+        },
+        {
+          "name": "配付資料３",
+          "url": "https://www.moj.go.jp/content/001316277.pdf"
         }
       ]
     },
@@ -464889,6 +465741,87 @@
       ]
     },
     {
+      "id": "moj-2988-20190924-009",
+      "councilId": "moj-2988",
+      "name": "性犯罪に関する施策検討に向けた実態調査ワーキンググループ 第9回",
+      "date": "2019/09/24",
+      "officialUrl": "https://www.moj.go.jp/hisho/saihanboushi/hisho04_00023.html",
+      "materials": [
+        {
+          "name": "議事録",
+          "url": "https://www.moj.go.jp/content/001310756.pdf"
+        },
+        {
+          "name": "第９回次第",
+          "url": "https://www.moj.go.jp/content/001309453.pdf"
+        },
+        {
+          "name": "資料１　障がい児者に対する性犯罪の実態",
+          "url": "https://www.moj.go.jp/content/001310428.pdf"
+        },
+        {
+          "name": "資料２　身体障害者障害程度等級表（身体障害者福祉法施行規則別表第５号）",
+          "url": "https://www.moj.go.jp/content/001310429.pdf"
+        },
+        {
+          "name": "資料３　療育手帳制度の実施について（昭和４８年厚生省児童家庭局長通知）",
+          "url": "https://www.moj.go.jp/content/001310430.pdf"
+        },
+        {
+          "name": "資料４　療育手帳の区分について（昭和４８年厚生事務次官通知）（抜粋）等",
+          "url": "https://www.moj.go.jp/content/001310431.pdf"
+        },
+        {
+          "name": "資料５　精神障害者保健福祉手帳の障害等級の判定基準について（平成７年厚生省保健医療局長通知）",
+          "url": "https://www.moj.go.jp/content/001310432.pdf"
+        },
+        {
+          "name": "資料６－１　発達障害者支援法（平成１６年法律第１６７号）",
+          "url": "https://www.moj.go.jp/content/001310589.pdf"
+        },
+        {
+          "name": "資料６－２　「若年層における性的な暴力に係る相談・支援の在り方に関する調査研究事業」報告書（平成３０年内閣府男女共同参画局）【令和元年９月２４日時点】（抜粋）",
+          "url": "https://www.moj.go.jp/content/001310583.pdf"
+        },
+        {
+          "name": "資料７　海外における障害者への性暴力被害の状況（概要）",
+          "url": "https://www.moj.go.jp/content/001310437.pdf"
+        },
+        {
+          "name": "資料８　発達障害者への性暴力の実態に関する調査（２０１９年３月）",
+          "url": "https://www.moj.go.jp/content/001310438.pdf"
+        },
+        {
+          "name": "資料９　障がい児者への性暴力の刑法への反映について（案）",
+          "url": "https://www.moj.go.jp/content/001310439.pdf"
+        },
+        {
+          "name": "スライド１　障がい児者に対する性犯罪の実態",
+          "url": "https://www.moj.go.jp/content/001310441.pdf"
+        },
+        {
+          "name": "スライド２　海外における障害者への性暴力被害の状況（概要）",
+          "url": "https://www.moj.go.jp/content/001310442.pdf"
+        },
+        {
+          "name": "スライド３　障がい児者への性暴力事件の実態",
+          "url": "https://www.moj.go.jp/content/001310443.pdf"
+        },
+        {
+          "name": "参考資料　冊子「障がい児者への性暴力が認められる社会へ」",
+          "url": "https://www.moj.go.jp/content/001310586.pdf"
+        },
+        {
+          "name": "第５回犯罪被害実態（暗数）調査のうち「性的な被害」に係る調査結果（概要）",
+          "url": "https://www.moj.go.jp/content/001310511.pdf"
+        },
+        {
+          "name": "刑法改正後の規定の施行状況についての調査結果（令和元年７月末時点）",
+          "url": "https://www.moj.go.jp/content/001314450.pdf"
+        }
+      ]
+    },
+    {
       "id": "aca-bunkazai_bunkakai-20190920-206",
       "councilId": "aca-bunkazai_bunkakai",
       "name": "令和元年 第206回 文化審議会 文化財分科会",
@@ -465127,6 +466060,19 @@
         {
           "name": "議事概要",
           "url": "https://www.soumu.go.jp/main_content/000649539.pdf"
+        }
+      ]
+    },
+    {
+      "id": "moj-2978-20190919-058",
+      "councilId": "moj-2978",
+      "name": "法務省政策評価有識者会議 第58回",
+      "date": "2019/09/19",
+      "officialUrl": "https://www.moj.go.jp/content/001308831.pdf",
+      "materials": [
+        {
+          "name": "第58回 政策評価有識者会議 議事要旨",
+          "url": "https://www.moj.go.jp/content/001308831.pdf"
         }
       ]
     },
@@ -472384,6 +473330,19 @@
       ]
     },
     {
+      "id": "moj-2978-20190802-057",
+      "councilId": "moj-2978",
+      "name": "法務省政策評価有識者会議 第57回",
+      "date": "2019/08/02",
+      "officialUrl": "https://www.moj.go.jp/content/001303982.pdf",
+      "materials": [
+        {
+          "name": "第57回 政策評価有識者会議 議事要旨",
+          "url": "https://www.moj.go.jp/content/001303982.pdf"
+        }
+      ]
+    },
+    {
       "id": "fsc-hisiryou-20190801-147",
       "councilId": "fsc-hisiryou",
       "name": "第147回肥料・飼料等専門調査会",
@@ -473753,6 +474712,27 @@
       ]
     },
     {
+      "id": "moj-2988-20190712-008",
+      "councilId": "moj-2988",
+      "name": "性犯罪に関する施策検討に向けた実態調査ワーキンググループ 第8回",
+      "date": "2019/07/12",
+      "officialUrl": "https://www.moj.go.jp/hisho/saihanboushi/hisho04_00020.html",
+      "materials": [
+        {
+          "name": "議事録",
+          "url": "https://www.moj.go.jp/content/001305834.pdf"
+        },
+        {
+          "name": "第８回次第",
+          "url": "https://www.moj.go.jp/content/001300366.pdf"
+        },
+        {
+          "name": "性犯罪に関する施策検討に向けた実態調査ワーキンググループ 第8回 配布資料",
+          "url": "https://www.moj.go.jp/content/001305835.pdf"
+        }
+      ]
+    },
+    {
       "id": "jfa-597-20190711-002",
       "councilId": "jfa-597",
       "name": "第2回 国立研究開発法人 水産研究・教育機構が実施するさけ・ますふ化放流事業のあり方に関する関係者による検討会",
@@ -474010,6 +474990,43 @@
         {
           "name": "空間伝送型ワイヤレス電力伝送システム作業班（第4回）議事要旨",
           "url": "https://www.soumu.go.jp/main_content/000694327.pdf"
+        }
+      ]
+    },
+    {
+      "id": "moj-2978-20190709-056",
+      "councilId": "moj-2978",
+      "name": "法務省政策評価有識者会議 第56回",
+      "date": "2019/07/09",
+      "officialUrl": "https://www.moj.go.jp/hisho/seisakuhyouka/hisho05_00057.html",
+      "materials": [
+        {
+          "name": "資料１：平成３０年度法務省事後評価実施結果報告書（案）",
+          "url": "https://www.moj.go.jp/content/001298982.pdf"
+        },
+        {
+          "name": "資料２：規制の事前評価書（案）",
+          "url": "https://www.moj.go.jp/content/001298985.pdf"
+        },
+        {
+          "name": "資料３：法務省政策評価に関する基本計画",
+          "url": "https://www.moj.go.jp/content/001298984.pdf"
+        },
+        {
+          "name": "資料４：平成３０年度法務省事後評価の実施に関する計画",
+          "url": "https://www.moj.go.jp/content/001298986.pdf"
+        },
+        {
+          "name": "説明資料：出入国在留管理庁の設置について等",
+          "url": "https://www.moj.go.jp/content/001298983.pdf"
+        },
+        {
+          "name": "第56回 政策評価有識者会議 議事録",
+          "url": "https://www.moj.go.jp/content/001303935.pdf"
+        },
+        {
+          "name": "第56回 政策評価有識者会議 議事要旨",
+          "url": "https://www.moj.go.jp/content/001303936.pdf"
         }
       ]
     },
@@ -478837,6 +479854,31 @@
         {
           "name": "議事録",
           "url": "https://www.soumu.go.jp/main_content/000635833.pdf"
+        }
+      ]
+    },
+    {
+      "id": "moj-2988-20190524-007",
+      "councilId": "moj-2988",
+      "name": "性犯罪に関する施策検討に向けた実態調査ワーキンググループ 第7回",
+      "date": "2019/05/24",
+      "officialUrl": "https://www.moj.go.jp/hisho/saihanboushi/hisho04_00019.html",
+      "materials": [
+        {
+          "name": "議事録",
+          "url": "https://www.moj.go.jp/content/001300193.pdf"
+        },
+        {
+          "name": "第７回次第",
+          "url": "https://www.moj.go.jp/content/001299321.pdf"
+        },
+        {
+          "name": "配布資料１",
+          "url": "https://www.moj.go.jp/content/001299302.pdf"
+        },
+        {
+          "name": "配布資料２",
+          "url": "https://www.moj.go.jp/content/001299303.pdf"
         }
       ]
     },
@@ -485295,6 +486337,87 @@
       ]
     },
     {
+      "id": "moj-2988-20190311-006",
+      "councilId": "moj-2988",
+      "name": "性犯罪に関する施策検討に向けた実態調査ワーキンググループ 第6回",
+      "date": "2019/03/11",
+      "officialUrl": "https://www.moj.go.jp/hisho/saihanboushi/hisho04_00015.html",
+      "materials": [
+        {
+          "name": "第６回　議事要旨",
+          "url": "https://www.moj.go.jp/content/001288487.pdf"
+        },
+        {
+          "name": "別添資料　「性犯罪に係る事案の実態に即した対処を行うための施策の在り方」を検討するための調査研究について",
+          "url": "https://www.moj.go.jp/content/001288488.pdf"
+        },
+        {
+          "name": "議事録",
+          "url": "https://www.moj.go.jp/content/001292596.pdf"
+        },
+        {
+          "name": "第６回　議事次第",
+          "url": "https://www.moj.go.jp/content/001288489.pdf"
+        },
+        {
+          "name": "資料１　ヒアリング資料",
+          "url": "https://www.moj.go.jp/content/001292597.pdf"
+        },
+        {
+          "name": "資料２ 　平成３０年度法務研究「性犯罪被害者の心理に関する心理学的・精神医学的知見と捜査・公判におけるその活用について」（概要）",
+          "url": "https://www.moj.go.jp/content/001288463.pdf"
+        },
+        {
+          "name": "資料３－１　第５回犯罪被害実態（暗数）調査の概要及び調査事項のうち性的な被害に係る部分の主な変更点について（概要）",
+          "url": "https://www.moj.go.jp/content/001288476.pdf"
+        },
+        {
+          "name": "資料３－２　第５回犯罪被害実態調査票",
+          "url": "https://www.moj.go.jp/content/001288479.pdf"
+        },
+        {
+          "name": "資料３－３　自記式調査票",
+          "url": "https://www.moj.go.jp/content/001288480.pdf"
+        },
+        {
+          "name": "資料３－４　オンライン（Ｗｅｂ）回答の方法について",
+          "url": "https://www.moj.go.jp/content/001288486.pdf"
+        },
+        {
+          "name": "刑法改正後の規定の施行状況についての調査結果",
+          "url": "https://www.moj.go.jp/content/001290624.pdf"
+        },
+        {
+          "name": "ミシガン州性犯罪関連条文和訳（仮訳）（平成３１年３月時点）",
+          "url": "https://www.moj.go.jp/content/001291680.pdf"
+        },
+        {
+          "name": "ニューヨーク州性犯罪関連条文和訳（仮訳）（平成３１年３月時点）",
+          "url": "https://www.moj.go.jp/content/001291678.pdf"
+        },
+        {
+          "name": "カリフォルニア州性犯罪関連条文和訳（仮訳）（平成３１年３月時点）",
+          "url": "https://www.moj.go.jp/content/001291676.pdf"
+        },
+        {
+          "name": "イギリス性犯罪関連条文和訳（仮訳）（平成３１年３月時点",
+          "url": "https://www.moj.go.jp/content/001291675.pdf"
+        },
+        {
+          "name": "フランス性犯罪関連条文和訳（仮訳）（平成３１年３月時点）",
+          "url": "https://www.moj.go.jp/content/001291679.pdf"
+        },
+        {
+          "name": "ドイツ性犯罪関連条文和訳（仮訳）（平成３１年３月時点）",
+          "url": "https://www.moj.go.jp/content/001291677.pdf"
+        },
+        {
+          "name": "韓国性犯罪関連条文和訳（仮訳）（平成３１年３月時点）",
+          "url": "https://www.moj.go.jp/content/001291681.pdf"
+        }
+      ]
+    },
+    {
       "id": "smea-1310-20190311-013",
       "councilId": "smea-1310",
       "name": "平成30年度 第13回 共済小委員会",
@@ -486728,6 +487851,43 @@
         {
           "name": "議事要旨",
           "url": "https://www.soumu.go.jp/main_content/000607746.pdf"
+        }
+      ]
+    },
+    {
+      "id": "moj-2978-20190227-055",
+      "councilId": "moj-2978",
+      "name": "法務省政策評価有識者会議 第55回",
+      "date": "2019/02/27",
+      "officialUrl": "https://www.moj.go.jp/hisho/seisakuhyouka/hisho05_00054.html",
+      "materials": [
+        {
+          "name": "資料１－１：法務省政策評価に関する基本計画（案）",
+          "url": "https://www.moj.go.jp/content/001285381.pdf"
+        },
+        {
+          "name": "資料１－２：法務省政策評価に関する基本計画（案）新旧対照表",
+          "url": "https://www.moj.go.jp/content/001285384.pdf"
+        },
+        {
+          "name": "資料２：平成３１年度法務省事後評価の実施に関する計画（案）",
+          "url": "https://www.moj.go.jp/content/001285383.pdf"
+        },
+        {
+          "name": "説明資料：民法及び家事事件手続法の一部を改正する法律・法務局における遺言書の保管等に関する法律",
+          "url": "https://www.moj.go.jp/content/001285385.pdf"
+        },
+        {
+          "name": "説明資料：パンフレット",
+          "url": "https://www.moj.go.jp/content/001285382.pdf"
+        },
+        {
+          "name": "第55回 政策評価有識者会議 議事録",
+          "url": "https://www.moj.go.jp/content/001290719.pdf"
+        },
+        {
+          "name": "第55回 政策評価有識者会議 議事要旨",
+          "url": "https://www.moj.go.jp/content/001290720.pdf"
         }
       ]
     },
@@ -490960,6 +492120,27 @@
       ]
     },
     {
+      "id": "moj-2988-20190115-005",
+      "councilId": "moj-2988",
+      "name": "性犯罪に関する施策検討に向けた実態調査ワーキンググループ 第5回",
+      "date": "2019/01/15",
+      "officialUrl": "https://www.moj.go.jp/hisho/saihanboushi/hisho04_00011.html",
+      "materials": [
+        {
+          "name": "議事録",
+          "url": "https://www.moj.go.jp/content/001285908.pdf"
+        },
+        {
+          "name": "第5回次第",
+          "url": "https://www.moj.go.jp/content/001279721.pdf"
+        },
+        {
+          "name": "性犯罪に関する施策検討に向けた実態調査ワーキンググループ 第5回 配布資料",
+          "url": "https://www.moj.go.jp/content/001285909.pdf"
+        }
+      ]
+    },
+    {
       "id": "cao-245-20190111-056",
       "councilId": "cao-245",
       "name": "第56回 男女共同参画会議",
@@ -494933,6 +496114,23 @@
       ]
     },
     {
+      "id": "moj-2988-20181126-004",
+      "councilId": "moj-2988",
+      "name": "性犯罪に関する施策検討に向けた実態調査ワーキンググループ 第4回",
+      "date": "2018/11/26",
+      "officialUrl": "https://www.moj.go.jp/hisho/saihanboushi/hisho04_00008.html",
+      "materials": [
+        {
+          "name": "議事録",
+          "url": "https://www.moj.go.jp/content/001278612.pdf"
+        },
+        {
+          "name": "第４回　議事次第",
+          "url": "https://www.moj.go.jp/content/001275738.pdf"
+        }
+      ]
+    },
+    {
       "id": "smea-1310-20181126-012",
       "councilId": "smea-1310",
       "name": "平成30年度 第12回 共済小委員会",
@@ -497512,6 +498710,19 @@
         {
           "name": "議事録",
           "url": "https://www.soumu.go.jp/main_content/000614762.pdf"
+        }
+      ]
+    },
+    {
+      "id": "moj-2978-20181025-054",
+      "councilId": "moj-2978",
+      "name": "法務省政策評価有識者会議 第54回",
+      "date": "2018/10/25",
+      "officialUrl": "https://www.moj.go.jp/content/001273484.pdf",
+      "materials": [
+        {
+          "name": "第54回 政策評価有識者会議 議事要旨",
+          "url": "https://www.moj.go.jp/content/001273484.pdf"
         }
       ]
     },
@@ -500738,6 +501949,27 @@
       ]
     },
     {
+      "id": "moj-2988-20180912-003",
+      "councilId": "moj-2988",
+      "name": "性犯罪に関する施策検討に向けた実態調査ワーキンググループ 第3回",
+      "date": "2018/09/12",
+      "officialUrl": "https://www.moj.go.jp/hisho/saihanboushi/hisho04_00005.html",
+      "materials": [
+        {
+          "name": "議事録",
+          "url": "https://www.moj.go.jp/content/001272871.pdf"
+        },
+        {
+          "name": "第３回次第",
+          "url": "https://www.moj.go.jp/content/001270877.pdf"
+        },
+        {
+          "name": "性犯罪に関する施策検討に向けた実態調査ワーキンググループ 第3回 配布資料",
+          "url": "https://www.moj.go.jp/content/001272713.pdf"
+        }
+      ]
+    },
+    {
       "id": "fsa-yuushi_kansa_kantoku-20180910-002",
       "councilId": "fsa-yuushi_kansa_kantoku",
       "name": "「融資に関する検査・監督実務についての研究会」(第2回)",
@@ -502286,6 +503518,19 @@
       ]
     },
     {
+      "id": "moj-2978-20180802-053",
+      "councilId": "moj-2978",
+      "name": "法務省政策評価有識者会議 第53回",
+      "date": "2018/08/02",
+      "officialUrl": "https://www.moj.go.jp/content/001267803.pdf",
+      "materials": [
+        {
+          "name": "第53回 政策評価有識者会議 議事要旨",
+          "url": "https://www.moj.go.jp/content/001267803.pdf"
+        }
+      ]
+    },
+    {
       "id": "mhlw-817-20180801-010",
       "councilId": "mhlw-817",
       "name": "第10回 予防接種・ワクチン分科会 予防接種基本方針部会 ワクチン評価に関する小委員会",
@@ -502587,6 +503832,23 @@
           "name": "議事録",
           "url": "https://www.env.go.jp/council/02policy/post_72.html",
           "type": "HTML"
+        }
+      ]
+    },
+    {
+      "id": "moj-2988-20180731-002",
+      "councilId": "moj-2988",
+      "name": "性犯罪に関する施策検討に向けた実態調査ワーキンググループ 第2回",
+      "date": "2018/07/31",
+      "officialUrl": "https://www.moj.go.jp/hisho/saihanboushi/hisho04_00004.html",
+      "materials": [
+        {
+          "name": "議事録",
+          "url": "https://www.moj.go.jp/content/001270623.pdf"
+        },
+        {
+          "name": "第２回　議事次第",
+          "url": "https://www.moj.go.jp/content/001270439.pdf"
         }
       ]
     },
@@ -503707,6 +504969,39 @@
         {
           "name": "議事録",
           "url": "https://www.soumu.go.jp/main_content/000568042.pdf"
+        }
+      ]
+    },
+    {
+      "id": "moj-2978-20180710-052",
+      "councilId": "moj-2978",
+      "name": "法務省政策評価有識者会議 第52回",
+      "date": "2018/07/10",
+      "officialUrl": "https://www.moj.go.jp/hisho/seisakuhyouka/hisho05_00051.html",
+      "materials": [
+        {
+          "name": "資料１：平成２９年度法務省事後評価実施結果報告書（案）",
+          "url": "https://www.moj.go.jp/content/001262682.pdf"
+        },
+        {
+          "name": "資料２：法務省政策評価に関する基本計画",
+          "url": "https://www.moj.go.jp/content/001262683.pdf"
+        },
+        {
+          "name": "資料３：平成２９年度法務省事後評価の実施に関する計画",
+          "url": "https://www.moj.go.jp/content/001262685.pdf"
+        },
+        {
+          "name": "説明資料：大臣官房国際課の新設等",
+          "url": "https://www.moj.go.jp/content/001262686.pdf"
+        },
+        {
+          "name": "第52回 政策評価有識者会議 議事録",
+          "url": "https://www.moj.go.jp/content/001267874.pdf"
+        },
+        {
+          "name": "第52回 政策評価有識者会議 議事要旨",
+          "url": "https://www.moj.go.jp/content/001267832.pdf"
         }
       ]
     },
@@ -507942,6 +509237,27 @@
         {
           "name": "議事概要",
           "url": "https://www.soumu.go.jp/main_content/000558135.pdf"
+        }
+      ]
+    },
+    {
+      "id": "moj-2988-20180522-001",
+      "councilId": "moj-2988",
+      "name": "性犯罪に関する施策検討に向けた実態調査ワーキンググループ 第1回",
+      "date": "2018/05/22",
+      "officialUrl": "https://www.moj.go.jp/shingi1/hisho04_00060.html",
+      "materials": [
+        {
+          "name": "第１回　議事要旨",
+          "url": "https://www.moj.go.jp/content/001259317.pdf"
+        },
+        {
+          "name": "第１回　議事次第",
+          "url": "https://www.moj.go.jp/content/001259303.pdf"
+        },
+        {
+          "name": "性犯罪に関する施策検討に向けたワーキンググループの設置について",
+          "url": "https://www.moj.go.jp/content/001259304.pdf"
         }
       ]
     },
@@ -514352,6 +515668,35 @@
         {
           "name": "議事録(PDF形式:274KB)",
           "url": "https://www.meti.go.jp/shingikai/sankoshin/sangyo_gijutsu/chikyu_kankyo/pdf/h29_001_gijiroku.pdf"
+        }
+      ]
+    },
+    {
+      "id": "moj-2978-20180228-051",
+      "councilId": "moj-2978",
+      "name": "法務省政策評価有識者会議 第51回",
+      "date": "2018/02/28",
+      "officialUrl": "https://www.moj.go.jp/hisho/seisakuhyouka/hisho05_00050.html",
+      "materials": [
+        {
+          "name": "資料１：平成３０年度法務省事後評価の実施に関する計画（案）",
+          "url": "https://www.moj.go.jp/content/001251631.pdf"
+        },
+        {
+          "name": "資料２：法務省政策評価に関する基本計画",
+          "url": "https://www.moj.go.jp/content/001251634.pdf"
+        },
+        {
+          "name": "説明資料：再犯防止推進計画の概要",
+          "url": "https://www.moj.go.jp/content/001251633.pdf"
+        },
+        {
+          "name": "第51回 政策評価有識者会議 議事録",
+          "url": "https://www.moj.go.jp/content/001254838.pdf"
+        },
+        {
+          "name": "第51回 政策評価有識者会議 議事要旨",
+          "url": "https://www.moj.go.jp/content/001254839.pdf"
         }
       ]
     },
@@ -526863,6 +528208,19 @@
       ]
     },
     {
+      "id": "moj-2978-20170807-050",
+      "councilId": "moj-2978",
+      "name": "法務省政策評価有識者会議 第50回",
+      "date": "2017/08/07",
+      "officialUrl": "https://www.moj.go.jp/content/001234484.pdf",
+      "materials": [
+        {
+          "name": "第50回 政策評価有識者会議 議事要旨",
+          "url": "https://www.moj.go.jp/content/001234484.pdf"
+        }
+      ]
+    },
+    {
       "id": "ra-fukushima_fukko_saisei-20170806-015",
       "councilId": "ra-fukushima_fukko_saisei",
       "name": "第15回 原子力災害からの福島復興再生協議会",
@@ -529129,6 +530487,43 @@
         {
           "name": "議事録(PDF形式:424KB)",
           "url": "https://www.meti.go.jp/shingikai/sankoshin/tsusho_boeki/pdf/004_gijiroku.pdf"
+        }
+      ]
+    },
+    {
+      "id": "moj-2978-20170707-049",
+      "councilId": "moj-2978",
+      "name": "法務省政策評価有識者会議 第49回",
+      "date": "2017/07/07",
+      "officialUrl": "https://www.moj.go.jp/hisho/seisakuhyouka/hisho05_00048.html",
+      "materials": [
+        {
+          "name": "資料１：平成２８年度法務省事後評価実施結果報告書（案）",
+          "url": "https://www.moj.go.jp/content/001228122.pdf"
+        },
+        {
+          "name": "資料２：法務省政策評価に関する基本計画",
+          "url": "https://www.moj.go.jp/content/001228123.pdf"
+        },
+        {
+          "name": "資料３：平成２８年度法務省事後評価の実施に関する計画",
+          "url": "https://www.moj.go.jp/content/001228124.pdf"
+        },
+        {
+          "name": "説明資料１：民法（債権関係）の見直しについて【民事局】",
+          "url": "https://www.moj.go.jp/content/001228125.pdf"
+        },
+        {
+          "name": "説明資料２：刑法の一部を改正する法律の概要について【刑事局】",
+          "url": "https://www.moj.go.jp/content/001228126.pdf"
+        },
+        {
+          "name": "第49回 政策評価有識者会議 議事録",
+          "url": "https://www.moj.go.jp/content/001234118.pdf"
+        },
+        {
+          "name": "第49回 政策評価有識者会議 議事要旨",
+          "url": "https://www.moj.go.jp/content/001234119.pdf"
         }
       ]
     },
@@ -540929,6 +542324,47 @@
         {
           "name": "議事概要",
           "url": "https://www.fsc.go.jp/fsciis/attachedFile/download?retrievalId=kai20170220ks1&fileId=510"
+        }
+      ]
+    },
+    {
+      "id": "moj-2978-20170220-048",
+      "councilId": "moj-2978",
+      "name": "法務省政策評価有識者会議 第48回",
+      "date": "2017/02/20",
+      "officialUrl": "https://www.moj.go.jp/hisho/seisakuhyouka/hisho05_00045.html",
+      "materials": [
+        {
+          "name": "平成２９年度法務省事後評価の実施に関する計画（案）",
+          "url": "https://www.moj.go.jp/content/001216036.pdf"
+        },
+        {
+          "name": "法務省政策評価に関する計画",
+          "url": "https://www.moj.go.jp/content/001216033.pdf"
+        },
+        {
+          "name": "国からの指定等に基づき法人が実施する事務・事業に関する評価実施結果報告書（案）",
+          "url": "https://www.moj.go.jp/content/001216034.pdf"
+        },
+        {
+          "name": "国からの指定等に基づき特定の事務・事業を実施する法人に係る規制の新設審査及び国の関与等の透明化・合理化のための基準",
+          "url": "https://www.moj.go.jp/content/001216035.pdf"
+        },
+        {
+          "name": "概要",
+          "url": "https://www.moj.go.jp/content/001216037.pdf"
+        },
+        {
+          "name": "条文",
+          "url": "https://www.moj.go.jp/content/001216038.pdf"
+        },
+        {
+          "name": "第48回 政策評価有識者会議 議事録",
+          "url": "https://www.moj.go.jp/content/001221272.pdf"
+        },
+        {
+          "name": "第48回 政策評価有識者会議 議事要旨",
+          "url": "https://www.moj.go.jp/content/001221276.pdf"
         }
       ]
     },
@@ -553933,6 +555369,19 @@
       ]
     },
     {
+      "id": "moj-2978-20160803-047",
+      "councilId": "moj-2978",
+      "name": "法務省政策評価有識者会議 第47回",
+      "date": "2016/08/03",
+      "officialUrl": "https://www.moj.go.jp/content/001202052.pdf",
+      "materials": [
+        {
+          "name": "第47回 政策評価有識者会議 議事要旨",
+          "url": "https://www.moj.go.jp/content/001202052.pdf"
+        }
+      ]
+    },
+    {
       "id": "fsa-kinyu_kinou_kyouka-20160802-020",
       "councilId": "fsa-kinyu_kinou_kyouka",
       "name": "第20回 金融機能強化審査会",
@@ -555766,6 +557215,31 @@
       ]
     },
     {
+      "id": "moj-2992-20160705-012",
+      "councilId": "moj-2992",
+      "name": "外国法事務弁護士制度に係る検討会 第12回",
+      "date": "2016/07/05",
+      "officialUrl": "https://www.moj.go.jp/housei/gaiben/housei07_00033.html",
+      "materials": [
+        {
+          "name": "議事次第",
+          "url": "https://www.moj.go.jp/content/001187336.pdf"
+        },
+        {
+          "name": "議事録",
+          "url": "https://www.moj.go.jp/content/001200751.pdf"
+        },
+        {
+          "name": "資料　外国法事務弁護士制度に係る検討会報告書（案）",
+          "url": "https://www.moj.go.jp/content/001187337.pdf"
+        },
+        {
+          "name": "外国弁護士制度研究会報告書",
+          "url": "https://www.moj.go.jp/content/001185573.pdf"
+        }
+      ]
+    },
+    {
       "id": "nra-1211-20160705-002",
       "councilId": "nra-1211",
       "name": "会議 第2回(書面審査)国立研究開発法人審議会 ID: NRA006000024",
@@ -555783,6 +557257,47 @@
         {
           "name": "議事録",
           "url": "https://www.bunka.go.jp/seisaku/bunkashingikai/kokugo/nihongo/nihongo_76/pdf/gijiroku.pdf"
+        }
+      ]
+    },
+    {
+      "id": "moj-2978-20160701-046",
+      "councilId": "moj-2978",
+      "name": "法務省政策評価有識者会議 第46回",
+      "date": "2016/07/01",
+      "officialUrl": "https://www.moj.go.jp/hisho/seisakuhyouka/hisho05_00043.html",
+      "materials": [
+        {
+          "name": "平成２７年度法務省事後評価実施結果報告書（案）",
+          "url": "https://www.moj.go.jp/content/001186246.pdf"
+        },
+        {
+          "name": "法務省政策評価に関する基本計画",
+          "url": "https://www.moj.go.jp/content/001186247.pdf"
+        },
+        {
+          "name": "平成２７年度法務省事後評価の実施に関する計画",
+          "url": "https://www.moj.go.jp/content/001186248.pdf"
+        },
+        {
+          "name": "政策評価と行政事業レビューの連携について【秘書課】",
+          "url": "https://www.moj.go.jp/content/001186241.pdf"
+        },
+        {
+          "name": "法務省における防災対策等について【秘書課】",
+          "url": "https://www.moj.go.jp/content/001186242.pdf"
+        },
+        {
+          "name": "刑の一部執行猶予制度について【保護局】",
+          "url": "https://www.moj.go.jp/content/001186243.pdf"
+        },
+        {
+          "name": "第46回 政策評価有識者会議 議事録",
+          "url": "https://www.moj.go.jp/content/001201579.pdf"
+        },
+        {
+          "name": "第46回 政策評価有識者会議 議事要旨",
+          "url": "https://www.moj.go.jp/content/001201580.pdf"
         }
       ]
     },
@@ -557476,6 +558991,31 @@
         {
           "name": "議事録",
           "url": "https://www8.cao.go.jp/space/comittee/27-anpo/anpo-dai14/gijiroku.pdf"
+        }
+      ]
+    },
+    {
+      "id": "moj-2992-20160610-011",
+      "councilId": "moj-2992",
+      "name": "外国法事務弁護士制度に係る検討会 第11回",
+      "date": "2016/06/10",
+      "officialUrl": "https://www.moj.go.jp/housei/gaiben/housei07_00031.html",
+      "materials": [
+        {
+          "name": "議事次第",
+          "url": "https://www.moj.go.jp/content/001185570.pdf"
+        },
+        {
+          "name": "議事録",
+          "url": "https://www.moj.go.jp/content/001187397.pdf"
+        },
+        {
+          "name": "資料　外国法事務弁護士制度に係る検討会取りまとめ骨子（案）【ＰＤＦ】",
+          "url": "https://www.moj.go.jp/content/001185572.pdf"
+        },
+        {
+          "name": "外国弁護士制度研究会報告書",
+          "url": "https://www.moj.go.jp/content/001185573.pdf"
         }
       ]
     },
@@ -562049,6 +563589,43 @@
       ]
     },
     {
+      "id": "moj-2992-20160405-010",
+      "councilId": "moj-2992",
+      "name": "外国法事務弁護士制度に係る検討会 第10回",
+      "date": "2016/04/05",
+      "officialUrl": "https://www.moj.go.jp/housei/gaiben/housei07_00030.html",
+      "materials": [
+        {
+          "name": "議事次第",
+          "url": "https://www.moj.go.jp/content/001181272.pdf"
+        },
+        {
+          "name": "議事録",
+          "url": "https://www.moj.go.jp/content/001182464.pdf"
+        },
+        {
+          "name": "資料１　要望書（日本弁理士会）",
+          "url": "https://www.moj.go.jp/content/001181281.pdf"
+        },
+        {
+          "name": "資料２　混合法人（Ｂ法人）に関する企業内弁理士の立場からの意見（企業内弁理士の会）",
+          "url": "https://www.moj.go.jp/content/001181282.pdf"
+        },
+        {
+          "name": "資料３－１　Ｂ法人についての意見（日本知的財産協会提出資料）",
+          "url": "https://www.moj.go.jp/content/001181283.pdf"
+        },
+        {
+          "name": "資料３－２　一般社団法人「日本知的財産協会」資料",
+          "url": "https://www.moj.go.jp/content/001181284.pdf"
+        },
+        {
+          "name": "外国弁護士制度研究会報告書",
+          "url": "https://www.moj.go.jp/content/000001726.pdf"
+        }
+      ]
+    },
+    {
       "id": "aca-bunka_shingikai_sokai-20160404-067",
       "councilId": "aca-bunka_shingikai_sokai",
       "name": "第67回 文化審議会 総会",
@@ -565432,6 +567009,47 @@
       ]
     },
     {
+      "id": "moj-2978-20160229-045",
+      "councilId": "moj-2978",
+      "name": "法務省政策評価有識者会議 第45回",
+      "date": "2016/02/29",
+      "officialUrl": "https://www.moj.go.jp/hisho/seisakuhyouka/hisho05_00040.html",
+      "materials": [
+        {
+          "name": "平成２８年度法務省事後評価の実施に関する計画（案）",
+          "url": "https://www.moj.go.jp/content/001176094.pdf"
+        },
+        {
+          "name": "法務省政策評価に関する基本計画（平成２６年度から３０年度）",
+          "url": "https://www.moj.go.jp/content/001175346.pdf"
+        },
+        {
+          "name": "民事基本法制の整備について【民事局】",
+          "url": "https://www.moj.go.jp/content/001175342.pdf"
+        },
+        {
+          "name": "政策評価制度の改善方策について【秘書課】",
+          "url": "https://www.moj.go.jp/content/001175343.pdf"
+        },
+        {
+          "name": "再犯防止総合対策について【秘書課】",
+          "url": "https://www.moj.go.jp/content/001175344.pdf"
+        },
+        {
+          "name": "国際法務総合センター整備事業について【施設課】",
+          "url": "https://www.moj.go.jp/content/001175345.pdf"
+        },
+        {
+          "name": "第45回 政策評価有識者会議 議事録",
+          "url": "https://www.moj.go.jp/content/001181119.pdf"
+        },
+        {
+          "name": "第45回 政策評価有識者会議 議事要旨",
+          "url": "https://www.moj.go.jp/content/001181120.pdf"
+        }
+      ]
+    },
+    {
       "id": "fsc-idensi-20160226-146",
       "councilId": "fsc-idensi",
       "name": "第146回 遺伝子組換え食品等専門調査会(非公開)",
@@ -567348,6 +568966,31 @@
         {
           "name": "第36回 議事録",
           "url": "https://www.mhlw.go.jp/stf/shingi2/0000114700.html"
+        }
+      ]
+    },
+    {
+      "id": "moj-2992-20160202-009",
+      "councilId": "moj-2992",
+      "name": "外国法事務弁護士制度に係る検討会 第9回",
+      "date": "2016/02/02",
+      "officialUrl": "https://www.moj.go.jp/housei/gaiben/housei07_00026.html",
+      "materials": [
+        {
+          "name": "議事次第",
+          "url": "https://www.moj.go.jp/content/001173210.pdf"
+        },
+        {
+          "name": "議事録",
+          "url": "https://www.moj.go.jp/content/001179315.pdf"
+        },
+        {
+          "name": "資料２ 外国法事務弁護士制度に係る検討会取りまとめ骨子（案）",
+          "url": "https://www.moj.go.jp/content/001173211.pdf"
+        },
+        {
+          "name": "外国弁護士制度研究会報告書",
+          "url": "https://www.moj.go.jp/content/000001726.pdf"
         }
       ]
     },
@@ -569809,6 +571452,31 @@
       ]
     },
     {
+      "id": "moj-2992-20151215-008",
+      "councilId": "moj-2992",
+      "name": "外国法事務弁護士制度に係る検討会 第8回",
+      "date": "2015/12/15",
+      "officialUrl": "https://www.moj.go.jp/housei/gaiben/housei07_00025.html",
+      "materials": [
+        {
+          "name": "議事次第",
+          "url": "https://www.moj.go.jp/content/001167102.pdf"
+        },
+        {
+          "name": "議事録",
+          "url": "https://www.moj.go.jp/content/001174785.pdf"
+        },
+        {
+          "name": "資料 平成２１年外国弁護士制度研究会において創設すべきとされたＢ法人制度に関する論点整理",
+          "url": "https://www.moj.go.jp/content/001167103.pdf"
+        },
+        {
+          "name": "外国弁護士制度研究会報告書",
+          "url": "https://www.moj.go.jp/content/000001726.pdf"
+        }
+      ]
+    },
+    {
       "id": "rinya-1279-20151215-004",
       "councilId": "rinya-1279",
       "name": "第4回 国立研究開発法人審議会 林野部会",
@@ -571425,6 +573093,35 @@
         {
           "name": "第74回 水産政策審議会 資源管理分科会 配布資料",
           "url": "https://www.jfa.maff.go.jp/j/council/seisaku/kanri/pdf/bunkakai_74.html"
+        }
+      ]
+    },
+    {
+      "id": "moj-2992-20151126-007",
+      "councilId": "moj-2992",
+      "name": "外国法事務弁護士制度に係る検討会 第7回",
+      "date": "2015/11/26",
+      "officialUrl": "https://www.moj.go.jp/housei/gaiben/housei07_00022.html",
+      "materials": [
+        {
+          "name": "議事次第",
+          "url": "https://www.moj.go.jp/content/001165460.pdf"
+        },
+        {
+          "name": "議事録",
+          "url": "https://www.moj.go.jp/content/001168334.pdf"
+        },
+        {
+          "name": "資料１ 当事務所における「外国法事務弁護士による不当関与の禁止」等遵守のための取り組み（渥美坂井法律事務所・外国法共同事業提出資料）",
+          "url": "https://www.moj.go.jp/content/001165461.pdf"
+        },
+        {
+          "name": "資料２ 外国法事務弁護士の法人化に関する意見（日本弁理士会提出資料）",
+          "url": "https://www.moj.go.jp/content/001165462.pdf"
+        },
+        {
+          "name": "外国弁護士制度研究会報告書",
+          "url": "https://www.moj.go.jp/content/000001726.pdf"
         }
       ]
     },
@@ -575306,6 +577003,63 @@
       ]
     },
     {
+      "id": "moj-2992-20150918-006",
+      "councilId": "moj-2992",
+      "name": "外国法事務弁護士制度に係る検討会 第6回",
+      "date": "2015/09/18",
+      "officialUrl": "https://www.moj.go.jp/housei/gaiben/housei07_00021.html",
+      "materials": [
+        {
+          "name": "議事次第",
+          "url": "https://www.moj.go.jp/content/001159844.pdf"
+        },
+        {
+          "name": "議事録",
+          "url": "https://www.moj.go.jp/content/001162357.pdf"
+        },
+        {
+          "name": "資料１　外国弁護士制度研究会報告書（平成２１年１２月２４日）の概要（法務省提出資料）",
+          "url": "https://www.moj.go.jp/content/001159845.pdf"
+        },
+        {
+          "name": "資料２　社員又は使用人である弁護士に対する不当関与の禁止（法務省提出資料）",
+          "url": "https://www.moj.go.jp/content/001159846.pdf"
+        },
+        {
+          "name": "資料３　外国法事務弁護士の活動形態について（法務省提出資料）",
+          "url": "https://www.moj.go.jp/content/001159847.pdf"
+        },
+        {
+          "name": "資料４　弁護士法人の現状（日本弁護士連合会提出資料）",
+          "url": "https://www.moj.go.jp/content/001159848.pdf"
+        },
+        {
+          "name": "資料５　外国法共同事業について（日本弁護士連合会提出資料）",
+          "url": "https://www.moj.go.jp/content/001159849.pdf"
+        },
+        {
+          "name": "資料６　外国法共同事業による提携関係の状況（日本弁護士連合会提出資料）",
+          "url": "https://www.moj.go.jp/content/001159850.pdf"
+        },
+        {
+          "name": "資料７　欧州ビジネス協会法律サービス委員会ポジションペーパー（別府理佳子氏提出資料）",
+          "url": "https://www.moj.go.jp/content/001159851.pdf"
+        },
+        {
+          "name": "資料８　外弁協会ポジションペーパー（エリック・セドラック氏提出資料）",
+          "url": "https://www.moj.go.jp/content/001159853.pdf"
+        },
+        {
+          "name": "資料９　在日米国商工会議所法務サービス委員会意見書（エリック・セドラック氏提出資料）",
+          "url": "https://www.moj.go.jp/content/001159854.pdf"
+        },
+        {
+          "name": "外国弁護士制度研究会報告書",
+          "url": "https://www.moj.go.jp/content/000001726.pdf"
+        }
+      ]
+    },
+    {
       "id": "fsc-doubutu-20150917-184",
       "councilId": "fsc-doubutu",
       "name": "第184回 動物用医薬品専門調査会",
@@ -577220,6 +578974,19 @@
       ]
     },
     {
+      "id": "moj-2978-20150812-044",
+      "councilId": "moj-2978",
+      "name": "法務省政策評価有識者会議 第44回",
+      "date": "2015/08/12",
+      "officialUrl": "https://www.moj.go.jp/content/001156624.pdf",
+      "materials": [
+        {
+          "name": "第44回 政策評価有識者会議 議事要旨",
+          "url": "https://www.moj.go.jp/content/001156624.pdf"
+        }
+      ]
+    },
+    {
       "id": "rinya-1279-20150812-002",
       "councilId": "rinya-1279",
       "name": "第2回 国立研究開発法人審議会 林野部会",
@@ -578807,6 +580574,27 @@
       ]
     },
     {
+      "id": "moj-2992-20150722-005",
+      "councilId": "moj-2992",
+      "name": "外国法事務弁護士制度に係る検討会 第5回",
+      "date": "2015/07/22",
+      "officialUrl": "https://www.moj.go.jp/housei/gaiben/housei07_00019.html",
+      "materials": [
+        {
+          "name": "議事次第",
+          "url": "https://www.moj.go.jp/content/001153099.pdf"
+        },
+        {
+          "name": "議事録",
+          "url": "https://www.moj.go.jp/content/001157123.pdf"
+        },
+        {
+          "name": "資料　職務経験要件に関する論点整理と考え得る方向性",
+          "url": "https://www.moj.go.jp/content/001153101.pdf"
+        }
+      ]
+    },
+    {
       "id": "cas-kenkou_iryou_honbu-20150721-009",
       "councilId": "cas-kenkou_iryou_honbu",
       "name": "第9回 健康・医療戦略推進本部",
@@ -579358,6 +581146,59 @@
         {
           "name": "第6回議事録",
           "url": "https://www.soumu.go.jp/main_content/000391263.pdf"
+        }
+      ]
+    },
+    {
+      "id": "moj-2978-20150710-043",
+      "councilId": "moj-2978",
+      "name": "法務省政策評価有識者会議 第43回",
+      "date": "2015/07/10",
+      "officialUrl": "https://www.moj.go.jp/hisho/seisakuhyouka/hisho05_00036.html",
+      "materials": [
+        {
+          "name": "平成２６年度法務省事後評価実施結果報告書（案）",
+          "url": "https://www.moj.go.jp/content/001151492.pdf"
+        },
+        {
+          "name": "法務省政策評価に関する基本計画",
+          "url": "https://www.moj.go.jp/content/001150908.pdf"
+        },
+        {
+          "name": "平成２６年度法務省事後評価の実施に関する計画",
+          "url": "https://www.moj.go.jp/content/001150909.pdf"
+        },
+        {
+          "name": "目標管理型の政策評価の点検結果",
+          "url": "https://www.moj.go.jp/content/001150934.pdf"
+        },
+        {
+          "name": "目標管理型の政策評価の実施に関するガイドライン",
+          "url": "https://www.moj.go.jp/content/001150911.pdf"
+        },
+        {
+          "name": "再犯防止に向けた取組について【秘書課】",
+          "url": "https://www.moj.go.jp/content/001150918.pdf"
+        },
+        {
+          "name": "裁判員の参加する刑事裁判に関する法律の改正について【刑事局】",
+          "url": "https://www.moj.go.jp/content/001150919.pdf"
+        },
+        {
+          "name": "訟務局の設置と今後の取組について【訟務局】",
+          "url": "https://www.moj.go.jp/content/001150920.pdf"
+        },
+        {
+          "name": "出入国管理及び難民認定法の改正について【入国管理局】",
+          "url": "https://www.moj.go.jp/content/001150921.pdf"
+        },
+        {
+          "name": "第43回 政策評価有識者会議 議事録",
+          "url": "https://www.moj.go.jp/content/001156622.pdf"
+        },
+        {
+          "name": "第43回 政策評価有識者会議 議事要旨",
+          "url": "https://www.moj.go.jp/content/001156623.pdf"
         }
       ]
     },
@@ -580413,6 +582254,35 @@
           "name": "議事録",
           "url": "https://www.env.go.jp/council/02policy/y020-79a.html",
           "type": "HTML"
+        }
+      ]
+    },
+    {
+      "id": "moj-2992-20150626-004",
+      "councilId": "moj-2992",
+      "name": "外国法事務弁護士制度に係る検討会 第4回",
+      "date": "2015/06/26",
+      "officialUrl": "https://www.moj.go.jp/housei/gaiben/housei07_00018.html",
+      "materials": [
+        {
+          "name": "議事次第",
+          "url": "https://www.moj.go.jp/content/001150030.pdf"
+        },
+        {
+          "name": "議事録",
+          "url": "https://www.moj.go.jp/content/001155723.pdf"
+        },
+        {
+          "name": "資料１ 諸外国の外国弁護士受入制度の概要（更新）（日本弁護士連合会提出資料）",
+          "url": "https://www.moj.go.jp/content/001150031.pdf"
+        },
+        {
+          "name": "資料２ 第百四回国会衆議院法務委員会議録第５号昭和６１年４月１１日（抜粋）（日本弁護士連合会提出資料）",
+          "url": "https://www.moj.go.jp/content/001150033.pdf"
+        },
+        {
+          "name": "資料３ 職務経験要件に関する論点整理",
+          "url": "https://www.moj.go.jp/content/001150034.pdf"
         }
       ]
     },
@@ -583177,6 +585047,43 @@
       ]
     },
     {
+      "id": "moj-2992-20150520-003",
+      "councilId": "moj-2992",
+      "name": "外国法事務弁護士制度に係る検討会 第3回",
+      "date": "2015/05/20",
+      "officialUrl": "https://www.moj.go.jp/housei/gaiben/housei07_00017.html",
+      "materials": [
+        {
+          "name": "議事次第",
+          "url": "https://www.moj.go.jp/content/001145577.pdf"
+        },
+        {
+          "name": "議事録",
+          "url": "https://www.moj.go.jp/content/001151430.pdf"
+        },
+        {
+          "name": "資料１ 諸外国の外国弁護士受入制度の概要（日本弁護士連合会提出資料）",
+          "url": "https://www.moj.go.jp/content/001145578.pdf"
+        },
+        {
+          "name": "資料３ 外弁協会ポジションペーパー（エリック・セドラック氏提出資料）",
+          "url": "https://www.moj.go.jp/content/001145579.pdf"
+        },
+        {
+          "name": "資料４ 在日米国商工会議所法務サービス委員会意見書（エリック・セドラック氏提出資料）",
+          "url": "https://www.moj.go.jp/content/001145580.pdf"
+        },
+        {
+          "name": "資料５ 欧州ビジネス協会法律サービス委員会ポジションペーパー（別府理佳子氏提出資料）",
+          "url": "https://www.moj.go.jp/content/001145581.pdf"
+        },
+        {
+          "name": "資料６ 職務経験要件について（日本弁護士連合会）（三宅弘氏提出資料）",
+          "url": "https://www.moj.go.jp/content/001145780.pdf"
+        }
+      ]
+    },
+    {
       "id": "fsa-kinyu_financial_group_wg-20150519-001",
       "councilId": "fsa-kinyu_financial_group_wg",
       "name": "第1回 金融グループを巡る制度のあり方に関するワーキング・グループ",
@@ -584207,6 +586114,47 @@
       "date": "2015/04/23",
       "officialUrl": "https://www.soumu.go.jp/main_sosiki/joho_tsusin/policyreports/joho_tsusin/idou/02kiban12_03000104.html",
       "materials": []
+    },
+    {
+      "id": "moj-2992-20150423-002",
+      "councilId": "moj-2992",
+      "name": "外国法事務弁護士制度に係る検討会 第2回",
+      "date": "2015/04/23",
+      "officialUrl": "https://www.moj.go.jp/housei/gaiben/housei07_00016.html",
+      "materials": [
+        {
+          "name": "議事次第",
+          "url": "https://www.moj.go.jp/content/001143369.pdf"
+        },
+        {
+          "name": "議事録",
+          "url": "https://www.moj.go.jp/content/001147986.pdf"
+        },
+        {
+          "name": "資料１ 承認申請における職務経験要件の審査について（法務省提出資料）",
+          "url": "https://www.moj.go.jp/content/001143370.pdf"
+        },
+        {
+          "name": "資料３ 外国法事務弁護士に係る資料（日本弁護士連合会提出資料）",
+          "url": "https://www.moj.go.jp/content/001143376.pdf"
+        },
+        {
+          "name": "資料４ 米国ニューヨーク州における外弁制度について（ケン・レブラン委員提出資料）",
+          "url": "https://www.moj.go.jp/content/001143372.pdf"
+        },
+        {
+          "name": "資料５ イングランド＆ウェールズにおける外弁制度について（﨑村令子委員提出資料）",
+          "url": "https://www.moj.go.jp/content/001143373.pdf"
+        },
+        {
+          "name": "資料６ 中国の外弁制度に関する説明（陳天華委員提出資料）",
+          "url": "https://www.moj.go.jp/content/001143374.pdf"
+        },
+        {
+          "name": "資料７ 諸外国の外国法事務弁護士に係る制度について（日本弁護士連合会提出資料）",
+          "url": "https://www.moj.go.jp/content/001143375.pdf"
+        }
+      ]
     },
     {
       "id": "fsa-kinyu_kessai_sg-20150422-012",
@@ -587101,6 +589049,59 @@
       ]
     },
     {
+      "id": "moj-2992-20150313-001",
+      "councilId": "moj-2992",
+      "name": "外国法事務弁護士制度に係る検討会 第1回",
+      "date": "2015/03/13",
+      "officialUrl": "https://www.moj.go.jp/housei/gaiben/housei07_00014.html",
+      "materials": [
+        {
+          "name": "議事次第",
+          "url": "https://www.moj.go.jp/content/001138542.pdf"
+        },
+        {
+          "name": "議事録",
+          "url": "https://www.moj.go.jp/content/001143099.pdf"
+        },
+        {
+          "name": "資料１ 外国法事務弁護士制度に係る検討会について",
+          "url": "https://www.moj.go.jp/content/001138533.pdf"
+        },
+        {
+          "name": "資料２ 外国法事務弁護士制度の概要",
+          "url": "https://www.moj.go.jp/content/001138534.pdf"
+        },
+        {
+          "name": "資料３ 外国法事務弁護士の登録状況",
+          "url": "https://www.moj.go.jp/content/001138535.pdf"
+        },
+        {
+          "name": "資料４ 法務大臣の承認に係る職務経験要件について",
+          "url": "https://www.moj.go.jp/content/001138536.pdf"
+        },
+        {
+          "name": "資料５ 外国法事務弁護士の法人組織による活動について",
+          "url": "https://www.moj.go.jp/content/001138537.pdf"
+        },
+        {
+          "name": "資料６ 外国法事務弁護士制度のこれまでの経緯について",
+          "url": "https://www.moj.go.jp/content/001138538.pdf"
+        },
+        {
+          "name": "資料７ 規制改革会議及び国家戦略特別区域諮問会議における職務経験要件に関連する議論について",
+          "url": "https://www.moj.go.jp/content/001138540.pdf"
+        },
+        {
+          "name": "資料８ 規制改革会議及び国家戦略特別区域諮問会議におけるＢ法人制度創設に関連する議論について",
+          "url": "https://www.moj.go.jp/content/001138541.pdf"
+        },
+        {
+          "name": "外国弁護士制度研究会報告書",
+          "url": "https://www.moj.go.jp/content/000001726.pdf"
+        }
+      ]
+    },
+    {
       "id": "aca-chosakuken_bunkakai-20150312-041",
       "councilId": "aca-chosakuken_bunkakai",
       "name": "第41回 文化審議会 著作権分科会",
@@ -588515,6 +590516,51 @@
         {
           "name": "委員長の選出について",
           "url": "https://www.soumu.go.jp/main_content/000345535.pdf"
+        }
+      ]
+    },
+    {
+      "id": "moj-2978-20150223-042",
+      "councilId": "moj-2978",
+      "name": "法務省政策評価有識者会議 第42回",
+      "date": "2015/02/23",
+      "officialUrl": "https://www.moj.go.jp/hisho/seisakuhyouka/hisho05_00031.html",
+      "materials": [
+        {
+          "name": "平成２７年度法務省事後評価の実施に関する計画（案）",
+          "url": "https://www.moj.go.jp/content/001136446.pdf"
+        },
+        {
+          "name": "法務省政策評価に関する基本計画（平成２６年度から３０年度）",
+          "url": "https://www.moj.go.jp/content/001132418.pdf"
+        },
+        {
+          "name": "１　民法（債権関係）の見直しについて【民事局】",
+          "url": "https://www.moj.go.jp/content/001144634.pdf"
+        },
+        {
+          "name": "２　登記所備付地図整備事業の推進について【民事局】",
+          "url": "https://www.moj.go.jp/content/001144635.pdf"
+        },
+        {
+          "name": "３　「宣言：犯罪に戻らない・戻さない」（犯罪対策閣僚会議）について【秘書課】",
+          "url": "https://www.moj.go.jp/content/001144636.pdf"
+        },
+        {
+          "name": "４　矯正施設における就労支援の概要ついて【矯正局】",
+          "url": "https://www.moj.go.jp/content/001144637.pdf"
+        },
+        {
+          "name": "５　技能実習制度について【入国管理局】",
+          "url": "https://www.moj.go.jp/content/001144638.pdf"
+        },
+        {
+          "name": "第42回 政策評価有識者会議 議事録",
+          "url": "https://www.moj.go.jp/content/001144632.pdf"
+        },
+        {
+          "name": "第42回 政策評価有識者会議 議事要旨",
+          "url": "https://www.moj.go.jp/content/001144633.pdf"
         }
       ]
     },
@@ -602322,6 +604368,19 @@
       ]
     },
     {
+      "id": "moj-2978-20140813-041",
+      "councilId": "moj-2978",
+      "name": "法務省政策評価有識者会議 第41回",
+      "date": "2014/08/13",
+      "officialUrl": "https://www.moj.go.jp/content/001127198.pdf",
+      "materials": [
+        {
+          "name": "第41回 政策評価有識者会議 議事要旨",
+          "url": "https://www.moj.go.jp/content/001127198.pdf"
+        }
+      ]
+    },
+    {
       "id": "ra-fukushima_fukko_saisei-20140809-009",
       "councilId": "ra-fukushima_fukko_saisei",
       "name": "第9回 原子力災害からの福島復興再生協議会",
@@ -604208,6 +606267,51 @@
         {
           "name": "第7回検討会 第7回検討会資料３",
           "url": "https://www.npa.go.jp/safetylife/seianki/stalker/7/siryou3.pdf"
+        }
+      ]
+    },
+    {
+      "id": "moj-2978-20140711-040",
+      "councilId": "moj-2978",
+      "name": "法務省政策評価有識者会議 第40回",
+      "date": "2014/07/11",
+      "officialUrl": "https://www.moj.go.jp/hisho/seisakuhyouka/hisho05_00028.html",
+      "materials": [
+        {
+          "name": "平成２５年度法務省事後評価実施結果報告書（案）",
+          "url": "https://www.moj.go.jp/content/000125158.pdf"
+        },
+        {
+          "name": "法務省政策評価に関する基本計画",
+          "url": "https://www.moj.go.jp/content/000125085.pdf"
+        },
+        {
+          "name": "平成２５年度法務省事後評価の実施に関する計画",
+          "url": "https://www.moj.go.jp/content/000125086.pdf"
+        },
+        {
+          "name": "目標管理型の政策評価の実施に関するガイドライン",
+          "url": "https://www.moj.go.jp/content/000125087.pdf"
+        },
+        {
+          "name": "１　法教育について【司法法制部】",
+          "url": "https://www.moj.go.jp/content/001127193.pdf"
+        },
+        {
+          "name": "２　刑務所ＰＦＩ事業の概要等について【矯正局】",
+          "url": "https://www.moj.go.jp/content/001127194.pdf"
+        },
+        {
+          "name": "３　出入国管理行政の最近の動きについて【入国管理局】",
+          "url": "https://www.moj.go.jp/content/001127195.pdf"
+        },
+        {
+          "name": "第40回 政策評価有識者会議 議事録",
+          "url": "https://www.moj.go.jp/content/001127196.pdf"
+        },
+        {
+          "name": "第40回 政策評価有識者会議 議事要旨",
+          "url": "https://www.moj.go.jp/content/001127197.pdf"
         }
       ]
     },
@@ -612507,6 +614611,39 @@
       ]
     },
     {
+      "id": "moj-2978-20140310-039",
+      "councilId": "moj-2978",
+      "name": "法務省政策評価有識者会議 第39回",
+      "date": "2014/03/10",
+      "officialUrl": "https://www.moj.go.jp/hisho/seisakuhyouka/hisho05_00024.html",
+      "materials": [
+        {
+          "name": "法務省政策評価に関する基本計画（案）",
+          "url": "https://www.moj.go.jp/content/000121062.pdf"
+        },
+        {
+          "name": "法務省政策評価に関する基本計画（案）新旧対照表",
+          "url": "https://www.moj.go.jp/content/000121067.pdf"
+        },
+        {
+          "name": "平成26年度法務省事後評価の実施に関する計画（案）",
+          "url": "https://www.moj.go.jp/content/000121068.pdf"
+        },
+        {
+          "name": "目標管理型の政策評価の実施に関するガイドライン",
+          "url": "https://www.moj.go.jp/content/000121070.pdf"
+        },
+        {
+          "name": "第39回 政策評価有識者会議 議事録",
+          "url": "https://www.moj.go.jp/content/000122666.pdf"
+        },
+        {
+          "name": "第39回 政策評価有識者会議 議事要旨",
+          "url": "https://www.moj.go.jp/content/000122667.pdf"
+        }
+      ]
+    },
+    {
       "id": "ra-fukko_suishin_kaigi-20140310-010",
       "councilId": "ra-fukko_suishin_kaigi",
       "name": "第10回 復興推進会議",
@@ -613907,6 +616044,31 @@
       ]
     },
     {
+      "id": "moj-2994-20140219-011",
+      "councilId": "moj-2994",
+      "name": "ADR法に関する検討会 第11回",
+      "date": "2014/02/19",
+      "officialUrl": "https://www.moj.go.jp/housei/adr/housei09_00056.html",
+      "materials": [
+        {
+          "name": "議事録",
+          "url": "https://www.moj.go.jp/content/000120764.pdf"
+        },
+        {
+          "name": "第１１回議事次第",
+          "url": "https://www.moj.go.jp/content/000120765.pdf"
+        },
+        {
+          "name": "配布資料目録",
+          "url": "https://www.moj.go.jp/content/000120766.pdf"
+        },
+        {
+          "name": "資料（ＡＤＲ法に関する検討会報告書（案））",
+          "url": "https://www.moj.go.jp/content/000120767.pdf"
+        }
+      ]
+    },
+    {
       "id": "aca-kokugo_bunkakai-20140218-051",
       "councilId": "aca-kokugo_bunkakai",
       "name": "平成25年 第51回 文化審議会 国語分科会",
@@ -615080,6 +617242,35 @@
         {
           "name": "議事録",
           "url": "https://www.soumu.go.jp/main_content/000275511.pdf"
+        }
+      ]
+    },
+    {
+      "id": "moj-2994-20140124-010",
+      "councilId": "moj-2994",
+      "name": "ADR法に関する検討会 第10回",
+      "date": "2014/01/24",
+      "officialUrl": "https://www.moj.go.jp/housei/adr/housei09_00055.html",
+      "materials": [
+        {
+          "name": "議事録",
+          "url": "https://www.moj.go.jp/content/000120654.pdf"
+        },
+        {
+          "name": "第１０回議事次第",
+          "url": "https://www.moj.go.jp/content/000120346.pdf"
+        },
+        {
+          "name": "配布資料目録",
+          "url": "https://www.moj.go.jp/content/000120347.pdf"
+        },
+        {
+          "name": "資料１（ＡＤＲ法に関する検討会報告書（案））",
+          "url": "https://www.moj.go.jp/content/000120348.pdf"
+        },
+        {
+          "name": "資料２（［論点２　認証ＡＤＲを利用しやすくするための施策］ウ　時効中断効【追加】）（会議での委員からの指摘を踏まえ修正したもの）",
+          "url": "https://www.moj.go.jp/content/000120349.pdf"
         }
       ]
     },
@@ -616502,6 +618693,43 @@
         {
           "name": "参考資料1　小電力システム作業班構成員名簿",
           "url": "https://www.soumu.go.jp/main_content/000267995.pdf"
+        }
+      ]
+    },
+    {
+      "id": "moj-2994-20131220-009",
+      "councilId": "moj-2994",
+      "name": "ADR法に関する検討会 第9回",
+      "date": "2013/12/20",
+      "officialUrl": "https://www.moj.go.jp/housei/adr/housei09_00054.html",
+      "materials": [
+        {
+          "name": "議事録",
+          "url": "https://www.moj.go.jp/content/000119200.pdf"
+        },
+        {
+          "name": "第９回議事次第",
+          "url": "https://www.moj.go.jp/content/000118655.pdf"
+        },
+        {
+          "name": "配布資料目録",
+          "url": "https://www.moj.go.jp/content/000118654.pdf"
+        },
+        {
+          "name": "資料１（これまでの議論のまとめ）",
+          "url": "https://www.moj.go.jp/content/000118656.pdf"
+        },
+        {
+          "name": "資料２－１（［論点３　認証ＡＤＲの基盤強化，監督関係その他］ウ　守秘義務の法定）",
+          "url": "https://www.moj.go.jp/content/000118657.pdf"
+        },
+        {
+          "name": "資料２－２（［論点３　認証ＡＤＲの基盤強化，監督関係その他］エ　弁護士の関与の在り方）",
+          "url": "https://www.moj.go.jp/content/000118658.pdf"
+        },
+        {
+          "name": "資料２－３（［論点３　認証ＡＤＲの基盤強化，監督関係その他］オ　提出書類の合理化）",
+          "url": "https://www.moj.go.jp/content/000118659.pdf"
         }
       ]
     },
@@ -619955,6 +622183,59 @@
       "materials": []
     },
     {
+      "id": "moj-2994-20131115-008",
+      "councilId": "moj-2994",
+      "name": "ADR法に関する検討会 第8回",
+      "date": "2013/11/15",
+      "officialUrl": "https://www.moj.go.jp/housei/adr/housei09_00053.html",
+      "materials": [
+        {
+          "name": "議事録",
+          "url": "https://www.moj.go.jp/content/000117511.pdf"
+        },
+        {
+          "name": "第８回議事次第",
+          "url": "https://www.moj.go.jp/content/000117181.pdf"
+        },
+        {
+          "name": "配布資料目録",
+          "url": "https://www.moj.go.jp/content/000117182.pdf"
+        },
+        {
+          "name": "資料１（論点整理）",
+          "url": "https://www.moj.go.jp/content/000117183.pdf"
+        },
+        {
+          "name": "資料２（報告書（日本司法支援センター））",
+          "url": "https://www.moj.go.jp/content/000117184.pdf"
+        },
+        {
+          "name": "資料３－１（［論点１　認証ＡＤＲの魅力を高めるための施策］エ　手続実施者等の質の向上）",
+          "url": "https://www.moj.go.jp/content/000117185.pdf"
+        },
+        {
+          "name": "資料３－２（［論点１　認証ＡＤＲの魅力を高めるための施策］オ　調停手続法の制定）",
+          "url": "https://www.moj.go.jp/content/000117186.pdf"
+        },
+        {
+          "name": "資料４（［論点２　認証ＡＤＲを利用しやすくするための施策］ウ　時効中断効）",
+          "url": "https://www.moj.go.jp/content/000117187.pdf"
+        },
+        {
+          "name": "資料５－１（［論点３　認証ＡＤＲの基盤強化，監督関係その他］ア　関係機関との連携等）",
+          "url": "https://www.moj.go.jp/content/000117188.pdf"
+        },
+        {
+          "name": "資料５－２（［論点３　認証ＡＤＲの基盤強化，監督関係その他］イ　財政基盤の充実）",
+          "url": "https://www.moj.go.jp/content/000117189.pdf"
+        },
+        {
+          "name": "植垣委員提出資料：手数料額早見表",
+          "url": "https://www.moj.go.jp/content/000117190.pdf"
+        }
+      ]
+    },
+    {
       "id": "cao-216-20131114-012",
       "councilId": "cao-216",
       "name": "第12回 遺棄化学兵器処理事業に関する有識者会議",
@@ -621205,6 +623486,59 @@
         {
           "name": "第22回 議事要旨",
           "url": "https://warp.da.ndl.go.jp/info:ndljp/pid/11623291/www.mod.go.jp/j/approach/agenda/meeting/materials/keiyaku_seido/giji/pdf/22.pdf"
+        }
+      ]
+    },
+    {
+      "id": "moj-2994-20131022-007",
+      "councilId": "moj-2994",
+      "name": "ADR法に関する検討会 第7回",
+      "date": "2013/10/22",
+      "officialUrl": "https://www.moj.go.jp/housei/adr/housei09_00051.html",
+      "materials": [
+        {
+          "name": "議事録",
+          "url": "https://www.moj.go.jp/content/000116559.pdf"
+        },
+        {
+          "name": "第７回議事次第",
+          "url": "https://www.moj.go.jp/content/000116147.pdf"
+        },
+        {
+          "name": "配布資料目録",
+          "url": "https://www.moj.go.jp/content/000116198.pdf"
+        },
+        {
+          "name": "資料１（論点整理（案））",
+          "url": "https://www.moj.go.jp/content/000116130.pdf"
+        },
+        {
+          "name": "資料２（既存の認証紛争解決事業者・認証ＡＤＲがない業界・分野等）",
+          "url": "https://www.moj.go.jp/content/000116131.pdf"
+        },
+        {
+          "name": "資料３（認証ＡＤＲ事業者地域分布状況）",
+          "url": "https://www.moj.go.jp/content/000116132.pdf"
+        },
+        {
+          "name": "資料４－１（［論点１　認証ＡＤＲの魅力を高めるための施策］ウ　認証ＡＤＲによる和解の実効性を確保するための方策）",
+          "url": "https://www.moj.go.jp/content/000116143.pdf"
+        },
+        {
+          "name": "資料４－２（［論点１　認証ＡＤＲの魅力を高めるための施策］エ　手続実施者等の質の向上）",
+          "url": "https://www.moj.go.jp/content/000116135.pdf"
+        },
+        {
+          "name": "資料５－１（［論点２　認証ＡＤＲを利用しやすくするための施策］ア　相談機関等との連携，広報）",
+          "url": "https://www.moj.go.jp/content/000116144.pdf"
+        },
+        {
+          "name": "資料５－２（［論点２　認証ＡＤＲを利用しやすくするための施策］イ　法律扶助の活用）",
+          "url": "https://www.moj.go.jp/content/000116139.pdf"
+        },
+        {
+          "name": "資料６（法テラスとＡＤＲ）",
+          "url": "https://www.moj.go.jp/content/000116145.pdf"
         }
       ]
     },
@@ -622484,6 +624818,43 @@
       ]
     },
     {
+      "id": "moj-2994-20130925-006",
+      "councilId": "moj-2994",
+      "name": "ADR法に関する検討会 第6回",
+      "date": "2013/09/25",
+      "officialUrl": "https://www.moj.go.jp/housei/adr/housei09_00050.html",
+      "materials": [
+        {
+          "name": "議事録",
+          "url": "https://www.moj.go.jp/content/000115572.pdf"
+        },
+        {
+          "name": "第６回議事次第",
+          "url": "https://www.moj.go.jp/content/000115363.pdf"
+        },
+        {
+          "name": "配布資料目録",
+          "url": "https://www.moj.go.jp/content/000115364.pdf"
+        },
+        {
+          "name": "資料１（ヒアリング結果概要）",
+          "url": "https://www.moj.go.jp/content/000115365.pdf"
+        },
+        {
+          "name": "資料２（論点整理（案））",
+          "url": "https://www.moj.go.jp/content/000115366.pdf"
+        },
+        {
+          "name": "資料３－１（［論点１　認証ＡＤＲの魅力を高めるための施策］ア　各事業者による専門性・特殊性の意識化・明確化）",
+          "url": "https://www.moj.go.jp/content/000115367.pdf"
+        },
+        {
+          "name": "資料３－２（［論点１　認証ＡＤＲの魅力を高めるための施策］イ　認証ＡＤＲのさらなる拡充）",
+          "url": "https://www.moj.go.jp/content/000115368.pdf"
+        }
+      ]
+    },
+    {
       "id": "ra-fukko_suishin-20130925-013",
       "councilId": "ra-fukko_suishin",
       "name": "第13回 復興推進委員会",
@@ -623567,6 +625938,19 @@
       ]
     },
     {
+      "id": "moj-2978-20130905-038",
+      "councilId": "moj-2978",
+      "name": "法務省政策評価有識者会議 第38回",
+      "date": "2013/09/05",
+      "officialUrl": "https://www.moj.go.jp/content/000115719.pdf",
+      "materials": [
+        {
+          "name": "第38回 政策評価有識者会議 議事要旨",
+          "url": "https://www.moj.go.jp/content/000115719.pdf"
+        }
+      ]
+    },
+    {
       "id": "smea-1306-20130905-017",
       "councilId": "smea-1306",
       "name": "中小企業政策審議会(第17回) 書面審議",
@@ -624070,6 +626454,19 @@
         {
           "name": "4.pdf",
           "url": "https://www.bousai.go.jp/kaigirep/chuobou/jikkoukaigi/02/pdf/4.pdf"
+        }
+      ]
+    },
+    {
+      "id": "moj-2978-20130816-037",
+      "councilId": "moj-2978",
+      "name": "法務省政策評価有識者会議 第37回",
+      "date": "2013/08/16",
+      "officialUrl": "https://www.moj.go.jp/content/000114446.pdf",
+      "materials": [
+        {
+          "name": "第37回 政策評価有識者会議 議事要旨",
+          "url": "https://www.moj.go.jp/content/000114446.pdf"
         }
       ]
     },
@@ -625067,6 +627464,111 @@
       "materials": []
     },
     {
+      "id": "moj-2994-20130726-005",
+      "councilId": "moj-2994",
+      "name": "ADR法に関する検討会 第5回",
+      "date": "2013/07/26",
+      "officialUrl": "https://www.moj.go.jp/housei/adr/housei09_00046.html",
+      "materials": [
+        {
+          "name": "議事録",
+          "url": "https://www.moj.go.jp/content/000114154.pdf"
+        },
+        {
+          "name": "第５回議事次第",
+          "url": "https://www.moj.go.jp/content/000113633.pdf"
+        },
+        {
+          "name": "配布資料目録",
+          "url": "https://www.moj.go.jp/content/000114118.pdf"
+        },
+        {
+          "name": "資料１（ヒアリング事項）",
+          "url": "https://www.moj.go.jp/content/000113636.pdf"
+        },
+        {
+          "name": "資料２（ヒアリング対象事業者の取扱件数）",
+          "url": "https://www.moj.go.jp/content/000113637.pdf"
+        },
+        {
+          "name": "資料３（法務省ヒアリング事項（東京都行政書士会））",
+          "url": "https://www.moj.go.jp/content/000114117.pdf"
+        },
+        {
+          "name": "資料３別紙１（行政書士ＡＤＲセンター東京実績（Ｈ２１～２５））",
+          "url": "https://www.moj.go.jp/content/000113638.pdf"
+        },
+        {
+          "name": "資料３別紙２（行政書士ＡＤＲセンター東京手続フロー図）",
+          "url": "https://www.moj.go.jp/content/000113639.pdf"
+        },
+        {
+          "name": "資料３別紙３（平成２４年度研修実績）",
+          "url": "https://www.moj.go.jp/content/000113640.pdf"
+        },
+        {
+          "name": "資料４（「社労士会労働紛争解決センター福岡」の運用状況報告について（参考）（福岡県社会保険労務士会））",
+          "url": "https://www.moj.go.jp/content/000113641.pdf"
+        },
+        {
+          "name": "資料４参考（「社労士会労働紛争解決センター」の運用状況報告について（参考））",
+          "url": "https://www.moj.go.jp/content/000113642.pdf"
+        },
+        {
+          "name": "資料５（ヒアリング事項（愛知県土地家屋調査士会））",
+          "url": "https://www.moj.go.jp/content/000113643.pdf"
+        },
+        {
+          "name": "資料５別添資料１（解決手続事前説明書）",
+          "url": "https://www.moj.go.jp/content/000113644.pdf"
+        },
+        {
+          "name": "資料５別添資料２（調停申立書（書式））",
+          "url": "https://www.moj.go.jp/content/000113645.pdf"
+        },
+        {
+          "name": "資料５別添資料３（相手方に送付する回答書（書式））",
+          "url": "https://www.moj.go.jp/content/000113647.pdf"
+        },
+        {
+          "name": "資料５別添資料４の１（パンフレット）",
+          "url": "https://www.moj.go.jp/content/000113648.pdf"
+        },
+        {
+          "name": "資料５別添資料４の２（「境界問題でお困りの方へ」（チラシ））",
+          "url": "https://www.moj.go.jp/content/000113649.pdf"
+        },
+        {
+          "name": "資料５別添資料４の３（「解決しましょう！土地の問題！」（チラシ））",
+          "url": "https://www.moj.go.jp/content/000113650.pdf"
+        },
+        {
+          "name": "資料５別添資料５（センター組織・体制図）",
+          "url": "https://www.moj.go.jp/content/000113651.pdf"
+        },
+        {
+          "name": "資料５別添資料６（センター財務状況表）",
+          "url": "https://www.moj.go.jp/content/000113652.pdf"
+        },
+        {
+          "name": "資料５別添資料７（平成２２年度～平成２４年度研修実施一覧）",
+          "url": "https://www.moj.go.jp/content/000113653.pdf"
+        },
+        {
+          "name": "資料６（ヒアリング事項事前照会に関する回答書（札幌司法書士会））",
+          "url": "https://www.moj.go.jp/content/000113654.pdf"
+        },
+        {
+          "name": "資料６別添資料１（流れ図）",
+          "url": "https://www.moj.go.jp/content/000113655.pdf"
+        },
+        {
+          "name": "資料６別添資料２（平成２４年度手続実施者養成講座カリキュラム）",
+          "url": "https://www.moj.go.jp/content/000113656.pdf"
+        }
+      ]
+    },
+    {
       "id": "mhlw-2876-20130725-010",
       "councilId": "mhlw-2876",
       "name": "第10回 肝炎対策推進協議会",
@@ -625739,6 +628241,23 @@
           "name": "議事録",
           "url": "https://www.env.go.jp/council/07air-noise/y070-01a.html",
           "type": "HTML"
+        }
+      ]
+    },
+    {
+      "id": "moj-2978-20130712-036",
+      "councilId": "moj-2978",
+      "name": "法務省政策評価有識者会議 第36回",
+      "date": "2013/07/12",
+      "officialUrl": "https://www.moj.go.jp/hisho/seisakuhyouka/hisho05_00019.html",
+      "materials": [
+        {
+          "name": "第36回 政策評価有識者会議 議事録",
+          "url": "https://www.moj.go.jp/content/000114439.pdf"
+        },
+        {
+          "name": "第36回 政策評価有識者会議 議事要旨",
+          "url": "https://www.moj.go.jp/content/000114440.pdf"
         }
       ]
     },
@@ -626908,6 +629427,71 @@
         {
           "name": "業務用陸上無線システム作業班（第1回） 議事要旨",
           "url": "https://www.soumu.go.jp/main_content/000264116.pdf"
+        }
+      ]
+    },
+    {
+      "id": "moj-2994-20130618-004",
+      "councilId": "moj-2994",
+      "name": "ADR法に関する検討会 第4回",
+      "date": "2013/06/18",
+      "officialUrl": "https://www.moj.go.jp/housei/adr/housei09_00045.html",
+      "materials": [
+        {
+          "name": "議事録",
+          "url": "https://www.moj.go.jp/content/000112750.pdf"
+        },
+        {
+          "name": "第４回議事次第",
+          "url": "https://www.moj.go.jp/content/000112609.pdf"
+        },
+        {
+          "name": "配布資料目録",
+          "url": "https://www.moj.go.jp/content/000112606.pdf"
+        },
+        {
+          "name": "資料１（ヒアリング事項）",
+          "url": "https://www.moj.go.jp/content/000112593.pdf"
+        },
+        {
+          "name": "資料２（ＡＤＲ事業者等に対するヒアリング予定）",
+          "url": "https://www.moj.go.jp/content/000112594.pdf"
+        },
+        {
+          "name": "資料３（ヒアリング対象事業者の取扱件数）",
+          "url": "https://www.moj.go.jp/content/000112596.pdf"
+        },
+        {
+          "name": "資料４（法務省ＡＤＲ法に関する検討会ヒヤリング事項について（愛知県弁護士会関係資料））",
+          "url": "https://www.moj.go.jp/content/000112653.pdf"
+        },
+        {
+          "name": "資料４別紙１（増田卓司「ケース研究　利用しやすい紛争解決手続を目指して－愛知県弁護士会紛争解決センターの実情－」仲裁とＡＤＲ第８号（２０１３年）３５～４２ページ）",
+          "url": "https://www.moj.go.jp/content/000112598.pdf"
+        },
+        {
+          "name": "資料４別紙２（紛争解決センターで事実上の合意に達した案件における即決和解・即日調停の活用について（ご案内））",
+          "url": "https://www.moj.go.jp/content/000112599.pdf"
+        },
+        {
+          "name": "資料５（認証ＡＤＲヒアリング事項（公益財団法人東京都中小企業振興公社））",
+          "url": "https://www.moj.go.jp/content/000112601.pdf"
+        },
+        {
+          "name": "資料５別紙（組織の概要を記載した図面）",
+          "url": "https://www.moj.go.jp/content/000112602.pdf"
+        },
+        {
+          "name": "資料６（ＡＤＲ事業者等に関するヒアリング事項の回答について（公益社団法人家庭問題情報センター））",
+          "url": "https://www.moj.go.jp/content/000112603.pdf"
+        },
+        {
+          "name": "資料７（ヒアリング事項に対する回答（特定非営利活動法人医事紛争研究会））",
+          "url": "https://www.moj.go.jp/content/000112604.pdf"
+        },
+        {
+          "name": "資料７別紙（具体的な解決事案）",
+          "url": "https://www.moj.go.jp/content/000112605.pdf"
         }
       ]
     },
@@ -628125,6 +630709,91 @@
         {
           "name": "資料6－2　　ITU－T／ITU－R　活動状況",
           "url": "https://www.soumu.go.jp/main_content/000229990.pdf"
+        }
+      ]
+    },
+    {
+      "id": "moj-2994-20130528-003",
+      "councilId": "moj-2994",
+      "name": "ADR法に関する検討会 第3回",
+      "date": "2013/05/28",
+      "officialUrl": "https://www.moj.go.jp/housei/adr/housei09_00043.html",
+      "materials": [
+        {
+          "name": "議事録",
+          "url": "https://www.moj.go.jp/content/000112015.pdf"
+        },
+        {
+          "name": "第３回議事次第",
+          "url": "https://www.moj.go.jp/content/000111932.pdf"
+        },
+        {
+          "name": "配布資料目録",
+          "url": "https://www.moj.go.jp/content/000111923.pdf"
+        },
+        {
+          "name": "資料１（ヒアリング事項）",
+          "url": "https://www.moj.go.jp/content/000111907.pdf"
+        },
+        {
+          "name": "資料２（ＡＤＲ事業者等に対するヒアリング予定）",
+          "url": "https://www.moj.go.jp/content/000111908.pdf"
+        },
+        {
+          "name": "資料３（ＦＩＮＭＡＣの業務の現状等について）",
+          "url": "https://www.moj.go.jp/content/000111909.pdf"
+        },
+        {
+          "name": "資料３別添（機関誌ＦＩＮＭＡＣ第９号（２０１３年））",
+          "url": "https://www.moj.go.jp/content/000111910.pdf"
+        },
+        {
+          "name": "資料４（ヒアリング事項（公益社団法人総合紛争解決センター）",
+          "url": "https://www.moj.go.jp/content/000111911.pdf"
+        },
+        {
+          "name": "資料４別紙１（公益社団法人総合紛争解決センター解決事例（具体的な事案））",
+          "url": "https://www.moj.go.jp/content/000111912.pdf"
+        },
+        {
+          "name": "資料４別紙２（公益社団法人総合紛争解決センター成立手数料一覧表）",
+          "url": "https://www.moj.go.jp/content/000111913.pdf"
+        },
+        {
+          "name": "資料４別紙３（公益社団法人総合紛争解決センター組織図）",
+          "url": "https://www.moj.go.jp/content/000111914.pdf"
+        },
+        {
+          "name": "資料４参考（リーフレット）",
+          "url": "https://www.moj.go.jp/content/000111915.pdf"
+        },
+        {
+          "name": "資料５（ヒアリング事項（公益財団法人自動車製造物責任相談センター））",
+          "url": "https://www.moj.go.jp/content/000111916.pdf"
+        },
+        {
+          "name": "資料５添付書類１（２０１１年度活動状況報告書抜粋）",
+          "url": "https://www.moj.go.jp/content/000111933.pdf"
+        },
+        {
+          "name": "資料５添付書類２（「公益財団法人自動車製造物責任相談センターのご紹介」）",
+          "url": "https://www.moj.go.jp/content/000111918.pdf"
+        },
+        {
+          "name": "資料６（日本ＡＤＲ協会によるＡＤＲ法改正に関するアンケート結果及び提言について（レジュメ））",
+          "url": "https://www.moj.go.jp/content/000111919.pdf"
+        },
+        {
+          "name": "資料６参考資料１（垣内秀介「ＡＤＲ法改正に関するアンケート結果の概要」仲裁とＡＤＲ第７号（２０１２年）１５４～１７１ページ）",
+          "url": "https://www.moj.go.jp/content/000111920.pdf"
+        },
+        {
+          "name": "資料６参考資料２（一般財団法人日本ＡＤＲ協会『提言「ＡＤＲ法の改正に向けて」』（２０１２年４月１日公表）（提言本体部分の抜粋））",
+          "url": "https://www.moj.go.jp/content/000111921.pdf"
+        },
+        {
+          "name": "資料６参考資料３（垣内秀介「提言「ＡＤＲ法の改正に向けて」について」ＮＢＬ第９７５号（２０１２年）８～９ページ）",
+          "url": "https://www.moj.go.jp/content/000111922.pdf"
         }
       ]
     },
@@ -630339,6 +633008,71 @@
           "name": "議事録",
           "url": "https://www.env.go.jp/council/03recycle/y030-01a.html",
           "type": "HTML"
+        }
+      ]
+    },
+    {
+      "id": "moj-2994-20130329-002",
+      "councilId": "moj-2994",
+      "name": "ADR法に関する検討会 第2回",
+      "date": "2013/03/29",
+      "officialUrl": "https://www.moj.go.jp/housei/adr/housei09_00041.html",
+      "materials": [
+        {
+          "name": "議事録",
+          "url": "https://www.moj.go.jp/content/000110003.pdf"
+        },
+        {
+          "name": "第２回議事次第",
+          "url": "https://www.moj.go.jp/content/000110002.pdf"
+        },
+        {
+          "name": "配布資料目録",
+          "url": "https://www.moj.go.jp/content/000110015.pdf"
+        },
+        {
+          "name": "資料１（認証申請件数・認証事業者数の推移）",
+          "url": "https://www.moj.go.jp/content/000110004.pdf"
+        },
+        {
+          "name": "資料２－１（認証紛争解決事業者一覧）",
+          "url": "https://www.moj.go.jp/content/000110005.pdf"
+        },
+        {
+          "name": "資料２－２（認証紛争解決事業者の属性一覧）",
+          "url": "https://www.moj.go.jp/content/000110006.pdf"
+        },
+        {
+          "name": "資料２－３（認証紛争解決事業者の取扱件数について）",
+          "url": "https://www.moj.go.jp/content/000110092.pdf"
+        },
+        {
+          "name": "資料２－４（手数料（報酬・費用）の金額に応じた事業者数）",
+          "url": "https://www.moj.go.jp/content/000110008.pdf"
+        },
+        {
+          "name": "資料２－５（手数料（報酬・費用）一覧）",
+          "url": "https://www.moj.go.jp/content/000110093.pdf"
+        },
+        {
+          "name": "資料２－６（苦情件数（２５．３．１現在））",
+          "url": "https://www.moj.go.jp/content/000110010.pdf"
+        },
+        {
+          "name": "資料２－７（相談件数の多い事業者（平成２３年度））",
+          "url": "https://www.moj.go.jp/content/000110011.pdf"
+        },
+        {
+          "name": "資料２－８（認証事業者に対する相談件数及び法テラスによる紹介件数の推移）",
+          "url": "https://www.moj.go.jp/content/000110012.pdf"
+        },
+        {
+          "name": "資料３－１（ＡＤＲ事業者に対するヒアリング予定（案））",
+          "url": "https://www.moj.go.jp/content/000110013.pdf"
+        },
+        {
+          "name": "資料３－２（ヒアリング事項（案））",
+          "url": "https://www.moj.go.jp/content/000110014.pdf"
         }
       ]
     },
@@ -632562,6 +635296,31 @@
       ]
     },
     {
+      "id": "moj-2978-20130225-035",
+      "councilId": "moj-2978",
+      "name": "法務省政策評価有識者会議 第35回",
+      "date": "2013/02/25",
+      "officialUrl": "https://www.moj.go.jp/hisho/seisakuhyouka/hisho05_00016.html",
+      "materials": [
+        {
+          "name": "平成２５年度法務省事後評価の実施に関する計画（案）",
+          "url": "https://www.moj.go.jp/content/000107733.pdf"
+        },
+        {
+          "name": "法務省政策評価に関する基本計画",
+          "url": "https://www.moj.go.jp/content/000107731.pdf"
+        },
+        {
+          "name": "第35回 政策評価有識者会議 議事録",
+          "url": "https://www.moj.go.jp/content/000110142.pdf"
+        },
+        {
+          "name": "第35回 政策評価有識者会議 議事要旨",
+          "url": "https://www.moj.go.jp/content/000110141.pdf"
+        }
+      ]
+    },
+    {
       "id": "rinya-suigenrin_kentoukai-20130225-004",
       "councilId": "rinya-suigenrin_kentoukai",
       "name": "水源林造成事業等評価技術検討会(2013年開催)",
@@ -633163,6 +635922,59 @@
         {
           "name": "議事録",
           "url": "https://www.soumu.go.jp/main_content/000245392.pdf"
+        }
+      ]
+    },
+    {
+      "id": "moj-2994-20130212-001",
+      "councilId": "moj-2994",
+      "name": "ADR法に関する検討会 第1回",
+      "date": "2013/02/12",
+      "officialUrl": "https://www.moj.go.jp/housei/adr/housei09_00037.html",
+      "materials": [
+        {
+          "name": "議事録",
+          "url": "https://www.moj.go.jp/content/000108987.pdf"
+        },
+        {
+          "name": "第１回議事次第",
+          "url": "https://www.moj.go.jp/content/000108988.pdf"
+        },
+        {
+          "name": "委員構成",
+          "url": "https://www.moj.go.jp/content/000108989.pdf"
+        },
+        {
+          "name": "配布資料目録",
+          "url": "https://www.moj.go.jp/content/000108990.pdf"
+        },
+        {
+          "name": "資料１（民間ＡＤＲの業務の認証制度について）",
+          "url": "https://www.moj.go.jp/content/000108991.pdf"
+        },
+        {
+          "name": "資料２（裁判外紛争解決手続（ＡＤＲ）の認証制度について）",
+          "url": "https://www.moj.go.jp/content/000108992.pdf"
+        },
+        {
+          "name": "資料３（民間紛争解決手続の業務の認証の審査）",
+          "url": "https://www.moj.go.jp/content/000108993.pdf"
+        },
+        {
+          "name": "資料４（法第６条の認証基準・要件）",
+          "url": "https://www.moj.go.jp/content/000108994.pdf"
+        },
+        {
+          "name": "資料５（認証紛争解決事業者一覧）",
+          "url": "https://www.moj.go.jp/content/000108995.pdf"
+        },
+        {
+          "name": "資料６（金融ＡＤＲ制度について（金融庁作成資料））",
+          "url": "https://www.moj.go.jp/content/000108996.pdf"
+        },
+        {
+          "name": "資料７（事業再生ＡＤＲ制度について（経済産業省作成資料））",
+          "url": "https://www.moj.go.jp/content/000108997.pdf"
         }
       ]
     },
@@ -640407,6 +643219,19 @@
       ]
     },
     {
+      "id": "moj-2978-20120912-034",
+      "councilId": "moj-2978",
+      "name": "法務省政策評価有識者会議 第34回",
+      "date": "2012/09/12",
+      "officialUrl": "https://www.moj.go.jp/content/000103067.pdf",
+      "materials": [
+        {
+          "name": "第34回 政策評価有識者会議 議事要旨",
+          "url": "https://www.moj.go.jp/content/000103067.pdf"
+        }
+      ]
+    },
+    {
       "id": "fsa-kinyu_kinou_kyouka-20120911-015",
       "councilId": "fsa-kinyu_kinou_kyouka",
       "name": "第15回 金融機能強化審査会",
@@ -642055,6 +644880,35 @@
           "name": "議事録",
           "url": "https://www.mhlw.go.jp/stf/shingi/2r9852000002hvvp.html",
           "type": "HTML"
+        }
+      ]
+    },
+    {
+      "id": "moj-2978-20120727-033",
+      "councilId": "moj-2978",
+      "name": "法務省政策評価有識者会議 第33回",
+      "date": "2012/07/27",
+      "officialUrl": "https://www.moj.go.jp/hisho/seisakuhyouka/hisho05_00014.html",
+      "materials": [
+        {
+          "name": "平成２３年度法務省事後評価実施結果報告書（案）",
+          "url": "https://www.moj.go.jp/content/000100710.pdf"
+        },
+        {
+          "name": "法務省政策評価に関する基本計画",
+          "url": "https://www.moj.go.jp/content/000100711.pdf"
+        },
+        {
+          "name": "平成２３年度法務省事後評価の実施に関する計画",
+          "url": "https://www.moj.go.jp/content/000100712.pdf"
+        },
+        {
+          "name": "第33回 政策評価有識者会議 議事録",
+          "url": "https://www.moj.go.jp/content/000103420.pdf"
+        },
+        {
+          "name": "第33回 政策評価有識者会議 議事要旨",
+          "url": "https://www.moj.go.jp/content/000103419.pdf"
         }
       ]
     },
@@ -644342,6 +647196,39 @@
         {
           "name": "中間とりまとめ",
           "url": "http://www.mlit.go.jp/common/000219233.pdf"
+        }
+      ]
+    },
+    {
+      "id": "moj-2978-20120611-032",
+      "councilId": "moj-2978",
+      "name": "法務省政策評価有識者会議 第32回",
+      "date": "2012/06/11",
+      "officialUrl": "https://www.moj.go.jp/hisho/seisakuhyouka/hisho05_00012.html",
+      "materials": [
+        {
+          "name": "資料１：平成２４年度事後評価の実施に関する計画（案）",
+          "url": "https://www.moj.go.jp/content/000098771.pdf"
+        },
+        {
+          "name": "資料２：法務省政策評価に関する基本計画",
+          "url": "https://www.moj.go.jp/content/000098772.pdf"
+        },
+        {
+          "name": "資料３：政策評価の実施に関するガイドライン",
+          "url": "https://www.moj.go.jp/content/000098773.pdf"
+        },
+        {
+          "name": "資料４：目標管理型の政策評価の改善方策に係る取組について",
+          "url": "https://www.moj.go.jp/content/000098774.pdf"
+        },
+        {
+          "name": "第32回 政策評価有識者会議 議事録",
+          "url": "https://www.moj.go.jp/content/000101070.pdf"
+        },
+        {
+          "name": "第32回 政策評価有識者会議 議事要旨",
+          "url": "https://www.moj.go.jp/content/000101071.pdf"
         }
       ]
     },
@@ -648030,6 +650917,19 @@
         {
           "name": "議事概要",
           "url": "https://www.soumu.go.jp/main_content/000157455.pdf"
+        }
+      ]
+    },
+    {
+      "id": "moj-2978-20120326-031",
+      "councilId": "moj-2978",
+      "name": "法務省政策評価有識者会議 第31回",
+      "date": "2012/03/26",
+      "officialUrl": "https://www.moj.go.jp/content/000098258.pdf",
+      "materials": [
+        {
+          "name": "第31回 政策評価有識者会議 議事要旨",
+          "url": "https://www.moj.go.jp/content/000098258.pdf"
         }
       ]
     },
@@ -655916,6 +658816,35 @@
       ]
     },
     {
+      "id": "moj-2978-20111110-030",
+      "councilId": "moj-2978",
+      "name": "法務省政策評価有識者会議 第30回",
+      "date": "2011/11/10",
+      "officialUrl": "https://www.moj.go.jp/hisho/seisakuhyouka/hisho05_00010.html",
+      "materials": [
+        {
+          "name": "資料１：平成２３年度法務省事後評価の実施に関する計画（案）［ＰＤＦ］",
+          "url": "https://www.moj.go.jp/content/000080819.pdf"
+        },
+        {
+          "name": "資料２：法務省政策評価に関する基本計画［ＰＤＦ］",
+          "url": "https://www.moj.go.jp/content/000080820.pdf"
+        },
+        {
+          "name": "資料３：平成２３年度における政策評価の実施について［ＰＤＦ］",
+          "url": "https://www.moj.go.jp/content/000080821.pdf"
+        },
+        {
+          "name": "第30回 政策評価有識者会議 議事録",
+          "url": "https://www.moj.go.jp/content/000084403.pdf"
+        },
+        {
+          "name": "第30回 政策評価有識者会議 議事要旨",
+          "url": "https://www.moj.go.jp/content/000084404.pdf"
+        }
+      ]
+    },
+    {
       "id": "aca-hosei_mondai_shoiinkai-20111109-005",
       "councilId": "aca-hosei_mondai_shoiinkai",
       "name": "平成23年第5回（2011年11月9日）",
@@ -658480,6 +661409,19 @@
       ]
     },
     {
+      "id": "moj-2978-20110920-029",
+      "councilId": "moj-2978",
+      "name": "法務省政策評価有識者会議 第29回",
+      "date": "2011/09/20",
+      "officialUrl": "https://www.moj.go.jp/content/000082045.pdf",
+      "materials": [
+        {
+          "name": "第29回 政策評価有識者会議 議事要旨",
+          "url": "https://www.moj.go.jp/content/000082045.pdf"
+        }
+      ]
+    },
+    {
       "id": "aca-bunkazai_bunkakai-20110916-118",
       "councilId": "aca-bunkazai_bunkakai",
       "name": "平成23年 第118回 文化審議会 文化財分科会",
@@ -660350,6 +663292,43 @@
         {
           "name": "議事録",
           "url": "https://www.soumu.go.jp/main_content/000127152.pdf"
+        }
+      ]
+    },
+    {
+      "id": "moj-2978-20110726-028",
+      "councilId": "moj-2978",
+      "name": "法務省政策評価有識者会議 第28回",
+      "date": "2011/07/26",
+      "officialUrl": "https://www.moj.go.jp/hisho/seisakuhyouka/hisho05_00008.html",
+      "materials": [
+        {
+          "name": "資料１：平成２３年度における政策評価の実施について[PDF]",
+          "url": "https://www.moj.go.jp/content/000077434.pdf"
+        },
+        {
+          "name": "資料２－１：法務省政策評価に関する基本計画（案）[PDF]",
+          "url": "https://www.moj.go.jp/content/000077435.pdf"
+        },
+        {
+          "name": "資料２－２：法務省政策評価に関する基本計画（案）新旧対照表[PDF]",
+          "url": "https://www.moj.go.jp/content/000077436.pdf"
+        },
+        {
+          "name": "資料３：法務省事後評価の実施に関する計画[PDF]",
+          "url": "https://www.moj.go.jp/content/000077437.pdf"
+        },
+        {
+          "name": "資料４：平成２２年度法務省事後評価実施計画報告書（案）[PDF]",
+          "url": "https://www.moj.go.jp/content/000077438.pdf"
+        },
+        {
+          "name": "第28回 政策評価有識者会議 議事録",
+          "url": "https://www.moj.go.jp/content/000079519.pdf"
+        },
+        {
+          "name": "第28回 政策評価有識者会議 議事要旨",
+          "url": "https://www.moj.go.jp/content/000079520.pdf"
         }
       ]
     },
@@ -668200,6 +671179,19 @@
       ]
     },
     {
+      "id": "moj-2978-20101217-027",
+      "councilId": "moj-2978",
+      "name": "法務省政策評価有識者会議 第27回",
+      "date": "2010/12/17",
+      "officialUrl": "https://www.moj.go.jp/content/000069352.pdf",
+      "materials": [
+        {
+          "name": "第27回 政策評価有識者会議 議事要旨",
+          "url": "https://www.moj.go.jp/content/000069352.pdf"
+        }
+      ]
+    },
+    {
       "id": "aca-bunkazai_hogojoyaku-20101216-006",
       "councilId": "aca-bunkazai_hogojoyaku",
       "name": "平成22年 第6回 文化審議会文化財分科会 無形文化遺産保護条約に関する特別委員会",
@@ -672381,6 +675373,23 @@
         {
           "name": "議事概要",
           "url": "https://www.soumu.go.jp/main_content/000076447.pdf"
+        }
+      ]
+    },
+    {
+      "id": "moj-2978-20100709-026",
+      "councilId": "moj-2978",
+      "name": "法務省政策評価有識者会議 第26回",
+      "date": "2010/07/09",
+      "officialUrl": "https://www.moj.go.jp/content/000053143.pdf",
+      "materials": [
+        {
+          "name": "第26回 政策評価有識者会議 議事録",
+          "url": "https://www.moj.go.jp/content/000053143.pdf"
+        },
+        {
+          "name": "第26回 政策評価有識者会議 議事要旨",
+          "url": "https://www.moj.go.jp/content/000053144.pdf"
         }
       ]
     },
@@ -684108,6 +687117,23 @@
       ]
     },
     {
+      "id": "moj-2978-20100302-025",
+      "councilId": "moj-2978",
+      "name": "法務省政策評価有識者会議 第25回",
+      "date": "2010/03/02",
+      "officialUrl": "https://www.moj.go.jp/content/000036228.pdf",
+      "materials": [
+        {
+          "name": "第25回 政策評価有識者会議 議事録",
+          "url": "https://www.moj.go.jp/content/000036228.pdf"
+        },
+        {
+          "name": "第25回 政策評価有識者会議 議事要旨",
+          "url": "https://www.moj.go.jp/content/000036232.pdf"
+        }
+      ]
+    },
+    {
       "id": "moj-housei_soukai-20100224-162",
       "councilId": "moj-housei_soukai",
       "name": "第162回 法制審議会 総会",
@@ -688333,6 +691359,19 @@
       ]
     },
     {
+      "id": "moj-2978-20091109-024",
+      "councilId": "moj-2978",
+      "name": "法務省政策評価有識者会議 第24回",
+      "date": "2009/11/09",
+      "officialUrl": "https://www.moj.go.jp/content/000008592.pdf",
+      "materials": [
+        {
+          "name": "第24回 政策評価有識者会議 議事要旨",
+          "url": "https://www.moj.go.jp/content/000008592.pdf"
+        }
+      ]
+    },
+    {
       "id": "cao-pfi_suishin-20091105-019",
       "councilId": "cao-pfi_suishin",
       "name": "第19回 民間資金等活用事業推進委員会",
@@ -690762,6 +693801,19 @@
       "materials": []
     },
     {
+      "id": "moj-2978-20090803-023",
+      "councilId": "moj-2978",
+      "name": "法務省政策評価有識者会議 第23回",
+      "date": "2009/08/03",
+      "officialUrl": "https://www.moj.go.jp/content/000008579.pdf",
+      "materials": [
+        {
+          "name": "第23回 政策評価有識者会議 議事要旨",
+          "url": "https://www.moj.go.jp/content/000008579.pdf"
+        }
+      ]
+    },
+    {
       "id": "fsa-kinyu_kinou_kyouka-20090731-005",
       "councilId": "fsa-kinyu_kinou_kyouka",
       "name": "第5回 金融機能強化審査会",
@@ -691439,6 +694491,23 @@
           "name": "議事録[PDF]",
           "url": "https://www.fsc.go.jp/fsciis/attachedFile/download?retrievalId=kai20090710id1&fileId=142",
           "type": "HTML"
+        }
+      ]
+    },
+    {
+      "id": "moj-2978-20090710-022",
+      "councilId": "moj-2978",
+      "name": "法務省政策評価有識者会議 第22回",
+      "date": "2009/07/10",
+      "officialUrl": "https://www.moj.go.jp/content/000008577.pdf",
+      "materials": [
+        {
+          "name": "第22回 政策評価有識者会議 議事録",
+          "url": "https://www.moj.go.jp/content/000008577.pdf"
+        },
+        {
+          "name": "第22回 政策評価有識者会議 議事要旨",
+          "url": "https://www.moj.go.jp/content/000047301.pdf"
         }
       ]
     },
@@ -695705,6 +698774,23 @@
       ]
     },
     {
+      "id": "moj-2978-20090303-021",
+      "councilId": "moj-2978",
+      "name": "法務省政策評価有識者会議 第21回",
+      "date": "2009/03/03",
+      "officialUrl": "https://www.moj.go.jp/content/000008575.pdf",
+      "materials": [
+        {
+          "name": "第21回 政策評価有識者会議 議事録",
+          "url": "https://www.moj.go.jp/content/000008575.pdf"
+        },
+        {
+          "name": "第21回 政策評価有識者会議 議事要旨",
+          "url": "https://www.moj.go.jp/content/000008576.pdf"
+        }
+      ]
+    },
+    {
       "id": "mic-yusei_gyousei_bunkakai-20090302-003",
       "councilId": "mic-yusei_gyousei_bunkakai",
       "name": "第3回 情報通信行政・郵政行政審議会 郵政行政分科会",
@@ -699430,6 +702516,19 @@
           "name": "議事録",
           "url": "https://www.mhlw.go.jp/shingi/2008/11/txt/s1112-2.txt",
           "type": "TXT"
+        }
+      ]
+    },
+    {
+      "id": "moj-2978-20081112-020",
+      "councilId": "moj-2978",
+      "name": "法務省政策評価有識者会議 第20回",
+      "date": "2008/11/12",
+      "officialUrl": "https://www.moj.go.jp/content/000008733.pdf",
+      "materials": [
+        {
+          "name": "第20回 政策評価有識者会議 議事要旨",
+          "url": "https://www.moj.go.jp/content/000008733.pdf"
         }
       ]
     },
@@ -703963,6 +707062,23 @@
       ]
     },
     {
+      "id": "moj-2978-20080620-019",
+      "councilId": "moj-2978",
+      "name": "法務省政策評価有識者会議 第19回",
+      "date": "2008/06/20",
+      "officialUrl": "https://www.moj.go.jp/content/000008716.pdf",
+      "materials": [
+        {
+          "name": "第19回 政策評価有識者会議 議事録",
+          "url": "https://www.moj.go.jp/content/000008716.pdf"
+        },
+        {
+          "name": "第19回 政策評価有識者会議 議事要旨",
+          "url": "https://www.moj.go.jp/content/000008717.pdf"
+        }
+      ]
+    },
+    {
       "id": "aca-hosei_mondai_shoiinkai-20080619-004",
       "councilId": "aca-hosei_mondai_shoiinkai",
       "name": "平成20年第4回（2008年6月19日）",
@@ -706362,6 +709478,23 @@
           "name": "議事録",
           "url": "https://www.fsc.go.jp/fsciis/attachedFile/download?retrievalId=kai20080317id1&fileId=107",
           "type": "HTML"
+        }
+      ]
+    },
+    {
+      "id": "moj-2978-20080311-018",
+      "councilId": "moj-2978",
+      "name": "法務省政策評価有識者会議 第18回",
+      "date": "2008/03/11",
+      "officialUrl": "https://www.moj.go.jp/content/000008714.pdf",
+      "materials": [
+        {
+          "name": "第18回 政策評価有識者会議 議事録",
+          "url": "https://www.moj.go.jp/content/000008714.pdf"
+        },
+        {
+          "name": "第18回 政策評価有識者会議 議事要旨",
+          "url": "https://www.moj.go.jp/content/000008715.pdf"
         }
       ]
     },
@@ -710230,6 +713363,23 @@
           "name": "議事録",
           "url": "https://www.fsc.go.jp/fsciis/attachedFile/download?retrievalId=kai20071105id1&fileId=104",
           "type": "HTML"
+        }
+      ]
+    },
+    {
+      "id": "moj-2978-20071102-017",
+      "councilId": "moj-2978",
+      "name": "法務省政策評価有識者会議 第17回",
+      "date": "2007/11/02",
+      "officialUrl": "https://www.moj.go.jp/content/000008709.pdf",
+      "materials": [
+        {
+          "name": "第17回 政策評価有識者会議 議事録",
+          "url": "https://www.moj.go.jp/content/000008709.pdf"
+        },
+        {
+          "name": "第17回 政策評価有識者会議 議事要旨",
+          "url": "https://www.moj.go.jp/content/000008710.pdf"
         }
       ]
     },
@@ -714406,6 +717556,23 @@
       ]
     },
     {
+      "id": "moj-2978-20070710-016",
+      "councilId": "moj-2978",
+      "name": "法務省政策評価有識者会議 第16回",
+      "date": "2007/07/10",
+      "officialUrl": "https://www.moj.go.jp/content/000008688.pdf",
+      "materials": [
+        {
+          "name": "第16回 政策評価有識者会議 議事録",
+          "url": "https://www.moj.go.jp/content/000008688.pdf"
+        },
+        {
+          "name": "第16回 政策評価有識者会議 議事要旨",
+          "url": "https://www.moj.go.jp/content/000008689.pdf"
+        }
+      ]
+    },
+    {
       "id": "jfa-suisan_kanri-20070702-032",
       "councilId": "jfa-suisan_kanri",
       "name": "第32回 水産政策審議会 資源管理分科会",
@@ -717130,6 +720297,23 @@
           "name": "議事録",
           "url": "https://www.mhlw.go.jp/shingi/2007/03/txt/s0306-5.txt",
           "type": "TXT"
+        }
+      ]
+    },
+    {
+      "id": "moj-2978-20070305-015",
+      "councilId": "moj-2978",
+      "name": "法務省政策評価有識者会議 第15回",
+      "date": "2007/03/05",
+      "officialUrl": "https://www.moj.go.jp/content/000008686.pdf",
+      "materials": [
+        {
+          "name": "第15回 政策評価有識者会議 議事録",
+          "url": "https://www.moj.go.jp/content/000008686.pdf"
+        },
+        {
+          "name": "第15回 政策評価有識者会議 議事要旨",
+          "url": "https://www.moj.go.jp/content/000008687.pdf"
         }
       ]
     },
@@ -720395,6 +723579,23 @@
       ]
     },
     {
+      "id": "moj-2978-20061026-014",
+      "councilId": "moj-2978",
+      "name": "法務省政策評価有識者会議 第14回",
+      "date": "2006/10/26",
+      "officialUrl": "https://www.moj.go.jp/content/000008681.pdf",
+      "materials": [
+        {
+          "name": "第14回 政策評価有識者会議 議事録",
+          "url": "https://www.moj.go.jp/content/000008681.pdf"
+        },
+        {
+          "name": "第14回 政策評価有識者会議 議事要旨",
+          "url": "https://www.moj.go.jp/content/000008682.pdf"
+        }
+      ]
+    },
+    {
       "id": "fsa-kinyu_dai2_bukai-20061025-034",
       "councilId": "fsa-kinyu_dai2_bukai",
       "name": "第34回 金融分科会 第二部会",
@@ -723169,6 +726370,23 @@
         {
           "name": "議事録",
           "url": "https://www.fsa.go.jp/singi/singi_kigyou/gijiroku/kansa/20060707.pdf"
+        }
+      ]
+    },
+    {
+      "id": "moj-2978-20060707-013",
+      "councilId": "moj-2978",
+      "name": "法務省政策評価有識者会議 第13回",
+      "date": "2006/07/07",
+      "officialUrl": "https://www.moj.go.jp/content/000008667.pdf",
+      "materials": [
+        {
+          "name": "第13回 政策評価有識者会議 議事録",
+          "url": "https://www.moj.go.jp/content/000008667.pdf"
+        },
+        {
+          "name": "第13回 政策評価有識者会議 議事要旨",
+          "url": "https://www.moj.go.jp/content/000008668.pdf"
         }
       ]
     },
@@ -726934,6 +730152,23 @@
         {
           "name": "議事録",
           "url": "https://www.jfa.maff.go.jp/j/council/seisaku/kanri/pdf/24_giji.pdf"
+        }
+      ]
+    },
+    {
+      "id": "moj-2978-20060228-012",
+      "councilId": "moj-2978",
+      "name": "法務省政策評価有識者会議 第12回",
+      "date": "2006/02/28",
+      "officialUrl": "https://www.moj.go.jp/content/000008665.pdf",
+      "materials": [
+        {
+          "name": "第12回 政策評価有識者会議 議事録",
+          "url": "https://www.moj.go.jp/content/000008665.pdf"
+        },
+        {
+          "name": "第12回 政策評価有識者会議 議事要旨",
+          "url": "https://www.moj.go.jp/content/000008666.pdf"
         }
       ]
     },
@@ -731917,6 +735152,23 @@
       ]
     },
     {
+      "id": "moj-2978-20051019-011",
+      "councilId": "moj-2978",
+      "name": "法務省政策評価有識者会議 第11回",
+      "date": "2005/10/19",
+      "officialUrl": "https://www.moj.go.jp/content/000008664.pdf",
+      "materials": [
+        {
+          "name": "第11回 政策評価有識者会議 議事録",
+          "url": "https://www.moj.go.jp/content/000008664.pdf"
+        },
+        {
+          "name": "第11回 政策評価有識者会議 議事要旨",
+          "url": "https://www.moj.go.jp/content/000008663.pdf"
+        }
+      ]
+    },
+    {
       "id": "jfa-suisan_gyoko-20051018-007",
       "councilId": "jfa-suisan_gyoko",
       "name": "第7回 水産政策審議会 漁港漁場整備分科会",
@@ -734852,6 +738104,19 @@
         {
           "name": "議事録",
           "url": "https://www.fsa.go.jp/singi/singi_kigyou/gijiroku/naibu/20050706_naibu.pdf"
+        }
+      ]
+    },
+    {
+      "id": "moj-2978-20050706-010",
+      "councilId": "moj-2978",
+      "name": "法務省政策評価有識者会議 第10回",
+      "date": "2005/07/06",
+      "officialUrl": "https://www.moj.go.jp/content/000008657.pdf",
+      "materials": [
+        {
+          "name": "第10回 政策評価有識者会議 議事録",
+          "url": "https://www.moj.go.jp/content/000008657.pdf"
         }
       ]
     },
@@ -739761,6 +743026,19 @@
       ]
     },
     {
+      "id": "moj-2978-20050228-009",
+      "councilId": "moj-2978",
+      "name": "法務省政策評価有識者会議 第9回",
+      "date": "2005/02/28",
+      "officialUrl": "https://www.moj.go.jp/content/000008647.pdf",
+      "materials": [
+        {
+          "name": "第9回 政策評価有識者会議 議事録",
+          "url": "https://www.moj.go.jp/content/000008647.pdf"
+        }
+      ]
+    },
+    {
       "id": "fsc-prion-20050224-020",
       "councilId": "fsc-prion",
       "name": "第20回プリオン専門調査会",
@@ -742676,6 +745954,19 @@
       ]
     },
     {
+      "id": "moj-2978-20041013-008",
+      "councilId": "moj-2978",
+      "name": "法務省政策評価有識者会議 第8回",
+      "date": "2004/10/13",
+      "officialUrl": "https://www.moj.go.jp/content/000008645.pdf",
+      "materials": [
+        {
+          "name": "第8回 政策評価有識者会議 議事録",
+          "url": "https://www.moj.go.jp/content/000008645.pdf"
+        }
+      ]
+    },
+    {
       "id": "mhlw-943-20041012-007",
       "councilId": "mhlw-943",
       "name": "第7回 職業安定分科会雇用対策基本問題部会建設労働専門委員会",
@@ -744245,6 +747536,19 @@
         {
           "name": "資料開示申請書[29KB]",
           "url": "https://www.mhlw.go.jp/content/001741315.docx"
+        }
+      ]
+    },
+    {
+      "id": "moj-2978-20040709-007",
+      "councilId": "moj-2978",
+      "name": "法務省政策評価有識者会議 第7回",
+      "date": "2004/07/09",
+      "officialUrl": "https://www.moj.go.jp/content/000008636.pdf",
+      "materials": [
+        {
+          "name": "第7回 政策評価有識者会議 議事録",
+          "url": "https://www.moj.go.jp/content/000008636.pdf"
         }
       ]
     },
@@ -746332,6 +749636,19 @@
         {
           "name": "マニュアル別冊リーフレット(A3版両面)",
           "url": "https://www.fsa.go.jp/singi/singi_kinyu/siryou/f-20040317-1/03c.pdf"
+        }
+      ]
+    },
+    {
+      "id": "moj-2978-20040312-006",
+      "councilId": "moj-2978",
+      "name": "法務省政策評価有識者会議 第6回",
+      "date": "2004/03/12",
+      "officialUrl": "https://www.moj.go.jp/content/000008628.pdf",
+      "materials": [
+        {
+          "name": "第6回 政策評価有識者会議 議事録",
+          "url": "https://www.moj.go.jp/content/000008628.pdf"
         }
       ]
     },
@@ -749215,6 +752532,19 @@
       ]
     },
     {
+      "id": "moj-2978-20031002-005",
+      "councilId": "moj-2978",
+      "name": "法務省政策評価有識者会議 第5回",
+      "date": "2003/10/02",
+      "officialUrl": "https://www.moj.go.jp/content/000008627.pdf",
+      "materials": [
+        {
+          "name": "第5回 政策評価有識者会議 議事録",
+          "url": "https://www.moj.go.jp/content/000008627.pdf"
+        }
+      ]
+    },
+    {
       "id": "aca-chosakuken_shiho_shoiinkai-20030929-005",
       "councilId": "aca-chosakuken_shiho_shoiinkai",
       "name": "平成15年第5回(2003年9月29日)",
@@ -750783,6 +754113,19 @@
           "name": "議事録",
           "url": "https://warp.ndl.go.jp/info:ndljp/pid/12231838/www.mext.go.jp/b_menu/shingi/bunka/gijiroku/015/03071701.htm",
           "type": "HTML"
+        }
+      ]
+    },
+    {
+      "id": "moj-2978-20030711-004",
+      "councilId": "moj-2978",
+      "name": "法務省政策評価有識者会議 第4回",
+      "date": "2003/07/11",
+      "officialUrl": "https://www.moj.go.jp/content/000008617.pdf",
+      "materials": [
+        {
+          "name": "第4回 政策評価有識者会議 議事録",
+          "url": "https://www.moj.go.jp/content/000008617.pdf"
         }
       ]
     },
@@ -752673,6 +756016,19 @@
       ]
     },
     {
+      "id": "moj-2978-20030312-003",
+      "councilId": "moj-2978",
+      "name": "法務省政策評価有識者会議 第3回",
+      "date": "2003/03/12",
+      "officialUrl": "https://www.moj.go.jp/content/000008605.pdf",
+      "materials": [
+        {
+          "name": "第3回 政策評価有識者会議 議事録",
+          "url": "https://www.moj.go.jp/content/000008605.pdf"
+        }
+      ]
+    },
+    {
       "id": "jfa-suisan_kanri-20030307-009",
       "councilId": "jfa-suisan_kanri",
       "name": "第9回 水産政策審議会 資源管理分科会",
@@ -753596,6 +756952,19 @@
         {
           "name": "山口氏提出資料",
           "url": "https://www.mhlw.go.jp/shingi/2003/01/dl/s0129-5b.pdf"
+        }
+      ]
+    },
+    {
+      "id": "moj-2978-20030128-002",
+      "councilId": "moj-2978",
+      "name": "法務省政策評価有識者会議 第2回",
+      "date": "2003/01/28",
+      "officialUrl": "https://www.moj.go.jp/content/000008597.pdf",
+      "materials": [
+        {
+          "name": "第2回 政策評価有識者会議 議事録",
+          "url": "https://www.moj.go.jp/content/000008597.pdf"
         }
       ]
     },
@@ -754823,6 +758192,19 @@
         {
           "name": "議事録",
           "url": "https://www.jfa.maff.go.jp/j/council/seisaku/kanri/pdf/08_giji.pdf"
+        }
+      ]
+    },
+    {
+      "id": "moj-2978-20021111-001",
+      "councilId": "moj-2978",
+      "name": "法務省政策評価有識者会議 第1回",
+      "date": "2002/11/11",
+      "officialUrl": "https://www.moj.go.jp/content/000008593.pdf",
+      "materials": [
+        {
+          "name": "第1回 政策評価有識者会議 議事録",
+          "url": "https://www.moj.go.jp/content/000008593.pdf"
         }
       ]
     },

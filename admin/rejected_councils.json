@@ -2979,6 +2979,42 @@
     "reason": "国際会議であるため除外（国内政策会議体マスター対象外）"
   },
   {
+    "id": "moj-2975",
+    "name": "少年鑑別所視察委員会",
+    "ministry": "MOJ",
+    "category": "COMMITTEE",
+    "officialUrl": "https://www.moj.go.jp/kyousei1/kyousei08_00208.html",
+    "rejectedAt": "2026-10-31T04:36:25.064073+00:00",
+    "reason": "全国少年鑑別所ごとの年次活動状況統計公表ページ（個別政策会議体ではない）"
+  },
+  {
+    "id": "moj-2976",
+    "name": "少年院視察委員会",
+    "ministry": "MOJ",
+    "category": "COMMITTEE",
+    "officialUrl": "https://www.moj.go.jp/kyousei1/_00008.html",
+    "rejectedAt": "2026-10-31T04:36:25.064073+00:00",
+    "reason": "全国少年院ごとの年次活動状況統計公表ページ（個別政策会議体ではない）"
+  },
+  {
+    "id": "moj-2977",
+    "name": "刑事施設視察委員会",
+    "ministry": "MOJ",
+    "category": "COMMITTEE",
+    "officialUrl": "https://www.moj.go.jp/kyousei1/kyousei08_00207.html",
+    "rejectedAt": "2026-10-31T04:36:25.064073+00:00",
+    "reason": "全国刑事施設ごとの年次活動状況統計公表ページ（個別政策会議体ではない）"
+  },
+  {
+    "id": "moj-2979",
+    "name": "住まい支援の連携強化のための連絡協議会",
+    "ministry": "MOJ",
+    "category": "STUDY",
+    "officialUrl": "https://www.moj.go.jp/hogo1/soumu/hogo01_00046.html",
+    "rejectedAt": "2026-10-31T04:36:25.064073+00:00",
+    "reason": "国交省・厚労省・こども庁共催の第4回単発プレスリリース（主幹省庁である国交省管轄）"
+  },
+  {
     "id": "moj-2980",
     "name": "中央推進委員会",
     "ministry": "MOJ",
@@ -2986,6 +3022,15 @@
     "officialUrl": "https://www.moj.go.jp/hisho/kouhou/hisho06_00841.html",
     "rejectedAt": "2026/10/31",
     "reason": "大臣記者会見概要単発URLのため会議体マスターとして不適当 (Drop 107)"
+  },
+  {
+    "id": "moj-2990",
+    "name": "法務省政策評価懇談会",
+    "ministry": "MOJ",
+    "category": "ROUNDTABLE",
+    "officialUrl": "https://www.moj.go.jp/hisho/seisakuhyouka/hisho05_00053.html",
+    "rejectedAt": "2026-10-31T04:36:25.064073+00:00",
+    "reason": "法務省政策評価有識者会議（moj-2978）の前身・同一ポータル管理会議体としての重複統合"
   },
   {
     "id": "moj-2991",
