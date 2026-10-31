@@ -36,3 +36,7 @@ local_docs/
 admin/data_backup/
 admin/reports/
 admin/discovery/
+
+# Scratch / Temporary Work Directory (Git-untracked, preserve .gitkeep)
+scratch/*
+!scratch/.gitkeep

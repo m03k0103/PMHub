@@ -1,7 +1,7 @@
 # PMHub 改善・機能実装（Drop）マスタードキュメント (DROPS.md)
 
 > **最終更新**: 2026-10-31  `
-> **最新 Drop**: **Drop 114**（2026-10-31 完了）  `
+> **最新 Drop**: **Drop 115**（2026-10-31 完了）  `
 > **次期予定 Drop**: **Drop 115**（Track [Core-Policy-Filter]「重要政策会議のみ」絞り込み機能の配備 または Track [Purge-DocType-Report]）  `
 > 
 > 本ドキュメントは、PMHub の継続的改善ロードマップおよび実装記録を一元管理するマスタードキュメントです。  `
@@ -25,7 +25,7 @@
 | **Track [LLM-Assist]** | **決定論的1ファイル新着ダイジェスト & LLM判定・クロール階層型フォールバック** | **【フェーズ 1】ディスカバリー 1ファイル集約・単一リクエストLLM判定 & 新着分類永続化（Drop 81 完了）**<br>**【フェーズ 2】開催回クロール 3段階ファネル・異常検知フォールバック & バッチLLM抽出**<br>API呼出上限（Daily 3回 / Weekly 10回 / Monthly 30回）とSQLite `llm_cache`（SHA-256ダイジェストキャッシュ）により、最小APIコールで新規会議体検知と0件以外を含むクロール欠落補完を実現 | **最小APIコールでの新規会議体検知 & クロール補完** | **【構想中】**<br>（フェーズ 1: Drop 81 完了 / フェーズ 2 構想中） |
 | **Track [Automation]** | **定時巡回クローラー & ローカルDB同期**<br>(GitHub Actions 連携) | **3階層マルチスケジュール定期実行・異常検知時Skip・ローカルDB自動同期**<br>1. Daily (平朝): 省庁新着検知のみ<br>2. Weekly (土曜): 通常巡回（直近2年重点）<br>3. Monthly (第1日曜): 全期間包括走査<br>連鎖失敗・重大エラー検知時のIssue発行＆次回以降Skip機能、Zero-Storage VM運用、ローカル環境への安全な同期エンジン（`sync_from_json.py` + post-merge hook）の配備 | **定期自動巡回・省力化 & ローカル資産整合性担保** | **【構想中】**<br>（Drop 82 以降） |
 | **Track [Search]** | **全文検索エンジン統合**<br>(PMM資産連携・分離FTS5 DB構築) | **PMM ローカル資産（PDF/HTML・約13.3万件）を活用した分離型全文検索エンジンの構築**<br>マスターDB（`admin/pmhub.db`）の肥大化を防ぐため全文検索専用DB（`admin/pmhub_fts.db`）を分離・`ATTACH` 結合するアーキテクチャを採用。`admin/pmm/text_extractor.py` によるインクリメンタル本文抽出（中断耐性付き）、FTS5 `trigram` インデックス構築、検索API（`/api/search`）、およびローカル管理画面（`admin/admin_dashboard.html`）を主軸としつつローカルサーバー起動時は公開ポータルUIからも全文検索可能なハイブリッドUIの実装（No Leakage 原則厳守） | **約13.3万件の配付資料・会議体資料の高速本文横断検索** | **【構想中】**<br>（DB・PMM基盤完了済 / 着手可能） |
-| **Track [Architecture]** | **設計刷新構想**<br>(モジュール責務分離 & DBツール集約) | **クローラー・ディスカバリー・DB管理層の責務分離 & ワンストップDB登録CLI集約・`scratch/` クリーンアップ**<br>DB設定一元化（Track [Config-DB]）を踏まえ、肥大化した `admin/crawler.py`（約4,270行）と `discover_councils.py`（約1,400行）から共通HTTP/WAF通信・抽出・探索戦略・オーケストレーターを `admin/crawler/` パッケージへ分離（単体テスト互換ファサード維持）。また `admin/db/db_manager.py`（約1,000行）のDAO化、対話型DB登録CLIヘルパーの新設、および積み残された `scratch/`（約370ファイル）の完全整理を実施 | **単体テスト保守性向上 & ワンオフスクリプト乱立防止** | **【構想中】** |
+| **Track [Architecture]** | **設計刷新構想**<br>(モジュール責務分離 & DBツール標準化) | **クローラー・ディスカバリー・DB管理層の責務分離 & ワンストップDB登録CLI標準化・`scratch/` クリーンアップ**<br>DB設定一元化（Track [Config-DB]）を踏まえ、肥大化した `admin/crawler.py`（約4,360行）からホスト分散・各種フィルタ・抽出ロジックを `admin/crawler_modules/` へ分離（既存テスト互換ファサード維持）。またワンストップDB登録CLI `admin/tools/register_council.py` の新設、および過去114 Dropで蓄積した `scratch/`（560余ファイル）の完全整理・`.gitignore` 管理を実施 | **Phase 1 完遂（クローラー責務分離・ワンストップDB登録CLI新設・scratchクリーンアップ）** | **【進行中（Phase 1 完遂・Drop 115）】** |
 | **Track [Policy-AI]** | **政策分析連携構想**<br>(DB・PMM実資料・LLM統合分析) | **SQLite マスターDB・PMM実資料テキスト・`llm_cache` を統合した省庁横断政策インテリジェンス**<br>1. 省庁横断政策テーマ（GX、AI、経済安保、少子化等）および審議フェーズ（諮問・中間整理・答申等）の自動タギング（`meetings.tags_json` 活用）<br>2. PMM ローカル資料（議事要旨・主要資料）の実本文に基づく構造化AI要約生成（`meetings.summary` & SHA-256 `llm_cache` 活用）<br>3. 上位会議から各省庁審議会への政策波及タイムライン比較と、軽量サマリー/タグのみの公開JSON（`docs/data.json`）への安全な2系統還元（No Leakage 厳守） | **実資料に基づく政策横断的インサイトの創出** | **【長期構想】**<br>（Track [Search] 連携） |
 
 ### 1-2. 各Trackの詳細
@@ -3490,4 +3490,64 @@ ejected_councils（計420件）へ登録。
     - ケース14: アクティブ会議体フィルタリング・廃止管理検証（直近2年・廃止マスター合格） (0.98s) : PASS
     - 【単体関数検証 (Unit Tests)】: 全23種合格（連動 23 種実施 / 6.85s） : PASS
   ```
+
+---
+
+### Drop 115: クローラー責務分離・ワンストップDB登録CLI新設・環境クリーンアップ（Track [Architecture] Phase 1）
+
+- **1. 背景と目的 (Background & Objective)**:
+  - PMHub の中核エンジンである `admin/crawler.py` は、度重なる高精度化と除外ガードの実装により 4,367 行にまで肥大化し、ホスト分散（インターリーブ）、各種URL・タイトル・ナビ除外判定、HTML/テキスト抽出ロジックが単一ファイルに混在して可読性および保守性の課題となっていた。
+  - 会議体・開催回・配付資料の手動追加作業において、過去の作業用スクリプトを `scratch/` に散発的に作成して実行するワークフローが常態化し、114 Drop を経て `scratch/` 内に 560 ファイル以上の一時ファイルが蓄積して Git ワークツリーを汚染していた。
+  - 本 Drop では、Track [Architecture] のフェーズ1として、(1) 会議体・開催回・配付資料・スクレイピングルールをワンストップで SQLite DB にアトミック登録する標準CLIツール `admin/tools/register_council.py` の新設、(2) `admin/crawler.py` の責務別サブモジュール（`admin/crawler_modules/`）への分離と 100% 後方互換ファサードの確立、(3) `scratch/` の完全クリーンアップと `.gitignore` への追加を実施し、リポジトリの設計健全性と開発生産性を根本的に向上させることを目的とした。
+
+- **2. 主要な実装・改修内容 (Key Implementations)**:
+  - **標準ワンストップDB登録CLIツール `admin/tools/register_council.py` の新設**:
+    - 会議体マスター（`councils`）、開催回データ（`meetings`）、配付資料データ（`materials`）、スクレイピングルール（`scraping_rules`）を単一の JSON 定義ファイルまたは引数から SQLite マスターDB（`admin/pmhub.db`）へ `manual_lock = 1`（`manualLock: true`）でアトミックに登録する CLI ツールを新規配備。
+    - 登録完了後、`admin/db/export_data.py` を同一トランザクションで即時呼び出し、公開用 `docs/data.json` および管理用 `admin/admin_data.json` をアトミックに完全同期。
+    - 会議体ID命名規約（`{省庁略称}-{スラグ}` / ハイフン1個・2セグメント）、開催回ID命名規約（`{省庁略称}-{スラグ}-{日付8桁}-{回次3〜4桁}` / ハイフン3個・4セグメント）、プレースホルダー日付（2099/01/01）のゼロ遮断を登録前バリデーションとして標準装備。
+  - **クローラーの責務分離（`admin/crawler_modules/` 新設 & ファサード互換保証）**:
+    - ホスト分散・ドメイン制御: `admin/crawler_modules/host_manager.py`（`interleave_by_host_and_ministry`, `get_council_host`, `extract_host` 等）
+    - 各種フィルタリング判定: `admin/crawler_modules/filters.py`（`is_sns_pr_url`, `is_non_pdf_anchor_url`, `is_generic_index_url`, `is_generic_material_name`, `is_generic_title_text`, `is_preliminary_notice_page`, `is_static_asset_url`, `_is_parent_or_nav_url` 等）
+    - タイトル・日付・資料名抽出: `admin/crawler_modules/extractors.py`（`clean_meeting_title`, `recover_material_context`, `parse_txt_minutes`, `extract_page_title`, `_extract_date_from_url`, `_resolve_meeting_date` 等）
+    - `admin/crawler.py` はこれらをすべてインポート・再エクスポートする後方互換ファサード（Facade）として維持し、外部テストコード（`from crawler import ...` / `from admin.crawler import ...`）からのアクセス互換性を 100% 担保しつつ、本体コードを約650行スリム化（4,367行 $	o$ 3,721行）。
+  - **`scratch/` の大掃除（560余ファイル整理）& `.gitignore` への追加**:
+    - 過去114 Dropで蓄積した 560 余の使い捨て作業スクリプト・調査ログを完全削除。
+    - `scratch/.gitkeep` を配置してディレクトリ構造を維持しつつ、`.gitignore` に `scratch/*` および `!scratch/.gitkeep` を追加。今後の作業用スクリプト配置を許容しつつ、Git の管理対象から完全に除外してリポジトリの健全性を回復。
+
+- **3. 次回クロールへの影響 (Crawler Impact & Behavior)**:
+  - **手動登録データの保護挙動**: `register_council.py` により登録されるすべての会議体・開催回・配付資料には `manual_lock = 1`（`manualLock: true`）が確実に付与されるため、次回クロール時にもクローラーによる上書き・削除・重複再配分処理から完全に保護される。
+  - **新着検知・自動更新の挙動**: `register_council.py` で登録されたスクレイピングルールに基づき、次回クロール時に新たな開催回（第X+1回等）や配付資料が自動検知・追加される。
+  - **クローラーの負荷・探索範囲への影響**: モジュール分割後も同一ホスト直列化（インターリーブ）とレートリミット（最低0.35秒以上）のロジックは 100% 同一であり、外部サーバーへの負荷特性や探索挙動に一切の劣化・悪影響を与えない。
+
+- **4. 変更ファイル一覧 (Changed Files)**:
+  - `admin/tools/register_council.py`: 標準ワンストップDB登録CLIツール（新規）
+  - `admin/crawler_modules/__init__.py`: クローラーサブパッケージ初期化・エクスポート（新規）
+  - `admin/crawler_modules/host_manager.py`: ホスト抽出・分散モジュール（新規）
+  - `admin/crawler_modules/filters.py`: 各種URL・タイトル・ナビ・アセットフィルタリング判定モジュール（新規）
+  - `admin/crawler_modules/extractors.py`: タイトル正規化・文脈復元・日付・議事録テキスト抽出モジュール（新規）
+  - `admin/crawler.py`: サブモジュールからのインポート & 後方互換ファサード化（約650行スリム化）
+  - `.gitignore`: `scratch/*` および `!scratch/.gitkeep` の追加
+  - `scratch/`: 560余の一時ファイルを完全クリーンアップ、`.gitkeep` のみ維持
+  - `DROPS.md`: Track [Architecture] 進行中（Phase 1 完遂）更新、Drop 115 記録追記、ヘッダー更新
+
+- **5. 検証結果 (Verification Results)**:
+```markdown
+python testing/run_test_suite.py --all-layers : PASSED（統合15ケース＋全単体23種合格 / 所要時間 約22秒）
+  - ケース1: コード文法チェック（SyntaxError / 括弧 / div / DDL構文 0件） (0.66s) : PASS
+  - ケース2: リンク疎通確認（追加・変更URL 574件 リンク切れ0件） (1.03s) : PASS
+  - ケース3: UI表示機能検証（DOMコンテナ・公開＆管理構造OK） (0.00s) : PASS
+  - ケース4: JS実行時クラッシュ・全画面描画検証（Node.js構文エラー0件） (0.64s) : PASS
+  - ケース5: 会議品質・回次整合性・重複排除検証（全22,135件 重複0件） (0.87s) : PASS
+  - ケース6: 会議体・タイムライン ID完全排他性・整合性（1,663会議体 全件一致） (0.01s) : PASS
+  - ケース7: 康煕部首・特殊文字 NFKC 正規化検証（康煕部首0件維持） (0.31s) : PASS
+  - ケース8: プレースホルダー日付（2099/01/01）ゼロ遮断検証（2099日付0件） (0.00s) : PASS
+  - ケース15: SQLiteマスターDB整合性 & 2系統JSON完全同期検証（PRAGMA・FK・全件一致） (0.81s) : PASS
+  - ケース9: 管理サーバー API 単体・統合テスト（全11テスト合格） (4.45s) : PASS
+  - ケース10: クローラー手動保護回帰テスト（manualLock 非破壊性合格） (4.48s) : PASS
+  - ケース11: スクレイピングルール整合性検証（孤立ルール0件・全1,663会議体100%ルール適用） (0.44s) : PASS
+  - ケース12: ホスト分散・ゴミデータ不変性検証（同一ホスト連続0件・ゴミ0件走査） (0.30s) : PASS
+  - ケース13: 省庁親ポータルURL設定・探索網羅性検証（各省庁親ポータル設定合格） (0.43s) : PASS
+  - ケース14: アクティブ会議体フィルタリング・廃止管理検証（直近2年・廃止マスター合格） (0.88s) : PASS
+  - 【単体関数検証 (Unit Tests)】: 全23種合格（全連動 23 種実施 / 6.41s） : PASS
+```
 

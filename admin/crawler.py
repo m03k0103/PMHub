@@ -31,6 +31,85 @@ from utils import (
 )
 setup_win32_utf8()
 
+# -------------------------------------------------------------
+# Drop 115: モジュール分割（責務分離 & ファサード互換保証）
+# -------------------------------------------------------------
+try:
+    from admin.crawler_modules import (
+        interleave_by_host_and_ministry,
+        interleave_by_ministry,
+        get_council_host,
+        extract_host,
+        _extract_council_host,
+        is_sns_pr_url,
+        is_non_pdf_anchor_url,
+        is_generic_index_url,
+        is_generic_material_name,
+        is_generic_title_text,
+        is_preliminary_notice_page,
+        is_static_asset_url,
+        _is_parent_or_nav_url,
+        _SNS_PR_DOMAINS,
+        _GENERIC_INDEX_URL_PATTERNS,
+        _GENERIC_INDEX_TITLE_KEYWORDS,
+        _GENERIC_INDEX_EXACT_TITLES,
+        GENERIC_MATERIAL_NAMES,
+        GENERIC_TITLE_KEYWORDS,
+        GENERIC_EXACT_ONLY_KEYWORDS,
+        COMMON_NAV_KEYWORDS,
+        NAV_EXCLUDE_TEXTS,
+        GOV_SUFFIX_REGEX,
+        _FALLBACK_MINISTRY_EXCLUSIONS,
+        _MINISTRY_EXCLUSIONS_MAP,
+        _GENERIC_MATERIAL_NAMES,
+        _GENERIC_TITLE_PATTERNS,
+        DEFAULT_DATE_REGEX,
+        clean_meeting_title,
+        recover_material_context,
+        parse_txt_minutes,
+        extract_page_title,
+        _extract_date_from_url,
+        _resolve_meeting_date,
+    )
+except ImportError:
+    from crawler_modules import (
+        interleave_by_host_and_ministry,
+        interleave_by_ministry,
+        get_council_host,
+        extract_host,
+        _extract_council_host,
+        is_sns_pr_url,
+        is_non_pdf_anchor_url,
+        is_generic_index_url,
+        is_generic_material_name,
+        is_generic_title_text,
+        is_preliminary_notice_page,
+        is_static_asset_url,
+        _is_parent_or_nav_url,
+        _SNS_PR_DOMAINS,
+        _GENERIC_INDEX_URL_PATTERNS,
+        _GENERIC_INDEX_TITLE_KEYWORDS,
+        _GENERIC_INDEX_EXACT_TITLES,
+        GENERIC_MATERIAL_NAMES,
+        GENERIC_TITLE_KEYWORDS,
+        GENERIC_EXACT_ONLY_KEYWORDS,
+        COMMON_NAV_KEYWORDS,
+        NAV_EXCLUDE_TEXTS,
+        GOV_SUFFIX_REGEX,
+        _FALLBACK_MINISTRY_EXCLUSIONS,
+        _MINISTRY_EXCLUSIONS_MAP,
+        _GENERIC_MATERIAL_NAMES,
+        _GENERIC_TITLE_PATTERNS,
+        DEFAULT_DATE_REGEX,
+        clean_meeting_title,
+        recover_material_context,
+        parse_txt_minutes,
+        extract_page_title,
+        _extract_date_from_url,
+        _resolve_meeting_date,
+    )
+
+
 # LLM (Gemini API) の遅延初期化キャッシュ
 _gemini_model = None
 
