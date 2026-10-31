@@ -42,6 +42,10 @@ def extract_round_and_type(title, council_name="", url=""):
         sub_type += "_航空機宇宙産業小委員会"
     if '保安分科会' in t_norm and '保安・消費生活用製品安全分科会' in council_name:
         sub_type += "_保安分科会"
+    if '資源管理方針に関する検討会' in council_name or '資源管理方針' in t_norm:
+        fish_m = re.search(r'[（\(]([^）\)]+)[）\)]', t_norm)
+        if fish_m:
+            sub_type += f"_{fish_m.group(1).replace(' ', '_')}"
 
     if '／' in council_name or '/' in council_name:
         for part in re.split(r'[／/]', council_name):

@@ -2062,7 +2062,7 @@
       "ministry": "CAO",
       "category": "COUNCIL",
       "name": "日本学術会議",
-      "officialUrl": "https://www.scj.go.jp/",
+      "officialUrl": "https://www.scj.go.jp/ja/member/iinkai/kanji/index.html",
       "pastYearCount": 0
     },
     {
@@ -8874,7 +8874,7 @@
       "ministry": "JFA",
       "category": "STUDY",
       "name": "資源管理方針に関する検討会",
-      "officialUrl": "https://www.jfa.maff.go.jp/j/suisin/index.html#link5",
+      "officialUrl": "https://www.jfa.maff.go.jp/j/study/kanri/231027_3.html",
       "pastYearCount": 0
     },
     {
@@ -10011,7 +10011,7 @@
       "ministry": "METI",
       "category": "審議会",
       "name": "産業構造審議会 知的財産分科会",
-      "officialUrl": "https://www.meti.go.jp/shingikai/sankoshin/chiteki_zaisan/index.html",
+      "officialUrl": "https://www.jpo.go.jp/resources/shingikai/sangyo-kouzou/shousai/chizai_bunkakai/index.html",
       "pastYearCount": 0
     },
     {
@@ -10548,7 +10548,7 @@
       "ministry": "MEXT",
       "category": "COUNCIL",
       "name": "大学設置・学校法人審議会",
-      "officialUrl": "https://www.mext.go.jp/b_menu/shingi/daigaku/index.htm",
+      "officialUrl": "https://www.mext.go.jp/b_menu/shingi/daigaku/toushin/index.html",
       "pastYearCount": 1
     },
     {
@@ -14041,7 +14041,7 @@
       "ministry": "MIC",
       "category": "COMMITTEE",
       "name": "行政不服審査会",
-      "officialUrl": "https://www.soumu.go.jp/main_sosiki/singi/fufukushinsa/index.html",
+      "officialUrl": "https://www.soumu.go.jp/main_sosiki/singi/fufukushinsa/katsudou/index.html",
       "pastYearCount": 0
     },
     {
@@ -17487,6 +17487,81 @@
         {
           "name": "委員会名簿(PDF : 177KB)",
           "url": "https://www.maff.go.jp/j/study/2028gyocen_/attach/pdf/index-1.pdf"
+        }
+      ]
+    },
+    {
+      "id": "mext-715-20261027-s01",
+      "councilId": "mext-715",
+      "name": "令和9年度開設予定の大学等の設置に係る答申について(令和8年10月27日)",
+      "date": "2026/10/27",
+      "officialUrl": "https://www.mext.go.jp/b_menu/shingi/daigaku/toushin/attach/1420729_00026.htm",
+      "materials": [
+        {
+          "name": "令和9年度開設予定学部等一覧 (PDF:225KB)",
+          "url": "https://www.mext.go.jp/content/20261027-mxt_koutou01-000052744_01.pdf"
+        },
+        {
+          "name": "令和9年度開設予定大学院等一覧 (PDF:148KB)",
+          "url": "https://www.mext.go.jp/content/20261027-mxt_koutou01-000052744_03-1.pdf"
+        },
+        {
+          "name": "≪参考≫令和9年度国立大学開設予定研究科等一覧 (PDF:101KB)",
+          "url": "https://www.mext.go.jp/content/20261027-mxt_koutou01-000052744_02.pdf"
+        }
+      ]
+    },
+    {
+      "id": "mext-715-20261027-s23",
+      "councilId": "mext-715",
+      "name": "令和9年度からの私立大学等の収容定員の変更に係る学則変更予定一覧",
+      "date": "2026/10/27",
+      "officialUrl": "https://www.mext.go.jp/b_menu/shingi/daigaku/toushin/1422602_00013.htm",
+      "materials": [
+        {
+          "name": "令和9年度からの私立大学等の収容定員の変更に係る学則変更予定一覧(令和8年10月27日) (PDF:81KB)",
+          "url": "https://www.mext.go.jp/content/20261027-mxt_koutou01-000050609_01.pdf"
+        },
+        {
+          "name": "令和9年度からの私立大学等の収容定員の変更に係る学則変更予定一覧(令和8年8月28日) (PDF:132KB)",
+          "url": "https://www.mext.go.jp/content/000446260.pdf"
+        },
+        {
+          "name": "令和9年度からの私立大学の収容定員の変更に係る学則変更予定一覧(令和8年6月24日) (PDF:76KB)",
+          "url": "https://www.mext.go.jp/content/20260619-mxt_koutou02-000050609_1.pdf"
+        },
+        {
+          "name": "≪参考≫令和9年度からの国立大学の収容定員の増加予定一覧(令和8年10月27日) (PDF:205KB)",
+          "url": "https://www.mext.go.jp/content/20261027-mxt_koutou01-000050609_02.pdf"
+        },
+        {
+          "name": "≪参考≫令和9年度からの国立大学の収容定員の増加予定一覧(令和8年8月28日) (PDF:91KB)",
+          "url": "https://www.mext.go.jp/content/20260828-mxt_koutou02-000050609_2.pdf"
+        },
+        {
+          "name": "≪参考≫令和9年度からの国立大学の収容定員の増加予定一覧(令和8年6月24日) (PDF:175KB)",
+          "url": "https://www.mext.go.jp/content/20260619-mxt_koutou02-000050609_2.pdf"
+        },
+        {
+          "name": "≪参考≫令和9年度からの国立高等専門学校の収容定員の増加予定一覧(令和8年6月24日) (PDF:37KB)",
+          "url": "https://www.mext.go.jp/content/20260619-mxt_koutou02-000050609_4.pdf"
+        }
+      ]
+    },
+    {
+      "id": "mext-715-20261027-s24",
+      "councilId": "mext-715",
+      "name": "令和9年度からの私立大学医学部の収容定員の増加に係る学則変更予定一覧",
+      "date": "2026/10/27",
+      "officialUrl": "https://www.mext.go.jp/b_menu/shingi/daigaku/toushin/1422602_00014.htm",
+      "materials": [
+        {
+          "name": "令和9年度からの私立大学医学部の収容定員の増加に係る学則変更予定一覧(令和8年10月27日) (PDF:98KB)",
+          "url": "https://www.mext.go.jp/content/20261027-mxt_koutou02-000052746_1-1.pdf.pdf"
+        },
+        {
+          "name": "(参考)令和9年度からの国立大学医学部の収容定員の増加に係る設置計画一覧 (PDF:205KB)",
+          "url": "https://www.mext.go.jp/content/20261027-mxt_koutou02-000052746_2.pdf.pdf"
         }
       ]
     },
@@ -29024,6 +29099,31 @@
       ]
     },
     {
+      "id": "mext-715-20260828-s02",
+      "councilId": "mext-715",
+      "name": "令和9年度開設予定の大学等の設置に係る答申について(令和8年8月28日)",
+      "date": "2026/08/28",
+      "officialUrl": "https://www.mext.go.jp/b_menu/shingi/daigaku/toushin/attach/1420729_00025.htm",
+      "materials": [
+        {
+          "name": "令和9年度開設予定大学等一覧 (PDF:125KB)",
+          "url": "https://www.mext.go.jp/content/20260828-mxt_koutou02-000051788_1.pdf"
+        },
+        {
+          "name": "令和9年度開設予定学部等一覧 (PDF:225KB)",
+          "url": "https://www.mext.go.jp/content/20260828-mxt_koutou02-000051788_2.pdf"
+        },
+        {
+          "name": "令和9年度開設予定大学院等一覧 (PDF:148KB)",
+          "url": "https://www.mext.go.jp/content/20260828-mxt_koutou02-000051788_3.pdf"
+        },
+        {
+          "name": "≪参考≫令和9年度国立大学開設予定学部等一覧 (PDF:101KB)",
+          "url": "https://www.mext.go.jp/content/20260828-mxt_koutou02-000051788_4.pdf"
+        }
+      ]
+    },
+    {
       "id": "mhlw-2857-20260828-002",
       "councilId": "mhlw-2857",
       "name": "第2回 成年後見制度利用促進専門家会議",
@@ -35019,6 +35119,43 @@
         {
           "name": "(資料1)匿名医療保険等関連情報の提供申出に対する審査方針等について[PDF形式:408KB]",
           "url": "https://www.mhlw.go.jp/content/12400000/001728931.pdf"
+        }
+      ]
+    },
+    {
+      "id": "cao-252-20260731-404",
+      "councilId": "cao-252",
+      "name": "第404回 日本学術会議 幹事会",
+      "date": "2026/07/31",
+      "officialUrl": "https://www.scj.go.jp/ja/member/iinkai/kanji/siryo404.html",
+      "materials": [
+        {
+          "name": "議事要旨(PDF形式:208KB)",
+          "url": "https://www.scj.go.jp/ja/member/iinkai/kanji/pdf26/giji404.pdf"
+        },
+        {
+          "name": "第404回幹事会議事次第(PDF形式:169KB)",
+          "url": "https://www.scj.go.jp/ja/member/iinkai/kanji/pdf26/sidai404.pdf"
+        },
+        {
+          "name": "資料1:前回幹事会議事要旨(案)(PDF形式:206KB)",
+          "url": "https://www.scj.go.jp/ja/member/iinkai/kanji/pdf26/siryo404-1.pdf"
+        },
+        {
+          "name": "資料2:諸報告事項(PDF形式:397KB)",
+          "url": "https://www.scj.go.jp/ja/member/iinkai/kanji/pdf26/siryo404-2-1.pdf"
+        },
+        {
+          "name": "資料2:諸報告事項(別冊1)(PDF形式:4,039KB)",
+          "url": "https://www.scj.go.jp/ja/member/iinkai/kanji/pdf26/siryo404-2-2.pdf"
+        },
+        {
+          "name": "資料2:諸報告事項(別冊2)(PDF形式:635KB)",
+          "url": "https://www.scj.go.jp/ja/member/iinkai/kanji/pdf26/siryo404-2-3.pdf"
+        },
+        {
+          "name": "資料3:公開審議事項(PDF形式:856KB)",
+          "url": "https://www.scj.go.jp/ja/member/iinkai/kanji/pdf26/siryo404-3.pdf"
         }
       ]
     },
@@ -42158,6 +42295,31 @@
       "materials": []
     },
     {
+      "id": "cao-252-20260717-403",
+      "councilId": "cao-252",
+      "name": "第403回 日本学術会議 幹事会",
+      "date": "2026/07/17",
+      "officialUrl": "https://www.scj.go.jp/ja/member/iinkai/kanji/siryo403.html",
+      "materials": [
+        {
+          "name": "議事要旨(PDF形式:204KB)",
+          "url": "https://www.scj.go.jp/ja/member/iinkai/kanji/pdf26/giji403.pdf"
+        },
+        {
+          "name": "第403回幹事会議事次第(PDF形式:169KB)",
+          "url": "https://www.scj.go.jp/ja/member/iinkai/kanji/pdf26/sidai403.pdf"
+        },
+        {
+          "name": "資料1:前回幹事会議事要旨(案)(PDF形式:210KB)",
+          "url": "https://www.scj.go.jp/ja/member/iinkai/kanji/pdf26/siryo403-1.pdf"
+        },
+        {
+          "name": "資料2:公開審議事項(PDF形式:278KB)",
+          "url": "https://www.scj.go.jp/ja/member/iinkai/kanji/pdf26/siryo403-2.pdf"
+        }
+      ]
+    },
+    {
       "id": "cao-ai_technology_senmon-20260717-006",
       "councilId": "cao-ai_technology_senmon",
       "name": "第6回 人工知能(AI)技術の利用と消費者問題に関する専門調査会",
@@ -48987,6 +49149,43 @@
         {
           "name": "国債投資家懇談会資料",
           "url": "https://www.mof.go.jp/about_mof/councils/meeting_of_jgbi/proceedings/260629toushika100.pdf"
+        }
+      ]
+    },
+    {
+      "id": "cao-252-20260626-402",
+      "councilId": "cao-252",
+      "name": "第402回 日本学術会議 幹事会",
+      "date": "2026/06/26",
+      "officialUrl": "https://www.scj.go.jp/ja/member/iinkai/kanji/siryo402.html",
+      "materials": [
+        {
+          "name": "議事要旨(PDF形式:209KB)",
+          "url": "https://www.scj.go.jp/ja/member/iinkai/kanji/pdf26/giji402.pdf"
+        },
+        {
+          "name": "第402回幹事会議事次第(PDF形式:170KB)",
+          "url": "https://www.scj.go.jp/ja/member/iinkai/kanji/pdf26/sidai402.pdf"
+        },
+        {
+          "name": "資料1:前回幹事会議事要旨(案)(PDF形式:212KB)",
+          "url": "https://www.scj.go.jp/ja/member/iinkai/kanji/pdf26/siryo402-1.pdf"
+        },
+        {
+          "name": "資料2:諸報告事項(PDF形式:597KB)",
+          "url": "https://www.scj.go.jp/ja/member/iinkai/kanji/pdf26/siryo402-2.pdf"
+        },
+        {
+          "name": "資料2:諸報告事項(別冊1)(PDF形式:3,964KB)",
+          "url": "https://www.scj.go.jp/ja/member/iinkai/kanji/pdf26/siryo402-3.pdf"
+        },
+        {
+          "name": "資料2:諸報告事項(別冊2)(PDF形式:385KB)",
+          "url": "https://www.scj.go.jp/ja/member/iinkai/kanji/pdf26/siryo402-4.pdf"
+        },
+        {
+          "name": "資料3:公開審議事項(PDF形式:1,182KB)",
+          "url": "https://www.scj.go.jp/ja/member/iinkai/kanji/pdf26/siryo402-5.pdf"
         }
       ]
     },
@@ -61334,6 +61533,39 @@
       ]
     },
     {
+      "id": "cao-252-20260529-401",
+      "councilId": "cao-252",
+      "name": "第401回 日本学術会議 幹事会",
+      "date": "2026/05/29",
+      "officialUrl": "https://www.scj.go.jp/ja/member/iinkai/kanji/siryo401.html",
+      "materials": [
+        {
+          "name": "議事要旨(PDF形式:210KB)",
+          "url": "https://www.scj.go.jp/ja/member/iinkai/kanji/pdf26/giji401.pdf"
+        },
+        {
+          "name": "第401回幹事会議事次第(PDF形式:170KB)",
+          "url": "https://www.scj.go.jp/ja/member/iinkai/kanji/pdf26/sidai401.pdf"
+        },
+        {
+          "name": "資料1:前回幹事会議事要旨(案)(PDF形式:229KB)",
+          "url": "https://www.scj.go.jp/ja/member/iinkai/kanji/pdf26/siryo401-1.pdf"
+        },
+        {
+          "name": "資料2:諸報告事項(PDF形式:1,269KB)",
+          "url": "https://www.scj.go.jp/ja/member/iinkai/kanji/pdf26/siryo401-2.pdf"
+        },
+        {
+          "name": "資料2:諸報告事項(別冊)(PDF形式:5,780KB)",
+          "url": "https://www.scj.go.jp/ja/member/iinkai/kanji/pdf26/siryo401-3.pdf"
+        },
+        {
+          "name": "資料3:公開審議事項(PDF形式:825KB)",
+          "url": "https://www.scj.go.jp/ja/member/iinkai/kanji/pdf26/siryo401-4.pdf"
+        }
+      ]
+    },
+    {
       "id": "cao-shouhisha_iinkai-20260529-490",
       "councilId": "cao-shouhisha_iinkai",
       "name": "第490回 消費者委員会本会議",
@@ -65734,6 +65966,27 @@
       ]
     },
     {
+      "id": "meti-sankoshin_chiteki_zaisan-20260514-021",
+      "councilId": "meti-sankoshin_chiteki_zaisan",
+      "name": "第21回 産業構造審議会 知的財産分科会",
+      "date": "2026/05/14",
+      "officialUrl": "https://www.jpo.go.jp/resources/shingikai/sangyo-kouzou/shousai/chizai_bunkakai/index.html",
+      "materials": [
+        {
+          "name": "第21回 産業構造審議会 知的財産分科会 議事要旨",
+          "url": "https://www.jpo.go.jp/resources/shingikai/sangyo-kouzou/shousai/chizai_bunkakai/21-gijiyoushi.html"
+        },
+        {
+          "name": "第21回 産業構造審議会 知的財産分科会 配布資料",
+          "url": "https://www.jpo.go.jp/resources/shingikai/sangyo-kouzou/shousai/chizai_bunkakai/21-shiryou.html"
+        },
+        {
+          "name": "議事録(PDF:546KB)",
+          "url": "https://www.jpo.go.jp/resources/shingikai/sangyo-kouzou/shousai/chizai_bunkakai/document/index/21_gijiroku.pdf"
+        }
+      ]
+    },
+    {
       "id": "mhlw-1001-20260514-003",
       "councilId": "mhlw-1001",
       "name": "第3回 再生医療等製品・生物由来技術部会",
@@ -67118,6 +67371,23 @@
         {
           "name": "議事録",
           "url": "https://www.bunka.go.jp/seisaku/bunkashingikai/kokugo/gairai/gairai_01/pdf/94437101_01.pdf"
+        }
+      ]
+    },
+    {
+      "id": "cao-252-20260430-400",
+      "councilId": "cao-252",
+      "name": "第400回 日本学術会議 幹事会",
+      "date": "2026/04/30",
+      "officialUrl": "https://www.scj.go.jp/ja/member/iinkai/kanji/siryo400.html",
+      "materials": [
+        {
+          "name": "議事要旨(PDF形式:169KB)",
+          "url": "https://www.scj.go.jp/ja/member/iinkai/kanji/pdf26/giji400.pdf"
+        },
+        {
+          "name": "資料1:公開審議事項(PDF形式:277KB)",
+          "url": "https://www.scj.go.jp/ja/member/iinkai/kanji/pdf26/siryo400-1.pdf"
         }
       ]
     },
@@ -73277,6 +73547,47 @@
         {
           "name": "LNG運搬船の投資促進策の方向性",
           "url": "https://www.mlit.go.jp/maritime/content/002015885.pdf"
+        }
+      ]
+    },
+    {
+      "id": "cao-252-20260409-399",
+      "councilId": "cao-252",
+      "name": "第399回 日本学術会議 幹事会",
+      "date": "2026/04/09",
+      "officialUrl": "https://www.scj.go.jp/ja/member/iinkai/kanji/siryo399.html",
+      "materials": [
+        {
+          "name": "議事要旨(PDF形式:220KB)",
+          "url": "https://www.scj.go.jp/ja/member/iinkai/kanji/pdf26/giji399.pdf"
+        },
+        {
+          "name": "第399回幹事会議事次第(PDF形式:170KB)",
+          "url": "https://www.scj.go.jp/ja/member/iinkai/kanji/pdf26/sidai399.pdf"
+        },
+        {
+          "name": "資料3ー1:公開審議事項1(PDF形式:282KB)",
+          "url": "https://www.scj.go.jp/ja/member/iinkai/kanji/pdf26/siryo399-3-1.pdf"
+        },
+        {
+          "name": "資料3ー2:(参考)令和7年度各地区会議事業報告(PDF形式:11,397KB)",
+          "url": "https://www.scj.go.jp/ja/member/iinkai/kanji/pdf26/siryo399-3-2s.pdf"
+        },
+        {
+          "name": "資料1:前回幹事会議事要旨(案)(PDF形式:212KB)",
+          "url": "https://www.scj.go.jp/ja/member/iinkai/kanji/pdf26/siryo399-1.pdf"
+        },
+        {
+          "name": "資料2:諸報告事項(PDF形式:330KB)",
+          "url": "https://www.scj.go.jp/ja/member/iinkai/kanji/pdf26/siryo399-2.pdf"
+        },
+        {
+          "name": "資料3-2:公開審議事項2(PDF形式:860KB)",
+          "url": "https://www.scj.go.jp/ja/member/iinkai/kanji/pdf26/siryo399-3-2.pdf"
+        },
+        {
+          "name": "資料3-2:公開審議事項2(別冊)(PDF形式:982KB)",
+          "url": "https://www.scj.go.jp/ja/member/iinkai/kanji/pdf26/siryo399-3-2b.pdf"
         }
       ]
     },
@@ -79461,6 +79772,43 @@
         {
           "name": "売春防止法の制定・主要な改正の経緯等 (PDF)",
           "url": "https://www.moj.go.jp/content/001458929.pdf"
+        }
+      ]
+    },
+    {
+      "id": "cao-252-20260323-398",
+      "councilId": "cao-252",
+      "name": "第398回 日本学術会議 幹事会",
+      "date": "2026/03/23",
+      "officialUrl": "https://www.scj.go.jp/ja/member/iinkai/kanji/siryo398.html",
+      "materials": [
+        {
+          "name": "議事要旨(PDF形式:211KB)",
+          "url": "https://www.scj.go.jp/ja/member/iinkai/kanji/pdf26/giji398.pdf"
+        },
+        {
+          "name": "第398回幹事会議事次第(PDF形式:170KB)",
+          "url": "https://www.scj.go.jp/ja/member/iinkai/kanji/pdf26/sidai398.pdf"
+        },
+        {
+          "name": "資料1:前回幹事会議事要旨(案)(PDF形式:225KB)",
+          "url": "https://www.scj.go.jp/ja/member/iinkai/kanji/pdf26/siryo398-1.pdf"
+        },
+        {
+          "name": "資料2:諸報告事項(PDF形式:351KB)",
+          "url": "https://www.scj.go.jp/ja/member/iinkai/kanji/pdf26/siryo398-2.pdf"
+        },
+        {
+          "name": "資料2:諸報告事項(別冊1)(PDF形式:1,917KB)",
+          "url": "https://www.scj.go.jp/ja/member/iinkai/kanji/pdf26/siryo398-3.pdf"
+        },
+        {
+          "name": "資料2:諸報告事項(別冊2)(PDF形式:376KB)",
+          "url": "https://www.scj.go.jp/ja/member/iinkai/kanji/pdf26/siryo398-4.pdf"
+        },
+        {
+          "name": "資料3:公開審議事項(PDF形式:936KB)",
+          "url": "https://www.scj.go.jp/ja/member/iinkai/kanji/pdf26/siryo398-5.pdf"
         }
       ]
     },
@@ -89529,6 +89877,47 @@
       ]
     },
     {
+      "id": "cao-252-20260227-397",
+      "councilId": "cao-252",
+      "name": "第397回 日本学術会議 幹事会",
+      "date": "2026/02/27",
+      "officialUrl": "https://www.scj.go.jp/ja/member/iinkai/kanji/siryo397.html",
+      "materials": [
+        {
+          "name": "議事要旨(PDF形式:223KB)",
+          "url": "https://www.scj.go.jp/ja/member/iinkai/kanji/pdf26/giji397.pdf"
+        },
+        {
+          "name": "第397回幹事会議事次第(PDF形式:170KB)",
+          "url": "https://www.scj.go.jp/ja/member/iinkai/kanji/pdf26/sidai397.pdf"
+        },
+        {
+          "name": "資料1:前回幹事会議事要旨(案)(PDF形式:217KB)",
+          "url": "https://www.scj.go.jp/ja/member/iinkai/kanji/pdf26/siryo397-1.pdf"
+        },
+        {
+          "name": "資料2:諸報告事項(PDF形式:644KB)",
+          "url": "https://www.scj.go.jp/ja/member/iinkai/kanji/pdf26/siryo397-2.pdf"
+        },
+        {
+          "name": "資料2:諸報告事項(別冊1)(PDF形式:3,514KB)",
+          "url": "https://www.scj.go.jp/ja/member/iinkai/kanji/pdf26/siryo397-3.pdf"
+        },
+        {
+          "name": "資料2:諸報告事項(別冊2)(PDF形式:610KB)",
+          "url": "https://www.scj.go.jp/ja/member/iinkai/kanji/pdf26/siryo397-4.pdf"
+        },
+        {
+          "name": "資料3:公開審議事項(PDF形式:950KB)",
+          "url": "https://www.scj.go.jp/ja/member/iinkai/kanji/pdf26/siryo397-5.pdf"
+        },
+        {
+          "name": "資料3:公開審議事項(別冊1)(PDF形式:1,544KB)",
+          "url": "https://www.scj.go.jp/ja/member/iinkai/kanji/pdf26/siryo397-6.pdf"
+        }
+      ]
+    },
+    {
       "id": "cfa-hoshokin_yuseishujutsu-20260227-012",
       "councilId": "cfa-hoshokin_yuseishujutsu",
       "name": "第12回 補償金・優生手術等一時金認定審査部会",
@@ -99323,6 +99712,43 @@
       ]
     },
     {
+      "id": "cao-252-20260127-396",
+      "councilId": "cao-252",
+      "name": "第396回 日本学術会議 幹事会",
+      "date": "2026/01/27",
+      "officialUrl": "https://www.scj.go.jp/ja/member/iinkai/kanji/siryo396.html",
+      "materials": [
+        {
+          "name": "議事要旨(PDF形式:214KB)",
+          "url": "https://www.scj.go.jp/ja/member/iinkai/kanji/pdf26/giji396.pdf"
+        },
+        {
+          "name": "第396回幹事会議事次第(PDF形式:170KB)",
+          "url": "https://www.scj.go.jp/ja/member/iinkai/kanji/pdf26/sidai396.pdf"
+        },
+        {
+          "name": "資料1:前回幹事会議事要旨(案)(PDF形式:212KB)",
+          "url": "https://www.scj.go.jp/ja/member/iinkai/kanji/pdf26/siryo396-1.pdf"
+        },
+        {
+          "name": "資料2:諸報告事項(PDF形式:358KB)",
+          "url": "https://www.scj.go.jp/ja/member/iinkai/kanji/pdf26/siryo396-2.pdf"
+        },
+        {
+          "name": "資料2:諸報告事項(別冊1)(PDF形式:780KB)",
+          "url": "https://www.scj.go.jp/ja/member/iinkai/kanji/pdf26/siryo396-3.pdf"
+        },
+        {
+          "name": "資料2:諸報告事項(別冊2)(PDF形式:409KB)",
+          "url": "https://www.scj.go.jp/ja/member/iinkai/kanji/pdf26/siryo396-4.pdf"
+        },
+        {
+          "name": "資料3:公開審議事項(PDF形式:978KB)",
+          "url": "https://www.scj.go.jp/ja/member/iinkai/kanji/pdf26/siryo396-5.pdf"
+        }
+      ]
+    },
+    {
       "id": "cao-shouhisha_iinkai-20260127-480",
       "councilId": "cao-shouhisha_iinkai",
       "name": "第480回 消費者委員会本会議",
@@ -107068,6 +107494,43 @@
         {
           "name": "議事要旨(PDF形式:93KB)",
           "url": "https://www.meti.go.jp/shingikai/energy_environment/carbon_dioxide/pdf/004_gijiyoshi.pdf"
+        }
+      ]
+    },
+    {
+      "id": "cao-252-20251223-395",
+      "councilId": "cao-252",
+      "name": "第395回 日本学術会議 幹事会",
+      "date": "2025/12/23",
+      "officialUrl": "https://www.scj.go.jp/ja/member/iinkai/kanji/siryo395.html",
+      "materials": [
+        {
+          "name": "議事要旨(PDF形式:211KB)",
+          "url": "https://www.scj.go.jp/ja/member/iinkai/kanji/pdf26/giji395.pdf"
+        },
+        {
+          "name": "第395回幹事会議事次第(PDF形式:170KB)",
+          "url": "https://www.scj.go.jp/ja/member/iinkai/kanji/pdf26/sidai395.pdf"
+        },
+        {
+          "name": "資料1:前回幹事会議事要旨(案)(PDF形式:232KB)",
+          "url": "https://www.scj.go.jp/ja/member/iinkai/kanji/pdf26/siryo395-1.pdf"
+        },
+        {
+          "name": "資料2:諸報告事項(PDF形式:453KB)",
+          "url": "https://www.scj.go.jp/ja/member/iinkai/kanji/pdf26/siryo395-2.pdf"
+        },
+        {
+          "name": "資料2:諸報告事項(別冊1)(PDF形式:1,469KB)",
+          "url": "https://www.scj.go.jp/ja/member/iinkai/kanji/pdf26/siryo395-3.pdf"
+        },
+        {
+          "name": "資料2:諸報告事項(別冊2)(PDF形式:297KB)",
+          "url": "https://www.scj.go.jp/ja/member/iinkai/kanji/pdf26/siryo395-4.pdf"
+        },
+        {
+          "name": "資料3:公開審議事項(PDF形式:1,227KB)",
+          "url": "https://www.scj.go.jp/ja/member/iinkai/kanji/pdf26/siryo395-5.pdf"
         }
       ]
     },
@@ -115361,6 +115824,51 @@
       ]
     },
     {
+      "id": "cao-252-20251127-394",
+      "councilId": "cao-252",
+      "name": "第394回 日本学術会議 幹事会",
+      "date": "2025/11/27",
+      "officialUrl": "https://www.scj.go.jp/ja/member/iinkai/kanji/siryo394.html",
+      "materials": [
+        {
+          "name": "議事要旨(PDF形式:230KB)",
+          "url": "https://www.scj.go.jp/ja/member/iinkai/kanji/pdf26/giji394.pdf"
+        },
+        {
+          "name": "第394回幹事会議事次第(PDF形式:170KB)",
+          "url": "https://www.scj.go.jp/ja/member/iinkai/kanji/pdf26/sidai394.pdf"
+        },
+        {
+          "name": "資料1:前回幹事会議事要旨(案)(PDF形式:231KB)",
+          "url": "https://www.scj.go.jp/ja/member/iinkai/kanji/pdf26/siryo394-1.pdf"
+        },
+        {
+          "name": "資料2:諸報告事項(PDF形式:411KB)",
+          "url": "https://www.scj.go.jp/ja/member/iinkai/kanji/pdf26/siryo394-2.pdf"
+        },
+        {
+          "name": "資料2:諸報告事項(別冊1)(PDF形式:1,928KB)",
+          "url": "https://www.scj.go.jp/ja/member/iinkai/kanji/pdf26/siryo394-3.pdf"
+        },
+        {
+          "name": "資料2:諸報告事項(別冊2)(PDF形式:1,574KB)",
+          "url": "https://www.scj.go.jp/ja/member/iinkai/kanji/pdf26/siryo394-4.pdf"
+        },
+        {
+          "name": "資料3:公開審議事項(PDF形式:821KB)",
+          "url": "https://www.scj.go.jp/ja/member/iinkai/kanji/pdf26/siryo394-5.pdf"
+        },
+        {
+          "name": "資料3:公開審議事項(別冊1)(PDF形式:1,000KB)",
+          "url": "https://www.scj.go.jp/ja/member/iinkai/kanji/pdf26/siryo394-6.pdf"
+        },
+        {
+          "name": "資料3:公開審議事項(別冊2)(PDF形式:1,597KB)",
+          "url": "https://www.scj.go.jp/ja/member/iinkai/kanji/pdf26/siryo394-7.pdf"
+        }
+      ]
+    },
+    {
       "id": "fsc-nouyaku_dai1-20251127-043",
       "councilId": "fsc-nouyaku_dai1",
       "name": "第43回農薬第一専門調査会",
@@ -123248,6 +123756,77 @@
       ]
     },
     {
+      "id": "mext-715-20251028-s03",
+      "councilId": "mext-715",
+      "name": "令和8年度開設予定の大学等の設置に係る答申について(令和7年10月28日)",
+      "date": "2025/10/28",
+      "officialUrl": "https://www.mext.go.jp/b_menu/shingi/daigaku/toushin/attach/1420729_00024.htm",
+      "materials": [
+        {
+          "name": "令和8年度開設予定大学等一覧 (PDF:123KB)",
+          "url": "https://www.mext.go.jp/content/20251028-mxt_koutou02-000045529_01.pdf"
+        },
+        {
+          "name": "令和8年度開設予定学部等一覧 (PDF:181KB)",
+          "url": "https://www.mext.go.jp/content/20251028-mxt_koutou02-000045529_02.pdf"
+        },
+        {
+          "name": "令和8年度開設予定大学院等一覧 (PDF:86KB)",
+          "url": "https://www.mext.go.jp/content/20251028-mxt_koutou02-000045529_03.pdf"
+        },
+        {
+          "name": "≪参考≫令和8年度国立大学開設予定研究科等一覧 (PDF:96KB)",
+          "url": "https://www.mext.go.jp/content/20250829-mxt_koutou02-000044436_04.pdf"
+        }
+      ]
+    },
+    {
+      "id": "mext-715-20251028-s25",
+      "councilId": "mext-715",
+      "name": "令和8年度からの私立大学医学部の収容定員の増加に係る学則変更予定一覧",
+      "date": "2025/10/28",
+      "officialUrl": "https://www.mext.go.jp/b_menu/shingi/daigaku/toushin/1422602_00012.htm",
+      "materials": [
+        {
+          "name": "令和8年度からの私立大学医学部の収容定員の増加に係る学則変更予定一覧(令和7年10月28日) (PDF:113KB)",
+          "url": "https://www.mext.go.jp/content/20251028-mxt_koutou02-000045541_1.pdf"
+        },
+        {
+          "name": "(参考)令和8年度からの国立大学医学部の収容定員の増加に係る設置計画一覧 (PDF:112KB)",
+          "url": "https://www.mext.go.jp/content/20251028-mxt_koutou02-000045541_2.pdf"
+        }
+      ]
+    },
+    {
+      "id": "mext-715-20251028-s26",
+      "councilId": "mext-715",
+      "name": "令和8年度からの私立大学等の収容定員の変更に係る学則変更予定一覧",
+      "date": "2025/10/28",
+      "officialUrl": "https://www.mext.go.jp/b_menu/shingi/daigaku/toushin/1422602_00009.htm",
+      "materials": [
+        {
+          "name": "令和8年度からの私立大学の収容定員の変更に係る学則変更予定一覧(令和7年10月28日) (PDF:72KB)",
+          "url": "https://www.mext.go.jp/content/20251028-mxt_koutou02-000043269_01.pdf"
+        },
+        {
+          "name": "令和8年度からの私立大学の収容定員の変更に係る学則変更予定一覧(令和7年8月29日) (PDF:113KB)",
+          "url": "https://www.mext.go.jp/content/20250829-mxt_koutou02-000043269_01.pdf"
+        },
+        {
+          "name": "令和8年度からの私立大学の収容定員の変更に係る学則変更予定一覧(令和7年6月25日) (PDF:182KB)",
+          "url": "https://www.mext.go.jp/content/20250625-mxt_koutou02-000043269_01.pdf"
+        },
+        {
+          "name": "≪参考≫令和8年度からの国立大学の収容定員の増加予定一覧(令和7年6月25日) (PDF:154KB)",
+          "url": "https://www.mext.go.jp/content/20250625-mxt_koutou02-000043269_02.pdf"
+        },
+        {
+          "name": "≪参考≫令和8年度からの国立高等専門学校の収容定員の増加予定一覧(令和7年6月25日) (PDF:153KB)",
+          "url": "https://www.mext.go.jp/content/20250625-mxt_koutou02-000043269_03.pdf"
+        }
+      ]
+    },
+    {
       "id": "mhlw-1006-20251028-008",
       "councilId": "mhlw-1006",
       "name": "第8回 指定薬物部会",
@@ -123425,6 +124004,47 @@
         {
           "name": "第15回 議事概要(214KB)",
           "url": "https://www.chusho.meti.go.jp/koukai/shingikai/kinyu/015/015_gijigaiyo.pdf"
+        }
+      ]
+    },
+    {
+      "id": "cao-252-20251027-393",
+      "councilId": "cao-252",
+      "name": "第393回 日本学術会議 幹事会",
+      "date": "2025/10/27",
+      "officialUrl": "https://www.scj.go.jp/ja/member/iinkai/kanji/siryo393.html",
+      "materials": [
+        {
+          "name": "議事要旨(PDF形式:229KB)",
+          "url": "https://www.scj.go.jp/ja/member/iinkai/kanji/pdf26/giji393.pdf"
+        },
+        {
+          "name": "第393回幹事会議事次第(PDF形式:170KB)",
+          "url": "https://www.scj.go.jp/ja/member/iinkai/kanji/pdf26/sidai393.pdf"
+        },
+        {
+          "name": "資料1:前回幹事会議事要旨(案)(PDF形式:217KB)",
+          "url": "https://www.scj.go.jp/ja/member/iinkai/kanji/pdf26/siryo393-1.pdf"
+        },
+        {
+          "name": "資料2:諸報告事項(PDF形式:503KB)",
+          "url": "https://www.scj.go.jp/ja/member/iinkai/kanji/pdf26/siryo393-2.pdf"
+        },
+        {
+          "name": "資料2:諸報告事項(別冊)(PDF形式:424KB)",
+          "url": "https://www.scj.go.jp/ja/member/iinkai/kanji/pdf26/siryo393-3.pdf"
+        },
+        {
+          "name": "資料3:公開審議事項(PDF形式:889KB)",
+          "url": "https://www.scj.go.jp/ja/member/iinkai/kanji/pdf26/siryo393-4.pdf"
+        },
+        {
+          "name": "資料3:公開審議事項(別冊1)(PDF形式:3,402KB)",
+          "url": "https://www.scj.go.jp/ja/member/iinkai/kanji/pdf26/siryo393-5.pdf"
+        },
+        {
+          "name": "資料3:公開審議事項(別冊2)(PDF形式:1,707KB)",
+          "url": "https://www.scj.go.jp/ja/member/iinkai/kanji/pdf26/siryo393-6.pdf"
         }
       ]
     },
@@ -130695,6 +131315,35 @@
       ]
     },
     {
+      "id": "cao-252-20250926-392",
+      "councilId": "cao-252",
+      "name": "第392回 日本学術会議 幹事会",
+      "date": "2025/09/26",
+      "officialUrl": "https://www.scj.go.jp/ja/member/iinkai/kanji/siryo392.html",
+      "materials": [
+        {
+          "name": "議事要旨(PDF形式:216KB)",
+          "url": "https://www.scj.go.jp/ja/member/iinkai/kanji/pdf26/giji392.pdf"
+        },
+        {
+          "name": "第392回幹事会議事次第(PDF形式:170KB)",
+          "url": "https://www.scj.go.jp/ja/member/iinkai/kanji/pdf26/sidai392.pdf"
+        },
+        {
+          "name": "資料1:前回幹事会議事要旨(案)(PDF形式:227KB)",
+          "url": "https://www.scj.go.jp/ja/member/iinkai/kanji/pdf26/siryo392-1.pdf"
+        },
+        {
+          "name": "資料2:諸報告事項(PDF形式:355KB)",
+          "url": "https://www.scj.go.jp/ja/member/iinkai/kanji/pdf26/siryo392-2.pdf"
+        },
+        {
+          "name": "資料3:公開審議事項(PDF形式:1,086KB)",
+          "url": "https://www.scj.go.jp/ja/member/iinkai/kanji/pdf26/siryo392-3.pdf"
+        }
+      ]
+    },
+    {
       "id": "cas-digital_gyozaikaikaku-20250926-005",
       "councilId": "cas-digital_gyozaikaikaku",
       "name": "第5回 デジタル行財政改革会議",
@@ -132098,6 +132747,23 @@
         {
           "name": "議事録",
           "url": "https://www.meti.go.jp/shingikai/energy_environment/doji_shijo_kento/pdf/020_gijiroku.pdf"
+        }
+      ]
+    },
+    {
+      "id": "cao-252-20250922-391",
+      "councilId": "cao-252",
+      "name": "第391回 日本学術会議 幹事会",
+      "date": "2025/09/22",
+      "officialUrl": "https://www.scj.go.jp/ja/member/iinkai/kanji/siryo391.html",
+      "materials": [
+        {
+          "name": "議事要旨(PDF形式:164KB)",
+          "url": "https://www.scj.go.jp/ja/member/iinkai/kanji/pdf26/giji391.pdf"
+        },
+        {
+          "name": "資料1:公開審議事項(PDF形式:278KB)",
+          "url": "https://www.scj.go.jp/ja/member/iinkai/kanji/pdf26/siryo391-1.pdf"
         }
       ]
     },
@@ -134629,6 +135295,19 @@
       ]
     },
     {
+      "id": "cao-252-20250905-390",
+      "councilId": "cao-252",
+      "name": "第390回 日本学術会議 幹事会",
+      "date": "2025/09/05",
+      "officialUrl": "https://www.scj.go.jp/ja/member/iinkai/kanji/siryo390.html",
+      "materials": [
+        {
+          "name": "議事要旨(PDF形式:165KB)",
+          "url": "https://www.scj.go.jp/ja/member/iinkai/kanji/pdf26/giji390.pdf"
+        }
+      ]
+    },
+    {
       "id": "cas-influenza-20250905-s01",
       "councilId": "cas-influenza",
       "name": "鳥インフルエンザ関係閣僚会議 関係府省庁連絡会議幹事会(令和7年9月5日)",
@@ -136231,6 +136910,43 @@
       ]
     },
     {
+      "id": "cao-252-20250829-389",
+      "councilId": "cao-252",
+      "name": "第389回 日本学術会議 幹事会",
+      "date": "2025/08/29",
+      "officialUrl": "https://www.scj.go.jp/ja/member/iinkai/kanji/siryo389.html",
+      "materials": [
+        {
+          "name": "議事要旨(PDF形式:214KB)",
+          "url": "https://www.scj.go.jp/ja/member/iinkai/kanji/pdf26/giji389.pdf"
+        },
+        {
+          "name": "第389回幹事会議事次第(PDF形式:170KB)",
+          "url": "https://www.scj.go.jp/ja/member/iinkai/kanji/pdf26/sidai389.pdf"
+        },
+        {
+          "name": "資料1:前回幹事会議事要旨(案)(PDF形式:206KB)",
+          "url": "https://www.scj.go.jp/ja/member/iinkai/kanji/pdf26/siryo389-1.pdf"
+        },
+        {
+          "name": "資料2:諸報告事項(PDF形式:480KB)",
+          "url": "https://www.scj.go.jp/ja/member/iinkai/kanji/pdf26/siryo389-2-1.pdf"
+        },
+        {
+          "name": "資料2:諸報告事項(別冊)(PDF形式:422KB)",
+          "url": "https://www.scj.go.jp/ja/member/iinkai/kanji/pdf26/siryo389-2-2.pdf"
+        },
+        {
+          "name": "資料3:公開審議事項(PDF形式:830KB)",
+          "url": "https://www.scj.go.jp/ja/member/iinkai/kanji/pdf26/siryo389-3.pdf"
+        },
+        {
+          "name": "提案1:法人化準備委員会の運営要綱の決定及び分科会の設置について(修正)(PDF形式:245KB)",
+          "url": "https://www.scj.go.jp/ja/member/iinkai/kanji/pdf26/siryo389-3sub.pdf"
+        }
+      ]
+    },
+    {
       "id": "cas-genshiryoku_kakuryo_kaigi-20250829-013",
       "councilId": "cas-genshiryoku_kakuryo_kaigi",
       "name": "第13回 原子力関係閣僚会議",
@@ -136335,6 +137051,31 @@
         {
           "name": "資料2国際かんがい排水委員会(ICID)第76回国際執行理事会及び第4回世界かんがいフォーラムの対応方針について(PDF : 739KB)",
           "url": "https://www.maff.go.jp/j/council/seisaku/nousin/bukai/R0704/attach/pdf/siryou-4.pdf"
+        }
+      ]
+    },
+    {
+      "id": "mext-715-20250829-s04",
+      "councilId": "mext-715",
+      "name": "令和8年度開設予定の大学等の設置に係る答申について(令和7年8月29日)",
+      "date": "2025/08/29",
+      "officialUrl": "https://www.mext.go.jp/b_menu/shingi/daigaku/toushin/attach/1420729_00023.htm",
+      "materials": [
+        {
+          "name": "令和8年度開設予定大学等一覧 (PDF:284KB)",
+          "url": "https://www.mext.go.jp/content/20250829-mxt_koutou02-000044436_01.pdf"
+        },
+        {
+          "name": "令和8年度開設予定学部等一覧 (PDF:214KB)",
+          "url": "https://www.mext.go.jp/content/20250829-mxt_koutou02-000044436_02.pdf"
+        },
+        {
+          "name": "令和8年度開設予定大学院等一覧 (PDF:156KB)",
+          "url": "https://www.mext.go.jp/content/20250829-mxt_koutou02-000044436_03.pdf"
+        },
+        {
+          "name": "≪参考≫令和8年度国立大学開設予定研究科等一覧 (PDF:96KB)",
+          "url": "https://www.mext.go.jp/content/20250829-mxt_koutou02-000044436_04.pdf"
         }
       ]
     },
@@ -138527,6 +139268,23 @@
           "name": "議事録",
           "url": "https://www.mhlw.go.jp/stf/newpage_63627.html",
           "type": "HTML"
+        }
+      ]
+    },
+    {
+      "id": "cao-252-20250814-388",
+      "councilId": "cao-252",
+      "name": "第388回 日本学術会議 幹事会",
+      "date": "2025/08/14",
+      "officialUrl": "https://www.scj.go.jp/ja/member/iinkai/kanji/siryo388.html",
+      "materials": [
+        {
+          "name": "議事要旨(PDF形式:171KB)",
+          "url": "https://www.scj.go.jp/ja/member/iinkai/kanji/pdf26/giji388.pdf"
+        },
+        {
+          "name": "資料1:公開審議事項(PDF形式:291KB)",
+          "url": "https://www.scj.go.jp/ja/member/iinkai/kanji/pdf26/siryo388-1.pdf"
         }
       ]
     },
@@ -141795,6 +142553,35 @@
       ]
     },
     {
+      "id": "cao-252-20250728-387",
+      "councilId": "cao-252",
+      "name": "第387回 日本学術会議 幹事会",
+      "date": "2025/07/28",
+      "officialUrl": "https://www.scj.go.jp/ja/member/iinkai/kanji/siryo387.html",
+      "materials": [
+        {
+          "name": "議事要旨(PDF形式:192KB)",
+          "url": "https://www.scj.go.jp/ja/member/iinkai/kanji/pdf26/giji387.pdf"
+        },
+        {
+          "name": "第387回幹事会議事次第(PDF形式:169KB)",
+          "url": "https://www.scj.go.jp/ja/member/iinkai/kanji/pdf26/sidai387.pdf"
+        },
+        {
+          "name": "資料1:前回幹事会議事要旨(案)(PDF形式:194KB)",
+          "url": "https://www.scj.go.jp/ja/member/iinkai/kanji/pdf26/siryo387-1.pdf"
+        },
+        {
+          "name": "資料2:諸報告事項(PDF形式:362KB)",
+          "url": "https://www.scj.go.jp/ja/member/iinkai/kanji/pdf26/siryo387-2.pdf"
+        },
+        {
+          "name": "資料3:公開審議事項(PDF形式:737KB)",
+          "url": "https://www.scj.go.jp/ja/member/iinkai/kanji/pdf26/siryo387-3.pdf"
+        }
+      ]
+    },
+    {
       "id": "fsa-transition_finance-20250728-012",
       "councilId": "fsa-transition_finance",
       "name": "第12回 トランジション・ファイナンス環境整備検討会",
@@ -144351,6 +145138,35 @@
       ]
     },
     {
+      "id": "jfa-shigen_kanri_houshin-20250715-004",
+      "councilId": "jfa-shigen_kanri_houshin",
+      "name": "第4回 資源管理方針に関する検討会（ズワイガニ 日本海系群）",
+      "date": "2025/07/15",
+      "officialUrl": "https://www.jfa.maff.go.jp/j/study/kanri/231027_9.html",
+      "materials": [
+        {
+          "name": "議事録(PDF : 260KB)",
+          "url": "https://www.jfa.maff.go.jp/j/study/kanri/attach/pdf/231027_9-104.pdf"
+        },
+        {
+          "name": "資料1:議事次第(PDF : 203KB)",
+          "url": "https://www.jfa.maff.go.jp/j/study/kanri/attach/pdf/231027_9-71.pdf"
+        },
+        {
+          "name": "資料2:出席者名簿(PDF : 85KB)",
+          "url": "https://www.jfa.maff.go.jp/j/study/kanri/attach/pdf/231027_9-79.pdf"
+        },
+        {
+          "name": "資料3:資源の現況について(ズワイガニ日本海系群B海域)(PDF : 2,417KB)",
+          "url": "https://www.jfa.maff.go.jp/j/study/kanri/attach/pdf/231027_9-80.pdf"
+        },
+        {
+          "name": "資料4:現行の資源管理方針等について(ズワイガニ日本海系群B海域)(PDF : 347KB)",
+          "url": "https://www.jfa.maff.go.jp/j/study/kanri/attach/pdf/231027_9-74.pdf"
+        }
+      ]
+    },
+    {
       "id": "mext-gijyutu-20250715-077",
       "councilId": "mext-gijyutu",
       "name": "第77回 科学技術・学術審議会",
@@ -146591,6 +147407,35 @@
         {
           "name": "(参考資料)小笠原諸島振興開発審議会委員名簿(PDF形式:35KB)",
           "url": "https://www.mlit.go.jp/policy/shingikai/content/001900196.pdf"
+        }
+      ]
+    },
+    {
+      "id": "cao-252-20250630-386",
+      "councilId": "cao-252",
+      "name": "第386回 日本学術会議 幹事会",
+      "date": "2025/06/30",
+      "officialUrl": "https://www.scj.go.jp/ja/member/iinkai/kanji/siryo386.html",
+      "materials": [
+        {
+          "name": "議事要旨(PDF形式:192KB)",
+          "url": "https://www.scj.go.jp/ja/member/iinkai/kanji/pdf26/giji386.pdf"
+        },
+        {
+          "name": "第386回幹事会議事次第(PDF形式:170KB)",
+          "url": "https://www.scj.go.jp/ja/member/iinkai/kanji/pdf26/sidai386.pdf"
+        },
+        {
+          "name": "資料1:前回幹事会議事要旨(案)(PDF形式:193KB)",
+          "url": "https://www.scj.go.jp/ja/member/iinkai/kanji/pdf26/siryo386-1.pdf"
+        },
+        {
+          "name": "資料2:諸報告事項(PDF形式:563KB)",
+          "url": "https://www.scj.go.jp/ja/member/iinkai/kanji/pdf26/siryo386-2.pdf"
+        },
+        {
+          "name": "資料3:公開審議事項(PDF形式:1,112KB)",
+          "url": "https://www.scj.go.jp/ja/member/iinkai/kanji/pdf26/siryo386-3.pdf"
         }
       ]
     },
@@ -153447,6 +154292,19 @@
       ]
     },
     {
+      "id": "mic-fufuku_shinsa-20250601-010",
+      "councilId": "mic-fufuku_shinsa",
+      "name": "第10回 行政不服審査会（令和7年度）",
+      "date": "2025/06/01",
+      "officialUrl": "https://www.soumu.go.jp/main_sosiki/singi/fufukushinsa/katsudou/index.html",
+      "materials": [
+        {
+          "name": "第10回 行政不服審査会 活動報告（令和7年度）",
+          "url": "https://www.soumu.go.jp/main_content/001075267.pdf"
+        }
+      ]
+    },
+    {
       "id": "anre-1761-20250530-003",
       "councilId": "anre-1761",
       "name": "第3回 二酸化炭素地中貯留評価検討会",
@@ -153497,6 +154355,39 @@
         {
           "name": "資料5 経済産業省資料",
           "url": "https://www.meti.go.jp/shingikai/energy_environment/cbam/pdf/001_05_00.pdf"
+        }
+      ]
+    },
+    {
+      "id": "cao-252-20250530-385",
+      "councilId": "cao-252",
+      "name": "第385回 日本学術会議 幹事会",
+      "date": "2025/05/30",
+      "officialUrl": "https://www.scj.go.jp/ja/member/iinkai/kanji/siryo385.html",
+      "materials": [
+        {
+          "name": "議事要旨(PDF形式:191KB)",
+          "url": "https://www.scj.go.jp/ja/member/iinkai/kanji/pdf26/giji385.pdf"
+        },
+        {
+          "name": "第385回幹事会議事次第(PDF形式:170KB)",
+          "url": "https://www.scj.go.jp/ja/member/iinkai/kanji/pdf26/sidai385.pdf"
+        },
+        {
+          "name": "資料1:前回幹事会議事要旨(案)(PDF形式:199KB)",
+          "url": "https://www.scj.go.jp/ja/member/iinkai/kanji/pdf26/siryo385-1.pdf"
+        },
+        {
+          "name": "資料2:諸報告事項(PDF形式:1,474KB)",
+          "url": "https://www.scj.go.jp/ja/member/iinkai/kanji/pdf26/siryo385-2.pdf"
+        },
+        {
+          "name": "資料2:諸報告事項(別冊)(PDF形式:517KB)",
+          "url": "https://www.scj.go.jp/ja/member/iinkai/kanji/pdf26/siryo385-3.pdf"
+        },
+        {
+          "name": "資料3:公開審議事項(PDF形式:982KB)",
+          "url": "https://www.scj.go.jp/ja/member/iinkai/kanji/pdf26/siryo385-4.pdf"
         }
       ]
     },
@@ -161501,6 +162392,43 @@
       ]
     },
     {
+      "id": "cao-252-20250414-384",
+      "councilId": "cao-252",
+      "name": "第384回 日本学術会議 幹事会",
+      "date": "2025/04/14",
+      "officialUrl": "https://www.scj.go.jp/ja/member/iinkai/kanji/siryo384.html",
+      "materials": [
+        {
+          "name": "議事要旨(PDF形式:195KB)",
+          "url": "https://www.scj.go.jp/ja/member/iinkai/kanji/pdf26/giji384.pdf"
+        },
+        {
+          "name": "第384回幹事会議事次第(PDF形式:170KB)",
+          "url": "https://www.scj.go.jp/ja/member/iinkai/kanji/pdf26/sidai384.pdf"
+        },
+        {
+          "name": "資料3ー1:公開審議事項1(PDF形式:156KB)",
+          "url": "https://www.scj.go.jp/ja/member/iinkai/kanji/pdf26/siryo384-3-1.pdf"
+        },
+        {
+          "name": "資料3ー1(参考):令和6年度各地区会議事業報告(PDF形式:9,246KB)",
+          "url": "https://www.scj.go.jp/ja/member/iinkai/kanji/pdf26/siryo384-3-1s.pdf"
+        },
+        {
+          "name": "資料1:前回幹事会議事要旨(案)(PDF形式:209KB)",
+          "url": "https://www.scj.go.jp/ja/member/iinkai/kanji/pdf26/siryo384-1.pdf"
+        },
+        {
+          "name": "資料2:諸報告事項(PDF形式:428KB)",
+          "url": "https://www.scj.go.jp/ja/member/iinkai/kanji/pdf26/siryo384-2.pdf"
+        },
+        {
+          "name": "資料3ー2:公開審議事項2(PDF形式:836KB)",
+          "url": "https://www.scj.go.jp/ja/member/iinkai/kanji/pdf26/siryo384-3-2.pdf"
+        }
+      ]
+    },
+    {
       "id": "digital-427-20250414-003",
       "councilId": "digital-427",
       "name": "第3回 教育分野の認証基盤の在り方に関する検討会",
@@ -162937,6 +163865,39 @@
         {
           "name": "議事要旨",
           "url": "https://www.meti.go.jp/shingikai/energy_environment/demand_forecast/pdf/2025_003_gijiyoshi.pdf"
+        }
+      ]
+    },
+    {
+      "id": "cao-252-20250331-382",
+      "councilId": "cao-252",
+      "name": "第382回 日本学術会議 幹事会",
+      "date": "2025/03/31",
+      "officialUrl": "https://www.scj.go.jp/ja/member/iinkai/kanji/siryo382.html",
+      "materials": [
+        {
+          "name": "議事要旨(PDF形式:197KB)",
+          "url": "https://www.scj.go.jp/ja/member/iinkai/kanji/pdf26/giji382.pdf"
+        },
+        {
+          "name": "第382回幹事会議事次第(PDF形式:169KB)",
+          "url": "https://www.scj.go.jp/ja/member/iinkai/kanji/pdf26/sidai382.pdf"
+        },
+        {
+          "name": "資料1:前回幹事会議事要旨(案)(PDF形式:207KB)",
+          "url": "https://www.scj.go.jp/ja/member/iinkai/kanji/pdf26/siryo382-1.pdf"
+        },
+        {
+          "name": "資料2:諸報告事項(PDF形式:506KB)",
+          "url": "https://www.scj.go.jp/ja/member/iinkai/kanji/pdf26/siryo382-2.pdf"
+        },
+        {
+          "name": "資料3:公開審議事項(PDF形式:1,141KB)",
+          "url": "https://www.scj.go.jp/ja/member/iinkai/kanji/pdf26/siryo382-3.pdf"
+        },
+        {
+          "name": "提案3:部が直接統括する分野別委員会合同分科会の設置について(修正後)(PDF形式:112KB)",
+          "url": "https://www.scj.go.jp/ja/member/iinkai/kanji/pdf26/siryo382-3sub.pdf"
         }
       ]
     },
@@ -169889,6 +170850,27 @@
       ]
     },
     {
+      "id": "meti-sankoshin_chiteki_zaisan-20250305-020",
+      "councilId": "meti-sankoshin_chiteki_zaisan",
+      "name": "第20回 産業構造審議会 知的財産分科会",
+      "date": "2025/03/05",
+      "officialUrl": "https://www.jpo.go.jp/resources/shingikai/sangyo-kouzou/shousai/chizai_bunkakai/index.html",
+      "materials": [
+        {
+          "name": "第20回 産業構造審議会 知的財産分科会 議事要旨",
+          "url": "https://www.jpo.go.jp/resources/shingikai/sangyo-kouzou/shousai/chizai_bunkakai/20-gijiyoushi.html"
+        },
+        {
+          "name": "第20回 産業構造審議会 知的財産分科会 配布資料",
+          "url": "https://www.jpo.go.jp/resources/shingikai/sangyo-kouzou/shousai/chizai_bunkakai/20-shiryou.html"
+        },
+        {
+          "name": "議事録(PDF:481KB)",
+          "url": "https://www.jpo.go.jp/resources/shingikai/sangyo-kouzou/shousai/chizai_bunkakai/document/index/20_gijiroku.pdf"
+        }
+      ]
+    },
+    {
       "id": "mhlw-2872-20250305-004",
       "councilId": "mhlw-2872",
       "name": "第4回 歯科技工士の業務のあり方等に関する検討会",
@@ -171174,6 +172156,47 @@
         {
           "name": "議事録",
           "url": "https://www.soumu.go.jp/main_content/001002936.pdf"
+        }
+      ]
+    },
+    {
+      "id": "cao-252-20250227-381",
+      "councilId": "cao-252",
+      "name": "第381回 日本学術会議 幹事会",
+      "date": "2025/02/27",
+      "officialUrl": "https://www.scj.go.jp/ja/member/iinkai/kanji/siryo381.html",
+      "materials": [
+        {
+          "name": "議事要旨(PDF形式:205KB)",
+          "url": "https://www.scj.go.jp/ja/member/iinkai/kanji/pdf26/giji381.pdf"
+        },
+        {
+          "name": "第381回幹事会議事次第(PDF形式:170KB)",
+          "url": "https://www.scj.go.jp/ja/member/iinkai/kanji/pdf26/sidai381.pdf"
+        },
+        {
+          "name": "資料1:前回幹事会議事要旨(案)(PDF形式:207KB)",
+          "url": "https://www.scj.go.jp/ja/member/iinkai/kanji/pdf26/siryo381-1.pdf"
+        },
+        {
+          "name": "資料2:諸報告事項(PDF形式:482KB)",
+          "url": "https://www.scj.go.jp/ja/member/iinkai/kanji/pdf26/siryo381-2-1.pdf"
+        },
+        {
+          "name": "資料2:諸報告事項(別冊)(PDF形式:360KB)",
+          "url": "https://www.scj.go.jp/ja/member/iinkai/kanji/pdf26/siryo381-2-2.pdf"
+        },
+        {
+          "name": "資料3:公開審議事項(PDF形式:889KB)",
+          "url": "https://www.scj.go.jp/ja/member/iinkai/kanji/pdf26/siryo381-3-1.pdf"
+        },
+        {
+          "name": "資料3:公開審議事項(別冊)(PDF形式:789KB)",
+          "url": "https://www.scj.go.jp/ja/member/iinkai/kanji/pdf26/siryo381-3-2.pdf"
+        },
+        {
+          "name": "提案5:令和7年度代表派遣について(PDF形式:453KB)",
+          "url": "https://www.scj.go.jp/ja/member/iinkai/kanji/pdf26/siryo381-1sub.pdf"
         }
       ]
     },
@@ -174381,6 +175404,19 @@
         {
           "name": "第75回 政策評価有識者会議 議事要旨",
           "url": "https://www.moj.go.jp/content/001435083.pdf"
+        }
+      ]
+    },
+    {
+      "id": "cao-252-20250213-380",
+      "councilId": "cao-252",
+      "name": "第380回 日本学術会議 幹事会",
+      "date": "2025/02/13",
+      "officialUrl": "https://www.scj.go.jp/ja/member/iinkai/kanji/siryo380.html",
+      "materials": [
+        {
+          "name": "議事要旨(PDF形式:98KB)",
+          "url": "https://www.scj.go.jp/ja/member/iinkai/kanji/pdf26/giji380.pdf"
         }
       ]
     },
@@ -180948,6 +181984,39 @@
       ]
     },
     {
+      "id": "cao-252-20250123-379",
+      "councilId": "cao-252",
+      "name": "第379回 日本学術会議 幹事会",
+      "date": "2025/01/23",
+      "officialUrl": "https://www.scj.go.jp/ja/member/iinkai/kanji/siryo379.html",
+      "materials": [
+        {
+          "name": "議事要旨(PDF形式:98KB)",
+          "url": "https://www.scj.go.jp/ja/member/iinkai/kanji/pdf26/giji379.pdf"
+        },
+        {
+          "name": "第379回幹事会議事次第(PDF形式:170KB)",
+          "url": "https://www.scj.go.jp/ja/member/iinkai/kanji/pdf26/sidai379.pdf"
+        },
+        {
+          "name": "資料1:前回幹事会議事要旨(案)(PDF形式:198KB)",
+          "url": "https://www.scj.go.jp/ja/member/iinkai/kanji/pdf26/siryo379-1.pdf"
+        },
+        {
+          "name": "資料2:諸報告事項(PDF形式:500KB)",
+          "url": "https://www.scj.go.jp/ja/member/iinkai/kanji/pdf26/siryo379-2-1.pdf"
+        },
+        {
+          "name": "資料2:諸報告事項(別冊)(PDF形式:7,650KB)",
+          "url": "https://www.scj.go.jp/ja/member/iinkai/kanji/pdf26/siryo379-2-2.pdf"
+        },
+        {
+          "name": "資料3:公開審議事項(PDF形式:1,090KB)",
+          "url": "https://www.scj.go.jp/ja/member/iinkai/kanji/pdf26/siryo379-3.pdf"
+        }
+      ]
+    },
+    {
       "id": "cfa-kodomo_shingikai-20250123-005",
       "councilId": "cfa-kodomo_shingikai",
       "name": "第5回 こども家庭審議会",
@@ -185388,6 +186457,39 @@
       ]
     },
     {
+      "id": "cao-252-20241220-378",
+      "councilId": "cao-252",
+      "name": "第378回 日本学術会議 幹事会",
+      "date": "2024/12/20",
+      "officialUrl": "https://www.scj.go.jp/ja/member/iinkai/kanji/siryo378.html",
+      "materials": [
+        {
+          "name": "議事要旨(PDF形式:195KB)",
+          "url": "https://www.scj.go.jp/ja/member/iinkai/kanji/pdf26/giji378.pdf"
+        },
+        {
+          "name": "第378回幹事会議事次第(PDF形式:170KB)",
+          "url": "https://www.scj.go.jp/ja/member/iinkai/kanji/pdf26/sidai378.pdf"
+        },
+        {
+          "name": "資料1:前回幹事会議事要旨(案)(PDF形式:209KB)",
+          "url": "https://www.scj.go.jp/ja/member/iinkai/kanji/pdf26/siryo378-1.pdf"
+        },
+        {
+          "name": "資料2:諸報告事項(PDF形式:442KB)",
+          "url": "https://www.scj.go.jp/ja/member/iinkai/kanji/pdf26/siryo378-2-1.pdf"
+        },
+        {
+          "name": "資料2:諸報告事項(別冊)(PDF形式:633KB)",
+          "url": "https://www.scj.go.jp/ja/member/iinkai/kanji/pdf26/siryo378-2-2.pdf"
+        },
+        {
+          "name": "資料3:公開審議事項(PDF形式:817KB)",
+          "url": "https://www.scj.go.jp/ja/member/iinkai/kanji/pdf26/siryo378-3.pdf"
+        }
+      ]
+    },
+    {
       "id": "cao-payment_senmon-20241220-010",
       "councilId": "cao-payment_senmon",
       "name": "第10回 支払手段の多様化と消費者問題に関する専門調査会",
@@ -189114,6 +190216,19 @@
       ]
     },
     {
+      "id": "cao-252-20241205-377",
+      "councilId": "cao-252",
+      "name": "第377回 日本学術会議 幹事会",
+      "date": "2024/12/05",
+      "officialUrl": "https://www.scj.go.jp/ja/member/iinkai/kanji/siryo377.html",
+      "materials": [
+        {
+          "name": "議事要旨(PDF形式:164KB)",
+          "url": "https://www.scj.go.jp/ja/member/iinkai/kanji/pdf26/giji377.pdf"
+        }
+      ]
+    },
+    {
       "id": "cas-shushoku_katsudou-20241205-012",
       "councilId": "cas-shushoku_katsudou",
       "name": "第12回 就職・採用活動日程に関する関係省庁連絡会議",
@@ -190442,6 +191557,39 @@
       ]
     },
     {
+      "id": "cao-252-20241128-376",
+      "councilId": "cao-252",
+      "name": "第376回 日本学術会議 幹事会",
+      "date": "2024/11/28",
+      "officialUrl": "https://www.scj.go.jp/ja/member/iinkai/kanji/siryo376.html",
+      "materials": [
+        {
+          "name": "議事要旨(PDF形式:202KB)",
+          "url": "https://www.scj.go.jp/ja/member/iinkai/kanji/pdf26/giji376.pdf"
+        },
+        {
+          "name": "第376回幹事会議事次第(PDF形式:170KB)",
+          "url": "https://www.scj.go.jp/ja/member/iinkai/kanji/pdf26/sidai376.pdf"
+        },
+        {
+          "name": "資料1:前回幹事会議事要旨(案)(PDF形式:103KB)",
+          "url": "https://www.scj.go.jp/ja/member/iinkai/kanji/pdf26/siryo376-1.pdf"
+        },
+        {
+          "name": "資料2:諸報告事項(PDF形式:472KB)",
+          "url": "https://www.scj.go.jp/ja/member/iinkai/kanji/pdf26/siryo376-2.pdf"
+        },
+        {
+          "name": "資料3:公開審議事項(PDF形式:1,002KB)",
+          "url": "https://www.scj.go.jp/ja/member/iinkai/kanji/pdf26/siryo376-3.pdf"
+        },
+        {
+          "name": "資料3:公開審議事項(別冊)(PDF形式:1,166KB)",
+          "url": "https://www.scj.go.jp/ja/member/iinkai/kanji/pdf26/siryo376-3-1.pdf"
+        }
+      ]
+    },
+    {
       "id": "cao-kisei_startup_wg-20241128-003",
       "councilId": "cao-kisei_startup_wg",
       "name": "第3回 規制改革推進会議 スタートアップ・イノベーション促進WG(令和6年度)",
@@ -191053,6 +192201,19 @@
         {
           "name": "国債投資家懇談会資料",
           "url": "https://www.mof.go.jp/about_mof/councils/meeting_of_jgbi/proceedings/outline/241127toushika95.pdf"
+        }
+      ]
+    },
+    {
+      "id": "cao-252-20241126-375",
+      "councilId": "cao-252",
+      "name": "第375回 日本学術会議 幹事会",
+      "date": "2024/11/26",
+      "officialUrl": "https://www.scj.go.jp/ja/member/iinkai/kanji/siryo375.html",
+      "materials": [
+        {
+          "name": "議事要旨(PDF形式:165KB)",
+          "url": "https://www.scj.go.jp/ja/member/iinkai/kanji/pdf26/giji375.pdf"
         }
       ]
     },
@@ -195952,6 +197113,19 @@
       ]
     },
     {
+      "id": "cao-252-20241031-374",
+      "councilId": "cao-252",
+      "name": "第374回 日本学術会議 幹事会",
+      "date": "2024/10/31",
+      "officialUrl": "https://www.scj.go.jp/ja/member/iinkai/kanji/siryo374.html",
+      "materials": [
+        {
+          "name": "議事要旨(PDF形式:166KB)",
+          "url": "https://www.scj.go.jp/ja/member/iinkai/kanji/pdf26/giji374.pdf"
+        }
+      ]
+    },
+    {
       "id": "cas-gx_jikkou-20241031-013",
       "councilId": "cas-gx_jikkou",
       "name": "第13回 GX実行会議",
@@ -196996,6 +198170,27 @@
       ]
     },
     {
+      "id": "mext-715-20241029-s06",
+      "councilId": "mext-715",
+      "name": "令和7年度開設予定の大学の学部等の設置に係る答申について(令和6年10月29日)",
+      "date": "2024/10/29",
+      "officialUrl": "https://www.mext.go.jp/b_menu/shingi/daigaku/toushin/attach/1420729_00018.htm",
+      "materials": [
+        {
+          "name": "令和7年度開設予定大学一覧(令和6年10月)(PDF:230KB)",
+          "url": "https://www.mext.go.jp/content/20241029-mxt_daigakuc03-000038608_001.pdf"
+        },
+        {
+          "name": "令和7年度開設予定学部等一覧(令和6年10月)(PDF:226KB)",
+          "url": "https://www.mext.go.jp/content/20241029-mxt_daigakuc03-000038608_2.pdf"
+        },
+        {
+          "name": "令和7年度開設予定大学院一覧(令和6年10月)(PDF:151KB)",
+          "url": "https://www.mext.go.jp/content/20241029-mxt_daigakuc03-000038608_3.pdf"
+        }
+      ]
+    },
+    {
       "id": "mhlw-936-20241029-087",
       "councilId": "mhlw-936",
       "name": "第87回 勤労者生活分科会中小企業退職金共済部会",
@@ -197960,6 +199155,35 @@
         {
           "name": "「知的財産推進計画2024」及び「新たなクールジャパン戦略」等の政府方針等(著作権関係抜粋)(前回配布資料)",
           "url": "https://www.bunka.go.jp/seisaku/bunkashingikai/chosakuken/seisaku/r06_03/pdf/94124501_05.pdf"
+        }
+      ]
+    },
+    {
+      "id": "cao-252-20241021-373",
+      "councilId": "cao-252",
+      "name": "第373回 日本学術会議 幹事会",
+      "date": "2024/10/21",
+      "officialUrl": "https://www.scj.go.jp/ja/member/iinkai/kanji/siryo373.html",
+      "materials": [
+        {
+          "name": "議事要旨(PDF形式:190KB)",
+          "url": "https://www.scj.go.jp/ja/member/iinkai/kanji/pdf26/giji373.pdf"
+        },
+        {
+          "name": "第373回幹事会議事次第(PDF形式:170KB)",
+          "url": "https://www.scj.go.jp/ja/member/iinkai/kanji/pdf26/sidai373.pdf"
+        },
+        {
+          "name": "資料1:前回幹事会議事要旨(案)(PDF形式:201KB)",
+          "url": "https://www.scj.go.jp/ja/member/iinkai/kanji/pdf26/siryo373-1.pdf"
+        },
+        {
+          "name": "資料2:諸報告事項(PDF形式:374KB)",
+          "url": "https://www.scj.go.jp/ja/member/iinkai/kanji/pdf26/siryo373-2.pdf"
+        },
+        {
+          "name": "資料3:公開審議事項(PDF形式:572KB)",
+          "url": "https://www.scj.go.jp/ja/member/iinkai/kanji/pdf26/siryo373-3.pdf"
         }
       ]
     },
@@ -200944,6 +202168,35 @@
       ]
     },
     {
+      "id": "cao-252-20240930-372",
+      "councilId": "cao-252",
+      "name": "第372回 日本学術会議 幹事会",
+      "date": "2024/09/30",
+      "officialUrl": "https://www.scj.go.jp/ja/member/iinkai/kanji/siryo372.html",
+      "materials": [
+        {
+          "name": "議事要旨(PDF形式:99KB)",
+          "url": "https://www.scj.go.jp/ja/member/iinkai/kanji/pdf26/giji372.pdf"
+        },
+        {
+          "name": "第372回幹事会議事次第(PDF形式:169KB)",
+          "url": "https://www.scj.go.jp/ja/member/iinkai/kanji/pdf26/sidai372.pdf"
+        },
+        {
+          "name": "資料1:前回・前々回幹事会議事要旨(案)(PDF形式:214KB)",
+          "url": "https://www.scj.go.jp/ja/member/iinkai/kanji/pdf26/siryo372-1.pdf"
+        },
+        {
+          "name": "資料2:諸報告事項(PDF形式:334KB)",
+          "url": "https://www.scj.go.jp/ja/member/iinkai/kanji/pdf26/siryo372-2.pdf"
+        },
+        {
+          "name": "資料3:公開審議事項(PDF形式:916KB)",
+          "url": "https://www.scj.go.jp/ja/member/iinkai/kanji/pdf26/siryo372-3.pdf"
+        }
+      ]
+    },
+    {
       "id": "cao-kisei_chiiki_wg-20240930-001",
       "councilId": "cao-kisei_chiiki_wg",
       "name": "第1回 規制改革推進会議 地域活性化・人手不足対応WG",
@@ -202725,6 +203978,19 @@
         {
           "name": "議事録",
           "url": "https://www.bunka.go.jp/seisaku/bunkashingikai/kokugo/roman/roman_04/pdf/94170101_01.pdf"
+        }
+      ]
+    },
+    {
+      "id": "cao-252-20240920-371",
+      "councilId": "cao-252",
+      "name": "第371回 日本学術会議 幹事会",
+      "date": "2024/09/20",
+      "officialUrl": "https://www.scj.go.jp/ja/member/iinkai/kanji/siryo371.html",
+      "materials": [
+        {
+          "name": "議事要旨(PDF形式:69KB)",
+          "url": "https://www.scj.go.jp/ja/member/iinkai/kanji/pdf26/giji371.pdf"
         }
       ]
     },
@@ -205685,6 +206951,35 @@
       ]
     },
     {
+      "id": "cao-252-20240830-370",
+      "councilId": "cao-252",
+      "name": "第370回 日本学術会議 幹事会",
+      "date": "2024/08/30",
+      "officialUrl": "https://www.scj.go.jp/ja/member/iinkai/kanji/siryo370.html",
+      "materials": [
+        {
+          "name": "議事要旨(PDF形式:206KB)",
+          "url": "https://www.scj.go.jp/ja/member/iinkai/kanji/pdf26/giji370.pdf"
+        },
+        {
+          "name": "第370回幹事会議事次第(PDF形式:69KB)",
+          "url": "https://www.scj.go.jp/ja/member/iinkai/kanji/pdf26/sidai370.pdf"
+        },
+        {
+          "name": "資料1:前回幹事会議事要旨(案)(PDF形式:98KB)",
+          "url": "https://www.scj.go.jp/ja/member/iinkai/kanji/pdf26/siryo370-1.pdf"
+        },
+        {
+          "name": "資料2:諸報告事項(PDF形式:333KB)",
+          "url": "https://www.scj.go.jp/ja/member/iinkai/kanji/pdf26/siryo370-2.pdf"
+        },
+        {
+          "name": "資料3:公開審議事項(PDF形式:1,308KB)",
+          "url": "https://www.scj.go.jp/ja/member/iinkai/kanji/pdf26/siryo370-3.pdf"
+        }
+      ]
+    },
+    {
       "id": "cas-300-20240830-007",
       "councilId": "cas-300",
       "name": "第7回 ALPS処理水の処分に関する基本方針の着実な実行に向けた関係閣僚等会議",
@@ -206406,6 +207701,31 @@
         {
           "name": "議事概要",
           "url": "https://www.fsc.go.jp/fsciis/attachedFile/download?retrievalId=kai20240828te1&fileId=410"
+        }
+      ]
+    },
+    {
+      "id": "mext-715-20240828-s05",
+      "councilId": "mext-715",
+      "name": "令和7年度開設予定の大学の学部等の設置に係る答申について(令和6年8月28日)",
+      "date": "2024/08/28",
+      "officialUrl": "https://www.mext.go.jp/b_menu/shingi/daigaku/toushin/attach/1420729_00015.htm",
+      "materials": [
+        {
+          "name": "令和7年度開設予定大学等一覧 (PDF:216KB)",
+          "url": "https://www.mext.go.jp/content/20240828-mxt_daigakuc03-000037657_1.pdf"
+        },
+        {
+          "name": "令和7年度開設予定学部等一覧 (PDF:348KB)",
+          "url": "https://www.mext.go.jp/content/20240828-mxt_daigakuc03-000037657_2.pdf"
+        },
+        {
+          "name": "令和7年度開設予定大学院等一覧 (PDF:281KB)",
+          "url": "https://www.mext.go.jp/content/20240828-mxt_daigakuc03-000037657_3.pdf"
+        },
+        {
+          "name": "≪参考≫令和7年度国立大学開設予定学部等一覧 (PDF:112KB)",
+          "url": "https://www.mext.go.jp/content/20240828-mxt_daigakuc03-000037657_4.pdf"
         }
       ]
     },
@@ -210735,6 +212055,35 @@
       ]
     },
     {
+      "id": "cao-252-20240729-369",
+      "councilId": "cao-252",
+      "name": "第369回 日本学術会議 幹事会",
+      "date": "2024/07/29",
+      "officialUrl": "https://www.scj.go.jp/ja/member/iinkai/kanji/siryo369.html",
+      "materials": [
+        {
+          "name": "議事要旨(PDF形式:196KB)",
+          "url": "https://www.scj.go.jp/ja/member/iinkai/kanji/pdf26/giji369.pdf"
+        },
+        {
+          "name": "第369回幹事会議事次第(PDF形式:170KB)",
+          "url": "https://www.scj.go.jp/ja/member/iinkai/kanji/pdf26/sidai369.pdf"
+        },
+        {
+          "name": "資料1:前回幹事会議事要旨(案)(PDF形式:201KB)",
+          "url": "https://www.scj.go.jp/ja/member/iinkai/kanji/pdf26/siryo369-1.pdf"
+        },
+        {
+          "name": "資料2:諸報告事項(PDF形式:356KB)",
+          "url": "https://www.scj.go.jp/ja/member/iinkai/kanji/pdf26/siryo369-2.pdf"
+        },
+        {
+          "name": "資料3:公開審議事項(PDF形式:887KB)",
+          "url": "https://www.scj.go.jp/ja/member/iinkai/kanji/pdf26/siryo369-3.pdf"
+        }
+      ]
+    },
+    {
       "id": "cao-kisei_chiiki_wg-20240729-017",
       "councilId": "cao-kisei_chiiki_wg",
       "name": "第17回 規制改革推進会議 地域活性化・人手不足対応WG",
@@ -211635,6 +212984,19 @@
         {
           "name": "議事概要",
           "url": "https://www.fsc.go.jp/fsciis/attachedFile/download?retrievalId=kai20240724ff1&fileId=610"
+        }
+      ]
+    },
+    {
+      "id": "jfa-shigen_kanri_houshin-20240724-003",
+      "councilId": "jfa-shigen_kanri_houshin",
+      "name": "第3回 資源管理方針に関する検討会（サバ類 対馬暖流系群）",
+      "date": "2024/07/24",
+      "officialUrl": "https://www.jfa.maff.go.jp/j/study/kanri/231027_3.html",
+      "materials": [
+        {
+          "name": "議事録(PDF : 421KB)",
+          "url": "https://www.jfa.maff.go.jp/j/study/kanri/attach/pdf/231027_3-65.pdf"
         }
       ]
     },
@@ -214598,6 +215960,35 @@
         {
           "name": "財政投融資分科会 資料 (unyo06b)",
           "url": "https://www.mof.go.jp/policy/filp/reference/management_report/unyo06b.pdf"
+        }
+      ]
+    },
+    {
+      "id": "cao-252-20240628-368",
+      "councilId": "cao-252",
+      "name": "第368回 日本学術会議 幹事会",
+      "date": "2024/06/28",
+      "officialUrl": "https://www.scj.go.jp/ja/member/iinkai/kanji/siryo368.html",
+      "materials": [
+        {
+          "name": "議事要旨(PDF形式:200KB)",
+          "url": "https://www.scj.go.jp/ja/member/iinkai/kanji/pdf26/giji368.pdf"
+        },
+        {
+          "name": "資料1:前回幹事会議事要旨(案)(PDF形式:95KB)",
+          "url": "https://www.scj.go.jp/ja/member/iinkai/kanji/pdf26/siryo368-1.pdf"
+        },
+        {
+          "name": "資料2:諸報告事項(PDF形式:324KB)",
+          "url": "https://www.scj.go.jp/ja/member/iinkai/kanji/pdf26/siryo368-2.pdf"
+        },
+        {
+          "name": "資料2:諸報告事項(別冊)(PDF形式:816KB)",
+          "url": "https://www.scj.go.jp/ja/member/iinkai/kanji/pdf26/siryo368-3.pdf"
+        },
+        {
+          "name": "資料3:公開審議事項(PDF形式:923KB)",
+          "url": "https://www.scj.go.jp/ja/member/iinkai/kanji/pdf26/siryo368-4.pdf"
         }
       ]
     },
@@ -220691,6 +222082,19 @@
       ]
     },
     {
+      "id": "mic-fufuku_shinsa-20240601-009",
+      "councilId": "mic-fufuku_shinsa",
+      "name": "第9回 行政不服審査会（令和6年度）",
+      "date": "2024/06/01",
+      "officialUrl": "https://www.soumu.go.jp/main_sosiki/singi/fufukushinsa/katsudou/index.html",
+      "materials": [
+        {
+          "name": "第9回 行政不服審査会 活動報告（令和6年度）",
+          "url": "https://www.soumu.go.jp/main_content/001009970.pdf"
+        }
+      ]
+    },
+    {
       "id": "cao-245-20240531-072",
       "councilId": "cao-245",
       "name": "第72回 男女共同参画会議",
@@ -220720,6 +222124,35 @@
         {
           "name": "男女共同参画会議有識者議員名簿[PDF形式:194KB]",
           "url": "https://www.gender.go.jp/kaigi/danjo_kaigi/siryo/pdf/ka72-s-1.pdf"
+        }
+      ]
+    },
+    {
+      "id": "cao-252-20240531-367",
+      "councilId": "cao-252",
+      "name": "第367回 日本学術会議 幹事会",
+      "date": "2024/05/31",
+      "officialUrl": "https://www.scj.go.jp/ja/member/iinkai/kanji/siryo367.html",
+      "materials": [
+        {
+          "name": "議事要旨(PDF形式:193KB)",
+          "url": "https://www.scj.go.jp/ja/member/iinkai/kanji/pdf26/giji367.pdf"
+        },
+        {
+          "name": "資料1:前回幹事会議事要旨(案)(PDF形式:202KB)",
+          "url": "https://www.scj.go.jp/ja/member/iinkai/kanji/pdf26/siryo367-1.pdf"
+        },
+        {
+          "name": "資料2:諸報告事項(PDF形式:350KB)",
+          "url": "https://www.scj.go.jp/ja/member/iinkai/kanji/pdf26/siryo367-2.pdf"
+        },
+        {
+          "name": "資料2:諸報告事項(別冊)(PDF形式:962KB)",
+          "url": "https://www.scj.go.jp/ja/member/iinkai/kanji/pdf26/siryo367-3.pdf"
+        },
+        {
+          "name": "資料3:公開審議事項(PDF形式:1,090KB)",
+          "url": "https://www.scj.go.jp/ja/member/iinkai/kanji/pdf26/siryo367-4.pdf"
         }
       ]
     },
@@ -226326,6 +227759,47 @@
       ]
     },
     {
+      "id": "cao-252-20240422-366",
+      "councilId": "cao-252",
+      "name": "第366回 日本学術会議 幹事会",
+      "date": "2024/04/22",
+      "officialUrl": "https://www.scj.go.jp/ja/member/iinkai/kanji/siryo366.html",
+      "materials": [
+        {
+          "name": "議事要旨(PDF形式:99KB)",
+          "url": "https://www.scj.go.jp/ja/member/iinkai/kanji/pdf26/giji366.pdf"
+        },
+        {
+          "name": "第366回幹事会議事次第(PDF形式:69KB)",
+          "url": "https://www.scj.go.jp/ja/member/iinkai/kanji/pdf26/sidai366.pdf"
+        },
+        {
+          "name": "資料3-1:公開審議事項1(PDF形式:353KB)",
+          "url": "https://www.scj.go.jp/ja/member/iinkai/kanji/pdf26/siryo366-0422-1.pdf"
+        },
+        {
+          "name": "資料3-1(参考):令和5年度各地区会議事業報告(PDF形式:4,653KB)",
+          "url": "https://www.scj.go.jp/ja/member/iinkai/kanji/pdf26/siryo366-0422-2.pdf"
+        },
+        {
+          "name": "資料1:第364回及び第365回幹事会議事要旨(案)(PDF形式:212KB)",
+          "url": "https://www.scj.go.jp/ja/member/iinkai/kanji/pdf26/siryo366-0423-1.pdf"
+        },
+        {
+          "name": "資料2:諸報告事項(PDF形式:613KB)",
+          "url": "https://www.scj.go.jp/ja/member/iinkai/kanji/pdf26/siryo366-0423-2-1.pdf"
+        },
+        {
+          "name": "資料2:諸報告事項(別冊)(PDF形式:1,384KB)",
+          "url": "https://www.scj.go.jp/ja/member/iinkai/kanji/pdf26/siryo366-0423-2-2.pdf"
+        },
+        {
+          "name": "資料3-2:公開審議事項2(PDF形式:1,242KB)",
+          "url": "https://www.scj.go.jp/ja/member/iinkai/kanji/pdf26/siryo366-0423-3.pdf"
+        }
+      ]
+    },
+    {
       "id": "cao-kisei_hatarakikata_wg-20240422-006",
       "councilId": "cao-kisei_hatarakikata_wg",
       "name": "第6回 規制改革推進会議 働き方・人への投資WG(令和5年度)",
@@ -228086,6 +229560,23 @@
         {
           "name": "中間整理(案)(概要)",
           "url": "https://www.mof.go.jp/about_mof/councils/meeting_of_cbdcre/20240417chuukanseirigaiyou.pdf"
+        }
+      ]
+    },
+    {
+      "id": "cao-252-20240416-365",
+      "councilId": "cao-252",
+      "name": "第365回 日本学術会議 幹事会",
+      "date": "2024/04/16",
+      "officialUrl": "https://www.scj.go.jp/ja/member/iinkai/kanji/siryo365.html",
+      "materials": [
+        {
+          "name": "議事要旨(PDF形式:162KB)",
+          "url": "https://www.scj.go.jp/ja/member/iinkai/kanji/pdf26/giji365.pdf"
+        },
+        {
+          "name": "資料1:公開審議事項(PDF形式:311KB)",
+          "url": "https://www.scj.go.jp/ja/member/iinkai/kanji/pdf26/siryo365-1.pdf"
         }
       ]
     },
@@ -231257,6 +232748,39 @@
         {
           "name": "唐鎌大輔委員説明資料",
           "url": "https://www.mof.go.jp/policy/international_policy/councils/bop/outline/20240326_3.pdf"
+        }
+      ]
+    },
+    {
+      "id": "cao-252-20240325-364",
+      "councilId": "cao-252",
+      "name": "第364回 日本学術会議 幹事会",
+      "date": "2024/03/25",
+      "officialUrl": "https://www.scj.go.jp/ja/member/iinkai/kanji/siryo364.html",
+      "materials": [
+        {
+          "name": "議事要旨(PDF形式:194KB)",
+          "url": "https://www.scj.go.jp/ja/member/iinkai/kanji/pdf26/giji364.pdf"
+        },
+        {
+          "name": "第364回幹事会議事次第(PDF形式:170KB)",
+          "url": "https://www.scj.go.jp/ja/member/iinkai/kanji/pdf26/sidai364.pdf"
+        },
+        {
+          "name": "資料1:前回幹事会議事要旨(案)(PDF形式:202KB)",
+          "url": "https://www.scj.go.jp/ja/member/iinkai/kanji/pdf26/siryo364-1.pdf"
+        },
+        {
+          "name": "資料2:諸報告事項(PDF形式:455KB)",
+          "url": "https://www.scj.go.jp/ja/member/iinkai/kanji/pdf26/siryo364-2-1.pdf"
+        },
+        {
+          "name": "資料2:諸報告事項(別冊)(PDF形式:838KB)",
+          "url": "https://www.scj.go.jp/ja/member/iinkai/kanji/pdf26/siryo364-2-2.pdf"
+        },
+        {
+          "name": "資料3:公開審議事項(PDF形式:1,069KB)",
+          "url": "https://www.scj.go.jp/ja/member/iinkai/kanji/pdf26/siryo364-3.pdf"
         }
       ]
     },
@@ -236129,6 +237653,27 @@
       ]
     },
     {
+      "id": "meti-sankoshin_chiteki_zaisan-20240312-019",
+      "councilId": "meti-sankoshin_chiteki_zaisan",
+      "name": "第19回 産業構造審議会 知的財産分科会",
+      "date": "2024/03/12",
+      "officialUrl": "https://www.jpo.go.jp/resources/shingikai/sangyo-kouzou/shousai/chizai_bunkakai/index.html",
+      "materials": [
+        {
+          "name": "第19回 産業構造審議会 知的財産分科会 議事要旨",
+          "url": "https://www.jpo.go.jp/resources/shingikai/sangyo-kouzou/shousai/chizai_bunkakai/19-gijiyoushi.html"
+        },
+        {
+          "name": "第19回 産業構造審議会 知的財産分科会 配布資料",
+          "url": "https://www.jpo.go.jp/resources/shingikai/sangyo-kouzou/shousai/chizai_bunkakai/19-shiryou.html"
+        },
+        {
+          "name": "議事録(PDF:1,036KB)",
+          "url": "https://www.jpo.go.jp/resources/shingikai/sangyo-kouzou/shousai/chizai_bunkakai/document/index/19_gijiroku.pdf"
+        }
+      ]
+    },
+    {
       "id": "mhlw-990-20240312-003",
       "councilId": "mhlw-990",
       "name": "第3回 死体解剖資格審査分科会",
@@ -239132,6 +240677,39 @@
       ]
     },
     {
+      "id": "cao-252-20240229-363",
+      "councilId": "cao-252",
+      "name": "第363回 日本学術会議 幹事会",
+      "date": "2024/02/29",
+      "officialUrl": "https://www.scj.go.jp/ja/member/iinkai/kanji/siryo363.html",
+      "materials": [
+        {
+          "name": "議事要旨(PDF形式:200KB)",
+          "url": "https://www.scj.go.jp/ja/member/iinkai/kanji/pdf26/giji363.pdf"
+        },
+        {
+          "name": "第363回幹事会議事次第(PDF形式:169KB)",
+          "url": "https://www.scj.go.jp/ja/member/iinkai/kanji/pdf26/sidai363.pdf"
+        },
+        {
+          "name": "資料1:前回幹事会議事要旨(案)(PDF形式:206KB)",
+          "url": "https://www.scj.go.jp/ja/member/iinkai/kanji/pdf26/siryo363-1.pdf"
+        },
+        {
+          "name": "資料2:諸報告事項(PDF形式:363KB)",
+          "url": "https://www.scj.go.jp/ja/member/iinkai/kanji/pdf26/siryo363-2-1.pdf"
+        },
+        {
+          "name": "資料2:諸報告事項(別冊)(PDF形式:265KB)",
+          "url": "https://www.scj.go.jp/ja/member/iinkai/kanji/pdf26/siryo363-2-2.pdf"
+        },
+        {
+          "name": "資料3:公開審議事項(PDF形式:1,660KB)",
+          "url": "https://www.scj.go.jp/ja/member/iinkai/kanji/pdf26/siryo363-3.pdf"
+        }
+      ]
+    },
+    {
       "id": "meti-sankoshin_seizo_sangyo_textile_industry-20240229-009",
       "councilId": "meti-sankoshin_seizo_sangyo_textile_industry",
       "name": "第9回 産業構造審議会 製造産業分科会 繊維産業小委員会",
@@ -242102,6 +243680,23 @@
         {
           "name": "議事要旨",
           "url": "https://www.meti.go.jp/shingikai/energy_environment/oil_reserves/pdf/003_gijiyoshi.pdf"
+        }
+      ]
+    },
+    {
+      "id": "cao-252-20240215-362",
+      "councilId": "cao-252",
+      "name": "第362回 日本学術会議 幹事会",
+      "date": "2024/02/15",
+      "officialUrl": "https://www.scj.go.jp/ja/member/iinkai/kanji/siryo362.html",
+      "materials": [
+        {
+          "name": "議事要旨(PDF形式:160KB)",
+          "url": "https://www.scj.go.jp/ja/member/iinkai/kanji/pdf26/giji362.pdf"
+        },
+        {
+          "name": "資料1:公開審議事項(PDF形式:285KB)",
+          "url": "https://www.scj.go.jp/ja/member/iinkai/kanji/pdf26/siryo362-1.pdf"
         }
       ]
     },
@@ -245328,6 +246923,43 @@
         {
           "name": "資料 事務局作成資料",
           "url": "https://www.moj.go.jp/content/001412335.pdf"
+        }
+      ]
+    },
+    {
+      "id": "cao-252-20240125-361",
+      "councilId": "cao-252",
+      "name": "第361回 日本学術会議 幹事会",
+      "date": "2024/01/25",
+      "officialUrl": "https://www.scj.go.jp/ja/member/iinkai/kanji/siryo361.html",
+      "materials": [
+        {
+          "name": "議事要旨(PDF形式:196KB)",
+          "url": "https://www.scj.go.jp/ja/member/iinkai/kanji/pdf26/giji361.pdf"
+        },
+        {
+          "name": "第361回幹事会議事次第(PDF形式:169KB)",
+          "url": "https://www.scj.go.jp/ja/member/iinkai/kanji/pdf26/sidai361.pdf"
+        },
+        {
+          "name": "資料1:前回幹事会議事要旨(案)(PDF形式:196KB)",
+          "url": "https://www.scj.go.jp/ja/member/iinkai/kanji/pdf26/siryo361-1.pdf"
+        },
+        {
+          "name": "資料2:諸報告事項(PDF形式:393KB)",
+          "url": "https://www.scj.go.jp/ja/member/iinkai/kanji/pdf26/siryo361-2-1.pdf"
+        },
+        {
+          "name": "資料2:諸報告事項(別冊)(PDF形式:463KB)",
+          "url": "https://www.scj.go.jp/ja/member/iinkai/kanji/pdf26/siryo361-2-2.pdf"
+        },
+        {
+          "name": "資料3:公開審議事項(PDF形式:1,772KB)",
+          "url": "https://www.scj.go.jp/ja/member/iinkai/kanji/pdf26/siryo361-3.pdf"
+        },
+        {
+          "name": "提案5 分野別委員会運営要綱の一部改正等について(該当部分抜粋)(PDF形式:127KB)",
+          "url": "https://www.scj.go.jp/ja/member/iinkai/kanji/pdf26/siryo361-3add.pdf"
         }
       ]
     },
@@ -248820,6 +250452,35 @@
       ]
     },
     {
+      "id": "cao-252-20231222-360",
+      "councilId": "cao-252",
+      "name": "第360回 日本学術会議 幹事会",
+      "date": "2023/12/22",
+      "officialUrl": "https://www.scj.go.jp/ja/member/iinkai/kanji/siryo360.html",
+      "materials": [
+        {
+          "name": "議事要旨(PDF形式:195KB)",
+          "url": "https://www.scj.go.jp/ja/member/iinkai/kanji/pdf26/giji360.pdf"
+        },
+        {
+          "name": "第360回幹事会議事次第(PDF形式:169KB)",
+          "url": "https://www.scj.go.jp/ja/member/iinkai/kanji/pdf26/sidai360.pdf"
+        },
+        {
+          "name": "資料1:前回幹事会議事要旨(案)(PDF形式:219KB)",
+          "url": "https://www.scj.go.jp/ja/member/iinkai/kanji/pdf26/siryo360-1.pdf"
+        },
+        {
+          "name": "資料2:諸報告事項(PDF形式:363KB)",
+          "url": "https://www.scj.go.jp/ja/member/iinkai/kanji/pdf26/siryo360-2.pdf"
+        },
+        {
+          "name": "資料3:公開審議事項(PDF形式:2,352KB)",
+          "url": "https://www.scj.go.jp/ja/member/iinkai/kanji/pdf26/siryo360-3.pdf"
+        }
+      ]
+    },
+    {
       "id": "cas-321-20231222-009",
       "councilId": "cas-321",
       "name": "第9回 こども未来戦略会議",
@@ -252048,6 +253709,19 @@
       ]
     },
     {
+      "id": "cao-252-20231209-359",
+      "councilId": "cao-252",
+      "name": "第359回 日本学術会議 幹事会",
+      "date": "2023/12/09",
+      "officialUrl": "https://www.scj.go.jp/ja/member/iinkai/kanji/siryo359.html",
+      "materials": [
+        {
+          "name": "議事要旨(PDF形式:183KB)",
+          "url": "https://www.scj.go.jp/ja/member/iinkai/kanji/pdf26/giji359.pdf"
+        }
+      ]
+    },
+    {
       "id": "cas-ful-20231208-007",
       "councilId": "cas-ful",
       "name": "第7回 新型インフルエンザ等対策推進会議",
@@ -254669,6 +256343,39 @@
         {
           "name": "議事録",
           "url": "https://www.meti.go.jp/shingikai/energy_environment/doji_shijo_kento/pdf/004_gijiroku.pdf"
+        }
+      ]
+    },
+    {
+      "id": "cao-252-20231127-358",
+      "councilId": "cao-252",
+      "name": "第358回 日本学術会議 幹事会",
+      "date": "2023/11/27",
+      "officialUrl": "https://www.scj.go.jp/ja/member/iinkai/kanji/siryo358.html",
+      "materials": [
+        {
+          "name": "議事要旨(PDF形式:200KB)",
+          "url": "https://www.scj.go.jp/ja/member/iinkai/kanji/pdf26/giji358.pdf"
+        },
+        {
+          "name": "第358回幹事会議事次第(PDF形式:171KB)",
+          "url": "https://www.scj.go.jp/ja/member/iinkai/kanji/pdf26/sidai358.pdf"
+        },
+        {
+          "name": "資料1:前回幹事会議事要旨(案)(PDF形式:202KB)",
+          "url": "https://www.scj.go.jp/ja/member/iinkai/kanji/pdf26/siryo358-1.pdf"
+        },
+        {
+          "name": "資料2:諸報告事項(PDF形式:290KB)",
+          "url": "https://www.scj.go.jp/ja/member/iinkai/kanji/pdf26/siryo358-2.pdf"
+        },
+        {
+          "name": "資料3:公開審議事項(PDF形式:1,167KB)",
+          "url": "https://www.scj.go.jp/ja/member/iinkai/kanji/pdf26/siryo358-3.pdf"
+        },
+        {
+          "name": "提案9 地区会議運営協議会委員の構成の決定について(PDF形式:208KB)",
+          "url": "https://www.scj.go.jp/ja/member/iinkai/kanji/pdf26/siryo358-3add.pdf"
         }
       ]
     },
@@ -260314,6 +262021,35 @@
       ]
     },
     {
+      "id": "cao-252-20231027-357",
+      "councilId": "cao-252",
+      "name": "第357回 日本学術会議 幹事会",
+      "date": "2023/10/27",
+      "officialUrl": "https://www.scj.go.jp/ja/member/iinkai/kanji/siryo357.html",
+      "materials": [
+        {
+          "name": "議事要旨(PDF形式:200KB)",
+          "url": "https://www.scj.go.jp/ja/member/iinkai/kanji/pdf26/giji357.pdf"
+        },
+        {
+          "name": "第357回幹事会議事次第(PDF形式:171KB)",
+          "url": "https://www.scj.go.jp/ja/member/iinkai/kanji/pdf26/sidai357.pdf"
+        },
+        {
+          "name": "資料1:前回幹事会議事要旨(案)(PDF形式:208KB)",
+          "url": "https://www.scj.go.jp/ja/member/iinkai/kanji/pdf26/siryo357-1.pdf"
+        },
+        {
+          "name": "資料2:諸報告事項(PDF形式:1,338KB)",
+          "url": "https://www.scj.go.jp/ja/member/iinkai/kanji/pdf26/siryo357-2.pdf"
+        },
+        {
+          "name": "資料3:公開審議事項(PDF形式:852KB)",
+          "url": "https://www.scj.go.jp/ja/member/iinkai/kanji/pdf26/siryo357-3.pdf"
+        }
+      ]
+    },
+    {
       "id": "fsc-idensi-20231027-241",
       "councilId": "fsc-idensi",
       "name": "第241回 食品安全委員会遺伝子組換え食品等専門調査会(公開)",
@@ -261179,6 +262915,31 @@
         {
           "name": "議事録(PDF形式:737KB)",
           "url": "https://www.meti.go.jp/shingikai/enecho/shoene_shinene/suiso_seisaku/pdf/010_gijiroku.pdf"
+        }
+      ]
+    },
+    {
+      "id": "mext-715-20231025-s08",
+      "councilId": "mext-715",
+      "name": "令和6年度開設予定の大学の学部等の設置に係る答申について(令和5年10月25日)",
+      "date": "2023/10/25",
+      "officialUrl": "https://www.mext.go.jp/b_menu/shingi/daigaku/toushin/attach/1420729_00013.htm",
+      "materials": [
+        {
+          "name": "令和6年度開設予定大学等一覧(令和5年10月) (PDF:143KB)",
+          "url": "https://www.mext.go.jp/content/20231025-mxt_daigakuc03-000032347_01.pdf"
+        },
+        {
+          "name": "令和6年度開設予定学部等一覧(令和5年10月) (PDF:181KB)",
+          "url": "https://www.mext.go.jp/content/20231025-mxt_daigakuc03-000032347_02.pdf"
+        },
+        {
+          "name": "令和6年度開設予定大学院等一覧(令和5年10月) (PDF:147KB)",
+          "url": "https://www.mext.go.jp/content/20231025-mxt_daigakuc03-000032347_03.pdf"
+        },
+        {
+          "name": "令和6年度短期大学の設置者変更予定一覧(令和5年10月) (PDF:82KB)",
+          "url": "https://www.mext.go.jp/content/20231025-mxt_daigakuc03-000032347_04.pdf"
         }
       ]
     },
@@ -262283,6 +264044,19 @@
         {
           "name": "資料1",
           "url": "https://www.mof.go.jp/about_mof/councils/fiscal_system_council/sub-of_fiscal_system/proceedings/material/zaiseia20230927/01.pdf"
+        }
+      ]
+    },
+    {
+      "id": "cao-252-20231018-356",
+      "councilId": "cao-252",
+      "name": "第356回 日本学術会議 幹事会",
+      "date": "2023/10/18",
+      "officialUrl": "https://www.scj.go.jp/ja/member/iinkai/kanji/siryo356.html",
+      "materials": [
+        {
+          "name": "議事要旨(PDF形式:176KB)",
+          "url": "https://www.scj.go.jp/ja/member/iinkai/kanji/pdf26/giji356.pdf"
         }
       ]
     },
@@ -263999,6 +265773,31 @@
       ]
     },
     {
+      "id": "cao-252-20231004-355",
+      "councilId": "cao-252",
+      "name": "第355回 日本学術会議 幹事会",
+      "date": "2023/10/04",
+      "officialUrl": "https://www.scj.go.jp/ja/member/iinkai/kanji/siryo355.html",
+      "materials": [
+        {
+          "name": "議事要旨(PDF形式:191KB)",
+          "url": "https://www.scj.go.jp/ja/member/iinkai/kanji/pdf26/giji355.pdf"
+        },
+        {
+          "name": "第355回幹事会議事次第(PDF形式:169KB)",
+          "url": "https://www.scj.go.jp/ja/member/iinkai/kanji/pdf26/sidai355.pdf"
+        },
+        {
+          "name": "資料1:公開審議事項(PDF形式:439KB)",
+          "url": "https://www.scj.go.jp/ja/member/iinkai/kanji/pdf26/siryo355-1.pdf"
+        },
+        {
+          "name": "提案1:国際委員会分科会委員の決定(PDF形式:115KB)",
+          "url": "https://www.scj.go.jp/ja/member/iinkai/kanji/pdf26/siryo355-1-1.pdf"
+        }
+      ]
+    },
+    {
       "id": "cao-shougaisha_seisaku-20231004-076",
       "councilId": "cao-shougaisha_seisaku",
       "name": "第76回 障害者政策委員会",
@@ -264268,6 +266067,31 @@
         {
           "name": "地方財政",
           "url": "https://www.mof.go.jp/about_mof/councils/fiscal_system_council/sub-of_fiscal_system/proceedings/material/zaiseia20230927/01.pdf"
+        }
+      ]
+    },
+    {
+      "id": "cao-252-20231003-354",
+      "councilId": "cao-252",
+      "name": "第354回 日本学術会議 幹事会",
+      "date": "2023/10/03",
+      "officialUrl": "https://www.scj.go.jp/ja/member/iinkai/kanji/siryo354.html",
+      "materials": [
+        {
+          "name": "議事要旨(PDF形式:187KB)",
+          "url": "https://www.scj.go.jp/ja/member/iinkai/kanji/pdf26/giji354.pdf"
+        },
+        {
+          "name": "第354回幹事会議事次第(PDF形式:169KB)",
+          "url": "https://www.scj.go.jp/ja/member/iinkai/kanji/pdf26/sidai354.pdf"
+        },
+        {
+          "name": "資料1:諸報告事項(PDF形式:398KB)",
+          "url": "https://www.scj.go.jp/ja/member/iinkai/kanji/pdf26/siryo354-1.pdf"
+        },
+        {
+          "name": "資料2:公開審議事項(PDF形式:600KB)",
+          "url": "https://www.scj.go.jp/ja/member/iinkai/kanji/pdf26/siryo354-2.pdf"
         }
       ]
     },
@@ -269432,6 +271256,31 @@
         {
           "name": "詳細はこちら(PDF : 319KB)",
           "url": "https://www.maff.go.jp/j/council/seisaku/eisei/prion/prion15/attach/pdf/prion15-1.pdf"
+        }
+      ]
+    },
+    {
+      "id": "mext-715-20230830-s07",
+      "councilId": "mext-715",
+      "name": "令和6年度開設予定の大学の学部等の設置に係る答申について(令和5年8月30日)",
+      "date": "2023/08/30",
+      "officialUrl": "https://www.mext.go.jp/b_menu/shingi/daigaku/toushin/attach/1420729_00012.htm",
+      "materials": [
+        {
+          "name": "令和6年度開設予定大学等一覧 (PDF:184KB)",
+          "url": "https://www.mext.go.jp/content/20230830-mxt_daigakuc03-000031656_1.pdf"
+        },
+        {
+          "name": "令和6年度開設予定学部等一覧 (PDF:250KB)",
+          "url": "https://www.mext.go.jp/content/20230830-mxt_daigakuc03-000031656_2.pdf"
+        },
+        {
+          "name": "令和6年度開設予定大学院等一覧 (PDF:303KB)",
+          "url": "https://www.mext.go.jp/content/20230830-mxt_daigakuc03-000031656_3.pdf"
+        },
+        {
+          "name": "≪参考≫令和6年度国立大学開設予定学部等一覧 (PDF:100KB)",
+          "url": "https://www.mext.go.jp/content/20230830-mxt_hojinka-000031656_01.pdf"
         }
       ]
     },
@@ -282118,6 +283967,19 @@
         {
           "name": "議事概要",
           "url": "https://www.fsc.go.jp/fsciis/attachedFile/download?retrievalId=kai20230601ki1&fileId=410"
+        }
+      ]
+    },
+    {
+      "id": "mic-fufuku_shinsa-20230601-008",
+      "councilId": "mic-fufuku_shinsa",
+      "name": "第8回 行政不服審査会（令和5年度）",
+      "date": "2023/06/01",
+      "officialUrl": "https://www.soumu.go.jp/main_sosiki/singi/fufukushinsa/katsudou/index.html",
+      "materials": [
+        {
+          "name": "第8回 行政不服審査会 活動報告（令和5年度）",
+          "url": "https://www.soumu.go.jp/main_content/000946975.pdf"
         }
       ]
     },
@@ -297980,6 +299842,27 @@
         {
           "name": "議事概要",
           "url": "https://www.fsc.go.jp/fsciis/attachedFile/download?retrievalId=kai20230302pr1&fileId=910"
+        }
+      ]
+    },
+    {
+      "id": "meti-sankoshin_chiteki_zaisan-20230302-018",
+      "councilId": "meti-sankoshin_chiteki_zaisan",
+      "name": "第18回 産業構造審議会 知的財産分科会",
+      "date": "2023/03/02",
+      "officialUrl": "https://www.jpo.go.jp/resources/shingikai/sangyo-kouzou/shousai/chizai_bunkakai/index.html",
+      "materials": [
+        {
+          "name": "第18回 産業構造審議会 知的財産分科会 議事要旨",
+          "url": "https://www.jpo.go.jp/resources/shingikai/sangyo-kouzou/shousai/chizai_bunkakai/18-gijiyoushi.html"
+        },
+        {
+          "name": "第18回 産業構造審議会 知的財産分科会 配布資料",
+          "url": "https://www.jpo.go.jp/resources/shingikai/sangyo-kouzou/shousai/chizai_bunkakai/18-shiryou.html"
+        },
+        {
+          "name": "議事録(PDF:627KB)",
+          "url": "https://www.jpo.go.jp/resources/shingikai/sangyo-kouzou/shousai/chizai_bunkakai/document/index/18_gijiroku.pdf"
         }
       ]
     },
@@ -320203,6 +322086,23 @@
       ]
     },
     {
+      "id": "mext-715-20221026-s10",
+      "councilId": "mext-715",
+      "name": "令和5年度開設予定の大学の学部等の設置に係る答申について(令和4年10月26日)",
+      "date": "2022/10/26",
+      "officialUrl": "https://www.mext.go.jp/b_menu/shingi/daigaku/toushin/attach/1420729_00010.htm",
+      "materials": [
+        {
+          "name": "令和5年度開設予定学部等一覧(令和4年10月)(PDF:202KB)",
+          "url": "https://www.mext.go.jp/content/20221026-mxt_koutou03-000025626_1.pdf"
+        },
+        {
+          "name": "令和5年度開設予定大学院等一覧(令和4年10月)(PDF:191KB)",
+          "url": "https://www.mext.go.jp/content/20221026-mxt_koutou03-000025626_2.pdf"
+        }
+      ]
+    },
+    {
       "id": "mhlw-1020-20221026-213",
       "councilId": "mhlw-1020",
       "name": "第213回 中央社会保険医療協議会診療報酬基本問題小委員会",
@@ -328687,6 +330587,31 @@
           "name": "議事録",
           "url": "https://www.fsc.go.jp/fsciis/attachedFile/download?retrievalId=kai20220831no1&fileId=210",
           "type": "HTML"
+        }
+      ]
+    },
+    {
+      "id": "mext-715-20220831-s09",
+      "councilId": "mext-715",
+      "name": "令和5年度開設予定の大学の学部等の設置に係る答申について(令和4年8月31日)",
+      "date": "2022/08/31",
+      "officialUrl": "https://www.mext.go.jp/b_menu/shingi/daigaku/toushin/attach/1420729_00009.htm",
+      "materials": [
+        {
+          "name": "令和5年度開設予定大学等一覧 (PDF:279KB)",
+          "url": "https://www.mext.go.jp/content/20220831-mxt_koutou02-000024740_1.pdf"
+        },
+        {
+          "name": "令和5年度開設予定学部等一覧 (PDF:296KB)",
+          "url": "https://www.mext.go.jp/content/20220831-mxt_koutou02-000024740_2.pdf"
+        },
+        {
+          "name": "令和5年度開設予定大学院等一覧 (PDF:326KB)",
+          "url": "https://www.mext.go.jp/content/20220831-mxt_koutou02-000024740_3.pdf"
+        },
+        {
+          "name": "≪参考≫令和5年度国立大学開設予定学部等一覧 (PDF:146KB)",
+          "url": "https://www.mext.go.jp/content/20220831-mxt_koutou02-000024740_4.pdf"
         }
       ]
     },
@@ -342514,6 +344439,19 @@
           "name": "議事録",
           "url": "https://www.mhlw.go.jp/stf/newpage_26558.html",
           "type": "HTML"
+        }
+      ]
+    },
+    {
+      "id": "mic-fufuku_shinsa-20220601-007",
+      "councilId": "mic-fufuku_shinsa",
+      "name": "第7回 行政不服審査会（令和4年度）",
+      "date": "2022/06/01",
+      "officialUrl": "https://www.soumu.go.jp/main_sosiki/singi/fufukushinsa/katsudou/index.html",
+      "materials": [
+        {
+          "name": "第7回 行政不服審査会 活動報告（令和4年度）",
+          "url": "https://www.soumu.go.jp/main_content/000880364.pdf"
         }
       ]
     },
@@ -358282,6 +360220,27 @@
         {
           "name": "地理空間情報活用推進基本計画(第4期)において重点的に取り組むべき施策(シンボルプロジェクト)工程表案(PDF/2,017KB)",
           "url": "https://www.cas.go.jp/jp/seisaku/sokuitiri/20220303/siryou3.pdf"
+        }
+      ]
+    },
+    {
+      "id": "meti-sankoshin_chiteki_zaisan-20220303-017",
+      "councilId": "meti-sankoshin_chiteki_zaisan",
+      "name": "第17回 産業構造審議会 知的財産分科会",
+      "date": "2022/03/03",
+      "officialUrl": "https://www.jpo.go.jp/resources/shingikai/sangyo-kouzou/shousai/chizai_bunkakai/index.html",
+      "materials": [
+        {
+          "name": "第17回 産業構造審議会 知的財産分科会 議事要旨",
+          "url": "https://www.jpo.go.jp/resources/shingikai/sangyo-kouzou/shousai/chizai_bunkakai/17-gijiyoushi.html"
+        },
+        {
+          "name": "第17回 産業構造審議会 知的財産分科会 配布資料",
+          "url": "https://www.jpo.go.jp/resources/shingikai/sangyo-kouzou/shousai/chizai_bunkakai/17-shiryou.html"
+        },
+        {
+          "name": "議事録(PDF:814KB)",
+          "url": "https://www.jpo.go.jp/resources/shingikai/sangyo-kouzou/shousai/chizai_bunkakai/document/index/17_gijiroku.pdf"
         }
       ]
     },
@@ -388265,6 +390224,31 @@
       ]
     },
     {
+      "id": "mext-715-20210827-s12",
+      "councilId": "mext-715",
+      "name": "令和4年度開設予定の大学等の設置に係る答申について(令和3年8月27日)",
+      "date": "2021/08/27",
+      "officialUrl": "https://www.mext.go.jp/b_menu/shingi/daigaku/toushin/attach/1420729_00007.htm",
+      "materials": [
+        {
+          "name": "令和4年度開設予定大学等一覧 (PDF:175KB)",
+          "url": "https://www.mext.go.jp/content/20210827-mxt_koutou02-000017590_1.pdf"
+        },
+        {
+          "name": "令和4年度開設予定学部等一覧 (PDF:153KB)",
+          "url": "https://www.mext.go.jp/content/20210827-mxt_koutou02-000017590_2.pdf"
+        },
+        {
+          "name": "令和4年度開設予定大学院等一覧 (PDF:192KB)",
+          "url": "https://www.mext.go.jp/content/20210827-mxt_koutou02-000017590_3.pdf"
+        },
+        {
+          "name": "≪参考≫令和4年度国立大学開設予定学部等一覧 (PDF:63KB)",
+          "url": "https://www.mext.go.jp/content/20210827-mxt_koutou02-000017590_4.pdf"
+        }
+      ]
+    },
+    {
       "id": "mhlw-jidou_gyakutai_kenshou_senmon-20210827-s01",
       "councilId": "mhlw-jidou_gyakutai_kenshou_senmon",
       "name": "社会保障審議会 児童部会児童虐待等要保護事例の検証に関する専門委員会",
@@ -394364,6 +396348,27 @@
       ]
     },
     {
+      "id": "meti-sankoshin_chiteki_zaisan-20210628-016",
+      "councilId": "meti-sankoshin_chiteki_zaisan",
+      "name": "第16回 産業構造審議会 知的財産分科会",
+      "date": "2021/06/28",
+      "officialUrl": "https://www.jpo.go.jp/resources/shingikai/sangyo-kouzou/shousai/chizai_bunkakai/index.html",
+      "materials": [
+        {
+          "name": "第16回 産業構造審議会 知的財産分科会 議事要旨",
+          "url": "https://www.jpo.go.jp/resources/shingikai/sangyo-kouzou/shousai/chizai_bunkakai/16-gijiyoushi.html"
+        },
+        {
+          "name": "第16回 産業構造審議会 知的財産分科会 配布資料",
+          "url": "https://www.jpo.go.jp/resources/shingikai/sangyo-kouzou/shousai/chizai_bunkakai/16-shiryou.html"
+        },
+        {
+          "name": "議事録(PDF:610KB)",
+          "url": "https://www.jpo.go.jp/resources/shingikai/sangyo-kouzou/shousai/chizai_bunkakai/document/index/16_gijiroku.pdf"
+        }
+      ]
+    },
+    {
       "id": "mhlw-788-20210628-089",
       "councilId": "mhlw-788",
       "name": "第89回 年金数理部会",
@@ -398363,6 +400368,19 @@
         {
           "name": "国立研究開発法人審議会各部会委員等名簿(案)(PDF : 164KB)",
           "url": "https://www.maff.go.jp/j/council/kaihatu/06/attach/pdf/index-1.pdf"
+        }
+      ]
+    },
+    {
+      "id": "mic-fufuku_shinsa-20210601-006",
+      "councilId": "mic-fufuku_shinsa",
+      "name": "第6回 行政不服審査会（令和3年度）",
+      "date": "2021/06/01",
+      "officialUrl": "https://www.soumu.go.jp/main_sosiki/singi/fufukushinsa/katsudou/index.html",
+      "materials": [
+        {
+          "name": "第6回 行政不服審査会 活動報告（令和3年度）",
+          "url": "https://www.soumu.go.jp/main_content/000822307.pdf"
         }
       ]
     },
@@ -409101,6 +411119,23 @@
       ]
     },
     {
+      "id": "meti-sankoshin_chiteki_zaisan-20210315-015",
+      "councilId": "meti-sankoshin_chiteki_zaisan",
+      "name": "第15回 産業構造審議会 知的財産分科会",
+      "date": "2021/03/15",
+      "officialUrl": "https://www.jpo.go.jp/resources/shingikai/sangyo-kouzou/shousai/chizai_bunkakai/index.html",
+      "materials": [
+        {
+          "name": "第15回 産業構造審議会 知的財産分科会 議事要旨",
+          "url": "https://www.jpo.go.jp/resources/shingikai/sangyo-kouzou/shousai/chizai_bunkakai/15-gijiyoushi.html"
+        },
+        {
+          "name": "第15回 産業構造審議会 知的財産分科会 配布資料",
+          "url": "https://www.jpo.go.jp/resources/shingikai/sangyo-kouzou/shousai/chizai_bunkakai/15-shiryou.html"
+        }
+      ]
+    },
+    {
       "id": "meti-sankoshin_seizo_sangyo_sharyo_kyogi-20210315-016",
       "councilId": "meti-sankoshin_seizo_sangyo_sharyo_kyogi",
       "name": "第16回 産業構造審議会 製造産業分科会 車両競技小委員会",
@@ -418706,6 +420741,19 @@
       ]
     },
     {
+      "id": "mext-715-20201223-s11",
+      "councilId": "mext-715",
+      "name": "令和4年度開設予定の大学の学部等の設置に係る答申について(令和2年12月23日)",
+      "date": "2020/12/23",
+      "officialUrl": "https://www.mext.go.jp/b_menu/shingi/daigaku/toushin/attach/1420729_00005.htm",
+      "materials": [
+        {
+          "name": "≪参考≫令和4年度国立大学開設予定学部等一覧(PDF:59KB)",
+          "url": "https://www.mext.go.jp/content/20210119-mext_hojinka-000012217.pdf"
+        }
+      ]
+    },
+    {
       "id": "mhlw-794-20201223-018",
       "councilId": "mhlw-794",
       "name": "第18回 企業年金・個人年金部会",
@@ -425785,6 +427833,19 @@
       ]
     },
     {
+      "id": "mext-715-20201028-s14",
+      "councilId": "mext-715",
+      "name": "令和3年度開設予定の大学の設置に係る答申について(令和2年10月28日)",
+      "date": "2020/10/28",
+      "officialUrl": "https://www.mext.go.jp/b_menu/shingi/daigaku/toushin/attach/1420729_00003.htm",
+      "materials": [
+        {
+          "name": "令和3年度開設予定大学等一覧 (PDF:155KB)",
+          "url": "https://www.mext.go.jp/content/20201028-mxt_koutou02-000010702_1.pdf"
+        }
+      ]
+    },
+    {
       "id": "mhlw-1020-20201028-200",
       "councilId": "mhlw-1020",
       "name": "第200回 中央社会保険医療協議会診療報酬基本問題小委員会",
@@ -426422,6 +428483,31 @@
         {
           "name": "議事録(PDF形式:318KB)",
           "url": "https://www.meti.go.jp/shingikai/sankoshin/seizo_sangyo/sharyo_kyogi/pdf/015_gijiroku.pdf"
+        }
+      ]
+    },
+    {
+      "id": "mext-715-20201022-s13",
+      "councilId": "mext-715",
+      "name": "令和3年度開設予定の大学等の設置等に係る答申について(令和2年10月22日)",
+      "date": "2020/10/22",
+      "officialUrl": "https://www.mext.go.jp/b_menu/shingi/daigaku/toushin/attach/1420729_00002.htm",
+      "materials": [
+        {
+          "name": "令和3年度開設予定大学等一覧 (PDF:462KB)",
+          "url": "https://www.mext.go.jp/content/20201022-mxt_koutou02-000010607_1.pdf"
+        },
+        {
+          "name": "令和3年度開設予定学部等一覧 (PDF:553KB)",
+          "url": "https://www.mext.go.jp/content/20201022-mxt_koutou02-000010607_2.pdf"
+        },
+        {
+          "name": "令和3年度開設予定大学院等一覧 (PDF:478KB)",
+          "url": "https://www.mext.go.jp/content/20201022-mxt_koutou02-000010607_3.pdf"
+        },
+        {
+          "name": "≪参考≫令和3年度国立大学開設予定学部等一覧 (PDF:103KB)",
+          "url": "https://www.mext.go.jp/content/20201022-mxt_koutou02-000010607_4.pdf"
         }
       ]
     },
@@ -429914,6 +432000,23 @@
       ]
     },
     {
+      "id": "meti-sankoshin_chiteki_zaisan-20200915-014",
+      "councilId": "meti-sankoshin_chiteki_zaisan",
+      "name": "第14回 産業構造審議会 知的財産分科会",
+      "date": "2020/09/15",
+      "officialUrl": "https://www.jpo.go.jp/resources/shingikai/sangyo-kouzou/shousai/chizai_bunkakai/index.html",
+      "materials": [
+        {
+          "name": "第14回 産業構造審議会 知的財産分科会 議事要旨",
+          "url": "https://www.jpo.go.jp/resources/shingikai/sangyo-kouzou/shousai/chizai_bunkakai/14-gijiyoushi.html"
+        },
+        {
+          "name": "第14回 産業構造審議会 知的財産分科会 配布資料",
+          "url": "https://www.jpo.go.jp/resources/shingikai/sangyo-kouzou/shousai/chizai_bunkakai/14-shiryou.html"
+        }
+      ]
+    },
+    {
       "id": "mic-rikujo_musen_iinkai-20200915-060",
       "councilId": "mic-rikujo_musen_iinkai",
       "name": "情報通信審議会 情報通信技術分科会 陸上無線通信委員会（第60回）（2020年9月15日開催）",
@@ -431692,6 +433795,63 @@
         {
           "name": "委員提出資料",
           "url": "https://www.moj.go.jp/content/001328457.pdf"
+        }
+      ]
+    },
+    {
+      "id": "jfa-shigen_kanri_houshin-20200827-001",
+      "councilId": "jfa-shigen_kanri_houshin",
+      "name": "第1回 資源管理方針に関する検討会（ズワイガニ 日本海系群）",
+      "date": "2020/08/27",
+      "officialUrl": "https://www.jfa.maff.go.jp/j/study/kanri/231027_9.html",
+      "materials": [
+        {
+          "name": "議事概要(PDF : 239KB)",
+          "url": "https://www.jfa.maff.go.jp/j/study/kanri/attach/pdf/231027_9-28.pdf"
+        },
+        {
+          "name": "議事録(PDF : 436KB)",
+          "url": "https://www.jfa.maff.go.jp/j/study/kanri/attach/pdf/231027_9-29.pdf"
+        },
+        {
+          "name": "資料1:議事次第(PDF : 51KB)",
+          "url": "https://www.jfa.maff.go.jp/j/study/kanri/attach/pdf/231027_9-30.pdf"
+        },
+        {
+          "name": "資料2:出席者名簿(PDF : 246KB)",
+          "url": "https://www.jfa.maff.go.jp/j/study/kanri/attach/pdf/231027_9-102.pdf"
+        },
+        {
+          "name": "資料3:会合案内(PDF : 259KB)",
+          "url": "https://www.jfa.maff.go.jp/j/study/kanri/attach/pdf/231027_9-32.pdf"
+        },
+        {
+          "name": "資料4:会合資料(水産庁)(PDF : 816KB)",
+          "url": "https://www.jfa.maff.go.jp/j/study/kanri/attach/pdf/231027_9-33.pdf"
+        },
+        {
+          "name": "資料5-1:会合資料(水産研究・教育機構)(PDF : 1,051KB)",
+          "url": "https://www.jfa.maff.go.jp/j/study/kanri/attach/pdf/231027_9-34.pdf"
+        },
+        {
+          "name": "資料5-2:会合資料(水産研究・教育機構)(PDF : 792KB)",
+          "url": "https://www.jfa.maff.go.jp/j/study/kanri/attach/pdf/231027_9-35.pdf"
+        },
+        {
+          "name": "資料5-3:会合資料(水産研究・教育機構)(PDF : 608KB)",
+          "url": "https://www.jfa.maff.go.jp/j/study/kanri/attach/pdf/231027_9-36.pdf"
+        },
+        {
+          "name": "資料5-4:会合資料(水産研究・教育機構)(PDF : 846KB)",
+          "url": "https://www.jfa.maff.go.jp/j/study/kanri/attach/pdf/231027_9-37.pdf"
+        },
+        {
+          "name": "資料5-5:会合資料(水産研究・教育機構)(PDF : 762KB)",
+          "url": "https://www.jfa.maff.go.jp/j/study/kanri/attach/pdf/231027_9-38.pdf"
+        },
+        {
+          "name": "資料6:会合資料(水産庁)(PDF : 354KB)",
+          "url": "https://www.jfa.maff.go.jp/j/study/kanri/attach/pdf/231027_9-39.pdf"
         }
       ]
     },
@@ -436650,6 +438810,27 @@
       ]
     },
     {
+      "id": "meti-sankoshin_chiteki_zaisan-20200714-013",
+      "councilId": "meti-sankoshin_chiteki_zaisan",
+      "name": "第13回 産業構造審議会 知的財産分科会",
+      "date": "2020/07/14",
+      "officialUrl": "https://www.jpo.go.jp/resources/shingikai/sangyo-kouzou/shousai/chizai_bunkakai/index.html",
+      "materials": [
+        {
+          "name": "第13回 産業構造審議会 知的財産分科会 議事要旨",
+          "url": "https://www.jpo.go.jp/resources/shingikai/sangyo-kouzou/shousai/chizai_bunkakai/13-gijiyoushi.html"
+        },
+        {
+          "name": "第13回 産業構造審議会 知的財産分科会 配布資料",
+          "url": "https://www.jpo.go.jp/resources/shingikai/sangyo-kouzou/shousai/chizai_bunkakai/13-shiryou.html"
+        },
+        {
+          "name": "議事録(PDF:467KB)",
+          "url": "https://www.jpo.go.jp/resources/shingikai/sangyo-kouzou/shousai/chizai_bunkakai/document/index/13_gijiroku.pdf"
+        }
+      ]
+    },
+    {
       "id": "mic-joho_tsusin_gijutsu_bunkakai-20200714-150",
       "councilId": "mic-joho_tsusin_gijutsu_bunkakai",
       "name": "情報通信審議会 情報通信技術分科会（第150回）配付資料・議事概要・議事録（2020年7月14日開催）",
@@ -440284,6 +442465,19 @@
         {
           "name": "新世代モバイル通信システム委員会（第17回）議事概要",
           "url": "https://www.soumu.go.jp/main_content/000693589.pdf"
+        }
+      ]
+    },
+    {
+      "id": "mic-fufuku_shinsa-20200601-005",
+      "councilId": "mic-fufuku_shinsa",
+      "name": "第5回 行政不服審査会（令和2年度）",
+      "date": "2020/06/01",
+      "officialUrl": "https://www.soumu.go.jp/main_sosiki/singi/fufukushinsa/katsudou/index.html",
+      "materials": [
+        {
+          "name": "第5回 行政不服審査会 活動報告（令和2年度）",
+          "url": "https://www.soumu.go.jp/main_content/000752630.pdf"
         }
       ]
     },
@@ -448480,6 +450674,35 @@
       ]
     },
     {
+      "id": "jfa-shigen_kanri_houshin-20200226-002",
+      "councilId": "jfa-shigen_kanri_houshin",
+      "name": "第2回 資源管理方針に関する検討会（サバ類 太平洋系群）",
+      "date": "2020/02/26",
+      "officialUrl": "https://www.jfa.maff.go.jp/j/study/kanri/231027_3.html",
+      "materials": [
+        {
+          "name": "議事概要(PDF : 222KB)",
+          "url": "https://www.jfa.maff.go.jp/j/study/kanri/attach/pdf/231027_3-43.pdf"
+        },
+        {
+          "name": "議事録(PDF : 774KB)",
+          "url": "https://www.jfa.maff.go.jp/j/study/kanri/attach/pdf/231027_3-44.pdf"
+        },
+        {
+          "name": "資料2:出席者リスト(PDF : 307KB)",
+          "url": "https://www.jfa.maff.go.jp/j/study/kanri/attach/pdf/231027_3-46.pdf"
+        },
+        {
+          "name": "資料3:会合案内(PDF : 555KB)",
+          "url": "https://www.jfa.maff.go.jp/j/study/kanri/attach/pdf/231027_3-47.pdf"
+        },
+        {
+          "name": "資料4-1:会合資料(水産研究・教育機構)(PDF : 3,072KB)",
+          "url": "https://www.jfa.maff.go.jp/j/study/kanri/attach/pdf/231027_3-48.pdf"
+        }
+      ]
+    },
+    {
       "id": "mhlw-876-20200226-057",
       "councilId": "mhlw-876",
       "name": "第57回 疾病対策部会造血幹細胞移植委員会",
@@ -449166,6 +451389,23 @@
         {
           "name": "議事要旨",
           "url": "https://www.jcrc.go.jp/content/000000322.pdf"
+        }
+      ]
+    },
+    {
+      "id": "jfa-shigen_kanri_houshin-20200220-002",
+      "councilId": "jfa-shigen_kanri_houshin",
+      "name": "第2回 資源管理方針に関する検討会（サバ類 対馬暖流系群）",
+      "date": "2020/02/20",
+      "officialUrl": "https://www.jfa.maff.go.jp/j/study/kanri/231027_3.html",
+      "materials": [
+        {
+          "name": "議事概要(PDF : 190KB)",
+          "url": "https://www.jfa.maff.go.jp/j/study/kanri/attach/pdf/231027_3-22.pdf"
+        },
+        {
+          "name": "議事録(PDF : 596KB)",
+          "url": "https://www.jfa.maff.go.jp/j/study/kanri/attach/pdf/231027_3-23.pdf"
         }
       ]
     },
@@ -460780,6 +463020,19 @@
       ]
     },
     {
+      "id": "mext-715-20191101-s16",
+      "councilId": "mext-715",
+      "name": "令和2年度開設予定の大学等の設置等に係る答申について(令和元年11月1日)",
+      "date": "2019/11/01",
+      "officialUrl": "https://www.mext.go.jp/b_menu/shingi/daigaku/toushin/attach/1422371.htm",
+      "materials": [
+        {
+          "name": "令和2年度開設予定大学等一覧 (PDF:119KB)",
+          "url": "https://www.mext.go.jp/content/1422376_01.pdf"
+        }
+      ]
+    },
+    {
       "id": "cao-kisei_kaikaku-20191031-001",
       "councilId": "cao-kisei_kaikaku",
       "name": "第1回 規制改革推進会議",
@@ -468204,6 +470457,39 @@
       ]
     },
     {
+      "id": "mext-715-20190830-s15",
+      "councilId": "mext-715",
+      "name": "令和2年度開設予定の大学等の設置等に係る答申について(令和元年8月30日)",
+      "date": "2019/08/30",
+      "officialUrl": "https://www.mext.go.jp/b_menu/shingi/daigaku/toushin/attach/1420729.htm",
+      "materials": [
+        {
+          "name": "令和2年度開設予定大学等一覧 (PDF:117KB)",
+          "url": "https://www.mext.go.jp/component/b_menu/shingi/toushin/__icsFiles/afieldfile/2019/08/30/1420735_1.pdf"
+        },
+        {
+          "name": "令和2年度開設予定学部等一覧 (PDF:121KB)",
+          "url": "https://www.mext.go.jp/component/b_menu/shingi/toushin/__icsFiles/afieldfile/2019/08/30/1420735_2.pdf"
+        },
+        {
+          "name": "令和2年度開設予定大学院等一覧 (PDF:115KB)",
+          "url": "https://www.mext.go.jp/component/b_menu/shingi/toushin/__icsFiles/afieldfile/2019/08/30/1420735_3.pdf"
+        },
+        {
+          "name": "令和2年度からの私立大学等の収容定員の増加等に係る学則変更予定一覧 (PDF:110KB)",
+          "url": "https://www.mext.go.jp/component/b_menu/shingi/toushin/__icsFiles/afieldfile/2019/08/30/1420735_4.pdf"
+        },
+        {
+          "name": "令和2年度大学等の設置者変更予定一覧 (PDF:39KB)",
+          "url": "https://www.mext.go.jp/component/b_menu/shingi/toushin/__icsFiles/afieldfile/2019/08/30/1420735_5.pdf"
+        },
+        {
+          "name": "≪参考≫令和2年度国立大学開設予定学部等一覧 (PDF:298KB)",
+          "url": "https://www.mext.go.jp/component/b_menu/shingi/toushin/__icsFiles/afieldfile/2019/08/30/1420735_6.pdf"
+        }
+      ]
+    },
+    {
       "id": "mhlw-969-20190830-007",
       "councilId": "mhlw-969",
       "name": "第7回 歯科医師分科会歯科医師国家試験制度改善検討部会",
@@ -469127,6 +471413,63 @@
         {
           "name": "（2/2）",
           "url": "https://www.cao.go.jp/others/soumu/pitch2m/pdf/20190807_6202siryou.pdf"
+        }
+      ]
+    },
+    {
+      "id": "jfa-shigen_kanri_houshin-20190807-001",
+      "councilId": "jfa-shigen_kanri_houshin",
+      "name": "第1回 資源管理方針に関する検討会（サバ類 太平洋系群）",
+      "date": "2019/08/07",
+      "officialUrl": "https://www.jfa.maff.go.jp/j/study/kanri/231027_3.html",
+      "materials": [
+        {
+          "name": "議事概要(PDF : 311KB)",
+          "url": "https://www.jfa.maff.go.jp/j/study/kanri/attach/pdf/231027_3-31.pdf"
+        },
+        {
+          "name": "議事録(PDF : 932KB)",
+          "url": "https://www.jfa.maff.go.jp/j/study/kanri/attach/pdf/231027_3-32.pdf"
+        },
+        {
+          "name": "資料1:議事次第(PDF : 110KB)",
+          "url": "https://www.jfa.maff.go.jp/j/study/kanri/attach/pdf/231027_3-33.pdf"
+        },
+        {
+          "name": "資料2:会合案内(PDF : 483KB)",
+          "url": "https://www.jfa.maff.go.jp/j/study/kanri/attach/pdf/231027_3-34.pdf"
+        },
+        {
+          "name": "資料3:出席者リスト(PDF : 639KB)",
+          "url": "https://www.jfa.maff.go.jp/j/study/kanri/attach/pdf/231027_3-35.pdf"
+        },
+        {
+          "name": "資料4:会合資料(PDF : 1,333KB)",
+          "url": "https://www.jfa.maff.go.jp/j/study/kanri/attach/pdf/231027_3-36.pdf"
+        },
+        {
+          "name": "資料5-1:会合資料(8月14日更新)(水産研究・教育機構)(PDF : 4,124KB)",
+          "url": "https://www.jfa.maff.go.jp/j/study/kanri/attach/pdf/231027_3-37.pdf"
+        },
+        {
+          "name": "資料5-2:会合資料(水産研究・教育機構)(PDF : 1,417KB)",
+          "url": "https://www.jfa.maff.go.jp/j/study/kanri/attach/pdf/231027_3-38.pdf"
+        },
+        {
+          "name": "資料5-3:会合資料(水産研究・教育機構)(PDF : 1,373KB)",
+          "url": "https://www.jfa.maff.go.jp/j/study/kanri/attach/pdf/231027_3-39.pdf"
+        },
+        {
+          "name": "資料5-4:会合資料(水産研究・教育機構)(PDF : 534KB)",
+          "url": "https://www.jfa.maff.go.jp/j/study/kanri/attach/pdf/231027_3-40.pdf"
+        },
+        {
+          "name": "資料5-5:会合資料(水産研究・教育機構)(PDF : 2,072KB)",
+          "url": "https://www.jfa.maff.go.jp/j/study/kanri/attach/pdf/231027_3-41.pdf"
+        },
+        {
+          "name": "資料5-6:会合資料(水産研究・教育機構)(PDF : 3,509KB)",
+          "url": "https://www.jfa.maff.go.jp/j/study/kanri/attach/pdf/231027_3-42.pdf"
         }
       ]
     },
@@ -470397,6 +472740,63 @@
         {
           "name": "議事録",
           "url": "https://www.soumu.go.jp/main_content/000645055.pdf"
+        }
+      ]
+    },
+    {
+      "id": "jfa-shigen_kanri_houshin-20190722-001",
+      "councilId": "jfa-shigen_kanri_houshin",
+      "name": "第1回 資源管理方針に関する検討会（サバ類 対馬暖流系群）",
+      "date": "2019/07/22",
+      "officialUrl": "https://www.jfa.maff.go.jp/j/study/kanri/231027_3.html",
+      "materials": [
+        {
+          "name": "議事概要(PDF : 187KB)",
+          "url": "https://www.jfa.maff.go.jp/j/study/kanri/attach/pdf/231027_3-10.pdf"
+        },
+        {
+          "name": "議事録(PDF : 602KB)",
+          "url": "https://www.jfa.maff.go.jp/j/study/kanri/attach/pdf/231027_3-11.pdf"
+        },
+        {
+          "name": "資料1:議事次第(PDF : 110KB)",
+          "url": "https://www.jfa.maff.go.jp/j/study/kanri/attach/pdf/231027_3-12.pdf"
+        },
+        {
+          "name": "資料2:会合案内(PDF : 432KB)",
+          "url": "https://www.jfa.maff.go.jp/j/study/kanri/attach/pdf/231027_3-13.pdf"
+        },
+        {
+          "name": "資料3:出席者リスト(PDF : 458KB)",
+          "url": "https://www.jfa.maff.go.jp/j/study/kanri/attach/pdf/231027_3-14.pdf"
+        },
+        {
+          "name": "資料4:会合資料(水産庁)(PDF : 1,849KB)",
+          "url": "https://www.jfa.maff.go.jp/j/study/kanri/attach/pdf/231027_3-15.pdf"
+        },
+        {
+          "name": "資料5-1:会合資料(水産研究・教育機構)(PDF : 5,405KB)",
+          "url": "https://www.jfa.maff.go.jp/j/study/kanri/attach/pdf/231027_3-16.pdf"
+        },
+        {
+          "name": "資料5-2:会合資料(水産研究・教育機構)(PDF : 1,311KB)",
+          "url": "https://www.jfa.maff.go.jp/j/study/kanri/attach/pdf/231027_3-17.pdf"
+        },
+        {
+          "name": "資料5-3:会合資料(水産研究・教育機構)(PDF : 1,476KB)",
+          "url": "https://www.jfa.maff.go.jp/j/study/kanri/attach/pdf/231027_3-18.pdf"
+        },
+        {
+          "name": "資料5-4:会合資料(水産研究・教育機構)(PDF : 530KB)",
+          "url": "https://www.jfa.maff.go.jp/j/study/kanri/attach/pdf/231027_3-19.pdf"
+        },
+        {
+          "name": "資料5-5:会合資料(水産研究・教育機構)(PDF : 860KB)",
+          "url": "https://www.jfa.maff.go.jp/j/study/kanri/attach/pdf/231027_3-20.pdf"
+        },
+        {
+          "name": "資料5-6:会合資料(水産研究・教育機構)(PDF : 5,723KB)",
+          "url": "https://www.jfa.maff.go.jp/j/study/kanri/attach/pdf/231027_3-21.pdf"
         }
       ]
     },
@@ -472718,6 +475118,27 @@
       ]
     },
     {
+      "id": "meti-sankoshin_chiteki_zaisan-20190624-012",
+      "councilId": "meti-sankoshin_chiteki_zaisan",
+      "name": "第12回 産業構造審議会 知的財産分科会",
+      "date": "2019/06/24",
+      "officialUrl": "https://www.jpo.go.jp/resources/shingikai/sangyo-kouzou/shousai/chizai_bunkakai/index.html",
+      "materials": [
+        {
+          "name": "第12回 産業構造審議会 知的財産分科会 議事要旨",
+          "url": "https://www.jpo.go.jp/resources/shingikai/sangyo-kouzou/shousai/chizai_bunkakai/12-gijiyoushi.html"
+        },
+        {
+          "name": "第12回 産業構造審議会 知的財産分科会 配布資料",
+          "url": "https://www.jpo.go.jp/resources/shingikai/sangyo-kouzou/shousai/chizai_bunkakai/12-shiryou.html"
+        },
+        {
+          "name": "議事録(PDF:417KB)",
+          "url": "https://www.jpo.go.jp/resources/shingikai/sangyo-kouzou/shousai/chizai_bunkakai/document/index/12_gijiroku.pdf"
+        }
+      ]
+    },
+    {
       "id": "mic-chihou_seido_32-20190624-019",
       "councilId": "mic-chihou_seido_32",
       "name": "第19回 第32次地方制度調査会 専門小委員会",
@@ -474963,6 +477384,19 @@
         {
           "name": "小規模事業者の経営の改善発達を支援するための商工会及び商工会連合会並びに商工会議所及び日本商工会議所に対する基本指針",
           "url": "https://www.chusho.meti.go.jp/koukai/shingikai/shienbunkakai/2019/190603haifu03.pdf"
+        }
+      ]
+    },
+    {
+      "id": "mic-fufuku_shinsa-20190601-004",
+      "councilId": "mic-fufuku_shinsa",
+      "name": "第4回 行政不服審査会（平成31年度・令和元年度）",
+      "date": "2019/06/01",
+      "officialUrl": "https://www.soumu.go.jp/main_sosiki/singi/fufukushinsa/katsudou/index.html",
+      "materials": [
+        {
+          "name": "第4回 行政不服審査会 活動報告（平成31年度・令和元年度）",
+          "url": "https://www.soumu.go.jp/main_content/000690973.pdf"
         }
       ]
     },
@@ -492337,6 +494771,19 @@
       ]
     },
     {
+      "id": "mext-715-20181115-s18",
+      "councilId": "mext-715",
+      "name": "平成31年度開設予定の大学の設置に係る答申について(平成30年11月15日)",
+      "date": "2018/11/15",
+      "officialUrl": "https://www.mext.go.jp/b_menu/shingi/daigaku/toushin/attach/1410375.htm",
+      "materials": [
+        {
+          "name": "平成31年度開設予定大学一覧 (PDF:76KB)",
+          "url": "https://www.mext.go.jp/component/b_menu/shingi/toushin/__icsFiles/afieldfile/2018/11/15/1410374_01.pdf"
+        }
+      ]
+    },
+    {
       "id": "cao-293-20181114-005",
       "councilId": "cao-293",
       "name": "第5回 Pitch to the Minister 懇談会 “HIRAI Pitch”（世界を変える革新的な分子）",
@@ -493661,6 +496108,23 @@
         {
           "name": "平成30年度第1回議事録",
           "url": "https://www.maff.go.jp/j/syokuiku/kaigi/attach/pdf/h30_01-5.pdf"
+        }
+      ]
+    },
+    {
+      "id": "mext-715-20181031-s20",
+      "councilId": "mext-715",
+      "name": "平成31年度開設予定の大学の設置等に係る答申について(平成30年10月31日)",
+      "date": "2018/10/31",
+      "officialUrl": "https://www.mext.go.jp/b_menu/shingi/daigaku/toushin/attach/1410296.htm",
+      "materials": [
+        {
+          "name": "平成31年度開設予定学部等一覧 (PDF:101KB)",
+          "url": "https://www.mext.go.jp/component/b_menu/shingi/toushin/__icsFiles/afieldfile/2018/10/31/1410294_01.pdf"
+        },
+        {
+          "name": "平成31年開設予定大学院等一覧 (PDF:88KB)",
+          "url": "https://www.mext.go.jp/component/b_menu/shingi/toushin/__icsFiles/afieldfile/2018/10/31/1410294_02.pdf"
         }
       ]
     },
@@ -495727,6 +498191,19 @@
         {
           "name": "資料8:説明資料(野村アセットマネジメント)",
           "url": "https://www.fsa.go.jp/singi/chuukinken/siryou/nomuraasset.pdf"
+        }
+      ]
+    },
+    {
+      "id": "mext-715-20181005-s17",
+      "councilId": "mext-715",
+      "name": "平成31年度開設予定の大学の設置に係る答申について(平成30年10月5日)",
+      "date": "2018/10/05",
+      "officialUrl": "https://www.mext.go.jp/b_menu/shingi/daigaku/toushin/attach/1409962.htm",
+      "materials": [
+        {
+          "name": "平成31年度開設予定大学一覧 (PDF:207KB)",
+          "url": "https://www.mext.go.jp/component/b_menu/shingi/toushin/__icsFiles/afieldfile/2018/10/05/1409963_01_1.pdf"
         }
       ]
     },
@@ -498208,6 +500685,35 @@
         {
           "name": "委員名簿",
           "url": "https://www.chusho.meti.go.jp/koukai/shingikai/torihikimondai/2018/download/180829kihonmondai02.pdf"
+        }
+      ]
+    },
+    {
+      "id": "mext-715-20180828-s19",
+      "councilId": "mext-715",
+      "name": "平成31年度開設予定の大学の設置等に係る答申について(平成30年8月28日)",
+      "date": "2018/08/28",
+      "officialUrl": "https://www.mext.go.jp/b_menu/shingi/daigaku/toushin/attach/1408614.htm",
+      "materials": [
+        {
+          "name": "平成31年度開設予定大学一覧 (PDF:210KB)",
+          "url": "https://www.mext.go.jp/component/b_menu/shingi/toushin/__icsFiles/afieldfile/2018/08/28/1408583_01.pdf"
+        },
+        {
+          "name": "平成31年度開設予定学部等一覧 (PDF:387KB)",
+          "url": "https://www.mext.go.jp/component/b_menu/shingi/toushin/__icsFiles/afieldfile/2018/08/28/1408583_02.pdf"
+        },
+        {
+          "name": "平成31年開設予定大学院等一覧 (PDF:359KB)",
+          "url": "https://www.mext.go.jp/component/b_menu/shingi/toushin/__icsFiles/afieldfile/2018/08/28/1408583_03.pdf"
+        },
+        {
+          "name": "平成31年度からの私立大学の設置者変更一覧 (PDF:74KB)",
+          "url": "https://www.mext.go.jp/component/b_menu/shingi/toushin/__icsFiles/afieldfile/2018/08/28/1408583_04.pdf"
+        },
+        {
+          "name": "≪参考≫平成31年度国立大学開設予定学部等一覧 (PDF:143KB)",
+          "url": "https://www.mext.go.jp/component/b_menu/shingi/toushin/__icsFiles/afieldfile/2018/08/28/1408583_05.pdf"
         }
       ]
     },
@@ -501491,6 +503997,27 @@
       ]
     },
     {
+      "id": "meti-sankoshin_chiteki_zaisan-20180625-011",
+      "councilId": "meti-sankoshin_chiteki_zaisan",
+      "name": "第11回 産業構造審議会 知的財産分科会",
+      "date": "2018/06/25",
+      "officialUrl": "https://www.jpo.go.jp/resources/shingikai/sangyo-kouzou/shousai/chizai_bunkakai/index.html",
+      "materials": [
+        {
+          "name": "第11回 産業構造審議会 知的財産分科会 議事要旨",
+          "url": "https://www.jpo.go.jp/resources/shingikai/sangyo-kouzou/shousai/chizai_bunkakai/11-gijiyoushi.html"
+        },
+        {
+          "name": "第11回 産業構造審議会 知的財産分科会 配布資料",
+          "url": "https://www.jpo.go.jp/resources/shingikai/sangyo-kouzou/shousai/chizai_bunkakai/11-shiryou.html"
+        },
+        {
+          "name": "議事録(PDF:427KB)",
+          "url": "https://www.jpo.go.jp/resources/shingikai/sangyo-kouzou/shousai/chizai_bunkakai/document/index/11_gijiroku.pdf"
+        }
+      ]
+    },
+    {
       "id": "moj-kousei_hogo_yuushikisha-20180625-003",
       "councilId": "moj-kousei_hogo_yuushikisha",
       "name": "これからの更生保護事業に関する有識者検討会第3回会議",
@@ -503672,6 +506199,19 @@
         {
           "name": "参考資料3     電波伝搬委員会構成員名簿（平成30年6月1日現在）",
           "url": "https://www.soumu.go.jp/main_content/000582145.pdf"
+        }
+      ]
+    },
+    {
+      "id": "mic-fufuku_shinsa-20180601-003",
+      "councilId": "mic-fufuku_shinsa",
+      "name": "第3回 行政不服審査会（平成30年度）",
+      "date": "2018/06/01",
+      "officialUrl": "https://www.soumu.go.jp/main_sosiki/singi/fufukushinsa/katsudou/index.html",
+      "materials": [
+        {
+          "name": "第3回 行政不服審査会 活動報告（平成30年度）",
+          "url": "https://www.soumu.go.jp/main_content/000628970.pdf"
         }
       ]
     },
@@ -528776,6 +531316,19 @@
       ]
     },
     {
+      "id": "mic-fufuku_shinsa-20170601-002",
+      "councilId": "mic-fufuku_shinsa",
+      "name": "第2回 行政不服審査会（平成29年度）",
+      "date": "2017/06/01",
+      "officialUrl": "https://www.soumu.go.jp/main_sosiki/singi/fufukushinsa/katsudou/index.html",
+      "materials": [
+        {
+          "name": "第2回 行政不服審査会 活動報告（平成29年度）",
+          "url": "https://www.soumu.go.jp/main_content/000611534.pdf"
+        }
+      ]
+    },
+    {
       "id": "moe-chuo_kankyo_junkan_shakai-20170601-020",
       "councilId": "moe-chuo_kankyo_junkan_shakai",
       "name": "第20回 中央環境審議会 循環型社会部会",
@@ -531678,6 +534231,27 @@
         {
           "name": "議事要旨",
           "url": "https://www.fsa.go.jp/singi/kinyuchukai/siryou/20170424.html"
+        }
+      ]
+    },
+    {
+      "id": "meti-sankoshin_chiteki_zaisan-20170424-010",
+      "councilId": "meti-sankoshin_chiteki_zaisan",
+      "name": "第10回 産業構造審議会 知的財産分科会",
+      "date": "2017/04/24",
+      "officialUrl": "https://www.jpo.go.jp/resources/shingikai/sangyo-kouzou/shousai/chizai_bunkakai/index.html",
+      "materials": [
+        {
+          "name": "第10回 産業構造審議会 知的財産分科会 議事要旨",
+          "url": "https://www.jpo.go.jp/resources/shingikai/sangyo-kouzou/shousai/chizai_bunkakai/10-gijiyoushi.html"
+        },
+        {
+          "name": "第10回 産業構造審議会 知的財産分科会 配布資料",
+          "url": "https://www.jpo.go.jp/resources/shingikai/sangyo-kouzou/shousai/chizai_bunkakai/10-shiryou.html"
+        },
+        {
+          "name": "議事録(PDF:548KB)",
+          "url": "https://www.jpo.go.jp/resources/shingikai/sangyo-kouzou/shousai/chizai_bunkakai/document/index/10_gijiroku.pdf"
         }
       ]
     },
@@ -546101,6 +548675,23 @@
       ]
     },
     {
+      "id": "mext-715-20161026-s22",
+      "councilId": "mext-715",
+      "name": "平成29年度開設予定の大学等の設置に係る答申について(平成28年10月26日)",
+      "date": "2016/10/26",
+      "officialUrl": "https://www.mext.go.jp/b_menu/shingi/daigaku/toushin/attach/1378734.htm",
+      "materials": [
+        {
+          "name": "平成29年度開設予定大学等一覧 (PDF:57KB)",
+          "url": "https://www.mext.go.jp/b_menu/shingi/daigaku/toushin/attach/__icsFiles/afieldfile/2016/10/26/1378734_01_1.pdf"
+        },
+        {
+          "name": "平成29年度開設予定学部等一覧 (PDF:110KB)",
+          "url": "https://www.mext.go.jp/b_menu/shingi/daigaku/toushin/attach/__icsFiles/afieldfile/2016/11/09/1378734_02_1.pdf"
+        }
+      ]
+    },
+    {
       "id": "mhlw-795-20161026-028",
       "councilId": "mhlw-795",
       "name": "第28回 厚生年金基金の特例解散等に関する専門委員会",
@@ -548418,6 +551009,27 @@
       ]
     },
     {
+      "id": "meti-sankoshin_chiteki_zaisan-20160926-009",
+      "councilId": "meti-sankoshin_chiteki_zaisan",
+      "name": "第9回 産業構造審議会 知的財産分科会",
+      "date": "2016/09/26",
+      "officialUrl": "https://www.jpo.go.jp/resources/shingikai/sangyo-kouzou/shousai/chizai_bunkakai/index.html",
+      "materials": [
+        {
+          "name": "第9回 産業構造審議会 知的財産分科会 議事要旨",
+          "url": "https://www.jpo.go.jp/resources/shingikai/sangyo-kouzou/shousai/chizai_bunkakai/09-gijiyoushi.html"
+        },
+        {
+          "name": "第9回 産業構造審議会 知的財産分科会 配布資料",
+          "url": "https://www.jpo.go.jp/resources/shingikai/sangyo-kouzou/shousai/chizai_bunkakai/09-shiryou.html"
+        },
+        {
+          "name": "議事録(PDF:328KB)",
+          "url": "https://www.jpo.go.jp/resources/shingikai/sangyo-kouzou/shousai/chizai_bunkakai/document/index/09_gijiroku.pdf"
+        }
+      ]
+    },
+    {
       "id": "mhlw-hosho_fukushi-20160926-019",
       "councilId": "mhlw-hosho_fukushi",
       "name": "第19回 社会保障審議会 福祉部会",
@@ -550043,6 +552655,27 @@
           "name": "議事録",
           "url": "https://www.mhlw.go.jp/stf/shingi2/0000145633.html",
           "type": "HTML"
+        }
+      ]
+    },
+    {
+      "id": "mext-715-20160826-s21",
+      "councilId": "mext-715",
+      "name": "平成29年度開設予定の大学等の設置に係る答申について(平成28年8月26日)",
+      "date": "2016/08/26",
+      "officialUrl": "https://www.mext.go.jp/b_menu/shingi/daigaku/toushin/attach/1376289.htm",
+      "materials": [
+        {
+          "name": "平成29年度開設予定大学等一覧 (PDF:101KB)",
+          "url": "https://www.mext.go.jp/b_menu/shingi/daigaku/toushin/attach/__icsFiles/afieldfile/2016/08/26/1376289_01_1.pdf"
+        },
+        {
+          "name": "平成29年度開設予定学部等一覧 (PDF:161KB)",
+          "url": "https://www.mext.go.jp/b_menu/shingi/daigaku/toushin/attach/__icsFiles/afieldfile/2016/08/26/1376289_02_2.pdf"
+        },
+        {
+          "name": "平成29年度開設予定大学院等一覧 (PDF:139KB)",
+          "url": "https://www.mext.go.jp/b_menu/shingi/daigaku/toushin/attach/__icsFiles/afieldfile/2016/08/26/1376289_03.pdf"
         }
       ]
     },
@@ -555180,6 +557813,19 @@
       ]
     },
     {
+      "id": "mic-fufuku_shinsa-20160601-001",
+      "councilId": "mic-fufuku_shinsa",
+      "name": "第1回 行政不服審査会（平成28年度）",
+      "date": "2016/06/01",
+      "officialUrl": "https://www.soumu.go.jp/main_sosiki/singi/fufukushinsa/katsudou/index.html",
+      "materials": [
+        {
+          "name": "第1回 行政不服審査会 活動報告（平成28年度）",
+          "url": "https://www.soumu.go.jp/main_content/000494897.pdf"
+        }
+      ]
+    },
+    {
       "id": "mhlw-hoiku_senmon_iinkai-20160531-007",
       "councilId": "mhlw-hoiku_senmon_iinkai",
       "name": "社会保障審議会 保育専門委員会 第7回",
@@ -558705,6 +561351,23 @@
         {
           "name": "計画部会構成員名簿(PDF形式:149KB)",
           "url": "https://www8.cao.go.jp/pfi/iinkai/kaisai/keikaku/3kai/pdf/iinkai_shiryo_kb0304.pdf"
+        }
+      ]
+    },
+    {
+      "id": "meti-sankoshin_chiteki_zaisan-20160411-008",
+      "councilId": "meti-sankoshin_chiteki_zaisan",
+      "name": "第8回 産業構造審議会 知的財産分科会",
+      "date": "2016/04/11",
+      "officialUrl": "https://www.jpo.go.jp/resources/shingikai/sangyo-kouzou/shousai/chizai_bunkakai/index.html",
+      "materials": [
+        {
+          "name": "第8回 産業構造審議会 知的財産分科会 議事要旨",
+          "url": "https://www.jpo.go.jp/resources/shingikai/sangyo-kouzou/shousai/chizai_bunkakai/08-gijiyoushi.html"
+        },
+        {
+          "name": "配布資料(PDF:187KB)",
+          "url": "https://www.jpo.go.jp/resources/shingikai/sangyo-kouzou/shousai/chizai_bunkakai/document/index/01.pdf"
         }
       ]
     },
@@ -563562,6 +566225,27 @@
         {
           "name": "2013年度の地球温暖化対策及び施策の進捗状況",
           "url": "https://www.cas.go.jp/jp/seisakukaigi/ondanka/kaisai/dai33/siryou.pdf"
+        }
+      ]
+    },
+    {
+      "id": "meti-sankoshin_chiteki_zaisan-20160212-007",
+      "councilId": "meti-sankoshin_chiteki_zaisan",
+      "name": "第7回 産業構造審議会 知的財産分科会",
+      "date": "2016/02/12",
+      "officialUrl": "https://www.jpo.go.jp/resources/shingikai/sangyo-kouzou/shousai/chizai_bunkakai/index.html",
+      "materials": [
+        {
+          "name": "第7回 産業構造審議会 知的財産分科会 議事要旨",
+          "url": "https://www.jpo.go.jp/resources/shingikai/sangyo-kouzou/shousai/chizai_bunkakai/07-gijiyoushi.html"
+        },
+        {
+          "name": "第7回 産業構造審議会 知的財産分科会 配布資料",
+          "url": "https://www.jpo.go.jp/resources/shingikai/sangyo-kouzou/shousai/chizai_bunkakai/07-shiryou.html"
+        },
+        {
+          "name": "議事録(PDF:349KB)",
+          "url": "https://www.jpo.go.jp/resources/shingikai/sangyo-kouzou/shousai/chizai_bunkakai/document/index/07_gijiroku.pdf"
         }
       ]
     },
@@ -586665,6 +589349,27 @@
         {
           "name": "議事録",
           "url": "https://www.moj.go.jp/content/001138926.pdf"
+        }
+      ]
+    },
+    {
+      "id": "meti-sankoshin_chiteki_zaisan-20150210-006",
+      "councilId": "meti-sankoshin_chiteki_zaisan",
+      "name": "第6回 産業構造審議会 知的財産分科会",
+      "date": "2015/02/10",
+      "officialUrl": "https://www.jpo.go.jp/resources/shingikai/sangyo-kouzou/shousai/chizai_bunkakai/index.html",
+      "materials": [
+        {
+          "name": "第6回 産業構造審議会 知的財産分科会 議事要旨",
+          "url": "https://www.jpo.go.jp/resources/shingikai/sangyo-kouzou/shousai/chizai_bunkakai/06-gijiyoushi.html"
+        },
+        {
+          "name": "第6回 産業構造審議会 知的財産分科会 配布資料",
+          "url": "https://www.jpo.go.jp/resources/shingikai/sangyo-kouzou/shousai/chizai_bunkakai/06-shiryou.html"
+        },
+        {
+          "name": "議事録(PDF:344KB)",
+          "url": "https://www.jpo.go.jp/resources/shingikai/sangyo-kouzou/shousai/chizai_bunkakai/document/index/06_gijiroku.pdf"
         }
       ]
     },
@@ -611223,6 +613928,27 @@
       ]
     },
     {
+      "id": "meti-sankoshin_chiteki_zaisan-20140224-005",
+      "councilId": "meti-sankoshin_chiteki_zaisan",
+      "name": "第5回 産業構造審議会 知的財産分科会",
+      "date": "2014/02/24",
+      "officialUrl": "https://www.jpo.go.jp/resources/shingikai/sangyo-kouzou/shousai/chizai_bunkakai/index.html",
+      "materials": [
+        {
+          "name": "第5回 産業構造審議会 知的財産分科会 議事要旨",
+          "url": "https://www.jpo.go.jp/resources/shingikai/sangyo-kouzou/shousai/chizai_bunkakai/05-gijiyoushi.html"
+        },
+        {
+          "name": "第5回 産業構造審議会 知的財産分科会 配布資料",
+          "url": "https://www.jpo.go.jp/resources/shingikai/sangyo-kouzou/shousai/chizai_bunkakai/05-shiryou.html"
+        },
+        {
+          "name": "議事録(PDF:301KB)",
+          "url": "https://www.jpo.go.jp/resources/shingikai/sangyo-kouzou/shousai/chizai_bunkakai/document/index/05_gijiroku.pdf"
+        }
+      ]
+    },
+    {
       "id": "mhlw-942-20140224-025",
       "councilId": "mhlw-942",
       "name": "第25回 職業安定分科会雇用対策基本問題部会港湾労働専門委員会",
@@ -614883,6 +617609,23 @@
       ]
     },
     {
+      "id": "meti-sankoshin_chiteki_zaisan-20131216-004",
+      "councilId": "meti-sankoshin_chiteki_zaisan",
+      "name": "第4回 産業構造審議会 知的財産分科会",
+      "date": "2013/12/16",
+      "officialUrl": "https://www.jpo.go.jp/resources/shingikai/sangyo-kouzou/shousai/chizai_bunkakai/index.html",
+      "materials": [
+        {
+          "name": "第4回 産業構造審議会 知的財産分科会 議事要旨",
+          "url": "https://www.jpo.go.jp/resources/shingikai/sangyo-kouzou/shousai/chizai_bunkakai/04-gijiyoushi.html"
+        },
+        {
+          "name": "第4回 産業構造審議会 知的財産分科会 配布資料",
+          "url": "https://www.jpo.go.jp/resources/shingikai/sangyo-kouzou/shousai/chizai_bunkakai/04-shiryou.html"
+        }
+      ]
+    },
+    {
       "id": "meti-sankoshin_seizo_sangyo_bio-20131216-001",
       "councilId": "meti-sankoshin_seizo_sangyo_bio",
       "name": "第1回 産業構造審議会 製造産業分科会 バイオ小委員会",
@@ -616420,6 +619163,23 @@
           "name": "議事録[PDF]",
           "url": "https://www.fsc.go.jp/fsciis/attachedFile/download?retrievalId=kai20131128ki1&fileId=610",
           "type": "HTML"
+        }
+      ]
+    },
+    {
+      "id": "meti-sankoshin_chiteki_zaisan-20131128-003",
+      "councilId": "meti-sankoshin_chiteki_zaisan",
+      "name": "第3回 産業構造審議会 知的財産分科会",
+      "date": "2013/11/28",
+      "officialUrl": "https://www.jpo.go.jp/resources/shingikai/sangyo-kouzou/shousai/chizai_bunkakai/index.html",
+      "materials": [
+        {
+          "name": "第3回 産業構造審議会 知的財産分科会 議事要旨",
+          "url": "https://www.jpo.go.jp/resources/shingikai/sangyo-kouzou/shousai/chizai_bunkakai/03-gijiyoushi.html"
+        },
+        {
+          "name": "第3回 産業構造審議会 知的財産分科会 配布資料",
+          "url": "https://www.jpo.go.jp/resources/shingikai/sangyo-kouzou/shousai/chizai_bunkakai/03-shiryou.html"
         }
       ]
     },
@@ -618848,6 +621608,27 @@
       ]
     },
     {
+      "id": "meti-sankoshin_chiteki_zaisan-20131028-002",
+      "councilId": "meti-sankoshin_chiteki_zaisan",
+      "name": "第2回 産業構造審議会 知的財産分科会",
+      "date": "2013/10/28",
+      "officialUrl": "https://www.jpo.go.jp/resources/shingikai/sangyo-kouzou/shousai/chizai_bunkakai/index.html",
+      "materials": [
+        {
+          "name": "第2回 産業構造審議会 知的財産分科会 議事要旨",
+          "url": "https://www.jpo.go.jp/resources/shingikai/sangyo-kouzou/shousai/chizai_bunkakai/02-gijiyoushi.html"
+        },
+        {
+          "name": "第2回 産業構造審議会 知的財産分科会 配布資料",
+          "url": "https://www.jpo.go.jp/resources/shingikai/sangyo-kouzou/shousai/chizai_bunkakai/02-shiryou.html"
+        },
+        {
+          "name": "議事録(PDF:382KB)",
+          "url": "https://www.jpo.go.jp/resources/shingikai/sangyo-kouzou/shousai/chizai_bunkakai/document/index/02_gijiroku.pdf"
+        }
+      ]
+    },
+    {
       "id": "fsa-kinyu_risk_money_wg-20131025-007",
       "councilId": "fsa-kinyu_risk_money_wg",
       "name": "第7回 新規・成長企業へのリスクマネーの供給のあり方等に関するワーキング・グループ",
@@ -621039,6 +623820,27 @@
         {
           "name": "議事録",
           "url": "https://www.jfa.maff.go.jp/j/council/seisaku/kanri/pdf/25091162shigen.pdf"
+        }
+      ]
+    },
+    {
+      "id": "meti-sankoshin_chiteki_zaisan-20130911-001",
+      "councilId": "meti-sankoshin_chiteki_zaisan",
+      "name": "第1回 産業構造審議会 知的財産分科会",
+      "date": "2013/09/11",
+      "officialUrl": "https://www.jpo.go.jp/resources/shingikai/sangyo-kouzou/shousai/chizai_bunkakai/index.html",
+      "materials": [
+        {
+          "name": "第1回 産業構造審議会 知的財産分科会 議事要旨",
+          "url": "https://www.jpo.go.jp/resources/shingikai/sangyo-kouzou/shousai/chizai_bunkakai/01-gijiyoushi.html"
+        },
+        {
+          "name": "第1回 産業構造審議会 知的財産分科会 配布資料",
+          "url": "https://www.jpo.go.jp/resources/shingikai/sangyo-kouzou/shousai/chizai_bunkakai/01-shiryou.html"
+        },
+        {
+          "name": "議事録(PDF:382KB)",
+          "url": "https://www.jpo.go.jp/resources/shingikai/sangyo-kouzou/shousai/chizai_bunkakai/document/index/01_gijiroku.pdf"
         }
       ]
     },
@@ -642451,6 +645253,23 @@
       ]
     },
     {
+      "id": "meti-sankoshin_chiteki_zaisan-20120625-s18",
+      "councilId": "meti-sankoshin_chiteki_zaisan",
+      "name": "第18回 産業構造審議会 知的財産分科会 政策部会",
+      "date": "2012/06/25",
+      "officialUrl": "https://www.jpo.go.jp/resources/shingikai/sangyo-kouzou/shousai/chizai_bunkakai/index.html",
+      "materials": [
+        {
+          "name": "第18回 産業構造審議会 知的財産分科会 政策部会 議事要旨",
+          "url": "https://www.jpo.go.jp/resources/shingikai/sangyo-kouzou/shousai/chizai_bunkakai/seisakubukai-18-gijiyoushi.html"
+        },
+        {
+          "name": "第18回 産業構造審議会 知的財産分科会 政策部会 配布資料",
+          "url": "https://www.jpo.go.jp/resources/shingikai/sangyo-kouzou/shousai/chizai_bunkakai/seisakubukai-18-shiryou.html"
+        }
+      ]
+    },
+    {
       "id": "aca-kokugo_kadai_kento_h24_h25-20120622-003",
       "councilId": "aca-kokugo_kadai_kento_h24_h25",
       "name": "第3回 国語分科会 国語課題検討小委員会(平成24年4月27日~平成25年1月15日)",
@@ -646028,6 +648847,23 @@
         {
           "name": "報告書(資料編)",
           "url": "https://www.npa.go.jp/bureau/cyber/pdf/h24_shiryouhen_2.pdf"
+        }
+      ]
+    },
+    {
+      "id": "meti-sankoshin_chiteki_zaisan-20120330-s17",
+      "councilId": "meti-sankoshin_chiteki_zaisan",
+      "name": "第17回 産業構造審議会 知的財産分科会 政策部会",
+      "date": "2012/03/30",
+      "officialUrl": "https://www.jpo.go.jp/resources/shingikai/sangyo-kouzou/shousai/chizai_bunkakai/index.html",
+      "materials": [
+        {
+          "name": "第17回 産業構造審議会 知的財産分科会 政策部会 議事要旨",
+          "url": "https://www.jpo.go.jp/resources/shingikai/sangyo-kouzou/shousai/chizai_bunkakai/seisakubukai-17-gijiyoushi.html"
+        },
+        {
+          "name": "第17回 産業構造審議会 知的財産分科会 政策部会 配布資料",
+          "url": "https://www.jpo.go.jp/resources/shingikai/sangyo-kouzou/shousai/chizai_bunkakai/seisakubukai-17-shiryou.html"
         }
       ]
     },
@@ -659329,6 +662165,23 @@
       ]
     },
     {
+      "id": "meti-sankoshin_chiteki_zaisan-20110719-s16",
+      "councilId": "meti-sankoshin_chiteki_zaisan",
+      "name": "第16回 産業構造審議会 知的財産分科会 政策部会",
+      "date": "2011/07/19",
+      "officialUrl": "https://www.jpo.go.jp/resources/shingikai/sangyo-kouzou/shousai/chizai_bunkakai/index.html",
+      "materials": [
+        {
+          "name": "第16回 産業構造審議会 知的財産分科会 政策部会 議事要旨",
+          "url": "https://www.jpo.go.jp/resources/shingikai/sangyo-kouzou/shousai/chizai_bunkakai/seisakubukai-16-gijiyoushi.html"
+        },
+        {
+          "name": "第16回 産業構造審議会 知的財産分科会 政策部会 配布資料",
+          "url": "https://www.jpo.go.jp/resources/shingikai/sangyo-kouzou/shousai/chizai_bunkakai/seisakubukai-16-shiryou.html"
+        }
+      ]
+    },
+    {
       "id": "aca-bunkazai_bunkakai-20110715-117",
       "councilId": "aca-bunkazai_bunkakai",
       "name": "平成23年 第117回 文化審議会 文化財分科会",
@@ -665082,6 +667935,23 @@
         {
           "name": "議事録 (議事録)",
           "url": "https://www.rinya.maff.go.jp/j/seibi/suigenrin/pdf/230218gi.pdf"
+        }
+      ]
+    },
+    {
+      "id": "meti-sankoshin_chiteki_zaisan-20110216-s15",
+      "councilId": "meti-sankoshin_chiteki_zaisan",
+      "name": "第15回 産業構造審議会 知的財産分科会 政策部会",
+      "date": "2011/02/16",
+      "officialUrl": "https://www.jpo.go.jp/resources/shingikai/sangyo-kouzou/shousai/chizai_bunkakai/index.html",
+      "materials": [
+        {
+          "name": "第15回 産業構造審議会 知的財産分科会 政策部会 議事要旨",
+          "url": "https://www.jpo.go.jp/resources/shingikai/sangyo-kouzou/shousai/chizai_bunkakai/seisakubukai-15-gijiyoushi.html"
+        },
+        {
+          "name": "第15回 産業構造審議会 知的財産分科会 政策部会 配布資料",
+          "url": "https://www.jpo.go.jp/resources/shingikai/sangyo-kouzou/shousai/chizai_bunkakai/seisakubukai-15-gijiroku.html"
         }
       ]
     },
@@ -679847,6 +682717,23 @@
       ]
     },
     {
+      "id": "meti-sankoshin_chiteki_zaisan-20100512-s14",
+      "councilId": "meti-sankoshin_chiteki_zaisan",
+      "name": "第14回 産業構造審議会 知的財産分科会 政策部会",
+      "date": "2010/05/12",
+      "officialUrl": "https://www.jpo.go.jp/resources/shingikai/sangyo-kouzou/shousai/chizai_bunkakai/index.html",
+      "materials": [
+        {
+          "name": "第14回 産業構造審議会 知的財産分科会 政策部会 議事要旨",
+          "url": "https://www.jpo.go.jp/resources/shingikai/sangyo-kouzou/shousai/chizai_bunkakai/seisakubukai-14-gijiyoushi.html"
+        },
+        {
+          "name": "第14回 産業構造審議会 知的財産分科会 政策部会 配布資料",
+          "url": "https://www.jpo.go.jp/resources/shingikai/sangyo-kouzou/shousai/chizai_bunkakai/seisakubukai-14-shiryou.html"
+        }
+      ]
+    },
+    {
       "id": "mhlw-1054-20100512-016",
       "councilId": "mhlw-1054",
       "name": "第16回 厚生労働省政策会議",
@@ -682356,6 +685243,27 @@
         {
           "name": "議事録",
           "url": "https://www.soumu.go.jp/main_content/000062278.pdf"
+        }
+      ]
+    },
+    {
+      "id": "meti-sankoshin_chiteki_zaisan-20100309-s13",
+      "councilId": "meti-sankoshin_chiteki_zaisan",
+      "name": "第13回 産業構造審議会 知的財産分科会 政策部会",
+      "date": "2010/03/09",
+      "officialUrl": "https://www.jpo.go.jp/resources/shingikai/sangyo-kouzou/shousai/chizai_bunkakai/index.html",
+      "materials": [
+        {
+          "name": "第13回 産業構造審議会 知的財産分科会 政策部会 議事要旨",
+          "url": "https://www.jpo.go.jp/resources/shingikai/sangyo-kouzou/shousai/chizai_bunkakai/seisakubukai-13-gijiyoushi.html"
+        },
+        {
+          "name": "第13回 産業構造審議会 知的財産分科会 政策部会 配布資料",
+          "url": "https://www.jpo.go.jp/resources/shingikai/sangyo-kouzou/shousai/chizai_bunkakai/seisakubukai-13-shiryou.html"
+        },
+        {
+          "name": "第13回 産業構造審議会 知的財産分科会 政策部会 議事録",
+          "url": "https://www.jpo.go.jp/resources/shingikai/sangyo-kouzou/shousai/chizai_bunkakai/seisakubukai-13-gijiroku.html"
         }
       ]
     },
@@ -706776,6 +709684,27 @@
       ]
     },
     {
+      "id": "meti-sankoshin_chiteki_zaisan-20080124-s12",
+      "councilId": "meti-sankoshin_chiteki_zaisan",
+      "name": "第12回 産業構造審議会 知的財産分科会 政策部会",
+      "date": "2008/01/24",
+      "officialUrl": "https://www.jpo.go.jp/resources/shingikai/sangyo-kouzou/shousai/chizai_bunkakai/index.html",
+      "materials": [
+        {
+          "name": "第12回 産業構造審議会 知的財産分科会 政策部会 議事要旨",
+          "url": "https://www.jpo.go.jp/resources/shingikai/sangyo-kouzou/shousai/chizai_bunkakai/seisakubukai-12-gijiyoushi.html"
+        },
+        {
+          "name": "第12回 産業構造審議会 知的財産分科会 政策部会 配布資料",
+          "url": "https://www.jpo.go.jp/resources/shingikai/sangyo-kouzou/shousai/chizai_bunkakai/seisakubukai-12-shiryou.html"
+        },
+        {
+          "name": "第12回 産業構造審議会 知的財産分科会 政策部会 議事録",
+          "url": "https://www.jpo.go.jp/resources/shingikai/sangyo-kouzou/shousai/chizai_bunkakai/seisakubukai-12-gijiroku.html"
+        }
+      ]
+    },
+    {
       "id": "cao-pfi_suishin-20080123-016",
       "councilId": "cao-pfi_suishin",
       "name": "第16回 民間資金等活用事業推進委員会",
@@ -710055,6 +712984,27 @@
         {
           "name": "議事録",
           "url": "https://www.jfa.maff.go.jp/j/council/seisaku/gyoko/pdf/015.pdf"
+        }
+      ]
+    },
+    {
+      "id": "meti-sankoshin_chiteki_zaisan-20071024-s11",
+      "councilId": "meti-sankoshin_chiteki_zaisan",
+      "name": "第11回 産業構造審議会 知的財産分科会 政策部会",
+      "date": "2007/10/24",
+      "officialUrl": "https://www.jpo.go.jp/resources/shingikai/sangyo-kouzou/shousai/chizai_bunkakai/index.html",
+      "materials": [
+        {
+          "name": "第11回 産業構造審議会 知的財産分科会 政策部会 議事要旨",
+          "url": "https://www.jpo.go.jp/resources/shingikai/sangyo-kouzou/shousai/chizai_bunkakai/seisakubukai-11-gijiyoushi.html"
+        },
+        {
+          "name": "第11回 産業構造審議会 知的財産分科会 政策部会 配布資料",
+          "url": "https://www.jpo.go.jp/resources/shingikai/sangyo-kouzou/shousai/chizai_bunkakai/seisakubukai-11-shiryou.html"
+        },
+        {
+          "name": "第11回 産業構造審議会 知的財産分科会 政策部会 議事録",
+          "url": "https://www.jpo.go.jp/resources/shingikai/sangyo-kouzou/shousai/chizai_bunkakai/seisakubukai-11-gijiroku.html"
         }
       ]
     },
@@ -715222,6 +718172,27 @@
       ]
     },
     {
+      "id": "meti-sankoshin_chiteki_zaisan-20070404-s10",
+      "councilId": "meti-sankoshin_chiteki_zaisan",
+      "name": "第10回 産業構造審議会 知的財産分科会 政策部会",
+      "date": "2007/04/04",
+      "officialUrl": "https://www.jpo.go.jp/resources/shingikai/sangyo-kouzou/shousai/chizai_bunkakai/index.html",
+      "materials": [
+        {
+          "name": "第10回 産業構造審議会 知的財産分科会 政策部会 議事要旨",
+          "url": "https://www.jpo.go.jp/resources/shingikai/sangyo-kouzou/shousai/chizai_bunkakai/seisakubukai-10-gijiyoushi.html"
+        },
+        {
+          "name": "第10回 産業構造審議会 知的財産分科会 政策部会 配布資料",
+          "url": "https://www.jpo.go.jp/resources/shingikai/sangyo-kouzou/shousai/chizai_bunkakai/seisakubukai-10-shiryou.html"
+        },
+        {
+          "name": "第10回 産業構造審議会 知的財産分科会 政策部会 議事録",
+          "url": "https://www.jpo.go.jp/resources/shingikai/sangyo-kouzou/shousai/chizai_bunkakai/seisakubukai-10-gijiroku.html"
+        }
+      ]
+    },
+    {
       "id": "mhlw-hosho_fukushi-20070329-003",
       "councilId": "mhlw-hosho_fukushi",
       "name": "平成19年 第3回 福祉部会",
@@ -717387,6 +720358,27 @@
         {
           "name": "議事録",
           "url": "https://www.bunka.go.jp/seisaku/bunkashingikai/kokugo/keigo/keigo_06/pdf/keigo_shouiinkai180119_gijiroku.pdf"
+        }
+      ]
+    },
+    {
+      "id": "meti-sankoshin_chiteki_zaisan-20070119-s09",
+      "councilId": "meti-sankoshin_chiteki_zaisan",
+      "name": "第9回 産業構造審議会 知的財産分科会 政策部会",
+      "date": "2007/01/19",
+      "officialUrl": "https://www.jpo.go.jp/resources/shingikai/sangyo-kouzou/shousai/chizai_bunkakai/index.html",
+      "materials": [
+        {
+          "name": "第9回 産業構造審議会 知的財産分科会 政策部会 議事要旨",
+          "url": "https://www.jpo.go.jp/resources/shingikai/sangyo-kouzou/shousai/chizai_bunkakai/seisakubukai-09-gijiyoushi.html"
+        },
+        {
+          "name": "第9回 産業構造審議会 知的財産分科会 政策部会 配布資料",
+          "url": "https://www.jpo.go.jp/resources/shingikai/sangyo-kouzou/shousai/chizai_bunkakai/seisakubukai-09-shiryou.html"
+        },
+        {
+          "name": "第9回 産業構造審議会 知的財産分科会 政策部会 議事録",
+          "url": "https://www.jpo.go.jp/resources/shingikai/sangyo-kouzou/shousai/chizai_bunkakai/seisakubukai-09-gijiroku.html"
         }
       ]
     },
@@ -723146,6 +726138,27 @@
       ]
     },
     {
+      "id": "meti-sankoshin_chiteki_zaisan-20060616-s08",
+      "councilId": "meti-sankoshin_chiteki_zaisan",
+      "name": "第8回 産業構造審議会 知的財産分科会 政策部会",
+      "date": "2006/06/16",
+      "officialUrl": "https://www.jpo.go.jp/resources/shingikai/sangyo-kouzou/shousai/chizai_bunkakai/index.html",
+      "materials": [
+        {
+          "name": "第8回 産業構造審議会 知的財産分科会 政策部会 議事要旨",
+          "url": "https://www.jpo.go.jp/resources/shingikai/sangyo-kouzou/shousai/chizai_bunkakai/seisakubukai-08-gijiyoushi.html"
+        },
+        {
+          "name": "第8回 産業構造審議会 知的財産分科会 政策部会 配布資料",
+          "url": "https://www.jpo.go.jp/resources/shingikai/sangyo-kouzou/shousai/chizai_bunkakai/seisakubukai-08-shiryou.html"
+        },
+        {
+          "name": "第8回 産業構造審議会 知的財産分科会 政策部会 議事録",
+          "url": "https://www.jpo.go.jp/resources/shingikai/sangyo-kouzou/shousai/chizai_bunkakai/seisakubukai-08-gijiroku.html"
+        }
+      ]
+    },
+    {
       "id": "mod-1128-20060616-014",
       "councilId": "mod-1128",
       "name": "防衛施設庁入札談合等再発防止に係る抜本的対策に関する検討会 第14回",
@@ -726964,6 +729977,27 @@
         {
           "name": "議事録",
           "url": "https://www.fsa.go.jp/singi/singi_kasikin/gijiyousi/20060215-kasikin.html"
+        }
+      ]
+    },
+    {
+      "id": "meti-sankoshin_chiteki_zaisan-20060215-s07",
+      "councilId": "meti-sankoshin_chiteki_zaisan",
+      "name": "第7回 産業構造審議会 知的財産分科会 政策部会",
+      "date": "2006/02/15",
+      "officialUrl": "https://www.jpo.go.jp/resources/shingikai/sangyo-kouzou/shousai/chizai_bunkakai/index.html",
+      "materials": [
+        {
+          "name": "第7回 産業構造審議会 知的財産分科会 政策部会 議事要旨",
+          "url": "https://www.jpo.go.jp/resources/shingikai/sangyo-kouzou/shousai/chizai_bunkakai/seisakubukai-07-gijiyoushi.html"
+        },
+        {
+          "name": "第7回 産業構造審議会 知的財産分科会 政策部会 配布資料",
+          "url": "https://www.jpo.go.jp/resources/shingikai/sangyo-kouzou/shousai/chizai_bunkakai/seisakubukai-07-shiryou.html"
+        },
+        {
+          "name": "第7回 産業構造審議会 知的財産分科会 政策部会 議事録",
+          "url": "https://www.jpo.go.jp/resources/shingikai/sangyo-kouzou/shousai/chizai_bunkakai/seisakubukai-07-gijiroku.html"
         }
       ]
     },
@@ -739484,6 +742518,27 @@
       ]
     },
     {
+      "id": "meti-sankoshin_chiteki_zaisan-20050223-s06",
+      "councilId": "meti-sankoshin_chiteki_zaisan",
+      "name": "第6回 産業構造審議会 知的財産分科会 政策部会",
+      "date": "2005/02/23",
+      "officialUrl": "https://www.jpo.go.jp/resources/shingikai/sangyo-kouzou/shousai/chizai_bunkakai/index.html",
+      "materials": [
+        {
+          "name": "第6回 産業構造審議会 知的財産分科会 政策部会 議事要旨",
+          "url": "https://www.jpo.go.jp/resources/shingikai/sangyo-kouzou/shousai/chizai_bunkakai/seisakubukai-06-gijiyoushi.html"
+        },
+        {
+          "name": "第6回 産業構造審議会 知的財産分科会 政策部会 配布資料",
+          "url": "https://www.jpo.go.jp/resources/shingikai/sangyo-kouzou/shousai/chizai_bunkakai/seisakubukai-06-shiryou.html"
+        },
+        {
+          "name": "第6回 産業構造審議会 知的財産分科会 政策部会 議事録",
+          "url": "https://www.jpo.go.jp/resources/shingikai/sangyo-kouzou/shousai/chizai_bunkakai/seisakubukai-06-gijiroku.html"
+        }
+      ]
+    },
+    {
       "id": "mhlw-835-20050221-002",
       "councilId": "mhlw-835",
       "name": "第2回 エイズ予防指針見直し検討会",
@@ -746713,6 +749768,27 @@
       ]
     },
     {
+      "id": "meti-sankoshin_chiteki_zaisan-20040129-s05",
+      "councilId": "meti-sankoshin_chiteki_zaisan",
+      "name": "第5回 産業構造審議会 知的財産分科会 政策部会",
+      "date": "2004/01/29",
+      "officialUrl": "https://www.jpo.go.jp/resources/shingikai/sangyo-kouzou/shousai/chizai_bunkakai/index.html",
+      "materials": [
+        {
+          "name": "第5回 産業構造審議会 知的財産分科会 政策部会 議事要旨",
+          "url": "https://www.jpo.go.jp/resources/shingikai/sangyo-kouzou/shousai/chizai_bunkakai/seisakubukai-05-gijiyoushi.html"
+        },
+        {
+          "name": "第5回 産業構造審議会 知的財産分科会 政策部会 配布資料",
+          "url": "https://www.jpo.go.jp/resources/shingikai/sangyo-kouzou/shousai/chizai_bunkakai/seisakubukai-05-shiryou.html"
+        },
+        {
+          "name": "第5回 産業構造審議会 知的財産分科会 政策部会 議事録",
+          "url": "https://www.jpo.go.jp/resources/shingikai/sangyo-kouzou/shousai/chizai_bunkakai/seisakubukai-05-gijiroku.html"
+        }
+      ]
+    },
+    {
       "id": "moe-ariake_yatsushiro-20040126-007",
       "councilId": "moe-ariake_yatsushiro",
       "name": "第7回 有明海・八代海等総合調査評価委員会",
@@ -752738,6 +755814,27 @@
       ]
     },
     {
+      "id": "meti-sankoshin_chiteki_zaisan-20030218-s04",
+      "councilId": "meti-sankoshin_chiteki_zaisan",
+      "name": "第4回 産業構造審議会 知的財産分科会 政策部会",
+      "date": "2003/02/18",
+      "officialUrl": "https://www.jpo.go.jp/resources/shingikai/sangyo-kouzou/shousai/chizai_bunkakai/index.html",
+      "materials": [
+        {
+          "name": "第4回 産業構造審議会 知的財産分科会 政策部会 議事要旨",
+          "url": "https://www.jpo.go.jp/resources/shingikai/sangyo-kouzou/shousai/chizai_bunkakai/seisakubukai-04-gijiyoushi.html"
+        },
+        {
+          "name": "第4回 産業構造審議会 知的財産分科会 政策部会 配布資料",
+          "url": "https://www.jpo.go.jp/resources/shingikai/sangyo-kouzou/shousai/chizai_bunkakai/seisakubukai-04-shiryou.html"
+        },
+        {
+          "name": "第4回 産業構造審議会 知的財産分科会 政策部会 議事録",
+          "url": "https://www.jpo.go.jp/resources/shingikai/sangyo-kouzou/shousai/chizai_bunkakai/seisakubukai-04-gijiroku.html"
+        }
+      ]
+    },
+    {
       "id": "mhlw-892-20030217-007",
       "councilId": "mhlw-892",
       "name": "第7回 生活環境水道部会水質管理専門委員会",
@@ -756941,6 +760038,27 @@
       ]
     },
     {
+      "id": "meti-sankoshin_chiteki_zaisan-20020709-s03",
+      "councilId": "meti-sankoshin_chiteki_zaisan",
+      "name": "第3回 産業構造審議会 知的財産分科会 政策部会",
+      "date": "2002/07/09",
+      "officialUrl": "https://www.jpo.go.jp/resources/shingikai/sangyo-kouzou/shousai/chizai_bunkakai/index.html",
+      "materials": [
+        {
+          "name": "第3回 産業構造審議会 知的財産分科会 政策部会 議事要旨",
+          "url": "https://www.jpo.go.jp/resources/shingikai/sangyo-kouzou/shousai/chizai_bunkakai/seisakubukai-03-gijiyoushi.html"
+        },
+        {
+          "name": "第3回 産業構造審議会 知的財産分科会 政策部会 配布資料",
+          "url": "https://www.jpo.go.jp/resources/shingikai/sangyo-kouzou/shousai/chizai_bunkakai/seisakubukai-03-shiryou.html"
+        },
+        {
+          "name": "第3回 産業構造審議会 知的財産分科会 政策部会 議事録",
+          "url": "https://www.jpo.go.jp/resources/shingikai/sangyo-kouzou/shousai/chizai_bunkakai/seisakubukai-03-gijiroku.html"
+        }
+      ]
+    },
+    {
       "id": "fsa-kigyou_dai1_bukai-20020705-021",
       "councilId": "fsa-kigyou_dai1_bukai",
       "name": "第21回 企業会計審議会 第一部会",
@@ -759283,6 +762401,27 @@
       ]
     },
     {
+      "id": "meti-sankoshin_chiteki_zaisan-20011203-s02",
+      "councilId": "meti-sankoshin_chiteki_zaisan",
+      "name": "第2回 産業構造審議会 知的財産分科会 政策部会",
+      "date": "2001/12/03",
+      "officialUrl": "https://www.jpo.go.jp/resources/shingikai/sangyo-kouzou/shousai/chizai_bunkakai/index.html",
+      "materials": [
+        {
+          "name": "第2回 産業構造審議会 知的財産分科会 政策部会 議事要旨",
+          "url": "https://www.jpo.go.jp/resources/shingikai/sangyo-kouzou/shousai/chizai_bunkakai/seisakubukai-02-gijiyoushi.html"
+        },
+        {
+          "name": "第2回 産業構造審議会 知的財産分科会 政策部会 配布資料",
+          "url": "https://www.jpo.go.jp/resources/shingikai/sangyo-kouzou/shousai/chizai_bunkakai/seisakubukai-02-shiryou.html"
+        },
+        {
+          "name": "第2回 産業構造審議会 知的財産分科会 政策部会 議事録",
+          "url": "https://www.jpo.go.jp/resources/shingikai/sangyo-kouzou/shousai/chizai_bunkakai/seisakubukai-02-gijiroku.html"
+        }
+      ]
+    },
+    {
       "id": "fsa-kigyou_dai1_bukai-20011130-014",
       "councilId": "fsa-kigyou_dai1_bukai",
       "name": "第14回 企業会計審議会 第一部会",
@@ -761599,6 +764738,27 @@
         {
           "name": "議事録",
           "url": "https://www.fsa.go.jp/singi/singi_kigyou/gijiroku/kotei/f-20010511.html"
+        }
+      ]
+    },
+    {
+      "id": "meti-sankoshin_chiteki_zaisan-20010511-s01",
+      "councilId": "meti-sankoshin_chiteki_zaisan",
+      "name": "第1回 産業構造審議会 知的財産分科会 政策部会",
+      "date": "2001/05/11",
+      "officialUrl": "https://www.jpo.go.jp/resources/shingikai/sangyo-kouzou/shousai/chizai_bunkakai/index.html",
+      "materials": [
+        {
+          "name": "第1回 産業構造審議会 知的財産分科会 政策部会 議事要旨",
+          "url": "https://www.jpo.go.jp/resources/shingikai/sangyo-kouzou/shousai/chizai_bunkakai/seisakubukai-01-gijiyoushi.html"
+        },
+        {
+          "name": "第1回 産業構造審議会 知的財産分科会 政策部会 配布資料",
+          "url": "https://www.jpo.go.jp/resources/shingikai/sangyo-kouzou/shousai/chizai_bunkakai/seisakubukai-01-shiryou.html"
+        },
+        {
+          "name": "第1回 産業構造審議会 知的財産分科会 政策部会 議事録",
+          "url": "https://www.jpo.go.jp/resources/shingikai/sangyo-kouzou/shousai/chizai_bunkakai/seisakubukai-01-gijiroku.html"
         }
       ]
     },
