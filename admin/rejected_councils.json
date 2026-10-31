@@ -2988,6 +2988,24 @@
     "reason": "大臣記者会見概要単発URLのため会議体マスターとして不適当 (Drop 107)"
   },
   {
+    "id": "moj-2991",
+    "name": "世界保護観察会議",
+    "ministry": "MOJ",
+    "category": "COUNCIL",
+    "officialUrl": "https://www.moj.go.jp/hogo1/kouseihogoshinkou/hogo03_00081.html",
+    "rejectedAt": "2026/10/31",
+    "reason": "空ページかつ国際会議ノイズのため会議体マスターとして不適当 (Drop 108)"
+  },
+  {
+    "id": "moj-2995",
+    "name": "人権委員会",
+    "ministry": "MOJ",
+    "category": "COUNCIL",
+    "officialUrl": "https://www.moj.go.jp/JINKEN/jinken03_00151.html",
+    "rejectedAt": "2026/10/31",
+    "reason": "人権委員会設置法案等に関する単独資料ページのため会議体マスターとして不適当 (Drop 108)"
+  },
+  {
     "id": "moj-hosei_shingi",
     "name": "法制審議会",
     "ministry": "MOJ",

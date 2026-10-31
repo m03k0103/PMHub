@@ -16238,35 +16238,11 @@
       "pastYearCount": 0
     },
     {
-      "id": "moj-2983",
-      "ministry": "MOJ",
-      "category": "STUDY",
-      "name": "刑事手続における情報通信技術の活用に関する検討会",
-      "officialUrl": "https://www.moj.go.jp/keiji1/keiji07_00026.html",
-      "pastYearCount": 0
-    },
-    {
       "id": "moj-2984",
       "ministry": "MOJ",
       "category": "STUDY",
       "name": "罪を犯した18歳及び19歳の者に対する矯正教育(仮)に係る検討会",
       "officialUrl": "https://www.moj.go.jp/kyousei1/kyousei03_00015.html",
-      "pastYearCount": 0
-    },
-    {
-      "id": "moj-2985",
-      "ministry": "MOJ",
-      "category": "STUDY",
-      "name": "性犯罪に関する刑事法検討会",
-      "officialUrl": "https://www.moj.go.jp/keiji1/keiji12_00179.html",
-      "pastYearCount": 0
-    },
-    {
-      "id": "moj-2986",
-      "ministry": "MOJ",
-      "category": "COUNCIL",
-      "name": "法務・検察行政刷新会議",
-      "officialUrl": "https://www.moj.go.jp/hisho/seisakuhyouka/hisho04_00052.html",
       "pastYearCount": 0
     },
     {
@@ -16286,27 +16262,11 @@
       "pastYearCount": 0
     },
     {
-      "id": "moj-2989",
-      "ministry": "MOJ",
-      "category": "STUDY",
-      "name": "これからの更生保護事業に関する有識者検討会",
-      "officialUrl": "https://www.moj.go.jp/hogo1/soumu/hogo12_00002.html",
-      "pastYearCount": 0
-    },
-    {
       "id": "moj-2990",
       "ministry": "MOJ",
       "category": "ROUNDTABLE",
       "name": "法務省政策評価懇談会",
       "officialUrl": "https://www.moj.go.jp/hisho/seisakuhyouka/hisho05_00053.html",
-      "pastYearCount": 0
-    },
-    {
-      "id": "moj-2991",
-      "ministry": "MOJ",
-      "category": "COUNCIL",
-      "name": "世界保護観察会議",
-      "officialUrl": "https://www.moj.go.jp/hogo1/kouseihogoshinkou/hogo03_00081.html",
       "pastYearCount": 0
     },
     {
@@ -16318,35 +16278,11 @@
       "pastYearCount": 0
     },
     {
-      "id": "moj-2993",
-      "ministry": "MOJ",
-      "category": "STUDY",
-      "name": "性犯罪の罰則に関する検討会",
-      "officialUrl": "https://www.moj.go.jp/keiji1/keiji12_00117.html",
-      "pastYearCount": 0
-    },
-    {
       "id": "moj-2994",
       "ministry": "MOJ",
       "category": "STUDY",
       "name": "ADR法に関する検討会",
       "officialUrl": "https://www.moj.go.jp/housei/adr/housei09_00059.html",
-      "pastYearCount": 0
-    },
-    {
-      "id": "moj-2995",
-      "ministry": "MOJ",
-      "category": "COMMITTEE",
-      "name": "人権委員会",
-      "officialUrl": "https://www.moj.go.jp/JINKEN/jinken03_00151.html",
-      "pastYearCount": 0
-    },
-    {
-      "id": "moj-3012",
-      "ministry": "MOJ",
-      "category": "SECTION",
-      "name": "法制審議会 少年法部会",
-      "officialUrl": "https://www.moj.go.jp/shingi1/shingi06100034.html",
       "pastYearCount": 0
     },
     {
@@ -16387,6 +16323,14 @@
       "name": "犯罪被害者支援弁護士制度検討会/犯罪被害者支援弁護士制度・実務者協議会",
       "officialUrl": "https://www.moj.go.jp/housei/sougouhouritsushien/housei04_00017.html",
       "description": "法務省における犯罪被害者支援弁護士制度検討会および犯罪被害者支援弁護士制度・実務者協議会。",
+      "pastYearCount": 0
+    },
+    {
+      "id": "moj-houmu_kensatsu_sasshin",
+      "ministry": "MOJ",
+      "category": "HQ",
+      "name": "法務・検察行政刷新会議",
+      "officialUrl": "https://www.moj.go.jp/hisho/seisakuhyouka/hisho04_00001.html",
       "pastYearCount": 0
     },
     {
@@ -16444,6 +16388,14 @@
       "category": "COUNCIL",
       "name": "法制審議会 少年法・刑事法(少年年齢・犯罪者処遇関係)部会",
       "officialUrl": "https://www.moj.go.jp/shingi1/housei02_00296.html",
+      "pastYearCount": 0
+    },
+    {
+      "id": "moj-housei_shonenhou",
+      "ministry": "MOJ",
+      "category": "COUNCIL",
+      "name": "法制審議会 少年法部会",
+      "officialUrl": "https://www.moj.go.jp/shingi1/shingikai-syonenhou.html",
       "pastYearCount": 0
     },
     {
@@ -16506,6 +16458,14 @@
       "pastYearCount": 2
     },
     {
+      "id": "moj-keiji_it_katsuyou",
+      "ministry": "MOJ",
+      "category": "STUDY",
+      "name": "刑事手続における情報通信技術の活用に関する検討会",
+      "officialUrl": "https://www.moj.go.jp/keiji1/keiji07_00011.html",
+      "pastYearCount": 0
+    },
+    {
       "id": "moj-keiji_tetsuduki_kenkyu",
       "ministry": "MOJ",
       "category": "STUDY",
@@ -16531,6 +16491,14 @@
       "name": "戸籍統一文字に関するワーキンググループ",
       "officialUrl": "https://www.moj.go.jp/MINJI/minji04_00001.html",
       "description": "戸籍統一文字の整備及び文字コード標準化に関する専門的検討を行う。",
+      "pastYearCount": 0
+    },
+    {
+      "id": "moj-kousei_hogo_yuushikisha",
+      "ministry": "MOJ",
+      "category": "STUDY",
+      "name": "これからの更生保護事業に関する有識者検討会",
+      "officialUrl": "https://www.moj.go.jp/hogo1/soumu/hogo12_00002.html",
       "pastYearCount": 0
     },
     {
@@ -16611,6 +16579,22 @@
           "url": "https://www.moj.go.jp/content/001419505.pdf"
         }
       ]
+    },
+    {
+      "id": "moj-seihanzai_bassoku",
+      "ministry": "MOJ",
+      "category": "STUDY",
+      "name": "性犯罪の罰則に関する検討会",
+      "officialUrl": "https://www.moj.go.jp/keiji1/keiji12_00090.html",
+      "pastYearCount": 0
+    },
+    {
+      "id": "moj-seihanzai_keijihou",
+      "ministry": "MOJ",
+      "category": "STUDY",
+      "name": "性犯罪に関する刑事法検討会",
+      "officialUrl": "https://www.moj.go.jp/keiji1/keiji12_00020.html",
+      "pastYearCount": 0
     },
     {
       "id": "moj-shikei_yoronchousa",
@@ -355610,6 +355594,32 @@
       ]
     },
     {
+      "id": "moj-keiji_it_katsuyou-20220315-011",
+      "councilId": "moj-keiji_it_katsuyou",
+      "name": "第11回会議",
+      "date": "2022/03/15",
+      "round": 11,
+      "officialUrl": "https://www.moj.go.jp/keiji1/keiji07_00026.html",
+      "materials": [
+        {
+          "name": "議事次第",
+          "url": "https://www.moj.go.jp/content/001368596.pdf"
+        },
+        {
+          "name": "議事録",
+          "url": "https://www.moj.go.jp/content/001371000.txt"
+        },
+        {
+          "name": "議事録",
+          "url": "https://www.moj.go.jp/content/001371001.pdf"
+        },
+        {
+          "name": "「刑事手続における情報通信技術の活用に関する検討会」取りまとめ報告書(案)",
+          "url": "https://www.moj.go.jp/content/001368597.pdf"
+        }
+      ]
+    },
+    {
       "id": "cao-kisei_chiiki_wg-20220314-003",
       "councilId": "cao-kisei_chiiki_wg",
       "name": "第3回 規制改革推進会議 地域活性化・人手不足対応WG",
@@ -362557,6 +362567,32 @@
       ]
     },
     {
+      "id": "moj-keiji_it_katsuyou-20220210-010",
+      "councilId": "moj-keiji_it_katsuyou",
+      "name": "第10回会議",
+      "date": "2022/02/10",
+      "round": 10,
+      "officialUrl": "https://www.moj.go.jp/keiji1/keiji07_00024.html",
+      "materials": [
+        {
+          "name": "議事次第",
+          "url": "https://www.moj.go.jp/content/001364626.pdf"
+        },
+        {
+          "name": "議事録",
+          "url": "https://www.moj.go.jp/content/001369009.txt"
+        },
+        {
+          "name": "議事録",
+          "url": "https://www.moj.go.jp/content/001369010.pdf"
+        },
+        {
+          "name": "「刑事手続における情報通信技術の活用に関する検討会」 取りまとめ報告書(案)",
+          "url": "https://www.moj.go.jp/content/001366225.pdf"
+        }
+      ]
+    },
+    {
       "id": "aca-chosakuken_kihonseisaku_shoiinkai-20220209-009",
       "councilId": "aca-chosakuken_kihonseisaku_shoiinkai",
       "name": "令和3年度第9回(2022年2月9日)",
@@ -369481,6 +369517,36 @@
         {
           "name": "議事録",
           "url": "https://www.mof.go.jp/about_mof/councils/fiscal_system_council/sub-of_filp/proceedings/proceedings/zaitoa031223.html"
+        }
+      ]
+    },
+    {
+      "id": "moj-keiji_it_katsuyou-20211223-009",
+      "councilId": "moj-keiji_it_katsuyou",
+      "name": "第9回会議",
+      "date": "2021/12/23",
+      "round": 9,
+      "officialUrl": "https://www.moj.go.jp/keiji1/keiji07_00022.html",
+      "materials": [
+        {
+          "name": "議事次第",
+          "url": "https://www.moj.go.jp/content/001360917.pdf"
+        },
+        {
+          "name": "議事録",
+          "url": "https://www.moj.go.jp/content/001365661.txt"
+        },
+        {
+          "name": "議事録",
+          "url": "https://www.moj.go.jp/content/001365662.pdf"
+        },
+        {
+          "name": "諸外国における情報通信技術の活用に関する法制・運用の概要【暫定版・更新版】",
+          "url": "https://www.moj.go.jp/content/001360915.pdf"
+        },
+        {
+          "name": "更に検討を要する課題",
+          "url": "https://www.moj.go.jp/content/001360916.pdf"
         }
       ]
     },
@@ -378423,6 +378489,40 @@
       ]
     },
     {
+      "id": "moj-keiji_it_katsuyou-20211119-008",
+      "councilId": "moj-keiji_it_katsuyou",
+      "name": "第8回会議",
+      "date": "2021/11/19",
+      "round": 8,
+      "officialUrl": "https://www.moj.go.jp/keiji1/keiji07_00021.html",
+      "materials": [
+        {
+          "name": "議事次第",
+          "url": "https://www.moj.go.jp/content/001358668.pdf"
+        },
+        {
+          "name": "議事録",
+          "url": "https://www.moj.go.jp/content/001362629.txt"
+        },
+        {
+          "name": "議事録",
+          "url": "https://www.moj.go.jp/content/001362088.pdf"
+        },
+        {
+          "name": "2(5)公判期日への出頭等",
+          "url": "https://www.moj.go.jp/content/001359496.pdf"
+        },
+        {
+          "name": "2(6)裁判員等選任手続",
+          "url": "https://www.moj.go.jp/content/001359497.pdf"
+        },
+        {
+          "name": "2(7)公判審理の傍聴",
+          "url": "https://www.moj.go.jp/content/001359498.pdf"
+        }
+      ]
+    },
+    {
       "id": "moj-zenka_shikaku_wg-20211119-002",
       "councilId": "moj-zenka_shikaku_wg",
       "name": "第2回 前科による資格制限の在り方に関する検討ワーキンググループ",
@@ -382262,6 +382362,44 @@
           "name": "議事録",
           "url": "https://www.mof.go.jp/about_mof/councils/policy_evaluation/proceedings/proceedings/72kongijiroku.html",
           "type": "HTML"
+        }
+      ]
+    },
+    {
+      "id": "moj-keiji_it_katsuyou-20211018-007",
+      "councilId": "moj-keiji_it_katsuyou",
+      "name": "第7回会議",
+      "date": "2021/10/18",
+      "round": 7,
+      "officialUrl": "https://www.moj.go.jp/keiji1/keiji07_00020.html",
+      "materials": [
+        {
+          "name": "議事次第",
+          "url": "https://www.moj.go.jp/content/001356373.pdf"
+        },
+        {
+          "name": "議事録",
+          "url": "https://www.moj.go.jp/content/001362621.txt"
+        },
+        {
+          "name": "議事録",
+          "url": "https://www.moj.go.jp/content/001362933.pdf"
+        },
+        {
+          "name": "2(1)取調べ等",
+          "url": "https://www.moj.go.jp/content/001363022.pdf"
+        },
+        {
+          "name": "2(2)被疑者・被告人との接見交通",
+          "url": "https://www.moj.go.jp/content/001363023.pdf"
+        },
+        {
+          "name": "2(3)打合せ・公判前整理手続",
+          "url": "https://www.moj.go.jp/content/001363024.pdf"
+        },
+        {
+          "name": "2(4)証人尋問等",
+          "url": "https://www.moj.go.jp/content/001363025.pdf"
         }
       ]
     },
@@ -390754,6 +390892,32 @@
       ]
     },
     {
+      "id": "moj-keiji_it_katsuyou-20210727-005",
+      "councilId": "moj-keiji_it_katsuyou",
+      "name": "第5回会議",
+      "date": "2021/07/27",
+      "round": 5,
+      "officialUrl": "https://www.moj.go.jp/keiji1/keiji07_00019.html",
+      "materials": [
+        {
+          "name": "議事次第",
+          "url": "https://www.moj.go.jp/content/001352788.pdf"
+        },
+        {
+          "name": "議事録",
+          "url": "https://www.moj.go.jp/content/001362619.txt"
+        },
+        {
+          "name": "議事録",
+          "url": "https://www.moj.go.jp/content/001356795.pdf"
+        },
+        {
+          "name": "進京一関係官説明資料",
+          "url": "https://www.moj.go.jp/content/001360904.pdf"
+        }
+      ]
+    },
+    {
       "id": "cas-339-20210726-010",
       "councilId": "cas-339",
       "name": "第10回 「天皇の退位等に関する皇室典範特例法案に対する附帯決議」に関する有識者会議 議事次第|内閣官房ホームページ",
@@ -393390,6 +393554,52 @@
         {
           "name": "議事概要",
           "url": "https://www.soumu.go.jp/main_content/000761177.pdf"
+        }
+      ]
+    },
+    {
+      "id": "moj-keiji_it_katsuyou-20210629-004",
+      "councilId": "moj-keiji_it_katsuyou",
+      "name": "第4回会議",
+      "date": "2021/06/29",
+      "round": 4,
+      "officialUrl": "https://www.moj.go.jp/keiji1/keiji07_00017.html",
+      "materials": [
+        {
+          "name": "議事次第",
+          "url": "https://www.moj.go.jp/content/001351164.pdf"
+        },
+        {
+          "name": "議事録",
+          "url": "https://www.moj.go.jp/content/001362618.txt"
+        },
+        {
+          "name": "議事録",
+          "url": "https://www.moj.go.jp/content/001362931.pdf"
+        },
+        {
+          "name": "2(5)公判期日への出頭等",
+          "url": "https://www.moj.go.jp/content/001363001.pdf"
+        },
+        {
+          "name": "2(6)裁判員等選任手続",
+          "url": "https://www.moj.go.jp/content/001363002.pdf"
+        },
+        {
+          "name": "2(7)公判審理の傍聴",
+          "url": "https://www.moj.go.jp/content/001363003.pdf"
+        },
+        {
+          "name": "令和3年6月18日閣議決定「デジタル社会の実現に向けた重点計画」",
+          "url": "https://www.moj.go.jp/content/001363004.pdf"
+        },
+        {
+          "name": "令和3年6月18日閣議決定「成長戦略フォローアップ」",
+          "url": "https://www.moj.go.jp/content/001363010.pdf"
+        },
+        {
+          "name": "令和3年6月18日閣議決定「規制改革実施計画」",
+          "url": "https://www.moj.go.jp/content/001363012.pdf"
         }
       ]
     },
@@ -398456,6 +398666,44 @@
       ]
     },
     {
+      "id": "moj-keiji_it_katsuyou-20210527-003",
+      "councilId": "moj-keiji_it_katsuyou",
+      "name": "第3回会議",
+      "date": "2021/05/27",
+      "round": 3,
+      "officialUrl": "https://www.moj.go.jp/keiji1/keiji07_00016.html",
+      "materials": [
+        {
+          "name": "議事次第",
+          "url": "https://www.moj.go.jp/content/001348490.pdf"
+        },
+        {
+          "name": "議事録",
+          "url": "https://www.moj.go.jp/content/001362614.txt"
+        },
+        {
+          "name": "議事録",
+          "url": "https://www.moj.go.jp/content/001353297.pdf"
+        },
+        {
+          "name": "2(1)取調べ等",
+          "url": "https://www.moj.go.jp/content/001348486.pdf"
+        },
+        {
+          "name": "2(2)被疑者・被告人との接見交通",
+          "url": "https://www.moj.go.jp/content/001348487.pdf"
+        },
+        {
+          "name": "2(3)打合せ・公判前整理手続",
+          "url": "https://www.moj.go.jp/content/001348488.pdf"
+        },
+        {
+          "name": "2(4)証人尋問等",
+          "url": "https://www.moj.go.jp/content/001348489.pdf"
+        }
+      ]
+    },
+    {
       "id": "fdma-kasai_kikensei_busshitsu-20210526-001",
       "councilId": "fdma-kasai_kikensei_busshitsu",
       "name": "令和3年度 第1回 火災危険性を有するおそれのある物質等に関する調査検討会",
@@ -399585,6 +399833,32 @@
         {
           "name": "○ 各分科会・部会の審議状況について ・・・ 資料5",
           "url": "https://www.mof.go.jp/about_mof/councils/fiscal_system_council/sub-of_fiscal_system/report/zaiseia20210521/05.pdf"
+        }
+      ]
+    },
+    {
+      "id": "moj-seihanzai_keijihou-20210521-016",
+      "councilId": "moj-seihanzai_keijihou",
+      "name": "第16回会議",
+      "date": "2021/05/21",
+      "round": 16,
+      "officialUrl": "https://www.moj.go.jp/keiji1/keiji12_00179.html",
+      "materials": [
+        {
+          "name": "議事次第",
+          "url": "https://www.moj.go.jp/content/001348359.pdf"
+        },
+        {
+          "name": "第16回会議では, ○ 取りまとめ報告書(案) について議論が行われ,同報告書(案)の内容で,本検討会の取りまとめとされた。 議事録",
+          "url": "https://www.moj.go.jp/content/001351192.txt"
+        },
+        {
+          "name": "第16回会議では, ○ 取りまとめ報告書(案) について議論が行われ,同報告書(案)の内容で,本検討会の取りまとめとされた。 議事録",
+          "url": "https://www.moj.go.jp/content/001351193.pdf"
+        },
+        {
+          "name": "「性犯罪に関する刑事法検討会」 取りまとめ報告書(案)",
+          "url": "https://www.moj.go.jp/content/001348651.pdf"
         }
       ]
     },
@@ -401447,6 +401721,56 @@
       ]
     },
     {
+      "id": "moj-keiji_it_katsuyou-20210427-002",
+      "councilId": "moj-keiji_it_katsuyou",
+      "name": "第2回会議",
+      "date": "2021/04/27",
+      "round": 2,
+      "officialUrl": "https://www.moj.go.jp/keiji1/keiji07_00015.html",
+      "materials": [
+        {
+          "name": "議事次第",
+          "url": "https://www.moj.go.jp/content/001346297.pdf"
+        },
+        {
+          "name": "議事録",
+          "url": "https://www.moj.go.jp/content/001350269.txt"
+        },
+        {
+          "name": "議事録",
+          "url": "https://www.moj.go.jp/content/001350270.pdf"
+        },
+        {
+          "name": "論点項目(案)",
+          "url": "https://www.moj.go.jp/content/001346896.pdf"
+        },
+        {
+          "name": "1(1)書類の作成・発受",
+          "url": "https://www.moj.go.jp/content/001346897.pdf"
+        },
+        {
+          "name": "1(2)令状の請求・発付・執行",
+          "url": "https://www.moj.go.jp/content/001346899.pdf"
+        },
+        {
+          "name": "1(3)電子データの証拠収集",
+          "url": "https://www.moj.go.jp/content/001346901.pdf"
+        },
+        {
+          "name": "1(4)閲覧・謄写・交付",
+          "url": "https://www.moj.go.jp/content/001346902.pdf"
+        },
+        {
+          "name": "1(5)公判廷における証拠調べ",
+          "url": "https://www.moj.go.jp/content/001346903.pdf"
+        },
+        {
+          "name": "論点項目",
+          "url": "https://www.moj.go.jp/content/001349693.pdf"
+        }
+      ]
+    },
+    {
       "id": "cao-space_anpo-20210426-042",
       "councilId": "cao-space_anpo",
       "name": "第42回 宇宙政策委員会 宇宙安全保障部会",
@@ -403106,6 +403430,40 @@
       ]
     },
     {
+      "id": "moj-seihanzai_keijihou-20210412-015",
+      "councilId": "moj-seihanzai_keijihou",
+      "name": "第15回会議",
+      "date": "2021/04/12",
+      "round": 15,
+      "officialUrl": "https://www.moj.go.jp/keiji1/keiji12_00175.html",
+      "materials": [
+        {
+          "name": "議事次第",
+          "url": "https://www.moj.go.jp/content/001345964.pdf"
+        },
+        {
+          "name": "第15回会議では, ○ 取りまとめ報告書(案) について議論が行われ, ○ 起訴状等における被害者等の氏名の取扱いの検討状況 について報告された。 議事録",
+          "url": "https://www.moj.go.jp/content/001348822.txt"
+        },
+        {
+          "name": "第15回会議では, ○ 取りまとめ報告書(案) について議論が行われ, ○ 起訴状等における被害者等の氏名の取扱いの検討状況 について報告された。 議事録",
+          "url": "https://www.moj.go.jp/content/001348823.pdf"
+        },
+        {
+          "name": "「性犯罪に関する刑事法検討会」 取りまとめ報告書(案)",
+          "url": "https://www.moj.go.jp/content/001346064.pdf"
+        },
+        {
+          "name": "「性犯罪に関する刑事法検討会」 取りまとめ報告書(案) 金杉美和委員提出書面 意見書 宮田桂子委員提出書面 意見書",
+          "url": "https://www.moj.go.jp/content/001348403.pdf"
+        },
+        {
+          "name": "「性犯罪に関する刑事法検討会」 取りまとめ報告書(案) 金杉美和委員提出書面 意見書 宮田桂子委員提出書面 意見書",
+          "url": "https://www.moj.go.jp/content/001348404.pdf"
+        }
+      ]
+    },
+    {
       "id": "rinya-rinsei_shingikai-20210412-s01",
       "councilId": "rinya-rinsei_shingikai",
       "name": "林政審議会(令和3年4月12日)",
@@ -404008,6 +404366,40 @@
       ]
     },
     {
+      "id": "moj-keiji_it_katsuyou-20210331-001",
+      "councilId": "moj-keiji_it_katsuyou",
+      "name": "第1回会議",
+      "date": "2021/03/31",
+      "round": 1,
+      "officialUrl": "https://www.moj.go.jp/keiji1/keiji07_00012.html",
+      "materials": [
+        {
+          "name": "議事次第",
+          "url": "https://www.moj.go.jp/content/001345216.pdf"
+        },
+        {
+          "name": "議事録",
+          "url": "https://www.moj.go.jp/content/001346295.txt"
+        },
+        {
+          "name": "議事録",
+          "url": "https://www.moj.go.jp/content/001346593.pdf"
+        },
+        {
+          "name": "令和2年7月17日閣議決定「世界最先端デジタル国家創造宣言・官民データ活用推進基本計画」",
+          "url": "https://www.moj.go.jp/content/001345317.pdf"
+        },
+        {
+          "name": "令和2年7月17日閣議決定「成長戦略フォローアップ」",
+          "url": "https://www.moj.go.jp/content/001345318.pdf"
+        },
+        {
+          "name": "諸外国における情報通信技術の活用に関する法制・運用の概要【暫定版】",
+          "url": "https://www.moj.go.jp/content/001345622.pdf"
+        }
+      ]
+    },
+    {
       "id": "npa-csmeeting-20210331-001",
       "councilId": "npa-1199",
       "name": "令和3年度 総合セキュリティ対策会議",
@@ -404315,6 +404707,36 @@
           "name": "議事録",
           "url": "https://www.env.go.jp/council/20ari-yatsu/y200-46a.html",
           "type": "HTML"
+        }
+      ]
+    },
+    {
+      "id": "moj-seihanzai_keijihou-20210330-014",
+      "councilId": "moj-seihanzai_keijihou",
+      "name": "第14回会議",
+      "date": "2021/03/30",
+      "round": 14,
+      "officialUrl": "https://www.moj.go.jp/keiji1/keiji12_00171.html",
+      "materials": [
+        {
+          "name": "議事次第",
+          "url": "https://www.moj.go.jp/content/001345130.pdf"
+        },
+        {
+          "name": "第14回会議では, ○ 公訴時効の在り方 ○ いわゆるレイプシールドの在り方 ○ 司法面接的手法による聴取結果の証拠法上の取扱いの在り方 ○ その他の論点全般 について議論が行われた。 議事録",
+          "url": "https://www.moj.go.jp/content/001348484.txt"
+        },
+        {
+          "name": "第14回会議では, ○ 公訴時効の在り方 ○ いわゆるレイプシールドの在り方 ○ 司法面接的手法による聴取結果の証拠法上の取扱いの在り方 ○ その他の論点全般 について議論が行われた。 議事録",
+          "url": "https://www.moj.go.jp/content/001348485.pdf"
+        },
+        {
+          "name": "性犯罪に関する刑事法検討会 意見要旨集(第11回会議分まで)",
+          "url": "https://www.moj.go.jp/content/001345298.pdf"
+        },
+        {
+          "name": "子どもの性被害への対応に関する実態調査",
+          "url": "https://www.moj.go.jp/content/001345135.pdf"
         }
       ]
     },
@@ -409576,6 +409998,32 @@
       ]
     },
     {
+      "id": "moj-seihanzai_keijihou-20210308-013",
+      "councilId": "moj-seihanzai_keijihou",
+      "name": "第13回会議",
+      "date": "2021/03/08",
+      "round": 13,
+      "officialUrl": "https://www.moj.go.jp/keiji1/keiji12_00169.html",
+      "materials": [
+        {
+          "name": "議事次第",
+          "url": "https://www.moj.go.jp/content/001343290.pdf"
+        },
+        {
+          "name": "第13回会議では, ○ 暴行・脅迫や心神喪失・抗拒不能の要件の在り方 ○ 強制性交等の罪の対象となる行為の範囲 ○ 法定刑の在り方 ○ 配偶者間等の性的行為に対する処罰規定の在り方 ○ 性的姿態の撮影行為に対する処罰規定の在り方 ○ その他の実体法に関する論点 について議論が行われた。 議事録",
+          "url": "https://www.moj.go.jp/content/001346532.txt"
+        },
+        {
+          "name": "第13回会議では, ○ 暴行・脅迫や心神喪失・抗拒不能の要件の在り方 ○ 強制性交等の罪の対象となる行為の範囲 ○ 法定刑の在り方 ○ 配偶者間等の性的行為に対する処罰規定の在り方 ○ 性的姿態の撮影行為に対する処罰規定の在り方 ○ その他の実体法に関する論点 について議論が行われた。 議事録",
+          "url": "https://www.moj.go.jp/content/001346316.pdf"
+        },
+        {
+          "name": "性犯罪に関する刑事法検討会 意見要旨集(第12回会議分まで)",
+          "url": "https://www.moj.go.jp/content/001343276.pdf"
+        }
+      ]
+    },
+    {
       "id": "smea-keiei_shien_bunkakai-20210308-028",
       "councilId": "smea-keiei_shien_bunkakai",
       "name": "令和2年度 第28回 中小企業経営支援分科会",
@@ -412086,6 +412534,52 @@
       ]
     },
     {
+      "id": "moj-seihanzai_keijihou-20210216-012",
+      "councilId": "moj-seihanzai_keijihou",
+      "name": "第12回会議",
+      "date": "2021/02/16",
+      "round": 12,
+      "officialUrl": "https://www.moj.go.jp/keiji1/keiji12_00166.html",
+      "materials": [
+        {
+          "name": "議事次第",
+          "url": "https://www.moj.go.jp/content/001341421.pdf"
+        },
+        {
+          "name": "第12回会議では, ○ 一定の年齢未満の者を被害者とする罰則の在り方 ○ 障害者を被害者とする罰則の在り方 ○ 地位・関係性を利用する罰則の在り方 ○ 暴行・脅迫や心神喪失・抗拒不能の要件の在り方 について議論が行われた。 議事録",
+          "url": "https://www.moj.go.jp/content/001344523.txt"
+        },
+        {
+          "name": "第12回会議では, ○ 一定の年齢未満の者を被害者とする罰則の在り方 ○ 障害者を被害者とする罰則の在り方 ○ 地位・関係性を利用する罰則の在り方 ○ 暴行・脅迫や心神喪失・抗拒不能の要件の在り方 について議論が行われた。 議事録",
+          "url": "https://www.moj.go.jp/content/001344524.pdf"
+        },
+        {
+          "name": "性犯罪に関する刑事法検討会 意見要旨集(第9回会議分まで)",
+          "url": "https://www.moj.go.jp/content/001341422.pdf"
+        },
+        {
+          "name": "性犯罪に関する刑事法検討会 補助資料",
+          "url": "https://www.moj.go.jp/content/001341423.pdf"
+        },
+        {
+          "name": "メディア関係者へのセクシュアルハラスメントアンケート結果",
+          "url": "https://www.moj.go.jp/content/001341424.pdf"
+        },
+        {
+          "name": "学校教師による生徒への性的行為・性暴力被害アンケート(2020年7月9日~7月31日実施)の分析",
+          "url": "https://www.moj.go.jp/content/001341425.pdf"
+        },
+        {
+          "name": "アンケート結果",
+          "url": "https://www.moj.go.jp/content/001341426.pdf"
+        },
+        {
+          "name": "第12回性犯罪に関する刑事法検討会への意見",
+          "url": "https://www.moj.go.jp/content/001343967.pdf"
+        }
+      ]
+    },
+    {
       "id": "fsa-code_followup-20210215-024",
       "councilId": "fsa-code_followup",
       "name": "「スチュワードシップ・コード及びコーポレートガバナンス・コードのフォローアップ会議」(第24回)議事次第",
@@ -414229,6 +414723,32 @@
           "name": "議事録",
           "url": "https://www.env.go.jp/council/05hoken/post_603.html",
           "type": "HTML"
+        }
+      ]
+    },
+    {
+      "id": "moj-seihanzai_keijihou-20210128-011",
+      "councilId": "moj-seihanzai_keijihou",
+      "name": "第11回会議",
+      "date": "2021/01/28",
+      "round": 11,
+      "officialUrl": "https://www.moj.go.jp/keiji1/keiji12_00165.html",
+      "materials": [
+        {
+          "name": "議事次第",
+          "url": "https://www.moj.go.jp/content/001339838.pdf"
+        },
+        {
+          "name": "第11回会議では, ○ 性的姿態の撮影行為に対する処罰規定の在り方 ○ 公訴時効の在り方 ○ いわゆるレイプシールドの在り方 ○ 司法面接的手法による聴取結果の証拠法上の取扱いの在り方 について議論が行われた。 議事録",
+          "url": "https://www.moj.go.jp/content/001343441.txt"
+        },
+        {
+          "name": "第11回会議では, ○ 性的姿態の撮影行為に対する処罰規定の在り方 ○ 公訴時効の在り方 ○ いわゆるレイプシールドの在り方 ○ 司法面接的手法による聴取結果の証拠法上の取扱いの在り方 について議論が行われた。 議事録",
+          "url": "https://www.moj.go.jp/content/001343442.pdf"
+        },
+        {
+          "name": "性犯罪に関する刑事法検討会 意見要旨集(第7回会議分まで(2))",
+          "url": "https://www.moj.go.jp/content/001339839.pdf"
         }
       ]
     },
@@ -417177,6 +417697,32 @@
       ]
     },
     {
+      "id": "moj-seihanzai_keijihou-20201225-010",
+      "councilId": "moj-seihanzai_keijihou",
+      "name": "第10回会議",
+      "date": "2020/12/25",
+      "round": 10,
+      "officialUrl": "https://www.moj.go.jp/keiji1/keiji12_00164.html",
+      "materials": [
+        {
+          "name": "議事次第",
+          "url": "https://www.moj.go.jp/content/001337176.pdf"
+        },
+        {
+          "name": "第10回会議では, ○ 強制性交等の罪の対象となる行為の範囲 ○ 法定刑の在り方 ○ 配偶者間等の性的行為に対する処罰規定の在り方 ○ 性的姿態の撮影行為に対する処罰規定の在り方 について議論が行われた。 議事録",
+          "url": "https://www.moj.go.jp/content/001342086.txt"
+        },
+        {
+          "name": "第10回会議では, ○ 強制性交等の罪の対象となる行為の範囲 ○ 法定刑の在り方 ○ 配偶者間等の性的行為に対する処罰規定の在り方 ○ 性的姿態の撮影行為に対する処罰規定の在り方 について議論が行われた。 議事録",
+          "url": "https://www.moj.go.jp/content/001342087.pdf"
+        },
+        {
+          "name": "性犯罪に関する刑事法検討会 意見要旨集(第7回会議分まで)",
+          "url": "https://www.moj.go.jp/content/001337179.pdf"
+        }
+      ]
+    },
+    {
       "id": "npa-stalker_kentou-20201225-003",
       "councilId": "npa-stalker_kentou",
       "name": "第3回 ストーカー行為等の規制等の在り方に関する有識者検討会（令和2年～3年）",
@@ -417368,6 +417914,28 @@
         {
           "name": "第167回防衛調達審議会議事要旨 (PDF)",
           "url": "https://warp.da.ndl.go.jp/info:ndljp/pid/13120860/www.mod.go.jp/j/policy/agenda/meeting/cho-shin/giji/pdf/167.pdf"
+        }
+      ]
+    },
+    {
+      "id": "moj-houmu_kensatsu_sasshin-20201224-009",
+      "councilId": "moj-houmu_kensatsu_sasshin",
+      "name": "第9回会議",
+      "date": "2020/12/24",
+      "round": 9,
+      "officialUrl": "https://www.moj.go.jp/hisho/seisakuhyouka/hisho04_00052.html",
+      "materials": [
+        {
+          "name": "議事次第",
+          "url": "https://www.moj.go.jp/content/001337334.pdf"
+        },
+        {
+          "name": "議事次第 議事録",
+          "url": "https://www.moj.go.jp/content/001338900.pdf"
+        },
+        {
+          "name": "報告書(案)",
+          "url": "https://www.moj.go.jp/content/001337336.pdf"
         }
       ]
     },
@@ -419997,6 +420565,84 @@
       ]
     },
     {
+      "id": "moj-houmu_kensatsu_sasshin-20201210-008",
+      "councilId": "moj-houmu_kensatsu_sasshin",
+      "name": "第8回会議",
+      "date": "2020/12/10",
+      "round": 8,
+      "officialUrl": "https://www.moj.go.jp/hisho/seisakuhyouka/hisho04_00046.html",
+      "materials": [
+        {
+          "name": "議事次第",
+          "url": "https://www.moj.go.jp/content/001335178.pdf"
+        },
+        {
+          "name": "議事次第 議事録",
+          "url": "https://www.moj.go.jp/content/001336827.pdf"
+        },
+        {
+          "name": "報告書(案)",
+          "url": "https://www.moj.go.jp/content/001335164.pdf"
+        },
+        {
+          "name": "恣意的拘禁作業部会意見書(英)",
+          "url": "https://www.moj.go.jp/content/001335165.pdf"
+        },
+        {
+          "name": "国連の恣意的拘禁作業部会(ゴーン被告案件)による意見書公表(和・英)",
+          "url": "https://www.moj.go.jp/content/001335166.pdf"
+        },
+        {
+          "name": "令和2年11月24日(火)法務大臣記者会見(抜粋)",
+          "url": "https://www.moj.go.jp/content/001335167.pdf"
+        },
+        {
+          "name": "本件審査当時の恣意的拘禁作業部会の構成員",
+          "url": "https://www.moj.go.jp/content/001335168.pdf"
+        },
+        {
+          "name": "カルロス・ゴーン・ビシャラ被告人に係る事実経過等",
+          "url": "https://www.moj.go.jp/content/001335169.pdf"
+        },
+        {
+          "name": "紀藤副座長発言補助資料",
+          "url": "https://www.moj.go.jp/content/001335163.pdf"
+        },
+        {
+          "name": "鵜瀞委員発言補助資料",
+          "url": "https://www.moj.go.jp/content/001335170.pdf"
+        },
+        {
+          "name": "金指委員発言補助資料",
+          "url": "https://www.moj.go.jp/content/001335171.pdf"
+        },
+        {
+          "name": "後藤委員発言補助資料",
+          "url": "https://www.moj.go.jp/content/001335227.pdf"
+        },
+        {
+          "name": "冨山委員発言補助資料",
+          "url": "https://www.moj.go.jp/content/001335173.pdf"
+        },
+        {
+          "name": "河合委員発言補助資料",
+          "url": "https://www.moj.go.jp/content/001335174.pdf"
+        },
+        {
+          "name": "篠塚委員発言補助資料",
+          "url": "https://www.moj.go.jp/content/001335175.pdf"
+        },
+        {
+          "name": "井上委員発言補助資料",
+          "url": "https://www.moj.go.jp/content/001335176.pdf"
+        },
+        {
+          "name": "徐オブザーバー発言補助資料",
+          "url": "https://www.moj.go.jp/content/001335177.pdf"
+        }
+      ]
+    },
+    {
       "id": "cas-katsuryoku_kojyo-20201209-001",
       "councilId": "cas-katsuryoku_kojyo",
       "name": "第1回 中堅企業等の成長促進に関するワーキンググループ",
@@ -420564,6 +421210,48 @@
         {
           "name": "議事概要",
           "url": "https://www.soumu.go.jp/main_content/000723230.pdf"
+        }
+      ]
+    },
+    {
+      "id": "moj-seihanzai_keijihou-20201208-009",
+      "councilId": "moj-seihanzai_keijihou",
+      "name": "第9回会議",
+      "date": "2020/12/08",
+      "round": 9,
+      "officialUrl": "https://www.moj.go.jp/keiji1/keiji12_00162.html",
+      "materials": [
+        {
+          "name": "議事次第",
+          "url": "https://www.moj.go.jp/content/001334824.pdf"
+        },
+        {
+          "name": "第9回会議では, ○ 地位・関係性を利用した犯罪類型の在り方 ○ いわゆる性交同意年齢の在り方 について議論が行われた。 議事録",
+          "url": "https://www.moj.go.jp/content/001340454.txt"
+        },
+        {
+          "name": "第9回会議では, ○ 地位・関係性を利用した犯罪類型の在り方 ○ いわゆる性交同意年齢の在り方 について議論が行われた。 議事録",
+          "url": "https://www.moj.go.jp/content/001340455.pdf"
+        },
+        {
+          "name": "いわゆるグルーミングに関する諸外国の規定(仮訳)",
+          "url": "https://www.moj.go.jp/content/001334938.pdf"
+        },
+        {
+          "name": "性犯罪に関する刑事法検討会 意見要旨集(第6回会議分まで)",
+          "url": "https://www.moj.go.jp/content/001335032.pdf"
+        },
+        {
+          "name": "性被害の実態調査アンケート 結果報告書(1) ~量的分析結果~",
+          "url": "https://www.moj.go.jp/content/001335454.pdf"
+        },
+        {
+          "name": "性被害の実態調査アンケート 結果報告書(2) ~量的分析所感~",
+          "url": "https://www.moj.go.jp/content/001335455.pdf"
+        },
+        {
+          "name": "性被害の実態調査アンケート 結果報告書(3) ~質的分析結果および考察~",
+          "url": "https://www.moj.go.jp/content/001335456.pdf"
         }
       ]
     },
@@ -423384,6 +424072,68 @@
       ]
     },
     {
+      "id": "moj-houmu_kensatsu_sasshin-20201112-007",
+      "councilId": "moj-houmu_kensatsu_sasshin",
+      "name": "第7回会議",
+      "date": "2020/11/12",
+      "round": 7,
+      "officialUrl": "https://www.moj.go.jp/hisho/seisakuhyouka/hisho04_00045.html",
+      "materials": [
+        {
+          "name": "議事次第",
+          "url": "https://www.moj.go.jp/content/001332816.pdf"
+        },
+        {
+          "name": "議事次第 議事録",
+          "url": "https://www.moj.go.jp/content/001334140.pdf"
+        },
+        {
+          "name": "録音・録画の実施状況",
+          "url": "https://www.moj.go.jp/content/001332817.pdf"
+        },
+        {
+          "name": "第一審判決があった事件のうち任意性が争われた事件数",
+          "url": "https://www.moj.go.jp/content/001332818.pdf"
+        },
+        {
+          "name": "たたき台",
+          "url": "https://www.moj.go.jp/content/001332819.pdf"
+        },
+        {
+          "name": "山本副座長発言補助資料",
+          "url": "https://www.moj.go.jp/content/001332820.pdf"
+        },
+        {
+          "name": "紀藤副座長発言補助資料",
+          "url": "https://www.moj.go.jp/content/001332821.pdf"
+        },
+        {
+          "name": "金指委員発言補助資料",
+          "url": "https://www.moj.go.jp/content/001332822.pdf"
+        },
+        {
+          "name": "後藤委員発言補助資料",
+          "url": "https://www.moj.go.jp/content/001332823.pdf"
+        },
+        {
+          "name": "冨山委員発言補助資料",
+          "url": "https://www.moj.go.jp/content/001332824.pdf"
+        },
+        {
+          "name": "篠塚委員発言補助資料",
+          "url": "https://www.moj.go.jp/content/001332825.pdf"
+        },
+        {
+          "name": "井上委員発言補助資料",
+          "url": "https://www.moj.go.jp/content/001332826.pdf"
+        },
+        {
+          "name": "小林オブザーバー発言補助資料",
+          "url": "https://www.moj.go.jp/content/001332827.pdf"
+        }
+      ]
+    },
+    {
       "id": "anre-1774-20201111-003",
       "councilId": "anre-1774",
       "name": "令和2年度 第3回 グリーンイノベーション戦略推進会議",
@@ -423633,6 +424383,32 @@
           "name": "議事録",
           "url": "https://www.fsc.go.jp/fsciis/attachedFile/download?retrievalId=kai20201110fsc&fileId=500",
           "type": "HTML"
+        }
+      ]
+    },
+    {
+      "id": "moj-seihanzai_keijihou-20201110-008",
+      "councilId": "moj-seihanzai_keijihou",
+      "name": "第8回会議",
+      "date": "2020/11/10",
+      "round": 8,
+      "officialUrl": "https://www.moj.go.jp/keiji1/keiji12_00160.html",
+      "materials": [
+        {
+          "name": "議事次第",
+          "url": "https://www.moj.go.jp/content/001332510.pdf"
+        },
+        {
+          "name": "第8回会議では, ○ 暴行・脅迫や心神喪失・抗拒不能の要件の在り方 ○ 地位・関係性を利用した犯罪類型の在り方 について議論が行われた。 議事録",
+          "url": "https://www.moj.go.jp/content/001338612.txt"
+        },
+        {
+          "name": "第8回会議では, ○ 暴行・脅迫や心神喪失・抗拒不能の要件の在り方 ○ 地位・関係性を利用した犯罪類型の在り方 について議論が行われた。 議事録",
+          "url": "https://www.moj.go.jp/content/001338613.pdf"
+        },
+        {
+          "name": "性犯罪に関する刑事法検討会 意見要旨集(第5回会議分まで)",
+          "url": "https://www.moj.go.jp/content/001332511.pdf"
         }
       ]
     },
@@ -425446,6 +426222,88 @@
       ]
     },
     {
+      "id": "moj-seihanzai_keijihou-20201020-007",
+      "councilId": "moj-seihanzai_keijihou",
+      "name": "第7回会議",
+      "date": "2020/10/20",
+      "round": 7,
+      "officialUrl": "https://www.moj.go.jp/keiji1/keiji12_00159.html",
+      "materials": [
+        {
+          "name": "議事次第",
+          "url": "https://www.moj.go.jp/content/001331346.pdf"
+        },
+        {
+          "name": "議事次第 議事録 ※誤記等を修正して差し替えました(令和3年1月)。",
+          "url": "https://www.moj.go.jp/content/001338614.txt"
+        },
+        {
+          "name": "議事次第 議事録 ※誤記等を修正して差し替えました(令和3年1月)。",
+          "url": "https://www.moj.go.jp/content/001338615.pdf"
+        },
+        {
+          "name": "公訴時効制度の沿革",
+          "url": "https://www.moj.go.jp/content/001331348.pdf"
+        },
+        {
+          "name": "諸外国の性犯罪規定の概要(公訴時効に関する規定)",
+          "url": "https://www.moj.go.jp/content/001331349.pdf"
+        },
+        {
+          "name": "性犯罪の被害から相談までに要した期間に関する調査結果",
+          "url": "https://www.moj.go.jp/content/001331350.pdf"
+        },
+        {
+          "name": "参照条文(公訴時効関係)",
+          "url": "https://www.moj.go.jp/content/001331352.pdf"
+        },
+        {
+          "name": "いわゆるレイプシールドに関する諸外国の規定(仮訳)",
+          "url": "https://www.moj.go.jp/content/001331353.pdf"
+        },
+        {
+          "name": "参照条文(証拠調べ,訴訟指揮に関する規定)",
+          "url": "https://www.moj.go.jp/content/001331354.pdf"
+        },
+        {
+          "name": "児童が被害者等の事件における検察・警察・児童相談所の連携に関する通知",
+          "url": "https://www.moj.go.jp/content/001331355.pdf"
+        },
+        {
+          "name": "代表者聴取の取組の実情",
+          "url": "https://www.moj.go.jp/content/001331469.pdf"
+        },
+        {
+          "name": "諸外国における被害者の聴取結果等を記録した録音・録画記録媒体に特別の証拠能力を認める規定(仮訳)",
+          "url": "https://www.moj.go.jp/content/001331357.pdf"
+        },
+        {
+          "name": "英国(イギリス)における「1999年少年司法・刑事証拠法」に基づく特別措置のガイダンス(抜粋)(仮訳)",
+          "url": "https://www.moj.go.jp/content/001331358.pdf"
+        },
+        {
+          "name": "参照条文(証人の負担軽減及び供述証拠の証拠能力関係)",
+          "url": "https://www.moj.go.jp/content/001331359.pdf"
+        },
+        {
+          "name": "「同意の有無」を中核に置く刑法改正に向けて -性暴力に対する国際人権基準の反映-",
+          "url": "https://www.moj.go.jp/content/001331361.pdf"
+        },
+        {
+          "name": "性被害者が被害認識にかかった期間について",
+          "url": "https://www.moj.go.jp/content/001331360.pdf"
+        },
+        {
+          "name": "性被害の実態調査 アンケート 公訴時効についての報告",
+          "url": "https://www.moj.go.jp/content/001331610.pdf"
+        },
+        {
+          "name": "国際刑事裁判所ローマ規程の適用に関する証拠手続規則(抜粋)",
+          "url": "https://www.moj.go.jp/content/001331732.pdf"
+        }
+      ]
+    },
+    {
       "id": "nra-1205-20201020-009",
       "councilId": "nra-1205",
       "name": "会議 第9回原子炉安全専門審査会原子炉火山部会会合 ID: NRA004000012",
@@ -425792,6 +426650,116 @@
           "name": "議事録",
           "url": "https://www.fsc.go.jp/fsciis/attachedFile/download?retrievalId=kai20201015no1&fileId=310",
           "type": "HTML"
+        }
+      ]
+    },
+    {
+      "id": "moj-houmu_kensatsu_sasshin-20201015-006",
+      "councilId": "moj-houmu_kensatsu_sasshin",
+      "name": "第6回会議",
+      "date": "2020/10/15",
+      "round": 6,
+      "officialUrl": "https://www.moj.go.jp/hisho/seisakuhyouka/hisho04_00043.html",
+      "materials": [
+        {
+          "name": "議事次第",
+          "url": "https://www.moj.go.jp/content/001331113.pdf"
+        },
+        {
+          "name": "議事次第 議事録",
+          "url": "https://www.moj.go.jp/content/001334227.pdf"
+        },
+        {
+          "name": "我が国の刑事司法制度に関する主な対外発信",
+          "url": "https://www.moj.go.jp/content/001331297.pdf"
+        },
+        {
+          "name": "カルロス・ゴーン氏のメディアを通じて行った主張・報道等及びこれらへの対応状況",
+          "url": "https://www.moj.go.jp/content/001331115.pdf"
+        },
+        {
+          "name": "資料1 我が国の刑事司法制度に関する主な対外発信 資料2 カルロス・ゴーン氏のメディアを通じて行った主張・報道等及びこれらへの対応状況 資料3 令和2年1月5日 東京地方検察庁次席検事コメント( 和文 ・ 英文 ) 資料4 令和2年1月5日 法務大臣コメント( 和文 ・ 英文 ) 資料5 令和2年1月9日 法務大臣コメント( 和文 ・ 英文 ・ 仏文 ) 資料6 令和2年1月9日 東京地方検察庁次席検事コメント( 和文 ・ 英文 ) 資料7 令和2年1月9日 法務大臣コメント(2)( 和文 ・ 英文 ・ 仏文 ) 資料8 ウォールストリートジャーナル紙への法務大臣反論寄稿( 和文 ・ 英文 ) 資料9 日本の刑事司法制度に関するQ&A( 和文 ・ 英文 ) 資料10 「検察の在り方検討会議提言」の内容と実施状況(久保事務局作成資料) 資料11 委員等発言補助資料 紀藤副座長発言補助資料 後藤委員発言補助資料 篠塚委員発言補助資料 徐オブザーバー発言補助資料",
+          "url": "https://www.moj.go.jp/content/001331116.pdf"
+        },
+        {
+          "name": "資料1 我が国の刑事司法制度に関する主な対外発信 資料2 カルロス・ゴーン氏のメディアを通じて行った主張・報道等及びこれらへの対応状況 資料3 令和2年1月5日 東京地方検察庁次席検事コメント( 和文 ・ 英文 ) 資料4 令和2年1月5日 法務大臣コメント( 和文 ・ 英文 ) 資料5 令和2年1月9日 法務大臣コメント( 和文 ・ 英文 ・ 仏文 ) 資料6 令和2年1月9日 東京地方検察庁次席検事コメント( 和文 ・ 英文 ) 資料7 令和2年1月9日 法務大臣コメント(2)( 和文 ・ 英文 ・ 仏文 ) 資料8 ウォールストリートジャーナル紙への法務大臣反論寄稿( 和文 ・ 英文 ) 資料9 日本の刑事司法制度に関するQ&A( 和文 ・ 英文 ) 資料10 「検察の在り方検討会議提言」の内容と実施状況(久保事務局作成資料) 資料11 委員等発言補助資料 紀藤副座長発言補助資料 後藤委員発言補助資料 篠塚委員発言補助資料 徐オブザーバー発言補助資料",
+          "url": "https://www.moj.go.jp/content/001331117.pdf"
+        },
+        {
+          "name": "資料1 我が国の刑事司法制度に関する主な対外発信 資料2 カルロス・ゴーン氏のメディアを通じて行った主張・報道等及びこれらへの対応状況 資料3 令和2年1月5日 東京地方検察庁次席検事コメント( 和文 ・ 英文 ) 資料4 令和2年1月5日 法務大臣コメント( 和文 ・ 英文 ) 資料5 令和2年1月9日 法務大臣コメント( 和文 ・ 英文 ・ 仏文 ) 資料6 令和2年1月9日 東京地方検察庁次席検事コメント( 和文 ・ 英文 ) 資料7 令和2年1月9日 法務大臣コメント(2)( 和文 ・ 英文 ・ 仏文 ) 資料8 ウォールストリートジャーナル紙への法務大臣反論寄稿( 和文 ・ 英文 ) 資料9 日本の刑事司法制度に関するQ&A( 和文 ・ 英文 ) 資料10 「検察の在り方検討会議提言」の内容と実施状況(久保事務局作成資料) 資料11 委員等発言補助資料 紀藤副座長発言補助資料 後藤委員発言補助資料 篠塚委員発言補助資料 徐オブザーバー発言補助資料",
+          "url": "https://www.moj.go.jp/content/001331118.pdf"
+        },
+        {
+          "name": "資料1 我が国の刑事司法制度に関する主な対外発信 資料2 カルロス・ゴーン氏のメディアを通じて行った主張・報道等及びこれらへの対応状況 資料3 令和2年1月5日 東京地方検察庁次席検事コメント( 和文 ・ 英文 ) 資料4 令和2年1月5日 法務大臣コメント( 和文 ・ 英文 ) 資料5 令和2年1月9日 法務大臣コメント( 和文 ・ 英文 ・ 仏文 ) 資料6 令和2年1月9日 東京地方検察庁次席検事コメント( 和文 ・ 英文 ) 資料7 令和2年1月9日 法務大臣コメント(2)( 和文 ・ 英文 ・ 仏文 ) 資料8 ウォールストリートジャーナル紙への法務大臣反論寄稿( 和文 ・ 英文 ) 資料9 日本の刑事司法制度に関するQ&A( 和文 ・ 英文 ) 資料10 「検察の在り方検討会議提言」の内容と実施状況(久保事務局作成資料) 資料11 委員等発言補助資料 紀藤副座長発言補助資料 後藤委員発言補助資料 篠塚委員発言補助資料 徐オブザーバー発言補助資料",
+          "url": "https://www.moj.go.jp/content/001331119.pdf"
+        },
+        {
+          "name": "資料1 我が国の刑事司法制度に関する主な対外発信 資料2 カルロス・ゴーン氏のメディアを通じて行った主張・報道等及びこれらへの対応状況 資料3 令和2年1月5日 東京地方検察庁次席検事コメント( 和文 ・ 英文 ) 資料4 令和2年1月5日 法務大臣コメント( 和文 ・ 英文 ) 資料5 令和2年1月9日 法務大臣コメント( 和文 ・ 英文 ・ 仏文 ) 資料6 令和2年1月9日 東京地方検察庁次席検事コメント( 和文 ・ 英文 ) 資料7 令和2年1月9日 法務大臣コメント(2)( 和文 ・ 英文 ・ 仏文 ) 資料8 ウォールストリートジャーナル紙への法務大臣反論寄稿( 和文 ・ 英文 ) 資料9 日本の刑事司法制度に関するQ&A( 和文 ・ 英文 ) 資料10 「検察の在り方検討会議提言」の内容と実施状況(久保事務局作成資料) 資料11 委員等発言補助資料 紀藤副座長発言補助資料 後藤委員発言補助資料 篠塚委員発言補助資料 徐オブザーバー発言補助資料",
+          "url": "https://www.moj.go.jp/content/001331120.pdf"
+        },
+        {
+          "name": "資料1 我が国の刑事司法制度に関する主な対外発信 資料2 カルロス・ゴーン氏のメディアを通じて行った主張・報道等及びこれらへの対応状況 資料3 令和2年1月5日 東京地方検察庁次席検事コメント( 和文 ・ 英文 ) 資料4 令和2年1月5日 法務大臣コメント( 和文 ・ 英文 ) 資料5 令和2年1月9日 法務大臣コメント( 和文 ・ 英文 ・ 仏文 ) 資料6 令和2年1月9日 東京地方検察庁次席検事コメント( 和文 ・ 英文 ) 資料7 令和2年1月9日 法務大臣コメント(2)( 和文 ・ 英文 ・ 仏文 ) 資料8 ウォールストリートジャーナル紙への法務大臣反論寄稿( 和文 ・ 英文 ) 資料9 日本の刑事司法制度に関するQ&A( 和文 ・ 英文 ) 資料10 「検察の在り方検討会議提言」の内容と実施状況(久保事務局作成資料) 資料11 委員等発言補助資料 紀藤副座長発言補助資料 後藤委員発言補助資料 篠塚委員発言補助資料 徐オブザーバー発言補助資料",
+          "url": "https://www.moj.go.jp/content/001331121.pdf"
+        },
+        {
+          "name": "資料1 我が国の刑事司法制度に関する主な対外発信 資料2 カルロス・ゴーン氏のメディアを通じて行った主張・報道等及びこれらへの対応状況 資料3 令和2年1月5日 東京地方検察庁次席検事コメント( 和文 ・ 英文 ) 資料4 令和2年1月5日 法務大臣コメント( 和文 ・ 英文 ) 資料5 令和2年1月9日 法務大臣コメント( 和文 ・ 英文 ・ 仏文 ) 資料6 令和2年1月9日 東京地方検察庁次席検事コメント( 和文 ・ 英文 ) 資料7 令和2年1月9日 法務大臣コメント(2)( 和文 ・ 英文 ・ 仏文 ) 資料8 ウォールストリートジャーナル紙への法務大臣反論寄稿( 和文 ・ 英文 ) 資料9 日本の刑事司法制度に関するQ&A( 和文 ・ 英文 ) 資料10 「検察の在り方検討会議提言」の内容と実施状況(久保事務局作成資料) 資料11 委員等発言補助資料 紀藤副座長発言補助資料 後藤委員発言補助資料 篠塚委員発言補助資料 徐オブザーバー発言補助資料",
+          "url": "https://www.moj.go.jp/content/001331122.pdf"
+        },
+        {
+          "name": "資料1 我が国の刑事司法制度に関する主な対外発信 資料2 カルロス・ゴーン氏のメディアを通じて行った主張・報道等及びこれらへの対応状況 資料3 令和2年1月5日 東京地方検察庁次席検事コメント( 和文 ・ 英文 ) 資料4 令和2年1月5日 法務大臣コメント( 和文 ・ 英文 ) 資料5 令和2年1月9日 法務大臣コメント( 和文 ・ 英文 ・ 仏文 ) 資料6 令和2年1月9日 東京地方検察庁次席検事コメント( 和文 ・ 英文 ) 資料7 令和2年1月9日 法務大臣コメント(2)( 和文 ・ 英文 ・ 仏文 ) 資料8 ウォールストリートジャーナル紙への法務大臣反論寄稿( 和文 ・ 英文 ) 資料9 日本の刑事司法制度に関するQ&A( 和文 ・ 英文 ) 資料10 「検察の在り方検討会議提言」の内容と実施状況(久保事務局作成資料) 資料11 委員等発言補助資料 紀藤副座長発言補助資料 後藤委員発言補助資料 篠塚委員発言補助資料 徐オブザーバー発言補助資料",
+          "url": "https://www.moj.go.jp/content/001331123.pdf"
+        },
+        {
+          "name": "資料1 我が国の刑事司法制度に関する主な対外発信 資料2 カルロス・ゴーン氏のメディアを通じて行った主張・報道等及びこれらへの対応状況 資料3 令和2年1月5日 東京地方検察庁次席検事コメント( 和文 ・ 英文 ) 資料4 令和2年1月5日 法務大臣コメント( 和文 ・ 英文 ) 資料5 令和2年1月9日 法務大臣コメント( 和文 ・ 英文 ・ 仏文 ) 資料6 令和2年1月9日 東京地方検察庁次席検事コメント( 和文 ・ 英文 ) 資料7 令和2年1月9日 法務大臣コメント(2)( 和文 ・ 英文 ・ 仏文 ) 資料8 ウォールストリートジャーナル紙への法務大臣反論寄稿( 和文 ・ 英文 ) 資料9 日本の刑事司法制度に関するQ&A( 和文 ・ 英文 ) 資料10 「検察の在り方検討会議提言」の内容と実施状況(久保事務局作成資料) 資料11 委員等発言補助資料 紀藤副座長発言補助資料 後藤委員発言補助資料 篠塚委員発言補助資料 徐オブザーバー発言補助資料",
+          "url": "https://www.moj.go.jp/content/001331124.pdf"
+        },
+        {
+          "name": "資料1 我が国の刑事司法制度に関する主な対外発信 資料2 カルロス・ゴーン氏のメディアを通じて行った主張・報道等及びこれらへの対応状況 資料3 令和2年1月5日 東京地方検察庁次席検事コメント( 和文 ・ 英文 ) 資料4 令和2年1月5日 法務大臣コメント( 和文 ・ 英文 ) 資料5 令和2年1月9日 法務大臣コメント( 和文 ・ 英文 ・ 仏文 ) 資料6 令和2年1月9日 東京地方検察庁次席検事コメント( 和文 ・ 英文 ) 資料7 令和2年1月9日 法務大臣コメント(2)( 和文 ・ 英文 ・ 仏文 ) 資料8 ウォールストリートジャーナル紙への法務大臣反論寄稿( 和文 ・ 英文 ) 資料9 日本の刑事司法制度に関するQ&A( 和文 ・ 英文 ) 資料10 「検察の在り方検討会議提言」の内容と実施状況(久保事務局作成資料) 資料11 委員等発言補助資料 紀藤副座長発言補助資料 後藤委員発言補助資料 篠塚委員発言補助資料 徐オブザーバー発言補助資料",
+          "url": "https://www.moj.go.jp/content/001331125.pdf"
+        },
+        {
+          "name": "資料1 我が国の刑事司法制度に関する主な対外発信 資料2 カルロス・ゴーン氏のメディアを通じて行った主張・報道等及びこれらへの対応状況 資料3 令和2年1月5日 東京地方検察庁次席検事コメント( 和文 ・ 英文 ) 資料4 令和2年1月5日 法務大臣コメント( 和文 ・ 英文 ) 資料5 令和2年1月9日 法務大臣コメント( 和文 ・ 英文 ・ 仏文 ) 資料6 令和2年1月9日 東京地方検察庁次席検事コメント( 和文 ・ 英文 ) 資料7 令和2年1月9日 法務大臣コメント(2)( 和文 ・ 英文 ・ 仏文 ) 資料8 ウォールストリートジャーナル紙への法務大臣反論寄稿( 和文 ・ 英文 ) 資料9 日本の刑事司法制度に関するQ&A( 和文 ・ 英文 ) 資料10 「検察の在り方検討会議提言」の内容と実施状況(久保事務局作成資料) 資料11 委員等発言補助資料 紀藤副座長発言補助資料 後藤委員発言補助資料 篠塚委員発言補助資料 徐オブザーバー発言補助資料",
+          "url": "https://www.moj.go.jp/content/001331126.pdf"
+        },
+        {
+          "name": "資料1 我が国の刑事司法制度に関する主な対外発信 資料2 カルロス・ゴーン氏のメディアを通じて行った主張・報道等及びこれらへの対応状況 資料3 令和2年1月5日 東京地方検察庁次席検事コメント( 和文 ・ 英文 ) 資料4 令和2年1月5日 法務大臣コメント( 和文 ・ 英文 ) 資料5 令和2年1月9日 法務大臣コメント( 和文 ・ 英文 ・ 仏文 ) 資料6 令和2年1月9日 東京地方検察庁次席検事コメント( 和文 ・ 英文 ) 資料7 令和2年1月9日 法務大臣コメント(2)( 和文 ・ 英文 ・ 仏文 ) 資料8 ウォールストリートジャーナル紙への法務大臣反論寄稿( 和文 ・ 英文 ) 資料9 日本の刑事司法制度に関するQ&A( 和文 ・ 英文 ) 資料10 「検察の在り方検討会議提言」の内容と実施状況(久保事務局作成資料) 資料11 委員等発言補助資料 紀藤副座長発言補助資料 後藤委員発言補助資料 篠塚委員発言補助資料 徐オブザーバー発言補助資料",
+          "url": "https://www.moj.go.jp/content/001331127.pdf"
+        },
+        {
+          "name": "資料1 我が国の刑事司法制度に関する主な対外発信 資料2 カルロス・ゴーン氏のメディアを通じて行った主張・報道等及びこれらへの対応状況 資料3 令和2年1月5日 東京地方検察庁次席検事コメント( 和文 ・ 英文 ) 資料4 令和2年1月5日 法務大臣コメント( 和文 ・ 英文 ) 資料5 令和2年1月9日 法務大臣コメント( 和文 ・ 英文 ・ 仏文 ) 資料6 令和2年1月9日 東京地方検察庁次席検事コメント( 和文 ・ 英文 ) 資料7 令和2年1月9日 法務大臣コメント(2)( 和文 ・ 英文 ・ 仏文 ) 資料8 ウォールストリートジャーナル紙への法務大臣反論寄稿( 和文 ・ 英文 ) 資料9 日本の刑事司法制度に関するQ&A( 和文 ・ 英文 ) 資料10 「検察の在り方検討会議提言」の内容と実施状況(久保事務局作成資料) 資料11 委員等発言補助資料 紀藤副座長発言補助資料 後藤委員発言補助資料 篠塚委員発言補助資料 徐オブザーバー発言補助資料",
+          "url": "https://www.moj.go.jp/content/001331128.pdf"
+        },
+        {
+          "name": "資料1 我が国の刑事司法制度に関する主な対外発信 資料2 カルロス・ゴーン氏のメディアを通じて行った主張・報道等及びこれらへの対応状況 資料3 令和2年1月5日 東京地方検察庁次席検事コメント( 和文 ・ 英文 ) 資料4 令和2年1月5日 法務大臣コメント( 和文 ・ 英文 ) 資料5 令和2年1月9日 法務大臣コメント( 和文 ・ 英文 ・ 仏文 ) 資料6 令和2年1月9日 東京地方検察庁次席検事コメント( 和文 ・ 英文 ) 資料7 令和2年1月9日 法務大臣コメント(2)( 和文 ・ 英文 ・ 仏文 ) 資料8 ウォールストリートジャーナル紙への法務大臣反論寄稿( 和文 ・ 英文 ) 資料9 日本の刑事司法制度に関するQ&A( 和文 ・ 英文 ) 資料10 「検察の在り方検討会議提言」の内容と実施状況(久保事務局作成資料) 資料11 委員等発言補助資料 紀藤副座長発言補助資料 後藤委員発言補助資料 篠塚委員発言補助資料 徐オブザーバー発言補助資料",
+          "url": "https://www.moj.go.jp/content/001331129.pdf"
+        },
+        {
+          "name": "資料1 我が国の刑事司法制度に関する主な対外発信 資料2 カルロス・ゴーン氏のメディアを通じて行った主張・報道等及びこれらへの対応状況 資料3 令和2年1月5日 東京地方検察庁次席検事コメント( 和文 ・ 英文 ) 資料4 令和2年1月5日 法務大臣コメント( 和文 ・ 英文 ) 資料5 令和2年1月9日 法務大臣コメント( 和文 ・ 英文 ・ 仏文 ) 資料6 令和2年1月9日 東京地方検察庁次席検事コメント( 和文 ・ 英文 ) 資料7 令和2年1月9日 法務大臣コメント(2)( 和文 ・ 英文 ・ 仏文 ) 資料8 ウォールストリートジャーナル紙への法務大臣反論寄稿( 和文 ・ 英文 ) 資料9 日本の刑事司法制度に関するQ&A( 和文 ・ 英文 ) 資料10 「検察の在り方検討会議提言」の内容と実施状況(久保事務局作成資料) 資料11 委員等発言補助資料 紀藤副座長発言補助資料 後藤委員発言補助資料 篠塚委員発言補助資料 徐オブザーバー発言補助資料",
+          "url": "https://www.moj.go.jp/content/001331130.pdf"
+        },
+        {
+          "name": "資料1 我が国の刑事司法制度に関する主な対外発信 資料2 カルロス・ゴーン氏のメディアを通じて行った主張・報道等及びこれらへの対応状況 資料3 令和2年1月5日 東京地方検察庁次席検事コメント( 和文 ・ 英文 ) 資料4 令和2年1月5日 法務大臣コメント( 和文 ・ 英文 ) 資料5 令和2年1月9日 法務大臣コメント( 和文 ・ 英文 ・ 仏文 ) 資料6 令和2年1月9日 東京地方検察庁次席検事コメント( 和文 ・ 英文 ) 資料7 令和2年1月9日 法務大臣コメント(2)( 和文 ・ 英文 ・ 仏文 ) 資料8 ウォールストリートジャーナル紙への法務大臣反論寄稿( 和文 ・ 英文 ) 資料9 日本の刑事司法制度に関するQ&A( 和文 ・ 英文 ) 資料10 「検察の在り方検討会議提言」の内容と実施状況(久保事務局作成資料) 資料11 委員等発言補助資料 紀藤副座長発言補助資料 後藤委員発言補助資料 篠塚委員発言補助資料 徐オブザーバー発言補助資料",
+          "url": "https://www.moj.go.jp/content/001331131.pdf"
+        },
+        {
+          "name": "「検察の在り方検討会議提言」の内容と実施状況(久保事務局作成資料)",
+          "url": "https://www.moj.go.jp/content/001331132.pdf"
+        },
+        {
+          "name": "紀藤副座長発言補助資料",
+          "url": "https://www.moj.go.jp/content/001331263.pdf"
+        },
+        {
+          "name": "後藤委員発言補助資料",
+          "url": "https://www.moj.go.jp/content/001331251.pdf"
+        },
+        {
+          "name": "篠塚委員発言補助資料",
+          "url": "https://www.moj.go.jp/content/001331135.pdf"
+        },
+        {
+          "name": "徐オブザーバー発言補助資料",
+          "url": "https://www.moj.go.jp/content/001331136.pdf"
         }
       ]
     },
@@ -427236,6 +428204,68 @@
       ]
     },
     {
+      "id": "moj-houmu_kensatsu_sasshin-20201001-005",
+      "councilId": "moj-houmu_kensatsu_sasshin",
+      "name": "第5回会議",
+      "date": "2020/10/01",
+      "round": 5,
+      "officialUrl": "https://www.moj.go.jp/hisho/seisakuhyouka/hisho04_00012.html",
+      "materials": [
+        {
+          "name": "議事次第",
+          "url": "https://www.moj.go.jp/content/001329896.pdf"
+        },
+        {
+          "name": "議事次第 議事録",
+          "url": "https://www.moj.go.jp/content/001334229.pdf"
+        },
+        {
+          "name": "公文書等の管理に関する法律",
+          "url": "https://www.moj.go.jp/content/001329885.pdf"
+        },
+        {
+          "name": "行政文書の管理に関するガイドライン",
+          "url": "https://www.moj.go.jp/content/001329886.pdf"
+        },
+        {
+          "name": "法務省行政文書管理規則",
+          "url": "https://www.moj.go.jp/content/001329887.pdf"
+        },
+        {
+          "name": "法務省行政文書取扱規則",
+          "url": "https://www.moj.go.jp/content/001329888.pdf"
+        },
+        {
+          "name": "勤務延長制度(国公法第81条の3)の検察官への適用について",
+          "url": "https://www.moj.go.jp/content/001329889.pdf"
+        },
+        {
+          "name": "検察庁法改正案策定経緯文書",
+          "url": "https://www.moj.go.jp/content/001329890.pdf"
+        },
+        {
+          "name": "懲戒処分の指針について(通知)",
+          "url": "https://www.moj.go.jp/content/001329891.pdf"
+        },
+        {
+          "name": "法務省職員の訓告等に関する訓令",
+          "url": "https://www.moj.go.jp/content/001329892.pdf"
+        },
+        {
+          "name": "紀藤副座長発言補助資料",
+          "url": "https://www.moj.go.jp/content/001331005.pdf"
+        },
+        {
+          "name": "後藤委員発言補助資料",
+          "url": "https://www.moj.go.jp/content/001329894.pdf"
+        },
+        {
+          "name": "篠塚委員発言補助資料",
+          "url": "https://www.moj.go.jp/content/001329999.pdf"
+        }
+      ]
+    },
+    {
       "id": "cas-sangyouisan-20200930-011",
       "councilId": "cas-sangyouisan",
       "name": "第11回 稼働資産を含む産業遺産に関する有識者会議",
@@ -427901,6 +428931,84 @@
         {
           "name": "議事概要",
           "url": "https://www.fsc.go.jp/fsciis/attachedFile/download?retrievalId=kai20200924te1&fileId=410"
+        }
+      ]
+    },
+    {
+      "id": "moj-seihanzai_keijihou-20200924-006",
+      "councilId": "moj-seihanzai_keijihou",
+      "name": "第6回会議",
+      "date": "2020/09/24",
+      "round": 6,
+      "officialUrl": "https://www.moj.go.jp/keiji1/keiji12_00152.html",
+      "materials": [
+        {
+          "name": "議事次第",
+          "url": "https://www.moj.go.jp/content/001329106.pdf"
+        },
+        {
+          "name": "議事次第 議事録",
+          "url": "https://www.moj.go.jp/content/001332932.txt"
+        },
+        {
+          "name": "議事次第 議事録",
+          "url": "https://www.moj.go.jp/content/001332933.pdf"
+        },
+        {
+          "name": "諸外国の性犯罪規定の概要(性犯罪の対象となる性的行為の内容に関する規定)",
+          "url": "https://www.moj.go.jp/content/001329107.pdf"
+        },
+        {
+          "name": "刑法の性犯罪の法定刑に関する改正経過等",
+          "url": "https://www.moj.go.jp/content/001329108.pdf"
+        },
+        {
+          "name": "2人以上の者が現場において共同して行った性犯罪の量刑に関する資料",
+          "url": "https://www.moj.go.jp/content/001329206.pdf"
+        },
+        {
+          "name": "配偶者間において強姦罪(改正前の刑法177条前段)の成立を認めた裁判例",
+          "url": "https://www.moj.go.jp/content/001329111.pdf"
+        },
+        {
+          "name": "諸外国の性犯罪規定の概要(性的行為が配偶者間等で行われた場合に関する規定)",
+          "url": "https://www.moj.go.jp/content/001329112.pdf"
+        },
+        {
+          "name": "盗撮事犯の検挙状況",
+          "url": "https://www.moj.go.jp/content/001347084.pdf"
+        },
+        {
+          "name": "性的な画像の記録媒体等の没収・還付等が問題となった裁判例",
+          "url": "https://www.moj.go.jp/content/001329114.pdf"
+        },
+        {
+          "name": "諸外国の性的姿態の撮影行為等を処罰する規定(仮訳)",
+          "url": "https://www.moj.go.jp/content/001329115.pdf"
+        },
+        {
+          "name": "参照条文(性的姿態の撮影関係)",
+          "url": "https://www.moj.go.jp/content/001329116.pdf"
+        },
+        {
+          "name": "参照条文(各都道府県の迷惑行為防止条例の例)",
+          "url": "https://www.moj.go.jp/content/001329117.pdf"
+        },
+        {
+          "name": "若年層を対象とした性的な暴力の現状と課題",
+          "url": "https://www.moj.go.jp/content/001329258.pdf"
+        },
+        {
+          "name": "「若年層を対象とした性暴力被害等の実態把握のためのインターネット調査」報告書(概要)",
+          "url": "https://www.moj.go.jp/content/001329259.pdf"
+        },
+        {
+          "name": "【航空連合】第20期機内迷惑行為に関するアンケート(最終とりまとめ)",
+          "url": "https://www.moj.go.jp/content/001329262.pdf"
+        },
+        {
+          "name": "第6回性犯罪に関する刑事法検討会への意見",
+          "url": "https://www.moj.go.jp/content/001331343.pdf"
         }
       ]
     },
@@ -428741,6 +429849,68 @@
         {
           "name": "議事録",
           "url": "https://www.mhlw.go.jp/content/000681298.pdf"
+        }
+      ]
+    },
+    {
+      "id": "moj-houmu_kensatsu_sasshin-20200910-004",
+      "councilId": "moj-houmu_kensatsu_sasshin",
+      "name": "第4回会議",
+      "date": "2020/09/10",
+      "round": 4,
+      "officialUrl": "https://www.moj.go.jp/hisho/seisakuhyouka/hisho04_00011.html",
+      "materials": [
+        {
+          "name": "議事次第",
+          "url": "https://www.moj.go.jp/content/001329674.pdf"
+        },
+        {
+          "name": "議事次第 議事録",
+          "url": "https://www.moj.go.jp/content/001334230.pdf"
+        },
+        {
+          "name": "検察官の懲戒処分等の概要",
+          "url": "https://www.moj.go.jp/content/001329678.pdf"
+        },
+        {
+          "name": "最高検における監察の概況",
+          "url": "https://www.moj.go.jp/content/001329679.pdf"
+        },
+        {
+          "name": "各組織における「倫理」に係る規律及び研修等の状況",
+          "url": "https://www.moj.go.jp/content/001329680.pdf"
+        },
+        {
+          "name": "「検察の在り方検討会議提言」の内容と実施状況(久保事務局(日本弁護士連合会)作成資料)",
+          "url": "https://www.moj.go.jp/content/001329681.pdf"
+        },
+        {
+          "name": "紀藤副座長発言補助資料",
+          "url": "https://www.moj.go.jp/content/001329682.pdf"
+        },
+        {
+          "name": "金指委員発言補助資料",
+          "url": "https://www.moj.go.jp/content/001329683.pdf"
+        },
+        {
+          "name": "後藤委員発言補助資料",
+          "url": "https://www.moj.go.jp/content/001329684.pdf"
+        },
+        {
+          "name": "太田委員発言補助資料",
+          "url": "https://www.moj.go.jp/content/001329685.pdf"
+        },
+        {
+          "name": "河合委員発言補助資料",
+          "url": "https://www.moj.go.jp/content/001329686.pdf"
+        },
+        {
+          "name": "篠塚委員発言補助資料",
+          "url": "https://www.moj.go.jp/content/001329687.pdf"
+        },
+        {
+          "name": "座長報告",
+          "url": "https://www.moj.go.jp/content/001331217.pdf"
         }
       ]
     },
@@ -430489,6 +431659,154 @@
       ]
     },
     {
+      "id": "moj-houmu_kensatsu_sasshin-20200827-003",
+      "councilId": "moj-houmu_kensatsu_sasshin",
+      "name": "第3回会議",
+      "date": "2020/08/27",
+      "round": 3,
+      "officialUrl": "https://www.moj.go.jp/hisho/seisakuhyouka/hisho04_00004.html",
+      "materials": [
+        {
+          "name": "議事次第",
+          "url": "https://www.moj.go.jp/content/001329590.pdf"
+        },
+        {
+          "name": "議事次第 議事録",
+          "url": "https://www.moj.go.jp/content/001334231.pdf"
+        },
+        {
+          "name": "「検察の理念」の策定に当たって",
+          "url": "https://www.moj.go.jp/content/001329592.pdf"
+        },
+        {
+          "name": "検察の理念",
+          "url": "https://www.moj.go.jp/content/001329593.pdf"
+        },
+        {
+          "name": "国家公務員法",
+          "url": "https://www.moj.go.jp/content/001329594.pdf"
+        },
+        {
+          "name": "国家公務員倫理法",
+          "url": "https://www.moj.go.jp/content/001329595.pdf"
+        },
+        {
+          "name": "国家公務員倫理規程",
+          "url": "https://www.moj.go.jp/content/001329596.pdf"
+        },
+        {
+          "name": "法務省職員倫理規程",
+          "url": "https://www.moj.go.jp/content/001329597.pdf"
+        },
+        {
+          "name": "検察官倫理をかん養するための取組",
+          "url": "https://www.moj.go.jp/content/001329598.pdf"
+        },
+        {
+          "name": "非違行為等防止対策委員会等について",
+          "url": "https://www.moj.go.jp/content/001329599.pdf"
+        },
+        {
+          "name": "条文抜粋",
+          "url": "https://www.moj.go.jp/content/001329600.pdf"
+        },
+        {
+          "name": "後藤委員発言補助資料",
+          "url": "https://www.moj.go.jp/content/001329603.pdf"
+        },
+        {
+          "name": "冨山委員発言補助資料",
+          "url": "https://www.moj.go.jp/content/001329606.pdf"
+        },
+        {
+          "name": "河合委員発言補助資料",
+          "url": "https://www.moj.go.jp/content/001329602.pdf"
+        },
+        {
+          "name": "篠塚委員発言補助資料",
+          "url": "https://www.moj.go.jp/content/001329604.pdf"
+        },
+        {
+          "name": "小林オブザーバー発言補助資料",
+          "url": "https://www.moj.go.jp/content/001329605.pdf"
+        }
+      ]
+    },
+    {
+      "id": "moj-seihanzai_keijihou-20200827-005",
+      "councilId": "moj-seihanzai_keijihou",
+      "name": "第5回会議",
+      "date": "2020/08/27",
+      "round": 5,
+      "officialUrl": "https://www.moj.go.jp/keiji1/keiji12_00059.html",
+      "materials": [
+        {
+          "name": "議事次第",
+          "url": "https://www.moj.go.jp/content/001327098.pdf"
+        },
+        {
+          "name": "議事次第 議事録",
+          "url": "https://www.moj.go.jp/content/001331675.txt"
+        },
+        {
+          "name": "議事次第 議事録",
+          "url": "https://www.moj.go.jp/content/001331676.pdf"
+        },
+        {
+          "name": "性犯罪に関する刑事法検討会 検討すべき論点",
+          "url": "https://www.moj.go.jp/content/001327158.pdf"
+        },
+        {
+          "name": "性犯罪に係る裁判例調査",
+          "url": "https://www.moj.go.jp/content/001327159.pdf"
+        },
+        {
+          "name": "性犯罪に係る不起訴事件調査",
+          "url": "https://www.moj.go.jp/content/001327278.pdf"
+        },
+        {
+          "name": "強制性交等罪における「暴行」,「脅迫」の要件の沿革",
+          "url": "https://www.moj.go.jp/content/001327161.pdf"
+        },
+        {
+          "name": "準強制性交等罪における「心神喪失」,「抗拒不能」の要件の沿革",
+          "url": "https://www.moj.go.jp/content/001327162.pdf"
+        },
+        {
+          "name": "諸外国の性犯罪規定の概要(「暴行」・「脅迫」,「心神喪失」・「抗拒不能」を要件とする規定,相手方が性的行為に同意していないことを要件とする規定)",
+          "url": "https://www.moj.go.jp/content/001327163.pdf"
+        },
+        {
+          "name": "地位・関係性を利用した性的行為に関する議論の経緯等",
+          "url": "https://www.moj.go.jp/content/001327164.pdf"
+        },
+        {
+          "name": "諸外国の性犯罪規定の概要(性的行為の当事者間に一定の地位・関係性が存することや性的行為の相手方が脆弱性 を有すること等を要件とする規定)",
+          "url": "https://www.moj.go.jp/content/001327165.pdf"
+        },
+        {
+          "name": "いわゆる性交同意年齢に関する議論の経緯等",
+          "url": "https://www.moj.go.jp/content/001327166.pdf"
+        },
+        {
+          "name": "青少年の性行動に関する調査結果",
+          "url": "https://www.moj.go.jp/content/001327167.pdf"
+        },
+        {
+          "name": "体の発育や発達等に関する教育の内容等",
+          "url": "https://www.moj.go.jp/content/001327168.pdf"
+        },
+        {
+          "name": "諸外国の性犯罪規定の概要(性的行為の当事者の年齢が要件となっている規定)",
+          "url": "https://www.moj.go.jp/content/001327171.pdf"
+        },
+        {
+          "name": "参照条文",
+          "url": "https://www.moj.go.jp/content/001327170.pdf"
+        }
+      ]
+    },
+    {
       "id": "cas-kenkou_iryou_honbu-20200826-031",
       "councilId": "cas-kenkou_iryou_honbu",
       "name": "第31回 健康・医療戦略推進本部",
@@ -431881,6 +433199,84 @@
         {
           "name": "議事録",
           "url": "https://www.jfa.maff.go.jp/j/council/seisaku/kanri/attach/pdf/index-26.pdf"
+        }
+      ]
+    },
+    {
+      "id": "moj-houmu_kensatsu_sasshin-20200806-002",
+      "councilId": "moj-houmu_kensatsu_sasshin",
+      "name": "第2回会議",
+      "date": "2020/08/06",
+      "round": 2,
+      "officialUrl": "https://www.moj.go.jp/hisho/seisakuhyouka/hisho04_00003.html",
+      "materials": [
+        {
+          "name": "議事次第",
+          "url": "https://www.moj.go.jp/content/001329713.pdf"
+        },
+        {
+          "name": "議事次第 議事録",
+          "url": "https://www.moj.go.jp/content/001334233.pdf"
+        },
+        {
+          "name": "提言の実施状況",
+          "url": "https://www.moj.go.jp/content/001329715.pdf"
+        },
+        {
+          "name": "国家公務員倫理法",
+          "url": "https://www.moj.go.jp/content/001329716.pdf"
+        },
+        {
+          "name": "国家公務員倫理規程",
+          "url": "https://www.moj.go.jp/content/001329717.pdf"
+        },
+        {
+          "name": "法務省職員倫理規程",
+          "url": "https://www.moj.go.jp/content/001329718.pdf"
+        },
+        {
+          "name": "弁護士法",
+          "url": "https://www.moj.go.jp/content/001329719.pdf"
+        },
+        {
+          "name": "弁護士職務基本規程",
+          "url": "https://www.moj.go.jp/content/001329720.pdf"
+        },
+        {
+          "name": "日本弁護士連合会会則",
+          "url": "https://www.moj.go.jp/content/001329722.pdf"
+        },
+        {
+          "name": "紀藤副座長発言補助資料",
+          "url": "https://www.moj.go.jp/content/001329723.pdf"
+        },
+        {
+          "name": "鵜瀞委員発言補助資料",
+          "url": "https://www.moj.go.jp/content/001329724.pdf"
+        },
+        {
+          "name": "後藤委員発言補助資料",
+          "url": "https://www.moj.go.jp/content/001329725.pdf"
+        },
+        {
+          "name": "山本委員発言補助資料",
+          "url": "https://www.moj.go.jp/content/001329726.pdf"
+        },
+        {
+          "name": "太田委員発言補助資料",
+          "url": "https://www.moj.go.jp/content/001329727.pdf"
+        },
+        {
+          "name": "篠塚委員発言補助資料",
+          "url": "https://www.moj.go.jp/content/001329728.pdf"
+        },
+        {
+          "name": "井上委員発言補助資料",
+          "url": "https://www.moj.go.jp/content/001329729.pdf"
+        },
+        {
+          "name": "徐オブザーバー発言補助資料",
+          "url": "https://www.moj.go.jp/content/001329730.pdf"
         }
       ]
     },
@@ -433518,6 +434914,36 @@
       ]
     },
     {
+      "id": "moj-seihanzai_keijihou-20200727-004",
+      "councilId": "moj-seihanzai_keijihou",
+      "name": "第4回会議",
+      "date": "2020/07/27",
+      "round": 4,
+      "officialUrl": "https://www.moj.go.jp/keiji1/keiji12_00052.html",
+      "materials": [
+        {
+          "name": "議事次第",
+          "url": "https://www.moj.go.jp/content/001324415.pdf"
+        },
+        {
+          "name": "議事次第 議事録",
+          "url": "https://www.moj.go.jp/content/001327365.txt"
+        },
+        {
+          "name": "議事次第 議事録",
+          "url": "https://www.moj.go.jp/content/001327366.pdf"
+        },
+        {
+          "name": "「平成29年刑法改正後の規定の施行状況についての調査結果等」(資料6)の補充資料(肛門性交・口腔性交のみを実行行為とする事件の量刑)",
+          "url": "https://www.moj.go.jp/content/001324420.pdf"
+        },
+        {
+          "name": "性犯罪に関する刑事法検討会 論点整理(案)",
+          "url": "https://www.moj.go.jp/content/001325146.pdf"
+        }
+      ]
+    },
+    {
       "id": "fdma-kaso_nenryou_supply-20200722-001",
       "councilId": "fdma-kaso_nenryou_supply",
       "name": "令和2年度 第1回 過疎地域等における燃料供給インフラの維持に向けた安全対策のあり方に関する検討会",
@@ -434360,6 +435786,96 @@
       ]
     },
     {
+      "id": "moj-houmu_kensatsu_sasshin-20200716-001",
+      "councilId": "moj-houmu_kensatsu_sasshin",
+      "name": "第1回会議",
+      "date": "2020/07/16",
+      "round": 1,
+      "officialUrl": "https://www.moj.go.jp/hisho/seisakuhyouka/hisho04_00002.html",
+      "materials": [
+        {
+          "name": "議事次第",
+          "url": "https://www.moj.go.jp/content/001329691.pdf"
+        },
+        {
+          "name": "議事次第 議事録",
+          "url": "https://www.moj.go.jp/content/001334234.pdf"
+        },
+        {
+          "name": "大臣挨拶補助資料",
+          "url": "https://www.moj.go.jp/content/001329693.pdf"
+        },
+        {
+          "name": "法務省パンフレット",
+          "url": "https://www.moj.go.jp/content/001329694.pdf"
+        },
+        {
+          "name": "検察庁パンフレット",
+          "url": "https://www.moj.go.jp/content/001329695.pdf"
+        },
+        {
+          "name": "近時の刑事司法改革の流れ(時系列)",
+          "url": "https://www.moj.go.jp/content/001329696.pdf"
+        },
+        {
+          "name": "検察の再生に向けて(検察の在り方検討会議提言)【概要版】",
+          "url": "https://www.moj.go.jp/content/001329697.pdf"
+        },
+        {
+          "name": "検察の再生に向けて(検察の在り方検討会議提言)",
+          "url": "https://www.moj.go.jp/content/001329698.pdf"
+        },
+        {
+          "name": "検察の再生に向けての取組",
+          "url": "https://www.moj.go.jp/content/001329699.pdf"
+        },
+        {
+          "name": "提言1 検察の理念",
+          "url": "https://www.moj.go.jp/content/001329700.pdf"
+        },
+        {
+          "name": "提言2 検察官の人事・教育に関する取組状況",
+          "url": "https://www.moj.go.jp/content/001329701.pdf"
+        },
+        {
+          "name": "提言3 検察の組織とチェック体制に関する取組状況",
+          "url": "https://www.moj.go.jp/content/001329702.pdf"
+        },
+        {
+          "name": "提言4 検察における捜査・公判の在り方に関する取組状況",
+          "url": "https://www.moj.go.jp/content/001329703.pdf"
+        },
+        {
+          "name": "検察改革の進捗状況",
+          "url": "https://www.moj.go.jp/content/001329704.pdf"
+        },
+        {
+          "name": "検察改革3年間の取組-検察の理念とその実践",
+          "url": "https://www.moj.go.jp/content/001329705.pdf"
+        },
+        {
+          "name": "法制審議会への諮問第92号",
+          "url": "https://www.moj.go.jp/content/001329706.pdf"
+        },
+        {
+          "name": "時代に即した新たな刑事司法制度の基本構想",
+          "url": "https://www.moj.go.jp/content/001329707.pdf"
+        },
+        {
+          "name": "新たな刑事司法制度の構築についての調査審議の結果(法制審議会の答申)",
+          "url": "https://www.moj.go.jp/content/001329708.pdf"
+        },
+        {
+          "name": "刑事訴訟法等の一部を改正する法律の概要(時代に即した新たな刑事司法制度の構築)",
+          "url": "https://www.moj.go.jp/content/001329709.pdf"
+        },
+        {
+          "name": "刑事訴訟法等の一部を改正する法律附則9条",
+          "url": "https://www.moj.go.jp/content/001329710.pdf"
+        }
+      ]
+    },
+    {
       "id": "fsa-kinyu_market_wg-20200715-030",
       "councilId": "fsa-kinyu_market_wg",
       "name": "第30回 市場ワーキング・グループ",
@@ -434804,6 +436320,64 @@
         {
           "name": "「小電力の無線システムの高度化に必要な技術的条件」のうち「60GHz帯の周波数の電波を使用する無線設備の多様化に係る技術的条件」に関する調査の進め方（案）",
           "url": "https://www.soumu.go.jp/main_content/000786280.pdf"
+        }
+      ]
+    },
+    {
+      "id": "moj-seihanzai_keijihou-20200709-003",
+      "councilId": "moj-seihanzai_keijihou",
+      "name": "第3回会議",
+      "date": "2020/07/09",
+      "round": 3,
+      "officialUrl": "https://www.moj.go.jp/keiji1/keiji12_00049.html",
+      "materials": [
+        {
+          "name": "議事次第",
+          "url": "https://www.moj.go.jp/content/001323671.pdf"
+        },
+        {
+          "name": "議事次第 議事録",
+          "url": "https://www.moj.go.jp/content/001325864.txt"
+        },
+        {
+          "name": "議事次第 議事録",
+          "url": "https://www.moj.go.jp/content/001325865.pdf"
+        },
+        {
+          "name": "ヒアリング出席者名簿",
+          "url": "https://www.moj.go.jp/content/001323848.pdf"
+        },
+        {
+          "name": "ヒアリング出席者略歴等",
+          "url": "https://www.moj.go.jp/content/001323849.pdf"
+        },
+        {
+          "name": "教師による生徒への性的経験・性暴力被害アンケート集計結果(2020年5月11~31日実施)",
+          "url": "https://www.moj.go.jp/content/001324313.pdf"
+        },
+        {
+          "name": "教師による生徒への性的経験・性暴力被害アンケートからの分析(2020年5月11~31日実施)",
+          "url": "https://www.moj.go.jp/content/001324314.pdf"
+        },
+        {
+          "name": "最初の被害時の,加害者と被害者の状況について",
+          "url": "https://www.moj.go.jp/content/001324315.pdf"
+        },
+        {
+          "name": "質問への回答",
+          "url": "https://www.moj.go.jp/content/001324316.pdf"
+        },
+        {
+          "name": "フランス刑法における性犯罪処罰の基本的考え方",
+          "url": "https://www.moj.go.jp/content/001324373.pdf"
+        },
+        {
+          "name": "性犯罪者の現状",
+          "url": "https://www.moj.go.jp/content/001324318.pdf"
+        },
+        {
+          "name": "刑事弁護人の立場から見た各論点への懸念",
+          "url": "https://www.moj.go.jp/content/001324319.pdf"
         }
       ]
     },
@@ -436227,6 +437801,104 @@
         {
           "name": "議事概要",
           "url": "https://www.soumu.go.jp/main_content/000865314.pdf"
+        }
+      ]
+    },
+    {
+      "id": "moj-seihanzai_keijihou-20200622-002",
+      "councilId": "moj-seihanzai_keijihou",
+      "name": "第2回会議",
+      "date": "2020/06/22",
+      "round": 2,
+      "officialUrl": "https://www.moj.go.jp/keiji1/keiji12_00028.html",
+      "materials": [
+        {
+          "name": "議事次第",
+          "url": "https://www.moj.go.jp/content/001324334.pdf"
+        },
+        {
+          "name": "議事次第 議事録",
+          "url": "https://www.moj.go.jp/content/001324759.txt"
+        },
+        {
+          "name": "議事次第 議事録",
+          "url": "https://www.moj.go.jp/content/001324760.pdf"
+        },
+        {
+          "name": "ヒアリング出席者名簿",
+          "url": "https://www.moj.go.jp/content/001324413.pdf"
+        },
+        {
+          "name": "ヒアリング出席者略歴等",
+          "url": "https://www.moj.go.jp/content/001324411.pdf"
+        },
+        {
+          "name": "性犯罪・性暴力対策の強化の方針(令和2年6月11日性犯罪・性暴力対策強化のための関係府省会議決定)",
+          "url": "https://www.moj.go.jp/content/001324385.pdf"
+        },
+        {
+          "name": "性犯罪刑事法の見直しについて(令和元年6月13日立憲民主党)",
+          "url": "https://www.moj.go.jp/content/001324386.pdf"
+        },
+        {
+          "name": "性犯罪・性暴力対策の抜本的強化を求める緊急提言(令和2年6月5日自由民主党政務調査会)",
+          "url": "https://www.moj.go.jp/content/001324387.pdf"
+        },
+        {
+          "name": "性犯罪・性暴力対策の抜本的強化に関する提言(令和2年6月5日公明党男女共同参画社会推進本部,内閣部会,法務部会,ストーカー・DV・性暴力等対策推進PT)",
+          "url": "https://www.moj.go.jp/content/001324388.pdf"
+        },
+        {
+          "name": "男性の性暴力被害について",
+          "url": "https://www.moj.go.jp/content/001324393.pdf"
+        },
+        {
+          "name": "LGBTIQAの性被害",
+          "url": "https://www.moj.go.jp/content/001324394.pdf"
+        },
+        {
+          "name": "事前質問への回答",
+          "url": "https://www.moj.go.jp/content/001324395.pdf"
+        },
+        {
+          "name": "LGBTIQA性暴力サバイバーズGUIDE",
+          "url": "https://www.moj.go.jp/content/001324397.pdf"
+        },
+        {
+          "name": "性犯罪に関する刑法改正への要望",
+          "url": "https://www.moj.go.jp/content/001324398.pdf"
+        },
+        {
+          "name": "ゲイ・バイセクシュアル男性における性暴力被害の生涯経験割合",
+          "url": "https://www.moj.go.jp/content/001324399.pdf"
+        },
+        {
+          "name": "DV・性暴力被害経験率",
+          "url": "https://www.moj.go.jp/content/001324400.pdf"
+        },
+        {
+          "name": "Prevalence of Sexual Victimization and Correlates of Forced Sex in Japanese Men Who Have Sex with Men",
+          "url": "https://www.moj.go.jp/content/001324401.pdf"
+        },
+        {
+          "name": "子どもの性被害",
+          "url": "https://www.moj.go.jp/content/001324402.pdf"
+        },
+        {
+          "name": "心理学的知見に基づく子どもの供述特性と司法面接",
+          "url": "https://www.moj.go.jp/content/001324405.pdf"
+        },
+        {
+          "name": "NICHDプロトコルにもとづく司法面接の最小限の手続き(2010.10-2018.11)",
+          "url": "https://www.moj.go.jp/content/001324406.pdf"
+        },
+        {
+          "name": "話さない子どもに配慮したNICHDプロトコルにもとづく司法面接の最小限の手続き(2018.11-2020.06)",
+          "url": "https://www.moj.go.jp/content/001324407.pdf"
+        },
+        {
+          "name": "付録1:被害が疑われる場合の面接手続き,付録2:目撃が疑われる場合の面接手続き,付録3:加害・違反が疑われる場合の面接手続き",
+          "url": "https://www.moj.go.jp/content/001324408.pdf"
         }
       ]
     },
@@ -437715,6 +439387,68 @@
         {
           "name": "議事概要",
           "url": "https://www.soumu.go.jp/main_content/000699064.pdf"
+        }
+      ]
+    },
+    {
+      "id": "moj-seihanzai_keijihou-20200604-001",
+      "councilId": "moj-seihanzai_keijihou",
+      "name": "第1回会議",
+      "date": "2020/06/04",
+      "round": 1,
+      "officialUrl": "https://www.moj.go.jp/keiji1/keiji12_00026.html",
+      "materials": [
+        {
+          "name": "議事次第",
+          "url": "https://www.moj.go.jp/content/001323993.pdf"
+        },
+        {
+          "name": "議事次第 議事録",
+          "url": "https://www.moj.go.jp/content/001323994.txt"
+        },
+        {
+          "name": "議事次第 議事録",
+          "url": "https://www.moj.go.jp/content/001323995.pdf"
+        },
+        {
+          "name": "刑法の一部を改正する法律(平成29年法律第72号)附則第9条並びに同法律案に対する衆議院法務委員会及び参議院法務委員会における附帯決議",
+          "url": "https://www.moj.go.jp/content/001323982.pdf"
+        },
+        {
+          "name": "平成29年刑法改正に至るまでの検討経緯",
+          "url": "https://www.moj.go.jp/content/001323983.pdf"
+        },
+        {
+          "name": "「性犯罪の罰則に関する検討会」取りまとめ報告書",
+          "url": "https://www.moj.go.jp/content/001323984.pdf"
+        },
+        {
+          "name": "刑法の一部を改正する法律の概要(平成29年7月13日施行)",
+          "url": "https://www.moj.go.jp/content/001323985.pdf"
+        },
+        {
+          "name": "性犯罪に関する施策検討に向けた実態調査ワーキンググループ取りまとめ報告書概要",
+          "url": "https://www.moj.go.jp/content/001323986.pdf"
+        },
+        {
+          "name": "性犯罪に関する施策検討に向けた実態調査ワーキンググループ取りまとめ報告書",
+          "url": "https://www.moj.go.jp/content/001323987.pdf"
+        },
+        {
+          "name": "平成29年刑法改正後の規定の施行状況についての調査結果等",
+          "url": "https://www.moj.go.jp/content/001323988.pdf"
+        },
+        {
+          "name": "性犯罪の量刑に関する資料(平成11年~令和元年)",
+          "url": "https://www.moj.go.jp/content/001323989.pdf"
+        },
+        {
+          "name": "諸外国の性犯罪関連規定(仮訳)",
+          "url": "https://www.moj.go.jp/content/001323990.pdf"
+        },
+        {
+          "name": "国連の各人権委員会による性犯罪の罰則等に関する最終見解等(概要)",
+          "url": "https://www.moj.go.jp/content/001323992.pdf"
         }
       ]
     },
@@ -483518,6 +485252,28 @@
       ]
     },
     {
+      "id": "moj-kousei_hogo_yuushikisha-20190312-008",
+      "councilId": "moj-kousei_hogo_yuushikisha",
+      "name": "これからの更生保護事業に関する有識者検討会第8回会議",
+      "date": "2019/03/12",
+      "round": 8,
+      "officialUrl": "https://www.moj.go.jp/hogo1/soumu/hogo12_00016.html",
+      "materials": [
+        {
+          "name": "議事録",
+          "url": "https://www.moj.go.jp/content/001290834.pdf"
+        },
+        {
+          "name": "提言書",
+          "url": "https://www.moj.go.jp/content/001290833.pdf"
+        },
+        {
+          "name": "提言概要",
+          "url": "https://www.moj.go.jp/content/001298054.pdf"
+        }
+      ]
+    },
+    {
       "id": "cao-293-20190311-032",
       "councilId": "cao-293",
       "name": "第32回 Pitch to the Minister 懇談会 “HIRAI Pitch”（Open Innovation for SDGs）",
@@ -488384,6 +490140,20 @@
           "name": "議事録",
           "url": "https://www.mhlw.go.jp/stf/newpage_05279.html",
           "type": "HTML"
+        }
+      ]
+    },
+    {
+      "id": "moj-kousei_hogo_yuushikisha-20190128-007",
+      "councilId": "moj-kousei_hogo_yuushikisha",
+      "name": "これからの更生保護事業に関する有識者検討会第7回会議",
+      "date": "2019/01/28",
+      "round": 7,
+      "officialUrl": "https://www.moj.go.jp/hogo1/soumu/hogo12_00015.html",
+      "materials": [
+        {
+          "name": "議事録",
+          "url": "https://www.moj.go.jp/content/001290829.pdf"
         }
       ]
     },
@@ -493793,6 +495563,24 @@
       ]
     },
     {
+      "id": "moj-kousei_hogo_yuushikisha-20181116-006",
+      "councilId": "moj-kousei_hogo_yuushikisha",
+      "name": "これからの更生保護事業に関する有識者検討会第6回会議",
+      "date": "2018/11/16",
+      "round": 6,
+      "officialUrl": "https://www.moj.go.jp/hogo1/soumu/hogo12_00014.html",
+      "materials": [
+        {
+          "name": "議事録",
+          "url": "https://www.moj.go.jp/content/001283963.pdf"
+        },
+        {
+          "name": "これからの更生保護事業に関する有識者検討会第6回会議 配付資料",
+          "url": "https://www.moj.go.jp/content/001283964.pdf"
+        }
+      ]
+    },
+    {
       "id": "cao-293-20181115-006",
       "councilId": "cao-293",
       "name": "第6回 Pitch to the Minister 懇談会 “HIRAI Pitch”（完全自動運転がもたらす社会変革と新産業創出）",
@@ -496940,6 +498728,24 @@
       ]
     },
     {
+      "id": "moj-kousei_hogo_yuushikisha-20181015-005",
+      "councilId": "moj-kousei_hogo_yuushikisha",
+      "name": "これからの更生保護事業に関する有識者検討会第5回会議",
+      "date": "2018/10/15",
+      "round": 5,
+      "officialUrl": "https://www.moj.go.jp/hogo1/soumu/hogo12_00012.html",
+      "materials": [
+        {
+          "name": "議事録",
+          "url": "https://www.moj.go.jp/content/001278880.pdf"
+        },
+        {
+          "name": "これからの更生保護事業に関する有識者検討会第5回会議 配付資料",
+          "url": "https://www.moj.go.jp/content/001278881.pdf"
+        }
+      ]
+    },
+    {
       "id": "mic-eisei_tsusin_iinkai-20181012-035",
       "councilId": "mic-eisei_tsusin_iinkai",
       "name": "情報通信審議会 情報通信技術分科会 衛星通信システム委員会（第35回）（2018年10月12日開催）",
@@ -499885,6 +501691,24 @@
         {
           "name": "参考資料2 小笠原諸島の振興開発について(平成30年8月28日)(小笠原諸島振興開発審議会意見具申)",
           "url": "https://www.mlit.go.jp/policy/shingikai/content/001618632.pdf"
+        }
+      ]
+    },
+    {
+      "id": "moj-kousei_hogo_yuushikisha-20180828-004",
+      "councilId": "moj-kousei_hogo_yuushikisha",
+      "name": "これからの更生保護事業に関する有識者検討会第4回会議",
+      "date": "2018/08/28",
+      "round": 4,
+      "officialUrl": "https://www.moj.go.jp/hogo1/soumu/hogo12_00008.html",
+      "materials": [
+        {
+          "name": "議事録",
+          "url": "https://www.moj.go.jp/content/001272355.pdf"
+        },
+        {
+          "name": "これからの更生保護事業に関する有識者検討会第4回会議 配付資料",
+          "url": "https://www.moj.go.jp/content/001272357.pdf"
         }
       ]
     },
@@ -502933,6 +504757,24 @@
       ]
     },
     {
+      "id": "moj-kousei_hogo_yuushikisha-20180625-003",
+      "councilId": "moj-kousei_hogo_yuushikisha",
+      "name": "これからの更生保護事業に関する有識者検討会第3回会議",
+      "date": "2018/06/25",
+      "round": 3,
+      "officialUrl": "https://www.moj.go.jp/hogo1/soumu/hogo12_00006.html",
+      "materials": [
+        {
+          "name": "議事録",
+          "url": "https://www.moj.go.jp/content/001268679.pdf"
+        },
+        {
+          "name": "これからの更生保護事業に関する有識者検討会第3回会議 配付資料",
+          "url": "https://www.moj.go.jp/content/001268616.pdf"
+        }
+      ]
+    },
+    {
       "id": "rinya-1279-20180625-010",
       "councilId": "rinya-1279",
       "name": "第10回 国立研究開発法人審議会 林野部会",
@@ -505374,6 +507216,24 @@
       ]
     },
     {
+      "id": "moj-kousei_hogo_yuushikisha-20180530-002",
+      "councilId": "moj-kousei_hogo_yuushikisha",
+      "name": "これからの更生保護事業に関する有識者検討会第2回会議",
+      "date": "2018/05/30",
+      "round": 2,
+      "officialUrl": "https://www.moj.go.jp/hogo1/soumu/hogo12_00005.html",
+      "materials": [
+        {
+          "name": "議事録",
+          "url": "https://www.moj.go.jp/content/001264445.pdf"
+        },
+        {
+          "name": "これからの更生保護事業に関する有識者検討会第2回会議 配付資料",
+          "url": "https://www.moj.go.jp/content/001264444.pdf"
+        }
+      ]
+    },
+    {
       "id": "cas-kenkou_iryou_honbu-20180529-021",
       "councilId": "cas-kenkou_iryou_honbu",
       "name": "第21回 健康・医療戦略推進本部",
@@ -506795,6 +508655,32 @@
         {
           "name": "利用者が接続する端末設備等の接続の技術基準について（第37回IPネットワーク設備委員会資料）",
           "url": "https://www.soumu.go.jp/main_content/000551577.pdf"
+        }
+      ]
+    },
+    {
+      "id": "moj-kousei_hogo_yuushikisha-20180510-001",
+      "councilId": "moj-kousei_hogo_yuushikisha",
+      "name": "これからの更生保護事業に関する有識者検討会第1回会議",
+      "date": "2018/05/10",
+      "round": 1,
+      "officialUrl": "https://www.moj.go.jp/hogo1/soumu/hogo12_00004.html",
+      "materials": [
+        {
+          "name": "議事録",
+          "url": "https://www.moj.go.jp/content/001260820.pdf"
+        },
+        {
+          "name": "別添1 別添2 事務局提出資料",
+          "url": "https://www.moj.go.jp/content/001260822.pdf"
+        },
+        {
+          "name": "別添1 別添2 事務局提出資料",
+          "url": "https://www.moj.go.jp/content/001260823.pdf"
+        },
+        {
+          "name": "事務局提出資料",
+          "url": "https://www.moj.go.jp/content/001260821.pdf"
         }
       ]
     },
@@ -575650,6 +577536,32 @@
       ]
     },
     {
+      "id": "moj-seihanzai_bassoku-20150806-012",
+      "councilId": "moj-seihanzai_bassoku",
+      "name": "第12回",
+      "date": "2015/08/06",
+      "round": 12,
+      "officialUrl": "https://www.moj.go.jp/keiji1/keiji12_00117.html",
+      "materials": [
+        {
+          "name": "議事次第",
+          "url": "https://www.moj.go.jp/content/001154615.pdf"
+        },
+        {
+          "name": "「性犯罪の罰則に関する検討会」取りまとめ報告書【案】",
+          "url": "https://www.moj.go.jp/content/001154848.pdf"
+        },
+        {
+          "name": "「性犯罪の罰則に関する検討会」取りまとめ報告書【案】",
+          "url": "https://www.moj.go.jp/content/001154849.pdf"
+        },
+        {
+          "name": "議事録",
+          "url": "https://www.moj.go.jp/content/001157915.pdf"
+        }
+      ]
+    },
+    {
       "id": "fsc-tenkabutu-20150805-145",
       "councilId": "fsc-tenkabutu",
       "name": "第145回 添加物専門調査会",
@@ -577446,6 +579358,32 @@
         {
           "name": "第6回議事録",
           "url": "https://www.soumu.go.jp/main_content/000391263.pdf"
+        }
+      ]
+    },
+    {
+      "id": "moj-seihanzai_bassoku-20150710-011",
+      "councilId": "moj-seihanzai_bassoku",
+      "name": "第11回",
+      "date": "2015/07/10",
+      "round": 11,
+      "officialUrl": "https://www.moj.go.jp/keiji1/keiji12_00116.html",
+      "materials": [
+        {
+          "name": "議事次第",
+          "url": "https://www.moj.go.jp/content/001152224.pdf"
+        },
+        {
+          "name": "自由民主党女性活躍推進本部 提言(平成27年6月9日)",
+          "url": "https://www.moj.go.jp/content/001152225.pdf"
+        },
+        {
+          "name": "「性犯罪の罰則に関する検討会」取りまとめ報告書【案】",
+          "url": "https://www.moj.go.jp/content/001152245.pdf"
+        },
+        {
+          "name": "議事録",
+          "url": "https://www.moj.go.jp/content/001155905.pdf"
         }
       ]
     },
@@ -580627,6 +582565,24 @@
       ]
     },
     {
+      "id": "moj-seihanzai_bassoku-20150528-010",
+      "councilId": "moj-seihanzai_bassoku",
+      "name": "第10回",
+      "date": "2015/05/28",
+      "round": 10,
+      "officialUrl": "https://www.moj.go.jp/keiji1/keiji12_00114.html",
+      "materials": [
+        {
+          "name": "議事次第",
+          "url": "https://www.moj.go.jp/content/001148081.pdf"
+        },
+        {
+          "name": "議事録",
+          "url": "https://www.moj.go.jp/content/001152134.pdf"
+        }
+      ]
+    },
+    {
       "id": "meti-sankoshin_tsusho_boeki_fukosei_boeki-20150527-035",
       "councilId": "meti-sankoshin_tsusho_boeki_fukosei_boeki",
       "name": "第35回 産業構造審議会 通商・貿易分科会 不公正貿易政策・措置調査小委員会",
@@ -582105,6 +584061,36 @@
         {
           "name": "議事要旨(PDF/107KB)",
           "url": "https://www.cas.go.jp/jp/seisaku/naikakuhozenkansi/dai2/gijiyousi.pdf"
+        }
+      ]
+    },
+    {
+      "id": "moj-seihanzai_bassoku-20150424-009",
+      "councilId": "moj-seihanzai_bassoku",
+      "name": "第9回",
+      "date": "2015/04/24",
+      "round": 9,
+      "officialUrl": "https://www.moj.go.jp/keiji1/keiji12_00112.html",
+      "materials": [
+        {
+          "name": "議事次第",
+          "url": "https://www.moj.go.jp/content/001144891.pdf"
+        },
+        {
+          "name": "罪名別被害者年齢別起訴件数等",
+          "url": "https://www.moj.go.jp/content/001144892.pdf"
+        },
+        {
+          "name": "青少年の性行動に関する調査結果について",
+          "url": "https://www.moj.go.jp/content/001144893.pdf"
+        },
+        {
+          "name": "平成26年中の出会い系サイト及びコミュニティサイトに起因する事犯の現状と対策について",
+          "url": "https://www.moj.go.jp/content/001144894.pdf"
+        },
+        {
+          "name": "議事録",
+          "url": "https://www.moj.go.jp/content/001149602.pdf"
         }
       ]
     },
@@ -584965,6 +586951,32 @@
       ]
     },
     {
+      "id": "moj-seihanzai_bassoku-20150317-008",
+      "councilId": "moj-seihanzai_bassoku",
+      "name": "第8回",
+      "date": "2015/03/17",
+      "round": 8,
+      "officialUrl": "https://www.moj.go.jp/keiji1/keiji12_00110.html",
+      "materials": [
+        {
+          "name": "議事次第",
+          "url": "https://www.moj.go.jp/content/001141002.pdf"
+        },
+        {
+          "name": "ドイツ性犯罪関連条文和訳(仮訳)",
+          "url": "https://www.moj.go.jp/content/001141003.pdf"
+        },
+        {
+          "name": "精神医学・心理学の領域における性被害の質問項目から見た性交類似行為,およびその精神的反応",
+          "url": "https://www.moj.go.jp/content/001141829.pdf"
+        },
+        {
+          "name": "議事録",
+          "url": "https://www.moj.go.jp/content/001143833.pdf"
+        }
+      ]
+    },
+    {
       "id": "aca-bunka_shingikai_sokai-20150316-063",
       "councilId": "aca-bunka_shingikai_sokai",
       "name": "第63回 文化審議会 総会",
@@ -586099,6 +588111,52 @@
       ]
     },
     {
+      "id": "moj-seihanzai_bassoku-20150227-007",
+      "councilId": "moj-seihanzai_bassoku",
+      "name": "第7回",
+      "date": "2015/02/27",
+      "round": 7,
+      "officialUrl": "https://www.moj.go.jp/keiji1/keiji12_00107.html",
+      "materials": [
+        {
+          "name": "議事次第",
+          "url": "https://www.moj.go.jp/content/001137761.pdf"
+        },
+        {
+          "name": "諸外国の性犯罪及び強盗罪等の法定刑に関する資料",
+          "url": "https://www.moj.go.jp/content/001137762.pdf"
+        },
+        {
+          "name": "性犯罪及び強盗罪等の法定刑に関する資料",
+          "url": "https://www.moj.go.jp/content/001137763.pdf"
+        },
+        {
+          "name": "性犯罪の法定刑に関する改正経過等",
+          "url": "https://www.moj.go.jp/content/001137764.pdf"
+        },
+        {
+          "name": "強姦罪及び強盗罪等の量刑に関する資料",
+          "url": "https://www.moj.go.jp/content/001137765.pdf"
+        },
+        {
+          "name": "強盗強姦罪が設けられた歴史的経緯等",
+          "url": "https://www.moj.go.jp/content/001137766.pdf"
+        },
+        {
+          "name": "性犯罪に関する規定の位置に関する諸外国の法制度の概要",
+          "url": "https://www.moj.go.jp/content/001137767.pdf"
+        },
+        {
+          "name": "強姦罪と強盗罪の科刑状況",
+          "url": "https://www.moj.go.jp/content/001137951.pdf"
+        },
+        {
+          "name": "議事録",
+          "url": "https://www.moj.go.jp/content/001140999.pdf"
+        }
+      ]
+    },
+    {
       "id": "mhlw-2876-20150226-013",
       "councilId": "mhlw-2876",
       "name": "第13回 肝炎対策推進協議会",
@@ -586989,6 +589047,56 @@
           "name": "議事録",
           "url": "https://www.mhlw.go.jp/stf/shingi2/0000079734.html",
           "type": "HTML"
+        }
+      ]
+    },
+    {
+      "id": "moj-seihanzai_bassoku-20150212-006",
+      "councilId": "moj-seihanzai_bassoku",
+      "name": "第6回",
+      "date": "2015/02/12",
+      "round": 6,
+      "officialUrl": "https://www.moj.go.jp/keiji1/keiji12_00105.html",
+      "materials": [
+        {
+          "name": "議事次第",
+          "url": "https://www.moj.go.jp/content/001132253.pdf"
+        },
+        {
+          "name": "性犯罪における暴行・脅迫要件に関する主要国の法制度の概要等",
+          "url": "https://www.moj.go.jp/content/001132254.pdf"
+        },
+        {
+          "name": "強姦罪における暴行・脅迫の程度に関する裁判例",
+          "url": "https://www.moj.go.jp/content/001132266.pdf"
+        },
+        {
+          "name": "準強姦罪・準強制わいせつ罪における抗拒不能に関する裁判例",
+          "url": "https://www.moj.go.jp/content/001132255.pdf"
+        },
+        {
+          "name": "地位・関係性を利用した性的行為に関する主要国の法制度の概要等",
+          "url": "https://www.moj.go.jp/content/001132267.pdf"
+        },
+        {
+          "name": "地位・関係性を利用した性的行為に関する議論の経緯等",
+          "url": "https://www.moj.go.jp/content/001132260.pdf"
+        },
+        {
+          "name": "いわゆる性交同意年齢に関する主要国の法制度の概要等",
+          "url": "https://www.moj.go.jp/content/001132261.pdf"
+        },
+        {
+          "name": "いわゆる性交同意年齢に関する議論の経緯等",
+          "url": "https://www.moj.go.jp/content/001132263.pdf"
+        },
+        {
+          "name": "参照条文(特別法)",
+          "url": "https://www.moj.go.jp/content/001132264.pdf"
+        },
+        {
+          "name": "議事録",
+          "url": "https://www.moj.go.jp/content/001138926.pdf"
         }
       ]
     },
@@ -587966,6 +590074,32 @@
         {
           "name": "第27回 議事録",
           "url": "https://www.mhlw.go.jp/stf/shingi2/0000144671.html"
+        }
+      ]
+    },
+    {
+      "id": "moj-seihanzai_bassoku-20150129-005",
+      "councilId": "moj-seihanzai_bassoku",
+      "name": "第5回",
+      "date": "2015/01/29",
+      "round": 5,
+      "officialUrl": "https://www.moj.go.jp/keiji1/keiji12_00104.html",
+      "materials": [
+        {
+          "name": "議事次第",
+          "url": "https://www.moj.go.jp/content/001131754.pdf"
+        },
+        {
+          "name": "強姦罪の主体等及び性交類似行為に関する主要国の法制度の概要",
+          "url": "https://www.moj.go.jp/content/001131752.pdf"
+        },
+        {
+          "name": "強姦罪と強制わいせつ罪が区別された歴史的経緯等について",
+          "url": "https://www.moj.go.jp/content/001131753.pdf"
+        },
+        {
+          "name": "議事録",
+          "url": "https://www.moj.go.jp/content/001137753.pdf"
         }
       ]
     },
@@ -589848,6 +591982,120 @@
         {
           "name": "電波利用環境委員会運営方法",
           "url": "https://www.soumu.go.jp/main_content/000344049.pdf"
+        }
+      ]
+    },
+    {
+      "id": "moj-seihanzai_bassoku-20141224-004",
+      "councilId": "moj-seihanzai_bassoku",
+      "name": "第4回",
+      "date": "2014/12/24",
+      "round": 4,
+      "officialUrl": "https://www.moj.go.jp/keiji1/keiji12_00097.html",
+      "materials": [
+        {
+          "name": "議事次第",
+          "url": "https://www.moj.go.jp/content/001130482.pdf"
+        },
+        {
+          "name": "性犯罪の罰則の在り方に関する論点整理(案)",
+          "url": "https://www.moj.go.jp/content/001130483.pdf"
+        },
+        {
+          "name": "性犯罪の罰則に関する検討会・今後の検討予定について(案)",
+          "url": "https://www.moj.go.jp/content/001130484.pdf"
+        },
+        {
+          "name": "男女間における暴力に関する調査報告書(内閣府男女共同参画局)",
+          "url": "https://www.moj.go.jp/content/001130485.pdf"
+        },
+        {
+          "name": "ミシガン州性犯罪関連条文和訳(仮訳)",
+          "url": "https://www.moj.go.jp/content/001130486.pdf"
+        },
+        {
+          "name": "ニューヨーク州性犯罪関連条文和訳(仮訳)",
+          "url": "https://www.moj.go.jp/content/001130546.pdf"
+        },
+        {
+          "name": "カリフォルニア州刑法(抄)(仮訳)",
+          "url": "https://www.moj.go.jp/content/001130487.pdf"
+        },
+        {
+          "name": "イギリス性犯罪関連条文和訳(仮訳)",
+          "url": "https://www.moj.go.jp/content/001130488.pdf"
+        },
+        {
+          "name": "フランス性犯罪関連条文和訳(仮訳)",
+          "url": "https://www.moj.go.jp/content/001130489.pdf"
+        },
+        {
+          "name": "ドイツ性犯罪関連条文和訳(仮訳)",
+          "url": "https://www.moj.go.jp/content/001130490.pdf"
+        },
+        {
+          "name": "韓国性犯罪関連条文和訳(仮訳)",
+          "url": "https://www.moj.go.jp/content/001130491.pdf"
+        },
+        {
+          "name": "性犯罪の親告罪に関する主要国の法制度の概要",
+          "url": "https://www.moj.go.jp/content/001130492.pdf"
+        },
+        {
+          "name": "性犯罪が親告罪とされた理由等について",
+          "url": "https://www.moj.go.jp/content/001130493.pdf"
+        },
+        {
+          "name": "警察における性犯罪の認知・検挙件数の推移(昭和26年~平成25年)",
+          "url": "https://www.moj.go.jp/content/001130506.pdf"
+        },
+        {
+          "name": "性犯罪における親告罪と非親告罪の類型について",
+          "url": "https://www.moj.go.jp/content/001130507.pdf"
+        },
+        {
+          "name": "現行法において親告罪とされている罪名について",
+          "url": "https://www.moj.go.jp/content/001130508.pdf"
+        },
+        {
+          "name": "親告罪の不起訴理由等に関する統計",
+          "url": "https://www.moj.go.jp/content/001130509.pdf"
+        },
+        {
+          "name": "低年齢であることを理由として告訴能力の有無が問題となった事例",
+          "url": "https://www.moj.go.jp/content/001130510.pdf"
+        },
+        {
+          "name": "性犯罪の公訴時効に関する主要国の法制度の概要",
+          "url": "https://www.moj.go.jp/content/001130511.pdf"
+        },
+        {
+          "name": "性犯罪の公訴時効期間及び改正経緯",
+          "url": "https://www.moj.go.jp/content/001130512.pdf"
+        },
+        {
+          "name": "いわゆる性犯罪の配偶者規定に関する主要国の法制度の概要等",
+          "url": "https://www.moj.go.jp/content/001130513.pdf"
+        },
+        {
+          "name": "配偶者間での強姦を成立させた裁判例等",
+          "url": "https://www.moj.go.jp/content/001130514.pdf"
+        },
+        {
+          "name": "「夫婦間の性暴力は強姦か」の論議に向けて~SACHICO 4年間の実態報告~",
+          "url": "https://www.moj.go.jp/content/001130516.pdf"
+        },
+        {
+          "name": "男女共同参画白書 平成26年版(内閣府男女共同参画局)(抜粋)",
+          "url": "https://www.moj.go.jp/content/001130517.pdf"
+        },
+        {
+          "name": "釧路PTSD訴訟原告からの要望書",
+          "url": "https://www.moj.go.jp/content/001130518.pdf"
+        },
+        {
+          "name": "議事録",
+          "url": "https://www.moj.go.jp/content/001131747.pdf"
         }
       ]
     },
@@ -591742,6 +593990,56 @@
       "materials": []
     },
     {
+      "id": "moj-seihanzai_bassoku-20141128-003",
+      "councilId": "moj-seihanzai_bassoku",
+      "name": "第3回",
+      "date": "2014/11/28",
+      "round": 3,
+      "officialUrl": "https://www.moj.go.jp/keiji1/keiji12_00095.html",
+      "materials": [
+        {
+          "name": "議事次第",
+          "url": "https://www.moj.go.jp/content/001129660.pdf"
+        },
+        {
+          "name": "ヒアリング出席者名簿",
+          "url": "https://www.moj.go.jp/content/001129369.pdf"
+        },
+        {
+          "name": "性犯罪規定の見直しについて",
+          "url": "https://www.moj.go.jp/content/001129661.pdf"
+        },
+        {
+          "name": "性犯罪の罰則の在り方に関する私見-フランス刑法を参考として",
+          "url": "https://www.moj.go.jp/content/001129662.pdf"
+        },
+        {
+          "name": "性犯罪の罰則の在り方に関する論点について",
+          "url": "https://www.moj.go.jp/content/001129663.pdf"
+        },
+        {
+          "name": "性犯罪の罰則の在り方に関する論点(案)について",
+          "url": "https://www.moj.go.jp/content/001129664.pdf"
+        },
+        {
+          "name": "トランスジェンダーへの性暴力に係る意見",
+          "url": "https://www.moj.go.jp/content/001129665.pdf"
+        },
+        {
+          "name": "二度と加害をしない人生を歩む 被害者にも加害者にもならない社会へ",
+          "url": "https://www.moj.go.jp/content/001129666.pdf"
+        },
+        {
+          "name": "性犯罪の罰則の在り方に関する論点(案)への意見",
+          "url": "https://www.moj.go.jp/content/001129667.pdf"
+        },
+        {
+          "name": "議事録",
+          "url": "https://www.moj.go.jp/content/001131746.pdf"
+        }
+      ]
+    },
+    {
       "id": "cao-kyoujo_shakai-20141127-s02",
       "councilId": "cao-kyoujo_shakai",
       "name": "共助社会づくり懇談会メンバーによる意見交換会 開催状況 | NPOホームページ",
@@ -592655,6 +594953,52 @@
         {
           "name": "陸上無線通信委員会運営方針",
           "url": "https://www.soumu.go.jp/main_content/000325921.pdf"
+        }
+      ]
+    },
+    {
+      "id": "moj-seihanzai_bassoku-20141121-002",
+      "councilId": "moj-seihanzai_bassoku",
+      "name": "第2回",
+      "date": "2014/11/21",
+      "round": 2,
+      "officialUrl": "https://www.moj.go.jp/keiji1/keiji12_00093.html",
+      "materials": [
+        {
+          "name": "議事次第",
+          "url": "https://www.moj.go.jp/content/001129368.pdf"
+        },
+        {
+          "name": "ヒアリング出席者名簿",
+          "url": "https://www.moj.go.jp/content/001129369.pdf"
+        },
+        {
+          "name": "性犯罪加害者対策の現状と課題",
+          "url": "https://www.moj.go.jp/content/001129370.pdf"
+        },
+        {
+          "name": "性犯罪の罰則に関する検討会~犯罪(心理)学からの知恵",
+          "url": "https://www.moj.go.jp/content/001129371.pdf"
+        },
+        {
+          "name": "性犯罪の罰則の在り方に関する論点(案)への意見",
+          "url": "https://www.moj.go.jp/content/001129372.pdf"
+        },
+        {
+          "name": "私たちが求める「性暴力禁止法」論点整理",
+          "url": "https://www.moj.go.jp/content/001129373.pdf"
+        },
+        {
+          "name": "性犯罪の罰則を見直す必要性",
+          "url": "https://www.moj.go.jp/content/001129374.pdf"
+        },
+        {
+          "name": "暴行・脅迫が認定されず無罪となった裁判例",
+          "url": "https://www.moj.go.jp/content/001129375.pdf"
+        },
+        {
+          "name": "議事録",
+          "url": "https://www.moj.go.jp/content/001130239.pdf"
         }
       ]
     },
@@ -594140,6 +596484,52 @@
         {
           "name": "議事録",
           "url": "https://www.soumu.go.jp/main_content/000332127.pdf"
+        }
+      ]
+    },
+    {
+      "id": "moj-seihanzai_bassoku-20141031-001",
+      "councilId": "moj-seihanzai_bassoku",
+      "name": "第1回",
+      "date": "2014/10/31",
+      "round": 1,
+      "officialUrl": "https://www.moj.go.jp/keiji1/keiji12_00091.html",
+      "materials": [
+        {
+          "name": "議事次第",
+          "url": "https://www.moj.go.jp/content/001128090.pdf"
+        },
+        {
+          "name": "委員名簿",
+          "url": "https://www.moj.go.jp/content/001152181.pdf"
+        },
+        {
+          "name": "性犯罪の罰則の在り方に関する論点(案)",
+          "url": "https://www.moj.go.jp/content/001128042.pdf"
+        },
+        {
+          "name": "参照条文",
+          "url": "https://www.moj.go.jp/content/001128043.pdf"
+        },
+        {
+          "name": "第3次男女共同参画基本計画(抜粋)",
+          "url": "https://www.moj.go.jp/content/001128044.pdf"
+        },
+        {
+          "name": "男女共同参画会議・女性に対する暴力に関する専門調査会による報告書(「女性に対する暴力」を根絶するための課題と対策~性犯罪への対策の推進~)(抜粋)",
+          "url": "https://www.moj.go.jp/content/001128045.pdf"
+        },
+        {
+          "name": "平成16年及び平成22年刑法等改正の概要(附帯決議を含む)",
+          "url": "https://www.moj.go.jp/content/001128046.pdf"
+        },
+        {
+          "name": "国連の各人権委員会による性犯罪の罰則等に関する最終見解",
+          "url": "https://www.moj.go.jp/content/001128047.pdf"
+        },
+        {
+          "name": "議事録",
+          "url": "https://www.moj.go.jp/content/001129119.pdf"
         }
       ]
     },
@@ -631339,6 +633729,36 @@
       ]
     },
     {
+      "id": "moj-housei_shonenhou-20130128-004",
+      "councilId": "moj-housei_shonenhou",
+      "name": "法制審議会少年法部会 第4回会議",
+      "date": "2013/01/28",
+      "round": 4,
+      "officialUrl": "https://www.moj.go.jp/shingi1/shingi06100043.html",
+      "materials": [
+        {
+          "name": "諮問第95号",
+          "url": "https://www.moj.go.jp/content/000102994.pdf"
+        },
+        {
+          "name": "事務局試案",
+          "url": "https://www.moj.go.jp/content/000105133.pdf"
+        },
+        {
+          "name": "TXT版",
+          "url": "https://www.moj.go.jp/content/000107824.txt"
+        },
+        {
+          "name": "PDF版",
+          "url": "https://www.moj.go.jp/content/000107823.pdf"
+        },
+        {
+          "name": "要綱(骨子)「第二」に関する意見",
+          "url": "https://www.moj.go.jp/content/000106888.pdf"
+        }
+      ]
+    },
+    {
       "id": "fsa-kinyu_ginkou_wg-20130125-014",
       "councilId": "fsa-kinyu_ginkou_wg",
       "name": "第14回 金融システム安定等に資する銀行規制等の在り方に関するワーキング・グループ",
@@ -632611,6 +635031,44 @@
         {
           "name": "第5回 障害者政策委員会 議事録",
           "url": "https://www8.cao.go.jp/shougai/suishin/seisaku_iinkai/k_5/gijiroku.html"
+        }
+      ]
+    },
+    {
+      "id": "moj-housei_shonenhou-20121217-003",
+      "councilId": "moj-housei_shonenhou",
+      "name": "法制審議会少年法部会 第3回会議",
+      "date": "2012/12/17",
+      "round": 3,
+      "officialUrl": "https://www.moj.go.jp/shingi1/shingi06100039.html",
+      "materials": [
+        {
+          "name": "TXT版",
+          "url": "https://www.moj.go.jp/content/000106673.txt"
+        },
+        {
+          "name": "PDF版",
+          "url": "https://www.moj.go.jp/content/000106672.pdf"
+        },
+        {
+          "name": "平成14年から平成23年までの間における不定期刑の言渡状況と長期・短期の幅の相関関係",
+          "url": "https://www.moj.go.jp/content/000105132.pdf"
+        },
+        {
+          "name": "事務局試案",
+          "url": "https://www.moj.go.jp/content/000105133.pdf"
+        },
+        {
+          "name": "言い渡し得る長期と短期の関係",
+          "url": "https://www.moj.go.jp/content/000105134.pdf"
+        },
+        {
+          "name": "弁護士会における付添人活動の研修等について",
+          "url": "https://www.moj.go.jp/content/000105135.pdf"
+        },
+        {
+          "name": "須納瀬学委員提出資料 弁護士会における付添人活動の研修等について 武るり子委員提出意見 意見書",
+          "url": "https://www.moj.go.jp/content/000105136.pdf"
         }
       ]
     },
@@ -634761,6 +637219,28 @@
       ]
     },
     {
+      "id": "moj-housei_shonenhou-20121113-002",
+      "councilId": "moj-housei_shonenhou",
+      "name": "法制審議会少年法部会 第2回会議",
+      "date": "2012/11/13",
+      "round": 2,
+      "officialUrl": "https://www.moj.go.jp/shingi1/shingi06100036.html",
+      "materials": [
+        {
+          "name": "TXT版",
+          "url": "https://www.moj.go.jp/content/000105434.txt"
+        },
+        {
+          "name": "PDF版",
+          "url": "https://www.moj.go.jp/content/000105433.pdf"
+        },
+        {
+          "name": "「その他所要の規定の整備」として考えられる検討事項",
+          "url": "https://www.moj.go.jp/content/000104025.pdf"
+        }
+      ]
+    },
+    {
       "id": "cao-282-20121112-008",
       "councilId": "cao-282",
       "name": "第8回 デフレ脱却等経済状況検討会議",
@@ -636509,6 +638989,64 @@
         {
           "name": "第30次地方制度調査会第21回専門小委員会議事録",
           "url": "https://www.soumu.go.jp/main_content/000187689.pdf"
+        }
+      ]
+    },
+    {
+      "id": "moj-housei_shonenhou-20121015-001",
+      "councilId": "moj-housei_shonenhou",
+      "name": "法制審議会少年法部会 第1回会議",
+      "date": "2012/10/15",
+      "round": 1,
+      "officialUrl": "https://www.moj.go.jp/shingi1/shingi06100034.html",
+      "materials": [
+        {
+          "name": "TXT版",
+          "url": "https://www.moj.go.jp/content/000103950.txt"
+        },
+        {
+          "name": "PDF版",
+          "url": "https://www.moj.go.jp/content/000103949.pdf"
+        },
+        {
+          "name": "諮問第95号",
+          "url": "https://www.moj.go.jp/content/000102994.pdf"
+        },
+        {
+          "name": "現行法による国選弁護・国選付添制度の概要",
+          "url": "https://www.moj.go.jp/content/000102995.pdf"
+        },
+        {
+          "name": "少年刑一覧表",
+          "url": "https://www.moj.go.jp/content/000102996.pdf"
+        },
+        {
+          "name": "統計資料",
+          "url": "https://www.moj.go.jp/content/000103033.pdf"
+        },
+        {
+          "name": "参照条文",
+          "url": "https://www.moj.go.jp/content/000102997.pdf"
+        },
+        {
+          "name": "平成20年改正少年法等に関する意見交換会における意見の概要等",
+          "url": "https://www.moj.go.jp/content/000102998.pdf"
+        },
+        {
+          "name": "少年刑に関する裁判例",
+          "url": "https://www.moj.go.jp/content/000104050.pdf"
+        },
+        {
+          "name": "全面的国選付添人制度に関する当面の立法提言",
+          "url": "https://www.moj.go.jp/content/000103000.pdf"
+        },
+        {
+          "name": "統計資料",
+          "url": "https://www.moj.go.jp/content/000103266.pdf"
+        },
+        {
+          "name": "弁護士白書2011年版(抜粋)",
+          "url": "https://www.moj.go.jp/content/000103002.pdf"
         }
       ]
     },
