@@ -1,8 +1,8 @@
 # PMHub 改善・機能実装（Drop）マスタードキュメント (DROPS.md)
 
 > **最終更新**: 2026-10-31  `
-> **最新 Drop**: **Drop 112**（2026-10-31 完了）  `
-> **次期実装予定 Drop**: **Drop 113**（Track [Grand-Portals] 特大規模親組織のインテグレーション または Track [Core-Policy-Filter]）  `
+> **最新 Drop**: **Drop 113**（2026-10-31 完了）  `
+> **次期予定 Drop**: **Drop 114**（Track [Grand-Portals] 特大規模親組織のインテグレーション または Track [Core-Policy-Filter]）  `
 > 
 > 本ドキュメントは、PMHub の継続的改善ロードマップおよび実装記録を一元管理するマスタードキュメントです。  `
 > 今後の構想テーマは **「Track（トラック）」** として管理し、着手・個別実装単位は最新連番を付与した **「Drop（ドロップ）」** として連番アーカイブします。  `
@@ -3352,4 +3352,64 @@ ejected_councils（計420件）へ登録。
     - ケース13: 省庁親ポータルURL設定・探索網羅性検証（各省庁親ポータル設定合格） (0.47s) : PASS
     - ケース14: アクティブ会議体フィルタリング・廃止管理検証（直近2年抽出・廃止マスター合格） (0.99s) : PASS
     - 【単体関数検証 (Unit Tests)】: 全23種合格（連動 23 種類実施 / 6.86s） : PASS
+  ```
+
+---
+
+### Drop 113 (2026-10-31): 内閣府（CAO #done01）および内閣官房（CAS abolition_list）終了・廃止会議体のクロール除外および水際除外ガード配備
+
+- **1. 背景と目的**:
+  - 内閣府（CAO）公式ポータル `https://www.cao.go.jp/council.html#done01`（「終了した会議等（50音順）」）および内閣官房（CAS）公式ポータル `https://www.cas.go.jp/jp/seisaku/abolition_list.html`（「廃止した本部・会議等の一覧」）に掲載されている活動終了・廃止済みの会議体について、マスターDB（`admin/pmhub.db`）およびクローラーの巡回対象から確実に除外し、また新規会議体ディスカバリー（`discover_councils.py`）がこれら公式一覧を走査する際にも終了会議体を拾わない恒久水際ガードを配備すること。
+
+- **2. 実装内容**:
+  1. **マスターDB（`admin/pmhub.db`）の更新（合計34会議体）**:
+     - 内閣府（CAO）`council.html#done01` 掲載の23件（`cao-258` 〜 `cao-292`、`cao-barrier_free_universal` 等）
+     - 内閣官房（CAS）`abolition_list.html` 掲載の11件（`cas-atarashii_shihon_honbu`、`cas-atarashii_shihon_kaigi`、`cas-digital_gyozaikaikaku`、`cao-ai_strategy`、`cas-osaka_kansai_banpaku`、`cas-gyousei_kaikaku`、`cas-keizai_anzen_hosyo`、`cas-kome_anteikyoukyuu`、`cao-contents_kyougikai`、`cas-310`、`cas-tppinfo`）
+     - （※ `cao-282` は両一覧に重複掲載のため1カウント）
+     - 合計34会議体について、`is_closed = 1`（完結済み）、`manual_lock = 1`（手動保護）に更新。現行主要組織（`cao-keizai_shimon`、`cao-cstp` 等）は除外対象外として安全維持。
+  2. **新規会議体ディスカバリー（`admin/discover_councils.py`）の水際除外ガード配備**:
+     - `_discover_normal_for_single_ministry()` において、`page_url` が `cao.go.jp/council.html` の場合に `<h2 id="done01">` 以降のノード（`find_all_next()`）を探索対象から完全に除外。
+     - また、`abolition_list.html` へのリンクや `abolition_list.html` 自体の巡回探索を水際で除外。
+  3. **クローラー（`admin/crawler.py`）の水際除外ガード配備**:
+     - `extract_actual_subpage_links()` において、`target_url` が `cao.go.jp/council.html` の場合に `id="done01"` 以降のリンクを除外、および `abolition_list.html` への遷移探索を水際でスキップ。
+  4. **2系統エクスポート同期**:
+     - `export_data.py` によりマスターDBと `docs/data.json`、`admin/admin_data.json` を完全同期（全34会議体の `isClosed: true` 反映）。
+
+- **3. 影響範囲と次回クロール挙動**:
+  1. **手動登録データの保護挙動**:
+     - 今回更新した34件の会議体には `manualLock: true`（`manual_lock = 1`）が設定され、かつ `isClosed: true`（`is_closed = 1`）となるため、クローラー（`crawler.py`）の `load_councils_from_data_json()` において巡回対象から完全にスキップされる。手動登録・調整済みの過去開催回・配付資料は一切上書き・削除されない。
+  2. **新着検知・自動更新の挙動**:
+     - `discover_councils.py` が内閣府審議会一覧（`council.html`）を巡回する際、`#done01`（終了した会議等）セクション以降のリンクが水際で除外される。
+     - また、内閣官房（`seisakukaigi/`）を巡回する際にも、`abolition_list.html`（廃止した本部・会議等の一覧）へのリンクが水際で除外される。
+     - これにより、過去の終了・廃止会議体が新規会議体候補として誤検知・再登録されることが恒久的に防止される。一方、現在活動中の主要審議会等は引き続き正常に検知・更新される。
+  3. **クローラーの負荷・探索範囲への影響**:
+     - 活動終了・廃止となった34会議体が巡回対象外となるため、内閣府・内閣官房に対する不要なHTTPリクエストが大幅に削減され、巡回全体の負荷軽減と実行時間の短縮が実現される。
+
+- **4. 変更ファイル一覧 (Changed Files)**:
+  - `admin/pmhub.db`: 34会議体を `is_closed = 1`, `manual_lock = 1` に更新
+  - `admin/discover_councils.py`: `council.html#done01` および `abolition_list.html` 水際除外ガード配備
+  - `admin/crawler.py`: `extract_actual_subpage_links()` における `done01` および `abolition_list.html` 除外ガード配備
+  - `docs/data.json`: 34会議体の `isClosed: true` 同期エクスポート
+  - `admin/admin_data.json`: 34会議体の `isClosed: true` 同期エクスポート
+  - `DROPS.md`: Drop 113 記録追記・ヘッダー更新
+
+- **5. 検証結果 (Verification Results)**:
+  ```markdown
+  python testing/run_test_suite.py --all-layers : PASSED（統合15ケース＋全単体23種合格 / 所要時間 23.50秒）
+    - ケース1: コード文法チェック（SyntaxError / 括弧 / div / DDL構文 0件） (0.81s) : PASS
+    - ケース2: リンク疎通確認（追加・変更URL 0件 スキップ） (0.93s) : PASS
+    - ケース3: UI表示機能検証（DOMコンテナ整合性・公開＆管理構造OK） (0.00s) : PASS
+    - ケース4: JS実行時クラッシュ・全画面描画検証（Node.js構文エラー0件） (0.70s) : PASS
+    - ケース5: 会議品質・回次整合性・重複排除検証（全22,003件 重複0件） (0.95s) : PASS
+    - ケース6: 会議体・タイムライン ID完全排他性・整合性（1,663会議体 全件一致） (0.01s) : PASS
+    - ケース7: 康煕部首・特殊文字 NFKC 正規化検証（康煕部首0件維持） (0.33s) : PASS
+    - ケース8: プレースホルダー日付（2099/01/01）ゼロ遮断検証（2099日付0件） (0.00s) : PASS
+    - ケース15: SQLiteマスターDB整合性 & 2系統JSON完全同期検証（PRAGMA整合性・FK・件数完全一致） (0.86s) : PASS
+    - ケース9: 管理サーバー API 単体・統合テスト（全11テスト合格） (4.73s) : PASS
+    - ケース10: クローラー手動保護回帰テスト（manualLock 非破壊性合格） (4.79s) : PASS
+    - ケース11: スクレイピングルール整合性検証（孤立ルール0件・全1,663会議体100%適用） (0.47s) : PASS
+    - ケース12: ホスト分散・ゴミデータ不変性検証（ホスト連続0件・ゴミ0件） (0.31s) : PASS
+    - ケース13: 省庁親ポータルURL設定・探索網羅性検証（各省庁親ポータル設定合格） (0.48s) : PASS
+    - ケース14: アクティブ会議体フィルタリング・廃止管理検証（直近2年・廃止マスター合格） (0.97s) : PASS
+    - 【単体関数検証 (Unit Tests)】: 全23種合格（連動 23 種類実施 / 6.71s） : PASS
   ```

@@ -884,7 +884,7 @@ def _discover_normal_for_single_ministry(
 
     for page_url in councils_urls:
         page_url = page_url.strip()
-        if not page_url or not page_url.startswith("http"):
+        if not page_url or not page_url.startswith("http") or "abolition_list.html" in page_url:
             continue
 
         html, final_page_url = fetch_page_and_final_url(page_url)
@@ -892,10 +892,24 @@ def _discover_normal_for_single_ministry(
             continue
 
         soup = BeautifulSoup(html, "html.parser")
+
+        # Drop 113: 内閣府(CAO) council.html の終了会議体(#done01)セクション除外ガード
+        done_nodes = set()
+        if "cao.go.jp" in final_page_url or "council.html" in final_page_url:
+            h2_done = soup.find(id="done01")
+            if h2_done:
+                done_nodes = set(h2_done.find_all_next())
+
         links = soup.find_all("a", href=True)
 
         for a in links:
+            if done_nodes and a in done_nodes:
+                continue
+
             href = a["href"].strip()
+            # Drop 113: 内閣官房(CAS)等の廃止一覧ページ(abolition_list.html)リンクの除外ガード
+            if "abolition_list.html" in href:
+                continue
             raw_text = a.get_text(separator=" ", strip=True)
             title_attr = a.get("title", "").strip()
             link_text = raw_text or title_attr

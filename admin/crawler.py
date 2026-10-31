@@ -1599,9 +1599,18 @@ def extract_actual_subpage_links(html, target_url, rule=None, return_meta=False)
     meta_map = {}
     seen = set()
 
+    # Drop 113: 内閣府(CAO) council.html の終了会議体(#done01)セクション除外ガード
+    done_nodes = set()
+    if 'cao.go.jp' in target_url or 'council.html' in target_url:
+        h2_done = soup.find(id='done01')
+        if h2_done:
+            done_nodes = set(h2_done.find_all_next())
+
     for a in soup.find_all('a', href=True):
+        if done_nodes and a in done_nodes:
+            continue
         href = a['href'].strip()
-        if not href or href.startswith('#') or href.startswith('javascript:') or href.startswith('mailto:'):
+        if not href or href.startswith('#') or href.startswith('javascript:') or href.startswith('mailto:') or 'abolition_list.html' in href:
             continue
         href_clean = href.lower().split('?')[0].split('#')[0]
         # Drop 112: 不要静的アセット（画像、CSS、JS、フォント、メディア等）を水際で除外
