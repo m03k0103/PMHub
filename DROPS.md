@@ -2995,3 +2995,64 @@ ejected_councils（計420件）へ登録。
     - ケース14: アクティブ会議体フィルタリング・廃止管理検証（直近2年フィルタリング・廃止マスター合格） (1.03s) : PASS
     - 【単体関数検証 (Unit Tests)】: 全23種合格（連動 23 種類実施 / 6.99s） : PASS
   ```
+## Drop 108: 金融審議会「保険制度ワーキング・グループ」（第２回）資料取得・開催案内誤認防止ガード強化および横展開是正（2026-10-31 完了）
+
+- **1. 背景・課題 (Background & Issues)**:
+  - ユーザーより金融審議会「保険制度ワーキング・グループ」（第２回）について、開催案内ページ（`https://www.fsa.go.jp/news/r8/singi/20261023.html`）ではなく正式な資料ページ（`https://www.fsa.go.jp/singi/singi_kinyu/hokenseido_wg/gijishidai/20261030.html`）から資料を取得すること、および次回以降、誤って開催案内ページを開催回ページとすることがないようクローラーおよびクロールルールの調整が求められた。
+  - **原因分析**:
+    1. 金融庁（FSA）の会議体親ページでは、各開催回リストに「開催通知（`/news/...`）」と「資料（`/gijishidai/...`）」の2つのリンクが掲載されている。
+    2. クローラーの除外アンカー（`NAV_EXCLUDE_TEXTS`）に「開催通知」が含まれておらず、さらに `ROUND_OR_DATE_TEXT_PATTERN` に「開催案内等」が含まれていたため、開催通知リンクがサブページ探索候補として誤抽出されていた。
+    3. `is_preliminary_notice_page()` において、タイトル末尾が「〜の開催」で終わる形式（例: `...（第２回）の開催：金融庁`）が正規表現にマッチせず事前告知判定から漏れていた。
+    4. 会議体ルールの `subpage_discovery_pattern` で日付数字HTML（`\d{8}\.html`）を許容していたため、ニュースの `20261023.html` にもマッチしていた。
+  - **横展開点検（2大責務）**:
+    - 全金融庁会議体を点検したところ、企業会計審議会「サステナビリティ情報保証部会」（第３回）でも同様に資料ページ（`.../siryou/hoshou/20261029.html`）ではなく開催通知（`.../news/r8/singi/20261029.html`）が誤登録され、資料がHTML1件のみとなっていた。また保険制度WG第1回も公式URLがニュース開催通知となっていた。
+
+- **2. 実施内容・設計 (Implementation & Architecture)**:
+  1. **クローラーの開催案内・事前告知誤認防止ガード強化 (`admin/crawler.py`)**:
+     - `NAV_EXCLUDE_TEXTS` に `開催通知`, `開催案内`, `開催告知`, `開催通知等`, `開催案内等`, `開催告知等`, `傍聴案内`, `傍聴申込`, `傍聴申込み`, `傍聴について` を追加し、親ページからの探索候補抽出段階で完全遮断。
+     - `ROUND_OR_DATE_TEXT_PATTERN` から誤抽出要因となっていた `|開催案内等|` を完全排除。
+     - `is_preliminary_notice_page()` を強化：
+       - 完全一致リストに `開催通知`, `次回開催通知`, `開催告知` を追加。
+       - タイトル末尾正規表現に `|の開催通知について|開催通知について|の開催通知|開催通知|の開催|開催` を追加し、「〜の開催」形式を確実に事前告知と判定。
+       - 途中キーワードに `開催通知`, `の開催通知` を追加。
+  2. **スクレイピングルール（`scraping_rules`）の調整**:
+     - `fsa-kinyu_hokenseido_wg`: `subpage_discovery_pattern` を `href=["']([^"']*(?:gijishidai|siryou|gijiroku)/[^"']*\.html)["']` に改善し、ニュースURL（`/news/`）への迷い込みを完全遮断。
+     - `fsa-kigyou_hoshou_bukai`: `subpage_discovery_pattern` を `href=["']([^"']*(?:siryou|gijiroku)/[^"']*\.html)["']` に改善。
+  3. **SQLite マスターDB（`admin/pmhub.db`）の更新 & 資料取得**:
+     - **保険制度WG 第2回 (`fsa-kinyu_hokenseido_wg-20261030-002`)**:
+       - `official_url` を `https://www.fsa.go.jp/singi/singi_kinyu/hokenseido_wg/gijishidai/20261030.html` へ更新。
+       - 誤登録されていた開催通知HTMLを削除し、末端PDF 5件（事務局説明資料①・②、宮川参事説明資料、生命保険協会説明資料、永沢委員意見書）を登録（`manual_lock = 1`）。
+     - **保険制度WG 第1回 (`fsa-kinyu_hokenseido_wg-20261001-001`)**:
+       - `official_url` を正式資料ページ `https://www.fsa.go.jp/singi/singi_kinyu/hokenseido_wg/gijishidai/20261001.html` へ正規化（`manual_lock = 1`）。
+     - **横展開: サステナビリティ情報保証部会 第3回 (`fsa-kigyou_hoshou_bukai-20261029-003`)**:
+       - `official_url` を `https://www.fsa.go.jp/singi/singi_kigyou/siryou/hoshou/20261029.html` へ更新。
+       - 誤登録されていた開催通知HTMLを削除し、末端PDF 3件（事務局説明資料、欠席委員提出ご意見、委員名簿）を登録（`manual_lock = 1`）。
+  4. **マスターDB & 2系統エクスポート完全同期**:
+     - `export_data.py` により `docs/data.json` および `admin/admin_data.json` へ完全同期。
+
+- **3. 変更ファイル一覧 (Changed Files)**:
+  - `admin/crawler.py`: `NAV_EXCLUDE_TEXTS` 拡充、`ROUND_OR_DATE_TEXT_PATTERN` から開催案内等除外、`is_preliminary_notice_page` 強化
+  - `admin/pmhub.db`: `fsa-kinyu_hokenseido_wg`（第1回・第2回）および `fsa-kigyou_hoshou_bukai`（第3回）のURL是正・PDF資料登録・ルール更新
+  - `docs/data.json`, `admin/admin_data.json`: マスターDBより2系統完全同期
+  - `DROPS.md`: Drop 108 の標準4大構成記録
+
+- **4. テスト検証結果 (Verification Results)**:
+  ```markdown
+  python testing/run_test_suite.py --all-layers : PASSED（統合15ケース＋単体23種合格 / 所要時間 約23.70秒）
+    - ケース1: コード文法チェック（SyntaxError / 括弧不整合 / DDL構文 0件） (0.72s) : PASS
+    - ケース2: リンク疎通確認（追加・変更URL 11件 200 OK・リンク切れ0件） (1.17s) : PASS
+    - ケース3: UI表示機能検証（DOMコンテナ整合性・公開＆管理構造） (0.00s) : PASS
+    - ケース4: JS実行時クラッシュ・全画面描画検証（Node.js描画エラー0件） (0.75s) : PASS
+    - ケース5: 会議品質・回次整合性・重複排除検証（21,797件 重複0件・中間HTML混入0件） (0.92s) : PASS
+    - ケース6: 会議体・タイムライン ID完全排他性・整合性（1,670会議体 全件一致） (0.01s) : PASS
+    - ケース7: 康煕部首・特殊文字 NFKC 正規化検証（康煕部首0件維持） (0.31s) : PASS
+    - ケース8: プレースホルダー日付（2099/01/01）ゼロ遮断検証（2099日付0件） (0.00s) : PASS
+    - ケース15: SQLiteマスターDB整合性 & 2系統JSON完全同期検証（PRAGMA整合性・外部キー・件数一致） (0.91s) : PASS
+    - ケース9: 管理サーバー API 単体・統合テスト（全11テスト合格） (4.87s) : PASS
+    - ケース10: クローラー手動保護回帰テスト（manualLock 非破壊性合格） (4.49s) : PASS
+    - ケース11: スクレイピングルール整合性検証（1,670会議体 100%ルール適用） (0.44s) : PASS
+    - ケース12: ホスト分散・ゴミデータ不変性検証（ホスト連続0件・ゴミ0件走査） (0.31s) : PASS
+    - ケース13: 省庁親ポータルURL設定・探索網羅性検証（各省庁親ポータル設定・スラグID継承合格） (0.47s) : PASS
+    - ケース14: アクティブ会議体フィルタリング・廃止管理検証（直近2年フィルタリング・廃止マスター合格） (1.01s) : PASS
+    - 【単体関数検証 (Unit Tests)】: 全23種合格（連動 23 種類実施 / 6.89s） : PASS
+  ```
