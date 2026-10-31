@@ -2050,8 +2050,12 @@ def _extract_meetings_from_parent_table(html, target_url, council_name, rule=Non
                                 })
 
             # 資料も個別URLもない行はスキップ
+            # 資料も個別URLもない行の判定:
+            # テーブルに正規回次（第X回）が存在し、本行にも回次(round_num)がある正当な開催回であれば、
+            # 配付資料がWeb未掲載（0件）であっても開催回として保持する（Drop 111: HIRAI Pitch等での他回資料重複フォールバック誤爆を防止）
             if not row_materials and row_official_url == target_url:
-                continue
+                if not (table_has_round_numbers and round_num):
+                    continue
 
             # 会議名・タイトルの決定
             if round_num:
