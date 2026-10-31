@@ -5269,7 +5269,8 @@
       "manualLock": true,
       "extract_from_parent_table": true,
       "officialUrl": "https://www.fsa.go.jp/singi/singi_kigyou/hoshou/hoshou_index.html",
-      "pdf_selector": "a[href*='.pdf'], a[href*='.PDF']"
+      "pdf_selector": "a[href*='.pdf'], a[href*='.PDF']",
+      "subpage_discovery_pattern": "href=[\\\"']([^\\\"']*(?:siryou|gijiroku)/[^\\\"']*\\.html)[\\\"']"
     },
     "fsa-kigyou_kaikei_bukai": {
       "template": "tpl-ministry-hybrid-kaisai",
@@ -5486,7 +5487,7 @@
     },
     "fsa-kinyu_hokenseido_wg": {
       "template": "tpl-general-round-subpage",
-      "subpage_discovery_pattern": "href=[\\\"']([^\\\"']*(?:siryou|gijiroku|\\d{8})\\.html)[\\\"']",
+      "subpage_discovery_pattern": "href=[\\\"']([^\\\"']*(?:gijishidai|siryou|gijiroku)/[^\\\"']*\\.html)[\\\"']",
       "pdf_selector": "a[href*='.pdf'], a[href$='.pdf']",
       "date_regex": "(?:令和|平成)\\d+年\\d+月\\d+日|20\\d{2}年\\d+月\\d+日",
       "manualLock": true,
@@ -62038,7 +62039,9 @@
       "fsa-keizaikachi_solvency-20191021-004:https://www.fsa.go.jp/singi/keizaikachi/siryou/20191021/01.pdf",
       "fsa-keizaikachi_solvency-20191021-004:https://www.fsa.go.jp/singi/keizaikachi/siryou/20191021/02.pdf",
       "fsa-keizaikachi_solvency-20191118-005:https://www.fsa.go.jp/singi/keizaikachi/siryou/20191118/01.pdf",
-      "fsa-kigyou_hoshou_bukai-20261029-003:https://www.fsa.go.jp/news/r8/singi/20261029.html",
+      "fsa-kigyou_hoshou_bukai-20261029-003:https://www.fsa.go.jp/singi/singi_kigyou/siryou/hoshou/20261029/01.pdf",
+      "fsa-kigyou_hoshou_bukai-20261029-003:https://www.fsa.go.jp/singi/singi_kigyou/siryou/hoshou/20261029/02.pdf",
+      "fsa-kigyou_hoshou_bukai-20261029-003:https://www.fsa.go.jp/singi/singi_kigyou/siryou/hoshou/20261029/03.pdf",
       "fsa-kigyou_kansa_bukai-20261002-057:https://www.fsa.go.jp/singi/singi_kigyou/gijiroku/kansa/20261023.html",
       "fsa-kigyou_kansa_bukai-20261002-057:https://www.fsa.go.jp/singi/singi_kigyou/siryou/kansa/20261002/01.pdf",
       "fsa-kigyou_kansa_bukai-20261002-057:https://www.fsa.go.jp/singi/singi_kigyou/siryou/kansa/20261002/02.pdf",
@@ -62060,7 +62063,11 @@
       "fsa-kinyu_chukai-20180622-014:https://www.fsa.go.jp/singi/kinyuchukai/siryou/20180622/01.pdf",
       "fsa-kinyu_chukai-20181113-015:https://www.fsa.go.jp/singi/kinyuchukai/siryou/20181113/01.pdf",
       "fsa-kinyu_disclosure_wg-20260904-006:https://www.fsa.go.jp/singi/singi_kinyu/disclosure_wg/gijiroku/20260904.html",
-      "fsa-kinyu_hokenseido_wg-20261030-002:https://www.fsa.go.jp/news/r8/singi/20261023.html",
+      "fsa-kinyu_hokenseido_wg-20261030-002:https://www.fsa.go.jp/singi/singi_kinyu/hokenseido_wg/gijishidai/20261030/01.pdf",
+      "fsa-kinyu_hokenseido_wg-20261030-002:https://www.fsa.go.jp/singi/singi_kinyu/hokenseido_wg/gijishidai/20261030/02.pdf",
+      "fsa-kinyu_hokenseido_wg-20261030-002:https://www.fsa.go.jp/singi/singi_kinyu/hokenseido_wg/gijishidai/20261030/03.pdf",
+      "fsa-kinyu_hokenseido_wg-20261030-002:https://www.fsa.go.jp/singi/singi_kinyu/hokenseido_wg/gijishidai/20261030/04.pdf",
+      "fsa-kinyu_hokenseido_wg-20261030-002:https://www.fsa.go.jp/singi/singi_kinyu/hokenseido_wg/gijishidai/20261030/05.pdf",
       "fsa-kinyu_kinou_kyouka-20040806-001:https://www.fsa.go.jp/singi/soff/siryou/20040806/01_b.pdf",
       "fsa-kinyu_kinou_kyouka-20060912-002:https://www.fsa.go.jp/singi/soff/siryou/20060912/02_b.pdf",
       "fsa-kinyu_kinou_kyouka-20061017-003:https://www.fsa.go.jp/singi/soff/siryou/20081017/03_b.pdf",
