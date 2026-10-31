@@ -240,6 +240,30 @@ def get_core_council_name(name: str) -> str:
     c = re.sub(r'[\s　・~～―－\-_:：/／()（）]', '', c)
     return c.strip().lower()
 
+
+PRESS_RELEASE_EXCLUSIVE_PATTERNS = [
+    r'/report/press/',                # MLIT 報道発表
+    r'/j/press/',                    # MOD, MAFF, Rinya, JFA 等 報道発表
+    r'/menu_news/s-news/',           # MIC 報道資料
+    r'/press/press_',                # MOE 報道発表
+    r'/press/20\d{2}/',              # METI / その他 ニュースリリース
+    r'/news/20\d{2}/',               # 各省庁 ニュースリリース
+    r'/b_menu/houdou/',              # MEXT 報道発表
+    r'/houdou/20\d{2}/',             # 報道発表アーカイブ
+    r'/hisho/kouhou/',               # MOJ 記者会見・報道
+    r'/kaiken/',                     # 記者会見
+    r'/pressrelease/',               # プレスリリース
+]
+PRESS_RELEASE_EXCLUSIVE_REGEX = re.compile('|'.join(PRESS_RELEASE_EXCLUSIVE_PATTERNS), re.IGNORECASE)
+
+
+def is_single_press_or_notice_url(url: str) -> bool:
+    """単発報道発表・記者会見専用URLパターンを判定 (Drop 107)"""
+    if not url:
+        return False
+    return bool(PRESS_RELEASE_EXCLUSIVE_REGEX.search(url))
+
+
 def is_non_council_noise(name: str, raw_text: str = "", url: str = "") -> bool:
     """
     非会議体ノイズ（大臣動静・国際会議・条約会合・国会・一般法人・ナビ要素・PDF直リンク）を判定 (CR-187)
@@ -356,11 +380,11 @@ def resolve_parent_url_from_press_release(press_url: str, cand_name: str, min_co
     単発プレスリリースHTML内の関連リンクから、常設親ページURLを1ホップ自動逆引き探索する (CR-189)
     親ページが見つかった場合はそのURL、見つからない場合は元の press_url を返す。
     """
-    # 単発プレスリリースURLパターンの判定
-    is_press_release = bool(re.search(
-        r'(?:/stf/newpage_\d+\.html|/report/press/|/press/|/menu_news/s-news/|/news/|/hisho/kouhou/)',
-        press_url
-    ))
+    # 単発プレスリリースURLパターンの判定 (Drop 107)
+    is_press_release = bool(
+        is_single_press_or_notice_url(press_url) or
+        re.search(r'(?:/stf/newpage_\d+\.html|/report/press/|/press/|/menu_news/s-news/|/news/|/hisho/kouhou/)', press_url)
+    )
     if not is_press_release:
         return press_url
 
@@ -393,7 +417,7 @@ def resolve_parent_url_from_press_release(press_url: str, cand_name: str, min_co
         # ドキュメント直リンクや別プレスリリースは除外
         if re.search(r"\.(pdf|docx?|xlsx?|pptx?|jpe?g|png|gif|zip)$", abs_u, re.I):
             continue
-        if abs_u == press_url or re.search(r'(?:/stf/newpage_\d+|/report/press/|/press/|/menu_news/s-news/)', abs_u):
+        if abs_u == press_url or is_single_press_or_notice_url(abs_u) or re.search(r'(?:/stf/newpage_\d+|/report/press/|/press/|/menu_news/s-news/)', abs_u):
             continue
 
         link_text = a.get_text(separator=" ", strip=True)
@@ -404,8 +428,8 @@ def resolve_parent_url_from_press_release(press_url: str, cand_name: str, min_co
         # 会議体名そのものを含むリンク
         if clean_cand and clean_cand in combined_text:
             score += 10
-        # 常設ディレクトリパターンを含む
-        if re.search(r'/(?:shingikai|seisakunitsuite|council|singi|policy|councils|b_menu/shingi)/', abs_u):
+        # 常設ディレクトリパターンを含む (Drop 107: 主要省庁常設パス拡充)
+        if re.search(r'/(?:shingikai|seisakunitsuite|council|singi|policy|councils|b_menu/shingi|koku|maritime|road|jutakukentiku|toshi|mizukokudo|sogoseisaku|tetudo|jidosha|port|tochi_fudousan_kensetsugyo|nature)/', abs_u):
             score += 5
         # リンク文言に親ページ示唆語句を含む
         if any(w in combined_text for w in ["開催状況", "過去の開催", "審議会等", "検討会はこちら", "ホームページはこちら", "会議資料"]):
@@ -592,18 +616,20 @@ def _discover_from_ministry_news(
                     resolved_url = resolve_parent_url_from_press_release(item.get("url", ""), cand_name, min_code)
                     orig_item_url = item.get("url", "")
 
-                    # 親ポータルURLや既存URL、重複URLへの誤誘導防止ガード (Check 12対策)
+                    # 親ポータルURLや既存URL、重複URLへの誤誘導防止ガード (Check 12対策, Drop 107)
                     norm_resolved = normalize_url(resolved_url)
-                    norm_orig = normalize_url(orig_item_url)
                     clean_res = get_url_clean_key(resolved_url)
 
-                    # 逆引きURLが一覧ポータルまたは既に登録/検出済みなら元の単発URLにフォールバック
+                    # 逆引きURLが単発報道発表URLのまま（親ポータル未解決）の場合は登録を遮断 (Drop 107)
+                    if is_single_press_or_notice_url(resolved_url) or (is_single_press_or_notice_url(orig_item_url) and resolved_url == orig_item_url):
+                        continue
+
+                    # 逆引きURLが一覧ポータルまたは既に登録/検出済みなら元の単発URLにフォールバックせずスキップ (Drop 107)
                     if (norm_resolved in existing_urls or
                         norm_resolved in all_portal_urls or
                         norm_resolved in seen_urls_in_this_run or
                         (clean_res and clean_res in rejected_clean_keys)):
-                        resolved_url = orig_item_url
-                        norm_resolved = norm_orig
+                        continue
 
                     # 最終URLが依然として既存または今回重複ならスキップ
                     if norm_resolved in existing_urls or norm_resolved in seen_urls_in_this_run or norm_resolved in all_portal_urls:
@@ -759,12 +785,16 @@ def _discover_from_ministry_news(
                 norm_resolved = normalize_url(resolved_url)
                 clean_res = get_url_clean_key(resolved_url)
 
+                # 逆引きURLが単発報道発表URLのまま（親ポータル未解決）の場合は登録を遮断 (Drop 107)
+                if is_single_press_or_notice_url(resolved_url) or (is_single_press_or_notice_url(orig_item_url) and resolved_url == orig_item_url):
+                    continue
+
+                # 逆引きURLが一覧ポータルまたは既に登録/検出済みなら元の単発URLにフォールバックせずスキップ (Drop 107)
                 if (norm_resolved in existing_urls or
                     norm_resolved in all_portal_urls or
                     norm_resolved in seen_urls_in_this_run or
                     (clean_res and clean_res in rejected_clean_keys)):
-                    resolved_url = orig_item_url
-                    norm_resolved = norm_orig
+                    continue
 
                 if norm_resolved in existing_urls or norm_resolved in seen_urls_in_this_run or norm_resolved in all_portal_urls:
                     continue
@@ -886,8 +916,8 @@ def _discover_normal_for_single_ministry(
             # 絶対URLに変換
             abs_url = urllib.parse.urljoin(final_page_url, href)
 
-            # ノイズ・ドキュメント直リンク判定 (CR-187)
-            if is_non_council_noise(link_text, "", abs_url):
+            # ノイズ・ドキュメント直リンク・単発報道発表URL判定 (CR-187, Drop 107)
+            if is_non_council_noise(link_text, "", abs_url) or is_single_press_or_notice_url(abs_url):
                 continue
 
             # 会議体名のクレンジング (CR-186)
@@ -1128,8 +1158,8 @@ def run_discovery(progress_callback=None, target_ministry=None, dry_run=False, m
                 is_default = item["is_default"]
 
                 norm_cand_url = normalize_url(target_url_cand)
-                # URL重複防止 (Check 12)
-                if norm_cand_url in existing_urls or norm_cand_url in seen_urls_in_normal or norm_cand_url in all_portal_urls:
+                # 単発報道発表URL除外 & URL重複防止 (Drop 107, Check 12)
+                if is_single_press_or_notice_url(target_url_cand) or norm_cand_url in existing_urls or norm_cand_url in seen_urls_in_normal or norm_cand_url in all_portal_urls:
                     continue
 
                 # 同一省庁内での新規候補間サフィックス重複防止 (Check 14)

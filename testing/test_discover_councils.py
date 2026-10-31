@@ -217,6 +217,34 @@ class TestDiscoverCouncilsDrop75(unittest.TestCase):
         self.assertEqual(cand_id, "moj-2736")
         self.assertIn("moj-2736", used_ids)
 
+    def test_drop107_press_release_guard(self):
+        """Drop 107: 単発報道発表・記者会見専用URLの混入防止ガードの検証"""
+        # 1. 報道発表専用URLパターンの判定
+        press_urls = [
+            "https://www.mlit.go.jp/report/press/road01_hh_002161.html",
+            "https://www.mlit.go.jp/report/press/kouku05_hh_000248.html",
+            "https://www.mod.go.jp/j/press/news/2026/09/01b.html",
+            "https://www.soumu.go.jp/menu_news/s-news/01kiban18_01000296.html",
+            "https://www.env.go.jp/press/press_05623.html",
+            "https://www.moj.go.jp/hisho/kouhou/hisho06_00841.html",
+            "https://www.mext.go.jp/b_menu/houdou/2026/01/1423456.htm",
+            "https://www.meti.go.jp/press/2026/10/20261015001/20261015001.html",
+        ]
+        for u in press_urls:
+            self.assertTrue(discover_councils.is_single_press_or_notice_url(u), f"Should detect press url: {u}")
+
+
+        # 2. 通常の常設審議会ポータルURLは除外されないこと
+        permanent_urls = [
+            "https://www.moj.go.jp/shingi1/housei02_003011.html",
+            "https://www.mlit.go.jp/koku/koku_fr9_000016.html",
+            "https://www.mhlw.go.jp/stf/shingi/shingi-chuo_00001.html",
+            "https://www.mhlw.go.jp/stf/newpage_09427.html",
+            "https://www.soumu.go.jp/main_sosiki/joho_tsusin/policy/council.html",
+        ]
+        for u in permanent_urls:
+            self.assertFalse(discover_councils.is_single_press_or_notice_url(u), f"Should not flag permanent url: {u}")
+
 
 if __name__ == "__main__":
     unittest.main()
