@@ -94,6 +94,10 @@
        - ケース15: SQLiteマスターDB整合性 & 2系統JSON完全同期検証（PRAGMA整合性・外部キー・件数一致・漏洩ゼロ）
        - 【単体関数検証 (Unit Tests)】: 全18種合格（関数仕様修正時連動）
      ```
+3. **DROPS.md の構成運用規約（完了済Trackの移管と昇順整列）**
+   - **完了済Trackの配置原則**: Track（将来構想テーマ）が完了した際は、第1章「1-1. Track一覧（未着手・進行中）」から除外し、「第2章 実装済機能・Drop一覧」の「2-1. 実装済 Drop一覧」配下へ移管すること（第1章に完了済Trackを残存させてはならない）。
+   - **達成Drop IDの昇順整列義務**: 完了済Trackを「2-1. 実装済 Drop一覧」へ移管・配置する際は、各Trackが達成・完了した Drop ID の昇順（古い順、例: Track [Portal-Norm]: Drop 79〜110 → Track [Deduplication-HiraiPitch]: Drop 111 → Track [Optimization]: Drop 106, 112）に厳格に整列すること。
+
 ---
 
 ## 4. 配付資料および会議体資料のローカル資産管理規約（PMM 統合仕様）
