@@ -15238,8 +15238,11 @@
       "ministry": "MOD",
       "category": "COUNCIL",
       "name": "海上自衛隊輸送機(YS-11M/M-A)の後継機に関する審査会議",
-      "officialUrl": "https://www.mod.go.jp/j/policy/agenda/meeting/ys_11m/index.html",
-      "pastYearCount": 0
+      "officialUrl": "https://warp.da.ndl.go.jp/20230211/20230201112131/www.mod.go.jp/j/policy/agenda/meeting/ys_11m/index.html",
+      "archiveUrl": "https://warp.da.ndl.go.jp/20230211/20230201112131/www.mod.go.jp/j/policy/agenda/meeting/ys_11m/index.html",
+      "pastYearCount": 0,
+      "isClosed": true,
+      "closedReason": "海上自衛隊YS-11後継機の機種決定（審査終了）に伴い完結"
     },
     {
       "id": "mod-1103",
@@ -15302,8 +15305,11 @@
       "ministry": "MOD",
       "category": "COMMITTEE",
       "name": "防衛省行政情報化推進委員会",
-      "officialUrl": "https://www.mod.go.jp/j/policy/agenda/meeting/gyousei-jyohoka/index.html",
-      "pastYearCount": 0
+      "officialUrl": "https://warp.da.ndl.go.jp/20230211/20230201112141/www.mod.go.jp/j/policy/agenda/meeting/gyousei-jyohoka/index.html",
+      "archiveUrl": "https://warp.da.ndl.go.jp/20230211/20230201112141/www.mod.go.jp/j/policy/agenda/meeting/gyousei-jyohoka/index.html",
+      "pastYearCount": 0,
+      "isClosed": true,
+      "closedReason": "業務・システム最適化計画の終了に伴い完結"
     },
     {
       "id": "mod-1112",
@@ -15406,8 +15412,11 @@
       "ministry": "MOD",
       "category": "STUDY",
       "name": "防衛施設庁入札談合等再発防止に係る抜本的対策に関する検討会",
-      "officialUrl": "https://www.mod.go.jp/j/policy/agenda/meeting/dangou/index.html",
-      "pastYearCount": 0
+      "officialUrl": "https://warp.da.ndl.go.jp/20230211/20230201112202/www.mod.go.jp/j/policy/agenda/meeting/dangou/index.html",
+      "archiveUrl": "https://warp.da.ndl.go.jp/20230211/20230201112202/www.mod.go.jp/j/policy/agenda/meeting/dangou/index.html",
+      "pastYearCount": 0,
+      "isClosed": true,
+      "closedReason": "抜本的対策報告書の取りまとめ公表に伴い完結"
     },
     {
       "id": "mod-bousan_gijutsu",
@@ -530776,6 +530785,23 @@
       ]
     },
     {
+      "id": "mod-1111-20170630-012",
+      "councilId": "mod-1111",
+      "name": "防衛省行政情報化推進委員会 第12回 (平成28年度 最適化実施評価報告)",
+      "date": "2017/06/30",
+      "officialUrl": "https://warp.da.ndl.go.jp/20230211/20230201112141/www.mod.go.jp/j/policy/agenda/meeting/gyousei-jyohoka/index.html",
+      "materials": [
+        {
+          "name": "平成２８年度最適化実施評価報告書",
+          "url": "https://warp.da.ndl.go.jp/info:ndljp/pid/11591426/www.mod.go.jp/j/approach/agenda/meeting/materials/gyousei-jyohoka/sonota/pdf/h28/kaiji_yosankaikei_chk28.pdf"
+        },
+        {
+          "name": "最適化効果指標・サービス指標一覧",
+          "url": "https://warp.da.ndl.go.jp/info:ndljp/pid/11591426/www.mod.go.jp/j/approach/agenda/meeting/materials/gyousei-jyohoka/sonota/pdf/h28/kaiji_yosankaikei_chk28_kpi.pdf"
+        }
+      ]
+    },
+    {
       "id": "mod-1089-20170629-003",
       "councilId": "mod-1089",
       "name": "第3回 防衛装備・技術政策に関する有識者会議",
@@ -557591,6 +557617,39 @@
       ]
     },
     {
+      "id": "mod-1111-20160630-011",
+      "councilId": "mod-1111",
+      "name": "防衛省行政情報化推進委員会 第11回 (平成27年度 最適化実施評価報告)",
+      "date": "2016/06/30",
+      "officialUrl": "https://warp.da.ndl.go.jp/20230211/20230201112141/www.mod.go.jp/j/policy/agenda/meeting/gyousei-jyohoka/index.html",
+      "materials": [
+        {
+          "name": "平成２７年度最適化実施評価報告書",
+          "url": "https://warp.da.ndl.go.jp/info:ndljp/pid/11591426/www.mod.go.jp/j/approach/agenda/meeting/materials/gyousei-jyohoka/sonota/pdf/h27/rikujihokyu_chk27.pdf"
+        },
+        {
+          "name": "最適化効果指標・サービス指標一覧",
+          "url": "https://warp.da.ndl.go.jp/info:ndljp/pid/11591426/www.mod.go.jp/j/approach/agenda/meeting/materials/gyousei-jyohoka/sonota/pdf/h27/rikujihokyu_chk27_kpi.pdf"
+        },
+        {
+          "name": "平成２７年度最適化実施評価報告書",
+          "url": "https://warp.da.ndl.go.jp/info:ndljp/pid/11591426/www.mod.go.jp/j/approach/agenda/meeting/materials/gyousei-jyohoka/sonota/pdf/h27/kaijizoushu_chk27.pdf"
+        },
+        {
+          "name": "最適化効果指標・サービス指標一覧",
+          "url": "https://warp.da.ndl.go.jp/info:ndljp/pid/11591426/www.mod.go.jp/j/approach/agenda/meeting/materials/gyousei-jyohoka/sonota/pdf/h27/kaijizoushu_chk27_kpi.pdf"
+        },
+        {
+          "name": "平成２７年度最適化実施評価報告書",
+          "url": "https://warp.da.ndl.go.jp/info:ndljp/pid/11591426/www.mod.go.jp/j/approach/agenda/meeting/materials/gyousei-jyohoka/sonota/pdf/h27/kaiji_yosankaikei_chk27.pdf"
+        },
+        {
+          "name": "最適化効果指標・サービス指標一覧",
+          "url": "https://warp.da.ndl.go.jp/info:ndljp/pid/11591426/www.mod.go.jp/j/approach/agenda/meeting/materials/gyousei-jyohoka/sonota/pdf/h27/kaiji_yosankaikei_chk27_kpi.pdf"
+        }
+      ]
+    },
+    {
       "id": "mhlw-830-20160629-008",
       "councilId": "mhlw-830",
       "name": "第8回 結核部会",
@@ -581791,6 +581850,39 @@
           "name": "議事要旨",
           "url": "https://www.mhlw.go.jp/stf/shingi2/0000092215.html",
           "type": "HTML"
+        }
+      ]
+    },
+    {
+      "id": "mod-1111-20150630-010",
+      "councilId": "mod-1111",
+      "name": "防衛省行政情報化推進委員会 第10回 (平成26年度 最適化実施評価報告)",
+      "date": "2015/06/30",
+      "officialUrl": "https://warp.da.ndl.go.jp/20230211/20230201112141/www.mod.go.jp/j/policy/agenda/meeting/gyousei-jyohoka/index.html",
+      "materials": [
+        {
+          "name": "平成２６年度最適化実施評価報告書",
+          "url": "https://warp.da.ndl.go.jp/info:ndljp/pid/11591426/www.mod.go.jp/j/approach/agenda/meeting/materials/gyousei-jyohoka/sonota/pdf/h26/rikujihokyu_chk26.pdf"
+        },
+        {
+          "name": "最適化効果指標・サービス指標一覧",
+          "url": "https://warp.da.ndl.go.jp/info:ndljp/pid/11591426/www.mod.go.jp/j/approach/agenda/meeting/materials/gyousei-jyohoka/sonota/pdf/h26/rikujihokyu_chk26_kpi.pdf"
+        },
+        {
+          "name": "平成２６年度最適化実施評価報告書",
+          "url": "https://warp.da.ndl.go.jp/info:ndljp/pid/11591426/www.mod.go.jp/j/approach/agenda/meeting/materials/gyousei-jyohoka/sonota/pdf/h26/kaijizoushu_chk26.pdf"
+        },
+        {
+          "name": "最適化効果指標・サービス指標一覧",
+          "url": "https://warp.da.ndl.go.jp/info:ndljp/pid/11591426/www.mod.go.jp/j/approach/agenda/meeting/materials/gyousei-jyohoka/sonota/pdf/h26/kaijizoushu_chk26_kpi.pdf"
+        },
+        {
+          "name": "平成２６年度最適化実施評価報告書",
+          "url": "https://warp.da.ndl.go.jp/info:ndljp/pid/11591426/www.mod.go.jp/j/approach/agenda/meeting/materials/gyousei-jyohoka/sonota/pdf/h26/kaiji_yosankaikei_chk26.pdf"
+        },
+        {
+          "name": "最適化効果指標・サービス指標一覧",
+          "url": "https://warp.da.ndl.go.jp/info:ndljp/pid/11591426/www.mod.go.jp/j/approach/agenda/meeting/materials/gyousei-jyohoka/sonota/pdf/h26/kaiji_yosankaikei_chk26_kpi.pdf"
         }
       ]
     },
@@ -606711,6 +606803,51 @@
       ]
     },
     {
+      "id": "mod-1111-20140630-009",
+      "councilId": "mod-1111",
+      "name": "防衛省行政情報化推進委員会 第9回 (平成25年度 最適化実施評価報告)",
+      "date": "2014/06/30",
+      "officialUrl": "https://warp.da.ndl.go.jp/20230211/20230201112141/www.mod.go.jp/j/policy/agenda/meeting/gyousei-jyohoka/index.html",
+      "materials": [
+        {
+          "name": "平成２５年度最適化実施評価報告書",
+          "url": "https://warp.da.ndl.go.jp/info:ndljp/pid/11591426/www.mod.go.jp/j/approach/agenda/meeting/materials/gyousei-jyohoka/sonota/pdf/h25/rikujihokyu_chk25.pdf"
+        },
+        {
+          "name": "最適化効果指標・サービス指標一覧",
+          "url": "https://warp.da.ndl.go.jp/info:ndljp/pid/11591426/www.mod.go.jp/j/approach/agenda/meeting/materials/gyousei-jyohoka/sonota/pdf/h25/rikujihokyu_chk25_kpi.pdf"
+        },
+        {
+          "name": "平成２５年度最適化実施評価報告書",
+          "url": "https://warp.da.ndl.go.jp/info:ndljp/pid/11591426/www.mod.go.jp/j/approach/agenda/meeting/materials/gyousei-jyohoka/sonota/pdf/h25/kaijizoushu_chk25.pdf"
+        },
+        {
+          "name": "最適化効果指標・サービス指標一覧",
+          "url": "https://warp.da.ndl.go.jp/info:ndljp/pid/11591426/www.mod.go.jp/j/approach/agenda/meeting/materials/gyousei-jyohoka/sonota/pdf/h25/kaijizoushu_chk25_kpi.pdf"
+        },
+        {
+          "name": "平成２５年度最適化実施評価報告書",
+          "url": "https://warp.da.ndl.go.jp/info:ndljp/pid/11591426/www.mod.go.jp/j/approach/agenda/meeting/materials/gyousei-jyohoka/sonota/pdf/h25/tougou_kisho_chk25.pdf"
+        },
+        {
+          "name": "最適化効果指標・サービス指標一覧",
+          "url": "https://warp.da.ndl.go.jp/info:ndljp/pid/11591426/www.mod.go.jp/j/approach/agenda/meeting/materials/gyousei-jyohoka/sonota/pdf/h25/tougou_kisho_chk25_kpi.pdf"
+        },
+        {
+          "name": "平成２５年度最適化実施評価報告書",
+          "url": "https://warp.da.ndl.go.jp/info:ndljp/pid/11591426/www.mod.go.jp/j/approach/agenda/meeting/materials/gyousei-jyohoka/sonota/pdf/h25/kuujihokyu_chk25.pdf"
+        },
+        {
+          "name": "最適化効果指標・サービス指標一覧",
+          "url": "https://warp.da.ndl.go.jp/info:ndljp/pid/11591426/www.mod.go.jp/j/approach/agenda/meeting/materials/gyousei-jyohoka/sonota/pdf/h25/kuujihokyu_chk25_kpi.pdf"
+        },
+        {
+          "name": "平成２５年度最適化実施評価報告書",
+          "url": "https://warp.da.ndl.go.jp/info:ndljp/pid/11591426/www.mod.go.jp/j/approach/agenda/meeting/materials/gyousei-jyohoka/sonota/pdf/kaiji_yosankaikei_chk25.pdf"
+        }
+      ]
+    },
+    {
       "id": "cas-308-20140627-002",
       "councilId": "cas-308",
       "name": "第2回 官民ファンドの活用推進に関する関係閣僚会議",
@@ -628713,6 +628850,59 @@
       ]
     },
     {
+      "id": "mod-1111-20130630-008",
+      "councilId": "mod-1111",
+      "name": "防衛省行政情報化推進委員会 第8回 (平成24年度 最適化実施評価報告)",
+      "date": "2013/06/30",
+      "officialUrl": "https://warp.da.ndl.go.jp/20230211/20230201112141/www.mod.go.jp/j/policy/agenda/meeting/gyousei-jyohoka/index.html",
+      "materials": [
+        {
+          "name": "平成２４年度最適化実施評価報告書",
+          "url": "https://warp.da.ndl.go.jp/info:ndljp/pid/11591426/www.mod.go.jp/j/approach/agenda/meeting/materials/gyousei-jyohoka/sonota/pdf/h24/rikujihokyu_chk24.pdf"
+        },
+        {
+          "name": "最適化効果指標・サービス指標一覧",
+          "url": "https://warp.da.ndl.go.jp/info:ndljp/pid/11591426/www.mod.go.jp/j/approach/agenda/meeting/materials/gyousei-jyohoka/sonota/pdf/h24/rikujihokyu_chk24_kpi.pdf"
+        },
+        {
+          "name": "平成２４年度最適化実施評価報告書",
+          "url": "https://warp.da.ndl.go.jp/info:ndljp/pid/11591426/www.mod.go.jp/j/approach/agenda/meeting/materials/gyousei-jyohoka/sonota/pdf/h24/kaijizoushu_chk24.pdf"
+        },
+        {
+          "name": "最適化効果指標・サービス指標一覧",
+          "url": "https://warp.da.ndl.go.jp/info:ndljp/pid/11591426/www.mod.go.jp/j/approach/agenda/meeting/materials/gyousei-jyohoka/sonota/pdf/h24/kaijizoushu_chk24_kpi.pdf"
+        },
+        {
+          "name": "平成２４年度最適化実施評価報告書",
+          "url": "https://warp.da.ndl.go.jp/info:ndljp/pid/11591426/www.mod.go.jp/j/approach/agenda/meeting/materials/gyousei-jyohoka/sonota/pdf/h24/tougou_kisho_chk24.pdf"
+        },
+        {
+          "name": "最適化効果指標・サービス指標一覧",
+          "url": "https://warp.da.ndl.go.jp/info:ndljp/pid/11591426/www.mod.go.jp/j/approach/agenda/meeting/materials/gyousei-jyohoka/sonota/pdf/h24/tougou_kisho_chk24_kpi.pdf"
+        },
+        {
+          "name": "平成２４年度最適化実施評価報告書",
+          "url": "https://warp.da.ndl.go.jp/info:ndljp/pid/11591426/www.mod.go.jp/j/approach/agenda/meeting/materials/gyousei-jyohoka/sonota/pdf/h24/kuujihokyu_chk24.pdf"
+        },
+        {
+          "name": "最適化効果指標・サービス指標一覧",
+          "url": "https://warp.da.ndl.go.jp/info:ndljp/pid/11591426/www.mod.go.jp/j/approach/agenda/meeting/materials/gyousei-jyohoka/sonota/pdf/h24/kuujihokyu_chk24_kpi.pdf"
+        },
+        {
+          "name": "平成２４年度最適化実施評価報告書",
+          "url": "https://warp.da.ndl.go.jp/info:ndljp/pid/11591426/www.mod.go.jp/j/approach/agenda/meeting/materials/gyousei-jyohoka/sonota/pdf/h24/trdi_kenkyuu_chk24.pdf"
+        },
+        {
+          "name": "最適化効果指標・サービス指標一覧",
+          "url": "https://warp.da.ndl.go.jp/info:ndljp/pid/11591426/www.mod.go.jp/j/approach/agenda/meeting/materials/gyousei-jyohoka/sonota/pdf/h24/trdi_kenkyuu_chk24_kpi.pdf"
+        },
+        {
+          "name": "平成２４年度最適化実施評価報告書",
+          "url": "https://warp.da.ndl.go.jp/info:ndljp/pid/11591426/www.mod.go.jp/j/approach/agenda/meeting/materials/gyousei-jyohoka/sonota/pdf/kaiji_yosankaikei_chk24.pdf"
+        }
+      ]
+    },
+    {
       "id": "fsc-tenkabutu-20130628-119",
       "councilId": "fsc-tenkabutu",
       "name": "第119回 添加物専門調査会",
@@ -646381,6 +646571,63 @@
       ]
     },
     {
+      "id": "mod-1111-20120630-007",
+      "councilId": "mod-1111",
+      "name": "防衛省行政情報化推進委員会 第7回 (平成23年度 最適化実施評価報告)",
+      "date": "2012/06/30",
+      "officialUrl": "https://warp.da.ndl.go.jp/20230211/20230201112141/www.mod.go.jp/j/policy/agenda/meeting/gyousei-jyohoka/index.html",
+      "materials": [
+        {
+          "name": "平成２３年度最適化実施評価報告書",
+          "url": "https://warp.da.ndl.go.jp/info:ndljp/pid/11591426/www.mod.go.jp/j/approach/agenda/meeting/materials/gyousei-jyohoka/sonota/pdf/h23/toku_chk23.pdf"
+        },
+        {
+          "name": "最適化効果指標・サービス指標一覧",
+          "url": "https://warp.da.ndl.go.jp/info:ndljp/pid/11591426/www.mod.go.jp/j/approach/agenda/meeting/materials/gyousei-jyohoka/sonota/pdf/h23/toku_chk23_kpi.pdf"
+        },
+        {
+          "name": "平成２３年度最適化実施評価報告書",
+          "url": "https://warp.da.ndl.go.jp/info:ndljp/pid/11591426/www.mod.go.jp/j/approach/agenda/meeting/materials/gyousei-jyohoka/sonota/pdf/h23/rikujihokyu_chk23.pdf"
+        },
+        {
+          "name": "最適化効果指標・サービス指標一覧",
+          "url": "https://warp.da.ndl.go.jp/info:ndljp/pid/11591426/www.mod.go.jp/j/approach/agenda/meeting/materials/gyousei-jyohoka/sonota/pdf/h23/rikujihokyu_chk23_kpi.pdf"
+        },
+        {
+          "name": "平成２３年度最適化実施評価報告書",
+          "url": "https://warp.da.ndl.go.jp/info:ndljp/pid/11591426/www.mod.go.jp/j/approach/agenda/meeting/materials/gyousei-jyohoka/sonota/pdf/h23/kaijizoushu_chk23.pdf"
+        },
+        {
+          "name": "最適化効果指標・サービス指標一覧",
+          "url": "https://warp.da.ndl.go.jp/info:ndljp/pid/11591426/www.mod.go.jp/j/approach/agenda/meeting/materials/gyousei-jyohoka/sonota/pdf/h23/kaijizoushu_chk23_kpi.pdf"
+        },
+        {
+          "name": "平成２３年度最適化実施評価報告書",
+          "url": "https://warp.da.ndl.go.jp/info:ndljp/pid/11591426/www.mod.go.jp/j/approach/agenda/meeting/materials/gyousei-jyohoka/sonota/pdf/h23/tougou_kisho_chk23.pdf"
+        },
+        {
+          "name": "最適化効果指標・サービス指標一覧",
+          "url": "https://warp.da.ndl.go.jp/info:ndljp/pid/11591426/www.mod.go.jp/j/approach/agenda/meeting/materials/gyousei-jyohoka/sonota/pdf/h23/tougou_kisho_chk23_kpi.pdf"
+        },
+        {
+          "name": "平成２３年度最適化実施評価報告書",
+          "url": "https://warp.da.ndl.go.jp/info:ndljp/pid/11591426/www.mod.go.jp/j/approach/agenda/meeting/materials/gyousei-jyohoka/sonota/pdf/h23/kuujihokyu_chk23.pdf"
+        },
+        {
+          "name": "最適化効果指標・サービス指標一覧",
+          "url": "https://warp.da.ndl.go.jp/info:ndljp/pid/11591426/www.mod.go.jp/j/approach/agenda/meeting/materials/gyousei-jyohoka/sonota/pdf/h23/kuujihokyu_chk23_kpi.pdf"
+        },
+        {
+          "name": "平成２３年度最適化実施評価報告書",
+          "url": "https://warp.da.ndl.go.jp/info:ndljp/pid/11591426/www.mod.go.jp/j/approach/agenda/meeting/materials/gyousei-jyohoka/sonota/pdf/h23/trdi_kenkyuu_chk23.pdf"
+        },
+        {
+          "name": "最適化効果指標・サービス指標一覧",
+          "url": "https://warp.da.ndl.go.jp/info:ndljp/pid/11591426/www.mod.go.jp/j/approach/agenda/meeting/materials/gyousei-jyohoka/sonota/pdf/h23/trdi_kenkyuu_chk23_kpi.pdf"
+        }
+      ]
+    },
+    {
       "id": "aca-hosei_mondai_shoiinkai-20120629-002",
       "councilId": "aca-hosei_mondai_shoiinkai",
       "name": "平成24年第2回（2012年6月29日）",
@@ -660411,6 +660658,23 @@
       ]
     },
     {
+      "id": "mod-1102-20111014-001",
+      "councilId": "mod-1102",
+      "name": "海上自衛隊輸送機(YS-11M/M-A)の後継機に関する審査会議 第1回",
+      "date": "2011/10/14",
+      "officialUrl": "https://warp.da.ndl.go.jp/20230211/20230201112131/www.mod.go.jp/j/policy/agenda/meeting/ys_11m/index.html",
+      "materials": [
+        {
+          "name": "海上自衛隊輸送機(YS-11M/M-A)の後継機に関する審査会議 議事概要",
+          "url": "https://warp.da.ndl.go.jp/info:ndljp/pid/11623291/www.mod.go.jp/j/approach/agenda/meeting/ys_11m/pdf/gijiroku.pdf"
+        },
+        {
+          "name": "海上自衛隊YS-11後継機の機種決定について",
+          "url": "https://warp.da.ndl.go.jp/info:ndljp/pid/11347003/www.mod.go.jp/j/press/news/2011/10/14d.html"
+        }
+      ]
+    },
+    {
       "id": "aca-kokugo_kenkyu_h23-20111013-002",
       "councilId": "aca-kokugo_kenkyu_h23",
       "name": "平成23年 第2回 国語分科会 国語研究等小委員会(平成23年9月30日~平成23年11月25日)",
@@ -664100,6 +664364,71 @@
         {
           "name": "大臣挨拶(PDF:103KB)",
           "url": "https://www.fsa.go.jp/singi/singi_kigyou/hatsugen/soukai/20110630/01.pdf"
+        }
+      ]
+    },
+    {
+      "id": "mod-1111-20110630-006",
+      "councilId": "mod-1111",
+      "name": "防衛省行政情報化推進委員会 第6回 (平成22年度 最適化実施評価報告)",
+      "date": "2011/06/30",
+      "officialUrl": "https://warp.da.ndl.go.jp/20230211/20230201112141/www.mod.go.jp/j/policy/agenda/meeting/gyousei-jyohoka/index.html",
+      "materials": [
+        {
+          "name": "平成２２年度最適化実施評価報告書",
+          "url": "https://warp.da.ndl.go.jp/info:ndljp/pid/11591426/www.mod.go.jp/j/approach/agenda/meeting/materials/gyousei-jyohoka/sonota/pdf/h22/toku_chk22.pdf"
+        },
+        {
+          "name": "最適化効果指標・サービス指標一覧",
+          "url": "https://warp.da.ndl.go.jp/info:ndljp/pid/11591426/www.mod.go.jp/j/approach/agenda/meeting/materials/gyousei-jyohoka/sonota/pdf/h22/toku_chk22_kpi.pdf"
+        },
+        {
+          "name": "平成２２年度最適化実施評価報告書",
+          "url": "https://warp.da.ndl.go.jp/info:ndljp/pid/11591426/www.mod.go.jp/j/approach/agenda/meeting/materials/gyousei-jyohoka/sonota/pdf/h22/rikujihokyu_chk22.pdf"
+        },
+        {
+          "name": "最適化効果指標・サービス指標一覧",
+          "url": "https://warp.da.ndl.go.jp/info:ndljp/pid/11591426/www.mod.go.jp/j/approach/agenda/meeting/materials/gyousei-jyohoka/sonota/pdf/h22/rikujihokyu_chk22_kpi.pdf"
+        },
+        {
+          "name": "平成２２年度最適化実施評価報告書",
+          "url": "https://warp.da.ndl.go.jp/info:ndljp/pid/11591426/www.mod.go.jp/j/approach/agenda/meeting/materials/gyousei-jyohoka/sonota/pdf/h22/kaijizoushu_chk22.pdf"
+        },
+        {
+          "name": "最適化効果指標・サービス指標一覧",
+          "url": "https://warp.da.ndl.go.jp/info:ndljp/pid/11591426/www.mod.go.jp/j/approach/agenda/meeting/materials/gyousei-jyohoka/sonota/pdf/h22/kaijizoushu_chk22_kpi.pdf"
+        },
+        {
+          "name": "平成２２年度最適化実施評価報告書",
+          "url": "https://warp.da.ndl.go.jp/info:ndljp/pid/11591426/www.mod.go.jp/j/approach/agenda/meeting/materials/gyousei-jyohoka/sonota/pdf/h22/tougou_kisyo_chk22.pdf"
+        },
+        {
+          "name": "最適化効果指標・サービス指標一覧",
+          "url": "https://warp.da.ndl.go.jp/info:ndljp/pid/11591426/www.mod.go.jp/j/approach/agenda/meeting/materials/gyousei-jyohoka/sonota/pdf/h22/tougou_kisyo_chk22_kpi.pdf"
+        },
+        {
+          "name": "平成２２年度最適化実施評価報告書",
+          "url": "https://warp.da.ndl.go.jp/info:ndljp/pid/11591426/www.mod.go.jp/j/approach/agenda/meeting/materials/gyousei-jyohoka/sonota/pdf/h22/kuujihokyu_chk22.pdf"
+        },
+        {
+          "name": "最適化効果指標・サービス指標一覧",
+          "url": "https://warp.da.ndl.go.jp/info:ndljp/pid/11591426/www.mod.go.jp/j/approach/agenda/meeting/materials/gyousei-jyohoka/sonota/pdf/h22/kuujihokyu_chk22_kpi.pdf"
+        },
+        {
+          "name": "平成２２年度最適化実施評価報告書",
+          "url": "https://warp.da.ndl.go.jp/info:ndljp/pid/11591426/www.mod.go.jp/j/approach/agenda/meeting/materials/gyousei-jyohoka/sonota/pdf/h22/boudai_chk22.pdf"
+        },
+        {
+          "name": "最適化効果指標・サービス指標一覧",
+          "url": "https://warp.da.ndl.go.jp/info:ndljp/pid/11591426/www.mod.go.jp/j/approach/agenda/meeting/materials/gyousei-jyohoka/sonota/pdf/h22/boudai_chk22_kpi.pdf"
+        },
+        {
+          "name": "平成２２年度最適化実施評価報告書",
+          "url": "https://warp.da.ndl.go.jp/info:ndljp/pid/11591426/www.mod.go.jp/j/approach/agenda/meeting/materials/gyousei-jyohoka/sonota/pdf/h22/trdi_kenkyuu_chk22.pdf"
+        },
+        {
+          "name": "最適化効果指標・サービス指標一覧",
+          "url": "https://warp.da.ndl.go.jp/info:ndljp/pid/11591426/www.mod.go.jp/j/approach/agenda/meeting/materials/gyousei-jyohoka/sonota/pdf/h22/trdi_kenkyuu_chk22_kpi.pdf"
         }
       ]
     },
@@ -675538,6 +675867,75 @@
         {
           "name": "参考資料",
           "url": "https://warp.da.ndl.go.jp/info:ndljp/pid/11623291/www.mod.go.jp/j/approach/agenda/meeting/materials/seisaku/sonota/pdf/sankou10.pdf"
+        }
+      ]
+    },
+    {
+      "id": "mod-1111-20100630-005",
+      "councilId": "mod-1111",
+      "name": "防衛省行政情報化推進委員会 第5回 (平成21年度 最適化実施評価報告)",
+      "date": "2010/06/30",
+      "officialUrl": "https://warp.da.ndl.go.jp/20230211/20230201112141/www.mod.go.jp/j/policy/agenda/meeting/gyousei-jyohoka/index.html",
+      "materials": [
+        {
+          "name": "平成２１年度最適化実施評価報告書",
+          "url": "https://warp.da.ndl.go.jp/info:ndljp/pid/11591426/www.mod.go.jp/j/approach/agenda/meeting/materials/gyousei-jyohoka/sonota/pdf/h21/sho_oa_chk21.pdf"
+        },
+        {
+          "name": "最適化効果指標・サービス指標一覧",
+          "url": "https://warp.da.ndl.go.jp/info:ndljp/pid/11591426/www.mod.go.jp/j/approach/agenda/meeting/materials/gyousei-jyohoka/sonota/pdf/h21/sho_oa_chk21_kpi.pdf"
+        },
+        {
+          "name": "平成２１年度最適化実施評価報告書",
+          "url": "https://warp.da.ndl.go.jp/info:ndljp/pid/11591426/www.mod.go.jp/j/approach/agenda/meeting/materials/gyousei-jyohoka/sonota/pdf/h21/toku_chk21.pdf"
+        },
+        {
+          "name": "最適化効果指標・サービス指標一覧",
+          "url": "https://warp.da.ndl.go.jp/info:ndljp/pid/11591426/www.mod.go.jp/j/approach/agenda/meeting/materials/gyousei-jyohoka/sonota/pdf/h21/toku_chk21_kpi.pdf"
+        },
+        {
+          "name": "平成２１年度最適化実施評価報告書",
+          "url": "https://warp.da.ndl.go.jp/info:ndljp/pid/11591426/www.mod.go.jp/j/approach/agenda/meeting/materials/gyousei-jyohoka/sonota/pdf/h21/rikujihokyu_chk21.pdf"
+        },
+        {
+          "name": "最適化効果指標・サービス指標一覧",
+          "url": "https://warp.da.ndl.go.jp/info:ndljp/pid/11591426/www.mod.go.jp/j/approach/agenda/meeting/materials/gyousei-jyohoka/sonota/pdf/h21/rikujihokyu_chk21_kpi.pdf"
+        },
+        {
+          "name": "平成２１年度最適化実施評価報告書",
+          "url": "https://warp.da.ndl.go.jp/info:ndljp/pid/11591426/www.mod.go.jp/j/approach/agenda/meeting/materials/gyousei-jyohoka/sonota/pdf/h21/kaijizoushu_chk21.pdf"
+        },
+        {
+          "name": "最適化効果指標・サービス指標一覧",
+          "url": "https://warp.da.ndl.go.jp/info:ndljp/pid/11591426/www.mod.go.jp/j/approach/agenda/meeting/materials/gyousei-jyohoka/sonota/pdf/h21/kaijizoushu_chk21_kpi.pdf"
+        },
+        {
+          "name": "平成２１年度最適化実施評価報告書",
+          "url": "https://warp.da.ndl.go.jp/info:ndljp/pid/11591426/www.mod.go.jp/j/approach/agenda/meeting/materials/gyousei-jyohoka/sonota/pdf/h21/tougou_kisyo_chk21.pdf"
+        },
+        {
+          "name": "最適化効果指標・サービス指標一覧",
+          "url": "https://warp.da.ndl.go.jp/info:ndljp/pid/11591426/www.mod.go.jp/j/approach/agenda/meeting/materials/gyousei-jyohoka/sonota/pdf/h21/tougou_kisyo_chk21_kpi.pdf"
+        },
+        {
+          "name": "平成２１年度最適化実施評価報告書",
+          "url": "https://warp.da.ndl.go.jp/info:ndljp/pid/11591426/www.mod.go.jp/j/approach/agenda/meeting/materials/gyousei-jyohoka/sonota/pdf/h21/kuujihokyu_chk21.pdf"
+        },
+        {
+          "name": "平成２１年度最適化実施評価報告書",
+          "url": "https://warp.da.ndl.go.jp/info:ndljp/pid/11591426/www.mod.go.jp/j/approach/agenda/meeting/materials/gyousei-jyohoka/sonota/pdf/h21/boudai_chk21.pdf"
+        },
+        {
+          "name": "最適化効果指標・サービス指標一覧",
+          "url": "https://warp.da.ndl.go.jp/info:ndljp/pid/11591426/www.mod.go.jp/j/approach/agenda/meeting/materials/gyousei-jyohoka/sonota/pdf/h21/boudai_chk21_kpi.pdf"
+        },
+        {
+          "name": "平成２１年度最適化実施評価報告書",
+          "url": "https://warp.da.ndl.go.jp/info:ndljp/pid/11591426/www.mod.go.jp/j/approach/agenda/meeting/materials/gyousei-jyohoka/sonota/pdf/h21/trdi_kenkyuu_chk21.pdf"
+        },
+        {
+          "name": "最適化効果指標・サービス指標一覧",
+          "url": "https://warp.da.ndl.go.jp/info:ndljp/pid/11591426/www.mod.go.jp/j/approach/agenda/meeting/materials/gyousei-jyohoka/sonota/pdf/h21/trdi_kenkyuu_chk21_kpi.pdf"
         }
       ]
     },
@@ -694957,6 +695355,75 @@
       ]
     },
     {
+      "id": "mod-1111-20090630-004",
+      "councilId": "mod-1111",
+      "name": "防衛省行政情報化推進委員会 第4回 (平成20年度 最適化実施評価報告)",
+      "date": "2009/06/30",
+      "officialUrl": "https://warp.da.ndl.go.jp/20230211/20230201112141/www.mod.go.jp/j/policy/agenda/meeting/gyousei-jyohoka/index.html",
+      "materials": [
+        {
+          "name": "平成２０年度最適化実施評価報告書",
+          "url": "https://warp.da.ndl.go.jp/info:ndljp/pid/11591426/www.mod.go.jp/j/approach/agenda/meeting/materials/gyousei-jyohoka/sonota/pdf/h20/sho_oa_chk20.pdf"
+        },
+        {
+          "name": "最適化効果指標・サービス指標一覧",
+          "url": "https://warp.da.ndl.go.jp/info:ndljp/pid/11591426/www.mod.go.jp/j/approach/agenda/meeting/materials/gyousei-jyohoka/sonota/pdf/h20/sho_oa_chk20_kpi.pdf"
+        },
+        {
+          "name": "平成２０年度最適化実施評価報告書",
+          "url": "https://warp.da.ndl.go.jp/info:ndljp/pid/11591426/www.mod.go.jp/j/approach/agenda/meeting/materials/gyousei-jyohoka/sonota/pdf/h20/toku_chk20.pdf"
+        },
+        {
+          "name": "最適化効果指標・サービス指標一覧",
+          "url": "https://warp.da.ndl.go.jp/info:ndljp/pid/11591426/www.mod.go.jp/j/approach/agenda/meeting/materials/gyousei-jyohoka/sonota/pdf/h20/toku_chk20_kpi.pdf"
+        },
+        {
+          "name": "平成２０年度最適化実施評価報告書",
+          "url": "https://warp.da.ndl.go.jp/info:ndljp/pid/11591426/www.mod.go.jp/j/approach/agenda/meeting/materials/gyousei-jyohoka/sonota/pdf/h20/6rikubaku_chk20.pdf"
+        },
+        {
+          "name": "最適化効果指標・サービス指標一覧",
+          "url": "https://warp.da.ndl.go.jp/info:ndljp/pid/11591426/www.mod.go.jp/j/approach/agenda/meeting/materials/gyousei-jyohoka/sonota/pdf/h20/6rikubaku_chk20_kpi.pdf"
+        },
+        {
+          "name": "陸自補給管理業務の業務・システム最適化計画改定",
+          "url": "https://warp.da.ndl.go.jp/info:ndljp/pid/11591426/www.mod.go.jp/j/approach/agenda/meeting/materials/gyousei-jyohoka/sonota/pdf/h20/6rikubaku_20.pdf"
+        },
+        {
+          "name": "平成２０年度最適化実施評価報告書",
+          "url": "https://warp.da.ndl.go.jp/info:ndljp/pid/11591426/www.mod.go.jp/j/approach/agenda/meeting/materials/gyousei-jyohoka/sonota/pdf/h20/hokyuu3_chk20.pdf"
+        },
+        {
+          "name": "最適化効果指標・サービス指標一覧",
+          "url": "https://warp.da.ndl.go.jp/info:ndljp/pid/11591426/www.mod.go.jp/j/approach/agenda/meeting/materials/gyousei-jyohoka/sonota/pdf/h20/hokyuu3_chk20_kpi.pdf"
+        },
+        {
+          "name": "平成２０年度最適化実施評価報告書",
+          "url": "https://warp.da.ndl.go.jp/info:ndljp/pid/11591426/www.mod.go.jp/j/approach/agenda/meeting/materials/gyousei-jyohoka/sonota/pdf/h20/tougou_kisyo_chk20.pdf"
+        },
+        {
+          "name": "最適化効果指標・サービス指標一覧",
+          "url": "https://warp.da.ndl.go.jp/info:ndljp/pid/11591426/www.mod.go.jp/j/approach/agenda/meeting/materials/gyousei-jyohoka/sonota/pdf/h20/tougou_kisyo_chk20_kpi.pdf"
+        },
+        {
+          "name": "平成２０年度最適化実施評価報告書",
+          "url": "https://warp.da.ndl.go.jp/info:ndljp/pid/11591426/www.mod.go.jp/j/approach/agenda/meeting/materials/gyousei-jyohoka/sonota/pdf/h20/hokyuu_data_chk20.pdf"
+        },
+        {
+          "name": "平成２０年度最適化実施評価報告書",
+          "url": "https://warp.da.ndl.go.jp/info:ndljp/pid/11591426/www.mod.go.jp/j/approach/agenda/meeting/materials/gyousei-jyohoka/sonota/pdf/h20/boudai_hokukokusyo.pdf"
+        },
+        {
+          "name": "平成２０年度最適化実施評価報告書",
+          "url": "https://warp.da.ndl.go.jp/info:ndljp/pid/11591426/www.mod.go.jp/j/approach/agenda/meeting/materials/gyousei-jyohoka/sonota/pdf/h20/trdi_kenkyuu_chk20.pdf"
+        },
+        {
+          "name": "最適化効果指標・サービス指標一覧",
+          "url": "https://warp.da.ndl.go.jp/info:ndljp/pid/11591426/www.mod.go.jp/j/approach/agenda/meeting/materials/gyousei-jyohoka/sonota/pdf/h20/trdi_kenkyuu_chk20_kpi.pdf"
+        }
+      ]
+    },
+    {
       "id": "fsc-doubutu-20090629-226",
       "councilId": "fsc-doubutu",
       "name": "第226回 動物用医薬品専門調査会",
@@ -706655,6 +707122,55 @@
       ]
     },
     {
+      "id": "mod-1111-20080630-003",
+      "councilId": "mod-1111",
+      "name": "防衛省行政情報化推進委員会 第3回 (平成19年度 最適化実施評価報告)",
+      "date": "2008/06/30",
+      "officialUrl": "https://warp.da.ndl.go.jp/20230211/20230201112141/www.mod.go.jp/j/policy/agenda/meeting/gyousei-jyohoka/index.html",
+      "materials": [
+        {
+          "name": "平成１９年度最適化実施評価報告書",
+          "url": "https://warp.da.ndl.go.jp/info:ndljp/pid/11591426/www.mod.go.jp/j/approach/agenda/meeting/materials/gyousei-jyohoka/sonota/pdf/h19/sho_oa_chk19.pdf"
+        },
+        {
+          "name": "最適化効果指標・サービス指標一覧（PDF:50KB)",
+          "url": "https://warp.da.ndl.go.jp/info:ndljp/pid/11591426/www.mod.go.jp/j/approach/agenda/meeting/materials/gyousei-jyohoka/sonota/pdf/h19/sho_oa_chk19_kpi.pdf"
+        },
+        {
+          "name": "平成１９年度最適化実施評価報告書",
+          "url": "https://warp.da.ndl.go.jp/info:ndljp/pid/11591426/www.mod.go.jp/j/approach/agenda/meeting/materials/gyousei-jyohoka/sonota/pdf/h19/toku_chk19.pdf"
+        },
+        {
+          "name": "平成１９年度最適化実施評価報告書",
+          "url": "https://warp.da.ndl.go.jp/info:ndljp/pid/11591426/www.mod.go.jp/j/approach/agenda/meeting/materials/gyousei-jyohoka/sonota/pdf/h19/6rikubaku_chk19.pdf"
+        },
+        {
+          "name": "最適化効果指標・サービス指標一覧",
+          "url": "https://warp.da.ndl.go.jp/info:ndljp/pid/11591426/www.mod.go.jp/j/approach/agenda/meeting/materials/gyousei-jyohoka/sonota/pdf/h19/6rikubaku_chk19_kpi.pdf"
+        },
+        {
+          "name": "平成１９年度最適化実施評価報告書",
+          "url": "https://warp.da.ndl.go.jp/info:ndljp/pid/11591426/www.mod.go.jp/j/approach/agenda/meeting/materials/gyousei-jyohoka/sonota/pdf/h19/hokyuu3_chk19.pdf"
+        },
+        {
+          "name": "平成１９年度最適化実施評価報告書",
+          "url": "https://warp.da.ndl.go.jp/info:ndljp/pid/11591426/www.mod.go.jp/j/approach/agenda/meeting/materials/gyousei-jyohoka/sonota/pdf/h19/tougou_kisyo_chk19.pdf"
+        },
+        {
+          "name": "最適化効果指標・サービス指標一覧",
+          "url": "https://warp.da.ndl.go.jp/info:ndljp/pid/11591426/www.mod.go.jp/j/approach/agenda/meeting/materials/gyousei-jyohoka/sonota/pdf/h19/tougou_kisyo_chk19_kpi.pdf"
+        },
+        {
+          "name": "平成１９年度最適化実施評価報告書",
+          "url": "https://warp.da.ndl.go.jp/info:ndljp/pid/11591426/www.mod.go.jp/j/approach/agenda/meeting/materials/gyousei-jyohoka/sonota/pdf/h19/hokyuu_data_chk19.pdf"
+        },
+        {
+          "name": "平成１９年度最適化実施評価報告書",
+          "url": "https://warp.da.ndl.go.jp/info:ndljp/pid/11591426/www.mod.go.jp/j/approach/agenda/meeting/materials/gyousei-jyohoka/sonota/pdf/h19/trdi_kenkyuu_chk19.pdf"
+        }
+      ]
+    },
+    {
       "id": "cao-2951-20080627-009",
       "councilId": "cao-2951",
       "name": "第9回 景気動向指数研究会",
@@ -717601,6 +718117,55 @@
       ]
     },
     {
+      "id": "mod-1111-20070630-002",
+      "councilId": "mod-1111",
+      "name": "防衛省行政情報化推進委員会 第2回 (平成18年度 最適化実施評価報告)",
+      "date": "2007/06/30",
+      "officialUrl": "https://warp.da.ndl.go.jp/20230211/20230201112141/www.mod.go.jp/j/policy/agenda/meeting/gyousei-jyohoka/index.html",
+      "materials": [
+        {
+          "name": "平成１８年度最適化実施評価報告書",
+          "url": "https://warp.da.ndl.go.jp/info:ndljp/pid/11591426/www.mod.go.jp/j/approach/agenda/meeting/materials/gyousei-jyohoka/sonota/pdf/h18/cho_oa_chk06.pdf"
+        },
+        {
+          "name": "最適化効果指標・サービス指標一覧",
+          "url": "https://warp.da.ndl.go.jp/info:ndljp/pid/11591426/www.mod.go.jp/j/approach/agenda/meeting/materials/gyousei-jyohoka/sonota/pdf/h18/cho_oa_chk06_kpi.pdf"
+        },
+        {
+          "name": "平成１８年度最適化実施評価報告書",
+          "url": "https://warp.da.ndl.go.jp/info:ndljp/pid/11591426/www.mod.go.jp/j/approach/agenda/meeting/materials/gyousei-jyohoka/sonota/pdf/h18/toku_chk06.pdf"
+        },
+        {
+          "name": "平成１８年度最適化実施評価報告書",
+          "url": "https://warp.da.ndl.go.jp/info:ndljp/pid/11591426/www.mod.go.jp/j/approach/agenda/meeting/materials/gyousei-jyohoka/sonota/pdf/h18/6rikubaku_chk06.pdf"
+        },
+        {
+          "name": "最適化効果指標・サービス指標一覧",
+          "url": "https://warp.da.ndl.go.jp/info:ndljp/pid/11591426/www.mod.go.jp/j/approach/agenda/meeting/materials/gyousei-jyohoka/sonota/pdf/h18/6rikubaku_chk06_kpi.pdf"
+        },
+        {
+          "name": "平成１８年度最適化実施評価報告書",
+          "url": "https://warp.da.ndl.go.jp/info:ndljp/pid/11591426/www.mod.go.jp/j/approach/agenda/meeting/materials/gyousei-jyohoka/sonota/pdf/h18/hokyuu3_chk06.pdf"
+        },
+        {
+          "name": "平成１８年度最適化実施評価報告書（PDF:17KB)",
+          "url": "https://warp.da.ndl.go.jp/info:ndljp/pid/11591426/www.mod.go.jp/j/approach/agenda/meeting/materials/gyousei-jyohoka/sonota/pdf/h18/tougou_kisyo_chk06.pdf"
+        },
+        {
+          "name": "最適化効果指標・サービス指標一覧",
+          "url": "https://warp.da.ndl.go.jp/info:ndljp/pid/11591426/www.mod.go.jp/j/approach/agenda/meeting/materials/gyousei-jyohoka/sonota/pdf/h18/tougou_kisyo_chk06_kpi.pdf"
+        },
+        {
+          "name": "平成１８年度最適化実施評価報告書",
+          "url": "https://warp.da.ndl.go.jp/info:ndljp/pid/11591426/www.mod.go.jp/j/approach/agenda/meeting/materials/gyousei-jyohoka/sonota/pdf/h18/hokyuu_data_chk06.pdf"
+        },
+        {
+          "name": "平成１８年度最適化実施評価報告書",
+          "url": "https://warp.da.ndl.go.jp/info:ndljp/pid/11591426/www.mod.go.jp/j/approach/agenda/meeting/materials/gyousei-jyohoka/sonota/pdf/h18/trdi_kenkyuu_chk06.pdf"
+        }
+      ]
+    },
+    {
       "id": "aca-bunka_shingikai_sokai-20070629-044",
       "councilId": "aca-bunka_shingikai_sokai",
       "name": "第44回 文化審議会 総会",
@@ -727151,6 +727716,19 @@
       ]
     },
     {
+      "id": "mod-1128-20060616-014",
+      "councilId": "mod-1128",
+      "name": "防衛施設庁入札談合等再発防止に係る抜本的対策に関する検討会 第14回",
+      "date": "2006/06/16",
+      "officialUrl": "https://warp.da.ndl.go.jp/20230211/20230201112202/www.mod.go.jp/j/policy/agenda/meeting/dangou/index.html",
+      "materials": [
+        {
+          "name": "防衛施設庁入札談合等再発防止に係る抜本的対策報告書（18.6.16）（PDF:713KB）",
+          "url": "https://warp.da.ndl.go.jp/info:ndljp/pid/11591426/www.mod.go.jp/j/approach/agenda/meeting/materials/dangou/houkoku/pdf/20060616.pdf"
+        }
+      ]
+    },
+    {
       "id": "fsa-shouken_shijou_chuukai-20060615-007",
       "councilId": "fsa-shouken_shijou_chuukai",
       "name": "第7回 証券会社の市場仲介機能等に関する懇談会",
@@ -727299,6 +727877,23 @@
           "name": "議事録[TXT形式:118KB]",
           "url": "https://www.mhlw.go.jp/content/s0613-1.txt",
           "type": "HTML"
+        }
+      ]
+    },
+    {
+      "id": "mod-1128-20060608-013",
+      "councilId": "mod-1128",
+      "name": "防衛施設庁入札談合等再発防止に係る抜本的対策に関する検討会 第13回",
+      "date": "2006/06/08",
+      "officialUrl": "https://warp.da.ndl.go.jp/20230211/20230201112202/www.mod.go.jp/j/policy/agenda/meeting/dangou/index.html",
+      "materials": [
+        {
+          "name": "第13回 検討会議事要旨",
+          "url": "https://warp.da.ndl.go.jp/info:ndljp/pid/11591426/www.mod.go.jp/j/approach/agenda/meeting/materials/dangou/giji/13.html"
+        },
+        {
+          "name": "第13回 検討会議事要旨(PDF)",
+          "url": "https://warp.da.ndl.go.jp/info:ndljp/pid/11591426/www.mod.go.jp/j/approach/agenda/meeting/materials/dangou/giji/pdf/13.pdf"
         }
       ]
     },
@@ -727921,6 +728516,27 @@
       ]
     },
     {
+      "id": "mod-1128-20060427-012",
+      "councilId": "mod-1128",
+      "name": "防衛施設庁入札談合等再発防止に係る抜本的対策に関する検討会 第12回",
+      "date": "2006/04/27",
+      "officialUrl": "https://warp.da.ndl.go.jp/20230211/20230201112202/www.mod.go.jp/j/policy/agenda/meeting/dangou/index.html",
+      "materials": [
+        {
+          "name": "第12回 検討会議事要旨",
+          "url": "https://warp.da.ndl.go.jp/info:ndljp/pid/11591426/www.mod.go.jp/j/approach/agenda/meeting/materials/dangou/giji/12.html"
+        },
+        {
+          "name": "第12回 検討会議事要旨(PDF)",
+          "url": "https://warp.da.ndl.go.jp/info:ndljp/pid/11591426/www.mod.go.jp/j/approach/agenda/meeting/materials/dangou/giji/pdf/12.pdf"
+        },
+        {
+          "name": "防衛施設庁入札談合等再発防止に係る抜本的対策（報告書概案）（18.4.27）（PDF:126KB）",
+          "url": "https://warp.da.ndl.go.jp/info:ndljp/pid/11591426/www.mod.go.jp/j/approach/agenda/meeting/materials/dangou/houkoku/pdf/houkoku_gaiyou.pdf"
+        }
+      ]
+    },
+    {
       "id": "fsa-kinyu_kaikeishi_bukai-20060426-005",
       "councilId": "fsa-kinyu_kaikeishi_bukai",
       "name": "第5回 公認会計士制度部会",
@@ -728279,6 +728895,23 @@
       ]
     },
     {
+      "id": "mod-1128-20060419-011",
+      "councilId": "mod-1128",
+      "name": "防衛施設庁入札談合等再発防止に係る抜本的対策に関する検討会 第11回",
+      "date": "2006/04/19",
+      "officialUrl": "https://warp.da.ndl.go.jp/20230211/20230201112202/www.mod.go.jp/j/policy/agenda/meeting/dangou/index.html",
+      "materials": [
+        {
+          "name": "第11回 検討会議事要旨",
+          "url": "https://warp.da.ndl.go.jp/info:ndljp/pid/11591426/www.mod.go.jp/j/approach/agenda/meeting/materials/dangou/giji/11.html"
+        },
+        {
+          "name": "第11回 検討会議事要旨(PDF)",
+          "url": "https://warp.da.ndl.go.jp/info:ndljp/pid/11591426/www.mod.go.jp/j/approach/agenda/meeting/materials/dangou/giji/pdf/11.pdf"
+        }
+      ]
+    },
+    {
       "id": "mod-shisetsu-20060419-004",
       "councilId": "mod-shisetsu",
       "name": "第4回 防衛施設中央審議会",
@@ -728430,6 +729063,23 @@
           "name": "議事録",
           "url": "https://www.fsc.go.jp/fsciis/attachedFile/download?retrievalId=kai20210729so1&fileId=810",
           "type": "HTML"
+        }
+      ]
+    },
+    {
+      "id": "mod-1128-20060413-010",
+      "councilId": "mod-1128",
+      "name": "防衛施設庁入札談合等再発防止に係る抜本的対策に関する検討会 第10回",
+      "date": "2006/04/13",
+      "officialUrl": "https://warp.da.ndl.go.jp/20230211/20230201112202/www.mod.go.jp/j/policy/agenda/meeting/dangou/index.html",
+      "materials": [
+        {
+          "name": "第10回 検討会議事要旨",
+          "url": "https://warp.da.ndl.go.jp/info:ndljp/pid/11591426/www.mod.go.jp/j/approach/agenda/meeting/materials/dangou/giji/10.html"
+        },
+        {
+          "name": "第10回 検討会議事要旨(PDF)",
+          "url": "https://warp.da.ndl.go.jp/info:ndljp/pid/11591426/www.mod.go.jp/j/approach/agenda/meeting/materials/dangou/giji/pdf/10.pdf"
         }
       ]
     },
@@ -728587,6 +729237,23 @@
       ]
     },
     {
+      "id": "mod-1128-20060406-009",
+      "councilId": "mod-1128",
+      "name": "防衛施設庁入札談合等再発防止に係る抜本的対策に関する検討会 第9回",
+      "date": "2006/04/06",
+      "officialUrl": "https://warp.da.ndl.go.jp/20230211/20230201112202/www.mod.go.jp/j/policy/agenda/meeting/dangou/index.html",
+      "materials": [
+        {
+          "name": "第9回 検討会議事要旨",
+          "url": "https://warp.da.ndl.go.jp/info:ndljp/pid/11591426/www.mod.go.jp/j/approach/agenda/meeting/materials/dangou/giji/09.html"
+        },
+        {
+          "name": "第9回 検討会議事要旨(PDF)",
+          "url": "https://warp.da.ndl.go.jp/info:ndljp/pid/11591426/www.mod.go.jp/j/approach/agenda/meeting/materials/dangou/giji/pdf/09.pdf"
+        }
+      ]
+    },
+    {
       "id": "aca-hosei_mondai_shoiinkai-20060405-002",
       "councilId": "aca-hosei_mondai_shoiinkai",
       "name": "平成18年第2回（2006年4月5日）",
@@ -728662,6 +729329,95 @@
         {
           "name": "議事録",
           "url": "https://www.fsa.go.jp/singi/singi_kasikin/gijiyousi/20060331.html"
+        }
+      ]
+    },
+    {
+      "id": "mod-1111-20060331-001",
+      "councilId": "mod-1111",
+      "name": "防衛省行政情報化推進委員会 第1回 (業務・システム最適化計画策定)",
+      "date": "2006/03/31",
+      "officialUrl": "https://warp.da.ndl.go.jp/20230211/20230201112141/www.mod.go.jp/j/policy/agenda/meeting/gyousei-jyohoka/index.html",
+      "materials": [
+        {
+          "name": "防衛庁ＯＡネットワーク（共通システム）最適化計画",
+          "url": "https://warp.da.ndl.go.jp/info:ndljp/pid/11591426/www.mod.go.jp/j/approach/agenda/meeting/materials/gyousei-jyohoka/sonota/pdf/cho_oa.pdf"
+        },
+        {
+          "name": "特別調達資金に関する業務の業務・システム見直し方針",
+          "url": "https://warp.da.ndl.go.jp/info:ndljp/pid/11591426/www.mod.go.jp/j/approach/agenda/meeting/materials/gyousei-jyohoka/sonota/pdf/tokubetu.pdf"
+        },
+        {
+          "name": "特別調達資金に関する業務の業務・システム最適化計画",
+          "url": "https://warp.da.ndl.go.jp/info:ndljp/pid/11591426/www.mod.go.jp/j/approach/agenda/meeting/materials/gyousei-jyohoka/sonota/toku_index.html"
+        },
+        {
+          "name": "６陸幕補給システムの業務・システム見直し方針",
+          "url": "https://warp.da.ndl.go.jp/info:ndljp/pid/11591426/www.mod.go.jp/j/approach/agenda/meeting/materials/gyousei-jyohoka/sonota/pdf/riku_hokyuu.pdf"
+        },
+        {
+          "name": "６陸幕補給システムの業務・システム最適化計画",
+          "url": "https://warp.da.ndl.go.jp/info:ndljp/pid/11591426/www.mod.go.jp/j/approach/agenda/meeting/materials/gyousei-jyohoka/sonota/pdf/6rikubaku.pdf"
+        },
+        {
+          "name": "海幕補給３システムの業務・システム見直し方針",
+          "url": "https://warp.da.ndl.go.jp/info:ndljp/pid/11591426/www.mod.go.jp/j/approach/agenda/meeting/materials/gyousei-jyohoka/sonota/pdf/hokyuu3_minaoshi.pdf"
+        },
+        {
+          "name": "海幕補給３システムの業務・システム最適化計画",
+          "url": "https://warp.da.ndl.go.jp/info:ndljp/pid/11591426/www.mod.go.jp/j/approach/agenda/meeting/materials/gyousei-jyohoka/sonota/pdf/hokyuu3_saiteki.pdf"
+        },
+        {
+          "name": "海自造修整備補給システムの業務・システム最適化計画",
+          "url": "https://warp.da.ndl.go.jp/info:ndljp/pid/11591426/www.mod.go.jp/j/approach/agenda/meeting/materials/gyousei-jyohoka/sonota/pdf/hokyuu_saiteki_kai.pdf"
+        },
+        {
+          "name": "統合気象システムの業務・システムの見直し方針",
+          "url": "https://warp.da.ndl.go.jp/info:ndljp/pid/11591426/www.mod.go.jp/j/approach/agenda/meeting/materials/gyousei-jyohoka/sonota/pdf/kisyou.pdf"
+        },
+        {
+          "name": "統合気象システムの業務・システム最適化計画",
+          "url": "https://warp.da.ndl.go.jp/info:ndljp/pid/11591426/www.mod.go.jp/j/approach/agenda/meeting/materials/gyousei-jyohoka/sonota/pdf/tougo_kisyo.pdf"
+        },
+        {
+          "name": "統合気象システムの業務・システム最適化計画改定",
+          "url": "https://warp.da.ndl.go.jp/info:ndljp/pid/11591426/www.mod.go.jp/j/approach/agenda/meeting/materials/gyousei-jyohoka/sonota/pdf/tougou_kisyo_kaitei.pdf"
+        },
+        {
+          "name": "航空自衛隊補給３システムの業務・システム見直し方針",
+          "url": "https://warp.da.ndl.go.jp/info:ndljp/pid/11591426/www.mod.go.jp/j/approach/agenda/meeting/materials/gyousei-jyohoka/sonota/pdf/kuji_hokyuu.pdf"
+        },
+        {
+          "name": "航空自衛隊データ処理近代化システムの業務・システム見直し方針",
+          "url": "https://warp.da.ndl.go.jp/info:ndljp/pid/11591426/www.mod.go.jp/j/approach/agenda/meeting/materials/gyousei-jyohoka/sonota/pdf/kuji_kindaika.pdf"
+        },
+        {
+          "name": "航空自衛隊補給３システム及び航空自衛隊データ処理近代化システムの業務・システム最適化計画（PDF:3,3MB)",
+          "url": "https://warp.da.ndl.go.jp/info:ndljp/pid/11591426/www.mod.go.jp/j/approach/agenda/meeting/materials/gyousei-jyohoka/sonota/pdf/hokyuu_data02.pdf"
+        },
+        {
+          "name": "防衛大学校共同利用電子計算機システムの業務・システムの見直し方針",
+          "url": "https://warp.da.ndl.go.jp/info:ndljp/pid/11591426/www.mod.go.jp/j/approach/agenda/meeting/materials/gyousei-jyohoka/sonota/pdf/boudai_minaosi.pdf"
+        },
+        {
+          "name": "防衛大学校共同利用電子計算機システムの業務・システム最適化計画",
+          "url": "https://warp.da.ndl.go.jp/info:ndljp/pid/11591426/www.mod.go.jp/j/approach/agenda/meeting/materials/gyousei-jyohoka/sonota/pdf/boudai_saitekika.pdf"
+        },
+        {
+          "name": "技術研究本部研究開発業務の業務・システム見直し方針",
+          "url": "https://warp.da.ndl.go.jp/info:ndljp/pid/11591426/www.mod.go.jp/j/approach/agenda/meeting/materials/gyousei-jyohoka/sonota/pdf/trdi_kenkyuu.pdf"
+        },
+        {
+          "name": "技術研究本部研究開発業務の業務・システム最適化計画",
+          "url": "https://warp.da.ndl.go.jp/info:ndljp/pid/11591426/www.mod.go.jp/j/approach/agenda/meeting/materials/gyousei-jyohoka/sonota/pdf/trdi_kenkyuu_saiteki.pdf"
+        },
+        {
+          "name": "海上自衛隊の予算会計業務・システム見直し方針",
+          "url": "https://warp.da.ndl.go.jp/info:ndljp/pid/11591426/www.mod.go.jp/j/approach/agenda/meeting/materials/gyousei-jyohoka/sonota/pdf/kaiji_yosankaikei_minaoshi.pdf"
+        },
+        {
+          "name": "海上自衛隊の予算会計業務・システム最適化計画",
+          "url": "https://warp.da.ndl.go.jp/info:ndljp/pid/11591426/www.mod.go.jp/j/approach/agenda/meeting/materials/gyousei-jyohoka/sonota/pdf/kaiji_yosankaikei_saiteki.pdf"
         }
       ]
     },
@@ -729446,6 +730202,27 @@
       ]
     },
     {
+      "id": "mod-1128-20060323-008",
+      "councilId": "mod-1128",
+      "name": "防衛施設庁入札談合等再発防止に係る抜本的対策に関する検討会 第8回",
+      "date": "2006/03/23",
+      "officialUrl": "https://warp.da.ndl.go.jp/20230211/20230201112202/www.mod.go.jp/j/policy/agenda/meeting/dangou/index.html",
+      "materials": [
+        {
+          "name": "第8回 検討会議事要旨",
+          "url": "https://warp.da.ndl.go.jp/info:ndljp/pid/11591426/www.mod.go.jp/j/approach/agenda/meeting/materials/dangou/giji/08.html"
+        },
+        {
+          "name": "第8回 検討会議事要旨(PDF)",
+          "url": "https://warp.da.ndl.go.jp/info:ndljp/pid/11591426/www.mod.go.jp/j/approach/agenda/meeting/materials/dangou/giji/pdf/08.pdf"
+        },
+        {
+          "name": "防衛施設庁入札談合等再発防止に係る抜本的対策の基本的方向について（18.3.24）",
+          "url": "https://warp.da.ndl.go.jp/info:ndljp/pid/11591426/www.mod.go.jp/j/approach/agenda/meeting/materials/dangou/houkoku/kihon_houkou.html"
+        }
+      ]
+    },
+    {
       "id": "moe-chuo_kankyo_dobutsu-20060323-015",
       "councilId": "moe-chuo_kankyo_dobutsu",
       "name": "第15回 中央環境審議会 動物愛護部会",
@@ -729714,6 +730491,19 @@
       ]
     },
     {
+      "id": "mod-1128-20060316-007",
+      "councilId": "mod-1128",
+      "name": "防衛施設庁入札談合等再発防止に係る抜本的対策に関する検討会 第7回",
+      "date": "2006/03/16",
+      "officialUrl": "https://warp.da.ndl.go.jp/20230211/20230201112202/www.mod.go.jp/j/policy/agenda/meeting/dangou/index.html",
+      "materials": [
+        {
+          "name": "第7回 検討会議事要旨",
+          "url": "https://warp.da.ndl.go.jp/info:ndljp/pid/11591426/www.mod.go.jp/j/approach/agenda/meeting/materials/dangou/giji/07.html"
+        }
+      ]
+    },
+    {
       "id": "fsc-sinkaihatu-20060315-035",
       "councilId": "fsc-sinkaihatu",
       "name": "第35回新開発食品専門調査会(非公開)",
@@ -729917,6 +730707,19 @@
       ]
     },
     {
+      "id": "mod-1128-20060309-006",
+      "councilId": "mod-1128",
+      "name": "防衛施設庁入札談合等再発防止に係る抜本的対策に関する検討会 第6回",
+      "date": "2006/03/09",
+      "officialUrl": "https://warp.da.ndl.go.jp/20230211/20230201112202/www.mod.go.jp/j/policy/agenda/meeting/dangou/index.html",
+      "materials": [
+        {
+          "name": "第6回 検討会議事要旨(PDF)",
+          "url": "https://warp.da.ndl.go.jp/info:ndljp/pid/11591426/www.mod.go.jp/j/approach/agenda/meeting/materials/dangou/giji/pdf/06.pdf"
+        }
+      ]
+    },
+    {
       "id": "mod-seisaku_hyouka-20060309-011",
       "councilId": "mod-seisaku_hyouka",
       "name": "第11回 人事関係施策等検討会議",
@@ -730010,6 +730813,19 @@
           "name": "議事録",
           "url": "https://www.mhlw.go.jp/shingi/2006/03/s0302-4.html",
           "type": "HTML"
+        }
+      ]
+    },
+    {
+      "id": "mod-1128-20060302-005",
+      "councilId": "mod-1128",
+      "name": "防衛施設庁入札談合等再発防止に係る抜本的対策に関する検討会 第5回",
+      "date": "2006/03/02",
+      "officialUrl": "https://warp.da.ndl.go.jp/20230211/20230201112202/www.mod.go.jp/j/policy/agenda/meeting/dangou/index.html",
+      "materials": [
+        {
+          "name": "第5回 検討会議事要旨(PDF)",
+          "url": "https://warp.da.ndl.go.jp/info:ndljp/pid/11591426/www.mod.go.jp/j/approach/agenda/meeting/materials/dangou/giji/pdf/05.pdf"
         }
       ]
     },
@@ -730197,6 +731013,23 @@
           "name": "議事録[PDF]",
           "url": "https://www.fsc.go.jp/fsciis/attachedFile/download?retrievalId=kai20060224do2&fileId=104",
           "type": "HTML"
+        }
+      ]
+    },
+    {
+      "id": "mod-1128-20060223-004",
+      "councilId": "mod-1128",
+      "name": "防衛施設庁入札談合等再発防止に係る抜本的対策に関する検討会 第4回",
+      "date": "2006/02/23",
+      "officialUrl": "https://warp.da.ndl.go.jp/20230211/20230201112202/www.mod.go.jp/j/policy/agenda/meeting/dangou/index.html",
+      "materials": [
+        {
+          "name": "第4回 検討会議事要旨(PDF)",
+          "url": "https://warp.da.ndl.go.jp/info:ndljp/pid/11591426/www.mod.go.jp/j/approach/agenda/meeting/materials/dangou/giji/pdf/04.pdf"
+        },
+        {
+          "name": "防衛施設庁入札談合等再発防止に係る抜本的対策に関する検討の現状について（18.2.24）",
+          "url": "https://warp.da.ndl.go.jp/info:ndljp/pid/11591426/www.mod.go.jp/j/approach/agenda/meeting/materials/dangou/houkoku/genjyou.html"
         }
       ]
     },
@@ -730609,6 +731442,19 @@
       ]
     },
     {
+      "id": "mod-1128-20060216-003",
+      "councilId": "mod-1128",
+      "name": "防衛施設庁入札談合等再発防止に係る抜本的対策に関する検討会 第3回",
+      "date": "2006/02/16",
+      "officialUrl": "https://warp.da.ndl.go.jp/20230211/20230201112202/www.mod.go.jp/j/policy/agenda/meeting/dangou/index.html",
+      "materials": [
+        {
+          "name": "第3回 検討会議事要旨",
+          "url": "https://warp.da.ndl.go.jp/info:ndljp/pid/11591426/www.mod.go.jp/j/approach/agenda/meeting/materials/dangou/giji/03.html"
+        }
+      ]
+    },
+    {
       "id": "cas-tiikisaisei-20060215-002",
       "councilId": "cas-tiikisaisei",
       "name": "第2回 地域再生本部",
@@ -730688,6 +731534,19 @@
         {
           "name": "議事録",
           "url": "https://www.fsa.go.jp/singi/singi_kasikin/gijiyousi/20060215-kasikin.html"
+        }
+      ]
+    },
+    {
+      "id": "mod-1128-20060209-002",
+      "councilId": "mod-1128",
+      "name": "防衛施設庁入札談合等再発防止に係る抜本的対策に関する検討会 第2回",
+      "date": "2006/02/09",
+      "officialUrl": "https://warp.da.ndl.go.jp/20230211/20230201112202/www.mod.go.jp/j/policy/agenda/meeting/dangou/index.html",
+      "materials": [
+        {
+          "name": "第2回 検討会議事要旨",
+          "url": "https://warp.da.ndl.go.jp/info:ndljp/pid/11591426/www.mod.go.jp/j/approach/agenda/meeting/materials/dangou/giji/02.html"
         }
       ]
     },
@@ -730813,6 +731672,19 @@
           "name": "議事録[PDF]",
           "url": "https://www.fsc.go.jp/fsciis/attachedFile/download?retrievalId=kai20060131te1&fileId=107",
           "type": "HTML"
+        }
+      ]
+    },
+    {
+      "id": "mod-1128-20060131-001",
+      "councilId": "mod-1128",
+      "name": "防衛施設庁入札談合等再発防止に係る抜本的対策に関する検討会 第1回",
+      "date": "2006/01/31",
+      "officialUrl": "https://warp.da.ndl.go.jp/20230211/20230201112202/www.mod.go.jp/j/policy/agenda/meeting/dangou/index.html",
+      "materials": [
+        {
+          "name": "第1回 検討会議事要旨",
+          "url": "https://warp.da.ndl.go.jp/info:ndljp/pid/11591426/www.mod.go.jp/j/approach/agenda/meeting/materials/dangou/giji/01.html"
         }
       ]
     },
