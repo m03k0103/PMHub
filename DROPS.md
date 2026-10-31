@@ -1,8 +1,8 @@
 # PMHub 改善・機能実装（Drop）マスタードキュメント (DROPS.md)
 
 > **最終更新**: 2026-10-31  `
-> **最新 Drop**: **Drop 106**（2026-10-31 完了）  `
-> **次回着手予定 Drop**: **Drop 107**（Track [Portal-Norm] 推進 または Track [LLM-Assist] フェーズ 2）  `
+> **最新 Drop**: **Drop 107**（2026-10-31 完了）  `
+> **次回着手予定 Drop**: **Drop 108**（Track [Portal-Norm] 推進 または Track [LLM-Assist] フェーズ 2）  `
 > 
 > 本ドキュメントは、PMHub の継続的改善ロードマップおよび実装記録を一元管理するマスタードキュメントです。  `
 > 今後の構想テーマは **「Track（トラック）」** として管理し、着手・個別実装単位は最新連番を付与した **「Drop（ドロップ）」** として連番アーカイブします。  `
@@ -2935,4 +2935,63 @@ ejected_councils（計420件）へ登録。
     - ケース13: 省庁親ポータルURL設定・探索網羅性検証（各省庁親ポータル設定・スラグID継承合格） (0.45s) : PASS
     - ケース14: アクティブ会議体フィルタリング・廃止管理検証（直近2年フィルタリング・廃止マスター合格） (0.90s) : PASS
     - 【単体関数検証 (Unit Tests)】: 全23種合格（連動 23 種類実施 / 6.85s） : PASS
+  ```
+
+
+## Drop 107: Track [Portal-Norm] 単発報道発表URL再発防止ガード・全37件パージ & 法制審議会3部会（90開催回・481配付資料）ワンストップ登録（2026-10-31 完了）
+
+- **1. 背景・課題 (Background & Issues)**:
+  - 会議体マスター（`councils.officialUrl`）に各省庁の単発報道発表（プレスリリース）・記者会見単発URLが誤登録されていた根本原因を究明した結果、`admin/discover_councils.py` の新着巡回において `resolve_parent_url_from_press_release()` が常設親ポータルURLを解決できなかった場合や、解決先が既存登録済みだった場合に、元の単発報道発表URLへフォールバックして新規会議体として登録してしまう2大バグが存在していた。
+  - 全1,707会議体の横展開スキャンにより、開催回0件の32件（MLIT 28件、MOD 3件、MIC 1件）に加え、単発記事内リンク1件のみが開催回として誤抽出されていた5件（MLIT 3件、MOE 1件、MOJ 1件）の計37件が報道発表専用ディレクトリURLであることが判明。
+  - また、法制審議会傘下の3部会（`moj-2981`, `moj-2982`, `moj-3011`）は個別開催回URLが登録されていたため、真の常設親ポータルURLへ正規化し、全開催回と配付資料を包括取得・登録する必要があった。
+
+- **2. 実施内容・設計 (Implementation & Architecture)**:
+  1. **単発報道発表URL混入防止ガードの実装（`admin/discover_councils.py`）**:
+     - 単発報道発表・記者会見専用URLパターン判定関数 `is_single_press_or_notice_url()` を新設（`/report/press/`, `/j/press/`, `/menu_news/s-news/`, `/press/press_`, `/b_menu/houdou/`, `/hisho/kouhou/` 等を網羅）。
+     - 単発報道発表から親ポータルURLが解決できない場合、および親ポータルが既に登録済みの場合の「元の単発URLフォールバック登録」を完全廃止し、会議体マスター登録を確実にスキップ（遮断）するガードを配備。
+     - 通常巡回モード（`_discover_normal_for_single_ministry`）および結果統合部でも単発報道発表URLを厳格に除外。
+     - 単体テスト（`testing/test_discover_councils.py`）に `test_drop107_press_release_guard` を追加。
+     - 統合テストスイート（`testing/run_test_suite.py` ケース13）に「全会議体の `officialUrl` に単発報道発表専用URLが0件であること」の常時検証ガードを追加。
+  2. **既存の単発報道発表・記者会見URLの一括パージ（計37件）**:
+     - 国土交通省（31件）、防衛省（3件）、総務省（1件）、環境省（1件）、法務省（1件）の計37件を `councils` および紐づくテーブルからカスケード削除。
+     - 個別理由（記者発表・単発開催案内・大臣会見URL）を明記の上、`rejected_councils`（計473件へ拡充）に登録。
+  3. **法制審議会3部会の正規化 & 全開催回・配付資料ワンストップ登録（計90開催回・481配付資料）**:
+     - **`moj-housei_seihanzai`（法制審議会 刑事法(性犯罪関係)部会）**: 公式ポータル `https://www.moj.go.jp/shingi1/housei02_003011.html`、全14開催回（第1回〜第14回）・配付資料67件を登録（`manual_lock = 1`）。
+     - **`moj-housei_koseki`（法制審議会 戸籍法部会）**: 公式ポータル `https://www.moj.go.jp/shingi1/housei02_003012.html`、全16開催回・配付資料58件を登録（`manual_lock = 1`）。
+     - **`moj-housei_shonen_keiji`（法制審議会 少年法・刑事法(少年年齢・犯罪者処遇関係)部会）**: 公式ポータル `https://www.moj.go.jp/shingi1/housei02_00296.html`、全60開催回（本部会第1回〜第29回、第1〜第3分科会、視察）・配付資料356件を登録（`manual_lock = 1`）。
+     - 親コンテキスト復元により「PDF版」「TXT版」などのジェネリック資料名を「議事録」等へと正規化。
+     - `testing/test_no_duplicate_meetings.py` の分科会回次判定ロジックを更新（`第X分科会` を正規抽出）し、全21,797開催回で回次重複0件を達成。
+  4. **SQLite マスターDB & 2系統エクスポート同期**:
+     - `admin/db/export_data.py` により `docs/data.json`（1,670会議体・21,797開催回）、`admin/admin_data.json`、`admin/rejected_councils.json`（473件）を完全同期。
+
+- **3. 変更ファイル一覧 (Changed Files)**:
+  - `admin/discover_councils.py`: `is_single_press_or_notice_url()` 新設、逆引き失敗時・重複時のフォールバック登録廃止
+  - `admin/pmhub.db`: 単発報道発表37件パージ、法制審議会3部会（90開催回・481配付資料・スクレイピングルール）登録
+  - `admin/rejected_councils.json`: 37件追加（計473件へ同期）
+  - `docs/data.json`: 1,670会議体・21,797開催回へ最新同期（33.31 MB）
+  - `admin/admin_data.json`: 1,670ルール・1,591ステータスへ最新同期（6.91 MB）
+  - `testing/run_test_suite.py`: ケース13 単発報道発表URL残存ゼロ常時検証アサーション追加
+  - `testing/test_discover_councils.py`: U20 単体テスト（単発報道発表URL判定・保護検証）追加
+  - `testing/test_no_duplicate_meetings.py`: 分科会番号（`第X分科会`）正規表現抽出対応
+  - `DROPS.md`: Drop 107 実装完了記録
+
+- **4. テスト検証結果 (Verification Results)**:
+  ```markdown
+  python testing/run_test_suite.py --all-layers : PASSED（統合15ケース＋単体23種合格 / 所要時間 24.22秒）
+    - ケース1: コード文法チェック（SyntaxError / 括弧不整合 / DDL構文 0件） (0.70s) : PASS
+    - ケース2: リンク疎通確認（追加・変更URL 570件中 リンク切れ0件） (1.12s) : PASS
+    - ケース3: UI表示機能検証（DOMコンテナ整合性・公開＆管理構造） (0.00s) : PASS
+    - ケース4: JS実行時クラッシュ・全画面描画検証（Node.js描画エラー0件） (0.72s) : PASS
+    - ケース5: 会議品質・回次整合性・重複排除検証（全21,797件 重複0件） (0.91s) : PASS
+    - ケース6: 会議体・タイムライン ID完全排他性・整合性（1,670会議体 全件一致） (0.01s) : PASS
+    - ケース7: 康煕部首・特殊文字 NFKC 正規化検証（康煕部首0件維持） (0.32s) : PASS
+    - ケース8: プレースホルダー日付（2099/01/01）ゼロ遮断検証（2099日付0件） (0.00s) : PASS
+    - ケース15: SQLiteマスターDB整合性 & 2系統JSON完全同期検証（PRAGMA整合性・外部キー・No Leakage 0件合格） (0.86s) : PASS
+    - ケース9: 管理サーバー API 単体・統合テスト（全11テスト合格） (4.88s) : PASS
+    - ケース10: クローラー手動保護回帰テスト（manualLock 非破壊性合格） (4.93s) : PASS
+    - ケース11: スクレイピングルール整合性検証（1,670会議体 100%ルール適用） (0.49s) : PASS
+    - ケース12: ホスト分散・ゴミデータ不変性検証（ホスト連続0件・ゴミ0件走査） (0.33s) : PASS
+    - ケース13: 省庁親ポータルURL設定・探索網羅性検証（単発報道発表URL残存0件・スラグID継承合格） (0.51s) : PASS
+    - ケース14: アクティブ会議体フィルタリング・廃止管理検証（直近2年フィルタリング・廃止マスター合格） (1.03s) : PASS
+    - 【単体関数検証 (Unit Tests)】: 全23種合格（連動 23 種類実施 / 6.99s） : PASS
   ```

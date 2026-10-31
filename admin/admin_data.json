@@ -11227,12 +11227,6 @@
       "manualLock": true,
       "officialUrl": "https://www.soumu.go.jp/main_sosiki/joho_tsusin/policyreports/joho_tsusin/idou/22ghz_fwa.html"
     },
-    "mic-2942": {
-      "template": "tpl-cas-gijisidai-nested",
-      "manualLock": true,
-      "officialUrl": "https://www.soumu.go.jp/menu_news/s-news/01kiban18_01000296.html",
-      "extract_from_parent_table": true
-    },
     "mic-400mhz_saigai_wg": {
       "subpage_discovery_pattern": "/(?:02kiban|02ryutsu|02kousei|\\d+)[^/]*\\.html$",
       "date_regex": "(\\d{4})年\\s*(\\d{1,2})月\\s*(\\d{1,2})日",
@@ -12223,196 +12217,10 @@
       "officialUrl": "https://www.mlit.go.jp/singikai/kensetusingikai_.html",
       "pdf_selector": "a[href*='.pdf'], a[href*='.PDF']"
     },
-    "mlit-2909": {
-      "template": "tpl-cas-gijisidai-nested",
-      "manualLock": true,
-      "officialUrl": "https://www.mlit.go.jp/report/press/road01_hh_002161.html",
-      "extract_from_parent_table": true
-    },
-    "mlit-2910": {
-      "template": "tpl-cas-gijisidai-nested",
-      "manualLock": true,
-      "officialUrl": "https://www.mlit.go.jp/report/press/kouku05_hh_000248.html",
-      "extract_from_parent_table": true
-    },
-    "mlit-2911": {
-      "template": "tpl-cas-gijisidai-nested",
-      "manualLock": true,
-      "officialUrl": "https://www.mlit.go.jp/report/press/kouku02_hh_000297.html",
-      "extract_from_parent_table": true
-    },
-    "mlit-2912": {
-      "template": "tpl-cas-gijisidai-nested",
-      "manualLock": true,
-      "officialUrl": "https://www.mlit.go.jp/report/press/tochi_fudousan_kensetsugyo13_hh_000001_00365.html",
-      "extract_from_parent_table": true
-    },
-    "mlit-2913": {
-      "template": "tpl-cas-gijisidai-nested",
-      "manualLock": true,
-      "officialUrl": "https://www.mlit.go.jp/report/press/tetsudo09_hh_000264.html",
-      "extract_from_parent_table": true
-    },
-    "mlit-2914": {
-      "template": "tpl-cas-gijisidai-nested",
-      "manualLock": true,
-      "officialUrl": "https://www.mlit.go.jp/report/press/sogo09_hh_000442.html",
-      "extract_from_parent_table": true
-    },
-    "mlit-2915": {
-      "template": "tpl-cas-gijisidai-nested",
-      "manualLock": true,
-      "officialUrl": "https://www.mlit.go.jp/report/press/tokatsu01_hh_001044.html",
-      "extract_from_parent_table": true
-    },
-    "mlit-2916": {
-      "template": "tpl-cas-gijisidai-nested",
-      "manualLock": true,
-      "officialUrl": "https://www.mlit.go.jp/report/press/road01_hh_002157.html",
-      "extract_from_parent_table": true
-    },
-    "mlit-2917": {
-      "template": "tpl-cas-gijisidai-nested",
-      "manualLock": true,
-      "officialUrl": "https://www.mlit.go.jp/report/press/kaiji02_hh_000297.html",
-      "extract_from_parent_table": true
-    },
-    "mlit-2918": {
-      "template": "tpl-cas-gijisidai-nested",
-      "manualLock": true,
-      "officialUrl": "https://www.mlit.go.jp/report/press/road01_hh_002155.html",
-      "extract_from_parent_table": true
-    },
-    "mlit-2919": {
-      "template": "tpl-cas-gijisidai-nested",
-      "manualLock": true,
-      "officialUrl": "https://www.mlit.go.jp/report/press/house05_hh_001156.html",
-      "extract_from_parent_table": true
-    },
-    "mlit-2920": {
-      "template": "tpl-cas-gijisidai-nested",
-      "manualLock": true,
-      "officialUrl": "https://www.mlit.go.jp/report/press/house05_hh_001155.html",
-      "extract_from_parent_table": true
-    },
-    "mlit-2921": {
-      "template": "tpl-cas-gijisidai-nested",
-      "manualLock": true,
-      "officialUrl": "https://www.mlit.go.jp/report/press/sogo11_hh_000097.html",
-      "extract_from_parent_table": true
-    },
-    "mlit-2922": {
-      "template": "tpl-cas-gijisidai-nested",
-      "manualLock": true,
-      "officialUrl": "https://www.mlit.go.jp/report/press/mizukokudo03_hh_001368.html",
-      "extract_from_parent_table": true
-    },
-    "mlit-2923": {
-      "template": "tpl-cas-gijisidai-nested",
-      "manualLock": true,
-      "officialUrl": "https://www.mlit.go.jp/report/press/jidosha04_hh_000369.html",
-      "extract_from_parent_table": true
-    },
-    "mlit-2924": {
-      "template": "tpl-cas-gijisidai-nested",
-      "manualLock": true,
-      "officialUrl": "https://www.mlit.go.jp/report/press/kouku02_hh_000296.html",
-      "extract_from_parent_table": true
-    },
-    "mlit-2925": {
-      "template": "tpl-cas-gijisidai-nested",
-      "manualLock": true,
-      "officialUrl": "https://www.mlit.go.jp/report/press/mizukokudo04_hh_000325.html",
-      "extract_from_parent_table": true
-    },
-    "mlit-2927": {
-      "template": "tpl-cas-gijisidai-nested",
-      "manualLock": true,
-      "officialUrl": "https://www.mlit.go.jp/report/press/mizukokudo13_hh_000765.html",
-      "extract_from_parent_table": true
-    },
-    "mlit-2928": {
-      "template": "tpl-cas-gijisidai-nested",
-      "manualLock": true,
-      "officialUrl": "https://www.mlit.go.jp/report/press/toshi05_hh_000532.html",
-      "extract_from_parent_table": true
-    },
-    "mlit-2929": {
-      "template": "tpl-cas-gijisidai-nested",
-      "manualLock": true,
-      "officialUrl": "https://www.mlit.go.jp/report/press/port05_hh_000453.html",
-      "extract_from_parent_table": true
-    },
-    "mlit-2930": {
-      "template": "tpl-cas-gijisidai-nested",
-      "manualLock": true,
-      "officialUrl": "https://www.mlit.go.jp/report/press/house03_hh_000284.html",
-      "extract_from_parent_table": true
-    },
-    "mlit-2931": {
-      "template": "tpl-cas-gijisidai-nested",
-      "manualLock": true,
-      "officialUrl": "https://www.mlit.go.jp/report/press/kanbo11_hh_000172.html",
-      "extract_from_parent_table": true
-    },
-    "mlit-2932": {
-      "template": "tpl-cas-gijisidai-nested",
-      "manualLock": true,
-      "officialUrl": "https://www.mlit.go.jp/report/press/house04_hh_001360.html",
-      "extract_from_parent_table": true
-    },
     "mlit-2933": {
       "template": "tpl-cas-gijisidai-nested",
       "manualLock": true,
       "officialUrl": "http://www.mlit.go.jp/policy/shingikai/s203_taisaku01.html",
-      "extract_from_parent_table": true
-    },
-    "mlit-2934": {
-      "template": "tpl-cas-gijisidai-nested",
-      "manualLock": true,
-      "officialUrl": "https://www.mlit.go.jp/report/press/tetsudo09_hh_000263.html",
-      "extract_from_parent_table": true
-    },
-    "mlit-2935": {
-      "template": "tpl-cas-gijisidai-nested",
-      "manualLock": true,
-      "officialUrl": "https://www.mlit.go.jp/report/press/sabo01_hh_000218.html",
-      "extract_from_parent_table": true
-    },
-    "mlit-2936": {
-      "template": "tpl-cas-gijisidai-nested",
-      "manualLock": true,
-      "officialUrl": "https://www.mlit.go.jp/report/press/house04_hh_001362.html",
-      "extract_from_parent_table": true
-    },
-    "mlit-2937": {
-      "template": "tpl-cas-gijisidai-nested",
-      "manualLock": true,
-      "officialUrl": "https://www.mlit.go.jp/report/press/tetsudo08_hh_000118.html",
-      "extract_from_parent_table": true
-    },
-    "mlit-2938": {
-      "template": "tpl-cas-gijisidai-nested",
-      "manualLock": true,
-      "officialUrl": "https://www.mlit.go.jp/report/press/jidosha09_hh_000366.html",
-      "extract_from_parent_table": true
-    },
-    "mlit-2939": {
-      "template": "tpl-cas-gijisidai-nested",
-      "manualLock": true,
-      "officialUrl": "https://www.mlit.go.jp/report/press/kouku08_hh_000090.html",
-      "extract_from_parent_table": true
-    },
-    "mlit-2940": {
-      "template": "tpl-cas-gijisidai-nested",
-      "manualLock": true,
-      "officialUrl": "https://www.mlit.go.jp/report/press/kouku09_hh_000340.html",
-      "extract_from_parent_table": true
-    },
-    "mlit-3009": {
-      "template": "tpl-cas-gijisidai-nested",
-      "manualLock": true,
-      "officialUrl": "https://www.mlit.go.jp/report/press/toshi09_hh_000144.html",
       "extract_from_parent_table": true
     },
     "mlit-amami_shinkou": {
@@ -12968,24 +12776,6 @@
       "officialUrl": "https://www.mod.go.jp/j/policy/agenda/meeting/dangou/index.html",
       "pdf_selector": "a[href*='.pdf'], a[href*='.PDF']"
     },
-    "mod-2996": {
-      "template": "tpl-cas-gijisidai-nested",
-      "manualLock": true,
-      "officialUrl": "https://www.mod.go.jp/j/press/news/2026/09/01b.html",
-      "extract_from_parent_table": true
-    },
-    "mod-2997": {
-      "template": "tpl-cas-gijisidai-nested",
-      "manualLock": true,
-      "officialUrl": "https://www.mod.go.jp/j/press/news/2026/08/21a.html",
-      "extract_from_parent_table": true
-    },
-    "mod-2998": {
-      "template": "tpl-cas-gijisidai-nested",
-      "manualLock": true,
-      "officialUrl": "https://www.mod.go.jp/j/press/news/2026/08/03b.html",
-      "extract_from_parent_table": true
-    },
     "mod-bousan_gijutsu": {
       "template": "tpl-general-round-subpage",
       "manualLock": true,
@@ -13099,12 +12889,6 @@
       "template": "tpl-general-round-subpage",
       "officialUrl": "https://www.env.go.jp/council/03recycle/yoshi03-16_00001.html",
       "pdf_selector": "a[href*='.pdf']"
-    },
-    "moe-2969": {
-      "template": "tpl-cas-gijisidai-nested",
-      "manualLock": true,
-      "officialUrl": "https://www.env.go.jp/press/press_05623.html",
-      "extract_from_parent_table": true
     },
     "moe-2970": {
       "template": "tpl-cas-gijisidai-nested",
@@ -13730,24 +13514,6 @@
       "officialUrl": "https://www.moj.go.jp/hogo1/soumu/hogo01_00046.html",
       "extract_from_parent_table": true
     },
-    "moj-2980": {
-      "template": "tpl-cas-gijisidai-nested",
-      "manualLock": true,
-      "officialUrl": "https://www.moj.go.jp/hisho/kouhou/hisho06_00841.html",
-      "extract_from_parent_table": true
-    },
-    "moj-2981": {
-      "template": "tpl-cas-gijisidai-nested",
-      "manualLock": true,
-      "officialUrl": "https://www.moj.go.jp/shingi1/shingi06100001_00068.html",
-      "extract_from_parent_table": true
-    },
-    "moj-2982": {
-      "template": "tpl-cas-gijisidai-nested",
-      "manualLock": true,
-      "officialUrl": "https://www.moj.go.jp/shingi1/koseki20220926_00001.html",
-      "extract_from_parent_table": true
-    },
     "moj-2983": {
       "template": "tpl-cas-gijisidai-nested",
       "manualLock": true,
@@ -13826,12 +13592,6 @@
       "officialUrl": "https://www.moj.go.jp/JINKEN/jinken03_00151.html",
       "extract_from_parent_table": true
     },
-    "moj-3011": {
-      "template": "tpl-cas-gijisidai-nested",
-      "manualLock": true,
-      "officialUrl": "https://www.moj.go.jp/keiji1/keiji12_00141.html",
-      "extract_from_parent_table": true
-    },
     "moj-3012": {
       "template": "tpl-cas-gijisidai-nested",
       "manualLock": true,
@@ -13883,6 +13643,22 @@
       "official_url": "https://www.moj.go.jp/shingi1/housei02_003007_00018.html",
       "officialUrl": "https://www.moj.go.jp/shingi1/housei02_003007_00018.html"
     },
+    "moj-housei_koseki": {
+      "officialUrl": "https://www.moj.go.jp/shingi1/housei02_003012.html",
+      "subpage_discovery_pattern": "/shingi1/.*\\.html|/keiji1/.*\\.html",
+      "date_regex": "(?:令和|平成)\\d+年\\d+月\\d+日|20\\d{2}年\\d+月\\d+日",
+      "pdf_selector": "a[href*='.pdf'], a[href*='.PDF'], a[href*='.txt']",
+      "template": "tpl-general-round-subpage",
+      "manualLock": true
+    },
+    "moj-housei_seihanzai": {
+      "officialUrl": "https://www.moj.go.jp/shingi1/housei02_003011.html",
+      "subpage_discovery_pattern": "/shingi1/.*\\.html|/keiji1/.*\\.html",
+      "date_regex": "(?:令和|平成)\\d+年\\d+月\\d+日|20\\d{2}年\\d+月\\d+日",
+      "pdf_selector": "a[href*='.pdf'], a[href*='.PDF'], a[href*='.txt']",
+      "template": "tpl-general-round-subpage",
+      "manualLock": true
+    },
     "moj-housei_seishoku": {
       "template": "tpl-general-multiministry-session",
       "manualLock": true,
@@ -13890,6 +13666,14 @@
       "subpage_discovery_pattern": "shingi_\\d+",
       "pdf_selector": "a[href$=\".pdf\"], a[href$=\".exe\"], a[href$=\".lzh\"], a[href$=\".doc\"]",
       "officialUrl": "https://www.moj.go.jp/shingi1/shingikai_seishoku.html"
+    },
+    "moj-housei_shonen_keiji": {
+      "officialUrl": "https://www.moj.go.jp/shingi1/housei02_00296.html",
+      "subpage_discovery_pattern": "/shingi1/.*\\.html|/keiji1/.*\\.html",
+      "date_regex": "(?:令和|平成)\\d+年\\d+月\\d+日|20\\d{2}年\\d+月\\d+日",
+      "pdf_selector": "a[href*='.pdf'], a[href*='.PDF'], a[href*='.txt']",
+      "template": "tpl-general-round-subpage",
+      "manualLock": true
     },
     "moj-housei_soukai": {
       "template": "tpl-general-multiministry-session",
@@ -28168,17 +27952,6 @@
       "consecutiveFailures": 0,
       "manualLockActive": true
     },
-    "mic-2942": {
-      "lastAttempt": "2026-10-30 08:57:14",
-      "result": "success",
-      "resultReason": "PDF配付資料 1 件・開催日 2 件を正常取得",
-      "extractionMethod": "rule",
-      "materialsCount": 1,
-      "datesCount": 2,
-      "failureReason": "",
-      "consecutiveFailures": 0,
-      "manualLockActive": false
-    },
     "mic-5_2_6ghz_lan_wg": {
       "lastAttempt": "2026-10-30 08:57:43",
       "result": "partial",
@@ -29312,259 +29085,6 @@
       "consecutiveFailures": 0,
       "manualLockActive": true
     },
-    "mlit-2909": {
-      "lastAttempt": "2026-10-30 08:56:36",
-      "result": "success",
-      "resultReason": "PDF配付資料 1 件・開催日 2 件を正常取得",
-      "extractionMethod": "rule",
-      "materialsCount": 1,
-      "datesCount": 2,
-      "failureReason": "",
-      "consecutiveFailures": 0,
-      "manualLockActive": false
-    },
-    "mlit-2910": {
-      "lastAttempt": "2026-10-30 08:57:15",
-      "result": "success",
-      "resultReason": "PDF配付資料 1 件・開催日 2 件を正常取得",
-      "extractionMethod": "rule",
-      "materialsCount": 1,
-      "datesCount": 2,
-      "failureReason": "",
-      "consecutiveFailures": 0,
-      "manualLockActive": false
-    },
-    "mlit-2911": {
-      "lastAttempt": "2026-10-30 08:57:44",
-      "result": "success",
-      "resultReason": "開催回 1 件を検出（資料・日付完備）",
-      "extractionMethod": "rule",
-      "materialsCount": 15,
-      "datesCount": 5,
-      "failureReason": "",
-      "consecutiveFailures": 0,
-      "manualLockActive": false
-    },
-    "mlit-2912": {
-      "lastAttempt": "2026-10-30 08:58:14",
-      "result": "success",
-      "resultReason": "PDF配付資料 1 件・開催日 2 件を正常取得",
-      "extractionMethod": "rule",
-      "materialsCount": 1,
-      "datesCount": 2,
-      "failureReason": "",
-      "consecutiveFailures": 0,
-      "manualLockActive": false
-    },
-    "mlit-2913": {
-      "lastAttempt": "2026-10-30 08:58:33",
-      "result": "success",
-      "resultReason": "PDF配付資料 3 件・開催日 2 件を正常取得",
-      "extractionMethod": "rule",
-      "materialsCount": 3,
-      "datesCount": 2,
-      "failureReason": "",
-      "consecutiveFailures": 0,
-      "manualLockActive": false
-    },
-    "mlit-2914": {
-      "lastAttempt": "2026-10-30 08:58:56",
-      "result": "success",
-      "resultReason": "PDF配付資料 1 件・開催日 3 件を正常取得",
-      "extractionMethod": "rule",
-      "materialsCount": 1,
-      "datesCount": 3,
-      "failureReason": "",
-      "consecutiveFailures": 0,
-      "manualLockActive": false
-    },
-    "mlit-2915": {
-      "lastAttempt": "2026-10-30 08:59:12",
-      "result": "success",
-      "resultReason": "PDF配付資料 2 件・開催日 2 件を正常取得",
-      "extractionMethod": "rule",
-      "materialsCount": 2,
-      "datesCount": 2,
-      "failureReason": "",
-      "consecutiveFailures": 0,
-      "manualLockActive": false
-    },
-    "mlit-2916": {
-      "lastAttempt": "2026-10-30 08:59:23",
-      "result": "success",
-      "resultReason": "PDF配付資料 1 件・開催日 2 件を正常取得",
-      "extractionMethod": "rule",
-      "materialsCount": 1,
-      "datesCount": 2,
-      "failureReason": "",
-      "consecutiveFailures": 0,
-      "manualLockActive": false
-    },
-    "mlit-2917": {
-      "lastAttempt": "2026-10-30 08:59:41",
-      "result": "success",
-      "resultReason": "開催回 1 件を検出（資料・日付完備）",
-      "extractionMethod": "rule",
-      "materialsCount": 6,
-      "datesCount": 3,
-      "failureReason": "",
-      "consecutiveFailures": 0,
-      "manualLockActive": false
-    },
-    "mlit-2918": {
-      "lastAttempt": "2026-10-30 08:59:57",
-      "result": "success",
-      "resultReason": "PDF配付資料 1 件・開催日 2 件を正常取得",
-      "extractionMethod": "rule",
-      "materialsCount": 1,
-      "datesCount": 2,
-      "failureReason": "",
-      "consecutiveFailures": 0,
-      "manualLockActive": false
-    },
-    "mlit-2919": {
-      "lastAttempt": "2026-10-30 09:00:16",
-      "result": "success",
-      "resultReason": "PDF配付資料 1 件・開催日 2 件を正常取得",
-      "extractionMethod": "rule",
-      "materialsCount": 1,
-      "datesCount": 2,
-      "failureReason": "",
-      "consecutiveFailures": 0,
-      "manualLockActive": false
-    },
-    "mlit-2920": {
-      "lastAttempt": "2026-10-30 09:01:01",
-      "result": "success",
-      "resultReason": "PDF配付資料 1 件・開催日 2 件を正常取得",
-      "extractionMethod": "rule",
-      "materialsCount": 1,
-      "datesCount": 2,
-      "failureReason": "",
-      "consecutiveFailures": 0,
-      "manualLockActive": false
-    },
-    "mlit-2921": {
-      "lastAttempt": "2026-10-30 09:02:21",
-      "result": "success",
-      "resultReason": "PDF配付資料 1 件・開催日 2 件を正常取得",
-      "extractionMethod": "rule",
-      "materialsCount": 1,
-      "datesCount": 2,
-      "failureReason": "",
-      "consecutiveFailures": 0,
-      "manualLockActive": false
-    },
-    "mlit-2922": {
-      "lastAttempt": "2026-10-30 09:03:36",
-      "result": "success",
-      "resultReason": "PDF配付資料 1 件・開催日 2 件を正常取得",
-      "extractionMethod": "rule",
-      "materialsCount": 1,
-      "datesCount": 2,
-      "failureReason": "",
-      "consecutiveFailures": 0,
-      "manualLockActive": false
-    },
-    "mlit-2923": {
-      "lastAttempt": "2026-10-30 09:04:06",
-      "result": "success",
-      "resultReason": "PDF配付資料 2 件・開催日 2 件を正常取得",
-      "extractionMethod": "rule",
-      "materialsCount": 2,
-      "datesCount": 2,
-      "failureReason": "",
-      "consecutiveFailures": 0,
-      "manualLockActive": false
-    },
-    "mlit-2924": {
-      "lastAttempt": "2026-10-30 09:04:35",
-      "result": "success",
-      "resultReason": "PDF配付資料 1 件・開催日 2 件を正常取得",
-      "extractionMethod": "rule",
-      "materialsCount": 1,
-      "datesCount": 2,
-      "failureReason": "",
-      "consecutiveFailures": 0,
-      "manualLockActive": false
-    },
-    "mlit-2925": {
-      "lastAttempt": "2026-10-30 09:04:54",
-      "result": "success",
-      "resultReason": "PDF配付資料 2 件・開催日 2 件を正常取得",
-      "extractionMethod": "rule",
-      "materialsCount": 2,
-      "datesCount": 2,
-      "failureReason": "",
-      "consecutiveFailures": 0,
-      "manualLockActive": false
-    },
-    "mlit-2927": {
-      "lastAttempt": "2026-10-30 09:05:05",
-      "result": "success",
-      "resultReason": "PDF配付資料 2 件・開催日 2 件を正常取得",
-      "extractionMethod": "rule",
-      "materialsCount": 2,
-      "datesCount": 2,
-      "failureReason": "",
-      "consecutiveFailures": 0,
-      "manualLockActive": false
-    },
-    "mlit-2928": {
-      "lastAttempt": "2026-10-30 09:05:23",
-      "result": "success",
-      "resultReason": "PDF配付資料 1 件・開催日 2 件を正常取得",
-      "extractionMethod": "rule",
-      "materialsCount": 1,
-      "datesCount": 2,
-      "failureReason": "",
-      "consecutiveFailures": 0,
-      "manualLockActive": false
-    },
-    "mlit-2929": {
-      "lastAttempt": "2026-10-30 09:05:43",
-      "result": "success",
-      "resultReason": "開催回 1 件を検出（資料・日付完備）",
-      "extractionMethod": "rule",
-      "materialsCount": 11,
-      "datesCount": 2,
-      "failureReason": "",
-      "consecutiveFailures": 0,
-      "manualLockActive": false
-    },
-    "mlit-2930": {
-      "lastAttempt": "2026-10-30 09:06:01",
-      "result": "success",
-      "resultReason": "PDF配付資料 1 件・開催日 2 件を正常取得",
-      "extractionMethod": "rule",
-      "materialsCount": 1,
-      "datesCount": 2,
-      "failureReason": "",
-      "consecutiveFailures": 0,
-      "manualLockActive": false
-    },
-    "mlit-2931": {
-      "lastAttempt": "2026-10-30 09:06:19",
-      "result": "success",
-      "resultReason": "PDF配付資料 1 件・開催日 1 件を正常取得",
-      "extractionMethod": "rule",
-      "materialsCount": 1,
-      "datesCount": 1,
-      "failureReason": "",
-      "consecutiveFailures": 0,
-      "manualLockActive": false
-    },
-    "mlit-2932": {
-      "lastAttempt": "2026-10-30 09:06:35",
-      "result": "success",
-      "resultReason": "PDF配付資料 1 件・開催日 2 件を正常取得",
-      "extractionMethod": "rule",
-      "materialsCount": 1,
-      "datesCount": 2,
-      "failureReason": "",
-      "consecutiveFailures": 0,
-      "manualLockActive": false
-    },
     "mlit-2933": {
       "lastAttempt": "2026-10-24 17:55:56",
       "result": "success",
@@ -29572,94 +29092,6 @@
       "extractionMethod": "rule",
       "materialsCount": 21,
       "datesCount": 5,
-      "failureReason": "",
-      "consecutiveFailures": 0,
-      "manualLockActive": false
-    },
-    "mlit-2934": {
-      "lastAttempt": "2026-10-30 09:06:51",
-      "result": "success",
-      "resultReason": "PDF配付資料 2 件・開催日 2 件を正常取得",
-      "extractionMethod": "rule",
-      "materialsCount": 2,
-      "datesCount": 2,
-      "failureReason": "",
-      "consecutiveFailures": 0,
-      "manualLockActive": false
-    },
-    "mlit-2935": {
-      "lastAttempt": "2026-10-30 09:07:03",
-      "result": "success",
-      "resultReason": "PDF配付資料 2 件・開催日 2 件を正常取得",
-      "extractionMethod": "rule",
-      "materialsCount": 2,
-      "datesCount": 2,
-      "failureReason": "",
-      "consecutiveFailures": 0,
-      "manualLockActive": false
-    },
-    "mlit-2936": {
-      "lastAttempt": "2026-10-30 09:07:10",
-      "result": "success",
-      "resultReason": "PDF配付資料 2 件・開催日 2 件を正常取得",
-      "extractionMethod": "rule",
-      "materialsCount": 2,
-      "datesCount": 2,
-      "failureReason": "",
-      "consecutiveFailures": 0,
-      "manualLockActive": false
-    },
-    "mlit-2937": {
-      "lastAttempt": "2026-10-30 09:07:15",
-      "result": "success",
-      "resultReason": "PDF配付資料 1 件・開催日 3 件を正常取得",
-      "extractionMethod": "rule",
-      "materialsCount": 1,
-      "datesCount": 3,
-      "failureReason": "",
-      "consecutiveFailures": 0,
-      "manualLockActive": false
-    },
-    "mlit-2938": {
-      "lastAttempt": "2026-10-30 09:07:28",
-      "result": "success",
-      "resultReason": "PDF配付資料 1 件・開催日 2 件を正常取得",
-      "extractionMethod": "rule",
-      "materialsCount": 1,
-      "datesCount": 2,
-      "failureReason": "",
-      "consecutiveFailures": 0,
-      "manualLockActive": false
-    },
-    "mlit-2939": {
-      "lastAttempt": "2026-10-30 09:07:44",
-      "result": "success",
-      "resultReason": "PDF配付資料 1 件・開催日 3 件を正常取得",
-      "extractionMethod": "rule",
-      "materialsCount": 1,
-      "datesCount": 3,
-      "failureReason": "",
-      "consecutiveFailures": 0,
-      "manualLockActive": false
-    },
-    "mlit-2940": {
-      "lastAttempt": "2026-10-24 17:56:16",
-      "result": "success",
-      "resultReason": "開催回 1 件を検出（資料・日付完備）",
-      "extractionMethod": "rule",
-      "materialsCount": 2,
-      "datesCount": 5,
-      "failureReason": "",
-      "consecutiveFailures": 0,
-      "manualLockActive": false
-    },
-    "mlit-3009": {
-      "lastAttempt": "2026-10-30 09:07:54",
-      "result": "success",
-      "resultReason": "PDF配付資料 1 件・開催日 2 件を正常取得",
-      "extractionMethod": "rule",
-      "materialsCount": 1,
-      "datesCount": 2,
       "failureReason": "",
       "consecutiveFailures": 0,
       "manualLockActive": false
@@ -30390,39 +29822,6 @@
       "consecutiveFailures": 0,
       "manualLockActive": false
     },
-    "mod-2996": {
-      "lastAttempt": "2026-10-30 09:02:01",
-      "result": "success",
-      "resultReason": "PDF配付資料 1 件・開催日 2 件を正常取得",
-      "extractionMethod": "rule",
-      "materialsCount": 1,
-      "datesCount": 2,
-      "failureReason": "",
-      "consecutiveFailures": 0,
-      "manualLockActive": false
-    },
-    "mod-2997": {
-      "lastAttempt": "2026-10-30 09:03:10",
-      "result": "success",
-      "resultReason": "PDF配付資料 1 件・開催日 2 件を正常取得",
-      "extractionMethod": "rule",
-      "materialsCount": 1,
-      "datesCount": 2,
-      "failureReason": "",
-      "consecutiveFailures": 0,
-      "manualLockActive": false
-    },
-    "mod-2998": {
-      "lastAttempt": "2026-10-30 09:03:53",
-      "result": "success",
-      "resultReason": "PDF配付資料 1 件・開催日 1 件を正常取得",
-      "extractionMethod": "rule",
-      "materialsCount": 1,
-      "datesCount": 1,
-      "failureReason": "",
-      "consecutiveFailures": 0,
-      "manualLockActive": false
-    },
     "mod-bousan_gijutsu": {
       "lastAttempt": "2026-09-16 09:09:49",
       "result": "success",
@@ -30576,17 +29975,6 @@
       "failureReason": "",
       "consecutiveFailures": 0,
       "manualLockActive": true
-    },
-    "moe-2969": {
-      "lastAttempt": "2026-10-30 08:56:53",
-      "result": "partial",
-      "resultReason": "開催回 1 件を検出したが資料が0件",
-      "extractionMethod": "rule",
-      "materialsCount": 0,
-      "datesCount": 4,
-      "failureReason": "",
-      "consecutiveFailures": 0,
-      "manualLockActive": false
     },
     "moe-2970": {
       "lastAttempt": "2026-10-30 08:56:32",
@@ -31402,39 +30790,6 @@
       "consecutiveFailures": 0,
       "manualLockActive": false
     },
-    "moj-2980": {
-      "lastAttempt": "2026-10-24 17:54:12",
-      "result": "success",
-      "resultReason": "開催回 1 件を検出（資料・日付完備）",
-      "extractionMethod": "rule",
-      "materialsCount": 1,
-      "datesCount": 1,
-      "failureReason": "",
-      "consecutiveFailures": 0,
-      "manualLockActive": false
-    },
-    "moj-2981": {
-      "lastAttempt": "2026-10-30 08:59:57",
-      "result": "success",
-      "resultReason": "PDF配付資料 1 件・開催日 2 件を正常取得",
-      "extractionMethod": "rule",
-      "materialsCount": 1,
-      "datesCount": 2,
-      "failureReason": "",
-      "consecutiveFailures": 0,
-      "manualLockActive": false
-    },
-    "moj-2982": {
-      "lastAttempt": "2026-10-30 09:00:20",
-      "result": "success",
-      "resultReason": "PDF配付資料 3 件・開催日 1 件を正常取得",
-      "extractionMethod": "rule",
-      "materialsCount": 3,
-      "datesCount": 1,
-      "failureReason": "",
-      "consecutiveFailures": 0,
-      "manualLockActive": false
-    },
     "moj-2983": {
       "lastAttempt": "2026-10-30 09:01:02",
       "result": "success",
@@ -31574,17 +30929,6 @@
       "extractionMethod": "rule",
       "materialsCount": 19,
       "datesCount": 1,
-      "failureReason": "",
-      "consecutiveFailures": 0,
-      "manualLockActive": false
-    },
-    "moj-3011": {
-      "lastAttempt": "2026-10-30 09:07:03",
-      "result": "success",
-      "resultReason": "PDF配付資料 11 件・開催日 2 件を正常取得",
-      "extractionMethod": "rule",
-      "materialsCount": 11,
-      "datesCount": 2,
       "failureReason": "",
       "consecutiveFailures": 0,
       "manualLockActive": false
@@ -34820,6 +34164,15 @@
       "reason": "パブリックコメント結果報道発表URLのため非審議会として除外（本体組織 mic-denpa_kanri 存在）"
     },
     {
+      "id": "mic-2942",
+      "name": "フロンティアAI時代の通信事業におけるデータの保護・セキュリティの在り方に関する検討会",
+      "ministry": "MIC",
+      "category": "COUNCIL",
+      "officialUrl": "https://www.soumu.go.jp/menu_news/s-news/01kiban18_01000296.html",
+      "rejectedAt": "2026/10/31",
+      "reason": "単発報道発表・開催案内URLのため会議体マスターとして不適当 (Drop 107)"
+    },
+    {
       "id": "mic-onkyu_shinsa",
       "name": "恩給審査会（制度廃止案内旧ページ）",
       "ministry": "MIC",
@@ -34892,6 +34245,159 @@
       "reason": "個別開催日・報告書名等のため親会議体マスターへ集約・正規化"
     },
     {
+      "id": "mlit-2909",
+      "name": "自動物流道路の実装に向けたコンソーシアムインフラ分科会",
+      "ministry": "MLIT",
+      "category": "COUNCIL",
+      "officialUrl": "https://www.mlit.go.jp/report/press/road01_hh_002161.html",
+      "rejectedAt": "2026/10/31",
+      "reason": "単発報道発表・開催案内URLのため会議体マスターとして不適当 (Drop 107)"
+    },
+    {
+      "id": "mlit-2910",
+      "name": "空港DX技術実装推進会議",
+      "ministry": "MLIT",
+      "category": "COUNCIL",
+      "officialUrl": "https://www.mlit.go.jp/report/press/kouku05_hh_000248.html",
+      "rejectedAt": "2026/10/31",
+      "reason": "単発報道発表・開催案内URLのため会議体マスターとして不適当 (Drop 107)"
+    },
+    {
+      "id": "mlit-2911",
+      "name": "空港安全情報分析委員会",
+      "ministry": "MLIT",
+      "category": "COUNCIL",
+      "officialUrl": "https://www.mlit.go.jp/report/press/kouku02_hh_000297.html",
+      "rejectedAt": "2026/10/31",
+      "reason": "単発報道発表・開催案内URLのため会議体マスターとして不適当 (Drop 107)"
+    },
+    {
+      "id": "mlit-2912",
+      "name": "持続的な成長産業としての建設業のあり方に関する検討会",
+      "ministry": "MLIT",
+      "category": "COUNCIL",
+      "officialUrl": "https://www.mlit.go.jp/report/press/tochi_fudousan_kensetsugyo13_hh_000001_00365.html",
+      "rejectedAt": "2026/10/31",
+      "reason": "単発報道発表・開催案内URLのため会議体マスターとして不適当 (Drop 107)"
+    },
+    {
+      "id": "mlit-2913",
+      "name": "環境アセスに向けた技術検討会",
+      "ministry": "MLIT",
+      "category": "COUNCIL",
+      "officialUrl": "https://www.mlit.go.jp/report/press/tetsudo09_hh_000264.html",
+      "rejectedAt": "2026/10/31",
+      "reason": "単発報道発表・開催案内URLのため会議体マスターとして不適当 (Drop 107)"
+    },
+    {
+      "id": "mlit-2914",
+      "name": "国土交通ジェンダーネットワーク会議",
+      "ministry": "MLIT",
+      "category": "COUNCIL",
+      "officialUrl": "https://www.mlit.go.jp/report/press/sogo09_hh_000442.html",
+      "rejectedAt": "2026/10/31",
+      "reason": "単発報道発表・開催案内URLのため会議体マスターとして不適当 (Drop 107)"
+    },
+    {
+      "id": "mlit-2915",
+      "name": "物流政策推進関係者会議",
+      "ministry": "MLIT",
+      "category": "COUNCIL",
+      "officialUrl": "https://www.mlit.go.jp/report/press/tokatsu01_hh_001044.html",
+      "rejectedAt": "2026/10/31",
+      "reason": "単発報道発表・開催案内URLのため会議体マスターとして不適当 (Drop 107)"
+    },
+    {
+      "id": "mlit-2916",
+      "name": "高速道路事業等会計規則検討会",
+      "ministry": "MLIT",
+      "category": "COUNCIL",
+      "officialUrl": "https://www.mlit.go.jp/report/press/road01_hh_002157.html",
+      "rejectedAt": "2026/10/31",
+      "reason": "単発報道発表・開催案内URLのため会議体マスターとして不適当 (Drop 107)"
+    },
+    {
+      "id": "mlit-2917",
+      "name": "外航海運に関する制度及び税制の見直しに係る有識者検討会",
+      "ministry": "MLIT",
+      "category": "COUNCIL",
+      "officialUrl": "https://www.mlit.go.jp/report/press/kaiji02_hh_000297.html",
+      "rejectedAt": "2026/10/31",
+      "reason": "単発報道発表・開催案内URLのため会議体マスターとして不適当 (Drop 107)"
+    },
+    {
+      "id": "mlit-2918",
+      "name": "現行制度の見直しに向けた審査委員会",
+      "ministry": "MLIT",
+      "category": "COUNCIL",
+      "officialUrl": "https://www.mlit.go.jp/report/press/road01_hh_002155.html",
+      "rejectedAt": "2026/10/31",
+      "reason": "単発報道発表・開催案内URLのため会議体マスターとして不適当 (Drop 107)"
+    },
+    {
+      "id": "mlit-2919",
+      "name": "建築分野の中長期的なあり方に関する検討会",
+      "ministry": "MLIT",
+      "category": "COUNCIL",
+      "officialUrl": "https://www.mlit.go.jp/report/press/house05_hh_001156.html",
+      "rejectedAt": "2026/10/31",
+      "reason": "単発報道発表・開催案内URLのため会議体マスターとして不適当 (Drop 107)"
+    },
+    {
+      "id": "mlit-2920",
+      "name": "中央建築士審査会一級建築士の見直しに関する小委員会",
+      "ministry": "MLIT",
+      "category": "COUNCIL",
+      "officialUrl": "https://www.mlit.go.jp/report/press/house05_hh_001155.html",
+      "rejectedAt": "2026/10/31",
+      "reason": "単発報道発表・開催案内URLのため会議体マスターとして不適当 (Drop 107)"
+    },
+    {
+      "id": "mlit-2921",
+      "name": "海洋ドローンに関する産学官協議会",
+      "ministry": "MLIT",
+      "category": "COUNCIL",
+      "officialUrl": "https://www.mlit.go.jp/report/press/sogo11_hh_000097.html",
+      "rejectedAt": "2026/10/31",
+      "reason": "単発報道発表・開催案内URLのため会議体マスターとして不適当 (Drop 107)"
+    },
+    {
+      "id": "mlit-2922",
+      "name": "水災害調査・対策検討委員会",
+      "ministry": "MLIT",
+      "category": "COUNCIL",
+      "officialUrl": "https://www.mlit.go.jp/report/press/mizukokudo03_hh_001368.html",
+      "rejectedAt": "2026/10/31",
+      "reason": "単発報道発表・開催案内URLのため会議体マスターとして不適当 (Drop 107)"
+    },
+    {
+      "id": "mlit-2923",
+      "name": "適正原価の設定に向けた有識者検討会",
+      "ministry": "MLIT",
+      "category": "COUNCIL",
+      "officialUrl": "https://www.mlit.go.jp/report/press/jidosha04_hh_000369.html",
+      "rejectedAt": "2026/10/31",
+      "reason": "単発報道発表・開催案内URLのため会議体マスターとして不適当 (Drop 107)"
+    },
+    {
+      "id": "mlit-2924",
+      "name": "気球の安全性確保に関するガイドライン検討会",
+      "ministry": "MLIT",
+      "category": "COUNCIL",
+      "officialUrl": "https://www.mlit.go.jp/report/press/kouku02_hh_000296.html",
+      "rejectedAt": "2026/10/31",
+      "reason": "単発報道発表・開催案内URLのため会議体マスターとして不適当 (Drop 107)"
+    },
+    {
+      "id": "mlit-2925",
+      "name": "河川を基軸とした生態系ネットワークの形成に向けた取組の実効性向上に関する検討会",
+      "ministry": "MLIT",
+      "category": "COUNCIL",
+      "officialUrl": "https://www.mlit.go.jp/report/press/mizukokudo04_hh_000325.html",
+      "rejectedAt": "2026/10/31",
+      "reason": "単発報道発表・開催案内URLのため会議体マスターとして不適当 (Drop 107)"
+    },
+    {
       "id": "mlit-2926",
       "name": "交通政策審議会陸上交通分科会自動車部会報告書",
       "ministry": "MLIT",
@@ -34899,6 +34405,132 @@
       "officialUrl": "https://www.mlit.go.jp/policy/shingikai/s304_gijutsuanzen04wg.html",
       "rejectedAt": "2026-09-12",
       "reason": "ディスカバリー精査: 報告書・単発資料ページのため却下"
+    },
+    {
+      "id": "mlit-2927",
+      "name": "上下水道政策の基本的なあり方検討会",
+      "ministry": "MLIT",
+      "category": "COUNCIL",
+      "officialUrl": "https://www.mlit.go.jp/report/press/mizukokudo13_hh_000765.html",
+      "rejectedAt": "2026/10/31",
+      "reason": "単発報道発表・開催案内URLのため会議体マスターとして不適当 (Drop 107)"
+    },
+    {
+      "id": "mlit-2928",
+      "name": "エリアリノベーション懇談会",
+      "ministry": "MLIT",
+      "category": "COUNCIL",
+      "officialUrl": "https://www.mlit.go.jp/report/press/toshi05_hh_000532.html",
+      "rejectedAt": "2026/10/31",
+      "reason": "単発報道発表・開催案内URLのため会議体マスターとして不適当 (Drop 107)"
+    },
+    {
+      "id": "mlit-2929",
+      "name": "港湾工事における衛星三次元測位の実用化に関する検討会",
+      "ministry": "MLIT",
+      "category": "COUNCIL",
+      "officialUrl": "https://www.mlit.go.jp/report/press/port05_hh_000453.html",
+      "rejectedAt": "2026/10/31",
+      "reason": "単発報道発表・開催案内URLのため会議体マスターとして不適当 (Drop 107)"
+    },
+    {
+      "id": "mlit-2930",
+      "name": "長期修繕計画作成ガイドラインの見直し等に関する検討会",
+      "ministry": "MLIT",
+      "category": "COUNCIL",
+      "officialUrl": "https://www.mlit.go.jp/report/press/house03_hh_000284.html",
+      "rejectedAt": "2026/10/31",
+      "reason": "単発報道発表・開催案内URLのため会議体マスターとして不適当 (Drop 107)"
+    },
+    {
+      "id": "mlit-2931",
+      "name": "公共事業評価手法研究委員会",
+      "ministry": "MLIT",
+      "category": "COUNCIL",
+      "officialUrl": "https://www.mlit.go.jp/report/press/kanbo11_hh_000172.html",
+      "rejectedAt": "2026/10/31",
+      "reason": "単発報道発表・開催案内URLのため会議体マスターとして不適当 (Drop 107)"
+    },
+    {
+      "id": "mlit-2932",
+      "name": "住宅の維持保全・流通に関する制度検討会",
+      "ministry": "MLIT",
+      "category": "COUNCIL",
+      "officialUrl": "https://www.mlit.go.jp/report/press/house04_hh_001360.html",
+      "rejectedAt": "2026/10/31",
+      "reason": "単発報道発表・開催案内URLのため会議体マスターとして不適当 (Drop 107)"
+    },
+    {
+      "id": "mlit-2934",
+      "name": "北海道新幹線(新函館北斗・札幌間)の整備に関する有識者会議",
+      "ministry": "MLIT",
+      "category": "COUNCIL",
+      "officialUrl": "https://www.mlit.go.jp/report/press/tetsudo09_hh_000263.html",
+      "rejectedAt": "2026/10/31",
+      "reason": "単発報道発表・開催案内URLのため会議体マスターとして不適当 (Drop 107)"
+    },
+    {
+      "id": "mlit-2935",
+      "name": "今後の土砂災害対策のあり方検討会",
+      "ministry": "MLIT",
+      "category": "COUNCIL",
+      "officialUrl": "https://www.mlit.go.jp/report/press/sabo01_hh_000218.html",
+      "rejectedAt": "2026/10/31",
+      "reason": "単発報道発表・開催案内URLのため会議体マスターとして不適当 (Drop 107)"
+    },
+    {
+      "id": "mlit-2936",
+      "name": "建築物のライフサイクルカーボンの算定・評価等を促進する制度に関する検討会",
+      "ministry": "MLIT",
+      "category": "COUNCIL",
+      "officialUrl": "https://www.mlit.go.jp/report/press/house04_hh_001362.html",
+      "rejectedAt": "2026/10/31",
+      "reason": "単発報道発表・開催案内URLのため会議体マスターとして不適当 (Drop 107)"
+    },
+    {
+      "id": "mlit-2937",
+      "name": "緊急鉄道保安連絡会議",
+      "ministry": "MLIT",
+      "category": "COUNCIL",
+      "officialUrl": "https://www.mlit.go.jp/report/press/tetsudo08_hh_000118.html",
+      "rejectedAt": "2026/10/31",
+      "reason": "単発報道発表・開催案内URLのため会議体マスターとして不適当 (Drop 107)"
+    },
+    {
+      "id": "mlit-2938",
+      "name": "自動車整備技術の高度化検討会",
+      "ministry": "MLIT",
+      "category": "COUNCIL",
+      "officialUrl": "https://www.mlit.go.jp/report/press/jidosha09_hh_000366.html",
+      "rejectedAt": "2026/10/31",
+      "reason": "単発報道発表・開催案内URLのため会議体マスターとして不適当 (Drop 107)"
+    },
+    {
+      "id": "mlit-2939",
+      "name": "住宅騒音防止対策補助制度に係る検討委員会",
+      "ministry": "MLIT",
+      "category": "COUNCIL",
+      "officialUrl": "https://www.mlit.go.jp/report/press/kouku08_hh_000090.html",
+      "rejectedAt": "2026/10/31",
+      "reason": "単発報道発表・開催案内URLのため会議体マスターとして不適当 (Drop 107)"
+    },
+    {
+      "id": "mlit-2940",
+      "name": "空港内の施設の維持管理等に係る検討委員会",
+      "ministry": "MLIT",
+      "category": "COUNCIL",
+      "officialUrl": "https://www.mlit.go.jp/report/press/kouku09_hh_000340.html",
+      "rejectedAt": "2026/10/31",
+      "reason": "単発報道発表・開催案内URLのため会議体マスターとして不適当 (Drop 107)"
+    },
+    {
+      "id": "mlit-3009",
+      "name": "シェアサイクルに関する取組についての経験やノウハウを共有するための会議",
+      "ministry": "MLIT",
+      "category": "COUNCIL",
+      "officialUrl": "https://www.mlit.go.jp/report/press/toshi09_hh_000144.html",
+      "rejectedAt": "2026/10/31",
+      "reason": "単発報道発表・開催案内URLのため会議体マスターとして不適当 (Drop 107)"
     },
     {
       "id": "mlit-chuo_kenchikushi_shinsa",
@@ -34917,6 +34549,33 @@
       "officialUrl": "https://www.mlit.go.jp/policy/shingikaiList.html",
       "rejectedAt": "2026-10-17",
       "reason": "AI判定: 会議体本体ではなく省庁審議会総合ポータルのため却下"
+    },
+    {
+      "id": "mod-2996",
+      "name": "自衛隊指揮官幹部会",
+      "ministry": "MOD",
+      "category": "COUNCIL",
+      "officialUrl": "https://www.mod.go.jp/j/press/news/2026/09/01b.html",
+      "rejectedAt": "2026/10/31",
+      "reason": "単発報道発表・開催案内URLのため会議体マスターとして不適当 (Drop 107)"
+    },
+    {
+      "id": "mod-2997",
+      "name": "処遇・給与部会",
+      "ministry": "MOD",
+      "category": "COUNCIL",
+      "officialUrl": "https://www.mod.go.jp/j/press/news/2026/08/21a.html",
+      "rejectedAt": "2026/10/31",
+      "reason": "単発報道発表・開催案内URLのため会議体マスターとして不適当 (Drop 107)"
+    },
+    {
+      "id": "mod-2998",
+      "name": "防衛力変革推進本部会議",
+      "ministry": "MOD",
+      "category": "COUNCIL",
+      "officialUrl": "https://www.mod.go.jp/j/press/news/2026/08/03b.html",
+      "rejectedAt": "2026/10/31",
+      "reason": "単発報道発表・開催案内URLのため会議体マスターとして不適当 (Drop 107)"
     },
     {
       "id": "moe-2962",
@@ -34980,6 +34639,15 @@
       "officialUrl": "https://www.env.go.jp/press/press_05658.html",
       "rejectedAt": "2026-10-30 08:13:22",
       "reason": "第21回検討委員会の開催案内報道発表URLのため非審議会として除外"
+    },
+    {
+      "id": "moe-2969",
+      "name": "トキ野生復帰検討会",
+      "ministry": "MOE",
+      "category": "COUNCIL",
+      "officialUrl": "https://www.env.go.jp/press/press_05623.html",
+      "rejectedAt": "2026/10/31",
+      "reason": "単発報道発表・開催案内URLのため会議体マスターとして不適当 (Drop 107)"
     },
     {
       "id": "mof-1130",
@@ -35097,6 +34765,15 @@
       "officialUrl": "https://www.moj.go.jp/shingikai_index.html",
       "rejectedAt": "",
       "reason": "国際会議であるため除外（国内政策会議体マスター対象外）"
+    },
+    {
+      "id": "moj-2980",
+      "name": "中央推進委員会",
+      "ministry": "MOJ",
+      "category": "COUNCIL",
+      "officialUrl": "https://www.moj.go.jp/hisho/kouhou/hisho06_00841.html",
+      "rejectedAt": "2026/10/31",
+      "reason": "大臣記者会見概要単発URLのため会議体マスターとして不適当 (Drop 107)"
     },
     {
       "id": "moj-hosei_shingi",
@@ -37172,7 +36849,10 @@
       "moj-hanzai_higai_bengoshi",
       "moj-housei_kaisha",
       "moj-housei_keiji",
+      "moj-housei_koseki",
+      "moj-housei_seihanzai",
       "moj-housei_seishoku",
+      "moj-housei_shonen_keiji",
       "moj-housei_soukai",
       "moj-houterasu_arikata",
       "moj-jigyou_saisei_kento",
@@ -52167,6 +51847,36 @@
       "moj-housei_kaisha-20260620-s01",
       "moj-housei_keiji-20260730-001",
       "moj-housei_keiji-20260910-002",
+      "moj-housei_koseki-20211125-001",
+      "moj-housei_koseki-20220113-002",
+      "moj-housei_koseki-20220208-003",
+      "moj-housei_koseki-20220317-004",
+      "moj-housei_koseki-20220422-005",
+      "moj-housei_koseki-20220517-006",
+      "moj-housei_koseki-20220517-s07",
+      "moj-housei_koseki-20220802-007",
+      "moj-housei_koseki-20220926-008",
+      "moj-housei_koseki-20221101-009",
+      "moj-housei_koseki-20221117-010",
+      "moj-housei_koseki-20221205-011",
+      "moj-housei_koseki-20230112-012",
+      "moj-housei_koseki-20230126-013",
+      "moj-housei_koseki-20230202-014",
+      "moj-housei_koseki-20230202-s16",
+      "moj-housei_seihanzai-20211027-001",
+      "moj-housei_seihanzai-20211129-002",
+      "moj-housei_seihanzai-20211227-003",
+      "moj-housei_seihanzai-20220126-004",
+      "moj-housei_seihanzai-20220228-005",
+      "moj-housei_seihanzai-20220329-006",
+      "moj-housei_seihanzai-20220428-007",
+      "moj-housei_seihanzai-20220608-008",
+      "moj-housei_seihanzai-20220805-009",
+      "moj-housei_seihanzai-20221024-010",
+      "moj-housei_seihanzai-20221114-011",
+      "moj-housei_seihanzai-20221219-012",
+      "moj-housei_seihanzai-20230117-013",
+      "moj-housei_seihanzai-20230203-014",
       "moj-housei_seishoku-20010424-001",
       "moj-housei_seishoku-20010522-002",
       "moj-housei_seishoku-20010626-003",
@@ -52186,6 +51896,66 @@
       "moj-housei_seishoku-20030617-017",
       "moj-housei_seishoku-20030715-018",
       "moj-housei_seishoku-20030916-019",
+      "moj-housei_shonen_keiji-20170316-001",
+      "moj-housei_shonen_keiji-20170419-002",
+      "moj-housei_shonen_keiji-20170531-003",
+      "moj-housei_shonen_keiji-20170629-004",
+      "moj-housei_shonen_keiji-20170721-v02",
+      "moj-housei_shonen_keiji-20170727-005",
+      "moj-housei_shonen_keiji-20170731-v01",
+      "moj-housei_shonen_keiji-20170922-s101",
+      "moj-housei_shonen_keiji-20170926-s201",
+      "moj-housei_shonen_keiji-20170929-s301",
+      "moj-housei_shonen_keiji-20171017-s102",
+      "moj-housei_shonen_keiji-20171020-s302",
+      "moj-housei_shonen_keiji-20171024-s202",
+      "moj-housei_shonen_keiji-20171114-s103",
+      "moj-housei_shonen_keiji-20171117-s303",
+      "moj-housei_shonen_keiji-20171122-s203",
+      "moj-housei_shonen_keiji-20171219-006",
+      "moj-housei_shonen_keiji-20180129-s104",
+      "moj-housei_shonen_keiji-20180130-s204",
+      "moj-housei_shonen_keiji-20180202-s304",
+      "moj-housei_shonen_keiji-20180213-s105",
+      "moj-housei_shonen_keiji-20180214-s205",
+      "moj-housei_shonen_keiji-20180302-s305",
+      "moj-housei_shonen_keiji-20180306-s206",
+      "moj-housei_shonen_keiji-20180307-s106",
+      "moj-housei_shonen_keiji-20180313-s306",
+      "moj-housei_shonen_keiji-20180328-s207",
+      "moj-housei_shonen_keiji-20180329-s307",
+      "moj-housei_shonen_keiji-20180426-007",
+      "moj-housei_shonen_keiji-20180515-s107",
+      "moj-housei_shonen_keiji-20180517-s208",
+      "moj-housei_shonen_keiji-20180518-s308",
+      "moj-housei_shonen_keiji-20180605-s108",
+      "moj-housei_shonen_keiji-20180607-s209",
+      "moj-housei_shonen_keiji-20180608-s309",
+      "moj-housei_shonen_keiji-20180626-s109",
+      "moj-housei_shonen_keiji-20180628-s210",
+      "moj-housei_shonen_keiji-20180705-s310",
+      "moj-housei_shonen_keiji-20180726-008",
+      "moj-housei_shonen_keiji-20180920-009",
+      "moj-housei_shonen_keiji-20181011-010",
+      "moj-housei_shonen_keiji-20181102-011",
+      "moj-housei_shonen_keiji-20181128-012",
+      "moj-housei_shonen_keiji-20181219-013",
+      "moj-housei_shonen_keiji-20190130-014",
+      "moj-housei_shonen_keiji-20190326-015",
+      "moj-housei_shonen_keiji-20190516-016",
+      "moj-housei_shonen_keiji-20190731-017",
+      "moj-housei_shonen_keiji-20190926-018",
+      "moj-housei_shonen_keiji-20191030-019",
+      "moj-housei_shonen_keiji-20191127-020",
+      "moj-housei_shonen_keiji-20191209-021",
+      "moj-housei_shonen_keiji-20191213-022",
+      "moj-housei_shonen_keiji-20191225-023",
+      "moj-housei_shonen_keiji-20200212-024",
+      "moj-housei_shonen_keiji-20200610-025",
+      "moj-housei_shonen_keiji-20200701-026",
+      "moj-housei_shonen_keiji-20200722-027",
+      "moj-housei_shonen_keiji-20200806-028",
+      "moj-housei_shonen_keiji-20200909-029",
       "moj-housei_soukai-20190620-184",
       "moj-housei_soukai-20260710-s01",
       "moj-houterasu_arikata-20260327-001",
@@ -83162,6 +82932,487 @@
       "moj-housei_kaisha-20260620-s01:https://www.moj.go.jp/content/001309575.pdf",
       "moj-housei_kaisha-20260620-s01:https://www.moj.go.jp/content/001309868.pdf",
       "moj-housei_kaisha-20260620-s01:https://www.moj.go.jp/content/001318253.pdf",
+      "moj-housei_koseki-20211125-001:https://www.moj.go.jp/content/001361613.pdf",
+      "moj-housei_koseki-20211125-001:https://www.moj.go.jp/content/001361907.pdf",
+      "moj-housei_koseki-20211125-001:https://www.moj.go.jp/content/001361908.pdf",
+      "moj-housei_koseki-20211125-001:https://www.moj.go.jp/content/001363472.txt",
+      "moj-housei_koseki-20211125-001:https://www.moj.go.jp/content/001363473.pdf",
+      "moj-housei_koseki-20220113-002:https://www.moj.go.jp/content/001363327.pdf",
+      "moj-housei_koseki-20220113-002:https://www.moj.go.jp/content/001366782.txt",
+      "moj-housei_koseki-20220113-002:https://www.moj.go.jp/content/001366788.pdf",
+      "moj-housei_koseki-20220208-003:https://www.moj.go.jp/content/001366220.pdf",
+      "moj-housei_koseki-20220208-003:https://www.moj.go.jp/content/001368538.txt",
+      "moj-housei_koseki-20220208-003:https://www.moj.go.jp/content/001368539.pdf",
+      "moj-housei_koseki-20220317-004:https://www.moj.go.jp/content/001369767.pdf",
+      "moj-housei_koseki-20220317-004:https://www.moj.go.jp/content/001371483.pdf",
+      "moj-housei_koseki-20220317-004:https://www.moj.go.jp/content/001371484.txt",
+      "moj-housei_koseki-20220422-005:https://www.moj.go.jp/content/001372032.pdf",
+      "moj-housei_koseki-20220422-005:https://www.moj.go.jp/content/001372033.pdf",
+      "moj-housei_koseki-20220422-005:https://www.moj.go.jp/content/001372034.pdf",
+      "moj-housei_koseki-20220422-005:https://www.moj.go.jp/content/001373180.txt",
+      "moj-housei_koseki-20220422-005:https://www.moj.go.jp/content/001373181.pdf",
+      "moj-housei_koseki-20220517-006:https://www.moj.go.jp/content/001372857.pdf",
+      "moj-housei_koseki-20220517-006:https://www.moj.go.jp/content/001372858.pdf",
+      "moj-housei_koseki-20220517-006:https://www.moj.go.jp/content/001374792.pdf",
+      "moj-housei_koseki-20220517-006:https://www.moj.go.jp/content/001374793.txt",
+      "moj-housei_koseki-20220517-s07:https://www.moj.go.jp/content/001373661.pdf",
+      "moj-housei_koseki-20220517-s07:https://www.moj.go.jp/content/001373663.pdf",
+      "moj-housei_koseki-20220802-007:https://www.moj.go.jp/content/001378187.pdf",
+      "moj-housei_koseki-20220802-007:https://www.moj.go.jp/content/001378188.pdf",
+      "moj-housei_koseki-20220802-007:https://www.moj.go.jp/content/001380612.pdf",
+      "moj-housei_koseki-20220802-007:https://www.moj.go.jp/content/001380613.txt",
+      "moj-housei_koseki-20220926-008:https://www.moj.go.jp/content/001381063.pdf",
+      "moj-housei_koseki-20220926-008:https://www.moj.go.jp/content/001381064.pdf",
+      "moj-housei_koseki-20220926-008:https://www.moj.go.jp/content/001382566.pdf",
+      "moj-housei_koseki-20220926-008:https://www.moj.go.jp/content/001382567.txt",
+      "moj-housei_koseki-20221101-009:https://www.moj.go.jp/content/001383172.pdf",
+      "moj-housei_koseki-20221101-009:https://www.moj.go.jp/content/001383173.pdf",
+      "moj-housei_koseki-20221101-009:https://www.moj.go.jp/content/001383174.pdf",
+      "moj-housei_koseki-20221101-009:https://www.moj.go.jp/content/001386584.pdf",
+      "moj-housei_koseki-20221101-009:https://www.moj.go.jp/content/001386585.txt",
+      "moj-housei_koseki-20221117-010:https://www.moj.go.jp/content/001384268.pdf",
+      "moj-housei_koseki-20221117-010:https://www.moj.go.jp/content/001387333.pdf",
+      "moj-housei_koseki-20221117-010:https://www.moj.go.jp/content/001387334.txt",
+      "moj-housei_koseki-20221205-011:https://www.moj.go.jp/content/001385200.pdf",
+      "moj-housei_koseki-20221205-011:https://www.moj.go.jp/content/001387576.pdf",
+      "moj-housei_koseki-20221205-011:https://www.moj.go.jp/content/001387578.txt",
+      "moj-housei_koseki-20230112-012:https://www.moj.go.jp/content/001387518.pdf",
+      "moj-housei_koseki-20230112-012:https://www.moj.go.jp/content/001387519.pdf",
+      "moj-housei_koseki-20230112-012:https://www.moj.go.jp/content/001387520.pdf",
+      "moj-housei_koseki-20230112-012:https://www.moj.go.jp/content/001390749.pdf",
+      "moj-housei_koseki-20230112-012:https://www.moj.go.jp/content/001390750.txt",
+      "moj-housei_koseki-20230126-013:https://www.moj.go.jp/content/001388977.pdf",
+      "moj-housei_koseki-20230126-013:https://www.moj.go.jp/content/001388978.pdf",
+      "moj-housei_koseki-20230126-013:https://www.moj.go.jp/content/001391963.pdf",
+      "moj-housei_koseki-20230126-013:https://www.moj.go.jp/content/001391964.txt",
+      "moj-housei_koseki-20230202-014:https://www.moj.go.jp/content/001389414.pdf",
+      "moj-housei_koseki-20230202-014:https://www.moj.go.jp/content/001389415.pdf",
+      "moj-housei_koseki-20230202-014:https://www.moj.go.jp/content/001391965.pdf",
+      "moj-housei_koseki-20230202-014:https://www.moj.go.jp/content/001391966.txt",
+      "moj-housei_koseki-20230202-s16:https://www.moj.go.jp/content/001389862.pdf",
+      "moj-housei_seihanzai-20211027-001:https://www.moj.go.jp/content/001357718.pdf",
+      "moj-housei_seihanzai-20211027-001:https://www.moj.go.jp/content/001357719.pdf",
+      "moj-housei_seihanzai-20211027-001:https://www.moj.go.jp/content/001357720.pdf",
+      "moj-housei_seihanzai-20211027-001:https://www.moj.go.jp/content/001357721.pdf",
+      "moj-housei_seihanzai-20211027-001:https://www.moj.go.jp/content/001357722.pdf",
+      "moj-housei_seihanzai-20211027-001:https://www.moj.go.jp/content/001357723.pdf",
+      "moj-housei_seihanzai-20211027-001:https://www.moj.go.jp/content/001359871.pdf",
+      "moj-housei_seihanzai-20211027-001:https://www.moj.go.jp/content/001359872.txt",
+      "moj-housei_seihanzai-20211129-002:https://www.moj.go.jp/content/001360048.pdf",
+      "moj-housei_seihanzai-20211129-002:https://www.moj.go.jp/content/001360758.pdf",
+      "moj-housei_seihanzai-20211129-002:https://www.moj.go.jp/content/001360760.pdf",
+      "moj-housei_seihanzai-20211129-002:https://www.moj.go.jp/content/001360761.pdf",
+      "moj-housei_seihanzai-20211129-002:https://www.moj.go.jp/content/001360763.pdf",
+      "moj-housei_seihanzai-20211129-002:https://www.moj.go.jp/content/001360764.pdf",
+      "moj-housei_seihanzai-20211129-002:https://www.moj.go.jp/content/001362338.txt",
+      "moj-housei_seihanzai-20211129-002:https://www.moj.go.jp/content/001362339.pdf",
+      "moj-housei_seihanzai-20211129-002:https://www.moj.go.jp/content/001362700.pdf",
+      "moj-housei_seihanzai-20211227-003:https://www.moj.go.jp/content/001362111.pdf",
+      "moj-housei_seihanzai-20211227-003:https://www.moj.go.jp/content/001362112.pdf",
+      "moj-housei_seihanzai-20211227-003:https://www.moj.go.jp/content/001364351.pdf",
+      "moj-housei_seihanzai-20211227-003:https://www.moj.go.jp/content/001364552.txt",
+      "moj-housei_seihanzai-20220126-004:https://www.moj.go.jp/content/001363817.pdf",
+      "moj-housei_seihanzai-20220126-004:https://www.moj.go.jp/content/001367725.txt",
+      "moj-housei_seihanzai-20220126-004:https://www.moj.go.jp/content/001367726.pdf",
+      "moj-housei_seihanzai-20220228-005:https://www.moj.go.jp/content/001367831.pdf",
+      "moj-housei_seihanzai-20220228-005:https://www.moj.go.jp/content/001370295.pdf",
+      "moj-housei_seihanzai-20220228-005:https://www.moj.go.jp/content/001370305.txt",
+      "moj-housei_seihanzai-20220329-006:https://www.moj.go.jp/content/001370496.pdf",
+      "moj-housei_seihanzai-20220329-006:https://www.moj.go.jp/content/001370497.pdf",
+      "moj-housei_seihanzai-20220329-006:https://www.moj.go.jp/content/001370498.pdf",
+      "moj-housei_seihanzai-20220329-006:https://www.moj.go.jp/content/001370499.pdf",
+      "moj-housei_seihanzai-20220329-006:https://www.moj.go.jp/content/001370500.pdf",
+      "moj-housei_seihanzai-20220329-006:https://www.moj.go.jp/content/001371810.pdf",
+      "moj-housei_seihanzai-20220329-006:https://www.moj.go.jp/content/001371811.txt",
+      "moj-housei_seihanzai-20220428-007:https://www.moj.go.jp/content/001371450.pdf",
+      "moj-housei_seihanzai-20220428-007:https://www.moj.go.jp/content/001371451.pdf",
+      "moj-housei_seihanzai-20220428-007:https://www.moj.go.jp/content/001371452.pdf",
+      "moj-housei_seihanzai-20220428-007:https://www.moj.go.jp/content/001371453.pdf",
+      "moj-housei_seihanzai-20220428-007:https://www.moj.go.jp/content/001371454.pdf",
+      "moj-housei_seihanzai-20220428-007:https://www.moj.go.jp/content/001374380.pdf",
+      "moj-housei_seihanzai-20220428-007:https://www.moj.go.jp/content/001374382.txt",
+      "moj-housei_seihanzai-20220608-008:https://www.moj.go.jp/content/001374284.pdf",
+      "moj-housei_seihanzai-20220608-008:https://www.moj.go.jp/content/001374285.pdf",
+      "moj-housei_seihanzai-20220608-008:https://www.moj.go.jp/content/001374286.pdf",
+      "moj-housei_seihanzai-20220608-008:https://www.moj.go.jp/content/001374287.pdf",
+      "moj-housei_seihanzai-20220608-008:https://www.moj.go.jp/content/001374288.pdf",
+      "moj-housei_seihanzai-20220608-008:https://www.moj.go.jp/content/001374289.pdf",
+      "moj-housei_seihanzai-20220608-008:https://www.moj.go.jp/content/001374290.pdf",
+      "moj-housei_seihanzai-20220608-008:https://www.moj.go.jp/content/001377776.pdf",
+      "moj-housei_seihanzai-20220608-008:https://www.moj.go.jp/content/001377777.txt",
+      "moj-housei_seihanzai-20220805-009:https://www.moj.go.jp/content/001381662.pdf",
+      "moj-housei_seihanzai-20220805-009:https://www.moj.go.jp/content/001381663.txt",
+      "moj-housei_seihanzai-20221024-010:https://www.moj.go.jp/content/001382454.pdf",
+      "moj-housei_seihanzai-20221024-010:https://www.moj.go.jp/content/001385529.pdf",
+      "moj-housei_seihanzai-20221024-010:https://www.moj.go.jp/content/001385530.txt",
+      "moj-housei_seihanzai-20221114-011:https://www.moj.go.jp/content/001386057.pdf",
+      "moj-housei_seihanzai-20221114-011:https://www.moj.go.jp/content/001386058.txt",
+      "moj-housei_seihanzai-20221219-012:https://www.moj.go.jp/content/001389282.pdf",
+      "moj-housei_seihanzai-20221219-012:https://www.moj.go.jp/content/001389283.txt",
+      "moj-housei_seihanzai-20230117-013:https://www.moj.go.jp/content/001387696.pdf",
+      "moj-housei_seihanzai-20230117-013:https://www.moj.go.jp/content/001387697.pdf",
+      "moj-housei_seihanzai-20230117-013:https://www.moj.go.jp/content/001387698.pdf",
+      "moj-housei_seihanzai-20230117-013:https://www.moj.go.jp/content/001392956.pdf",
+      "moj-housei_seihanzai-20230117-013:https://www.moj.go.jp/content/001392957.txt",
+      "moj-housei_seihanzai-20230203-014:https://www.moj.go.jp/content/001389393.pdf",
+      "moj-housei_seihanzai-20230203-014:https://www.moj.go.jp/content/001392958.pdf",
+      "moj-housei_seihanzai-20230203-014:https://www.moj.go.jp/content/001392961.txt",
+      "moj-housei_shonen_keiji-20170316-001:https://www.moj.go.jp/content/001220561.pdf",
+      "moj-housei_shonen_keiji-20170316-001:https://www.moj.go.jp/content/001220563.pdf",
+      "moj-housei_shonen_keiji-20170316-001:https://www.moj.go.jp/content/001220564.pdf",
+      "moj-housei_shonen_keiji-20170316-001:https://www.moj.go.jp/content/001220565.pdf",
+      "moj-housei_shonen_keiji-20170316-001:https://www.moj.go.jp/content/001220566.pdf",
+      "moj-housei_shonen_keiji-20170316-001:https://www.moj.go.jp/content/001220567.pdf",
+      "moj-housei_shonen_keiji-20170316-001:https://www.moj.go.jp/content/001220569.pdf",
+      "moj-housei_shonen_keiji-20170316-001:https://www.moj.go.jp/content/001220570.pdf",
+      "moj-housei_shonen_keiji-20170316-001:https://www.moj.go.jp/content/001220571.pdf",
+      "moj-housei_shonen_keiji-20170316-001:https://www.moj.go.jp/content/001220611.pdf",
+      "moj-housei_shonen_keiji-20170316-001:https://www.moj.go.jp/content/001223886.pdf",
+      "moj-housei_shonen_keiji-20170316-001:https://www.moj.go.jp/content/001223897.txt",
+      "moj-housei_shonen_keiji-20170419-002:https://www.moj.go.jp/content/001222893.pdf",
+      "moj-housei_shonen_keiji-20170419-002:https://www.moj.go.jp/content/001222894.pdf",
+      "moj-housei_shonen_keiji-20170419-002:https://www.moj.go.jp/content/001222902.pdf",
+      "moj-housei_shonen_keiji-20170419-002:https://www.moj.go.jp/content/001223152.pdf",
+      "moj-housei_shonen_keiji-20170419-002:https://www.moj.go.jp/content/001225931.txt",
+      "moj-housei_shonen_keiji-20170419-002:https://www.moj.go.jp/content/001225932.pdf",
+      "moj-housei_shonen_keiji-20170419-002:https://www.moj.go.jp/content/001234286.pdf",
+      "moj-housei_shonen_keiji-20170419-002:https://www.moj.go.jp/content/001235000.pdf",
+      "moj-housei_shonen_keiji-20170531-003:https://www.moj.go.jp/content/001225805.pdf",
+      "moj-housei_shonen_keiji-20170531-003:https://www.moj.go.jp/content/001225806.pdf",
+      "moj-housei_shonen_keiji-20170531-003:https://www.moj.go.jp/content/001225807.pdf",
+      "moj-housei_shonen_keiji-20170531-003:https://www.moj.go.jp/content/001225808.pdf",
+      "moj-housei_shonen_keiji-20170531-003:https://www.moj.go.jp/content/001225811.pdf",
+      "moj-housei_shonen_keiji-20170531-003:https://www.moj.go.jp/content/001225814.pdf",
+      "moj-housei_shonen_keiji-20170531-003:https://www.moj.go.jp/content/001225984.pdf",
+      "moj-housei_shonen_keiji-20170531-003:https://www.moj.go.jp/content/001225985.pdf",
+      "moj-housei_shonen_keiji-20170531-003:https://www.moj.go.jp/content/001232610.pdf",
+      "moj-housei_shonen_keiji-20170531-003:https://www.moj.go.jp/content/001232886.txt",
+      "moj-housei_shonen_keiji-20170629-004:https://www.moj.go.jp/content/001228066.pdf",
+      "moj-housei_shonen_keiji-20170629-004:https://www.moj.go.jp/content/001228067.pdf",
+      "moj-housei_shonen_keiji-20170629-004:https://www.moj.go.jp/content/001228068.pdf",
+      "moj-housei_shonen_keiji-20170629-004:https://www.moj.go.jp/content/001228069.pdf",
+      "moj-housei_shonen_keiji-20170629-004:https://www.moj.go.jp/content/001232868.pdf",
+      "moj-housei_shonen_keiji-20170629-004:https://www.moj.go.jp/content/001232869.txt",
+      "moj-housei_shonen_keiji-20170721-v02:https://www.moj.go.jp/content/001235574.pdf",
+      "moj-housei_shonen_keiji-20170721-v02:https://www.moj.go.jp/content/001235575.pdf",
+      "moj-housei_shonen_keiji-20170721-v02:https://www.moj.go.jp/content/001235576.pdf",
+      "moj-housei_shonen_keiji-20170721-v02:https://www.moj.go.jp/content/001235577.pdf",
+      "moj-housei_shonen_keiji-20170721-v02:https://www.moj.go.jp/content/001236696.pdf",
+      "moj-housei_shonen_keiji-20170721-v02:https://www.moj.go.jp/content/001236832.pdf",
+      "moj-housei_shonen_keiji-20170727-005:https://www.moj.go.jp/content/001230474.pdf",
+      "moj-housei_shonen_keiji-20170727-005:https://www.moj.go.jp/content/001230477.pdf",
+      "moj-housei_shonen_keiji-20170727-005:https://www.moj.go.jp/content/001230493.pdf",
+      "moj-housei_shonen_keiji-20170727-005:https://www.moj.go.jp/content/001230494.pdf",
+      "moj-housei_shonen_keiji-20170727-005:https://www.moj.go.jp/content/001230685.pdf",
+      "moj-housei_shonen_keiji-20170727-005:https://www.moj.go.jp/content/001235361.pdf",
+      "moj-housei_shonen_keiji-20170727-005:https://www.moj.go.jp/content/001235363.txt",
+      "moj-housei_shonen_keiji-20170731-v01:https://www.moj.go.jp/content/001238656.pdf",
+      "moj-housei_shonen_keiji-20170731-v01:https://www.moj.go.jp/content/001238657.pdf",
+      "moj-housei_shonen_keiji-20170731-v01:https://www.moj.go.jp/content/001238658.pdf",
+      "moj-housei_shonen_keiji-20170731-v01:https://www.moj.go.jp/content/001238659.pdf",
+      "moj-housei_shonen_keiji-20170731-v01:https://www.moj.go.jp/content/001238660.pdf",
+      "moj-housei_shonen_keiji-20170731-v01:https://www.moj.go.jp/content/001238661.pdf",
+      "moj-housei_shonen_keiji-20170731-v01:https://www.moj.go.jp/content/001238662.pdf",
+      "moj-housei_shonen_keiji-20170731-v01:https://www.moj.go.jp/content/001238663.pdf",
+      "moj-housei_shonen_keiji-20170731-v01:https://www.moj.go.jp/content/001238664.pdf",
+      "moj-housei_shonen_keiji-20170922-s101:https://www.moj.go.jp/content/001236213.pdf",
+      "moj-housei_shonen_keiji-20170922-s101:https://www.moj.go.jp/content/001236214.pdf",
+      "moj-housei_shonen_keiji-20170922-s101:https://www.moj.go.jp/content/001236658.pdf",
+      "moj-housei_shonen_keiji-20170922-s101:https://www.moj.go.jp/content/001236660.pdf",
+      "moj-housei_shonen_keiji-20170922-s101:https://www.moj.go.jp/content/001236802.pdf",
+      "moj-housei_shonen_keiji-20170922-s101:https://www.moj.go.jp/content/001238778.pdf",
+      "moj-housei_shonen_keiji-20170922-s101:https://www.moj.go.jp/content/001238779.txt",
+      "moj-housei_shonen_keiji-20170926-s201:https://www.moj.go.jp/content/001236664.pdf",
+      "moj-housei_shonen_keiji-20170926-s201:https://www.moj.go.jp/content/001236833.pdf",
+      "moj-housei_shonen_keiji-20170926-s201:https://www.moj.go.jp/content/001236892.pdf",
+      "moj-housei_shonen_keiji-20170926-s201:https://www.moj.go.jp/content/001236893.pdf",
+      "moj-housei_shonen_keiji-20170926-s201:https://www.moj.go.jp/content/001238807.pdf",
+      "moj-housei_shonen_keiji-20170926-s201:https://www.moj.go.jp/content/001238808.txt",
+      "moj-housei_shonen_keiji-20170929-s301:https://www.moj.go.jp/content/001236859.pdf",
+      "moj-housei_shonen_keiji-20170929-s301:https://www.moj.go.jp/content/001236860.pdf",
+      "moj-housei_shonen_keiji-20170929-s301:https://www.moj.go.jp/content/001236861.pdf",
+      "moj-housei_shonen_keiji-20170929-s301:https://www.moj.go.jp/content/001236862.pdf",
+      "moj-housei_shonen_keiji-20170929-s301:https://www.moj.go.jp/content/001237210.pdf",
+      "moj-housei_shonen_keiji-20170929-s301:https://www.moj.go.jp/content/001238805.pdf",
+      "moj-housei_shonen_keiji-20170929-s301:https://www.moj.go.jp/content/001257006.txt",
+      "moj-housei_shonen_keiji-20171017-s102:https://www.moj.go.jp/content/001238150.pdf",
+      "moj-housei_shonen_keiji-20171017-s102:https://www.moj.go.jp/content/001238151.pdf",
+      "moj-housei_shonen_keiji-20171017-s102:https://www.moj.go.jp/content/001238152.pdf",
+      "moj-housei_shonen_keiji-20171017-s102:https://www.moj.go.jp/content/001238153.pdf",
+      "moj-housei_shonen_keiji-20171017-s102:https://www.moj.go.jp/content/001238154.pdf",
+      "moj-housei_shonen_keiji-20171017-s102:https://www.moj.go.jp/content/001238155.pdf",
+      "moj-housei_shonen_keiji-20171017-s102:https://www.moj.go.jp/content/001240053.pdf",
+      "moj-housei_shonen_keiji-20171017-s102:https://www.moj.go.jp/content/001240054.txt",
+      "moj-housei_shonen_keiji-20171020-s302:https://www.moj.go.jp/content/001238542.pdf",
+      "moj-housei_shonen_keiji-20171020-s302:https://www.moj.go.jp/content/001238543.pdf",
+      "moj-housei_shonen_keiji-20171020-s302:https://www.moj.go.jp/content/001238544.pdf",
+      "moj-housei_shonen_keiji-20171020-s302:https://www.moj.go.jp/content/001238545.pdf",
+      "moj-housei_shonen_keiji-20171020-s302:https://www.moj.go.jp/content/001240056.pdf",
+      "moj-housei_shonen_keiji-20171020-s302:https://www.moj.go.jp/content/001240057.txt",
+      "moj-housei_shonen_keiji-20171020-s302:https://www.moj.go.jp/content/001258184.pdf",
+      "moj-housei_shonen_keiji-20171024-s202:https://www.moj.go.jp/content/001238801.pdf",
+      "moj-housei_shonen_keiji-20171024-s202:https://www.moj.go.jp/content/001238802.pdf",
+      "moj-housei_shonen_keiji-20171024-s202:https://www.moj.go.jp/content/001238803.pdf",
+      "moj-housei_shonen_keiji-20171024-s202:https://www.moj.go.jp/content/001238804.pdf",
+      "moj-housei_shonen_keiji-20171024-s202:https://www.moj.go.jp/content/001241061.pdf",
+      "moj-housei_shonen_keiji-20171024-s202:https://www.moj.go.jp/content/001241062.txt",
+      "moj-housei_shonen_keiji-20171114-s103:https://www.moj.go.jp/content/001240182.pdf",
+      "moj-housei_shonen_keiji-20171114-s103:https://www.moj.go.jp/content/001240189.pdf",
+      "moj-housei_shonen_keiji-20171114-s103:https://www.moj.go.jp/content/001240190.pdf",
+      "moj-housei_shonen_keiji-20171114-s103:https://www.moj.go.jp/content/001240191.pdf",
+      "moj-housei_shonen_keiji-20171114-s103:https://www.moj.go.jp/content/001240192.pdf",
+      "moj-housei_shonen_keiji-20171114-s103:https://www.moj.go.jp/content/001240193.pdf",
+      "moj-housei_shonen_keiji-20171114-s103:https://www.moj.go.jp/content/001240197.pdf",
+      "moj-housei_shonen_keiji-20171114-s103:https://www.moj.go.jp/content/001243802.pdf",
+      "moj-housei_shonen_keiji-20171114-s103:https://www.moj.go.jp/content/001243803.txt",
+      "moj-housei_shonen_keiji-20171117-s303:https://www.moj.go.jp/content/001240341.pdf",
+      "moj-housei_shonen_keiji-20171117-s303:https://www.moj.go.jp/content/001240342.pdf",
+      "moj-housei_shonen_keiji-20171117-s303:https://www.moj.go.jp/content/001240625.pdf",
+      "moj-housei_shonen_keiji-20171117-s303:https://www.moj.go.jp/content/001240626.pdf",
+      "moj-housei_shonen_keiji-20171117-s303:https://www.moj.go.jp/content/001240627.pdf",
+      "moj-housei_shonen_keiji-20171117-s303:https://www.moj.go.jp/content/001240628.pdf",
+      "moj-housei_shonen_keiji-20171117-s303:https://www.moj.go.jp/content/001243093.pdf",
+      "moj-housei_shonen_keiji-20171117-s303:https://www.moj.go.jp/content/001243094.txt",
+      "moj-housei_shonen_keiji-20171122-s203:https://www.moj.go.jp/content/001240748.pdf",
+      "moj-housei_shonen_keiji-20171122-s203:https://www.moj.go.jp/content/001240749.pdf",
+      "moj-housei_shonen_keiji-20171122-s203:https://www.moj.go.jp/content/001240750.pdf",
+      "moj-housei_shonen_keiji-20171122-s203:https://www.moj.go.jp/content/001240751.pdf",
+      "moj-housei_shonen_keiji-20171122-s203:https://www.moj.go.jp/content/001264519.pdf",
+      "moj-housei_shonen_keiji-20171122-s203:https://www.moj.go.jp/content/001264520.txt",
+      "moj-housei_shonen_keiji-20171219-006:https://www.moj.go.jp/content/001242702.pdf",
+      "moj-housei_shonen_keiji-20171219-006:https://www.moj.go.jp/content/001242704.pdf",
+      "moj-housei_shonen_keiji-20171219-006:https://www.moj.go.jp/content/001246843.pdf",
+      "moj-housei_shonen_keiji-20171219-006:https://www.moj.go.jp/content/001246845.txt",
+      "moj-housei_shonen_keiji-20180129-s104:https://www.moj.go.jp/content/001246043.pdf",
+      "moj-housei_shonen_keiji-20180129-s104:https://www.moj.go.jp/content/001246044.pdf",
+      "moj-housei_shonen_keiji-20180129-s104:https://www.moj.go.jp/content/001246045.pdf",
+      "moj-housei_shonen_keiji-20180129-s104:https://www.moj.go.jp/content/001251518.pdf",
+      "moj-housei_shonen_keiji-20180129-s104:https://www.moj.go.jp/content/001251519.txt",
+      "moj-housei_shonen_keiji-20180130-s204:https://www.moj.go.jp/content/001246037.pdf",
+      "moj-housei_shonen_keiji-20180130-s204:https://www.moj.go.jp/content/001246038.pdf",
+      "moj-housei_shonen_keiji-20180130-s204:https://www.moj.go.jp/content/001253444.pdf",
+      "moj-housei_shonen_keiji-20180130-s204:https://www.moj.go.jp/content/001253445.txt",
+      "moj-housei_shonen_keiji-20180202-s304:https://www.moj.go.jp/content/001246831.pdf",
+      "moj-housei_shonen_keiji-20180202-s304:https://www.moj.go.jp/content/001246832.pdf",
+      "moj-housei_shonen_keiji-20180202-s304:https://www.moj.go.jp/content/001246833.pdf",
+      "moj-housei_shonen_keiji-20180202-s304:https://www.moj.go.jp/content/001247580.pdf",
+      "moj-housei_shonen_keiji-20180202-s304:https://www.moj.go.jp/content/001253200.pdf",
+      "moj-housei_shonen_keiji-20180202-s304:https://www.moj.go.jp/content/001253203.txt",
+      "moj-housei_shonen_keiji-20180213-s105:https://www.moj.go.jp/content/001248041.pdf",
+      "moj-housei_shonen_keiji-20180213-s105:https://www.moj.go.jp/content/001248042.pdf",
+      "moj-housei_shonen_keiji-20180213-s105:https://www.moj.go.jp/content/001248043.pdf",
+      "moj-housei_shonen_keiji-20180213-s105:https://www.moj.go.jp/content/001253507.pdf",
+      "moj-housei_shonen_keiji-20180213-s105:https://www.moj.go.jp/content/001253508.txt",
+      "moj-housei_shonen_keiji-20180214-s205:https://www.moj.go.jp/content/001249518.pdf",
+      "moj-housei_shonen_keiji-20180214-s205:https://www.moj.go.jp/content/001249523.pdf",
+      "moj-housei_shonen_keiji-20180214-s205:https://www.moj.go.jp/content/001254053.pdf",
+      "moj-housei_shonen_keiji-20180214-s205:https://www.moj.go.jp/content/001254107.txt",
+      "moj-housei_shonen_keiji-20180302-s305:https://www.moj.go.jp/content/001252239.pdf",
+      "moj-housei_shonen_keiji-20180302-s305:https://www.moj.go.jp/content/001252240.pdf",
+      "moj-housei_shonen_keiji-20180302-s305:https://www.moj.go.jp/content/001252241.pdf",
+      "moj-housei_shonen_keiji-20180302-s305:https://www.moj.go.jp/content/001252242.pdf",
+      "moj-housei_shonen_keiji-20180302-s305:https://www.moj.go.jp/content/001252243.pdf",
+      "moj-housei_shonen_keiji-20180302-s305:https://www.moj.go.jp/content/001256008.pdf",
+      "moj-housei_shonen_keiji-20180302-s305:https://www.moj.go.jp/content/001256009.txt",
+      "moj-housei_shonen_keiji-20180306-s206:https://www.moj.go.jp/content/001252470.pdf",
+      "moj-housei_shonen_keiji-20180306-s206:https://www.moj.go.jp/content/001252471.pdf",
+      "moj-housei_shonen_keiji-20180306-s206:https://www.moj.go.jp/content/001252472.pdf",
+      "moj-housei_shonen_keiji-20180306-s206:https://www.moj.go.jp/content/001252474.pdf",
+      "moj-housei_shonen_keiji-20180306-s206:https://www.moj.go.jp/content/001252604.pdf",
+      "moj-housei_shonen_keiji-20180306-s206:https://www.moj.go.jp/content/001255061.pdf",
+      "moj-housei_shonen_keiji-20180306-s206:https://www.moj.go.jp/content/001255062.txt",
+      "moj-housei_shonen_keiji-20180307-s106:https://www.moj.go.jp/content/001252850.pdf",
+      "moj-housei_shonen_keiji-20180307-s106:https://www.moj.go.jp/content/001252851.pdf",
+      "moj-housei_shonen_keiji-20180307-s106:https://www.moj.go.jp/content/001252852.pdf",
+      "moj-housei_shonen_keiji-20180307-s106:https://www.moj.go.jp/content/001252853.pdf",
+      "moj-housei_shonen_keiji-20180307-s106:https://www.moj.go.jp/content/001252854.pdf",
+      "moj-housei_shonen_keiji-20180307-s106:https://www.moj.go.jp/content/001252855.pdf",
+      "moj-housei_shonen_keiji-20180307-s106:https://www.moj.go.jp/content/001252856.pdf",
+      "moj-housei_shonen_keiji-20180307-s106:https://www.moj.go.jp/content/001255861.pdf",
+      "moj-housei_shonen_keiji-20180307-s106:https://www.moj.go.jp/content/001255862.txt",
+      "moj-housei_shonen_keiji-20180313-s306:https://www.moj.go.jp/content/001252939.pdf",
+      "moj-housei_shonen_keiji-20180313-s306:https://www.moj.go.jp/content/001256021.pdf",
+      "moj-housei_shonen_keiji-20180313-s306:https://www.moj.go.jp/content/001256022.txt",
+      "moj-housei_shonen_keiji-20180328-s207:https://www.moj.go.jp/content/001254662.pdf",
+      "moj-housei_shonen_keiji-20180328-s207:https://www.moj.go.jp/content/001254663.pdf",
+      "moj-housei_shonen_keiji-20180328-s207:https://www.moj.go.jp/content/001254664.pdf",
+      "moj-housei_shonen_keiji-20180328-s207:https://www.moj.go.jp/content/001254665.pdf",
+      "moj-housei_shonen_keiji-20180328-s207:https://www.moj.go.jp/content/001254666.pdf",
+      "moj-housei_shonen_keiji-20180328-s207:https://www.moj.go.jp/content/001259759.pdf",
+      "moj-housei_shonen_keiji-20180328-s207:https://www.moj.go.jp/content/001259760.txt",
+      "moj-housei_shonen_keiji-20180329-s307:https://www.moj.go.jp/content/001254135.pdf",
+      "moj-housei_shonen_keiji-20180329-s307:https://www.moj.go.jp/content/001254136.pdf",
+      "moj-housei_shonen_keiji-20180329-s307:https://www.moj.go.jp/content/001254137.pdf",
+      "moj-housei_shonen_keiji-20180329-s307:https://www.moj.go.jp/content/001257012.pdf",
+      "moj-housei_shonen_keiji-20180329-s307:https://www.moj.go.jp/content/001257013.txt",
+      "moj-housei_shonen_keiji-20180426-007:https://www.moj.go.jp/content/001257004.pdf",
+      "moj-housei_shonen_keiji-20180426-007:https://www.moj.go.jp/content/001257307.pdf",
+      "moj-housei_shonen_keiji-20180426-007:https://www.moj.go.jp/content/001260011.pdf",
+      "moj-housei_shonen_keiji-20180426-007:https://www.moj.go.jp/content/001260012.txt",
+      "moj-housei_shonen_keiji-20180515-s107:https://www.moj.go.jp/content/001258203.pdf",
+      "moj-housei_shonen_keiji-20180515-s107:https://www.moj.go.jp/content/001258204.pdf",
+      "moj-housei_shonen_keiji-20180515-s107:https://www.moj.go.jp/content/001258205.pdf",
+      "moj-housei_shonen_keiji-20180515-s107:https://www.moj.go.jp/content/001258206.pdf",
+      "moj-housei_shonen_keiji-20180515-s107:https://www.moj.go.jp/content/001258207.pdf",
+      "moj-housei_shonen_keiji-20180515-s107:https://www.moj.go.jp/content/001260686.pdf",
+      "moj-housei_shonen_keiji-20180515-s107:https://www.moj.go.jp/content/001260687.txt",
+      "moj-housei_shonen_keiji-20180517-s208:https://www.moj.go.jp/content/001258185.pdf",
+      "moj-housei_shonen_keiji-20180517-s208:https://www.moj.go.jp/content/001258186.pdf",
+      "moj-housei_shonen_keiji-20180517-s208:https://www.moj.go.jp/content/001258314.pdf",
+      "moj-housei_shonen_keiji-20180517-s208:https://www.moj.go.jp/content/001261956.pdf",
+      "moj-housei_shonen_keiji-20180517-s208:https://www.moj.go.jp/content/001261957.txt",
+      "moj-housei_shonen_keiji-20180518-s308:https://www.moj.go.jp/content/001258177.pdf",
+      "moj-housei_shonen_keiji-20180518-s308:https://www.moj.go.jp/content/001258179.pdf",
+      "moj-housei_shonen_keiji-20180518-s308:https://www.moj.go.jp/content/001258180.pdf",
+      "moj-housei_shonen_keiji-20180518-s308:https://www.moj.go.jp/content/001258182.pdf",
+      "moj-housei_shonen_keiji-20180518-s308:https://www.moj.go.jp/content/001258184.pdf",
+      "moj-housei_shonen_keiji-20180518-s308:https://www.moj.go.jp/content/001261255.pdf",
+      "moj-housei_shonen_keiji-20180518-s308:https://www.moj.go.jp/content/001261256.txt",
+      "moj-housei_shonen_keiji-20180605-s108:https://www.moj.go.jp/content/001260143.pdf",
+      "moj-housei_shonen_keiji-20180605-s108:https://www.moj.go.jp/content/001260144.pdf",
+      "moj-housei_shonen_keiji-20180605-s108:https://www.moj.go.jp/content/001260146.pdf",
+      "moj-housei_shonen_keiji-20180605-s108:https://www.moj.go.jp/content/001262935.txt",
+      "moj-housei_shonen_keiji-20180605-s108:https://www.moj.go.jp/content/001262936.pdf",
+      "moj-housei_shonen_keiji-20180607-s209:https://www.moj.go.jp/content/001260420.pdf",
+      "moj-housei_shonen_keiji-20180607-s209:https://www.moj.go.jp/content/001260500.pdf",
+      "moj-housei_shonen_keiji-20180607-s209:https://www.moj.go.jp/content/001260568.pdf",
+      "moj-housei_shonen_keiji-20180607-s209:https://www.moj.go.jp/content/001263502.pdf",
+      "moj-housei_shonen_keiji-20180607-s209:https://www.moj.go.jp/content/001263503.txt",
+      "moj-housei_shonen_keiji-20180608-s309:https://www.moj.go.jp/content/001260409.pdf",
+      "moj-housei_shonen_keiji-20180608-s309:https://www.moj.go.jp/content/001260410.pdf",
+      "moj-housei_shonen_keiji-20180608-s309:https://www.moj.go.jp/content/001260411.pdf",
+      "moj-housei_shonen_keiji-20180608-s309:https://www.moj.go.jp/content/001263353.pdf",
+      "moj-housei_shonen_keiji-20180608-s309:https://www.moj.go.jp/content/001263355.txt",
+      "moj-housei_shonen_keiji-20180626-s109:https://www.moj.go.jp/content/001261841.pdf",
+      "moj-housei_shonen_keiji-20180626-s109:https://www.moj.go.jp/content/001261842.pdf",
+      "moj-housei_shonen_keiji-20180626-s109:https://www.moj.go.jp/content/001261843.pdf",
+      "moj-housei_shonen_keiji-20180626-s109:https://www.moj.go.jp/content/001265011.txt",
+      "moj-housei_shonen_keiji-20180626-s109:https://www.moj.go.jp/content/001265012.pdf",
+      "moj-housei_shonen_keiji-20180628-s210:https://www.moj.go.jp/content/001261910.pdf",
+      "moj-housei_shonen_keiji-20180628-s210:https://www.moj.go.jp/content/001262177.pdf",
+      "moj-housei_shonen_keiji-20180628-s210:https://www.moj.go.jp/content/001262178.pdf",
+      "moj-housei_shonen_keiji-20180628-s210:https://www.moj.go.jp/content/001262179.pdf",
+      "moj-housei_shonen_keiji-20180628-s210:https://www.moj.go.jp/content/001262180.pdf",
+      "moj-housei_shonen_keiji-20180628-s210:https://www.moj.go.jp/content/001262182.pdf",
+      "moj-housei_shonen_keiji-20180628-s210:https://www.moj.go.jp/content/001262183.pdf",
+      "moj-housei_shonen_keiji-20180628-s210:https://www.moj.go.jp/content/001262915.pdf",
+      "moj-housei_shonen_keiji-20180628-s210:https://www.moj.go.jp/content/001262916.pdf",
+      "moj-housei_shonen_keiji-20180628-s210:https://www.moj.go.jp/content/001266920.txt",
+      "moj-housei_shonen_keiji-20180628-s210:https://www.moj.go.jp/content/001266921.pdf",
+      "moj-housei_shonen_keiji-20180705-s310:https://www.moj.go.jp/content/001262545.pdf",
+      "moj-housei_shonen_keiji-20180705-s310:https://www.moj.go.jp/content/001262547.pdf",
+      "moj-housei_shonen_keiji-20180705-s310:https://www.moj.go.jp/content/001262548.pdf",
+      "moj-housei_shonen_keiji-20180705-s310:https://www.moj.go.jp/content/001266352.txt",
+      "moj-housei_shonen_keiji-20180705-s310:https://www.moj.go.jp/content/001266354.pdf",
+      "moj-housei_shonen_keiji-20180726-008:https://www.moj.go.jp/content/001264708.pdf",
+      "moj-housei_shonen_keiji-20180726-008:https://www.moj.go.jp/content/001264709.pdf",
+      "moj-housei_shonen_keiji-20180726-008:https://www.moj.go.jp/content/001265427.pdf",
+      "moj-housei_shonen_keiji-20180726-008:https://www.moj.go.jp/content/001269304.txt",
+      "moj-housei_shonen_keiji-20180726-008:https://www.moj.go.jp/content/001269305.pdf",
+      "moj-housei_shonen_keiji-20180920-009:https://www.moj.go.jp/content/001271794.pdf",
+      "moj-housei_shonen_keiji-20180920-009:https://www.moj.go.jp/content/001271796.txt",
+      "moj-housei_shonen_keiji-20181011-010:https://www.moj.go.jp/content/001271326.pdf",
+      "moj-housei_shonen_keiji-20181011-010:https://www.moj.go.jp/content/001274909.pdf",
+      "moj-housei_shonen_keiji-20181011-010:https://www.moj.go.jp/content/001274910.txt",
+      "moj-housei_shonen_keiji-20181102-011:https://www.moj.go.jp/content/001273171.pdf",
+      "moj-housei_shonen_keiji-20181102-011:https://www.moj.go.jp/content/001273172.pdf",
+      "moj-housei_shonen_keiji-20181102-011:https://www.moj.go.jp/content/001273552.pdf",
+      "moj-housei_shonen_keiji-20181102-011:https://www.moj.go.jp/content/001276347.pdf",
+      "moj-housei_shonen_keiji-20181102-011:https://www.moj.go.jp/content/001276348.txt",
+      "moj-housei_shonen_keiji-20181128-012:https://www.moj.go.jp/content/001275390.pdf",
+      "moj-housei_shonen_keiji-20181128-012:https://www.moj.go.jp/content/001275392.pdf",
+      "moj-housei_shonen_keiji-20181128-012:https://www.moj.go.jp/content/001279932.pdf",
+      "moj-housei_shonen_keiji-20181128-012:https://www.moj.go.jp/content/001279933.txt",
+      "moj-housei_shonen_keiji-20181219-013:https://www.moj.go.jp/content/001278415.pdf",
+      "moj-housei_shonen_keiji-20181219-013:https://www.moj.go.jp/content/001282317.pdf",
+      "moj-housei_shonen_keiji-20181219-013:https://www.moj.go.jp/content/001282318.txt",
+      "moj-housei_shonen_keiji-20190130-014:https://www.moj.go.jp/content/001281217.pdf",
+      "moj-housei_shonen_keiji-20190130-014:https://www.moj.go.jp/content/001281218.pdf",
+      "moj-housei_shonen_keiji-20190130-014:https://www.moj.go.jp/content/001281219.pdf",
+      "moj-housei_shonen_keiji-20190130-014:https://www.moj.go.jp/content/001281221.pdf",
+      "moj-housei_shonen_keiji-20190130-014:https://www.moj.go.jp/content/001281224.pdf",
+      "moj-housei_shonen_keiji-20190130-014:https://www.moj.go.jp/content/001281247.pdf",
+      "moj-housei_shonen_keiji-20190130-014:https://www.moj.go.jp/content/001289767.pdf",
+      "moj-housei_shonen_keiji-20190130-014:https://www.moj.go.jp/content/001289768.txt",
+      "moj-housei_shonen_keiji-20190326-015:https://www.moj.go.jp/content/001289936.pdf",
+      "moj-housei_shonen_keiji-20190326-015:https://www.moj.go.jp/content/001289937.pdf",
+      "moj-housei_shonen_keiji-20190326-015:https://www.moj.go.jp/content/001293896.pdf",
+      "moj-housei_shonen_keiji-20190326-015:https://www.moj.go.jp/content/001293897.txt",
+      "moj-housei_shonen_keiji-20190516-016:https://www.moj.go.jp/content/001294032.pdf",
+      "moj-housei_shonen_keiji-20190516-016:https://www.moj.go.jp/content/001299443.pdf",
+      "moj-housei_shonen_keiji-20190516-016:https://www.moj.go.jp/content/001299444.txt",
+      "moj-housei_shonen_keiji-20190516-016:https://www.moj.go.jp/content/001329821.pdf",
+      "moj-housei_shonen_keiji-20190731-017:https://www.moj.go.jp/content/001301120.pdf",
+      "moj-housei_shonen_keiji-20190731-017:https://www.moj.go.jp/content/001301493.pdf",
+      "moj-housei_shonen_keiji-20190731-017:https://www.moj.go.jp/content/001306006.pdf",
+      "moj-housei_shonen_keiji-20190731-017:https://www.moj.go.jp/content/001306007.txt",
+      "moj-housei_shonen_keiji-20190926-018:https://www.moj.go.jp/content/001305971.pdf",
+      "moj-housei_shonen_keiji-20190926-018:https://www.moj.go.jp/content/001308510.pdf",
+      "moj-housei_shonen_keiji-20190926-018:https://www.moj.go.jp/content/001308511.txt",
+      "moj-housei_shonen_keiji-20190926-018:https://www.moj.go.jp/content/001360608.pdf",
+      "moj-housei_shonen_keiji-20190926-018:https://www.moj.go.jp/content/001360609.pdf",
+      "moj-housei_shonen_keiji-20190926-018:https://www.moj.go.jp/content/001360610.pdf",
+      "moj-housei_shonen_keiji-20191030-019:https://www.moj.go.jp/content/001308634.pdf",
+      "moj-housei_shonen_keiji-20191030-019:https://www.moj.go.jp/content/001308635.pdf",
+      "moj-housei_shonen_keiji-20191030-019:https://www.moj.go.jp/content/001309659.txt",
+      "moj-housei_shonen_keiji-20191030-019:https://www.moj.go.jp/content/001309660.pdf",
+      "moj-housei_shonen_keiji-20191127-020:https://www.moj.go.jp/content/001310000.pdf",
+      "moj-housei_shonen_keiji-20191127-020:https://www.moj.go.jp/content/001312553.txt",
+      "moj-housei_shonen_keiji-20191127-020:https://www.moj.go.jp/content/001312554.pdf",
+      "moj-housei_shonen_keiji-20191209-021:https://www.moj.go.jp/content/001310521.pdf",
+      "moj-housei_shonen_keiji-20191209-021:https://www.moj.go.jp/content/001310522.pdf",
+      "moj-housei_shonen_keiji-20191209-021:https://www.moj.go.jp/content/001313941.txt",
+      "moj-housei_shonen_keiji-20191209-021:https://www.moj.go.jp/content/001313942.pdf",
+      "moj-housei_shonen_keiji-20191213-022:https://www.moj.go.jp/content/001310754.pdf",
+      "moj-housei_shonen_keiji-20191213-022:https://www.moj.go.jp/content/001313943.txt",
+      "moj-housei_shonen_keiji-20191213-022:https://www.moj.go.jp/content/001313944.pdf",
+      "moj-housei_shonen_keiji-20191225-023:https://www.moj.go.jp/content/001311647.pdf",
+      "moj-housei_shonen_keiji-20191225-023:https://www.moj.go.jp/content/001311649.pdf",
+      "moj-housei_shonen_keiji-20191225-023:https://www.moj.go.jp/content/001311650.pdf",
+      "moj-housei_shonen_keiji-20191225-023:https://www.moj.go.jp/content/001311651.pdf",
+      "moj-housei_shonen_keiji-20191225-023:https://www.moj.go.jp/content/001313945.txt",
+      "moj-housei_shonen_keiji-20191225-023:https://www.moj.go.jp/content/001313946.pdf",
+      "moj-housei_shonen_keiji-20191225-023:https://www.moj.go.jp/content/001317561.pdf",
+      "moj-housei_shonen_keiji-20200212-024:https://www.moj.go.jp/content/001314268.pdf",
+      "moj-housei_shonen_keiji-20200212-024:https://www.moj.go.jp/content/001314284.pdf",
+      "moj-housei_shonen_keiji-20200212-024:https://www.moj.go.jp/content/001314321.pdf",
+      "moj-housei_shonen_keiji-20200212-024:https://www.moj.go.jp/content/001314322.pdf",
+      "moj-housei_shonen_keiji-20200212-024:https://www.moj.go.jp/content/001314323.pdf",
+      "moj-housei_shonen_keiji-20200212-024:https://www.moj.go.jp/content/001314324.pdf",
+      "moj-housei_shonen_keiji-20200212-024:https://www.moj.go.jp/content/001314325.pdf",
+      "moj-housei_shonen_keiji-20200212-024:https://www.moj.go.jp/content/001314326.pdf",
+      "moj-housei_shonen_keiji-20200212-024:https://www.moj.go.jp/content/001314364.pdf",
+      "moj-housei_shonen_keiji-20200212-024:https://www.moj.go.jp/content/001314365.pdf",
+      "moj-housei_shonen_keiji-20200212-024:https://www.moj.go.jp/content/001314420.pdf",
+      "moj-housei_shonen_keiji-20200212-024:https://www.moj.go.jp/content/001314421.pdf",
+      "moj-housei_shonen_keiji-20200212-024:https://www.moj.go.jp/content/001314422.pdf",
+      "moj-housei_shonen_keiji-20200212-024:https://www.moj.go.jp/content/001314423.pdf",
+      "moj-housei_shonen_keiji-20200212-024:https://www.moj.go.jp/content/001315098.pdf",
+      "moj-housei_shonen_keiji-20200212-024:https://www.moj.go.jp/content/001317649.txt",
+      "moj-housei_shonen_keiji-20200212-024:https://www.moj.go.jp/content/001317650.pdf",
+      "moj-housei_shonen_keiji-20200610-025:https://www.moj.go.jp/content/001321533.pdf",
+      "moj-housei_shonen_keiji-20200610-025:https://www.moj.go.jp/content/001321534.pdf",
+      "moj-housei_shonen_keiji-20200610-025:https://www.moj.go.jp/content/001321627.pdf",
+      "moj-housei_shonen_keiji-20200610-025:https://www.moj.go.jp/content/001321628.pdf",
+      "moj-housei_shonen_keiji-20200610-025:https://www.moj.go.jp/content/001321636.pdf",
+      "moj-housei_shonen_keiji-20200610-025:https://www.moj.go.jp/content/001321637.pdf",
+      "moj-housei_shonen_keiji-20200610-025:https://www.moj.go.jp/content/001321749.pdf",
+      "moj-housei_shonen_keiji-20200610-025:https://www.moj.go.jp/content/001322225.pdf",
+      "moj-housei_shonen_keiji-20200610-025:https://www.moj.go.jp/content/001323866.txt",
+      "moj-housei_shonen_keiji-20200610-025:https://www.moj.go.jp/content/001323868.pdf",
+      "moj-housei_shonen_keiji-20200701-026:https://www.moj.go.jp/content/001325868.txt",
+      "moj-housei_shonen_keiji-20200701-026:https://www.moj.go.jp/content/001325869.pdf",
+      "moj-housei_shonen_keiji-20200722-027:https://www.moj.go.jp/content/001329809.txt",
+      "moj-housei_shonen_keiji-20200722-027:https://www.moj.go.jp/content/001329810.pdf",
+      "moj-housei_shonen_keiji-20200806-028:https://www.moj.go.jp/content/001329123.txt",
+      "moj-housei_shonen_keiji-20200806-028:https://www.moj.go.jp/content/001329124.pdf",
+      "moj-housei_shonen_keiji-20200806-028:https://www.moj.go.jp/content/001329125.pdf",
+      "moj-housei_shonen_keiji-20200806-028:https://www.moj.go.jp/content/001329126.pdf",
+      "moj-housei_shonen_keiji-20200909-029:https://www.moj.go.jp/content/001328361.pdf",
+      "moj-housei_shonen_keiji-20200909-029:https://www.moj.go.jp/content/001329766.pdf",
+      "moj-housei_shonen_keiji-20200909-029:https://www.moj.go.jp/content/001329767.pdf",
+      "moj-housei_shonen_keiji-20200909-029:https://www.moj.go.jp/content/001332128.txt",
+      "moj-housei_shonen_keiji-20200909-029:https://www.moj.go.jp/content/001332129.pdf",
       "moj-housei_soukai-20190620-184:https://www.moj.go.jp/content/001313213.pdf",
       "moj-housei_soukai-20260710-s01:https://www.moj.go.jp/content/001470652.pdf",
       "moj-keiji_fufukushinsa-20060112-s01:https://www.moj.go.jp/shingi1/kanbou_shinsa_gijiroku01.html",
@@ -86335,155 +86586,11 @@
       "discoveredAt": "2026/10/24 17:12",
       "discoverySource": "rule"
     },
-    "mic-2942": {
-      "discoveredAt": "2026/10/24 17:12",
-      "discoverySource": "rule"
-    },
-    "mlit-2909": {
-      "discoveredAt": "2026/10/24 17:12",
-      "discoverySource": "rule"
-    },
-    "mlit-2910": {
-      "discoveredAt": "2026/10/24 17:12",
-      "discoverySource": "rule"
-    },
-    "mlit-2911": {
-      "discoveredAt": "2026/10/24 17:12",
-      "discoverySource": "rule"
-    },
-    "mlit-2912": {
-      "discoveredAt": "2026/10/24 17:12",
-      "discoverySource": "rule"
-    },
-    "mlit-2913": {
-      "discoveredAt": "2026/10/24 17:12",
-      "discoverySource": "rule"
-    },
-    "mlit-2914": {
-      "discoveredAt": "2026/10/24 17:12",
-      "discoverySource": "rule"
-    },
-    "mlit-2915": {
-      "discoveredAt": "2026/10/24 17:12",
-      "discoverySource": "rule"
-    },
-    "mlit-2916": {
-      "discoveredAt": "2026/10/24 17:12",
-      "discoverySource": "rule"
-    },
-    "mlit-2917": {
-      "discoveredAt": "2026/10/24 17:12",
-      "discoverySource": "rule"
-    },
-    "mlit-2918": {
-      "discoveredAt": "2026/10/24 17:12",
-      "discoverySource": "rule"
-    },
-    "mlit-2919": {
-      "discoveredAt": "2026/10/24 17:12",
-      "discoverySource": "rule"
-    },
-    "mlit-2920": {
-      "discoveredAt": "2026/10/24 17:12",
-      "discoverySource": "rule"
-    },
-    "mlit-2921": {
-      "discoveredAt": "2026/10/24 17:12",
-      "discoverySource": "rule"
-    },
-    "mlit-2922": {
-      "discoveredAt": "2026/10/24 17:12",
-      "discoverySource": "rule"
-    },
-    "mlit-2923": {
-      "discoveredAt": "2026/10/24 17:12",
-      "discoverySource": "rule"
-    },
-    "mlit-2924": {
-      "discoveredAt": "2026/10/24 17:12",
-      "discoverySource": "rule"
-    },
-    "mlit-2925": {
-      "discoveredAt": "2026/10/24 17:12",
-      "discoverySource": "rule"
-    },
-    "mlit-2927": {
-      "discoveredAt": "2026/10/24 17:12",
-      "discoverySource": "rule"
-    },
-    "mlit-2928": {
-      "discoveredAt": "2026/10/24 17:12",
-      "discoverySource": "rule"
-    },
-    "mlit-2929": {
-      "discoveredAt": "2026/10/24 17:12",
-      "discoverySource": "rule"
-    },
-    "mlit-2930": {
-      "discoveredAt": "2026/10/24 17:12",
-      "discoverySource": "rule"
-    },
-    "mlit-2931": {
-      "discoveredAt": "2026/10/24 17:12",
-      "discoverySource": "rule"
-    },
-    "mlit-2932": {
-      "discoveredAt": "2026/10/24 17:12",
-      "discoverySource": "rule"
-    },
     "mlit-2933": {
       "discoveredAt": "2026/10/24 17:12",
       "discoverySource": "rule"
     },
-    "mlit-2934": {
-      "discoveredAt": "2026/10/24 17:12",
-      "discoverySource": "rule"
-    },
-    "mlit-2935": {
-      "discoveredAt": "2026/10/24 17:12",
-      "discoverySource": "rule"
-    },
-    "mlit-2936": {
-      "discoveredAt": "2026/10/24 17:12",
-      "discoverySource": "rule"
-    },
-    "mlit-2937": {
-      "discoveredAt": "2026/10/24 17:12",
-      "discoverySource": "rule"
-    },
-    "mlit-2938": {
-      "discoveredAt": "2026/10/24 17:12",
-      "discoverySource": "rule"
-    },
-    "mlit-2939": {
-      "discoveredAt": "2026/10/24 17:12",
-      "discoverySource": "rule"
-    },
-    "mlit-2940": {
-      "discoveredAt": "2026/10/24 17:12",
-      "discoverySource": "rule"
-    },
-    "mlit-3009": {
-      "discoveredAt": "2026/10/24 17:23",
-      "discoverySource": "rule"
-    },
-    "mod-2996": {
-      "discoveredAt": "2026/10/24 17:12",
-      "discoverySource": "rule"
-    },
-    "mod-2997": {
-      "discoveredAt": "2026/10/24 17:12",
-      "discoverySource": "rule"
-    },
-    "mod-2998": {
-      "discoveredAt": "2026/10/24 17:12",
-      "discoverySource": "rule"
-    },
     "moe-2961": {
-      "discoveredAt": "2026/10/24 17:12",
-      "discoverySource": "rule"
-    },
-    "moe-2969": {
       "discoveredAt": "2026/10/24 17:12",
       "discoverySource": "rule"
     },
@@ -86516,18 +86623,6 @@
       "discoverySource": "rule"
     },
     "moj-2979": {
-      "discoveredAt": "2026/10/24 17:12",
-      "discoverySource": "rule"
-    },
-    "moj-2980": {
-      "discoveredAt": "2026/10/24 17:12",
-      "discoverySource": "rule"
-    },
-    "moj-2981": {
-      "discoveredAt": "2026/10/24 17:12",
-      "discoverySource": "rule"
-    },
-    "moj-2982": {
       "discoveredAt": "2026/10/24 17:12",
       "discoverySource": "rule"
     },
@@ -86582,10 +86677,6 @@
     "moj-2995": {
       "discoveredAt": "2026/10/24 17:12",
       "discoverySource": "rule"
-    },
-    "moj-3011": {
-      "discoveredAt": "2026/10/24 17:23",
-      "discoverySource": "llm"
     },
     "moj-3012": {
       "discoveredAt": "2026/10/24 17:23",
@@ -111924,17 +112015,8 @@
     "mlit-1069-20190618-102": {
       "discoveredAt": "2026/09/19 11:45"
     },
-    "mlit-2911-20251226-s01": {
-      "discoveredAt": "2026/10/24 17:53"
-    },
-    "mlit-2917-20261007-s01": {
-      "discoveredAt": "2026/10/24 17:54"
-    },
     "mlit-2933-20120803-s01": {
       "discoveredAt": "2026/10/24 17:55"
-    },
-    "mlit-2940-20130529-s01": {
-      "discoveredAt": "2026/10/24 17:56"
     },
     "mlit-amami_shinkou-20050613-001": {
       "discoveredAt": "2026/09/05 08:22",
@@ -112288,9 +112370,6 @@
     },
     "moe-2961-20261030-001": {
       "lastUpdatedFromCrawl": "2026/10/30 08:55"
-    },
-    "moe-2969-20261014-029": {
-      "discoveredAt": "2026/10/24 17:54"
     },
     "moe-2970-20260206-s01": {
       "discoveredAt": "2026/10/24 17:53"
@@ -112783,9 +112862,6 @@
     },
     "moj-1194-20260312-009": {
       "discoveredAt": "2026/09/19 11:57"
-    },
-    "moj-2980-20230130-073": {
-      "discoveredAt": "2026/10/24 17:54"
     },
     "moj-housei_kaisha-20250423-001": {
       "discoveredAt": "2026/09/23 20:43"

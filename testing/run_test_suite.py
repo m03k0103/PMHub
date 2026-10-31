@@ -1061,6 +1061,17 @@ def check_portal_coverage_and_slug_inheritance(data=None):
         print("  [FAIL] MOE (環境省) の domains または newsPortals 設定が不正です")
         return False
 
+    # Drop 107: 単発報道発表・記者会見専用URLが officialUrl に残存していないことを全会議体で常時検証
+    from discover_councils import is_single_press_or_notice_url
+    press_councils = []
+    for c in data.get("councils", []):
+        u = c.get("officialUrl", "")
+        if is_single_press_or_notice_url(u):
+            press_councils.append((c.get("id"), c.get("name"), u))
+    if press_councils:
+        print(f"  [FAIL] 単発報道発表専用URLが officialUrl に登録されている会議体が存在します ({len(press_councils)}件): {press_councils[:3]}")
+        return False
+
     from utils import normalize_url_for_matching
     from discover_councils import parse_data_json
     try:

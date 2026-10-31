@@ -84,7 +84,11 @@ def extract_round_and_type(title, council_name="", url=""):
     elif '検討会' in t_norm and '検討会' not in council_name:
         sub_type += "_検討会"
     elif '分科会' in t_norm and '分科会' not in council_name:
-        sub_type += "_分科会"
+        bunkakai_m = re.search(r'([第0-9０-９一-九]+分科会)', t_norm)
+        if bunkakai_m:
+            sub_type += f"_{bunkakai_m.group(1)}"
+        else:
+            sub_type += "_分科会"
 
     if '合同会合' in t_norm or '合同会議' in t_norm:
         sub_type += "_合同"
