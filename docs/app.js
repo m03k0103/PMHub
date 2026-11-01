@@ -6,9 +6,11 @@
 if (typeof document !== 'undefined') {
 document.addEventListener('DOMContentLoaded', async () => {
   let dataLastModified = '';
+  let loadSuccess = false;
+  let loadErrorMessage = '';
   try {
     const res = await fetch('data.json');
-    if (!res.ok) throw new Error('Failed to load data.json');
+    if (!res.ok) throw new Error(`HTTP ${res.status}: Failed to load data.json`);
     dataLastModified = (res.headers && typeof res.headers.get === 'function') ? (res.headers.get('Last-Modified') || '') : '';
     const data = await res.json();
     window.COUNCILS = (data.councils || []).filter(c => c.status !== 'pending');
@@ -19,8 +21,13 @@ document.addEventListener('DOMContentLoaded', async () => {
     window.INITIAL_WATCHED_COUNCIL_IDS = data.initialWatchedCouncilIds || [];
     window.LAST_CRAWL_TIME = data.lastCrawlTime || '';
     window.DATA_LAST_MODIFIED = dataLastModified;
+    window.HAS_ARCHIVE = !!data.hasArchive;
+    window.TOTAL_MEETINGS_COUNT = typeof data.totalMeetingsCount === 'number' ? data.totalMeetingsCount : (data.meetings || []).length;
+    window.TOTAL_MATERIALS_COUNT = typeof data.totalMaterialsCount === 'number' ? data.totalMaterialsCount : 0;
+    loadSuccess = true;
   } catch(e) {
     console.error('Data loading error:', e);
+    loadErrorMessage = e.message || 'データ取得エラー';
     window.COUNCILS = [];
     window.MEETINGS = [];
     window.MINISTRIES = {};
@@ -29,6 +36,9 @@ document.addEventListener('DOMContentLoaded', async () => {
     window.INITIAL_WATCHED_COUNCIL_IDS = [];
     window.LAST_CRAWL_TIME = '';
     window.DATA_LAST_MODIFIED = '';
+    window.HAS_ARCHIVE = false;
+    window.TOTAL_MEETINGS_COUNT = 0;
+    window.TOTAL_MATERIALS_COUNT = 0;
   }
 
   const COUNCILS = window.COUNCILS || [];
@@ -87,12 +97,20 @@ document.addEventListener('DOMContentLoaded', async () => {
 
   // Pre-group meetings by council ID for O(1) lookups
   const meetingsByCouncilMap = new Map();
-  MEETINGS.forEach(m => {
-    if (!meetingsByCouncilMap.has(m.councilId)) {
-      meetingsByCouncilMap.set(m.councilId, []);
+  const meetingCounts = {};
+
+  function addMeetingsToIndex(meetingsList) {
+    for (let i = 0; i < meetingsList.length; i++) {
+      const m = meetingsList[i];
+      if (!meetingsByCouncilMap.has(m.councilId)) {
+        meetingsByCouncilMap.set(m.councilId, []);
+      }
+      meetingsByCouncilMap.get(m.councilId).push(m);
+      meetingCounts[m.councilId] = (meetingCounts[m.councilId] || 0) + 1;
     }
-    meetingsByCouncilMap.get(m.councilId).push(m);
-  });
+  }
+
+  addMeetingsToIndex(MEETINGS);
 
   const councilPastYearCountCache = new Map();
   const councilsMap = new Map(COUNCILS.map(c => [c.id, c]));
@@ -151,6 +169,13 @@ document.addEventListener('DOMContentLoaded', async () => {
     activeFiltersBar: document.getElementById('activeFiltersBar'),
     activeTagsContainer: document.getElementById('activeTagsContainer'),
     resultsCount: document.getElementById('resultsCount'),
+
+    // Loading & Error states
+    loadingState: document.getElementById('loadingState'),
+    errorState: document.getElementById('errorState'),
+    errorMessage: document.getElementById('errorMessage'),
+    retryLoadBtn: document.getElementById('retryLoadBtn'),
+    archiveLoadingBanner: document.getElementById('archiveLoadingBanner'),
 
     // Mode toggle
     modeByCouncilBtn: document.getElementById('modeByCouncilBtn'),
@@ -229,19 +254,71 @@ document.addEventListener('DOMContentLoaded', async () => {
   populateMinistrySelect();
 
 
-  // --- PRE-COMPUTE MEETING COUNTS ---
-  const meetingCounts = {};
-  for (let i = 0; i < MEETINGS.length; i++) {
-    const cId = MEETINGS[i].councilId;
-    meetingCounts[cId] = (meetingCounts[cId] || 0) + 1;
+  // --- PROGRESSIVE LOADING & ARCHIVE MANAGEMENT ---
+  let isArchiveLoaded = false;
+  let isArchiveLoading = false;
+
+  async function fetchArchiveData(priority = false) {
+    if (isArchiveLoaded || isArchiveLoading || !window.HAS_ARCHIVE) return;
+    isArchiveLoading = true;
+    if (priority && el.archiveLoadingBanner) {
+      el.archiveLoadingBanner.classList.remove('hidden');
+    }
+
+    try {
+      const res = await fetch('data_archive.json');
+      if (!res.ok) throw new Error(`HTTP ${res.status}: Failed to load data_archive.json`);
+      const arcData = await res.json();
+      const archivedMeetings = arcData.meetings || [];
+      if (archivedMeetings.length > 0) {
+        MEETINGS.push(...archivedMeetings);
+        addMeetingsToIndex(archivedMeetings);
+      }
+      isArchiveLoaded = true;
+    } catch (err) {
+      console.warn('Failed to load data_archive.json in background:', err);
+    } finally {
+      isArchiveLoading = false;
+      if (el.archiveLoadingBanner) {
+        el.archiveLoadingBanner.classList.add('hidden');
+      }
+      if (state.dateRangeFilter === 'ALL' || state.dateRangeFilter === 'PREV_YEAR') {
+        renderMainView();
+      }
+    }
   }
 
   // --- INITIALIZATION ---
   initTheme();
-  updateHeroStats();
   setupEventListeners();
-  renderMainView();
-  renderWatchlist();
+
+  if (!loadSuccess) {
+    if (el.loadingState) el.loadingState.classList.add('hidden');
+    if (el.errorState) el.errorState.classList.remove('hidden');
+    if (el.errorMessage && loadErrorMessage) {
+      el.errorMessage.textContent = `データの取得に失敗しました: ${loadErrorMessage}`;
+    }
+    if (el.retryLoadBtn) {
+      el.retryLoadBtn.addEventListener('click', () => {
+        window.location.reload();
+      });
+    }
+  } else {
+    if (el.loadingState) el.loadingState.classList.add('hidden');
+    if (el.byCouncilView) el.byCouncilView.classList.remove('hidden');
+    updateHeroStats();
+    renderMainView();
+    renderWatchlist();
+
+    // Trigger progressive background fetch for archive
+    if (window.HAS_ARCHIVE) {
+      if (typeof requestIdleCallback === 'function') {
+        requestIdleCallback(() => fetchArchiveData(false), { timeout: 2000 });
+      } else {
+        setTimeout(() => fetchArchiveData(false), 600);
+      }
+    }
+  }
 
   // --- THEME HANDLER ---
   function initTheme() {
@@ -284,9 +361,13 @@ document.addEventListener('DOMContentLoaded', async () => {
   // --- HERO STATS ---
   function updateHeroStats() {
     el.statTrackedCouncils.textContent = COUNCILS.length;
-    el.statTotalMeetings.textContent = MEETINGS.length;
+    el.statTotalMeetings.textContent = (typeof window.TOTAL_MEETINGS_COUNT === 'number' && window.TOTAL_MEETINGS_COUNT > 0)
+      ? window.TOTAL_MEETINGS_COUNT
+      : MEETINGS.length;
     
-    const totalDocs = MEETINGS.reduce((sum, m) => sum + (m.materials ? m.materials.length : 0), 0);
+    const totalDocs = (typeof window.TOTAL_MATERIALS_COUNT === 'number' && window.TOTAL_MATERIALS_COUNT > 0)
+      ? window.TOTAL_MATERIALS_COUNT
+      : MEETINGS.reduce((sum, m) => sum + (m.materials ? m.materials.length : 0), 0);
     el.statTotalDocs.textContent = totalDocs;
     el.watchlistCount.textContent = state.watchedCouncilIds.size;
     if (el.watchlistActiveCount) {
@@ -369,6 +450,9 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     el.dateRangeSelect.addEventListener('change', (e) => {
       state.dateRangeFilter = e.target.value;
+      if ((state.dateRangeFilter === 'ALL' || state.dateRangeFilter === 'PREV_YEAR') && !isArchiveLoaded) {
+        fetchArchiveData(true);
+      }
       renderMainView();
     });
 

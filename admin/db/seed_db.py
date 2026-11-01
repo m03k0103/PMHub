@@ -1,3 +1,4 @@
+from typing import Optional
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
@@ -22,6 +23,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent.parent
 DEFAULT_DB_PATH = BASE_DIR / "admin" / "pmhub.db"
 DEFAULT_SCHEMA_PATH = BASE_DIR / "admin" / "db" / "schema.sql"
 DEFAULT_PUBLIC_JSON = BASE_DIR / "docs" / "data.json"
+DEFAULT_ARCHIVE_JSON = BASE_DIR / "docs" / "data_archive.json"
 DEFAULT_ADMIN_JSON = BASE_DIR / "admin" / "admin_data.json"
 DEFAULT_REJECTED_JSON = BASE_DIR / "admin" / "rejected_councils.json"
 
@@ -50,6 +52,7 @@ def seed_db(
     db_path: Path = DEFAULT_DB_PATH,
     schema_path: Path = DEFAULT_SCHEMA_PATH,
     public_json_path: Path = DEFAULT_PUBLIC_JSON,
+    archive_json_path: Optional[Path] = None,
     admin_json_path: Path = DEFAULT_ADMIN_JSON,
     rejected_json_path: Path = DEFAULT_REJECTED_JSON
 ) -> bool:
@@ -60,6 +63,9 @@ def seed_db(
     if not public_json_path.exists():
         print(f"[ERROR] Public JSON file not found: {public_json_path}", file=sys.stderr)
         return False
+
+    if archive_json_path is None:
+        archive_json_path = public_json_path.parent / "data_archive.json" 
 
     with open(public_json_path, "r", encoding="utf-8") as f:
         public_data = json.load(f)
@@ -241,7 +247,16 @@ def seed_db(
         """, rule_rows)
 
         # 5. Meetings & Materials
-        meetings = public_data.get("meetings", [])
+        meetings = list(public_data.get("meetings", []))
+        if archive_json_path.exists():
+            try:
+                with open(archive_json_path, "r", encoding="utf-8") as f:
+                    archive_data = json.load(f)
+                    archived_meetings = archive_data.get("meetings", [])
+                    meetings.extend(archived_meetings)
+                    print(f"[INFO] Loaded {len(archived_meetings)} archived meetings from {archive_json_path}")
+            except Exception as e_arc:
+                print(f"[WARN] Failed to read archive JSON: {e_arc}", file=sys.stderr)
         m_rows = []
         mat_rows = []
 
@@ -388,6 +403,7 @@ if __name__ == "__main__":
     parser.add_argument("--db", type=Path, default=DEFAULT_DB_PATH, help="Path to SQLite database")
     parser.add_argument("--schema", type=Path, default=DEFAULT_SCHEMA_PATH, help="Path to schema.sql")
     parser.add_argument("--public-json", type=Path, default=DEFAULT_PUBLIC_JSON, help="Path to docs/data.json")
+    parser.add_argument("--archive-json", type=Path, default=None, help="Path to docs/data_archive.json")
     parser.add_argument("--admin-json", type=Path, default=DEFAULT_ADMIN_JSON, help="Path to admin/admin_data.json")
     parser.add_argument("--rejected-json", type=Path, default=DEFAULT_REJECTED_JSON, help="Path to admin/rejected_councils.json")
     args = parser.parse_args()
@@ -396,6 +412,7 @@ if __name__ == "__main__":
         db_path=args.db,
         schema_path=args.schema,
         public_json_path=args.public_json,
+        archive_json_path=args.archive_json,
         admin_json_path=args.admin_json,
         rejected_json_path=args.rejected_json
     )

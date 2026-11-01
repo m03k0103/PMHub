@@ -15,6 +15,7 @@ import os
 import sqlite3
 import sys
 import time
+from datetime import datetime, timedelta
 from pathlib import Path
 from typing import Any, Dict, List, Optional
 
@@ -22,6 +23,7 @@ from typing import Any, Dict, List, Optional
 BASE_DIR = Path(__file__).resolve().parent.parent.parent
 DEFAULT_DB_PATH = BASE_DIR / "admin" / "pmhub.db"
 DEFAULT_PUBLIC_JSON = BASE_DIR / "docs" / "data.json"
+DEFAULT_ARCHIVE_JSON = BASE_DIR / "docs" / "data_archive.json"
 DEFAULT_ADMIN_JSON = BASE_DIR / "admin" / "admin_data.json"
 DEFAULT_REJECTED_JSON = BASE_DIR / "admin" / "rejected_councils.json"
 
@@ -29,6 +31,7 @@ DEFAULT_REJECTED_JSON = BASE_DIR / "admin" / "rejected_councils.json"
 def export_data(
     db_path: Path = DEFAULT_DB_PATH,
     public_json_path: Path = DEFAULT_PUBLIC_JSON,
+    archive_json_path: Optional[Path] = None,
     admin_json_path: Path = DEFAULT_ADMIN_JSON,
     rejected_json_path: Path = DEFAULT_REJECTED_JSON
 ) -> bool:
@@ -37,6 +40,9 @@ def export_data(
     if not db_path.exists():
         print(f"[ERROR] Database file not found: {db_path}", file=sys.stderr)
         return False
+
+    if archive_json_path is None:
+        archive_json_path = public_json_path.parent / "data_archive.json" 
 
     print(f"[INFO] Exporting data from {db_path}...")
     conn = sqlite3.connect(str(db_path))
@@ -276,15 +282,39 @@ def export_data(
             m_dict["materials"] = mats_map.get(mid, [])
             meetings_public.append(m_dict)
 
+        # --- Split Meetings: Active (last 2 years) vs Archive ---
+        two_years_ago = (datetime.now() - timedelta(days=730)).strftime("%Y/%m/%d")
+        meetings_active = []
+        meetings_archive = []
+        total_materials_count = 0
+
+        for m_dict in meetings_public:
+            total_materials_count += len(m_dict.get("materials", []))
+            m_date = (m_dict.get("date") or "").replace("-", "/")
+            if m_date >= two_years_ago:
+                meetings_active.append(m_dict)
+            else:
+                meetings_archive.append(m_dict)
+
+        total_meetings_count = len(meetings_public)
+
         # --- Build Public Dataset (docs/data.json) ---
         public_dataset = {
             "ministries": ministries,
             "councils": councils_public,
-            "meetings": meetings_public,
+            "meetings": meetings_active,
             "categories": categories,
             "docTypes": doc_types,
             "initialWatchedCouncilIds": initial_watched_council_ids,
-            "lastCrawlTime": last_crawl_time
+            "lastCrawlTime": last_crawl_time,
+            "hasArchive": bool(meetings_archive),
+            "totalMeetingsCount": total_meetings_count,
+            "totalMaterialsCount": total_materials_count
+        }
+
+        # --- Build Archive Dataset (docs/data_archive.json) ---
+        archive_dataset = {
+            "meetings": meetings_archive
         }
 
         # --- Build Admin Dataset (admin/admin_data.json) ---
@@ -331,6 +361,9 @@ def export_data(
         print(f"[INFO] Writing public JSON to {public_json_path}...")
         _safe_write_json(public_json_path, public_dataset)
 
+        print(f"[INFO] Writing archive JSON to {archive_json_path}...")
+        _safe_write_json(archive_json_path, archive_dataset)
+
         print(f"[INFO] Writing admin JSON to {admin_json_path}...")
         _safe_write_json(admin_json_path, admin_dataset)
 
@@ -339,11 +372,13 @@ def export_data(
 
         elapsed = time.time() - start_time
         pub_size_mb = public_json_path.stat().st_size / (1024 * 1024)
+        arc_size_mb = archive_json_path.stat().st_size / (1024 * 1024) if archive_json_path.exists() else 0
         adm_size_mb = admin_json_path.stat().st_size / (1024 * 1024)
 
         print(f"[SUCCESS] Export completed successfully in {elapsed:.2f}s!")
         rej_size_kb = rejected_json_path.stat().st_size / 1024 if rejected_json_path.exists() else 0
-        print(f"  Public JSON:   {pub_size_mb:.2f} MB ({len(councils_public)} councils, {len(meetings_public)} meetings)")
+        print(f"  Public JSON:   {pub_size_mb:.2f} MB ({len(councils_public)} councils, {len(meetings_active)} active meetings)")
+        print(f"  Archive JSON:  {arc_size_mb:.2f} MB ({len(meetings_archive)} archived meetings)")
         print(f"  Admin JSON:    {adm_size_mb:.2f} MB ({len(scraping_rules)} rules, {len(crawl_statuses)} statuses)")
         print(f"  Rejected JSON: {rej_size_kb:.2f} KB ({len(rejected_councils)} rejected councils)")
         return True
@@ -362,6 +397,7 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="PMHub Database Exporter")
     parser.add_argument("--db", type=Path, default=DEFAULT_DB_PATH, help="Path to SQLite database")
     parser.add_argument("--public-json", type=Path, default=DEFAULT_PUBLIC_JSON, help="Path to docs/data.json")
+    parser.add_argument("--archive-json", type=Path, default=None, help="Path to docs/data_archive.json")
     parser.add_argument("--admin-json", type=Path, default=DEFAULT_ADMIN_JSON, help="Path to admin/admin_data.json")
     parser.add_argument("--rejected-json", type=Path, default=DEFAULT_REJECTED_JSON, help="Path to admin/rejected_councils.json")
     args = parser.parse_args()
@@ -369,6 +405,7 @@ if __name__ == "__main__":
     success = export_data(
         db_path=args.db,
         public_json_path=args.public_json,
+        archive_json_path=args.archive_json,
         admin_json_path=args.admin_json,
         rejected_json_path=args.rejected_json
     )

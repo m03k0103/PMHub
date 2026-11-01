@@ -133,7 +133,7 @@
       </div>
       <div class="stat-divider"></div>
       <div class="stat-item">
-        <span class="stat-value text-accent" id="statLastUpdate">2026/09/16 09:23</span>
+        <span class="stat-value text-accent" id="statLastUpdate">--</span>
         <span class="stat-label">最終更新時刻</span>
       </div>
     </div>
@@ -315,8 +315,33 @@
         </div>
       </div>
 
+      <!-- DATA LOADING STATE -->
+      <div class="card-glass loading-state" id="loadingState">
+        <div class="loading-spinner"></div>
+        <h3>政策会議データを読み込み中...</h3>
+        <p class="text-secondary">最新の審議会・政策会議情報および配付資料を取得しています。</p>
+      </div>
+
+      <!-- DATA LOAD ERROR STATE -->
+      <div class="card-glass error-state hidden" id="errorState">
+        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="error-icon">
+          <circle cx="12" cy="12" r="10" />
+          <line x1="12" y1="8" x2="12" y2="12" />
+          <line x1="12" y1="16" x2="12.01" y2="16" />
+        </svg>
+        <h3>データの取得に失敗しました</h3>
+        <p class="text-secondary" id="errorMessage">ネットワーク接続を確認して再試行してください。</p>
+        <button class="btn-primary" id="retryLoadBtn" type="button" style="margin-top: 1rem; padding: 0.5rem 1.5rem;">再試行</button>
+      </div>
+
+      <!-- ARCHIVE LOADING BANNER (Non-blocking) -->
+      <div class="archive-loading-banner hidden" id="archiveLoadingBanner">
+        <div class="mini-spinner"></div>
+        <span>過去アーカイブ（2年以上前）の会議履歴を読み込み中...</span>
+      </div>
+
       <!-- MODE A: BY_COUNCIL VIEW -->
-      <div id="byCouncilView">
+      <div id="byCouncilView" class="hidden">
         <div class="councils-accordion-list" id="councilsAccordionList">
           <!-- Council accordion cards injected here -->
         </div>

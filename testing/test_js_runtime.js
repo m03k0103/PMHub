@@ -126,6 +126,14 @@ function createMockDOM(sampleData, sampleRejected) {
           json: async () => sampleRejected
         };
       }
+      if (url.includes('data_archive.json')) {
+        return {
+          ok: true,
+          status: 200,
+          headers: { get: () => 'Wed, 29 Aug 2026 07:00:00 GMT' },
+          json: async () => ({ meetings: [] })
+        };
+      }
       return {
         ok: true,
         status: 200,

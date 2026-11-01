@@ -781,15 +781,26 @@ def check_sqlite_and_split_export_sync(data=None):
         print(f"  [FAIL] JSON パースエラー: {e}")
         return False
 
+    archive_path = os.path.join(PROJECT_ROOT, "docs", "data_archive.json")
+    arc_meetings = []
+    if os.path.exists(archive_path):
+        try:
+            with open(archive_path, "r", encoding="utf-8") as f_arc:
+                arc_data = json.load(f_arc)
+                arc_meetings = arc_data.get("meetings", [])
+        except Exception as e_arc:
+            errors.append(f"アーカイブ JSON パースエラー: {e_arc}")
+
     pub_councils = pub_data.get("councils", [])
     pub_meetings = pub_data.get("meetings", [])
+    total_meetings = pub_meetings + arc_meetings
     pub_c_cnt = len(pub_councils)
-    pub_m_cnt = len(pub_meetings)
-    pub_mat_cnt = sum(len(m.get("materials", [])) for m in pub_meetings)
+    pub_m_cnt = len(total_meetings)
+    pub_mat_cnt = sum(len(m.get("materials", [])) for m in total_meetings)
     pub_cm_cnt = sum(len(c.get("materials", [])) for c in pub_councils)
     pub_c_lock = sum(1 for c in pub_councils if c.get("manualLock"))
-    pub_m_lock = sum(1 for m in pub_meetings if m.get("manualLock"))
-    pub_mat_lock = sum(1 for m in pub_meetings for mat in m.get("materials", []) if mat.get("manualLock"))
+    pub_m_lock = sum(1 for m in total_meetings if m.get("manualLock"))
+    pub_mat_lock = sum(1 for m in total_meetings for mat in m.get("materials", []) if mat.get("manualLock"))
 
     adm_rules = adm_data.get("scrapingRules", {})
     adm_statuses = adm_data.get("crawlStatuses", {})
