@@ -4101,6 +4101,46 @@
       ]
     },
     {
+      "id": "cas-kenkou_iryou_data_rikatsuyou",
+      "ministry": "CAS",
+      "category": "政策会議",
+      "name": "健康・医療データ利活用基盤協議会",
+      "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/data_rikatsuyou/kaisai.html",
+      "pastYearCount": 0
+    },
+    {
+      "id": "cas-kenkou_iryou_fundtask",
+      "ministry": "CAS",
+      "category": "政策会議",
+      "name": "健康・医療戦略ファンドタスクフォース",
+      "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/fundtask/kaisai.html",
+      "pastYearCount": 0
+    },
+    {
+      "id": "cas-kenkou_iryou_genome",
+      "ministry": "CAS",
+      "category": "政策会議",
+      "name": "ゲノム医療協議会／ゲノム医療実現推進協議会",
+      "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/genome/kaisai.html",
+      "pastYearCount": 0
+    },
+    {
+      "id": "cas-kenkou_iryou_global_health",
+      "ministry": "CAS",
+      "category": "政策会議",
+      "name": "グローバルヘルス戦略推進協議会",
+      "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/global_health/kaisai.html",
+      "pastYearCount": 1
+    },
+    {
+      "id": "cas-kenkou_iryou_healthcare",
+      "ministry": "CAS",
+      "category": "政策会議",
+      "name": "医療機器・ヘルスケア開発協議会",
+      "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/healthcare/index.html",
+      "pastYearCount": 0
+    },
+    {
       "id": "cas-kenkou_iryou_honbu",
       "ministry": "CAS",
       "category": "HQ",
@@ -4108,6 +4148,110 @@
       "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/",
       "description": "内閣官房における健康・医療戦略推進本部。",
       "pastYearCount": 6
+    },
+    {
+      "id": "cas-kenkou_iryou_innovation_ecosystem",
+      "ministry": "CAS",
+      "category": "政策会議",
+      "name": "イノベーション・エコシステム協議会",
+      "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/innovation_ecosystem/index.html",
+      "pastYearCount": 0
+    },
+    {
+      "id": "cas-kenkou_iryou_iyakuhin",
+      "ministry": "CAS",
+      "category": "政策会議",
+      "name": "医薬品開発協議会",
+      "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/iyakuhin/kaisai.html",
+      "pastYearCount": 1
+    },
+    {
+      "id": "cas-kenkou_iryou_jisedai_kiban",
+      "ministry": "CAS",
+      "category": "政策会議",
+      "name": "次世代医療ICT基盤協議会",
+      "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/jisedai_kiban/kaisai.html",
+      "pastYearCount": 0
+    },
+    {
+      "id": "cas-kenkou_iryou_kaihatsu",
+      "ministry": "CAS",
+      "category": "政策会議",
+      "name": "次世代医療機器開発推進協議会",
+      "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/kaihatsu/kaisai.html",
+      "pastYearCount": 0
+    },
+    {
+      "id": "cas-kenkou_iryou_kansenshou",
+      "ministry": "CAS",
+      "category": "政策会議",
+      "name": "感染症協議会",
+      "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/kansenshou/index.html",
+      "pastYearCount": 2
+    },
+    {
+      "id": "cas-kenkou_iryou_kokusai_kyougikai",
+      "ministry": "CAS",
+      "category": "政策会議",
+      "name": "健康・医療産業等国際展開協議会",
+      "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/kenkoiryo_kokusai/kaisai.html",
+      "pastYearCount": 0
+    },
+    {
+      "id": "cas-kenkou_iryou_kokusaitenkai",
+      "ministry": "CAS",
+      "category": "政策会議",
+      "name": "医療国際展開タスクフォース",
+      "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/kokusaitenkai/kaisai.html",
+      "pastYearCount": 0
+    },
+    {
+      "id": "cas-kenkou_iryou_saisei_saibou",
+      "ministry": "CAS",
+      "category": "政策会議",
+      "name": "再生・細胞医療・遺伝子治療開発協議会",
+      "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/saisei_saibou_idensi/kaisai.html",
+      "pastYearCount": 0
+    },
+    {
+      "id": "cas-kenkou_iryou_sanyo",
+      "ministry": "CAS",
+      "category": "政策会議",
+      "name": "健康・医療戦略参与会合",
+      "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/sanyokaigou/kaisai.html",
+      "pastYearCount": 1
+    },
+    {
+      "id": "cas-kenkou_iryou_sinsangyou",
+      "ministry": "CAS",
+      "category": "政策会議",
+      "name": "健康・医療新産業協議会",
+      "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/sinsangyou/kaisai.html",
+      "pastYearCount": 0
+    },
+    {
+      "id": "cas-kenkou_iryou_souyaku",
+      "ministry": "CAS",
+      "category": "政策会議",
+      "name": "創薬支援ネットワーク協議会",
+      "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/souyaku/kaisai.html",
+      "pastYearCount": 0
+    },
+    {
+      "id": "cas-kenkou_iryou_suisinkaigi",
+      "ministry": "CAS",
+      "category": "政策会議",
+      "name": "健康・医療戦略推進会議",
+      "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/suisinkaigi/kaisai.html",
+      "pastYearCount": 2
+    },
+    {
+      "id": "cas-kenkou_iryou_tyousakai",
+      "ministry": "CAS",
+      "category": "政策会議",
+      "name": "健康・医療戦略推進専門調査会",
+      "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/tyousakai/kaisai.html",
+      "pastYearCount": 3
     },
     {
       "id": "cas-kinyu",
@@ -30423,6 +30567,15 @@
       ]
     },
     {
+      "id": "cas-kenkou_iryou_suisinkaigi-20260826-042",
+      "councilId": "cas-kenkou_iryou_suisinkaigi",
+      "name": "第42回 健康・医療戦略推進会議",
+      "date": "2026/08/26",
+      "round": 42,
+      "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/suisinkaigi/dai42/gijigaiyou.pdf",
+      "materials": []
+    },
+    {
       "id": "digital-417-20260826-001",
       "councilId": "digital-417",
       "name": "第1回 地方公共団体情報システムにおける標準化にかかる共通基準に関する検討会",
@@ -39268,6 +39421,52 @@
       ]
     },
     {
+      "id": "cas-kenkou_iryou_global_health-20260724-002",
+      "councilId": "cas-kenkou_iryou_global_health",
+      "name": "第2回 グローバルヘルス戦略推進協議会（令和7年設置）",
+      "date": "2026/07/24",
+      "round": 2,
+      "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/global_health/globalcouncil_dai2/gijigaiyou.pdf",
+      "materials": [
+        {
+          "name": "「健康・医療戦略」（第３期）における「国際展開の推進」の全体像",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/global_health/globalcouncil_dai2/siryou1.pdf"
+        },
+        {
+          "name": "日本政府における取組",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/global_health/globalcouncil_dai2/siryou2.pdf"
+        },
+        {
+          "name": "関係団体における取組",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/global_health/globalcouncil_dai2/siryou3-1.pdf"
+        },
+        {
+          "name": "グローバルヘルスはどこへ（國井修先生提出資料）①",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/global_health/globalcouncil_dai2/siryou3-2-1.pdf"
+        },
+        {
+          "name": "グローバルヘルスはどこへ（國井修先生提出資料）②",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/global_health/globalcouncil_dai2/siryou3-2-2.pdf"
+        },
+        {
+          "name": "グローバルヘルスはどこへ（國井修先生提出資料）③",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/global_health/globalcouncil_dai2/siryou3-2-3.pdf"
+        },
+        {
+          "name": "グローバルヘルス世界の動向（林玲子先生提出資料）",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/global_health/globalcouncil_dai2/siryou3-3.pdf"
+        },
+        {
+          "name": "アジア健康構想・アフリカ健康構想・グローバルヘルス戦略に係る主な施策",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/global_health/globalcouncil_dai2/sankou1.pdf"
+        },
+        {
+          "name": "国際保健に係る日本政府の取組例",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/global_health/globalcouncil_dai2/sankou2.pdf"
+        }
+      ]
+    },
+    {
       "id": "jcrc-587-20260724-159",
       "councilId": "jcrc-587",
       "name": "第159回 カジノ管理委員会",
@@ -46536,6 +46735,120 @@
         {
           "name": "議事録",
           "url": "https://www.cao.go.jp/consumer/content/20260706_gijiroku.pdf"
+        }
+      ]
+    },
+    {
+      "id": "cas-kenkou_iryou_sanyo-20260706-027",
+      "councilId": "cas-kenkou_iryou_sanyo",
+      "name": "第27回 健康・医療戦略参与会合",
+      "date": "2026/07/06",
+      "round": 27,
+      "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/sanyokaigou/dai27/gijigaiyou.pdf",
+      "materials": [
+        {
+          "name": "第３期健康・医療戦略について",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/sanyokaigou/dai27/siryou1.pdf"
+        },
+        {
+          "name": "アウトプット指標（研究開発一般）の達成状況について",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/sanyokaigou/dai27/siryou1-1.pdf"
+        },
+        {
+          "name": "アウトプット指標（医薬品①）の達成状況について",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/sanyokaigou/dai27/siryou1-2.pdf"
+        },
+        {
+          "name": "アウトプット指標（医薬品②）の達成状況について",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/sanyokaigou/dai27/siryou1-3.pdf"
+        },
+        {
+          "name": "アウトプット指標（感染症）の達成状況について",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/sanyokaigou/dai27/siryou1-4.pdf"
+        },
+        {
+          "name": "アウトプット指標（医療機器・ヘルスケア）の達成状況について",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/sanyokaigou/dai27/siryou1-5.pdf"
+        },
+        {
+          "name": "アウトプット指標（国際展開・グローバルヘルス）の達成状況について",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/sanyokaigou/dai27/siryou1-6.pdf"
+        },
+        {
+          "name": "アウトプット指標（データ利活用）の達成状況について",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/sanyokaigou/dai27/siryou1-7.pdf"
+        },
+        {
+          "name": "江崎禎英参与提出資料",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/sanyokaigou/dai27/siryou2-1.pdf"
+        },
+        {
+          "name": "大隅典子参与提出資料",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/sanyokaigou/dai27/siryou2-2.pdf"
+        },
+        {
+          "name": "翁百合参与提出資料",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/sanyokaigou/dai27/siryou2-3.pdf"
+        },
+        {
+          "name": "國土典宏参与提出資料",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/sanyokaigou/dai27/siryou2-4.pdf"
+        },
+        {
+          "name": "永井良三参与提出資料",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/sanyokaigou/dai27/siryou2-5.pdf"
+        },
+        {
+          "name": "中西真参与提出資料",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/sanyokaigou/dai27/siryou2-6.pdf"
+        },
+        {
+          "name": "松本吉郎参与提出資料",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/sanyokaigou/dai27/siryou2-7.pdf"
+        },
+        {
+          "name": "間野博行参与提出資料",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/sanyokaigou/dai27/siryou2-8.pdf"
+        },
+        {
+          "name": "宮柱明日香参与提出資料",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/sanyokaigou/dai27/siryou2-9.pdf"
+        },
+        {
+          "name": "山本章雄参与提出資料",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/sanyokaigou/dai27/siryou2-10.pdf"
+        },
+        {
+          "name": "山本佳世子参与提出資料",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/sanyokaigou/dai27/siryou2-11.pdf"
+        },
+        {
+          "name": "山本尚子参与提出資料",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/sanyokaigou/dai27/siryou2-12.pdf"
+        },
+        {
+          "name": "健康・医療戦略参与会合の開催について",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/sanyokaigou/dai27/sankou1.pdf"
+        },
+        {
+          "name": "健康・医療戦略参与会合名簿",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/sanyokaigou/dai27/sankou2.pdf"
+        },
+        {
+          "name": "健康・医療戦略参与会合の運営について",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/sanyokaigou/dai27/sankou3.pdf"
+        },
+        {
+          "name": "第３期健康・医療戦略の推進体制について",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/sanyokaigou/dai27/sankou4.pdf"
+        },
+        {
+          "name": "第３期健康・医療戦略",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/sanyokaigou/dai27/sankou5.pdf"
+        },
+        {
+          "name": "第３期医療分野研究開発推進計画",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/sanyokaigou/dai27/sankou6.pdf"
         }
       ]
     },
@@ -54017,6 +54330,64 @@
         {
           "name": "議事録",
           "url": "https://www.cao.go.jp/consumer/content/20260622_gijiroku.pdf"
+        }
+      ]
+    },
+    {
+      "id": "cas-kenkou_iryou_tyousakai-20260622-047",
+      "councilId": "cas-kenkou_iryou_tyousakai",
+      "name": "第47回 健康・医療戦略推進専門調査会",
+      "date": "2026/06/22",
+      "round": 47,
+      "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/tyousakai/dai47/gijigaiyo.pdf",
+      "materials": [
+        {
+          "name": "第３期医療分野研究開発推進計画の実行状況について（令和７年度版）",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/tyousakai/dai47/shiryo1.pdf"
+        },
+        {
+          "name": "令和８年度第２回医療分野の研究開発関連の調整費（理事長裁量型経費）について（AMED提出資料）",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/tyousakai/dai47/shiryo2.pdf"
+        },
+        {
+          "name": "検討状況説明資料（感染症協議会）",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/tyousakai/dai47/shiryo3-1.pdf"
+        },
+        {
+          "name": "「ムーンショット型研究開発制度に係る戦略推進会議」における議論について",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/tyousakai/dai47/shiryo3-2.pdf"
+        },
+        {
+          "name": "ワクチン・新規モダリティ・治療薬等研究開発事業 中間評価実施要領（案）",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/tyousakai/dai47/shiryo4.pdf"
+        },
+        {
+          "name": "健康・医療戦略推進専門調査会の設置について等",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/tyousakai/dai47/sanko1.pdf"
+        },
+        {
+          "name": "健康・医療戦略推進専門調査会 委員名簿",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/tyousakai/dai47/sanko2.pdf"
+        },
+        {
+          "name": "健康・医療戦略（第３期）の推進体制について",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/tyousakai/dai47/sanko3.pdf"
+        },
+        {
+          "name": "令和７年度医療分野の研究開発関連予算のポイント",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/tyousakai/dai47/sanko4.pdf"
+        },
+        {
+          "name": "令和７年度予算における統合プロジェクトの概要",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/tyousakai/dai47/sanko5.pdf"
+        },
+        {
+          "name": "医療分野の研究開発関連の調整費について",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/tyousakai/dai47/sanko6.pdf"
+        },
+        {
+          "name": "ご欠席の委員からの意見書",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/tyousakai/dai47/sanko7.pdf"
         }
       ]
     },
@@ -63446,6 +63817,28 @@
         {
           "name": "議事録",
           "url": "https://www.da.nra.go.jp/data/NRA100018259-004-001.pdf"
+        }
+      ]
+    },
+    {
+      "id": "cas-kenkou_iryou_suisinkaigi-20260525-041",
+      "councilId": "cas-kenkou_iryou_suisinkaigi",
+      "name": "第41回 健康・医療戦略推進会議",
+      "date": "2026/05/25",
+      "round": 41,
+      "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/suisinkaigi/dai41/gijisidai.html",
+      "materials": [
+        {
+          "name": "医薬品開発協議会の開催について（改正案）",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/suisinkaigi/dai41/siryou1.pdf"
+        },
+        {
+          "name": "健康・医療新産業協議会の開催について（改正案）",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/suisinkaigi/dai41/siryou2.pdf"
+        },
+        {
+          "name": "感染症協議会の開催について（改正案）",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/suisinkaigi/dai41/siryou3.pdf"
         }
       ]
     },
@@ -81498,6 +81891,36 @@
       ]
     },
     {
+      "id": "cas-kenkou_iryou_tyousakai-20260319-046",
+      "councilId": "cas-kenkou_iryou_tyousakai",
+      "name": "第46回 健康・医療戦略推進専門調査会",
+      "date": "2026/03/19",
+      "round": 46,
+      "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/tyousakai/dai46/gijishidai.html",
+      "materials": [
+        {
+          "name": "令和８年度第１回医療分野の研究開発関連の調整費（理事長裁量型経費）について（AMED提出資料）",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/tyousakai/dai46/shiryo1.pdf"
+        },
+        {
+          "name": "健康・医療戦略推進専門調査会の設置について等",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/tyousakai/dai46/sanko1.pdf"
+        },
+        {
+          "name": "健康・医療戦略推進専門調査会 委員名簿",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/tyousakai/dai46/sanko2.pdf"
+        },
+        {
+          "name": "健康・医療戦略（第３期）の推進体制について",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/tyousakai/dai46/sanko3.pdf"
+        },
+        {
+          "name": "医療分野の研究開発関連の調整費について",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/tyousakai/dai46/sanko4.pdf"
+        }
+      ]
+    },
+    {
       "id": "fdma-yobou_gyousei-20260319-002",
       "councilId": "fdma-yobou_gyousei",
       "name": "令和7年度 第2回 予防行政のあり方に関する検討会",
@@ -90957,6 +91380,56 @@
       ]
     },
     {
+      "id": "cas-kenkou_iryou_iyakuhin-20260227-002",
+      "councilId": "cas-kenkou_iryou_iyakuhin",
+      "name": "第2回 医薬品開発協議会（令和7年設置）",
+      "date": "2026/02/27",
+      "round": 2,
+      "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/iyakuhin/iyakuhinkyougikai_dai2/gijigaiyo.pdf",
+      "materials": [
+        {
+          "name": "文部科学省説明資料",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/iyakuhin/iyakuhinkyougikai_dai2/shiryo1-1.pdf"
+        },
+        {
+          "name": "厚生労働省説明資料",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/iyakuhin/iyakuhinkyougikai_dai2/shiryo1-2.pdf"
+        },
+        {
+          "name": "経済産業省説明資料",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/iyakuhin/iyakuhinkyougikai_dai2/shiryo1-3.pdf"
+        },
+        {
+          "name": "太田参考人（中外製薬）説明資料",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/iyakuhin/iyakuhinkyougikai_dai2/shiryo2.pdf"
+        },
+        {
+          "name": "奥野構成員（京都大学）説明資料",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/iyakuhin/iyakuhinkyougikai_dai2/shiryo3.pdf"
+        },
+        {
+          "name": "中村参考人（国立がん研究センター中央病院）説明資料",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/iyakuhin/iyakuhinkyougikai_dai2/shiryo4.pdf"
+        },
+        {
+          "name": "医薬品開発協議会について",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/iyakuhin/iyakuhinkyougikai_dai2/sanko1.pdf"
+        },
+        {
+          "name": "創薬力強化に向けた総合経済対策における対応（令和７年度補正予算）",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/iyakuhin/iyakuhinkyougikai_dai2/sanko2.pdf"
+        },
+        {
+          "name": "令和７年度予算（案）における医薬品開発プロジェクトの概要",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/iyakuhin/iyakuhinkyougikai_dai2/sanko3.pdf"
+        },
+        {
+          "name": "成長戦略における創薬・先端医療WGについて",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/iyakuhin/iyakuhinkyougikai_dai2/sanko4.pdf"
+        }
+      ]
+    },
+    {
       "id": "cas-titeki_kousou-20260227-002",
       "councilId": "cas-titeki_kousou",
       "name": "2026年 第2回 構想委員会",
@@ -92671,6 +93144,28 @@
         {
           "name": "議事録",
           "url": "https://www.cao.go.jp/consumer/content/20260224_gijiroku.pdf"
+        }
+      ]
+    },
+    {
+      "id": "cas-kenkou_iryou_kansenshou-20260224-006",
+      "councilId": "cas-kenkou_iryou_kansenshou",
+      "name": "第6回 感染症協議会",
+      "date": "2026/02/24",
+      "round": 6,
+      "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/kansenshou/dai6/gijishidai.html",
+      "materials": [
+        {
+          "name": "感染症危機対応医薬品等（ワクチン、治療薬、診断薬等）開発・生産体制強化に関する感染症協議会提言",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/kansenshou/dai6/shiryo1.pdf"
+        },
+        {
+          "name": "感染症危機対応医薬品等（ワクチン、治療薬、診断薬等）開発・生産体制強化に関する感染症協議会提言（ポイント）",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/kansenshou/dai6/shiryo2.pdf"
+        },
+        {
+          "name": "感染症協議会の開催について",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/kansenshou/dai6/sanko1.pdf"
         }
       ]
     },
@@ -113927,6 +114422,36 @@
       ]
     },
     {
+      "id": "cas-kenkou_iryou_kansenshou-20251208-005",
+      "councilId": "cas-kenkou_iryou_kansenshou",
+      "name": "第5回 感染症協議会",
+      "date": "2025/12/08",
+      "round": 5,
+      "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/kansenshou/dai5/gijigaiyo.pdf",
+      "materials": [
+        {
+          "name": "感染症危機対応医薬品等（ワクチン、治療薬、診断薬等）開発・生産体制強化に関する感染症協議会提言（案）",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/kansenshou/dai5/shiryo1.pdf"
+        },
+        {
+          "name": "感染症協議会の開催について",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/kansenshou/dai5/sanko1.pdf"
+        },
+        {
+          "name": "ワクチン開発・生産体制強化戦略（令和３年６月１日閣議決定）",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/kansenshou/dai5/sanko2.pdf"
+        },
+        {
+          "name": "内閣府提出資料（構成員・参考人のご意見について）",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/kansenshou/dai5/sanko3.pdf"
+        },
+        {
+          "name": "ご欠席の構成員からの意見書（脇田構成員）",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/kansenshou/dai5/sanko4.pdf"
+        }
+      ]
+    },
+    {
       "id": "digital-agile_kentoukai-20251208-004",
       "councilId": "digital-agile_kentoukai",
       "name": "第4回 アジャイル開発に関する有識者検討会",
@@ -123199,6 +123724,72 @@
       ]
     },
     {
+      "id": "cas-kenkou_iryou_tyousakai-20251105-045",
+      "councilId": "cas-kenkou_iryou_tyousakai",
+      "name": "第45回 健康・医療戦略推進専門調査会",
+      "date": "2025/11/05",
+      "round": 45,
+      "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/tyousakai/dai45/gijigaiyo.pdf",
+      "materials": [
+        {
+          "name": "「ムーンショット型研究開発制度に係る戦略推進会議」における議論について",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/tyousakai/dai45/shiryo1-1.pdf"
+        },
+        {
+          "name": "ムーンショット型研究開発制度５年目評価について（目標７）（案）",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/tyousakai/dai45/shiryo1-2.pdf"
+        },
+        {
+          "name": "令和８年度医療分野の研究開発関連予算 概算要求のポイント",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/tyousakai/dai45/shiryo2-1.pdf"
+        },
+        {
+          "name": "令和８年度概算要求における統合プロジェクトの概要",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/tyousakai/dai45/shiryo2-2.pdf"
+        },
+        {
+          "name": "令和７年度第２回医療分野の研究開発関連の調整費（理事長裁量型経費）について（ＡＭＥＤ提出資料）",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/tyousakai/dai45/shiryo3.pdf"
+        },
+        {
+          "name": "検討状況説明資料（感染症協議会）",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/tyousakai/dai45/shiryo4-1.pdf"
+        },
+        {
+          "name": "検討状況説明資料（データ利活用・ライフコース協議会）",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/tyousakai/dai45/shiryo4-2.pdf"
+        },
+        {
+          "name": "健康・医療戦略推進専門調査会の設置について等",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/tyousakai/dai45/sanko1.pdf"
+        },
+        {
+          "name": "健康・医療戦略推進専門調査会 委員名簿",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/tyousakai/dai45/sanko2.pdf"
+        },
+        {
+          "name": "健康・医療戦略（第３期）の推進体制について",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/tyousakai/dai45/sanko3.pdf"
+        },
+        {
+          "name": "医療分野の研究開発関連の調整費について",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/tyousakai/dai45/sanko4.pdf"
+        },
+        {
+          "name": "感染症危機対応医薬品等開発・生産体制強化に関する感染症協議会提言(仮称)(骨子案)",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/tyousakai/dai45/sanko5.pdf"
+        },
+        {
+          "name": "医療分野研究開発推進に向けた関係機関の連携の取組状況について",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/tyousakai/dai45/sanko6.pdf"
+        },
+        {
+          "name": "参考資料７：ご欠席の委員からの意見書",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/tyousakai/dai45/sanko7.pdf"
+        }
+      ]
+    },
+    {
       "id": "fdma-kasai_yobou_jikkousei-20251105-002",
       "councilId": "fdma-kasai_yobou_jikkousei",
       "name": "令和7年度 第2回 火災予防の実効性向上検討部会",
@@ -128591,6 +129182,60 @@
       ]
     },
     {
+      "id": "cas-kenkou_iryou_data_rikatsuyou-20251017-002",
+      "councilId": "cas-kenkou_iryou_data_rikatsuyou",
+      "name": "第2回 ライフコースデータ利活用ワーキンググループ",
+      "date": "2025/10/17",
+      "round": 2,
+      "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/data_rikatsuyou/life_course_dai2/gijisidai.html",
+      "materials": [
+        {
+          "name": "資料①",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/data_rikatsuyou/life_course_dai2/shiryo1_1.pdf"
+        },
+        {
+          "name": "資料②",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/data_rikatsuyou/life_course_dai2/shiryo1_2.pdf"
+        },
+        {
+          "name": "資料③",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/data_rikatsuyou/life_course_dai2/shiryo1_3.pdf"
+        },
+        {
+          "name": "資料④",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/data_rikatsuyou/life_course_dai2/shiryo1_4.pdf"
+        },
+        {
+          "name": "資料⑤",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/data_rikatsuyou/life_course_dai2/shiryo1_5.pdf"
+        },
+        {
+          "name": "近年の性差研究の進展について",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/data_rikatsuyou/life_course_dai2/shiryo2.pdf"
+        },
+        {
+          "name": "AMEDにおける性差を考慮した研究開発の推進に関する取り組み",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/data_rikatsuyou/life_course_dai2/shiryo3.pdf"
+        },
+        {
+          "name": "糖尿病データベース事業J-DREAMSの取組について",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/data_rikatsuyou/life_course_dai2/shiryo4.pdf"
+        },
+        {
+          "name": "医療等情報の利活用の推進に関する検討会の議論状況について",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/data_rikatsuyou/life_course_dai2/shiryo5.pdf"
+        },
+        {
+          "name": "データ利活用・ライフコース協議会 出席者",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/data_rikatsuyou/life_course_dai2/sanko1.pdf"
+        },
+        {
+          "name": "令和８年度概算要求における統合プロジェクトの概要",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/data_rikatsuyou/life_course_dai2/sanko2.pdf"
+        }
+      ]
+    },
+    {
       "id": "jcrc-587-20251017-137",
       "councilId": "jcrc-587",
       "name": "第137回 カジノ管理委員会",
@@ -129965,6 +130610,64 @@
         {
           "name": "議事録",
           "url": "https://www.meti.go.jp/shingikai/energy_environment/plastic_containers/pdf/002_gijiroku.pdf"
+        }
+      ]
+    },
+    {
+      "id": "cas-kenkou_iryou_kansenshou-20251009-004",
+      "councilId": "cas-kenkou_iryou_kansenshou",
+      "name": "第4回 感染症協議会",
+      "date": "2025/10/09",
+      "round": 4,
+      "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/kansenshou/dai4/gijigaiyou.pdf",
+      "materials": [
+        {
+          "name": "感染症危機対応医薬品等の研究推進に関する有識者委員会について（文部科学省）",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/kansenshou/dai4/shiryou1-1.pdf"
+        },
+        {
+          "name": "感染症危機対応医薬品等の利用確保性確保についての検討（厚生労働省）",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/kansenshou/dai4/shiryou1-2.pdf"
+        },
+        {
+          "name": "令和８年度概算要求資料（文部科学省）",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/kansenshou/dai4/shiryou2-1.pdf"
+        },
+        {
+          "name": "令和８年度概算要求資料（厚生労働省）",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/kansenshou/dai4/shiryou2-2.pdf"
+        },
+        {
+          "name": "感染症危機対応医薬品等（ワクチン・治療薬・診断薬）開発・生産体制強化に関する感染症協議会提言骨子（仮称）（案）",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/kansenshou/dai4/shiryou3.pdf"
+        },
+        {
+          "name": "日本製薬工業協会 提出資料",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/kansenshou/dai4/shiryou4.pdf"
+        },
+        {
+          "name": "感染症協議会の開催について",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/kansenshou/dai4/sankou1.pdf"
+        },
+        {
+          "name": "ワクチン開発・生産体制強化戦略（令和３年６月１日閣議決定）",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/kansenshou/dai4/sankou2.pdf"
+        },
+        {
+          "name": "内閣府提出資料（構成員・参考人のご意見について）",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/kansenshou/dai4/sankou3.pdf"
+        },
+        {
+          "name": "「感染症危機対応医薬品等の研究推進に関する有識者委員会」報告書（文部科学省提出資料）",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/kansenshou/dai4/sankou4.pdf"
+        },
+        {
+          "name": "第３回 感染症協議会 資料２（ワクチン開発・生産体制強化戦略の進捗状況について）",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/kansenshou/dai4/sankou5.pdf"
+        },
+        {
+          "name": "日本臨床検査薬協会 提出資料",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/kansenshou/dai4/sankou6.pdf"
         }
       ]
     },
@@ -137742,6 +138445,52 @@
       ]
     },
     {
+      "id": "cas-kenkou_iryou_kansenshou-20250902-003",
+      "councilId": "cas-kenkou_iryou_kansenshou",
+      "name": "第3回 感染症協議会",
+      "date": "2025/09/02",
+      "round": 3,
+      "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/kansenshou/dai3/gijigaiyou.pdf",
+      "materials": [
+        {
+          "name": "大曲構成員（JIHS国立国際医療センター 国際感染症センター長）提出資料",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/kansenshou/dai3/shiryou1-1.pdf"
+        },
+        {
+          "name": "松本参考人（日本感染症学会 理事長）提出資料",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/kansenshou/dai3/shiryou1-2.pdf"
+        },
+        {
+          "name": "手代木構成員（日本製薬工業協会 副会長）提出資料",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/kansenshou/dai3/shiryou1-3.pdf"
+        },
+        {
+          "name": "成瀨参考人（日本ワクチン産業協会 理事長）提出資料",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/kansenshou/dai3/shiryou1-4.pdf"
+        },
+        {
+          "name": "森参考人（日本臨床検査薬協会 栄研化学株式会社 研究開発統括部長）提出資料",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/kansenshou/dai3/shiryou1-5.pdf"
+        },
+        {
+          "name": "内閣府提出資料",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/kansenshou/dai3/shiryou2.pdf"
+        },
+        {
+          "name": "感染症協議会の開催について",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/kansenshou/dai3/sankou1.pdf"
+        },
+        {
+          "name": "ワクチン開発・生産体制強化戦略（令和３年６月１日閣議決定）",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/kansenshou/dai3/sankou2.pdf"
+        },
+        {
+          "name": "内閣府提出資料",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/kansenshou/dai3/sankou3.pdf"
+        }
+      ]
+    },
+    {
       "id": "cas-r60101notojishin-20250902-014",
       "councilId": "cas-r60101notojishin",
       "name": "第14回 令和6年能登半島地震復旧・復興支援本部",
@@ -139024,6 +139773,28 @@
         {
           "name": "議事録",
           "url": "https://www.reconstruction.go.jp/topics/250828_giziroku.pdf"
+        }
+      ]
+    },
+    {
+      "id": "cas-kenkou_iryou_suisinkaigi-20250827-040",
+      "councilId": "cas-kenkou_iryou_suisinkaigi",
+      "name": "第40回 健康・医療戦略推進会議",
+      "date": "2025/08/27",
+      "round": 40,
+      "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/suisinkaigi/dai40/gijigaiyou.pdf",
+      "materials": [
+        {
+          "name": "感染症協議会の開催について（改正案）",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/suisinkaigi/dai40/siryou1.pdf"
+        },
+        {
+          "name": "データ利活用・ライフコース協議会の開催について（改正案）",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/suisinkaigi/dai40/siryou2.pdf"
+        },
+        {
+          "name": "「創薬力の向上により国民に最新の医薬品を迅速に届けるための構想会議」中間とりまとめを踏まえた工程表のフォローアップ",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/suisinkaigi/dai40/siryou3.pdf"
         }
       ]
     },
@@ -148042,6 +148813,108 @@
       ]
     },
     {
+      "id": "cas-kenkou_iryou_sanyo-20250702-026",
+      "councilId": "cas-kenkou_iryou_sanyo",
+      "name": "第26回 健康・医療戦略参与会合",
+      "date": "2025/07/02",
+      "round": 26,
+      "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/sanyokaigou/dai26/gijigaiyou.pdf",
+      "materials": [
+        {
+          "name": "江崎禎英参与提出資料",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/sanyokaigou/dai26/siryou1-1.pdf"
+        },
+        {
+          "name": "間野博行参与提出資料",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/sanyokaigou/dai26/siryou1-2.pdf"
+        },
+        {
+          "name": "大隅典子参与提出資料",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/sanyokaigou/dai26/siryou1-3.pdf"
+        },
+        {
+          "name": "翁百合参与提出資料",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/sanyokaigou/dai26/siryou1-4.pdf"
+        },
+        {
+          "name": "國土典宏参与提出資料",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/sanyokaigou/dai26/siryou1-5.pdf"
+        },
+        {
+          "name": "永井良三参与提出資料",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/sanyokaigou/dai26/siryou1-6.pdf"
+        },
+        {
+          "name": "中西真参与提出資料",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/sanyokaigou/dai26/siryou1-7.pdf"
+        },
+        {
+          "name": "松本吉郎参与提出資料",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/sanyokaigou/dai26/siryou1-8.pdf"
+        },
+        {
+          "name": "宮柱明日香参与提出資料",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/sanyokaigou/dai26/siryou1-9.pdf"
+        },
+        {
+          "name": "山本章雄参与提出資料",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/sanyokaigou/dai26/siryou1-10.pdf"
+        },
+        {
+          "name": "山本佳世子参与提出資料",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/sanyokaigou/dai26/siryou1-11.pdf"
+        },
+        {
+          "name": "山本尚子参与提出資料",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/sanyokaigou/dai26/siryou1-12.pdf"
+        },
+        {
+          "name": "第２期健康・医療戦略の主な成果",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/sanyokaigou/dai26/siryou2-1.pdf"
+        },
+        {
+          "name": "第２期健康・医療戦略におけるKPIの達成状況2024",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/sanyokaigou/dai26/siryou2-2.pdf"
+        },
+        {
+          "name": "第３期健康・医療戦略概要",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/sanyokaigou/dai26/siryou2-3.pdf"
+        },
+        {
+          "name": "第２期医療分野研究開発推進計画の実行状況について（令和６年度版）",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/sanyokaigou/dai26/siryou2-4.pdf"
+        },
+        {
+          "name": "第３期医療分野研究開発推進計画概要",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/sanyokaigou/dai26/siryou2-5.pdf"
+        },
+        {
+          "name": "健康・医療戦略参与会合の開催について",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/sanyokaigou/dai26/sankou1.pdf"
+        },
+        {
+          "name": "健康・医療戦略参与会合名簿",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/sanyokaigou/dai26/sankou2.pdf"
+        },
+        {
+          "name": "健康・医療戦略参与会合の運営について",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/sanyokaigou/dai26/sankou3.pdf"
+        },
+        {
+          "name": "第３期健康・医療戦略の推進体制について",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/sanyokaigou/dai26/sankou4.pdf"
+        },
+        {
+          "name": "第３期健康・医療戦略",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/sanyokaigou/dai26/sankou5.pdf"
+        },
+        {
+          "name": "第３期医療分野研究開発推進計画",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/sanyokaigou/dai26/sankou6.pdf"
+        }
+      ]
+    },
+    {
       "id": "fsc-bakuro_wg-20250702-004",
       "councilId": "fsc-bakuro_wg",
       "name": "第4回 化学物質・汚染物質専門調査会 暴露評価ワーキンググループ",
@@ -148935,6 +149808,48 @@
         {
           "name": "議事概要(PDF/101KB)",
           "url": "https://www.cas.go.jp/jp/seisaku/Infura_syougai/dai2/gijigaiyou.pdf"
+        }
+      ]
+    },
+    {
+      "id": "cas-kenkou_iryou_global_health-20250630-001",
+      "councilId": "cas-kenkou_iryou_global_health",
+      "name": "第1回 グローバルヘルス戦略推進協議会（令和7年設置）",
+      "date": "2025/06/30",
+      "round": 1,
+      "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/global_health/globalcouncil_dai1/gijigaiyou.pdf",
+      "materials": [
+        {
+          "name": "健康・医療グローバル協議会の開催について",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/global_health/globalcouncil_dai1/siryou1.pdf"
+        },
+        {
+          "name": "健康・医療戦略（第２期）の実行状況 概要",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/global_health/globalcouncil_dai1/siryou2.pdf"
+        },
+        {
+          "name": "健康・医療戦略（第３期）における取組方針等について",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/global_health/globalcouncil_dai1/siryou3.pdf"
+        },
+        {
+          "name": "関係府省庁における取組状況",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/global_health/globalcouncil_dai1/siryou4-1.pdf"
+        },
+        {
+          "name": "関係機関における取組状況",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/global_health/globalcouncil_dai1/siryou4-2.pdf"
+        },
+        {
+          "name": "グローバルヘルスの新たな課題（林玲子所長提出資料）",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/global_health/globalcouncil_dai1/siryou5.pdf"
+        },
+        {
+          "name": "アジア健康構想・アフリカ健康構想・グローバルヘルス戦略に係る主な施策",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/global_health/globalcouncil_dai1/sankou1.pdf"
+        },
+        {
+          "name": "国際保健に係る日本政府の取組例",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/global_health/globalcouncil_dai1/sankou2.pdf"
         }
       ]
     },
@@ -152150,6 +153065,126 @@
         {
           "name": "【証５－２】金融庁説明資料（ＮＩＳＡ）",
           "url": "https://www.cao.go.jp/zei-cho/content/7ebpm5kai2.pdf"
+        }
+      ]
+    },
+    {
+      "id": "cas-kenkou_iryou_kansenshou-20250618-002",
+      "councilId": "cas-kenkou_iryou_kansenshou",
+      "name": "第2回 感染症協議会",
+      "date": "2025/06/18",
+      "round": 2,
+      "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/kansenshou/dai2/gijigaiyou.pdf",
+      "materials": [
+        {
+          "name": "河岡構成員（東京大学医科学研究所 感染症・免疫部門教授）提出資料",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/kansenshou/dai2/siryou1.pdf"
+        },
+        {
+          "name": "脇田構成員（国立健康危機管理研究機構 副理事長）提出資料",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/kansenshou/dai2/siryou2.pdf"
+        },
+        {
+          "name": "小柳構成員（AMED感染症プロジェクト プログラムディレクター）提出資料",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/kansenshou/dai2/siryou3-1.pdf"
+        },
+        {
+          "name": "時田参考人（国立健康危機管理研究機構 臨床研究センター インターナショナルトライアル部 部長）提出資料",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/kansenshou/dai2/siryou3-2.pdf"
+        },
+        {
+          "name": "濵口参考人（AMED SCARDAセンター長）提出資料",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/kansenshou/dai2/siryou4.pdf"
+        },
+        {
+          "name": "感染症協議会の開催について",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/kansenshou/dai2/sankou1.pdf"
+        },
+        {
+          "name": "ワクチン開発・生産体制強化戦略（令和３年６月１日閣議決定）",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/kansenshou/dai2/sankou2.pdf"
+        },
+        {
+          "name": "内閣府提出資料",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/kansenshou/dai2/sankou3.pdf"
+        },
+        {
+          "name": "文部科学省提出資料",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/kansenshou/dai2/sankou4.pdf"
+        },
+        {
+          "name": "厚生労働省提出資料",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/kansenshou/dai2/sankou5.pdf"
+        }
+      ]
+    },
+    {
+      "id": "cas-kenkou_iryou_tyousakai-20250618-044",
+      "councilId": "cas-kenkou_iryou_tyousakai",
+      "name": "第44回 健康・医療戦略推進専門調査会",
+      "date": "2025/06/18",
+      "round": 44,
+      "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/tyousakai/dai44/gijigaiyou.pdf",
+      "materials": [
+        {
+          "name": "令和７年度第１回医療分野の研究開発関連の調整費（理事長裁量型経費）について（ＡＭＥＤ提出資料）",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/tyousakai/dai44/siryou1.pdf"
+        },
+        {
+          "name": "統合プロジェクトの概要及び令和８年度の重点事項について（文部科学省・厚生労働省・経済産業省提出資料）",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/tyousakai/dai44/siryou2-1.pdf"
+        },
+        {
+          "name": "令和８年度医療分野の研究開発関連予算等の資源配分方針（案）",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/tyousakai/dai44/siryou2-2.pdf"
+        },
+        {
+          "name": "検討状況説明資料（医薬品開発協議会および感染症協議会）",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/tyousakai/dai44/siryou2-3.pdf"
+        },
+        {
+          "name": "検討状況説明資料（医療機器・ヘルスケア開発協議会）",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/tyousakai/dai44/siryou2-4.pdf"
+        },
+        {
+          "name": "検討状況説明資料（データ利活用・ライフコース協議会）",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/tyousakai/dai44/siryou3-1.pdf"
+        },
+        {
+          "name": "検討状況説明資料（イノベーション・エコシステム協議会）（資料前半）",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/tyousakai/dai44/siryou3-2_1.pdf"
+        },
+        {
+          "name": "検討状況説明資料（イノベーション・エコシステム協議会）（資料後半）",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/tyousakai/dai44/siryou3-2_2.pdf"
+        },
+        {
+          "name": "健康・医療戦略推進専門調査会の設置について",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/tyousakai/dai44/sankou1.pdf"
+        },
+        {
+          "name": "健康・医療戦略推進専門調査会 委員名簿",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/tyousakai/dai44/sankou2.pdf"
+        },
+        {
+          "name": "健康・医療戦略（第３期）の推進体制について",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/tyousakai/dai44/sankou3.pdf"
+        },
+        {
+          "name": "第３期健康・医療戦略【概要】",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/tyousakai/dai44/sankou4.pdf"
+        },
+        {
+          "name": "第3期医療分野研究開発推進計画【概要】",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/tyousakai/dai44/sankou5.pdf"
+        },
+        {
+          "name": "医療分野の研究開発関連の調整費について",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/tyousakai/dai44/sankou6.pdf"
+        },
+        {
+          "name": "第43回専門調査会での各委員のご意見",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/tyousakai/dai44/sankou7.pdf"
         }
       ]
     },
@@ -155658,6 +156693,146 @@
       ]
     },
     {
+      "id": "cas-kenkou_iryou_iyakuhin-20250602-001",
+      "councilId": "cas-kenkou_iryou_iyakuhin",
+      "name": "第1回 医薬品開発協議会（令和7年設置）",
+      "date": "2025/06/02",
+      "round": 1,
+      "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/iyakuhin/iyakuhinkyougikai_dai1/gijigaiyou.pdf",
+      "materials": [
+        {
+          "name": "文部科学省説明資料",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/iyakuhin/iyakuhinkyougikai_dai1/siryou1-1.pdf"
+        },
+        {
+          "name": "厚生労働省説明資料",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/iyakuhin/iyakuhinkyougikai_dai1/siryou1-2.pdf"
+        },
+        {
+          "name": "経済産業省説明資料",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/iyakuhin/iyakuhinkyougikai_dai1/siryou1-3.pdf"
+        },
+        {
+          "name": "内閣府説明資料",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/iyakuhin/iyakuhinkyougikai_dai1/siryou2.pdf"
+        },
+        {
+          "name": "内閣府説明資料",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/iyakuhin/iyakuhinkyougikai_dai1/siryou3-1.pdf"
+        },
+        {
+          "name": "AMED説明資料（医薬品開発プロジェクト）",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/iyakuhin/iyakuhinkyougikai_dai1/siryou3-2.pdf"
+        },
+        {
+          "name": "AMED説明資料（感染症プロジェクト）",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/iyakuhin/iyakuhinkyougikai_dai1/siryou3-3.pdf"
+        },
+        {
+          "name": "医薬品開発協議会の開催について",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/iyakuhin/iyakuhinkyougikai_dai1/sankou1.pdf"
+        },
+        {
+          "name": "感染症協議会の開催について",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/iyakuhin/iyakuhinkyougikai_dai1/sankou2.pdf"
+        },
+        {
+          "name": "健康・医療戦略（第３期）及び医療分野研究開発推進計画（第３期）概要",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/iyakuhin/iyakuhinkyougikai_dai1/sankou3.pdf"
+        },
+        {
+          "name": "健康・医療戦略（令和７年２月１８日閣議決定）",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/iyakuhin/iyakuhinkyougikai_dai1/sankou4.pdf"
+        },
+        {
+          "name": "医療分野研究開発推進計画（令和７年２月１８日本部決定）",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/iyakuhin/iyakuhinkyougikai_dai1/sankou5.pdf"
+        },
+        {
+          "name": "「医薬品の研究開発における論点と対応案について（令和６年９月24日）」（第12回医薬品開発協議会 参考資料３）",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/iyakuhin/iyakuhinkyougikai_dai1/sankou6.pdf"
+        },
+        {
+          "name": "「医薬品の研究開発における論点と対応案について（令和６年９月24日）」と「健康・医療戦略（第３期）」の対応表",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/iyakuhin/iyakuhinkyougikai_dai1/sankou7.pdf"
+        },
+        {
+          "name": "ワクチン開発・生産体制強化戦略（令和３年６月１日閣議決定）",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/iyakuhin/iyakuhinkyougikai_dai1/sankou8.pdf"
+        }
+      ]
+    },
+    {
+      "id": "cas-kenkou_iryou_kansenshou-20250602-001",
+      "councilId": "cas-kenkou_iryou_kansenshou",
+      "name": "第1回 感染症協議会",
+      "date": "2025/06/02",
+      "round": 1,
+      "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/kansenshou/dai1/gijigaiyou.pdf",
+      "materials": [
+        {
+          "name": "文部科学省説明資料",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/kansenshou/dai1/siryou1-1.pdf"
+        },
+        {
+          "name": "厚生労働省説明資料",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/kansenshou/dai1/siryou1-2.pdf"
+        },
+        {
+          "name": "経済産業省説明資料",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/kansenshou/dai1/siryou1-3.pdf"
+        },
+        {
+          "name": "内閣府説明資料",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/kansenshou/dai1/siryou2.pdf"
+        },
+        {
+          "name": "内閣府説明資料",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/kansenshou/dai1/siryou3-1.pdf"
+        },
+        {
+          "name": "AMED説明資料（医薬品開発プロジェクト）",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/kansenshou/dai1/siryou3-2.pdf"
+        },
+        {
+          "name": "AMED説明資料（感染症プロジェクト）",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/kansenshou/dai1/siryou3-3.pdf"
+        },
+        {
+          "name": "医薬品開発協議会の開催について",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/kansenshou/dai1/sankou1.pdf"
+        },
+        {
+          "name": "感染症協議会の開催について",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/kansenshou/dai1/sankou2.pdf"
+        },
+        {
+          "name": "健康・医療戦略（第３期）及び医療分野研究開発推進計画（第３期）概要",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/kansenshou/dai1/sankou3.pdf"
+        },
+        {
+          "name": "健康・医療戦略（令和７年２月１８日閣議決定）",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/kansenshou/dai1/sankou4.pdf"
+        },
+        {
+          "name": "医療分野研究開発推進計画（令和７年２月１８日本部決定）",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/kansenshou/dai1/sankou5.pdf"
+        },
+        {
+          "name": "「医薬品の研究開発における論点と対応案について（令和６年９月24日）」（第12回医薬品開発協議会 参考資料３）",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/kansenshou/dai1/sankou6.pdf"
+        },
+        {
+          "name": "「医薬品の研究開発における論点と対応案について（令和６年９月24日）」と「健康・医療戦略（第３期）」の対応表",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/kansenshou/dai1/sankou7.pdf"
+        },
+        {
+          "name": "ワクチン開発・生産体制強化戦略（令和３年６月１日閣議決定）",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/kansenshou/dai1/sankou8.pdf"
+        }
+      ]
+    },
+    {
       "id": "fsa-code_followup-20250602-030",
       "councilId": "fsa-code_followup",
       "name": "「スチュワードシップ・コード及びコーポレートガバナンス・コードのフォローアップ会議」(第30回)議事次第",
@@ -156589,6 +157764,44 @@
         {
           "name": "行動計画4年目(2024年4月から2025年3月末)の実施状況報告(PDF/290KB)",
           "url": "https://www.cas.go.jp/jp/seisaku/business_jinken/dai12/koudoukeikaku4nenme.pdf"
+        }
+      ]
+    },
+    {
+      "id": "cas-kenkou_iryou_innovation_ecosystem-20250528-001",
+      "councilId": "cas-kenkou_iryou_innovation_ecosystem",
+      "name": "第1回 イノベーション・エコシステム協議会",
+      "date": "2025/05/28",
+      "round": 1,
+      "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/innovation_ecosystem/dai1/gijigaiyou.pdf",
+      "materials": [
+        {
+          "name": "内閣府資料",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/innovation_ecosystem/dai1/siryou1-1.pdf"
+        },
+        {
+          "name": "経済産業省資料",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/innovation_ecosystem/dai1/siryou1-2.pdf"
+        },
+        {
+          "name": "AMED資料",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/innovation_ecosystem/dai1/siryou1-3.pdf"
+        },
+        {
+          "name": "牧参考人資料",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/innovation_ecosystem/dai1/siryou1-4.pdf"
+        },
+        {
+          "name": "森下参考人資料",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/innovation_ecosystem/dai1/siryou1-5.pdf"
+        },
+        {
+          "name": "イノベーション・エコシステム協議会について",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/innovation_ecosystem/dai1/sankou1.pdf"
+        },
+        {
+          "name": "【論文】スター・サイエンティストが拓く日本の創薬エコシステム",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/innovation_ecosystem/dai1/sankou2.pdf"
         }
       ]
     },
@@ -159434,6 +160647,60 @@
       ]
     },
     {
+      "id": "cas-kenkou_iryou_data_rikatsuyou-20250516-001",
+      "councilId": "cas-kenkou_iryou_data_rikatsuyou",
+      "name": "第1回 ライフコースデータ利活用ワーキンググループ",
+      "date": "2025/05/16",
+      "round": 1,
+      "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/data_rikatsuyou/life_course_dai1/gijigaiyou.pdf",
+      "materials": [
+        {
+          "name": "健康・医療戦略（第３期）及び医療分野研究開発推進計画（第３期）概要",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/data_rikatsuyou/life_course_dai1/siryou1.pdf"
+        },
+        {
+          "name": "次世代医療基盤法に関する最近の状況等について",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/data_rikatsuyou/life_course_dai1/siryou2-1.pdf"
+        },
+        {
+          "name": "ゲノム医療推進法に基づく基本計画及び全ゲノム解析等実行計画の進捗状況について",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/data_rikatsuyou/life_course_dai1/siryou2-2.pdf"
+        },
+        {
+          "name": "ゲノム医療実現バイオバンク利活用プログラム（B-Cure）の進捗・今後の在り方について",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/data_rikatsuyou/life_course_dai1/siryou2-3.pdf"
+        },
+        {
+          "name": "こども家庭庁における成育疾患克服等総合研究事業について",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/data_rikatsuyou/life_course_dai1/siryou2-4.pdf"
+        },
+        {
+          "name": "ＡＭＥＤにおけるデータ利活用促進の取組",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/data_rikatsuyou/life_course_dai1/siryou2-5.pdf"
+        },
+        {
+          "name": "データ利活用・ライフコース協議会の開催について",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/data_rikatsuyou/life_course_dai1/sankou1.pdf"
+        },
+        {
+          "name": "健康・医療戦略（令和７年２月１８日閣議決定）",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/data_rikatsuyou/life_course_dai1/sankou2.pdf"
+        },
+        {
+          "name": "医療分野研究開発推進計画（令和７年２月１８日本部決定）",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/data_rikatsuyou/life_course_dai1/sankou3.pdf"
+        },
+        {
+          "name": "ゲノム医療施策に関する基本的な計画（案）",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/data_rikatsuyou/life_course_dai1/sankou4.pdf"
+        },
+        {
+          "name": "健康・医療戦略及び医療分野研究開発推進計画のうち特にデータ利活用・ライフコースの観点から進めるべき事項の令和７年度の取組と今後の方向性等",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/data_rikatsuyou/life_course_dai1/sankou5.pdf"
+        }
+      ]
+    },
+    {
       "id": "jsa-616-20250516-004",
       "councilId": "jsa-616",
       "name": "第4回 地域スポーツ・文化芸術創造と部活動改革に関する実行会議",
@@ -159894,6 +161161,72 @@
         {
           "name": "総理の一日",
           "url": "https://www.kantei.go.jp/jp/103/actions/202505/14shihon.html"
+        }
+      ]
+    },
+    {
+      "id": "cas-kenkou_iryou_tyousakai-20250514-043",
+      "councilId": "cas-kenkou_iryou_tyousakai",
+      "name": "第43回 健康・医療戦略推進専門調査会",
+      "date": "2025/05/14",
+      "round": 43,
+      "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/tyousakai/dai43/gijigaiyou.pdf",
+      "materials": [
+        {
+          "name": "第2期医療分野研究開発推進計画の実行状況について（令和６年度版）",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/tyousakai/dai43/siryou1.pdf"
+        },
+        {
+          "name": "「ムーンショット型研究開発制度に係る戦略推進会議」における議論について（目標７報告）",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/tyousakai/dai43/siryou2-1.pdf"
+        },
+        {
+          "name": "ムーンショット目標７ 運用・評価指針",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/tyousakai/dai43/siryou2-2.pdf"
+        },
+        {
+          "name": "健康・医療戦略（第３期）の推進体制について",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/tyousakai/dai43/siryou3-1.pdf"
+        },
+        {
+          "name": "第３期健康・医療戦略【概要】",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/tyousakai/dai43/siryou3-2.pdf"
+        },
+        {
+          "name": "第3期医療分野研究開発推進計画【概要】",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/tyousakai/dai43/siryou3-3.pdf"
+        },
+        {
+          "name": "AMED第３期における取組の方向性について（AMED提出資料",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/tyousakai/dai43/siryou4.pdf"
+        },
+        {
+          "name": "健康・医療戦略推進専門調査会の設置について",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/tyousakai/dai43/sankou1.pdf"
+        },
+        {
+          "name": "健康・医療戦略推進専門調査会 委員名簿",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/tyousakai/dai43/sankou2.pdf"
+        },
+        {
+          "name": "第２期医療分野研究開発推進計画の実行状況に関するフォローアップについて（第26回健康・医療戦略推進専門調査会 資料５）",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/tyousakai/dai43/sankou3.pdf"
+        },
+        {
+          "name": "令和６年度医療分野の研究開発関連予算のポイント",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/tyousakai/dai43/sankou4.pdf"
+        },
+        {
+          "name": "令和６年度予算における統合プロジェクトの概要",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/tyousakai/dai43/sankou5.pdf"
+        },
+        {
+          "name": "健康・医療戦略（第3期）",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/tyousakai/dai43/sankou6.pdf"
+        },
+        {
+          "name": "医療分野研究開発推進計画",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/tyousakai/dai43/sankou7.pdf"
         }
       ]
     },
@@ -160402,6 +161735,48 @@
         {
           "name": "男女共同参画社会に関する世論調査(令和6年9月調査)概要[PDF形式:717KB]",
           "url": "https://www.gender.go.jp/kaigi/danjo_kaigi/siryo/pdf/kondan250507-s-6.pdf"
+        }
+      ]
+    },
+    {
+      "id": "cas-kenkou_iryou_suisinkaigi-20250509-039",
+      "councilId": "cas-kenkou_iryou_suisinkaigi",
+      "name": "第39回 健康・医療戦略推進会議",
+      "date": "2025/05/09",
+      "round": 39,
+      "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/suisinkaigi/dai39/gijisidai.html",
+      "materials": [
+        {
+          "name": "医薬品開発協議会の開催について（案）",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/suisinkaigi/dai39/siryou1.pdf"
+        },
+        {
+          "name": "医療機器・ヘルスケア協議会の開催について（案）",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/suisinkaigi/dai39/siryou2.pdf"
+        },
+        {
+          "name": "感染症協議会の開催について（案）",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/suisinkaigi/dai39/siryou3.pdf"
+        },
+        {
+          "name": "データ利活用・ライフコース協議会の開催について（案）",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/suisinkaigi/dai39/siryou4.pdf"
+        },
+        {
+          "name": "イノベーション・エコシステム協議会の開催について（案）",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/suisinkaigi/dai39/siryou5.pdf"
+        },
+        {
+          "name": "健康・医療新産業協議会の開催について（案）",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/suisinkaigi/dai39/siryou6.pdf"
+        },
+        {
+          "name": "健康・医療グローバル協議会の開催について（案）",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/suisinkaigi/dai39/siryou7.pdf"
+        },
+        {
+          "name": "健康・医療戦略（第３期）における協議会について",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/suisinkaigi/dai39/sankou.pdf"
         }
       ]
     },
@@ -183046,6 +184421,32 @@
       ]
     },
     {
+      "id": "cas-kenkou_iryou_sanyo-20250128-025",
+      "councilId": "cas-kenkou_iryou_sanyo",
+      "name": "第25回 健康・医療戦略参与会合",
+      "date": "2025/01/28",
+      "round": 25,
+      "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/sanyokaigou/dai25/gijisidai.html",
+      "materials": [
+        {
+          "name": "第３期健康・戦略医療概要（案）",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/sanyokaigou/dai25/siryou1-1.pdf"
+        },
+        {
+          "name": "第３期健康・戦略医療（案）",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/sanyokaigou/dai25/siryou1-2.pdf"
+        },
+        {
+          "name": "第３期医療分野研究開発推進計画概要（案）",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/sanyokaigou/dai25/siryou2-1.pdf"
+        },
+        {
+          "name": "第３期医療分野研究開発推進計画（案）",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/sanyokaigou/dai25/siryou2-2.pdf"
+        }
+      ]
+    },
+    {
       "id": "cas-shingijutsu_kouka_hyouka-20250128-009",
       "councilId": "cas-shingijutsu_kouka_hyouka",
       "name": "新技術等効果評価委員会 第9回",
@@ -192538,6 +193939,60 @@
       ]
     },
     {
+      "id": "cas-kenkou_iryou_sanyo-20241205-024",
+      "councilId": "cas-kenkou_iryou_sanyo",
+      "name": "第24回 健康・医療戦略参与会合",
+      "date": "2024/12/05",
+      "round": 24,
+      "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/sanyokaigou/dai24/gijigaiyou.pdf",
+      "materials": [
+        {
+          "name": "創薬力強化等に係る経済対策における対応",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/sanyokaigou/dai24/siryou1.pdf"
+        },
+        {
+          "name": "第３期健康・医療戦略概要（案）",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/sanyokaigou/dai24/siryou2-1.pdf"
+        },
+        {
+          "name": "第３期健康・医療戦略（案）",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/sanyokaigou/dai24/siryou2-2.pdf"
+        },
+        {
+          "name": "第３期医療分野研究開発推進計画概要（案）",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/sanyokaigou/dai24/siryou2-3.pdf"
+        },
+        {
+          "name": "第３期医療分野研究開発推進計画（案）",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/sanyokaigou/dai24/siryou2-4.pdf"
+        },
+        {
+          "name": "笠貫参与提出資料",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/sanyokaigou/dai24/siryou3.pdf"
+        },
+        {
+          "name": "健康・医療戦略参与会合の開催について",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/sanyokaigou/dai24/sankou1.pdf"
+        },
+        {
+          "name": "健康・医療戦略参与会合名簿",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/sanyokaigou/dai24/sankou2.pdf"
+        },
+        {
+          "name": "健康・医療戦略参与会合の運営について",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/sanyokaigou/dai24/sankou3.pdf"
+        },
+        {
+          "name": "健康・医療戦略（第２期）の推進体制について",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/sanyokaigou/dai24/sankou4.pdf"
+        },
+        {
+          "name": "健康・医療戦略（第２期）",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/sanyokaigou/dai24/sankou5.pdf"
+        }
+      ]
+    },
+    {
       "id": "cas-shushoku_katsudou-20241205-012",
       "councilId": "cas-shushoku_katsudou",
       "name": "第12回 就職・採用活動日程に関する関係省庁連絡会議",
@@ -197278,6 +198733,48 @@
       ]
     },
     {
+      "id": "cas-kenkou_iryou_global_health-20241114-010",
+      "councilId": "cas-kenkou_iryou_global_health",
+      "name": "第10回 グローバルヘルス戦略推進協議会",
+      "date": "2024/11/14",
+      "round": 10,
+      "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/global_health/dai10/gijigaiyou.pdf",
+      "materials": [
+        {
+          "name": "グローバルヘルス戦略フォローアップについて",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/global_health/dai10/siryou1.pdf"
+        },
+        {
+          "name": "外務省資料",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/global_health/dai10/siryou1-1.pdf"
+        },
+        {
+          "name": "財務省資料",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/global_health/dai10/siryou1-2.pdf"
+        },
+        {
+          "name": "厚生労働省資料",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/global_health/dai10/siryou1-3.pdf"
+        },
+        {
+          "name": "2024年グローバルヘルス戦略フォローアップ管理表",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/global_health/dai10/siryou2.pdf"
+        },
+        {
+          "name": "第３期健康・医療戦略 国際展開・グローバルヘルス関係 ドラフト案",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/global_health/dai10/siryou3.pdf"
+        },
+        {
+          "name": "第３期健康・医療戦略について（グローバルヘルス関連部分）",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/global_health/dai10/siryou4.pdf"
+        },
+        {
+          "name": "伊藤参考人提出資料",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/global_health/dai10/sankou.pdf"
+        }
+      ]
+    },
+    {
       "id": "digital-434-20241114-005",
       "councilId": "digital-434",
       "name": "第5回 事業者のデジタル化等に係る関係省庁等連絡会議",
@@ -197454,6 +198951,40 @@
         {
           "name": "【デ１－３】国税庁説明資料（税に対する公平感を大きく損なうような行為への対応）",
           "url": "https://www.cao.go.jp/zei-cho/content/6digital-noukan1kai3.pdf"
+        }
+      ]
+    },
+    {
+      "id": "cas-kenkou_iryou_tyousakai-20241113-042",
+      "councilId": "cas-kenkou_iryou_tyousakai",
+      "name": "第42回 健康・医療戦略推進専門調査会",
+      "date": "2024/11/13",
+      "round": 42,
+      "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/tyousakai/dai42/gijigaiyou.pdf",
+      "materials": [
+        {
+          "name": "医療分野の研究開発関連の調整費について",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/tyousakai/dai42/siryou1-1.pdf"
+        },
+        {
+          "name": "令和６年度第３回医療分野の研究開発関連の調整費（理事長裁量型）について（ＡＭＥＤ提出資料）",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/tyousakai/dai42/siryou1-3.pdf"
+        },
+        {
+          "name": "医療分野研究開発推進計画 本文案",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/tyousakai/dai42/siryou2.pdf"
+        },
+        {
+          "name": "健康・医療戦略推進専門調査会の設置について",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/tyousakai/dai42/sankou1.pdf"
+        },
+        {
+          "name": "健康・医療戦略推進専門調査会 委員名簿",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/tyousakai/dai42/sankou2.pdf"
+        },
+        {
+          "name": "健康・医療戦略（第２期）の推進体制について",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/kenkouiryou/tyousakai/dai42/sankou3.pdf"
         }
       ]
     },
@@ -199277,157 +200808,6 @@
           "url": "https://www.mod.go.jp/j/policy/agenda/meeting/kiban/pdf/20241105_06.pdf"
         }
       ]
-    },
-    {
-      "id": "cas-gx_senmonka_wg-20241101-009",
-      "councilId": "cas-gx_senmonka_wg",
-      "name": "第9回 GX実行会議 専門家ワーキンググループ",
-      "date": "2024/11/01",
-      "officialUrl": "https://www.cas.go.jp/jp/seisaku/gx_jikkou_kaigi/senmonka_wg/dai9/gijisidai.pdf",
-      "materials": [
-        {
-          "name": "第9回 令和6年11月 1日 議事次第(PDF/38KB) 配布資料(PDF/8.9MB) 議事概要(PDF/611KB)",
-          "url": "https://www.cas.go.jp/jp/seisaku/gx_jikkou_kaigi/senmonka_wg/dai9/gijisidai.pdf"
-        }
-      ]
-    },
-    {
-      "id": "jcrc-587-20241101-113",
-      "councilId": "jcrc-587",
-      "name": "第113回 カジノ管理委員会",
-      "date": "2024/11/01",
-      "round": 113,
-      "officialUrl": "https://www.jcrc.go.jp/activity/holding2024.html",
-      "materials": [
-        {
-          "name": "議事要旨",
-          "url": "https://www.jcrc.go.jp/content/000002324.pdf"
-        }
-      ]
-    },
-    {
-      "id": "jfa-suisan_kanri-20241101-133",
-      "councilId": "jfa-suisan_kanri",
-      "name": "第133回 水産政策審議会 資源管理分科会",
-      "date": "2024/11/01",
-      "round": 133,
-      "officialUrl": "https://www.jfa.maff.go.jp/j/council/seisaku/kanri/241101.html",
-      "materials": [
-        {
-          "name": "議事録",
-          "url": "https://www.jfa.maff.go.jp/j/council/seisaku/kanri/attach/pdf/index-56.pdf"
-        }
-      ]
-    },
-    {
-      "id": "mhlw-828-20241101-002",
-      "councilId": "mhlw-828",
-      "name": "第2回 危機対応医薬品等に関する小委員会",
-      "date": "2024/11/01",
-      "officialUrl": "https://www.mhlw.go.jp/stf/newpage_46122.html",
-      "materials": [
-        {
-          "name": "開催案内",
-          "url": "https://www.mhlw.go.jp/stf/newpage_44767.html",
-          "type": "HTML"
-        }
-      ]
-    },
-    {
-      "id": "mic-housou_system_iinkai-20241101-082",
-      "councilId": "mic-housou_system_iinkai",
-      "name": "情報通信審議会 情報通信技術分科会 放送システム委員会（第82回）（2024年11月1日開催）",
-      "date": "2024/11/01",
-      "officialUrl": "https://www.soumu.go.jp/main_sosiki/joho_tsusin/policyreports/joho_tsusin/docs_Broadcast/02ryutsu08_04000572.html",
-      "materials": [
-        {
-          "name": "放送システム委員会（第81回）議事概要（案）",
-          "url": "https://www.soumu.go.jp/main_content/000975255.pdf"
-        },
-        {
-          "name": "「放送システムに関する技術的条件」のうち「マイクロ波帯を使用する放送事業用無線局（STL/TTL/TSL）の高度化のための技術的条件」の検討開始について",
-          "url": "https://www.soumu.go.jp/main_content/000975285.pdf"
-        },
-        {
-          "name": "情報通信技術分科会　放送システム委員会　構成員一覧",
-          "url": "https://www.soumu.go.jp/main_content/000975286.pdf"
-        },
-        {
-          "name": "議事概要",
-          "url": "https://www.soumu.go.jp/main_content/000989567.pdf"
-        }
-      ]
-    },
-    {
-      "id": "mic-nhk_haishin_wg-20241101-004",
-      "councilId": "mic-nhk_haishin_wg",
-      "name": "情報通信審議会 情報通信技術分科会 放送システム委員会 NHK配信用設備作業班（第4回）（2024年11月1日開催）",
-      "date": "2024/11/01",
-      "officialUrl": "https://www.soumu.go.jp/main_sosiki/joho_tsusin/policyreports/joho_tsusin/housou_system/02ryutsu07_04000515.html",
-      "materials": [
-        {
-          "name": "NHK配信用設備作業班報告（案）概要",
-          "url": "https://www.soumu.go.jp/main_content/000974429.pdf"
-        },
-        {
-          "name": "NHK配信用設備作業班報告（案）",
-          "url": "https://www.soumu.go.jp/main_content/000975308.pdf"
-        },
-        {
-          "name": "NHK配信用設備作業班（第3回）議事概要",
-          "url": "https://www.soumu.go.jp/main_content/000975309.pdf"
-        },
-        {
-          "name": "NHK配信用設備作業班構成員名簿",
-          "url": "https://www.soumu.go.jp/main_content/000975310.pdf"
-        },
-        {
-          "name": "NHK配信用設備作業班（第4回）議事概要",
-          "url": "https://www.soumu.go.jp/main_content/000979143.pdf"
-        }
-      ]
-    },
-    {
-      "id": "mof-zaiseiseido_bunkakai-20241101-s01",
-      "councilId": "mof-zaiseiseido_bunkakai",
-      "name": "財政制度等審議会 財政制度分科会(令和6年11月1日)",
-      "date": "2024/11/01",
-      "officialUrl": "https://www.mof.go.jp/about_mof/councils/fiscal_system_council/sub-of_fiscal_system/proceedings/material/20241101zaiseia.html",
-      "summary": "財政制度等審議会 財政制度分科会の開催(令和6年11月1日)。議題: 国内投資・中小企業等・外交・デジタル。",
-      "tags": [
-        "財政制度等審議会",
-        "財政制度分科会",
-        "MOF",
-        "財務省",
-        "予算編成",
-        "財政健全化"
-      ],
-      "materials": [
-        {
-          "name": "議事要旨 (HTML)",
-          "url": "https://www.mof.go.jp/about_mof/councils/fiscal_system_council/sub-of_fiscal_system/proceedings/outline/20241101zaiseia.html"
-        },
-        {
-          "name": "議事録 (HTML)",
-          "url": "https://www.mof.go.jp/about_mof/councils/fiscal_system_council/sub-of_fiscal_system/proceedings/proceedings/20241101zaiseia.html"
-        },
-        {
-          "name": "記者会見の模様 (HTML)",
-          "url": "https://www.mof.go.jp/about_mof/councils/fiscal_system_council/sub-of_fiscal_system/proceedings/conference/20241101zaiseia.html"
-        },
-        {
-          "name": "国内投資・中小企業等 (PDF)",
-          "url": "https://www.mof.go.jp/about_mof/councils/fiscal_system_council/sub-of_fiscal_system/proceedings/material/zaiseia20241101/01.pdf"
-        },
-        {
-          "name": "外交・デジタル (PDF)",
-          "url": "https://www.mof.go.jp/about_mof/councils/fiscal_system_council/sub-of_fiscal_system/proceedings/material/zaiseia20241101/02.pdf"
-        },
-        {
-          "name": "国内投資・中小企業等(参考資料) (PDF)",
-          "url": "https://www.mof.go.jp/about_mof/councils/fiscal_system_council/sub-of_fiscal_system/proceedings/material/zaiseia20241101/03.pdf"
-        }
-      ]
     }
   ],
   "categories": {
@@ -199461,6 +200841,6 @@
   ],
   "lastCrawlTime": "2026/10/30 09:27",
   "hasArchive": true,
-  "totalMeetingsCount": 22614,
-  "totalMaterialsCount": 137228
+  "totalMeetingsCount": 22896,
+  "totalMaterialsCount": 139451
 }
