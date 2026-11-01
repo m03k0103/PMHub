@@ -20,7 +20,12 @@ class TestDrop48ZeroMaterialsRescue(unittest.TestCase):
         cls.json_path = os.path.abspath(json_path)
         with open(cls.json_path, 'r', encoding='utf-8') as f:
             cls.data = json.load(f)
-        cls.meetings = cls.data.get('meetings', [])
+        cls.meetings = list(cls.data.get('meetings', []))
+        arc_path = os.path.join(os.path.dirname(__file__), '..', 'docs', 'data_archive.json')
+        if os.path.exists(arc_path):
+            with open(arc_path, 'r', encoding='utf-8') as f_arc:
+                arc_data = json.load(f_arc)
+                cls.meetings.extend(arc_data.get('meetings', []))
         cls.councils = cls.data.get('councils', [])
 
     def test_parse_txt_minutes_unit(self):
