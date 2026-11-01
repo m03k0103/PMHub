@@ -47,12 +47,25 @@ def extract_round_and_type(title, council_name="", url=""):
         if fish_m:
             sub_type += f"_{fish_m.group(1).replace(' ', '_')}"
 
-    if '／' in council_name or '/' in council_name:
-        for part in re.split(r'[／/]', council_name):
+    # 「／」や「及び」で併記された複数組織の親会議体（例: A及びB）
+    if any(sep in council_name for sep in ['／', '/', '及び']):
+        for part in re.split(r'[／/]|及び', council_name):
             part = part.strip()
-            if part and part in t_norm:
+            if part and len(part) >= 3 and part in t_norm:
                 sub_type += f"_{part}"
                 break
+
+    # 分野別会合（産業財産権分野、コンテンツ分野等）
+    for fld in ['産業財産権分野', 'コンテンツ分野']:
+        if fld in t_norm and fld not in council_name:
+            sub_type += f"_{fld}"
+            break
+
+    # 固有検討組織・TF
+    for org in ['次世代知財システム', '知財紛争処理システム', '情報財', '海賊版対策', '知財価値評価', '地方知財活用促進', '地域知財', '知財教育', 'オープンイノベーション', 'ジャパンサーチ', '全体', '映画等海外展開', '映画・アニメ', '中小・ベンチャー', '営業秘密', 'アーカイブTF', '音楽産業']:
+        if org in t_norm:
+            sub_type += f"_{org}"
+            break
 
     # Sub-entities under parent councils
     if ('アドホックグループ' in t_norm or 'アドホック' in t_norm) and 'アドホック' not in council_name:
@@ -61,13 +74,13 @@ def extract_round_and_type(title, council_name="", url=""):
     elif ('サブ・ワーキング・グループ' in t_norm or 'サブワーキンググループ' in t_norm or 'サブWG' in t_norm) and 'サブ' not in council_name:
         swg_m = re.search(r'([A-Za-z0-9_\.一-龥]+(?:サブ・ワーキング・グループ|サブワーキンググループ|サブWG))', t_norm)
         sub_type += f"_{swg_m.group(1)}" if swg_m else "_サブWG"
-    elif ('タスクグループ' in t_norm or 'タスクフォース' in t_norm or ' TF' in t_norm) and ('タスク' not in council_name and 'TF' not in council_name):
+    elif ('タスクグループ' in t_norm or 'タスクフォース' in t_norm or ' TF' in t_norm or 'TF' in t_norm) and ('タスク' not in council_name and 'TF' not in council_name):
         tf_m = re.search(r'([A-Za-z0-9_\.一-龥]+(?:タスクグループ|タスクフォース|TF))', t_norm)
         sub_type += f"_{tf_m.group(1)}" if tf_m else "_タスクフォース"
     elif '作業班' in t_norm and '作業班' not in council_name:
         wg_m = re.search(r'([A-Za-z0-9_\.一-龥]+作業班)', t_norm)
         sub_type += f"_{wg_m.group(1)}" if wg_m else "_作業班"
-    elif ('ワーキンググループ' in t_norm or ' WG' in t_norm) and ('WG' not in council_name and 'ワーキンググループ' not in council_name):
+    elif ('ワーキンググループ' in t_norm or ' WG' in t_norm or 'WG' in t_norm) and ('WG' not in council_name and 'ワーキンググループ' not in council_name):
         sub_type += "_WG"
     elif '総会' in t_norm and '総会' not in council_name:
         sub_type += "_総会"
@@ -83,6 +96,8 @@ def extract_round_and_type(title, council_name="", url=""):
         sub_type += "_幹事会"
     elif '実務者協議会' in t_norm and '実務者協議会' not in council_name:
         sub_type += "_実務者協議会"
+    elif '実務者検討委員会' in t_norm and '実務者検討委員会' not in council_name:
+        sub_type += "_実務者検討委員会"
     elif '協議会' in t_norm and '協議会' not in council_name:
         sub_type += "_協議会"
     elif '検討会' in t_norm and '検討会' not in council_name:
