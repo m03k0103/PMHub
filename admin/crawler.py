@@ -2152,6 +2152,36 @@ def _extract_meetings_from_parent_table(html, target_url, council_name, rule=Non
                 if not (table_has_round_numbers and round_num):
                     continue
 
+            # Drop 124 Guard: 同一会合ディレクトリ（daiX/ 等）の複数行を1つの開催回へ統合
+            # （親テーブル内で次第・要旨・概要が別行に分かれていても別会議として分割しない）
+            d_key = None
+            if row_official_url and row_official_url != target_url:
+                parsed_u = urllib.parse.urlparse(row_official_url)
+                d_path = os.path.dirname(parsed_u.path)
+                if d_path and d_path not in ('/', '') and re.search(r'/(?:dai|round|kai|r0\d_dai)\d+', d_path, re.I):
+                    d_key = d_path.rstrip('/')
+
+            existing_meet = None
+            if d_key:
+                for em in meetings:
+                    em_u = em.get("subpageUrl", "")
+                    if em_u and em_u != target_url:
+                        em_dpath = os.path.dirname(urllib.parse.urlparse(em_u).path).rstrip('/')
+                        if em_dpath == d_key:
+                            existing_meet = em
+                            break
+
+            if existing_meet:
+                # 既に同一会合ディレクトリの開催回が存在する場合、配付資料をマージしてスキップ
+                ex_mats = existing_meet.setdefault("materials", [])
+                ex_urls = {m.get("url") for m in ex_mats if m.get("url")}
+                for rm in row_materials:
+                    if rm.get("url") not in ex_urls:
+                        ex_mats.append(rm)
+                        ex_urls.add(rm.get("url"))
+                existing_meet["extractedMaterialsCount"] = len(ex_mats)
+                continue
+
             # 会議名・タイトルの決定
             if round_num:
                 meet_title = f"第{round_num}回 {council_name}"
