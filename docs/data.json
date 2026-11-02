@@ -3535,6 +3535,15 @@
       "isClosed": true
     },
     {
+      "id": "cas-ax_renraku_kaigi",
+      "ministry": "CAS",
+      "category": "LIAISON",
+      "name": "AX社会実装関係府省庁連絡会議",
+      "officialUrl": "https://www.cas.go.jp/jp/seisaku/axkaigi/index.html",
+      "description": "AI・先端技術（AX）の社会実装を加速化するため、関係府省庁が緊密に連携して施策を推進する連絡会議。",
+      "pastYearCount": 0
+    },
+    {
       "id": "cas-beneficial_ownership",
       "ministry": "CAS",
       "category": "PANEL",
@@ -3572,6 +3581,15 @@
           "url": "https://www.bousai.go.jp/kaigirep/suishin/pdf/dai2kai/meibo.pdf"
         }
       ]
+    },
+    {
+      "id": "cas-bukka_chingin_honbu",
+      "ministry": "CAS",
+      "category": "COUNCIL",
+      "name": "物価・賃金・生活総合対策本部",
+      "officialUrl": "https://www.cas.go.jp/jp/seisaku/bukka/index.html",
+      "description": "世界的な物価高騰等による国民生活及び経済活動への影響に対し、切れ目なく迅速・重点的な対策を講じるための本部。",
+      "pastYearCount": 0
     },
     {
       "id": "cas-business_jinken",
@@ -3706,6 +3724,15 @@
       "officialUrl": "https://www.chisou.go.jp/tiiki/sogotoc/sinsei/dai1/index.html",
       "description": "総合特別区域推進本部の基本方針、施策の推進状況および関係省庁間の連携・個別課題について審議する会議。",
       "pastYearCount": 1
+    },
+    {
+      "id": "cas-daijin_seimukan",
+      "ministry": "CAS",
+      "category": "COUNCIL",
+      "name": "大臣政務官会合",
+      "officialUrl": "https://www.cas.go.jp/jp/seisaku/daijin-seimukan/index.html",
+      "description": "各府省の大臣政務官における施策等の情報共有及び連携強化を図るための会合。",
+      "pastYearCount": 0
     },
     {
       "id": "cas-datacenter_ricchi",
@@ -3982,6 +4009,15 @@
       "pastYearCount": 2
     },
     {
+      "id": "cas-genshiryoku_saigai",
+      "ministry": "CAS",
+      "category": "COUNCIL",
+      "name": "原子力災害対策本部",
+      "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/genshiryoku/",
+      "description": "原子力緊急事態宣言に基づき、緊急事態応急対策を強力に推進するために内閣に設置された本部。",
+      "pastYearCount": 0
+    },
+    {
       "id": "cas-grassroots_tf",
       "ministry": "CAS",
       "category": "WORKING_GROUP",
@@ -4026,6 +4062,15 @@
       "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/hanzai/index.html",
       "description": "犯罪対策閣僚会議の基本方針、施策の推進状況および関係省庁間の連携・個別課題について審議する会議。",
       "pastYearCount": 1
+    },
+    {
+      "id": "cas-hukushuto_suishin",
+      "ministry": "CAS",
+      "category": "COUNCIL",
+      "name": "国家社会機能継続性確保施策・副首都整備推進本部",
+      "officialUrl": "https://www.cas.go.jp/jp/seisaku/hukushuto/index.html",
+      "description": "国家社会機能の継続性を確保するための施策及び副首都の整備に係る施策を総合的かつ計画的に推進するための本部。",
+      "pastYearCount": 0
     },
     {
       "id": "cas-indexhtmlsuisin_kaigi_record",
@@ -4079,6 +4124,15 @@
       "officialUrl": "https://www.cas.go.jp/jp/seisaku/iryo_kaigo/index.html",
       "description": "医療・介護保険制度における金融所得の公平な取扱いに関する関係府省庁会議の基本方針、施策の推進状況および関係省庁間の連携・個別課題について審議する会議。",
       "pastYearCount": 1
+    },
+    {
+      "id": "cas-iryou_dx_suishin",
+      "ministry": "CAS",
+      "category": "COUNCIL",
+      "name": "医療DX推進本部",
+      "officialUrl": "https://www.cas.go.jp/jp/seisaku/iryou_dx_suishin/index.html",
+      "description": "医療DXを強力に推進し、医療の質の向上と効率化を図るための本部。",
+      "pastYearCount": 0
     },
     {
       "id": "cas-jieikan_shogu",
@@ -4149,6 +4203,15 @@
       "officialUrl": "https://www.cas.go.jp/jp/seisaku/jyouhouhozen/index.html",
       "description": "情報保全諮問会議の基本方針、施策の推進状況および関係省庁間の連携・個別課題について審議する会議。",
       "pastYearCount": 1
+    },
+    {
+      "id": "cas-kafun_kakuryokaigi",
+      "ministry": "CAS",
+      "category": "COUNCIL",
+      "name": "花粉症に関する関係閣僚会議",
+      "officialUrl": "https://www.cas.go.jp/jp/seisaku/kafun/index.html",
+      "description": "花粉症対策の総合的かつ効果的な推進を図るため、関係行政機関相互の緊密な連携を確保するための閣僚会議。",
+      "pastYearCount": 0
     },
     {
       "id": "cas-kagayakujosei",
@@ -4407,6 +4470,15 @@
       "pastYearCount": 6
     },
     {
+      "id": "cas-kogata_mujinki_kyougi",
+      "ministry": "CAS",
+      "category": "LIAISON",
+      "name": "小型無人機に係る環境整備に向けた官民協議会",
+      "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/kogatamujinki/",
+      "description": "小型無人機（ドローン）の利活用拡大及び安全確保に向けた制度的・技術的環境整備を推進するための官民協議会。",
+      "pastYearCount": 0
+    },
+    {
       "id": "cas-kokka_jouhou",
       "ministry": "CAS",
       "category": "COUNCIL",
@@ -4491,6 +4563,15 @@
       ]
     },
     {
+      "id": "cas-kokunai_toushi_forum",
+      "ministry": "CAS",
+      "category": "COUNCIL",
+      "name": "国内投資拡大のための官民連携フォーラム",
+      "officialUrl": "https://www.cas.go.jp/jp/seisaku/kokunai_toushikakudai_forum/index.html",
+      "description": "国内投資の拡大に向け、官民の連携を強化し投資環境の整備等を協議するためのフォーラム。",
+      "pastYearCount": 0
+    },
+    {
       "id": "cas-kokusai_kansen_kakuryo",
       "ministry": "CAS",
       "category": "LIAISON",
@@ -4562,6 +4643,24 @@
       "officialUrl": "https://www.cas.go.jp/jp/seisaku/kumahigai_taisaku/index.html",
       "description": "近年深刻化する指定管理鳥獣(クマ類)による人身被害および出没対策、捕獲体制強化、鳥獣保護管理施策を省庁横断で迅速に協議・推進する関係閣僚会議。",
       "pastYearCount": 5
+    },
+    {
+      "id": "cas-kuni_tokyo_jitsumu",
+      "ministry": "CAS",
+      "category": "LIAISON",
+      "name": "国と東京都の実務者協議会",
+      "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/kunitotokyoto/index.html",
+      "description": "国と東京都の施策調整及び実務的課題の解決に向けた協議を行う実務者協議会。",
+      "pastYearCount": 0
+    },
+    {
+      "id": "cas-kuni_tokyo_kyougi",
+      "ministry": "CAS",
+      "category": "LIAISON",
+      "name": "国と東京都の協議会",
+      "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/kuni_tokyo_kyogikai/index.html",
+      "description": "国と東京都の緊密な連携と施策の総合的推進を図るための協議会。",
+      "pastYearCount": 0
     },
     {
       "id": "cas-kyouiku_mirai_wg",
@@ -4639,6 +4738,15 @@
       ]
     },
     {
+      "id": "cas-monju_haishi_team",
+      "ministry": "CAS",
+      "category": "COUNCIL",
+      "name": "「もんじゅ」廃止措置推進チーム",
+      "officialUrl": "https://www.cas.go.jp/jp/seisaku/monju/index.html",
+      "description": "高速増殖原型炉「もんじゅ」の廃止措置に関する基本方針等に基づき、円滑な廃止措置の推進を図るためのチーム。",
+      "pastYearCount": 0
+    },
+    {
       "id": "cas-naikaku_hozen_kanshi",
       "ministry": "CAS",
       "category": "COMMITTEE",
@@ -4669,6 +4777,15 @@
       "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/nihonhaku/",
       "description": "日本博総合推進会議の基本方針、施策の推進状況および関係省庁間の連携・個別課題について審議する会議。",
       "pastYearCount": 1
+    },
+    {
+      "id": "cas-ninchisho_suishin",
+      "ministry": "CAS",
+      "category": "COUNCIL",
+      "name": "認知症施策推進本部",
+      "officialUrl": "https://www.cas.go.jp/jp/seisaku/ninchisho_suishinhonbu/index.html",
+      "description": "共生社会の実現を推進するための認知症基本法に基づき、認知症施策を総合的かつ計画的に推進するための本部。",
+      "pastYearCount": 0
     },
     {
       "id": "cas-nipponseichosenryaku",
@@ -4733,6 +4850,15 @@
       "pastYearCount": 0
     },
     {
+      "id": "cas-okinawa_seisaku_kyougi",
+      "ministry": "CAS",
+      "category": "LIAISON",
+      "name": "沖縄政策協議会",
+      "officialUrl": "https://www.cas.go.jp/jp/seisaku/okinawa/index.html",
+      "description": "沖縄の振興及び発展に関する重要事項について、国と沖縄県が総合的かつ一体的に協議するための協議会。",
+      "pastYearCount": 0
+    },
+    {
       "id": "cas-ondanka",
       "ministry": "CAS",
       "category": "HQ",
@@ -4776,6 +4902,15 @@
       "name": "令和6年能登半島地震復旧・復興支援本部",
       "officialUrl": "https://www.bousai.go.jp/updates/r60101notojishin/hukkyuhonbu.html",
       "description": "令和6年能登半島地震復旧・復興支援本部の基本方針、施策の推進状況および関係省庁間の連携・個別課題について審議する会議。",
+      "pastYearCount": 0
+    },
+    {
+      "id": "cas-ratimondai_honbu",
+      "ministry": "CAS",
+      "category": "COUNCIL",
+      "name": "拉致問題対策本部",
+      "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/ratimondai/index.html",
+      "description": "北朝鮮による日本人拉致問題への取組及び総合的な対策を政府一体となって強力に推進するための本部。",
       "pastYearCount": 0
     },
     {
@@ -5241,6 +5376,15 @@
       "description": "「TPP等総合対策本部」(旧TPPに関する主要閣僚会議)の基本方針、施策の推進状況および関係省庁間の連携・個別課題について審議する会議。",
       "pastYearCount": 1,
       "isClosed": true
+    },
+    {
+      "id": "cas-yuseimineika_honbu",
+      "ministry": "CAS",
+      "category": "COUNCIL",
+      "name": "郵政民営化推進本部",
+      "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/yuseimineika2/index2.html",
+      "description": "郵政民営化法に基づき、郵政民営化を円滑かつ着実に推進するための本部。",
+      "pastYearCount": 0
     },
     {
       "id": "cas-zensedai_hosyo",
@@ -19437,6 +19581,83 @@
         {
           "name": "電気通信事業法施行規則等の一部を改正する省令案等(新たなユニバーサルサービス制度に係る規定の整備)【諮問第3220号】",
           "url": "https://www.soumu.go.jp/main_content/001097624.pdf"
+        }
+      ]
+    },
+    {
+      "id": "cas-ax_renraku_kaigi-20261021-001",
+      "councilId": "cas-ax_renraku_kaigi",
+      "name": "第1回 AX社会実装関係府省庁連絡会議",
+      "date": "2026/10/21",
+      "officialUrl": "https://www.cas.go.jp/jp/seisaku/axkaigi/dai1/gijisidai.html",
+      "materials": [
+        {
+          "name": "組織図・事務概要",
+          "url": "https://www.cas.go.jp/jp/gaiyou/index.html"
+        },
+        {
+          "name": "幹部紹介",
+          "url": "https://www.cas.go.jp/jp/gaiyou/kanbu/index.html"
+        },
+        {
+          "name": "内閣官房組織等英文名称一覧",
+          "url": "https://www.cas.go.jp/jp/gaiyou/eibun/index.html"
+        },
+        {
+          "name": "その他情報",
+          "url": "https://www.cas.go.jp/jp/siryou/index.html"
+        },
+        {
+          "name": "AX社会実装関係府省庁連絡会議の開催について（関係府省庁申合せ）",
+          "url": "https://www.cas.go.jp/jp/seisaku/axkaigi/dai1/shiryo1-1.pdf"
+        },
+        {
+          "name": "AX社会実装関係府省庁連絡会議 運営要領",
+          "url": "https://www.cas.go.jp/jp/seisaku/axkaigi/dai1/shiryo1-2.pdf"
+        },
+        {
+          "name": "AX社会実装に係る論点について",
+          "url": "https://www.cas.go.jp/jp/seisaku/axkaigi/dai1/shiryo2.pdf"
+        },
+        {
+          "name": "AX社会実装に関する基礎データ集",
+          "url": "https://www.cas.go.jp/jp/seisaku/axkaigi/dai1/shiryo3_r81029.pdf"
+        },
+        {
+          "name": "中小企業におけるAX推進の方向性",
+          "url": "https://www.cas.go.jp/jp/seisaku/axkaigi/dai1/shiryo4.pdf"
+        },
+        {
+          "name": "内閣府提出資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/axkaigi/dai1/shiryo5-1.pdf"
+        },
+        {
+          "name": "総務省提出資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/axkaigi/dai1/shiryo5-2.pdf"
+        },
+        {
+          "name": "国土交通省提出資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/axkaigi/dai1/shiryo5-3.pdf"
+        },
+        {
+          "name": "国土交通省提出資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/axkaigi/dai1/shiryo5-4.pdf"
+        },
+        {
+          "name": "国土交通省提出資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/axkaigi/dai1/shiryo5-5.pdf"
+        },
+        {
+          "name": "文部科学省提出資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/axkaigi/dai1/shiryo5-6.pdf"
+        },
+        {
+          "name": "環境省提出資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/axkaigi/dai1/shiryo5-7.pdf"
+        },
+        {
+          "name": "資料３については、令和8年10月29日に訂正を行いました。訂正箇所については、こちらをクリックしてください。",
+          "url": "https://www.cas.go.jp/jp/seisaku/axkaigi/dai1/shiryo3_seigo.pdf"
         }
       ]
     },
@@ -142959,6 +143180,31 @@
       ]
     },
     {
+      "id": "cas-kuni_tokyo_jitsumu-20250805-008",
+      "councilId": "cas-kuni_tokyo_jitsumu",
+      "name": "第8回 国と東京都の実務者協議会",
+      "date": "2025/08/05",
+      "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/kunitotokyoto/dai8/gijisidai.html",
+      "materials": [
+        {
+          "name": "議事要旨",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/kunitotokyoto/dai8/gijiyousi.pdf"
+        },
+        {
+          "name": "国と東京都の実務者協議会の開催について",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/kunitotokyoto/dai8/siryou1.pdf"
+        },
+        {
+          "name": "「国と東京都の実務者協議会」に係る協議事項",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/kunitotokyoto/dai8/siryou2-1.pdf"
+        },
+        {
+          "name": "「国と東京都の実務者協議会」に係る協議事項（要求内容）",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/kunitotokyoto/dai8/siryou2-2.pdf"
+        }
+      ]
+    },
+    {
       "id": "digital-417-20250805-s06",
       "councilId": "digital-417",
       "name": "地方公共団体情報システムにおける標準化にかかる共通基準に関する検討会(第四回)",
@@ -174086,6 +174332,55 @@
       ]
     },
     {
+      "id": "cas-genshiryoku_saigai-20250307-065",
+      "councilId": "cas-genshiryoku_saigai",
+      "name": "第65回 原子力災害対策本部",
+      "date": "2025/03/07",
+      "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/genshiryoku/dai65/index.html",
+      "materials": [
+        {
+          "name": "議事要旨",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/genshiryoku/dai65/gijiyoushi.pdf"
+        },
+        {
+          "name": "議事次第",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/genshiryoku/dai65/gijishidai.pdf"
+        },
+        {
+          "name": "原子力災害からの復興の現状",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/genshiryoku/dai65/shiryou1.pdf"
+        },
+        {
+          "name": "被災地の復興・再生に向けた環境省の取組",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/genshiryoku/dai65/shiryou2.pdf"
+        },
+        {
+          "name": "東京電力福島第一原子力発電所の廃炉・汚染水・処理水対策の状況",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/genshiryoku/dai65/shiryou3.pdf"
+        },
+        {
+          "name": "飯舘村・葛尾村における避難指示区域の解除について（案）",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/genshiryoku/dai65/shiryou4.pdf"
+        },
+        {
+          "name": "避難指示を解除する施設の概要",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/genshiryoku/dai65/shiryou5.pdf"
+        },
+        {
+          "name": "復興推進会議構成員",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/genshiryoku/dai65/sankou1.pdf"
+        },
+        {
+          "name": "原子力災害対策本部構成員",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/genshiryoku/dai65/sankou2.pdf"
+        },
+        {
+          "name": "復興推進会議（第41回）議事録案",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/genshiryoku/dai65/sankou3.pdf"
+        }
+      ]
+    },
+    {
       "id": "cas-keizai_anzen_kentou-20250307-007",
       "councilId": "cas-keizai_anzen_kentou",
       "name": "第7回 経済安全保障重点課題検討会議",
@@ -185670,6 +185965,59 @@
       ]
     },
     {
+      "id": "cas-kokunai_toushi_forum-20250127-006",
+      "councilId": "cas-kokunai_toushi_forum",
+      "name": "第6回 国内投資拡大のための官民連携フォーラム",
+      "date": "2025/01/27",
+      "officialUrl": "https://www.cas.go.jp/jp/seisaku/kokunai_toushikakudai_forum/dai6/gijisidai.html",
+      "materials": [
+        {
+          "name": "組織図・事務概要",
+          "url": "https://www.cas.go.jp/jp/gaiyou/index.html"
+        },
+        {
+          "name": "幹部紹介",
+          "url": "https://www.cas.go.jp/jp/gaiyou/kanbu/index.html"
+        },
+        {
+          "name": "内閣官房組織等英文名称一覧",
+          "url": "https://www.cas.go.jp/jp/gaiyou/eibun/index.html"
+        },
+        {
+          "name": "その他情報",
+          "url": "https://www.cas.go.jp/jp/siryou/index.html"
+        },
+        {
+          "name": "Japan Advanced Semiconductor Manufacturing（株）提出資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/kokunai_toushikakudai_forum/dai6/siryou1.pdf"
+        },
+        {
+          "name": "九州経済連合会提出資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/kokunai_toushikakudai_forum/dai6/siryou2.pdf"
+        },
+        {
+          "name": "富士通（株）提出資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/kokunai_toushikakudai_forum/dai6/siryou3.pdf"
+        },
+        {
+          "name": "浦島観光ホテル（株）提出資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/kokunai_toushikakudai_forum/dai6/siryou4.pdf"
+        },
+        {
+          "name": "日本経済団体連合会提出資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/kokunai_toushikakudai_forum/dai6/siryou5.pdf"
+        },
+        {
+          "name": "日本商工会議所提出資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/kokunai_toushikakudai_forum/dai6/siryou6.pdf"
+        },
+        {
+          "name": "新経済連盟提出資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/kokunai_toushikakudai_forum/dai6/siryou7.pdf"
+        }
+      ]
+    },
+    {
       "id": "fsc-nouyaku_dai2-20250127-037",
       "councilId": "fsc-nouyaku_dai2",
       "name": "第37回農薬第二専門調査会",
@@ -190997,6 +191345,35 @@
       ]
     },
     {
+      "id": "cas-genshiryoku_saigai-20241220-064",
+      "councilId": "cas-genshiryoku_saigai",
+      "name": "第64回 原子力災害対策本部",
+      "date": "2024/12/20",
+      "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/genshiryoku/dai64/index.html",
+      "materials": [
+        {
+          "name": "議事要旨",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/genshiryoku/dai64/gijiyoushi.pdf"
+        },
+        {
+          "name": "議事次第",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/genshiryoku/dai64/gijishidai.pdf"
+        },
+        {
+          "name": "資料一覧",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/genshiryoku/dai64/ichiran.pdf"
+        },
+        {
+          "name": "福島県内除去土壌等の県外最終処分の実現に向けた再生利用等の推進に関する体制の強化について（案）",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/genshiryoku/dai64/shiryou.pdf"
+        },
+        {
+          "name": "原子力災害対策本部構成員",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/genshiryoku/dai64/sankou.pdf"
+        }
+      ]
+    },
+    {
       "id": "cas-jieikan_shogu-20241220-004",
       "councilId": "cas-jieikan_shogu",
       "name": "第4回 自衛官の処遇・勤務環境の改善及び新たな生涯設計の確立に関する関係閣僚会議",
@@ -196037,6 +196414,35 @@
       ]
     },
     {
+      "id": "cas-ninchisho_suishin-20241129-002",
+      "councilId": "cas-ninchisho_suishin",
+      "name": "第2回 認知症施策推進本部",
+      "date": "2024/11/29",
+      "officialUrl": "https://www.cas.go.jp/jp/seisaku/ninchisho_suishinhonbu/dai2/gijisidai.html",
+      "materials": [
+        {
+          "name": "組織図・事務概要",
+          "url": "https://www.cas.go.jp/jp/gaiyou/index.html"
+        },
+        {
+          "name": "幹部紹介",
+          "url": "https://www.cas.go.jp/jp/gaiyou/kanbu/index.html"
+        },
+        {
+          "name": "内閣官房組織等英文名称一覧",
+          "url": "https://www.cas.go.jp/jp/gaiyou/eibun/index.html"
+        },
+        {
+          "name": "認知症施策推進基本計画（案）概要",
+          "url": "https://www.cas.go.jp/jp/seisaku/ninchisho_suishinhonbu/dai2/siryou1.pdf"
+        },
+        {
+          "name": "認知症施策推進基本計画（案）",
+          "url": "https://www.cas.go.jp/jp/seisaku/ninchisho_suishinhonbu/dai2/siryou2.pdf"
+        }
+      ]
+    },
+    {
       "id": "fsc-nouyaku_dai5-20241129-033",
       "councilId": "fsc-nouyaku_dai5",
       "name": "第33回農薬第五専門調査会",
@@ -199275,6 +199681,39 @@
       ]
     },
     {
+      "id": "cas-kogata_mujinki_kyougi-20241115-020",
+      "councilId": "cas-kogata_mujinki_kyougi",
+      "name": "第20回 小型無人機に係る環境整備に向けた官民協議会",
+      "date": "2024/11/15",
+      "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/kogatamujinki/kanminkyougi_dai20/gijisidai.html",
+      "materials": [
+        {
+          "name": "ドローンの環境整備に係る取組状況について",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/kogatamujinki/kanminkyougi_dai20/siryou1.pdf"
+        },
+        {
+          "name": "ドローン利活用促進に向けた技術開発について",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/kogatamujinki/kanminkyougi_dai20/siryou2.pdf"
+        },
+        {
+          "name": "デジタルライフライン全国総合整備計画 ドローン航路の普及戦略について",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/kogatamujinki/kanminkyougi_dai20/siryou3.pdf"
+        },
+        {
+          "name": "無線システムの上空利用に係る検討状況",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/kogatamujinki/kanminkyougi_dai20/siryou4.pdf"
+        },
+        {
+          "name": "建築分野のドローン環境整備と外壁調査",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/kogatamujinki/kanminkyougi_dai20/siryou5.pdf"
+        },
+        {
+          "name": "空の産業革命に向けたロードマップ2024（案）",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/kogatamujinki/kanminkyougi_dai20/siryou6.pdf"
+        }
+      ]
+    },
+    {
       "id": "cas-zensedai_hosyo-20241115-019",
       "councilId": "cas-zensedai_hosyo",
       "name": "第19回 全世代型社会保障構築会議",
@@ -201755,6 +202194,6 @@
   ],
   "lastCrawlTime": "2026/10/30 09:27",
   "hasArchive": true,
-  "totalMeetingsCount": 23024,
-  "totalMaterialsCount": 140567
+  "totalMeetingsCount": 23153,
+  "totalMaterialsCount": 141502
 }
