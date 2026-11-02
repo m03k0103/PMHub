@@ -1,8 +1,8 @@
 # PMHub 改善・機能実装（Drop）マスタードキュメント (DROPS.md)
 
 > **最終更新**: 2026-11-03  `
-> **最新 Drop**: **Drop 126**（2026-11-03 完了）  
-> **次期予定 Drop**: **Drop 127**（Track [Core-Policy-Filter]: 「重要政策会議のみ」クイック絞り込み機能の実装）  
+> **最新 Drop**: **Drop 127**（2026-11-03 完了）  
+> **次期予定 Drop**: **Drop 128**（Track [Core-Policy-Filter]: 「重要政策会議のみ」クイック絞り込み機能の実装）  
 > 
 > 本ドキュメントは、PMHub の継続的改善ロードマップおよび実装記録を一元管理するマスタードキュメントです。  `
 > 今後の構想テーマは **「Track（トラック）」** として管理し、着手・個別実装単位は最新連番を付与した **「Drop（ドロップ）」** として連番アーカイブします。  `
@@ -251,8 +251,8 @@ GitHub Actions で自動更新・push されたリモートの最新データ（
 | **Drop 115** | **クローラー責務分離・ワンストップDB登録CLI新設・環境クリーンアップ**<br>(Track [Architecture] Phase 1) | 肥大化した crawler.py（4,367行）から責務別モジュール（host_manager, filters, extractors）を crawler_modules/ に切り出し、後方互換100%ファサード化し約650行スリム化。ワンストップ登録CLI register_council.py 新設。scratch/ の 560 余の一時ファイルを完全クリーンアップし .gitignore に追加。 | 統合テスト全15ケース＋全単体23種完全合格（22.10s）。ファサード互換性により既存の全テスト・クローラー機能が100%正常動作維持。 |
 | **Drop 116** | **ディスカバリー責務分離・共通HTTP通信層確立**<br>(Track [Architecture] 完遂) | 肥大化した discover_councils.py（約1,440行）から名称正規化・ノイズ除外・親URL逆引きを discovery_modules/ に分離しファサード化（約400行スリム化）。クローラー・ディスカバリー共通の http_client.py 新設。 | 統合テスト全15ケース＋全単体23種完全合格（21.79s）。Track [Architecture] 完全達成。 |
 | **Drop 117** | **資料種別「答申・報告書・ガイド」廃止 & UI純化**<br>(Track [Purge-DocType-Report] 完遂) | 公開ポータルUI（#docTypeSelect）および app.js から形骸化した手動タグ依存の REPORT フィルターを安全に撤廃し、3択（すべて / 議事録・要旨あり / 配付資料あり）へ純化。テストコード追従。 | 全15テストケース＋全単体23種完全合格（23.22s）。UIノイズ排除・形骸化機能撲滅達成。 |
-| **Drop 118** | **未使用リソース削除 & ローカル生成物整理** | 参照ゼロの管理ツール・一時レポート6ファイルを削除。Git管理外のバックアップ（最新3世代保持）・30日超ログ・`__pycache__` を整理。 | 管理対象ファイル 99→93件。ローカル生成物約549MB削減。統合15ケース＋全単体23種合格。 |
 | **Drop 118** | **知的財産戦略本部 配下30子組織ワンストップ登録・回次重複解消 & SQLiteマスターDB完全同期** | 親組織「知的財産戦略本部」（cas-titeki2）配下の全30子会議体（構想委員会、検証・評価・企画委員会、専門調査会、検討会、ワーキンググループ等）のマスター、開催回（490件）、配付資料（3,689件）、自動検知用スクレイピングルール（30件、manualLock: True）を完全登録。年度リセット回次やサブ組織（分科会・TF・WG・分野）の命名正規化およびテスト側の組織名・分野名自動抽出拡張により全22,614開催回の回次重複ゼロ（PASSED）を達成。孤立資料クリーンアップとSQLiteマスターDBおよび2系統エクスポート（docs/data.json, docs/data_archive.json, dmin/admin_data.json）の完全同期。 | **子会議体30組織・490開催回・3,689配付資料ワンストップ登録完了**<br>・回次重複 0件（Check 1/2 完全合格）<br>・DB & 2系統エクスポート完全同期（3者間件数完全一致）<br>・統合テスト全15ケース＋全単体テスト23種完全合格（23.05s） |
+| **Drop 127** | **未使用リソース削除 & ローカル生成物整理** | 参照ゼロの管理ツール・一時レポート6ファイルを削除。Git管理外のバックアップ（最新3世代保持）・30日超ログ・`__pycache__` を整理。 | 管理対象ファイル 99→93件。ローカル生成物約549MB削減。統合15ケース＋全単体23種合格。 |
 ---
 
 ### 2-2. 各 Dropの詳細
@@ -3974,3 +3974,32 @@ python testing/run_test_suite.py --all-layers : PASSED（統合15ケース＋全
 
 - **4. 今後の課題・次回アクション (Next Steps)**:
   - Track [Core-Policy-Filter]（「重要政策会議のみ」クイック絞り込み機能の実装）または Track [Automation]（定時巡回クローラー & ローカルDB同期 CI/CD 基盤）への着手。
+
+---
+
+### Drop 127: 未使用リソース削除 & ローカル生成物整理
+
+- **1. 背景と目的 (Background & Objective)**:
+  - `git grep` による参照調査で参照ゼロと判定したファイルと、Git管理外で肥大化していた生成物（`docs/backups/` 564MB 等）を整理した。
+
+- **2. 主要な実装・改修内容 (Key Implementations)**:
+  - **Git管理ファイルの削除（6件）**: `admin/verify_new_councils.html`, `admin/start_server.ps1`, `admin/stop_server.ps1`, `admin/tools/import_grand_portals.py`, `admin/ministry_updates_2026-08-08.json`, `admin/verification_report_2026-08-07.json`。
+  - **Git管理外生成物の整理**: `docs/backups/` 29件、`admin/backups/` 27件を削除（各ディレクトリ最新3世代を保持）、`admin/logs/` の30日超ログ123件、`__pycache__` 9ディレクトリを削除。合計約549MB削減。
+  - 保持対象: `pmhub.db`、`local_docs/`、`admin/data_backup/`（3件のみのため変更なし）。
+  - 削除コミットは `4273c11`（コミットメッセージ上は「Drop 118」表記。Drop 118 は知的財産戦略本部の施策と番号が重複していたため、本ドキュメント上は Drop 127 として記録）。
+
+- **3. 次回クロールへの影響 (Crawler Impact & Behavior)**:
+  - **手動登録データの保護挙動**: DB・`docs/data.json`・`manualLock` に変更なし。
+  - **新着検知・自動更新の挙動**: クローラー本体・`scrapingRules` に変更なし。
+  - **クローラーの負荷・探索範囲への影響**: 通信ロジック不変。同一ホスト直列化とレートリミット（0.35秒以上）を維持。
+
+- **4. 変更ファイル一覧 (Changed Files)**:
+  - 削除: 上記6ファイル
+  - `DROPS.md`: 最新 Drop 127、次期予定 Drop 128、Drop 127 追記
+
+- **5. 検証結果 (Verification Results)**:
+```markdown
+python testing/run_test_suite.py --all-layers : PASSED（統合15ケース＋全単体23種合格 / 所要時間 約26.5秒）
+  - 統合15ケース: 全件 PASS（15/15、スキップ0・失敗0）
+  - 【単体関数検証 (Unit Tests)】: 全23種合格（7.84s）
+```
