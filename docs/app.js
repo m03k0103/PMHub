@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   let loadSuccess = false;
   let loadErrorMessage = '';
   try {
-    const res = await fetch('data.json');
+    const res = await fetch('data.json', { cache: 'no-cache' });
     if (!res.ok) throw new Error(`HTTP ${res.status}: Failed to load data.json`);
     dataLastModified = (res.headers && typeof res.headers.get === 'function') ? (res.headers.get('Last-Modified') || '') : '';
     const data = await res.json();
@@ -266,7 +266,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     }
 
     try {
-      const res = await fetch('data_archive.json');
+      const res = await fetch('data_archive.json', { cache: 'no-cache' });
       if (!res.ok) throw new Error(`HTTP ${res.status}: Failed to load data_archive.json`);
       const arcData = await res.json();
       const archivedMeetings = arcData.meetings || [];
