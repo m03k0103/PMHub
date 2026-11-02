@@ -8,6 +8,7 @@ import json
 import os
 import re
 import sys
+import urllib.parse
 from collections import defaultdict
 
 sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "admin"))
@@ -206,6 +207,26 @@ def run_test(data=None):
                 dup_sameday_round_errors.append(f"Council '{c_name}' ({c_id}) has duplicate 第{rn}回{skw} on {d}: {ids}")
     if dup_sameday_round_errors:
         errors.append(f"Duplicate same-day round split meetings found ({len(dup_sameday_round_errors)} cases): {dup_sameday_round_errors[:5]}")
+
+    # 2d. Check same-day same-meeting-directory split (Drop 124: 同一会議体・同日同一会合ディレクトリ分割ゼロ検証)
+    dup_sameday_dir_errors = []
+    for c_id, m_list in c_meetings_map.items():
+        c_name = councils.get(c_id, {}).get('name', c_id)
+        c_parent_url = (councils.get(c_id, {}).get('officialUrl') or councils.get(c_id, {}).get('url') or '').rstrip('/')
+        date_dir_map = defaultdict(list)
+        for m in m_list:
+            u = (m.get('officialUrl') or '').rstrip('/')
+            d = m.get('date', '')
+            if u and u != c_parent_url:
+                p_path = urllib.parse.urlparse(u).path
+                d_name = os.path.dirname(p_path)
+                if d_name and d_name not in ('/', '') and re.search(r'/(?:dai|round|kai|r0\d_dai)\d+', d_name, re.I):
+                    date_dir_map[(d, d_name.lower())].append(m.get('id'))
+        for (d, dn), ids in date_dir_map.items():
+            if len(ids) > 1:
+                dup_sameday_dir_errors.append(f"Council '{c_name}' ({c_id}) has duplicate directory '{dn}' on {d}: {ids}")
+    if dup_sameday_dir_errors:
+        errors.append(f"Duplicate same-day meeting directory splits found ({len(dup_sameday_dir_errors)} cases): {dup_sameday_dir_errors[:5]}")
         
     # 3. Check duplicate 第n回 in same council
     meetings_by_council = defaultdict(list)
