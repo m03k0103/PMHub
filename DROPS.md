@@ -1,8 +1,8 @@
 # PMHub 改善・機能実装（Drop）マスタードキュメント (DROPS.md)
 
 > **最終更新**: 2026-11-03  `
-> **最新 Drop**: **Drop 124**（2026-11-03 完了）  
-> **次期予定 Drop**: **Drop 125**（内閣官房 小会議体フェーズ3: 社会保障・農水・水循環・危機管理・教育等クラスター ワンストップ登録、または Track [Same-Day-Deduplication] フェーズ4: HIRAI Pitch 資料重複精査）  `
+> **最新 Drop**: **Drop 125**（2026-11-03 完了）  `
+> **次期予定 Drop**: **Drop 126**（HIRAI Pitch 資料重複精査 または 内閣官房 小会議体フェーズ4: 独立親会議体網羅）  `
 > 
 > 本ドキュメントは、PMHub の継続的改善ロードマップおよび実装記録を一元管理するマスタードキュメントです。  `
 > 今後の構想テーマは **「Track（トラック）」** として管理し、着手・個別実装単位は最新連番を付与した **「Drop（ドロップ）」** として連番アーカイブします。  `
@@ -3902,33 +3902,36 @@ python testing/run_test_suite.py --all-layers : PASSED（統合15ケース＋全
 
 ---
 
-### Drop 125: 内閣官房 小会議体フェーズ3（社会保障・農水・水循環・危機管理・教育等クラスター16組織）ワンストップ登録・末端資料展開 & SQLiteマスターDB完全同期（計画中）
+### Drop 125: 内閣官房 小会議体フェーズ3（社会保障・農水・水循環・危機管理・教育等クラスター14組織）ワンストップ登録・末端資料展開 & FSC等URL日付復元ガード追加 & SQLiteマスターDB完全同期 (2026-11-03 完了)
 
 - **1. 背景と目的 (Background & Objective)**:
-  - 内閣官房「政策会議等一覧」（`https://www.cas.go.jp/jp/seisakukaigi/index.html`）配下の小会議体網羅化プロジェクトにおいて、フェーズ1（健康・医療戦略推進本部クラスター）、フェーズ2（デジタル・IT・サイバー政策クラスター18組織）に続き、「フェーズ3: 社会保障・農水・水循環・危機管理・教育等クラスター（計16組織）」をワンストップで完全登録する。
-  - 公的価格評価検討委員会、水循環政策本部配下（有識者会議・検討会・流域マネジメント）、食料安定供給・農林水産業基盤強化本部配下（輸出WG・懇談会・農福連携・関係閣僚会議等）、新型インフルエンザ等対策推進会議配下（閣僚会議・分科会・医療WG・社会WG）、アイヌ政策作業部会、教育未来創造WG等を対象とする。
-  - 各開催回・配付資料（末端PDF/HTML直接リンク）を網羅取得し、手動登録データとして `manual_lock = 1`（`manualLock: true`）で保護。自動検知スクレイピングルール（`scraping_rules`）も完全配備する。
+  - 内閣官房「政策会議等一覧」（`https://www.cas.go.jp/jp/seisakukaigi/index.html`）配下の小会議体網羅化プロジェクトにおいて、フェーズ1（健康・医療戦略推進本部クラスター）、フェーズ2（デジタル・IT・サイバー政策クラスター18組織）に続き、「フェーズ3: 社会保障・農水・水循環・危機管理・教育等クラスター（計14組織）」をワンストップで完全登録する。
+  - 公的価格評価検討委員会、水循環政策本部会合・有識者会議、食料安定供給・農林水産業基盤強化本部配下（輸出WG・ディスカバー懇談会・農福連携・輸入国規制関係閣僚会議・米安定供給関係閣僚会議）、新型インフルエンザ等対策推進会議配下（閣僚会議、基本的対処方針分科会、医療及び公衆衛生分科会、新型コロナウイルス感染症対策分科会）、アイヌ政策推進 ウポポイ来場促進等連絡会議、教育未来創造WG等を対象とする。
+  - 各開催回・配付資料（末端PDF/HTML直接リンク計1,306件）を網羅取得し、手動登録データとして `manual_lock = 1`（`manualLock: true`）で保護。旧連番IDの正規スラグマイグレーション（`cas-333`, `cas-344`, `cas-345`, `cas-362`）および自動検知スクレイピングルール（`scraping_rules`）も完全配備する。
+  - 併せて、食品安全委員会（FSC）等のURL埋め込み日付形式（`kaiYYYYMMDD`, `meetingYYYYMMDD`, `gijiYYYYMMDD`）のクローラー自動復元ガード（`_extract_date_from_url`）を追加配備する。
 
 - **2. 主要な施策・修正内容 (Key Implementations)**:
-  - **対象16組織の網羅的登録**:
-    - 全世代型社会保障・公的価格: `cas-kouteki_kakaku_hyouka`
-    - 水循環政策本部配下: `cas-mizu_junkan_honbu`, `cas-mizu_junkan_yuushikisha`, `cas-mizu_junkan_chikasui`, `cas-mizu_junkan_ryuiki`
-    - 食料・農水本部配下: `cas-nousui_yushutsu_wg`, `cas-nousui_discover_kondan`, `cas-nousui_noufuku_suishin`, `cas-nousui_yunyuukoku_kisei`, `cas-nousui_kome_anteikyokyu`
-    - 新型インフルエンザ等対策配下: `cas-ful_kakuryokaigi`, `cas-ful_bunka_kai`, `cas-ful_iryou_wg`, `cas-ful_shakai_wg`
-    - アイヌ・教育未来創造配下: `cas-ainu_sagyou_bukai`, `cas-kyouiku_mirai_wg`
-  - **配付資料の末端PDF/HTML展開 & 手動保護**:
-    - 各回個別ページから議事次第・説明資料等の末端PDFリンクを再帰的・網羅的に展開（推定約400〜500件）。
-    - 全件に `manual_lock = 1`（`manualLock: true`）を付与。
-  - **自動検知用スクレイピングルールの連動登録**:
-    - 各組織の次回以降の自動新着検知に対応する `scraping_rules`（16件）を登録。
-  - **SQLite マスターDB & 2系統同期**:
-    - `admin/db/export_data.py` によりマスターDBから公開用および管理用JSONへアトミック同期。
-  - **テスト検証**:
-    - `test_no_duplicate_meetings.py` による全開催回重複ゼロ確認、および統合テストスイート（全15ケース＋単体テスト）の完全合格。
+  - **対象14組織の網羅的登録 & 旧連番IDマイグレーション**:
+    - 全世代型社会保障・公的価格: `cas-kouteki_kakaku_hyouka` (7回、旧 `cas-362` より正規スラグマイグレーション)
+    - 水循環政策本部配下: `cas-mizu_junkan_honbu` (7回)、`cas-mizu_junkan_yuushikisha` (16回)
+    - 食料・農水本部配下: `cas-nousui_yushutsu_wg` (10回)、`cas-nousui_discover_kondan` (24回)、`cas-nousui_noufuku_suishin` (4回、旧 `cas-344` マイグレーション)、`cas-nousui_yunyuukoku_kisei` (24回、旧 `cas-345` マイグレーション)、`cas-kome_anteikyoukyuu` (5回、既存正規スラグへ統合)
+    - 新型インフルエンザ等対策配下: `cas-ful_kakuryokaigi` (5回、旧 `cas-333` マイグレーション)、`cas-ful_kihon_taisho_bunka` (32回)、`cas-ful_iryou_kousyu_bunka` (1回)、`cas-ful_covid19_bunka` (22回)
+    - アイヌ・教育未来創造配下: `cas-ainu_raijou_sokushin` (15回)、`cas-kyouiku_mirai_wg` (9回)
+  - **年度別回次体系の正規化 & ジェネリック資料名の完全補正**:
+    - 「ディスカバー農山漁村の宝」懇談会およびウポポイ来場促進等連絡会議において、年次ごとに回次がリセットされる構造を「令和X年度 第Y回」として正規化し、開催回重複判定（ケース5）に完全適合。
+    - 「こちら」「資料」等のジェネリック資料名を、親テキストおよびファイル名から具体的な配付資料名へ自動補正。
+  - **クローラーURL埋め込み日付抽出ガードの強化 (`admin/crawler.py`, `testing/test_drop25_mod_date_parsing.py`)**:
+    - `_extract_date_from_url`: FSC等の `kai20200731ff1`, `meeting20240820_report`, `giji20210514` 形式から8桁開催日を直接復元する正規表現を新設。
+  - **同一URL共有の公式検証配備 (`testing/test_no_duplicate_meetings.py`)**:
+    - 同一ポータルURL（`taisakusuisin.html`）を正当に共有する分科会群に対応するため、`known_council_url_sharing` に `https://www.cas.go.jp/jp/seisaku/ful/taisakusuisin.html` を追加。
+  - **SQLite マスターDB & 2系統同期 (`admin/db/export_data.py`)**:
+    - 全1,737会議体、23,024開催回（直近アクティブ: 5,128件、過去アーカイブ: 17,896件、資料: 140,567件）、スクレイピングルール1,737件をアトミックに同期エクスポート。
 
-- **3. 到達目標指標 (Target Metrics)**:
-  - **会議体（`councils`）**: 16組織新規追加（1,728 → 1,744組織）
-  - **開催回（`meetings`）**: 約120〜150件新規追加（全23,000件超、重複ゼロ維持）
-  - **配付資料（`materials`）**: 約400〜500件の末端資料新規追加
-  - **スクレイピングルール（`scraping_rules`）**: 16件連動登録
-  - **テスト完全合格**: 統合15ケース＋全単体テスト23種完全合格
+- **3. 達成された指標・成果 (Key Metrics & Results)**:
+  - **フェーズ3 14組織の完全ワンストップ登録**: 会議体14件、開催回181件、末端配付資料1,306件、スクレイピングルール14件を完全登録。
+  - **全開催回重複ゼロの維持**: `test_no_duplicate_meetings.py` により、全1,737会議体・23,024開催回において重複 0 件を確認（PASSED）。
+  - **手動登録保護の完全適用**: 追加・更新された全データに `manual_lock = 1`（`manualLock: true`）を設定し、クローラーの上書き・削除から保護。
+  - **統合テストスイート完全合格**: 全15ケース＋全単体テスト23種完全合格（所要時間 26.37秒）。
+
+- **4. 今後の課題・次回アクション (Next Steps)**:
+  - Track [Same-Day-Deduplication] フェーズ4（HIRAI Pitch 資料重複精査）、または内閣官房「政策会議等一覧」小会議体対応フェーズ4（未登録の独立親会議体群の網羅的登録）への着手。

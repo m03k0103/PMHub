@@ -1609,6 +1609,17 @@ def _extract_date_from_url(url):
         except ValueError:
             pass
 
+    # 2-b. FSC・会議等プレフィックス付き8桁: kai20200731, meeting20240820, giji20210514 (Drop 125)
+    m_kai = re.search(r'(?:kai|meeting|giji)(19\d{2}|20\d{2})([01]\d)([0-3]\d)', clean_u, re.IGNORECASE)
+    if m_kai:
+        try:
+            y, m, d = int(m_kai.group(1)), int(m_kai.group(2)), int(m_kai.group(3))
+            dt = datetime(y, m, d)
+            if 1995 <= y <= 2035:
+                return dt.strftime("%Y/%m/%d")
+        except ValueError:
+            pass
+
     # 3. 令和形式: r050720, r5-07-20
     m_r = re.search(r'(?:^|[/_-])r0?(\d{1,2})[-_]?([01]\d)[-_]?([0-3]\d)(?:$|[._/-])', clean_u, re.IGNORECASE)
     if m_r:
