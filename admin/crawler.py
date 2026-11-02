@@ -3154,6 +3154,10 @@ def sync_new_meetings_from_crawl(data, target, scraped_item):
         sub_mats = sub.get("materials", [])
         sub_dates = sub.get("extractedDates", [])
 
+        # Drop 122 Guard: PDFや文書ファイルの直リンクを開催回ページとして登録しない
+        if sub_url.lower().endswith(('.pdf', '.zip', '.doc', '.docx', '.xls', '.xlsx')):
+            continue
+
         # 汎用インデックスURL等は会議ページとして登録しない（Drop 96: 省庁・会議体設定連動）
         if is_generic_index_url(sub_url, sub_title, ministry=ministry, rule=target_rule):
             continue

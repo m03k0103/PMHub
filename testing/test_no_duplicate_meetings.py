@@ -183,6 +183,29 @@ def run_test(data=None):
                 dup_url_errors.append(f"Council '{c_name}' ({c_id}) has duplicate officialUrl on {d} '{u}': {ids}")
     if dup_url_errors:
         errors.append(f"Duplicate officialUrls on same date within same council found ({len(dup_url_errors)} cases): {dup_url_errors[:5]}")
+
+    # 2c. Check same-day split meetings for same round (Drop 122: 同一会議体・同日同一回次分割ゼロ検証)
+    dup_sameday_round_errors = []
+    for c_id, m_list in c_meetings_map.items():
+        c_name = councils.get(c_id, {}).get('name', c_id)
+        date_round_map = defaultdict(list)
+        for m in m_list:
+            m_name = m.get('name') or m.get('title') or ''
+            m_date = m.get('date', '')
+            r_match = re.search(r'第\s*(\d+)\s*回', m_name)
+            if r_match:
+                r_num = int(r_match.group(1))
+                sub_kw = ''
+                for kw in ['幹事会', '懇談会', '作業部会', 'ワーキンググループ', 'WG', '専門委員会', '専門調査会', '分科会', '部会', '小委員会']:
+                    if kw in m_name:
+                        sub_kw = kw
+                        break
+                date_round_map[(m_date, r_num, sub_kw)].append(m.get('id'))
+        for (d, rn, skw), ids in date_round_map.items():
+            if len(ids) > 1:
+                dup_sameday_round_errors.append(f"Council '{c_name}' ({c_id}) has duplicate 第{rn}回{skw} on {d}: {ids}")
+    if dup_sameday_round_errors:
+        errors.append(f"Duplicate same-day round split meetings found ({len(dup_sameday_round_errors)} cases): {dup_sameday_round_errors[:5]}")
         
     # 3. Check duplicate 第n回 in same council
     meetings_by_council = defaultdict(list)
