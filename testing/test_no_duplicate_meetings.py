@@ -163,6 +163,26 @@ def run_test(data=None):
     dup_keys = {k: v for k, v in key_counts.items() if v > 1}
     if dup_keys:
         errors.append(f"Duplicate (councilId, name, date) found: {dup_keys}")
+
+    # 2b. Check duplicate officialUrl on the same date within same council (Drop 121: 同一会議体・同日公式URL二重登録遮断)
+    c_meetings_map = defaultdict(list)
+    for m in meetings:
+        c_meetings_map[m.get('councilId', 'unknown')].append(m)
+    dup_url_errors = []
+    for c_id, m_list in c_meetings_map.items():
+        c_name = councils.get(c_id, {}).get('name', c_id)
+        c_parent_url = (councils.get(c_id, {}).get('officialUrl') or councils.get(c_id, {}).get('url') or '').rstrip('/')
+        url_date_map = defaultdict(list)
+        for m in m_list:
+            u = (m.get('officialUrl') or '').rstrip('/')
+            d = m.get('date', '')
+            if u and u != c_parent_url:
+                url_date_map[(d, u)].append(m.get('id'))
+        for (d, u), ids in url_date_map.items():
+            if len(ids) > 1:
+                dup_url_errors.append(f"Council '{c_name}' ({c_id}) has duplicate officialUrl on {d} '{u}': {ids}")
+    if dup_url_errors:
+        errors.append(f"Duplicate officialUrls on same date within same council found ({len(dup_url_errors)} cases): {dup_url_errors[:5]}")
         
     # 3. Check duplicate 第n回 in same council
     meetings_by_council = defaultdict(list)

@@ -3275,10 +3275,19 @@ def sync_new_meetings_from_crawl(data, target, scraped_item):
                     added_count += 1
             continue
 
-        # 既にURLまたはタイトルが完全一致している場合はスキップ
+        # CR-URL-DEDUP: 既にURLまたはタイトルが完全一致している場合は重複追加を完全遮断
         # ※親URLと同じURL（親テーブル抽出等）の場合はURL一致スキップをパスし、回次・日付チェックへ進む
         is_parent_url = (sub_url == council_parent_url.rstrip("/"))
         if sub_url and not is_parent_url and sub_url in existing_urls:
+            # 既存開催回に未登録の配付資料があればマージ
+            target_ex_m = existing_urls[sub_url]
+            if clean_materials_list:
+                ex_mats = target_ex_m.setdefault("materials", [])
+                ex_mat_urls = {m.get("url") for m in ex_mats if m.get("url")}
+                for new_mat in clean_materials_list:
+                    if new_mat.get("url") not in ex_mat_urls:
+                        ex_mats.append(new_mat)
+                        ex_mat_urls.add(new_mat.get("url"))
             continue
         if sub_title and sub_title in existing_names:
             continue
@@ -3333,6 +3342,19 @@ def sync_new_meetings_from_crawl(data, target, scraped_item):
             existing_meeting_ids=existing_meeting_ids,
             council_parent_url=council_parent_url
         )
+
+        # 二重防御ガード: 生成された officialUrl が親URL以外で既に同一会議体内に存在する場合は追加遮断
+        resolved_new_url = (new_meeting.get("officialUrl") or "").rstrip("/")
+        if resolved_new_url and resolved_new_url != council_parent_url.rstrip("/") and resolved_new_url in existing_urls:
+            target_ex_m = existing_urls[resolved_new_url]
+            if clean_materials_list:
+                ex_mats = target_ex_m.setdefault("materials", [])
+                ex_mat_urls = {m.get("url") for m in ex_mats if m.get("url")}
+                for new_mat in clean_materials_list:
+                    if new_mat.get("url") not in ex_mat_urls:
+                        ex_mats.append(new_mat)
+                        ex_mat_urls.add(new_mat.get("url"))
+            continue
 
         meetings.append(new_meeting)
         existing_c_meets.append(new_meeting)
