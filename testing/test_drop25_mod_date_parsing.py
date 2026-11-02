@@ -7,7 +7,7 @@ sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), ".."
 from utils import setup_win32_utf8, parse_japanese_date
 setup_win32_utf8()
 
-from crawler import _extract_meetings_from_parent_table
+from crawler import _extract_meetings_from_parent_table, _extract_date_from_url
 
 
 class TestDrop25ModDateParsing(unittest.TestCase):
@@ -77,6 +77,21 @@ class TestDrop25ModDateParsing(unittest.TestCase):
         self.assertEqual(m2["extractedDates"], ["2020/12/15"])
         self.assertIn("第8回", m2["name"])
         self.assertEqual(len(m2["materials"]), 2)
+
+
+
+    def test_extract_date_from_url_kai_pattern(self):
+        """Drop 125: FSC等のURL埋め込み日付（kaiYYYYMMDD, meetingYYYYMMDD等）が正確に抽出されること"""
+        cases = [
+            ("https://www.fsc.go.jp/fsciis/meetingMaterial/show/kai20200731ff1", "2020/07/31"),
+            ("https://www.fsc.go.jp/fsciis/meetingMaterial/show/kai20111121ki1", "2011/11/21"),
+            ("https://example.go.jp/meeting20240820_report.html", "2024/08/20"),
+            ("https://example.go.jp/giji20210514.pdf", "2021/05/14"),
+        ]
+        for url, expected in cases:
+            with self.subTest(url=url):
+                res = _extract_date_from_url(url)
+                self.assertEqual(res, expected, f"Failed for {url}")
 
 
 if __name__ == "__main__":

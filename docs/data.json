@@ -3139,14 +3139,6 @@
       "pastYearCount": 1
     },
     {
-      "id": "cas-333",
-      "ministry": "CAS",
-      "category": "COUNCIL",
-      "name": "新型インフルエンザ等対策閣僚会議",
-      "officialUrl": "https://www.cas.go.jp/jp/seisaku/ful/kakuryoukaigi.html",
-      "pastYearCount": 0
-    },
-    {
       "id": "cas-334",
       "ministry": "CAS",
       "category": "COUNCIL",
@@ -3211,22 +3203,6 @@
       "name": "熱中症対策に関する関係閣僚会議",
       "officialUrl": "https://www.cas.go.jp/jp/seisaku/netchusho_taisaku/index.html",
       "pastYearCount": 1
-    },
-    {
-      "id": "cas-344",
-      "ministry": "CAS",
-      "category": "HQ",
-      "name": "農福連携等推進会議",
-      "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/nousui/noufuku_suishin_kaigi/index.html",
-      "pastYearCount": 0
-    },
-    {
-      "id": "cas-345",
-      "ministry": "CAS",
-      "category": "COUNCIL",
-      "name": "農林水産物・食品の輸出拡大のための輸入国規制への対応等に関する関係閣僚会議",
-      "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/nousui/yunyuukoku_kisei_kaigi/index.html",
-      "pastYearCount": 0
     },
     {
       "id": "cas-346",
@@ -3350,14 +3326,6 @@
       "category": "COUNCIL",
       "name": "公共工事の品質確保の促進に関する関係省庁連絡会議",
       "officialUrl": "https://www.cas.go.jp/jp/seisaku/kouji/index.html",
-      "pastYearCount": 0
-    },
-    {
-      "id": "cas-362",
-      "ministry": "CAS",
-      "category": "COMMITTEE",
-      "name": "公的価格評価検討委員会",
-      "officialUrl": "https://www.cas.go.jp/jp/seisaku/kouteki_kakaku_hyouka/index.html",
       "pastYearCount": 0
     },
     {
@@ -3504,6 +3472,14 @@
       "officialUrl": "https://www.cas.go.jp/jp/seisaku/ai_robo/index.html",
       "description": "AIロボティクスに関する関係府省連絡会議の基本方針、施策の推進状況および関係省庁間の連携・個別課題について審議する会議。",
       "pastYearCount": 6
+    },
+    {
+      "id": "cas-ainu_raijou_sokushin",
+      "ministry": "CAS",
+      "category": "内閣官房政策会議等一覧",
+      "name": "ウポポイへの来場促進等連絡会議",
+      "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/ainusuishin/meetings.html",
+      "pastYearCount": 0
     },
     {
       "id": "cas-ainusuishin",
@@ -3904,6 +3880,38 @@
       "officialUrl": "https://www.cas.go.jp/jp/seisaku/ful/taisakusuisin.html",
       "description": "新型インフルエンザ等対策推進会議の基本方針、施策の推進状況および関係省庁間の連携・個別課題について審議する会議。",
       "pastYearCount": 4
+    },
+    {
+      "id": "cas-ful_covid19_bunka",
+      "ministry": "CAS",
+      "category": "内閣官房政策会議等一覧",
+      "name": "新型インフルエンザ等対策推進会議 新型コロナウイルス感染症対策分科会",
+      "officialUrl": "https://www.cas.go.jp/jp/seisaku/ful/taisakusuisin.html",
+      "pastYearCount": 0
+    },
+    {
+      "id": "cas-ful_iryou_kousyu_bunka",
+      "ministry": "CAS",
+      "category": "内閣官房政策会議等一覧",
+      "name": "新型インフルエンザ等対策推進会議 医療及び公衆衛生分科会",
+      "officialUrl": "https://www.cas.go.jp/jp/seisaku/ful/taisakusuisin.html",
+      "pastYearCount": 0
+    },
+    {
+      "id": "cas-ful_kakuryokaigi",
+      "ministry": "CAS",
+      "category": "内閣官房政策会議等一覧",
+      "name": "新型インフルエンザ等対策閣僚会議",
+      "officialUrl": "https://www.cas.go.jp/jp/seisaku/ful/kakuryoukaigi.html",
+      "pastYearCount": 0
+    },
+    {
+      "id": "cas-ful_kihon_taisho_bunka",
+      "ministry": "CAS",
+      "category": "内閣官房政策会議等一覧",
+      "name": "新型インフルエンザ等対策推進会議 基本的対処方針分科会",
+      "officialUrl": "https://www.cas.go.jp/jp/seisaku/ful/taisakusuisin.html",
+      "pastYearCount": 0
     },
     {
       "id": "cas-futenma_ginowan",
@@ -4521,8 +4529,7 @@
       "name": "米の安定供給等実現関係閣僚会議",
       "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/nousui/kome_anteikyokyujitsugen_kaigi/index.html",
       "description": "米の安定供給等実現関係閣僚会議の基本方針、施策の推進状況および関係省庁間の連携・個別課題について審議する会議。",
-      "pastYearCount": 2,
-      "isClosed": true
+      "pastYearCount": 2
     },
     {
       "id": "cas-koukyou_infra",
@@ -4540,6 +4547,14 @@
       ]
     },
     {
+      "id": "cas-kouteki_kakaku_hyouka",
+      "ministry": "CAS",
+      "category": "内閣官房政策会議等一覧",
+      "name": "公的価格評価検討委員会",
+      "officialUrl": "https://www.cas.go.jp/jp/seisaku/kouteki_kakaku_hyouka/index.html",
+      "pastYearCount": 0
+    },
+    {
       "id": "cas-kumahigai_taisaku",
       "ministry": "CAS",
       "category": "LIAISON",
@@ -4547,6 +4562,14 @@
       "officialUrl": "https://www.cas.go.jp/jp/seisaku/kumahigai_taisaku/index.html",
       "description": "近年深刻化する指定管理鳥獣(クマ類)による人身被害および出没対策、捕獲体制強化、鳥獣保護管理施策を省庁横断で迅速に協議・推進する関係閣僚会議。",
       "pastYearCount": 5
+    },
+    {
+      "id": "cas-kyouiku_mirai_wg",
+      "ministry": "CAS",
+      "category": "内閣官房政策会議等一覧",
+      "name": "教育未来創造会議ワーキング・グループ",
+      "officialUrl": "https://www.cas.go.jp/jp/seisaku/kyouikumirai/sozo_mirai_wg/kaisai.html",
+      "pastYearCount": 0
     },
     {
       "id": "cas-kyouseishakai_honbu",
@@ -4583,6 +4606,22 @@
       "officialUrl": "https://www.cas.go.jp/jp/seisaku/megasolar/index.html",
       "description": "大規模太陽光発電事業に関する関係閣僚会議の基本方針、施策の推進状況および関係省庁間の連携・個別課題について審議する会議。",
       "pastYearCount": 1
+    },
+    {
+      "id": "cas-mizu_junkan_honbu",
+      "ministry": "CAS",
+      "category": "内閣官房政策会議等一覧",
+      "name": "水循環政策本部",
+      "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/mizu_junkan/kaisai.html",
+      "pastYearCount": 0
+    },
+    {
+      "id": "cas-mizu_junkan_yuushikisha",
+      "ministry": "CAS",
+      "category": "内閣官房政策会議等一覧",
+      "name": "水循環施策の推進に関する有識者会議",
+      "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/mizu_junkan/yuushikisha/index.html",
+      "pastYearCount": 0
     },
     {
       "id": "cas-mokushitsu_zairyou_renraku",
@@ -4660,6 +4699,38 @@
           "url": "https://www.cas.go.jp/jp/seisakukaigi/nousui/pdf/konkyo.pdf"
         }
       ]
+    },
+    {
+      "id": "cas-nousui_discover_kondan",
+      "ministry": "CAS",
+      "category": "内閣官房政策会議等一覧",
+      "name": "「ディスカバー農山漁村の宝」有識者懇談会",
+      "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/nousui/kondankai/index.html",
+      "pastYearCount": 0
+    },
+    {
+      "id": "cas-nousui_noufuku_suishin",
+      "ministry": "CAS",
+      "category": "内閣官房政策会議等一覧",
+      "name": "農福連携等推進会議",
+      "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/nousui/noufuku_suishin_kaigi/index.html",
+      "pastYearCount": 0
+    },
+    {
+      "id": "cas-nousui_yunyuukoku_kisei",
+      "ministry": "CAS",
+      "category": "内閣官房政策会議等一覧",
+      "name": "農林水産物・食品の輸出拡大のための輸入国規制への対応等に関する関係閣僚会議",
+      "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/nousui/yunyuukoku_kisei_kaigi/index.html",
+      "pastYearCount": 0
+    },
+    {
+      "id": "cas-nousui_yushutsu_wg",
+      "ministry": "CAS",
+      "category": "内閣官房政策会議等一覧",
+      "name": "農林水産業の輸出力強化ワーキンググループ",
+      "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/nousui/kyouka_wg/index.html",
+      "pastYearCount": 0
     },
     {
       "id": "cas-ondanka",
@@ -30199,6 +30270,59 @@
       ]
     },
     {
+      "id": "mhlw-895-20260827-019",
+      "councilId": "mhlw-895",
+      "name": "第19回 食品衛生監視部会機能性表示食品等の健康被害情報への対応に関する小委員会",
+      "date": "2026/08/27",
+      "officialUrl": "https://www.mhlw.go.jp/stf/newpage_75646.html",
+      "materials": [
+        {
+          "name": "議事次第[PDF形式:48KB]",
+          "url": "https://www.mhlw.go.jp/content/12401000/001740379.pdf"
+        },
+        {
+          "name": "資料1 今回の小委員会で扱う健康被害情報について[PDF形式:90KB]",
+          "url": "https://www.mhlw.go.jp/content/12401000/001740380.pdf"
+        },
+        {
+          "name": "資料2 機能性表示食品等の健康被害情報について[PDF形式:4.1MB]",
+          "url": "https://www.mhlw.go.jp/content/12401000/001740381.pdf"
+        },
+        {
+          "name": "資料3 指定成分等含有食品の健康被害情報について[PDF形式:3.2MB]",
+          "url": "https://www.mhlw.go.jp/content/12401000/001740382.pdf"
+        },
+        {
+          "name": "参考資料1 「機能性表示食品等の健康被害情報への対応に関する小委員会の設置について」(令和6年8月28日厚生科学審議会食品衛生監視部会決定)[PDF形式:86KB]",
+          "url": "https://www.mhlw.go.jp/content/12401000/001740383.pdf"
+        },
+        {
+          "name": "参考資料2 機能性表示食品等の健康被害情報への対応に関する小委員会委員名簿[PDF形式:238KB]",
+          "url": "https://www.mhlw.go.jp/content/12401000/001740384.pdf"
+        },
+        {
+          "name": "参考資料3 機能性表示食品等の健康被害情報への対応に関する小委員会の目的等について[PDF形式:808KB]",
+          "url": "https://www.mhlw.go.jp/content/12401000/001740385.pdf"
+        },
+        {
+          "name": "参考資料4 「指定成分等含有食品に関する留意事項について」(令和6年8月23日付け健生食監発0823第5号・消食基第190号)[PDF形式:740KB]",
+          "url": "https://www.mhlw.go.jp/content/12401000/001740386.pdf"
+        },
+        {
+          "name": "参考資料5 「機能性表示食品等に係る健康被害の情報提供について」(令和6年8月23日付け健生食監発0823第3号)[PDF形式:519KB]",
+          "url": "https://www.mhlw.go.jp/content/12401000/001740387.pdf"
+        },
+        {
+          "name": "参考資料6 「いわゆる「健康食品」・無承認無許可医薬品健康被害防止対応要領について」(令和6年8月23日付け健生食監発0823第4号・医薬監麻発0823第1号)[PDF形式:791KB]",
+          "url": "https://www.mhlw.go.jp/content/12401000/001740388.pdf"
+        },
+        {
+          "name": "議事要旨［PDF形式］",
+          "url": "https://www.mhlw.go.jp/content/001743197.pdf"
+        }
+      ]
+    },
+    {
       "id": "mhlw-919-20260827-047",
       "councilId": "mhlw-919",
       "name": "第47回 臨床研究部会",
@@ -42158,6 +42282,59 @@
       ]
     },
     {
+      "id": "mhlw-895-20260722-018",
+      "councilId": "mhlw-895",
+      "name": "第18回 食品衛生監視部会機能性表示食品等の健康被害情報への対応に関する小委員会",
+      "date": "2026/07/22",
+      "officialUrl": "https://www.mhlw.go.jp/stf/newpage_74603.html",
+      "materials": [
+        {
+          "name": "議事次第[PDF形式:47KB]",
+          "url": "https://www.mhlw.go.jp/content/12401000/001722791.pdf"
+        },
+        {
+          "name": "資料1 今回の小委員会で扱う健康被害情報について[PDF形式:93KB]",
+          "url": "https://www.mhlw.go.jp/content/12401000/001722792.pdf"
+        },
+        {
+          "name": "資料2 機能性表示食品等の健康被害情報について[PDF形式:1.2MB]",
+          "url": "https://www.mhlw.go.jp/content/12401000/001722793.pdf"
+        },
+        {
+          "name": "資料3 指定成分等含有食品の健康被害情報について[PDF形式:1.2MB]",
+          "url": "https://www.mhlw.go.jp/content/12401000/001722794.pdf"
+        },
+        {
+          "name": "参考資料1 「機能性表示食品等の健康被害情報への対応に関する小委員会の設置について」(令和6年8月28日厚生科学審議会食品衛生監視部会決定)[PDF形式:8.1MB]",
+          "url": "https://www.mhlw.go.jp/content/12401000/001722795.pdf"
+        },
+        {
+          "name": "参考資料2 機能性表示食品等の健康被害情報への対応に関する小委員会委員名簿[PDF形式:238KB]",
+          "url": "https://www.mhlw.go.jp/content/12401000/001722796.pdf"
+        },
+        {
+          "name": "参考資料3 機能性表示食品等の健康被害情報への対応に関する小委員会の目的等について[PDF形式:3.4MB]",
+          "url": "https://www.mhlw.go.jp/content/12401000/001722797.pdf"
+        },
+        {
+          "name": "参考資料4 「指定成分等含有食品に関する留意事項について」(令和6年8月23日付け健生食監発0823第5号・消食基第190号)[PDF形式:8.8MB]",
+          "url": "https://www.mhlw.go.jp/content/12401000/001722798.pdf"
+        },
+        {
+          "name": "参考資料5 「機能性表示食品等に係る健康被害の情報提供について」(令和6年8月23日付け健生食監発0823第3号)[PDF形式:8.4MB]",
+          "url": "https://www.mhlw.go.jp/content/12401000/001722799.pdf"
+        },
+        {
+          "name": "参考資料6 「いわゆる「健康食品」・無承認無許可医薬品健康被害防止対応要領について」(令和6年8月23日付け健生食監発0823第4号・医薬監麻発0823第1号)[PDF形式:8.8MB]",
+          "url": "https://www.mhlw.go.jp/content/12401000/001722800.pdf"
+        },
+        {
+          "name": "議事要旨［PDF形式］",
+          "url": "https://www.mhlw.go.jp/content/001726842.pdf"
+        }
+      ]
+    },
+    {
       "id": "mhlw-960-20260722-221",
       "councilId": "mhlw-960",
       "name": "第221回 医道分科会麻酔科標榜資格審査部会",
@@ -51422,6 +51599,59 @@
       ]
     },
     {
+      "id": "mhlw-895-20260625-017",
+      "councilId": "mhlw-895",
+      "name": "第17回 食品衛生監視部会機能性表示食品等の健康被害情報への対応に関する小委員会",
+      "date": "2026/06/25",
+      "officialUrl": "https://www.mhlw.go.jp/stf/newpage_74039.html",
+      "materials": [
+        {
+          "name": "議事次第[PDF形式:47KB]",
+          "url": "https://www.mhlw.go.jp/content/12401000/001714804.pdf"
+        },
+        {
+          "name": "資料1 今回の小委員会で扱う健康被害情報について[PDF形式:87KB]",
+          "url": "https://www.mhlw.go.jp/content/12401000/001714805.pdf"
+        },
+        {
+          "name": "資料2 機能性表示食品等の健康被害情報について[PDF形式:1.2MB]",
+          "url": "https://www.mhlw.go.jp/content/12401000/001714806.pdf"
+        },
+        {
+          "name": "資料3 指定成分等含有食品の健康被害情報について[PDF形式:1.2MB]",
+          "url": "https://www.mhlw.go.jp/content/12401000/001714807.pdf"
+        },
+        {
+          "name": "参考資料1 「機能性表示食品等の健康被害情報への対応に関する小委員会の設置について」(令和6年8月28日厚生科学審議会食品衛生監視部会決定)[PDF形式:174KB]",
+          "url": "https://www.mhlw.go.jp/content/12401000/001714808.pdf"
+        },
+        {
+          "name": "参考資料2 機能性表示食品等の健康被害情報への対応に関する小委員会委員名簿[PDF形式:213KB]",
+          "url": "https://www.mhlw.go.jp/content/12401000/001714809.pdf"
+        },
+        {
+          "name": "参考資料3 機能性表示食品等の健康被害情報への対応に関する小委員会の目的等について[PDF形式:808KB]",
+          "url": "https://www.mhlw.go.jp/content/12401000/001714810.pdf"
+        },
+        {
+          "name": "参考資料4 「指定成分等含有食品に関する留意事項について」(令和6年8月23日付け健生食監発0823第5号・消食基第190号)[PDF形式:741KB]",
+          "url": "https://www.mhlw.go.jp/content/12401000/001714811.pdf"
+        },
+        {
+          "name": "参考資料5 「機能性表示食品等に係る健康被害の情報提供について」(令和6年8月23日付け健生食監発0823第3号)[PDF形式:520KB]",
+          "url": "https://www.mhlw.go.jp/content/12401000/001714812.pdf"
+        },
+        {
+          "name": "参考資料6 「いわゆる「健康食品」・無承認無許可医薬品健康被害防止対応要領について」(令和6年8月23日付け健生食監発0823第4号・医薬監麻発0823第1号)[PDF形式:792KB]",
+          "url": "https://www.mhlw.go.jp/content/12401000/001714813.pdf"
+        },
+        {
+          "name": "議事要旨［PDF形式］",
+          "url": "https://www.mhlw.go.jp/content/001715441.pdf"
+        }
+      ]
+    },
+    {
       "id": "mhlw-998-20260625-s06",
       "councilId": "mhlw-998",
       "name": "薬事審議会血液事業部会令和8年度第1回運営委員会",
@@ -57265,6 +57495,28 @@
       ]
     },
     {
+      "id": "cas-nousui_yunyuukoku_kisei-20260616-024",
+      "councilId": "cas-nousui_yunyuukoku_kisei",
+      "name": "第24回 農林水産物・食品の輸出拡大のための輸入国規制への対応等に関する関係閣僚会議",
+      "date": "2026/06/16",
+      "round": 24,
+      "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/nousui/yunyuukoku_kisei_kaigi/dai24/gijishidai.html",
+      "materials": [
+        {
+          "name": "農林水産物・食品の輸出拡大のペースアップに向けた施策の展開方向",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/nousui/yunyuukoku_kisei_kaigi/dai24/shiryo1.pdf"
+        },
+        {
+          "name": "農林水産物・食品の輸出拡大のための経済産業省の取組状況",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/nousui/yunyuukoku_kisei_kaigi/dai24/shiryo2.pdf"
+        },
+        {
+          "name": "議事要旨",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/nousui/yunyuukoku_kisei_kaigi/dai24/gijiyoshi.pdf"
+        }
+      ]
+    },
+    {
       "id": "fsc-honkaigi-20260616-1028",
       "councilId": "fsc-honkaigi",
       "name": "第1028回 食品安全委員会",
@@ -59586,17 +59838,16 @@
       "councilId": "cas-kome_anteikyoukyuu",
       "name": "第5回 米の安定供給等実現関係閣僚会議",
       "date": "2026/06/10",
-      "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/nousui/kome_anteikyokyujitsugen_kaigi/dai5/gijiyoshi.pdf",
-      "summary": "第5回 米の安定供給等実現関係閣僚会議の開催。主要議題の推進状況及び今後の対応方針について審議が行われた。",
-      "tags": [
-        "米の安定供給",
-        "CAS",
-        "第5回"
-      ],
+      "round": 5,
+      "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/nousui/kome_anteikyokyujitsugen_kaigi/dai5/gijishidai.html",
       "materials": [
         {
           "name": "議事要旨(PDF/92KB)",
           "url": "https://www.cas.go.jp/jp/seisakukaigi/nousui/kome_anteikyokyujitsugen_kaigi/dai5/gijiyoshi.pdf"
+        },
+        {
+          "name": "新たな水田政策(コメの中長期対策)の基本的考え方・仕組み",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/nousui/kome_anteikyokyujitsugen_kaigi/dai5/shiryo.pdf"
         }
       ]
     },
@@ -73326,6 +73577,59 @@
         {
           "name": "参考資料7 臓器提供者(ドナー)適応基準[PDF形式:417KB]",
           "url": "https://www.mhlw.go.jp/content/10900000/001690830.pdf"
+        }
+      ]
+    },
+    {
+      "id": "mhlw-895-20260415-016",
+      "councilId": "mhlw-895",
+      "name": "第16回 食品衛生監視部会機能性表示食品等の健康被害情報への対応に関する小委員会",
+      "date": "2026/04/15",
+      "officialUrl": "https://www.mhlw.go.jp/stf/newpage_72457.html",
+      "materials": [
+        {
+          "name": "議事次第[PDF形式:47KB]",
+          "url": "https://www.mhlw.go.jp/content/12401000/001690090.pdf"
+        },
+        {
+          "name": "資料1 今回の小委員会で扱う健康被害情報について[PDF形式:88KB]",
+          "url": "https://www.mhlw.go.jp/content/12401000/001690091.pdf"
+        },
+        {
+          "name": "資料2 機能性表示食品等の健康被害情報について[PDF形式:1.5MB]",
+          "url": "https://www.mhlw.go.jp/content/12401000/001690092.pdf"
+        },
+        {
+          "name": "資料3 指定成分等含有食品の健康被害情報について[PDF形式:1.1MB]",
+          "url": "https://www.mhlw.go.jp/content/12401000/001690093.pdf"
+        },
+        {
+          "name": "参考資料1 「機能性表示食品等の健康被害情報への対応に関する小委員会の設置について」(令和6年8月28日厚生科学審議会食品衛生監視部会決定)[PDF形式:76KB]",
+          "url": "https://www.mhlw.go.jp/content/12401000/001690094.pdf"
+        },
+        {
+          "name": "参考資料2 機能性表示食品等の健康被害情報への対応に関する小委員会委員名簿[PDF形式:186KB]",
+          "url": "https://www.mhlw.go.jp/content/12401000/001690095.pdf"
+        },
+        {
+          "name": "参考資料3 機能性表示食品等の健康被害情報への対応に関する小委員会の目的等について[PDF形式:767KB]",
+          "url": "https://www.mhlw.go.jp/content/12401000/001690096.pdf"
+        },
+        {
+          "name": "参考資料4 「指定成分等含有食品に関する留意事項について」(令和6年8月23日付け健生食監発0823第5号・消食基第190号)[PDF形式:642KB]",
+          "url": "https://www.mhlw.go.jp/content/12401000/001690097.pdf"
+        },
+        {
+          "name": "参考資料5 「機能性表示食品等に係る健康被害の情報提供について」(令和6年8月23日付け健生食監発0823第3号)[PDF形式:423KB]",
+          "url": "https://www.mhlw.go.jp/content/12401000/001690098.pdf"
+        },
+        {
+          "name": "参考資料6 「いわゆる「健康食品」・無承認無許可医薬品健康被害防止対応要領について」(令和6年8月23日付け健生食監発0823第4号・医薬監麻発0823第1号)[PDF形式:694KB]",
+          "url": "https://www.mhlw.go.jp/content/12401000/001690099.pdf"
+        },
+        {
+          "name": "議事要旨［PDF形式］",
+          "url": "https://www.mhlw.go.jp/content/001691601.pdf"
         }
       ]
     },
@@ -90496,6 +90800,59 @@
       ]
     },
     {
+      "id": "mhlw-895-20260302-015",
+      "councilId": "mhlw-895",
+      "name": "第15回 食品衛生監視部会機能性表示食品等の健康被害情報への対応に関する小委員会",
+      "date": "2026/03/02",
+      "officialUrl": "https://www.mhlw.go.jp/stf/newpage_70933.html",
+      "materials": [
+        {
+          "name": "議事次第[PDF形式:81KB]",
+          "url": "https://www.mhlw.go.jp/content/12401000/001663471.pdf"
+        },
+        {
+          "name": "資料1 今回の小委員会で扱う健康被害情報について[PDF形式:164KB]",
+          "url": "https://www.mhlw.go.jp/content/12401000/001663472.pdf"
+        },
+        {
+          "name": "資料2 機能性表示食品等の健康被害情報について[PDF形式:272KB]",
+          "url": "https://www.mhlw.go.jp/content/12401000/001663473.pdf"
+        },
+        {
+          "name": "資料3 指定成分等含有食品の健康被害情報について[PDF形式:325KB]",
+          "url": "https://www.mhlw.go.jp/content/12401000/001663474.pdf"
+        },
+        {
+          "name": "参考資料1 「機能性表示食品等の健康被害情報への対応に関する小委員会の設置について」(令和6年8月28日厚生科学審議会食品衛生監視部会決定)[PDF形式:76KB]",
+          "url": "https://www.mhlw.go.jp/content/12401000/001663542.pdf"
+        },
+        {
+          "name": "参考資料2 機能性表示食品等の健康被害情報への対応に関する小委員会委員名簿[PDF形式:946KB]",
+          "url": "https://www.mhlw.go.jp/content/12401000/001663475.pdf"
+        },
+        {
+          "name": "参考資料3 機能性表示食品等の健康被害情報への対応に関する小委員会の目的等について[PDF形式:763KB]",
+          "url": "https://www.mhlw.go.jp/content/12401000/001663543.pdf"
+        },
+        {
+          "name": "参考資料4 「指定成分等含有食品に関する留意事項について」(令和6年8月23日付け健生食監発0823第5号・消食基第190号)[PDF形式:642KB]",
+          "url": "https://www.mhlw.go.jp/content/12401000/001663544.pdf"
+        },
+        {
+          "name": "参考資料5 「機能性表示食品等に係る健康被害の情報提供について」(令和6年8月23日付け健生食監発0823第3号)[PDF形式:423KB]",
+          "url": "https://www.mhlw.go.jp/content/12401000/001663545.pdf"
+        },
+        {
+          "name": "参考資料6 「いわゆる「健康食品」・無承認無許可医薬品健康被害防止対応要領について」(令和6年8月23日付け健生食監発0823第4号・医薬監麻発0823第1号)[PDF形式:694KB]",
+          "url": "https://www.mhlw.go.jp/content/12401000/001663582.pdf"
+        },
+        {
+          "name": "議事要旨［PDF形式］",
+          "url": "https://www.mhlw.go.jp/content/001663924.pdf"
+        }
+      ]
+    },
+    {
       "id": "mhlw-959-20260302-002",
       "councilId": "mhlw-959",
       "name": "第2回 医師分科会",
@@ -99573,6 +99930,59 @@
       ]
     },
     {
+      "id": "mhlw-895-20260202-014",
+      "councilId": "mhlw-895",
+      "name": "第14回 食品衛生監視部会機能性表示食品等の健康被害情報への対応に関する小委員会",
+      "date": "2026/02/02",
+      "officialUrl": "https://www.mhlw.go.jp/stf/newpage_68806.html",
+      "materials": [
+        {
+          "name": "議事次第[PDF形式:47KB]",
+          "url": "https://www.mhlw.go.jp/content/12401000/001634580.pdf"
+        },
+        {
+          "name": "資料1 今回の小委員会で扱う健康被害情報について[PDF形式:158KB]",
+          "url": "https://www.mhlw.go.jp/content/12401000/001641753.pdf"
+        },
+        {
+          "name": "資料2 機能性表示食品等の健康被害情報について[PDF形式:267KB]",
+          "url": "https://www.mhlw.go.jp/content/12401000/001638357.pdf"
+        },
+        {
+          "name": "資料3 指定成分等含有食品の健康被害情報について[PDF形式:320KB]",
+          "url": "https://www.mhlw.go.jp/content/12401000/001641754.pdf"
+        },
+        {
+          "name": "参考資料1 「機能性表示食品等の健康被害情報への対応に関する小委員会の設置について」(令和6年8月28日厚生科学審議会食品衛生監視部会決定)[PDF形式:76KB]",
+          "url": "https://www.mhlw.go.jp/content/12401000/001634583.pdf"
+        },
+        {
+          "name": "参考資料2 機能性表示食品等の健康被害情報への対応に関する小委員会委員名簿[PDF形式:140KB]",
+          "url": "https://www.mhlw.go.jp/content/12401000/001634584.pdf"
+        },
+        {
+          "name": "参考資料3 機能性表示食品等の健康被害情報への対応に関する小委員会の目的等について[PDF形式:767KB]",
+          "url": "https://www.mhlw.go.jp/content/12401000/001634585.pdf"
+        },
+        {
+          "name": "参考資料4 「指定成分等含有食品に関する留意事項について」(令和6年8月23日付け健生食監発0823第5号・消食基第190号)[PDF形式:642KB]",
+          "url": "https://www.mhlw.go.jp/content/12401000/001634586.pdf"
+        },
+        {
+          "name": "参考資料5 「機能性表示食品等に係る健康被害の情報提供について」(令和6年8月23日付け健生食監発0823第3号)[PDF形式:423KB]",
+          "url": "https://www.mhlw.go.jp/content/12401000/001634587.pdf"
+        },
+        {
+          "name": "参考資料6 「いわゆる「健康食品」・無承認無許可医薬品健康被害防止対応要領について」(令和6年8月23日付け健生食監発0823第4号・医薬監麻発0823第1号)[PDF形式:694KB]",
+          "url": "https://www.mhlw.go.jp/content/12401000/001634605.pdf"
+        },
+        {
+          "name": "議事要旨［PDF形式］",
+          "url": "https://www.mhlw.go.jp/content/001649384.pdf"
+        }
+      ]
+    },
+    {
       "id": "mhlw-973-20260202-002",
       "councilId": "mhlw-973",
       "name": "第2回 歯科医師分科会歯学生共用試験部会",
@@ -103405,6 +103815,80 @@
       ]
     },
     {
+      "id": "cas-ainu_raijou_sokushin-20260120-2607",
+      "councilId": "cas-ainu_raijou_sokushin",
+      "name": "令和8年度 第7回 ウポポイへの来場促進等連絡会議",
+      "date": "2026/01/20",
+      "round": 7,
+      "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/ainusuishin/jittaichousa/dai7/gijisidai.html",
+      "materials": [
+        {
+          "name": "アイヌ施策推進法施行5年後検討結果",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/ainusuishin/honbukaigou/dai7/shiryo1.pdf"
+        },
+        {
+          "name": "個別施策集",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/ainusuishin/honbukaigou/dai7/shiryo2.pdf"
+        },
+        {
+          "name": "アイヌの人々の誇りが尊重される社会を実現するための施策の推進に関する法律の施行5年後検討結果",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/ainusuishin/honbukaigou/dai7/shiryo3.pdf"
+        },
+        {
+          "name": "アイヌ政策推進本部(第7回)出席者",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/ainusuishin/honbukaigou/dai7/sanko.pdf"
+        },
+        {
+          "name": "政策推進作業部会報告(概要)",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/ainusuishin/dai7/siryou1_1.pdf"
+        },
+        {
+          "name": "政策推進作業部会報告",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/ainusuishin/dai7/siryou1_2.pdf"
+        },
+        {
+          "name": "アイヌ政策の概要(平成28年度予算概算要求額)について",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/ainusuishin/dai7/siryou2.pdf"
+        },
+        {
+          "name": "象徴空間の整備に向けたロードマップ",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/ainusuishin/dai7/siryou3.pdf"
+        },
+        {
+          "name": "アイヌ政策推進会議の開催について",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/ainusuishin/dai7/sankou1.pdf"
+        },
+        {
+          "name": "アイヌ政策推進会議名簿",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/ainusuishin/dai7/sankou2.pdf"
+        },
+        {
+          "name": "「アイヌ政策のあり方に関する有識者懇談会」報告(平成21年7月)で提言された政策等の推進状況について",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/ainusuishin/dai7/sankou3.pdf"
+        },
+        {
+          "name": "議事概要",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/ainusuishin/dai7/gijigaiyou.pdf"
+        },
+        {
+          "name": "議事次第",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/ainusuishin/seisakusuishin/dai7/gijisidai.pdf"
+        },
+        {
+          "name": "議事概要",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/ainusuishin/seisakusuishin/dai7/gijigaiyou.pdf"
+        },
+        {
+          "name": "議事概要",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/ainusuishin/shuchou-kukan/dai7/gijigaiyou.pdf"
+        },
+        {
+          "name": "議事概要",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/ainusuishin/jittaichousa/dai7/gijigaiyou.pdf"
+        }
+      ]
+    },
+    {
       "id": "cas-kokusentoc-20260120-067",
       "councilId": "cas-kokusentoc",
       "name": "第67回 国家戦略特別区域諮問会議",
@@ -105160,6 +105644,24 @@
         {
           "name": "会議資料(関係府省庁連絡会議)[持ち回り]",
           "url": "https://www.cas.go.jp/jp/seisakukaigi/influenza/pdf/siryou-260113.pdf"
+        }
+      ]
+    },
+    {
+      "id": "cas-nousui_yunyuukoku_kisei-20260113-023",
+      "councilId": "cas-nousui_yunyuukoku_kisei",
+      "name": "第23回 農林水産物・食品の輸出拡大のための輸入国規制への対応等に関する関係閣僚会議",
+      "date": "2026/01/13",
+      "round": 23,
+      "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/nousui/yunyuukoku_kisei_kaigi/dai23/gijishidai.html",
+      "materials": [
+        {
+          "name": "農林水産物・食品の輸出促進の取組について",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/nousui/yunyuukoku_kisei_kaigi/dai23/shiryo.pdf"
+        },
+        {
+          "name": "議事要旨",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/nousui/yunyuukoku_kisei_kaigi/dai23/gijiyoshi.pdf"
         }
       ]
     },
@@ -112654,6 +113156,60 @@
       ]
     },
     {
+      "id": "cas-ainu_raijou_sokushin-20251213-2516",
+      "councilId": "cas-ainu_raijou_sokushin",
+      "name": "令和7年度 第16回 ウポポイへの来場促進等連絡会議",
+      "date": "2025/12/13",
+      "round": 16,
+      "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/ainusuishin/dai16/haifu_siryou.html",
+      "materials": [
+        {
+          "name": "アイヌ施策推進法施行5年後検討結果",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/ainusuishin/dai16/shiryo1.pdf"
+        },
+        {
+          "name": "個別施策集",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/ainusuishin/dai16/shiryo2.pdf"
+        },
+        {
+          "name": "アイヌの人々の誇りが尊重される社会を実現するための施策の推進に関する法律の施行5年後検討結果",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/ainusuishin/dai16/shiryo3.pdf"
+        },
+        {
+          "name": "アイヌ政策推進会議の開催について",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/ainusuishin/dai16/sanko1.pdf"
+        },
+        {
+          "name": "アイヌ政策推進会議名簿",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/ainusuishin/dai16/sanko2.pdf"
+        },
+        {
+          "name": "アイヌ政策関係政府予算について(令和7年度当初予算)",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/ainusuishin/dai16/sanko3-1.pdf"
+        },
+        {
+          "name": "アイヌ政策関係政府予算について(令和7年度補正予算)",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/ainusuishin/dai16/sanko3-2.pdf"
+        },
+        {
+          "name": "「アイヌ政策のあり方に関する有識者懇談会」報告で提言された政策等の推進状況について",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/ainusuishin/dai16/sanko4.pdf"
+        },
+        {
+          "name": "議事概要",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/ainusuishin/dai16/gijigaiyo.pdf"
+        },
+        {
+          "name": "議事次第",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/ainusuishin/seisakusuishin/dai16/gijisidai.pdf"
+        },
+        {
+          "name": "議事概要",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/ainusuishin/seisakusuishin/dai16/gijigaiyou.pdf"
+        }
+      ]
+    },
+    {
       "id": "cas-ainusuishin-20251213-016",
       "councilId": "cas-ainusuishin",
       "name": "第16回 アイヌ政策推進本部",
@@ -116594,6 +117150,59 @@
       ]
     },
     {
+      "id": "mhlw-895-20251201-013",
+      "councilId": "mhlw-895",
+      "name": "第13回 食品衛生監視部会機能性表示食品等の健康被害情報への対応に関する小委員会",
+      "date": "2025/12/01",
+      "officialUrl": "https://www.mhlw.go.jp/stf/newpage_66502.html",
+      "materials": [
+        {
+          "name": "議事次第[PDF形式:81KB]",
+          "url": "https://www.mhlw.go.jp/content/12401000/001602195.pdf"
+        },
+        {
+          "name": "資料1 今回の小委員会で扱う健康被害情報について[PDF形式:157KB]",
+          "url": "https://www.mhlw.go.jp/content/12401000/001602196.pdf"
+        },
+        {
+          "name": "資料2 機能性表示食品等の健康被害情報について[PDF形式:269KB]",
+          "url": "https://www.mhlw.go.jp/content/12401000/001602197.pdf"
+        },
+        {
+          "name": "資料3 指定成分等含有食品の健康被害情報について[PDF形式:309KB]",
+          "url": "https://www.mhlw.go.jp/content/12401000/001602198.pdf"
+        },
+        {
+          "name": "参考資料1 「機能性表示食品等の健康被害情報への対応に関する小委員会の設置について」(令和6年8月28日厚生科学審議会食品衛生監視部会決定)[PDF形式:607KB]",
+          "url": "https://www.mhlw.go.jp/content/12401000/001602199.pdf"
+        },
+        {
+          "name": "参考資料2 機能性表示食品等の健康被害情報への対応に関する小委員会委員名簿[PDF形式:140KB]",
+          "url": "https://www.mhlw.go.jp/content/12401000/001602200.pdf"
+        },
+        {
+          "name": "参考資料3 機能性表示食品等の健康被害情報への対応に関する小委員会の目的等について[PDF形式:324KB]",
+          "url": "https://www.mhlw.go.jp/content/12401000/001602201.pdf"
+        },
+        {
+          "name": "参考資料4 「指定成分等含有食品に関する留意事項について」(令和6年8月23日付け健生食監発0823第5号・消食基第190号)[PDF形式:1.4MB]",
+          "url": "https://www.mhlw.go.jp/content/12401000/001602202.pdf"
+        },
+        {
+          "name": "参考資料5 「機能性表示食品等に係る健康被害の情報提供について」(令和6年8月23日付け健生食監発0823第3号)[PDF形式:1.1MB]",
+          "url": "https://www.mhlw.go.jp/content/12401000/001602203.pdf"
+        },
+        {
+          "name": "参考資料6 「いわゆる「健康食品」・無承認無許可医薬品健康被害防止対応要領について」(令和6年8月23日付け健生食監発0823第4号・医薬監麻発0823第1号)[PDF形式:650KB]",
+          "url": "https://www.mhlw.go.jp/content/12401000/001602204.pdf"
+        },
+        {
+          "name": "議事要旨［PDF形式］",
+          "url": "https://www.mhlw.go.jp/content/001602832.pdf"
+        }
+      ]
+    },
+    {
       "id": "mhlw-960-20251201-218",
       "councilId": "mhlw-960",
       "name": "第218回 医道分科会麻酔科標榜資格審査部会",
@@ -116842,17 +117451,16 @@
       "councilId": "cas-kome_anteikyoukyuu",
       "name": "第4回 米の安定供給等実現関係閣僚会議",
       "date": "2025/11/28",
-      "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/nousui/kome_anteikyokyujitsugen_kaigi/dai4/gijiyoshi.pdf",
-      "summary": "第4回 米の安定供給等実現関係閣僚会議の開催。主要議題の推進状況及び今後の対応方針について審議が行われた。",
-      "tags": [
-        "米の安定供給",
-        "CAS",
-        "第4回"
-      ],
+      "round": 4,
+      "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/nousui/kome_anteikyokyujitsugen_kaigi/dai4/gijishidai.html",
       "materials": [
         {
           "name": "議事要旨(PDF/87KB)",
           "url": "https://www.cas.go.jp/jp/seisakukaigi/nousui/kome_anteikyokyujitsugen_kaigi/dai4/gijiyoshi.pdf"
+        },
+        {
+          "name": "米の安定供給に係る短期的な対応策(案)",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/nousui/kome_anteikyokyujitsugen_kaigi/dai4/shiryo.pdf"
         }
       ]
     },
@@ -119836,6 +120444,36 @@
         {
           "name": "社会保障改革の推進について(総理指示) (PDF / 113KB)",
           "url": "https://www.cas.go.jp/jp/seisaku/jinko_senryaku/contents/20251118/02_ref01.pdf"
+        }
+      ]
+    },
+    {
+      "id": "cas-nousui_discover_kondan-20251118-2501",
+      "councilId": "cas-nousui_discover_kondan",
+      "name": "令和7年度 第1回 「ディスカバー農山漁村の宝」有識者懇談会",
+      "date": "2025/11/18",
+      "round": 1,
+      "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/nousui/kondankai/dai12_1/gijishidai.html",
+      "materials": [
+        {
+          "name": "第12回選定の選定地区(案)",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/nousui/kondankai/dai12_1/shiryo1.pdf"
+        },
+        {
+          "name": "第12回選定のグランプリ及び優秀賞(案)",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/nousui/kondankai/dai12_1/shiryo2.pdf"
+        },
+        {
+          "name": "「ディスカバー農山漁村(むら)の宝」有識者懇談会委員名簿",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/nousui/kondankai/dai12_1/sanko1.pdf"
+        },
+        {
+          "name": "第12回選定の公募・選定について",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/nousui/kondankai/dai12_1/sanko2.pdf"
+        },
+        {
+          "name": "議事要旨",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/nousui/kondankai/dai12_1/gijiyoshi.pdf"
         }
       ]
     },
@@ -124622,6 +125260,59 @@
         {
           "name": "議事録(PDF形式:452KB)",
           "url": "https://www.meti.go.jp/shingikai/sankoshin/green_innovation/industrial_restructuring/pdf/034_gijiroku.pdf"
+        }
+      ]
+    },
+    {
+      "id": "mhlw-895-20251030-012",
+      "councilId": "mhlw-895",
+      "name": "第12回 食品衛生監視部会機能性表示食品等の健康被害情報への対応に関する小委員会",
+      "date": "2025/10/30",
+      "officialUrl": "https://www.mhlw.go.jp/stf/newpage_64898.html",
+      "materials": [
+        {
+          "name": "議事次第[PDF形式:81KB]",
+          "url": "https://www.mhlw.go.jp/content/12401000/001585025.pdf"
+        },
+        {
+          "name": "資料1 今回の小委員会で扱う健康被害情報について[PDF形式:162KB]",
+          "url": "https://www.mhlw.go.jp/content/12401000/001585026.pdf"
+        },
+        {
+          "name": "資料2 機能性表示食品等の健康被害情報について[PDF形式:270KB]",
+          "url": "https://www.mhlw.go.jp/content/12401000/001585027.pdf"
+        },
+        {
+          "name": "資料3 指定成分等含有食品の健康被害情報について[PDF形式:301KB]",
+          "url": "https://www.mhlw.go.jp/content/12401000/001585028.pdf"
+        },
+        {
+          "name": "参考資料1 「機能性表示食品等の健康被害情報への対応に関する小委員会の設置について」(令和6年8月28日厚生科学審議会食品衛生監視部会決定)[PDF形式:76KB]",
+          "url": "https://www.mhlw.go.jp/content/12401000/001581558.pdf"
+        },
+        {
+          "name": "参考資料2 機能性表示食品等の健康被害情報への対応に関する小委員会委員名簿[PDF形式:140KB]",
+          "url": "https://www.mhlw.go.jp/content/12401000/001581559.pdf"
+        },
+        {
+          "name": "参考資料3 機能性表示食品等の健康被害情報への対応に関する小委員会の目的等について[PDF形式:330KB]",
+          "url": "https://www.mhlw.go.jp/content/12401000/001585029.pdf"
+        },
+        {
+          "name": "参考資料4 「指定成分等含有食品に関する留意事項について」(令和6年8月23日付け健生食監発0823第5号・消食基第190号)[PDF形式:1.4MB]",
+          "url": "https://www.mhlw.go.jp/content/12401000/001581560.pdf"
+        },
+        {
+          "name": "参考資料5 「機能性表示食品等に係る健康被害の情報提供について」(令和6年8月23日付け健生食監発0823第3号)[PDF形式:1.1MB]",
+          "url": "https://www.mhlw.go.jp/content/12401000/001581561.pdf"
+        },
+        {
+          "name": "参考資料6 「いわゆる「健康食品」・無承認無許可医薬品健康被害防止対応要領について」(令和6年8月23日付け健生食監発0823第4号・医薬監麻発0823第1号)[PDF形式:650KB]",
+          "url": "https://www.mhlw.go.jp/content/12401000/001581562.pdf"
+        },
+        {
+          "name": "議事要旨［PDF形式］",
+          "url": "https://www.mhlw.go.jp/content/001589744.pdf"
         }
       ]
     },
@@ -142246,13 +142937,8 @@
       "councilId": "cas-kome_anteikyoukyuu",
       "name": "第3回 米の安定供給等実現関係閣僚会議",
       "date": "2025/08/05",
-      "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/nousui/kome_anteikyokyujitsugen_kaigi/dai3/shiryo1.pdf",
-      "summary": "第3回 米の安定供給等実現関係閣僚会議の開催。主要議題の推進状況及び今後の対応方針について審議が行われた。",
-      "tags": [
-        "米の安定供給",
-        "CAS",
-        "第3回"
-      ],
+      "round": 3,
+      "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/nousui/kome_anteikyokyujitsugen_kaigi/dai3/gijishidai.html",
       "materials": [
         {
           "name": "今般の米の価格高騰の要因や対応の検証(PDF/1,580KB)",
@@ -149039,13 +149725,8 @@
       "councilId": "cas-kome_anteikyoukyuu",
       "name": "第2回 米の安定供給等実現関係閣僚会議",
       "date": "2025/07/01",
-      "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/nousui/kome_anteikyokyujitsugen_kaigi/dai2/shiryo.pdf",
-      "summary": "第2回 米の安定供給等実現関係閣僚会議の開催。主要議題の推進状況及び今後の対応方針について審議が行われた。",
-      "tags": [
-        "米の安定供給",
-        "CAS",
-        "第2回"
-      ],
+      "round": 2,
+      "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/nousui/kome_anteikyokyujitsugen_kaigi/dai2/gijishidai.html",
       "materials": [
         {
           "name": "ĂɊւ鎑iPDF^1,215KBj (PDF)",
@@ -149942,6 +150623,64 @@
       ]
     },
     {
+      "id": "cas-mizu_junkan_yuushikisha-20250627-016",
+      "councilId": "cas-mizu_junkan_yuushikisha",
+      "name": "第16回 水循環施策の推進に関する有識者会議",
+      "date": "2025/06/27",
+      "round": 16,
+      "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/mizu_junkan/yuushikisha/dai16/gijisidai.html",
+      "materials": [
+        {
+          "name": "流域水循環計画の策定・深化の推進について",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/mizu_junkan/yuushikisha/dai16/siryou1.pdf"
+        },
+        {
+          "name": "水循環の概念図について",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/mizu_junkan/yuushikisha/dai16/siryou2.pdf"
+        },
+        {
+          "name": "水循環に係る評価指標・評価手法について",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/mizu_junkan/yuushikisha/dai16/siryou3.pdf"
+        },
+        {
+          "name": "水循環施策を巡る最近の動向について",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/mizu_junkan/yuushikisha/dai16/siryou4.pdf"
+        },
+        {
+          "name": "新たな水循環基本計画の概要",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/mizu_junkan/yuushikisha/dai16/sankou1-1.pdf"
+        },
+        {
+          "name": "水循環基本計画",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/mizu_junkan/yuushikisha/dai16/sankou1-2.pdf"
+        },
+        {
+          "name": "新たな水循環基本計画における主要施策の工程表",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/mizu_junkan/yuushikisha/dai16/sankou2-1.pdf"
+        },
+        {
+          "name": "「新たな水循環基本計画における主要施策の工程表」に係る令和6年度の実施状況",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/mizu_junkan/yuushikisha/dai16/sankou2-2.pdf"
+        },
+        {
+          "name": "流域総合水管理のあり方について 答申 概要(",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/mizu_junkan/yuushikisha/dai16/sankou3-1.pdf"
+        },
+        {
+          "name": "流域総合水管理のあり方について 答申",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/mizu_junkan/yuushikisha/dai16/sankou3-2.pdf"
+        },
+        {
+          "name": "構成員名簿",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/mizu_junkan/yuushikisha/dai16/meibo.pdf"
+        },
+        {
+          "name": "議事概要",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/mizu_junkan/yuushikisha/dai16/gijigaiyo.pdf"
+        }
+      ]
+    },
+    {
       "id": "fsa-kinyu_sustainability_wg-20250627-008",
       "councilId": "fsa-kinyu_sustainability_wg",
       "name": "第8回 サステナビリティ情報の開示と保証のあり方に関するワーキング・グループ",
@@ -150158,43 +150897,6 @@
       ]
     },
     {
-      "id": "cas-344-20250626-004",
-      "councilId": "cas-344",
-      "name": "第4回 農福連携等推進会議",
-      "date": "2025/06/26",
-      "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/nousui/noufuku_suishin_kaigi/dai4/gijisidai.html",
-      "materials": [
-        {
-          "name": "実践者・有識者名簿(PDF/102KB)",
-          "url": "https://www.cas.go.jp/jp/seisakukaigi/nousui/noufuku_suishin_kaigi/dai4/meibo.pdf"
-        },
-        {
-          "name": "「農福連携等推進ビジョン(2024改訂版)」に基づく取組状況について(PDF/1,070KB)",
-          "url": "https://www.cas.go.jp/jp/seisakukaigi/nousui/noufuku_suishin_kaigi/dai4/siryou1.pdf"
-        },
-        {
-          "name": "公文一也氏(安芸市農福連携研究会)説明資料(PDF/559KB)",
-          "url": "https://www.cas.go.jp/jp/seisakukaigi/nousui/noufuku_suishin_kaigi/dai4/siryou2.pdf"
-        },
-        {
-          "name": "折原裕朋氏(埼玉県立特別支援学校羽生ふじ高等学園 校長)説明資料(PDF/1,405KB)",
-          "url": "https://www.cas.go.jp/jp/seisakukaigi/nousui/noufuku_suishin_kaigi/dai4/siryou3.pdf"
-        },
-        {
-          "name": "新井利昌氏(埼玉福興株式会社 代表取締役)説明資料(PDF/2.4MB)",
-          "url": "https://www.cas.go.jp/jp/seisakukaigi/nousui/noufuku_suishin_kaigi/dai4/siryou4.pdf"
-        },
-        {
-          "name": "議事要旨(PDF/207KB)",
-          "url": "https://www.cas.go.jp/jp/seisakukaigi/nousui/noufuku_suishin_kaigi/dai2/gijiyousi.pdf"
-        },
-        {
-          "name": "議事要旨(PDF/298KB)",
-          "url": "https://www.cas.go.jp/jp/seisakukaigi/nousui/noufuku_suishin_kaigi/dai4/gijiyousi.pdf"
-        }
-      ]
-    },
-    {
       "id": "cas-363-20250626-019",
       "councilId": "cas-363",
       "name": "第19回 国際仲裁の活性化に向けた関係府省連絡会議",
@@ -150204,6 +150906,40 @@
         {
           "name": "議事次第・配布資料",
           "url": "https://www.cas.go.jp/jp/seisaku/kokusai_chusai/kanjikai/dai19/gijisidai.pdf"
+        }
+      ]
+    },
+    {
+      "id": "cas-nousui_noufuku_suishin-20250626-004",
+      "councilId": "cas-nousui_noufuku_suishin",
+      "name": "第4回 農福連携等推進会議",
+      "date": "2025/06/26",
+      "round": 4,
+      "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/nousui/noufuku_suishin_kaigi/dai4/gijisidai.html",
+      "materials": [
+        {
+          "name": "実践者・有識者名簿",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/nousui/noufuku_suishin_kaigi/dai4/meibo.pdf"
+        },
+        {
+          "name": "「農福連携等推進ビジョン(2024改訂版)」に基づく取組状況について",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/nousui/noufuku_suishin_kaigi/dai4/siryou1.pdf"
+        },
+        {
+          "name": "公文一也氏(安芸市農福連携研究会)説明資料",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/nousui/noufuku_suishin_kaigi/dai4/siryou2.pdf"
+        },
+        {
+          "name": "折原裕朋氏(埼玉県立特別支援学校羽生ふじ高等学園 校長)説明資料",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/nousui/noufuku_suishin_kaigi/dai4/siryou3.pdf"
+        },
+        {
+          "name": "新井利昌氏(埼玉福興株式会社  代表取締役)説明資料",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/nousui/noufuku_suishin_kaigi/dai4/siryou4.pdf"
+        },
+        {
+          "name": "議事要旨",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/nousui/noufuku_suishin_kaigi/dai4/gijiyousi.pdf"
         }
       ]
     },
@@ -155493,13 +156229,8 @@
       "councilId": "cas-kome_anteikyoukyuu",
       "name": "第1回 米の安定供給等実現関係閣僚会議",
       "date": "2025/06/05",
-      "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/nousui/kome_anteikyokyujitsugen_kaigi/dai1/shiryo.pdf",
-      "summary": "第1回 米の安定供給等実現関係閣僚会議の開催。主要議題の推進状況及び今後の対応方針について審議が行われた。",
-      "tags": [
-        "米の安定供給",
-        "CAS",
-        "第1回"
-      ],
+      "round": 1,
+      "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/nousui/kome_anteikyokyujitsugen_kaigi/dai1/gijishidai.html",
       "materials": [
         {
           "name": "米に関する資料(PDF/746KB)",
@@ -156657,6 +157388,32 @@
         {
           "name": "資料3:公開審議事項(PDF形式:982KB)",
           "url": "https://www.scj.go.jp/ja/member/iinkai/kanji/pdf26/siryo385-4.pdf"
+        }
+      ]
+    },
+    {
+      "id": "cas-nousui_yunyuukoku_kisei-20250530-022",
+      "councilId": "cas-nousui_yunyuukoku_kisei",
+      "name": "第22回 農林水産物・食品の輸出拡大のための輸入国規制への対応等に関する関係閣僚会議",
+      "date": "2025/05/30",
+      "round": 22,
+      "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/nousui/yunyuukoku_kisei_kaigi/dai22/gijisidai.html",
+      "materials": [
+        {
+          "name": "輸出拡大等による「海外から稼ぐ力」の強化に向けた施策の展開方向",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/nousui/yunyuukoku_kisei_kaigi/dai22/siryou1.pdf"
+        },
+        {
+          "name": "農林水産物・食品の輸出拡大実行戦略改訂案",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/nousui/yunyuukoku_kisei_kaigi/dai22/siryou2.pdf"
+        },
+        {
+          "name": "輸出拡大等による「海外から稼ぐ力」の強化に向けた施策の展開方向(参考資料)",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/nousui/yunyuukoku_kisei_kaigi/dai22/sankou.pdf"
+        },
+        {
+          "name": "議事要旨",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/nousui/yunyuukoku_kisei_kaigi/dai22/gijiyousi.pdf"
         }
       ]
     },
@@ -187386,6 +188143,32 @@
       ]
     },
     {
+      "id": "cas-nousui_yunyuukoku_kisei-20250110-021",
+      "councilId": "cas-nousui_yunyuukoku_kisei",
+      "name": "第21回 農林水産物・食品の輸出拡大のための輸入国規制への対応等に関する関係閣僚会議",
+      "date": "2025/01/10",
+      "round": 21,
+      "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/nousui/yunyuukoku_kisei_kaigi/dai21/gijisidai.html",
+      "materials": [
+        {
+          "name": "輸出拡大等による「海外から稼ぐ力」の強化",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/nousui/yunyuukoku_kisei_kaigi/dai21/siryou1.pdf"
+        },
+        {
+          "name": "輸出拡大等による「海外から稼ぐ力」の強化について",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/nousui/yunyuukoku_kisei_kaigi/dai21/siryou2.pdf"
+        },
+        {
+          "name": "輸出拡大等による「海外から稼ぐ力」の強化について(参考資料)",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/nousui/yunyuukoku_kisei_kaigi/dai21/sankou.pdf"
+        },
+        {
+          "name": "議事要旨",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/nousui/yunyuukoku_kisei_kaigi/dai21/gijiyousi.pdf"
+        }
+      ]
+    },
+    {
       "id": "fsa-jibaiseki_shingi-20250110-150",
       "councilId": "fsa-jibaiseki_shingi",
       "name": "第150回 自動車損害賠償責任保険審議会議事次第",
@@ -196559,6 +197342,36 @@
       ]
     },
     {
+      "id": "cas-nousui_discover_kondan-20241125-2401",
+      "councilId": "cas-nousui_discover_kondan",
+      "name": "令和6年度 第1回 「ディスカバー農山漁村の宝」有識者懇談会",
+      "date": "2024/11/25",
+      "round": 1,
+      "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/nousui/kondankai/dai11_1/gijisidai.html",
+      "materials": [
+        {
+          "name": "第11回選定の選定地区(案)",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/nousui/kondankai/dai11_1/siryou1.pdf"
+        },
+        {
+          "name": "第11回選定のグランプリ及び優秀賞(案)",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/nousui/kondankai/dai11_1/siryou2.pdf"
+        },
+        {
+          "name": "「ディスカバー農山漁村(むら)の宝」有識者懇談会委員名簿",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/nousui/kondankai/dai11_1/sankou1.pdf"
+        },
+        {
+          "name": "第11回選定の公募・選定について",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/nousui/kondankai/dai11_1/sankou2.pdf"
+        },
+        {
+          "name": "議事要旨",
+          "url": "https://www.cas.go.jp/jp/seisakukaigi/nousui/kondankai/dai11_1/gijiyousi.pdf"
+        }
+      ]
+    },
+    {
       "id": "digital-436-20241125-001",
       "councilId": "digital-436",
       "name": "第1回 データセキュリティワーキンググループ",
@@ -200942,6 +201755,6 @@
   ],
   "lastCrawlTime": "2026/10/30 09:27",
   "hasArchive": true,
-  "totalMeetingsCount": 22866,
-  "totalMaterialsCount": 139365
+  "totalMeetingsCount": 23024,
+  "totalMaterialsCount": 140567
 }

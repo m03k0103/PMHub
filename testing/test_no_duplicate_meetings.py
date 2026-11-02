@@ -477,6 +477,7 @@ def run_test(data=None):
         'https://www.gov-online.go.jp/prg/prg9364.html',
         'https://www.cas.go.jp/jp/seisaku/chyutoujyousei/index.html',
         'https://www.cas.go.jp/jp/seisaku/digital_gyozaikaikaku/index.html',
+        'https://www.cas.go.jp/jp/seisaku/ful/taisakusuisin.html',
         'https://www.mext.go.jp/b_menu/shingi/chukyo/chukyo0/index.htm',
         'https://www.moj.go.jp/hisho/seisakuhyouka/hisho04_00050.html',
     }
