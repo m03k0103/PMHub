@@ -3698,6 +3698,14 @@
       "pastYearCount": 11
     },
     {
+      "id": "cas-cyber_anzen_hosyo",
+      "ministry": "CAS",
+      "category": "政策会議",
+      "name": "サイバー安全保障分野での対応能力の向上に向けた有識者会議",
+      "officialUrl": "https://www.cas.go.jp/jp/seisaku/cyber_anzen_hosyo/index.html",
+      "pastYearCount": 0
+    },
+    {
       "id": "cas-cyber_security_honbu",
       "ministry": "CAS",
       "category": "HQ",
@@ -3705,6 +3713,14 @@
       "officialUrl": "https://www.cyber.go.jp/council/cs/index.html",
       "description": "サイバーセキュリティ基本法に基づき、国家サイバーセキュリティ戦略の改定、重要インフラ防護体制の推進、重要計算機被害防止方針およびサイバー対処能力強化法策定を審議・決定する司令塔。",
       "pastYearCount": 8
+    },
+    {
+      "id": "cas-cybersecurity_kakuryokaigi",
+      "ministry": "CAS",
+      "category": "政策会議",
+      "name": "サイバーセキュリティに関する関係閣僚会議",
+      "officialUrl": "https://www.cas.go.jp/jp/seisaku/cybersecurity_kakuryokaigi/index.html",
+      "pastYearCount": 1
     },
     {
       "id": "cas-dai1",
@@ -3724,14 +3740,134 @@
       "pastYearCount": 1
     },
     {
+      "id": "cas-digital_global_kakuryokaigi",
+      "ministry": "CAS",
+      "category": "政策会議",
+      "name": "デジタル関連産業のグローバル化促進のための関係閣僚会議",
+      "officialUrl": "https://www.cas.go.jp/jp/seisaku/digital_global_kakuryokaigi/index.html",
+      "pastYearCount": 0
+    },
+    {
       "id": "cas-digital_gyozaikaikaku",
       "ministry": "CAS",
-      "category": "PANEL",
+      "category": "政策会議",
       "name": "デジタル行財政改革会議",
       "officialUrl": "https://www.cas.go.jp/jp/seisaku/digital_gyozaikaikaku/index.html",
       "description": "デジタル行財政改革会議の基本方針、施策の推進状況および関係省庁間の連携・個別課題について審議する会議。",
-      "pastYearCount": 10,
+      "pastYearCount": 3,
       "isClosed": true
+    },
+    {
+      "id": "cas-digital_gyozaikaikaku_advisory",
+      "ministry": "CAS",
+      "category": "政策会議",
+      "name": "デジタル行財政改革アドバイザリーボード",
+      "officialUrl": "https://www.cas.go.jp/jp/seisaku/digital_gyozaikaikaku/index.html",
+      "pastYearCount": 0
+    },
+    {
+      "id": "cas-digital_gyozaikaikaku_data_system",
+      "ministry": "CAS",
+      "category": "政策会議",
+      "name": "データ利活用制度・システム検討会",
+      "officialUrl": "https://www.cas.go.jp/jp/seisaku/digital_gyozaikaikaku/index.html",
+      "pastYearCount": 3
+    },
+    {
+      "id": "cas-digital_gyozaikaikaku_dx_renraku",
+      "ministry": "CAS",
+      "category": "政策会議",
+      "name": "各府省庁DX推進連絡会議",
+      "officialUrl": "https://www.cas.go.jp/jp/seisaku/digital_gyozaikaikaku/index.html",
+      "pastYearCount": 2
+    },
+    {
+      "id": "cas-digital_gyozaikaikaku_kadai",
+      "ministry": "CAS",
+      "category": "政策会議",
+      "name": "デジタル行財政改革 課題発掘対話",
+      "officialUrl": "https://www.cas.go.jp/jp/seisaku/digital_gyozaikaikaku/index.html",
+      "pastYearCount": 1
+    },
+    {
+      "id": "cas-digital_gyozaikaikaku_kyoutsuu_junbi",
+      "ministry": "CAS",
+      "category": "政策会議",
+      "name": "国・地方デジタル共通基盤の整備・運用に向けた検討体制構築準備会合",
+      "officialUrl": "https://www.cas.go.jp/jp/seisaku/digital_gyozaikaikaku/index.html",
+      "pastYearCount": 0
+    },
+    {
+      "id": "cas-digital_gyozaikaikaku_kyoutsuu_kyougikai",
+      "ministry": "CAS",
+      "category": "政策会議",
+      "name": "国・地方デジタル共通基盤推進連絡協議会",
+      "officialUrl": "https://www.cas.go.jp/jp/seisaku/digital_gyozaikaikaku/index.html",
+      "pastYearCount": 9
+    },
+    {
+      "id": "cas-digital_gyozaikaikaku_seisaku_junbi",
+      "ministry": "CAS",
+      "category": "政策会議",
+      "name": "政策改善対話準備会合",
+      "officialUrl": "https://www.cas.go.jp/jp/seisaku/digital_gyozaikaikaku/index.html",
+      "pastYearCount": 0
+    },
+    {
+      "id": "cas-digital_gyozaikaikaku_seisaku_taiwa",
+      "ministry": "CAS",
+      "category": "政策会議",
+      "name": "政策改善対話",
+      "officialUrl": "https://www.cas.go.jp/jp/seisaku/digital_gyozaikaikaku/index.html",
+      "pastYearCount": 2
+    },
+    {
+      "id": "cas-digital_gyozaikaikaku_senryaku",
+      "ministry": "CAS",
+      "category": "政策会議",
+      "name": "デジタル行財政改革戦略チーム",
+      "officialUrl": "https://www.cas.go.jp/jp/seisaku/digital_gyozaikaikaku/index.html",
+      "pastYearCount": 0
+    },
+    {
+      "id": "cas-digital_gyozaikaikaku_startup",
+      "ministry": "CAS",
+      "category": "政策会議",
+      "name": "国・地方スタートアップ連携実務者会議",
+      "officialUrl": "https://www.cas.go.jp/jp/seisaku/digital_gyozaikaikaku/index.html",
+      "pastYearCount": 0
+    },
+    {
+      "id": "cas-digitalmarket_honbu",
+      "ministry": "CAS",
+      "category": "政策会議",
+      "name": "デジタル市場競争本部",
+      "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/digitalmarket/kaisai.html",
+      "pastYearCount": 0
+    },
+    {
+      "id": "cas-digitalmarket_kyosokaigi",
+      "ministry": "CAS",
+      "category": "政策会議",
+      "name": "デジタル市場競争会議",
+      "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/digitalmarket/kyosokaigi/index.html",
+      "pastYearCount": 0
+    },
+    {
+      "id": "cas-digitalmarket_trusted_web",
+      "ministry": "CAS",
+      "category": "政策会議",
+      "name": "Trusted Web推進協議会",
+      "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/digitalmarket/trusted_web/index.html",
+      "pastYearCount": 0
+    },
+    {
+      "id": "cas-digitalmarket_wg",
+      "ministry": "CAS",
+      "category": "政策会議",
+      "name": "デジタル市場競争会議 ワーキンググループ",
+      "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/digitalmarket/kyosokaigi_wg/index.html",
+      "pastYearCount": 0
     },
     {
       "id": "cas-doushuu",
@@ -18041,6 +18177,21 @@
       ]
     },
     {
+      "id": "cas-cybersecurity_kakuryokaigi-20261026-001",
+      "councilId": "cas-cybersecurity_kakuryokaigi",
+      "name": "第1回 サイバーセキュリティに関する関係閣僚会議",
+      "date": "2026/10/26",
+      "round": 1,
+      "officialUrl": "https://www.cas.go.jp/jp/seisaku/cybersecurity_kakuryokaigi/dai1/gijishidai.html",
+      "materials": [
+        {
+          "name": "議事次第・配布資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/cybersecurity_kakuryokaigi/dai1/gijishidai.html",
+          "type": "HTML"
+        }
+      ]
+    },
+    {
       "id": "cas-intelligent_features_kyoka-20261026-002",
       "councilId": "cas-intelligent_features_kyoka",
       "name": "第2回 インテリジェンス機能の強化に関する有識者会議",
@@ -32084,27 +32235,21 @@
       ]
     },
     {
-      "id": "cas-digital_gyozaikaikaku-20260820-007",
-      "councilId": "cas-digital_gyozaikaikaku",
-      "name": "第7回 デジタル行財政改革会議",
+      "id": "cas-digital_gyozaikaikaku_kyoutsuu_kyougikai-20260820-007",
+      "councilId": "cas-digital_gyozaikaikaku_kyoutsuu_kyougikai",
+      "name": "第7回 国・地方デジタル共通基盤推進連絡協議会",
       "date": "2026/08/20",
-      "officialUrl": "https://www.cas.go.jp/jp/seisaku/digital_gyozaikaikaku/kyotsu14/rk7.html",
+      "round": 7,
+      "officialUrl": "https://www.cas.go.jp/jp/seisaku/digital_gyozaikaikaku/kyotsu0/rk7_gijiyoushi.pdf",
       "materials": [
         {
-          "name": "共通化の対象選定に向けた令和8年度の対象候補の選定及び作業依頼について(案)(内閣官房デジタル行財政改革会議事務局提出資料)",
-          "url": "https://www.cas.go.jp/jp/seisaku/digital_gyozaikaikaku/kyotsu14/shiryou1.pdf"
+          "name": "議事次第・資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/digital_gyozaikaikaku/kyotsu14/rk7.html",
+          "type": "HTML"
         },
         {
-          "name": "国・地方デジタル共通基盤推進連絡協議会構成員",
-          "url": "https://www.cas.go.jp/jp/seisaku/digital_gyozaikaikaku/kyotsu14/sankou1.pdf"
-        },
-        {
-          "name": "共通化候補(令和8年度選定分(=第3クール分))案について(内閣官房デジタル行財政改革会議事務局提出資料)",
-          "url": "https://www.cas.go.jp/jp/seisaku/digital_gyozaikaikaku/kyotsu14/sankou2.pdf"
-        },
-        {
-          "name": "今後の進め方について(内閣官房デジタル行財政改革会議事務局提出資料)",
-          "url": "https://www.cas.go.jp/jp/seisaku/digital_gyozaikaikaku/kyotsu14/sankou3.pdf"
+          "name": "議事要旨",
+          "url": "https://www.cas.go.jp/jp/seisaku/digital_gyozaikaikaku/kyotsu0/rk7_gijiyoushi.pdf"
         }
       ]
     },
@@ -33494,27 +33639,21 @@
       ]
     },
     {
-      "id": "cas-digital_gyozaikaikaku-20260807-015",
-      "councilId": "cas-digital_gyozaikaikaku",
-      "name": "第15回 デジタル行財政改革会議",
+      "id": "cas-digital_gyozaikaikaku_kyoutsuu_kyougikai-20260807-015",
+      "councilId": "cas-digital_gyozaikaikaku_kyoutsuu_kyougikai",
+      "name": "第15回 国・地方デジタル共通基盤推進連絡協議会実務検討会",
       "date": "2026/08/07",
-      "officialUrl": "https://www.cas.go.jp/jp/seisaku/digital_gyozaikaikaku/kyotsuwt15/rkw15.html",
+      "round": 15,
+      "officialUrl": "https://www.cas.go.jp/jp/seisaku/digital_gyozaikaikaku/kyotsu0/rkw15_gijiyoushi.pdf",
       "materials": [
         {
-          "name": "共通化候補(令和8年度選定分(=第3クール分))案について(内閣官房デジタル行財政改革会議事務局提出資料)",
-          "url": "https://www.cas.go.jp/jp/seisaku/digital_gyozaikaikaku/kyotsuwt15/siryou1.pdf"
+          "name": "議事次第・資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/digital_gyozaikaikaku/kyotsuwt15/rkw15.html",
+          "type": "HTML"
         },
         {
-          "name": "共通化の対象選定に向けた令和8年度の対象候補の選定及び作業依頼について(案)(内閣官房デジタル行財政改革会議事務局提出資料)",
-          "url": "https://www.cas.go.jp/jp/seisaku/digital_gyozaikaikaku/kyotsuwt15/siryou2.pdf"
-        },
-        {
-          "name": "今後の進め方について(内閣官房デジタル行財政改革会議事務局提出資料)",
-          "url": "https://www.cas.go.jp/jp/seisaku/digital_gyozaikaikaku/kyotsuwt15/siryou3.pdf"
-        },
-        {
-          "name": "ワーキングチーム運営要領",
-          "url": "https://www.cas.go.jp/jp/seisaku/digital_gyozaikaikaku/kyotsuwt15/sankousiryou1.pdf"
+          "name": "議事要旨",
+          "url": "https://www.cas.go.jp/jp/seisaku/digital_gyozaikaikaku/kyotsu0/rkw15_gijiyoushi.pdf"
         }
       ]
     },
@@ -44935,6 +45074,25 @@
       ]
     },
     {
+      "id": "cas-digital_gyozaikaikaku_kyoutsuu_kyougikai-20260713-014",
+      "councilId": "cas-digital_gyozaikaikaku_kyoutsuu_kyougikai",
+      "name": "第14回 国・地方デジタル共通基盤推進連絡協議会実務検討会",
+      "date": "2026/07/13",
+      "round": 14,
+      "officialUrl": "https://www.cas.go.jp/jp/seisaku/digital_gyozaikaikaku/kyotsu0/rkw14_gijiyoushi.pdf",
+      "materials": [
+        {
+          "name": "議事次第・資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/digital_gyozaikaikaku/kyotsuwt14/rkw14.html",
+          "type": "HTML"
+        },
+        {
+          "name": "議事要旨",
+          "url": "https://www.cas.go.jp/jp/seisaku/digital_gyozaikaikaku/kyotsu0/rkw14_gijiyoushi.pdf"
+        }
+      ]
+    },
+    {
       "id": "cas-influenza-20260713-s01",
       "councilId": "cas-influenza",
       "name": "鳥インフルエンザ関係閣僚会議 関係府省庁連絡会議幹事会(令和8年7月13日)",
@@ -46237,57 +46395,19 @@
     {
       "id": "cas-digital_gyozaikaikaku-20260707-014",
       "councilId": "cas-digital_gyozaikaikaku",
-      "name": "デジタル行財政改革会議|内閣官房ホームページ",
+      "name": "第14回 デジタル行財政改革会議",
       "date": "2026/07/07",
+      "round": 14,
       "officialUrl": "https://www.cas.go.jp/jp/seisaku/digital_gyozaikaikaku/kaigi14/gijishidai14.html",
       "materials": [
         {
-          "name": "デジタル行財政改革担当大臣提出資料",
-          "url": "https://www.cas.go.jp/jp/seisaku/digital_gyozaikaikaku/kaigi14/kaigi14_siryou1.pdf"
+          "name": "議事次第・資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/digital_gyozaikaikaku/kaigi14/gijishidai14.html",
+          "type": "HTML"
         },
         {
-          "name": "総務大臣提出資料",
-          "url": "https://www.cas.go.jp/jp/seisaku/digital_gyozaikaikaku/kaigi14/kaigi14_siryou2.pdf"
-        },
-        {
-          "name": "経済産業大臣提出資料",
-          "url": "https://www.cas.go.jp/jp/seisaku/digital_gyozaikaikaku/kaigi14/kaigi14_siryou3.pdf"
-        },
-        {
-          "name": "国土交通大臣提出資料",
-          "url": "https://www.cas.go.jp/jp/seisaku/digital_gyozaikaikaku/kaigi14/kaigi14_siryou4.pdf"
-        },
-        {
-          "name": "厚生労働大臣提出資料",
-          "url": "https://www.cas.go.jp/jp/seisaku/digital_gyozaikaikaku/kaigi14/kaigi14_siryou5.pdf"
-        },
-        {
-          "name": "防災担当大臣提出資料",
-          "url": "https://www.cas.go.jp/jp/seisaku/digital_gyozaikaikaku/kaigi14/kaigi14_siryou6.pdf"
-        },
-        {
-          "name": "文部科学大臣提出資料",
-          "url": "https://www.cas.go.jp/jp/seisaku/digital_gyozaikaikaku/kaigi14/kaigi14_siryou7.pdf"
-        },
-        {
-          "name": "こども政策担当大臣提出資料",
-          "url": "https://www.cas.go.jp/jp/seisaku/digital_gyozaikaikaku/kaigi14/kaigi14_siryou8.pdf"
-        },
-        {
-          "name": "上野山構成員資料",
-          "url": "https://www.cas.go.jp/jp/seisaku/digital_gyozaikaikaku/kaigi14/kaigi14_siryou9.pdf"
-        },
-        {
-          "name": "佐藤構成員提出資料",
-          "url": "https://www.cas.go.jp/jp/seisaku/digital_gyozaikaikaku/kaigi14/kaigi14_siryou10.pdf"
-        },
-        {
-          "name": "宍戸構成員提出資料",
-          "url": "https://www.cas.go.jp/jp/seisaku/digital_gyozaikaikaku/kaigi14/kaigi14_siryou11.pdf"
-        },
-        {
-          "name": "デジタル行財政改革取りまとめ2026(案)",
-          "url": "https://www.cas.go.jp/jp/seisaku/digital_gyozaikaikaku/kaigi14/kaigi14_siryou12.pdf"
+          "name": "議事要旨・議事録",
+          "url": "https://www.cas.go.jp/jp/seisaku/digital_gyozaikaikaku/pdf/kaigi14_gijiroku.pdf"
         }
       ]
     },
@@ -60538,31 +60658,21 @@
       ]
     },
     {
-      "id": "cas-digital_gyozaikaikaku-20260608-006",
-      "councilId": "cas-digital_gyozaikaikaku",
-      "name": "第6回 デジタル行財政改革会議",
+      "id": "cas-digital_gyozaikaikaku_kyoutsuu_kyougikai-20260608-006",
+      "councilId": "cas-digital_gyozaikaikaku_kyoutsuu_kyougikai",
+      "name": "第6回 国・地方デジタル共通基盤推進連絡協議会",
       "date": "2026/06/08",
-      "officialUrl": "https://www.cas.go.jp/jp/seisaku/digital_gyozaikaikaku/kyotsu13/rk6.html",
+      "round": 6,
+      "officialUrl": "https://www.cas.go.jp/jp/seisaku/digital_gyozaikaikaku/kyotsu0/rk6_gijiyoushi.pdf",
       "materials": [
         {
-          "name": "共通化候補(令和7年度選定分(=第2クール分))等に係る検討の経緯について(内閣官房デジタル行財政改革会議事務局提出資料)",
-          "url": "https://www.cas.go.jp/jp/seisaku/digital_gyozaikaikaku/kyotsu13/shiryou1.pdf"
+          "name": "議事次第・資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/digital_gyozaikaikaku/kyotsu13/rk6.html",
+          "type": "HTML"
         },
         {
-          "name": "共通化推進方針案等について(案)(内閣官房デジタル行財政改革会議事務局提出資料)",
-          "url": "https://www.cas.go.jp/jp/seisaku/digital_gyozaikaikaku/kyotsu13/shiryou2.pdf"
-        },
-        {
-          "name": "共通化の対象選定に向けた令和7年度の対象候補の選定及び作業依頼について等(内閣官房デジタル行財政改革会議事務局提出資料)",
-          "url": "https://www.cas.go.jp/jp/seisaku/digital_gyozaikaikaku/kyotsu13/sankou1.pdf"
-        },
-        {
-          "name": "これまで地方自治体や国・地方デジタル共通基盤推進連絡協議会・同ワーキングチームから寄せられた意見等の整理(内閣官房デジタル行財政改革会議事務局提出資料)",
-          "url": "https://www.cas.go.jp/jp/seisaku/digital_gyozaikaikaku/kyotsu13/sankou2.pdf"
-        },
-        {
-          "name": "共通化推進方針等(見え消し)(案)(内閣官房デジタル行財政改革会議事務局提出資料)",
-          "url": "https://www.cas.go.jp/jp/seisaku/digital_gyozaikaikaku/kyotsu13/sankou3.pdf"
+          "name": "議事要旨",
+          "url": "https://www.cas.go.jp/jp/seisaku/digital_gyozaikaikaku/kyotsu0/rk6_gijiyoushi.pdf"
         }
       ]
     },
@@ -61315,6 +61425,25 @@
         {
           "name": "資料4",
           "url": "https://www.mof.go.jp/about_mof/councils/meeting_of_coin/20260604_4.pdf"
+        }
+      ]
+    },
+    {
+      "id": "cas-digital_gyozaikaikaku_dx_renraku-20260603-005",
+      "councilId": "cas-digital_gyozaikaikaku_dx_renraku",
+      "name": "第5回 各府省庁DX推進連絡会議",
+      "date": "2026/06/03",
+      "round": 5,
+      "officialUrl": "https://www.cas.go.jp/jp/seisaku/digital_gyozaikaikaku/pdf/kakusyoDX5_gaiyou.pdf",
+      "materials": [
+        {
+          "name": "議題等",
+          "url": "https://www.cas.go.jp/jp/seisaku/digital_gyozaikaikaku/kakusyoDX5/kakusyoDX5.html",
+          "type": "HTML"
+        },
+        {
+          "name": "議事要旨",
+          "url": "https://www.cas.go.jp/jp/seisaku/digital_gyozaikaikaku/pdf/kakusyoDX5_gaiyou.pdf"
         }
       ]
     },
@@ -65104,35 +65233,21 @@
       ]
     },
     {
-      "id": "cas-digital_gyozaikaikaku-20260519-013",
-      "councilId": "cas-digital_gyozaikaikaku",
-      "name": "第13回 デジタル行財政改革会議",
+      "id": "cas-digital_gyozaikaikaku_kyoutsuu_kyougikai-20260519-013",
+      "councilId": "cas-digital_gyozaikaikaku_kyoutsuu_kyougikai",
+      "name": "第13回 国・地方デジタル共通基盤推進連絡協議会実務検討会",
       "date": "2026/05/19",
-      "officialUrl": "https://www.cas.go.jp/jp/seisaku/digital_gyozaikaikaku/kyotsuwt13/rkw13.html",
+      "round": 13,
+      "officialUrl": "https://www.cas.go.jp/jp/seisaku/digital_gyozaikaikaku/kyotsu0/rkw13_gijiyoushi.pdf",
       "materials": [
         {
-          "name": "共通化推進方針案等に対する地方自治体からの意見等を踏まえた修正意見及び制度所管府省庁からの回答について(内閣官房デジタル行財政改革会議事務局提出資料)",
-          "url": "https://www.cas.go.jp/jp/seisaku/digital_gyozaikaikaku/kyotsuwt13/siryou1.pdf"
+          "name": "議事次第・資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/digital_gyozaikaikaku/kyotsuwt13/rkw13.html",
+          "type": "HTML"
         },
         {
-          "name": "制度所管省庁との協議後の共通化推進方針案等(見え消し)(内閣官房デジタル行財政改革会議事務局提出資料)(PD2,446KB)",
-          "url": "https://www.cas.go.jp/jp/seisaku/digital_gyozaikaikaku/kyotsuwt13/siryou2.pdf"
-        },
-        {
-          "name": "共通化推進方針等について(案)(内閣官房デジタル行財政改革会議事務局提出資料)",
-          "url": "https://www.cas.go.jp/jp/seisaku/digital_gyozaikaikaku/kyotsuwt13/siryou3.pdf"
-        },
-        {
-          "name": "「共通化候補(令和7年度選定分)」等に係る共通化推進方針案等について(協議前)(内閣官房デジタル行財政改革会議事務局提出資料)",
-          "url": "https://www.cas.go.jp/jp/seisaku/digital_gyozaikaikaku/kyotsuwt13/sankousiryou1.pdf"
-        },
-        {
-          "name": "共通化候補(令和7年度選定分)等に係る共通化推進方針案等への同意に当たっての考え方について(内閣官房デジタル行財政改革会議事務局提出資料)",
-          "url": "https://www.cas.go.jp/jp/seisaku/digital_gyozaikaikaku/kyotsuwt13/sankousiryou2.pdf"
-        },
-        {
-          "name": "これまで地方自治体や国・地方デジタル共通基盤推進連絡協議会・同ワーキングチームから寄せられた意見等の整理(内閣官房デジタル行財政改革会議事務局提出資料)",
-          "url": "https://www.cas.go.jp/jp/seisaku/digital_gyozaikaikaku/kyotsuwt13/sankousiryou3.pdf"
+          "name": "議事要旨",
+          "url": "https://www.cas.go.jp/jp/seisaku/digital_gyozaikaikaku/kyotsu0/rkw13_gijiyoushi.pdf"
         }
       ]
     },
@@ -70266,43 +70381,21 @@
       ]
     },
     {
-      "id": "cas-digital_gyozaikaikaku-20260423-012",
-      "councilId": "cas-digital_gyozaikaikaku",
-      "name": "第12回 デジタル行財政改革会議",
+      "id": "cas-digital_gyozaikaikaku_kyoutsuu_kyougikai-20260423-012",
+      "councilId": "cas-digital_gyozaikaikaku_kyoutsuu_kyougikai",
+      "name": "第12回 国・地方デジタル共通基盤推進連絡協議会実務検討会",
       "date": "2026/04/23",
-      "officialUrl": "https://www.cas.go.jp/jp/seisaku/digital_gyozaikaikaku/kyotsuwt12/rkw12.html",
+      "round": 12,
+      "officialUrl": "https://www.cas.go.jp/jp/seisaku/digital_gyozaikaikaku/kyotsu0/rkw12_gijiyoushi.pdf",
       "materials": [
         {
-          "name": "共通化候補(令和7年度選定分)等に係る共通化推進方針案等に対する地方自治体からの意見等について(内閣官房デジタル行財政改革会議事務局提出資料)",
-          "url": "https://www.cas.go.jp/jp/seisaku/digital_gyozaikaikaku/kyotsuwt12/siryou1.pdf"
+          "name": "議事次第・資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/digital_gyozaikaikaku/kyotsuwt12/rkw12.html",
+          "type": "HTML"
         },
         {
-          "name": "共通化候補(令和7年度選定分)等に係る共通化推進方針案等への同意に当たっての考え方について(案)(内閣官房デジタル行財政改革会議事務局提出資料)",
-          "url": "https://www.cas.go.jp/jp/seisaku/digital_gyozaikaikaku/kyotsuwt12/siryou2.pdf"
-        },
-        {
-          "name": "これまで地方自治体や国・地方デジタル共通基盤推進連絡協議会・同ワーキングチームから寄せられた意見等の整理(案)(内閣官房デジタル行財政改革会議事務局提出資料)",
-          "url": "https://www.cas.go.jp/jp/seisaku/digital_gyozaikaikaku/kyotsuwt12/siryou3.pdf"
-        },
-        {
-          "name": "共通化推進方針案等に対する地方自治体からの意見等を踏まえた修正意見(案)(内閣官房デジタル行財政改革会議事務局提出資料)",
-          "url": "https://www.cas.go.jp/jp/seisaku/digital_gyozaikaikaku/kyotsuwt12/siryou4.pdf"
-        },
-        {
-          "name": "共通化推進方針案の修正案の全体像(見え消し)について(職務上請求システム・自動車臨時運行許可申請システム)(内閣官房デジタル行財政改革会議事務局提出資料",
-          "url": "https://www.cas.go.jp/jp/seisaku/digital_gyozaikaikaku/kyotsuwt12/siryou5.pdf"
-        },
-        {
-          "name": "ワーキングチーム運営要領",
-          "url": "https://www.cas.go.jp/jp/seisaku/digital_gyozaikaikaku/kyotsuwt12/sankousiryou1.pdf"
-        },
-        {
-          "name": "共通化の対象選定に向けた令和7年度の対象候補の選定及び作業依頼について",
-          "url": "https://www.cas.go.jp/jp/seisaku/digital_gyozaikaikaku/kyotsuwt12/sankousiryou2.pdf"
-        },
-        {
-          "name": "「共通化候補(令和7年度選定分)」等に係る共通化推進方針案等について",
-          "url": "https://www.cas.go.jp/jp/seisaku/digital_gyozaikaikaku/kyotsuwt12/sankousiryou3.pdf"
+          "name": "議事要旨",
+          "url": "https://www.cas.go.jp/jp/seisaku/digital_gyozaikaikaku/kyotsu0/rkw12_gijiyoushi.pdf"
         }
       ]
     },
@@ -71856,6 +71949,25 @@
         {
           "name": "議事録",
           "url": "https://www.meti.go.jp/shingikai/energy_environment/doji_shijo_kento/pdf/023_gijiroku.pdf"
+        }
+      ]
+    },
+    {
+      "id": "cas-digital_gyozaikaikaku-20260420-013",
+      "councilId": "cas-digital_gyozaikaikaku",
+      "name": "第13回 デジタル行財政改革会議",
+      "date": "2026/04/20",
+      "round": 13,
+      "officialUrl": "https://www.cas.go.jp/jp/seisaku/digital_gyozaikaikaku/kaigi13/gijishidai13.html",
+      "materials": [
+        {
+          "name": "議事次第・資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/digital_gyozaikaikaku/kaigi13/gijishidai13.html",
+          "type": "HTML"
+        },
+        {
+          "name": "議事要旨・議事録",
+          "url": "https://www.cas.go.jp/jp/seisaku/digital_gyozaikaikaku/pdf/kaigi13_gijiroku.pdf"
         }
       ]
     },
@@ -76316,6 +76428,21 @@
       ]
     },
     {
+      "id": "cas-digital_gyozaikaikaku_dx_renraku-20260331-004",
+      "councilId": "cas-digital_gyozaikaikaku_dx_renraku",
+      "name": "第4回 各府省庁DX推進連絡会議",
+      "date": "2026/03/31",
+      "round": 4,
+      "officialUrl": "https://www.cas.go.jp/jp/seisaku/digital_gyozaikaikaku/index.html",
+      "materials": [
+        {
+          "name": "議題等",
+          "url": "https://www.cas.go.jp/jp/seisaku/digital_gyozaikaikaku/kakusyoDX4/kakusyoDX4.html",
+          "type": "HTML"
+        }
+      ]
+    },
+    {
       "id": "cas-gyousei_kaikaku-20260331-003",
       "councilId": "cas-gyousei_kaikaku",
       "name": "第3回 行政改革推進会議",
@@ -78336,15 +78463,40 @@
       ]
     },
     {
-      "id": "cas-digital_gyozaikaikaku-20260326-011",
-      "councilId": "cas-digital_gyozaikaikaku",
-      "name": "第11回 デジタル行財政改革会議",
+      "id": "cas-digital_gyozaikaikaku_kadai-20260326-010",
+      "councilId": "cas-digital_gyozaikaikaku_kadai",
+      "name": "第10回 課題発掘対話 デジタル行財政改革",
       "date": "2026/03/26",
-      "officialUrl": "https://www.cas.go.jp/jp/seisaku/digital_gyozaikaikaku/kyotsuwt11/rkw11.html",
+      "round": 10,
+      "officialUrl": "https://www.cas.go.jp/jp/seisaku/digital_gyozaikaikaku/pdf/taiwa10_graphic.pdf",
       "materials": [
         {
-          "name": "国・地方デジタル共通基盤の整備・運用における社会福祉施設等に対する指導検査業務システムに関する検証について(デジタル庁提出資料)",
-          "url": "https://www.cas.go.jp/jp/seisaku/digital_gyozaikaikaku/kyotsuwt11/siryou1.pdf"
+          "name": "議題・資料等",
+          "url": "https://www.cas.go.jp/jp/seisaku/digital_gyozaikaikaku/taiwa10/taiwa10.html",
+          "type": "HTML"
+        },
+        {
+          "name": "概要",
+          "url": "https://www.cas.go.jp/jp/seisaku/digital_gyozaikaikaku/pdf/taiwa10_graphic.pdf"
+        }
+      ]
+    },
+    {
+      "id": "cas-digital_gyozaikaikaku_kyoutsuu_kyougikai-20260326-011",
+      "councilId": "cas-digital_gyozaikaikaku_kyoutsuu_kyougikai",
+      "name": "第11回 国・地方デジタル共通基盤推進連絡協議会実務検討会",
+      "date": "2026/03/26",
+      "round": 11,
+      "officialUrl": "https://www.cas.go.jp/jp/seisaku/digital_gyozaikaikaku/kyotsu0/rkw11_gijiyoushi.pdf",
+      "materials": [
+        {
+          "name": "議事次第・資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/digital_gyozaikaikaku/kyotsuwt11/rkw11.html",
+          "type": "HTML"
+        },
+        {
+          "name": "議事要旨",
+          "url": "https://www.cas.go.jp/jp/seisaku/digital_gyozaikaikaku/kyotsu0/rkw11_gijiyoushi.pdf"
         }
       ]
     },
@@ -82834,6 +82986,25 @@
         {
           "name": "議事録",
           "url": "https://www.cao.go.jp/consumer/content/093_260317_gijiroku.pdf"
+        }
+      ]
+    },
+    {
+      "id": "cas-digital_gyozaikaikaku_seisaku_taiwa-20260317-006",
+      "councilId": "cas-digital_gyozaikaikaku_seisaku_taiwa",
+      "name": "第6回 政策改善対話 デジタル行財政改革",
+      "date": "2026/03/17",
+      "round": 6,
+      "officialUrl": "https://www.cas.go.jp/jp/seisaku/digital_gyozaikaikaku/kaizentaiwa6/kaizentaiwa6_gijiroku.pdf",
+      "materials": [
+        {
+          "name": "議題・資料等",
+          "url": "https://www.cas.go.jp/jp/seisaku/digital_gyozaikaikaku/kaizentaiwa6/kaizentaiwa6.html",
+          "type": "HTML"
+        },
+        {
+          "name": "議事要旨",
+          "url": "https://www.cas.go.jp/jp/seisaku/digital_gyozaikaikaku/kaizentaiwa6/kaizentaiwa6_gijiroku.pdf"
         }
       ]
     },
@@ -89688,19 +89859,21 @@
       ]
     },
     {
-      "id": "cas-digital_gyozaikaikaku-20260303-010",
-      "councilId": "cas-digital_gyozaikaikaku",
-      "name": "第10回 デジタル行財政改革会議",
+      "id": "cas-digital_gyozaikaikaku_kyoutsuu_kyougikai-20260303-010",
+      "councilId": "cas-digital_gyozaikaikaku_kyoutsuu_kyougikai",
+      "name": "第10回 国・地方デジタル共通基盤推進連絡協議会実務検討会",
       "date": "2026/03/03",
-      "officialUrl": "https://www.cas.go.jp/jp/seisaku/digital_gyozaikaikaku/kyotsuwt10/rkw10.html",
+      "round": 10,
+      "officialUrl": "https://www.cas.go.jp/jp/seisaku/digital_gyozaikaikaku/kyotsu0/rkw10_gijiyoushi.pdf",
       "materials": [
         {
-          "name": "自治体情報システムの標準化・ガバメントクラウド移行後の運用経費に係る総合的な対策の取り組み状況について(デジタル庁提出資料)",
-          "url": "https://www.cas.go.jp/jp/seisaku/digital_gyozaikaikaku/kyotsuwt10/siryou1.pdf"
+          "name": "議事次第・資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/digital_gyozaikaikaku/kyotsuwt10/rkw10.html",
+          "type": "HTML"
         },
         {
-          "name": "地方公共団体情報システム運用最適化支援事業費補助金について(デジタル庁提出資料)",
-          "url": "https://www.cas.go.jp/jp/seisaku/digital_gyozaikaikaku/kyotsuwt10/siryou2.pdf"
+          "name": "議事要旨",
+          "url": "https://www.cas.go.jp/jp/seisaku/digital_gyozaikaikaku/kyotsu0/rkw10_gijiyoushi.pdf"
         }
       ]
     },
@@ -97865,31 +98038,21 @@
       ]
     },
     {
-      "id": "cas-digital_gyozaikaikaku-20260204-009",
-      "councilId": "cas-digital_gyozaikaikaku",
-      "name": "第9回 デジタル行財政改革会議",
+      "id": "cas-digital_gyozaikaikaku_kyoutsuu_kyougikai-20260204-009",
+      "councilId": "cas-digital_gyozaikaikaku_kyoutsuu_kyougikai",
+      "name": "第9回 国・地方デジタル共通基盤推進連絡協議会実務検討会",
       "date": "2026/02/04",
-      "officialUrl": "https://www.cas.go.jp/jp/seisaku/digital_gyozaikaikaku/kyotsuwt9/rkw9.html",
+      "round": 9,
+      "officialUrl": "https://www.cas.go.jp/jp/seisaku/digital_gyozaikaikaku/kyotsu0/rkw9_gijiyoushi.pdf",
       "materials": [
         {
-          "name": "共通化対象(令和7年度決定分)の進捗報告の概要について(内閣官房デジタル行財政改革会議事務局提出資料)",
-          "url": "https://www.cas.go.jp/jp/seisaku/digital_gyozaikaikaku/kyotsuwt9/siryou1-1.pdf"
+          "name": "議事次第・資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/digital_gyozaikaikaku/kyotsuwt9/rkw9.html",
+          "type": "HTML"
         },
         {
-          "name": "共通化対象(令和7年度決定分)の進捗報告について(内閣官房デジタル行財政改革会議事務局提出資料) ​(EXCEL883KB)",
-          "url": "https://www.cas.go.jp/jp/seisaku/digital_gyozaikaikaku/kyotsuwt9/siryou1-2.xlsx"
-        },
-        {
-          "name": "共通化候補(令和7年度選定分)の「土木施設に関する住民からの通報等システム」について(内閣官房デジタル行財政改革会議事務局提出資料)",
-          "url": "https://www.cas.go.jp/jp/seisaku/digital_gyozaikaikaku/kyotsuwt9/siryou2.pdf"
-        },
-        {
-          "name": "共通化候補(令和8年度選定分)の選定に向けた今後の進め方について(内閣官房デジタル行財政改革会議事務局提出資料)",
-          "url": "https://www.cas.go.jp/jp/seisaku/digital_gyozaikaikaku/kyotsuwt9/siryou3.pdf"
-        },
-        {
-          "name": "ワーキングチーム運営要領",
-          "url": "https://www.cas.go.jp/jp/seisaku/digital_gyozaikaikaku/kyotsuwt9/sankousiryou.pdf"
+          "name": "議事要旨",
+          "url": "https://www.cas.go.jp/jp/seisaku/digital_gyozaikaikaku/kyotsu0/rkw9_gijiyoushi.pdf"
         }
       ]
     },
@@ -100982,27 +101145,21 @@
       ]
     },
     {
-      "id": "cas-digital_gyozaikaikaku-20260127-016",
-      "councilId": "cas-digital_gyozaikaikaku",
-      "name": "第16回 デジタル行財政改革会議",
+      "id": "cas-digital_gyozaikaikaku_data_system-20260127-016",
+      "councilId": "cas-digital_gyozaikaikaku_data_system",
+      "name": "第16回 データ利活用制度・システム検討会",
       "date": "2026/01/27",
-      "officialUrl": "https://www.cas.go.jp/jp/seisaku/digital_gyozaikaikaku/data16/data16.html",
+      "round": 16,
+      "officialUrl": "https://www.cas.go.jp/jp/seisaku/digital_gyozaikaikaku/pdf/data16_giji.pdf",
       "materials": [
         {
-          "name": "事務局提出資料",
-          "url": "https://www.cas.go.jp/jp/seisaku/digital_gyozaikaikaku/data16/data16_siryou1.pdf"
+          "name": "議事次第・資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/digital_gyozaikaikaku/data16/data16.html",
+          "type": "HTML"
         },
         {
-          "name": "個人情報保護委員会事務局提出資料",
-          "url": "https://www.cas.go.jp/jp/seisaku/digital_gyozaikaikaku/data16/data16_siryou2.pdf"
-        },
-        {
-          "name": "参加者名簿",
-          "url": "https://www.cas.go.jp/jp/seisaku/digital_gyozaikaikaku/data16/data16_siryou3.pdf"
-        },
-        {
-          "name": "個人情報保護委員会事務局提出補足説明資料",
-          "url": "https://www.cas.go.jp/jp/seisaku/digital_gyozaikaikaku/data16/data16_sankousiryou.pdf"
+          "name": "議事要旨",
+          "url": "https://www.cas.go.jp/jp/seisaku/digital_gyozaikaikaku/pdf/data16_giji.pdf"
         }
       ]
     },
@@ -108045,6 +108202,25 @@
       ]
     },
     {
+      "id": "cas-digital_gyozaikaikaku-20251224-012",
+      "councilId": "cas-digital_gyozaikaikaku",
+      "name": "第12回 デジタル行財政改革会議",
+      "date": "2025/12/24",
+      "round": 12,
+      "officialUrl": "https://www.cas.go.jp/jp/seisaku/digital_gyozaikaikaku/kaigi12/gijishidai12.html",
+      "materials": [
+        {
+          "name": "議事次第・資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/digital_gyozaikaikaku/kaigi12/gijishidai12.html",
+          "type": "HTML"
+        },
+        {
+          "name": "議事要旨・議事録",
+          "url": "https://www.cas.go.jp/jp/seisaku/digital_gyozaikaikaku/pdf/kaigi12_gijiroku.pdf"
+        }
+      ]
+    },
+    {
       "id": "cas-influenza-20251224-s01",
       "councilId": "cas-influenza",
       "name": "鳥インフルエンザ関係閣僚会議 関係府省庁連絡会議[持ち回り](令和7年12月24日)",
@@ -112144,6 +112320,25 @@
       ]
     },
     {
+      "id": "cas-digital_gyozaikaikaku_seisaku_taiwa-20251215-005",
+      "councilId": "cas-digital_gyozaikaikaku_seisaku_taiwa",
+      "name": "第5回 政策改善対話 デジタル行財政改革",
+      "date": "2025/12/15",
+      "round": 5,
+      "officialUrl": "https://www.cas.go.jp/jp/seisaku/digital_gyozaikaikaku/kaizentaiwa5/kaizentaiwa5_gijiroku.pdf",
+      "materials": [
+        {
+          "name": "議題・資料等",
+          "url": "https://www.cas.go.jp/jp/seisaku/digital_gyozaikaikaku/kaizentaiwa5/kaizentaiwa5.html",
+          "type": "HTML"
+        },
+        {
+          "name": "議事要旨",
+          "url": "https://www.cas.go.jp/jp/seisaku/digital_gyozaikaikaku/kaizentaiwa5/kaizentaiwa5_gijiroku.pdf"
+        }
+      ]
+    },
+    {
       "id": "fdma-shoubou_cyber_security-20251215-002",
       "councilId": "fdma-shoubou_cyber_security",
       "name": "令和7年度 第2回 水素等のGX新技術に係る危険物規制に関する検討会",
@@ -116120,6 +116315,25 @@
       ]
     },
     {
+      "id": "cas-digital_gyozaikaikaku_data_system-20251202-015",
+      "councilId": "cas-digital_gyozaikaikaku_data_system",
+      "name": "第15回 データ利活用制度・システム検討会",
+      "date": "2025/12/02",
+      "round": 15,
+      "officialUrl": "https://www.cas.go.jp/jp/seisaku/digital_gyozaikaikaku/pdf/data15_giji.pdf",
+      "materials": [
+        {
+          "name": "議事次第・資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/digital_gyozaikaikaku/data15/data15.html",
+          "type": "HTML"
+        },
+        {
+          "name": "議事要旨",
+          "url": "https://www.cas.go.jp/jp/seisaku/digital_gyozaikaikaku/pdf/data15_giji.pdf"
+        }
+      ]
+    },
+    {
       "id": "cas-influenza-20251202-s01",
       "councilId": "cas-influenza",
       "name": "鳥インフルエンザ関係閣僚会議 関係府省庁連絡会議[持ち回り](令和7年12月2日)",
@@ -120024,6 +120238,25 @@
         {
           "name": "議事要旨",
           "url": "https://www5.cao.go.jp/kanshi/kaisai/pdf/kaisai/dai216kai/youshi.pdf"
+        }
+      ]
+    },
+    {
+      "id": "cas-digital_gyozaikaikaku_data_system-20251117-014",
+      "councilId": "cas-digital_gyozaikaikaku_data_system",
+      "name": "第14回 データ利活用制度・システム検討会",
+      "date": "2025/11/17",
+      "round": 14,
+      "officialUrl": "https://www.cas.go.jp/jp/seisaku/digital_gyozaikaikaku/pdf/data14_giji.pdf",
+      "materials": [
+        {
+          "name": "議事次第・資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/digital_gyozaikaikaku/data14/data14.html",
+          "type": "HTML"
+        },
+        {
+          "name": "議事要旨",
+          "url": "https://www.cas.go.jp/jp/seisaku/digital_gyozaikaikaku/pdf/data14_giji.pdf"
         }
       ]
     },
@@ -131429,6 +131662,25 @@
       ]
     },
     {
+      "id": "cas-digital_gyozaikaikaku_data_system-20251002-013",
+      "councilId": "cas-digital_gyozaikaikaku_data_system",
+      "name": "第13回 データ利活用制度・システム検討会",
+      "date": "2025/10/02",
+      "round": 13,
+      "officialUrl": "https://www.cas.go.jp/jp/seisaku/digital_gyozaikaikaku/pdf/data13_giji.pdf",
+      "materials": [
+        {
+          "name": "議事次第・資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/digital_gyozaikaikaku/data13/data13.html",
+          "type": "HTML"
+        },
+        {
+          "name": "議事要旨",
+          "url": "https://www.cas.go.jp/jp/seisaku/digital_gyozaikaikaku/pdf/data13_giji.pdf"
+        }
+      ]
+    },
+    {
       "id": "digital-400-20251002-010",
       "councilId": "digital-400",
       "name": "第10回 コンプライアンス委員会",
@@ -132951,35 +133203,21 @@
       ]
     },
     {
-      "id": "cas-digital_gyozaikaikaku-20250926-005",
-      "councilId": "cas-digital_gyozaikaikaku",
-      "name": "第5回 デジタル行財政改革会議",
+      "id": "cas-digital_gyozaikaikaku_kyoutsuu_kyougikai-20250926-005",
+      "councilId": "cas-digital_gyozaikaikaku_kyoutsuu_kyougikai",
+      "name": "第5回 国・地方デジタル共通基盤推進連絡協議会",
       "date": "2025/09/26",
-      "officialUrl": "https://www.cas.go.jp/jp/seisaku/digital_gyozaikaikaku/kyotsu11/rk5.html",
+      "round": 5,
+      "officialUrl": "https://www.cas.go.jp/jp/seisaku/digital_gyozaikaikaku/kyotsu0/rk5_gijiyoushi.pdf",
       "materials": [
         {
-          "name": "共通化の対象選定に向けた令和7年度の対象候補の選定及び作業依頼について(案)(内閣官房デジタル行財政改革会議事務局提出資料)",
-          "url": "https://www.cas.go.jp/jp/seisaku/digital_gyozaikaikaku/kyotsu11/shiryou1.pdf"
+          "name": "議事次第・資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/digital_gyozaikaikaku/kyotsu11/rk5.html",
+          "type": "HTML"
         },
         {
-          "name": "愛知県一宮市提出資料",
-          "url": "https://www.cas.go.jp/jp/seisaku/digital_gyozaikaikaku/kyotsu11/shiryou2.pdf"
-        },
-        {
-          "name": "共通化候補(令和7年度選定分)案について(内閣官房デジタル行財政改革会議事務局提出資料)",
-          "url": "https://www.cas.go.jp/jp/seisaku/digital_gyozaikaikaku/kyotsu11/sankou1.pdf"
-        },
-        {
-          "name": "共通化候補(令和7年度選定分)案に対する地方自治体からの意見等の概要について(内閣官房デジタル行財政改革会議事務局提出資料)",
-          "url": "https://www.cas.go.jp/jp/seisaku/digital_gyozaikaikaku/kyotsu11/sankou2-1.pdf"
-        },
-        {
-          "name": "共通化候補(令和7年度選定分)案に対する地方自治体からの意見について(内閣官房デジタル行財政改革会議事務局提出資料)",
-          "url": "https://www.cas.go.jp/jp/seisaku/digital_gyozaikaikaku/kyotsu11/sankou2-2.pdf"
-        },
-        {
-          "name": "今後の進め方について(内閣官房デジタル行財政改革会議事務局提出資料)",
-          "url": "https://www.cas.go.jp/jp/seisaku/digital_gyozaikaikaku/kyotsu11/sankou3.pdf"
+          "name": "議事要旨",
+          "url": "https://www.cas.go.jp/jp/seisaku/digital_gyozaikaikaku/kyotsu0/rk5_gijiyoushi.pdf"
         }
       ]
     },
@@ -134659,31 +134897,40 @@
       ]
     },
     {
-      "id": "cas-digital_gyozaikaikaku-20250919-008",
-      "councilId": "cas-digital_gyozaikaikaku",
-      "name": "第8回 デジタル行財政改革会議",
+      "id": "cas-digital_global_kakuryokaigi-20250919-004",
+      "councilId": "cas-digital_global_kakuryokaigi",
+      "name": "第4回 デジタル関連産業のグローバル化促進のための関係閣僚会議",
       "date": "2025/09/19",
-      "officialUrl": "https://www.cas.go.jp/jp/seisaku/digital_gyozaikaikaku/kyotsuwt8/rkw8.html",
+      "round": 4,
+      "officialUrl": "https://www.cas.go.jp/jp/seisaku/digital_global_kakuryokaigi/dai4/gijiyoshi.pdf",
       "materials": [
         {
-          "name": "共通化候補(令和7年度選定分)案に対する地方自治体からの意見等の概要について(内閣官房デジタル行財政改革会議事務局提出資料)",
-          "url": "https://www.cas.go.jp/jp/seisaku/digital_gyozaikaikaku/kyotsuwt8/siryou1-1.pdf"
+          "name": "議事次第・資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/digital_global_kakuryokaigi/dai4/siryou.html",
+          "type": "HTML"
         },
         {
-          "name": "共通化候補(令和7年度選定分)案に対する地方自治体からの意見について(内閣官房デジタル行財政改革会議事務局提出資料) ​",
-          "url": "https://www.cas.go.jp/jp/seisaku/digital_gyozaikaikaku/kyotsuwt8/siryou1-2.pdf"
+          "name": "議事要旨",
+          "url": "https://www.cas.go.jp/jp/seisaku/digital_global_kakuryokaigi/dai4/gijiyoshi.pdf"
+        }
+      ]
+    },
+    {
+      "id": "cas-digital_gyozaikaikaku_kyoutsuu_kyougikai-20250919-008",
+      "councilId": "cas-digital_gyozaikaikaku_kyoutsuu_kyougikai",
+      "name": "第8回 国・地方デジタル共通基盤推進連絡協議会実務検討会",
+      "date": "2025/09/19",
+      "round": 8,
+      "officialUrl": "https://www.cas.go.jp/jp/seisaku/digital_gyozaikaikaku/kyotsu0/rkw8_gijiyoushi.pdf",
+      "materials": [
+        {
+          "name": "議事次第・資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/digital_gyozaikaikaku/kyotsuwt8/rkw8.html",
+          "type": "HTML"
         },
         {
-          "name": "共通化の対象選定に向けた令和7年度の対象候補の選定及び作業依頼について(案)(内閣官房デジタル行財政改革会議事務局提出資料)",
-          "url": "https://www.cas.go.jp/jp/seisaku/digital_gyozaikaikaku/kyotsuwt8/siryou2.pdf"
-        },
-        {
-          "name": "今後の進め方について(内閣官房デジタル行財政改革会議事務局提出資料)",
-          "url": "https://www.cas.go.jp/jp/seisaku/digital_gyozaikaikaku/kyotsuwt8/siryou3.pdf"
-        },
-        {
-          "name": "都道府県を中心とした自治体システムの共同調達の推進に向けたウェブページの更新等について(内閣官房デジタル行財政改革会議事務局提出資料)​",
-          "url": "https://www.cas.go.jp/jp/seisaku/digital_gyozaikaikaku/kyotsuwt8/siryou4.pdf"
+          "name": "議事要旨",
+          "url": "https://www.cas.go.jp/jp/seisaku/digital_gyozaikaikaku/kyotsu0/rkw8_gijiyoushi.pdf"
         }
       ]
     },
@@ -136641,6 +136888,25 @@
         {
           "name": "議事要旨",
           "url": "https://www.meti.go.jp/shingikai/energy_environment/jisedai_bunsan/pdf/013_gijiyoshi.pdf"
+        }
+      ]
+    },
+    {
+      "id": "cas-digital_global_kakuryokaigi-20250908-003",
+      "councilId": "cas-digital_global_kakuryokaigi",
+      "name": "第3回 デジタル関連産業のグローバル化促進のための関係閣僚会議",
+      "date": "2025/09/08",
+      "round": 3,
+      "officialUrl": "https://www.cas.go.jp/jp/seisaku/digital_global_kakuryokaigi/dai3/gijiyoshi.pdf",
+      "materials": [
+        {
+          "name": "議事次第・資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/digital_global_kakuryokaigi/dai3/siryou.html",
+          "type": "HTML"
+        },
+        {
+          "name": "議事要旨",
+          "url": "https://www.cas.go.jp/jp/seisaku/digital_global_kakuryokaigi/dai3/gijiyoshi.pdf"
         }
       ]
     },
@@ -139160,6 +139426,25 @@
       ]
     },
     {
+      "id": "cas-digital_global_kakuryokaigi-20250827-002",
+      "councilId": "cas-digital_global_kakuryokaigi",
+      "name": "第2回 デジタル関連産業のグローバル化促進のための関係閣僚会議",
+      "date": "2025/08/27",
+      "round": 2,
+      "officialUrl": "https://www.cas.go.jp/jp/seisaku/digital_global_kakuryokaigi/dai2/gijiyoshi.pdf",
+      "materials": [
+        {
+          "name": "議事次第・資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/digital_global_kakuryokaigi/dai2/siryou.html",
+          "type": "HTML"
+        },
+        {
+          "name": "議事要旨",
+          "url": "https://www.cas.go.jp/jp/seisaku/digital_global_kakuryokaigi/dai2/gijiyoshi.pdf"
+        }
+      ]
+    },
+    {
       "id": "cas-kenkou_iryou_suisinkaigi-20250827-040",
       "councilId": "cas-kenkou_iryou_suisinkaigi",
       "name": "第40回 健康・医療戦略推進会議",
@@ -139629,27 +139914,21 @@
       ]
     },
     {
-      "id": "cas-digital_gyozaikaikaku-20250825-004",
-      "councilId": "cas-digital_gyozaikaikaku",
-      "name": "第4回 デジタル行財政改革会議",
+      "id": "cas-digital_gyozaikaikaku_kyoutsuu_kyougikai-20250825-004",
+      "councilId": "cas-digital_gyozaikaikaku_kyoutsuu_kyougikai",
+      "name": "第4回 国・地方デジタル共通基盤推進連絡協議会",
       "date": "2025/08/25",
-      "officialUrl": "https://www.cas.go.jp/jp/seisaku/digital_gyozaikaikaku/kyotsu10/rk4.html",
+      "round": 4,
+      "officialUrl": "https://www.cas.go.jp/jp/seisaku/digital_gyozaikaikaku/kyotsu0/rk4_gijiyoushi.pdf",
       "materials": [
         {
-          "name": "共通化の対象選定に向けた令和7年度の対象候補の選定及び作業依頼について(案)(内閣官房デジタル行財政改革会議事務局提出資料)",
-          "url": "https://www.cas.go.jp/jp/seisaku/digital_gyozaikaikaku/kyotsu10/shiryou1.pdf"
+          "name": "議事次第・資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/digital_gyozaikaikaku/kyotsu10/rk4.html",
+          "type": "HTML"
         },
         {
-          "name": "国・地方デジタル共通基盤推進連絡協議会構成員",
-          "url": "https://www.cas.go.jp/jp/seisaku/digital_gyozaikaikaku/kyotsu10/sankou1.pdf"
-        },
-        {
-          "name": "共通化候補(令和7年度選定分)案について(内閣官房デジタル行財政改革会議事務局提出資料)",
-          "url": "https://www.cas.go.jp/jp/seisaku/digital_gyozaikaikaku/kyotsu10/sankou2.pdf"
-        },
-        {
-          "name": "今後の進め方について(内閣官房デジタル行財政改革会議事務局提出資料)",
-          "url": "https://www.cas.go.jp/jp/seisaku/digital_gyozaikaikaku/kyotsu10/sankou3.pdf"
+          "name": "議事要旨",
+          "url": "https://www.cas.go.jp/jp/seisaku/digital_gyozaikaikaku/kyotsu0/rk4_gijiyoushi.pdf"
         }
       ]
     },
@@ -141146,6 +141425,25 @@
         {
           "name": "議事次第(PDF/85KB)",
           "url": "https://www.cas.go.jp/jp/seisakukaigi/s_kondan/pdf/r070807_gijisidai.pdf"
+        }
+      ]
+    },
+    {
+      "id": "cas-digital_gyozaikaikaku_kyoutsuu_kyougikai-20250807-007",
+      "councilId": "cas-digital_gyozaikaikaku_kyoutsuu_kyougikai",
+      "name": "第7回 国・地方デジタル共通基盤推進連絡協議会実務検討会",
+      "date": "2025/08/07",
+      "round": 7,
+      "officialUrl": "https://www.cas.go.jp/jp/seisaku/digital_gyozaikaikaku/kyotsu0/rkw7_gijiyoushi.pdf",
+      "materials": [
+        {
+          "name": "議事次第・資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/digital_gyozaikaikaku/kyotsuwt7/rkw7.html",
+          "type": "HTML"
+        },
+        {
+          "name": "議事要旨",
+          "url": "https://www.cas.go.jp/jp/seisaku/digital_gyozaikaikaku/kyotsu0/rkw7_gijiyoushi.pdf"
         }
       ]
     },
@@ -144204,6 +144502,25 @@
         {
           "name": "資料3:公開審議事項(PDF形式:737KB)",
           "url": "https://www.scj.go.jp/ja/member/iinkai/kanji/pdf26/siryo387-3.pdf"
+        }
+      ]
+    },
+    {
+      "id": "cas-digital_gyozaikaikaku_seisaku_taiwa-20250728-004",
+      "councilId": "cas-digital_gyozaikaikaku_seisaku_taiwa",
+      "name": "第4回 政策改善対話 デジタル行財政改革",
+      "date": "2025/07/28",
+      "round": 4,
+      "officialUrl": "https://www.cas.go.jp/jp/seisaku/digital_gyozaikaikaku/kaizentaiwa4/kaizentaiwa4_gijiroku.pdf",
+      "materials": [
+        {
+          "name": "議題・資料等",
+          "url": "https://www.cas.go.jp/jp/seisaku/digital_gyozaikaikaku/kaizentaiwa4/kaizentaiwa4.html",
+          "type": "HTML"
+        },
+        {
+          "name": "議事要旨",
+          "url": "https://www.cas.go.jp/jp/seisaku/digital_gyozaikaikaku/kaizentaiwa4/kaizentaiwa4_gijiroku.pdf"
         }
       ]
     },
@@ -148196,6 +148513,25 @@
       ]
     },
     {
+      "id": "cas-digital_gyozaikaikaku_kyoutsuu_kyougikai-20250702-006",
+      "councilId": "cas-digital_gyozaikaikaku_kyoutsuu_kyougikai",
+      "name": "第6回 国・地方デジタル共通基盤推進連絡協議会実務検討会",
+      "date": "2025/07/02",
+      "round": 6,
+      "officialUrl": "https://www.cas.go.jp/jp/seisaku/digital_gyozaikaikaku/kyotsu0/rkw6_gijiyoushi.pdf",
+      "materials": [
+        {
+          "name": "議事次第・資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/digital_gyozaikaikaku/kyotsuwt6/rkw6.html",
+          "type": "HTML"
+        },
+        {
+          "name": "議事要旨",
+          "url": "https://www.cas.go.jp/jp/seisaku/digital_gyozaikaikaku/kyotsu0/rkw6_gijiyoushi.pdf"
+        }
+      ]
+    },
+    {
       "id": "cas-kenkou_iryou_sanyo-20250702-026",
       "councilId": "cas-kenkou_iryou_sanyo",
       "name": "第26回 健康・医療戦略参与会合",
@@ -149164,6 +149500,25 @@
         {
           "name": "資料3:公開審議事項(PDF形式:1,112KB)",
           "url": "https://www.scj.go.jp/ja/member/iinkai/kanji/pdf26/siryo386-3.pdf"
+        }
+      ]
+    },
+    {
+      "id": "cas-digital_global_kakuryokaigi-20250630-001",
+      "councilId": "cas-digital_global_kakuryokaigi",
+      "name": "第1回 デジタル関連産業のグローバル化促進のための関係閣僚会議",
+      "date": "2025/06/30",
+      "round": 1,
+      "officialUrl": "https://www.cas.go.jp/jp/seisaku/digital_global_kakuryokaigi/dai1/gijiyoshi.pdf",
+      "materials": [
+        {
+          "name": "議事次第・資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/digital_global_kakuryokaigi/dai1/siryou.html",
+          "type": "HTML"
+        },
+        {
+          "name": "議事要旨",
+          "url": "https://www.cas.go.jp/jp/seisaku/digital_global_kakuryokaigi/dai1/gijiyoshi.pdf"
         }
       ]
     },
@@ -152437,6 +152792,25 @@
       ]
     },
     {
+      "id": "cas-digital_gyozaikaikaku_data_system-20250618-012",
+      "councilId": "cas-digital_gyozaikaikaku_data_system",
+      "name": "第12回 データ利活用制度・システム検討会",
+      "date": "2025/06/18",
+      "round": 12,
+      "officialUrl": "https://www.cas.go.jp/jp/seisaku/digital_gyozaikaikaku/pdf/data12_giji.pdf",
+      "materials": [
+        {
+          "name": "議事次第・資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/digital_gyozaikaikaku/data12/data12.html",
+          "type": "HTML"
+        },
+        {
+          "name": "議事要旨",
+          "url": "https://www.cas.go.jp/jp/seisaku/digital_gyozaikaikaku/pdf/data12_giji.pdf"
+        }
+      ]
+    },
+    {
       "id": "cas-kenkou_iryou_kansenshou-20250618-002",
       "councilId": "cas-kenkou_iryou_kansenshou",
       "name": "第2回 感染症協議会",
@@ -153618,6 +153992,25 @@
         {
           "name": "中小企業省力化投資補助金(一般型)",
           "url": "https://www.chusho.meti.go.jp/koukai/yosan/r6/shoryokuka.pdf"
+        }
+      ]
+    },
+    {
+      "id": "cas-digital_gyozaikaikaku-20250613-011",
+      "councilId": "cas-digital_gyozaikaikaku",
+      "name": "第11回 デジタル行財政改革会議",
+      "date": "2025/06/13",
+      "round": 11,
+      "officialUrl": "https://www.cas.go.jp/jp/seisaku/digital_gyozaikaikaku/kaigi11/gijishidai11.html",
+      "materials": [
+        {
+          "name": "議事次第・資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/digital_gyozaikaikaku/kaigi11/gijishidai11.html",
+          "type": "HTML"
+        },
+        {
+          "name": "議事要旨・議事録",
+          "url": "https://www.cas.go.jp/jp/seisaku/digital_gyozaikaikaku/pdf/kaigi11_gijiroku.pdf"
         }
       ]
     },
@@ -155788,6 +156181,25 @@
       ]
     },
     {
+      "id": "cas-digital_gyozaikaikaku_seisaku_taiwa-20250603-003",
+      "councilId": "cas-digital_gyozaikaikaku_seisaku_taiwa",
+      "name": "第3回 政策改善対話 デジタル行財政改革",
+      "date": "2025/06/03",
+      "round": 3,
+      "officialUrl": "https://www.cas.go.jp/jp/seisaku/digital_gyozaikaikaku/kaizentaiwa3/kaizentaiwa3_gijiroku.pdf",
+      "materials": [
+        {
+          "name": "議題・資料等",
+          "url": "https://www.cas.go.jp/jp/seisaku/digital_gyozaikaikaku/kaizentaiwa3/kaizentaiwa3.html",
+          "type": "HTML"
+        },
+        {
+          "name": "議事要旨",
+          "url": "https://www.cas.go.jp/jp/seisaku/digital_gyozaikaikaku/kaizentaiwa3/kaizentaiwa3_gijiroku.pdf"
+        }
+      ]
+    },
+    {
       "id": "cas-jyouhouhozen-20250603-014",
       "councilId": "cas-jyouhouhozen",
       "name": "第14回 情報保全諮問会議",
@@ -156057,6 +156469,25 @@
         {
           "name": "議事要旨",
           "url": "https://www.cao.go.jp/invest-japan/committee/council_13/gijiyoushi.pdf"
+        }
+      ]
+    },
+    {
+      "id": "cas-digital_gyozaikaikaku_kyoutsuu_kyougikai-20250602-003",
+      "councilId": "cas-digital_gyozaikaikaku_kyoutsuu_kyougikai",
+      "name": "第3回 国・地方デジタル共通基盤推進連絡協議会",
+      "date": "2025/06/02",
+      "round": 3,
+      "officialUrl": "https://www.cas.go.jp/jp/seisaku/digital_gyozaikaikaku/kyotsu0/rk3_gijiyoushi.pdf",
+      "materials": [
+        {
+          "name": "議事次第・資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/digital_gyozaikaikaku/kyotsu7/rk3.html",
+          "type": "HTML"
+        },
+        {
+          "name": "議事要旨",
+          "url": "https://www.cas.go.jp/jp/seisaku/digital_gyozaikaikaku/kyotsu0/rk3_gijiyoushi.pdf"
         }
       ]
     },
@@ -157459,6 +157890,44 @@
         {
           "name": "議事要旨(PDF/151KB)",
           "url": "https://www.cas.go.jp/jp/seisaku/saisei_riyou/dai1/gijiyousi.pdf"
+        }
+      ]
+    },
+    {
+      "id": "cas-digital_gyozaikaikaku_kyoutsuu_kyougikai-20250527-005",
+      "councilId": "cas-digital_gyozaikaikaku_kyoutsuu_kyougikai",
+      "name": "第5回 国・地方デジタル共通基盤推進連絡協議会実務検討会",
+      "date": "2025/05/27",
+      "round": 5,
+      "officialUrl": "https://www.cas.go.jp/jp/seisaku/digital_gyozaikaikaku/kyotsu0/rkw5_gijiyoushi.pdf",
+      "materials": [
+        {
+          "name": "議事次第・資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/digital_gyozaikaikaku/kyotsuwt5/rkw5.html",
+          "type": "HTML"
+        },
+        {
+          "name": "議事要旨",
+          "url": "https://www.cas.go.jp/jp/seisaku/digital_gyozaikaikaku/kyotsu0/rkw5_gijiyoushi.pdf"
+        }
+      ]
+    },
+    {
+      "id": "cas-digital_gyozaikaikaku_seisaku_taiwa-20250527-002",
+      "councilId": "cas-digital_gyozaikaikaku_seisaku_taiwa",
+      "name": "第2回 政策改善対話 デジタル行財政改革",
+      "date": "2025/05/27",
+      "round": 2,
+      "officialUrl": "https://www.cas.go.jp/jp/seisaku/digital_gyozaikaikaku/kaizentaiwa2/kaizentaiwa2_gijiroku.pdf",
+      "materials": [
+        {
+          "name": "議題・資料等",
+          "url": "https://www.cas.go.jp/jp/seisaku/digital_gyozaikaikaku/kaizentaiwa2/kaizentaiwa2.html",
+          "type": "HTML"
+        },
+        {
+          "name": "議事要旨",
+          "url": "https://www.cas.go.jp/jp/seisaku/digital_gyozaikaikaku/kaizentaiwa2/kaizentaiwa2_gijiroku.pdf"
         }
       ]
     },
@@ -160212,6 +160681,25 @@
       ]
     },
     {
+      "id": "cas-digital_gyozaikaikaku_kyoutsuu_kyougikai-20250515-004",
+      "councilId": "cas-digital_gyozaikaikaku_kyoutsuu_kyougikai",
+      "name": "第4回 国・地方デジタル共通基盤推進連絡協議会実務検討会",
+      "date": "2025/05/15",
+      "round": 4,
+      "officialUrl": "https://www.cas.go.jp/jp/seisaku/digital_gyozaikaikaku/kyotsu0/rkw4_gijiyoushi.pdf",
+      "materials": [
+        {
+          "name": "議事次第・資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/digital_gyozaikaikaku/kyotsuwt4/rkw4.html",
+          "type": "HTML"
+        },
+        {
+          "name": "議事要旨",
+          "url": "https://www.cas.go.jp/jp/seisaku/digital_gyozaikaikaku/kyotsu0/rkw4_gijiyoushi.pdf"
+        }
+      ]
+    },
+    {
       "id": "cas-titeki_digitalarchive_suishin-20250515-006",
       "councilId": "cas-titeki_digitalarchive_suishin",
       "name": "デジタルアーカイブ推進に関する検討会 第6回",
@@ -160533,6 +161021,25 @@
       ]
     },
     {
+      "id": "cas-digital_gyozaikaikaku_seisaku_taiwa-20250514-001",
+      "councilId": "cas-digital_gyozaikaikaku_seisaku_taiwa",
+      "name": "第1回 政策改善対話 デジタル行財政改革",
+      "date": "2025/05/14",
+      "round": 1,
+      "officialUrl": "https://www.cas.go.jp/jp/seisaku/digital_gyozaikaikaku/kaizentaiwa1/kaizentaiwa1_gijiroku.pdf",
+      "materials": [
+        {
+          "name": "議題・資料等",
+          "url": "https://www.cas.go.jp/jp/seisaku/digital_gyozaikaikaku/kaizentaiwa1/kaizentaiwa1.html",
+          "type": "HTML"
+        },
+        {
+          "name": "議事要旨",
+          "url": "https://www.cas.go.jp/jp/seisaku/digital_gyozaikaikaku/kaizentaiwa1/kaizentaiwa1_gijiroku.pdf"
+        }
+      ]
+    },
+    {
       "id": "cas-kenkou_iryou_tyousakai-20250514-043",
       "councilId": "cas-kenkou_iryou_tyousakai",
       "name": "第43回 健康・医療戦略推進専門調査会",
@@ -160810,6 +161317,25 @@
       ]
     },
     {
+      "id": "cas-digital_gyozaikaikaku_data_system-20250513-011",
+      "councilId": "cas-digital_gyozaikaikaku_data_system",
+      "name": "第11回 データ利活用制度・システム検討会",
+      "date": "2025/05/13",
+      "round": 11,
+      "officialUrl": "https://www.cas.go.jp/jp/seisaku/digital_gyozaikaikaku/pdf/data11_giji.pdf",
+      "materials": [
+        {
+          "name": "議事次第・資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/digital_gyozaikaikaku/data11/data11.html",
+          "type": "HTML"
+        },
+        {
+          "name": "議事要旨",
+          "url": "https://www.cas.go.jp/jp/seisaku/digital_gyozaikaikaku/pdf/data11_giji.pdf"
+        }
+      ]
+    },
+    {
       "id": "cas-sdgs_honbu-20250513-020",
       "councilId": "cas-sdgs_honbu",
       "name": "第20回 持続可能な開発目標(SDGs)推進本部",
@@ -161029,6 +161555,25 @@
         {
           "name": "議事録",
           "url": "https://www8.cao.go.jp/space/comittee/27-anpo/anpo-dai64/gijiroku.pdf"
+        }
+      ]
+    },
+    {
+      "id": "cas-digital_gyozaikaikaku_dx_renraku-20250512-003",
+      "councilId": "cas-digital_gyozaikaikaku_dx_renraku",
+      "name": "第3回 各府省庁DX推進連絡会議",
+      "date": "2025/05/12",
+      "round": 3,
+      "officialUrl": "https://www.cas.go.jp/jp/seisaku/digital_gyozaikaikaku/pdf/kakusyoDX3_gaiyou.pdf",
+      "materials": [
+        {
+          "name": "議題等",
+          "url": "https://www.cas.go.jp/jp/seisaku/digital_gyozaikaikaku/kakusyoDX3/kakusyoDX3.html",
+          "type": "HTML"
+        },
+        {
+          "name": "議事要旨",
+          "url": "https://www.cas.go.jp/jp/seisaku/digital_gyozaikaikaku/pdf/kakusyoDX3_gaiyou.pdf"
         }
       ]
     },
@@ -162366,6 +162911,25 @@
       ]
     },
     {
+      "id": "cas-digital_gyozaikaikaku_data_system-20250424-010",
+      "councilId": "cas-digital_gyozaikaikaku_data_system",
+      "name": "第10回 データ利活用制度・システム検討会",
+      "date": "2025/04/24",
+      "round": 10,
+      "officialUrl": "https://www.cas.go.jp/jp/seisaku/digital_gyozaikaikaku/pdf/data10_giji.pdf",
+      "materials": [
+        {
+          "name": "議事次第・資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/digital_gyozaikaikaku/data10/data10.html",
+          "type": "HTML"
+        },
+        {
+          "name": "議事要旨",
+          "url": "https://www.cas.go.jp/jp/seisaku/digital_gyozaikaikaku/pdf/data10_giji.pdf"
+        }
+      ]
+    },
+    {
       "id": "meti-sankoshin_shin_kijiku_value_creation-20250424-004",
       "councilId": "meti-sankoshin_shin_kijiku_value_creation",
       "name": "第4回 産業構造審議会 経済産業政策新機軸部会 価値創造経営小委員会",
@@ -162760,6 +163324,25 @@
         {
           "name": "総理の一日",
           "url": "https://www.kantei.go.jp/jp/103/actions/202504/23shihon.html"
+        }
+      ]
+    },
+    {
+      "id": "cas-digital_gyozaikaikaku_kyoutsuu_kyougikai-20250423-003",
+      "councilId": "cas-digital_gyozaikaikaku_kyoutsuu_kyougikai",
+      "name": "第3回 国・地方デジタル共通基盤推進連絡協議会実務検討会",
+      "date": "2025/04/23",
+      "round": 3,
+      "officialUrl": "https://www.cas.go.jp/jp/seisaku/digital_gyozaikaikaku/kyotsu0/rkw3_gijiyoushi.pdf",
+      "materials": [
+        {
+          "name": "議事次第・資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/digital_gyozaikaikaku/kyotsuwt3/rkw3.html",
+          "type": "HTML"
+        },
+        {
+          "name": "議事要旨",
+          "url": "https://www.cas.go.jp/jp/seisaku/digital_gyozaikaikaku/kyotsu0/rkw3_gijiyoushi.pdf"
         }
       ]
     },
@@ -163210,6 +163793,61 @@
         {
           "name": "議事録",
           "url": "https://www.meti.go.jp/shingikai/energy_environment/doji_shijo_kento/pdf/015_gijiroku.pdf"
+        }
+      ]
+    },
+    {
+      "id": "cas-digital_gyozaikaikaku-20250422-010",
+      "councilId": "cas-digital_gyozaikaikaku",
+      "name": "第10回 デジタル行財政改革会議",
+      "date": "2025/04/22",
+      "round": 10,
+      "officialUrl": "https://www.cas.go.jp/jp/seisaku/digital_gyozaikaikaku/kaigi10/gijishidai10.html",
+      "materials": [
+        {
+          "name": "議事次第・資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/digital_gyozaikaikaku/kaigi10/gijishidai10.html",
+          "type": "HTML"
+        },
+        {
+          "name": "議事要旨・議事録",
+          "url": "https://www.cas.go.jp/jp/seisaku/digital_gyozaikaikaku/pdf/kaigi10_gijiroku.pdf"
+        },
+        {
+          "name": "議事次第・資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/digital_gyozaikaikaku/kaigi11/gijishidai11.html",
+          "type": "HTML"
+        },
+        {
+          "name": "議事要旨・議事録",
+          "url": "https://www.cas.go.jp/jp/seisaku/digital_gyozaikaikaku/pdf/kaigi11_gijiroku.pdf"
+        },
+        {
+          "name": "議事次第・資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/digital_gyozaikaikaku/kaigi12/gijishidai12.html",
+          "type": "HTML"
+        },
+        {
+          "name": "議事要旨・議事録",
+          "url": "https://www.cas.go.jp/jp/seisaku/digital_gyozaikaikaku/pdf/kaigi12_gijiroku.pdf"
+        },
+        {
+          "name": "議事次第・資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/digital_gyozaikaikaku/kaigi13/gijishidai13.html",
+          "type": "HTML"
+        },
+        {
+          "name": "議事要旨・議事録",
+          "url": "https://www.cas.go.jp/jp/seisaku/digital_gyozaikaikaku/pdf/kaigi13_gijiroku.pdf"
+        },
+        {
+          "name": "議事次第・資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/digital_gyozaikaikaku/kaigi14/gijishidai14.html",
+          "type": "HTML"
+        },
+        {
+          "name": "議事要旨・議事録",
+          "url": "https://www.cas.go.jp/jp/seisaku/digital_gyozaikaikaku/pdf/kaigi14_gijiroku.pdf"
         }
       ]
     },
@@ -164640,6 +165278,25 @@
         {
           "name": "議事概要",
           "url": "https://www.soumu.go.jp/main_content/001007944.pdf"
+        }
+      ]
+    },
+    {
+      "id": "cas-digital_gyozaikaikaku_data_system-20250415-009",
+      "councilId": "cas-digital_gyozaikaikaku_data_system",
+      "name": "第9回 データ利活用制度・システム検討会",
+      "date": "2025/04/15",
+      "round": 9,
+      "officialUrl": "https://www.cas.go.jp/jp/seisaku/digital_gyozaikaikaku/pdf/data9_giji.pdf",
+      "materials": [
+        {
+          "name": "議事次第・資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/digital_gyozaikaikaku/data9/data9.html",
+          "type": "HTML"
+        },
+        {
+          "name": "議事要旨",
+          "url": "https://www.cas.go.jp/jp/seisaku/digital_gyozaikaikaku/pdf/data9_giji.pdf"
         }
       ]
     },
@@ -166232,6 +166889,25 @@
         {
           "name": "議事概要",
           "url": "https://www.cao.go.jp/invest-japan/committee/ap_taskforce_03/gizigaiyou.pdf"
+        }
+      ]
+    },
+    {
+      "id": "cas-digital_gyozaikaikaku_data_system-20250401-008",
+      "councilId": "cas-digital_gyozaikaikaku_data_system",
+      "name": "第8回 データ利活用制度・システム検討会",
+      "date": "2025/04/01",
+      "round": 8,
+      "officialUrl": "https://www.cas.go.jp/jp/seisaku/digital_gyozaikaikaku/pdf/data8_giji.pdf",
+      "materials": [
+        {
+          "name": "議事次第・資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/digital_gyozaikaikaku/data8/data8.html",
+          "type": "HTML"
+        },
+        {
+          "name": "議事要旨",
+          "url": "https://www.cas.go.jp/jp/seisaku/digital_gyozaikaikaku/pdf/data8_giji.pdf"
         }
       ]
     },
@@ -168248,6 +168924,25 @@
         {
           "name": "株式会社ICJ 御提出資料(PDF形式:728KB)",
           "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_04startup/250325/startup02_05.pdf"
+        }
+      ]
+    },
+    {
+      "id": "cas-digital_gyozaikaikaku_senryaku-20250325-002",
+      "councilId": "cas-digital_gyozaikaikaku_senryaku",
+      "name": "第2回 デジタル行財政改革戦略チーム",
+      "date": "2025/03/25",
+      "round": 2,
+      "officialUrl": "https://www.cas.go.jp/jp/seisaku/digital_gyozaikaikaku/pdf/senryaku2_gijiyoushi.pdf",
+      "materials": [
+        {
+          "name": "議事次第・資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/digital_gyozaikaikaku/senryaku2/senryaku2.html",
+          "type": "HTML"
+        },
+        {
+          "name": "議事要旨",
+          "url": "https://www.cas.go.jp/jp/seisaku/digital_gyozaikaikaku/pdf/senryaku2_gijiyoushi.pdf"
         }
       ]
     },
@@ -170389,6 +171084,21 @@
       ]
     },
     {
+      "id": "cas-digital_gyozaikaikaku_startup-20250317-006",
+      "councilId": "cas-digital_gyozaikaikaku_startup",
+      "name": "第6回 国・地方スタートアップ連携実務者会議",
+      "date": "2025/03/17",
+      "round": 6,
+      "officialUrl": "https://www.cas.go.jp/jp/seisaku/digital_gyozaikaikaku/index.html",
+      "materials": [
+        {
+          "name": "議題・資料等",
+          "url": "https://www.cas.go.jp/jp/seisaku/digital_gyozaikaikaku/startup6/startup6.html",
+          "type": "HTML"
+        }
+      ]
+    },
+    {
       "id": "cas-titeki_tousi_kentokai-20250317-024",
       "councilId": "cas-titeki_tousi_kentokai",
       "name": "第24回 知財投資・活用戦略の有効な開示及びガバナンスに関する検討会",
@@ -172001,6 +172711,25 @@
       ]
     },
     {
+      "id": "cas-digital_gyozaikaikaku_data_system-20250312-007",
+      "councilId": "cas-digital_gyozaikaikaku_data_system",
+      "name": "第7回 データ利活用制度・システム検討会",
+      "date": "2025/03/12",
+      "round": 7,
+      "officialUrl": "https://www.cas.go.jp/jp/seisaku/digital_gyozaikaikaku/pdf/data7_giji.pdf",
+      "materials": [
+        {
+          "name": "議事次第・資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/digital_gyozaikaikaku/data7/data7.html",
+          "type": "HTML"
+        },
+        {
+          "name": "議事要旨",
+          "url": "https://www.cas.go.jp/jp/seisaku/digital_gyozaikaikaku/pdf/data7_giji.pdf"
+        }
+      ]
+    },
+    {
       "id": "fsc-nouyaku_dai4-20250312-041",
       "councilId": "fsc-nouyaku_dai4",
       "name": "第41回農薬第四専門調査会",
@@ -172220,6 +172949,21 @@
         {
           "name": "議事録",
           "url": "https://www.bunka.go.jp/seisaku/bunkashingikai/kokugo/kokugo/kokugo_86/pdf/94052701_01.pdf"
+        }
+      ]
+    },
+    {
+      "id": "cas-digital_gyozaikaikaku_startup-20250311-005",
+      "councilId": "cas-digital_gyozaikaikaku_startup",
+      "name": "第5回 国・地方スタートアップ連携実務者会議",
+      "date": "2025/03/11",
+      "round": 5,
+      "officialUrl": "https://www.cas.go.jp/jp/seisaku/digital_gyozaikaikaku/index.html",
+      "materials": [
+        {
+          "name": "議題・資料等",
+          "url": "https://www.cas.go.jp/jp/seisaku/digital_gyozaikaikaku/startup5/startup5.html",
+          "type": "HTML"
         }
       ]
     },
@@ -173833,6 +174577,25 @@
         {
           "name": "行政書士明るい総合法務事務所 御提出資料(PDF形式:379KB)",
           "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_03human/250304/human02_06.pdf"
+        }
+      ]
+    },
+    {
+      "id": "cas-digital_gyozaikaikaku_data_system-20250304-006",
+      "councilId": "cas-digital_gyozaikaikaku_data_system",
+      "name": "第6回 データ利活用制度・システム検討会",
+      "date": "2025/03/04",
+      "round": 6,
+      "officialUrl": "https://www.cas.go.jp/jp/seisaku/digital_gyozaikaikaku/pdf/data6_giji.pdf",
+      "materials": [
+        {
+          "name": "議事次第・資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/digital_gyozaikaikaku/data6/data6.html",
+          "type": "HTML"
+        },
+        {
+          "name": "議事要旨",
+          "url": "https://www.cas.go.jp/jp/seisaku/digital_gyozaikaikaku/pdf/data6_giji.pdf"
         }
       ]
     },
@@ -175600,6 +176363,40 @@
       ]
     },
     {
+      "id": "cas-digital_gyozaikaikaku_data_system-20250226-005",
+      "councilId": "cas-digital_gyozaikaikaku_data_system",
+      "name": "第5回 データ利活用制度・システム検討会",
+      "date": "2025/02/26",
+      "round": 5,
+      "officialUrl": "https://www.cas.go.jp/jp/seisaku/digital_gyozaikaikaku/pdf/data5_giji.pdf",
+      "materials": [
+        {
+          "name": "議事次第・資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/digital_gyozaikaikaku/data5/data5.html",
+          "type": "HTML"
+        },
+        {
+          "name": "議事要旨",
+          "url": "https://www.cas.go.jp/jp/seisaku/digital_gyozaikaikaku/pdf/data5_giji.pdf"
+        }
+      ]
+    },
+    {
+      "id": "cas-digital_gyozaikaikaku_startup-20250226-004",
+      "councilId": "cas-digital_gyozaikaikaku_startup",
+      "name": "第4回 国・地方スタートアップ連携実務者会議",
+      "date": "2025/02/26",
+      "round": 4,
+      "officialUrl": "https://www.cas.go.jp/jp/seisaku/digital_gyozaikaikaku/index.html",
+      "materials": [
+        {
+          "name": "議題・資料等",
+          "url": "https://www.cas.go.jp/jp/seisaku/digital_gyozaikaikaku/startup4/startup4.html",
+          "type": "HTML"
+        }
+      ]
+    },
+    {
       "id": "fdma-kasai_kikensei_busshitsu-20250226-003",
       "councilId": "fdma-kasai_kikensei_busshitsu",
       "name": "令和6年度 第3回 火災危険性を有するおそれのある物質等に関する調査検討会",
@@ -176936,6 +177733,25 @@
       ]
     },
     {
+      "id": "cas-digital_gyozaikaikaku-20250220-009",
+      "councilId": "cas-digital_gyozaikaikaku",
+      "name": "第9回 デジタル行財政改革会議",
+      "date": "2025/02/20",
+      "round": 9,
+      "officialUrl": "https://www.cas.go.jp/jp/seisaku/digital_gyozaikaikaku/kaigi9/gijishidai9.html",
+      "materials": [
+        {
+          "name": "議事次第・資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/digital_gyozaikaikaku/kaigi9/gijishidai9.html",
+          "type": "HTML"
+        },
+        {
+          "name": "議事要旨・議事録",
+          "url": "https://www.cas.go.jp/jp/seisaku/digital_gyozaikaikaku/pdf/kaigi9_gijiroku.pdf"
+        }
+      ]
+    },
+    {
       "id": "meti-sankoshin_sangyo_gijutsu_innovation-20250220-007",
       "councilId": "meti-sankoshin_sangyo_gijutsu_innovation",
       "name": "第7回 産業構造審議会 イノベーション・環境分科会 イノベーション小委員会",
@@ -177120,6 +177936,21 @@
         {
           "name": "議事録",
           "url": "https://www.meti.go.jp/shingikai/energy_environment/doji_shijo_kento/pdf/013_gijiroku.pdf"
+        }
+      ]
+    },
+    {
+      "id": "cas-digital_gyozaikaikaku_dx_renraku-20250219-002",
+      "councilId": "cas-digital_gyozaikaikaku_dx_renraku",
+      "name": "第2回 各府省庁DX推進連絡会議",
+      "date": "2025/02/19",
+      "round": 2,
+      "officialUrl": "https://www.cas.go.jp/jp/seisaku/digital_gyozaikaikaku/index.html",
+      "materials": [
+        {
+          "name": "議題等",
+          "url": "https://www.cas.go.jp/jp/seisaku/digital_gyozaikaikaku/kakusyoDX2/kakusyoDX2.html",
+          "type": "HTML"
         }
       ]
     },
@@ -178177,6 +179008,25 @@
         {
           "name": "議事要旨(PDF形式:98KB)",
           "url": "https://www.scj.go.jp/ja/member/iinkai/kanji/pdf26/giji380.pdf"
+        }
+      ]
+    },
+    {
+      "id": "cas-digital_gyozaikaikaku_data_system-20250213-004",
+      "councilId": "cas-digital_gyozaikaikaku_data_system",
+      "name": "第4回 データ利活用制度・システム検討会",
+      "date": "2025/02/13",
+      "round": 4,
+      "officialUrl": "https://www.cas.go.jp/jp/seisaku/digital_gyozaikaikaku/pdf/data4_giji.pdf",
+      "materials": [
+        {
+          "name": "議事次第・資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/digital_gyozaikaikaku/data4/data4.html",
+          "type": "HTML"
+        },
+        {
+          "name": "議事要旨",
+          "url": "https://www.cas.go.jp/jp/seisaku/digital_gyozaikaikaku/pdf/data4_giji.pdf"
         }
       ]
     },
@@ -184600,6 +185450,25 @@
       ]
     },
     {
+      "id": "cas-digital_gyozaikaikaku_data_system-20250124-003",
+      "councilId": "cas-digital_gyozaikaikaku_data_system",
+      "name": "第3回 データ利活用制度・システム検討会",
+      "date": "2025/01/24",
+      "round": 3,
+      "officialUrl": "https://www.cas.go.jp/jp/seisaku/digital_gyozaikaikaku/pdf/data3_giji.pdf",
+      "materials": [
+        {
+          "name": "議事次第・資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/digital_gyozaikaikaku/data3/data3.html",
+          "type": "HTML"
+        },
+        {
+          "name": "議事要旨",
+          "url": "https://www.cas.go.jp/jp/seisaku/digital_gyozaikaikaku/pdf/data3_giji.pdf"
+        }
+      ]
+    },
+    {
       "id": "digital-423-20250124-006",
       "councilId": "digital-423",
       "name": "第6回 モビリティワーキンググループ",
@@ -185701,6 +186570,25 @@
       ]
     },
     {
+      "id": "cas-digital_gyozaikaikaku_data_system-20250121-002",
+      "councilId": "cas-digital_gyozaikaikaku_data_system",
+      "name": "第2回 データ利活用制度・システム検討会",
+      "date": "2025/01/21",
+      "round": 2,
+      "officialUrl": "https://www.cas.go.jp/jp/seisaku/digital_gyozaikaikaku/pdf/data2_giji.pdf",
+      "materials": [
+        {
+          "name": "議事次第・資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/digital_gyozaikaikaku/data2/data2.html",
+          "type": "HTML"
+        },
+        {
+          "name": "議事要旨",
+          "url": "https://www.cas.go.jp/jp/seisaku/digital_gyozaikaikaku/pdf/data2_giji.pdf"
+        }
+      ]
+    },
+    {
       "id": "digital-442-20250121-003",
       "councilId": "digital-442",
       "name": "第3回 サービスデザイン関連ガイドライン改訂に係る検討会",
@@ -186547,6 +187435,25 @@
       ]
     },
     {
+      "id": "cas-digital_gyozaikaikaku_kyoutsuu_kyougikai-20250114-002",
+      "councilId": "cas-digital_gyozaikaikaku_kyoutsuu_kyougikai",
+      "name": "第2回 国・地方デジタル共通基盤推進連絡協議会実務検討会",
+      "date": "2025/01/14",
+      "round": 2,
+      "officialUrl": "https://www.cas.go.jp/jp/seisaku/digital_gyozaikaikaku/kyotsu0/rkw2_gijiyoushi.pdf",
+      "materials": [
+        {
+          "name": "議事次第・資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/digital_gyozaikaikaku/kyotsuwt2/rkw2.html",
+          "type": "HTML"
+        },
+        {
+          "name": "議事要旨",
+          "url": "https://www.cas.go.jp/jp/seisaku/digital_gyozaikaikaku/kyotsu0/rkw2_gijiyoushi.pdf"
+        }
+      ]
+    },
+    {
       "id": "fsc-honkaigi-20250114-968",
       "councilId": "fsc-honkaigi",
       "name": "第968回 食品安全委員会",
@@ -187059,6 +187966,25 @@
         {
           "name": "議事次第(PDF/39KB)",
           "url": "https://www.cas.go.jp/jp/seisakukaigi/s_kondan/pdf/r061226_gijisidai.pdf"
+        }
+      ]
+    },
+    {
+      "id": "cas-digital_gyozaikaikaku_data_system-20241226-001",
+      "councilId": "cas-digital_gyozaikaikaku_data_system",
+      "name": "第1回 データ利活用制度・システム検討会",
+      "date": "2024/12/26",
+      "round": 1,
+      "officialUrl": "https://www.cas.go.jp/jp/seisaku/digital_gyozaikaikaku/pdf/data1_giji.pdf",
+      "materials": [
+        {
+          "name": "議事次第・資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/digital_gyozaikaikaku/data1/data1.html",
+          "type": "HTML"
+        },
+        {
+          "name": "議事要旨",
+          "url": "https://www.cas.go.jp/jp/seisaku/digital_gyozaikaikaku/pdf/data1_giji.pdf"
         }
       ]
     },
@@ -187581,6 +188507,25 @@
         {
           "name": "記者会見",
           "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/committee/241225/241225interview.pdf"
+        }
+      ]
+    },
+    {
+      "id": "cas-digital_gyozaikaikaku_senryaku-20241225-001",
+      "councilId": "cas-digital_gyozaikaikaku_senryaku",
+      "name": "第1回 デジタル行財政改革戦略チーム",
+      "date": "2024/12/25",
+      "round": 1,
+      "officialUrl": "https://www.cas.go.jp/jp/seisaku/digital_gyozaikaikaku/pdf/senryaku1_gijiyoushi.pdf",
+      "materials": [
+        {
+          "name": "議事次第・資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/digital_gyozaikaikaku/senryaku1/senryaku1.html",
+          "type": "HTML"
+        },
+        {
+          "name": "議事要旨",
+          "url": "https://www.cas.go.jp/jp/seisaku/digital_gyozaikaikaku/pdf/senryaku1_gijiyoushi.pdf"
         }
       ]
     },
@@ -188877,6 +189822,25 @@
         {
           "name": "第78回総合科学技術・イノベーション会議議事録(案)(PDF形式:303KB)",
           "url": "https://www8.cao.go.jp/cstp/siryo/haihui080/sanko2.pdf"
+        }
+      ]
+    },
+    {
+      "id": "cas-digital_gyozaikaikaku_kadai-20241223-009",
+      "councilId": "cas-digital_gyozaikaikaku_kadai",
+      "name": "第9回 課題発掘対話 デジタル行財政改革",
+      "date": "2024/12/23",
+      "round": 9,
+      "officialUrl": "https://www.cas.go.jp/jp/seisaku/digital_gyozaikaikaku/pdf/taiwa9_graphic.pdf",
+      "materials": [
+        {
+          "name": "議題・資料等",
+          "url": "https://www.cas.go.jp/jp/seisaku/digital_gyozaikaikaku/taiwa9/taiwa9.html",
+          "type": "HTML"
+        },
+        {
+          "name": "概要",
+          "url": "https://www.cas.go.jp/jp/seisaku/digital_gyozaikaikaku/pdf/taiwa9_graphic.pdf"
         }
       ]
     },
@@ -194344,6 +195308,84 @@
       ]
     },
     {
+      "id": "cas-cyber_anzen_hosyo-20241129-004",
+      "councilId": "cas-cyber_anzen_hosyo",
+      "name": "第4回 サイバー安全保障分野での対応能力の向上に向けた有識者会議",
+      "date": "2024/11/29",
+      "round": 4,
+      "officialUrl": "https://www.cas.go.jp/jp/seisaku/cyber_anzen_hosyo/index.html",
+      "materials": [
+        {
+          "name": "議事次第",
+          "url": "https://www.cas.go.jp/jp/seisaku/cyber_anzen_hosyo/dai4/gijisidai.pdf"
+        },
+        {
+          "name": "資料1-1",
+          "url": "https://www.cas.go.jp/jp/seisaku/cyber_anzen_hosyo/dai4/siryou1-1.pdf"
+        },
+        {
+          "name": "資料1-2",
+          "url": "https://www.cas.go.jp/jp/seisaku/cyber_anzen_hosyo/dai4/siryou1-2.pdf"
+        },
+        {
+          "name": "資料2-1",
+          "url": "https://www.cas.go.jp/jp/seisaku/cyber_anzen_hosyo/dai4/siryou2-1.pdf"
+        },
+        {
+          "name": "資料2-2",
+          "url": "https://www.cas.go.jp/jp/seisaku/cyber_anzen_hosyo/dai4/siryou2-2.pdf"
+        },
+        {
+          "name": "資料2-3",
+          "url": "https://www.cas.go.jp/jp/seisaku/cyber_anzen_hosyo/dai4/siryou2-3.pdf"
+        },
+        {
+          "name": "資料2-4",
+          "url": "https://www.cas.go.jp/jp/seisaku/cyber_anzen_hosyo/dai4/siryou2-4.pdf"
+        },
+        {
+          "name": "資料2-5",
+          "url": "https://www.cas.go.jp/jp/seisaku/cyber_anzen_hosyo/dai4/siryou2-5.pdf"
+        },
+        {
+          "name": "資料2-6",
+          "url": "https://www.cas.go.jp/jp/seisaku/cyber_anzen_hosyo/dai4/siryou2-6.pdf"
+        },
+        {
+          "name": "資料2-7",
+          "url": "https://www.cas.go.jp/jp/seisaku/cyber_anzen_hosyo/dai4/siryou2-7.pdf"
+        },
+        {
+          "name": "資料3-1",
+          "url": "https://www.cas.go.jp/jp/seisaku/cyber_anzen_hosyo/dai4/siryou3-1.pdf"
+        },
+        {
+          "name": "資料3-2",
+          "url": "https://www.cas.go.jp/jp/seisaku/cyber_anzen_hosyo/dai4/siryou3-2.pdf"
+        },
+        {
+          "name": "資料3-3",
+          "url": "https://www.cas.go.jp/jp/seisaku/cyber_anzen_hosyo/dai4/siryou3-3.pdf"
+        },
+        {
+          "name": "資料4-1",
+          "url": "https://www.cas.go.jp/jp/seisaku/cyber_anzen_hosyo/dai4/siryou4-1.pdf"
+        },
+        {
+          "name": "資料4-2",
+          "url": "https://www.cas.go.jp/jp/seisaku/cyber_anzen_hosyo/dai4/siryou4-2.pdf"
+        },
+        {
+          "name": "資料4-3",
+          "url": "https://www.cas.go.jp/jp/seisaku/cyber_anzen_hosyo/dai4/siryou4-3.pdf"
+        },
+        {
+          "name": "議事要旨",
+          "url": "https://www.cas.go.jp/jp/seisaku/cyber_anzen_hosyo/dai4/gijiyousi.pdf"
+        }
+      ]
+    },
+    {
       "id": "cas-kyuyo_kakuryo-20241129-s01",
       "councilId": "cas-kyuyo_kakuryo",
       "name": "給与関係閣僚会議(令和6年11月29日)",
@@ -198763,6 +199805,25 @@
       ]
     },
     {
+      "id": "cas-digital_gyozaikaikaku-20241112-008",
+      "councilId": "cas-digital_gyozaikaikaku",
+      "name": "第8回 デジタル行財政改革会議",
+      "date": "2024/11/12",
+      "round": 8,
+      "officialUrl": "https://www.cas.go.jp/jp/seisaku/digital_gyozaikaikaku/kaigi8/gijishidai8.html",
+      "materials": [
+        {
+          "name": "議事次第・資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/digital_gyozaikaikaku/kaigi8/gijishidai8.html",
+          "type": "HTML"
+        },
+        {
+          "name": "議事要旨・議事録",
+          "url": "https://www.cas.go.jp/jp/seisaku/digital_gyozaikaikaku/pdf/kaigi8_gijiroku.pdf"
+        }
+      ]
+    },
+    {
       "id": "cas-titeki_kokusai_hyoujun-20241112-004",
       "councilId": "cas-titeki_kokusai_hyoujun",
       "name": "2025年 第4回 国際標準戦略部会",
@@ -200076,6 +201137,6 @@
   ],
   "lastCrawlTime": "2026/10/30 09:27",
   "hasArchive": true,
-  "totalMeetingsCount": 22746,
-  "totalMaterialsCount": 138807
+  "totalMeetingsCount": 22902,
+  "totalMaterialsCount": 139369
 }

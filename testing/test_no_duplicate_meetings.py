@@ -64,7 +64,7 @@ def extract_round_and_type(title, council_name="", url=""):
     # 固有検討組織・TF
     for org in [
         '次世代知財システム', '知財紛争処理システム', '情報財', '海賊版対策', '知財価値評価', '地方知財活用促進', '地域知財', '知財教育', 'オープンイノベーション', 'ジャパンサーチ', '全体', '映画等海外展開', '映画・アニメ', '中小・ベンチャー', '営業秘密', 'アーカイブTF', '音楽産業',
-        'アジア健康構想', '国際医薬パートナーシップ', '訪日外国人', '在留外国人', 'ASEAN健康イニシアチブ', '栄養改善', 'インバウンド', '次世代医療基盤法', 'ライフコース', '医療情報取扱', '医療情報利活用', '標準的医療情報システム', 'グローバルヘルス戦略有識者', 'インパクト投資'
+        'アジア健康構想', '国際医薬パートナーシップ', '訪日外国人', '在留外国人', 'ASEAN健康イニシアチブ', '栄養改善', 'インバウンド', '次世代医療基盤法', 'ライフコース', '医療情報取扱', '医療情報利活用', '標準的医療情報システム', 'グローバルヘルス戦略有識者', 'インパクト投資', 'ヒアリング会合'
     ]:
         if org in t_norm:
             sub_type += f"_{org}"
@@ -455,6 +455,7 @@ def run_test(data=None):
         'https://www.cas.go.jp/jp/gaiyou/jimu/jyouhoutyousa/intelligence_taisei.html',
         'https://www.gov-online.go.jp/prg/prg9364.html',
         'https://www.cas.go.jp/jp/seisaku/chyutoujyousei/index.html',
+        'https://www.cas.go.jp/jp/seisaku/digital_gyozaikaikaku/index.html',
         'https://www.mext.go.jp/b_menu/shingi/chukyo/chukyo0/index.htm',
         'https://www.moj.go.jp/hisho/seisakuhyouka/hisho04_00050.html',
     }
