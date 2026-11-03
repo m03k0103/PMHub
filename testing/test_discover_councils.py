@@ -25,7 +25,7 @@ setup_win32_utf8()
 import discover_councils
 
 
-class TestDiscoverCouncilsDrop75(unittest.TestCase):
+class TestDiscoverCouncils(unittest.TestCase):
 
     def test_cr186_name_cleansing_and_western_year_preservation(self):
         """CR-186: タイトルからのカテゴリ・日付除去と西暦テーマ名保護の検証"""

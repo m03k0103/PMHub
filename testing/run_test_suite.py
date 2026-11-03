@@ -1,33 +1,28 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-政策会議ウォッチ (PM-HUB) - 統合テストスイート (Comprehensive Test Suite Runner) [Drop 64]
+政策会議ウォッチ (PM-HUB) - 統合テストスイート (Comprehensive Test Suite Runner)
 
-【テストスイート要件 (全15ケース・実データ整合性 & システム検証特化)】
+【テストスイート要件 (全10ケース・実データ整合性 & システム検証特化)】
 第1層 (L1): コード構文・基本整合性
-  1. コード文法・構文整合性自動確認 (SyntaxError / 括弧不整合 / HTMLタグ整合性 / JSON構文 / DDL構文)
+  1. コード文法・構文・命名規約自動確認 (SyntaxError / 括弧不整合 / HTMLタグ整合性 / JSON構文 / DDL構文 / Pythonファイル名Drop番号禁止)
   2. ネットワークリンク疎通確認 (新規追加・変更URL 200 OK 検証 / レートリミット保護)
 第2層 (L2): UI & フロントエンド表示機能
-  3. UI表示DOMコンテナ・主要要素整合性検証 (公開ポータル & 管理ダッシュボード)
-  4. JavaScript 実行時クラッシュ・TDZ・全画面描画検証 (Node.js 実データロード・描画例外ゼロ)
+  3. UI表示・JS実行時クラッシュ・TDZ・全画面描画検証 (DOM構造・管理画面非露出・Node.js実データ全画面描画例外ゼロ)
 第3層 (L3): データ整合性・不変性保証
-  5. 会議品質・回次整合性・重複排除検証 (全19,000件超全走査: 会議ID・回次・URL重複ゼロ)
-  6. 会議体・タイムライン・除外リスト ID完全排他性・整合性検証 (1,506会議体ID整合性)
-  7. 康煕部首・特殊文字 NFKC 正規化検証 (全会議体・開催回・資料の康煕部首0件維持)
-  8. プレースホルダー日付 (2099/01/01) 本番データゼロ遮断検証 (全開催回走査)
- 15. SQLiteマスターDB整合性 & 2系統JSON完全同期検証 (PRAGMA整合性・外部キー・件数一致・漏洩ゼロ)
+  4. 会議品質・回次整合性・重複排除・正規化検証 (全2.3万件超全走査: 会議ID・回次・URL重複ゼロ・2099ゼロ・康煕部首ゼロ・報道発表URLゼロ)
+  5. SQLiteマスターDB整合性 & 2系統JSON完全同期・排他・省庁設定検証 (PRAGMA整合性・FK制約・3者間件数一致・却下リスト完全排他・No Leakage)
 第4層 (L4): 管理機能 & バックエンドAPI
-  9. 管理サーバー API エンドポイント単体・結合テスト (ローカルHTTPサーバー11エンドポイント疎通)
+  6. 管理サーバー API エンドポイント単体・統合テスト (ローカルHTTPサーバー11テスト疎通)
 第5層 (L5): クローラー実データ整合性・保護検証
-  10. クローラー手動保護回帰テスト (manualLock 非破壊性)
-  11. スクレイピングルール整合性検証 (孤立ルール0件・全会議体100%ルール適用)
-  12. ホスト分散・ゴミデータ不変性検証 (1,499会議体ホストインターリーブ・ゴミ0件走査)
-  13. 省庁親ポータルURL設定・探索網羅性検証 (各省庁親ポータルURL設定・スラグID継承検証)
-  14. アクティブ会議体フィルタリング・廃止会議体設定検証 (直近2年フィルタリング・廃止マスター)
+  7. クローラー手動データ保護・ルール駆動フィルタ回帰テスト (manualLock 非破壊性・ハードコードゼロ・純度検証)
+  8. スクレイピングルール整合性検証 (孤立ルール0件・全会議体100%ルール適用)
+  9. ホスト分散・ゴミデータ不変性検証 (全会議体ホストインターリーブ連続0件・ゴミ0件走査)
+ 10. アクティブ会議体フィルタリング・廃止管理・スラグ継承検証 (直近2年フィルタリング・廃止マスターDB永続化・スラグID継承)
 
-【単体関数検証 (Unit Tests) 連動機構】
-関数の仕様（ロジック）を修正した場合に限り、変更対象コードに応じた単体テスト種類を自動判定して連動実行。
-平時（データ・ルール・ドキュメント更新時）は単体関数検証をテストスイートから外し、実データ検証に特化・高速化。
+【単体関数検証 (Unit Tests: U1〜U12) 連動機構】
+関数の仕様（ロジック）を修正した場合に限り、変更対象コードに応じた単体テスト種類（全12種）を自動判定して連動実行。
+平時（データ・ルール・ドキュメント更新時）は単体関数検証をスキップし、実データ検証に特化・高速化。
 """
 
 import sys
@@ -43,7 +38,6 @@ from collections import defaultdict
 import subprocess
 import argparse
 import shutil
-import concurrent.futures
 import io
 from contextlib import redirect_stdout, redirect_stderr
 from html.parser import HTMLParser
@@ -55,12 +49,13 @@ for p in [ADMIN_DIR, TESTING_DIR]:
     if p not in sys.path:
         sys.path.insert(0, p)
 
-from utils import setup_win32_utf8, get_browser_headers, load_data_json, validate_council_id, validate_meeting_id
+from utils import setup_win32_utf8, get_browser_headers, load_data_json
 setup_win32_utf8()
 
 from run_unit_tests import UNIT_TEST_REGISTRY, run_unit_tests
 
 _SHARED_DATA_CACHE = None
+
 
 def get_shared_data():
     """docs/data.json をセッション全体でキャッシュ共有し、重複ディスクI/OとJSONパースを削減"""
@@ -69,14 +64,6 @@ def get_shared_data():
         data_json_path = os.path.join(PROJECT_ROOT, "docs", "data.json")
         _SHARED_DATA_CACHE = load_data_json(data_json_path, cached=True)
     return _SHARED_DATA_CACHE
-
-def _async_node_run(args, cwd):
-    """Node.js テストを別スレッドで並行実行するヘルパー"""
-    try:
-        res = subprocess.run(args, cwd=cwd, capture_output=True, text=True, encoding='utf-8', errors='replace')
-        return res.returncode == 0, res.stdout, res.stderr
-    except Exception as e:
-        return False, "", str(e)
 
 
 class DivBalanceChecker(HTMLParser):
@@ -159,7 +146,7 @@ def check_js_syntax(code, file_path=""):
             if not bracket_stack:
                 return False, f"対応する開き括弧がない閉じ括弧 '{char}' ({line_no}行目)"
             top_char, top_line, top_col = bracket_stack.pop()
-            expected = {'}':'{', ']':'[', ')':'('}[char]
+            expected = {'}': '{', ']': '[', ')': '('}[char]
             if top_char != expected:
                 return False, f"括弧ペア不一致: '{top_char}' ({top_line}行目) に対し '{char}' ({line_no}行目)"
         col_no += 1
@@ -172,12 +159,11 @@ def check_js_syntax(code, file_path=""):
 # ==============================================================================
 
 def check_syntax_errors():
-    """1. JS/Python/HTML/JSON ファイルの文法・タグ構造エラーを自動確認"""
+    """1. JS/Python/HTML/JSON ファイルの文法・タグ構造エラー・Pythonファイル名規約を自動確認"""
     print("--------------------------------------------------")
-    print(" [テスト 1/15] コードの文法エラー (SyntaxError) 自動検証")
+    print(" [テスト 1/10] コードの文法エラー (SyntaxError)・ファイル命名規約 自動検証")
     print("--------------------------------------------------")
-    
-    # CR-169: ハードコードリストを廃止し、対象ディレクトリの glob 自動探索に刷新
+
     discovered_files = set()
     patterns = [
         ("docs", "*.js"),
@@ -199,11 +185,17 @@ def check_syntax_errors():
                     discovered_files.add(str(p.resolve()))
 
     files_to_check = sorted(list(discovered_files))
-    
     errors_found = 0
 
     for file_path in files_to_check:
         rel_path = os.path.relpath(file_path, PROJECT_ROOT)
+        fname = os.path.basename(file_path)
+
+        # Python ファイル名への dropXX 連番付与禁止ガード
+        if fname.endswith(".py") and re.search(r"drop\d+", fname, re.IGNORECASE):
+            print(f"  [FAIL] {rel_path} : Python ファイル名に Drop 番号 ('{fname}') を含めることは禁止されています（機能・責務ベースの名称にしてください）")
+            errors_found += 1
+
         if not os.path.exists(file_path):
             print(f"  [FAIL] ファイルが存在しません: {rel_path}")
             errors_found += 1
@@ -267,7 +259,7 @@ def check_syntax_errors():
                 print(f"  [FAIL] {os.path.relpath(jpath, PROJECT_ROOT)} : JSON Error: {je}")
                 errors_found += 1
 
-    # SQL Schema validation (Drop 64)
+    # SQL Schema validation
     schema_path = os.path.join(PROJECT_ROOT, "admin", "db", "schema.sql")
     if os.path.exists(schema_path):
         try:
@@ -354,7 +346,7 @@ def get_added_urls_from_git():
 def check_link_health(explicit_urls=None, check_all=False):
     """2. 追加・変更された URL のみのリンク疎通確認"""
     print("\n--------------------------------------------------")
-    print(" [テスト 2/15] リンク疎通確認 (追加・変更 URL のみ対象)")
+    print(" [テスト 2/10] リンク疎通確認 (追加・変更 URL のみ対象)")
     print("--------------------------------------------------")
 
     target_urls = []
@@ -452,96 +444,24 @@ def check_link_health(explicit_urls=None, check_all=False):
 # 第2層: UI & フロントエンド表示機能 (L2: UI & Frontend)
 # ==============================================================================
 
-def check_view_rendering():
-    """3. UI表示自動検証（公開ポータル＆管理ダッシュボードのDOM整合性チェック）"""
+def check_js_runtime_crash():
+    """3. UI表示・JavaScript 実行時クラッシュ・TDZ・全画面描画検証（公開ポータル＆管理ダッシュボード）"""
     print("\n--------------------------------------------------")
-    print(" [テスト 3/15] UI表示機能検証（ポータル＆管理ダッシュボード構造） (L2: UI Rendering)")
-    print("--------------------------------------------------")
-
-    app_js_path = os.path.join(PROJECT_ROOT, "docs", "app.js")
-    index_html_path = os.path.join(PROJECT_ROOT, "docs", "index.html")
-    admin_html_path = os.path.join(PROJECT_ROOT, "admin", "admin_dashboard.html")
-
-    with open(app_js_path, "r", encoding="utf-8") as f:
-        app_text = f.read()
-    with open(index_html_path, "r", encoding="utf-8") as f:
-        html_text = f.read()
-    with open(admin_html_path, "r", encoding="utf-8") as f:
-        admin_text = f.read()
-
-    # 1. 公開ポータル表示要素の検証
-    required_portal_elements = ['id="timelineFeed"', 'id="councilsAccordionList"', 'id="dateRangeSelect"']
-    for elem in required_portal_elements:
-        if elem not in html_text:
-            print(f"  [FAIL] 公開ポータル表示用HTML要素 ({elem}) が不足しています")
-            return False
-
-    if 'function capitalize' not in app_text:
-        print("  [FAIL] app.js 内に capitalize 関数が定義されていません")
-        return False
-
-    print("  [PASS] 公開ポータルの主要コンテナ (timelineFeed, councilsAccordionList, dateRangeSelect) を検証完了")
-
-    # 1.5. 公開ポータルからの管理ダッシュボード露出ゼロ検証 (Drop 71)
-    if 'admin_dashboard.html' in html_text or '管理コンソール' in html_text:
-        print("  [FAIL] 公開ポータル (docs/index.html) に管理コンソール (admin_dashboard.html) へのリンクが露出しています")
-        return False
-    print("  [PASS] 公開ポータルからの管理画面リンク露出ゼロ (ローカル専用化) を検証完了")
-
-    # 2. 管理コンソールのタブ・コンテナ・PMM要素検証
-    admin_tab_ids = ['tab-crawler', 'tab-meetings', 'tab-councils', 'tab-rejected', 'tab-ministries']
-    for tid in admin_tab_ids:
-        if f'id="{tid}"' not in admin_text:
-            print(f"  [FAIL] 管理ダッシュボードのタブコンテナ ({tid}) が不足しています")
-            return False
-
-    admin_containers = ['id="councilList"', 'id="meetingsList"', 'id="rejectedList"', 'id="ministryListContainer"']
-    for cid in admin_containers:
-        if cid not in admin_text:
-            print(f"  [FAIL] 管理ダッシュボードの描画先コンテナ ({cid}) が不足しています")
-            return False
-
-    # PMM ローカル資料ダッシュボード要素の検証 (Drop 71)
-    if 'id="pmmStatusSummary"' not in admin_text or 'id="btnStartPmmDownload"' not in admin_text:
-        print("  [FAIL] 管理ダッシュボードの PMM 要素 (pmmStatusSummary / btnStartPmmDownload) が不足しています")
-        return False
-    print("  [PASS] 管理ダッシュボードの全5タブ、描画先コンテナおよび PMM 要素を検証完了")
-    return True
-
-
-def check_js_runtime_crash(future=None):
-    """4. JavaScript 実行時クラッシュ・TDZ・初期化検証（公開ポータル＆管理ダッシュボード）"""
-    print("\n--------------------------------------------------")
-    print(" [テスト 4/15] JavaScript 実行時クラッシュ・TDZ・描画検証 (L2: JS Runtime)")
+    print(" [テスト 3/10] UI表示・JS実行時クラッシュ・TDZ・全画面描画検証 (L2: UI & JS Runtime)")
     print("--------------------------------------------------")
     try:
-        if future is not None:
-            ok, stdout, stderr = future.result()
-            if ok:
-                print("  [PASS] 公開ポータルおよび管理コンソールの JavaScript 実行時クラッシュ0件・全画面描画成功")
-                return True
-            else:
-                print("  [FAIL] JavaScript 実行時にクラッシュ（例外）が検知されました:")
-                for line in stdout.splitlines():
-                    if line.strip():
-                        print(f"    {line}")
-                if stderr:
-                    for line in stderr.splitlines():
-                        if line.strip():
-                            print(f"    {line}")
-                return False
         node_cmd = get_node_command()
         test_script = os.path.join(PROJECT_ROOT, "testing", "test_js_runtime.js")
         if not os.path.exists(test_script):
             print("  [SKIP] test_js_runtime.js が見つかりません")
             return True
 
-        res = subprocess.run([node_cmd, test_script], capture_output=True, text=True, encoding='utf-8', errors='replace')
+        res = subprocess.run([node_cmd, test_script], cwd=PROJECT_ROOT, capture_output=True, text=True, encoding='utf-8', errors='replace')
         if res.returncode == 0:
-            print("  [PASS] 公開ポータルおよび管理コンソールの JavaScript 実行時クラッシュ0件・全画面描画成功")
+            print("  [PASS] 公開ポータル＆管理コンソールのDOM構造・管理画面非露出・JS実行時クラッシュ0件・全画面描画成功")
             return True
         else:
-            print("  [FAIL] JavaScript 実行時にクラッシュ（例外）が検知されました:")
+            print("  [FAIL] UI表示またはJavaScript実行時にエラーが検知されました:")
             for line in res.stdout.splitlines():
                 if line.strip():
                     print(f"    {line}")
@@ -560,9 +480,9 @@ def check_js_runtime_crash(future=None):
 # ==============================================================================
 
 def check_duplicate_meetings_quality(data=None):
-    """5. 会議レコード品質・回次整合性・重複排除の自動検証"""
+    """4. 会議レコード品質・回次整合性・重複排除・正規化・報道URL遮断の自動検証"""
     print("\n--------------------------------------------------")
-    print(" [テスト 5/15] 会議品質・回次整合性・重複排除検証 (L3: Data Integrity)")
+    print(" [テスト 4/10] 会議品質・回次整合性・重複排除・正規化検証 (L3: Data Integrity)")
     print("--------------------------------------------------")
     try:
         from test_no_duplicate_meetings import run_test
@@ -571,7 +491,7 @@ def check_duplicate_meetings_quality(data=None):
         with redirect_stdout(f_out), redirect_stderr(f_err):
             code = run_test(data=data)
         if code == 0:
-            print("  [PASS] 会議ID重複・回次重複・クロス会議体重複URL・会議体マスター重複・孤立会議データ0件を検証完了")
+            print("  [PASS] 会議ID・回次・URL重複0件、2099日付0件、康煕部首0件、単発報道URL0件、中間HTML遮断を検証完了")
             return True
         else:
             print("  [FAIL] 会議データ品質・重複排除検証でエラーが検出されました:")
@@ -587,7 +507,7 @@ def check_duplicate_meetings_quality(data=None):
 
         res = subprocess.run([sys.executable, test_script], capture_output=True, text=True, encoding='utf-8', errors='replace')
         if res.returncode == 0:
-            print("  [PASS] 会議ID重複・回次重複・クロス会議体重複URL・会議体マスター重複・孤立会議データ0件を検証完了")
+            print("  [PASS] 会議ID・回次・URL重複0件、2099日付0件、康煕部首0件、単発報道URL0件、中間HTML遮断を検証完了")
             return True
         else:
             print("  [FAIL] 会議データ品質・重複排除検証でエラーが検出されました:")
@@ -601,126 +521,10 @@ def check_duplicate_meetings_quality(data=None):
             return False
 
 
-def check_council_timeline_sync(data=None):
-    """6. 会議体一覧 (COUNCILS), タイムライン (MEETINGS) の ID整合性自動検証"""
-    print("\n--------------------------------------------------")
-    print(" [テスト 6/15] 会議体・タイムライン・除外リスト ID完全整合性検証 (L3: ID Consistency)")
-    print("--------------------------------------------------")
-
-    if data is None:
-        data = get_shared_data()
-    rejected_json_path = os.path.join(PROJECT_ROOT, "admin", "rejected_councils.json")
-
-    if not data:
-        print("  [FAIL] data.json が見つかりません")
-        return False
-
-    councils = data.get("councils", [])
-    meetings = data.get("meetings", [])
-
-    councils_ids = [c.get("id") for c in councils if c.get("id")]
-    meetings_council_ids = set([m.get("councilId") for m in meetings if m.get("councilId")])
-
-    if len(councils_ids) != len(set(councils_ids)):
-        duplicates = [cid for cid in set(councils_ids) if councils_ids.count(cid) > 1]
-        print(f"  [FAIL] COUNCILS に重複IDが存在します: {duplicates}")
-        return False
-
-    councils_set = set(councils_ids)
-
-    invalid_c_ids = [cid for cid in councils_ids if not validate_council_id(cid)]
-    if invalid_c_ids:
-        print(f"  [FAIL] 不正な councilId フォーマット (要 1ハイフン): {invalid_c_ids[:5]}")
-        return False
-
-    meeting_ids = [m.get("id", "") for m in meetings]
-    invalid_m_ids = [mid for mid in meeting_ids if not validate_meeting_id(mid)]
-    if invalid_m_ids:
-        print(f"  [FAIL] 不正な meetingId フォーマット (要 3ハイフン/4セグメント): {invalid_m_ids[:5]}")
-        return False
-
-    orphaned_meetings = meetings_council_ids - councils_set
-    if orphaned_meetings:
-        print(f"  [FAIL] 定義されていない会議体IDを持つ会議データがタイムラインに存在します (CR-168 厳格FAIL化): {sorted(orphaned_meetings)[:5]}")
-        return False
-
-    valid_ministries = set(data.get("ministries", {}).keys())
-    if valid_ministries:
-        invalid_min_councils = [c.get("id") for c in councils if c.get("ministry") not in valid_ministries]
-        if invalid_min_councils:
-            print(f"  [FAIL] ministries に未定義の不正な省庁コードを持つ会議体が存在します: {invalid_min_councils[:5]}")
-            return False
-
-    # Drop 99: 初期ウォッチ会議体ID (initialWatchedCouncilIds) の実在性検証
-    initial_watched = data.get("initialWatchedCouncilIds", [])
-    if not initial_watched:
-        print("  [FAIL] docs/data.json に initialWatchedCouncilIds が設定されていません")
-        return False
-    missing_watched = [wid for wid in initial_watched if wid not in councils_set]
-    if missing_watched:
-        print(f"  [FAIL] initialWatchedCouncilIds に実在しない会議体IDが含まれています: {missing_watched}")
-        return False
-
-    if os.path.exists(rejected_json_path):
-        with open(rejected_json_path, "r", encoding="utf-8") as rf:
-            rejected = json.load(rf)
-            rejected_ids = set([r.get("id") for r in rejected if r.get("id")])
-            rejected_names = set([r.get("name", "").strip() for r in rejected if r.get("name")])
-
-            collision = councils_set & rejected_ids
-            if collision:
-                print(f"  [FAIL] 公開会議体 (COUNCILS) と却下リスト (rejected_councils.json) に重複IDが存在します: {collision}")
-                return False
-
-            councils_name_collision = [c.get("name") for c in councils if c.get("name", "").strip() in rejected_names]
-            if councils_name_collision:
-                print(f"  [FAIL] 会議体マスター (COUNCILS) と却下リストに重複名称が存在します: {councils_name_collision[:5]}")
-                return False
-
-            print(f"  [PASS] 却下会議体 {len(rejected_ids)} 件の分離・公開データとの完全排他を検証完了")
-
-    print(f"  [PASS] 全 {len(councils_set)} 会議体の ID整合性・タイムライン紐づけを検証完了")
-    return True
-
-
-def check_drop22_normalization():
-    """7. 康煕部首・特殊文字 NFKC 正規化 & 検索漏れ根絶検証 (CR-46, CR-47)"""
-    print("\n--------------------------------------------------")
-    print(" [テスト 7/15] 康煕部首・特殊文字 NFKC 正規化 & 検索漏れ根絶検証 (L3: Normalization)")
-    print("--------------------------------------------------")
-    from test_drop22_normalization import TestDrop22Normalization
-    return _run_inprocess_or_fallback(
-        TestDrop22Normalization,
-        "test_drop22_normalization.py",
-        "康煕部首・CJK部首補助0件・NFKC文字正規化・データ整合性テスト全件合格",
-        "文字正規化検証"
-    )
-
-
-def check_placeholder_dates_zero(data=None):
-    """8. プレースホルダー日付（2099/01/01）本番データゼロ遮断検証 (L3: Placeholder Zero)"""
-    print("\n--------------------------------------------------")
-    print(" [テスト 8/15] プレースホルダー日付（2099/01/01）ゼロ遮断検証 (L3: Placeholder Zero)")
-    print("--------------------------------------------------")
-    if data is None:
-        data = get_shared_data()
-    placeholder_meetings = [
-        m for m in data.get("meetings", [])
-        if str(m.get("date", "")).startswith("2099")
-    ]
-    if placeholder_meetings:
-        print(f"  [FAIL] 本番 docs/data.json 内に 2099 プレースホルダー開催回が {len(placeholder_meetings)} 件残存しています:")
-        for m in placeholder_meetings[:5]:
-            print(f"    - ID: {m.get('id')}, Council: {m.get('councilId')}, Date: {m.get('date')}")
-        return False
-    print("  [PASS] 本番 docs/data.json 内の 2099/01/01 プレースホルダー開催回 0 件を検証完了")
-    return True
-
-
 def check_sqlite_and_split_export_sync(data=None):
-    """15. SQLiteマスターDB整合性 & 2系統JSON完全同期検証 (L3: Database Integrity & Tri-State Sync)"""
+    """5. SQLiteマスターDB整合性 & 2系統JSON完全同期・排他・省庁設定検証 (L3: Database Integrity & Tri-State Sync)"""
     print("\n--------------------------------------------------")
-    print(" [テスト 15/15] SQLiteマスターDB整合性 & 2系統JSON完全同期検証 (L3: Database Integrity)")
+    print(" [テスト 5/10] SQLiteマスターDB整合性 & 2系統JSON完全同期・排他検証 (L3: Database Integrity)")
     print("--------------------------------------------------")
     db_path = os.path.join(PROJECT_ROOT, "admin", "pmhub.db")
     public_path = os.path.join(PROJECT_ROOT, "docs", "data.json")
@@ -798,6 +602,7 @@ def check_sqlite_and_split_export_sync(data=None):
     pub_m_cnt = len(total_meetings)
     pub_mat_cnt = sum(len(m.get("materials", [])) for m in total_meetings)
     pub_cm_cnt = sum(len(c.get("materials", [])) for c in pub_councils)
+
     pub_c_lock = sum(1 for c in pub_councils if c.get("manualLock"))
     pub_m_lock = sum(1 for m in total_meetings if m.get("manualLock"))
     pub_mat_lock = sum(1 for m in total_meetings for mat in m.get("materials", []) if mat.get("manualLock"))
@@ -812,7 +617,7 @@ def check_sqlite_and_split_export_sync(data=None):
     adm_mat_lock = len(adm_locks.get("materials", []))
     adm_cm_lock = len(adm_locks.get("councilMaterials", []))
 
-    # 5. 件数突合 (CR-168: council_materials 突合追加)
+    # 5. 件数突合
     if db_c_cnt != pub_c_cnt:
         errors.append(f"会議体件数不一致: DB={db_c_cnt} vs 公開JSON={pub_c_cnt}")
     if db_m_cnt != pub_m_cnt:
@@ -826,7 +631,7 @@ def check_sqlite_and_split_export_sync(data=None):
     if db_cs_cnt != adm_cs_cnt:
         errors.append(f"クロールステータス件数不一致: DB={db_cs_cnt} vs 管理JSON={adm_cs_cnt}")
 
-    # 6. 手動ロック整合性突合 (Drop 106: DB master == admin_data.json)
+    # 6. 手動ロック整合性突合 (DB master == admin_data.json)
     if db_c_lock != adm_c_lock:
         errors.append(f"会議体手動ロック件数不一致: DB={db_c_lock} vs 管理JSON={adm_c_lock}")
     if db_m_lock != adm_m_lock:
@@ -836,7 +641,7 @@ def check_sqlite_and_split_export_sync(data=None):
     if db_cm_lock != adm_cm_lock:
         errors.append(f"会議体資料手動ロック件数不一致: DB={db_cm_lock} vs 管理JSON={adm_cm_lock}")
 
-    # 公開 docs/data.json に管理専用フィールド manualLock が漏洩していないこと (Drop 106 No Leakage)
+    # 公開 docs/data.json に管理専用フィールドが漏洩していないこと (No Leakage)
     if pub_c_lock > 0:
         errors.append(f"公開 docs/data.json の会議体に manualLock が混入しています (No Leakage 違反): {pub_c_lock} 件")
     if pub_m_lock > 0:
@@ -855,7 +660,7 @@ def check_sqlite_and_split_export_sync(data=None):
     if m_crawl_leak > 0:
         errors.append(f"公開 docs/data.json の開催回に discoveredAt / lastUpdatedFromCrawl が混入しています (No Leakage 違反): {m_crawl_leak} 件")
 
-    # 7. 公開 JSON への設定漏洩ゼロ (CR-168: 全管理キー No Leakage 網羅検証)
+    # 7. 公開 JSON への設定漏洩ゼロ
     forbidden_keys_in_public = [
         "scrapingRules", "scrapingRuleTemplates", "crawlerConfig",
         "rejectedCouncils", "initialAlertKeywords", "discoveryKeywords",
@@ -869,7 +674,6 @@ def check_sqlite_and_split_export_sync(data=None):
     if c_leak:
         errors.append(f"公開 docs/data.json の会議体に crawlStatus が混入しています (No Leakage 違反): {c_leak[:3]}")
 
-    # PMM ローカル管理属性 (local_path, download_status 等) の公開 JSON 非漏洩検証 (Drop 71)
     pmm_leak = False
     for m in pub_meetings:
         for mat in m.get("materials", []):
@@ -889,13 +693,15 @@ def check_sqlite_and_split_export_sync(data=None):
     if pmm_leak:
         errors.append("公開 docs/data.json に PMM ローカル管理属性 (local_path / download_status) が混入しています (No Leakage 違反)")
 
-    # 8. 却下会議体 3者間同期突合 (Drop 80 & Drop 94)
+    # 8. 却下会議体 3者間同期突合 & 公開会議体とのID・名称完全排他検証 (旧ケース6統合)
+    councils_set = {c.get("id") for c in pub_councils if c.get("id")}
     rej_path = os.path.join(ADMIN_DIR, "rejected_councils.json")
     if os.path.exists(rej_path):
         try:
             with open(rej_path, "r", encoding="utf-8") as rf:
                 rej_data = json.load(rf)
             rej_json_ids = set(r["id"] for r in rej_data if "id" in r)
+            rej_names = set(r.get("name", "").strip() for r in rej_data if r.get("name"))
             adm_rej_ids = set(r["id"] for r in adm_data.get("rejectedCouncils", []) if "id" in r)
             if db_rej_cnt != len(rej_data) or db_rej_cnt != len(adm_data.get("rejectedCouncils", [])):
                 errors.append(f"却下会議体件数不一致: DB={db_rej_cnt} vs rejected_councils.json={len(rej_data)} vs admin_data.json={len(adm_data.get('rejectedCouncils', []))}")
@@ -903,12 +709,46 @@ def check_sqlite_and_split_export_sync(data=None):
                 errors.append(f"却下会議体ID不一致 (DB vs rejected_councils.json): 差分={db_rej_ids ^ rej_json_ids}")
             if db_rej_ids != adm_rej_ids:
                 errors.append(f"却下会議体ID不一致 (DB vs admin_data.json): 差分={db_rej_ids ^ adm_rej_ids}")
+
+            collision_ids = councils_set & rej_json_ids
+            if collision_ids:
+                errors.append(f"公開会議体 (councils) と却下リスト (rejected_councils) に重複IDが存在します: {collision_ids}")
+            collision_names = [c.get("name") for c in pub_councils if c.get("name", "").strip() in rej_names]
+            if collision_names:
+                errors.append(f"公開会議体 (councils) と却下リストに重複名称が存在します: {collision_names[:5]}")
         except Exception as e_rej:
             errors.append(f"rejected_councils.json パースエラー: {e_rej}")
     else:
         errors.append("admin/rejected_councils.json が見つかりません")
 
-    # 9. admin_configs テーブル整合性 & 旧省庁コード ENV ゼロ検証 (Drop 92 & Drop 94)
+    # 9. initialWatchedCouncilIds の実在性検証 & 省庁マスター設定網羅性検証 (旧ケース6・旧ケース13統合)
+    initial_watched = pub_data.get("initialWatchedCouncilIds", [])
+    if not initial_watched:
+        errors.append("docs/data.json に initialWatchedCouncilIds が設定されていません")
+    else:
+        missing_watched = [wid for wid in initial_watched if wid not in councils_set]
+        if missing_watched:
+            errors.append(f"initialWatchedCouncilIds に実在しない会議体IDが含まれています: {missing_watched}")
+
+    min_map = pub_data.get("ministries", {})
+    portal_checks = [
+        ("FDMA", "https://www.fdma.go.jp/singi_kento/kento/"),
+        ("MIC", "policyreports"),
+        ("ACA", "chosakuken"),
+        ("METI", "sankoshin")
+    ]
+    for min_key, pattern in portal_checks:
+        entry = min_map.get(min_key)
+        if not entry or not any(pattern in u for u in entry.get("councilsUrls", [])):
+            errors.append(f"{min_key} の親ポータルURL (councilsUrls) に '{pattern}' が含まれていません")
+    missing_domains = [k for k, v in min_map.items() if not isinstance(v, dict) or not v.get("domains") or not v.get("hexColor")]
+    if missing_domains:
+        errors.append(f"ministries 内で domains または hexColor が未設定の省庁があります: {missing_domains}")
+    moe_entry = min_map.get("MOE", {})
+    if "env.go.jp" not in moe_entry.get("domains", []) or not moe_entry.get("newsPortals"):
+        errors.append("MOE (環境省) の domains または newsPortals 設定が不正です")
+
+    # 10. admin_configs テーブル整合性 & 旧省庁コード ENV ゼロ検証
     conn = sqlite3.connect(db_path)
     cur = conn.cursor()
     try:
@@ -952,8 +792,8 @@ def check_sqlite_and_split_export_sync(data=None):
 
     print(f"  [PASS] SQLite 整合性（PRAGMA integrity_check: ok / FK制約: 0件 / fts_materials: {fts_cnt}件）検証合格")
     print(f"  [PASS] 3者間レコード完全一致（councils: {db_c_cnt}件, meetings: {db_m_cnt}件, materials: {db_mat_cnt}件, rules: {db_rule_cnt}件, rejected: {db_rej_cnt}件）検証合格")
-    print(f"  [PASS] admin_configs DB同期 & 旧ENVコード0件 & 手動ロック完全整合性を検証合格")
-    print(f"  [PASS] 公開JSON設定漏洩ゼロ（No Leakage: 0件）& 管理JSONキー完全性を検証合格")
+    print("  [PASS] 却下リスト完全排他・initialWatchedCouncilIds実在性・省庁親ポータル/ドメイン設定網羅性を検証合格")
+    print("  [PASS] 公開JSON設定漏洩ゼロ（No Leakage: 0件）& 管理JSONキー完全性を検証合格")
     return True
 
 
@@ -962,9 +802,9 @@ def check_sqlite_and_split_export_sync(data=None):
 # ==============================================================================
 
 def check_admin_server_api():
-    """9. 管理サーバー (admin/server.py) の主要 API 自動単体・統合テスト"""
+    """6. 管理サーバー (admin/server.py) の主要 API 自動単体・統合テスト"""
     print("\n--------------------------------------------------")
-    print(" [テスト 9/15] 管理サーバー API 単体・統合テスト (test_admin_server.py) (L4: Admin API)")
+    print(" [テスト 6/10] 管理サーバー API 単体・統合テスト (test_admin_server.py) (L4: Admin API)")
     print("--------------------------------------------------")
     from test_admin_server import TestAdminServer
     return _run_inprocess_or_fallback(
@@ -980,23 +820,23 @@ def check_admin_server_api():
 # ==============================================================================
 
 def check_crawler_regression():
-    """10. クローラーの手動保護回帰テスト (L5: Manual Lock Protection)"""
+    """7. クローラーの手動保護・ルール駆動フィルタ回帰テスト (L5: Manual Lock Protection)"""
     print("\n--------------------------------------------------")
-    print(" [テスト 10/15] クローラー手動データ保護回帰テスト (L5: Manual Lock Protection)")
+    print(" [テスト 7/10] クローラー手動データ保護・ルール駆動フィルタ回帰テスト (L5: Manual Lock Protection)")
     print("--------------------------------------------------")
     from test_crawler_regression import TestCrawlerManualLockProtection
     return _run_inprocess_or_fallback(
         TestCrawlerManualLockProtection,
         "test_crawler_regression.py",
-        "手動保護データ (manualLock) の非破壊性・クローラー回帰テスト合格",
+        "手動保護データ (manualLock) の非破壊性・ルール駆動フィルタ・ハードコード0件回帰テスト合格",
         "クローラー回帰テスト"
     )
 
 
 def check_scraping_rules_quality():
-    """11. スクレイピングルール整合性テスト（CR-7 孤立削除・CR-8 テンプレート集約・CR-9 全件適用）"""
+    """8. スクレイピングルール整合性テスト（孤立削除・テンプレート集約・全件適用）"""
     print("\n--------------------------------------------------")
-    print(" [テスト 11/15] スクレイピングルール整合性検証 (L5: Scraping Rules Integrity)")
+    print(" [テスト 8/10] スクレイピングルール整合性検証 (L5: Scraping Rules Integrity)")
     print("--------------------------------------------------")
     from test_scraping_rules_reorg import TestScrapingRulesReorganization
     return _run_inprocess_or_fallback(
@@ -1008,9 +848,9 @@ def check_scraping_rules_quality():
 
 
 def check_host_interleaving_and_junk_clean(data=None):
-    """12. ホスト分散・ゴミデータ不変性検証 (L5: Host Interleaving & Clean Data)"""
+    """9. ホスト分散・ゴミデータ不変性検証 (L5: Host Interleaving & Clean Data)"""
     print("\n--------------------------------------------------")
-    print(" [テスト 12/15] ホスト分散・ゴミデータ不変性検証 (L5: Host Interleaving & Clean Data)")
+    print(" [テスト 9/10] ホスト分散・ゴミデータ不変性検証 (L5: Host Interleaving & Clean Data)")
     print("--------------------------------------------------")
     from cleanup_nav_meetings import is_junk_meeting
     from crawler import interleave_by_host_and_ministry, _extract_council_host
@@ -1034,84 +874,18 @@ def check_host_interleaving_and_junk_clean(data=None):
         print(f"  [FAIL] docs/data.json 内に未処理のゴミ開催回が {junk_count} 件検出されました")
         return False
 
-    print("  [PASS] 全1,499会議体のホスト連続アクセス0件（分散完了）およびゴミ開催回0件を検証完了")
-    return True
-
-
-def check_portal_coverage_and_slug_inheritance(data=None):
-    """13. 省庁親ポータルURL設定・探索網羅性検証 (L5: Portal Coverage & Slug Inheritance)"""
-    print("\n--------------------------------------------------")
-    print(" [テスト 13/15] 省庁親ポータルURL設定・探索網羅性検証 (L5: Portal Coverage & Slug Inheritance)")
-    print("--------------------------------------------------")
-    if data is None:
-        data = get_shared_data()
-
-    min_map = data.get("ministries", {})
-    checks = [
-        ("FDMA", "https://www.fdma.go.jp/singi_kento/kento/"),
-        ("MIC", "policyreports"),
-        ("ACA", "chosakuken"),
-        ("METI", "sankoshin")
-    ]
-    for min_key, pattern in checks:
-        entry = min_map.get(min_key)
-        if not entry or not any(pattern in u for u in entry.get("councilsUrls", [])):
-            print(f"  [FAIL] {min_key} の親ポータルURLに '{pattern}' が含まれていません")
-            return False
-
-    # Drop 92: 省庁ドメイン・新着ポータル・カラー設定のDB一元化および ENV 残存バグゼロ検証
-    if "ENV" in min_map:
-        print("  [FAIL] ministries に旧省庁コード 'ENV' が残存しています ('MOE' に統一必須)")
-        return False
-    missing_domains = [k for k, v in min_map.items() if not isinstance(v, dict) or not v.get("domains") or not v.get("hexColor")]
-    if missing_domains:
-        print(f"  [FAIL] ministries 内で domains または hexColor が未設定の省庁があります: {missing_domains}")
-        return False
-    moe_entry = min_map.get("MOE", {})
-    if "env.go.jp" not in moe_entry.get("domains", []) or not moe_entry.get("newsPortals"):
-        print("  [FAIL] MOE (環境省) の domains または newsPortals 設定が不正です")
-        return False
-
-    # Drop 107: 単発報道発表・記者会見専用URLが officialUrl に残存していないことを全会議体で常時検証
-    from discover_councils import is_single_press_or_notice_url
-    press_councils = []
-    for c in data.get("councils", []):
-        u = c.get("officialUrl", "")
-        if is_single_press_or_notice_url(u):
-            press_councils.append((c.get("id"), c.get("name"), u))
-    if press_councils:
-        print(f"  [FAIL] 単発報道発表専用URLが officialUrl に登録されている会議体が存在します ({len(press_councils)}件): {press_councils[:3]}")
-        return False
-
-    from utils import normalize_url_for_matching
-    from discover_councils import parse_data_json
-    try:
-        ministries, existing_councils, categories, existing_rules = parse_data_json()
-        url_to_slug_map = {}
-        for r_id, r in existing_rules.items():
-            u = r.get("officialUrl")
-            if u:
-                url_to_slug_map[normalize_url_for_matching(u)] = r_id
-        if existing_councils:
-            sample_council = existing_councils[0]
-            norm_u = normalize_url_for_matching(sample_council["officialUrl"])
-            if norm_u in url_to_slug_map and url_to_slug_map[norm_u] == sample_council["id"]:
-                print("  [PASS] 省庁親ポータル設定網羅性およびスラグID継承ロジックを検証完了")
-                return True
-    except Exception as e:
-        print(f"  [WARN] スラグ継承シミュレーション警告: {e}")
-
-    print("  [PASS] 省庁親ポータルURL設定網羅性を検証完了")
+    print(f"  [PASS] 全{len(councils):,}会議体のホスト連続アクセス0件（分散完了）およびゴミ開催回0件を検証完了")
     return True
 
 
 def check_active_filtering_and_closed_management(data=None):
-    """14. アクティブ会議体フィルタリング・廃止管理検証 (L5: Active Filtering & Closed Councils)"""
+    """10. アクティブ会議体フィルタリング・廃止管理・スラグ継承検証 (L5: Active Filtering & Closed Councils)"""
     print("\n--------------------------------------------------")
-    print(" [テスト 14/15] アクティブ会議体フィルタリング・廃止管理検証 (L5: Active Filtering & Closed Councils)")
+    print(" [テスト 10/10] アクティブ会議体フィルタリング・廃止管理・スラグ継承検証 (L5: Active Filtering & Closed Councils)")
     print("--------------------------------------------------")
     from crawler import load_councils_from_data_json
     from manage_closed_councils import set_council_closed, unset_council_closed
+    from utils import normalize_url_for_matching
 
     if data is None:
         data = get_shared_data()
@@ -1122,23 +896,28 @@ def check_active_filtering_and_closed_management(data=None):
     total_c = len(all_councils)
     act_c = len(active_councils)
 
-    if total_c == 0:
-        print("  [FAIL] 全会議体数が 0 件です")
-        return False
-    if act_c == 0:
-        print("  [FAIL] アクティブ会議体数が 0 件です")
-        return False
-    if total_c <= act_c:
-        print(f"  [FAIL] 全会議体数 ({total_c}) がアクティブ会議体数 ({act_c}) 以下です")
+    if total_c == 0 or act_c == 0 or total_c <= act_c:
+        print(f"  [FAIL] 会議体フィルタリング件数異常 (active={act_c}, total={total_c})")
         return False
 
-    # CR-168: 動的集計によるアクティブ比率健全性検証 (全会議体の 30%〜90% の範囲内であること)
     active_ratio = (act_c / total_c) * 100
     if not (30.0 <= active_ratio <= 90.0):
         print(f"  [FAIL] アクティブ会議体比率 ({active_ratio:.1f}%, {act_c}/{total_c}) が健全範囲 (30%〜90%) 外です")
         return False
 
     councils = data.get("councils", [])
+    existing_rules = data.get("scrapingRules", {})
+    if councils and existing_rules:
+        url_to_slug_map = {
+            normalize_url_for_matching(r.get("officialUrl")): r_id
+            for r_id, r in existing_rules.items() if r.get("officialUrl")
+        }
+        sample_council = councils[0]
+        norm_u = normalize_url_for_matching(sample_council["officialUrl"])
+        if norm_u not in url_to_slug_map or url_to_slug_map[norm_u] != sample_council["id"]:
+            print("  [FAIL] scrapingRules からのスラグID継承マッピングが不一致です")
+            return False
+
     if councils:
         test_id = councils[0]["id"]
         res_dry = set_council_closed(data, test_id, "テスト法改正廃止理由", apply=False)
@@ -1146,7 +925,7 @@ def check_active_filtering_and_closed_management(data=None):
             print("  [FAIL] manage_closed_councils の dry-run 動作が不正です")
             return False
 
-    # Drop 94: 一時 SQLite DB を用いた廃止会議体マスターの DB 永続化 & 解除検証
+    # 一時 SQLite DB を用いた廃止会議体マスターの DB 永続化 & 解除検証
     import tempfile
     import sqlite3
     try:
@@ -1154,9 +933,9 @@ def check_active_filtering_and_closed_management(data=None):
     except ImportError:
         from admin.db.db_manager import ensure_database
 
-    with tempfile.TemporaryDirectory(prefix="pmhub_test_case14_") as tmp_dir:
+    with tempfile.TemporaryDirectory(prefix="pmhub_test_closed_") as tmp_dir:
         tmp_p = Path(tmp_dir)
-        tmp_db = tmp_p / "case14.db"
+        tmp_db = tmp_p / "closed_test.db"
         tmp_pub = tmp_p / "data.json"
         tmp_adm = tmp_p / "admin_data.json"
         sample_pub = {
@@ -1192,14 +971,13 @@ def check_active_filtering_and_closed_management(data=None):
             print("  [FAIL] DB 上の councils.is_closed 解除に失敗しました")
             return False
 
-    print(f"  [PASS] 直近2年アクティブ会議体抽出（{len(active_councils)}件）および廃止会議体マスター（DB永続化・解除含む）機能を検証完了")
+    print(f"  [PASS] 直近2年アクティブ会議体抽出（{len(active_councils)}件）・スラグ継承・廃止会議体マスター（DB永続化・解除含む）を検証完了")
     return True
 
 
 def _run_inprocess_or_fallback(test_case_class, script_filename, pass_msg, fail_title):
-    """単一プロセス内での高速実行を試行し、例外時は個別スクリプトへ安全フォールバック (Drop 94)"""
+    """単一プロセス内での高速実行を試行し、例外時は個別スクリプトへ安全フォールバック"""
     try:
-        import io
         import unittest
         stream = io.StringIO()
         runner = unittest.TextTestRunner(stream=stream, verbosity=1)
@@ -1244,7 +1022,7 @@ def detect_changed_layers_and_unit_tests():
     """
     Git の作業ツリー差分および直近コミット差分から:
     1. 実行すべき統合テストレイヤー (L1〜L5)
-    2. 変更された関数仕様に応じた連動単体テスト種類 (UNIT_TEST_REGISTRY キー)
+    2. 変更された関数仕様に応じた連動単体テスト種類 (UNIT_TEST_REGISTRY キー: U1〜U12)
     を精密判定する。
     """
     always_active = {"L1", "L3"}
@@ -1282,21 +1060,22 @@ def detect_changed_layers_and_unit_tests():
             or "app.test.js" in f or "test_js_runtime.js" in f or "admin/admin_dashboard" in f):
             active_layers.add("L2")
 
-        # L4: 管理サーバー関連 & PMM & DB基盤 (CR-169)
+        # L4: 管理サーバー関連 & PMM & DB基盤
         if (f.startswith("admin/server.py") or "test_admin_server.py" in f
             or "admin/pmm/" in f or "test_pmm" in f
             or "admin/db/" in f or "admin\\db\\" in f
-            or "test_drop62" in f or "test_drop63" in f):
+            or "test_db_pipeline" in f):
             active_layers.add("L4")
 
-        # L5: クローラー関連 & DB基盤 (CR-169)
+        # L5: クローラー関連 & DB基盤
         if (f.startswith("admin/crawler.py") or f.startswith("admin/utils.py")
             or f.startswith("admin/manage_closed_councils.py")
             or f.startswith("admin/discover_councils.py")
             or f.startswith("admin/apply_report.py")
             or f.startswith("admin/cleanup_nav_meetings.py")
             or "admin/db/" in f or "admin\\db\\" in f
-            or "test_crawler" in f or "test_drop" in f or "scraping_rules" in f):
+            or "test_crawler" in f or "test_waf" in f or "test_date" in f
+            or "test_material" in f or "test_db_pipeline" in f or "scraping_rules" in f):
             active_layers.add("L5")
 
     required_unit_keys = detect_required_unit_tests(changed_files)
@@ -1305,7 +1084,7 @@ def detect_changed_layers_and_unit_tests():
 
 def detect_required_unit_tests(changed_files):
     """
-    関数の仕様修正が行われたファイルを検知し、実施すべき単体テスト種類を判定。
+    関数の仕様修正が行われたファイルを検知し、実施すべき単体テスト種類（U1〜U12）を判定。
     データ・ドキュメント変更のみの場合は空セットを返す。
     """
     required_keys = set()
@@ -1319,24 +1098,13 @@ def detect_required_unit_tests(changed_files):
         "test_crawler_parent_table.py": ["u_parent_table"],
         "test_crawler_incremental.py": ["u_incremental"],
         "test_crawler_quality.py": ["u_quality_eval"],
-        "test_crawler_quality_v2.py": ["u_subpage_links"],
-        "test_drop23_waf_resilience.py": ["u_waf"],
-        "test_drop24_parent_table_expansion.py": ["u_table_html_expand"],
-        "test_drop25_mod_date_parsing.py": ["u_date_parsing"],
-        "test_drop41_fallback_and_discovery.py": ["u_url_matching_fallback"],
-        "test_crawler_drop16.py": ["u_robustness"],
-        "test_crawler_speedup.py": ["u_speedup"],
-        "test_drop46_data_cleanup.py": ["u_drop46"],
-        "test_drop47_context_recovery.py": ["u_drop47"],
-        "test_drop48_zero_materials_rescue.py": ["u_drop48"],
-        "test_drop49_meeting_id_normalization.py": ["u_drop49"],
-        "test_drop62_db_and_export.py": ["u_drop62"],
-        "test_drop63_crawler_server_db.py": ["u_drop63"],
+        "test_waf_resilience.py": ["u_waf"],
+        "test_date_and_id_parsing.py": ["u_date_parsing"],
+        "test_material_extraction.py": ["u_material_extraction"],
+        "test_db_pipeline.py": ["u_db_pipeline"],
         "test_pmm.py": ["u_pmm"],
         "test_discover_councils.py": ["u_discover"],
-        "test_drop81_llm_discovery.py": ["u_drop81"],
-        "test_drop82_pmm_preservation.py": ["u_drop82"],
-        "test_drop80_intermediate_material_guard.py": ["u_intermediate_guard"],
+        "test_llm_discovery.py": ["u_llm_discovery"],
         "run_unit_tests.py": list(UNIT_TEST_REGISTRY.keys())
     }
     for f in changed_files:
@@ -1347,7 +1115,7 @@ def detect_required_unit_tests(changed_files):
     # ディスカバリーエンジン・LLM支援仕様コード変更 (admin/discover_councils.py, admin/llm/)
     if any("admin/discover_councils.py" in f or "discover_councils" in f or "admin/llm/" in f for f in changed_files):
         required_keys.add("u_discover")
-        required_keys.add("u_drop81")
+        required_keys.add("u_llm_discovery")
 
     # PMM 配付資料ローカル資産管理仕様コード変更 (admin/pmm/)
     if any("admin/pmm/" in f or "test_pmm.py" in f for f in changed_files):
@@ -1355,9 +1123,7 @@ def detect_required_unit_tests(changed_files):
 
     # データベース・エクスポート基盤仕様コード変更 (admin/db/)
     if any("admin/db/" in f or "admin\\db\\" in f for f in changed_files):
-        required_keys.add("u_drop62")
-        required_keys.add("u_drop63")
-        required_keys.add("u_drop82")
+        required_keys.add("u_db_pipeline")
 
     # フロントエンド関数仕様コード変更 (docs/app.js)
     if any(f.endswith("docs/app.js") or f == "docs/app.js" for f in changed_files):
@@ -1366,8 +1132,7 @@ def detect_required_unit_tests(changed_files):
     # 日付・正規化ユーティリティ関数仕様コード変更 (admin/utils.py)
     if any("admin/utils.py" in f for f in changed_files):
         required_keys.add("u_date_parsing")
-        required_keys.add("u_url_matching_fallback")
-        required_keys.add("u_drop49")
+        required_keys.add("u_quality_eval")
 
     # クローラー本体の仕様コード変更 (admin/crawler.py)
     if any("admin/crawler.py" in f for f in changed_files):
@@ -1387,44 +1152,28 @@ def detect_required_unit_tests(changed_files):
         matched = False
         if "extract_meetings_from_parent_table" in diff_out:
             required_keys.add("u_parent_table")
-            required_keys.add("u_table_html_expand")
             matched = True
         if any(w in diff_out for w in ["is_waf_challenge", "_get_host_interval", "_rate_limit_host", "load_ministry_and_host_configs_from_db", "_build_other_ministry_domains_map"]):
             required_keys.add("u_waf")
             matched = True
-        if any(w in diff_out for w in ["_filter_incremental_subpages", "_normalize_url_for_comparison"]):
+        if any(w in diff_out for w in ["_filter_incremental_subpages", "_normalize_url_for_comparison", "run_meeting_crawler", "recent_years", "stop_event"]):
             required_keys.add("u_incremental")
             matched = True
-        if any(w in diff_out for w in ["determine_crawl_result", "get_unconfirmed_meetings_count"]):
+        if any(w in diff_out for w in ["determine_crawl_result", "get_unconfirmed_meetings_count", "extract_actual_subpage_links", "clean_meeting_title", "is_preliminary_notice_page", "extract_title_stem", "is_title_inconsistent_with_council", "get_rule_for_target"]):
             required_keys.add("u_quality_eval")
             matched = True
-        if any(w in diff_out for w in ["extract_actual_subpage_links", "clean_meeting_title", "is_preliminary_notice_page"]):
-            required_keys.add("u_subpage_links")
-            matched = True
-        if any(w in diff_out for w in ["clean_html_for_dates", "_sort_subpage_urls_by_recency", "extract_page_title"]):
+        if any(w in diff_out for w in ["clean_html_for_dates", "_sort_subpage_urls_by_recency", "extract_page_title", "safe_emit_log", "COMMON_NAV_KEYWORDS", "ORGANIZATION_DOC_KEYWORDS", "normalize_text"]):
             required_keys.add("u_crawler_foundation")
             matched = True
-        if any(w in diff_out for w in ["is_sns_pr_url", "is_non_pdf_anchor_url", "EXCLUDE_MATERIAL_NAMES"]):
-            required_keys.add("u_drop46")
+        if any(w in diff_out for w in ["is_sns_pr_url", "is_non_pdf_anchor_url", "EXCLUDE_MATERIAL_NAMES", "is_generic_material_name", "recover_material_context", "GENERIC_MATERIAL_NAMES", "parse_txt_minutes"]):
+            required_keys.add("u_material_extraction")
             matched = True
-        if any(w in diff_out for w in ["is_generic_material_name", "recover_material_context", "GENERIC_MATERIAL_NAMES"]):
-            required_keys.add("u_drop47")
-            matched = True
-        if "parse_txt_minutes" in diff_out:
-            required_keys.add("u_drop48")
-            matched = True
-        if any(w in diff_out for w in ["sess_suffix", "new_meet_id"]):
-            required_keys.add("u_drop49")
-            matched = True
-        if any(w in diff_out for w in ["safe_emit_log", "COMMON_NAV_KEYWORDS", "ORGANIZATION_DOC_KEYWORDS"]):
-            required_keys.add("u_robustness")
-            matched = True
-        if any(w in diff_out for w in ["run_meeting_crawler", "recent_years", "stop_event"]):
-            required_keys.add("u_speedup")
+        if any(w in diff_out for w in ["sess_suffix", "new_meet_id", "_extract_date_from_url"]):
+            required_keys.add("u_date_parsing")
             matched = True
 
         if not matched:
-            for k in ["u_crawler_foundation", "u_parent_table", "u_incremental", "u_quality_eval", "u_subpage_links", "u_waf", "u_table_html_expand", "u_date_parsing", "u_url_matching_fallback", "u_robustness", "u_speedup", "u_drop46", "u_drop47", "u_drop48", "u_drop49"]:
+            for k in ["u_crawler_foundation", "u_parent_table", "u_incremental", "u_quality_eval", "u_waf", "u_date_parsing", "u_material_extraction"]:
                 required_keys.add(k)
 
     return required_keys
@@ -1435,7 +1184,7 @@ def detect_required_unit_tests(changed_files):
 # ==============================================================================
 
 def main():
-    parser = argparse.ArgumentParser(description="PM-HUB Comprehensive Test Suite Runner [Drop 64]")
+    parser = argparse.ArgumentParser(description="PM-HUB Comprehensive Test Suite Runner")
     parser.add_argument("--url", nargs="+", help="Explicit URLs to verify")
     parser.add_argument("--all", action="store_true", help="Check all URLs in data.json")
     parser.add_argument("--skip-network", action="store_true", help="Skip network link health verification")
@@ -1447,7 +1196,7 @@ def main():
     args = parser.parse_args()
 
     print("==================================================")
-    print(" 政策会議ウォッチ (PM-HUB) 統合テストスイート [Drop 64]")
+    print(" 政策会議ウォッチ (PM-HUB) 統合テストスイート")
     print("==================================================")
 
     # 単体テストのみの直接実行
@@ -1461,10 +1210,10 @@ def main():
     if args.all_layers:
         active_layers = {"L1", "L2", "L3", "L4", "L5"}
         required_unit_keys = set(UNIT_TEST_REGISTRY.keys())
-        print("  [実行モード] --all-layers 指定: 全層（L1〜L5）および全単体関数テストを一括実行します")
+        print("  [実行モード] --all-layers 指定: 全層（L1〜L5: 統合10ケース）および全単体関数テスト（全12種）を一括実行します")
     elif args.include_unit:
         required_unit_keys = set(UNIT_TEST_REGISTRY.keys())
-        print("  [実行モード] --include-unit 指定: 全単体関数テストを連動実行します")
+        print("  [実行モード] --include-unit 指定: 全単体関数テスト（全12種）を連動実行します")
     elif args.layer:
         target = args.layer.upper()
         active_layers = {"L1", "L3", target}
@@ -1480,7 +1229,7 @@ def main():
             else:
                 print("  [単体関数検証] 関数仕様の変更なし: スキップ（平時実データ整合性特化）")
         else:
-            print("  [実行モード] 変更差分なし: 全層（L1〜L5）を実行します（単体テストは仕様修正時限定）")
+            print("  [実行モード] 変更差分なし: 全層（L1〜L5: 統合10ケース）を実行します（単体テストは仕様修正時限定）")
 
     suite_t0 = time.perf_counter()
     case_results = []  # (case_num, name, status_str, elapsed, layer)
@@ -1495,11 +1244,11 @@ def main():
     # --------------------------------------------------
     t_c1 = time.perf_counter()
     syntax_ok = check_syntax_errors()
-    record_result(1, "コード文法チェック (SyntaxError / 括弧 / div)", "PASS" if syntax_ok else "FAIL", time.perf_counter() - t_c1, "L1")
+    record_result(1, "コード文法・命名規約チェック (SyntaxError / 括弧 / DDL / Drop番号禁止)", "PASS" if syntax_ok else "FAIL", time.perf_counter() - t_c1, "L1")
 
     if args.skip_network:
         print("\n--------------------------------------------------")
-        print(" [テスト 2/15] リンク疎通確認 (追加・変更 URL のみ対象) (L1: Network Health)")
+        print(" [テスト 2/10] リンク疎通確認 (追加・変更 URL のみ対象) (L1: Network Health)")
         print("--------------------------------------------------")
         print("  [SKIP] --skip-network が指定されたため、ネットワーク疎通確認をスキップしました。")
         links_ok = True
@@ -1513,100 +1262,71 @@ def main():
     # 第2層: UI & フロントエンド表示機能 (L2: UI & Frontend)
     # --------------------------------------------------
     if "L2" in active_layers:
-        node_cmd = get_node_command()
-        with concurrent.futures.ThreadPoolExecutor(max_workers=1) as executor:
-            f_runtime = executor.submit(
-                _async_node_run,
-                [node_cmd, os.path.join(PROJECT_ROOT, "testing", "test_js_runtime.js")],
-                PROJECT_ROOT
-            )
-            t_c3 = time.perf_counter()
-            view_ok = check_view_rendering()
-            record_result(3, "UI表示機能検証 (DOMコンテナ整合性)", "PASS" if view_ok else "FAIL", time.perf_counter() - t_c3, "L2")
-
-            t_c4 = time.perf_counter()
-            runtime_ok = check_js_runtime_crash(future=f_runtime)
-            record_result(4, "JS実行時クラッシュ・全画面描画検証", "PASS" if runtime_ok else "FAIL", time.perf_counter() - t_c4, "L2")
+        t_c3 = time.perf_counter()
+        runtime_ok = check_js_runtime_crash()
+        record_result(3, "UI表示・JS実行時クラッシュ・TDZ・全画面描画検証", "PASS" if runtime_ok else "FAIL", time.perf_counter() - t_c3, "L2")
     else:
         print("\n--------------------------------------------------")
         print(" [第2層: フロントエンド層 (L2)] 変更対象外のためスキップ")
         print("--------------------------------------------------")
-        view_ok = runtime_ok = True
-        record_result(3, "UI表示機能検証 (DOMコンテナ整合性)", "SKIP", 0.0, "L2")
-        record_result(4, "JS実行時クラッシュ・全画面描画検証", "SKIP", 0.0, "L2")
+        runtime_ok = True
+        record_result(3, "UI表示・JS実行時クラッシュ・TDZ・全画面描画検証", "SKIP", 0.0, "L2")
 
     # --------------------------------------------------
     # 第3層: データ整合性・不変性保証 (L3: Data Integrity)
     # --------------------------------------------------
     shared_data = get_shared_data()
-    t_c5 = time.perf_counter()
+    t_c4 = time.perf_counter()
     dedup_ok = check_duplicate_meetings_quality(data=shared_data)
-    record_result(5, "会議品質・回次整合性・重複排除検証", "PASS" if dedup_ok else "FAIL", time.perf_counter() - t_c5, "L3")
+    record_result(4, "会議品質・回次整合性・重複排除・正規化検証", "PASS" if dedup_ok else "FAIL", time.perf_counter() - t_c4, "L3")
 
-    t_c6 = time.perf_counter()
-    sync_ok = check_council_timeline_sync(data=shared_data)
-    record_result(6, "会議体・タイムライン ID完全排他性・整合性", "PASS" if sync_ok else "FAIL", time.perf_counter() - t_c6, "L3")
-
-    t_c7 = time.perf_counter()
-    drop22_ok = check_drop22_normalization()
-    record_result(7, "康煕部首・特殊文字 NFKC 正規化検証", "PASS" if drop22_ok else "FAIL", time.perf_counter() - t_c7, "L3")
-
-    t_c8 = time.perf_counter()
-    placeholder_ok = check_placeholder_dates_zero(data=shared_data)
-    record_result(8, "プレースホルダー日付（2099/01/01）ゼロ遮断検証", "PASS" if placeholder_ok else "FAIL", time.perf_counter() - t_c8, "L3")
-
-    t_c15 = time.perf_counter()
+    t_c5 = time.perf_counter()
     db_sync_ok = check_sqlite_and_split_export_sync(data=shared_data)
-    record_result(15, "SQLiteマスターDB整合性 & 2系統JSON完全同期検証", "PASS" if db_sync_ok else "FAIL", time.perf_counter() - t_c15, "L3")
+    record_result(5, "SQLiteマスターDB整合性 & 2系統JSON完全同期・排他検証", "PASS" if db_sync_ok else "FAIL", time.perf_counter() - t_c5, "L3")
 
     # --------------------------------------------------
     # 第4層: 管理機能 & バックエンドAPI (L4: Admin & Server)
     # --------------------------------------------------
     if "L4" in active_layers:
-        t_c9 = time.perf_counter()
+        t_c6 = time.perf_counter()
         server_api_ok = check_admin_server_api()
-        record_result(9, "管理サーバー API 単体・統合テスト", "PASS" if server_api_ok else "FAIL", time.perf_counter() - t_c9, "L4")
+        record_result(6, "管理サーバー API 単体・統合テスト", "PASS" if server_api_ok else "FAIL", time.perf_counter() - t_c6, "L4")
     else:
         print("\n--------------------------------------------------")
         print(" [第4層: 管理サーバー層 (L4)] 変更対象外のためスキップ")
         print("--------------------------------------------------")
         server_api_ok = True
-        record_result(9, "管理サーバー API 単体・統合テスト", "SKIP", 0.0, "L4")
+        record_result(6, "管理サーバー API 単体・統合テスト", "SKIP", 0.0, "L4")
 
     # --------------------------------------------------
     # 第5層: クローラー実データ整合性・保護検証 (L5: Crawler Production Integrity)
     # --------------------------------------------------
     if "L5" in active_layers:
-        t_c10 = time.perf_counter()
+        t_c7 = time.perf_counter()
         crawler_ok = check_crawler_regression()
-        record_result(10, "クローラー手動保護回帰テスト", "PASS" if crawler_ok else "FAIL", time.perf_counter() - t_c10, "L5")
+        record_result(7, "クローラー手動データ保護・ルール駆動フィルタ回帰テスト", "PASS" if crawler_ok else "FAIL", time.perf_counter() - t_c7, "L5")
 
-        t_c11 = time.perf_counter()
+        t_c8 = time.perf_counter()
         rules_ok = check_scraping_rules_quality()
-        record_result(11, "スクレイピングルール整合性検証", "PASS" if rules_ok else "FAIL", time.perf_counter() - t_c11, "L5")
+        record_result(8, "スクレイピングルール整合性検証", "PASS" if rules_ok else "FAIL", time.perf_counter() - t_c8, "L5")
 
-        t_c12 = time.perf_counter()
+        t_c9 = time.perf_counter()
         interleave_ok = check_host_interleaving_and_junk_clean(data=shared_data)
-        record_result(12, "ホスト分散・ゴミデータ不変性検証", "PASS" if interleave_ok else "FAIL", time.perf_counter() - t_c12, "L5")
+        record_result(9, "ホスト分散・ゴミデータ不変性検証", "PASS" if interleave_ok else "FAIL", time.perf_counter() - t_c9, "L5")
 
-        t_c13 = time.perf_counter()
-        portal_ok = check_portal_coverage_and_slug_inheritance(data=shared_data)
-        record_result(13, "省庁親ポータルURL設定・探索網羅性検証", "PASS" if portal_ok else "FAIL", time.perf_counter() - t_c13, "L5")
-
-        t_c14 = time.perf_counter()
+        t_c10 = time.perf_counter()
         active_ok = check_active_filtering_and_closed_management(data=shared_data)
-        record_result(14, "アクティブ会議体フィルタリング・廃止管理検証", "PASS" if active_ok else "FAIL", time.perf_counter() - t_c14, "L5")
+        record_result(10, "アクティブ会議体フィルタリング・廃止管理・スラグ継承検証", "PASS" if active_ok else "FAIL", time.perf_counter() - t_c10, "L5")
     else:
         print("\n--------------------------------------------------")
         print(" [第5層: クローラー層 (L5)] 変更対象外のためスキップ")
         print("--------------------------------------------------")
-        crawler_ok = rules_ok = interleave_ok = portal_ok = active_ok = True
+        crawler_ok = rules_ok = interleave_ok = active_ok = True
         for cnum, ctitle in [
-            (10, "クローラー手動保護回帰テスト"),
-            (11, "スクレイピングルール整合性検証"),
-            (12, "ホスト分散・ゴミデータ不変性検証"),
-            (13, "省庁親ポータルURL設定・探索網羅性検証"),
-            (14, "アクティブ会議体フィルタリング・廃止管理検証")
+            (7, "クローラー手動データ保護・ルール駆動フィルタ回帰テスト"),
+            (8, "スクレイピングルール整合性検証"),
+            (9, "ホスト分散・ゴミデータ不変性検証"),
+            (10, "アクティブ会議体フィルタリング・廃止管理・スラグ継承検証")
         ]:
             record_result(cnum, ctitle, "SKIP", 0.0, "L5")
 
@@ -1624,7 +1344,7 @@ def main():
 
     # サマリーレポート出力
     print("\n==================================================")
-    print(" 政策会議ウォッチ (PM-HUB) テスト実行結果サマリー [Drop 64]")
+    print(" 政策会議ウォッチ (PM-HUB) テスト実行結果サマリー")
     print("==================================================")
     passed_count = sum(1 for _, _, st, _, _ in case_results if st == "PASS")
     skipped_count = sum(1 for _, _, st, _, _ in case_results if st == "SKIP")
@@ -1654,7 +1374,7 @@ def main():
         print("【単体関数検証 (Unit Tests)】: SKIP（関数仕様の変更なし / 平時実データ特化）")
 
     print("--------------------------------------------------")
-    print(f" 総実行時間: {total_time:.2f}秒 | 統合ケース合格: {passed_count}/15件 | スキップ: {skipped_count}件 | 失敗: {failed_count}件")
+    print(f" 総実行時間: {total_time:.2f}秒 | 統合ケース合格: {passed_count}/10件 | スキップ: {skipped_count}件 | 失敗: {failed_count}件")
     print("==================================================")
 
     all_passed = (failed_count == 0) and unit_ok
@@ -1662,7 +1382,7 @@ def main():
         print(" 【結果】実行されたテストスイートに完全合格しました。修正コードは正常です。")
         sys.exit(0)
     else:
-        print(f" 【結果】テストでエラーが検出されました。コードの再確認が必要です。")
+        print(" 【結果】テストでエラーが検出されました。コードの再確認が必要です。")
         sys.exit(1)
 
 

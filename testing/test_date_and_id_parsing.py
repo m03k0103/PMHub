@@ -1,16 +1,26 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+和暦略記・URL日付解析 & 開催回ID正規化規約 単体テストスイート (test_date_and_id_parsing.py)
+- CR-54: parse_japanese_date 元号略記パース、防衛省形式テーブル抽出
+- URL埋め込み日付（kaiYYYYMMDD, meetingYYYYMMDD 等）の抽出
+- CR-118: validate_meeting_id 開催回ID命名規約・4桁通常回次・3桁臨時回次許容検証
+"""
+
 import os
 import sys
 import unittest
 from datetime import datetime
 
+sys.path.insert(0, os.path.abspath('.'))
 sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "admin"))
-from utils import setup_win32_utf8, parse_japanese_date
+from utils import setup_win32_utf8, parse_japanese_date, validate_meeting_id
 setup_win32_utf8()
 
 from crawler import _extract_meetings_from_parent_table, _extract_date_from_url
 
 
-class TestDrop25ModDateParsing(unittest.TestCase):
+class TestDateAndIdParsing(unittest.TestCase):
 
     def test_parse_japanese_date_short_era(self):
         """CR-54: parse_japanese_date が元号略記形式を正確にパースすること"""
@@ -66,7 +76,7 @@ class TestDrop25ModDateParsing(unittest.TestCase):
 
         meetings = _extract_meetings_from_parent_table(sample_html, target_url, council_name)
         self.assertEqual(len(meetings), 2)
-        
+
         m1 = meetings[0]
         self.assertEqual(m1["extractedDates"], ["2021/12/06"])
         self.assertIn("第9回", m1["name"])
@@ -78,10 +88,8 @@ class TestDrop25ModDateParsing(unittest.TestCase):
         self.assertIn("第8回", m2["name"])
         self.assertEqual(len(m2["materials"]), 2)
 
-
-
     def test_extract_date_from_url_kai_pattern(self):
-        """Drop 125: FSC等のURL埋め込み日付（kaiYYYYMMDD, meetingYYYYMMDD等）が正確に抽出されること"""
+        """FSC等のURL埋め込み日付（kaiYYYYMMDD, meetingYYYYMMDD等）が正確に抽出されること"""
         cases = [
             ("https://www.fsc.go.jp/fsciis/meetingMaterial/show/kai20200731ff1", "2020/07/31"),
             ("https://www.fsc.go.jp/fsciis/meetingMaterial/show/kai20111121ki1", "2011/11/21"),
@@ -92,6 +100,19 @@ class TestDrop25ModDateParsing(unittest.TestCase):
             with self.subTest(url=url):
                 res = _extract_date_from_url(url)
                 self.assertEqual(res, expected, f"Failed for {url}")
+
+    def test_validate_meeting_id_unit(self):
+        """CR-118: validate_meeting_id 関数の単体検証（4桁通常回次・3桁臨時回次許容 & プレフィックス遮断）"""
+        self.assertTrue(validate_meeting_id("cas-kokudo_kyoujinka-20260703-024"))
+        self.assertTrue(validate_meeting_id("nra-genshiryoku_kisei-20261007-1043"))
+        self.assertTrue(validate_meeting_id("cas-tokubetsu-20260807-s01"))
+        self.assertTrue(validate_meeting_id("mic-housou_seisaku-20261001-s100"))
+
+        self.assertFalse(validate_meeting_id("aca-kokugo_gairai-20260807-r08_003"))
+        self.assertFalse(validate_meeting_id("caa-shouhisha_iinkai-20100521-h22_005"))
+        self.assertFalse(validate_meeting_id("fsc-osen_tou-20140912-kanji_012"))
+        self.assertFalse(validate_meeting_id("cas-grassroots_tf-20170426-001_2"))
+        self.assertFalse(validate_meeting_id("cas-nousui-20220628-20231227"))
 
 
 if __name__ == "__main__":

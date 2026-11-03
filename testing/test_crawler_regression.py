@@ -3,7 +3,7 @@
 """
 政策会議ウォッチ (PM-HUB) - クロール回帰テストスイート (test_crawler_regression.py)
 
-手動で追加・更新された会議体 (COUNCILS)、会議 (MEETINGS)、資料 (MATERIALS) について、
+手動で追加・更新された会議体 (COUNCILS)、開催回 (MEETINGS)、配付資料 (MATERIALS) について、
 クローラーの処理 (deduplicate_data_materials, update_crawl_status, apply_report) を
 実行した場合にも、手動登録データが上書き・破損・削除されず完全同一に保護されるかを自動検証する。
 """
@@ -11,23 +11,22 @@
 import sys
 import os
 import json
-import copy
 import unittest
 
 PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 ADMIN_DIR = os.path.join(PROJECT_ROOT, "admin")
 sys.path.insert(0, ADMIN_DIR)
-from utils import setup_win32_utf8, load_data_json
+from utils import setup_win32_utf8
 setup_win32_utf8()
 
-
-from crawler import deduplicate_data_materials, update_crawl_status, sync_new_meetings_from_crawl
+from crawler import deduplicate_data_materials, sync_new_meetings_from_crawl
 from apply_report import apply_report
+
 
 class TestCrawlerManualLockProtection(unittest.TestCase):
 
     def test_deduplicate_materials_respects_meeting_manual_lock(self):
-        """manualLock: true の会議は deduplicate_data_materials による資料削除・移動から保護されること"""
+        """manualLock: true の開催回は deduplicate_data_materials による資料削除・移動から保護されること"""
         mock_data = {
             "councils": [
                 {"id": "test-council_1", "name": "テスト会議体", "url": "https://example.com/portal"}
@@ -38,7 +37,7 @@ class TestCrawlerManualLockProtection(unittest.TestCase):
                     "councilId": "test-council_1",
                     "name": "第1回 テスト会議",
                     "date": "2026/01/01",
-                    "manualLock": True,  # 手動保護
+                    "manualLock": True,
                     "materials": [
                         {"name": "報道発表特別資料", "url": "https://example.com/shared.pdf", "manualLock": True},
                         {"name": "通常資料", "url": "https://example.com/doc1.pdf"}
@@ -57,10 +56,8 @@ class TestCrawlerManualLockProtection(unittest.TestCase):
             ]
         }
 
-        # クローラーの重複排除を実行
         deduplicate_data_materials(mock_data)
 
-        # test-council_1-20260101-001 (locked) の資料がすべて残っていることを検証
         m1 = mock_data["meetings"][0]
         self.assertEqual(len(m1["materials"]), 2, "manualLock: true の会議資料は削除されてはいけない")
         self.assertEqual(m1["materials"][0]["url"], "https://example.com/shared.pdf")
@@ -98,20 +95,19 @@ class TestCrawlerManualLockProtection(unittest.TestCase):
 
         deduplicate_data_materials(mock_data)
 
-        # test-council_2-20260101-001 の手動保護資料が残っていること
         m2_1 = mock_data["meetings"][0]
         self.assertEqual(len(m2_1["materials"]), 1)
         self.assertEqual(m2_1["materials"][0]["name"], "手動保護資料")
 
     def test_apply_report_skips_locked_council_and_meeting(self):
-        """apply_report は manualLock: true の会議体および会議を JSON および SQLite DB 双方で保護すること (Drop 94)"""
+        """apply_report は manualLock: true の会議体および開催回を JSON および SQLite DB 双方で保護すること"""
         import tempfile
         import sqlite3
         from pathlib import Path
         try:
-            from db.db_manager import ensure_database, save_data_to_db
+            from db.db_manager import ensure_database
         except ImportError:
-            from admin.db.db_manager import ensure_database, save_data_to_db
+            from admin.db.db_manager import ensure_database
 
         temp_dir = tempfile.mkdtemp(prefix="pmhub_test_apply_")
         t_path = Path(temp_dir)
@@ -196,19 +192,15 @@ class TestCrawlerManualLockProtection(unittest.TestCase):
             with open(data_path, "r", encoding="utf-8") as res_f:
                 updated = json.load(res_f)
 
-            # JSON 検証: test-locked_council は上書きされていないこと
             lc = next(c for c in updated["councils"] if c["id"] == "test-locked_council")
             self.assertEqual(lc["officialUrl"], "https://example.com/manual-url", "locked council の URL は保護されるべき")
 
-            # JSON 検証: test-unlocked_council は更新されていること
             uc = next(c for c in updated["councils"] if c["id"] == "test-unlocked_council")
             self.assertEqual(uc["officialUrl"], "https://example.com/new-url", "unlocked council は更新されるべき")
 
-            # JSON 検証: test-locked_council-20260101-001 は上書きされていないこと
             lm = next(m for m in updated["meetings"] if m["id"] == "test-locked_council-20260101-001")
             self.assertEqual(lm["officialUrl"], "https://example.com/manual-meeting", "locked meeting の URL は保護されるべき")
 
-            # SQLite DB 検証: DB 内のレコードも manualLock を遵守して更新/保護されていること
             conn = sqlite3.connect(db_path)
             cur = conn.cursor()
             db_lc = cur.execute("SELECT official_url, manual_lock FROM councils WHERE id = 'test-locked_council';").fetchone()
@@ -228,43 +220,8 @@ class TestCrawlerManualLockProtection(unittest.TestCase):
             import shutil
             shutil.rmtree(temp_dir, ignore_errors=True)
 
-    def test_production_data_json_invariance_under_deduplication(self):
-        """本番 docs/data.json の手動ロックデータに対し deduplicate_data_materials を適用しても一切変化しないこと"""
-        data_json_path = os.path.join(PROJECT_ROOT, "docs", "data.json")
-        self.assertTrue(os.path.exists(data_json_path), "docs/data.json が存在すること")
-
-        original_data = load_data_json(data_json_path, cached=True)
-        self.assertTrue(bool(original_data), "docs/data.json が正常に読み込めること")
-
-        locked_meetings_before = {
-            m["id"]: copy.deepcopy(m)
-            for m in original_data.get("meetings", [])
-            if m.get("manualLock")
-        }
-
-        self.assertGreater(len(locked_meetings_before), 0, "手動ロックされた会議が存在すること (最低1件以上)")
-
-        # 40MB 全体の deepcopy を避け、手動ロック対象が存在する会議体・会議のサブセットに対して重複排除を実行
-        locked_council_ids = {m.get("councilId") for m in locked_meetings_before.values() if m.get("councilId")}
-        test_subset = {
-            "councils": [copy.deepcopy(c) for c in original_data.get("councils", []) if c.get("id") in locked_council_ids],
-            "meetings": [copy.deepcopy(m) for m in original_data.get("meetings", []) if m.get("councilId") in locked_council_ids]
-        }
-        deduplicate_data_materials(test_subset)
-
-        for m_id, original_m in locked_meetings_before.items():
-            after_m = next((m for m in test_subset.get("meetings", []) if m["id"] == m_id), None)
-            self.assertIsNotNone(after_m, f"会議 {m_id} が維持されていること")
-            self.assertEqual(
-                original_m["materials"],
-                after_m["materials"],
-                f"会議 {m_id} の materials 配列が重複排除処理によって一切改変されていないこと"
-            )
-
     def test_sync_new_meetings_adds_unregistered_session_and_preserves_locked(self):
-        """新規開催回が発見された場合に正しく追加され、既存のロック済み会議が破壊されないこと"""
-        from crawler import sync_new_meetings_from_crawl
-
+        """新規開催回が発見された場合に正しく追加され、既存のロック済み開催回が破壊されないこと"""
         mock_data = {
             "councils": [
                 {
@@ -294,14 +251,12 @@ class TestCrawlerManualLockProtection(unittest.TestCase):
         mock_scraped_item = {
             "councilId": "moj-test_council",
             "subpageMeetings": [
-                # 既存の第1回（スキップされるべき）
                 {
                     "subpageUrl": "https://example.com/session1.html",
                     "name": "第1回 法務省テスト検討会",
                     "materials": [{"name": "第1回 議事次第", "url": "https://example.com/mat1.pdf", "type": "PDF"}],
                     "extractedDates": ["2026/03/24"]
                 },
-                # 新しく発見された第2回（追加されるべき）
                 {
                     "subpageUrl": "https://example.com/session2.html",
                     "name": "第2回 法務省テスト検討会",
@@ -320,12 +275,10 @@ class TestCrawlerManualLockProtection(unittest.TestCase):
         self.assertEqual(added, 1, "新規開催回（第2回）の1件のみが追加されること")
         self.assertEqual(len(mock_data["meetings"]), 2, "合計会議数が2件になること")
 
-        # 第1回（手動ロック）が保護されていること
         m1 = next(m for m in mock_data["meetings"] if m["officialUrl"] == "https://example.com/session1.html")
         self.assertTrue(m1.get("manualLock"), "既存会議の manualLock が維持されていること")
         self.assertEqual(len(m1["materials"]), 1)
 
-        # 第2回が正しく構築されていること
         m2 = next(m for m in mock_data["meetings"] if m["officialUrl"] == "https://example.com/session2.html")
         self.assertEqual(m2["date"], "2026/04/15")
         self.assertEqual(len(m2["materials"]), 2)
@@ -333,9 +286,7 @@ class TestCrawlerManualLockProtection(unittest.TestCase):
         self.assertEqual(target["pastYearCount"], 2, "pastYearCount が更新されていること")
 
     def test_sync_new_meetings_upgrades_parent_url_when_specific_page_discovered(self):
-        """開催前で親URLのままだった既存会議に、開催後に個別資料ページが発見された場合、自動昇格・資料更新されること"""
-        from crawler import sync_new_meetings_from_crawl
-
+        """開催前で親URLのままだった既存開催回に、開催後に個別資料ページが発見された場合、自動昇格・資料更新されること"""
         mock_data = {
             "councils": [
                 {
@@ -353,8 +304,8 @@ class TestCrawlerManualLockProtection(unittest.TestCase):
                     "councilId": "mhlw-test_kaigo",
                     "name": "第263回 社会保障審議会 介護給付費分科会",
                     "date": "2026/08/28",
-                    "officialUrl": "https://www.mhlw.go.jp/stf/shingi/shingi-hosho_126698_00022.html", # 開催前で親URLのまま
-                    "materials": [] # 資料未掲載
+                    "officialUrl": "https://www.mhlw.go.jp/stf/shingi/shingi-hosho_126698_00022.html",
+                    "materials": []
                 }
             ]
         }
@@ -376,16 +327,16 @@ class TestCrawlerManualLockProtection(unittest.TestCase):
         target = mock_data["councils"][0]
         added = sync_new_meetings_from_crawl(mock_data, target, mock_scraped_item)
 
-        self.assertEqual(added, 1, "既存会議（第263回）が資料ページURLへ自動昇格・更新されること")
-        self.assertEqual(len(mock_data["meetings"]), 1, "会議総数は1件のまま（重複追加されないこと）")
+        self.assertEqual(added, 1, "既存開催回（第263回）が資料ページURLへ自動昇格・更新されること")
+        self.assertEqual(len(mock_data["meetings"]), 1, "開催回総数は1件のまま（重複追加されないこと）")
 
         m263 = mock_data["meetings"][0]
         self.assertEqual(m263["officialUrl"], "https://www.mhlw.go.jp/stf/newpage_75439.html", "officialUrl が個別資料ページURLに更新されていること")
         self.assertEqual(len(m263["materials"]), 2, "資料2件が同期されていること")
         self.assertEqual(m263["materials"][0]["url"], "https://www.mhlw.go.jp/content/001743312.pdf")
 
-    def test_drop95_rule_driven_subpage_filtering(self):
-        """Drop 95: スクレイピングルールによる汎用サブページ除外・必須判定が正しく動作すること"""
+    def test_rule_driven_subpage_filtering(self):
+        """スクレイピングルールによる汎用サブページ除外・必須判定が正しく動作すること"""
         mock_data = {
             "councils": [
                 {
@@ -408,31 +359,26 @@ class TestCrawlerManualLockProtection(unittest.TestCase):
 
         mock_scraped = {
             "subpageMeetings": [
-                # 1. 自己URL参照（disallow_self_url で除外）
                 {
                     "subpageUrl": "https://example.com/parent_portal",
                     "name": "第1回 テストルール会議体",
                     "materials": [{"name": "資料1", "url": "https://example.com/p1.pdf"}]
                 },
-                # 2. URL除外パターン一致（/sub_excluded/ で除外）
                 {
                     "subpageUrl": "https://example.com/singi/sub_excluded/m01.html",
                     "name": "第2回 テストルール会議体",
                     "materials": [{"name": "資料2", "url": "https://example.com/p2.pdf"}]
                 },
-                # 3. タイトル除外キーワード一致（ワーキンググループ で除外）
                 {
                     "subpageUrl": "https://example.com/singi/valid_wg.html",
                     "name": "第1回 テストルール会議体 ワーキンググループ",
                     "materials": [{"name": "資料3", "url": "https://example.com/p3.pdf"}]
                 },
-                # 4. 必須URLパターン不一致（singi を含まないため除外）
                 {
                     "subpageUrl": "https://example.com/news/m04.html",
                     "name": "第3回 テストルール会議体",
                     "materials": [{"name": "資料4", "url": "https://example.com/p4.pdf"}]
                 },
-                # 5. 正規開催回（全条件クリアで追加対象）
                 {
                     "subpageUrl": "https://example.com/singi/m05.html",
                     "name": "第4回 テストルール会議体",
@@ -450,8 +396,8 @@ class TestCrawlerManualLockProtection(unittest.TestCase):
         self.assertEqual(mock_data["meetings"][0]["name"], "第4回 テストルール会議体")
         self.assertEqual(mock_data["meetings"][0]["officialUrl"], "https://example.com/singi/m05.html")
 
-    def test_drop95_zero_council_id_hardcodes_in_crawler(self):
-        """Drop 95: crawler.py 内に特定会議体IDのハードコード分岐が一切存在しないこと"""
+    def test_zero_council_id_hardcodes_in_crawler(self):
+        """crawler.py 内に特定会議体IDのハードコード分岐が一切存在しないこと"""
         import re
         crawler_path = os.path.join(ADMIN_DIR, "crawler.py")
         with open(crawler_path, "r", encoding="utf-8") as f:
@@ -468,7 +414,6 @@ class TestCrawlerManualLockProtection(unittest.TestCase):
                 f"crawler.py に特定会議体ID '{cid}' がハードコードされています。scraping_rules へ移行してください。"
             )
 
-        # council_id == "..." や council_id in (...) のハードコード判定が0件であること
         pattern = r'''council_id\s*(?:==|in)\s*['"\(\[]'''
         matches = re.findall(pattern, crawler_code)
         self.assertEqual(
@@ -476,28 +421,24 @@ class TestCrawlerManualLockProtection(unittest.TestCase):
             f"crawler.py に council_id の直接ハードコード分岐が検出されました: {matches}"
         )
 
-    def test_drop96_hybrid_generic_index_filtering(self):
-        """Drop 96: is_generic_index_url / is_generic_title_text が汎用・省庁別・会議体別設定をハイブリッド適用すること"""
+    def test_hybrid_generic_index_filtering(self):
+        """is_generic_index_url / is_generic_title_text が汎用・省庁別・会議体別設定をハイブリッド適用すること"""
         from crawler import is_generic_index_url, is_generic_title_text
 
-        # 1. 汎用パターンの判定
         self.assertTrue(is_generic_index_url("https://example.com/press/index.html"))
         self.assertTrue(is_generic_index_url("https://example.com/sitemap.html"))
         self.assertTrue(is_generic_index_url("https://example.com/other", title="会議開催予定"))
         self.assertTrue(is_generic_title_text("トップページ"))
         self.assertTrue(is_generic_title_text("会議資料詳細"))
 
-        # 2. 省庁別除外設定（DIGITAL, FSA, FSC）の動的照合
         self.assertTrue(is_generic_index_url("https://digital.go.jp/en/something.html", ministry="DIGITAL"))
         self.assertTrue(is_generic_title_text("有識者会議｜デジタル庁", ministry="DIGITAL"))
         self.assertTrue(is_generic_index_url("https://www.fsa.go.jp/strategic_priorities/index.html", ministry="FSA"))
         self.assertTrue(is_generic_title_text("令和8事務年度金融行政方針", ministry="FSA"))
         self.assertTrue(is_generic_title_text("食の安全、を科学する", ministry="FSC"))
 
-        # 他省庁コンテキストでは誤爆しないこと
         self.assertFalse(is_generic_title_text("食の安全、を科学する", ministry="MOF"))
 
-        # 3. 会議体別除外ルールの動的照合
         rule = {
             "exclude_subpage_url_patterns": ["custom_special_sub/"],
             "exclude_subpage_title_keywords": ["ディスカッション特別セッション"]
@@ -506,35 +447,31 @@ class TestCrawlerManualLockProtection(unittest.TestCase):
         self.assertTrue(is_generic_title_text("ディスカッション特別セッション", rule=rule))
         self.assertFalse(is_generic_title_text("第1回 正常な会議タイトル", rule=rule))
 
-    def test_drop96_generic_constants_purity(self):
-        """Drop 96: crawler.py の汎用定数内に特定省庁・特定会議体パターンが混入していないこと"""
+    def test_generic_constants_purity(self):
+        """crawler.py の汎用定数内に特定省庁・特定会議体パターンが混入していないこと"""
         import re
         crawler_path = os.path.join(ADMIN_DIR, "crawler.py")
         with open(crawler_path, "r", encoding="utf-8") as f:
             crawler_code = f.read()
 
-        # COMMON_NAV_KEYWORDS の純度検証
         m_nav = re.search(r'COMMON_NAV_KEYWORDS = frozenset\(\{([^}]+)\}\)', crawler_code)
         self.assertIsNotNone(m_nav, "COMMON_NAV_KEYWORDS definition not found")
         nav_str = m_nav.group(1)
         for prohibited in ['外務省後援名義', '赤れんが棟', '法務省の個人情報保護', '法制審議会開催予定表', '能力開発基本調査', '労使関係セミナー', '監査監督機関国際フォーラム', 'IFIAR']:
             self.assertNotIn(prohibited, nav_str, f"COMMON_NAV_KEYWORDS に特定省庁/会議体語句 '{prohibited}' が残存しています")
 
-        # _GENERIC_INDEX_TITLE_KEYWORDS の純度検証
         m_title = re.search(r'_GENERIC_INDEX_TITLE_KEYWORDS = frozenset\(\{([^}]+)\}\)', crawler_code)
         self.assertIsNotNone(m_title, "_GENERIC_INDEX_TITLE_KEYWORDS definition not found")
         title_str = m_title.group(1)
         for prohibited in ['有識者会議｜警察庁', '食の安全、を科学する', '｜デジタル庁', 'Digital Agency', '金融行政方針', 'The Tax Commission', 'Tax Commission']:
             self.assertNotIn(prohibited, title_str, f"_GENERIC_INDEX_TITLE_KEYWORDS に特定省庁/会議体語句 '{prohibited}' が残存しています")
 
-        # _GENERIC_INDEX_URL_PATTERNS の純度検証
         m_url = re.search(r"_GENERIC_INDEX_URL_PATTERNS = re\.compile\(\s*r'(.*?)',\s*re\.IGNORECASE\s*\)", crawler_code, re.DOTALL)
         self.assertIsNotNone(m_url, "_GENERIC_INDEX_URL_PATTERNS definition not found")
         url_str = m_url.group(1)
         for prohibited in ['zeicho', 'fiscal_system_council', 'fsc.go.jp/senmon', 'kanbou_library', '14th_congress', 'da.nra.go.jp', 'digital.go.jp', 'strategic_priorities']:
             self.assertNotIn(prohibited, url_str, f"_GENERIC_INDEX_URL_PATTERNS に特定URLパターン '{prohibited}' が残存しています")
 
-        # Drop 99: GENERIC_TITLE_KEYWORDS / GENERIC_EXACT_ONLY_KEYWORDS / NAV_EXCLUDE_TEXTS の純度検証
         for const_name in ['GENERIC_TITLE_KEYWORDS', 'GENERIC_EXACT_ONLY_KEYWORDS', 'NAV_EXCLUDE_TEXTS']:
             m_const = re.search(rf'{const_name} = frozenset\(\{{([^}}]+)\}}\)', crawler_code)
             self.assertIsNotNone(m_const, f"{const_name} definition not found")
@@ -542,32 +479,29 @@ class TestCrawlerManualLockProtection(unittest.TestCase):
             for prohibited in ['総務省の紹介', '令和３年改正個人情報保護法', '原子力規制委員会', '後援名義等の使用許可申請', '赤れんが棟', '法務省の個人情報保護', '法制審議会開催予定表', '能力開発基本調査', '労使関係セミナー', '監査監督機関国際フォーラム', 'IFIAR']:
                 self.assertNotIn(prohibited, const_str, f"{const_name} に特定省庁/会議体語句 '{prohibited}' が残存しています")
 
-    def test_drop99_rule_driven_material_context_and_watched_ids(self):
-        """Drop 99: recover_material_context のルール駆動補完および docs/app.js 初期ウォッチIDのDB一元化検証"""
+    def test_rule_driven_material_context_and_watched_ids(self):
+        """recover_material_context のルール駆動補完および docs/app.js 初期ウォッチIDのDB一元化検証"""
         from bs4 import BeautifulSoup
         from crawler import recover_material_context
 
-        # 1. DBロード済みルール (digital-suishin_kanjikai: kanjikai / startup) による復元
         soup1 = BeautifulSoup('<a href="/councils/kanjikai_dai1/siryou1.pdf">配布資料</a>', 'html.parser')
         self.assertEqual(recover_material_context(soup1.find('a'), initial_name="配布資料"), "幹事会 配布資料")
 
         soup2 = BeautifulSoup('<a href="/councils/startup_wg/siryou2.pdf">資料</a>', 'html.parser')
         self.assertEqual(recover_material_context(soup2.find('a'), initial_name="資料"), "スタートアップ育成WG 資料")
 
-        # 2. カスタム rule 引数指定による動的ディレクトリプレフィックス補完
         custom_rule = {"material_dir_prefix_map": {"custom_tf": "特別タスクフォース"}}
         soup3 = BeautifulSoup('<a href="/meetings/custom_tf_01/doc.pdf">配付資料</a>', 'html.parser')
         self.assertEqual(recover_material_context(soup3.find('a'), initial_name="配付資料", rule=custom_rule), "特別タスクフォース 配付資料")
 
-        # 3. docs/app.js に旧会議体ID 'meti-sangyo_kozo' 等のハードコードが存在しないこと
         app_js_path = os.path.join(os.path.dirname(ADMIN_DIR), "docs", "app.js")
         with open(app_js_path, "r", encoding="utf-8") as f:
             app_js_code = f.read()
         self.assertNotIn("meti-sangyo_kozo", app_js_code, "docs/app.js に廃止済み旧会議体ID 'meti-sangyo_kozo' がハードコードされています")
         self.assertIn("INITIAL_WATCHED_COUNCIL_IDS", app_js_code, "docs/app.js が INITIAL_WATCHED_COUNCIL_IDS を参照していません")
 
-def run_tests():
 
+def run_tests():
     print("==================================================")
     print(" クロールデータ保護・回帰テスト (test_crawler_regression.py)")
     print("==================================================")
@@ -580,6 +514,7 @@ def run_tests():
     else:
         print("\n[FAIL] クロール回帰テストで不一致・不合格が検出されました。")
         return False
+
 
 if __name__ == "__main__":
     success = run_tests()

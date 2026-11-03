@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-Drop 23 テストスイート: METI/ANRE AWS WAF耐性 & 動的レートリミット検証 (CR-48, CR-49)
+WAF耐性 & 動的レートリミット・省庁ドメイン設定 単体テストスイート (test_waf_resilience.py)
 """
 
 import os
@@ -12,7 +12,8 @@ from unittest.mock import patch, MagicMock
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..', 'admin'))
 import crawler
 
-class TestDrop23WafResilience(unittest.TestCase):
+
+class TestWafResilience(unittest.TestCase):
 
     def test_dynamic_host_interval(self):
         """CR-49: ドメイン別動的レートリミットが正しく解決されるか検証"""
@@ -24,7 +25,7 @@ class TestDrop23WafResilience(unittest.TestCase):
         self.assertEqual(crawler._get_host_interval(""), 0.5)
 
     def test_ministry_and_host_configs_db_unification(self):
-        """Drop 92: 省庁ドメイン・新着ポータル・ホスト設定のDB一元化とENV残存バグ根絶検証"""
+        """省庁ドメイン・新着ポータル・ホスト設定のDB一元化とENV残存バグ根絶検証"""
         crawler.load_ministry_and_host_configs_from_db()
         self.assertNotIn("ENV", crawler.MINISTRY_DOMAINS, "Legacy 'ENV' key must not exist in MINISTRY_DOMAINS")
         self.assertIn("MOE", crawler.MINISTRY_DOMAINS)
@@ -32,7 +33,6 @@ class TestDrop23WafResilience(unittest.TestCase):
         self.assertGreaterEqual(len(crawler.MINISTRY_DOMAINS), 45, "All ministries in DB should have domains loaded")
         self.assertIn("MOE", crawler.MINISTRY_NEWS_PORTALS)
         self.assertNotIn("ENV", crawler.MINISTRY_NEWS_PORTALS)
-        # 外局と本省の共有ドメイン（ANRE / METI 等）が他省庁ドメインとして誤遮断されないことを検証
         self.assertNotIn("meti.go.jp", crawler._OTHER_MINISTRY_DOMAINS_MAP.get("ANRE", ()))
         self.assertNotIn("env.go.jp", crawler._OTHER_MINISTRY_DOMAINS_MAP.get("MOE", ()))
         self.assertIn("mhlw.go.jp", crawler._OTHER_MINISTRY_DOMAINS_MAP.get("METI", ()))
@@ -49,14 +49,12 @@ class TestDrop23WafResilience(unittest.TestCase):
     @patch('urllib.request.urlopen')
     def test_fetch_url_retry_on_202(self, mock_urlopen, mock_sleep):
         """CR-48: HTTP 202 発生時にクールダウン待機して自動リトライが実行されるか検証"""
-        # 1回目の呼び出し: 202 チャレンジ
         resp_202 = MagicMock()
         resp_202.status = 202
         resp_202.headers.get.return_value = 'text/html'
         resp_202.read.return_value = b'<html>challenge</html>'
         resp_202.__enter__.return_value = resp_202
 
-        # 2回目の呼び出し: 200 OK 正常HTML
         resp_200 = MagicMock()
         resp_200.status = 200
         resp_200.headers.get.return_value = 'text/html; charset=utf-8'
@@ -70,6 +68,7 @@ class TestDrop23WafResilience(unittest.TestCase):
         self.assertIn("正常審議会", html)
         self.assertEqual(mock_urlopen.call_count, 2)
         mock_sleep.assert_any_call(2.5)
+
 
 if __name__ == '__main__':
     unittest.main()

@@ -1,10 +1,12 @@
 #!/usr/bin/env node
 /**
- * 政策会議ウォッチ (PM-HUB) - JavaScript Runtime Crash & TDZ Validator
+ * 政策会議ウォッチ (PM-HUB) - UI Structure, No-Leakage & JavaScript Runtime Crash Validator
  * 
- * 公開ポータル (docs/app.js) および 管理ダッシュボード (admin/admin_dashboard.html) の
- * JavaScript が、実際のデータをロードして初期化・描画を行う際に
- * TDZ (Temporal Dead Zone)、ReferenceError、TypeError 等の例外で途中で停止（クラッシュ）しないかを自動検証します。
+ * 1. 公開ポータル (docs/index.html) および 管理ダッシュボード (admin/admin_dashboard.html) の
+ *    必須DOMコンテナ構造および管理画面リンク非露出（No Leakage）を検証します。
+ * 2. 公開ポータル (docs/app.js) および 管理ダッシュボードの JavaScript が、
+ *    実際のデータをロードして初期化・描画を行う際に TDZ、ReferenceError、TypeError 等の
+ *    例外で停止（クラッシュ）しないかを自動検証します。
  */
 
 const fs = require('fs');
@@ -13,6 +15,7 @@ const path = require('path');
 const PROJECT_ROOT = path.resolve(__dirname, '..');
 const DATA_JSON_PATH = path.join(PROJECT_ROOT, 'docs', 'data.json');
 const REJECTED_JSON_PATH = path.join(PROJECT_ROOT, 'admin', 'rejected_councils.json');
+const INDEX_HTML_PATH = path.join(PROJECT_ROOT, 'docs', 'index.html');
 const APP_JS_PATH = path.join(PROJECT_ROOT, 'docs', 'app.js');
 const ADMIN_HTML_PATH = path.join(PROJECT_ROOT, 'admin', 'admin_dashboard.html');
 
@@ -21,6 +24,53 @@ function logPass(msg) {
 }
 function logFail(msg) {
   console.error(`  [FAIL] ${msg}`);
+}
+
+function testUiDomStructureAndNoLeakage() {
+  console.log("--------------------------------------------------");
+  console.log(" [UI構造検証 1/3] 公開ポータル＆管理コンソール DOM構造・ローカル専用化検証");
+  console.log("--------------------------------------------------");
+
+  const htmlText = fs.readFileSync(INDEX_HTML_PATH, 'utf8');
+  const adminText = fs.readFileSync(ADMIN_HTML_PATH, 'utf8');
+
+  const requiredPortalElements = ['id="timelineFeed"', 'id="councilsAccordionList"', 'id="dateRangeSelect"'];
+  for (const elem of requiredPortalElements) {
+    if (!htmlText.includes(elem)) {
+      logFail(`公開ポータル表示用HTML要素 (${elem}) が不足しています`);
+      return false;
+    }
+  }
+  logPass("公開ポータルの主要コンテナ (timelineFeed, councilsAccordionList, dateRangeSelect) を検証完了");
+
+  if (htmlText.includes('admin_dashboard.html') || htmlText.includes('管理コンソール')) {
+    logFail("公開ポータル (docs/index.html) に管理コンソール (admin_dashboard.html) へのリンクが露出しています");
+    return false;
+  }
+  logPass("公開ポータルからの管理画面リンク露出ゼロ (ローカル専用化) を検証完了");
+
+  const adminTabIds = ['tab-crawler', 'tab-meetings', 'tab-councils', 'tab-rejected', 'tab-ministries'];
+  for (const tid of adminTabIds) {
+    if (!adminText.includes(`id="${tid}"`)) {
+      logFail(`管理ダッシュボードのタブコンテナ (${tid}) が不足しています`);
+      return false;
+    }
+  }
+
+  const adminContainers = ['id="councilList"', 'id="meetingsList"', 'id="rejectedList"', 'id="ministryListContainer"'];
+  for (const cid of adminContainers) {
+    if (!adminText.includes(cid)) {
+      logFail(`管理ダッシュボードの描画先コンテナ (${cid}) が不足しています`);
+      return false;
+    }
+  }
+
+  if (!adminText.includes('id="pmmStatusSummary"') || !adminText.includes('id="btnStartPmmDownload"')) {
+    logFail("管理ダッシュボードの PMM 要素 (pmmStatusSummary / btnStartPmmDownload) が不足しています");
+    return false;
+  }
+  logPass("管理ダッシュボードの全5タブ、描画先コンテナおよび PMM 要素を検証完了");
+  return true;
 }
 
 function createMockDOM(sampleData, sampleRejected) {
@@ -152,8 +202,8 @@ function createMockDOM(sampleData, sampleRejected) {
 }
 
 async function testPublicPortalRuntime(sampleData) {
-  console.log("--------------------------------------------------");
-  console.log(" [ランタイムテスト 1/2] 公開ポータル (docs/app.js) 実行時クラッシュ検証");
+  console.log("\n--------------------------------------------------");
+  console.log(" [ランタイム検証 2/3] 公開ポータル (docs/app.js) 実行時クラッシュ検証");
   console.log("--------------------------------------------------");
 
   const { mockDoc, mockWin, elements } = createMockDOM(sampleData, []);
@@ -195,7 +245,6 @@ async function testPublicPortalRuntime(sampleData) {
     return false;
   }
 
-  // 検索・フィルタリングの実行時クラッシュ検証（フリーワード検索）
   const testKeywords = ['年金', 'デジタル', '令和', '労働', 'AI', '審議会', 'xyznonexistent'];
   for (const kw of testKeywords) {
     try {
@@ -224,7 +273,7 @@ async function testPublicPortalRuntime(sampleData) {
 
 async function testAdminDashboardRuntime(sampleData, sampleRejected) {
   console.log("\n--------------------------------------------------");
-  console.log(" [ランタイムテスト 2/2] 管理コンソール (admin_dashboard.html) 実行時クラッシュ検証");
+  console.log(" [ランタイム検証 3/3] 管理コンソール (admin_dashboard.html) 実行時クラッシュ検証");
   console.log("--------------------------------------------------");
 
   const { mockDoc, mockWin, elements } = createMockDOM(sampleData, sampleRejected);
@@ -247,7 +296,6 @@ async function testAdminDashboardRuntime(sampleData, sampleRejected) {
   }
 
   let executionError = null;
-  // 1. 外部スクリプトの実行（admin_dashboard.js 等）
   for (const sm of srcMatches) {
     const srcPath = path.resolve(path.dirname(ADMIN_HTML_PATH), sm[1]);
     if (fs.existsSync(srcPath)) {
@@ -264,7 +312,6 @@ async function testAdminDashboardRuntime(sampleData, sampleRejected) {
     }
   }
 
-  // 2. インラインスクリプトの実行
   if (!executionError) {
     for (const m of inlineMatches) {
       try {
@@ -294,7 +341,7 @@ async function testAdminDashboardRuntime(sampleData, sampleRejected) {
   // 1. 会議体データ管理タブ (renderCards)
   try {
     if (typeof mockWin.renderCards === 'function') {
-      elements['filterVerdict'].value = ''; // 全件表示
+      elements['filterVerdict'].value = '';
       mockWin.renderCards();
       const count = elements['councilList']?.innerHTML?.length || 0;
       if (count > 0) {
@@ -377,8 +424,13 @@ async function testAdminDashboardRuntime(sampleData, sampleRejected) {
 
 async function run() {
   console.log("==================================================");
-  console.log(" JavaScript Runtime Crash & TDZ Validation");
+  console.log(" UI Structure & JavaScript Runtime Validation");
   console.log("==================================================");
+
+  const domOk = testUiDomStructureAndNoLeakage();
+  if (!domOk) {
+    process.exit(1);
+  }
 
   let sampleData = { councils: [], meetings: [], ministries: {}, categories: {} };
   let sampleRejected = [];
@@ -394,11 +446,11 @@ async function run() {
   const adminOk = await testAdminDashboardRuntime(sampleData, sampleRejected);
 
   console.log("\n==================================================");
-  if (portalOk && adminOk) {
-    console.log(" 【結果】全JavaScriptランタイムテストに合格しました（クラッシュ0件）。");
+  if (domOk && portalOk && adminOk) {
+    console.log(" 【結果】UI構造・ローカル専用化・全JavaScriptランタイム検証に合格しました（クラッシュ0件）。");
     process.exit(0);
   } else {
-    console.error(" 【結果】JavaScriptランタイムエラーが検知されました。");
+    console.error(" 【結果】UI構造またはJavaScriptランタイムエラーが検知されました。");
     process.exit(1);
   }
 }
