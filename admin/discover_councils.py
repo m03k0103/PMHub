@@ -1034,10 +1034,8 @@ def run_discovery(progress_callback=None, target_ministry=None, dry_run=False, m
             for cid, c_obj in filtered_existing_dict.items():
                 if cid and cid not in scraping_rules_in_data:
                     scraping_rules_in_data[cid] = {
-                        "template": "tpl-cas-gijisidai-nested",
-                        "manualLock": True,
-                        "officialUrl": c_obj.get("officialUrl", ""),
-                        "extract_from_parent_table": True
+                        "template": "tpl-ministry-hybrid-kaisai",
+                        "manualLock": True
                     }
                     new_rules_count += 1
 
