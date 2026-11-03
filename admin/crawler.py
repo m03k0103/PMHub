@@ -1367,7 +1367,7 @@ def parse_materials_from_html(html, base_url, pdf_selector=None):
             continue
 
         raw_text = normalize_text(a_tag.get_text(" ", strip=True))
-        clean_name = re.sub(r'[\（\(]PDF[／/形式\:\s\d\.\,KBMB]+\s*[\）\)]', '', raw_text).strip()
+        clean_name = re.sub(r'[\[\［\（\(]PDF[／/形式\:\s\d\.\,KBMBkbmb]+[\]\］\）\)]', '', raw_text, flags=re.IGNORECASE).strip()
         clean_name = re.sub(r'［PDF形式：\d+.*?］', '', clean_name).strip()
         clean_name = normalize_text(clean_name)
         
@@ -1385,8 +1385,9 @@ def parse_materials_from_html(html, base_url, pdf_selector=None):
         if clean_name in EXCLUDE_MATERIAL_NAMES or any(k in clean_name for k in ['移動します', '公式ポータル', '公式ページ', '公式情報ポータル', '審議会・検討会等一覧', '公式掲載資料・ページ']) or any(kw in clean_name for kw in ['傍聴される皆様への留意事項', '傍聴留意事項', '傍聴申込', '傍聴希望', '傍聴案内', 'お申込みください', 'お申込みは', '傍聴される皆様へ']):
             continue
 
-        # A. PDFおよび各種文書ファイル
-        if href.lower().endswith(('.pdf', '.docx', '.xlsx', '.doc', '.xls')) or '/pdf/' in href.lower():
+        # A. PDFおよび各種文書ファイル（動的ダウンロードURLやテキスト内[PDF]表記も網羅）
+        is_dynamic_pdf = any(k in href.lower() for k in ['attachedfile/download', 'attachedfile', 'fileid=']) or (('[pdf' in raw_text.lower() or '（pdf' in raw_text.lower()) and not href.lower().endswith(('.html', '.htm', '/')))
+        if href.lower().endswith(('.pdf', '.docx', '.xlsx', '.doc', '.xls')) or '/pdf/' in href.lower() or is_dynamic_pdf:
             seen_urls.add(abs_url)
             materials.append({
                 "name": clean_name,
