@@ -813,9 +813,8 @@
       "manualLock": true
     },
     "cao-keizai_anzen_zosen": {
-      "extract_from_parent_table": true,
-      "pdf_selector": "a[href$='.pdf']",
-      "deep_crawl_enabled": true
+      "template": "tpl-parent-table-direct",
+      "manualLock": true
     },
     "cao-keizai_shimon": {
       "template": "tpl-general-round-subpage",
@@ -2135,56 +2134,47 @@
       "subpage_discovery_pattern": "https://www\\.cas\\.go\\.jp/jp/seisaku/zensedai_shakaihosho_kochiku/dai\\d+/gijisidai\\.html"
     },
     "cfa-azukari_service": {
-      "subpage_discovery_pattern": "/councils/shingikai/kodomo_sodachi/azukari_service/.+",
-      "date_regex": "(?:令和\\s*\\d+\\s*年|\\d{4}年)\\s*\\d+\\s*月\\s*\\d+\\s*日",
-      "pdf_selector": "a[href$='.pdf']",
-      "deep_crawl_enabled": true
+      "template": "tpl-councils-uuid-subpage",
+      "manualLock": true,
+      "subpage_discovery_pattern": "https://www\\.cfa\\.go\\.jp/councils/shingikai/kodomo_sodachi/azukari_service/[a-zA-Z0-9_-]+"
     },
     "cfa-care_needs": {
-      "subpage_discovery_pattern": "/councils/shingikai/shakai_katei/care-needs/.+",
-      "date_regex": "(?:令和\\s*\\d+\\s*年|\\d{4}年)\\s*\\d+\\s*月\\s*\\d+\\s*日",
-      "pdf_selector": "a[href$='.pdf']",
-      "deep_crawl_enabled": true
+      "template": "tpl-councils-uuid-subpage",
+      "manualLock": true,
+      "subpage_discovery_pattern": "https://www\\.cfa\\.go\\.jp/councils/shingikai/shakai_katei/care\\-needs/[a-zA-Z0-9_-]+"
     },
     "cfa-gyakutai_boushi": {
-      "subpage_discovery_pattern": "/councils/shingikai/gyakutai_boushi/.+",
-      "date_regex": "(?:令和\\s*\\d+\\s*年|\\d{4}年)\\s*\\d+\\s*月\\s*\\d+\\s*日",
-      "pdf_selector": "a[href$='.pdf']",
-      "deep_crawl_enabled": true
+      "template": "tpl-councils-uuid-subpage",
+      "manualLock": true,
+      "subpage_discovery_pattern": "https://www\\.cfa\\.go\\.jp/councils/shingikai/gyakutai_boushi/[a-zA-Z0-9_-]+"
     },
     "cfa-gyakutai_hogojirei": {
-      "subpage_discovery_pattern": "/councils/shingikai/gyakutai_boushi/hogojirei/.+",
-      "date_regex": "(?:令和\\s*\\d+\\s*年|\\d{4}年)\\s*\\d+\\s*月\\s*\\d+\\s*日",
-      "pdf_selector": "a[href$='.pdf']",
-      "deep_crawl_enabled": true
+      "template": "tpl-councils-uuid-subpage",
+      "manualLock": true,
+      "subpage_discovery_pattern": "https://www\\.cfa\\.go\\.jp/councils/shingikai/gyakutai_boushi/hogojirei/[a-zA-Z0-9_-]+"
     },
     "cfa-hinkon_hitorioya": {
-      "subpage_discovery_pattern": "/councils/shingikai/hinkon_hitorioya/.+",
-      "date_regex": "(?:令和\\s*\\d+\\s*年|\\d{4}年)\\s*\\d+\\s*月\\s*\\d+\\s*日",
-      "pdf_selector": "a[href$='.pdf']",
-      "deep_crawl_enabled": true
+      "template": "tpl-councils-uuid-subpage",
+      "manualLock": true,
+      "subpage_discovery_pattern": "https://www\\.cfa\\.go\\.jp/councils/shingikai/hinkon_hitorioya/[a-zA-Z0-9_-]+"
     },
     "cfa-hinkon_suishin_wg": {
-      "extract_from_parent_table": true,
-      "pdf_selector": "a[href$='.pdf']",
-      "deep_crawl_enabled": true
+      "template": "tpl-parent-table-direct",
+      "manualLock": true
     },
     "cfa-hitorioya_wg": {
-      "extract_from_parent_table": true,
-      "pdf_selector": "a[href$='.pdf']",
-      "deep_crawl_enabled": true
+      "template": "tpl-parent-table-direct",
+      "manualLock": true
     },
     "cfa-hoiku_senmon": {
-      "subpage_discovery_pattern": "/councils/shingikai/hoiku_senmon/.+",
-      "date_regex": "(?:令和\\s*\\d+\\s*年|\\d{4}年)\\s*\\d+\\s*月\\s*\\d+\\s*日",
-      "pdf_selector": "a[href$='.pdf']",
-      "deep_crawl_enabled": true
+      "template": "tpl-councils-uuid-subpage",
+      "manualLock": true,
+      "subpage_discovery_pattern": "https://www\\.cfa\\.go\\.jp/councils/shingikai/hoiku_senmon/[a-zA-Z0-9_-]+"
     },
     "cfa-hoikushi_shikaku": {
-      "subpage_discovery_pattern": "/councils/shingikai/kodomo_sodachi/hoikushi_shikaku/.+",
-      "date_regex": "(?:令和\\s*\\d+\\s*年|\\d{4}年)\\s*\\d+\\s*月\\s*\\d+\\s*日",
-      "pdf_selector": "a[href$='.pdf']",
-      "deep_crawl_enabled": true
+      "template": "tpl-councils-uuid-subpage",
+      "manualLock": true,
+      "subpage_discovery_pattern": "https://www\\.cfa\\.go\\.jp/councils/shingikai/kodomo_sodachi/hoikushi_shikaku/[a-zA-Z0-9_-]+"
     },
     "cfa-hoshokin_yuseishujutsu": {
       "template": "tpl-councils-uuid-subpage",
@@ -2192,46 +2182,39 @@
       "subpage_discovery_pattern": "/councils/hoshokin-yuseishujutsu/[a-f0-9]+"
     },
     "cfa-iken_senmon": {
-      "subpage_discovery_pattern": "/councils/shingikai/iken_senmon/.+",
-      "date_regex": "(?:令和\\s*\\d+\\s*年|\\d{4}年)\\s*\\d+\\s*月\\s*\\d+\\s*日",
-      "pdf_selector": "a[href$='.pdf']",
-      "deep_crawl_enabled": true
+      "template": "tpl-councils-uuid-subpage",
+      "manualLock": true,
+      "subpage_discovery_pattern": "https://www\\.cfa\\.go\\.jp/councils/shingikai/iken_senmon/[a-zA-Z0-9_-]+"
     },
     "cfa-jidou_fukushi": {
-      "subpage_discovery_pattern": "/councils/shingikai/jidou_fukushi/.+",
-      "date_regex": "(?:令和\\s*\\d+\\s*年|\\d{4}年)\\s*\\d+\\s*月\\s*\\d+\\s*日",
-      "pdf_selector": "a[href$='.pdf']",
-      "deep_crawl_enabled": true
+      "template": "tpl-councils-uuid-subpage",
+      "manualLock": true,
+      "subpage_discovery_pattern": "https://www\\.cfa\\.go\\.jp/councils/shingikai/jidou_fukushi/[a-zA-Z0-9_-]+"
     },
     "cfa-jidou_shogu": {
-      "subpage_discovery_pattern": "/councils/shingikai/shakai_katei/jidou_shogu/.+",
-      "date_regex": "(?:令和\\s*\\d+\\s*年|\\d{4}年)\\s*\\d+\\s*月\\s*\\d+\\s*日",
-      "pdf_selector": "a[href$='.pdf']",
-      "deep_crawl_enabled": true
+      "template": "tpl-councils-uuid-subpage",
+      "manualLock": true,
+      "subpage_discovery_pattern": "https://www\\.cfa\\.go\\.jp/councils/shingikai/shakai_katei/jidou_shogu/[a-zA-Z0-9_-]+"
     },
     "cfa-jidoukan_senmon": {
-      "subpage_discovery_pattern": "/councils/shingikai/kodomo_ibasho/jidoukan/.+",
-      "date_regex": "(?:令和\\s*\\d+\\s*年|\\d{4}年)\\s*\\d+\\s*月\\s*\\d+\\s*日",
-      "pdf_selector": "a[href$='.pdf']",
-      "deep_crawl_enabled": true
+      "template": "tpl-councils-uuid-subpage",
+      "manualLock": true,
+      "subpage_discovery_pattern": "https://www\\.cfa\\.go\\.jp/councils/shingikai/kodomo_ibasho/jidoukan/[a-zA-Z0-9_-]+"
     },
     "cfa-kagaku_gijutsu_art": {
-      "subpage_discovery_pattern": "/councils/shingikai/kagaku_gijutsu/art/.+",
-      "date_regex": "(?:令和\\s*\\d+\\s*年|\\d{4}年)\\s*\\d+\\s*月\\s*\\d+\\s*日",
-      "pdf_selector": "a[href$='.pdf']",
-      "deep_crawl_enabled": true
+      "template": "tpl-councils-uuid-subpage",
+      "manualLock": true,
+      "subpage_discovery_pattern": "https://www\\.cfa\\.go\\.jp/councils/shingikai/kagaku_gijutsu/art/[a-zA-Z0-9_-]+"
     },
     "cfa-kihon_seisaku": {
-      "subpage_discovery_pattern": "/councils/shingikai/kihon_seisaku/.+",
-      "date_regex": "(?:令和\\s*\\d+\\s*年|\\d{4}年)\\s*\\d+\\s*月\\s*\\d+\\s*日",
-      "pdf_selector": "a[href$='.pdf']",
-      "deep_crawl_enabled": true
+      "template": "tpl-councils-uuid-subpage",
+      "manualLock": true,
+      "subpage_discovery_pattern": "https://www\\.cfa\\.go\\.jp/councils/shingikai/kihon_seisaku/[a-zA-Z0-9_-]+"
     },
     "cfa-kodomo_ibasho": {
-      "subpage_discovery_pattern": "/councils/shingikai/kodomo_ibasho/.+",
-      "date_regex": "(?:令和\\s*\\d+\\s*年|\\d{4}年)\\s*\\d+\\s*月\\s*\\d+\\s*日",
-      "pdf_selector": "a[href$='.pdf']",
-      "deep_crawl_enabled": true
+      "template": "tpl-councils-uuid-subpage",
+      "manualLock": true,
+      "subpage_discovery_pattern": "https://www\\.cfa\\.go\\.jp/councils/shingikai/kodomo_ibasho/[a-zA-Z0-9_-]+"
     },
     "cfa-kodomo_kosodate": {
       "template": "tpl-councils-uuid-subpage",
@@ -2239,16 +2222,14 @@
       "subpage_discovery_pattern": "/councils/shingikai/kodomo_kosodate/[a-zA-Z0-9_-]+"
     },
     "cfa-kodomo_kosodate_kanri": {
-      "subpage_discovery_pattern": "/councils/shingikai/kodomo_kosodate/kanri/.+",
-      "date_regex": "(?:令和\\s*\\d+\\s*年|\\d{4}年)\\s*\\d+\\s*月\\s*\\d+\\s*日",
-      "pdf_selector": "a[href$='.pdf']",
-      "deep_crawl_enabled": true
+      "template": "tpl-councils-uuid-subpage",
+      "manualLock": true,
+      "subpage_discovery_pattern": "https://www\\.cfa\\.go\\.jp/councils/shingikai/kodomo_kosodate/kanri/[a-zA-Z0-9_-]+"
     },
     "cfa-kodomo_kosodate_kikaku": {
-      "subpage_discovery_pattern": "/councils/shingikai/kodomo_kosodate/kikaku/.+",
-      "date_regex": "(?:令和\\s*\\d+\\s*年|\\d{4}年)\\s*\\d+\\s*月\\s*\\d+\\s*日",
-      "pdf_selector": "a[href$='.pdf']",
-      "deep_crawl_enabled": true
+      "template": "tpl-councils-uuid-subpage",
+      "manualLock": true,
+      "subpage_discovery_pattern": "https://www\\.cfa\\.go\\.jp/councils/shingikai/kodomo_kosodate/kikaku/[a-zA-Z0-9_-]+"
     },
     "cfa-kodomo_shingikai": {
       "template": "tpl-councils-uuid-subpage",
@@ -2256,10 +2237,9 @@
       "subpage_discovery_pattern": "https://www\\.cfa\\.go\\.jp/councils/shingikai/[a-zA-Z0-9]+"
     },
     "cfa-kodomo_sodachi": {
-      "subpage_discovery_pattern": "/councils/shingikai/kodomo_sodachi/.+",
-      "date_regex": "(?:令和\\s*\\d+\\s*年|\\d{4}年)\\s*\\d+\\s*月\\s*\\d+\\s*日",
-      "pdf_selector": "a[href$='.pdf']",
-      "deep_crawl_enabled": true
+      "template": "tpl-councils-uuid-subpage",
+      "manualLock": true,
+      "subpage_discovery_pattern": "https://www\\.cfa\\.go\\.jp/councils/shingikai/kodomo_sodachi/[a-zA-Z0-9_-]+"
     },
     "cfa-kodomo_suishin": {
       "template": "tpl-councils-uuid-subpage",
@@ -2267,28 +2247,24 @@
       "subpage_discovery_pattern": "https://www\\.cfa\\.go\\.jp/councils/suishinkaigi/[a-zA-Z0-9]+"
     },
     "cfa-seiiku_iryou": {
-      "subpage_discovery_pattern": "/councils/shingikai/seiiku_iryou/.+",
-      "date_regex": "(?:令和\\s*\\d+\\s*年|\\d{4}年)\\s*\\d+\\s*月\\s*\\d+\\s*日",
-      "pdf_selector": "a[href$='.pdf']",
-      "deep_crawl_enabled": true
+      "template": "tpl-councils-uuid-subpage",
+      "manualLock": true,
+      "subpage_discovery_pattern": "https://www\\.cfa\\.go\\.jp/councils/shingikai/seiiku_iryou/[a-zA-Z0-9_-]+"
     },
     "cfa-shakai_katei": {
-      "subpage_discovery_pattern": "/councils/shingikai/shakai_katei/.+",
-      "date_regex": "(?:令和\\s*\\d+\\s*年|\\d{4}年)\\s*\\d+\\s*月\\s*\\d+\\s*日",
-      "pdf_selector": "a[href$='.pdf']",
-      "deep_crawl_enabled": true
+      "template": "tpl-councils-uuid-subpage",
+      "manualLock": true,
+      "subpage_discovery_pattern": "https://www\\.cfa\\.go\\.jp/councils/shingikai/shakai_katei/[a-zA-Z0-9_-]+"
     },
     "cfa-shougaiji_shien": {
-      "subpage_discovery_pattern": "/councils/shingikai/shougaiji_shien/.+",
-      "date_regex": "(?:令和\\s*\\d+\\s*年|\\d{4}年)\\s*\\d+\\s*月\\s*\\d+\\s*日",
-      "pdf_selector": "a[href$='.pdf']",
-      "deep_crawl_enabled": true
+      "template": "tpl-councils-uuid-subpage",
+      "manualLock": true,
+      "subpage_discovery_pattern": "https://www\\.cfa\\.go\\.jp/councils/shingikai/shougaiji_shien/[a-zA-Z0-9_-]+"
     },
     "cfa-tokubetsu_yoshi": {
-      "subpage_discovery_pattern": "/councils/shingikai/shakai_katei/tokubetsu-yoshi/.+",
-      "date_regex": "(?:令和\\s*\\d+\\s*年|\\d{4}年)\\s*\\d+\\s*月\\s*\\d+\\s*日",
-      "pdf_selector": "a[href$='.pdf']",
-      "deep_crawl_enabled": true
+      "template": "tpl-councils-uuid-subpage",
+      "manualLock": true,
+      "subpage_discovery_pattern": "https://www\\.cfa\\.go\\.jp/councils/shingikai/shakai_katei/tokubetsu\\-yoshi/[a-zA-Z0-9_-]+"
     },
     "digital-385": {
       "template": "tpl-councils-uuid-subpage",
