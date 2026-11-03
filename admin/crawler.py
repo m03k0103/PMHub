@@ -1031,13 +1031,18 @@ def interleave_by_host_and_ministry(councils):
 
 interleave_by_ministry = interleave_by_host_and_ministry
 
-def load_scraping_rules():
-    """docs/data.json の scrapingRules キーからスクレイピングルールを読み込み、必要に応じて scrapingRuleTemplates を展開・マージする"""
-    data = load_data_json(DATA_JSON_FILE)
+def load_scraping_rules(data=None):
+    """docs/data.json の scrapingRules キーからスクレイピングルールを読み込み、必要に応じて scrapingRuleTemplates および councils URL を展開・マージする"""
+    if data is None:
+        data = load_data_json(DATA_JSON_FILE)
     if data:
         try:
             templates = data.get("scrapingRuleTemplates", {})
             raw_rules = data.get("scrapingRules", {})
+            councils_map = {
+                c["id"]: c for c in data.get("councils", [])
+                if isinstance(c, dict) and c.get("id")
+            }
             resolved_rules = {}
             for cid, r in raw_rules.items():
                 if not isinstance(r, dict):
@@ -1060,6 +1065,14 @@ def load_scraping_rules():
                     for k, v in nested.items():
                         if k not in merged:
                             merged[k] = v
+
+                # councils マスター (SSOT) から officialUrl / archiveUrl を自動補完
+                c_obj = councils_map.get(cid)
+                if c_obj:
+                    if not merged.get("officialUrl") and c_obj.get("officialUrl"):
+                        merged["officialUrl"] = c_obj["officialUrl"]
+                    if not merged.get("archiveUrl") and c_obj.get("archiveUrl"):
+                        merged["archiveUrl"] = c_obj["archiveUrl"]
 
                 merged["_council_id"] = cid
                 resolved_rules[cid] = merged
@@ -2729,8 +2742,8 @@ def determine_crawl_result(unique_materials, norm_date_matches, subpage_meetings
 def execute_rule_retrieval(target, html, rule_item, use_llm=False, recheck_recent=1, full_check=False):
     """多段情報取得Engine (高速Heuristicルール優先 → 未抽出時LLMフォールバック)"""
     global LLM_QUOTA_BLOCKED
-    rule = rule_item.get("rules", {})
-    quirk_note = rule_item.get("ministryQuirk", "標準抽出ルール")
+    rule = rule_item.get("rules") if (isinstance(rule_item, dict) and isinstance(rule_item.get("rules"), dict)) else (rule_item if isinstance(rule_item, dict) else {})
+    quirk_note = rule_item.get("ministryQuirk", "標準抽出ルール") if isinstance(rule_item, dict) else "標準抽出ルール"
     
     title_match = re.search(r'<title>(.*?)</title>', html, re.IGNORECASE | re.DOTALL)
     page_title = title_match.group(1).strip() if title_match else target["name"]
@@ -3177,6 +3190,8 @@ def sync_new_meetings_from_crawl(data, target, scraped_item):
     ministry = target["ministry"]
     meetings = data.setdefault("meetings", [])
     rules = data.get("scrapingRules", {})
+    if rules and isinstance(data.get("scrapingRuleTemplates"), dict) and data.get("scrapingRuleTemplates"):
+        rules = load_scraping_rules(data)
     target_rule = get_rule_for_target(rules, target) if rules else (target.get("scrapingRule") or {})
 
     existing_c_meets = [m for m in meetings if m.get("councilId") == council_id]
@@ -4198,7 +4213,7 @@ def run_ministry_news_discovery(progress_callback=None, stop_event=None, ministr
             pass
 
         councils = data.get("councils", [])
-        rules = data.get("scrapingRules", {})
+        rules = load_scraping_rules(data)
         meetings = data.get("meetings", [])
         load_ministry_and_host_configs_from_db(data=data)
 

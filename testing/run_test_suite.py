@@ -905,8 +905,9 @@ def check_active_filtering_and_closed_management(data=None):
         print(f"  [FAIL] アクティブ会議体比率 ({active_ratio:.1f}%, {act_c}/{total_c}) が健全範囲 (30%〜90%) 外です")
         return False
 
+    from crawler import load_scraping_rules
     councils = data.get("councils", [])
-    existing_rules = data.get("scrapingRules", {})
+    existing_rules = load_scraping_rules(data)
     if councils and existing_rules:
         url_to_slug_map = {
             normalize_url_for_matching(r.get("officialUrl")): r_id
