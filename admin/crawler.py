@@ -255,7 +255,7 @@ EXCLUDE_MATERIAL_NAMES = frozenset({
 # コンテキスト復元対象となるジェネリック配付資料名（CR-110）
 GENERIC_MATERIAL_NAMES = frozenset({
     'PDF', 'pdf', '資料', 'ダウンロード', 'リンク', 'こちら', '配付資料', '配布資料',
-    '別紙', '別添', '添付', '添付資料', '一覧', '詳細'
+    '別紙', '別添', '添付', '添付資料', '一覧', '詳細', '印刷用', '印刷'
 })
 
 def is_generic_material_name(name):
@@ -4090,7 +4090,7 @@ def extract_news_items_from_html(html, page_url, ministry_code, ptype):
         full_url = urllib.parse.urljoin(page_url, href)
 
         if any(kw in text for kw in keywords) or any(re.search(p, text) for p in [r'第\s*\d+\s*回', r'開催', r'配付資料', r'議事録', r'議事次第']):
-            if any(nav in text for nav in ["トップページ", "目次", "プライバシーポリシー", "アクセシビリティ", "リンク集", "公募", "採用", "職員募集", "人事異動"]):
+            if any(nav in text for nav in ["トップページ", "目次", "プライバシーポリシー", "アクセシビリティ", "リンク集", "公募", "採用", "職員募集", "人事異動", "の委員について", "委員の任命", "委員の選任", "委員について"]):
                 continue
             items.append({
                 "title": text,
@@ -4104,10 +4104,42 @@ def extract_news_items_from_html(html, page_url, ministry_code, ptype):
 
 
 def match_council_from_news_item(item, councils_by_url, councils_by_min):
-    """ニュース項目から登録済み会議体（councils）を高精度名寄せマッチング（Drop 68）"""
+    """ニュース項目から登録済み会議体（councils）を高精度名寄せマッチング（Drop 68 / Drop 129 ドメイン逆引き対応）"""
     url = item.get("url", "").rstrip("/")
     title = item.get("title", "")
     min_code = item.get("ministry", "")
+
+    # Drop 129: URLドメインから真の省庁コードを逆引き推定（内閣府ポータル等から外局・他省庁へのリンク対応）
+    domain_to_min = {
+        'www.fsc.go.jp': 'FSC', 'fsc.go.jp': 'FSC',
+        'www.caa.go.jp': 'CAA', 'caa.go.jp': 'CAA',
+        'www.ppc.go.jp': 'PPC', 'ppc.go.jp': 'PPC',
+        'www.digital.go.jp': 'DIGITAL', 'digital.go.jp': 'DIGITAL',
+        'www.cfa.go.jp': 'CFA', 'cfa.go.jp': 'CFA',
+        'www.fsa.go.jp': 'FSA', 'fsa.go.jp': 'FSA',
+        'www.soumu.go.jp': 'MIC', 'soumu.go.jp': 'MIC',
+        'www.fdma.go.jp': 'FDMA', 'fdma.go.jp': 'FDMA',
+        'www.rinya.maff.go.jp': 'RINYA', 'rinya.maff.go.jp': 'RINYA',
+        'www.jfa.maff.go.jp': 'JFA', 'jfa.maff.go.jp': 'JFA',
+        'www.enecho.meti.go.jp': 'METI', 'enecho.meti.go.jp': 'METI',
+        'www.jpo.go.jp': 'METI', 'jpo.go.jp': 'METI',
+        'www.chusho.meti.go.jp': 'METI', 'chusho.meti.go.jp': 'METI',
+        'www.mlit.go.jp': 'MLIT', 'mlit.go.jp': 'MLIT',
+        'www.env.go.jp': 'MOE', 'env.go.jp': 'MOE',
+        'www.nra.go.jp': 'NRA', 'nra.go.jp': 'NRA',
+        'www.mod.go.jp': 'MOD', 'mod.go.jp': 'MOD',
+        'www.cas.go.jp': 'CAS', 'cas.go.jp': 'CAS',
+        'www.cao.go.jp': 'CAO', 'cao.go.jp': 'CAO',
+        'www.moj.go.jp': 'MOJ', 'moj.go.jp': 'MOJ',
+        'www.mof.go.jp': 'MOF', 'mof.go.jp': 'MOF',
+        'www.mext.go.jp': 'MEXT', 'mext.go.jp': 'MEXT',
+        'www.mhlw.go.jp': 'MHLW', 'mhlw.go.jp': 'MHLW',
+        'www.maff.go.jp': 'MAFF', 'maff.go.jp': 'MAFF'
+    }
+    parsed_u = urllib.parse.urlparse(url)
+    inferred_min = domain_to_min.get(parsed_u.netloc.lower(), min_code)
+    if inferred_min:
+        min_code = inferred_min
 
     # 1. URL完全一致
     if url in councils_by_url:
