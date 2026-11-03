@@ -5,11 +5,18 @@ parent_resolver.py:
 """
 
 import re
+import time
 import urllib.request
 import urllib.parse
+from urllib.parse import urlparse, urljoin
 import ssl
 from typing import Optional, Tuple
 from bs4 import BeautifulSoup
+
+try:
+    from admin.utils import get_browser_headers, decode_html_bytes
+except ImportError:
+    from utils import get_browser_headers, decode_html_bytes
 
 try:
     from admin.crawler_modules.http_client import fetch_html_page
@@ -17,14 +24,14 @@ except ImportError:
     from crawler_modules.http_client import fetch_html_page
 
 try:
-    from admin.discovery_modules.name_cleaner import get_core_council_name
+    from admin.discovery_modules.name_cleaner import get_core_council_name, clean_council_name
     from admin.discovery_modules.noise_filters import (
         is_single_press_or_notice_url,
         is_non_council_noise,
         normalize_url,
     )
 except ImportError:
-    from discovery_modules.name_cleaner import get_core_council_name
+    from discovery_modules.name_cleaner import get_core_council_name, clean_council_name
     from discovery_modules.noise_filters import (
         is_single_press_or_notice_url,
         is_non_council_noise,
@@ -88,33 +95,30 @@ def resolve_parent_url_from_press_release(press_url: str, cand_name: str, min_co
         abs_u = urljoin(press_url, href)
         parsed_target = urlparse(abs_u)
 
-        # 同一省庁ドメインのみ対象
+        # 同一ホスト限定 (外部ドメインやSNS等は除外)
         if parsed_target.netloc.lower() != parsed_base.netloc.lower():
             continue
-        # ドキュメント直リンクや別プレスリリースは除外
-        if re.search(r"\.(pdf|docx?|xlsx?|pptx?|jpe?g|png|gif|zip)$", abs_u, re.I):
-            continue
-        if abs_u == press_url or is_single_press_or_notice_url(abs_u) or re.search(r'(?:/stf/newpage_\d+|/report/press/|/press/|/menu_news/s-news/)', abs_u):
+
+        # プレスリリース自体の再リンクやアーカイブ除外
+        if is_single_press_or_notice_url(abs_u):
             continue
 
-        link_text = a.get_text(separator=" ", strip=True)
-        link_title = a.get("title", "").strip()
-        combined_text = f"{link_text} {link_title}"
+        link_text = a.get_text(strip=True)
+        # ノイズ文字列の除外
+        if is_non_council_noise(link_text):
+            continue
 
+        # スコアリング: 会議体名称がリンクテキストまたはURLに含まれているか
         score = 0
-        # 会議体名そのものを含むリンク
-        if clean_cand and clean_cand in combined_text:
+        if clean_cand and clean_cand in link_text:
             score += 10
-        # 常設ディレクトリパターンを含む (Drop 107: 主要省庁常設パス拡充)
-        if re.search(r'/(?:shingikai|seisakunitsuite|council|singi|policy|councils|b_menu/shingi|koku|maritime|road|jutakukentiku|toshi|mizukokudo|sogoseisaku|tetudo|jidosha|port|tochi_fudousan_kensetsugyo|nature)/', abs_u):
+        if "開催状況" in link_text or "議事要旨" in link_text or "配付資料" in link_text or "議事録" in link_text:
             score += 5
-        # リンク文言に親ページ示唆語句を含む
-        if any(w in combined_text for w in ["開催状況", "過去の開催", "審議会等", "検討会はこちら", "ホームページはこちら", "会議資料"]):
+        if "/council/" in abs_u or "/shingi/" in abs_u or "/kaigi/" in abs_u or "/seisaku/" in abs_u:
             score += 3
 
         if score > best_score and score >= 5:
             best_score = score
             best_url = abs_u
 
-    return best_url or press_url
-
+    return best_url if best_url else press_url
