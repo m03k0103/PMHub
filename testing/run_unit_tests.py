@@ -156,6 +156,12 @@ UNIT_TEST_REGISTRY = {
         "name": "決定論的1ファイル新着ダイジェスト & LLMディスカバリー単体テスト (test_llm_discovery.py)",
         "description": "SHA-256ダイジェスト不変性, 5段階事前フィルタ, ID参照限定ハルシネーション遮断, 呼出予算上限(3/10/30)&SQLiteキャッシュ, 新着フラグ保護",
         "runner": lambda: _run_py_class("test_llm_discovery", "TestLlmDiscovery")
+    },
+    "u_automation_report": {
+        "id": "U13",
+        "name": "定時クロール差分レポート・異常判定単体テスト (test_automation_report.py)",
+        "description": "新規開催回・資料差分集計, 今回試行分のみの失敗集計, 403/429計数, サーキットブレーカー相当判定(5省庁/5%減/HTTP遮断), 読み取り専用性",
+        "runner": lambda: _run_py_class("test_automation_report", "TestAutomationReport")
     }
 }
 

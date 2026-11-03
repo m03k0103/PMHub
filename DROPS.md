@@ -1,8 +1,8 @@
 # PMHub 改善・機能実装（Drop）マスタードキュメント (DROPS.md)
 
 > **最終更新**: 2026-11-03  `
-> **最新 Drop**: **Drop 131**（2026-11-03 完了）  
-> **次期予定 Drop**: **Drop 132**（Track [Core-Policy-Filter]: 「重要政策会議のみ」クイック絞り込み機能の実装）  `
+> **最新 Drop**: **Drop 132**（2026-11-03 完了）  
+> **次期予定 Drop**: **Drop 133**（Track [Core-Policy-Filter]: 「重要政策会議のみ」クイック絞り込み機能の実装）  `
 > 
 > 本ドキュメントは、PMHub の継続的改善ロードマップおよび実装記録を一元管理するマスタードキュメントです。  `
 > 今後の構想テーマは **「Track（トラック）」** として管理し、着手・個別実装単位は最新連番を付与した **「Drop（ドロップ）」** として連番アーカイブします。  `
@@ -24,7 +24,7 @@
 |:---:|:---|:---|:---:|:---:|
 | **Track [Core-Policy-Filter]** | **「重要政策会議のみ」絞り込み機能** | **国家の基本方針・中核アジェンダを審議する重要会議体のワンクリック絞り込み**<br>内閣府設置法第18条に基づく重要政策に関する会議（経済財政諮問会議、総合科学技術・イノベーション会議、中央防災会議、男女共同参画会議、国家戦略特区諮問会議等）および主要閣僚会議・基幹審議会を定義。DBへのフラグ/設定追加と公開ポータルUIへのクイック絞り込みトグル新設。 | **1,700超の会議体から最重要アジェンダへ瞬時にアクセス** | **【構想中】** |
 | **Track [LLM-Assist]** | **決定論的1ファイル新着ダイジェスト & LLM判定・クロール階層型フォールバック** | **【フェーズ 1】ディスカバリー 1ファイル集約・単一リクエストLLM判定 & 新着分類永続化（Drop 81 完了）**<br>**【フェーズ 2】開催回クロール 3段階ファネル・異常検知フォールバック & バッチLLM抽出**<br>API呼出上限（Daily 3回 / Weekly 10回 / Monthly 30回）とSQLite `llm_cache`（SHA-256ダイジェストキャッシュ）により、最小APIコールで新規会議体検知と0件以外を含むクロール欠落補完を実現 | **最小APIコールでの新規会議体検知 & クロール補完** | **【構想中】**<br>（フェーズ 1: Drop 81 完了 / フェーズ 2 構想中） |
-| **Track [Automation]** | **定時巡回クローラー & ローカルDB同期**<br>(GitHub Actions 連携) | **3階層マルチスケジュール定期実行・異常検知時Skip・ローカルDB自動同期**<br>1. Daily (平朝): 省庁新着検知のみ<br>2. Weekly (土曜): 通常巡回（直近2年重点）<br>3. Monthly (第1日曜): 全期間包括走査<br>連鎖失敗・重大エラー検知時のIssue発行＆次回以降Skip機能、Zero-Storage VM運用、ローカル環境への安全な同期エンジン（`sync_from_json.py` + post-merge hook）の配備 | **定期自動巡回・省力化 & ローカル資産整合性担保** | **【構想中】**<br>（Drop 82 以降） |
+| **Track [Automation]** | **定時巡回クローラー & ローカルDB同期**<br>(GitHub Actions 連携) | **3階層マルチスケジュール定期実行・異常検知時Skip・ローカルDB自動同期**<br>1. Daily (平朝): 省庁新着検知のみ<br>2. Weekly (土曜): 通常巡回（直近2年重点）<br>3. Monthly (第1日曜): 全期間包括走査<br>連鎖失敗・重大エラー検知時のIssue発行＆次回以降Skip機能、Zero-Storage VM運用、ローカル環境への安全な同期エンジン（`sync_from_json.py` + post-merge hook）の配備 | **定期自動巡回・省力化 & ローカル資産整合性担保** | **【進行中】**<br>（フェーズ1 ドライラン: Drop 132 完了 / フェーズ2 自動コミット: 構想中） |
 | **Track [Search]** | **全文検索エンジン統合**<br>(PMM資産連携・分離FTS5 DB構築) | **PMM ローカル資産（PDF/HTML・約13.3万件）を活用した分離型全文検索エンジンの構築**<br>マスターDB（`admin/pmhub.db`）の肥大化を防ぐため全文検索専用DB（`admin/pmhub_fts.db`）を分離・`ATTACH` 結合するアーキテクチャを採用。`admin/pmm/text_extractor.py` によるインクリメンタル本文抽出（中断耐性付き）、FTS5 `trigram` インデックス構築、検索API（`/api/search`）、およびローカル管理画面（`admin/admin_dashboard.html`）を主軸としつつローカルサーバー起動時は公開ポータルUIからも全文検索可能なハイブリッドUIの実装（No Leakage 原則厳守） | **約13.3万件の配付資料・会議体資料の高速本文横断検索** | **【構想中】**<br>（DB・PMM基盤完了済 / 着手可能） |
 | **Track [Policy-AI]** | **政策分析連携構想**<br>(DB・PMM実資料・LLM統合分析) | **SQLite マスターDB・PMM実資料テキスト・`llm_cache` を統合した省庁横断政策インテリジェンス**<br>1. 省庁横断政策テーマ（GX、AI、経済安保、少子化等）および審議フェーズ（諮問・中間整理・答申等）の自動タギング（`meetings.tags_json` 活用）<br>2. PMM ローカル資料（議事要旨・主要資料）の実本文に基づく構造化AI要約生成（`meetings.summary` & SHA-256 `llm_cache` 活用）<br>3. 上位会議から各省庁審議会への政策波及タイムライン比較と、軽量サマリー/タグのみの公開JSON（`docs/data.json`）への安全な2系統還元（No Leakage 厳守） | **実資料に基づく政策横断的インサイトの創出** | **【長期構想】**<br>（Track [Search] 連携） |
 
@@ -83,16 +83,21 @@
 
 GitHub Actions を用いた定期巡回クロールを安全に運用し、リモートで更新された最新データをローカル開発環境の SQLite マスターDBへ非破壊で自律同期する CI/CD 運用基盤。
 
+##### 0. 段階導入（フェーズ構成）
+いきなり完全自動化せず、ログ確認後に自動化へ移行する。
+- **フェーズ1（Drop 132 完了）: ドライラン**: `.github/workflows/crawl.yml` を `workflow_dispatch`（手動実行）のみで配備。`permissions: contents: read` とし、`main` への commit / push は行わない。DB復元 → クロール → エクスポート → 差分レポート（`admin/tools/automation_report.py`）→ 統合テストを実行し、Job Summary と Artifact（保持30日）に出力。`schedule` はコメントアウトで待機。
+- **フェーズ2（構想中）**: ドライランのログで問題がないことを確認後、`schedule` の有効化、`contents: write` と統合テスト合格時のみの自動 commit / push（`[skip ci]`）、サーキットブレーカー Issue、`sync_from_json.py` と post-merge hook を実装する。
+
 ##### 1. 3層マルチスケジュール設計
 サーバー負荷軽減および効率的運用の観点から、探索深度の異なる3種類のトリガーを実装：
 1. **Daily (平日 06:00 JST / `cron: '0 21 * * 0-4'`) - 省庁新着検知のみ**:
-   - `python admin/crawler.py --mode ministry_news --workers 4`
+   - `python admin/crawler.py --from-ministry-news --skip-download --no-llm`
    - 各府省庁トップページ・新着案内（`MINISTRY_NEWS_PORTALS`）を巡回し、前日公表の新規開催回・資料のみを高速収集（約2分）。
 2. **Weekly (土曜 03:00 JST / `cron: '0 18 * * 5'`) - 通常巡回（直近2年重点）**:
-   - `python admin/crawler.py --workers 4 --recent-years 2`
+   - `python admin/crawler.py --workers 4 --skip-download --no-llm --recent-years 2`
    - 全アクティブ会議体を対象に、直近2年間の開催回・配付資料の更新確認・収集を実施（約15〜20分）。
 3. **Monthly (第1日曜 01:00 JST / `cron: '0 16 1-7 * 0'`) - 全期間包括巡回**:
-   - `python admin/crawler.py --workers 4 --recent-years 0`
+   - `python admin/crawler.py --workers 4 --skip-download --no-llm --recent-years 0`
    - 全会議体の全期間（過去十数年分）を包括的に総ざらいし、過去資料アーカイブの欠落を網羅補完（約45分）。
 
 ##### 2. 異常検知時自動Skip機能（サーキットブレーカー / キルスイッチ）
@@ -267,6 +272,7 @@ GitHub Actions で自動更新・push されたリモートの最新データ（
 | **Drop 129** | **スクレイピングルール & テンプレートの全面統合・再編（冗長・死にキー排除 & 10標準テンプレート化）** | `scrapingRuleTemplates`（22件＋未定義6件＋未指定181件）を基本5種＋省庁CMS特化5種の計10テンプレートへ統合・純化。全1,759会議体ルールから22種の死にキー・重複メタデータおよびインライン重複（`date_regex` 45通り・`pdf_selector` 33通り・ワイルドカード `.*` 20件）を排除し、109件の複数キャプチャグループ `date_regex` バグおよび `crawler.py` のフラット化ルール参照不整合を修正。4件の `archiveUrl` を `councils.archive_url` へ統合。 | **ルール総キー数 64.1%削減・JSONサイズ 76.2%削減**<br>・全1,759ルールを10テンプレートへ100%正規化（未定義・未使用0件）<br>・プロパティ数 10,992 → 3,942個 / ユニーク定義 1,705 → 284種<br>・統合10ケース＋単体12種完全合格 |
 | **Drop 130** | **省庁新着情報検知クロール（--from-ministry-news）& ドメイン逆引き省庁推定・こども家庭庁等24組織ワンストップ登録** | 省庁新着ポータル走査のドメイン逆引きによる真の省庁推定（139件会合適合）・人事告知/ジェネリック資料（印刷用）遮断ガード配備。こども家庭審議会配下23組織＋内閣府造船WGの全219開催回/2,109配付資料をワンストップ登録、SQLiteマスターDB（23,559開催回・144,392配付資料）完全同期。 | 24組織・219開催回・2,109資料ワンストップ登録、新着検知精度抜本向上、全テスト完全合格 |
 | **Drop 131** | **食品安全委員会（FSC）動的ダウンロードURL対応・配付資料網羅取得 & スクレイピングルール改修** | FSC個別開催回ページの動的ダウンロードURL（`/attachedFile/download?`）抽出に対応するため `parse_materials_from_html` および標準テンプレート `tpl-fsc-kai-subpage` を改修。第1040回の公式URL補正とともに全23組織から配付資料3,718件を網羅取得・登録（`manual_lock = 1`）。SQLiteマスターDB（148,110配付資料）および2系統JSON完全同期。 | FSC全23組織配付資料網羅化（+3,718資料）、動的URL完全疎通、統合10ケース＋単体12種合格 |
+| **Drop 132** | **Track [Automation] フェーズ1: 定時クロール ドライラン基盤** | GitHub Actions（`workflow_dispatch` のみ・`contents: read`）で DB復元→クロール→エクスポート→差分レポート→統合テストを実行しログ・Artifact へ出力。`main` への commit / push は行わない。差分レポート生成ツール `admin/tools/automation_report.py`、`requirements.txt`、単体テスト U13 を新設。 | 単体U13 9テスト合格。`schedule` / 自動コミットはログ確認後のフェーズ2で有効化。 |
 ---
 
 ### 2-2. 各 Dropの詳細
@@ -4245,3 +4251,31 @@ python testing/run_test_suite.py --all-layers : PASSED（統合15ケース＋全
 - **他省庁における動的ダウンロードURL（`/download?` 等）の有無点検**:
   - 他の独立行政法人や審議会ポータルにおいても、拡張子 `.pdf` ではなく `/download?id=...` 形式の動的リンクを採用しているケースがないか、定期的なディスカバリー時に点検を継続。
 - **次期予定**: Drop 132（Track [Core-Policy-Filter]: 「重要政策会議のみ」クイック絞り込み機能の実装）の着手準備。
+
+---
+
+### Drop 132: Track [Automation] フェーズ1 - 定時クロール ドライラン基盤
+
+- **1. 背景と目的 (Background & Objective)**:
+  - Track [Automation]（GitHub Actions 定時クロール）を、いきなり完全自動化せず、まずログと差分レポートのみを出力するドライランとして導入し、結果に問題がないことを確認してから自動コミットへ移行する方針とした。
+
+- **2. 主要な実装・改修内容 (Key Implementations)**:
+  - **`.github/workflows/crawl.yml`（新規）**: `workflow_dispatch`（モード daily / weekly / monthly、任意の省庁絞り込み）のみ。`permissions: contents: read`、`concurrency` で二重起動防止。手順は seed_db.py（Zero-Storage 復元）→ スナップショット → クローラー（`--skip-download --no-llm`）→ export_data.py → 差分レポート → 統合テスト（`--skip-network`、失敗してもジョブ継続）→ Artifact 出力。`schedule`（Daily / Weekly / Monthly）はコメントで待機。
+  - **`admin/tools/automation_report.py`（新規・読み取り専用）**: クロール前後の `docs/data.json` / `docs/data_archive.json` / `admin/admin_data.json` を比較し、新規開催回・消えた開催回・追加配付資料・今回試行分の失敗会議体・失敗省庁数・403/429 件数を Markdown と `GITHUB_OUTPUT` に出力。サーキットブレーカー相当（失敗省庁5以上 / 開催回総数5%超減少 / 403・429 多発）を判定して記録のみ行う（フェーズ1は停止・Issue 起票なし）。
+  - **`requirements.txt`（新規）**: CI 用 Python 依存（requests / beautifulsoup4 / chardet / google-generativeai）。
+  - **テスト**: `testing/test_automation_report.py`（9テスト）を新設し、`run_unit_tests.py` に U13、`run_test_suite.py` に連動マッピングを追加。
+  - **`DROPS.md`**: 仕様中の実在しない `--mode ministry_news` を `--from-ministry-news` へ訂正、フェーズ構成を追記。
+
+- **3. 次回クロールへの影響 (Crawler Impact & Behavior)**:
+  - **手動登録データの保護挙動**: ドライランは `main` を変更せず、CI 上の一時DBでのみ動作する。`manualLock: true` のデータに影響しない。
+  - **新着検知・自動更新の挙動**: `scrapingRules` は変更なし。CI の結果は Artifact にのみ出力し本番データへ反映しない。
+  - **クローラーの負荷・探索範囲への影響**: クローラー本体は未変更で、同一ホスト直列化・0.35秒以上のレートリミットを維持。初回は手動実行のみのため定期的な負荷は発生しない。
+
+- **4. 変更ファイル一覧 (Changed Files)**:
+  - `.github/workflows/crawl.yml`、`admin/tools/automation_report.py`、`requirements.txt`、`testing/test_automation_report.py`（新規）
+  - `testing/run_unit_tests.py`、`testing/run_test_suite.py`（U13 登録・連動）
+  - `DROPS.md`
+
+- **5. 検証結果 (Verification Results)**:
+  - ローカル検証: seed_db.py が `admin/pmhub.db` と同一件数（1,783会議体 / 23,559開催回 / 148,110配付資料）を復元。レポート CLI は差分0件で正常出力。ワークフロー YAML は構文検証済み。
+  - GitHub Actions 上の初回実行結果は、ユーザーの手動実行後に確認する。

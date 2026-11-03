@@ -1,0 +1,126 @@
+# Track [Automation] フェーズ1: ドライラン（ログ・差分レポートのみ出力）
+#
+# - 手動実行 (workflow_dispatch) のみ。schedule はログ確認後に有効化する（下部のコメント参照）。
+# - main への commit / push は行わない。permissions も contents: read のみ。
+# - 結果は Job Summary と Artifact (crawl-dryrun-*) に出力する。
+name: Crawl (dry-run)
+
+on:
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: "巡回モード"
+        required: true
+        default: daily
+        type: choice
+        options:
+          - daily    # 省庁新着検知のみ（--from-ministry-news）
+          - weekly   # 通常巡回（直近2年）
+          - monthly  # 全期間包括巡回
+      ministry:
+        description: "省庁コード（任意。動作確認用に1省庁へ絞る場合。例: FSA）"
+        required: false
+        default: ""
+  # --- フェーズ2（ログ確認後に有効化）-------------------------------------
+  # schedule:
+  #   - cron: '0 21 * * 0-4'   # Daily   平日 06:00 JST
+  #   - cron: '0 18 * * 5'     # Weekly  土曜 03:00 JST
+  #   - cron: '0 16 1-7 * 0'   # Monthly 第1日曜 01:00 JST
+
+permissions:
+  contents: read
+
+concurrency:
+  group: crawl-dryrun
+  cancel-in-progress: false
+
+jobs:
+  crawl-dryrun:
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+    env:
+      PYTHONIOENCODING: utf-8
+      MODE: ${{ inputs.mode || 'daily' }}
+      MINISTRY: ${{ inputs.ministry || '' }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: npm
+
+      - name: Install dependencies
+        run: |
+          pip install -r requirements.txt
+          npm ci
+
+      - name: Restore SQLite master DB from JSON (Zero-Storage)
+        run: python admin/db/seed_db.py
+
+      - name: Snapshot before crawl
+        run: python admin/tools/automation_report.py snapshot --out before.json
+
+      - name: Run crawler (${{ env.MODE }})
+        run: |
+          mkdir -p admin/logs
+          ARGS="--workers 4 --skip-download --no-llm"
+          if [ -n "$MINISTRY" ]; then ARGS="$ARGS --ministry $MINISTRY"; fi
+          case "$MODE" in
+            daily)   CMD="python admin/crawler.py --from-ministry-news --skip-download --no-llm ${MINISTRY:+--ministry $MINISTRY}" ;;
+            weekly)  CMD="python admin/crawler.py $ARGS --recent-years 2" ;;
+            monthly) CMD="python admin/crawler.py $ARGS --recent-years 0" ;;
+          esac
+          echo "実行コマンド: $CMD"
+          set -o pipefail
+          $CMD 2>&1 | tee crawl.log
+
+      - name: Export JSON (DB -> docs/data.json, admin/admin_data.json)
+        run: python admin/db/export_data.py
+
+      - name: Build diff report
+        id: report
+        run: |
+          python admin/tools/automation_report.py report \
+            --before before.json --crawl-log crawl.log \
+            --output report.md --github-output "$GITHUB_OUTPUT"
+          cat report.md >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Run integration tests
+        id: tests
+        continue-on-error: true
+        run: python testing/run_test_suite.py --all-layers --skip-network 2>&1 | tee test.log
+
+      - name: Record test result in summary
+        if: always()
+        run: |
+          {
+            echo ""
+            echo "## 統合テスト"
+            echo "結果: \`${{ steps.tests.outcome }}\`（ドライランのため失敗してもジョブは継続）"
+            echo ""
+            echo '```'
+            tail -n 25 test.log || true
+            echo '```'
+          } >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Upload logs and reports
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: crawl-dryrun-${{ env.MODE }}-${{ github.run_id }}
+          retention-days: 30
+          if-no-files-found: warn
+          path: |
+            crawl.log
+            test.log
+            report.md
+            before.json
+            docs/data.json
+            admin/admin_data.json
+            admin/logs/

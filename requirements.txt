@@ -1,0 +1,5 @@
+requests>=2.31
+beautifulsoup4>=4.12
+chardet>=5.2
+# LLM フォールバック（任意。CI のドライランでは --no-llm で無効化）
+google-generativeai>=0.8

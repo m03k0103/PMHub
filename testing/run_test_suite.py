@@ -1106,6 +1106,8 @@ def detect_required_unit_tests(changed_files):
         "test_pmm.py": ["u_pmm"],
         "test_discover_councils.py": ["u_discover"],
         "test_llm_discovery.py": ["u_llm_discovery"],
+        "test_automation_report.py": ["u_automation_report"],
+        "automation_report.py": ["u_automation_report"],
         "run_unit_tests.py": list(UNIT_TEST_REGISTRY.keys())
     }
     for f in changed_files:
