@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-政策会議ウォッチ (PM-HUB) - 単体関数検証スイート (Unit Test Suite Runner) [Drop 45]
+政策会議ウォッチ (PM-HUB) - 単体関数検証スイート (Unit Test Suite Runner)
 
 関数の仕様（ロジック）を修正した場合に限り実施される、純粋関数モック単体検証ランナー。
-モックHTMLやテスト文字列、ダミー引数を用いた純粋関数の動作検証を実行します。
+モックHTMLやテスト文字列、一時SQLite DBを用いた純粋関数・パイプラインの動作検証を実行します。
 """
 
 import sys
@@ -15,7 +15,6 @@ import time
 import argparse
 import io
 import shutil
-from contextlib import redirect_stdout, redirect_stderr
 
 PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 ADMIN_DIR = os.path.join(PROJECT_ROOT, "admin")
@@ -84,9 +83,7 @@ def run_python_test_cases(test_case_classes_or_methods):
     return result.wasSuccessful(), output
 
 
-# 定義されている全単体テストカタログ
-# key: テスト種別キー
-# dict: { name, description, runner_func }
+# 定義されている全単体テストカタログ（全12種: U1〜U12）
 UNIT_TEST_REGISTRY = {
     "u_front": {
         "id": "U1",
@@ -96,156 +93,69 @@ UNIT_TEST_REGISTRY = {
     },
     "u_crawler_foundation": {
         "id": "U2",
-        "name": "クローラー基盤パース単体テスト (test_crawler_foundation.py)",
-        "description": "clean_html_for_dates, 最新優先ソート, 親一覧除外, タイトル抽出",
-        "runner": lambda: _run_py_class("test_crawler_foundation", "TestCrawlerFoundationPhaseJ")
+        "name": "クローラー基盤・正規化・ナビ除外単体テスト (test_crawler_foundation.py)",
+        "description": "clean_html_for_dates, 最新優先ソート, 親一覧除外, タイトル抽出, normalize_text, safe_emit_log, ナビ/常設資料除外",
+        "runner": lambda: _run_py_class("test_crawler_foundation", "TestCrawlerFoundation")
     },
     "u_parent_table": {
         "id": "U3",
-        "name": "親テーブル開催回抽出単体テスト (test_crawler_parent_table.py)",
-        "description": "_extract_meetings_from_parent_table のテーブル解析・資料抽出",
-        "runner": lambda: _run_py_class("test_crawler_parent_table", "TestCrawlerParentTableDrop11")
+        "name": "親テーブル開催回抽出・HTML資料展開単体テスト (test_crawler_parent_table.py)",
+        "description": "_extract_meetings_from_parent_table のテーブル解析・資料抽出・HTML資料リンクからの末端PDF展開",
+        "runner": lambda: _run_py_class("test_crawler_parent_table", "TestCrawlerParentTable")
     },
     "u_incremental": {
         "id": "U4",
-        "name": "スマート差分探索単体テスト (test_crawler_incremental.py)",
-        "description": "_normalize_url_for_comparison, 既登録スキップ, 最新更新確認",
-        "runner": lambda: _run_py_class("test_crawler_incremental", "TestCrawlerIncrementalDrop13")
+        "name": "スマート差分探索・レートリミット・中断制御単体テスト (test_crawler_incremental.py)",
+        "description": "_normalize_url_for_comparison, 既登録スキップ, 最新更新確認, スレッドセーフレートリミット, stop_event中断",
+        "runner": lambda: _run_py_class("test_crawler_incremental", "TestCrawlerIncremental")
     },
     "u_quality_eval": {
         "id": "U5",
-        "name": "クロール成否判定・未確定集計単体テスト (test_crawler_quality.py)",
-        "description": "determine_crawl_result, get_unconfirmed_meetings_count の分岐判定",
-        "runner": lambda: _run_py_methods("test_crawler_quality", "TestCrawlerQualityDrop14", [
-            "test_determine_crawl_result_success_with_pdf_and_date",
-            "test_determine_crawl_result_success_with_subpages",
-            "test_determine_crawl_result_partial_when_generic_title",
-            "test_determine_crawl_result_partial_when_only_placeholder_date",
-            "test_determine_crawl_result_partial_when_materials_only",
-            "test_determine_crawl_result_partial_when_dates_only",
-            "test_determine_crawl_result_failed_when_both_empty",
-            "test_get_unconfirmed_meetings_count"
-        ])
-    },
-    "u_subpage_links": {
-        "id": "U6",
-        "name": "実リンク解析・タイトル正規化・告知除外単体テスト (test_crawler_quality_v2.py)",
-        "description": "extract_actual_subpage_links, clean_meeting_title, is_preliminary_notice_page",
-        "runner": lambda: _run_py_classes("test_crawler_quality_v2", ["TestCrawlerQualityV2Drop15", "TestCrawlerQualityFix20260919"])
+        "name": "クロール成否判定・サブページ探索・品質ガード・URLフォールバック単体テスト (test_crawler_quality.py)",
+        "description": "determine_crawl_result, extract_actual_subpage_links, clean_meeting_title, 開催案内除外, タイトル幹類似度ガード, URL逆引き",
+        "runner": lambda: _run_py_class("test_crawler_quality", "TestCrawlerQuality")
     },
     "u_waf": {
-        "id": "U7",
-        "name": "WAF判定・動的レートリミット単体テスト (test_drop23_waf_resilience.py)",
-        "description": "_get_host_interval, is_waf_challenge, HTTP 202リトライ待機",
-        "runner": lambda: _run_py_class("test_drop23_waf_resilience", "TestDrop23WafResilience")
-    },
-    "u_table_html_expand": {
-        "id": "U8",
-        "name": "親テーブルHTML資料展開単体テスト (test_drop24_parent_table_expansion.py)",
-        "description": "テーブル内HTML資料リンクから末端PDF展開・フォールバック保持",
-        "runner": lambda: _run_py_class("test_drop24_parent_table_expansion", "TestDrop24ParentTableExpansion")
+        "id": "U6",
+        "name": "WAF判定・動的レートリミット・省庁ドメイン設定単体テスト (test_waf_resilience.py)",
+        "description": "_get_host_interval, is_waf_challenge, HTTP 202リトライ待機, 省庁ドメインDB一元化",
+        "runner": lambda: _run_py_class("test_waf_resilience", "TestWafResilience")
     },
     "u_date_parsing": {
+        "id": "U7",
+        "name": "日付パース・元号略記・開催回ID命名規約単体テスト (test_date_and_id_parsing.py)",
+        "description": "parse_japanese_date (元号略記・ドット元号・西暦), URL日付抽出, validate_meeting_id (4桁回次・3桁臨時回次許容)",
+        "runner": lambda: _run_py_class("test_date_and_id_parsing", "TestDateAndIdParsing")
+    },
+    "u_material_extraction": {
+        "id": "U8",
+        "name": "配付資料コンテキスト復元・ノイズ除去・TXT議事録・中間HTML判定単体テスト (test_material_extraction.py)",
+        "description": "is_generic_material_name, recover_material_context, SNS/アンカー除外, parse_txt_minutes, is_intermediate_html_material",
+        "runner": lambda: _run_py_class("test_material_extraction", "TestMaterialExtraction")
+    },
+    "u_db_pipeline": {
         "id": "U9",
-        "name": "日付パース・元号略記単体テスト (test_drop25_mod_date_parsing.py)",
-        "description": "parse_japanese_date (元号略記・ドット元号・西暦), 防衛省テーブル抽出",
-        "runner": lambda: _run_py_class("test_drop25_mod_date_parsing", "TestDrop25ModDateParsing")
-    },
-    "u_url_matching_fallback": {
-        "id": "U10",
-        "name": "URL正規化・ルール逆引き・案内文除外単体テスト (test_drop41_fallback_and_discovery.py)",
-        "description": "normalize_url_for_matching, get_rule_for_target, is_preliminary_notice_page",
-        "runner": lambda: _run_py_methods("test_drop41_fallback_and_discovery", "TestDrop41FallbackAndDiscovery", [
-            "test_normalize_url_for_matching",
-            "test_scraping_rules_url_fallback",
-            "test_preliminary_notice_exclusion"
-        ])
-    },
-    "u_robustness": {
-        "id": "U11",
-        "name": "クロール堅牢化・ナビ除外単体テスト (test_crawler_drop16.py)",
-        "description": "safe_emit_log, 共通ナビ除外, 組織常設資料分離",
-        "runner": lambda: _run_py_methods("test_crawler_drop16", "TestDrop16CrawlerRobustness", [
-            "test_cr18_emit_stdout_safety",
-            "test_cr19_common_nav_exclusion",
-            "test_cr20_organization_doc_exclusion"
-        ])
-    },
-    "u_speedup": {
-        "id": "U12",
-        "name": "クロール高速化・制御単体テスト (test_crawler_speedup.py)",
-        "description": "過去回再検査ゼロ化, マルチスレッドレートリミット, 中断耐性",
-        "runner": lambda: _run_py_methods("test_crawler_speedup", "TestDrop17CrawlerSpeedup", [
-            "test_cr23_incremental_default_latest_only",
-            "test_cr26_thread_safe_rate_limiting",
-            "test_cr27_stop_event_interruption"
-        ])
-    },
-    "u_drop46": {
-        "id": "U13",
-        "name": "ノイズ排除・文字化け復元・データ整合性テスト (test_drop46_data_cleanup.py)",
-        "description": "is_sns_pr_url, is_non_pdf_anchor_url, HTMLタグ除去, 文字化け復元, 開催回内重複排除",
-        "runner": lambda: _run_py_class("test_drop46_data_cleanup", "TestDrop46DataCleanup")
-    },
-    "u_drop47": {
-        "id": "U14",
-        "name": "ジェネリック配付資料スマートコンテキスト復元テスト (test_drop47_context_recovery.py)",
-        "description": "is_generic_material_name, recover_material_context, data.json 残存ゼロ検証",
-        "runner": lambda: _run_py_class("test_drop47_context_recovery", "TestDrop47ContextRecovery")
-    },
-    "u_drop48": {
-        "id": "U15",
-        "name": "配付資料0件開催回救済・議事録テキスト正式資料化単体テスト (test_drop48_zero_materials_rescue.py)",
-        "description": "parse_txt_minutes, .txt 配付資料登録, 0件開催回救済削減",
-        "runner": lambda: _run_py_class("test_drop48_zero_materials_rescue", "TestDrop48ZeroMaterialsRescue")
-    },
-    "u_drop49": {
-        "id": "U16",
-        "name": "開催回ID命名規約整合化・4桁回次許容単体テスト (test_drop49_meeting_id_normalization.py)",
-        "description": "validate_meeting_id, 年度プレフィックス排除, 重複ゼロ, 4桁回次・3桁臨時回次許容",
-        "runner": lambda: _run_py_class("test_drop49_meeting_id_normalization", "TestDrop49MeetingIdNormalization")
-    },
-    "u_drop62": {
-        "id": "U17",
-        "name": "DBマスター・2系統エクスポート・可逆性単体テスト (test_drop62_db_and_export.py)",
-        "description": "schema.sql DDL, seed_db, export_data 2系統分離, 双方向可逆性検証",
-        "runner": lambda: _run_py_class("test_drop62_db_and_export", "TestDrop62DatabaseAndExport")
-    },
-    "u_drop63": {
-        "id": "U18",
-        "name": "クローラー&サーバーDB直結パイプライン単体テスト (test_drop63_crawler_server_db.py)",
-        "description": "db_manager CRUD, クローラー/サーバー保存直結, 自動エクスポート, フェイルセーフ復元",
-        "runner": lambda: _run_py_class("test_drop63_crawler_server_db", "TestDrop63CrawlerServerDB")
+        "name": "SQLiteマスターDB・自動エクスポート・可逆性・PMM保護単体テスト (test_db_pipeline.py)",
+        "description": "db_manager CRUD, 自動エクスポート, フェイルセーフ復元, 双方向可逆性, PMMダウンロードステータス保護",
+        "runner": lambda: _run_py_class("test_db_pipeline", "TestDbPipeline")
     },
     "u_pmm": {
-        "id": "U19",
+        "id": "U10",
         "name": "PMM配付資料ローカル資産管理単体テスト (test_pmm.py)",
         "description": "Windows禁止文字置換, 資料名クレンジング, フォルダ命名規約, 安全ファイル操作",
         "runner": lambda: _run_py_class("test_pmm", "TestPmmCommonUtilities")
     },
     "u_discover": {
-        "id": "U20",
+        "id": "U11",
         "name": "新規会議体ディスカバリー精度向上・親URL逆引き単体テスト (test_discover_councils.py)",
-        "description": "名称クレンジング, 西暦テーマ保護, ノイズ除外, コア名称・サフィックス突合, 一覧URL非破壊, ID重複防止",
-        "runner": lambda: _run_py_class("test_discover_councils", "TestDiscoverCouncilsDrop75")
+        "description": "名称クレンジング, 西暦テーマ保護, ノイズ除外, コア名称・サフィックス突合, 一覧URL非破壊, 報道発表URL遮断",
+        "runner": lambda: _run_py_class("test_discover_councils", "TestDiscoverCouncils")
     },
-    "u_drop81": {
-        "id": "U21",
-        "name": "決定論的1ファイル新着ダイジェスト & LLMディスカバリー単体テスト (test_drop81_llm_discovery.py)",
+    "u_llm_discovery": {
+        "id": "U12",
+        "name": "決定論的1ファイル新着ダイジェスト & LLMディスカバリー単体テスト (test_llm_discovery.py)",
         "description": "SHA-256ダイジェスト不変性, 5段階事前フィルタ, ID参照限定ハルシネーション遮断, 呼出予算上限(3/10/30)&SQLiteキャッシュ, 新着フラグ保護",
-        "runner": lambda: _run_py_class("test_drop81_llm_discovery", "TestDrop81LlmDiscovery")
-    },
-    "u_drop82": {
-        "id": "U22",
-        "name": "PMMローカル資料ステータス永続保護・CASCADE破壊防止単体テスト (test_drop82_pmm_preservation.py)",
-        "description": "seed_db事前退避&復元, save_data_to_db非破壊ON CONFLICT, CASCADE DELETE遮断",
-        "runner": lambda: _run_py_class("test_drop82_pmm_preservation", "TestPmmPreservation")
-    },
-    "u_intermediate_guard": {
-        "id": "U23",
-        "name": "中間HTML配付資料混入遮断 & 末端PDF展開完全性単体テスト (test_drop80_intermediate_material_guard.py)",
-        "description": "税制調査会等における中間HTMLリンクゼロ保証, 末端PDF抽出, 配付資料名クレンジング, 中間HTML判定ロジック検証",
-        "runner": lambda: _run_py_class("test_drop80_intermediate_material_guard", "TestDrop80IntermediateMaterialGuard")
+        "runner": lambda: _run_py_class("test_llm_discovery", "TestLlmDiscovery")
     }
 }
 
@@ -257,21 +167,6 @@ def _run_py_class(mod_name, class_name):
     return run_python_test_cases([cls])
 
 
-def _run_py_classes(mod_name, class_names):
-    import importlib
-    mod = importlib.import_module(mod_name)
-    classes = [getattr(mod, cn) for cn in class_names]
-    return run_python_test_cases(classes)
-
-
-def _run_py_methods(mod_name, class_name, method_names):
-    import importlib
-    mod = importlib.import_module(mod_name)
-    cls = getattr(mod, class_name)
-    items = [(cls, m) for m in method_names]
-    return run_python_test_cases(items)
-
-
 def run_unit_tests(target_keys=None):
     """
     指定された単体テスト種類（target_keys）を実行。
@@ -280,7 +175,7 @@ def run_unit_tests(target_keys=None):
     """
     keys_to_run = target_keys if target_keys else list(UNIT_TEST_REGISTRY.keys())
     print("==================================================")
-    print(" PMHub 単体関数検証スイート (Unit Test Runner) [Drop 45]")
+    print(" PMHub 単体関数検証スイート (Unit Test Runner)")
     print("==================================================")
     print(f"  実行対象テスト種類: {len(keys_to_run)} 件")
 
@@ -330,7 +225,7 @@ def run_unit_tests(target_keys=None):
 
 
 def main():
-    parser = argparse.ArgumentParser(description="PM-HUB Unit Test Suite Runner [Drop 45]")
+    parser = argparse.ArgumentParser(description="PM-HUB Unit Test Suite Runner")
     parser.add_argument("--type", choices=list(UNIT_TEST_REGISTRY.keys()), help="特定の単体テスト種類のみ実行")
     parser.add_argument("-k", "--keyword", help="テスト名に含まれるキーワードで絞り込み")
     args = parser.parse_args()

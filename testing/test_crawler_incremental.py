@@ -1,28 +1,37 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-Drop 13: スマート差分探索エンジン（Smart Incremental Crawl）単体テストスイート
+スマート差分探索エンジン・並行レートリミット・中断制御 単体テストスイート (test_crawler_incremental.py)
 - CR-10: _normalize_url_for_comparison のURL正規化ロジック
-- CR-10: _filter_incremental_subpages の既登録スキップ・最新更新確認・未登録最大50件判定
-- CR-11: _crawl_subpages との連携動作検証
+- CR-10 / CR-23: _filter_incremental_subpages の既登録スキップ・最新更新確認・未登録最大50件判定
+- CR-26: ホスト単位並行巡回エンジン（スレッドセーフなレートリミット検証）
+- CR-27: 中断耐性と安全チェックポイント保存（stop_event中断検証）
 """
 
 import unittest
 import sys
 import os
+import io
+import time
+import threading
+from unittest.mock import patch
 
 # admin モジュールへのパスを追加
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "admin")))
+from utils import setup_win32_utf8
+setup_win32_utf8()
 
+import crawler
 from crawler import (
     _normalize_url_for_comparison,
     _filter_incremental_subpages,
-    _sort_subpage_urls_by_recency
+    _sort_subpage_urls_by_recency,
+    _rate_limit_host
 )
 
 
-class TestCrawlerIncrementalDrop13(unittest.TestCase):
-    """Drop 13 で実装されたスマート差分探索エンジンの単体テスト"""
+class TestCrawlerIncremental(unittest.TestCase):
+    """スマート差分探索エンジン・レートリミット・中断制御の単体テスト"""
 
     def test_normalize_url_for_comparison(self):
         """URLの末尾スラッシュ、フラグメント、スキームの差異が吸収されること"""
@@ -38,7 +47,6 @@ class TestCrawlerIncrementalDrop13(unittest.TestCase):
         self.assertEqual(norm2, "www.meti.go.jp/shingikai/energy/025.html")
         self.assertEqual(norm3, "www.meti.go.jp/shingikai/energy/025.html")
 
-        # 空値や無効値への耐性
         self.assertEqual(_normalize_url_for_comparison(""), "")
         self.assertEqual(_normalize_url_for_comparison(None), "")
 
@@ -48,7 +56,6 @@ class TestCrawlerIncrementalDrop13(unittest.TestCase):
             f"https://www.meti.go.jp/shingikai/energy/{i:03d}.html"
             for i in range(1, 61)
         ]
-        # 降順ソート
         sorted_candidates = _sort_subpage_urls_by_recency(candidates)
         existing = set()
 
@@ -59,7 +66,6 @@ class TestCrawlerIncrementalDrop13(unittest.TestCase):
         self.assertEqual(stats["recent_update"], 0)
         self.assertEqual(stats["skipped_known"], 0)
         self.assertEqual(stats["total_targets"], 50)
-        # 最も新しい 060.html が先頭であること
         self.assertEqual(targets[0], "https://www.meti.go.jp/shingikai/energy/060.html")
 
     def test_filter_all_known_subpages(self):
@@ -73,7 +79,6 @@ class TestCrawlerIncrementalDrop13(unittest.TestCase):
 
         targets, stats = _filter_incremental_subpages(sorted_candidates, existing, max_unvisited=50, max_recent=2)
 
-        # 最新の 010.html と 009.html のみ再訪対象
         self.assertEqual(len(targets), 2)
         self.assertEqual(stats["unvisited"], 0)
         self.assertEqual(stats["recent_update"], 2)
@@ -85,7 +90,6 @@ class TestCrawlerIncrementalDrop13(unittest.TestCase):
 
     def test_filter_mixed_new_and_known_subpages(self):
         """新規と既登録が混在する場合、新規分＋最新2件が選ばれ、既登録過去回がスキップされること"""
-        # 001〜010 が既登録、011〜013 が新規
         known = [f"https://www.meti.go.jp/shingikai/energy/{i:03d}.html" for i in range(1, 11)]
         new_items = [f"https://www.meti.go.jp/shingikai/energy/{i:03d}.html" for i in range(11, 14)]
         candidates = known + new_items
@@ -93,14 +97,12 @@ class TestCrawlerIncrementalDrop13(unittest.TestCase):
 
         targets, stats = _filter_incremental_subpages(sorted_candidates, set(known), max_unvisited=50, max_recent=2)
 
-        # 新規3件 + 最新既登録2件（010, 009） = 計5件
         self.assertEqual(len(targets), 5)
         self.assertEqual(stats["unvisited"], 3)
         self.assertEqual(stats["recent_update"], 2)
         self.assertEqual(stats["skipped_known"], 8)
         self.assertEqual(stats["total_targets"], 5)
 
-        # 降順で 013, 012, 011, 010, 009 が並んでいること
         expected = [
             "https://www.meti.go.jp/shingikai/energy/013.html",
             "https://www.meti.go.jp/shingikai/energy/012.html",
@@ -117,6 +119,86 @@ class TestCrawlerIncrementalDrop13(unittest.TestCase):
         self.assertEqual(len(targets), 2)
         self.assertEqual(stats["unvisited"], 2)
         self.assertEqual(stats["skipped_known"], 0)
+
+    def test_cr23_incremental_default_latest_only(self):
+        """CR-23: デフォルト（max_recent=1）で最新1件のみ更新確認され、過去回は再検査ゼロ化されること"""
+        candidates = [
+            "https://www.example.go.jp/meeting/003.html",
+            "https://www.example.go.jp/meeting/002.html",
+            "https://www.example.go.jp/meeting/001.html",
+            "https://www.example.go.jp/meeting/000.html",
+        ]
+        known_urls = {
+            "https://www.example.go.jp/meeting/002.html",
+            "https://www.example.go.jp/meeting/001.html",
+            "https://www.example.go.jp/meeting/000.html"
+        }
+
+        target_urls, stats = _filter_incremental_subpages(candidates, known_urls, max_recent=1, full_check=False)
+        self.assertEqual(stats["unvisited"], 1)
+        self.assertEqual(stats["recent_update"], 1)
+        self.assertEqual(stats["skipped_known"], 2)
+        self.assertIn("https://www.example.go.jp/meeting/003.html", target_urls)
+        self.assertIn("https://www.example.go.jp/meeting/002.html", target_urls)
+        self.assertNotIn("https://www.example.go.jp/meeting/001.html", target_urls)
+        self.assertNotIn("https://www.example.go.jp/meeting/000.html", target_urls)
+
+        target_urls_full, stats_full = _filter_incremental_subpages(candidates, known_urls, full_check=True)
+        self.assertEqual(stats_full["unvisited"], 1)
+        self.assertEqual(stats_full["recent_update"], 3)
+        self.assertEqual(stats_full["skipped_known"], 0)
+        self.assertEqual(len(target_urls_full), 4)
+
+        target_urls_zero, stats_zero = _filter_incremental_subpages(candidates, known_urls, max_recent=0, full_check=False)
+        self.assertEqual(stats_zero["unvisited"], 1)
+        self.assertEqual(stats_zero["recent_update"], 0)
+        self.assertEqual(stats_zero["skipped_known"], 3)
+        self.assertEqual(len(target_urls_zero), 1)
+
+    def test_cr26_thread_safe_rate_limiting(self):
+        """CR-26: マルチスレッド下でも同一ホストへのアクセス間隔が _MIN_HOST_INTERVAL 以上保たれること"""
+        test_host = "test.domain.go.jp"
+        call_times = []
+        lock = threading.Lock()
+
+        orig_interval = crawler._MIN_HOST_INTERVAL
+        crawler._MIN_HOST_INTERVAL = 0.05
+        try:
+            def worker():
+                _rate_limit_host(test_host)
+                with lock:
+                    call_times.append(time.time())
+
+            threads = [threading.Thread(target=worker) for _ in range(3)]
+            for t in threads:
+                t.start()
+            for t in threads:
+                t.join()
+
+            call_times.sort()
+            self.assertEqual(len(call_times), 3)
+            for i in range(len(call_times) - 1):
+                interval = call_times[i + 1] - call_times[i]
+                self.assertGreaterEqual(interval, crawler._MIN_HOST_INTERVAL - 0.015, f"間隔が短すぎます: {interval:.3f}s")
+        finally:
+            crawler._MIN_HOST_INTERVAL = orig_interval
+
+    def test_cr27_stop_event_interruption(self):
+        """CR-27: stop_event がセットされた場合、直ちにクローラーが安全中断すること"""
+        stop_event = threading.Event()
+        stop_event.set()
+
+        mock_targets = [{"id": "test-c", "name": "テスト会議体", "ministry": "CAS", "officialUrl": "https://example.com"}]
+        with patch('crawler.load_councils_from_data_json', return_value=mock_targets), \
+             patch('crawler.save_data_json_with_backup', return_value=True), \
+             patch('sys.stdout', new_callable=io.StringIO):
+            stats = crawler.run_meeting_crawler(
+                stop_event=stop_event,
+                workers=1,
+                recent_years=2
+            )
+        self.assertTrue(stats.get("stopped"), "stop_event により stopped=True が返却されること")
+        self.assertEqual(stats["processed_councils"], 0, "即時停止のため処理件数が0であること")
 
 
 if __name__ == '__main__':

@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-政策会議ウォッチ (PM-HUB) - 会議レコード重複防止・回次整合性テスト (Test for No Duplicate Meetings & Clean Rounds)
+政策会議ウォッチ (PM-HUB) - 会議体・開催回・配付資料 品質・回次整合性・重複排除・NFKC正規化・2099日付ゼロ検証
 """
 
 import json
@@ -14,20 +14,140 @@ from collections import defaultdict
 sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "admin"))
 from utils import setup_win32_utf8, normalize_japanese_numbers, load_data_json, validate_council_id, validate_meeting_id
 from crawler import is_sns_pr_url, is_non_pdf_anchor_url, is_generic_material_name
-from test_drop80_intermediate_material_guard import GUARDED_INTERMEDIATE_COUNCILS, is_intermediate_html_material
+from batch_normalize_data import scan_dataset_kangxi_stats
+from discover_councils import is_single_press_or_notice_url
 setup_win32_utf8()
+
+
+def is_intermediate_html_material(name, url):
+    """
+    配付資料が末端ドキュメントではなく中間HTMLコンテナであるかを判定する。
+    """
+    if not url:
+        return False
+    u = url.lower()
+    if u.endswith('.pdf') or '.pdf?' in u or '.pdf#' in u:
+        return False
+    if not (u.endswith('.html') or u.endswith('.htm') or '/' in u):
+        return False
+
+    clean_n = name.strip()
+    generic_names = {
+        '会議資料', '配付資料', '配布資料', '資料一覧', '配付資料一覧', '配布資料一覧',
+        '会議資料一覧', '提出資料 (HTML)', '配付資料 (HTML)', '提出資料', '会議資料ページ',
+        '議事次第・配付資料 (HTML)', '配付資料一覧ページ (HTML)', '議事次第・配付資料'
+    }
+    if clean_n in generic_names or '配付資料一覧ページ' in clean_n or '議事次第・配付資料' in clean_n:
+        return True
+    return False
+
+
+GUARDED_INTERMEDIATE_COUNCILS = {
+    # 税制調査会系列
+    'cao-zeicho_digital_noukan_senmonka', 'cao-zeicho_life_senmonka',
+    'cao-zeicho_sozoku_zoyo_senmonka', 'cao-zeicho_koku_han_kaigou',
+    'cao-zeicho_rougo_shisan_senmonka', 'cao-zei_cho',
+    'cao-zeicho_noukan_senmonka', 'cao-zeicho_ebpm_senmonka',
+    'cao-zeicho_discussion3_hojin', 'cao-zeicho_discussion1_kokusai',
+    'cao-zeicho_kiso_shoiinkai', 'cao-zeicho_renketsu_senmonka',
+    'cao-zeicho_discussion2_mynumber',
+    # 内閣官房
+    'cas-kokusentoc', 'cas-kagayakujosei',
+    # 財務省
+    'mof-2717', 'mof-zaiseiseido_bunkakai', 'mof-1135', 'mof-1136',
+    'mof-1134', 'mof-1133', 'mof-seisaku_hyouka', 'mof-1132',
+    'mof-1731', 'mof-1161', 'mof-bop', 'mof-jishin_benkyoukai',
+    'mof-1153', 'mof-fdi', 'mof-shinkahei_arikata',
+    # 金融庁・厚生労働省
+    'fsa-kinyu_trouble', 'mhlw-nenkin_shikin_unyou_bunkakai',
+    'mhlw-jidou_gyakutai_shinken_senmon', 'mhlw-911', 'mhlw-943',
+    'mhlw-971', 'mhlw-1039', 'mhlw-845', 'mhlw-898', 'mhlw-kousei_influ',
+    # 食品安全委員会
+    'fsc-bakuro_wg', 'fsc-biseibutu_virus', 'fsc-bpa_wg', 'fsc-doubutu',
+    'fsc-eiyotenkabutu_wg', 'fsc-hisiryou', 'fsc-honkaigi',
+    'fsc-hyoukagijyutukikaku_wg', 'fsc-idensi', 'fsc-kabi_shizen',
+    'fsc-kiguyouki', 'fsc-kikaku_tou', 'fsc-nouyaku_dai1',
+    'fsc-nouyaku_dai2', 'fsc-nouyaku_dai3', 'fsc-nouyaku_dai4',
+    'fsc-nouyaku_dai5', 'fsc-osen_tou', 'fsc-pfas_wg', 'fsc-prion',
+    'fsc-sinkaihatu', 'fsc-tenkabutu', 'fsc-yakuzaitaiseikin_wg',
+    # 経済産業省
+    'meti-1664', 'meti-1666', 'meti-1673', 'meti-1675', 'meti-1676',
+    'meti-1677', 'meti-1678', 'meti-1679', 'meti-1680', 'meti-1681',
+    'meti-1682', 'meti-1684', 'meti-1692', 'meti-1694', 'meti-1698',
+    'meti-1702', 'meti-1703', 'meti-1705', 'meti-1708', 'meti-1710',
+    'meti-1714', 'meti-1716', 'meti-1718', 'meti-1725', 'meti-1728',
+    'meti-ax_skill_wg', 'meti-denryoku_gas_kanshi', 'meti-kagaku_busshitsu',
+    'meti-keiryou_gyousei', 'meti-sankoushin', 'meti-shinsangyo_kozo',
+    'meti-shouhi_keizai', 'meti-suiso_daidoumyaku',
+    # 資源エネルギー庁
+    'anre-1748', 'anre-1749', 'anre-1750', 'anre-1751', 'anre-1752',
+    'anre-1753', 'anre-1754', 'anre-1755', 'anre-1756', 'anre-1757',
+    'anre-1758', 'anre-1759', 'anre-1760', 'anre-1762', 'anre-1763',
+    'anre-1764', 'anre-1765', 'anre-1766', 'anre-1768', 'anre-1769',
+    'anre-1771', 'anre-1772', 'anre-1773', 'anre-1774', 'anre-1775',
+    'anre-1776', 'anre-1777', 'anre-1779', 'anre-1780', 'anre-1781',
+    'anre-1783', 'anre-1785', 'anre-1787', 'anre-1789', 'anre-1790',
+    'anre-1791', 'anre-1792', 'anre-1793', 'anre-1794', 'anre-1795',
+    'anre-1796',
+    # 中小企業庁
+    'smea-1307', 'smea-1308', 'smea-1310', 'smea-1311', 'smea-1620',
+    'smea-keiei_shien_bunkakai',
+    # 農林水産省・林野庁
+    'maff-659', 'maff-656', 'maff-704', 'maff-687', 'maff-nougyogyou_hoken',
+    'maff-shokuryou_sangyou_bukai', 'maff-shokuryo_nogyo',
+    'maff-nougyou_sizai_shingikai', 'maff-sizai_noyaku_bunkakai', 'rinya-1284',
+    # 国土交通省
+    'mlit-meeting', 'mlit-infra_management_wg', 'mlit-energy_anzenhosho_wg',
+    'mlit-amami_shinkou', 'mlit-dokuritsu_gyosei_hyoka',
+    'mlit-kokudo_shingikai', 'mlit-tochi_kantei',
+    # 原子力規制委員会
+    'nra-ro_anzen_shinsa', 'nra-1205', 'nra-1203', 'nra-1204', 'nra-1206',
+    'nra-me_suishoutai', 'nra-1209', 'nra-1213', 'nra-1212', 'nra-1211',
+    'nra-teireikai',
+    # 総務省・文化庁・文部科学省
+    'aca-187', 'aca-188', 'aca-bunka_shingikai_sokai',
+    'aca-bunkazai_hogojoyaku', 'aca-bunkazai_sekaitokubetsu',
+    'aca-kokugo_bunkakai', 'aca-kokugo_gairai', 'aca-kokugo_gengo',
+    'aca-kokugo_kadai', 'aca-kokugo_nihongo', 'aca-kokugo_nihongo_wg_h29',
+    'aca-kokugo_shido_wg_h24', 'aca-kokugo_shuro_nihongo_wg',
+    'aca-needs_working_team_sagyou', 'mext-714', 'mext-chukyo',
+    'mext-chuo_kyoiku', 'mext-gijyutu', 'mext-kokuritsu_daigaku_hyouka',
+    'mext-kokuritsu_kenkyuu_shingi', 'mic-dokuritsu_gyousei_hyouka',
+    'mic-joho_tsusin', 'mic-onkyu_shinsa02', 'mic-seisaku_kaigi',
+    'mic-toukei_iinkai', 'mic-toukei_singikai',
+    # 内閣官房・内閣府・デジタル庁・他残余全省庁
+    'cao-232', 'cao-258', 'cao-259', 'cao-260', 'cao-278',
+    'cao-contents_kyougikai', 'cao-cstp', 'cao-genshiryoku_kisei_ikenkoukan',
+    'cao-pfi_suishin', 'cao-space_anpo', 'cas-296', 'cas-347', 'cas-351',
+    'cas-atarashii_shihon_kaigi', 'cas-chiikimirai', 'cas-chuobou',
+    'cas-digital_gyozaikaikaku', 'cas-genshiryoku_kakuryo_kaigi',
+    'cas-hanzai', 'cas-jinko_senryaku', 'cas-kokka_jouhou',
+    'cas-kumahigai_taisaku', 'cas-nousui', 'cas-ondanka',
+    'cas-shingijutsu_kouka_hyouka', 'cas-titeki2', 'digital-atena_kanri_wt',
+    'digital-datalinkage_wt', 'digital-kikan_system_touitsu',
+    'digital-kyoutsuu_kinou_gijutsu', 'digital-kyoutsuu_kinou_kadai',
+    'digital-shinsei_kanri_wt', 'digital-shitei_toshi_kadai',
+    'fdma-chiiki_bousai_shien', 'fsa-keizaikachi_solvency',
+    'fsa-kigyou_kikaku_bukai', 'fsa-kinyu_chukai', 'fsa-kinyu_shingi',
+    'fsa-monitoring', 'fsa-suisai_ryoritsu', 'jsa-611', 'jsa-646',
+    'jsa-sports_guideline', 'jsa-sports_mirai_kaihatsu', 'mhlw-1009',
+    'mhlw-2862', 'mhlw-2876', 'mhlw-2878', 'mhlw-937',
+    'mhlw-gpif_unei_kento', 'mhlw-hosho_fukushi',
+    'mhlw-jcho_houjin_seido_kento', 'mhlw-shakai_hosho',
+    'mhlw-shakai_hosho_kaigo_kyuufu', 'mhlw-unyou_iinkai_junbi_kaigou',
+    'mlit-shakai_shingikai', 'mofa-gaimu_jinji', 'moj-fuhoukoui_hosei',
+    'ra-fukko_suishin_kaigi',
+}
 
 
 def extract_round_and_type(title, council_name="", url=""):
     t_norm = normalize_japanese_numbers(title)
-    
+
     sub_type = ""
-    # Support Western years, Japanese eras (including 元年), and fiscal years
     fy_m = re.search(r'(20\d\d年度?|19\d\d年度?|令和[0-9元]+年度?[秋|春|前半|後半]?|平成[0-9元]+年度?[秋|春|前半|後半]?|令和[0-9元]+年|平成[0-9元]+年|第\d+期)', t_norm)
     if fy_m and fy_m.group(1) not in council_name:
         sub_type += fy_m.group(1)
 
-    # 規制改革推進会議等の会期フォルダ (例: /meeting/wg/2501_01local/) による期別サブタイプ補完
     if url and not sub_type:
         wg_m = re.search(r'/meeting/wg/([^/]+)/', url)
         if wg_m:
@@ -48,7 +168,6 @@ def extract_round_and_type(title, council_name="", url=""):
         if fish_m:
             sub_type += f"_{fish_m.group(1).replace(' ', '_')}"
 
-    # 「／」や「及び」で併記された複数組織の親会議体（例: A及びB）
     if any(sep in council_name for sep in ['／', '/', '及び']):
         for part in re.split(r'[／/]|及び', council_name):
             part = part.strip()
@@ -56,13 +175,11 @@ def extract_round_and_type(title, council_name="", url=""):
                 sub_type += f"_{part}"
                 break
 
-    # 分野別会合（産業財産権分野、コンテンツ分野等）
     for fld in ['産業財産権分野', 'コンテンツ分野']:
         if fld in t_norm and fld not in council_name:
             sub_type += f"_{fld}"
             break
 
-    # 固有検討組織・TF
     for org in [
         '次世代知財システム', '知財紛争処理システム', '情報財', '海賊版対策', '知財価値評価', '地方知財活用促進', '地域知財', '知財教育', 'オープンイノベーション', 'ジャパンサーチ', '全体', '映画等海外展開', '映画・アニメ', '中小・ベンチャー', '営業秘密', 'アーカイブTF', '音楽産業',
         'アジア健康構想', '国際医薬パートナーシップ', '訪日外国人', '在留外国人', 'ASEAN健康イニシアチブ', '栄養改善', 'インバウンド', '次世代医療基盤法', 'ライフコース', '医療情報取扱', '医療情報利活用', '標準的医療情報システム', 'グローバルヘルス戦略有識者', 'インパクト投資', 'ヒアリング会合'
@@ -71,7 +188,6 @@ def extract_round_and_type(title, council_name="", url=""):
             sub_type += f"_{org}"
             break
 
-    # Sub-entities under parent councils
     if ('アドホックグループ' in t_norm or 'アドホック' in t_norm) and 'アドホック' not in council_name:
         ah_m = re.search(r'([A-Za-z0-9_\.一-龥]+(?:アドホックグループ|アドホック))', t_norm)
         sub_type += f"_{ah_m.group(1)}" if ah_m else "_アドホック"
@@ -133,21 +249,21 @@ def run_test(data=None):
     if data is None:
         base_dir = os.path.dirname(os.path.abspath(__file__))
         data_path = os.path.abspath(os.path.join(base_dir, "..", "docs", "data.json"))
-        
+
         if not os.path.exists(data_path):
             print(f"FAIL: {data_path} not found")
             return 1
-            
+
         data = load_data_json(data_path, cached=True)
         if not data:
             print(f"FAIL: Failed to load {data_path}")
             return 1
-        
+
     councils = {c['id']: c for c in data.get('councils', [])}
     meetings = data.get('meetings', [])
-    
+
     errors = []
-    
+
     # 1. Check duplicate IDs
     id_counts = defaultdict(int)
     for m in meetings:
@@ -155,7 +271,7 @@ def run_test(data=None):
     dup_ids = {k: v for k, v in id_counts.items() if v > 1}
     if dup_ids:
         errors.append(f"Duplicate meeting IDs found: {dup_ids}")
-        
+
     # 2. Check duplicate (councilId, name, date)
     key_counts = defaultdict(int)
     for m in meetings:
@@ -165,7 +281,7 @@ def run_test(data=None):
     if dup_keys:
         errors.append(f"Duplicate (councilId, name, date) found: {dup_keys}")
 
-    # 2b. Check duplicate officialUrl on the same date within same council (Drop 121: 同一会議体・同日公式URL二重登録遮断)
+    # 2b. Check duplicate officialUrl on the same date within same council
     c_meetings_map = defaultdict(list)
     for m in meetings:
         c_meetings_map[m.get('councilId', 'unknown')].append(m)
@@ -185,7 +301,7 @@ def run_test(data=None):
     if dup_url_errors:
         errors.append(f"Duplicate officialUrls on same date within same council found ({len(dup_url_errors)} cases): {dup_url_errors[:5]}")
 
-    # 2c. Check same-day split meetings for same round (Drop 122: 同一会議体・同日同一回次分割ゼロ検証)
+    # 2c. Check same-day split meetings for same round
     dup_sameday_round_errors = []
     for c_id, m_list in c_meetings_map.items():
         c_name = councils.get(c_id, {}).get('name', c_id)
@@ -208,7 +324,7 @@ def run_test(data=None):
     if dup_sameday_round_errors:
         errors.append(f"Duplicate same-day round split meetings found ({len(dup_sameday_round_errors)} cases): {dup_sameday_round_errors[:5]}")
 
-    # 2d. Check same-day same-meeting-directory split (Drop 124: 同一会議体・同日同一会合ディレクトリ分割ゼロ検証)
+    # 2d. Check same-day same-meeting-directory split
     dup_sameday_dir_errors = []
     for c_id, m_list in c_meetings_map.items():
         c_name = councils.get(c_id, {}).get('name', c_id)
@@ -227,12 +343,12 @@ def run_test(data=None):
                 dup_sameday_dir_errors.append(f"Council '{c_name}' ({c_id}) has duplicate directory '{dn}' on {d}: {ids}")
     if dup_sameday_dir_errors:
         errors.append(f"Duplicate same-day meeting directory splits found ({len(dup_sameday_dir_errors)} cases): {dup_sameday_dir_errors[:5]}")
-        
+
     # 3. Check duplicate 第n回 in same council
     meetings_by_council = defaultdict(list)
     for m in meetings:
         meetings_by_council[m.get('councilId', 'unknown')].append(m)
-        
+
     for c_id, m_list in meetings_by_council.items():
         c_name = councils.get(c_id, {}).get('name', c_id)
         round_map = defaultdict(list)
@@ -242,18 +358,18 @@ def run_test(data=None):
             r_num, sub_type = extract_round_and_type(m_name, c_name, m_url)
             if r_num is not None:
                 round_map[(r_num, sub_type)].append(m)
-                
+
         dup_rounds = {k: ms for k, ms in round_map.items() if len(ms) > 1}
         if dup_rounds:
             for (rn, st), ms in dup_rounds.items():
                 errors.append(f"Council '{c_name}' ({c_id}) has {len(ms)} records for 第{rn}回{st}: {[m.get('id') for m in ms]}")
-                
+
     # 4. Check for crawler fragment IDs left in data.json
     crawler_subs = [m.get('id') for m in meetings if m.get('id', '').startswith('crawler-')]
     if crawler_subs:
         errors.append(f"Unmerged crawler fragment records found ({len(crawler_subs)} items): {crawler_subs[:5]}...")
-        
-    # 5. Check date format and placeholder dates
+
+    # 5. Check date format and placeholder dates (2099/01/01 zero guard)
     bad_dates = [m.get('date') for m in meetings if not re.match(r'^\d{4}/\d{2}/\d{2}$', m.get('date', ''))]
     if bad_dates:
         errors.append(f"Invalid date formats found ({len(bad_dates)} items): {bad_dates[:5]}")
@@ -266,7 +382,7 @@ def run_test(data=None):
     if bad_names:
         errors.append(f"Generic/auto-extracted meeting names found ({len(bad_names)} items): {bad_names[:5]}")
 
-    # 7. Check meeting name schema (Strictly enforce non-empty 'name' string, ban deprecated 'title' attribute, ban HTML tags)
+    # 7. Check meeting name schema
     html_tag_titles = [m.get('id') for m in meetings if ('<br' in (m.get('name') or '').lower() or '<span' in (m.get('name') or '').lower())]
     if html_tag_titles:
         errors.append(f"Meeting names containing HTML tags (<br>, <span>) found ({len(html_tag_titles)} items): {html_tag_titles[:5]}")
@@ -283,35 +399,45 @@ def run_test(data=None):
     if bad_c_ids:
         errors.append(f"Invalid councilId format (must be {{ministry}}-{{slug}} with 1 hyphen) ({len(bad_c_ids)} items): {bad_c_ids[:5]}")
 
-    # 8b. Check council ministry attribute (Strictly enforce valid ministry code string)
+    # 8b. Check council ministry attribute & single press release URL guard
     bad_c_ministries = []
+    press_councils = []
     for c_id, c in councils.items():
         min_val = c.get('ministry')
         if not min_val or not isinstance(min_val, str) or not min_val.strip():
             bad_c_ministries.append((c_id, 'missing'))
         elif min_val != min_val.upper() or not re.match(r'^[A-Z0-9_]+$', min_val):
             bad_c_ministries.append((c_id, f'invalid format: {min_val}'))
+        u = c.get('officialUrl', '')
+        if is_single_press_or_notice_url(u):
+            press_councils.append((c_id, c.get('name'), u))
     if bad_c_ministries:
         errors.append(f"Councils with missing or invalid 'ministry' attribute found ({len(bad_c_ministries)} items): {bad_c_ministries[:5]}")
+    if press_councils:
+        errors.append(f"Single press/notice URLs registered in council officialUrl ({len(press_councils)} items): {press_councils[:3]}")
 
     # 9. Check meetingId format (Must have exactly 3 hyphens: {councilId}-{YYYYMMDD}-{round/session})
     bad_m_ids = [m.get('id') for m in meetings if not validate_meeting_id(m.get('id', ''))]
     if bad_m_ids:
         errors.append(f"Invalid meetingId format (must be {{councilId}}-{{YYYYMMDD}}-{{round}} with 3 hyphens) ({len(bad_m_ids)} items): {bad_m_ids[:5]}")
 
-    # 10. Check materials schema (Strictly enforce 'name', ban 'title'/empty, ban JS/SNS/anchor URLs, generic names, intra-meeting duplicates)
+    # 10. Check materials schema & .txt zero-materials guard
     bad_materials_js_urls = []
     bad_materials_sns_urls = []
     bad_materials_anchor_urls = []
     bad_materials_generic_names = []
     intra_meeting_dup_urls = []
-
     bad_materials_title_key = []
     bad_materials_empty_name = []
+    txt_zero_materials = []
+
     for m in meetings:
+        m_id = m.get('id')
+        m_mats = m.get('materials', [])
+        if m.get('officialUrl', '').endswith('.txt') and len(m_mats) == 0:
+            txt_zero_materials.append(m_id)
         seen_mat_urls = set()
-        for mat in m.get('materials', []):
-            m_id = m.get('id')
+        for mat in m_mats:
             mat_name = str(mat.get('name') or '').strip()
             mat_url = str(mat.get('url') or '').strip()
 
@@ -333,6 +459,9 @@ def run_test(data=None):
                 if mat_url in seen_mat_urls:
                     intra_meeting_dup_urls.append((m_id, mat_url))
                 seen_mat_urls.add(mat_url)
+
+    if txt_zero_materials:
+        errors.append(f".txt minutes meetings with 0 materials found ({len(txt_zero_materials)} items): {txt_zero_materials[:5]}")
     if bad_materials_title_key:
         errors.append(f"Materials with deprecated 'title' key found ({len(bad_materials_title_key)} items): {[b[0] for b in bad_materials_title_key[:5]]}")
     if bad_materials_empty_name:
@@ -348,7 +477,7 @@ def run_test(data=None):
     if intra_meeting_dup_urls:
         errors.append(f"Intra-meeting duplicate material URLs found ({len(intra_meeting_dup_urls)} items): {intra_meeting_dup_urls[:5]}")
 
-    # 11. Check cross-council duplicate meeting officialUrls (Must not share specific meeting subpage URLs across different councils)
+    # 11. Check cross-council duplicate meeting officialUrls
     generic_meeting_url_patterns = re.compile(
         r'/(?:index|default|kaisai|shingikai|top|archive|gijiroku|proceedings|report)?\.(?:html?|php)$|'
         r'/(?:council|shingi|meeting|seisaku|policy)/?$|'
@@ -358,8 +487,6 @@ def run_test(data=None):
         r'/soukai\.html$',
         re.IGNORECASE
     )
-    # Known legacy cross-council pairs pending ministry-specific migration Drops
-    # (Strictly no new duplicates or moj duplicates allowed)
     known_legacy_cross_pairs = {
         frozenset(['meti-kagaku_busshitsu', 'meti-sankoshin_hoan_shohi_chemicals']),
         frozenset(['meti-kagaku_busshitsu', 'meti-sankoshin_seizo_sangyo_kagaku_busshitsu']),
@@ -432,7 +559,6 @@ def run_test(data=None):
         if len(c_ids) > 1:
             dates = {m.get('date') for m in m_list}
             names = [m.get('name', '') for m in m_list]
-            # Allowed group sharing or legitimate joint meetings
             is_joint_group = (
                 all(cid.startswith('cao-kisei_') for cid in c_ids)
                 or all(cid.startswith('cao-pfi_') for cid in c_ids)
@@ -469,7 +595,6 @@ def run_test(data=None):
         'cas-katsuryoku_koujou',
         'mhlw-iryou_shitsukoujou',
     )
-    # Strictly limited to legitimate co-located ministerial councils sharing the same portal section
     known_council_url_sharing = {
         'https://www.cas.go.jp/jp/seisakukaigi/hairo_osensui/index.html',
         'https://www.cas.go.jp/jp/seisakukaigi/keikyou/index.html',
@@ -510,17 +635,17 @@ def run_test(data=None):
 
     sub_keywords = ('部会', '分科会', '小委員会', '委員会', 'ワーキンググループ', '検討会', '研究会', '審査会', '専門家会合', 'タスクフォース')
     known_allowed_similar_names = {
-        ('mhlw-785', 'mhlw-879'),  # 医療部会 vs 生殖補助医療部会 (別組織)
-        ('mhlw-959', 'mhlw-968'),  # 医師分科会 vs 歯科医師分科会 (別組織)
-        ('cao-zeicho_noukan_senmonka', 'cao-zeicho_digital_noukan_senmonka'),  # 納税環境整備に関する専門家会合 vs 経済社会のデジタル化... (別組織)
-        ('fsa-stewardship_h28', 'fsa-japan_stewardship'),  # 第1期検討会 vs 日本版検討会
-        ('mhlw-iryou_bunkakai', 'mhlw-1044'),  # 医療分科会 vs 原子爆弾被爆者医療分科会 (別組織)
-        ('mhlw-871', 'mhlw-hosho_shouni'),  # 疾病対策部会 vs 社会保障審議会 小児慢性特定疾病対策部会
-        ('mhlw-824', 'mhlw-kousei_influ'),  # 新型インフルエンザ対策に関する小委員会 (過去期別)
-        ('mhlw-912', 'mhlw-855'),  # ヒト幹細胞臨床研究 (過去期別)
-        ('mhlw-930', 'mhlw-rousei_anzeneisei'),  # 安全衛生分科会 (過去期別)
+        ('mhlw-785', 'mhlw-879'),
+        ('mhlw-959', 'mhlw-968'),
+        ('cao-zeicho_noukan_senmonka', 'cao-zeicho_digital_noukan_senmonka'),
+        ('fsa-stewardship_h28', 'fsa-japan_stewardship'),
+        ('mhlw-iryou_bunkakai', 'mhlw-1044'),
+        ('mhlw-871', 'mhlw-hosho_shouni'),
+        ('mhlw-824', 'mhlw-kousei_influ'),
+        ('mhlw-912', 'mhlw-855'),
+        ('mhlw-930', 'mhlw-rousei_anzeneisei'),
         ('mhlw-955', 'mhlw-927'),
-        ('mic-onkyu_shinsa02', 'mic-taisyoku_onkyu'),  # 恩給審査会 vs 退職手当・恩給審査会 (別組織)  # 争議行為 (過去期別)
+        ('mic-onkyu_shinsa02', 'mic-taisyoku_onkyu'),
     }
 
     similar_name_errors = []
@@ -545,8 +670,10 @@ def run_test(data=None):
                     if (n2.endswith(n1) and not n2.startswith(n1)) or (n1.endswith(n2) and not n1.startswith(n2)):
                         similar_name_errors.append(f"Short suffix council name duplicate in {m_code}: '{c1['name']}' ({c1['id']}) vs '{c2['name']}' ({c2['id']})")
 
+    if similar_name_errors:
+        errors.append(f"Duplicate/similar council names found within same ministry ({len(similar_name_errors)} cases): {similar_name_errors[:5]}")
 
-    # Drop 80 / 83 / 84 / 85 / 94 Guard: Intermediate HTML material container check (SSOT shared with U23)
+    # 15. Intermediate HTML material container check
     intermediate_violations = []
     for m in meetings:
         if m.get('councilId') in GUARDED_INTERMEDIATE_COUNCILS:
@@ -558,17 +685,23 @@ def run_test(data=None):
     if intermediate_violations:
         errors.append(f"Intermediate HTML materials found in guarded councils ({len(intermediate_violations)} cases): {intermediate_violations[:5]}")
 
-    if similar_name_errors:
-        errors.append(f"Duplicate/similar council names found within same ministry ({len(similar_name_errors)} cases): {similar_name_errors[:5]}")
+    # 16. Kangxi radicals & CJK supplements zero check (NFKC normalization invariance)
+    kangxi_stats = scan_dataset_kangxi_stats(data)
+    if kangxi_stats["total"] > 0:
+        errors.append(
+            f"Unnormalized Kangxi radicals / CJK supplements found ({kangxi_stats['total']} items): "
+            f"councils={kangxi_stats['councils']}, meetings={kangxi_stats['meetings']}, materials={kangxi_stats['materials']}"
+        )
 
     if errors:
         print(f"FAILED: {len(errors)} validation errors found:")
         for e in errors:
             print(f"  - {e}")
         return 1
-        
-    print(f"PASSED: All {len(meetings)} meetings across {len(councils)} councils validated with zero duplicates.")
+
+    print(f"PASSED: All {len(meetings)} meetings across {len(councils)} councils validated (zero duplicates, zero 2099 dates, zero Kangxi radicals).")
     return 0
+
 
 if __name__ == '__main__':
     sys.exit(run_test())
