@@ -201,5 +201,46 @@ class TestCrawlerIncremental(unittest.TestCase):
         self.assertEqual(stats["processed_councils"], 0, "即時停止のため処理件数が0であること")
 
 
+
+    def test_drop133_extract_news_items_since_date_filter(self):
+        """Drop 133: 新着情報ポータル走査で since_date より古い記事が除外され、新しい記事のみ抽出されること"""
+        mock_html = """
+        <html><body>
+          <ul>
+            <li><time datetime="2026-11-05">2026年11月5日</time><a href="/news/new1.html">第10回 デジタル政策検討会 開催案内</a></li>
+            <li><time datetime="2026-11-02">2026年11月2日</time><a href="/news/old1.html">第9回 デジタル政策検討会 配布資料</a></li>
+            <li><time datetime="2026-10-15">2026年10月15日</time><a href="/news/old2.html">第8回 デジタル政策検討会 議事録</a></li>
+            <li><span>2026年11月6日</span><a href="/news/new2.html">AI推進委員会（第3回）の開催について</a></li>
+          </ul>
+        </body></html>
+        """
+        # since_date なし: 全4件
+        all_items = crawler.extract_news_items_from_html(mock_html, "https://example.com/news/", "DIGITAL", "general")
+        self.assertEqual(len(all_items), 4)
+
+        # since_date = '2026/11/04': 11/05 と 11/06 の2件のみ抽出
+        filtered_items = crawler.extract_news_items_from_html(
+            mock_html, "https://example.com/news/", "DIGITAL", "general", since_date="2026/11/04"
+        )
+        self.assertEqual(len(filtered_items), 2)
+        urls = [it["url"] for it in filtered_items]
+        self.assertIn("https://example.com/news/new1.html", urls)
+        self.assertIn("https://example.com/news/new2.html", urls)
+        self.assertNotIn("https://example.com/news/old1.html", urls)
+        self.assertNotIn("https://example.com/news/old2.html", urls)
+
+    def test_drop133_curl_bin_resolution(self):
+        """Drop 133: _fetch_with_curl でクロスプラットフォーム対応の curl バイナリ解決が行われること"""
+        import shutil
+        expected_bin = shutil.which('curl') or shutil.which('curl.exe') or 'curl'
+        with patch('subprocess.run') as mock_run:
+            mock_run.return_value.returncode = 1
+            mock_run.return_value.stdout = b""
+            crawler._fetch_with_curl("https://example.com/test", timeout=5)
+            self.assertTrue(mock_run.called)
+            cmd_called = mock_run.call_args[0][0]
+            self.assertEqual(cmd_called[0], expected_bin)
+
+
 if __name__ == '__main__':
     unittest.main()

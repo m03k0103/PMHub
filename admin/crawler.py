@@ -1220,8 +1220,9 @@ def is_waf_challenge(html_or_bytes, status_code=200):
 def _fetch_with_curl(url, timeout=12):
     """curl.exe を使用して WAF/Cloudflare 保護サイト等から HTML をフォールバック取得する"""
     try:
+        curl_bin = shutil.which('curl') or shutil.which('curl.exe') or 'curl'
         cmd = [
-            'curl.exe', '-s', '-L',
+            curl_bin, '-s', '-L',
             '-A', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36',
             '-H', 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8',
             '-H', 'Accept-Language: ja,en-US;q=0.9,en;q=0.8',
@@ -1898,10 +1899,17 @@ def _crawl_subpages(target_url, html, rule, quirk_note, pdf_pattern, existing_ur
             full_check=full_check
         )
         if inc_stats["skipped_known"] > 0 or inc_stats["unvisited"] > 0:
-            print(f"   [差分巡回 ({quirk_note})] 未登録 {inc_stats['unvisited']} 件, 更新確認 {inc_stats['recent_update']} 件, 既登録スキップ {inc_stats['skipped_known']} 件 (探索対象: 計 {inc_stats['total_targets']} 件)")
+            print(f"   [差分巡回探索キュー ({quirk_note})] 探索対象候補: 計 {inc_stats['total_targets']} 件 (未訪問候補 {inc_stats['unvisited']} 件, 更新確認 {inc_stats['recent_update']} 件) / 既登録スキップ {inc_stats['skipped_known']} 件")
         else:
             print(f"   [2回目情報取得Engine ({quirk_note})] サブページ {len(target_subpages)} 件を深掘り巡回中...")
 
+        subpage_breakdown = {
+            "extracted": 0,
+            "preliminary_notice": 0,
+            "no_materials": 0,
+            "fetch_failed": 0,
+            "non_meeting": 0
+        }
         for sub_url in target_subpages:
             parsed_url = urllib.parse.urlparse(sub_url)
             if parsed_url.scheme not in ('http', 'https'):
@@ -1923,6 +1931,7 @@ def _crawl_subpages(target_url, html, rule, quirk_note, pdf_pattern, existing_ur
                     is_preliminary_notice_page(sub_url, sub_page_title) or
                     any(is_preliminary_notice_page(sub_url, h) for h in h_texts)
                 ):
+                    subpage_breakdown['preliminary_notice'] += 1
                     continue
 
                 sub_materials = parse_materials_from_html(sub_html, sub_url, pdf_pattern)
@@ -1987,6 +1996,10 @@ def _crawl_subpages(target_url, html, rule, quirk_note, pdf_pattern, existing_ur
                         norm_sub_dates.append(url_date)
                 all_extracted_dates.extend(norm_sub_dates)
 
+                if not sub_materials:
+                    subpage_breakdown['no_materials'] += 1
+                else:
+                    subpage_breakdown['extracted'] += 1
                 subpage_meetings.append({
                     "subpageUrl": sub_url,
                     "name": sub_title,
@@ -1998,6 +2011,32 @@ def _crawl_subpages(target_url, html, rule, quirk_note, pdf_pattern, existing_ur
                 })
                 additional_materials.extend(sub_materials)
 
+        # Drop 133: 探索結果の内訳詳細ログ出力
+        if target_subpages:
+            detail_parts = []
+            if subpage_breakdown["extracted"] > 0:
+                detail_parts.append(f"開催回情報取得 {subpage_breakdown['extracted']} 件")
+            if inc_stats.get("recent_update", 0) > 0:
+                detail_parts.append(f"更新確認 {inc_stats['recent_update']} 件")
+            if inc_stats.get("skipped_known", 0) > 0:
+                detail_parts.append(f"既登録スキップ {inc_stats['skipped_known']} 件")
+
+            non_meeting_parts = []
+            if subpage_breakdown["preliminary_notice"] > 0:
+                non_meeting_parts.append(f"事前告知除外 {subpage_breakdown['preliminary_notice']} 件")
+            if subpage_breakdown["no_materials"] > 0:
+                non_meeting_parts.append(f"配付資料なし {subpage_breakdown['no_materials']} 件")
+            if subpage_breakdown["fetch_failed"] > 0:
+                non_meeting_parts.append(f"取得失敗 {subpage_breakdown['fetch_failed']} 件")
+            if subpage_breakdown["non_meeting"] > 0:
+                non_meeting_parts.append(f"非対象URL {subpage_breakdown['non_meeting']} 件")
+
+            non_meeting_total = sum(subpage_breakdown[k] for k in ["preliminary_notice", "no_materials", "fetch_failed", "non_meeting"])
+            if non_meeting_total > 0:
+                sub_detail = f" [{', '.join(non_meeting_parts)}]" if non_meeting_parts else ""
+                detail_parts.append(f"非開催回リンク {non_meeting_total} 件{sub_detail}")
+
+            print(f"   [差分巡回結果 ({quirk_note})] 探索対象: 計 {inc_stats['total_targets']} 件（{', '.join(detail_parts)}）")
     return subpage_meetings, additional_materials, all_extracted_dates
 
 
@@ -3205,6 +3244,8 @@ def sync_new_meetings_from_crawl(data, target, scraped_item):
         existing_sessions.update(sess)
 
     added_count = 0
+    merged_count = 0
+    duplicate_skip_count = 0
     for sub in subpages:
         sub_url = sub.get("subpageUrl", "").rstrip("/")
         sub_title = (sub.get("name") or sub.get("title") or "").strip()
@@ -3342,6 +3383,7 @@ def sync_new_meetings_from_crawl(data, target, scraped_item):
         if sub_url and not is_parent_url and sub_url in existing_urls:
             # 既存開催回に未登録の配付資料があればマージ
             target_ex_m = existing_urls[sub_url]
+            has_merged = False
             if clean_materials_list:
                 ex_mats = target_ex_m.setdefault("materials", [])
                 ex_mat_urls = {m.get("url") for m in ex_mats if m.get("url")}
@@ -3349,6 +3391,11 @@ def sync_new_meetings_from_crawl(data, target, scraped_item):
                     if new_mat.get("url") not in ex_mat_urls:
                         ex_mats.append(new_mat)
                         ex_mat_urls.add(new_mat.get("url"))
+                        has_merged = True
+            if has_merged:
+                merged_count += 1
+            else:
+                duplicate_skip_count += 1
             continue
         if sub_title and sub_title in existing_names:
             continue
@@ -3383,6 +3430,7 @@ def sync_new_meetings_from_crawl(data, target, scraped_item):
             same_date_meets = [m for m in existing_c_meets if m.get("date") == meet_date]
             if same_date_meets:
                 # 既に同一日付の会議が存在する場合、資料のみを既存会議にマージして新規追加はスキップ
+                has_merged = False
                 for ex_m in same_date_meets:
                     ex_mats = ex_m.setdefault("materials", [])
                     ex_mat_urls = {mat.get("url") for mat in ex_mats if mat.get("url")}
@@ -3390,6 +3438,11 @@ def sync_new_meetings_from_crawl(data, target, scraped_item):
                         if new_mat.get("url") not in ex_mat_urls:
                             ex_mats.append(new_mat)
                             ex_mat_urls.add(new_mat.get("url"))
+                            has_merged = True
+                if has_merged:
+                    merged_count += 1
+                else:
+                    duplicate_skip_count += 1
                 continue
         new_meeting = _build_new_meeting(
             target=target,
@@ -3408,6 +3461,7 @@ def sync_new_meetings_from_crawl(data, target, scraped_item):
         resolved_new_url = (new_meeting.get("officialUrl") or "").rstrip("/")
         if resolved_new_url and resolved_new_url != council_parent_url.rstrip("/") and resolved_new_url in existing_urls:
             target_ex_m = existing_urls[resolved_new_url]
+            has_merged = False
             if clean_materials_list:
                 ex_mats = target_ex_m.setdefault("materials", [])
                 ex_mat_urls = {m.get("url") for m in ex_mats if m.get("url")}
@@ -3415,6 +3469,11 @@ def sync_new_meetings_from_crawl(data, target, scraped_item):
                     if new_mat.get("url") not in ex_mat_urls:
                         ex_mats.append(new_mat)
                         ex_mat_urls.add(new_mat.get("url"))
+                        has_merged = True
+            if has_merged:
+                merged_count += 1
+            else:
+                duplicate_skip_count += 1
             continue
 
         meetings.append(new_meeting)
@@ -3440,6 +3499,15 @@ def sync_new_meetings_from_crawl(data, target, scraped_item):
                 c["isNewlyDiscovered"] = True
                 break
 
+    if added_count > 0 or merged_count > 0 or duplicate_skip_count > 0:
+        log_parts = []
+        if added_count > 0:
+            log_parts.append(f"新規追加 {added_count} 件")
+        if merged_count > 0:
+            log_parts.append(f"既存回へ資料マージ {merged_count} 件")
+        if duplicate_skip_count > 0:
+            log_parts.append(f"既登録スキップ {duplicate_skip_count} 件")
+        print(f"   [開催回反映結果] {', '.join(log_parts)} (重複なし)")
     return added_count
 
 
@@ -4051,7 +4119,7 @@ def resolve_news_portal_urls(portal_def):
     return [url]
 
 
-def extract_news_items_from_html(html, page_url, ministry_code, ptype):
+def extract_news_items_from_html(html, page_url, ministry_code, ptype, since_date=None):
     """HTMLから会議関連のニュース記事項目を抽出（Drop 68）"""
     soup = BeautifulSoup(html, "html.parser")
     items = []
@@ -4069,6 +4137,12 @@ def extract_news_items_from_html(html, page_url, ministry_code, ptype):
             link_text = normalize_text(a.get_text())
             time_tag = parent.find('time')
             date_str = time_tag.get('datetime', '') if time_tag else ''
+            if not date_str:
+                p_dates = extract_clean_dates_from_html(parent.get_text(' ', strip=True))
+                if p_dates and p_dates[0] != "2099/01/01":
+                    date_str = p_dates[0]
+            if since_date and date_str and date_str < since_date:
+                continue
             items.append({
                 "title": link_text,
                 "url": link_url,
@@ -4093,10 +4167,30 @@ def extract_news_items_from_html(html, page_url, ministry_code, ptype):
         if any(kw in text for kw in keywords) or any(re.search(p, text) for p in [r'第\s*\d+\s*回', r'開催', r'配付資料', r'議事録', r'議事次第']):
             if any(nav in text for nav in ["トップページ", "目次", "プライバシーポリシー", "アクセシビリティ", "リンク集", "公募", "採用", "職員募集", "人事異動", "の委員について", "委員の任命", "委員の選任", "委員について"]):
                 continue
+            # Drop 133: 親要素および周辺テキストから公表日・開催日をパース
+            item_date = ""
+            parent = a.find_parent(['li', 'tr', 'div', 'p', 'dd'])
+            if parent:
+                time_tag = parent.find('time')
+                if time_tag and time_tag.get('datetime'):
+                    item_date = time_tag['datetime'][:10].replace('-', '/')
+                if not item_date:
+                    p_dates = extract_clean_dates_from_html(parent.get_text(' ', strip=True))
+                    if p_dates and p_dates[0] != "2099/01/01":
+                        item_date = p_dates[0]
+            if not item_date:
+                t_dates = extract_clean_dates_from_html(text)
+                if t_dates and t_dates[0] != "2099/01/01":
+                    item_date = t_dates[0]
+
+            # 日付フィルタリング（前回クロール日-1日 より古い告知はスキップ）
+            if since_date and item_date and item_date < since_date:
+                continue
+
             items.append({
                 "title": text,
                 "url": full_url,
-                "date": "",
+                "date": item_date,
                 "is_shingi_index": False,
                 "ministry": ministry_code
             })
@@ -4246,6 +4340,9 @@ def run_ministry_news_discovery(progress_callback=None, stop_event=None, ministr
             pass
 
         councils = data.get("councils", [])
+        # Drop 133: 省庁ごとの前回クロール日時を crawlerConfig から取得
+        crawler_cfg = data.setdefault("crawlerConfig", {})
+        ministry_last_crawl = crawler_cfg.setdefault("ministryLastCrawlTime", {})
         rules = load_scraping_rules(data)
         meetings = data.get("meetings", [])
         load_ministry_and_host_configs_from_db(data=data)
@@ -4275,7 +4372,21 @@ def run_ministry_news_discovery(progress_callback=None, stop_event=None, ministr
             if not portal_defs:
                 continue
 
-            emit(f"\n--- [{min_code}] 新着情報・報道発表ポータル走査開始 ---")
+            # Drop 133: 前回クロール日 - 1日 を探索基準日（since_date）として算出
+            last_ts = ministry_last_crawl.get(min_code)
+            since_date = None
+            if last_ts:
+                try:
+                    base_str = last_ts.split()[0].replace("-", "/")
+                    base_dt = datetime.strptime(base_str, "%Y/%m/%d")
+                    since_date = (base_dt - timedelta(days=1)).strftime("%Y/%m/%d")
+                except Exception:
+                    since_date = None
+            if not since_date:
+                since_date = (datetime.now() - timedelta(days=3)).strftime("%Y/%m/%d")
+
+            since_note = f" (探索基準日: {since_date} 以降)" if since_date else ""
+            emit(f"\n--- [{min_code}] 新着情報・報道発表ポータル走査開始{since_note} ---")
             for pdef in portal_defs:
                 resolved_urls = resolve_news_portal_urls(pdef)
                 for rurl in resolved_urls:
@@ -4285,7 +4396,7 @@ def run_ministry_news_discovery(progress_callback=None, stop_event=None, ministr
                         emit(f"    [WARN] フェッチ失敗: {rurl}")
                         continue
 
-                    items = extract_news_items_from_html(html, rurl, min_code, pdef.get("type"))
+                    items = extract_news_items_from_html(html, rurl, min_code, pdef.get("type"), since_date=since_date)
                     emit(f"    -> 会議関連お知らせ {len(items)} 件を検出")
 
                     for item in items:
@@ -4403,6 +4514,10 @@ def run_ministry_news_discovery(progress_callback=None, stop_event=None, ministr
         deduplicate_data_materials(data)
         now_str = datetime.now().strftime("%Y/%m/%d %H:%M")
         data["lastCrawlTime"] = now_str
+        # Drop 133: 今回走査した省庁の最終走査日時を記録
+        for min_code in target_mins:
+            ministry_last_crawl[min_code] = now_str
+        crawler_cfg["ministryLastCrawlTime"] = ministry_last_crawl
         save_success = save_data_json_with_backup(data)
 
         # Drop 71: 新規・更新配付資料のローカル自動保存 (PMM 連動)
