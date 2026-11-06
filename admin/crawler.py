@@ -4119,10 +4119,52 @@ def resolve_news_portal_urls(portal_def):
     return [url]
 
 
+def extract_news_date_with_year(text, base_year="2026"):
+    """ニューステキストから掲載日・開催日を抽出し YYYY/MM/DD へ正規化（Drop 134）。
+    完全な年月日（2026年11月5日、令和8年11月5日等）を優先し、
+    月日のみ（11月5日、11/5等）の場合は base_year を補完して YYYY/MM/DD を返す。
+    """
+    if not text:
+        return ""
+    # 1. 完全年月日パース
+    p_dates = extract_clean_dates_from_html(text)
+    if p_dates and p_dates[0] != "2099/01/01":
+        dt = parse_japanese_date(p_dates[0])
+        if dt:
+            return dt.strftime("%Y/%m/%d")
+
+    # 2. 月日のみのパース (例: "11月5日", "11/5", "11-5")
+    m = re.search(r'(?<!\d)(\d{1,2})月(\d{1,2})日', text)
+    if not m:
+        m = re.search(r'(?<![\d\w\/\-])(\d{1,2})[/-](\d{1,2})(?![\d\w\/\-])', text)
+    if m:
+        month = int(m.group(1))
+        day = int(m.group(2))
+        if 1 <= month <= 12 and 1 <= day <= 31:
+            try:
+                by = int(base_year)
+            except Exception:
+                by = datetime.now().year
+            return f"{by:04d}/{month:02d}/{day:02d}"
+
+    return ""
+
+
 def extract_news_items_from_html(html, page_url, ministry_code, ptype, since_date=None):
-    """HTMLから会議関連のニュース記事項目を抽出（Drop 68）"""
+    """HTMLから会議関連のニュース記事を抽出（Drop 68 / Drop 133 / Drop 134）"""
     soup = BeautifulSoup(html, "html.parser")
     items = []
+
+    # 基準年の解決（since_date 優先、なければ URL 中の年、なければ現在年）
+    base_year = "2026"
+    if since_date and len(since_date) >= 4 and since_date[:4].isdigit():
+        base_year = since_date[:4]
+    else:
+        url_year_m = re.search(r'/(20\d{2})[/-]?', page_url)
+        if url_year_m:
+            base_year = url_year_m.group(1)
+        else:
+            base_year = str(datetime.now().year)
 
     # 1. 厚労省 indexshingi.html の NEW マーカー検知
     if ptype == "mhlw_indexshingi":
@@ -4136,13 +4178,16 @@ def extract_news_items_from_html(html, page_url, ministry_code, ptype, since_dat
             link_url = urllib.parse.urljoin(page_url, a['href'])
             link_text = normalize_text(a.get_text())
             time_tag = parent.find('time')
-            date_str = time_tag.get('datetime', '') if time_tag else ''
+            date_str = ""
+            if time_tag and time_tag.get('datetime'):
+                raw_dt = time_tag['datetime'][:10].replace('-', '/')
+                dt = parse_japanese_date(raw_dt)
+                date_str = dt.strftime("%Y/%m/%d") if dt else raw_dt
             if not date_str:
-                p_dates = extract_clean_dates_from_html(parent.get_text(' ', strip=True))
-                if p_dates and p_dates[0] != "2099/01/01":
-                    date_str = p_dates[0]
-            if since_date and date_str and date_str < since_date:
-                continue
+                date_str = extract_news_date_with_year(parent.get_text(' ', strip=True), base_year)
+            if since_date:
+                if not date_str or date_str < since_date:
+                    continue
             items.append({
                 "title": link_text,
                 "url": link_url,
@@ -4153,7 +4198,7 @@ def extract_news_items_from_html(html, page_url, ministry_code, ptype, since_dat
         return items
 
     # 2. 一般ニュース・新着フィード
-    keywords = ["審議会", "検討会", "研究会", "委員会", "部会", "ワーキング", "タスクフォース", "懇談会", "協議会", "有識者会議"]
+    keywords = ["審議会", "検討会", "部会", "委員会", "懇談会", "ワーキング", "タスクフォース", "分科会", "研究会", "有識者会議"]
     for a in soup.find_all("a", href=True):
         text = normalize_text(a.get_text())
         href = a["href"].strip()
@@ -4165,27 +4210,35 @@ def extract_news_items_from_html(html, page_url, ministry_code, ptype, since_dat
         full_url = urllib.parse.urljoin(page_url, href)
 
         if any(kw in text for kw in keywords) or any(re.search(p, text) for p in [r'第\s*\d+\s*回', r'開催', r'配付資料', r'議事録', r'議事次第']):
-            if any(nav in text for nav in ["トップページ", "目次", "プライバシーポリシー", "アクセシビリティ", "リンク集", "公募", "採用", "職員募集", "人事異動", "の委員について", "委員の任命", "委員の選任", "委員について"]):
+            if any(nav in text for nav in ["トップページ", "目次", "プライバシーポリシー", "アクセシビリティ", "リンク集", "免責事項", "採用", "公募", "人事異動", "の委員について", "委員の任命", "委員の選任", "委員について"]):
                 continue
-            # Drop 133: 親要素および周辺テキストから公表日・開催日をパース
+
+            # Drop 133 / Drop 134: 親要素・先行見出し・リンクテキストからの掲載日・開催日パース（年補完 & YYYY/MM/DD 正規化）
             item_date = ""
             parent = a.find_parent(['li', 'tr', 'div', 'p', 'dd'])
             if parent:
                 time_tag = parent.find('time')
                 if time_tag and time_tag.get('datetime'):
-                    item_date = time_tag['datetime'][:10].replace('-', '/')
+                    raw_dt = time_tag['datetime'][:10].replace('-', '/')
+                    dt = parse_japanese_date(raw_dt)
+                    item_date = dt.strftime("%Y/%m/%d") if dt else raw_dt
                 if not item_date:
-                    p_dates = extract_clean_dates_from_html(parent.get_text(' ', strip=True))
-                    if p_dates and p_dates[0] != "2099/01/01":
-                        item_date = p_dates[0]
-            if not item_date:
-                t_dates = extract_clean_dates_from_html(text)
-                if t_dates and t_dates[0] != "2099/01/01":
-                    item_date = t_dates[0]
+                    item_date = extract_news_date_with_year(parent.get_text(' ', strip=True), base_year)
 
-            # 日付フィルタリング（前回クロール日-1日 より古い告知はスキップ）
-            if since_date and item_date and item_date < since_date:
-                continue
+            # 先行見出し（h2, h3, h4, dt）からの日付フォールバック（例: MHLW 新着日付見出し構造）
+            if not item_date:
+                prev_h = a.find_previous(['h2', 'h3', 'h4', 'dt'])
+                if prev_h:
+                    item_date = extract_news_date_with_year(prev_h.get_text(' ', strip=True), base_year)
+
+            # リンクテキスト自身からの日付抽出フォールバック
+            if not item_date:
+                item_date = extract_news_date_with_year(text, base_year)
+
+            # 日付フィルタリング（前回クロール日 - 1日 以前の古い告知、および日付未特定の常設目次リンクをスキップ）
+            if since_date:
+                if not item_date or item_date < since_date:
+                    continue
 
             items.append({
                 "title": text,

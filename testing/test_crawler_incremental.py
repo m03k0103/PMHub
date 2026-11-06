@@ -242,5 +242,60 @@ class TestCrawlerIncremental(unittest.TestCase):
             self.assertEqual(cmd_called[0], expected_bin)
 
 
+
+    def test_drop134_extract_news_items_year_completion(self):
+        """Drop 134: 月日のみ表記の年補完、先行見出し日付抽出、日付未特定常設リンクの安全除外"""
+        # 1. CAO型: テーブル月日表記 (11月5日 / 10月25日)
+        cao_html = """
+        <table>
+          <tr><td class="date">11月5日</td><td><a href="/news/cao1.html">消費者委員会第100回開催について</a></td></tr>
+          <tr><td class="date">10月25日</td><td><a href="/news/cao2.html">食品安全委員会第50回開催について</a></td></tr>
+        </table>
+        """
+        cao_items = crawler.extract_news_items_from_html(
+            cao_html, "https://www.cao.go.jp/press/", "CAO", "news_feed", since_date="2026/11/02"
+        )
+        self.assertEqual(len(cao_items), 1)
+        self.assertEqual(cao_items[0]["url"], "https://www.cao.go.jp/news/cao1.html")
+        self.assertEqual(cao_items[0]["date"], "2026/11/05")
+
+        # 2. MHLW型: 先行見出しに日付があるリスト構造 (h2 掲載日)
+        mhlw_html = """
+        <h2>2026年11月6日掲載</h2>
+        <ul>
+          <li><a href="/news/mhlw1.html">第42回労働政策審議会労働政策基本部会を開催します</a></li>
+        </ul>
+        <h2>2026年10月15日掲載</h2>
+        <ul>
+          <li><a href="/news/mhlw2.html">第41回労働政策審議会労働政策基本部会を開催します</a></li>
+        </ul>
+        """
+        mhlw_items = crawler.extract_news_items_from_html(
+            mhlw_html, "https://www.mhlw.go.jp/stf/new-info/", "MHLW", "news_feed", since_date="2026/11/02"
+        )
+        self.assertEqual(len(mhlw_items), 1)
+        self.assertEqual(mhlw_items[0]["url"], "https://www.mhlw.go.jp/news/mhlw1.html")
+        self.assertEqual(mhlw_items[0]["date"], "2026/11/06")
+
+        # 3. MOJ型: 日付が一切存在しない常設リンク集・目次
+        moj_html = """
+        <ul>
+          <li><a href="/info/moj1.html">法制審議会について（常設案内）</a></li>
+          <li><a href="/info/moj2.html">法務省検討会一覧</a></li>
+        </ul>
+        """
+        # since_date あり: 日付未特定リンクは常設とみなしてスキップ（0件）
+        moj_items_filtered = crawler.extract_news_items_from_html(
+            moj_html, "https://www.moj.go.jp/list_info.html", "MOJ", "news_feed", since_date="2026/11/02"
+        )
+        self.assertEqual(len(moj_items_filtered), 0)
+
+        # since_date なし (全期間探索): 抽出を許容
+        moj_items_all = crawler.extract_news_items_from_html(
+            moj_html, "https://www.moj.go.jp/list_info.html", "MOJ", "news_feed", since_date=None
+        )
+        self.assertEqual(len(moj_items_all), 2)
+
+
 if __name__ == '__main__':
     unittest.main()
