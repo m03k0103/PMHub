@@ -1107,6 +1107,8 @@ def detect_required_unit_tests(changed_files):
         "test_discover_councils.py": ["u_discover"],
         "test_llm_discovery.py": ["u_llm_discovery"],
         "test_automation_report.py": ["u_automation_report"],
+        "test_sync_from_json.py": ["u_sync_from_json"],
+        "sync_from_json.py": ["u_sync_from_json"],
         "automation_report.py": ["u_automation_report"],
         "run_unit_tests.py": list(UNIT_TEST_REGISTRY.keys())
     }
@@ -1127,6 +1129,7 @@ def detect_required_unit_tests(changed_files):
     # データベース・エクスポート基盤仕様コード変更 (admin/db/)
     if any("admin/db/" in f or "admin\\db\\" in f for f in changed_files):
         required_keys.add("u_db_pipeline")
+        required_keys.add("u_sync_from_json")
 
     # フロントエンド関数仕様コード変更 (docs/app.js)
     if any(f.endswith("docs/app.js") or f == "docs/app.js" for f in changed_files):

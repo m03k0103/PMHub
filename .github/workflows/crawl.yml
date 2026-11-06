@@ -1,9 +1,5 @@
-# Track [Automation] フェーズ1: ドライラン（ログ・差分レポートのみ出力）
-#
-# - 手動実行 (workflow_dispatch) のみ。schedule はログ確認後に有効化する（下部のコメント参照）。
-# - main への commit / push は行わない。permissions も contents: read のみ。
-# - 結果は Job Summary と Artifact (crawl-dryrun-*) に出力する。
-name: Crawl (dry-run)
+# Track [Automation] フェーズ2: 定時巡回・サーキットブレーカー・自動コミット基盤 (Drop 135)
+name: Crawl (scheduled & push)
 
 on:
   workflow_dispatch:
@@ -14,36 +10,45 @@ on:
         default: daily
         type: choice
         options:
-          - daily    # 省庁新着検知のみ（--from-ministry-news）
+          - daily    # 平朝新着検知のみ (--from-ministry-news)
           - weekly   # 通常巡回（直近2年）
-          - monthly  # 全期間包括巡回
+          - monthly  # 全期間包括走査
+      dry_run:
+        description: "ドライラン（コミット・pushを行わない場合はチェック）"
+        required: false
+        default: false
+        type: boolean
       ministry:
-        description: "省庁コード（任意。動作確認用に1省庁へ絞る場合。例: FSA）"
+        description: "省庁コード（任意。単一省庁のみテスト巡回する場合。例: FSA）"
         required: false
         default: ""
-  # --- フェーズ2（ログ確認後に有効化）-------------------------------------
-  # schedule:
-  #   - cron: '0 21 * * 0-4'   # Daily   平日 06:00 JST
-  #   - cron: '0 18 * * 5'     # Weekly  土曜 03:00 JST
-  #   - cron: '0 16 1-7 * 0'   # Monthly 第1日曜 01:00 JST
+
+  # 3階層マルチスケジュール定期実行
+  schedule:
+    - cron: '0 21 * * 0-4'   # Daily   平朝 06:00 JST (mode: daily)
+    - cron: '0 18 * * 5'     # Weekly  土曜 03:00 JST (mode: weekly)
+    - cron: '0 16 1-7 * 0'   # Monthly 第1日曜 01:00 JST (mode: monthly)
 
 permissions:
-  contents: read
+  contents: write
 
 concurrency:
-  group: crawl-dryrun
+  group: crawl-automation
   cancel-in-progress: false
 
 jobs:
-  crawl-dryrun:
+  crawl:
     runs-on: ubuntu-latest
     timeout-minutes: 180
     env:
       PYTHONIOENCODING: utf-8
-      MODE: ${{ inputs.mode || 'daily' }}
-      MINISTRY: ${{ inputs.ministry || '' }}
+      MODE: ${{ github.event.inputs.mode || (github.event.schedule == '0 18 * * 5' && 'weekly') || (github.event.schedule == '0 16 1-7 * 0' && 'monthly') || 'daily' }}
+      DRY_RUN: ${{ github.event.inputs.dry_run || 'false' }}
+      MINISTRY: ${{ github.event.inputs.ministry || '' }}
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
 
       - uses: actions/setup-python@v5
         with:
@@ -86,9 +91,12 @@ jobs:
       - name: Build diff report
         id: report
         run: |
+          MODE_LABEL="${{ env.MODE }}"
+          if [ "${{ env.DRY_RUN }}" = "true" ]; then MODE_LABEL="${MODE_LABEL}-dryrun"; fi
           python admin/tools/automation_report.py report \
             --before before.json --crawl-log crawl.log \
-            --output report.md --github-output "$GITHUB_OUTPUT"
+            --output report.md --github-output "$GITHUB_OUTPUT" \
+            --mode "$MODE_LABEL"
           cat report.md >> "$GITHUB_STEP_SUMMARY"
 
       - name: Run integration tests
@@ -101,19 +109,48 @@ jobs:
         run: |
           {
             echo ""
-            echo "## 統合テスト"
-            echo "結果: \`${{ steps.tests.outcome }}\`（ドライランのため失敗してもジョブは継続）"
+            echo "## 統合テスト結果"
+            echo "結果: \`${{ steps.tests.outcome }}\`"
             echo ""
             echo '```'
             tail -n 25 test.log || true
             echo '```'
           } >> "$GITHUB_STEP_SUMMARY"
 
+      - name: Check circuit breaker status
+        if: steps.report.outputs.breaker_tripped == 'true' || steps.tests.outcome != 'success'
+        run: |
+          echo "::error::[サーキットブレーカー発動] 異常判定またはテスト失敗を検知したため、リポジトリへの自動コミットを中止（Abort）しました。"
+          {
+            echo ""
+            echo "> [!CAUTION]"
+            echo "> **サーキットブレーカー発動**: 異常判定または統合テスト失敗を検知したため、自動コミット・pushを中断（Abort）しました。ログを確認してください。"
+          } >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Commit and push changes
+        if: |
+          success() &&
+          env.DRY_RUN != 'true' &&
+          steps.report.outputs.breaker_tripped != 'true' &&
+          steps.tests.outcome == 'success'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add docs/data.json docs/data_archive.json admin/admin_data.json
+          if git diff --staged --quiet; then
+            echo "データに変更はありませんでした（コミット不要）。"
+          else
+            TODAY=$(date +'%Y-%m-%d')
+            git commit -m "chore(data): auto crawl update [mode: ${{ env.MODE }}] ($TODAY)"
+            git push origin main
+            echo "✅ 新着クロール差分を main へ正常にコミット & push しました。"
+          fi
+
       - name: Upload logs and reports
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: crawl-dryrun-${{ env.MODE }}-${{ github.run_id }}
+          name: crawl-${{ env.MODE }}-${{ github.run_id }}
           retention-days: 30
           if-no-files-found: warn
           path: |

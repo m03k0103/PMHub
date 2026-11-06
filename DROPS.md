@@ -1,8 +1,8 @@
 # PMHub 改善・機能実装（Drop）マスタードキュメント (DROPS.md)
 
-> **最終更新**: 2026-11-06  `
-> **最新 Drop**: **Drop 134**（2026-11-06 完了）  
-> **次期予定 Drop**: **Drop 135**（Track [Core-Policy-Filter]: 「重要政策会議のみ」クイック絞り込み機能の実装）  `
+> **最終更新**: 2026-11-07  `
+> **最新 Drop**: **Drop 135**（2026-11-07 完了）  
+> **次期予定 Drop**: **Drop 136**（Track [Core-Policy-Filter]: 「重要政策会議のみ」クイック絞り込み機能の実装）  `
 > 
 > 本ドキュメントは、PMHub の継続的改善ロードマップおよび実装記録を一元管理するマスタードキュメントです。  `
 > 今後の構想テーマは **「Track（トラック）」** として管理し、着手・個別実装単位は最新連番を付与した **「Drop（ドロップ）」** として連番アーカイブします。  `
@@ -24,7 +24,6 @@
 |:---:|:---|:---|:---:|:---:|
 | **Track [Core-Policy-Filter]** | **「重要政策会議のみ」絞り込み機能** | **国家の基本方針・中核アジェンダを審議する重要会議体のワンクリック絞り込み**<br>内閣府設置法第18条に基づく重要政策に関する会議（経済財政諮問会議、総合科学技術・イノベーション会議、中央防災会議、男女共同参画会議、国家戦略特区諮問会議等）および主要閣僚会議・基幹審議会を定義。DBへのフラグ/設定追加と公開ポータルUIへのクイック絞り込みトグル新設。 | **1,700超の会議体から最重要アジェンダへ瞬時にアクセス** | **【構想中】** |
 | **Track [LLM-Assist]** | **決定論的1ファイル新着ダイジェスト & LLM判定・クロール階層型フォールバック** | **【フェーズ 1】ディスカバリー 1ファイル集約・単一リクエストLLM判定 & 新着分類永続化（Drop 81 完了）**<br>**【フェーズ 2】開催回クロール 3段階ファネル・異常検知フォールバック & バッチLLM抽出**<br>API呼出上限（Daily 3回 / Weekly 10回 / Monthly 30回）とSQLite `llm_cache`（SHA-256ダイジェストキャッシュ）により、最小APIコールで新規会議体検知と0件以外を含むクロール欠落補完を実現 | **最小APIコールでの新規会議体検知 & クロール補完** | **【構想中】**<br>（フェーズ 1: Drop 81 完了 / フェーズ 2 構想中） |
-| **Track [Automation]** | **定時巡回クローラー & ローカルDB同期**<br>(GitHub Actions 連携) | **3階層マルチスケジュール定期実行・異常検知時Skip・ローカルDB自動同期**<br>1. Daily (平朝): 省庁新着検知のみ<br>2. Weekly (土曜): 通常巡回（直近2年重点）<br>3. Monthly (第1日曜): 全期間包括走査<br>連鎖失敗・重大エラー検知時のIssue発行＆次回以降Skip機能、Zero-Storage VM運用、ローカル環境への安全な同期エンジン（`sync_from_json.py` + post-merge hook）の配備 | **定期自動巡回・省力化 & ローカル資産整合性担保** | **【進行中】**<br>（フェーズ1 ドライラン: Drop 132 完了 / フェーズ2 自動コミット: 構想中） |
 | **Track [Search]** | **全文検索エンジン統合**<br>(PMM資産連携・分離FTS5 DB構築) | **PMM ローカル資産（PDF/HTML・約13.3万件）を活用した分離型全文検索エンジンの構築**<br>マスターDB（`admin/pmhub.db`）の肥大化を防ぐため全文検索専用DB（`admin/pmhub_fts.db`）を分離・`ATTACH` 結合するアーキテクチャを採用。`admin/pmm/text_extractor.py` によるインクリメンタル本文抽出（中断耐性付き）、FTS5 `trigram` インデックス構築、検索API（`/api/search`）、およびローカル管理画面（`admin/admin_dashboard.html`）を主軸としつつローカルサーバー起動時は公開ポータルUIからも全文検索可能なハイブリッドUIの実装（No Leakage 原則厳守） | **約13.3万件の配付資料・会議体資料の高速本文横断検索** | **【構想中】**<br>（DB・PMM基盤完了済 / 着手可能） |
 | **Track [Policy-AI]** | **政策分析連携構想**<br>(DB・PMM実資料・LLM統合分析) | **SQLite マスターDB・PMM実資料テキスト・`llm_cache` を統合した省庁横断政策インテリジェンス**<br>1. 省庁横断政策テーマ（GX、AI、経済安保、少子化等）および審議フェーズ（諮問・中間整理・答申等）の自動タギング（`meetings.tags_json` 活用）<br>2. PMM ローカル資料（議事要旨・主要資料）の実本文に基づく構造化AI要約生成（`meetings.summary` & SHA-256 `llm_cache` 活用）<br>3. 上位会議から各省庁審議会への政策波及タイムライン比較と、軽量サマリー/タグのみの公開JSON（`docs/data.json`）への安全な2系統還元（No Leakage 厳守） | **実資料に基づく政策横断的インサイトの創出** | **【長期構想】**<br>（Track [Search] 連携） |
 
@@ -275,6 +274,7 @@ GitHub Actions で自動更新・push されたリモートの最新データ（
 | **Drop 132** | **Track [Automation] フェーズ1: 定時クロール ドライラン基盤** | GitHub Actions（`workflow_dispatch` のみ・`contents: read`）で DB復元→クロール→エクスポート→差分レポート→統合テストを実行しログ・Artifact へ出力。`main` への commit / push は行わない。差分レポート生成ツール `admin/tools/automation_report.py`、`requirements.txt`、単体テスト U13 を新設。 | 単体U13 9テスト合格。`schedule` / 自動コミットはログ確認後のフェーズ2で有効化。 |
 | **Drop 133** | **新着ポータル日付スマートフィルタ & 差分巡回探索結果ログ内訳化 & Linux curl対応** | 新着ポータル走査（`--from-ministry-news`）に省庁別「前回クロール日 - 1日」日付フィルタを配備し過去告知の無駄な巡回（169件等）をカット。差分巡回のログに探索結果内訳（新規追加・資料マージ・事前告知除外・資料なし・取得失敗・既登録スキップ等）を明快に出力。Linux CI環境での `curl` バイナリ動的解決。 | 単体U4 10テスト合格、統合10ケース完全合格（57.02s）。新着探索の省力化と結果可視化達成。 |
 | **Drop 134** | **新着ポータル月日表記の年補完・先行見出し日付抽出・日付未特定リンク除外ガード** | 内閣府（CAO）等の月日のみ表記（`11月5日`）に対する基準年（`since_date` 年等）補完、厚労省（MHLW）等の先行見出し（`h2`, `h3`）日付探索、法務省（MOJ）等の日付のない常設目次リンクに対する除外ガードを実装。漢字日付とスラッシュ日付の比較不整合を解消しピンポイント巡回を最小化。 | 単体U4 11テスト合格、統合10ケース完全合格（61.25s）。ピンポイント巡回対象の劇的削減達成。 |
+| **Drop 135** | **Track [Automation] フェーズ2: 定時クロール自動コミット & サーキットブレーカー & ローカルDB差分同期エンジン** | GitHub Actions 3階層スケジュール（Daily平朝06:00 / Weekly土曜03:00 / Monthly第1日曜01:00 JST）を本番有効化。サーキットブレーカー（異常検知時コミット中断）と統合テスト合格を条件とした自動コミット&push配備。PMMローカル資産（`downloaded`）と`manualLock`を完全保護するローカルDB差分同期エンジン（`sync_from_json.py`）およびGit `post-merge` hook整備。単体テストU14新設。 | 単体U14 4テスト合格、統合10ケース＋単体14種完全合格（23.03s）。Track [Automation] 完全達成。 |
 ---
 
 ### 2-2. 各 Dropの詳細
@@ -4374,3 +4374,50 @@ python testing/run_test_suite.py --all-layers : PASSED（統合10ケース＋全
 - **5. 検証結果 (Verification Results)**:
   - `python testing/run_test_suite.py --all-layers`: 統合10ケース＋全単体13種完全合格（所要時間 61.25秒）。
   - 単体テスト U4（`test_crawler_incremental.py`）: 全11テスト PASS。
+
+
+---
+
+### Drop 135: Track [Automation] フェーズ2 - 定時クロール自動コミット & サーキットブレーカー & ローカルDB差分同期エンジン
+
+- **1. 背景と目的 (Background & Objective)**:
+  - Drop 132 で構築したフェーズ1（ドライラン基盤、Zero-Storage VM、差分レポート）および Drop 133・Drop 134 での安定化（ログ内訳化、Linux curl動的解決、月日年補完・厳格フィルタ）を経て、定時クローラーの本番自動コミット運用体制が整った。
+  - 本 Drop 135 では、Track [Automation] の最終目標である「定期自動巡回・省力化 & ローカル資産整合性担保」を完遂するため、以下の課題を解決することを目的とした：
+    1. **ローカルDB差分同期エンジンの欠如**: リモート CI で更新された JSON を `git pull` した際、ローカルの SQLite マスターDB（`admin/pmhub.db`）へ安全に差分反映し、ダウンロード済みの PMM 実ファイル資産（`download_status = 'downloaded'`）や手動修正データを一切破壊せずにマージする仕組みが必要であった。
+    2. **本番自動コミット & サーキットブレーカー配備**: 正常巡回時は `main` へ自動コミット & push を行い、異常検知時（403/429多発、大幅縮小、新規失敗激増等）やテスト失敗時は自動でコミットを中止（Abort）する安全ガードを配備。
+    3. **3階層マルチスケジュールの本番有効化**: 平朝 Daily、土曜 Weekly、月初 Monthly の cron スケジュールを本番稼働。
+
+- **2. 主要な実装・改修内容 (Key Implementations)**:
+  - **ローカルDB差分同期スクリプト (`admin/db/sync_from_json.py`) の新設**:
+    - `docs/data.json`, `docs/data_archive.json`, `admin/admin_data.json` の更新差分を `admin/pmhub.db` へ安全にマージ。
+    - **PMM ローカル資産保護**: 既存配付資料の `download_status == 'downloaded'` の場合、`local_path`, `file_size`, `sha256`, `downloaded_at` を**絶対に上書き・リセットしない**。
+    - **手動登録保護**: `manual_lock == 1`（`manualLock: true`）の会議体・開催回・配付資料を保護。
+    - トランザクション排他制御（`BEGIN IMMEDIATE`）および `--dry-run` オプション対応。
+  - **Git `post-merge` hook セットアップ支援スクリプト (`admin/tools/setup_git_hooks.py`)**:
+    - `python admin/tools/setup_git_hooks.py` の1回実行で、以降の `git pull` 時に JSON 更新を検知して自動で `sync_from_json.py` を呼び出すフック環境を整備。
+  - **GitHub Actions ワークフロー (`.github/workflows/crawl.yml`) の本番化**:
+    - ワークフロー名: `Crawl (scheduled & push)`
+    - 3階層マルチスケジュール（平朝 06:00 JST Daily / 土曜 03:00 JST Weekly / 第1日曜 01:00 JST Monthly）を有効化。
+    - `permissions: contents: write` を設定し、`breaker_tripped != 'true'` かつ `tests.outcome == 'success'` かつ `dry_run != 'true'` の全条件を満たした場合のみ `github-actions[bot]` として `main` へコミット & push。
+    - 異常検知時は自動コミットを中止し、Step Summary にアラートを通知。
+  - **単体テスト U14 (`testing/test_sync_from_json.py`) の新設 & 連動登録**:
+    - 新規開催回・資料のインサート、既存 PMM 資産（downloaded）の完全保護、`manual_lock = 1` 保護、`--dry-run` 非破壊性を網羅検証。
+    - `run_unit_tests.py` および `run_test_suite.py` の連動マッピングに U14 を正式登録。
+
+- **3. クローラーへの影響 (Crawler Impact & Behavior)**:
+  - **手動登録データの保護挙動**: リモート CI クロールおよびローカル差分同期双方で `manual_lock = 1` が完全に保護される。
+  - **新着検知・自動更新の挙動**: 平日朝 06:00 JST に省庁新着情報が自動巡回され、新着があれば自動で `main` へコミット・push される。土曜・月頭の包括巡回も自動実行され、PMHub の公開ポータルおよびアーカイブが常に最新状態に自動維持される。
+  - **クローラーの負荷・探索範囲への影響**: Daily は新着スマートフィルタにより十数件程度の最小限探索を維持。万一の外部サーバー遮断（403/429）時はサーキットブレーカーがトリップして自動保護される。
+
+- **4. 変更ファイル一覧 (Changed Files)**:
+  - `admin/db/sync_from_json.py`（新規）
+  - `admin/tools/setup_git_hooks.py`（新規）
+  - `.github/workflows/crawl.yml`（更新）
+  - `testing/test_sync_from_json.py`（新規）
+  - `testing/run_unit_tests.py`（U14 登録）
+  - `testing/run_test_suite.py`（U14 連動マッピング追加）
+  - `DROPS.md`（Drop 135 完了記録、Track [Automation] 完了除外）
+
+- **5. 検証結果 (Verification Results)**:
+  - `python testing/run_test_suite.py --all-layers`: 統合10ケース＋全単体14種完全合格（所要時間 23.03秒）。
+  - 単体テスト U14（`test_sync_from_json.py`）: 全4テスト PASS（PMM 保護・manualLock 保護・dry-run 非破壊性合格）。

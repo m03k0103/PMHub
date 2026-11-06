@@ -162,6 +162,12 @@ UNIT_TEST_REGISTRY = {
         "name": "定時クロール差分レポート・異常判定単体テスト (test_automation_report.py)",
         "description": "新規開催回・資料差分集計, 今回試行分のみの失敗集計, 403/429計数, サーキットブレーカー相当判定(5省庁/5%減/HTTP遮断), 読み取り専用性",
         "runner": lambda: _run_py_class("test_automation_report", "TestAutomationReport")
+    },
+    "u_sync_from_json": {
+        "id": "U14",
+        "name": "ローカルDB差分同期・PMM保護・手動ロック保護単体テスト (test_sync_from_json.py)",
+        "description": "新規開催回・資料差分追加, PMMダウンロード資産保護(downloaded維持), manualLock=1保護, --dry-run非破壊性",
+        "runner": lambda: _run_py_class("test_sync_from_json", "TestSyncFromJson")
     }
 }
 
