@@ -91,6 +91,7 @@ def diff_snapshots(before, after):
     failed_now = [cid for cid in attempted if a_c[cid].get("result") == "failed"]
     newly_failed = [cid for cid in failed_now if (b_c.get(cid) or {}).get("result") != "failed"]
     failed_ministries = sorted({ministry_of(cid) for cid in failed_now})
+    newly_failed_ministries = sorted({ministry_of(cid) for cid in newly_failed})
     max_consec = max((a_c[cid].get("consecutiveFailures", 0) for cid in failed_now), default=0)
 
     return {
@@ -103,6 +104,7 @@ def diff_snapshots(before, after):
         "failedCouncils": sorted(failed_now),
         "newlyFailedCouncils": sorted(newly_failed),
         "failedMinistries": failed_ministries,
+        "newlyFailedMinistries": newly_failed_ministries,
         "maxConsecutiveFailures": max_consec,
     }
 
@@ -110,8 +112,9 @@ def diff_snapshots(before, after):
 def evaluate_anomalies(diff, http_blocks, ministry_threshold=FAILED_MINISTRY_THRESHOLD, shrink_ratio=MEETING_SHRINK_RATIO):
     """異常判定。1件でも該当すれば breaker_tripped=True（フェーズ1では記録のみで停止・Issue起票は行わない）。"""
     reasons = []
-    if len(diff["failedMinistries"]) >= ministry_threshold:
-        reasons.append(f"失敗省庁数 {len(diff['failedMinistries'])} が閾値 {ministry_threshold} 以上")
+    target_min = diff.get("newlyFailedMinistries") if "newlyFailedMinistries" in diff else diff.get("failedMinistries", [])
+    if len(target_min) >= ministry_threshold:
+        reasons.append(f"新規失敗省庁数 {len(target_min)} が閾値 {ministry_threshold} 以上")
     before_n = diff["meetingsBefore"]
     if before_n and (before_n - diff["meetingsAfter"]) / before_n > shrink_ratio:
         reasons.append(f"開催回総数が {before_n} → {diff['meetingsAfter']} と {shrink_ratio:.0%} 超減少")
@@ -122,11 +125,18 @@ def evaluate_anomalies(diff, http_blocks, ministry_threshold=FAILED_MINISTRY_THR
 
 
 def render_markdown(diff, http_blocks, verdict, mode_label="dry-run"):
+    is_dryrun = "dryrun" in str(mode_label).lower() or "dry-run" in str(mode_label).lower()
+    run_status_msg = (
+        "- **ドライラン: `main` への commit / push は行っていません。**"
+        if is_dryrun
+        else f"- **自動実行モード (`{mode_label}`): 異常なし・テスト合格時に `main` へ自動コミット & push を行います。**"
+    )
+    newly_min_cnt = len(diff.get("newlyFailedMinistries", []))
     lines = [
         f"# クロール差分レポート（{mode_label}）",
         "",
         f"- 生成日時: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}",
-        "- **ドライラン: `main` への commit / push は行っていません。**",
+        run_status_msg,
         "",
         "## 差分サマリー",
         "",
@@ -138,7 +148,7 @@ def render_markdown(diff, http_blocks, verdict, mode_label="dry-run"):
         f"| 消えた開催回 | {len(diff['removedMeetingIds'])} |",
         f"| 追加された配付資料 | {diff['materialsAdded']} |",
         f"| 今回失敗した会議体 | {len(diff['failedCouncils'])}（うち新規失敗 {len(diff['newlyFailedCouncils'])}） |",
-        f"| 失敗が発生した省庁数 | {len(diff['failedMinistries'])} |",
+        f"| 失敗が発生した省庁数 | {len(diff['failedMinistries'])}（うち新規失敗省庁 {newly_min_cnt}） |",
         f"| 最大連続失敗回数 | {diff['maxConsecutiveFailures']} |",
         f"| HTTP 403 / 429（ログ行数） | {http_blocks.get('403', 0)} / {http_blocks.get('429', 0)} |",
         "",
@@ -180,6 +190,7 @@ def main(argv=None):
     p_rep.add_argument("--crawl-log", default=None)
     p_rep.add_argument("--output", default=None, help="Markdown 出力先")
     p_rep.add_argument("--github-output", default=None, help="$GITHUB_OUTPUT パス")
+    p_rep.add_argument("--mode", default="dry-run", help="巡回モード（daily, weekly, monthly, *-dryrun）")
 
     args = parser.parse_args(argv)
 
@@ -199,7 +210,7 @@ def main(argv=None):
     diff = diff_snapshots(before, after)
     http_blocks = count_http_blocks(log_text)
     verdict = evaluate_anomalies(diff, http_blocks)
-    md = render_markdown(diff, http_blocks, verdict)
+    md = render_markdown(diff, http_blocks, verdict, mode_label=args.mode)
     print(md)
     if args.output:
         with open(args.output, "w", encoding="utf-8") as f:

@@ -258,6 +258,26 @@ GENERIC_MATERIAL_NAMES = frozenset({
     '別紙', '別添', '添付', '添付資料', '一覧', '詳細', '印刷用', '印刷'
 })
 
+def is_intermediate_html_material(name, url):
+    """配付資料が末端ドキュメントではなく中間HTMLコンテナ・事前告知ページであるかを判定する。"""
+    if not url:
+        return False
+    u = url.lower()
+    if u.endswith('.pdf') or '.pdf?' in u or '.pdf#' in u:
+        return False
+    if not (u.endswith('.html') or u.endswith('.htm') or '/' in u):
+        return False
+
+    clean_n = name.strip() if name else ""
+    generic_names = {
+        '会議資料', '配付資料', '配布資料', '資料一覧', '配付資料一覧', '配布資料一覧',
+        '会議資料一覧', '提出資料 (HTML)', '配付資料 (HTML)', '提出資料', '会議資料ページ',
+        '議事次第・配付資料 (HTML)', '配付資料一覧ページ (HTML)', '議事次第・配付資料'
+    }
+    if clean_n in generic_names or '配付資料一覧ページ' in clean_n or '議事次第・配付資料' in clean_n or '資料一覧' in clean_n:
+        return True
+    return False
+
 def is_generic_material_name(name):
     """資料名が「PDF」「資料」等のジェネリック単体文字列であるかを判定"""
     if not name:
@@ -2305,13 +2325,14 @@ def _extract_meetings_from_parent_table(html, target_url, council_name, rule=Non
                                 if not any(rm['url'] == psm['url'] for rm in row_materials):
                                     row_materials.append(psm)
                         else:
-                            # PDF がない場合は、この HTML ページ自体を資料として採用
-                            if not any(rm['url'] == c_url for rm in row_materials):
-                                row_materials.append({
-                                    "name": cand['name'] or "資料",
-                                    "url": c_url,
-                                    "type": "HTML"
-                                })
+                            # PDF がない場合、中間HTMLコンテナや個別回ページ自身（is_intermediate_html_material）は資料にフォールバック採用しない
+                            if not is_intermediate_html_material(cand.get('name', ''), c_url):
+                                if not any(rm['url'] == c_url for rm in row_materials):
+                                    row_materials.append({
+                                        "name": cand['name'] or "資料",
+                                        "url": c_url,
+                                        "type": "HTML"
+                                    })
 
             # 資料も個別URLもない行はスキップ
             # 資料も個別URLもない行の判定:

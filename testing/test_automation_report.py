@@ -53,6 +53,7 @@ class TestAutomationReport(unittest.TestCase):
         self.assertEqual(d["failedCouncils"], ["cao-c", "mic-b"])
         self.assertEqual(d["newlyFailedCouncils"], ["mic-b"])
         self.assertEqual(d["failedMinistries"], ["cao", "mic"])
+        self.assertEqual(d["newlyFailedMinistries"], ["mic"])
         self.assertEqual(d["maxConsecutiveFailures"], 2)
 
     def test_http_block_counting(self):
@@ -61,10 +62,21 @@ class TestAutomationReport(unittest.TestCase):
         self.assertEqual(c, {"403": 2, "429": 1})
 
     def test_anomaly_threshold_failed_ministries(self):
-        diff = {"failedMinistries": list("abcde"), "meetingsBefore": 100, "meetingsAfter": 100, "attemptedCouncils": 10}
-        self.assertTrue(ar.evaluate_anomalies(diff, {"403": 0, "429": 0})["breaker_tripped"])
-        diff["failedMinistries"] = list("abcd")
+        # 過去からの恒常的エラー（failedMinistries）が多くても、新規失敗（newlyFailedMinistries）が少なければトリップしない
+        diff = {
+            "failedMinistries": list("abcdefghijkl"),
+            "newlyFailedMinistries": list("ab"),
+            "meetingsBefore": 100,
+            "meetingsAfter": 100,
+            "attemptedCouncils": 1000,
+        }
         self.assertFalse(ar.evaluate_anomalies(diff, {"403": 0, "429": 0})["breaker_tripped"])
+        # 新規失敗省庁が5以上でトリップ
+        diff["newlyFailedMinistries"] = list("abcde")
+        self.assertTrue(ar.evaluate_anomalies(diff, {"403": 0, "429": 0})["breaker_tripped"])
+        # 後方互換性: newlyFailedMinistries がない場合は failedMinistries で判定
+        diff_legacy = {"failedMinistries": list("abcde"), "meetingsBefore": 100, "meetingsAfter": 100, "attemptedCouncils": 10}
+        self.assertTrue(ar.evaluate_anomalies(diff_legacy, {"403": 0, "429": 0})["breaker_tripped"])
 
     def test_anomaly_meeting_shrink(self):
         diff = {"failedMinistries": [], "meetingsBefore": 1000, "meetingsAfter": 900, "attemptedCouncils": 10}
@@ -80,11 +92,28 @@ class TestAutomationReport(unittest.TestCase):
 
     def test_render_markdown_states_dry_run_and_verdict(self):
         diff = ar.diff_snapshots(_snap({}, {}), _snap({"a-x-20260101-001": 1}, {}))
-        md = ar.render_markdown(diff, {"403": 0, "429": 0}, {"breaker_tripped": False, "reasons": []})
-        self.assertIn("main", md)
-        self.assertIn("commit / push は行っていません", md)
-        self.assertIn("異常なし", md)
-        self.assertIn("a-x-20260101-001", md)
+        # dry-run
+        md_dry = ar.render_markdown(diff, {"403": 0, "429": 0}, {"breaker_tripped": False, "reasons": []}, mode_label="monthly-dryrun")
+        self.assertIn("commit / push は行っていません", md_dry)
+        self.assertIn("異常なし", md_dry)
+        self.assertIn("a-x-20260101-001", md_dry)
+        # 本番自動実行
+        md_prod = ar.render_markdown(diff, {"403": 0, "429": 0}, {"breaker_tripped": False, "reasons": []}, mode_label="monthly")
+        self.assertIn("自動実行モード (`monthly`)", md_prod)
+        self.assertNotIn("commit / push は行っていません", md_prod)
+
+    def test_cli_report_mode_argument(self):
+        with tempfile.TemporaryDirectory() as td:
+            snap_path = os.path.join(td, "before.json")
+            out_path = os.path.join(td, "report.md")
+            with open(snap_path, "w", encoding="utf-8") as f:
+                json.dump({"meetings": {}, "crawlStatuses": {}}, f)
+            # --mode monthly が受け付けられ正常終了すること
+            code = ar.main(["report", "--before", snap_path, "--output", out_path, "--mode", "monthly"])
+            self.assertEqual(code, 0)
+            with open(out_path, "r", encoding="utf-8") as f:
+                content = f.read()
+            self.assertIn("クロール差分レポート（monthly）", content)
 
     def test_snapshot_and_report_are_read_only(self):
         with tempfile.TemporaryDirectory() as td:
