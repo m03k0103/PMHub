@@ -1933,7 +1933,7 @@
       "ministry": "CAO",
       "category": "COUNCIL",
       "name": "沖縄振興審議会",
-      "officialUrl": "https://www8.cao.go.jp/okinawa/siryou/singikai/sinkousingikai/sinkousingikai.html",
+      "officialUrl": "https://www8.cao.go.jp/okinawa/siryou/singikai/index.html",
       "pastYearCount": 1
     },
     {
@@ -2062,7 +2062,7 @@
       "ministry": "CAO",
       "category": "COUNCIL",
       "name": "日本学術会議",
-      "officialUrl": "https://www.scj.go.jp/ja/member/iinkai/kanji/index.html",
+      "officialUrl": "https://www.scj.go.jp/ja/member/iinkai/kanji/26index.html",
       "pastYearCount": 0
     },
     {
@@ -14215,15 +14215,6 @@
       "name": "医療保険部会 高額療養費制度の在り方に関する専門委員会",
       "officialUrl": "https://www.mhlw.go.jp/stf/shingi/other-hoken_474087_00004.html",
       "pastYearCount": 7
-    },
-    {
-      "id": "mhlw-kousei_influ",
-      "ministry": "MHLW",
-      "category": "COMMITTEE",
-      "name": "厚生科学審議会 新型インフルエンザ対策に関する小委員会",
-      "officialUrl": "https://www.mhlw.go.jp/stf/shingi/shingi-kousei_influ.html",
-      "description": "厚生科学審議会 新型インフルエンザ対策に関する小委員会に関する調査審議・検討を行う。",
-      "pastYearCount": 0
     },
     {
       "id": "mhlw-kousei_kagaku_hyouka",
@@ -215872,8 +215863,8 @@
     "cas-zensedai_hosyo",
     "mof-zaiseiseido_bunkakai"
   ],
-  "lastCrawlTime": "2026/11/07 08:19",
+  "lastCrawlTime": "2026/11/07 09:23",
   "hasArchive": true,
-  "totalMeetingsCount": 25002,
+  "totalMeetingsCount": 25001,
   "totalMaterialsCount": 152995
 }

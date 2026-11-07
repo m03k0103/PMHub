@@ -69,6 +69,62 @@ class TestWafResilience(unittest.TestCase):
         self.assertEqual(mock_urlopen.call_count, 2)
         mock_sleep.assert_any_call(2.5)
 
+    def test_is_s3_or_cdn_not_found(self):
+        """Drop 137: Amazon S3 / CloudFront 擬似403 (Not Found) の検知判定を検証"""
+        # 403 かつ S3 ページ不在メッセージ
+        s3_body = "<html><head><title>指定されたページまたはファイルは存在しません</title></head></html>".encode('utf-8')
+        self.assertTrue(crawler.is_s3_or_cdn_not_found(403, body_bytes=s3_body))
+        self.assertTrue(crawler.is_s3_or_cdn_not_found(403, body_text="指定されたページは見つかりませんでした"))
+        self.assertTrue(crawler.is_s3_or_cdn_not_found(403, body_text="<Code>NoSuchKey</Code>"))
+        self.assertTrue(crawler.is_s3_or_cdn_not_found(404, body_text="404 Not Found"))
+        # 通常の403（アクセス遮断・WAF）
+        self.assertFalse(crawler.is_s3_or_cdn_not_found(403, body_text="Forbidden. Request blocked by administrative rule."))
+        self.assertFalse(crawler.is_s3_or_cdn_not_found(200, body_text="指定されたページまたはファイルは存在しません"))
+
+    @patch('time.sleep')
+    @patch('urllib.request.urlopen')
+    def test_fetch_url_s3_pseudo_403_fast_fail(self, mock_urlopen, mock_sleep):
+        """Drop 137: S3 擬似403 発生時に待機リトライやcurlをバイパスして即座にNoneを返すか検証"""
+        import urllib.error
+        import io
+        s3_html = "<html><title>指定されたページまたはファイルは存在しません</title></html>".encode('utf-8')
+        fp = io.BytesIO(s3_html)
+        http_err = urllib.error.HTTPError(
+            url="https://example.go.jp/notfound",
+            code=403,
+            msg="Forbidden",
+            hdrs={},
+            fp=fp
+        )
+        mock_urlopen.side_effect = http_err
+
+        res = crawler.fetch_url("https://example.go.jp/notfound")
+        self.assertIsNone(res)
+        self.assertEqual(mock_urlopen.call_count, 1)
+        # リトライ待機（time.sleep）が呼ばれていないこと
+        mock_sleep.assert_not_called()
+        # last_fetch_error に S3 403 Not Found が記録されていること
+        last_err = getattr(crawler._thread_local, 'last_fetch_error', '')
+        self.assertIn("S3 403 Not Found", last_err)
+
+    def test_safe_emit_log_transparency_to_registered_files(self):
+        """Drop 137: safe_emit_log が登録されたログファイルハンドルへ透過的に追記するか検証"""
+        import io
+        buf = io.StringIO()
+        crawler.register_crawler_logfile(buf)
+        try:
+            crawler.safe_emit_log("Drop 137 transparency test message")
+            content = buf.getvalue()
+            self.assertIn("Drop 137 transparency test message", content)
+            self.assertRegex(content, r"\[\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2}\]")
+        finally:
+            crawler.unregister_crawler_logfile(buf)
+
+        # 登録解除後は書き込まれないこと
+        prev_len = len(buf.getvalue())
+        crawler.safe_emit_log("After unregister message")
+        self.assertEqual(len(buf.getvalue()), prev_len)
+
 
 if __name__ == '__main__':
     unittest.main()

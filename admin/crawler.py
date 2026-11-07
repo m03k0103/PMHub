@@ -906,9 +906,11 @@ def load_councils_from_data_json(recent_years=2, include_closed=False, resume=Fa
         if cid in rejected_ids:
             continue
 
-        # 0. 省庁フィルタのチェック
-        if ministry and item.get("ministry", "").upper() != ministry.upper():
-            continue
+        # 0. 省庁フィルタのチェック（カンマ区切り複数指定に対応）
+        if ministry:
+            allowed_ministries = {m.strip().upper() for m in ministry.split(',') if m.strip()}
+            if item.get("ministry", "").upper() not in allowed_ministries:
+                continue
 
         # 新着限定フィルタ
         if new_only and not item.get("isNewlyDiscovered"):
@@ -1217,6 +1219,82 @@ def is_waf_challenge(html_or_bytes, status_code=200):
                 'challenge-error-text' in lower or 'challenge-running' in lower or
                 'cf-browser-verification' in lower)
 
+_thread_local = threading.local()
+_ACTIVE_LOG_HANDLES = []
+_LOG_HANDLE_LOCK = threading.Lock()
+
+def register_crawler_logfile(file_handle):
+    """Drop 137: アクティブなクロールログファイルを登録し、fetch_url 等の全ログ透過性を保証する"""
+    with _LOG_HANDLE_LOCK:
+        if file_handle and file_handle not in _ACTIVE_LOG_HANDLES:
+            _ACTIVE_LOG_HANDLES.append(file_handle)
+
+def unregister_crawler_logfile(file_handle):
+    """Drop 137: クロール完了時にログファイル登録を解除する"""
+    with _LOG_HANDLE_LOCK:
+        if file_handle in _ACTIVE_LOG_HANDLES:
+            _ACTIVE_LOG_HANDLES.remove(file_handle)
+
+def safe_emit_log(msg):
+    """
+    CR-18: stdout への出力時に OSError（BrokenPipe / [Errno 22] 等）や
+    UnicodeEncodeError が発生しても上位に伝播させず、安全にフォールバック・抑制する。
+    Drop 137: 登録されたアクティブなログファイル（crawler_*.log, crawler_latest.log）
+    にもタイムスタンプ付きで自動書き込み・フラッシュを行い、ログ透過性を保証する。
+    """
+    try:
+        print(msg)
+    except (OSError, UnicodeEncodeError):
+        try:
+            enc = getattr(sys.stdout, 'encoding', None) or 'utf-8'
+            sys.stdout.write(msg.encode(enc, errors='replace').decode(enc) + '\n')
+            sys.stdout.flush()
+        except Exception:
+            pass
+
+    with _LOG_HANDLE_LOCK:
+        if _ACTIVE_LOG_HANDLES:
+            now_ts = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+            log_line = f"[{now_ts}] {msg}\n"
+            for handle in list(_ACTIVE_LOG_HANDLES):
+                try:
+                    handle.write(log_line)
+                    handle.flush()
+                except Exception:
+                    pass
+
+def is_s3_or_cdn_not_found(status_code, body_bytes=b"", body_text=""):
+    """
+    Drop 137: Amazon S3 / CloudFront 等がオブジェクト不存在時に 403 Forbidden を返すケース
+    （擬似403）やエラーページを検知し、一時的なアクセス遮断ではなく恒久的な Not Found (404)
+    として判定する。
+    """
+    if status_code not in (403, 404):
+        return False
+    check_targets = []
+    if body_text:
+        check_targets.append(body_text.lower())
+    if body_bytes:
+        try:
+            check_targets.append(body_bytes.decode('utf-8', errors='replace').lower())
+        except Exception:
+            pass
+    keywords = [
+        "指定されたページまたはファイルは存在しません",
+        "指定されたページは見つかりませんでした",
+        "指定されたページは存在しません",
+        "ページが見つかりません",
+        "お探しのページは見つかりませんでした",
+        "nosuchkey",
+        "404 not found", "<title>404 not found",
+        "<title>not found</title>",
+    ]
+    for text in check_targets:
+        for kw in keywords:
+            if kw in text:
+                return True
+    return False
+
 def _fetch_with_curl(url, timeout=12):
     """curl.exe を使用して WAF/Cloudflare 保護サイト等から HTML をフォールバック取得する"""
     try:
@@ -1247,6 +1325,7 @@ def fetch_url(url, timeout=12, max_retries=1, retry_count=0):
     parsed_url = urllib.parse.urlparse(url)
     if parsed_url.scheme not in ("http", "https"):
         safe_emit_log(f"[ERROR] Invalid scheme: {url}")
+        _thread_local.last_fetch_error = f"Invalid scheme: {url}"
         return None
 
     # CR-21, CR-26, CR-49: 同一ホストへの過密アクセス防止（スレッドセーフ動的レートリミット）
@@ -1269,29 +1348,48 @@ def fetch_url(url, timeout=12, max_retries=1, retry_count=0):
                     time.sleep(backoff_wait)
                     retry_res = fetch_url(url, timeout=timeout, max_retries=max_retries, retry_count=retry_count + 1)
                     if retry_res:
+                        _thread_local.last_fetch_error = None
                         return retry_res
                 # Drop 78: WAF 202 チャレンジまたは JS チャレンジ画面検知時の curl フォールバック試行
                 curl_html = _fetch_with_curl(url, timeout=timeout)
                 if curl_html:
                     safe_emit_log(f"  -> 🟢 [WAF CURL FALLBACK] {url}: curl.exe による WAF チャレンジ突破に成功しました")
+                    _thread_local.last_fetch_error = None
                     return curl_html
                 safe_emit_log(f"  -> 🔴 [WAF CHALLENGE BLOCKED] {url}: AWS/Cloudflare WAF challenge screen detected (Status: {response.status})")
+                _thread_local.last_fetch_error = f"WAF 202 Challenge: {url}" if response.status == 202 else f"WAF Challenge Blocked (Status {response.status}): {url}"
                 return None
+            _thread_local.last_fetch_error = None
             return html
     except urllib.error.HTTPError as e:
+        err_body = b""
+        try:
+            err_body = e.read()
+        except Exception:
+            pass
+
+        # Drop 137: Amazon S3 擬似403 の即時判定（不要な2.5秒リトライおよび curl フォールバックを即座にバイパス）
+        if is_s3_or_cdn_not_found(e.code, body_bytes=err_body):
+            safe_emit_log(f"  -> 🔴 [HTTP ERROR 404 (S3 403)] {url}: ページが存在しません (S3/CloudFront AccessDenied/NoSuchKey)")
+            _thread_local.last_fetch_error = f"HTTP 404 (S3 403 Not Found): {url}"
+            return None
+
         # CR-48: 403/429 でのクールダウンリトライ
         if e.code in (403, 429) and retry_count < max_retries and ('.go.jp' in host):
             safe_emit_log(f"  -> ⚠️ [HTTP {e.code}] {url}: 一時遮断検知。待機(2.5s)後に自動リトライします...")
             time.sleep(2.5)
             retry_res = fetch_url(url, timeout=timeout, max_retries=max_retries, retry_count=retry_count + 1)
             if retry_res:
+                _thread_local.last_fetch_error = None
                 return retry_res
         # WAF/Cloudflare (403) 等での curl.exe フォールバック
         if e.code in (403, 429, 503):
             curl_html = _fetch_with_curl(url, timeout=timeout)
             if curl_html:
+                _thread_local.last_fetch_error = None
                 return curl_html
         safe_emit_log(f"  -> 🔴 [HTTP ERROR {e.code}] {url}: {e.reason}")
+        _thread_local.last_fetch_error = f"HTTP {e.code} {e.reason}: {url}"
         return None
     except (ssl.SSLCertVerificationError, urllib.error.URLError) as e:
         # 行政ドメインでのSSL証明書検証エラー時のみフォールバック試行
@@ -1301,23 +1399,30 @@ def fetch_url(url, timeout=12, max_retries=1, retry_count=0):
                 with urllib.request.urlopen(req, timeout=timeout, context=fb_ctx) as response:
                     content_type = response.headers.get('Content-Type', '')
                     raw_bytes = response.read()
+                    _thread_local.last_fetch_error = None
                     return decode_html_bytes(raw_bytes, content_type)
             except Exception as fb_e:
                 curl_html = _fetch_with_curl(url, timeout=timeout)
                 if curl_html:
+                    _thread_local.last_fetch_error = None
                     return curl_html
                 safe_emit_log(f"  -> 🔴 [FETCH ERROR (SSL FB)] {url}: {fb_e}")
+                _thread_local.last_fetch_error = f"FETCH ERROR (SSL FB): {fb_e}"
                 return None
         curl_html = _fetch_with_curl(url, timeout=timeout)
         if curl_html:
+            _thread_local.last_fetch_error = None
             return curl_html
         safe_emit_log(f"  -> 🔴 [FETCH ERROR] {url}: {e}")
+        _thread_local.last_fetch_error = f"FETCH ERROR: {e}"
         return None
     except Exception as e:
         curl_html = _fetch_with_curl(url, timeout=timeout)
         if curl_html:
+            _thread_local.last_fetch_error = None
             return curl_html
         safe_emit_log(f"  -> 🔴 [FETCH ERROR] {url}: {e}")
+        _thread_local.last_fetch_error = f"FETCH ERROR: {e}"
         return None
 
 def parse_materials_from_html(html, base_url, pdf_selector=None):
@@ -3701,21 +3806,6 @@ def deduplicate_data_materials(data):
         print(f"[重複排除] 会議間重複資料 {removed_cross_dup} 件、ポータルリンク {removed_portal} 件を自動整理しました。")
 
 
-def safe_emit_log(msg):
-    """
-    CR-18: stdout への出力時に OSError（BrokenPipe / [Errno 22] 等）や
-    UnicodeEncodeError が発生しても上位に伝播させず、安全にフォールバック・抑制する。
-    """
-    try:
-        print(msg)
-    except (OSError, UnicodeEncodeError):
-        try:
-            enc = getattr(sys.stdout, 'encoding', None) or 'utf-8'
-            sys.stdout.write(msg.encode(enc, errors='replace').decode(enc) + '\n')
-            sys.stdout.flush()
-        except Exception:
-            pass
-
 
 def run_meeting_crawler(progress_callback=None, stop_event=None, workers=4, recent_years=2, recheck_recent=1, full_check=False, include_closed=False, resume=False, ministry=None, skip_download=False, new_only=False, enable_llm=None):
     """
@@ -3728,26 +3818,14 @@ def run_meeting_crawler(progress_callback=None, stop_event=None, workers=4, rece
     global CRAWL_TARGETS
     
     log_f, latest_f, log_filepath, latest_filepath = init_crawler_logfile()
+    register_crawler_logfile(log_f)
+    register_crawler_logfile(latest_f)
     emit_lock = threading.Lock()
     data_lock = threading.Lock()
 
     def emit(msg, payload=None):
         with emit_lock:
             safe_emit_log(msg)
-            now_ts = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
-            log_line = f"[{now_ts}] {msg}\n"
-            if log_f:
-                try:
-                    log_f.write(log_line)
-                    log_f.flush()
-                except OSError:
-                    pass
-            if latest_f:
-                try:
-                    latest_f.write(log_line)
-                    latest_f.flush()
-                except OSError:
-                    pass
         if progress_callback:
             try:
                 progress_callback(msg, payload)
@@ -3935,11 +4013,12 @@ def run_meeting_crawler(progress_callback=None, stop_event=None, workers=4, rece
 
                     return item
                 else:
-                    emit(f"  -> 🔴 [FETCH ERROR] ネットワーク取得失敗: {c_name}")
+                    fetch_err = getattr(_thread_local, 'last_fetch_error', None) or 'Network fetch failed'
+                    emit(f"  -> 🔴 [FETCH ERROR] ネットワーク取得失敗: {c_name} ({fetch_err})")
                     with data_lock:
                         stats["processed_councils"] += 1
                         stats["fetch_error"] += 1
-                        update_crawl_status(data, target["id"], None, "Network fetch failed")
+                        update_crawl_status(data, target["id"], None, fetch_err)
                         processed_counter += 1
                         if processed_counter % checkpoint_interval == 0:
                             save_data_json_with_backup(data, create_backup=False)
@@ -4050,6 +4129,8 @@ def run_meeting_crawler(progress_callback=None, stop_event=None, workers=4, rece
         
         return stats
     finally:
+        unregister_crawler_logfile(log_f)
+        unregister_crawler_logfile(latest_f)
         if log_f:
             try: log_f.close()
             except OSError: pass
@@ -4335,17 +4416,11 @@ def run_ministry_news_discovery(progress_callback=None, stop_event=None, ministr
     log_f, latest_f, log_filepath, latest_filepath = init_crawler_logfile()
     emit_lock = threading.Lock()
 
+    register_crawler_logfile(log_f)
+    register_crawler_logfile(latest_f)
     def emit(msg, payload=None):
         with emit_lock:
             safe_emit_log(msg)
-            now_ts = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
-            log_line = f"[{now_ts}] {msg}\n"
-            if log_f:
-                try: log_f.write(log_line); log_f.flush()
-                except OSError: pass
-            if latest_f:
-                try: latest_f.write(log_line); latest_f.flush()
-                except OSError: pass
         if progress_callback:
             try: progress_callback(msg, payload)
             except Exception: pass
@@ -4592,6 +4667,8 @@ def run_ministry_news_discovery(progress_callback=None, stop_event=None, ministr
 
         return {"new_meetings": new_meetings_total, "log_file": log_filepath}
     finally:
+        unregister_crawler_logfile(log_f)
+        unregister_crawler_logfile(latest_f)
         if log_f:
             try: log_f.close()
             except OSError: pass
