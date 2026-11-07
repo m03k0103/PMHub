@@ -18791,8 +18791,25 @@
       "councilId": "meti-denryoku_gas_kanshi",
       "name": "第623回 電力・ガス取引監視等委員会",
       "date": "2026/11/04",
-      "officialUrl": "https://www.egc.meti.go.jp/activity/index_emsc.html",
-      "materials": []
+      "officialUrl": "https://www.egc.meti.go.jp/activity/emsc/623_haifu.html",
+      "materials": [
+        {
+          "name": "資料1 議事次第",
+          "url": "https://www.egc.meti.go.jp/activity/emsc/pdf/623_01_00.pdf"
+        },
+        {
+          "name": "資料2 委員等名簿",
+          "url": "https://www.egc.meti.go.jp/activity/emsc/pdf/623_02_00.pdf"
+        },
+        {
+          "name": "資料3 電気小売経過措置料金に係る原価算定期間終了後の事後評価について",
+          "url": "https://www.egc.meti.go.jp/activity/emsc/pdf/623_03_00.pdf"
+        },
+        {
+          "name": "資料4 ガス小売経過措置料金に係る原価算定期間等終了後の事後評価について",
+          "url": "https://www.egc.meti.go.jp/activity/emsc/pdf/623_04_00.pdf"
+        }
+      ]
     },
     {
       "id": "mhlw-2878-20261104-002",
@@ -21093,10 +21110,79 @@
     {
       "id": "aca-1734-20261021-s02",
       "councilId": "aca-1734",
-      "name": "第24期文化政策部会",
+      "name": "第24期 文化政策部会 第2回",
       "date": "2026/10/21",
-      "officialUrl": "https://www.bunka.go.jp/seisaku/bunkashingikai/seisaku/24/",
-      "materials": []
+      "officialUrl": "https://www.bunka.go.jp/seisaku/bunkashingikai/seisaku/24/02/index.html",
+      "materials": [
+        {
+          "name": "文化芸術分野の政策体系等",
+          "url": "https://www.bunka.go.jp/seisaku/bunkashingikai/seisaku/24/02/pdf/94453601_01.pdf"
+        },
+        {
+          "name": "フォローアップ対象取組一覧表",
+          "url": "https://www.bunka.go.jp/seisaku/bunkashingikai/seisaku/24/02/pdf/94453601_02.pdf"
+        },
+        {
+          "name": "フォローアップ対象取組一覧表",
+          "url": "https://www.bunka.go.jp/seisaku/bunkashingikai/seisaku/24/02/pdf/94453601_03.pdf"
+        },
+        {
+          "name": "フォローアップ資料",
+          "url": "https://www.bunka.go.jp/seisaku/bunkashingikai/seisaku/24/02/pdf/94453601_04.pdf"
+        },
+        {
+          "name": "フォローアップ資料",
+          "url": "https://www.bunka.go.jp/seisaku/bunkashingikai/seisaku/24/02/pdf/94453601_05.pdf"
+        },
+        {
+          "name": "意見聴収対象団体一覧",
+          "url": "https://www.bunka.go.jp/seisaku/bunkashingikai/seisaku/24/02/pdf/94453601_06.pdf"
+        },
+        {
+          "name": "関係団体への意見聴取の内容について",
+          "url": "https://www.bunka.go.jp/seisaku/bunkashingikai/seisaku/24/02/pdf/94453601_07.pdf"
+        },
+        {
+          "name": "関係団体からの提出意見）",
+          "url": "https://www.bunka.go.jp/seisaku/bunkashingikai/seisaku/24/02/pdf/94453601_08.pdf"
+        },
+        {
+          "name": "設問1に関する団体からの補足資料",
+          "url": "https://www.bunka.go.jp/seisaku/bunkashingikai/seisaku/24/02/pdf/94453601_09.pdf"
+        },
+        {
+          "name": "関係団体からの提出意見）",
+          "url": "https://www.bunka.go.jp/seisaku/bunkashingikai/seisaku/24/02/pdf/94453601_10.pdf"
+        },
+        {
+          "name": "設問2に関する団体からの補足資料",
+          "url": "https://www.bunka.go.jp/seisaku/bunkashingikai/seisaku/24/02/pdf/94453601_11.pdf"
+        },
+        {
+          "name": "中間評価報告書の構成イメージ",
+          "url": "https://www.bunka.go.jp/seisaku/bunkashingikai/seisaku/24/02/pdf/94453601_12.pdf"
+        },
+        {
+          "name": "第2期基本計画の中間評価に向けたスケジュールイメージ",
+          "url": "https://www.bunka.go.jp/seisaku/bunkashingikai/seisaku/24/02/pdf/94453601_13.pdf"
+        },
+        {
+          "name": "文化芸術推進基本計画概要",
+          "url": "https://www.bunka.go.jp/seisaku/bunkashingikai/seisaku/24/02/pdf/94453601_14.pdf"
+        },
+        {
+          "name": "文化芸術推進基本計画 本文",
+          "url": "https://www.bunka.go.jp/seisaku/bunkashingikai/seisaku/24/02/pdf/94453601_15.pdf"
+        },
+        {
+          "name": "最近の政府方針等",
+          "url": "https://www.bunka.go.jp/seisaku/bunkashingikai/seisaku/24/02/pdf/94453601_16.pdf"
+        },
+        {
+          "name": "令和7年度文化に関する世論調査",
+          "url": "https://www.bunka.go.jp/seisaku/bunkashingikai/seisaku/24/02/pdf/94453601_17.pdf"
+        }
+      ]
     },
     {
       "id": "cas-ax_renraku_kaigi-20261021-001",
@@ -69358,6 +69444,55 @@
           "name": "議事要旨",
           "url": "https://www.mhlw.go.jp/stf/newpage_71662.html",
           "type": "HTML"
+        }
+      ]
+    },
+    {
+      "id": "aca-1734-20260520-s01",
+      "councilId": "aca-1734",
+      "name": "第24期 文化政策部会 第1回",
+      "date": "2026/05/20",
+      "officialUrl": "https://www.bunka.go.jp/seisaku/bunkashingikai/seisaku/24/01/index.html",
+      "materials": [
+        {
+          "name": "文化審議会関係資料",
+          "url": "https://www.bunka.go.jp/seisaku/bunkashingikai/seisaku/24/01/pdf/94382401_01.pdf"
+        },
+        {
+          "name": "基本計画の中間評価に向けたフォローアップについて",
+          "url": "https://www.bunka.go.jp/seisaku/bunkashingikai/seisaku/24/01/pdf/94382401_02.pdf"
+        },
+        {
+          "name": "意見提出フォームの構成等について",
+          "url": "https://www.bunka.go.jp/seisaku/bunkashingikai/seisaku/24/01/pdf/94382401_03.pdf"
+        },
+        {
+          "name": "文化芸術を通じたウェルビーイングの向上に係る指標の在り方の検討について",
+          "url": "https://www.bunka.go.jp/seisaku/bunkashingikai/seisaku/24/01/pdf/94382401_04.pdf"
+        },
+        {
+          "name": "第2期基本計画の中間評価に向けたスケジュールイメージ",
+          "url": "https://www.bunka.go.jp/seisaku/bunkashingikai/seisaku/24/01/pdf/94382401_05.pdf"
+        },
+        {
+          "name": "文化芸術分野の政策体系等",
+          "url": "https://www.bunka.go.jp/seisaku/bunkashingikai/seisaku/24/01/pdf/94382401_06.pdf"
+        },
+        {
+          "name": "経済・財政新生計画 進捗管理・点検・評価表2025",
+          "url": "https://www.bunka.go.jp/seisaku/bunkashingikai/seisaku/24/01/pdf/94382401_07.pdf"
+        },
+        {
+          "name": "文化庁「文化に関する世論調査 ―ウェルビーイングと文化芸術活動の関連― 報告書」",
+          "url": "https://www.bunka.go.jp/seisaku/bunkashingikai/seisaku/24/01/pdf/94382401_08.pdf"
+        },
+        {
+          "name": "内閣府「満足度・生活の質に関する調査報告書2025」　概要",
+          "url": "https://www.bunka.go.jp/seisaku/bunkashingikai/seisaku/24/01/pdf/94382401_09.pdf"
+        },
+        {
+          "name": "内閣府「満足度・生活の質に関する調査報告書2025」　実施概要・調査票",
+          "url": "https://www.bunka.go.jp/seisaku/bunkashingikai/seisaku/24/01/pdf/94382401_10.pdf"
         }
       ]
     },
@@ -215847,6 +215982,6 @@
   ],
   "lastCrawlTime": "2026/11/07 20:47",
   "hasArchive": true,
-  "totalMeetingsCount": 25005,
-  "totalMaterialsCount": 153019
+  "totalMeetingsCount": 25006,
+  "totalMaterialsCount": 153050
 }
