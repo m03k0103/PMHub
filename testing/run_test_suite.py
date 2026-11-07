@@ -1109,6 +1109,7 @@ def detect_required_unit_tests(changed_files):
         "test_automation_report.py": ["u_automation_report"],
         "test_sync_from_json.py": ["u_sync_from_json"],
         "sync_from_json.py": ["u_sync_from_json"],
+        "inspect_auto_crawled.py": ["u_sync_from_json"],
         "automation_report.py": ["u_automation_report"],
         "run_unit_tests.py": list(UNIT_TEST_REGISTRY.keys())
     }

@@ -14,16 +14,18 @@ Key Protections (PMM & ManualLock Integrity):
    downloaded_at, and download_status are preserved unconditionally.
 2. Never overwrites manualLock = 1 records (councils, meetings, materials).
 3. Safely inserts new councils, meetings, and materials discovered by CI crawls.
-4. Updates non-destructive metadata (crawlerConfig, scrapingRules, crawlStatuses).
+4. Synchronizes auto-crawl discovery metadata (councilCrawlMeta, meetingCrawlMeta,
+   isNewlyDiscovered, discoveredAt, lastUpdatedFromCrawl, discoverySource) so that
+   newly crawled items from remote CI can be inspected and corrected by AI/humans.
+5. Updates non-destructive metadata (crawlerConfig, scrapingRules, crawlStatuses).
 """
 
 import argparse
 import json
 import sqlite3
 import sys
-import time
 from pathlib import Path
-from typing import Dict, Any, Tuple, Optional
+from typing import Dict, Any, Optional
 
 # Ensure UTF-8 output on Windows CP932
 if hasattr(sys.stdout, "reconfigure"):
@@ -102,6 +104,23 @@ def sync_database(
         cur = conn.cursor()
 
         # -------------------------------------------------------------
+        # 0. Sync lastCrawlTime metadata & Prepare Crawl Meta maps
+        # -------------------------------------------------------------
+        last_crawl_time = public_data.get("lastCrawlTime") or admin_data.get("lastCrawlTime", "")
+        if last_crawl_time and not dry_run:
+            cur.execute(
+                "INSERT OR REPLACE INTO metadata (key, value) VALUES ('lastCrawlTime', ?);",
+                (last_crawl_time,)
+            )
+
+        council_crawl_meta = admin_data.get("councilCrawlMeta", {}) if admin_data else {}
+        meeting_crawl_meta = admin_data.get("meetingCrawlMeta", {}) if admin_data else {}
+        manual_locks = admin_data.get("manualLocks", {}) if admin_data else {}
+        locked_councils = set(manual_locks.get("councils", [])) if isinstance(manual_locks, dict) else set()
+        locked_meetings = set(manual_locks.get("meetings", [])) if isinstance(manual_locks, dict) else set()
+        locked_materials = set(manual_locks.get("materials", [])) if isinstance(manual_locks, dict) else set()
+
+        # -------------------------------------------------------------
         # 1. Sync Councils
         # -------------------------------------------------------------
         councils = public_data.get("councils", [])
@@ -109,6 +128,12 @@ def sync_database(
             cid = c.get("id") or c.get("councilId")
             if not cid:
                 continue
+
+            c_meta = council_crawl_meta.get(cid, {}) if isinstance(council_crawl_meta, dict) else {}
+            c_discovered_at = c_meta.get("discoveredAt") or c.get("discoveredAt") or ""
+            c_discovery_source = c_meta.get("discoverySource") or c.get("discoverySource") or ""
+            c_is_new = 1 if c.get("isNewlyDiscovered") else 0
+            c_manual_lock = 1 if (cid in locked_councils or c.get("manualLock")) else 0
 
             cur.execute("SELECT id, manual_lock FROM councils WHERE id = ?", (cid,))
             existing = cur.fetchone()
@@ -134,10 +159,10 @@ def sync_database(
                             c.get("pastYearCount", 0),
                             1 if c.get("isClosed") else 0,
                             c.get("closedReason", ""),
-                            1 if c.get("manualLock") else 0,
-                            1 if c.get("isNewlyDiscovered") else 0,
-                            c.get("discoveredAt", ""),
-                            c.get("discoverySource", "")
+                            c_manual_lock,
+                            c_is_new,
+                            c_discovered_at,
+                            c_discovery_source
                         )
                     )
                 stats["councils_inserted"] += 1
@@ -152,6 +177,9 @@ def sync_database(
                                 ministry = ?, category = ?, name = ?, official_url = ?,
                                 archive_url = ?, description = ?, past_year_count = ?,
                                 is_closed = ?, closed_reason = ?,
+                                is_newly_discovered = ?,
+                                discovered_at = COALESCE(NULLIF(?, ''), discovered_at),
+                                discovery_source = COALESCE(NULLIF(?, ''), discovery_source),
                                 updated_at = CURRENT_TIMESTAMP
                             WHERE id = ?
                             """,
@@ -165,6 +193,9 @@ def sync_database(
                                 c.get("pastYearCount", 0),
                                 1 if c.get("isClosed") else 0,
                                 c.get("closedReason", ""),
+                                c_is_new,
+                                c_discovered_at,
+                                c_discovery_source,
                                 cid
                             )
                         )
@@ -182,6 +213,12 @@ def sync_database(
             cid = m.get("councilId")
             if not mid or not cid:
                 continue
+
+            m_meta = meeting_crawl_meta.get(mid, {}) if isinstance(meeting_crawl_meta, dict) else {}
+            m_discovered_at = m_meta.get("discoveredAt") or m.get("discoveredAt") or ""
+            m_last_updated = m_meta.get("lastUpdatedFromCrawl") or m.get("lastUpdatedFromCrawl") or ""
+            m_is_new = 1 if m.get("isNewlyDiscovered") else 0
+            m_manual_lock = 1 if (mid in locked_meetings or m.get("manualLock")) else 0
 
             # Check meeting in DB
             cur.execute("SELECT id, manual_lock FROM meetings WHERE id = ?", (mid,))
@@ -209,10 +246,10 @@ def sync_database(
                             m.get("summary", ""),
                             tags_json,
                             1 if m.get("isDateUnconfirmed") else 0,
-                            1 if m.get("isNewlyDiscovered") else 0,
-                            m.get("discoveredAt", ""),
-                            m.get("lastUpdatedFromCrawl", ""),
-                            1 if m.get("manualLock") else 0
+                            m_is_new,
+                            m_discovered_at,
+                            m_last_updated,
+                            m_manual_lock
                         )
                     )
                 stats["meetings_inserted"] += 1
@@ -226,7 +263,9 @@ def sync_database(
                             UPDATE meetings SET
                                 name = ?, date = ?, round = ?, official_url = ?,
                                 summary = ?, tags_json = ?, is_date_unconfirmed = ?,
-                                last_updated_from_crawl = ?,
+                                is_newly_discovered = ?,
+                                discovered_at = COALESCE(NULLIF(?, ''), discovered_at),
+                                last_updated_from_crawl = COALESCE(NULLIF(?, ''), last_updated_from_crawl),
                                 updated_at = CURRENT_TIMESTAMP
                             WHERE id = ?
                             """,
@@ -238,7 +277,9 @@ def sync_database(
                                 m.get("summary", ""),
                                 tags_json,
                                 1 if m.get("isDateUnconfirmed") else 0,
-                                m.get("lastUpdatedFromCrawl", ""),
+                                m_is_new,
+                                m_discovered_at,
+                                m_last_updated,
                                 mid
                             )
                         )
@@ -251,6 +292,8 @@ def sync_database(
                 m_name = mat.get("name", "").strip()
                 if not m_url or not m_name:
                     continue
+
+                mat_manual_lock = 1 if (f"{mid}:{m_url}" in locked_materials or mat.get("manualLock")) else 0
 
                 cur.execute(
                     "SELECT id, download_status, local_path, file_size, downloaded_at, manual_lock "
@@ -274,7 +317,7 @@ def sync_database(
                                 m_url,
                                 mat.get("type", "PDF"),
                                 1 if mat.get("isPrivate") else 0,
-                                1 if mat.get("manualLock") else 0,
+                                mat_manual_lock,
                                 "pending"
                             )
                         )

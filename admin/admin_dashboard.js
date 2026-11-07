@@ -536,9 +536,27 @@
     }
   };
 
+  window.jumpToAutoCrawledMeetings = function(meetingId) {
+    switchTab('tab-meetings');
+    const crawlSel = document.getElementById('filterMeetingsCrawlStatus');
+    const searchEl = document.getElementById('filterMeetingsSearch');
+    if (meetingId && searchEl) {
+      if (crawlSel) crawlSel.value = '';
+      searchEl.value = meetingId;
+    } else if (crawlSel) {
+      crawlSel.value = 'auto_unverified';
+      if (searchEl) searchEl.value = '';
+    }
+    if (typeof window.renderMeetingsList === 'function') window.renderMeetingsList();
+  };
+
   window.loadAndRenderNewMeetings = async function() {
     try {
-      const res = await fetch('/api/new-meetings');
+      const daysEl = document.getElementById('newMeetingsDaysSelect');
+      const unvEl = document.getElementById('newMeetingsUnverifiedOnly');
+      const days = daysEl ? daysEl.value : '7';
+      const unv = (unvEl && unvEl.checked) ? '1' : '0';
+      const res = await fetch(`/api/new-meetings?days=${encodeURIComponent(days)}&unverified_only=${unv}&limit=100`);
       if (!res.ok) return;
       const data = await res.json();
       const section = document.getElementById('newlyDiscoveredSection');
@@ -547,32 +565,44 @@
       if (!section || !container) return;
 
       const meets = data.meetings || [];
+      const totalCount = data.count !== undefined ? data.count : meets.length;
+      section.style.display = 'block';
+      if (countEl) countEl.textContent = totalCount;
+
       if (meets.length === 0) {
-        section.style.display = 'none';
+        container.innerHTML = `<div style="padding: 1rem; text-align: center; color: var(--text-muted); font-size: 0.85rem;">該当する自動クロール追加・更新データはありません。条件（期間や未補正フィルタ）を変更して確認できます。</div>`;
         return;
       }
 
-      section.style.display = 'block';
-      if (countEl) countEl.textContent = meets.length;
       container.innerHTML = meets.map(m => {
         const matCount = (m.materials || []).length;
         const matPdfCount = (m.materials || []).filter(x => (x.url || '').toLowerCase().endsWith('.pdf')).length;
+        const stamp = m.lastUpdatedFromCrawl ? `資料更新: ${m.lastUpdatedFromCrawl}` : (m.discoveredAt ? `新規検知: ${m.discoveredAt}` : '');
+        const isLocked = m.manualLock === true;
+        const badgeLabel = m.lastUpdatedFromCrawl ? 'UPDATED' : 'AUTO-NEW';
+        const badgeColor = m.lastUpdatedFromCrawl ? '#38bdf8' : '#10b981';
         return `
           <div style="background: rgba(0,0,0,0.3); border: 1px solid rgba(16,185,129,0.3); border-radius: var(--radius-md); padding: 0.85rem 1rem;">
-            <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 0.5rem;">
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 0.5rem; flex-wrap: wrap;">
               <div>
-                <span class="badge" style="background: rgba(16,185,129,0.2); color:#10b981; margin-right: 0.4rem; font-size: 0.75rem;">NEW</span>
-                <span style="font-weight: 600; color: var(--text-primary); font-size: 0.95rem;">${m.name || m.id}</span>
-                <span style="color: var(--text-muted); font-size: 0.82rem; margin-left: 0.5rem;">(${m.councilName || ((typeof allCouncils !== 'undefined' ? allCouncils : []).find(c => c.id === m.councilId)?.name) || m.councilId})</span>
+                <span class="badge" style="background: rgba(16,185,129,0.18); color:${badgeColor}; margin-right: 0.4rem; font-size: 0.72rem;">${badgeLabel}</span>
+                ${isLocked ? '<span class="badge" style="background: rgba(251,191,36,0.15); color:#fbbf24; margin-right: 0.4rem; font-size: 0.72rem;">🔒 保護済</span>' : '<span class="badge" style="background: rgba(245,158,11,0.15); color:#f59e0b; margin-right: 0.4rem; font-size: 0.72rem;">⏳ 未補正</span>'}
+                <span style="font-weight: 600; color: var(--text-primary); font-size: 0.95rem;">${escHtml(m.name || m.id)}</span>
+                <span style="color: var(--text-muted); font-size: 0.82rem; margin-left: 0.5rem;">(${escHtml(m.councilName || ((typeof allCouncils !== 'undefined' ? allCouncils : []).find(c => c.id === m.councilId)?.name) || m.councilId)})</span>
               </div>
-              <span style="font-size: 0.8rem; color: #38bdf8; font-weight: 500; white-space: nowrap;">📅 ${m.date || '日付未定'}</span>
+              <span style="font-size: 0.8rem; color: #38bdf8; font-weight: 500; white-space: nowrap;">📅 ${escHtml(m.date || '日付未定')}</span>
             </div>
-            <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 0.5rem; font-size: 0.8rem; color: var(--text-muted);">
+            <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.5rem; margin-top: 0.5rem; font-size: 0.8rem; color: var(--text-muted);">
               <div>
-                <span>配布資料: <strong style="color: var(--text-primary);">${matCount}</strong> 件 (PDF: <strong style="color:#10b981;">${matPdfCount}</strong> 件)</span>
-                ${m.discoveredAt ? `<span style="margin-left: 0.8rem; color: #94a3b8;">検知: ${m.discoveredAt}</span>` : ''}
+                <span>ID: <code>${escHtml(m.id)}</code></span>
+                <span style="margin-left: 0.8rem;">配布資料: <strong style="color: var(--text-primary);">${matCount}</strong> 件 (PDF: <strong style="color:#10b981;">${matPdfCount}</strong> 件)</span>
+                ${stamp ? `<span style="margin-left: 0.8rem; color: #94a3b8;">🕒 ${escHtml(stamp)}</span>` : ''}
               </div>
-              ${m.officialUrl ? `<a href="${escAttr(sanitizeUrl(m.officialUrl))}" target="_blank" rel="noopener" style="color: #60a5fa; text-decoration: underline;">公式ページ ↗</a>` : ''}
+              <div style="display: flex; align-items: center; gap: 0.5rem;">
+                <button type="button" class="btn-secondary" onclick="window.jumpToAutoCrawledMeetings('${escAttr(m.id)}')" style="padding: 0.2rem 0.5rem; font-size: 0.75rem;">📋 詳細・編集</button>
+                <button type="button" class="btn-secondary" onclick="window.toggleMeetingManualLock('${escAttr(m.id)}', ${!isLocked})" style="padding: 0.2rem 0.5rem; font-size: 0.75rem; color: ${isLocked ? '#fbbf24' : '#10b981'};">${isLocked ? '🔓 保護解除' : '🔒 確認済ロック'}</button>
+                ${m.officialUrl ? `<a href="${escAttr(sanitizeUrl(m.officialUrl))}" target="_blank" rel="noopener" style="color: #60a5fa; text-decoration: underline;">公式 ↗</a>` : ''}
+              </div>
             </div>
           </div>
         `;
@@ -838,8 +868,12 @@
       const searchTerm = (document.getElementById('filterMeetingsSearch') ? document.getElementById('filterMeetingsSearch').value : '').toLowerCase();
       const fMinistry  = document.getElementById('filterMeetingsMinistry') ? document.getElementById('filterMeetingsMinistry').value : '';
       const fCategory  = document.getElementById('filterMeetingsCategory') ? document.getElementById('filterMeetingsCategory').value : '';
-      const fDocType   = document.getElementById('filterMeetingsDocType') ? document.getElementById('filterMeetingsDocType').value : '';
-      const fUrlStatus = document.getElementById('filterMeetingsUrlStatus') ? document.getElementById('filterMeetingsUrlStatus').value : '';
+      const fDocType     = document.getElementById('filterMeetingsDocType') ? document.getElementById('filterMeetingsDocType').value : '';
+      const fCrawlStatus = document.getElementById('filterMeetingsCrawlStatus') ? document.getElementById('filterMeetingsCrawlStatus').value : '';
+      const fUrlStatus   = document.getElementById('filterMeetingsUrlStatus') ? document.getElementById('filterMeetingsUrlStatus').value : '';
+
+      const sevenDaysAgo = new Date(Date.now() - 7 * 86400 * 1000).toISOString().slice(0, 10).replace(/-/g, '/');
+      const todaySlash = new Date().toISOString().slice(0, 10).replace(/-/g, '/');
 
       const councilsList = typeof allCouncils !== 'undefined' ? allCouncils : (typeof baseCouncils !== 'undefined' ? baseCouncils : []);
       const councilsMap = new Map(councilsList.map(c => [c.id, c]));
@@ -856,6 +890,24 @@
         if (fCategory && mCategory !== fCategory) return false;
         if (fDocType === 'has_docs' && (!m.materials || m.materials.length === 0)) return false;
         if (fDocType === 'no_docs' && m.materials && m.materials.length > 0) return false;
+        if (fCrawlStatus) {
+          const isAuto = Boolean(m.isNewlyDiscovered || m.discoveredAt || m.lastUpdatedFromCrawl);
+          const isLocked = Boolean(m.manualLock);
+          const stamp = String(m.lastUpdatedFromCrawl || m.discoveredAt || '').replace(/-/g, '/').slice(0, 10);
+          if (fCrawlStatus === 'auto_unverified' && (!isAuto || isLocked)) return false;
+          if (fCrawlStatus === 'auto_recent7' && (!isAuto || (!m.isNewlyDiscovered && (!stamp || stamp < sevenDaysAgo)))) return false;
+          if (fCrawlStatus === 'locked' && !isLocked) return false;
+          if (fCrawlStatus === 'auto_anomaly') {
+            if (!isAuto || isLocked) return false;
+            const mDate = String(m.date || '').replace(/-/g, '/');
+            const isFuture = Boolean(mDate && mDate !== '2099/01/01' && mDate > todaySlash);
+            const noRound = (m.round === undefined || m.round === null || /-s\d+$/.test(m.id || '')) && !/第\s*\d+\s*回/.test(m.name || '');
+            const noMats = (!m.materials || m.materials.length === 0) && !isFuture;
+            const sameName = Boolean(mCouncilName && (m.name || '').trim() === mCouncilName.trim());
+            const unconfDate = Boolean(m.isDateUnconfirmed || mDate === '2099/01/01' || !mDate);
+            if (!noRound && !noMats && !sameName && !unconfDate) return false;
+          }
+        }
         if (fUrlStatus) {
           const mMats = m.materials || [];
           const hasTargetStatus = mMats.some(mat => {
@@ -960,14 +1012,25 @@
           ? `<span class="meta-chip" style="color:#eab308;border-color:rgba(234,179,8,0.4);background:rgba(234,179,8,0.12);font-weight:bold;">⚠️ 開催日不明（要確認）</span>`
           : `開催日: 📅 ${m.date}`;
 
-        return `<div class="council-card" style="--card-accent: ${accentColor}; margin-bottom: 1rem; animation-delay: ${Math.min(i * 0.02, 0.5)}s;">
+        const isMeetingLocked = Boolean(m.manualLock);
+        const crawlStamp = m.lastUpdatedFromCrawl ? `🤖 自動更新: ${m.lastUpdatedFromCrawl}` : (m.discoveredAt ? `🤖 自動検知: ${m.discoveredAt}` : (m.isNewlyDiscovered ? '✨ 新着検知' : ''));
+        const crawlBadgeHtml = crawlStamp ? `<span class="meta-chip" style="color:#10b981;border-color:rgba(16,185,129,0.35);background:rgba(16,185,129,0.08);font-size:0.75rem;">${escHtml(crawlStamp)}</span>` : '';
+        const mLockBadgeHtml = isMeetingLocked
+          ? '<span class="meta-chip" style="color:#fbbf24;border-color:rgba(251,191,36,0.35);background:rgba(251,191,36,0.08);font-size:0.75rem;">🔒 保護済</span>'
+          : (crawlStamp ? '<span class="meta-chip" style="color:#f59e0b;border-color:rgba(245,158,11,0.35);background:rgba(245,158,11,0.08);font-size:0.75rem;">⏳ AI未補正</span>' : '');
+        const mLockBtnHtml = isMeetingLocked
+          ? `<button class="btn-unlock" onclick="toggleMeetingManualLock('${escAttr(m.id)}', false)" title="この開催回の保護を解除する">🔓 保護解除</button>`
+          : `<button class="btn-lock" onclick="toggleMeetingManualLock('${escAttr(m.id)}', true)" title="AI補正済・手動確認済として保護ロックする">🔒 確認済ロック</button>`;
+
+        return `<div class="council-card ${isMeetingLocked ? 'manual-locked' : ''}" style="--card-accent: ${accentColor}; margin-bottom: 1rem; animation-delay: ${Math.min(i * 0.02, 0.5)}s;">
           <div class="card-top">
             <div class="card-title-area">
               <div class="card-idx">#${i + 1} / ${filtered.length} ｜ ${dateDisplay}</div>
-              <div class="card-name" style="font-size: 1.05rem;">${escHtml(m.name)} ${isDateUnconfirmed ? '<span class="meta-chip" style="color:#f59e0b;border-color:rgba(245,158,11,0.4);background:rgba(245,158,11,0.1);font-size:0.75rem;">要確認</span>' : ''}</div>
+              <div class="card-name" style="font-size: 1.05rem;">${escHtml(m.name)} ${isDateUnconfirmed ? '<span class="meta-chip" style="color:#f59e0b;border-color:rgba(245,158,11,0.4);background:rgba(245,158,11,0.1);font-size:0.75rem;">要確認</span>' : ''} ${crawlBadgeHtml} ${mLockBadgeHtml}</div>
               <div class="card-id">ID: ${escHtml(m.id)} ｜ 会議体: ${escHtml(mCouncilName || m.councilId)}</div>
             </div>
             <div class="card-actions">
+              ${mLockBtnHtml}
               ${mMats.length ? `<button class="btn-check-mats" onclick="checkMeetingMaterials('${escAttr(m.councilId)}', '${escAttr(m.id)}')">🔗 資料疎通チェック</button>` : ''}
             </div>
           </div>
@@ -1489,7 +1552,35 @@
     if (document.getElementById('filterMeetingsMinistry')) document.getElementById('filterMeetingsMinistry').addEventListener('change', resetMeetingsLimitAndRender);
     if (document.getElementById('filterMeetingsCategory')) document.getElementById('filterMeetingsCategory').addEventListener('change', resetMeetingsLimitAndRender);
     if (document.getElementById('filterMeetingsDocType')) document.getElementById('filterMeetingsDocType').addEventListener('change', resetMeetingsLimitAndRender);
+    if (document.getElementById('filterMeetingsCrawlStatus')) document.getElementById('filterMeetingsCrawlStatus').addEventListener('change', resetMeetingsLimitAndRender);
     if (document.getElementById('filterMeetingsUrlStatus')) document.getElementById('filterMeetingsUrlStatus').addEventListener('change', resetMeetingsLimitAndRender);
+
+    window.toggleMeetingManualLock = async function(meetingId, lockValue) {
+      try {
+        const res = await fetch('/api/toggle-manual-lock', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ id: meetingId, type: 'meeting', manualLock: lockValue })
+        });
+        const m = meetings.find(x => x.id === meetingId);
+        if (m) {
+          m.manualLock = lockValue;
+          if (lockValue) m.isNewlyDiscovered = false;
+        }
+        if (!res.ok) {
+          console.warn('[toggleMeetingManualLock] Server returned non-OK, updated in-memory.');
+        }
+      } catch (e) {
+        const m = meetings.find(x => x.id === meetingId);
+        if (m) {
+          m.manualLock = lockValue;
+          if (lockValue) m.isNewlyDiscovered = false;
+        }
+        console.warn('[toggleMeetingManualLock] Server unavailable, local-only update.', e);
+      }
+      renderMeetingsList();
+      if (typeof window.loadAndRenderNewMeetings === 'function') window.loadAndRenderNewMeetings();
+    };
 
     if (document.getElementById('filterSearch')) document.getElementById('filterSearch').addEventListener('input', renderCards);
     if (document.getElementById('filterMinistry')) document.getElementById('filterMinistry').addEventListener('change', renderCards);
