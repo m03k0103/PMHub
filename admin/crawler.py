@@ -3868,17 +3868,23 @@ def run_meeting_crawler(progress_callback=None, stop_event=None, workers=4, rece
         # data.json を読み込み（ステータス更新用）
         data = load_data_json(DATA_JSON_FILE)
 
-        # Drop 76 (要件3) & Drop 81: 前回のクロールで付与された新着フラグをリセット
-        # (ただし前回クロール時刻より後にディスカバリーで新規追加された会議体は保護)
+        # Drop 76 (要件3) & Drop 81 & Drop 138: 前回のクロールで付与された新着フラグをリセット
+        # (ただし前回クロール時刻より後にディスカバリーで新規追加された会議体は保護。部分クロール時は対象会議体のみリセット)
         prev_last_crawl = str(data.get("lastCrawlTime") or "").replace("-", "/")
+        is_partial_crawl = bool(ministry or resume or new_only)
+        partial_cids = {t.get("id") for t in CRAWL_TARGETS if t.get("id")} if is_partial_crawl else None
         reset_m_cnt = 0
         for m in data.get("meetings", []):
             if m.get("isNewlyDiscovered"):
+                if partial_cids is not None and m.get("councilId") not in partial_cids:
+                    continue
                 m["isNewlyDiscovered"] = False
                 reset_m_cnt += 1
         reset_c_cnt = 0
         for c in data.get("councils", []):
             if c.get("isNewlyDiscovered"):
+                if partial_cids is not None and c.get("id") not in partial_cids:
+                    continue
                 disc_at = str(c.get("discoveredAt") or "").replace("-", "/")
                 if prev_last_crawl and disc_at and disc_at > prev_last_crawl:
                     continue
@@ -3892,14 +3898,33 @@ def run_meeting_crawler(progress_callback=None, stop_event=None, workers=4, rece
             if os.path.exists(db_path):
                 conn = sqlite3.connect(db_path)
                 with conn:
-                    conn.execute("UPDATE meetings SET is_newly_discovered = 0 WHERE is_newly_discovered = 1;")
-                    if prev_last_crawl:
-                        conn.execute(
-                            "UPDATE councils SET is_newly_discovered = 0 WHERE is_newly_discovered = 1 AND (discovered_at IS NULL OR discovered_at = '' OR REPLACE(discovered_at, '-', '/') <= ?);",
-                            (prev_last_crawl,)
-                        )
+                    if partial_cids is not None:
+                        if partial_cids:
+                            placeholders = ",".join("?" for _ in partial_cids)
+                            cid_params = tuple(partial_cids)
+                            conn.execute(
+                                f"UPDATE meetings SET is_newly_discovered = 0 WHERE is_newly_discovered = 1 AND council_id IN ({placeholders});",
+                                cid_params
+                            )
+                            if prev_last_crawl:
+                                conn.execute(
+                                    f"UPDATE councils SET is_newly_discovered = 0 WHERE is_newly_discovered = 1 AND id IN ({placeholders}) AND (discovered_at IS NULL OR discovered_at = '' OR REPLACE(discovered_at, '-', '/') <= ?);",
+                                    cid_params + (prev_last_crawl,)
+                                )
+                            else:
+                                conn.execute(
+                                    f"UPDATE councils SET is_newly_discovered = 0 WHERE is_newly_discovered = 1 AND id IN ({placeholders});",
+                                    cid_params
+                                )
                     else:
-                        conn.execute("UPDATE councils SET is_newly_discovered = 0 WHERE is_newly_discovered = 1;")
+                        conn.execute("UPDATE meetings SET is_newly_discovered = 0 WHERE is_newly_discovered = 1;")
+                        if prev_last_crawl:
+                            conn.execute(
+                                "UPDATE councils SET is_newly_discovered = 0 WHERE is_newly_discovered = 1 AND (discovered_at IS NULL OR discovered_at = '' OR REPLACE(discovered_at, '-', '/') <= ?);",
+                                (prev_last_crawl,)
+                            )
+                        else:
+                            conn.execute("UPDATE councils SET is_newly_discovered = 0 WHERE is_newly_discovered = 1;")
                 conn.close()
         except Exception:
             pass
@@ -4432,16 +4457,22 @@ def run_ministry_news_discovery(progress_callback=None, stop_event=None, ministr
 
         data = load_data_json(DATA_JSON_FILE)
 
-        # Drop 76 (要件3) & Drop 81: 前回のクロールで付与された新着フラグをリセット
+        # Drop 76 (要件3) & Drop 81 & Drop 138: 前回のクロールで付与された新着フラグをリセット
         prev_last_crawl = str(data.get("lastCrawlTime") or "").replace("-", "/")
+        target_mins = {x.strip().upper() for x in ministry.split(",") if x.strip()} if ministry else None
+        partial_cids = {c.get("id") for c in data.get("councils", []) if c.get("id") and c.get("ministry", "").upper() in target_mins} if target_mins else None
         reset_m_cnt = 0
         for m in data.get("meetings", []):
             if m.get("isNewlyDiscovered"):
+                if partial_cids is not None and m.get("councilId") not in partial_cids:
+                    continue
                 m["isNewlyDiscovered"] = False
                 reset_m_cnt += 1
         reset_c_cnt = 0
         for c in data.get("councils", []):
             if c.get("isNewlyDiscovered"):
+                if partial_cids is not None and c.get("id") not in partial_cids:
+                    continue
                 disc_at = str(c.get("discoveredAt") or "").replace("-", "/")
                 if prev_last_crawl and disc_at and disc_at > prev_last_crawl:
                     continue
@@ -4455,14 +4486,33 @@ def run_ministry_news_discovery(progress_callback=None, stop_event=None, ministr
             if os.path.exists(db_path):
                 conn = sqlite3.connect(db_path)
                 with conn:
-                    conn.execute("UPDATE meetings SET is_newly_discovered = 0 WHERE is_newly_discovered = 1;")
-                    if prev_last_crawl:
-                        conn.execute(
-                            "UPDATE councils SET is_newly_discovered = 0 WHERE is_newly_discovered = 1 AND (discovered_at IS NULL OR discovered_at = '' OR REPLACE(discovered_at, '-', '/') <= ?);",
-                            (prev_last_crawl,)
-                        )
+                    if partial_cids is not None:
+                        if partial_cids:
+                            placeholders = ",".join("?" for _ in partial_cids)
+                            cid_params = tuple(partial_cids)
+                            conn.execute(
+                                f"UPDATE meetings SET is_newly_discovered = 0 WHERE is_newly_discovered = 1 AND council_id IN ({placeholders});",
+                                cid_params
+                            )
+                            if prev_last_crawl:
+                                conn.execute(
+                                    f"UPDATE councils SET is_newly_discovered = 0 WHERE is_newly_discovered = 1 AND id IN ({placeholders}) AND (discovered_at IS NULL OR discovered_at = '' OR REPLACE(discovered_at, '-', '/') <= ?);",
+                                    cid_params + (prev_last_crawl,)
+                                )
+                            else:
+                                conn.execute(
+                                    f"UPDATE councils SET is_newly_discovered = 0 WHERE is_newly_discovered = 1 AND id IN ({placeholders});",
+                                    cid_params
+                                )
                     else:
-                        conn.execute("UPDATE councils SET is_newly_discovered = 0 WHERE is_newly_discovered = 1;")
+                        conn.execute("UPDATE meetings SET is_newly_discovered = 0 WHERE is_newly_discovered = 1;")
+                        if prev_last_crawl:
+                            conn.execute(
+                                "UPDATE councils SET is_newly_discovered = 0 WHERE is_newly_discovered = 1 AND (discovered_at IS NULL OR discovered_at = '' OR REPLACE(discovered_at, '-', '/') <= ?);",
+                                (prev_last_crawl,)
+                            )
+                        else:
+                            conn.execute("UPDATE councils SET is_newly_discovered = 0 WHERE is_newly_discovered = 1;")
                 conn.close()
         except Exception:
             pass

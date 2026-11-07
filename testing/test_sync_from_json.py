@@ -1,23 +1,25 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-PMHub Database Synchronization Unit Tests (test_sync_from_json.py) [U14]
-========================================================================
-Validates sync_from_json.py functionality:
+PMHub Database Synchronization & Auto-Crawled Inspector Unit Tests (test_sync_from_json.py) [U14]
+=================================================================================================
+Validates sync_from_json.py and inspect_auto_crawled.py functionality:
 - Inserts new councils, meetings, and materials from JSON datasets.
+- Synchronizes auto-crawl discovery metadata (councilCrawlMeta, meetingCrawlMeta,
+  isNewlyDiscovered, discoveredAt, lastUpdatedFromCrawl, discoverySource) on INSERT and UPDATE.
 - Preserves downloaded PMM file status (download_status='downloaded', local_path, etc.).
 - Respects manualLock=1 records.
 - Verifies dry-run non-destructiveness.
-- Synchronizes admin configurations and scraping rules.
+- Verifies inspect_auto_crawled.py anomaly detection, filtering, and mark_records_verified.
 """
 
 import json
-import os
 import shutil
 import sqlite3
 import sys
 import tempfile
 import unittest
+from datetime import datetime
 from pathlib import Path
 
 # Add project root to sys.path
@@ -27,10 +29,15 @@ sys.path.insert(0, str(BASE_DIR / "admin"))
 
 from admin.db.seed_db import init_db
 from admin.db.sync_from_json import sync_database
+from admin.tools.inspect_auto_crawled import (
+    evaluate_meeting_anomalies,
+    fetch_auto_crawled_data,
+    mark_records_verified,
+)
 
 
 class TestSyncFromJson(unittest.TestCase):
-    """Unit tests for admin/db/sync_from_json.py [U14]."""
+    """Unit tests for admin/db/sync_from_json.py and admin/tools/inspect_auto_crawled.py [U14]."""
 
     def setUp(self):
         self.temp_dir = tempfile.mkdtemp()
@@ -141,6 +148,143 @@ class TestSyncFromJson(unittest.TestCase):
         self.assertEqual(m_row[0], "pending")
         conn.close()
 
+    def test_sync_restores_crawl_meta_from_admin_json(self):
+        """admin_data.json の meetingCrawlMeta / councilCrawlMeta が INSERT・UPDATE 時に DB へ完全同期されること (Drop 138)"""
+        today_stamp = datetime.now().strftime("%Y/%m/%d 06:15")
+        mock_public = {
+            "lastCrawlTime": today_stamp,
+            "councils": [
+                {
+                    "id": "cas-test_c",
+                    "name": "テスト会議体",
+                    "ministry": "CAS",
+                    "officialUrl": "https://example.com/cas",
+                    "isNewlyDiscovered": True
+                },
+                {
+                    "id": "cas-new_auto_c",
+                    "name": "自動検出会議体",
+                    "ministry": "CAS",
+                    "officialUrl": "https://example.com/new_auto",
+                    "isNewlyDiscovered": True
+                }
+            ],
+            "meetings": [
+                {
+                    "id": "cas-test_c-20260401-001",
+                    "councilId": "cas-test_c",
+                    "name": "第1回 テスト会合",
+                    "date": "2026/04/01",
+                    "round": 1,
+                    "materials": [
+                        {"name": "第1回議事次第.pdf", "url": "https://example.com/doc1.pdf", "type": "PDF"}
+                    ]
+                },
+                {
+                    "id": "cas-test_c-20261105-s01",
+                    "councilId": "cas-test_c",
+                    "name": "テスト会議体",
+                    "date": "2026/11/05",
+                    "officialUrl": "https://example.com/cas",
+                    "isNewlyDiscovered": True,
+                    "materials": []
+                }
+            ]
+        }
+        mock_admin = {
+            "councilCrawlMeta": {
+                "cas-test_c": {"discoveredAt": today_stamp, "discoverySource": "rule"},
+                "cas-new_auto_c": {"discoveredAt": today_stamp, "discoverySource": "llm"}
+            },
+            "meetingCrawlMeta": {
+                "cas-test_c-20260401-001": {
+                    "discoveredAt": "2026/04/01 10:00",
+                    "lastUpdatedFromCrawl": today_stamp
+                },
+                "cas-test_c-20261105-s01": {
+                    "discoveredAt": today_stamp
+                }
+            }
+        }
+        with open(self.public_json_path, "w", encoding="utf-8") as f:
+            json.dump(mock_public, f)
+        with open(self.admin_json_path, "w", encoding="utf-8") as f:
+            json.dump(mock_admin, f)
+
+        sync_database(
+            db_path=self.db_path,
+            public_json_path=self.public_json_path,
+            archive_json_path=self.archive_json_path,
+            admin_json_path=self.admin_json_path,
+            dry_run=False,
+            verbose=False
+        )
+
+        conn = sqlite3.connect(str(self.db_path))
+        cur = conn.cursor()
+        # Check updated existing meeting
+        m1 = cur.execute(
+            "SELECT discovered_at, last_updated_from_crawl FROM meetings WHERE id = 'cas-test_c-20260401-001'"
+        ).fetchone()
+        self.assertEqual(m1[0], "2026/04/01 10:00")
+        self.assertEqual(m1[1], today_stamp)
+
+        # Check newly inserted meeting
+        m2 = cur.execute(
+            "SELECT is_newly_discovered, discovered_at FROM meetings WHERE id = 'cas-test_c-20261105-s01'"
+        ).fetchone()
+        self.assertEqual(m2[0], 1)
+        self.assertEqual(m2[1], today_stamp)
+
+        # Check newly inserted council
+        c2 = cur.execute(
+            "SELECT is_newly_discovered, discovered_at, discovery_source FROM councils WHERE id = 'cas-new_auto_c'"
+        ).fetchone()
+        self.assertEqual(c2[0], 1)
+        self.assertEqual(c2[1], today_stamp)
+        self.assertEqual(c2[2], "llm")
+        conn.close()
+
+        # Verify inspect_auto_crawled.py detects both meetings and anomalies
+        res = fetch_auto_crawled_data(
+            db_path=self.db_path,
+            days=7,
+            unverified_only=True,
+            anomaly_only=False
+        )
+        self.assertEqual(res["totalMeetingsMatching"], 2)
+        self.assertEqual(res["totalMeetingsWithAnomalies"], 1)
+
+        anom_res = fetch_auto_crawled_data(
+            db_path=self.db_path,
+            days=7,
+            unverified_only=True,
+            anomaly_only=True
+        )
+        self.assertEqual(anom_res["totalMeetingsMatching"], 1)
+        self.assertEqual(anom_res["meetings"][0]["id"], "cas-test_c-20261105-s01")
+        anom_codes = {a["code"] for a in anom_res["meetings"][0]["anomalies"]}
+        self.assertIn("missing_round", anom_codes)
+        self.assertIn("no_materials", anom_codes)
+        self.assertIn("identical_to_council", anom_codes)
+
+        # Mark verified and confirm it is excluded when unverified_only=True
+        mark_res = mark_records_verified(
+            target_ids=["cas-test_c-20261105-s01", "cas-new_auto_c"],
+            db_path=self.db_path,
+            export=False
+        )
+        self.assertEqual(mark_res["updated_meetings"], 1)
+        self.assertEqual(mark_res["updated_councils"], 1)
+
+        after_res = fetch_auto_crawled_data(
+            db_path=self.db_path,
+            days=7,
+            unverified_only=True,
+            anomaly_only=True
+        )
+        self.assertEqual(after_res["totalMeetingsMatching"], 0)
+
     def test_sync_preserves_downloaded_pmm_assets(self):
         """既にダウンロード済みの PMM 配付資料ファイル情報（downloaded, local_path等）が保護されること"""
         mock_public = {
@@ -154,7 +298,6 @@ class TestSyncFromJson(unittest.TestCase):
                     "name": "第1回 テスト会合 (改名)",
                     "date": "2026/04/01",
                     "materials": [
-                        # JSON 側にはローカル保存パス情報は存在しない
                         {"name": "第1回議事次第.pdf", "url": "https://example.com/doc1.pdf", "type": "PDF"}
                     ]
                 }

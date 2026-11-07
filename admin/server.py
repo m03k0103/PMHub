@@ -363,20 +363,66 @@ class CustomHandler(SimpleHTTPRequestHandler):
             self.send_json({"count": len(unconfirmed_list), "meetings": unconfirmed_list})
         elif path == "/api/new-meetings":
             new_list = []
+            total_count = 0
             try:
+                from datetime import timedelta
+                params = urllib.parse.parse_qs(parsed_url.query)
+                try:
+                    days = int(params.get("days", [7])[0])
+                except (ValueError, TypeError):
+                    days = 7
+                unverified_only = params.get("unverified_only", ["0"])[0] in ("1", "true", "True")
+                try:
+                    limit = int(params.get("limit", [100])[0])
+                except (ValueError, TypeError):
+                    limit = 100
+
+                cutoff_str = ""
+                if days > 0:
+                    cutoff_str = (datetime.now() - timedelta(days=days)).strftime("%Y/%m/%d")
+
                 data = load_data_json(DATA_JSON_FILE)
                 c_map = {c["id"]: c for c in data.get("councils", [])}
                 for m in data.get("meetings", []):
-                    if m.get("isNewlyDiscovered"):
-                        c_info = c_map.get(m.get("councilId"), {})
-                        new_list.append({
-                            **m,
-                            "councilName": c_info.get("name", m.get("councilId")),
-                            "ministry": c_info.get("ministry", m.get("ministry", ""))
-                        })
+                    is_new_flag = bool(m.get("isNewlyDiscovered"))
+                    disc_at = str(m.get("discoveredAt") or "").replace("-", "/")
+                    upd_at = str(m.get("lastUpdatedFromCrawl") or "").replace("-", "/")
+
+                    if days == 0:
+                        matched = is_new_flag
+                    elif days < 0:
+                        matched = is_new_flag or bool(disc_at) or bool(upd_at)
+                    else:
+                        matched = (
+                            is_new_flag
+                            or (bool(disc_at) and disc_at[:10] >= cutoff_str)
+                            or (bool(upd_at) and upd_at[:10] >= cutoff_str)
+                        )
+                    if not matched:
+                        continue
+                    if unverified_only and m.get("manualLock"):
+                        continue
+
+                    c_info = c_map.get(m.get("councilId"), {})
+                    new_list.append({
+                        **m,
+                        "councilName": c_info.get("name", m.get("councilId")),
+                        "ministry": c_info.get("ministry", m.get("ministry", ""))
+                    })
+                new_list.sort(
+                    key=lambda x: (
+                        str(x.get("lastUpdatedFromCrawl") or x.get("discoveredAt") or ""),
+                        str(x.get("date") or ""),
+                        str(x.get("id") or "")
+                    ),
+                    reverse=True
+                )
+                total_count = len(new_list)
+                if limit > 0:
+                    new_list = new_list[:limit]
             except Exception as e:
                 print(f"[WARN] Failed to read new meetings: {e}", file=sys.stderr)
-            self.send_json({"count": len(new_list), "meetings": new_list})
+            self.send_json({"count": total_count, "meetings": new_list})
         elif path == "/api/backups":
             backups = []
             if os.path.exists(BACKUP_DIR):

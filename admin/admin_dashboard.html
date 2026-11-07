@@ -640,12 +640,26 @@
 
       <!-- 2.5. NEWLY DISCOVERED MEETINGS PREVIEW -->
       <section class="admin-card card-glass" id="newlyDiscoveredSection" style="display: none; border-color: rgba(16, 185, 129, 0.4); background: rgba(16, 185, 129, 0.03);">
-        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem;">
-          <h3 style="color: #10b981;">✨ 新規自動追加された会議データ (<span id="newlyDiscoveredCount">0</span> 件)</h3>
-          <span class="text-xs" style="color: var(--text-muted);">docs/data.json に自動同期済み</span>
+        <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.75rem; margin-bottom: 0.75rem;">
+          <h3 style="color: #10b981;">🤖 自動クロール追加・更新された開催回 (<span id="newlyDiscoveredCount">0</span> 件)</h3>
+          <div style="display: flex; align-items: center; gap: 0.6rem; flex-wrap: wrap;">
+            <select id="newMeetingsDaysSelect" onchange="if(window.loadAndRenderNewMeetings) window.loadAndRenderNewMeetings();" style="background: var(--bg-input); border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 0.3rem 0.5rem; color: var(--text-primary); font-size: 0.78rem;">
+              <option value="7">直近 7 日以内の自動追加・更新</option>
+              <option value="30">直近 30 日以内の自動追加・更新</option>
+              <option value="0">最新クロール新着フラグのみ</option>
+              <option value="-1">すべての自動クロール履歴</option>
+            </select>
+            <label style="display: flex; align-items: center; gap: 0.3rem; font-size: 0.78rem; color: var(--text-secondary); cursor: pointer;">
+              <input type="checkbox" id="newMeetingsUnverifiedOnly" checked onchange="if(window.loadAndRenderNewMeetings) window.loadAndRenderNewMeetings();" />
+              未補正 (manualLock=OFF) のみ
+            </label>
+            <button type="button" class="btn-secondary" onclick="if(window.jumpToAutoCrawledMeetings) window.jumpToAutoCrawledMeetings();" style="padding: 0.3rem 0.65rem; font-size: 0.78rem;">
+              📋 会議データ管理で一覧・AI補正対象を確認 ↗
+            </button>
+          </div>
         </div>
-        <p class="text-sm" style="color: var(--text-muted); margin-bottom: 1rem;">直近の自動クロールで新たに検知・登録された会議（開催回）と資料一覧です。</p>
-        <div id="newlyDiscoveredListContainer" style="display: flex; flex-direction: column; gap: 0.75rem; max-height: 350px; overflow-y: auto;">
+        <p class="text-sm" style="color: var(--text-muted); margin-bottom: 1rem;">定期自動クロール（GitHub Actions 等）またはローカルクロールで追加・更新された開催回です。AI補正や手動確認が完了した項目は「🔒 確認済ロック」で保護できます。</p>
+        <div id="newlyDiscoveredListContainer" style="display: flex; flex-direction: column; gap: 0.75rem; max-height: 380px; overflow-y: auto;">
           <!-- Rendered dynamically -->
         </div>
       </section>
@@ -780,6 +794,13 @@ JSON データを読み込み中...
           <option value="">全資料タイプ</option>
           <option value="has_docs">資料あり</option>
           <option value="no_docs">資料なし</option>
+        </select>
+        <select id="filterMeetingsCrawlStatus">
+          <option value="">全クロール状態</option>
+          <option value="auto_unverified">🤖 自動クロール追加・更新 (未補正 / manualLock=OFF)</option>
+          <option value="auto_recent7">✨ 直近7日以内の自動クロール追加・更新</option>
+          <option value="auto_anomaly">⚠️ 要AI補正候補 (回次未特定・資料0件・未ロック)</option>
+          <option value="locked">🔒 手動保護済 (manualLock=ON)</option>
         </select>
         <select id="filterMeetingsUrlStatus">
           <option value="">全疎通状態</option>

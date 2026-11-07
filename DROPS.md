@@ -1,8 +1,8 @@
 # PMHub 改善・機能実装（Drop）マスタードキュメント (DROPS.md)
 
 > **最終更新**: 2026-11-07  `
-> **最新 Drop**: **Drop 137**（2026-11-07 完了）  
-> **次期予定 Drop**: **Drop 138**（Track [Core-Policy-Filter]: 「重要政策会議のみ」絞り込み機能 & 注目会議ハイライト表示）  `
+> **最新 Drop**: **Drop 138**（2026-11-07 完了）  
+> **次期予定 Drop**: **Drop 139**（Track [Core-Policy-Filter]: 「重要政策会議のみ」絞り込み機能 & 注目会議ハイライト表示）  `
 > 
 > 本ドキュメントは、PMHub の継続的改善ロードマップおよび実装記録を一元管理するマスタードキュメントです。  `
 > 今後の構想テーマは **「Track（トラック）」** として管理し、着手・個別実装単位は最新連番を付与した **「Drop（ドロップ）」** として連番アーカイブします。  `
@@ -289,6 +289,7 @@ GitHub Actions で自動更新・push されたリモートの最新データ（
 | **Drop 135** | **Track [Automation] フェーズ2: 定時クロール自動コミット & サーキットブレーカー & ローカルDB差分同期エンジン** | GitHub Actions 3階層スケジュール（Daily平朝06:00 / Weekly土曜03:00 / Monthly第1日曜01:00 JST）を本番有効化。サーキットブレーカー（異常検知時コミット中断）と統合テスト合格を条件とした自動コミット&push配備。PMMローカル資産（`downloaded`）と`manualLock`を完全保護するローカルDB差分同期エンジン（`sync_from_json.py`）およびGit `post-merge` hook整備。単体テストU14新設。 | 単体U14 4テスト合格、統合10ケース＋単体14種完全合格（23.03s）。Track [Automation] 完全達成。 |
 | **Drop 136** | **月次包括巡回クロール（全1,699会議体・全期間）完遂 & ログ詳細分析・クローラー改善検討** | 全1,699会議体の全期間包括巡回（`--recent-years 0`）を実行。1,534件（90.3%）が成功・部分成功し、新規開催回 1,451件・配付資料 4,946件を網羅拡充（総開催回 25,010件）。ログ精査により、失敗要因（METI/ANREのWAF/S3 403遮断139件、URL 404化3件、構造変化による未検出25件）を特定し、ホスト分散スケジューラやエラーログ透過性の具体的改善施策を策定。 | 1,451開催回・4,946資料追加、手動保護・PMM完全維持、統合10ケース＋単体14種完全合格（152.54s） |
 | **Drop 137** | **沖縄振興審議会（cao-220）公式URL修正（404解消）・ルール更新 & 未登録開催回・配付資料ワンストップ追加** | 沖縄振興審議会公式URLを新ポータル `https://www8.cao.go.jp/okinawa/siryou/singikai/` へ是正し `manual_lock = 1` 設定。探索パターンを `sinkousingikai/\d+/(?:\d+-sinkousingikai|index)\.html` へ更新。未登録の第21回（資料18件）・第22回（資料11件）をワンストップ登録。定期巡回新着のデータ整合性検証（防衛省・水産庁・内閣官房の日付特定・中間HTMLクレンジング）およびマスターDB（25,002開催回・152,995配付資料）完全同期。 | URL 404解消、2開催回・29資料ワンストップ登録、全25,002件重複・2099日付ゼロ、統合10ケース＋単体14種合格 |
+| **Drop 138** | **自動クロール追加・更新情報の確認およびAI補正連携基盤の整備** | リモート自動クロール（GitHub Actions）からの `git pull` 同期時に `meetingCrawlMeta` / `councilCrawlMeta`（`discoveredAt`, `lastUpdatedFromCrawl`, `discoverySource`）を欠落なく SQLite マスターDBへ同期するよう `sync_from_json.py` を強化。部分クロール時（`--ministry` 等）の他省庁 `is_newly_discovered` リセット防止（`crawler.py`）。自動クロール追加・未補正データおよび要AI補正候補（回次未特定・資料0件等）をワンコマンドで抽出・確認・ロック付与できる専用CLIインスペクタ `admin/tools/inspect_auto_crawled.py` を新設。管理ダッシュボード（Tab 1 & Tab 2）に期間/未補正フィルタ・要AI補正候補絞り込み・開催回単位の確認済ロック切替ボタンを配備。 | CLIインスペクタ新設、クロール検知メタデータ完全同期、管理画面フィルタ強化、単体U14拡充（5テスト合格）、統合10ケース＋単体14種完全合格（16.09s） |
 
 ---
 
@@ -4553,3 +4554,38 @@ python testing/run_test_suite.py --all-layers : PASSED（統合10ケース＋全
   - `python testing/run_test_suite.py --all-layers`: **統合10ケース＋単体14種完全合格（所要時間 16.13秒）**。
   - `python -m unittest testing/test_waf_resilience.py`: 全7テスト完全合格（0.27秒）。
   - 会議ID・回次・URL重複0件、2099ダミー日付0件、康煕部首0件、SQLiteマスターDB整合性完全一致。
+
+---
+
+### Drop 138: 自動クロール追加・更新情報の確認およびAI補正連携基盤の整備 (2026-11-07 完了)
+
+- **1. 背景と目的 (Background & Objectives)**:
+  - GitHub Actions 定期クロール（Track [Automation]）および月次包括巡回の稼働に伴い、自動クロールで追加・更新された開催回・配付資料・会議体の情報を人間および AI エージェントが即座に一覧・確認し、必要に応じて AI で補正（開催回タイトルの正規化、回次・開催日の補完、不要ノイズ除外、`manualLock: true` 保護付与）できる運用基盤を整備する。
+  - 従来、`sync_from_json.py` が `admin_data.json` の `meetingCrawlMeta` / `councilCrawlMeta` を参照していなかったためリモートクロール検知日時がローカルDBに反映されないギャップや、部分再クロール実行時に他省庁の `is_newly_discovered` フラグが一律消去される問題、未補正の自動クロールデータを抽出する専用CLI・UIフィルタの不足を根本から解消する。
+
+- **2. 主要な施策・修正内容 (Key Implementations)**:
+  - **ローカルDB差分同期（`admin/db/sync_from_json.py`）のクロール検知メタデータ完全同期**:
+    - `admin/admin_data.json` の `councilCrawlMeta`（`discoveredAt`, `discoverySource`）および `meetingCrawlMeta`（`discoveredAt`, `lastUpdatedFromCrawl`）、ならびに `isNewlyDiscovered` / `manualLocks` を読み込み、新規 `INSERT` 時および既存レコード `UPDATE` 時の双方で `councils` / `meetings` テーブルへ欠落なく同期するよう改修。
+  - **部分再クロール時の他省庁 `is_newly_discovered` 保護（`admin/crawler.py`）**:
+    - `run_meeting_crawler()` および `run_ministry_news_discovery()` において、`ministry` や `resume`、`new_only` による部分クロール実行時は、新着フラグのリセット対象を当該対象会議体のみに限定し、他省庁の新着フラグが消去されないよう改善。
+  - **自動クロール確認 & AI補正支援 CLI インスペクタ（`admin/tools/inspect_auto_crawled.py`）の新設**:
+    - `--days N`（検知期間）、`--meeting-days N`（開催日期間）、`--anomaly-only`（回次未特定・配付資料0件・親会議体名と同一タイトル・個別ページ未特定などの要AI補正候補のみ抽出）、`--ministry`、`--council-id`、`--format {table,detail,json}` による柔軟な確認機能を実装。
+    - `--mark-verified <ID ...>` オプションにより、AI補正・確認が完了した開催回・会議体への `manual_lock = 1` 付与と `export_data.py` による2系統JSON同期をワンコマンドで実行可能化。
+  - **管理ダッシュボード（`admin/server.py`, `admin/admin_dashboard.html`, `admin/admin_dashboard.js`）の確認・絞り込み強化**:
+    - `GET /api/new-meetings` を拡張し、`?days=7&unverified_only=1` による期間別・未補正限定の自動クロール追加・更新開催回抽出に対応。
+    - Tab 1 の自動クロール追加・更新セクション（`#newlyDiscoveredSection`）を初回ロード時に常時表示し、期間切替（直近7日/30日/新着のみ/全履歴）・未補正フィルタ・詳細ジャンプ・確認済ロックボタンを配備。
+    - Tab 2「📋 会議データ管理」に `#filterMeetingsCrawlStatus`（自動クロール未補正 / 直近7日以内 / 要AI補正候補 / 手動保護済）セレクトボックスと、各開催回カード上の検知日時バッジ・保護ロック切替ボタンを追加。
+  - **単体テスト（U14）の拡充と運用指針（`AGENTS.md`）の更新**:
+    - `testing/test_sync_from_json.py` に `meetingCrawlMeta` / `councilCrawlMeta` 同期検証および `inspect_auto_crawled.py` の異常検知・確認済ロック検証を追加。
+    - `AGENTS.md` §4-10 に `inspect_auto_crawled.py` を用いた自動クロール確認・AI補正ワークフローを明文化。
+
+- **3. 達成された指標・成果 (Achieved Metrics & Results)**:
+  - **自動クロール情報の可視化・抽出性**:
+    - 直近7日以内の未補正自動クロール開催回（1,599件、うち直近60日以内開催 50件・要AI補正ヒントあり 23件）や新規検出会議体（2件）を 0.2秒未満で即座に一覧・詳細・JSON抽出可能となった。
+  - **テスト合格指標**:
+    - 単体テスト U14（`testing/test_sync_from_json.py`）: 全 5 テスト完全合格（0.13秒）。
+    - 統合テストスイート（`python testing/run_test_suite.py --all-layers`）: **統合10ケース＋全単体14種（U1〜U14）完全合格（所要時間 16.09秒）**。
+
+- **4. 今後の課題・次回アクション (Future Tasks & Next Actions)**:
+  - 次期予定 **Drop 139** にて、**Track [Core-Policy-Filter]**（「重要政策会議のみ」絞り込み機能 & 注目会議ハイライト表示）に着手予定。
+
