@@ -150,17 +150,28 @@
    - **マージ直前のリモート割り込み確認**:
      フィーチャーブランチから `main` へのマージ直前にも、リモート `origin/main` に Actions からの新着自動コミットが割り込んでいないか確認（`git fetch origin main`）し、必要に応じて最新化・同期を行ってコンフリクトを未然に防ぐこと。
 
-10. **自動クロール追加・更新情報の確認およびAI補正ワークフロー（`inspect_auto_crawled.py`）**
-   - **自動クロール追加・更新データの抽出と確認**:
-     定期自動クロール（GitHub Actions）またはローカルクロールで追加・資料更新された開催回・会議体を確認する際は、専用インスペクタ `python admin/tools/inspect_auto_crawled.py` を使用する：
-     - 直近7日以内の自動追加・更新（未補正 `manual_lock = 0` のみ）一覧:
-       `python admin/tools/inspect_auto_crawled.py --days 7`
-     - 直近開催（例: 60日以内）かつ直近クロールで検知された項目の詳細（配付資料URL付き）確認:
-       `python admin/tools/inspect_auto_crawled.py --days 7 --meeting-days 60 --format detail`
-     - 要AI補正候補（回次未特定、配付資料0件、親会議体名と同一タイトル、個別ページ未特定等）の優先抽出:
-       `python admin/tools/inspect_auto_crawled.py --days 7 --anomaly-only --format detail`
-   - **AI補正の実施と確認済保護ロック（`manualLock: true`）の付与**:
-     自動クロールで追加された開催回・配付資料について、AIでタイトル正規化・回次補完・個別URL適正化・ノイズ資料除去等の補正を行った場合、または内容が正常であることを確認した場合は、`python admin/tools/inspect_auto_crawled.py --mark-verified <meeting_id_or_council_id ...>`（または管理ダッシュボードの「🔒 確認済ロック」ボタン）により `manual_lock = 1` を付与し、`export_data.py` で2系統JSONへ同期すること。
+10. **自動クロール追加・更新情報の確認およびAI補正自律ワークフロー（「自動クロール情報をチェックして」等の依頼時・必須責務）**
+   - **依頼トリガーと自動実行責務**:
+     ユーザーから「自動クロール情報をチェックして」「クロールで追加された情報を確認・補正して」「新着データを点検して」等と依頼された場合、エージェントは質問で聞き返すことなく、以下の標準自律ワークフローを速やかにワンストップで実行すること。
+   - **標準自律実行ステップ**:
+     1. **リモート最新化 & 同期**:
+        `git fetch origin` / `git pull origin main` を行い、Actions 等による最新リモートデータを取得した上で、必要に応じて `python admin/db/sync_from_json.py` で SQLite マスターDBへ同期する。
+     2. **自動クロール追加・未補正データの抽出 & 異常候補の特定**:
+        専用インスペクタを活用し、直近追加・更新された未補正（`manual_lock = 0`）レコードと要AI補正候補を抽出する：
+        - 直近自動追加分の全体確認: `python admin/tools/inspect_auto_crawled.py --days 7 --meeting-days 60`
+        - 要AI補正候補（回次未特定、配付資料0件、親会議体名と同一タイトル、個別ページ未特定等）のピンポイント抽出:
+          `python admin/tools/inspect_auto_crawled.py --days 7 --anomaly-only --format detail`
+     3. **AIによる精査と補正（必要な場合）**:
+        - **回次未特定 (`missing_round`)**: 会議名や個別公式URLの内容に基づき、親会議体名と回次（「第X回」）を補完してタイトルを正規化。
+        - **親会議体名と同一タイトル (`identical_to_council`)**: 個別ページ本文の見出し等から具体的な会合名・回次を抽出して補正。
+        - **個別ページ未特定 (`same_as_council_url`)**: 開催回の公式URLが親ポータルURLと同一になっている場合、個別開催回・配付資料ページの正規URLへ差し替え。
+        - **日付未確定 (`unconfirmed_date`)**: `2099/01/01` ダミー日付について、個別ページから真の開催日（YYYY/MM/DD）を特定して反映。
+     4. **確認済保護ロック（`manualLock: true`）の付与と2系統JSON同期**:
+        補正を完了したレコード、および内容に問題がないことを確認したレコードに対し、保護ロックを付与する：
+        `python admin/tools/inspect_auto_crawled.py --mark-verified <meeting_id_or_council_id ...>`
+        （`--mark-verified` により `manual_lock = 1` が設定され、`export_data.py` が自動実行されて `docs/data.json` / `admin/admin_data.json` へ即時同期される）。
+     5. **統合テスト検証と成果報告**:
+        `python testing/run_test_suite.py` を実行して整合性を確認し、確認・補正した開催回・会議体の内訳、補正内容、保護ロック付与結果をユーザーへ客観的・定量的に報告する。
 
 ---
 
