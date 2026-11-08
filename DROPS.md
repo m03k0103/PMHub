@@ -1,8 +1,8 @@
 # PMHub 改善・機能実装（Drop）マスタードキュメント (DROPS.md)
 
 > **最終更新**: 2026-11-08  `
-> **最新 Drop**: **Drop 139**（2026-11-08 完了）  
-> **次期予定 Drop**: **Drop 140**（Track [Core-Policy-Filter]: 「重要政策会議のみ」絞り込み機能 & 注目会議ハイライト表示）  `
+> **最新 Drop**: **Drop 140**（2026-11-08 完了）  
+> **次期予定 Drop**: **Drop 141**（Track [Core-Policy-Filter]: 「重要政策会議のみ」絞り込み機能 & 注目会議ハイライト表示）  `
 > 
 > 本ドキュメントは、PMHub の継続的改善ロードマップおよび実装記録を一元管理するマスタードキュメントです。  `
 > 今後の構想テーマは **「Track（トラック）」** として管理し、着手・個別実装単位は最新連番を付与した **「Drop（ドロップ）」** として連番アーカイブします。  `
@@ -291,6 +291,7 @@ GitHub Actions で自動更新・push されたリモートの最新データ（
 | **Drop 137** | **沖縄振興審議会（cao-220）公式URL修正（404解消）・ルール更新 & 未登録開催回・配付資料ワンストップ追加** | 沖縄振興審議会公式URLを新ポータル `https://www8.cao.go.jp/okinawa/siryou/singikai/` へ是正し `manual_lock = 1` 設定。探索パターンを `sinkousingikai/\d+/(?:\d+-sinkousingikai|index)\.html` へ更新。未登録の第21回（資料18件）・第22回（資料11件）をワンストップ登録。定期巡回新着のデータ整合性検証（防衛省・水産庁・内閣官房の日付特定・中間HTMLクレンジング）およびマスターDB（25,002開催回・152,995配付資料）完全同期。 | URL 404解消、2開催回・29資料ワンストップ登録、全25,002件重複・2099日付ゼロ、統合10ケース＋単体14種合格 |
 | **Drop 138** | **自動クロール追加・更新情報の確認およびAI補正連携基盤の整備** | リモート自動クロール（GitHub Actions）からの `git pull` 同期時に `meetingCrawlMeta` / `councilCrawlMeta`（`discoveredAt`, `lastUpdatedFromCrawl`, `discoverySource`）を欠落なく SQLite マスターDBへ同期するよう `sync_from_json.py` を強化。部分クロール時（`--ministry` 等）の他省庁 `is_newly_discovered` リセット防止（`crawler.py`）。自動クロール追加・未補正データおよび要AI補正候補（回次未特定・資料0件等）をワンコマンドで抽出・確認・ロック付与できる専用CLIインスペクタ `admin/tools/inspect_auto_crawled.py` を新設。管理ダッシュボード（Tab 1 & Tab 2）に期間/未補正フィルタ・要AI補正候補絞り込み・開催回単位の確認済ロック切替ボタンを配備。 | CLIインスペクタ新設、クロール検知メタデータ完全同期、管理画面フィルタ強化、単体U14拡充（5テスト合格）、統合10ケース＋単体14種完全合格（16.09s） |
 | **Drop 139** | **GitHub Actions 定時クロール差分レポート引数是正・サーキットブレーカー判定適正化 & クローラー中間HTML資料フォールバック遮断** | GitHub Actions 月次定時クロール（Run 42407589819）で発生した `Build diff report` の `--mode` 未定義引数エラーを解消。包括走査時に恒常的エラー会議体により誤発動していたサーキットブレーカーの判定対象を「新規失敗省庁数（`newlyFailedMinistries`）」へ是正し、モード別レポート文言を適正化。クローラーの親テーブル抽出における中間HTML資料フォールバック登録を遮断し、日本学術会議幹事会第383回の日付特定補正（`2025/04/09`）およびマスターDB・2系統JSON完全同期。 | `--mode` 引数・新規失敗省庁判定是正、中間HTML誤登録遮断ガード配備、日本学術会議第383回補正、単体U13拡充、統合10ケース＋単体14種完全合格（18.75s） |
+| **Drop 140** | **管理サーバーポート競合自動フォールバック & 安全ランチャー機構** | 他アプリ（中露政府公式発表ウォッチ等）とのポート8000競合時、8001, 8002... と空きポートを自動探索・バインドする `create_server()` を新設。`admin/start.bat` から危険なポート8000の無差別 `taskkill` を完全撤廃し、実際にバインドされたポート（`.server_port`）を検知してブラウザで正しくダッシュボードを開く安全な起動フローを構築。フロントエンドのアラートも動的ポート解決へ純化。 | 他アプリ非破壊・ポート競合完全回避・自律空きポートバインド、単体テスト・統合10ケース完全合格（17.02s） |
 
 ---
 
@@ -4639,3 +4640,56 @@ python testing/run_test_suite.py --all-layers : PASSED（統合10ケース＋全
 - **5. 今後の課題・次回アクション (Future Tasks & Next Actions)**:
   - 次期予定 **Drop 140** にて、**Track [Core-Policy-Filter]**（「重要政策会議のみ」絞り込み機能 & 注目会議ハイライト表示）に着手予定。
 
+---
+
+### Drop 140: 管理サーバーポート競合自動フォールバック & 安全ランチャー機構 (2026-11-08 完了)
+
+- **1. 背景と目的 (Background & Objectives)**:
+  - ユーザー環境において `admin/start.bat` を起動した際、ポート 8000 を別アプリケーション（中露政府公式発表ウォッチ等）が先に使用していると、以下の問題が発生していた：
+    1. `start.bat` が `netstat` でポート 8000 を検出して他アプリのプロセスを無差別に `taskkill` しようとする危険な挙動。
+    2. `server.py` がポート 8000 固定でバインドを試み、`[WinError 10048]`（Address already in use）でクラッシュ・即時終了する。
+    3. `start.bat` の readiness check が他アプリのポート 8000 と通信し、ブラウザで他アプリ（中露政府公式発表ウォッチ等）の画面が開いてしまう。
+  - これらの課題を解消し、ポートが競合している場合でも他アプリに干渉せず、自動的に空きポート（8001, 8002...）を選択して安全・確実に PMHub ダッシュボードを起動・表示できるアーキテクチャを確立する。
+
+- **2. 主要な施策・修正内容 (Key Implementations)**:
+  - **`admin/server.py` のポート競合自動フォールバック (`create_server`)**:
+    - `create_server(start_port=8000, max_tries=20, host="", handler_class=CustomHandler)` を新設。
+    - ポートが使用中の場合（`OSError: [WinError 10048]` 等）、自動的に `start_port + 1`, `start_port + 2` ... と空きポートをインクリメンタルに探索してバインド。
+    - コマンドライン引数 `--port <PORT>`（開始ポート指定）および `--open-browser`（起動時ブラウザ自動オープン）を追加。
+    - 実際にバインド成功したポート番号を `admin/.server_port` に書き出し、終了時（`atexit` および `finally:`）に安全にクリーンアップする仕組みを実装。
+  - **`admin/start.bat` の無差別 `taskkill` 撤廃 & 動的ポート検知ランチャー化**:
+    - 他プロセスの強制終了（`taskkill`）を完全削除し、非破壊的な共存を保証。
+    - 起動前に前回の残存 `.server_port` をクリアし、`server.py` をバックグラウンド起動。
+    - Python ヘルパーにより `.server_port` の生成と該当ポートでの HTTP 200 readiness check を安全に待機。
+    - 実際にバインドされたポート番号（`%ACTUAL_PORT%`）を読み取り、`http://localhost:%ACTUAL_PORT%/admin/admin_dashboard.html` をブラウザで自動オープンする安全な起動フローへ刷新。
+  - **フロントエンド (`admin/admin_dashboard.js`) のポート動的解決**:
+    - エラーアラート内のハードコードされた `localhost:8000` を ``${window.location.host || 'ローカルサーバー'}`` に置換・純化。
+  - **単体テスト (`testing/test_admin_server.py`) の拡充**:
+    - 一時ソケットでポートを占有した状態で `create_server()` が競合を検知し、次の一意な空きポートへ自動フォールバックして正常起動することを検証する `test_create_server_port_fallback` を追加。
+
+- **3. 達成された指標・成果 (Achieved Metrics & Results)**:
+  - **ポート競合の完全回避**:
+    - ポート 8000 が他アプリ（中露政府公式発表ウォッチ等）で使用中であっても、8001 等の空きポートを自律検知して PMHub サーバーが正常起動。
+    - ブラウザでも正確にバインドされたポートが開くため、他アプリの画面が表示される誤作動がゼロ化。
+  - **他アプリ・他プロジェクトの非破壊性**:
+    - 無差別な `taskkill` を撤廃したことで、同一マシン上で稼働する他 Web アプリケーションや開発サーバーを不意に強制終了させる事故を根本防止。
+  - **テスト完全合格**:
+    - `testing/test_admin_server.py` 全 19 テスト完全合格（5.20s）。
+    - 統合テストスイート（`testing/run_test_suite.py --all-layers`）全 10 ケース＋単体 14 種完全合格（17.02s）。
+
+- **4. クローラーへの影響・今後の課題・アクション (Crawler Impact & Next Actions)**:
+  - **手動登録データの保護挙動**: マスターDB（`pmhub.db`）および会議体・開催回データは完全に不変維持され、`manualLock = 1` も 100% 保護。
+  - **次回クロール時の挙動**: ポート変更下でも管理画面からの手動クロール・ディスカバリー実行・スクレイピングルール検証等、全サーバー API が相対パス `/api/...` により完全透過で稼働。
+  - **次回アクション**:
+    - 次期予定 **Drop 141** にて、最重要アジェンダをワンクリックで抽出・閲覧可能にする **Track [Core-Policy-Filter]**（重要政策会議フィルタ & 注目会議ハイライト表示）に着手予定。
+
+- **5. 変更ファイル一覧 (Changed Files)**:
+  - `admin/server.py`（改修: `create_server()` ポート自動探索・バインド、`--port` / `--open-browser` 追加、`.server_port` 連携）
+  - `admin/start.bat`（改修: `taskkill` 削除、動的ポート検知 & 正しいポートでのブラウザ起動フロー構築）
+  - `admin/admin_dashboard.js`（改修: エラーアラート内ポート表示の動的解決・純化）
+  - `testing/test_admin_server.py`（改修: ポート自動フォールバック単体テスト `test_create_server_port_fallback` 追加）
+  - `DROPS.md`（更新: Drop 140 記録追記、ヘッダー・一覧更新）
+
+- **6. 検証結果 (Verification Results)**:
+  - `python testing/run_test_suite.py --all-layers`: **統合10ケース＋単体14種完全合格（所要時間 17.02秒）**。
+  - `python -m unittest testing/test_admin_server.py`: 全19テスト完全合格（所要時間 5.20秒）。

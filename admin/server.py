@@ -15,6 +15,9 @@ import sys
 import shutil
 import threading
 import urllib.parse
+import atexit
+import argparse
+from pathlib import Path
 from datetime import datetime
 from apply_report import apply_report, apply_report_data
 from discover_councils import run_discovery
@@ -41,7 +44,37 @@ def _extract_delta_logs(parsed_url, state):
 
 
 PORT = 8000
+SERVER_PORT_FILE = os.path.abspath(os.path.join(os.path.dirname(__file__), ".server_port"))
 BASE_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
+
+def _cleanup_server_port_file():
+    """Drop 138: サーバー終了時に .server_port ファイルを安全に削除"""
+    try:
+        if os.path.exists(SERVER_PORT_FILE):
+            os.remove(SERVER_PORT_FILE)
+    except OSError:
+        pass
+
+def create_server(start_port=8000, max_tries=20, host="", handler_class=None):
+    """
+    Drop 138: ポート競合自動フォールバック機構
+    start_port が使用中（他アプリ等と競合）の場合、
+    start_port + 1, start_port + 2 ... と空きポートを自動探索してバインドする。
+    """
+    if handler_class is None:
+        handler_class = CustomHandler
+    ThreadingHTTPServer.allow_reuse_address = True
+    last_err = None
+    for offset in range(max_tries):
+        port = start_port + offset
+        server_address = (host, port)
+        try:
+            httpd = ThreadingHTTPServer(server_address, handler_class)
+            return httpd, port
+        except OSError as e:
+            last_err = e
+            print(f"[INFO] Port {port} is in use ({e}). Trying next port {port + 1}...")
+    raise RuntimeError(f"Could not bind to any port in range {start_port}..{start_port + max_tries - 1}: {last_err}")
 DATA_JSON_FILE = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "docs", "data.json"))
 BACKUP_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), "backups"))
 
@@ -767,9 +800,25 @@ class CustomHandler(SimpleHTTPRequestHandler):
 
 
 if __name__ == "__main__":
-    print(f"Starting PM-Hub Local Admin Server at http://localhost:{PORT}")
-    print(f"Access Admin Dashboard at: http://localhost:{PORT}/admin/admin_dashboard.html")
-    server_address = ("", PORT)
+    parser = argparse.ArgumentParser(description="PM-Hub Local Admin Server")
+    parser.add_argument("--port", type=int, default=8000, help="Starting port (default: 8000)")
+    parser.add_argument("--open-browser", action="store_true", help="Open browser on start")
+    args = parser.parse_args()
+
+    httpd, bound_port = create_server(start_port=args.port, handler_class=CustomHandler)
+    PORT = bound_port
+
+    # 起動ポートを一時ファイルに記録（ランチャー連携用）
+    try:
+        with open(SERVER_PORT_FILE, "w", encoding="utf-8") as f:
+            f.write(str(bound_port))
+    except Exception as e:
+        print(f"[WARN] Failed to write .server_port: {e}")
+    atexit.register(_cleanup_server_port_file)
+
+    print(f"Starting PM-Hub Local Admin Server at http://localhost:{bound_port}")
+    print(f"Access Admin Dashboard at: http://localhost:{bound_port}/admin/admin_dashboard.html")
+
     # Drop 82: If DB has 0 downloaded materials but local_docs exists, start background sync
     try:
         from admin.db.db_manager import get_materials_download_summary
@@ -783,9 +832,15 @@ if __name__ == "__main__":
     except Exception as e_srv:
         pass
 
-    ThreadingHTTPServer.allow_reuse_address = True
-    with ThreadingHTTPServer(server_address, CustomHandler) as httpd:
+    if args.open_browser:
+        import webbrowser
+        dash_url = f"http://localhost:{bound_port}/admin/admin_dashboard.html"
+        threading.Timer(0.5, lambda: webbrowser.open(dash_url)).start()
+
+    with httpd:
         try:
             httpd.serve_forever()
         except KeyboardInterrupt:
             print("\nServer stopped.")
+        finally:
+            _cleanup_server_port_file()

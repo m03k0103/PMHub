@@ -257,6 +257,28 @@ class TestAdminServer(unittest.TestCase):
             self.assertIn("summary", data)
 
 
+    def test_create_server_port_fallback(self):
+        """Drop 138: ポート競合時に次の一意な空きポートへ自動フォールバックすること"""
+        import socket
+        # 一時的なソケットでポートを占有
+        s1 = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+        s1.bind(("127.0.0.1", 0))
+        occupied_port = s1.getsockname()[1]
+
+        try:
+            httpd, bound_port = server.create_server(
+                start_port=occupied_port,
+                max_tries=5,
+                host="127.0.0.1",
+                handler_class=QuietHandler
+            )
+            self.assertNotEqual(bound_port, occupied_port)
+            self.assertGreater(bound_port, occupied_port)
+            httpd.server_close()
+        finally:
+            s1.close()
+
+
 if __name__ == "__main__":
     unittest.main()
 

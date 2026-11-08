@@ -1472,7 +1472,7 @@
       const isLocalhost = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
       await saveJsonFile(report, `meeting_urls_updates_${new Date().toISOString().slice(0,10)}.json`);
       if (isLocalhost) {
-        alert('【サーバー保存エラー】localhost:8000 への保存処理が完了できませんでした。\nローカルサーバー (py admin/server.py) が正常に起動しているかご確認ください。\n\nバックアップとしてJSONを出力しました。');
+        alert(`【サーバー保存エラー】${window.location.host || 'ローカルサーバー'} への保存処理が完了できませんでした。\nローカルサーバー (py admin/server.py) が正常に起動しているかご確認ください。\n\nバックアップとしてJSONを出力しました。`);
       } else {
         alert('file:// 直開きのブラウザ制限によりファイル直接上書きが制限されているため、JSONを出力しました。\n\nターミナルで以下を実行すると docs/data.json に反映できます：\npy admin/apply_report.py admin/meeting_urls_updates_*.json');
       }
@@ -2092,7 +2092,7 @@
       const isLocalhost = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
       await exportMinistryJson();
       if (isLocalhost) {
-        alert('【サーバー保存エラー】localhost:8000 への保存処理が完了できませんでした。\nローカルサーバー (py admin/server.py) が正常に起動しているかご確認ください。\n\nバックアップとしてJSONを出力しました。');
+        alert(`【サーバー保存エラー】${window.location.host || 'ローカルサーバー'} への保存処理が完了できませんでした。\nローカルサーバー (py admin/server.py) が正常に起動しているかご確認ください。\n\nバックアップとしてJSONを出力しました。`);
       } else {
         alert('file:// 直開きのブラウザ制限によりファイル直接上書きが制限されているため、JSONを出力しました。\n\nターミナルで以下を実行すると docs/data.json に反映できます：\npy admin/apply_report.py admin/ministry_updates_*.json');
       }
@@ -2562,7 +2562,7 @@
       const isLocalhost = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
       await saveJsonFile(report, `verification_report_${new Date().toISOString().slice(0,10)}.json`);
       if (isLocalhost) {
-        alert('【サーバー保存エラー】localhost:8000 への保存処理が完了できませんでした。\nローカルサーバー (py admin/server.py) が正常に起動しているかご確認ください。\n\nバックアップとしてJSONを出力しました。');
+        alert(`【サーバー保存エラー】${window.location.host || 'ローカルサーバー'} への保存処理が完了できませんでした。\nローカルサーバー (py admin/server.py) が正常に起動しているかご確認ください。\n\nバックアップとしてJSONを出力しました。`);
       } else {
         alert('file:// 直開きのブラウザ制限によりファイル直接上書きが制限されているため、JSONを出力しました。\n\nターミナルで以下を実行すると docs/data.json に反映できます：\npy admin/apply_report.py admin/verification_report_*.json');
       }
