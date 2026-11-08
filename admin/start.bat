@@ -19,29 +19,28 @@ if not defined PYCMD (
     exit /b 1
 )
 
-REM 2. Stop any existing process listening on port 8000
-echo Checking port 8000...
-for /f "tokens=5" %%a in ('netstat -a -n -o ^| findstr ":8000 " ^| findstr "LISTENING"') do (
-    if not "%%a"=="0" (
-        echo Stopping existing process on port 8000 (PID %%a)
-        taskkill /F /PID %%a >nul 2>&1
-    )
-)
+REM 2. Remove stale port file from previous run
+if exist ".server_port" del /f /q ".server_port" >nul 2>&1
 
-REM 3. Launch server in a separate background window
-echo Starting Python Admin Server on port 8000...
+REM 3. Launch server in a separate background window (with auto port fallback)
+echo Starting Python Admin Server (with automatic port conflict fallback)...
 start "PMHub Admin Server" %PYCMD% server.py
 
-REM 4. Wait for server to become ready (HTTP readiness check)
-echo Waiting for server to initialize and respond on http://localhost:8000...
-%PYCMD% -c "import urllib.request, time, sys; url = 'http://localhost:8000/admin/admin_dashboard.html'; start = time.time();\nok=False\nwhile time.time() - start < 10:\n    try:\n        with urllib.request.urlopen(url, timeout=1) as res:\n            if res.status == 200:\n                ok=True; print('Server is ready (HTTP 200 OK)'); break\n    except Exception:\n        pass\n    time.sleep(0.3)\nif not ok: print('[WARN] Server initialization timeout')"
+REM 4. Wait for server to initialize and detect bound port
+echo Waiting for server to initialize and detect active port...
+%PYCMD% -c "import urllib.request, time, sys, os; pf = '.server_port'; t0 = time.time(); p = None;\nwhile time.time() - t0 < 10:\n    if os.path.exists(pf):\n        try:\n            c = open(pf, 'r', encoding='utf-8').read().strip()\n            if c.isdigit():\n                p = c; break\n        except Exception:\n            pass\n    time.sleep(0.2)\nif not p:\n    print('[WARN] Port detection timed out. Falling back to port 8000.')\n    sys.exit(0)\nt1 = time.time()\nwhile time.time() - t1 < 10:\n    try:\n        with urllib.request.urlopen(f'http://localhost:{p}/admin/admin_dashboard.html', timeout=1) as res:\n            if res.status == 200:\n                print(f'Server is ready on port {p} (HTTP 200 OK)')\n                sys.exit(0)\n    except Exception:\n        pass\n    time.sleep(0.2)\nprint(f'[WARN] Readiness check timed out on port {p}.')"
 
-REM 5. Open Admin Dashboard in default browser
-echo Opening Admin Dashboard: http://localhost:8000/admin/admin_dashboard.html
-start http://localhost:8000/admin/admin_dashboard.html
+REM 5. Open Admin Dashboard in default browser using the bound port
+set ACTUAL_PORT=8000
+if exist ".server_port" (
+    set /p ACTUAL_PORT=<.server_port
+)
+
+echo Opening Admin Dashboard: http://localhost:%ACTUAL_PORT%/admin/admin_dashboard.html
+start http://localhost:%ACTUAL_PORT%/admin/admin_dashboard.html
 
 echo ==========================================================
-echo   Server is running in background.
+echo   Server is running in background on port %ACTUAL_PORT%.
 echo   You can close this window now.
 echo ==========================================================
 timeout /t 2 /nobreak >nul
