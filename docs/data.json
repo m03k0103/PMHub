@@ -929,7 +929,8 @@
       "category": "SECTION",
       "name": "文化政策部会",
       "officialUrl": "https://www.bunka.go.jp/seisaku/bunkashingikai/seisaku/",
-      "pastYearCount": 25
+      "pastYearCount": 26,
+      "isNewlyDiscovered": true
     },
     {
       "id": "aca-186",
@@ -1934,7 +1935,8 @@
       "category": "COUNCIL",
       "name": "沖縄振興審議会",
       "officialUrl": "https://www8.cao.go.jp/okinawa/siryou/singikai/index.html",
-      "pastYearCount": 1
+      "pastYearCount": 33,
+      "isNewlyDiscovered": true
     },
     {
       "id": "cao-222",
@@ -2819,7 +2821,8 @@
       "name": "税制のEBPMに関する専門家会合",
       "officialUrl": "https://www.cao.go.jp/zei-cho/gijiroku/ebpm/index.html",
       "description": "租税特別措置等の税制措置の効果検証(EBPM:証拠に基づく政策立案)の手法・データ分析を議論する専門家会合。",
-      "pastYearCount": 9
+      "pastYearCount": 9,
+      "isNewlyDiscovered": true
     },
     {
       "id": "cao-zeicho_kiso_shoiinkai",
@@ -3934,7 +3937,8 @@
       "category": "内閣官房政策会議等一覧",
       "name": "新型インフルエンザ等対策推進会議 医療及び公衆衛生分科会",
       "officialUrl": "https://www.cas.go.jp/jp/seisaku/ful/taisakusuisin.html",
-      "pastYearCount": 32
+      "pastYearCount": 32,
+      "isNewlyDiscovered": true
     },
     {
       "id": "cas-ful_kakuryokaigi",
@@ -8335,7 +8339,7 @@
       "category": "WORKING_GROUP",
       "name": "開示制度ワーキング・グループ",
       "officialUrl": "https://www.fsa.go.jp/singi/kaijiseidowg/index.html",
-      "pastYearCount": 0,
+      "pastYearCount": 5,
       "materials": [
         {
           "name": "「「金融庁・開示制度ワーキング・グループ報告」~ 新株予約権無償割当てによる増資(いわゆる「ライツ・オファリング」)に係る制度整備について ~」",
@@ -8345,7 +8349,8 @@
           "name": "「「金融庁・開示制度ワーキング・グループ報告」~ 英文開示の範囲拡大について ~ 」",
           "url": "https://www.fsa.go.jp/news/22/singi/20101217-6/01.pdf"
         }
-      ]
+      ],
+      "isNewlyDiscovered": true
     },
     {
       "id": "fsa-kinyu_kaikeishi_bukai",
@@ -16733,7 +16738,8 @@
       "category": "SUBCOMMITTEE",
       "name": "外国為替等分科会",
       "officialUrl": "https://www.mof.go.jp/about_mof/councils/customs_foreign_exchange/sub-foreign_exchange/proceedings/index.html",
-      "pastYearCount": 8
+      "pastYearCount": 24,
+      "isNewlyDiscovered": true
     },
     {
       "id": "mof-1138",
@@ -18155,7 +18161,13 @@
       "name": "第9回 税制のEBPMに関する専門家会合(2026年11月10日)",
       "date": "2026/11/10",
       "officialUrl": "https://www.cao.go.jp/zei-cho/gijiroku/ebpm/2026/8ebpm9kai.html",
-      "materials": []
+      "materials": [
+        {
+          "name": "会議資料",
+          "url": "https://www.cao.go.jp/zei-cho/gijiroku/ebpm/2026/8ebpm9kai.html",
+          "type": "HTML"
+        }
+      ]
     },
     {
       "id": "mhlw-938-20261110-215",
@@ -101502,6 +101514,26 @@
         {
           "name": "議事録",
           "url": "https://www.env.go.jp/page_00325.html",
+          "type": "HTML"
+        }
+      ]
+    },
+    {
+      "id": "mof-1137-20260218-s24",
+      "councilId": "mof-1137",
+      "name": "「関税・外国為替等審議会 外国為替等分科会 資料(令和7年12月12日開催)」を一部訂正しました",
+      "date": "2026/02/18",
+      "officialUrl": "https://www.mof.go.jp/about_mof/councils/customs_foreign_exchange/sub-foreign_exchange/proceedings/material/20260212164807.html",
+      "isNewlyDiscovered": true,
+      "materials": [
+        {
+          "name": "議事録",
+          "url": "https://www.mof.go.jp/about_mof/councils/customs_foreign_exchange/sub-foreign_exchange/proceedings/proceedings/20260202190838.html",
+          "type": "HTML"
+        },
+        {
+          "name": "令和 7年12月12日開催 議事録",
+          "url": "https://www.mof.go.jp/about_mof/councils/customs_foreign_exchange/sub-foreign_exchange/proceedings/material/20251210212823.html",
           "type": "HTML"
         }
       ]
@@ -215980,8 +216012,8 @@
     "cas-zensedai_hosyo",
     "mof-zaiseiseido_bunkakai"
   ],
-  "lastCrawlTime": "2026/11/07 20:47",
+  "lastCrawlTime": "2026/11/08 21:07",
   "hasArchive": true,
-  "totalMeetingsCount": 25005,
-  "totalMaterialsCount": 153049
+  "totalMeetingsCount": 25018,
+  "totalMaterialsCount": 153545
 }
