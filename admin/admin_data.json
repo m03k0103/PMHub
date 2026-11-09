@@ -1,5 +1,5 @@
 {
-  "lastCrawlTime": "2026/11/08 21:07",
+  "lastCrawlTime": "2026/11/09 00:25",
   "scrapingRuleTemplates": {
     "tpl-general-round-subpage": {
       "subpage_discovery_pattern": "(?:dai\\d+|\\d+kai|kaisai|gijisidai|gijiroku|haifu|session|meeting|\\b\\d{3,4}\\.html|\\d{2,3}/(?:index\\.html)?)",
@@ -27336,6 +27336,30 @@
       "kantei.go.jp": 1.0,
       "www.meti.go.jp": 1.5,
       "meti.go.jp": 1.5
+    },
+    "ministryLastCrawlTime": {
+      "CAO": "2026/11/09 00:25",
+      "CAS": "2026/11/09 00:25",
+      "DIGITAL": "2026/11/09 00:25",
+      "CFA": "2026/11/09 00:25",
+      "PPC": "2026/11/09 00:25",
+      "FSA": "2026/11/09 00:25",
+      "CAA": "2026/11/09 00:25",
+      "FSC": "2026/11/09 00:25",
+      "MIC": "2026/11/09 00:25",
+      "FDMA": "2026/11/09 00:25",
+      "MOJ": "2026/11/09 00:25",
+      "MOF": "2026/11/09 00:25",
+      "MEXT": "2026/11/09 00:25",
+      "MHLW": "2026/11/09 00:25",
+      "MAFF": "2026/11/09 00:25",
+      "RINYA": "2026/11/09 00:25",
+      "JFA": "2026/11/09 00:25",
+      "METI": "2026/11/09 00:25",
+      "MLIT": "2026/11/09 00:25",
+      "MOE": "2026/11/09 00:25",
+      "NRA": "2026/11/09 00:25",
+      "MOD": "2026/11/09 00:25"
     }
   },
   "rejectedCouncils": [
@@ -101386,6 +101410,9 @@
     "cao-ai_technology_senmon-20261029-013": {
       "discoveredAt": "2026/11/03 13:32"
     },
+    "cao-ai_technology_senmon-20261105-014": {
+      "discoveredAt": "2026/11/09 00:24"
+    },
     "cao-barrier_free_universal-20040601-s02": {
       "discoveredAt": "2026/09/05 08:30"
     },
@@ -124208,6 +124235,9 @@
     },
     "mhlw-shakai_hosho_kaigo_hoken-20261026-137": {
       "discoveredAt": "2026/10/30 09:10"
+    },
+    "mhlw-shakai_hosho_kaigo_hoken-20261109-138": {
+      "discoveredAt": "2026/11/09 00:24"
     },
     "mhlw-shakai_hosho_kaigo_kyuufu-20220803-s72": {
       "discoveredAt": "2026/09/30 07:54"

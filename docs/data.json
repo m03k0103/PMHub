@@ -929,8 +929,7 @@
       "category": "SECTION",
       "name": "文化政策部会",
       "officialUrl": "https://www.bunka.go.jp/seisaku/bunkashingikai/seisaku/",
-      "pastYearCount": 26,
-      "isNewlyDiscovered": true
+      "pastYearCount": 26
     },
     {
       "id": "aca-186",
@@ -1935,8 +1934,7 @@
       "category": "COUNCIL",
       "name": "沖縄振興審議会",
       "officialUrl": "https://www8.cao.go.jp/okinawa/siryou/singikai/index.html",
-      "pastYearCount": 33,
-      "isNewlyDiscovered": true
+      "pastYearCount": 33
     },
     {
       "id": "cao-222",
@@ -2402,7 +2400,8 @@
       "name": "人工知能(AI)技術の利用と消費者問題に関する専門調査会",
       "officialUrl": "https://www.cao.go.jp/consumer/kabusoshiki/ai_technology/index.html",
       "description": "生成AI等の人工知能技術の利用に伴う消費者問題やリスク対応、消費者保護ルールを調査審議する専門調査会。",
-      "pastYearCount": 13
+      "pastYearCount": 14,
+      "isNewlyDiscovered": true
     },
     {
       "id": "cao-barrier_free_universal",
@@ -2821,8 +2820,7 @@
       "name": "税制のEBPMに関する専門家会合",
       "officialUrl": "https://www.cao.go.jp/zei-cho/gijiroku/ebpm/index.html",
       "description": "租税特別措置等の税制措置の効果検証(EBPM:証拠に基づく政策立案)の手法・データ分析を議論する専門家会合。",
-      "pastYearCount": 9,
-      "isNewlyDiscovered": true
+      "pastYearCount": 9
     },
     {
       "id": "cao-zeicho_kiso_shoiinkai",
@@ -3937,8 +3935,7 @@
       "category": "内閣官房政策会議等一覧",
       "name": "新型インフルエンザ等対策推進会議 医療及び公衆衛生分科会",
       "officialUrl": "https://www.cas.go.jp/jp/seisaku/ful/taisakusuisin.html",
-      "pastYearCount": 32,
-      "isNewlyDiscovered": true
+      "pastYearCount": 32
     },
     {
       "id": "cas-ful_kakuryokaigi",
@@ -8349,8 +8346,7 @@
           "name": "「「金融庁・開示制度ワーキング・グループ報告」~ 英文開示の範囲拡大について ~ 」",
           "url": "https://www.fsa.go.jp/news/22/singi/20101217-6/01.pdf"
         }
-      ],
-      "isNewlyDiscovered": true
+      ]
     },
     {
       "id": "fsa-kinyu_kaikeishi_bukai",
@@ -14418,7 +14414,8 @@
       "name": "社会保障審議会 介護保険部会",
       "officialUrl": "https://www.mhlw.go.jp/stf/shingi/shingi-hosho_126734.html",
       "description": "厚生労働省社会保障審議会における社会保障審議会 介護保険部会。",
-      "pastYearCount": 49
+      "pastYearCount": 50,
+      "isNewlyDiscovered": true
     },
     {
       "id": "mhlw-shakai_hosho_kaigo_kyuufu",
@@ -16738,8 +16735,7 @@
       "category": "SUBCOMMITTEE",
       "name": "外国為替等分科会",
       "officialUrl": "https://www.mof.go.jp/about_mof/councils/customs_foreign_exchange/sub-foreign_exchange/proceedings/index.html",
-      "pastYearCount": 24,
-      "isNewlyDiscovered": true
+      "pastYearCount": 24
     },
     {
       "id": "mof-1138",
@@ -18194,6 +18190,40 @@
       "materials": []
     },
     {
+      "id": "mhlw-shakai_hosho_kaigo_hoken-20261109-138",
+      "councilId": "mhlw-shakai_hosho_kaigo_hoken",
+      "name": "第138回 社会保障審議会 介護保険部会",
+      "date": "2026/11/09",
+      "officialUrl": "https://www.mhlw.go.jp/stf/newpage_77213.html",
+      "isNewlyDiscovered": true,
+      "materials": [
+        {
+          "name": "資料1 特定地域の基準案について(報告)",
+          "url": "https://www.mhlw.go.jp/content/12300000/001766402.pdf"
+        },
+        {
+          "name": "資料2 特定地域居宅サービス等事業について",
+          "url": "https://www.mhlw.go.jp/content/12300000/001766403.pdf"
+        },
+        {
+          "name": "資料3 有料老人ホームに係る登録制の施行に向けた対応について(報告)",
+          "url": "https://www.mhlw.go.jp/content/12300000/001766404.pdf"
+        },
+        {
+          "name": "議事次第",
+          "url": "https://www.mhlw.go.jp/content/12300000/001766406.pdf"
+        },
+        {
+          "name": "委員名簿",
+          "url": "https://www.mhlw.go.jp/content/12300000/001766407.pdf"
+        },
+        {
+          "name": "座席図",
+          "url": "https://www.mhlw.go.jp/content/12300000/001766408.pdf"
+        }
+      ]
+    },
+    {
       "id": "mhlw-tokumei_iryou-20261109-049",
       "councilId": "mhlw-tokumei_iryou",
       "name": "第49回 匿名医療情報等の提供に関する専門委員会",
@@ -18423,6 +18453,24 @@
         {
           "name": "【参考資料2】田母神委員提出資料[1.9MB]",
           "url": "https://www.mhlw.go.jp/content/12300000/001766561.pdf"
+        }
+      ]
+    },
+    {
+      "id": "cao-ai_technology_senmon-20261105-014",
+      "councilId": "cao-ai_technology_senmon",
+      "name": "第14回 人工知能(AI)技術の利用と消費者問題に関する専門調査会",
+      "date": "2026/11/05",
+      "officialUrl": "https://www.cao.go.jp/consumer/kabusoshiki/ai_technology/014/shiryou/index.html",
+      "isNewlyDiscovered": true,
+      "materials": [
+        {
+          "name": "議事次第",
+          "url": "https://www.cao.go.jp/consumer/kabusoshiki/ai_technology/doc/014_261105_gijishidai.pdf"
+        },
+        {
+          "name": "【資料1】 得津教授提出資料",
+          "url": "https://www.cao.go.jp/consumer/kabusoshiki/ai_technology/doc/014_261105_shiryou1.pdf"
         }
       ]
     },
@@ -101524,7 +101572,6 @@
       "name": "「関税・外国為替等審議会 外国為替等分科会 資料(令和7年12月12日開催)」を一部訂正しました",
       "date": "2026/02/18",
       "officialUrl": "https://www.mof.go.jp/about_mof/councils/customs_foreign_exchange/sub-foreign_exchange/proceedings/material/20260212164807.html",
-      "isNewlyDiscovered": true,
       "materials": [
         {
           "name": "議事録",
@@ -215814,173 +215861,6 @@
           "url": "https://www.mof.go.jp/about_mof/councils/fiscal_system_council/sub-of_fiscal_system/proceedings/material/zaiseia20241111/03.pdf"
         }
       ]
-    },
-    {
-      "id": "anre-1762-20241108-s01",
-      "councilId": "anre-1762",
-      "name": "令和6年度 同時市場の在り方等に関する検討会 会合",
-      "date": "2024/11/08",
-      "officialUrl": "https://www.meti.go.jp/shingikai/energy_environment/doji_shijo_kento/20241108_report.html",
-      "materials": [
-        {
-          "name": "同時市場の在り方等に関する検討会 中間取りまとめ",
-          "url": "https://www.meti.go.jp/shingikai/energy_environment/doji_shijo_kento/pdf/20241108_1.pdf"
-        }
-      ]
-    },
-    {
-      "id": "cas-jieikan_shogu-20241108-002",
-      "councilId": "cas-jieikan_shogu",
-      "name": "第2回 自衛官の処遇・勤務環境の改善及び新たな生涯設計の確立に関する関係閣僚会議",
-      "date": "2024/11/08",
-      "officialUrl": "https://www.cas.go.jp/jp/seisaku/jieikan/gijisidai/dai2/siryou.pdf",
-      "summary": "第2回 自衛官の処遇・勤務環境の改善及び新たな生涯設計の確立に関する関係閣僚会議の開催。主要議題の推進状況及び今後の対応方針について審議が行われた。",
-      "tags": [
-        "自衛官の処遇",
-        "CAS",
-        "第2回"
-      ],
-      "materials": [
-        {
-          "name": "第2回自衛官の処遇・勤務環境の改善及び新たな生涯設計の確立に関する関係閣僚会議(PDF/453KB)",
-          "url": "https://www.cas.go.jp/jp/seisaku/jieikan/gijisidai/dai2/siryou.pdf"
-        },
-        {
-          "name": "第2回自衛官の処遇・勤務環境の改善及び新たな生涯設計の確立に関する関係閣僚会議(参考資料)(PDF/2,170KB)",
-          "url": "https://www.cas.go.jp/jp/seisaku/jieikan/gijisidai/dai2/sankou.pdf"
-        },
-        {
-          "name": "議事要旨(PDF/194KB)",
-          "url": "https://www.cas.go.jp/jp/seisaku/jieikan/dai2/gaiyou.pdf"
-        }
-      ]
-    },
-    {
-      "id": "cas-zensedai_shakaihosho_kochiku-20241108-011",
-      "councilId": "cas-zensedai_shakaihosho_kochiku",
-      "name": "第11回 全世代型社会保障構築本部",
-      "date": "2024/11/08",
-      "officialUrl": "https://www.cas.go.jp/jp/seisaku/zensedai_shakaihosho_kochiku/dai11/gijisidai.html",
-      "materials": [
-        {
-          "name": "第11回 全世代型社会保障構築本部 議事次第 (PDF/48KB)",
-          "url": "https://www.cas.go.jp/jp/seisaku/zensedai_shakaihosho_kochiku/dai11/gijisidai.pdf"
-        },
-        {
-          "name": "全世代型社会保障構築について(PDF/1,830KB)",
-          "url": "https://www.cas.go.jp/jp/seisaku/zensedai_shakaihosho_kochiku/dai11/siryou1.pdf"
-        },
-        {
-          "name": "「全世代型社会保障構築会議の開催について」の一部改正について(PDF/136KB)",
-          "url": "https://www.cas.go.jp/jp/seisaku/zensedai_shakaihosho_kochiku/dai11/siryou2.pdf"
-        },
-        {
-          "name": "全世代型社会保障構築を目指す改革の道筋(改革工程)(PDF/422KB)",
-          "url": "https://www.cas.go.jp/jp/seisaku/zensedai_shakaihosho_kochiku/dai11/sankou1.pdf"
-        },
-        {
-          "name": "こども未来戦略(PDF/823KB)",
-          "url": "https://www.cas.go.jp/jp/seisaku/zensedai_shakaihosho_kochiku/dai11/sankou2.pdf"
-        }
-      ]
-    },
-    {
-      "id": "fsc-tenkabutu-20241108-198",
-      "councilId": "fsc-tenkabutu",
-      "name": "第198回添加物専門調査会",
-      "date": "2024/11/08",
-      "officialUrl": "https://www.fsc.go.jp/fsciis/meetingMaterial/show/kai20241108te1",
-      "materials": [
-        {
-          "name": "議事次第",
-          "url": "https://www.fsc.go.jp/fsciis/attachedFile/download?retrievalId=kai20241108te1&fileId=010"
-        },
-        {
-          "name": "専門委員名簿",
-          "url": "https://www.fsc.go.jp/fsciis/attachedFile/download?retrievalId=kai20241108te1&fileId=020"
-        },
-        {
-          "name": "資料:添加物評価書「亜硫酸塩等(亜硫酸ナトリウム、次亜硫酸ナトリウム、二酸化硫黄、ピロ亜硫酸カリウム、ピロ亜硫酸ナトリウム)」(案)",
-          "url": "https://www.fsc.go.jp/fsciis/attachedFile/download?retrievalId=kai20241108te1&fileId=110"
-        },
-        {
-          "name": "議事録",
-          "url": "https://www.fsc.go.jp/fsciis/attachedFile/download?retrievalId=kai20241108te1&fileId=310"
-        },
-        {
-          "name": "議事概要",
-          "url": "https://www.fsc.go.jp/fsciis/attachedFile/download?retrievalId=kai20241108te1&fileId=410"
-        }
-      ]
-    },
-    {
-      "id": "mhlw-794-20241108-037",
-      "councilId": "mhlw-794",
-      "name": "第37回 企業年金・個人年金部会",
-      "date": "2024/11/08",
-      "officialUrl": "https://www.mhlw.go.jp/stf/newpage_45168.html",
-      "materials": [
-        {
-          "name": "議事録",
-          "url": "https://www.mhlw.go.jp/stf/newpage_51328.html",
-          "type": "HTML"
-        }
-      ]
-    },
-    {
-      "id": "mhlw-949-20241108-075",
-      "councilId": "mhlw-949",
-      "name": "第75回 雇用環境・均等分科会(旧雇用均等分科会)",
-      "date": "2024/11/08",
-      "officialUrl": "https://www.mhlw.go.jp/stf/newpage_45162.html",
-      "materials": [
-        {
-          "name": "議事録",
-          "url": "https://www.mhlw.go.jp/content/11909500/001356441.pdf"
-        }
-      ]
-    },
-    {
-      "id": "mic-ipnet_iinkai-20241108-082",
-      "councilId": "mic-ipnet_iinkai",
-      "name": "情報通信審議会 情報通信技術分科会 IPネットワーク設備委員会（第82回）（2024年11月8日開催）",
-      "date": "2024/11/08",
-      "officialUrl": "https://www.soumu.go.jp/main_sosiki/joho_tsusin/policyreports/joho_tsusin/02kiban05_04000693.html",
-      "materials": [
-        {
-          "name": "IP ネットワーク設備委員会報告(案)についての意見募集の結果",
-          "url": "https://www.soumu.go.jp/main_content/000976369.pdf"
-        },
-        {
-          "name": "IP ネットワーク設備委員会報告(案)",
-          "url": "https://www.soumu.go.jp/main_content/000976370.pdf"
-        },
-        {
-          "name": "議事概要",
-          "url": "https://www.soumu.go.jp/main_content/000976571.pdf"
-        }
-      ]
-    },
-    {
-      "id": "mof-1137-20241108-059",
-      "councilId": "mof-1137",
-      "name": "第59回外国為替等分科会",
-      "date": "2024/11/08",
-      "officialUrl": "https://www.mof.go.jp/about_mof/councils/customs_foreign_exchange/sub-foreign_exchange/proceedings/material/20241108.html",
-      "materials": [
-        {
-          "name": "議事次第(第59回外国為替等分科会)",
-          "url": "https://www.mof.go.jp/about_mof/councils/customs_foreign_exchange/sub-foreign_exchange/proceedings/material/20241108_1.pdf"
-        },
-        {
-          "name": "【資料1】関税・外国為替等審議会 外国為替等分科会 委員名簿",
-          "url": "https://www.mof.go.jp/about_mof/councils/customs_foreign_exchange/sub-foreign_exchange/proceedings/material/20241108_2.pdf"
-        },
-        {
-          "name": "【資料2】最近の国際金融情勢について",
-          "url": "https://www.mof.go.jp/about_mof/councils/customs_foreign_exchange/sub-foreign_exchange/proceedings/material/20241108_3.pdf"
-        }
-      ]
     }
   ],
   "categories": {
@@ -216012,8 +215892,8 @@
     "cas-zensedai_hosyo",
     "mof-zaiseiseido_bunkakai"
   ],
-  "lastCrawlTime": "2026/11/08 21:07",
+  "lastCrawlTime": "2026/11/09 00:25",
   "hasArchive": true,
-  "totalMeetingsCount": 25018,
-  "totalMaterialsCount": 153545
+  "totalMeetingsCount": 25020,
+  "totalMaterialsCount": 153553
 }
