@@ -178,8 +178,12 @@ class TestMaterialExtraction(unittest.TestCase):
         self.assertTrue(is_intermediate_html_material('会議資料', 'https://www.cao.go.jp/zei-cho/gijiroku/digital-noukan/2025/7digital-noukan4kai.html'))
         self.assertTrue(is_intermediate_html_material('配付資料一覧ページ (HTML)', 'https://www.chisou.go.jp/tiiki/kokusentoc/dai69/shiryou.html'))
         self.assertTrue(is_intermediate_html_material('第16回 議事次第・配付資料 (HTML)', 'https://www.cas.go.jp/jp/seisaku/kagayakujosei/dai16/gijisidai.html'))
+        self.assertTrue(is_intermediate_html_material('会議資料', 'https://www.mof.go.jp/about_mof/councils/fiscal_system_council/sub-of_filp/proceedings/material/zaitoa20250731.html'))
+        self.assertTrue(is_intermediate_html_material('配付資料', 'https://www.mhlw.go.jp/stf/newpage_76614.html'))
+        self.assertTrue(is_intermediate_html_material('開催案内', 'https://www.mhlw.go.jp/stf/newpage_76613.html'))
         self.assertFalse(is_intermediate_html_material('次第', 'https://www.cao.go.jp/zei-cho/content/7digital-noukan4kai.pdf'))
         self.assertFalse(is_intermediate_html_material('議事要旨', 'https://www.soumu.go.jp/main_sosiki/singi/gijiyoushi.html'))
+        self.assertFalse(is_intermediate_html_material('議事録', 'https://www.mof.go.jp/about_mof/councils/fiscal_system_council/sub-of_filp/proceedings/proceedings/zaitoa20250731.html'))
 
 
 if __name__ == '__main__':

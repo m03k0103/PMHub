@@ -35,9 +35,12 @@ def is_intermediate_html_material(name, url):
     generic_names = {
         '会議資料', '配付資料', '配布資料', '資料一覧', '配付資料一覧', '配布資料一覧',
         '会議資料一覧', '提出資料 (HTML)', '配付資料 (HTML)', '提出資料', '会議資料ページ',
-        '議事次第・配付資料 (HTML)', '配付資料一覧ページ (HTML)', '議事次第・配付資料'
+        '議事次第・配付資料 (HTML)', '配付資料一覧ページ (HTML)', '議事次第・配付資料',
+        '会議資料等', '配付資料等', '配布資料等', '開催案内', '案内', '開催告知'
     }
     if clean_n in generic_names or '配付資料一覧ページ' in clean_n or '議事次第・配付資料' in clean_n:
+        return True
+    if ('/material/' in u or '/materials/' in u) and (clean_n in generic_names or clean_n in ('資料', '配付資料', '配布資料')):
         return True
     return False
 

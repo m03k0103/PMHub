@@ -272,9 +272,13 @@ def is_intermediate_html_material(name, url):
     generic_names = {
         '会議資料', '配付資料', '配布資料', '資料一覧', '配付資料一覧', '配布資料一覧',
         '会議資料一覧', '提出資料 (HTML)', '配付資料 (HTML)', '提出資料', '会議資料ページ',
-        '議事次第・配付資料 (HTML)', '配付資料一覧ページ (HTML)', '議事次第・配付資料'
+        '議事次第・配付資料 (HTML)', '配付資料一覧ページ (HTML)', '議事次第・配付資料',
+        '会議資料等', '配付資料等', '配布資料等', '開催案内', '案内', '開催告知'
     }
-    if clean_n in generic_names or '配付資料一覧ページ' in clean_n or '議事次第・配付資料' in clean_n or '資料一覧' in clean_n:
+    if clean_n in generic_names or '配付資料一覧ページ' in clean_n or '議事次第・配付資料' in clean_n:
+        return True
+    # URLパスに /material/ や /materials/ を含むHTMLページで、リンク名がジェネリック資料名の場合
+    if ('/material/' in u or '/materials/' in u) and (clean_n in generic_names or clean_n in ('資料', '配付資料', '配布資料')):
         return True
     return False
 
@@ -2290,7 +2294,12 @@ def _extract_meetings_from_parent_table(html, target_url, council_name, rule=Non
                     continue
 
                 is_pdf = href.lower().endswith(('.pdf', '.docx', '.xlsx', '.doc', '.xls')) or '/pdf/' in href.lower()
-                is_pure_minutes = any(k in href.lower() for k in ['gijiroku', 'gijiyoshi', 'proceedings']) or any(k in clean_mat_name for k in ['議事録', '議事要旨'])
+                is_intermediate = is_intermediate_html_material(clean_mat_name, abs_url)
+                fn_lower = fn.lower()
+                is_pure_minutes = not is_intermediate and (
+                    any(k in clean_mat_name for k in ['議事録', '議事要旨', '議事概要', '議事録（HTML）', '議事要旨（HTML）']) or
+                    (any(k in fn_lower for k in ['gijiroku', 'gijiyoshi', 'proceedings']) and not is_generic_material_name(clean_mat_name))
+                )
 
                 if is_pdf:
                     row_materials.append({
@@ -2325,11 +2334,12 @@ def _extract_meetings_from_parent_table(html, target_url, council_name, rule=Non
                                 if not any(rm['url'] == psm['url'] for rm in row_materials):
                                     row_materials.append(psm)
                         else:
-                            # PDF がない場合、中間HTMLコンテナや個別回ページ自身（is_intermediate_html_material）は資料にフォールバック採用しない
-                            if not is_intermediate_html_material(cand.get('name', ''), c_url):
+                            # PDF がない場合、中間HTMLコンテナ・事前告知ページ（is_intermediate_html_material）は資料にフォールバック採用しない
+                            cand_name = cand.get('name', '')
+                            if not is_intermediate_html_material(cand_name, c_url):
                                 if not any(rm['url'] == c_url for rm in row_materials):
                                     row_materials.append({
-                                        "name": cand['name'] or "資料",
+                                        "name": cand_name or "資料",
                                         "url": c_url,
                                         "type": "HTML"
                                     })
@@ -2498,7 +2508,12 @@ def _extract_meetings_from_parent_sections(html, target_url, council_name, rule=
                         continue
 
                     is_pdf = href.lower().endswith(('.pdf', '.docx', '.xlsx', '.doc', '.xls')) or '/pdf/' in href.lower()
-                    is_pure_minutes = any(k in href.lower() for k in ['gijiroku', 'gijiyoshi', 'proceedings']) or any(k in clean_mat_name for k in ['議事録', '議事要旨'])
+                    is_intermediate = is_intermediate_html_material(clean_mat_name, abs_url)
+                    fn_lower = fn.lower()
+                    is_pure_minutes = not is_intermediate and (
+                        any(k in clean_mat_name for k in ['議事録', '議事要旨', '議事概要', '議事録（HTML）', '議事要旨（HTML）']) or
+                        (any(k in fn_lower for k in ['gijiroku', 'gijiyoshi', 'proceedings']) and not is_generic_material_name(clean_mat_name))
+                    )
 
                     if is_pdf:
                         mats.append({
@@ -2536,12 +2551,14 @@ def _extract_meetings_from_parent_sections(html, target_url, council_name, rule=
                             if not any(rm['url'] == psm['url'] for rm in mats):
                                 mats.append(psm)
                     else:
-                        if not any(rm['url'] == c_url for rm in mats):
-                            mats.append({
-                                "name": cand['name'] or "資料",
-                                "url": c_url,
-                                "type": "HTML"
-                            })
+                        cand_name = cand.get('name', '')
+                        if not is_intermediate_html_material(cand_name, c_url):
+                            if not any(rm['url'] == c_url for rm in mats):
+                                mats.append({
+                                    "name": cand_name or "資料",
+                                    "url": c_url,
+                                    "type": "HTML"
+                                })
 
         meet_title = f"第{round_num}回 {council_name}"
         meetings.append({

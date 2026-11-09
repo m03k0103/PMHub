@@ -4736,7 +4736,7 @@
       "pdf_selector": "a[href*='.pdf'], a[href*='/content/']"
     },
     "mhlw-2857": {
-      "template": "tpl-parent-table-direct",
+      "template": "tpl-mhlw-stf-subpage",
       "manualLock": true
     },
     "mhlw-2859": {
@@ -5245,7 +5245,7 @@
       "manualLock": true
     },
     "mhlw-894": {
-      "template": "tpl-parent-table-direct",
+      "template": "tpl-mhlw-stf-subpage",
       "manualLock": true
     },
     "mhlw-895": {
@@ -7032,9 +7032,8 @@
       "subpage_discovery_pattern": "[^\"']*(?:kyosai|kyosaigijiroku|kyosaiyousi)\\d{8}[^\"']*"
     },
     "mof-1132": {
-      "template": "tpl-general-round-subpage",
-      "manualLock": true,
-      "subpage_discovery_pattern": "[^\\\"\\']*(?:proceedings|material|report)/(?:zaitoa?\\w+|20\\d{6})[^\\\"\\']*"
+      "template": "tpl-mof-proceedings-subpage",
+      "manualLock": true
     },
     "mof-1133": {
       "template": "tpl-mof-proceedings-subpage",

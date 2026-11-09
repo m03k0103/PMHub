@@ -2400,8 +2400,7 @@
       "name": "人工知能(AI)技術の利用と消費者問題に関する専門調査会",
       "officialUrl": "https://www.cao.go.jp/consumer/kabusoshiki/ai_technology/index.html",
       "description": "生成AI等の人工知能技術の利用に伴う消費者問題やリスク対応、消費者保護ルールを調査審議する専門調査会。",
-      "pastYearCount": 13,
-      "isNewlyDiscovered": true
+      "pastYearCount": 13
     },
     {
       "id": "cao-barrier_free_universal",
@@ -14414,8 +14413,7 @@
       "name": "社会保障審議会 介護保険部会",
       "officialUrl": "https://www.mhlw.go.jp/stf/shingi/shingi-hosho_126734.html",
       "description": "厚生労働省社会保障審議会における社会保障審議会 介護保険部会。",
-      "pastYearCount": 49,
-      "isNewlyDiscovered": true
+      "pastYearCount": 49
     },
     {
       "id": "mhlw-shakai_hosho_kaigo_kyuufu",
@@ -18283,7 +18281,6 @@
       "name": "第138回 社会保障審議会 介護保険部会",
       "date": "2026/11/09",
       "officialUrl": "https://www.mhlw.go.jp/stf/newpage_77213.html",
-      "isNewlyDiscovered": true,
       "materials": [
         {
           "name": "資料1 特定地域の基準案について(報告)",
@@ -18550,7 +18547,6 @@
       "name": "第14回 人工知能(AI)技術の利用と消費者問題に関する専門調査会",
       "date": "2026/11/05",
       "officialUrl": "https://www.cao.go.jp/consumer/kabusoshiki/ai_technology/014/shiryou/index.html",
-      "isNewlyDiscovered": true,
       "materials": [
         {
           "name": "議事次第",
@@ -215983,5 +215979,5 @@
   "lastCrawlTime": "2026/11/09 00:25",
   "hasArchive": true,
   "totalMeetingsCount": 25020,
-  "totalMaterialsCount": 153571
+  "totalMaterialsCount": 153567
 }
