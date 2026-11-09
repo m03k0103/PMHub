@@ -1934,7 +1934,7 @@
       "category": "COUNCIL",
       "name": "沖縄振興審議会",
       "officialUrl": "https://www8.cao.go.jp/okinawa/siryou/singikai/index.html",
-      "pastYearCount": 33
+      "pastYearCount": 1
     },
     {
       "id": "cao-222",
@@ -2400,7 +2400,7 @@
       "name": "人工知能(AI)技術の利用と消費者問題に関する専門調査会",
       "officialUrl": "https://www.cao.go.jp/consumer/kabusoshiki/ai_technology/index.html",
       "description": "生成AI等の人工知能技術の利用に伴う消費者問題やリスク対応、消費者保護ルールを調査審議する専門調査会。",
-      "pastYearCount": 14,
+      "pastYearCount": 13,
       "isNewlyDiscovered": true
     },
     {
@@ -8336,7 +8336,7 @@
       "category": "WORKING_GROUP",
       "name": "開示制度ワーキング・グループ",
       "officialUrl": "https://www.fsa.go.jp/singi/kaijiseidowg/index.html",
-      "pastYearCount": 5,
+      "pastYearCount": 0,
       "materials": [
         {
           "name": "「「金融庁・開示制度ワーキング・グループ報告」~ 新株予約権無償割当てによる増資(いわゆる「ライツ・オファリング」)に係る制度整備について ~」",
@@ -14414,7 +14414,7 @@
       "name": "社会保障審議会 介護保険部会",
       "officialUrl": "https://www.mhlw.go.jp/stf/shingi/shingi-hosho_126734.html",
       "description": "厚生労働省社会保障審議会における社会保障審議会 介護保険部会。",
-      "pastYearCount": 50,
+      "pastYearCount": 49,
       "isNewlyDiscovered": true
     },
     {
@@ -18157,13 +18157,7 @@
       "name": "第9回 税制のEBPMに関する専門家会合(2026年11月10日)",
       "date": "2026/11/10",
       "officialUrl": "https://www.cao.go.jp/zei-cho/gijiroku/ebpm/2026/8ebpm9kai.html",
-      "materials": [
-        {
-          "name": "会議資料",
-          "url": "https://www.cao.go.jp/zei-cho/gijiroku/ebpm/2026/8ebpm9kai.html",
-          "type": "HTML"
-        }
-      ]
+      "materials": []
     },
     {
       "id": "mhlw-938-20261110-215",
@@ -18178,8 +18172,73 @@
       "councilId": "mhlw-2857",
       "name": "第25回 成年後見制度利用促進専門家会議",
       "date": "2026/11/09",
-      "officialUrl": "https://www.mhlw.go.jp/stf/shingi2/0000212875_00007.html",
-      "materials": []
+      "officialUrl": "https://www.mhlw.go.jp/stf/newpage_77164.html",
+      "materials": [
+        {
+          "name": "議事次第（第25回成年後見制度利用促進専門家会議）",
+          "url": "https://www.mhlw.go.jp/content/12000000/001767204.pdf"
+        },
+        {
+          "name": "【資料１】地域連携ネットワークづくりの推進と機能強化",
+          "url": "https://www.mhlw.go.jp/content/12000000/001767182.pdf"
+        },
+        {
+          "name": "【資料２】総合的な権利擁護支援策の充実",
+          "url": "https://www.mhlw.go.jp/content/12000000/001767183.pdf"
+        },
+        {
+          "name": "【資料３】意思決定支援の普及・啓発",
+          "url": "https://www.mhlw.go.jp/content/12000000/001767184.pdf"
+        },
+        {
+          "name": "【資料４】担い手の確保・育成等の推進",
+          "url": "https://www.mhlw.go.jp/content/12000000/001767185.pdf"
+        },
+        {
+          "name": "【資料５】ワーキング・グループの議論を踏まえた論点整理",
+          "url": "https://www.mhlw.go.jp/content/12000000/001767186.pdf"
+        },
+        {
+          "name": "【参考資料１】第25回 成年後見制度利用促進専門家会議委員名簿",
+          "url": "https://www.mhlw.go.jp/content/12000000/001767188.pdf"
+        },
+        {
+          "name": "【参考資料２】成年後見制度の利用の促進に関する法律(イメージ図・本文)",
+          "url": "https://www.mhlw.go.jp/content/12000000/001767189.pdf"
+        },
+        {
+          "name": "【参考資料３】成年後見利用促進専門家会議の設置について",
+          "url": "https://www.mhlw.go.jp/content/12000000/001767190.pdf"
+        },
+        {
+          "name": "【参考資料４】成年後見制度利用促進専門家会議運営規則",
+          "url": "https://www.mhlw.go.jp/content/12000000/001767192.pdf"
+        },
+        {
+          "name": "【参考資料５】第二期成年後見制度利用促進基本計画",
+          "url": "https://www.mhlw.go.jp/content/12000000/001767193.pdf"
+        },
+        {
+          "name": "【参考資料６】第二期成年後見制度利用促進基本計画に係る中間検証報告書",
+          "url": "https://www.mhlw.go.jp/content/12000000/001767194.pdf"
+        },
+        {
+          "name": "【参考資料７】令和９年度概算要求概要（厚生労働省）",
+          "url": "https://www.mhlw.go.jp/content/12000000/001767195.pdf"
+        },
+        {
+          "name": "【参考資料８】意思決定支援の基本的考え方～だれもが「私の人生の主人公は、私」～",
+          "url": "https://www.mhlw.go.jp/content/12000000/001767196.pdf"
+        },
+        {
+          "name": "【参考資料９】青木委員・久保委員・永田委員・花俣委員・水島委員提出資料",
+          "url": "https://www.mhlw.go.jp/content/12000000/001767197.pdf"
+        },
+        {
+          "name": "【参考資料10】水島委員提出資料",
+          "url": "https://www.mhlw.go.jp/content/12000000/001767198.pdf"
+        }
+      ]
     },
     {
       "id": "mhlw-894-20261109-014",
@@ -18187,7 +18246,36 @@
       "name": "第14回 食品衛生監視部会",
       "date": "2026/11/09",
       "officialUrl": "https://www.mhlw.go.jp/stf/newpage_76614.html",
-      "materials": []
+      "materials": [
+        {
+          "name": "議事次第",
+          "url": "https://www.mhlw.go.jp/content/10906000/001767083.pdf"
+        },
+        {
+          "name": "資料１ 平成30年食品衛生法改正の施行後５年を目途とした検討を踏まえた対応について",
+          "url": "https://www.mhlw.go.jp/content/10906000/001767084.pdf"
+        },
+        {
+          "name": "資料２ サプリメント食品に係る規格基準の策定等について（令和８年10月26日令和８年度第４回食品衛生基準審議会新開発食品調査部会 資料１)",
+          "url": "https://www.mhlw.go.jp/content/10906000/001767285.pdf"
+        },
+        {
+          "name": "資料３ 牛海綿状脳症（BSE）対策の見直しについて",
+          "url": "https://www.mhlw.go.jp/content/10906000/001767086.pdf"
+        },
+        {
+          "name": "参考資料１ 平成30年食品衛生法改正の施行後５年を目途とした検討のとりまとめ",
+          "url": "https://www.mhlw.go.jp/content/10906000/001767087.pdf"
+        },
+        {
+          "name": "参考資料２ 平成30年食品衛生法改正の施行後５年を目途とした検討のとりまとめに関する参考資料集",
+          "url": "https://www.mhlw.go.jp/content/10906000/001767095.pdf"
+        },
+        {
+          "name": "参考資料３ 食品衛生監視部会委員名簿",
+          "url": "https://www.mhlw.go.jp/content/10906000/001767096.pdf"
+        }
+      ]
     },
     {
       "id": "mhlw-shakai_hosho_kaigo_hoken-20261109-138",
@@ -215895,5 +215983,5 @@
   "lastCrawlTime": "2026/11/09 00:25",
   "hasArchive": true,
   "totalMeetingsCount": 25020,
-  "totalMaterialsCount": 153553
+  "totalMaterialsCount": 153571
 }
