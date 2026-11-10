@@ -5422,8 +5422,7 @@
       "category": "COUNCIL",
       "name": "こども家庭審議会 こどもの預かりサービスの在り方に関する専門委員会",
       "officialUrl": "https://www.cfa.go.jp/councils/shingikai/kodomo_sodachi/azukari_service",
-      "pastYearCount": 3,
-      "isNewlyDiscovered": true
+      "pastYearCount": 0
     },
     {
       "id": "cfa-care_needs",
@@ -18107,8 +18106,37 @@
       "councilId": "mhlw-2855",
       "name": "第4回 創薬力向上のための官民協議会 施策検討・推進部会",
       "date": "2026/11/13",
-      "officialUrl": "https://www.mhlw.go.jp/stf/newpage_76241.html",
-      "materials": []
+      "officialUrl": "https://www.mhlw.go.jp/stf/newpage_77073.html",
+      "materials": [
+        {
+          "name": "議事次第",
+          "url": "https://www.mhlw.go.jp/content/11121000/001765105.pdf"
+        },
+        {
+          "name": "製造・国内投資",
+          "url": "https://www.mhlw.go.jp/content/11121000/001765106.pdf"
+        },
+        {
+          "name": "藤本 利夫 構成員 提出資料",
+          "url": "https://www.mhlw.go.jp/content/11121000/001765107.pdf"
+        },
+        {
+          "name": "牧 兼充 構成員 提出資料",
+          "url": "https://www.mhlw.go.jp/content/11121000/001765110.pdf"
+        },
+        {
+          "name": "吉川 真由 構成員 提出資料",
+          "url": "https://www.mhlw.go.jp/content/11121000/001765112.pdf"
+        },
+        {
+          "name": "宮柱 明日香 構成員 提出資料",
+          "url": "https://www.mhlw.go.jp/content/11121000/001765113.pdf"
+        },
+        {
+          "name": "ジョンポール・プリシーノ 構成員 提出資料",
+          "url": "https://www.mhlw.go.jp/content/11121000/001765114.pdf"
+        }
+      ]
     },
     {
       "id": "mhlw-920-20261113-003",
@@ -18116,15 +18144,37 @@
       "name": "第3回 医療用医薬品迅速・安定供給部会",
       "date": "2026/11/13",
       "officialUrl": "https://www.mhlw.go.jp/stf/shingi/shingi-kousei_467561_00015.html",
-      "materials": []
+      "materials": [
+        {
+          "name": "第3回医療用医薬品迅速・安定供給部会 配布資料",
+          "url": "https://www.mhlw.go.jp/content/001646685.pdf"
+        }
+      ]
     },
     {
       "id": "mhlw-952-20261113-042",
       "councilId": "mhlw-952",
       "name": "第42回 労働政策基本部会",
       "date": "2026/11/13",
-      "officialUrl": "https://www.mhlw.go.jp/stf/shingi/shingi-rousei_471121.html",
-      "materials": []
+      "officialUrl": "https://www.mhlw.go.jp/stf/newpage_76504.html",
+      "materials": [
+        {
+          "name": "議事次第",
+          "url": "https://www.mhlw.go.jp/content/12602000/001755226.pdf"
+        },
+        {
+          "name": "資料1 株式会社みずほフィナンシャルグループ提出資料",
+          "url": "https://www.mhlw.go.jp/content/12602000/001754475.pdf"
+        },
+        {
+          "name": "資料2 東日本旅客鉄道株式会社提出資料",
+          "url": "https://www.mhlw.go.jp/content/12602000/001754476.pdf"
+        },
+        {
+          "name": "資料3 株式会社橋本組提出資料",
+          "url": "https://www.mhlw.go.jp/content/12602000/001754477.pdf"
+        }
+      ]
     },
     {
       "id": "mhlw-ishiwata_higai_shinsa-20261112-039",
@@ -18132,7 +18182,32 @@
       "name": "第39回 特定石綿被害建設業務労働者等認定審査会専門委員会",
       "date": "2026/11/12",
       "officialUrl": "https://www.mhlw.go.jp/stf/newpage_26379.html",
-      "materials": []
+      "materials": [
+        {
+          "name": "専門委員名簿",
+          "url": "https://www.mhlw.go.jp/content/11201000/001695964.pdf"
+        },
+        {
+          "name": "専門委員会名簿",
+          "url": "https://www.mhlw.go.jp/content/11201000/001664350.pdf"
+        },
+        {
+          "name": "特定石綿被害建設業務労働者等認定審査会専門委員会の運営について(案)",
+          "url": "https://www.mhlw.go.jp/content/11201000/001520043.pdf"
+        },
+        {
+          "name": "専門委員名簿",
+          "url": "https://www.mhlw.go.jp/content/11201000/001488351.pdf"
+        },
+        {
+          "name": "専門委員名簿",
+          "url": "https://www.mhlw.go.jp/content/11201000/001269068.pdf"
+        },
+        {
+          "name": "委員名簿",
+          "url": "https://www.mhlw.go.jp/content/11201000/001228377.pdf"
+        }
+      ]
     },
     {
       "id": "mhlw-785-20261111-131",
@@ -18147,8 +18222,33 @@
       "councilId": "mhlw-945",
       "name": "第145回 障害者雇用分科会",
       "date": "2026/11/11",
-      "officialUrl": "https://www.mhlw.go.jp/stf/shingi/shingi-rousei_126985.html",
-      "materials": []
+      "officialUrl": "https://www.mhlw.go.jp/stf/newpage_77293.html",
+      "materials": [
+        {
+          "name": "全体版",
+          "url": "https://www.mhlw.go.jp/content/11704000/001768034.pdf"
+        },
+        {
+          "name": "議事次第",
+          "url": "https://www.mhlw.go.jp/content/11704000/001768035.pdf"
+        },
+        {
+          "name": "資料1 これまでの議論の整理",
+          "url": "https://www.mhlw.go.jp/content/11704000/001768036.pdf"
+        },
+        {
+          "name": "参考資料1 労働政策審議会障害者雇用分科会 委員名簿",
+          "url": "https://www.mhlw.go.jp/content/11704000/001768037.pdf"
+        },
+        {
+          "name": "参考資料2 これまでの議論の整理(概要版)",
+          "url": "https://www.mhlw.go.jp/content/11704000/001768038.pdf"
+        },
+        {
+          "name": "参考資料3 一般社団法人日本障害者雇用促進事業者協会事業ガイドライン",
+          "url": "https://www.mhlw.go.jp/content/11704000/001768039.pdf"
+        }
+      ]
     },
     {
       "id": "cao-zeicho_ebpm_senmonka-20261110-009",
@@ -18156,15 +18256,73 @@
       "name": "第9回 税制のEBPMに関する専門家会合(2026年11月10日)",
       "date": "2026/11/10",
       "officialUrl": "https://www.cao.go.jp/zei-cho/gijiroku/ebpm/2026/8ebpm9kai.html",
-      "materials": []
+      "materials": [
+        {
+          "name": "次第",
+          "url": "https://www.cao.go.jp/zei-cho/content/8ebpm9kai.pdf"
+        },
+        {
+          "name": "【証9-1】財務省説明資料(租税特別措置の検証(中小企業税制))",
+          "url": "https://www.cao.go.jp/zei-cho/content/8ebpm9kai1.pdf"
+        },
+        {
+          "name": "【証9-2】中小企業庁説明資料(中小企業税制について)",
+          "url": "https://www.cao.go.jp/zei-cho/content/8ebpm9kai2.pdf"
+        }
+      ]
     },
     {
       "id": "mhlw-938-20261110-215",
       "councilId": "mhlw-938",
       "name": "第215回 職業安定分科会雇用保険部会",
       "date": "2026/11/10",
-      "officialUrl": "https://www.mhlw.go.jp/stf/shingi/shingi-rousei_126980_00007.html",
-      "materials": []
+      "officialUrl": "https://www.mhlw.go.jp/stf/newpage_76851.html",
+      "materials": [
+        {
+          "name": "第215回議事次第",
+          "url": "https://www.mhlw.go.jp/content/11601000/001767711.pdf"
+        },
+        {
+          "name": "【資料1】暫定任意適用事業について",
+          "url": "https://www.mhlw.go.jp/content/11601000/001767712.pdf"
+        },
+        {
+          "name": "【資料2-1】農林水産省 提出資料",
+          "url": "https://www.mhlw.go.jp/content/11601000/001767713.pdf"
+        },
+        {
+          "name": "【資料2-2】一般社団法人全国農業会議所、一般社団法人全国農業協同組合中央会 提出資料",
+          "url": "https://www.mhlw.go.jp/content/11601000/001767714.pdf"
+        },
+        {
+          "name": "【資料2-3】林野庁 提出資料",
+          "url": "https://www.mhlw.go.jp/content/11601000/001767715.pdf"
+        },
+        {
+          "name": "【資料2-4】一般社団法人日本林業経営者協会 提出資料.",
+          "url": "https://www.mhlw.go.jp/content/11601000/001767716.pdf"
+        },
+        {
+          "name": "【資料2-5】水産庁 提出資料",
+          "url": "https://www.mhlw.go.jp/content/11601000/001767717.pdf"
+        },
+        {
+          "name": "【資料3】マルチジョブホルダーの実施状況について",
+          "url": "https://www.mhlw.go.jp/content/11601000/001767718.pdf"
+        },
+        {
+          "name": "【資料4】暫定任意適用事業・マルチジョブホルダー制度について(議論)",
+          "url": "https://www.mhlw.go.jp/content/11601000/001767719.pdf"
+        },
+        {
+          "name": "【参考資料1】雇用保険制度の概要",
+          "url": "https://www.mhlw.go.jp/content/11601000/001767722.pdf"
+        },
+        {
+          "name": "【参考資料2】雇用保険制度の主要指標.",
+          "url": "https://www.mhlw.go.jp/content/11601000/001767723.pdf"
+        }
+      ]
     },
     {
       "id": "cfa-azukari_service-20261109-003",
@@ -18172,7 +18330,6 @@
       "name": "第3回 こども家庭審議会 こどもの預かりサービスの在り方に関する専門委員会",
       "date": "2026/11/09",
       "officialUrl": "https://www.cfa.go.jp/councils/shingikai/kodomo_sodachi/azukari_service/5d6b029e",
-      "isNewlyDiscovered": true,
       "materials": [
         {
           "name": "議事次第",
@@ -18232,63 +18389,63 @@
       "officialUrl": "https://www.mhlw.go.jp/stf/newpage_77164.html",
       "materials": [
         {
-          "name": "議事次第（第25回成年後見制度利用促進専門家会議）",
+          "name": "議事次第(第25回成年後見制度利用促進専門家会議)",
           "url": "https://www.mhlw.go.jp/content/12000000/001767204.pdf"
         },
         {
-          "name": "【資料１】地域連携ネットワークづくりの推進と機能強化",
+          "name": "【資料1】地域連携ネットワークづくりの推進と機能強化",
           "url": "https://www.mhlw.go.jp/content/12000000/001767182.pdf"
         },
         {
-          "name": "【資料２】総合的な権利擁護支援策の充実",
+          "name": "【資料2】総合的な権利擁護支援策の充実",
           "url": "https://www.mhlw.go.jp/content/12000000/001767183.pdf"
         },
         {
-          "name": "【資料３】意思決定支援の普及・啓発",
+          "name": "【資料3】意思決定支援の普及・啓発",
           "url": "https://www.mhlw.go.jp/content/12000000/001767184.pdf"
         },
         {
-          "name": "【資料４】担い手の確保・育成等の推進",
+          "name": "【資料4】担い手の確保・育成等の推進",
           "url": "https://www.mhlw.go.jp/content/12000000/001767185.pdf"
         },
         {
-          "name": "【資料５】ワーキング・グループの議論を踏まえた論点整理",
+          "name": "【資料5】ワーキング・グループの議論を踏まえた論点整理",
           "url": "https://www.mhlw.go.jp/content/12000000/001767186.pdf"
         },
         {
-          "name": "【参考資料１】第25回 成年後見制度利用促進専門家会議委員名簿",
+          "name": "【参考資料1】第25回 成年後見制度利用促進専門家会議委員名簿",
           "url": "https://www.mhlw.go.jp/content/12000000/001767188.pdf"
         },
         {
-          "name": "【参考資料２】成年後見制度の利用の促進に関する法律(イメージ図・本文)",
+          "name": "【参考資料2】成年後見制度の利用の促進に関する法律(イメージ図・本文)",
           "url": "https://www.mhlw.go.jp/content/12000000/001767189.pdf"
         },
         {
-          "name": "【参考資料３】成年後見利用促進専門家会議の設置について",
+          "name": "【参考資料3】成年後見利用促進専門家会議の設置について",
           "url": "https://www.mhlw.go.jp/content/12000000/001767190.pdf"
         },
         {
-          "name": "【参考資料４】成年後見制度利用促進専門家会議運営規則",
+          "name": "【参考資料4】成年後見制度利用促進専門家会議運営規則",
           "url": "https://www.mhlw.go.jp/content/12000000/001767192.pdf"
         },
         {
-          "name": "【参考資料５】第二期成年後見制度利用促進基本計画",
+          "name": "【参考資料5】第二期成年後見制度利用促進基本計画",
           "url": "https://www.mhlw.go.jp/content/12000000/001767193.pdf"
         },
         {
-          "name": "【参考資料６】第二期成年後見制度利用促進基本計画に係る中間検証報告書",
+          "name": "【参考資料6】第二期成年後見制度利用促進基本計画に係る中間検証報告書",
           "url": "https://www.mhlw.go.jp/content/12000000/001767194.pdf"
         },
         {
-          "name": "【参考資料７】令和９年度概算要求概要（厚生労働省）",
+          "name": "【参考資料7】令和9年度概算要求概要(厚生労働省)",
           "url": "https://www.mhlw.go.jp/content/12000000/001767195.pdf"
         },
         {
-          "name": "【参考資料８】意思決定支援の基本的考え方～だれもが「私の人生の主人公は、私」～",
+          "name": "【参考資料8】意思決定支援の基本的考え方~だれもが「私の人生の主人公は、私」~",
           "url": "https://www.mhlw.go.jp/content/12000000/001767196.pdf"
         },
         {
-          "name": "【参考資料９】青木委員・久保委員・永田委員・花俣委員・水島委員提出資料",
+          "name": "【参考資料9】青木委員・久保委員・永田委員・花俣委員・水島委員提出資料",
           "url": "https://www.mhlw.go.jp/content/12000000/001767197.pdf"
         },
         {
@@ -18309,27 +18466,27 @@
           "url": "https://www.mhlw.go.jp/content/10906000/001767083.pdf"
         },
         {
-          "name": "資料１ 平成30年食品衛生法改正の施行後５年を目途とした検討を踏まえた対応について",
+          "name": "資料1 平成30年食品衛生法改正の施行後5年を目途とした検討を踏まえた対応について",
           "url": "https://www.mhlw.go.jp/content/10906000/001767084.pdf"
         },
         {
-          "name": "資料２ サプリメント食品に係る規格基準の策定等について（令和８年10月26日令和８年度第４回食品衛生基準審議会新開発食品調査部会 資料１)",
+          "name": "資料2 サプリメント食品に係る規格基準の策定等について(令和8年10月26日令和8年度第4回食品衛生基準審議会新開発食品調査部会 資料1)",
           "url": "https://www.mhlw.go.jp/content/10906000/001767285.pdf"
         },
         {
-          "name": "資料３ 牛海綿状脳症（BSE）対策の見直しについて",
+          "name": "資料3 牛海綿状脳症(BSE)対策の見直しについて",
           "url": "https://www.mhlw.go.jp/content/10906000/001767086.pdf"
         },
         {
-          "name": "参考資料１ 平成30年食品衛生法改正の施行後５年を目途とした検討のとりまとめ",
+          "name": "参考資料1 平成30年食品衛生法改正の施行後5年を目途とした検討のとりまとめ",
           "url": "https://www.mhlw.go.jp/content/10906000/001767087.pdf"
         },
         {
-          "name": "参考資料２ 平成30年食品衛生法改正の施行後５年を目途とした検討のとりまとめに関する参考資料集",
+          "name": "参考資料2 平成30年食品衛生法改正の施行後5年を目途とした検討のとりまとめに関する参考資料集",
           "url": "https://www.mhlw.go.jp/content/10906000/001767095.pdf"
         },
         {
-          "name": "参考資料３ 食品衛生監視部会委員名簿",
+          "name": "参考資料3 食品衛生監視部会委員名簿",
           "url": "https://www.mhlw.go.jp/content/10906000/001767096.pdf"
         }
       ]
@@ -21346,7 +21503,7 @@
           "url": "https://www.bunka.go.jp/seisaku/bunkashingikai/seisaku/24/02/pdf/94453601_07.pdf"
         },
         {
-          "name": "関係団体からの提出意見）",
+          "name": "関係団体からの提出意見)",
           "url": "https://www.bunka.go.jp/seisaku/bunkashingikai/seisaku/24/02/pdf/94453601_08.pdf"
         },
         {
@@ -21354,7 +21511,7 @@
           "url": "https://www.bunka.go.jp/seisaku/bunkashingikai/seisaku/24/02/pdf/94453601_09.pdf"
         },
         {
-          "name": "関係団体からの提出意見）",
+          "name": "関係団体からの提出意見)",
           "url": "https://www.bunka.go.jp/seisaku/bunkashingikai/seisaku/24/02/pdf/94453601_10.pdf"
         },
         {
@@ -21761,8 +21918,37 @@
       "councilId": "mext-chukyo",
       "name": "第145回 中央教育審議会",
       "date": "2026/10/20",
-      "officialUrl": "https://www.mext.go.jp/b_menu/shingi/chukyo/chukyo0/index.htm",
-      "materials": []
+      "officialUrl": "https://www.mext.go.jp/b_menu/shingi/chukyo/chukyo0/gijiroku/1415607_00031.html",
+      "materials": [
+        {
+          "name": "【資料1-1】「次期学習指導要領等に向けた審議まとめ」について",
+          "url": "https://www.mext.go.jp/content/20261020-mxt-soseisk01-000052565-01.pdf"
+        },
+        {
+          "name": "【資料1-2】次期学習指導要領等に向けた審議まとめ(1)",
+          "url": "https://www.mext.go.jp/content/20261020-mxt-soseisk01-000052565-02-1.pdf"
+        },
+        {
+          "name": "【資料1-2】次期学習指導要領等に向けた審議まとめ(2)",
+          "url": "https://www.mext.go.jp/content/20261020-mxt-soseisk01-000052565-02-2.pdf"
+        },
+        {
+          "name": "【資料1-2】次期学習指導要領等に向けた審議まとめ(3)",
+          "url": "https://www.mext.go.jp/content/20261020-mxt-soseisk01-000052565-02-3.pdf"
+        },
+        {
+          "name": "【資料1-2】次期学習指導要領等に向けた審議まとめ(3)",
+          "url": "https://www.mext.go.jp/content/20261020-mxt-soseisk01-000052565-02-4.pdf"
+        },
+        {
+          "name": "【資料2-1】教員養成部会における審議のまとめについて",
+          "url": "https://www.mext.go.jp/content/20261020-mxt-soseisk01-000052565-03.pdf"
+        },
+        {
+          "name": "【資料2-2】多様な専門性を有する質の高い教職員集団の形成を加速するための方策について(審議のまとめ)",
+          "url": "https://www.mext.go.jp/content/20261020-mxt-soseisk01-000052565-04.pdf"
+        }
+      ]
     },
     {
       "id": "mext-chuo_kyoiku-20261020-145",
@@ -27966,8 +28152,129 @@
       "councilId": "mext-kokuritsu_daigaku_hyouka",
       "name": "第82回 国立大学法人評価委員会",
       "date": "2026/09/15",
-      "officialUrl": "https://www.mext.go.jp/b_menu/shingi/kokuritu/index.htm",
-      "materials": []
+      "officialUrl": "https://www.mext.go.jp/b_menu/shingi/kokuritu/gijiroku/1411366_00009.html",
+      "materials": [
+        {
+          "name": "【資料1-1】組織及び業務全般の見直しを取り巻く状況について",
+          "url": "https://www.mext.go.jp/content/20260915-mxt_hojinka-000051981_001.pdf"
+        },
+        {
+          "name": "【資料1-2】国立大学法人の組織及び業務全般の見直しに関する視点<案>(概要)",
+          "url": "https://www.mext.go.jp/content/20260915-mxt_hojinka-000051981_002.pdf"
+        },
+        {
+          "name": "【資料1-3】国立大学法人の組織及び業務全般の見直しに関する視点<案>",
+          "url": "https://www.mext.go.jp/content/20260915-mxt_hojinka-000051981_003.pdf"
+        },
+        {
+          "name": "【資料1-4】大学共同利用機関法人の組織及び業務全般の見直しに関する視点<案>(概要)",
+          "url": "https://www.mext.go.jp/content/20260915-mxt_hojinka-000051981_004.pdf"
+        },
+        {
+          "name": "【資料1-5】大学共同利用機関法人の組織及び業務全般の見直しに関する視点<案>",
+          "url": "https://www.mext.go.jp/content/20260915-mxt_hojinka-000051981_005.pdf"
+        },
+        {
+          "name": "【資料2-1】国立大学法人の第5期中期目標期間における中期目標・中期計画の方向性(概要)<案>",
+          "url": "https://www.mext.go.jp/content/20260915-mxt_hojinka-000051981_006.pdf"
+        },
+        {
+          "name": "【資料2-2】大学共同利用機関法人の第5期中期目標期間における中期目標・中期計画の方向性(概要)<案>",
+          "url": "https://www.mext.go.jp/content/20260915-mxt_hojinka-000051981_007.pdf"
+        },
+        {
+          "name": "【資料3-1】第5期中期目標期間における国立大学法人中期目標大綱(素案)<案>",
+          "url": "https://www.mext.go.jp/content/20260915-mxt_hojinka-000051981_008.pdf"
+        },
+        {
+          "name": "【資料3-2】第5期中期目標期間における大学共同利用機関法人中期目標大綱(素案)<案>",
+          "url": "https://www.mext.go.jp/content/20260915-mxt_hojinka-000051981_009.pdf"
+        },
+        {
+          "name": "【資料4-1】国立大学法人の第5期中期目標・中期計画の項目等について<案>",
+          "url": "https://www.mext.go.jp/content/20260915-mxt_hojinka-000051981_010.pdf"
+        },
+        {
+          "name": "【資料4-2】大学共同利用機関法人の第5期中期目標・中期計画の項目等について<案>",
+          "url": "https://www.mext.go.jp/content/20260915-mxt_hojinka-000051981_011.pdf"
+        },
+        {
+          "name": "【資料5】2040 年を見据えた第5期中期目標期間における機能強化の全体像(様式)<案>",
+          "url": "https://www.mext.go.jp/content/20260915-mxt_hojinka-000051981_012.pdf"
+        },
+        {
+          "name": "【資料6】第5期中期目標期間における「機能強化を先導する評価指標」等の指定について<案>",
+          "url": "https://www.mext.go.jp/content/20260915-mxt_hojinka-000051981_013.pdf"
+        },
+        {
+          "name": "【資料7】国立大学法人等の第5期中期目標・中期計画及び評価等に関するワーキンググループ の設置について<案>",
+          "url": "https://www.mext.go.jp/content/20260915-mxt_hojinka-000051981_014.pdf"
+        },
+        {
+          "name": "【資料8-1】第5期中期目標期間における国立大学法人運営費交付金の在り方に関する検討会について",
+          "url": "https://www.mext.go.jp/content/20260915-mxt_hojinka-000051981_015.pdf"
+        },
+        {
+          "name": "【資料8-2】第5期中期目標期間における国立大学法人運営費交付金の在り方に関する中間まとめ(概要)",
+          "url": "https://www.mext.go.jp/content/20260915-mxt_hojinka-000051981_016.pdf"
+        },
+        {
+          "name": "【資料8-3】第5期中期目標期間における国立大学法人運営費交付金の在り方に関する中間まとめ",
+          "url": "https://www.mext.go.jp/content/20260915-mxt_hojinka-000051981_017.pdf"
+        },
+        {
+          "name": "【資料9-1】国立大学法人等人事給与マネジメント改革の今後の流れ等",
+          "url": "https://www.mext.go.jp/content/20260915-mxt_hojinka-000051981_0018.pdf"
+        },
+        {
+          "name": "【資料9-2】国立大学法人等人事給与マネジメント改革に関する参考事例集(概要)",
+          "url": "https://www.mext.go.jp/content/20260915-mxt_hojinka-000051981_0019.pdf"
+        },
+        {
+          "name": "【資料9-3】国立大学法人等人事給与マネジメント改革に関する参考事例集",
+          "url": "https://www.mext.go.jp/content/20260915-mxt_hojinka-000051981_0020.pdf"
+        },
+        {
+          "name": "【参考資料1】第12期国立大学法人評価委員会委員名簿",
+          "url": "https://www.mext.go.jp/content/20260915-mxt_hojinka-000051981_021.pdf"
+        },
+        {
+          "name": "【参考資料2】国立大学法人等の組織及び業務全般の見直し等に関するワーキンググループの設置について(令和7年11月10日国立大学法人評価委員会決定)",
+          "url": "https://www.mext.go.jp/content/20260915-mxt_hojinka-000051981_022.pdf"
+        },
+        {
+          "name": "【参考資料3】国立大学法人等改革基本方針(令和7年11月4日文部科学省)",
+          "url": "https://www.mext.go.jp/content/20260915-mxt_hojinka-000051981_023.pdf"
+        },
+        {
+          "name": "【参考資料4-1】国立大学法人の組織及び業務全般の見直しに関する視点(第4期に向けて)",
+          "url": "https://www.mext.go.jp/content/20260915-mxt_hojinka-000051981_024.pdf"
+        },
+        {
+          "name": "【参考資料4-2】大学共同利用機関法人の組織及び業務全般の見直しに関する視点(第4期に向けて)",
+          "url": "https://www.mext.go.jp/content/20260915-mxt_hojinka-000051981_025.pdf"
+        },
+        {
+          "name": "【参考資料4-3】国立大学法人等の組織及び業務全般の見直しについて(通知)",
+          "url": "https://www.mext.go.jp/content/20260915-mxt_hojinka-000051981_026.pdf"
+        },
+        {
+          "name": "【参考資料5-1】国立大学法人の第4期中期目標・中期計画の項目等について",
+          "url": "https://www.mext.go.jp/content/20260915-mxt_hojinka-000051981_027.pdf"
+        },
+        {
+          "name": "【参考資料5-2】大学共同利用機関法人の第4期中期目標・中期計画の項目等について",
+          "url": "https://www.mext.go.jp/content/20260915-mxt_hojinka-000051981_028.pdf"
+        },
+        {
+          "name": "【参考資料6】意欲的な評価指標の指定に係る基本的な考え方について(令和5年3月23日 国立大学法人評価委員会決定)",
+          "url": "https://www.mext.go.jp/content/20260915-mxt_hojinka-000051981_029.pdf"
+        },
+        {
+          "name": "【参考資料7】令和9年度 高等教育局・大臣官房文教施設企画・防災部概算要求関係資料",
+          "url": "https://www.mext.go.jp/content/20260915-mxt_hojinka-000051981_030.pdf"
+        }
+      ]
     },
     {
       "id": "mhlw-1002-20260915-s09",
@@ -34587,8 +34894,69 @@
       "councilId": "mhlw-2854",
       "name": "第41回 キャリアコンサルタント登録制度等に関する検討会",
       "date": "2026/08/25",
-      "officialUrl": "https://www.mhlw.go.jp/stf/shingi/other-syokunou_331579.html",
-      "materials": []
+      "officialUrl": "https://www.mhlw.go.jp/stf/newpage_76925.html",
+      "materials": [
+        {
+          "name": "議事次第",
+          "url": "https://www.mhlw.go.jp/content/11801000/001762731.pdf"
+        },
+        {
+          "name": "資料1 前回の検討会でいただいた主な御意見",
+          "url": "https://www.mhlw.go.jp/content/11801000/001762463.pdf"
+        },
+        {
+          "name": "資料2-1 キャリアコンサルティング実施のために必要な能力要件(見直し案)(見え消し)",
+          "url": "https://www.mhlw.go.jp/content/11801000/001762697.pdf"
+        },
+        {
+          "name": "資料2-2 キャリアコンサルティング実施のために必要な能力要件(見直し案)(溶け込み)",
+          "url": "https://www.mhlw.go.jp/content/11801000/001762698.pdf"
+        },
+        {
+          "name": "資料3 キャリアコンサルタント講習カリキュラム見直し案",
+          "url": "https://www.mhlw.go.jp/content/11801000/001762466.pdf"
+        },
+        {
+          "name": "資料4 養成講習認定審査基準案及び更新講習指定審査基準案",
+          "url": "https://www.mhlw.go.jp/content/11801000/001762467.pdf"
+        },
+        {
+          "name": "資料5 キャリアコンサルタント講習の見直しに関する報告書(素案)",
+          "url": "https://www.mhlw.go.jp/content/11801000/001762469.pdf"
+        },
+        {
+          "name": "資料6 原臨時構成員提出資料(能力調査研究事業報告書概要)",
+          "url": "https://www.mhlw.go.jp/content/11801000/001762699.pdf"
+        },
+        {
+          "name": "参考資料1 キャリアコンサルタント登録制度関係参照条文",
+          "url": "https://www.mhlw.go.jp/content/11801000/001762471.pdf"
+        },
+        {
+          "name": "参考資料2 キャリアコンサルティング実施のために必要な能力要件",
+          "url": "https://www.mhlw.go.jp/content/11801000/001762474.pdf"
+        },
+        {
+          "name": "参考資料3 キャリアコンサルティング実施のために必要な能力体系の変遷",
+          "url": "https://www.mhlw.go.jp/content/11801000/001762475.pdf"
+        },
+        {
+          "name": "参考資料4-1 養成講習の認定に関する要件一覧",
+          "url": "https://www.mhlw.go.jp/content/11801000/001762478.pdf"
+        },
+        {
+          "name": "参考資料4-2 更新講習の指定に関する要件一覧",
+          "url": "https://www.mhlw.go.jp/content/11801000/001762479.pdf"
+        },
+        {
+          "name": "参考資料5 第12次職業能力開発基本計画(概要)",
+          "url": "https://www.mhlw.go.jp/content/11801000/001762700.pdf"
+        },
+        {
+          "name": "参考資料6 日本成長戦略に関する資料",
+          "url": "https://www.mhlw.go.jp/content/11801000/001762701.pdf"
+        }
+      ]
     },
     {
       "id": "mhlw-729-20260825-001",
@@ -35269,8 +35637,53 @@
       "councilId": "mext-chukyo",
       "name": "第144回 中央教育審議会",
       "date": "2026/08/21",
-      "officialUrl": "https://www.mext.go.jp/b_menu/shingi/chukyo/chukyo0/index.htm",
-      "materials": []
+      "officialUrl": "https://www.mext.go.jp/b_menu/shingi/chukyo/chukyo0/gijiroku/mext_0821.html",
+      "materials": [
+        {
+          "name": "【資料1-1】第5期教育振興基本計画の策定について(諮問)",
+          "url": "https://www.mext.go.jp/content/20260821-mxt-soseisk01-000051636-01.pdf"
+        },
+        {
+          "name": "【資料1-2】第5期教育振興基本計画の策定について(諮問)【概要】 ※会議後差替",
+          "url": "https://www.mext.go.jp/content/20260827-mxt-soseisk01-000051636-02rr.pdf"
+        },
+        {
+          "name": "【資料1-3】教育振興基本計画部会の設置について(案)",
+          "url": "https://www.mext.go.jp/content/20260821-mxt-soseisk01-000051636-03.pdf"
+        },
+        {
+          "name": "【資料2-1】第4次学校安全の推進に関する計画の策定について(諮問)",
+          "url": "https://www.mext.go.jp/content/20260821-mxt-soseisk01-000051636-04.pdf"
+        },
+        {
+          "name": "【資料2-2】第4次学校安全の推進に関する計画の策定について【概要】",
+          "url": "https://www.mext.go.jp/content/20260821-mxt-soseisk01-000051636-05.pdf"
+        },
+        {
+          "name": "【資料2-3】第3次学校安全の推進に関する計画【概要】",
+          "url": "https://www.mext.go.jp/content/20260821-mxt-soseisk01-000051636-06.pdf"
+        },
+        {
+          "name": "【資料2-4】学校安全の取組について",
+          "url": "https://www.mext.go.jp/content/20260821-mxt-soseisk01-000051636-07.pdf"
+        },
+        {
+          "name": "【資料3-1】地域コミュニティの基盤を支える今後の社会教育の在り方について(審議経過報告)【概要】",
+          "url": "https://www.mext.go.jp/content/20260821-mxt-soseisk01-000051636-08.pdf"
+        },
+        {
+          "name": "【資料3-2】地域コミュニティの基盤を支える今後の社会教育の在り方について(審議経過報告)",
+          "url": "https://www.mext.go.jp/content/20260821-mxt-soseisk01-000051636-09.pdf"
+        },
+        {
+          "name": "【資料4】戸ヶ﨑委員提出資料",
+          "url": "https://www.mext.go.jp/content/20260821-mxt-soseisk01-000051636-10r.pdf"
+        },
+        {
+          "name": "【資料5】中央教育審議会の会議を経ないで行われた諮問について",
+          "url": "https://www.mext.go.jp/content/20260821-mxt-soseisk01-000051636-11r.pdf"
+        }
+      ]
     },
     {
       "id": "mext-chuo_kyoiku-20260821-144",
@@ -36894,8 +37307,21 @@
       "councilId": "cao-genshiryoku_ritchi",
       "name": "第8回 原子力立地会議",
       "date": "2026/08/07",
-      "officialUrl": "https://wwwa.cao.go.jp/oaep/tokubetsusochi.html",
-      "materials": []
+      "officialUrl": "https://wwwa.cao.go.jp/oaep/genryokuricchi-kaigi/2026/siryo08/siryo08.html",
+      "materials": [
+        {
+          "name": "(資料1)原子力発電施設等立地地域の指定について(案)",
+          "url": "https://wwwa.cao.go.jp/oaep/genryokuricchi-kaigi/2026/siryo08/haifu01.pdf"
+        },
+        {
+          "name": "(参考1)17道府県の原子力発電施設等立地地域(案)",
+          "url": "https://wwwa.cao.go.jp/oaep/genryokuricchi-kaigi/2026/siryo08/sankou01.pdf"
+        },
+        {
+          "name": "(参考2)17道府県の原子力発電施設等",
+          "url": "https://wwwa.cao.go.jp/oaep/genryokuricchi-kaigi/2026/siryo08/sankou02.pdf"
+        }
+      ]
     },
     {
       "id": "cas-370-20260807-001",
@@ -63909,7 +64335,12 @@
       "name": "第40回 高齢社会対策会議",
       "date": "2026/06/11",
       "officialUrl": "https://www8.cao.go.jp/kourei/measure/a_5.html",
-      "materials": []
+      "materials": [
+        {
+          "name": "高齢社会対策会議 議事要旨",
+          "url": "https://www8.cao.go.jp/kourei/measure/taisakukaigi/38/pdf/gijiyoshi.pdf"
+        }
+      ]
     },
     {
       "id": "cao-saishuushoku_kanshi-20260611-224",
@@ -69690,11 +70121,11 @@
           "url": "https://www.bunka.go.jp/seisaku/bunkashingikai/seisaku/24/01/pdf/94382401_08.pdf"
         },
         {
-          "name": "内閣府「満足度・生活の質に関する調査報告書2025」　概要",
+          "name": "内閣府「満足度・生活の質に関する調査報告書2025」 概要",
           "url": "https://www.bunka.go.jp/seisaku/bunkashingikai/seisaku/24/01/pdf/94382401_09.pdf"
         },
         {
-          "name": "内閣府「満足度・生活の質に関する調査報告書2025」　実施概要・調査票",
+          "name": "内閣府「満足度・生活の質に関する調査報告書2025」 実施概要・調査票",
           "url": "https://www.bunka.go.jp/seisaku/bunkashingikai/seisaku/24/01/pdf/94382401_10.pdf"
         }
       ]
@@ -72091,8 +72522,33 @@
       "councilId": "cao-genshiryoku_ritchi",
       "name": "第7回 原子力立地会議",
       "date": "2026/05/13",
-      "officialUrl": "https://wwwa.cao.go.jp/oaep/tokubetsusochi.html",
-      "materials": []
+      "officialUrl": "https://wwwa.cao.go.jp/oaep/genryokuricchi-kaigi/2026/siryo07/siryo07.html",
+      "materials": [
+        {
+          "name": "(資料1)新潟県原子力発電施設等立地地域の振興に関する計画(案)",
+          "url": "https://wwwa.cao.go.jp/oaep/genryokuricchi-kaigi/2026/siryo07/haifu01.pdf"
+        },
+        {
+          "name": "(資料2)原子力発電施設等立地地域の指定について(案)",
+          "url": "https://wwwa.cao.go.jp/oaep/genryokuricchi-kaigi/2026/siryo07/haifu02.pdf"
+        },
+        {
+          "name": "(参考1-1)新潟県原子力発電施設等立地地域の振興に関する計画(案)の概要",
+          "url": "https://wwwa.cao.go.jp/oaep/genryokuricchi-kaigi/2026/siryo07/sankou01-1.pdf"
+        },
+        {
+          "name": "(参考1-2)新潟県原子力発電施設等立地地域",
+          "url": "https://wwwa.cao.go.jp/oaep/genryokuricchi-kaigi/2026/siryo07/sankou01-2.pdf"
+        },
+        {
+          "name": "(参考2-1)茨城県の原子力発電施設等立地地域(案)",
+          "url": "https://wwwa.cao.go.jp/oaep/genryokuricchi-kaigi/2026/siryo07/sankou02-1.pdf"
+        },
+        {
+          "name": "(参考2-2)茨城県の原子力発電施設等",
+          "url": "https://wwwa.cao.go.jp/oaep/genryokuricchi-kaigi/2026/siryo07/sankou02-2.pdf"
+        }
+      ]
     },
     {
       "id": "cao-kisei_chiiki_wg-20260513-009",
@@ -74655,8 +75111,85 @@
       "councilId": "mext-gijyutu",
       "name": "第79回 科学技術・学術審議会",
       "date": "2026/04/27",
-      "officialUrl": "https://www.mext.go.jp/b_menu/shingi/gijyutu/gijyutu0/index.htm",
-      "materials": []
+      "officialUrl": "https://www.mext.go.jp/b_menu/shingi/gijyutu/gijyutu0/shiryo/mext_00023.html",
+      "materials": [
+        {
+          "name": "資料1-1 産業連携・地域振興部会中間まとめポイント資料",
+          "url": "https://www.mext.go.jp/content/20260415-mxt_chousei02-000049102_1.pdf"
+        },
+        {
+          "name": "資料1-2 産業連携・地域振興部会中間まとめ(令和8年4月1日産業連携・地域振興部会)",
+          "url": "https://www.mext.go.jp/content/20260415-mxt_chousei02-000049102_2.pdf"
+        },
+        {
+          "name": "資料2 国際卓越研究大学の認定・認可について",
+          "url": "https://www.mext.go.jp/content/20260415-mxt_chousei02-000049102_3.pdf"
+        },
+        {
+          "name": "資料3 技術職員の人事制度等に関するガイドラインについて",
+          "url": "https://www.mext.go.jp/content/20260415-mxt_chousei02-000049102_32.pdf"
+        },
+        {
+          "name": "資料4 AI for Scienceの推進に向けた基本的な戦略方針について",
+          "url": "https://www.mext.go.jp/content/20260415-mxt_chousei02-000049102_6.pdf"
+        },
+        {
+          "name": "資料5 第6次国立大学法人等施設整備5か年計画(R8~12年度)概要(令和8年3月31日文部科学大臣決定)",
+          "url": "https://www.mext.go.jp/content/20260415-mxt_chousei02-000049102_7.pdf"
+        },
+        {
+          "name": "資料6 第7期科学技術・イノベーション基本計画について",
+          "url": "https://www.mext.go.jp/content/20260415-mxt_chousei02-000049102_8.pdf"
+        },
+        {
+          "name": "参考資料1 第13期科学技術・学術審議会構成員名簿",
+          "url": "https://www.mext.go.jp/content/20260415-mxt_chousei02-000049102_9.pdf"
+        },
+        {
+          "name": "参考資料2 科学技術・学術審議会関係法令",
+          "url": "https://www.mext.go.jp/content/20260415-mxt_chousei02-000049102_10.pdf"
+        },
+        {
+          "name": "参考資料3 科学技術・学術審議会運営規則",
+          "url": "https://www.mext.go.jp/content/20260415-mxt_chousei02-000049102_11.pdf"
+        },
+        {
+          "name": "参考資料4 技術職員の人事制度等に関するガイドライン(令和8年3月31日人材委員会)",
+          "url": "https://www.mext.go.jp/content/20260415-mxt_chousei02-000049102_22.pdf"
+        },
+        {
+          "name": "参考資料5 令和8年度科学技術予算について",
+          "url": "https://www.mext.go.jp/content/20260415-mxt_chousei02-000049102_23.pdf"
+        },
+        {
+          "name": "参考資料6 高等教育局主要事項-令和8年度予算-",
+          "url": "https://www.mext.go.jp/content/20260415-mxt_chousei02-000049102_24.pdf"
+        },
+        {
+          "name": "参考資料7 国立大学・高専等施設の整備",
+          "url": "https://www.mext.go.jp/content/20260415-mxt_chousei02-000049102_25.pdf"
+        },
+        {
+          "name": "参考資料8 令和8年度文部科学省関係税制改正要望の結果(概要)",
+          "url": "https://www.mext.go.jp/content/20260415-mxt_chousei02-000049102_31.pdf"
+        },
+        {
+          "name": "参考資料9 AI for Scienceの推進に向けた基本的な戦略方針(令和8年3月31日文部科学省)",
+          "url": "https://www.mext.go.jp/content/20260415-mxt_chousei02-000049102_27.pdf"
+        },
+        {
+          "name": "参考資料10 科学技術・イノベーション基本計画(令和8年3月27日閣議決定)",
+          "url": "https://www.mext.go.jp/content/20260415-mxt_chousei02-000049102_28.pdf"
+        },
+        {
+          "name": "参考資料11 科学技術・学術審議会総会(第78回)議事録",
+          "url": "https://www.mext.go.jp/content/20260415-mxt_chousei02-000049102_29.pdf"
+        },
+        {
+          "name": "日本成長戦略会議における議論について",
+          "url": "https://www.mext.go.jp/content/20260415-mxt_chousei02-000049102_33..pdf"
+        }
+      ]
     },
     {
       "id": "mhlw-1002-20260427-005",
@@ -75423,8 +75956,17 @@
       "councilId": "mext-kokuritsu_daigaku_hyouka",
       "name": "第81回 国立大学法人評価委員会",
       "date": "2026/04/24",
-      "officialUrl": "https://www.mext.go.jp/b_menu/shingi/kokuritu/index.htm",
-      "materials": []
+      "officialUrl": "https://www.mext.go.jp/b_menu/shingi/kokuritu/gijiroku/1411366_00007.html",
+      "materials": [
+        {
+          "name": "【資料1】第12期国立大学法人評価委員会総会委員名簿",
+          "url": "https://www.mext.go.jp/content/20260902-mxt_hojinka-000051935_1.pdf"
+        },
+        {
+          "name": "【参考資料】国立大学法人評価委員会の構成・主な所掌事務、国立大学法人評価委員会令",
+          "url": "https://www.mext.go.jp/content/20260902-mxt_hojinka-000051935_02.pdf"
+        }
+      ]
     },
     {
       "id": "mhlw-2866-20260424-001",
@@ -96321,8 +96863,25 @@
       "councilId": "mext-kokuritsu_daigaku_hyouka",
       "name": "第80回 国立大学法人評価委員会",
       "date": "2026/03/03",
-      "officialUrl": "https://www.mext.go.jp/b_menu/shingi/kokuritu/index.htm",
-      "materials": []
+      "officialUrl": "https://www.mext.go.jp/b_menu/shingi/kokuritu/gijiroku/1411366_00006.html",
+      "materials": [
+        {
+          "name": "【資料1】国立大学法人等の中期目標原案及び中期計画変更案について",
+          "url": "https://www.mext.go.jp/content/20260302-mxt_hojinka000047760_1.pdf"
+        },
+        {
+          "name": "【資料2】成長分野転換基金と大学改革の現状について",
+          "url": "https://www.mext.go.jp/content/20260302-mxt_hojinka000047760_2.pdf"
+        },
+        {
+          "name": "【資料3】国立大学法人等の機能強化に向けた検討について",
+          "url": "https://www.mext.go.jp/content/20260302-mxt_hojinka000047760_3.pdf"
+        },
+        {
+          "name": "【資料4】国立大学法人運営費交付金を取り巻く現状",
+          "url": "https://www.mext.go.jp/content/20260302-mxt_hojinka000047760_4.pdf"
+        }
+      ]
     },
     {
       "id": "mhlw-1006-20260303-003",
@@ -114695,10 +115254,67 @@
     {
       "id": "aca-1734-20251225-s04",
       "councilId": "aca-1734",
-      "name": "第23期文化政策部会",
+      "name": "第23期文化政策部会（第1回）",
       "date": "2025/12/25",
-      "officialUrl": "https://www.bunka.go.jp/seisaku/bunkashingikai/seisaku/23/",
-      "materials": []
+      "officialUrl": "https://www.bunka.go.jp/seisaku/bunkashingikai/seisaku/23/01/index.html",
+      "materials": [
+        {
+          "name": "文化審議会関係資料",
+          "url": "https://www.bunka.go.jp/seisaku/bunkashingikai/seisaku/23/01/pdf/94236901_01.pdf"
+        },
+        {
+          "name": "最近の政府方針等(文化芸術関係抜粋)",
+          "url": "https://www.bunka.go.jp/seisaku/bunkashingikai/seisaku/23/01/pdf/94236901_02.pdf"
+        },
+        {
+          "name": "文部科学省政策評価関係資料(令和6年2月26日政策評価に関する有識者会議(第61回)資料1)",
+          "url": "https://www.bunka.go.jp/seisaku/bunkashingikai/seisaku/23/01/pdf/94236901_03.pdf"
+        },
+        {
+          "name": "文化芸術分野の政策体系等(令和6年10月2日政策評価に関する有識者会議(第62回)資料2-5)",
+          "url": "https://www.bunka.go.jp/seisaku/bunkashingikai/seisaku/23/01/pdf/94236901_04.pdf"
+        },
+        {
+          "name": "第22期文化政策部会(第2回)における主な意見の概要(基本計画フォローアップ関係)",
+          "url": "https://www.bunka.go.jp/seisaku/bunkashingikai/seisaku/23/01/pdf/94236901_05.pdf"
+        },
+        {
+          "name": "基本計画の中間評価及びそれに向けたフォローアップの充実方策に関する論点(案)",
+          "url": "https://www.bunka.go.jp/seisaku/bunkashingikai/seisaku/23/01/pdf/94236901_06.pdf"
+        },
+        {
+          "name": "第2期基本計画の中間評価に向けたスケジュールイメージ(案)",
+          "url": "https://www.bunka.go.jp/seisaku/bunkashingikai/seisaku/23/01/pdf/94236901_07.pdf"
+        },
+        {
+          "name": "文部科学省政策評価基本計画",
+          "url": "https://www.bunka.go.jp/seisaku/bunkashingikai/seisaku/23/01/pdf/94236901_08.pdf"
+        },
+        {
+          "name": "文化芸術推進基本計画(第2期)概要",
+          "url": "https://www.bunka.go.jp/seisaku/bunkashingikai/seisaku/23/01/pdf/94236901_09.pdf"
+        },
+        {
+          "name": "文化芸術推進基本計画(第2期)本文",
+          "url": "https://www.bunka.go.jp/seisaku/bunkashingikai/seisaku/23/01/pdf/94236901_10.pdf"
+        },
+        {
+          "name": "文化芸術推進基本計画(第2期)の進捗を把握するために活用する指標整理表",
+          "url": "https://www.bunka.go.jp/seisaku/bunkashingikai/seisaku/23/01/pdf/94236901_11.pdf"
+        },
+        {
+          "name": "文化芸術関連データ集",
+          "url": "https://www.bunka.go.jp/seisaku/bunkashingikai/seisaku/23/01/pdf/94236901_12.pdf"
+        },
+        {
+          "name": "令和6年度 文化に関する世論調査(概要)",
+          "url": "https://www.bunka.go.jp/seisaku/bunkashingikai/seisaku/23/01/pdf/94236901_13.pdf"
+        },
+        {
+          "name": "令和6年度 文化に関する世論調査 報告書",
+          "url": "https://www.bunka.go.jp/seisaku/bunkashingikai/seisaku/23/01/pdf/94238901_01.pdf"
+        }
+      ]
     },
     {
       "id": "cao-kisei_iryou_wg-20251225-008",
@@ -132716,8 +133332,41 @@
       "councilId": "mext-kokuritsu_daigaku_hyouka",
       "name": "第79回 国立大学法人評価委員会",
       "date": "2025/11/05",
-      "officialUrl": "https://www.mext.go.jp/b_menu/shingi/kokuritu/index.htm",
-      "materials": []
+      "officialUrl": "https://www.mext.go.jp/b_menu/shingi/kokuritu/gijiroku/1411366_00004.html",
+      "materials": [
+        {
+          "name": "【資料1】国立大学法人等の組織・業務全般の見直し等の検討について(案)",
+          "url": "https://www.mext.go.jp/content/20251114-mxt_hojinka-000045865_1.pdf"
+        },
+        {
+          "name": "【参考資料1-1】国立大学法人評価委員会の構成",
+          "url": "https://www.mext.go.jp/content/20251114-mxt_hojinka-000045865_2.pdf"
+        },
+        {
+          "name": "【参考資料1-2】我が国の「知の総和」向上の未来像~高等教育システムの再構築~(答申)(令和7年2月21日 中央教育審議会)【要旨】",
+          "url": "https://www.mext.go.jp/content/20251114-mxt_hojinka-000045865_3.pdf"
+        },
+        {
+          "name": "【参考資料1-3】我が国の「知の総和」向上の未来像~高等教育システムの再構築~(答申)(令和7年2月21日 中央教育審議会)【本文】",
+          "url": "https://www.mext.go.jp/content/20251114-mxt_hojinka-000045865_4.pdf"
+        },
+        {
+          "name": "【参考資料1-4】国立大学法人等の機能強化検討会「改革の方針」【概要】",
+          "url": "https://www.mext.go.jp/content/20251114-mxt_hojinka-000045865_5.pdf"
+        },
+        {
+          "name": "【参考資料1-5】国立大学法人等の機能強化検討会「改革の方針」【本文",
+          "url": "https://www.mext.go.jp/content/20251114-mxt_hojinka-000045865_6.pdf"
+        },
+        {
+          "name": "【参考資料1-6】国立大学法人等改革基本方針【概要】",
+          "url": "https://www.mext.go.jp/content/20251114-mxt_hojinka-000045865_7.pdf"
+        },
+        {
+          "name": "【参考資料1-7】国立大学法人等改革基本方針【本文】",
+          "url": "https://www.mext.go.jp/content/20251114-mxt_hojinka-000045865_8.pdf"
+        }
+      ]
     },
     {
       "id": "mhlw-1015-20251105-008",
@@ -155165,7 +155814,184 @@
       "name": "第6回 総合的病害虫・雑草管理(IPM)実践指針の見直しに関する検討会",
       "date": "2025/07/28",
       "officialUrl": "https://www.maff.go.jp/j/syouan/syokubo/gaicyu/g_ipm/r6minaoshi.html",
-      "materials": []
+      "materials": [
+        {
+          "name": "総合的病害虫・雑草管理(IPM)実践指針の見直しに関する検討会 設置要領",
+          "url": "https://www.maff.go.jp/j/syouan/syokubo/gaicyu/g_ipm/attach/pdf/r6minaoshi-32.pdf"
+        },
+        {
+          "name": "議事次第",
+          "url": "https://www.maff.go.jp/j/syouan/syokubo/gaicyu/g_ipm/attach/pdf/r6minaoshi-2.pdf"
+        },
+        {
+          "name": "総合的病害虫・雑草管理(IPM)実践指針の見直しに関する検討会 設置要領",
+          "url": "https://www.maff.go.jp/j/syouan/syokubo/gaicyu/g_ipm/attach/pdf/r6minaoshi-3.pdf"
+        },
+        {
+          "name": "今後の総合防除の在り方について(コンセプトペーパー)(案)",
+          "url": "https://www.maff.go.jp/j/syouan/syokubo/gaicyu/g_ipm/attach/pdf/r6minaoshi-4.pdf"
+        },
+        {
+          "name": "「総合防除の推進をめぐる状況と課題」",
+          "url": "https://www.maff.go.jp/j/syouan/syokubo/gaicyu/g_ipm/attach/pdf/r6minaoshi-17.pdf"
+        },
+        {
+          "name": "分割版1",
+          "url": "https://www.maff.go.jp/j/syouan/syokubo/gaicyu/g_ipm/attach/pdf/r6minaoshi-6.pdf"
+        },
+        {
+          "name": "分割版2",
+          "url": "https://www.maff.go.jp/j/syouan/syokubo/gaicyu/g_ipm/attach/pdf/r6minaoshi-7.pdf"
+        },
+        {
+          "name": "分割版3",
+          "url": "https://www.maff.go.jp/j/syouan/syokubo/gaicyu/g_ipm/attach/pdf/r6minaoshi-18.pdf"
+        },
+        {
+          "name": "分割版4",
+          "url": "https://www.maff.go.jp/j/syouan/syokubo/gaicyu/g_ipm/attach/pdf/r6minaoshi-9.pdf"
+        },
+        {
+          "name": "「都道府県における総合防除推進に向けた現状と課題」",
+          "url": "https://www.maff.go.jp/j/syouan/syokubo/gaicyu/g_ipm/attach/pdf/r6minaoshi-10.pdf"
+        },
+        {
+          "name": "「総合防除実践ガイダンス(仮称)」の策定について(骨子案)",
+          "url": "https://www.maff.go.jp/j/syouan/syokubo/gaicyu/g_ipm/attach/pdf/r6minaoshi-11.pdf"
+        },
+        {
+          "name": "委員から事前提出された意見・コメント",
+          "url": "https://www.maff.go.jp/j/syouan/syokubo/gaicyu/g_ipm/attach/pdf/r6minaoshi-12.pdf"
+        },
+        {
+          "name": "総合的病害虫・雑草管理(IPM)実践指針及び IPM 実践指標モデル(水稲)",
+          "url": "https://www.maff.go.jp/j/syouan/syokubo/gaicyu/g_ipm/attach/pdf/r6minaoshi-13.pdf"
+        },
+        {
+          "name": "総合防除基本指針(抜粋)",
+          "url": "https://www.maff.go.jp/j/syouan/syokubo/gaicyu/g_ipm/attach/pdf/r6minaoshi-14.pdf"
+        },
+        {
+          "name": "病害虫・雑草防除に関わる施策の潮流",
+          "url": "https://www.maff.go.jp/j/syouan/syokubo/gaicyu/g_ipm/attach/pdf/r6minaoshi-15.pdf"
+        },
+        {
+          "name": "議事概要",
+          "url": "https://www.maff.go.jp/j/syouan/syokubo/gaicyu/g_ipm/attach/pdf/r6minaoshi-16.pdf"
+        },
+        {
+          "name": "議事次第",
+          "url": "https://www.maff.go.jp/j/syouan/syokubo/gaicyu/g_ipm/attach/pdf/r6minaoshi-19.pdf"
+        },
+        {
+          "name": "第1回検討会で委員からいただいた意見に対する考え方",
+          "url": "https://www.maff.go.jp/j/syouan/syokubo/gaicyu/g_ipm/attach/pdf/r6minaoshi-24.pdf"
+        },
+        {
+          "name": "第1回検討会後に委員からいただいた意見等",
+          "url": "https://www.maff.go.jp/j/syouan/syokubo/gaicyu/g_ipm/attach/pdf/r6minaoshi-21.pdf"
+        },
+        {
+          "name": "食料・農業・農村基本計画 骨子(案)",
+          "url": "https://www.maff.go.jp/j/syouan/syokubo/gaicyu/g_ipm/attach/pdf/r6minaoshi-22.pdf"
+        },
+        {
+          "name": "議事概要",
+          "url": "https://www.maff.go.jp/j/syouan/syokubo/gaicyu/g_ipm/attach/pdf/r6minaoshi-23.pdf"
+        },
+        {
+          "name": "議事次第",
+          "url": "https://www.maff.go.jp/j/syouan/syokubo/gaicyu/g_ipm/attach/pdf/r6minaoshi-25.pdf"
+        },
+        {
+          "name": "今後の総合防除の在り方について(コンセプトペーパー)",
+          "url": "https://www.maff.go.jp/j/syouan/syokubo/gaicyu/g_ipm/attach/pdf/r6minaoshi-26.pdf"
+        },
+        {
+          "name": "「総合防除実践ガイダンス(仮称)」の策定について(検討の方向性)",
+          "url": "https://www.maff.go.jp/j/syouan/syokubo/gaicyu/g_ipm/attach/pdf/r6minaoshi-27.pdf"
+        },
+        {
+          "name": "総合防除の推進における「指導者」及び「伴走支援」の考え方",
+          "url": "https://www.maff.go.jp/j/syouan/syokubo/gaicyu/g_ipm/attach/pdf/r6minaoshi-28.pdf"
+        },
+        {
+          "name": "総合防除実践指標モデルの作成について",
+          "url": "https://www.maff.go.jp/j/syouan/syokubo/gaicyu/g_ipm/attach/pdf/r6minaoshi-29.pdf"
+        },
+        {
+          "name": "食料・農業・農村基本計画 骨子(案)",
+          "url": "https://www.maff.go.jp/j/syouan/syokubo/gaicyu/g_ipm/attach/pdf/r6minaoshi-30.pdf"
+        },
+        {
+          "name": "議事概要",
+          "url": "https://www.maff.go.jp/j/syouan/syokubo/gaicyu/g_ipm/attach/pdf/r6minaoshi-31.pdf"
+        },
+        {
+          "name": "議事次第",
+          "url": "https://www.maff.go.jp/j/syouan/syokubo/gaicyu/g_ipm/attach/pdf/r6minaoshi-33.pdf"
+        },
+        {
+          "name": "総合防除の実践ガイドライン(案)【骨子】",
+          "url": "https://www.maff.go.jp/j/syouan/syokubo/gaicyu/g_ipm/attach/pdf/r6minaoshi-38.pdf"
+        },
+        {
+          "name": "総合防除実践指標モデルの作成について",
+          "url": "https://www.maff.go.jp/j/syouan/syokubo/gaicyu/g_ipm/attach/pdf/r6minaoshi-34.pdf"
+        },
+        {
+          "name": "総合防除推進の道行きについて(検討案)",
+          "url": "https://www.maff.go.jp/j/syouan/syokubo/gaicyu/g_ipm/attach/pdf/r6minaoshi-35.pdf"
+        },
+        {
+          "name": "食料・農業・農村基本計画(令和7年4月11日閣議決定)(抜粋)",
+          "url": "https://www.maff.go.jp/j/syouan/syokubo/gaicyu/g_ipm/attach/pdf/r6minaoshi-36.pdf"
+        },
+        {
+          "name": "議事概要",
+          "url": "https://www.maff.go.jp/j/syouan/syokubo/gaicyu/g_ipm/attach/pdf/r6minaoshi-37.pdf"
+        },
+        {
+          "name": "議事次第",
+          "url": "https://www.maff.go.jp/j/syouan/syokubo/gaicyu/g_ipm/attach/pdf/r6minaoshi-39.pdf"
+        },
+        {
+          "name": "総合防除の実践ガイドライン(案、検討会当日資料)",
+          "url": "https://www.maff.go.jp/j/syouan/syokubo/gaicyu/g_ipm/attach/pdf/r6minaoshi-40.pdf"
+        },
+        {
+          "name": "総合防除の実践ガイドライン(案、検討会後取りまとめ版)",
+          "url": "https://www.maff.go.jp/j/syouan/syokubo/gaicyu/g_ipm/attach/pdf/r6minaoshi-44.pdf"
+        },
+        {
+          "name": "総合防除実践指標モデルの作成について",
+          "url": "https://www.maff.go.jp/j/syouan/syokubo/gaicyu/g_ipm/attach/pdf/r6minaoshi-41.pdf"
+        },
+        {
+          "name": "広域型総合防除体制の構築について",
+          "url": "https://www.maff.go.jp/j/syouan/syokubo/gaicyu/g_ipm/attach/pdf/r6minaoshi-42.pdf"
+        },
+        {
+          "name": "議事概要",
+          "url": "https://www.maff.go.jp/j/syouan/syokubo/gaicyu/g_ipm/attach/pdf/r6minaoshi-43.pdf"
+        },
+        {
+          "name": "議事次第",
+          "url": "https://www.maff.go.jp/j/syouan/syokubo/gaicyu/g_ipm/attach/pdf/r6minaoshi-45.pdf"
+        },
+        {
+          "name": "総合防除実践ガイドライン(案)",
+          "url": "https://www.maff.go.jp/j/syouan/syokubo/gaicyu/g_ipm/attach/pdf/r6minaoshi-47.pdf"
+        },
+        {
+          "name": "パブリックコメント結果概要",
+          "url": "https://www.maff.go.jp/j/syouan/syokubo/gaicyu/g_ipm/attach/pdf/r6minaoshi-48.pdf"
+        },
+        {
+          "name": "議事概要",
+          "url": "https://www.maff.go.jp/j/syouan/syokubo/gaicyu/g_ipm/attach/pdf/r6minaoshi-46.pdf"
+        }
+      ]
     },
     {
       "id": "mhlw-933-20250728-027",
@@ -157827,8 +158653,65 @@
       "councilId": "mext-gijyutu",
       "name": "第77回 科学技術・学術審議会",
       "date": "2025/07/15",
-      "officialUrl": "https://www.mext.go.jp/b_menu/shingi/gijyutu/gijyutu0/index.htm",
-      "materials": []
+      "officialUrl": "https://www.mext.go.jp/b_menu/shingi/gijyutu/gijyutu0/shiryo/mext_00021.html",
+      "materials": [
+        {
+          "name": "資料1-1 研究の創造性・効率性の最大化のための先端研究基盤の刷新に向けた今後の方針",
+          "url": "https://www.mext.go.jp/content/20250715-mxt_chousei02-000043678_1.pdf"
+        },
+        {
+          "name": "資料1-2 AI時代にふさわしい科学研究の革新ー大規模集積研究基盤の整備による科学研究の革新ー(意見等のまとめ)(令和7年7月1日研究環境基盤部会)",
+          "url": "https://www.mext.go.jp/content/20250715-mxt_chousei02-000043678_12.pdf"
+        },
+        {
+          "name": "資料1-3 次世代の科学技術イノベーションを支える情報基盤の在り方について(中間とりまとめ)(令和7年5月30日情報委員会)",
+          "url": "https://www.mext.go.jp/content/20250715-mxt_chousei02-000043678_13.pdf"
+        },
+        {
+          "name": "資料1-4 今後の科学技術人材政策の方向性(中間まとめ概要(案))",
+          "url": "https://www.mext.go.jp/content/20250715-mxt_chousei02-000043678_14.pdf"
+        },
+        {
+          "name": "資料2-1 中間取りまとめに向けた論点整理案(内閣府科学技術・イノベーション推進事務局)(令和7年6月19日総合科学技術・イノベーション会議基本計画専門調査会(第7回)資料2)",
+          "url": "https://www.mext.go.jp/content/20250715-mxt_chousei02-000043678_21.pdf"
+        },
+        {
+          "name": "資料2-2 米国の科学技術研究等を巡る動向等について",
+          "url": "https://www.mext.go.jp/content/20250715-mxt_chousei02-000043678_22.pdf"
+        },
+        {
+          "name": "参考資料1 第13期科学技術・学術審議会委員名簿",
+          "url": "https://www.mext.go.jp/content/20250715-mxt_chousei02-000043678_91.pdf"
+        },
+        {
+          "name": "参考資料2 科学技術・学術審議会関係法令",
+          "url": "https://www.mext.go.jp/content/20250715-mxt_chousei02-000043678_92.pdf"
+        },
+        {
+          "name": "参考資料3 科学技術・学術審議会運営規則",
+          "url": "https://www.mext.go.jp/content/20250715-mxt_chousei02-000043678_93.pdf"
+        },
+        {
+          "name": "参考資料4 日本の研究パフォーマンス最大化プラン(仮称)~第7期科学技術・イノベーション基本計画に向けた検討状況~(令和7年3月27日科学技術・学術審議会(第76回)資料4-2)",
+          "url": "https://www.mext.go.jp/content/20250715-mxt_chousei02-000043678_94.pdf"
+        },
+        {
+          "name": "参考資料5 国際卓越研究大学制度",
+          "url": "https://www.mext.go.jp/content/20250715-mxt_chousei02-000043678_95.pdf"
+        },
+        {
+          "name": "参考資料6 地域中核・特色ある研究大学強化促進事業(J-PEAKS)",
+          "url": "https://www.mext.go.jp/content/20250715-mxt_chousei02-000043678_96.pdf"
+        },
+        {
+          "name": "参考資料7 経済財政運営と改革の基本方針2025(令和7年6月13日閣議決定)における主な文部科学省関連記載",
+          "url": "https://www.mext.go.jp/content/20250715-mxt_chousei02-000043678_97.pdf"
+        },
+        {
+          "name": "参考資料8 新しい資本主義のグランドデザイン及び実行計画2025年改訂版(令和7年6月13日閣議決定)における主な文部科学省関連記載",
+          "url": "https://www.mext.go.jp/content/20250715-mxt_chousei02-000043678_98.pdf"
+        }
+      ]
     },
     {
       "id": "mhlw-1046-20250715-007",
@@ -168852,7 +169735,184 @@
       "name": "第5回 総合的病害虫・雑草管理(IPM)実践指針の見直しに関する検討会",
       "date": "2025/05/29",
       "officialUrl": "https://www.maff.go.jp/j/syouan/syokubo/gaicyu/g_ipm/r6minaoshi.html",
-      "materials": []
+      "materials": [
+        {
+          "name": "総合的病害虫・雑草管理(IPM)実践指針の見直しに関する検討会 設置要領",
+          "url": "https://www.maff.go.jp/j/syouan/syokubo/gaicyu/g_ipm/attach/pdf/r6minaoshi-32.pdf"
+        },
+        {
+          "name": "議事次第",
+          "url": "https://www.maff.go.jp/j/syouan/syokubo/gaicyu/g_ipm/attach/pdf/r6minaoshi-2.pdf"
+        },
+        {
+          "name": "総合的病害虫・雑草管理(IPM)実践指針の見直しに関する検討会 設置要領",
+          "url": "https://www.maff.go.jp/j/syouan/syokubo/gaicyu/g_ipm/attach/pdf/r6minaoshi-3.pdf"
+        },
+        {
+          "name": "今後の総合防除の在り方について(コンセプトペーパー)(案)",
+          "url": "https://www.maff.go.jp/j/syouan/syokubo/gaicyu/g_ipm/attach/pdf/r6minaoshi-4.pdf"
+        },
+        {
+          "name": "「総合防除の推進をめぐる状況と課題」",
+          "url": "https://www.maff.go.jp/j/syouan/syokubo/gaicyu/g_ipm/attach/pdf/r6minaoshi-17.pdf"
+        },
+        {
+          "name": "分割版1",
+          "url": "https://www.maff.go.jp/j/syouan/syokubo/gaicyu/g_ipm/attach/pdf/r6minaoshi-6.pdf"
+        },
+        {
+          "name": "分割版2",
+          "url": "https://www.maff.go.jp/j/syouan/syokubo/gaicyu/g_ipm/attach/pdf/r6minaoshi-7.pdf"
+        },
+        {
+          "name": "分割版3",
+          "url": "https://www.maff.go.jp/j/syouan/syokubo/gaicyu/g_ipm/attach/pdf/r6minaoshi-18.pdf"
+        },
+        {
+          "name": "分割版4",
+          "url": "https://www.maff.go.jp/j/syouan/syokubo/gaicyu/g_ipm/attach/pdf/r6minaoshi-9.pdf"
+        },
+        {
+          "name": "「都道府県における総合防除推進に向けた現状と課題」",
+          "url": "https://www.maff.go.jp/j/syouan/syokubo/gaicyu/g_ipm/attach/pdf/r6minaoshi-10.pdf"
+        },
+        {
+          "name": "「総合防除実践ガイダンス(仮称)」の策定について(骨子案)",
+          "url": "https://www.maff.go.jp/j/syouan/syokubo/gaicyu/g_ipm/attach/pdf/r6minaoshi-11.pdf"
+        },
+        {
+          "name": "委員から事前提出された意見・コメント",
+          "url": "https://www.maff.go.jp/j/syouan/syokubo/gaicyu/g_ipm/attach/pdf/r6minaoshi-12.pdf"
+        },
+        {
+          "name": "総合的病害虫・雑草管理(IPM)実践指針及び IPM 実践指標モデル(水稲)",
+          "url": "https://www.maff.go.jp/j/syouan/syokubo/gaicyu/g_ipm/attach/pdf/r6minaoshi-13.pdf"
+        },
+        {
+          "name": "総合防除基本指針(抜粋)",
+          "url": "https://www.maff.go.jp/j/syouan/syokubo/gaicyu/g_ipm/attach/pdf/r6minaoshi-14.pdf"
+        },
+        {
+          "name": "病害虫・雑草防除に関わる施策の潮流",
+          "url": "https://www.maff.go.jp/j/syouan/syokubo/gaicyu/g_ipm/attach/pdf/r6minaoshi-15.pdf"
+        },
+        {
+          "name": "議事概要",
+          "url": "https://www.maff.go.jp/j/syouan/syokubo/gaicyu/g_ipm/attach/pdf/r6minaoshi-16.pdf"
+        },
+        {
+          "name": "議事次第",
+          "url": "https://www.maff.go.jp/j/syouan/syokubo/gaicyu/g_ipm/attach/pdf/r6minaoshi-19.pdf"
+        },
+        {
+          "name": "第1回検討会で委員からいただいた意見に対する考え方",
+          "url": "https://www.maff.go.jp/j/syouan/syokubo/gaicyu/g_ipm/attach/pdf/r6minaoshi-24.pdf"
+        },
+        {
+          "name": "第1回検討会後に委員からいただいた意見等",
+          "url": "https://www.maff.go.jp/j/syouan/syokubo/gaicyu/g_ipm/attach/pdf/r6minaoshi-21.pdf"
+        },
+        {
+          "name": "食料・農業・農村基本計画 骨子(案)",
+          "url": "https://www.maff.go.jp/j/syouan/syokubo/gaicyu/g_ipm/attach/pdf/r6minaoshi-22.pdf"
+        },
+        {
+          "name": "議事概要",
+          "url": "https://www.maff.go.jp/j/syouan/syokubo/gaicyu/g_ipm/attach/pdf/r6minaoshi-23.pdf"
+        },
+        {
+          "name": "議事次第",
+          "url": "https://www.maff.go.jp/j/syouan/syokubo/gaicyu/g_ipm/attach/pdf/r6minaoshi-25.pdf"
+        },
+        {
+          "name": "今後の総合防除の在り方について(コンセプトペーパー)",
+          "url": "https://www.maff.go.jp/j/syouan/syokubo/gaicyu/g_ipm/attach/pdf/r6minaoshi-26.pdf"
+        },
+        {
+          "name": "「総合防除実践ガイダンス(仮称)」の策定について(検討の方向性)",
+          "url": "https://www.maff.go.jp/j/syouan/syokubo/gaicyu/g_ipm/attach/pdf/r6minaoshi-27.pdf"
+        },
+        {
+          "name": "総合防除の推進における「指導者」及び「伴走支援」の考え方",
+          "url": "https://www.maff.go.jp/j/syouan/syokubo/gaicyu/g_ipm/attach/pdf/r6minaoshi-28.pdf"
+        },
+        {
+          "name": "総合防除実践指標モデルの作成について",
+          "url": "https://www.maff.go.jp/j/syouan/syokubo/gaicyu/g_ipm/attach/pdf/r6minaoshi-29.pdf"
+        },
+        {
+          "name": "食料・農業・農村基本計画 骨子(案)",
+          "url": "https://www.maff.go.jp/j/syouan/syokubo/gaicyu/g_ipm/attach/pdf/r6minaoshi-30.pdf"
+        },
+        {
+          "name": "議事概要",
+          "url": "https://www.maff.go.jp/j/syouan/syokubo/gaicyu/g_ipm/attach/pdf/r6minaoshi-31.pdf"
+        },
+        {
+          "name": "議事次第",
+          "url": "https://www.maff.go.jp/j/syouan/syokubo/gaicyu/g_ipm/attach/pdf/r6minaoshi-33.pdf"
+        },
+        {
+          "name": "総合防除の実践ガイドライン(案)【骨子】",
+          "url": "https://www.maff.go.jp/j/syouan/syokubo/gaicyu/g_ipm/attach/pdf/r6minaoshi-38.pdf"
+        },
+        {
+          "name": "総合防除実践指標モデルの作成について",
+          "url": "https://www.maff.go.jp/j/syouan/syokubo/gaicyu/g_ipm/attach/pdf/r6minaoshi-34.pdf"
+        },
+        {
+          "name": "総合防除推進の道行きについて(検討案)",
+          "url": "https://www.maff.go.jp/j/syouan/syokubo/gaicyu/g_ipm/attach/pdf/r6minaoshi-35.pdf"
+        },
+        {
+          "name": "食料・農業・農村基本計画(令和7年4月11日閣議決定)(抜粋)",
+          "url": "https://www.maff.go.jp/j/syouan/syokubo/gaicyu/g_ipm/attach/pdf/r6minaoshi-36.pdf"
+        },
+        {
+          "name": "議事概要",
+          "url": "https://www.maff.go.jp/j/syouan/syokubo/gaicyu/g_ipm/attach/pdf/r6minaoshi-37.pdf"
+        },
+        {
+          "name": "議事次第",
+          "url": "https://www.maff.go.jp/j/syouan/syokubo/gaicyu/g_ipm/attach/pdf/r6minaoshi-39.pdf"
+        },
+        {
+          "name": "総合防除の実践ガイドライン(案、検討会当日資料)",
+          "url": "https://www.maff.go.jp/j/syouan/syokubo/gaicyu/g_ipm/attach/pdf/r6minaoshi-40.pdf"
+        },
+        {
+          "name": "総合防除の実践ガイドライン(案、検討会後取りまとめ版)",
+          "url": "https://www.maff.go.jp/j/syouan/syokubo/gaicyu/g_ipm/attach/pdf/r6minaoshi-44.pdf"
+        },
+        {
+          "name": "総合防除実践指標モデルの作成について",
+          "url": "https://www.maff.go.jp/j/syouan/syokubo/gaicyu/g_ipm/attach/pdf/r6minaoshi-41.pdf"
+        },
+        {
+          "name": "広域型総合防除体制の構築について",
+          "url": "https://www.maff.go.jp/j/syouan/syokubo/gaicyu/g_ipm/attach/pdf/r6minaoshi-42.pdf"
+        },
+        {
+          "name": "議事概要",
+          "url": "https://www.maff.go.jp/j/syouan/syokubo/gaicyu/g_ipm/attach/pdf/r6minaoshi-43.pdf"
+        },
+        {
+          "name": "議事次第",
+          "url": "https://www.maff.go.jp/j/syouan/syokubo/gaicyu/g_ipm/attach/pdf/r6minaoshi-45.pdf"
+        },
+        {
+          "name": "総合防除実践ガイドライン(案)",
+          "url": "https://www.maff.go.jp/j/syouan/syokubo/gaicyu/g_ipm/attach/pdf/r6minaoshi-47.pdf"
+        },
+        {
+          "name": "パブリックコメント結果概要",
+          "url": "https://www.maff.go.jp/j/syouan/syokubo/gaicyu/g_ipm/attach/pdf/r6minaoshi-48.pdf"
+        },
+        {
+          "name": "議事概要",
+          "url": "https://www.maff.go.jp/j/syouan/syokubo/gaicyu/g_ipm/attach/pdf/r6minaoshi-46.pdf"
+        }
+      ]
     },
     {
       "id": "mhlw-925-20250529-116",
@@ -174944,7 +176004,184 @@
       "name": "第4回 総合的病害虫・雑草管理(IPM)実践指針の見直しに関する検討会",
       "date": "2025/04/24",
       "officialUrl": "https://www.maff.go.jp/j/syouan/syokubo/gaicyu/g_ipm/r6minaoshi.html",
-      "materials": []
+      "materials": [
+        {
+          "name": "総合的病害虫・雑草管理(IPM)実践指針の見直しに関する検討会 設置要領",
+          "url": "https://www.maff.go.jp/j/syouan/syokubo/gaicyu/g_ipm/attach/pdf/r6minaoshi-32.pdf"
+        },
+        {
+          "name": "議事次第",
+          "url": "https://www.maff.go.jp/j/syouan/syokubo/gaicyu/g_ipm/attach/pdf/r6minaoshi-2.pdf"
+        },
+        {
+          "name": "総合的病害虫・雑草管理(IPM)実践指針の見直しに関する検討会 設置要領",
+          "url": "https://www.maff.go.jp/j/syouan/syokubo/gaicyu/g_ipm/attach/pdf/r6minaoshi-3.pdf"
+        },
+        {
+          "name": "今後の総合防除の在り方について(コンセプトペーパー)(案)",
+          "url": "https://www.maff.go.jp/j/syouan/syokubo/gaicyu/g_ipm/attach/pdf/r6minaoshi-4.pdf"
+        },
+        {
+          "name": "「総合防除の推進をめぐる状況と課題」",
+          "url": "https://www.maff.go.jp/j/syouan/syokubo/gaicyu/g_ipm/attach/pdf/r6minaoshi-17.pdf"
+        },
+        {
+          "name": "分割版1",
+          "url": "https://www.maff.go.jp/j/syouan/syokubo/gaicyu/g_ipm/attach/pdf/r6minaoshi-6.pdf"
+        },
+        {
+          "name": "分割版2",
+          "url": "https://www.maff.go.jp/j/syouan/syokubo/gaicyu/g_ipm/attach/pdf/r6minaoshi-7.pdf"
+        },
+        {
+          "name": "分割版3",
+          "url": "https://www.maff.go.jp/j/syouan/syokubo/gaicyu/g_ipm/attach/pdf/r6minaoshi-18.pdf"
+        },
+        {
+          "name": "分割版4",
+          "url": "https://www.maff.go.jp/j/syouan/syokubo/gaicyu/g_ipm/attach/pdf/r6minaoshi-9.pdf"
+        },
+        {
+          "name": "「都道府県における総合防除推進に向けた現状と課題」",
+          "url": "https://www.maff.go.jp/j/syouan/syokubo/gaicyu/g_ipm/attach/pdf/r6minaoshi-10.pdf"
+        },
+        {
+          "name": "「総合防除実践ガイダンス(仮称)」の策定について(骨子案)",
+          "url": "https://www.maff.go.jp/j/syouan/syokubo/gaicyu/g_ipm/attach/pdf/r6minaoshi-11.pdf"
+        },
+        {
+          "name": "委員から事前提出された意見・コメント",
+          "url": "https://www.maff.go.jp/j/syouan/syokubo/gaicyu/g_ipm/attach/pdf/r6minaoshi-12.pdf"
+        },
+        {
+          "name": "総合的病害虫・雑草管理(IPM)実践指針及び IPM 実践指標モデル(水稲)",
+          "url": "https://www.maff.go.jp/j/syouan/syokubo/gaicyu/g_ipm/attach/pdf/r6minaoshi-13.pdf"
+        },
+        {
+          "name": "総合防除基本指針(抜粋)",
+          "url": "https://www.maff.go.jp/j/syouan/syokubo/gaicyu/g_ipm/attach/pdf/r6minaoshi-14.pdf"
+        },
+        {
+          "name": "病害虫・雑草防除に関わる施策の潮流",
+          "url": "https://www.maff.go.jp/j/syouan/syokubo/gaicyu/g_ipm/attach/pdf/r6minaoshi-15.pdf"
+        },
+        {
+          "name": "議事概要",
+          "url": "https://www.maff.go.jp/j/syouan/syokubo/gaicyu/g_ipm/attach/pdf/r6minaoshi-16.pdf"
+        },
+        {
+          "name": "議事次第",
+          "url": "https://www.maff.go.jp/j/syouan/syokubo/gaicyu/g_ipm/attach/pdf/r6minaoshi-19.pdf"
+        },
+        {
+          "name": "第1回検討会で委員からいただいた意見に対する考え方",
+          "url": "https://www.maff.go.jp/j/syouan/syokubo/gaicyu/g_ipm/attach/pdf/r6minaoshi-24.pdf"
+        },
+        {
+          "name": "第1回検討会後に委員からいただいた意見等",
+          "url": "https://www.maff.go.jp/j/syouan/syokubo/gaicyu/g_ipm/attach/pdf/r6minaoshi-21.pdf"
+        },
+        {
+          "name": "食料・農業・農村基本計画 骨子(案)",
+          "url": "https://www.maff.go.jp/j/syouan/syokubo/gaicyu/g_ipm/attach/pdf/r6minaoshi-22.pdf"
+        },
+        {
+          "name": "議事概要",
+          "url": "https://www.maff.go.jp/j/syouan/syokubo/gaicyu/g_ipm/attach/pdf/r6minaoshi-23.pdf"
+        },
+        {
+          "name": "議事次第",
+          "url": "https://www.maff.go.jp/j/syouan/syokubo/gaicyu/g_ipm/attach/pdf/r6minaoshi-25.pdf"
+        },
+        {
+          "name": "今後の総合防除の在り方について(コンセプトペーパー)",
+          "url": "https://www.maff.go.jp/j/syouan/syokubo/gaicyu/g_ipm/attach/pdf/r6minaoshi-26.pdf"
+        },
+        {
+          "name": "「総合防除実践ガイダンス(仮称)」の策定について(検討の方向性)",
+          "url": "https://www.maff.go.jp/j/syouan/syokubo/gaicyu/g_ipm/attach/pdf/r6minaoshi-27.pdf"
+        },
+        {
+          "name": "総合防除の推進における「指導者」及び「伴走支援」の考え方",
+          "url": "https://www.maff.go.jp/j/syouan/syokubo/gaicyu/g_ipm/attach/pdf/r6minaoshi-28.pdf"
+        },
+        {
+          "name": "総合防除実践指標モデルの作成について",
+          "url": "https://www.maff.go.jp/j/syouan/syokubo/gaicyu/g_ipm/attach/pdf/r6minaoshi-29.pdf"
+        },
+        {
+          "name": "食料・農業・農村基本計画 骨子(案)",
+          "url": "https://www.maff.go.jp/j/syouan/syokubo/gaicyu/g_ipm/attach/pdf/r6minaoshi-30.pdf"
+        },
+        {
+          "name": "議事概要",
+          "url": "https://www.maff.go.jp/j/syouan/syokubo/gaicyu/g_ipm/attach/pdf/r6minaoshi-31.pdf"
+        },
+        {
+          "name": "議事次第",
+          "url": "https://www.maff.go.jp/j/syouan/syokubo/gaicyu/g_ipm/attach/pdf/r6minaoshi-33.pdf"
+        },
+        {
+          "name": "総合防除の実践ガイドライン(案)【骨子】",
+          "url": "https://www.maff.go.jp/j/syouan/syokubo/gaicyu/g_ipm/attach/pdf/r6minaoshi-38.pdf"
+        },
+        {
+          "name": "総合防除実践指標モデルの作成について",
+          "url": "https://www.maff.go.jp/j/syouan/syokubo/gaicyu/g_ipm/attach/pdf/r6minaoshi-34.pdf"
+        },
+        {
+          "name": "総合防除推進の道行きについて(検討案)",
+          "url": "https://www.maff.go.jp/j/syouan/syokubo/gaicyu/g_ipm/attach/pdf/r6minaoshi-35.pdf"
+        },
+        {
+          "name": "食料・農業・農村基本計画(令和7年4月11日閣議決定)(抜粋)",
+          "url": "https://www.maff.go.jp/j/syouan/syokubo/gaicyu/g_ipm/attach/pdf/r6minaoshi-36.pdf"
+        },
+        {
+          "name": "議事概要",
+          "url": "https://www.maff.go.jp/j/syouan/syokubo/gaicyu/g_ipm/attach/pdf/r6minaoshi-37.pdf"
+        },
+        {
+          "name": "議事次第",
+          "url": "https://www.maff.go.jp/j/syouan/syokubo/gaicyu/g_ipm/attach/pdf/r6minaoshi-39.pdf"
+        },
+        {
+          "name": "総合防除の実践ガイドライン(案、検討会当日資料)",
+          "url": "https://www.maff.go.jp/j/syouan/syokubo/gaicyu/g_ipm/attach/pdf/r6minaoshi-40.pdf"
+        },
+        {
+          "name": "総合防除の実践ガイドライン(案、検討会後取りまとめ版)",
+          "url": "https://www.maff.go.jp/j/syouan/syokubo/gaicyu/g_ipm/attach/pdf/r6minaoshi-44.pdf"
+        },
+        {
+          "name": "総合防除実践指標モデルの作成について",
+          "url": "https://www.maff.go.jp/j/syouan/syokubo/gaicyu/g_ipm/attach/pdf/r6minaoshi-41.pdf"
+        },
+        {
+          "name": "広域型総合防除体制の構築について",
+          "url": "https://www.maff.go.jp/j/syouan/syokubo/gaicyu/g_ipm/attach/pdf/r6minaoshi-42.pdf"
+        },
+        {
+          "name": "議事概要",
+          "url": "https://www.maff.go.jp/j/syouan/syokubo/gaicyu/g_ipm/attach/pdf/r6minaoshi-43.pdf"
+        },
+        {
+          "name": "議事次第",
+          "url": "https://www.maff.go.jp/j/syouan/syokubo/gaicyu/g_ipm/attach/pdf/r6minaoshi-45.pdf"
+        },
+        {
+          "name": "総合防除実践ガイドライン(案)",
+          "url": "https://www.maff.go.jp/j/syouan/syokubo/gaicyu/g_ipm/attach/pdf/r6minaoshi-47.pdf"
+        },
+        {
+          "name": "パブリックコメント結果概要",
+          "url": "https://www.maff.go.jp/j/syouan/syokubo/gaicyu/g_ipm/attach/pdf/r6minaoshi-48.pdf"
+        },
+        {
+          "name": "議事概要",
+          "url": "https://www.maff.go.jp/j/syouan/syokubo/gaicyu/g_ipm/attach/pdf/r6minaoshi-46.pdf"
+        }
+      ]
     },
     {
       "id": "meti-sankoshin_shin_kijiku_value_creation-20250424-004",
@@ -180565,8 +181802,89 @@
       "councilId": "mext-gijyutu",
       "name": "第76回 科学技術・学術審議会",
       "date": "2025/03/27",
-      "officialUrl": "https://www.mext.go.jp/b_menu/shingi/gijyutu/gijyutu0/index.htm",
-      "materials": []
+      "officialUrl": "https://www.mext.go.jp/b_menu/shingi/gijyutu/gijyutu0/shiryo/mext_00020.html",
+      "materials": [
+        {
+          "name": "資料1 第13期科学技術・学術審議会総会構成員",
+          "url": "https://www.mext.go.jp/content/20250327-mxt_chousei02-000041106_1.pdf"
+        },
+        {
+          "name": "資料2-1-1 科学技術・学術審議会に置く部会及び委員会について(案)",
+          "url": "https://www.mext.go.jp/content/20250327-mxt_chousei02-000041106_211.pdf"
+        },
+        {
+          "name": "資料2-1-2 科学技術・学術審議会の構成について(案)",
+          "url": "https://www.mext.go.jp/content/20250327-mxt_chousei02-000041106_212.pdf"
+        },
+        {
+          "name": "資料2-2 科学技術・学術審議会運営規則(案)",
+          "url": "https://www.mext.go.jp/content/20250327-mxt_chousei02-000041106_22.pdf"
+        },
+        {
+          "name": "資料3-1 第13期科学技術・学術審議会における主な検討事項",
+          "url": "https://www.mext.go.jp/content/20250327-mxt_chousei02-000041106_31.pdf"
+        },
+        {
+          "name": "資料3-2 第12期科学技術・学術審議会の各分科会等における審議状況",
+          "url": "https://www.mext.go.jp/content/20250327-mxt_chousei02-000041106_32.pdf"
+        },
+        {
+          "name": "資料4-1 科学技術・イノベーション基本計画について(2024年12月23日総合科学技術・イノベーション会議(第74回)内閣府特命担当大臣説明資料)",
+          "url": "https://www.mext.go.jp/content/20250327-mxt_chousei02-000041106_41.pdf"
+        },
+        {
+          "name": "資料4-2 日本の研究パフォーマンス最大化プラン(仮称)~第7期科学技術・イノベーション基本計画に向けた検討状況~",
+          "url": "https://www.mext.go.jp/content/20250327-mxt_chousei02-000041106_42.pdf"
+        },
+        {
+          "name": "参考資料1-1 科学技術・学術審議会関係法令",
+          "url": "https://www.mext.go.jp/content/20250327-mxt_chousei02-000041106_911.pdf"
+        },
+        {
+          "name": "参考資料1-2 科学技術・学術審議会の公開の手続きについて",
+          "url": "https://www.mext.go.jp/content/20250327-mxt_chousei02-000041106_912.pdf"
+        },
+        {
+          "name": "参考資料2 第12期科学技術・学術審議会技術士分科会における検討のまとめ",
+          "url": "https://www.mext.go.jp/content/20250327-mxt_chousei02-000041106_92.pdf"
+        },
+        {
+          "name": "参考資料3-1 我が国の科学技術行政体制",
+          "url": "https://www.mext.go.jp/content/20250327-mxt_chousei02-000041106_931.pdf"
+        },
+        {
+          "name": "参考資料3-2 第6期科学技術・イノベーション基本計画(概要)",
+          "url": "https://www.mext.go.jp/content/20250327-mxt_chousei02-000041106_932.pdf"
+        },
+        {
+          "name": "参考資料3-3 統合イノベーション戦略2024(概要)",
+          "url": "https://www.mext.go.jp/content/20250327-mxt_chousei02-000041106_933.pdf"
+        },
+        {
+          "name": "参考資料4-1 科学技術・イノベーション基本計画の30年間の振り返り(2024年12月24日総合科学技術・イノベーション会議基本計画専門調査会(第1回)資料)",
+          "url": "https://www.mext.go.jp/content/20250327-mxt_chousei02-000041106_941.pdf"
+        },
+        {
+          "name": "参考資料4-2 次期基本計画に向けて議論すべき主要な論点(案)(2024年12月24日総合科学技術・イノベーション会議基本計画専門調査会(第1回)資料)",
+          "url": "https://www.mext.go.jp/content/20250327-mxt_chousei02-000041106_942.pdf"
+        },
+        {
+          "name": "参考資料5-1 令和7年度科学技術予算(案)について",
+          "url": "https://www.mext.go.jp/content/20250327-mxt_chousei02-000041106_951.pdf"
+        },
+        {
+          "name": "参考資料5-2 高等教育局主要事項-令和7年度予算(案)",
+          "url": "https://www.mext.go.jp/content/20250327-mxt_chousei02-000041106_952.pdf"
+        },
+        {
+          "name": "参考資料5-3 国立大学・高専等施設の整備",
+          "url": "https://www.mext.go.jp/content/20250327-mxt_chousei02-000041106_953.pdf"
+        },
+        {
+          "name": "参考資料5-4 令和7年度文部科学関係税制改正要望の結果(概要)",
+          "url": "https://www.mext.go.jp/content/20250327-mxt_chousei02-000041106_954.pdf"
+        }
+      ]
     },
     {
       "id": "mhlw-788-20250327-104",
@@ -183243,7 +184561,184 @@
       "name": "第3回 総合的病害虫・雑草管理(IPM)実践指針の見直しに関する検討会",
       "date": "2025/03/19",
       "officialUrl": "https://www.maff.go.jp/j/syouan/syokubo/gaicyu/g_ipm/r6minaoshi.html",
-      "materials": []
+      "materials": [
+        {
+          "name": "総合的病害虫・雑草管理(IPM)実践指針の見直しに関する検討会 設置要領",
+          "url": "https://www.maff.go.jp/j/syouan/syokubo/gaicyu/g_ipm/attach/pdf/r6minaoshi-32.pdf"
+        },
+        {
+          "name": "議事次第",
+          "url": "https://www.maff.go.jp/j/syouan/syokubo/gaicyu/g_ipm/attach/pdf/r6minaoshi-2.pdf"
+        },
+        {
+          "name": "総合的病害虫・雑草管理(IPM)実践指針の見直しに関する検討会 設置要領",
+          "url": "https://www.maff.go.jp/j/syouan/syokubo/gaicyu/g_ipm/attach/pdf/r6minaoshi-3.pdf"
+        },
+        {
+          "name": "今後の総合防除の在り方について(コンセプトペーパー)(案)",
+          "url": "https://www.maff.go.jp/j/syouan/syokubo/gaicyu/g_ipm/attach/pdf/r6minaoshi-4.pdf"
+        },
+        {
+          "name": "「総合防除の推進をめぐる状況と課題」",
+          "url": "https://www.maff.go.jp/j/syouan/syokubo/gaicyu/g_ipm/attach/pdf/r6minaoshi-17.pdf"
+        },
+        {
+          "name": "分割版1",
+          "url": "https://www.maff.go.jp/j/syouan/syokubo/gaicyu/g_ipm/attach/pdf/r6minaoshi-6.pdf"
+        },
+        {
+          "name": "分割版2",
+          "url": "https://www.maff.go.jp/j/syouan/syokubo/gaicyu/g_ipm/attach/pdf/r6minaoshi-7.pdf"
+        },
+        {
+          "name": "分割版3",
+          "url": "https://www.maff.go.jp/j/syouan/syokubo/gaicyu/g_ipm/attach/pdf/r6minaoshi-18.pdf"
+        },
+        {
+          "name": "分割版4",
+          "url": "https://www.maff.go.jp/j/syouan/syokubo/gaicyu/g_ipm/attach/pdf/r6minaoshi-9.pdf"
+        },
+        {
+          "name": "「都道府県における総合防除推進に向けた現状と課題」",
+          "url": "https://www.maff.go.jp/j/syouan/syokubo/gaicyu/g_ipm/attach/pdf/r6minaoshi-10.pdf"
+        },
+        {
+          "name": "「総合防除実践ガイダンス(仮称)」の策定について(骨子案)",
+          "url": "https://www.maff.go.jp/j/syouan/syokubo/gaicyu/g_ipm/attach/pdf/r6minaoshi-11.pdf"
+        },
+        {
+          "name": "委員から事前提出された意見・コメント",
+          "url": "https://www.maff.go.jp/j/syouan/syokubo/gaicyu/g_ipm/attach/pdf/r6minaoshi-12.pdf"
+        },
+        {
+          "name": "総合的病害虫・雑草管理(IPM)実践指針及び IPM 実践指標モデル(水稲)",
+          "url": "https://www.maff.go.jp/j/syouan/syokubo/gaicyu/g_ipm/attach/pdf/r6minaoshi-13.pdf"
+        },
+        {
+          "name": "総合防除基本指針(抜粋)",
+          "url": "https://www.maff.go.jp/j/syouan/syokubo/gaicyu/g_ipm/attach/pdf/r6minaoshi-14.pdf"
+        },
+        {
+          "name": "病害虫・雑草防除に関わる施策の潮流",
+          "url": "https://www.maff.go.jp/j/syouan/syokubo/gaicyu/g_ipm/attach/pdf/r6minaoshi-15.pdf"
+        },
+        {
+          "name": "議事概要",
+          "url": "https://www.maff.go.jp/j/syouan/syokubo/gaicyu/g_ipm/attach/pdf/r6minaoshi-16.pdf"
+        },
+        {
+          "name": "議事次第",
+          "url": "https://www.maff.go.jp/j/syouan/syokubo/gaicyu/g_ipm/attach/pdf/r6minaoshi-19.pdf"
+        },
+        {
+          "name": "第1回検討会で委員からいただいた意見に対する考え方",
+          "url": "https://www.maff.go.jp/j/syouan/syokubo/gaicyu/g_ipm/attach/pdf/r6minaoshi-24.pdf"
+        },
+        {
+          "name": "第1回検討会後に委員からいただいた意見等",
+          "url": "https://www.maff.go.jp/j/syouan/syokubo/gaicyu/g_ipm/attach/pdf/r6minaoshi-21.pdf"
+        },
+        {
+          "name": "食料・農業・農村基本計画 骨子(案)",
+          "url": "https://www.maff.go.jp/j/syouan/syokubo/gaicyu/g_ipm/attach/pdf/r6minaoshi-22.pdf"
+        },
+        {
+          "name": "議事概要",
+          "url": "https://www.maff.go.jp/j/syouan/syokubo/gaicyu/g_ipm/attach/pdf/r6minaoshi-23.pdf"
+        },
+        {
+          "name": "議事次第",
+          "url": "https://www.maff.go.jp/j/syouan/syokubo/gaicyu/g_ipm/attach/pdf/r6minaoshi-25.pdf"
+        },
+        {
+          "name": "今後の総合防除の在り方について(コンセプトペーパー)",
+          "url": "https://www.maff.go.jp/j/syouan/syokubo/gaicyu/g_ipm/attach/pdf/r6minaoshi-26.pdf"
+        },
+        {
+          "name": "「総合防除実践ガイダンス(仮称)」の策定について(検討の方向性)",
+          "url": "https://www.maff.go.jp/j/syouan/syokubo/gaicyu/g_ipm/attach/pdf/r6minaoshi-27.pdf"
+        },
+        {
+          "name": "総合防除の推進における「指導者」及び「伴走支援」の考え方",
+          "url": "https://www.maff.go.jp/j/syouan/syokubo/gaicyu/g_ipm/attach/pdf/r6minaoshi-28.pdf"
+        },
+        {
+          "name": "総合防除実践指標モデルの作成について",
+          "url": "https://www.maff.go.jp/j/syouan/syokubo/gaicyu/g_ipm/attach/pdf/r6minaoshi-29.pdf"
+        },
+        {
+          "name": "食料・農業・農村基本計画 骨子(案)",
+          "url": "https://www.maff.go.jp/j/syouan/syokubo/gaicyu/g_ipm/attach/pdf/r6minaoshi-30.pdf"
+        },
+        {
+          "name": "議事概要",
+          "url": "https://www.maff.go.jp/j/syouan/syokubo/gaicyu/g_ipm/attach/pdf/r6minaoshi-31.pdf"
+        },
+        {
+          "name": "議事次第",
+          "url": "https://www.maff.go.jp/j/syouan/syokubo/gaicyu/g_ipm/attach/pdf/r6minaoshi-33.pdf"
+        },
+        {
+          "name": "総合防除の実践ガイドライン(案)【骨子】",
+          "url": "https://www.maff.go.jp/j/syouan/syokubo/gaicyu/g_ipm/attach/pdf/r6minaoshi-38.pdf"
+        },
+        {
+          "name": "総合防除実践指標モデルの作成について",
+          "url": "https://www.maff.go.jp/j/syouan/syokubo/gaicyu/g_ipm/attach/pdf/r6minaoshi-34.pdf"
+        },
+        {
+          "name": "総合防除推進の道行きについて(検討案)",
+          "url": "https://www.maff.go.jp/j/syouan/syokubo/gaicyu/g_ipm/attach/pdf/r6minaoshi-35.pdf"
+        },
+        {
+          "name": "食料・農業・農村基本計画(令和7年4月11日閣議決定)(抜粋)",
+          "url": "https://www.maff.go.jp/j/syouan/syokubo/gaicyu/g_ipm/attach/pdf/r6minaoshi-36.pdf"
+        },
+        {
+          "name": "議事概要",
+          "url": "https://www.maff.go.jp/j/syouan/syokubo/gaicyu/g_ipm/attach/pdf/r6minaoshi-37.pdf"
+        },
+        {
+          "name": "議事次第",
+          "url": "https://www.maff.go.jp/j/syouan/syokubo/gaicyu/g_ipm/attach/pdf/r6minaoshi-39.pdf"
+        },
+        {
+          "name": "総合防除の実践ガイドライン(案、検討会当日資料)",
+          "url": "https://www.maff.go.jp/j/syouan/syokubo/gaicyu/g_ipm/attach/pdf/r6minaoshi-40.pdf"
+        },
+        {
+          "name": "総合防除の実践ガイドライン(案、検討会後取りまとめ版)",
+          "url": "https://www.maff.go.jp/j/syouan/syokubo/gaicyu/g_ipm/attach/pdf/r6minaoshi-44.pdf"
+        },
+        {
+          "name": "総合防除実践指標モデルの作成について",
+          "url": "https://www.maff.go.jp/j/syouan/syokubo/gaicyu/g_ipm/attach/pdf/r6minaoshi-41.pdf"
+        },
+        {
+          "name": "広域型総合防除体制の構築について",
+          "url": "https://www.maff.go.jp/j/syouan/syokubo/gaicyu/g_ipm/attach/pdf/r6minaoshi-42.pdf"
+        },
+        {
+          "name": "議事概要",
+          "url": "https://www.maff.go.jp/j/syouan/syokubo/gaicyu/g_ipm/attach/pdf/r6minaoshi-43.pdf"
+        },
+        {
+          "name": "議事次第",
+          "url": "https://www.maff.go.jp/j/syouan/syokubo/gaicyu/g_ipm/attach/pdf/r6minaoshi-45.pdf"
+        },
+        {
+          "name": "総合防除実践ガイドライン(案)",
+          "url": "https://www.maff.go.jp/j/syouan/syokubo/gaicyu/g_ipm/attach/pdf/r6minaoshi-47.pdf"
+        },
+        {
+          "name": "パブリックコメント結果概要",
+          "url": "https://www.maff.go.jp/j/syouan/syokubo/gaicyu/g_ipm/attach/pdf/r6minaoshi-48.pdf"
+        },
+        {
+          "name": "議事概要",
+          "url": "https://www.maff.go.jp/j/syouan/syokubo/gaicyu/g_ipm/attach/pdf/r6minaoshi-46.pdf"
+        }
+      ]
     },
     {
       "id": "meti-sankoshin_hoan_shohi_ekika_sekiyu-20250319-019",
@@ -184216,8 +185711,33 @@
       "councilId": "mext-chukyo",
       "name": "第142回 中央教育審議会",
       "date": "2025/03/17",
-      "officialUrl": "https://www.mext.go.jp/b_menu/shingi/chukyo/chukyo0/index.htm",
-      "materials": []
+      "officialUrl": "https://www.mext.go.jp/b_menu/shingi/chukyo/chukyo0/gijiroku/1415607_00028.html",
+      "materials": [
+        {
+          "name": "【資料1】第13期中央教育審議会委員",
+          "url": "https://www.mext.go.jp/content/20250317-mxt_soseisk01-000040904-01.pdf"
+        },
+        {
+          "name": "【資料2-1】中央教育審議会関係法令",
+          "url": "https://www.mext.go.jp/content/20250317-mxt_soseisk01-000040904-02.pdf"
+        },
+        {
+          "name": "【資料2-2】中央教育審議会総会運営規則(案)",
+          "url": "https://www.mext.go.jp/content/20250317-mxt_soseisk01-000040904-03.pdf"
+        },
+        {
+          "name": "【資料2-3】中央教育審議会総会公開規則(案)",
+          "url": "https://www.mext.go.jp/content/20250317-mxt_soseisk01-000040904-04.pdf"
+        },
+        {
+          "name": "【資料2-4】中央教育審議会の会議の運営について(案)",
+          "url": "https://www.mext.go.jp/content/20250317-mxt_soseisk01-000040904-05.pdf"
+        },
+        {
+          "name": "【資料3】第12期中央教育審議会の審議状況及び第13期の審議事項について",
+          "url": "https://www.mext.go.jp/content/20250317-mxt_soseisk01-000040904-06.pdf"
+        }
+      ]
     },
     {
       "id": "mhlw-895-20250317-005",
@@ -189313,7 +190833,68 @@
       "name": "こどもの貧困対策・ひとり親家庭支援部会",
       "date": "2025/02/27",
       "officialUrl": "https://www.cfa.go.jp/councils/shingikai/hinkon_hitorioya",
-      "materials": []
+      "materials": [
+        {
+          "name": "議事次第",
+          "url": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/5a246038-96bb-4634-a08d-ec4d5689cade/6fd51590/20260626_councils_shingikai_hinkon_hitorioya_5a246038_01.pdf"
+        },
+        {
+          "name": "資料1 こどもまんなか実行計画2026(関連部分抜粋)",
+          "url": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/5a246038-96bb-4634-a08d-ec4d5689cade/d0890064/20260626_councils_shingikai_hinkon_hitorioya_5a246038_02.pdf"
+        },
+        {
+          "name": "資料2 夏季休業期間中の酷暑対策及び食支援に係る各施策の活用について",
+          "url": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/5a246038-96bb-4634-a08d-ec4d5689cade/540b3602/20260626_councils_shingikai_hinkon_hitorioya_5a246038_03.pdf"
+        },
+        {
+          "name": "資料3 より多様な環境にいるこども・若者の意見を聴くための調査研究",
+          "url": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/5a246038-96bb-4634-a08d-ec4d5689cade/c330d686/20260626_councils_shingikai_hinkon_hitorioya_5a246038_04.pdf"
+        },
+        {
+          "name": "資料4 文部科学省提出資料",
+          "url": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/5a246038-96bb-4634-a08d-ec4d5689cade/18c143f4/20260626_councils_shingikai_hinkon_hitorioya_5a246038_05.pdf"
+        },
+        {
+          "name": "資料5 三菱UFJリサーチ&コンサルティング株式会社 提出資料",
+          "url": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/5a246038-96bb-4634-a08d-ec4d5689cade/ab940125/20260629_councils_shingikai_hinkon_hitorioya_5a246038_15.pdf"
+        },
+        {
+          "name": "資料6 これまでの部会の検討及び今後の方針について",
+          "url": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/5a246038-96bb-4634-a08d-ec4d5689cade/f45e613f/20260626_councils_shingikai_hinkon_hitorioya_5a246038_07.pdf"
+        },
+        {
+          "name": "参考資料1 こどもまんなか実行計画2026(全体版)",
+          "url": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/5a246038-96bb-4634-a08d-ec4d5689cade/09ad18fa/20260626_councils_shingikai_hinkon_hitorioya_5a246038_08.pdf"
+        },
+        {
+          "name": "参考資料2 【事務連絡】夏季休業期間中の酷暑対策及び食支援に係る各施策の活用について(依頼)",
+          "url": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/5a246038-96bb-4634-a08d-ec4d5689cade/72aed644/20260626_councils_shingikai_hinkon_hitorioya_5a246038_09.pdf"
+        },
+        {
+          "name": "参考資料3 物価高騰の影響を受けている低所得の子育て世帯に対する支援について",
+          "url": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/5a246038-96bb-4634-a08d-ec4d5689cade/38d48001/20260626_councils_shingikai_hinkon_hitorioya_5a246038_10.pdf"
+        },
+        {
+          "name": "参考資料4 より多様な環境にいるこども・若者の意見を聴くための調査研究",
+          "url": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/5a246038-96bb-4634-a08d-ec4d5689cade/a6cea27b/20260626_councils_shingikai_hinkon_hitorioya_5a246038_11.pdf"
+        },
+        {
+          "name": "参考資料5 子どもの貧困対策推進議員連盟提言",
+          "url": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/5a246038-96bb-4634-a08d-ec4d5689cade/38ea95af/20260626_councils_shingikai_hinkon_hitorioya_5a246038_12.pdf"
+        },
+        {
+          "name": "参考資料6 令和8年度予算の概要(こどもの貧困対策・ひとり親家庭支援関係)",
+          "url": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/5a246038-96bb-4634-a08d-ec4d5689cade/5a5e9e65/20260626_councils_shingikai_hinkon_hitorioya_5a246038_13.pdf"
+        },
+        {
+          "name": "参考資料7 構成員名簿",
+          "url": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/5a246038-96bb-4634-a08d-ec4d5689cade/a0936a39/20260626_councils_shingikai_hinkon_hitorioya_5a246038_14.pdf"
+        },
+        {
+          "name": "議事録",
+          "url": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/5a246038-96bb-4634-a08d-ec4d5689cade/4ab9bdfa/20260826_councils_shingikai_hinkon_hitorioya_5a246038_16.pdf"
+        }
+      ]
     },
     {
       "id": "digital-417-20250227-s03",
@@ -203339,8 +204920,41 @@
       "councilId": "mext-chukyo",
       "name": "第140回 中央教育審議会",
       "date": "2024/12/25",
-      "officialUrl": "https://www.mext.go.jp/b_menu/shingi/chukyo/chukyo0/index.htm",
-      "materials": []
+      "officialUrl": "https://www.mext.go.jp/b_menu/shingi/chukyo/chukyo0/gijiroku/1415607_00026.html",
+      "materials": [
+        {
+          "name": "【資料1-1】初等中等教育における教育課程の基準等の在り方について(諮問)",
+          "url": "https://www.mext.go.jp/content/20241225-mxt_soseisk01-000039447-01.pdf"
+        },
+        {
+          "name": "【資料1-2】初等中等教育における教育課程の基準等の在り方について(諮問)【概要】",
+          "url": "https://www.mext.go.jp/content/20241225-mxt_soseisk01-000039447-02.pdf"
+        },
+        {
+          "name": "【資料1-3】初等中等教育における教育課程の基準等の在り方について(諮問)参考資料",
+          "url": "https://www.mext.go.jp/content/20241225-mxt_soseisk01-000039447-03.pdf"
+        },
+        {
+          "name": "【資料2-1】多様な専門性を有する質の高い教職員集団の形成を加速するための方策について(諮問)",
+          "url": "https://www.mext.go.jp/content/20241225-mxt_soseisk01-000039447-04.pdf"
+        },
+        {
+          "name": "【資料2-2】多様な専門性を有する質の高い教職員集団の形成を加速するための方策について(諮問)概要",
+          "url": "https://www.mext.go.jp/content/20241225-mxt_soseisk01-000039447-05.pdf"
+        },
+        {
+          "name": "【資料2-3】多様な専門性を有する質の高い教職員集団の形成を加速するための方策について(諮問) 参考資料",
+          "url": "https://www.mext.go.jp/content/20241225-mxt_soseisk01-000039447-06.pdf"
+        },
+        {
+          "name": "【資料3-1】急速な少子化が進行する中での将来社会を見据えた高等教育の在り方について(答申【案】)",
+          "url": "https://www.mext.go.jp/content/20241225-mxt_soseisk01-000039447-07.pdf"
+        },
+        {
+          "name": "【資料3-2】急速な少子化が進行する中での将来社会を見据えた高等教育の在り方について(答申案)要旨",
+          "url": "https://www.mext.go.jp/content/20241225-mxt_soseisk01-000039447-08.pdf"
+        }
+      ]
     },
     {
       "id": "mhlw-1014-20241225-233",
@@ -216038,5 +217652,5 @@
   "lastCrawlTime": "2026/11/10 03:07",
   "hasArchive": true,
   "totalMeetingsCount": 25021,
-  "totalMaterialsCount": 153579
+  "totalMaterialsCount": 154093
 }
