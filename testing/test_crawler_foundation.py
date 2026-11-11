@@ -21,6 +21,7 @@ from utils import setup_win32_utf8
 setup_win32_utf8()
 
 from crawler import (
+    is_preliminary_notice_page,
     clean_html_for_dates,
     extract_clean_dates_from_html,
     _sort_subpage_urls_by_recency,
@@ -210,6 +211,28 @@ class TestCrawlerFoundation(unittest.TestCase):
         }
         for bad_str, expected in fullwidth_samples.items():
             self.assertEqual(normalize_text(bad_str), expected)
+
+    def test_notice_and_correction_page_exclusion(self):
+        """資料訂正告知および単独報告書公表ページの除外判定検証"""
+        # 訂正告知・正誤表（除外されるべき）
+        self.assertTrue(is_preliminary_notice_page(
+            "https://www.mof.go.jp/sample/material/20260212164807.html",
+            "「関税・外国為替等審議会 外国為替等分科会 資料(令和7年12月12日開催)」を一部訂正しました"
+        ))
+        self.assertTrue(is_preliminary_notice_page(
+            "https://www.example.go.jp/notice.html",
+            "配付資料の一部訂正について"
+        ))
+        # 報告書公表の報道発表（回次なし・除外されるべき）
+        self.assertTrue(is_preliminary_notice_page(
+            "https://www.fsa.go.jp/news/22/singi/20101217-6.html",
+            "「「金融庁・開示制度ワーキング・グループ報告」～ 英文開示の範囲拡大について ～ 」の公表について"
+        ))
+        # 正規の開催回（除外されてはならない）
+        self.assertFalse(is_preliminary_notice_page(
+            "https://www.cao.go.jp/sample/014/index.html",
+            "第14回 人工知能(AI)技術の利用と消費者問題に関する専門調査会"
+        ))
 
 
 if __name__ == "__main__":
