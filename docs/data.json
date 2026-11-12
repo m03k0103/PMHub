@@ -2723,7 +2723,8 @@
       "name": "消費者委員会",
       "officialUrl": "https://www.cao.go.jp/consumer/iinkai/index.html",
       "description": "内閣府に設置された独立機関として、消費者行政全般の施策を監視し建議する委員会本会議。",
-      "pastYearCount": 23
+      "pastYearCount": 24,
+      "isNewlyDiscovered": true
     },
     {
       "id": "cao-space_anpo",
@@ -5502,7 +5503,8 @@
       "category": "COUNCIL",
       "name": "補償金・優生手術等一時金認定審査部会",
       "officialUrl": "https://www.cfa.go.jp/councils/hoshokin-yuseishujutsu/",
-      "pastYearCount": 0
+      "pastYearCount": 21,
+      "isNewlyDiscovered": true
     },
     {
       "id": "cfa-iken_senmon",
@@ -12163,7 +12165,8 @@
       "category": "SECTION",
       "name": "社会保障審議会 医療部会",
       "officialUrl": "https://www.mhlw.go.jp/stf/shingi/shingi-hosho_126719.html",
-      "pastYearCount": 51
+      "pastYearCount": 51,
+      "isNewlyDiscovered": true
     },
     {
       "id": "mhlw-786",
@@ -18185,6 +18188,32 @@
       ]
     },
     {
+      "id": "cfa-hoshokin_yuseishujutsu-20261112-021",
+      "councilId": "cfa-hoshokin_yuseishujutsu",
+      "name": "補償金・優生手術等一時金認定審査部会(第21回)",
+      "date": "2026/11/12",
+      "officialUrl": "https://www.cfa.go.jp/councils/hoshokin-yuseishujutsu/9455a714",
+      "isNewlyDiscovered": true,
+      "materials": [
+        {
+          "name": "議事次第",
+          "url": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/9455a714-40cf-4d49-8d8b-3546180e5fa6/27a56e46/20261105_councils_hoshokin-yuseishujutsu_9455a714_00.pdf"
+        },
+        {
+          "name": "参考資料1:補償金・優生手術等一時金認定審査部会審査方針",
+          "url": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/9455a714-40cf-4d49-8d8b-3546180e5fa6/413372a1/20261105_councils_hoshokin-yuseishujutsu_9455a714_01.pdf"
+        },
+        {
+          "name": "参考資料2:旧優生保護法補償金等認定審査会運営規程",
+          "url": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/9455a714-40cf-4d49-8d8b-3546180e5fa6/47494054/20261105_councils_hoshokin-yuseishujutsu_9455a714_02.pdf"
+        },
+        {
+          "name": "参考資料3:補償金・優生手術等一時金認定審査部会 委員名簿",
+          "url": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/9455a714-40cf-4d49-8d8b-3546180e5fa6/ad5ad46b/20261105_councils_hoshokin-yuseishujutsu_9455a714_03.pdf"
+        }
+      ]
+    },
+    {
       "id": "mhlw-ishiwata_higai_shinsa-20261112-039",
       "councilId": "mhlw-ishiwata_higai_shinsa",
       "name": "第39回 特定石綿被害建設業務労働者等認定審査会専門委員会",
@@ -18222,8 +18251,37 @@
       "councilId": "mhlw-785",
       "name": "第131回 社会保障審議会 医療部会",
       "date": "2026/11/11",
-      "officialUrl": "https://www.mhlw.go.jp/stf/shingi/shingi-hosho_126719.html",
-      "materials": []
+      "officialUrl": "https://www.mhlw.go.jp/stf/newpage_77345.html",
+      "materials": [
+        {
+          "name": "議事次第",
+          "url": "https://www.mhlw.go.jp/content/10801000/001768271.pdf"
+        },
+        {
+          "name": "委員名簿",
+          "url": "https://www.mhlw.go.jp/content/10801000/001768272.pdf"
+        },
+        {
+          "name": "資料1 医師手当事業に関する今後の検討体制について",
+          "url": "https://www.mhlw.go.jp/content/10801000/001768273.pdf"
+        },
+        {
+          "name": "資料2 基幹インフラ制度への医療分野の追加に係る検討状況について",
+          "url": "https://www.mhlw.go.jp/content/10801000/001768274.pdf"
+        },
+        {
+          "name": "資料3 医療関係職種の安定的な養成・確保に関する検討会における議論の状況について",
+          "url": "https://www.mhlw.go.jp/content/10801000/001768275.pdf"
+        },
+        {
+          "name": "資料4 2040年に向けた看護職員の養成・確保の在り方に関する検討会における議論の進捗",
+          "url": "https://www.mhlw.go.jp/content/10801000/001768276.pdf"
+        },
+        {
+          "name": "資料5 歯科医療提供体制等に関する検討会、歯科衛生士の業務のあり方等に関する検討会及び歯科技工士の業務のあり方等に関する検討会における議論の進捗",
+          "url": "https://www.mhlw.go.jp/content/10801000/001768277.pdf"
+        }
+      ]
     },
     {
       "id": "mhlw-945-20261111-145",
@@ -18255,6 +18313,60 @@
         {
           "name": "参考資料3 一般社団法人日本障害者雇用促進事業者協会事業ガイドライン",
           "url": "https://www.mhlw.go.jp/content/11704000/001768039.pdf"
+        }
+      ]
+    },
+    {
+      "id": "cao-shouhisha_iinkai-20261110-502",
+      "councilId": "cao-shouhisha_iinkai",
+      "name": "第502回 消費者委員会本会議",
+      "date": "2026/11/10",
+      "officialUrl": "https://www.cao.go.jp/consumer/iinkai/2026/502/shiryou/index.html",
+      "isNewlyDiscovered": true,
+      "materials": [
+        {
+          "name": "議事次第",
+          "url": "https://www.cao.go.jp/consumer/iinkai/2026/502/doc/20261110_gijishidai.pdf"
+        },
+        {
+          "name": "【資料1-1】 デジタル取引・特定商取引法等検討会 中間取りまとめ(消費者庁資料)",
+          "url": "https://www.cao.go.jp/consumer/iinkai/2026/502/doc/20261110_shiryou1-1.pdf"
+        },
+        {
+          "name": "【資料1-2】 デジタル取引・特定商取引法等検討会 中間取りまとめ 参考資料集(消費者庁資料)",
+          "url": "https://www.cao.go.jp/consumer/iinkai/2026/502/doc/20261110_shiryou1-2.pdf"
+        },
+        {
+          "name": "【資料1-3】 デジタル取引・特定商取引法等検討会 中間取りまとめ 概要(消費者庁資料)",
+          "url": "https://www.cao.go.jp/consumer/iinkai/2026/502/doc/20261110_shiryou1-3.pdf"
+        },
+        {
+          "name": "【資料1-4】 現代社会における消費者取引の在り方を踏まえた消費者契約法検討会中間取りまとめ(消費者庁資料)",
+          "url": "https://www.cao.go.jp/consumer/iinkai/2026/502/doc/20261110_shiryou1-4.pdf"
+        },
+        {
+          "name": "【資料1-5】 現代社会における消費者取引の在り方を踏まえた消費者契約法検討会中間取りまとめ 概要(消費者庁資料)",
+          "url": "https://www.cao.go.jp/consumer/iinkai/2026/502/doc/20261110_shiryou1-5.pdf"
+        },
+        {
+          "name": "【資料1-6】 詐欺的な事業の破綻により多数の消費者に深刻な財産被害を及ぼす悪質商法に係る対策パッケージ(消費者庁資料)",
+          "url": "https://www.cao.go.jp/consumer/iinkai/2026/502/doc/20261110_shiryou1-6.pdf"
+        },
+        {
+          "name": "【資料1-7】 詐欺的な事業の破綻により多数の消費者に深刻な財産被害を及ぼす悪質商法に係る対策パッケージ 概要(消費者庁資料)",
+          "url": "https://www.cao.go.jp/consumer/iinkai/2026/502/doc/20261110_shiryou1-7.pdf"
+        },
+        {
+          "name": "【参考資料1-1】 消費者委員会に寄せられた要望書・意見書・声明文等一覧(令和8年9月分)",
+          "url": "https://www.cao.go.jp/consumer/iinkai/2026/502/doc/20261110_sankou1-1.pdf"
+        },
+        {
+          "name": "【参考資料1-2】 国民生活センター記者公表案件一覧(令和8年7月分~9月分)",
+          "url": "https://www.cao.go.jp/consumer/iinkai/2026/502/doc/20261110_sankou1-2.pdf"
+        },
+        {
+          "name": "【参考資料2】 委員間打合せ概要メモ",
+          "url": "https://www.cao.go.jp/consumer/iinkai/2026/502/doc/20261110_sankou2.pdf"
         }
       ]
     },
@@ -217661,302 +217773,6 @@
           "url": "https://www.ppc.go.jp/files/pdf/20241112_kentohkai_gijiroku.pdf"
         }
       ]
-    },
-    {
-      "id": "anre-1791-20241111-004",
-      "councilId": "anre-1791",
-      "name": "令和6年度 第4回 定置用蓄電システム普及拡大検討会",
-      "date": "2024/11/11",
-      "officialUrl": "https://www.meti.go.jp/shingikai/energy_environment/storage_system/2024_004.html",
-      "materials": [
-        {
-          "name": "資料1 議事次第",
-          "url": "https://www.meti.go.jp/shingikai/energy_environment/storage_system/pdf/2024_004_01_00.pdf"
-        },
-        {
-          "name": "資料2 検討会参加メンバー",
-          "url": "https://www.meti.go.jp/shingikai/energy_environment/storage_system/pdf/2024_004_02_00.pdf"
-        },
-        {
-          "name": "資料3-1 系統用蓄電システムの需給調整市場における収益性分析(三菱総合研究所)",
-          "url": "https://www.meti.go.jp/shingikai/energy_environment/storage_system/pdf/2024_004_03_01.pdf"
-        },
-        {
-          "name": "資料3-2 系統用・再エネ併設蓄電システムのコスト面・収益面での論点について(資源エネルギー庁)",
-          "url": "https://www.meti.go.jp/shingikai/energy_environment/storage_system/pdf/2024_004_03_02.pdf"
-        },
-        {
-          "name": "資料4-1 蓄電池以外のエネルギー貯蔵システム(LDES)の技術動向・課題整理(三菱総合研究所)",
-          "url": "https://www.meti.go.jp/shingikai/energy_environment/storage_system/pdf/2024_004_04_01.pdf"
-        },
-        {
-          "name": "資料4-2 長期エネルギー貯蔵システム(LDES)を取り巻く市場環境(土谷委員)",
-          "url": "https://www.meti.go.jp/shingikai/energy_environment/storage_system/pdf/2024_004_04_02.pdf"
-        },
-        {
-          "name": "資料4-3 長期エネルギー貯蔵技術(LDES)の導入に向けた論点について(資源エネルギー庁)",
-          "url": "https://www.meti.go.jp/shingikai/energy_environment/storage_system/pdf/2024_004_04_03.pdf"
-        },
-        {
-          "name": "資料5-1 家庭用及び業務・産業用蓄電システムに関する課題整理(三菱総合研究所)",
-          "url": "https://www.meti.go.jp/shingikai/energy_environment/storage_system/pdf/2024_004_05_01.pdf"
-        },
-        {
-          "name": "資料5-2 家庭用・業産用蓄電システムの普及拡大に向けた論点について(資源エネルギー庁)",
-          "url": "https://www.meti.go.jp/shingikai/energy_environment/storage_system/pdf/2024_004_05_02.pdf"
-        },
-        {
-          "name": "議事要旨",
-          "url": "https://www.meti.go.jp/shingikai/energy_environment/storage_system/pdf/2024_004_gijiyoshi.pdf"
-        }
-      ]
-    },
-    {
-      "id": "cao-kisei_startup_wg-20241111-001",
-      "councilId": "cao-kisei_startup_wg",
-      "name": "第1回 規制改革推進会議 スタートアップ・イノベーション促進WG(令和6年度)",
-      "date": "2024/11/11",
-      "officialUrl": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2409_02startup/241111/startup01_agenda.html",
-      "materials": [
-        {
-          "name": "議事録",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2409_02startup/241111/startup01_minutes.pdf"
-        },
-        {
-          "name": "日本エア・リキード合同会社 御提出資料(PDF形式:2,767KB)",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2409_02startup/241111/startup01.pdf"
-        },
-        {
-          "name": "ジャパンハイドロ株式会社 御提出資料(PDF形式:6,401KB)",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2409_02startup/241111/startup02.pdf"
-        },
-        {
-          "name": "1 (PDF形式:4,860KB)",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2409_02startup/241111/startup02_01.pdf"
-        },
-        {
-          "name": "2 (PDF形式:2,041KB)",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2409_02startup/241111/startup02_02.pdf"
-        },
-        {
-          "name": "経済産業省 御提出資料(PDF形式:2,060KB)",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2409_02startup/241111/startup03.pdf"
-        },
-        {
-          "name": "国土交通省 御提出資料(PDF形式:330KB)",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2409_02startup/241111/startup04.pdf"
-        },
-        {
-          "name": "ジャパンハイドロ株式会社 御提出資料(PDF形式:130KB)",
-          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2409_02startup/241111/startup_ref.pdf"
-        }
-      ]
-    },
-    {
-      "id": "cas-360-20241111-001",
-      "councilId": "cas-360",
-      "name": "第1回 建築物のライフサイクルカーボン削減に関する関係省庁連絡会議",
-      "date": "2024/11/11",
-      "officialUrl": "https://www.cas.go.jp/jp/seisaku/building_lifecycle/dai1/gijisidai.html",
-      "materials": [
-        {
-          "name": "建築物のライフサイクルカーボン削減に関する関係省庁連絡会議の開催について(PDF/191KB)",
-          "url": "https://www.cas.go.jp/jp/seisaku/building_lifecycle/dai1/siryou1.pdf"
-        },
-        {
-          "name": "建築物のライフサイクルカーボン削減に関する関係省庁連絡会議幹事会の構成員の官職の指定について(案)(PDF/186KB)",
-          "url": "https://www.cas.go.jp/jp/seisaku/building_lifecycle/dai1/siryou2-1.pdf"
-        },
-        {
-          "name": "建築物のライフサイクルカーボン削減に関する関係省庁連絡会議 運営要領(案)(PDF/170KB)",
-          "url": "https://www.cas.go.jp/jp/seisaku/building_lifecycle/dai1/siryou2-2.pdf"
-        },
-        {
-          "name": "建築物のライフサイクルカーボン削減に向けた取組(国土交通省資料)(PDF/1,795KB)",
-          "url": "https://www.cas.go.jp/jp/seisaku/building_lifecycle/dai1/siryou3.pdf"
-        },
-        {
-          "name": "建築素材のライフサイクルカーボン削減(経済産業省資料)(PDF/2.1MB)",
-          "url": "https://www.cas.go.jp/jp/seisaku/building_lifecycle/dai1/siryou4.pdf"
-        },
-        {
-          "name": "建築物のライフサイクルアセスメントに係る環境省の取組(環境省資料)(PDF/1,671KB)",
-          "url": "https://www.cas.go.jp/jp/seisaku/building_lifecycle/dai1/siryou5.pdf"
-        },
-        {
-          "name": "建築物への木材利用の促進に向けた取組(林野庁資料)(PDF/1,490KB)",
-          "url": "https://www.cas.go.jp/jp/seisaku/building_lifecycle/dai1/siryou6.pdf"
-        },
-        {
-          "name": "説明資料(金融庁資料)(PDF/799KB)",
-          "url": "https://www.cas.go.jp/jp/seisaku/building_lifecycle/dai1/siryou7.pdf"
-        },
-        {
-          "name": "学校施設のLCAに係る取組状況について(文部科学省資料)(PDF/1,024KB)",
-          "url": "https://www.cas.go.jp/jp/seisaku/building_lifecycle/dai1/siryou8.pdf"
-        },
-        {
-          "name": "建築物のLCAの実施によるCO2排出削減施策の進め方・今後の検討事項(案)(議事(3)に関する国土交通省資料)(PDF/575KB))",
-          "url": "https://www.cas.go.jp/jp/seisaku/building_lifecycle/dai1/siryou9.pdf"
-        },
-        {
-          "name": "建築物のライフサイクルカーボンの削減に向けた取組みの推進に係る基本構想(骨子案)について(PDF/791KB)",
-          "url": "https://www.cas.go.jp/jp/seisaku/building_lifecycle/kanjikai/dai1/siryou1.pdf"
-        },
-        {
-          "name": "建築物のライフサイクルカーボン削減に関する関係省庁連絡会議幹事会の構成員の官職の指定について(PDF/144KB)",
-          "url": "https://www.cas.go.jp/jp/seisaku/building_lifecycle/kanjikai/dai1/sankou1.pdf"
-        },
-        {
-          "name": "読売新聞2025年1月6日記事 建築物「生涯CO2」算出(PDF/383KB)",
-          "url": "https://www.cas.go.jp/jp/seisaku/building_lifecycle/kanjikai/dai1/sankou2.pdf"
-        },
-        {
-          "name": "日・OECDハイレベル政策セミナー ゼロカーボン建築 ライフサイクルCO2の削減に向けた世界の動向(PDF/791KB)",
-          "url": "https://www.cas.go.jp/jp/seisaku/building_lifecycle/kanjikai/dai1/sankou3.pdf"
-        }
-      ]
-    },
-    {
-      "id": "meti-sankoshin_shomu_ryutsu_distribution-20241111-004",
-      "councilId": "meti-sankoshin_shomu_ryutsu_distribution",
-      "name": "第4回 産業構造審議会 商務流通情報分科会 流通小委員会・交通政策審議会 交通体系分科会 物流部会・食料・農業・農村政策審議会 食料産業部会 物流小委員会 合同会議",
-      "date": "2024/11/11",
-      "officialUrl": "https://www.meti.go.jp/shingikai/sankoshin/shomu_ryutsu/distribution/004.html",
-      "materials": [
-        {
-          "name": "議事次第(PDF形式:31KB)",
-          "url": "https://www.meti.go.jp/shingikai/sankoshin/shomu_ryutsu/distribution/pdf/004_00_01.pdf"
-        },
-        {
-          "name": "資料1 パブリックコメントの結果を踏まえた合同会議取りまとめ案の修正等(PDF形式:338KB)",
-          "url": "https://www.meti.go.jp/shingikai/sankoshin/shomu_ryutsu/distribution/pdf/004_01_00.pdf"
-        },
-        {
-          "name": "資料2 合同会議取りまとめ案(PDF形式:350KB)",
-          "url": "https://www.meti.go.jp/shingikai/sankoshin/shomu_ryutsu/distribution/pdf/004_02_00.pdf"
-        },
-        {
-          "name": "参考資料1 合同会議におけるこれまでの議論等(PDF形式:335KB)",
-          "url": "https://www.meti.go.jp/shingikai/sankoshin/shomu_ryutsu/distribution/pdf/004_s01_00.pdf"
-        },
-        {
-          "name": "参考資料2 配席図(PDF形式:176KB)",
-          "url": "https://www.meti.go.jp/shingikai/sankoshin/shomu_ryutsu/distribution/pdf/004_s02_00.pdf"
-        },
-        {
-          "name": "参考資料3 合同会議 委員名簿(PDF形式:98KB)",
-          "url": "https://www.meti.go.jp/shingikai/sankoshin/shomu_ryutsu/distribution/pdf/004_s03_00.pdf"
-        },
-        {
-          "name": "議事録(PDF形式:486KB)",
-          "url": "https://www.meti.go.jp/shingikai/sankoshin/shomu_ryutsu/distribution/pdf/004_gijiroku.pdf"
-        }
-      ]
-    },
-    {
-      "id": "mic-denki_tsusin_seisaku_bukai-20241111-076",
-      "councilId": "mic-denki_tsusin_seisaku_bukai",
-      "name": "情報通信審議会 電気通信事業政策部会（第76回）配付資料・議事概要・議事録（2024年11月11日開催）",
-      "date": "2024/11/11",
-      "officialUrl": "https://www.soumu.go.jp/main_sosiki/joho_tsusin/policyreports/joho_tsusin/denki_seisaku/02tsushin10_04000633.html",
-      "materials": [
-        {
-          "name": "資料76-1-1 「IP網への移行等に向けた電気通信番号制度の在り方」について 最終答申(案)に対する意見及びその考え方(案)",
-          "url": "https://www.soumu.go.jp/main_content/000976567.pdf"
-        },
-        {
-          "name": "資料76-1-2 「IP網への移行等に向けた電気通信番号制度の在り方」について 最終答申(案)",
-          "url": "https://www.soumu.go.jp/main_content/000976568.pdf"
-        },
-        {
-          "name": "資料76-1-3 「IP網への移行等に向けた電気通信番号制度の在り方」について 最終答申(案)概要",
-          "url": "https://www.soumu.go.jp/main_content/000976569.pdf"
-        },
-        {
-          "name": "資料76-1-4 答申書(案)",
-          "url": "https://www.soumu.go.jp/main_content/000976570.pdf"
-        },
-        {
-          "name": "議事概要",
-          "url": "https://www.soumu.go.jp/main_content/000977214.pdf"
-        },
-        {
-          "name": "議事録",
-          "url": "https://www.soumu.go.jp/main_content/000980437.pdf"
-        }
-      ]
-    },
-    {
-      "id": "mic-gijutsusenryaku_iinkai-20241111-051",
-      "councilId": "mic-gijutsusenryaku_iinkai",
-      "name": "情報通信審議会 情報通信技術分科会 技術戦略委員会（第51回）（2024年11月11日開催）",
-      "date": "2024/11/11",
-      "officialUrl": "https://www.soumu.go.jp/main_sosiki/joho_tsusin/policyreports/joho_tsusin/gijutsusenryaku/02tsushin03_04000584.html",
-      "materials": [
-        {
-          "name": "我が国が強みを有する技術領域について",
-          "url": "https://www.soumu.go.jp/main_content/000976705.pdf"
-        },
-        {
-          "name": "SB Intuitions(株)提出資料",
-          "url": "https://www.soumu.go.jp/main_content/000976594.pdf"
-        },
-        {
-          "name": "マインドワード(株)提出資料",
-          "url": "https://www.soumu.go.jp/main_content/000976595.pdf"
-        },
-        {
-          "name": "(株)東芝提出資料",
-          "url": "https://www.soumu.go.jp/main_content/000976596.pdf"
-        },
-        {
-          "name": "第51回議事録",
-          "url": "https://www.soumu.go.jp/main_content/001014495.pdf"
-        }
-      ]
-    },
-    {
-      "id": "mof-zaiseiseido_bunkakai-20241111-s01",
-      "councilId": "mof-zaiseiseido_bunkakai",
-      "name": "財政制度等審議会 財政制度分科会(令和6年11月11日)",
-      "date": "2024/11/11",
-      "officialUrl": "https://www.mof.go.jp/about_mof/councils/fiscal_system_council/sub-of_fiscal_system/proceedings/material/20241111zaiseia.html",
-      "summary": "財政制度等審議会 財政制度分科会の開催(令和6年11月11日)。議題: 農林水産・文教・科学技術。",
-      "tags": [
-        "財政制度等審議会",
-        "財政制度分科会",
-        "MOF",
-        "財務省",
-        "予算編成",
-        "財政健全化"
-      ],
-      "materials": [
-        {
-          "name": "議事要旨 (HTML)",
-          "url": "https://www.mof.go.jp/about_mof/councils/fiscal_system_council/sub-of_fiscal_system/proceedings/outline/20241111zaiseia.html"
-        },
-        {
-          "name": "議事録 (HTML)",
-          "url": "https://www.mof.go.jp/about_mof/councils/fiscal_system_council/sub-of_fiscal_system/proceedings/proceedings/20241111zaiseia.html"
-        },
-        {
-          "name": "記者会見の模様 (HTML)",
-          "url": "https://www.mof.go.jp/about_mof/councils/fiscal_system_council/sub-of_fiscal_system/proceedings/conference/20241111zaiseia.html"
-        },
-        {
-          "name": "農林水産 (PDF)",
-          "url": "https://www.mof.go.jp/about_mof/councils/fiscal_system_council/sub-of_fiscal_system/proceedings/material/zaiseia20241111/01.pdf"
-        },
-        {
-          "name": "文教・科学技術 (PDF)",
-          "url": "https://www.mof.go.jp/about_mof/councils/fiscal_system_council/sub-of_fiscal_system/proceedings/material/zaiseia20241111/02.pdf"
-        },
-        {
-          "name": "農林水産(参考資料) (PDF)",
-          "url": "https://www.mof.go.jp/about_mof/councils/fiscal_system_council/sub-of_fiscal_system/proceedings/material/zaiseia20241111/03.pdf"
-        }
-      ]
     }
   ],
   "categories": {
@@ -217988,8 +217804,8 @@
     "cas-zensedai_hosyo",
     "mof-zaiseiseido_bunkakai"
   ],
-  "lastCrawlTime": "2026/11/11 01:00",
+  "lastCrawlTime": "2026/11/12 02:06",
   "hasArchive": true,
-  "totalMeetingsCount": 25044,
-  "totalMaterialsCount": 154202
+  "totalMeetingsCount": 25046,
+  "totalMaterialsCount": 154224
 }
