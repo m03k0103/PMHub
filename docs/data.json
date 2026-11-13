@@ -929,7 +929,8 @@
       "category": "SECTION",
       "name": "文化政策部会",
       "officialUrl": "https://www.bunka.go.jp/seisaku/bunkashingikai/seisaku/",
-      "pastYearCount": 26
+      "pastYearCount": 45,
+      "isNewlyDiscovered": true
     },
     {
       "id": "aca-186",
@@ -2515,7 +2516,8 @@
       "officialUrl": "https://www5.cao.go.jp/keizai-shimon/",
       "archiveUrl": "https://www5.cao.go.jp/keizai-shimon/kaigi/minutes/2026/index.html",
       "description": "経済財政諮問会議の基本方針、施策の推進状況および関係省庁間の連携・個別課題について審議する会議。",
-      "pastYearCount": 15
+      "pastYearCount": 16,
+      "isNewlyDiscovered": true
     },
     {
       "id": "cao-kisei_chiiki_wg",
@@ -4062,7 +4064,8 @@
       "name": "GX実行会議 専門家ワーキンググループ",
       "officialUrl": "https://www.cas.go.jp/jp/seisaku/gx_jikkou_kaigi/senmonka_wg/index.html",
       "description": "内閣官房 GX実行会議の下に設置された、エネルギー・産業構造転換やGX経済移行債の活用等を専門的に議論するワーキンググループ。",
-      "pastYearCount": 8
+      "pastYearCount": 19,
+      "isNewlyDiscovered": true
     },
     {
       "id": "cas-gyousei_kaikaku",
@@ -4099,7 +4102,8 @@
       "name": "地域働き方・職場改革等推進会議",
       "officialUrl": "https://www.cas.go.jp/jp/seisaku/chiikihatarakikata/index.html#suisin-kaigi-record",
       "description": "地域働き方・職場改革等推進会議の基本方針、施策の推進状況および関係省庁間の連携・個別課題について審議する会議。",
-      "pastYearCount": 17
+      "pastYearCount": 18,
+      "isNewlyDiscovered": true
     },
     {
       "id": "cas-influenza",
@@ -5438,7 +5442,8 @@
       "category": "COUNCIL",
       "name": "こども家庭審議会 こどものケアニーズに応じた支援の在り方に関する専門委員会",
       "officialUrl": "https://www.cfa.go.jp/councils/shingikai/shakai_katei/care-needs",
-      "pastYearCount": 0
+      "pastYearCount": 8,
+      "isNewlyDiscovered": true
     },
     {
       "id": "cfa-gyakutai_boushi",
@@ -5454,7 +5459,8 @@
       "category": "COUNCIL",
       "name": "こども家庭審議会 児童虐待等要保護事例の検証に関する専門委員会",
       "officialUrl": "https://www.cfa.go.jp/councils/shingikai/gyakutai_boushi/hogojirei",
-      "pastYearCount": 8
+      "pastYearCount": 10,
+      "isNewlyDiscovered": true
     },
     {
       "id": "cfa-hinkon_hitorioya",
@@ -5470,7 +5476,8 @@
       "category": "COUNCIL",
       "name": "こども家庭審議会 こどもの貧困対策推進ワーキンググループ",
       "officialUrl": "https://www.cfa.go.jp/councils/shingikai/hinkon_hitorioya#countermeasures",
-      "pastYearCount": 0
+      "pastYearCount": 3,
+      "isNewlyDiscovered": true
     },
     {
       "id": "cfa-hitorioya_wg",
@@ -5478,7 +5485,8 @@
       "category": "COUNCIL",
       "name": "こども家庭審議会 ひとり親家庭支援ワーキンググループ",
       "officialUrl": "https://www.cfa.go.jp/councils/shingikai/hinkon_hitorioya#hitorioya",
-      "pastYearCount": 0
+      "pastYearCount": 5,
+      "isNewlyDiscovered": true
     },
     {
       "id": "cfa-hoiku_senmon",
@@ -5550,7 +5558,8 @@
       "category": "COUNCIL",
       "name": "こども家庭審議会 基本政策部会",
       "officialUrl": "https://www.cfa.go.jp/councils/shingikai/kihon_seisaku",
-      "pastYearCount": 0
+      "pastYearCount": 22,
+      "isNewlyDiscovered": true
     },
     {
       "id": "cfa-kodomo_ibasho",
@@ -6408,7 +6417,7 @@
       "name": "緊急一時避難施設と一時滞在施設のデュアルユースの推進に関する検討会",
       "officialUrl": "https://www.fdma.go.jp/singi_kento/kento/post-200.html",
       "description": "〒100-8927 東京都千代田区霞が関2-1-2(地図)電話番号03-5253-5111(代表)法人番号:9000012020003",
-      "pastYearCount": 2,
+      "pastYearCount": 3,
       "materials": [
         {
           "name": "資料1　検討会委員等名簿 (PDF)",
@@ -6418,7 +6427,8 @@
           "name": "資料2　開催要綱（案） (PDF)",
           "url": "https://www.fdma.go.jp/singi_kento/kento/2026/08/03/items/shiryou2.pdf"
         }
-      ]
+      ],
+      "isNewlyDiscovered": true
     },
     {
       "id": "fdma-jishu_bousai_jinzai",
@@ -7081,7 +7091,7 @@
       "name": "予防業務の実施体制に関する検討部会",
       "officialUrl": "https://www.fdma.go.jp/singi_kento/kento/post-203.html",
       "description": "〒100-8927 東京都千代田区霞が関2-1-2(地図)電話番号03-5253-5111(代表)法人番号:9000012020003",
-      "pastYearCount": 1,
+      "pastYearCount": 2,
       "materials": [
         {
           "name": "参考資料1　予防業務の実施体制に関する検討部会 開催要綱 (PDF)",
@@ -7091,7 +7101,8 @@
           "name": "参考資料2　予防業務の実施体制に関する検討部会委員名簿 (PDF)",
           "url": "https://www.fdma.go.jp/singi_kento/kento/2026/08/12/items/05_sanko2.pdf"
         }
-      ]
+      ],
+      "isNewlyDiscovered": true
     },
     {
       "id": "fsa-ai_onchain",
@@ -7249,13 +7260,14 @@
       "category": "STUDY",
       "name": "中国金融研究会",
       "officialUrl": "https://www.fsa.go.jp/singi/chuukinken/index.html",
-      "pastYearCount": 3,
+      "pastYearCount": 15,
       "materials": [
         {
           "name": "中国金融研究会 別紙",
           "url": "https://www.fsa.go.jp/singi/chuukinken/0611memberlist.pdf"
         }
-      ]
+      ],
+      "isNewlyDiscovered": true
     },
     {
       "id": "fsa-code_followup",
@@ -9479,7 +9491,8 @@
       "name": "食品安全委員会",
       "officialUrl": "https://www.fsc.go.jp/iinkai_annai/jisseki.html",
       "description": "食品安全委員会における食品安全委員会。",
-      "pastYearCount": 299
+      "pastYearCount": 300,
+      "isNewlyDiscovered": true
     },
     {
       "id": "fsc-hyoukagijyutukikaku_wg",
@@ -9880,7 +9893,8 @@
       "name": "水産政策審議会 資源管理分科会",
       "officialUrl": "https://www.jfa.maff.go.jp/j/council/seisaku/kanri/index.html",
       "description": "TAC（漁獲可能量）や水産資源の維持管理に関する審議を行う分科会。",
-      "pastYearCount": 2
+      "pastYearCount": 149,
+      "isNewlyDiscovered": true
     },
     {
       "id": "jfa-suisan_kikaku",
@@ -10243,7 +10257,8 @@
       "category": "COUNCIL",
       "name": "国立研究開発法人審議会",
       "officialUrl": "https://www.maff.go.jp/j/council/kaihatu/index.html",
-      "pastYearCount": 0
+      "pastYearCount": 7,
+      "isNewlyDiscovered": true
     },
     {
       "id": "maff-655",
@@ -10276,7 +10291,8 @@
       "name": "企画部会",
       "officialUrl": "https://www.maff.go.jp/j/council/seisaku/kikaku/bukai/index.html",
       "archiveUrl": "https://www.maff.go.jp/j/council/seisaku/kikaku/bukai/index.html",
-      "pastYearCount": 34
+      "pastYearCount": 35,
+      "isNewlyDiscovered": true
     },
     {
       "id": "maff-662",
@@ -10926,7 +10942,8 @@
       "category": "COMMITTEE",
       "name": "電力・ガス取引監視等委員会",
       "officialUrl": "https://www.egc.meti.go.jp/activity/index_emsc.html",
-      "pastYearCount": 20
+      "pastYearCount": 21,
+      "isNewlyDiscovered": true
     },
     {
       "id": "meti-kagaku_busshitsu",
@@ -11690,7 +11707,8 @@
       "category": "SECTION",
       "name": "中央社会保険医療協議会薬価専門部会",
       "officialUrl": "https://www.mhlw.go.jp/stf/shingi/shingi-chuo_128157.html",
-      "pastYearCount": 40
+      "pastYearCount": 41,
+      "isNewlyDiscovered": true
     },
     {
       "id": "mhlw-1015",
@@ -11714,7 +11732,8 @@
       "category": "SECTION",
       "name": "中央社会保険医療協議会費用対効果評価専門部会",
       "officialUrl": "https://www.mhlw.go.jp/stf/shingi/shingi-chuo_128159.html",
-      "pastYearCount": 30
+      "pastYearCount": 31,
+      "isNewlyDiscovered": true
     },
     {
       "id": "mhlw-1018",
@@ -11730,7 +11749,8 @@
       "category": "SECTION",
       "name": "中央社会保険医療協議会診療報酬改定結果検証部会",
       "officialUrl": "https://www.mhlw.go.jp/stf/shingi/shingi-chuo_128160.html",
-      "pastYearCount": 2
+      "pastYearCount": 19,
+      "isNewlyDiscovered": true
     },
     {
       "id": "mhlw-1020",
@@ -11971,7 +11991,8 @@
       "category": "COUNCIL",
       "name": "成年後見制度利用促進専門家会議",
       "officialUrl": "https://www.mhlw.go.jp/stf/shingi2/0000212875_00007.html",
-      "pastYearCount": 17
+      "pastYearCount": 18,
+      "isNewlyDiscovered": true
     },
     {
       "id": "mhlw-2859",
@@ -12011,7 +12032,8 @@
       "category": "STUDY",
       "name": "石綿に係る疾病の業務上外に関する検討会",
       "officialUrl": "https://www.mhlw.go.jp/stf/shingi/other-roudou_128880.html",
-      "pastYearCount": 14
+      "pastYearCount": 14,
+      "isNewlyDiscovered": true
     },
     {
       "id": "mhlw-2867",
@@ -12307,7 +12329,8 @@
       "category": "SECTION",
       "name": "医療観察法部会",
       "officialUrl": "https://www.mhlw.go.jp/stf/shingi/shingi-hosho_126733.html",
-      "pastYearCount": 53
+      "pastYearCount": 53,
+      "isNewlyDiscovered": true
     },
     {
       "id": "mhlw-808",
@@ -12379,7 +12402,8 @@
       "category": "SECTION",
       "name": "予防接種・ワクチン分科会 予防接種基本方針部会",
       "officialUrl": "https://www.mhlw.go.jp/stf/shingi/shingi-kousei_127714.html",
-      "pastYearCount": 10
+      "pastYearCount": 80,
+      "isNewlyDiscovered": true
     },
     {
       "id": "mhlw-817",
@@ -12435,7 +12459,8 @@
       "category": "COMMITTEE",
       "name": "新型インフルエンザ対策に関する小委員会",
       "officialUrl": "https://www.mhlw.go.jp/stf/shingi/shingi-kousei_263447.html",
-      "pastYearCount": 27
+      "pastYearCount": 28,
+      "isNewlyDiscovered": true
     },
     {
       "id": "mhlw-825",
@@ -12467,7 +12492,8 @@
       "category": "COMMITTEE",
       "name": "危機対応医薬品等に関する小委員会",
       "officialUrl": "https://www.mhlw.go.jp/stf/shingi/other-kenkou_kansennsyokikitaiou_00002.html",
-      "pastYearCount": 12
+      "pastYearCount": 13,
+      "isNewlyDiscovered": true
     },
     {
       "id": "mhlw-829",
@@ -12819,7 +12845,8 @@
       "category": "SECTION",
       "name": "疾病対策部会臓器移植委員会",
       "officialUrl": "https://www.mhlw.go.jp/stf/shingi/shingi-kousei_127745.html",
-      "pastYearCount": 8
+      "pastYearCount": 67,
+      "isNewlyDiscovered": true
     },
     {
       "id": "mhlw-873",
@@ -13083,7 +13110,8 @@
       "category": "SECTION",
       "name": "がん登録部会",
       "officialUrl": "https://www.mhlw.go.jp/stf/shingi/shingi-kousei_208254.html",
-      "pastYearCount": 5
+      "pastYearCount": 39,
+      "isNewlyDiscovered": true
     },
     {
       "id": "mhlw-907",
@@ -13099,7 +13127,8 @@
       "category": "SECTION",
       "name": "再生医療等評価部会",
       "officialUrl": "https://www.mhlw.go.jp/stf/shingi/shingi-kousei_247499.html",
-      "pastYearCount": 10
+      "pastYearCount": 24,
+      "isNewlyDiscovered": true
     },
     {
       "id": "mhlw-909",
@@ -13195,7 +13224,8 @@
       "category": "SECTION",
       "name": "医療用医薬品迅速・安定供給部会",
       "officialUrl": "https://www.mhlw.go.jp/stf/shingi/shingi-kousei_467561_00015.html",
-      "pastYearCount": 3
+      "pastYearCount": 3,
+      "isNewlyDiscovered": true
     },
     {
       "id": "mhlw-921",
@@ -13243,7 +13273,8 @@
       "category": "SECTION",
       "name": "労働条件分科会組織再編に伴う労働関係の調整に関する部会",
       "officialUrl": "https://www.mhlw.go.jp/stf/shingi-rousei_00001.html",
-      "pastYearCount": 10
+      "pastYearCount": 11,
+      "isNewlyDiscovered": true
     },
     {
       "id": "mhlw-929",
@@ -13323,7 +13354,8 @@
       "category": "SECTION",
       "name": "職業安定分科会雇用保険部会",
       "officialUrl": "https://www.mhlw.go.jp/stf/shingi/shingi-rousei_126980_00007.html",
-      "pastYearCount": 29
+      "pastYearCount": 30,
+      "isNewlyDiscovered": true
     },
     {
       "id": "mhlw-939",
@@ -13876,7 +13908,8 @@
       "category": "COMMITTEE",
       "name": "ハンセン病元患者家族補償金認定審査会",
       "officialUrl": "https://www.mhlw.go.jp/stf/newpage_09427.html",
-      "pastYearCount": 80
+      "pastYearCount": 81,
+      "isNewlyDiscovered": true
     },
     {
       "id": "mhlw-hikouchi_jidou_gyakutai_bunseki_wg",
@@ -14024,7 +14057,8 @@
       "category": "COMMITTEE",
       "name": "特定石綿被害建設業務労働者等認定審査会専門委員会",
       "officialUrl": "https://www.mhlw.go.jp/stf/newpage_26379.html",
-      "pastYearCount": 39
+      "pastYearCount": 39,
+      "isNewlyDiscovered": true
     },
     {
       "id": "mhlw-iyakuhin_gyousei_monitoring",
@@ -14347,7 +14381,7 @@
       "name": "労働政策審議会 労働条件分科会",
       "officialUrl": "https://www.mhlw.go.jp/stf/shingi/shingi-rousei_126969_00004.html",
       "description": "労働基準法、賃金支払確保法、労働時間制度等の労働条件全般に係る重要施策・法改正事項を調査審議する労働政策審議会の主要分科会。",
-      "pastYearCount": 28,
+      "pastYearCount": 29,
       "materials": [
         {
           "name": "参考資料No.1 労働条件分科会委員名簿［PDF形式：128KB］",
@@ -14361,7 +14395,8 @@
           "name": "参考資料No.1 労働条件分科会委員名簿［PDF形式：321KB］",
           "url": "https://www.mhlw.go.jp/content/11201250/001691997.pdf"
         }
-      ]
+      ],
+      "isNewlyDiscovered": true
     },
     {
       "id": "mhlw-ryouyou_byoushou_bukai",
@@ -14412,7 +14447,8 @@
       "name": "社会保障審議会 医療保険部会",
       "officialUrl": "https://www.mhlw.go.jp/stf/newpage_28708.html",
       "description": "厚生労働省社会保障審議会における医療保険部会。",
-      "pastYearCount": 36
+      "pastYearCount": 38,
+      "isNewlyDiscovered": true
     },
     {
       "id": "mhlw-shakai_hosho_kaigo_hoken",
@@ -14430,7 +14466,8 @@
       "name": "社会保障審議会 介護給付費分科会",
       "officialUrl": "https://www.mhlw.go.jp/stf/shingi/shingi-hosho_126698_00022.html",
       "description": "厚生労働省社会保障審議会における社会保障審議会 介護給付費分科会。",
-      "pastYearCount": 80
+      "pastYearCount": 81,
+      "isNewlyDiscovered": true
     },
     {
       "id": "mhlw-shakai_hosho_nenkin",
@@ -14448,7 +14485,8 @@
       "name": "社会保障審議会 生活保護基準部会",
       "officialUrl": "https://www.mhlw.go.jp/stf/shingi/shingi-hosho_126702.html",
       "description": "厚生労働省社会保障審議会における生活保護基準部会。",
-      "pastYearCount": 64
+      "pastYearCount": 65,
+      "isNewlyDiscovered": true
     },
     {
       "id": "mhlw-shakai_hosho_seikatsu_konkyuu",
@@ -16583,7 +16621,8 @@
       "name": "太陽電池廃棄物の再資源化等の推進に関する法律」の下位法令の策定等に係る検討会",
       "officialUrl": "https://www.env.go.jp/council/03recycle/yoshi03-16_00001.html",
       "description": "太陽電池廃棄物の再資源化等の推進に関する法律の下位法令の策定等に向けた有識者検討会。",
-      "pastYearCount": 1
+      "pastYearCount": 2,
+      "isNewlyDiscovered": true
     },
     {
       "id": "moe-2970",
@@ -16799,7 +16838,8 @@
       "category": "STUDY",
       "name": "国の債務管理に関する研究会",
       "officialUrl": "https://www.mof.go.jp/about_mof/councils/study_gov_debt_management/proceedings/index.html",
-      "pastYearCount": 11
+      "pastYearCount": 12,
+      "isNewlyDiscovered": true
     },
     {
       "id": "mof-1153",
@@ -18110,6 +18150,317 @@
   ],
   "meetings": [
     {
+      "id": "cfa-gyakutai_hogojirei-20261204-135",
+      "councilId": "cfa-gyakutai_hogojirei",
+      "name": "第135回 こども家庭審議会 児童虐待等要保護事例の検証に関する専門委員会",
+      "date": "2026/12/04",
+      "officialUrl": "https://www.cfa.go.jp/councils/shingikai/gyakutai_boushi/hogojirei/135",
+      "isNewlyDiscovered": true,
+      "materials": []
+    },
+    {
+      "id": "mhlw-hansen_kazoku_hoshou-20261124-081",
+      "councilId": "mhlw-hansen_kazoku_hoshou",
+      "name": "第81回 ハンセン病元患者家族補償金認定審査会",
+      "date": "2026/11/24",
+      "officialUrl": "https://www.mhlw.go.jp/stf/newpage_09427.html",
+      "isNewlyDiscovered": true,
+      "materials": []
+    },
+    {
+      "id": "mhlw-938-20261120-216",
+      "councilId": "mhlw-938",
+      "name": "第216回 職業安定分科会雇用保険部会",
+      "date": "2026/11/20",
+      "officialUrl": "https://www.mhlw.go.jp/stf/newpage_77420.html",
+      "isNewlyDiscovered": true,
+      "materials": []
+    },
+    {
+      "id": "mhlw-816-20261119-079",
+      "councilId": "mhlw-816",
+      "name": "第79回 予防接種・ワクチン分科会 予防接種基本方針部会",
+      "date": "2026/11/19",
+      "officialUrl": "https://www.mhlw.go.jp/stf/shingi/shingi-kousei_127714.html",
+      "isNewlyDiscovered": true,
+      "materials": []
+    },
+    {
+      "id": "mhlw-906-20261119-038",
+      "councilId": "mhlw-906",
+      "name": "第38回 がん登録部会",
+      "date": "2026/11/19",
+      "officialUrl": "https://www.mhlw.go.jp/stf/shingi/shingi-kousei_208254.html",
+      "isNewlyDiscovered": true,
+      "materials": []
+    },
+    {
+      "id": "mhlw-824-20261118-028",
+      "councilId": "mhlw-824",
+      "name": "第28回 新型インフルエンザ対策に関する小委員会",
+      "date": "2026/11/18",
+      "officialUrl": "https://www.mhlw.go.jp/stf/shingi/shingi-kousei_263447.html",
+      "isNewlyDiscovered": true,
+      "materials": []
+    },
+    {
+      "id": "mhlw-828-20261118-013",
+      "councilId": "mhlw-828",
+      "name": "第13回 危機対応医薬品等に関する小委員会",
+      "date": "2026/11/18",
+      "officialUrl": "https://www.mhlw.go.jp/stf/shingi/other-kenkou_kansennsyokikitaiou_00002.html",
+      "isNewlyDiscovered": true,
+      "materials": []
+    },
+    {
+      "id": "mhlw-908-20261118-122",
+      "councilId": "mhlw-908",
+      "name": "第122回 再生医療等評価部会",
+      "date": "2026/11/18",
+      "officialUrl": "https://www.mhlw.go.jp/stf/shingi/shingi-kousei_247499.html",
+      "isNewlyDiscovered": true,
+      "materials": []
+    },
+    {
+      "id": "mhlw-928-20261118-010",
+      "councilId": "mhlw-928",
+      "name": "第10回 労働条件分科会組織再編に伴う労働関係の調整に関する部会",
+      "date": "2026/11/18",
+      "officialUrl": "https://www.mhlw.go.jp/stf/shingi-rousei_00001.html",
+      "isNewlyDiscovered": true,
+      "materials": []
+    },
+    {
+      "id": "mhlw-rousei_roudoujouken-20261117-215",
+      "councilId": "mhlw-rousei_roudoujouken",
+      "name": "第215回 労働政策審議会 労働条件分科会",
+      "date": "2026/11/17",
+      "officialUrl": "https://www.mhlw.go.jp/stf/shingi/shingi-rousei_126969_00004.html",
+      "isNewlyDiscovered": true,
+      "materials": []
+    },
+    {
+      "id": "mhlw-shakai_hosho_iryou_hoken-20261117-221",
+      "councilId": "mhlw-shakai_hosho_iryou_hoken",
+      "name": "第221回 社会保障審議会 医療保険部会",
+      "date": "2026/11/17",
+      "officialUrl": "https://www.mhlw.go.jp/stf/newpage_28708.html",
+      "isNewlyDiscovered": true,
+      "materials": []
+    },
+    {
+      "id": "mhlw-shakai_hosho_seikatsu_hogo-20261117-064",
+      "councilId": "mhlw-shakai_hosho_seikatsu_hogo",
+      "name": "第64回 社会保障審議会 生活保護基準部会",
+      "date": "2026/11/17",
+      "officialUrl": "https://www.mhlw.go.jp/stf/shingi/shingi-hosho_126702.html",
+      "isNewlyDiscovered": true,
+      "materials": []
+    },
+    {
+      "id": "cfa-hinkon_suishin_wg-20261116-005",
+      "councilId": "cfa-hinkon_suishin_wg",
+      "name": "第5回 こども家庭審議会 こどもの貧困対策推進ワーキンググループ",
+      "date": "2026/11/16",
+      "officialUrl": "https://www.cfa.go.jp/councils/shingikai/hinkon_hitorioya/db5ea08f",
+      "isNewlyDiscovered": true,
+      "materials": [
+        {
+          "name": "議事次第",
+          "url": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/db5ea08f-7b18-4994-8167-e278b957d567/d87146ba/20261113_councils_shingikai_hinkon_hitorioya_db5ea08f_00.pdf"
+        },
+        {
+          "name": "資料1 こども家庭庁 説明資料",
+          "url": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/db5ea08f-7b18-4994-8167-e278b957d567/bba74fa7/20261113_councils_shingikai_hinkon_hitorioya_db5ea08f_01.pdf"
+        },
+        {
+          "name": "資料2 法務省 提出資料",
+          "url": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/db5ea08f-7b18-4994-8167-e278b957d567/97ffa50c/20261113_councils_shingikai_hinkon_hitorioya_db5ea08f_02.pdf"
+        },
+        {
+          "name": "資料3 白梅学園大学 福丸教授 提出資料",
+          "url": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/db5ea08f-7b18-4994-8167-e278b957d567/7e341b3d/20261113_councils_shingikai_hinkon_hitorioya_db5ea08f_03.pdf"
+        },
+        {
+          "name": "参考資料1 令和8年度全国ひとり親世帯等調査調査票",
+          "url": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/db5ea08f-7b18-4994-8167-e278b957d567/b8b73fe6/20261113_councils_shingikai_hinkon_hitorioya_db5ea08f_04.pdf"
+        },
+        {
+          "name": "参考資料2 こどもの貧困対策推進ワーキンググループ及びひとり親家庭支援ワーキンググループの設置について",
+          "url": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/db5ea08f-7b18-4994-8167-e278b957d567/e5e71d49/20261113_councils_shingikai_hinkon_hitorioya_db5ea08f_05.pdf"
+        }
+      ]
+    },
+    {
+      "id": "cfa-hitorioya_wg-20261116-005",
+      "councilId": "cfa-hitorioya_wg",
+      "name": "第5回 こども家庭審議会 ひとり親家庭支援ワーキンググループ",
+      "date": "2026/11/16",
+      "officialUrl": "https://www.cfa.go.jp/councils/shingikai/hinkon_hitorioya/db5ea08f",
+      "isNewlyDiscovered": true,
+      "materials": [
+        {
+          "name": "議事次第",
+          "url": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/db5ea08f-7b18-4994-8167-e278b957d567/d87146ba/20261113_councils_shingikai_hinkon_hitorioya_db5ea08f_00.pdf"
+        },
+        {
+          "name": "資料1 こども家庭庁 説明資料",
+          "url": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/db5ea08f-7b18-4994-8167-e278b957d567/bba74fa7/20261113_councils_shingikai_hinkon_hitorioya_db5ea08f_01.pdf"
+        },
+        {
+          "name": "資料2 法務省 提出資料",
+          "url": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/db5ea08f-7b18-4994-8167-e278b957d567/97ffa50c/20261113_councils_shingikai_hinkon_hitorioya_db5ea08f_02.pdf"
+        },
+        {
+          "name": "資料3 白梅学園大学 福丸教授 提出資料",
+          "url": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/db5ea08f-7b18-4994-8167-e278b957d567/7e341b3d/20261113_councils_shingikai_hinkon_hitorioya_db5ea08f_03.pdf"
+        },
+        {
+          "name": "参考資料1 令和8年度全国ひとり親世帯等調査調査票",
+          "url": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/db5ea08f-7b18-4994-8167-e278b957d567/b8b73fe6/20261113_councils_shingikai_hinkon_hitorioya_db5ea08f_04.pdf"
+        },
+        {
+          "name": "参考資料2 こどもの貧困対策推進ワーキンググループ及びひとり親家庭支援ワーキンググループの設置について",
+          "url": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/db5ea08f-7b18-4994-8167-e278b957d567/e5e71d49/20261113_councils_shingikai_hinkon_hitorioya_db5ea08f_05.pdf"
+        }
+      ]
+    },
+    {
+      "id": "cfa-kihon_seisaku-20261116-022",
+      "councilId": "cfa-kihon_seisaku",
+      "name": "第22回 こども家庭審議会 基本政策部会",
+      "date": "2026/11/16",
+      "officialUrl": "https://www.cfa.go.jp/councils/shingikai/kihon_seisaku/187c4b02",
+      "isNewlyDiscovered": true,
+      "materials": []
+    },
+    {
+      "id": "meti-denryoku_gas_kanshi-20261116-624",
+      "councilId": "meti-denryoku_gas_kanshi",
+      "name": "第624回 電力・ガス取引監視等委員会",
+      "date": "2026/11/16",
+      "officialUrl": "https://www.egc.meti.go.jp/activity/index_emsc.html",
+      "isNewlyDiscovered": true,
+      "materials": []
+    },
+    {
+      "id": "mhlw-2857-20261116-026",
+      "councilId": "mhlw-2857",
+      "name": "第26回 成年後見制度利用促進専門家会議",
+      "date": "2026/11/16",
+      "officialUrl": "https://www.mhlw.go.jp/stf/shingi2/0000212875_00007.html",
+      "isNewlyDiscovered": true,
+      "materials": []
+    },
+    {
+      "id": "mhlw-shakai_hosho_kaigo_kyuufu-20261116-275",
+      "councilId": "mhlw-shakai_hosho_kaigo_kyuufu",
+      "name": "第275回 社会保障審議会 介護給付費分科会",
+      "date": "2026/11/16",
+      "officialUrl": "https://www.mhlw.go.jp/stf/shingi/shingi-hosho_126698_00022.html",
+      "isNewlyDiscovered": true,
+      "materials": []
+    },
+    {
+      "id": "fsa-chuugoku_kinyu-20261113-015",
+      "councilId": "fsa-chuugoku_kinyu",
+      "name": "第15回中国金融研究会",
+      "date": "2026/11/13",
+      "officialUrl": "https://www.fsa.go.jp/singi/chuukinken/siryou/20261113.html",
+      "isNewlyDiscovered": true,
+      "materials": []
+    },
+    {
+      "id": "jfa-suisan_kanri-20261113-147",
+      "councilId": "jfa-suisan_kanri",
+      "name": "第147回 水産政策審議会 資源管理分科会",
+      "date": "2026/11/13",
+      "officialUrl": "https://www.jfa.maff.go.jp/j/council/seisaku/kanri/261113.html",
+      "isNewlyDiscovered": true,
+      "materials": [
+        {
+          "name": "議事次第",
+          "url": "https://www.jfa.maff.go.jp/j/council/seisaku/kanri/attach/pdf/261113-1.pdf"
+        },
+        {
+          "name": "資料一覧",
+          "url": "https://www.jfa.maff.go.jp/j/council/seisaku/kanri/attach/pdf/261113-2.pdf"
+        },
+        {
+          "name": "資料1 資源管理分科会委員・特別委員名簿",
+          "url": "https://www.jfa.maff.go.jp/j/council/seisaku/kanri/attach/pdf/261113-3.pdf"
+        },
+        {
+          "name": "資料2 資源管理基本方針(令和2年農林水産省告示第1982号)の一部変更(くろまぐろ(小型魚)、さんま、まあじ、まいわし太平洋系群、まいわし対馬暖流系群及びまだい日本海西部・東シナ海系群の別紙2の変更、まいわし対馬暖流系群の別紙4の削除等)について(諮問第517号)",
+          "url": "https://www.jfa.maff.go.jp/j/council/seisaku/kanri/attach/pdf/261113-4.pdf"
+        },
+        {
+          "name": "資料3 特定水産資源(さんま、まあじ、まいわし太平洋系群、まいわし対馬暖流系群、かたくちいわし対馬暖流系群、うるめいわし対馬暖流系群、かたくちいわし太平洋系群及びまだい日本海西部・東シナ海系群)に関する令和9管理年度における漁獲可能量の設定及びその当初配分等について(諮問第518号)",
+          "url": "https://www.jfa.maff.go.jp/j/council/seisaku/kanri/attach/pdf/261113-5.pdf"
+        },
+        {
+          "name": "資料4 特定水産資源(くろまぐろ(小型魚)及びくろまぐろ(大型魚))に関する令和9管理年度における漁獲可能量の設定及びその当初配分等について(諮問第519号)",
+          "url": "https://www.jfa.maff.go.jp/j/council/seisaku/kanri/attach/pdf/261113-6.pdf"
+        },
+        {
+          "name": "資料5 特定水産資源(まいわし太平洋系群)に関する令和9管理年度における都道府県別漁獲可能量の変更について(諮問第520号)",
+          "url": "https://www.jfa.maff.go.jp/j/council/seisaku/kanri/attach/pdf/261113-7.pdf"
+        },
+        {
+          "name": "資料6-1 説明資料(諮問第517,519号関係)くろまぐろ(小型魚・大型魚)",
+          "url": "https://www.jfa.maff.go.jp/j/council/seisaku/kanri/attach/pdf/261113-8.pdf"
+        },
+        {
+          "name": "資料6-2 説明資料(諮問第517,518号関係)さんま",
+          "url": "https://www.jfa.maff.go.jp/j/council/seisaku/kanri/attach/pdf/261113-9.pdf"
+        },
+        {
+          "name": "資料6-3 説明資料(諮問第517,518号関係)まあじ",
+          "url": "https://www.jfa.maff.go.jp/j/council/seisaku/kanri/attach/pdf/261113-10.pdf"
+        },
+        {
+          "name": "資料6-4 説明資料(諮問第517,518,520号関係)まいわし太平洋系群",
+          "url": "https://www.jfa.maff.go.jp/j/council/seisaku/kanri/attach/pdf/261113-11.pdf"
+        },
+        {
+          "name": "資料6-5 説明資料(諮問第517,518号関係)まいわし対馬暖流系群",
+          "url": "https://www.jfa.maff.go.jp/j/council/seisaku/kanri/attach/pdf/261113-12.pdf"
+        },
+        {
+          "name": "資料6-6 説明資料(諮問第518号関係)かたくちいわし対馬暖流系群",
+          "url": "https://www.jfa.maff.go.jp/j/council/seisaku/kanri/attach/pdf/261113-13.pdf"
+        },
+        {
+          "name": "資料6-7 説明資料(諮問第518号関係)うるめいわし対馬暖流系群",
+          "url": "https://www.jfa.maff.go.jp/j/council/seisaku/kanri/attach/pdf/261113-14.pdf"
+        },
+        {
+          "name": "資料6-8 説明資料(諮問第518号関係)かたくちいわし太平洋系群",
+          "url": "https://www.jfa.maff.go.jp/j/council/seisaku/kanri/attach/pdf/261113-15.pdf"
+        },
+        {
+          "name": "資料6-9 説明資料(諮問第517,518号関係)まだい日本海西部・東シナ海系群",
+          "url": "https://www.jfa.maff.go.jp/j/council/seisaku/kanri/attach/pdf/261113-16.pdf"
+        },
+        {
+          "name": "資料7 特定水産資源(するめいか)に関する令和8管理年度における漁獲可能量の変更について(諮問第521号)",
+          "url": "https://www.jfa.maff.go.jp/j/council/seisaku/kanri/attach/pdf/261113-17.pdf"
+        },
+        {
+          "name": "資料8 太平洋クロマグロの資源管理について",
+          "url": "https://www.jfa.maff.go.jp/j/council/seisaku/kanri/attach/pdf/261113-18.pdf"
+        },
+        {
+          "name": "資料9 国の留保からの配分等について",
+          "url": "https://www.jfa.maff.go.jp/j/council/seisaku/kanri/attach/pdf/261113-19.pdf"
+        },
+        {
+          "name": "資料10 TAC資源の評価について",
+          "url": "https://www.jfa.maff.go.jp/j/council/seisaku/kanri/attach/pdf/261113-20.pdf"
+        }
+      ]
+    },
+    {
       "id": "mhlw-2855-20261113-004",
       "councilId": "mhlw-2855",
       "name": "第4回 創薬力向上のための官民協議会 施策検討・推進部会",
@@ -18151,11 +18502,43 @@
       "councilId": "mhlw-920",
       "name": "第3回 医療用医薬品迅速・安定供給部会",
       "date": "2026/11/13",
-      "officialUrl": "https://www.mhlw.go.jp/stf/shingi/shingi-kousei_467561_00015.html",
+      "officialUrl": "https://www.mhlw.go.jp/stf/newpage_77390.html",
       "materials": [
         {
           "name": "第3回医療用医薬品迅速・安定供給部会 配布資料",
           "url": "https://www.mhlw.go.jp/content/001646685.pdf"
+        },
+        {
+          "name": "議事次第",
+          "url": "https://www.mhlw.go.jp/content/10808000/001768948.pdf"
+        },
+        {
+          "name": "資料1 MCM戦略を踏まえた必要な支援・法制度等の在り方に係る主な検討事項(案)について(医政局関係)",
+          "url": "https://www.mhlw.go.jp/content/10808000/001768949.pdf"
+        },
+        {
+          "name": "資料2 後発医薬品を製造販売する企業の安定供給の取組に関する評価について",
+          "url": "https://www.mhlw.go.jp/content/10808000/001768950.pdf"
+        },
+        {
+          "name": "資料3 令和9年度概算要求(創薬・医薬品安定供給関係)について",
+          "url": "https://www.mhlw.go.jp/content/10808000/001768951.pdf"
+        },
+        {
+          "name": "参考資料1 厚生科学審議会 医療用医薬品迅速・安定供給部会 委員名簿",
+          "url": "https://www.mhlw.go.jp/content/10808000/001768952.pdf"
+        },
+        {
+          "name": "参考資料2 医療用医薬品迅速・安定供給部会運営細則",
+          "url": "https://www.mhlw.go.jp/content/10808000/001768953.pdf"
+        },
+        {
+          "name": "参考資料3 感染症危機対応医薬品等(ワクチン、治療薬、診断薬等) 開発・生産体制強化戦略",
+          "url": "https://www.mhlw.go.jp/content/10808000/001768954.pdf"
+        },
+        {
+          "name": "参考資料4 後発医薬品を製造販売する企業の安定供給の取組に関する評価について(プレスリリース)",
+          "url": "https://www.mhlw.go.jp/content/10808000/001768955.pdf"
         }
       ]
     },
@@ -18181,6 +18564,60 @@
         {
           "name": "資料3 株式会社橋本組提出資料",
           "url": "https://www.mhlw.go.jp/content/12602000/001754477.pdf"
+        }
+      ]
+    },
+    {
+      "id": "cfa-care_needs-20261112-008",
+      "councilId": "cfa-care_needs",
+      "name": "第8回 こども家庭審議会 こどものケアニーズに応じた支援の在り方に関する専門委員会",
+      "date": "2026/11/12",
+      "officialUrl": "https://www.cfa.go.jp/councils/shingikai/shakai_katei/care-needs/d66b8a15",
+      "isNewlyDiscovered": true,
+      "materials": [
+        {
+          "name": "議事次第",
+          "url": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/d66b8a15-e87f-4d73-990e-9f30a1e40ac2/4f94befa/20261111_councils_shingikai_shakai_katei_care-needs_d66b8a15_00.pdf"
+        },
+        {
+          "name": "資料1:こどものケアニーズに応じた支援について",
+          "url": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/d66b8a15-e87f-4d73-990e-9f30a1e40ac2/0187f20a/20261111_councils_shingikai_shakai_katei_care-needs_d66b8a15_01.pdf"
+        },
+        {
+          "name": "資料2:上鹿渡委員提出資料",
+          "url": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/d66b8a15-e87f-4d73-990e-9f30a1e40ac2/bafb27e4/20261111_councils_shingikai_shakai_katei_care-needs_d66b8a15_02.pdf"
+        },
+        {
+          "name": "資料3:古屋委員提出資料",
+          "url": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/d66b8a15-e87f-4d73-990e-9f30a1e40ac2/f97576d7/20261111_councils_shingikai_shakai_katei_care-needs_d66b8a15_03.pdf"
+        },
+        {
+          "name": "資料4:増沢委員提出資料",
+          "url": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/d66b8a15-e87f-4d73-990e-9f30a1e40ac2/06dc9c31/20261111_councils_shingikai_shakai_katei_care-needs_d66b8a15_04.pdf"
+        },
+        {
+          "name": "資料5:特別養子縁組に関する支援の在り方に関する専門委員会 藤林委員提出資料",
+          "url": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/d66b8a15-e87f-4d73-990e-9f30a1e40ac2/d91c74c3/20261111_councils_shingikai_shakai_katei_care-needs_d66b8a15_05.pdf"
+        },
+        {
+          "name": "参考資料1:委員等名簿",
+          "url": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/d66b8a15-e87f-4d73-990e-9f30a1e40ac2/926d0367/20261111_councils_shingikai_shakai_katei_care-needs_d66b8a15_06.pdf"
+        },
+        {
+          "name": "参考資料2:第9回社会的養育・家庭支援部会(抜粋)",
+          "url": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/d66b8a15-e87f-4d73-990e-9f30a1e40ac2/80dac3a1/20261111_councils_shingikai_shakai_katei_care-needs_d66b8a15_07.pdf"
+        },
+        {
+          "name": "参考資料3:社会的養護の現状",
+          "url": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/d66b8a15-e87f-4d73-990e-9f30a1e40ac2/8ec97674/20261111_councils_shingikai_shakai_katei_care-needs_d66b8a15_08.pdf"
+        },
+        {
+          "name": "参考資料4:里親制度・各施設等の概要",
+          "url": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/d66b8a15-e87f-4d73-990e-9f30a1e40ac2/53571b1b/20261111_councils_shingikai_shakai_katei_care-needs_d66b8a15_09.pdf"
+        },
+        {
+          "name": "参考資料5: ガイドライン(抜粋)",
+          "url": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/d66b8a15-e87f-4d73-990e-9f30a1e40ac2/78596e72/20261111_councils_shingikai_shakai_katei_care-needs_d66b8a15_10.pdf"
         }
       ]
     },
@@ -18243,6 +18680,114 @@
       ]
     },
     {
+      "id": "cao-keizai_shimon-20261111-016",
+      "councilId": "cao-keizai_shimon",
+      "name": "第16回 経済財政諮問会議",
+      "date": "2026/11/11",
+      "officialUrl": "https://www5.cao.go.jp/keizai-shimon/kaigi/minutes/2026/1111agenda.html",
+      "isNewlyDiscovered": true,
+      "materials": [
+        {
+          "name": "議事次第",
+          "url": "https://www5.cao.go.jp/keizai-shimon/kaigi/minutes/2026/1111shidai.pdf"
+        },
+        {
+          "name": "資料1 植田議員提出資料",
+          "url": "https://www5.cao.go.jp/keizai-shimon/kaigi/minutes/2026/1111shiryo_01.pdf"
+        },
+        {
+          "name": "資料2 高市内閣一年間の振り返りを踏まえた今後のマクロ経済財政運営について (有識者議員提出資料)",
+          "url": "https://www5.cao.go.jp/keizai-shimon/kaigi/minutes/2026/1111shiryo_02.pdf"
+        },
+        {
+          "name": "資料3 高市内閣一年間の振り返りを踏まえた今後のマクロ経済財政運営について(参考資料)(有識者議員提出資料)",
+          "url": "https://www5.cao.go.jp/keizai-shimon/kaigi/minutes/2026/1111shiryo_03.pdf"
+        },
+        {
+          "name": "資料4 成長志向型で持続可能な社会基盤の強化に向けて(有識者議員提出資料)",
+          "url": "https://www5.cao.go.jp/keizai-shimon/kaigi/minutes/2026/1111shiryo_04.pdf"
+        },
+        {
+          "name": "資料5 成長志向型で持続可能な社会基盤の強化に向けて(参考資料)(有識者議員提出資料)",
+          "url": "https://www5.cao.go.jp/keizai-shimon/kaigi/minutes/2026/1111shiryo_05.pdf"
+        },
+        {
+          "name": "資料6 成長志向型で持続可能な社会基盤としての教育力・研究力の強化~AX時代の人材育成システム改革~(関臨時議員提出資料)",
+          "url": "https://www5.cao.go.jp/keizai-shimon/kaigi/minutes/2026/1111shiryo_06.pdf"
+        },
+        {
+          "name": "資料7 「日本列島を、強く豊かに」する、インフラ整備の推進(井林臨時議員提出資料)",
+          "url": "https://www5.cao.go.jp/keizai-shimon/kaigi/minutes/2026/1111shiryo_07.pdf"
+        },
+        {
+          "name": "配付資料1 主要な経済指標の推移(内閣府)",
+          "url": "https://www5.cao.go.jp/keizai-shimon/kaigi/minutes/2026/1111haifushiryo_01.pdf"
+        },
+        {
+          "name": "配付資料2 「日本成長戦略実行計画」の策定に向けて(案)(日本成長戦略本部事務局)",
+          "url": "https://www5.cao.go.jp/keizai-shimon/kaigi/minutes/2026/1111haifushiryo_02.pdf"
+        },
+        {
+          "name": "配付資料3 「日本成長戦略実行計画」に盛り込む主な事項(案)(日本成長戦略本部事務局)",
+          "url": "https://www5.cao.go.jp/keizai-shimon/kaigi/minutes/2026/1111haifushiryo_03.pdf"
+        }
+      ]
+    },
+    {
+      "id": "mhlw-1014-20261111-251",
+      "councilId": "mhlw-1014",
+      "name": "第251回 中央社会保険医療協議会薬価専門部会",
+      "date": "2026/11/11",
+      "officialUrl": "https://www.mhlw.go.jp/stf/newpage_77339.html",
+      "isNewlyDiscovered": true,
+      "materials": [
+        {
+          "name": "議事次第",
+          "url": "https://www.mhlw.go.jp/content/10808000/001768255.pdf"
+        },
+        {
+          "name": "薬-1 令和9年度薬価改定について",
+          "url": "https://www.mhlw.go.jp/content/10808000/001768256.pdf"
+        }
+      ]
+    },
+    {
+      "id": "mhlw-1017-20261111-082",
+      "councilId": "mhlw-1017",
+      "name": "第82回 中央社会保険医療協議会費用対効果評価専門部会",
+      "date": "2026/11/11",
+      "officialUrl": "https://www.mhlw.go.jp/stf/newpage_77337.html",
+      "isNewlyDiscovered": true,
+      "materials": [
+        {
+          "name": "議事次第",
+          "url": "https://www.mhlw.go.jp/content/10808000/001768252.pdf"
+        },
+        {
+          "name": "費-1令和8年度費用対効果評価制度改革における価格調整の方法について",
+          "url": "https://www.mhlw.go.jp/content/10808000/001768253.pdf"
+        }
+      ]
+    },
+    {
+      "id": "mhlw-1019-20261111-077",
+      "councilId": "mhlw-1019",
+      "name": "第77回 中央社会保険医療協議会診療報酬改定結果検証部会",
+      "date": "2026/11/11",
+      "officialUrl": "https://www.mhlw.go.jp/stf/newpage_77340.html",
+      "isNewlyDiscovered": true,
+      "materials": [
+        {
+          "name": "議事次第",
+          "url": "https://www.mhlw.go.jp/content/10808000/001768257.pdf"
+        },
+        {
+          "name": "検-1令和8年度診療報酬改定の結果検証に係る特別調査(令和8年度調査)の調査票案について",
+          "url": "https://www.mhlw.go.jp/content/10808000/001768258.pdf"
+        }
+      ]
+    },
+    {
       "id": "mhlw-785-20261111-131",
       "councilId": "mhlw-785",
       "name": "第131回 社会保障審議会 医療部会",
@@ -18280,6 +18825,76 @@
       ]
     },
     {
+      "id": "mhlw-872-20261111-083",
+      "councilId": "mhlw-872",
+      "name": "第83回 疾病対策部会臓器移植委員会",
+      "date": "2026/11/11",
+      "officialUrl": "https://www.mhlw.go.jp/stf/newpage_77342.html",
+      "isNewlyDiscovered": true,
+      "materials": [
+        {
+          "name": "議事次第",
+          "url": "https://www.mhlw.go.jp/content/10900000/001768169.pdf"
+        },
+        {
+          "name": "名簿",
+          "url": "https://www.mhlw.go.jp/content/10900000/001768170.pdf"
+        },
+        {
+          "name": "資料1 今後の臓器移植医療のあり方について",
+          "url": "https://www.mhlw.go.jp/content/10900000/001768171.pdf"
+        },
+        {
+          "name": "資料2 臓器提供体制の強化に係る方策の検討について",
+          "url": "https://www.mhlw.go.jp/content/10900000/001768172.pdf"
+        },
+        {
+          "name": "資料3 村上参考人提出資料",
+          "url": "https://www.mhlw.go.jp/content/10900000/001768173.pdf"
+        },
+        {
+          "name": "資料4 岡本参考人提出資料",
+          "url": "https://www.mhlw.go.jp/content/10900000/001768174.pdf"
+        },
+        {
+          "name": "資料5 臓器移植実施体制推進支援事業について",
+          "url": "https://www.mhlw.go.jp/content/10900000/001768175.pdf"
+        },
+        {
+          "name": "参考資料1 臓器移植対策の現状について",
+          "url": "https://www.mhlw.go.jp/content/10900000/001768178.pdf"
+        },
+        {
+          "name": "参考資料2 臓器の移植に関する法律",
+          "url": "https://www.mhlw.go.jp/content/10900000/001768179.pdf"
+        },
+        {
+          "name": "参考資料3 臓器の移植に関する法律施行規則",
+          "url": "https://www.mhlw.go.jp/content/10900000/001768180.pdf"
+        },
+        {
+          "name": "参考資料4 臓器の移植に関する法律の運用に関する指針(ガイドライン)",
+          "url": "https://www.mhlw.go.jp/content/10900000/001768181.pdf"
+        },
+        {
+          "name": "参考資料5 臓器提供の手続に係る質疑応答集",
+          "url": "https://www.mhlw.go.jp/content/10900000/001768182.pdf"
+        },
+        {
+          "name": "参考資料6 村上参考人追加提出資料",
+          "url": "https://www.mhlw.go.jp/content/10900000/001768183.pdf"
+        },
+        {
+          "name": "参考資料7 臓器移植実施体制推進支援事業 公募要項",
+          "url": "https://www.mhlw.go.jp/content/10900000/001768184.pdf"
+        },
+        {
+          "name": "参考資料8 臓器移植実施体制推進支援事業 実施要綱",
+          "url": "https://www.mhlw.go.jp/content/10900000/001768185.pdf"
+        }
+      ]
+    },
+    {
       "id": "mhlw-945-20261111-145",
       "councilId": "mhlw-945",
       "name": "第145回 障害者雇用分科会",
@@ -18309,6 +18924,58 @@
         {
           "name": "参考資料3 一般社団法人日本障害者雇用促進事業者協会事業ガイドライン",
           "url": "https://www.mhlw.go.jp/content/11704000/001768039.pdf"
+        }
+      ]
+    },
+    {
+      "id": "mhlw-shakai_hosho_iryou_hoken-20261111-220",
+      "councilId": "mhlw-shakai_hosho_iryou_hoken",
+      "name": "第220回 社会保障審議会 医療保険部会",
+      "date": "2026/11/11",
+      "officialUrl": "https://www.mhlw.go.jp/stf/newpage_77338.html",
+      "isNewlyDiscovered": true,
+      "materials": [
+        {
+          "name": "議事次第",
+          "url": "https://www.mhlw.go.jp/content/12401000/001768121.pdf"
+        },
+        {
+          "name": "委員名簿",
+          "url": "https://www.mhlw.go.jp/content/12401000/001768122.pdf"
+        },
+        {
+          "name": "【資料1】医療保険制度における出産に対する支援の強化について",
+          "url": "https://www.mhlw.go.jp/content/12401000/001768123.pdf"
+        },
+        {
+          "name": "【資料2】国民健康保険の保険料(税)の賦課(課税)限度額等について",
+          "url": "https://www.mhlw.go.jp/content/12401000/001768124.pdf"
+        },
+        {
+          "name": "第220回医療保険部会資料(全体版)",
+          "url": "https://www.mhlw.go.jp/content/12401000/001768125.pdf"
+        }
+      ]
+    },
+    {
+      "id": "moe-2961-20261111-002",
+      "councilId": "moe-2961",
+      "name": "「太陽電池廃棄物の再資源化等の推進に関する法律」の下位法令の策定等に係る検討会(第2回)",
+      "date": "2026/11/11",
+      "officialUrl": "https://www.env.go.jp/recycle/car/page_00017.html",
+      "isNewlyDiscovered": true,
+      "materials": [
+        {
+          "name": "議事次第",
+          "url": "https://www.env.go.jp/council/content/03recycle03/000441041.pdf"
+        },
+        {
+          "name": "資料1_太陽光パネルのリサイクル制度について(認定事業者の認定基準、処理基準等)",
+          "url": "https://www.env.go.jp/council/content/03recycle03/000441042.pdf"
+        },
+        {
+          "name": "参考資料1_委員等名簿",
+          "url": "https://www.env.go.jp/council/content/03recycle03/000441043.pdf"
         }
       ]
     },
@@ -18387,6 +19054,98 @@
       ]
     },
     {
+      "id": "cas-indexhtmlsuisin_kaigi_record-20261110-017",
+      "councilId": "cas-indexhtmlsuisin_kaigi_record",
+      "name": "第17回 地域働き方・職場改革等推進会議",
+      "date": "2026/11/10",
+      "officialUrl": "https://www.cas.go.jp/jp/seisaku/chiikihatarakikata/index.html#suisin-kaigi-record",
+      "isNewlyDiscovered": true,
+      "materials": [
+        {
+          "name": "第17回勉強会(岐阜県、広島県、日置市) 令和8年11月10日(火)",
+          "url": "https://www.cas.go.jp/jp/seisaku/chiikihatarakikata/contents/20261110/261110_material_1.pdf"
+        },
+        {
+          "name": "岐阜県資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/chiikihatarakikata/contents/20261110/261110_material_2.pdf"
+        },
+        {
+          "name": "広島県資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/chiikihatarakikata/contents/20261110/261110_material_3.pdf"
+        },
+        {
+          "name": "日置市資料",
+          "url": "https://www.cas.go.jp/jp/seisaku/chiikihatarakikata/contents/20261110/261110_material_4.pdf"
+        }
+      ]
+    },
+    {
+      "id": "fdma-hinanshisetsu_dualuse-20261110-002",
+      "councilId": "fdma-hinanshisetsu_dualuse",
+      "name": "第2回 緊急一時避難施設と一時滞在施設のデュアルユースの推進に関する検討会",
+      "date": "2026/11/10",
+      "officialUrl": "https://www.fdma.go.jp/singi_kento/kento/post-200.html",
+      "isNewlyDiscovered": true,
+      "materials": [
+        {
+          "name": "議事次第",
+          "url": "https://www.fdma.go.jp/singi_kento/kento/items/post-200/02/shidai.pdf"
+        },
+        {
+          "name": "検討会委員等名簿",
+          "url": "https://www.fdma.go.jp/singi_kento/kento/items/post-200/02/meibo.pdf"
+        },
+        {
+          "name": "開催要綱",
+          "url": "https://www.fdma.go.jp/singi_kento/kento/items/post-200/02/youkou.pdf"
+        },
+        {
+          "name": "資料1 緊急一時避難施設の指定状況(令和8年4月1日時点)",
+          "url": "https://www.fdma.go.jp/singi_kento/kento/items/post-200/02/shiryou1.pdf"
+        },
+        {
+          "name": "資料2 アンケート結果概要について",
+          "url": "https://www.fdma.go.jp/singi_kento/kento/items/post-200/02/shiryou2.pdf"
+        },
+        {
+          "name": "資料3 民間施設の緊急一時避難施設指定の自治体の取組例",
+          "url": "https://www.fdma.go.jp/singi_kento/kento/items/post-200/02/shiryou3.pdf"
+        },
+        {
+          "name": "資料4 指定促進にあたっての取組",
+          "url": "https://www.fdma.go.jp/singi_kento/kento/items/post-200/02/shiryou4.pdf"
+        }
+      ]
+    },
+    {
+      "id": "fsc-honkaigi-20261110-1041",
+      "councilId": "fsc-honkaigi",
+      "name": "第1041回 食品安全委員会",
+      "date": "2026/11/10",
+      "officialUrl": "https://www.fsc.go.jp/iinkai_annai/jisseki.html",
+      "isNewlyDiscovered": true,
+      "materials": []
+    },
+    {
+      "id": "maff-659-20261110-129",
+      "councilId": "maff-659",
+      "name": "第129回 企画部会",
+      "date": "2026/11/10",
+      "officialUrl": "https://www.maff.go.jp/j/council/seisaku/kikaku/bukai/index.html",
+      "isNewlyDiscovered": true,
+      "materials": [
+        {
+          "name": "議事概要",
+          "url": "https://www.maff.go.jp/j/council/seisaku/kikaku/bukai/attach/pdf/index-123.pdf"
+        },
+        {
+          "name": "第129回 (持ち回り審議) (令和8年11月10日) 議事概要",
+          "url": "https://www.maff.go.jp/j/council/seisaku/kikaku/bukai/261110.html",
+          "type": "HTML"
+        }
+      ]
+    },
+    {
       "id": "mhlw-938-20261110-215",
       "councilId": "mhlw-938",
       "name": "第215回 職業安定分科会雇用保険部会",
@@ -18436,6 +19195,20 @@
         {
           "name": "【参考資料2】雇用保険制度の主要指標.",
           "url": "https://www.mhlw.go.jp/content/11601000/001767723.pdf"
+        }
+      ]
+    },
+    {
+      "id": "cas-gx_senmonka_wg-20261109-019",
+      "councilId": "cas-gx_senmonka_wg",
+      "name": "第19回 GX実行会議 専門家ワーキンググループ",
+      "date": "2026/11/09",
+      "officialUrl": "https://www.cas.go.jp/jp/seisaku/gx_jikkou_kaigi/senmonka_wg/dai19/shiryo.html",
+      "isNewlyDiscovered": true,
+      "materials": [
+        {
+          "name": "前回の専門家WG(10/7)における主なコメント",
+          "url": "https://www.cas.go.jp/jp/seisaku/gx_jikkou_kaigi/senmonka_wg/dai19/shiryo1.pdf"
         }
       ]
     },
@@ -18603,6 +19376,36 @@
         {
           "name": "参考資料3 食品衛生監視部会委員名簿",
           "url": "https://www.mhlw.go.jp/content/10906000/001767096.pdf"
+        }
+      ]
+    },
+    {
+      "id": "mhlw-908-20261109-121",
+      "councilId": "mhlw-908",
+      "name": "第121回 再生医療等評価部会",
+      "date": "2026/11/09",
+      "officialUrl": "https://www.mhlw.go.jp/stf/newpage_77192.html",
+      "isNewlyDiscovered": true,
+      "materials": [
+        {
+          "name": "議事概要[174KB]",
+          "url": "https://www.mhlw.go.jp/content/11201250/001767222.pdf"
+        },
+        {
+          "name": "議事次第[148KB]",
+          "url": "https://www.mhlw.go.jp/content/11201250/001767223.pdf"
+        },
+        {
+          "name": "委員名簿[228KB]",
+          "url": "https://www.mhlw.go.jp/content/11201250/001766051.pdf"
+        },
+        {
+          "name": "ヒトES細胞の樹立に関する指針の見直しの方向性について[1.3MB]",
+          "url": "https://www.mhlw.go.jp/content/11201250/001766060.pdf"
+        },
+        {
+          "name": "「ヒトES細胞の樹立に関する指針」条文比較表[703KB]",
+          "url": "https://www.mhlw.go.jp/content/11201250/001766061.pdf"
         }
       ]
     },
@@ -19191,6 +19994,28 @@
       ]
     },
     {
+      "id": "mof-1150-20261105-012",
+      "councilId": "mof-1150",
+      "name": "国の債務管理に関する研究会(第12回)議事の要点",
+      "date": "2026/11/05",
+      "officialUrl": "https://www.mof.go.jp/about_mof/councils/study_gov_debt_management/proceedings/20261110153952.html",
+      "isNewlyDiscovered": true,
+      "materials": [
+        {
+          "name": "資料1",
+          "url": "https://www.mof.go.jp/about_mof/councils/study_gov_debt_management/d20261105-1.pdf"
+        },
+        {
+          "name": "資料2",
+          "url": "https://www.mof.go.jp/about_mof/councils/study_gov_debt_management/d20261105-2.pdf"
+        },
+        {
+          "name": "資料3",
+          "url": "https://www.mof.go.jp/about_mof/councils/study_gov_debt_management/d20261105-3.pdf"
+        }
+      ]
+    },
+    {
       "id": "cao-zeicho_digital_noukan_senmonka-20261104-006",
       "councilId": "cao-zeicho_digital_noukan_senmonka",
       "name": "第6回 経済社会のデジタル化への対応と納税環境整備に関する専門家会合(2026年11月4日)",
@@ -19258,6 +20083,56 @@
         {
           "name": "参考資料5 (藤本委員ご意見)学齢期以降のこどもの遊び",
           "url": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/5d5ae75e-90a6-45d6-a144-279e33bae31f/69d8a45c/20261102_councils_shingikai_kodomo_ibashojidoukan_5d5ae75e_09.pdf"
+        }
+      ]
+    },
+    {
+      "id": "fdma-yobou_jisshi_taisei-20261104-002",
+      "councilId": "fdma-yobou_jisshi_taisei",
+      "name": "第2回 予防業務の実施体制に関する検討部会",
+      "date": "2026/11/04",
+      "officialUrl": "https://www.fdma.go.jp/singi_kento/kento/post-203.html",
+      "isNewlyDiscovered": true,
+      "materials": [
+        {
+          "name": "議事次第",
+          "url": "https://www.fdma.go.jp/singi_kento/kento/items/post-203/02/shidai.pdf"
+        },
+        {
+          "name": "資料1 予防業務に関する消防庁の支援事業の改善・拡充等について",
+          "url": "https://www.fdma.go.jp/singi_kento/kento/items/post-203/02/shiryou1.pdf"
+        },
+        {
+          "name": "資料2 立入検査・違反是正の実効性の向上について",
+          "url": "https://www.fdma.go.jp/singi_kento/kento/items/post-203/02/shiryou2.pdf"
+        },
+        {
+          "name": "参考資料1 予防業務の実施体制に関する検討部会 開催要綱",
+          "url": "https://www.fdma.go.jp/singi_kento/kento/items/post-203/02/sankou1.pdf"
+        },
+        {
+          "name": "参考資料2 予防業務の実施体制に関する検討部会 委員名簿",
+          "url": "https://www.fdma.go.jp/singi_kento/kento/items/post-203/02/sankou2.pdf"
+        },
+        {
+          "name": "参考資料3 立入検査標準マニュアル(抜粋)",
+          "url": "https://www.fdma.go.jp/singi_kento/kento/items/post-203/02/sankou3.pdf"
+        },
+        {
+          "name": "参考資料4 違反処理標準マニュアル(抜粋)",
+          "url": "https://www.fdma.go.jp/singi_kento/kento/items/post-203/02/sankou4.pdf"
+        },
+        {
+          "name": "参考資料5 消防本部で実施している危険度評価とポイント制",
+          "url": "https://www.fdma.go.jp/singi_kento/kento/items/post-203/02/sankou5.pdf"
+        },
+        {
+          "name": "参考資料6 実態把握のために消防本部で活用しているチェックシート",
+          "url": "https://www.fdma.go.jp/singi_kento/kento/items/post-203/02/sankou6.pdf"
+        },
+        {
+          "name": "情報提供資料 立入検査対象の選定を支援する機械学習AIアプリの概要について",
+          "url": "https://www.fdma.go.jp/singi_kento/kento/items/post-203/02/jouhouteikyou.pdf"
         }
       ]
     },
@@ -22397,6 +23272,11 @@
         {
           "name": "意見書(山内委員)",
           "url": "https://www.mof.go.jp/about_mof/councils/fiscal_system_council/sub-of_filp/proceedings/material/zaitoa20261019/zaito20261019_07.pdf"
+        },
+        {
+          "name": "議事要旨",
+          "url": "https://www.mof.go.jp/about_mof/councils/fiscal_system_council/sub-of_filp/proceedings/outline/zaitoa20261019.html",
+          "type": "HTML"
         }
       ]
     },
@@ -22657,7 +23537,13 @@
       "name": "第38回 特定石綿被害建設業務労働者等認定審査会専門委員会",
       "date": "2026/10/15",
       "officialUrl": "https://www.mhlw.go.jp/stf/newpage_76765.html",
-      "materials": []
+      "materials": [
+        {
+          "name": "議事概要",
+          "url": "https://www.mhlw.go.jp/stf/newpage_76765.html",
+          "type": "HTML"
+        }
+      ]
     },
     {
       "id": "mic-musen_jujisha_wg-20261015-002",
@@ -22981,6 +23867,16 @@
         {
           "name": "参考資料2 厚生科学審議会感染症部会における主なご意見(未定稿)[PDF形式:521KB]",
           "url": "https://www.mhlw.go.jp/content/10906000/001758679.pdf"
+        },
+        {
+          "name": "議事録",
+          "url": "https://www.mhlw.go.jp/stf/newpage_77289.html",
+          "type": "HTML"
+        },
+        {
+          "name": "第27回 第12回危機対応医薬品等 に関する小委員会 (合同開催) 2026年10月14日 (令和8年10月14日) MCM戦略を踏まえた支援・法制度等の在り方について 議事録 NEW 11月9日",
+          "url": "https://www.mhlw.go.jp/stf/newpage_76692.html",
+          "type": "HTML"
         }
       ]
     },
@@ -24012,6 +24908,20 @@
         {
           "name": "大阪・夢洲地区特定複合観光施設区域の整備に関する計画 令和7年度(2025 年度)実施状況報告書",
           "url": "https://www.cas.go.jp/jp/seisakukaigi/ir_promotion/dai12/sankou2.pdf"
+        }
+      ]
+    },
+    {
+      "id": "maff-654-20261008-008",
+      "councilId": "maff-654",
+      "name": "第8回 国立研究開発法人審議会",
+      "date": "2026/10/08",
+      "officialUrl": "https://www.maff.go.jp/j/council/kaihatu/08/index.html",
+      "isNewlyDiscovered": true,
+      "materials": [
+        {
+          "name": "議事要旨",
+          "url": "https://www.maff.go.jp/j/council/kaihatu/08/attach/pdf/index-1.pdf"
         }
       ]
     },
@@ -26637,7 +27547,13 @@
       "name": "第8回 石綿に係る疾病の業務上外に関する検討会",
       "date": "2026/09/25",
       "officialUrl": "https://www.mhlw.go.jp/stf/newpage_76554.html",
-      "materials": []
+      "materials": [
+        {
+          "name": "議事概要",
+          "url": "https://www.mhlw.go.jp/stf/newpage_76554.html",
+          "type": "HTML"
+        }
+      ]
     },
     {
       "id": "mhlw-787-20260925-002",
@@ -27184,6 +28100,16 @@
         {
           "name": "資料2",
           "url": "https://www.mof.go.jp/about_mof/councils/fiscal_system_council/sub-of_filp/proceedings/material/zaitoa20260918/zaito20260918_02.pdf"
+        },
+        {
+          "name": "議事要旨",
+          "url": "https://www.mof.go.jp/about_mof/councils/fiscal_system_council/sub-of_filp/proceedings/outline/zaitoa20260918.html",
+          "type": "HTML"
+        },
+        {
+          "name": "議事録",
+          "url": "https://www.mof.go.jp/about_mof/councils/fiscal_system_council/sub-of_filp/proceedings/proceedings/zaitoa20260918.html",
+          "type": "HTML"
         }
       ]
     },
@@ -37678,7 +38604,13 @@
       "name": "第7回 石綿に係る疾病の業務上外に関する検討会",
       "date": "2026/08/07",
       "officialUrl": "https://www.mhlw.go.jp/stf/newpage_75879.html",
-      "materials": []
+      "materials": [
+        {
+          "name": "議事概要",
+          "url": "https://www.mhlw.go.jp/stf/newpage_75879.html",
+          "type": "HTML"
+        }
+      ]
     },
     {
       "id": "mhlw-2896-20260807-003",
@@ -41935,7 +42867,13 @@
       "name": "第57回 医療観察法部会",
       "date": "2026/07/29",
       "officialUrl": "https://www.mhlw.go.jp/stf/shingi/shingi-hosho_126733.html",
-      "materials": []
+      "materials": [
+        {
+          "name": "議事要旨",
+          "url": "https://www.mhlw.go.jp/stf/iryoukansatu.shingikai57.html",
+          "type": "HTML"
+        }
+      ]
     },
     {
       "id": "mhlw-konnan_josei_shien_kento-20260729-001",
@@ -47317,7 +48255,13 @@
       "name": "第6回 石綿に係る疾病の業務上外に関する検討会",
       "date": "2026/07/17",
       "officialUrl": "https://www.mhlw.go.jp/stf/newpage_74566.html",
-      "materials": []
+      "materials": [
+        {
+          "name": "議事概要",
+          "url": "https://www.mhlw.go.jp/stf/newpage_74566.html",
+          "type": "HTML"
+        }
+      ]
     },
     {
       "id": "mhlw-939-20260717-396",
@@ -49148,6 +50092,16 @@
         {
           "name": "財政投融資分科会(令和8年7月15日開催) 資料 (zaito20260715_gijiroku)",
           "url": "https://www.mof.go.jp/about_mof/councils/fiscal_system_council/sub-of_filp/proceedings/proceedings/zaito20260715_gijiroku.pdf"
+        },
+        {
+          "name": "議事要旨",
+          "url": "https://www.mof.go.jp/about_mof/councils/fiscal_system_council/sub-of_filp/proceedings/outline/zaitoa20260715.html",
+          "type": "HTML"
+        },
+        {
+          "name": "議事録",
+          "url": "https://www.mof.go.jp/about_mof/councils/fiscal_system_council/sub-of_filp/proceedings/proceedings/zaitoa20260715.html",
+          "type": "HTML"
         }
       ]
     },
@@ -51923,7 +52877,13 @@
       "name": "第5回 石綿に係る疾病の業務上外に関する検討会",
       "date": "2026/07/03",
       "officialUrl": "https://www.mhlw.go.jp/stf/newpage_74058.html",
-      "materials": []
+      "materials": [
+        {
+          "name": "議事概要",
+          "url": "https://www.mhlw.go.jp/stf/newpage_74058.html",
+          "type": "HTML"
+        }
+      ]
     },
     {
       "id": "mhlw-928-20260703-007",
@@ -60564,7 +61524,13 @@
       "name": "第4回 石綿に係る疾病の業務上外に関する検討会",
       "date": "2026/06/19",
       "officialUrl": "https://www.mhlw.go.jp/stf/newpage_73865.html",
-      "materials": []
+      "materials": [
+        {
+          "name": "議事概要",
+          "url": "https://www.mhlw.go.jp/stf/newpage_73865.html",
+          "type": "HTML"
+        }
+      ]
     },
     {
       "id": "mhlw-817-20260619-034",
@@ -61483,6 +62449,16 @@
         {
           "name": "理財局説明資料",
           "url": "https://www.mof.go.jp/about_mof/councils/fiscal_system_council/sub-of_filp/proceedings/material/zaitoa20260618/zaito20260618_jicrizai.pdf"
+        },
+        {
+          "name": "議事要旨",
+          "url": "https://www.mof.go.jp/about_mof/councils/fiscal_system_council/sub-of_filp/proceedings/outline/zaitoa20260618.html",
+          "type": "HTML"
+        },
+        {
+          "name": "議事録",
+          "url": "https://www.mof.go.jp/about_mof/councils/fiscal_system_council/sub-of_filp/proceedings/proceedings/zaitoa20260618.html",
+          "type": "HTML"
         }
       ]
     },
@@ -63860,7 +64836,13 @@
       "name": "第3回 石綿に係る疾病の業務上外に関する検討会",
       "date": "2026/06/12",
       "officialUrl": "https://www.mhlw.go.jp/stf/newpage_73627.html",
-      "materials": []
+      "materials": [
+        {
+          "name": "議事概要",
+          "url": "https://www.mhlw.go.jp/stf/newpage_73627.html",
+          "type": "HTML"
+        }
+      ]
     },
     {
       "id": "mhlw-947-20260612-076",
@@ -73638,7 +74620,13 @@
       "name": "第2回 石綿に係る疾病の業務上外に関する検討会",
       "date": "2026/05/08",
       "officialUrl": "https://www.mhlw.go.jp/stf/newpage_73172.html",
-      "materials": []
+      "materials": [
+        {
+          "name": "議事概要",
+          "url": "https://www.mhlw.go.jp/stf/newpage_73172.html",
+          "type": "HTML"
+        }
+      ]
     },
     {
       "id": "mhlw-2868-20260508-002",
@@ -76089,7 +77077,13 @@
       "name": "第1回 石綿に係る疾病の業務上外に関する検討会",
       "date": "2026/04/24",
       "officialUrl": "https://www.mhlw.go.jp/stf/newpage_72703.html",
-      "materials": []
+      "materials": [
+        {
+          "name": "議事概要",
+          "url": "https://www.mhlw.go.jp/stf/newpage_72703.html",
+          "type": "HTML"
+        }
+      ]
     },
     {
       "id": "mhlw-995-20260424-006",
@@ -87172,7 +88166,13 @@
       "name": "第14回 石綿に係る疾病の業務上外に関する検討会",
       "date": "2026/03/24",
       "officialUrl": "https://www.mhlw.go.jp/stf/newpage_72481.html",
-      "materials": []
+      "materials": [
+        {
+          "name": "議事概要",
+          "url": "https://www.mhlw.go.jp/stf/newpage_72481.html",
+          "type": "HTML"
+        }
+      ]
     },
     {
       "id": "mhlw-939-20260324-392",
@@ -88081,6 +89081,11 @@
         {
           "name": "議案関係説明資料",
           "url": "https://www.mof.go.jp/about_mof/councils/fiscal_system_council/sub-of_filp/proceedings/material/zaitoa20260326/zaito20260326_02.pdf"
+        },
+        {
+          "name": "議事要旨",
+          "url": "https://www.mof.go.jp/about_mof/councils/fiscal_system_council/sub-of_filp/proceedings/outline/zaitoa20260326.html",
+          "type": "HTML"
         }
       ]
     },
@@ -91795,7 +92800,13 @@
       "name": "第13回 石綿に係る疾病の業務上外に関する検討会",
       "date": "2026/03/13",
       "officialUrl": "https://www.mhlw.go.jp/stf/newpage_71580.html",
-      "materials": []
+      "materials": [
+        {
+          "name": "議事概要",
+          "url": "https://www.mhlw.go.jp/stf/newpage_71580.html",
+          "type": "HTML"
+        }
+      ]
     },
     {
       "id": "mhlw-942-20260313-052",
@@ -97423,6 +98434,11 @@
         {
           "name": "議事概要",
           "url": "https://www.maff.go.jp/j/council/seisaku/kikaku/bukai/attach/pdf/index-103.pdf"
+        },
+        {
+          "name": "第123回 (持ち回り審議) (令和8年3月2日) 議事概要",
+          "url": "https://www.maff.go.jp/j/council/seisaku/kikaku/bukai/260302.html",
+          "type": "HTML"
         }
       ]
     },
@@ -98577,7 +99593,13 @@
       "name": "第12回 石綿に係る疾病の業務上外に関する検討会",
       "date": "2026/02/27",
       "officialUrl": "https://www.mhlw.go.jp/stf/newpage_70963.html",
-      "materials": []
+      "materials": [
+        {
+          "name": "議事概要",
+          "url": "https://www.mhlw.go.jp/stf/newpage_70963.html",
+          "type": "HTML"
+        }
+      ]
     },
     {
       "id": "mhlw-2901-20260227-001",
@@ -103433,6 +104455,11 @@
         {
           "name": "議案説明資料",
           "url": "https://www.mof.go.jp/about_mof/councils/fiscal_system_council/sub-of_filp/proceedings/material/zaitoa20260219/zaito20260219_02.pdf"
+        },
+        {
+          "name": "議事要旨",
+          "url": "https://www.mof.go.jp/about_mof/councils/fiscal_system_council/sub-of_filp/proceedings/outline/zaitoa20260219.html",
+          "type": "HTML"
         }
       ]
     },
@@ -103670,7 +104697,13 @@
       "name": "第11回 石綿に係る疾病の業務上外に関する検討会",
       "date": "2026/02/13",
       "officialUrl": "https://www.mhlw.go.jp/stf/newpage_70360.html",
-      "materials": []
+      "materials": [
+        {
+          "name": "議事概要",
+          "url": "https://www.mhlw.go.jp/stf/newpage_70360.html",
+          "type": "HTML"
+        }
+      ]
     },
     {
       "id": "mic-mobile_shijoukensho_iinkai-20260213-004",
@@ -110523,7 +111556,13 @@
       "name": "第10回 石綿に係る疾病の業務上外に関する検討会",
       "date": "2026/01/23",
       "officialUrl": "https://www.mhlw.go.jp/stf/newpage_69470.html",
-      "materials": []
+      "materials": [
+        {
+          "name": "議事概要",
+          "url": "https://www.mhlw.go.jp/stf/newpage_69470.html",
+          "type": "HTML"
+        }
+      ]
     },
     {
       "id": "mhlw-836-20260123-047",
@@ -115262,7 +116301,13 @@
       "name": "第9回 石綿に係る疾病の業務上外に関する検討会",
       "date": "2025/12/26",
       "officialUrl": "https://www.mhlw.go.jp/stf/newpage_68453.html",
-      "materials": []
+      "materials": [
+        {
+          "name": "議事概要",
+          "url": "https://www.mhlw.go.jp/stf/newpage_76799.html",
+          "type": "HTML"
+        }
+      ]
     },
     {
       "id": "mhlw-985-20251226-002",
@@ -116475,6 +117520,16 @@
         {
           "name": "資料1",
           "url": "https://www.mof.go.jp/about_mof/councils/fiscal_system_council/sub-of_filp/proceedings/material/zaitoa20251225/zaito20251225_08.pdf"
+        },
+        {
+          "name": "議事要旨",
+          "url": "https://www.mof.go.jp/about_mof/councils/fiscal_system_council/sub-of_filp/proceedings/outline/zaitoa20251225.html",
+          "type": "HTML"
+        },
+        {
+          "name": "議事録",
+          "url": "https://www.mof.go.jp/about_mof/councils/fiscal_system_council/sub-of_filp/proceedings/proceedings/zaitoa20251225.html",
+          "type": "HTML"
         }
       ]
     },
@@ -124164,6 +125219,16 @@
         {
           "name": "資料2-2",
           "url": "https://www.mof.go.jp/about_mof/councils/fiscal_system_council/sub-of_filp/proceedings/material/zaitoa20251205/zaito20251205_03.pdf"
+        },
+        {
+          "name": "議事要旨",
+          "url": "https://www.mof.go.jp/about_mof/councils/fiscal_system_council/sub-of_filp/proceedings/outline/zaitoa20251205.html",
+          "type": "HTML"
+        },
+        {
+          "name": "議事録",
+          "url": "https://www.mof.go.jp/about_mof/councils/fiscal_system_council/sub-of_filp/proceedings/proceedings/zaitoa20251205.html",
+          "type": "HTML"
         }
       ]
     },
@@ -127929,6 +128994,11 @@
         {
           "name": "議案関係説明資料",
           "url": "https://www.mof.go.jp/about_mof/councils/fiscal_system_council/sub-of_filp/proceedings/material/zaitoa20251127/zaito20251127_05.pdf"
+        },
+        {
+          "name": "議事要旨",
+          "url": "https://www.mof.go.jp/about_mof/councils/fiscal_system_council/sub-of_filp/proceedings/outline/zaitoa20251127.html",
+          "type": "HTML"
         }
       ]
     },
@@ -128434,6 +129504,16 @@
         {
           "name": "資料2",
           "url": "https://www.mof.go.jp/about_mof/councils/fiscal_system_council/sub-of_filp/proceedings/material/zaitoa20251121/zaito20251121_02.pdf"
+        },
+        {
+          "name": "議事要旨",
+          "url": "https://www.mof.go.jp/about_mof/councils/fiscal_system_council/sub-of_filp/proceedings/outline/zaitoa20251121.html",
+          "type": "HTML"
+        },
+        {
+          "name": "議事録",
+          "url": "https://www.mof.go.jp/about_mof/councils/fiscal_system_council/sub-of_filp/proceedings/proceedings/zaitoa20251121.html",
+          "type": "HTML"
         }
       ]
     },
@@ -135114,6 +136194,16 @@
         {
           "name": "資料2",
           "url": "https://www.mof.go.jp/about_mof/councils/fiscal_system_council/sub-of_filp/proceedings/material/zaitoa20251029/zaito20251029_02.pdf"
+        },
+        {
+          "name": "議事要旨",
+          "url": "https://www.mof.go.jp/about_mof/councils/fiscal_system_council/sub-of_filp/proceedings/outline/zaitoa20251029.html",
+          "type": "HTML"
+        },
+        {
+          "name": "議事録",
+          "url": "https://www.mof.go.jp/about_mof/councils/fiscal_system_council/sub-of_filp/proceedings/proceedings/zaitoa20251029.html",
+          "type": "HTML"
         }
       ]
     },
@@ -139847,6 +140937,16 @@
         {
           "name": "資料2-3",
           "url": "https://www.mof.go.jp/about_mof/councils/fiscal_system_council/sub-of_filp/proceedings/material/zaitoa20251016/zaito20251016_04.pdf"
+        },
+        {
+          "name": "議事要旨",
+          "url": "https://www.mof.go.jp/about_mof/councils/fiscal_system_council/sub-of_filp/proceedings/outline/zaitoa20251016.html",
+          "type": "HTML"
+        },
+        {
+          "name": "議事録",
+          "url": "https://www.mof.go.jp/about_mof/councils/fiscal_system_council/sub-of_filp/proceedings/proceedings/zaitoa20251016.html",
+          "type": "HTML"
         }
       ]
     },
@@ -147360,6 +148460,16 @@
         {
           "name": "正誤表 別紙",
           "url": "https://www.mof.go.jp/about_mof/councils/fiscal_system_council/sub-of_filp/proceedings/material/zaitoa20250625/zaito070625_seigo2.pdf"
+        },
+        {
+          "name": "議事要旨",
+          "url": "https://www.mof.go.jp/about_mof/councils/fiscal_system_council/sub-of_filp/proceedings/outline/zaitoa20250625.html",
+          "type": "HTML"
+        },
+        {
+          "name": "議事録",
+          "url": "https://www.mof.go.jp/about_mof/councils/fiscal_system_council/sub-of_filp/proceedings/proceedings/zaitoa20250625.html",
+          "type": "HTML"
         }
       ]
     },
@@ -151980,6 +153090,11 @@
         {
           "name": "議事概要",
           "url": "https://www.maff.go.jp/j/council/seisaku/kikaku/bukai/attach/pdf/index-96.pdf"
+        },
+        {
+          "name": "第122回 (持ち回り審議) (令和7年8月19日) 議事概要",
+          "url": "https://www.maff.go.jp/j/council/seisaku/kikaku/bukai/250819.html",
+          "type": "HTML"
         }
       ]
     },
@@ -154890,6 +156005,72 @@
         {
           "name": "バイアウト投資等に係るJICの取組について",
           "url": "https://www.mof.go.jp/about_mof/councils/fiscal_system_council/sub-of_filp/proceedings/material/zaitoa20250731_8.pdf"
+        },
+        {
+          "name": "議事要旨",
+          "url": "https://www.mof.go.jp/about_mof/councils/fiscal_system_council/sub-of_filp/proceedings/outline/zaitoa20250731.html",
+          "type": "HTML"
+        },
+        {
+          "name": "議事録",
+          "url": "https://www.mof.go.jp/about_mof/councils/fiscal_system_council/sub-of_filp/proceedings/proceedings/zaitoa20250731.html",
+          "type": "HTML"
+        },
+        {
+          "name": "(Excel:55KB)",
+          "url": "https://www.mof.go.jp/policy/filp/reference/management_report/unyo06_hyoshi.xls"
+        },
+        {
+          "name": "表紙 (Excel:55KB)",
+          "url": "https://www.mof.go.jp/policy/filp/reference/management_report/unyo06b.pdf"
+        },
+        {
+          "name": "(Excel:59KB)",
+          "url": "https://www.mof.go.jp/policy/filp/reference/management_report/unyo06_mokuji.xls"
+        },
+        {
+          "name": "(Excel:61KB)",
+          "url": "https://www.mof.go.jp/policy/filp/reference/management_report/unyo06_1_1keikakujisseki.xls"
+        },
+        {
+          "name": "(Excel:60KB)",
+          "url": "https://www.mof.go.jp/policy/filp/reference/management_report/unyo06_1_2tankijisseki.xls"
+        },
+        {
+          "name": "(Excel:59KB)",
+          "url": "https://www.mof.go.jp/policy/filp/reference/management_report/unyo06_2_1saiken.xls"
+        },
+        {
+          "name": "(Excel:69KB)",
+          "url": "https://www.mof.go.jp/policy/filp/reference/management_report/unyo06_2_2kashitukekin.xls"
+        },
+        {
+          "name": "(Excel:58KB)",
+          "url": "https://www.mof.go.jp/policy/filp/reference/management_report/unyo06_s1kokusai.xls"
+        },
+        {
+          "name": "(Excel:59KB)",
+          "url": "https://www.mof.go.jp/policy/filp/reference/management_report/unyo06_s2_1yotakukinzougen.xls"
+        },
+        {
+          "name": "(Excel:59KB)",
+          "url": "https://www.mof.go.jp/policy/filp/reference/management_report/unyo06_s2_2yotakukikanbetsu.xls"
+        },
+        {
+          "name": "(Excel:69KB)",
+          "url": "https://www.mof.go.jp/policy/filp/reference/management_report/unyo06_3pl.xls"
+        },
+        {
+          "name": "(Excel:70KB)",
+          "url": "https://www.mof.go.jp/policy/filp/reference/management_report/unyo06_4bs.xls"
+        },
+        {
+          "name": "(Excel:83KB)",
+          "url": "https://www.mof.go.jp/policy/filp/reference/management_report/unyo06_s3unyozyoukyou.xls"
+        },
+        {
+          "name": "(Excel:30KB)",
+          "url": "https://www.mof.go.jp/policy/filp/reference/management_report/unyo06_5shitobetsu.xls"
         }
       ]
     },
@@ -184057,6 +185238,11 @@
         {
           "name": "資料2",
           "url": "https://www.mof.go.jp/about_mof/councils/fiscal_system_council/sub-of_filp/proceedings/material/zaitoa20250324/zaito20250324_04.pdf"
+        },
+        {
+          "name": "議事要旨",
+          "url": "https://www.mof.go.jp/about_mof/councils/fiscal_system_council/sub-of_filp/proceedings/outline/zaitoa20250324.html",
+          "type": "HTML"
         }
       ]
     },
@@ -204852,6 +206038,21 @@
         {
           "name": "資料1",
           "url": "https://www.mof.go.jp/about_mof/councils/fiscal_system_council/sub-of_filp/proceedings/material/zaitoa20241226/zaito20241226_07.pdf"
+        },
+        {
+          "name": "議事要旨",
+          "url": "https://www.mof.go.jp/about_mof/councils/fiscal_system_council/sub-of_filp/proceedings/outline/zaitoa20241226.html",
+          "type": "HTML"
+        },
+        {
+          "name": "議事録",
+          "url": "https://www.mof.go.jp/about_mof/councils/fiscal_system_council/sub-of_filp/proceedings/proceedings/zaitoa20241226.html",
+          "type": "HTML"
+        },
+        {
+          "name": "令和6年12月26日 ・ 令和7年度財政投融資計画等 ・ 令和6年度財政融資資金運用計画の一部変更について ・ 報告事項",
+          "url": "https://www.mof.go.jp/about_mof/councils/fiscal_system_council/sub-of_fiscal_system/proceedings/material/20240521zaiseia.html",
+          "type": "HTML"
         }
       ]
     },
@@ -210047,6 +211248,16 @@
         {
           "name": "資料3",
           "url": "https://www.mof.go.jp/about_mof/councils/fiscal_system_council/sub-of_filp/proceedings/material/zaitoa20241212/zaito20241212_05.pdf"
+        },
+        {
+          "name": "議事要旨",
+          "url": "https://www.mof.go.jp/about_mof/councils/fiscal_system_council/sub-of_filp/proceedings/outline/zaitoa20241212.html",
+          "type": "HTML"
+        },
+        {
+          "name": "議事録",
+          "url": "https://www.mof.go.jp/about_mof/councils/fiscal_system_council/sub-of_filp/proceedings/proceedings/zaitoa20241212.html",
+          "type": "HTML"
         }
       ]
     },
@@ -214218,6 +215429,11 @@
         {
           "name": "議案関係説明資料",
           "url": "https://www.mof.go.jp/about_mof/councils/fiscal_system_council/sub-of_filp/proceedings/material/zaitoa20241127/zaito20241127_05.pdf"
+        },
+        {
+          "name": "議事要旨",
+          "url": "https://www.mof.go.jp/about_mof/councils/fiscal_system_council/sub-of_filp/proceedings/outline/zaitoa20241127.html",
+          "type": "HTML"
         }
       ]
     },
@@ -216354,6 +217570,16 @@
         {
           "name": "資料3-2",
           "url": "https://www.mof.go.jp/about_mof/councils/fiscal_system_council/sub-of_filp/proceedings/material/zaitoa20241115/zaito20241115_04.pdf"
+        },
+        {
+          "name": "議事要旨",
+          "url": "https://www.mof.go.jp/about_mof/councils/fiscal_system_council/sub-of_filp/proceedings/outline/zaitoa20241115.html",
+          "type": "HTML"
+        },
+        {
+          "name": "議事録",
+          "url": "https://www.mof.go.jp/about_mof/councils/fiscal_system_council/sub-of_filp/proceedings/proceedings/zaitoa20241115.html",
+          "type": "HTML"
         }
       ]
     },
@@ -217167,8 +218393,8 @@
     "cas-zensedai_hosyo",
     "mof-zaiseiseido_bunkakai"
   ],
-  "lastCrawlTime": "2026/11/13 01:40",
+  "lastCrawlTime": "2026/11/13 23:41",
   "hasArchive": true,
-  "totalMeetingsCount": 25046,
-  "totalMaterialsCount": 154224
+  "totalMeetingsCount": 25103,
+  "totalMaterialsCount": 154503
 }
