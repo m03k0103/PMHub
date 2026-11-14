@@ -1,8 +1,8 @@
 # PMHub 改善・機能実装（Drop）マスタードキュメント (DROPS.md)
 
-> **最終更新**: 2026-11-10  
-> **最新 Drop**: **Drop 142**（2026-11-10 完了）  
-> **次期予定 Drop**: **Drop 143**（Track [Core-Policy-Filter]: 「重要会議のみ」絞り込み機能 & 主要会議ハイライト表示）  
+> **最終更新**: 2026-11-14  
+> **最新 Drop**: **Drop 143**（2026-11-14 完了）  
+> **次期予定 Drop**: **Drop 144**（Track [Core-Policy-Filter]: 「重要会議のみ」絞り込み機能 & 主要会議ハイライト表示）  
 > 
 > 本ドキュメントは、PMHub の継続的改善ロードマップおよび実装記録を一元管理するマスタードキュメントです。  `
 > 今後の構想テーマは **「Track（トラック）」** として管理し、着手・個別実装単位は最新連番を付与した **「Drop（ドロップ）」** として連番アーカイブします。  `
@@ -294,6 +294,7 @@ GitHub Actions で自動更新・push されたリモートの最新データ（
 | **Drop 140** | **管理サーバーポート競合自動フォールバック & 安全ランチャー機構** | 他アプリ（中露政府公式発表ウォッチ等）とのポート8000競合時、8001, 8002... と空きポートを自動探索・バインドする `create_server()` を新設。`admin/start.bat` から危険なポート8000の無差別 `taskkill` を完全撤廃し、実際にバインドされたポート（`.server_port`）を検知してブラウザで正しくダッシュボードを開く安全な起動フローを構築。フロントエンドのアラートも動的ポート解決へ純化。 | 他アプリ非破壊・ポート競合完全回避・自律空きポートバインド、単体テスト・統合10ケース完全合格（17.02s） |
 | **Drop 141** | **資料なし・manual lockなし開催回の配付資料網羅取得・公式URL是正・スクレイピングルール最適化** | **資料なし会合全178件の実態網羅調査 & 存在資料528件の網羅的登録**<br>公式URLが親ポータル/一覧になっていた会議体（文科省・文化庁・厚労省・こども家庭庁・内閣府等）の個別配付資料URL是正、配付資料PDF528件の新規取得・登録、manualLock保護、スクレイピングルールのサブページ探索最適化、全レイヤー統合テスト完全合格。 | **資料なし178件中528件の資料取得・正規化、全10ケース+単体14種完全合格** |
 | **Drop 142** | **内閣府消費者委員会「消費者法制度のパラダイムシフトに関する専門調査会」ワンストップ新規追加** | **会議体・全25開催回・配付資料112件の網羅的登録 & スクレイピングルール連動**<br>内閣府消費者委員会配下の専門調査会（`cao-paradigm_shift_senmon`）を新規登録。第1回（2023/12/27）から第25回（2025/06/13）の全25回開催回データ、各回公式URL、議事次第・資料・参考資料・議事録等全112件の配付資料PDFを網羅取得。次回クロール用スクレイピングルール登録、全レイヤー統合テスト完全合格。 | **新規会議体1組織・開催回25件・配付資料112件登録、全10ケース+単体14種完全合格** |
+| **Drop 143** | **統合デザインハーネス仕様（Design.md / GLOBAL_RULES.md §6）準拠・テーマ標準化＆Design Quality Gate整備** | **Light/Dark カラートークン標準化・管理UI外部CSS分離・UI禁則（BAN-01〜BAN-10）徹底・テスト自動化**<br>`docs/styles.css` の `:root` を Light 基準（`[data-theme="dark"]` 明示分離）へ統一し、48省庁カラー・ステータス変数・`tabular-nums` を適用。`admin/admin_dashboard.html` 内のインライン `<style>` 2ブロックを新設の外部CSS `admin/admin_dashboard.css` へ完全分離し、管理コンソールにも `pmhub_theme` 連動 Light/Dark テーマ切替を導入。0件フィルター非表示（`BAN-02`）、モーダル3経路閉鎖、アコーディオン `.expanded` 連動、件数ステータスバー常時表示を整備し、`testing/test_js_runtime.js`（ケース3）へ Design Quality Gate 自動検証を追加。 | **インライン`<style>` 0件・Light/Darkトークン統一・全10ケース＋単体14種完全合格（17.97s）** |
 
 ---
 
@@ -4783,3 +4784,39 @@ python testing/run_test_suite.py --all-layers : PASSED（統合10ケース＋全
 #### 4. 今後の課題・ネクストアクション
 - **消費者委員会の他専門調査会との連携**:
   今回確立した内閣府消費者委員会の個別回・資料抽出パターンを、今後の消費者委員会関連の新規会合や未登録組織の追加時にもシームレスに再利用。
+
+
+### Drop 143: 統合デザインハーネス仕様（Design.md / GLOBAL_RULES.md §6）準拠・テーマ標準化＆Design Quality Gate整備 (2026-11-14 完了)
+
+#### 1. 背景と目的
+- **デザイン仕様との不整合解消**:
+  公開ポータル（`docs/styles.css`）の `:root` が Dark テーマ（`--bg-primary: #0f172a`）を規定していた一方、`docs/index.html` の初期テーマは `light` であり定義が逆転していた。また、`admin/admin_dashboard.html` 内には長大なインライン `<style>` ブロックおよびハードコード色が残存し、`D:\dev\Orchestration\Design.md` および `GLOBAL_RULES.md` §6（`BAN-09` 等）への準拠が必要となっていた。
+- **UI 操作性・品質検証の標準化**:
+  0件フィルター選択肢の非表示（`BAN-02`）、モーダル3経路閉鎖、アコーディオン `.expanded` 連動、数値列の等幅桁揃え（`tabular-nums`）、件数ステータスバーの常時表示を公開ポータル・管理コンソール双方に貫徹し、ケース3（UI 検証）で自動検査する Design Quality Gate を確立する。
+
+#### 2. 主要な施策・修正内容
+1. **テーマ＆カラートークン標準化（`docs/styles.css`）**:
+   - `:root, [data-theme="light"]` を Light 標準トークン（`--bg-primary: #f8fafc`, `--text-primary: #0f172a`, `--accent-primary: #2563eb` 等）、`[data-theme="dark"]` を Dark トークン（`--bg-primary: #0f172a`, `--text-primary: #f8fafc`, `--accent-primary: #3b82f6` 等）へ再定義し、48省庁ブランドカラーおよびステータス変数を統合。
+   - テーマ依存コンポーネントのセレクタ反転・統合および未定義CSS変数の整理を実施。
+   - 開催日、回次、件数バッジ等の数値要素に `font-variant-numeric: tabular-nums;` を適用し、アコーディオン `.materials-accordion.expanded` の開閉連動スタイルを追加。
+2. **インライン CSS 排除＆管理コンソールの Light/Dark 対応（`admin/admin_dashboard.css`, `admin/admin_dashboard.html`, `admin/admin_dashboard.js`）**:
+   - `admin/admin_dashboard.html` 内のインライン `<style>` 2ブロックを外部 CSS `admin/admin_dashboard.css` へ完全分離し、`<link>` 参照へ統一（`BAN-09` 遵守）。
+   - `pmhub_theme`（`localStorage`）連動の Light デフォルト初期化と `#adminThemeToggleBtn` によるテーマ切替を実装。
+3. **UI 禁則事項（`BAN-01`〜`BAN-10`）および操作性整備（`docs/index.html`, `docs/app.js`, `admin/admin_dashboard.js`）**:
+   - **0件選択肢・凡例の非表示（`BAN-02`）**: 公開ポータルの省庁セレクト（`populateMinistrySelect` / `updateFilterOptionsVisibility`）、グラフ描画（`renderMinistryChart`）、および管理画面の各タブ省庁フィルター（`populateFilterDropdowns`）で 0件要素を除外・非表示化。
+   - **モーダル閉鎖 3 経路**: 公開ポータルおよび管理コンソールのモーダルで「`×`ボタン」「背景オーバーレイクリック」「`Escape` キー押下」の3経路すべてを保証。
+   - **アコーディオン・ステータスバー・初期ソート整合**: `.materials-accordion` / `.crawl-error-accordion` の `.expanded` 連動、リスト直上 `#activeFiltersBar` ステータスバーの常時表示、および初期新着順ソート（`NEWEST`）の一致を担保。
+4. **Design Quality Gate 自動検証昇格（`testing/test_js_runtime.js`, `testing/run_test_suite.py`）**:
+   - ケース3（`testing/test_js_runtime.js`）に静的検査（両 HTML での `<style>` 不在、`admin_dashboard.css` リンク存在、Light/Dark トークン、`tabular-nums`、`.expanded` 定義）および実行時検査（`BAN-02`、モーダル 3 経路閉鎖、アコーディオン `.expanded` 切替）を追加。
+   - `testing/run_test_suite.py` の L2 変更検知対象に `.css` ファイルを追加。
+
+#### 3. 達成された指標・成果
+- **JS 単体テスト（`node --test testing/app.test.js`）**:
+  - **54/54 テスト合格**（失敗 0件 / 所要時間 91.69ms）。
+- **統合テストスイート（`python testing/run_test_suite.py --all-layers`）**:
+  - **統合10ケース＋単体14種（U1〜U14）すべて ALL PASSED（合格 10/10件、スキップ 0件、失敗 0件、総実行時間 17.97秒）**。
+  - ケース3（L2 UI & JS Runtime / Design Quality Gate）を含め全レイヤー異常なしを確認。
+
+#### 4. 今後の課題・ネクストアクション
+- **継続的な UI / デザイン品質保証**:
+  今後の UI 拡張（`Track [Core-Policy-Filter]` 等）においても、`Design.md` の標準トークン・外部 CSS 分離原則・ケース3 Design Quality Gate を継続適用して一貫したデザイン品質を維持する。

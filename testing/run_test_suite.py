@@ -1057,7 +1057,7 @@ def detect_changed_layers_and_unit_tests():
 
         # L2: フロントエンド表示関連 (※docs/data.json のみの場合は除外)
         if ((f.startswith("docs/") and not f.endswith("data.json"))
-            or f.endswith(".html") or f.endswith(".js")
+            or f.endswith(".html") or f.endswith(".js") or f.endswith(".css")
             or "app.test.js" in f or "test_js_runtime.js" in f or "admin/admin_dashboard" in f):
             active_layers.add("L2")
 

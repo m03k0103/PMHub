@@ -217,16 +217,31 @@ document.addEventListener('DOMContentLoaded', async () => {
   // --- DYNAMICALLY POPULATE MINISTRY SELECT ---
   function populateMinistrySelect() {
     if (!el.ministrySelect || !window.MINISTRIES) return;
-    el.ministrySelect.innerHTML = '<option value="ALL">すべての省庁・行政機関</option>';
-    
+    el.ministrySelect.innerHTML = '';
+
+    const allOption = document.createElement('option');
+    allOption.value = 'ALL';
+    allOption.textContent = 'すべての省庁・行政機関';
+    el.ministrySelect.appendChild(allOption);
+
+    const activeMinistryCodes = new Set();
+    COUNCILS.forEach(c => {
+      if (c && c.ministry) activeMinistryCodes.add(c.ministry);
+    });
+    MEETINGS.forEach(m => {
+      const min = getMeetingMinistry(m);
+      if (min) activeMinistryCodes.add(min);
+    });
+
     const groups = {
       '府・省': [],
       '庁': [],
       '委員会': [],
       'その他': []
     };
-    
+
     Object.values(window.MINISTRIES).forEach(min => {
+      if (!activeMinistryCodes.has(min.code)) return;
       if (min.name.endsWith('府') || min.name.endsWith('省')) {
         groups['府・省'].push(min);
       } else if (min.name.endsWith('庁')) {
@@ -237,7 +252,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         groups['その他'].push(min);
       }
     });
-    
+
     ['府・省', '庁', '委員会', 'その他'].forEach(groupName => {
       if (groups[groupName].length === 0) return;
       const optgroup = document.createElement('optgroup');
@@ -290,6 +305,8 @@ document.addEventListener('DOMContentLoaded', async () => {
 
   // --- INITIALIZATION ---
   initTheme();
+  if (el.dateRangeSelect) el.dateRangeSelect.value = state.dateRangeFilter;
+  if (el.sortBySelect) el.sortBySelect.value = state.sortBy;
   setupEventListeners();
 
   if (!loadSuccess) {
@@ -331,6 +348,9 @@ document.addEventListener('DOMContentLoaded', async () => {
     document.documentElement.setAttribute('data-theme', state.theme);
     el.body.setAttribute('data-theme', state.theme);
     setStoredItem('pmhub_theme', state.theme);
+    if (state.currentTab === 'analytics' && typeof renderCharts === 'function') {
+      renderCharts();
+    }
     showToast(`テーマを${state.theme === 'dark' ? 'ダーク' : 'ライト'}モードに切り替えました`);
   }
 
@@ -352,7 +372,7 @@ document.addEventListener('DOMContentLoaded', async () => {
       el.aiSummaryToggleBtn.style.color = '#10b981';
     } else {
       el.aiSummaryToggleLabel.textContent = 'AI要約: OFF';
-      el.aiSummaryToggleBtn.style.background = 'rgba(255, 255, 255, 0.08)';
+      el.aiSummaryToggleBtn.style.background = 'var(--bg-secondary)';
       el.aiSummaryToggleBtn.style.borderColor = 'var(--border-color)';
       el.aiSummaryToggleBtn.style.color = 'var(--text-secondary)';
     }
@@ -533,10 +553,15 @@ document.addEventListener('DOMContentLoaded', async () => {
       });
     }
 
-    // Modal close listeners
+    // Modal close listeners (× button, overlay click, Escape key)
     el.modalCloseBtn.addEventListener('click', closeModal);
     el.documentModalOverlay.addEventListener('click', (e) => {
       if (e.target === el.documentModalOverlay) closeModal();
+    });
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && el.documentModalOverlay && !el.documentModalOverlay.classList.contains('hidden')) {
+        closeModal();
+      }
     });
 
     if (el.copyCitationBtn) {
@@ -586,6 +611,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
   // --- MAIN VIEW DISPATCHER ---
   function renderMainView() {
+    updateFilterOptionsVisibility();
     if (state.viewMode === 'BY_COUNCIL') {
       renderByCouncilView();
     } else {
@@ -678,51 +704,53 @@ document.addEventListener('DOMContentLoaded', async () => {
     return text;
   }
 
+  function meetingMatchesFilters(meeting, ignoreField = null) {
+    // New Arrival filter (Drop 76 / 要件1)
+    if (state.newArrivalOnly && !meeting.isNewlyDiscovered) {
+      return false;
+    }
+
+    // Watchlist filter
+    if (state.watchlistOnly && !state.watchedCouncilIds.has(meeting.councilId)) {
+      return false;
+    }
+
+    // Free word search (Optimized via memoized search index)
+    if (state.searchQuery) {
+      const queries = normalizeForSearch(state.searchQuery).split(/[\s　]+/).filter(k => k);
+      const text = getMeetingSearchText(meeting);
+      const match = queries.every(q => text.includes(q));
+      if (!match) return false;
+    }
+
+    // Ministry filter
+    if (ignoreField !== 'ministry' && state.ministryFilter !== 'ALL' && getMeetingMinistry(meeting) !== state.ministryFilter) {
+      return false;
+    }
+
+    // Category filter
+    if (ignoreField !== 'category' && state.categoryFilter !== 'ALL' && getMeetingCategory(meeting) !== state.categoryFilter) {
+      return false;
+    }
+
+    // Doc Type filter
+    if (!meetingMatchesDocType(meeting, state.docTypeFilter)) {
+      return false;
+    }
+
+    // Date Range filter
+    if (state.dateRangeFilter !== 'ALL') {
+      const refDate = getReferenceDate();
+      if (!isMeetingInDateRange(meeting, state.dateRangeFilter, refDate)) {
+        return false;
+      }
+    }
+
+    return true;
+  }
+
   function filterMeetings() {
-    return MEETINGS.filter(meeting => {
-      // New Arrival filter (Drop 76 / 要件1)
-      if (state.newArrivalOnly && !meeting.isNewlyDiscovered) {
-        return false;
-      }
-
-      // Watchlist filter
-      if (state.watchlistOnly && !state.watchedCouncilIds.has(meeting.councilId)) {
-        return false;
-      }
-
-      // Free word search (Optimized via memoized search index)
-      if (state.searchQuery) {
-        const queries = normalizeForSearch(state.searchQuery).split(/[\s　]+/).filter(k => k);
-        const text = getMeetingSearchText(meeting);
-        const match = queries.every(q => text.includes(q));
-        if (!match) return false;
-      }
-
-      // Ministry filter
-      if (state.ministryFilter !== 'ALL' && getMeetingMinistry(meeting) !== state.ministryFilter) {
-        return false;
-      }
-
-      // Category filter
-      if (state.categoryFilter !== 'ALL' && getMeetingCategory(meeting) !== state.categoryFilter) {
-        return false;
-      }
-
-      // Doc Type filter
-      if (!meetingMatchesDocType(meeting, state.docTypeFilter)) {
-        return false;
-      }
-
-      // Date Range filter
-      if (state.dateRangeFilter !== 'ALL') {
-        const refDate = getReferenceDate();
-        if (!isMeetingInDateRange(meeting, state.dateRangeFilter, refDate)) {
-          return false;
-        }
-      }
-
-      return true;
-    });
+    return MEETINGS.filter(meeting => meetingMatchesFilters(meeting));
   }
 
   function renderByDateView() {
@@ -770,9 +798,9 @@ document.addEventListener('DOMContentLoaded', async () => {
       activeTags.push({ label: `期間: ${dateLabels[state.dateRangeFilter] || state.dateRangeFilter}`, key: 'dateRange' });
     }
 
+    el.activeFiltersBar.classList.remove('hidden');
+    el.resultsCount.textContent = `ヒット件数: ${count} 件`;
     if (activeTags.length > 0) {
-      el.activeFiltersBar.classList.remove('hidden');
-      el.resultsCount.textContent = `ヒット件数: ${count} 件`;
       el.activeTagsContainer.innerHTML = activeTags.map(tag => `
         <span class="active-tag">
           ${escapeHtml(tag.label)}
@@ -780,7 +808,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         </span>
       `).join('');
     } else {
-      el.activeFiltersBar.classList.add('hidden');
+      el.activeTagsContainer.innerHTML = '<span class="active-tag">条件なし（全表示）</span>';
     }
   }
 
@@ -794,6 +822,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     if (!contentEl) return;
 
     const isHidden = contentEl.classList.contains('hidden');
+    accordionEl.classList.toggle('expanded', isHidden);
     if (isHidden) {
       contentEl.classList.remove('hidden');
       if (btn && btn.setAttribute) btn.setAttribute('aria-expanded', 'true');
@@ -980,61 +1009,121 @@ document.addEventListener('DOMContentLoaded', async () => {
     return `${count} 回`;
   }
 
-  function filterCouncils() {
-    return COUNCILS.filter(council => {
-      // New Arrival filter (Drop 76 / 要件1)
-      if (state.newArrivalOnly) {
+  function councilMatchesFilters(council, ignoreField = null) {
+    // New Arrival filter (Drop 76 / 要件1)
+    if (state.newArrivalOnly) {
+      const councilMeetings = meetingsByCouncilMap.get(council.id) || [];
+      const hasNewMeeting = Boolean(council.isNewlyDiscovered) || councilMeetings.some(m => m.isNewlyDiscovered);
+      if (!hasNewMeeting) return false;
+    }
+
+    if (state.watchlistOnly && !state.watchedCouncilIds.has(council.id)) return false;
+    if (ignoreField !== 'ministry' && state.ministryFilter !== 'ALL' && council.ministry !== state.ministryFilter) return false;
+    if (ignoreField !== 'category' && state.categoryFilter !== 'ALL' && council.category !== state.categoryFilter) return false;
+
+    // 開催期間フィルタ（過去1年間に1回以上開催等）
+    if (state.dateRangeFilter !== 'ALL') {
+      if (state.dateRangeFilter === 'PAST_YEAR') {
+        const pastYearCount = getCouncilPastYearCount(council);
+        if (pastYearCount <= 0) return false;
+      } else {
         const councilMeetings = meetingsByCouncilMap.get(council.id) || [];
-        const hasNewMeeting = Boolean(council.isNewlyDiscovered) || councilMeetings.some(m => m.isNewlyDiscovered);
-        if (!hasNewMeeting) return false;
+        const refDate = getReferenceDate();
+        const hasMatchingMeeting = councilMeetings.some(m => isMeetingInDateRange(m, state.dateRangeFilter, refDate));
+        if (!hasMatchingMeeting) return false;
       }
+    }
 
-      if (state.watchlistOnly && !state.watchedCouncilIds.has(council.id)) return false;
-      if (state.ministryFilter !== 'ALL' && council.ministry !== state.ministryFilter) return false;
-      if (state.categoryFilter !== 'ALL' && council.category !== state.categoryFilter) return false;
+    if (state.searchQuery) {
+      const queries = normalizeForSearch(state.searchQuery).split(/[\s　]+/).filter(k => k);
+      const minName = MINISTRIES[council.ministry]?.name || '';
+      const councilMeetings = meetingsByCouncilMap.get(council.id) || [];
 
-      // 開催期間フィルタ（過去1年間に1回以上開催等）
-      if (state.dateRangeFilter !== 'ALL') {
-        if (state.dateRangeFilter === 'PAST_YEAR') {
-          const pastYearCount = getCouncilPastYearCount(council);
-          if (pastYearCount <= 0) return false;
-        } else {
-          const councilMeetings = meetingsByCouncilMap.get(council.id) || [];
-          const refDate = getReferenceDate();
-          const hasMatchingMeeting = councilMeetings.some(m => isMeetingInDateRange(m, state.dateRangeFilter, refDate));
-          if (!hasMatchingMeeting) return false;
-        }
-      }
-
-      if (state.searchQuery) {
-        const queries = normalizeForSearch(state.searchQuery).split(/[\s　]+/).filter(k => k);
-        const minName = MINISTRIES[council.ministry]?.name || '';
-        const councilMeetings = meetingsByCouncilMap.get(council.id) || [];
-        
-        const match = queries.every(q => {
-          const matchName = normalizeForSearch(council.name).includes(q);
-          const matchMin = normalizeForSearch(minName).includes(q);
-          const matchDesc = normalizeForSearch(council.description).includes(q);
-          const matchMeetings = councilMeetings.some(m => {
-            const mName = m.name || '';
-            return normalizeForSearch(mName).includes(q) ||
-              (m.summary ? normalizeForSearch(m.summary).includes(q) : false) ||
-              (m.tags ? m.tags.some(t => t && normalizeForSearch(t).includes(q)) : false) ||
-              (m.materials ? m.materials.some(mat => normalizeForSearch(mat.name).includes(q)) : false);
-          });
-          return matchName || matchMin || matchDesc || matchMeetings;
+      const match = queries.every(q => {
+        const matchName = normalizeForSearch(council.name).includes(q);
+        const matchMin = normalizeForSearch(minName).includes(q);
+        const matchDesc = normalizeForSearch(council.description).includes(q);
+        const matchMeetings = councilMeetings.some(m => {
+          const mName = m.name || '';
+          return normalizeForSearch(mName).includes(q) ||
+            (m.summary ? normalizeForSearch(m.summary).includes(q) : false) ||
+            (m.tags ? m.tags.some(t => t && normalizeForSearch(t).includes(q)) : false) ||
+            (m.materials ? m.materials.some(mat => normalizeForSearch(mat.name).includes(q)) : false);
         });
+        return matchName || matchMin || matchDesc || matchMeetings;
+      });
 
-        if (!match) return false;
+      if (!match) return false;
+    }
+    // If doc type filter is set, only show councils that have matching meetings
+    if (state.docTypeFilter !== 'ALL') {
+      const councilMeetings = meetingsByCouncilMap.get(council.id) || [];
+      const hasMatch = councilMeetings.some(m => meetingMatchesDocType(m, state.docTypeFilter));
+      if (!hasMatch) return false;
+    }
+    return true;
+  }
+
+  function filterCouncils() {
+    return COUNCILS.filter(council => councilMatchesFilters(council));
+  }
+
+  function updateFilterOptionsVisibility() {
+    const activeMinistries = new Set();
+    const activeCategories = new Set();
+
+    if (state.viewMode === 'BY_COUNCIL') {
+      COUNCILS.forEach(c => {
+        if (councilMatchesFilters(c, 'ministry') && c.ministry) activeMinistries.add(c.ministry);
+        if (councilMatchesFilters(c, 'category') && c.category) activeCategories.add(c.category);
+      });
+    } else {
+      MEETINGS.forEach(m => {
+        if (meetingMatchesFilters(m, 'ministry')) {
+          const min = getMeetingMinistry(m);
+          if (min) activeMinistries.add(min);
+        }
+        if (meetingMatchesFilters(m, 'category')) {
+          const cat = getMeetingCategory(m);
+          if (cat) activeCategories.add(cat);
+        }
+      });
+    }
+
+    const syncSelectVisibility = (selectEl, allowedSet, selectedVal) => {
+      if (!selectEl) return;
+      const collectOptions = (node) => {
+        const res = [];
+        if (node && Array.isArray(node.children) && node.children.length > 0) {
+          node.children.forEach(ch => {
+            if (ch.tagName === 'OPTION') res.push(ch);
+            else res.push(...collectOptions(ch));
+          });
+        } else if (node && typeof node.querySelectorAll === 'function') {
+          Array.from(node.querySelectorAll('option') || []).forEach(opt => res.push(opt));
+        }
+        return res;
+      };
+
+      collectOptions(selectEl).forEach(opt => {
+        const val = opt.value;
+        const visible = val === 'ALL' || val === selectedVal || allowedSet.has(val);
+        opt.hidden = !visible;
+        opt.disabled = !visible;
+      });
+
+      if (Array.isArray(selectEl.children)) {
+        selectEl.children.forEach(ch => {
+          if (ch.tagName === 'OPTGROUP' && Array.isArray(ch.children)) {
+            const hasVisibleChild = ch.children.some(opt => !opt.hidden);
+            ch.hidden = !hasVisibleChild;
+          }
+        });
       }
-      // If doc type filter is set, only show councils that have matching meetings
-      if (state.docTypeFilter !== 'ALL') {
-        const councilMeetings = meetingsByCouncilMap.get(council.id) || [];
-        const hasMatch = councilMeetings.some(m => meetingMatchesDocType(m, state.docTypeFilter));
-        if (!hasMatch) return false;
-      }
-      return true;
-    });
+    };
+
+    syncSelectVisibility(el.ministrySelect, activeMinistries, state.ministryFilter);
+    syncSelectVisibility(el.categorySelect, activeCategories, state.categoryFilter);
   }
 
   function renderByCouncilView() {
@@ -1281,24 +1370,20 @@ document.addEventListener('DOMContentLoaded', async () => {
     const metric = state.analyticsMetric || 'MEETINGS';
     const minKeys = Object.keys(MINISTRIES);
 
-    let dataValues = [];
+    let counts = {};
+    minKeys.forEach(k => counts[k] = 0);
     let metricLabel = '';
     let titleText = '';
     let descText = '';
 
     if (metric === 'COUNCILS') {
-      const counts = {};
-      minKeys.forEach(k => counts[k] = 0);
       COUNCILS.forEach(c => {
         if (counts[c.ministry] !== undefined) counts[c.ministry]++;
       });
-      dataValues = minKeys.map(k => counts[k]);
       metricLabel = '所管会議体数 (件)';
       titleText = '省庁別 所管会議体数';
       descText = '各省庁が所管する会議体マスター数 breakdown';
     } else if (metric === 'MATERIALS') {
-      const counts = {};
-      minKeys.forEach(k => counts[k] = 0);
       MEETINGS.forEach(m => {
         const min = getMeetingMinistry(m);
         if (counts[min] !== undefined) counts[min] += (m.materials ? m.materials.length : 0);
@@ -1306,23 +1391,26 @@ document.addEventListener('DOMContentLoaded', async () => {
       COUNCILS.forEach(c => {
         if (counts[c.ministry] !== undefined) counts[c.ministry] += (c.materials ? c.materials.length : 0);
       });
-      dataValues = minKeys.map(k => counts[k]);
       metricLabel = '公開資料点数 (点)';
       titleText = '省庁別 公開資料数';
       descText = '各省庁の会議で公開された配付資料・議事録の総点数 breakdown';
     } else {
       // MEETINGS (default)
-      const counts = {};
-      minKeys.forEach(k => counts[k] = 0);
       MEETINGS.forEach(m => {
         const min = getMeetingMinistry(m);
         if (counts[min] !== undefined) counts[min]++;
       });
-      dataValues = minKeys.map(k => counts[k]);
       metricLabel = '会議開催数 (回)';
       titleText = '省庁別 会議の数';
       descText = '各省庁の開催会議数 breakdown';
     }
+
+    // BAN-02: 0件省庁をグラフ表示対象から除外
+    const activeMinKeys = minKeys.filter(k => (counts[k] || 0) > 0);
+    const dataValues = activeMinKeys.map(k => counts[k]);
+    const isDark = state.theme === 'dark';
+    const gridColor = isDark ? 'rgba(255,255,255,0.06)' : 'rgba(15,23,42,0.08)';
+    const tickColor = isDark ? '#94a3b8' : '#475569';
 
     const titleEl = document.getElementById('ministryChartTitle');
     const descEl = document.getElementById('ministryChartDesc');
@@ -1338,11 +1426,11 @@ document.addEventListener('DOMContentLoaded', async () => {
     ministryChartInstance = new Chart(ctx, {
       type: 'bar',
       data: {
-        labels: minKeys.map(k => MINISTRIES[k].name),
+        labels: activeMinKeys.map(k => MINISTRIES[k].name),
         datasets: [{
           label: metricLabel,
           data: dataValues,
-          backgroundColor: minKeys.map((_, i) => palette[i % palette.length]),
+          backgroundColor: activeMinKeys.map((_, i) => palette[i % palette.length]),
           borderRadius: 6
         }]
       },
@@ -1362,12 +1450,12 @@ document.addEventListener('DOMContentLoaded', async () => {
         scales: {
           y: {
             beginAtZero: true,
-            grid: { color: 'rgba(255,255,255,0.05)' },
-            ticks: { color: '#94a3b8' }
+            grid: { color: gridColor },
+            ticks: { color: tickColor }
           },
           x: {
             grid: { display: false },
-            ticks: { color: '#94a3b8', maxRotation: 45, minRotation: 0 }
+            ticks: { color: tickColor, maxRotation: 45, minRotation: 0 }
           }
         }
       }
@@ -1442,6 +1530,10 @@ document.addEventListener('DOMContentLoaded', async () => {
       try { timelineChartInstance.destroy(); } catch(e) {}
     }
 
+    const isDark = state.theme === 'dark';
+    const gridColor = isDark ? 'rgba(255,255,255,0.06)' : 'rgba(15,23,42,0.08)';
+    const tickColor = isDark ? '#94a3b8' : '#475569';
+
     timelineChartInstance = new Chart(ctx, {
       type: 'line',
       data: {
@@ -1474,7 +1566,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         maintainAspectRatio: false,
         plugins: {
           legend: {
-            labels: { color: '#94a3b8', font: { weight: '600' } }
+            labels: { color: tickColor, font: { weight: '600' } }
           },
           tooltip: {
             callbacks: {
@@ -1487,12 +1579,12 @@ document.addEventListener('DOMContentLoaded', async () => {
         scales: {
           y: {
             beginAtZero: true,
-            grid: { color: 'rgba(255,255,255,0.05)' },
-            ticks: { color: '#94a3b8' }
+            grid: { color: gridColor },
+            ticks: { color: tickColor }
           },
           x: {
-            grid: { color: 'rgba(255,255,255,0.05)' },
-            ticks: { color: '#94a3b8' }
+            grid: { color: gridColor },
+            ticks: { color: tickColor }
           }
         }
       }

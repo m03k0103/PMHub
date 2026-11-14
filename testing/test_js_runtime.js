@@ -16,8 +16,10 @@ const PROJECT_ROOT = path.resolve(__dirname, '..');
 const DATA_JSON_PATH = path.join(PROJECT_ROOT, 'docs', 'data.json');
 const REJECTED_JSON_PATH = path.join(PROJECT_ROOT, 'admin', 'rejected_councils.json');
 const INDEX_HTML_PATH = path.join(PROJECT_ROOT, 'docs', 'index.html');
+const STYLES_CSS_PATH = path.join(PROJECT_ROOT, 'docs', 'styles.css');
 const APP_JS_PATH = path.join(PROJECT_ROOT, 'docs', 'app.js');
 const ADMIN_HTML_PATH = path.join(PROJECT_ROOT, 'admin', 'admin_dashboard.html');
+const ADMIN_CSS_PATH = path.join(PROJECT_ROOT, 'admin', 'admin_dashboard.css');
 
 function logPass(msg) {
   console.log(`  [PASS] ${msg}`);
@@ -70,19 +72,85 @@ function testUiDomStructureAndNoLeakage() {
     return false;
   }
   logPass("管理ダッシュボードの全5タブ、描画先コンテナおよび PMM 要素を検証完了");
+
+  // Design Quality Gate: BAN-09 インライン <style> 禁止 & 外部 CSS 分離
+  if (/<style\b/i.test(htmlText)) {
+    logFail("BAN-09違反: docs/index.html にインライン <style> タグが存在します");
+    return false;
+  }
+  if (/<style\b/i.test(adminText)) {
+    logFail("BAN-09違反: admin/admin_dashboard.html にインライン <style> タグが存在します");
+    return false;
+  }
+  if (!adminText.includes('admin_dashboard.css') || !fs.existsSync(ADMIN_CSS_PATH)) {
+    logFail("admin/admin_dashboard.html の外部 CSS (admin/admin_dashboard.css) 分離が確認できません");
+    return false;
+  }
+  logPass("Design Quality Gate (BAN-09): 公開・管理HTMLにインライン <style> 0件・admin_dashboard.css 分離を検証完了");
+
+  // Design Quality Gate: Design.md §1.1 Light/Dark テーマトークン & §1.2 tabular-nums & §1.4-3 .expanded
+  const stylesCss = fs.readFileSync(STYLES_CSS_PATH, 'utf8');
+  const adminCss = fs.readFileSync(ADMIN_CSS_PATH, 'utf8');
+
+  const rootMatch = stylesCss.match(/:root\s*,\s*\[data-theme="light"\]\s*\{([\s\S]*?)\}/);
+  const darkMatch = stylesCss.match(/\[data-theme="dark"\]\s*\{([\s\S]*?)\}/);
+  if (!rootMatch || !darkMatch) {
+    logFail("docs/styles.css に :root, [data-theme=\"light\"] および [data-theme=\"dark\"] ブロックが定義されていません");
+    return false;
+  }
+  const lightTokens = ['--bg-primary: #f8fafc', '--text-primary: #0f172a', '--accent-primary: #2563eb', '--color-success:', '--color-warning:', '--color-danger:', '--color-info:'];
+  for (const tok of lightTokens) {
+    if (!rootMatch[1].includes(tok)) {
+      logFail(`docs/styles.css の Light 標準トークンが不足しています: ${tok}`);
+      return false;
+    }
+  }
+  const darkTokens = ['--bg-primary: #0f172a', '--text-primary: #f8fafc', '--accent-primary: #3b82f6'];
+  for (const tok of darkTokens) {
+    if (!darkMatch[1].includes(tok)) {
+      logFail(`docs/styles.css の Dark 標準トークンが不足しています: ${tok}`);
+      return false;
+    }
+  }
+  if (!stylesCss.includes('font-variant-numeric: tabular-nums') || !adminCss.includes('font-variant-numeric: tabular-nums')) {
+    logFail("CSS に数値桁揃え用 font-variant-numeric: tabular-nums が定義されていません");
+    return false;
+  }
+  if (!stylesCss.includes('.materials-accordion.expanded') || !stylesCss.includes('.council-accordion-card.expanded') || !adminCss.includes('.crawl-error-accordion.expanded')) {
+    logFail("アコーディオンの親要素 .expanded 連動セレクタが CSS に定義されていません");
+    return false;
+  }
+  logPass("Design Quality Gate (Design.md §1.1/§1.2/§1.4-3): Lightデフォルト/Darkトークン・tabular-nums・.expanded連動を検証完了");
   return true;
 }
 
 function createMockDOM(sampleData, sampleRejected) {
   const elements = {};
 
+  const matchesSingleSelector = (node, sel) => {
+    if (!node || !sel) return false;
+    const s = sel.trim();
+    if (s.startsWith('#')) return node.id === s.slice(1);
+    if (s.startsWith('.')) return node.classList && node.classList.contains(s.slice(1));
+    return node.tagName && node.tagName.toLowerCase() === s.toLowerCase();
+  };
+
+  const matchesSelector = (node, sel) => {
+    if (!sel) return false;
+    return String(sel).split(',').some(part => matchesSingleSelector(node, part));
+  };
+
   const createMockElement = (id = '', tagName = 'div') => {
+    const elListeners = {};
     const el = {
       id,
       tagName: tagName.toUpperCase(),
       value: '',
       innerHTML: '',
       textContent: '',
+      hidden: false,
+      disabled: false,
+      parentElement: null,
       style: {},
       children: [],
       classList: {
@@ -90,23 +158,80 @@ function createMockDOM(sampleData, sampleRejected) {
         add(...cls) { cls.forEach(c => this._classes.add(c)); },
         remove(...cls) { cls.forEach(c => this._classes.delete(c)); },
         contains(c) { return this._classes.has(c); },
-        toggle(c) { if (this.contains(c)) this.remove(c); else this.add(c); }
+        toggle(c, force) {
+          if (typeof force === 'boolean') {
+            if (force) this.add(c);
+            else this.remove(c);
+            return force;
+          }
+          if (this.contains(c)) {
+            this.remove(c);
+            return false;
+          }
+          this.add(c);
+          return true;
+        }
       },
       attributes: {},
       setAttribute(k, v) { this.attributes[k] = v; },
       getAttribute(k) { return this.attributes[k] || (k === 'data-tab' ? id : ''); },
       removeAttribute(k) { delete this.attributes[k]; },
-      addEventListener: () => {},
-      removeEventListener: () => {},
-      appendChild(child) { this.children.push(child); return child; },
-      insertBefore(node) { this.children.unshift(node); return node; },
+      addEventListener(evt, cb) {
+        if (!elListeners[evt]) elListeners[evt] = [];
+        elListeners[evt].push(cb);
+      },
+      removeEventListener(evt, cb) {
+        if (!elListeners[evt]) return;
+        elListeners[evt] = elListeners[evt].filter(fn => fn !== cb);
+      },
+      appendChild(child) {
+        if (child) child.parentElement = this;
+        this.children.push(child);
+        return child;
+      },
+      insertBefore(node) {
+        if (node) node.parentElement = this;
+        this.children.unshift(node);
+        return node;
+      },
       removeChild(child) {
         const idx = this.children.indexOf(child);
-        if (idx >= 0) this.children.splice(idx, 1);
+        if (idx >= 0) {
+          if (this.children[idx]) this.children[idx].parentElement = null;
+          this.children.splice(idx, 1);
+        }
       },
-      querySelectorAll: (sel) => [],
-      querySelector: (sel) => null,
-      dispatchEvent: () => true,
+      closest(sel) {
+        let cur = this;
+        while (cur) {
+          if (matchesSelector(cur, sel)) return cur;
+          cur = cur.parentElement || null;
+        }
+        return null;
+      },
+      querySelectorAll(sel) {
+        const results = [];
+        const walk = (nodes) => {
+          for (const ch of nodes) {
+            if (!ch) continue;
+            if (matchesSelector(ch, sel)) results.push(ch);
+            if (Array.isArray(ch.children) && ch.children.length > 0) walk(ch.children);
+          }
+        };
+        walk(this.children);
+        return results;
+      },
+      querySelector(sel) {
+        return this.querySelectorAll(sel)[0] || null;
+      },
+      dispatchEvent(evt) {
+        const type = typeof evt === 'string' ? evt : evt.type;
+        const eventObj = (evt && typeof evt === 'object') ? { target: el, ...evt } : { type, target: el };
+        if (elListeners[type]) {
+          elListeners[type].forEach(cb => cb(eventObj));
+        }
+        return true;
+      },
       focus: () => {},
       blur: () => {},
       scrollIntoView: () => {}
@@ -264,11 +389,103 @@ async function testPublicPortalRuntime(sampleData) {
       elements['clearSearchBtn'].dispatchEvent({ type: 'click' });
     }
     logPass("app.js 検索クリアボタン実行成功");
-    return true;
   } catch (err) {
     logFail(`app.js 検索クリア時に例外発生: ${err.stack || err.message}`);
     return false;
   }
+
+  // Design Quality Gate 実行時検証 1: BAN-02（0件省庁をセレクトボックスから除外）
+  try {
+    const activeSet = new Set();
+    (mockWin.COUNCILS || []).forEach(c => { if (c.ministry) activeSet.add(c.ministry); });
+    (mockWin.MEETINGS || []).forEach(m => { if (m.ministry) activeSet.add(m.ministry); });
+    const zeroMinistries = Object.keys(mockWin.MINISTRIES || {}).filter(code => !activeSet.has(code));
+    const renderedOptions = elements['ministrySelect'] ? elements['ministrySelect'].querySelectorAll('option') : [];
+    const renderedValues = renderedOptions.map(o => o.value);
+    if (!renderedValues.includes('ALL') || (activeSet.has('CAO') && !renderedValues.includes('CAO'))) {
+      logFail("BAN-02検証: ministrySelect に実在省庁オプション (ALL / CAO) が描画されていません");
+      return false;
+    }
+    const leakedZero = zeroMinistries.filter(code => renderedValues.includes(code));
+    if (leakedZero.length > 0) {
+      logFail(`BAN-02違反: 会議体・開催回が0件の省庁 (${leakedZero.join(', ')}) が ministrySelect に露出しています`);
+      return false;
+    }
+    logPass(`Design Quality Gate (BAN-02): 0件省庁 ${zeroMinistries.length}件をフィルタ選択肢から完全除外確認`);
+  } catch (err) {
+    logFail(`BAN-02 検証中に例外発生: ${err.stack || err.message}`);
+    return false;
+  }
+
+  // Design Quality Gate 実行時検証 2: モーダル閉鎖 3経路（×ボタン / 背景クリック / Escapeキー）
+  try {
+    const overlay = elements['documentModalOverlay'];
+    const closeBtn = elements['modalCloseBtn'];
+    if (!overlay || !closeBtn) {
+      logFail("モーダル検証用 DOM 要素が見つかりません");
+      return false;
+    }
+    overlay.classList.remove('hidden');
+    closeBtn.dispatchEvent({ type: 'click' });
+    if (!overlay.classList.contains('hidden')) {
+      logFail("モーダル閉鎖経路①（×ボタンクリック）で hidden クラスが付与されませんでした");
+      return false;
+    }
+
+    overlay.classList.remove('hidden');
+    overlay.dispatchEvent({ type: 'click', target: overlay });
+    if (!overlay.classList.contains('hidden')) {
+      logFail("モーダル閉鎖経路②（背景オーバーレイクリック）で hidden クラスが付与されませんでした");
+      return false;
+    }
+
+    overlay.classList.remove('hidden');
+    mockDoc.dispatchEvent({ type: 'keydown', key: 'Escape' });
+    if (!overlay.classList.contains('hidden')) {
+      logFail("モーダル閉鎖経路③（Escape キー押下）で hidden クラスが付与されませんでした");
+      return false;
+    }
+    logPass("Design Quality Gate (Design.md §1.4-3): モーダル閉鎖 3経路（×ボタン / 背景 / Escape）すべて合格");
+  } catch (err) {
+    logFail(`モーダル閉鎖 3経路検証中に例外発生: ${err.stack || err.message}`);
+    return false;
+  }
+
+  // Design Quality Gate 実行時検証 3: アコーディオン .expanded 親クラス連動
+  try {
+    if (typeof mockWin.toggleMaterialsAccordion !== 'function') {
+      logFail("window.toggleMaterialsAccordion が定義されていません");
+      return false;
+    }
+    const acc = mockDoc.createElement('div');
+    acc.classList.add('materials-accordion');
+    const btn = mockDoc.createElement('button');
+    const content = mockDoc.createElement('div');
+    content.classList.add('materials-collapse-content');
+    content.classList.add('hidden');
+    const arrow = mockDoc.createElement('span');
+    arrow.classList.add('toggle-arrow');
+    btn.appendChild(arrow);
+    acc.appendChild(btn);
+    acc.appendChild(content);
+
+    mockWin.toggleMaterialsAccordion(btn, 'test-accordion-1');
+    if (!acc.classList.contains('expanded') || content.classList.contains('hidden')) {
+      logFail("アコーディオン展開時に親 .materials-accordion へ .expanded が付与されませんでした");
+      return false;
+    }
+    mockWin.toggleMaterialsAccordion(btn, 'test-accordion-1');
+    if (acc.classList.contains('expanded') || !content.classList.contains('hidden')) {
+      logFail("アコーディオン格納時に親 .materials-accordion から .expanded が除去されませんでした");
+      return false;
+    }
+    logPass("Design Quality Gate (Design.md §1.4-3): アコーディオン親要素 .expanded クラス連動開閉を検証完了");
+  } catch (err) {
+    logFail(`アコーディオン .expanded 検証中に例外発生: ${err.stack || err.message}`);
+    return false;
+  }
+
+  return true;
 }
 
 async function testAdminDashboardRuntime(sampleData, sampleRejected) {

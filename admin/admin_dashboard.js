@@ -582,7 +582,7 @@
         const badgeLabel = m.lastUpdatedFromCrawl ? 'UPDATED' : 'AUTO-NEW';
         const badgeColor = m.lastUpdatedFromCrawl ? '#38bdf8' : '#10b981';
         return `
-          <div style="background: rgba(0,0,0,0.3); border: 1px solid rgba(16,185,129,0.3); border-radius: var(--radius-md); padding: 0.85rem 1rem;">
+          <div style="background: var(--bg-secondary); border: 1px solid rgba(16,185,129,0.3); border-radius: var(--radius-md); padding: 0.85rem 1rem;">
             <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 0.5rem; flex-wrap: wrap;">
               <div>
                 <span class="badge" style="background: rgba(16,185,129,0.18); color:${badgeColor}; margin-right: 0.4rem; font-size: 0.72rem;">${badgeLabel}</span>
@@ -613,6 +613,34 @@
   };
 
   document.addEventListener('DOMContentLoaded', async () => {
+    const savedAdminTheme = (typeof localStorage !== 'undefined' && localStorage.getItem('pmhub_theme')) || 'light';
+    if (document.documentElement && typeof document.documentElement.setAttribute === 'function') {
+      document.documentElement.setAttribute('data-theme', savedAdminTheme);
+    }
+    const adminThemeToggleBtn = document.getElementById('adminThemeToggleBtn');
+    if (adminThemeToggleBtn) {
+      adminThemeToggleBtn.addEventListener('click', () => {
+        const current = (document.documentElement && document.documentElement.getAttribute('data-theme')) || 'light';
+        const next = current === 'dark' ? 'light' : 'dark';
+        if (document.documentElement && typeof document.documentElement.setAttribute === 'function') {
+          document.documentElement.setAttribute('data-theme', next);
+        }
+        if (typeof localStorage !== 'undefined') localStorage.setItem('pmhub_theme', next);
+      });
+    }
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        document.querySelectorAll('.modal-overlay:not(.hidden)').forEach(el => el.classList.add('hidden'));
+      }
+    });
+    document.addEventListener('click', (e) => {
+      const t = e && e.target;
+      if (t && t.classList && (t.classList.contains('modal-overlay') || t.classList.contains('modal-close-btn'))) {
+        const modal = typeof t.closest === 'function' ? t.closest('.modal-overlay') : t;
+        if (modal) modal.classList.add('hidden');
+      }
+    });
+
     let rejectedCouncils = [];
     window.rejectedCouncils = rejectedCouncils;
 
@@ -796,6 +824,7 @@
           const list = await res.json();
           rejectedCouncils = Array.isArray(list) ? list : [];
           window.rejectedCouncils = rejectedCouncils;
+          if (typeof populateFilterDropdowns === 'function') populateFilterDropdowns();
           if (typeof renderRejectedList === 'function') renderRejectedList();
         }
       } catch (e) {
@@ -806,38 +835,66 @@
     if (typeof loadAndRenderNewMeetings === 'function') loadAndRenderNewMeetings();
 
     function populateFilterDropdowns() {
-      const ministrySet = new Set(allCouncils.map(c => c.ministry));
-      const categorySet = new Set(allCouncils.map(c => c.category));
+      const rejectedIdSet = new Set((rejectedCouncils || []).map(rc => rc.id));
+      const activeCouncils = allCouncils.filter(c => !rejectedIdSet.has(c.id));
+      const councilsMap = new Map(allCouncils.map(c => [c.id, c]));
+
+      const councilMinistrySet = new Set(activeCouncils.map(c => c.ministry).filter(Boolean));
+      const councilCategorySet = new Set(activeCouncils.map(c => c.category).filter(Boolean));
+
+      const meetingMinistrySet = new Set();
+      const meetingCategorySet = new Set();
+      (meetings || []).forEach(m => {
+        const cObj = councilsMap.get(m.councilId) || {};
+        const min = m.ministry || cObj.ministry || '';
+        const cat = m.category || cObj.category || 'COUNCIL';
+        if (min) meetingMinistrySet.add(min);
+        if (cat) meetingCategorySet.add(cat);
+      });
+
+      const rejectedMinistrySet = new Set((rejectedCouncils || []).map(c => c.ministry).filter(Boolean));
+      const rejectedCategorySet = new Set((rejectedCouncils || []).map(c => c.category).filter(Boolean));
+
       const filterMinistry = document.getElementById('filterMinistry');
       const filterCategory = document.getElementById('filterCategory');
       const filterMeetingsMinistry = document.getElementById('filterMeetingsMinistry');
       const filterMeetingsCategory = document.getElementById('filterMeetingsCategory');
       const kwMinistrySelect = document.getElementById('kwMinistrySelect');
-
       const filterRejectedMinistry = document.getElementById('filterRejectedMinistry');
       const filterRejectedCategory = document.getElementById('filterRejectedCategory');
 
-      if (filterMinistry) filterMinistry.innerHTML = '<option value="">全省庁</option>';
-      if (filterMeetingsMinistry) filterMeetingsMinistry.innerHTML = '<option value="">全省庁</option>';
-      if (filterRejectedMinistry) filterRejectedMinistry.innerHTML = '<option value="">全省庁</option>';
-      if (kwMinistrySelect) kwMinistrySelect.innerHTML = '<option value="">省庁を選択...</option>';
-      ministrySet.forEach(code => {
-        const name = ministries[code] ? ministries[code].name : code;
-        if (filterMinistry) filterMinistry.innerHTML += `<option value="${code}">${name} (${code})</option>`;
-        if (filterMeetingsMinistry) filterMeetingsMinistry.innerHTML += `<option value="${code}">${name} (${code})</option>`;
-        if (filterRejectedMinistry) filterRejectedMinistry.innerHTML += `<option value="${code}">${name} (${code})</option>`;
-        if (kwMinistrySelect) kwMinistrySelect.innerHTML += `<option value="${code}">${name} (${code})</option>`;
-      });
+      const fillMinistrySelect = (el, codes, defaultLabel) => {
+        if (!el) return;
+        const prev = el.value;
+        let html = `<option value="">${defaultLabel}</option>`;
+        Array.from(codes).sort().forEach(code => {
+          const name = ministries[code] ? ministries[code].name : code;
+          html += `<option value="${escAttr(code)}">${escHtml(name)} (${escHtml(code)})</option>`;
+        });
+        el.innerHTML = html;
+        if (prev && codes.has(prev)) el.value = prev;
+      };
 
-      if (filterCategory) filterCategory.innerHTML = '<option value="">全カテゴリ</option>';
-      if (filterMeetingsCategory) filterMeetingsCategory.innerHTML = '<option value="">全カテゴリ</option>';
-      if (filterRejectedCategory) filterRejectedCategory.innerHTML = '<option value="">全カテゴリ</option>';
-      categorySet.forEach(cat => {
-        const label = categories[cat] || cat;
-        if (filterCategory) filterCategory.innerHTML += `<option value="${cat}">${label}</option>`;
-        if (filterMeetingsCategory) filterMeetingsCategory.innerHTML += `<option value="${cat}">${label}</option>`;
-        if (filterRejectedCategory) filterRejectedCategory.innerHTML += `<option value="${cat}">${label}</option>`;
-      });
+      const fillCategorySelect = (el, cats, defaultLabel) => {
+        if (!el) return;
+        const prev = el.value;
+        let html = `<option value="">${defaultLabel}</option>`;
+        Array.from(cats).sort().forEach(cat => {
+          const label = categories[cat] || cat;
+          html += `<option value="${escAttr(cat)}">${escHtml(label)}</option>`;
+        });
+        el.innerHTML = html;
+        if (prev && cats.has(prev)) el.value = prev;
+      };
+
+      fillMinistrySelect(filterMinistry, councilMinistrySet, '全省庁');
+      fillMinistrySelect(filterMeetingsMinistry, meetingMinistrySet, '全省庁');
+      fillMinistrySelect(filterRejectedMinistry, rejectedMinistrySet, '全省庁');
+      fillMinistrySelect(kwMinistrySelect, new Set(Object.keys(ministries || {}).length ? Object.keys(ministries) : councilMinistrySet), '省庁を選択...');
+
+      fillCategorySelect(filterCategory, councilCategorySet, '全カテゴリ');
+      fillCategorySelect(filterMeetingsCategory, meetingCategorySet, '全カテゴリ');
+      fillCategorySelect(filterRejectedCategory, rejectedCategorySet, '全カテゴリ');
     }
     populateFilterDropdowns();
 
@@ -918,6 +975,8 @@
         }
         return true;
       });
+
+      filtered.sort((a, b) => String(b.date || '').localeCompare(String(a.date || '')));
 
       const totalDocs = filtered.reduce((sum, m) => sum + (m.materials ? m.materials.length : 0), 0);
       const totalAllDocs = meetings.reduce((sum, m) => sum + (m.materials ? m.materials.length : 0), 0);
@@ -1159,7 +1218,7 @@
         let emptyMsg = '<p>該当する会議体がありません</p>';
         if (fVerdict === 'pending') {
           emptyMsg = `
-            <p style="font-weight:600; color:var(--text-main); margin-bottom:0.4rem;">未レビューの新規会議体はありません</p>
+            <p style="font-weight:600; color:var(--text-primary); margin-bottom:0.4rem;">未レビューの新規会議体はありません</p>
             <p style="font-size:0.85rem; color:var(--text-muted); margin-bottom:1rem;">現在すべての会議体がレビュー・登録済みです。「全ステータス」に切り替えると登録済み会議体一覧を確認できます。</p>
             <button class="btn-bulk export-json" onclick="document.getElementById('filterVerdict').value=''; renderCards();" style="padding:0.4rem 0.9rem; font-size:0.85rem;">
               📋 全ステータスの会議体を表示する
@@ -1268,17 +1327,17 @@
             return `
             <div class="c-mat-row" style="display:flex; align-items:center; gap:0.4rem; margin-top:0.3rem;">
               <span style="font-size:0.8rem;">${mat.type === 'PDF' || (mat.url && mat.url.endsWith('.pdf')) ? '📄' : '🌐'}</span>
-              <input type="text" value="${escAttr(mat.name)}" placeholder="資料名（例: 構成員名簿）" style="flex:2; font-size:0.78rem; padding:0.25rem 0.4rem; background:rgba(0,0,0,0.2); border:1px solid rgba(255,255,255,0.1); border-radius:4px; color:#fff;" onchange="updateCouncilMaterial('${c.id}', ${mi}, 'name', this.value)" />
-              <input type="url" value="${escAttr(mat.url)}" placeholder="URL" style="flex:3; font-size:0.78rem; padding:0.25rem 0.4rem; background:rgba(0,0,0,0.2); border:1px solid rgba(255,255,255,0.1); border-radius:4px; color:#fff;" onchange="updateCouncilMaterial('${c.id}', ${mi}, 'url', this.value)" />
+              <input type="text" value="${escAttr(mat.name)}" placeholder="資料名（例: 構成員名簿）" style="flex:2; font-size:0.78rem; padding:0.25rem 0.4rem; background:var(--bg-input); border:1px solid var(--border-color-strong); border-radius:4px; color:var(--text-primary);" onchange="updateCouncilMaterial('${c.id}', ${mi}, 'name', this.value)" />
+              <input type="url" value="${escAttr(mat.url)}" placeholder="URL" style="flex:3; font-size:0.78rem; padding:0.25rem 0.4rem; background:var(--bg-input); border:1px solid var(--border-color-strong); border-radius:4px; color:var(--text-primary);" onchange="updateCouncilMaterial('${c.id}', ${mi}, 'url', this.value)" />
               <button class="btn-open-url" style="padding:0.2rem 0.4rem; font-size:0.75rem;" onclick="openSafeUrl('${escAttr(mat.url)}')">公式 ↗</button>
               ${localBtn}
-              <button class="btn-remove-url" style="padding:0.2rem 0.4rem; font-size:0.75rem; background:rgba(239,68,68,0.2); color:#ef4444; border:1px solid rgba(239,68,68,0.3); border-radius:4px; cursor:pointer;" onclick="removeCouncilMaterial('${c.id}', ${mi})" title="削除">✕</button>
+              <button class="btn-remove-url" style="padding:0.2rem 0.4rem; font-size:0.75rem; background:rgba(239,68,68,0.2); color:var(--color-danger); border:1px solid rgba(239,68,68,0.3); border-radius:4px; cursor:pointer;" onclick="removeCouncilMaterial('${c.id}', ${mi})" title="削除">✕</button>
             </div>
           `;
           }).join('');
         }
         const cMaterialsHtml = `
-          <div class="council-materials-box" style="margin-top:0.5rem; padding:0.5rem 0.7rem; background:rgba(255,255,255,0.02); border:1px solid rgba(255,255,255,0.06); border-radius:6px;">
+          <div class="council-materials-box" style="margin-top:0.5rem; padding:0.5rem 0.7rem; background:var(--bg-secondary); border:1px solid var(--border-color); border-radius:6px;">
             <div style="display:flex; justify-content:space-between; align-items:center;">
               <span style="font-size:0.8rem; font-weight:600; color:var(--accent-primary);">📂 会議体共通資料 (構成員名簿・設置根拠等: ${cMaterials.length}件)</span>
               <button style="padding:0.2rem 0.5rem; font-size:0.75rem; background:rgba(6,182,212,0.15); color:var(--accent-primary); border:1px solid rgba(6,182,212,0.3); border-radius:4px; cursor:pointer;" onclick="addCouncilMaterial('${c.id}')">＋ 資料を追加</button>
@@ -2792,7 +2851,7 @@
         aiToggleBtn.style.color = '#10b981';
       } else {
         aiToggleLabel.textContent = '状態: OFF (抑止中)';
-        aiToggleBtn.style.background = 'rgba(255, 255, 255, 0.08)';
+        aiToggleBtn.style.background = 'var(--bg-secondary)';
         aiToggleBtn.style.borderColor = 'var(--border-color)';
         aiToggleBtn.style.color = 'var(--text-secondary)';
       }
@@ -2838,7 +2897,7 @@
           llmToggleBtn.style.color = '#10b981';
         } else {
           llmToggleLabel.textContent = '状態: OFF (既存ルール抽出)';
-          llmToggleBtn.style.background = 'rgba(255, 255, 255, 0.08)';
+          llmToggleBtn.style.background = 'var(--bg-secondary)';
           llmToggleBtn.style.borderColor = 'var(--border-color)';
           llmToggleBtn.style.color = 'var(--text-secondary)';
         }
@@ -2851,7 +2910,7 @@
           discLlmToggleBtn.style.color = '#10b981';
         } else {
           discLlmToggleLabel.textContent = '状態: OFF (決定論ルールのみ)';
-          discLlmToggleBtn.style.background = 'rgba(255, 255, 255, 0.08)';
+          discLlmToggleBtn.style.background = 'var(--bg-secondary)';
           discLlmToggleBtn.style.borderColor = 'var(--border-color)';
           discLlmToggleBtn.style.color = 'var(--text-secondary)';
         }
@@ -3004,13 +3063,21 @@
     const errorContainer = document.getElementById('crawlErrorListContainer');
     if (toggleErrorBtn && errorContainer && toggleErrorIcon) {
       toggleErrorBtn.addEventListener('click', () => {
-        if (errorContainer.style.display === 'none') {
-          errorContainer.style.display = 'block';
-          toggleErrorIcon.innerHTML = '<polyline points="18 15 12 9 6 15"/>';
-        } else {
-          errorContainer.style.display = 'none';
-          toggleErrorIcon.innerHTML = '<polyline points="6 9 12 15 18 9"/>';
+        const accordion = typeof toggleErrorBtn.closest === 'function'
+          ? toggleErrorBtn.closest('.crawl-error-accordion')
+          : toggleErrorBtn.parentElement;
+        const currentlyExpanded = accordion
+          ? accordion.classList.contains('expanded')
+          : errorContainer.style.display === 'block';
+        const willExpand = !currentlyExpanded;
+        if (accordion && accordion.classList) {
+          accordion.classList.toggle('expanded', willExpand);
         }
+        errorContainer.style.display = willExpand ? 'block' : 'none';
+        toggleErrorBtn.setAttribute('aria-expanded', willExpand ? 'true' : 'false');
+        toggleErrorIcon.innerHTML = willExpand
+          ? '<polyline points="18 15 12 9 6 15"/>'
+          : '<polyline points="6 9 12 15 18 9"/>';
       });
     }
 

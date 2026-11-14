@@ -9,316 +9,45 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Noto+Sans+JP:wght@400;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link rel="icon" type="image/svg+xml" href="../docs/favicon.svg" />
   <link rel="stylesheet" href="../docs/styles.css" />
-  <style>
-    /* ── Page Layout ── */
-    .verify-container { max-width: 1320px; margin: 2rem auto; padding: 0 1.5rem; }
-
-    /* ── Summary Cards ── */
-    .summary-grid {
-      display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
-      gap: 1rem; margin-bottom: 1.75rem;
-    }
-    .summary-stat {
-      background: var(--bg-card); border: 1px solid var(--border-color-strong);
-      border-radius: var(--radius-lg); padding: 1.25rem 1.5rem;
-      display: flex; flex-direction: column; gap: 0.35rem;
-      backdrop-filter: blur(12px);
-    }
-    .summary-stat .stat-label { font-size: 0.78rem; color: var(--text-muted); font-weight: 600; text-transform: uppercase; letter-spacing: 0.04em; }
-    .summary-stat .stat-value { font-size: 1.75rem; font-weight: 800; }
-    .summary-stat .stat-value.total { color: #3b82f6; }
-    .summary-stat .stat-value.approved { color: #10b981; }
-    .summary-stat .stat-value.rejected { color: #ef4444; }
-    .summary-stat .stat-value.pending  { color: #f59e0b; }
-    .summary-stat .stat-value.url-ok   { color: #06b6d4; }
-
-    /* ── Filter Bar ── */
-    .filter-bar {
-      display: flex; gap: 0.75rem; flex-wrap: wrap; align-items: center;
-      margin-bottom: 1.5rem; padding: 1rem 1.25rem;
-      background: var(--bg-card); border: 1px solid var(--border-color);
-      border-radius: var(--radius-lg); backdrop-filter: blur(12px);
-    }
-    .filter-bar input, .filter-bar select {
-      background: var(--bg-input); border: 1px solid var(--border-color-strong);
-      border-radius: var(--radius-md); padding: 0.5rem 0.85rem;
-      color: var(--text-primary); font-size: 0.85rem; font-family: inherit;
-    }
-    .filter-bar input { flex: 1; min-width: 200px; }
-    .filter-bar select { min-width: 140px; }
-
-    /* ── Council Cards ── */
-    .council-card {
-      background: var(--bg-card); border: 1px solid var(--border-color-strong);
-      border-radius: var(--radius-lg); padding: 1.5rem;
-      margin-bottom: 1rem; transition: all var(--transition-normal);
-      position: relative; overflow: hidden;
-    }
-    .council-card::before {
-      content: ''; position: absolute; left: 0; top: 0; bottom: 0;
-      width: 4px; border-radius: 4px 0 0 4px;
-      background: var(--card-accent, #3b82f6);
-    }
-    .council-card:hover { border-color: var(--accent-primary); transform: translateY(-1px); box-shadow: var(--shadow-card); }
-    .council-card.verdict-approved { border-color: rgba(16, 185, 129, 0.5); }
-    .council-card.verdict-approved::before { background: #10b981; }
-    .council-card.verdict-rejected { border-color: rgba(239, 68, 68, 0.4); opacity: 0.6; }
-    .council-card.verdict-rejected::before { background: #ef4444; }
-    .council-card.manual-locked { border-color: rgba(251, 191, 36, 0.5); }
-    .council-card.manual-locked::before { background: #f59e0b; }
-
-    .btn-lock {
-      padding: 0.4rem 0.75rem; border-radius: var(--radius-md); font-size: 0.8rem;
-      font-weight: 600; cursor: pointer; border: 1px solid rgba(251,191,36,0.4);
-      background: rgba(251,191,36,0.12); color: #fbbf24; transition: all var(--transition-normal);
-    }
-    .btn-lock:hover { background: rgba(251,191,36,0.25); border-color: #fbbf24; }
-    .btn-unlock {
-      padding: 0.4rem 0.75rem; border-radius: var(--radius-md); font-size: 0.8rem;
-      font-weight: 600; cursor: pointer; border: 1px solid rgba(100,116,139,0.4);
-      background: rgba(100,116,139,0.12); color: #94a3b8; transition: all var(--transition-normal);
-    }
-    .btn-unlock:hover { background: rgba(100,116,139,0.25); border-color: #94a3b8; }
-
-
-    .card-top { display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem; flex-wrap: wrap; }
-    .card-title-area { flex: 1; min-width: 0; }
-    .card-idx { font-size: 0.72rem; font-weight: 700; color: var(--text-muted); margin-bottom: 0.25rem; font-family: 'JetBrains Mono', monospace; }
-    .card-name { font-size: 1.1rem; font-weight: 700; color: var(--text-primary); word-break: break-all; }
-    .card-id   { font-size: 0.78rem; font-family: 'JetBrains Mono', monospace; color: var(--text-muted); margin-top: 0.2rem; }
-
-    .card-actions { display: flex; gap: 0.5rem; flex-shrink: 0; align-items: center; }
-
-    .card-meta { display: flex; flex-wrap: wrap; gap: 0.6rem 1.25rem; margin-top: 0.85rem; }
-    .meta-chip {
-      display: inline-flex; align-items: center; gap: 0.35rem;
-      font-size: 0.78rem; color: var(--text-secondary); padding: 0.25rem 0.65rem;
-      background: rgba(255,255,255,0.05); border-radius: var(--radius-full);
-      border: 1px solid var(--border-color);
-    }
-    .meta-chip .chip-icon { font-size: 0.85rem; }
-    .meta-chip a { color: inherit; text-decoration: none; }
-    .meta-chip a:hover { color: var(--accent-primary); text-decoration: underline; }
-
-    .category-badge {
-      font-size: 0.72rem; font-weight: 700; padding: 0.18rem 0.55rem;
-      border-radius: var(--radius-full); display: inline-block;
-    }
-    .cat-COUNCIL       { background: rgba(59,130,246,0.18); color: #60a5fa; border: 1px solid rgba(59,130,246,0.3); }
-    .cat-WORKING_GROUP { background: rgba(168,85,247,0.18); color: #c084fc; border: 1px solid rgba(168,85,247,0.3); }
-    .cat-SECTION        { background: rgba(245,158,11,0.18); color: #fbbf24; border: 1px solid rgba(245,158,11,0.3); }
-    .cat-SUBCOMMITTEE   { background: rgba(6,182,212,0.18); color: #22d3ee; border: 1px solid rgba(6,182,212,0.3); }
-    .cat-LIAISON        { background: rgba(244,63,94,0.18); color: #fb7185; border: 1px solid rgba(244,63,94,0.3); }
-    .cat-HQ             { background: rgba(16,185,129,0.18); color: #34d399; border: 1px solid rgba(16,185,129,0.3); }
-    .cat-COMMITTEE      { background: rgba(100,116,139,0.18); color: #94a3b8; border: 1px solid rgba(100,116,139,0.3); }
-    .cat-ADVISORY       { background: rgba(234,179,8,0.18); color: #facc15; border: 1px solid rgba(234,179,8,0.3); }
-    .cat-PANEL          { background: rgba(139,92,246,0.18); color: #a78bfa; border: 1px solid rgba(139,92,246,0.3); }
-    .cat-STUDY          { background: rgba(34,197,94,0.18); color: #4ade80; border: 1px solid rgba(34,197,94,0.3); }
-    .cat-ROUNDTABLE     { background: rgba(236,72,153,0.18); color: #f472b6; border: 1px solid rgba(236,72,153,0.3); }
-    .cat-EXPERT_COMMITTEE { background: rgba(14,165,233,0.18); color: #38bdf8; border: 1px solid rgba(14,165,233,0.3); }
-    .cat-SPECIAL_COMMITTEE { background: rgba(249,115,22,0.18); color: #fb923c; border: 1px solid rgba(249,115,22,0.3); }
-    .cat-TASKFORCE      { background: rgba(217,70,239,0.18); color: #e879f9; border: 1px solid rgba(217,70,239,0.3); }
-
-    /* URL Check */
-    .url-status { display: inline-flex; align-items: center; gap: 0.3rem; font-size: 0.72rem; font-weight: 600; padding: 0.15rem 0.5rem; border-radius: var(--radius-full); }
-    .url-status.checking { color: #94a3b8; background: rgba(148,163,184,0.15); }
-    .url-status.ok       { color: #10b981; background: rgba(16,185,129,0.15); }
-    .url-status.error    { color: #ef4444; background: rgba(239,68,68,0.15); }
-
-    /* Buttons */
-    .btn-approve, .btn-reject, .btn-revert {
-      font-size: 0.78rem; font-weight: 700; padding: 0.35rem 0.75rem;
-      border-radius: var(--radius-md); cursor: pointer; border: 1px solid;
-      transition: all var(--transition-fast); font-family: inherit;
-    }
-    .btn-approve { background: rgba(16,185,129,0.15); color: #10b981; border-color: rgba(16,185,129,0.4); }
-    .btn-approve:hover { background: rgba(16,185,129,0.3); }
-    .btn-reject  { background: rgba(239,68,68,0.1); color: #ef4444; border-color: rgba(239,68,68,0.3); }
-    .btn-reject:hover { background: rgba(239,68,68,0.25); }
-    .btn-revert  { background: rgba(245,158,11,0.1); color: #f59e0b; border-color: rgba(245,158,11,0.3); }
-    .btn-revert:hover { background: rgba(245,158,11,0.25); }
-
-    .btn-bulk {
-      font-size: 0.85rem; font-weight: 700; padding: 0.55rem 1.1rem;
-      border-radius: var(--radius-md); cursor: pointer; border: 1px solid;
-      transition: all var(--transition-fast); font-family: inherit;
-    }
-    .btn-bulk.approve-all { background: rgba(16,185,129,0.15); color: #10b981; border-color: rgba(16,185,129,0.4); }
-    .btn-bulk.approve-all:hover { background: rgba(16,185,129,0.3); }
-    .btn-bulk.export-json { background: rgba(59,130,246,0.12); color: #3b82f6; border-color: rgba(59,130,246,0.3); }
-    .btn-bulk.export-json:hover { background: rgba(59,130,246,0.25); }
-    .btn-bulk.check-urls { background: rgba(6,182,212,0.12); color: #06b6d4; border-color: rgba(6,182,212,0.3); }
-    .btn-bulk.check-urls:hover { background: rgba(6,182,212,0.25); }
-
-    .bulk-actions { display: flex; gap: 0.75rem; flex-wrap: wrap; margin-bottom: 1.5rem; }
-
-    /* URL correction */
-    .url-correction {
-      margin-top: 0.7rem; padding: 0.7rem 0.9rem;
-      background: rgba(59,130,246,0.06); border: 1px solid rgba(59,130,246,0.2);
-      border-radius: var(--radius-md);
-    }
-    .url-correction .uc-label {
-      font-size: 0.72rem; font-weight: 700; color: #60a5fa;
-      text-transform: uppercase; letter-spacing: 0.04em; margin-bottom: 0.4rem;
-      display: flex; align-items: center; gap: 0.35rem;
-    }
-    .url-correction .uc-row { display: flex; gap: 0.5rem; align-items: center; }
-    .url-correction input, .meeting-url-row input {
-      flex: 1; background: var(--bg-input); border: 1px solid var(--border-color-strong);
-      border-radius: var(--radius-md); padding: 0.4rem 0.7rem;
-      color: var(--text-primary); font-size: 0.82rem; font-family: 'JetBrains Mono', monospace;
-    }
-    .url-correction input::placeholder { color: var(--text-muted); }
-    .url-correction input.has-value { border-color: rgba(16,185,129,0.5); background: rgba(16,185,129,0.05); }
-    .btn-open-url {
-      font-size: 0.72rem; font-weight: 600; padding: 0.35rem 0.6rem;
-      border-radius: var(--radius-md); cursor: pointer; border: 1px solid rgba(59,130,246,0.3);
-      background: rgba(59,130,246,0.1); color: #60a5fa; font-family: inherit;
-      white-space: nowrap; transition: all var(--transition-fast);
-    }
-    .btn-open-url:hover { background: rgba(59,130,246,0.25); }
-    .uc-diff, .mu-diff { margin-top: 0.3rem; font-size: 0.72rem; font-family: 'JetBrains Mono', monospace; }
-    .uc-diff .old-url, .mu-diff .old-url { color: #ef4444; text-decoration: line-through; opacity: 0.7; }
-    .uc-diff .new-url, .mu-diff .new-url { color: #10b981; }
-
-    /* Meeting URL rows */
-    .meetings-urls-panel {
-      margin-top: 0.7rem; padding: 0.7rem 0.9rem;
-      background: rgba(16,185,129,0.04); border: 1px solid rgba(16,185,129,0.15);
-      border-radius: var(--radius-md);
-    }
-    .meetings-urls-panel .mu-label {
-      font-size: 0.72rem; font-weight: 700; color: #34d399;
-      text-transform: uppercase; letter-spacing: 0.04em; margin-bottom: 0.5rem;
-      display: flex; align-items: center; gap: 0.35rem;
-    }
-    .meeting-url-row { padding: 0.5rem 0; border-bottom: 1px solid rgba(255,255,255,0.04); }
-    .meeting-url-row:last-child { border-bottom: none; }
-    .meeting-url-row .mu-meeting-title {
-      font-size: 0.75rem; font-weight: 600; color: var(--text-secondary); margin-bottom: 0.3rem;
-      display: flex; align-items: center; gap: 0.4rem;
-    }
-    .meeting-url-row .mu-meeting-title .mu-date { font-family: 'JetBrains Mono', monospace; color: var(--text-muted); font-size: 0.7rem; }
-    .meeting-url-row .mu-meeting-title .mu-id { font-family: 'JetBrains Mono', monospace; color: var(--text-muted); font-size: 0.65rem; }
-    .meeting-url-row .mu-current { font-size: 0.7rem; color: var(--text-muted); margin-bottom: 0.25rem; font-family: 'JetBrains Mono', monospace; word-break: break-all; }
-    .meeting-url-row .mu-current a { color: var(--text-muted); text-decoration: none; }
-    .meeting-url-row .mu-current a:hover { color: #60a5fa; text-decoration: underline; }
-
-    /* Materials panel */
-    .materials-panel {
-      margin-top: 0.7rem; padding: 0.7rem 0.9rem;
-      background: rgba(0,0,0,0.18); border: 1px solid var(--border-color);
-      border-radius: var(--radius-md);
-    }
-    .materials-panel .mat-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem; }
-    .materials-panel .mat-label { font-size: 0.72rem; font-weight: 700; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.04em; display: flex; align-items: center; gap: 0.35rem; }
-    .btn-check-mats {
-      font-size: 0.68rem; font-weight: 600; padding: 0.25rem 0.55rem;
-      border-radius: var(--radius-md); cursor: pointer;
-      border: 1px solid rgba(6,182,212,0.3); background: rgba(6,182,212,0.1);
-      color: #06b6d4; font-family: inherit; transition: all var(--transition-fast);
-    }
-    .btn-check-mats:hover { background: rgba(6,182,212,0.25); }
-    .mat-table { width: 100%; border-collapse: collapse; }
-    .mat-table th { text-align: left; font-size: 0.68rem; font-weight: 700; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.03em; padding: 0.3rem 0.5rem; border-bottom: 1px solid var(--border-color); }
-    .mat-table td { font-size: 0.78rem; padding: 0.35rem 0.5rem; border-bottom: 1px solid rgba(255,255,255,0.04); color: var(--text-secondary); vertical-align: middle; }
-    .mat-table tr:last-child td { border-bottom: none; }
-    .mat-table a { color: #60a5fa; text-decoration: none; word-break: break-all; }
-    .mat-table a:hover { text-decoration: underline; color: #93c5fd; }
-    .mat-type-badge { font-size: 0.65rem; font-weight: 700; padding: 0.1rem 0.4rem; border-radius: var(--radius-full); display: inline-block; }
-    .mat-type-pdf  { background: rgba(239,68,68,0.15); color: #f87171; border: 1px solid rgba(239,68,68,0.25); }
-    .mat-type-html { background: rgba(59,130,246,0.15); color: #60a5fa; border: 1px solid rgba(59,130,246,0.25); }
-    .mat-type-other { background: rgba(148,163,184,0.15); color: #94a3b8; border: 1px solid rgba(148,163,184,0.25); }
-    .mat-no-items { font-size: 0.78rem; color: var(--text-muted); font-style: italic; padding: 0.3rem 0; }
-
-    .notes-area {
-      margin-top: 0.65rem; width: 100%; background: var(--bg-input);
-      border: 1px solid var(--border-color); border-radius: var(--radius-md);
-      padding: 0.45rem 0.65rem; font-size: 0.8rem; color: var(--text-primary);
-      font-family: inherit; resize: vertical; min-height: 36px;
-    }
-    .notes-area::placeholder { color: var(--text-muted); }
-
-    /* Admin & Crawler Panel */
-    .admin-card { background: var(--bg-card); border: 1px solid var(--border-color-strong); border-radius: var(--radius-lg); padding: 1.75rem; margin-bottom: 1.5rem; }
-    .admin-header-title { font-size: 1.35rem; font-weight: 800; color: #10b981; display: flex; align-items: center; gap: 0.6rem; }
-    .status-pill { font-size: 0.75rem; font-weight: 700; padding: 0.2rem 0.6rem; border-radius: var(--radius-sm); background: rgba(16, 185, 129, 0.2); color: #10b981; border: 1px solid rgba(16, 185, 129, 0.4); }
-
-    /* Tabs Nav */
-    .tabs-nav { display: flex; gap: 1rem; margin-bottom: 1.5rem; border-bottom: 1px solid var(--border-color); }
-    .tab-btn {
-      padding: 0.75rem 1.5rem; font-size: 0.95rem; font-weight: 700; color: var(--text-muted);
-      background: none; border: none; border-bottom: 3px solid transparent; cursor: pointer;
-      transition: all var(--transition-fast);
-    }
-    .tab-btn:hover { color: var(--text-primary); }
-    .tab-btn.active { color: var(--accent-primary); border-bottom-color: var(--accent-primary); }
-    .tab-content { display: none; }
-    .tab-content.active { display: block; }
-    
-    /* Ministry Table */
-    .ministry-table { width: 100%; border-collapse: collapse; margin-bottom: 2rem; background: var(--bg-card); border: 1px solid var(--border-color); border-radius: var(--radius-lg); overflow: hidden; }
-    .ministry-table th, .ministry-table td { padding: 1rem; border-bottom: 1px solid var(--border-color); text-align: left; }
-    .ministry-table th { background: rgba(0,0,0,0.2); font-weight: 700; color: var(--text-muted); font-size: 0.8rem; text-transform: uppercase; }
-    .ministry-table td { font-size: 0.85rem; color: var(--text-primary); }
-    .ministry-table tr:last-child td { border-bottom: none; }
-    .ministry-table input[type="url"] { width: 100%; background: var(--bg-input); border: 1px solid var(--border-color-strong); border-radius: var(--radius-md); padding: 0.4rem 0.6rem; color: var(--text-primary); font-family: 'JetBrains Mono', monospace; font-size: 0.8rem; }
-    .ministry-table input.changed { border-color: rgba(16,185,129,0.5); background: rgba(16,185,129,0.05); }
-    .ministry-table .url-cell-flex { display: flex; gap: 0.4rem; align-items: center; }
-    .ministry-table .toggle-switch { display: flex; align-items: center; gap: 0.5rem; cursor: pointer; }
-    .ministry-table .toggle-switch input { width: 1rem; height: 1rem; }
-    .btn-add-url {
-      font-size: 0.72rem; font-weight: 600; padding: 0.25rem 0.55rem;
-      border-radius: var(--radius-md); cursor: pointer; border: 1px dashed rgba(59,130,246,0.5);
-      background: rgba(59,130,246,0.08); color: #60a5fa; font-family: inherit; margin-top: 0.35rem;
-      transition: all var(--transition-fast); display: inline-flex; align-items: center; gap: 0.25rem;
-    }
-    .btn-add-url:hover { background: rgba(59,130,246,0.2); }
-    .btn-remove-url {
-      font-size: 0.72rem; font-weight: 600; padding: 0.35rem 0.5rem;
-      border-radius: var(--radius-md); cursor: pointer; border: 1px solid rgba(239,68,68,0.3);
-      background: rgba(239,68,68,0.1); color: #ef4444; font-family: inherit;
-      white-space: nowrap; transition: all var(--transition-fast);
-    }
-    .btn-remove-url:hover { background: rgba(239,68,68,0.25); }
-
-    /* Keyword Config Styles */
-    .keyword-config-box {
-      margin-top: 1.25rem; background: rgba(0,0,0,0.25); border: 1px solid var(--border-color);
-      border-radius: var(--radius-md); padding: 1.25rem;
-    }
-    .keyword-form-group { margin-bottom: 1rem; }
-    .keyword-form-group label { display: block; font-size: 0.82rem; font-weight: 700; color: var(--text-secondary); margin-bottom: 0.4rem; }
-    .keyword-form-group textarea, .keyword-form-group input[type=text] {
-      width: 100%; background: var(--bg-input); border: 1px solid var(--border-color-strong);
-      border-radius: var(--radius-md); padding: 0.5rem 0.75rem; color: var(--text-primary);
-      font-size: 0.85rem; font-family: inherit;
-    }
-    .keyword-form-group .help-text { font-size: 0.72rem; color: var(--text-muted); margin-top: 0.25rem; }
-
-    .empty-state { text-align: center; padding: 3rem 1rem; color: var(--text-muted); }
-    .empty-state svg { margin-bottom: 1rem; opacity: 0.4; }
-
-    .council-card { animation: fadeSlideIn 0.3s ease forwards; opacity: 0; }
-    @keyframes fadeSlideIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
-  </style>
+  <link rel="stylesheet" href="admin_dashboard.css" />
+  <script>
+    (function() {
+      var t = localStorage.getItem('pmhub_theme') || 'light';
+      document.documentElement.setAttribute('data-theme', t);
+    })();
+  </script>
 </head>
-<body data-theme="dark">
+<body>
 
   <header class="app-header">
     <div class="header-container">
       <div class="brand-logo">
-        <div class="logo-icon" style="background: linear-gradient(135deg, #10b981, #059669);">
+        <div class="logo-icon admin-logo-icon">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M12 8v4"/><path d="M12 16h.01"/></svg>
         </div>
         <div class="logo-text">
           <span class="product-name">PM-HUB システム管理者コンソール</span>
-          <span class="product-badge" style="color:#10b981;">UNIFIED ADMIN DASHBOARD</span>
+          <span class="product-badge admin-product-badge">UNIFIED ADMIN DASHBOARD</span>
         </div>
       </div>
-      <div class="header-actions" style="display: flex; gap: 0.75rem; align-items: center;">
-        <a href="../docs/index.html" target="_blank" class="btn-secondary" style="font-size:0.85rem;">
+      <div class="header-actions">
+        <button id="adminThemeToggleBtn" class="btn-theme-toggle" title="テーマ切替 (Light / Dark)" aria-label="テーマ切替">
+          <svg class="sun-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="5" />
+            <line x1="12" y1="1" x2="12" y2="3" />
+            <line x1="12" y1="21" x2="12" y2="23" />
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
+            <line x1="1" y1="12" x2="3" y2="12" />
+            <line x1="21" y1="12" x2="23" y2="12" />
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
+          </svg>
+          <svg class="moon-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+          </svg>
+        </button>
+        <a href="../docs/index.html" target="_blank" class="btn-secondary admin-portal-link">
           一般公開ポータルを開く ↗
         </a>
       </div>
@@ -327,8 +56,8 @@
 
   <main class="verify-container">
 
-    <div class="tabs-nav" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.5rem;">
-      <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+    <div class="tabs-nav">
+      <div class="tabs-nav-group">
         <button class="tab-btn active" data-tab="tab-crawler" onclick="switchTab('tab-crawler', this)">⚡ 自動巡回 ＆ システム設定</button>
         <button class="tab-btn" data-tab="tab-meetings" onclick="switchTab('tab-meetings', this)">📋 会議データ管理</button>
         <button class="tab-btn" data-tab="tab-councils" onclick="switchTab('tab-councils', this)">🔍 会議体データ管理</button>
@@ -336,7 +65,7 @@
         <button class="tab-btn" data-tab="tab-ministries" onclick="switchTab('tab-ministries', this)">🏛 省庁メタデータ管理</button>
       </div>
       <div>
-        <button class="btn-bulk export-json" onclick="clearCacheAndSyncWithDataJson()" style="background: rgba(59,130,246,0.15); color: #60a5fa; border-color: rgba(59,130,246,0.4); padding: 0.5rem 1rem; font-size: 0.85rem;" title="ブラウザの古いlocalStorageキャッシュを消去し、docs/data.json の最新データで強制同期します">
+        <button class="btn-bulk export-json" onclick="clearCacheAndSyncWithDataJson()" title="ブラウザの古いlocalStorageキャッシュを消去し、docs/data.json の最新データで強制同期します">
           🔄 キャッシュクリア ＆ 最新データ強制同期
         </button>
       </div>
@@ -346,22 +75,22 @@
     <div id="tab-crawler" class="tab-content active">
 
       <!-- 0. data.json バックアップ管理 & 1世代ロールバック -->
-      <section class="admin-card card-glass" style="border-color: rgba(99, 102, 241, 0.3); background: rgba(99, 102, 241, 0.03); margin-bottom: 1.5rem;">
-        <div class="section-header" style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem;">
+      <section class="admin-card card-glass admin-card--backup">
+        <div class="section-header admin-section-header admin-section-header--center">
           <div>
-            <h2 class="admin-header-title" style="color: #818cf8; font-size: 1.05rem;">
+            <h2 class="admin-header-title admin-header-title--backup">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"/><polyline points="17 21 17 13 7 13 7 21"/><polyline points="7 3 7 8 15 8"/></svg>
               💾 data.json 世代管理 ＆ 1世代ロールバック
             </h2>
-            <p class="section-subtitle" style="margin-top:0.2rem; color:var(--text-muted); font-size: 0.82rem;">
-              自動バックアップ先: <code>admin/backups/</code> | 保持世代: <span id="adminBackupCountBadge" style="color:#60a5fa; font-weight:bold;">取得中...</span> | 直前バックアップ: <span id="adminLatestBackupTime" style="color:#a78bfa; font-weight:bold;">取得中...</span>
+            <p class="section-subtitle">
+              自動バックアップ先: <code>admin/backups/</code> | 保持世代: <span id="adminBackupCountBadge" style="color:var(--accent-primary); font-weight:bold;">取得中...</span> | 直前バックアップ: <span id="adminLatestBackupTime" style="color:var(--color-non-state); font-weight:bold;">取得中...</span>
             </p>
           </div>
-          <div style="display: flex; gap: 0.5rem; align-items: center;">
-            <button class="btn-bulk" id="adminRollbackBtn" onclick="if(window.rollbackDataJson){ window.rollbackDataJson(); } else { alert('rollbackDataJson not ready'); }" style="font-size: 0.88rem; padding: 0.55rem 1.1rem; background: rgba(239, 68, 68, 0.15); border: 1px solid rgba(239, 68, 68, 0.5); color: #f87171; border-radius: var(--radius-md); cursor: pointer; transition: all 0.2s; font-weight: 600;">
+          <div class="header-actions">
+            <button class="btn-bulk btn-danger-action" id="adminRollbackBtn" onclick="if(window.rollbackDataJson){ window.rollbackDataJson(); } else { alert('rollbackDataJson not ready'); }">
               ⏮ 1世代前のバックアップにロールバック
             </button>
-            <button class="btn-bulk export-json" onclick="if(window.loadBackupStatus){ window.loadBackupStatus(); }" style="padding: 0.55rem 0.75rem; font-size: 0.85rem;" title="バックアップ情報を更新">
+            <button class="btn-bulk export-json" onclick="if(window.loadBackupStatus){ window.loadBackupStatus(); }" title="バックアップ情報を更新">
               🔄
             </button>
           </div>
@@ -370,30 +99,30 @@
 
       <!-- 1. 新規会議体ディスカバリー -->
       <section class="admin-card card-glass">
-        <div class="section-header" style="display: flex; align-items: flex-start; justify-content: space-between; flex-wrap: wrap; gap: 1rem;">
+        <div class="section-header admin-section-header">
           <div>
             <h2 class="admin-header-title">
               <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
               🏛 新規会議体ディスカバリー
             </h2>
-            <p class="section-subtitle" style="margin-top:0.3rem; color:var(--text-muted);">
+            <p class="section-subtitle">
               全48省庁の「審議会等ページURL」を自動巡回し、未登録の会議体名称およびトップページURLを自動抽出・検出します。
             </p>
           </div>
-          <button class="btn-crawler btn-bulk approve-all" id="btnStartDiscovery" onclick="if(window.startDiscovery){ window.startDiscovery(); } else { alert('startDiscovery function not ready yet!'); }" style="font-size: 1rem; padding: 0.75rem 1.5rem; background: rgba(59,130,246,0.15); color: #60a5fa; border-color: rgba(59,130,246,0.4);">
+          <button class="btn-crawler btn-bulk export-json btn-crawler-primary" id="btnStartDiscovery" onclick="if(window.startDiscovery){ window.startDiscovery(); } else { alert('startDiscovery function not ready yet!'); }">
             ⚡ 実行
           </button>
         </div>
 
         <!-- 新規会議体ディスカバリー 実行オプション設定パネル (Drop 74) -->
-        <div class="discovery-options-panel" style="margin-top: 1rem; padding: 1rem; background: rgba(0,0,0,0.25); border: 1px solid var(--border-color); border-radius: var(--radius-md);">
-          <div style="display: flex; flex-wrap: wrap; gap: 1rem; align-items: flex-end;">
+        <div class="discovery-options-panel admin-options-panel">
+          <div class="admin-options-row">
             <!-- モード選択 -->
             <div style="flex: 1; min-width: 260px;">
-              <label for="discoveryModeSelect" style="display: block; font-size: 0.8rem; font-weight: 600; color: #94a3b8; margin-bottom: 0.35rem;">
+              <label for="discoveryModeSelect" class="admin-field-label">
                 🎯 探索モード
               </label>
-              <select id="discoveryModeSelect" class="form-control" style="width: 100%; padding: 0.5rem 0.75rem; background: rgba(15, 23, 42, 0.8); border: 1px solid var(--border-color); color: var(--text-primary); border-radius: var(--radius-sm); font-size: 0.88rem;">
+              <select id="discoveryModeSelect" class="form-control admin-select">
                 <option value="normal" selected>【通常巡回】全省庁の審議会等一覧ページから検出 (デフォルト)</option>
                 <option value="ministry_news">【省庁新着検知】府省庁トップ・報道発表ポータルから新設会議体を検知 (--from-ministry-news)</option>
               </select>
@@ -401,10 +130,10 @@
 
             <!-- 対象省庁選択 -->
             <div style="width: 180px;">
-              <label for="discoveryMinistrySelect" style="display: block; font-size: 0.8rem; font-weight: 600; color: #94a3b8; margin-bottom: 0.35rem;">
+              <label for="discoveryMinistrySelect" class="admin-field-label">
                 🏛 対象府省庁
               </label>
-              <select id="discoveryMinistrySelect" class="form-control" style="width: 100%; padding: 0.5rem 0.75rem; background: rgba(15, 23, 42, 0.8); border: 1px solid var(--border-color); color: var(--text-primary); border-radius: var(--radius-sm); font-size: 0.88rem;">
+              <select id="discoveryMinistrySelect" class="form-control admin-select">
                 <option value="ALL" selected>すべての府省庁 (ALL)</option>
                 <option value="CAO">内閣府 (CAO)</option>
                 <option value="CAS">内閣官房 (CAS)</option>
@@ -432,7 +161,7 @@
 
             <!-- LLM判定モード (Drop 81) -->
             <div>
-              <label style="display: block; font-size: 0.8rem; font-weight: 600; color: #94a3b8; margin-bottom: 0.35rem;" title="各府省庁の新着情報を決定論的に1ファイル（digest_YYYYMMDD.json）へ集約し、単一リクエストで新規会議体をLLM検知します（呼出上限目安: Daily 3回 / Weekly 10回 / Monthly 30回）">
+              <label class="admin-field-label" title="各府省庁の新着情報を決定論的に1ファイル（digest_YYYYMMDD.json）へ集約し、単一リクエストで新規会議体をLLM検知します（呼出上限目安: Daily 3回 / Weekly 10回 / Monthly 30回）">
                 🤖 LLM判定モード
               </label>
               <button class="btn-secondary" id="adminDiscoveryLlmToggleBtn" style="padding: 0.5rem 0.85rem; font-size: 0.85rem; white-space: nowrap;">
@@ -440,25 +169,25 @@
               </button>
             </div>
           </div>
-          <div id="discoveryModeDescription" style="margin-top: 0.65rem; font-size: 0.78rem; color: #64748b; line-height: 1.4;">
+          <div id="discoveryModeDescription" class="admin-mode-desc">
             ※ 全府省庁の「審議会等ページURL」を自動巡回し、未登録の会議体名称およびトップページURLを自動抽出・検出します。
           </div>
         </div>
 
         <div style="margin-top: 1rem;">
-          <div class="crawler-progress-bar" style="height: 6px; background: rgba(255,255,255,0.08); border-radius: 4px; overflow: hidden; margin-bottom: 0.75rem;">
-            <div class="crawler-progress-fill" id="discoveryProgressFill" style="height: 100%; width: 0%; background: #3b82f6; transition: width 0.2s;"></div>
+          <div class="crawler-progress-bar">
+            <div class="crawler-progress-fill" id="discoveryProgressFill"></div>
           </div>
 
-          <div class="crawler-terminal" id="discoveryTerminalLogs" style="background: #090d16; border: 1px solid var(--border-color); padding: 1rem; border-radius: var(--radius-md); font-family: 'JetBrains Mono', monospace; font-size: 0.8rem; color: #94a3b8; max-height: 220px; overflow-y: auto;">
+          <div class="crawler-terminal" id="discoveryTerminalLogs">
             <div class="crawler-log-line">
-              <span class="crawler-log-time" style="color: #60a5fa;">[READY]</span> 新規会議体ディスカバリーエンジン待機中。「実行」をクリックしてください。
+              <span class="crawler-log-time">[READY]</span> 新規会議体ディスカバリーエンジン待機中。「実行」をクリックしてください。
             </div>
           </div>
 
-          <div id="discoverySummaryBar" style="display:none; margin-top: 0.75rem; padding: 0.75rem 1rem; background: rgba(16,185,129,0.1); border: 1px solid rgba(16,185,129,0.3); border-radius: var(--radius-md); justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.5rem;">
+          <div id="discoverySummaryBar" class="crawler-summary-bar">
             <div>
-              <span style="font-weight: 700; color: #10b981;" id="discoveryResultCount">✨ 新規会議体 X 件を検出しました！</span>
+              <span style="font-weight: 700; color: var(--color-success);" id="discoveryResultCount">✨ 新規会議体 X 件を検出しました！</span>
               <span style="font-size: 0.8rem; color: var(--text-muted); margin-left: 0.5rem;">「会議体データ管理」に未レビューとして追加されました。</span>
             </div>
             <button class="btn-bulk export-json" onclick="switchTab('tab-councils')" style="padding: 0.4rem 0.8rem; font-size: 0.8rem;">
@@ -468,8 +197,8 @@
         </div>
 
         <!-- キーワード設定アコーディオン -->
-        <details style="margin-top: 1.25rem; border-top: 1px solid var(--border-color); padding-top: 1rem;">
-          <summary style="cursor: pointer; font-weight: 700; font-size: 0.9rem; color: #60a5fa; user-select: none;">
+        <details class="keyword-details">
+          <summary class="keyword-summary-toggle">
             ⚙️ 抽出キーワード・除外条件のメンテナンス
           </summary>
           <div class="keyword-config-box">
@@ -485,10 +214,10 @@
               <p class="help-text">リンクテキスト内にこれらの語句が含まれている場合は除外します。</p>
             </div>
 
-            <div style="border-top: 1px dashed rgba(255,255,255,0.1); padding-top: 0.75rem; margin-top: 0.75rem;">
-              <label style="font-size: 0.82rem; font-weight: 700; color: var(--text-secondary); margin-bottom: 0.4rem; display: block;">省庁別の例外設定（個別追加・個別除外）</label>
+            <div style="border-top: 1px dashed var(--border-color-strong); padding-top: 0.75rem; margin-top: 0.75rem;">
+              <label class="admin-field-label">省庁別の例外設定（個別追加・個別除外）</label>
               <div style="display: flex; gap: 0.75rem; flex-wrap: wrap; margin-bottom: 0.5rem;">
-                <select id="kwMinistrySelect" style="background: var(--bg-input); border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 0.4rem 0.6rem; color: var(--text-primary); font-size: 0.82rem;">
+                <select id="kwMinistrySelect" class="admin-select" style="width: auto;">
                   <option value="">省庁を選択...</option>
                 </select>
                 <input type="text" id="kwMinAddInput" placeholder="この省庁のみの追加キーワード（カンマ区切り）" style="flex: 1; min-width: 200px;" />
@@ -507,35 +236,35 @@
 
       <!-- 2. 登録済会議体 開催回クロール -->
       <section class="admin-card card-glass">
-        <div class="section-header" style="display: flex; align-items: flex-start; justify-content: space-between; flex-wrap: wrap; gap: 1rem;">
+        <div class="section-header admin-section-header">
           <div>
             <h2 class="admin-header-title">
               <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/></svg>
               📄 登録済会議体 開催回クロール
             </h2>
-            <p class="section-subtitle" style="margin-top:0.3rem; color:var(--text-muted);">
+            <p class="section-subtitle">
               承認済会議体（<code>COUNCILS</code>）のトップページURLを巡回し、各会議（開催回、開催日、アジェンダ、PDF・HTML資料リンク等）の最新情報を自動抽出・更新します。
             </p>
           </div>
-          <div style="display: flex; gap: 0.75rem; align-items: center;">
-            <button class="btn-crawler btn-bulk approve-all" id="adminStartCrawlBtn" onclick="if(window.startMeetingCrawl){ window.startMeetingCrawl(); } else { alert('startMeetingCrawl function not ready yet!'); }" style="font-size: 1rem; padding: 0.75rem 1.5rem;">
+          <div class="header-actions">
+            <button class="btn-crawler btn-bulk approve-all btn-crawler-primary" id="adminStartCrawlBtn" onclick="if(window.startMeetingCrawl){ window.startMeetingCrawl(); } else { alert('startMeetingCrawl function not ready yet!'); }">
               ⚡ 実行
             </button>
-            <button class="btn-bulk" id="adminStopCrawlBtn" onclick="if(window.stopMeetingCrawl){ window.stopMeetingCrawl(); } else { alert('stopMeetingCrawl not ready'); }" style="display: none; font-size: 1rem; padding: 0.75rem 1.25rem; background: rgba(239, 68, 68, 0.2); border: 1px solid rgba(239, 68, 68, 0.6); color: #f87171; border-radius: var(--radius-md); cursor: pointer; transition: all 0.2s;">
+            <button class="btn-bulk btn-crawler-stop" id="adminStopCrawlBtn" onclick="if(window.stopMeetingCrawl){ window.stopMeetingCrawl(); } else { alert('stopMeetingCrawl not ready'); }">
               🛑 クロール停止
             </button>
           </div>
         </div>
 
         <!-- クロール実行オプション設定パネル (Drop 69) -->
-        <div class="crawler-options-panel" style="margin-top: 1rem; padding: 1rem; background: rgba(0,0,0,0.25); border: 1px solid var(--border-color); border-radius: var(--radius-md);">
-          <div style="display: flex; flex-wrap: wrap; gap: 1rem; align-items: flex-end;">
+        <div class="crawler-options-panel admin-options-panel">
+          <div class="admin-options-row">
             <!-- モード選択 -->
             <div style="flex: 1; min-width: 260px;">
-              <label for="crawlModeSelect" style="display: block; font-size: 0.8rem; font-weight: 600; color: #94a3b8; margin-bottom: 0.35rem;">
+              <label for="crawlModeSelect" class="admin-field-label">
                 🎯 探索モード
               </label>
-              <select id="crawlModeSelect" class="form-control" style="width: 100%; padding: 0.5rem 0.75rem; background: rgba(15, 23, 42, 0.8); border: 1px solid var(--border-color); color: var(--text-primary); border-radius: var(--radius-sm); font-size: 0.88rem;">
+              <select id="crawlModeSelect" class="form-control admin-select">
                 <option value="normal" selected>【通常巡回】承認済会議体の公式URL個別探索 (デフォルト)</option>
                 <option value="ministry_news">【省庁新着検知】府省庁トップ・報道発表から自動検知 (--from-ministry-news)</option>
               </select>
@@ -543,10 +272,10 @@
 
             <!-- 対象省庁選択 -->
             <div style="width: 180px;">
-              <label for="crawlMinistrySelect" style="display: block; font-size: 0.8rem; font-weight: 600; color: #94a3b8; margin-bottom: 0.35rem;">
+              <label for="crawlMinistrySelect" class="admin-field-label">
                 🏛 対象府省庁
               </label>
-              <select id="crawlMinistrySelect" class="form-control" style="width: 100%; padding: 0.5rem 0.75rem; background: rgba(15, 23, 42, 0.8); border: 1px solid var(--border-color); color: var(--text-primary); border-radius: var(--radius-sm); font-size: 0.88rem;">
+              <select id="crawlMinistrySelect" class="form-control admin-select">
                 <option value="ALL" selected>すべての府省庁 (ALL)</option>
                 <option value="CAO">内閣府 (CAO)</option>
                 <option value="CAS">内閣官房 (CAS)</option>
@@ -574,10 +303,10 @@
             <!-- 通常巡回用詳細オプション -->
             <div id="crawlAdvancedOptionsWrapper" style="display: flex; flex-wrap: wrap; gap: 1rem; align-items: flex-end; transition: opacity 0.2s;">
               <div style="width: 150px;">
-                <label for="crawlRecentYearsSelect" style="display: block; font-size: 0.8rem; font-weight: 600; color: #94a3b8; margin-bottom: 0.35rem;">
+                <label for="crawlRecentYearsSelect" class="admin-field-label">
                   📅 対象年数
                 </label>
-                <select id="crawlRecentYearsSelect" class="form-control" style="width: 100%; padding: 0.5rem 0.75rem; background: rgba(15, 23, 42, 0.8); border: 1px solid var(--border-color); color: var(--text-primary); border-radius: var(--radius-sm); font-size: 0.88rem;">
+                <select id="crawlRecentYearsSelect" class="form-control admin-select">
                   <option value="2" selected>直近2年 (推奨)</option>
                   <option value="1">直近1年</option>
                   <option value="3">直近3年</option>
@@ -586,10 +315,10 @@
               </div>
 
               <div style="width: 160px;">
-                <label for="crawlRecheckRecentSelect" style="display: block; font-size: 0.8rem; font-weight: 600; color: #94a3b8; margin-bottom: 0.35rem;" title="既に登録済みの開催回のうち、最新何回分を資料更新確認するか">
+                <label for="crawlRecheckRecentSelect" class="admin-field-label" title="既に登録済みの開催回のうち、最新何回分を資料更新確認するか">
                   🔄 直近再検査回数
                 </label>
-                <select id="crawlRecheckRecentSelect" class="form-control" style="width: 100%; padding: 0.5rem 0.75rem; background: rgba(15, 23, 42, 0.8); border: 1px solid var(--border-color); color: var(--text-primary); border-radius: var(--radius-sm); font-size: 0.88rem;">
+                <select id="crawlRecheckRecentSelect" class="form-control admin-select">
                   <option value="1" selected>最新 1 回 (推奨)</option>
                   <option value="0">0 回 (完全スキップ)</option>
                   <option value="3">最新 3 回</option>
@@ -597,10 +326,10 @@
               </div>
 
               <div style="display: flex; gap: 1rem; align-items: center; padding-bottom: 0.45rem;">
-                <label style="display: flex; align-items: center; gap: 0.35rem; font-size: 0.82rem; color: #cbd5e1; cursor: pointer;">
+                <label class="admin-checkbox-label">
                   <input type="checkbox" id="crawlFullCheckOption"> 全件再検査
                 </label>
-                <label style="display: flex; align-items: center; gap: 0.35rem; font-size: 0.82rem; color: #cbd5e1; cursor: pointer;">
+                <label class="admin-checkbox-label">
                   <input type="checkbox" id="crawlIncludeClosedOption"> 廃止会議体含む
                 </label>
               </div>
@@ -608,7 +337,7 @@
 
             <!-- LLM抽出モード (Drop 81) -->
             <div>
-              <label style="display: block; font-size: 0.8rem; font-weight: 600; color: #94a3b8; margin-bottom: 0.35rem;" title="有効にすると、開催回クロール時にGemini APIによる高精度抽出・フォールバックを適用します">
+              <label class="admin-field-label" title="有効にすると、開催回クロール時にGemini APIによる高精度抽出・フォールバックを適用します">
                 🧠 LLM抽出モード
               </label>
               <button class="btn-secondary" id="adminLlmToggleBtn" style="padding: 0.5rem 0.85rem; font-size: 0.85rem; white-space: nowrap;">
@@ -616,40 +345,40 @@
               </button>
             </div>
           </div>
-          <div id="crawlModeDescription" style="margin-top: 0.65rem; font-size: 0.78rem; color: #64748b; line-height: 1.4;">
+          <div id="crawlModeDescription" class="admin-mode-desc">
             ※ 承認済みの各会議体トップページURLを巡回し、最新の開催回と配付資料（PDF/HTML）を自動取得・更新します。
           </div>
         </div>
 
         <div style="margin-top: 1rem;">
-          <div id="adminCrawlerLogFileInfo" style="display: none; font-size: 0.75rem; color: #94a3b8; margin-bottom: 0.5rem; font-family: monospace;">
-            📄 ログファイル: <span id="adminCrawlerLogFilePath" style="color: #60a5fa; font-weight: bold;"></span>
+          <div id="adminCrawlerLogFileInfo" style="display: none; font-size: 0.75rem; color: var(--text-secondary); margin-bottom: 0.5rem; font-family: monospace;">
+            📄 ログファイル: <span id="adminCrawlerLogFilePath" style="color: var(--accent-primary); font-weight: bold;"></span>
           </div>
 
-          <div class="crawler-progress-bar" style="height: 6px; background: rgba(255,255,255,0.08); border-radius: 4px; overflow: hidden; margin-bottom: 0.75rem;">
-            <div class="crawler-progress-fill" id="adminProgressFill" style="height: 100%; width: 0%; background: #10b981; transition: width 0.2s;"></div>
+          <div class="crawler-progress-bar">
+            <div class="crawler-progress-fill crawler-progress-fill--success" id="adminProgressFill"></div>
           </div>
 
-          <div class="crawler-terminal" id="adminTerminalLogs" style="background: #090d16; border: 1px solid var(--border-color); padding: 1rem; border-radius: var(--radius-md); font-family: 'JetBrains Mono', monospace; font-size: 0.8rem; color: #94a3b8; max-height: 220px; overflow-y: auto;">
+          <div class="crawler-terminal" id="adminTerminalLogs">
             <div class="crawler-log-line">
-              <span class="crawler-log-time" style="color: #60a5fa;">[READY]</span> 会議・資料クローリングエンジン待機中。
+              <span class="crawler-log-time">[READY]</span> 会議・資料クローリングエンジン待機中。
             </div>
           </div>
         </div>
       </section>
 
       <!-- 2.5. NEWLY DISCOVERED MEETINGS PREVIEW -->
-      <section class="admin-card card-glass" id="newlyDiscoveredSection" style="display: none; border-color: rgba(16, 185, 129, 0.4); background: rgba(16, 185, 129, 0.03);">
+      <section class="admin-card card-glass admin-card--new-meetings" id="newlyDiscoveredSection">
         <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.75rem; margin-bottom: 0.75rem;">
-          <h3 style="color: #10b981;">🤖 自動クロール追加・更新された開催回 (<span id="newlyDiscoveredCount">0</span> 件)</h3>
+          <h3 class="admin-section-title--success">🤖 自動クロール追加・更新された開催回 (<span id="newlyDiscoveredCount">0</span> 件)</h3>
           <div style="display: flex; align-items: center; gap: 0.6rem; flex-wrap: wrap;">
-            <select id="newMeetingsDaysSelect" onchange="if(window.loadAndRenderNewMeetings) window.loadAndRenderNewMeetings();" style="background: var(--bg-input); border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 0.3rem 0.5rem; color: var(--text-primary); font-size: 0.78rem;">
+            <select id="newMeetingsDaysSelect" onchange="if(window.loadAndRenderNewMeetings) window.loadAndRenderNewMeetings();" class="admin-select" style="width: auto; font-size: 0.78rem; padding: 0.3rem 0.5rem;">
               <option value="7">直近 7 日以内の自動追加・更新</option>
               <option value="30">直近 30 日以内の自動追加・更新</option>
               <option value="0">最新クロール新着フラグのみ</option>
               <option value="-1">すべての自動クロール履歴</option>
             </select>
-            <label style="display: flex; align-items: center; gap: 0.3rem; font-size: 0.78rem; color: var(--text-secondary); cursor: pointer;">
+            <label class="admin-checkbox-label" style="font-size: 0.78rem; color: var(--text-secondary);">
               <input type="checkbox" id="newMeetingsUnverifiedOnly" checked onchange="if(window.loadAndRenderNewMeetings) window.loadAndRenderNewMeetings();" />
               未補正 (manualLock=OFF) のみ
             </label>
@@ -658,7 +387,7 @@
             </button>
           </div>
         </div>
-        <p class="text-sm" style="color: var(--text-muted); margin-bottom: 1rem;">定期自動クロール（GitHub Actions 等）またはローカルクロールで追加・更新された開催回です。AI補正や手動確認が完了した項目は「🔒 確認済ロック」で保護できます。</p>
+        <p class="text-sm" style="color: var(--text-secondary); margin-bottom: 1rem;">定期自動クロール（GitHub Actions 等）またはローカルクロールで追加・更新された開催回です。AI補正や手動確認が完了した項目は「🔒 確認済ロック」で保護できます。</p>
         <div id="newlyDiscoveredListContainer" style="display: flex; flex-direction: column; gap: 0.75rem; max-height: 380px; overflow-y: auto;">
           <!-- Rendered dynamically -->
         </div>
@@ -667,12 +396,12 @@
       <!-- 3. CONFIGURATION & FEATURE FLAGS -->
       <section class="admin-card card-glass">
         <h3>⚙️ システム設定・Feature Flag 管理</h3>
-        <p class="text-sm" style="margin-top: 0.3rem; color:var(--text-muted);">Token消費量や各種表示機能の切り替えを管理できます。</p>
+        <p class="text-sm" style="margin-top: 0.3rem; color:var(--text-secondary);">Token消費量や各種表示機能の切り替えを管理できます。</p>
 
-        <div style="margin-top: 1.25rem; display: flex; align-items: center; justify-content: space-between; background: rgba(0,0,0,0.2); padding: 1rem; border-radius: var(--radius-md); border: 1px solid var(--border-color);">
+        <div class="admin-flag-row">
           <div>
             <strong style="font-size: 1rem;">🤖 AI概要要約機能 (Token Control)</strong>
-            <p class="text-sm" style="color:var(--text-muted); margin-top:0.2rem;">有効にすると一般ポータルでAIによるポイント要約が表示されます（無効時はToken消費を抑止）。</p>
+            <p class="text-sm" style="color:var(--text-secondary); margin-top:0.2rem;">有効にすると一般ポータルでAIによるポイント要約が表示されます（無効時はToken消費を抑止）。</p>
           </div>
           <button class="btn-secondary" id="adminAiToggleBtn" style="padding:0.5rem 1rem;">
             <span id="adminAiToggleLabel">状態: OFF (抑止中)</span>
@@ -681,88 +410,61 @@
       </section>
 
       <!-- 3.6. CRAWL STATUS DASHBOARD -->
-      <section class="admin-card card-glass" style="margin-top: 1.5rem;">
-        <style>
-          .crawl-error-item {
-            padding: 0.75rem;
-            border-bottom: 1px solid rgba(255,255,255,0.05);
-          }
-          .crawl-error-item:last-child {
-            border-bottom: none;
-          }
-          .crawl-error-title {
-            font-weight: 600;
-            font-size: 0.95rem;
-            color: var(--text-primary);
-          }
-          .crawl-error-meta {
-            font-size: 0.8rem;
-            color: var(--text-muted);
-            margin-top: 0.2rem;
-          }
-          .crawl-error-reason {
-            font-size: 0.85rem;
-            color: #ef4444;
-            margin-top: 0.4rem;
-            background: rgba(239, 68, 68, 0.1);
-            padding: 0.4rem;
-            border-radius: 4px;
-          }
-        </style>
+      <section class="admin-card card-glass admin-card--spaced">
         <h3>📊 クロールステータス ダッシュボード</h3>
-        <p class="text-sm" style="margin-top: 0.3rem; color:var(--text-muted);">各会議体の最新クロール結果・ステータス状況</p>
-        
-        <div class="summary-grid" style="margin-top: 1.25rem;" id="crawlStatusSummary">
-          <div class="summary-stat"><span class="stat-label">🟢 成功 (Success)</span><span class="stat-value" style="color:#10b981;" id="statCrawlSuccess">0</span></div>
-          <div class="summary-stat"><span class="stat-label">🟡 部分成功 (Partial)</span><span class="stat-value" style="color:#f59e0b;" id="statCrawlPartial">0</span></div>
-          <div class="summary-stat"><span class="stat-label">🔴 失敗 (Failed)</span><span class="stat-value" style="color:#ef4444;" id="statCrawlFailed">0</span></div>
-          <div class="summary-stat"><span class="stat-label">⚪ 未実行 (Never)</span><span class="stat-value" style="color:#94a3b8;" id="statCrawlNever">0</span></div>
+        <p class="text-sm" style="margin-top: 0.3rem; color:var(--text-secondary);">各会議体の最新クロール結果・ステータス状況</p>
+
+        <div class="summary-grid summary-grid--spaced" id="crawlStatusSummary">
+          <div class="summary-stat"><span class="stat-label">🟢 成功 (Success)</span><span class="stat-value approved" id="statCrawlSuccess">0</span></div>
+          <div class="summary-stat"><span class="stat-label">🟡 部分成功 (Partial)</span><span class="stat-value pending" id="statCrawlPartial">0</span></div>
+          <div class="summary-stat"><span class="stat-label">🔴 失敗 (Failed)</span><span class="stat-value rejected" id="statCrawlFailed">0</span></div>
+          <div class="summary-stat"><span class="stat-label">⚪ 未実行 (Never)</span><span class="stat-value muted" id="statCrawlNever">0</span></div>
         </div>
 
-        <div style="margin-top: 1.5rem;">
-          <button id="toggleCrawlErrorList" class="btn-secondary" style="width: 100%; display: flex; justify-content: space-between; align-items: center; padding: 0.75rem 1rem;">
+        <div class="crawl-error-accordion">
+          <button id="toggleCrawlErrorList" class="btn-secondary crawl-error-toggle-btn" aria-expanded="false">
             <span>⚠️ 失敗・未実行の会議体一覧を表示</span>
             <svg id="toggleCrawlErrorIcon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
           </button>
-          <div id="crawlErrorListContainer" style="display: none; margin-top: 1rem; max-height: 400px; overflow-y: auto; background: rgba(0,0,0,0.2); border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 0.5rem;">
+          <div id="crawlErrorListContainer" class="crawl-error-list">
             <!-- Rendered via JS -->
           </div>
         </div>
       </section>
 
       <!-- 3.7. PMM LOCAL MATERIALS DASHBOARD (Drop 71) -->
-      <section class="admin-card card-glass" style="margin-top: 1.5rem; border-color: rgba(59, 130, 246, 0.4); background: rgba(59, 130, 246, 0.03);">
+      <section class="admin-card card-glass admin-card--pmm">
         <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 1rem;">
           <div>
-            <h3 style="color: #60a5fa;">📁 配付資料・会議体資料 ローカル保存状況 (PMM)</h3>
-            <p class="text-sm" style="margin-top: 0.3rem; color: var(--text-muted);">
+            <h3 class="admin-section-title--pmm">📁 配付資料・会議体資料 ローカル保存状況 (PMM)</h3>
+            <p class="text-sm" style="margin-top: 0.3rem; color: var(--text-secondary);">
               <code>local_docs/</code> 配下のローカル保存資産統計（省庁別直列・1.0s間隔ダウンロード）
             </p>
           </div>
           <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
-            <button class="btn-bulk" id="btnSyncPmmStatus" onclick="if(window.syncPmmStatus){ window.syncPmmStatus(); } else { alert('PMM not ready'); }" style="background: rgba(16,185,129,0.15); color: #10b981; border: 1px solid rgba(16,185,129,0.5); padding: 0.6rem 1.1rem; font-size: 0.88rem; font-weight: 700; border-radius: var(--radius-md); cursor: pointer;" title="ダウンロードを行わず、local_docs/ 配下の実ファイルを走査してDBステータスを最新化します">
+            <button class="btn-bulk btn-save-direct" id="btnSyncPmmStatus" onclick="if(window.syncPmmStatus){ window.syncPmmStatus(); } else { alert('PMM not ready'); }" title="ダウンロードを行わず、local_docs/ 配下の実ファイルを走査してDBステータスを最新化します">
               🔄 格納状況を再スキャンして同期
             </button>
-            <button class="btn-bulk" id="btnStartPmmDownload" onclick="if(window.startPmmDownload){ window.startPmmDownload(); } else { alert('PMM not ready'); }" style="background: rgba(59,130,246,0.15); color: #60a5fa; border: 1px solid rgba(59,130,246,0.5); padding: 0.6rem 1.1rem; font-size: 0.88rem; font-weight: 700; border-radius: var(--radius-md); cursor: pointer;">
+            <button class="btn-bulk export-json" id="btnStartPmmDownload" onclick="if(window.startPmmDownload){ window.startPmmDownload(); } else { alert('PMM not ready'); }">
               ⚡ 未取得資料の一括ローカル保存を開始
             </button>
           </div>
         </div>
 
-        <div class="summary-grid" style="margin-top: 1.25rem;" id="pmmStatusSummary">
-          <div class="summary-stat"><span class="stat-label">🟢 取得済ファイル数</span><span class="stat-value" style="color:#10b981;" id="statPmmDownloaded">—</span></div>
-          <div class="summary-stat"><span class="stat-label">🟡 未取得ファイル数</span><span class="stat-value" style="color:#f59e0b;" id="statPmmPending">—</span></div>
-          <div class="summary-stat"><span class="stat-label">🔴 失敗数</span><span class="stat-value" style="color:#ef4444;" id="statPmmFailed">—</span></div>
-          <div class="summary-stat"><span class="stat-label">💾 ローカル総容量</span><span class="stat-value" style="color:#38bdf8;" id="statPmmSize">—</span></div>
+        <div class="summary-grid summary-grid--spaced" id="pmmStatusSummary">
+          <div class="summary-stat"><span class="stat-label">🟢 取得済ファイル数</span><span class="stat-value approved" id="statPmmDownloaded">—</span></div>
+          <div class="summary-stat"><span class="stat-label">🟡 未取得ファイル数</span><span class="stat-value pending" id="statPmmPending">—</span></div>
+          <div class="summary-stat"><span class="stat-label">🔴 失敗数</span><span class="stat-value rejected" id="statPmmFailed">—</span></div>
+          <div class="summary-stat"><span class="stat-label">💾 ローカル総容量</span><span class="stat-value info" id="statPmmSize">—</span></div>
         </div>
       </section>
 
       <!-- 4. DATA STATUS INSPECTOR -->
       <section class="admin-card card-glass">
         <h3>📄 最新クロール・データステータス (`docs/data.json`)</h3>
-        <p class="text-sm" style="margin-top: 0.3rem; color:var(--text-muted);">docs/data.json に記録された最新クロール情報および設定概要</p>
-        
-        <pre style="background: #090d16; border: 1px solid var(--border-color); padding: 1rem; border-radius: var(--radius-md); font-family: 'JetBrains Mono', monospace; font-size: 0.82rem; color: #94a3b8; overflow-x: auto; max-height: 200px; margin-top: 1rem;" id="adminJsonInspector">
+        <p class="text-sm" style="margin-top: 0.3rem; color:var(--text-secondary);">docs/data.json に記録された最新クロール情報および設定概要</p>
+
+        <pre class="admin-json-inspector" id="adminJsonInspector">
 JSON データを読み込み中...
         </pre>
       </section>
@@ -773,15 +475,15 @@ JSON データを読み込み中...
       <!-- Meetings Summary Stats -->
       <section class="summary-grid" id="meetingsSummaryGrid">
         <div class="summary-stat"><span class="stat-label">総会議（開催回）数</span><span class="stat-value total" id="statMeetingsTotal">—</span></div>
-        <div class="summary-stat"><span class="stat-label">配布資料 総数</span><span class="stat-value" style="color:#a855f7;" id="statMeetingsDocsTotal">—</span></div>
-        <div class="summary-stat"><span class="stat-label">絞り込み表示中</span><span class="stat-value" style="color:#38bdf8;" id="statMeetingsFiltered">—</span></div>
-        <div class="summary-stat"><span class="stat-label">個別会議URL修正済み</span><span class="stat-value" style="color:#10b981;" id="statMeetingsCorrected">0</span></div>
+        <div class="summary-stat"><span class="stat-label">配布資料 総数</span><span class="stat-value purple" id="statMeetingsDocsTotal">—</span></div>
+        <div class="summary-stat"><span class="stat-label">絞り込み表示中</span><span class="stat-value info" id="statMeetingsFiltered">—</span></div>
+        <div class="summary-stat"><span class="stat-label">個別会議URL修正済み</span><span class="stat-value approved" id="statMeetingsCorrected">0</span></div>
       </section>
 
       <!-- Meetings Bulk Actions -->
       <div class="bulk-actions">
         <button class="btn-bulk check-urls" id="btnCheckAllMeetingMats">🔗 全会議の資料を一括疎通チェック</button>
-        <button class="btn-bulk export-json" onclick="saveMeetingUrlsDirectToDataJson()" style="background: rgba(16,185,129,0.15); color: #10b981; border-color: rgba(16,185,129,0.4);">💾 docs/data.json に直接反映</button>
+        <button class="btn-bulk btn-save-direct" onclick="saveMeetingUrlsDirectToDataJson()">💾 docs/data.json に直接反映</button>
         <button class="btn-bulk export-json" id="btnExportMeetingsJson">📥 変更をJSONエクスポート</button>
       </div>
 
@@ -807,7 +509,7 @@ JSON データを読み込み中...
           <option value="error">⚠️ 資料疎通NG (エラー)</option>
           <option value="ok">✓ 資料疎通OK</option>
         </select>
-        <div id="filterMeetingsResultBadge" style="margin-left: auto; font-size: 0.82rem; font-weight: 700; color: var(--accent-primary); background: rgba(59,130,246,0.12); padding: 0.4rem 0.8rem; border-radius: var(--radius-md); border: 1px solid rgba(59,130,246,0.25);">
+        <div id="filterMeetingsResultBadge" class="admin-result-badge">
           表示中: 会議 0 件 / 資料 0 件
         </div>
       </div>
@@ -825,20 +527,20 @@ JSON データを読み込み中...
         <div class="summary-stat"><span class="stat-label">承認済</span><span class="stat-value approved" id="statApproved">0</span></div>
         <div class="summary-stat"><span class="stat-label">却下</span><span class="stat-value rejected" id="statRejected">0</span></div>
         <div class="summary-stat"><span class="stat-label">未レビュー</span><span class="stat-value pending" id="statPending">—</span></div>
-        <div class="summary-stat"><span class="stat-label">絞り込み表示中</span><span class="stat-value" style="color:#38bdf8;" id="statFilteredCounts">—</span></div>
+        <div class="summary-stat"><span class="stat-label">絞り込み表示中</span><span class="stat-value info" id="statFilteredCounts">—</span></div>
         <div class="summary-stat"><span class="stat-label">URL 疎通OK</span><span class="stat-value url-ok" id="statUrlOk">—</span></div>
       </section>
 
       <!-- Bulk Actions -->
       <div class="bulk-actions">
-        <button class="btn-bulk check-urls" id="btnLoadAiReport" style="background: rgba(163,230,53,0.15); color: #a3e635; border-color: rgba(163,230,53,0.4);">🤖 AIの自動判定をロードする</button>
+        <button class="btn-bulk check-urls btn-ai-load" id="btnLoadAiReport">🤖 AIの自動判定をロードする</button>
         <button class="btn-bulk check-urls" id="btnCheckUrls">🔗 URL一括疎通チェック</button>
         <button class="btn-bulk approve-all" id="btnApproveAll">✅ 未レビューを全て承認</button>
-        <button class="btn-bulk export-json" id="btnSaveCouncilDirect" onclick="saveCouncilDirectToDataJson()" style="background: rgba(16,185,129,0.15); color: #10b981; border-color: rgba(16,185,129,0.4);">💾 docs/data.json に直接反映</button>
+        <button class="btn-bulk btn-save-direct" id="btnSaveCouncilDirect" onclick="saveCouncilDirectToDataJson()">💾 docs/data.json に直接反映</button>
         <button class="btn-bulk export-json" id="btnExportJson">📥 承認済をJSONエクスポート</button>
       </div>
 
-      <div id="discrepancyAlertBanner" style="display:none; margin: 1rem 0; padding: 0.75rem 1rem; background: rgba(245,158,11,0.12); border: 1px solid rgba(245,158,11,0.4); border-radius: 8px; color: #f59e0b; font-size: 0.9rem;"></div>
+      <div id="discrepancyAlertBanner" class="admin-discrepancy-banner"></div>
 
       <!-- Filters -->
       <div class="filter-bar">
@@ -857,7 +559,7 @@ JSON データを読み込み中...
           <option value="checking">⏳ 確認中</option>
           <option value="unverified">未検証</option>
         </select>
-        <div id="filterResultBadge" style="margin-left: auto; font-size: 0.82rem; font-weight: 700; color: var(--accent-primary); background: rgba(59,130,246,0.12); padding: 0.4rem 0.8rem; border-radius: var(--radius-md); border: 1px solid rgba(59,130,246,0.25);">
+        <div id="filterResultBadge" class="admin-result-badge">
           表示中: 会議体 0 件
         </div>
       </div>
@@ -871,13 +573,13 @@ JSON データを読み込み中...
       <!-- Rejected Summary Stats -->
       <section class="summary-grid" id="rejectedSummaryGrid">
         <div class="summary-stat"><span class="stat-label">却下会議体 総数</span><span class="stat-value rejected" id="statRejectedTotal">0</span></div>
-        <div class="summary-stat"><span class="stat-label">絞り込み表示中</span><span class="stat-value" style="color:#38bdf8;" id="statRejectedFiltered">—</span></div>
-        <div class="summary-stat"><span class="stat-label">クロール除外状態</span><span class="stat-value" style="color:#ef4444;">完全除外中 🔒</span></div>
+        <div class="summary-stat"><span class="stat-label">絞り込み表示中</span><span class="stat-value info" id="statRejectedFiltered">—</span></div>
+        <div class="summary-stat"><span class="stat-label">クロール除外状態</span><span class="stat-value rejected">完全除外中 🔒</span></div>
       </section>
 
       <!-- Rejected Bulk Actions -->
       <div class="bulk-actions">
-        <button class="btn-bulk export-json" onclick="saveRejectedCouncilsDirect()" style="background: rgba(16,185,129,0.15); color: #10b981; border-color: rgba(16,185,129,0.4);">💾 却下リストを保存 (rejected_councils.json)</button>
+        <button class="btn-bulk btn-save-direct" onclick="saveRejectedCouncilsDirect()">💾 却下リストを保存 (rejected_councils.json)</button>
         <button class="btn-bulk export-json" onclick="exportRejectedJson()">📥 却下リストをJSONエクスポート</button>
       </div>
 
@@ -886,7 +588,7 @@ JSON データを読み込み中...
         <input type="text" id="filterRejectedSearch" placeholder="🔍 却下会議体名・ID・省庁・却下理由で検索…" />
         <select id="filterRejectedMinistry"><option value="">全省庁</option></select>
         <select id="filterRejectedCategory"><option value="">全カテゴリ</option></select>
-        <div id="filterRejectedResultBadge" style="margin-left: auto; font-size: 0.82rem; font-weight: 700; color: var(--accent-primary); background: rgba(59,130,246,0.12); padding: 0.4rem 0.8rem; border-radius: var(--radius-md); border: 1px solid rgba(59,130,246,0.25);">
+        <div id="filterRejectedResultBadge" class="admin-result-badge">
           表示中: 却下会議体 0 件
         </div>
       </div>
@@ -898,7 +600,7 @@ JSON データを読み込み中...
     <!-- ── TAB 5: 省庁メタデータ管理 ── -->
     <div id="tab-ministries" class="tab-content">
       <div class="bulk-actions" style="margin-bottom: 1rem;">
-        <button class="btn-bulk export-json" onclick="saveDirectToDataJson()" style="background: rgba(16,185,129,0.15); color: #10b981; border-color: rgba(16,185,129,0.4);">💾 docs/data.json に直接反映</button>
+        <button class="btn-bulk btn-save-direct" onclick="saveDirectToDataJson()">💾 docs/data.json に直接反映</button>
         <button class="btn-bulk export-json" onclick="exportMinistryJson()">📥 変更をJSONエクスポート</button>
       </div>
       <div id="ministryListContainer"></div>
