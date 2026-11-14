@@ -70,7 +70,8 @@
     },
     "aca-1734": {
       "template": "tpl-general-round-subpage",
-      "subpage_discovery_pattern": "\\d{2}/\\d{2}/index\\.html",
+      "subpage_discovery_pattern": "\\d{2}/index\\.html",
+      "strict_subpage_pattern": true,
       "manualLock": true
     },
     "aca-186": {
@@ -2158,7 +2159,8 @@
     "cfa-gyakutai_hogojirei": {
       "template": "tpl-councils-uuid-subpage",
       "manualLock": true,
-      "subpage_discovery_pattern": "https://www\\.cfa\\.go\\.jp/councils/shingikai/gyakutai_boushi/hogojirei/[a-zA-Z0-9_-]+"
+      "subpage_discovery_pattern": "https://www\\.cfa\\.go\\.jp/councils/shingikai/gyakutai_boushi/hogojirei/[0-9a-f]{8}",
+      "strict_subpage_pattern": true
     },
     "cfa-hinkon_hitorioya": {
       "template": "tpl-councils-uuid-subpage",
@@ -28925,7 +28927,7 @@
     {
       "id": "jcrc-3006",
       "name": "委員会の活動等",
-      "ministry": "JCRC",
+      "ministry": "",
       "category": "COUNCIL",
       "officialUrl": "",
       "rejectedAt": "",
@@ -29123,7 +29125,7 @@
     {
       "id": "meti-3007",
       "name": "知的財産分科会（下記リンク、特許庁ホームページ「産業構造審議会について」をご覧ください）",
-      "ministry": "METI",
+      "ministry": "",
       "category": "COUNCIL",
       "officialUrl": "",
       "rejectedAt": "",
@@ -31706,7 +31708,7 @@
     {
       "id": "smea-3014",
       "name": "中小M&A・事業承継小委員会",
-      "ministry": "SMEA",
+      "ministry": "",
       "category": "COUNCIL",
       "officialUrl": "",
       "rejectedAt": "",
@@ -31715,7 +31717,7 @@
     {
       "id": "smea-3015",
       "name": "令和7年 中小企業の成長経営の実現に向けた研究会 配布資料",
-      "ministry": "SMEA",
+      "ministry": "",
       "category": "COUNCIL",
       "officialUrl": "",
       "rejectedAt": "",
@@ -31724,7 +31726,7 @@
     {
       "id": "smea-3016",
       "name": "令和6年",
-      "ministry": "SMEA",
+      "ministry": "",
       "category": "COUNCIL",
       "officialUrl": "",
       "rejectedAt": "",
@@ -31733,7 +31735,7 @@
     {
       "id": "smea-3017",
       "name": "地域の資金循環検討会",
-      "ministry": "SMEA",
+      "ministry": "",
       "category": "COUNCIL",
       "officialUrl": "",
       "rejectedAt": "",
@@ -31742,7 +31744,7 @@
     {
       "id": "smea-3018",
       "name": "ローカル・ゼブラ・エコシステムの構築に向けた社会的インパクト評価の活用実践に関する研究会",
-      "ministry": "SMEA",
+      "ministry": "",
       "category": "COUNCIL",
       "officialUrl": "",
       "rejectedAt": "",
@@ -31751,7 +31753,7 @@
     {
       "id": "smea-3019",
       "name": "地域の社会課題解決促進に向けたエコシステム研究会",
-      "ministry": "SMEA",
+      "ministry": "",
       "category": "COUNCIL",
       "officialUrl": "",
       "rejectedAt": "",
@@ -31760,7 +31762,7 @@
     {
       "id": "smea-3020",
       "name": "価値創造企業に関する賢人会議",
-      "ministry": "SMEA",
+      "ministry": "",
       "category": "COUNCIL",
       "officialUrl": "",
       "rejectedAt": "",
@@ -31769,7 +31771,7 @@
     {
       "id": "smea-3021",
       "name": "企業取引研究会",
-      "ministry": "SMEA",
+      "ministry": "",
       "category": "COUNCIL",
       "officialUrl": "",
       "rejectedAt": "",
@@ -31778,7 +31780,7 @@
     {
       "id": "smea-3022",
       "name": "知的財産取引適正化ワーキンググループ 報告書",
-      "ministry": "SMEA",
+      "ministry": "",
       "category": "COUNCIL",
       "officialUrl": "",
       "rejectedAt": "",
@@ -31787,7 +31789,7 @@
     {
       "id": "smea-3023",
       "name": "約束手形をはじめとする支払条件の改善に向けた検討会",
-      "ministry": "SMEA",
+      "ministry": "",
       "category": "COUNCIL",
       "officialUrl": "",
       "rejectedAt": "",
@@ -31796,7 +31798,7 @@
     {
       "id": "smea-3024",
       "name": "知的財産取引検討会",
-      "ministry": "SMEA",
+      "ministry": "",
       "category": "COUNCIL",
       "officialUrl": "",
       "rejectedAt": "",
@@ -31805,7 +31807,7 @@
     {
       "id": "smea-3025",
       "name": "地域の経営支援力強化に向けたよろず支援拠点のあり方検討会 報告書",
-      "ministry": "SMEA",
+      "ministry": "",
       "category": "COUNCIL",
       "officialUrl": "",
       "rejectedAt": "",
@@ -31814,7 +31816,7 @@
     {
       "id": "smea-3026",
       "name": "事業協同組合等の余裕金運用に関する検討会",
-      "ministry": "SMEA",
+      "ministry": "",
       "category": "COUNCIL",
       "officialUrl": "",
       "rejectedAt": "",
@@ -31823,7 +31825,7 @@
     {
       "id": "smea-3027",
       "name": "令和8年3月19日開催 中小企業・小規模事業者の人材マネジメントに関する研究会 配布資料",
-      "ministry": "SMEA",
+      "ministry": "",
       "category": "COUNCIL",
       "officialUrl": "",
       "rejectedAt": "",
@@ -31832,7 +31834,7 @@
     {
       "id": "smea-3028",
       "name": "中小企業・小規模事業者の人材戦略に関する有識者検討会",
-      "ministry": "SMEA",
+      "ministry": "",
       "category": "COUNCIL",
       "officialUrl": "",
       "rejectedAt": "",
@@ -31841,7 +31843,7 @@
     {
       "id": "smea-3029",
       "name": "中小企業・小規模事業者のデータ利活用に関する検討委員会",
-      "ministry": "SMEA",
+      "ministry": "",
       "category": "COUNCIL",
       "officialUrl": "",
       "rejectedAt": "",
@@ -31850,7 +31852,7 @@
     {
       "id": "smea-3030",
       "name": "小規模事業者の「稼ぐ力」の強化に向けた諸課題に関する検討会",
-      "ministry": "SMEA",
+      "ministry": "",
       "category": "COUNCIL",
       "officialUrl": "",
       "rejectedAt": "",
@@ -31859,7 +31861,7 @@
     {
       "id": "smea-3031",
       "name": "中小企業の事業承継・M&Aに関する検討会",
-      "ministry": "SMEA",
+      "ministry": "",
       "category": "COUNCIL",
       "officialUrl": "",
       "rejectedAt": "",
@@ -31868,7 +31870,7 @@
     {
       "id": "smea-3032",
       "name": "中小企業の親族内承継に関する検討会",
-      "ministry": "SMEA",
+      "ministry": "",
       "category": "COUNCIL",
       "officialUrl": "",
       "rejectedAt": "",
@@ -31877,7 +31879,7 @@
     {
       "id": "smea-3033",
       "name": "中小M&A市場の改革に向けた検討会",
-      "ministry": "SMEA",
+      "ministry": "",
       "category": "COUNCIL",
       "officialUrl": "",
       "rejectedAt": "",
@@ -31886,7 +31888,7 @@
     {
       "id": "smea-3034",
       "name": "中小M&Aガイドライン見直し検討小委員会",
-      "ministry": "SMEA",
+      "ministry": "",
       "category": "COUNCIL",
       "officialUrl": "",
       "rejectedAt": "",
@@ -31895,7 +31897,7 @@
     {
       "id": "smea-3035",
       "name": "事業引継ぎガイドライン」改訂検討会",
-      "ministry": "SMEA",
+      "ministry": "",
       "category": "COUNCIL",
       "officialUrl": "",
       "rejectedAt": "",
@@ -31904,7 +31906,7 @@
     {
       "id": "smea-3036",
       "name": "イノベーション・プロデュース推進会議",
-      "ministry": "SMEA",
+      "ministry": "",
       "category": "COUNCIL",
       "officialUrl": "",
       "rejectedAt": "",
@@ -31913,7 +31915,7 @@
     {
       "id": "smea-3037",
       "name": "イノベーション・プロデューサーガイドライン策定委員会",
-      "ministry": "SMEA",
+      "ministry": "",
       "category": "COUNCIL",
       "officialUrl": "",
       "rejectedAt": "",
@@ -31922,7 +31924,7 @@
     {
       "id": "smea-3038",
       "name": "中小企業の成長のためのイノベーション研究会",
-      "ministry": "SMEA",
+      "ministry": "",
       "category": "COUNCIL",
       "officialUrl": "",
       "rejectedAt": "",
@@ -31931,7 +31933,7 @@
     {
       "id": "smea-3039",
       "name": "中小企業のイノベーションの在り方に関する有識者検討会",
-      "ministry": "SMEA",
+      "ministry": "",
       "category": "COUNCIL",
       "officialUrl": "",
       "rejectedAt": "",
@@ -31940,7 +31942,7 @@
     {
       "id": "smea-3040",
       "name": "令和元年 特別編 スマートSME(中小企業)研究会 配布資料",
-      "ministry": "SMEA",
+      "ministry": "",
       "category": "COUNCIL",
       "officialUrl": "",
       "rejectedAt": "",
@@ -31949,7 +31951,7 @@
     {
       "id": "smea-3041",
       "name": "日本版SBIR制度の見直しに向けた検討会",
-      "ministry": "SMEA",
+      "ministry": "",
       "category": "COUNCIL",
       "officialUrl": "",
       "rejectedAt": "",
@@ -31958,7 +31960,7 @@
     {
       "id": "smea-3042",
       "name": "伴走支援の在り方検討会",
-      "ministry": "SMEA",
+      "ministry": "",
       "category": "COUNCIL",
       "officialUrl": "",
       "rejectedAt": "",
@@ -31967,7 +31969,7 @@
     {
       "id": "smea-3043",
       "name": "中小企業強靱化研究会",
-      "ministry": "SMEA",
+      "ministry": "",
       "category": "COUNCIL",
       "officialUrl": "",
       "rejectedAt": "",
@@ -31976,7 +31978,7 @@
     {
       "id": "smea-3044",
       "name": "平成26年 事業承継を中心とする事業活性化に関する検討会 中間報告について",
-      "ministry": "SMEA",
+      "ministry": "",
       "category": "COUNCIL",
       "officialUrl": "",
       "rejectedAt": "",
@@ -31985,7 +31987,7 @@
     {
       "id": "smea-3045",
       "name": "中小企業における再生M&A促進に向けた検討会",
-      "ministry": "SMEA",
+      "ministry": "",
       "category": "COUNCIL",
       "officialUrl": "",
       "rejectedAt": "",
@@ -31994,7 +31996,7 @@
     {
       "id": "smea-3046",
       "name": "新たなビジネスモデルを踏まえた商工中金の在り方検討会",
-      "ministry": "SMEA",
+      "ministry": "",
       "category": "COUNCIL",
       "officialUrl": "",
       "rejectedAt": "",
@@ -32003,7 +32005,7 @@
     {
       "id": "smea-3047",
       "name": "商工中金の経営及び危機対応業務に関する評価委員会 報告書について",
-      "ministry": "SMEA",
+      "ministry": "",
       "category": "COUNCIL",
       "officialUrl": "",
       "rejectedAt": "",
@@ -32012,7 +32014,7 @@
     {
       "id": "smea-3048",
       "name": "金融EDIにおける商流情報等のあり方検討会議",
-      "ministry": "SMEA",
+      "ministry": "",
       "category": "COUNCIL",
       "officialUrl": "",
       "rejectedAt": "",
@@ -32021,7 +32023,7 @@
     {
       "id": "smea-3049",
       "name": "知識サポート・経営改革プラットフォーム研究会",
-      "ministry": "SMEA",
+      "ministry": "",
       "category": "COUNCIL",
       "officialUrl": "",
       "rejectedAt": "",
@@ -32030,7 +32032,7 @@
     {
       "id": "smea-3050",
       "name": "中小企業の会計に関する研究会 中間報告書について",
-      "ministry": "SMEA",
+      "ministry": "",
       "category": "COUNCIL",
       "officialUrl": "",
       "rejectedAt": "",
@@ -32039,7 +32041,7 @@
     {
       "id": "smea-3051",
       "name": "中小企業の会計に関する研究会",
-      "ministry": "SMEA",
+      "ministry": "",
       "category": "COUNCIL",
       "officialUrl": "",
       "rejectedAt": "",
@@ -32048,7 +32050,7 @@
     {
       "id": "smea-3052",
       "name": "中小企業海外展開支援会議",
-      "ministry": "SMEA",
+      "ministry": "",
       "category": "COUNCIL",
       "officialUrl": "",
       "rejectedAt": "",
@@ -32057,7 +32059,7 @@
     {
       "id": "smea-3053",
       "name": "中小企業憲章に関する研究会",
-      "ministry": "SMEA",
+      "ministry": "",
       "category": "COUNCIL",
       "officialUrl": "",
       "rejectedAt": "",
@@ -32076,6 +32078,7 @@
   ],
   "manualLocks": {
     "councils": [
+      "aca-1734",
       "aca-186",
       "aca-194",
       "aca-195",
@@ -35163,6 +35166,7 @@
       "cao-keizai_shimon-20260721-011",
       "cao-keizai_shimon-20260730-012",
       "cao-keizai_shimon-20260930-013",
+      "cao-keizai_shimon-20261111-016",
       "cao-kisei_chiiki_wg-20220218-001",
       "cao-kisei_chiiki_wg-20220302-002",
       "cao-kisei_chiiki_wg-20220314-003",
@@ -36613,12 +36617,14 @@
       "cas-gx_senmonka_wg-20260217-015",
       "cas-gx_senmonka_wg-20260317-016",
       "cas-gx_senmonka_wg-20260416-017",
+      "cas-gx_senmonka_wg-20261109-019",
       "cas-indexhtmlsuisin_kaigi_record-20250214-001",
       "cas-indexhtmlsuisin_kaigi_record-20251028-007",
       "cas-indexhtmlsuisin_kaigi_record-20251126-008",
       "cas-indexhtmlsuisin_kaigi_record-20251222-009",
       "cas-indexhtmlsuisin_kaigi_record-20260217-010",
       "cas-indexhtmlsuisin_kaigi_record-20260907-015",
+      "cas-indexhtmlsuisin_kaigi_record-20261110-017",
       "cas-influenza-20250905-s01",
       "cas-influenza-20251022-s01",
       "cas-influenza-20251102-s01",
@@ -38318,6 +38324,7 @@
       "cfa-care_needs-20260527-005",
       "cfa-care_needs-20260714-006",
       "cfa-care_needs-20260907-007",
+      "cfa-care_needs-20261112-008",
       "cfa-gyakutai_boushi-20230512-001",
       "cfa-gyakutai_boushi-20230912-002",
       "cfa-gyakutai_boushi-20231226-003",
@@ -38333,6 +38340,7 @@
       "cfa-gyakutai_hogojirei-20260430-132",
       "cfa-gyakutai_hogojirei-20260608-133",
       "cfa-gyakutai_hogojirei-20260727-134",
+      "cfa-gyakutai_hogojirei-20261204-135",
       "cfa-hinkon_hitorioya-20230728-001",
       "cfa-hinkon_hitorioya-20230922-002",
       "cfa-hinkon_hitorioya-20240311-003",
@@ -38342,10 +38350,12 @@
       "cfa-hinkon_hitorioya-20260629-007",
       "cfa-hinkon_suishin_wg-20250227-001",
       "cfa-hinkon_suishin_wg-20260203-002",
+      "cfa-hinkon_suishin_wg-20261116-005",
       "cfa-hitorioya_wg-20241031-001",
       "cfa-hitorioya_wg-20250123-002",
       "cfa-hitorioya_wg-20260115-003",
       "cfa-hitorioya_wg-20260310-s01",
+      "cfa-hitorioya_wg-20261116-005",
       "cfa-hoiku_senmon-20251022-001",
       "cfa-hoiku_senmon-20251117-002",
       "cfa-hoiku_senmon-20251125-003",
@@ -38453,6 +38463,7 @@
       "cfa-kihon_seisaku-20260220-019",
       "cfa-kihon_seisaku-20260330-020",
       "cfa-kihon_seisaku-20260508-021",
+      "cfa-kihon_seisaku-20261116-022",
       "cfa-kodomo_ibasho-20230517-001",
       "cfa-kodomo_ibasho-20230531-002",
       "cfa-kodomo_ibasho-20230613-003",
@@ -38961,6 +38972,7 @@
       "fdma-hinanjo_shoubou_anzen-20251128-005",
       "fdma-hinanjo_shoubou_anzen-20251219-006",
       "fdma-hinanshisetsu_dualuse-20260806-001",
+      "fdma-hinanshisetsu_dualuse-20261110-002",
       "fdma-jishu_bousai_jinzai-20210807-005",
       "fdma-jishu_bousai_jinzai-20211111-006",
       "fdma-jishu_bousai_jinzai-20211209-007",
@@ -39260,6 +39272,7 @@
       "fdma-yobou_gyousei-20260319-002",
       "fdma-yobou_gyousei-20260702-007",
       "fdma-yobou_jisshi_taisei-20260806-001",
+      "fdma-yobou_jisshi_taisei-20261104-002",
       "fsa-ai_onchain-20260930-001",
       "fsa-arikataken-20201104-001",
       "fsa-arikataken-20201125-002",
@@ -39282,6 +39295,7 @@
       "fsa-chuugoku_kinyu-20221214-009",
       "fsa-chuugoku_kinyu-20230607-010",
       "fsa-chuugoku_kinyu-20231213-011",
+      "fsa-chuugoku_kinyu-20261113-015",
       "fsa-code_followup-20150924-001",
       "fsa-code_followup-20151020-002",
       "fsa-code_followup-20151124-003",
@@ -41034,6 +41048,7 @@
       "fsc-honkaigi-20261006-1038",
       "fsc-honkaigi-20261013-1039",
       "fsc-honkaigi-20261027-1040",
+      "fsc-honkaigi-20261110-1041",
       "fsc-hyoukagijyutukikaku_wg-20180330-009",
       "fsc-hyoukagijyutukikaku_wg-20180607-010",
       "fsc-hyoukagijyutukikaku_wg-20180830-011",
@@ -42136,6 +42151,7 @@
       "jfa-suisan_kanri-20260323-144",
       "jfa-suisan_kanri-20260518-145",
       "jfa-suisan_kanri-20260611-146",
+      "jfa-suisan_kanri-20261113-147",
       "jfa-suisan_kikaku-20160624-060",
       "jfa-suisan_kikaku-20160713-061",
       "jfa-suisan_kikaku-20190404-080",
@@ -42203,6 +42219,7 @@
       "maff-654-20170501-004",
       "maff-654-20210601-006",
       "maff-654-20250302-005",
+      "maff-654-20261008-008",
       "maff-655-20240305-001",
       "maff-656-20160615-001",
       "maff-656-20160622-003",
@@ -42254,6 +42271,7 @@
       "maff-659-20260626-s01",
       "maff-659-20260724-s01",
       "maff-659-20260821-s01",
+      "maff-659-20261110-129",
       "maff-662-20051019-s01",
       "maff-662-20060305-s01",
       "maff-662-20060730-s01",
@@ -42582,6 +42600,7 @@
       "meti-denryoku_gas_kanshi-20261002-620",
       "meti-denryoku_gas_kanshi-20261023-622",
       "meti-denryoku_gas_kanshi-20261104-623",
+      "meti-denryoku_gas_kanshi-20261116-624",
       "meti-kagaku_busshitsu-20050727-001",
       "meti-kagaku_busshitsu-20110608-001",
       "meti-kagaku_busshitsu-20110803-002",
@@ -43889,6 +43908,7 @@
       "mhlw-1014-20260116-246",
       "mhlw-1014-20260708-247",
       "mhlw-1014-20260826-248",
+      "mhlw-1014-20261111-251",
       "mhlw-1015-20231213-005",
       "mhlw-1015-20241009-006",
       "mhlw-1015-20241113-007",
@@ -43903,6 +43923,7 @@
       "mhlw-1017-20260513-077",
       "mhlw-1017-20260909-078",
       "mhlw-1017-20260916-s06",
+      "mhlw-1017-20261111-082",
       "mhlw-1018-20190327-007",
       "mhlw-1018-20190327-019",
       "mhlw-1018-20251015-020",
@@ -43912,6 +43933,7 @@
       "mhlw-1019-20250709-074",
       "mhlw-1019-20251121-075",
       "mhlw-1019-20260624-076",
+      "mhlw-1019-20261111-077",
       "mhlw-1020-20240126-007",
       "mhlw-1020-20240126-008",
       "mhlw-1020-20240703-223",
@@ -44053,6 +44075,21 @@
       "mhlw-2855-20260918-001",
       "mhlw-2855-20261113-004",
       "mhlw-2857-20261109-025",
+      "mhlw-2857-20261116-026",
+      "mhlw-2866-20251226-009",
+      "mhlw-2866-20260123-010",
+      "mhlw-2866-20260213-011",
+      "mhlw-2866-20260227-012",
+      "mhlw-2866-20260313-013",
+      "mhlw-2866-20260324-014",
+      "mhlw-2866-20260424-001",
+      "mhlw-2866-20260508-002",
+      "mhlw-2866-20260612-003",
+      "mhlw-2866-20260619-004",
+      "mhlw-2866-20260703-005",
+      "mhlw-2866-20260717-006",
+      "mhlw-2866-20260807-007",
+      "mhlw-2866-20260925-008",
       "mhlw-729-20260825-001",
       "mhlw-729-20260910-s02",
       "mhlw-784-20260618-001",
@@ -44208,6 +44245,7 @@
       "mhlw-806-20190314-002",
       "mhlw-806-20190314-003",
       "mhlw-806-20190530-001",
+      "mhlw-806-20260729-057",
       "mhlw-806-20261023-058",
       "mhlw-808-20191204-s13",
       "mhlw-808-20221027-013",
@@ -44257,6 +44295,7 @@
       "mhlw-816-20260309-076",
       "mhlw-816-20260430-001",
       "mhlw-816-20260430-077",
+      "mhlw-816-20261119-079",
       "mhlw-817-20260226-033",
       "mhlw-817-20260619-034",
       "mhlw-817-20260722-035",
@@ -44278,6 +44317,7 @@
       "mhlw-823-20150218-003",
       "mhlw-824-20260219-025",
       "mhlw-824-20260423-026",
+      "mhlw-824-20261118-028",
       "mhlw-825-20251008-012",
       "mhlw-825-20260302-013",
       "mhlw-825-20260715-014",
@@ -44289,6 +44329,7 @@
       "mhlw-828-20250901-009",
       "mhlw-828-20251006-010",
       "mhlw-828-20260330-011",
+      "mhlw-828-20261118-013",
       "mhlw-829-20240617-002",
       "mhlw-829-20241213-004",
       "mhlw-829-20250618-006",
@@ -44477,6 +44518,7 @@
       "mhlw-872-20260527-079",
       "mhlw-872-20260715-080",
       "mhlw-872-20260826-081",
+      "mhlw-872-20261111-083",
       "mhlw-873-20090618-009",
       "mhlw-873-20100215-010",
       "mhlw-873-20100510-011",
@@ -44634,6 +44676,7 @@
       "mhlw-906-20251029-036",
       "mhlw-906-20260226-035",
       "mhlw-906-20260821-037",
+      "mhlw-906-20261119-038",
       "mhlw-907-20211101-005",
       "mhlw-907-20220119-006",
       "mhlw-907-20220616-007",
@@ -44647,6 +44690,8 @@
       "mhlw-908-20260622-118",
       "mhlw-908-20260819-119",
       "mhlw-908-20260909-120",
+      "mhlw-908-20261109-121",
+      "mhlw-908-20261118-122",
       "mhlw-909-20211013-s06",
       "mhlw-909-20220719-006",
       "mhlw-909-20220720-009",
@@ -44708,6 +44753,7 @@
       "mhlw-928-20260703-007",
       "mhlw-928-20260707-001",
       "mhlw-928-20260914-s06",
+      "mhlw-928-20261118-010",
       "mhlw-929-20131225-001",
       "mhlw-929-20150122-007",
       "mhlw-929-20150129-006",
@@ -44781,6 +44827,7 @@
       "mhlw-938-20260904-211",
       "mhlw-938-20261009-213",
       "mhlw-938-20261110-215",
+      "mhlw-938-20261120-216",
       "mhlw-939-20250425-381",
       "mhlw-939-20250926-386",
       "mhlw-939-20260324-392",
@@ -45395,6 +45442,7 @@
       "mhlw-hansen_kazoku_hoshou-20260728-077",
       "mhlw-hansen_kazoku_hoshou-20260827-078",
       "mhlw-hansen_kazoku_hoshou-20260930-079",
+      "mhlw-hansen_kazoku_hoshou-20261124-081",
       "mhlw-hikouchi_jidou_gyakutai_bunseki_wg-20160101-001",
       "mhlw-hitorioya_shien_iinkai-20191212-014",
       "mhlw-hitorioya_shien_iinkai-20191226-015",
@@ -45475,6 +45523,7 @@
       "mhlw-ishiwata_higai_shinsa-20240919-s04",
       "mhlw-ishiwata_higai_shinsa-20260611-035",
       "mhlw-ishiwata_higai_shinsa-20260709-036",
+      "mhlw-ishiwata_higai_shinsa-20261015-038",
       "mhlw-ishiwata_higai_shinsa-20261112-039",
       "mhlw-iyakuhin_gyousei_monitoring-20200928-001",
       "mhlw-iyakuhin_gyousei_monitoring-20201201-002",
@@ -45771,6 +45820,7 @@
       "mhlw-rousei_roudoujouken-20260513-209",
       "mhlw-rousei_roudoujouken-20260714-210",
       "mhlw-rousei_roudoujouken-20260916-s21",
+      "mhlw-rousei_roudoujouken-20261117-215",
       "mhlw-saikou_saiban_taiou-20251107-s02",
       "mhlw-saikou_saiban_taiou-20251118-s04",
       "mhlw-seikatsu_kankyou_bukai-20260915-s02",
@@ -45841,6 +45891,8 @@
       "mhlw-shakai_hosho_iryou_hoken-20260827-213",
       "mhlw-shakai_hosho_iryou_hoken-20260903-s31",
       "mhlw-shakai_hosho_iryou_hoken-20260916-s31",
+      "mhlw-shakai_hosho_iryou_hoken-20261111-220",
+      "mhlw-shakai_hosho_iryou_hoken-20261117-221",
       "mhlw-shakai_hosho_kaigo_hoken-20221220-s33",
       "mhlw-shakai_hosho_kaigo_hoken-20230227-106",
       "mhlw-shakai_hosho_kaigo_hoken-20230710-107",
@@ -45937,6 +45989,7 @@
       "mhlw-shakai_hosho_kaigo_kyuufu-20260805-262",
       "mhlw-shakai_hosho_kaigo_kyuufu-20260828-263",
       "mhlw-shakai_hosho_kaigo_kyuufu-20260903-264",
+      "mhlw-shakai_hosho_kaigo_kyuufu-20261116-275",
       "mhlw-shakai_hosho_nenkin-20020116-001",
       "mhlw-shakai_hosho_nenkin-20020319-002",
       "mhlw-shakai_hosho_nenkin-20020419-003",
@@ -46071,6 +46124,7 @@
       "mhlw-shakai_hosho_seikatsu_hogo-20260630-058",
       "mhlw-shakai_hosho_seikatsu_hogo-20260729-059",
       "mhlw-shakai_hosho_seikatsu_hogo-20260825-060",
+      "mhlw-shakai_hosho_seikatsu_hogo-20261117-064",
       "mhlw-shakai_hosho_seikatsu_konkyuu-20170511-001",
       "mhlw-shakai_hosho_seikatsu_konkyuu-20170608-002",
       "mhlw-shakai_hosho_seikatsu_konkyuu-20170627-003",
@@ -49376,6 +49430,7 @@
       "mod-space_domain-20260728-003",
       "mod-space_domain-20261015-004",
       "moe-2961-20261030-001",
+      "moe-2961-20261111-002",
       "moe-2970-20230228-001",
       "moe-2970-20230912-002",
       "moe-2970-20240909-003",
@@ -49901,6 +49956,7 @@
       "mof-1150-20240509-005",
       "mof-1150-20241018-007",
       "mof-1150-20250508-008",
+      "mof-1150-20261105-012",
       "mof-1153-20140618-001",
       "mof-1153-20210624-002",
       "mof-1154-20260629-001",
@@ -55891,6 +55947,17 @@
       "cao-keizai_anzen_zosen-20240220-001:https://www.cao.go.jp/keizai_anzen_hosho/zosen/doc/zosen_wg.pdf",
       "cao-keizai_anzen_zosen-20240319-002:https://www.cao.go.jp/keizai_anzen_hosho/zosen/doc/zosen_wg2.pdf",
       "cao-keizai_anzen_zosen-20240517-003:https://www.cao.go.jp/keizai_anzen_hosho/zosen/doc/zosen_wg3.pdf",
+      "cao-keizai_shimon-20261111-016:https://www5.cao.go.jp/keizai-shimon/kaigi/minutes/2026/1111haifushiryo_01.pdf",
+      "cao-keizai_shimon-20261111-016:https://www5.cao.go.jp/keizai-shimon/kaigi/minutes/2026/1111haifushiryo_02.pdf",
+      "cao-keizai_shimon-20261111-016:https://www5.cao.go.jp/keizai-shimon/kaigi/minutes/2026/1111haifushiryo_03.pdf",
+      "cao-keizai_shimon-20261111-016:https://www5.cao.go.jp/keizai-shimon/kaigi/minutes/2026/1111shidai.pdf",
+      "cao-keizai_shimon-20261111-016:https://www5.cao.go.jp/keizai-shimon/kaigi/minutes/2026/1111shiryo_01.pdf",
+      "cao-keizai_shimon-20261111-016:https://www5.cao.go.jp/keizai-shimon/kaigi/minutes/2026/1111shiryo_02.pdf",
+      "cao-keizai_shimon-20261111-016:https://www5.cao.go.jp/keizai-shimon/kaigi/minutes/2026/1111shiryo_03.pdf",
+      "cao-keizai_shimon-20261111-016:https://www5.cao.go.jp/keizai-shimon/kaigi/minutes/2026/1111shiryo_04.pdf",
+      "cao-keizai_shimon-20261111-016:https://www5.cao.go.jp/keizai-shimon/kaigi/minutes/2026/1111shiryo_05.pdf",
+      "cao-keizai_shimon-20261111-016:https://www5.cao.go.jp/keizai-shimon/kaigi/minutes/2026/1111shiryo_06.pdf",
+      "cao-keizai_shimon-20261111-016:https://www5.cao.go.jp/keizai-shimon/kaigi/minutes/2026/1111shiryo_07.pdf",
       "cao-kisei_chiiki_wg-20250227-s53:https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/committee/250227/250227_general01.pdf",
       "cao-kisei_chiiki_wg-20250227-s53:https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/committee/250227/250227_general02.pdf",
       "cao-kisei_chiiki_wg-20251003-024:https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/committee/251003/251003general_00.pdf",
@@ -60217,11 +60284,16 @@
       "cas-genshiryoku_saigai-20250307-065:https://www.cas.go.jp/jp/seisakukaigi/genshiryoku/dai65/shiryou3.pdf",
       "cas-genshiryoku_saigai-20250307-065:https://www.cas.go.jp/jp/seisakukaigi/genshiryoku/dai65/shiryou4.pdf",
       "cas-genshiryoku_saigai-20250307-065:https://www.cas.go.jp/jp/seisakukaigi/genshiryoku/dai65/shiryou5.pdf",
+      "cas-gx_senmonka_wg-20261109-019:https://www.cas.go.jp/jp/seisaku/gx_jikkou_kaigi/senmonka_wg/dai19/shiryo1.pdf",
       "cas-indexhtmlsuisin_kaigi_record-20251028-007:https://www.cas.go.jp/jp/seisaku/chiikihatarakikata/contents/20251028/251028_material.pdf",
       "cas-indexhtmlsuisin_kaigi_record-20251126-008:https://www.cas.go.jp/jp/seisaku/chiikihatarakikata/contents/20251126/251126_material.pdf",
       "cas-indexhtmlsuisin_kaigi_record-20251222-009:https://www.cas.go.jp/jp/seisaku/chiikihatarakikata/contents/20251222/251222_material.pdf",
       "cas-indexhtmlsuisin_kaigi_record-20260217-010:https://www.cas.go.jp/jp/seisaku/chiikihatarakikata/contents/20260217/260217_material.pdf",
       "cas-indexhtmlsuisin_kaigi_record-20260907-015:https://www.cas.go.jp/jp/seisaku/chiikihatarakikata/contents/20260907/260907_material.pdf",
+      "cas-indexhtmlsuisin_kaigi_record-20261110-017:https://www.cas.go.jp/jp/seisaku/chiikihatarakikata/contents/20261110/261110_material_1.pdf",
+      "cas-indexhtmlsuisin_kaigi_record-20261110-017:https://www.cas.go.jp/jp/seisaku/chiikihatarakikata/contents/20261110/261110_material_2.pdf",
+      "cas-indexhtmlsuisin_kaigi_record-20261110-017:https://www.cas.go.jp/jp/seisaku/chiikihatarakikata/contents/20261110/261110_material_3.pdf",
+      "cas-indexhtmlsuisin_kaigi_record-20261110-017:https://www.cas.go.jp/jp/seisaku/chiikihatarakikata/contents/20261110/261110_material_4.pdf",
       "cas-intelligent_features_kyoka-20260928-001:https://www.cas.go.jp/jp/seisaku/intelligent_features_kyoka/dai1/shiryo1.pdf",
       "cas-intelligent_features_kyoka-20260928-001:https://www.cas.go.jp/jp/seisaku/intelligent_features_kyoka/dai1/shiryo2.pdf",
       "cas-intelligent_features_kyoka-20260928-001:https://www.cas.go.jp/jp/seisaku/intelligent_features_kyoka/dai1/shiryo3.pdf",
@@ -68675,6 +68747,17 @@
       "cfa-care_needs-20260907-007:https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/1a4c1dc3-f7ad-484e-90e3-7cd649ec6b37/d6b7e572/20260831_councils_shingikai_shakai_katei_care-needs_1a4c1dc3_08.pdf",
       "cfa-care_needs-20260907-007:https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/1a4c1dc3-f7ad-484e-90e3-7cd649ec6b37/f631805a/20260831_councils_shingikai_shakai_katei_care-needs_1a4c1dc3_09.pdf",
       "cfa-care_needs-20260907-007:https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/1a4c1dc3-f7ad-484e-90e3-7cd649ec6b37/fc9c5695/20260831_councils_shingikai_shakai_katei_care-needs_1a4c1dc3_02.pdf",
+      "cfa-care_needs-20261112-008:https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/d66b8a15-e87f-4d73-990e-9f30a1e40ac2/0187f20a/20261111_councils_shingikai_shakai_katei_care-needs_d66b8a15_01.pdf",
+      "cfa-care_needs-20261112-008:https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/d66b8a15-e87f-4d73-990e-9f30a1e40ac2/06dc9c31/20261111_councils_shingikai_shakai_katei_care-needs_d66b8a15_04.pdf",
+      "cfa-care_needs-20261112-008:https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/d66b8a15-e87f-4d73-990e-9f30a1e40ac2/4f94befa/20261111_councils_shingikai_shakai_katei_care-needs_d66b8a15_00.pdf",
+      "cfa-care_needs-20261112-008:https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/d66b8a15-e87f-4d73-990e-9f30a1e40ac2/53571b1b/20261111_councils_shingikai_shakai_katei_care-needs_d66b8a15_09.pdf",
+      "cfa-care_needs-20261112-008:https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/d66b8a15-e87f-4d73-990e-9f30a1e40ac2/78596e72/20261111_councils_shingikai_shakai_katei_care-needs_d66b8a15_10.pdf",
+      "cfa-care_needs-20261112-008:https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/d66b8a15-e87f-4d73-990e-9f30a1e40ac2/80dac3a1/20261111_councils_shingikai_shakai_katei_care-needs_d66b8a15_07.pdf",
+      "cfa-care_needs-20261112-008:https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/d66b8a15-e87f-4d73-990e-9f30a1e40ac2/8ec97674/20261111_councils_shingikai_shakai_katei_care-needs_d66b8a15_08.pdf",
+      "cfa-care_needs-20261112-008:https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/d66b8a15-e87f-4d73-990e-9f30a1e40ac2/926d0367/20261111_councils_shingikai_shakai_katei_care-needs_d66b8a15_06.pdf",
+      "cfa-care_needs-20261112-008:https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/d66b8a15-e87f-4d73-990e-9f30a1e40ac2/bafb27e4/20261111_councils_shingikai_shakai_katei_care-needs_d66b8a15_02.pdf",
+      "cfa-care_needs-20261112-008:https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/d66b8a15-e87f-4d73-990e-9f30a1e40ac2/d91c74c3/20261111_councils_shingikai_shakai_katei_care-needs_d66b8a15_05.pdf",
+      "cfa-care_needs-20261112-008:https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/d66b8a15-e87f-4d73-990e-9f30a1e40ac2/f97576d7/20261111_councils_shingikai_shakai_katei_care-needs_d66b8a15_03.pdf",
       "cfa-gyakutai_boushi-20230512-001:https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/277bd31e-b9f4-4cc5-8e2b-2dc2cb0ad159/50aaee47/20230401_councils_shingikai_gyakutai_boushi_277bd31e_13.pdf",
       "cfa-gyakutai_boushi-20230512-001:https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/277bd31e-b9f4-4cc5-8e2b-2dc2cb0ad159/888366d8/20230401_councils_shingikai_gyakutai_boushi_277bd31e_08.pdf",
       "cfa-gyakutai_boushi-20230512-001:https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/277bd31e-b9f4-4cc5-8e2b-2dc2cb0ad159/8c89d737/20230401_councils_shingikai_gyakutai_boushi_277bd31e_12.pdf",
@@ -68880,6 +68963,12 @@
       "cfa-hinkon_suishin_wg-20260203-002:https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/4a9cc416-a0a4-4161-be66-0d2561497130/a0898995/20260202_councils_shingikai_hinkon_hitorioya_coutermeasures_4a9cc416_08.pdf",
       "cfa-hinkon_suishin_wg-20260203-002:https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/4a9cc416-a0a4-4161-be66-0d2561497130/a24923e0/20260202_councils_shingikai_hinkon_hitorioya_coutermeasures_4a9cc416_09.pdf",
       "cfa-hinkon_suishin_wg-20260203-002:https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/4a9cc416-a0a4-4161-be66-0d2561497130/d257da49/20260202_councils_shingikai_hinkon_hitorioya_coutermeasures_4a9cc416_07.pdf",
+      "cfa-hinkon_suishin_wg-20261116-005:https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/db5ea08f-7b18-4994-8167-e278b957d567/7e341b3d/20261113_councils_shingikai_hinkon_hitorioya_db5ea08f_03.pdf",
+      "cfa-hinkon_suishin_wg-20261116-005:https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/db5ea08f-7b18-4994-8167-e278b957d567/97ffa50c/20261113_councils_shingikai_hinkon_hitorioya_db5ea08f_02.pdf",
+      "cfa-hinkon_suishin_wg-20261116-005:https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/db5ea08f-7b18-4994-8167-e278b957d567/b8b73fe6/20261113_councils_shingikai_hinkon_hitorioya_db5ea08f_04.pdf",
+      "cfa-hinkon_suishin_wg-20261116-005:https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/db5ea08f-7b18-4994-8167-e278b957d567/bba74fa7/20261113_councils_shingikai_hinkon_hitorioya_db5ea08f_01.pdf",
+      "cfa-hinkon_suishin_wg-20261116-005:https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/db5ea08f-7b18-4994-8167-e278b957d567/d87146ba/20261113_councils_shingikai_hinkon_hitorioya_db5ea08f_00.pdf",
+      "cfa-hinkon_suishin_wg-20261116-005:https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/db5ea08f-7b18-4994-8167-e278b957d567/e5e71d49/20261113_councils_shingikai_hinkon_hitorioya_db5ea08f_05.pdf",
       "cfa-hitorioya_wg-20241031-001:https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/d1181c5f-5e08-4588-98e2-97d1b68395e3/19547815/20241030_councils_shingikai_hinkon_hitorioya_d1181c5f_10.pdf",
       "cfa-hitorioya_wg-20241031-001:https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/d1181c5f-5e08-4588-98e2-97d1b68395e3/42054c8c/20241030_councils_shingikai_hinkon_hitorioya_d1181c5f_01.pdf",
       "cfa-hitorioya_wg-20241031-001:https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/d1181c5f-5e08-4588-98e2-97d1b68395e3/4f1ca124/20241030_councils_shingikai_hinkon_hitorioya_d1181c5f_02.pdf",
@@ -68920,6 +69009,12 @@
       "cfa-hitorioya_wg-20260310-s01:https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/43b0d0fd-f60b-4663-9304-e015fc165f5a/e0d29c43/20260309_councils_shingikai_hinkon_hitorioya_43b0d0fd_09.pdf",
       "cfa-hitorioya_wg-20260310-s01:https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/43b0d0fd-f60b-4663-9304-e015fc165f5a/f0c18f61/20260309_councils_shingikai_hinkon_hitorioya_43b0d0fd_10.pdf",
       "cfa-hitorioya_wg-20260310-s01:https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/43b0d0fd-f60b-4663-9304-e015fc165f5a/feddd349/20260309_councils_shingikai_hinkon_hitorioya_43b0d0fd_00.pdf",
+      "cfa-hitorioya_wg-20261116-005:https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/db5ea08f-7b18-4994-8167-e278b957d567/7e341b3d/20261113_councils_shingikai_hinkon_hitorioya_db5ea08f_03.pdf",
+      "cfa-hitorioya_wg-20261116-005:https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/db5ea08f-7b18-4994-8167-e278b957d567/97ffa50c/20261113_councils_shingikai_hinkon_hitorioya_db5ea08f_02.pdf",
+      "cfa-hitorioya_wg-20261116-005:https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/db5ea08f-7b18-4994-8167-e278b957d567/b8b73fe6/20261113_councils_shingikai_hinkon_hitorioya_db5ea08f_04.pdf",
+      "cfa-hitorioya_wg-20261116-005:https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/db5ea08f-7b18-4994-8167-e278b957d567/bba74fa7/20261113_councils_shingikai_hinkon_hitorioya_db5ea08f_01.pdf",
+      "cfa-hitorioya_wg-20261116-005:https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/db5ea08f-7b18-4994-8167-e278b957d567/d87146ba/20261113_councils_shingikai_hinkon_hitorioya_db5ea08f_00.pdf",
+      "cfa-hitorioya_wg-20261116-005:https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/db5ea08f-7b18-4994-8167-e278b957d567/e5e71d49/20261113_councils_shingikai_hinkon_hitorioya_db5ea08f_05.pdf",
       "cfa-hoiku_senmon-20251022-001:https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/ee40a9a0-e8af-4d3a-92b3-e79a2da7c0e4/04786e9f/20251022councils-shingikai-hoiku_senmon-01-11.pdf",
       "cfa-hoiku_senmon-20251022-001:https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/ee40a9a0-e8af-4d3a-92b3-e79a2da7c0e4/31f6ef28/20251022councils-shingikai-hoiku_senmon-01-09.pdf",
       "cfa-hoiku_senmon-20251022-001:https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/ee40a9a0-e8af-4d3a-92b3-e79a2da7c0e4/39de8039/20251212_councils_shingikai_hoiku_senmon_01_17.pdf",
@@ -71162,6 +71257,13 @@
       "fdma-daikibo_bouka_taishobutsu-20190213-003:https://www.fdma.go.jp/singi_kento/kento/items45787/jieishobo3_2.pdf",
       "fdma-daikibo_bouka_taishobutsu-20190213-003:https://www.fdma.go.jp/singi_kento/kento/items45787/jieishobo3_3.pdf",
       "fdma-daikibo_bouka_taishobutsu-20190213-003:https://www.fdma.go.jp/singi_kento/kento/items45787/jieishobo3_4.pdf",
+      "fdma-hinanshisetsu_dualuse-20261110-002:https://www.fdma.go.jp/singi_kento/kento/items/post-200/02/meibo.pdf",
+      "fdma-hinanshisetsu_dualuse-20261110-002:https://www.fdma.go.jp/singi_kento/kento/items/post-200/02/shidai.pdf",
+      "fdma-hinanshisetsu_dualuse-20261110-002:https://www.fdma.go.jp/singi_kento/kento/items/post-200/02/shiryou1.pdf",
+      "fdma-hinanshisetsu_dualuse-20261110-002:https://www.fdma.go.jp/singi_kento/kento/items/post-200/02/shiryou2.pdf",
+      "fdma-hinanshisetsu_dualuse-20261110-002:https://www.fdma.go.jp/singi_kento/kento/items/post-200/02/shiryou3.pdf",
+      "fdma-hinanshisetsu_dualuse-20261110-002:https://www.fdma.go.jp/singi_kento/kento/items/post-200/02/shiryou4.pdf",
+      "fdma-hinanshisetsu_dualuse-20261110-002:https://www.fdma.go.jp/singi_kento/kento/items/post-200/02/youkou.pdf",
       "fdma-okugai_keiho_gijutsukijun-20180709-001:https://www.fdma.go.jp/singi_kento/kento/items/okugai_keihousouti1.pdf",
       "fdma-okugai_keiho_gijutsukijun-20180709-001:https://www.fdma.go.jp/singi_kento/kento/items/okugai_keihousouti10.pdf",
       "fdma-okugai_keiho_gijutsukijun-20180709-001:https://www.fdma.go.jp/singi_kento/kento/items/okugai_keihousouti11.pdf",
@@ -71190,6 +71292,16 @@
       "fdma-okugai_keiho_gijutsukijun-20190307-003:https://www.fdma.go.jp/singi_kento/kento/items/post-33/03/%E5%B1%8B%E5%A4%96%E8%AD%A6%E5%A0%B1%E8%A3%85%E7%BD%AE%E7%AD%89%E3%81%AE%E6%8A%80%E8%A1%93%E5%9F%BA%E6%BA%96%E6%A4%9C%E8%A8%8E%E4%BC%9A%EF%BC%88%E7%AC%AC2%E5%9B%9E%EF%BC%89%E8%AD%B0%E4%BA%8B%E8%A6%81%E6%97%A8%EF%BC%88%E6%A1%88%EF%BC%89.pdf",
       "fdma-okugai_keiho_gijutsukijun-20190307-003:https://www.fdma.go.jp/singi_kento/kento/items/post-33/03/%E8%AD%B0%E4%BA%8B%E6%AC%A1%E7%AC%AC.pdf",
       "fdma-okugai_keiho_gijutsukijun-20190307-003:https://www.fdma.go.jp/singi_kento/kento/items/post-33/03/%E9%85%8D%E5%B8%AD%E5%9B%B3.pdf",
+      "fdma-yobou_jisshi_taisei-20261104-002:https://www.fdma.go.jp/singi_kento/kento/items/post-203/02/jouhouteikyou.pdf",
+      "fdma-yobou_jisshi_taisei-20261104-002:https://www.fdma.go.jp/singi_kento/kento/items/post-203/02/sankou1.pdf",
+      "fdma-yobou_jisshi_taisei-20261104-002:https://www.fdma.go.jp/singi_kento/kento/items/post-203/02/sankou2.pdf",
+      "fdma-yobou_jisshi_taisei-20261104-002:https://www.fdma.go.jp/singi_kento/kento/items/post-203/02/sankou3.pdf",
+      "fdma-yobou_jisshi_taisei-20261104-002:https://www.fdma.go.jp/singi_kento/kento/items/post-203/02/sankou4.pdf",
+      "fdma-yobou_jisshi_taisei-20261104-002:https://www.fdma.go.jp/singi_kento/kento/items/post-203/02/sankou5.pdf",
+      "fdma-yobou_jisshi_taisei-20261104-002:https://www.fdma.go.jp/singi_kento/kento/items/post-203/02/sankou6.pdf",
+      "fdma-yobou_jisshi_taisei-20261104-002:https://www.fdma.go.jp/singi_kento/kento/items/post-203/02/shidai.pdf",
+      "fdma-yobou_jisshi_taisei-20261104-002:https://www.fdma.go.jp/singi_kento/kento/items/post-203/02/shiryou1.pdf",
+      "fdma-yobou_jisshi_taisei-20261104-002:https://www.fdma.go.jp/singi_kento/kento/items/post-203/02/shiryou2.pdf",
       "fsa-ai_onchain-20260930-001:https://www.fsa.go.jp/singi/ai_onchain/gijiroku/20260930.html",
       "fsa-ai_onchain-20260930-001:https://www.fsa.go.jp/singi/ai_onchain/shiryou/20260930/01.pdf",
       "fsa-ai_onchain-20260930-001:https://www.fsa.go.jp/singi/ai_onchain/shiryou/20260930/02.pdf",
@@ -75068,6 +75180,15 @@
       "fsc-honkaigi-20261027-1040:https://www.fsc.go.jp/fsciis/attachedFile/download?retrievalId=kai20261027fsc&fileId=101",
       "fsc-honkaigi-20261027-1040:https://www.fsc.go.jp/fsciis/attachedFile/download?retrievalId=kai20261027fsc&fileId=200",
       "fsc-honkaigi-20261027-1040:https://www.fsc.go.jp/fsciis/attachedFile/download?retrievalId=kai20261027fsc&fileId=900",
+      "fsc-honkaigi-20261110-1041:https://www.fsc.go.jp/fsciis/attachedFile/download?retrievalId=kai20261110fsc&fileId=010",
+      "fsc-honkaigi-20261110-1041:https://www.fsc.go.jp/fsciis/attachedFile/download?retrievalId=kai20261110fsc&fileId=020",
+      "fsc-honkaigi-20261110-1041:https://www.fsc.go.jp/fsciis/attachedFile/download?retrievalId=kai20261110fsc&fileId=100",
+      "fsc-honkaigi-20261110-1041:https://www.fsc.go.jp/fsciis/attachedFile/download?retrievalId=kai20261110fsc&fileId=200",
+      "fsc-honkaigi-20261110-1041:https://www.fsc.go.jp/fsciis/attachedFile/download?retrievalId=kai20261110fsc&fileId=300",
+      "fsc-honkaigi-20261110-1041:https://www.fsc.go.jp/fsciis/attachedFile/download?retrievalId=kai20261110fsc&fileId=401",
+      "fsc-honkaigi-20261110-1041:https://www.fsc.go.jp/fsciis/attachedFile/download?retrievalId=kai20261110fsc&fileId=402",
+      "fsc-honkaigi-20261110-1041:https://www.fsc.go.jp/fsciis/attachedFile/download?retrievalId=kai20261110fsc&fileId=500",
+      "fsc-honkaigi-20261110-1041:https://www.fsc.go.jp/fsciis/attachedFile/download?retrievalId=kai20261110fsc&fileId=900",
       "fsc-hyoukagijyutukikaku_wg-20200625-017:https://www.fsc.go.jp/fsciis/attachedFile/download?retrievalId=kai20200625so1&fileId=510",
       "fsc-hyoukagijyutukikaku_wg-20260817-038:https://www.fsc.go.jp/fsciis/attachedFile/download?retrievalId=kai20260817so1&fileId=410",
       "fsc-hyoukagijyutukikaku_wg-20261002-039:https://www.fsc.go.jp/fsciis/attachedFile/download?retrievalId=kai20261002so1&fileId=010",
@@ -76681,6 +76802,26 @@
       "jfa-suisan_kanri-20260323-144:https://www.jfa.maff.go.jp/j/council/seisaku/kanri/attach/pdf/index-69.pdf",
       "jfa-suisan_kanri-20260518-145:https://www.jfa.maff.go.jp/j/council/seisaku/kanri/attach/pdf/index-70.pdf",
       "jfa-suisan_kanri-20260611-146:https://www.jfa.maff.go.jp/j/council/seisaku/kanri/attach/pdf/index-71.pdf",
+      "jfa-suisan_kanri-20261113-147:https://www.jfa.maff.go.jp/j/council/seisaku/kanri/attach/pdf/261113-1.pdf",
+      "jfa-suisan_kanri-20261113-147:https://www.jfa.maff.go.jp/j/council/seisaku/kanri/attach/pdf/261113-10.pdf",
+      "jfa-suisan_kanri-20261113-147:https://www.jfa.maff.go.jp/j/council/seisaku/kanri/attach/pdf/261113-11.pdf",
+      "jfa-suisan_kanri-20261113-147:https://www.jfa.maff.go.jp/j/council/seisaku/kanri/attach/pdf/261113-12.pdf",
+      "jfa-suisan_kanri-20261113-147:https://www.jfa.maff.go.jp/j/council/seisaku/kanri/attach/pdf/261113-13.pdf",
+      "jfa-suisan_kanri-20261113-147:https://www.jfa.maff.go.jp/j/council/seisaku/kanri/attach/pdf/261113-14.pdf",
+      "jfa-suisan_kanri-20261113-147:https://www.jfa.maff.go.jp/j/council/seisaku/kanri/attach/pdf/261113-15.pdf",
+      "jfa-suisan_kanri-20261113-147:https://www.jfa.maff.go.jp/j/council/seisaku/kanri/attach/pdf/261113-16.pdf",
+      "jfa-suisan_kanri-20261113-147:https://www.jfa.maff.go.jp/j/council/seisaku/kanri/attach/pdf/261113-17.pdf",
+      "jfa-suisan_kanri-20261113-147:https://www.jfa.maff.go.jp/j/council/seisaku/kanri/attach/pdf/261113-18.pdf",
+      "jfa-suisan_kanri-20261113-147:https://www.jfa.maff.go.jp/j/council/seisaku/kanri/attach/pdf/261113-19.pdf",
+      "jfa-suisan_kanri-20261113-147:https://www.jfa.maff.go.jp/j/council/seisaku/kanri/attach/pdf/261113-2.pdf",
+      "jfa-suisan_kanri-20261113-147:https://www.jfa.maff.go.jp/j/council/seisaku/kanri/attach/pdf/261113-20.pdf",
+      "jfa-suisan_kanri-20261113-147:https://www.jfa.maff.go.jp/j/council/seisaku/kanri/attach/pdf/261113-3.pdf",
+      "jfa-suisan_kanri-20261113-147:https://www.jfa.maff.go.jp/j/council/seisaku/kanri/attach/pdf/261113-4.pdf",
+      "jfa-suisan_kanri-20261113-147:https://www.jfa.maff.go.jp/j/council/seisaku/kanri/attach/pdf/261113-5.pdf",
+      "jfa-suisan_kanri-20261113-147:https://www.jfa.maff.go.jp/j/council/seisaku/kanri/attach/pdf/261113-6.pdf",
+      "jfa-suisan_kanri-20261113-147:https://www.jfa.maff.go.jp/j/council/seisaku/kanri/attach/pdf/261113-7.pdf",
+      "jfa-suisan_kanri-20261113-147:https://www.jfa.maff.go.jp/j/council/seisaku/kanri/attach/pdf/261113-8.pdf",
+      "jfa-suisan_kanri-20261113-147:https://www.jfa.maff.go.jp/j/council/seisaku/kanri/attach/pdf/261113-9.pdf",
       "jfa-suisan_kikaku-20160624-060:https://www.jfa.maff.go.jp/j/council/seisaku/kikaku/attach/pdf/index-1.pdf",
       "jfa-suisan_kikaku-20160713-061:https://www.jfa.maff.go.jp/j/council/seisaku/kikaku/attach/pdf/index-2.pdf",
       "jfa-suisan_kikaku-20190404-080:https://www.jfa.maff.go.jp/j/council/seisaku/kikaku/attach/pdf/index-10.pdf",
@@ -76790,6 +76931,7 @@
       "jfa-umigyo_kyougikai-20260122-003:https://www.jfa.maff.go.jp/j/keikaku/attach/pdf/umigyo_kyougikai-25.pdf",
       "jfa-umigyo_kyougikai-20260122-003:https://www.jfa.maff.go.jp/j/keikaku/attach/pdf/umigyo_kyougikai-26.pdf",
       "maff-648-20260428-001:https://www.maff.go.jp/j/chikusan/kikaku/lin/l_tiku_manage/attach/pdf/index-5.pdf",
+      "maff-654-20261008-008:https://www.maff.go.jp/j/council/kaihatu/08/attach/pdf/index-1.pdf",
       "maff-656-20160615-001:https://www.maff.go.jp/nval/syonin_sinsa/koenshiryo/R5_kanrishakoshu44_shoninshinsei.pdf",
       "maff-656-20160615-001:https://www.maff.go.jp/nval/syonin_sinsa/koenshiryo/pdf/160809_dokokihaishi.pdf",
       "maff-656-20160615-001:https://www.maff.go.jp/nval/syonin_sinsa/koenshiryo/pdf/161109_kenshukai_taigaishin.pdf",
@@ -76900,6 +77042,8 @@
       "maff-659-20230313-102:https://www.maff.go.jp/j/council/seisaku/kikaku/bukai/attach/pdf/230310-4.pdf",
       "maff-659-20230313-102:https://www.maff.go.jp/j/council/seisaku/kikaku/bukai/attach/pdf/230310-5.pdf",
       "maff-659-20230313-102:https://www.maff.go.jp/j/council/seisaku/kikaku/bukai/attach/pdf/230310-6.pdf",
+      "maff-659-20261110-129:https://www.maff.go.jp/j/council/seisaku/kikaku/bukai/261110.html",
+      "maff-659-20261110-129:https://www.maff.go.jp/j/council/seisaku/kikaku/bukai/attach/pdf/index-123.pdf",
       "maff-662-20070730-s01:https://www.maff.go.jp/j/council/seisaku/syokuryo/250730/attach/pdf/070730-1.pdf",
       "maff-662-20070919-s01:https://www.maff.go.jp/j/council/seisaku/250919/attach/pdf/070919-1.pdf",
       "maff-662-20071031-s01:https://www.maff.go.jp/j/council/seisaku/251031/attach/pdf/071031-1.pdf",
@@ -89242,6 +89386,12 @@
       "mhlw-1013-20050406-004:https://www.mhlw.go.jp/shingi/2005/04/dl/s0406-4b1.pdf",
       "mhlw-1013-20050406-004:https://www.mhlw.go.jp/shingi/2005/04/dl/s0406-4b2.pdf",
       "mhlw-1013-20050406-004:https://www.mhlw.go.jp/shingi/2005/04/dl/s0406-4c.pdf",
+      "mhlw-1014-20261111-251:https://www.mhlw.go.jp/content/10808000/001768255.pdf",
+      "mhlw-1014-20261111-251:https://www.mhlw.go.jp/content/10808000/001768256.pdf",
+      "mhlw-1017-20261111-082:https://www.mhlw.go.jp/content/10808000/001768252.pdf",
+      "mhlw-1017-20261111-082:https://www.mhlw.go.jp/content/10808000/001768253.pdf",
+      "mhlw-1019-20261111-077:https://www.mhlw.go.jp/content/10808000/001768257.pdf",
+      "mhlw-1019-20261111-077:https://www.mhlw.go.jp/content/10808000/001768258.pdf",
       "mhlw-1022-20060913-002:https://www.mhlw.go.jp/content/shingi___2006___09___txt___s0913-3.txt",
       "mhlw-1022-20060913-008:https://www.mhlw.go.jp/shingi/2006/09/dl/s0913-7a.pdf",
       "mhlw-1022-20060913-008:https://www.mhlw.go.jp/shingi/2006/09/dl/s0913-7b.pdf",
@@ -89507,6 +89657,20 @@
       "mhlw-2862-20111122-002:https://www.mhlw.go.jp/content/10905750/001625544.pdf",
       "mhlw-2862-20111122-002:https://www.mhlw.go.jp/content/10905750/001625545.pdf",
       "mhlw-2862-20111122-002:https://www.mhlw.go.jp/content/10905750/001625546.pdf",
+      "mhlw-2866-20251226-009:https://www.mhlw.go.jp/stf/newpage_76799.html",
+      "mhlw-2866-20260123-010:https://www.mhlw.go.jp/stf/newpage_69470.html",
+      "mhlw-2866-20260213-011:https://www.mhlw.go.jp/stf/newpage_70360.html",
+      "mhlw-2866-20260227-012:https://www.mhlw.go.jp/stf/newpage_70963.html",
+      "mhlw-2866-20260313-013:https://www.mhlw.go.jp/stf/newpage_71580.html",
+      "mhlw-2866-20260324-014:https://www.mhlw.go.jp/stf/newpage_72481.html",
+      "mhlw-2866-20260424-001:https://www.mhlw.go.jp/stf/newpage_72703.html",
+      "mhlw-2866-20260508-002:https://www.mhlw.go.jp/stf/newpage_73172.html",
+      "mhlw-2866-20260612-003:https://www.mhlw.go.jp/stf/newpage_73627.html",
+      "mhlw-2866-20260619-004:https://www.mhlw.go.jp/stf/newpage_73865.html",
+      "mhlw-2866-20260703-005:https://www.mhlw.go.jp/stf/newpage_74058.html",
+      "mhlw-2866-20260717-006:https://www.mhlw.go.jp/stf/newpage_74566.html",
+      "mhlw-2866-20260807-007:https://www.mhlw.go.jp/stf/newpage_75879.html",
+      "mhlw-2866-20260925-008:https://www.mhlw.go.jp/stf/newpage_76554.html",
       "mhlw-2876-20100802-002:https://www.mhlw.go.jp/content/10905750/001613703.pdf",
       "mhlw-2876-20100802-002:https://www.mhlw.go.jp/content/10905750/001613704.pdf",
       "mhlw-2876-20100802-002:https://www.mhlw.go.jp/content/10905750/001613705.pdf",
@@ -89841,6 +90005,7 @@
       "mhlw-794-20240328-s10:https://www.mhlw.go.jp/content/12401000/001236826.pdf",
       "mhlw-798-20191227-s85:https://www.mhlw.go.jp/content/12501000/000581907.pdf",
       "mhlw-799-20180629-s28:https://www.mhlw.go.jp/content/12500000/001523355.pdf",
+      "mhlw-806-20260729-057:https://www.mhlw.go.jp/stf/iryoukansatu.shingikai57.html",
       "mhlw-808-20191204-s13:https://www.mhlw.go.jp/content/12300000/000573424.pdf",
       "mhlw-810-20070904-008:https://www.mhlw.go.jp/shingi/2007/09/dl/s0904-3a.pdf",
       "mhlw-810-20070904-008:https://www.mhlw.go.jp/shingi/2007/09/dl/s0904-3b.pdf",
@@ -90078,6 +90243,21 @@
       "mhlw-867-20080229-009:https://www.mhlw.go.jp/shingi/2008/07/dl/s0710-11j.pdf",
       "mhlw-867-20080229-009:https://www.mhlw.go.jp/shingi/2008/07/dl/s0710-11k.pdf",
       "mhlw-871-20141008-s06:https://www.mhlw.go.jp/file/05-Shingikai-10601000-Daijinkanboukouseikagakuka-Kouseikagakuka/0000060761.pdf",
+      "mhlw-872-20261111-083:https://www.mhlw.go.jp/content/10900000/001768169.pdf",
+      "mhlw-872-20261111-083:https://www.mhlw.go.jp/content/10900000/001768170.pdf",
+      "mhlw-872-20261111-083:https://www.mhlw.go.jp/content/10900000/001768171.pdf",
+      "mhlw-872-20261111-083:https://www.mhlw.go.jp/content/10900000/001768172.pdf",
+      "mhlw-872-20261111-083:https://www.mhlw.go.jp/content/10900000/001768173.pdf",
+      "mhlw-872-20261111-083:https://www.mhlw.go.jp/content/10900000/001768174.pdf",
+      "mhlw-872-20261111-083:https://www.mhlw.go.jp/content/10900000/001768175.pdf",
+      "mhlw-872-20261111-083:https://www.mhlw.go.jp/content/10900000/001768178.pdf",
+      "mhlw-872-20261111-083:https://www.mhlw.go.jp/content/10900000/001768179.pdf",
+      "mhlw-872-20261111-083:https://www.mhlw.go.jp/content/10900000/001768180.pdf",
+      "mhlw-872-20261111-083:https://www.mhlw.go.jp/content/10900000/001768181.pdf",
+      "mhlw-872-20261111-083:https://www.mhlw.go.jp/content/10900000/001768182.pdf",
+      "mhlw-872-20261111-083:https://www.mhlw.go.jp/content/10900000/001768183.pdf",
+      "mhlw-872-20261111-083:https://www.mhlw.go.jp/content/10900000/001768184.pdf",
+      "mhlw-872-20261111-083:https://www.mhlw.go.jp/content/10900000/001768185.pdf",
       "mhlw-873-20090618-009:https://www.mhlw.go.jp/shingi/2009/07/dl/s0730-13a.pdf",
       "mhlw-873-20090618-009:https://www.mhlw.go.jp/shingi/2009/07/dl/s0730-13b.pdf",
       "mhlw-873-20090618-009:https://www.mhlw.go.jp/shingi/2009/07/dl/s0730-13c.pdf",
@@ -90298,6 +90478,11 @@
       "mhlw-903-20051114-014:https://www.mhlw.go.jp/content/shingi___2005___11___txt___s1114-1.txt",
       "mhlw-904-20210709-s11:https://www.mhlw.go.jp/content/10601000/000806871.pdf",
       "mhlw-906-20231002-s15:https://www.mhlw.go.jp/content/10901000/001151829.pdf",
+      "mhlw-908-20261109-121:https://www.mhlw.go.jp/content/11201250/001766051.pdf",
+      "mhlw-908-20261109-121:https://www.mhlw.go.jp/content/11201250/001766060.pdf",
+      "mhlw-908-20261109-121:https://www.mhlw.go.jp/content/11201250/001766061.pdf",
+      "mhlw-908-20261109-121:https://www.mhlw.go.jp/content/11201250/001767222.pdf",
+      "mhlw-908-20261109-121:https://www.mhlw.go.jp/content/11201250/001767223.pdf",
       "mhlw-911-20170130-003:https://www.mhlw.go.jp/file/05-Shingikai-10601000-Daijinkanboukouseikagakuka-Kouseikagakuka/s2.doc",
       "mhlw-911-20170130-003:https://www.mhlw.go.jp/file/05-Shingikai-10601000-Daijinkanboukouseikagakuka-Kouseikagakuka/s3.doc",
       "mhlw-913-20181019-004:https://www.mhlw.go.jp/file/05-Shingikai-10601000-Daijinkanboukouseikagakuka-Kouseikagakuka/0000199963.pdf",
@@ -91466,6 +91651,7 @@
       "mhlw-hosho_toukei-20260615-s01:https://www.mhlw.go.jp/stf/newpage_71728.html",
       "mhlw-hosho_toukei-20260615-s01:https://www.mhlw.go.jp/stf/shingi2/0000169220_00001.html",
       "mhlw-hosho_toukei-20260615-s01:https://www.mhlw.go.jp/stf/shingi2/0000172383_00006.html",
+      "mhlw-ishiwata_higai_shinsa-20261015-038:https://www.mhlw.go.jp/stf/newpage_76765.html",
       "mhlw-ishiwata_higai_shinsa-20261112-039:https://www.mhlw.go.jp/content/11201000/001228377.pdf",
       "mhlw-ishiwata_higai_shinsa-20261112-039:https://www.mhlw.go.jp/content/11201000/001269068.pdf",
       "mhlw-ishiwata_higai_shinsa-20261112-039:https://www.mhlw.go.jp/content/11201000/001488351.pdf",
@@ -92325,6 +92511,11 @@
       "mhlw-shakai_hosho-20100223-020:https://www.mhlw.go.jp/shingi/2010/02/dl/s0223-4l.pdf",
       "mhlw-shakai_hosho-20170129-s36:https://www.mhlw.go.jp/content/12601000/001697195.pdf",
       "mhlw-shakai_hosho_iryou_hoken-20251226-s34:https://www.mhlw.go.jp/content/12401000/001623089.pdf",
+      "mhlw-shakai_hosho_iryou_hoken-20261111-220:https://www.mhlw.go.jp/content/12401000/001768121.pdf",
+      "mhlw-shakai_hosho_iryou_hoken-20261111-220:https://www.mhlw.go.jp/content/12401000/001768122.pdf",
+      "mhlw-shakai_hosho_iryou_hoken-20261111-220:https://www.mhlw.go.jp/content/12401000/001768123.pdf",
+      "mhlw-shakai_hosho_iryou_hoken-20261111-220:https://www.mhlw.go.jp/content/12401000/001768124.pdf",
+      "mhlw-shakai_hosho_iryou_hoken-20261111-220:https://www.mhlw.go.jp/content/12401000/001768125.pdf",
       "mhlw-shakai_hosho_kaigo_hoken-20221220-s33:https://www.mhlw.go.jp/content/12300000/001027165.pdf",
       "mhlw-shakai_hosho_kaigo_hoken-20221220-s33:https://www.mhlw.go.jp/content/12300000/001027166.pdf",
       "mhlw-shakai_hosho_kaigo_hoken-20221220-s33:https://www.mhlw.go.jp/content/12300000/001027168.pdf",
@@ -95008,6 +95199,9 @@
       "mod-shisetsu-20240423-010:https://www.mod.go.jp/j/policy/agenda/meeting/shi-chu/pdf/10-3.pdf",
       "mod-shisetsu-20240423-010:https://www.mod.go.jp/j/policy/agenda/meeting/shi-chu/pdf/giji_10.pdf",
       "moe-2961-20261030-001:https://www.env.go.jp/press/press_05740.html",
+      "moe-2961-20261111-002:https://www.env.go.jp/council/content/03recycle03/000441041.pdf",
+      "moe-2961-20261111-002:https://www.env.go.jp/council/content/03recycle03/000441042.pdf",
+      "moe-2961-20261111-002:https://www.env.go.jp/council/content/03recycle03/000441043.pdf",
       "moe-2970-20230228-001:https://policies.env.go.jp/nature/biodiversity/j-gbf/committee/generalmeeting_001/pdf/j-gbf_sokai1_1-1.pdf",
       "moe-2970-20230228-001:https://policies.env.go.jp/nature/biodiversity/j-gbf/committee/generalmeeting_001/pdf/j-gbf_sokai1_1-2.pdf",
       "moe-2970-20230228-001:https://policies.env.go.jp/nature/biodiversity/j-gbf/committee/generalmeeting_001/pdf/j-gbf_sokai1_1-3.pdf",
@@ -96702,6 +96896,9 @@
       "mof-1136-20260730-003:https://www.mof.go.jp/about_mof/councils/customs_foreign_exchange/sub-of_customs/proceedings_tokusyu/material/20260730/kanb20260730siryo2-2.pdf",
       "mof-1136-20260730-003:https://www.mof.go.jp/about_mof/councils/customs_foreign_exchange/sub-of_customs/proceedings_tokusyu/material/20260730/kanb20260730siryo2-3.pdf",
       "mof-1150-20220613-001:https://www.mof.go.jp/about_mof/councils/study_gov_debt_management/d20220613.pdf",
+      "mof-1150-20261105-012:https://www.mof.go.jp/about_mof/councils/study_gov_debt_management/d20261105-1.pdf",
+      "mof-1150-20261105-012:https://www.mof.go.jp/about_mof/councils/study_gov_debt_management/d20261105-2.pdf",
+      "mof-1150-20261105-012:https://www.mof.go.jp/about_mof/councils/study_gov_debt_management/d20261105-3.pdf",
       "mof-1161-20230531-007:https://www.mof.go.jp/about_mof/councils/jishin_kenkyukai/proceedings/material_20230531_00.pdf",
       "mof-1161-20230531-007:https://www.mof.go.jp/about_mof/councils/jishin_kenkyukai/proceedings/material_20230531_01.pdf",
       "mof-1161-20230531-007:https://www.mof.go.jp/about_mof/councils/jishin_kenkyukai/proceedings/material_20230531_02.pdf",
@@ -101928,56 +102125,29 @@
     }
   },
   "meetingCrawlMeta": {
-    "aca-1734-20030630-s63": {
-      "discoveredAt": "2026/11/13 22:52"
-    },
     "aca-1734-20040109-s46": {
       "discoveredAt": "2026/11/07 07:13"
-    },
-    "aca-1734-20041007-s61": {
-      "discoveredAt": "2026/11/13 22:52"
     },
     "aca-1734-20050113-s44": {
       "discoveredAt": "2026/11/07 07:13"
     },
-    "aca-1734-20050601-s59": {
-      "discoveredAt": "2026/11/13 22:52"
-    },
     "aca-1734-20060118-s42": {
       "discoveredAt": "2026/11/07 07:13"
-    },
-    "aca-1734-20060622-s57": {
-      "discoveredAt": "2026/11/13 22:52"
     },
     "aca-1734-20061025-s40": {
       "discoveredAt": "2026/11/07 07:13"
     },
-    "aca-1734-20071122-s55": {
-      "discoveredAt": "2026/11/13 22:52"
-    },
     "aca-1734-20071210-s38": {
       "discoveredAt": "2026/11/07 07:13"
-    },
-    "aca-1734-20080625-s53": {
-      "discoveredAt": "2026/11/13 22:52"
     },
     "aca-1734-20090115-s36": {
       "discoveredAt": "2026/11/07 07:13"
     },
-    "aca-1734-20090514-s51": {
-      "discoveredAt": "2026/11/13 22:52"
-    },
     "aca-1734-20090529-s34": {
       "discoveredAt": "2026/11/07 07:13"
     },
-    "aca-1734-20100607-s49": {
-      "discoveredAt": "2026/11/13 22:52"
-    },
     "aca-1734-20100929-s32": {
       "discoveredAt": "2026/11/07 07:13"
-    },
-    "aca-1734-20110920-s47": {
-      "discoveredAt": "2026/11/13 22:52"
     },
     "aca-1734-20111019-s30": {
       "discoveredAt": "2026/11/07 07:13"
@@ -101985,41 +102155,20 @@
     "aca-1734-20120531-s28": {
       "discoveredAt": "2026/11/07 07:13"
     },
-    "aca-1734-20120830-s45": {
-      "discoveredAt": "2026/11/13 22:52"
-    },
     "aca-1734-20130626-s26": {
       "discoveredAt": "2026/11/07 07:13"
-    },
-    "aca-1734-20140310-s43": {
-      "discoveredAt": "2026/11/13 22:52"
     },
     "aca-1734-20140703-s24": {
       "discoveredAt": "2026/11/07 07:13"
     },
-    "aca-1734-20140901-s41": {
-      "discoveredAt": "2026/11/13 22:52"
-    },
     "aca-1734-20150710-s22": {
       "discoveredAt": "2026/11/07 07:13"
-    },
-    "aca-1734-20160215-s39": {
-      "discoveredAt": "2026/11/13 22:52"
     },
     "aca-1734-20161021-s20": {
       "discoveredAt": "2026/11/07 07:13"
     },
-    "aca-1734-20170314-s37": {
-      "discoveredAt": "2026/11/13 22:52"
-    },
     "aca-1734-20171124-s18": {
       "discoveredAt": "2026/11/07 07:13"
-    },
-    "aca-1734-20171227-s35": {
-      "discoveredAt": "2026/11/13 22:52"
-    },
-    "aca-1734-20180709-s33": {
-      "discoveredAt": "2026/11/13 22:52"
     },
     "aca-1734-20190130-s16": {
       "discoveredAt": "2026/11/07 07:13"
@@ -102030,20 +102179,8 @@
     "aca-1734-20200819-s12": {
       "discoveredAt": "2026/11/07 07:13"
     },
-    "aca-1734-20210308-s31": {
-      "discoveredAt": "2026/11/13 22:52"
-    },
-    "aca-1734-20211025-s29": {
-      "discoveredAt": "2026/11/13 22:52"
-    },
     "aca-1734-20220126-s10": {
       "discoveredAt": "2026/11/07 07:13"
-    },
-    "aca-1734-20220906-s08": {
-      "discoveredAt": "2026/11/07 07:13"
-    },
-    "aca-1734-20221205-s27": {
-      "discoveredAt": "2026/11/13 22:52"
     },
     "aca-1734-20230222-s26": {
       "discoveredAt": "2026/11/08 20:03"
@@ -106230,12 +106367,6 @@
     },
     "cfa-care_needs-20261112-008": {
       "discoveredAt": "2026/11/13 22:53"
-    },
-    "cfa-gyakutai_hogojirei-20230331-s11": {
-      "discoveredAt": "2026/11/13 22:55"
-    },
-    "cfa-gyakutai_hogojirei-20231027-s08": {
-      "discoveredAt": "2026/11/07 07:14"
     },
     "cfa-gyakutai_hogojirei-20261204-135": {
       "discoveredAt": "2026/11/13 22:55"
@@ -120922,8 +121053,7 @@
       "discoveredAt": "2026/09/19 18:33"
     },
     "mhlw-920-20261113-003": {
-      "discoveredAt": "2026/11/07 08:06",
-      "lastUpdatedFromCrawl": "2026/11/13 23:24"
+      "discoveredAt": "2026/11/07 08:06"
     },
     "mhlw-924-20210827-002": {
       "discoveredAt": "2026/11/07 08:07"

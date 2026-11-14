@@ -1977,7 +1977,8 @@ def extract_actual_subpage_links(html, target_url, rule=None, return_meta=False)
             if is_subpage_by_text or has_strong_url_kw:
                 is_subpage_by_url = True
 
-        if is_subpage_by_text or is_subpage_by_url or is_strong_meeting_url:
+        strict_custom = bool(custom_re and rule and rule.get("strict_subpage_pattern"))
+        if is_subpage_by_url or (not strict_custom and (is_subpage_by_text or is_strong_meeting_url)):
             seen.add(abs_clean)
             candidates.append(abs_url)
 
@@ -2056,9 +2057,9 @@ def _crawl_subpages(target_url, html, rule, quirk_note, pdf_pattern, existing_ur
                 sub_page_title = sub_soup.title.string.strip() if sub_soup.title and sub_soup.title.string else ""
                 h_texts = [h.get_text(" ", strip=True) for h in sub_soup.find_all(['h1', 'h2'])]
                 if (
-                    is_preliminary_notice_page(sub_url, sub_title) or
-                    is_preliminary_notice_page(sub_url, sub_page_title) or
-                    any(is_preliminary_notice_page(sub_url, h) for h in h_texts)
+                    is_preliminary_notice_page(sub_url, sub_title, check_generic=True) or
+                    is_preliminary_notice_page(sub_url, sub_page_title, check_generic=False) or
+                    any(is_preliminary_notice_page(sub_url, h, check_generic=False) for h in h_texts)
                 ):
                     subpage_breakdown['preliminary_notice'] += 1
                     continue
@@ -3093,7 +3094,7 @@ def is_generic_index_url(url, title="", ministry=None, rule=None):
 
     return False
 
-def is_preliminary_notice_page(url, title=""):
+def is_preliminary_notice_page(url, title="", check_generic=True):
     """
     開催案内・事前告知ページ（例: .../kaisai/index.html, .../annai/..., .../kaisaiannai/..., 〜の開催について）や資料未添付の議事要旨・議事録単体ページであるかを判定。
     これらは資料が掲載される会議ページではないため、独立した会議として追加しない（AGENTS.md 第11条・第12条）。
@@ -3152,7 +3153,7 @@ def is_preliminary_notice_page(url, title=""):
     ]) and not re.search(r'第\s*\d+\s*回', t_raw):
         return True
 
-    if url and is_generic_index_url(url, t_raw):
+    if check_generic and url and is_generic_index_url(url, t_raw):
         return True
 
     return False

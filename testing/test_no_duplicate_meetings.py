@@ -577,6 +577,7 @@ def run_test(data=None):
                 or all(cid.startswith('mof-') for cid in c_ids)
                 or all(cid.startswith('moj-') or cid.startswith('isa-') for cid in c_ids)
                 or all(cid.startswith('npa-') for cid in c_ids)
+                or all(cid.startswith('cfa-') for cid in c_ids)
             )
             ministries = {cid.split('-')[0] for cid in c_ids}
             is_joint_title = any('合同' in n or '共同' in n for n in names)
