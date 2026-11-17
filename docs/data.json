@@ -6078,7 +6078,8 @@
       "category": "STUDY",
       "name": "今後のデジタル人材育成政策に関する検討会",
       "officialUrl": "https://www.digital.go.jp/councils/digital-talent-development-policy",
-      "pastYearCount": 2
+      "pastYearCount": 3,
+      "isNewlyDiscovered": true
     },
     {
       "id": "digital-kikan_system_touitsu",
@@ -18180,6 +18181,48 @@
       "date": "2026/11/18",
       "officialUrl": "https://www.mhlw.go.jp/stf/shingi-rousei_00001.html",
       "materials": []
+    },
+    {
+      "id": "digital-jinzai_ikusei-20261117-003",
+      "councilId": "digital-jinzai_ikusei",
+      "name": "今後のデジタル人材育成政策に関する検討会(第3回)",
+      "date": "2026/11/17",
+      "officialUrl": "https://www.digital.go.jp/councils/digital-talent-development-policy/e22fb804-ff1f-4e5f-9aa0-ee356ebf3967",
+      "isNewlyDiscovered": true,
+      "materials": [
+        {
+          "name": "議事次第",
+          "url": "https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/e22fb804-ff1f-4e5f-9aa0-ee356ebf3967/0f68526e/20261117_council_digital-talent-development-policy_agenda.pdf"
+        },
+        {
+          "name": "資料1 AI人材に関する検討状況について",
+          "url": "https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/e22fb804-ff1f-4e5f-9aa0-ee356ebf3967/9685838a/20261117_council_digital-talent-development-policy_documents_01.pdf"
+        },
+        {
+          "name": "資料2 【今後のデジタル人材政策に関する検討会】サイバーセキュリティ人材の育成について",
+          "url": "https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/e22fb804-ff1f-4e5f-9aa0-ee356ebf3967/dea446bd/20261117_council_digital-talent-development-policy_documents_02.pdf"
+        },
+        {
+          "name": "資料3 内閣府男女共同参画局説明資料 デジタル人材育成に関する取組について",
+          "url": "https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/e22fb804-ff1f-4e5f-9aa0-ee356ebf3967/37dfe092/20261117_council_digital-talent-development-policy_documents_03.pdf"
+        },
+        {
+          "name": "資料4 検討会での意見や社会経済情勢の変化等を踏まえた論点整理",
+          "url": "https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/e22fb804-ff1f-4e5f-9aa0-ee356ebf3967/96408d0b/20261117_council_digital-talent-development-policy_documents_04.pdf"
+        },
+        {
+          "name": "資料5 今後の検討会のスケジュール",
+          "url": "https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/e22fb804-ff1f-4e5f-9aa0-ee356ebf3967/bc90c0a2/20261117_council_digital-talent-development-policy_documents_05.pdf"
+        },
+        {
+          "name": "参考1 検討会(第1回・第2回)における主な意見",
+          "url": "https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/e22fb804-ff1f-4e5f-9aa0-ee356ebf3967/6eaf4206/20261117_council_digital-talent-development-policy_documents_06.pdf"
+        },
+        {
+          "name": "参考2 第2回検討会における主な質問事項と回答",
+          "url": "https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/e22fb804-ff1f-4e5f-9aa0-ee356ebf3967/fba75a8b/20261117_council_digital-talent-development-policy_documents_07.pdf"
+        }
+      ]
     },
     {
       "id": "mhlw-rousei_roudoujouken-20261117-215",
@@ -217635,8 +217678,8 @@
     "cas-zensedai_hosyo",
     "mof-zaiseiseido_bunkakai"
   ],
-  "lastCrawlTime": "2026/11/16 00:39",
+  "lastCrawlTime": "2026/11/17 03:21",
   "hasArchive": true,
-  "totalMeetingsCount": 25097,
-  "totalMaterialsCount": 154918
+  "totalMeetingsCount": 25098,
+  "totalMaterialsCount": 154926
 }
