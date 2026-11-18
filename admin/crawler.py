@@ -1247,6 +1247,57 @@ _thread_local = threading.local()
 _ACTIVE_LOG_HANDLES = []
 _LOG_HANDLE_LOCK = threading.Lock()
 
+_waf_blocked_ministries = set()
+_WAF_BLOCK_LOCK = threading.Lock()
+
+
+def reset_waf_blocked_ministries():
+    """クロール開始時に WAF CHALLENGE BLOCKED による省庁遮断状態を初期化する"""
+    with _WAF_BLOCK_LOCK:
+        _waf_blocked_ministries.clear()
+
+
+def _resolve_ministry_for_fetch(url=None, ministry=None):
+    """fetch_url 呼び出し元コンテキストから対象省庁コードを解決する"""
+    raw = ministry or getattr(_thread_local, 'current_ministry', None)
+    if not raw:
+        return ""
+    return normalize_ministry_code(raw)
+
+
+def mark_ministry_waf_blocked(ministry_code):
+    """WAF CHALLENGE BLOCKED が発生した省庁を記録し、以降の同省庁アクセスを遮断する"""
+    if not ministry_code:
+        return
+    norm_min = normalize_ministry_code(ministry_code)
+    if not norm_min:
+        return
+    with _WAF_BLOCK_LOCK:
+        newly_blocked = norm_min not in _waf_blocked_ministries
+        _waf_blocked_ministries.add(norm_min)
+    if newly_blocked:
+        safe_emit_log(
+            f"  -> 🚫 [WAF MINISTRY BLOCK] 省庁 {norm_min} で [WAF CHALLENGE BLOCKED] を検知したため、"
+            f"以降は同一省庁へのアクセスを停止します。"
+        )
+
+
+def is_ministry_waf_blocked(ministry_code):
+    """指定省庁が現在のクロール実行中に WAF CHALLENGE BLOCKED で遮断済みか判定する"""
+    if not ministry_code:
+        return False
+    norm_min = normalize_ministry_code(ministry_code)
+    if not norm_min:
+        return False
+    with _WAF_BLOCK_LOCK:
+        return norm_min in _waf_blocked_ministries
+
+
+def get_waf_blocked_ministries():
+    """現在 WAF 遮断中の省庁コード一覧を返す"""
+    with _WAF_BLOCK_LOCK:
+        return sorted(_waf_blocked_ministries)
+
 def register_crawler_logfile(file_handle):
     """Drop 137: アクティブなクロールログファイルを登録し、fetch_url 等の全ログ透過性を保証する"""
     with _LOG_HANDLE_LOCK:
@@ -1345,11 +1396,16 @@ def _fetch_with_curl(url, timeout=12):
         safe_emit_log(f"  -> 🔴 [CURL FALLBACK ERROR] {url}: {e}")
     return None
 
-def fetch_url(url, timeout=12, max_retries=1, retry_count=0):
+def fetch_url(url, timeout=12, max_retries=1, retry_count=0, ministry=None):
     parsed_url = urllib.parse.urlparse(url)
     if parsed_url.scheme not in ("http", "https"):
         safe_emit_log(f"[ERROR] Invalid scheme: {url}")
         _thread_local.last_fetch_error = f"Invalid scheme: {url}"
+        return None
+
+    min_code = _resolve_ministry_for_fetch(url=url, ministry=ministry)
+    if min_code and is_ministry_waf_blocked(min_code):
+        _thread_local.last_fetch_error = f"WAF Blocked Skip (Ministry {min_code}): {url}"
         return None
 
     # CR-21, CR-26, CR-49: 同一ホストへの過密アクセス防止（スレッドセーフ動的レートリミット）
@@ -1370,10 +1426,12 @@ def fetch_url(url, timeout=12, max_retries=1, retry_count=0):
                     backoff_wait = 2.5 * (retry_count + 1)
                     safe_emit_log(f"  -> ⚠️ [WAF 202 CHALLENGE] {url}: 一時スロットリング検知。待機({backoff_wait:.1f}s)後に自動リトライします...")
                     time.sleep(backoff_wait)
-                    retry_res = fetch_url(url, timeout=timeout, max_retries=max_retries, retry_count=retry_count + 1)
+                    retry_res = fetch_url(url, timeout=timeout, max_retries=max_retries, retry_count=retry_count + 1, ministry=min_code)
                     if retry_res:
                         _thread_local.last_fetch_error = None
                         return retry_res
+                    if min_code and is_ministry_waf_blocked(min_code):
+                        return None
                 # Drop 78: WAF 202 チャレンジまたは JS チャレンジ画面検知時の curl フォールバック試行
                 curl_html = _fetch_with_curl(url, timeout=timeout)
                 if curl_html:
@@ -1382,6 +1440,8 @@ def fetch_url(url, timeout=12, max_retries=1, retry_count=0):
                     return curl_html
                 safe_emit_log(f"  -> 🔴 [WAF CHALLENGE BLOCKED] {url}: AWS/Cloudflare WAF challenge screen detected (Status: {response.status})")
                 _thread_local.last_fetch_error = f"WAF 202 Challenge: {url}" if response.status == 202 else f"WAF Challenge Blocked (Status {response.status}): {url}"
+                if min_code:
+                    mark_ministry_waf_blocked(min_code)
                 return None
             _thread_local.last_fetch_error = None
             return html
@@ -3974,6 +4034,7 @@ def run_meeting_crawler(progress_callback=None, stop_event=None, workers=4, rece
         data["lastCrawlTime"] = now_str
         save_data_json_with_backup(data)
 
+        reset_waf_blocked_ministries()
         rules = load_scraping_rules()
         url_rule_index = build_url_rule_index(rules)
         results = []
@@ -3982,6 +4043,8 @@ def run_meeting_crawler(progress_callback=None, stop_event=None, workers=4, rece
             "partial": 0,
             "failed": 0,
             "fetch_error": 0,
+            "waf_skipped": 0,
+            "waf_blocked_ministries": [],
             "new_meetings": 0,
             "stopped": False,
             "processed_councils": 0,
@@ -4021,6 +4084,19 @@ def run_meeting_crawler(progress_callback=None, stop_event=None, workers=4, rece
             pct = int((idx / max(total_councils, 1)) * 90)
             c_name = target.get("name", target.get("id"))
             c_min = target.get("ministry", "")
+            norm_min = normalize_ministry_code(c_min) if c_min else ""
+
+            if norm_min and is_ministry_waf_blocked(norm_min):
+                emit(f"▶ [{idx}/{total_councils}] [{c_min}] ⏭️ [WAF SKIP] {c_name}: 省庁 {norm_min} で既に [WAF CHALLENGE BLOCKED] が発生しているためアクセスをスキップします。")
+                with data_lock:
+                    stats["processed_councils"] += 1
+                    stats["waf_skipped"] += 1
+                    update_crawl_status(data, target["id"], None, f"WAF Blocked Skip (Ministry {norm_min})")
+                    processed_counter += 1
+                    if processed_counter % checkpoint_interval == 0:
+                        save_data_json_with_backup(data, create_backup=False)
+                emit("-" * 65)
+                return None
 
             emit(f"▶ [{idx}/{total_councils}] [{c_min}] HTTP GET: {c_name} ({target['url']})...", {
                 "type": "council_start",
@@ -4033,8 +4109,10 @@ def run_meeting_crawler(progress_callback=None, stop_event=None, workers=4, rece
                 "log_file": log_filepath
             })
 
+            prev_min = getattr(_thread_local, "current_ministry", None)
+            _thread_local.current_ministry = norm_min or None
             try:
-                html = fetch_url(target["url"])
+                html = fetch_url(target["url"], ministry=norm_min or None)
                 
                 if html:
                     c_id = target["id"]
@@ -4101,6 +4179,7 @@ def run_meeting_crawler(progress_callback=None, stop_event=None, workers=4, rece
                     processed_counter += 1
                 return None
             finally:
+                _thread_local.current_ministry = prev_min
                 emit("-" * 65)
 
         # 巡回実行ディスパッチ（直列 or ホスト単位マルチスレッド並行）
@@ -4146,6 +4225,10 @@ def run_meeting_crawler(progress_callback=None, stop_event=None, workers=4, rece
         emit(f"  🟡 部分成功 (partial):    {stats['partial']} 件")
         emit(f"  🔴 失敗 (failed):      {stats['failed']} 件")
         emit(f"  🔴 取得エラー:         {stats['fetch_error']} 件")
+        stats["waf_blocked_ministries"] = get_waf_blocked_ministries()
+        if stats.get("waf_skipped", 0) > 0 or stats["waf_blocked_ministries"]:
+            blocked_str = ", ".join(stats["waf_blocked_ministries"]) if stats["waf_blocked_ministries"] else "-"
+            emit(f"  ⏭️  WAF省庁スキップ:    {stats.get('waf_skipped', 0)} 件 (遮断省庁: {blocked_str})")
         emit(f"  📦 新規追加会議:       {stats['new_meetings']} 件")
         total_unconfirmed = get_unconfirmed_meetings_count(data)
         stats["unconfirmed_meetings"] = total_unconfirmed
@@ -4558,6 +4641,7 @@ def run_ministry_news_discovery(progress_callback=None, stop_event=None, ministr
         except Exception:
             pass
 
+        reset_waf_blocked_ministries()
         councils = data.get("councils", [])
         # Drop 133: 省庁ごとの前回クロール日時を crawlerConfig から取得
         crawler_cfg = data.setdefault("crawlerConfig", {})
@@ -4606,81 +4690,93 @@ def run_ministry_news_discovery(progress_callback=None, stop_event=None, ministr
 
             since_note = f" (探索基準日: {since_date} 以降)" if since_date else ""
             emit(f"\n--- [{min_code}] 新着情報・報道発表ポータル走査開始{since_note} ---")
-            for pdef in portal_defs:
-                resolved_urls = resolve_news_portal_urls(pdef)
-                for rurl in resolved_urls:
-                    emit(f"  走査中: {rurl} ({pdef.get('type')})")
-                    html = fetch_url(rurl, timeout=12)
-                    if not html:
-                        emit(f"    [WARN] フェッチ失敗: {rurl}")
-                        continue
-
-                    items = extract_news_items_from_html(html, rurl, min_code, pdef.get("type"), since_date=since_date)
-                    emit(f"    -> 会議関連お知らせ {len(items)} 件を検出")
-
-                    for item in items:
-                        matched_c, mtype = match_council_from_news_item(item, councils_by_url, councils_by_min)
-                        if not matched_c:
+            prev_min = getattr(_thread_local, "current_ministry", None)
+            _thread_local.current_ministry = min_code
+            try:
+                for pdef in portal_defs:
+                    if is_ministry_waf_blocked(min_code):
+                        emit(f"  ⏭️ [WAF SKIP] 省庁 {min_code} は WAF CHALLENGE BLOCKED により以降の新着ポータル走査をスキップします。")
+                        break
+                    resolved_urls = resolve_news_portal_urls(pdef)
+                    for rurl in resolved_urls:
+                        if is_ministry_waf_blocked(min_code):
+                            break
+                        emit(f"  走査中: {rurl} ({pdef.get('type')})")
+                        html = fetch_url(rurl, timeout=12, ministry=min_code)
+                        if not html:
+                            emit(f"    [WARN] フェッチ失敗: {rurl}")
                             continue
 
-                        cid = matched_c["id"]
-                        item_url = item["url"]
-                        item_title = item["title"]
+                        items = extract_news_items_from_html(html, rurl, min_code, pdef.get("type"), since_date=since_date)
+                        emit(f"    -> 会議関連お知らせ {len(items)} 件を検出")
 
-                        # 1. 厚労省 indexshingi または親ページの場合はピンポイントクロール
-                        if item.get("is_shingi_index") or item_url.rstrip("/") == matched_c.get("officialUrl", "").rstrip("/"):
-                            if cid not in detected_councils_to_crawl:
-                                detected_councils_to_crawl[cid] = (matched_c, f"{mtype} ({item_title})", item.get("date", ""))
-                            continue
+                        for item in items:
+                            if is_ministry_waf_blocked(min_code):
+                                break
+                            matched_c, mtype = match_council_from_news_item(item, councils_by_url, councils_by_min)
+                            if not matched_c:
+                                continue
 
-                        # 2. 記事URLがPDF直リンクまたは末端配付資料ページか確認
-                        if item_url.lower().endswith(".pdf"):
-                            dates = [item["date"]] if item.get("date") else extract_clean_dates_from_html(item_title)
-                            if dates and dates[0] != "2099/01/01":
-                                direct_meetings_to_add.append((matched_c, {
-                                    "subpageUrl": item_url,
-                                    "name": item_title,
-                                    "title": item_title,
-                                    "materials": [{"name": item_title, "url": item_url, "type": "pdf"}],
-                                    "extractedDates": dates,
-                                    "pageTitle": item_title
-                                }))
-                        else:
-                            # 記事ページをフェッチして配付資料が含まれるか確認
-                            art_html = fetch_url(item_url, timeout=10)
-                            if art_html:
-                                mats = parse_materials_from_html(art_html, item_url)
-                                art_soup = BeautifulSoup(art_html, "html.parser")
-                                h_tag = art_soup.find(["h1", "h2", "h3"]) or art_soup.title
-                                p_title = h_tag.get_text(strip=True) if h_tag else item_title
-                                art_dates = extract_clean_dates_from_html(art_html)
-                                clean_t = clean_meeting_title(p_title)
-                                if is_generic_title_text(clean_t) or clean_t == matched_c["name"]:
-                                    fallback_t = re.sub(r'の?(?:配[付布]資料|資料|議事録|議事次第)?(?:を?[公掲]開(?:しました)?)?$', '', item_title).strip()
-                                    fallback_t = re.sub(r'の?開催について$', '', fallback_t).strip()
-                                    clean_t = clean_meeting_title(fallback_t)
+                            cid = matched_c["id"]
+                            item_url = item["url"]
+                            item_title = item["title"]
 
-                                
-                                # Drop 75: 既存開催回タイトル幹との類似度検証
-                                existing_meets_for_c = [m for m in meetings if m.get("councilId") == cid]
-                                if is_title_inconsistent_with_council(clean_t, matched_c["name"], [m.get("name", "") for m in existing_meets_for_c]):
-                                    if cid not in detected_councils_to_crawl:
-                                        detected_councils_to_crawl[cid] = (matched_c, f"{mtype} (タイトル不整合・親ページ巡回誘導: {item_title})", "")
-                                    continue
-                                # 日付が存在し、資料がある場合（かつ事前案内のみでない場合）は直接追加
-                                if mats and art_dates and not is_preliminary_notice_page(item_url, clean_t):
+                            # 1. 厚労省 indexshingi または親ページの場合はピンポイントクロール
+                            if item.get("is_shingi_index") or item_url.rstrip("/") == matched_c.get("officialUrl", "").rstrip("/"):
+                                if cid not in detected_councils_to_crawl:
+                                    detected_councils_to_crawl[cid] = (matched_c, f"{mtype} ({item_title})", item.get("date", ""))
+                                continue
+
+                            # 2. 記事URLがPDF直リンクまたは末端配付資料ページか確認
+                            if item_url.lower().endswith(".pdf"):
+                                dates = [item["date"]] if item.get("date") else extract_clean_dates_from_html(item_title)
+                                if dates and dates[0] != "2099/01/01":
                                     direct_meetings_to_add.append((matched_c, {
                                         "subpageUrl": item_url,
-                                        "name": clean_t,
-                                        "title": clean_t,
-                                        "materials": mats,
-                                        "extractedDates": art_dates,
-                                        "pageTitle": clean_t
+                                        "name": item_title,
+                                        "title": item_title,
+                                        "materials": [{"name": item_title, "url": item_url, "type": "pdf"}],
+                                        "extractedDates": dates,
+                                        "pageTitle": item_title
                                     }))
-                                else:
-                                    # 事前案内または資料0件の場合は親会議体をピンポイントクロール対象に追加
-                                    if cid not in detected_councils_to_crawl:
-                                        detected_councils_to_crawl[cid] = (matched_c, f"{mtype} (事前告知誘導: {item_title})", "")
+                            else:
+                                # 記事ページをフェッチして配付資料が含まれるか確認
+                                art_html = fetch_url(item_url, timeout=10, ministry=min_code)
+                                if art_html:
+                                    mats = parse_materials_from_html(art_html, item_url)
+                                    art_soup = BeautifulSoup(art_html, "html.parser")
+                                    h_tag = art_soup.find(["h1", "h2", "h3"]) or art_soup.title
+                                    p_title = h_tag.get_text(strip=True) if h_tag else item_title
+                                    art_dates = extract_clean_dates_from_html(art_html)
+                                    clean_t = clean_meeting_title(p_title)
+                                    if is_generic_title_text(clean_t) or clean_t == matched_c["name"]:
+                                        fallback_t = re.sub(r'の?(?:配[付布]資料|資料|議事録|議事次第)?(?:を?[公掲]開(?:しました)?)?$', '', item_title).strip()
+                                        fallback_t = re.sub(r'の?開催について$', '', fallback_t).strip()
+                                        clean_t = clean_meeting_title(fallback_t)
+
+                                    
+                                    # Drop 75: 既存開催回タイトル幹との類似度検証
+                                    existing_meets_for_c = [m for m in meetings if m.get("councilId") == cid]
+                                    if is_title_inconsistent_with_council(clean_t, matched_c["name"], [m.get("name", "") for m in existing_meets_for_c]):
+                                        if cid not in detected_councils_to_crawl:
+                                            detected_councils_to_crawl[cid] = (matched_c, f"{mtype} (タイトル不整合・親ページ巡回誘導: {item_title})", "")
+                                        continue
+                                    # 日付が存在し、資料がある場合（かつ事前案内のみでない場合）は直接追加
+                                    if mats and art_dates and not is_preliminary_notice_page(item_url, clean_t):
+                                        direct_meetings_to_add.append((matched_c, {
+                                            "subpageUrl": item_url,
+                                            "name": clean_t,
+                                            "title": clean_t,
+                                            "materials": mats,
+                                            "extractedDates": art_dates,
+                                            "pageTitle": clean_t
+                                        }))
+                                    else:
+                                        # 事前案内または資料0件の場合は親会議体をピンポイントクロール対象に追加
+                                        if cid not in detected_councils_to_crawl:
+                                            detected_councils_to_crawl[cid] = (matched_c, f"{mtype} (事前告知誘導: {item_title})", "")
+            finally:
+                _thread_local.current_ministry = prev_min
 
         emit(f"\n[検知結果サマリー]")
         emit(f"  ・直接資料抽出対象: {len(direct_meetings_to_add)} 件")
@@ -4707,27 +4803,37 @@ def run_ministry_news_discovery(progress_callback=None, stop_event=None, ministr
             if stop_event and stop_event.is_set():
                 break
 
+            c_min = normalize_ministry_code(c_obj.get("ministry", "")) if c_obj.get("ministry") else ""
+            if c_min and is_ministry_waf_blocked(c_min):
+                emit(f"\n⏭️ [WAF SKIP] [{cid}] {c_obj['name']}: 省庁 {c_min} で WAF CHALLENGE BLOCKED が発生済みのためアクセスをスキップします。")
+                continue
+
             emit(f"\n>>> ピンポイントクロール実行: [{cid}] {c_obj['name']} (契機: {reason})")
             target_url = c_obj.get("officialUrl")
             if not target_url:
                 continue
 
-            html = fetch_url(target_url, timeout=12)
-            if not html:
-                emit(f"  [WARN] フェッチ失敗: {target_url}")
-                continue
+            prev_min = getattr(_thread_local, "current_ministry", None)
+            _thread_local.current_ministry = c_min or None
+            try:
+                html = fetch_url(target_url, timeout=12, ministry=c_min or None)
+                if not html:
+                    emit(f"  [WARN] フェッチ失敗: {target_url}")
+                    continue
 
-            c_target = dict(c_obj)
-            c_target.setdefault("url", c_obj.get("officialUrl", ""))
+                c_target = dict(c_obj)
+                c_target.setdefault("url", c_obj.get("officialUrl", ""))
 
-            rule_item = get_rule_for_target(rules, c_target, rule_url_index)
-            res = execute_rule_retrieval(c_target, html, rule_item, use_llm=False, recheck_recent=1)
-            scraped_item = res.get("scraped_item")
-            if scraped_item:
-                added = sync_new_meetings_from_crawl(data, c_target, scraped_item)
-                if added > 0:
-                    emit(f"  ✨ [ピンポイント追加] [{cid}] {c_obj['name']}: +{added} 開催回")
-                    new_meetings_total += added
+                rule_item = get_rule_for_target(rules, c_target, rule_url_index)
+                res = execute_rule_retrieval(c_target, html, rule_item, use_llm=False, recheck_recent=1)
+                scraped_item = res.get("scraped_item")
+                if scraped_item:
+                    added = sync_new_meetings_from_crawl(data, c_target, scraped_item)
+                    if added > 0:
+                        emit(f"  ✨ [ピンポイント追加] [{cid}] {c_obj['name']}: +{added} 開催回")
+                        new_meetings_total += added
+            finally:
+                _thread_local.current_ministry = prev_min
 
         # 重複排除 & 保存
         deduplicate_data_materials(data)

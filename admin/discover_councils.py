@@ -167,14 +167,18 @@ def _discover_from_ministry_news(
         from crawler import (
             MINISTRY_NEWS_PORTALS, load_ministry_and_host_configs_from_db,
             resolve_news_portal_urls, extract_news_items_from_html, fetch_url,
-            match_council_from_news_item, normalize_text
+            match_council_from_news_item, normalize_text,
+            reset_waf_blocked_ministries, is_ministry_waf_blocked
         )
     except ImportError:
         from admin.crawler import (
             MINISTRY_NEWS_PORTALS, load_ministry_and_host_configs_from_db,
             resolve_news_portal_urls, extract_news_items_from_html, fetch_url,
-            match_council_from_news_item, normalize_text
+            match_council_from_news_item, normalize_text,
+            reset_waf_blocked_ministries, is_ministry_waf_blocked
         )
+
+    reset_waf_blocked_ministries()
 
     load_ministry_and_host_configs_from_db(data={"ministries": ministries, "crawlerConfig": crawler_config})
     portals_by_min = {
@@ -232,9 +236,14 @@ def _discover_from_ministry_news(
 
         found_in_min = 0
         for pdef in portal_defs:
+            if is_ministry_waf_blocked(min_code):
+                emit(f"  ⏭️ [WAF SKIP] 省庁 {min_code} は WAF CHALLENGE BLOCKED により以降の新着ポータル走査をスキップします。")
+                break
             resolved_urls = resolve_news_portal_urls(pdef)
             for rurl in resolved_urls:
-                html = fetch_url(rurl, timeout=12)
+                if is_ministry_waf_blocked(min_code):
+                    break
+                html = fetch_url(rurl, timeout=12, ministry=min_code)
                 if not html:
                     continue
                 items = extract_news_items_from_html(html, rurl, min_code, pdef.get("type"))
