@@ -173,3 +173,7 @@ python crawler.py
 
 PMHub では、継続的改善・機能拡充を **「Drop（ドロップ）」**（完了単位）および **「Track（トラック）」**（未着手・進行中の構想テーマ）として体系的に管理しています。詳細は [DROPS.md](DROPS.md) を参照してください。
 
+## セキュリティスキャン (OWASP ZAP DAST)
+
+GitHub Actions (`.github/workflows/zap-dast.yml`) により、PR / `main` プッシュ時のベースラインスキャンおよび定期フルスキャンを実施します。ローカル再現手順・`.zap/rules.tsv` の調整方法は [guide/security-scan.md](guide/security-scan.md) を参照してください。
+
