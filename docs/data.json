@@ -6078,8 +6078,7 @@
       "category": "STUDY",
       "name": "今後のデジタル人材育成政策に関する検討会",
       "officialUrl": "https://www.digital.go.jp/councils/digital-talent-development-policy",
-      "pastYearCount": 3,
-      "isNewlyDiscovered": true
+      "pastYearCount": 3
     },
     {
       "id": "digital-kikan_system_touitsu",
@@ -12364,7 +12363,8 @@
       "category": "COUNCIL",
       "name": "厚生科学審議会",
       "officialUrl": "https://www.mhlw.go.jp/stf/shingi/shingi-kousei_127703.html",
-      "pastYearCount": 19
+      "pastYearCount": 20,
+      "isNewlyDiscovered": true
     },
     {
       "id": "mhlw-815",
@@ -12436,7 +12436,8 @@
       "category": "COMMITTEE",
       "name": "新型インフルエンザ対策に関する小委員会",
       "officialUrl": "https://www.mhlw.go.jp/stf/shingi/shingi-kousei_263447.html",
-      "pastYearCount": 28
+      "pastYearCount": 28,
+      "isNewlyDiscovered": true
     },
     {
       "id": "mhlw-825",
@@ -14348,7 +14349,7 @@
       "name": "労働政策審議会 労働条件分科会",
       "officialUrl": "https://www.mhlw.go.jp/stf/shingi/shingi-rousei_126969_00004.html",
       "description": "労働基準法、賃金支払確保法、労働時間制度等の労働条件全般に係る重要施策・法改正事項を調査審議する労働政策審議会の主要分科会。",
-      "pastYearCount": 28,
+      "pastYearCount": 29,
       "materials": [
         {
           "name": "参考資料No.1 労働条件分科会委員名簿［PDF形式：128KB］",
@@ -14362,7 +14363,8 @@
           "name": "参考資料No.1 労働条件分科会委員名簿［PDF形式：321KB］",
           "url": "https://www.mhlw.go.jp/content/11201250/001691997.pdf"
         }
-      ]
+      ],
+      "isNewlyDiscovered": true
     },
     {
       "id": "mhlw-ryouyou_byoushou_bukai",
@@ -18151,12 +18153,115 @@
       "materials": []
     },
     {
+      "id": "mhlw-814-20261118-038",
+      "councilId": "mhlw-814",
+      "name": "第38回厚生科学審議会がん登録部会(資料)",
+      "date": "2026/11/18",
+      "officialUrl": "https://www.mhlw.go.jp/stf/newpage_77501.html",
+      "isNewlyDiscovered": true,
+      "materials": [
+        {
+          "name": "議事次第 第38回厚生科学審議会がん登録部会",
+          "url": "https://www.mhlw.go.jp/content/10901000/001770413.pdf"
+        },
+        {
+          "name": "資料1 全国がん登録のマニュアル改訂について <公開>",
+          "url": "https://www.mhlw.go.jp/content/10901000/001770414.pdf"
+        },
+        {
+          "name": "参考資料1 厚生科学審議会がん登録部会 委員名簿 <公開>",
+          "url": "https://www.mhlw.go.jp/content/10901000/001770415.pdf"
+        },
+        {
+          "name": "参考資料2 厚生科学審議会がん登録部会 関係規定等<公開>",
+          "url": "https://www.mhlw.go.jp/content/10901000/001770416.pdf"
+        },
+        {
+          "name": "参考資料3 全国がん登録 情報の利用マニュアル 第3版<公開>",
+          "url": "https://www.mhlw.go.jp/content/10901000/001770417.pdf"
+        },
+        {
+          "name": "参考資料4 全国がん登録 情報の提供マニュアル第7版<公開>",
+          "url": "https://www.mhlw.go.jp/content/10901000/001770418.pdf"
+        },
+        {
+          "name": "参考資料5 全国がん登録 届出マニュアル2026<公開>",
+          "url": "https://www.mhlw.go.jp/content/10901000/001770419.pdf"
+        },
+        {
+          "name": "参考資料6 全国がん登録 個人情報保護のための安全管理措置マニュアル 第3版 <公開>",
+          "url": "https://www.mhlw.go.jp/content/10901000/001770420.pdf"
+        },
+        {
+          "name": "参考資料7 全国がん登録情報等に関する利用規約<公開>",
+          "url": "https://www.mhlw.go.jp/content/10901000/001770421.pdf"
+        },
+        {
+          "name": "参考資料8 がん登録等の推進に関する法律(平成25年法律第111号)<公開>",
+          "url": "https://www.mhlw.go.jp/content/10901000/001770422.pdf"
+        },
+        {
+          "name": "参考資料9 がん登録等の推進に関する法律施行令(平成27年政令第323号)<公開>",
+          "url": "https://www.mhlw.go.jp/content/10901000/001770423.pdf"
+        },
+        {
+          "name": "参考資料10 がん登録等の推進に関する法律施行規則(平成27年9月9日厚生労働省令第137号)<公開>",
+          "url": "https://www.mhlw.go.jp/content/10901000/001770424.pdf"
+        },
+        {
+          "name": "参考資料11 諮問書・付議書<公開>",
+          "url": "https://www.mhlw.go.jp/content/10901000/001770425.pdf"
+        }
+      ]
+    },
+    {
       "id": "mhlw-824-20261118-028",
       "councilId": "mhlw-824",
       "name": "第28回 新型インフルエンザ対策に関する小委員会",
       "date": "2026/11/18",
-      "officialUrl": "https://www.mhlw.go.jp/stf/shingi/shingi-kousei_263447.html",
-      "materials": []
+      "officialUrl": "https://www.mhlw.go.jp/stf/newpage_77489.html",
+      "materials": [
+        {
+          "name": "議事次第及び委員名簿",
+          "url": "https://www.mhlw.go.jp/content/10906000/001770347.pdf"
+        },
+        {
+          "name": "資料1 感染症危機対応医薬品等(MCM)の持続可能な開発・供給体制の構築に向けて",
+          "url": "https://www.mhlw.go.jp/content/10906000/001770268.pdf"
+        },
+        {
+          "name": "資料2 感染症危機対応のためのGHIT Fundの実践と学び",
+          "url": "https://www.mhlw.go.jp/content/10906000/001770269.pdf"
+        },
+        {
+          "name": "資料3 産業政策としての感染症危機対応医薬品等(MCM)確保",
+          "url": "https://www.mhlw.go.jp/content/10906000/001770270.pdf"
+        },
+        {
+          "name": "資料4 感染症危機対応医薬品等(MCM)の確保に向けて",
+          "url": "https://www.mhlw.go.jp/content/10906000/001770271.pdf"
+        },
+        {
+          "name": "資料5 持続可能なMCMの創出・確保に向けた官民連携のあり方",
+          "url": "https://www.mhlw.go.jp/content/10906000/001770272.pdf"
+        },
+        {
+          "name": "資料6 感染症診断薬を含むMCMの持続可能な開発・供給体制に向けて",
+          "url": "https://www.mhlw.go.jp/content/10906000/001770273.pdf"
+        },
+        {
+          "name": "資料7 「感染症危機対応医薬品等(MCM)開発・生産体制強化戦略」に対するこれまでの取組と要望事項",
+          "url": "https://www.mhlw.go.jp/content/10906000/001770274.pdf"
+        },
+        {
+          "name": "参考資料1 合同小委員会(令和8年10月14日)における主なご意見",
+          "url": "https://www.mhlw.go.jp/content/10906000/001770275.pdf"
+        },
+        {
+          "name": "参考資料2 医薬品医療機器制度部会及び医療用医薬品迅速・安定供給部会における議論・主なご意見(未定稿)",
+          "url": "https://www.mhlw.go.jp/content/10906000/001770276.pdf"
+        }
+      ]
     },
     {
       "id": "mhlw-828-20261118-013",
@@ -18188,7 +18293,6 @@
       "name": "今後のデジタル人材育成政策に関する検討会(第3回)",
       "date": "2026/11/17",
       "officialUrl": "https://www.digital.go.jp/councils/digital-talent-development-policy/e22fb804-ff1f-4e5f-9aa0-ee356ebf3967",
-      "isNewlyDiscovered": true,
       "materials": [
         {
           "name": "議事次第",
@@ -18229,8 +18333,29 @@
       "councilId": "mhlw-rousei_roudoujouken",
       "name": "第215回 労働政策審議会 労働条件分科会",
       "date": "2026/11/17",
-      "officialUrl": "https://www.mhlw.go.jp/stf/shingi/shingi-rousei_126969_00004.html",
-      "materials": []
+      "officialUrl": "https://www.mhlw.go.jp/stf/newpage_77450.html",
+      "materials": [
+        {
+          "name": "議事次第",
+          "url": "https://www.mhlw.go.jp/content/11201250/001769894.pdf"
+        },
+        {
+          "name": "資料No.1 労働条件の明示方法について",
+          "url": "https://www.mhlw.go.jp/content/11201250/001769895.pdf"
+        },
+        {
+          "name": "資料No.2-1 労働時間法制の具体的課題に関する検討の論点について(変形労働時間制、テレワーク・フレックスタイム制)",
+          "url": "https://www.mhlw.go.jp/content/11201250/001769896.pdf"
+        },
+        {
+          "name": "資料No.2-2 労働時間法制の具体的課題について(変形労働時間制、テレワーク・フレックスタイム制)",
+          "url": "https://www.mhlw.go.jp/content/11201250/001769897.pdf"
+        },
+        {
+          "name": "参考資料No.1 労働条件分科会委員名簿",
+          "url": "https://www.mhlw.go.jp/content/11201250/001769898.pdf"
+        }
+      ]
     },
     {
       "id": "mhlw-shakai_hosho_iryou_hoken-20261117-221",
@@ -217678,8 +217803,8 @@
     "cas-zensedai_hosyo",
     "mof-zaiseiseido_bunkakai"
   ],
-  "lastCrawlTime": "2026/11/17 03:21",
+  "lastCrawlTime": "2026/11/18 02:42",
   "hasArchive": true,
-  "totalMeetingsCount": 25098,
-  "totalMaterialsCount": 154926
+  "totalMeetingsCount": 25099,
+  "totalMaterialsCount": 154954
 }
