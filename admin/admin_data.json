@@ -1,5 +1,5 @@
 {
-  "lastCrawlTime": "2026/11/20 02:01",
+  "lastCrawlTime": "2026/11/21 08:36",
   "scrapingRuleTemplates": {
     "tpl-general-round-subpage": {
       "subpage_discovery_pattern": "(?:dai\\d+|\\d+kai|kaisai|gijisidai|gijiroku|haifu|session|meeting|\\b\\d{3,4}\\.html|\\d{2,3}/(?:index\\.html)?)",
@@ -2921,8 +2921,9 @@
       "manualLock": true
     },
     "fsa-digital_finance": {
-      "template": "tpl-parent-table-direct",
-      "manualLock": true
+      "template": "tpl-general-round-subpage",
+      "manualLock": true,
+      "subpage_discovery_pattern": "shiryo/\\d{8}\\.html"
     },
     "fsa-edinet_koudoka": {
       "template": "tpl-parent-table-direct",
@@ -14936,7 +14937,7 @@
       "manualLockActive": false
     },
     "fsa-ai_onchain": {
-      "lastAttempt": "2026-11-18 20:05:31",
+      "lastAttempt": "2026-11-21 08:22:35",
       "result": "success",
       "resultReason": "開催回 1 件を検出（資料・日付完備）",
       "extractionMethod": "rule",
@@ -14969,7 +14970,7 @@
       "manualLockActive": true
     },
     "fsa-carbon_credit": {
-      "lastAttempt": "2026-11-18 20:06:04",
+      "lastAttempt": "2026-11-21 08:22:35",
       "result": "success",
       "resultReason": "開催回 1 件を検出（資料・日付完備）",
       "extractionMethod": "rule",
@@ -14980,7 +14981,7 @@
       "manualLockActive": false
     },
     "fsa-cg_code_kaitei": {
-      "lastAttempt": "2026-11-18 20:07:18",
+      "lastAttempt": "2026-11-21 08:22:36",
       "result": "success",
       "resultReason": "開催回 1 件を検出（資料・日付完備）",
       "extractionMethod": "rule",
@@ -15002,7 +15003,7 @@
       "manualLockActive": false
     },
     "fsa-chuugoku_kinyu": {
-      "lastAttempt": "2026-11-18 20:07:45",
+      "lastAttempt": "2026-11-21 08:22:36",
       "result": "partial",
       "resultReason": "開催回 1 件を検出したが資料が0件",
       "extractionMethod": "rule",
@@ -15013,7 +15014,7 @@
       "manualLockActive": false
     },
     "fsa-code_followup": {
-      "lastAttempt": "2026-11-18 20:08:08",
+      "lastAttempt": "2026-11-21 08:22:39",
       "result": "success",
       "resultReason": "開催回 1 件を検出（資料・日付完備）",
       "extractionMethod": "rule",
@@ -15068,7 +15069,7 @@
       "manualLockActive": false
     },
     "fsa-esg_hyouka_data": {
-      "lastAttempt": "2026-11-18 20:08:30",
+      "lastAttempt": "2026-11-21 08:22:49",
       "result": "success",
       "resultReason": "開催回 6 件を検出（資料・日付完備）",
       "extractionMethod": "rule",
@@ -15123,7 +15124,7 @@
       "manualLockActive": false
     },
     "fsa-japan_stewardship": {
-      "lastAttempt": "2026-11-18 20:08:52",
+      "lastAttempt": "2026-11-21 08:22:40",
       "result": "success",
       "resultReason": "開催回 1 件を検出（資料・日付完備）",
       "extractionMethod": "rule",
@@ -15134,7 +15135,7 @@
       "manualLockActive": true
     },
     "fsa-jibaiseki_shingi": {
-      "lastAttempt": "2026-11-18 20:09:22",
+      "lastAttempt": "2026-11-21 08:23:01",
       "result": "success",
       "resultReason": "開催回 14 件を検出（資料・日付完備）",
       "extractionMethod": "rule",
@@ -15288,7 +15289,7 @@
       "manualLockActive": true
     },
     "fsa-kigyou_hoshou_bukai": {
-      "lastAttempt": "2026-11-18 20:09:23",
+      "lastAttempt": "2026-11-21 08:22:43",
       "result": "success",
       "resultReason": "開催回 1 件を検出（資料・日付完備）",
       "extractionMethod": "rule",
@@ -15310,7 +15311,7 @@
       "manualLockActive": true
     },
     "fsa-kigyou_kaikei_shingi": {
-      "lastAttempt": "2026-11-18 20:09:39",
+      "lastAttempt": "2026-11-21 08:22:44",
       "result": "success",
       "resultReason": "PDF配付資料 21 件・開催日 8 件を正常取得",
       "extractionMethod": "rule",
@@ -15321,7 +15322,7 @@
       "manualLockActive": true
     },
     "fsa-kigyou_kansa_bukai": {
-      "lastAttempt": "2026-11-18 20:09:56",
+      "lastAttempt": "2026-11-21 08:22:47",
       "result": "success",
       "resultReason": "開催回 1 件を検出（資料・日付完備）",
       "extractionMethod": "rule",
@@ -15365,7 +15366,7 @@
       "manualLockActive": true
     },
     "fsa-kigyou_risk_management": {
-      "lastAttempt": "2026-11-18 20:10:41",
+      "lastAttempt": "2026-11-21 08:22:48",
       "result": "success",
       "resultReason": "PDF配付資料 4 件・開催日 5 件を正常取得",
       "extractionMethod": "rule",
@@ -15398,7 +15399,7 @@
       "manualLockActive": false
     },
     "fsa-kinyu_angoshisan_wg": {
-      "lastAttempt": "2026-11-18 20:11:55",
+      "lastAttempt": "2026-11-21 08:22:51",
       "result": "success",
       "resultReason": "開催回 1 件を検出（資料・日付完備）",
       "extractionMethod": "rule",
@@ -15409,7 +15410,7 @@
       "manualLockActive": true
     },
     "fsa-kinyu_bunkakai": {
-      "lastAttempt": "2026-11-18 20:12:54",
+      "lastAttempt": "2026-11-21 08:22:51",
       "result": "success",
       "resultReason": "開催回 1 件を検出（資料・日付完備）",
       "extractionMethod": "rule",
@@ -15420,7 +15421,7 @@
       "manualLockActive": true
     },
     "fsa-kinyu_chiikikinyu_wg": {
-      "lastAttempt": "2026-11-18 20:13:33",
+      "lastAttempt": "2026-11-21 08:22:56",
       "result": "success",
       "resultReason": "開催回 1 件を検出（資料・日付完備）",
       "extractionMethod": "rule",
@@ -15541,11 +15542,11 @@
       "manualLockActive": true
     },
     "fsa-kinyu_disclosure_wg": {
-      "lastAttempt": "2026-11-18 20:15:20",
+      "lastAttempt": "2026-11-21 08:22:58",
       "result": "success",
-      "resultReason": "開催回 7 件を検出（資料・日付完備）",
+      "resultReason": "開催回 2 件を検出（資料・日付完備）",
       "extractionMethod": "rule",
-      "materialsCount": 65,
+      "materialsCount": 44,
       "datesCount": 5,
       "failureReason": "",
       "consecutiveFailures": 0,
@@ -15629,7 +15630,7 @@
       "manualLockActive": true
     },
     "fsa-kinyu_hokenseido_wg": {
-      "lastAttempt": "2026-11-18 20:15:57",
+      "lastAttempt": "2026-11-21 08:22:57",
       "result": "success",
       "resultReason": "開催回 1 件を検出（資料・日付完備）",
       "extractionMethod": "rule",
@@ -15761,7 +15762,7 @@
       "manualLockActive": false
     },
     "fsa-kinyu_kinou_kyouka": {
-      "lastAttempt": "2026-11-18 20:16:52",
+      "lastAttempt": "2026-11-21 08:22:58",
       "result": "success",
       "resultReason": "PDF配付資料 99 件・開催日 34 件を正常取得",
       "extractionMethod": "rule",
@@ -15860,11 +15861,11 @@
       "manualLockActive": true
     },
     "fsa-kinyu_seityousikin_wg": {
-      "lastAttempt": "2026-11-18 20:17:25",
+      "lastAttempt": "2026-11-21 08:23:03",
       "result": "success",
-      "resultReason": "開催回 3 件を検出（資料・日付完備）",
+      "resultReason": "開催回 2 件を検出（資料・日付完備）",
       "extractionMethod": "rule",
-      "materialsCount": 23,
+      "materialsCount": 18,
       "datesCount": 3,
       "failureReason": "",
       "consecutiveFailures": 0,
@@ -15882,7 +15883,7 @@
       "manualLockActive": false
     },
     "fsa-kinyu_shijoseido_wg": {
-      "lastAttempt": "2026-11-18 20:18:02",
+      "lastAttempt": "2026-11-21 08:23:03",
       "result": "success",
       "resultReason": "開催回 2 件を検出（資料・日付完備）",
       "extractionMethod": "rule",
@@ -15893,7 +15894,7 @@
       "manualLockActive": true
     },
     "fsa-kinyu_shikin_kessaiseido_wg": {
-      "lastAttempt": "2026-11-18 20:18:35",
+      "lastAttempt": "2026-11-21 08:23:02",
       "result": "success",
       "resultReason": "開催回 1 件を検出（資料・日付完備）",
       "extractionMethod": "rule",
@@ -15915,7 +15916,7 @@
       "manualLockActive": true
     },
     "fsa-kinyu_shingi": {
-      "lastAttempt": "2026-11-18 20:19:05",
+      "lastAttempt": "2026-11-21 08:23:34",
       "result": "success",
       "resultReason": "開催回 17 件を検出（資料・日付完備）",
       "extractionMethod": "rule",
@@ -15937,7 +15938,7 @@
       "manualLockActive": true
     },
     "fsa-kinyu_sonpo_wg": {
-      "lastAttempt": "2026-11-18 20:19:09",
+      "lastAttempt": "2026-11-21 08:23:07",
       "result": "success",
       "resultReason": "開催回 1 件を検出（資料・日付完備）",
       "extractionMethod": "rule",
@@ -15948,7 +15949,7 @@
       "manualLockActive": true
     },
     "fsa-kinyu_sustainability_wg": {
-      "lastAttempt": "2026-11-18 20:19:27",
+      "lastAttempt": "2026-11-21 08:23:07",
       "result": "success",
       "resultReason": "開催回 1 件を検出（資料・日付完備）",
       "extractionMethod": "rule",
@@ -16003,7 +16004,7 @@
       "manualLockActive": true
     },
     "fsa-kinyu_trouble": {
-      "lastAttempt": "2026-11-18 20:19:35",
+      "lastAttempt": "2026-11-21 08:23:17",
       "result": "success",
       "resultReason": "開催回 3 件を検出（資料・日付完備）",
       "extractionMethod": "rule",
@@ -16058,7 +16059,7 @@
       "manualLockActive": true
     },
     "fsa-naibu_kansa_koudoka": {
-      "lastAttempt": "2026-11-18 20:19:36",
+      "lastAttempt": "2026-11-21 08:23:12",
       "result": "success",
       "resultReason": "開催回 1 件を検出（資料・日付完備）",
       "extractionMethod": "rule",
@@ -16069,7 +16070,7 @@
       "manualLockActive": true
     },
     "fsa-nisa_kaigi": {
-      "lastAttempt": "2026-11-18 20:19:40",
+      "lastAttempt": "2026-11-21 08:23:12",
       "result": "success",
       "resultReason": "開催回 1 件を検出（資料・日付完備）",
       "extractionMethod": "rule",
@@ -16168,7 +16169,7 @@
       "manualLockActive": false
     },
     "fsa-startup_shikin": {
-      "lastAttempt": "2026-11-18 20:19:47",
+      "lastAttempt": "2026-11-21 08:23:14",
       "result": "partial",
       "resultReason": "開催日のみ検出（資料0件: 令和6年12月17日）",
       "extractionMethod": "rule",
@@ -16179,7 +16180,7 @@
       "manualLockActive": false
     },
     "fsa-stewardship_h28": {
-      "lastAttempt": "2026-11-18 20:19:51",
+      "lastAttempt": "2026-11-21 08:23:21",
       "result": "success",
       "resultReason": "開催回 2 件を検出（資料・日付完備）",
       "extractionMethod": "rule",
@@ -16190,7 +16191,7 @@
       "manualLockActive": true
     },
     "fsa-stewardship_r01": {
-      "lastAttempt": "2026-11-18 20:19:55",
+      "lastAttempt": "2026-11-21 08:23:22",
       "result": "success",
       "resultReason": "開催回 2 件を検出（資料・日付完備）",
       "extractionMethod": "rule",
@@ -16201,7 +16202,7 @@
       "manualLockActive": true
     },
     "fsa-stewardship_r06": {
-      "lastAttempt": "2026-11-18 20:20:04",
+      "lastAttempt": "2026-11-21 08:23:20",
       "result": "success",
       "resultReason": "開催回 1 件を検出（資料・日付完備）",
       "extractionMethod": "rule",
@@ -16223,7 +16224,7 @@
       "manualLockActive": true
     },
     "fsa-sustainable_finance": {
-      "lastAttempt": "2026-11-18 20:20:09",
+      "lastAttempt": "2026-11-21 08:23:26",
       "result": "success",
       "resultReason": "開催回 2 件を検出（資料・日付完備）",
       "extractionMethod": "rule",
@@ -16278,7 +16279,7 @@
       "manualLockActive": true
     },
     "fsa-transition_finance": {
-      "lastAttempt": "2026-11-18 20:20:16",
+      "lastAttempt": "2026-11-21 08:23:31",
       "result": "success",
       "resultReason": "開催回 5 件を検出（資料・日付完備）",
       "extractionMethod": "rule",
@@ -16289,7 +16290,7 @@
       "manualLockActive": true
     },
     "fsa-venture_capital": {
-      "lastAttempt": "2026-11-18 20:20:20",
+      "lastAttempt": "2026-11-21 08:23:26",
       "result": "success",
       "resultReason": "開催回 1 件を検出（資料・日付完備）",
       "extractionMethod": "rule",
@@ -27365,7 +27366,7 @@
       "DIGITAL": "2026/11/20 02:01",
       "CFA": "2026/11/20 02:01",
       "PPC": "2026/11/20 02:01",
-      "FSA": "2026/11/20 02:01",
+      "FSA": "2026/11/21 08:36",
       "CAA": "2026/11/20 02:01",
       "FSC": "2026/11/20 02:01",
       "MIC": "2026/11/20 02:01",
@@ -39341,6 +39342,8 @@
       "fsa-corporategovernance_code-20150305-009",
       "fsa-digital_finance-20210719-001",
       "fsa-digital_finance-20231113-012",
+      "fsa-digital_finance-20261020-001",
+      "fsa-digital_finance-20261102-002",
       "fsa-edinet_koudoka-20061026-001",
       "fsa-edinet_koudoka-20061116-002",
       "fsa-edinet_koudoka-20061214-003",
@@ -39913,6 +39916,7 @@
       "fsa-kinyu_disclosure_wg-20251218-004",
       "fsa-kinyu_disclosure_wg-20260518-005",
       "fsa-kinyu_disclosure_wg-20260904-006",
+      "fsa-kinyu_disclosure_wg-20261118-007",
       "fsa-kinyu_fair_disclosure_tf-20161021-001",
       "fsa-kinyu_fair_disclosure_tf-20161121-002",
       "fsa-kinyu_fair_disclosure_tf-20161202-003",
@@ -40177,6 +40181,7 @@
       "fsa-kinyu_seido_sg-20190610-012",
       "fsa-kinyu_seityousikin_wg-20260916-001",
       "fsa-kinyu_seityousikin_wg-20261009-002",
+      "fsa-kinyu_seityousikin_wg-20261109-003",
       "fsa-kinyu_shihyou_kisei-20131128-001",
       "fsa-kinyu_shihyou_kisei-20131212-002",
       "fsa-kinyu_shihyou_kisei-20131225-003",
@@ -71338,6 +71343,16 @@
       "fsa-ai_onchain-20260930-001:https://www.fsa.go.jp/singi/ai_onchain/gijiroku/20260930.html",
       "fsa-ai_onchain-20260930-001:https://www.fsa.go.jp/singi/ai_onchain/shiryou/20260930/01.pdf",
       "fsa-ai_onchain-20260930-001:https://www.fsa.go.jp/singi/ai_onchain/shiryou/20260930/02.pdf",
+      "fsa-digital_finance-20261020-001:https://www.fsa.go.jp/singi/digital_2026/gizi/261020.html",
+      "fsa-digital_finance-20261020-001:https://www.fsa.go.jp/singi/digital_2026/shiryo/261020/hearing_1.pdf",
+      "fsa-digital_finance-20261020-001:https://www.fsa.go.jp/singi/digital_2026/shiryo/261020/hearing_2.pdf",
+      "fsa-digital_finance-20261020-001:https://www.fsa.go.jp/singi/digital_2026/shiryo/261020/jimukyoku.pdf",
+      "fsa-digital_finance-20261020-001:https://www.fsa.go.jp/singi/digital_2026/shiryo/261020/meibo.pdf",
+      "fsa-digital_finance-20261102-002:https://www.fsa.go.jp/singi/digital_2026/shiryo/261102/hearing_1.pdf",
+      "fsa-digital_finance-20261102-002:https://www.fsa.go.jp/singi/digital_2026/shiryo/261102/hearing_2.pdf",
+      "fsa-digital_finance-20261102-002:https://www.fsa.go.jp/singi/digital_2026/shiryo/261102/hearing_3.pdf",
+      "fsa-digital_finance-20261102-002:https://www.fsa.go.jp/singi/digital_2026/shiryo/261102/jimukyoku.pdf",
+      "fsa-digital_finance-20261102-002:https://www.fsa.go.jp/singi/digital_2026/shiryo/261102/meibo.pdf",
       "fsa-hyoutei_seido-20050209-002:https://www.fsa.go.jp/news/newsj/16/singi/f-20050527-5/05.pdf",
       "fsa-hyoutei_seido-20050209-002:https://www.fsa.go.jp/singi/singi_hyoutei/gijiyousi/f-20050126-hyoutei.html",
       "fsa-hyoutei_seido-20050209-002:https://www.fsa.go.jp/singi/singi_hyoutei/gijiyousi/f-20050209-hyoutei.html",
@@ -71663,6 +71678,11 @@
       "fsa-kinyu_chukai-20180622-014:https://www.fsa.go.jp/singi/kinyuchukai/siryou/20180622/01.pdf",
       "fsa-kinyu_chukai-20181113-015:https://www.fsa.go.jp/singi/kinyuchukai/siryou/20181113/01.pdf",
       "fsa-kinyu_disclosure_wg-20260904-006:https://www.fsa.go.jp/singi/singi_kinyu/disclosure_wg/gijiroku/20260904.html",
+      "fsa-kinyu_disclosure_wg-20261118-007:https://www.fsa.go.jp/singi/singi_kinyu/disclosure_wg/shiryou/20261118/01.pdf",
+      "fsa-kinyu_disclosure_wg-20261118-007:https://www.fsa.go.jp/singi/singi_kinyu/disclosure_wg/shiryou/20261118/02.pdf",
+      "fsa-kinyu_disclosure_wg-20261118-007:https://www.fsa.go.jp/singi/singi_kinyu/disclosure_wg/shiryou/20261118/03.pdf",
+      "fsa-kinyu_disclosure_wg-20261118-007:https://www.fsa.go.jp/singi/singi_kinyu/disclosure_wg/shiryou/20261118/04.pdf",
+      "fsa-kinyu_hokenseido_wg-20261001-001:https://www.fsa.go.jp/singi/singi_kinyu/hokenseido_wg/gijiroku/20261001.html",
       "fsa-kinyu_hokenseido_wg-20261030-002:https://www.fsa.go.jp/singi/singi_kinyu/hokenseido_wg/gijishidai/20261030/01.pdf",
       "fsa-kinyu_hokenseido_wg-20261030-002:https://www.fsa.go.jp/singi/singi_kinyu/hokenseido_wg/gijishidai/20261030/02.pdf",
       "fsa-kinyu_hokenseido_wg-20261030-002:https://www.fsa.go.jp/singi/singi_kinyu/hokenseido_wg/gijishidai/20261030/03.pdf",
@@ -71699,6 +71719,14 @@
       "fsa-kinyu_kinou_kyouka-20220901-029:https://www.fsa.go.jp/singi/soff/gijiroku/20220901/29_b.pdf",
       "fsa-kinyu_kinou_kyouka-20230511-030:https://www.fsa.go.jp/singi/soff/gijiroku/20230511/30_b.pdf",
       "fsa-kinyu_seityousikin_wg-20260916-001:https://www.fsa.go.jp/singi/singi_kinyu/seityousikin_wg/gijiroku/20260916.html",
+      "fsa-kinyu_seityousikin_wg-20261009-002:https://www.fsa.go.jp/singi/singi_kinyu/seityousikin_wg/gijiroku/20261009.html",
+      "fsa-kinyu_seityousikin_wg-20261109-003:https://www.fsa.go.jp/singi/singi_kinyu/seityousikin_wg/gijishidai/20261109/01.pdf",
+      "fsa-kinyu_seityousikin_wg-20261109-003:https://www.fsa.go.jp/singi/singi_kinyu/seityousikin_wg/gijishidai/20261109/02.pdf",
+      "fsa-kinyu_seityousikin_wg-20261109-003:https://www.fsa.go.jp/singi/singi_kinyu/seityousikin_wg/gijishidai/20261109/03.pdf",
+      "fsa-kinyu_seityousikin_wg-20261109-003:https://www.fsa.go.jp/singi/singi_kinyu/seityousikin_wg/gijishidai/20261109/04.pdf",
+      "fsa-kinyu_seityousikin_wg-20261109-003:https://www.fsa.go.jp/singi/singi_kinyu/seityousikin_wg/gijishidai/20261109/05.pdf",
+      "fsa-kinyu_seityousikin_wg-20261109-003:https://www.fsa.go.jp/singi/singi_kinyu/seityousikin_wg/gijishidai/20261109/06.pdf",
+      "fsa-kinyu_seityousikin_wg-20261109-003:https://www.fsa.go.jp/singi/singi_kinyu/seityousikin_wg/gijishidai/20261109/07.pdf",
       "fsa-kinyu_shingi-20260831-057:https://www.fsa.go.jp/singi/singi_kinyu/soukai/gijiroku/20260831.html",
       "fsa-kinyu_shingi-20260831-057:https://www.fsa.go.jp/singi/singi_kinyu/soukai/siryou/20260831/1.pdf",
       "fsa-kinyu_shingi-20260831-057:https://www.fsa.go.jp/singi/singi_kinyu/soukai/siryou/20260831/2.pdf",
@@ -106978,6 +107006,14 @@
     "fsa-digital_finance-20230606-011": {
       "discoveredAt": "2026/09/05 08:18"
     },
+    "fsa-digital_finance-20261020-001": {
+      "discoveredAt": "2026/11/21 08:35",
+      "lastUpdatedFromCrawl": "2026/11/21 08:35"
+    },
+    "fsa-digital_finance-20261102-002": {
+      "discoveredAt": "2026/11/21 08:35",
+      "lastUpdatedFromCrawl": "2026/11/21 08:35"
+    },
     "fsa-esg_hyouka_data-20220519-006": {
       "discoveredAt": "2026/09/05 08:27"
     },
@@ -107254,9 +107290,6 @@
     "fsa-kinyu_chukai-20200218-021": {
       "lastUpdatedFromCrawl": "2026/09/05 08:22"
     },
-    "fsa-kinyu_dai1_disclose_wg-20260904-006": {
-      "discoveredAt": "2026/10/17 15:47"
-    },
     "fsa-kinyu_disclosure_wg-20151110-s27": {
       "discoveredAt": "2026/10/08 19:00"
     },
@@ -107320,6 +107353,9 @@
     "fsa-kinyu_disclosure_wg-20221215-s10": {
       "discoveredAt": "2026/10/08 19:00"
     },
+    "fsa-kinyu_disclosure_wg-20261118-007": {
+      "discoveredAt": "2026/11/21 08:35"
+    },
     "fsa-kinyu_keizai_kyouiku-20121108-001": {
       "discoveredAt": "2026/09/05 08:29"
     },
@@ -107358,6 +107394,9 @@
     },
     "fsa-kinyu_seityousikin_wg-20261009-002": {
       "discoveredAt": "2026/10/08 19:00"
+    },
+    "fsa-kinyu_seityousikin_wg-20261109-003": {
+      "discoveredAt": "2026/11/21 08:35"
     },
     "fsa-kinyu_shijoseido_wg-20201026-s31": {
       "discoveredAt": "2026/10/08 19:01"
@@ -107721,6 +107760,9 @@
     },
     "fsa-transition_finance-20210416-s18": {
       "discoveredAt": "2026/10/08 19:05"
+    },
+    "fsa-transition_finance-20260821-014": {
+      "lastUpdatedFromCrawl": "2026/11/21 08:23"
     },
     "fsa-venture_capital-20240430-001": {
       "discoveredAt": "2026/09/25 21:31"

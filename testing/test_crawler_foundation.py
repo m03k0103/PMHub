@@ -30,7 +30,10 @@ from crawler import (
     GENERIC_TITLE_KEYWORDS,
     safe_emit_log,
     extract_actual_subpage_links,
-    normalize_text
+    normalize_text,
+    clean_meeting_title,
+    is_generic_title_text,
+    is_generic_index_url
 )
 
 
@@ -233,6 +236,35 @@ class TestCrawlerFoundation(unittest.TestCase):
             "https://www.cao.go.jp/sample/014/index.html",
             "第14回 人工知能(AI)技術の利用と消費者問題に関する専門調査会"
         ))
+
+    def test_agenda_title_extraction_and_generic_index_exclusion(self):
+        """Drop 146: 「議事次第」末尾除去・単独汎用見出しスキップ・_index.html 除外の検証"""
+        fsa_html = """
+        <html><head><title>金融審議会「ディスクロージャーワーキング・グループ」（第７回）議事次第：金融庁</title></head>
+        <body><h1>金融審議会「ディスクロージャーワーキング・グループ」(第7回)議事次第</h1></body></html>
+        """
+        soup = BeautifulSoup(fsa_html, "html.parser")
+        extracted = extract_page_title(soup, fallback_url="")
+        self.assertEqual(extracted, "金融審議会「ディスクロージャーワーキング・グループ」(第7回)")
+        self.assertEqual(
+            clean_meeting_title("金融審議会「ディスクロージャーワーキング・グループ」(第7回)議事次第"),
+            "金融審議会「ディスクロージャーワーキング・グループ」(第7回)"
+        )
+
+        # 単独の「議事次第」等を含む見出しは汎用タイトルとしてスキップされること
+        skip_html = """
+        <html><head><title>第1回 テスト研究会：金融庁</title></head>
+        <body><h2>議事次第</h2><h3>資料一覧</h3><p>本文</p></body></html>
+        """
+        soup_skip = BeautifulSoup(skip_html, "html.parser")
+        self.assertEqual(extract_page_title(soup_skip, fallback_url=""), "第1回 テスト研究会")
+
+        for generic_kw in ("議事次第", "配付資料", "配布資料"):
+            self.assertTrue(is_generic_title_text(generic_kw), f"'{generic_kw}' は汎用タイトル判定されること")
+
+        self.assertTrue(is_generic_index_url("https://www.fsa.go.jp/singi/singi_kinyu/dai1/dai1_index.html"))
+        self.assertTrue(is_generic_index_url("https://www.fsa.go.jp/singi/singi_kinyu/dai2/dai2_index.htm"))
+        self.assertFalse(is_generic_index_url("https://www.fsa.go.jp/singi/singi_kinyu/disclosure_wg/shiryou/20261118.html"))
 
 
 if __name__ == "__main__":

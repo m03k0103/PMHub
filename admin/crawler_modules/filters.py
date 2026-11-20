@@ -48,6 +48,7 @@ GENERIC_TITLE_KEYWORDS = frozenset({
 GENERIC_EXACT_ONLY_KEYWORDS = frozenset({
     '開催について', '開催案内', '開催告知', '開催案内等', '開催日', '開催日時', '開催期間',
     '議事', '資料', '議題', '日時', '場所', '傍聴', '傍聴案内', '傍聴について', 'メンバー',
+    '議事次第', '配付資料', '配布資料',
     '配付資料について', '配布資料について', '議事要旨等', '議事次第等', '会議概要', '会議結果',
     '１開催日時', '１．日', '●日時', '１．日時', '１　開催日時', '１ 日時', '１　日時',
     '１ 場所', '１　場所', '２ 場所', '２　場所', '３ 議題', '３　議題', '出席者', '出席者名簿'
@@ -199,6 +200,7 @@ _GENERIC_INDEX_URL_PATTERNS = re.compile(
     r'base_gijiroku\.html|'
     r'top_gijiroku\.html|'
     r'bunkakai_index\.html|'
+    r'_index\.html?$|'
     r'member(?:\.html|/)?$|'
     r'meibo(?:\.html|/)?$|'
     r'_backno(?:\.html|/)?$|'
