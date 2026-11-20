@@ -1,8 +1,8 @@
 # PMHub 改善・機能実装（Drop）マスタードキュメント (DROPS.md)
 
-> **最終更新**: 2026-11-20  
-> **最新 Drop**: **Drop 144**（2026-11-18 完了）  
-> **次期予定 Drop**: **Drop 145**（Track [Security-DAST]: OWASP ZAP DAST 検出アラート対応 & SRI・CSP強化・誤検知ルールチューニング、または Track [Core-Policy-Filter]）  
+> **最終更新**: 2026-11-21  
+> **最新 Drop**: **Drop 145**（2026-11-21 完了）  
+> **次期予定 Drop**: **Drop 146**（Track [Security-DAST]: OWASP ZAP DAST 検出アラート対応 & SRI・CSP強化・誤検知ルールチューニング、または Track [Core-Policy-Filter]）  
 > 
 > 本ドキュメントは、PMHub の継続的改善ロードマップおよび実装記録を一元管理するマスタードキュメントです。  `
 > 今後の構想テーマは **「Track（トラック）」** として管理し、着手・個別実装単位は最新連番を付与した **「Drop（ドロップ）」** として連番アーカイブします。  `
@@ -324,6 +324,7 @@ GitHub Actions で自動更新・push されたリモートの最新データ（
 | **Drop 142** | **内閣府消費者委員会「消費者法制度のパラダイムシフトに関する専門調査会」ワンストップ新規追加** | **会議体・全25開催回・配付資料112件の網羅的登録 & スクレイピングルール連動**<br>内閣府消費者委員会配下の専門調査会（`cao-paradigm_shift_senmon`）を新規登録。第1回（2023/12/27）から第25回（2025/06/13）の全25回開催回データ、各回公式URL、議事次第・資料・参考資料・議事録等全112件の配付資料PDFを網羅取得。次回クロール用スクレイピングルール登録、全レイヤー統合テスト完全合格。 | **新規会議体1組織・開催回25件・配付資料112件登録、全10ケース+単体14種完全合格** |
 | **Drop 143** | **統合デザインハーネス仕様（Design.md / GLOBAL_RULES.md §6）準拠・テーマ標準化＆Design Quality Gate整備** | **Light/Dark カラートークン標準化・管理UI外部CSS分離・UI禁則（BAN-01〜BAN-10）徹底・テスト自動化**<br>`docs/styles.css` の `:root` を Light 基準（`[data-theme="dark"]` 明示分離）へ統一し、48省庁カラー・ステータス変数・`tabular-nums` を適用。`admin/admin_dashboard.html` 内のインライン `<style>` 2ブロックを新設の外部CSS `admin/admin_dashboard.css` へ完全分離し、管理コンソールにも `pmhub_theme` 連動 Light/Dark テーマ切替を導入。0件フィルター非表示（`BAN-02`）、モーダル3経路閉鎖、アコーディオン `.expanded` 連動、件数ステータスバー常時表示を整備し、`testing/test_js_runtime.js`（ケース3）へ Design Quality Gate 自動検証を追加。 | **インライン`<style>` 0件・Light/Darkトークン統一・全10ケース＋単体14種完全合格（17.97s）** |
 | **Drop 144** | **OWASP ZAP DAST セキュリティスキャンパイプライン構築 & 初回ベースライン検証・脆弱性分析** | **GitHub Actions 自動 DAST 基盤構築 & 初回スキャン（High 0件 PASS）および検出アラート精査**<br>OWASP ZAP（`ghcr.io/zaproxy/zaproxy:stable`）を用いた動的脆弱性スキャンワークフロー `.github/workflows/zap-dast.yml`（PR/push時 `baseline`、週次/手動 `full`）、ローカル限定ターゲット検証＆Highリスクゲート `.zap/evaluate_zap_report.py`、ルール定義 `.zap/rules.tsv`、ローカル再現スクリプト `scripts/run-zap-scan.ps1` / `.sh`、および運用手順書 `guide/security-scan.md` を整備。初回スキャン（Run `44312816310`）で High 0件（PASS）を確認し、検出された Medium 3件・Low 7件の実対応項目とCI環境誤検知の切り分けを実施。 | **High リスク 0件（PASS / 1m18s）**<br>・Medium 3件 / Low 7件の対策・誤検知切り分け完了（Track [Security-DAST] 策定） |
+| **Drop 145** | **確定拠出年金制度の運用改善等に関する有識者懇談会「2026/07/22」誤登録開催回の削除 & ローカル資産整理** | **厚労省「確定拠出年金制度の運用改善等に関する有識者懇談会」の架空開催回削除**<br>公式ページ上に実在しない `2026/07/22` 開催回（`mhlw-kakutei_kyoshutsu_nenkin_kondan-20260722-s04`、第1〜3回の議事録HTMLが重複紐付け・`manual_lock=1` で残存）をマスターDB・2系統JSON・PMMローカル資産（`local_docs/`）から完全削除。第1〜4回の正規開催回と各回議事録はそのまま維持し、再発防止とデータ整合性を検証。 | **誤登録開催回1件・重複資料3件・ローカル重複フォルダ完全削除、統合テスト完全合格** |
 
 ---
 
@@ -4889,3 +4890,30 @@ python testing/run_test_suite.py --all-layers : PASSED（統合10ケース＋全
      - `10036`（Python `SimpleHTTP` の `Server` ヘッダーバージョン露出）および `10017`（信頼済 Chart.js CDN 読み込み）の `IGNORE` 追加。
      - Google Fonts 動的 CSS（仕様上 SRI 付与不可）および静的テストサーバーで付与不可な HTTP レスポンスヘッダー類のルール整理。
 
+### Drop 145: 確定拠出年金制度の運用改善等に関する有識者懇談会「2026/07/22」誤登録開催回の削除 & ローカル資産整理 (2026-11-21 完了)
+
+#### 1. 背景と目的
+- **誤登録開催回の削除要請**:
+  ユーザーより、厚生労働省「確定拠出年金制度の運用改善等に関する有識者懇談会」（`mhlw-kakutei_kyoshutsu_nenkin_kondan`）における `2026/07/22` の開催回は実在しないため削除してほしいとの依頼を受領。
+- **事象の原因特定**:
+  公式ページ（`https://www.mhlw.go.jp/stf/shingi/other-nenkin_129221_00002.html`）を確認したところ、同懇談会は第1回（2026/04/23）〜第4回（2026/11/26）の計4回のみで構成されており、`2026/07/22`（`mhlw-kakutei_kyoshutsu_nenkin_kondan-20260722-s04`）は第1〜3回の議事録HTML（`newpage_73053.html`, `newpage_74382.html`, `newpage_74790.html`）が重複集約された誤登録レコードであり、`manual_lock = 1` が付与されていたため自動クロールでも削除されず残存していた。
+
+#### 2. 主要な施策・修正内容
+1. **マスターDB（`admin/pmhub.db`）からの完全削除**:
+   - `mhlw-kakutei_kyoshutsu_nenkin_kondan-20260722-s04` に紐づく重複 `materials`（3件）および `meetings`（1件）を削除。
+   - 正規の第1回〜第3回側に各回の議事録が個別に登録・ダウンロード済みであることを確認・維持。
+2. **PMM ローカル資産（`local_docs/`）のクリーンアップ**:
+   - `safe_rmtree` により `local_docs/厚生労働省/確定拠出年金制度の運用改善等に関する有識者懇談会/20260722` 配下の重複ファイル（`議事録.html`, `議事録_2.html`, `議事録_3.html`）を安全に削除。
+3. **2系統 JSON 同期・再発防止確認**:
+   - `admin/db/export_data.py` により `docs/data.json`, `docs/data_archive.json`, `admin/admin_data.json` へアトミック同期。
+   - 公式ページ HTML 上に `2026年7月22日` 等の日付文字列が存在しないため、次回クロールで再生成されないことを確認。
+
+#### 3. 達成された指標・成果
+- **データクレンジング**:
+  - 誤登録開催回 1 件、重複配付資料 3 件、ローカル重複フォルダ 1 件を完全に除去。
+  - 確定拠出年金制度の運用改善等に関する有識者懇談会の開催回が正規の全4回（第1回〜第4回）へ整理完了。
+- **統合テストスイート（`testing/run_test_suite.py`）**:
+  - 実行対象レイヤーの全テストケース完全合格（FK制約違反0件・3者間完全一致・重複0件）。
+
+#### 4. 今後の課題・ネクストアクション
+- 次期定時クロールにおける第4回（2026/11/26）の配付資料公開時の自動取得確認。
