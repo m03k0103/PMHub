@@ -51,8 +51,61 @@ jobs:
 
       - name: Start local server and wait for readiness
         run: |
-          mkdir -p .zap/reports
-          nohup python3 -m http.server 8001 --directory docs --bind 127.0.0.1 > .zap/server.log 2>&1 &
+          mkdir -p .zap/reports .zap/site_target
+          python3 - <<'PY'
+          import json
+          import shutil
+          from pathlib import Path
+
+          src_dir = Path("docs")
+          dst_dir = Path(".zap/site_target")
+          dst_dir.mkdir(parents=True, exist_ok=True)
+
+          for item in src_dir.iterdir():
+              if item.name in {"data.json", "data_archive.json", "backups"}:
+                  continue
+              target = dst_dir / item.name
+              if item.is_dir():
+                  shutil.copytree(item, target, dirs_exist_ok=True)
+              else:
+                  shutil.copy2(item, target)
+
+          council_ids = set()
+          data_path = src_dir / "data.json"
+          if data_path.exists():
+              data = json.loads(data_path.read_text(encoding="utf-8"))
+              councils = (data.get("councils") or [])[:10]
+              council_ids = {c.get("id") for c in councils if isinstance(c, dict) and c.get("id")}
+              all_meetings = data.get("meetings") or []
+              meetings = [m for m in all_meetings if isinstance(m, dict) and m.get("councilId") in council_ids][:20]
+              if not meetings:
+                  meetings = all_meetings[:20]
+              data["councils"] = councils
+              data["meetings"] = meetings
+              if "totalMeetingsCount" in data:
+                  data["totalMeetingsCount"] = len(meetings)
+              if "totalMaterialsCount" in data:
+                  data["totalMaterialsCount"] = sum(
+                      len(m.get("materials") or []) for m in meetings if isinstance(m, dict)
+                  )
+              (dst_dir / "data.json").write_text(json.dumps(data, ensure_ascii=False), encoding="utf-8")
+
+          archive_path = src_dir / "data_archive.json"
+          if archive_path.exists():
+              arc = json.loads(archive_path.read_text(encoding="utf-8"))
+              all_arc = arc.get("meetings") or []
+              arc_meetings = [m for m in all_arc if isinstance(m, dict) and m.get("councilId") in council_ids][:20]
+              if not arc_meetings:
+                  arc_meetings = all_arc[:20]
+              arc["meetings"] = arc_meetings
+              (dst_dir / "data_archive.json").write_text(json.dumps(arc, ensure_ascii=False), encoding="utf-8")
+
+          for fname in ("data.json", "data_archive.json"):
+              fpath = dst_dir / fname
+              if fpath.exists():
+                  print(f"[INFO] Prepared lightweight {fpath}: {fpath.stat().st_size} bytes")
+          PY
+          nohup python3 -m http.server 8001 --directory .zap/site_target --bind 127.0.0.1 > .zap/server.log 2>&1 &
           SERVER_PID=$!
           echo "${SERVER_PID}" > .zap/server.pid
           for i in $(seq 1 30); do
@@ -83,6 +136,9 @@ jobs:
           cp .zap/rules.tsv .zap/reports/rules.tsv
           set +e
           docker run --rm --network host \
+            --memory=4g \
+            --shm-size=1g \
+            -e JAVA_OPTS="-Xmx2g" \
             -v "${{ github.workspace }}/.zap/reports:/zap/wrk/:rw" \
             ghcr.io/zaproxy/zaproxy:stable \
             "${{ env.ZAP_SCRIPT }}" \
@@ -91,6 +147,8 @@ jobs:
             -J report_json.json \
             -w report_md.md \
             -r report_html.html \
+            -m 1 \
+            -T 5 \
             -I
           ZAP_EXIT=$?
           set -e
