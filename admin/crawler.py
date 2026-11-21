@@ -175,6 +175,7 @@ GENERIC_TITLE_KEYWORDS = frozenset({
 GENERIC_EXACT_ONLY_KEYWORDS = frozenset({
     '開催について', '開催案内', '開催告知', '開催案内等', '開催日', '開催日時', '開催期間',
     '議事', '資料', '議題', '日時', '場所', '傍聴', '傍聴案内', '傍聴について', 'メンバー',
+    '議事次第', '配付資料', '配布資料',
     '配付資料について', '配布資料について', '議事要旨等', '議事次第等', '会議概要', '会議結果',
     '１開催日時', '１．日', '●日時', '１．日時', '１　開催日時', '１ 日時', '１　日時',
     '１ 場所', '１　場所', '２ 場所', '２　場所', '３ 議題', '３　議題', '出席者', '出席者名簿'
@@ -537,8 +538,8 @@ def clean_meeting_title(title):
     t = normalize_text(t)
     # 1. 末尾の省庁・行政組織サフィックスの除去
     t = GOV_SUFFIX_REGEX.sub('', t).strip()
-    # 2. 末尾の資料・配付資料・配付資料一覧等の除去
-    t = re.sub(r'[\s\u3000]*(?:配付|配布|会議)?資料(?:一覧)?$', '', t).strip()
+    # 2. 末尾の議事次第・資料・配付資料・配付資料一覧等の除去
+    t = re.sub(r'[\s\u3000]*(?:議事次第(?:[・／/]*(?:配付|配布|会議)?資料(?:一覧|等)?)?|(?:配付|配布|会議)?資料(?:一覧|等)?)$', '', t).strip()
     # 3. 連続する空白を1つに正規化
     t = re.sub(r'[\s\u3000]+', ' ', t).strip()
     return t
@@ -582,6 +583,7 @@ _GENERIC_INDEX_URL_PATTERNS = re.compile(
     r'base_gijiroku\.html|'
     r'top_gijiroku\.html|'
     r'bunkakai_index\.html|'
+    r'_index\.html?$|'
     r'member(?:\.html|/)?$|'
     r'meibo(?:\.html|/)?$|'
     r'_backno(?:\.html|/)?$|'
@@ -2197,7 +2199,7 @@ def _crawl_subpages(target_url, html, rule, quirk_note, pdf_pattern, existing_ur
                     "pageTitle": sub_page_title,
                     "extractedMaterialsCount": len(sub_materials),
                     "materials": sub_materials,
-                    "extractedDates": list(set(norm_sub_dates))[:2]
+                    "extractedDates": list(dict.fromkeys(norm_sub_dates))[:2]
                 })
                 additional_materials.extend(sub_materials)
 
@@ -2915,7 +2917,7 @@ def extract_via_llm(target_url, html, target_name):
             seen_urls.add(key)
             unique_materials.append(m)
     
-    unique_dates = list(set(all_dates))
+    unique_dates = list(dict.fromkeys(all_dates))
     return unique_materials, unique_dates
 
 def get_unconfirmed_meetings_count(data):
@@ -3092,7 +3094,7 @@ def execute_rule_retrieval(target, html, rule_item, use_llm=False, recheck_recen
         "hasTopPageDates": has_top_page_dates,
         "totalExtractedMaterials": len(unique_materials),
         "materials": unique_materials,
-        "extractedDates": list(set(norm_date_matches))[:5],
+        "extractedDates": list(dict.fromkeys(norm_date_matches))[:5],
         "subpageMeetings": subpage_meetings
     }
     return scraped_item
@@ -3254,7 +3256,7 @@ def _resolve_meeting_date(sub_dates, sub_title, sub_url):
     return meet_date, is_date_unconfirmed
 
 
-def _build_new_meeting(target, sub, clean_materials_list, sess_nums, meet_date, is_date_unconfirmed, existing_c_meets, added_count, existing_meeting_ids, council_parent_url):
+def _build_new_meeting(target, sub, clean_materials_list, sess_nums, meet_date, is_date_unconfirmed, existing_c_meets, added_count, existing_meeting_ids, council_parent_url, is_new_period_same_round=False):
     """
     新規開催回（meeting）オブジェクトを生成して返す。
     4セグメントID生成、重複ID回避、タイトル正規化、公式URL解決を実施。
@@ -3303,6 +3305,14 @@ def _build_new_meeting(target, sub, clean_materials_list, sess_nums, meet_date, 
             formatted_title = f"{council_name} ({date_label})"
     elif council_name not in formatted_title and sess_nums:
         formatted_title = f"第{sorted(sess_nums)[0]}回 {council_name}"
+
+    if is_new_period_same_round and not is_date_unconfirmed and meet_date and len(meet_date) >= 4:
+        has_term_marker = bool(re.search(
+            r'(?:20\d\d|19\d\d)年度?|(?:令和|平成)[0-9０-９元]+(?:事務)?年度?|(?:令和|平成)[0-9０-９元]+年|第\d+期',
+            normalize_text(formatted_title)
+        ))
+        if not has_term_marker:
+            formatted_title = f"{formatted_title} ({meet_date[:4]}年)"
 
     if is_date_unconfirmed and "開催日不明" not in formatted_title:
         formatted_title = f"{formatted_title} (開催日不明)"
@@ -3445,14 +3455,24 @@ def sync_new_meetings_from_crawl(data, target, scraped_item):
     existing_names = {m.get("name", ""): m for m in existing_c_meets if m.get("name")}
     existing_meeting_ids = {m.get("id") for m in meetings if m.get("id")}
     existing_sessions = set()
+    latest_council_dt = None
     for m in existing_c_meets:
         sess = extract_session_numbers(m.get("name", "") + " " + m.get("officialUrl", "") + " " + m.get("id", ""))
         existing_sessions.update(sess)
+        ex_d = m.get("date", "")
+        if ex_d and ex_d != "2099/01/01" and not m.get("isDateUnconfirmed"):
+            try:
+                dt = datetime.strptime(ex_d, "%Y/%m/%d")
+                if latest_council_dt is None or dt > latest_council_dt:
+                    latest_council_dt = dt
+            except Exception:
+                pass
 
     added_count = 0
     merged_count = 0
     duplicate_skip_count = 0
     for sub in subpages:
+        is_new_period_same_round = False
         sub_url = sub.get("subpageUrl", "").rstrip("/")
         sub_title = (sub.get("name") or sub.get("title") or "").strip()
         sub_mats = sub.get("materials", [])
@@ -3555,33 +3575,85 @@ def sync_new_meetings_from_crawl(data, target, scraped_item):
                 mat_item["isPrivate"] = True
             clean_materials_list.append(mat_item)
 
+        # 開催日解決（期またぎ同一回次番号の判定でも利用するため先行解決）
+        meet_date, is_date_unconfirmed = _resolve_meeting_date(sub_dates, sub_title, sub_url)
+        try:
+            new_dt = datetime.strptime(meet_date, "%Y/%m/%d") if (not is_date_unconfirmed and meet_date) else None
+        except Exception:
+            new_dt = None
+
         # --- A. 既存会議の自動昇格・更新（資料未掲載・親URLだった会議が開催日後に個別資料ページを検出した場合） ---
         if sess_nums and any(s in existing_sessions for s in sess_nums):
             matched_existing = []
+            has_newer_or_equal_same_round = False
+
             for m in existing_c_meets:
                 m_sess = extract_session_numbers(m.get("name", "") + " " + m.get("officialUrl", "") + " " + m.get("id", ""))
-                if any(s in m_sess for s in sess_nums):
+                if not any(s in m_sess for s in sess_nums):
+                    continue
+                ex_url = m.get("officialUrl", "").rstrip("/")
+                ex_date_str = m.get("date", "")
+                ex_unconfirmed = m.get("isDateUnconfirmed") or not ex_date_str or ex_date_str == "2099/01/01"
+                is_same_period = False
+                if sub_url and ex_url == sub_url:
+                    is_same_period = True
+                elif ex_url == council_parent_url.rstrip("/") or is_generic_index_url(ex_url):
+                    is_same_period = True
+                elif is_date_unconfirmed or ex_unconfirmed or not new_dt:
+                    is_same_period = True
+                else:
+                    try:
+                        ex_dt = datetime.strptime(ex_date_str, "%Y/%m/%d")
+                        if abs((new_dt - ex_dt).days) <= 365:
+                            is_same_period = True
+                        elif ex_dt >= new_dt:
+                            has_newer_or_equal_same_round = True
+                    except Exception:
+                        is_same_period = True
+                if is_same_period:
                     matched_existing.append(m)
 
-            for ex_m in matched_existing:
-                curr_url = ex_m.get("officialUrl", "").rstrip("/")
-                curr_mats = ex_m.get("materials", [])
-                
-                is_parent_or_generic = (curr_url == council_parent_url.rstrip("/") or is_generic_index_url(curr_url))
-                has_no_mats = len(curr_mats) == 0
-                has_new_valid_subpage = (sub_url and not is_generic_index_url(sub_url, sub_title) and sub_url != council_parent_url.rstrip("/"))
+            if matched_existing:
+                for ex_m in matched_existing:
+                    curr_url = ex_m.get("officialUrl", "").rstrip("/")
+                    curr_mats = ex_m.get("materials", [])
+                    
+                    is_parent_or_generic = (curr_url == council_parent_url.rstrip("/") or is_generic_index_url(curr_url))
+                    has_no_mats = len(curr_mats) == 0
+                    has_new_valid_subpage = (sub_url and not is_generic_index_url(sub_url, sub_title) and sub_url != council_parent_url.rstrip("/"))
 
-                can_upgrade_url = (is_parent_or_generic and has_new_valid_subpage)
-                can_update_mats = (has_no_mats and clean_materials_list)
+                    can_upgrade_url = (is_parent_or_generic and has_new_valid_subpage)
+                    can_update_mats = (has_no_mats and clean_materials_list)
 
-                if (can_upgrade_url or can_update_mats) and clean_materials_list:
-                    if can_upgrade_url:
-                        ex_m["officialUrl"] = sub.get("subpageUrl")
-                    ex_m["materials"] = clean_materials_list
-                    ex_m["lastUpdatedFromCrawl"] = datetime.now().strftime("%Y/%m/%d %H:%M")
-                    print(f"  [✨ 資料ページ自動更新] [{ex_m.get('date')}] {ex_m.get('name')} (URL: {sub_url}, 資料: {len(clean_materials_list)}件)")
-                    added_count += 1
-            continue
+                    if (can_upgrade_url or can_update_mats) and clean_materials_list:
+                        if can_upgrade_url:
+                            ex_m["officialUrl"] = sub.get("subpageUrl")
+                        ex_m["materials"] = clean_materials_list
+                        ex_m["lastUpdatedFromCrawl"] = datetime.now().strftime("%Y/%m/%d %H:%M")
+                        print(f"  [✨ 資料ページ自動更新] [{ex_m.get('date')}] {ex_m.get('name')} (URL: {sub_url}, 資料: {len(clean_materials_list)}件)")
+                        added_count += 1
+                    elif curr_url == sub_url and clean_materials_list:
+                        ex_mats = ex_m.setdefault("materials", [])
+                        ex_mat_urls = {mat.get("url") for mat in ex_mats if mat.get("url")}
+                        for new_mat in clean_materials_list:
+                            if new_mat.get("url") not in ex_mat_urls:
+                                ex_mats.append(new_mat)
+                                ex_mat_urls.add(new_mat.get("url"))
+                                merged_count += 1
+                continue
+            else:
+                can_add_new_period = (
+                    new_dt is not None
+                    and not is_date_unconfirmed
+                    and not has_newer_or_equal_same_round
+                    and (latest_council_dt is None or (latest_council_dt - new_dt).days <= 365)
+                    and bool(sub_url)
+                    and sub_url != council_parent_url.rstrip("/")
+                )
+                if not can_add_new_period:
+                    duplicate_skip_count += 1
+                    continue
+                is_new_period_same_round = True
 
         # CR-URL-DEDUP: 既にURLまたはタイトルが完全一致している場合は重複追加を完全遮断
         # ※親URLと同じURL（親テーブル抽出等）の場合はURL一致スキップをパスし、回次・日付チェックへ進む
@@ -3603,11 +3675,10 @@ def sync_new_meetings_from_crawl(data, target, scraped_item):
             else:
                 duplicate_skip_count += 1
             continue
-        if sub_title and sub_title in existing_names:
+        if sub_title and not is_new_period_same_round and sub_title in existing_names:
             continue
 
         # --- B. 新規開催回の追加 ---
-        meet_date, is_date_unconfirmed = _resolve_meeting_date(sub_dates, sub_title, sub_url)
 
         # 開催日未確認（2099/01/01）の場合の厳格ガード（資料0件・回次なしまたはジェネリックタイトルは登録禁止）
         if is_date_unconfirmed:
@@ -3660,7 +3731,8 @@ def sync_new_meetings_from_crawl(data, target, scraped_item):
             existing_c_meets=existing_c_meets,
             added_count=added_count,
             existing_meeting_ids=existing_meeting_ids,
-            council_parent_url=council_parent_url
+            council_parent_url=council_parent_url,
+            is_new_period_same_round=is_new_period_same_round
         )
 
         # 二重防御ガード: 生成された officialUrl が親URL以外で既に同一会議体内に存在する場合は追加遮断
@@ -3690,6 +3762,9 @@ def sync_new_meetings_from_crawl(data, target, scraped_item):
         existing_names[meet_name] = new_meeting
         for s in sess_nums:
             existing_sessions.add(s)
+        if not is_date_unconfirmed and new_dt is not None:
+            if latest_council_dt is None or new_dt > latest_council_dt:
+                latest_council_dt = new_dt
         added_count += 1
         log_prefix = "⚠️ [開催日不明(2099/01/01)]" if is_date_unconfirmed else "✨ [新規開催回自動追加]"
         print(f"  {log_prefix} [{meet_date}] {meet_name} (ID: {new_meeting['id']}, 資料: {len(clean_materials_list)}件)")
@@ -4312,38 +4387,91 @@ def resolve_news_portal_urls(portal_def):
                 return [target_url]
         return [url]
 
-    # deep_portal: 最新年・月サブページの探索
+    # deep_portal: 現在年月ベースの動的年・月サブページ探索 (Drop 146)
     if ptype == "deep_portal":
+        now = datetime.now()
+        curr_ym = now.year * 100 + now.month
+        curr_reiwa = now.year - 2018
+        prev_month_dt = (now.replace(day=1) - timedelta(days=1))
+        zenkaku_reiwa = str(curr_reiwa).translate(str.maketrans('0123456789', '０１２３４５６７８９'))
+        dyn_tokens = [
+            f"{now.year:04d}{now.month:02d}",
+            f"{prev_month_dt.year:04d}{prev_month_dt.month:02d}",
+            f"令和{curr_reiwa}",
+            f"令和{zenkaku_reiwa}",
+            f"r{curr_reiwa}_",
+            f"/{now.year:04d}",
+            f"{now.month}月",
+        ]
+
         sub_pattern = portal_def.get("subpage_pattern")
-        found_urls = []
+        pattern_urls = []
+        fallback_urls = []
         for a in soup.find_all("a", href=True):
             href = a["href"].strip()
-            text = a.get_text(strip=True)
+            if not href or href.startswith(("javascript:", "#", "mailto:", "tel:")):
+                continue
+            text = normalize_text(a.get_text(" ", strip=True))
+            full_url = urllib.parse.urljoin(url, href)
             if sub_pattern and re.search(sub_pattern, href):
-                full_url = urllib.parse.urljoin(url, href)
-                found_urls.append((full_url, text, href))
-            elif any(k in text or k in href for k in ["令和8", "令和８", "202610", "202609", "10月"]):
-                full_url = urllib.parse.urljoin(url, href)
-                found_urls.append((full_url, text, href))
+                pattern_urls.append((full_url, text, href))
+            elif any(k in text or k in href for k in dyn_tokens):
+                fallback_urls.append((full_url, text, href))
+
+        found_urls = pattern_urls if pattern_urls else fallback_urls
 
         if found_urls:
             def score_url(item):
                 furl, txt, h = item
-                if "r8_news_menu" in furl:
-                    return 202611
-                m = re.search(r'2026(10|09|08|07|06|05|04|03|02|01)', furl)
-                if m:
-                    return int(m.group(0))
-                if "10月" in txt:
-                    return 202610
-                if "9月" in txt:
-                    return 202609
-                if "r8" in furl:
-                    return 202608
+                # 1. FSA 令和N事務年度メニュー (例: r8_news_menu.html)
+                m_r = re.search(r'\br(\d+)_news_menu', furl, re.I)
+                if m_r:
+                    return 300000 + int(m_r.group(1))
+                # 2. YYYYMM (例: 202611.html)
+                m_ym = re.search(r'(?<!\d)(20\d{2})(0[1-9]|1[0-2])(?!\d)', furl)
+                if m_ym:
+                    return int(m_ym.group(1)) * 100 + int(m_ym.group(2))
+                # 3. 年次一覧インデックス (末尾が /2026 や /2026/ や /2026/index.html)
+                m_year_idx = re.search(r'/(20\d{2})(?:/(?:index\.html?)?)?$', furl.split('?')[0].split('#')[0])
+                if m_year_idx:
+                    return int(m_year_idx.group(1)) * 100 + 99
+                # 4. 年配下の個別記事 (例: /press/2026/261028_houdou)
+                m_year_sub = re.search(r'/(20\d{2})/(\d{2})(0[1-9]|1[0-2])(\d{2})', furl)
+                if m_year_sub:
+                    return int(m_year_sub.group(1)) * 100 + int(m_year_sub.group(3))
+                # 5. その他の年付きパス
+                m_year_any = re.search(r'/(20\d{2})(?:/|$)', furl)
+                if m_year_any:
+                    return int(m_year_any.group(1)) * 100
+                # 6. リンクテキストの月表記
+                m_txt_m = re.search(r'(\d{1,2})月', txt)
+                if m_txt_m:
+                    m_num = int(m_txt_m.group(1))
+                    if 1 <= m_num <= 12:
+                        y_cand = now.year if m_num <= now.month else now.year - 1
+                        return y_cand * 100 + m_num
+                m_r_any = re.search(r'\br(\d+)(?:[/_.]|$)', furl, re.I)
+                if m_r_any:
+                    return (2018 + int(m_r_any.group(1))) * 100
                 return 0
 
             sorted_urls = sorted(found_urls, key=score_url, reverse=True)
             unique = list(dict.fromkeys(u[0] for u in sorted_urls))
+            top_url = unique[0] if unique else url
+            top_score = score_url(sorted_urls[0])
+
+            # FSA 等 (rN_news_menu): 通常は最新事務年度のみ（年度替わり直後の7月は前年度も確認）
+            if sub_pattern and "news_menu" in sub_pattern:
+                return unique[:2] if now.month == 7 else unique[:1]
+
+            # NRA 等 (\d{6} 月次パターン): 当月アーカイブ未作成時はポータル自身も含める
+            if sub_pattern and r"\d{6}" in sub_pattern and top_score < curr_ym:
+                return [url] + [u for u in unique[:1] if u != url]
+
+            # PPC 等 (\d{4} 年次パターン): ポータル自身にも速報があるため親ポータル＋最新年を返す
+            if sub_pattern and r"\d{4}" in sub_pattern and top_url != url:
+                return [url] + [u for u in unique[:1] if u != url]
+
             return unique[:2]
 
     return [url]
@@ -4430,6 +4558,8 @@ def extract_news_items_from_html(html, page_url, ministry_code, ptype, since_dat
     # 2. 一般ニュース・新着フィード
     keywords = ["審議会", "検討会", "部会", "委員会", "懇談会", "ワーキング", "タスクフォース", "分科会", "研究会", "有識者会議"]
     for a in soup.find_all("a", href=True):
+        if a.find_parent(["header", "footer", "nav"]):
+            continue
         text = normalize_text(a.get_text())
         href = a["href"].strip()
         if not text or not href:
@@ -4443,23 +4573,39 @@ def extract_news_items_from_html(html, page_url, ministry_code, ptype, since_dat
             if any(nav in text for nav in ["トップページ", "目次", "プライバシーポリシー", "アクセシビリティ", "リンク集", "免責事項", "採用", "公募", "人事異動", "の委員について", "委員の任命", "委員の選任", "委員について"]):
                 continue
 
-            # Drop 133 / Drop 134: 親要素・先行見出し・リンクテキストからの掲載日・開催日パース（年補完 & YYYY/MM/DD 正規化）
+            # Drop 133 / Drop 134 / Drop 146: 親コンテナチェーン・先行見出し・日付要素からの掲載日・開催日パース
             item_date = ""
-            parent = a.find_parent(['li', 'tr', 'div', 'p', 'dd'])
-            if parent:
+            for parent in a.find_parents(['p', 'li', 'tr', 'dd', 'dl', 'div', 'article'], limit=4):
+                if parent.name in ('div', 'dl', 'article') and len(parent.find_all('a', href=True)) > 3:
+                    break
                 time_tag = parent.find('time')
                 if time_tag and time_tag.get('datetime'):
                     raw_dt = time_tag['datetime'][:10].replace('-', '/')
                     dt = parse_japanese_date(raw_dt)
                     item_date = dt.strftime("%Y/%m/%d") if dt else raw_dt
-                if not item_date:
-                    item_date = extract_news_date_with_year(parent.get_text(' ', strip=True), base_year)
+                    if item_date:
+                        break
+                item_date = extract_news_date_with_year(parent.get_text(' ', strip=True), base_year)
+                if item_date:
+                    break
 
-            # 先行見出し（h2, h3, h4, dt）からの日付フォールバック（例: MHLW 新着日付見出し構造）
+            # 先行見出し・日付要素フォールバック（MHLW h2/h3/dt, MOE summary, MAFF/RINYA/JFA p.list_item_date 等）
             if not item_date:
-                prev_h = a.find_previous(['h2', 'h3', 'h4', 'dt'])
-                if prev_h:
-                    item_date = extract_news_date_with_year(prev_h.get_text(' ', strip=True), base_year)
+                for prev_el in a.find_all_previous(
+                    lambda tag: (
+                        tag.name in ('h2', 'h3', 'h4', 'dt', 'summary')
+                        or (tag.name in ('p', 'div', 'span') and any('date' in c.lower() for c in (tag.get('class') or [])))
+                    ),
+                    limit=10
+                ):
+                    if prev_el.find_parent('li') is not None:
+                        continue
+                    cand_date = extract_news_date_with_year(prev_el.get_text(' ', strip=True), base_year)
+                    if cand_date:
+                        item_date = cand_date
+                        break
+                    if prev_el.name in ('h2', 'h3'):
+                        break
 
             # リンクテキスト自身からの日付抽出フォールバック
             if not item_date:
@@ -4525,34 +4671,81 @@ def match_council_from_news_item(item, councils_by_url, councils_by_min):
 
     norm_title = normalize_text(title)
     clean_norm_title = norm_title.replace(" ", "").replace("　", "")
+    no_round_title = re.sub(r'第\d+回', '', clean_norm_title)
     cand_councils = councils_by_min.get(min_code, [])
-    cand_councils = sorted(cand_councils, key=lambda c: len(c.get("name", "")), reverse=True)
+    # 非廃止（isClosed != True）を優先し、同一条件では名称長降順
+    cand_councils = sorted(
+        cand_councils,
+        key=lambda c: (not bool(c.get("isClosed")), len(c.get("name", ""))),
+        reverse=True
+    )
 
-    # 2. 鉤括弧名一致
+    # 2. 固有URLディレクトリ一致（他会議体の親ディレクトリになっていない固有サブディレクトリを最長一致優先）
+    all_c_dirs = []
+    for c in cand_councils:
+        c_url = c.get("officialUrl", "")
+        if not c_url:
+            continue
+        parsed_c = urllib.parse.urlparse(c_url)
+        if parsed_c.netloc == parsed_u.netloc:
+            dir_c = posixpath_dir = os.path.dirname(parsed_c.path).rstrip("/")
+            if dir_c and len(dir_c) > 10:
+                all_c_dirs.append((c, dir_c))
+
+    generic_root_dirs = {"/singi", "/shingi", "/shingikai", "/news", "/seisaku", "/policy", "/committee"}
+    specific_dir_matches = []
+    broad_dir_matches = []
+    for c, dir_c in all_c_dirs:
+        if dir_c.lower() in generic_root_dirs:
+            continue
+        if dir_c + "/" in parsed_u.path or parsed_u.path.rstrip("/") == dir_c:
+            # 他の会議体がこの dir_c を親としてサブディレクトリを持っていないか判定
+            has_child_dir = any(
+                other_dir != dir_c and other_dir.startswith(dir_c + "/")
+                for _, other_dir in all_c_dirs
+            )
+            score_tuple = (not bool(c.get("isClosed")), len(dir_c), len(c.get("name", "")))
+            if not has_child_dir:
+                specific_dir_matches.append((score_tuple, c))
+            else:
+                broad_dir_matches.append((score_tuple, c))
+
+    if specific_dir_matches:
+        specific_dir_matches.sort(key=lambda x: x[0], reverse=True)
+        return specific_dir_matches[0][1], "URL_PATH_MATCH"
+
+    # 3. 鉤括弧名・完全一致（部分一致より完全一致を最優先）
     brackets = re.findall(r'[「『【]([^」』】]+)[」』】]', norm_title)
     for b in brackets:
         b_clean = normalize_text(b).replace(" ", "").replace("　", "")
         for c in cand_councils:
             c_clean = normalize_text(c.get("name", "")).replace(" ", "").replace("　", "")
-            if c_clean and (c_clean == b_clean or c_clean in b_clean or b_clean in c_clean):
+            if c_clean and c_clean == b_clean:
                 return c, "BRACKET_NAME"
 
-    # 3. 会議体名部分一致（空白除去・最長一致）
+    # 4. 会議体名部分一致（空白・回次除去・非廃止優先・最長一致）
     for c in cand_councils:
         c_clean = normalize_text(c.get("name", "")).replace(" ", "").replace("　", "")
-        if len(c_clean) >= 4 and c_clean in clean_norm_title:
+        if len(c_clean) >= 4 and (c_clean in clean_norm_title or c_clean in no_round_title):
             return c, "TEXT_CONTAINS"
 
-    # 4. URLパス・ディレクトリ一致（同一ドメイン・同一省庁内）
-    parsed_u = urllib.parse.urlparse(url)
-    for c in cand_councils:
-        c_url = c.get("officialUrl", "")
-        if c_url:
-            parsed_c = urllib.parse.urlparse(c_url)
-            if parsed_c.netloc == parsed_u.netloc:
-                dir_c = os.path.dirname(parsed_c.path)
-                if dir_c and len(dir_c) > 10 and dir_c in parsed_u.path:
-                    return c, "URL_PATH_MATCH"
+    # 5. 鉤括弧名・部分一致フォールバック（名称長が近いものを優先）
+    partial_bracket_matches = []
+    for b in brackets:
+        b_clean = normalize_text(b).replace(" ", "").replace("　", "")
+        for c in cand_councils:
+            c_clean = normalize_text(c.get("name", "")).replace(" ", "").replace("　", "")
+            if c_clean and (c_clean in b_clean or b_clean in c_clean):
+                score = (not bool(c.get("isClosed")), -abs(len(c_clean) - len(b_clean)), len(c_clean))
+                partial_bracket_matches.append((score, c))
+    if partial_bracket_matches:
+        partial_bracket_matches.sort(key=lambda x: x[0], reverse=True)
+        return partial_bracket_matches[0][1], "BRACKET_NAME"
+
+    # 6. URLパス・ディレクトリ一致（広域親ディレクトリの最終フォールバック）
+    if broad_dir_matches:
+        broad_dir_matches.sort(key=lambda x: x[0], reverse=True)
+        return broad_dir_matches[0][1], "URL_PATH_MATCH"
 
     return None, None
 
@@ -4745,8 +4938,10 @@ def run_ministry_news_discovery(progress_callback=None, stop_event=None, ministr
                                 if art_html:
                                     mats = parse_materials_from_html(art_html, item_url)
                                     art_soup = BeautifulSoup(art_html, "html.parser")
-                                    h_tag = art_soup.find(["h1", "h2", "h3"]) or art_soup.title
-                                    p_title = h_tag.get_text(strip=True) if h_tag else item_title
+                                    p_title = extract_page_title(art_soup, fallback_url="")
+                                    if not p_title:
+                                        h_tag = art_soup.find(["h1", "h2", "h3"]) or art_soup.title
+                                        p_title = h_tag.get_text(strip=True) if h_tag else item_title
                                     art_dates = extract_clean_dates_from_html(art_html)
                                     clean_t = clean_meeting_title(p_title)
                                     if is_generic_title_text(clean_t) or clean_t == matched_c["name"]:
@@ -4823,10 +5018,14 @@ def run_ministry_news_discovery(progress_callback=None, stop_event=None, ministr
 
                 c_target = dict(c_obj)
                 c_target.setdefault("url", c_obj.get("officialUrl", ""))
+                c_target["existing_meeting_urls"] = {
+                    m.get("officialUrl", "").rstrip("/")
+                    for m in data.get("meetings", [])
+                    if m.get("councilId") == cid and m.get("officialUrl")
+                }
 
                 rule_item = get_rule_for_target(rules, c_target, rule_url_index)
-                res = execute_rule_retrieval(c_target, html, rule_item, use_llm=False, recheck_recent=1)
-                scraped_item = res.get("scraped_item")
+                scraped_item = execute_rule_retrieval(c_target, html, rule_item, use_llm=False, recheck_recent=1)
                 if scraped_item:
                     added = sync_new_meetings_from_crawl(data, c_target, scraped_item)
                     if added > 0:

@@ -1,8 +1,8 @@
 # PMHub 改善・機能実装（Drop）マスタードキュメント (DROPS.md)
 
 > **最終更新**: 2026-11-21  
-> **最新 Drop**: **Drop 145**（2026-11-21 完了）  
-> **次期予定 Drop**: **Drop 146**（Track [Security-DAST]: OWASP ZAP DAST 検出アラート対応 & SRI・CSP強化・誤検知ルールチューニング、または Track [Core-Policy-Filter]）  
+> **最新 Drop**: **Drop 146**（2026-11-21 完了）  
+> **次期予定 Drop**: **Drop 147**（Track [Security-DAST]: OWASP ZAP DAST 検出アラート対応 & SRI・CSP強化・誤検知ルールチューニング、または Track [Core-Policy-Filter]）  
 > 
 > 本ドキュメントは、PMHub の継続的改善ロードマップおよび実装記録を一元管理するマスタードキュメントです。  `
 > 今後の構想テーマは **「Track（トラック）」** として管理し、着手・個別実装単位は最新連番を付与した **「Drop（ドロップ）」** として連番アーカイブします。  `
@@ -325,6 +325,7 @@ GitHub Actions で自動更新・push されたリモートの最新データ（
 | **Drop 143** | **統合デザインハーネス仕様（Design.md / GLOBAL_RULES.md §6）準拠・テーマ標準化＆Design Quality Gate整備** | **Light/Dark カラートークン標準化・管理UI外部CSS分離・UI禁則（BAN-01〜BAN-10）徹底・テスト自動化**<br>`docs/styles.css` の `:root` を Light 基準（`[data-theme="dark"]` 明示分離）へ統一し、48省庁カラー・ステータス変数・`tabular-nums` を適用。`admin/admin_dashboard.html` 内のインライン `<style>` 2ブロックを新設の外部CSS `admin/admin_dashboard.css` へ完全分離し、管理コンソールにも `pmhub_theme` 連動 Light/Dark テーマ切替を導入。0件フィルター非表示（`BAN-02`）、モーダル3経路閉鎖、アコーディオン `.expanded` 連動、件数ステータスバー常時表示を整備し、`testing/test_js_runtime.js`（ケース3）へ Design Quality Gate 自動検証を追加。 | **インライン`<style>` 0件・Light/Darkトークン統一・全10ケース＋単体14種完全合格（17.97s）** |
 | **Drop 144** | **OWASP ZAP DAST セキュリティスキャンパイプライン構築 & 初回ベースライン検証・脆弱性分析** | **GitHub Actions 自動 DAST 基盤構築 & 初回スキャン（High 0件 PASS）および検出アラート精査**<br>OWASP ZAP（`ghcr.io/zaproxy/zaproxy:stable`）を用いた動的脆弱性スキャンワークフロー `.github/workflows/zap-dast.yml`（PR/push時 `baseline`、週次/手動 `full`）、ローカル限定ターゲット検証＆Highリスクゲート `.zap/evaluate_zap_report.py`、ルール定義 `.zap/rules.tsv`、ローカル再現スクリプト `scripts/run-zap-scan.ps1` / `.sh`、および運用手順書 `guide/security-scan.md` を整備。初回スキャン（Run `44312816310`）で High 0件（PASS）を確認し、検出された Medium 3件・Low 7件の実対応項目とCI環境誤検知の切り分けを実施。 | **High リスク 0件（PASS / 1m18s）**<br>・Medium 3件 / Low 7件の対策・誤検知切り分け完了（Track [Security-DAST] 策定） |
 | **Drop 145** | **確定拠出年金制度の運用改善等に関する有識者懇談会「2026/07/22」誤登録開催回の削除 & ローカル資産整理** | **厚労省「確定拠出年金制度の運用改善等に関する有識者懇談会」の架空開催回削除**<br>公式ページ上に実在しない `2026/07/22` 開催回（`mhlw-kakutei_kyoshutsu_nenkin_kondan-20260722-s04`、第1〜3回の議事録HTMLが重複紐付け・`manual_lock=1` で残存）をマスターDB・2系統JSON・PMMローカル資産（`local_docs/`）から完全削除。第1〜4回の正規開催回と各回議事録はそのまま維持し、再発防止とデータ整合性を検証。 | **誤登録開催回1件・重複資料3件・ローカル重複フォルダ完全削除、統合テスト完全合格** |
+| **Drop 146** | **金融庁（FSA）新着会議未登録の根本原因修正・期またぎ回次リセット対応・他7省庁新着検知横展開** | **金融庁新着検知・名寄せ・タイトル正規化・期またぎ回次リセット制御の6複合不具合修正および他7省庁への横展開**<br>1. **汎用見出し誤判定・タイトル除去修正**: `'議事次第'`, `'配付資料'`, `'配布資料'` を汎用タイトル定数へ追加し、`clean_meeting_title()` で末尾 `議事次第` を除去（`crawler.py` / `filters.py` / `extractors.py` 同期）。`_index.html` 汎用除外も追加。<br>2. **期またぎ回次リセット適正化・重複テスト対応**: `sync_new_meetings_from_crawl()` が最新活動期より365日以内で既存同回次すべてより365日超新しい別URL開催回のみ新規許可し過去期掘り返しを遮断、年・期表記未含有タイトルへ `({YYYY}年)` を自動付与。`test_no_duplicate_meetings.py` に `事務年度` 識別を追加。<br>3. **新着ポータル走査・名寄せ・ピンポイント回収修正（他7省庁横展開）**: `resolve_news_portal_urls()` の動的年月解決（202610ハードコード撤廃）、`extract_news_items_from_html()` の親コンテナ・先行日付探索（FSA/MOE/MAFF/RINYA/JFA対応）と `footer`/`nav` 除外、`match_council_from_news_item()` 優先順位是正、`run_ministry_news_discovery()` ピンポイント結果参照バグ修正、`list(dict.fromkeys(...))` による日付順序保持。<br>4. **金融庁新着データ・議事録同期**: 4開催回登録・3議事録/議事要旨追記・`fsa-digital_finance` URL移転更新・誤名寄せ1件削除と `manualLock` 保護。 | **金融庁4開催回・3議事録/議事要旨登録、重複0件（全25,115開催回検証済）、横展開8省庁新着抽出確認（FSA 8/MOF 59/NRA 3/MOE 34/MAFF 15/RINYA 5/JFA 13件）、統合10ケース＋単体14種合格** |
 
 ---
 
@@ -4917,3 +4918,50 @@ python testing/run_test_suite.py --all-layers : PASSED（統合10ケース＋全
 
 #### 4. 今後の課題・ネクストアクション
 - 次期定時クロールにおける第4回（2026/11/26）の配付資料公開時の自動取得確認。
+
+### Drop 146: 金融庁（FSA）新着会議未登録の根本原因修正・期またぎ回次リセット対応・他7省庁新着検知横展開 (2026-11-21 完了)
+
+#### 1. 背景と目的
+- **自動クロールでの金融庁（FSA）新着開催回未登録の調査依頼**:
+  ユーザーより、自動クロールで金融庁の新着会議（2026年10月〜11月開催分）が登録されていないとの指摘を受領し、ログおよびクローラー実動作を調査した。
+- **特定された 6 つの複合不具合原因**:
+  1. **タイトルクレンジングおよび汎用見出し判定の欠落**: 金融庁の「〜（第X回）議事次第」形式に対し `GENERIC_EXACT_ONLY_KEYWORDS` に `'議事次第'`, `'配付資料'`, `'配布資料'` が未定義、`clean_meeting_title()` も末尾の `議事次第` を除去できていなかった。また `dai1_index.html` 等 `_index.html` が汎用除外に含まれていなかった。
+  2. **期またぎ回次リセット開催回のスキップおよび重複検査不整合**: `sync_new_meetings_from_crawl()` が回次番号のみ（`existing_sessions`）で既存回と判定していたため、期ごとに回次がリセットされる会議体（`fsa-kinyu_disclosure_wg`、`fsa-digital_finance` 等）の最新期がスキップされていた。また単純な 365 日差許容では過去期（2001〜2022年）の掘り返しとタイトル衝突（9件）が発生し、`test_no_duplicate_meetings.py` が `事務年度` 表記を識別できなかった。
+  3. **省庁新着ポータルのコンテナ探索不備（他省庁共通構造含む）**: `extract_news_items_from_html()` が `<p class="news-title">` 階層で停止し、兄弟要素 `<p class="news-date">` や先行日付要素（FSA・MOE・MAFF・RINYA・JFA 構造）を参照できず FSA 72件中71件、および MOE・MAFF・RINYA・JFA が日付未取得で除外されていた。
+  4. **月次・年次ポータル解決の固定年月ハードコード**: `resolve_news_portal_urls()` の `deep_portal` が `202610` / `令和8` に固定され、2026年11月以降の新着ページ（MOF・NRA・PPC）を追跡できず、FSA でもフォールバック由来の不要URLが混入していた。
+  5. **名寄せ優先順位・日付順序破壊・ピンポイント参照バグ・URL移転**: `match_council_from_news_item()` による廃止済会議体や親審議会への誤名寄せ、`run_ministry_news_discovery()` のピンポイント実行における戻り値参照ミス（`res.get("scraped_item")` で常に `None`）、`list(set(dates))` による開催日・更新日順序の破壊、および `fsa-digital_finance` の `digital_2026/index.html` への公式URL移転が重複していた。
+
+#### 2. 主要な施策・修正内容
+1. **タイトル正規化・汎用除外強化（`admin/crawler.py`, `admin/crawler_modules/filters.py`, `admin/crawler_modules/extractors.py`）**:
+   - `GENERIC_EXACT_ONLY_KEYWORDS` に `'議事次第'`, `'配付資料'`, `'配布資料'` を追加し、`clean_meeting_title()` で末尾の `議事次第` 系表記を除去（関連モジュール双方で定数同期）。
+   - `_GENERIC_INDEX_URL_PATTERNS` に `_index\.html?$` を追加し、過去の親目次ページ誤抽出を全省庁共通で遮断。
+   - `list(set(...))` を `list(dict.fromkeys(...))` へ置換し、HTML 上の開催日出現順序を保持。
+2. **期またぎ回次リセット制御と重複テスト整合（`admin/crawler.py`, `testing/test_no_duplicate_meetings.py`）**:
+   - `sync_new_meetings_from_crawl()` に `latest_council_dt` 判定を導入し、「既存同回次のすべてより365日超新しい」「会議体の最新活動期より365日以内」「固有サブページURL」のすべてを満たす別期新着のみを `is_new_period_same_round = True` として許可し、過去期掘り返しを遮断。
+   - `_build_new_meeting()` にて別期同回次タイトルに年・年度・期表記が存在しない場合 `({YYYY}年)` を自動付与（`令和8事務年度` 等の表記がある場合は二重付与を回避）。
+   - `test_no_duplicate_meetings.py` の `extract_round_and_type()` 正規表現に `(?:事務)?` を追加し、`事務年度` 区分を識別可能にした（重複検証ルール自体は緩和せず維持）。
+3. **省庁新着ニュース検知・名寄せ・ピンポイント回収の修正と7省庁横展開（`admin/crawler.py`）**:
+   - `resolve_news_portal_urls()` の `deep_portal` 解決を `datetime.now()` 基準の動的年月・和暦スコアリングへ改修し、FSA ゴミURL混入防止および MOF / NRA / PPC パターンへ対応。
+   - `extract_news_items_from_html()` へ `header`/`footer`/`nav` 除外、親コンテナチェーン探索（limit=4）、先行日付要素（`h2`, `h3`, `h4`, `dt`, `summary`, `.date` 系）探索を実装し FSA・MOE・MAFF・RINYA・JFA に対応。
+   - `match_council_from_news_item()` の優先順位を「URL完全一致 → 固有ディレクトリ最長一致 → 鉤括弧完全一致 → 会議体名包含（`第\d+回`除去・非廃止優先・最長一致） → 鉤括弧部分一致 → 広域ディレクトリ」へ刷新。
+   - `run_ministry_news_discovery()` の記事直接抽出に `extract_page_title()` を優先採用し、ピンポイント巡回で `execute_rule_retrieval()` の戻り値を直接受け渡すよう修正。
+4. **金融庁未登録データ・議事録同期と単体/回帰テスト拡充**:
+   - SQLite マスターDB（`admin/pmhub.db`）と 2系統 JSON を更新・同期（`export_data.py`）：
+     - 新規開催回 4件追加・`manual_lock=1` 付与：`fsa-kinyu_disclosure_wg-20261118-007`（2026/11/18、資料4件）、`fsa-kinyu_seityousikin_wg-20261109-003`（2026/11/09、資料7件）、`fsa-digital_finance-20261020-001`（2026/10/20、資料4件+議事要旨1件）、`fsa-digital_finance-20261102-002`（2026/11/02、資料5件）。
+     - 議事録 HTML 2件追記（`manual_lock=1`）：`fsa-kinyu_seityousikin_wg-20261009-002`（第2回議事録）、`fsa-kinyu_hokenseido_wg-20261001-001`（第1回議事録）。
+     - `fsa-digital_finance` の公式URLを `https://www.fsa.go.jp/singi/digital_2026/index.html` へ移転（旧URLは `archiveUrl` 保持）、`scraping_rules` 登録、`manual_lock=1` 付与。
+     - 廃止済み会議体への誤名寄せ重複 `fsa-kinyu_dai1_disclose_wg-20260904-006` を削除。
+   - 単体・回帰テストを追加：`testing/test_crawler_foundation.py`（1テスト追加・計11件）、`testing/test_crawler_incremental.py`（3テスト追加・計14件）、`testing/test_crawler_regression.py`（1テスト追加・計11件）。
+
+#### 3. 達成された指標・成果
+- **金融庁新着自動クロール実証・冪等性確認**:
+  - `--from-ministry-news --ministry FSA --skip-download`（探索基準 `2026/10/31` 以降）にて未登録の 2 開催回（`fsa-kinyu_disclosure_wg-20261118-007`、`fsa-kinyu_seityousikin_wg-20261109-003`）のみが自動追加され（過去期追加 0件）、再実行時の追加 0件（既登録スキップ 5件）および対象 6 会議体のインメモリ巡回での追加 0件を確認。
+- **横展開 8 省庁の 2026年11月新着ドライラン結果**:
+  - 修正前 0件だった各省庁ポータルから新着を正常抽出（`since_date='2026/11/01'`）：`FSA`: 8件、`MOF`: 59件、`NRA`: 3件、`MOE`: 34件、`MAFF`: 15件、`RINYA`: 5件、`JFA`: 13件、`PPC`: 0件（11月は会議関連の公表がなく 2026/10/28 発表が最新であることをHTML確認済）。
+- **データ整合性および統合テストスイート検証**:
+  - 全 1,783 会議体・25,115 開催回（公開 5,474件＋アーカイブ 19,641件）で重複・`2099/01/01` 日付・康煕部首残存すべて 0件（`test_no_duplicate_meetings.py` PASS）。
+  - `python testing/run_test_suite.py --all-layers` にて統合 10 ケース＋単体 14 種すべて合格。
+
+#### 4. 今後の課題・ネクストアクション
+- 定時 GitHub Actions（Daily `--from-ministry-news` / Weekly）での他省庁を含む次回自動稼働ログの確認。
+- 金融庁ポータル上で独自 URL 配下に新設された「多重債務問題対策推進懇談会」（`.../policy/kashikin/tajusaimukondankai/`、親インデックス 404）等、別系譜会議体の取り扱い要否の別途検討。

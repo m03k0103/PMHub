@@ -147,7 +147,7 @@ def extract_round_and_type(title, council_name="", url=""):
     t_norm = normalize_japanese_numbers(title)
 
     sub_type = ""
-    fy_m = re.search(r'(20\d\d年度?|19\d\d年度?|令和[0-9元]+年度?[秋|春|前半|後半]?|平成[0-9元]+年度?[秋|春|前半|後半]?|令和[0-9元]+年|平成[0-9元]+年|第\d+期)', t_norm)
+    fy_m = re.search(r'(20\d\d年度?|19\d\d年度?|令和[0-9元]+(?:事務)?年度?[秋|春|前半|後半]?|平成[0-9元]+(?:事務)?年度?[秋|春|前半|後半]?|令和[0-9元]+年|平成[0-9元]+年|第\d+期)', t_norm)
     if fy_m and fy_m.group(1) not in council_name:
         sub_type += fy_m.group(1)
 

@@ -500,6 +500,127 @@ class TestCrawlerManualLockProtection(unittest.TestCase):
         self.assertNotIn("meti-sangyo_kozo", app_js_code, "docs/app.js に廃止済み旧会議体ID 'meti-sangyo_kozo' がハードコードされています")
         self.assertIn("INITIAL_WATCHED_COUNCIL_IDS", app_js_code, "docs/app.js が INITIAL_WATCHED_COUNCIL_IDS を参照していません")
 
+    def test_period_reset_round_allowed_and_past_period_blocked(self):
+        """Drop 146: 最新活動期リセット開催回のみ新規許可・年識別子自動付与し過去期掘り返しを遮断すること"""
+        council_a = {
+            "id": "test-period_reset_wg",
+            "ministry": "TEST",
+            "name": "テスト開示ワーキング・グループ",
+            "officialUrl": "https://example.com/wg/index.html"
+        }
+        council_b = {
+            "id": "test-fiscal_term_wg",
+            "ministry": "TEST",
+            "name": "テストデジタル研究会",
+            "officialUrl": "https://example.com/df/index.html"
+        }
+        mock_data = {
+            "councils": [council_a, council_b],
+            "meetings": [
+                # council_a: 2022年に第7回、直近期は2026/09/04の第6回、さらに2008年に第1回（かなり古い過去期）
+                {
+                    "id": "test-period_reset_wg-20260904-006",
+                    "councilId": "test-period_reset_wg",
+                    "name": "第6回 テスト開示ワーキング・グループ",
+                    "date": "2026/09/04",
+                    "officialUrl": "https://example.com/wg/shiryou/20260904.html",
+                    "materials": [{"name": "資料1", "url": "https://example.com/wg/20260904/01.pdf"}]
+                },
+                {
+                    "id": "test-period_reset_wg-20220324-007",
+                    "councilId": "test-period_reset_wg",
+                    "name": "金融審議会「テスト開示ワーキング・グループ」(第7回)",
+                    "date": "2022/03/24",
+                    "officialUrl": "https://example.com/wg/old/20220324.html",
+                    "materials": [{"name": "資料1", "url": "https://example.com/wg/20220324/01.pdf"}]
+                },
+                {
+                    "id": "test-period_reset_wg-20190510-004",
+                    "councilId": "test-period_reset_wg",
+                    "name": "第4回 テスト開示ワーキング・グループ",
+                    "date": "2019/05/10",
+                    "officialUrl": "https://example.com/wg/old/20190510.html",
+                    "materials": [{"name": "資料1", "url": "https://example.com/wg/20190510/01.pdf"}]
+                },
+                # council_b: 2021年に第1回
+                {
+                    "id": "test-fiscal_term_wg-20210719-001",
+                    "councilId": "test-fiscal_term_wg",
+                    "name": "「テストデジタル研究会」(第1回)",
+                    "date": "2021/07/19",
+                    "officialUrl": "https://example.com/df/old/20210719.html",
+                    "materials": [{"name": "資料1", "url": "https://example.com/df/20210719/01.pdf"}]
+                },
+            ],
+            "scrapingRules": {}
+        }
+
+        scraped_a = {
+            "subpageMeetings": [
+                # ① 新期（2026/11/18 第7回・タイトルに年表記なし） -> 許可され (2026年) が自動付与
+                {
+                    "subpageUrl": "https://example.com/wg/shiryou/20261118.html",
+                    "name": "金融審議会「テスト開示ワーキング・グループ」(第7回)",
+                    "title": "金融審議会「テスト開示ワーキング・グループ」(第7回)",
+                    "extractedDates": ["令和8年11月18日"],
+                    "materials": [{"name": "議事次第", "url": "https://example.com/wg/20261118/01.pdf"}]
+                },
+                # ③ 過去期同回次（2018/04/09 第4回、2019年第4回より過去） -> 掘り返しブロック
+                {
+                    "subpageUrl": "https://example.com/wg/old/20180409.html",
+                    "name": "金融審議会「テスト開示ワーキング・グループ」(第4回)",
+                    "title": "金融審議会「テスト開示ワーキング・グループ」(第4回)",
+                    "extractedDates": ["平成30年4月9日"],
+                    "materials": [{"name": "資料", "url": "https://example.com/wg/20180409/01.pdf"}]
+                },
+                # ③ 最新活動期（2026/09/04）より1年超古い未登録過去期（2008年第1回） -> ブロック
+                {
+                    "subpageUrl": "https://example.com/wg/old/20080115.html",
+                    "name": "金融審議会「テスト開示ワーキング・グループ」(第1回)",
+                    "title": "金融審議会「テスト開示ワーキング・グループ」(第1回)",
+                    "extractedDates": ["平成20年1月15日"],
+                    "materials": [{"name": "資料", "url": "https://example.com/wg/20080115/01.pdf"}]
+                },
+            ]
+        }
+        # 注: council_a には既存第1回を入れておく（過去期掘り返し遮断検証用）
+        mock_data["meetings"].append({
+            "id": "test-period_reset_wg-20250826-001",
+            "councilId": "test-period_reset_wg",
+            "name": "第1回 テスト開示ワーキング・グループ",
+            "date": "2025/08/26",
+            "officialUrl": "https://example.com/wg/shiryou/20250826.html",
+            "materials": [{"name": "資料1", "url": "https://example.com/wg/20250826/01.pdf"}]
+        })
+
+        added_a = sync_new_meetings_from_crawl(mock_data, council_a, scraped_a)
+        self.assertEqual(added_a, 1, "新期第7回のみ追加され、2018年/2008年の過去期は遮断されること")
+        added_7 = next(m for m in mock_data["meetings"] if m.get("officialUrl") == "https://example.com/wg/shiryou/20261118.html")
+        self.assertEqual(added_7["date"], "2026/11/18")
+        self.assertIn("(2026年)", added_7["name"], "年表記のない別期同回次には (2026年) が自動付与されること")
+
+        # ④ 同一サブページ再実行の冪等性検証
+        added_a_again = sync_new_meetings_from_crawl(mock_data, council_a, scraped_a)
+        self.assertEqual(added_a_again, 0, "再実行時は重複追加 0 件で冪等であること")
+
+        # ② タイトルにすでに「令和8事務年度」がある場合は (2026年) が二重付与されないこと
+        scraped_b = {
+            "subpageMeetings": [
+                {
+                    "subpageUrl": "https://example.com/df_2026/shiryou/20261020.html",
+                    "name": "「テストデジタル研究会」(令和8事務年度第1回)",
+                    "title": "「テストデジタル研究会」(令和8事務年度第1回)",
+                    "extractedDates": ["令和8年10月20日"],
+                    "materials": [{"name": "資料", "url": "https://example.com/df_2026/01.pdf"}]
+                }
+            ]
+        }
+        added_b = sync_new_meetings_from_crawl(mock_data, council_b, scraped_b)
+        self.assertEqual(added_b, 1)
+        added_df = next(m for m in mock_data["meetings"] if m.get("officialUrl") == "https://example.com/df_2026/shiryou/20261020.html")
+        self.assertIn("令和8事務年度", added_df["name"])
+        self.assertNotIn("(2026年)", added_df["name"])
+
 
 def run_tests():
     print("==================================================")

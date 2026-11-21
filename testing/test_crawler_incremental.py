@@ -296,6 +296,205 @@ class TestCrawlerIncremental(unittest.TestCase):
         )
         self.assertEqual(len(moj_items_all), 2)
 
+    def test_extract_news_items_sibling_and_prior_date_containers(self):
+        """Drop 146: FSA型兄弟pタグ・MOE型summary・MAFF型先行日付p抽出およびfooterリンク除外"""
+        # 1. FSA型: <li>内に p.news-date と p.news-title が兄弟配置
+        fsa_html = """
+        <html><body>
+          <ul class="news-list">
+            <li>
+              <p class="news-date">2026年11月18日</p>
+              <p class="news-title"><a href="/singi/disclosure_wg/20261118.html">金融審議会「ディスクロージャーワーキング・グループ」(第7回)議事次第</a></p>
+            </li>
+            <li>
+              <p class="news-date">2026年10月20日</p>
+              <p class="news-title"><a href="/singi/disclosure_wg/20261020.html">金融審議会「ディスクロージャーワーキング・グループ」(第6回)議事次第</a></p>
+            </li>
+          </ul>
+          <footer><a href="/singi/policy_council.html">審議会等一覧</a></footer>
+        </body></html>
+        """
+        fsa_items = crawler.extract_news_items_from_html(
+            fsa_html, "https://www.fsa.go.jp/news/r8_news_menu.html", "FSA", "deep_portal", since_date="2026/11/01"
+        )
+        self.assertEqual(len(fsa_items), 1)
+        self.assertEqual(fsa_items[0]["date"], "2026/11/18")
+        self.assertEqual(fsa_items[0]["url"], "https://www.fsa.go.jp/singi/disclosure_wg/20261118.html")
+
+        # 2. MOE型: <details><summary>日付</summary><ul><li><a>...</a></li></ul></details>
+        moe_html = """
+        <html><body>
+          <details>
+            <summary>2026年11月20日</summary>
+            <ul><li><a href="/press/press_05900.html">第12回 中央環境審議会開催について</a></li></ul>
+          </details>
+          <details>
+            <summary>2026年10月10日</summary>
+            <ul><li><a href="/press/press_05800.html">第11回 中央環境審議会開催について</a></li></ul>
+          </details>
+        </body></html>
+        """
+        moe_items = crawler.extract_news_items_from_html(
+            moe_html, "https://www.env.go.jp/press/index.html", "MOE", "news_feed", since_date="2026/11/01"
+        )
+        self.assertEqual(len(moe_items), 1)
+        self.assertEqual(moe_items[0]["date"], "2026/11/20")
+        self.assertEqual(moe_items[0]["url"], "https://www.env.go.jp/press/press_05900.html")
+
+        # 3. MAFF/RINYA/JFA型: <p class="list_item_date">日付</p><ul><li><a>...</a></li></ul>
+        maff_html = """
+        <html><body>
+          <p class="list_item_date">令和8年11月16日</p>
+          <ul><li><a href="/j/press/261116.html">食料・農業・農村政策審議会第20回検討会の開催について</a></li></ul>
+          <p class="list_item_date">令和8年10月28日</p>
+          <ul><li><a href="/j/press/261028.html">食料・農業・農村政策審議会第19回検討会の開催について</a></li></ul>
+          <nav><a href="/j/press/nav_shingi.html">審議会会議録</a></nav>
+        </body></html>
+        """
+        maff_items = crawler.extract_news_items_from_html(
+            maff_html, "https://www.maff.go.jp/j/press/index.html", "MAFF", "news_feed", since_date="2026/11/01"
+        )
+        self.assertEqual(len(maff_items), 1)
+        self.assertEqual(maff_items[0]["date"], "2026/11/16")
+        self.assertEqual(maff_items[0]["url"], "https://www.maff.go.jp/j/press/261116.html")
+
+    def test_resolve_news_portal_urls_dynamic_year_month(self):
+        """Drop 146: deep_portal が現在年月基準で動的解決され不要ゴミURLが混入しないこと"""
+        from datetime import datetime as real_datetime
+
+        class _FixedDatetime(real_datetime):
+            @classmethod
+            def now(cls, tz=None):
+                return real_datetime(2026, 11, 21, 9, 0, 0)
+
+        portal_htmls = {
+            "https://www.fsa.go.jp/news/": """
+                <a href="/news/r8_news_menu.html">令和8事務年度</a>
+                <a href="/news/r7_news_menu.html">令和7事務年度</a>
+                <a href="/news/r8/202609/260915.html#sp_summary">関連まとめ</a>
+            """,
+            "https://www.mof.go.jp/public_relations/whats_new/index.html": """
+                <a href="/public_relations/whats_new/202611.html">2026年11月</a>
+                <a href="/public_relations/whats_new/202610.html">2026年10月</a>
+                <a href="/public_relations/whats_new/202609.html">2026年9月</a>
+            """,
+            "https://www.nra.go.jp/news/index.html": """
+                <a href="/news/202610.html">2026年10月</a>
+                <a href="/news/202609.html">2026年9月</a>
+            """,
+            "https://www.ppc.go.jp/news/press/": """
+                <a href="/news/press/2026">令和8年</a>
+                <a href="/news/press/2025">令和7年</a>
+            """,
+        }
+
+        with patch('crawler.datetime', _FixedDatetime), patch('crawler.fetch_url', side_effect=lambda u, timeout=10: portal_htmls.get(u, "")):
+            fsa_urls = crawler.resolve_news_portal_urls({
+                "url": "https://www.fsa.go.jp/news/", "type": "deep_portal", "subpage_pattern": r"r\d+_news_menu\.html"
+            })
+            self.assertEqual(fsa_urls, ["https://www.fsa.go.jp/news/r8_news_menu.html"])
+
+            mof_urls = crawler.resolve_news_portal_urls({
+                "url": "https://www.mof.go.jp/public_relations/whats_new/index.html", "type": "deep_portal", "subpage_pattern": r"whats_new/\d{6}\.html"
+            })
+            self.assertEqual(mof_urls, [
+                "https://www.mof.go.jp/public_relations/whats_new/202611.html",
+                "https://www.mof.go.jp/public_relations/whats_new/202610.html"
+            ])
+
+            nra_urls = crawler.resolve_news_portal_urls({
+                "url": "https://www.nra.go.jp/news/index.html", "type": "deep_portal", "subpage_pattern": r"news/\d{6}\.html"
+            })
+            self.assertEqual(nra_urls, [
+                "https://www.nra.go.jp/news/index.html",
+                "https://www.nra.go.jp/news/202610.html"
+            ])
+
+            ppc_urls = crawler.resolve_news_portal_urls({
+                "url": "https://www.ppc.go.jp/news/press/", "type": "deep_portal", "subpage_pattern": r"press/\d{4}"
+            })
+            self.assertEqual(ppc_urls, [
+                "https://www.ppc.go.jp/news/press/",
+                "https://www.ppc.go.jp/news/press/2026"
+            ])
+
+    def test_match_council_from_news_item_priority(self):
+        """Drop 146: match_council_from_news_item の固有URLパス・鉤括弧完全一致・非廃止最長一致の優先検証"""
+        c_old_closed = {
+            "id": "fsa-kinyu_dai1_disclose_wg",
+            "ministry": "FSA",
+            "name": "金融分科会 第一部会 ディスクロージャーワーキング・グループ",
+            "officialUrl": "https://www.fsa.go.jp/singi/singi_kinyu/base_gijiroku.html",
+            "isClosed": True
+        }
+        c_active_wg = {
+            "id": "fsa-kinyu_disclosure_wg",
+            "ministry": "FSA",
+            "name": "ディスクロージャーワーキング・グループ",
+            "officialUrl": "https://www.fsa.go.jp/singi/singi_kinyu/disclosure_wg/disclosure_wg_index.html",
+            "isClosed": False
+        }
+        c_parent_kaikei = {
+            "id": "fsa-kigyou_kaikei_shingi",
+            "ministry": "FSA",
+            "name": "企業会計審議会",
+            "officialUrl": "https://www.fsa.go.jp/singi/singi_kigyou/base_gijiroku.html",
+            "isClosed": False
+        }
+        c_child_sustainability = {
+            "id": "fsa-kigyou_sustainability_bukai",
+            "ministry": "FSA",
+            "name": "企業会計審議会サステナビリティ情報保証部会",
+            "officialUrl": "https://www.fsa.go.jp/singi/singi_kigyou/sustainability_bukai/index.html",
+            "isClosed": False
+        }
+
+        councils = [c_old_closed, c_active_wg, c_parent_kaikei, c_child_sustainability]
+        councils_by_url = {c["officialUrl"].rstrip("/"): c for c in councils}
+        councils_by_min = {"FSA": councils}
+
+        # 1. 鉤括弧完全一致が廃止済みの部分包含より優先され、固有URLディレクトリ一致が働くこと
+        matched1, reason1 = crawler.match_council_from_news_item(
+            {
+                "title": "金融審議会「ディスクロージャーワーキング・グループ」(第7回)の開催の公表",
+                "url": "https://www.fsa.go.jp/news/r8/singi/20261118.html",
+                "ministry": "FSA"
+            },
+            councils_by_url,
+            councils_by_min
+        )
+        self.assertIsNotNone(matched1)
+        self.assertEqual(matched1["id"], "fsa-kinyu_disclosure_wg")
+        self.assertEqual(reason1, "BRACKET_NAME")
+
+        # 2. 固有ディレクトリURLの配下は URL_PATH_MATCH が最優先されること
+        matched2, reason2 = crawler.match_council_from_news_item(
+            {
+                "title": "第7回会議 議事次第",
+                "url": "https://www.fsa.go.jp/singi/singi_kinyu/disclosure_wg/shiryou/20261118.html",
+                "ministry": "FSA"
+            },
+            councils_by_url,
+            councils_by_min
+        )
+        self.assertIsNotNone(matched2)
+        self.assertEqual(matched2["id"], "fsa-kinyu_disclosure_wg")
+        self.assertEqual(reason2, "URL_PATH_MATCH")
+
+        # 3. 「第3回」を含む子部会名が親審議会へ誤マッチせず最長一致すること
+        matched3, reason3 = crawler.match_council_from_news_item(
+            {
+                "title": "企業会計審議会第3回サステナビリティ情報保証部会の開催について",
+                "url": "https://www.fsa.go.jp/news/r8/singi/20261119.html",
+                "ministry": "FSA"
+            },
+            councils_by_url,
+            councils_by_min
+        )
+        self.assertIsNotNone(matched3)
+        self.assertEqual(matched3["id"], "fsa-kigyou_sustainability_bukai")
+        self.assertEqual(reason3, "TEXT_CONTAINS")
+
 
 if __name__ == '__main__':
     unittest.main()

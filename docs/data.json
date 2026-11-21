@@ -1249,7 +1249,7 @@
       "name": "文化審議会国語分科会 言語資源小委員会",
       "officialUrl": "https://www.bunka.go.jp/seisaku/bunkashingikai/kokugo/gengo/",
       "description": "文化庁文化審議会における文化審議会国語分科会 言語資源小委員会。",
-      "pastYearCount": 17,
+      "pastYearCount": 7,
       "isNewlyDiscovered": true
     },
     {
@@ -2690,7 +2690,7 @@
       "name": "再就職等監視委員会",
       "officialUrl": "https://www5.cao.go.jp/kanshi/kaisai.html",
       "archiveUrl": "https://www5.cao.go.jp/kanshi/kaisai.html",
-      "pastYearCount": 48,
+      "pastYearCount": 47,
       "isNewlyDiscovered": true
     },
     {
@@ -4128,7 +4128,7 @@
       "category": "PANEL",
       "name": "インテリジェンス機能の強化に関する有識者会議",
       "officialUrl": "https://www.cas.go.jp/jp/seisaku/intelligent_features_kyoka/index.html",
-      "pastYearCount": 3,
+      "pastYearCount": 2,
       "isNewlyDiscovered": true
     },
     {
@@ -5658,7 +5658,7 @@
       "category": "COUNCIL",
       "name": "こども家庭審議会 特別養子縁組に関する支援の在り方に関する専門委員会",
       "officialUrl": "https://www.cfa.go.jp/councils/shingikai/shakai_katei/tokubetsu-yoshi",
-      "pastYearCount": 8,
+      "pastYearCount": 0,
       "isNewlyDiscovered": true
     },
     {
@@ -7414,9 +7414,10 @@
       "ministry": "FSA",
       "category": "STUDY",
       "name": "デジタル・分散型金融への対応のあり方等に関する研究会",
-      "officialUrl": "https://www.fsa.go.jp/singi/digital/index.html",
+      "officialUrl": "https://www.fsa.go.jp/singi/digital_2026/index.html",
+      "archiveUrl": "https://www.fsa.go.jp/singi/digital/index.html",
       "description": "暗号資産・分散型金融(DeFi)やブロックチェーン技術の進展に伴う金融制度・利用者保護のあり方を検討する研究会。",
-      "pastYearCount": 0,
+      "pastYearCount": 2,
       "materials": [
         {
           "name": "メンバー等名簿 (PDF)",
@@ -8586,7 +8587,7 @@
       "category": "WORKING_GROUP",
       "name": "成長企業への資金供給の在り方等に関するワーキング・グループ",
       "officialUrl": "https://www.fsa.go.jp/singi/singi_kinyu/seityousikin_wg/seityousikin_wg_index.html",
-      "pastYearCount": 2
+      "pastYearCount": 3
     },
     {
       "id": "fsa-kinyu_shihyou_kisei",
@@ -13336,8 +13337,7 @@
       "category": "SECTION",
       "name": "職業安定分科会雇用保険部会",
       "officialUrl": "https://www.mhlw.go.jp/stf/shingi/shingi-rousei_126980_00007.html",
-      "pastYearCount": 30,
-      "isNewlyDiscovered": true
+      "pastYearCount": 29
     },
     {
       "id": "mhlw-939",
@@ -13345,7 +13345,7 @@
       "category": "SECTION",
       "name": "職業安定分科会労働力需給制度部会",
       "officialUrl": "https://www.mhlw.go.jp/stf/shingi/shingi-rousei_126981.html",
-      "pastYearCount": 22,
+      "pastYearCount": 21,
       "isNewlyDiscovered": true
     },
     {
@@ -14224,7 +14224,7 @@
       "name": "困難な問題を抱える女性への支援に関する検討会",
       "officialUrl": "https://www.mhlw.go.jp/stf/newpage_74384.html",
       "description": "困難な問題を抱える女性への支援に関する法律に基づく施策の現状と課題を検証し、支援の方向性を検討する検討会。",
-      "pastYearCount": 5,
+      "pastYearCount": 4,
       "materials": [
         {
           "name": "資料１ 開催要綱 ・構成員名簿 (PDF)",
@@ -14364,7 +14364,7 @@
       "name": "労働政策審議会 労働条件分科会",
       "officialUrl": "https://www.mhlw.go.jp/stf/shingi/shingi-rousei_126969_00004.html",
       "description": "労働基準法、賃金支払確保法、労働時間制度等の労働条件全般に係る重要施策・法改正事項を調査審議する労働政策審議会の主要分科会。",
-      "pastYearCount": 30,
+      "pastYearCount": 29,
       "materials": [
         {
           "name": "参考資料No.1 労働条件分科会委員名簿［PDF形式：128KB］",
@@ -14439,7 +14439,7 @@
       "name": "社会保障審議会 介護保険部会",
       "officialUrl": "https://www.mhlw.go.jp/stf/shingi/shingi-hosho_126734.html",
       "description": "厚生労働省社会保障審議会における社会保障審議会 介護保険部会。",
-      "pastYearCount": 51,
+      "pastYearCount": 49,
       "isNewlyDiscovered": true
     },
     {
@@ -14449,7 +14449,7 @@
       "name": "社会保障審議会 介護給付費分科会",
       "officialUrl": "https://www.mhlw.go.jp/stf/shingi/shingi-hosho_126698_00022.html",
       "description": "厚生労働省社会保障審議会における社会保障審議会 介護給付費分科会。",
-      "pastYearCount": 82,
+      "pastYearCount": 81,
       "isNewlyDiscovered": true
     },
     {
@@ -14486,7 +14486,7 @@
       "name": "社会保障審議会 障害者部会",
       "officialUrl": "https://www.mhlw.go.jp/stf/shingi/shingi-hosho_126730.html",
       "description": "厚生労働省社会保障審議会における社会保障審議会 障害者部会。",
-      "pastYearCount": 21,
+      "pastYearCount": 20,
       "isNewlyDiscovered": true
     },
     {
@@ -14552,7 +14552,7 @@
       "category": "STUDY_GROUP",
       "name": "と畜場の制度に関する研究会",
       "officialUrl": "https://www.mhlw.go.jp/stf/newpage_76379.html",
-      "pastYearCount": 2,
+      "pastYearCount": 0,
       "isNewlyDiscovered": true
     },
     {
@@ -14989,7 +14989,7 @@
       "name": "情報通信審議会 情報通信技術分科会 電波有効利用委員会",
       "officialUrl": "https://www.soumu.go.jp/main_sosiki/joho_tsusin/policyreports/joho_tsusin/denpa_yukoriyo/index.html",
       "description": "総務省 情報通信審議会 情報通信技術分科会 電波有効利用委員会。",
-      "pastYearCount": 19,
+      "pastYearCount": 12,
       "isNewlyDiscovered": true
     },
     {
@@ -15078,7 +15078,7 @@
       "name": "情報通信審議会 ITU部会 放送業務委員会",
       "officialUrl": "https://www.soumu.go.jp/main_sosiki/joho_tsusin/policyreports/joho_tsusin/docs_Broadcast/docs_Broadcast.html",
       "description": "総務省 情報通信審議会 ITU部会 放送業務委員会。",
-      "pastYearCount": 63,
+      "pastYearCount": 4,
       "isNewlyDiscovered": true
     },
     {
@@ -18486,7 +18486,7 @@
       "councilId": "mhlw-816",
       "name": "第79回 予防接種・ワクチン分科会 予防接種基本方針部会",
       "date": "2026/11/19",
-      "officialUrl": "https://www.mhlw.go.jp/stf/newpage_77307.html",
+      "officialUrl": "https://www.mhlw.go.jp/stf/shingi/shingi-kousei_127714.html",
       "materials": [
         {
           "name": "01第79回厚生科学審議会予防接種・ワクチン分科会予防接種基本方針部会議事次第及び委員名簿",
@@ -18654,6 +18654,31 @@
       "date": "2026/11/18",
       "officialUrl": "https://www.cas.go.jp/jp/seisakukaigi/titeki2/contentindustry_support_tf/index.html",
       "materials": []
+    },
+    {
+      "id": "fsa-kinyu_disclosure_wg-20261118-007",
+      "councilId": "fsa-kinyu_disclosure_wg",
+      "name": "金融審議会「ディスクロージャーワーキング・グループ」(第7回) (2026年)",
+      "date": "2026/11/18",
+      "officialUrl": "https://www.fsa.go.jp/singi/singi_kinyu/disclosure_wg/shiryou/20261118.html",
+      "materials": [
+        {
+          "name": "一般社団法人 日本経済団体連合会 (第一部) 資料",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/disclosure_wg/shiryou/20261118/01.pdf"
+        },
+        {
+          "name": "一般社団法人 日本経済団体連合会 (第二部) 資料",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/disclosure_wg/shiryou/20261118/02.pdf"
+        },
+        {
+          "name": "公益社団法人 関西経済連合会 資料",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/disclosure_wg/shiryou/20261118/03.pdf"
+        },
+        {
+          "name": "公益社団法人 日本証券アナリスト協会 資料",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/disclosure_wg/shiryou/20261118/04.pdf"
+        }
+      ]
     },
     {
       "id": "mhlw-814-20261118-038",
@@ -20522,6 +20547,43 @@
       ]
     },
     {
+      "id": "fsa-kinyu_seityousikin_wg-20261109-003",
+      "councilId": "fsa-kinyu_seityousikin_wg",
+      "name": "金融審議会「成長企業への資金供給の在り方等に関するワーキング・グループ」(第3回)",
+      "date": "2026/11/09",
+      "officialUrl": "https://www.fsa.go.jp/singi/singi_kinyu/seityousikin_wg/gijishidai/20261109.html",
+      "materials": [
+        {
+          "name": "全国銀行協会説明資料",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/seityousikin_wg/gijishidai/20261109/01.pdf"
+        },
+        {
+          "name": "事務局説明資料1",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/seityousikin_wg/gijishidai/20261109/02.pdf"
+        },
+        {
+          "name": "日本貸金業協会説明資料",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/seityousikin_wg/gijishidai/20261109/03.pdf"
+        },
+        {
+          "name": "髙橋弁護士説明資料",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/seityousikin_wg/gijishidai/20261109/04.pdf"
+        },
+        {
+          "name": "事務局説明資料2",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/seityousikin_wg/gijishidai/20261109/05.pdf"
+        },
+        {
+          "name": "意見書(翁委員)",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/seityousikin_wg/gijishidai/20261109/06.pdf"
+        },
+        {
+          "name": "意見書(坂委員)",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/seityousikin_wg/gijishidai/20261109/07.pdf"
+        }
+      ]
+    },
+    {
       "id": "mhlw-2857-20261109-025",
       "councilId": "mhlw-2857",
       "name": "第25回 成年後見制度利用促進専門家会議",
@@ -21656,6 +21718,36 @@
         {
           "name": "第21回国土強靱化推進会議議事概要",
           "url": "https://www.cas.go.jp/jp/seisaku/suisinkaigi/joukyou_dai22/sankoshiryo.pdf"
+        }
+      ]
+    },
+    {
+      "id": "fsa-digital_finance-20261102-002",
+      "councilId": "fsa-digital_finance",
+      "name": "「デジタル・分散型金融への対応のあり方等に関する研究会」(令和8事務年度第2回)",
+      "date": "2026/11/02",
+      "round": 2,
+      "officialUrl": "https://www.fsa.go.jp/singi/digital_2026/shiryo/20261102.html",
+      "materials": [
+        {
+          "name": "メンバー等名簿",
+          "url": "https://www.fsa.go.jp/singi/digital_2026/shiryo/261102/meibo.pdf"
+        },
+        {
+          "name": "事務局説明資料",
+          "url": "https://www.fsa.go.jp/singi/digital_2026/shiryo/261102/jimukyoku.pdf"
+        },
+        {
+          "name": "JPYC株式会社説明資料",
+          "url": "https://www.fsa.go.jp/singi/digital_2026/shiryo/261102/hearing_1.pdf"
+        },
+        {
+          "name": "SBI VCトレード株式会社説明資料",
+          "url": "https://www.fsa.go.jp/singi/digital_2026/shiryo/261102/hearing_2.pdf"
+        },
+        {
+          "name": "全国銀行協会説明資料",
+          "url": "https://www.fsa.go.jp/singi/digital_2026/shiryo/261102/hearing_3.pdf"
         }
       ]
     },
@@ -24424,6 +24516,37 @@
       ]
     },
     {
+      "id": "fsa-digital_finance-20261020-001",
+      "councilId": "fsa-digital_finance",
+      "name": "「デジタル・分散型金融への対応のあり方等に関する研究会」(令和8事務年度第1回)",
+      "date": "2026/10/20",
+      "round": 1,
+      "officialUrl": "https://www.fsa.go.jp/singi/digital_2026/shiryo/20261020.html",
+      "materials": [
+        {
+          "name": "メンバー等名簿",
+          "url": "https://www.fsa.go.jp/singi/digital_2026/shiryo/261020/meibo.pdf"
+        },
+        {
+          "name": "事務局説明資料",
+          "url": "https://www.fsa.go.jp/singi/digital_2026/shiryo/261020/jimukyoku.pdf"
+        },
+        {
+          "name": "野村ホールディングス株式会社説明資料",
+          "url": "https://www.fsa.go.jp/singi/digital_2026/shiryo/261020/hearing_1.pdf"
+        },
+        {
+          "name": "Securitize Japan株式会社説明資料",
+          "url": "https://www.fsa.go.jp/singi/digital_2026/shiryo/261020/hearing_2.pdf"
+        },
+        {
+          "name": "令和8事務年度第1回 議事要旨",
+          "url": "https://www.fsa.go.jp/singi/digital_2026/gizi/261020.html",
+          "type": "HTML"
+        }
+      ]
+    },
+    {
       "id": "meti-sankoshin_green_innovation_industrial_restructuring-20261020-039",
       "councilId": "meti-sankoshin_green_innovation_industrial_restructuring",
       "name": "第39回 産業構造審議会 グリーンイノベーションプロジェクト部会 産業構造転換分野ワーキンググループ",
@@ -26149,6 +26272,11 @@
         {
           "name": "意見書(井上委員)",
           "url": "https://www.fsa.go.jp/singi/singi_kinyu/seityousikin_wg/gijishidai/20261009/05.pdf"
+        },
+        {
+          "name": "第2回 金融審議会 成長企業への資金供給の在り方等に関するワーキング・グループ 議事録",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/seityousikin_wg/gijiroku/20261009.html",
+          "type": "HTML"
         }
       ]
     },
@@ -27657,6 +27785,11 @@
         {
           "name": "意見書(柳瀬委員)",
           "url": "https://www.fsa.go.jp/singi/singi_kinyu/hokenseido_wg/gijishidai/20261001/07.pdf"
+        },
+        {
+          "name": "第1回 金融審議会 保険制度ワーキング・グループ 議事録",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/hokenseido_wg/gijiroku/20261001.html",
+          "type": "HTML"
         }
       ]
     },
@@ -33667,27 +33800,6 @@
       ]
     },
     {
-      "id": "fsa-kinyu_dai1_disclose_wg-20260904-006",
-      "councilId": "fsa-kinyu_dai1_disclose_wg",
-      "name": "第6回 金融分科会 第一部会 ディスクロージャーワーキング・グループ",
-      "date": "2026/09/04",
-      "officialUrl": "https://www.fsa.go.jp/singi/singi_kinyu/disclosure_wg/shiryou/20260904.html",
-      "materials": [
-        {
-          "name": "日本IR協議会 資料",
-          "url": "https://www.fsa.go.jp/singi/singi_kinyu/disclosure_wg/shiryou/20260904/01.pdf"
-        },
-        {
-          "name": "海外投資家 資料",
-          "url": "https://www.fsa.go.jp/singi/singi_kinyu/disclosure_wg/shiryou/20260904/02.pdf"
-        },
-        {
-          "name": "意見書(岩井委員)",
-          "url": "https://www.fsa.go.jp/singi/singi_kinyu/disclosure_wg/shiryou/20260904/03.pdf"
-        }
-      ]
-    },
-    {
       "id": "fsa-kinyu_disclosure_wg-20260904-006",
       "councilId": "fsa-kinyu_disclosure_wg",
       "name": "第6回 ディスクロージャーワーキング・グループ",
@@ -35285,6 +35397,10 @@
         {
           "name": "金融審議会委員名簿",
           "url": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/siryou/20260831/3.pdf"
+        },
+        {
+          "name": "諮問事項",
+          "url": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/siryou/20260831/4.pdf"
         }
       ]
     },
@@ -38150,7 +38266,7 @@
       "councilId": "fsa-transition_finance",
       "name": "第14回 トランジション・ファイナンス環境整備検討会",
       "date": "2026/08/21",
-      "officialUrl": "https://www.fsa.go.jp/singi/transition_finance/index.html",
+      "officialUrl": "https://www.fsa.go.jp/singi/transition_finance/siryou/20260821.html",
       "summary": "トランジション・ファイナンス環境整備検討会(第14回)の開催。配付資料および議事要旨。",
       "tags": [
         "トランジション・ファイナンス環境整備検討会",
@@ -217863,6 +217979,6 @@
   ],
   "lastCrawlTime": "2026/11/21 00:33",
   "hasArchive": true,
-  "totalMeetingsCount": 25134,
-  "totalMaterialsCount": 155139
+  "totalMeetingsCount": 25137,
+  "totalMaterialsCount": 155160
 }
