@@ -1852,6 +1852,71 @@ def _extract_date_from_url(url):
 
     return None
 
+def _compile_subpage_pattern(rule):
+    """スクレイピングルールの subpage_discovery_pattern を安全に正規表現へコンパイルする。"""
+    custom_pattern = rule.get("subpage_discovery_pattern") if isinstance(rule, dict) else None
+    if not custom_pattern or not isinstance(custom_pattern, str):
+        return None
+    # href=["'](pattern)["'] や href="pattern" のプレフィックス・サフィックスを除去して純粋なURL正規表現に正規化
+    p = custom_pattern.strip()
+    p = re.sub(r'^href\s*=\s*(?:\[\\?["\']\\?["\']\]|["\']|\[["\']\])\s*', '', p, flags=re.I)
+    p = re.sub(r'\s*(?:\[\\?["\']\\?["\']\]|["\']|\[["\']\])$', '', p)
+    if p.startswith('(') and p.endswith(')'):
+        depth = 0
+        balanced = True
+        for ch in p[1:-1]:
+            if ch == '(':
+                depth += 1
+            elif ch == ')':
+                depth -= 1
+                if depth < 0:
+                    balanced = False
+                    break
+        if balanced and depth == 0:
+            p = p[1:-1]
+    p = p.strip()
+    if p.startswith('?:'):
+        p = f"({p})"
+    try:
+        return re.compile(p, re.IGNORECASE)
+    except Exception:
+        return None
+
+
+def _passes_rule_url_filters(candidate_url, materials, parent_url, rule, custom_re=None):
+    """
+    個別会議体ルールの strict_subpage_pattern / exclude_subpage_url_patterns / require_subpage_url_patterns に
+    候補URL（または親URL直書き時の資料URL群）が適合するかを判定する。
+    """
+    if not isinstance(rule, dict):
+        return True
+    cand_raw = (candidate_url or "").strip()
+    cand_lower = cand_raw.lower()
+
+    exclude_sub_urls = rule.get("exclude_subpage_url_patterns") or []
+    if exclude_sub_urls and cand_lower and any(pat.lower() in cand_lower for pat in exclude_sub_urls):
+        return False
+
+    require_sub_urls = rule.get("require_subpage_url_patterns") or []
+    if require_sub_urls and (not cand_lower or not any(pat.lower() in cand_lower for pat in require_sub_urls)):
+        return False
+
+    strict_custom = bool(custom_re and rule.get("strict_subpage_pattern"))
+    if strict_custom:
+        parent_clean = (parent_url or "").split("#")[0].rstrip("/").lower()
+        cand_clean = cand_raw.split("#")[0].rstrip("/").lower()
+        is_parent = (not cand_clean) or (cand_clean == parent_clean)
+        if not is_parent:
+            if not custom_re.search(cand_raw):
+                return False
+        else:
+            mat_urls = [m.get("url", "") for m in (materials or []) if isinstance(m, dict) and m.get("url")]
+            if not mat_urls or not any(custom_re.search(mu) for mu in mat_urls):
+                return False
+
+    return True
+
+
 def extract_actual_subpage_links(html, target_url, rule=None, return_meta=False):
     """
     親会議体URLまたはarchiveUrlのHTML内に実在するリンク（<a>タグ）から、
@@ -1867,29 +1932,7 @@ def extract_actual_subpage_links(html, target_url, rule=None, return_meta=False)
     page_base_url = urllib.parse.urljoin(target_url, base_tag['href']) if base_tag else target_url
     target_domain = urllib.parse.urlparse(target_url).netloc.lower()
 
-    custom_pattern = rule.get("subpage_discovery_pattern") if rule else None
-    custom_re = None
-    if custom_pattern:
-        # href=["'](pattern)["'] や href="pattern" のプレフィックス・サフィックスを除去して純粋なURL正規表現に正規化
-        p = custom_pattern.strip()
-        p = re.sub(r'^href\s*=\s*(?:\[\\?["\']\\?["\']\]|["\']|\[["\']\])\s*', '', p, flags=re.I)
-        p = re.sub(r'\s*(?:\[\\?["\']\\?["\']\]|["\']|\[["\']\])$', '', p)
-        if p.startswith('(') and p.endswith(')'):
-            depth = 0
-            balanced = True
-            for ch in p[1:-1]:
-                if ch == '(': depth += 1
-                elif ch == ')':
-                    depth -= 1
-                    if depth < 0:
-                        balanced = False
-                        break
-            if balanced and depth == 0:
-                p = p[1:-1]
-        try:
-            custom_re = re.compile(p.strip(), re.IGNORECASE)
-        except Exception:
-            custom_re = None
+    custom_re = _compile_subpage_pattern(rule)
 
     candidates = []
     meta_map = {}
@@ -1959,7 +2002,7 @@ def extract_actual_subpage_links(html, target_url, rule=None, return_meta=False)
         # 報告書公表ページ・活動状況等の組織常設資料（回次「第X回」を含まない単独報告書リンク）の除外
         if (any(k in t_clean for k in ['報告書', '活動状況', '視察概要', '論点整理', '提言']) or any(k in abs_url.lower() for k in ['/report/', '/tosin/', '/katsudou/'])) and not re.search(r'第\s*\d+\s*回', t_clean):
             continue
-        if not is_strong_meeting_url and any(kw == t_clean for kw in GENERIC_TITLE_KEYWORDS):
+        if not is_strong_meeting_url and not (custom_re and (custom_re.search(href) or custom_re.search(abs_url))) and any(kw == t_clean for kw in GENERIC_TITLE_KEYWORDS):
             continue
 
         # 開催告知・事前案内単体ページの除外
@@ -2243,6 +2286,7 @@ def _extract_meetings_from_parent_table(html, target_url, council_name, rule=Non
     soup = BeautifulSoup(html, 'html.parser')
     base_tag = soup.find('base', href=True)
     page_base = urllib.parse.urljoin(target_url, base_tag['href']) if base_tag else target_url
+    custom_re = _compile_subpage_pattern(rule)
 
     meetings = []
     tables = soup.find_all('table')
@@ -2415,6 +2459,9 @@ def _extract_meetings_from_parent_table(html, target_url, council_name, rule=Non
                 if not (table_has_round_numbers and round_num):
                     continue
 
+            if rule and not _passes_rule_url_filters(row_official_url, row_materials, target_url, rule, custom_re=custom_re):
+                continue
+
             # Drop 124 Guard: 同一会合ディレクトリ（daiX/ 等）の複数行を1つの開催回へ統合
             # （親テーブル内で次第・要旨・概要が別行に分かれていても別会議として分割しない）
             d_key = None
@@ -2476,6 +2523,7 @@ def _extract_meetings_from_parent_sections(html, target_url, council_name, rule=
     soup = BeautifulSoup(html, 'html.parser')
     base_tag = soup.find('base', href=True)
     page_base = urllib.parse.urljoin(target_url, base_tag['href']) if base_tag else target_url
+    custom_re = _compile_subpage_pattern(rule)
 
     # ノイズ要素（nav, aside, footer, header 等）を除去
     for tag in soup(['nav', 'aside', 'footer', 'script', 'style', 'header']):
@@ -2622,6 +2670,9 @@ def _extract_meetings_from_parent_sections(html, target_url, council_name, rule=
                                     "url": c_url,
                                     "type": "HTML"
                                 })
+
+        if rule and not _passes_rule_url_filters(target_url, mats, target_url, rule, custom_re=custom_re):
+            continue
 
         meet_title = f"第{round_num}回 {council_name}"
         meetings.append({
@@ -3449,11 +3500,29 @@ def sync_new_meetings_from_crawl(data, target, scraped_item):
     if rules and isinstance(data.get("scrapingRuleTemplates"), dict) and data.get("scrapingRuleTemplates"):
         rules = load_scraping_rules(data)
     target_rule = get_rule_for_target(rules, target) if rules else (target.get("scrapingRule") or {})
+    custom_re = _compile_subpage_pattern(target_rule)
 
     existing_c_meets = [m for m in meetings if m.get("councilId") == council_id]
     existing_urls = {m.get("officialUrl", "").rstrip("/"): m for m in existing_c_meets if m.get("officialUrl")}
     existing_names = {m.get("name", ""): m for m in existing_c_meets if m.get("name")}
     existing_meeting_ids = {m.get("id") for m in meetings if m.get("id")}
+
+    # 共通親ポータルURLを共有する兄弟会議体間で、個別開催回URLの重複誤配分を防ぐ排他セットを構築
+    council_parent_base = council_parent_url.split("#")[0].rstrip("/") if council_parent_url else ""
+    sibling_existing_urls = set()
+    if council_parent_base:
+        sibling_council_ids = {
+            c.get("id") for c in data.get("councils", [])
+            if isinstance(c, dict) and c.get("id") and c.get("id") != council_id
+            and (c.get("officialUrl") or c.get("url") or "").split("#")[0].rstrip("/") == council_parent_base
+        }
+        if sibling_council_ids:
+            for m in meetings:
+                if m.get("councilId") in sibling_council_ids:
+                    m_u = (m.get("officialUrl") or "").rstrip("/")
+                    if m_u and m_u.split("#")[0].rstrip("/") != council_parent_base:
+                        sibling_existing_urls.add(m_u)
+
     existing_sessions = set()
     latest_council_dt = None
     for m in existing_c_meets:
@@ -3506,21 +3575,21 @@ def sync_new_meetings_from_crawl(data, target, scraped_item):
             continue
 
 
-        # 会議体スクレイピングルール固有のサブページ除外・必須フィルタリング（Drop 95: ハードコード撤廃）
+        # 会議体スクレイピングルール固有のサブページ除外・必須フィルタリング（Drop 95 / Drop 147）
         if target_rule.get("disallow_self_url") and council_parent_url:
             if sub_url.rstrip('/').lower() == council_parent_url.rstrip('/').lower():
                 continue
 
-        exclude_sub_urls = target_rule.get("exclude_subpage_url_patterns") or []
-        if any(pat.lower() in sub_url.lower() for pat in exclude_sub_urls):
+        if not _passes_rule_url_filters(sub_url, sub_mats, council_parent_url, target_rule, custom_re=custom_re):
             continue
 
         exclude_sub_titles = target_rule.get("exclude_subpage_title_keywords") or []
         if any(kw.lower() in sub_title.lower() or (sub_page_title and kw.lower() in sub_page_title.lower()) for kw in exclude_sub_titles):
             continue
 
-        require_sub_urls = target_rule.get("require_subpage_url_patterns") or []
-        if require_sub_urls and not any(pat.lower() in sub_url.lower() for pat in require_sub_urls):
+        # 共通親ポータルを共有する他会議体へ既に登録済みの個別開催回URLの重複登録を遮断（Drop 147）
+        if sub_url and sub_url in sibling_existing_urls and sub_url not in existing_urls:
+            duplicate_skip_count += 1
             continue
 
         # 他省庁URLの誤混入ガード（例: MHLW会議体にMETIのURLが混入するのを防止）

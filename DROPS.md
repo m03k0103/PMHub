@@ -1,8 +1,8 @@
 # PMHub 改善・機能実装（Drop）マスタードキュメント (DROPS.md)
 
-> **最終更新**: 2026-11-21  
-> **最新 Drop**: **Drop 146**（2026-11-21 完了）  
-> **次期予定 Drop**: **Drop 147**（Track [Security-DAST]: OWASP ZAP DAST 検出アラート対応 & SRI・CSP強化・誤検知ルールチューニング、または Track [Core-Policy-Filter]）  
+> **最終更新**: 2026-11-22  
+> **最新 Drop**: **Drop 147**（2026-11-22 完了）  
+> **次期予定 Drop**: **Drop 148**（Track [Security-DAST]: OWASP ZAP DAST 検出アラート対応 & SRI・CSP強化・誤検知ルールチューニング、または Track [Core-Policy-Filter]）  
 > 
 > 本ドキュメントは、PMHub の継続的改善ロードマップおよび実装記録を一元管理するマスタードキュメントです。  `
 > 今後の構想テーマは **「Track（トラック）」** として管理し、着手・個別実装単位は最新連番を付与した **「Drop（ドロップ）」** として連番アーカイブします。  `
@@ -326,6 +326,7 @@ GitHub Actions で自動更新・push されたリモートの最新データ（
 | **Drop 144** | **OWASP ZAP DAST セキュリティスキャンパイプライン構築 & 初回ベースライン検証・脆弱性分析** | **GitHub Actions 自動 DAST 基盤構築 & 初回スキャン（High 0件 PASS）および検出アラート精査**<br>OWASP ZAP（`ghcr.io/zaproxy/zaproxy:stable`）を用いた動的脆弱性スキャンワークフロー `.github/workflows/zap-dast.yml`（PR/push時 `baseline`、週次/手動 `full`）、ローカル限定ターゲット検証＆Highリスクゲート `.zap/evaluate_zap_report.py`、ルール定義 `.zap/rules.tsv`、ローカル再現スクリプト `scripts/run-zap-scan.ps1` / `.sh`、および運用手順書 `guide/security-scan.md` を整備。初回スキャン（Run `44312816310`）で High 0件（PASS）を確認し、検出された Medium 3件・Low 7件の実対応項目とCI環境誤検知の切り分けを実施。 | **High リスク 0件（PASS / 1m18s）**<br>・Medium 3件 / Low 7件の対策・誤検知切り分け完了（Track [Security-DAST] 策定） |
 | **Drop 145** | **確定拠出年金制度の運用改善等に関する有識者懇談会「2026/07/22」誤登録開催回の削除 & ローカル資産整理** | **厚労省「確定拠出年金制度の運用改善等に関する有識者懇談会」の架空開催回削除**<br>公式ページ上に実在しない `2026/07/22` 開催回（`mhlw-kakutei_kyoshutsu_nenkin_kondan-20260722-s04`、第1〜3回の議事録HTMLが重複紐付け・`manual_lock=1` で残存）をマスターDB・2系統JSON・PMMローカル資産（`local_docs/`）から完全削除。第1〜4回の正規開催回と各回議事録はそのまま維持し、再発防止とデータ整合性を検証。 | **誤登録開催回1件・重複資料3件・ローカル重複フォルダ完全削除、統合テスト完全合格** |
 | **Drop 146** | **金融庁（FSA）新着会議未登録の根本原因修正・期またぎ回次リセット対応・他7省庁新着検知横展開** | **金融庁新着検知・名寄せ・タイトル正規化・期またぎ回次リセット制御の6複合不具合修正および他7省庁への横展開**<br>1. **汎用見出し誤判定・タイトル除去修正**: `'議事次第'`, `'配付資料'`, `'配布資料'` を汎用タイトル定数へ追加し、`clean_meeting_title()` で末尾 `議事次第` を除去（`crawler.py` / `filters.py` / `extractors.py` 同期）。`_index.html` 汎用除外も追加。<br>2. **期またぎ回次リセット適正化・重複テスト対応**: `sync_new_meetings_from_crawl()` が最新活動期より365日以内で既存同回次すべてより365日超新しい別URL開催回のみ新規許可し過去期掘り返しを遮断、年・期表記未含有タイトルへ `({YYYY}年)` を自動付与。`test_no_duplicate_meetings.py` に `事務年度` 識別を追加。<br>3. **新着ポータル走査・名寄せ・ピンポイント回収修正（他7省庁横展開）**: `resolve_news_portal_urls()` の動的年月解決（202610ハードコード撤廃）、`extract_news_items_from_html()` の親コンテナ・先行日付探索（FSA/MOE/MAFF/RINYA/JFA対応）と `footer`/`nav` 除外、`match_council_from_news_item()` 優先順位是正、`run_ministry_news_discovery()` ピンポイント結果参照バグ修正、`list(dict.fromkeys(...))` による日付順序保持。<br>4. **金融庁新着データ・議事録同期**: 4開催回登録・3議事録/議事要旨追記・`fsa-digital_finance` URL移転更新・誤名寄せ1件削除と `manualLock` 保護。 | **金融庁4開催回・3議事録/議事要旨登録、重複0件（全25,115開催回検証済）、横展開8省庁新着抽出確認（FSA 8/MOF 59/NRA 3/MOE 34/MAFF 15/RINYA 5/JFA 13件）、統合10ケース＋単体14種合格** |
+| **Drop 147** | **定時Weeklyクロール新着・更新情報のAI補正・共通親ポータル共有会議体間の誤配分（Cross-Pollution）根絶 & 厳格ルール適用** | **Weeklyクロール（Run `44967143152`）の追加・更新データ精査に基づくクローラー3層厳格隔離・不正正規表現修復・348件の誤配分整理・デジタル行財政改革配付資料展開およびAIタイトル補正**<br>1. **クローラー根本原因修正（`admin/crawler.py`）**: `_compile_subpage_pattern()`（先頭 `?:...` 欠損の自動修復および `href=` ラッパー除去）と `_passes_rule_url_filters()` を新設し、`strict_subpage_pattern: true` 設定時にサブページリンク抽出（ジェネリックリンク名特例含む）・親テーブル解析・セクション解析・`sync_new_meetings_from_crawl()` 全層で厳格パターン外URLを遮断。さらに共通親ポータルを共有する兄弟会議体間で既保有サブページURLを除外する `sibling_existing_urls` ガードを導入。<br>2. **不正正規表現13件修復 & 厳格ルール31会議体配備**: `scraping_rules` 内の `?:...` 構文エラー13件（`mext-714`, `mhlw-2855`, 総務省11件）を修復し、共有ポータル群（`cao-kisei_*` 7・`cas-digital_gyozaikaikaku*` 11・`cas-titeki*` 10・`cas-kenkou_iryou_*` 3）へ `strict_subpage_pattern: true` ＋正規化済み `subpage_discovery_pattern` を設定。<br>3. **誤配分データクレンジング・URL移行・配付資料末端化 & AI補正**: 既存ダウンロード済 PMM 資産を保護しつつ誤配分348開催回を削除、`cao-kisei_kaikaku-20251016-025` の URL/資料誤リンク修正および `committee/240219` 移管、`cas-digital_gyozaikaikaku*` 保持94開催回のHTML個別ページ昇格と中間HTML/誤添付141件除去＋末端資料552件追加、著作権分科会・沖縄振興・賃上げWG・ギャンブル依存症説明会・産業遺産技術検討会・物流関係者会議・木質材料・就職採用幹事会等のAI補正および検証済データへの `manual_lock = 1` 付与・`past_year_count` 再計算。<br>4. **回帰単体テスト拡充（`testing/test_crawler_regression.py`）**: 不正正規表現自動修復、3層厳格隔離、兄弟会議体URL排他ガードの3テストを追加（全14テスト合格）。 | **誤配分348件解消・不正正規表現13件修復・31会議体厳格ルール適用・デジタル行財政改革末端資料552件補強、全24,933開催回重複0件検証済、統合10ケース＋単体14種完全合格** |
 
 ---
 
@@ -4965,3 +4966,44 @@ python testing/run_test_suite.py --all-layers : PASSED（統合10ケース＋全
 #### 4. 今後の課題・ネクストアクション
 - 定時 GitHub Actions（Daily `--from-ministry-news` / Weekly）での他省庁を含む次回自動稼働ログの確認。
 - 金融庁ポータル上で独自 URL 配下に新設された「多重債務問題対策推進懇談会」（`.../policy/kashikin/tajusaimukondankai/`、親インデックス 404）等、別系譜会議体の取り扱い要否の別途検討。
+
+### Drop 147: 定時Weeklyクロール新着・更新情報のAI補正・共通親ポータル共有会議体間の誤配分（Cross-Pollution）根絶 & 厳格ルール適用 (2026-11-22 完了)
+
+#### 1. 背景と目的
+- **定時Weeklyクロール（Run `44967143152` / コミット `7163137`）の自律検査および異常原因の特定**:
+  Weekly クロールで自動追加・更新された開催回群を検査したところ、1つの親ポータルURL配下に複数会議体のリンクを同居させる府省庁ページ（内閣府 規制改革推進会議・各WG、内閣官房 デジタル行財政改革会議・各WG、知的財産戦略本部・各調査会WG、健康・医療戦略推進本部・専門調査会・参与会合）において、兄弟会議体同士が開催回URLを吸い上げ合う誤配分（Cross-Pollution）が発生していることを特定した。
+- **判明した構造的原因**:
+  1. `extract_actual_subpage_links()`・`_extract_meetings_from_parent_table()`・`sync_new_meetings_from_crawl()` がテンプレート由来の汎用パターンやテキストヒューリスティクスを通過させ、会議体ごとの厳格URL正規表現フィルタ（`strict_subpage_pattern`）を一貫強制できていなかった。
+  2. `scraping_rules` 内に先頭括弧 `(` 欠損による `?:...` 不正正規表現が13件存在し、`re.compile()` が失敗してルール判定がバイパスされていた。
+  3. 同一親ポータルURLを共有する別会議体が既に保有している個別開催回URLの排他チェックが未整備であり、また `digital_gyozaikaikaku` 配下のサブ会議体では `officialUrl` がPDF直リンク・中間HTMLのまま保持されるなど配付資料構造の整理を要する状態だった。
+  4. 新規検出された個別開催回において、専門委員会・ワーキンググループ・説明会・技術検討会・関係者会議・幹事会のタイトル精緻化およびHTML直結型開催回の配付資料補完（文化庁 著作権分科会 使用料部会、内閣官房 産業遺産 技術検討会）が必要であった。
+
+#### 2. 主要な施策・修正内容
+1. **クローラー厳格隔離・不正正規表現自動修復・兄弟URL排他ガード（`admin/crawler.py`）**:
+   - `_compile_subpage_pattern()` を新設し、`href=` ラッパーおよび外周不要括弧を除去するとともに先頭 `?:...` 欠損パターンを `(?:...)` へ自動修復する安全機構を導入。
+   - `_passes_rule_url_filters()` を新設し、`strict_subpage_pattern: true` 指定時は `subpage_discovery_pattern` 適合URL（親ポータル直結開催回については配付資料URL適合）のみを許可するよう、`extract_actual_subpage_links()`（`custom_re` 一致時の汎用リンクテキスト特例含む）、`_extract_meetings_from_parent_table()`、`_extract_meetings_from_parent_sections()`、および `sync_new_meetings_from_crawl()` の全抽出・反映層を統合。
+   - `sync_new_meetings_from_crawl()` に `sibling_existing_urls` ガードを追加し、正規化後親URLが一致する兄弟会議体が既に保有する個別開催回URLの重複取り込みを遮断（会議体IDのハードコード一切なし）。
+2. **不正正規表現13件の修復および31会議体への厳格スクレイピングルール配備（`admin/pmhub.db` → 2系統JSON同期）**:
+   - `scraping_rules` 内の `?:...` 不正正規表現13件（`mext-714`, `mhlw-2855`, `mic-*` 11会議体）を `(?:...)` へ修復。
+   - 共有親ポータル4系統（`cao-kisei_*` 7・`cas-digital_gyozaikaikaku*` 11・`cas-titeki*` 10・`cas-kenkou_iryou_*` 3 の計31会議体）に対し、実サイトURL構造に即した `subpage_discovery_pattern` と `strict_subpage_pattern: true` および `manualLock: true` を設定。
+3. **誤配分データ整理・正常開催回の保護移管・デジタル行財政改革 配付資料拡充・AI補正**:
+   - **保護・移管・誤リンク是正**: `cao-kisei_kaikaku-20251016-025`（第25回規制改革推進会議）の誤った `251003` URL・重複資料7件を正規の `committee/251016/agenda.html` および正規PDF群へ是正。`cao-kisei_startup_wg-20240219-s65`（書面議決）の `download_status='downloaded'` 資産を保持したまま `cao-kisei_kaikaku-20240219-s33` へ移管。合同会議である `digital-atena_kanri_wt` / `digital-datalinkage_wt`（各正規開催回）、`cas-titeki_chiiki_kachi_wg-20200514-s05`、`cas-titeki_digital_chosakuken_tf-20210311-s10`、およびダウンロード済資産9件を保有する `cas-kenkou_iryou_tyousakai-20131126-s42` を保護維持。
+   - **誤配分開催回の削除**: 厳格ルール適用対象31会議体において他会議体由来と判定された誤配分開催回 計348件（`cao-kisei_*` 150件、`cas-digital_gyozaikaikaku*` 131件、`cas-titeki*` 63件、`cas-kenkou_iryou_honbu` 4件）を削除し、`past_year_count` を再計算。
+   - **デジタル行財政改革会議系列（11会議体94開催回）の末端化・拡充**: 公式HTML個別ページを `officialUrl` へ昇格させ、不要な中間HTML・他回次/本会議資料の誤添付141件を除去するとともに、各個別ページから抽出した正規末端PDF配付資料552件を補強登録（うち `jyunnbi3` の誤URL `kyotsu7/rk3.html` も `jyunnbi3/jyunnbi3.html` へ是正）。
+   - **AIタイトル・ID・HTML資料補正および検証済ロック付与**:
+     - `aca-chosakuken_shiyouryou_bukai`（`r08_01`/`r08_02`）：`第26期第1回/第2回 著作権分科会 使用料部会` へ正規化し HTML資料行（`type='HTML'`）を登録。
+     - `cas-sangyouisan-20260915-001`：`第1回 稼働資産の保全に向けた技術検討会` へ補正し HTML議事概要を登録。
+     - `cao-220`（`senmoniinkai/25..28`：`専門委員会`）、`cas-katsuryoku_kojyo`（`payrise/dai1..2`：`賃上げに向けた中小企業等の活力向上に関するワーキンググループ`）、`cas-gambletou_izonsho_honbu`（`setsumeikai/dai4..5` -> `-s04/-s05` `都道府県説明会`）、`cas-buturyu_seisaku_suishin`（`kankeisha/dai1..2` -> `-k01/-k02` `物流政策推進関係者会議`）、`cas-mokushitsu_zairyou_renraku`（`k_dai5..8` -> `-k05..-k08` `CLT活用促進に関する関係省庁連絡会議 幹事会`、新体制 `dai1..2`）、`cas-shushoku_katsudou`（`kanji_dai9..12,14` -> `-k09..-k12,-k14` `幹事会`）、`cas-356` 等を実HTMLに基づきAI補正し、確認済レコードおよび資料群へ `manual_lock = 1` を設定して `admin/db/export_data.py` で2系統JSON（`docs/data.json`, `docs/data_archive.json`, `admin/admin_data.json`）へ同期。
+4. **回帰単体テスト拡充（`testing/test_crawler_regression.py`）**:
+   - `test_compile_subpage_pattern_repairs_broken_noncapturing_prefix`、`test_strict_subpage_pattern_three_layer_isolation`、`test_sync_shared_portal_sibling_existing_url_guard` の3テストを追加。
+
+#### 3. 達成された指標・成果
+- **誤配分根絶・品質向上**:
+  - 共有親ポータル31会議体の誤配分348件および不正正規表現13件を完全解消し、Weekly 検知以降の未検証異常を 0 件化（`inspect_auto_crawled.py --days 7 --anomaly-only` にて2026/11/22検知分の異常0件を確認）。
+  - 全 1,783 会議体・24,933 開催回（公開 5,362件＋アーカイブ 19,571件）について重複・`2099/01/01` 日付・康煕部首残存 0 件を検証。
+- **統合・単体テストスイート完全合格**:
+  - 追加・更新 URL 全 210 件のリンク疎通 `200 OK`、統合 10 ケースおよび単体関数テスト全 14 種類（U1〜U14）すべて合格。
+
+#### 4. 今後の課題・ネクストアクション
+- 次回の定時 GitHub Actions（Daily / Weekly）実行時に、厳格ルール適用済みの共有ポータル会議体間で誤配分が再発せず新規回次のみが正確に検知されることの確認。
+- 一元的なコンテンツ産業支援法人の設立検討タスクフォース第2回（`cas-titeki_contentindustry_tf-20261118-002`）について、公式個別ページの公開に伴う次回クロール時の自動資料昇格確認。

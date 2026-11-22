@@ -19,7 +19,13 @@ sys.path.insert(0, ADMIN_DIR)
 from utils import setup_win32_utf8
 setup_win32_utf8()
 
-from crawler import deduplicate_data_materials, sync_new_meetings_from_crawl
+from crawler import (
+    deduplicate_data_materials,
+    sync_new_meetings_from_crawl,
+    extract_actual_subpage_links,
+    _extract_meetings_from_parent_table,
+    _compile_subpage_pattern,
+)
 from apply_report import apply_report
 
 
@@ -620,6 +626,136 @@ class TestCrawlerManualLockProtection(unittest.TestCase):
         added_df = next(m for m in mock_data["meetings"] if m.get("officialUrl") == "https://example.com/df_2026/shiryou/20261020.html")
         self.assertIn("令和8事務年度", added_df["name"])
         self.assertNotIn("(2026年)", added_df["name"])
+
+    def test_compile_subpage_pattern_repairs_broken_noncapturing_prefix(self):
+        """Drop 147: 先頭 ?: 欠損などの不正正規表現を _compile_subpage_pattern が安全に自動修復すること"""
+        broken_patterns = [
+            r"?:02ryutsu01_|denki_tsusin/02ryutsu01_",
+            r"?:/b_menu/shingi/tosho/\d+/index\.html",
+            r'href="(?:advisory\d+/advisory\d+\.html)"',
+        ]
+        samples = [
+            "https://www.soumu.go.jp/main_sosiki/joho_tsusin/policyreports/joho_tsusin/denki_tsusin/02ryutsu01_123.html",
+            "https://www.mext.go.jp/b_menu/shingi/tosho/142/index.html",
+            "https://www.cas.go.jp/jp/seisaku/digital_gyozaikaikaku/advisory1/advisory1.html",
+        ]
+        for pat, url in zip(broken_patterns, samples):
+            compiled = _compile_subpage_pattern({"subpage_discovery_pattern": pat})
+            self.assertIsNotNone(compiled, f"Failed to compile/repair: {pat}")
+            self.assertRegex(url, compiled)
+
+    def test_strict_subpage_pattern_three_layer_isolation(self):
+        """Drop 147: strict_subpage_pattern=True 時に全3層でパターン外URL・他WG混入が遮断されること"""
+        parent_url = "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/meeting.html"
+        rule_gx = {
+            "subpage_discovery_pattern": r"kisei-kaikaku/kisei/meeting/wg/(?:\d{4}_\d+)?gx/.*\.html",
+            "strict_subpage_pattern": True,
+            "extract_from_parent_table": True,
+        }
+        portal_html = """
+        <html><body><table>
+          <tr><td>第3回</td><td>2026年5月26日</td><td><a href="wg/2501_05gx/260526/gx03_agenda.html">資料</a></td></tr>
+          <tr><td>第28回</td><td>2026年6月29日</td><td><a href="committee/260629/agenda.html">資料</a></td></tr>
+          <tr><td>過去</td><td>2021年7月29日</td><td><a href="wg/toushi/20210729/agenda.html">資料</a></td></tr>
+        </table></body></html>
+        """
+        links = extract_actual_subpage_links(portal_html, parent_url, rule=rule_gx)
+        self.assertEqual(links, ["https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_05gx/260526/gx03_agenda.html"])
+
+        rows = _extract_meetings_from_parent_table(portal_html, parent_url, "GX・サステナビリティサブWG", rule=rule_gx)
+        self.assertEqual(len(rows), 1)
+        self.assertEqual(rows[0]["subpageUrl"], "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_05gx/260526/gx03_agenda.html")
+
+        # 第3層 (sync_new_meetings_from_crawl): 親ポータルフォールバックは保有資料がstrictパターン一致時のみ許可
+        kousou_parent = "https://www.cas.go.jp/jp/seisakukaigi/titeki2/tyousakai/kousou/index.html"
+        rule_chiiki = {
+            "subpage_discovery_pattern": r"(?:chiiki_kachi_wg/dai\d+/gijis(?:h)?idai\.html|chiiki_kachi_wg/pdf/.*\.pdf)",
+            "strict_subpage_pattern": True,
+        }
+        mock_data = {
+            "councils": [{"id": "cas-chiiki_test", "ministry": "CAS", "name": "地域価値ワーキンググループ", "url": kousou_parent + "#chiiki"}],
+            "meetings": [],
+        }
+        target = {"id": "cas-chiiki_test", "ministry": "CAS", "name": "地域価値ワーキンググループ", "url": kousou_parent + "#chiiki", "scrapingRule": rule_chiiki}
+        scraped = {
+            "councilId": "cas-chiiki_test",
+            "extractedDates": [],
+            "subpageMeetings": [
+                {
+                    "name": "第10回 地域価値ワーキンググループ",
+                    "round": 10,
+                    "extractedDates": ["2026/05/13"],
+                    "subpageUrl": "https://www.cas.go.jp/jp/seisakukaigi/titeki2/kokusai_hyoujun/gijisidai/dai10/index.html",
+                    "materials": [{"name": "資料", "url": "https://www.cas.go.jp/jp/seisakukaigi/titeki2/kokusai_hyoujun/gijisidai/dai10/s1.pdf"}],
+                },
+                {
+                    "name": "2020年 地域価値ワーキンググループ報告書",
+                    "round": None,
+                    "extractedDates": ["2020/05/14"],
+                    "subpageUrl": kousou_parent,
+                    "materials": [{"name": "報告書", "url": "https://www.cas.go.jp/jp/seisakukaigi/titeki2/tyousakai/kousou/chiiki_kachi_wg/pdf/houkokusho.pdf"}],
+                },
+                {
+                    "name": "2026年 誤配分資料",
+                    "round": None,
+                    "extractedDates": ["2026/02/27"],
+                    "subpageUrl": kousou_parent,
+                    "materials": [{"name": "議事録", "url": "https://www.cas.go.jp/jp/seisakukaigi/titeki2/tyousakai/kousou/2026/dai2/gijiroku.pdf"}],
+                },
+            ],
+        }
+        added = sync_new_meetings_from_crawl(mock_data, target, scraped)
+        self.assertEqual(added, 1)
+        self.assertEqual(len(mock_data["meetings"]), 1)
+        self.assertIn("chiiki_kachi_wg/pdf/houkokusho.pdf", mock_data["meetings"][0]["materials"][0]["url"])
+
+    def test_sync_shared_portal_sibling_existing_url_guard(self):
+        """Drop 147: 同一親ポータル共有の兄弟会議体が既に保有する個別サブページURLの重複取得が阻止されること"""
+        portal = "https://www.cas.go.jp/jp/seisakukaigi/titeki2/tyousakai/kousou/index.html"
+        owned_url = "https://www.cas.go.jp/jp/seisakukaigi/titeki2/tyousakai/kousou/2026/dai4/gijishidai.html"
+        sib_b_own_url = "https://www.cas.go.jp/jp/seisakukaigi/titeki2/tyousakai/kousou/create_japan_wg2026/dai1/gijishidai.html"
+        mock_data = {
+            "councils": [
+                {"id": "cas-sib_a", "ministry": "CAS", "name": "構想委員会", "url": portal},
+                {"id": "cas-sib_b", "ministry": "CAS", "name": "Create Japan WG", "url": portal + "#create_japan"},
+            ],
+            "meetings": [
+                {
+                    "id": "cas-sib_a-20260525-004",
+                    "councilId": "cas-sib_a",
+                    "name": "第4回 構想委員会",
+                    "date": "2026/05/25",
+                    "officialUrl": owned_url,
+                    "manualLock": True,
+                    "materials": [{"name": "議事次第", "url": "https://www.cas.go.jp/jp/seisakukaigi/titeki2/tyousakai/kousou/2026/dai4/s1.pdf"}],
+                }
+            ],
+        }
+        target_b = {"id": "cas-sib_b", "ministry": "CAS", "name": "Create Japan WG", "url": portal + "#create_japan", "scrapingRule": {}}
+        scraped_b = {
+            "councilId": "cas-sib_b",
+            "extractedDates": [],
+            "subpageMeetings": [
+                {
+                    "name": "第4回 Create Japan WG",
+                    "round": 4,
+                    "extractedDates": ["2026/05/25"],
+                    "subpageUrl": owned_url,
+                    "materials": [{"name": "資料", "url": "https://www.cas.go.jp/jp/seisakukaigi/titeki2/tyousakai/kousou/2026/dai4/s1.pdf"}],
+                },
+                {
+                    "name": "第1回 Create Japan WG",
+                    "round": 1,
+                    "extractedDates": ["2026/06/10"],
+                    "subpageUrl": sib_b_own_url,
+                    "materials": [{"name": "資料", "url": "https://www.cas.go.jp/jp/seisakukaigi/titeki2/tyousakai/kousou/create_japan_wg2026/dai1/s1.pdf"}],
+                },
+            ],
+        }
+        added_b = sync_new_meetings_from_crawl(mock_data, target_b, scraped_b)
+        self.assertEqual(added_b, 1)
+        b_urls = [m["officialUrl"] for m in mock_data["meetings"] if m["councilId"] == "cas-sib_b"]
+        self.assertEqual(b_urls, [sib_b_own_url])
 
 
 def run_tests():
