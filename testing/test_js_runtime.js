@@ -121,6 +121,76 @@ function testUiDomStructureAndNoLeakage() {
     return false;
   }
   logPass("Design Quality Gate (Design.md §1.1/§1.2/§1.4-3): Lightデフォルト/Darkトークン・tabular-nums・.expanded連動を検証完了");
+
+  // Security Quality Gate (Drop 148 / Track [Security-DAST]): CSP / SRI / インラインスクリプト・イベント排除 / ZAP rules.tsv
+  const cspMatch = htmlText.match(/<meta\s+http-equiv=["']Content-Security-Policy["'][^>]*\bcontent=(?:"([^"]+)"|'([^']+)')/i);
+  if (!cspMatch) {
+    logFail("Security Gate違反: docs/index.html に Content-Security-Policy <meta> タグが設定されていません");
+    return false;
+  }
+  const cspContent = cspMatch[1] || cspMatch[2] || '';
+  const scriptSrcMatch = cspContent.match(/(?:^|;\s*)script-src\s+([^;]+)/i);
+  if (!cspContent.includes("default-src 'self'") || !scriptSrcMatch || !cspContent.includes("object-src 'none'")) {
+    logFail(`Security Gate違反: CSP ポリシーの必須ディレクティブ (default-src 'self', script-src, object-src 'none') が不足しています: ${cspContent}`);
+    return false;
+  }
+  if (!scriptSrcMatch[1].includes("'self'") || !scriptSrcMatch[1].includes("https://cdn.jsdelivr.net") || /'unsafe-inline'|'unsafe-eval'/i.test(scriptSrcMatch[1])) {
+    logFail(`Security Gate違反: CSP script-src に不正または不十分な指定があります: ${scriptSrcMatch[1]}`);
+    return false;
+  }
+
+  const extScriptMatches = [...htmlText.matchAll(/<script\b[^>]*\bsrc=["'](https?:\/\/[^"']+)["'][^>]*>/gi)];
+  if (extScriptMatches.length === 0) {
+    logFail("Security Gate違反: docs/index.html の外部スクリプト参照が検出できません");
+    return false;
+  }
+  for (const sm of extScriptMatches) {
+    const tag = sm[0];
+    if (!/\bintegrity=["']sha384-[A-Za-z0-9+/=]+["']/i.test(tag) || !/\bcrossorigin=["']anonymous["']/i.test(tag)) {
+      logFail(`Security Gate違反: 外部スクリプト (${sm[1]}) に SHA-384 integrity または crossorigin="anonymous" がありません`);
+      return false;
+    }
+  }
+
+  const inlineScriptMatches = [...htmlText.matchAll(/<script(?![^>]*\bsrc=)[^>]*>/gi)];
+  if (inlineScriptMatches.length > 0) {
+    logFail(`Security Gate違反: docs/index.html にインライン <script> が ${inlineScriptMatches.length} 件残存しています`);
+    return false;
+  }
+
+  const appJsText = fs.readFileSync(APP_JS_PATH, 'utf8');
+  const inlineEventRegex = /\bon(?:click|change|keydown|keyup|keypress|input|submit|load|error)\s*=/i;
+  if (inlineEventRegex.test(htmlText) || inlineEventRegex.test(appJsText)) {
+    logFail("Security Gate違反: docs/index.html または docs/app.js にインラインイベントハンドラ属性が残存しています");
+    return false;
+  }
+
+  const zapRulesPath = path.join(PROJECT_ROOT, '.zap', 'rules.tsv');
+  if (!fs.existsSync(zapRulesPath)) {
+    logFail("Security Gate違反: .zap/rules.tsv が存在しません");
+    return false;
+  }
+  const zapIgnored = new Set();
+  const zapLines = fs.readFileSync(zapRulesPath, 'utf8').split(/\r?\n/);
+  for (let i = 0; i < zapLines.length; i++) {
+    const raw = zapLines[i];
+    const trimmed = raw.trim();
+    if (!trimmed || trimmed.startsWith('#')) continue;
+    const cols = raw.split('\t');
+    if (cols.length < 2 || !/^\d+$/.test(cols[0].trim()) || !['IGNORE', 'WARN', 'FAIL', 'OUTOFSCOPE'].includes(cols[1].trim().toUpperCase())) {
+      logFail(`Security Gate違反: .zap/rules.tsv L${i + 1} の TAB 区切り形式が不正です`);
+      return false;
+    }
+    if (cols[1].trim().toUpperCase() === 'IGNORE') {
+      zapIgnored.add(cols[0].trim());
+    }
+  }
+  if (!zapIgnored.has('10036') || !zapIgnored.has('10017')) {
+    logFail("Security Gate違反: .zap/rules.tsv の IGNORE に 10036 または 10017 が含まれていません");
+    return false;
+  }
+  logPass(`Security Quality Gate (Drop 148): CSP (<meta> / script-src 厳格)・SRI (${extScriptMatches.length}件)・インラインJS/イベント0件・rules.tsv検証完了`);
+
   return true;
 }
 

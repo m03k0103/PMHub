@@ -8,6 +8,8 @@
   <meta name="description"
     content="PM-HUBでは、各省庁の審議会・検討会等の会議情報をリアルタイムに集約し、配布資料や議事録へのダイレクトリンク、AIによる要約をワンストップで提供する情報収集ポータルです。資料の検索、分析、監視を効率化し、政策決定プロセスの透明性を高めます。" />
   <meta name="keywords" content="政策会議ウォッチ, PMHub, 審議会, 諮問会議, 議事録, 政府配布資料" />
+  <meta http-equiv="Content-Security-Policy"
+    content="default-src 'self'; script-src 'self' https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self' https://cdn.jsdelivr.net; object-src 'none'; base-uri 'self'; form-action 'self';" />
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -17,7 +19,10 @@
     rel="stylesheet">
 
   <!-- Chart.js for Analytics -->
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script
+    src="https://cdn.jsdelivr.net/npm/chart.js@4.4.8/dist/chart.umd.min.js"
+    integrity="sha384-T/4KgSWuZEPozpPz7rnnp/5lDSnpY1VPJCojf1S81uTHS1E38qgLfMgVsAeRCWc4"
+    crossorigin="anonymous"></script>
 
   <!-- Favicon -->
   <link rel="icon" type="image/svg+xml" href="favicon.svg" />
@@ -29,12 +34,6 @@
 
   <!-- Custom Styles -->
   <link rel="stylesheet" href="styles.css?v=20261102" />
-  <script>
-    (function() {
-      var t = localStorage.getItem('pmhub_theme') || 'light';
-      document.documentElement.setAttribute('data-theme', t);
-    })();
-  </script>
 </head>
 
 <body>
@@ -452,9 +451,9 @@
               <span class="chart-desc" id="ministryChartDesc">各省庁の開催会議数 breakdown</span>
             </div>
             <div class="chart-metrics-btn-group" id="ministryMetricBtnGroup">
-              <button type="button" class="btn-chart-metric" data-metric="COUNCILS" onclick="setMinistryChartMetric('COUNCILS')">会議体の数</button>
-              <button type="button" class="btn-chart-metric active" data-metric="MEETINGS" onclick="setMinistryChartMetric('MEETINGS')">会議の数</button>
-              <button type="button" class="btn-chart-metric" data-metric="MATERIALS" onclick="setMinistryChartMetric('MATERIALS')">資料の数</button>
+              <button type="button" class="btn-chart-metric" data-metric="COUNCILS">会議体の数</button>
+              <button type="button" class="btn-chart-metric active" data-metric="MEETINGS">会議の数</button>
+              <button type="button" class="btn-chart-metric" data-metric="MATERIALS">資料の数</button>
             </div>
           </div>
           <div class="chart-body">
@@ -470,7 +469,7 @@
             </div>
             <div class="chart-control-wrap">
               <label for="analyticsFiscalYearSelect" class="chart-control-label">対象年度:</label>
-              <select id="analyticsFiscalYearSelect" class="chart-select" onchange="setAnalyticsFiscalYear(this.value)">
+              <select id="analyticsFiscalYearSelect" class="chart-select">
                 <!-- JavaScriptで動的生成 -->
               </select>
             </div>
@@ -656,7 +655,7 @@
   <div class="toast-container" id="toastContainer"></div>
 
   <!-- Scripts -->
-  <script src="app.js?v=20261102"></script>
+  <script src="app.js?v=20261122"></script>
 </body>
 
 </html>

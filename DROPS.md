@@ -1,8 +1,8 @@
 # PMHub 改善・機能実装（Drop）マスタードキュメント (DROPS.md)
 
 > **最終更新**: 2026-11-22  
-> **最新 Drop**: **Drop 147**（2026-11-22 完了）  
-> **次期予定 Drop**: **Drop 148**（Track [Security-DAST]: OWASP ZAP DAST 検出アラート対応 & SRI・CSP強化・誤検知ルールチューニング、または Track [Core-Policy-Filter]）  
+> **最新 Drop**: **Drop 148**（2026-11-22 完了）  
+> **次期予定 Drop**: **Drop 149**（Track [Core-Policy-Filter]: 「重要政策会議のみ」クイック絞り込み機能、または Track [LLM-Assist] / Track [Search]）  
 > 
 > 本ドキュメントは、PMHub の継続的改善ロードマップおよび実装記録を一元管理するマスタードキュメントです。  `
 > 今後の構想テーマは **「Track（トラック）」** として管理し、着手・個別実装単位は最新連番を付与した **「Drop（ドロップ）」** として連番アーカイブします。  `
@@ -22,40 +22,12 @@
 
 | Track ID | タイトル | 概要 | 期待結果 | ステータス |
 |:---:|:---|:---|:---:|:---:|
-| **Track [Security-DAST]** | **OWASP ZAP DAST 検出アラート対応 & SRI・CSP強化・誤検知ルールチューニング** | **初回 ZAP DAST ベースラインスキャン（Drop 144）で検出された Medium 3件・Low 7件に対する脆弱性対応およびルール最適化**<br>1. **外部CDNスクリプトの SRI 付与（`90003` Medium 対応）**: `docs/index.html` の Chart.js `<script>` タグをバージョン固定＋`integrity="sha384-..." crossorigin="anonymous"` 付きへ強化（Google Fonts の動的 CSS は仕様上 SRI 付与不可のため `.zap/rules.tsv` で整理）<br>2. **Content Security Policy `<meta>` 導入（`10038` Medium 対応）**: 静的ホスティング（GitHub Pages）でも有効な `<meta http-equiv="Content-Security-Policy">` を `docs/index.html` に配備し XSS・不正外部通信を多層防御<br>3. **CI ローカルテストサーバー起因の誤検知抑制（`.zap/rules.tsv`）**: `python3 -m http.server` 固有の `10036`（`Server: SimpleHTTP` バージョン露出）、信頼済 CDN の `10017`（Cross-Domain JS Inclusion）、および静的サーバーで付与不可な HTTP レスポンスヘッダー警告（`10020`, `10021`, `10063`, `90004`）を適切にチューニング | **外部スクリプト改ざん防止（SRI）・CSP多層防御・CI DASTノイズゼロ化** | **【着手可能】**<br>（Drop 144 スキャン完了 / Drop 145 予定） |
 | **Track [Core-Policy-Filter]** | **「重要政策会議のみ」絞り込み機能** | **国家の基本方針・中核アジェンダを審議する重要会議体のワンクリック絞り込み**<br>内閣府設置法第18条に基づく重要政策に関する会議（経済財政諮問会議、総合科学技術・イノベーション会議、中央防災会議、男女共同参画会議、国家戦略特区諮問会議等）および主要閣僚会議・基幹審議会を定義。DBへのフラグ/設定追加と公開ポータルUIへのクイック絞り込みトグル新設。 | **1,700超の会議体から最重要アジェンダへ瞬時にアクセス** | **【構想中】** |
 | **Track [LLM-Assist]** | **決定論的1ファイル新着ダイジェスト & LLM判定・クロール階層型フォールバック** | **【フェーズ 1】ディスカバリー 1ファイル集約・単一リクエストLLM判定 & 新着分類永続化（Drop 81 完了）**<br>**【フェーズ 2】開催回クロール 3段階ファネル・異常検知フォールバック & バッチLLM抽出**<br>API呼出上限（Daily 3回 / Weekly 10回 / Monthly 30回）とSQLite `llm_cache`（SHA-256ダイジェストキャッシュ）により、最小APIコールで新規会議体検知と0件以外を含むクロール欠落補完を実現 | **最小APIコールでの新規会議体検知 & クロール補完** | **【構想中】**<br>（フェーズ 1: Drop 81 完了 / フェーズ 2 構想中） |
 | **Track [Search]** | **全文検索エンジン統合**<br>(PMM資産連携・分離FTS5 DB構築) | **PMM ローカル資産（PDF/HTML・約13.3万件）を活用した分離型全文検索エンジンの構築**<br>マスターDB（`admin/pmhub.db`）の肥大化を防ぐため全文検索専用DB（`admin/pmhub_fts.db`）を分離・`ATTACH` 結合するアーキテクチャを採用。`admin/pmm/text_extractor.py` によるインクリメンタル本文抽出（中断耐性付き）、FTS5 `trigram` インデックス構築、検索API（`/api/search`）、およびローカル管理画面（`admin/admin_dashboard.html`）を主軸としつつローカルサーバー起動時は公開ポータルUIからも全文検索可能なハイブリッドUIの実装（No Leakage 原則厳守） | **約13.3万件の配付資料・会議体資料の高速本文横断検索** | **【構想中】**<br>（DB・PMM基盤完了済 / 着手可能） |
 | **Track [Policy-AI]** | **政策分析連携構想**<br>(DB・PMM実資料・LLM統合分析) | **SQLite マスターDB・PMM実資料テキスト・`llm_cache` を統合した省庁横断政策インテリジェンス**<br>1. 省庁横断政策テーマ（GX、AI、経済安保、少子化等）および審議フェーズ（諮問・中間整理・答申等）の自動タギング（`meetings.tags_json` 活用）<br>2. PMM ローカル資料（議事要旨・主要資料）の実本文に基づく構造化AI要約生成（`meetings.summary` & SHA-256 `llm_cache` 活用）<br>3. 上位会議から各省庁審議会への政策波及タイムライン比較と、軽量サマリー/タグのみの公開JSON（`docs/data.json`）への安全な2系統還元（No Leakage 厳守） | **実資料に基づく政策横断的インサイトの創出** | **【長期構想】**<br>（Track [Search] 連携） |
 
 ### 1-2. 各Trackの詳細
-
-#### 【Track: Security-DAST】OWASP ZAP DAST 検出アラート対応 & SRI・CSP強化・誤検知ルールチューニング
-
-- **背景と課題**:
-  1. Drop 144 にて OWASP ZAP DAST（動的脆弱性スキャン）の GitHub Actions パイプライン（`.github/workflows/zap-dast.yml`）を導入し、初回ベースラインスキャン（Run ID `44312816310`）で **High リスク 0 件（PASS）**を確認した。
-  2. 一方で、警告（Warn only）として **Medium 3件・Low 7件** のアラートが検出されており、実環境（`docs/index.html`）側で実際にセキュリティ強化が可能な項目と、CI 用ローカルサーバー（`python3 -m http.server`）や外部サービスの仕様に起因する誤検知（False Positives）が混在している：
-     - **Medium `90003` (`Sub Resource Integrity Attribute Missing` / 4箇所)**:
-       - `docs/index.html` で読み込んでいる `<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>` および Google Fonts CSS `<link>` に `integrity` 属性が付与されていない。
-       - Google Fonts は User-Agent に応じて動的 CSS を返却する仕様上 SRI ハッシュを固定できないが、Chart.js はバージョン固定＋SRI ハッシュ付与により CDN 改ざん攻撃への実効的防御が可能。
-     - **Medium `10038` (`Content Security Policy (CSP) Header Not Set` / 3箇所)**:
-       - HTTP レスポンスヘッダーまたは `<meta http-equiv="Content-Security-Policy">` が未設定。静的ホスティング（GitHub Pages）ではカスタム HTTP ヘッダー制御ができないが、HTML `<meta>` タグによりスクリプト・スタイル・接続先のホワイトリスト制限を適用できる。
-     - **Low `10036` (`Server Leaks Version Information via "Server" HTTP Response Header Field` / 5箇所)**:
-       - CI テスト用の一時サーバーが返す `Server: SimpleHTTP/0.6 Python/3.12.16` に対する指摘であり、本番環境（GitHub Pages）とは無関係な CI 固有の誤検知。
-     - **Low `10017` (`Cross-Domain JavaScript Source File Inclusion` / 2箇所)**:
-       - 意図して利用している信頼済 CDN（`cdn.jsdelivr.net` の Chart.js）読み込みに対する通知。
-     - **HTTP レスポンスヘッダー未設定系（Medium `10020` Anti-clickjacking / Low `10021` X-Content-Type-Options / Low `10063` Permissions-Policy / Low `90004` CORP・COEP・COOP）**:
-       - `python3 -m http.server` では付与できず、かつ `<meta>` タグでの代替が仕様上不可（`frame-ancestors` や `X-Frame-Options` 等は HTTP ヘッダー限定）である項目。
-- **目標仕様（Drop 145 予定）**:
-  1. **外部スクリプトの SRI（Subresource Integrity）対応 (`docs/index.html`)**:
-     - Chart.js の CDN URL を明示バージョン（例: `chart.js@4.4.x/dist/chart.umd.min.js`）に固定し、`integrity="sha384-..."` および `crossorigin="anonymous"` を付与してサードパーティスクリプト改ざんを防止する。
-  2. **Content Security Policy `<meta>` タグの配備 (`docs/index.html`)**:
-     - `<meta http-equiv="Content-Security-Policy" ...>` を設定し、`default-src 'self'`, `script-src 'self' https://cdn.jsdelivr.net`, `style-src 'self' 'unsafe-inline' https://fonts.googleapis.com`, `font-src 'self' https://fonts.gstatic.com`, `img-src 'self' data:` 等の最小権限ポリシーを定義（既存のインラインイベントハンドラ有無をケース3 `test_js_runtime.js` と照合の上、互換性を維持して適用）。
-  3. **`.zap/rules.tsv` の誤検知・環境起因ルールチューニング**:
-     - `10036`（Python `SimpleHTTP` バージョンヘッダー露出）および `10017`（信頼済 Chart.js CDN 読み込み）を `IGNORE` に追加。
-     - Google Fonts 動的 CSS に起因する `90003` 残存分、および静的テストサーバーで付与不可な HTTP ヘッダー系（`10020`, `10021`, `10038`, `10063`, `90004`）について `.zap/rules.tsv` のアクション（`WARN` / `IGNORE`）と根拠コメントを明文化。
-  4. **再スキャン・統合テストによる検証**:
-     - `testing/run_test_suite.py --all-layers` で UI 描画・Chart.js 統計タブ動作に回帰がないことを確認し、GitHub Actions 上の `OWASP ZAP DAST Scan` でチューニング後のクリーンなレポート出力を検証する。
 
 #### 【Track: Core-Policy-Filter】「重要政策会議のみ」クイック絞り込み機能の実装
 
@@ -139,6 +111,7 @@
 |:---:|:---|:---:|:---|
 | **Track [Same-Day-Deduplication]** | **同一会議体・同日開催回の重複排除 & データ品質是正** | Drop 121, 122, 124, 126 | 全会議体同日重複450グループ（1,023件）の完全精査・重複排除、HIRAI Pitch 67回・204資料の品質確定、FSC 191回次真開催日復元、全開催回重複0件達成 |
 | **Track [Automation]** | **GitHub Actions 定時自動クロール & ローカルDB自律同期基盤** | Drop 132, 133, 134, 135 | 3階層マルチスケジュール本番稼働、サーキットブレーカー（5省庁/HTTP遮断）、PMMローカル資産非破壊自律同期エンジン（`sync_from_json.py`）& post-merge hook 完備 |
+| **Track [Security-DAST]** | **OWASP ZAP DAST 検出アラート対応 & SRI・CSP強化・誤検知ルールチューニング** | Drop 144, 148 | GitHub Actions DAST パイプライン構築、Chart.js `@4.4.8` SHA-384 SRI 付与、厳格 CSP `<meta>` 導入（`script-src` `'unsafe-inline'` 不使用・イベント委譲移行）、`.zap/rules.tsv` 調整、ケース3静的セキュリティゲート配備 |
 
 #### 【Track: Same-Day-Deduplication】同一会議体・同日開催回の重複排除 & データ品質是正（HIRAI Pitch 資料重複を含む） (Drop 121, 122, 124, 126 にて完遂)
 
@@ -200,6 +173,12 @@ GitHub Actions で自動更新・push されたリモートの最新データ（
   - 開発者が `git pull origin main` を実行した際、`docs/data.json` または `admin/admin_data.json` に変更差分があれば自動で `sync_from_json.py` を呼び出して同期。
 - **起動時タイムスタンプ整合性ガード**:
   - `admin/server.py` および `admin/crawler.py` の起動時、ローカルDBの最終更新日時と `docs/data.json` のタイムスタンプを比較し、古いローカルDBによる上書き先祖返りを未然に遮断。
+
+#### 【Track: Security-DAST】OWASP ZAP DAST 検出アラート対応 & SRI・CSP強化・誤検知ルールチューニング (Drop 144, 148 にて完遂)
+
+- **概要・到達仕様**:
+  - Drop 144 にて OWASP ZAP DAST の GitHub Actions パイプライン（`.github/workflows/zap-dast.yml`、`evaluate_zap_report.py`、`.zap/rules.tsv`、`guide/security-scan.md`）を構築し、High リスク 0 件を確認。
+  - Drop 148 にて初回ベースラインスキャン（Run `44312816310`）の Medium 3件・Low 7件に対応し、Chart.js `@4.4.8` 固定と SHA-384 SRI 付与、`script-src` から `'unsafe-inline'` を排除した `<meta http-equiv="Content-Security-Policy">` 導入、インライン `<script>` および `on*=` イベント属性の `docs/app.js` 委譲移行、`.zap/rules.tsv` の誤検知整理（`10036`, `10017`, `90003`）、ならびに `testing/test_js_runtime.js` への静的セキュリティゲート組み込みを完了。
 
 ---
 
@@ -327,6 +306,7 @@ GitHub Actions で自動更新・push されたリモートの最新データ（
 | **Drop 145** | **確定拠出年金制度の運用改善等に関する有識者懇談会「2026/07/22」誤登録開催回の削除 & ローカル資産整理** | **厚労省「確定拠出年金制度の運用改善等に関する有識者懇談会」の架空開催回削除**<br>公式ページ上に実在しない `2026/07/22` 開催回（`mhlw-kakutei_kyoshutsu_nenkin_kondan-20260722-s04`、第1〜3回の議事録HTMLが重複紐付け・`manual_lock=1` で残存）をマスターDB・2系統JSON・PMMローカル資産（`local_docs/`）から完全削除。第1〜4回の正規開催回と各回議事録はそのまま維持し、再発防止とデータ整合性を検証。 | **誤登録開催回1件・重複資料3件・ローカル重複フォルダ完全削除、統合テスト完全合格** |
 | **Drop 146** | **金融庁（FSA）新着会議未登録の根本原因修正・期またぎ回次リセット対応・他7省庁新着検知横展開** | **金融庁新着検知・名寄せ・タイトル正規化・期またぎ回次リセット制御の6複合不具合修正および他7省庁への横展開**<br>1. **汎用見出し誤判定・タイトル除去修正**: `'議事次第'`, `'配付資料'`, `'配布資料'` を汎用タイトル定数へ追加し、`clean_meeting_title()` で末尾 `議事次第` を除去（`crawler.py` / `filters.py` / `extractors.py` 同期）。`_index.html` 汎用除外も追加。<br>2. **期またぎ回次リセット適正化・重複テスト対応**: `sync_new_meetings_from_crawl()` が最新活動期より365日以内で既存同回次すべてより365日超新しい別URL開催回のみ新規許可し過去期掘り返しを遮断、年・期表記未含有タイトルへ `({YYYY}年)` を自動付与。`test_no_duplicate_meetings.py` に `事務年度` 識別を追加。<br>3. **新着ポータル走査・名寄せ・ピンポイント回収修正（他7省庁横展開）**: `resolve_news_portal_urls()` の動的年月解決（202610ハードコード撤廃）、`extract_news_items_from_html()` の親コンテナ・先行日付探索（FSA/MOE/MAFF/RINYA/JFA対応）と `footer`/`nav` 除外、`match_council_from_news_item()` 優先順位是正、`run_ministry_news_discovery()` ピンポイント結果参照バグ修正、`list(dict.fromkeys(...))` による日付順序保持。<br>4. **金融庁新着データ・議事録同期**: 4開催回登録・3議事録/議事要旨追記・`fsa-digital_finance` URL移転更新・誤名寄せ1件削除と `manualLock` 保護。 | **金融庁4開催回・3議事録/議事要旨登録、重複0件（全25,115開催回検証済）、横展開8省庁新着抽出確認（FSA 8/MOF 59/NRA 3/MOE 34/MAFF 15/RINYA 5/JFA 13件）、統合10ケース＋単体14種合格** |
 | **Drop 147** | **定時Weeklyクロール新着・更新情報のAI補正・共通親ポータル共有会議体間の誤配分（Cross-Pollution）根絶 & 厳格ルール適用** | **Weeklyクロール（Run `44967143152`）の追加・更新データ精査に基づくクローラー3層厳格隔離・不正正規表現修復・348件の誤配分整理・デジタル行財政改革配付資料展開およびAIタイトル補正**<br>1. **クローラー根本原因修正（`admin/crawler.py`）**: `_compile_subpage_pattern()`（先頭 `?:...` 欠損の自動修復および `href=` ラッパー除去）と `_passes_rule_url_filters()` を新設し、`strict_subpage_pattern: true` 設定時にサブページリンク抽出（ジェネリックリンク名特例含む）・親テーブル解析・セクション解析・`sync_new_meetings_from_crawl()` 全層で厳格パターン外URLを遮断。さらに共通親ポータルを共有する兄弟会議体間で既保有サブページURLを除外する `sibling_existing_urls` ガードを導入。<br>2. **不正正規表現13件修復 & 厳格ルール31会議体配備**: `scraping_rules` 内の `?:...` 構文エラー13件（`mext-714`, `mhlw-2855`, 総務省11件）を修復し、共有ポータル群（`cao-kisei_*` 7・`cas-digital_gyozaikaikaku*` 11・`cas-titeki*` 10・`cas-kenkou_iryou_*` 3）へ `strict_subpage_pattern: true` ＋正規化済み `subpage_discovery_pattern` を設定。<br>3. **誤配分データクレンジング・URL移行・配付資料末端化 & AI補正**: 既存ダウンロード済 PMM 資産を保護しつつ誤配分348開催回を削除、`cao-kisei_kaikaku-20251016-025` の URL/資料誤リンク修正および `committee/240219` 移管、`cas-digital_gyozaikaikaku*` 保持94開催回のHTML個別ページ昇格と中間HTML/誤添付141件除去＋末端資料552件追加、著作権分科会・沖縄振興・賃上げWG・ギャンブル依存症説明会・産業遺産技術検討会・物流関係者会議・木質材料・就職採用幹事会等のAI補正および検証済データへの `manual_lock = 1` 付与・`past_year_count` 再計算。<br>4. **回帰単体テスト拡充（`testing/test_crawler_regression.py`）**: 不正正規表現自動修復、3層厳格隔離、兄弟会議体URL排他ガードの3テストを追加（全14テスト合格）。 | **誤配分348件解消・不正正規表現13件修復・31会議体厳格ルール適用・デジタル行財政改革末端資料552件補強、全24,933開催回重複0件検証済、統合10ケース＋単体14種完全合格** |
+| **Drop 148** | **Track [Security-DAST] OWASP ZAP DAST 検出アラート対応 & SRI・CSP強化・誤検知ルールチューニング** | **初回 ZAP ベースラインスキャン（Run `44312816310`）の Medium 3件・Low 7件に対する公開ポータル強化・イベント委譲移行・ルール整備**<br>1. **Chart.js バージョン固定 & SRI 付与（`docs/index.html`）**: Chart.js CDN を `chart.js@4.4.8/dist/chart.umd.min.js` に固定し、SHA-384 `integrity` と `crossorigin="anonymous"` を付与（`90003` 対応）。<br>2. **厳格 CSP `<meta>` 導入 & インラインコード・ハンドラ移行（`docs/index.html`, `docs/app.js`）**: `script-src 'self' https://cdn.jsdelivr.net`（`'unsafe-inline'` 不使用）を含む `<meta http-equiv="Content-Security-Policy">` を導入（`10038` 対応）。テーマ初期設定インライン `<script>` および全 `onclick` / `onchange` / `onkeydown` 属性を削除し、`docs/app.js` の即時初期化と `addEventListener` 委譲へ移行。<br>3. **ZAP ルール・手順書整備（`.zap/rules.tsv`, `guide/security-scan.md`）**: CI `SimpleHTTP` 起因 `10036`、SRI 担保済 `10017`、動的 Google Fonts CSS 起因 `90003` 残存を `IGNORE` 化し、HTTP ヘッダー系 `WARN` 根拠を明文化。<br>4. **セキュリティ品質ゲート追加（`testing/test_js_runtime.js`）**: ケース3へ CSP・SRI・インラインJS/イベント0件・`.zap/rules.tsv` TAB構文検証を組み込み。 | **Chart.js SRI 付与、厳格 CSP `<meta>` 配備、インラインJS/イベント0件化、ZAP誤検知ルール最適化（Track [Security-DAST] 完了）** |
 
 ---
 
@@ -5007,3 +4987,35 @@ python testing/run_test_suite.py --all-layers : PASSED（統合10ケース＋全
 #### 4. 今後の課題・ネクストアクション
 - 次回の定時 GitHub Actions（Daily / Weekly）実行時に、厳格ルール適用済みの共有ポータル会議体間で誤配分が再発せず新規回次のみが正確に検知されることの確認。
 - 一元的なコンテンツ産業支援法人の設立検討タスクフォース第2回（`cas-titeki_contentindustry_tf-20261118-002`）について、公式個別ページの公開に伴う次回クロール時の自動資料昇格確認。
+
+### Drop 148: Track [Security-DAST] OWASP ZAP DAST 検出アラート対応 & SRI・CSP強化・ルールチューニング (2026-11-22 完了)
+
+#### 1. 背景と目的
+- **初回 OWASP ZAP ベースラインスキャン（Drop 144 / Run ID `44312816310`）の検出アラート解消と公開ポータル防衛強化**:
+  Drop 144 にて導入した CI DAST パイプラインは High リスク 0 件で通過した一方、警告として Medium 3ルール（`90003` SRI 欠落、`10038` CSP 未設定、`10020` クリックジャッキング対策ヘッダー）および Low 7ルールが検出されていた。
+- **実対策と CI 起因誤検知の分離対応**:
+  1. サードパーティ CDN スクリプト（Chart.js）の改ざん防止のためバージョン固定と SRI（SHA-384）を適用すること。
+  2. GitHub Pages 等の静的ホスティングでも有効な `<meta http-equiv="Content-Security-Policy">` により厳格な `script-src` ポリシーを導入し、`'unsafe-inline'` を排除できるよう HTML 内のインラインスクリプトおよびインラインイベントハンドラ属性を `docs/app.js` 側へ移管すること。
+  3. CI テスト用 `python3 -m http.server` に起因するサーバー情報露出（`10036`）や信頼済 CDN 通知（`10017`）、仕様上固定ハッシュを付与できない Google Fonts 動的 CSS に対する `90003` 残存アラートを `.zap/rules.tsv` で適切に整理すること。
+
+#### 2. 主要な施策・修正内容
+1. **Chart.js CDN バージョン固定および SRI 付与（`docs/index.html`）**:
+   - `<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>` を `https://cdn.jsdelivr.net/npm/chart.js@4.4.8/dist/chart.umd.min.js` に固定し、検証済み SHA-384 ハッシュ（`integrity="sha384-T/4KgSWuZEPozpPz7rnnp/5lDSnpY1VPJCojf1S81uTHS1E38qgLfMgVsAeRCWc4"`）と `crossorigin="anonymous"` を付与。
+2. **厳格 Content Security Policy `<meta>` 導入とイベント委譲移行（`docs/index.html`, `docs/app.js`）**:
+   - `docs/index.html` に `<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self' https://cdn.jsdelivr.net; object-src 'none'; base-uri 'self'; form-action 'self';" />` を配備（`script-src` から `'unsafe-inline'` を除外）。
+   - `docs/index.html` のテーマ初期設定インライン `<script>` を `docs/app.js` 読み込み時の即時初期化処理へ移動し、統計タブの `.btn-chart-metric` ボタン（`onclick`）および `#analyticsFiscalYearSelect`（`onchange`）を `addEventListener` 参照へ変更。
+   - `docs/app.js` の動的生成 HTML（フィルタータグ削除、`renderMaterialsAccordionHTML`、タイムライン・会議体アコーディオン、`inline-link-icon`、ウォッチリストトグル/解除ボタン）からすべての `onclick=` / `onkeydown=` 属性を削除し、`data-*` 属性＋`document` レベルの `click` / `keydown` イベント委譲へ統合（テスト互換用の `window.*` 関数は維持）。
+3. **ZAP ルール定義・運用手順書の更新（`.zap/rules.tsv`, `guide/security-scan.md`）**:
+   - `.zap/rules.tsv`（TAB 区切り）に `10036`（Python `SimpleHTTP` `Server` ヘッダー）、`10017`（SRI 適用済み Chart.js CDN）、および `90003`（Google Fonts 動的 CSS 起因分）を `IGNORE` として追加し、静的サーバーで制御不可な HTTP レスポンスヘッダー群（`10015`, `10020`, `10021`, `10035`, `10038`, `10063`, `90004`）を `WARN` として理由とともに整理。
+   - `guide/security-scan.md` に上記セキュリティ施策と各ルールの判断根拠表を追記。
+4. **セキュリティ品質ゲート自動検証の実装（`testing/test_js_runtime.js`）**:
+   - ケース3の `testUiDomStructureAndNoLeakage()` 内に、CSP `<meta>` の必須ディレクティブおよび `script-src` からの `'unsafe-inline'` / `'unsafe-eval'` 除外検査、外部 `<script>` 全件への SHA-384 SRI・`crossorigin="anonymous"` 付与検査、`docs/index.html` インライン `<script>` 0件検査、両ファイルからの `on*=` イベント属性排除検査、および `.zap/rules.tsv` の TAB 区切り整合性検査を追加。
+
+#### 3. 達成された指標・成果
+- **フロントエンド多層防御・DAST 整備完了（`Track [Security-DAST]` 完了）**:
+  - `docs/index.html` における外部 JS 参照（Chart.js `@4.4.8`）の SHA-384 SRI 保護、インライン `<script>` およびインライン `on*=` 属性の 0 件化、ならびに `script-src` での `'unsafe-inline'` 不使用 CSP 適用を達成。
+  - JS 単体テスト（`testing/app.test.js` 54テスト）およびケース3 Security Quality Gate・ランタイム描画検証（`testing/test_js_runtime.js`）が全件合格。
+
+#### 4. 今後の課題・ネクストアクション
+- 作業ブランチ `feature/drop148-security-dast-sri-csp` の PR / `main` 反映時に GitHub Actions `OWASP ZAP DAST Scan` が自動稼働した際、チューニング済みルールに基づくクリーンなレポート出力と High リスク 0 件の再確認を行う。
+- 次期未着手構想である `Track [Core-Policy-Filter]`（「重要政策会議のみ」クイック絞り込み機能）等の検討・着手を進める。
