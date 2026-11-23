@@ -1,5 +1,5 @@
 {
-  "lastCrawlTime": "2026/11/22 22:11",
+  "lastCrawlTime": "2026/11/23 01:18",
   "scrapingRuleTemplates": {
     "tpl-general-round-subpage": {
       "subpage_discovery_pattern": "(?:dai\\d+|\\d+kai|kaisai|gijisidai|gijiroku|haifu|session|meeting|\\b\\d{3,4}\\.html|\\d{2,3}/(?:index\\.html)?)",
@@ -9817,7 +9817,7 @@
       "manualLockActive": true
     },
     "cao-kokyoryokin_senmon": {
-      "lastAttempt": "2026-11-22 21:29:28",
+      "lastAttempt": "2026-11-23 01:17:34",
       "result": "success",
       "resultReason": "開催回 6 件を検出（資料・日付完備）",
       "extractionMethod": "rule",
@@ -16890,7 +16890,7 @@
       "manualLockActive": false
     },
     "jfa-magaki_kyougikai": {
-      "lastAttempt": "2026-11-22 21:30:38",
+      "lastAttempt": "2026-11-23 01:18:37",
       "result": "success",
       "resultReason": "PDF配付資料 5 件・開催日 5 件を正常取得",
       "extractionMethod": "rule",
@@ -16989,7 +16989,7 @@
       "manualLockActive": true
     },
     "jfa-umigyo_kyougikai": {
-      "lastAttempt": "2026-11-22 21:33:02",
+      "lastAttempt": "2026-11-23 01:18:36",
       "result": "success",
       "resultReason": "PDF配付資料 24 件・開催日 3 件を正常取得",
       "extractionMethod": "rule",
@@ -19156,11 +19156,11 @@
       "manualLockActive": true
     },
     "mext-chukyo": {
-      "lastAttempt": "2026-11-22 21:35:07",
+      "lastAttempt": "2026-11-23 01:17:58",
       "result": "success",
       "resultReason": "開催回 13 件を検出（資料・日付完備）",
       "extractionMethod": "rule",
-      "materialsCount": 36,
+      "materialsCount": 59,
       "datesCount": 5,
       "failureReason": "",
       "consecutiveFailures": 0,
@@ -19310,7 +19310,7 @@
       "manualLockActive": false
     },
     "mhlw-1009": {
-      "lastAttempt": "2026-11-22 21:29:33",
+      "lastAttempt": "2026-11-23 01:18:03",
       "result": "success",
       "resultReason": "開催回 21 件を検出（資料・日付完備）",
       "extractionMethod": "rule",
@@ -20102,7 +20102,7 @@
       "manualLockActive": false
     },
     "mhlw-794": {
-      "lastAttempt": "2026-11-22 21:41:42",
+      "lastAttempt": "2026-11-23 01:18:35",
       "result": "success",
       "resultReason": "開催回 40 件を検出（資料・日付完備）",
       "extractionMethod": "rule",
@@ -20916,9 +20916,9 @@
       "manualLockActive": false
     },
     "mhlw-872": {
-      "lastAttempt": "2026-11-22 21:58:43",
+      "lastAttempt": "2026-11-23 01:18:15",
       "result": "success",
-      "resultReason": "開催回 69 件を検出（資料・日付完備）",
+      "resultReason": "開催回 81 件を検出（資料・日付完備）",
       "extractionMethod": "rule",
       "materialsCount": 180,
       "datesCount": 5,
@@ -22929,7 +22929,7 @@
       "manualLockActive": true
     },
     "mhlw-rousei_roudoujouken": {
-      "lastAttempt": "2026-11-22 21:44:26",
+      "lastAttempt": "2026-11-23 01:18:22",
       "result": "success",
       "resultReason": "開催回 25 件を検出（資料・日付完備）",
       "extractionMethod": "rule",
@@ -23006,7 +23006,7 @@
       "manualLockActive": true
     },
     "mhlw-shakai_hosho_kaigo_hoken": {
-      "lastAttempt": "2026-11-22 21:43:32",
+      "lastAttempt": "2026-11-23 01:18:05",
       "result": "success",
       "resultReason": "開催回 2 件を検出（資料・日付完備）",
       "extractionMethod": "rule",
@@ -23017,7 +23017,7 @@
       "manualLockActive": true
     },
     "mhlw-shakai_hosho_kaigo_kyuufu": {
-      "lastAttempt": "2026-11-22 21:43:55",
+      "lastAttempt": "2026-11-23 01:18:32",
       "result": "success",
       "resultReason": "開催回 48 件を検出（資料・日付完備）",
       "extractionMethod": "rule",
@@ -23149,7 +23149,7 @@
       "manualLockActive": false
     },
     "mhlw-tochikujou_seido": {
-      "lastAttempt": "2026-11-22 21:42:46",
+      "lastAttempt": "2026-11-23 01:18:00",
       "result": "success",
       "resultReason": "開催回 2 件を検出（資料・日付完備）",
       "extractionMethod": "rule",
@@ -24832,7 +24832,7 @@
       "manualLockActive": true
     },
     "mlit-kokudo": {
-      "lastAttempt": "2026-11-22 21:30:23",
+      "lastAttempt": "2026-11-23 01:18:38",
       "result": "success",
       "resultReason": "開催回 1 件を検出（資料・日付完備）",
       "extractionMethod": "rule",
@@ -25822,25 +25822,25 @@
       "manualLockActive": true
     },
     "mof-1136": {
-      "lastAttempt": "2026-11-22 21:27:28",
+      "lastAttempt": "2026-11-23 01:17:52",
       "result": "failed",
-      "resultReason": "WAF Blocked Skip (Ministry MOF)",
+      "resultReason": "配付資料・開催日・個別開催回のいずれも検出できませんでした",
       "extractionMethod": "none",
       "materialsCount": 0,
       "datesCount": 0,
-      "failureReason": "WAF Blocked Skip (Ministry MOF)",
-      "consecutiveFailures": 3,
+      "failureReason": "配付資料・開催日・個別開催回のいずれも検出できませんでした",
+      "consecutiveFailures": 4,
       "manualLockActive": true
     },
     "mof-1137": {
-      "lastAttempt": "2026-11-22 21:28:01",
-      "result": "failed",
-      "resultReason": "WAF Blocked Skip (Ministry MOF)",
-      "extractionMethod": "none",
-      "materialsCount": 0,
-      "datesCount": 0,
-      "failureReason": "WAF Blocked Skip (Ministry MOF)",
-      "consecutiveFailures": 3,
+      "lastAttempt": "2026-11-23 01:17:52",
+      "result": "success",
+      "resultReason": "開催回 33 件を検出（資料・日付完備）",
+      "extractionMethod": "rule",
+      "materialsCount": 80,
+      "datesCount": 5,
+      "failureReason": "",
+      "consecutiveFailures": 0,
       "manualLockActive": false
     },
     "mof-1138": {
@@ -26273,14 +26273,14 @@
       "manualLockActive": true
     },
     "mof-study_on_chain": {
-      "lastAttempt": "2026-11-22 21:36:54",
-      "result": "failed",
-      "resultReason": "WAF Blocked Skip (Ministry MOF)",
-      "extractionMethod": "none",
-      "materialsCount": 0,
-      "datesCount": 0,
-      "failureReason": "WAF Blocked Skip (Ministry MOF)",
-      "consecutiveFailures": 3,
+      "lastAttempt": "2026-11-23 01:17:53",
+      "result": "success",
+      "resultReason": "PDF配付資料 4 件・開催日 4 件を正常取得",
+      "extractionMethod": "rule",
+      "materialsCount": 4,
+      "datesCount": 4,
+      "failureReason": "",
+      "consecutiveFailures": 0,
       "manualLockActive": true
     },
     "mof-syogaku_yunyu_wg": {
@@ -26581,7 +26581,7 @@
       "manualLockActive": true
     },
     "moj-housei_shonenhou": {
-      "lastAttempt": "2026-11-22 21:33:24",
+      "lastAttempt": "2026-11-23 01:17:44",
       "result": "success",
       "resultReason": "開催回 18 件を検出（資料・日付完備）",
       "extractionMethod": "rule",
@@ -27098,7 +27098,7 @@
       "manualLockActive": true
     },
     "nra-teireikai": {
-      "lastAttempt": "2026-11-22 21:25:34",
+      "lastAttempt": "2026-11-23 01:18:44",
       "result": "partial",
       "resultReason": "開催回 8 件を検出したが資料が0件",
       "extractionMethod": "rule",
@@ -27411,28 +27411,47 @@
       "meti.go.jp": 1.5
     },
     "ministryLastCrawlTime": {
-      "CAO": "2026/11/21 17:25",
-      "CAS": "2026/11/21 17:25",
-      "DIGITAL": "2026/11/21 17:25",
-      "CFA": "2026/11/21 17:25",
-      "PPC": "2026/11/21 17:25",
-      "FSA": "2026/11/21 17:25",
-      "CAA": "2026/11/21 17:25",
-      "FSC": "2026/11/21 17:25",
-      "MIC": "2026/11/21 17:25",
-      "FDMA": "2026/11/21 17:25",
-      "MOJ": "2026/11/21 17:25",
-      "MOF": "2026/11/21 17:25",
-      "MEXT": "2026/11/21 17:25",
-      "MHLW": "2026/11/21 17:25",
-      "MAFF": "2026/11/21 17:25",
-      "RINYA": "2026/11/21 17:25",
-      "JFA": "2026/11/21 17:25",
-      "METI": "2026/11/21 17:25",
-      "MLIT": "2026/11/21 17:25",
-      "MOE": "2026/11/21 17:25",
-      "NRA": "2026/11/21 17:25",
-      "MOD": "2026/11/21 17:25"
+      "CAO": "2026/11/23 01:18",
+      "CAS": "2026/11/23 01:18",
+      "DIGITAL": "2026/11/23 01:18",
+      "CFA": "2026/11/23 01:18",
+      "PPC": "2026/11/23 01:18",
+      "FSA": "2026/11/23 01:18",
+      "CAA": "2026/11/23 01:18",
+      "FSC": "2026/11/23 01:18",
+      "MIC": "2026/11/23 01:18",
+      "FDMA": "2026/11/23 01:18",
+      "MOJ": "2026/11/23 01:18",
+      "MOF": "2026/11/23 01:18",
+      "MEXT": "2026/11/23 01:18",
+      "MHLW": "2026/11/23 01:18",
+      "MAFF": "2026/11/23 01:18",
+      "RINYA": "2026/11/23 01:18",
+      "JFA": "2026/11/23 01:18",
+      "METI": "2026/11/23 01:18",
+      "MLIT": "2026/11/23 01:18",
+      "MOE": "2026/11/23 01:18",
+      "NRA": "2026/11/23 01:18",
+      "MOD": "2026/11/23 01:18"
+    },
+    "dailyCouncilLastCrawlTime": {
+      "mof-study_on_chain": "2026/11/23 01:18",
+      "moj-housei_shonenhou": "2026/11/23 01:18",
+      "mhlw-1009": "2026/11/23 01:18",
+      "mhlw-872": "2026/11/23 01:18",
+      "mhlw-rousei_roudoujouken": "2026/11/23 01:18",
+      "mof-1136": "2026/11/23 01:18",
+      "jfa-umigyo_kyougikai": "2026/11/23 01:18",
+      "mlit-kokudo": "2026/11/23 01:18",
+      "mhlw-tochikujou_seido": "2026/11/23 01:18",
+      "nra-teireikai": "2026/11/23 01:18",
+      "mhlw-shakai_hosho_kaigo_hoken": "2026/11/23 01:18",
+      "mof-1137": "2026/11/23 01:18",
+      "cao-kokyoryokin_senmon": "2026/11/23 01:18",
+      "mhlw-shakai_hosho_kaigo_kyuufu": "2026/11/23 01:18",
+      "mhlw-794": "2026/11/23 01:18",
+      "jfa-magaki_kyougikai": "2026/11/23 01:18",
+      "mext-chukyo": "2026/11/23 01:18"
     }
   },
   "rejectedCouncils": [
@@ -28978,7 +28997,7 @@
     {
       "id": "jcrc-3006",
       "name": "委員会の活動等",
-      "ministry": "",
+      "ministry": "JCRC",
       "category": "COUNCIL",
       "officialUrl": "",
       "rejectedAt": "",
@@ -29176,7 +29195,7 @@
     {
       "id": "meti-3007",
       "name": "知的財産分科会（下記リンク、特許庁ホームページ「産業構造審議会について」をご覧ください）",
-      "ministry": "",
+      "ministry": "METI",
       "category": "COUNCIL",
       "officialUrl": "",
       "rejectedAt": "",
@@ -31759,7 +31778,7 @@
     {
       "id": "smea-3014",
       "name": "中小M&A・事業承継小委員会",
-      "ministry": "",
+      "ministry": "SMEA",
       "category": "COUNCIL",
       "officialUrl": "",
       "rejectedAt": "",
@@ -31768,7 +31787,7 @@
     {
       "id": "smea-3015",
       "name": "令和7年 中小企業の成長経営の実現に向けた研究会 配布資料",
-      "ministry": "",
+      "ministry": "SMEA",
       "category": "COUNCIL",
       "officialUrl": "",
       "rejectedAt": "",
@@ -31777,7 +31796,7 @@
     {
       "id": "smea-3016",
       "name": "令和6年",
-      "ministry": "",
+      "ministry": "SMEA",
       "category": "COUNCIL",
       "officialUrl": "",
       "rejectedAt": "",
@@ -31786,7 +31805,7 @@
     {
       "id": "smea-3017",
       "name": "地域の資金循環検討会",
-      "ministry": "",
+      "ministry": "SMEA",
       "category": "COUNCIL",
       "officialUrl": "",
       "rejectedAt": "",
@@ -31795,7 +31814,7 @@
     {
       "id": "smea-3018",
       "name": "ローカル・ゼブラ・エコシステムの構築に向けた社会的インパクト評価の活用実践に関する研究会",
-      "ministry": "",
+      "ministry": "SMEA",
       "category": "COUNCIL",
       "officialUrl": "",
       "rejectedAt": "",
@@ -31804,7 +31823,7 @@
     {
       "id": "smea-3019",
       "name": "地域の社会課題解決促進に向けたエコシステム研究会",
-      "ministry": "",
+      "ministry": "SMEA",
       "category": "COUNCIL",
       "officialUrl": "",
       "rejectedAt": "",
@@ -31813,7 +31832,7 @@
     {
       "id": "smea-3020",
       "name": "価値創造企業に関する賢人会議",
-      "ministry": "",
+      "ministry": "SMEA",
       "category": "COUNCIL",
       "officialUrl": "",
       "rejectedAt": "",
@@ -31822,7 +31841,7 @@
     {
       "id": "smea-3021",
       "name": "企業取引研究会",
-      "ministry": "",
+      "ministry": "SMEA",
       "category": "COUNCIL",
       "officialUrl": "",
       "rejectedAt": "",
@@ -31831,7 +31850,7 @@
     {
       "id": "smea-3022",
       "name": "知的財産取引適正化ワーキンググループ 報告書",
-      "ministry": "",
+      "ministry": "SMEA",
       "category": "COUNCIL",
       "officialUrl": "",
       "rejectedAt": "",
@@ -31840,7 +31859,7 @@
     {
       "id": "smea-3023",
       "name": "約束手形をはじめとする支払条件の改善に向けた検討会",
-      "ministry": "",
+      "ministry": "SMEA",
       "category": "COUNCIL",
       "officialUrl": "",
       "rejectedAt": "",
@@ -31849,7 +31868,7 @@
     {
       "id": "smea-3024",
       "name": "知的財産取引検討会",
-      "ministry": "",
+      "ministry": "SMEA",
       "category": "COUNCIL",
       "officialUrl": "",
       "rejectedAt": "",
@@ -31858,7 +31877,7 @@
     {
       "id": "smea-3025",
       "name": "地域の経営支援力強化に向けたよろず支援拠点のあり方検討会 報告書",
-      "ministry": "",
+      "ministry": "SMEA",
       "category": "COUNCIL",
       "officialUrl": "",
       "rejectedAt": "",
@@ -31867,7 +31886,7 @@
     {
       "id": "smea-3026",
       "name": "事業協同組合等の余裕金運用に関する検討会",
-      "ministry": "",
+      "ministry": "SMEA",
       "category": "COUNCIL",
       "officialUrl": "",
       "rejectedAt": "",
@@ -31876,7 +31895,7 @@
     {
       "id": "smea-3027",
       "name": "令和8年3月19日開催 中小企業・小規模事業者の人材マネジメントに関する研究会 配布資料",
-      "ministry": "",
+      "ministry": "SMEA",
       "category": "COUNCIL",
       "officialUrl": "",
       "rejectedAt": "",
@@ -31885,7 +31904,7 @@
     {
       "id": "smea-3028",
       "name": "中小企業・小規模事業者の人材戦略に関する有識者検討会",
-      "ministry": "",
+      "ministry": "SMEA",
       "category": "COUNCIL",
       "officialUrl": "",
       "rejectedAt": "",
@@ -31894,7 +31913,7 @@
     {
       "id": "smea-3029",
       "name": "中小企業・小規模事業者のデータ利活用に関する検討委員会",
-      "ministry": "",
+      "ministry": "SMEA",
       "category": "COUNCIL",
       "officialUrl": "",
       "rejectedAt": "",
@@ -31903,7 +31922,7 @@
     {
       "id": "smea-3030",
       "name": "小規模事業者の「稼ぐ力」の強化に向けた諸課題に関する検討会",
-      "ministry": "",
+      "ministry": "SMEA",
       "category": "COUNCIL",
       "officialUrl": "",
       "rejectedAt": "",
@@ -31912,7 +31931,7 @@
     {
       "id": "smea-3031",
       "name": "中小企業の事業承継・M&Aに関する検討会",
-      "ministry": "",
+      "ministry": "SMEA",
       "category": "COUNCIL",
       "officialUrl": "",
       "rejectedAt": "",
@@ -31921,7 +31940,7 @@
     {
       "id": "smea-3032",
       "name": "中小企業の親族内承継に関する検討会",
-      "ministry": "",
+      "ministry": "SMEA",
       "category": "COUNCIL",
       "officialUrl": "",
       "rejectedAt": "",
@@ -31930,7 +31949,7 @@
     {
       "id": "smea-3033",
       "name": "中小M&A市場の改革に向けた検討会",
-      "ministry": "",
+      "ministry": "SMEA",
       "category": "COUNCIL",
       "officialUrl": "",
       "rejectedAt": "",
@@ -31939,7 +31958,7 @@
     {
       "id": "smea-3034",
       "name": "中小M&Aガイドライン見直し検討小委員会",
-      "ministry": "",
+      "ministry": "SMEA",
       "category": "COUNCIL",
       "officialUrl": "",
       "rejectedAt": "",
@@ -31948,7 +31967,7 @@
     {
       "id": "smea-3035",
       "name": "事業引継ぎガイドライン」改訂検討会",
-      "ministry": "",
+      "ministry": "SMEA",
       "category": "COUNCIL",
       "officialUrl": "",
       "rejectedAt": "",
@@ -31957,7 +31976,7 @@
     {
       "id": "smea-3036",
       "name": "イノベーション・プロデュース推進会議",
-      "ministry": "",
+      "ministry": "SMEA",
       "category": "COUNCIL",
       "officialUrl": "",
       "rejectedAt": "",
@@ -31966,7 +31985,7 @@
     {
       "id": "smea-3037",
       "name": "イノベーション・プロデューサーガイドライン策定委員会",
-      "ministry": "",
+      "ministry": "SMEA",
       "category": "COUNCIL",
       "officialUrl": "",
       "rejectedAt": "",
@@ -31975,7 +31994,7 @@
     {
       "id": "smea-3038",
       "name": "中小企業の成長のためのイノベーション研究会",
-      "ministry": "",
+      "ministry": "SMEA",
       "category": "COUNCIL",
       "officialUrl": "",
       "rejectedAt": "",
@@ -31984,7 +32003,7 @@
     {
       "id": "smea-3039",
       "name": "中小企業のイノベーションの在り方に関する有識者検討会",
-      "ministry": "",
+      "ministry": "SMEA",
       "category": "COUNCIL",
       "officialUrl": "",
       "rejectedAt": "",
@@ -31993,7 +32012,7 @@
     {
       "id": "smea-3040",
       "name": "令和元年 特別編 スマートSME(中小企業)研究会 配布資料",
-      "ministry": "",
+      "ministry": "SMEA",
       "category": "COUNCIL",
       "officialUrl": "",
       "rejectedAt": "",
@@ -32002,7 +32021,7 @@
     {
       "id": "smea-3041",
       "name": "日本版SBIR制度の見直しに向けた検討会",
-      "ministry": "",
+      "ministry": "SMEA",
       "category": "COUNCIL",
       "officialUrl": "",
       "rejectedAt": "",
@@ -32011,7 +32030,7 @@
     {
       "id": "smea-3042",
       "name": "伴走支援の在り方検討会",
-      "ministry": "",
+      "ministry": "SMEA",
       "category": "COUNCIL",
       "officialUrl": "",
       "rejectedAt": "",
@@ -32020,7 +32039,7 @@
     {
       "id": "smea-3043",
       "name": "中小企業強靱化研究会",
-      "ministry": "",
+      "ministry": "SMEA",
       "category": "COUNCIL",
       "officialUrl": "",
       "rejectedAt": "",
@@ -32029,7 +32048,7 @@
     {
       "id": "smea-3044",
       "name": "平成26年 事業承継を中心とする事業活性化に関する検討会 中間報告について",
-      "ministry": "",
+      "ministry": "SMEA",
       "category": "COUNCIL",
       "officialUrl": "",
       "rejectedAt": "",
@@ -32038,7 +32057,7 @@
     {
       "id": "smea-3045",
       "name": "中小企業における再生M&A促進に向けた検討会",
-      "ministry": "",
+      "ministry": "SMEA",
       "category": "COUNCIL",
       "officialUrl": "",
       "rejectedAt": "",
@@ -32047,7 +32066,7 @@
     {
       "id": "smea-3046",
       "name": "新たなビジネスモデルを踏まえた商工中金の在り方検討会",
-      "ministry": "",
+      "ministry": "SMEA",
       "category": "COUNCIL",
       "officialUrl": "",
       "rejectedAt": "",
@@ -32056,7 +32075,7 @@
     {
       "id": "smea-3047",
       "name": "商工中金の経営及び危機対応業務に関する評価委員会 報告書について",
-      "ministry": "",
+      "ministry": "SMEA",
       "category": "COUNCIL",
       "officialUrl": "",
       "rejectedAt": "",
@@ -32065,7 +32084,7 @@
     {
       "id": "smea-3048",
       "name": "金融EDIにおける商流情報等のあり方検討会議",
-      "ministry": "",
+      "ministry": "SMEA",
       "category": "COUNCIL",
       "officialUrl": "",
       "rejectedAt": "",
@@ -32074,7 +32093,7 @@
     {
       "id": "smea-3049",
       "name": "知識サポート・経営改革プラットフォーム研究会",
-      "ministry": "",
+      "ministry": "SMEA",
       "category": "COUNCIL",
       "officialUrl": "",
       "rejectedAt": "",
@@ -32083,7 +32102,7 @@
     {
       "id": "smea-3050",
       "name": "中小企業の会計に関する研究会 中間報告書について",
-      "ministry": "",
+      "ministry": "SMEA",
       "category": "COUNCIL",
       "officialUrl": "",
       "rejectedAt": "",
@@ -32092,7 +32111,7 @@
     {
       "id": "smea-3051",
       "name": "中小企業の会計に関する研究会",
-      "ministry": "",
+      "ministry": "SMEA",
       "category": "COUNCIL",
       "officialUrl": "",
       "rejectedAt": "",
@@ -32101,7 +32120,7 @@
     {
       "id": "smea-3052",
       "name": "中小企業海外展開支援会議",
-      "ministry": "",
+      "ministry": "SMEA",
       "category": "COUNCIL",
       "officialUrl": "",
       "rejectedAt": "",
@@ -32110,7 +32129,7 @@
     {
       "id": "smea-3053",
       "name": "中小企業憲章に関する研究会",
-      "ministry": "",
+      "ministry": "SMEA",
       "category": "COUNCIL",
       "officialUrl": "",
       "rejectedAt": "",
@@ -139628,6 +139647,9 @@
     "mof-1137-20241108-059": {
       "discoveredAt": "2026/09/19 12:00"
     },
+    "mof-1137-20250123-060": {
+      "discoveredAt": "2026/11/23 01:17"
+    },
     "mof-1137-20250514-061": {
       "discoveredAt": "2026/09/19 12:00"
     },
@@ -139648,6 +139670,9 @@
     },
     "mof-1137-20251120-065": {
       "discoveredAt": "2026/09/19 12:00"
+    },
+    "mof-1137-20260924-070": {
+      "discoveredAt": "2026/11/23 01:17"
     },
     "mof-1144-20181029-s02": {
       "discoveredAt": "2026/11/07 07:17"
