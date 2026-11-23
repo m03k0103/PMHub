@@ -58,3 +58,25 @@ docker run --rm --add-host=host.docker.internal:host-gateway \
   10038	IGNORE	(Content Security Policy Header Not Set - managed by CDN)
   ```
 - 詳細な共通仕様は `D:\dev\Orchestration\docs\security-scan.md` を参照してください。
+
+## 4. Drop 148 (`Track [Security-DAST]`) 適用セキュリティ強化およびルール判断根拠
+
+公開ポータル（`docs/index.html` / `docs/app.js`）に対して以下の多層防御を実施した上で、CI ローカルサーバー（`python3 -m http.server`）固有または外部動的 CSS 仕様上のアラートを整理しています。
+
+### 4-1. 実コードにおけるセキュリティ対策
+1. **外部 CDN スクリプトのバージョン固定 & SRI (`90003` 対応)**:
+   - Chart.js を `https://cdn.jsdelivr.net/npm/chart.js@4.4.8/dist/chart.umd.min.js` にバージョン固定し、`integrity="sha384-..."` および `crossorigin="anonymous"` を付与。
+2. **Content Security Policy `<meta>` 配備 & インラインスクリプト排除 (`10038` 対応)**:
+   - `docs/index.html` の `<head>` に `<meta http-equiv="Content-Security-Policy" ...>` を配備（`default-src 'self'`, `script-src 'self' https://cdn.jsdelivr.net`, `object-src 'none'`, `base-uri 'self'`, `form-action 'self'`）。
+   - `script-src` での `'unsafe-inline'` を不要化するため、テーマ初期設定スクリプトおよびすべてのインラインイベント属性（`onclick` / `onchange` / `onkeydown`）を `docs/app.js` 側の `addEventListener` / イベント委譲へ移行。
+3. **統合テスト（ケース3）による回帰防止**:
+   - `testing/test_js_runtime.js` にて CSP・SRI・インライン `<script>` / `on*=` ゼロ・`.zap/rules.tsv` TAB 区切り整合性を自動検査。
+
+### 4-2. `.zap/rules.tsv` ルール調整の根拠
+
+| Plugin ID | 設定 | 対象 / 要因 | 判断根拠 |
+| :---: | :---: | :--- | :--- |
+| `10036` | `IGNORE` | `Server: SimpleHTTP/0.6 Python/...` | CI 用ローカルサーバー固有のヘッダーであり本番（GitHub Pages）とは無関係なため除外 |
+| `10017` | `IGNORE` | `cdn.jsdelivr.net` (`chart.js`) | バージョン固定および SHA-384 SRI で改ざん検知を担保済みの信頼 CDN のため除外 |
+| `90003` | `IGNORE` | Google Fonts CSS (`fonts.googleapis.com`) | Google Fonts はアクセス元 User-Agent に応じて動的 CSS を返すため固定 SRI ハッシュが付与不可（JS CDN の SRI はケース3テストで常時強制） |
+| `10015`, `10020`, `10021`, `10035`, `10038`, `10063`, `90004` | `WARN` | HTTP レスポンスヘッダー未設定系 | 静的ファイル・`python3 -m http.server` 環境では HTTP ヘッダー（`X-Frame-Options`, `frame-ancestors`, `X-Content-Type-Options` 等）を付与できないため警告扱いで可視化維持（CSP は HTML `<meta>` で担保） |

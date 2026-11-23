@@ -4,6 +4,12 @@
 
 
 if (typeof document !== 'undefined') {
+  try {
+    const initialTheme = (typeof localStorage !== 'undefined' && localStorage.getItem('pmhub_theme')) || 'light';
+    if (document.documentElement && typeof document.documentElement.setAttribute === 'function') {
+      document.documentElement.setAttribute('data-theme', initialTheme);
+    }
+  } catch (e) {}
 document.addEventListener('DOMContentLoaded', async () => {
   let dataLastModified = '';
   let loadSuccess = false;
@@ -567,6 +573,87 @@ document.addEventListener('DOMContentLoaded', async () => {
     if (el.copyCitationBtn) {
       el.copyCitationBtn.addEventListener('click', copyCitationText);
     }
+
+    // Analytics chart controls
+    const ministryMetricBtnGroup = document.getElementById('ministryMetricBtnGroup');
+    if (ministryMetricBtnGroup) {
+      ministryMetricBtnGroup.addEventListener('click', (e) => {
+        const metricBtn = e.target && e.target.closest ? e.target.closest('.btn-chart-metric[data-metric]') : null;
+        if (!metricBtn) return;
+        const metric = metricBtn.getAttribute('data-metric');
+        if (metric && typeof window.setMinistryChartMetric === 'function') {
+          window.setMinistryChartMetric(metric);
+        }
+      });
+    }
+
+    const analyticsFySelect = document.getElementById('analyticsFiscalYearSelect');
+    if (analyticsFySelect) {
+      analyticsFySelect.addEventListener('change', (e) => {
+        if (typeof window.setAnalyticsFiscalYear === 'function') {
+          window.setAnalyticsFiscalYear(e.target.value);
+        }
+      });
+    }
+
+    // Delegated UI interactions (replaces inline onclick/onkeydown handlers for CSP compliance)
+    document.addEventListener('click', (e) => {
+      const target = e.target;
+      if (!target || typeof target.closest !== 'function') return;
+
+      if (target.closest('.inline-link-icon')) {
+        if (typeof e.stopPropagation === 'function') e.stopPropagation();
+        return;
+      }
+
+      const watchlistBtn = target.closest('[data-watchlist-council-id]');
+      if (watchlistBtn) {
+        if (typeof e.stopPropagation === 'function') e.stopPropagation();
+        const cid = watchlistBtn.getAttribute('data-watchlist-council-id');
+        if (cid && typeof window.toggleWatchlist === 'function') {
+          window.toggleWatchlist(cid);
+        }
+        return;
+      }
+
+      const tagRemoveBtn = target.closest('.active-tag-remove[data-filter-tag-key]');
+      if (tagRemoveBtn) {
+        const key = tagRemoveBtn.getAttribute('data-filter-tag-key');
+        if (key && typeof window.removeFilterTag === 'function') {
+          window.removeFilterTag(key);
+        }
+        return;
+      }
+
+      const matToggleBtn = target.closest('.materials-toggle-btn[data-meeting-id]');
+      if (matToggleBtn) {
+        const mid = matToggleBtn.getAttribute('data-meeting-id');
+        if (typeof window.toggleMaterialsAccordion === 'function') {
+          window.toggleMaterialsAccordion(matToggleBtn, mid);
+        }
+        return;
+      }
+
+      const councilHeader = target.closest('.council-accordion-header[data-council-id]');
+      if (councilHeader) {
+        const cid = councilHeader.getAttribute('data-council-id');
+        if (cid && typeof window.toggleCouncilAccordion === 'function') {
+          window.toggleCouncilAccordion(cid);
+        }
+      }
+    });
+
+    document.addEventListener('keydown', (e) => {
+      const target = e.target;
+      if (!target || typeof target.closest !== 'function') return;
+      const councilHeader = target.closest('.council-accordion-header[data-council-id]');
+      if (councilHeader) {
+        const cid = councilHeader.getAttribute('data-council-id');
+        if (cid && typeof window.handleCouncilAccordionKeydown === 'function') {
+          window.handleCouncilAccordionKeydown(e, cid);
+        }
+      }
+    });
   }
 
   // --- TAB SWITCHING ---
@@ -804,7 +891,7 @@ document.addEventListener('DOMContentLoaded', async () => {
       el.activeTagsContainer.innerHTML = activeTags.map(tag => `
         <span class="active-tag">
           ${escapeHtml(tag.label)}
-          <span class="active-tag-remove" onclick="removeFilterTag('${tag.key}')">&times;</span>
+          <span class="active-tag-remove" data-filter-tag-key="${escapeHtml(tag.key)}">&times;</span>
         </span>
       `).join('');
     } else {
@@ -813,7 +900,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   }
 
   window.toggleMaterialsAccordion = function(btn, meetingId) {
-    // btn: ボタン DOM 要素（onclick="toggleMaterialsAccordion(this, '${meetingId}')" で呼び出し）
+    // btn: ボタン DOM 要素（アコーディオン開閉トグル）
     const accordionEl = btn && btn.closest ? btn.closest('.materials-accordion') : null;
     if (!accordionEl) return;
 
@@ -884,7 +971,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     return `
       <div class="materials-accordion">
-        <button class="materials-toggle-btn" onclick="toggleMaterialsAccordion(this, '${meetingId}')" type="button" aria-expanded="false" aria-controls="materials-content-${meetingId}">
+        <button class="materials-toggle-btn" data-meeting-id="${escapeHtml(meetingId)}" type="button" aria-expanded="false" aria-controls="materials-content-${meetingId}">
           <div class="materials-toggle-left">
             <span>📂 ${escapeHtml(label)}</span>
             <span class="materials-badge-count ${hasMaterials ? '' : 'no-materials'}">${hasMaterials ? `${filteredMaterials.length}件` : '資料なし'}</span>
@@ -966,7 +1053,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         <div class="card-title-block">
           <span class="card-council-name">
             ${escapeHtml(getCouncilName(meeting))}
-            <a href="${escapeHtml(sanitizeUrl(meeting.officialUrl))}" target="_blank" rel="noopener noreferrer" class="inline-link-icon" title="公式トップページを開く" onclick="event.stopPropagation();">
+            <a href="${escapeHtml(sanitizeUrl(meeting.officialUrl))}" target="_blank" rel="noopener noreferrer" class="inline-link-icon" title="公式トップページを開く">
               <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
             </a>
           </span>
@@ -1195,7 +1282,7 @@ document.addEventListener('DOMContentLoaded', async () => {
             <span class="meeting-row-title">
               ${isNew ? '<span class="badge-new-arrival" style="margin-right: 0.35rem;">新着</span>' : ''}
               ${escapeHtml(m.name || '')}
-              <a href="${escapeHtml(sanitizeUrl(m.officialUrl))}" target="_blank" rel="noopener noreferrer" class="inline-link-icon" title="一次ソースを開く" onclick="event.stopPropagation();">
+              <a href="${escapeHtml(sanitizeUrl(m.officialUrl))}" target="_blank" rel="noopener noreferrer" class="inline-link-icon" title="一次ソースを開く">
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
               </a>
             </span>
@@ -1212,20 +1299,20 @@ document.addEventListener('DOMContentLoaded', async () => {
 
       return `
         <div class="council-accordion-card ${isExpanded ? 'expanded' : ''}" id="council-card-${c.id}">
-          <div class="council-accordion-header" onclick="toggleCouncilAccordion('${c.id}')" onkeydown="handleCouncilAccordionKeydown(event, '${c.id}')" role="button" tabindex="0" aria-expanded="${isExpanded ? 'true' : 'false'}" aria-controls="council-body-${c.id}">
+          <div class="council-accordion-header" data-council-id="${escapeHtml(c.id)}" role="button" tabindex="0" aria-expanded="${isExpanded ? 'true' : 'false'}" aria-controls="council-body-${c.id}">
             <div class="council-header-left">
               <div class="council-header-top-row">
                 <span class="badge-ministry ${c.ministry}">${minInfo.name}</span>
                 <span class="badge-category">${getCategoryLabel(c.category)}</span>
                 ${(Boolean(c.isNewlyDiscovered) || councilMeetings.some(m => m.isNewlyDiscovered)) ? `<span class="badge-new-arrival">新着${councilMeetings.filter(m => m.isNewlyDiscovered).length > 0 ? ` ${councilMeetings.filter(m => m.isNewlyDiscovered).length}件` : ''}</span>` : ''}
-                <button class="btn-watchlist-toggle ${isWatching ? 'watching' : ''}" style="margin-left: auto;" onclick="event.stopPropagation(); toggleWatchlist('${c.id}')">
+                <button class="btn-watchlist-toggle ${isWatching ? 'watching' : ''}" style="margin-left: auto;" data-watchlist-council-id="${escapeHtml(c.id)}">
                   <svg width="14" height="14" viewBox="0 0 24 24" fill="${isWatching ? 'currentColor' : 'none'}" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
                   ${isWatching ? 'ウォッチ中' : 'ウォッチ'}
                 </button>
               </div>
               <span class="council-header-title">
                 ${escapeHtml(c.name)}
-                <a href="${escapeHtml(sanitizeUrl(c.officialUrl))}" target="_blank" rel="noopener noreferrer" class="inline-link-icon" title="公式トップページを開く" onclick="event.stopPropagation();">
+                <a href="${escapeHtml(sanitizeUrl(c.officialUrl))}" target="_blank" rel="noopener noreferrer" class="inline-link-icon" title="公式トップページを開く">
                   <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
                 </a>
               </span>
@@ -1272,7 +1359,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
   window.handleCouncilAccordionKeydown = function(e, councilId) {
     if (e.key === 'Enter' || e.key === ' ') {
-      if (e.target && (e.target.tagName === 'A' || e.target.tagName === 'BUTTON' || e.target.closest('a, button'))) {
+      if (e.target && (e.target.tagName === 'A' || e.target.tagName === 'BUTTON' || (typeof e.target.closest === 'function' && e.target.closest('a, button')))) {
         return;
       }
       e.preventDefault();
@@ -1317,7 +1404,7 @@ document.addEventListener('DOMContentLoaded', async () => {
               <h4 style="font-weight:700; margin-top:0.3rem;">${escapeHtml(c.name)}</h4>
               <span class="text-sm">過去1年間の開催数: <strong>${pastYearDisplay}</strong></span>
             </div>
-            <button class="btn-secondary btn-sm" onclick="toggleWatchlist('${c.id}')">解除</button>
+            <button class="btn-secondary btn-sm" data-watchlist-council-id="${escapeHtml(c.id)}">解除</button>
           </div>
         `;
       }).join('');
