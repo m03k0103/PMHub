@@ -122,6 +122,9 @@ def _crawler_worker(options=None):
     include_closed = bool(options.get("include_closed", False))
     resume = bool(options.get("resume", False))
     skip_download = bool(options.get("skip_download", False))
+    exclude_daily = options.get("exclude_daily", None)
+    exclude_weekly = options.get("exclude_weekly", None)
+    daily_window_days = int(options.get("daily_window_days", 7))
 
     crawler_state["mode"] = mode
     crawler_state["target_ministry"] = ministry or "ALL"
@@ -163,7 +166,10 @@ def _crawler_worker(options=None):
                 include_closed=include_closed,
                 resume=resume,
                 ministry=ministry,
-                skip_download=skip_download
+                skip_download=skip_download,
+                exclude_daily=exclude_daily,
+                exclude_weekly=exclude_weekly,
+                daily_window_days=daily_window_days,
             )
         crawler_state["stats"] = stats
         crawler_state["progress"] = 100

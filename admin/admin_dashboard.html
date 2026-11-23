@@ -307,10 +307,11 @@
                   📅 対象年数
                 </label>
                 <select id="crawlRecentYearsSelect" class="form-control admin-select">
-                  <option value="2" selected>直近2年 (推奨)</option>
-                  <option value="1">直近1年</option>
-                  <option value="3">直近3年</option>
-                  <option value="0">全期間 (0)</option>
+                  <option value="2" selected>直近2年 (Weekly: Daily対象除外)</option>
+                  <option value="1">直近1年 (Daily対象除外)</option>
+                  <option value="3">直近3年 (Daily対象除外)</option>
+                  <option value="0">休眠・2年超前のみ (Monthly: Daily・Weekly対象除外)</option>
+                  <option value="all">全期間・全件 (除外なし)</option>
                 </select>
               </div>
 

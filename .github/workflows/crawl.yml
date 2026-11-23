@@ -11,8 +11,8 @@ on:
         type: choice
         options:
           - daily    # 平朝新着検知のみ (--from-ministry-news)
-          - weekly   # 通常巡回（直近2年）
-          - monthly  # 全期間包括走査
+          - weekly   # 通常巡回（直近2年・Daily対象除外）
+          - monthly  # 休眠・過去補完巡回（2年超未開催のみ・Daily/Weekly対象除外）
       dry_run:
         description: "ドライラン（コミット・pushを行わない場合はチェック）"
         required: false
@@ -78,8 +78,8 @@ jobs:
           if [ -n "$MINISTRY" ]; then ARGS="$ARGS --ministry $MINISTRY"; fi
           case "$MODE" in
             daily)   CMD="python admin/crawler.py --from-ministry-news --skip-download --no-llm ${MINISTRY:+--ministry $MINISTRY}" ;;
-            weekly)  CMD="python admin/crawler.py $ARGS --recent-years 2" ;;
-            monthly) CMD="python admin/crawler.py $ARGS --recent-years 0" ;;
+            weekly)  CMD="python admin/crawler.py $ARGS --recent-years 2 --exclude-daily" ;;
+            monthly) CMD="python admin/crawler.py $ARGS --recent-years 0 --exclude-daily --exclude-weekly" ;;
           esac
           echo "実行コマンド: $CMD"
           set -o pipefail

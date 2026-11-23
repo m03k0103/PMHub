@@ -1,8 +1,8 @@
 # PMHub 改善・機能実装（Drop）マスタードキュメント (DROPS.md)
 
-> **最終更新**: 2026-11-22  
-> **最新 Drop**: **Drop 148**（2026-11-22 完了）  
-> **次期予定 Drop**: **Drop 149**（Track [Core-Policy-Filter]: 「重要政策会議のみ」クイック絞り込み機能、または Track [LLM-Assist] / Track [Search]）  
+> **最終更新**: 2026-11-23  
+> **最新 Drop**: **Drop 149**（2026-11-23 完了）  
+> **次期予定 Drop**: **Drop 150**（Track [Core-Policy-Filter]: 「重要政策会議のみ」クイック絞り込み機能、または Track [LLM-Assist] / Track [Search]）  
 > 
 > 本ドキュメントは、PMHub の継続的改善ロードマップおよび実装記録を一元管理するマスタードキュメントです。  `
 > 今後の構想テーマは **「Track（トラック）」** として管理し、着手・個別実装単位は最新連番を付与した **「Drop（ドロップ）」** として連番アーカイブします。  `
@@ -307,6 +307,7 @@ GitHub Actions で自動更新・push されたリモートの最新データ（
 | **Drop 146** | **金融庁（FSA）新着会議未登録の根本原因修正・期またぎ回次リセット対応・他7省庁新着検知横展開** | **金融庁新着検知・名寄せ・タイトル正規化・期またぎ回次リセット制御の6複合不具合修正および他7省庁への横展開**<br>1. **汎用見出し誤判定・タイトル除去修正**: `'議事次第'`, `'配付資料'`, `'配布資料'` を汎用タイトル定数へ追加し、`clean_meeting_title()` で末尾 `議事次第` を除去（`crawler.py` / `filters.py` / `extractors.py` 同期）。`_index.html` 汎用除外も追加。<br>2. **期またぎ回次リセット適正化・重複テスト対応**: `sync_new_meetings_from_crawl()` が最新活動期より365日以内で既存同回次すべてより365日超新しい別URL開催回のみ新規許可し過去期掘り返しを遮断、年・期表記未含有タイトルへ `({YYYY}年)` を自動付与。`test_no_duplicate_meetings.py` に `事務年度` 識別を追加。<br>3. **新着ポータル走査・名寄せ・ピンポイント回収修正（他7省庁横展開）**: `resolve_news_portal_urls()` の動的年月解決（202610ハードコード撤廃）、`extract_news_items_from_html()` の親コンテナ・先行日付探索（FSA/MOE/MAFF/RINYA/JFA対応）と `footer`/`nav` 除外、`match_council_from_news_item()` 優先順位是正、`run_ministry_news_discovery()` ピンポイント結果参照バグ修正、`list(dict.fromkeys(...))` による日付順序保持。<br>4. **金融庁新着データ・議事録同期**: 4開催回登録・3議事録/議事要旨追記・`fsa-digital_finance` URL移転更新・誤名寄せ1件削除と `manualLock` 保護。 | **金融庁4開催回・3議事録/議事要旨登録、重複0件（全25,115開催回検証済）、横展開8省庁新着抽出確認（FSA 8/MOF 59/NRA 3/MOE 34/MAFF 15/RINYA 5/JFA 13件）、統合10ケース＋単体14種合格** |
 | **Drop 147** | **定時Weeklyクロール新着・更新情報のAI補正・共通親ポータル共有会議体間の誤配分（Cross-Pollution）根絶 & 厳格ルール適用** | **Weeklyクロール（Run `44967143152`）の追加・更新データ精査に基づくクローラー3層厳格隔離・不正正規表現修復・348件の誤配分整理・デジタル行財政改革配付資料展開およびAIタイトル補正**<br>1. **クローラー根本原因修正（`admin/crawler.py`）**: `_compile_subpage_pattern()`（先頭 `?:...` 欠損の自動修復および `href=` ラッパー除去）と `_passes_rule_url_filters()` を新設し、`strict_subpage_pattern: true` 設定時にサブページリンク抽出（ジェネリックリンク名特例含む）・親テーブル解析・セクション解析・`sync_new_meetings_from_crawl()` 全層で厳格パターン外URLを遮断。さらに共通親ポータルを共有する兄弟会議体間で既保有サブページURLを除外する `sibling_existing_urls` ガードを導入。<br>2. **不正正規表現13件修復 & 厳格ルール31会議体配備**: `scraping_rules` 内の `?:...` 構文エラー13件（`mext-714`, `mhlw-2855`, 総務省11件）を修復し、共有ポータル群（`cao-kisei_*` 7・`cas-digital_gyozaikaikaku*` 11・`cas-titeki*` 10・`cas-kenkou_iryou_*` 3）へ `strict_subpage_pattern: true` ＋正規化済み `subpage_discovery_pattern` を設定。<br>3. **誤配分データクレンジング・URL移行・配付資料末端化 & AI補正**: 既存ダウンロード済 PMM 資産を保護しつつ誤配分348開催回を削除、`cao-kisei_kaikaku-20251016-025` の URL/資料誤リンク修正および `committee/240219` 移管、`cas-digital_gyozaikaikaku*` 保持94開催回のHTML個別ページ昇格と中間HTML/誤添付141件除去＋末端資料552件追加、著作権分科会・沖縄振興・賃上げWG・ギャンブル依存症説明会・産業遺産技術検討会・物流関係者会議・木質材料・就職採用幹事会等のAI補正および検証済データへの `manual_lock = 1` 付与・`past_year_count` 再計算。<br>4. **回帰単体テスト拡充（`testing/test_crawler_regression.py`）**: 不正正規表現自動修復、3層厳格隔離、兄弟会議体URL排他ガードの3テストを追加（全14テスト合格）。 | **誤配分348件解消・不正正規表現13件修復・31会議体厳格ルール適用・デジタル行財政改革末端資料552件補強、全24,933開催回重複0件検証済、統合10ケース＋単体14種完全合格** |
 | **Drop 148** | **Track [Security-DAST] OWASP ZAP DAST 検出アラート対応 & SRI・CSP強化・誤検知ルールチューニング** | **初回 ZAP ベースラインスキャン（Run `44312816310`）の Medium 3件・Low 7件に対する公開ポータル強化・イベント委譲移行・ルール整備**<br>1. **Chart.js バージョン固定 & SRI 付与（`docs/index.html`）**: Chart.js CDN を `chart.js@4.4.8/dist/chart.umd.min.js` に固定し、SHA-384 `integrity` と `crossorigin="anonymous"` を付与（`90003` 対応）。<br>2. **厳格 CSP `<meta>` 導入 & インラインコード・ハンドラ移行（`docs/index.html`, `docs/app.js`）**: `script-src 'self' https://cdn.jsdelivr.net`（`'unsafe-inline'` 不使用）を含む `<meta http-equiv="Content-Security-Policy">` を導入（`10038` 対応）。テーマ初期設定インライン `<script>` および全 `onclick` / `onchange` / `onkeydown` 属性を削除し、`docs/app.js` の即時初期化と `addEventListener` 委譲へ移行。<br>3. **ZAP ルール・手順書整備（`.zap/rules.tsv`, `guide/security-scan.md`）**: CI `SimpleHTTP` 起因 `10036`、SRI 担保済 `10017`、動的 Google Fonts CSS 起因 `90003` 残存を `IGNORE` 化し、HTTP ヘッダー系 `WARN` 根拠を明文化。<br>4. **セキュリティ品質ゲート追加（`testing/test_js_runtime.js`）**: ケース3へ CSP・SRI・インラインJS/イベント0件・`.zap/rules.tsv` TAB構文検証を組み込み。 | **Chart.js SRI 付与、厳格 CSP `<meta>` 配備、インラインJS/イベント0件化、ZAP誤検知ルール最適化（Track [Security-DAST] 完了）** |
+| **Drop 149** | **Weekly・Monthly クロール効率化（Daily・Weekly クロール対象会議体の階層間重複除外）& `<dl><dt>/<dd>` 親日付抽出強化・CAS第1〜4回補正** | **3階層スケジュール巡回（Daily / Weekly / Monthly）の対象会議体重複を排除する排他フィルタリング実装 & リモート自動クロール `cas-357` 仮日付是正**<br>1. **Daily 最新巡回日時の上書き記録（`admin/crawler.py`）**: `run_ministry_news_discovery()` で直接抽出・ピンポイント巡回した会議体IDごとの最新クロール日時を `crawlerConfig.dailyCouncilLastCrawlTime`（単一最新時刻の上書き保持）および `crawlStatuses` に記録。<br>2. **Weekly における Daily 対象除外 / Monthly における Daily・Weekly 対象除外**: `get_daily_crawled_council_ids()` と `load_councils_from_data_json()` により、Weekly は直近7日以内の Daily 巡回済み会議体を除外し、Monthly（`--recent-years 0 --exclude-daily --exclude-weekly`）は Daily 対象および Weekly 対象（直近2年以内開催・新規0件）を除外して2年超未開催の休眠会議体のみを巡回。<br>3. **`<dl><dt>/<dd>` 親日付抽出強化 & `cas-357` 是正**: `extract_actual_subpage_links()` で `<dd>` 直前兄弟 `<dt>` から日付・回次コンテキストを取得するよう改善。`741e8cd` で混入した `cas-357` 第1〜4回の `2099/01/01` を公式開催日（2015/05/27〜2018/07/18）へ補正・`manual_lock=1` 保護・2系統JSON同期。<br>4. **CI・管理UI連動・テスト拡充**: `.github/workflows/crawl.yml`, `server.py`, `admin_dashboard.html/.js` 更新、U4 単体テストおよびケース10階層排他検証を追加。 | **Monthly 対象 1,699件→738件（56.6%削減）、Daily・Weekly・Monthly 3階層完全排他、`2099/01/01` 0件化・統合10ケース＋単体14種合格** |
 
 ---
 
@@ -5019,3 +5020,42 @@ python testing/run_test_suite.py --all-layers : PASSED（統合10ケース＋全
 #### 4. 今後の課題・ネクストアクション
 - 作業ブランチ `feature/drop148-security-dast-sri-csp` の PR / `main` 反映時に GitHub Actions `OWASP ZAP DAST Scan` が自動稼働した際、チューニング済みルールに基づくクリーンなレポート出力と High リスク 0 件の再確認を行う。
 - 次期未着手構想である `Track [Core-Policy-Filter]`（「重要政策会議のみ」クイック絞り込み機能）等の検討・着手を進める。
+
+### Drop 149: Weekly・Monthly クロール効率化（Daily・Weekly クロール対象会議体の階層間重複除外） (2026-11-23 完了)
+
+#### 1. 背景と目的
+- **3階層定期巡回（Daily / Weekly / Monthly）における会議体重複クロールの解消**:
+  従来の `.github/workflows/crawl.yml` および `admin/crawler.py` では、平朝の **Daily**（`--from-ministry-news`）で直近巡回・更新済みの会議体であっても、土曜の **Weekly**（`--recent-years 2`）および月初日曜の **Monthly**（`--recent-years 0`）で再度重複アクセスを行っていた。さらに Monthly は全アクティブ会議体（1,699件）を走査していたため、Weekly 対象（961件）と重複し、2年超未開催の休眠会議体（738件）のみならずアクティブ会議体全件にも重複通信が発生していた。
+- **達成目標**:
+  1. Weekly クロールでは直近7日以内の Daily クロール対象会議体を除外して重複巡回を行わないこと。
+  2. Monthly クロールでは Daily クロール対象および Weekly クロール対象（直近2年以内開催・開催回0件）の双方を除外し、2年超未開催の休眠会議体のみを巡回すること。
+
+#### 2. 主要な施策・修正内容
+1. **Daily 巡回済み会議体の最新日時記録・判定・3階層排他フィルタリング（`admin/crawler.py`）**:
+   - `run_ministry_news_discovery()` にて、直接資料抽出した会議体およびピンポイント巡回を実行（HTML 取得・ルール抽出完了）した会議体について、会議体 ID をキーに最新のクロール日時1件のみを `crawlerConfig.dailyCouncilLastCrawlTime` へ上書き保持するよう実装（履歴保持・古いエントリ削除処理は不要とし、`ministryLastCrawlTime` と同様の単一最新値管理を採用）。併せて `update_crawl_status()` によるステータス更新を実行。
+   - `get_daily_crawled_council_ids(data, daily_window_days=7)` を新設し、`dailyCouncilLastCrawlTime`（および `crawlStatus.extractionMethod == "ministry_news"` の `lastAttempt`）を参照して直近7日以内の Daily 対象会議体 ID セットを取得。
+   - `load_councils_from_data_json()` に `exclude_daily`, `exclude_weekly`, `daily_window_days`, `weekly_recent_years` を追加し、Weekly（`recent_years=2` 等）ではデフォルト `exclude_daily=True`、Monthly（`recent_years=0` 等）ではデフォルト `exclude_daily=True, exclude_weekly=True` として Daily 対象・Weekly 対象を除外し、`recent_years="all"` では全件取得（除外無効）を維持。
+   - `run_meeting_crawler()` および CLI 引数（`--exclude-daily` / `--include-daily` / `--exclude-weekly` / `--include-weekly` / `--daily-window-days`）を拡張し、階層限定クロール時は対象外会議体の `isNewlyDiscovered` フラグをリセットしないよう `partial_cids` を保護。
+   - `extract_actual_subpage_links()` にて、`<dl><dt>...</dt><dd><a href="...">` 構造（内閣官房等）の `<dd>` 要素について直前兄弟 `<dt>` のテキストを連結し、サブページ側に年の記載がない開催回でも正確な開催日を親ページからフォールバック取得できるよう強化。
+2. **GitHub Actions・管理サーバー・管理コンソール UI の更新**:
+   - `.github/workflows/crawl.yml`: `weekly` に `--recent-years 2 --exclude-daily`、`monthly` に `--recent-years 0 --exclude-daily --exclude-weekly` を明示設定。
+   - `admin/server.py`: `_crawler_worker()` が `exclude_daily`, `exclude_weekly`, `daily_window_days` オプションを受信・伝達するよう更新。
+   - `admin/admin_dashboard.html` / `admin/admin_dashboard.js`: 対象範囲プルダウン（`#crawlRecentYearsSelect`）に Monthly 休眠限定（`0`）および全件除外なし（`all`）の選択肢と実行ログ表示を整備。
+3. **リモート定期クロール新規データの補正と 2系統 JSON 同期（`cas-357` 第1〜4回）**:
+   - `origin/main`（`741e8cd`）から取り込まれた内閣官房「国の利害に関係のある争訟等への対応に関する関係府省庁連絡会議」（`cas-357`）の第1回幹事会・第2〜4回会合の仮日付 `2099/01/01` 4件について、公式ページ記載の開催日（`2015/05/27`, `2016/07/15`, `2017/07/13`, `2018/07/18`）および正規ID（`cas-357-20150527-s01`, `cas-357-20160715-002`, `cas-357-20170713-003`, `cas-357-20180718-004`）へ補正し、`manual_lock = 1` を設定して `admin/db/export_data.py` で 2系統 JSON を同期。
+4. **単体・統合テストの拡充（`testing/test_crawler_incremental.py`, `testing/run_test_suite.py`）**:
+   - `test_crawler_incremental.py` に、Weekly での Daily 対象除外・Monthly での Daily/Weekly 対象除外・3階層の相互排他および和集合一致（`Daily ∪ Weekly ∪ Monthly == All`）、ならびに `run_ministry_news_discovery()` の最新クロール日時単一上書き記録を検証する単体テスト 2件を追加。
+   - `run_test_suite.py` ケース10（`check_active_filtering_and_closed_management`）に、実データ上での Weekly / Monthly / Daily の重複 0件および全アクティブ会議体との和集合一致検証を追加。
+
+#### 3. 達成された指標・成果
+- **巡回対象の階層間重複 0件化と対象件数削減**:
+  - 実データ（非廃止・有効URL保有 1,699 会議体）において、Weekly 対象（961件）と Monthly 対象（738件）および Daily 対象（0件初期値 / 稼働時は直近7日分）の重複が 0件であることを検証（Monthly 巡回対象は 1,699件 → **738件、約 56.6% 削減**）。
+  - `cas-357` 4開催回の補正により全 25,059 開催回における `2099/01/01` 仮日付 0件・重複 0件を確認。
+- **単体・統合テスト合格**:
+  - `python -m unittest testing/test_crawler_incremental.py` および `python testing/run_test_suite.py --all-layers`（統合10ケース＋単体14種 U1〜U14）に全件合格。
+
+#### 4. クローラーへの影響・今後の課題・アクション
+- **手動登録データの保護挙動**: 補正した `cas-357` 第1〜4回を含む `manualLock: true`（`manual_lock = 1`）データおよび PMM ローカル保存済み資産（`download_status = 'downloaded'`）の保護ロジックにより、今後の自動クロールでも上書き・削除されない。
+- **次回クロール時の新着検知・自動更新の挙動**: Daily 稼働で巡回・更新された会議体は `crawlerConfig.dailyCouncilLastCrawlTime` に最新日時が記録され、土曜 Weekly ではその週に Daily で巡回済みの会議体をスキップし、月初 Monthly では Weekly 対象（直近2年アクティブ・開催0件）も含めて除外した休眠会議体のみを巡回する。
+- **クローラー負荷への影響**: 重複通信の大幅カットに加え、ホスト分散インターリーブ（`interleave_by_host_and_ministry`）およびレートリミット（0.35s以上）は従来通り維持される。
+- **今後の予定**: 次期 **Drop 150** にて `Track [Core-Policy-Filter]`（「重要政策会議のみ」クイック絞り込み機能）等の検討・着手を進める。
