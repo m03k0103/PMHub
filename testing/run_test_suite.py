@@ -883,26 +883,47 @@ def check_active_filtering_and_closed_management(data=None):
     print("\n--------------------------------------------------")
     print(" [テスト 10/10] アクティブ会議体フィルタリング・廃止管理・スラグ継承検証 (L5: Active Filtering & Closed Councils)")
     print("--------------------------------------------------")
-    from crawler import load_councils_from_data_json
+    from crawler import load_councils_from_data_json, get_daily_crawled_council_ids
     from manage_closed_councils import set_council_closed, unset_council_closed
     from utils import normalize_url_for_matching
 
     if data is None:
         data = get_shared_data()
 
-    active_councils = load_councils_from_data_json(recent_years=2, include_closed=False)
+    weekly_councils = load_councils_from_data_json(recent_years=2, include_closed=False)
+    raw_active_councils = load_councils_from_data_json(recent_years=2, include_closed=False, exclude_daily=False)
+    monthly_councils = load_councils_from_data_json(recent_years=0, include_closed=False)
     all_councils = load_councils_from_data_json(recent_years="all", include_closed=False)
 
     total_c = len(all_councils)
-    act_c = len(active_councils)
+    act_c = len(raw_active_councils)
 
-    if total_c == 0 or act_c == 0 or total_c <= act_c:
-        print(f"  [FAIL] 会議体フィルタリング件数異常 (active={act_c}, total={total_c})")
+    if total_c == 0 or act_c == 0 or not weekly_councils or not monthly_councils or total_c <= act_c:
+        print(f"  [FAIL] 会議体フィルタリング件数異常 (weekly={len(weekly_councils)}, raw_active={act_c}, monthly={len(monthly_councils)}, total={total_c})")
         return False
 
     active_ratio = (act_c / total_c) * 100
     if not (30.0 <= active_ratio <= 90.0):
         print(f"  [FAIL] アクティブ会議体比率 ({active_ratio:.1f}%, {act_c}/{total_c}) が健全範囲 (30%〜90%) 外です")
+        return False
+
+    # Drop 149: Daily / Weekly / Monthly 階層間の対象会議体排他検証
+    all_ids = {c["id"] for c in all_councils}
+    weekly_ids = {c["id"] for c in weekly_councils}
+    monthly_ids = {c["id"] for c in monthly_councils}
+    daily_ids = get_daily_crawled_council_ids(data) & all_ids
+
+    if (weekly_ids & monthly_ids) or (weekly_ids & daily_ids) or (monthly_ids & daily_ids):
+        print(
+            f"  [FAIL] 3階層クロール対象の重複を検知: "
+            f"W∩M={len(weekly_ids & monthly_ids)}, W∩D={len(weekly_ids & daily_ids)}, M∩D={len(monthly_ids & daily_ids)}"
+        )
+        return False
+    if (daily_ids | weekly_ids | monthly_ids) != all_ids:
+        print(
+            f"  [FAIL] 3階層対象会議体の和集合が全アクティブ会議体数と不一致です "
+            f"(D={len(daily_ids)}, W={len(weekly_ids)}, M={len(monthly_ids)}, Total={len(all_ids)})"
+        )
         return False
 
     from crawler import load_scraping_rules
@@ -972,7 +993,7 @@ def check_active_filtering_and_closed_management(data=None):
             print("  [FAIL] DB 上の councils.is_closed 解除に失敗しました")
             return False
 
-    print(f"  [PASS] 直近2年アクティブ会議体抽出（{len(active_councils)}件）・スラグ継承・廃止会議体マスター（DB永続化・解除含む）を検証完了")
+    print(f"  [PASS] Weekly抽出（{len(weekly_councils)}件）・Monthly休眠抽出（{len(monthly_councils)}件）・Daily除外排他（{len(daily_ids)}件）・スラグ継承・廃止会議体マスターを検証完了")
     return True
 
 

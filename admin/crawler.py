@@ -878,12 +878,65 @@ def load_crawler_config():
     config = data.get("crawlerConfig", {})
     return bool(config.get("crawl_llm_mode", config.get("llm_mode", False)))  # デフォルトは高速・安全な Heuristic モード
 
-def load_councils_from_data_json(recent_years=2, include_closed=False, resume=False, ministry=None, new_only=False):
+def get_daily_crawled_council_ids(data, daily_window_days=7, ref_dt=None):
+    """
+    直近 daily_window_days 日以内に Daily クロール（--from-ministry-news）で
+    実際に巡回・更新された会議体IDのセットを返す（Drop 149）。
+    """
+    if not isinstance(data, dict) or not daily_window_days:
+        return set()
+    try:
+        window_days = int(daily_window_days)
+    except (ValueError, TypeError):
+        return set()
+    if window_days <= 0:
+        return set()
+
+    base_dt = ref_dt or datetime.now()
+    cutoff_str = (base_dt - timedelta(days=window_days)).strftime("%Y/%m/%d")
+    daily_ids = set()
+
+    crawler_cfg = data.get("crawlerConfig") or {}
+    daily_map = crawler_cfg.get("dailyCouncilLastCrawlTime") or {}
+    if isinstance(daily_map, dict):
+        for cid, ts in daily_map.items():
+            if not cid or not ts:
+                continue
+            d_part = str(ts).strip()[:10].replace("-", "/")
+            if len(d_part) == 10 and d_part >= cutoff_str:
+                daily_ids.add(cid)
+
+    for c in data.get("councils", []):
+        cid = c.get("id")
+        c_st = c.get("crawlStatus")
+        if cid and isinstance(c_st, dict) and c_st.get("extractionMethod") == "ministry_news":
+            last_att = str(c_st.get("lastAttempt") or "").strip()[:10].replace("-", "/")
+            if len(last_att) == 10 and last_att >= cutoff_str:
+                daily_ids.add(cid)
+
+    return daily_ids
+
+
+def load_councils_from_data_json(
+    recent_years=2,
+    include_closed=False,
+    resume=False,
+    ministry=None,
+    new_only=False,
+    exclude_daily=None,
+    exclude_weekly=None,
+    daily_window_days=7,
+    weekly_recent_years=2,
+):
     """
     docs/data.json から登録済みの全会議体 (COUNCILS) を読み込む。
     - 却下済み会議体・非アクティブ会議体はクロール対象外
     - CR-24: 法改正等で廃止された会議体（isClosed: true）はデフォルトでスキップ（include_closed=True で全件対象）
-    - CR-24: 直近開催年数フィルタリング（デフォルト2年以内、開催実績0件の新規会議体は探索対象として保持）
+    - CR-24 / Drop 149: 3階層クロール排他・直近開催年数フィルタリング:
+      - Weekly（recent_years=2 等）: デフォルト exclude_daily=True で直近7日以内の Daily 対象会議体を除外
+      - Monthly（recent_years=0）: デフォルト exclude_daily=True かつ exclude_weekly=True で
+        Daily 対象および Weekly 対象（直近2年以内開催・新規0件）を除外し、2年超未開催の休眠会議体のみ対象
+      - 全件モード（recent_years='all' / 'none'）: デフォルト exclude_daily=False, exclude_weekly=False
     - CR-27: resume=True の場合、既に今回の実行で巡回済みの会議体をスキップ
     - ministry: 指定された省庁コード（例: FSA, MOF）のみに絞り込み
     """
@@ -909,9 +962,36 @@ def load_councils_from_data_json(recent_years=2, include_closed=False, resume=Fa
             if mcid not in council_latest_date or mdt > council_latest_date[mcid]:
                 council_latest_date[mcid] = mdt
 
+    # 3階層排他フラグ解決（Drop 149）
+    recent_str = str(recent_years).strip().lower() if recent_years is not None else "all"
+    is_all_mode = recent_str in ("all", "none")
+    is_monthly_zero_mode = recent_str in ("0", "0.0", "monthly")
+
+    if exclude_daily is None:
+        exclude_daily = not is_all_mode
+    else:
+        exclude_daily = bool(exclude_daily)
+
+    if exclude_weekly is None:
+        exclude_weekly = is_monthly_zero_mode
+    else:
+        exclude_weekly = bool(exclude_weekly)
+
+    daily_crawled_ids = get_daily_crawled_council_ids(data, daily_window_days=daily_window_days) if exclude_daily else set()
+
+    weekly_cutoff_date = None
+    if exclude_weekly:
+        try:
+            w_years = float(weekly_recent_years)
+            if w_years > 0:
+                w_cutoff_dt = datetime.now() - timedelta(days=int(w_years * 365.25))
+                weekly_cutoff_date = w_cutoff_dt.strftime('%Y/%m/%d')
+        except (ValueError, TypeError):
+            weekly_cutoff_date = None
+
     # 直近開催年数の基準日（カットオフ日）の計算
     cutoff_date = None
-    if recent_years is not None and str(recent_years).lower() not in ("all", "none", "0"):
+    if not is_all_mode and not is_monthly_zero_mode:
         try:
             years_float = float(recent_years)
             if years_float > 0:
@@ -924,6 +1004,8 @@ def load_councils_from_data_json(recent_years=2, include_closed=False, resume=Fa
 
     inactive_count = 0
     closed_count = 0
+    daily_skip_count = 0
+    weekly_skip_count = 0
     dormant_count = 0
     resumed_skip_count = 0
 
@@ -961,6 +1043,18 @@ def load_councils_from_data_json(recent_years=2, include_closed=False, resume=Fa
             closed_count += 1
             continue
 
+        # 2.5. Drop 149: Daily クロール対象会議体（直近 daily_window_days 日以内巡回済）の除外
+        if exclude_daily and cid in daily_crawled_ids:
+            daily_skip_count += 1
+            continue
+
+        # 2.6. Drop 149: Monthly クロール時、Weekly クロール対象会議体（直近2年以内開催・新規0件）を除外
+        if exclude_weekly and weekly_cutoff_date:
+            latest_date = council_latest_date.get(cid)
+            if not latest_date or latest_date >= weekly_cutoff_date:
+                weekly_skip_count += 1
+                continue
+
         # 3. CR-24: 直近開催年数フィルタリング
         if cutoff_date:
             latest_date = council_latest_date.get(cid)
@@ -994,6 +1088,10 @@ def load_councils_from_data_json(recent_years=2, include_closed=False, resume=Fa
         print(f"[INFO] 非アクティブ会議体 {inactive_count} 件をクロール対象から除外しました。")
     if closed_count > 0:
         print(f"[INFO] 法改正等廃止会議体（isClosed: true） {closed_count} 件をクロール対象から除外しました。")
+    if daily_skip_count > 0:
+        print(f"[INFO] Dailyクロール対象会議体（直近 {daily_window_days} 日以内巡回済） {daily_skip_count} 件をクロール対象から除外しました。")
+    if weekly_skip_count > 0:
+        print(f"[INFO] Weeklyクロール対象会議体（直近 {weekly_recent_years} 年以内開催・新規0件） {weekly_skip_count} 件をMonthlyクロール対象から除外しました（基準日: {weekly_cutoff_date} より前の休眠会議体のみ対象）。")
     if dormant_count > 0:
         print(f"[INFO] 直近 {recent_years} 年未開催の休眠会議体 {dormant_count} 件をクロール対象からスキップしました（基準日: {cutoff_date} 以降を対象）。")
     if resumed_skip_count > 0:
@@ -2097,6 +2195,10 @@ def extract_actual_subpage_links(html, target_url, rule=None, return_meta=False)
                 parent_container = a.find_parent(['tr', 'li', 'dd', 'p', 'div'])
                 if parent_container:
                     c_text = parent_container.get_text(' ', strip=True)
+                    if parent_container.name == 'dd':
+                        prev_dt = parent_container.find_previous_sibling('dt')
+                        if prev_dt:
+                            c_text = f"{prev_dt.get_text(' ', strip=True)} {c_text}"
                     c_dates = extract_clean_dates_from_html(c_text)
                     if c_dates:
                         parent_date = c_dates[0]
@@ -4052,11 +4154,29 @@ def deduplicate_data_materials(data):
 
 
 
-def run_meeting_crawler(progress_callback=None, stop_event=None, workers=4, recent_years=2, recheck_recent=1, full_check=False, include_closed=False, resume=False, ministry=None, skip_download=False, new_only=False, enable_llm=None):
+def run_meeting_crawler(
+    progress_callback=None,
+    stop_event=None,
+    workers=4,
+    recent_years=2,
+    recheck_recent=1,
+    full_check=False,
+    include_closed=False,
+    resume=False,
+    ministry=None,
+    skip_download=False,
+    new_only=False,
+    enable_llm=None,
+    exclude_daily=None,
+    exclude_weekly=None,
+    daily_window_days=7,
+    weekly_recent_years=2,
+):
     """
-    審議会・会議体情報取得Engine（Drop 17 高速化・直近アクティブ重点化対応）
+    審議会・会議体情報取得Engine（Drop 17 高速化・直近アクティブ重点化・Drop 149 3階層排他対応）
     - CR-23: 確定済み過去回の再検査ゼロ化 & 最新1件更新確認（recheck_recent, full_check）
     - CR-24: 直近開催年数フィルタリング（recent_years）& 廃止会議体スキップ（include_closed）
+    - Drop 149: Daily / Weekly / Monthly 階層間の対象会議体重複除外（exclude_daily, exclude_weekly）
     - CR-26: ホスト単位マルチスレッド並行巡回エンジン（workers）
     - CR-27: 中断耐性と安全チェックポイント保存（SIGINT/停止時即時保存 & resume 再開）
     """
@@ -4086,7 +4206,11 @@ def run_meeting_crawler(progress_callback=None, stop_event=None, workers=4, rece
             include_closed=include_closed,
             resume=resume,
             ministry=ministry,
-            new_only=new_only
+            new_only=new_only,
+            exclude_daily=exclude_daily,
+            exclude_weekly=exclude_weekly,
+            daily_window_days=daily_window_days,
+            weekly_recent_years=weekly_recent_years,
         )
         if dynamic_targets:
             CRAWL_TARGETS = interleave_by_host_and_ministry(dynamic_targets)
@@ -4098,12 +4222,22 @@ def run_meeting_crawler(progress_callback=None, stop_event=None, workers=4, rece
 
         use_llm = bool(enable_llm) if enable_llm is not None else load_crawler_config()
         now_str = datetime.now().strftime("%Y/%m/%d %H:%M")
+        recent_str = str(recent_years).strip().lower() if recent_years is not None else "all"
+        is_all_mode = recent_str in ("all", "none")
+        is_monthly_zero_mode = recent_str in ("0", "0.0", "monthly")
+        eff_exclude_daily = (not is_all_mode) if exclude_daily is None else bool(exclude_daily)
+        eff_exclude_weekly = is_monthly_zero_mode if exclude_weekly is None else bool(exclude_weekly)
         emit("=" * 65)
         emit(" 政策会議ウォッチ (PM-HUB) クローラー [Drop 17 高速化エンジン]")
         emit("=" * 65)
         emit(f"抽出モード: {'LLM抽出 (Gemini API) + フォールバック' if use_llm else '既存ルール (Heuristic)'}")
         emit(f"並行ワーカー数: {workers} スレッド (ホスト単位レートリミット: 0.5s)")
-        emit(f"直近開催年数絞り込み: {recent_years} 年以内 (新規0件含む)")
+        if is_monthly_zero_mode:
+            emit(f"巡回階層・範囲: Monthly (2年超未開催の休眠会議体のみ / Daily除外={'ON' if eff_exclude_daily else 'OFF'}, Weekly除外={'ON' if eff_exclude_weekly else 'OFF'})")
+        elif is_all_mode:
+            emit(f"巡回階層・範囲: 全期間全件 (Daily除外={'ON' if eff_exclude_daily else 'OFF'}, Weekly除外={'ON' if eff_exclude_weekly else 'OFF'})")
+        else:
+            emit(f"直近開催年数絞り込み: {recent_years} 年以内 (新規0件含む / Daily除外={'ON' if eff_exclude_daily else 'OFF'}, Weekly除外={'ON' if eff_exclude_weekly else 'OFF'})")
         emit(f"開催回再検査設定: {'全件再検査 (--full-check)' if full_check else f'最新 {recheck_recent} 件のみ更新確認 (過去回ゼロ化)'}")
         emit(f"取得実行時刻: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
         emit(f"対象会議体数: {len(CRAWL_TARGETS)} 件")
@@ -4113,10 +4247,10 @@ def run_meeting_crawler(progress_callback=None, stop_event=None, workers=4, rece
         # data.json を読み込み（ステータス更新用）
         data = load_data_json(DATA_JSON_FILE)
 
-        # Drop 76 (要件3) & Drop 81 & Drop 138: 前回のクロールで付与された新着フラグをリセット
-        # (ただし前回クロール時刻より後にディスカバリーで新規追加された会議体は保護。部分クロール時は対象会議体のみリセット)
+        # Drop 76 (要件3) & Drop 81 & Drop 138 & Drop 149: 前回のクロールで付与された新着フラグをリセット
+        # (ただし前回クロール時刻より後にディスカバリーで新規追加された会議体は保護。部分クロール・階層限定クロール時は対象会議体のみリセット)
         prev_last_crawl = str(data.get("lastCrawlTime") or "").replace("-", "/")
-        is_partial_crawl = bool(ministry or resume or new_only)
+        is_partial_crawl = bool(ministry or resume or new_only or eff_exclude_daily or eff_exclude_weekly or not is_all_mode)
         partial_cids = {t.get("id") for t in CRAWL_TARGETS if t.get("id")} if is_partial_crawl else None
         reset_m_cnt = 0
         for m in data.get("meetings", []):
@@ -4905,9 +5039,13 @@ def run_ministry_news_discovery(progress_callback=None, stop_event=None, ministr
 
         reset_waf_blocked_ministries()
         councils = data.get("councils", [])
-        # Drop 133: 省庁ごとの前回クロール日時を crawlerConfig から取得
+        # Drop 133 / Drop 149: 省庁および Daily 対象会議体の最終走査日時を crawlerConfig から取得
         crawler_cfg = data.setdefault("crawlerConfig", {})
         ministry_last_crawl = crawler_cfg.setdefault("ministryLastCrawlTime", {})
+        daily_council_last_crawl = crawler_cfg.get("dailyCouncilLastCrawlTime")
+        if not isinstance(daily_council_last_crawl, dict):
+            daily_council_last_crawl = {}
+        crawler_cfg["dailyCouncilLastCrawlTime"] = daily_council_last_crawl
         rules = load_scraping_rules(data)
         meetings = data.get("meetings", [])
         load_ministry_and_host_configs_from_db(data=data)
@@ -5047,9 +5185,21 @@ def run_ministry_news_discovery(progress_callback=None, stop_event=None, ministr
         emit(f"  ・ピンポイント巡回対象会議体: {len(detected_councils_to_crawl)} 件")
 
         new_meetings_total = 0
+        daily_crawled_cids = set()
 
         # 直接資料抽出ミーティングの反映
         for matched_c, sub_item in direct_meetings_to_add:
+            m_cid = matched_c.get("id")
+            if m_cid:
+                daily_crawled_cids.add(m_cid)
+                update_crawl_status(data, m_cid, {
+                    "scrapedAt": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
+                    "crawlResult": "success",
+                    "resultReason": "省庁新着ポータルから直接抽出",
+                    "extractionMethod": "ministry_news",
+                    "totalExtractedMaterials": len(sub_item.get("materials", [])),
+                    "extractedDates": sub_item.get("extractedDates", [])
+                })
             scraped_mock = {
                 "subpageMeetings": [sub_item],
                 "materials": sub_item.get("materials", [])
@@ -5096,6 +5246,8 @@ def run_ministry_news_discovery(progress_callback=None, stop_event=None, ministr
                 rule_item = get_rule_for_target(rules, c_target, rule_url_index)
                 scraped_item = execute_rule_retrieval(c_target, html, rule_item, use_llm=False, recheck_recent=1)
                 if scraped_item:
+                    daily_crawled_cids.add(cid)
+                    update_crawl_status(data, cid, scraped_item)
                     added = sync_new_meetings_from_crawl(data, c_target, scraped_item)
                     if added > 0:
                         emit(f"  ✨ [ピンポイント追加] [{cid}] {c_obj['name']}: +{added} 開催回")
@@ -5111,6 +5263,12 @@ def run_ministry_news_discovery(progress_callback=None, stop_event=None, ministr
         for min_code in target_mins:
             ministry_last_crawl[min_code] = now_str
         crawler_cfg["ministryLastCrawlTime"] = ministry_last_crawl
+        # Drop 149: 今回 Daily クロールで巡回・抽出した会議体ごとの最新クロール日時を上書き記録
+        for d_cid in daily_crawled_cids:
+            daily_council_last_crawl[d_cid] = now_str
+        crawler_cfg["dailyCouncilLastCrawlTime"] = daily_council_last_crawl
+        if daily_crawled_cids:
+            emit(f"[Daily対象記録] 今回巡回・更新した会議体 {len(daily_crawled_cids)} 件の最新クロール日時を記録しました。")
         save_success = save_data_json_with_backup(data)
 
         # Drop 71: 新規・更新配付資料のローカル自動保存 (PMM 連動)
@@ -5145,9 +5303,9 @@ def run_ministry_news_discovery(progress_callback=None, stop_event=None, ministr
 def main():
     import traceback
     
-    parser = argparse.ArgumentParser(description="政策会議ウォッチ (PM-HUB) クローラー [Drop 17 / Drop 68]")
+    parser = argparse.ArgumentParser(description="政策会議ウォッチ (PM-HUB) クローラー [Drop 17 / Drop 68 / Drop 149]")
     parser.add_argument("--workers", type=int, default=4, help="並行ワーカー数（デフォルト: 4。1で直列実行）")
-    parser.add_argument("--recent-years", default="2", help="最終開催日の年数絞り込み（デフォルト: 2。0 または all で全件）")
+    parser.add_argument("--recent-years", default="2", help="最終開催日の年数絞り込み（デフォルト: 2 [Weekly]。0 で2年超休眠のみ [Monthly]、all で全期間全件）")
     parser.add_argument("--recheck-recent", type=int, default=1, help="再検査する直近開催回数（デフォルト: 1。0 で完全ゼロ化）")
     parser.add_argument("--full-check", action="store_true", help="すべての登録済み開催回を再検査する")
     parser.add_argument("--include-closed", action="store_true", help="法改正等で廃止された会議体も含めて巡回する")
@@ -5156,6 +5314,11 @@ def main():
     parser.add_argument("--from-ministry-news", "--from-news", dest="from_ministry_news", action="store_true", help="各府省庁トップページおよび新着情報一覧から最近開催された会議を検知し、開催回情報を取得する [Drop 68]")
     parser.add_argument("--skip-download", action="store_true", help="クロール完了時の配付資料ローカル自動保存 (PMM) をスキップする [Drop 71]")
     parser.add_argument("--new-only", action="store_true", help="新着（isNewlyDiscovered: true）の会議体のみを対象にクロール")
+    parser.add_argument("--exclude-daily", action="store_true", help="直近のDailyクロール対象会議体を除外する [Drop 149]")
+    parser.add_argument("--include-daily", action="store_true", help="Dailyクロール対象会議体の除外を無効化して含める [Drop 149]")
+    parser.add_argument("--exclude-weekly", action="store_true", help="Weeklyクロール対象会議体（直近2年以内開催・新規0件）を除外する [Drop 149]")
+    parser.add_argument("--include-weekly", action="store_true", help="Weeklyクロール対象会議体の除外を無効化して含める [Drop 149]")
+    parser.add_argument("--daily-window-days", type=int, default=7, help="Dailyクロール対象とみなす直近日数（デフォルト: 7日） [Drop 149]")
     parser.add_argument("--llm", action="store_true", help="LLMフォールバックモードを強制ON")
     parser.add_argument("--no-llm", action="store_true", help="LLMフォールバックモードをOFF")
     args = parser.parse_args()
@@ -5171,6 +5334,8 @@ def main():
             )
         else:
             enable_llm = True if args.llm else (False if args.no_llm else None)
+            exclude_daily = False if args.include_daily else (True if args.exclude_daily else None)
+            exclude_weekly = False if args.include_weekly else (True if args.exclude_weekly else None)
             run_meeting_crawler(
                 stop_event=cli_stop_event,
                 workers=args.workers,
@@ -5182,7 +5347,10 @@ def main():
                 ministry=args.ministry,
                 skip_download=args.skip_download,
                 new_only=args.new_only,
-                enable_llm=enable_llm
+                enable_llm=enable_llm,
+                exclude_daily=exclude_daily,
+                exclude_weekly=exclude_weekly,
+                daily_window_days=args.daily_window_days,
             )
     except KeyboardInterrupt:
         print("\n\n[INFO] キーボード割り込み (Ctrl+C) を検知しました。停止シグナルを発行します...")

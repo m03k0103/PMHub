@@ -14,6 +14,7 @@ import os
 import io
 import time
 import threading
+from datetime import datetime, timedelta
 from unittest.mock import patch
 
 # admin モジュールへのパスを追加
@@ -494,6 +495,148 @@ class TestCrawlerIncremental(unittest.TestCase):
         self.assertIsNotNone(matched3)
         self.assertEqual(matched3["id"], "fsa-kigyou_sustainability_bukai")
         self.assertEqual(reason3, "TEXT_CONTAINS")
+
+    def test_drop149_tier_dedup_daily_weekly_monthly(self):
+        """Drop 149: WeeklyはDaily対象を除外し、MonthlyはDaily・Weekly対象を除外すること"""
+        now = datetime.now()
+        fmt_date = lambda days_ago: (now - timedelta(days=days_ago)).strftime("%Y/%m/%d")
+        fmt_ts = lambda days_ago: (now - timedelta(days=days_ago)).strftime("%Y/%m/%d %H:%M")
+
+        mock_data = {
+            "lastCrawlTime": fmt_ts(1),
+            "crawlerConfig": {
+                "dailyCouncilLastCrawlTime": {
+                    "c-daily-recent": fmt_ts(2),
+                    "c-daily-old": fmt_ts(10),
+                    "c-daily-dormant": fmt_ts(3),
+                }
+            },
+            "scrapingRules": {},
+            "councils": [
+                {"id": "c-daily-recent", "ministry": "FSA", "name": "Daily直近(map)", "officialUrl": "https://example.com/1"},
+                {
+                    "id": "c-daily-status",
+                    "ministry": "MOF",
+                    "name": "Daily直近(crawlStatus)",
+                    "officialUrl": "https://example.com/2",
+                    "crawlStatus": {"extractionMethod": "ministry_news", "lastAttempt": fmt_ts(5)}
+                },
+                {"id": "c-daily-old", "ministry": "METI", "name": "Daily8日超前", "officialUrl": "https://example.com/3"},
+                {"id": "c-weekly-active", "ministry": "MHLW", "name": "Weekly通常アクティブ", "officialUrl": "https://example.com/4"},
+                {"id": "c-weekly-zero", "ministry": "CAO", "name": "Weekly開催0件", "officialUrl": "https://example.com/5"},
+                {"id": "c-dormant", "ministry": "MOJ", "name": "Monthly休眠(2年超未開催)", "officialUrl": "https://example.com/6"},
+                {"id": "c-daily-dormant", "ministry": "MOD", "name": "Daily巡回済休眠", "officialUrl": "https://example.com/7"},
+                {"id": "c-closed", "ministry": "MIC", "name": "廃止会議体", "officialUrl": "https://example.com/8", "isClosed": True},
+            ],
+            "meetings": [
+                {"id": "m1", "councilId": "c-daily-recent", "date": fmt_date(30)},
+                {"id": "m2", "councilId": "c-daily-status", "date": fmt_date(40)},
+                {"id": "m3", "councilId": "c-daily-old", "date": fmt_date(50)},
+                {"id": "m4", "councilId": "c-weekly-active", "date": fmt_date(180)},
+                {"id": "m6", "councilId": "c-dormant", "date": fmt_date(900)},
+                {"id": "m7", "councilId": "c-daily-dormant", "date": fmt_date(950)},
+                {"id": "m8", "councilId": "c-closed", "date": fmt_date(10)},
+            ],
+        }
+
+        daily_ids = crawler.get_daily_crawled_council_ids(mock_data, daily_window_days=7, ref_dt=now)
+        self.assertEqual(daily_ids, {"c-daily-recent", "c-daily-status", "c-daily-dormant"})
+
+        with patch('crawler.load_data_json', return_value=mock_data), \
+             patch('crawler.get_rejected_identifiers', return_value=(set(), set(), set())), \
+             patch('builtins.print'):
+            weekly_ids = {c["id"] for c in crawler.load_councils_from_data_json(recent_years=2, include_closed=False)}
+            monthly_ids = {c["id"] for c in crawler.load_councils_from_data_json(recent_years=0, include_closed=False)}
+            all_ids = {c["id"] for c in crawler.load_councils_from_data_json(recent_years="all", include_closed=False)}
+            weekly_incl_daily_ids = {c["id"] for c in crawler.load_councils_from_data_json(recent_years=2, include_closed=False, exclude_daily=False)}
+
+        # WeeklyはDaily直近巡回済み3件と廃止会議体・休眠会議体を除外し、8日超前＋通常アクティブ＋0件のみ巡回
+        self.assertEqual(weekly_ids, {"c-daily-old", "c-weekly-active", "c-weekly-zero"})
+        # MonthlyはDaily対象3件とWeekly対象(直近2年・0件)をすべて除外し、休眠会議体のみ巡回
+        self.assertEqual(monthly_ids, {"c-dormant"})
+        # allモードは非廃止アクティブ全7件を返却
+        self.assertEqual(len(all_ids), 7)
+        self.assertNotIn("c-closed", all_ids)
+        # 3階層の完全排他性と全アクティブ会議体カバー（Daily ∪ Weekly ∪ Monthly == All）
+        self.assertEqual(daily_ids & weekly_ids, set())
+        self.assertEqual(weekly_ids & monthly_ids, set())
+        self.assertEqual(monthly_ids & daily_ids, set())
+        self.assertEqual(daily_ids | weekly_ids | monthly_ids, all_ids)
+        # exclude_daily=False 指定時は Weekly に Daily直近会議体も含まれる
+        self.assertIn("c-daily-recent", weekly_incl_daily_ids)
+        self.assertIn("c-daily-status", weekly_incl_daily_ids)
+
+    def test_drop149_run_ministry_news_discovery_records_latest_daily_timestamp(self):
+        """Drop 149: run_ministry_news_discovery が会議体ごとの最新Dailyクロール日時1件のみを上書き記録すること"""
+        today_str = datetime.now().strftime("%Y/%m/%d")
+        mock_data = {
+            "lastCrawlTime": "2026/11/20 06:00",
+            "crawlerConfig": {
+                "dailyCouncilLastCrawlTime": {
+                    "test-direct": "2026/11/01 06:00"
+                }
+            },
+            "ministries": {"TEST": {"domains": ["example.com"], "newsPortals": [{"url": "https://example.com/news", "type": "news_feed"}]}},
+            "scrapingRules": {},
+            "councils": [
+                {"id": "test-direct", "ministry": "TEST", "name": "直接抽出会議体", "officialUrl": "https://example.com/c1/index.html"},
+                {"id": "test-pinpoint", "ministry": "TEST", "name": "ピンポイント会議体", "officialUrl": "https://example.com/c2/index.html"},
+            ],
+            "meetings": []
+        }
+
+        news_html = (
+            f"<html><body><ul>"
+            f"<li>{today_str} <a href='https://example.com/news/c1_art.html'>第5回 直接抽出会議体</a></li>"
+            f"<li>{today_str} <a href='https://example.com/c2/index.html'>第2回 ピンポイント会議体</a></li>"
+            f"</ul></body></html>"
+        )
+        article_html = (
+            f"<html><head><title>第5回 直接抽出会議体</title></head><body>"
+            f"<h1>第5回 直接抽出会議体</h1><p>開催日: {today_str}</p>"
+            f"<a href='https://example.com/c1/doc1.pdf'>資料1</a></body></html>"
+        )
+        pinpoint_html = "<html><head><title>ピンポイント会議体</title></head><body><h1>ピンポイント会議体</h1></body></html>"
+
+        def fake_fetch(url, **kwargs):
+            if url == "https://example.com/news":
+                return news_html
+            if url == "https://example.com/news/c1_art.html":
+                return article_html
+            if url == "https://example.com/c2/index.html":
+                return pinpoint_html
+            return None
+
+        saved_snapshots = []
+        with patch('crawler.init_crawler_logfile', return_value=(None, None, "", "")), \
+             patch('crawler.load_data_json', return_value=mock_data), \
+             patch('crawler.save_data_json_with_backup', side_effect=lambda d, **kw: saved_snapshots.append(d) or True), \
+             patch('crawler.load_ministry_and_host_configs_from_db'), \
+             patch('crawler.MINISTRY_NEWS_PORTALS', {"TEST": [{"url": "https://example.com/news", "type": "news_feed"}]}), \
+             patch('crawler.fetch_url', side_effect=fake_fetch), \
+             patch('crawler.sync_new_meetings_from_crawl', return_value=0), \
+             patch('crawler.execute_rule_retrieval', return_value={
+                 "scrapedAt": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
+                 "crawlResult": "success",
+                 "resultReason": "取得テスト",
+                 "extractionMethod": "rule",
+                 "totalExtractedMaterials": 1,
+                 "extractedDates": [today_str]
+             }), \
+             patch('sqlite3.connect', side_effect=RuntimeError("skip local db in unit test")), \
+             patch('sys.stdout', new_callable=io.StringIO):
+            crawler.run_ministry_news_discovery(ministry="TEST", skip_download=True)
+
+        self.assertTrue(saved_snapshots)
+        last_cfg = saved_snapshots[-1].get("crawlerConfig", {})
+        daily_map = last_cfg.get("dailyCouncilLastCrawlTime", {})
+        self.assertIn("test-direct", daily_map)
+        self.assertIn("test-pinpoint", daily_map)
+        # 履歴配列ではなく最新のYYYY/MM/DD HH:MM文字列1件のみ上書き保持されること
+        self.assertIsInstance(daily_map["test-direct"], str)
+        self.assertTrue(daily_map["test-direct"].startswith(today_str))
+        c_direct = next(c for c in saved_snapshots[-1]["councils"] if c["id"] == "test-direct")
+        self.assertEqual(c_direct.get("crawlStatus", {}).get("extractionMethod"), "ministry_news")
 
 
 if __name__ == '__main__':

@@ -436,8 +436,11 @@
 
     const modeLabel = crawlOptions.mode === 'ministry_news' ? '【省庁新着検知】' : '【通常個別探索】';
     const targetLabel = crawlOptions.ministry ? `対象: ${crawlOptions.ministry}` : '対象: 全府省庁 (ALL)';
+    const yearsLabel = crawlOptions.recent_years === '0'
+      ? 'Monthly休眠のみ(Daily・Weekly除外)'
+      : (crawlOptions.recent_years === 'all' ? '全期間(除外なし)' : `${crawlOptions.recent_years}年(Daily除外)`);
     logLine('バックエンドの Python クローラー (admin/crawler.py) を起動しています...');
-    logLine(`実行設定: ${modeLabel} ${targetLabel} (年数: ${crawlOptions.recent_years}年, 再検査: ${crawlOptions.recheck_recent}回)`);
+    logLine(`実行設定: ${modeLabel} ${targetLabel} (範囲: ${yearsLabel}, 再検査: ${crawlOptions.recheck_recent}回)`);
 
     try {
       // 1. サーバーAPIにクロール開始を要求 (オプションJSON送信)
