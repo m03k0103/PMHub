@@ -1,5 +1,5 @@
 {
-  "lastCrawlTime": "2026/11/24 05:07",
+  "lastCrawlTime": "2026/11/25 03:56",
   "scrapingRuleTemplates": {
     "tpl-general-round-subpage": {
       "subpage_discovery_pattern": "(?:dai\\d+|\\d+kai|kaisai|gijisidai|gijiroku|haifu|session|meeting|\\b\\d{3,4}\\.html|\\d{2,3}/(?:index\\.html)?)",
@@ -13337,7 +13337,7 @@
       "manualLockActive": true
     },
     "cfa-kodomo_sodachi": {
-      "lastAttempt": "2026-11-24 05:06:18",
+      "lastAttempt": "2026-11-25 03:55:03",
       "result": "success",
       "resultReason": "PDF配付資料 1 件・開催日 19 件を正常取得",
       "extractionMethod": "rule",
@@ -16362,7 +16362,7 @@
       "manualLockActive": false
     },
     "fsc-bakuro_wg": {
-      "lastAttempt": "2026-11-22 21:24:09",
+      "lastAttempt": "2026-11-25 03:54:59",
       "result": "success",
       "resultReason": "開催回 16 件を検出（資料・日付完備）",
       "extractionMethod": "rule",
@@ -16494,7 +16494,7 @@
       "manualLockActive": true
     },
     "fsc-nouyaku_dai1": {
-      "lastAttempt": "2026-11-22 21:30:16",
+      "lastAttempt": "2026-11-25 03:55:02",
       "result": "success",
       "resultReason": "開催回 59 件を検出（資料・日付完備）",
       "extractionMethod": "rule",
@@ -16890,7 +16890,7 @@
       "manualLockActive": false
     },
     "jfa-magaki_kyougikai": {
-      "lastAttempt": "2026-11-24 05:07:01",
+      "lastAttempt": "2026-11-25 03:56:13",
       "result": "success",
       "resultReason": "PDF配付資料 5 件・開催日 5 件を正常取得",
       "extractionMethod": "rule",
@@ -16989,7 +16989,7 @@
       "manualLockActive": true
     },
     "jfa-umigyo_kyougikai": {
-      "lastAttempt": "2026-11-24 05:07:01",
+      "lastAttempt": "2026-11-25 03:56:12",
       "result": "success",
       "resultReason": "PDF配付資料 24 件・開催日 3 件を正常取得",
       "extractionMethod": "rule",
@@ -19739,12 +19739,12 @@
       "manualLockActive": false
     },
     "mhlw-2855": {
-      "lastAttempt": "2026-11-22 21:37:43",
+      "lastAttempt": "2026-11-25 03:54:57",
       "result": "success",
-      "resultReason": "開催回 4 件を検出（資料・日付完備）",
-      "extractionMethod": "rule",
-      "materialsCount": 33,
-      "datesCount": 5,
+      "resultReason": "省庁新着ポータルから直接抽出",
+      "extractionMethod": "ministry_news",
+      "materialsCount": 1,
+      "datesCount": 1,
       "failureReason": "",
       "consecutiveFailures": 0,
       "manualLockActive": true
@@ -19816,9 +19816,9 @@
       "manualLockActive": false
     },
     "mhlw-2867": {
-      "lastAttempt": "2026-11-22 21:38:41",
+      "lastAttempt": "2026-11-25 03:56:05",
       "result": "success",
-      "resultReason": "開催回 47 件を検出（資料・日付完備）",
+      "resultReason": "開催回 48 件を検出（資料・日付完備）",
       "extractionMethod": "rule",
       "materialsCount": 58,
       "datesCount": 5,
@@ -20916,11 +20916,11 @@
       "manualLockActive": false
     },
     "mhlw-872": {
-      "lastAttempt": "2026-11-23 01:18:15",
+      "lastAttempt": "2026-11-25 03:55:25",
       "result": "success",
       "resultReason": "開催回 81 件を検出（資料・日付完備）",
       "extractionMethod": "rule",
-      "materialsCount": 180,
+      "materialsCount": 199,
       "datesCount": 5,
       "failureReason": "",
       "consecutiveFailures": 0,
@@ -20938,12 +20938,12 @@
       "manualLockActive": false
     },
     "mhlw-874": {
-      "lastAttempt": "2026-11-22 21:59:17",
+      "lastAttempt": "2026-11-25 03:54:57",
       "result": "success",
-      "resultReason": "開催回 66 件を検出（資料・日付完備）",
-      "extractionMethod": "rule",
-      "materialsCount": 188,
-      "datesCount": 5,
+      "resultReason": "省庁新着ポータルから直接抽出",
+      "extractionMethod": "ministry_news",
+      "materialsCount": 12,
+      "datesCount": 2,
       "failureReason": "",
       "consecutiveFailures": 0,
       "manualLockActive": false
@@ -21686,7 +21686,7 @@
       "manualLockActive": false
     },
     "mhlw-945": {
-      "lastAttempt": "2026-11-24 05:07:00",
+      "lastAttempt": "2026-11-25 03:56:08",
       "result": "success",
       "resultReason": "開催回 15 件を検出（資料・日付完備）",
       "extractionMethod": "rule",
@@ -22247,9 +22247,9 @@
       "manualLockActive": false
     },
     "mhlw-997": {
-      "lastAttempt": "2026-11-22 21:49:46",
+      "lastAttempt": "2026-11-25 03:56:12",
       "result": "success",
-      "resultReason": "開催回 5 件を検出（資料・日付完備）",
+      "resultReason": "開催回 6 件を検出（資料・日付完備）",
       "extractionMethod": "rule",
       "materialsCount": 15,
       "datesCount": 5,
@@ -22313,12 +22313,12 @@
       "manualLockActive": false
     },
     "mhlw-dai3gou_hihoken": {
-      "lastAttempt": "2026-11-22 21:49:04",
+      "lastAttempt": "2026-11-25 03:54:57",
       "result": "success",
-      "resultReason": "開催回 2 件を検出（資料・日付完備）",
-      "extractionMethod": "rule",
-      "materialsCount": 2,
-      "datesCount": 5,
+      "resultReason": "省庁新着ポータルから直接抽出",
+      "extractionMethod": "ministry_news",
+      "materialsCount": 7,
+      "datesCount": 2,
       "failureReason": "",
       "consecutiveFailures": 0,
       "manualLockActive": true
@@ -22929,12 +22929,12 @@
       "manualLockActive": true
     },
     "mhlw-rousei_roudoujouken": {
-      "lastAttempt": "2026-11-23 01:18:22",
+      "lastAttempt": "2026-11-25 03:54:57",
       "result": "success",
-      "resultReason": "開催回 25 件を検出（資料・日付完備）",
-      "extractionMethod": "rule",
-      "materialsCount": 55,
-      "datesCount": 5,
+      "resultReason": "省庁新着ポータルから直接抽出",
+      "extractionMethod": "ministry_news",
+      "materialsCount": 4,
+      "datesCount": 1,
       "failureReason": "",
       "consecutiveFailures": 0,
       "manualLockActive": true
@@ -22995,7 +22995,7 @@
       "manualLockActive": true
     },
     "mhlw-shakai_hosho_iryou_hoken": {
-      "lastAttempt": "2026-11-24 05:06:56",
+      "lastAttempt": "2026-11-25 03:55:47",
       "result": "success",
       "resultReason": "開催回 37 件を検出（資料・日付完備）",
       "extractionMethod": "rule",
@@ -26207,14 +26207,14 @@
       "manualLockActive": true
     },
     "mof-jgbsp": {
-      "lastAttempt": "2026-11-22 21:35:56",
-      "result": "failed",
-      "resultReason": "WAF Blocked Skip (Ministry MOF)",
-      "extractionMethod": "none",
-      "materialsCount": 0,
+      "lastAttempt": "2026-11-25 03:55:14",
+      "result": "partial",
+      "resultReason": "開催日未取得（資料のみ検出）",
+      "extractionMethod": "rule",
+      "materialsCount": 1,
       "datesCount": 0,
-      "failureReason": "WAF Blocked Skip (Ministry MOF)",
-      "consecutiveFailures": 3,
+      "failureReason": "",
+      "consecutiveFailures": 0,
       "manualLockActive": true
     },
     "mof-jishin_benkyoukai": {
@@ -26581,7 +26581,7 @@
       "manualLockActive": true
     },
     "moj-housei_shonenhou": {
-      "lastAttempt": "2026-11-24 05:06:28",
+      "lastAttempt": "2026-11-25 03:55:12",
       "result": "success",
       "resultReason": "開催回 18 件を検出（資料・日付完備）",
       "extractionMethod": "rule",
@@ -27411,37 +27411,37 @@
       "meti.go.jp": 1.5
     },
     "ministryLastCrawlTime": {
-      "CAO": "2026/11/24 05:07",
-      "CAS": "2026/11/24 05:07",
-      "DIGITAL": "2026/11/24 05:07",
-      "CFA": "2026/11/24 05:07",
-      "PPC": "2026/11/24 05:07",
-      "FSA": "2026/11/24 05:07",
-      "CAA": "2026/11/24 05:07",
-      "FSC": "2026/11/24 05:07",
-      "MIC": "2026/11/24 05:07",
-      "FDMA": "2026/11/24 05:07",
-      "MOJ": "2026/11/24 05:07",
-      "MOF": "2026/11/24 05:07",
-      "MEXT": "2026/11/24 05:07",
-      "MHLW": "2026/11/24 05:07",
-      "MAFF": "2026/11/24 05:07",
-      "RINYA": "2026/11/24 05:07",
-      "JFA": "2026/11/24 05:07",
-      "METI": "2026/11/24 05:07",
-      "MLIT": "2026/11/24 05:07",
-      "MOE": "2026/11/24 05:07",
-      "NRA": "2026/11/24 05:07",
-      "MOD": "2026/11/24 05:07"
+      "CAO": "2026/11/25 03:56",
+      "CAS": "2026/11/25 03:56",
+      "DIGITAL": "2026/11/25 03:56",
+      "CFA": "2026/11/25 03:56",
+      "PPC": "2026/11/25 03:56",
+      "FSA": "2026/11/25 03:56",
+      "CAA": "2026/11/25 03:56",
+      "FSC": "2026/11/25 03:56",
+      "MIC": "2026/11/25 03:56",
+      "FDMA": "2026/11/25 03:56",
+      "MOJ": "2026/11/25 03:56",
+      "MOF": "2026/11/25 03:56",
+      "MEXT": "2026/11/25 03:56",
+      "MHLW": "2026/11/25 03:56",
+      "MAFF": "2026/11/25 03:56",
+      "RINYA": "2026/11/25 03:56",
+      "JFA": "2026/11/25 03:56",
+      "METI": "2026/11/25 03:56",
+      "MLIT": "2026/11/25 03:56",
+      "MOE": "2026/11/25 03:56",
+      "NRA": "2026/11/25 03:56",
+      "MOD": "2026/11/25 03:56"
     },
     "dailyCouncilLastCrawlTime": {
       "mof-study_on_chain": "2026/11/23 01:18",
-      "moj-housei_shonenhou": "2026/11/24 05:07",
+      "moj-housei_shonenhou": "2026/11/25 03:56",
       "mhlw-1009": "2026/11/23 01:18",
-      "mhlw-872": "2026/11/23 01:18",
-      "mhlw-rousei_roudoujouken": "2026/11/23 01:18",
+      "mhlw-872": "2026/11/25 03:56",
+      "mhlw-rousei_roudoujouken": "2026/11/25 03:56",
       "mof-1136": "2026/11/23 01:18",
-      "jfa-umigyo_kyougikai": "2026/11/24 05:07",
+      "jfa-umigyo_kyougikai": "2026/11/25 03:56",
       "mlit-kokudo": "2026/11/23 01:18",
       "mhlw-tochikujou_seido": "2026/11/23 01:18",
       "nra-teireikai": "2026/11/23 01:18",
@@ -27450,11 +27450,19 @@
       "cao-kokyoryokin_senmon": "2026/11/23 01:18",
       "mhlw-shakai_hosho_kaigo_kyuufu": "2026/11/23 01:18",
       "mhlw-794": "2026/11/23 01:18",
-      "jfa-magaki_kyougikai": "2026/11/24 05:07",
+      "jfa-magaki_kyougikai": "2026/11/25 03:56",
       "mext-chukyo": "2026/11/24 05:07",
-      "mhlw-945": "2026/11/24 05:07",
-      "cfa-kodomo_sodachi": "2026/11/24 05:07",
-      "mhlw-shakai_hosho_iryou_hoken": "2026/11/24 05:07"
+      "mhlw-945": "2026/11/25 03:56",
+      "cfa-kodomo_sodachi": "2026/11/25 03:56",
+      "mhlw-shakai_hosho_iryou_hoken": "2026/11/25 03:56",
+      "mhlw-2867": "2026/11/25 03:56",
+      "mhlw-dai3gou_hihoken": "2026/11/25 03:56",
+      "fsc-nouyaku_dai1": "2026/11/25 03:56",
+      "mof-jgbsp": "2026/11/25 03:56",
+      "mhlw-997": "2026/11/25 03:56",
+      "fsc-bakuro_wg": "2026/11/25 03:56",
+      "mhlw-874": "2026/11/25 03:56",
+      "mhlw-2855": "2026/11/25 03:56"
     }
   },
   "rejectedCouncils": [
@@ -121404,6 +121412,9 @@
     "mhlw-2855-20261113-004": {
       "discoveredAt": "2026/11/07 07:29"
     },
+    "mhlw-2855-20261124-s05": {
+      "discoveredAt": "2026/11/25 03:54"
+    },
     "mhlw-2857-20220518-013": {
       "discoveredAt": "2026/10/24 17:53"
     },
@@ -121739,6 +121750,9 @@
     },
     "mhlw-2867-20261013-151": {
       "discoveredAt": "2026/10/24 17:55"
+    },
+    "mhlw-2867-20261125-152": {
+      "discoveredAt": "2026/11/25 03:56"
     },
     "mhlw-2868-20260410-001": {
       "discoveredAt": "2026/10/24 17:55"
@@ -125954,7 +125968,8 @@
       "discoveredAt": "2026/11/13 23:19"
     },
     "mhlw-872-20261125-084": {
-      "discoveredAt": "2026/11/21 00:12"
+      "discoveredAt": "2026/11/21 00:12",
+      "lastUpdatedFromCrawl": "2026/11/25 03:55"
     },
     "mhlw-873-20090210-008": {
       "discoveredAt": "2026/09/19 18:30"
@@ -126343,6 +126358,9 @@
     },
     "mhlw-874-20260526-065": {
       "lastUpdatedFromCrawl": "2026/09/19 18:30"
+    },
+    "mhlw-874-20261125-069": {
+      "discoveredAt": "2026/11/25 03:54"
     },
     "mhlw-875-20241218-002": {
       "discoveredAt": "2026/09/19 18:30"
@@ -130124,7 +130142,8 @@
       "discoveredAt": "2026/09/16 09:15"
     },
     "mhlw-dai3gou_hihoken-20261125-002": {
-      "discoveredAt": "2026/11/18 20:53"
+      "discoveredAt": "2026/11/18 20:53",
+      "lastUpdatedFromCrawl": "2026/11/25 03:54"
     },
     "mhlw-fukushi_bunka_bunkakai-20040708-010": {
       "discoveredAt": "2026/11/07 07:50"
@@ -132160,6 +132179,9 @@
     "mhlw-rousei_roudoujouken-20261117-215": {
       "discoveredAt": "2026/11/13 23:16",
       "lastUpdatedFromCrawl": "2026/11/18 20:33"
+    },
+    "mhlw-rousei_roudoujouken-20261125-134": {
+      "discoveredAt": "2026/11/25 03:54"
     },
     "mhlw-rousei_roudoujouken-20261130-216": {
       "discoveredAt": "2026/11/21 00:08"

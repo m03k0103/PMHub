@@ -11964,7 +11964,8 @@
       "name": "創薬力向上のための官民協議会 施策検討・推進部会",
       "officialUrl": "https://www.mhlw.go.jp/stf/newpage_76241.html",
       "description": "創薬力向上のための官民協議会の下に設置された施策検討・推進部会。創薬環境の整備、研究開発支援、ドラッグ・ロスの解消等に向けた具体的施策の検討を行う。",
-      "pastYearCount": 4
+      "pastYearCount": 5,
+      "isNewlyDiscovered": true
     },
     {
       "id": "mhlw-2857",
@@ -12020,7 +12021,8 @@
       "category": "COUNCIL",
       "name": "脳死下での臓器提供事例に係る検証会議",
       "officialUrl": "https://www.mhlw.go.jp/stf/shingi/other-kenkou_128512.html",
-      "pastYearCount": 47
+      "pastYearCount": 48,
+      "isNewlyDiscovered": true
     },
     {
       "id": "mhlw-2868",
@@ -12820,7 +12822,8 @@
       "category": "SECTION",
       "name": "疾病対策部会臓器移植委員会",
       "officialUrl": "https://www.mhlw.go.jp/stf/shingi/shingi-kousei_127745.html",
-      "pastYearCount": 68
+      "pastYearCount": 68,
+      "isNewlyDiscovered": true
     },
     {
       "id": "mhlw-873",
@@ -12836,7 +12839,8 @@
       "category": "SECTION",
       "name": "疾病対策部会指定難病検討委員会",
       "officialUrl": "https://www.mhlw.go.jp/stf/shingi/shingi-kousei_206844.html",
-      "pastYearCount": 6
+      "pastYearCount": 68,
+      "isNewlyDiscovered": true
     },
     {
       "id": "mhlw-875",
@@ -13380,8 +13384,7 @@
       "category": "SUBCOMMITTEE",
       "name": "障害者雇用分科会",
       "officialUrl": "https://www.mhlw.go.jp/stf/shingi/shingi-rousei_126985.html",
-      "pastYearCount": 16,
-      "isNewlyDiscovered": true
+      "pastYearCount": 16
     },
     {
       "id": "mhlw-946",
@@ -13837,7 +13840,8 @@
       "category": "STUDY",
       "name": "国民年金第3号被保険者制度等に関する検討会",
       "officialUrl": "https://www.mhlw.go.jp/stf/newpage_75817.html",
-      "pastYearCount": 3
+      "pastYearCount": 3,
+      "isNewlyDiscovered": true
     },
     {
       "id": "mhlw-engo_shinsa",
@@ -14349,7 +14353,7 @@
       "name": "労働政策審議会 労働条件分科会",
       "officialUrl": "https://www.mhlw.go.jp/stf/shingi/shingi-rousei_126969_00004.html",
       "description": "労働基準法、賃金支払確保法、労働時間制度等の労働条件全般に係る重要施策・法改正事項を調査審議する労働政策審議会の主要分科会。",
-      "pastYearCount": 29,
+      "pastYearCount": 31,
       "materials": [
         {
           "name": "参考資料No.1 労働条件分科会委員名簿［PDF形式：128KB］",
@@ -14363,7 +14367,8 @@
           "name": "参考資料No.1 労働条件分科会委員名簿［PDF形式：321KB］",
           "url": "https://www.mhlw.go.jp/content/11201250/001691997.pdf"
         }
-      ]
+      ],
+      "isNewlyDiscovered": true
     },
     {
       "id": "mhlw-ryouyou_byoushou_bukai",
@@ -14414,8 +14419,7 @@
       "name": "社会保障審議会 医療保険部会",
       "officialUrl": "https://www.mhlw.go.jp/stf/newpage_28708.html",
       "description": "厚生労働省社会保障審議会における医療保険部会。",
-      "pastYearCount": 39,
-      "isNewlyDiscovered": true
+      "pastYearCount": 39
     },
     {
       "id": "mhlw-shakai_hosho_kaigo_hoken",
@@ -18142,7 +18146,6 @@
       "name": "第146回 障害者雇用分科会",
       "date": "2026/11/30",
       "officialUrl": "https://www.mhlw.go.jp/stf/shingi/shingi-rousei_126985.html",
-      "isNewlyDiscovered": true,
       "materials": []
     },
     {
@@ -18215,7 +18218,6 @@
       "name": "第222回 社会保障審議会 医療保険部会",
       "date": "2026/11/26",
       "officialUrl": "https://www.mhlw.go.jp/stf/newpage_28708.html",
-      "isNewlyDiscovered": true,
       "materials": []
     },
     {
@@ -18232,6 +18234,15 @@
       "name": "第76回 中央最低賃金審議会",
       "date": "2026/11/25",
       "officialUrl": "https://www.mhlw.go.jp/stf/shingi/shingi-tingin_127939.html",
+      "materials": []
+    },
+    {
+      "id": "mhlw-2867-20261125-152",
+      "councilId": "mhlw-2867",
+      "name": "第152回 脳死下での臓器提供事例に係る検証会議",
+      "date": "2026/11/25",
+      "officialUrl": "https://www.mhlw.go.jp/stf/shingi/other-kenkou_128512.html",
+      "isNewlyDiscovered": true,
       "materials": []
     },
     {
@@ -18255,8 +18266,143 @@
       "councilId": "mhlw-872",
       "name": "第84回 疾病対策部会臓器移植委員会",
       "date": "2026/11/25",
-      "officialUrl": "https://www.mhlw.go.jp/stf/shingi/shingi-kousei_127745.html",
-      "materials": []
+      "officialUrl": "https://www.mhlw.go.jp/stf/newpage_77606.html",
+      "materials": [
+        {
+          "name": "議事次第",
+          "url": "https://www.mhlw.go.jp/content/10900000/001771951.pdf"
+        },
+        {
+          "name": "名簿",
+          "url": "https://www.mhlw.go.jp/content/10900000/001771952.pdf"
+        },
+        {
+          "name": "資料1 臓器の移植に関する法律施行規則の改正要望について",
+          "url": "https://www.mhlw.go.jp/content/10900000/001771953.pdf"
+        },
+        {
+          "name": "資料2 法的脳死判定基準に関する作業班における検討結果",
+          "url": "https://www.mhlw.go.jp/content/10900000/001771954.pdf"
+        },
+        {
+          "name": "資料3 臓器の移植に関する法律施行規則の一部を改正する省令案について(概要)",
+          "url": "https://www.mhlw.go.jp/content/10900000/001771955.pdf"
+        },
+        {
+          "name": "資料4 今後の臓器移植医療のあり方について",
+          "url": "https://www.mhlw.go.jp/content/10900000/001771956.pdf"
+        },
+        {
+          "name": "資料5 臓器提供体制の強化に係る方策の検討について",
+          "url": "https://www.mhlw.go.jp/content/10900000/001771957.pdf"
+        },
+        {
+          "name": "資料6 大林参考人提出資料",
+          "url": "https://www.mhlw.go.jp/content/10900000/001771974.pdf"
+        },
+        {
+          "name": "資料7 佐藤参考人提出資料",
+          "url": "https://www.mhlw.go.jp/content/10900000/001771975.pdf"
+        },
+        {
+          "name": "参考資料1 臓器移植対策の現状について",
+          "url": "https://www.mhlw.go.jp/content/10900000/001771958.pdf"
+        },
+        {
+          "name": "参考資料2 臓器の移植に関する法律",
+          "url": "https://www.mhlw.go.jp/content/10900000/001771959.pdf"
+        },
+        {
+          "name": "参考資料3 臓器の移植に関する法律施行規則",
+          "url": "https://www.mhlw.go.jp/content/10900000/001771960.pdf"
+        },
+        {
+          "name": "参考資料4 臓器の移植に関する法律の運用に関する指針(ガイドライン)",
+          "url": "https://www.mhlw.go.jp/content/10900000/001771961.pdf"
+        },
+        {
+          "name": "参考資料5 臓器提供の手続に係る質疑応答集",
+          "url": "https://www.mhlw.go.jp/content/10900000/001771962.pdf"
+        },
+        {
+          "name": "参考資料6 法的脳死判定基準の見直しに係るエビデンス集",
+          "url": "https://www.mhlw.go.jp/content/10900000/001771963.pdf"
+        },
+        {
+          "name": "参考資料7 法的脳死判定基準に関する作業班 班員名簿",
+          "url": "https://www.mhlw.go.jp/content/10900000/001771964.pdf"
+        },
+        {
+          "name": "参考資料8 臓器のあっせん業の許可等について(改正版)",
+          "url": "https://www.mhlw.go.jp/content/10900000/001771965.pdf"
+        },
+        {
+          "name": "参考資料9 「臓器のあっせん業の許可等について」に係る質疑応答集(改正版)",
+          "url": "https://www.mhlw.go.jp/content/10900000/001771976.pdf"
+        },
+        {
+          "name": "参考資料10 「「臓器のあっせん業の許可等について」の一部改正案について(概要)」に関する意見募集に対して寄せられた御意見等について",
+          "url": "https://www.mhlw.go.jp/content/10900000/001771977.pdf"
+        }
+      ]
+    },
+    {
+      "id": "mhlw-874-20261125-069",
+      "councilId": "mhlw-874",
+      "name": "第69回厚生科学審議会疾病対策部会指定難病検討委員会(持ち回り開催)",
+      "date": "2026/11/25",
+      "officialUrl": "https://www.mhlw.go.jp/stf/newpage_77586.html",
+      "isNewlyDiscovered": true,
+      "materials": [
+        {
+          "name": "議事次第",
+          "url": "https://www.mhlw.go.jp/content/10906000/001771754.pdf"
+        },
+        {
+          "name": "資料1 パブリックコメントで寄せられた御意見について",
+          "url": "https://www.mhlw.go.jp/content/10906000/001771755.pdf"
+        },
+        {
+          "name": "資料2-1 本委員会として告示病名の変更をすることが妥当とされた疾病(一覧表)",
+          "url": "https://www.mhlw.go.jp/content/10906000/001771756.pdf"
+        },
+        {
+          "name": "資料2-2 本委員会として告示病名の変更をすることが妥当とされた疾病(個票)",
+          "url": "https://www.mhlw.go.jp/content/10906000/001771757.pdf"
+        },
+        {
+          "name": "資料3-1 本委員会として指定難病の要件を満たすと判断することが妥当とされた疾病(一覧表)",
+          "url": "https://www.mhlw.go.jp/content/10906000/001771758.pdf"
+        },
+        {
+          "name": "資料3-2 本委員会として指定難病の要件を満たすと判断することが妥当とされた疾病(個票)",
+          "url": "https://www.mhlw.go.jp/content/10906000/001771759.pdf"
+        },
+        {
+          "name": "資料3-3 本委員会として指定難病の要件を満たしていないと判断することが妥当とされた疾病一覧",
+          "url": "https://www.mhlw.go.jp/content/10906000/001771760.pdf"
+        },
+        {
+          "name": "資料4 本委員会として指定難病の診断基準等のアップデートを検討する疾病(個票)",
+          "url": "https://www.mhlw.go.jp/content/10906000/001771761.pdf"
+        },
+        {
+          "name": "資料5 指定難病(令和10年度適用分)に係る検討結果について(疾病対策部会への報告案)",
+          "url": "https://www.mhlw.go.jp/content/10906000/001771762.pdf"
+        },
+        {
+          "name": "参考資料1 本委員会として指定難病の要件を満たすと判断することが妥当とされた疾病(個票、溶け込み)",
+          "url": "https://www.mhlw.go.jp/content/10906000/001771763.pdf"
+        },
+        {
+          "name": "参考資料2 本委員会として指定難病の診断基準等をアップデートすることが妥当とされた疾病(一覧表)",
+          "url": "https://www.mhlw.go.jp/content/10906000/001771764.pdf"
+        },
+        {
+          "name": "参考資料3 本委員会として指定難病の診断基準等をアップデートすることが妥当とされた疾病(個票)",
+          "url": "https://www.mhlw.go.jp/content/10906000/001771765.pdf"
+        }
+      ]
     },
     {
       "id": "mhlw-925-20261125-134",
@@ -18271,8 +18417,63 @@
       "councilId": "mhlw-dai3gou_hihoken",
       "name": "第2回 国民年金第3号被保険者制度等に関する検討会",
       "date": "2026/11/25",
-      "officialUrl": "https://www.mhlw.go.jp/stf/newpage_75817.html",
-      "materials": []
+      "officialUrl": "https://www.mhlw.go.jp/stf/newpage_77577.html",
+      "materials": [
+        {
+          "name": "議事次第[49KB]",
+          "url": "https://www.mhlw.go.jp/content/12500000/001771598.pdf"
+        },
+        {
+          "name": "構成員名簿[105KB]",
+          "url": "https://www.mhlw.go.jp/content/12500000/001771643.pdf"
+        },
+        {
+          "name": "座席図[97KB]",
+          "url": "https://www.mhlw.go.jp/content/12500000/001771810.pdf"
+        },
+        {
+          "name": "【資料1】第3号被保険者制度に関するこれまでの議論と取組[900KB]",
+          "url": "https://www.mhlw.go.jp/content/12500000/001771641.pdf"
+        },
+        {
+          "name": "【資料2】マルチワーカーへの対応等の第3号被保険者制度に関連する制度の状況[3.4MB]",
+          "url": "https://www.mhlw.go.jp/content/12500000/001771640.pdf"
+        },
+        {
+          "name": "(倉田構成員提出資料)第3号被保険者制度の見直しにかかる見解[203KB]",
+          "url": "https://www.mhlw.go.jp/content/12500000/001771639.pdf"
+        },
+        {
+          "name": "(堀構成員提出資料)女性の働き方と年金[2.5MB]",
+          "url": "https://www.mhlw.go.jp/content/12500000/001771638.pdf"
+        }
+      ]
+    },
+    {
+      "id": "mhlw-rousei_roudoujouken-20261125-134",
+      "councilId": "mhlw-rousei_roudoujouken",
+      "name": "第134回 労働政策審議会 労働条件分科会",
+      "date": "2026/11/25",
+      "officialUrl": "https://www.mhlw.go.jp/stf/newpage_77622.html",
+      "isNewlyDiscovered": true,
+      "materials": [
+        {
+          "name": "【表紙】第134回労災保険部会",
+          "url": "https://www.mhlw.go.jp/content/11601000/001772193.pdf"
+        },
+        {
+          "name": "【資料1】労働者災害補償保険法等の一部を改正する法律の施行に伴う関係政省令の改正等について",
+          "url": "https://www.mhlw.go.jp/content/11601000/001772194.pdf"
+        },
+        {
+          "name": "【資料2】JDP個人事業主労災保険組合提出資料",
+          "url": "https://www.mhlw.go.jp/content/11601000/001772195.pdf"
+        },
+        {
+          "name": "【資料3】「毎月勤労統計調査(全国調査)」における公表結果の訂正等について",
+          "url": "https://www.mhlw.go.jp/content/11601000/001772196.pdf"
+        }
+      ]
     },
     {
       "id": "mhlw-tochikujou_seido-20261125-002",
@@ -18346,6 +18547,20 @@
         {
           "name": "参考資料5:特別養子縁組の現状",
           "url": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/1bec26a7-8321-45ba-9868-613310514d00/2d010165/20261120_councils_shingikai_shakai_katei_tokubetsu-yoshi_1bec26a7_07.pdf"
+        }
+      ]
+    },
+    {
+      "id": "mhlw-2855-20261124-s05",
+      "councilId": "mhlw-2855",
+      "name": "創薬力向上のための官民協議会 施策検討・推進部会における主な意見",
+      "date": "2026/11/24",
+      "officialUrl": "https://www.mhlw.go.jp/stf/newpage_77538.html",
+      "isNewlyDiscovered": true,
+      "materials": [
+        {
+          "name": "創薬力向上のための官民協議会 施策検討・推進部会における主な意見[566KB]",
+          "url": "https://www.mhlw.go.jp/content/11121000/001772114.pdf"
         }
       ]
     },
@@ -218960,8 +219175,8 @@
     "cas-zensedai_hosyo",
     "mof-zaiseiseido_bunkakai"
   ],
-  "lastCrawlTime": "2026/11/24 05:07",
+  "lastCrawlTime": "2026/11/25 03:56",
   "hasArchive": true,
-  "totalMeetingsCount": 25063,
-  "totalMaterialsCount": 158482
+  "totalMeetingsCount": 25067,
+  "totalMaterialsCount": 158525
 }
