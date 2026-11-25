@@ -136,8 +136,61 @@ class TestWafResilience(unittest.TestCase):
     @patch('crawler._fetch_with_curl', return_value=None)
     @patch('time.sleep')
     @patch('urllib.request.urlopen')
-    def test_waf_challenge_blocked_blocks_subsequent_ministry_access(self, mock_urlopen, mock_sleep, mock_curl):
-        """WAF CHALLENGE BLOCKED 発生後、同じ省庁への以降の fetch_url アクセスが完全にスキップされることを検証"""
+    def test_waf_challenge_blocked_blocks_subsequent_host_access(self, mock_urlopen, mock_sleep, mock_curl):
+        """Drop 150: 同一ホストで連続3回 WAF CHALLENGE BLOCKED 発生後、同一ホストのみ遮断され他ホストは継続すること"""
+        resp_waf = MagicMock()
+        resp_waf.status = 200
+        resp_waf.headers.get.return_value = 'text/html; charset=utf-8'
+        resp_waf.read.return_value = b'<html><script>awsWafCookieDomainList=[]</script></html>'
+        resp_waf.__enter__.return_value = resp_waf
+
+        resp_ok_sub = MagicMock()
+        resp_ok_sub.status = 200
+        resp_ok_sub.headers.get.return_value = 'text/html; charset=utf-8'
+        resp_ok_sub.read.return_value = '<html><title>中小企業庁会議</title></html>'.encode('utf-8')
+        resp_ok_sub.__enter__.return_value = resp_ok_sub
+
+        resp_ok_cao = MagicMock()
+        resp_ok_cao.status = 200
+        resp_ok_cao.headers.get.return_value = 'text/html; charset=utf-8'
+        resp_ok_cao.read.return_value = '<html><title>内閣府会議</title></html>'.encode('utf-8')
+        resp_ok_cao.__enter__.return_value = resp_ok_cao
+
+        # METI (www.meti.go.jp) で連続3回 WAF 検知後に遮断、同一 METI 配下の別ホストや他省庁は正常通過
+        mock_urlopen.side_effect = [resp_waf, resp_waf, resp_waf, resp_ok_sub, resp_ok_cao]
+
+        for i in range(3):
+            res = crawler.fetch_url(f"https://www.meti.go.jp/shingikai/c{i+1}.html", ministry="METI")
+            self.assertIsNone(res)
+            if i < 2:
+                self.assertFalse(crawler.is_host_waf_blocked("www.meti.go.jp"))
+
+        self.assertTrue(crawler.is_host_waf_blocked("www.meti.go.jp"))
+        self.assertFalse(crawler.is_ministry_waf_blocked("METI"))
+        self.assertEqual(mock_urlopen.call_count, 3)
+
+        # 4回目: 同一ホスト www.meti.go.jp へのアクセスはネットワーク通信を行わずスキップ
+        res_skip = crawler.fetch_url("https://www.meti.go.jp/shingikai/c4.html", ministry="METI")
+        self.assertIsNone(res_skip)
+        self.assertEqual(mock_urlopen.call_count, 3)
+        self.assertIn("WAF Blocked Skip (Host www.meti.go.jp)", getattr(crawler._thread_local, 'last_fetch_error', ''))
+
+        # 5回目: 同じ METI/SMEA 系でも別ホスト (www.chusho.meti.go.jp) には影響せずアクセス成功
+        res_sub = crawler.fetch_url("https://www.chusho.meti.go.jp/c1.html", ministry="METI")
+        self.assertIsNotNone(res_sub)
+        self.assertIn("中小企業庁会議", res_sub)
+
+        # 6回目: 別省庁（CAO）は通常通りアクセスされる
+        res_cao = crawler.fetch_url("https://www.cao.go.jp/council/c1.html", ministry="CAO")
+        self.assertIsNotNone(res_cao)
+        self.assertIn("内閣府会議", res_cao)
+        self.assertEqual(mock_urlopen.call_count, 5)
+
+    @patch('crawler._fetch_with_curl', return_value=None)
+    @patch('time.sleep')
+    @patch('urllib.request.urlopen')
+    def test_waf_host_isolation_warp_and_success_reset(self, mock_urlopen, mock_sleep, mock_curl):
+        """Drop 150: warp.ndl.go.jp のWAF遮断が www.meti.go.jp に波及せず、成功時に連続失敗カウントがリセットされること"""
         resp_waf = MagicMock()
         resp_waf.status = 200
         resp_waf.headers.get.return_value = 'text/html; charset=utf-8'
@@ -147,28 +200,49 @@ class TestWafResilience(unittest.TestCase):
         resp_ok = MagicMock()
         resp_ok.status = 200
         resp_ok.headers.get.return_value = 'text/html; charset=utf-8'
-        resp_ok.read.return_value = '<html><title>内閣府会議</title></html>'.encode('utf-8')
+        resp_ok.read.return_value = '<html><title>正常ページ</title></html>'.encode('utf-8')
         resp_ok.__enter__.return_value = resp_ok
 
-        mock_urlopen.side_effect = [resp_waf, resp_ok]
+        # METI で 2回WAF -> 1回200成功(リセット) -> 再び2回WAF でも遮断されないこと
+        mock_urlopen.side_effect = [resp_waf, resp_waf, resp_ok, resp_waf, resp_waf]
+        for idx in range(5):
+            r = crawler.fetch_url(f"https://www.meti.go.jp/shingi/p{idx}.html", ministry="METI")
+            if idx == 2:
+                self.assertIsNotNone(r)
+            else:
+                self.assertIsNone(r)
+        self.assertFalse(crawler.is_host_waf_blocked("www.meti.go.jp"))
 
-        # 1回目: METI で WAF CHALLENGE BLOCKED が発生
-        res1 = crawler.fetch_url("https://www.meti.go.jp/shingikai/c1.html", ministry="METI")
-        self.assertIsNone(res1)
-        self.assertTrue(crawler.is_ministry_waf_blocked("METI"))
-        self.assertEqual(mock_urlopen.call_count, 1)
+        # warp.ndl.go.jp は ministry="METI" で3回WAFしても www.meti.go.jp を遮断しない
+        mock_urlopen.side_effect = [resp_waf, resp_waf, resp_waf, resp_ok]
+        for idx in range(3):
+            self.assertIsNone(crawler.fetch_url(f"https://warp.ndl.go.jp/web/{idx}.html", ministry="METI"))
+        self.assertTrue(crawler.is_host_waf_blocked("warp.ndl.go.jp"))
+        self.assertFalse(crawler.is_host_waf_blocked("www.meti.go.jp"))
+        res_meti = crawler.fetch_url("https://www.meti.go.jp/shingi/ok.html", ministry="METI")
+        self.assertIsNotNone(res_meti)
 
-        # 2回目: 同じ METI へのアクセスはネットワーク通信を行わずスキップ
-        res2 = crawler.fetch_url("https://www.meti.go.jp/shingikai/c2.html", ministry="METI")
-        self.assertIsNone(res2)
-        self.assertEqual(mock_urlopen.call_count, 1)
-        self.assertIn("WAF Blocked Skip", getattr(crawler._thread_local, 'last_fetch_error', ''))
+    def test_warp_archive_url_excluded_from_active_crawl(self):
+        """Drop 150: 国立国会図書館 WARP アーカイブURLの会議体が通常巡回対象から除外されること"""
+        self.assertTrue(crawler.is_warp_archive_url("https://warp.ndl.go.jp/web/20180913000000/www.meti.go.jp/shingikai/"))
+        self.assertTrue(crawler.is_warp_archive_url("https://warp.da.ndl.go.jp/info:ndljp/pid/283990/www.mofa.go.jp/"))
+        self.assertFalse(crawler.is_warp_archive_url("https://www.meti.go.jp/shingikai/sample/index.html"))
 
-        # 3回目: 別省庁（CAO）は通常通りアクセスされる
-        res3 = crawler.fetch_url("https://www.cao.go.jp/council/c1.html", ministry="CAO")
-        self.assertIsNotNone(res3)
-        self.assertIn("内閣府会議", res3)
-        self.assertEqual(mock_urlopen.call_count, 2)
+        mock_data = {
+            "councils": [
+                {"id": "meti-warp", "ministry": "METI", "name": "過去WARP", "officialUrl": "https://warp.ndl.go.jp/web/1/index.html"},
+                {"id": "meti-normal", "ministry": "METI", "name": "通常会議", "officialUrl": "https://www.meti.go.jp/shingi/1.html"},
+            ],
+            "meetings": [],
+            "scrapingRules": {},
+        }
+        with patch('crawler.load_data_json', return_value=mock_data), \
+             patch('crawler.get_rejected_identifiers', return_value=(set(), set(), set())), \
+             patch('builtins.print'):
+            normal_targets = crawler.load_councils_from_data_json(recent_years="all", include_closed=False)
+            with_closed_targets = crawler.load_councils_from_data_json(recent_years="all", include_closed=True)
+        self.assertEqual([c["id"] for c in normal_targets], ["meti-normal"])
+        self.assertEqual({c["id"] for c in with_closed_targets}, {"meti-warp", "meti-normal"})
 
     @patch('crawler.save_data_json_with_backup', return_value=True)
     @patch('crawler.load_scraping_rules', return_value={})
@@ -176,19 +250,25 @@ class TestWafResilience(unittest.TestCase):
     @patch('crawler._fetch_with_curl', return_value=None)
     @patch('time.sleep')
     @patch('urllib.request.urlopen')
-    def test_run_meeting_crawler_skips_same_ministry_after_waf_blocked(
+    def test_run_meeting_crawler_skips_same_host_after_waf_blocked(
         self, mock_urlopen, mock_sleep, mock_curl, mock_load_data, mock_load_rules, mock_save
     ):
-        """run_meeting_crawler 実行中に WAF CHALLENGE BLOCKED になった省庁の後続会議体がスキップされることを検証"""
+        """Drop 150: run_meeting_crawler 実行中にホスト単位で連続3回WAF検知した場合、後続の同一ホストのみスキップし他ホストは継続すること"""
         mock_data = {
             "councils": [
                 {"id": "meti-c1", "name": "経産省会議1", "ministry": "METI", "officialUrl": "https://www.meti.go.jp/c1.html", "isActive": True},
                 {"id": "meti-c2", "name": "経産省会議2", "ministry": "METI", "officialUrl": "https://www.meti.go.jp/c2.html", "isActive": True},
+                {"id": "meti-c3", "name": "経産省会議3", "ministry": "METI", "officialUrl": "https://www.meti.go.jp/c3.html", "isActive": True},
+                {"id": "meti-c4", "name": "経産省会議4", "ministry": "METI", "officialUrl": "https://www.meti.go.jp/c4.html", "isActive": True},
+                {"id": "smea-c1", "name": "中小企業庁会議1", "ministry": "METI", "officialUrl": "https://www.chusho.meti.go.jp/c1.html", "isActive": True},
                 {"id": "cao-c1", "name": "内閣府会議1", "ministry": "CAO", "officialUrl": "https://www.cao.go.jp/c1.html", "isActive": True},
             ],
             "meetings": [
                 {"id": "meti-c1-20261001-001", "councilId": "meti-c1", "date": "2026/10/01", "name": "第1回"},
                 {"id": "meti-c2-20261001-001", "councilId": "meti-c2", "date": "2026/10/01", "name": "第1回"},
+                {"id": "meti-c3-20261001-001", "councilId": "meti-c3", "date": "2026/10/01", "name": "第1回"},
+                {"id": "meti-c4-20261001-001", "councilId": "meti-c4", "date": "2026/10/01", "name": "第1回"},
+                {"id": "smea-c1-20261001-001", "councilId": "smea-c1", "date": "2026/10/01", "name": "第1回"},
                 {"id": "cao-c1-20261001-001", "councilId": "cao-c1", "date": "2026/10/01", "name": "第1回"},
             ],
             "scrapingRules": {},
@@ -203,12 +283,12 @@ class TestWafResilience(unittest.TestCase):
             resp = MagicMock()
             resp.headers.get.return_value = 'text/html; charset=utf-8'
             resp.__enter__.return_value = resp
-            if "meti.go.jp" in u:
+            if "www.meti.go.jp" in u:
                 resp.status = 200
                 resp.read.return_value = b'<html><script>awsWafCookieDomainList=[]</script></html>'
             else:
                 resp.status = 200
-                resp.read.return_value = '<html><title>内閣府会議1</title><body><p>2026年10月1日</p></body></html>'.encode('utf-8')
+                resp.read.return_value = '<html><title>正常会議</title><body><p>2026年10月1日</p></body></html>'.encode('utf-8')
             return resp
 
         mock_urlopen.side_effect = fake_urlopen
@@ -218,10 +298,14 @@ class TestWafResilience(unittest.TestCase):
             stats = crawler.run_meeting_crawler(workers=1, skip_download=True)
 
         self.assertIn("https://www.meti.go.jp/c1.html", called_urls)
-        self.assertNotIn("https://www.meti.go.jp/c2.html", called_urls)
+        self.assertIn("https://www.meti.go.jp/c2.html", called_urls)
+        self.assertIn("https://www.meti.go.jp/c3.html", called_urls)
+        self.assertNotIn("https://www.meti.go.jp/c4.html", called_urls)
+        self.assertIn("https://www.chusho.meti.go.jp/c1.html", called_urls)
         self.assertIn("https://www.cao.go.jp/c1.html", called_urls)
         self.assertEqual(stats.get("waf_skipped"), 1)
-        self.assertEqual(stats.get("waf_blocked_ministries"), ["METI"])
+        self.assertEqual(stats.get("waf_blocked_hosts"), ["www.meti.go.jp"])
+        self.assertEqual(stats.get("waf_blocked_ministries"), [])
 
 
 if __name__ == '__main__':

@@ -630,13 +630,107 @@ class TestCrawlerIncremental(unittest.TestCase):
         self.assertTrue(saved_snapshots)
         last_cfg = saved_snapshots[-1].get("crawlerConfig", {})
         daily_map = last_cfg.get("dailyCouncilLastCrawlTime", {})
-        self.assertIn("test-direct", daily_map)
+        # Drop 150: 親ページ巡回を伴うピンポイント会議体のみ当日時刻で上書きされ、直接記事抽出は古いタイムスタンプのまま（Weeklyスキップ誤除外を防止）
+        self.assertNotIn("test-direct", set(daily_map.keys()) - {"test-direct"} if daily_map["test-direct"].startswith("2026/11/01") else {"test-direct"})
+        self.assertTrue(daily_map["test-direct"].startswith("2026/11/01"))
         self.assertIn("test-pinpoint", daily_map)
-        # 履歴配列ではなく最新のYYYY/MM/DD HH:MM文字列1件のみ上書き保持されること
-        self.assertIsInstance(daily_map["test-direct"], str)
-        self.assertTrue(daily_map["test-direct"].startswith(today_str))
+        self.assertIsInstance(daily_map["test-pinpoint"], str)
+        self.assertTrue(daily_map["test-pinpoint"].startswith(today_str))
         c_direct = next(c for c in saved_snapshots[-1]["councils"] if c["id"] == "test-direct")
-        self.assertEqual(c_direct.get("crawlStatus", {}).get("extractionMethod"), "ministry_news")
+        self.assertEqual(c_direct.get("crawlStatus", {}).get("extractionMethod"), "ministry_news_direct")
+        c_pin = next(c for c in saved_snapshots[-1]["councils"] if c["id"] == "test-pinpoint")
+        self.assertEqual(c_pin.get("crawlStatus", {}).get("extractionMethod"), "rule")
+
+    def test_zero_material_recent_meeting_revisited_in_incremental_crawl(self):
+        """Drop 150: 直近90日以内の資料0件開催回URLは _build_known_meeting_urls から除外され、再巡回対象になること"""
+        now = datetime.now()
+        fmt_date = lambda days_ago: (now - timedelta(days=days_ago)).strftime("%Y/%m/%d")
+        meetings = [
+            {
+                "id": "c1-recent-empty",
+                "councilId": "c1",
+                "date": fmt_date(5),
+                "officialUrl": "https://example.go.jp/dai10.html",
+                "materials": []
+            },
+            {
+                "id": "c1-future-empty",
+                "councilId": "c1",
+                "date": (now + timedelta(days=7)).strftime("%Y/%m/%d"),
+                "officialUrl": "https://example.go.jp/dai11.html",
+                "materials": []
+            },
+            {
+                "id": "c1-done",
+                "councilId": "c1",
+                "date": fmt_date(30),
+                "officialUrl": "https://example.go.jp/dai9.html",
+                "materials": [{"name": "資料1", "url": "https://example.go.jp/dai9.pdf"}]
+            },
+            {
+                "id": "c1-ancient-empty",
+                "councilId": "c1",
+                "date": fmt_date(200),
+                "officialUrl": "https://example.go.jp/dai1.html",
+                "materials": []
+            },
+        ]
+        known_urls = crawler._build_known_meeting_urls(meetings).get("c1", set())
+        self.assertNotIn("https://example.go.jp/dai10.html", known_urls)
+        self.assertNotIn("https://example.go.jp/dai11.html", known_urls)
+        self.assertIn("https://example.go.jp/dai9.html", known_urls)
+        self.assertIn("https://example.go.jp/dai1.html", known_urls)
+
+        candidates = [
+            "https://example.go.jp/dai11.html",
+            "https://example.go.jp/dai10.html",
+            "https://example.go.jp/dai9.html",
+            "https://example.go.jp/dai1.html",
+        ]
+        targets, stats = crawler._filter_incremental_subpages(candidates, known_urls, max_unvisited=50, max_recent=1)
+        self.assertIn("https://example.go.jp/dai10.html", targets)
+        self.assertIn("https://example.go.jp/dai11.html", targets)
+        self.assertEqual(stats["unvisited"], 2)
+
+    def test_roundless_same_day_meeting_upgrades_parent_url_and_sets_updated_ts(self):
+        """Drop 150: 回次なし同日会議で個別URLと資料が検出された場合、親URLから自動昇格し lastUpdatedFromCrawl を付与すること"""
+        parent_url = "https://example.go.jp/council/index.html"
+        sub_url = "https://example.go.jp/council/20261120_shiryou.html"
+        data = {
+            "councils": [
+                {"id": "test-roundless", "ministry": "MOF", "name": "回次なし分科会", "officialUrl": parent_url}
+            ],
+            "meetings": [
+                {
+                    "id": "test-roundless-20261120-s01",
+                    "councilId": "test-roundless",
+                    "name": "回次なし分科会 (2026/11/20)",
+                    "date": "2026/11/20",
+                    "officialUrl": parent_url,
+                    "materials": [],
+                    "manualLock": False
+                }
+            ],
+            "scrapingRules": {}
+        }
+        target = {"id": "test-roundless", "name": "回次なし分科会", "ministry": "MOF", "officialUrl": parent_url}
+        scraped_item = {
+            "subpageMeetings": [
+                {
+                    "subpageUrl": sub_url,
+                    "name": "回次なし分科会 (令和8年11月20日)",
+                    "title": "回次なし分科会 (令和8年11月20日)",
+                    "extractedDates": ["2026/11/20"],
+                    "materials": [{"name": "配布資料", "url": "https://example.go.jp/council/20261120.pdf", "type": "PDF"}]
+                }
+            ]
+        }
+        added = crawler.sync_new_meetings_from_crawl(data, target, scraped_item)
+        self.assertEqual(added, 0)
+        ex_m = data["meetings"][0]
+        self.assertEqual(ex_m["officialUrl"], sub_url)
+        self.assertEqual(len(ex_m["materials"]), 1)
+        self.assertTrue(ex_m.get("lastUpdatedFromCrawl"))
 
 
 if __name__ == '__main__':

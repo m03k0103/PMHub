@@ -1004,6 +1004,7 @@ def load_councils_from_data_json(
 
     inactive_count = 0
     closed_count = 0
+    warp_skip_count = 0
     daily_skip_count = 0
     weekly_skip_count = 0
     dormant_count = 0
@@ -1041,6 +1042,11 @@ def load_councils_from_data_json(
         is_closed = item.get("isClosed") is True or (isinstance(rule, dict) and rule.get("isClosed") is True)
         if is_closed and not include_closed:
             closed_count += 1
+            continue
+
+        # 2.1. Drop 150: 国立国会図書館 WARP 凍結アーカイブURLの通常巡回除外
+        if not include_closed and is_warp_archive_url(item.get("officialUrl") or item.get("url") or ""):
+            warp_skip_count += 1
             continue
 
         # 2.5. Drop 149: Daily クロール対象会議体（直近 daily_window_days 日以内巡回済）の除外
@@ -1088,6 +1094,8 @@ def load_councils_from_data_json(
         print(f"[INFO] 非アクティブ会議体 {inactive_count} 件をクロール対象から除外しました。")
     if closed_count > 0:
         print(f"[INFO] 法改正等廃止会議体（isClosed: true） {closed_count} 件をクロール対象から除外しました。")
+    if warp_skip_count > 0:
+        print(f"[INFO] 国立国会図書館WARPアーカイブ会議体 {warp_skip_count} 件を通常クロール対象から除外しました。")
     if daily_skip_count > 0:
         print(f"[INFO] Dailyクロール対象会議体（直近 {daily_window_days} 日以内巡回済） {daily_skip_count} 件をクロール対象から除外しました。")
     if weekly_skip_count > 0:
@@ -1348,13 +1356,92 @@ _ACTIVE_LOG_HANDLES = []
 _LOG_HANDLE_LOCK = threading.Lock()
 
 _waf_blocked_ministries = set()
+_waf_blocked_hosts = set()
+_waf_host_consecutive_failures = {}
+WAF_HOST_BLOCK_THRESHOLD = 3
 _WAF_BLOCK_LOCK = threading.Lock()
+_WARP_ARCHIVE_HOSTS = ("warp.ndl.go.jp", "warp.da.ndl.go.jp")
+
+
+def is_warp_archive_url(url):
+    """Drop 150: 国立国会図書館 WARP 凍結アーカイブURLであるかを判定する"""
+    if not url:
+        return False
+    try:
+        host = urllib.parse.urlparse(str(url)).netloc.lower()
+    except Exception:
+        return False
+    if not host:
+        return False
+    return any(host == wh or host.endswith("." + wh) for wh in _WARP_ARCHIVE_HOSTS)
+
+
+def _normalize_waf_host(url_or_host):
+    """URL またはホスト文字列から正規化ホスト名 (netloc) を抽出する"""
+    if not url_or_host:
+        return ""
+    s = str(url_or_host).strip()
+    if "://" in s:
+        try:
+            return urllib.parse.urlparse(s).netloc.lower()
+        except Exception:
+            return ""
+    return s.split("/")[0].lower()
 
 
 def reset_waf_blocked_ministries():
-    """クロール開始時に WAF CHALLENGE BLOCKED による省庁遮断状態を初期化する"""
+    """クロール開始時に WAF CHALLENGE BLOCKED による省庁・ホスト遮断状態を初期化する"""
     with _WAF_BLOCK_LOCK:
         _waf_blocked_ministries.clear()
+        _waf_blocked_hosts.clear()
+        _waf_host_consecutive_failures.clear()
+
+
+def is_host_waf_blocked(url_or_host):
+    """Drop 150: 指定ホストが WAF CHALLENGE BLOCKED により遮断済みか判定する"""
+    host = _normalize_waf_host(url_or_host)
+    if not host:
+        return False
+    with _WAF_BLOCK_LOCK:
+        return host in _waf_blocked_hosts
+
+
+def record_host_waf_challenge(url_or_host, threshold=None):
+    """Drop 150: ホスト単位で WAF 連続失敗をカウントし、閾値到達時のみ該当ホストを遮断する"""
+    host = _normalize_waf_host(url_or_host)
+    if not host:
+        return False
+    eff_threshold = WAF_HOST_BLOCK_THRESHOLD if threshold is None else max(1, int(threshold))
+    newly_blocked = False
+    count = 0
+    with _WAF_BLOCK_LOCK:
+        count = _waf_host_consecutive_failures.get(host, 0) + 1
+        _waf_host_consecutive_failures[host] = count
+        if count >= eff_threshold and host not in _waf_blocked_hosts:
+            _waf_blocked_hosts.add(host)
+            newly_blocked = True
+        is_blocked = host in _waf_blocked_hosts
+    if newly_blocked:
+        safe_emit_log(
+            f"  -> 🚫 [WAF HOST BLOCK] ホスト {host} で連続 {count} 回 [WAF CHALLENGE BLOCKED] を検知したため、"
+            f"以降の同一ホストへのアクセスを停止します。"
+        )
+    return is_blocked
+
+
+def clear_host_waf_failures(url_or_host):
+    """Drop 150: 通信成功時に該当ホストの連続 WAF 失敗カウントをリセットする"""
+    host = _normalize_waf_host(url_or_host)
+    if not host:
+        return
+    with _WAF_BLOCK_LOCK:
+        _waf_host_consecutive_failures.pop(host, None)
+
+
+def get_waf_blocked_hosts():
+    """Drop 150: 現在 WAF 遮断中のホスト一覧を返す"""
+    with _WAF_BLOCK_LOCK:
+        return sorted(_waf_blocked_hosts)
 
 
 def _resolve_ministry_for_fetch(url=None, ministry=None):
@@ -1503,13 +1590,17 @@ def fetch_url(url, timeout=12, max_retries=1, retry_count=0, ministry=None):
         _thread_local.last_fetch_error = f"Invalid scheme: {url}"
         return None
 
+    host = parsed_url.netloc.lower()
+    if host and is_host_waf_blocked(host):
+        _thread_local.last_fetch_error = f"WAF Blocked Skip (Host {host}): {url}"
+        return None
+
     min_code = _resolve_ministry_for_fetch(url=url, ministry=ministry)
     if min_code and is_ministry_waf_blocked(min_code):
         _thread_local.last_fetch_error = f"WAF Blocked Skip (Ministry {min_code}): {url}"
         return None
 
     # CR-21, CR-26, CR-49: 同一ホストへの過密アクセス防止（スレッドセーフ動的レートリミット）
-    host = parsed_url.netloc.lower()
     _rate_limit_host(host)
 
     headers = get_browser_headers()
@@ -1528,21 +1619,24 @@ def fetch_url(url, timeout=12, max_retries=1, retry_count=0, ministry=None):
                     time.sleep(backoff_wait)
                     retry_res = fetch_url(url, timeout=timeout, max_retries=max_retries, retry_count=retry_count + 1, ministry=min_code)
                     if retry_res:
+                        clear_host_waf_failures(host)
                         _thread_local.last_fetch_error = None
                         return retry_res
-                    if min_code and is_ministry_waf_blocked(min_code):
+                    if (host and is_host_waf_blocked(host)) or (min_code and is_ministry_waf_blocked(min_code)):
                         return None
                 # Drop 78: WAF 202 チャレンジまたは JS チャレンジ画面検知時の curl フォールバック試行
                 curl_html = _fetch_with_curl(url, timeout=timeout)
                 if curl_html:
                     safe_emit_log(f"  -> 🟢 [WAF CURL FALLBACK] {url}: curl.exe による WAF チャレンジ突破に成功しました")
+                    clear_host_waf_failures(host)
                     _thread_local.last_fetch_error = None
                     return curl_html
                 safe_emit_log(f"  -> 🔴 [WAF CHALLENGE BLOCKED] {url}: AWS/Cloudflare WAF challenge screen detected (Status: {response.status})")
                 _thread_local.last_fetch_error = f"WAF 202 Challenge: {url}" if response.status == 202 else f"WAF Challenge Blocked (Status {response.status}): {url}"
-                if min_code:
-                    mark_ministry_waf_blocked(min_code)
+                if host:
+                    record_host_waf_challenge(host)
                 return None
+            clear_host_waf_failures(host)
             _thread_local.last_fetch_error = None
             return html
     except urllib.error.HTTPError as e:
@@ -1849,6 +1943,45 @@ def _filter_incremental_subpages(candidate_urls, existing_urls, max_unvisited=50
         "total_targets": len(target_urls)
     }
     return target_urls, stats
+
+
+def _build_known_meeting_urls(meetings, recent_zero_mat_days=90, council_id=None):
+    """
+    既登録開催回の URL マップを構築する（Drop 112 / Drop 150）。
+    直近 recent_zero_mat_days 日以内（または開催日未確認）で配付資料が 0 件の開催回は
+    後日資料が掲載されるため、再巡回保証として除外（既訪問スキップ対象外）とする。
+    """
+    urls_map = {}
+    cutoff_zero_date = ""
+    if recent_zero_mat_days and recent_zero_mat_days > 0:
+        cutoff_zero_date = (datetime.now() - timedelta(days=int(recent_zero_mat_days))).strftime("%Y/%m/%d")
+
+    for m in (meetings or []):
+        cid = m.get("councilId")
+        if not cid:
+            continue
+        if council_id is not None and cid != council_id:
+            continue
+
+        mats = m.get("materials") or []
+        if len(mats) == 0:
+            m_date = str(m.get("date") or "").replace("-", "/")
+            is_unconf = bool(m.get("isDateUnconfirmed")) or not m_date or m_date == "2099/01/01"
+            if is_unconf or (cutoff_zero_date and m_date >= cutoff_zero_date):
+                continue
+
+        bucket = urls_map.setdefault(cid, set())
+        u = m.get("officialUrl")
+        if u:
+            bucket.add(u)
+        sub_u = m.get("subpageUrl")
+        if sub_u:
+            bucket.add(sub_u)
+        for mat in mats:
+            mat_u = mat.get("url")
+            if mat_u and not mat_u.lower().endswith('.pdf'):
+                bucket.add(mat_u)
+    return urls_map
 
 # 非会議サブページの除外アンカーテキスト（CR-14, CR-19, CR-20 & Drop 99: 全省庁共通に純化）
 NAV_EXCLUDE_TEXTS = frozenset({
@@ -3806,11 +3939,15 @@ def sync_new_meetings_from_crawl(data, target, scraped_item):
                     elif curr_url == sub_url and clean_materials_list:
                         ex_mats = ex_m.setdefault("materials", [])
                         ex_mat_urls = {mat.get("url") for mat in ex_mats if mat.get("url")}
+                        has_ex_merged = False
                         for new_mat in clean_materials_list:
                             if new_mat.get("url") not in ex_mat_urls:
                                 ex_mats.append(new_mat)
                                 ex_mat_urls.add(new_mat.get("url"))
                                 merged_count += 1
+                                has_ex_merged = True
+                        if has_ex_merged:
+                            ex_m["lastUpdatedFromCrawl"] = datetime.now().strftime("%Y/%m/%d %H:%M")
                 continue
             else:
                 can_add_new_period = (
@@ -3842,6 +3979,7 @@ def sync_new_meetings_from_crawl(data, target, scraped_item):
                         ex_mat_urls.add(new_mat.get("url"))
                         has_merged = True
             if has_merged:
+                target_ex_m["lastUpdatedFromCrawl"] = datetime.now().strftime("%Y/%m/%d %H:%M")
                 merged_count += 1
             else:
                 duplicate_skip_count += 1
@@ -3873,20 +4011,30 @@ def sync_new_meetings_from_crawl(data, target, scraped_item):
             if any(kw in sub_title for kw in ['調査', 'アンケート', 'セミナー', '公募', '意見募集', '問い合わせ先', '情報配信サービス']):
                 continue
 
-        # 同一会議体・同一日付の重複チェック（同日重複の自動防止および資料マージ）
+        # 同一会議体・同一日付の重複チェック（同日重複の自動防止・親URL昇格・資料マージ）
         if not is_date_unconfirmed:
             same_date_meets = [m for m in existing_c_meets if m.get("date") == meet_date]
             if same_date_meets:
-                # 既に同一日付の会議が存在する場合、資料のみを既存会議にマージして新規追加はスキップ
+                # 既に同一日付の会議が存在する場合、資料マージおよび親URLからの個別URL自動昇格を実施
                 has_merged = False
+                has_valid_sub = bool(sub_url and not is_generic_index_url(sub_url, sub_title) and sub_url != council_parent_url.rstrip("/"))
                 for ex_m in same_date_meets:
+                    ex_changed = False
+                    if not ex_m.get("manualLock") and has_valid_sub and clean_materials_list:
+                        ex_curr_url = (ex_m.get("officialUrl") or "").rstrip("/")
+                        if ex_curr_url == council_parent_url.rstrip("/") or is_generic_index_url(ex_curr_url):
+                            ex_m["officialUrl"] = sub.get("subpageUrl")
+                            ex_changed = True
                     ex_mats = ex_m.setdefault("materials", [])
                     ex_mat_urls = {mat.get("url") for mat in ex_mats if mat.get("url")}
                     for new_mat in clean_materials_list:
                         if new_mat.get("url") not in ex_mat_urls:
                             ex_mats.append(new_mat)
                             ex_mat_urls.add(new_mat.get("url"))
-                            has_merged = True
+                            ex_changed = True
+                    if ex_changed:
+                        ex_m["lastUpdatedFromCrawl"] = datetime.now().strftime("%Y/%m/%d %H:%M")
+                        has_merged = True
                 if has_merged:
                     merged_count += 1
                 else:
@@ -3920,6 +4068,7 @@ def sync_new_meetings_from_crawl(data, target, scraped_item):
                         ex_mat_urls.add(new_mat.get("url"))
                         has_merged = True
             if has_merged:
+                target_ex_m["lastUpdatedFromCrawl"] = datetime.now().strftime("%Y/%m/%d %H:%M")
                 merged_count += 1
             else:
                 duplicate_skip_count += 1
@@ -4323,6 +4472,7 @@ def run_meeting_crawler(
             "fetch_error": 0,
             "waf_skipped": 0,
             "waf_blocked_ministries": [],
+            "waf_blocked_hosts": [],
             "new_meetings": 0,
             "stopped": False,
             "processed_councils": 0,
@@ -4330,25 +4480,8 @@ def run_meeting_crawler(
             "log_file": log_filepath
         }
 
-        # 会議体ごとの既登録開催回URL（officialUrl）マップを事前構築（スマート差分探索エンジン用）
-        councils_meeting_urls = {}
-        # Drop 112: officialUrl に加え subpageUrl や個別資料URLも含めてスマート差分探索の照合精度を向上
-        for m in data.get("meetings", []):
-            cid = m.get("councilId")
-            if not cid:
-                continue
-            if cid not in councils_meeting_urls:
-                councils_meeting_urls[cid] = set()
-            u = m.get("officialUrl")
-            if u:
-                councils_meeting_urls[cid].add(u)
-            sub_u = m.get("subpageUrl")
-            if sub_u:
-                councils_meeting_urls[cid].add(sub_u)
-            for mat in m.get("materials", []):
-                mat_u = mat.get("url")
-                if mat_u and not mat_u.lower().endswith('.pdf'):
-                    councils_meeting_urls[cid].add(mat_u)
+        # 会議体ごとの既登録開催回URL（officialUrl）マップを事前構築（スマート差分探索エンジン用 / 資料0件再巡回保証付き）
+        councils_meeting_urls = _build_known_meeting_urls(data.get("meetings", []))
 
         total_councils = len(CRAWL_TARGETS)
         processed_counter = 0
@@ -4364,12 +4497,17 @@ def run_meeting_crawler(
             c_min = target.get("ministry", "")
             norm_min = normalize_ministry_code(c_min) if c_min else ""
 
-            if norm_min and is_ministry_waf_blocked(norm_min):
-                emit(f"▶ [{idx}/{total_councils}] [{c_min}] ⏭️ [WAF SKIP] {c_name}: 省庁 {norm_min} で既に [WAF CHALLENGE BLOCKED] が発生しているためアクセスをスキップします。")
+            target_host = _normalize_waf_host(target.get("url", ""))
+            host_blocked = bool(target_host and is_host_waf_blocked(target_host))
+            min_blocked = bool(norm_min and is_ministry_waf_blocked(norm_min))
+            if host_blocked or min_blocked:
+                skip_reason = f"WAF Blocked Skip (Host {target_host})" if host_blocked else f"WAF Blocked Skip (Ministry {norm_min})"
+                skip_label = f"ホスト {target_host}" if host_blocked else f"省庁 {norm_min}"
+                emit(f"▶ [{idx}/{total_councils}] [{c_min}] ⏭️ [WAF SKIP] {c_name}: {skip_label} で既に [WAF CHALLENGE BLOCKED] が発生しているためアクセスをスキップします。")
                 with data_lock:
                     stats["processed_councils"] += 1
                     stats["waf_skipped"] += 1
-                    update_crawl_status(data, target["id"], None, f"WAF Blocked Skip (Ministry {norm_min})")
+                    update_crawl_status(data, target["id"], None, skip_reason)
                     processed_counter += 1
                     if processed_counter % checkpoint_interval == 0:
                         save_data_json_with_backup(data, create_backup=False)
@@ -4504,9 +4642,11 @@ def run_meeting_crawler(
         emit(f"  🔴 失敗 (failed):      {stats['failed']} 件")
         emit(f"  🔴 取得エラー:         {stats['fetch_error']} 件")
         stats["waf_blocked_ministries"] = get_waf_blocked_ministries()
-        if stats.get("waf_skipped", 0) > 0 or stats["waf_blocked_ministries"]:
-            blocked_str = ", ".join(stats["waf_blocked_ministries"]) if stats["waf_blocked_ministries"] else "-"
-            emit(f"  ⏭️  WAF省庁スキップ:    {stats.get('waf_skipped', 0)} 件 (遮断省庁: {blocked_str})")
+        stats["waf_blocked_hosts"] = get_waf_blocked_hosts()
+        if stats.get("waf_skipped", 0) > 0 or stats["waf_blocked_hosts"] or stats["waf_blocked_ministries"]:
+            blocked_parts = stats["waf_blocked_hosts"] or stats["waf_blocked_ministries"]
+            blocked_str = ", ".join(blocked_parts) if blocked_parts else "-"
+            emit(f"  ⏭️  WAFホストスキップ:   {stats.get('waf_skipped', 0)} 件 (遮断: {blocked_str})")
         emit(f"  📦 新規追加会議:       {stats['new_meetings']} 件")
         total_unconfirmed = get_unconfirmed_meetings_count(data)
         stats["unconfirmed_meetings"] = total_unconfirmed
@@ -5099,7 +5239,7 @@ def run_ministry_news_discovery(progress_callback=None, stop_event=None, ministr
                         break
                     resolved_urls = resolve_news_portal_urls(pdef)
                     for rurl in resolved_urls:
-                        if is_ministry_waf_blocked(min_code):
+                        if (min_code and is_ministry_waf_blocked(min_code)) or is_host_waf_blocked(rurl):
                             break
                         emit(f"  走査中: {rurl} ({pdef.get('type')})")
                         html = fetch_url(rurl, timeout=12, ministry=min_code)
@@ -5184,19 +5324,19 @@ def run_ministry_news_discovery(progress_callback=None, stop_event=None, ministr
         emit(f"  ・直接資料抽出対象: {len(direct_meetings_to_add)} 件")
         emit(f"  ・ピンポイント巡回対象会議体: {len(detected_councils_to_crawl)} 件")
 
+        run_start_ts = datetime.now().strftime("%Y/%m/%d %H:%M")
         new_meetings_total = 0
         daily_crawled_cids = set()
 
-        # 直接資料抽出ミーティングの反映
+        # 直接資料抽出ミーティングの反映（親ページ未巡回のため Weekly 除外対象 daily_crawled_cids には含めない: Drop 150）
         for matched_c, sub_item in direct_meetings_to_add:
             m_cid = matched_c.get("id")
             if m_cid:
-                daily_crawled_cids.add(m_cid)
                 update_crawl_status(data, m_cid, {
                     "scrapedAt": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
                     "crawlResult": "success",
                     "resultReason": "省庁新着ポータルから直接抽出",
-                    "extractionMethod": "ministry_news",
+                    "extractionMethod": "ministry_news_direct",
                     "totalExtractedMaterials": len(sub_item.get("materials", [])),
                     "extractedDates": sub_item.get("extractedDates", [])
                 })
@@ -5218,14 +5358,14 @@ def run_ministry_news_discovery(progress_callback=None, stop_event=None, ministr
                 break
 
             c_min = normalize_ministry_code(c_obj.get("ministry", "")) if c_obj.get("ministry") else ""
-            if c_min and is_ministry_waf_blocked(c_min):
-                emit(f"\n⏭️ [WAF SKIP] [{cid}] {c_obj['name']}: 省庁 {c_min} で WAF CHALLENGE BLOCKED が発生済みのためアクセスをスキップします。")
-                continue
-
-            emit(f"\n>>> ピンポイントクロール実行: [{cid}] {c_obj['name']} (契機: {reason})")
             target_url = c_obj.get("officialUrl")
             if not target_url:
                 continue
+            if (c_min and is_ministry_waf_blocked(c_min)) or is_host_waf_blocked(target_url):
+                emit(f"\n⏭️ [WAF SKIP] [{cid}] {c_obj['name']}: WAF CHALLENGE BLOCKED 発生済みのためアクセスをスキップします。")
+                continue
+
+            emit(f"\n>>> ピンポイントクロール実行: [{cid}] {c_obj['name']} (契機: {reason})")
 
             prev_min = getattr(_thread_local, "current_ministry", None)
             _thread_local.current_ministry = c_min or None
@@ -5237,11 +5377,9 @@ def run_ministry_news_discovery(progress_callback=None, stop_event=None, ministr
 
                 c_target = dict(c_obj)
                 c_target.setdefault("url", c_obj.get("officialUrl", ""))
-                c_target["existing_meeting_urls"] = {
-                    m.get("officialUrl", "").rstrip("/")
-                    for m in data.get("meetings", [])
-                    if m.get("councilId") == cid and m.get("officialUrl")
-                }
+                c_target["existing_meeting_urls"] = _build_known_meeting_urls(
+                    data.get("meetings", []), council_id=cid
+                ).get(cid, set())
 
                 rule_item = get_rule_for_target(rules, c_target, rule_url_index)
                 scraped_item = execute_rule_retrieval(c_target, html, rule_item, use_llm=False, recheck_recent=1)
@@ -5271,17 +5409,24 @@ def run_ministry_news_discovery(progress_callback=None, stop_event=None, ministr
             emit(f"[Daily対象記録] 今回巡回・更新した会議体 {len(daily_crawled_cids)} 件の最新クロール日時を記録しました。")
         save_success = save_data_json_with_backup(data)
 
-        # Drop 71: 新規・更新配付資料のローカル自動保存 (PMM 連動)
-        if not skip_download and new_meetings_total > 0:
-            try:
-                emit(f"[PMM] 新規・更新された開催回（{new_meetings_total}件）の配付資料をローカル (local_docs/) へ自動保存中...")
-                from admin.pmm.downloader import download_materials
-                new_m_ids = [m["id"] for m in data.get("meetings", []) if m.get("isNewlyDiscovered")]
-                if new_m_ids:
-                    dl_stats = download_materials(meeting_ids=new_m_ids)
-                    emit(f"[PMM] ローカル保存完了: {dl_stats.get('downloaded', 0)} 件取得, {dl_stats.get('skipped', 0)} 件既存, {dl_stats.get('failed', 0)} 件失敗")
-            except Exception as e_pmm:
-                emit(f"[PMM WARN] ローカル自動保存中に軽微な警告が発生しました: {e_pmm}")
+        # Drop 71 / Drop 150: 新規・資料追記更新された配付資料のローカル自動保存 (PMM 連動)
+        if not skip_download:
+            target_pmm_ids = list(dict.fromkeys(
+                m["id"] for m in data.get("meetings", [])
+                if m.get("id") and (
+                    m.get("isNewlyDiscovered")
+                    or (m.get("lastUpdatedFromCrawl") and str(m.get("lastUpdatedFromCrawl")) >= run_start_ts)
+                )
+            ))
+            if new_meetings_total > 0 or target_pmm_ids:
+                try:
+                    emit(f"[PMM] 新規・更新された開催回（{len(target_pmm_ids)}件）の配付資料をローカル (local_docs/) へ自動保存中...")
+                    from admin.pmm.downloader import download_materials
+                    if target_pmm_ids:
+                        dl_stats = download_materials(meeting_ids=target_pmm_ids)
+                        emit(f"[PMM] ローカル保存完了: {dl_stats.get('downloaded', 0)} 件取得, {dl_stats.get('skipped', 0)} 件既存, {dl_stats.get('failed', 0)} 件失敗")
+                except Exception as e_pmm:
+                    emit(f"[PMM WARN] ローカル自動保存中に軽微な警告が発生しました: {e_pmm}")
 
         emit("\n" + "=" * 65)
         emit(f" [Drop 68 検知完了] 新規追加開催回: {new_meetings_total} 件")
