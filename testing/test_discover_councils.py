@@ -245,6 +245,49 @@ class TestDiscoverCouncils(unittest.TestCase):
         for u in permanent_urls:
             self.assertFalse(discover_councils.is_single_press_or_notice_url(u), f"Should not flag permanent url: {u}")
 
+    def test_drop151_ministry_news_norm_orig_smoke(self):
+        """Drop 151: _discover_from_ministry_news のルールループで norm_orig が未定義にならないこと"""
+        from unittest.mock import patch
+        import crawler as crawler_mod
+        import llm.digest as digest_mod
+
+        fake_news = [{
+            "title": "「テスト金融審議会」第1回の開催について",
+            "url": "https://www.fsa.go.jp/singi/test_council/siryou/20261125.html",
+            "date": "2026/11/25"
+        }]
+        ministries = {
+            "FSA": {
+                "name": "金融庁",
+                "newsPortals": [{"url": "https://www.fsa.go.jp/news/r8_news_menu.html", "type": "html"}]
+            }
+        }
+        with patch.object(crawler_mod, "load_ministry_and_host_configs_from_db"), \
+             patch.object(crawler_mod, "fetch_url", return_value="<html><body>ok</body></html>"), \
+             patch.object(crawler_mod, "extract_news_items_from_html", return_value=fake_news), \
+             patch.object(discover_councils, "resolve_parent_url_from_press_release",
+                          return_value="https://www.fsa.go.jp/singi/test_council/index.html"), \
+             patch.object(digest_mod, "build_discovery_digest",
+                          return_value={"items": [], "stats": {"raw_count": 1, "candidate_count": 0}, "digest_hash": "0" * 64}):
+            discovered, counts = discover_councils._discover_from_ministry_news(
+                emit=lambda *a, **k: None,
+                target_ministry="FSA",
+                ministries=ministries,
+                existing_councils=[],
+                categories_def={"STUDY": "検討会", "COUNCIL": "審議会"},
+                url_to_slug_map={},
+                existing_urls=set(),
+                existing_names=set(),
+                rejected_names=set(),
+                rejected_urls=set(),
+                rejected_clean_keys=set(),
+                common_keywords=["審議会", "検討会"],
+                next_seq=1,
+                used_council_ids=set()
+            )
+        self.assertEqual(len(discovered), 1)
+        self.assertEqual(discovered[0]["name"], "テスト金融審議会")
+
 
 if __name__ == "__main__":
     unittest.main()

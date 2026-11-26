@@ -2927,6 +2927,12 @@
       "subpage_discovery_pattern": "/singi/ai_onchain/(?:shiryou|siryou|gijiroku)/",
       "pdf_selector": "a[href*='.pdf'], a[href*='gijiroku']"
     },
+    "fsa-ai_rikatsuyou_kenkyukai": {
+      "template": "tpl-general-round-subpage",
+      "manualLock": true,
+      "subpage_discovery_pattern": "/singi/ai_2026/shiryou/\\d{8}\\.html",
+      "pdf_selector": "a[href*='.pdf']"
+    },
     "fsa-arikataken": {
       "template": "tpl-parent-table-direct",
       "manualLock": true
@@ -3013,6 +3019,12 @@
     "fsa-jouhou_security": {
       "template": "tpl-parent-table-direct",
       "manualLock": true
+    },
+    "fsa-kabushiki_shijou_kouzou": {
+      "template": "tpl-general-round-subpage",
+      "manualLock": true,
+      "subpage_discovery_pattern": "/singi/kabushikishijoukouzou/shiryou/\\d{8}\\.html",
+      "pdf_selector": "a[href*='.pdf']"
     },
     "fsa-kaikeikansa_arikata": {
       "template": "tpl-parent-table-direct",
@@ -3431,6 +3443,12 @@
     "fsa-tairyoushi_angou": {
       "template": "tpl-parent-table-direct",
       "manualLock": true
+    },
+    "fsa-taju_saimu_kondankai": {
+      "template": "tpl-general-round-subpage",
+      "manualLock": true,
+      "subpage_discovery_pattern": "/policy/kashikin/tajusaimukondankai/\\d{8}/\\d{8}\\.html",
+      "pdf_selector": "a[href*='.pdf']"
     },
     "fsa-tajuu_saimu_kaigi": {
       "template": "tpl-parent-table-direct",
@@ -14997,6 +15015,17 @@
       "consecutiveFailures": 0,
       "manualLockActive": true
     },
+    "fsa-ai_rikatsuyou_kenkyukai": {
+      "lastAttempt": "2026-11-25 21:08",
+      "result": "success",
+      "resultReason": "手動・LLM点検ワンストップ登録（開催回 1 件、資料 3 件）",
+      "extractionMethod": "manual",
+      "materialsCount": 3,
+      "datesCount": 1,
+      "failureReason": "",
+      "consecutiveFailures": 0,
+      "manualLockActive": true
+    },
     "fsa-arikataken": {
       "lastAttempt": "2026-11-22 21:24:49",
       "result": "success",
@@ -15202,6 +15231,17 @@
       "extractionMethod": "rule",
       "materialsCount": 5,
       "datesCount": 5,
+      "failureReason": "",
+      "consecutiveFailures": 0,
+      "manualLockActive": true
+    },
+    "fsa-kabushiki_shijou_kouzou": {
+      "lastAttempt": "2026-11-25 21:08",
+      "result": "success",
+      "resultReason": "手動・LLM点検ワンストップ登録（開催回 1 件、資料 3 件）",
+      "extractionMethod": "manual",
+      "materialsCount": 3,
+      "datesCount": 1,
       "failureReason": "",
       "consecutiveFailures": 0,
       "manualLockActive": true
@@ -16294,6 +16334,17 @@
       "failureReason": "",
       "consecutiveFailures": 0,
       "manualLockActive": false
+    },
+    "fsa-taju_saimu_kondankai": {
+      "lastAttempt": "2026-11-25 21:08",
+      "result": "success",
+      "resultReason": "手動・LLM点検ワンストップ登録（開催回 1 件、資料 15 件）",
+      "extractionMethod": "manual",
+      "materialsCount": 15,
+      "datesCount": 1,
+      "failureReason": "",
+      "consecutiveFailures": 0,
+      "manualLockActive": true
     },
     "fsa-tajuu_saimu_kaigi": {
       "lastAttempt": "2026-11-22 21:50:06",
@@ -29014,7 +29065,7 @@
     {
       "id": "jcrc-3006",
       "name": "委員会の活動等",
-      "ministry": "JCRC",
+      "ministry": "",
       "category": "COUNCIL",
       "officialUrl": "",
       "rejectedAt": "",
@@ -29212,7 +29263,7 @@
     {
       "id": "meti-3007",
       "name": "知的財産分科会（下記リンク、特許庁ホームページ「産業構造審議会について」をご覧ください）",
-      "ministry": "METI",
+      "ministry": "",
       "category": "COUNCIL",
       "officialUrl": "",
       "rejectedAt": "",
@@ -31795,7 +31846,7 @@
     {
       "id": "smea-3014",
       "name": "中小M&A・事業承継小委員会",
-      "ministry": "SMEA",
+      "ministry": "",
       "category": "COUNCIL",
       "officialUrl": "",
       "rejectedAt": "",
@@ -31804,7 +31855,7 @@
     {
       "id": "smea-3015",
       "name": "令和7年 中小企業の成長経営の実現に向けた研究会 配布資料",
-      "ministry": "SMEA",
+      "ministry": "",
       "category": "COUNCIL",
       "officialUrl": "",
       "rejectedAt": "",
@@ -31813,7 +31864,7 @@
     {
       "id": "smea-3016",
       "name": "令和6年",
-      "ministry": "SMEA",
+      "ministry": "",
       "category": "COUNCIL",
       "officialUrl": "",
       "rejectedAt": "",
@@ -31822,7 +31873,7 @@
     {
       "id": "smea-3017",
       "name": "地域の資金循環検討会",
-      "ministry": "SMEA",
+      "ministry": "",
       "category": "COUNCIL",
       "officialUrl": "",
       "rejectedAt": "",
@@ -31831,7 +31882,7 @@
     {
       "id": "smea-3018",
       "name": "ローカル・ゼブラ・エコシステムの構築に向けた社会的インパクト評価の活用実践に関する研究会",
-      "ministry": "SMEA",
+      "ministry": "",
       "category": "COUNCIL",
       "officialUrl": "",
       "rejectedAt": "",
@@ -31840,7 +31891,7 @@
     {
       "id": "smea-3019",
       "name": "地域の社会課題解決促進に向けたエコシステム研究会",
-      "ministry": "SMEA",
+      "ministry": "",
       "category": "COUNCIL",
       "officialUrl": "",
       "rejectedAt": "",
@@ -31849,7 +31900,7 @@
     {
       "id": "smea-3020",
       "name": "価値創造企業に関する賢人会議",
-      "ministry": "SMEA",
+      "ministry": "",
       "category": "COUNCIL",
       "officialUrl": "",
       "rejectedAt": "",
@@ -31858,7 +31909,7 @@
     {
       "id": "smea-3021",
       "name": "企業取引研究会",
-      "ministry": "SMEA",
+      "ministry": "",
       "category": "COUNCIL",
       "officialUrl": "",
       "rejectedAt": "",
@@ -31867,7 +31918,7 @@
     {
       "id": "smea-3022",
       "name": "知的財産取引適正化ワーキンググループ 報告書",
-      "ministry": "SMEA",
+      "ministry": "",
       "category": "COUNCIL",
       "officialUrl": "",
       "rejectedAt": "",
@@ -31876,7 +31927,7 @@
     {
       "id": "smea-3023",
       "name": "約束手形をはじめとする支払条件の改善に向けた検討会",
-      "ministry": "SMEA",
+      "ministry": "",
       "category": "COUNCIL",
       "officialUrl": "",
       "rejectedAt": "",
@@ -31885,7 +31936,7 @@
     {
       "id": "smea-3024",
       "name": "知的財産取引検討会",
-      "ministry": "SMEA",
+      "ministry": "",
       "category": "COUNCIL",
       "officialUrl": "",
       "rejectedAt": "",
@@ -31894,7 +31945,7 @@
     {
       "id": "smea-3025",
       "name": "地域の経営支援力強化に向けたよろず支援拠点のあり方検討会 報告書",
-      "ministry": "SMEA",
+      "ministry": "",
       "category": "COUNCIL",
       "officialUrl": "",
       "rejectedAt": "",
@@ -31903,7 +31954,7 @@
     {
       "id": "smea-3026",
       "name": "事業協同組合等の余裕金運用に関する検討会",
-      "ministry": "SMEA",
+      "ministry": "",
       "category": "COUNCIL",
       "officialUrl": "",
       "rejectedAt": "",
@@ -31912,7 +31963,7 @@
     {
       "id": "smea-3027",
       "name": "令和8年3月19日開催 中小企業・小規模事業者の人材マネジメントに関する研究会 配布資料",
-      "ministry": "SMEA",
+      "ministry": "",
       "category": "COUNCIL",
       "officialUrl": "",
       "rejectedAt": "",
@@ -31921,7 +31972,7 @@
     {
       "id": "smea-3028",
       "name": "中小企業・小規模事業者の人材戦略に関する有識者検討会",
-      "ministry": "SMEA",
+      "ministry": "",
       "category": "COUNCIL",
       "officialUrl": "",
       "rejectedAt": "",
@@ -31930,7 +31981,7 @@
     {
       "id": "smea-3029",
       "name": "中小企業・小規模事業者のデータ利活用に関する検討委員会",
-      "ministry": "SMEA",
+      "ministry": "",
       "category": "COUNCIL",
       "officialUrl": "",
       "rejectedAt": "",
@@ -31939,7 +31990,7 @@
     {
       "id": "smea-3030",
       "name": "小規模事業者の「稼ぐ力」の強化に向けた諸課題に関する検討会",
-      "ministry": "SMEA",
+      "ministry": "",
       "category": "COUNCIL",
       "officialUrl": "",
       "rejectedAt": "",
@@ -31948,7 +31999,7 @@
     {
       "id": "smea-3031",
       "name": "中小企業の事業承継・M&Aに関する検討会",
-      "ministry": "SMEA",
+      "ministry": "",
       "category": "COUNCIL",
       "officialUrl": "",
       "rejectedAt": "",
@@ -31957,7 +32008,7 @@
     {
       "id": "smea-3032",
       "name": "中小企業の親族内承継に関する検討会",
-      "ministry": "SMEA",
+      "ministry": "",
       "category": "COUNCIL",
       "officialUrl": "",
       "rejectedAt": "",
@@ -31966,7 +32017,7 @@
     {
       "id": "smea-3033",
       "name": "中小M&A市場の改革に向けた検討会",
-      "ministry": "SMEA",
+      "ministry": "",
       "category": "COUNCIL",
       "officialUrl": "",
       "rejectedAt": "",
@@ -31975,7 +32026,7 @@
     {
       "id": "smea-3034",
       "name": "中小M&Aガイドライン見直し検討小委員会",
-      "ministry": "SMEA",
+      "ministry": "",
       "category": "COUNCIL",
       "officialUrl": "",
       "rejectedAt": "",
@@ -31984,7 +32035,7 @@
     {
       "id": "smea-3035",
       "name": "事業引継ぎガイドライン」改訂検討会",
-      "ministry": "SMEA",
+      "ministry": "",
       "category": "COUNCIL",
       "officialUrl": "",
       "rejectedAt": "",
@@ -31993,7 +32044,7 @@
     {
       "id": "smea-3036",
       "name": "イノベーション・プロデュース推進会議",
-      "ministry": "SMEA",
+      "ministry": "",
       "category": "COUNCIL",
       "officialUrl": "",
       "rejectedAt": "",
@@ -32002,7 +32053,7 @@
     {
       "id": "smea-3037",
       "name": "イノベーション・プロデューサーガイドライン策定委員会",
-      "ministry": "SMEA",
+      "ministry": "",
       "category": "COUNCIL",
       "officialUrl": "",
       "rejectedAt": "",
@@ -32011,7 +32062,7 @@
     {
       "id": "smea-3038",
       "name": "中小企業の成長のためのイノベーション研究会",
-      "ministry": "SMEA",
+      "ministry": "",
       "category": "COUNCIL",
       "officialUrl": "",
       "rejectedAt": "",
@@ -32020,7 +32071,7 @@
     {
       "id": "smea-3039",
       "name": "中小企業のイノベーションの在り方に関する有識者検討会",
-      "ministry": "SMEA",
+      "ministry": "",
       "category": "COUNCIL",
       "officialUrl": "",
       "rejectedAt": "",
@@ -32029,7 +32080,7 @@
     {
       "id": "smea-3040",
       "name": "令和元年 特別編 スマートSME(中小企業)研究会 配布資料",
-      "ministry": "SMEA",
+      "ministry": "",
       "category": "COUNCIL",
       "officialUrl": "",
       "rejectedAt": "",
@@ -32038,7 +32089,7 @@
     {
       "id": "smea-3041",
       "name": "日本版SBIR制度の見直しに向けた検討会",
-      "ministry": "SMEA",
+      "ministry": "",
       "category": "COUNCIL",
       "officialUrl": "",
       "rejectedAt": "",
@@ -32047,7 +32098,7 @@
     {
       "id": "smea-3042",
       "name": "伴走支援の在り方検討会",
-      "ministry": "SMEA",
+      "ministry": "",
       "category": "COUNCIL",
       "officialUrl": "",
       "rejectedAt": "",
@@ -32056,7 +32107,7 @@
     {
       "id": "smea-3043",
       "name": "中小企業強靱化研究会",
-      "ministry": "SMEA",
+      "ministry": "",
       "category": "COUNCIL",
       "officialUrl": "",
       "rejectedAt": "",
@@ -32065,7 +32116,7 @@
     {
       "id": "smea-3044",
       "name": "平成26年 事業承継を中心とする事業活性化に関する検討会 中間報告について",
-      "ministry": "SMEA",
+      "ministry": "",
       "category": "COUNCIL",
       "officialUrl": "",
       "rejectedAt": "",
@@ -32074,7 +32125,7 @@
     {
       "id": "smea-3045",
       "name": "中小企業における再生M&A促進に向けた検討会",
-      "ministry": "SMEA",
+      "ministry": "",
       "category": "COUNCIL",
       "officialUrl": "",
       "rejectedAt": "",
@@ -32083,7 +32134,7 @@
     {
       "id": "smea-3046",
       "name": "新たなビジネスモデルを踏まえた商工中金の在り方検討会",
-      "ministry": "SMEA",
+      "ministry": "",
       "category": "COUNCIL",
       "officialUrl": "",
       "rejectedAt": "",
@@ -32092,7 +32143,7 @@
     {
       "id": "smea-3047",
       "name": "商工中金の経営及び危機対応業務に関する評価委員会 報告書について",
-      "ministry": "SMEA",
+      "ministry": "",
       "category": "COUNCIL",
       "officialUrl": "",
       "rejectedAt": "",
@@ -32101,7 +32152,7 @@
     {
       "id": "smea-3048",
       "name": "金融EDIにおける商流情報等のあり方検討会議",
-      "ministry": "SMEA",
+      "ministry": "",
       "category": "COUNCIL",
       "officialUrl": "",
       "rejectedAt": "",
@@ -32110,7 +32161,7 @@
     {
       "id": "smea-3049",
       "name": "知識サポート・経営改革プラットフォーム研究会",
-      "ministry": "SMEA",
+      "ministry": "",
       "category": "COUNCIL",
       "officialUrl": "",
       "rejectedAt": "",
@@ -32119,7 +32170,7 @@
     {
       "id": "smea-3050",
       "name": "中小企業の会計に関する研究会 中間報告書について",
-      "ministry": "SMEA",
+      "ministry": "",
       "category": "COUNCIL",
       "officialUrl": "",
       "rejectedAt": "",
@@ -32128,7 +32179,7 @@
     {
       "id": "smea-3051",
       "name": "中小企業の会計に関する研究会",
-      "ministry": "SMEA",
+      "ministry": "",
       "category": "COUNCIL",
       "officialUrl": "",
       "rejectedAt": "",
@@ -32137,7 +32188,7 @@
     {
       "id": "smea-3052",
       "name": "中小企業海外展開支援会議",
-      "ministry": "SMEA",
+      "ministry": "",
       "category": "COUNCIL",
       "officialUrl": "",
       "rejectedAt": "",
@@ -32146,7 +32197,7 @@
     {
       "id": "smea-3053",
       "name": "中小企業憲章に関する研究会",
-      "ministry": "SMEA",
+      "ministry": "",
       "category": "COUNCIL",
       "officialUrl": "",
       "rejectedAt": "",
@@ -32566,6 +32617,7 @@
       "fdma-okugai_keiho_gijutsukijun",
       "fdma-rinya_kasai_yobou",
       "fsa-ai_onchain",
+      "fsa-ai_rikatsuyou_kenkyukai",
       "fsa-arikataken",
       "fsa-ashigin_ukezara",
       "fsa-cg_code_kaitei",
@@ -32573,12 +32625,16 @@
       "fsa-corporategovernance_code",
       "fsa-digital_finance",
       "fsa-fintech_venture",
+      "fsa-impact_toushi",
       "fsa-japan_stewardship",
       "fsa-jouhou_security",
+      "fsa-kabushiki_shijou_kouzou",
       "fsa-kaikeikansa_arikata",
       "fsa-kakei_shisan",
+      "fsa-kansa_hojin_governance",
       "fsa-keizaikachi_solvency",
       "fsa-kensa_manual_kaitei",
+      "fsa-kessai_koudoka_kanmin",
       "fsa-kigyou_dai1_bukai",
       "fsa-kigyou_dai2_bukai",
       "fsa-kigyou_hoshou_bukai",
@@ -32588,6 +32644,7 @@
       "fsa-kigyou_kikaku_bukai",
       "fsa-kigyou_kotei_bukai",
       "fsa-kigyou_naibu_bukai",
+      "fsa-kikou_risk_scenario",
       "fsa-kinyu_angoshisan_wg",
       "fsa-kinyu_bunkakai",
       "fsa-kinyu_chiikikinyu_wg",
@@ -32648,14 +32705,18 @@
       "fsa-shotokukazei_ittaika",
       "fsa-shouken_shijou_chuukai",
       "fsa-social_bond",
+      "fsa-sonpo_kouzou_kadai",
       "fsa-stewardship_h28",
       "fsa-stewardship_r01",
       "fsa-stewardship_r06",
       "fsa-suisai_ryoritsu",
       "fsa-sustainable_finance",
+      "fsa-taju_saimu_kondankai",
+      "fsa-tentou_fx_kessai",
       "fsa-torihikijo_arikata",
       "fsa-transition_finance",
       "fsa-venture_capital",
+      "fsa-yuushi_kansa_kantoku",
       "fsc-bakuro_wg",
       "fsc-biseibutu_virus",
       "fsc-bpa_wg",
@@ -39390,6 +39451,7 @@
       "fdma-yobou_jisshi_taisei-20260806-001",
       "fdma-yobou_jisshi_taisei-20261104-002",
       "fsa-ai_onchain-20260930-001",
+      "fsa-ai_rikatsuyou_kenkyukai-20261124-001",
       "fsa-arikataken-20201104-001",
       "fsa-arikataken-20201125-002",
       "fsa-arikataken-20201216-003",
@@ -39484,6 +39546,16 @@
       "fsa-hyoutei_seido-20050518-013",
       "fsa-hyoutei_seido-20050525-014",
       "fsa-hyoutei_seido-20050617-015",
+      "fsa-impact_toushi-20221028-001",
+      "fsa-impact_toushi-20221111-002",
+      "fsa-impact_toushi-20221125-003",
+      "fsa-impact_toushi-20230130-004",
+      "fsa-impact_toushi-20230222-005",
+      "fsa-impact_toushi-20230322-006",
+      "fsa-impact_toushi-20230424-007",
+      "fsa-impact_toushi-20230529-008",
+      "fsa-impact_toushi-20240220-009",
+      "fsa-impact_toushi-20240329-s04",
       "fsa-japan_stewardship-20241018-001",
       "fsa-japan_stewardship-20241118-002",
       "fsa-japan_stewardship-20250226-003",
@@ -39495,6 +39567,7 @@
       "fsa-jouhou_security-20060309-001",
       "fsa-jouhou_security-20060410-002",
       "fsa-jouhou_security-20060601-003",
+      "fsa-kabushiki_shijou_kouzou-20261113-001",
       "fsa-kaikeikansa_arikata-20160308-004",
       "fsa-kaikeikansa_arikata-20210915-001",
       "fsa-kaikeikansa_arikata-20211011-002",
@@ -39502,9 +39575,16 @@
       "fsa-kakei_shisan-20170203-001",
       "fsa-kakei_shisan-20170315-003",
       "fsa-kakei_shisan-20170330-002",
+      "fsa-kansa_hojin_governance-20160714-s06",
+      "fsa-kansa_hojin_governance-20160715-001",
+      "fsa-kansa_hojin_governance-20160912-002",
+      "fsa-kansa_hojin_governance-20160930-003",
+      "fsa-kansa_hojin_governance-20161124-004",
+      "fsa-kansa_hojin_governance-20161205-005",
       "fsa-kansa_hojin_governance-20221024-006",
       "fsa-kansa_hojin_governance-20221114-007",
       "fsa-kansa_hojin_governance-20221213-008",
+      "fsa-kansa_hojin_governance-20230131-s04",
       "fsa-kansa_jouhou_teikyou-20181220-s02",
       "fsa-kashingyou_seido-20050330-001",
       "fsa-kashingyou_seido-20050427-002",
@@ -39562,6 +39642,13 @@
       "fsa-kensa_manual_kaitei-20061206-006",
       "fsa-kensa_manual_kaitei-20061213-007",
       "fsa-kensa_manual_kaitei-20061220-008",
+      "fsa-kessai_koudoka_kanmin-20160603-s04",
+      "fsa-kessai_koudoka_kanmin-20160608-001",
+      "fsa-kessai_koudoka_kanmin-20170111-002",
+      "fsa-kessai_koudoka_kanmin-20170621-003",
+      "fsa-kessai_koudoka_kanmin-20171220-004",
+      "fsa-kessai_koudoka_kanmin-20180611-005",
+      "fsa-kessai_koudoka_kanmin-20190129-006",
       "fsa-kessai_koudoka_kanmin-20190624-007",
       "fsa-kessai_koudoka_kanmin-20191223-008",
       "fsa-kessai_koudoka_kanmin-20210216-009",
@@ -39762,6 +39849,18 @@
       "fsa-kigyou_naibu_bukai-20221208-024",
       "fsa-kikan_jikosihon_zeisei-20031016-001",
       "fsa-kikan_jikosihon_zeisei-20031112-002",
+      "fsa-kikou_risk_scenario-20221222-001",
+      "fsa-kikou_risk_scenario-20230203-002",
+      "fsa-kikou_risk_scenario-20230309-003",
+      "fsa-kikou_risk_scenario-20230405-004",
+      "fsa-kikou_risk_scenario-20230517-005",
+      "fsa-kikou_risk_scenario-20230614-006",
+      "fsa-kikou_risk_scenario-20231010-007",
+      "fsa-kikou_risk_scenario-20231116-008",
+      "fsa-kikou_risk_scenario-20240207-009",
+      "fsa-kikou_risk_scenario-20240319-010",
+      "fsa-kikou_risk_scenario-20240610-011",
+      "fsa-kikou_risk_scenario-20240709-s07",
       "fsa-kinyu_angoshisan_wg-20250731-001",
       "fsa-kinyu_angoshisan_wg-20250902-002",
       "fsa-kinyu_angoshisan_wg-20250929-003",
@@ -40530,6 +40629,10 @@
       "fsa-social_bond-20210603-003",
       "fsa-social_bond-20210630-004",
       "fsa-social_bond-20220523-005",
+      "fsa-sonpo_kouzou_kadai-20240326-001",
+      "fsa-sonpo_kouzou_kadai-20240425-002",
+      "fsa-sonpo_kouzou_kadai-20240524-003",
+      "fsa-sonpo_kouzou_kadai-20240607-004",
       "fsa-startup_shikin-20250130-001",
       "fsa-startup_shikin-20250318-002",
       "fsa-startup_shikin-20250418-003",
@@ -40582,6 +40685,7 @@
       "fsa-sustainable_finance-20250527-028",
       "fsa-sustainable_finance-20250620-029",
       "fsa-sustainable_finance-20260623-030",
+      "fsa-taju_saimu_kondankai-20261028-001",
       "fsa-tajuu_saimu_kaigi-20070129-001",
       "fsa-tajuu_saimu_kaigi-20070207-002",
       "fsa-tajuu_saimu_kaigi-20070222-003",
@@ -40597,6 +40701,12 @@
       "fsa-tajuu_saimu_kaigi-20090519-013",
       "fsa-tajuu_saimu_kaigi-20090617-014",
       "fsa-tajuu_saimu_kaigi-20100326-015",
+      "fsa-tentou_fx_kessai-20171218-s02",
+      "fsa-tentou_fx_kessai-20180213-001",
+      "fsa-tentou_fx_kessai-20180312-002",
+      "fsa-tentou_fx_kessai-20180329-003",
+      "fsa-tentou_fx_kessai-20180413-004",
+      "fsa-tentou_fx_kessai-20180530-005",
       "fsa-tentou_fx_kessai-20180612-006",
       "fsa-torihikijo_arikata-20060206-001",
       "fsa-torihikijo_arikata-20060217-002",
@@ -40622,6 +40732,10 @@
       "fsa-transition_finance-20260227-013",
       "fsa-transition_finance-20260821-014",
       "fsa-venture_capital-20260618-004",
+      "fsa-yuushi_kansa_kantoku-20180704-001",
+      "fsa-yuushi_kansa_kantoku-20180910-002",
+      "fsa-yuushi_kansa_kantoku-20181002-003",
+      "fsa-yuushi_kansa_kantoku-20181029-004",
       "fsc-bakuro_wg-20250409-001",
       "fsc-bakuro_wg-20250521-002",
       "fsc-bakuro_wg-20250618-003",
@@ -75427,6 +75541,9 @@
       "fsa-ai_onchain-20260930-001:https://www.fsa.go.jp/singi/ai_onchain/gijiroku/20260930.html",
       "fsa-ai_onchain-20260930-001:https://www.fsa.go.jp/singi/ai_onchain/shiryou/20260930/01.pdf",
       "fsa-ai_onchain-20260930-001:https://www.fsa.go.jp/singi/ai_onchain/shiryou/20260930/02.pdf",
+      "fsa-ai_rikatsuyou_kenkyukai-20261124-001:https://www.fsa.go.jp/singi/ai_2026/shiryou/20261124/jimukyoku_1.pdf",
+      "fsa-ai_rikatsuyou_kenkyukai-20261124-001:https://www.fsa.go.jp/singi/ai_2026/shiryou/20261124/jimukyoku_2.pdf",
+      "fsa-ai_rikatsuyou_kenkyukai-20261124-001:https://www.fsa.go.jp/singi/ai_2026/shiryou/20261124/meibo.pdf",
       "fsa-digital_finance-20261020-001:https://www.fsa.go.jp/singi/digital_2026/gizi/261020.html",
       "fsa-digital_finance-20261020-001:https://www.fsa.go.jp/singi/digital_2026/shiryo/261020/hearing_1.pdf",
       "fsa-digital_finance-20261020-001:https://www.fsa.go.jp/singi/digital_2026/shiryo/261020/hearing_2.pdf",
@@ -75688,6 +75805,38 @@
       "fsa-hyoutei_seido-20050617-015:https://www.fsa.go.jp/singi/singi_hyoutei/gijiyousi/f-20050518-hyoutei.html",
       "fsa-hyoutei_seido-20050617-015:https://www.fsa.go.jp/singi/singi_hyoutei/gijiyousi/f-20050525-hyoutei.html",
       "fsa-hyoutei_seido-20050617-015:https://www.fsa.go.jp/singi/singi_hyoutei/gijiyousi/f-20050617-hyoutei.html",
+      "fsa-impact_toushi-20221028-001:https://www.fsa.go.jp/singi/impact/gijiroku/20221028.html",
+      "fsa-impact_toushi-20221028-001:https://www.fsa.go.jp/singi/impact/siryou/20221028/01.pdf",
+      "fsa-impact_toushi-20221028-001:https://www.fsa.go.jp/singi/impact/siryou/20221028/02.pdf",
+      "fsa-impact_toushi-20221111-002:https://www.fsa.go.jp/singi/impact/gijiroku/20221111.html",
+      "fsa-impact_toushi-20221111-002:https://www.fsa.go.jp/singi/impact/siryou/20221111/02.pdf",
+      "fsa-impact_toushi-20221111-002:https://www.fsa.go.jp/singi/impact/siryou/20221111/03.pdf",
+      "fsa-impact_toushi-20221111-002:https://www.fsa.go.jp/singi/impact/siryou/20221111/04.pdf",
+      "fsa-impact_toushi-20221125-003:https://www.fsa.go.jp/singi/impact/gijiroku/20221125.html",
+      "fsa-impact_toushi-20221125-003:https://www.fsa.go.jp/singi/impact/siryou/20221125/01.pdf",
+      "fsa-impact_toushi-20221125-003:https://www.fsa.go.jp/singi/impact/siryou/20221125/02.pdf",
+      "fsa-impact_toushi-20221125-003:https://www.fsa.go.jp/singi/impact/siryou/20221125/03.pdf",
+      "fsa-impact_toushi-20230130-004:https://www.fsa.go.jp/singi/impact/gijiroku/20230130.html",
+      "fsa-impact_toushi-20230130-004:https://www.fsa.go.jp/singi/impact/siryou/20230130/01.pdf",
+      "fsa-impact_toushi-20230222-005:https://www.fsa.go.jp/singi/impact/gijiroku/20230222.html",
+      "fsa-impact_toushi-20230222-005:https://www.fsa.go.jp/singi/impact/siryou/20230222/01.pdf",
+      "fsa-impact_toushi-20230322-006:https://www.fsa.go.jp/singi/impact/gijiroku/20230322.html",
+      "fsa-impact_toushi-20230322-006:https://www.fsa.go.jp/singi/impact/siryou/20230322/01.pdf",
+      "fsa-impact_toushi-20230322-006:https://www.fsa.go.jp/singi/impact/siryou/20230322/02.pdf",
+      "fsa-impact_toushi-20230322-006:https://www.fsa.go.jp/singi/impact/siryou/20230322/03.pdf",
+      "fsa-impact_toushi-20230424-007:https://www.fsa.go.jp/singi/impact/gijiroku/20230424.html",
+      "fsa-impact_toushi-20230424-007:https://www.fsa.go.jp/singi/impact/siryou/20230424/02.pdf",
+      "fsa-impact_toushi-20230424-007:https://www.fsa.go.jp/singi/impact/siryou/20230424/03.pdf",
+      "fsa-impact_toushi-20230529-008:https://www.fsa.go.jp/singi/impact/gijiroku/20230529.html",
+      "fsa-impact_toushi-20230529-008:https://www.fsa.go.jp/singi/impact/siryou/20230529/01.pdf",
+      "fsa-impact_toushi-20230529-008:https://www.fsa.go.jp/singi/impact/siryou/20230529/02.pdf",
+      "fsa-impact_toushi-20240220-009:https://www.fsa.go.jp/singi/impact/gijiroku/20240220.html",
+      "fsa-impact_toushi-20240220-009:https://www.fsa.go.jp/singi/impact/siryou/20240220/01.pdf",
+      "fsa-impact_toushi-20240329-s04:https://www.fsa.go.jp/singi/impact/siryou/20240329/01.pdf",
+      "fsa-impact_toushi-20240329-s04:https://www.fsa.go.jp/singi/impact/siryou/20240329/02.pdf",
+      "fsa-impact_toushi-20240329-s04:https://www.fsa.go.jp/singi/impact/siryou/20240329/03.pdf",
+      "fsa-impact_toushi-20240329-s04:https://www.fsa.go.jp/singi/impact/siryou/20240329/04.pdf",
+      "fsa-impact_toushi-20240329-s04:https://www.fsa.go.jp/singi/impact/siryou/20240329/05.pdf",
       "fsa-jibaiseki_shingi-20010316-001:https://www.fsa.go.jp/singi/singi_zidousya/siryou/f-20010316-1/f-20010316-1a.pdf",
       "fsa-jibaiseki_shingi-20010316-001:https://www.fsa.go.jp/singi/singi_zidousya/siryou/f-20010316-1/f-20010316-1b.pdf",
       "fsa-jibaiseki_shingi-20010316-001:https://www.fsa.go.jp/singi/singi_zidousya/siryou/f-20010316-1/f-20010316-1c.pdf",
@@ -75718,6 +75867,30 @@
       "fsa-jibaiseki_shingi-20260430-152:https://www.fsa.go.jp/singi/singi_zidousya/siryou/20260430/08_153.pdf",
       "fsa-jibaiseki_shingi-20260430-152:https://www.fsa.go.jp/singi/singi_zidousya/siryou/20260430/shimontoshin_153draft.pdf",
       "fsa-jibaiseki_shingi-20260430-152:https://www.fsa.go.jp/singi/singi_zidousya/siryou/20260430/siryou_20260430.pdf",
+      "fsa-kabushiki_shijou_kouzou-20261113-001:https://www.fsa.go.jp/singi/kabushikishijoukouzou/shiryou/20261113/jimukyoku.pdf",
+      "fsa-kabushiki_shijou_kouzou-20261113-001:https://www.fsa.go.jp/singi/kabushikishijoukouzou/shiryou/20261113/meibo.pdf",
+      "fsa-kabushiki_shijou_kouzou-20261113-001:https://www.fsa.go.jp/singi/kabushikishijoukouzou/shiryou/20261113/presentation.pdf",
+      "fsa-kansa_hojin_governance-20160715-001:https://www.fsa.go.jp/singi/governance_code/gijiroku/20160715.html",
+      "fsa-kansa_hojin_governance-20160715-001:https://www.fsa.go.jp/singi/governance_code/siryou/20160715/01.pdf",
+      "fsa-kansa_hojin_governance-20160715-001:https://www.fsa.go.jp/singi/governance_code/siryou/20160715/02.pdf",
+      "fsa-kansa_hojin_governance-20160715-001:https://www.fsa.go.jp/singi/governance_code/siryou/20160715/03.pdf",
+      "fsa-kansa_hojin_governance-20160715-001:https://www.fsa.go.jp/singi/governance_code/siryou/20160715/04.pdf",
+      "fsa-kansa_hojin_governance-20160912-002:https://www.fsa.go.jp/singi/governance_code/gijiroku/20160912.html",
+      "fsa-kansa_hojin_governance-20160912-002:https://www.fsa.go.jp/singi/governance_code/siryou/20160912/01.pdf",
+      "fsa-kansa_hojin_governance-20160912-002:https://www.fsa.go.jp/singi/governance_code/siryou/20160912/02.pdf",
+      "fsa-kansa_hojin_governance-20160912-002:https://www.fsa.go.jp/singi/governance_code/siryou/20160912/03.pdf",
+      "fsa-kansa_hojin_governance-20160912-002:https://www.fsa.go.jp/singi/governance_code/siryou/20160912/04.pdf",
+      "fsa-kansa_hojin_governance-20160930-003:https://www.fsa.go.jp/singi/governance_code/gijiroku/20160930.html",
+      "fsa-kansa_hojin_governance-20160930-003:https://www.fsa.go.jp/singi/governance_code/siryou/20160930/01.pdf",
+      "fsa-kansa_hojin_governance-20160930-003:https://www.fsa.go.jp/singi/governance_code/siryou/20160930/02.pdf",
+      "fsa-kansa_hojin_governance-20160930-003:https://www.fsa.go.jp/singi/governance_code/siryou/20160930/03.pdf",
+      "fsa-kansa_hojin_governance-20160930-003:https://www.fsa.go.jp/singi/governance_code/siryou/20160930/04.pdf",
+      "fsa-kansa_hojin_governance-20161124-004:https://www.fsa.go.jp/singi/governance_code/gijiroku/20161124.html",
+      "fsa-kansa_hojin_governance-20161124-004:https://www.fsa.go.jp/singi/governance_code/siryou/20161124/01.pdf",
+      "fsa-kansa_hojin_governance-20161205-005:https://www.fsa.go.jp/singi/governance_code/gijiroku/20161205.html",
+      "fsa-kansa_hojin_governance-20161205-005:https://www.fsa.go.jp/singi/governance_code/siryou/20161205/01.pdf",
+      "fsa-kansa_hojin_governance-20230131-s04:https://www.fsa.go.jp/news/r4/sonota/20221226_2/01.pdf",
+      "fsa-kansa_hojin_governance-20230131-s04:https://www.fsa.go.jp/news/r4/sonota/20221226_2/02.pdf",
       "fsa-keizai_kyouiku_kondan-20050303-001:https://www.fsa.go.jp/news/newsj/16/singi/f-20050630-2/02.pdf",
       "fsa-keizai_kyouiku_kondan-20050303-001:https://www.fsa.go.jp/singi/singi_keizai_kyouiku/gijiyousi/20060515.html",
       "fsa-keizai_kyouiku_kondan-20050303-001:https://www.fsa.go.jp/singi/singi_keizai_kyouiku/gijiyousi/f-20050303-keizai_kyouiku.html",
@@ -75795,14 +75968,117 @@
       "fsa-keizaikachi_solvency-20191021-004:https://www.fsa.go.jp/singi/keizaikachi/siryou/20191021/01.pdf",
       "fsa-keizaikachi_solvency-20191021-004:https://www.fsa.go.jp/singi/keizaikachi/siryou/20191021/02.pdf",
       "fsa-keizaikachi_solvency-20191118-005:https://www.fsa.go.jp/singi/keizaikachi/siryou/20191118/01.pdf",
+      "fsa-kessai_koudoka_kanmin-20160608-001:https://www.fsa.go.jp/singi/kessai_kanmin/gijiroku/20160608.html",
+      "fsa-kessai_koudoka_kanmin-20160608-001:https://www.fsa.go.jp/singi/kessai_kanmin/siryou/20160608/01.pdf",
+      "fsa-kessai_koudoka_kanmin-20160608-001:https://www.fsa.go.jp/singi/kessai_kanmin/siryou/20160608/02.pdf",
+      "fsa-kessai_koudoka_kanmin-20160608-001:https://www.fsa.go.jp/singi/kessai_kanmin/siryou/20160608/03.pdf",
+      "fsa-kessai_koudoka_kanmin-20160608-001:https://www.fsa.go.jp/singi/kessai_kanmin/siryou/20160608/04.pdf",
+      "fsa-kessai_koudoka_kanmin-20170111-002:https://www.fsa.go.jp/singi/kessai_kanmin/gijiroku/20170111.html",
+      "fsa-kessai_koudoka_kanmin-20170111-002:https://www.fsa.go.jp/singi/kessai_kanmin/siryou/20170111/01.pdf",
+      "fsa-kessai_koudoka_kanmin-20170111-002:https://www.fsa.go.jp/singi/kessai_kanmin/siryou/20170111/02.pdf",
+      "fsa-kessai_koudoka_kanmin-20170111-002:https://www.fsa.go.jp/singi/kessai_kanmin/siryou/20170111/03.pdf",
+      "fsa-kessai_koudoka_kanmin-20170621-003:https://www.fsa.go.jp/singi/kessai_kanmin/gijiroku/20170621.html",
+      "fsa-kessai_koudoka_kanmin-20170621-003:https://www.fsa.go.jp/singi/kessai_kanmin/siryou/20170621/01.pdf",
+      "fsa-kessai_koudoka_kanmin-20170621-003:https://www.fsa.go.jp/singi/kessai_kanmin/siryou/20170621/02.pdf",
+      "fsa-kessai_koudoka_kanmin-20170621-003:https://www.fsa.go.jp/singi/kessai_kanmin/siryou/20170621/03.pdf",
+      "fsa-kessai_koudoka_kanmin-20170621-003:https://www.fsa.go.jp/singi/kessai_kanmin/siryou/20170621/04.pdf",
+      "fsa-kessai_koudoka_kanmin-20170621-003:https://www.fsa.go.jp/singi/kessai_kanmin/siryou/20170621/05.pdf",
+      "fsa-kessai_koudoka_kanmin-20170621-003:https://www.fsa.go.jp/singi/kessai_kanmin/siryou/20170621/06.pdf",
+      "fsa-kessai_koudoka_kanmin-20170621-003:https://www.fsa.go.jp/singi/kessai_kanmin/siryou/20170621/07.pdf",
+      "fsa-kessai_koudoka_kanmin-20170621-003:https://www.fsa.go.jp/singi/kessai_kanmin/siryou/20170621/08.pdf",
+      "fsa-kessai_koudoka_kanmin-20170621-003:https://www.fsa.go.jp/singi/kessai_kanmin/siryou/20170621/09.pdf",
+      "fsa-kessai_koudoka_kanmin-20171220-004:https://www.fsa.go.jp/singi/kessai_kanmin/gijiroku/20171220.html",
+      "fsa-kessai_koudoka_kanmin-20171220-004:https://www.fsa.go.jp/singi/kessai_kanmin/siryou/20171220/01.pdf",
+      "fsa-kessai_koudoka_kanmin-20171220-004:https://www.fsa.go.jp/singi/kessai_kanmin/siryou/20171220/02.pdf",
+      "fsa-kessai_koudoka_kanmin-20171220-004:https://www.fsa.go.jp/singi/kessai_kanmin/siryou/20171220/03.pdf",
+      "fsa-kessai_koudoka_kanmin-20171220-004:https://www.fsa.go.jp/singi/kessai_kanmin/siryou/20171220/04.pdf",
+      "fsa-kessai_koudoka_kanmin-20180611-005:https://www.fsa.go.jp/singi/kessai_kanmin/gijiroku/20180611.html",
+      "fsa-kessai_koudoka_kanmin-20180611-005:https://www.fsa.go.jp/singi/kessai_kanmin/siryou/20180611/01.pdf",
+      "fsa-kessai_koudoka_kanmin-20180611-005:https://www.fsa.go.jp/singi/kessai_kanmin/siryou/20180611/02.pdf",
+      "fsa-kessai_koudoka_kanmin-20180611-005:https://www.fsa.go.jp/singi/kessai_kanmin/siryou/20180611/03.pdf",
+      "fsa-kessai_koudoka_kanmin-20180611-005:https://www.fsa.go.jp/singi/kessai_kanmin/siryou/20180611/04.pdf",
+      "fsa-kessai_koudoka_kanmin-20180611-005:https://www.fsa.go.jp/singi/kessai_kanmin/siryou/20180611/05.pdf",
+      "fsa-kessai_koudoka_kanmin-20180611-005:https://www.fsa.go.jp/singi/kessai_kanmin/siryou/20180611/06.pdf",
+      "fsa-kessai_koudoka_kanmin-20190129-006:https://www.fsa.go.jp/singi/kessai_kanmin/gijiroku/20190129.html",
+      "fsa-kessai_koudoka_kanmin-20190129-006:https://www.fsa.go.jp/singi/kessai_kanmin/siryou/20190129/01.pdf",
+      "fsa-kessai_koudoka_kanmin-20190129-006:https://www.fsa.go.jp/singi/kessai_kanmin/siryou/20190129/02.pdf",
+      "fsa-kessai_koudoka_kanmin-20190129-006:https://www.fsa.go.jp/singi/kessai_kanmin/siryou/20190129/03.pdf",
+      "fsa-kessai_koudoka_kanmin-20190129-006:https://www.fsa.go.jp/singi/kessai_kanmin/siryou/20190129/04.pdf",
+      "fsa-kessai_koudoka_kanmin-20190129-006:https://www.fsa.go.jp/singi/kessai_kanmin/siryou/20190129/05.pdf",
+      "fsa-kessai_koudoka_kanmin-20190129-006:https://www.fsa.go.jp/singi/kessai_kanmin/siryou/20190129/07.pdf",
+      "fsa-kessai_koudoka_kanmin-20190129-006:https://www.fsa.go.jp/singi/kessai_kanmin/siryou/20190129/09.pdf",
+      "fsa-kessai_koudoka_kanmin-20190129-006:https://www.fsa.go.jp/singi/kessai_kanmin/siryou/20190129/10.pdf",
+      "fsa-kessai_koudoka_kanmin-20190129-006:https://www.fsa.go.jp/singi/kessai_kanmin/siryou/20190129/12.pdf",
       "fsa-kigyou_hoshou_bukai-20261029-003:https://www.fsa.go.jp/singi/singi_kigyou/siryou/hoshou/20261029/01.pdf",
       "fsa-kigyou_hoshou_bukai-20261029-003:https://www.fsa.go.jp/singi/singi_kigyou/siryou/hoshou/20261029/02.pdf",
       "fsa-kigyou_hoshou_bukai-20261029-003:https://www.fsa.go.jp/singi/singi_kigyou/siryou/hoshou/20261029/03.pdf",
+      "fsa-kigyou_kansa_bukai-20260424-056:https://www.fsa.go.jp/singi/singi_kigyou/gijiroku/kansa/20260424.html",
+      "fsa-kigyou_kansa_bukai-20260424-056:https://www.fsa.go.jp/singi/singi_kigyou/siryou/kansa/20260424/01.pdf",
+      "fsa-kigyou_kansa_bukai-20260424-056:https://www.fsa.go.jp/singi/singi_kigyou/siryou/kansa/20260424/02.pdf",
+      "fsa-kigyou_kansa_bukai-20260424-056:https://www.fsa.go.jp/singi/singi_kigyou/siryou/kansa/20260424/03.pdf",
+      "fsa-kigyou_kansa_bukai-20260424-056:https://www.fsa.go.jp/singi/singi_kigyou/siryou/kansa/20260424/04.pdf",
+      "fsa-kigyou_kansa_bukai-20260424-056:https://www.fsa.go.jp/singi/singi_kigyou/siryou/kansa/20260424/05.pdf",
       "fsa-kigyou_kansa_bukai-20261002-057:https://www.fsa.go.jp/singi/singi_kigyou/gijiroku/kansa/20261023.html",
       "fsa-kigyou_kansa_bukai-20261002-057:https://www.fsa.go.jp/singi/singi_kigyou/siryou/kansa/20261002/01.pdf",
       "fsa-kigyou_kansa_bukai-20261002-057:https://www.fsa.go.jp/singi/singi_kigyou/siryou/kansa/20261002/02.pdf",
       "fsa-kigyou_kansa_bukai-20261002-057:https://www.fsa.go.jp/singi/singi_kigyou/siryou/kansa/20261002/03.pdf",
       "fsa-kigyou_kansa_bukai-20261002-057:https://www.fsa.go.jp/singi/singi_kigyou/siryou/kansa/20261002/04.pdf",
+      "fsa-kikou_risk_scenario-20221222-001:https://www.fsa.go.jp/singi/scenario_data/gijiyousi/20221222.html",
+      "fsa-kikou_risk_scenario-20221222-001:https://www.fsa.go.jp/singi/scenario_data/siryou/20221222/01.pdf",
+      "fsa-kikou_risk_scenario-20221222-001:https://www.fsa.go.jp/singi/scenario_data/siryou/20221222/02.pdf",
+      "fsa-kikou_risk_scenario-20221222-001:https://www.fsa.go.jp/singi/scenario_data/siryou/20221222/03.pdf",
+      "fsa-kikou_risk_scenario-20221222-001:https://www.fsa.go.jp/singi/scenario_data/siryou/20221222/04.pdf",
+      "fsa-kikou_risk_scenario-20221222-001:https://www.fsa.go.jp/singi/scenario_data/siryou/20221222/05.pdf",
+      "fsa-kikou_risk_scenario-20221222-001:https://www.fsa.go.jp/singi/scenario_data/siryou/20221222/06.pdf",
+      "fsa-kikou_risk_scenario-20221222-001:https://www.fsa.go.jp/singi/scenario_data/siryou/20221222/07.pdf",
+      "fsa-kikou_risk_scenario-20221222-001:https://www.fsa.go.jp/singi/scenario_data/siryou/20221222/08.pdf",
+      "fsa-kikou_risk_scenario-20230203-002:https://www.fsa.go.jp/singi/scenario_data/gijiyousi/20230203.html",
+      "fsa-kikou_risk_scenario-20230203-002:https://www.fsa.go.jp/singi/scenario_data/siryou/20230203/01.pdf",
+      "fsa-kikou_risk_scenario-20230203-002:https://www.fsa.go.jp/singi/scenario_data/siryou/20230203/02.pdf",
+      "fsa-kikou_risk_scenario-20230203-002:https://www.fsa.go.jp/singi/scenario_data/siryou/20230203/03.pdf",
+      "fsa-kikou_risk_scenario-20230203-002:https://www.fsa.go.jp/singi/scenario_data/siryou/20230203/04.pdf",
+      "fsa-kikou_risk_scenario-20230309-003:https://www.fsa.go.jp/singi/scenario_data/gijiyousi/20230309.html",
+      "fsa-kikou_risk_scenario-20230309-003:https://www.fsa.go.jp/singi/scenario_data/siryou/20230309/01.pdf",
+      "fsa-kikou_risk_scenario-20230309-003:https://www.fsa.go.jp/singi/scenario_data/siryou/20230309/02.pdf",
+      "fsa-kikou_risk_scenario-20230309-003:https://www.fsa.go.jp/singi/scenario_data/siryou/20230309/03.pdf",
+      "fsa-kikou_risk_scenario-20230405-004:https://www.fsa.go.jp/singi/scenario_data/gijiyousi/20230405.html",
+      "fsa-kikou_risk_scenario-20230405-004:https://www.fsa.go.jp/singi/scenario_data/siryou/20230405/01.pdf",
+      "fsa-kikou_risk_scenario-20230405-004:https://www.fsa.go.jp/singi/scenario_data/siryou/20230405/02.pdf",
+      "fsa-kikou_risk_scenario-20230405-004:https://www.fsa.go.jp/singi/scenario_data/siryou/20230405/03.pdf",
+      "fsa-kikou_risk_scenario-20230405-004:https://www.fsa.go.jp/singi/scenario_data/siryou/20230405/04.pdf",
+      "fsa-kikou_risk_scenario-20230517-005:https://www.fsa.go.jp/singi/scenario_data/gijiyousi/20230517.html",
+      "fsa-kikou_risk_scenario-20230614-006:https://www.fsa.go.jp/singi/scenario_data/gijiyousi/20230614.html",
+      "fsa-kikou_risk_scenario-20231010-007:https://www.fsa.go.jp/singi/scenario_data/gijiyousi/20231010.html",
+      "fsa-kikou_risk_scenario-20231010-007:https://www.fsa.go.jp/singi/scenario_data/siryou/20231010/01.pdf",
+      "fsa-kikou_risk_scenario-20231010-007:https://www.fsa.go.jp/singi/scenario_data/siryou/20231010/02.pdf",
+      "fsa-kikou_risk_scenario-20231010-007:https://www.fsa.go.jp/singi/scenario_data/siryou/20231010/04.pdf",
+      "fsa-kikou_risk_scenario-20231010-007:https://www.fsa.go.jp/singi/scenario_data/siryou/20231010/05.pdf",
+      "fsa-kikou_risk_scenario-20231010-007:https://www.fsa.go.jp/singi/scenario_data/siryou/20231010/06.pdf",
+      "fsa-kikou_risk_scenario-20231010-007:https://www.fsa.go.jp/singi/scenario_data/siryou/20231010/07.pdf",
+      "fsa-kikou_risk_scenario-20231116-008:https://www.fsa.go.jp/singi/scenario_data/gijiyousi/20231116.html",
+      "fsa-kikou_risk_scenario-20231116-008:https://www.fsa.go.jp/singi/scenario_data/siryou/20231116/01.pdf",
+      "fsa-kikou_risk_scenario-20231116-008:https://www.fsa.go.jp/singi/scenario_data/siryou/20231116/02.pdf",
+      "fsa-kikou_risk_scenario-20231116-008:https://www.fsa.go.jp/singi/scenario_data/siryou/20231116/05.pdf",
+      "fsa-kikou_risk_scenario-20240207-009:https://www.fsa.go.jp/singi/scenario_data/gijiyousi/20240207.html",
+      "fsa-kikou_risk_scenario-20240207-009:https://www.fsa.go.jp/singi/scenario_data/siryou/20240207/01.pdf",
+      "fsa-kikou_risk_scenario-20240207-009:https://www.fsa.go.jp/singi/scenario_data/siryou/20240207/02.pdf",
+      "fsa-kikou_risk_scenario-20240207-009:https://www.fsa.go.jp/singi/scenario_data/siryou/20240207/03.pdf",
+      "fsa-kikou_risk_scenario-20240207-009:https://www.fsa.go.jp/singi/scenario_data/siryou/20240207/04.pdf",
+      "fsa-kikou_risk_scenario-20240207-009:https://www.fsa.go.jp/singi/scenario_data/siryou/20240207/05.pdf",
+      "fsa-kikou_risk_scenario-20240207-009:https://www.fsa.go.jp/singi/scenario_data/siryou/20240207/06.pdf",
+      "fsa-kikou_risk_scenario-20240207-009:https://www.fsa.go.jp/singi/scenario_data/siryou/20240207/07.pdf",
+      "fsa-kikou_risk_scenario-20240319-010:https://www.fsa.go.jp/singi/scenario_data/gijiyousi/20240319.html",
+      "fsa-kikou_risk_scenario-20240319-010:https://www.fsa.go.jp/singi/scenario_data/siryou/20240319/01.pdf",
+      "fsa-kikou_risk_scenario-20240319-010:https://www.fsa.go.jp/singi/scenario_data/siryou/20240319/02.pdf",
+      "fsa-kikou_risk_scenario-20240319-010:https://www.fsa.go.jp/singi/scenario_data/siryou/20240319/03.pdf",
+      "fsa-kikou_risk_scenario-20240319-010:https://www.fsa.go.jp/singi/scenario_data/siryou/20240319/04.pdf",
+      "fsa-kikou_risk_scenario-20240319-010:https://www.fsa.go.jp/singi/scenario_data/siryou/20240319/05.pdf",
+      "fsa-kikou_risk_scenario-20240610-011:https://www.fsa.go.jp/singi/scenario_data/gijiyousi/20240610.html",
+      "fsa-kikou_risk_scenario-20240610-011:https://www.fsa.go.jp/singi/scenario_data/siryou/20240610/1.pdf",
+      "fsa-kikou_risk_scenario-20240610-011:https://www.fsa.go.jp/singi/scenario_data/siryou/20240610/2.pdf",
+      "fsa-kikou_risk_scenario-20240709-s07:https://www.fsa.go.jp/singi/scenario_data/siryou/20240709/01.pdf",
+      "fsa-kikou_risk_scenario-20240709-s07:https://www.fsa.go.jp/singi/scenario_data/siryou/20240709/02.pdf",
+      "fsa-kikou_risk_scenario-20240709-s07:https://www.fsa.go.jp/singi/scenario_data/siryou/20240709/03.xlsx",
       "fsa-kinyu_chukai-20151221-001:https://www.fsa.go.jp/singi/kinyuchukai/siryou/20151221/01.pdf",
       "fsa-kinyu_chukai-20151221-001:https://www.fsa.go.jp/singi/kinyuchukai/siryou/20151221/02.pdf",
       "fsa-kinyu_chukai-20151221-001:https://www.fsa.go.jp/singi/kinyuchukai/siryou/20151221/03.pdf",
@@ -75859,8 +76135,23 @@
       "fsa-kinyu_kinou_kyouka-20220304-028:https://www.fsa.go.jp/singi/soff/gijiroku/20220304/28_b.pdf",
       "fsa-kinyu_kinou_kyouka-20220901-029:https://www.fsa.go.jp/singi/soff/gijiroku/20220901/29_b.pdf",
       "fsa-kinyu_kinou_kyouka-20230511-030:https://www.fsa.go.jp/singi/soff/gijiroku/20230511/30_b.pdf",
+      "fsa-kinyu_seityousikin_wg-20260916-001:https://www.fsa.go.jp/singi/singi_kinyu/base_gijiroku.html",
       "fsa-kinyu_seityousikin_wg-20260916-001:https://www.fsa.go.jp/singi/singi_kinyu/seityousikin_wg/gijiroku/20260916.html",
+      "fsa-kinyu_seityousikin_wg-20260916-001:https://www.fsa.go.jp/singi/singi_kinyu/seityousikin_wg/gijishidai/20260916/01.pdf",
+      "fsa-kinyu_seityousikin_wg-20260916-001:https://www.fsa.go.jp/singi/singi_kinyu/seityousikin_wg/gijishidai/20260916/02.pdf",
+      "fsa-kinyu_seityousikin_wg-20260916-001:https://www.fsa.go.jp/singi/singi_kinyu/seityousikin_wg/gijishidai/20260916/03.pdf",
+      "fsa-kinyu_seityousikin_wg-20260916-001:https://www.fsa.go.jp/singi/singi_kinyu/seityousikin_wg/gijishidai/20260916/04.pdf",
+      "fsa-kinyu_seityousikin_wg-20260916-001:https://www.fsa.go.jp/singi/singi_kinyu/seityousikin_wg/gijishidai/20260916/05.pdf",
+      "fsa-kinyu_seityousikin_wg-20260916-001:https://www.fsa.go.jp/singi/singi_kinyu/seityousikin_wg/gijishidai/20260916/06.pdf",
+      "fsa-kinyu_seityousikin_wg-20260916-001:https://www.fsa.go.jp/singi/singi_kinyu/seityousikin_wg/gijishidai/20260916/07.pdf",
+      "fsa-kinyu_seityousikin_wg-20260916-001:https://www.fsa.go.jp/singi/singi_kinyu/seityousikin_wg/gijishidai/20260916/08.pdf",
+      "fsa-kinyu_seityousikin_wg-20260916-001:https://www.fsa.go.jp/singi/singi_kinyu/seityousikin_wg/gijishidai/20260916/09.pdf",
       "fsa-kinyu_seityousikin_wg-20261009-002:https://www.fsa.go.jp/singi/singi_kinyu/seityousikin_wg/gijiroku/20261009.html",
+      "fsa-kinyu_seityousikin_wg-20261009-002:https://www.fsa.go.jp/singi/singi_kinyu/seityousikin_wg/gijishidai/20261009/01.pdf",
+      "fsa-kinyu_seityousikin_wg-20261009-002:https://www.fsa.go.jp/singi/singi_kinyu/seityousikin_wg/gijishidai/20261009/02.pdf",
+      "fsa-kinyu_seityousikin_wg-20261009-002:https://www.fsa.go.jp/singi/singi_kinyu/seityousikin_wg/gijishidai/20261009/03.pdf",
+      "fsa-kinyu_seityousikin_wg-20261009-002:https://www.fsa.go.jp/singi/singi_kinyu/seityousikin_wg/gijishidai/20261009/04.pdf",
+      "fsa-kinyu_seityousikin_wg-20261009-002:https://www.fsa.go.jp/singi/singi_kinyu/seityousikin_wg/gijishidai/20261009/05.pdf",
       "fsa-kinyu_seityousikin_wg-20261109-003:https://www.fsa.go.jp/singi/singi_kinyu/seityousikin_wg/gijishidai/20261109/01.pdf",
       "fsa-kinyu_seityousikin_wg-20261109-003:https://www.fsa.go.jp/singi/singi_kinyu/seityousikin_wg/gijishidai/20261109/02.pdf",
       "fsa-kinyu_seityousikin_wg-20261109-003:https://www.fsa.go.jp/singi/singi_kinyu/seityousikin_wg/gijishidai/20261109/03.pdf",
@@ -76543,6 +76834,19 @@
       "fsa-kinyu_trouble-20260619-070:https://www.fsa.go.jp/singi/singi_trouble/siryou/20260619/32.pdf",
       "fsa-kinyu_trouble-20260619-070:https://www.fsa.go.jp/singi/singi_trouble/siryou/20260619/40.pdf",
       "fsa-monitoring-20170224-006:https://www.fsa.go.jp/news/28/singi/20170317-1/01.pdf",
+      "fsa-sonpo_kouzou_kadai-20240326-001:https://www.fsa.go.jp/singi/sonpo/gijiroku/20240326.html",
+      "fsa-sonpo_kouzou_kadai-20240326-001:https://www.fsa.go.jp/singi/sonpo/siryou/20240326/siryou1.pdf",
+      "fsa-sonpo_kouzou_kadai-20240326-001:https://www.fsa.go.jp/singi/sonpo/siryou/20240326/siryou2.pdf",
+      "fsa-sonpo_kouzou_kadai-20240326-001:https://www.fsa.go.jp/singi/sonpo/siryou/20240326/siryou3.pdf",
+      "fsa-sonpo_kouzou_kadai-20240425-002:https://www.fsa.go.jp/singi/sonpo/gijiroku/20240425.html",
+      "fsa-sonpo_kouzou_kadai-20240425-002:https://www.fsa.go.jp/singi/sonpo/siryou/20240425/siryou1.pdf",
+      "fsa-sonpo_kouzou_kadai-20240524-003:https://www.fsa.go.jp/singi/sonpo/gijiroku/20240524.html",
+      "fsa-sonpo_kouzou_kadai-20240524-003:https://www.fsa.go.jp/singi/sonpo/siryou/20240524/siryou1.pdf",
+      "fsa-sonpo_kouzou_kadai-20240524-003:https://www.fsa.go.jp/singi/sonpo/siryou/20240524/siryou2.pdf",
+      "fsa-sonpo_kouzou_kadai-20240524-003:https://www.fsa.go.jp/singi/sonpo/siryou/20240524/siryou3.pdf",
+      "fsa-sonpo_kouzou_kadai-20240607-004:https://www.fsa.go.jp/singi/sonpo/gijiroku/20240607.html",
+      "fsa-sonpo_kouzou_kadai-20240607-004:https://www.fsa.go.jp/singi/sonpo/siryou/20240607/siryou1.pdf",
+      "fsa-sonpo_kouzou_kadai-20240607-004:https://www.fsa.go.jp/singi/sonpo/siryou/20240607/siryou2.pdf",
       "fsa-suisai_ryoritsu-20210625-001:https://www.fsa.go.jp/singi/suisai/siryou/20210625/01.pdf",
       "fsa-suisai_ryoritsu-20210625-001:https://www.fsa.go.jp/singi/suisai/siryou/20210625/02.pdf",
       "fsa-suisai_ryoritsu-20210625-001:https://www.fsa.go.jp/singi/suisai/siryou/20210625/03.pdf",
@@ -76555,9 +76859,74 @@
       "fsa-suisai_ryoritsu-20220308-005:https://www.fsa.go.jp/singi/suisai/siryou/20220308/01.pdf",
       "fsa-suisai_ryoritsu-20220308-005:https://www.fsa.go.jp/singi/suisai/siryou/20220308/02.pdf",
       "fsa-sustainable_finance-20260623-030:https://www.fsa.go.jp/singi/sustainable_finance/gijiroku/20260623.html",
+      "fsa-taju_saimu_kondankai-20261028-001:https://www.fsa.go.jp/policy/kashikin/tajusaimukondankai/20261028/siryou1-1.pdf",
+      "fsa-taju_saimu_kondankai-20261028-001:https://www.fsa.go.jp/policy/kashikin/tajusaimukondankai/20261028/siryou1-2.pdf",
+      "fsa-taju_saimu_kondankai-20261028-001:https://www.fsa.go.jp/policy/kashikin/tajusaimukondankai/20261028/siryou1-3.pdf",
+      "fsa-taju_saimu_kondankai-20261028-001:https://www.fsa.go.jp/policy/kashikin/tajusaimukondankai/20261028/siryou10.pdf",
+      "fsa-taju_saimu_kondankai-20261028-001:https://www.fsa.go.jp/policy/kashikin/tajusaimukondankai/20261028/siryou11.pdf",
+      "fsa-taju_saimu_kondankai-20261028-001:https://www.fsa.go.jp/policy/kashikin/tajusaimukondankai/20261028/siryou2.pdf",
+      "fsa-taju_saimu_kondankai-20261028-001:https://www.fsa.go.jp/policy/kashikin/tajusaimukondankai/20261028/siryou3.pdf",
+      "fsa-taju_saimu_kondankai-20261028-001:https://www.fsa.go.jp/policy/kashikin/tajusaimukondankai/20261028/siryou4.pdf",
+      "fsa-taju_saimu_kondankai-20261028-001:https://www.fsa.go.jp/policy/kashikin/tajusaimukondankai/20261028/siryou5.pdf",
+      "fsa-taju_saimu_kondankai-20261028-001:https://www.fsa.go.jp/policy/kashikin/tajusaimukondankai/20261028/siryou6.pdf",
+      "fsa-taju_saimu_kondankai-20261028-001:https://www.fsa.go.jp/policy/kashikin/tajusaimukondankai/20261028/siryou7.pdf",
+      "fsa-taju_saimu_kondankai-20261028-001:https://www.fsa.go.jp/policy/kashikin/tajusaimukondankai/20261028/siryou8.pdf",
+      "fsa-taju_saimu_kondankai-20261028-001:https://www.fsa.go.jp/policy/kashikin/tajusaimukondankai/20261028/siryou9.pdf",
+      "fsa-taju_saimu_kondankai-20261028-001:https://www.fsa.go.jp/singi/tajusaimukondankai/01.pdf",
+      "fsa-taju_saimu_kondankai-20261028-001:https://www.fsa.go.jp/singi/tajusaimukondankai/02.pdf",
       "fsa-tajuu_saimu_kaigi-20080513-007:https://www.fsa.go.jp/singi/tajusaimu/siryou/20080513/06.pdf",
+      "fsa-tentou_fx_kessai-20180213-001:https://www.fsa.go.jp/news/29/singi/20180213-1/01.pdf",
+      "fsa-tentou_fx_kessai-20180213-001:https://www.fsa.go.jp/news/29/singi/20180213-1/02.pdf",
+      "fsa-tentou_fx_kessai-20180213-001:https://www.fsa.go.jp/news/29/singi/20180213-1/03.pdf",
+      "fsa-tentou_fx_kessai-20180213-001:https://www.fsa.go.jp/singi/otcfx2018/gijiroku/20180213.html",
+      "fsa-tentou_fx_kessai-20180312-002:https://www.fsa.go.jp/news/29/singi/20180312-1/01.pdf",
+      "fsa-tentou_fx_kessai-20180312-002:https://www.fsa.go.jp/news/29/singi/20180312-1/02.pdf",
+      "fsa-tentou_fx_kessai-20180312-002:https://www.fsa.go.jp/news/29/singi/20180312-1/03.pdf",
+      "fsa-tentou_fx_kessai-20180312-002:https://www.fsa.go.jp/news/29/singi/20180312-1/04.pdf",
+      "fsa-tentou_fx_kessai-20180312-002:https://www.fsa.go.jp/news/29/singi/20180312-1/05.pdf",
+      "fsa-tentou_fx_kessai-20180312-002:https://www.fsa.go.jp/news/29/singi/20180312-1/06.pdf",
+      "fsa-tentou_fx_kessai-20180312-002:https://www.fsa.go.jp/singi/otcfx2018/gijiroku/20180312.html",
+      "fsa-tentou_fx_kessai-20180329-003:https://www.fsa.go.jp/news/29/singi/20180329-1/01.pdf",
+      "fsa-tentou_fx_kessai-20180329-003:https://www.fsa.go.jp/news/29/singi/20180329-1/02.pdf",
+      "fsa-tentou_fx_kessai-20180329-003:https://www.fsa.go.jp/news/29/singi/20180329-1/03.pdf",
+      "fsa-tentou_fx_kessai-20180329-003:https://www.fsa.go.jp/news/29/singi/20180329-1/04.pdf",
+      "fsa-tentou_fx_kessai-20180329-003:https://www.fsa.go.jp/news/29/singi/20180329-1/05.pdf",
+      "fsa-tentou_fx_kessai-20180329-003:https://www.fsa.go.jp/news/29/singi/20180329-1/06.pdf",
+      "fsa-tentou_fx_kessai-20180329-003:https://www.fsa.go.jp/singi/otcfx2018/gijiroku/20180329.html",
+      "fsa-tentou_fx_kessai-20180413-004:https://www.fsa.go.jp/news/29/singi/20180413-1/01.pdf",
+      "fsa-tentou_fx_kessai-20180413-004:https://www.fsa.go.jp/news/29/singi/20180413-1/02.pdf",
+      "fsa-tentou_fx_kessai-20180413-004:https://www.fsa.go.jp/news/29/singi/20180413-1/03.pdf",
+      "fsa-tentou_fx_kessai-20180413-004:https://www.fsa.go.jp/news/29/singi/20180413-1/04.pdf",
+      "fsa-tentou_fx_kessai-20180413-004:https://www.fsa.go.jp/news/29/singi/20180413-1/05.pdf",
+      "fsa-tentou_fx_kessai-20180413-004:https://www.fsa.go.jp/singi/otcfx2018/gijiroku/20180413.html",
+      "fsa-tentou_fx_kessai-20180530-005:https://www.fsa.go.jp/news/29/singi/20180530-1/01.pdf",
+      "fsa-tentou_fx_kessai-20180530-005:https://www.fsa.go.jp/news/29/singi/20180530-1/02.pdf",
+      "fsa-tentou_fx_kessai-20180530-005:https://www.fsa.go.jp/singi/otcfx2018/gijiroku/20180530.html",
       "fsa-transition_finance-20260821-014:https://www.fsa.go.jp/singi/transition_finance/gijiyousi/20260821.html",
       "fsa-venture_capital-20260618-004:https://www.fsa.go.jp/singi/vc/gijiroku/20260618.html",
+      "fsa-yuushi_kansa_kantoku-20180704-001:https://www.fsa.go.jp/singi/yuusiken/gijiroku/20180704.html",
+      "fsa-yuushi_kansa_kantoku-20180704-001:https://www.fsa.go.jp/singi/yuusiken/siryou/01.pdf",
+      "fsa-yuushi_kansa_kantoku-20180704-001:https://www.fsa.go.jp/singi/yuusiken/siryou/appendix01.pdf",
+      "fsa-yuushi_kansa_kantoku-20180704-001:https://www.fsa.go.jp/singi/yuusiken/siryou/appendix02.pdf",
+      "fsa-yuushi_kansa_kantoku-20180704-001:https://www.fsa.go.jp/singi/yuusiken/siryou/appendix03.pdf",
+      "fsa-yuushi_kansa_kantoku-20180704-001:https://www.fsa.go.jp/singi/yuusiken/siryou/appendix04.pdf",
+      "fsa-yuushi_kansa_kantoku-20180704-001:https://www.fsa.go.jp/singi/yuusiken/siryou/member.pdf",
+      "fsa-yuushi_kansa_kantoku-20180910-002:https://www.fsa.go.jp/singi/yuusiken/gijiroku/20180910.html",
+      "fsa-yuushi_kansa_kantoku-20180910-002:https://www.fsa.go.jp/singi/yuusiken/siryou/201809010/01.pdf",
+      "fsa-yuushi_kansa_kantoku-20180910-002:https://www.fsa.go.jp/singi/yuusiken/siryou/201809010/02.pdf",
+      "fsa-yuushi_kansa_kantoku-20180910-002:https://www.fsa.go.jp/singi/yuusiken/siryou/201809010/03-1.pdf",
+      "fsa-yuushi_kansa_kantoku-20180910-002:https://www.fsa.go.jp/singi/yuusiken/siryou/201809010/03-2.pdf",
+      "fsa-yuushi_kansa_kantoku-20180910-002:https://www.fsa.go.jp/singi/yuusiken/siryou/201809010/04.pdf",
+      "fsa-yuushi_kansa_kantoku-20181002-003:https://www.fsa.go.jp/singi/yuusiken/gijiroku/20181002.html",
+      "fsa-yuushi_kansa_kantoku-20181002-003:https://www.fsa.go.jp/singi/yuusiken/siryou/20181002/01.pdf",
+      "fsa-yuushi_kansa_kantoku-20181002-003:https://www.fsa.go.jp/singi/yuusiken/siryou/20181002/02.pdf",
+      "fsa-yuushi_kansa_kantoku-20181002-003:https://www.fsa.go.jp/singi/yuusiken/siryou/20181002/03.pdf",
+      "fsa-yuushi_kansa_kantoku-20181002-003:https://www.fsa.go.jp/singi/yuusiken/siryou/20181002/04.pdf",
+      "fsa-yuushi_kansa_kantoku-20181029-004:https://www.fsa.go.jp/singi/yuusiken/gijiroku/20181029.html",
+      "fsa-yuushi_kansa_kantoku-20181029-004:https://www.fsa.go.jp/singi/yuusiken/siryou/20181029/01-1.pdf",
+      "fsa-yuushi_kansa_kantoku-20181029-004:https://www.fsa.go.jp/singi/yuusiken/siryou/20181029/01-2.pdf",
+      "fsa-yuushi_kansa_kantoku-20181029-004:https://www.fsa.go.jp/singi/yuusiken/siryou/20181029/02.pdf",
+      "fsa-yuushi_kansa_kantoku-20181029-004:https://www.fsa.go.jp/singi/yuusiken/siryou/20181029/03.pdf",
       "fsc-bakuro_wg-20260925-013:https://www.fsc.go.jp/fsciis/attachedFile/download?retrievalId=kai20260925so1&fileId=310",
       "fsc-bakuro_wg-20260925-013:https://www.fsc.go.jp/fsciis/attachedFile/download?retrievalId=kai20260925so1&fileId=410",
       "fsc-bpa_wg-20100707-007:https://www.fsc.go.jp/fsciis/attachedFile/download?retrievalId=kai20261021so1&fileId=010",
@@ -108589,6 +108958,18 @@
       "discoveredAt": "2026/10/24 17:12",
       "discoverySource": "rule"
     },
+    "fsa-ai_rikatsuyou_kenkyukai": {
+      "discoveredAt": "2026/11/25 21:08",
+      "discoverySource": "llm"
+    },
+    "fsa-kabushiki_shijou_kouzou": {
+      "discoveredAt": "2026/11/25 21:08",
+      "discoverySource": "llm"
+    },
+    "fsa-taju_saimu_kondankai": {
+      "discoveredAt": "2026/11/25 21:08",
+      "discoverySource": "llm"
+    },
     "maff-2943": {
       "discoveredAt": "2026/10/24 17:12",
       "discoverySource": "rule"
@@ -112773,6 +113154,10 @@
     "fsa-ai_onchain-20260925-s02": {
       "discoveredAt": "2026/10/30 08:55"
     },
+    "fsa-ai_rikatsuyou_kenkyukai-20261124-001": {
+      "discoveredAt": "2026/11/25 21:08",
+      "lastUpdatedFromCrawl": "2026/11/25 21:08"
+    },
     "fsa-ashigin_ukezara-20060901-s14": {
       "discoveredAt": "2026/11/07 07:14"
     },
@@ -113039,19 +113424,19 @@
     "fsa-esg_hyouka_data-20260630-s04": {
       "discoveredAt": "2026/11/07 07:18"
     },
-    "fsa-impact_toushi-20221027-001": {
+    "fsa-impact_toushi-20221028-001": {
       "discoveredAt": "2026/11/22 21:30"
     },
-    "fsa-impact_toushi-20221110-002": {
+    "fsa-impact_toushi-20221111-002": {
       "discoveredAt": "2026/11/22 21:30"
     },
     "fsa-impact_toushi-20221125-003": {
       "discoveredAt": "2026/11/22 21:30"
     },
-    "fsa-impact_toushi-20230127-004": {
+    "fsa-impact_toushi-20230130-004": {
       "discoveredAt": "2026/11/22 21:30"
     },
-    "fsa-impact_toushi-20230221-005": {
+    "fsa-impact_toushi-20230222-005": {
       "discoveredAt": "2026/11/22 21:30"
     },
     "fsa-impact_toushi-20230322-006": {
@@ -113225,6 +113610,10 @@
     "fsa-jouhou_security-20060713-s04": {
       "discoveredAt": "2026/09/23 18:20"
     },
+    "fsa-kabushiki_shijou_kouzou-20261113-001": {
+      "discoveredAt": "2026/11/25 21:08",
+      "lastUpdatedFromCrawl": "2026/11/25 21:08"
+    },
     "fsa-kaikeikansa_arikata-20150918-s05": {
       "discoveredAt": "2026/11/07 07:21"
     },
@@ -113339,22 +113728,22 @@
     "fsa-kigyou_risk_management-20260210-002": {
       "discoveredAt": "2026/09/05 08:25"
     },
-    "fsa-kikou_risk_scenario-20230203-001": {
+    "fsa-kikou_risk_scenario-20221222-001": {
       "discoveredAt": "2026/11/22 21:36"
     },
-    "fsa-kikou_risk_scenario-20230306-002": {
+    "fsa-kikou_risk_scenario-20230203-002": {
       "discoveredAt": "2026/11/22 21:36"
     },
-    "fsa-kikou_risk_scenario-20230331-003": {
+    "fsa-kikou_risk_scenario-20230309-003": {
       "discoveredAt": "2026/11/22 21:36"
     },
-    "fsa-kikou_risk_scenario-20230515-004": {
+    "fsa-kikou_risk_scenario-20230405-004": {
       "discoveredAt": "2026/11/22 21:36"
     },
-    "fsa-kikou_risk_scenario-20230612-005": {
+    "fsa-kikou_risk_scenario-20230517-005": {
       "discoveredAt": "2026/11/22 21:36"
     },
-    "fsa-kikou_risk_scenario-20230728-006": {
+    "fsa-kikou_risk_scenario-20230614-006": {
       "discoveredAt": "2026/09/05 08:27"
     },
     "fsa-kikou_risk_scenario-20231010-007": {
@@ -113363,17 +113752,17 @@
     "fsa-kikou_risk_scenario-20231116-008": {
       "discoveredAt": "2026/09/05 08:27"
     },
-    "fsa-kikou_risk_scenario-20240318-009": {
+    "fsa-kikou_risk_scenario-20240207-009": {
       "discoveredAt": "2026/09/05 08:27"
     },
-    "fsa-kikou_risk_scenario-20240607-010": {
+    "fsa-kikou_risk_scenario-20240319-010": {
+      "discoveredAt": "2026/09/05 08:27"
+    },
+    "fsa-kikou_risk_scenario-20240610-011": {
       "discoveredAt": "2026/09/05 08:27"
     },
     "fsa-kikou_risk_scenario-20240709-s07": {
       "discoveredAt": "2026/11/07 07:28"
-    },
-    "fsa-kikou_risk_scenario-20240724-011": {
-      "discoveredAt": "2026/09/05 08:27"
     },
     "fsa-kinyu_chukai-20190226-017": {
       "lastUpdatedFromCrawl": "2026/09/05 08:22"
@@ -113618,9 +114007,6 @@
     "fsa-kinyu_shingi-20250625-043": {
       "discoveredAt": "2026/09/19 18:26"
     },
-    "fsa-kinyu_shingi-20260824-045": {
-      "discoveredAt": "2026/09/19 18:26"
-    },
     "fsa-kinyu_shingi-20260831-057": {
       "discoveredAt": "2026/10/08 19:02"
     },
@@ -113842,6 +114228,10 @@
     },
     "fsa-tairyoushi_angou-20241018-003": {
       "discoveredAt": "2026/09/05 08:25"
+    },
+    "fsa-taju_saimu_kondankai-20261028-001": {
+      "discoveredAt": "2026/11/25 21:08",
+      "lastUpdatedFromCrawl": "2026/11/25 21:08"
     },
     "fsa-tentou_fx_kessai-20171218-s02": {
       "discoveredAt": "2026/11/07 07:51"
@@ -130153,8 +130543,7 @@
       "discoveredAt": "2026/09/16 09:15"
     },
     "mhlw-dai3gou_hihoken-20261125-002": {
-      "discoveredAt": "2026/11/18 20:53",
-      "lastUpdatedFromCrawl": "2026/11/25 03:54"
+      "discoveredAt": "2026/11/18 20:53"
     },
     "mhlw-fukushi_bunka_bunkakai-20040708-010": {
       "discoveredAt": "2026/11/07 07:50"
@@ -130352,8 +130741,7 @@
       "discoveredAt": "2026/10/24 07:19"
     },
     "mhlw-hansen_kazoku_hoshou-20261124-081": {
-      "discoveredAt": "2026/11/13 23:39",
-      "lastUpdatedFromCrawl": "2026/11/26 03:22"
+      "discoveredAt": "2026/11/13 23:39"
     },
     "mhlw-hikouchi_jidou_gyakutai_bunseki_wg-20140820-001": {
       "discoveredAt": "2026/11/07 07:50"

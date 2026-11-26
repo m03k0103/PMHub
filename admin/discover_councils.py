@@ -282,6 +282,7 @@ def _discover_from_ministry_news(
 
                     # 親ポータルURLや既存URL、重複URLへの誤誘導防止ガード (Check 12対策, Drop 107)
                     norm_resolved = normalize_url(resolved_url)
+                    norm_orig = normalize_url(orig_item_url)
                     clean_res = get_url_clean_key(resolved_url)
 
                     # 逆引きURLが単発報道発表URLのまま（親ポータル未解決）の場合は登録を遮断 (Drop 107)
