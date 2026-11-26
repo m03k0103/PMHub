@@ -732,6 +732,76 @@ class TestCrawlerIncremental(unittest.TestCase):
         self.assertEqual(len(ex_m["materials"]), 1)
         self.assertTrue(ex_m.get("lastUpdatedFromCrawl"))
 
+    def test_unmatched_news_discovers_new_council_and_handles_url_migration(self):
+        """Drop 152: Daily 未マッチ会議ニュースからの新設会議体登録・URL移転自動追跡・manualLock保護を検証"""
+        import discovery_modules
+
+        data = {
+            "categories": {"STUDY": "研究会", "COUNCIL": "審議会"},
+            "ministries": {
+                "FSA": {
+                    "councilsUrls": ["https://www.fsa.go.jp/singi/"],
+                    "newsPortals": [{"url": "https://www.fsa.go.jp/news/index.html", "type": "news_feed"}]
+                }
+            },
+            "councils": [
+                {
+                    "id": "fsa-existing_study",
+                    "name": "既存デジタル研究会",
+                    "ministry": "FSA",
+                    "officialUrl": "https://www.fsa.go.jp/singi/digital_old/index.html",
+                    "manualLock": False
+                },
+                {
+                    "id": "fsa-locked_study",
+                    "name": "手動保護研究会",
+                    "ministry": "FSA",
+                    "officialUrl": "https://www.fsa.go.jp/singi/locked_old/index.html",
+                    "manualLock": True
+                }
+            ],
+            "scrapingRules": {}
+        }
+        councils_by_min = {"FSA": list(data["councils"])}
+        councils_by_url = {c["officialUrl"].rstrip("/"): c for c in data["councils"]}
+        detected_to_crawl = {}
+
+        unmatched = [
+            {"ministry": "FSA", "title": "「既存デジタル研究会」第1回会合の開催", "url": "https://www.fsa.go.jp/news/r8/20261126a.html", "date": "2026/11/26"},
+            {"ministry": "FSA", "title": "「手動保護研究会」第2回会合の開催", "url": "https://www.fsa.go.jp/news/r8/20261126b.html", "date": "2026/11/26"},
+            {"ministry": "FSA", "title": "「量子金融検討会」第1回の開催について", "url": "https://www.fsa.go.jp/news/r8/20261126c.html", "date": "2026/11/26"},
+        ]
+
+        resolve_map = {
+            "https://www.fsa.go.jp/news/r8/20261126a.html": "https://www.fsa.go.jp/singi/digital_2026/index.html",
+            "https://www.fsa.go.jp/news/r8/20261126b.html": "https://www.fsa.go.jp/singi/locked_2026/index.html",
+            "https://www.fsa.go.jp/news/r8/20261126c.html": "https://www.fsa.go.jp/singi/quantum_finance/index.html",
+        }
+
+        with patch('crawler.get_rejected_identifiers', return_value=(set(), set(), set())), \
+             patch.object(discovery_modules, 'resolve_parent_url_from_press_release', side_effect=lambda u, n, m: resolve_map.get(u, u)):
+            added_c, migrated_c = crawler._process_unmatched_news_items(
+                data, unmatched, data["scrapingRules"], councils_by_min, councils_by_url, detected_to_crawl, lambda *a, **k: None
+            )
+
+        self.assertEqual(added_c, 1)
+        self.assertEqual(migrated_c, 1)
+        # 1. 非ロック既存会議体は新URLへ移転し archiveUrl を保持
+        ex_mig = next(c for c in data["councils"] if c["id"] == "fsa-existing_study")
+        self.assertEqual(ex_mig["officialUrl"], "https://www.fsa.go.jp/singi/digital_2026/index.html")
+        self.assertEqual(ex_mig["archiveUrl"], "https://www.fsa.go.jp/singi/digital_old/index.html")
+        self.assertIn("fsa-existing_study", detected_to_crawl)
+        # 2. manualLock 保護会議体はURL上書きされないこと
+        ex_lock = next(c for c in data["councils"] if c["id"] == "fsa-locked_study")
+        self.assertEqual(ex_lock["officialUrl"], "https://www.fsa.go.jp/singi/locked_old/index.html")
+        self.assertNotIn("fsa-locked_study", detected_to_crawl)
+        # 3. 新設会議体がスラグIDで登録・ルール設定・初回巡回キュー追加されること
+        new_c = next(c for c in data["councils"] if c["id"] == "fsa-quantum_finance")
+        self.assertEqual(new_c["name"], "量子金融検討会")
+        self.assertTrue(new_c["isNewlyDiscovered"])
+        self.assertIn("fsa-quantum_finance", data["scrapingRules"])
+        self.assertIn("fsa-quantum_finance", detected_to_crawl)
+
 
 if __name__ == '__main__':
     unittest.main()

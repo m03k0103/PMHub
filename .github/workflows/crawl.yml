@@ -78,8 +78,14 @@ jobs:
           if [ -n "$MINISTRY" ]; then ARGS="$ARGS --ministry $MINISTRY"; fi
           case "$MODE" in
             daily)   CMD="python admin/crawler.py --from-ministry-news --skip-download --no-llm ${MINISTRY:+--ministry $MINISTRY}" ;;
-            weekly)  CMD="python admin/crawler.py $ARGS --recent-years 2 --exclude-daily --recheck-recent 3" ;;
-            monthly) CMD="python admin/crawler.py $ARGS --recent-years 0 --exclude-daily --exclude-weekly" ;;
+            weekly)
+              python admin/discover_councils.py --from-ministry-news --no-llm ${MINISTRY:+--ministry $MINISTRY} || true
+              CMD="python admin/crawler.py $ARGS --recent-years 2 --exclude-daily --recheck-recent 3"
+              ;;
+            monthly)
+              python admin/discover_councils.py --mode normal --no-llm --crawl-new ${MINISTRY:+--ministry $MINISTRY} || true
+              CMD="python admin/crawler.py $ARGS --recent-years 0 --exclude-daily --exclude-weekly"
+              ;;
           esac
           echo "実行コマンド: $CMD"
           set -o pipefail

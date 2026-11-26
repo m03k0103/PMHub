@@ -41,6 +41,9 @@ class TestWafResilience(unittest.TestCase):
         self.assertGreaterEqual(len(crawler.MINISTRY_DOMAINS), 45, "All ministries in DB should have domains loaded")
         self.assertIn("MOE", crawler.MINISTRY_NEWS_PORTALS)
         self.assertNotIn("ENV", crawler.MINISTRY_NEWS_PORTALS)
+        for agency_code in ("ACA", "ANRE", "JSA", "SMEA", "NPA", "ISA", "RA"):
+            self.assertIn(agency_code, crawler.MINISTRY_NEWS_PORTALS, f"{agency_code} should have newsPortals")
+            self.assertTrue(len(crawler.MINISTRY_NEWS_PORTALS[agency_code]) >= 1)
         self.assertNotIn("meti.go.jp", crawler._OTHER_MINISTRY_DOMAINS_MAP.get("ANRE", ()))
         self.assertNotIn("env.go.jp", crawler._OTHER_MINISTRY_DOMAINS_MAP.get("MOE", ()))
         self.assertIn("mhlw.go.jp", crawler._OTHER_MINISTRY_DOMAINS_MAP.get("METI", ()))

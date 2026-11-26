@@ -288,6 +288,95 @@ class TestDiscoverCouncils(unittest.TestCase):
         self.assertEqual(len(discovered), 1)
         self.assertEqual(discovered[0]["name"], "テスト金融審議会")
 
+    def test_parent_resolver_breadcrumb_and_ministry_paths(self):
+        """Drop 152: パンくずリスト・省庁審議会パス拡充・上位ディレクトリ200OKフォールバックを検証"""
+        from unittest.mock import patch
+        import crawler as crawler_mod
+
+        # 1. パンくずリスト + /shingikai/ パスからの親URL逆引き
+        press_html = """
+        <html><body>
+          <nav aria-label="breadcrumb">
+            <a href="/index.html">ホーム</a>
+            <a href="/shingikai/ai_kentoukai/index.html">AI推進検討会</a>
+          </nav>
+          <p>第1回会合を開催します。</p>
+        </body></html>
+        """
+        with patch.object(crawler_mod, "fetch_url", return_value=press_html):
+            resolved = discover_councils.resolve_parent_url_from_press_release(
+                "https://www.meti.go.jp/press/2026/11/20261126001.html",
+                "AI推進検討会",
+                "METI"
+            )
+        self.assertEqual(resolved, "https://www.meti.go.jp/shingikai/ai_kentoukai/index.html")
+
+        # 2. 個別回URLから1階層上の上位ディレクトリ index.html への200OKフォールバック
+        sub_html = "<html><body><h1>第1回</h1><p>資料</p></body></html>"
+        parent_html = "<html><head><title>次世代エネルギー検討会｜経済産業省</title></head><body><h1>次世代エネルギー検討会</h1></body></html>"
+        def fake_fetch(u, timeout=10):
+            if u == "https://www.meti.go.jp/shingikai/next_energy/dai1/index.html":
+                return sub_html
+            if u == "https://www.meti.go.jp/shingikai/next_energy/index.html":
+                return parent_html
+            return None
+
+        with patch.object(crawler_mod, "fetch_url", side_effect=fake_fetch):
+            resolved_up = discover_councils.resolve_parent_url_from_press_release(
+                "https://www.meti.go.jp/shingikai/next_energy/dai1/index.html",
+                "次世代エネルギー検討会",
+                "METI"
+            )
+        self.assertEqual(resolved_up, "https://www.meti.go.jp/shingikai/next_energy/index.html")
+
+    def test_generate_council_slug_id(self):
+        """Drop 152: URLパス由来スラグID生成とフォールバック・重複回避の検証"""
+        used = {"fsa-ai_rikatsuyou"}
+        cid1, seq1 = discover_councils.generate_council_slug_id(
+            "CAS", "https://www.cas.go.jp/jp/seisaku/digital-reform/index.html", used, 100
+        )
+        self.assertEqual(cid1, "cas-digital_reform")
+        self.assertEqual(seq1, 100)
+
+        # スラグ重複時は連番へフォールバック
+        cid2, seq2 = discover_councils.generate_council_slug_id(
+            "FSA", "https://www.fsa.go.jp/singi/ai-rikatsuyou/index.html", used, 50
+        )
+        self.assertEqual(cid2, "fsa-50")
+        self.assertEqual(seq2, 51)
+
+        # 汎用セグメント/数値のみ (newpage_12345.html) は連番へフォールバック
+        cid3, seq3 = discover_councils.generate_council_slug_id(
+            "MHLW", "https://www.mhlw.go.jp/stf/newpage_12345.html", used, 2880
+        )
+        self.assertEqual(cid3, "mhlw-2880")
+        self.assertEqual(seq3, 2881)
+
+    def test_infer_scraping_rule_for_council(self):
+        """Drop 152: URL・DOM構造に基づく最適スクレイピングテンプレート自動推定の検証"""
+        self.assertEqual(
+            discover_councils.infer_scraping_rule_for_council("https://www.mhlw.go.jp/stf/newpage_99999.html")["template"],
+            "tpl-mhlw-stf-subpage"
+        )
+        self.assertEqual(
+            discover_councils.infer_scraping_rule_for_council("https://www.mof.go.jp/about_mof/councils/test/proceedings/index.html")["template"],
+            "tpl-mof-proceedings-subpage"
+        )
+        self.assertEqual(
+            discover_councils.infer_scraping_rule_for_council("https://www.cfa.go.jp/councils/shingikai/sample")["template"],
+            "tpl-councils-uuid-subpage"
+        )
+        table_html = """
+        <table>
+          <tr><td>第1回</td><td><a href="01.pdf">資料</a></td></tr>
+          <tr><td>第2回</td><td><a href="02.pdf">資料</a></td></tr>
+        </table>
+        """
+        self.assertEqual(
+            discover_councils.infer_scraping_rule_for_council("https://www.cas.go.jp/jp/seisaku/sample/index.html", html=table_html)["template"],
+            "tpl-parent-table-direct"
+        )
+
 
 if __name__ == "__main__":
     unittest.main()

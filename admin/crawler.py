@@ -5149,6 +5149,203 @@ def match_council_from_news_item(item, councils_by_url, councils_by_min):
     return None, None
 
 
+def _process_unmatched_news_items(
+    data, unmatched_items, rules, councils_by_min, councils_by_url, detected_councils_to_crawl, emit
+):
+    """
+    Daily 走査で既存会議体にマッチしなかった会議系ニュースを処理する (Drop 152 / A-2)。
+    1. コア名称一致の既存会議体があれば、URL移転（年次・期替わり新URL）を安全に自動追跡する。
+    2. 完全に未知の新設会議体であれば、親ページ逆引き・スラグID採番・最適ルール推定の上で即時登録し、
+       同回内のピンポイント巡回（detected_councils_to_crawl）へ追加する。
+    """
+    if not unmatched_items:
+        return 0, 0
+
+    try:
+        from discovery_modules import (
+            extract_council_name_from_news_title,
+            get_core_council_name,
+            clean_council_name,
+            infer_council_category,
+            generate_council_slug_id,
+            is_non_council_noise,
+            is_single_press_or_notice_url,
+            normalize_url,
+            get_url_clean_key,
+            get_max_seq,
+            resolve_parent_url_from_press_release,
+        )
+        from discover_councils import infer_scraping_rule_for_council
+    except ImportError:
+        from admin.discovery_modules import (
+            extract_council_name_from_news_title,
+            get_core_council_name,
+            clean_council_name,
+            infer_council_category,
+            generate_council_slug_id,
+            is_non_council_noise,
+            is_single_press_or_notice_url,
+            normalize_url,
+            get_url_clean_key,
+            get_max_seq,
+            resolve_parent_url_from_press_release,
+        )
+        from admin.discover_councils import infer_scraping_rule_for_council
+
+    rejected_ids, rejected_names_raw, rejected_urls_raw = get_rejected_identifiers()
+    rejected_names = set(rejected_names_raw or ())
+    for rn in list(rejected_names):
+        cn = clean_council_name(rn)
+        if cn:
+            rejected_names.add(cn)
+    rejected_urls = {normalize_url(u) for u in (rejected_urls_raw or ()) if u}
+    rejected_clean_keys = {get_url_clean_key(u) for u in (rejected_urls_raw or ()) if u and get_url_clean_key(u)}
+
+    all_portal_urls = set()
+    for m_info in (data.get("ministries") or {}).values():
+        if isinstance(m_info, dict):
+            for pu in (m_info.get("councilsUrls") or []):
+                if pu:
+                    all_portal_urls.add(normalize_url(pu))
+            for np_def in (m_info.get("newsPortals") or []):
+                if isinstance(np_def, dict) and np_def.get("url"):
+                    all_portal_urls.add(normalize_url(np_def["url"]))
+
+    councils_list = data.setdefault("councils", [])
+    existing_urls = {normalize_url(c.get("officialUrl", "")) for c in councils_list if c.get("officialUrl")}
+    used_ids = {c.get("id") for c in councils_list if c.get("id")}
+    next_seq = get_max_seq(councils_list) + 1
+    scraping_rules = data.setdefault("scrapingRules", {})
+    categories_def = data.get("categories") or {}
+    search_kws = [
+        "審議会", "検討会", "委員会", "部会", "分科会", "懇談会", "ワーキンググループ",
+        "ワーキング・グループ", "スタディグループ", "スタディ・グループ", "WG", "SG",
+        "審査会", "研究会", "プロジェクトチーム", "タスクフォース", "有識者会議",
+        "本部", "推進会議", "円卓会議", "会議", "協議会"
+    ]
+    sub_keywords = ("部会", "分科会", "小委員会", "委員会", "ワーキンググループ", "検討会", "研究会", "審査会", "専門家会合", "タスクフォース")
+    now_ts = datetime.now().strftime("%Y/%m/%d %H:%M")
+
+    added_councils = 0
+    migrated_urls = 0
+    seen_core_pairs = set()
+
+    for item in unmatched_items:
+        raw_title = (item.get("title") or "").strip()
+        item_url = (item.get("url") or "").strip()
+        min_code = normalize_ministry_code(item.get("ministry", ""))
+        if not raw_title or not item_url or not min_code:
+            continue
+
+        cand_name = extract_council_name_from_news_title(raw_title, search_kws)
+        if not cand_name or len(cand_name) < 4:
+            continue
+        if is_non_council_noise(cand_name, raw_title, item_url):
+            continue
+
+        cand_core = get_core_council_name(cand_name)
+        if not cand_core or (min_code, cand_core) in seen_core_pairs:
+            continue
+        seen_core_pairs.add((min_code, cand_core))
+
+        clean_cand = clean_council_name(cand_name)
+        if cand_name in rejected_names or (clean_cand and clean_cand in rejected_names):
+            continue
+        if normalize_url(item_url) in rejected_urls:
+            continue
+
+        resolved_url = resolve_parent_url_from_press_release(item_url, cand_name, min_code)
+        if is_single_press_or_notice_url(resolved_url) or (is_single_press_or_notice_url(item_url) and resolved_url == item_url):
+            continue
+
+        norm_res = normalize_url(resolved_url)
+        clean_res_key = get_url_clean_key(resolved_url)
+        if (
+            not norm_res
+            or norm_res in all_portal_urls
+            or norm_res in rejected_urls
+            or (clean_res_key and clean_res_key in rejected_clean_keys)
+            or is_generic_index_url(resolved_url, cand_name, ministry=min_code)
+        ):
+            continue
+
+        # 1. 既存会議体とのコア名称一致チェック（年度切替 URL 移転の自動追跡）
+        same_min_councils = councils_by_min.get(min_code, [])
+        matched_core_c = next(
+            (c for c in same_min_councils if not c.get("isClosed") and get_core_council_name(c.get("name", "")) == cand_core),
+            None
+        )
+        if matched_core_c is not None:
+            old_url = (matched_core_c.get("officialUrl") or "").strip()
+            if normalize_url(old_url) != norm_res and norm_res not in existing_urls:
+                cid_m = matched_core_c["id"]
+                if matched_core_c.get("manualLock"):
+                    emit(f"  ℹ️ [URL移転候補 (manualLock保護)] [{cid_m}] {matched_core_c.get('name')} -> {resolved_url}")
+                else:
+                    if old_url and not matched_core_c.get("archiveUrl"):
+                        matched_core_c["archiveUrl"] = old_url
+                    matched_core_c["officialUrl"] = resolved_url
+                    existing_urls.add(norm_res)
+                    councils_by_url[resolved_url.rstrip("/")] = matched_core_c
+                    if cid_m not in detected_councils_to_crawl:
+                        detected_councils_to_crawl[cid_m] = (matched_core_c, f"URL_MIGRATION ({raw_title})", item.get("date", ""))
+                    migrated_urls += 1
+                    emit(f"  🔄 [URL移転自動追跡] [{cid_m}] {matched_core_c.get('name')}: {old_url} -> {resolved_url}")
+            continue
+
+        # 2. 新規 URL・サフィックス重複ガード
+        if norm_res in existing_urls:
+            continue
+        n1 = re.sub(r'\s+', '', cand_name)
+        is_suffix_dup = False
+        for ex_c in same_min_councils:
+            n2 = re.sub(r'\s+', '', ex_c.get("name", ""))
+            if not n2:
+                continue
+            if n1 == n2:
+                is_suffix_dup = True
+                break
+            if len(n1) >= 4 and len(n2) >= 4 and any(k in n1 for k in sub_keywords) and any(k in n2 for k in sub_keywords):
+                if (n2.endswith(n1) and not n2.startswith(n1)) or (n1.endswith(n2) and not n1.startswith(n2)):
+                    is_suffix_dup = True
+                    break
+        if is_suffix_dup:
+            continue
+
+        # 3. 純粋新規会議体として登録し、同一実行内で初回クロールを実行
+        council_id, next_seq = generate_council_slug_id(min_code, resolved_url, used_ids, next_seq)
+        if council_id in rejected_ids:
+            continue
+        used_ids.add(council_id)
+        category, _ = infer_council_category(f"{cand_name} {raw_title}", categories_def)
+        new_c = {
+            "id": council_id,
+            "name": cand_name,
+            "ministry": min_code,
+            "category": category,
+            "officialUrl": resolved_url,
+            "isNew": True,
+            "isNewlyDiscovered": True,
+            "discoveredAt": now_ts,
+            "discoverySource": "ministry_news"
+        }
+        councils_list.append(new_c)
+        councils_by_min.setdefault(min_code, []).append(new_c)
+        councils_by_url[resolved_url.rstrip("/")] = new_c
+        existing_urls.add(norm_res)
+
+        inferred_rule = infer_scraping_rule_for_council(resolved_url)
+        scraping_rules[council_id] = inferred_rule
+        if isinstance(rules, dict):
+            rules[council_id] = inferred_rule
+
+        detected_councils_to_crawl[council_id] = (new_c, f"NEW_COUNCIL_DISCOVERY ({raw_title})", item.get("date", ""))
+        added_councils += 1
+        emit(f"  ✨ [Daily未マッチ新規会議体登録] [{min_code}] {council_id}: {cand_name} -> {resolved_url}")
+
+    return added_councils, migrated_urls
+
+
 def run_ministry_news_discovery(progress_callback=None, stop_event=None, ministry=None, skip_download=False):
     """
     各府省庁トップページおよび新着情報一覧から最近開催された会議を検知し、
@@ -5261,6 +5458,7 @@ def run_ministry_news_discovery(progress_callback=None, stop_event=None, ministr
 
         detected_councils_to_crawl = {}  # council_id -> (council, reason, date_hint)
         direct_meetings_to_add = []     # (council, subpage_item)
+        unmatched_news_items = []       # 未マッチ会議関連ニュース（新設・URL移転候補）
 
         for min_code in target_mins:
             if stop_event and stop_event.is_set():
@@ -5311,6 +5509,7 @@ def run_ministry_news_discovery(progress_callback=None, stop_event=None, ministr
                                 break
                             matched_c, mtype = match_council_from_news_item(item, councils_by_url, councils_by_min)
                             if not matched_c:
+                                unmatched_news_items.append(dict(item, ministry=min_code))
                                 continue
 
                             cid = matched_c["id"]
@@ -5376,7 +5575,13 @@ def run_ministry_news_discovery(progress_callback=None, stop_event=None, ministr
             finally:
                 _thread_local.current_ministry = prev_min
 
+        unmatched_added_c, unmatched_migrated_c = _process_unmatched_news_items(
+            data, unmatched_news_items, rules, councils_by_min, councils_by_url, detected_councils_to_crawl, emit
+        )
+
         emit(f"\n[検知結果サマリー]")
+        if unmatched_added_c > 0 or unmatched_migrated_c > 0:
+            emit(f"  ・未マッチ検知 新設会議体: {unmatched_added_c} 件 / URL移転追跡: {unmatched_migrated_c} 件")
         emit(f"  ・直接資料抽出対象: {len(direct_meetings_to_add)} 件")
         emit(f"  ・ピンポイント巡回対象会議体: {len(detected_councils_to_crawl)} 件")
 
