@@ -4538,6 +4538,15 @@ def run_meeting_crawler(
 
         # 会議体ごとの既登録開催回URL（officialUrl）マップを事前構築（スマート差分探索エンジン用 / 資料0件再巡回保証付き）
         councils_meeting_urls = _build_known_meeting_urls(data.get("meetings", []))
+        llm_fallback_queue = []
+        target_by_id = {t["id"]: t for t in CRAWL_TARGETS if t.get("id")}
+        latest_date_by_cid = {}
+        for m in data.get("meetings", []):
+            mcid = m.get("councilId")
+            md = m.get("date", "")
+            if mcid and md and md != "2099/01/01" and not m.get("isDateUnconfirmed"):
+                if mcid not in latest_date_by_cid or md > latest_date_by_cid[mcid]:
+                    latest_date_by_cid[mcid] = md
 
         total_councils = len(CRAWL_TARGETS)
         processed_counter = 0
@@ -4620,6 +4629,27 @@ def run_meeting_crawler(
                                 "council_name": c_name,
                                 "new_added": new_added
                             })
+                        elif use_llm:
+                            try:
+                                try:
+                                    from llm.crawl_fallback import compute_crawl_anomaly_score, build_compact_dom_snippet
+                                except ImportError:
+                                    from admin.llm.crawl_fallback import compute_crawl_anomaly_score, build_compact_dom_snippet
+                                anomaly = compute_crawl_anomaly_score(
+                                    target, item, html=html, existing_latest_date=latest_date_by_cid.get(c_id, "")
+                                )
+                                if anomaly.get("needs_fallback"):
+                                    llm_fallback_queue.append({
+                                        "council_id": c_id,
+                                        "name": c_name,
+                                        "url": target.get("url", ""),
+                                        "existing_latest_date": latest_date_by_cid.get(c_id, ""),
+                                        "score": anomaly["score"],
+                                        "reasons": anomaly["reasons"],
+                                        "snippet": build_compact_dom_snippet(html, target.get("url", "")),
+                                    })
+                            except Exception:
+                                pass
 
                         processed_counter += 1
                         # チェックポイント保存（25件ごと、または新規会議追加時）
@@ -4684,6 +4714,37 @@ def run_meeting_crawler(
                         future.result()
                     except Exception as e:
                         emit(f"[ERROR] Worker thread unhandled exception: {e}", file=sys.stderr)
+
+        # Drop 153 (Track [LLM-Assist] フェーズ2): 異常スコア高会議体のバッチLLM構造補完
+        if use_llm and llm_fallback_queue and not stats.get("stopped"):
+            try:
+                try:
+                    from llm.client import LLMClient
+                    from llm.crawl_fallback import run_batched_llm_crawl_fallback
+                except ImportError:
+                    from admin.llm.client import LLMClient
+                    from admin.llm.crawl_fallback import run_batched_llm_crawl_fallback
+                tier = "monthly" if (recent_years in (0, "0", "all", "none")) else "weekly"
+                emit(f"\n[LLM-Assist フェーズ2] 異常スコア閾値超過 {len(llm_fallback_queue)} 会議体のバッチLLM構造補完を実行中 (tier={tier})...")
+                fb_res = run_batched_llm_crawl_fallback(
+                    llm_fallback_queue,
+                    llm_client=LLMClient(schedule_tier=tier),
+                    batch_size=5,
+                )
+                fb_stats = fb_res.get("stats", {})
+                stats["llm_fallback"] = fb_stats
+                for fb_cid, fb_item in (fb_res.get("results_by_council") or {}).items():
+                    fb_target = target_by_id.get(fb_cid)
+                    if not fb_target:
+                        continue
+                    fb_added = sync_new_meetings_from_crawl(data, fb_target, fb_item)
+                    update_crawl_status(data, fb_cid, fb_item)
+                    if fb_added > 0:
+                        stats["new_meetings"] += fb_added
+                        emit(f"  🤖 [LLMバッチ補完] [{fb_cid}] {fb_target.get('name')}: +{fb_added} 開催回")
+                emit(f"[LLM-Assist] バッチ補完完了 (status={fb_stats.get('status')}, resolved={fb_stats.get('resolved_councils')}件, calls={fb_stats.get('llm_calls')}, cache_hits={fb_stats.get('cache_hits')})")
+            except Exception as e_fb:
+                emit(f"[WARN] バッチLLM補完処理中に警告が発生しました: {e_fb}")
 
         # サマリー表示
         emit(f"\n{'='*65}")
