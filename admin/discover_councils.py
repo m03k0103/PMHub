@@ -16,6 +16,7 @@ import urllib.request
 import urllib.parse
 import time
 from datetime import datetime
+from typing import Optional
 from bs4 import BeautifulSoup
 import concurrent.futures
 from urllib.parse import urljoin, urlparse
@@ -36,6 +37,7 @@ try:
         clean_council_name,
         get_core_council_name,
         extract_council_name_from_news_title,
+        generate_council_slug_id,
         MINISTRY_CODE_NORMALIZATION,
         NOISE_PERSON_ROLES,
         NOISE_ACTION_PATTERNS,
@@ -60,6 +62,7 @@ except ImportError:
         clean_council_name,
         get_core_council_name,
         extract_council_name_from_news_title,
+        generate_council_slug_id,
         MINISTRY_CODE_NORMALIZATION,
         NOISE_PERSON_ROLES,
         NOISE_ACTION_PATTERNS,
@@ -129,6 +132,46 @@ def parse_data_json():
         except Exception:
             pass
     return ministries, councils, categories, scraping_rules
+
+
+def infer_scraping_rule_for_council(official_url: str, html: Optional[str] = None) -> dict:
+    """
+    会議体URLおよび（利用可能な場合は）HTML DOM 構造から最適なスクレイピングルールを自動推定する (Drop 152)。
+    """
+    u = (official_url or "").lower()
+    if "mhlw.go.jp/stf/" in u:
+        tpl = "tpl-mhlw-stf-subpage"
+    elif "mof.go.jp" in u and "/proceedings" in u:
+        tpl = "tpl-mof-proceedings-subpage"
+    elif "digital.go.jp/councils/" in u or "cfa.go.jp/councils/" in u:
+        tpl = "tpl-councils-uuid-subpage"
+    elif "fsc.go.jp" in u:
+        tpl = "tpl-fsc-kai-subpage"
+    elif "nra.go.jp" in u:
+        tpl = "tpl-nra-detail-subpage"
+    elif "soumu.go.jp" in u:
+        tpl = "tpl-mic-soumu-singi"
+    else:
+        tpl = "tpl-ministry-hybrid-kaisai"
+        if html:
+            try:
+                soup = BeautifulSoup(html, "html.parser")
+                table_pdf_rows = 0
+                for tr in soup.find_all("tr"):
+                    tr_txt = tr.get_text(" ", strip=True)
+                    if re.search(r'第\s*\d+\s*回', tr_txt) and tr.find("a", href=re.compile(r'\.pdf(?:$|\?|#)', re.I)):
+                        table_pdf_rows += 1
+                subpage_links = sum(
+                    1 for a in soup.find_all("a", href=True)
+                    if re.search(r'(?:dai\d+|\d+kai|newpage_\d+|\d{2,3}/index\.html)', a["href"], re.I)
+                )
+                if table_pdf_rows >= 2 and subpage_links < table_pdf_rows:
+                    tpl = "tpl-parent-table-direct"
+                elif subpage_links >= 2:
+                    tpl = "tpl-general-round-subpage"
+            except Exception:
+                pass
+    return {"template": tpl, "manualLock": True}
 
 
 
@@ -337,11 +380,9 @@ def _discover_from_ministry_news(
                         council_id = inherited_slug
                         action_label = "既存スラグID継承"
                     else:
-                        council_id = f"{min_code.lower()}-{next_seq}"
-                        while council_id in used_council_ids:
-                            next_seq += 1
-                            council_id = f"{min_code.lower()}-{next_seq}"
-                        next_seq += 1
+                        council_id, next_seq = generate_council_slug_id(
+                            min_code, resolved_url, used_council_ids, next_seq
+                        )
                         action_label = "新規会議体検出"
 
                     used_council_ids.add(council_id)
@@ -501,11 +542,9 @@ def _discover_from_ministry_news(
                     council_id = inherited_slug
                     action_label = "LLMスラグID継承"
                 else:
-                    council_id = f"{min_code.lower()}-{next_seq}"
-                    while council_id in used_council_ids:
-                        next_seq += 1
-                        council_id = f"{min_code.lower()}-{next_seq}"
-                    next_seq += 1
+                    council_id, next_seq = generate_council_slug_id(
+                        min_code, resolved_url, used_council_ids, next_seq
+                    )
                     action_label = "LLM新規会議体検出"
 
                 used_council_ids.add(council_id)
@@ -656,7 +695,7 @@ def _discover_normal_for_single_ministry(
     return min_code, discovered_in_min
 
 
-def run_discovery(progress_callback=None, target_ministry=None, dry_run=False, mode="normal", mock_llm_responder=None, enable_llm=None):
+def run_discovery(progress_callback=None, target_ministry=None, dry_run=False, mode="normal", mock_llm_responder=None, enable_llm=None, crawl_new=False):
     def emit(msg, data=None):
         print(msg)
         if progress_callback:
@@ -876,11 +915,9 @@ def run_discovery(progress_callback=None, target_ministry=None, dry_run=False, m
                     council_id = inherited_slug
                     is_inherited = True
                 else:
-                    council_id = f"{min_code.lower()}-{next_seq}"
-                    while council_id in used_council_ids:
-                        next_seq += 1
-                        council_id = f"{min_code.lower()}-{next_seq}"
-                    next_seq += 1
+                    council_id, next_seq = generate_council_slug_id(
+                        min_code, target_url_cand, used_council_ids, next_seq
+                    )
                     is_inherited = False
 
                 used_council_ids.add(council_id)
@@ -1041,12 +1078,12 @@ def run_discovery(progress_callback=None, target_ministry=None, dry_run=False, m
             # 必ず filtered_existing_dict (councilsマスター) に存在する会議体のみを対象とする
             scraping_rules_in_data = data.setdefault("scrapingRules", {})
             new_rules_count = 0
+            newly_added_rules = {}
             for cid, c_obj in filtered_existing_dict.items():
                 if cid and cid not in scraping_rules_in_data:
-                    scraping_rules_in_data[cid] = {
-                        "template": "tpl-ministry-hybrid-kaisai",
-                        "manualLock": True
-                    }
+                    inferred_rule = infer_scraping_rule_for_council(c_obj.get("officialUrl", ""))
+                    scraping_rules_in_data[cid] = inferred_rule
+                    newly_added_rules[cid] = inferred_rule
                     new_rules_count += 1
 
             # 孤立ルールを完全にパージ (FK制約保護)
@@ -1060,25 +1097,61 @@ def run_discovery(progress_callback=None, target_ministry=None, dry_run=False, m
                 print(f"新規会議体 {new_rules_count} 件に scrapingRules を自動連動登録しました。")
             if orphan_count > 0:
                 print(f"孤立 scrapingRules {orphan_count} 件をパージしました。")
-            
+
             if save_data_json_with_backup(data):
                 print(f"結果を data.json の councils に保存しました（新規追加: {added_count} 件）。")
 
-                # SQLite マスターDBへの同期シード ＆ 2系統エクスポート
+                # SQLite マスターDB への非破壊差分同期 ＆ 2系統エクスポート (Drop 152)
                 try:
+                    from db.sync_from_json import sync_database, DEFAULT_DB_PATH
                     from db.seed_db import seed_db
                     from db.export_data import export_data
                 except ImportError:
+                    from admin.db.sync_from_json import sync_database, DEFAULT_DB_PATH
                     from admin.db.seed_db import seed_db
                     from admin.db.export_data import export_data
 
-                print("[DB SYNC] SQLite マスターDB (admin/pmhub.db) への同期シードを実行中...")
-                if seed_db():
-                    print("[DB SYNC] 2系統 JSON への決定論的エクスポートを実行中...")
-                    export_data()
-                    print("[DB SYNC] SQLite マスターDB & 2系統 JSON の完全同期が完了しました。")
+                if DEFAULT_DB_PATH.exists():
+                    print("[DB SYNC] SQLite マスターDB (admin/pmhub.db) への非破壊差分同期を実行中...")
+                    sync_database(dry_run=False, verbose=False)
+                    if newly_added_rules:
+                        import sqlite3
+                        conn_rule = sqlite3.connect(str(DEFAULT_DB_PATH))
+                        try:
+                            with conn_rule:
+                                for r_cid, r_def in newly_added_rules.items():
+                                    conn_rule.execute(
+                                        """
+                                        INSERT INTO scraping_rules (council_id, rule_json, updated_at)
+                                        VALUES (?, ?, CURRENT_TIMESTAMP)
+                                        ON CONFLICT(council_id) DO NOTHING
+                                        """,
+                                        (r_cid, json.dumps(r_def, ensure_ascii=False))
+                                    )
+                        finally:
+                            conn_rule.close()
                 else:
-                    print("[WARN] SQLite マスターDBへのシードに失敗しました。")
+                    print("[DB SYNC] 初回SQLite マスターDB構築を実行中...")
+                    seed_db()
+
+                print("[DB SYNC] 2系統 JSON への決定論的エクスポートを実行中...")
+                export_data()
+                print("[DB SYNC] SQLite マスターDB & 2系統 JSON の完全同期が完了しました。")
+
+                # Drop 152: --crawl-new 指定時は新規発見会議体の初回開催回・配付資料をワンストップ取得
+                if crawl_new and added_count > 0:
+                    print(f"\n[CRAWL-NEW] 新規追加 {added_count} 会議体の初回開催回・配付資料クロールを実行中...")
+                    try:
+                        import crawler as crawler_mod
+                    except ImportError:
+                        import admin.crawler as crawler_mod
+                    crawler_mod.run_meeting_crawler(
+                        workers=2,
+                        recent_years="all",
+                        new_only=True,
+                        skip_download=True,
+                        enable_llm=False,
+                    )
             else:
                 print(f"[WARN] data.json の保存に失敗しました。")
         except Exception as e:
@@ -1097,7 +1170,8 @@ if __name__ == "__main__":
     parser.add_argument("--from-ministry-news", dest="from_news", action="store_true", help="省庁新着情報・報道発表から新規会議体を検知")
     parser.add_argument("--llm", action="store_true", help="LLM判定モードを強制ON")
     parser.add_argument("--no-llm", action="store_true", help="LLM判定モードをOFF")
+    parser.add_argument("--crawl-new", action="store_true", help="新規検出会議体の初回開催回・配付資料を連続取得する [Drop 152]")
     args = parser.parse_args()
     mode = "ministry_news" if args.from_news or args.mode == "ministry_news" else "normal"
     enable_llm = True if args.llm else (False if args.no_llm else None)
-    run_discovery(target_ministry=args.ministry, dry_run=args.dry_run, mode=mode, enable_llm=enable_llm)
+    run_discovery(target_ministry=args.ministry, dry_run=args.dry_run, mode=mode, enable_llm=enable_llm, crawl_new=args.crawl_new)

@@ -165,7 +165,13 @@
       "domains": [
         "reconstruction.go.jp"
       ],
-      "hexColor": "#eab308"
+      "hexColor": "#eab308",
+      "newsPortals": [
+        {
+          "url": "https://www.reconstruction.go.jp/",
+          "type": "news_feed"
+        }
+      ]
     },
     "JFTC": {
       "name": "公正取引委員会",
@@ -208,6 +214,12 @@
       "hexColor": "#1e3a8a",
       "exclude_title_keywords": [
         "有識者会議｜警察庁"
+      ],
+      "newsPortals": [
+        {
+          "url": "https://www.npa.go.jp/news/release/index.html",
+          "type": "news_feed"
+        }
       ]
     },
     "PPC": {
@@ -436,7 +448,13 @@
         "moj.go.jp",
         "isa.go.jp"
       ],
-      "hexColor": "#475569"
+      "hexColor": "#475569",
+      "newsPortals": [
+        {
+          "url": "https://www.moj.go.jp/isa/publications/press/index.html",
+          "type": "news_feed"
+        }
+      ]
     },
     "KOUANSHIN": {
       "name": "公安審査委員会",
@@ -548,7 +566,13 @@
       "domains": [
         "mext.go.jp"
       ],
-      "hexColor": "#475569"
+      "hexColor": "#475569",
+      "newsPortals": [
+        {
+          "url": "https://www.mext.go.jp/sports/b_menu/houdou/index.htm",
+          "type": "news_feed"
+        }
+      ]
     },
     "ACA": {
       "name": "文化庁",
@@ -566,7 +590,13 @@
         "bunka.go.jp",
         "mext.go.jp"
       ],
-      "hexColor": "#475569"
+      "hexColor": "#475569",
+      "newsPortals": [
+        {
+          "url": "https://www.bunka.go.jp/koho_hodo_oshirase/hodohappyo/index.html",
+          "type": "news_feed"
+        }
+      ]
     },
     "MHLW": {
       "name": "厚生労働省",
@@ -719,7 +749,13 @@
         "enecho.meti.go.jp",
         "meti.go.jp"
       ],
-      "hexColor": "#475569"
+      "hexColor": "#475569",
+      "newsPortals": [
+        {
+          "url": "https://www.enecho.meti.go.jp/",
+          "type": "news_feed"
+        }
+      ]
     },
     "JPO": {
       "name": "特許庁",
@@ -748,7 +784,13 @@
         "chusho.meti.go.jp",
         "meti.go.jp"
       ],
-      "hexColor": "#475569"
+      "hexColor": "#475569",
+      "newsPortals": [
+        {
+          "url": "https://www.chusho.meti.go.jp/",
+          "type": "news_feed"
+        }
+      ]
     },
     "MLIT": {
       "name": "国土交通省",

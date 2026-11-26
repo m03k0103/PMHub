@@ -173,3 +173,56 @@ def extract_council_name_from_news_title(title: str, keywords: list) -> str:
 
     return ""
 
+
+_GENERIC_SLUG_SEGMENTS = frozenset({
+    "jp", "j", "stf", "seisaku", "seisakukaigi", "shingi", "singi", "shingi1", "shingi2",
+    "shingikai", "councils", "council", "index", "html", "htm", "pages", "page",
+    "committee", "kento", "singi_kento", "bunkashingikai", "main_sosiki", "policy",
+    "about_mof", "proceedings", "material", "siryou", "shiryou", "gijishidai",
+    "news", "press", "houdou", "topics", "detail", "top", "default", "web",
+    "public", "content", "contents", "common", "pdf", "data", "files", "file"
+})
+_GENERIC_SLUG_RE = re.compile(
+    r'^(?:\d+|r\d+|h\d+|newpage_\d+|shingi-.*|other-.*|post-\d+|menu_.*|\d{6,8})$',
+    re.IGNORECASE
+)
+
+
+def generate_council_slug_id(min_code: str, official_url: str, used_ids: set, next_seq: int):
+    """
+    公式URLパスから意味ある ASCII スラグを抽出して `{min}-{slug}`（ハイフン厳格1個・2セグメント）を生成する (Drop 152)。
+    抽出不可または重複時は従来の `{min}-{next_seq}` 連番へ安全にフォールバックし、(council_id, next_seq) を返す。
+    """
+    from urllib.parse import urlparse
+    norm_min = normalize_ministry_code(min_code).lower() or "gov"
+
+    slug_cand = ""
+    if official_url:
+        try:
+            path = urlparse(official_url).path or ""
+            raw_parts = [p for p in path.split("/") if p]
+            for seg in reversed(raw_parts):
+                seg_base = re.sub(r'\.(?:html?|php|aspx?|jsp)$', '', seg, flags=re.IGNORECASE)
+                seg_low = seg_base.lower()
+                if not seg_low or seg_low in _GENERIC_SLUG_SEGMENTS or _GENERIC_SLUG_RE.match(seg_low):
+                    continue
+                normalized = re.sub(r'[^a-z0-9_]', '', seg_low.replace('-', '_'))
+                normalized = re.sub(r'_+', '_', normalized).strip('_')[:40].strip('_')
+                if len(normalized) >= 3 and re.search(r'[a-z]', normalized):
+                    slug_cand = normalized
+                    break
+        except Exception:
+            slug_cand = ""
+
+    if slug_cand:
+        cand_id = f"{norm_min}-{slug_cand}"
+        if cand_id not in used_ids:
+            return cand_id, next_seq
+
+    seq = max(1, int(next_seq))
+    fallback_id = f"{norm_min}-{seq}"
+    while fallback_id in used_ids:
+        seq += 1
+        fallback_id = f"{norm_min}-{seq}"
+    return fallback_id, seq + 1
+

@@ -23,6 +23,7 @@ from .name_cleaner import (
     clean_council_name,
     get_core_council_name,
     extract_council_name_from_news_title,
+    generate_council_slug_id,
     MINISTRY_CODE_NORMALIZATION,
 )
 
@@ -53,6 +54,7 @@ __all__ = [
     "clean_council_name",
     "get_core_council_name",
     "extract_council_name_from_news_title",
+    "generate_council_slug_id",
     "MINISTRY_CODE_NORMALIZATION",
     "NOISE_PERSON_ROLES",
     "NOISE_ACTION_PATTERNS",
