@@ -1,6 +1,384 @@
 {
   "meetings": [
     {
+      "id": "cao-252-20241126-375",
+      "councilId": "cao-252",
+      "name": "第375回 日本学術会議 幹事会",
+      "date": "2024/11/26",
+      "officialUrl": "https://www.scj.go.jp/ja/member/iinkai/kanji/siryo375.html",
+      "materials": [
+        {
+          "name": "議事要旨(PDF形式:165KB)",
+          "url": "https://www.scj.go.jp/ja/member/iinkai/kanji/pdf26/giji375.pdf"
+        }
+      ]
+    },
+    {
+      "id": "cao-keizai_anzen_shimon-20241126-005",
+      "councilId": "cao-keizai_anzen_shimon",
+      "name": "第5回 重要経済安保情報保護活用諮問会議",
+      "date": "2024/11/26",
+      "officialUrl": "https://www.cao.go.jp/keizai_anzen_hosho/hogokatsuyou/shimon/shimon.html",
+      "materials": [
+        {
+          "name": "議事次第",
+          "url": "https://www.cao.go.jp/keizai_anzen_hosho/hogokatsuyou/shimon/kaigi_5/shidai.pdf"
+        },
+        {
+          "name": "資料1",
+          "url": "https://www.cao.go.jp/keizai_anzen_hosho/hogokatsuyou/shimon/kaigi_5/shiryou_1.pdf"
+        },
+        {
+          "name": "資料2",
+          "url": "https://www.cao.go.jp/keizai_anzen_hosho/hogokatsuyou/shimon/kaigi_5/shiryou_2.pdf"
+        },
+        {
+          "name": "資料3",
+          "url": "https://www.cao.go.jp/keizai_anzen_hosho/hogokatsuyou/shimon/kaigi_5/shiryou_3.pdf"
+        },
+        {
+          "name": "資料4",
+          "url": "https://www.cao.go.jp/keizai_anzen_hosho/hogokatsuyou/shimon/kaigi_5/shiryou_4.pdf"
+        },
+        {
+          "name": "資料5",
+          "url": "https://www.cao.go.jp/keizai_anzen_hosho/hogokatsuyou/shimon/kaigi_5/shiryou_5.pdf"
+        },
+        {
+          "name": "議事要旨",
+          "url": "https://www.cao.go.jp/keizai_anzen_hosho/hogokatsuyou/shimon/kaigi_5/gijiyoushi.pdf"
+        }
+      ]
+    },
+    {
+      "id": "cao-kisei_chiiki_wg-20241126-002",
+      "councilId": "cao-kisei_chiiki_wg",
+      "name": "第2回 規制改革推進会議 地域活性化・人手不足対応WG",
+      "date": "2024/11/26",
+      "officialUrl": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2409_05local/241126/local02_agenda.html",
+      "materials": [
+        {
+          "name": "議事録",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2409_05local/241126/local02_minutes.pdf"
+        },
+        {
+          "name": "熊本県司法書士会 中山副会長 御提出資料(PDF形式:608KB)",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2409_05local/241126/local01_01.pdf"
+        },
+        {
+          "name": "法務省 御提出資料(PDF形式:1,458KB)",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2409_05local/241126/local01_02.pdf"
+        },
+        {
+          "name": "御手洗委員・落合委員 御提出資料(PDF形式:457KB)",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2409_05local/241126/local01_03.pdf"
+        },
+        {
+          "name": "気仙沼市 御提出資料(PDF形式:656KB)",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2409_05local/241126/local02_01.pdf"
+        },
+        {
+          "name": "東京都 御提出資料(PDF形式:660KB)",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2409_05local/241126/local02_02.pdf"
+        },
+        {
+          "name": "環境省 御提出資料(PDF形式:1,957KB)",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2409_05local/241126/local02_03.pdf"
+        },
+        {
+          "name": "御手洗委員・落合委員 御提出資料(PDF形式:336KB)",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2409_05local/241126/local02_04.pdf"
+        },
+        {
+          "name": "事務局資料(PDF形式:321KB)",
+          "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2409_05local/241126/local02_05.pdf"
+        }
+      ]
+    },
+    {
+      "id": "cas-jieikan_shogu-20241126-003",
+      "councilId": "cas-jieikan_shogu",
+      "name": "第3回 自衛官の処遇・勤務環境の改善及び新たな生涯設計の確立に関する関係閣僚会議",
+      "date": "2024/11/26",
+      "officialUrl": "https://www.cas.go.jp/jp/seisaku/jieikan/gijisidai/dai3/siryou.pdf",
+      "summary": "第3回 自衛官の処遇・勤務環境の改善及び新たな生涯設計の確立に関する関係閣僚会議の開催。主要議題の推進状況及び今後の対応方針について審議が行われた。",
+      "tags": [
+        "自衛官の処遇",
+        "CAS",
+        "第3回"
+      ],
+      "materials": [
+        {
+          "name": "第3回自衛官の処遇・勤務環境の改善及び新たな生涯設計の確立に関する関係閣僚会議(PDF/1,933KB)",
+          "url": "https://www.cas.go.jp/jp/seisaku/jieikan/gijisidai/dai3/siryou.pdf"
+        },
+        {
+          "name": "第3回自衛官の処遇・勤務環境の改善及び新たな生涯設計の確立に関する関係閣僚会議(参考資料)(PDF/2,943KB)",
+          "url": "https://www.cas.go.jp/jp/seisaku/jieikan/gijisidai/dai3/sankou.pdf"
+        },
+        {
+          "name": "議事要旨(PDF/206KB)",
+          "url": "https://www.cas.go.jp/jp/seisaku/jieikan/dai3/gaiyou.pdf"
+        }
+      ]
+    },
+    {
+      "id": "digital-438-20241126-003",
+      "councilId": "digital-438",
+      "name": "第3回 電子署名法認定基準のモダナイズ検討会",
+      "date": "2024/11/26",
+      "officialUrl": "https://www.digital.go.jp/councils/digitalsign-modernization/9266094e-be47-447c-bb73-fc3a26656932",
+      "materials": [
+        {
+          "name": "議事次第(PDF/173KB)",
+          "url": "https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/9266094e-be47-447c-bb73-fc3a26656932/05a07a86/20241126_meeting_digitalsign_modernization_agenda_00.pdf"
+        },
+        {
+          "name": "資料1:「モダナイズの方向性に関する追加議論」(PDF/2,294KB)",
+          "url": "https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/9266094e-be47-447c-bb73-fc3a26656932/029e3fbd/20241126_meeting_digitalsign_modernization_outline_01.pdf"
+        },
+        {
+          "name": "議事録(PDF/369KB)",
+          "url": "https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/9266094e-be47-447c-bb73-fc3a26656932/ff4ab0eb/20241126_meeting_digitalsign_modernization_minutes_01.pdf"
+        },
+        {
+          "name": "(参考)メールでの追加コメント(PDF/155KB)",
+          "url": "https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/9266094e-be47-447c-bb73-fc3a26656932/ae982114/20241126_meeting_digitalsign_modernization_minutes_02.pdf"
+        }
+      ]
+    },
+    {
+      "id": "digital-442-20241126-001",
+      "councilId": "digital-442",
+      "name": "第1回 サービスデザイン関連ガイドライン改訂に係る検討会",
+      "date": "2024/11/26",
+      "officialUrl": "https://www.digital.go.jp/councils/service-design-related-guidelines-revision/b005ebd8-2508-4523-80cb-0dbf0bbb7e7f",
+      "materials": [
+        {
+          "name": "議事次第(PDF/107KB)",
+          "url": "https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/b005ebd8-2508-4523-80cb-0dbf0bbb7e7f/b5849a36/20241125_meeting_service-design-related-guidelines-revision_agenda_00.pdf"
+        },
+        {
+          "name": "議事概要(PDF/103KB)",
+          "url": "https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/b005ebd8-2508-4523-80cb-0dbf0bbb7e7f/3c1d4f94/20241126_meeting_service-design-related-guidelines-revision_summary_01.pdf"
+        }
+      ]
+    },
+    {
+      "id": "fsc-honkaigi-20241126-963",
+      "councilId": "fsc-honkaigi",
+      "name": "第963回 食品安全委員会",
+      "date": "2024/11/26",
+      "officialUrl": "https://www.fsc.go.jp/fsciis/meetingMaterial/show/kai20241126fsc",
+      "materials": [
+        {
+          "name": "議事録",
+          "url": "https://www.fsc.go.jp/fsciis/attachedFile/download?retrievalId=kai20241126fsc&fileId=999",
+          "type": "HTML"
+        },
+        {
+          "name": "議事次第",
+          "url": "https://www.fsc.go.jp/fsciis/attachedFile/download?retrievalId=kai20241126fsc&fileId=010"
+        },
+        {
+          "name": "座席表",
+          "url": "https://www.fsc.go.jp/fsciis/attachedFile/download?retrievalId=kai20241126fsc&fileId=020"
+        },
+        {
+          "name": "資料1:食品安全基本法第11条第1項第1号の食品健康影響評価を行うことが明らかに必要でないときについて(照会)<食品衛生法施行規則の一部改正について>",
+          "url": "https://www.fsc.go.jp/fsciis/attachedFile/download?retrievalId=kai20241126fsc&fileId=100"
+        },
+        {
+          "name": "議事概要",
+          "url": "https://www.fsc.go.jp/fsciis/attachedFile/download?retrievalId=kai20241126fsc&fileId=900"
+        }
+      ]
+    },
+    {
+      "id": "jfa-suisan_maguro-20241126-012",
+      "councilId": "jfa-suisan_maguro",
+      "name": "第12回 水産政策審議会 まぐろ特別部会",
+      "date": "2024/11/26",
+      "round": 12,
+      "officialUrl": "https://www.jfa.maff.go.jp/j/council/seisaku/kanri/maguro/241126.html",
+      "materials": [
+        {
+          "name": "議事録",
+          "url": "https://www.jfa.maff.go.jp/j/council/seisaku/kanri/maguro/attach/pdf/index-25.pdf"
+        },
+        {
+          "name": "くろまぐろの漁獲可能量の配分の考え方について",
+          "url": "https://www.jfa.maff.go.jp/j/council/seisaku/kanri/maguro/attach/pdf/index-24.pdf"
+        }
+      ]
+    },
+    {
+      "id": "meti-1664-20241126-008",
+      "councilId": "meti-1664",
+      "name": "令和6年度 第8回 次世代型太陽電池の導入拡大及び産業競争力強化に向けた官民協議会",
+      "date": "2024/11/26",
+      "officialUrl": "https://www.meti.go.jp/shingikai/energy_environment/perovskite_solar_cell/008.html",
+      "materials": [
+        {
+          "name": "議事次第",
+          "url": "https://www.meti.go.jp/shingikai/energy_environment/perovskite_solar_cell/pdf/008_00_01.pdf"
+        },
+        {
+          "name": "参加者名簿",
+          "url": "https://www.meti.go.jp/shingikai/energy_environment/perovskite_solar_cell/pdf/008_00_02.pdf"
+        },
+        {
+          "name": "次世代型太陽電池戦略(案)",
+          "url": "https://www.meti.go.jp/shingikai/energy_environment/perovskite_solar_cell/pdf/008_s01_00.pdf"
+        },
+        {
+          "name": "武藤容治経済産業大臣 挨拶全文",
+          "url": "https://www.meti.go.jp/shingikai/energy_environment/perovskite_solar_cell/pdf/008_00_03.pdf"
+        },
+        {
+          "name": "議事要旨",
+          "url": "https://www.meti.go.jp/shingikai/energy_environment/perovskite_solar_cell/pdf/008_gijiyoshi.pdf"
+        }
+      ]
+    },
+    {
+      "id": "meti-sankoshin_green_innovation_industrial_restructuring-20241126-027",
+      "councilId": "meti-sankoshin_green_innovation_industrial_restructuring",
+      "name": "第27回 産業構造審議会 グリーンイノベーションプロジェクト部会 産業構造転換分野ワーキンググループ",
+      "date": "2024/11/26",
+      "officialUrl": "https://www.meti.go.jp/shingikai/sankoshin/green_innovation/industrial_restructuring/027.html",
+      "materials": [
+        {
+          "name": "議事次第・配布資料一覧(PDF形式:65KB)",
+          "url": "https://www.meti.go.jp/shingikai/sankoshin/green_innovation/industrial_restructuring/pdf/027_00_01.pdf"
+        },
+        {
+          "name": "資料1 産業構造転換分野ワーキンググループ委員名簿(PDF形式:77KB)",
+          "url": "https://www.meti.go.jp/shingikai/sankoshin/green_innovation/industrial_restructuring/pdf/027_01_00.pdf"
+        },
+        {
+          "name": "資料2 グリーンイノベーション基金事業における研究開発・社会実装の方向性について(PDF形式:2,318KB)",
+          "url": "https://www.meti.go.jp/shingikai/sankoshin/green_innovation/industrial_restructuring/pdf/027_02_00.pdf"
+        },
+        {
+          "name": "資料3 「スマートモビリティ社会の構築」プロジェクトに関する研究開発・社会実装計画(改定案)(PDF形式:1,094KB)",
+          "url": "https://www.meti.go.jp/shingikai/sankoshin/green_innovation/industrial_restructuring/pdf/027_03_00.pdf"
+        },
+        {
+          "name": "資料4 「次世代航空機の開発」プロジェクトに関する研究開発・社会実装計画(改定案)(PDF形式:1,264KB)",
+          "url": "https://www.meti.go.jp/shingikai/sankoshin/green_innovation/industrial_restructuring/pdf/027_04_00.pdf"
+        },
+        {
+          "name": "資料5 「次世代船舶の開発」プロジェクトに関する研究開発・社会実装計画(改定案)(PDF形式:1,112KB)",
+          "url": "https://www.meti.go.jp/shingikai/sankoshin/green_innovation/industrial_restructuring/pdf/027_05_00.pdf"
+        },
+        {
+          "name": "資料6 「バイオものづくり技術によるCO2を直接原料としたカーボンリサイクルの推進」プロジェクトに関する研究開発・社会実装計画(改定案)(PDF形式:1,167KB)",
+          "url": "https://www.meti.go.jp/shingikai/sankoshin/green_innovation/industrial_restructuring/pdf/027_06_00.pdf"
+        },
+        {
+          "name": "議事要旨(PDF形式:144KB)",
+          "url": "https://www.meti.go.jp/shingikai/sankoshin/green_innovation/industrial_restructuring/pdf/027_gijiyoshi.pdf"
+        },
+        {
+          "name": "議事録(PDF形式:283KB)",
+          "url": "https://www.meti.go.jp/shingikai/sankoshin/green_innovation/industrial_restructuring/pdf/027_gijiroku.pdf"
+        }
+      ]
+    },
+    {
+      "id": "mhlw-873-20241126-073",
+      "councilId": "mhlw-873",
+      "name": "第73回 疾病対策部会難病対策委員会",
+      "date": "2024/11/26",
+      "officialUrl": "https://www.mhlw.go.jp/stf/newpage_46002.html",
+      "materials": [
+        {
+          "name": "議事録",
+          "url": "https://www.mhlw.go.jp/stf/newpage_47896.html",
+          "type": "HTML"
+        }
+      ]
+    },
+    {
+      "id": "mhlw-949-20241126-076",
+      "councilId": "mhlw-949",
+      "name": "第76回 雇用環境・均等分科会(旧雇用均等分科会)",
+      "date": "2024/11/26",
+      "officialUrl": "https://www.mhlw.go.jp/stf/newpage_45983.html",
+      "materials": [
+        {
+          "name": "議事録",
+          "url": "https://www.mhlw.go.jp/content/11909500/001372498.pdf"
+        }
+      ]
+    },
+    {
+      "id": "mhlw-shouni_mansei_taisaku_iinkai-20241126-004",
+      "councilId": "mhlw-shouni_mansei_taisaku_iinkai",
+      "name": "第4回 小児慢性特定疾病対策委員会",
+      "date": "2024/11/26",
+      "officialUrl": "https://www.mhlw.go.jp/stf/newpage_46002.html",
+      "materials": [
+        {
+          "name": "議事録",
+          "url": "https://www.mhlw.go.jp/stf/newpage_47896.html",
+          "type": "HTML"
+        }
+      ]
+    },
+    {
+      "id": "mic-shakai_jissou_wg-20241126-001",
+      "councilId": "mic-shakai_jissou_wg",
+      "name": "情報通信審議会 情報通信技術分科会 技術戦略委員会 社会実装加速化WG（第1回）（2024年11月26日開催）",
+      "date": "2024/11/26",
+      "officialUrl": "https://www.soumu.go.jp/main_sosiki/joho_tsusin/policyreports/joho_tsusin/gijutsusenryaku/syakai/02tsushin03_04000586.html",
+      "materials": [
+        {
+          "name": "社会実装加速化ワーキンググループ 設置要綱",
+          "url": "https://www.soumu.go.jp/main_content/000978667.pdf"
+        },
+        {
+          "name": "主な検討項目・論点について",
+          "url": "https://www.soumu.go.jp/main_content/000978668.pdf"
+        },
+        {
+          "name": "NICT提出資料",
+          "url": "https://www.soumu.go.jp/main_content/000978876.pdf"
+        },
+        {
+          "name": "中尾オブザーバー提出資料",
+          "url": "https://www.soumu.go.jp/main_content/000978670.pdf"
+        },
+        {
+          "name": "原山オブザーバー提出資料",
+          "url": "https://www.soumu.go.jp/main_content/000978671.pdf"
+        },
+        {
+          "name": "第1回議事概要",
+          "url": "https://www.soumu.go.jp/main_content/001019555.pdf"
+        }
+      ]
+    },
+    {
+      "id": "mof-jgbsp-20241126-111",
+      "councilId": "mof-jgbsp",
+      "name": "第111回 国債市場特別参加者会合",
+      "date": "2024/11/26",
+      "officialUrl": "https://www.mof.go.jp/about_mof/councils/meeting_of_jgbsp/proceedings/outline/241126pd.html",
+      "materials": [
+        {
+          "name": "議事要旨",
+          "url": "https://www.mof.go.jp/about_mof/councils/meeting_of_jgbsp/proceedings/outline/241126.html",
+          "type": "HTML"
+        },
+        {
+          "name": "国債市場特別参加者会合 資料 (241126pd111)",
+          "url": "https://www.mof.go.jp/about_mof/councils/meeting_of_jgbsp/proceedings/outline/241126pd111.pdf"
+        }
+      ]
+    },
+    {
       "id": "cao-220-20241125-041",
       "councilId": "cao-220",
       "name": "第41回 沖縄振興審議会",
@@ -1315,6 +1693,32 @@
         {
           "name": "参考5 林野庁関係者名簿(PDF : 94KB)",
           "url": "https://www.rinya.maff.go.jp/j/rinsei/singikai/attach/pdf/241121-11.pdf"
+        }
+      ]
+    },
+    {
+      "id": "atla-shitauke_kentoukai-20241120-003",
+      "councilId": "atla-shitauke_kentoukai",
+      "name": "第3回 防衛装備に係る事業者の下請適正取引等の推進のためのガイドライン策定に向けた有識者検討会",
+      "date": "2024/11/20",
+      "round": 3,
+      "officialUrl": "https://www.mod.go.jp/atla/soubiseisakukaigishiryou_kentoukai.html",
+      "materials": [
+        {
+          "name": "第3回議事概要",
+          "url": "https://www.mod.go.jp/atla/soubiseisaku/soubiseisakukaigishiryou/kentoukai03_gijigaiyo.pdf"
+        },
+        {
+          "name": "資料1 議事次第",
+          "url": "https://www.mod.go.jp/atla/soubiseisaku/soubiseisakukaigishiryou/kentoukai03_shiryo01.pdf"
+        },
+        {
+          "name": "資料2 防衛産業の下請ガイドライン策定に向けたアンケート調査結果概要資料",
+          "url": "https://www.mod.go.jp/atla/soubiseisaku/soubiseisakukaigishiryou/kentoukai03_shiryo02.pdf"
+        },
+        {
+          "name": "資料3 防衛産業における下請適正取引等の推進のためのガイドライン案 概要",
+          "url": "https://www.mod.go.jp/atla/soubiseisaku/soubiseisakukaigishiryou/kentoukai03_shiryo03.pdf"
         }
       ]
     },
@@ -57071,6 +57475,36 @@
       ]
     },
     {
+      "id": "atla-shitauke_kentoukai-20240220-002",
+      "councilId": "atla-shitauke_kentoukai",
+      "name": "第2回 防衛装備に係る事業者の下請適正取引等の推進のためのガイドライン策定に向けた有識者検討会",
+      "date": "2024/02/20",
+      "round": 2,
+      "officialUrl": "https://www.mod.go.jp/atla/soubiseisakukaigishiryou_kentoukai.html",
+      "materials": [
+        {
+          "name": "第2回議事概要",
+          "url": "https://www.mod.go.jp/atla/soubiseisaku/soubiseisakukaigishiryou/kentoukai02_gijigaiyo.pdf"
+        },
+        {
+          "name": "資料1 議事次第",
+          "url": "https://www.mod.go.jp/atla/soubiseisaku/soubiseisakukaigishiryou/kentoukai02_shiryo01.pdf"
+        },
+        {
+          "name": "資料2 下請けガイドライン策定に向けたヒア結果まとめ（概要）",
+          "url": "https://www.mod.go.jp/atla/soubiseisaku/soubiseisakukaigishiryou/kentoukai02_shiryo02.pdf"
+        },
+        {
+          "name": "資料5 下請けガイドライン策定に関するアンケート案",
+          "url": "https://www.mod.go.jp/atla/soubiseisaku/soubiseisakukaigishiryou/kentoukai02_shiryo05.pdf"
+        },
+        {
+          "name": "参考 今後の進め方 ※第1回検討資料",
+          "url": "https://www.mod.go.jp/atla/soubiseisaku/soubiseisakukaigishiryou/kentoukai02_shiryo06.pdf"
+        }
+      ]
+    },
+    {
       "id": "cao-keizai_anzen_zosen-20240220-001",
       "councilId": "cao-keizai_anzen_zosen",
       "name": "第1回 造船ワーキンググループ",
@@ -100329,6 +100763,44 @@
         {
           "name": "ネガティブエミッション市場創出に向けた検討会 とりまとめ 参考資料",
           "url": "https://www.meti.go.jp/shingikai/energy_environment/negative_emission/pdf/20230628_3.pdf"
+        }
+      ]
+    },
+    {
+      "id": "atla-shitauke_kentoukai-20230628-001",
+      "councilId": "atla-shitauke_kentoukai",
+      "name": "第1回 防衛装備に係る事業者の下請適正取引等の推進のためのガイドライン策定に向けた有識者検討会",
+      "date": "2023/06/28",
+      "round": 1,
+      "officialUrl": "https://www.mod.go.jp/atla/soubiseisakukaigishiryou_kentoukai.html",
+      "materials": [
+        {
+          "name": "第1回議事概要",
+          "url": "https://www.mod.go.jp/atla/soubiseisaku/soubiseisakukaigishiryou/kentoukai01_gijigaiyo.pdf"
+        },
+        {
+          "name": "資料1 参加者名簿",
+          "url": "https://www.mod.go.jp/atla/soubiseisaku/soubiseisakukaigishiryou/kentoukai01_shiryo01.pdf"
+        },
+        {
+          "name": "資料2 議事の取扱い等について",
+          "url": "https://www.mod.go.jp/atla/soubiseisaku/soubiseisakukaigishiryou/kentoukai01_shiryo02.pdf"
+        },
+        {
+          "name": "資料3 防衛装備に係る事業者の下請適正取引等の推進のためのガイドライン策定に向けた検討会の設置について",
+          "url": "https://www.mod.go.jp/atla/soubiseisaku/soubiseisakukaigishiryou/kentoukai01_shiryo03.pdf"
+        },
+        {
+          "name": "資料4 防衛産業の実態",
+          "url": "https://www.mod.go.jp/atla/soubiseisaku/soubiseisakukaigishiryou/kentoukai01_shiryo04.pdf"
+        },
+        {
+          "name": "資料5 防衛装備に係る事業者の下請適正取引等の推進のためのガイドライン策定に向けて",
+          "url": "https://www.mod.go.jp/atla/soubiseisaku/soubiseisakukaigishiryou/kentoukai01_shiryo05.pdf"
+        },
+        {
+          "name": "資料6 今後の進め方",
+          "url": "https://www.mod.go.jp/atla/soubiseisaku/soubiseisakukaigishiryou/kentoukai01_shiryo06.pdf"
         }
       ]
     },
@@ -231692,6 +232164,24 @@
       ]
     },
     {
+      "id": "atla-jiki_system-20210831-002",
+      "councilId": "atla-jiki_system",
+      "name": "第2回 プロジェクト管理及び価格算定に係る次期システム検討委員会",
+      "date": "2021/08/31",
+      "round": 2,
+      "officialUrl": "https://www.mod.go.jp/atla/soubiseisakukaigishiryou_iinkai_jiki.html",
+      "materials": [
+        {
+          "name": "議事要旨",
+          "url": "https://www.mod.go.jp/atla/soubiseisaku/soubiseisakukaigishiryou/jiki_yoshi_r0308.pdf"
+        },
+        {
+          "name": "会議資料",
+          "url": "https://www.mod.go.jp/atla/soubiseisaku/soubiseisakukaigishiryou/jiki_shiryo_r0308.pdf"
+        }
+      ]
+    },
+    {
       "id": "cas-genshiryoku_saigai-20210831-055",
       "councilId": "cas-genshiryoku_saigai",
       "name": "第55回 原子力災害対策本部",
@@ -245416,6 +245906,15 @@
           "type": "HTML"
         }
       ]
+    },
+    {
+      "id": "atla-jiki_system-20210601-001",
+      "councilId": "atla-jiki_system",
+      "name": "第1回 プロジェクト管理及び価格算定に係る次期システム検討委員会",
+      "date": "2021/06/01",
+      "round": 1,
+      "officialUrl": "https://www.mod.go.jp/atla/soubiseisakukaigishiryou_iinkai_jiki.html",
+      "materials": []
     },
     {
       "id": "cao-245-20210601-064",

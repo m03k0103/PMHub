@@ -528,6 +528,24 @@
       "template": "tpl-general-shingikai-report",
       "manualLock": true
     },
+    "atla-boueisangyou_kentoukai": {
+      "template": "tpl-parent-table-direct",
+      "pdf_selector": "a[href*='.pdf']",
+      "date_regex": "(?:令和|平成)(?:\\d+|元)年\\d{1,2}月\\d{1,2}日|\\d{4}年\\d{1,2}月\\d{1,2}日|\\d{4}[/-]\\d{1,2}[/-]\\d{1,2}",
+      "manualLock": true
+    },
+    "atla-jiki_system": {
+      "template": "tpl-parent-table-direct",
+      "pdf_selector": "a[href*='.pdf']",
+      "date_regex": "(?:令和|平成)(?:\\d+|元)年\\d{1,2}月\\d{1,2}日|\\d{4}年\\d{1,2}月\\d{1,2}日|\\d{4}[/-]\\d{1,2}[/-]\\d{1,2}",
+      "manualLock": true
+    },
+    "atla-shitauke_kentoukai": {
+      "template": "tpl-parent-table-direct",
+      "pdf_selector": "a[href*='.pdf']",
+      "date_regex": "(?:令和|平成)(?:\\d+|元)年\\d{1,2}月\\d{1,2}日|\\d{4}年\\d{1,2}月\\d{1,2}日|\\d{4}[/-]\\d{1,2}[/-]\\d{1,2}",
+      "manualLock": true
+    },
     "caa-209": {
       "template": "tpl-parent-table-direct",
       "manualLock": true
@@ -9001,6 +9019,39 @@
       "failureReason": "",
       "consecutiveFailures": 0,
       "manualLockActive": false
+    },
+    "atla-boueisangyou_kentoukai": {
+      "lastAttempt": "2026/11/27 07:45",
+      "result": "success",
+      "resultReason": "手動確認登録",
+      "extractionMethod": "manual",
+      "materialsCount": 4,
+      "datesCount": 1,
+      "failureReason": "",
+      "consecutiveFailures": 0,
+      "manualLockActive": true
+    },
+    "atla-jiki_system": {
+      "lastAttempt": "2026/11/27 07:45",
+      "result": "success",
+      "resultReason": "手動確認登録",
+      "extractionMethod": "manual",
+      "materialsCount": 2,
+      "datesCount": 2,
+      "failureReason": "",
+      "consecutiveFailures": 0,
+      "manualLockActive": true
+    },
+    "atla-shitauke_kentoukai": {
+      "lastAttempt": "2026/11/27 07:45",
+      "result": "success",
+      "resultReason": "手動確認登録",
+      "extractionMethod": "manual",
+      "materialsCount": 20,
+      "datesCount": 4,
+      "failureReason": "",
+      "consecutiveFailures": 0,
+      "manualLockActive": true
     },
     "caa-209": {
       "lastAttempt": "2026-11-22 21:24:19",
@@ -32348,6 +32399,9 @@
       "anre-1794",
       "anre-1795",
       "anre-1796",
+      "atla-boueisangyou_kentoukai",
+      "atla-jiki_system",
+      "atla-shitauke_kentoukai",
       "caa-shokuhin_loss_sakugen",
       "cao-218",
       "cao-220",
@@ -34873,6 +34927,13 @@
       "anre-1796-20260224-001",
       "anre-souene_kihon_seisaku-20240722-001",
       "anre-souene_kihon_seisaku-20240816-002",
+      "atla-boueisangyou_kentoukai-20260324-001",
+      "atla-jiki_system-20210601-001",
+      "atla-jiki_system-20210831-002",
+      "atla-shitauke_kentoukai-20230628-001",
+      "atla-shitauke_kentoukai-20240220-002",
+      "atla-shitauke_kentoukai-20241120-003",
+      "atla-shitauke_kentoukai-20250220-004",
       "caa-209-20260612-001",
       "caa-shokuhin_eisei_kijun-20250929-s05",
       "caa-shokuhin_eisei_kijun-20251118-s06",
@@ -55048,6 +55109,32 @@
       "anre-1796-20260224-001:https://www.meti.go.jp/shingikai/energy_environment/sogo_energy/pdf/2025_001_00_01.pdf",
       "anre-1796-20260224-001:https://www.meti.go.jp/shingikai/energy_environment/sogo_energy/pdf/2025_001_01_00.pdf",
       "anre-1796-20260224-001:https://www.meti.go.jp/shingikai/energy_environment/sogo_energy/pdf/205_001_gijigaiyo.pdf",
+      "atla-boueisangyou_kentoukai-20260324-001:https://www.mod.go.jp/atla/soubiseisaku/soubiseisakukaigishiryou/gijiyoushi080914.pdf",
+      "atla-boueisangyou_kentoukai-20260324-001:https://www.mod.go.jp/atla/soubiseisaku/soubiseisakukaigishiryou/kentoukai080324_01.pdf",
+      "atla-boueisangyou_kentoukai-20260324-001:https://www.mod.go.jp/atla/soubiseisaku/soubiseisakukaigishiryou/kentoukai080324_02.pdf",
+      "atla-boueisangyou_kentoukai-20260324-001:https://www.mod.go.jp/atla/soubiseisaku/soubiseisakukaigishiryou/kentoukai080324_04.pdf",
+      "atla-jiki_system-20210831-002:https://www.mod.go.jp/atla/soubiseisaku/soubiseisakukaigishiryou/jiki_shiryo_r0308.pdf",
+      "atla-jiki_system-20210831-002:https://www.mod.go.jp/atla/soubiseisaku/soubiseisakukaigishiryou/jiki_yoshi_r0308.pdf",
+      "atla-shitauke_kentoukai-20230628-001:https://www.mod.go.jp/atla/soubiseisaku/soubiseisakukaigishiryou/kentoukai01_gijigaiyo.pdf",
+      "atla-shitauke_kentoukai-20230628-001:https://www.mod.go.jp/atla/soubiseisaku/soubiseisakukaigishiryou/kentoukai01_shiryo01.pdf",
+      "atla-shitauke_kentoukai-20230628-001:https://www.mod.go.jp/atla/soubiseisaku/soubiseisakukaigishiryou/kentoukai01_shiryo02.pdf",
+      "atla-shitauke_kentoukai-20230628-001:https://www.mod.go.jp/atla/soubiseisaku/soubiseisakukaigishiryou/kentoukai01_shiryo03.pdf",
+      "atla-shitauke_kentoukai-20230628-001:https://www.mod.go.jp/atla/soubiseisaku/soubiseisakukaigishiryou/kentoukai01_shiryo04.pdf",
+      "atla-shitauke_kentoukai-20230628-001:https://www.mod.go.jp/atla/soubiseisaku/soubiseisakukaigishiryou/kentoukai01_shiryo05.pdf",
+      "atla-shitauke_kentoukai-20230628-001:https://www.mod.go.jp/atla/soubiseisaku/soubiseisakukaigishiryou/kentoukai01_shiryo06.pdf",
+      "atla-shitauke_kentoukai-20240220-002:https://www.mod.go.jp/atla/soubiseisaku/soubiseisakukaigishiryou/kentoukai02_gijigaiyo.pdf",
+      "atla-shitauke_kentoukai-20240220-002:https://www.mod.go.jp/atla/soubiseisaku/soubiseisakukaigishiryou/kentoukai02_shiryo01.pdf",
+      "atla-shitauke_kentoukai-20240220-002:https://www.mod.go.jp/atla/soubiseisaku/soubiseisakukaigishiryou/kentoukai02_shiryo02.pdf",
+      "atla-shitauke_kentoukai-20240220-002:https://www.mod.go.jp/atla/soubiseisaku/soubiseisakukaigishiryou/kentoukai02_shiryo05.pdf",
+      "atla-shitauke_kentoukai-20240220-002:https://www.mod.go.jp/atla/soubiseisaku/soubiseisakukaigishiryou/kentoukai02_shiryo06.pdf",
+      "atla-shitauke_kentoukai-20241120-003:https://www.mod.go.jp/atla/soubiseisaku/soubiseisakukaigishiryou/kentoukai03_gijigaiyo.pdf",
+      "atla-shitauke_kentoukai-20241120-003:https://www.mod.go.jp/atla/soubiseisaku/soubiseisakukaigishiryou/kentoukai03_shiryo01.pdf",
+      "atla-shitauke_kentoukai-20241120-003:https://www.mod.go.jp/atla/soubiseisaku/soubiseisakukaigishiryou/kentoukai03_shiryo02.pdf",
+      "atla-shitauke_kentoukai-20241120-003:https://www.mod.go.jp/atla/soubiseisaku/soubiseisakukaigishiryou/kentoukai03_shiryo03.pdf",
+      "atla-shitauke_kentoukai-20250220-004:https://www.mod.go.jp/atla/soubiseisaku/soubiseisakukaigishiryou/kentoukai04_gijigaiyo.pdf",
+      "atla-shitauke_kentoukai-20250220-004:https://www.mod.go.jp/atla/soubiseisaku/soubiseisakukaigishiryou/kentoukai04_shiryo01.pdf",
+      "atla-shitauke_kentoukai-20250220-004:https://www.mod.go.jp/atla/soubiseisaku/soubiseisakukaigishiryou/kentoukai04_shiryo03.pdf",
+      "atla-shitauke_kentoukai-20250220-004:https://www.mod.go.jp/atla/soubiseisaku/soubiseisakukaigishiryou/kentoukai04_shiryo04.pdf",
       "cao-220-20120510-021:https://www8.cao.go.jp/okinawa/siryou/singikai/sinkousingikai/21/01.pdf",
       "cao-220-20120510-021:https://www8.cao.go.jp/okinawa/siryou/singikai/sinkousingikai/21/02.pdf",
       "cao-220-20120510-021:https://www8.cao.go.jp/okinawa/siryou/singikai/sinkousingikai/21/03-1.pdf",
@@ -108990,9 +109077,24 @@
       "smea-keiei_shien_bunkakai-20251029-043:https://www.chusho.meti.go.jp/koukai/shingikai/shienbunkakai/043/dl/002_1.pdf",
       "smea-keiei_shien_bunkakai-20251029-043:https://www.chusho.meti.go.jp/koukai/shingikai/shienbunkakai/043/dl/003.pdf"
     ],
-    "councilMaterials": []
+    "councilMaterials": [
+      "atla-jiki_system:https://www.mod.go.jp/atla/soubiseisaku/soubiseisakukaigishiryou/jiki_sonota_r0304.pdf",
+      "atla-jiki_system:https://www.mod.go.jp/atla/soubiseisaku/soubiseisakukaigishiryou/jiki_yoko_r0306.pdf"
+    ]
   },
   "councilCrawlMeta": {
+    "atla-boueisangyou_kentoukai": {
+      "discoveredAt": "2026/11/27 07:45",
+      "discoverySource": "manual"
+    },
+    "atla-jiki_system": {
+      "discoveredAt": "2026/11/27 07:45",
+      "discoverySource": "manual"
+    },
+    "atla-shitauke_kentoukai": {
+      "discoveredAt": "2026/11/27 07:45",
+      "discoverySource": "manual"
+    },
     "cao-2951": {
       "discoveredAt": "2026/10/24 17:12",
       "discoverySource": "rule"
@@ -109487,6 +109589,27 @@
     },
     "anre-souene_kihon_seisaku-20241227-s03": {
       "discoveredAt": "2026/11/22 21:24"
+    },
+    "atla-boueisangyou_kentoukai-20260324-001": {
+      "discoveredAt": "2026/11/27 07:45"
+    },
+    "atla-jiki_system-20210601-001": {
+      "discoveredAt": "2026/11/27 07:45"
+    },
+    "atla-jiki_system-20210831-002": {
+      "discoveredAt": "2026/11/27 07:45"
+    },
+    "atla-shitauke_kentoukai-20230628-001": {
+      "discoveredAt": "2026/11/27 07:45"
+    },
+    "atla-shitauke_kentoukai-20240220-002": {
+      "discoveredAt": "2026/11/27 07:45"
+    },
+    "atla-shitauke_kentoukai-20241120-003": {
+      "discoveredAt": "2026/11/27 07:45"
+    },
+    "atla-shitauke_kentoukai-20250220-004": {
+      "discoveredAt": "2026/11/27 07:45"
     },
     "caa-shokuhin_eisei_kijun-20250929-s05": {
       "discoveredAt": "2026/09/30 07:40"
