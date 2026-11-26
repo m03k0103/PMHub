@@ -1,5 +1,5 @@
 {
-  "lastCrawlTime": "2026/11/26 03:22",
+  "lastCrawlTime": "2026/11/26 20:31",
   "scrapingRuleTemplates": {
     "tpl-general-round-subpage": {
       "subpage_discovery_pattern": "(?:dai\\d+|\\d+kai|kaisai|gijisidai|gijiroku|haifu|session|meeting|\\b\\d{3,4}\\.html|\\d{2,3}/(?:index\\.html)?)",
@@ -4902,6 +4902,10 @@
     },
     "mhlw-2901": {
       "template": "tpl-parent-table-direct",
+      "manualLock": true
+    },
+    "mhlw-3012": {
+      "template": "tpl-mhlw-stf-subpage",
       "manualLock": true
     },
     "mhlw-729": {
@@ -13223,7 +13227,7 @@
       "manualLockActive": true
     },
     "cfa-hoshokin_yuseishujutsu": {
-      "lastAttempt": "2026-11-22 21:29:27",
+      "lastAttempt": "2026-11-26 20:30:36",
       "result": "partial",
       "resultReason": "開催日のみ検出（資料0件: 令和8年11月12日）",
       "extractionMethod": "rule",
@@ -16380,7 +16384,7 @@
       "manualLockActive": true
     },
     "fsa-transition_finance": {
-      "lastAttempt": "2026-11-26 03:20:37",
+      "lastAttempt": "2026-11-26 20:30:38",
       "result": "success",
       "resultReason": "開催回 4 件を検出（資料・日付完備）",
       "extractionMethod": "rule",
@@ -16413,7 +16417,7 @@
       "manualLockActive": false
     },
     "fsc-bakuro_wg": {
-      "lastAttempt": "2026-11-26 03:20:30",
+      "lastAttempt": "2026-11-26 20:30:35",
       "result": "success",
       "resultReason": "開催回 16 件を検出（資料・日付完備）",
       "extractionMethod": "rule",
@@ -16479,11 +16483,11 @@
       "manualLockActive": true
     },
     "fsc-honkaigi": {
-      "lastAttempt": "2026-11-22 21:28:08",
+      "lastAttempt": "2026-11-26 20:43:49",
       "result": "success",
-      "resultReason": "開催回 107 件を検出（資料・日付完備）",
+      "resultReason": "開催回 108 件を検出（資料・日付完備）",
       "extractionMethod": "rule",
-      "materialsCount": 34,
+      "materialsCount": 42,
       "datesCount": 5,
       "failureReason": "",
       "consecutiveFailures": 0,
@@ -16941,7 +16945,7 @@
       "manualLockActive": false
     },
     "jfa-magaki_kyougikai": {
-      "lastAttempt": "2026-11-26 03:22:36",
+      "lastAttempt": "2026-11-26 20:31:28",
       "result": "success",
       "resultReason": "PDF配付資料 5 件・開催日 5 件を正常取得",
       "extractionMethod": "rule",
@@ -17040,7 +17044,7 @@
       "manualLockActive": true
     },
     "jfa-umigyo_kyougikai": {
-      "lastAttempt": "2026-11-26 03:22:35",
+      "lastAttempt": "2026-11-26 20:31:27",
       "result": "success",
       "resultReason": "PDF配付資料 24 件・開催日 3 件を正常取得",
       "extractionMethod": "rule",
@@ -19218,7 +19222,7 @@
       "manualLockActive": true
     },
     "mext-chuo_kyoiku": {
-      "lastAttempt": "2026-11-22 21:35:22",
+      "lastAttempt": "2026-11-26 20:30:52",
       "result": "success",
       "resultReason": "開催回 12 件を検出（資料・日付完備）",
       "extractionMethod": "rule",
@@ -19361,7 +19365,7 @@
       "manualLockActive": false
     },
     "mhlw-1009": {
-      "lastAttempt": "2026-11-26 03:20:28",
+      "lastAttempt": "2026-11-26 20:30:30",
       "result": "success",
       "resultReason": "省庁新着ポータルから直接抽出",
       "extractionMethod": "ministry_news_direct",
@@ -19801,7 +19805,7 @@
       "manualLockActive": true
     },
     "mhlw-2857": {
-      "lastAttempt": "2026-11-26 03:21:10",
+      "lastAttempt": "2026-11-26 20:31:06",
       "result": "success",
       "resultReason": "開催回 32 件を検出（資料・日付完備）",
       "extractionMethod": "rule",
@@ -19823,7 +19827,7 @@
       "manualLockActive": false
     },
     "mhlw-2861": {
-      "lastAttempt": "2026-11-26 03:20:58",
+      "lastAttempt": "2026-11-26 20:30:54",
       "result": "success",
       "resultReason": "開催回 3 件を検出（資料・日付完備）",
       "extractionMethod": "rule",
@@ -20010,11 +20014,11 @@
       "manualLockActive": false
     },
     "mhlw-2899": {
-      "lastAttempt": "2026-11-22 21:39:57",
+      "lastAttempt": "2026-11-26 20:30:52",
       "result": "success",
-      "resultReason": "開催回 19 件を検出（資料・日付完備）",
+      "resultReason": "開催回 20 件を検出（資料・日付完備）",
       "extractionMethod": "rule",
-      "materialsCount": 59,
+      "materialsCount": 39,
       "datesCount": 5,
       "failureReason": "",
       "consecutiveFailures": 0,
@@ -20037,6 +20041,17 @@
       "resultReason": "開催回 14 件を検出（資料・日付完備）",
       "extractionMethod": "rule",
       "materialsCount": 28,
+      "datesCount": 5,
+      "failureReason": "",
+      "consecutiveFailures": 0,
+      "manualLockActive": false
+    },
+    "mhlw-3012": {
+      "lastAttempt": "2026-11-26 20:31:35",
+      "result": "success",
+      "resultReason": "開催回 48 件を検出（資料・日付完備）",
+      "extractionMethod": "rule",
+      "materialsCount": 97,
       "datesCount": 5,
       "failureReason": "",
       "consecutiveFailures": 0,
@@ -20967,7 +20982,7 @@
       "manualLockActive": false
     },
     "mhlw-872": {
-      "lastAttempt": "2026-11-26 03:21:58",
+      "lastAttempt": "2026-11-26 20:31:21",
       "result": "success",
       "resultReason": "開催回 69 件を検出（資料・日付完備）",
       "extractionMethod": "rule",
@@ -20989,7 +21004,7 @@
       "manualLockActive": false
     },
     "mhlw-874": {
-      "lastAttempt": "2026-11-26 03:22:26",
+      "lastAttempt": "2026-11-26 20:31:26",
       "result": "success",
       "resultReason": "開催回 67 件を検出（資料・日付完備）",
       "extractionMethod": "rule",
@@ -21858,7 +21873,7 @@
       "manualLockActive": false
     },
     "mhlw-956": {
-      "lastAttempt": "2026-11-22 22:10:02",
+      "lastAttempt": "2026-11-26 20:30:53",
       "result": "success",
       "resultReason": "開催回 5 件を検出（資料・日付完備）",
       "extractionMethod": "rule",
@@ -22364,7 +22379,7 @@
       "manualLockActive": false
     },
     "mhlw-dai3gou_hihoken": {
-      "lastAttempt": "2026-11-26 03:20:28",
+      "lastAttempt": "2026-11-26 20:30:30",
       "result": "success",
       "resultReason": "省庁新着ポータルから直接抽出",
       "extractionMethod": "ministry_news_direct",
@@ -22419,7 +22434,7 @@
       "manualLockActive": true
     },
     "mhlw-hansen_kazoku_hoshou": {
-      "lastAttempt": "2026-11-26 03:22:34",
+      "lastAttempt": "2026-11-26 20:31:27",
       "result": "success",
       "resultReason": "開催回 81 件を検出（資料・日付完備）",
       "extractionMethod": "rule",
@@ -23057,7 +23072,7 @@
       "manualLockActive": true
     },
     "mhlw-shakai_hosho_kaigo_hoken": {
-      "lastAttempt": "2026-11-26 03:20:56",
+      "lastAttempt": "2026-11-26 20:31:17",
       "result": "success",
       "resultReason": "開催回 2 件を検出（資料・日付完備）",
       "extractionMethod": "rule",
@@ -23068,11 +23083,11 @@
       "manualLockActive": true
     },
     "mhlw-shakai_hosho_kaigo_kyuufu": {
-      "lastAttempt": "2026-11-26 03:21:18",
+      "lastAttempt": "2026-11-26 20:31:14",
       "result": "success",
-      "resultReason": "開催回 49 件を検出（資料・日付完備）",
+      "resultReason": "開催回 25 件を検出（資料・日付完備）",
       "extractionMethod": "rule",
-      "materialsCount": 141,
+      "materialsCount": 100,
       "datesCount": 5,
       "failureReason": "",
       "consecutiveFailures": 0,
@@ -24916,7 +24931,7 @@
       "manualLockActive": true
     },
     "mlit-koutsu": {
-      "lastAttempt": "2026-11-26 03:22:37",
+      "lastAttempt": "2026-11-26 20:31:31",
       "result": "success",
       "resultReason": "開催回 2 件を検出（資料・日付完備）",
       "extractionMethod": "rule",
@@ -24960,7 +24975,7 @@
       "manualLockActive": true
     },
     "mlit-shakai_shingikai": {
-      "lastAttempt": "2026-11-22 21:32:08",
+      "lastAttempt": "2026-11-26 20:31:29",
       "result": "success",
       "resultReason": "開催回 3 件を検出（資料・日付完備）",
       "extractionMethod": "rule",
@@ -25884,12 +25899,12 @@
       "manualLockActive": true
     },
     "mof-1137": {
-      "lastAttempt": "2026-11-23 01:17:52",
+      "lastAttempt": "2026-11-26 20:30:30",
       "result": "success",
-      "resultReason": "開催回 33 件を検出（資料・日付完備）",
-      "extractionMethod": "rule",
-      "materialsCount": 80,
-      "datesCount": 5,
+      "resultReason": "省庁新着ポータルから直接抽出",
+      "extractionMethod": "ministry_news_direct",
+      "materialsCount": 6,
+      "datesCount": 1,
       "failureReason": "",
       "consecutiveFailures": 0,
       "manualLockActive": false
@@ -26632,7 +26647,7 @@
       "manualLockActive": true
     },
     "moj-housei_shonenhou": {
-      "lastAttempt": "2026-11-26 03:20:46",
+      "lastAttempt": "2026-11-26 20:30:48",
       "result": "success",
       "resultReason": "開催回 18 件を検出（資料・日付完備）",
       "extractionMethod": "rule",
@@ -27462,46 +27477,53 @@
       "meti.go.jp": 1.5
     },
     "ministryLastCrawlTime": {
-      "CAO": "2026/11/26 03:22",
-      "CAS": "2026/11/26 03:22",
-      "DIGITAL": "2026/11/26 03:22",
-      "CFA": "2026/11/26 03:22",
-      "PPC": "2026/11/26 03:22",
-      "FSA": "2026/11/26 03:22",
-      "CAA": "2026/11/26 03:22",
-      "FSC": "2026/11/26 03:22",
-      "MIC": "2026/11/26 03:22",
-      "FDMA": "2026/11/26 03:22",
-      "MOJ": "2026/11/26 03:22",
-      "MOF": "2026/11/26 03:22",
-      "MEXT": "2026/11/26 03:22",
-      "MHLW": "2026/11/26 03:22",
-      "MAFF": "2026/11/26 03:22",
-      "RINYA": "2026/11/26 03:22",
-      "JFA": "2026/11/26 03:22",
-      "METI": "2026/11/26 03:22",
-      "MLIT": "2026/11/26 03:22",
-      "MOE": "2026/11/26 03:22",
-      "NRA": "2026/11/26 03:22",
-      "MOD": "2026/11/26 03:22"
+      "CAO": "2026/11/26 20:31",
+      "CAS": "2026/11/26 20:31",
+      "DIGITAL": "2026/11/26 20:31",
+      "CFA": "2026/11/26 20:31",
+      "PPC": "2026/11/26 20:31",
+      "FSA": "2026/11/26 20:31",
+      "CAA": "2026/11/26 20:31",
+      "FSC": "2026/11/26 20:31",
+      "MIC": "2026/11/26 20:31",
+      "FDMA": "2026/11/26 20:31",
+      "MOJ": "2026/11/26 20:31",
+      "MOF": "2026/11/26 20:31",
+      "MEXT": "2026/11/26 20:31",
+      "MHLW": "2026/11/26 20:31",
+      "MAFF": "2026/11/26 20:31",
+      "RINYA": "2026/11/26 20:31",
+      "JFA": "2026/11/26 20:31",
+      "METI": "2026/11/26 20:31",
+      "MLIT": "2026/11/26 20:31",
+      "MOE": "2026/11/26 20:31",
+      "NRA": "2026/11/26 20:31",
+      "MOD": "2026/11/26 20:31",
+      "RA": "2026/11/26 20:31",
+      "NPA": "2026/11/26 20:31",
+      "ISA": "2026/11/26 20:31",
+      "JSA": "2026/11/26 20:31",
+      "ACA": "2026/11/26 20:31",
+      "ANRE": "2026/11/26 20:31",
+      "SMEA": "2026/11/26 20:31"
     },
     "dailyCouncilLastCrawlTime": {
       "mof-study_on_chain": "2026/11/23 01:18",
-      "moj-housei_shonenhou": "2026/11/26 03:22",
+      "moj-housei_shonenhou": "2026/11/26 20:31",
       "mhlw-1009": "2026/11/23 01:18",
-      "mhlw-872": "2026/11/26 03:22",
+      "mhlw-872": "2026/11/26 20:31",
       "mhlw-rousei_roudoujouken": "2026/11/26 03:22",
       "mof-1136": "2026/11/23 01:18",
-      "jfa-umigyo_kyougikai": "2026/11/26 03:22",
+      "jfa-umigyo_kyougikai": "2026/11/26 20:31",
       "mlit-kokudo": "2026/11/23 01:18",
       "mhlw-tochikujou_seido": "2026/11/23 01:18",
       "nra-teireikai": "2026/11/23 01:18",
-      "mhlw-shakai_hosho_kaigo_hoken": "2026/11/26 03:22",
+      "mhlw-shakai_hosho_kaigo_hoken": "2026/11/26 20:31",
       "mof-1137": "2026/11/23 01:18",
       "cao-kokyoryokin_senmon": "2026/11/23 01:18",
-      "mhlw-shakai_hosho_kaigo_kyuufu": "2026/11/26 03:22",
+      "mhlw-shakai_hosho_kaigo_kyuufu": "2026/11/26 20:31",
       "mhlw-794": "2026/11/23 01:18",
-      "jfa-magaki_kyougikai": "2026/11/26 03:22",
+      "jfa-magaki_kyougikai": "2026/11/26 20:31",
       "mext-chukyo": "2026/11/26 03:22",
       "mhlw-945": "2026/11/26 03:22",
       "cfa-kodomo_sodachi": "2026/11/26 03:22",
@@ -27511,15 +27533,22 @@
       "fsc-nouyaku_dai1": "2026/11/26 03:22",
       "mof-jgbsp": "2026/11/26 03:22",
       "mhlw-997": "2026/11/26 03:22",
-      "fsc-bakuro_wg": "2026/11/26 03:22",
-      "mhlw-874": "2026/11/26 03:22",
+      "fsc-bakuro_wg": "2026/11/26 20:31",
+      "mhlw-874": "2026/11/26 20:31",
       "mhlw-2855": "2026/11/25 03:56",
-      "mhlw-hansen_kazoku_hoshou": "2026/11/26 03:22",
+      "mhlw-hansen_kazoku_hoshou": "2026/11/26 20:31",
       "mhlw-tokumei_iryou": "2026/11/26 03:22",
-      "fsa-transition_finance": "2026/11/26 03:22",
-      "mlit-koutsu": "2026/11/26 03:22",
-      "mhlw-2857": "2026/11/26 03:22",
-      "mhlw-2861": "2026/11/26 03:22"
+      "fsa-transition_finance": "2026/11/26 20:31",
+      "mlit-koutsu": "2026/11/26 20:31",
+      "mhlw-2857": "2026/11/26 20:31",
+      "mhlw-2861": "2026/11/26 20:31",
+      "mhlw-3012": "2026/11/26 20:31",
+      "fsc-honkaigi": "2026/11/26 20:31",
+      "mext-chuo_kyoiku": "2026/11/26 20:31",
+      "mhlw-956": "2026/11/26 20:31",
+      "cfa-hoshokin_yuseishujutsu": "2026/11/26 20:31",
+      "mlit-shakai_shingikai": "2026/11/26 20:31",
+      "mhlw-2899": "2026/11/26 20:31"
     }
   },
   "rejectedCouncils": [
@@ -29065,7 +29094,7 @@
     {
       "id": "jcrc-3006",
       "name": "委員会の活動等",
-      "ministry": "",
+      "ministry": "JCRC",
       "category": "COUNCIL",
       "officialUrl": "",
       "rejectedAt": "",
@@ -29263,7 +29292,7 @@
     {
       "id": "meti-3007",
       "name": "知的財産分科会（下記リンク、特許庁ホームページ「産業構造審議会について」をご覧ください）",
-      "ministry": "",
+      "ministry": "METI",
       "category": "COUNCIL",
       "officialUrl": "",
       "rejectedAt": "",
@@ -31846,7 +31875,7 @@
     {
       "id": "smea-3014",
       "name": "中小M&A・事業承継小委員会",
-      "ministry": "",
+      "ministry": "SMEA",
       "category": "COUNCIL",
       "officialUrl": "",
       "rejectedAt": "",
@@ -31855,7 +31884,7 @@
     {
       "id": "smea-3015",
       "name": "令和7年 中小企業の成長経営の実現に向けた研究会 配布資料",
-      "ministry": "",
+      "ministry": "SMEA",
       "category": "COUNCIL",
       "officialUrl": "",
       "rejectedAt": "",
@@ -31864,7 +31893,7 @@
     {
       "id": "smea-3016",
       "name": "令和6年",
-      "ministry": "",
+      "ministry": "SMEA",
       "category": "COUNCIL",
       "officialUrl": "",
       "rejectedAt": "",
@@ -31873,7 +31902,7 @@
     {
       "id": "smea-3017",
       "name": "地域の資金循環検討会",
-      "ministry": "",
+      "ministry": "SMEA",
       "category": "COUNCIL",
       "officialUrl": "",
       "rejectedAt": "",
@@ -31882,7 +31911,7 @@
     {
       "id": "smea-3018",
       "name": "ローカル・ゼブラ・エコシステムの構築に向けた社会的インパクト評価の活用実践に関する研究会",
-      "ministry": "",
+      "ministry": "SMEA",
       "category": "COUNCIL",
       "officialUrl": "",
       "rejectedAt": "",
@@ -31891,7 +31920,7 @@
     {
       "id": "smea-3019",
       "name": "地域の社会課題解決促進に向けたエコシステム研究会",
-      "ministry": "",
+      "ministry": "SMEA",
       "category": "COUNCIL",
       "officialUrl": "",
       "rejectedAt": "",
@@ -31900,7 +31929,7 @@
     {
       "id": "smea-3020",
       "name": "価値創造企業に関する賢人会議",
-      "ministry": "",
+      "ministry": "SMEA",
       "category": "COUNCIL",
       "officialUrl": "",
       "rejectedAt": "",
@@ -31909,7 +31938,7 @@
     {
       "id": "smea-3021",
       "name": "企業取引研究会",
-      "ministry": "",
+      "ministry": "SMEA",
       "category": "COUNCIL",
       "officialUrl": "",
       "rejectedAt": "",
@@ -31918,7 +31947,7 @@
     {
       "id": "smea-3022",
       "name": "知的財産取引適正化ワーキンググループ 報告書",
-      "ministry": "",
+      "ministry": "SMEA",
       "category": "COUNCIL",
       "officialUrl": "",
       "rejectedAt": "",
@@ -31927,7 +31956,7 @@
     {
       "id": "smea-3023",
       "name": "約束手形をはじめとする支払条件の改善に向けた検討会",
-      "ministry": "",
+      "ministry": "SMEA",
       "category": "COUNCIL",
       "officialUrl": "",
       "rejectedAt": "",
@@ -31936,7 +31965,7 @@
     {
       "id": "smea-3024",
       "name": "知的財産取引検討会",
-      "ministry": "",
+      "ministry": "SMEA",
       "category": "COUNCIL",
       "officialUrl": "",
       "rejectedAt": "",
@@ -31945,7 +31974,7 @@
     {
       "id": "smea-3025",
       "name": "地域の経営支援力強化に向けたよろず支援拠点のあり方検討会 報告書",
-      "ministry": "",
+      "ministry": "SMEA",
       "category": "COUNCIL",
       "officialUrl": "",
       "rejectedAt": "",
@@ -31954,7 +31983,7 @@
     {
       "id": "smea-3026",
       "name": "事業協同組合等の余裕金運用に関する検討会",
-      "ministry": "",
+      "ministry": "SMEA",
       "category": "COUNCIL",
       "officialUrl": "",
       "rejectedAt": "",
@@ -31963,7 +31992,7 @@
     {
       "id": "smea-3027",
       "name": "令和8年3月19日開催 中小企業・小規模事業者の人材マネジメントに関する研究会 配布資料",
-      "ministry": "",
+      "ministry": "SMEA",
       "category": "COUNCIL",
       "officialUrl": "",
       "rejectedAt": "",
@@ -31972,7 +32001,7 @@
     {
       "id": "smea-3028",
       "name": "中小企業・小規模事業者の人材戦略に関する有識者検討会",
-      "ministry": "",
+      "ministry": "SMEA",
       "category": "COUNCIL",
       "officialUrl": "",
       "rejectedAt": "",
@@ -31981,7 +32010,7 @@
     {
       "id": "smea-3029",
       "name": "中小企業・小規模事業者のデータ利活用に関する検討委員会",
-      "ministry": "",
+      "ministry": "SMEA",
       "category": "COUNCIL",
       "officialUrl": "",
       "rejectedAt": "",
@@ -31990,7 +32019,7 @@
     {
       "id": "smea-3030",
       "name": "小規模事業者の「稼ぐ力」の強化に向けた諸課題に関する検討会",
-      "ministry": "",
+      "ministry": "SMEA",
       "category": "COUNCIL",
       "officialUrl": "",
       "rejectedAt": "",
@@ -31999,7 +32028,7 @@
     {
       "id": "smea-3031",
       "name": "中小企業の事業承継・M&Aに関する検討会",
-      "ministry": "",
+      "ministry": "SMEA",
       "category": "COUNCIL",
       "officialUrl": "",
       "rejectedAt": "",
@@ -32008,7 +32037,7 @@
     {
       "id": "smea-3032",
       "name": "中小企業の親族内承継に関する検討会",
-      "ministry": "",
+      "ministry": "SMEA",
       "category": "COUNCIL",
       "officialUrl": "",
       "rejectedAt": "",
@@ -32017,7 +32046,7 @@
     {
       "id": "smea-3033",
       "name": "中小M&A市場の改革に向けた検討会",
-      "ministry": "",
+      "ministry": "SMEA",
       "category": "COUNCIL",
       "officialUrl": "",
       "rejectedAt": "",
@@ -32026,7 +32055,7 @@
     {
       "id": "smea-3034",
       "name": "中小M&Aガイドライン見直し検討小委員会",
-      "ministry": "",
+      "ministry": "SMEA",
       "category": "COUNCIL",
       "officialUrl": "",
       "rejectedAt": "",
@@ -32035,7 +32064,7 @@
     {
       "id": "smea-3035",
       "name": "事業引継ぎガイドライン」改訂検討会",
-      "ministry": "",
+      "ministry": "SMEA",
       "category": "COUNCIL",
       "officialUrl": "",
       "rejectedAt": "",
@@ -32044,7 +32073,7 @@
     {
       "id": "smea-3036",
       "name": "イノベーション・プロデュース推進会議",
-      "ministry": "",
+      "ministry": "SMEA",
       "category": "COUNCIL",
       "officialUrl": "",
       "rejectedAt": "",
@@ -32053,7 +32082,7 @@
     {
       "id": "smea-3037",
       "name": "イノベーション・プロデューサーガイドライン策定委員会",
-      "ministry": "",
+      "ministry": "SMEA",
       "category": "COUNCIL",
       "officialUrl": "",
       "rejectedAt": "",
@@ -32062,7 +32091,7 @@
     {
       "id": "smea-3038",
       "name": "中小企業の成長のためのイノベーション研究会",
-      "ministry": "",
+      "ministry": "SMEA",
       "category": "COUNCIL",
       "officialUrl": "",
       "rejectedAt": "",
@@ -32071,7 +32100,7 @@
     {
       "id": "smea-3039",
       "name": "中小企業のイノベーションの在り方に関する有識者検討会",
-      "ministry": "",
+      "ministry": "SMEA",
       "category": "COUNCIL",
       "officialUrl": "",
       "rejectedAt": "",
@@ -32080,7 +32109,7 @@
     {
       "id": "smea-3040",
       "name": "令和元年 特別編 スマートSME(中小企業)研究会 配布資料",
-      "ministry": "",
+      "ministry": "SMEA",
       "category": "COUNCIL",
       "officialUrl": "",
       "rejectedAt": "",
@@ -32089,7 +32118,7 @@
     {
       "id": "smea-3041",
       "name": "日本版SBIR制度の見直しに向けた検討会",
-      "ministry": "",
+      "ministry": "SMEA",
       "category": "COUNCIL",
       "officialUrl": "",
       "rejectedAt": "",
@@ -32098,7 +32127,7 @@
     {
       "id": "smea-3042",
       "name": "伴走支援の在り方検討会",
-      "ministry": "",
+      "ministry": "SMEA",
       "category": "COUNCIL",
       "officialUrl": "",
       "rejectedAt": "",
@@ -32107,7 +32136,7 @@
     {
       "id": "smea-3043",
       "name": "中小企業強靱化研究会",
-      "ministry": "",
+      "ministry": "SMEA",
       "category": "COUNCIL",
       "officialUrl": "",
       "rejectedAt": "",
@@ -32116,7 +32145,7 @@
     {
       "id": "smea-3044",
       "name": "平成26年 事業承継を中心とする事業活性化に関する検討会 中間報告について",
-      "ministry": "",
+      "ministry": "SMEA",
       "category": "COUNCIL",
       "officialUrl": "",
       "rejectedAt": "",
@@ -32125,7 +32154,7 @@
     {
       "id": "smea-3045",
       "name": "中小企業における再生M&A促進に向けた検討会",
-      "ministry": "",
+      "ministry": "SMEA",
       "category": "COUNCIL",
       "officialUrl": "",
       "rejectedAt": "",
@@ -32134,7 +32163,7 @@
     {
       "id": "smea-3046",
       "name": "新たなビジネスモデルを踏まえた商工中金の在り方検討会",
-      "ministry": "",
+      "ministry": "SMEA",
       "category": "COUNCIL",
       "officialUrl": "",
       "rejectedAt": "",
@@ -32143,7 +32172,7 @@
     {
       "id": "smea-3047",
       "name": "商工中金の経営及び危機対応業務に関する評価委員会 報告書について",
-      "ministry": "",
+      "ministry": "SMEA",
       "category": "COUNCIL",
       "officialUrl": "",
       "rejectedAt": "",
@@ -32152,7 +32181,7 @@
     {
       "id": "smea-3048",
       "name": "金融EDIにおける商流情報等のあり方検討会議",
-      "ministry": "",
+      "ministry": "SMEA",
       "category": "COUNCIL",
       "officialUrl": "",
       "rejectedAt": "",
@@ -32161,7 +32190,7 @@
     {
       "id": "smea-3049",
       "name": "知識サポート・経営改革プラットフォーム研究会",
-      "ministry": "",
+      "ministry": "SMEA",
       "category": "COUNCIL",
       "officialUrl": "",
       "rejectedAt": "",
@@ -32170,7 +32199,7 @@
     {
       "id": "smea-3050",
       "name": "中小企業の会計に関する研究会 中間報告書について",
-      "ministry": "",
+      "ministry": "SMEA",
       "category": "COUNCIL",
       "officialUrl": "",
       "rejectedAt": "",
@@ -32179,7 +32208,7 @@
     {
       "id": "smea-3051",
       "name": "中小企業の会計に関する研究会",
-      "ministry": "",
+      "ministry": "SMEA",
       "category": "COUNCIL",
       "officialUrl": "",
       "rejectedAt": "",
@@ -32188,7 +32217,7 @@
     {
       "id": "smea-3052",
       "name": "中小企業海外展開支援会議",
-      "ministry": "",
+      "ministry": "SMEA",
       "category": "COUNCIL",
       "officialUrl": "",
       "rejectedAt": "",
@@ -32197,7 +32226,7 @@
     {
       "id": "smea-3053",
       "name": "中小企業憲章に関する研究会",
-      "ministry": "",
+      "ministry": "SMEA",
       "category": "COUNCIL",
       "officialUrl": "",
       "rejectedAt": "",
@@ -41293,6 +41322,7 @@
       "fsc-honkaigi-20261027-1040",
       "fsc-honkaigi-20261110-1041",
       "fsc-honkaigi-20261117-1042",
+      "fsc-honkaigi-20261124-1043",
       "fsc-hyoukagijyutukikaku_wg-20180330-009",
       "fsc-hyoukagijyutukikaku_wg-20180607-010",
       "fsc-hyoukagijyutukikaku_wg-20180830-011",
@@ -44319,6 +44349,7 @@
       "mhlw-2854-20260825-041",
       "mhlw-2855-20260918-001",
       "mhlw-2855-20261113-004",
+      "mhlw-2855-20261124-s05",
       "mhlw-2857-20261109-025",
       "mhlw-2857-20261116-026",
       "mhlw-2866-20251226-009",
@@ -79772,6 +79803,13 @@
       "fsc-honkaigi-20261117-1042:https://www.fsc.go.jp/fsciis/attachedFile/download?retrievalId=kai20261117fsc&fileId=502",
       "fsc-honkaigi-20261117-1042:https://www.fsc.go.jp/fsciis/attachedFile/download?retrievalId=kai20261117fsc&fileId=503",
       "fsc-honkaigi-20261117-1042:https://www.fsc.go.jp/fsciis/attachedFile/download?retrievalId=kai20261117fsc&fileId=900",
+      "fsc-honkaigi-20261124-1043:https://www.fsc.go.jp/fsciis/attachedFile/download?retrievalId=kai20261124fsc&fileId=010",
+      "fsc-honkaigi-20261124-1043:https://www.fsc.go.jp/fsciis/attachedFile/download?retrievalId=kai20261124fsc&fileId=020",
+      "fsc-honkaigi-20261124-1043:https://www.fsc.go.jp/fsciis/attachedFile/download?retrievalId=kai20261124fsc&fileId=101",
+      "fsc-honkaigi-20261124-1043:https://www.fsc.go.jp/fsciis/attachedFile/download?retrievalId=kai20261124fsc&fileId=102",
+      "fsc-honkaigi-20261124-1043:https://www.fsc.go.jp/fsciis/attachedFile/download?retrievalId=kai20261124fsc&fileId=103",
+      "fsc-honkaigi-20261124-1043:https://www.fsc.go.jp/fsciis/attachedFile/download?retrievalId=kai20261124fsc&fileId=200",
+      "fsc-honkaigi-20261124-1043:https://www.fsc.go.jp/fsciis/attachedFile/download?retrievalId=kai20261124fsc&fileId=900",
       "fsc-hyoukagijyutukikaku_wg-20200625-017:https://www.fsc.go.jp/fsciis/attachedFile/download?retrievalId=kai20200625so1&fileId=510",
       "fsc-hyoukagijyutukikaku_wg-20260817-038:https://www.fsc.go.jp/fsciis/attachedFile/download?retrievalId=kai20260817so1&fileId=410",
       "fsc-hyoukagijyutukikaku_wg-20261002-039:https://www.fsc.go.jp/fsciis/attachedFile/download?retrievalId=kai20261002so1&fileId=010",
@@ -94219,6 +94257,7 @@
       "mhlw-2855-20261113-004:https://www.mhlw.go.jp/content/11121000/001765112.pdf",
       "mhlw-2855-20261113-004:https://www.mhlw.go.jp/content/11121000/001765113.pdf",
       "mhlw-2855-20261113-004:https://www.mhlw.go.jp/content/11121000/001765114.pdf",
+      "mhlw-2855-20261124-s05:https://www.mhlw.go.jp/content/11121000/001772114.pdf",
       "mhlw-2857-20261109-025:https://www.mhlw.go.jp/content/12000000/001767182.pdf",
       "mhlw-2857-20261109-025:https://www.mhlw.go.jp/content/12000000/001767183.pdf",
       "mhlw-2857-20261109-025:https://www.mhlw.go.jp/content/12000000/001767184.pdf",
@@ -109070,6 +109109,10 @@
       "discoveredAt": "2026/10/24 17:12",
       "discoverySource": "rule"
     },
+    "mhlw-3012": {
+      "discoveredAt": "2026/11/26 20:30",
+      "discoverySource": "ministry_news"
+    },
     "mic-3008": {
       "discoveredAt": "2026/11/03 09:38",
       "discoverySource": "rule"
@@ -115599,7 +115642,8 @@
       "discoveredAt": "2026/10/12 09:18"
     },
     "fsc-honkaigi-20200409-897": {
-      "discoveredAt": "2026/09/30 07:41"
+      "discoveredAt": "2026/09/30 07:41",
+      "lastUpdatedFromCrawl": "2026/11/26 20:43"
     },
     "fsc-honkaigi-20200421-780": {
       "discoveredAt": "2026/10/12 09:18"
@@ -115959,7 +116003,8 @@
       "discoveredAt": "2026/09/30 07:41"
     },
     "fsc-honkaigi-20230530-934": {
-      "discoveredAt": "2026/09/19 18:21"
+      "discoveredAt": "2026/09/19 18:21",
+      "lastUpdatedFromCrawl": "2026/11/26 20:43"
     },
     "fsc-honkaigi-20230606-901": {
       "discoveredAt": "2026/09/30 07:41"
@@ -116292,6 +116337,10 @@
     },
     "fsc-honkaigi-20261117-1042": {
       "discoveredAt": "2026/11/18 20:08"
+    },
+    "fsc-honkaigi-20261124-1043": {
+      "discoveredAt": "2026/11/26 20:30",
+      "lastUpdatedFromCrawl": "2026/11/26 20:43"
     },
     "fsc-hyoukagijyutukikaku_wg-20160601-001": {
       "discoveredAt": "2026/09/19 18:21"
@@ -122776,6 +122825,9 @@
     "mhlw-2899-20260904-069": {
       "discoveredAt": "2026/10/24 17:54"
     },
+    "mhlw-2899-20261210-070": {
+      "discoveredAt": "2026/11/26 20:30"
+    },
     "mhlw-2900-20120528-001": {
       "discoveredAt": "2026/10/24 17:54"
     },
@@ -122949,6 +123001,148 @@
     },
     "mhlw-2901-20260623-003": {
       "discoveredAt": "2026/10/24 17:54"
+    },
+    "mhlw-3012-20110425-001": {
+      "discoveredAt": "2026/11/26 20:31"
+    },
+    "mhlw-3012-20110610-002": {
+      "discoveredAt": "2026/11/26 20:31"
+    },
+    "mhlw-3012-20110704-003": {
+      "discoveredAt": "2026/11/26 20:31"
+    },
+    "mhlw-3012-20110829-004": {
+      "discoveredAt": "2026/11/26 20:31"
+    },
+    "mhlw-3012-20111013-005": {
+      "discoveredAt": "2026/11/26 20:31"
+    },
+    "mhlw-3012-20111215-006": {
+      "discoveredAt": "2026/11/26 20:31"
+    },
+    "mhlw-3012-20120322-008": {
+      "discoveredAt": "2026/11/26 20:31"
+    },
+    "mhlw-3012-20120618-009": {
+      "discoveredAt": "2026/11/26 20:31"
+    },
+    "mhlw-3012-20120627-010": {
+      "discoveredAt": "2026/11/26 20:31"
+    },
+    "mhlw-3012-20121212-011": {
+      "discoveredAt": "2026/11/26 20:31"
+    },
+    "mhlw-3012-20140418-012": {
+      "discoveredAt": "2026/11/26 20:31"
+    },
+    "mhlw-3012-20141121-013": {
+      "discoveredAt": "2026/11/26 20:31"
+    },
+    "mhlw-3012-20150626-014": {
+      "discoveredAt": "2026/11/26 20:31"
+    },
+    "mhlw-3012-20151022-015": {
+      "discoveredAt": "2026/11/26 20:31"
+    },
+    "mhlw-3012-20151116-016": {
+      "discoveredAt": "2026/11/26 20:31"
+    },
+    "mhlw-3012-20160108-017": {
+      "discoveredAt": "2026/11/26 20:31"
+    },
+    "mhlw-3012-20160404-018": {
+      "discoveredAt": "2026/11/26 20:31"
+    },
+    "mhlw-3012-20160413-019": {
+      "discoveredAt": "2026/11/26 20:31"
+    },
+    "mhlw-3012-20160516-020": {
+      "discoveredAt": "2026/11/26 20:31"
+    },
+    "mhlw-3012-20160603-021": {
+      "discoveredAt": "2026/11/26 20:31"
+    },
+    "mhlw-3012-20160711-022": {
+      "discoveredAt": "2026/11/26 20:31"
+    },
+    "mhlw-3012-20160729-023": {
+      "discoveredAt": "2026/11/26 20:31"
+    },
+    "mhlw-3012-20160916-024": {
+      "discoveredAt": "2026/11/26 20:31"
+    },
+    "mhlw-3012-20161116-025": {
+      "discoveredAt": "2026/11/26 20:31"
+    },
+    "mhlw-3012-20161219-026": {
+      "discoveredAt": "2026/11/26 20:31"
+    },
+    "mhlw-3012-20170119-027": {
+      "discoveredAt": "2026/11/26 20:31"
+    },
+    "mhlw-3012-20170330-028": {
+      "discoveredAt": "2026/11/26 20:31"
+    },
+    "mhlw-3012-20170424-029": {
+      "discoveredAt": "2026/11/26 20:31"
+    },
+    "mhlw-3012-20171018-030": {
+      "discoveredAt": "2026/11/26 20:31"
+    },
+    "mhlw-3012-20180330-031": {
+      "discoveredAt": "2026/11/26 20:31"
+    },
+    "mhlw-3012-20181022-032": {
+      "discoveredAt": "2026/11/26 20:31"
+    },
+    "mhlw-3012-20181225-033": {
+      "discoveredAt": "2026/11/26 20:31"
+    },
+    "mhlw-3012-20190328-034": {
+      "discoveredAt": "2026/11/26 20:31"
+    },
+    "mhlw-3012-20191113-035": {
+      "discoveredAt": "2026/11/26 20:31"
+    },
+    "mhlw-3012-20191218-036": {
+      "discoveredAt": "2026/11/26 20:31"
+    },
+    "mhlw-3012-20200323-037": {
+      "discoveredAt": "2026/11/26 20:31"
+    },
+    "mhlw-3012-20200803-038": {
+      "discoveredAt": "2026/11/26 20:31"
+    },
+    "mhlw-3012-20201116-039": {
+      "discoveredAt": "2026/11/26 20:31"
+    },
+    "mhlw-3012-20201119-040": {
+      "discoveredAt": "2026/11/26 20:31"
+    },
+    "mhlw-3012-20210329-041": {
+      "discoveredAt": "2026/11/26 20:31"
+    },
+    "mhlw-3012-20210517-042": {
+      "discoveredAt": "2026/11/26 20:31"
+    },
+    "mhlw-3012-20211109-043": {
+      "discoveredAt": "2026/11/26 20:31"
+    },
+    "mhlw-3012-20220119-044": {
+      "discoveredAt": "2026/11/26 20:31"
+    },
+    "mhlw-3012-20230330-045": {
+      "discoveredAt": "2026/11/26 20:31"
+    },
+    "mhlw-3012-20240702-046": {
+      "discoveredAt": "2026/11/26 20:31"
+    },
+    "mhlw-3012-20260325-047": {
+      "discoveredAt": "2026/11/26 20:31"
+    },
+    "mhlw-3012-20261208-048": {
+      "discoveredAt": "2026/11/26 20:31",
+      "lastUpdatedFromCrawl": "2026/11/26 20:31"
     },
     "mhlw-729-20260910-s02": {
       "discoveredAt": "2026/09/30 07:59"
@@ -130543,7 +130737,8 @@
       "discoveredAt": "2026/09/16 09:15"
     },
     "mhlw-dai3gou_hihoken-20261125-002": {
-      "discoveredAt": "2026/11/18 20:53"
+      "discoveredAt": "2026/11/18 20:53",
+      "lastUpdatedFromCrawl": "2026/11/26 20:30"
     },
     "mhlw-fukushi_bunka_bunkakai-20040708-010": {
       "discoveredAt": "2026/11/07 07:50"
@@ -132825,7 +133020,8 @@
       "discoveredAt": "2026/11/21 00:07"
     },
     "mhlw-shakai_hosho_kaigo_kyuufu-20261126-277": {
-      "discoveredAt": "2026/11/26 03:21"
+      "discoveredAt": "2026/11/26 03:21",
+      "lastUpdatedFromCrawl": "2026/11/26 20:31"
     },
     "mhlw-shakai_hosho_nenkin-20020116-001": {
       "discoveredAt": "2026/09/19 18:29"
@@ -140112,6 +140308,9 @@
     },
     "mof-1137-20260924-070": {
       "discoveredAt": "2026/11/23 01:17"
+    },
+    "mof-1137-20261126-071": {
+      "discoveredAt": "2026/11/26 20:30"
     },
     "mof-1144-20181029-s02": {
       "discoveredAt": "2026/11/07 07:17"

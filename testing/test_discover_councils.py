@@ -377,6 +377,45 @@ class TestDiscoverCouncils(unittest.TestCase):
             "tpl-parent-table-direct"
         )
 
+    def test_parent_resolver_ignores_pdf_and_slug_rejects_generic_ids(self):
+        """Daily回帰: PDF直リンクを親ページに選ばず、汎用/ハッシュ/プレス由来スラグを除外すること"""
+        from unittest.mock import patch
+        import crawler as crawler_mod
+
+        # 1. PDFリンクしか該当しない場合でも .pdf URL を親ページとして返さない
+        press_with_pdf = """
+        <html><body>
+          <a href="/assets/20261124_press_abcd1234_01.pdf">乳幼児の健康診査等のあり方に関する検討会</a>
+        </body></html>
+        """
+        press_u = "https://www.cfa.go.jp/press/20261124_press.html"
+        with patch.object(crawler_mod, "fetch_url", return_value=press_with_pdf):
+            resolved = discover_councils.resolve_parent_url_from_press_release(
+                press_u, "乳幼児の健康診査等のあり方に関する検討会", "CFA"
+            )
+        self.assertEqual(resolved, press_u)
+
+        # 2. kaisai / other / mext_00003 / dafdc690 / 20261124_press_... をスラグ採用しない
+        used = set()
+        cases = [
+            ("MEXT", "https://www.mext.go.jp/shingi/kaisai/index.html", 3010, "mext-3010"),
+            ("MOF", "https://www.mof.go.jp/policy/other/20261126.html", 1200, "mof-1200"),
+            ("MEXT", "https://www.mext.go.jp/shingi/kaisai/mext_00003.html", 3011, "mext-3011"),
+            ("CFA", "https://www.cfa.go.jp/councils/dafdc690", 500, "cfa-500"),
+            ("CFA", "https://www.cfa.go.jp/press/20261124_press_b39826d5_01.pdf", 501, "cfa-501"),
+        ]
+        for min_c, u, seq, expected_id in cases:
+            cid, next_seq = discover_councils.generate_council_slug_id(min_c, u, used, seq)
+            self.assertEqual(cid, expected_id, f"Failed for {u}: got {cid}")
+            self.assertEqual(next_seq, seq + 1)
+
+        # 意味のある親パスが残る場合（/councils/cdr-seidonoarikata/dafdc690）は親ディレクトリ名を採用
+        cid_parent, seq_p = discover_councils.generate_council_slug_id(
+            "CFA", "https://www.cfa.go.jp/councils/cdr-seidonoarikata/dafdc690", used, 502
+        )
+        self.assertEqual(cid_parent, "cfa-cdr_seidonoarikata")
+        self.assertEqual(seq_p, 502)
+
 
 if __name__ == "__main__":
     unittest.main()
