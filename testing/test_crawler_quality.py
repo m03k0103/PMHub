@@ -31,7 +31,8 @@ from crawler import (
     clean_meeting_title,
     build_url_rule_index,
     get_rule_for_target,
-    _prioritize_meeting_date
+    _prioritize_meeting_date,
+    sync_new_meetings_from_crawl
 )
 
 
@@ -423,6 +424,44 @@ class TestCrawlerQuality(unittest.TestCase):
         # (d) いずれにも一致しない場合は変更せず維持
         res_d = _prioritize_meeting_date("<p>特記事項なし</p>", ["令和5年6月12日", "令和5年5月17日"], url_date="2023/04/01", parent_date="2023/03/01")
         self.assertEqual(res_d, ["令和5年6月12日", "令和5年5月17日"])
+
+    def test_sync_allows_valid_subpage_with_generic_page_title(self):
+        """Daily回帰: subpageのpageTitleが'会議資料詳細'でも、開催回名・URLが有効なら登録・昇格を拒否しないこと"""
+        data = {
+            "councils": [{
+                "id": "fsc-honkaigi",
+                "name": "食品安全委員会",
+                "ministry": "FSC",
+                "officialUrl": "https://www.fsc.go.jp/iinkai_annai/jisseki.html"
+            }],
+            "meetings": [],
+            "scrapingRules": {
+                "fsc-honkaigi": {
+                    "subpage_discovery_pattern": "/fsciis/meetingMaterial/show/kai"
+                }
+            }
+        }
+        scraped_item = {
+            "subpageMeetings": [{
+                "name": "第1043回 食品安全委員会",
+                "pageTitle": "会議資料詳細",
+                "subpageUrl": "https://www.fsc.go.jp/fsciis/meetingMaterial/show/kai20261124fsc",
+                "extractedDates": ["2026/11/24"],
+                "materials": [{
+                    "name": "議事次第",
+                    "url": "https://www.fsc.go.jp/fsciis/attachedFile/download?retrievalId=kai20261124fsc&fileId=010",
+                    "type": "PDF"
+                }]
+            }]
+        }
+        added = sync_new_meetings_from_crawl(data, data["councils"][0], scraped_item)
+        self.assertEqual(added, 1)
+        self.assertEqual(len(data["meetings"]), 1)
+        self.assertEqual(
+            data["meetings"][0]["officialUrl"],
+            "https://www.fsc.go.jp/fsciis/meetingMaterial/show/kai20261124fsc"
+        )
+        self.assertEqual(len(data["meetings"][0]["materials"]), 1)
 
 
 if __name__ == '__main__':

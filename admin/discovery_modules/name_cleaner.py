@@ -180,10 +180,11 @@ _GENERIC_SLUG_SEGMENTS = frozenset({
     "committee", "kento", "singi_kento", "bunkashingikai", "main_sosiki", "policy",
     "about_mof", "proceedings", "material", "siryou", "shiryou", "gijishidai",
     "news", "press", "houdou", "topics", "detail", "top", "default", "web",
-    "public", "content", "contents", "common", "pdf", "data", "files", "file"
+    "public", "content", "contents", "common", "pdf", "data", "files", "file",
+    "kaisai", "other"
 })
 _GENERIC_SLUG_RE = re.compile(
-    r'^(?:\d+|r\d+|h\d+|newpage_\d+|shingi-.*|other-.*|post-\d+|menu_.*|\d{6,8})$',
+    r'^(?:\d+|r\d+|h\d+|newpage_\d+|shingi-.*|other-.*|post-\d+|menu_.*|\d{6,8}|mext_\d+|(?:\d+_)?press_.*|[0-9a-f]{8}(?:-[0-9a-f]{4}){3}-[0-9a-f]{12}|[0-9a-f]{8})$',
     re.IGNORECASE
 )
 

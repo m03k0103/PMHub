@@ -135,13 +135,17 @@ def resolve_parent_url_from_press_release(press_url: str, cand_name: str, min_co
         if parsed_target.netloc.lower() != parsed_base.netloc.lower():
             continue
 
+        # PDF・Office文書等のバイナリ/添付ファイル直リンクは親ページ候補から除外
+        if re.search(r'\.(?:pdf|docx?|xlsx?|pptx?|jpe?g|png|gif|zip|csv)$', parsed_target.path or '', re.IGNORECASE):
+            continue
+
         # プレスリリース自体の再リンクやアーカイブ除外
         if is_single_press_or_notice_url(abs_u):
             continue
 
         link_text = a.get_text(strip=True)
         # ノイズ文字列の除外
-        if is_non_council_noise(link_text):
+        if is_non_council_noise(link_text, url=abs_u):
             continue
 
         score = _score_candidate_link(

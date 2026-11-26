@@ -3364,8 +3364,7 @@
       "category": "COUNCIL",
       "name": "国の利害に関係のある争訟等への対応に関する関係府省庁連絡会議",
       "officialUrl": "https://www.cas.go.jp/jp/seisaku/kuni_soushou/index.html",
-      "pastYearCount": 9,
-      "isNewlyDiscovered": true
+      "pastYearCount": 9
     },
     {
       "id": "cas-358",
@@ -7152,8 +7151,7 @@
       "name": "AI等の健全な利活用の推進に関する研究会",
       "officialUrl": "https://www.fsa.go.jp/singi/ai_2026/index.html",
       "description": "金融機関等におけるAI等の健全な利活用の推進に向けた課題・対応を検討する研究会。",
-      "pastYearCount": 1,
-      "isNewlyDiscovered": true
+      "pastYearCount": 1
     },
     {
       "id": "fsa-arikataken",
@@ -7679,8 +7677,7 @@
       "name": "株式市場構造の在り方に関する有識者会議",
       "officialUrl": "https://www.fsa.go.jp/singi/kabushikishijoukouzou/index.html",
       "description": "我が国の株式市場構造の在り方について議論する有識者会議。",
-      "pastYearCount": 1,
-      "isNewlyDiscovered": true
+      "pastYearCount": 1
     },
     {
       "id": "fsa-kaikeikansa_arikata",
@@ -9334,8 +9331,7 @@
       "name": "多重債務問題対策推進懇談会",
       "officialUrl": "https://www.fsa.go.jp/singi/tajusaimukondankai/index.html",
       "description": "多重債務者対策をめぐる現状および関係省庁等の施策の動向等について意見交換を行う懇談会。",
-      "pastYearCount": 1,
-      "isNewlyDiscovered": true
+      "pastYearCount": 1
     },
     {
       "id": "fsa-tajuu_saimu_kaigi",
@@ -9553,7 +9549,8 @@
       "name": "食品安全委員会",
       "officialUrl": "https://www.fsc.go.jp/iinkai_annai/jisseki.html",
       "description": "食品安全委員会における食品安全委員会。",
-      "pastYearCount": 301
+      "pastYearCount": 302,
+      "isNewlyDiscovered": true
     },
     {
       "id": "fsc-hyoukagijyutukikaku_wg",
@@ -11724,8 +11721,7 @@
       "category": "COUNCIL",
       "name": "中央最低賃金審議会",
       "officialUrl": "https://www.mhlw.go.jp/stf/shingi/shingi-tingin_127939.html",
-      "pastYearCount": 24,
-      "isNewlyDiscovered": true
+      "pastYearCount": 24
     },
     {
       "id": "mhlw-1010",
@@ -12046,8 +12042,7 @@
       "category": "COUNCIL",
       "name": "成年後見制度利用促進専門家会議",
       "officialUrl": "https://www.mhlw.go.jp/stf/shingi2/0000212875_00007.html",
-      "pastYearCount": 19,
-      "isNewlyDiscovered": true
+      "pastYearCount": 19
     },
     {
       "id": "mhlw-2859",
@@ -12063,8 +12058,7 @@
       "category": "WORKING_GROUP",
       "name": "精神医療に関する地域医療構想検討ワーキンググループ",
       "officialUrl": "https://www.mhlw.go.jp/stf/shingi/other-isei_436723_00021.html",
-      "pastYearCount": 3,
-      "isNewlyDiscovered": true
+      "pastYearCount": 3
     },
     {
       "id": "mhlw-2862",
@@ -12200,7 +12194,8 @@
       "category": "STUDY",
       "name": "医療上の必要性の高い未承認薬・適応外薬検討会",
       "officialUrl": "https://www.mhlw.go.jp/stf/shingi/other-iyaku_128701.html",
-      "pastYearCount": 19
+      "pastYearCount": 20,
+      "isNewlyDiscovered": true
     },
     {
       "id": "mhlw-2900",
@@ -12217,6 +12212,15 @@
       "name": "目安制度の在り方に関する全員協議会",
       "officialUrl": "https://www.mhlw.go.jp/stf/shingi/shingi-tingin_127940.html",
       "pastYearCount": 11
+    },
+    {
+      "id": "mhlw-3012",
+      "ministry": "MHLW",
+      "category": "STUDY",
+      "name": "保険者による健診・保健指導等に関する検討会",
+      "officialUrl": "https://www.mhlw.go.jp/stf/shingi/other-hoken_129197.html",
+      "pastYearCount": 47,
+      "isNewlyDiscovered": true
     },
     {
       "id": "mhlw-729",
@@ -13912,7 +13916,8 @@
       "category": "STUDY",
       "name": "国民年金第3号被保険者制度等に関する検討会",
       "officialUrl": "https://www.mhlw.go.jp/stf/newpage_75817.html",
-      "pastYearCount": 3
+      "pastYearCount": 3,
+      "isNewlyDiscovered": true
     },
     {
       "id": "mhlw-engo_shinsa",
@@ -14507,7 +14512,7 @@
       "name": "社会保障審議会 介護給付費分科会",
       "officialUrl": "https://www.mhlw.go.jp/stf/shingi/shingi-hosho_126698_00022.html",
       "description": "厚生労働省社会保障審議会における社会保障審議会 介護給付費分科会。",
-      "pastYearCount": 81,
+      "pastYearCount": 83,
       "isNewlyDiscovered": true
     },
     {
@@ -14617,8 +14622,7 @@
       "category": "EXPERT_COMMITTEE",
       "name": "匿名医療情報等の提供に関する専門委員会",
       "officialUrl": "https://www.mhlw.go.jp/stf/shingi/index_13914.html",
-      "pastYearCount": 50,
-      "isNewlyDiscovered": true
+      "pastYearCount": 50
     },
     {
       "id": "mhlw-tokumei_iryou_kaigo",
@@ -16820,7 +16824,8 @@
       "category": "SUBCOMMITTEE",
       "name": "外国為替等分科会",
       "officialUrl": "https://www.mof.go.jp/about_mof/councils/customs_foreign_exchange/sub-foreign_exchange/proceedings/index.html",
-      "pastYearCount": 25
+      "pastYearCount": 26,
+      "isNewlyDiscovered": true
     },
     {
       "id": "mof-1138",
@@ -18189,6 +18194,35 @@
   ],
   "meetings": [
     {
+      "id": "mhlw-2899-20261210-070",
+      "councilId": "mhlw-2899",
+      "name": "第70回 医療上の必要性の高い未承認薬・適応外薬検討会",
+      "date": "2026/12/10",
+      "officialUrl": "https://www.mhlw.go.jp/stf/shingi/other-iyaku_128701.html",
+      "isNewlyDiscovered": true,
+      "materials": []
+    },
+    {
+      "id": "mhlw-3012-20261208-048",
+      "councilId": "mhlw-3012",
+      "name": "第48回 保険者による健診・保健指導等に関する検討会",
+      "date": "2026/12/08",
+      "officialUrl": "https://www.mhlw.go.jp/stf/shingi/other-hoken_129197.html",
+      "isNewlyDiscovered": true,
+      "materials": [
+        {
+          "name": "議事録",
+          "url": "https://www.mhlw.go.jp/stf/shingi/2r985200000259xg.html",
+          "type": "HTML"
+        },
+        {
+          "name": "第7回 2026年12月8日 (令和8年12月8日) 1. 特定健診・保健指導の効果検証の進捗状況について 2. 後期高齢者支援金の加算・減算について 3. 健康局の検討会の議論の状況 4. 平成24年度におけるHbA1Cの取扱いについて 議事録",
+          "url": "https://www.mhlw.go.jp/stf/shingi/2r98520000023mfn.html",
+          "type": "HTML"
+        }
+      ]
+    },
+    {
       "id": "cfa-gyakutai_hogojirei-20261204-135",
       "councilId": "cfa-gyakutai_hogojirei",
       "name": "第135回 こども家庭審議会 児童虐待等要保護事例の検証に関する専門委員会",
@@ -18202,7 +18236,6 @@
       "name": "第50回 匿名医療情報等の提供に関する専門委員会",
       "date": "2026/12/02",
       "officialUrl": "https://www.mhlw.go.jp/stf/shingi/index_13914.html",
-      "isNewlyDiscovered": true,
       "materials": []
     },
     {
@@ -18211,7 +18244,6 @@
       "name": "第27回 成年後見制度利用促進専門家会議",
       "date": "2026/12/01",
       "officialUrl": "https://www.mhlw.go.jp/stf/shingi2/0000212875_00007.html",
-      "isNewlyDiscovered": true,
       "materials": []
     },
     {
@@ -18406,9 +18438,83 @@
       "councilId": "mhlw-shakai_hosho_kaigo_kyuufu",
       "name": "第277回 社会保障審議会 介護給付費分科会",
       "date": "2026/11/26",
-      "officialUrl": "https://www.mhlw.go.jp/stf/shingi/shingi-hosho_126698_00022.html",
+      "officialUrl": "https://www.mhlw.go.jp/stf/newpage_77543.html",
+      "materials": [
+        {
+          "name": "議事次第[76KB]",
+          "url": "https://www.mhlw.go.jp/content/12300000/001772937.pdf"
+        },
+        {
+          "name": "社会保障審議会介護給付費分科会委員名簿[81KB]",
+          "url": "https://www.mhlw.go.jp/content/12300000/001772936.pdf"
+        },
+        {
+          "name": "【資料1】認知症への対応力強化[3.8MB]",
+          "url": "https://www.mhlw.go.jp/content/12300000/001772935.pdf"
+        },
+        {
+          "name": "【資料2】科学的介護情報システム(LIFE)[8.2MB]",
+          "url": "https://www.mhlw.go.jp/content/12300000/001772934.pdf"
+        },
+        {
+          "name": "【資料3】住まいの形態に合わせたサービス提供に係る報酬の在り方(訪問介護)[1.9MB]",
+          "url": "https://www.mhlw.go.jp/content/12300000/001773040.pdf"
+        },
+        {
+          "name": "【資料4】住まいの形態に合わせたサービス提供に係る報酬の在り方(通所介護)[1.6MB]",
+          "url": "https://www.mhlw.go.jp/content/12300000/001773041.pdf"
+        },
+        {
+          "name": "【資料5】住まいの形態に合わせたサービス提供に係る報酬の在り方(その他サービス)[3.1MB]",
+          "url": "https://www.mhlw.go.jp/content/12300000/001773042.pdf"
+        },
+        {
+          "name": "【資料6】その他(医師の常勤要件、オンライン診療、利用者数等に係る「前年度の平均値」の考え方等)[3.1MB]",
+          "url": "https://www.mhlw.go.jp/content/12300000/001772933.pdf"
+        },
+        {
+          "name": "【参考資料1】LIFEの提出項目等に係る作業部会(とりまとめ)[859KB]",
+          "url": "https://www.mhlw.go.jp/content/12300000/001772932.pdf"
+        },
+        {
+          "name": "【参考資料2】志田委員提出資料[251KB]",
+          "url": "https://www.mhlw.go.jp/content/12300000/001772931.pdf"
+        }
+      ]
+    },
+    {
+      "id": "mof-1137-20261126-071",
+      "councilId": "mof-1137",
+      "name": "関税・外国為替等審議会 第71回外国為替等分科会",
+      "date": "2026/11/26",
+      "officialUrl": "https://www.mof.go.jp/about_mof/councils/customs_foreign_exchange/sub-foreign_exchange/proceedings/material/20261120175045.html",
       "isNewlyDiscovered": true,
-      "materials": []
+      "materials": [
+        {
+          "name": "議事次第(第71回外国為替等分科会)",
+          "url": "https://www.mof.go.jp/about_mof/councils/customs_foreign_exchange/sub-foreign_exchange/proceedings/material/20261126_1.pdf"
+        },
+        {
+          "name": "【資料1】関税・外国為替等審議会 外国為替等分科会 委員名簿",
+          "url": "https://www.mof.go.jp/about_mof/councils/customs_foreign_exchange/sub-foreign_exchange/proceedings/material/20261126_2.pdf"
+        },
+        {
+          "name": "【資料2-1】最近の国際金融情勢について",
+          "url": "https://www.mof.go.jp/about_mof/councils/customs_foreign_exchange/sub-foreign_exchange/proceedings/material/20261126_3.pdf"
+        },
+        {
+          "name": "【資料2-2】対内直接投資審査制度について",
+          "url": "https://www.mof.go.jp/about_mof/councils/customs_foreign_exchange/sub-foreign_exchange/proceedings/material/20261126_4.pdf"
+        },
+        {
+          "name": "【資料2-3】リスク軽減措置に関するガイドライン(案)",
+          "url": "https://www.mof.go.jp/about_mof/councils/customs_foreign_exchange/sub-foreign_exchange/proceedings/material/20261126_5.pdf"
+        },
+        {
+          "name": "【資料2-4】事前届出対象でない投資に対する報告徴収等に関するガイドライン(案)",
+          "url": "https://www.mof.go.jp/about_mof/councils/customs_foreign_exchange/sub-foreign_exchange/proceedings/material/20261126_6.pdf"
+        }
+      ]
     },
     {
       "id": "mhlw-1009-20261125-076",
@@ -18626,7 +18732,7 @@
       "councilId": "mhlw-dai3gou_hihoken",
       "name": "第2回 国民年金第3号被保険者制度等に関する検討会",
       "date": "2026/11/25",
-      "officialUrl": "https://www.mhlw.go.jp/stf/newpage_75817.html",
+      "officialUrl": "https://www.mhlw.go.jp/stf/newpage_77577.html",
       "materials": [
         {
           "name": "議事次第[49KB]",
@@ -18765,7 +18871,6 @@
       "date": "2026/11/24",
       "round": 1,
       "officialUrl": "https://www.fsa.go.jp/singi/ai_2026/shiryou/20261124.html",
-      "isNewlyDiscovered": true,
       "materials": [
         {
           "name": "メンバー等名簿",
@@ -18778,6 +18883,43 @@
         {
           "name": "事務局参考資料",
           "url": "https://www.fsa.go.jp/singi/ai_2026/shiryou/20261124/jimukyoku_2.pdf"
+        }
+      ]
+    },
+    {
+      "id": "fsc-honkaigi-20261124-1043",
+      "councilId": "fsc-honkaigi",
+      "name": "第1043回 食品安全委員会",
+      "date": "2026/11/24",
+      "officialUrl": "https://www.fsc.go.jp/fsciis/meetingMaterial/show/kai20261124fsc",
+      "materials": [
+        {
+          "name": "議事次第",
+          "url": "https://www.fsc.go.jp/fsciis/attachedFile/download?retrievalId=kai20261124fsc&fileId=010"
+        },
+        {
+          "name": "座席表",
+          "url": "https://www.fsc.go.jp/fsciis/attachedFile/download?retrievalId=kai20261124fsc&fileId=020"
+        },
+        {
+          "name": "資料1-1_遺伝子組換え食品等に係る食品健康影響評価の審議結果について<Escherichia coli K-12 DH1 MDO MAP1001h株を利用して生産された2’-フコシルラクトース>",
+          "url": "https://www.fsc.go.jp/fsciis/attachedFile/download?retrievalId=kai20261124fsc&fileId=101"
+        },
+        {
+          "name": "資料1-2_遺伝子組換え食品等に係る食品健康影響評価の審議結果について<H-ELP株を利用して生産されたα-アミラーゼ>",
+          "url": "https://www.fsc.go.jp/fsciis/attachedFile/download?retrievalId=kai20261124fsc&fileId=102"
+        },
+        {
+          "name": "資料1-3_遺伝子組換え食品等に係る食品健康影響評価の審議結果について<JPAN013株を利用して生産されたα-ガラクトシダーゼ>",
+          "url": "https://www.fsc.go.jp/fsciis/attachedFile/download?retrievalId=kai20261124fsc&fileId=103"
+        },
+        {
+          "name": "資料2_【R9】食品安全モニター募集要項",
+          "url": "https://www.fsc.go.jp/fsciis/attachedFile/download?retrievalId=kai20261124fsc&fileId=200"
+        },
+        {
+          "name": "議事概要",
+          "url": "https://www.fsc.go.jp/fsciis/attachedFile/download?retrievalId=kai20261124fsc&fileId=900"
         }
       ]
     },
@@ -20103,7 +20245,6 @@
       "date": "2026/11/13",
       "round": 1,
       "officialUrl": "https://www.fsa.go.jp/singi/kabushikishijoukouzou/shiryou/20261113.html",
-      "isNewlyDiscovered": true,
       "materials": [
         {
           "name": "メンバー等名簿",
@@ -23288,7 +23429,6 @@
       "date": "2026/10/28",
       "round": 1,
       "officialUrl": "https://www.fsa.go.jp/policy/kashikin/tajusaimukondankai/20261028/20261028.html",
-      "isNewlyDiscovered": true,
       "materials": [
         {
           "name": "議事次第",
@@ -90413,6 +90553,26 @@
         {
           "name": "議事要旨",
           "url": "https://www.mhlw.go.jp/stf/newpage_72015.html",
+          "type": "HTML"
+        }
+      ]
+    },
+    {
+      "id": "mhlw-3012-20260325-047",
+      "councilId": "mhlw-3012",
+      "name": "第47回 保険者による健診・保健指導等に関する検討会",
+      "date": "2026/03/25",
+      "officialUrl": "https://www.mhlw.go.jp/stf/shingi/other-hoken_129197.html",
+      "isNewlyDiscovered": true,
+      "materials": [
+        {
+          "name": "議事録",
+          "url": "https://www.mhlw.go.jp/stf/newpage_73524.html",
+          "type": "HTML"
+        },
+        {
+          "name": "第47回 2026年3月25日 (令和8年3月25日) 1. 後期高齢者支援金の加算・減算制度 第4期後半見直しについて 2. 個人インセンティブの取組に係るガイドラインの改正について 議事録",
+          "url": "https://www.mhlw.go.jp/stf/newpage_71944.html",
           "type": "HTML"
         }
       ]
@@ -218885,8 +219045,8 @@
     "cas-zensedai_hosyo",
     "mof-zaiseiseido_bunkakai"
   ],
-  "lastCrawlTime": "2026/11/26 03:22",
+  "lastCrawlTime": "2026/11/26 20:31",
   "hasArchive": true,
-  "totalMeetingsCount": 25072,
-  "totalMaterialsCount": 158613
+  "totalMeetingsCount": 25122,
+  "totalMaterialsCount": 158753
 }

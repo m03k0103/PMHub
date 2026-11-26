@@ -3848,7 +3848,7 @@ def sync_new_meetings_from_crawl(data, target, scraped_item):
 
         # 事前開催案内ページ（事前告知・傍聴案内等）は会議ページとして登録しない（AGENTS.md 第11条・第12条）
         sub_page_title = sub.get("pageTitle", "")
-        if is_preliminary_notice_page(sub_url, sub_title) or (sub_page_title and is_preliminary_notice_page(sub_url, sub_page_title)):
+        if is_preliminary_notice_page(sub_url, sub_title) or (sub_page_title and is_preliminary_notice_page(sub_url, sub_page_title, check_generic=False)):
             continue
 
         # CR-19 / CR-20: 共通ナビ・広報リンク・組織常設資料およびジェネリックタイトルの登録遮断ガード
@@ -5318,6 +5318,10 @@ def _process_unmatched_news_items(
         resolved_url = resolve_parent_url_from_press_release(item_url, cand_name, min_code)
         if is_single_press_or_notice_url(resolved_url) or (is_single_press_or_notice_url(item_url) and resolved_url == item_url):
             continue
+        if is_non_council_noise(cand_name, raw_title, resolved_url) or (
+            resolved_url == item_url and is_preliminary_notice_page(resolved_url, raw_title, check_generic=False)
+        ):
+            continue
 
         norm_res = normalize_url(resolved_url)
         clean_res_key = get_url_clean_key(resolved_url)
@@ -5683,37 +5687,46 @@ def run_ministry_news_discovery(progress_callback=None, stop_event=None, ministr
             target_url = c_obj.get("officialUrl")
             if not target_url:
                 continue
+            is_new_discovery = str(reason or "").startswith("NEW_COUNCIL_DISCOVERY")
+            added = 0
             if (c_min and is_ministry_waf_blocked(c_min)) or is_host_waf_blocked(target_url):
                 emit(f"\n⏭️ [WAF SKIP] [{cid}] {c_obj['name']}: WAF CHALLENGE BLOCKED 発生済みのためアクセスをスキップします。")
-                continue
+            else:
+                emit(f"\n>>> ピンポイントクロール実行: [{cid}] {c_obj['name']} (契機: {reason})")
 
-            emit(f"\n>>> ピンポイントクロール実行: [{cid}] {c_obj['name']} (契機: {reason})")
+                prev_min = getattr(_thread_local, "current_ministry", None)
+                _thread_local.current_ministry = c_min or None
+                try:
+                    html = fetch_url(target_url, timeout=12, ministry=c_min or None)
+                    if not html:
+                        emit(f"  [WARN] フェッチ失敗: {target_url}")
+                    else:
+                        c_target = dict(c_obj)
+                        c_target.setdefault("url", c_obj.get("officialUrl", ""))
+                        c_target["existing_meeting_urls"] = _build_known_meeting_urls(
+                            data.get("meetings", []), council_id=cid
+                        ).get(cid, set())
 
-            prev_min = getattr(_thread_local, "current_ministry", None)
-            _thread_local.current_ministry = c_min or None
-            try:
-                html = fetch_url(target_url, timeout=12, ministry=c_min or None)
-                if not html:
-                    emit(f"  [WARN] フェッチ失敗: {target_url}")
-                    continue
+                        rule_item = get_rule_for_target(rules, c_target, rule_url_index)
+                        scraped_item = execute_rule_retrieval(c_target, html, rule_item, use_llm=False, recheck_recent=1)
+                        if scraped_item:
+                            daily_crawled_cids.add(cid)
+                            update_crawl_status(data, cid, scraped_item)
+                            added = sync_new_meetings_from_crawl(data, c_target, scraped_item)
+                            if added > 0:
+                                emit(f"  ✨ [ピンポイント追加] [{cid}] {c_obj['name']}: +{added} 開催回")
+                                new_meetings_total += added
+                finally:
+                    _thread_local.current_ministry = prev_min
 
-                c_target = dict(c_obj)
-                c_target.setdefault("url", c_obj.get("officialUrl", ""))
-                c_target["existing_meeting_urls"] = _build_known_meeting_urls(
-                    data.get("meetings", []), council_id=cid
-                ).get(cid, set())
-
-                rule_item = get_rule_for_target(rules, c_target, rule_url_index)
-                scraped_item = execute_rule_retrieval(c_target, html, rule_item, use_llm=False, recheck_recent=1)
-                if scraped_item:
-                    daily_crawled_cids.add(cid)
-                    update_crawl_status(data, cid, scraped_item)
-                    added = sync_new_meetings_from_crawl(data, c_target, scraped_item)
-                    if added > 0:
-                        emit(f"  ✨ [ピンポイント追加] [{cid}] {c_obj['name']}: +{added} 開催回")
-                        new_meetings_total += added
-            finally:
-                _thread_local.current_ministry = prev_min
+            if is_new_discovery and added == 0 and not any(m.get("councilId") == cid for m in data.get("meetings", [])):
+                data["councils"] = [c for c in (data.get("councils") or []) if c.get("id") != cid]
+                if isinstance(data.get("scrapingRules"), dict):
+                    data["scrapingRules"].pop(cid, None)
+                if isinstance(data.get("crawlStatus"), dict):
+                    data["crawlStatus"].pop(cid, None)
+                daily_crawled_cids.discard(cid)
+                emit(f"  ⏭️ [Daily未マッチ候補見送り (開催回0件)] [{cid}] {c_obj['name']}")
 
         # 重複排除 & 保存
         deduplicate_data_materials(data)
