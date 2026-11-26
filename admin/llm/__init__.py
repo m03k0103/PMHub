@@ -10,10 +10,18 @@ and halluncination-free ID-referenced discovery judgment (Drop 81 / Track [LLM-A
 from .digest import build_discovery_digest
 from .client import LLMClient, DEFAULT_LLM_BUDGET
 from .discovery_judge import judge_discovery_digest
+from .crawl_fallback import (
+    compute_crawl_anomaly_score,
+    build_compact_dom_snippet,
+    run_batched_llm_crawl_fallback,
+)
 
 __all__ = [
     "build_discovery_digest",
     "LLMClient",
     "DEFAULT_LLM_BUDGET",
     "judge_discovery_digest",
+    "compute_crawl_anomaly_score",
+    "build_compact_dom_snippet",
+    "run_batched_llm_crawl_fallback",
 ]
