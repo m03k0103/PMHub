@@ -532,7 +532,13 @@
         "nta.go.jp",
         "mof.go.jp"
       ],
-      "hexColor": "#475569"
+      "hexColor": "#475569",
+      "newsPortals": [
+        {
+          "url": "https://www.nta.go.jp/information/news/news.htm",
+          "type": "news_feed"
+        }
+      ]
     },
     "MEXT": {
       "name": "文部科学省",
@@ -18025,6 +18031,384 @@
       "pastYearCount": 11
     },
     {
+      "id": "nta-chiri_bunkakai",
+      "ministry": "NTA",
+      "category": "SECTION",
+      "name": "地理的表示部会(酒類分科会)",
+      "officialUrl": "https://www.nta.go.jp/about/council/kenkyu.htm#a031",
+      "pastYearCount": 0
+    },
+    {
+      "id": "nta-etax_kenkyukai",
+      "ministry": "NTA",
+      "category": "STUDY",
+      "name": "申告手続の電子化等に関する研究会",
+      "officialUrl": "https://www.nta.go.jp/about/council/kenkyu.htm#a06",
+      "pastYearCount": 0
+    },
+    {
+      "id": "nta-idenshi",
+      "ministry": "NTA",
+      "category": "STUDY",
+      "name": "遺伝子組換え生物等の酒類製造への使用等に関する検討会",
+      "officialUrl": "https://www.nta.go.jp/about/council/kenkyu.htm#idenshi",
+      "pastYearCount": 0,
+      "materials": [
+        {
+          "name": "「遺伝子組換え生物等の酒類製造への使用等に関する検討会」 委員名簿",
+          "url": "https://www.nta.go.jp/about/council/mansion/pdf/02_meibo.pdf"
+        }
+      ]
+    },
+    {
+      "id": "nta-kyodokenkyu",
+      "ministry": "NTA",
+      "category": "EXPERT_COMMITTEE",
+      "name": "国税庁保有行政記録情報を用いた税務大学校との共同研究に関する有識者会議",
+      "officialUrl": "https://www.nta.go.jp/about/council/kenkyu.htm#kyodokenkyu",
+      "pastYearCount": 0,
+      "materials": [
+        {
+          "name": "「国税庁保有行政記録情報を用いた税務大学校との共同研究に関する有識者会議」委員名簿",
+          "url": "https://www.nta.go.jp/about/council/kyodokenkyu/250701/pdf/250701meibo.pdf"
+        }
+      ]
+    },
+    {
+      "id": "nta-mansion",
+      "ministry": "NTA",
+      "category": "EXPERT_COMMITTEE",
+      "name": "マンションに係る財産評価基本通達に関する有識者会議",
+      "officialUrl": "https://www.nta.go.jp/about/council/kenkyu.htm#mansion",
+      "pastYearCount": 0,
+      "materials": [
+        {
+          "name": "「マンションに係る財産評価基本通達に関する有識者会議」 委員名簿",
+          "url": "https://www.nta.go.jp/about/council/mansion/pdf/01_meibo.pdf"
+        }
+      ]
+    },
+    {
+      "id": "nta-nai_hyoka",
+      "ministry": "NTA",
+      "category": "EXPERT_COMMITTEE",
+      "name": "取引相場のない株式の評価に関する有識者会議",
+      "officialUrl": "https://www.nta.go.jp/about/council/kenkyu.htm#nai-hyoka",
+      "pastYearCount": 0,
+      "materials": [
+        {
+          "name": "「取引相場のない株式の評価に関する有識者会議」の開催について",
+          "url": "https://www.nta.go.jp/about/council/nai-hyoka/pdf/kaisai_kabukaigi.pdf"
+        },
+        {
+          "name": "「取引相場のない株式の評価に関する有識者会議」 委員名簿",
+          "url": "https://www.nta.go.jp/about/council/nai-hyoka/pdf/meibo_kabukaigi.pdf"
+        }
+      ]
+    },
+    {
+      "id": "nta-sake_brand",
+      "ministry": "NTA",
+      "category": "STUDY",
+      "name": "日本産酒類のブランド戦略検討会",
+      "officialUrl": "https://www.nta.go.jp/about/council/kenkyu.htm#a11",
+      "pastYearCount": 0
+    },
+    {
+      "id": "nta-sake_bunkakai",
+      "ministry": "NTA",
+      "category": "SUBCOMMITTEE",
+      "name": "酒類分科会(国税審議会)",
+      "officialUrl": "https://www.nta.go.jp/about/council/kenkyu.htm#a03",
+      "pastYearCount": 0
+    },
+    {
+      "id": "nta-sake_global",
+      "ministry": "NTA",
+      "category": "STUDY",
+      "name": "日本酒のグローバルなブランド戦略に関する検討会",
+      "officialUrl": "https://www.nta.go.jp/about/council/kenkyu.htm#a10",
+      "pastYearCount": 0,
+      "materials": [
+        {
+          "name": "「日本酒のグローバルなブランド戦略に関する検討会」委員名簿",
+          "url": "https://www.nta.go.jp/about/council/sake3/meibo/01.pdf"
+        }
+      ]
+    },
+    {
+      "id": "nta-sake_hanbai",
+      "ministry": "NTA",
+      "category": "ROUNDTABLE",
+      "name": "酒類販売業等に関する懇談会",
+      "officialUrl": "https://www.nta.go.jp/about/council/kenkyu.htm#a05",
+      "pastYearCount": 0,
+      "materials": [
+        {
+          "name": "「酒類販売業等に関する懇談会」名簿 (HTML)",
+          "url": "https://www.nta.go.jp/about/council/sake/meibo2002/02.htm",
+          "type": "HTML"
+        },
+        {
+          "name": "「酒類販売業等に関する懇談会」名簿 (HTML)",
+          "url": "https://www.nta.go.jp/about/council/sake/meibo2004/01.htm",
+          "type": "HTML"
+        }
+      ]
+    },
+    {
+      "id": "nta-sake_pr",
+      "ministry": "NTA",
+      "category": "ROUNDTABLE",
+      "name": "日本産酒類の情報発信の強化に関する懇談会",
+      "officialUrl": "https://www.nta.go.jp/about/council/kenkyu.htm#a09",
+      "pastYearCount": 0,
+      "materials": [
+        {
+          "name": "「日本産酒類の情報発信の強化に関する懇談会」名簿 (HTML)",
+          "url": "https://www.nta.go.jp/about/council/sake2/meibo/01.htm",
+          "type": "HTML"
+        }
+      ]
+    },
+    {
+      "id": "nta-seibi",
+      "ministry": "NTA",
+      "category": "STUDY",
+      "name": "国税庁保有行政記録情報の整備に関する有識者検討会",
+      "officialUrl": "https://www.nta.go.jp/about/council/kenkyu.htm#seibi",
+      "pastYearCount": 0,
+      "materials": [
+        {
+          "name": "「国税庁保有行政記録情報の整備に関する有識者検討会」委員名簿",
+          "url": "https://www.nta.go.jp/about/council/seibi/pdf/meibo.pdf"
+        }
+      ]
+    },
+    {
+      "id": "nta-shingikai",
+      "ministry": "NTA",
+      "category": "COUNCIL",
+      "name": "国税審議会",
+      "officialUrl": "https://www.nta.go.jp/about/council/kenkyu.htm#a01",
+      "pastYearCount": 0,
+      "materials": [
+        {
+          "name": "諮問・答申等 (HTML)",
+          "url": "https://www.nta.go.jp/about/council/toshin/00.htm",
+          "type": "HTML"
+        },
+        {
+          "name": "国税審議会委員名簿 (HTML)",
+          "url": "https://www.nta.go.jp/about/council/meibo/01.htm",
+          "type": "HTML"
+        },
+        {
+          "name": "関係法令等 (HTML)",
+          "url": "https://www.nta.go.jp/about/council/law/00.htm",
+          "type": "HTML"
+        }
+      ]
+    },
+    {
+      "id": "nta-sinsabunkakai",
+      "ministry": "NTA",
+      "category": "SUBCOMMITTEE",
+      "name": "国税審査分科会(国税審議会)",
+      "officialUrl": "https://www.nta.go.jp/about/council/kenkyu.htm#a02",
+      "pastYearCount": 0
+    },
+    {
+      "id": "nta-statistics",
+      "ministry": "NTA",
+      "category": "STUDY",
+      "name": "国税庁所管統計の整備に関する検討会",
+      "officialUrl": "https://www.nta.go.jp/about/council/kenkyu.htm#statistics",
+      "pastYearCount": 0,
+      "materials": [
+        {
+          "name": "「国税庁所管統計の整備に関する検討会」委員名簿",
+          "url": "https://www.nta.go.jp/about/council/statistics/pdf/meibo.pdf"
+        }
+      ]
+    },
+    {
+      "id": "nta-tochihyoka_fukuoka",
+      "ministry": "NTA",
+      "category": "COUNCIL",
+      "name": "福岡国税局土地評価審議会",
+      "officialUrl": "https://www.nta.go.jp/about/council/tochihyoka/fukuoka/index.htm",
+      "pastYearCount": 0,
+      "materials": [
+        {
+          "name": "審議会委員名簿",
+          "url": "https://www.nta.go.jp/about/council/tochihyoka/fukuoka/pdf/01.pdf"
+        }
+      ]
+    },
+    {
+      "id": "nta-tochihyoka_hiroshima",
+      "ministry": "NTA",
+      "category": "COUNCIL",
+      "name": "広島国税局土地評価審議会",
+      "officialUrl": "https://www.nta.go.jp/about/council/tochihyoka/hiroshima/index.htm",
+      "pastYearCount": 0,
+      "materials": [
+        {
+          "name": "審議会委員名簿",
+          "url": "https://www.nta.go.jp/about/council/tochihyoka/hiroshima/pdf/01.pdf"
+        }
+      ]
+    },
+    {
+      "id": "nta-tochihyoka_kanazawa",
+      "ministry": "NTA",
+      "category": "COUNCIL",
+      "name": "金沢国税局土地評価審議会",
+      "officialUrl": "https://www.nta.go.jp/about/council/tochihyoka/kanazawa/index.htm",
+      "pastYearCount": 0,
+      "materials": [
+        {
+          "name": "審議会委員名簿",
+          "url": "https://www.nta.go.jp/about/council/tochihyoka/kanazawa/pdf/01.pdf"
+        }
+      ]
+    },
+    {
+      "id": "nta-tochihyoka_kantoshinetsu",
+      "ministry": "NTA",
+      "category": "COUNCIL",
+      "name": "関東信越国税局土地評価審議会",
+      "officialUrl": "https://www.nta.go.jp/about/council/tochihyoka/kantoshinetsu/index.htm",
+      "pastYearCount": 0,
+      "materials": [
+        {
+          "name": "審議会委員名簿",
+          "url": "https://www.nta.go.jp/about/council/tochihyoka/kantoshinetsu/pdf/01.pdf"
+        }
+      ]
+    },
+    {
+      "id": "nta-tochihyoka_kumamoto",
+      "ministry": "NTA",
+      "category": "COUNCIL",
+      "name": "熊本国税局土地評価審議会",
+      "officialUrl": "https://www.nta.go.jp/about/council/tochihyoka/kumamoto/index.htm",
+      "pastYearCount": 0,
+      "materials": [
+        {
+          "name": "審議会委員名簿",
+          "url": "https://www.nta.go.jp/about/council/tochihyoka/kumamoto/pdf/01.pdf"
+        }
+      ]
+    },
+    {
+      "id": "nta-tochihyoka_nagoya",
+      "ministry": "NTA",
+      "category": "COUNCIL",
+      "name": "名古屋国税局土地評価審議会",
+      "officialUrl": "https://www.nta.go.jp/about/council/tochihyoka/nagoya/index.htm",
+      "pastYearCount": 0,
+      "materials": [
+        {
+          "name": "審議会委員名簿",
+          "url": "https://www.nta.go.jp/about/council/tochihyoka/nagoya/pdf/01.pdf"
+        }
+      ]
+    },
+    {
+      "id": "nta-tochihyoka_okinawa",
+      "ministry": "NTA",
+      "category": "COUNCIL",
+      "name": "沖縄国税事務所土地評価審議会",
+      "officialUrl": "https://www.nta.go.jp/about/council/tochihyoka/okinawa/index.htm",
+      "pastYearCount": 0,
+      "materials": [
+        {
+          "name": "審議会委員名簿",
+          "url": "https://www.nta.go.jp/about/council/tochihyoka/okinawa/pdf/01.pdf"
+        }
+      ]
+    },
+    {
+      "id": "nta-tochihyoka_osaka",
+      "ministry": "NTA",
+      "category": "COUNCIL",
+      "name": "大阪国税局土地評価審議会",
+      "officialUrl": "https://www.nta.go.jp/about/council/tochihyoka/osaka/index.htm",
+      "pastYearCount": 0,
+      "materials": [
+        {
+          "name": "審議会委員名簿",
+          "url": "https://www.nta.go.jp/about/council/tochihyoka/osaka/pdf/01.pdf"
+        }
+      ]
+    },
+    {
+      "id": "nta-tochihyoka_sapporo",
+      "ministry": "NTA",
+      "category": "COUNCIL",
+      "name": "札幌国税局土地評価審議会",
+      "officialUrl": "https://www.nta.go.jp/about/council/tochihyoka/sapporo/index.htm",
+      "pastYearCount": 0,
+      "materials": [
+        {
+          "name": "審議会委員名簿",
+          "url": "https://www.nta.go.jp/about/council/tochihyoka/sapporo/pdf/01.pdf"
+        }
+      ]
+    },
+    {
+      "id": "nta-tochihyoka_sendai",
+      "ministry": "NTA",
+      "category": "COUNCIL",
+      "name": "仙台国税局土地評価審議会",
+      "officialUrl": "https://www.nta.go.jp/about/council/tochihyoka/sendai/index.htm",
+      "pastYearCount": 0,
+      "materials": [
+        {
+          "name": "審議会委員名簿",
+          "url": "https://www.nta.go.jp/about/council/tochihyoka/sendai/pdf/01.pdf"
+        }
+      ]
+    },
+    {
+      "id": "nta-tochihyoka_takamatsu",
+      "ministry": "NTA",
+      "category": "COUNCIL",
+      "name": "高松国税局土地評価審議会",
+      "officialUrl": "https://www.nta.go.jp/about/council/tochihyoka/takamatsu/index.htm",
+      "pastYearCount": 0,
+      "materials": [
+        {
+          "name": "審議会委員名簿",
+          "url": "https://www.nta.go.jp/about/council/tochihyoka/takamatsu/pdf/01.pdf"
+        }
+      ]
+    },
+    {
+      "id": "nta-tochihyoka_tokyo",
+      "ministry": "NTA",
+      "category": "COUNCIL",
+      "name": "東京国税局土地評価審議会",
+      "officialUrl": "https://www.nta.go.jp/about/council/tochihyoka/tokyo/index.htm",
+      "pastYearCount": 0,
+      "materials": [
+        {
+          "name": "審議会委員名簿",
+          "url": "https://www.nta.go.jp/about/council/tochihyoka/tokyo/pdf/01.pdf"
+        }
+      ]
+    },
+    {
+      "id": "nta-zeirishi",
+      "ministry": "NTA",
+      "category": "SUBCOMMITTEE",
+      "name": "税理士分科会(国税審議会)",
+      "officialUrl": "https://www.nta.go.jp/about/council/kenkyu.htm#a04",
+      "pastYearCount": 0
+    },
+    {
       "id": "ppc-ai_privacy",
       "ministry": "PPC",
       "category": "PANEL",
@@ -26698,6 +27082,21 @@
       "materials": []
     },
     {
+      "id": "nta-zeirishi-20261015-121",
+      "councilId": "nta-zeirishi",
+      "name": "第121回 税理士分科会(国税審議会)",
+      "date": "2026/10/15",
+      "round": 121,
+      "officialUrl": "https://www.nta.go.jp/about/council/zeirishi/261015/121.htm",
+      "materials": [
+        {
+          "name": "第121回 議事要旨 (HTML)",
+          "url": "https://www.nta.go.jp/about/council/zeirishi/261015/121.htm",
+          "type": "HTML"
+        }
+      ]
+    },
+    {
       "id": "cas-sdgs_honbu-20261014-022",
       "councilId": "cas-sdgs_honbu",
       "name": "第22回 持続可能な開発目標(SDGs)推進本部",
@@ -32350,6 +32749,28 @@
           "name": "議事録【PDF:314KB】",
           "url": "https://www.da.nra.go.jp/view/NRA100020365?contents=NRA100020365-004-001",
           "type": "HTML"
+        }
+      ]
+    },
+    {
+      "id": "nta-nai_hyoka-20260916-006",
+      "councilId": "nta-nai_hyoka",
+      "name": "第6回 取引相場のない株式の評価に関する有識者会議",
+      "date": "2026/09/16",
+      "round": 6,
+      "officialUrl": "https://www.nta.go.jp/about/council/kenkyu.htm#nai-hyoka",
+      "materials": [
+        {
+          "name": "第6回 資料",
+          "url": "https://www.nta.go.jp/about/council/nai-hyoka/20260916/pdf/06shiryo_kabukaigi.pdf"
+        },
+        {
+          "name": "第6回 委員提出意見書",
+          "url": "https://www.nta.go.jp/about/council/nai-hyoka/20260916/pdf/06ikensyo_kabukaigi.pdf"
+        },
+        {
+          "name": "第6回 オブザーバー等提出意見書",
+          "url": "https://www.nta.go.jp/about/council/nai-hyoka/20260916/pdf/06obikensyo_kabukaigi.pdf"
         }
       ]
     },
@@ -40939,6 +41360,32 @@
       ]
     },
     {
+      "id": "nta-nai_hyoka-20260820-005",
+      "councilId": "nta-nai_hyoka",
+      "name": "第5回 取引相場のない株式の評価に関する有識者会議",
+      "date": "2026/08/20",
+      "round": 5,
+      "officialUrl": "https://www.nta.go.jp/about/council/kenkyu.htm#nai-hyoka",
+      "materials": [
+        {
+          "name": "第5回 議事要旨",
+          "url": "https://www.nta.go.jp/about/council/nai-hyoka/20260820/pdf/05giji_kabukaigi.pdf"
+        },
+        {
+          "name": "第5回 資料",
+          "url": "https://www.nta.go.jp/about/council/nai-hyoka/20260820/pdf/05shiryo_kabukaigi.pdf"
+        },
+        {
+          "name": "第5回 委員提出意見書",
+          "url": "https://www.nta.go.jp/about/council/nai-hyoka/20260820/pdf/05ikensyo_kabukaigi.pdf"
+        },
+        {
+          "name": "第5回 当日机上配付資料",
+          "url": "https://www.nta.go.jp/about/council/nai-hyoka/20260820/pdf/05kijoshiryo_kabukaigi.pdf"
+        }
+      ]
+    },
+    {
       "id": "cfa-kodomo_kosodate-20260819-015",
       "councilId": "cfa-kodomo_kosodate",
       "name": "第15回 子ども・子育て支援等分科会",
@@ -41333,6 +41780,21 @@
         {
           "name": "【資料8】今後のスケジュール",
           "url": "https://www.mlit.go.jp/policy/shingikai/content/002017153.pdf"
+        }
+      ]
+    },
+    {
+      "id": "nta-zeirishi-20260818-120",
+      "councilId": "nta-zeirishi",
+      "name": "第120回 税理士分科会(国税審議会)",
+      "date": "2026/08/18",
+      "round": 120,
+      "officialUrl": "https://www.nta.go.jp/about/council/zeirishi/260818/120.htm",
+      "materials": [
+        {
+          "name": "第120回 議事要旨 (HTML)",
+          "url": "https://www.nta.go.jp/about/council/zeirishi/260818/120.htm",
+          "type": "HTML"
         }
       ]
     },
@@ -56642,6 +57104,28 @@
       ]
     },
     {
+      "id": "nta-nai_hyoka-20260703-004",
+      "councilId": "nta-nai_hyoka",
+      "name": "第4回 取引相場のない株式の評価に関する有識者会議",
+      "date": "2026/07/03",
+      "round": 4,
+      "officialUrl": "https://www.nta.go.jp/about/council/kenkyu.htm#nai-hyoka",
+      "materials": [
+        {
+          "name": "第4回 議事要旨",
+          "url": "https://www.nta.go.jp/about/council/nai-hyoka/20260703/pdf/04giji_kabukaigi.pdf"
+        },
+        {
+          "name": "第4回 資料",
+          "url": "https://www.nta.go.jp/about/council/nai-hyoka/20260703/pdf/04shiryo_kabukaigi.pdf"
+        },
+        {
+          "name": "第4回 委員提出意見書",
+          "url": "https://www.nta.go.jp/about/council/nai-hyoka/20260703/pdf/04ikensyo_kabukaigi.pdf"
+        }
+      ]
+    },
+    {
       "id": "aca-193-20260702-s02",
       "councilId": "aca-193",
       "name": "第6期文化経済部会",
@@ -71300,6 +71784,24 @@
       ]
     },
     {
+      "id": "nta-nai_hyoka-20260604-003",
+      "councilId": "nta-nai_hyoka",
+      "name": "第3回 取引相場のない株式の評価に関する有識者会議",
+      "date": "2026/06/04",
+      "round": 3,
+      "officialUrl": "https://www.nta.go.jp/about/council/kenkyu.htm#nai-hyoka",
+      "materials": [
+        {
+          "name": "第3回 議事要旨",
+          "url": "https://www.nta.go.jp/about/council/nai-hyoka/20260604/pdf/03giji_kabukaigi.pdf"
+        },
+        {
+          "name": "第3回 資料",
+          "url": "https://www.nta.go.jp/about/council/nai-hyoka/20260604/pdf/03shiryo_kabukaigi.pdf"
+        }
+      ]
+    },
+    {
       "id": "cas-digital_gyozaikaikaku_dx_renraku-20260603-005",
       "councilId": "cas-digital_gyozaikaikaku_dx_renraku",
       "name": "第5回 各府省庁DX推進連絡会議",
@@ -72805,6 +73307,21 @@
       ]
     },
     {
+      "id": "nta-zeirishi-20260528-119",
+      "councilId": "nta-zeirishi",
+      "name": "第119回 税理士分科会(国税審議会)",
+      "date": "2026/05/28",
+      "round": 119,
+      "officialUrl": "https://www.nta.go.jp/about/council/zeirishi/260528/119.htm",
+      "materials": [
+        {
+          "name": "第119回 議事要旨 (HTML)",
+          "url": "https://www.nta.go.jp/about/council/zeirishi/260528/119.htm",
+          "type": "HTML"
+        }
+      ]
+    },
+    {
       "id": "cas-371-20260527-035",
       "councilId": "cas-371",
       "name": "第35回 日越大学構想の推進に関する関係省庁会議",
@@ -73217,6 +73734,32 @@
         {
           "name": "法制審議会会社法制(株式・株主総会等関係)部会委員等名簿",
           "url": "https://www.moj.go.jp/content/001463134.pdf"
+        }
+      ]
+    },
+    {
+      "id": "nta-kyodokenkyu-20260527-014",
+      "councilId": "nta-kyodokenkyu",
+      "name": "第14回 国税庁保有行政記録情報を用いた税務大学校との共同研究に関する有識者会議",
+      "date": "2026/05/27",
+      "round": 14,
+      "officialUrl": "https://www.nta.go.jp/about/council/kyodokenkyu/260527/shiryo.htm",
+      "materials": [
+        {
+          "name": "第14回 議事要旨",
+          "url": "https://www.nta.go.jp/about/council/kyodokenkyu/260527/pdf/20260527gijiyoushi.pdf"
+        },
+        {
+          "name": "第14回 議事次第",
+          "url": "https://www.nta.go.jp/about/council/kyodokenkyu/260527/pdf/20260527gijishidai.pdf"
+        },
+        {
+          "name": "第14回 国税庁保有行政記録情報を用いた税務大学校との共同研究に関する有識者会議資料",
+          "url": "https://www.nta.go.jp/about/council/kyodokenkyu/260527/pdf/20260527shiryou.pdf"
+        },
+        {
+          "name": "第14回 出席委員",
+          "url": "https://www.nta.go.jp/about/council/kyodokenkyu/260527/pdf/20260527shussekiiin.pdf"
         }
       ]
     },
@@ -74250,6 +74793,32 @@
         {
           "name": "谷口委員提出資料",
           "url": "https://www.moj.go.jp/content/001462879.pdf"
+        }
+      ]
+    },
+    {
+      "id": "nta-statistics-20260525-009",
+      "councilId": "nta-statistics",
+      "name": "第9回 国税庁所管統計の整備に関する検討会",
+      "date": "2026/05/25",
+      "round": 9,
+      "officialUrl": "https://www.nta.go.jp/about/council/statistics/260525/shiryo.htm",
+      "materials": [
+        {
+          "name": "第9回 議事要旨",
+          "url": "https://www.nta.go.jp/about/council/statistics/260525/pdf/yoshi.pdf"
+        },
+        {
+          "name": "第9回 議事次第",
+          "url": "https://www.nta.go.jp/about/council/statistics/260525/pdf/shidai.pdf"
+        },
+        {
+          "name": "会社標本調査の見直しについて",
+          "url": "https://www.nta.go.jp/about/council/statistics/260525/pdf/01.pdf"
+        },
+        {
+          "name": "第9回 出席委員",
+          "url": "https://www.nta.go.jp/about/council/statistics/260525/pdf/iin.pdf"
         }
       ]
     },
@@ -77865,6 +78434,72 @@
       ]
     },
     {
+      "id": "nta-tochihyoka_fukuoka-20260513-s01",
+      "councilId": "nta-tochihyoka_fukuoka",
+      "name": "令和8年 福岡国税局土地評価審議会",
+      "date": "2026/05/13",
+      "officialUrl": "https://www.nta.go.jp/about/council/tochihyoka/fukuoka/index.htm",
+      "materials": [
+        {
+          "name": "審議会議事要旨",
+          "url": "https://www.nta.go.jp/about/council/tochihyoka/fukuoka/pdf/02.pdf"
+        },
+        {
+          "name": "県庁所在都市の最高標準宅地の評価基準額",
+          "url": "https://www.nta.go.jp/about/council/tochihyoka/fukuoka/pdf/03.pdf"
+        },
+        {
+          "name": "商業",
+          "url": "https://www.nta.go.jp/about/council/tochihyoka/fukuoka/pdf/04.pdf"
+        },
+        {
+          "name": "住居",
+          "url": "https://www.nta.go.jp/about/council/tochihyoka/fukuoka/pdf/05.pdf"
+        },
+        {
+          "name": "工業",
+          "url": "https://www.nta.go.jp/about/council/tochihyoka/fukuoka/pdf/06.pdf"
+        },
+        {
+          "name": "令和8年分農業投資価格(案)",
+          "url": "https://www.nta.go.jp/about/council/tochihyoka/fukuoka/pdf/07.pdf"
+        }
+      ]
+    },
+    {
+      "id": "nta-tochihyoka_osaka-20260513-s01",
+      "councilId": "nta-tochihyoka_osaka",
+      "name": "令和8年 大阪国税局土地評価審議会",
+      "date": "2026/05/13",
+      "officialUrl": "https://www.nta.go.jp/about/council/tochihyoka/osaka/index.htm",
+      "materials": [
+        {
+          "name": "審議会議事要旨",
+          "url": "https://www.nta.go.jp/about/council/tochihyoka/osaka/pdf/02.pdf"
+        },
+        {
+          "name": "府県庁所在都市の最高標準宅地の評価基準額(案)",
+          "url": "https://www.nta.go.jp/about/council/tochihyoka/osaka/pdf/03.pdf"
+        },
+        {
+          "name": "商業",
+          "url": "https://www.nta.go.jp/about/council/tochihyoka/osaka/pdf/04.pdf"
+        },
+        {
+          "name": "住居",
+          "url": "https://www.nta.go.jp/about/council/tochihyoka/osaka/pdf/05.pdf"
+        },
+        {
+          "name": "工業",
+          "url": "https://www.nta.go.jp/about/council/tochihyoka/osaka/pdf/06.pdf"
+        },
+        {
+          "name": "令和8年分農業投資価格(案)",
+          "url": "https://www.nta.go.jp/about/council/tochihyoka/osaka/pdf/07.pdf"
+        }
+      ]
+    },
+    {
       "id": "aca-194-20260512-s02",
       "councilId": "aca-194",
       "name": "第3期文化施設部会",
@@ -78148,6 +78783,237 @@
       ]
     },
     {
+      "id": "nta-tochihyoka_hiroshima-20260512-s01",
+      "councilId": "nta-tochihyoka_hiroshima",
+      "name": "令和8年 広島国税局土地評価審議会",
+      "date": "2026/05/12",
+      "officialUrl": "https://www.nta.go.jp/about/council/tochihyoka/hiroshima/index.htm",
+      "materials": [
+        {
+          "name": "審議会議事要旨",
+          "url": "https://www.nta.go.jp/about/council/tochihyoka/hiroshima/pdf/02.pdf"
+        },
+        {
+          "name": "県庁所在都市の最高標準宅地の評価基準額(案)",
+          "url": "https://www.nta.go.jp/about/council/tochihyoka/hiroshima/pdf/03.pdf"
+        },
+        {
+          "name": "商業",
+          "url": "https://www.nta.go.jp/about/council/tochihyoka/hiroshima/pdf/04.pdf"
+        },
+        {
+          "name": "住居",
+          "url": "https://www.nta.go.jp/about/council/tochihyoka/hiroshima/pdf/05.pdf"
+        },
+        {
+          "name": "工業",
+          "url": "https://www.nta.go.jp/about/council/tochihyoka/hiroshima/pdf/06.pdf"
+        },
+        {
+          "name": "令和8年分農業投資価格(案)",
+          "url": "https://www.nta.go.jp/about/council/tochihyoka/hiroshima/pdf/07.pdf"
+        }
+      ]
+    },
+    {
+      "id": "nta-tochihyoka_kantoshinetsu-20260512-s01",
+      "councilId": "nta-tochihyoka_kantoshinetsu",
+      "name": "令和8年 関東信越国税局土地評価審議会",
+      "date": "2026/05/12",
+      "officialUrl": "https://www.nta.go.jp/about/council/tochihyoka/kantoshinetsu/index.htm",
+      "materials": [
+        {
+          "name": "審議会議事要旨",
+          "url": "https://www.nta.go.jp/about/council/tochihyoka/kantoshinetsu/pdf/02.pdf"
+        },
+        {
+          "name": "県庁所在都市の最高標準宅地の評価基準額(案)",
+          "url": "https://www.nta.go.jp/about/council/tochihyoka/kantoshinetsu/pdf/03.pdf"
+        },
+        {
+          "name": "商業",
+          "url": "https://www.nta.go.jp/about/council/tochihyoka/kantoshinetsu/pdf/04.pdf"
+        },
+        {
+          "name": "住居",
+          "url": "https://www.nta.go.jp/about/council/tochihyoka/kantoshinetsu/pdf/05.pdf"
+        },
+        {
+          "name": "工業",
+          "url": "https://www.nta.go.jp/about/council/tochihyoka/kantoshinetsu/pdf/06.pdf"
+        },
+        {
+          "name": "令和8年分農業投資価格(案)",
+          "url": "https://www.nta.go.jp/about/council/tochihyoka/kantoshinetsu/pdf/07.pdf"
+        }
+      ]
+    },
+    {
+      "id": "nta-tochihyoka_kumamoto-20260512-s01",
+      "councilId": "nta-tochihyoka_kumamoto",
+      "name": "令和8年 熊本国税局土地評価審議会",
+      "date": "2026/05/12",
+      "officialUrl": "https://www.nta.go.jp/about/council/tochihyoka/kumamoto/index.htm",
+      "materials": [
+        {
+          "name": "審議会議事要旨",
+          "url": "https://www.nta.go.jp/about/council/tochihyoka/kumamoto/pdf/02.pdf"
+        },
+        {
+          "name": "県庁所在都市の最高標準宅地の評価基準額(案)",
+          "url": "https://www.nta.go.jp/about/council/tochihyoka/kumamoto/pdf/03.pdf"
+        },
+        {
+          "name": "商業",
+          "url": "https://www.nta.go.jp/about/council/tochihyoka/kumamoto/pdf/04.pdf"
+        },
+        {
+          "name": "住居",
+          "url": "https://www.nta.go.jp/about/council/tochihyoka/kumamoto/pdf/05.pdf"
+        },
+        {
+          "name": "工業",
+          "url": "https://www.nta.go.jp/about/council/tochihyoka/kumamoto/pdf/06.pdf"
+        },
+        {
+          "name": "令和8年分農業投資価格(案)",
+          "url": "https://www.nta.go.jp/about/council/tochihyoka/kumamoto/pdf/07.pdf"
+        }
+      ]
+    },
+    {
+      "id": "nta-tochihyoka_nagoya-20260512-s01",
+      "councilId": "nta-tochihyoka_nagoya",
+      "name": "令和8年 名古屋国税局土地評価審議会",
+      "date": "2026/05/12",
+      "officialUrl": "https://www.nta.go.jp/about/council/tochihyoka/nagoya/index.htm",
+      "materials": [
+        {
+          "name": "審議会議事要旨",
+          "url": "https://www.nta.go.jp/about/council/tochihyoka/nagoya/pdf/02.pdf"
+        },
+        {
+          "name": "県庁所在都市の最高標準宅地の評価基準額",
+          "url": "https://www.nta.go.jp/about/council/tochihyoka/nagoya/pdf/03.pdf"
+        },
+        {
+          "name": "商業",
+          "url": "https://www.nta.go.jp/about/council/tochihyoka/nagoya/pdf/04.pdf"
+        },
+        {
+          "name": "住居",
+          "url": "https://www.nta.go.jp/about/council/tochihyoka/nagoya/pdf/05.pdf"
+        },
+        {
+          "name": "工業",
+          "url": "https://www.nta.go.jp/about/council/tochihyoka/nagoya/pdf/06.pdf"
+        },
+        {
+          "name": "令和8年分農業投資価格(案)",
+          "url": "https://www.nta.go.jp/about/council/tochihyoka/nagoya/pdf/07.pdf"
+        }
+      ]
+    },
+    {
+      "id": "nta-tochihyoka_sapporo-20260512-s01",
+      "councilId": "nta-tochihyoka_sapporo",
+      "name": "令和8年 札幌国税局土地評価審議会",
+      "date": "2026/05/12",
+      "officialUrl": "https://www.nta.go.jp/about/council/tochihyoka/sapporo/index.htm",
+      "materials": [
+        {
+          "name": "審議会議事要旨",
+          "url": "https://www.nta.go.jp/about/council/tochihyoka/sapporo/pdf/02.pdf"
+        },
+        {
+          "name": "道庁所在都市の最高標準宅地の評価基準額(案)",
+          "url": "https://www.nta.go.jp/about/council/tochihyoka/sapporo/pdf/03.pdf"
+        },
+        {
+          "name": "商業",
+          "url": "https://www.nta.go.jp/about/council/tochihyoka/sapporo/pdf/04.pdf"
+        },
+        {
+          "name": "住居",
+          "url": "https://www.nta.go.jp/about/council/tochihyoka/sapporo/pdf/05.pdf"
+        },
+        {
+          "name": "工業",
+          "url": "https://www.nta.go.jp/about/council/tochihyoka/sapporo/pdf/06.pdf"
+        },
+        {
+          "name": "令和8年分農業投資価格(案)",
+          "url": "https://www.nta.go.jp/about/council/tochihyoka/sapporo/pdf/07.pdf"
+        }
+      ]
+    },
+    {
+      "id": "nta-tochihyoka_takamatsu-20260512-s01",
+      "councilId": "nta-tochihyoka_takamatsu",
+      "name": "令和8年 高松国税局土地評価審議会",
+      "date": "2026/05/12",
+      "officialUrl": "https://www.nta.go.jp/about/council/tochihyoka/takamatsu/index.htm",
+      "materials": [
+        {
+          "name": "審議会議事要旨",
+          "url": "https://www.nta.go.jp/about/council/tochihyoka/takamatsu/pdf/02.pdf"
+        },
+        {
+          "name": "県庁所在都市の最高標準宅地の評価基準額",
+          "url": "https://www.nta.go.jp/about/council/tochihyoka/takamatsu/pdf/03.pdf"
+        },
+        {
+          "name": "住居",
+          "url": "https://www.nta.go.jp/about/council/tochihyoka/takamatsu/pdf/04.pdf"
+        },
+        {
+          "name": "商業",
+          "url": "https://www.nta.go.jp/about/council/tochihyoka/takamatsu/pdf/05.pdf"
+        },
+        {
+          "name": "工業",
+          "url": "https://www.nta.go.jp/about/council/tochihyoka/takamatsu/pdf/06.pdf"
+        },
+        {
+          "name": "令和8年分農業投資価格(案)",
+          "url": "https://www.nta.go.jp/about/council/tochihyoka/takamatsu/pdf/07.pdf"
+        }
+      ]
+    },
+    {
+      "id": "nta-tochihyoka_tokyo-20260512-s01",
+      "councilId": "nta-tochihyoka_tokyo",
+      "name": "令和8年 東京国税局土地評価審議会",
+      "date": "2026/05/12",
+      "officialUrl": "https://www.nta.go.jp/about/council/tochihyoka/tokyo/index.htm",
+      "materials": [
+        {
+          "name": "審議会議事要旨",
+          "url": "https://www.nta.go.jp/about/council/tochihyoka/tokyo/pdf/02.pdf"
+        },
+        {
+          "name": "都県庁所在都市の最高標準宅地の評価基準額(案)",
+          "url": "https://www.nta.go.jp/about/council/tochihyoka/tokyo/pdf/03.pdf"
+        },
+        {
+          "name": "商業",
+          "url": "https://www.nta.go.jp/about/council/tochihyoka/tokyo/pdf/04.pdf"
+        },
+        {
+          "name": "住居",
+          "url": "https://www.nta.go.jp/about/council/tochihyoka/tokyo/pdf/05.pdf"
+        },
+        {
+          "name": "工業",
+          "url": "https://www.nta.go.jp/about/council/tochihyoka/tokyo/pdf/06.pdf"
+        },
+        {
+          "name": "令和8年分農業投資価格(案)",
+          "url": "https://www.nta.go.jp/about/council/tochihyoka/tokyo/pdf/07.pdf"
+        }
+      ]
+    },
+    {
       "id": "cao-keizai_shimon-20260511-006",
       "councilId": "cao-keizai_shimon",
       "name": "第6回 経済財政諮問会議",
@@ -78198,6 +79064,124 @@
         {
           "name": "別紙[88KB]",
           "url": "https://www.mhlw.go.jp/content/11121000/001697518.pdf"
+        }
+      ]
+    },
+    {
+      "id": "nta-nai_hyoka-20260511-002",
+      "councilId": "nta-nai_hyoka",
+      "name": "第2回 取引相場のない株式の評価に関する有識者会議",
+      "date": "2026/05/11",
+      "round": 2,
+      "officialUrl": "https://www.nta.go.jp/about/council/kenkyu.htm#nai-hyoka",
+      "materials": [
+        {
+          "name": "第2回 議事要旨",
+          "url": "https://www.nta.go.jp/about/council/nai-hyoka/20260511/pdf/02giji_kabukaigi.pdf"
+        },
+        {
+          "name": "第2回 資料",
+          "url": "https://www.nta.go.jp/about/council/nai-hyoka/20260511/pdf/02shiryo_kabukaigi.pdf"
+        }
+      ]
+    },
+    {
+      "id": "nta-tochihyoka_kanazawa-20260511-s01",
+      "councilId": "nta-tochihyoka_kanazawa",
+      "name": "令和8年 金沢国税局土地評価審議会",
+      "date": "2026/05/11",
+      "officialUrl": "https://www.nta.go.jp/about/council/tochihyoka/kanazawa/index.htm",
+      "materials": [
+        {
+          "name": "審議会議事要旨",
+          "url": "https://www.nta.go.jp/about/council/tochihyoka/kanazawa/pdf/02.pdf"
+        },
+        {
+          "name": "県庁所在都市の最高標準宅地の評価基準額(案)",
+          "url": "https://www.nta.go.jp/about/council/tochihyoka/kanazawa/pdf/03.pdf"
+        },
+        {
+          "name": "商業",
+          "url": "https://www.nta.go.jp/about/council/tochihyoka/kanazawa/pdf/04.pdf"
+        },
+        {
+          "name": "住居",
+          "url": "https://www.nta.go.jp/about/council/tochihyoka/kanazawa/pdf/05.pdf"
+        },
+        {
+          "name": "工業",
+          "url": "https://www.nta.go.jp/about/council/tochihyoka/kanazawa/pdf/06.pdf"
+        },
+        {
+          "name": "令和8年分農業投資価格(案)",
+          "url": "https://www.nta.go.jp/about/council/tochihyoka/kanazawa/pdf/07.pdf"
+        }
+      ]
+    },
+    {
+      "id": "nta-tochihyoka_okinawa-20260511-s01",
+      "councilId": "nta-tochihyoka_okinawa",
+      "name": "令和8年 沖縄国税事務所土地評価審議会",
+      "date": "2026/05/11",
+      "officialUrl": "https://www.nta.go.jp/about/council/tochihyoka/okinawa/index.htm",
+      "materials": [
+        {
+          "name": "審議会議事要旨",
+          "url": "https://www.nta.go.jp/about/council/tochihyoka/okinawa/pdf/02.pdf"
+        },
+        {
+          "name": "県庁所在都市の最高標準宅地の評価基準額(案)",
+          "url": "https://www.nta.go.jp/about/council/tochihyoka/okinawa/pdf/03.pdf"
+        },
+        {
+          "name": "住居",
+          "url": "https://www.nta.go.jp/about/council/tochihyoka/okinawa/pdf/04.pdf"
+        },
+        {
+          "name": "商業",
+          "url": "https://www.nta.go.jp/about/council/tochihyoka/okinawa/pdf/05.pdf"
+        },
+        {
+          "name": "工業",
+          "url": "https://www.nta.go.jp/about/council/tochihyoka/okinawa/pdf/06.pdf"
+        },
+        {
+          "name": "令和8年分農業投資価格(案)",
+          "url": "https://www.nta.go.jp/about/council/tochihyoka/okinawa/pdf/07.pdf"
+        }
+      ]
+    },
+    {
+      "id": "nta-tochihyoka_sendai-20260511-054",
+      "councilId": "nta-tochihyoka_sendai",
+      "name": "第54回 仙台国税局土地評価審議会",
+      "date": "2026/05/11",
+      "round": 54,
+      "officialUrl": "https://www.nta.go.jp/about/council/tochihyoka/sendai/index.htm",
+      "materials": [
+        {
+          "name": "審議会議事要旨",
+          "url": "https://www.nta.go.jp/about/council/tochihyoka/sendai/pdf/02.pdf"
+        },
+        {
+          "name": "県庁所在都市の最高標準宅地の評価基準額(案)",
+          "url": "https://www.nta.go.jp/about/council/tochihyoka/sendai/pdf/03.pdf"
+        },
+        {
+          "name": "住居",
+          "url": "https://www.nta.go.jp/about/council/tochihyoka/sendai/pdf/04.pdf"
+        },
+        {
+          "name": "商業",
+          "url": "https://www.nta.go.jp/about/council/tochihyoka/sendai/pdf/05.pdf"
+        },
+        {
+          "name": "工業",
+          "url": "https://www.nta.go.jp/about/council/tochihyoka/sendai/pdf/06.pdf"
+        },
+        {
+          "name": "令和8年分農業投資価格(案)",
+          "url": "https://www.nta.go.jp/about/council/tochihyoka/sendai/pdf/07.pdf"
         }
       ]
     },
@@ -83228,6 +84212,24 @@
         {
           "name": "議事概要",
           "url": "https://www.soumu.go.jp/main_content/001075539.pdf"
+        }
+      ]
+    },
+    {
+      "id": "nta-nai_hyoka-20260420-001",
+      "councilId": "nta-nai_hyoka",
+      "name": "第1回 取引相場のない株式の評価に関する有識者会議",
+      "date": "2026/04/20",
+      "round": 1,
+      "officialUrl": "https://www.nta.go.jp/about/council/kenkyu.htm#nai-hyoka",
+      "materials": [
+        {
+          "name": "第1回 議事要旨",
+          "url": "https://www.nta.go.jp/about/council/nai-hyoka/20260420/pdf/01giji_kabukaigi.pdf"
+        },
+        {
+          "name": "第1回 資料",
+          "url": "https://www.nta.go.jp/about/council/nai-hyoka/20260420/pdf/01shiryo_kabukaigi.pdf"
         }
       ]
     },
@@ -102625,6 +103627,32 @@
       ]
     },
     {
+      "id": "nta-seibi-20260302-006",
+      "councilId": "nta-seibi",
+      "name": "第6回 国税庁保有行政記録情報の整備に関する有識者検討会",
+      "date": "2026/03/02",
+      "round": 6,
+      "officialUrl": "https://www.nta.go.jp/about/council/seibi/20260303/shiryo.htm",
+      "materials": [
+        {
+          "name": "第6回 議事要旨",
+          "url": "https://www.nta.go.jp/about/council/seibi/20260303/pdf/20260302gijiyoushi.pdf"
+        },
+        {
+          "name": "第6回 議事次第",
+          "url": "https://www.nta.go.jp/about/council/seibi/20260303/pdf/20260302gijishidai.pdf"
+        },
+        {
+          "name": "第6回 国税庁保有行政記録情報の整備に関する有識者検討会資料",
+          "url": "https://www.nta.go.jp/about/council/seibi/20260303/pdf/20260302shiryou.pdf"
+        },
+        {
+          "name": "第6回 出席委員",
+          "url": "https://www.nta.go.jp/about/council/seibi/20260303/pdf/20260302shussekiiin.pdf"
+        }
+      ]
+    },
+    {
       "id": "fdma-kyuukyuu_gyoumu-20260228-003",
       "councilId": "fdma-kyuukyuu_gyoumu",
       "name": "令和7年度 第3回 救急業務のあり方に関する検討会",
@@ -117494,6 +118522,32 @@
       ]
     },
     {
+      "id": "nta-kyodokenkyu-20260116-013",
+      "councilId": "nta-kyodokenkyu",
+      "name": "第13回 国税庁保有行政記録情報を用いた税務大学校との共同研究に関する有識者会議",
+      "date": "2026/01/16",
+      "round": 13,
+      "officialUrl": "https://www.nta.go.jp/about/council/kyodokenkyu/251212/shiryo.htm",
+      "materials": [
+        {
+          "name": "第13回 議事要旨",
+          "url": "https://www.nta.go.jp/about/council/kyodokenkyu/251212/pdf/20260116gijiyoushi.pdf"
+        },
+        {
+          "name": "第13回 議事次第",
+          "url": "https://www.nta.go.jp/about/council/kyodokenkyu/251212/pdf/20260116gijishidai.pdf"
+        },
+        {
+          "name": "第13回 国税庁保有行政記録情報を用いた税務大学校との共同研究に関する有識者会議資料",
+          "url": "https://www.nta.go.jp/about/council/kyodokenkyu/251212/pdf/20260116shiryou.pdf"
+        },
+        {
+          "name": "第13回 出席委員",
+          "url": "https://www.nta.go.jp/about/council/kyodokenkyu/251212/pdf/20260116shussekiiin.pdf"
+        }
+      ]
+    },
+    {
       "id": "cao-kisei_chiiki_wg-20260115-005",
       "councilId": "cao-kisei_chiiki_wg",
       "name": "第5回 規制改革推進会議 地域活性化・人手不足対応WG",
@@ -121316,6 +122370,21 @@
         {
           "name": "議事録",
           "url": "https://www.mof.go.jp/about_mof/councils/fiscal_system_council/sub-of_filp/proceedings/proceedings/zaitoa20251225.html"
+        }
+      ]
+    },
+    {
+      "id": "nta-zeirishi-20251225-118",
+      "councilId": "nta-zeirishi",
+      "name": "第118回 税理士分科会(国税審議会)",
+      "date": "2025/12/25",
+      "round": 118,
+      "officialUrl": "https://www.nta.go.jp/about/council/zeirishi/260119/118.htm",
+      "materials": [
+        {
+          "name": "第118回 議事要旨 (HTML)",
+          "url": "https://www.nta.go.jp/about/council/zeirishi/260119/118.htm",
+          "type": "HTML"
         }
       ]
     },
@@ -127346,6 +128415,21 @@
       ]
     },
     {
+      "id": "nta-zeirishi-20251210-117",
+      "councilId": "nta-zeirishi",
+      "name": "第117回 税理士分科会(国税審議会)",
+      "date": "2025/12/10",
+      "round": 117,
+      "officialUrl": "https://www.nta.go.jp/about/council/zeirishi/251224/117.htm",
+      "materials": [
+        {
+          "name": "第117回 議事要旨 (HTML)",
+          "url": "https://www.nta.go.jp/about/council/zeirishi/251224/117.htm",
+          "type": "HTML"
+        }
+      ]
+    },
+    {
       "id": "rinya-rinsei_shingikai-20251210-s01",
       "councilId": "rinya-rinsei_shingikai",
       "name": "第5回 林政審議会総会",
@@ -128399,6 +129483,78 @@
         {
           "name": "議事録",
           "url": "https://www.soumu.go.jp/main_content/001055492.pdf"
+        }
+      ]
+    },
+    {
+      "id": "nta-sake_bunkakai-20251208-026",
+      "councilId": "nta-sake_bunkakai",
+      "name": "第26回 酒類分科会(国税審議会)",
+      "date": "2025/12/08",
+      "round": 26,
+      "officialUrl": "https://www.nta.go.jp/about/council/sake-bunkakai/251208/siryo.htm",
+      "materials": [
+        {
+          "name": "第26回 議事要旨 (HTML)",
+          "url": "https://www.nta.go.jp/about/council/sake-bunkakai/260130/yoshi.htm",
+          "type": "HTML"
+        },
+        {
+          "name": "第26回 議事録 (HTML)",
+          "url": "https://www.nta.go.jp/about/council/sake-bunkakai/260130/gijiroku/index.htm",
+          "type": "HTML"
+        },
+        {
+          "name": "資料1 第26回 酒類分科会 議事次第",
+          "url": "https://www.nta.go.jp/about/council/sake-bunkakai/251208/pdf/001.pdf"
+        },
+        {
+          "name": "資料2 酒類分科会資料",
+          "url": "https://www.nta.go.jp/about/council/sake-bunkakai/251208/pdf/002.pdf"
+        },
+        {
+          "name": "資料3 ビール業界におけるCO2排出量の削減の取組について",
+          "url": "https://www.nta.go.jp/about/council/sake-bunkakai/251208/pdf/003.pdf"
+        }
+      ]
+    },
+    {
+      "id": "nta-shingikai-20251208-029",
+      "councilId": "nta-shingikai",
+      "name": "第29回 国税審議会",
+      "date": "2025/12/08",
+      "round": 29,
+      "officialUrl": "https://www.nta.go.jp/about/council/shingikai/251208/shiryo/kenkyu.htm",
+      "materials": [
+        {
+          "name": "第29回 議事要旨 (HTML)",
+          "url": "https://www.nta.go.jp/about/council/shingikai/251208/yoshi/01.htm",
+          "type": "HTML"
+        },
+        {
+          "name": "第29回 議事録 (HTML)",
+          "url": "https://www.nta.go.jp/about/council/shingikai/251208/gijiroku/index.htm",
+          "type": "HTML"
+        },
+        {
+          "name": "第29回 議事次第",
+          "url": "https://www.nta.go.jp/about/council/shingikai/251208/shiryo/pdf/01.pdf"
+        },
+        {
+          "name": "国税審議会各分科会の最近の活動状況",
+          "url": "https://www.nta.go.jp/about/council/shingikai/251208/shiryo/pdf/02.pdf"
+        },
+        {
+          "name": "国税審議会令の一部改正",
+          "url": "https://www.nta.go.jp/about/council/shingikai/251208/shiryo/pdf/03.pdf"
+        },
+        {
+          "name": "税務行政の現状と課題",
+          "url": "https://www.nta.go.jp/about/council/shingikai/251208/shiryo/pdf/04.pdf"
+        },
+        {
+          "name": "国税審議会委員名簿",
+          "url": "https://www.nta.go.jp/about/council/shingikai/251208/shiryo/pdf/meibo.pdf"
         }
       ]
     },
@@ -129594,6 +130750,32 @@
         {
           "name": "陸上無線通信委員会(第96回)議事概要",
           "url": "https://www.soumu.go.jp/main_content/001045540.pdf"
+        }
+      ]
+    },
+    {
+      "id": "nta-statistics-20251204-008",
+      "councilId": "nta-statistics",
+      "name": "第8回 国税庁所管統計の整備に関する検討会",
+      "date": "2025/12/04",
+      "round": 8,
+      "officialUrl": "https://www.nta.go.jp/about/council/statistics/251204/shiryo.htm",
+      "materials": [
+        {
+          "name": "第8回 議事要旨",
+          "url": "https://www.nta.go.jp/about/council/statistics/251204/pdf/yoshi.pdf"
+        },
+        {
+          "name": "第8回 議事次第",
+          "url": "https://www.nta.go.jp/about/council/statistics/251204/pdf/shidai.pdf"
+        },
+        {
+          "name": "会社標本調査の見直しについて",
+          "url": "https://www.nta.go.jp/about/council/statistics/251204/pdf/01.pdf"
+        },
+        {
+          "name": "第8回 出席委員",
+          "url": "https://www.nta.go.jp/about/council/statistics/251204/pdf/iin.pdf"
         }
       ]
     },
@@ -134055,6 +135237,21 @@
         {
           "name": "建議(案)",
           "url": "https://www.mof.go.jp/about_mof/councils/fiscal_system_council/sub-of_fiscal_system/proceedings/material/zaiseia20240416/02.pdf"
+        }
+      ]
+    },
+    {
+      "id": "nta-zeirishi-20251120-116",
+      "councilId": "nta-zeirishi",
+      "name": "第116回 税理士分科会(国税審議会)",
+      "date": "2025/11/20",
+      "round": 116,
+      "officialUrl": "https://www.nta.go.jp/about/council/zeirishi/251120/116.htm",
+      "materials": [
+        {
+          "name": "第116回 議事要旨 (HTML)",
+          "url": "https://www.nta.go.jp/about/council/zeirishi/251120/116.htm",
+          "type": "HTML"
         }
       ]
     },
@@ -139224,6 +140421,28 @@
         {
           "name": "【資料6】第6回検討会資料",
           "url": "https://www.moj.go.jp/content/001451101.pdf"
+        }
+      ]
+    },
+    {
+      "id": "nta-seibi-20251104-w10",
+      "councilId": "nta-seibi",
+      "name": "第10回 第10回ワーキンググループ",
+      "date": "2025/11/04",
+      "round": 10,
+      "officialUrl": "https://www.nta.go.jp/about/council/seibi/20251001/shiryo.htm",
+      "materials": [
+        {
+          "name": "第10回WG 議事要旨",
+          "url": "https://www.nta.go.jp/about/council/seibi/20251001/pdf/20251104gijiyoushi.pdf"
+        },
+        {
+          "name": "第10回WG 議事次第",
+          "url": "https://www.nta.go.jp/about/council/seibi/20251001/pdf/20251104gijishidai.pdf"
+        },
+        {
+          "name": "第10回国税庁保有行政記録情報の整備に関する技術検証WG資料",
+          "url": "https://www.nta.go.jp/about/council/seibi/20251001/pdf/20251104shiryou.pdf"
         }
       ]
     },
@@ -174079,6 +175298,21 @@
       ]
     },
     {
+      "id": "nta-zeirishi-20250603-115",
+      "councilId": "nta-zeirishi",
+      "name": "第115回 税理士分科会(国税審議会)",
+      "date": "2025/06/03",
+      "round": 115,
+      "officialUrl": "https://www.nta.go.jp/about/council/zeirishi/2505101/115.htm",
+      "materials": [
+        {
+          "name": "第115回 議事要旨 (HTML)",
+          "url": "https://www.nta.go.jp/about/council/zeirishi/2505101/115.htm",
+          "type": "HTML"
+        }
+      ]
+    },
+    {
       "id": "cao-245-20250602-075",
       "councilId": "cao-245",
       "name": "第75回 男女共同参画会議",
@@ -174926,6 +176160,32 @@
         {
           "name": "議事録",
           "url": "https://www.da.nra.go.jp/data/NRA100010358-004-001.pdf"
+        }
+      ]
+    },
+    {
+      "id": "nta-kyodokenkyu-20250530-012",
+      "councilId": "nta-kyodokenkyu",
+      "name": "第12回 国税庁保有行政記録情報を用いた税務大学校との共同研究に関する有識者会議",
+      "date": "2025/05/30",
+      "round": 12,
+      "officialUrl": "https://www.nta.go.jp/about/council/kyodokenkyu/250416/shiryo.htm",
+      "materials": [
+        {
+          "name": "第12回 議事要旨",
+          "url": "https://www.nta.go.jp/about/council/kyodokenkyu/250530/pdf/20250530gijiyoushi.pdf"
+        },
+        {
+          "name": "第12回 議事次第",
+          "url": "https://www.nta.go.jp/about/council/kyodokenkyu/250416/pdf/20250530gijishidai.pdf"
+        },
+        {
+          "name": "第12回 国税庁保有行政記録情報を用いた税務大学校との共同研究に関する有識者会議資料",
+          "url": "https://www.nta.go.jp/about/council/kyodokenkyu/250416/pdf/20250530shiryou.pdf"
+        },
+        {
+          "name": "第12回 出席委員",
+          "url": "https://www.nta.go.jp/about/council/kyodokenkyu/250416/pdf/a0025004-053.pdf"
         }
       ]
     },
@@ -176356,6 +177616,21 @@
       ]
     },
     {
+      "id": "nta-zeirishi-20250527-114",
+      "councilId": "nta-zeirishi",
+      "name": "第114回 税理士分科会(国税審議会)",
+      "date": "2025/05/27",
+      "round": 114,
+      "officialUrl": "https://www.nta.go.jp/about/council/zeirishi/2505101/114.htm",
+      "materials": [
+        {
+          "name": "第114回 議事要旨 (HTML)",
+          "url": "https://www.nta.go.jp/about/council/zeirishi/2505101/114.htm",
+          "type": "HTML"
+        }
+      ]
+    },
+    {
       "id": "cas-309-20250526-018",
       "councilId": "cas-309",
       "name": "官民ファンドの活用推進に関する関係閣僚会議幹事会(第18回)議事次第",
@@ -177092,6 +178367,32 @@
           "name": "第8回(令和7年5月23日) 議事要旨 議事録",
           "url": "https://www.mof.go.jp/about_mof/councils/jishin_kenkyukai/proceedings/material_20250523.html",
           "type": "HTML"
+        }
+      ]
+    },
+    {
+      "id": "nta-statistics-20250523-007",
+      "councilId": "nta-statistics",
+      "name": "第7回 国税庁所管統計の整備に関する検討会",
+      "date": "2025/05/23",
+      "round": 7,
+      "officialUrl": "https://www.nta.go.jp/about/council/statistics/250523/shiryo.htm",
+      "materials": [
+        {
+          "name": "第7回 議事要旨",
+          "url": "https://www.nta.go.jp/about/council/statistics/250523/pdf/yoshi.pdf"
+        },
+        {
+          "name": "第7回 議事次第",
+          "url": "https://www.nta.go.jp/about/council/statistics/250523/pdf/shidai.pdf"
+        },
+        {
+          "name": "会社標本調査の見直しについて",
+          "url": "https://www.nta.go.jp/about/council/statistics/250523/pdf/01.pdf"
+        },
+        {
+          "name": "第7回 出席委員",
+          "url": "https://www.nta.go.jp/about/council/statistics/250523/pdf/iin.pdf"
         }
       ]
     },
@@ -189353,6 +190654,122 @@
       ]
     },
     {
+      "id": "nta-sake_bunkakai-20250324-025",
+      "councilId": "nta-sake_bunkakai",
+      "name": "第25回 酒類分科会(国税審議会)",
+      "date": "2025/03/24",
+      "round": 25,
+      "officialUrl": "https://www.nta.go.jp/about/council/sake-bunkakai/250324/siryo.htm",
+      "materials": [
+        {
+          "name": "第25回 議事要旨 (HTML)",
+          "url": "https://www.nta.go.jp/about/council/sake-bunkakai/250324/yoshi.htm",
+          "type": "HTML"
+        },
+        {
+          "name": "第25回 議事録 (HTML)",
+          "url": "https://www.nta.go.jp/about/council/sake-bunkakai/250324/gijiroku/index.htm",
+          "type": "HTML"
+        },
+        {
+          "name": "資料1 第25回 酒類分科会 議事次第",
+          "url": "https://www.nta.go.jp/about/council/sake-bunkakai/250324/pdf/001.pdf"
+        },
+        {
+          "name": "資料2 酒類分科会資料",
+          "url": "https://www.nta.go.jp/about/council/sake-bunkakai/250324/pdf/002.pdf"
+        },
+        {
+          "name": "資料3 ビール業界におけるCO2排出量の削減の取組について",
+          "url": "https://www.nta.go.jp/about/council/sake-bunkakai/250324/pdf/003.pdf"
+        }
+      ]
+    },
+    {
+      "id": "nta-shingikai-20250324-028",
+      "councilId": "nta-shingikai",
+      "name": "第28回 国税審議会",
+      "date": "2025/03/24",
+      "round": 28,
+      "officialUrl": "https://www.nta.go.jp/about/council/shingikai/250324/shiryo/kenkyu.htm",
+      "materials": [
+        {
+          "name": "第28回 議事要旨 (HTML)",
+          "url": "https://www.nta.go.jp/about/council/shingikai/250324/yoshi/01.htm",
+          "type": "HTML"
+        },
+        {
+          "name": "第28回 議事録 (HTML)",
+          "url": "https://www.nta.go.jp/about/council/shingikai/250324/gijiroku/index.htm",
+          "type": "HTML"
+        },
+        {
+          "name": "第28回 議事次第",
+          "url": "https://www.nta.go.jp/about/council/shingikai/250324/shiryo/pdf/01.pdf"
+        },
+        {
+          "name": "国税審議会等の概要及び最近の活動状況",
+          "url": "https://www.nta.go.jp/about/council/shingikai/250324/shiryo/pdf/02.pdf"
+        },
+        {
+          "name": "税務行政の最近の取組",
+          "url": "https://www.nta.go.jp/about/council/shingikai/250324/shiryo/pdf/03.pdf"
+        },
+        {
+          "name": "国税審議会委員名簿",
+          "url": "https://www.nta.go.jp/about/council/shingikai/250324/shiryo/pdf/meibo.pdf"
+        }
+      ]
+    },
+    {
+      "id": "nta-sinsabunkakai-20250324-015",
+      "councilId": "nta-sinsabunkakai",
+      "name": "第15回 国税審査分科会(国税審議会)",
+      "date": "2025/03/24",
+      "round": 15,
+      "officialUrl": "https://www.nta.go.jp/about/council/sinsabunkakai/250324/shiryo/01.htm",
+      "materials": [
+        {
+          "name": "第15回 議事要旨 (HTML)",
+          "url": "https://www.nta.go.jp/about/council/sinsabunkakai/250324/yoshi/index.htm",
+          "type": "HTML"
+        },
+        {
+          "name": "第15回 議事録 (HTML)",
+          "url": "https://www.nta.go.jp/about/council/sinsabunkakai/250324/gijiroku/01.htm",
+          "type": "HTML"
+        },
+        {
+          "name": "第15回 国税審査分科会 議事次第",
+          "url": "https://www.nta.go.jp/about/council/sinsabunkakai/250324/shiryo/pdf/01.pdf"
+        },
+        {
+          "name": "国税不服審判所の概要等",
+          "url": "https://www.nta.go.jp/about/council/sinsabunkakai/250324/shiryo/pdf/02.pdf"
+        }
+      ]
+    },
+    {
+      "id": "nta-zeirishi-20250324-113",
+      "councilId": "nta-zeirishi",
+      "name": "第113回 税理士分科会(国税審議会)",
+      "date": "2025/03/24",
+      "round": 113,
+      "officialUrl": "https://www.nta.go.jp/about/council/zeirishi/250324/index.htm",
+      "materials": [
+        {
+          "name": "第113回 議事要旨 (HTML)",
+          "url": "https://www.nta.go.jp/about/council/zeirishi/250324/index.htm",
+          "type": "HTML"
+        },
+        {
+          "name": "第113回 議事録 (HTML)",
+          "url": "https://www.nta.go.jp/about/council/zeirishi/250324/gijiroku/01.htm",
+          "type": "HTML"
+        }
+      ]
+    },
+    {
       "id": "fdma-combinat_bousai_taisei-20250322-002",
       "councilId": "fdma-combinat_bousai_taisei",
       "name": "令和6年度 第2回 石油コンビナート等防災体制検討会",
@@ -197442,6 +198859,28 @@
       ]
     },
     {
+      "id": "nta-kyodokenkyu-20250226-011",
+      "councilId": "nta-kyodokenkyu",
+      "name": "第11回 国税庁保有行政記録情報を用いた税務大学校との共同研究に関する有識者会議",
+      "date": "2025/02/26",
+      "round": 11,
+      "officialUrl": "https://www.nta.go.jp/about/council/kyodokenkyu/250226/shiryo.htm",
+      "materials": [
+        {
+          "name": "第11回 議事次第",
+          "url": "https://www.nta.go.jp/about/council/kyodokenkyu/250226/pdf/20250226gijishidai.pdf"
+        },
+        {
+          "name": "第11回 国税庁保有行政記録情報を用いた税務大学校との共同研究に関する有識者会議資料",
+          "url": "https://www.nta.go.jp/about/council/kyodokenkyu/250226/pdf/20250226shiryou.pdf"
+        },
+        {
+          "name": "第11回 出席委員",
+          "url": "https://www.nta.go.jp/about/council/kyodokenkyu/250226/pdf/20250226shussekiiin.pdf"
+        }
+      ]
+    },
+    {
       "id": "fsa-carbon_credit-20250225-005",
       "councilId": "fsa-carbon_credit",
       "name": "「カーボン・クレジット取引に関する金融インフラのあり方等に係る検討会」(第5回)議事次第",
@@ -200855,6 +202294,32 @@
         {
           "name": "議事録(PDF/360KB)",
           "url": "https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/46505933-4f49-492f-9be3-ad9c99b04172/fcd43f1c/20241219_private-business-dx_menutes_01.pdf"
+        }
+      ]
+    },
+    {
+      "id": "nta-statistics-20250207-006",
+      "councilId": "nta-statistics",
+      "name": "第6回 国税庁所管統計の整備に関する検討会",
+      "date": "2025/02/07",
+      "round": 6,
+      "officialUrl": "https://www.nta.go.jp/about/council/statistics/250210/shiryo.htm",
+      "materials": [
+        {
+          "name": "第6回 議事要旨",
+          "url": "https://www.nta.go.jp/about/council/statistics/250210/pdf/yoshi.pdf"
+        },
+        {
+          "name": "第6回 議事次第",
+          "url": "https://www.nta.go.jp/about/council/statistics/250210/pdf/shidai.pdf"
+        },
+        {
+          "name": "会社標本調査の見直しについて",
+          "url": "https://www.nta.go.jp/about/council/statistics/250210/pdf/01.pdf"
+        },
+        {
+          "name": "第6回 出席委員",
+          "url": "https://www.nta.go.jp/about/council/statistics/250210/pdf/iin.pdf"
         }
       ]
     },
@@ -207377,6 +208842,32 @@
       ]
     },
     {
+      "id": "nta-kyodokenkyu-20250123-010",
+      "councilId": "nta-kyodokenkyu",
+      "name": "第10回 国税庁保有行政記録情報を用いた税務大学校との共同研究に関する有識者会議",
+      "date": "2025/01/23",
+      "round": 10,
+      "officialUrl": "https://www.nta.go.jp/about/council/kyodokenkyu/250123/shiryo.htm",
+      "materials": [
+        {
+          "name": "第10回 議事要旨",
+          "url": "https://www.nta.go.jp/about/council/kyodokenkyu/250123/pdf/20250123gijiyoushi.pdf"
+        },
+        {
+          "name": "第10回 議事次第",
+          "url": "https://www.nta.go.jp/about/council/kyodokenkyu/250123/pdf/20250123gijishidai.pdf"
+        },
+        {
+          "name": "第10回 国税庁保有行政記録情報を用いた税務大学校との共同研究に関する有識者会議資料",
+          "url": "https://www.nta.go.jp/about/council/kyodokenkyu/250123/pdf/20250123shiryou.pdf"
+        },
+        {
+          "name": "第10回 出席委員",
+          "url": "https://www.nta.go.jp/about/council/kyodokenkyu/250123/pdf/20250123shussekiiin.pdf"
+        }
+      ]
+    },
+    {
       "id": "rinya-rinsei_shingikai-20250123-s69",
       "councilId": "rinya-rinsei_shingikai",
       "name": "林政審議会(令和7年1月23日)",
@@ -213842,6 +215333,52 @@
       ]
     },
     {
+      "id": "nta-seibi-20241218-005",
+      "councilId": "nta-seibi",
+      "name": "第5回 国税庁保有行政記録情報の整備に関する有識者検討会",
+      "date": "2024/12/18",
+      "round": 5,
+      "officialUrl": "https://www.nta.go.jp/about/council/seibi/20241218/shiryo.htm",
+      "materials": [
+        {
+          "name": "第5回 議事要旨",
+          "url": "https://www.nta.go.jp/about/council/seibi/20241218/pdf/20241218gijiyoushi.pdf"
+        },
+        {
+          "name": "第5回 議事次第",
+          "url": "https://www.nta.go.jp/about/council/seibi/20241218/pdf/20241218gijishidai.pdf"
+        },
+        {
+          "name": "第5回国税庁保有行政記録情報の整備に関する有識者検討会資料",
+          "url": "https://www.nta.go.jp/about/council/seibi/20241218/pdf/20241218shiryou01.pdf"
+        },
+        {
+          "name": "研究用匿名データの利用に係るガイドライン(案)",
+          "url": "https://www.nta.go.jp/about/council/seibi/20241218/pdf/20241218shiryou02.pdf"
+        },
+        {
+          "name": "研究用匿名データの利用規約(案)",
+          "url": "https://www.nta.go.jp/about/council/seibi/20241218/pdf/20241218shiryou03.pdf"
+        },
+        {
+          "name": "各種様式(案)",
+          "url": "https://www.nta.go.jp/about/council/seibi/20241218/pdf/20241218shiryou04.pdf"
+        },
+        {
+          "name": "申告情報の匿名データに係る利用の手引き(案)",
+          "url": "https://www.nta.go.jp/about/council/seibi/20241218/pdf/20241218shiryou05.pdf"
+        },
+        {
+          "name": "申告書との対応番号(案)",
+          "url": "https://www.nta.go.jp/about/council/seibi/20241218/pdf/20241218shiryou08.pdf"
+        },
+        {
+          "name": "第5回 出席委員",
+          "url": "https://www.nta.go.jp/about/council/seibi/20241218/pdf/20241218shussekiiin.pdf"
+        }
+      ]
+    },
+    {
       "id": "aca-chosakuken_bunkakai-20241217-071",
       "councilId": "aca-chosakuken_bunkakai",
       "name": "第71回 文化審議会 著作権分科会",
@@ -215076,6 +216613,28 @@
       ]
     },
     {
+      "id": "nta-kyodokenkyu-20241213-009",
+      "councilId": "nta-kyodokenkyu",
+      "name": "第9回 国税庁保有行政記録情報を用いた税務大学校との共同研究に関する有識者会議",
+      "date": "2024/12/13",
+      "round": 9,
+      "officialUrl": "https://www.nta.go.jp/about/council/kyodokenkyu/241213/shiryo.htm",
+      "materials": [
+        {
+          "name": "第9回 議事次第",
+          "url": "https://www.nta.go.jp/about/council/kyodokenkyu/241213/pdf/20241213gijishidai.pdf"
+        },
+        {
+          "name": "第9回 国税庁保有行政記録情報を用いた税務大学校との共同研究に関する有識者会議資料",
+          "url": "https://www.nta.go.jp/about/council/kyodokenkyu/241213/pdf/20241213shiryou.pdf"
+        },
+        {
+          "name": "第9回 出席委員",
+          "url": "https://www.nta.go.jp/about/council/kyodokenkyu/241213/pdf/20241213shussekiiin.pdf"
+        }
+      ]
+    },
+    {
       "id": "cao-saishuushoku_kanshi-20241212-204",
       "councilId": "cao-saishuushoku_kanshi",
       "name": "再就職等監視委員会(第204回)",
@@ -215450,6 +217009,21 @@
         {
           "name": "議事録",
           "url": "https://www.mof.go.jp/about_mof/councils/fiscal_system_council/sub-of_filp/proceedings/proceedings/zaitoa20241212.html"
+        }
+      ]
+    },
+    {
+      "id": "nta-zeirishi-20241212-112",
+      "councilId": "nta-zeirishi",
+      "name": "第112回 税理士分科会(国税審議会)",
+      "date": "2024/12/12",
+      "round": 112,
+      "officialUrl": "https://www.nta.go.jp/about/council/zeirishi/241212/112.htm",
+      "materials": [
+        {
+          "name": "第112回 議事要旨 (HTML)",
+          "url": "https://www.nta.go.jp/about/council/zeirishi/241212/112.htm",
+          "type": "HTML"
         }
       ]
     },
@@ -217320,6 +218894,42 @@
       ]
     },
     {
+      "id": "nta-shingikai-20241203-027",
+      "councilId": "nta-shingikai",
+      "name": "第27回 国税審議会",
+      "date": "2024/12/03",
+      "round": 27,
+      "officialUrl": "https://www.nta.go.jp/about/council/shingikai/241203/shiryo/kenkyu.htm",
+      "materials": [
+        {
+          "name": "第27回 議事要旨 (HTML)",
+          "url": "https://www.nta.go.jp/about/council/shingikai/241203/yoshi/01.htm",
+          "type": "HTML"
+        },
+        {
+          "name": "第27回 議事録 (HTML)",
+          "url": "https://www.nta.go.jp/about/council/shingikai/241203/gijiroku/index.htm",
+          "type": "HTML"
+        },
+        {
+          "name": "第27回 議事次第",
+          "url": "https://www.nta.go.jp/about/council/shingikai/241203/shiryo/pdf/01.pdf"
+        },
+        {
+          "name": "国税審議会等の概要及び最近の活動状況",
+          "url": "https://www.nta.go.jp/about/council/shingikai/241203/shiryo/pdf/02.pdf"
+        },
+        {
+          "name": "税務行政の現状と課題",
+          "url": "https://www.nta.go.jp/about/council/shingikai/241203/shiryo/pdf/03.pdf"
+        },
+        {
+          "name": "国税審議会委員名簿",
+          "url": "https://www.nta.go.jp/about/council/shingikai/241203/shiryo/pdf/meibo.pdf"
+        }
+      ]
+    },
+    {
       "id": "fsa-kinyu_sustainability_wg-20241202-005",
       "councilId": "fsa-kinyu_sustainability_wg",
       "name": "第5回 サステナビリティ情報の開示と保証のあり方に関するワーキング・グループ",
@@ -218763,6 +220373,6 @@
   ],
   "lastCrawlTime": "2026/11/26 20:31",
   "hasArchive": true,
-  "totalMeetingsCount": 25129,
-  "totalMaterialsCount": 158779
+  "totalMeetingsCount": 25301,
+  "totalMaterialsCount": 159488
 }

@@ -7691,6 +7691,190 @@
       "template": "tpl-parent-table-direct",
       "manualLock": true
     },
+    "nta-chiri_bunkakai": {
+      "template": "tpl-ministry-hybrid-kaisai",
+      "subpage_discovery_pattern": "/about/council/chiri-bunkakai/",
+      "pdf_selector": "a[href*='.pdf']",
+      "date_regex": "(?:令和|平成)(?:\\d+|元)年\\d{1,2}月\\d{1,2}日|\\d{4}年\\d{1,2}月\\d{1,2}日|\\d{4}[/-]\\d{1,2}[/-]\\d{1,2}",
+      "manualLock": true
+    },
+    "nta-etax_kenkyukai": {
+      "template": "tpl-ministry-hybrid-kaisai",
+      "subpage_discovery_pattern": "/about/council/e-tax/",
+      "pdf_selector": "a[href*='.pdf']",
+      "date_regex": "(?:令和|平成)(?:\\d+|元)年\\d{1,2}月\\d{1,2}日|\\d{4}年\\d{1,2}月\\d{1,2}日|\\d{4}[/-]\\d{1,2}[/-]\\d{1,2}",
+      "manualLock": true
+    },
+    "nta-idenshi": {
+      "template": "tpl-ministry-hybrid-kaisai",
+      "subpage_discovery_pattern": "/about/council/idenshi/202303",
+      "pdf_selector": "a[href*='.pdf']",
+      "date_regex": "(?:令和|平成)(?:\\d+|元)年\\d{1,2}月\\d{1,2}日|\\d{4}年\\d{1,2}月\\d{1,2}日|\\d{4}[/-]\\d{1,2}[/-]\\d{1,2}",
+      "manualLock": true
+    },
+    "nta-kyodokenkyu": {
+      "template": "tpl-ministry-hybrid-kaisai",
+      "subpage_discovery_pattern": "/about/council/kyodokenkyu/",
+      "pdf_selector": "a[href*='.pdf']",
+      "date_regex": "(?:令和|平成)(?:\\d+|元)年\\d{1,2}月\\d{1,2}日|\\d{4}年\\d{1,2}月\\d{1,2}日|\\d{4}[/-]\\d{1,2}[/-]\\d{1,2}",
+      "manualLock": true
+    },
+    "nta-mansion": {
+      "template": "tpl-ministry-hybrid-kaisai",
+      "subpage_discovery_pattern": "/about/council/(?:mansion/|idenshi/202306)",
+      "pdf_selector": "a[href*='.pdf']",
+      "date_regex": "(?:令和|平成)(?:\\d+|元)年\\d{1,2}月\\d{1,2}日|\\d{4}年\\d{1,2}月\\d{1,2}日|\\d{4}[/-]\\d{1,2}[/-]\\d{1,2}",
+      "manualLock": true
+    },
+    "nta-nai_hyoka": {
+      "template": "tpl-ministry-hybrid-kaisai",
+      "subpage_discovery_pattern": "/about/council/nai-hyoka/",
+      "pdf_selector": "a[href*='.pdf']",
+      "date_regex": "(?:令和|平成)(?:\\d+|元)年\\d{1,2}月\\d{1,2}日|\\d{4}年\\d{1,2}月\\d{1,2}日|\\d{4}[/-]\\d{1,2}[/-]\\d{1,2}",
+      "manualLock": true
+    },
+    "nta-sake_brand": {
+      "template": "tpl-ministry-hybrid-kaisai",
+      "subpage_discovery_pattern": "/about/council/sake3/(?:22|23|24|25|26|27|28)",
+      "pdf_selector": "a[href*='.pdf']",
+      "date_regex": "(?:令和|平成)(?:\\d+|元)年\\d{1,2}月\\d{1,2}日|\\d{4}年\\d{1,2}月\\d{1,2}日|\\d{4}[/-]\\d{1,2}[/-]\\d{1,2}",
+      "manualLock": true
+    },
+    "nta-sake_bunkakai": {
+      "template": "tpl-ministry-hybrid-kaisai",
+      "subpage_discovery_pattern": "/about/council/sake-bunkakai/",
+      "pdf_selector": "a[href*='.pdf']",
+      "date_regex": "(?:令和|平成)(?:\\d+|元)年\\d{1,2}月\\d{1,2}日|\\d{4}年\\d{1,2}月\\d{1,2}日|\\d{4}[/-]\\d{1,2}[/-]\\d{1,2}",
+      "manualLock": true
+    },
+    "nta-sake_global": {
+      "template": "tpl-ministry-hybrid-kaisai",
+      "subpage_discovery_pattern": "/about/council/sake3/(?:19|20|21)",
+      "pdf_selector": "a[href*='.pdf']",
+      "date_regex": "(?:令和|平成)(?:\\d+|元)年\\d{1,2}月\\d{1,2}日|\\d{4}年\\d{1,2}月\\d{1,2}日|\\d{4}[/-]\\d{1,2}[/-]\\d{1,2}",
+      "manualLock": true
+    },
+    "nta-sake_hanbai": {
+      "template": "tpl-ministry-hybrid-kaisai",
+      "subpage_discovery_pattern": "/about/council/sake/",
+      "pdf_selector": "a[href*='.pdf']",
+      "date_regex": "(?:令和|平成)(?:\\d+|元)年\\d{1,2}月\\d{1,2}日|\\d{4}年\\d{1,2}月\\d{1,2}日|\\d{4}[/-]\\d{1,2}[/-]\\d{1,2}",
+      "manualLock": true
+    },
+    "nta-sake_pr": {
+      "template": "tpl-ministry-hybrid-kaisai",
+      "subpage_discovery_pattern": "/about/council/sake2/",
+      "pdf_selector": "a[href*='.pdf']",
+      "date_regex": "(?:令和|平成)(?:\\d+|元)年\\d{1,2}月\\d{1,2}日|\\d{4}年\\d{1,2}月\\d{1,2}日|\\d{4}[/-]\\d{1,2}[/-]\\d{1,2}",
+      "manualLock": true
+    },
+    "nta-seibi": {
+      "template": "tpl-ministry-hybrid-kaisai",
+      "subpage_discovery_pattern": "/about/council/seibi/",
+      "pdf_selector": "a[href*='.pdf']",
+      "date_regex": "(?:令和|平成)(?:\\d+|元)年\\d{1,2}月\\d{1,2}日|\\d{4}年\\d{1,2}月\\d{1,2}日|\\d{4}[/-]\\d{1,2}[/-]\\d{1,2}",
+      "manualLock": true
+    },
+    "nta-shingikai": {
+      "template": "tpl-ministry-hybrid-kaisai",
+      "subpage_discovery_pattern": "/about/council/shingikai/",
+      "pdf_selector": "a[href*='.pdf']",
+      "date_regex": "(?:令和|平成)(?:\\d+|元)年\\d{1,2}月\\d{1,2}日|\\d{4}年\\d{1,2}月\\d{1,2}日|\\d{4}[/-]\\d{1,2}[/-]\\d{1,2}",
+      "manualLock": true
+    },
+    "nta-sinsabunkakai": {
+      "template": "tpl-ministry-hybrid-kaisai",
+      "subpage_discovery_pattern": "/about/council/sinsabunkakai/",
+      "pdf_selector": "a[href*='.pdf']",
+      "date_regex": "(?:令和|平成)(?:\\d+|元)年\\d{1,2}月\\d{1,2}日|\\d{4}年\\d{1,2}月\\d{1,2}日|\\d{4}[/-]\\d{1,2}[/-]\\d{1,2}",
+      "manualLock": true
+    },
+    "nta-statistics": {
+      "template": "tpl-ministry-hybrid-kaisai",
+      "subpage_discovery_pattern": "/about/council/(?:statistics|working)/",
+      "pdf_selector": "a[href*='.pdf']",
+      "date_regex": "(?:令和|平成)(?:\\d+|元)年\\d{1,2}月\\d{1,2}日|\\d{4}年\\d{1,2}月\\d{1,2}日|\\d{4}[/-]\\d{1,2}[/-]\\d{1,2}",
+      "manualLock": true
+    },
+    "nta-tochihyoka_fukuoka": {
+      "template": "tpl-parent-table-direct",
+      "pdf_selector": "a[href*='.pdf']",
+      "date_regex": "(?:令和|平成)(?:\\d+|元)年\\d{1,2}月\\d{1,2}日|\\d{4}年\\d{1,2}月\\d{1,2}日|\\d{4}[/-]\\d{1,2}[/-]\\d{1,2}",
+      "manualLock": true
+    },
+    "nta-tochihyoka_hiroshima": {
+      "template": "tpl-parent-table-direct",
+      "pdf_selector": "a[href*='.pdf']",
+      "date_regex": "(?:令和|平成)(?:\\d+|元)年\\d{1,2}月\\d{1,2}日|\\d{4}年\\d{1,2}月\\d{1,2}日|\\d{4}[/-]\\d{1,2}[/-]\\d{1,2}",
+      "manualLock": true
+    },
+    "nta-tochihyoka_kanazawa": {
+      "template": "tpl-parent-table-direct",
+      "pdf_selector": "a[href*='.pdf']",
+      "date_regex": "(?:令和|平成)(?:\\d+|元)年\\d{1,2}月\\d{1,2}日|\\d{4}年\\d{1,2}月\\d{1,2}日|\\d{4}[/-]\\d{1,2}[/-]\\d{1,2}",
+      "manualLock": true
+    },
+    "nta-tochihyoka_kantoshinetsu": {
+      "template": "tpl-parent-table-direct",
+      "pdf_selector": "a[href*='.pdf']",
+      "date_regex": "(?:令和|平成)(?:\\d+|元)年\\d{1,2}月\\d{1,2}日|\\d{4}年\\d{1,2}月\\d{1,2}日|\\d{4}[/-]\\d{1,2}[/-]\\d{1,2}",
+      "manualLock": true
+    },
+    "nta-tochihyoka_kumamoto": {
+      "template": "tpl-parent-table-direct",
+      "pdf_selector": "a[href*='.pdf']",
+      "date_regex": "(?:令和|平成)(?:\\d+|元)年\\d{1,2}月\\d{1,2}日|\\d{4}年\\d{1,2}月\\d{1,2}日|\\d{4}[/-]\\d{1,2}[/-]\\d{1,2}",
+      "manualLock": true
+    },
+    "nta-tochihyoka_nagoya": {
+      "template": "tpl-parent-table-direct",
+      "pdf_selector": "a[href*='.pdf']",
+      "date_regex": "(?:令和|平成)(?:\\d+|元)年\\d{1,2}月\\d{1,2}日|\\d{4}年\\d{1,2}月\\d{1,2}日|\\d{4}[/-]\\d{1,2}[/-]\\d{1,2}",
+      "manualLock": true
+    },
+    "nta-tochihyoka_okinawa": {
+      "template": "tpl-parent-table-direct",
+      "pdf_selector": "a[href*='.pdf']",
+      "date_regex": "(?:令和|平成)(?:\\d+|元)年\\d{1,2}月\\d{1,2}日|\\d{4}年\\d{1,2}月\\d{1,2}日|\\d{4}[/-]\\d{1,2}[/-]\\d{1,2}",
+      "manualLock": true
+    },
+    "nta-tochihyoka_osaka": {
+      "template": "tpl-parent-table-direct",
+      "pdf_selector": "a[href*='.pdf']",
+      "date_regex": "(?:令和|平成)(?:\\d+|元)年\\d{1,2}月\\d{1,2}日|\\d{4}年\\d{1,2}月\\d{1,2}日|\\d{4}[/-]\\d{1,2}[/-]\\d{1,2}",
+      "manualLock": true
+    },
+    "nta-tochihyoka_sapporo": {
+      "template": "tpl-parent-table-direct",
+      "pdf_selector": "a[href*='.pdf']",
+      "date_regex": "(?:令和|平成)(?:\\d+|元)年\\d{1,2}月\\d{1,2}日|\\d{4}年\\d{1,2}月\\d{1,2}日|\\d{4}[/-]\\d{1,2}[/-]\\d{1,2}",
+      "manualLock": true
+    },
+    "nta-tochihyoka_sendai": {
+      "template": "tpl-parent-table-direct",
+      "pdf_selector": "a[href*='.pdf']",
+      "date_regex": "(?:令和|平成)(?:\\d+|元)年\\d{1,2}月\\d{1,2}日|\\d{4}年\\d{1,2}月\\d{1,2}日|\\d{4}[/-]\\d{1,2}[/-]\\d{1,2}",
+      "manualLock": true
+    },
+    "nta-tochihyoka_takamatsu": {
+      "template": "tpl-parent-table-direct",
+      "pdf_selector": "a[href*='.pdf']",
+      "date_regex": "(?:令和|平成)(?:\\d+|元)年\\d{1,2}月\\d{1,2}日|\\d{4}年\\d{1,2}月\\d{1,2}日|\\d{4}[/-]\\d{1,2}[/-]\\d{1,2}",
+      "manualLock": true
+    },
+    "nta-tochihyoka_tokyo": {
+      "template": "tpl-parent-table-direct",
+      "pdf_selector": "a[href*='.pdf']",
+      "date_regex": "(?:令和|平成)(?:\\d+|元)年\\d{1,2}月\\d{1,2}日|\\d{4}年\\d{1,2}月\\d{1,2}日|\\d{4}[/-]\\d{1,2}[/-]\\d{1,2}",
+      "manualLock": true
+    },
+    "nta-zeirishi": {
+      "template": "tpl-ministry-hybrid-kaisai",
+      "subpage_discovery_pattern": "/about/council/zeirishi/",
+      "pdf_selector": "a[href*='.pdf']",
+      "date_regex": "(?:令和|平成)(?:\\d+|元)年\\d{1,2}月\\d{1,2}日|\\d{4}年\\d{1,2}月\\d{1,2}日|\\d{4}[/-]\\d{1,2}[/-]\\d{1,2}",
+      "manualLock": true
+    },
     "ppc-ai_privacy": {
       "template": "tpl-parent-table-direct",
       "manualLock": true
@@ -27225,6 +27409,314 @@
       "consecutiveFailures": 0,
       "manualLockActive": true
     },
+    "nta-chiri_bunkakai": {
+      "lastAttempt": "2026/11/27 08:25",
+      "result": "success",
+      "resultReason": "手動確認登録",
+      "extractionMethod": "manual",
+      "materialsCount": 20,
+      "datesCount": 2,
+      "failureReason": "",
+      "consecutiveFailures": 0,
+      "manualLockActive": true
+    },
+    "nta-etax_kenkyukai": {
+      "lastAttempt": "2026/11/27 08:25",
+      "result": "success",
+      "resultReason": "手動確認登録",
+      "extractionMethod": "manual",
+      "materialsCount": 10,
+      "datesCount": 10,
+      "failureReason": "",
+      "consecutiveFailures": 0,
+      "manualLockActive": true
+    },
+    "nta-idenshi": {
+      "lastAttempt": "2026/11/27 08:25",
+      "result": "success",
+      "resultReason": "手動確認登録",
+      "extractionMethod": "manual",
+      "materialsCount": 4,
+      "datesCount": 1,
+      "failureReason": "",
+      "consecutiveFailures": 0,
+      "manualLockActive": true
+    },
+    "nta-kyodokenkyu": {
+      "lastAttempt": "2026/11/27 08:25",
+      "result": "success",
+      "resultReason": "手動確認登録",
+      "extractionMethod": "manual",
+      "materialsCount": 57,
+      "datesCount": 14,
+      "failureReason": "",
+      "consecutiveFailures": 0,
+      "manualLockActive": true
+    },
+    "nta-mansion": {
+      "lastAttempt": "2026/11/27 08:25",
+      "result": "success",
+      "resultReason": "手動確認登録",
+      "extractionMethod": "manual",
+      "materialsCount": 6,
+      "datesCount": 3,
+      "failureReason": "",
+      "consecutiveFailures": 0,
+      "manualLockActive": true
+    },
+    "nta-nai_hyoka": {
+      "lastAttempt": "2026/11/27 08:25",
+      "result": "success",
+      "resultReason": "手動確認登録",
+      "extractionMethod": "manual",
+      "materialsCount": 16,
+      "datesCount": 6,
+      "failureReason": "",
+      "consecutiveFailures": 0,
+      "manualLockActive": true
+    },
+    "nta-sake_brand": {
+      "lastAttempt": "2026/11/27 08:25",
+      "result": "success",
+      "resultReason": "手動確認登録",
+      "extractionMethod": "manual",
+      "materialsCount": 31,
+      "datesCount": 5,
+      "failureReason": "",
+      "consecutiveFailures": 0,
+      "manualLockActive": true
+    },
+    "nta-sake_bunkakai": {
+      "lastAttempt": "2026/11/27 08:25",
+      "result": "success",
+      "resultReason": "手動確認登録",
+      "extractionMethod": "manual",
+      "materialsCount": 37,
+      "datesCount": 7,
+      "failureReason": "",
+      "consecutiveFailures": 0,
+      "manualLockActive": true
+    },
+    "nta-sake_global": {
+      "lastAttempt": "2026/11/27 08:25",
+      "result": "success",
+      "resultReason": "手動確認登録",
+      "extractionMethod": "manual",
+      "materialsCount": 50,
+      "datesCount": 8,
+      "failureReason": "",
+      "consecutiveFailures": 0,
+      "manualLockActive": true
+    },
+    "nta-sake_hanbai": {
+      "lastAttempt": "2026/11/27 08:25",
+      "result": "success",
+      "resultReason": "手動確認登録",
+      "extractionMethod": "manual",
+      "materialsCount": 173,
+      "datesCount": 29,
+      "failureReason": "",
+      "consecutiveFailures": 0,
+      "manualLockActive": true
+    },
+    "nta-sake_pr": {
+      "lastAttempt": "2026/11/27 08:25",
+      "result": "success",
+      "resultReason": "手動確認登録",
+      "extractionMethod": "manual",
+      "materialsCount": 2,
+      "datesCount": 1,
+      "failureReason": "",
+      "consecutiveFailures": 0,
+      "manualLockActive": true
+    },
+    "nta-seibi": {
+      "lastAttempt": "2026/11/27 08:25",
+      "result": "success",
+      "resultReason": "手動確認登録",
+      "extractionMethod": "manual",
+      "materialsCount": 61,
+      "datesCount": 16,
+      "failureReason": "",
+      "consecutiveFailures": 0,
+      "manualLockActive": true
+    },
+    "nta-shingikai": {
+      "lastAttempt": "2026/11/27 08:25",
+      "result": "success",
+      "resultReason": "手動確認登録",
+      "extractionMethod": "manual",
+      "materialsCount": 70,
+      "datesCount": 10,
+      "failureReason": "",
+      "consecutiveFailures": 0,
+      "manualLockActive": true
+    },
+    "nta-sinsabunkakai": {
+      "lastAttempt": "2026/11/27 08:25",
+      "result": "success",
+      "resultReason": "手動確認登録",
+      "extractionMethod": "manual",
+      "materialsCount": 15,
+      "datesCount": 4,
+      "failureReason": "",
+      "consecutiveFailures": 0,
+      "manualLockActive": true
+    },
+    "nta-statistics": {
+      "lastAttempt": "2026/11/27 08:25",
+      "result": "success",
+      "resultReason": "手動確認登録",
+      "extractionMethod": "manual",
+      "materialsCount": 47,
+      "datesCount": 10,
+      "failureReason": "",
+      "consecutiveFailures": 0,
+      "manualLockActive": true
+    },
+    "nta-tochihyoka_fukuoka": {
+      "lastAttempt": "2026/11/27 08:25",
+      "result": "success",
+      "resultReason": "手動確認登録",
+      "extractionMethod": "manual",
+      "materialsCount": 6,
+      "datesCount": 1,
+      "failureReason": "",
+      "consecutiveFailures": 0,
+      "manualLockActive": true
+    },
+    "nta-tochihyoka_hiroshima": {
+      "lastAttempt": "2026/11/27 08:25",
+      "result": "success",
+      "resultReason": "手動確認登録",
+      "extractionMethod": "manual",
+      "materialsCount": 6,
+      "datesCount": 1,
+      "failureReason": "",
+      "consecutiveFailures": 0,
+      "manualLockActive": true
+    },
+    "nta-tochihyoka_kanazawa": {
+      "lastAttempt": "2026/11/27 08:25",
+      "result": "success",
+      "resultReason": "手動確認登録",
+      "extractionMethod": "manual",
+      "materialsCount": 6,
+      "datesCount": 1,
+      "failureReason": "",
+      "consecutiveFailures": 0,
+      "manualLockActive": true
+    },
+    "nta-tochihyoka_kantoshinetsu": {
+      "lastAttempt": "2026/11/27 08:25",
+      "result": "success",
+      "resultReason": "手動確認登録",
+      "extractionMethod": "manual",
+      "materialsCount": 6,
+      "datesCount": 1,
+      "failureReason": "",
+      "consecutiveFailures": 0,
+      "manualLockActive": true
+    },
+    "nta-tochihyoka_kumamoto": {
+      "lastAttempt": "2026/11/27 08:25",
+      "result": "success",
+      "resultReason": "手動確認登録",
+      "extractionMethod": "manual",
+      "materialsCount": 6,
+      "datesCount": 1,
+      "failureReason": "",
+      "consecutiveFailures": 0,
+      "manualLockActive": true
+    },
+    "nta-tochihyoka_nagoya": {
+      "lastAttempt": "2026/11/27 08:25",
+      "result": "success",
+      "resultReason": "手動確認登録",
+      "extractionMethod": "manual",
+      "materialsCount": 6,
+      "datesCount": 1,
+      "failureReason": "",
+      "consecutiveFailures": 0,
+      "manualLockActive": true
+    },
+    "nta-tochihyoka_okinawa": {
+      "lastAttempt": "2026/11/27 08:25",
+      "result": "success",
+      "resultReason": "手動確認登録",
+      "extractionMethod": "manual",
+      "materialsCount": 6,
+      "datesCount": 1,
+      "failureReason": "",
+      "consecutiveFailures": 0,
+      "manualLockActive": true
+    },
+    "nta-tochihyoka_osaka": {
+      "lastAttempt": "2026/11/27 08:25",
+      "result": "success",
+      "resultReason": "手動確認登録",
+      "extractionMethod": "manual",
+      "materialsCount": 6,
+      "datesCount": 1,
+      "failureReason": "",
+      "consecutiveFailures": 0,
+      "manualLockActive": true
+    },
+    "nta-tochihyoka_sapporo": {
+      "lastAttempt": "2026/11/27 08:25",
+      "result": "success",
+      "resultReason": "手動確認登録",
+      "extractionMethod": "manual",
+      "materialsCount": 6,
+      "datesCount": 1,
+      "failureReason": "",
+      "consecutiveFailures": 0,
+      "manualLockActive": true
+    },
+    "nta-tochihyoka_sendai": {
+      "lastAttempt": "2026/11/27 08:25",
+      "result": "success",
+      "resultReason": "手動確認登録",
+      "extractionMethod": "manual",
+      "materialsCount": 6,
+      "datesCount": 1,
+      "failureReason": "",
+      "consecutiveFailures": 0,
+      "manualLockActive": true
+    },
+    "nta-tochihyoka_takamatsu": {
+      "lastAttempt": "2026/11/27 08:25",
+      "result": "success",
+      "resultReason": "手動確認登録",
+      "extractionMethod": "manual",
+      "materialsCount": 6,
+      "datesCount": 1,
+      "failureReason": "",
+      "consecutiveFailures": 0,
+      "manualLockActive": true
+    },
+    "nta-tochihyoka_tokyo": {
+      "lastAttempt": "2026/11/27 08:25",
+      "result": "success",
+      "resultReason": "手動確認登録",
+      "extractionMethod": "manual",
+      "materialsCount": 6,
+      "datesCount": 1,
+      "failureReason": "",
+      "consecutiveFailures": 0,
+      "manualLockActive": true
+    },
+    "nta-zeirishi": {
+      "lastAttempt": "2026/11/27 08:25",
+      "result": "success",
+      "resultReason": "手動確認登録",
+      "extractionMethod": "manual",
+      "materialsCount": 38,
+      "datesCount": 34,
+      "failureReason": "",
+      "consecutiveFailures": 0,
+      "manualLockActive": true
+    },
     "ppc-ai_privacy": {
       "lastAttempt": "2026-11-22 21:24:30",
       "result": "success",
@@ -33289,6 +33781,34 @@
       "nra-me_suishoutai",
       "nra-ro_anzen_shinsa",
       "nra-teireikai",
+      "nta-chiri_bunkakai",
+      "nta-etax_kenkyukai",
+      "nta-idenshi",
+      "nta-kyodokenkyu",
+      "nta-mansion",
+      "nta-nai_hyoka",
+      "nta-sake_brand",
+      "nta-sake_bunkakai",
+      "nta-sake_global",
+      "nta-sake_hanbai",
+      "nta-sake_pr",
+      "nta-seibi",
+      "nta-shingikai",
+      "nta-sinsabunkakai",
+      "nta-statistics",
+      "nta-tochihyoka_fukuoka",
+      "nta-tochihyoka_hiroshima",
+      "nta-tochihyoka_kanazawa",
+      "nta-tochihyoka_kantoshinetsu",
+      "nta-tochihyoka_kumamoto",
+      "nta-tochihyoka_nagoya",
+      "nta-tochihyoka_okinawa",
+      "nta-tochihyoka_osaka",
+      "nta-tochihyoka_sapporo",
+      "nta-tochihyoka_sendai",
+      "nta-tochihyoka_takamatsu",
+      "nta-tochihyoka_tokyo",
+      "nta-zeirishi",
       "ra-fukko_suishin",
       "ra-fukko_suishin_kaigi",
       "ra-fukushima_fukko_saisei",
@@ -51277,6 +51797,178 @@
       "nra-teireikai-20260616-080",
       "nra-teireikai-20260729-024",
       "nra-teireikai-20260804-062",
+      "nta-chiri_bunkakai-20150625-001",
+      "nta-chiri_bunkakai-20190313-002",
+      "nta-etax_kenkyukai-19990621-001",
+      "nta-etax_kenkyukai-19990805-002",
+      "nta-etax_kenkyukai-19990920-003",
+      "nta-etax_kenkyukai-19991029-004",
+      "nta-etax_kenkyukai-19991117-005",
+      "nta-etax_kenkyukai-19991208-006",
+      "nta-etax_kenkyukai-20000112-007",
+      "nta-etax_kenkyukai-20000223-008",
+      "nta-etax_kenkyukai-20000419-s01",
+      "nta-etax_kenkyukai-20000419-s02",
+      "nta-idenshi-20230320-001",
+      "nta-kyodokenkyu-20210913-001",
+      "nta-kyodokenkyu-20220224-002",
+      "nta-kyodokenkyu-20220621-003",
+      "nta-kyodokenkyu-20221220-004",
+      "nta-kyodokenkyu-20230613-005",
+      "nta-kyodokenkyu-20230830-006",
+      "nta-kyodokenkyu-20240118-007",
+      "nta-kyodokenkyu-20240625-008",
+      "nta-kyodokenkyu-20241213-009",
+      "nta-kyodokenkyu-20250123-010",
+      "nta-kyodokenkyu-20250226-011",
+      "nta-kyodokenkyu-20250530-012",
+      "nta-kyodokenkyu-20260116-013",
+      "nta-kyodokenkyu-20260527-014",
+      "nta-mansion-20230130-001",
+      "nta-mansion-20230601-002",
+      "nta-mansion-20230622-003",
+      "nta-nai_hyoka-20260420-001",
+      "nta-nai_hyoka-20260511-002",
+      "nta-nai_hyoka-20260604-003",
+      "nta-nai_hyoka-20260703-004",
+      "nta-nai_hyoka-20260820-005",
+      "nta-nai_hyoka-20260916-006",
+      "nta-sake_brand-20210823-001",
+      "nta-sake_brand-20220317-002",
+      "nta-sake_brand-20220623-003",
+      "nta-sake_brand-20220630-s01",
+      "nta-sake_brand-20230523-004",
+      "nta-sake_bunkakai-20190313-020",
+      "nta-sake_bunkakai-20210330-021",
+      "nta-sake_bunkakai-20220119-022",
+      "nta-sake_bunkakai-20220603-023",
+      "nta-sake_bunkakai-20230315-024",
+      "nta-sake_bunkakai-20250324-025",
+      "nta-sake_bunkakai-20251208-026",
+      "nta-sake_global-20190909-001",
+      "nta-sake_global-20191015-002",
+      "nta-sake_global-20191101-003",
+      "nta-sake_global-20191119-004",
+      "nta-sake_global-20191216-005",
+      "nta-sake_global-20191225-s01",
+      "nta-sake_global-20201125-006",
+      "nta-sake_global-20210225-007",
+      "nta-sake_hanbai-20011219-001",
+      "nta-sake_hanbai-20011219-s03",
+      "nta-sake_hanbai-20020130-002",
+      "nta-sake_hanbai-20020206-003",
+      "nta-sake_hanbai-20020219-004",
+      "nta-sake_hanbai-20020315-005",
+      "nta-sake_hanbai-20020327-006",
+      "nta-sake_hanbai-20020514-007",
+      "nta-sake_hanbai-20020618-008",
+      "nta-sake_hanbai-20020717-009",
+      "nta-sake_hanbai-20020906-010",
+      "nta-sake_hanbai-20040224-011",
+      "nta-sake_hanbai-20040224-s02",
+      "nta-sake_hanbai-20040324-012",
+      "nta-sake_hanbai-20040402-013",
+      "nta-sake_hanbai-20040421-014",
+      "nta-sake_hanbai-20040512-015",
+      "nta-sake_hanbai-20040519-016",
+      "nta-sake_hanbai-20040531-017",
+      "nta-sake_hanbai-20040608-018",
+      "nta-sake_hanbai-20040622-019",
+      "nta-sake_hanbai-20040705-020",
+      "nta-sake_hanbai-20040922-021",
+      "nta-sake_hanbai-20041013-022",
+      "nta-sake_hanbai-20041025-023",
+      "nta-sake_hanbai-20041110-024",
+      "nta-sake_hanbai-20041122-025",
+      "nta-sake_hanbai-20041129-026",
+      "nta-sake_hanbai-20041217-s01",
+      "nta-sake_pr-20160609-001",
+      "nta-seibi-20211029-001",
+      "nta-seibi-20220324-w01",
+      "nta-seibi-20220622-002",
+      "nta-seibi-20221014-w02",
+      "nta-seibi-20230110-w03",
+      "nta-seibi-20230314-w04",
+      "nta-seibi-20230529-003",
+      "nta-seibi-20230823-w05",
+      "nta-seibi-20231003-w06",
+      "nta-seibi-20231128-w07",
+      "nta-seibi-20240409-w08",
+      "nta-seibi-20240611-004",
+      "nta-seibi-20240918-w09",
+      "nta-seibi-20241218-005",
+      "nta-seibi-20251104-w10",
+      "nta-seibi-20260302-006",
+      "nta-shingikai-20190313-020",
+      "nta-shingikai-20201027-021",
+      "nta-shingikai-20210330-022",
+      "nta-shingikai-20211027-023",
+      "nta-shingikai-20221118-024",
+      "nta-shingikai-20230315-025",
+      "nta-shingikai-20231205-026",
+      "nta-shingikai-20241203-027",
+      "nta-shingikai-20250324-028",
+      "nta-shingikai-20251208-029",
+      "nta-sinsabunkakai-20190313-012",
+      "nta-sinsabunkakai-20210330-013",
+      "nta-sinsabunkakai-20230315-014",
+      "nta-sinsabunkakai-20250324-015",
+      "nta-statistics-20210706-001",
+      "nta-statistics-20210902-w01",
+      "nta-statistics-20211119-002",
+      "nta-statistics-20220524-003",
+      "nta-statistics-20221007-004",
+      "nta-statistics-20230608-005",
+      "nta-statistics-20250207-006",
+      "nta-statistics-20250523-007",
+      "nta-statistics-20251204-008",
+      "nta-statistics-20260525-009",
+      "nta-tochihyoka_fukuoka-20260513-s01",
+      "nta-tochihyoka_hiroshima-20260512-s01",
+      "nta-tochihyoka_kanazawa-20260511-s01",
+      "nta-tochihyoka_kantoshinetsu-20260512-s01",
+      "nta-tochihyoka_kumamoto-20260512-s01",
+      "nta-tochihyoka_nagoya-20260512-s01",
+      "nta-tochihyoka_okinawa-20260511-s01",
+      "nta-tochihyoka_osaka-20260513-s01",
+      "nta-tochihyoka_sapporo-20260512-s01",
+      "nta-tochihyoka_sendai-20260511-054",
+      "nta-tochihyoka_takamatsu-20260512-s01",
+      "nta-tochihyoka_tokyo-20260512-s01",
+      "nta-zeirishi-20190313-088",
+      "nta-zeirishi-20190523-089",
+      "nta-zeirishi-20190531-090",
+      "nta-zeirishi-20191205-091",
+      "nta-zeirishi-20191220-092",
+      "nta-zeirishi-20200602-093",
+      "nta-zeirishi-20200814-094",
+      "nta-zeirishi-20201210-095",
+      "nta-zeirishi-20210330-096",
+      "nta-zeirishi-20210524-097",
+      "nta-zeirishi-20210528-098",
+      "nta-zeirishi-20211209-099",
+      "nta-zeirishi-20220527-100",
+      "nta-zeirishi-20220602-101",
+      "nta-zeirishi-20221125-102",
+      "nta-zeirishi-20221215-103",
+      "nta-zeirishi-20230315-104",
+      "nta-zeirishi-20230526-105",
+      "nta-zeirishi-20230616-106",
+      "nta-zeirishi-20231122-107",
+      "nta-zeirishi-20231214-108",
+      "nta-zeirishi-20240528-109",
+      "nta-zeirishi-20240531-110",
+      "nta-zeirishi-20241121-111",
+      "nta-zeirishi-20241212-112",
+      "nta-zeirishi-20250324-113",
+      "nta-zeirishi-20250527-114",
+      "nta-zeirishi-20250603-115",
+      "nta-zeirishi-20251120-116",
+      "nta-zeirishi-20251210-117",
+      "nta-zeirishi-20251225-118",
+      "nta-zeirishi-20260528-119",
+      "nta-zeirishi-20260818-120",
+      "nta-zeirishi-20261015-121",
       "ppc-personalinfo_kentoukai-20240729-001",
       "ppc-personalinfo_kentoukai-20240903-002",
       "ppc-personalinfo_kentoukai-20240924-003",
@@ -107109,6 +107801,715 @@
       "nra-teireikai-20260729-024:https://www.da.nra.go.jp/data/NRA100019438-004-006.pdf",
       "nra-teireikai-20260729-024:https://www.da.nra.go.jp/data/NRA100019551-004-001.pdf",
       "nra-teireikai-20260729-024:https://www.da.nra.go.jp/data/NRA100019551-004-002.pdf",
+      "nta-chiri_bunkakai-20150625-001:https://www.nta.go.jp/about/council/chiri-bunkakai/150625/gijiroku/index.htm",
+      "nta-chiri_bunkakai-20150625-001:https://www.nta.go.jp/about/council/chiri-bunkakai/150625/pdf/01.pdf",
+      "nta-chiri_bunkakai-20150625-001:https://www.nta.go.jp/about/council/chiri-bunkakai/150625/pdf/02.pdf",
+      "nta-chiri_bunkakai-20150625-001:https://www.nta.go.jp/about/council/chiri-bunkakai/150625/pdf/03-1.pdf",
+      "nta-chiri_bunkakai-20150625-001:https://www.nta.go.jp/about/council/chiri-bunkakai/150625/pdf/03-2.pdf",
+      "nta-chiri_bunkakai-20150625-001:https://www.nta.go.jp/about/council/chiri-bunkakai/150625/pdf/03-3.pdf",
+      "nta-chiri_bunkakai-20150625-001:https://www.nta.go.jp/about/council/chiri-bunkakai/150625/pdf/04.pdf",
+      "nta-chiri_bunkakai-20150625-001:https://www.nta.go.jp/about/council/chiri-bunkakai/150625/pdf/05.pdf",
+      "nta-chiri_bunkakai-20150625-001:https://www.nta.go.jp/about/council/chiri-bunkakai/150625/pdf/06.pdf",
+      "nta-chiri_bunkakai-20150625-001:https://www.nta.go.jp/about/council/chiri-bunkakai/150625/pdf/07.pdf",
+      "nta-chiri_bunkakai-20150625-001:https://www.nta.go.jp/about/council/chiri-bunkakai/150625/yoshi.htm",
+      "nta-chiri_bunkakai-20190313-002:https://www.nta.go.jp/about/council/chiri-bunkakai/190313/gijiroku/index.htm",
+      "nta-chiri_bunkakai-20190313-002:https://www.nta.go.jp/about/council/chiri-bunkakai/190313/yoshi.htm",
+      "nta-chiri_bunkakai-20190313-002:https://www.nta.go.jp/about/council/chiri-bunkakai/190331/pdf/001.pdf",
+      "nta-chiri_bunkakai-20190313-002:https://www.nta.go.jp/about/council/chiri-bunkakai/190331/pdf/002.pdf",
+      "nta-chiri_bunkakai-20190313-002:https://www.nta.go.jp/about/council/chiri-bunkakai/190331/pdf/003.pdf",
+      "nta-chiri_bunkakai-20190313-002:https://www.nta.go.jp/about/council/chiri-bunkakai/190331/pdf/004.pdf",
+      "nta-chiri_bunkakai-20190313-002:https://www.nta.go.jp/about/council/chiri-bunkakai/190331/pdf/005.pdf",
+      "nta-chiri_bunkakai-20190313-002:https://www.nta.go.jp/about/council/chiri-bunkakai/190331/pdf/006.pdf",
+      "nta-chiri_bunkakai-20190313-002:https://www.nta.go.jp/about/council/chiri-bunkakai/190331/pdf/007.pdf",
+      "nta-etax_kenkyukai-19990621-001:https://www.nta.go.jp/about/council/e-tax/990621/02.htm",
+      "nta-etax_kenkyukai-19990805-002:https://www.nta.go.jp/about/council/e-tax/990805/01.htm",
+      "nta-etax_kenkyukai-19990920-003:https://www.nta.go.jp/about/council/e-tax/990920/01.htm",
+      "nta-etax_kenkyukai-19991029-004:https://www.nta.go.jp/about/council/e-tax/991029/01.htm",
+      "nta-etax_kenkyukai-19991117-005:https://www.nta.go.jp/about/council/e-tax/991117/01.htm",
+      "nta-etax_kenkyukai-19991208-006:https://www.nta.go.jp/about/council/e-tax/991208/01.htm",
+      "nta-etax_kenkyukai-20000112-007:https://www.nta.go.jp/about/council/e-tax/000112/01.htm",
+      "nta-etax_kenkyukai-20000223-008:https://www.nta.go.jp/about/council/e-tax/000223/01.htm",
+      "nta-etax_kenkyukai-20000419-s01:https://www.nta.go.jp/about/council/e-tax/000419/arikata/01.htm",
+      "nta-etax_kenkyukai-20000419-s02:https://www.nta.go.jp/about/council/e-tax/000419/01.htm",
+      "nta-idenshi-20230320-001:https://www.nta.go.jp/about/council/idenshi/20230320/pdf/20230320giji.pdf",
+      "nta-idenshi-20230320-001:https://www.nta.go.jp/about/council/idenshi/20230320/pdf/20230320shidai.pdf",
+      "nta-idenshi-20230320-001:https://www.nta.go.jp/about/council/idenshi/20230320/pdf/20230320shiryou01.pdf",
+      "nta-idenshi-20230320-001:https://www.nta.go.jp/about/council/idenshi/20230320/pdf/20230320shiryou02.pdf",
+      "nta-kyodokenkyu-20210913-001:https://www.nta.go.jp/about/council/kyodokenkyu/210913/pdf/20210913gijiyoushi.pdf",
+      "nta-kyodokenkyu-20210913-001:https://www.nta.go.jp/about/council/kyodokenkyu/210913/pdf/20210913shidai.pdf",
+      "nta-kyodokenkyu-20210913-001:https://www.nta.go.jp/about/council/kyodokenkyu/210913/pdf/20210913shiryou01.pdf",
+      "nta-kyodokenkyu-20210913-001:https://www.nta.go.jp/about/council/kyodokenkyu/210913/pdf/20210913shiryou02.pdf",
+      "nta-kyodokenkyu-20210913-001:https://www.nta.go.jp/about/council/kyodokenkyu/210913/pdf/20210913shiryou03.pdf",
+      "nta-kyodokenkyu-20210913-001:https://www.nta.go.jp/about/council/kyodokenkyu/210913/pdf/20210913shiryou04.pdf",
+      "nta-kyodokenkyu-20210913-001:https://www.nta.go.jp/about/council/kyodokenkyu/210913/pdf/20210913shiryou05.pdf",
+      "nta-kyodokenkyu-20210913-001:https://www.nta.go.jp/about/council/kyodokenkyu/210913/pdf/20210913shussekiiin.pdf",
+      "nta-kyodokenkyu-20220224-002:https://www.nta.go.jp/about/council/kyodokenkyu/220224/pdf/20220224gijiyoushi.pdf",
+      "nta-kyodokenkyu-20220224-002:https://www.nta.go.jp/about/council/kyodokenkyu/220224/pdf/20220224shidai.pdf",
+      "nta-kyodokenkyu-20220224-002:https://www.nta.go.jp/about/council/kyodokenkyu/220224/pdf/20220224shiryou.pdf",
+      "nta-kyodokenkyu-20220224-002:https://www.nta.go.jp/about/council/kyodokenkyu/220224/pdf/20220224shussekiiin.pdf",
+      "nta-kyodokenkyu-20220621-003:https://www.nta.go.jp/about/council/kyodokenkyu/220621/pdf/20220621gijiyoushi.pdf",
+      "nta-kyodokenkyu-20220621-003:https://www.nta.go.jp/about/council/kyodokenkyu/220621/pdf/20220621shidai.pdf",
+      "nta-kyodokenkyu-20220621-003:https://www.nta.go.jp/about/council/kyodokenkyu/220621/pdf/20220621shiryou.pdf",
+      "nta-kyodokenkyu-20220621-003:https://www.nta.go.jp/about/council/kyodokenkyu/220621/pdf/20220621shussekiiin.pdf",
+      "nta-kyodokenkyu-20221220-004:https://www.nta.go.jp/about/council/kyodokenkyu/221220/pdf/20221220gijiyoushi.pdf",
+      "nta-kyodokenkyu-20221220-004:https://www.nta.go.jp/about/council/kyodokenkyu/221220/pdf/20221220shidai.pdf",
+      "nta-kyodokenkyu-20221220-004:https://www.nta.go.jp/about/council/kyodokenkyu/221220/pdf/20221220shiryou.pdf",
+      "nta-kyodokenkyu-20221220-004:https://www.nta.go.jp/about/council/kyodokenkyu/221220/pdf/20221220shussekiiin.pdf",
+      "nta-kyodokenkyu-20230613-005:https://www.nta.go.jp/about/council/kyodokenkyu/230613/pdf/20230613gijishidai.pdf",
+      "nta-kyodokenkyu-20230613-005:https://www.nta.go.jp/about/council/kyodokenkyu/230613/pdf/20230613gijiyoushi.pdf",
+      "nta-kyodokenkyu-20230613-005:https://www.nta.go.jp/about/council/kyodokenkyu/230613/pdf/20230613shiryou.pdf",
+      "nta-kyodokenkyu-20230613-005:https://www.nta.go.jp/about/council/kyodokenkyu/230613/pdf/20230613shussekiiin.pdf",
+      "nta-kyodokenkyu-20230830-006:https://www.nta.go.jp/about/council/kyodokenkyu/230830/pdf/20230830gijishidai.pdf",
+      "nta-kyodokenkyu-20230830-006:https://www.nta.go.jp/about/council/kyodokenkyu/230830/pdf/20230830shiryou.pdf",
+      "nta-kyodokenkyu-20230830-006:https://www.nta.go.jp/about/council/kyodokenkyu/230830/pdf/20230830shussekiiin.pdf",
+      "nta-kyodokenkyu-20240118-007:https://www.nta.go.jp/about/council/kyodokenkyu/240118/pdf/20240118gijishidai.pdf",
+      "nta-kyodokenkyu-20240118-007:https://www.nta.go.jp/about/council/kyodokenkyu/240118/pdf/20240118gijiyoushi.pdf",
+      "nta-kyodokenkyu-20240118-007:https://www.nta.go.jp/about/council/kyodokenkyu/240118/pdf/20240118shiryou.pdf",
+      "nta-kyodokenkyu-20240118-007:https://www.nta.go.jp/about/council/kyodokenkyu/240118/pdf/20240118shussekiiin.pdf",
+      "nta-kyodokenkyu-20240625-008:https://www.nta.go.jp/about/council/kyodokenkyu/240625/pdf/20240625gijishidai.pdf",
+      "nta-kyodokenkyu-20240625-008:https://www.nta.go.jp/about/council/kyodokenkyu/240625/pdf/20240625gijiyoushi.pdf",
+      "nta-kyodokenkyu-20240625-008:https://www.nta.go.jp/about/council/kyodokenkyu/240625/pdf/20240625shiryou.pdf",
+      "nta-kyodokenkyu-20240625-008:https://www.nta.go.jp/about/council/kyodokenkyu/240625/pdf/20240625shussekiiin.pdf",
+      "nta-kyodokenkyu-20241213-009:https://www.nta.go.jp/about/council/kyodokenkyu/241213/pdf/20241213gijishidai.pdf",
+      "nta-kyodokenkyu-20241213-009:https://www.nta.go.jp/about/council/kyodokenkyu/241213/pdf/20241213shiryou.pdf",
+      "nta-kyodokenkyu-20241213-009:https://www.nta.go.jp/about/council/kyodokenkyu/241213/pdf/20241213shussekiiin.pdf",
+      "nta-kyodokenkyu-20250123-010:https://www.nta.go.jp/about/council/kyodokenkyu/250123/pdf/20250123gijishidai.pdf",
+      "nta-kyodokenkyu-20250123-010:https://www.nta.go.jp/about/council/kyodokenkyu/250123/pdf/20250123gijiyoushi.pdf",
+      "nta-kyodokenkyu-20250123-010:https://www.nta.go.jp/about/council/kyodokenkyu/250123/pdf/20250123shiryou.pdf",
+      "nta-kyodokenkyu-20250123-010:https://www.nta.go.jp/about/council/kyodokenkyu/250123/pdf/20250123shussekiiin.pdf",
+      "nta-kyodokenkyu-20250226-011:https://www.nta.go.jp/about/council/kyodokenkyu/250226/pdf/20250226gijishidai.pdf",
+      "nta-kyodokenkyu-20250226-011:https://www.nta.go.jp/about/council/kyodokenkyu/250226/pdf/20250226shiryou.pdf",
+      "nta-kyodokenkyu-20250226-011:https://www.nta.go.jp/about/council/kyodokenkyu/250226/pdf/20250226shussekiiin.pdf",
+      "nta-kyodokenkyu-20250530-012:https://www.nta.go.jp/about/council/kyodokenkyu/250416/pdf/20250530gijishidai.pdf",
+      "nta-kyodokenkyu-20250530-012:https://www.nta.go.jp/about/council/kyodokenkyu/250416/pdf/20250530shiryou.pdf",
+      "nta-kyodokenkyu-20250530-012:https://www.nta.go.jp/about/council/kyodokenkyu/250416/pdf/a0025004-053.pdf",
+      "nta-kyodokenkyu-20250530-012:https://www.nta.go.jp/about/council/kyodokenkyu/250530/pdf/20250530gijiyoushi.pdf",
+      "nta-kyodokenkyu-20260116-013:https://www.nta.go.jp/about/council/kyodokenkyu/251212/pdf/20260116gijishidai.pdf",
+      "nta-kyodokenkyu-20260116-013:https://www.nta.go.jp/about/council/kyodokenkyu/251212/pdf/20260116gijiyoushi.pdf",
+      "nta-kyodokenkyu-20260116-013:https://www.nta.go.jp/about/council/kyodokenkyu/251212/pdf/20260116shiryou.pdf",
+      "nta-kyodokenkyu-20260116-013:https://www.nta.go.jp/about/council/kyodokenkyu/251212/pdf/20260116shussekiiin.pdf",
+      "nta-kyodokenkyu-20260527-014:https://www.nta.go.jp/about/council/kyodokenkyu/260527/pdf/20260527gijishidai.pdf",
+      "nta-kyodokenkyu-20260527-014:https://www.nta.go.jp/about/council/kyodokenkyu/260527/pdf/20260527gijiyoushi.pdf",
+      "nta-kyodokenkyu-20260527-014:https://www.nta.go.jp/about/council/kyodokenkyu/260527/pdf/20260527shiryou.pdf",
+      "nta-kyodokenkyu-20260527-014:https://www.nta.go.jp/about/council/kyodokenkyu/260527/pdf/20260527shussekiiin.pdf",
+      "nta-mansion-20230130-001:https://www.nta.go.jp/about/council/mansion/20230130/pdf/02_giji.pdf",
+      "nta-mansion-20230130-001:https://www.nta.go.jp/about/council/mansion/20230130/pdf/03_siryo.pdf",
+      "nta-mansion-20230601-002:https://www.nta.go.jp/about/council/idenshi/20230601/20230601giji.pdf",
+      "nta-mansion-20230601-002:https://www.nta.go.jp/about/council/idenshi/20230601/shiryo.pdf",
+      "nta-mansion-20230622-003:https://www.nta.go.jp/about/council/idenshi/20230622/20230622giji.pdf",
+      "nta-mansion-20230622-003:https://www.nta.go.jp/about/council/idenshi/20230622/shiryo.pdf",
+      "nta-nai_hyoka-20260420-001:https://www.nta.go.jp/about/council/nai-hyoka/20260420/pdf/01giji_kabukaigi.pdf",
+      "nta-nai_hyoka-20260420-001:https://www.nta.go.jp/about/council/nai-hyoka/20260420/pdf/01shiryo_kabukaigi.pdf",
+      "nta-nai_hyoka-20260511-002:https://www.nta.go.jp/about/council/nai-hyoka/20260511/pdf/02giji_kabukaigi.pdf",
+      "nta-nai_hyoka-20260511-002:https://www.nta.go.jp/about/council/nai-hyoka/20260511/pdf/02shiryo_kabukaigi.pdf",
+      "nta-nai_hyoka-20260604-003:https://www.nta.go.jp/about/council/nai-hyoka/20260604/pdf/03giji_kabukaigi.pdf",
+      "nta-nai_hyoka-20260604-003:https://www.nta.go.jp/about/council/nai-hyoka/20260604/pdf/03shiryo_kabukaigi.pdf",
+      "nta-nai_hyoka-20260703-004:https://www.nta.go.jp/about/council/nai-hyoka/20260703/pdf/04giji_kabukaigi.pdf",
+      "nta-nai_hyoka-20260703-004:https://www.nta.go.jp/about/council/nai-hyoka/20260703/pdf/04ikensyo_kabukaigi.pdf",
+      "nta-nai_hyoka-20260703-004:https://www.nta.go.jp/about/council/nai-hyoka/20260703/pdf/04shiryo_kabukaigi.pdf",
+      "nta-nai_hyoka-20260820-005:https://www.nta.go.jp/about/council/nai-hyoka/20260820/pdf/05giji_kabukaigi.pdf",
+      "nta-nai_hyoka-20260820-005:https://www.nta.go.jp/about/council/nai-hyoka/20260820/pdf/05ikensyo_kabukaigi.pdf",
+      "nta-nai_hyoka-20260820-005:https://www.nta.go.jp/about/council/nai-hyoka/20260820/pdf/05kijoshiryo_kabukaigi.pdf",
+      "nta-nai_hyoka-20260820-005:https://www.nta.go.jp/about/council/nai-hyoka/20260820/pdf/05shiryo_kabukaigi.pdf",
+      "nta-nai_hyoka-20260916-006:https://www.nta.go.jp/about/council/nai-hyoka/20260916/pdf/06ikensyo_kabukaigi.pdf",
+      "nta-nai_hyoka-20260916-006:https://www.nta.go.jp/about/council/nai-hyoka/20260916/pdf/06obikensyo_kabukaigi.pdf",
+      "nta-nai_hyoka-20260916-006:https://www.nta.go.jp/about/council/nai-hyoka/20260916/pdf/06shiryo_kabukaigi.pdf",
+      "nta-sake_brand-20210823-001:https://www.nta.go.jp/about/council/sake3/210823/shiryo/pdf/0021008-103.pdf",
+      "nta-sake_brand-20210823-001:https://www.nta.go.jp/about/council/sake3/210823/shiryo/pdf/01.pdf",
+      "nta-sake_brand-20210823-001:https://www.nta.go.jp/about/council/sake3/210823/shiryo/pdf/02.pdf",
+      "nta-sake_brand-20210823-001:https://www.nta.go.jp/about/council/sake3/210823/shiryo/pdf/03.pdf",
+      "nta-sake_brand-20210823-001:https://www.nta.go.jp/about/council/sake3/210823/shiryo/pdf/04.pdf",
+      "nta-sake_brand-20210823-001:https://www.nta.go.jp/about/council/sake3/210823/shiryo/pdf/05.pdf",
+      "nta-sake_brand-20210823-001:https://www.nta.go.jp/about/council/sake3/210823/shiryo/pdf/06.pdf",
+      "nta-sake_brand-20210823-001:https://www.nta.go.jp/about/council/sake3/210823/shiryo/pdf/07.pdf",
+      "nta-sake_brand-20210823-001:https://www.nta.go.jp/about/council/sake3/210823/shiryo/pdf/08.pdf",
+      "nta-sake_brand-20220317-002:https://www.nta.go.jp/about/council/sake3/220317/shiryo/pdf/00.pdf",
+      "nta-sake_brand-20220317-002:https://www.nta.go.jp/about/council/sake3/220317/shiryo/pdf/0022004-045.pdf",
+      "nta-sake_brand-20220317-002:https://www.nta.go.jp/about/council/sake3/220317/shiryo/pdf/01.pdf",
+      "nta-sake_brand-20220317-002:https://www.nta.go.jp/about/council/sake3/220317/shiryo/pdf/02.pdf",
+      "nta-sake_brand-20220317-002:https://www.nta.go.jp/about/council/sake3/220317/shiryo/pdf/03.pdf",
+      "nta-sake_brand-20220317-002:https://www.nta.go.jp/about/council/sake3/220317/shiryo/pdf/04.pdf",
+      "nta-sake_brand-20220317-002:https://www.nta.go.jp/about/council/sake3/220317/shiryo/pdf/05.pdf",
+      "nta-sake_brand-20220317-002:https://www.nta.go.jp/about/council/sake3/220317/shiryo/pdf/99.pdf",
+      "nta-sake_brand-20220623-003:https://www.nta.go.jp/about/council/sake3/220623/shiryo/pdf/0022007-134.pdf",
+      "nta-sake_brand-20220623-003:https://www.nta.go.jp/about/council/sake3/220623/shiryo/pdf/01.pdf",
+      "nta-sake_brand-20220623-003:https://www.nta.go.jp/about/council/sake3/220623/shiryo/pdf/02.pdf",
+      "nta-sake_brand-20220630-s01:https://www.nta.go.jp/about/council/sake3/220630/shiryo/pdf/0022006-134_01.pdf",
+      "nta-sake_brand-20220630-s01:https://www.nta.go.jp/about/council/sake3/220630/shiryo/pdf/0022006-134_02.pdf",
+      "nta-sake_brand-20220630-s01:https://www.nta.go.jp/about/council/sake3/220630/shiryo/pdf/0022006-134_03.pdf",
+      "nta-sake_brand-20220630-s01:https://www.nta.go.jp/about/council/sake3/220630/shiryo/pdf/seigo.pdf",
+      "nta-sake_brand-20230523-004:https://www.nta.go.jp/about/council/sake3/230523/pdf/01.pdf",
+      "nta-sake_brand-20230523-004:https://www.nta.go.jp/about/council/sake3/230523/shiryo/pdf/01.pdf",
+      "nta-sake_brand-20230523-004:https://www.nta.go.jp/about/council/sake3/230523/shiryo/pdf/02.pdf",
+      "nta-sake_brand-20230523-004:https://www.nta.go.jp/about/council/sake3/230523/shiryo/pdf/03.pdf",
+      "nta-sake_brand-20230523-004:https://www.nta.go.jp/about/council/sake3/230523/shiryo/pdf/04.pdf",
+      "nta-sake_brand-20230523-004:https://www.nta.go.jp/about/council/sake3/230523/shiryo/pdf/05.pdf",
+      "nta-sake_brand-20230523-004:https://www.nta.go.jp/about/council/sake3/230523/shiryo/pdf/06.pdf",
+      "nta-sake_bunkakai-20190313-020:https://www.nta.go.jp/about/council/sake-bunkakai/190313/gijiroku/index.htm",
+      "nta-sake_bunkakai-20190313-020:https://www.nta.go.jp/about/council/sake-bunkakai/190313/yoshi.htm",
+      "nta-sake_bunkakai-20190313-020:https://www.nta.go.jp/about/council/sake-bunkakai/190331/pdf/001.pdf",
+      "nta-sake_bunkakai-20190313-020:https://www.nta.go.jp/about/council/sake-bunkakai/190331/pdf/002.pdf",
+      "nta-sake_bunkakai-20190313-020:https://www.nta.go.jp/about/council/sake-bunkakai/190331/pdf/003.pdf",
+      "nta-sake_bunkakai-20190313-020:https://www.nta.go.jp/about/council/sake-bunkakai/190331/pdf/004.pdf",
+      "nta-sake_bunkakai-20210330-021:https://www.nta.go.jp/about/council/sake-bunkakai/210330/gijiroku/index.htm",
+      "nta-sake_bunkakai-20210330-021:https://www.nta.go.jp/about/council/sake-bunkakai/210330/pdf/001.pdf",
+      "nta-sake_bunkakai-20210330-021:https://www.nta.go.jp/about/council/sake-bunkakai/210330/pdf/002.pdf",
+      "nta-sake_bunkakai-20210330-021:https://www.nta.go.jp/about/council/sake-bunkakai/210330/pdf/003.pdf",
+      "nta-sake_bunkakai-20210330-021:https://www.nta.go.jp/about/council/sake-bunkakai/210330/pdf/004.pdf",
+      "nta-sake_bunkakai-20210330-021:https://www.nta.go.jp/about/council/sake-bunkakai/210330/yoshi.htm",
+      "nta-sake_bunkakai-20220119-022:https://www.nta.go.jp/about/council/sake-bunkakai/220119/gijiroku/index.htm",
+      "nta-sake_bunkakai-20220119-022:https://www.nta.go.jp/about/council/sake-bunkakai/220119/pdf/001.pdf",
+      "nta-sake_bunkakai-20220119-022:https://www.nta.go.jp/about/council/sake-bunkakai/220119/pdf/002-1.pdf",
+      "nta-sake_bunkakai-20220119-022:https://www.nta.go.jp/about/council/sake-bunkakai/220119/pdf/002-2.pdf",
+      "nta-sake_bunkakai-20220119-022:https://www.nta.go.jp/about/council/sake-bunkakai/220119/pdf/002-3.pdf",
+      "nta-sake_bunkakai-20220119-022:https://www.nta.go.jp/about/council/sake-bunkakai/220119/pdf/002.pdf",
+      "nta-sake_bunkakai-20220119-022:https://www.nta.go.jp/about/council/sake-bunkakai/220119/pdf/003.pdf",
+      "nta-sake_bunkakai-20220119-022:https://www.nta.go.jp/about/council/sake-bunkakai/220119/yoshi.htm",
+      "nta-sake_bunkakai-20220603-023:https://www.nta.go.jp/about/council/sake-bunkakai/220603/annai.htm",
+      "nta-sake_bunkakai-20220603-023:https://www.nta.go.jp/about/council/sake-bunkakai/220603/pdf/siryo.pdf",
+      "nta-sake_bunkakai-20230315-024:https://www.nta.go.jp/about/council/sake-bunkakai/230315/gijiroku/index.htm",
+      "nta-sake_bunkakai-20230315-024:https://www.nta.go.jp/about/council/sake-bunkakai/230315/pdf/001.pdf",
+      "nta-sake_bunkakai-20230315-024:https://www.nta.go.jp/about/council/sake-bunkakai/230315/pdf/002.pdf",
+      "nta-sake_bunkakai-20230315-024:https://www.nta.go.jp/about/council/sake-bunkakai/230315/pdf/003.pdf",
+      "nta-sake_bunkakai-20230315-024:https://www.nta.go.jp/about/council/sake-bunkakai/230315/yoshi.htm",
+      "nta-sake_bunkakai-20250324-025:https://www.nta.go.jp/about/council/sake-bunkakai/250324/gijiroku/index.htm",
+      "nta-sake_bunkakai-20250324-025:https://www.nta.go.jp/about/council/sake-bunkakai/250324/pdf/001.pdf",
+      "nta-sake_bunkakai-20250324-025:https://www.nta.go.jp/about/council/sake-bunkakai/250324/pdf/002.pdf",
+      "nta-sake_bunkakai-20250324-025:https://www.nta.go.jp/about/council/sake-bunkakai/250324/pdf/003.pdf",
+      "nta-sake_bunkakai-20250324-025:https://www.nta.go.jp/about/council/sake-bunkakai/250324/yoshi.htm",
+      "nta-sake_bunkakai-20251208-026:https://www.nta.go.jp/about/council/sake-bunkakai/251208/pdf/001.pdf",
+      "nta-sake_bunkakai-20251208-026:https://www.nta.go.jp/about/council/sake-bunkakai/251208/pdf/002.pdf",
+      "nta-sake_bunkakai-20251208-026:https://www.nta.go.jp/about/council/sake-bunkakai/251208/pdf/003.pdf",
+      "nta-sake_bunkakai-20251208-026:https://www.nta.go.jp/about/council/sake-bunkakai/260130/gijiroku/index.htm",
+      "nta-sake_bunkakai-20251208-026:https://www.nta.go.jp/about/council/sake-bunkakai/260130/yoshi.htm",
+      "nta-sake_global-20190909-001:https://www.nta.go.jp/about/council/sake3/190909/shiryo/pdf/0019009-018.pdf",
+      "nta-sake_global-20190909-001:https://www.nta.go.jp/about/council/sake3/190909/shiryo/pdf/01.pdf",
+      "nta-sake_global-20190909-001:https://www.nta.go.jp/about/council/sake3/190909/shiryo/pdf/02.pdf",
+      "nta-sake_global-20190909-001:https://www.nta.go.jp/about/council/sake3/190909/shiryo/pdf/03.pdf",
+      "nta-sake_global-20190909-001:https://www.nta.go.jp/about/council/sake3/190909/shiryo/pdf/04.pdf",
+      "nta-sake_global-20190909-001:https://www.nta.go.jp/about/council/sake3/190909/shiryo/pdf/05.pdf",
+      "nta-sake_global-20190909-001:https://www.nta.go.jp/about/council/sake3/190909/shiryo/pdf/06.pdf",
+      "nta-sake_global-20190909-001:https://www.nta.go.jp/about/council/sake3/190909/shiryo/pdf/07.pdf",
+      "nta-sake_global-20190909-001:https://www.nta.go.jp/about/council/sake3/190909/shiryo/pdf/09.pdf",
+      "nta-sake_global-20190909-001:https://www.nta.go.jp/about/council/sake3/190909/shiryo/pdf/10.pdf",
+      "nta-sake_global-20191015-002:https://www.nta.go.jp/about/council/sake3/191015/shiryo/pdf/01.pdf",
+      "nta-sake_global-20191015-002:https://www.nta.go.jp/about/council/sake3/191015/shiryo/pdf/02.pdf",
+      "nta-sake_global-20191015-002:https://www.nta.go.jp/about/council/sake3/191015/shiryo/pdf/03.pdf",
+      "nta-sake_global-20191015-002:https://www.nta.go.jp/about/council/sake3/191015/shiryo/pdf/04.pdf",
+      "nta-sake_global-20191015-002:https://www.nta.go.jp/about/council/sake3/191015/shiryo/pdf/05.pdf",
+      "nta-sake_global-20191015-002:https://www.nta.go.jp/about/council/sake3/191015/shiryo/pdf/kentokai_nihonshu.pdf",
+      "nta-sake_global-20191101-003:https://www.nta.go.jp/about/council/sake3/191101/shiryo/pdf/0019010-154.pdf",
+      "nta-sake_global-20191101-003:https://www.nta.go.jp/about/council/sake3/191101/shiryo/pdf/01.pdf",
+      "nta-sake_global-20191101-003:https://www.nta.go.jp/about/council/sake3/191101/shiryo/pdf/02.pdf",
+      "nta-sake_global-20191101-003:https://www.nta.go.jp/about/council/sake3/191101/shiryo/pdf/03.pdf",
+      "nta-sake_global-20191101-003:https://www.nta.go.jp/about/council/sake3/191101/shiryo/pdf/04.pdf",
+      "nta-sake_global-20191101-003:https://www.nta.go.jp/about/council/sake3/191101/shiryo/pdf/05.pdf",
+      "nta-sake_global-20191101-003:https://www.nta.go.jp/about/council/sake3/191101/shiryo/pdf/06.pdf",
+      "nta-sake_global-20191101-003:https://www.nta.go.jp/about/council/sake3/191101/shiryo/pdf/07.pdf",
+      "nta-sake_global-20191119-004:https://www.nta.go.jp/about/council/sake3/191119/shiryo/pdf/0019012-008.pdf",
+      "nta-sake_global-20191119-004:https://www.nta.go.jp/about/council/sake3/191119/shiryo/pdf/01.pdf",
+      "nta-sake_global-20191119-004:https://www.nta.go.jp/about/council/sake3/191119/shiryo/pdf/02.pdf",
+      "nta-sake_global-20191119-004:https://www.nta.go.jp/about/council/sake3/191119/shiryo/pdf/03.pdf",
+      "nta-sake_global-20191119-004:https://www.nta.go.jp/about/council/sake3/191119/shiryo/pdf/04.pdf",
+      "nta-sake_global-20191119-004:https://www.nta.go.jp/about/council/sake3/191119/shiryo/pdf/05.pdf",
+      "nta-sake_global-20191119-004:https://www.nta.go.jp/about/council/sake3/191119/shiryo/pdf/06.pdf",
+      "nta-sake_global-20191216-005:https://www.nta.go.jp/about/council/sake3/191216/shiryo/pdf/0019012-112.pdf",
+      "nta-sake_global-20191216-005:https://www.nta.go.jp/about/council/sake3/191216/shiryo/pdf/01.pdf",
+      "nta-sake_global-20191216-005:https://www.nta.go.jp/about/council/sake3/191216/shiryo/pdf/02.pdf",
+      "nta-sake_global-20191225-s01:https://www.nta.go.jp/about/council/sake/matome191225/pdf/01.pdf",
+      "nta-sake_global-20191225-s01:https://www.nta.go.jp/about/council/sake/matome191225/pdf/02.pdf",
+      "nta-sake_global-20191225-s01:https://www.nta.go.jp/about/council/sake/matome191225/pdf/03.pdf",
+      "nta-sake_global-20201125-006:https://www.nta.go.jp/about/council/sake3/201125/shiryo/pdf/01.pdf",
+      "nta-sake_global-20201125-006:https://www.nta.go.jp/about/council/sake3/201125/shiryo/pdf/02.pdf",
+      "nta-sake_global-20201125-006:https://www.nta.go.jp/about/council/sake3/201125/shiryo/pdf/03.pdf",
+      "nta-sake_global-20201125-006:https://www.nta.go.jp/about/council/sake3/201125/shiryo/pdf/04.pdf",
+      "nta-sake_global-20201125-006:https://www.nta.go.jp/about/council/sake3/201125/shiryo/pdf/05.pdf",
+      "nta-sake_global-20201125-006:https://www.nta.go.jp/about/council/sake3/201125/shiryo/pdf/06.pdf",
+      "nta-sake_global-20210225-007:https://www.nta.go.jp/about/council/sake3/210225/shiryo/pdf/01.pdf",
+      "nta-sake_global-20210225-007:https://www.nta.go.jp/about/council/sake3/210225/shiryo/pdf/02.pdf",
+      "nta-sake_global-20210225-007:https://www.nta.go.jp/about/council/sake3/210225/shiryo/pdf/03.pdf",
+      "nta-sake_global-20210225-007:https://www.nta.go.jp/about/council/sake3/210225/shiryo/pdf/04.pdf",
+      "nta-sake_global-20210225-007:https://www.nta.go.jp/about/council/sake3/210225/shiryo/pdf/05.pdf",
+      "nta-sake_global-20210225-007:https://www.nta.go.jp/about/council/sake3/210225/shiryo/pdf/06.pdf",
+      "nta-sake_global-20210225-007:https://www.nta.go.jp/about/council/sake3/210225/shiryo/pdf/07.pdf",
+      "nta-sake_hanbai-20011219-001:https://www.nta.go.jp/about/council/sake/011219/gijiroku/01.htm",
+      "nta-sake_hanbai-20011219-001:https://www.nta.go.jp/about/council/sake/011219/shiryo/pdf/01.pdf",
+      "nta-sake_hanbai-20011219-001:https://www.nta.go.jp/about/council/sake/011219/shiryo/pdf/02.pdf",
+      "nta-sake_hanbai-20011219-001:https://www.nta.go.jp/about/council/sake/011219/shiryo/pdf/03.pdf",
+      "nta-sake_hanbai-20011219-001:https://www.nta.go.jp/about/council/sake/011219/shiryo/pdf/04.pdf",
+      "nta-sake_hanbai-20011219-001:https://www.nta.go.jp/about/council/sake/011219/shiryo/pdf/05.pdf",
+      "nta-sake_hanbai-20011219-001:https://www.nta.go.jp/about/council/sake/011219/shiryo/pdf/06.pdf",
+      "nta-sake_hanbai-20011219-001:https://www.nta.go.jp/about/council/sake/011219/shiryo/pdf/07.pdf",
+      "nta-sake_hanbai-20011219-001:https://www.nta.go.jp/about/council/sake/011219/shiryo/pdf/08.pdf",
+      "nta-sake_hanbai-20011219-001:https://www.nta.go.jp/about/council/sake/011219/shiryo/pdf/09.pdf",
+      "nta-sake_hanbai-20011219-001:https://www.nta.go.jp/about/council/sake/011219/shiryo/pdf/10.pdf",
+      "nta-sake_hanbai-20011219-001:https://www.nta.go.jp/about/council/sake/011219/shiryo/pdf/11.pdf",
+      "nta-sake_hanbai-20011219-001:https://www.nta.go.jp/about/council/sake/011219/shiryo/pdf/12.pdf",
+      "nta-sake_hanbai-20011219-001:https://www.nta.go.jp/about/council/sake/011219/shiryo/pdf/13.pdf",
+      "nta-sake_hanbai-20011219-001:https://www.nta.go.jp/about/council/sake/011219/shiryo/pdf/14.pdf",
+      "nta-sake_hanbai-20011219-001:https://www.nta.go.jp/about/council/sake/011219/shiryo/pdf/15.pdf",
+      "nta-sake_hanbai-20011219-001:https://www.nta.go.jp/about/council/sake/011219/shiryo/pdf/16.pdf",
+      "nta-sake_hanbai-20011219-001:https://www.nta.go.jp/about/council/sake/011219/shiryo/pdf/17.pdf",
+      "nta-sake_hanbai-20011219-001:https://www.nta.go.jp/about/council/sake/011219/shiryo/pdf/18.pdf",
+      "nta-sake_hanbai-20011219-001:https://www.nta.go.jp/about/council/sake/011219/shiryo/pdf/19.pdf",
+      "nta-sake_hanbai-20011219-001:https://www.nta.go.jp/about/council/sake/011219/shiryo/pdf/20.pdf",
+      "nta-sake_hanbai-20011219-001:https://www.nta.go.jp/about/council/sake/011219/yoshi/01.htm",
+      "nta-sake_hanbai-20011219-s03:https://www.nta.go.jp/about/council/sake/kaisai011219/01.htm",
+      "nta-sake_hanbai-20020130-002:https://www.nta.go.jp/about/council/sake/020130/gijiroku/01.htm",
+      "nta-sake_hanbai-20020130-002:https://www.nta.go.jp/about/council/sake/020130/shiryo/pdf/01.pdf",
+      "nta-sake_hanbai-20020130-002:https://www.nta.go.jp/about/council/sake/020130/shiryo/pdf/02.pdf",
+      "nta-sake_hanbai-20020130-002:https://www.nta.go.jp/about/council/sake/020130/shiryo/pdf/03.pdf",
+      "nta-sake_hanbai-20020130-002:https://www.nta.go.jp/about/council/sake/020130/yoshi/01.htm",
+      "nta-sake_hanbai-20020206-003:https://www.nta.go.jp/about/council/sake/020206/gijiroku/01.htm",
+      "nta-sake_hanbai-20020206-003:https://www.nta.go.jp/about/council/sake/020206/shiryo/01.htm",
+      "nta-sake_hanbai-20020206-003:https://www.nta.go.jp/about/council/sake/020206/shiryo/02.htm",
+      "nta-sake_hanbai-20020206-003:https://www.nta.go.jp/about/council/sake/020206/shiryo/03.htm",
+      "nta-sake_hanbai-20020206-003:https://www.nta.go.jp/about/council/sake/020206/yoshi/01.htm",
+      "nta-sake_hanbai-20020219-004:https://www.nta.go.jp/about/council/sake/020219/gijiroku/01.htm",
+      "nta-sake_hanbai-20020219-004:https://www.nta.go.jp/about/council/sake/020219/shiryo/pdf/01.pdf",
+      "nta-sake_hanbai-20020219-004:https://www.nta.go.jp/about/council/sake/020219/shiryo/pdf/04.pdf",
+      "nta-sake_hanbai-20020219-004:https://www.nta.go.jp/about/council/sake/020219/yoshi/01.htm",
+      "nta-sake_hanbai-20020315-005:https://www.nta.go.jp/about/council/sake/020315/gijiroku/01.htm",
+      "nta-sake_hanbai-20020315-005:https://www.nta.go.jp/about/council/sake/020315/shiryo/pdf/01.pdf",
+      "nta-sake_hanbai-20020315-005:https://www.nta.go.jp/about/council/sake/020315/shiryo/pdf/02.pdf",
+      "nta-sake_hanbai-20020315-005:https://www.nta.go.jp/about/council/sake/020315/yoshi/01.htm",
+      "nta-sake_hanbai-20020327-006:https://www.nta.go.jp/about/council/sake/020315/shiryo/pdf/01.pdf",
+      "nta-sake_hanbai-20020327-006:https://www.nta.go.jp/about/council/sake/020327/gijiroku/01.htm",
+      "nta-sake_hanbai-20020327-006:https://www.nta.go.jp/about/council/sake/020327/shiryo/pdf/02.pdf",
+      "nta-sake_hanbai-20020327-006:https://www.nta.go.jp/about/council/sake/020327/yoshi/01.htm",
+      "nta-sake_hanbai-20020514-007:https://www.nta.go.jp/about/council/sake/020514/gijiroku/01.htm",
+      "nta-sake_hanbai-20020514-007:https://www.nta.go.jp/about/council/sake/020514/shiryo/01.htm",
+      "nta-sake_hanbai-20020514-007:https://www.nta.go.jp/about/council/sake/020514/yoshi/01.htm",
+      "nta-sake_hanbai-20020618-008:https://www.nta.go.jp/about/council/sake/020618/gijiroku/01.htm",
+      "nta-sake_hanbai-20020618-008:https://www.nta.go.jp/about/council/sake/020618/shiryo/01.htm",
+      "nta-sake_hanbai-20020618-008:https://www.nta.go.jp/about/council/sake/020618/yoshi/01.htm",
+      "nta-sake_hanbai-20020717-009:https://www.nta.go.jp/about/council/sake/020717/gijiroku/01.htm",
+      "nta-sake_hanbai-20020717-009:https://www.nta.go.jp/about/council/sake/020717/shiryo/01.htm",
+      "nta-sake_hanbai-20020717-009:https://www.nta.go.jp/about/council/sake/020717/yoshi/01.htm",
+      "nta-sake_hanbai-20020906-010:https://www.nta.go.jp/about/council/sake/020906/gijiroku/01.htm",
+      "nta-sake_hanbai-20020906-010:https://www.nta.go.jp/about/council/sake/020906/shiryo/01.htm",
+      "nta-sake_hanbai-20020906-010:https://www.nta.go.jp/about/council/sake/020906/shiryo/05.htm",
+      "nta-sake_hanbai-20020906-010:https://www.nta.go.jp/about/council/sake/020906/shiryo/06.htm",
+      "nta-sake_hanbai-20020906-010:https://www.nta.go.jp/about/council/sake/020906/yoshi/01.htm",
+      "nta-sake_hanbai-20040224-011:https://www.nta.go.jp/about/council/sake/040224/gijiroku/01.htm",
+      "nta-sake_hanbai-20040224-011:https://www.nta.go.jp/about/council/sake/040224/shiryo/01.htm",
+      "nta-sake_hanbai-20040224-011:https://www.nta.go.jp/about/council/sake/040224/shiryo/02.htm",
+      "nta-sake_hanbai-20040224-011:https://www.nta.go.jp/about/council/sake/040224/shiryo/03.htm",
+      "nta-sake_hanbai-20040224-011:https://www.nta.go.jp/about/council/sake/040224/shiryo/04.htm",
+      "nta-sake_hanbai-20040224-011:https://www.nta.go.jp/about/council/sake/040224/shiryo/05.htm",
+      "nta-sake_hanbai-20040224-011:https://www.nta.go.jp/about/council/sake/040224/shiryo/06.htm",
+      "nta-sake_hanbai-20040224-011:https://www.nta.go.jp/about/council/sake/040224/shiryo/07.htm",
+      "nta-sake_hanbai-20040224-011:https://www.nta.go.jp/about/council/sake/040224/yoshi/youshi.htm",
+      "nta-sake_hanbai-20040224-s02:https://www.nta.go.jp/about/council/sake/kaisai040224/01.htm",
+      "nta-sake_hanbai-20040324-012:https://www.nta.go.jp/about/council/sake/040324/gijiroku/01.htm",
+      "nta-sake_hanbai-20040324-012:https://www.nta.go.jp/about/council/sake/040324/pdf/01-0101.pdf",
+      "nta-sake_hanbai-20040324-012:https://www.nta.go.jp/about/council/sake/040324/pdf/01-0102.pdf",
+      "nta-sake_hanbai-20040324-012:https://www.nta.go.jp/about/council/sake/040324/pdf/01-0103.pdf",
+      "nta-sake_hanbai-20040324-012:https://www.nta.go.jp/about/council/sake/040324/pdf/01-0104.pdf",
+      "nta-sake_hanbai-20040324-012:https://www.nta.go.jp/about/council/sake/040324/pdf/01-0105.pdf",
+      "nta-sake_hanbai-20040324-012:https://www.nta.go.jp/about/council/sake/040324/pdf/01-0106.pdf",
+      "nta-sake_hanbai-20040324-012:https://www.nta.go.jp/about/council/sake/040324/pdf/01-0107.pdf",
+      "nta-sake_hanbai-20040324-012:https://www.nta.go.jp/about/council/sake/040324/pdf/01-0108.pdf",
+      "nta-sake_hanbai-20040324-012:https://www.nta.go.jp/about/council/sake/040324/pdf/01-0109.pdf",
+      "nta-sake_hanbai-20040324-012:https://www.nta.go.jp/about/council/sake/040324/pdf/01-0110.pdf",
+      "nta-sake_hanbai-20040324-012:https://www.nta.go.jp/about/council/sake/040324/pdf/01-0201.pdf",
+      "nta-sake_hanbai-20040324-012:https://www.nta.go.jp/about/council/sake/040324/pdf/01-0202.pdf",
+      "nta-sake_hanbai-20040324-012:https://www.nta.go.jp/about/council/sake/040324/pdf/01-0203.pdf",
+      "nta-sake_hanbai-20040324-012:https://www.nta.go.jp/about/council/sake/040324/pdf/01-0204.pdf",
+      "nta-sake_hanbai-20040324-012:https://www.nta.go.jp/about/council/sake/040324/pdf/01-0205.pdf",
+      "nta-sake_hanbai-20040324-012:https://www.nta.go.jp/about/council/sake/040324/pdf/01-0206.pdf",
+      "nta-sake_hanbai-20040324-012:https://www.nta.go.jp/about/council/sake/040324/pdf/01-0207.pdf",
+      "nta-sake_hanbai-20040324-012:https://www.nta.go.jp/about/council/sake/040324/pdf/01-0208.pdf",
+      "nta-sake_hanbai-20040324-012:https://www.nta.go.jp/about/council/sake/040324/pdf/01-0209.pdf",
+      "nta-sake_hanbai-20040324-012:https://www.nta.go.jp/about/council/sake/040324/pdf/01-0210.pdf",
+      "nta-sake_hanbai-20040324-012:https://www.nta.go.jp/about/council/sake/040324/pdf/01-0301.pdf",
+      "nta-sake_hanbai-20040324-012:https://www.nta.go.jp/about/council/sake/040324/pdf/01-0302.pdf",
+      "nta-sake_hanbai-20040324-012:https://www.nta.go.jp/about/council/sake/040324/pdf/01-0401.pdf",
+      "nta-sake_hanbai-20040324-012:https://www.nta.go.jp/about/council/sake/040324/pdf/01-0402.pdf",
+      "nta-sake_hanbai-20040324-012:https://www.nta.go.jp/about/council/sake/040324/pdf/01-0501.pdf",
+      "nta-sake_hanbai-20040324-012:https://www.nta.go.jp/about/council/sake/040324/pdf/01-0502.pdf",
+      "nta-sake_hanbai-20040324-012:https://www.nta.go.jp/about/council/sake/040324/pdf/01-0503.pdf",
+      "nta-sake_hanbai-20040324-012:https://www.nta.go.jp/about/council/sake/040324/pdf/02-01.pdf",
+      "nta-sake_hanbai-20040324-012:https://www.nta.go.jp/about/council/sake/040324/pdf/02-02.pdf",
+      "nta-sake_hanbai-20040324-012:https://www.nta.go.jp/about/council/sake/040324/pdf/02-03.pdf",
+      "nta-sake_hanbai-20040324-012:https://www.nta.go.jp/about/council/sake/040324/pdf/02-04.pdf",
+      "nta-sake_hanbai-20040324-012:https://www.nta.go.jp/about/council/sake/040324/pdf/02-05.pdf",
+      "nta-sake_hanbai-20040324-012:https://www.nta.go.jp/about/council/sake/040324/pdf/02-06.pdf",
+      "nta-sake_hanbai-20040324-012:https://www.nta.go.jp/about/council/sake/040324/pdf/02-07.pdf",
+      "nta-sake_hanbai-20040324-012:https://www.nta.go.jp/about/council/sake/040324/pdf/03-01.pdf",
+      "nta-sake_hanbai-20040324-012:https://www.nta.go.jp/about/council/sake/040324/pdf/03-02.pdf",
+      "nta-sake_hanbai-20040324-012:https://www.nta.go.jp/about/council/sake/040324/pdf/03-02b01.pdf",
+      "nta-sake_hanbai-20040324-012:https://www.nta.go.jp/about/council/sake/040324/pdf/03-02b02.pdf",
+      "nta-sake_hanbai-20040324-012:https://www.nta.go.jp/about/council/sake/040324/pdf/04-01.pdf",
+      "nta-sake_hanbai-20040324-012:https://www.nta.go.jp/about/council/sake/040324/pdf/04-02.pdf",
+      "nta-sake_hanbai-20040324-012:https://www.nta.go.jp/about/council/sake/040324/pdf/04-03.pdf",
+      "nta-sake_hanbai-20040324-012:https://www.nta.go.jp/about/council/sake/040324/pdf/04-04.pdf",
+      "nta-sake_hanbai-20040324-012:https://www.nta.go.jp/about/council/sake/040324/yoshi/youshi.htm",
+      "nta-sake_hanbai-20040402-013:https://www.nta.go.jp/about/council/sake/040402/gijiroku/01.htm",
+      "nta-sake_hanbai-20040402-013:https://www.nta.go.jp/about/council/sake/040402/pdf/01.pdf",
+      "nta-sake_hanbai-20040402-013:https://www.nta.go.jp/about/council/sake/040402/pdf/02.pdf",
+      "nta-sake_hanbai-20040402-013:https://www.nta.go.jp/about/council/sake/040402/pdf/03.pdf",
+      "nta-sake_hanbai-20040402-013:https://www.nta.go.jp/about/council/sake/040402/yoshi/youshi.htm",
+      "nta-sake_hanbai-20040421-014:https://www.nta.go.jp/about/council/sake/040421/gijiroku/01.htm",
+      "nta-sake_hanbai-20040421-014:https://www.nta.go.jp/about/council/sake/040421/pdf/01.pdf",
+      "nta-sake_hanbai-20040421-014:https://www.nta.go.jp/about/council/sake/040421/pdf/02.pdf",
+      "nta-sake_hanbai-20040421-014:https://www.nta.go.jp/about/council/sake/040421/pdf/03.pdf",
+      "nta-sake_hanbai-20040421-014:https://www.nta.go.jp/about/council/sake/040421/pdf/04.pdf",
+      "nta-sake_hanbai-20040421-014:https://www.nta.go.jp/about/council/sake/040421/yoshi/youshi.htm",
+      "nta-sake_hanbai-20040512-015:https://www.nta.go.jp/about/council/sake/040512/gijiroku/01.htm",
+      "nta-sake_hanbai-20040512-015:https://www.nta.go.jp/about/council/sake/040512/pdf/01.pdf",
+      "nta-sake_hanbai-20040512-015:https://www.nta.go.jp/about/council/sake/040512/pdf/02.pdf",
+      "nta-sake_hanbai-20040512-015:https://www.nta.go.jp/about/council/sake/040512/pdf/03.pdf",
+      "nta-sake_hanbai-20040512-015:https://www.nta.go.jp/about/council/sake/040512/yoshi/youshi.htm",
+      "nta-sake_hanbai-20040519-016:https://www.nta.go.jp/about/council/sake/040519/gijiroku/01.htm",
+      "nta-sake_hanbai-20040519-016:https://www.nta.go.jp/about/council/sake/040519/pdf/01.pdf",
+      "nta-sake_hanbai-20040519-016:https://www.nta.go.jp/about/council/sake/040519/pdf/02.pdf",
+      "nta-sake_hanbai-20040519-016:https://www.nta.go.jp/about/council/sake/040519/pdf/03.pdf",
+      "nta-sake_hanbai-20040519-016:https://www.nta.go.jp/about/council/sake/040519/yoshi/youshi.htm",
+      "nta-sake_hanbai-20040531-017:https://www.nta.go.jp/about/council/sake/040531/gijiroku/01.htm",
+      "nta-sake_hanbai-20040531-017:https://www.nta.go.jp/about/council/sake/040531/pdf/01.pdf",
+      "nta-sake_hanbai-20040531-017:https://www.nta.go.jp/about/council/sake/040531/pdf/02.pdf",
+      "nta-sake_hanbai-20040531-017:https://www.nta.go.jp/about/council/sake/040531/pdf/03.pdf",
+      "nta-sake_hanbai-20040531-017:https://www.nta.go.jp/about/council/sake/040531/pdf/04.pdf",
+      "nta-sake_hanbai-20040531-017:https://www.nta.go.jp/about/council/sake/040531/yoshi/youshi.htm",
+      "nta-sake_hanbai-20040608-018:https://www.nta.go.jp/about/council/sake/040608/gijiroku/01.htm",
+      "nta-sake_hanbai-20040608-018:https://www.nta.go.jp/about/council/sake/040608/pdf/01.pdf",
+      "nta-sake_hanbai-20040608-018:https://www.nta.go.jp/about/council/sake/040608/pdf/02.pdf",
+      "nta-sake_hanbai-20040608-018:https://www.nta.go.jp/about/council/sake/040608/pdf/03.pdf",
+      "nta-sake_hanbai-20040608-018:https://www.nta.go.jp/about/council/sake/040608/pdf/04.pdf",
+      "nta-sake_hanbai-20040608-018:https://www.nta.go.jp/about/council/sake/040608/yoshi/youshi.htm",
+      "nta-sake_hanbai-20040622-019:https://www.nta.go.jp/about/council/sake/040622/gijiroku/01.htm",
+      "nta-sake_hanbai-20040622-019:https://www.nta.go.jp/about/council/sake/040622/pdf/01.pdf",
+      "nta-sake_hanbai-20040622-019:https://www.nta.go.jp/about/council/sake/040622/pdf/02.pdf",
+      "nta-sake_hanbai-20040622-019:https://www.nta.go.jp/about/council/sake/040622/pdf/03.pdf",
+      "nta-sake_hanbai-20040622-019:https://www.nta.go.jp/about/council/sake/040622/pdf/04.pdf",
+      "nta-sake_hanbai-20040622-019:https://www.nta.go.jp/about/council/sake/040622/pdf/05.pdf",
+      "nta-sake_hanbai-20040622-019:https://www.nta.go.jp/about/council/sake/040622/pdf/06.pdf",
+      "nta-sake_hanbai-20040622-019:https://www.nta.go.jp/about/council/sake/040622/yoshi/youshi.htm",
+      "nta-sake_hanbai-20040705-020:https://www.nta.go.jp/about/council/sake/040705/gijiroku/01.htm",
+      "nta-sake_hanbai-20040705-020:https://www.nta.go.jp/about/council/sake/040705/pdf/01.pdf",
+      "nta-sake_hanbai-20040705-020:https://www.nta.go.jp/about/council/sake/040705/pdf/02.pdf",
+      "nta-sake_hanbai-20040705-020:https://www.nta.go.jp/about/council/sake/040705/yoshi/youshi.htm",
+      "nta-sake_hanbai-20040922-021:https://www.nta.go.jp/about/council/sake/040922/gijiroku/01.htm",
+      "nta-sake_hanbai-20040922-021:https://www.nta.go.jp/about/council/sake/040922/pdf/01.pdf",
+      "nta-sake_hanbai-20040922-021:https://www.nta.go.jp/about/council/sake/040922/yoshi/youshi.htm",
+      "nta-sake_hanbai-20041013-022:https://www.nta.go.jp/about/council/sake/041013/gijiroku/01.htm",
+      "nta-sake_hanbai-20041013-022:https://www.nta.go.jp/about/council/sake/041013/pdf/01.pdf",
+      "nta-sake_hanbai-20041013-022:https://www.nta.go.jp/about/council/sake/041013/yoshi/youshi.htm",
+      "nta-sake_hanbai-20041025-023:https://www.nta.go.jp/about/council/sake/041025/gijiroku/01.htm",
+      "nta-sake_hanbai-20041025-023:https://www.nta.go.jp/about/council/sake/041025/yoshi/youshi.htm",
+      "nta-sake_hanbai-20041110-024:https://www.nta.go.jp/about/council/sake/041110/gijiroku/01.htm",
+      "nta-sake_hanbai-20041110-024:https://www.nta.go.jp/about/council/sake/041110/yoshi/youshi.htm",
+      "nta-sake_hanbai-20041122-025:https://www.nta.go.jp/about/council/sake/041122/gijiroku/01.htm",
+      "nta-sake_hanbai-20041122-025:https://www.nta.go.jp/about/council/sake/041122/yoshi/youshi.htm",
+      "nta-sake_hanbai-20041129-026:https://www.nta.go.jp/about/council/sake/041129/gijiroku/01.htm",
+      "nta-sake_hanbai-20041129-026:https://www.nta.go.jp/about/council/sake/041129/yoshi/youshi.htm",
+      "nta-sake_hanbai-20041217-s01:https://www.nta.go.jp/about/council/sake/matome041217/01.htm",
+      "nta-sake_pr-20160609-001:https://www.nta.go.jp/about/council/sake2/160609/shiryo/01.pdf",
+      "nta-sake_pr-20160609-001:https://www.nta.go.jp/about/council/sake2/160609/yoshi/youshi.htm",
+      "nta-seibi-20211029-001:https://www.nta.go.jp/about/council/seibi/20211029/pdf/20211029gijiyoushi.pdf",
+      "nta-seibi-20211029-001:https://www.nta.go.jp/about/council/seibi/20211029/pdf/20211029shidai.pdf",
+      "nta-seibi-20211029-001:https://www.nta.go.jp/about/council/seibi/20211029/pdf/20211029shiryou01.pdf",
+      "nta-seibi-20211029-001:https://www.nta.go.jp/about/council/seibi/20211029/pdf/20211029shiryou02.pdf",
+      "nta-seibi-20211029-001:https://www.nta.go.jp/about/council/seibi/20211029/pdf/20211029shussekiiinn.pdf",
+      "nta-seibi-20220324-w01:https://www.nta.go.jp/about/council/seibi/20220324/pdf/20220324gijishidai.pdf",
+      "nta-seibi-20220324-w01:https://www.nta.go.jp/about/council/seibi/20220324/pdf/20220324gijiyoushi.pdf",
+      "nta-seibi-20220324-w01:https://www.nta.go.jp/about/council/seibi/20220324/pdf/20220324siryou01.pdf",
+      "nta-seibi-20220324-w01:https://www.nta.go.jp/about/council/seibi/20220324/pdf/20220324siryou02.pdf",
+      "nta-seibi-20220622-002:https://www.nta.go.jp/about/council/seibi/20220622/pdf/20220622gijishidai.pdf",
+      "nta-seibi-20220622-002:https://www.nta.go.jp/about/council/seibi/20220622/pdf/20220622gijiyoushi.pdf",
+      "nta-seibi-20220622-002:https://www.nta.go.jp/about/council/seibi/20220622/pdf/20220622shiryou.pdf",
+      "nta-seibi-20220622-002:https://www.nta.go.jp/about/council/seibi/20220622/pdf/20220622shussekiiin.pdf",
+      "nta-seibi-20221014-w02:https://www.nta.go.jp/about/council/seibi/20221014/pdf/20221014gijishidai.pdf",
+      "nta-seibi-20221014-w02:https://www.nta.go.jp/about/council/seibi/20221014/pdf/20221014gijiyoushi.pdf",
+      "nta-seibi-20221014-w02:https://www.nta.go.jp/about/council/seibi/20221014/pdf/20221014shiryou.pdf",
+      "nta-seibi-20230110-w03:https://www.nta.go.jp/about/council/seibi/20230110/pdf/20230110gijishidai.pdf",
+      "nta-seibi-20230110-w03:https://www.nta.go.jp/about/council/seibi/20230110/pdf/20230110gijiyoushi.pdf",
+      "nta-seibi-20230110-w03:https://www.nta.go.jp/about/council/seibi/20230110/pdf/20230110shiryou.pdf",
+      "nta-seibi-20230314-w04:https://www.nta.go.jp/about/council/seibi/20230314/pdf/20230314gijishidai.pdf",
+      "nta-seibi-20230314-w04:https://www.nta.go.jp/about/council/seibi/20230314/pdf/20230314gijiyoushi.pdf",
+      "nta-seibi-20230314-w04:https://www.nta.go.jp/about/council/seibi/20230314/pdf/20230314shiryou.pdf",
+      "nta-seibi-20230529-003:https://www.nta.go.jp/about/council/seibi/20230529/pdf/20230529gijishidai.pdf",
+      "nta-seibi-20230529-003:https://www.nta.go.jp/about/council/seibi/20230529/pdf/20230529gijiyoushi.pdf",
+      "nta-seibi-20230529-003:https://www.nta.go.jp/about/council/seibi/20230529/pdf/20230529shiryou.pdf",
+      "nta-seibi-20230529-003:https://www.nta.go.jp/about/council/seibi/20230529/pdf/20230529shussekiiin.pdf",
+      "nta-seibi-20230823-w05:https://www.nta.go.jp/about/council/seibi/20230823/pdf/20230823gijishidai.pdf",
+      "nta-seibi-20230823-w05:https://www.nta.go.jp/about/council/seibi/20230823/pdf/20230823gijiyoushi.pdf",
+      "nta-seibi-20230823-w05:https://www.nta.go.jp/about/council/seibi/20230823/pdf/20230823shiryou.pdf",
+      "nta-seibi-20231003-w06:https://www.nta.go.jp/about/council/seibi/20231003/pdf/20231003gijishidai.pdf",
+      "nta-seibi-20231003-w06:https://www.nta.go.jp/about/council/seibi/20231003/pdf/20231003gijiyoushi.pdf",
+      "nta-seibi-20231003-w06:https://www.nta.go.jp/about/council/seibi/20231003/pdf/20231003shiryou.pdf",
+      "nta-seibi-20231128-w07:https://www.nta.go.jp/about/council/seibi/20231128/pdf/20231128gijishidai.pdf",
+      "nta-seibi-20231128-w07:https://www.nta.go.jp/about/council/seibi/20231128/pdf/20231128gijiyoushi.pdf",
+      "nta-seibi-20231128-w07:https://www.nta.go.jp/about/council/seibi/20231128/pdf/20231128shiryou.pdf",
+      "nta-seibi-20240409-w08:https://www.nta.go.jp/about/council/seibi/20240409/pdf/20240409gijishidai.pdf",
+      "nta-seibi-20240409-w08:https://www.nta.go.jp/about/council/seibi/20240409/pdf/20240409gijiyoushi.pdf",
+      "nta-seibi-20240409-w08:https://www.nta.go.jp/about/council/seibi/20240409/pdf/20240409shiryou.pdf",
+      "nta-seibi-20240611-004:https://www.nta.go.jp/about/council/seibi/20240611/pdf/20240611gijishidai.pdf",
+      "nta-seibi-20240611-004:https://www.nta.go.jp/about/council/seibi/20240611/pdf/20240611gijiyoushi.pdf",
+      "nta-seibi-20240611-004:https://www.nta.go.jp/about/council/seibi/20240611/pdf/20240611shiryou.pdf",
+      "nta-seibi-20240611-004:https://www.nta.go.jp/about/council/seibi/20240611/pdf/20240611shussekiiin.pdf",
+      "nta-seibi-20240918-w09:https://www.nta.go.jp/about/council/seibi/20240918/pdf/20240918gijishidai.pdf",
+      "nta-seibi-20240918-w09:https://www.nta.go.jp/about/council/seibi/20240918/pdf/20240918gijiyoushi.pdf",
+      "nta-seibi-20240918-w09:https://www.nta.go.jp/about/council/seibi/20240918/pdf/20240918shiryou.pdf",
+      "nta-seibi-20241218-005:https://www.nta.go.jp/about/council/seibi/20241218/pdf/20241218gijishidai.pdf",
+      "nta-seibi-20241218-005:https://www.nta.go.jp/about/council/seibi/20241218/pdf/20241218gijiyoushi.pdf",
+      "nta-seibi-20241218-005:https://www.nta.go.jp/about/council/seibi/20241218/pdf/20241218shiryou01.pdf",
+      "nta-seibi-20241218-005:https://www.nta.go.jp/about/council/seibi/20241218/pdf/20241218shiryou02.pdf",
+      "nta-seibi-20241218-005:https://www.nta.go.jp/about/council/seibi/20241218/pdf/20241218shiryou03.pdf",
+      "nta-seibi-20241218-005:https://www.nta.go.jp/about/council/seibi/20241218/pdf/20241218shiryou04.pdf",
+      "nta-seibi-20241218-005:https://www.nta.go.jp/about/council/seibi/20241218/pdf/20241218shiryou05.pdf",
+      "nta-seibi-20241218-005:https://www.nta.go.jp/about/council/seibi/20241218/pdf/20241218shiryou08.pdf",
+      "nta-seibi-20241218-005:https://www.nta.go.jp/about/council/seibi/20241218/pdf/20241218shussekiiin.pdf",
+      "nta-seibi-20251104-w10:https://www.nta.go.jp/about/council/seibi/20251001/pdf/20251104gijishidai.pdf",
+      "nta-seibi-20251104-w10:https://www.nta.go.jp/about/council/seibi/20251001/pdf/20251104gijiyoushi.pdf",
+      "nta-seibi-20251104-w10:https://www.nta.go.jp/about/council/seibi/20251001/pdf/20251104shiryou.pdf",
+      "nta-seibi-20260302-006:https://www.nta.go.jp/about/council/seibi/20260303/pdf/20260302gijishidai.pdf",
+      "nta-seibi-20260302-006:https://www.nta.go.jp/about/council/seibi/20260303/pdf/20260302gijiyoushi.pdf",
+      "nta-seibi-20260302-006:https://www.nta.go.jp/about/council/seibi/20260303/pdf/20260302shiryou.pdf",
+      "nta-seibi-20260302-006:https://www.nta.go.jp/about/council/seibi/20260303/pdf/20260302shussekiiin.pdf",
+      "nta-shingikai-20190313-020:https://www.nta.go.jp/about/council/shingikai/190313/gijiroku/index.htm",
+      "nta-shingikai-20190313-020:https://www.nta.go.jp/about/council/shingikai/190313/shiryo/pdf/01.pdf",
+      "nta-shingikai-20190313-020:https://www.nta.go.jp/about/council/shingikai/190313/shiryo/pdf/02-1.pdf",
+      "nta-shingikai-20190313-020:https://www.nta.go.jp/about/council/shingikai/190313/shiryo/pdf/02-2.pdf",
+      "nta-shingikai-20190313-020:https://www.nta.go.jp/about/council/shingikai/190313/shiryo/pdf/02-3.pdf",
+      "nta-shingikai-20190313-020:https://www.nta.go.jp/about/council/shingikai/190313/shiryo/pdf/02-4.pdf",
+      "nta-shingikai-20190313-020:https://www.nta.go.jp/about/council/shingikai/190313/shiryo/pdf/03.pdf",
+      "nta-shingikai-20190313-020:https://www.nta.go.jp/about/council/shingikai/190313/shiryo/pdf/04-1.pdf",
+      "nta-shingikai-20190313-020:https://www.nta.go.jp/about/council/shingikai/190313/shiryo/pdf/04-2.pdf",
+      "nta-shingikai-20190313-020:https://www.nta.go.jp/about/council/shingikai/190313/yoshi/01.htm",
+      "nta-shingikai-20201027-021:https://www.nta.go.jp/about/council/shingikai/201027/gijiroku/index.htm",
+      "nta-shingikai-20201027-021:https://www.nta.go.jp/about/council/shingikai/201027/shiryo/pdf/01.pdf",
+      "nta-shingikai-20201027-021:https://www.nta.go.jp/about/council/shingikai/201027/shiryo/pdf/02.pdf",
+      "nta-shingikai-20201027-021:https://www.nta.go.jp/about/council/shingikai/201027/shiryo/pdf/03.pdf",
+      "nta-shingikai-20201027-021:https://www.nta.go.jp/about/council/shingikai/201027/shiryo/pdf/04.pdf",
+      "nta-shingikai-20201027-021:https://www.nta.go.jp/about/council/shingikai/201027/shiryo/pdf/05-1.pdf",
+      "nta-shingikai-20201027-021:https://www.nta.go.jp/about/council/shingikai/201027/shiryo/pdf/05-2.pdf",
+      "nta-shingikai-20201027-021:https://www.nta.go.jp/about/council/shingikai/201027/shiryo/pdf/05-3.pdf",
+      "nta-shingikai-20201027-021:https://www.nta.go.jp/about/council/shingikai/201027/yoshi/01.htm",
+      "nta-shingikai-20210330-022:https://www.nta.go.jp/about/council/shingikai/210330/gijiroku/index.htm",
+      "nta-shingikai-20210330-022:https://www.nta.go.jp/about/council/shingikai/210330/shiryo/pdf/01.pdf",
+      "nta-shingikai-20210330-022:https://www.nta.go.jp/about/council/shingikai/210330/shiryo/pdf/02.pdf",
+      "nta-shingikai-20210330-022:https://www.nta.go.jp/about/council/shingikai/210330/shiryo/pdf/03.pdf",
+      "nta-shingikai-20210330-022:https://www.nta.go.jp/about/council/shingikai/210330/shiryo/pdf/04.pdf",
+      "nta-shingikai-20210330-022:https://www.nta.go.jp/about/council/shingikai/210330/yoshi/01.htm",
+      "nta-shingikai-20211027-023:https://www.nta.go.jp/about/council/shingikai/211027/gijiroku/index.htm",
+      "nta-shingikai-20211027-023:https://www.nta.go.jp/about/council/shingikai/211027/shiryo/pdf/01.pdf",
+      "nta-shingikai-20211027-023:https://www.nta.go.jp/about/council/shingikai/211027/shiryo/pdf/02.pdf",
+      "nta-shingikai-20211027-023:https://www.nta.go.jp/about/council/shingikai/211027/shiryo/pdf/03.pdf",
+      "nta-shingikai-20211027-023:https://www.nta.go.jp/about/council/shingikai/211027/shiryo/pdf/04.pdf",
+      "nta-shingikai-20211027-023:https://www.nta.go.jp/about/council/shingikai/211027/yoshi/01.htm",
+      "nta-shingikai-20221118-024:https://www.nta.go.jp/about/council/shingikai/211118/gijiroku/index.htm",
+      "nta-shingikai-20221118-024:https://www.nta.go.jp/about/council/shingikai/211118/shiryo/pdf/01.pdf",
+      "nta-shingikai-20221118-024:https://www.nta.go.jp/about/council/shingikai/211118/shiryo/pdf/02.pdf",
+      "nta-shingikai-20221118-024:https://www.nta.go.jp/about/council/shingikai/211118/shiryo/pdf/03.pdf",
+      "nta-shingikai-20221118-024:https://www.nta.go.jp/about/council/shingikai/211118/shiryo/pdf/04.pdf",
+      "nta-shingikai-20221118-024:https://www.nta.go.jp/about/council/shingikai/211118/shiryo/pdf/05.pdf",
+      "nta-shingikai-20221118-024:https://www.nta.go.jp/about/council/shingikai/211118/shiryo/pdf/meibo.pdf",
+      "nta-shingikai-20221118-024:https://www.nta.go.jp/about/council/shingikai/211118/yoshi/01.htm",
+      "nta-shingikai-20230315-025:https://www.nta.go.jp/about/council/shingikai/230315/gijiroku/index.htm",
+      "nta-shingikai-20230315-025:https://www.nta.go.jp/about/council/shingikai/230315/shiryo/pdf/01.pdf",
+      "nta-shingikai-20230315-025:https://www.nta.go.jp/about/council/shingikai/230315/shiryo/pdf/02.pdf",
+      "nta-shingikai-20230315-025:https://www.nta.go.jp/about/council/shingikai/230315/shiryo/pdf/03.pdf",
+      "nta-shingikai-20230315-025:https://www.nta.go.jp/about/council/shingikai/230315/shiryo/pdf/meibo.pdf",
+      "nta-shingikai-20230315-025:https://www.nta.go.jp/about/council/shingikai/230315/yoshi/01.htm",
+      "nta-shingikai-20231205-026:https://www.nta.go.jp/about/council/shingikai/231205/gijiroku/index.htm",
+      "nta-shingikai-20231205-026:https://www.nta.go.jp/about/council/shingikai/231205/shiryo/pdf/01.pdf",
+      "nta-shingikai-20231205-026:https://www.nta.go.jp/about/council/shingikai/231205/shiryo/pdf/02.pdf",
+      "nta-shingikai-20231205-026:https://www.nta.go.jp/about/council/shingikai/231205/shiryo/pdf/03.pdf",
+      "nta-shingikai-20231205-026:https://www.nta.go.jp/about/council/shingikai/231205/shiryo/pdf/meibo.pdf",
+      "nta-shingikai-20231205-026:https://www.nta.go.jp/about/council/shingikai/231205/yoshi/01.htm",
+      "nta-shingikai-20241203-027:https://www.nta.go.jp/about/council/shingikai/241203/gijiroku/index.htm",
+      "nta-shingikai-20241203-027:https://www.nta.go.jp/about/council/shingikai/241203/shiryo/pdf/01.pdf",
+      "nta-shingikai-20241203-027:https://www.nta.go.jp/about/council/shingikai/241203/shiryo/pdf/02.pdf",
+      "nta-shingikai-20241203-027:https://www.nta.go.jp/about/council/shingikai/241203/shiryo/pdf/03.pdf",
+      "nta-shingikai-20241203-027:https://www.nta.go.jp/about/council/shingikai/241203/shiryo/pdf/meibo.pdf",
+      "nta-shingikai-20241203-027:https://www.nta.go.jp/about/council/shingikai/241203/yoshi/01.htm",
+      "nta-shingikai-20250324-028:https://www.nta.go.jp/about/council/shingikai/250324/gijiroku/index.htm",
+      "nta-shingikai-20250324-028:https://www.nta.go.jp/about/council/shingikai/250324/shiryo/pdf/01.pdf",
+      "nta-shingikai-20250324-028:https://www.nta.go.jp/about/council/shingikai/250324/shiryo/pdf/02.pdf",
+      "nta-shingikai-20250324-028:https://www.nta.go.jp/about/council/shingikai/250324/shiryo/pdf/03.pdf",
+      "nta-shingikai-20250324-028:https://www.nta.go.jp/about/council/shingikai/250324/shiryo/pdf/meibo.pdf",
+      "nta-shingikai-20250324-028:https://www.nta.go.jp/about/council/shingikai/250324/yoshi/01.htm",
+      "nta-shingikai-20251208-029:https://www.nta.go.jp/about/council/shingikai/251208/gijiroku/index.htm",
+      "nta-shingikai-20251208-029:https://www.nta.go.jp/about/council/shingikai/251208/shiryo/pdf/01.pdf",
+      "nta-shingikai-20251208-029:https://www.nta.go.jp/about/council/shingikai/251208/shiryo/pdf/02.pdf",
+      "nta-shingikai-20251208-029:https://www.nta.go.jp/about/council/shingikai/251208/shiryo/pdf/03.pdf",
+      "nta-shingikai-20251208-029:https://www.nta.go.jp/about/council/shingikai/251208/shiryo/pdf/04.pdf",
+      "nta-shingikai-20251208-029:https://www.nta.go.jp/about/council/shingikai/251208/shiryo/pdf/meibo.pdf",
+      "nta-shingikai-20251208-029:https://www.nta.go.jp/about/council/shingikai/251208/yoshi/01.htm",
+      "nta-sinsabunkakai-20190313-012:https://www.nta.go.jp/about/council/sinsabunkakai/190313/gijiroku/01.htm",
+      "nta-sinsabunkakai-20190313-012:https://www.nta.go.jp/about/council/sinsabunkakai/190313/shiryo/pdf/01.pdf",
+      "nta-sinsabunkakai-20190313-012:https://www.nta.go.jp/about/council/sinsabunkakai/190313/yoshi/index.htm",
+      "nta-sinsabunkakai-20210330-013:https://www.nta.go.jp/about/council/sinsabunkakai/210330/gijiroku/01.htm",
+      "nta-sinsabunkakai-20210330-013:https://www.nta.go.jp/about/council/sinsabunkakai/210330/shiryo/pdf/01.pdf",
+      "nta-sinsabunkakai-20210330-013:https://www.nta.go.jp/about/council/sinsabunkakai/210330/shiryo/pdf/02.pdf",
+      "nta-sinsabunkakai-20210330-013:https://www.nta.go.jp/about/council/sinsabunkakai/210330/yoshi/index.htm",
+      "nta-sinsabunkakai-20230315-014:https://www.nta.go.jp/about/council/sinsabunkakai/230315/gijiroku/01.htm",
+      "nta-sinsabunkakai-20230315-014:https://www.nta.go.jp/about/council/sinsabunkakai/230315/shiryo/pdf/01.pdf",
+      "nta-sinsabunkakai-20230315-014:https://www.nta.go.jp/about/council/sinsabunkakai/230315/shiryo/pdf/02.pdf",
+      "nta-sinsabunkakai-20230315-014:https://www.nta.go.jp/about/council/sinsabunkakai/230315/yoshi/index.htm",
+      "nta-sinsabunkakai-20250324-015:https://www.nta.go.jp/about/council/sinsabunkakai/250324/gijiroku/01.htm",
+      "nta-sinsabunkakai-20250324-015:https://www.nta.go.jp/about/council/sinsabunkakai/250324/shiryo/pdf/01.pdf",
+      "nta-sinsabunkakai-20250324-015:https://www.nta.go.jp/about/council/sinsabunkakai/250324/shiryo/pdf/02.pdf",
+      "nta-sinsabunkakai-20250324-015:https://www.nta.go.jp/about/council/sinsabunkakai/250324/yoshi/index.htm",
+      "nta-statistics-20210706-001:https://www.nta.go.jp/about/council/statistics/210706/pdf/01.pdf",
+      "nta-statistics-20210706-001:https://www.nta.go.jp/about/council/statistics/210706/pdf/02.pdf",
+      "nta-statistics-20210706-001:https://www.nta.go.jp/about/council/statistics/210706/pdf/03.pdf",
+      "nta-statistics-20210706-001:https://www.nta.go.jp/about/council/statistics/210706/pdf/04.pdf",
+      "nta-statistics-20210706-001:https://www.nta.go.jp/about/council/statistics/210706/pdf/iin.pdf",
+      "nta-statistics-20210706-001:https://www.nta.go.jp/about/council/statistics/210706/pdf/shidai.pdf",
+      "nta-statistics-20210706-001:https://www.nta.go.jp/about/council/statistics/210706/pdf/yoshi.pdf",
+      "nta-statistics-20210902-w01:https://www.nta.go.jp/about/council/working/210903/pdf/0021008-069_1.pdf",
+      "nta-statistics-20210902-w01:https://www.nta.go.jp/about/council/working/210903/pdf/0021008-069_2.pdf",
+      "nta-statistics-20210902-w01:https://www.nta.go.jp/about/council/working/210903/pdf/0021008-069_3.pdf",
+      "nta-statistics-20210902-w01:https://www.nta.go.jp/about/council/working/210903/pdf/yoshi.pdf",
+      "nta-statistics-20211119-002:https://www.nta.go.jp/about/council/statistics/211119/pdf/01.pdf",
+      "nta-statistics-20211119-002:https://www.nta.go.jp/about/council/statistics/211119/pdf/02.pdf",
+      "nta-statistics-20211119-002:https://www.nta.go.jp/about/council/statistics/211119/pdf/iin.pdf",
+      "nta-statistics-20211119-002:https://www.nta.go.jp/about/council/statistics/211119/pdf/shidai.pdf",
+      "nta-statistics-20211119-002:https://www.nta.go.jp/about/council/statistics/211119/pdf/yoshi.pdf",
+      "nta-statistics-20220524-003:https://www.nta.go.jp/about/council/statistics/220530/pdf/01.pdf",
+      "nta-statistics-20220524-003:https://www.nta.go.jp/about/council/statistics/220530/pdf/02.pdf",
+      "nta-statistics-20220524-003:https://www.nta.go.jp/about/council/statistics/220530/pdf/iin.pdf",
+      "nta-statistics-20220524-003:https://www.nta.go.jp/about/council/statistics/220530/pdf/shidai.pdf",
+      "nta-statistics-20220524-003:https://www.nta.go.jp/about/council/statistics/220530/pdf/yoshi.pdf",
+      "nta-statistics-20221007-004:https://www.nta.go.jp/about/council/statistics/221007/pdf/01.pdf",
+      "nta-statistics-20221007-004:https://www.nta.go.jp/about/council/statistics/221007/pdf/02.pdf",
+      "nta-statistics-20221007-004:https://www.nta.go.jp/about/council/statistics/221007/pdf/iin.pdf",
+      "nta-statistics-20221007-004:https://www.nta.go.jp/about/council/statistics/221007/pdf/shidai.pdf",
+      "nta-statistics-20221007-004:https://www.nta.go.jp/about/council/statistics/221007/pdf/yoshi.pdf",
+      "nta-statistics-20230608-005:https://www.nta.go.jp/about/council/statistics/230608/pdf/01.pdf",
+      "nta-statistics-20230608-005:https://www.nta.go.jp/about/council/statistics/230608/pdf/02.pdf",
+      "nta-statistics-20230608-005:https://www.nta.go.jp/about/council/statistics/230608/pdf/iin.pdf",
+      "nta-statistics-20230608-005:https://www.nta.go.jp/about/council/statistics/230608/pdf/shidai.pdf",
+      "nta-statistics-20230608-005:https://www.nta.go.jp/about/council/statistics/230608/pdf/yoshi.pdf",
+      "nta-statistics-20250207-006:https://www.nta.go.jp/about/council/statistics/250210/pdf/01.pdf",
+      "nta-statistics-20250207-006:https://www.nta.go.jp/about/council/statistics/250210/pdf/iin.pdf",
+      "nta-statistics-20250207-006:https://www.nta.go.jp/about/council/statistics/250210/pdf/shidai.pdf",
+      "nta-statistics-20250207-006:https://www.nta.go.jp/about/council/statistics/250210/pdf/yoshi.pdf",
+      "nta-statistics-20250523-007:https://www.nta.go.jp/about/council/statistics/250523/pdf/01.pdf",
+      "nta-statistics-20250523-007:https://www.nta.go.jp/about/council/statistics/250523/pdf/iin.pdf",
+      "nta-statistics-20250523-007:https://www.nta.go.jp/about/council/statistics/250523/pdf/shidai.pdf",
+      "nta-statistics-20250523-007:https://www.nta.go.jp/about/council/statistics/250523/pdf/yoshi.pdf",
+      "nta-statistics-20251204-008:https://www.nta.go.jp/about/council/statistics/251204/pdf/01.pdf",
+      "nta-statistics-20251204-008:https://www.nta.go.jp/about/council/statistics/251204/pdf/iin.pdf",
+      "nta-statistics-20251204-008:https://www.nta.go.jp/about/council/statistics/251204/pdf/shidai.pdf",
+      "nta-statistics-20251204-008:https://www.nta.go.jp/about/council/statistics/251204/pdf/yoshi.pdf",
+      "nta-statistics-20260525-009:https://www.nta.go.jp/about/council/statistics/260525/pdf/01.pdf",
+      "nta-statistics-20260525-009:https://www.nta.go.jp/about/council/statistics/260525/pdf/iin.pdf",
+      "nta-statistics-20260525-009:https://www.nta.go.jp/about/council/statistics/260525/pdf/shidai.pdf",
+      "nta-statistics-20260525-009:https://www.nta.go.jp/about/council/statistics/260525/pdf/yoshi.pdf",
+      "nta-tochihyoka_fukuoka-20260513-s01:https://www.nta.go.jp/about/council/tochihyoka/fukuoka/pdf/02.pdf",
+      "nta-tochihyoka_fukuoka-20260513-s01:https://www.nta.go.jp/about/council/tochihyoka/fukuoka/pdf/03.pdf",
+      "nta-tochihyoka_fukuoka-20260513-s01:https://www.nta.go.jp/about/council/tochihyoka/fukuoka/pdf/04.pdf",
+      "nta-tochihyoka_fukuoka-20260513-s01:https://www.nta.go.jp/about/council/tochihyoka/fukuoka/pdf/05.pdf",
+      "nta-tochihyoka_fukuoka-20260513-s01:https://www.nta.go.jp/about/council/tochihyoka/fukuoka/pdf/06.pdf",
+      "nta-tochihyoka_fukuoka-20260513-s01:https://www.nta.go.jp/about/council/tochihyoka/fukuoka/pdf/07.pdf",
+      "nta-tochihyoka_hiroshima-20260512-s01:https://www.nta.go.jp/about/council/tochihyoka/hiroshima/pdf/02.pdf",
+      "nta-tochihyoka_hiroshima-20260512-s01:https://www.nta.go.jp/about/council/tochihyoka/hiroshima/pdf/03.pdf",
+      "nta-tochihyoka_hiroshima-20260512-s01:https://www.nta.go.jp/about/council/tochihyoka/hiroshima/pdf/04.pdf",
+      "nta-tochihyoka_hiroshima-20260512-s01:https://www.nta.go.jp/about/council/tochihyoka/hiroshima/pdf/05.pdf",
+      "nta-tochihyoka_hiroshima-20260512-s01:https://www.nta.go.jp/about/council/tochihyoka/hiroshima/pdf/06.pdf",
+      "nta-tochihyoka_hiroshima-20260512-s01:https://www.nta.go.jp/about/council/tochihyoka/hiroshima/pdf/07.pdf",
+      "nta-tochihyoka_kanazawa-20260511-s01:https://www.nta.go.jp/about/council/tochihyoka/kanazawa/pdf/02.pdf",
+      "nta-tochihyoka_kanazawa-20260511-s01:https://www.nta.go.jp/about/council/tochihyoka/kanazawa/pdf/03.pdf",
+      "nta-tochihyoka_kanazawa-20260511-s01:https://www.nta.go.jp/about/council/tochihyoka/kanazawa/pdf/04.pdf",
+      "nta-tochihyoka_kanazawa-20260511-s01:https://www.nta.go.jp/about/council/tochihyoka/kanazawa/pdf/05.pdf",
+      "nta-tochihyoka_kanazawa-20260511-s01:https://www.nta.go.jp/about/council/tochihyoka/kanazawa/pdf/06.pdf",
+      "nta-tochihyoka_kanazawa-20260511-s01:https://www.nta.go.jp/about/council/tochihyoka/kanazawa/pdf/07.pdf",
+      "nta-tochihyoka_kantoshinetsu-20260512-s01:https://www.nta.go.jp/about/council/tochihyoka/kantoshinetsu/pdf/02.pdf",
+      "nta-tochihyoka_kantoshinetsu-20260512-s01:https://www.nta.go.jp/about/council/tochihyoka/kantoshinetsu/pdf/03.pdf",
+      "nta-tochihyoka_kantoshinetsu-20260512-s01:https://www.nta.go.jp/about/council/tochihyoka/kantoshinetsu/pdf/04.pdf",
+      "nta-tochihyoka_kantoshinetsu-20260512-s01:https://www.nta.go.jp/about/council/tochihyoka/kantoshinetsu/pdf/05.pdf",
+      "nta-tochihyoka_kantoshinetsu-20260512-s01:https://www.nta.go.jp/about/council/tochihyoka/kantoshinetsu/pdf/06.pdf",
+      "nta-tochihyoka_kantoshinetsu-20260512-s01:https://www.nta.go.jp/about/council/tochihyoka/kantoshinetsu/pdf/07.pdf",
+      "nta-tochihyoka_kumamoto-20260512-s01:https://www.nta.go.jp/about/council/tochihyoka/kumamoto/pdf/02.pdf",
+      "nta-tochihyoka_kumamoto-20260512-s01:https://www.nta.go.jp/about/council/tochihyoka/kumamoto/pdf/03.pdf",
+      "nta-tochihyoka_kumamoto-20260512-s01:https://www.nta.go.jp/about/council/tochihyoka/kumamoto/pdf/04.pdf",
+      "nta-tochihyoka_kumamoto-20260512-s01:https://www.nta.go.jp/about/council/tochihyoka/kumamoto/pdf/05.pdf",
+      "nta-tochihyoka_kumamoto-20260512-s01:https://www.nta.go.jp/about/council/tochihyoka/kumamoto/pdf/06.pdf",
+      "nta-tochihyoka_kumamoto-20260512-s01:https://www.nta.go.jp/about/council/tochihyoka/kumamoto/pdf/07.pdf",
+      "nta-tochihyoka_nagoya-20260512-s01:https://www.nta.go.jp/about/council/tochihyoka/nagoya/pdf/02.pdf",
+      "nta-tochihyoka_nagoya-20260512-s01:https://www.nta.go.jp/about/council/tochihyoka/nagoya/pdf/03.pdf",
+      "nta-tochihyoka_nagoya-20260512-s01:https://www.nta.go.jp/about/council/tochihyoka/nagoya/pdf/04.pdf",
+      "nta-tochihyoka_nagoya-20260512-s01:https://www.nta.go.jp/about/council/tochihyoka/nagoya/pdf/05.pdf",
+      "nta-tochihyoka_nagoya-20260512-s01:https://www.nta.go.jp/about/council/tochihyoka/nagoya/pdf/06.pdf",
+      "nta-tochihyoka_nagoya-20260512-s01:https://www.nta.go.jp/about/council/tochihyoka/nagoya/pdf/07.pdf",
+      "nta-tochihyoka_okinawa-20260511-s01:https://www.nta.go.jp/about/council/tochihyoka/okinawa/pdf/02.pdf",
+      "nta-tochihyoka_okinawa-20260511-s01:https://www.nta.go.jp/about/council/tochihyoka/okinawa/pdf/03.pdf",
+      "nta-tochihyoka_okinawa-20260511-s01:https://www.nta.go.jp/about/council/tochihyoka/okinawa/pdf/04.pdf",
+      "nta-tochihyoka_okinawa-20260511-s01:https://www.nta.go.jp/about/council/tochihyoka/okinawa/pdf/05.pdf",
+      "nta-tochihyoka_okinawa-20260511-s01:https://www.nta.go.jp/about/council/tochihyoka/okinawa/pdf/06.pdf",
+      "nta-tochihyoka_okinawa-20260511-s01:https://www.nta.go.jp/about/council/tochihyoka/okinawa/pdf/07.pdf",
+      "nta-tochihyoka_osaka-20260513-s01:https://www.nta.go.jp/about/council/tochihyoka/osaka/pdf/02.pdf",
+      "nta-tochihyoka_osaka-20260513-s01:https://www.nta.go.jp/about/council/tochihyoka/osaka/pdf/03.pdf",
+      "nta-tochihyoka_osaka-20260513-s01:https://www.nta.go.jp/about/council/tochihyoka/osaka/pdf/04.pdf",
+      "nta-tochihyoka_osaka-20260513-s01:https://www.nta.go.jp/about/council/tochihyoka/osaka/pdf/05.pdf",
+      "nta-tochihyoka_osaka-20260513-s01:https://www.nta.go.jp/about/council/tochihyoka/osaka/pdf/06.pdf",
+      "nta-tochihyoka_osaka-20260513-s01:https://www.nta.go.jp/about/council/tochihyoka/osaka/pdf/07.pdf",
+      "nta-tochihyoka_sapporo-20260512-s01:https://www.nta.go.jp/about/council/tochihyoka/sapporo/pdf/02.pdf",
+      "nta-tochihyoka_sapporo-20260512-s01:https://www.nta.go.jp/about/council/tochihyoka/sapporo/pdf/03.pdf",
+      "nta-tochihyoka_sapporo-20260512-s01:https://www.nta.go.jp/about/council/tochihyoka/sapporo/pdf/04.pdf",
+      "nta-tochihyoka_sapporo-20260512-s01:https://www.nta.go.jp/about/council/tochihyoka/sapporo/pdf/05.pdf",
+      "nta-tochihyoka_sapporo-20260512-s01:https://www.nta.go.jp/about/council/tochihyoka/sapporo/pdf/06.pdf",
+      "nta-tochihyoka_sapporo-20260512-s01:https://www.nta.go.jp/about/council/tochihyoka/sapporo/pdf/07.pdf",
+      "nta-tochihyoka_sendai-20260511-054:https://www.nta.go.jp/about/council/tochihyoka/sendai/pdf/02.pdf",
+      "nta-tochihyoka_sendai-20260511-054:https://www.nta.go.jp/about/council/tochihyoka/sendai/pdf/03.pdf",
+      "nta-tochihyoka_sendai-20260511-054:https://www.nta.go.jp/about/council/tochihyoka/sendai/pdf/04.pdf",
+      "nta-tochihyoka_sendai-20260511-054:https://www.nta.go.jp/about/council/tochihyoka/sendai/pdf/05.pdf",
+      "nta-tochihyoka_sendai-20260511-054:https://www.nta.go.jp/about/council/tochihyoka/sendai/pdf/06.pdf",
+      "nta-tochihyoka_sendai-20260511-054:https://www.nta.go.jp/about/council/tochihyoka/sendai/pdf/07.pdf",
+      "nta-tochihyoka_takamatsu-20260512-s01:https://www.nta.go.jp/about/council/tochihyoka/takamatsu/pdf/02.pdf",
+      "nta-tochihyoka_takamatsu-20260512-s01:https://www.nta.go.jp/about/council/tochihyoka/takamatsu/pdf/03.pdf",
+      "nta-tochihyoka_takamatsu-20260512-s01:https://www.nta.go.jp/about/council/tochihyoka/takamatsu/pdf/04.pdf",
+      "nta-tochihyoka_takamatsu-20260512-s01:https://www.nta.go.jp/about/council/tochihyoka/takamatsu/pdf/05.pdf",
+      "nta-tochihyoka_takamatsu-20260512-s01:https://www.nta.go.jp/about/council/tochihyoka/takamatsu/pdf/06.pdf",
+      "nta-tochihyoka_takamatsu-20260512-s01:https://www.nta.go.jp/about/council/tochihyoka/takamatsu/pdf/07.pdf",
+      "nta-tochihyoka_tokyo-20260512-s01:https://www.nta.go.jp/about/council/tochihyoka/tokyo/pdf/02.pdf",
+      "nta-tochihyoka_tokyo-20260512-s01:https://www.nta.go.jp/about/council/tochihyoka/tokyo/pdf/03.pdf",
+      "nta-tochihyoka_tokyo-20260512-s01:https://www.nta.go.jp/about/council/tochihyoka/tokyo/pdf/04.pdf",
+      "nta-tochihyoka_tokyo-20260512-s01:https://www.nta.go.jp/about/council/tochihyoka/tokyo/pdf/05.pdf",
+      "nta-tochihyoka_tokyo-20260512-s01:https://www.nta.go.jp/about/council/tochihyoka/tokyo/pdf/06.pdf",
+      "nta-tochihyoka_tokyo-20260512-s01:https://www.nta.go.jp/about/council/tochihyoka/tokyo/pdf/07.pdf",
+      "nta-zeirishi-20190313-088:https://www.nta.go.jp/about/council/zeirishi/190313/88.htm",
+      "nta-zeirishi-20190313-088:https://www.nta.go.jp/about/council/zeirishi/190313/gijiroku/01.htm",
+      "nta-zeirishi-20190523-089:https://www.nta.go.jp/about/council/zeirishi/190523/89.htm",
+      "nta-zeirishi-20190531-090:https://www.nta.go.jp/about/council/zeirishi/190531/90.htm",
+      "nta-zeirishi-20191205-091:https://www.nta.go.jp/about/council/zeirishi/191205/91.htm",
+      "nta-zeirishi-20191220-092:https://www.nta.go.jp/about/council/zeirishi/191220/92.htm",
+      "nta-zeirishi-20200602-093:https://www.nta.go.jp/about/council/zeirishi/200602/93.htm",
+      "nta-zeirishi-20200814-094:https://www.nta.go.jp/about/council/zeirishi/200814/94.htm",
+      "nta-zeirishi-20201210-095:https://www.nta.go.jp/about/council/zeirishi/201210/95.htm",
+      "nta-zeirishi-20210330-096:https://www.nta.go.jp/about/council/zeirishi/210330/96.htm",
+      "nta-zeirishi-20210330-096:https://www.nta.go.jp/about/council/zeirishi/210330/gijiroku/01.htm",
+      "nta-zeirishi-20210524-097:https://www.nta.go.jp/about/council/zeirishi/210524/97.htm",
+      "nta-zeirishi-20210528-098:https://www.nta.go.jp/about/council/zeirishi/210528/98.htm",
+      "nta-zeirishi-20211209-099:https://www.nta.go.jp/about/council/zeirishi/211209/99.htm",
+      "nta-zeirishi-20220527-100:https://www.nta.go.jp/about/council/zeirishi/220527/100.htm",
+      "nta-zeirishi-20220602-101:https://www.nta.go.jp/about/council/zeirishi/220602/101.htm",
+      "nta-zeirishi-20221125-102:https://www.nta.go.jp/about/council/zeirishi/221130/103.htm",
+      "nta-zeirishi-20221215-103:https://www.nta.go.jp/about/council/zeirishi/221215/103.htm",
+      "nta-zeirishi-20230315-104:https://www.nta.go.jp/about/council/zeirishi/230315/104.htm",
+      "nta-zeirishi-20230315-104:https://www.nta.go.jp/about/council/zeirishi/230315/gijiroku/01.htm",
+      "nta-zeirishi-20230526-105:https://www.nta.go.jp/about/council/zeirishi/230526/105.htm",
+      "nta-zeirishi-20230616-106:https://www.nta.go.jp/about/council/zeirishi/230616/106.htm",
+      "nta-zeirishi-20231122-107:https://www.nta.go.jp/about/council/zeirishi/231122/107.htm",
+      "nta-zeirishi-20231214-108:https://www.nta.go.jp/about/council/zeirishi/231214/108.htm",
+      "nta-zeirishi-20240528-109:https://www.nta.go.jp/about/council/zeirishi/240528/109.htm",
+      "nta-zeirishi-20240531-110:https://www.nta.go.jp/about/council/zeirishi/240531/110.htm",
+      "nta-zeirishi-20241121-111:https://www.nta.go.jp/about/council/zeirishi/241121/111.htm",
+      "nta-zeirishi-20241212-112:https://www.nta.go.jp/about/council/zeirishi/241212/112.htm",
+      "nta-zeirishi-20250324-113:https://www.nta.go.jp/about/council/zeirishi/250324/gijiroku/01.htm",
+      "nta-zeirishi-20250324-113:https://www.nta.go.jp/about/council/zeirishi/250324/index.htm",
+      "nta-zeirishi-20250527-114:https://www.nta.go.jp/about/council/zeirishi/2505101/114.htm",
+      "nta-zeirishi-20250603-115:https://www.nta.go.jp/about/council/zeirishi/2505101/115.htm",
+      "nta-zeirishi-20251120-116:https://www.nta.go.jp/about/council/zeirishi/251120/116.htm",
+      "nta-zeirishi-20251210-117:https://www.nta.go.jp/about/council/zeirishi/251224/117.htm",
+      "nta-zeirishi-20251225-118:https://www.nta.go.jp/about/council/zeirishi/260119/118.htm",
+      "nta-zeirishi-20260528-119:https://www.nta.go.jp/about/council/zeirishi/260528/119.htm",
+      "nta-zeirishi-20260818-120:https://www.nta.go.jp/about/council/zeirishi/260818/120.htm",
+      "nta-zeirishi-20261015-121:https://www.nta.go.jp/about/council/zeirishi/261015/121.htm",
       "ppc-personalinfo_kentoukai-20240729-001:https://www.ppc.go.jp/files/pdf/20240731_kentohkai_gijiroku.pdf",
       "ppc-personalinfo_kentoukai-20240903-002:https://www.ppc.go.jp/files/pdf/20240905_kentohkai_gijiroku.pdf",
       "ppc-personalinfo_kentoukai-20240924-003:https://www.ppc.go.jp/files/pdf/20240926_kentohkai_gijiroku.pdf",
@@ -109079,7 +110480,33 @@
     ],
     "councilMaterials": [
       "atla-jiki_system:https://www.mod.go.jp/atla/soubiseisaku/soubiseisakukaigishiryou/jiki_sonota_r0304.pdf",
-      "atla-jiki_system:https://www.mod.go.jp/atla/soubiseisaku/soubiseisakukaigishiryou/jiki_yoko_r0306.pdf"
+      "atla-jiki_system:https://www.mod.go.jp/atla/soubiseisaku/soubiseisakukaigishiryou/jiki_yoko_r0306.pdf",
+      "nta-idenshi:https://www.nta.go.jp/about/council/mansion/pdf/02_meibo.pdf",
+      "nta-kyodokenkyu:https://www.nta.go.jp/about/council/kyodokenkyu/250701/pdf/250701meibo.pdf",
+      "nta-mansion:https://www.nta.go.jp/about/council/mansion/pdf/01_meibo.pdf",
+      "nta-nai_hyoka:https://www.nta.go.jp/about/council/nai-hyoka/pdf/kaisai_kabukaigi.pdf",
+      "nta-nai_hyoka:https://www.nta.go.jp/about/council/nai-hyoka/pdf/meibo_kabukaigi.pdf",
+      "nta-sake_global:https://www.nta.go.jp/about/council/sake3/meibo/01.pdf",
+      "nta-sake_hanbai:https://www.nta.go.jp/about/council/sake/meibo2002/02.htm",
+      "nta-sake_hanbai:https://www.nta.go.jp/about/council/sake/meibo2004/01.htm",
+      "nta-sake_pr:https://www.nta.go.jp/about/council/sake2/meibo/01.htm",
+      "nta-seibi:https://www.nta.go.jp/about/council/seibi/pdf/meibo.pdf",
+      "nta-shingikai:https://www.nta.go.jp/about/council/law/00.htm",
+      "nta-shingikai:https://www.nta.go.jp/about/council/meibo/01.htm",
+      "nta-shingikai:https://www.nta.go.jp/about/council/toshin/00.htm",
+      "nta-statistics:https://www.nta.go.jp/about/council/statistics/pdf/meibo.pdf",
+      "nta-tochihyoka_fukuoka:https://www.nta.go.jp/about/council/tochihyoka/fukuoka/pdf/01.pdf",
+      "nta-tochihyoka_hiroshima:https://www.nta.go.jp/about/council/tochihyoka/hiroshima/pdf/01.pdf",
+      "nta-tochihyoka_kanazawa:https://www.nta.go.jp/about/council/tochihyoka/kanazawa/pdf/01.pdf",
+      "nta-tochihyoka_kantoshinetsu:https://www.nta.go.jp/about/council/tochihyoka/kantoshinetsu/pdf/01.pdf",
+      "nta-tochihyoka_kumamoto:https://www.nta.go.jp/about/council/tochihyoka/kumamoto/pdf/01.pdf",
+      "nta-tochihyoka_nagoya:https://www.nta.go.jp/about/council/tochihyoka/nagoya/pdf/01.pdf",
+      "nta-tochihyoka_okinawa:https://www.nta.go.jp/about/council/tochihyoka/okinawa/pdf/01.pdf",
+      "nta-tochihyoka_osaka:https://www.nta.go.jp/about/council/tochihyoka/osaka/pdf/01.pdf",
+      "nta-tochihyoka_sapporo:https://www.nta.go.jp/about/council/tochihyoka/sapporo/pdf/01.pdf",
+      "nta-tochihyoka_sendai:https://www.nta.go.jp/about/council/tochihyoka/sendai/pdf/01.pdf",
+      "nta-tochihyoka_takamatsu:https://www.nta.go.jp/about/council/tochihyoka/takamatsu/pdf/01.pdf",
+      "nta-tochihyoka_tokyo:https://www.nta.go.jp/about/council/tochihyoka/tokyo/pdf/01.pdf"
     ]
   },
   "councilCrawlMeta": {
@@ -109266,6 +110693,118 @@
     "moj-2994": {
       "discoveredAt": "2026/10/24 17:12",
       "discoverySource": "rule"
+    },
+    "nta-chiri_bunkakai": {
+      "discoveredAt": "2026/11/27 08:25",
+      "discoverySource": "manual"
+    },
+    "nta-etax_kenkyukai": {
+      "discoveredAt": "2026/11/27 08:25",
+      "discoverySource": "manual"
+    },
+    "nta-idenshi": {
+      "discoveredAt": "2026/11/27 08:25",
+      "discoverySource": "manual"
+    },
+    "nta-kyodokenkyu": {
+      "discoveredAt": "2026/11/27 08:25",
+      "discoverySource": "manual"
+    },
+    "nta-mansion": {
+      "discoveredAt": "2026/11/27 08:25",
+      "discoverySource": "manual"
+    },
+    "nta-nai_hyoka": {
+      "discoveredAt": "2026/11/27 08:25",
+      "discoverySource": "manual"
+    },
+    "nta-sake_brand": {
+      "discoveredAt": "2026/11/27 08:25",
+      "discoverySource": "manual"
+    },
+    "nta-sake_bunkakai": {
+      "discoveredAt": "2026/11/27 08:25",
+      "discoverySource": "manual"
+    },
+    "nta-sake_global": {
+      "discoveredAt": "2026/11/27 08:25",
+      "discoverySource": "manual"
+    },
+    "nta-sake_hanbai": {
+      "discoveredAt": "2026/11/27 08:25",
+      "discoverySource": "manual"
+    },
+    "nta-sake_pr": {
+      "discoveredAt": "2026/11/27 08:25",
+      "discoverySource": "manual"
+    },
+    "nta-seibi": {
+      "discoveredAt": "2026/11/27 08:25",
+      "discoverySource": "manual"
+    },
+    "nta-shingikai": {
+      "discoveredAt": "2026/11/27 08:25",
+      "discoverySource": "manual"
+    },
+    "nta-sinsabunkakai": {
+      "discoveredAt": "2026/11/27 08:25",
+      "discoverySource": "manual"
+    },
+    "nta-statistics": {
+      "discoveredAt": "2026/11/27 08:25",
+      "discoverySource": "manual"
+    },
+    "nta-tochihyoka_fukuoka": {
+      "discoveredAt": "2026/11/27 08:25",
+      "discoverySource": "manual"
+    },
+    "nta-tochihyoka_hiroshima": {
+      "discoveredAt": "2026/11/27 08:25",
+      "discoverySource": "manual"
+    },
+    "nta-tochihyoka_kanazawa": {
+      "discoveredAt": "2026/11/27 08:25",
+      "discoverySource": "manual"
+    },
+    "nta-tochihyoka_kantoshinetsu": {
+      "discoveredAt": "2026/11/27 08:25",
+      "discoverySource": "manual"
+    },
+    "nta-tochihyoka_kumamoto": {
+      "discoveredAt": "2026/11/27 08:25",
+      "discoverySource": "manual"
+    },
+    "nta-tochihyoka_nagoya": {
+      "discoveredAt": "2026/11/27 08:25",
+      "discoverySource": "manual"
+    },
+    "nta-tochihyoka_okinawa": {
+      "discoveredAt": "2026/11/27 08:25",
+      "discoverySource": "manual"
+    },
+    "nta-tochihyoka_osaka": {
+      "discoveredAt": "2026/11/27 08:25",
+      "discoverySource": "manual"
+    },
+    "nta-tochihyoka_sapporo": {
+      "discoveredAt": "2026/11/27 08:25",
+      "discoverySource": "manual"
+    },
+    "nta-tochihyoka_sendai": {
+      "discoveredAt": "2026/11/27 08:25",
+      "discoverySource": "manual"
+    },
+    "nta-tochihyoka_takamatsu": {
+      "discoveredAt": "2026/11/27 08:25",
+      "discoverySource": "manual"
+    },
+    "nta-tochihyoka_tokyo": {
+      "discoveredAt": "2026/11/27 08:25",
+      "discoverySource": "manual"
+    },
+    "nta-zeirishi": {
+      "discoveredAt": "2026/11/27 08:25",
+      "discoverySource": "manual"
     }
   },
   "meetingCrawlMeta": {
@@ -141178,6 +142717,522 @@
     },
     "nra-teireikai-20261014-001": {
       "discoveredAt": "2026/10/17 15:32"
+    },
+    "nta-chiri_bunkakai-20150625-001": {
+      "discoveredAt": "2026/11/27 08:25"
+    },
+    "nta-chiri_bunkakai-20190313-002": {
+      "discoveredAt": "2026/11/27 08:25"
+    },
+    "nta-etax_kenkyukai-19990621-001": {
+      "discoveredAt": "2026/11/27 08:25"
+    },
+    "nta-etax_kenkyukai-19990805-002": {
+      "discoveredAt": "2026/11/27 08:25"
+    },
+    "nta-etax_kenkyukai-19990920-003": {
+      "discoveredAt": "2026/11/27 08:25"
+    },
+    "nta-etax_kenkyukai-19991029-004": {
+      "discoveredAt": "2026/11/27 08:25"
+    },
+    "nta-etax_kenkyukai-19991117-005": {
+      "discoveredAt": "2026/11/27 08:25"
+    },
+    "nta-etax_kenkyukai-19991208-006": {
+      "discoveredAt": "2026/11/27 08:25"
+    },
+    "nta-etax_kenkyukai-20000112-007": {
+      "discoveredAt": "2026/11/27 08:25"
+    },
+    "nta-etax_kenkyukai-20000223-008": {
+      "discoveredAt": "2026/11/27 08:25"
+    },
+    "nta-etax_kenkyukai-20000419-s01": {
+      "discoveredAt": "2026/11/27 08:25"
+    },
+    "nta-etax_kenkyukai-20000419-s02": {
+      "discoveredAt": "2026/11/27 08:25"
+    },
+    "nta-idenshi-20230320-001": {
+      "discoveredAt": "2026/11/27 08:25"
+    },
+    "nta-kyodokenkyu-20210913-001": {
+      "discoveredAt": "2026/11/27 08:25"
+    },
+    "nta-kyodokenkyu-20220224-002": {
+      "discoveredAt": "2026/11/27 08:25"
+    },
+    "nta-kyodokenkyu-20220621-003": {
+      "discoveredAt": "2026/11/27 08:25"
+    },
+    "nta-kyodokenkyu-20221220-004": {
+      "discoveredAt": "2026/11/27 08:25"
+    },
+    "nta-kyodokenkyu-20230613-005": {
+      "discoveredAt": "2026/11/27 08:25"
+    },
+    "nta-kyodokenkyu-20230830-006": {
+      "discoveredAt": "2026/11/27 08:25"
+    },
+    "nta-kyodokenkyu-20240118-007": {
+      "discoveredAt": "2026/11/27 08:25"
+    },
+    "nta-kyodokenkyu-20240625-008": {
+      "discoveredAt": "2026/11/27 08:25"
+    },
+    "nta-kyodokenkyu-20241213-009": {
+      "discoveredAt": "2026/11/27 08:25"
+    },
+    "nta-kyodokenkyu-20250123-010": {
+      "discoveredAt": "2026/11/27 08:25"
+    },
+    "nta-kyodokenkyu-20250226-011": {
+      "discoveredAt": "2026/11/27 08:25"
+    },
+    "nta-kyodokenkyu-20250530-012": {
+      "discoveredAt": "2026/11/27 08:25"
+    },
+    "nta-kyodokenkyu-20260116-013": {
+      "discoveredAt": "2026/11/27 08:25"
+    },
+    "nta-kyodokenkyu-20260527-014": {
+      "discoveredAt": "2026/11/27 08:25"
+    },
+    "nta-mansion-20230130-001": {
+      "discoveredAt": "2026/11/27 08:25"
+    },
+    "nta-mansion-20230601-002": {
+      "discoveredAt": "2026/11/27 08:25"
+    },
+    "nta-mansion-20230622-003": {
+      "discoveredAt": "2026/11/27 08:25"
+    },
+    "nta-nai_hyoka-20260420-001": {
+      "discoveredAt": "2026/11/27 08:25"
+    },
+    "nta-nai_hyoka-20260511-002": {
+      "discoveredAt": "2026/11/27 08:25"
+    },
+    "nta-nai_hyoka-20260604-003": {
+      "discoveredAt": "2026/11/27 08:25"
+    },
+    "nta-nai_hyoka-20260703-004": {
+      "discoveredAt": "2026/11/27 08:25"
+    },
+    "nta-nai_hyoka-20260820-005": {
+      "discoveredAt": "2026/11/27 08:25"
+    },
+    "nta-nai_hyoka-20260916-006": {
+      "discoveredAt": "2026/11/27 08:25"
+    },
+    "nta-sake_brand-20210823-001": {
+      "discoveredAt": "2026/11/27 08:25"
+    },
+    "nta-sake_brand-20220317-002": {
+      "discoveredAt": "2026/11/27 08:25"
+    },
+    "nta-sake_brand-20220623-003": {
+      "discoveredAt": "2026/11/27 08:25"
+    },
+    "nta-sake_brand-20220630-s01": {
+      "discoveredAt": "2026/11/27 08:25"
+    },
+    "nta-sake_brand-20230523-004": {
+      "discoveredAt": "2026/11/27 08:25"
+    },
+    "nta-sake_bunkakai-20190313-020": {
+      "discoveredAt": "2026/11/27 08:25"
+    },
+    "nta-sake_bunkakai-20210330-021": {
+      "discoveredAt": "2026/11/27 08:25"
+    },
+    "nta-sake_bunkakai-20220119-022": {
+      "discoveredAt": "2026/11/27 08:25"
+    },
+    "nta-sake_bunkakai-20220603-023": {
+      "discoveredAt": "2026/11/27 08:25"
+    },
+    "nta-sake_bunkakai-20230315-024": {
+      "discoveredAt": "2026/11/27 08:25"
+    },
+    "nta-sake_bunkakai-20250324-025": {
+      "discoveredAt": "2026/11/27 08:25"
+    },
+    "nta-sake_bunkakai-20251208-026": {
+      "discoveredAt": "2026/11/27 08:25"
+    },
+    "nta-sake_global-20190909-001": {
+      "discoveredAt": "2026/11/27 08:25"
+    },
+    "nta-sake_global-20191015-002": {
+      "discoveredAt": "2026/11/27 08:25"
+    },
+    "nta-sake_global-20191101-003": {
+      "discoveredAt": "2026/11/27 08:25"
+    },
+    "nta-sake_global-20191119-004": {
+      "discoveredAt": "2026/11/27 08:25"
+    },
+    "nta-sake_global-20191216-005": {
+      "discoveredAt": "2026/11/27 08:25"
+    },
+    "nta-sake_global-20191225-s01": {
+      "discoveredAt": "2026/11/27 08:25"
+    },
+    "nta-sake_global-20201125-006": {
+      "discoveredAt": "2026/11/27 08:25"
+    },
+    "nta-sake_global-20210225-007": {
+      "discoveredAt": "2026/11/27 08:25"
+    },
+    "nta-sake_hanbai-20011219-001": {
+      "discoveredAt": "2026/11/27 08:25"
+    },
+    "nta-sake_hanbai-20011219-s03": {
+      "discoveredAt": "2026/11/27 08:25"
+    },
+    "nta-sake_hanbai-20020130-002": {
+      "discoveredAt": "2026/11/27 08:25"
+    },
+    "nta-sake_hanbai-20020206-003": {
+      "discoveredAt": "2026/11/27 08:25"
+    },
+    "nta-sake_hanbai-20020219-004": {
+      "discoveredAt": "2026/11/27 08:25"
+    },
+    "nta-sake_hanbai-20020315-005": {
+      "discoveredAt": "2026/11/27 08:25"
+    },
+    "nta-sake_hanbai-20020327-006": {
+      "discoveredAt": "2026/11/27 08:25"
+    },
+    "nta-sake_hanbai-20020514-007": {
+      "discoveredAt": "2026/11/27 08:25"
+    },
+    "nta-sake_hanbai-20020618-008": {
+      "discoveredAt": "2026/11/27 08:25"
+    },
+    "nta-sake_hanbai-20020717-009": {
+      "discoveredAt": "2026/11/27 08:25"
+    },
+    "nta-sake_hanbai-20020906-010": {
+      "discoveredAt": "2026/11/27 08:25"
+    },
+    "nta-sake_hanbai-20040224-011": {
+      "discoveredAt": "2026/11/27 08:25"
+    },
+    "nta-sake_hanbai-20040224-s02": {
+      "discoveredAt": "2026/11/27 08:25"
+    },
+    "nta-sake_hanbai-20040324-012": {
+      "discoveredAt": "2026/11/27 08:25"
+    },
+    "nta-sake_hanbai-20040402-013": {
+      "discoveredAt": "2026/11/27 08:25"
+    },
+    "nta-sake_hanbai-20040421-014": {
+      "discoveredAt": "2026/11/27 08:25"
+    },
+    "nta-sake_hanbai-20040512-015": {
+      "discoveredAt": "2026/11/27 08:25"
+    },
+    "nta-sake_hanbai-20040519-016": {
+      "discoveredAt": "2026/11/27 08:25"
+    },
+    "nta-sake_hanbai-20040531-017": {
+      "discoveredAt": "2026/11/27 08:25"
+    },
+    "nta-sake_hanbai-20040608-018": {
+      "discoveredAt": "2026/11/27 08:25"
+    },
+    "nta-sake_hanbai-20040622-019": {
+      "discoveredAt": "2026/11/27 08:25"
+    },
+    "nta-sake_hanbai-20040705-020": {
+      "discoveredAt": "2026/11/27 08:25"
+    },
+    "nta-sake_hanbai-20040922-021": {
+      "discoveredAt": "2026/11/27 08:25"
+    },
+    "nta-sake_hanbai-20041013-022": {
+      "discoveredAt": "2026/11/27 08:25"
+    },
+    "nta-sake_hanbai-20041025-023": {
+      "discoveredAt": "2026/11/27 08:25"
+    },
+    "nta-sake_hanbai-20041110-024": {
+      "discoveredAt": "2026/11/27 08:25"
+    },
+    "nta-sake_hanbai-20041122-025": {
+      "discoveredAt": "2026/11/27 08:25"
+    },
+    "nta-sake_hanbai-20041129-026": {
+      "discoveredAt": "2026/11/27 08:25"
+    },
+    "nta-sake_hanbai-20041217-s01": {
+      "discoveredAt": "2026/11/27 08:25"
+    },
+    "nta-sake_pr-20160609-001": {
+      "discoveredAt": "2026/11/27 08:25"
+    },
+    "nta-seibi-20211029-001": {
+      "discoveredAt": "2026/11/27 08:25"
+    },
+    "nta-seibi-20220324-w01": {
+      "discoveredAt": "2026/11/27 08:25"
+    },
+    "nta-seibi-20220622-002": {
+      "discoveredAt": "2026/11/27 08:25"
+    },
+    "nta-seibi-20221014-w02": {
+      "discoveredAt": "2026/11/27 08:25"
+    },
+    "nta-seibi-20230110-w03": {
+      "discoveredAt": "2026/11/27 08:25"
+    },
+    "nta-seibi-20230314-w04": {
+      "discoveredAt": "2026/11/27 08:25"
+    },
+    "nta-seibi-20230529-003": {
+      "discoveredAt": "2026/11/27 08:25"
+    },
+    "nta-seibi-20230823-w05": {
+      "discoveredAt": "2026/11/27 08:25"
+    },
+    "nta-seibi-20231003-w06": {
+      "discoveredAt": "2026/11/27 08:25"
+    },
+    "nta-seibi-20231128-w07": {
+      "discoveredAt": "2026/11/27 08:25"
+    },
+    "nta-seibi-20240409-w08": {
+      "discoveredAt": "2026/11/27 08:25"
+    },
+    "nta-seibi-20240611-004": {
+      "discoveredAt": "2026/11/27 08:25"
+    },
+    "nta-seibi-20240918-w09": {
+      "discoveredAt": "2026/11/27 08:25"
+    },
+    "nta-seibi-20241218-005": {
+      "discoveredAt": "2026/11/27 08:25"
+    },
+    "nta-seibi-20251104-w10": {
+      "discoveredAt": "2026/11/27 08:25"
+    },
+    "nta-seibi-20260302-006": {
+      "discoveredAt": "2026/11/27 08:25"
+    },
+    "nta-shingikai-20190313-020": {
+      "discoveredAt": "2026/11/27 08:25"
+    },
+    "nta-shingikai-20201027-021": {
+      "discoveredAt": "2026/11/27 08:25"
+    },
+    "nta-shingikai-20210330-022": {
+      "discoveredAt": "2026/11/27 08:25"
+    },
+    "nta-shingikai-20211027-023": {
+      "discoveredAt": "2026/11/27 08:25"
+    },
+    "nta-shingikai-20221118-024": {
+      "discoveredAt": "2026/11/27 08:25"
+    },
+    "nta-shingikai-20230315-025": {
+      "discoveredAt": "2026/11/27 08:25"
+    },
+    "nta-shingikai-20231205-026": {
+      "discoveredAt": "2026/11/27 08:25"
+    },
+    "nta-shingikai-20241203-027": {
+      "discoveredAt": "2026/11/27 08:25"
+    },
+    "nta-shingikai-20250324-028": {
+      "discoveredAt": "2026/11/27 08:25"
+    },
+    "nta-shingikai-20251208-029": {
+      "discoveredAt": "2026/11/27 08:25"
+    },
+    "nta-sinsabunkakai-20190313-012": {
+      "discoveredAt": "2026/11/27 08:25"
+    },
+    "nta-sinsabunkakai-20210330-013": {
+      "discoveredAt": "2026/11/27 08:25"
+    },
+    "nta-sinsabunkakai-20230315-014": {
+      "discoveredAt": "2026/11/27 08:25"
+    },
+    "nta-sinsabunkakai-20250324-015": {
+      "discoveredAt": "2026/11/27 08:25"
+    },
+    "nta-statistics-20210706-001": {
+      "discoveredAt": "2026/11/27 08:25"
+    },
+    "nta-statistics-20210902-w01": {
+      "discoveredAt": "2026/11/27 08:25"
+    },
+    "nta-statistics-20211119-002": {
+      "discoveredAt": "2026/11/27 08:25"
+    },
+    "nta-statistics-20220524-003": {
+      "discoveredAt": "2026/11/27 08:25"
+    },
+    "nta-statistics-20221007-004": {
+      "discoveredAt": "2026/11/27 08:25"
+    },
+    "nta-statistics-20230608-005": {
+      "discoveredAt": "2026/11/27 08:25"
+    },
+    "nta-statistics-20250207-006": {
+      "discoveredAt": "2026/11/27 08:25"
+    },
+    "nta-statistics-20250523-007": {
+      "discoveredAt": "2026/11/27 08:25"
+    },
+    "nta-statistics-20251204-008": {
+      "discoveredAt": "2026/11/27 08:25"
+    },
+    "nta-statistics-20260525-009": {
+      "discoveredAt": "2026/11/27 08:25"
+    },
+    "nta-tochihyoka_fukuoka-20260513-s01": {
+      "discoveredAt": "2026/11/27 08:25"
+    },
+    "nta-tochihyoka_hiroshima-20260512-s01": {
+      "discoveredAt": "2026/11/27 08:25"
+    },
+    "nta-tochihyoka_kanazawa-20260511-s01": {
+      "discoveredAt": "2026/11/27 08:25"
+    },
+    "nta-tochihyoka_kantoshinetsu-20260512-s01": {
+      "discoveredAt": "2026/11/27 08:25"
+    },
+    "nta-tochihyoka_kumamoto-20260512-s01": {
+      "discoveredAt": "2026/11/27 08:25"
+    },
+    "nta-tochihyoka_nagoya-20260512-s01": {
+      "discoveredAt": "2026/11/27 08:25"
+    },
+    "nta-tochihyoka_okinawa-20260511-s01": {
+      "discoveredAt": "2026/11/27 08:25"
+    },
+    "nta-tochihyoka_osaka-20260513-s01": {
+      "discoveredAt": "2026/11/27 08:25"
+    },
+    "nta-tochihyoka_sapporo-20260512-s01": {
+      "discoveredAt": "2026/11/27 08:25"
+    },
+    "nta-tochihyoka_sendai-20260511-054": {
+      "discoveredAt": "2026/11/27 08:25"
+    },
+    "nta-tochihyoka_takamatsu-20260512-s01": {
+      "discoveredAt": "2026/11/27 08:25"
+    },
+    "nta-tochihyoka_tokyo-20260512-s01": {
+      "discoveredAt": "2026/11/27 08:25"
+    },
+    "nta-zeirishi-20190313-088": {
+      "discoveredAt": "2026/11/27 08:25"
+    },
+    "nta-zeirishi-20190523-089": {
+      "discoveredAt": "2026/11/27 08:25"
+    },
+    "nta-zeirishi-20190531-090": {
+      "discoveredAt": "2026/11/27 08:25"
+    },
+    "nta-zeirishi-20191205-091": {
+      "discoveredAt": "2026/11/27 08:25"
+    },
+    "nta-zeirishi-20191220-092": {
+      "discoveredAt": "2026/11/27 08:25"
+    },
+    "nta-zeirishi-20200602-093": {
+      "discoveredAt": "2026/11/27 08:25"
+    },
+    "nta-zeirishi-20200814-094": {
+      "discoveredAt": "2026/11/27 08:25"
+    },
+    "nta-zeirishi-20201210-095": {
+      "discoveredAt": "2026/11/27 08:25"
+    },
+    "nta-zeirishi-20210330-096": {
+      "discoveredAt": "2026/11/27 08:25"
+    },
+    "nta-zeirishi-20210524-097": {
+      "discoveredAt": "2026/11/27 08:25"
+    },
+    "nta-zeirishi-20210528-098": {
+      "discoveredAt": "2026/11/27 08:25"
+    },
+    "nta-zeirishi-20211209-099": {
+      "discoveredAt": "2026/11/27 08:25"
+    },
+    "nta-zeirishi-20220527-100": {
+      "discoveredAt": "2026/11/27 08:25"
+    },
+    "nta-zeirishi-20220602-101": {
+      "discoveredAt": "2026/11/27 08:25"
+    },
+    "nta-zeirishi-20221125-102": {
+      "discoveredAt": "2026/11/27 08:25"
+    },
+    "nta-zeirishi-20221215-103": {
+      "discoveredAt": "2026/11/27 08:25"
+    },
+    "nta-zeirishi-20230315-104": {
+      "discoveredAt": "2026/11/27 08:25"
+    },
+    "nta-zeirishi-20230526-105": {
+      "discoveredAt": "2026/11/27 08:25"
+    },
+    "nta-zeirishi-20230616-106": {
+      "discoveredAt": "2026/11/27 08:25"
+    },
+    "nta-zeirishi-20231122-107": {
+      "discoveredAt": "2026/11/27 08:25"
+    },
+    "nta-zeirishi-20231214-108": {
+      "discoveredAt": "2026/11/27 08:25"
+    },
+    "nta-zeirishi-20240528-109": {
+      "discoveredAt": "2026/11/27 08:25"
+    },
+    "nta-zeirishi-20240531-110": {
+      "discoveredAt": "2026/11/27 08:25"
+    },
+    "nta-zeirishi-20241121-111": {
+      "discoveredAt": "2026/11/27 08:25"
+    },
+    "nta-zeirishi-20241212-112": {
+      "discoveredAt": "2026/11/27 08:25"
+    },
+    "nta-zeirishi-20250324-113": {
+      "discoveredAt": "2026/11/27 08:25"
+    },
+    "nta-zeirishi-20250527-114": {
+      "discoveredAt": "2026/11/27 08:25"
+    },
+    "nta-zeirishi-20250603-115": {
+      "discoveredAt": "2026/11/27 08:25"
+    },
+    "nta-zeirishi-20251120-116": {
+      "discoveredAt": "2026/11/27 08:25"
+    },
+    "nta-zeirishi-20251210-117": {
+      "discoveredAt": "2026/11/27 08:25"
+    },
+    "nta-zeirishi-20251225-118": {
+      "discoveredAt": "2026/11/27 08:25"
+    },
+    "nta-zeirishi-20260528-119": {
+      "discoveredAt": "2026/11/27 08:25"
+    },
+    "nta-zeirishi-20260818-120": {
+      "discoveredAt": "2026/11/27 08:25"
+    },
+    "nta-zeirishi-20261015-121": {
+      "discoveredAt": "2026/11/27 08:25"
     },
     "ppc-ai_privacy-20260826-s04": {
       "discoveredAt": "2026/09/05 08:17"
