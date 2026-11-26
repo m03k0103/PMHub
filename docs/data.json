@@ -782,7 +782,7 @@
       "color": "var(--color-smea)",
       "officialUrl": "https://www.chusho.meti.go.jp",
       "councilsUrls": [
-        "https://www.chusho.meti.go.jp/koukai/shingikai/",
+        "https://www.chusho.meti.go.jp/koukai/shingikai/index.html",
         "https://www.chusho.meti.go.jp/koukai/kenkyukai/index.html"
       ],
       "hasCouncils": true,
@@ -792,6 +792,14 @@
       ],
       "hexColor": "#475569",
       "newsPortals": [
+        {
+          "url": "https://www.chusho.meti.go.jp/kai/index.html",
+          "type": "news_feed"
+        },
+        {
+          "url": "https://www.chusho.meti.go.jp/kai/old_index.html",
+          "type": "news_feed"
+        },
         {
           "url": "https://www.chusho.meti.go.jp/",
           "type": "news_feed"
