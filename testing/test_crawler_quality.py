@@ -30,7 +30,8 @@ from crawler import (
     is_preliminary_notice_page,
     clean_meeting_title,
     build_url_rule_index,
-    get_rule_for_target
+    get_rule_for_target,
+    _prioritize_meeting_date
 )
 
 
@@ -402,6 +403,26 @@ class TestCrawlerQuality(unittest.TestCase):
         rule_archive = get_rule_for_target(mock_rules, target_archive, url_rule_index)
         self.assertIsNotNone(rule_archive)
         self.assertEqual(rule_archive["officialUrl"], "https://www.mof.go.jp/about_mof/councils/ebpm/index.html")
+
+    def test_prioritize_meeting_date_drop151(self):
+        """Drop 151: 公表日と開催日が混在するサブページで「日時：」/URL日付/親ページ日付が優先されること"""
+        # (a) 冒頭に公表日、本文に「日時：令和５年５月17日」がある場合 -> 2023/05/17 が先頭
+        html = "<p>令和５年６月12日 金融庁</p><p>日時：令和５年５月17日（水曜日）</p>"
+        res_a = _prioritize_meeting_date(html, ["令和5年6月12日", "令和5年5月17日"], url_date=None, parent_date=None)
+        self.assertGreaterEqual(len(res_a), 1)
+        self.assertEqual(res_a[0], "2023/05/17")
+
+        # (b) ラベル無しでURL日付が候補内に一致する場合 -> 一致候補が先頭
+        res_b = _prioritize_meeting_date("<p>令和5年6月12日 公表</p>", ["令和5年6月12日", "令和5年5月17日"], url_date="2023/05/17", parent_date=None)
+        self.assertEqual(res_b[0], "令和5年5月17日")
+
+        # (c) URL日付無し・親ページ日付が候補内に一致する場合 -> 一致候補が先頭
+        res_c = _prioritize_meeting_date("<p>令和5年6月12日 公表</p>", ["令和5年6月12日", "令和5年5月17日"], url_date=None, parent_date="2023/05/17")
+        self.assertEqual(res_c[0], "令和5年5月17日")
+
+        # (d) いずれにも一致しない場合は変更せず維持
+        res_d = _prioritize_meeting_date("<p>特記事項なし</p>", ["令和5年6月12日", "令和5年5月17日"], url_date="2023/04/01", parent_date="2023/03/01")
+        self.assertEqual(res_d, ["令和5年6月12日", "令和5年5月17日"])
 
 
 if __name__ == '__main__':

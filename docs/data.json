@@ -3322,7 +3322,8 @@
       "category": "COUNCIL",
       "name": "国の利害に関係のある争訟等への対応に関する関係府省庁連絡会議",
       "officialUrl": "https://www.cas.go.jp/jp/seisaku/kuni_soushou/index.html",
-      "pastYearCount": 9
+      "pastYearCount": 9,
+      "isNewlyDiscovered": true
     },
     {
       "id": "cas-358",
@@ -7103,6 +7104,16 @@
       "pastYearCount": 2
     },
     {
+      "id": "fsa-ai_rikatsuyou_kenkyukai",
+      "ministry": "FSA",
+      "category": "STUDY",
+      "name": "AI等の健全な利活用の推進に関する研究会",
+      "officialUrl": "https://www.fsa.go.jp/singi/ai_2026/index.html",
+      "description": "金融機関等におけるAI等の健全な利活用の推進に向けた課題・対応を検討する研究会。",
+      "pastYearCount": 1,
+      "isNewlyDiscovered": true
+    },
+    {
       "id": "fsa-arikataken",
       "ministry": "FSA",
       "category": "STUDY",
@@ -7618,6 +7629,16 @@
       "name": "情報セキュリティに関する検討会",
       "officialUrl": "https://www.fsa.go.jp/singi/infosec_ken/index.html",
       "pastYearCount": 5
+    },
+    {
+      "id": "fsa-kabushiki_shijou_kouzou",
+      "ministry": "FSA",
+      "category": "PANEL",
+      "name": "株式市場構造の在り方に関する有識者会議",
+      "officialUrl": "https://www.fsa.go.jp/singi/kabushikishijoukouzou/index.html",
+      "description": "我が国の株式市場構造の在り方について議論する有識者会議。",
+      "pastYearCount": 1,
+      "isNewlyDiscovered": true
     },
     {
       "id": "fsa-kaikeikansa_arikata",
@@ -9263,6 +9284,16 @@
       "name": "預金取扱金融機関の耐量子計算機暗号への対応に関する検討会",
       "officialUrl": "https://www.fsa.go.jp/singi/pqc/index.html",
       "pastYearCount": 0
+    },
+    {
+      "id": "fsa-taju_saimu_kondankai",
+      "ministry": "FSA",
+      "category": "ROUNDTABLE",
+      "name": "多重債務問題対策推進懇談会",
+      "officialUrl": "https://www.fsa.go.jp/singi/tajusaimukondankai/index.html",
+      "description": "多重債務者対策をめぐる現状および関係省庁等の施策の動向等について意見交換を行う懇談会。",
+      "pastYearCount": 1,
+      "isNewlyDiscovered": true
     },
     {
       "id": "fsa-tajuu_saimu_kaigi",
@@ -11964,7 +11995,7 @@
       "name": "創薬力向上のための官民協議会 施策検討・推進部会",
       "officialUrl": "https://www.mhlw.go.jp/stf/newpage_76241.html",
       "description": "創薬力向上のための官民協議会の下に設置された施策検討・推進部会。創薬環境の整備、研究開発支援、ドラッグ・ロスの解消等に向けた具体的施策の検討を行う。",
-      "pastYearCount": 5,
+      "pastYearCount": 4,
       "isNewlyDiscovered": true
     },
     {
@@ -13840,8 +13871,7 @@
       "category": "STUDY",
       "name": "国民年金第3号被保険者制度等に関する検討会",
       "officialUrl": "https://www.mhlw.go.jp/stf/newpage_75817.html",
-      "pastYearCount": 3,
-      "isNewlyDiscovered": true
+      "pastYearCount": 3
     },
     {
       "id": "mhlw-engo_shinsa",
@@ -14353,7 +14383,7 @@
       "name": "労働政策審議会 労働条件分科会",
       "officialUrl": "https://www.mhlw.go.jp/stf/shingi/shingi-rousei_126969_00004.html",
       "description": "労働基準法、賃金支払確保法、労働時間制度等の労働条件全般に係る重要施策・法改正事項を調査審議する労働政策審議会の主要分科会。",
-      "pastYearCount": 31,
+      "pastYearCount": 29,
       "materials": [
         {
           "name": "参考資料No.1 労働条件分科会委員名簿［PDF形式：128KB］",
@@ -14419,7 +14449,7 @@
       "name": "社会保障審議会 医療保険部会",
       "officialUrl": "https://www.mhlw.go.jp/stf/newpage_28708.html",
       "description": "厚生労働省社会保障審議会における医療保険部会。",
-      "pastYearCount": 39
+      "pastYearCount": 38
     },
     {
       "id": "mhlw-shakai_hosho_kaigo_hoken",
@@ -18417,7 +18447,7 @@
       "councilId": "mhlw-dai3gou_hihoken",
       "name": "第2回 国民年金第3号被保険者制度等に関する検討会",
       "date": "2026/11/25",
-      "officialUrl": "https://www.mhlw.go.jp/stf/newpage_77577.html",
+      "officialUrl": "https://www.mhlw.go.jp/stf/newpage_75817.html",
       "materials": [
         {
           "name": "議事次第[49KB]",
@@ -18547,6 +18577,29 @@
         {
           "name": "参考資料5:特別養子縁組の現状",
           "url": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/1bec26a7-8321-45ba-9868-613310514d00/2d010165/20261120_councils_shingikai_shakai_katei_tokubetsu-yoshi_1bec26a7_07.pdf"
+        }
+      ]
+    },
+    {
+      "id": "fsa-ai_rikatsuyou_kenkyukai-20261124-001",
+      "councilId": "fsa-ai_rikatsuyou_kenkyukai",
+      "name": "第1回 AI等の健全な利活用の推進に関する研究会",
+      "date": "2026/11/24",
+      "round": 1,
+      "officialUrl": "https://www.fsa.go.jp/singi/ai_2026/shiryou/20261124.html",
+      "isNewlyDiscovered": true,
+      "materials": [
+        {
+          "name": "メンバー等名簿",
+          "url": "https://www.fsa.go.jp/singi/ai_2026/shiryou/20261124/meibo.pdf"
+        },
+        {
+          "name": "事務局説明資料",
+          "url": "https://www.fsa.go.jp/singi/ai_2026/shiryou/20261124/jimukyoku_1.pdf"
+        },
+        {
+          "name": "事務局参考資料",
+          "url": "https://www.fsa.go.jp/singi/ai_2026/shiryou/20261124/jimukyoku_2.pdf"
         }
       ]
     },
@@ -19860,6 +19913,29 @@
       "date": "2026/11/13",
       "officialUrl": "https://www.fsa.go.jp/singi/chuukinken/siryou/20261113.html",
       "materials": []
+    },
+    {
+      "id": "fsa-kabushiki_shijou_kouzou-20261113-001",
+      "councilId": "fsa-kabushiki_shijou_kouzou",
+      "name": "第1回 株式市場構造の在り方に関する有識者会議",
+      "date": "2026/11/13",
+      "round": 1,
+      "officialUrl": "https://www.fsa.go.jp/singi/kabushikishijoukouzou/shiryou/20261113.html",
+      "isNewlyDiscovered": true,
+      "materials": [
+        {
+          "name": "メンバー等名簿",
+          "url": "https://www.fsa.go.jp/singi/kabushikishijoukouzou/shiryou/20261113/meibo.pdf"
+        },
+        {
+          "name": "事務局説明資料",
+          "url": "https://www.fsa.go.jp/singi/kabushikishijoukouzou/shiryou/20261113/jimukyoku.pdf"
+        },
+        {
+          "name": "株式会社野村資本市場研究所説明資料",
+          "url": "https://www.fsa.go.jp/singi/kabushikishijoukouzou/shiryou/20261113/presentation.pdf"
+        }
+      ]
     },
     {
       "id": "jfa-suisan_kanri-20261113-147",
@@ -23020,6 +23096,77 @@
         {
           "name": "参考資料5 令和9年度こども家庭庁支援局障害児支援課予算概算要求の概要",
           "url": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/779b0299-d455-4572-8ccc-8ecbaadc4185/0121232c/20261026_councils_shingikai_shougaiji_shien_779b0299_08.pdf"
+        }
+      ]
+    },
+    {
+      "id": "fsa-taju_saimu_kondankai-20261028-001",
+      "councilId": "fsa-taju_saimu_kondankai",
+      "name": "第1回 多重債務問題対策推進懇談会",
+      "date": "2026/10/28",
+      "round": 1,
+      "officialUrl": "https://www.fsa.go.jp/policy/kashikin/tajusaimukondankai/20261028/20261028.html",
+      "isNewlyDiscovered": true,
+      "materials": [
+        {
+          "name": "議事次第",
+          "url": "https://www.fsa.go.jp/singi/tajusaimukondankai/01.pdf"
+        },
+        {
+          "name": "議事録",
+          "url": "https://www.fsa.go.jp/singi/tajusaimukondankai/02.pdf"
+        },
+        {
+          "name": "開催趣旨",
+          "url": "https://www.fsa.go.jp/policy/kashikin/tajusaimukondankai/20261028/siryou1-1.pdf"
+        },
+        {
+          "name": "懇談会構成員名簿",
+          "url": "https://www.fsa.go.jp/policy/kashikin/tajusaimukondankai/20261028/siryou1-2.pdf"
+        },
+        {
+          "name": "懇談会運営要領(案)",
+          "url": "https://www.fsa.go.jp/policy/kashikin/tajusaimukondankai/20261028/siryou1-3.pdf"
+        },
+        {
+          "name": "多重債務者対策をめぐる現状及び施策の動向(金融庁/消費者庁/厚生労働省(自殺対策推進室)/法務省)",
+          "url": "https://www.fsa.go.jp/policy/kashikin/tajusaimukondankai/20261028/siryou2.pdf"
+        },
+        {
+          "name": "ヤミ金融事犯の検挙状況(警察庁)",
+          "url": "https://www.fsa.go.jp/policy/kashikin/tajusaimukondankai/20261028/siryou3.pdf"
+        },
+        {
+          "name": "生活困窮者自立支援制度等について(厚生労働省 社会・援護局地域福祉課生活困窮者自立支援室)",
+          "url": "https://www.fsa.go.jp/policy/kashikin/tajusaimukondankai/20261028/siryou4.pdf"
+        },
+        {
+          "name": "過剰与信対策の概要について(クレジットカード関連)(経済産業省)",
+          "url": "https://www.fsa.go.jp/policy/kashikin/tajusaimukondankai/20261028/siryou5.pdf"
+        },
+        {
+          "name": "有馬構成員提出資料",
+          "url": "https://www.fsa.go.jp/policy/kashikin/tajusaimukondankai/20261028/siryou6.pdf"
+        },
+        {
+          "name": "内田構成員提出資料",
+          "url": "https://www.fsa.go.jp/policy/kashikin/tajusaimukondankai/20261028/siryou7.pdf"
+        },
+        {
+          "name": "小川構成員提出資料",
+          "url": "https://www.fsa.go.jp/policy/kashikin/tajusaimukondankai/20261028/siryou8.pdf"
+        },
+        {
+          "name": "髙橋構成員提出資料",
+          "url": "https://www.fsa.go.jp/policy/kashikin/tajusaimukondankai/20261028/siryou9.pdf"
+        },
+        {
+          "name": "竹島(正)構成員提出資料",
+          "url": "https://www.fsa.go.jp/policy/kashikin/tajusaimukondankai/20261028/siryou10.pdf"
+        },
+        {
+          "name": "竹島(雅)構成員提出資料",
+          "url": "https://www.fsa.go.jp/policy/kashikin/tajusaimukondankai/20261028/siryou11.pdf"
         }
       ]
     },
@@ -27178,6 +27325,7 @@
       "councilId": "fsa-kinyu_seityousikin_wg",
       "name": "第2回 金融審議会 成長企業への資金供給の在り方等に関するワーキング・グループ",
       "date": "2026/10/09",
+      "round": 2,
       "officialUrl": "https://www.fsa.go.jp/singi/singi_kinyu/seityousikin_wg/gijishidai/20261009.html",
       "materials": [
         {
@@ -28317,6 +28465,7 @@
       "councilId": "fsa-kigyou_kansa_bukai",
       "name": "第57回 企業会計審議会 監査部会",
       "date": "2026/10/02",
+      "round": 57,
       "officialUrl": "https://www.fsa.go.jp/singi/singi_kigyou/siryou/kansa/20261002/261002.html",
       "materials": [
         {
@@ -31430,7 +31579,7 @@
       "name": "第1回 成長企業への資金供給の在り方等に関するワーキング・グループ",
       "date": "2026/09/16",
       "round": 1,
-      "officialUrl": "https://www.fsa.go.jp/news/r8/singi/20260916.html",
+      "officialUrl": "https://www.fsa.go.jp/singi/singi_kinyu/seityousikin_wg/gijishidai/20260916.html",
       "materials": [
         {
           "name": "議事録・資料等",
@@ -36616,6 +36765,7 @@
       "councilId": "fsa-kinyu_shingi",
       "name": "第57回 金融審議会 総会・第45回 金融分科会 合同会合",
       "date": "2026/08/31",
+      "round": 57,
       "officialUrl": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/siryou/20260831.html",
       "materials": [
         {
@@ -39257,36 +39407,6 @@
         {
           "name": "議事要旨",
           "url": "https://www.cas.go.jp/jp/seisakukaigi/hairo_osensui/alps_shorisui/dai9/gijiyoshi.pdf"
-        }
-      ]
-    },
-    {
-      "id": "fsa-kinyu_shingi-20260824-045",
-      "councilId": "fsa-kinyu_shingi",
-      "name": "第45回 金融審議会 総会",
-      "date": "2026/08/24",
-      "officialUrl": "https://www.fsa.go.jp/news/r8/singi/20260831.html",
-      "materials": [
-        {
-          "name": "議事録・資料等",
-          "url": "https://www.fsa.go.jp/singi/singi_kinyu/base_gijiroku.html",
-          "type": "HTML"
-        },
-        {
-          "name": "説明資料(成長企業への資金供給の在り方等に関する検討について)",
-          "url": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/siryou/20260831/1.pdf"
-        },
-        {
-          "name": "説明資料(保険制度の在り方に関する検討について)",
-          "url": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/siryou/20260831/2.pdf"
-        },
-        {
-          "name": "金融審議会委員名簿",
-          "url": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/siryou/20260831/3.pdf"
-        },
-        {
-          "name": "諮問事項",
-          "url": "https://www.fsa.go.jp/singi/singi_kinyu/soukai/siryou/20260831/4.pdf"
         }
       ]
     },
@@ -219177,6 +219297,6 @@
   ],
   "lastCrawlTime": "2026/11/25 03:56",
   "hasArchive": true,
-  "totalMeetingsCount": 25067,
-  "totalMaterialsCount": 158525
+  "totalMeetingsCount": 25069,
+  "totalMaterialsCount": 158585
 }

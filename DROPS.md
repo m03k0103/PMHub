@@ -1,8 +1,8 @@
 # PMHub 改善・機能実装（Drop）マスタードキュメント (DROPS.md)
 
 > **最終更新**: 2026-11-25  
-> **最新 Drop**: **Drop 150**（2026-11-25 完了）  
-> **次期予定 Drop**: **Drop 151**（Track [Crawl-Discovery-Accuracy] フェーズ2: 新規会議体ディスカバリー自動化、または Track [Core-Policy-Filter] / Track [LLM-Assist] / Track [Search]）  
+> **最新 Drop**: **Drop 151**（2026-11-25 完了）  
+> **次期予定 Drop**: **Drop 152**（Track [Crawl-Discovery-Accuracy] フェーズ2: 新規会議体ディスカバリー自動化、または Track [Core-Policy-Filter] / Track [LLM-Assist] / Track [Search]）  
 > 
 > 本ドキュメントは、PMHub の継続的改善ロードマップおよび実装記録を一元管理するマスタードキュメントです。  `
 > 今後の構想テーマは **「Track（トラック）」** として管理し、着手・個別実装単位は最新連番を付与した **「Drop（ドロップ）」** として連番アーカイブします。  `
@@ -23,7 +23,7 @@
 | Track ID | タイトル | 概要 | 期待結果 | ステータス |
 |:---:|:---|:---|:---:|:---:|
 | **Track [Core-Policy-Filter]** | **「重要政策会議のみ」絞り込み機能** | **国家の基本方針・中核アジェンダを審議する重要会議体のワンクリック絞り込み**<br>内閣府設置法第18条に基づく重要政策に関する会議（経済財政諮問会議、総合科学技術・イノベーション会議、中央防災会議、男女共同参画会議、国家戦略特区諮問会議等）および主要閣僚会議・基幹審議会を定義。DBへのフラグ/設定追加と公開ポータルUIへのクイック絞り込みトグル新設。 | **1,700超の会議体から最重要アジェンダへ瞬時にアクセス** | **【構想中】** |
-| **Track [Crawl-Discovery-Accuracy]** | **新規会議体ディスカバリー自動化＆難読ページ構造補完**<br>(フェーズ 2・フェーズ 3) | **新規会議体の定時自動検出・URL逆引き・外局ポータル網羅（フェーズ 2）＋ `partial`/`failed` 会議体のルール自動診断・構造補完（フェーズ 3）**<br>1. **フェーズ 2（ディスカバリー自動化・死角解消）**: `discover_councils.py` の `norm_orig` バグ修正・非破壊DB同期化・DOM自動テンプレート判定・Daily未マッチ記事連携・`crawl.yml` 定時組込、`parent_resolver.py` 多段逆引き、外局7機関等の `MINISTRY_NEWS_PORTALS` 拡充（173会議体のDaily網羅）<br>2. **フェーズ 3（難読ページの構造補完）**: `partial`（112件）・抽出0件（15件）向け決定論的ルール診断ツール（`diagnose_rules.py`）＋ `Track [LLM-Assist]` フェーズ2連携 | **新規会議体検知の完全自動化 & 巡回成功率の極大化** | **【構想中】**<br>（フェーズ 1: Drop 150 完了 / フェーズ 2・3 構想中） |
+| **Track [Crawl-Discovery-Accuracy]** | **新規会議体ディスカバリー自動化＆難読ページ構造補完**<br>(フェーズ 2・フェーズ 3) | **新規会議体の定時自動検出・URL逆引き・外局ポータル網羅（フェーズ 2）＋ `partial`/`failed` 会議体のルール自動診断・構造補完（フェーズ 3）**<br>1. **フェーズ 2（ディスカバリー自動化・死角解消）**: `discover_councils.py` の `norm_orig` バグ修正・非破壊DB同期化・DOM自動テンプレート判定・Daily未マッチ記事連携・`crawl.yml` 定時組込、`parent_resolver.py` 多段逆引き、外局7機関等の `MINISTRY_NEWS_PORTALS` 拡充（173会議体のDaily網羅）（`norm_orig` バグ修正は Drop 151 で完了）<br>2. **フェーズ 3（難読ページの構造補完）**: `partial`（112件）・抽出0件（15件）向け決定論的ルール診断ツール（`diagnose_rules.py`）＋ `Track [LLM-Assist]` フェーズ2連携 | **新規会議体検知の完全自動化 & 巡回成功率の極大化** | **【構想中】**<br>（フェーズ 1: Drop 150 完了 / フェーズ 2・3 構想中） |
 | **Track [LLM-Assist]** | **決定論的1ファイル新着ダイジェスト & LLM判定・クロール階層型フォールバック** | **【フェーズ 1】ディスカバリー 1ファイル集約・単一リクエストLLM判定 & 新着分類永続化（Drop 81 完了）**<br>**【フェーズ 2】開催回クロール 3段階ファネル・異常検知フォールバック & バッチLLM抽出**<br>API呼出上限（Daily 3回 / Weekly 10回 / Monthly 30回）とSQLite `llm_cache`（SHA-256ダイジェストキャッシュ）により、最小APIコールで新規会議体検知と0件以外を含むクロール欠落補完を実現 | **最小APIコールでの新規会議体検知 & クロール補完** | **【構想中】**<br>（フェーズ 1: Drop 81 完了 / フェーズ 2 構想中） |
 | **Track [Search]** | **全文検索エンジン統合**<br>(PMM資産連携・分離FTS5 DB構築) | **PMM ローカル資産（PDF/HTML・約13.3万件）を活用した分離型全文検索エンジンの構築**<br>マスターDB（`admin/pmhub.db`）の肥大化を防ぐため全文検索専用DB（`admin/pmhub_fts.db`）を分離・`ATTACH` 結合するアーキテクチャを採用。`admin/pmm/text_extractor.py` によるインクリメンタル本文抽出（中断耐性付き）、FTS5 `trigram` インデックス構築、検索API（`/api/search`）、およびローカル管理画面（`admin/admin_dashboard.html`）を主軸としつつローカルサーバー起動時は公開ポータルUIからも全文検索可能なハイブリッドUIの実装（No Leakage 原則厳守） | **約13.3万件の配付資料・会議体資料の高速本文横断検索** | **【構想中】**<br>（DB・PMM基盤完了済 / 着手可能） |
 | **Track [Policy-AI]** | **政策分析連携構想**<br>(DB・PMM実資料・LLM統合分析) | **SQLite マスターDB・PMM実資料テキスト・`llm_cache` を統合した省庁横断政策インテリジェンス**<br>1. 省庁横断政策テーマ（GX、AI、経済安保、少子化等）および審議フェーズ（諮問・中間整理・答申等）の自動タギング（`meetings.tags_json` 活用）<br>2. PMM ローカル資料（議事要旨・主要資料）の実本文に基づく構造化AI要約生成（`meetings.summary` & SHA-256 `llm_cache` 活用）<br>3. 上位会議から各省庁審議会への政策波及タイムライン比較と、軽量サマリー/タグのみの公開JSON（`docs/data.json`）への安全な2系統還元（No Leakage 厳守） | **実資料に基づく政策横断的インサイトの創出** | **【長期構想】**<br>（Track [Search] 連携） |
@@ -328,6 +328,7 @@ GitHub Actions で自動更新・push されたリモートの最新データ（
 | **Drop 148** | **Track [Security-DAST] OWASP ZAP DAST 検出アラート対応 & SRI・CSP強化・誤検知ルールチューニング** | **初回 ZAP ベースラインスキャン（Run `44312816310`）の Medium 3件・Low 7件に対する公開ポータル強化・イベント委譲移行・ルール整備**<br>1. **Chart.js バージョン固定 & SRI 付与（`docs/index.html`）**: Chart.js CDN を `chart.js@4.4.8/dist/chart.umd.min.js` に固定し、SHA-384 `integrity` と `crossorigin="anonymous"` を付与（`90003` 対応）。<br>2. **厳格 CSP `<meta>` 導入 & インラインコード・ハンドラ移行（`docs/index.html`, `docs/app.js`）**: `script-src 'self' https://cdn.jsdelivr.net`（`'unsafe-inline'` 不使用）を含む `<meta http-equiv="Content-Security-Policy">` を導入（`10038` 対応）。テーマ初期設定インライン `<script>` および全 `onclick` / `onchange` / `onkeydown` 属性を削除し、`docs/app.js` の即時初期化と `addEventListener` 委譲へ移行。<br>3. **ZAP ルール・手順書整備（`.zap/rules.tsv`, `guide/security-scan.md`）**: CI `SimpleHTTP` 起因 `10036`、SRI 担保済 `10017`、動的 Google Fonts CSS 起因 `90003` 残存を `IGNORE` 化し、HTTP ヘッダー系 `WARN` 根拠を明文化。<br>4. **セキュリティ品質ゲート追加（`testing/test_js_runtime.js`）**: ケース3へ CSP・SRI・インラインJS/イベント0件・`.zap/rules.tsv` TAB構文検証を組み込み。 | **Chart.js SRI 付与、厳格 CSP `<meta>` 配備、インラインJS/イベント0件化、ZAP誤検知ルール最適化（Track [Security-DAST] 完了）** |
 | **Drop 149** | **Weekly・Monthly クロール効率化（Daily・Weekly クロール対象会議体の階層間重複除外）& `<dl><dt>/<dd>` 親日付抽出強化・CAS第1〜4回補正** | **3階層スケジュール巡回（Daily / Weekly / Monthly）の対象会議体重複を排除する排他フィルタリング実装 & リモート自動クロール `cas-357` 仮日付是正**<br>1. **Daily 最新巡回日時の上書き記録（`admin/crawler.py`）**: `run_ministry_news_discovery()` で直接抽出・ピンポイント巡回した会議体IDごとの最新クロール日時を `crawlerConfig.dailyCouncilLastCrawlTime`（単一最新時刻の上書き保持）および `crawlStatuses` に記録。<br>2. **Weekly における Daily 対象除外 / Monthly における Daily・Weekly 対象除外**: `get_daily_crawled_council_ids()` と `load_councils_from_data_json()` により、Weekly は直近7日以内の Daily 巡回済み会議体を除外し、Monthly（`--recent-years 0 --exclude-daily --exclude-weekly`）は Daily 対象および Weekly 対象（直近2年以内開催・新規0件）を除外して2年超未開催の休眠会議体のみを巡回。<br>3. **`<dl><dt>/<dd>` 親日付抽出強化 & `cas-357` 是正**: `extract_actual_subpage_links()` で `<dd>` 直前兄弟 `<dt>` から日付・回次コンテキストを取得するよう改善。`741e8cd` で混入した `cas-357` 第1〜4回の `2099/01/01` を公式開催日（2015/05/27〜2018/07/18）へ補正・`manual_lock=1` 保護・2系統JSON同期。<br>4. **CI・管理UI連動・テスト拡充**: `.github/workflows/crawl.yml`, `server.py`, `admin_dashboard.html/.js` 更新、U4 単体テストおよびケース10階層排他検証を追加。 | **Monthly 対象 1,699件→738件（56.6%削減）、Daily・Weekly・Monthly 3階層完全排他、`2099/01/01` 0件化・統合10ケース＋単体14種合格** |
 | **Drop 150** | **フェーズ1: 開催回クロール誤遮断・取りこぼし根絶（ホスト単位WAF分離・WARP除外・資料0件再巡回保証・回次なし昇格）** | **WAF連鎖遮断による193会議体スキップ解消 & 資料0件先行登録・遅配議事録・親ページ未巡回スキップ・回次なしURL未昇格の4構造改善**<br>1. **WAF遮断のホスト単位分離＋連続3回閾値＋WARP除外（`admin/crawler.py`）**: 省庁単位の即時全遮断を改め、`is_host_waf_blocked()` / `record_host_waf_challenge()` / `clear_host_waf_failures()` により正規化ホスト単位かつ連続3回検知時のみ遮断（200成功時リセット）。さらに `is_warp_archive_url()` により国立国会図書館 WARP アーカイブURLを通常巡回対象から除外し、`warp.ndl.go.jp` 起因の `METI`/`ANRE`/`MOF`/`SMEA` 連鎖スキップ（計193件）を根絶。<br>2. **資料0件サブページ再巡回保証 & Weekly `--recheck-recent 3` 拡張（`admin/crawler.py`, `.github/workflows/crawl.yml`）**: `_build_known_meeting_urls()` を新設し、直近90日以内または開催日未確認で配付資料0件の開催回URLを `existing_meeting_urls` から除外して再巡回を保証。Weekly クロールの `recheck-recent` を `3` へ拡張し遅配議事録を捕捉。<br>3. **`--exclude-daily` 直接抽出除外ガード**: `run_ministry_news_discovery()` の単発記事直接追加分を `daily_crawled_cids` へ入れず `"extractionMethod": "ministry_news_direct"` とし、土曜 Weekly での親ページ網羅巡回を保証。<br>4. **回次なし同日会議の親URL昇格 & マージ連動**: `sync_new_meetings_from_crawl()` の同日マージ処理で `manualLock` 非該当かつ親URLのままの既存会議を個別サブページURLへ自動昇格し、資料マージ全経路で `lastUpdatedFromCrawl` を付与して Daily PMM 自動保存対象へ連動。<br>5. **フェーズ2・3構想を `Track [Crawl-Discovery-Accuracy]` へ策定・単体テスト拡充（U4 / U6）**。 | **WAF連鎖スキップ 193件の構造解消、資料0件再巡回・遅配議事録・親URL昇格・PMM連動対応、単体U4・U6拡充、統合10ケース＋単体14種完全合格** |
+| **Drop 151** | **金融庁 新着会議体・開催回 LLMベース点検・ワンストップ登録および開催日優先判定修正** | **金融庁（`FSA`）の新着未登録 3会議体ワンストップ登録、自動クロール未検証 7会議体補正・議事録補完、およびクローラー／発見エンジンの再発防止改修**<br>1. **新着 3会議体のワンストップ登録（`fsa-ai_rikatsuyou_kenkyukai`, `fsa-kabushiki_shijou_kouzou`, `fsa-taju_saimu_kondankai`）**: 審議会一覧・新着ダイジェスト検証により特定した新設 3会議体（3開催回・21配付資料）およびテンプレート準拠の `scrapingRules` を登録し、`manual_lock=1` で保護。<br>2. **未検証 7会議体の実開催日補正・議事要旨/議事録補完**: `fsa-kikou_risk_scenario`（9回）・`fsa-impact_toushi`（4回）の冒頭公表日ズレを `日時：` の実開催日へ補正して開催回IDを再採番。親ページの `議事要旨`・`議事録`（計44件）補完、タイトル・PDFサイズ表記クレンジング、`fsa-yuushi_kansa_kantoku` 第1回 `01.pdf` の名称修正（`第1回資料`）を実施し全件 `manual_lock=1` 保護。<br>3. **2026年アクティブ会議体補正**: `fsa-kinyu_seityousikin_wg`, `fsa-kigyou_kansa_bukai`, `fsa-digital_finance` へ新着議事録・議事要旨を補完し、`fsa-kinyu_shingi-20260824-045` 重複開催通知レコードを削除して `20260831-057` へ議事録を追加。<br>4. **根本原因修正（`crawler.py`, `extractors.py`, `discover_councils.py`）**: `_prioritize_meeting_date()` 追加による `日時：` / URL / 親日付の優先判定、全角コロン付き `（PDF：...）` 除去対応、`_discover_from_ministry_news()` の `norm_orig` 未定義 `UnboundLocalError` 解消、U5・U8・U11 単体テスト追加。 | **金融庁 3会議体新規登録・13開催回日付補正・49件議事録類補完、統合10ケース＋単体14種完全合格** |
 
 ---
 
@@ -5117,3 +5118,43 @@ python testing/run_test_suite.py --all-layers : PASSED（統合10ケース＋全
 - **次回クロール時の新着検知・自動更新の挙動**: 次回 Weekly（`--exclude-daily --recheck-recent 3`）および Daily（`--from-ministry-news`）稼働時、ホスト単位 WAF 遮断（閾値3）・資料0件90日再訪・直近3回議事録回収が自動適用され、WARP アーカイブ2会議体は不要通信から除外される。
 - **クローラー負荷への影響**: 同一ホスト直列化と動的レートリミット（0.35s以上／経産省系 1.5s）を維持しつつ、`warp.ndl.go.jp` への無益アクセスを削減。
 - **今後の予定**: `Track [Crawl-Discovery-Accuracy]` フェーズ2（`discover_councils.py` 修正＆定時CI統合、外局7機関の `MINISTRY_NEWS_PORTALS` 追加等）およびフェーズ3の実装に着手予定。
+
+### Drop 151: 金融庁 新着会議体・開催回 LLMベース点検・ワンストップ登録および開催日優先判定修正 (2026-11-25 完了)
+
+#### 1. 背景と目的
+- **金融庁（`FSA`）の新着会議体および新着・未検証開催回データの包括的 LLM 点検**:
+  - 定期自動クロールで取得された金融庁の未検証データおよび公式ポータル上の新設会議体を横断調査した結果、以下の課題が判明した。
+  1. 公式サイト（`https://www.fsa.go.jp/singi/index.html`）および新着ポータルに新設 3 会議体（うち `多重債務問題対策推進懇談会` は常設 `/singi/tajusaimukondankai/index.html` を新規開設）が未登録のまま存在していた。
+  2. 月次クロールで自動取得された未検証 7 会議体のうち、`fsa-kikou_risk_scenario`（9 開催回）および `fsa-impact_toushi`（4 開催回）で、議事次第ページ冒頭の公表日（`令和5年6月12日 金融庁` 等）が本文の `日時：`（実開催日）より先頭で抽出され、開催日が公表日に誤登録されていた。
+  3. 親ページに掲載済みの `議事要旨`・`議事録` HTML リンクが配付資料に未紐付けであったほか、`fsa-yuushi_kansa_kantoku-20180704-001` で全角コロン付きサイズ表記（`（PDF：566KB）`）が除去されず `資料 (:566KB` となっていた。
+  4. `admin/discover_councils.py` の `_discover_from_ministry_news()` ルールループにおいて `norm_orig` が未定義のまま参照され `UnboundLocalError` が発生する不具合が存在した。
+
+#### 2. 主要な施策・修正内容
+1. **クローラーおよび発見エンジンの根本原因修正（`admin/crawler.py`, `admin/crawler_modules/extractors.py`, `admin/discover_councils.py`）**:
+   - **`_prioritize_meeting_date()` の実装と `_crawl_subpages()` への組込**: サブページの複数抽出日付に対し、(a) 本文中の `日時` / `開催日` / `開催日時`（`実施日`含む）ラベル直後の日付、(b) URL 内日付と一致する日付、(c) 親ページ抽出日付と一致する日付の順で先頭優先配置するロジックを追加。
+   - **全角コロン付き PDF サイズ除去対応**: `recover_material_context()` および `parse_materials_from_html()` のサイズ表記除去正規表現（`crawler.py` 4 箇所、`crawler_modules/extractors.py` 3 箇所）に全角コロン `：` を追加し、`（PDF：566KB）` の除去漏れを解消。
+   - **`_discover_from_ministry_news()` の `UnboundLocalError` 解消**: `admin/discover_councils.py` のルール候補ループで `norm_resolved` 直後に `norm_orig = normalize_url(orig_item_url)` を定義。
+   - **単体テストの追加**: `test_crawler_quality.py`（U5: `_prioritize_meeting_date`）、`test_material_extraction.py`（U8: 全角コロン PDF サイズ除去）、`test_discover_councils.py`（U11: `_discover_from_ministry_news` スモーク検証）を追加。
+2. **新着 3 会議体のワンストップ新規登録（`admin/pmhub.db` & `admin/db/export_data.py`）**:
+   - `fsa-ai_rikatsuyou_kenkyukai`（AI等の健全な利活用の推進に関する研究会 / 第 1 回 `2026/11/24` / 資料 3 件）
+   - `fsa-kabushiki_shijou_kouzou`（株式市場構造の在り方に関する有識者会議 / 第 1 回 `2026/11/13` / 資料 3 件）
+   - `fsa-taju_saimu_kondankai`（多重債務問題対策推進懇談会 / 第 1 回 `2026/10/28` / 資料 15 件）
+   - いずれも `manual_lock=1`、開催回・配付資料・テンプレート準拠の `scrapingRules`（`tpl-general-round-subpage` 継承）を一括登録。
+3. **未検証 7 会議体の実開催日補正・議事録補完・ロック保護**:
+   - `fsa-kikou_risk_scenario` 第 1〜6 回・第 9〜11 回（計 9 開催回）および `fsa-impact_toushi` 第 1・2・4・5 回（計 4 開催回）の開催日をライブページの `日時：` に基づき補正して開催回 ID を再採番（子テーブル `materials` を同一トランザクションで移行）。
+   - 7 会議体の親ページで確認した `議事要旨`（11 件）および `議事録`（33 件）を追加、`fsa-yuushi_kansa_kantoku-20180704-001` の `資料 (:566KB` を PDF 本文表題に基づき `第1回資料` へ正規化、対象タイトルの末尾 `議事次第` 除去・全件 `manual_lock=1` 設定を実施。
+4. **2026 年アクティブ会議体の補正**:
+   - `fsa-kinyu_seityousikin_wg` 第 1 回 `officialUrl` を議事次第ページへ補正し第 1・2 回 `議事録` を追加、`fsa-kigyou_kansa_bukai` 第 56・57 回へ `議事録` を追加、`fsa-digital_finance` 令和 8 事務年度第 1 回へ `議事要旨` を追加、`fsa-kinyu_shingi-20260824-045` 重複開催通知レコードを削除し `20260831-057` へ `議事録` を追加。
+
+#### 3. 達成された指標・成果
+- **データ・ルール整備**:
+  - 公開・管理対象会議体数 **1,786 件**（+3 件）、アクティブ開催回数 **5,370 件**・アーカイブ開催回数 **19,699 件**（計 **25,069 件**）、配付資料数 **158,585 件** を SQLite マスター DB・2 系統 JSON 間で完全同期。
+  - 金融庁の開催日公表日ズレ 13 件・重複開催通知 1 件・資料名文字欠損 1 件・未紐付け議事録類 49 件を解消し、`manual_lock=1` 保護を適用。
+- **テスト検証**:
+  - `python testing/run_test_suite.py --all-layers` にて統合 10 ケースおよび単体テスト 14 種（U1〜U14）に完全合格（22.90 秒）。
+
+#### 4. クローラーへの影響・今後の課題・アクション
+- **手動登録・補正データの保護挙動**: 新規 3 会議体、補正済 7 会議体および対象開催回・配付資料はすべて `manual_lock=1`（`manualLock: true`）を設定したため、次回以降の定期クロールおよび `apply_report.py` で上書き・削除されない。
+- **次回クロール時の新着検知・自動更新の挙動**: 新規 3 会議体は `tpl-general-round-subpage` と各会議体の `subpage_discovery_pattern` により第 2 回以降の開催回・配付資料を自動検知する。また `_prioritize_meeting_date()` により今後の金融庁サブページでも冒頭公表日ではなく `日時：` / URL / 親日付が優先採用される。
+- **クローラー負荷への影響**: 新規 3 会議体の探索パターンを各公式サブディレクトリ配下に限定しており、同一ホスト直列制御およびレートリミット（0.35s 以上）への悪影響はない。
+- **今後の予定**: 次期 **Drop 152** にて `Track [Crawl-Discovery-Accuracy]` フェーズ 2（`discover_councils.py` の CI 定時統合等）または `Track [Core-Policy-Filter]` 等の検討を進める。

@@ -185,6 +185,16 @@ class TestMaterialExtraction(unittest.TestCase):
         self.assertFalse(is_intermediate_html_material('議事要旨', 'https://www.soumu.go.jp/main_sosiki/singi/gijiyoushi.html'))
         self.assertFalse(is_intermediate_html_material('議事録', 'https://www.mof.go.jp/about_mof/councils/fiscal_system_council/sub-of_filp/proceedings/proceedings/zaitoa20250731.html'))
 
+    def test_recover_fullwidth_colon_pdf_size_stripped(self):
+        """Drop 151: 全角コロン付き（PDF：566KB）が除去され、資料名が「資料」のまま保持されること"""
+        html = """
+        <p><img alt="" class="pdf" src="/images/common/icon_pdf.gif"/>　<a href="/singi/yuusiken/siryou/01.pdf">資料</a>（PDF：566KB）</p>
+        """
+        soup = BeautifulSoup(html, 'html.parser')
+        a_tag = soup.find('a')
+        recovered = recover_material_context(a_tag, initial_name="資料")
+        self.assertEqual(recovered, "資料")
+
 
 if __name__ == '__main__':
     unittest.main()

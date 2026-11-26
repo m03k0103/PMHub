@@ -58,7 +58,7 @@ def recover_material_context(a_tag, initial_name="", rule=None):
         else:
             prefix_parts.append(prev.get_text(' ', strip=True))
     prefix = ' '.join(reversed(prefix_parts)).strip()
-    prefix = re.sub(r'[\（\(]PDF[／/形式\:\s\d\.\,KBMB]+\s*[\）\)]', '', prefix, flags=re.IGNORECASE).strip()
+    prefix = re.sub(r'[\（\(]PDF[／/形式\:：\s\d\.\,KBMB]+\s*[\）\)]', '', prefix, flags=re.IGNORECASE).strip()
     prefix = re.sub(r'［PDF形式：\d+.*?］', '', prefix).strip()
     prefix = normalize_text(prefix)
     prefix = re.sub(r'^[\[\(\（\［【\s・:：]+|[\]\)\）\］】\s・:：]+$', '', prefix).strip()
@@ -75,7 +75,7 @@ def recover_material_context(a_tag, initial_name="", rule=None):
                 header_texts = [c.get_text(' ', strip=True) for c in cells[:idx]]
                 tr_prefix = ' '.join(t for t in header_texts if t and t not in ('PDF', '資料')).strip()
                 tr_prefix = normalize_text(tr_prefix)
-                tr_prefix = re.sub(r'[\（\(]PDF[／/形式\:\s\d\.\,KBMB]+\s*[\）\)]', '', tr_prefix, flags=re.IGNORECASE).strip()
+                tr_prefix = re.sub(r'[\（\(]PDF[／/形式\:：\s\d\.\,KBMB]+\s*[\）\)]', '', tr_prefix, flags=re.IGNORECASE).strip()
                 tr_prefix = re.sub(r'［PDF形式：\d+.*?］', '', tr_prefix).strip()
                 # 単なる回次や日付（またはその組み合わせ）のみの場合は資料名ではないため除外
                 if re.match(r'^(?:第[\d〇一二三四五六七八九十百]+回)?[\s\u3000]*(?:(?:令和|平成|昭和|\d{4}年)[\s\d年月日時分秒/・\-–—―\(\)（）]*)+$', tr_prefix):
@@ -88,7 +88,7 @@ def recover_material_context(a_tag, initial_name="", rule=None):
     parent_text = ''
     if parent_block:
         p_txt = parent_block.get_text(' ', strip=True)
-        p_txt = re.sub(r'[\（\(]PDF[／/形式\:\s\d\.\,KBMB]+\s*[\）\)]', '', p_txt, flags=re.IGNORECASE).strip()
+        p_txt = re.sub(r'[\（\(]PDF[／/形式\:：\s\d\.\,KBMB]+\s*[\）\)]', '', p_txt, flags=re.IGNORECASE).strip()
         p_txt = re.sub(r'［PDF形式：\d+.*?］', '', p_txt).strip()
         p_txt = normalize_text(p_txt)
         # 他のリンクテキストが大量に混ざっていないかチェック

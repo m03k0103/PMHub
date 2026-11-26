@@ -319,7 +319,7 @@ def recover_material_context(a_tag, initial_name="", rule=None):
         else:
             prefix_parts.append(prev.get_text(' ', strip=True))
     prefix = ' '.join(reversed(prefix_parts)).strip()
-    prefix = re.sub(r'[\（\(]PDF[／/形式\:\s\d\.\,KBMB]+\s*[\）\)]', '', prefix, flags=re.IGNORECASE).strip()
+    prefix = re.sub(r'[\（\(]PDF[／/形式\:：\s\d\.\,KBMB]+\s*[\）\)]', '', prefix, flags=re.IGNORECASE).strip()
     prefix = re.sub(r'［PDF形式：\d+.*?］', '', prefix).strip()
     prefix = normalize_text(prefix)
     prefix = re.sub(r'^[\[\(\（\［【\s・:：]+|[\]\)\）\］】\s・:：]+$', '', prefix).strip()
@@ -336,7 +336,7 @@ def recover_material_context(a_tag, initial_name="", rule=None):
                 header_texts = [c.get_text(' ', strip=True) for c in cells[:idx]]
                 tr_prefix = ' '.join(t for t in header_texts if t and t not in ('PDF', '資料')).strip()
                 tr_prefix = normalize_text(tr_prefix)
-                tr_prefix = re.sub(r'[\（\(]PDF[／/形式\:\s\d\.\,KBMB]+\s*[\）\)]', '', tr_prefix, flags=re.IGNORECASE).strip()
+                tr_prefix = re.sub(r'[\（\(]PDF[／/形式\:：\s\d\.\,KBMB]+\s*[\）\)]', '', tr_prefix, flags=re.IGNORECASE).strip()
                 tr_prefix = re.sub(r'［PDF形式：\d+.*?］', '', tr_prefix).strip()
                 # 単なる回次や日付（またはその組み合わせ）のみの場合は資料名ではないため除外
                 if re.match(r'^(?:第[\d〇一二三四五六七八九十百]+回)?[\s\u3000]*(?:(?:令和|平成|昭和|\d{4}年)[\s\d年月日時分秒/・\-–—―\(\)（）]*)+$', tr_prefix):
@@ -349,7 +349,7 @@ def recover_material_context(a_tag, initial_name="", rule=None):
     parent_text = ''
     if parent_block:
         p_txt = parent_block.get_text(' ', strip=True)
-        p_txt = re.sub(r'[\（\(]PDF[／/形式\:\s\d\.\,KBMB]+\s*[\）\)]', '', p_txt, flags=re.IGNORECASE).strip()
+        p_txt = re.sub(r'[\（\(]PDF[／/形式\:：\s\d\.\,KBMB]+\s*[\）\)]', '', p_txt, flags=re.IGNORECASE).strip()
         p_txt = re.sub(r'［PDF形式：\d+.*?］', '', p_txt).strip()
         p_txt = normalize_text(p_txt)
         # 他のリンクテキストが大量に混ざっていないかチェック
@@ -1751,7 +1751,7 @@ def parse_materials_from_html(html, base_url, pdf_selector=None):
             continue
 
         raw_text = normalize_text(a_tag.get_text(" ", strip=True))
-        clean_name = re.sub(r'[\[\［\（\(]PDF[／/形式\:\s\d\.\,KBMBkbmb]+[\]\］\）\)]', '', raw_text, flags=re.IGNORECASE).strip()
+        clean_name = re.sub(r'[\[\［\（\(]PDF[／/形式\:：\s\d\.\,KBMBkbmb]+[\]\］\）\)]', '', raw_text, flags=re.IGNORECASE).strip()
         clean_name = re.sub(r'［PDF形式：\d+.*?］', '', clean_name).strip()
         clean_name = normalize_text(clean_name)
         
@@ -2349,6 +2349,64 @@ def extract_actual_subpage_links(html, target_url, rule=None, return_meta=False)
         return candidates, meta_map
     return candidates
 
+
+def _prioritize_meeting_date(sub_html, norm_sub_dates, url_date=None, parent_date=None):
+    """
+    サブページの複数候補日付から実際の開催日を先頭([0])に優先配置する（Drop 151）。
+    優先順位:
+      (a) 本文の「日時」「開催日」「開催日時」ラベル直後の日付（YYYY/MM/DD正規化で先頭挿入）
+      (b) URL内日付 (url_date) と一致する候補日付
+      (c) 親ページ抽出日付 (parent_date) と一致する候補日付
+      (d) いずれにも該当しない場合は元のリストをそのまま返す
+    """
+    dates = list(norm_sub_dates or [])
+
+    def _to_ymd(val):
+        if not val:
+            return None
+        norm = normalize_japanese_numbers(unicodedata.normalize("NFKC", str(val)))
+        dt = parse_japanese_date(norm)
+        if dt and 1990 <= dt.year <= datetime.now().year + 2:
+            return dt.strftime("%Y/%m/%d")
+        return None
+
+    # (a) 明示的な「日時」「開催日」「開催日時」「実施日」ラベル直後の日付を最優先
+    if sub_html:
+        text_clean = clean_html_for_dates(sub_html)
+        if "<" in text_clean:
+            text_clean = BeautifulSoup(text_clean, "html.parser").get_text(" ", strip=True)
+        text_clean = normalize_japanese_numbers(unicodedata.normalize("NFKC", text_clean))
+        text_clean = re.sub(r'(\d{4}年)[（\(][^）\)\n]+[）\)]\s*(\d{1,2}月\d{1,2}日)', r'\1\2', text_clean)
+        text_clean = re.sub(r'((?:令和|平成)(?:\d+|元)年)[（\(][^）\)\n]+[）\)]\s*(\d{1,2}月\d{1,2}日)', r'\1\2', text_clean)
+        text_clean = re.sub(r'\s+', ' ', text_clean)
+        label_pat = (
+            r'(?:開催日時|実施日時|開催日|実施日|(?<![更新掲載公表作成発行修正])日時)'
+            r'\s*[:：]?\s*'
+            r'((?:(?:令和|平成|昭和)\s*(?:\d+|元)|(?:\d{4}))\s*年\s*\d{1,2}\s*月\s*\d{1,2}\s*日'
+            r'|\d{4}\s*[/-]\s*\d{1,2}\s*[/-]\s*\d{1,2})'
+        )
+        for m in re.finditer(label_pat, text_clean):
+            ymd_a = _to_ymd(re.sub(r'\s+', '', m.group(1)))
+            if ymd_a:
+                return [ymd_a] + [d for d in dates if _to_ymd(d) != ymd_a]
+
+    # (b) URL埋め込み日付との一致
+    ymd_url = _to_ymd(url_date)
+    if ymd_url:
+        for idx, d in enumerate(dates):
+            if _to_ymd(d) == ymd_url:
+                return [d] + [x for i, x in enumerate(dates) if i != idx]
+
+    # (c) 親ページ側で先行抽出した日付との一致
+    ymd_parent = _to_ymd(parent_date)
+    if ymd_parent:
+        for idx, d in enumerate(dates):
+            if _to_ymd(d) == ymd_parent:
+                return [d] + [x for i, x in enumerate(dates) if i != idx]
+
+    return dates
+
+
 def _crawl_subpages(target_url, html, rule, quirk_note, pdf_pattern, existing_urls=None, recheck_recent=1, full_check=False):
     """サブページの深掘りクロールロジック（CR-14: 親ページ実リンク解析型・CR-23: 最新1件更新確認＆過去回再検査ゼロ化）"""
     subpage_meetings = []
@@ -2453,17 +2511,15 @@ def _crawl_subpages(target_url, html, rule, quirk_note, pdf_pattern, existing_ur
 
                 raw_sub_dates = extract_clean_dates_from_html(sub_html, rule.get("date_regex", DEFAULT_DATE_REGEX))
                 norm_sub_dates = [normalize_japanese_numbers(d) for d in raw_sub_dates]
+                p_date = subpage_meta.get(sub_url, {}).get("parent_date") if subpage_meta else None
+                url_date = _extract_date_from_url(sub_url) if sub_url else None
+                norm_sub_dates = _prioritize_meeting_date(sub_html, norm_sub_dates, url_date=url_date, parent_date=p_date)
                 # 親ページ側（リンク行・アンカー）から先行抽出した開催日をフォールバック適用
-                if not norm_sub_dates and subpage_meta:
-                    p_info = subpage_meta.get(sub_url, {})
-                    p_date = p_info.get("parent_date")
-                    if p_date:
-                        norm_sub_dates.append(normalize_japanese_numbers(p_date))
+                if not norm_sub_dates and p_date:
+                    norm_sub_dates.append(normalize_japanese_numbers(p_date))
                 # CR-16: 本文および親リンクから日付が取れなかった場合、サブページURLから日付をフォールバック復元
-                if not norm_sub_dates and sub_url:
-                    url_date = _extract_date_from_url(sub_url)
-                    if url_date:
-                        norm_sub_dates.append(url_date)
+                if not norm_sub_dates and url_date:
+                    norm_sub_dates.append(url_date)
                 all_extracted_dates.extend(norm_sub_dates)
 
                 if not sub_materials:
