@@ -56,29 +56,33 @@ class TestWafResilience(unittest.TestCase):
         self.assertTrue(crawler.is_waf_challenge("<div id='challenge-running'></div>", status_code=200))
         self.assertFalse(crawler.is_waf_challenge("<html><head><title>正常なページ</title></head></html>", status_code=200))
 
+    @patch('crawler._fetch_with_curl')
     @patch('time.sleep')
     @patch('urllib.request.urlopen')
-    def test_fetch_url_retry_on_202(self, mock_urlopen, mock_sleep):
-        """CR-48: HTTP 202 発生時にクールダウン待機して自動リトライが実行されるか検証"""
+    def test_fetch_url_immediate_circuit_breaker_on_202(self, mock_urlopen, mock_sleep, mock_curl):
+        """対策5: HTTP 202 検知時に2.5秒リトライやcurlフォールバックを行わず即時サーキットブレーカー停止・ホスト遮断されるか検証"""
         resp_202 = MagicMock()
         resp_202.status = 202
         resp_202.headers.get.return_value = 'text/html'
         resp_202.read.return_value = b'<html>challenge</html>'
         resp_202.__enter__.return_value = resp_202
 
-        resp_200 = MagicMock()
-        resp_200.status = 200
-        resp_200.headers.get.return_value = 'text/html; charset=utf-8'
-        resp_200.read.return_value = '<html><head><title>正常審議会</title></head><body><h1>第1回</h1></body></html>'.encode('utf-8')
-        resp_200.__enter__.return_value = resp_200
+        mock_urlopen.return_value = resp_202
 
-        mock_urlopen.side_effect = [resp_202, resp_200]
+        host = "waf202-test.meti.go.jp"
+        res1 = crawler.fetch_url(f"https://{host}/shingikai/sample/index.html")
+        self.assertIsNone(res1)
+        self.assertEqual(mock_urlopen.call_count, 1)
+        mock_curl.assert_not_called()
+        for call in mock_sleep.call_args_list:
+            self.assertNotAlmostEqual(call.args[0], 2.5, places=3)
+        self.assertTrue(crawler.is_host_waf_blocked(host))
+        self.assertIn("WAF 202 Challenge", getattr(crawler._thread_local, 'last_fetch_error', ''))
 
-        html = crawler.fetch_url("https://www.meti.go.jp/shingikai/sample/index.html")
-        self.assertIsNotNone(html)
-        self.assertIn("正常審議会", html)
-        self.assertEqual(mock_urlopen.call_count, 2)
-        mock_sleep.assert_any_call(2.5)
+        # 後続の同一ホストアクセスはネットワーク通信を行わず即時スキップ
+        res2 = crawler.fetch_url(f"https://{host}/shingikai/sample/other.html")
+        self.assertIsNone(res2)
+        self.assertEqual(mock_urlopen.call_count, 1)
 
     def test_is_s3_or_cdn_not_found(self):
         """Drop 137: Amazon S3 / CloudFront 擬似403 (Not Found) の検知判定を検証"""
@@ -309,6 +313,157 @@ class TestWafResilience(unittest.TestCase):
         self.assertEqual(stats.get("waf_skipped"), 1)
         self.assertEqual(stats.get("waf_blocked_hosts"), ["www.meti.go.jp"])
         self.assertEqual(stats.get("waf_blocked_ministries"), [])
+
+    @patch('time.sleep')
+    @patch('urllib.request.urlopen')
+    def test_fetch_url_in_run_html_cache_strips_anchor(self, mock_urlopen, mock_sleep):
+        """対策1: 同一巡回内で #anchor のみ異なる親ページURLは1回だけ通信しキャッシュを再利用すること"""
+        resp = MagicMock()
+        resp.status = 200
+        resp.headers.get.return_value = 'text/html; charset=utf-8'
+        resp.read.return_value = '<html><title>研究会一覧</title><body><h2 id="a">A</h2><h2 id="b">B</h2></body></html>'.encode('utf-8')
+        resp.__enter__.return_value = resp
+        mock_urlopen.return_value = resp
+
+        base_url = "https://www.chusho.meti.go.jp/koukai/kenkyukai/index.html"
+        html1 = crawler.fetch_url(f"{base_url}#council_a")
+        html2 = crawler.fetch_url(f"{base_url}#council_b")
+        self.assertIsNotNone(html1)
+        self.assertEqual(html1, html2)
+        self.assertEqual(mock_urlopen.call_count, 1)
+
+    @patch('time.sleep')
+    @patch('urllib.request.urlopen')
+    def test_fetch_url_conditional_get_304_uses_cached_html(self, mock_urlopen, mock_sleep):
+        """対策2: ETag / Last-Modified を記憶し、次回 HTTP 304 応答時にキャッシュ済みHTMLを返すこと"""
+        import http.client
+        import io
+        import urllib.error
+
+        hdrs = http.client.HTTPMessage()
+        hdrs.add_header('Content-Type', 'text/html; charset=utf-8')
+        hdrs.add_header('ETag', '"smea-v1"')
+        hdrs.add_header('Last-Modified', 'Thu, 26 Nov 2026 09:00:00 GMT')
+
+        resp_200 = MagicMock()
+        resp_200.status = 200
+        resp_200.headers = hdrs
+        resp_200.info.return_value = hdrs
+        resp_200.read.return_value = '<html><title>条件付きGET会議</title></html>'.encode('utf-8')
+        resp_200.__enter__.return_value = resp_200
+
+        url = "https://www.chusho.meti.go.jp/koukai/shingikai/index.html"
+        err_304 = urllib.error.HTTPError(url=url, code=304, msg="Not Modified", hdrs={}, fp=io.BytesIO(b""))
+        mock_urlopen.side_effect = [resp_200, err_304]
+
+        html1 = crawler.fetch_url(url)
+        self.assertIn("条件付きGET会議", html1)
+
+        # 次回クロール相当として巡回内キャッシュのみクリアし、条件付きGETキャッシュを残す
+        with crawler._RUN_HTML_CACHE_LOCK:
+            crawler._RUN_HTML_CACHE.clear()
+
+        html2 = crawler.fetch_url(url)
+        self.assertEqual(html2, html1)
+        self.assertEqual(mock_urlopen.call_count, 2)
+
+        req2 = mock_urlopen.call_args_list[1].args[0]
+        req2_hdrs = {k.lower(): v for k, v in req2.header_items()}
+        self.assertEqual(req2_hdrs.get('if-none-match'), '"smea-v1"')
+        self.assertEqual(req2_hdrs.get('if-modified-since'), 'Thu, 26 Nov 2026 09:00:00 GMT')
+
+    def test_rate_limit_host_applies_bounded_jitter(self):
+        """対策3: ホスト間レートリミットに既定基準間隔以上のランダムゆらぎ（ジッター）が付与されること"""
+        from crawler_modules import http_client
+
+        host = "jitter-check.meti.go.jp"
+        crawler._LAST_REQUEST_TIME_BY_HOST.pop(host, None)
+        crawler._LAST_REQUEST_TIME_BY_HOST[host] = 100.0
+        try:
+            with patch('crawler.time.time', return_value=100.2), \
+                 patch('crawler.time.sleep') as mock_sleep, \
+                 patch('crawler.random.uniform', return_value=0.35) as mock_uniform, \
+                 patch('crawler._get_host_interval', return_value=2.0):
+                crawler._rate_limit_host(host)
+                mock_uniform.assert_called_once()
+                low, high = mock_uniform.call_args.args
+                self.assertEqual(low, 0.0)
+                self.assertAlmostEqual(high, 0.7, places=4)
+                # interval = 2.0 + 0.35 = 2.35, elapsed = 0.2 -> sleep 2.15
+                mock_sleep.assert_called_once()
+                self.assertAlmostEqual(mock_sleep.call_args.args[0], 2.15, places=3)
+        finally:
+            crawler._LAST_REQUEST_TIME_BY_HOST.pop(host, None)
+
+        with http_client._HTTP_LOCK:
+            http_client._HOST_LAST_ACCESS[host] = 200.0
+        try:
+            with patch('crawler_modules.http_client.time.time', side_effect=[200.1, 202.35]), \
+                 patch('crawler_modules.http_client.time.sleep') as mock_hc_sleep, \
+                 patch('crawler_modules.http_client.random.uniform', return_value=0.25) as mock_hc_uniform:
+                http_client.apply_host_rate_limit(host, interval=2.0, jitter_ratio=0.35, max_jitter=1.5)
+                mock_hc_uniform.assert_called_once()
+                mock_hc_sleep.assert_called_once()
+                self.assertAlmostEqual(mock_hc_sleep.call_args.args[0], 2.15, places=3)
+        finally:
+            with http_client._HTTP_LOCK:
+                http_client._HOST_LAST_ACCESS.pop(host, None)
+
+    @patch('time.sleep')
+    @patch('urllib.request.urlopen')
+    def test_fetch_url_cookie_session_and_referer_headers(self, mock_urlopen, mock_sleep):
+        """対策4: 同一ホスト内のCookie維持およびReferer / Sec-Fetch-Siteヘッダー付与を検証"""
+        import http.client
+
+        hdrs1 = http.client.HTTPMessage()
+        hdrs1.add_header('Content-Type', 'text/html; charset=utf-8')
+        hdrs1.add_header('Set-Cookie', 'pmhub_sess=tok123; Path=/; Secure')
+
+        resp1 = MagicMock()
+        resp1.status = 200
+        resp1.headers = hdrs1
+        resp1.info.return_value = hdrs1
+        resp1.read.return_value = '<html><title>親ページ</title></html>'.encode('utf-8')
+        resp1.__enter__.return_value = resp1
+
+        hdrs2 = http.client.HTTPMessage()
+        hdrs2.add_header('Content-Type', 'text/html; charset=utf-8')
+        resp2 = MagicMock()
+        resp2.status = 200
+        resp2.headers = hdrs2
+        resp2.info.return_value = hdrs2
+        resp2.read.return_value = '<html><title>サブページ</title></html>'.encode('utf-8')
+        resp2.__enter__.return_value = resp2
+
+        hdrs3 = http.client.HTTPMessage()
+        hdrs3.add_header('Content-Type', 'text/html; charset=utf-8')
+        resp3 = MagicMock()
+        resp3.status = 200
+        resp3.headers = hdrs3
+        resp3.info.return_value = hdrs3
+        resp3.read.return_value = '<html><title>外部</title></html>'.encode('utf-8')
+        resp3.__enter__.return_value = resp3
+
+        mock_urlopen.side_effect = [resp1, resp2, resp3]
+
+        parent_url = "https://www.chusho.meti.go.jp/koukai/kenkyukai/index.html"
+        sub_url = "https://www.chusho.meti.go.jp/koukai/kenkyukai/sub1.html"
+        ext_url = "https://www.meti.go.jp/shingikai/other.html"
+
+        crawler.fetch_url(parent_url)
+        crawler.fetch_url(sub_url, referer=f"{parent_url}#sec1")
+        crawler.fetch_url(ext_url, referer=parent_url)
+
+        req2 = mock_urlopen.call_args_list[1].args[0]
+        req2_hdrs = {k.lower(): v for k, v in req2.header_items()}
+        self.assertIn('pmhub_sess=tok123', req2_hdrs.get('cookie', ''))
+        self.assertEqual(req2_hdrs.get('referer'), parent_url)
+        self.assertEqual(req2_hdrs.get('sec-fetch-site'), 'same-origin')
+        self.assertEqual(req2_hdrs.get('connection'), 'keep-alive')
+
+        req3 = mock_urlopen.call_args_list[2].args[0]
+        req3_hdrs = {k.lower(): v for k, v in req3.header_items()}
+        self.assertEqual(req3_hdrs.get('sec-fetch-site'), 'cross-site')
 
 
 if __name__ == '__main__':
