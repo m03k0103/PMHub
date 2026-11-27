@@ -9551,7 +9551,8 @@
       "name": "食事由来の化学物質のばく露評価ワーキンググループ",
       "officialUrl": "https://www.fsc.go.jp/senmon/sonota/bakuro.html",
       "description": "食品安全委員会における食事由来の化学物質のばく露評価ワーキンググループ。",
-      "pastYearCount": 8
+      "pastYearCount": 14,
+      "isNewlyDiscovered": true
     },
     {
       "id": "fsc-biseibutu_virus",
@@ -9605,8 +9606,7 @@
       "name": "食品安全委員会",
       "officialUrl": "https://www.fsc.go.jp/iinkai_annai/jisseki.html",
       "description": "食品安全委員会における食品安全委員会。",
-      "pastYearCount": 302,
-      "isNewlyDiscovered": true
+      "pastYearCount": 302
     },
     {
       "id": "fsc-hyoukagijyutukikaku_wg",
@@ -12250,8 +12250,7 @@
       "category": "STUDY",
       "name": "医療上の必要性の高い未承認薬・適応外薬検討会",
       "officialUrl": "https://www.mhlw.go.jp/stf/shingi/other-iyaku_128701.html",
-      "pastYearCount": 20,
-      "isNewlyDiscovered": true
+      "pastYearCount": 20
     },
     {
       "id": "mhlw-2900",
@@ -13972,8 +13971,7 @@
       "category": "STUDY",
       "name": "国民年金第3号被保険者制度等に関する検討会",
       "officialUrl": "https://www.mhlw.go.jp/stf/newpage_75817.html",
-      "pastYearCount": 3,
-      "isNewlyDiscovered": true
+      "pastYearCount": 3
     },
     {
       "id": "mhlw-engo_shinsa",
@@ -14163,6 +14161,15 @@
       "name": "特定石綿被害建設業務労働者等認定審査会専門委員会",
       "officialUrl": "https://www.mhlw.go.jp/stf/newpage_26379.html",
       "pastYearCount": 39
+    },
+    {
+      "id": "mhlw-iyaku_36865",
+      "ministry": "MHLW",
+      "category": "STUDY",
+      "name": "薬局・薬剤師の機能強化等に関する検討会",
+      "officialUrl": "https://www.mhlw.go.jp/stf/shingi/iyaku_36865.html",
+      "pastYearCount": 20,
+      "isNewlyDiscovered": true
     },
     {
       "id": "mhlw-iyakuhin_gyousei_monitoring",
@@ -14568,8 +14575,7 @@
       "name": "社会保障審議会 介護給付費分科会",
       "officialUrl": "https://www.mhlw.go.jp/stf/shingi/shingi-hosho_126698_00022.html",
       "description": "厚生労働省社会保障審議会における社会保障審議会 介護給付費分科会。",
-      "pastYearCount": 83,
-      "isNewlyDiscovered": true
+      "pastYearCount": 83
     },
     {
       "id": "mhlw-shakai_hosho_nenkin",
@@ -16880,8 +16886,7 @@
       "category": "SUBCOMMITTEE",
       "name": "外国為替等分科会",
       "officialUrl": "https://www.mof.go.jp/about_mof/councils/customs_foreign_exchange/sub-foreign_exchange/proceedings/index.html",
-      "pastYearCount": 26,
-      "isNewlyDiscovered": true
+      "pastYearCount": 26
     },
     {
       "id": "mof-1138",
@@ -18633,7 +18638,6 @@
       "name": "第70回 医療上の必要性の高い未承認薬・適応外薬検討会",
       "date": "2026/12/10",
       "officialUrl": "https://www.mhlw.go.jp/stf/shingi/other-iyaku_128701.html",
-      "isNewlyDiscovered": true,
       "materials": []
     },
     {
@@ -18642,7 +18646,6 @@
       "name": "第48回 保険者による健診・保健指導等に関する検討会",
       "date": "2026/12/08",
       "officialUrl": "https://www.mhlw.go.jp/stf/shingi/other-hoken_129197.html",
-      "isNewlyDiscovered": true,
       "materials": [
         {
           "name": "議事録",
@@ -18662,6 +18665,15 @@
       "name": "第135回 こども家庭審議会 児童虐待等要保護事例の検証に関する専門委員会",
       "date": "2026/12/04",
       "officialUrl": "https://www.cfa.go.jp/councils/shingikai/gyakutai_boushi/hogojirei/135",
+      "materials": []
+    },
+    {
+      "id": "mhlw-iyaku_36865-20261202-020",
+      "councilId": "mhlw-iyaku_36865",
+      "name": "第20回 薬局・薬剤師の機能強化等に関する検討会",
+      "date": "2026/12/02",
+      "officialUrl": "https://www.mhlw.go.jp/stf/shingi/iyaku_36865.html",
+      "isNewlyDiscovered": true,
       "materials": []
     },
     {
@@ -18922,7 +18934,6 @@
       "name": "関税・外国為替等審議会 第71回外国為替等分科会",
       "date": "2026/11/26",
       "officialUrl": "https://www.mof.go.jp/about_mof/councils/customs_foreign_exchange/sub-foreign_exchange/proceedings/material/20261120175045.html",
-      "isNewlyDiscovered": true,
       "materials": [
         {
           "name": "議事次第(第71回外国為替等分科会)",
@@ -19731,6 +19742,60 @@
         {
           "name": "公益社団法人 日本証券アナリスト協会 資料",
           "url": "https://www.fsa.go.jp/singi/singi_kinyu/disclosure_wg/shiryou/20261118/04.pdf"
+        }
+      ]
+    },
+    {
+      "id": "fsc-bakuro_wg-20261118-014",
+      "councilId": "fsc-bakuro_wg",
+      "name": "第14回食事由来の化学物質のばく露評価ワーキンググループ",
+      "date": "2026/11/18",
+      "officialUrl": "https://www.fsc.go.jp/fsciis/meetingMaterial/show/kai20261118so1",
+      "isNewlyDiscovered": true,
+      "materials": [
+        {
+          "name": "議事次第",
+          "url": "https://www.fsc.go.jp/fsciis/attachedFile/download?retrievalId=kai20261118so1&fileId=010"
+        },
+        {
+          "name": "専門委員等名簿",
+          "url": "https://www.fsc.go.jp/fsciis/attachedFile/download?retrievalId=kai20261118so1&fileId=020"
+        },
+        {
+          "name": "資料1 食品健康影響評価における食事由来の化学物質のばく露評価の 手引き(案)",
+          "url": "https://www.fsc.go.jp/fsciis/attachedFile/download?retrievalId=kai20261118so1&fileId=110"
+        },
+        {
+          "name": "参考資料1 ばく露評価に関する用語(「食品の安全性に関する用語 集」からの抜粋)",
+          "url": "https://www.fsc.go.jp/fsciis/attachedFile/download?retrievalId=kai20261118so1&fileId=210"
+        },
+        {
+          "name": "参考資料2 食品健康影響評価指針等の抜粋(ばく露量推定に関する部 分))(令和8年3月23日食事由来の化学物質のばく露評 価ワーキンググループ資料)",
+          "url": "https://www.fsc.go.jp/fsciis/attachedFile/download?retrievalId=kai20261118so1&fileId=220"
+        },
+        {
+          "name": "参考資料3 Environmental health criteria 240 Principles and methods for the risk assessment of chemicals in food, Annex 1 Glossary of Terms (IPCS,2009)",
+          "url": "https://www.fsc.go.jp/fsciis/attachedFile/download?retrievalId=kai20261118so1&fileId=230"
+        },
+        {
+          "name": "参考資料4 Environmental health criteria 240 Principles and methods for the risk assessment of chemicals in food, Chapter 6 Dietary Exposure Assessment of Chemicals in Food (IPCS,2020)",
+          "url": "https://www.fsc.go.jp/fsciis/attachedFile/download?retrievalId=kai20261118so1&fileId=240"
+        },
+        {
+          "name": "参考資料5 化学物質の経口摂取量推定に関するガイドライン(令和元年9月公表 農林水産省)",
+          "url": "https://www.fsc.go.jp/fsciis/attachedFile/download?retrievalId=kai20261118so1&fileId=250"
+        },
+        {
+          "name": "参考資料6 トータルダイエットスタディに関するガイドライン(農林水産省)",
+          "url": "https://www.fsc.go.jp/fsciis/attachedFile/download?retrievalId=kai20261118so1&fileId=260"
+        },
+        {
+          "name": "参考資料7 Towards a harmonised Total Diet Study approach a guidance document(EFSA, FAO and WHO, 2011)",
+          "url": "https://www.fsc.go.jp/fsciis/attachedFile/download?retrievalId=kai20261118so1&fileId=270"
+        },
+        {
+          "name": "参考資料8 Advice for the update of the EU Menu guidance results of the ERA EU Menu project(EFSA, 2024)",
+          "url": "https://www.fsc.go.jp/fsciis/attachedFile/download?retrievalId=kai20261118so1&fileId=280"
         }
       ]
     },
@@ -85497,6 +85562,25 @@
       ]
     },
     {
+      "id": "mhlw-iyaku_36865-20260415-019",
+      "councilId": "mhlw-iyaku_36865",
+      "name": "第19回 薬局・薬剤師の機能強化等に関する検討会",
+      "date": "2026/04/15",
+      "officialUrl": "https://www.mhlw.go.jp/stf/shingi/iyaku_36865.html",
+      "isNewlyDiscovered": true,
+      "materials": [
+        {
+          "name": "議事録",
+          "url": "https://www.mhlw.go.jp/content/11121000/001734773.pdf"
+        },
+        {
+          "name": "第19回 2026年4月15日 (令和8年4月15日) (1)調剤業務の一部外部委託について (2)地域医薬品提供体制構築推進事業について(報告) (3)その他 議事録[PDF形式:423KB",
+          "url": "https://www.mhlw.go.jp/stf/newpage_72523.html",
+          "type": "HTML"
+        }
+      ]
+    },
+    {
       "id": "mic-chihou_seido_34-20260415-004",
       "councilId": "mic-chihou_seido_34",
       "name": "第4回 第34次地方制度調査会 専門小委員会",
@@ -89401,6 +89485,25 @@
       ]
     },
     {
+      "id": "mhlw-iyaku_36865-20260330-018",
+      "councilId": "mhlw-iyaku_36865",
+      "name": "第18回 薬局・薬剤師の機能強化等に関する検討会",
+      "date": "2026/03/30",
+      "officialUrl": "https://www.mhlw.go.jp/stf/shingi/iyaku_36865.html",
+      "isNewlyDiscovered": true,
+      "materials": [
+        {
+          "name": "議事録",
+          "url": "https://www.mhlw.go.jp/content/11121000/001734768.pdf"
+        },
+        {
+          "name": "第18回 2026年3月30日 (令和8年3月30日) (1) 離島・へき地での医薬品提供体制について (2) 調剤の一部外部委託について (3) その他 議事録[PDF形式:475KB",
+          "url": "https://www.mhlw.go.jp/stf/newpage_72096.html",
+          "type": "HTML"
+        }
+      ]
+    },
+    {
       "id": "mhlw-shakai_hosho_kaigo_kyuufu-20260330-255",
       "councilId": "mhlw-shakai_hosho_kaigo_kyuufu",
       "name": "第255回 社会保障審議会 介護給付費分科会",
@@ -91615,7 +91718,6 @@
       "name": "第47回 保険者による健診・保健指導等に関する検討会",
       "date": "2026/03/25",
       "officialUrl": "https://www.mhlw.go.jp/stf/shingi/other-hoken_129197.html",
-      "isNewlyDiscovered": true,
       "materials": [
         {
           "name": "議事録",
@@ -113360,6 +113462,25 @@
         {
           "name": "各都道府県等別の概況(PDF:50.1KB)[49KB]",
           "url": "https://www.mhlw.go.jp/content/10901000/001486840.pdf"
+        }
+      ]
+    },
+    {
+      "id": "mhlw-iyaku_36865-20260202-017",
+      "councilId": "mhlw-iyaku_36865",
+      "name": "第17回 薬局・薬剤師の機能強化等に関する検討会",
+      "date": "2026/02/02",
+      "officialUrl": "https://www.mhlw.go.jp/stf/shingi/iyaku_36865.html",
+      "isNewlyDiscovered": true,
+      "materials": [
+        {
+          "name": "議事録",
+          "url": "https://www.mhlw.go.jp/content/11121000/001665770.pdf"
+        },
+        {
+          "name": "第17回 2026年2月2日 (令和8年2月2日) (1) 調剤の一部外部委託について (2) その他 議事録[PDF形式:359KB",
+          "url": "https://www.mhlw.go.jp/stf/newpage_69815.html",
+          "type": "HTML"
         }
       ]
     },
@@ -161830,6 +161951,25 @@
       ]
     },
     {
+      "id": "mhlw-iyaku_36865-20250730-016",
+      "councilId": "mhlw-iyaku_36865",
+      "name": "第16回 薬局・薬剤師の機能強化等に関する検討会",
+      "date": "2025/07/30",
+      "officialUrl": "https://www.mhlw.go.jp/stf/shingi/iyaku_36865.html",
+      "isNewlyDiscovered": true,
+      "materials": [
+        {
+          "name": "議事録",
+          "url": "https://www.mhlw.go.jp/content/11121000/001564616.pdf"
+        },
+        {
+          "name": "第16回 2025年7月30日 (令和7年7月30日) (1) 前回の意見について (2) 地域連携薬局、健康増進支援薬局 について (3) その他 議事録[PDF形式:278KB",
+          "url": "https://www.mhlw.go.jp/stf/newpage_60318.html",
+          "type": "HTML"
+        }
+      ]
+    },
+    {
       "id": "mhlw-nenkin_kouhou_kento-20250730-021",
       "councilId": "mhlw-nenkin_kouhou_kento",
       "name": "第21回 年金広報検討会",
@@ -168303,6 +168443,25 @@
         {
           "name": "議事録",
           "url": "https://www.mhlw.go.jp/stf/newpage_62663.html"
+        }
+      ]
+    },
+    {
+      "id": "mhlw-iyaku_36865-20250630-015",
+      "councilId": "mhlw-iyaku_36865",
+      "name": "第15回 薬局・薬剤師の機能強化等に関する検討会",
+      "date": "2025/06/30",
+      "officialUrl": "https://www.mhlw.go.jp/stf/shingi/iyaku_36865.html",
+      "isNewlyDiscovered": true,
+      "materials": [
+        {
+          "name": "議事録",
+          "url": "https://www.mhlw.go.jp/content/11121000/001543365.pdf"
+        },
+        {
+          "name": "第15回 2025年6月30日 (令和7年6月30日) (1) 前回の意見について (2) 認定薬局 について (3) その他 議事録[PDF形式:351KB",
+          "url": "https://www.mhlw.go.jp/stf/newpage_59230.html",
+          "type": "HTML"
         }
       ]
     },
@@ -179735,6 +179894,25 @@
         {
           "name": "議事録",
           "url": "https://www.mhlw.go.jp/content/10808000/001679714.pdf"
+        }
+      ]
+    },
+    {
+      "id": "mhlw-iyaku_36865-20250519-014",
+      "councilId": "mhlw-iyaku_36865",
+      "name": "第14回 薬局・薬剤師の機能強化等に関する検討会",
+      "date": "2025/05/19",
+      "officialUrl": "https://www.mhlw.go.jp/stf/shingi/iyaku_36865.html",
+      "isNewlyDiscovered": true,
+      "materials": [
+        {
+          "name": "議事録",
+          "url": "https://www.mhlw.go.jp/content/11121000/001513054.pdf"
+        },
+        {
+          "name": "第14回 2025年5月19日 (令和7年5月19日) (1) 前回の意見について (2) 認定薬局 について (3) その他 議事録[PDF形式:366KB",
+          "url": "https://www.mhlw.go.jp/stf/newpage_57935.html",
+          "type": "HTML"
         }
       ]
     },
@@ -195048,6 +195226,25 @@
       ]
     },
     {
+      "id": "mhlw-iyaku_36865-20250310-013",
+      "councilId": "mhlw-iyaku_36865",
+      "name": "第13回 薬局・薬剤師の機能強化等に関する検討会",
+      "date": "2025/03/10",
+      "officialUrl": "https://www.mhlw.go.jp/stf/shingi/iyaku_36865.html",
+      "isNewlyDiscovered": true,
+      "materials": [
+        {
+          "name": "議事録",
+          "url": "https://www.mhlw.go.jp/content/11121000/001484692.pdf"
+        },
+        {
+          "name": "第13回 2025年3月10日 (令和7年3月10日) (1) 前回の意見について (2) 在宅医療における薬剤提供のあり方について (3) その他 議事録[PDF形式:440KB",
+          "url": "https://www.mhlw.go.jp/stf/newpage_53950.html",
+          "type": "HTML"
+        }
+      ]
+    },
+    {
       "id": "mhlw-tokumei_iryou-20250310-027",
       "councilId": "mhlw-tokumei_iryou",
       "name": "第27回 匿名医療情報等の提供に関する専門委員会",
@@ -206213,6 +206410,25 @@
       "materials": []
     },
     {
+      "id": "mhlw-iyaku_36865-20250131-012",
+      "councilId": "mhlw-iyaku_36865",
+      "name": "第12回 薬局・薬剤師の機能強化等に関する検討会",
+      "date": "2025/01/31",
+      "officialUrl": "https://www.mhlw.go.jp/stf/shingi/iyaku_36865.html",
+      "isNewlyDiscovered": true,
+      "materials": [
+        {
+          "name": "議事録",
+          "url": "https://www.mhlw.go.jp/content/11121000/001460496.pdf"
+        },
+        {
+          "name": "第12回 2025年1月31日 (令和7年1月31日) (1) 前回の意見について (2) 在宅医療における薬剤提供のあり方について (3) その他 議事録[PDF形式:428KB",
+          "url": "https://www.mhlw.go.jp/stf/newpage_50403.html",
+          "type": "HTML"
+        }
+      ]
+    },
+    {
       "id": "mhlw-kansen_yobousesshu_shinsa-20250131-179",
       "councilId": "mhlw-kansen_yobousesshu_shinsa",
       "name": "第179回 感染症・予防接種審査分科会 及び 感染症・予防接種審査分科会新型コロナウイルス感染症予防接種健康被害審査部会",
@@ -215805,6 +216021,25 @@
       ]
     },
     {
+      "id": "mhlw-iyaku_36865-20241216-011",
+      "councilId": "mhlw-iyaku_36865",
+      "name": "第11回 薬局・薬剤師の機能強化等に関する検討会",
+      "date": "2024/12/16",
+      "officialUrl": "https://www.mhlw.go.jp/stf/shingi/iyaku_36865.html",
+      "isNewlyDiscovered": true,
+      "materials": [
+        {
+          "name": "議事録",
+          "url": "https://www.mhlw.go.jp/content/11121000/001419146.pdf"
+        },
+        {
+          "name": "第11回 2024年12月16日 (令和6年12月16日) (1) 前回の意見について (2) 在宅医療における薬剤提供のあり方について (3) その他 議事録[PDF形式:460KB",
+          "url": "https://www.mhlw.go.jp/stf/newpage_47155.html",
+          "type": "HTML"
+        }
+      ]
+    },
+    {
       "id": "mic-shakai_jissou_wg-20241216-002",
       "councilId": "mic-shakai_jissou_wg",
       "name": "情報通信審議会 情報通信技術分科会 技術戦略委員会 社会実装加速化WG（第2回）（2024年12月16日開催）",
@@ -220379,8 +220614,8 @@
     "cas-zensedai_hosyo",
     "mof-zaiseiseido_bunkakai"
   ],
-  "lastCrawlTime": "2026/11/26 20:31",
+  "lastCrawlTime": "2026/11/27 03:26",
   "hasArchive": true,
-  "totalMeetingsCount": 25301,
-  "totalMaterialsCount": 159488
+  "totalMeetingsCount": 25322,
+  "totalMaterialsCount": 159545
 }
