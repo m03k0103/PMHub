@@ -9,6 +9,7 @@ PMHub 共通HTTP通信クライアント (Drop 116)
 import sys
 import os
 import time
+import random
 import threading
 import urllib.request
 import urllib.parse
@@ -36,14 +37,21 @@ def extract_host(url: str) -> str:
         return ""
 
 
-def apply_host_rate_limit(host: str, interval: float = DEFAULT_HOST_INTERVAL):
+def apply_host_rate_limit(
+    host: str,
+    interval: float = DEFAULT_HOST_INTERVAL,
+    jitter_ratio: float = 0.35,
+    max_jitter: float = 1.5,
+):
     """
-    同一ホストに対する直列化スロットリング。
-    前回アクセスから interval 秒経過するまでスリープする。
+    同一ホストに対する直列化スロットリング（ジッター付き）。
+    前回アクセスから effective_interval（基準間隔 + ランダムゆらぎ）秒経過するまでスリープする。
     """
     if not host:
         return
-    effective_interval = max(0.35, interval)
+    base_interval = max(0.35, float(interval))
+    jitter = random.uniform(0.0, min(max_jitter, base_interval * jitter_ratio)) if jitter_ratio > 0 else 0.0
+    effective_interval = max(0.35, base_interval + jitter)
     with _HTTP_LOCK:
         now = time.time()
         last = _HOST_LAST_ACCESS.get(host, 0.0)

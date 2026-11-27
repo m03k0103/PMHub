@@ -12,9 +12,12 @@ import json
 import shutil
 import urllib.request
 import urllib.parse
+import urllib.error
+import http.cookiejar
 import ssl
 import re
 import time
+import random
 import threading
 import concurrent.futures
 import argparse
@@ -1288,14 +1291,16 @@ def _get_host_interval(host):
 
 def _rate_limit_host(host):
     """
-    同一ホストへの過密アクセス防止（CR-21, CR-26, CR-49: スレッドセーフな動的レートリミット）。
+    同一ホストへの過密アクセス防止（CR-21, CR-26, CR-49: ランダムジッター付きスレッドセーフ動的レートリミット）。
     ロック内では予約時刻のみを更新し、実際の sleep はロック外で行うため、
     異なるホストへのアクセスは一切ブロックされず完全並行で実行される。
     """
     if not host:
         return
     sleep_needed = 0.0
-    interval = _get_host_interval(host)
+    base_interval = _get_host_interval(host)
+    jitter = random.uniform(0.0, min(1.5, base_interval * 0.35))
+    interval = max(_MIN_HOST_INTERVAL, base_interval + jitter)
     with _RATE_LIMIT_LOCK:
         now_t = time.time()
         last_t = _LAST_REQUEST_TIME_BY_HOST.get(host, 0.0)
@@ -1362,6 +1367,152 @@ WAF_HOST_BLOCK_THRESHOLD = 3
 _WAF_BLOCK_LOCK = threading.Lock()
 _WARP_ARCHIVE_HOSTS = ("warp.ndl.go.jp", "warp.da.ndl.go.jp")
 
+# HTTP効率化 & WAF202緩和用 同一巡回内HTMLキャッシュ・条件付きGETキャッシュ・ホスト別Cookieセッション
+_RUN_HTML_CACHE = {}
+_RUN_HTML_CACHE_MAX_SIZE = 2000
+_RUN_HTML_CACHE_LOCK = threading.Lock()
+
+HTTP_CONDITIONAL_CACHE_PATH = os.path.abspath(os.path.join(os.path.dirname(__file__), ".http_cache.json"))
+_HTTP_CONDITIONAL_CACHE = {}
+_HTTP_CONDITIONAL_CACHE_MAX_SIZE = 500
+_HTTP_CONDITIONAL_CACHE_LOCK = threading.Lock()
+
+_HOST_COOKIE_JARS = {}
+_HOST_COOKIE_LOCK = threading.Lock()
+
+
+def _normalize_cache_url(url):
+    """キャッシュキー正規化のため URL 末尾の #anchor フラグメントを除去する"""
+    if not url:
+        return ""
+    try:
+        return urllib.parse.urldefrag(str(url))[0]
+    except Exception:
+        return str(url).split('#', 1)[0]
+
+
+def _get_host_cookie_jar(host):
+    """ホスト単位の CookieJar セッションを取得・生成する（スレッドセーフ）"""
+    norm_host = _normalize_waf_host(host)
+    if not norm_host:
+        return None
+    with _HOST_COOKIE_LOCK:
+        jar = _HOST_COOKIE_JARS.get(norm_host)
+        if jar is None:
+            jar = http.cookiejar.CookieJar()
+            _HOST_COOKIE_JARS[norm_host] = jar
+        return jar
+
+
+def _store_run_html_cache(cache_key, html):
+    """同一巡回内の HTML キャッシュへ保存する（上限超過時は最古エントリを破棄）"""
+    if not cache_key or not html:
+        return
+    with _RUN_HTML_CACHE_LOCK:
+        if cache_key not in _RUN_HTML_CACHE and len(_RUN_HTML_CACHE) >= _RUN_HTML_CACHE_MAX_SIZE:
+            try:
+                oldest_key = next(iter(_RUN_HTML_CACHE))
+                _RUN_HTML_CACHE.pop(oldest_key, None)
+            except StopIteration:
+                pass
+        _RUN_HTML_CACHE[cache_key] = html
+
+
+def _extract_valid_conditional_headers(resp_headers):
+    """レスポンスヘッダーから妥当な ETag / Last-Modified を抽出する"""
+    etag = ""
+    last_mod = ""
+    if resp_headers is None:
+        return etag, last_mod
+    try:
+        raw_etag = resp_headers.get('ETag') or resp_headers.get('etag') or ''
+    except Exception:
+        raw_etag = ''
+    if isinstance(raw_etag, str):
+        cand = raw_etag.strip()
+        if cand and not cand.lower().startswith(('text/', 'application/', 'multipart/', 'image/')):
+            etag = cand
+    try:
+        raw_lm = resp_headers.get('Last-Modified') or resp_headers.get('last-modified') or ''
+    except Exception:
+        raw_lm = ''
+    if isinstance(raw_lm, str):
+        cand_lm = raw_lm.strip()
+        if cand_lm and ('GMT' in cand_lm or ',' in cand_lm) and not cand_lm.lower().startswith(('text/', 'application/', 'multipart/', 'image/')):
+            last_mod = cand_lm
+    return etag, last_mod
+
+
+def reset_fetch_caches():
+    """同一巡回内の HTML キャッシュ・条件付き GET キャッシュ・ホスト Cookie セッションを初期化する"""
+    with _RUN_HTML_CACHE_LOCK:
+        _RUN_HTML_CACHE.clear()
+    with _HTTP_CONDITIONAL_CACHE_LOCK:
+        _HTTP_CONDITIONAL_CACHE.clear()
+    with _HOST_COOKIE_LOCK:
+        _HOST_COOKIE_JARS.clear()
+
+
+def load_http_conditional_cache(cache_path=None):
+    """前回の ETag / Last-Modified / HTML キャッシュをディスクからロードする"""
+    target_path = cache_path or HTTP_CONDITIONAL_CACHE_PATH
+    if not target_path or not os.path.exists(target_path):
+        return 0
+    try:
+        with open(target_path, "r", encoding="utf-8") as f:
+            payload = json.load(f)
+        if not isinstance(payload, dict):
+            return 0
+        loaded = 0
+        with _HTTP_CONDITIONAL_CACHE_LOCK:
+            for k, v in payload.items():
+                if isinstance(k, str) and isinstance(v, dict) and isinstance(v.get("html"), str):
+                    if v.get("etag") or v.get("last_modified"):
+                        _HTTP_CONDITIONAL_CACHE[k] = {
+                            "etag": str(v.get("etag", "") or ""),
+                            "last_modified": str(v.get("last_modified", "") or ""),
+                            "html": v["html"],
+                            "updated_at": float(v.get("updated_at", 0.0) or 0.0),
+                        }
+                        loaded += 1
+        return loaded
+    except Exception:
+        return 0
+
+
+def save_http_conditional_cache(cache_path=None):
+    """条件付き GET キャッシュ（直近 500 件）をアトミック書き込みでディスク保存する"""
+    target_path = cache_path or HTTP_CONDITIONAL_CACHE_PATH
+    if not target_path:
+        return False
+    try:
+        with _HTTP_CONDITIONAL_CACHE_LOCK:
+            items = sorted(
+                _HTTP_CONDITIONAL_CACHE.items(),
+                key=lambda kv: float(kv[1].get("updated_at", 0.0)),
+                reverse=True,
+            )[:_HTTP_CONDITIONAL_CACHE_MAX_SIZE]
+            snapshot = {k: v for k, v in items}
+        if not snapshot:
+            return True
+        parent_dir = os.path.dirname(target_path)
+        if parent_dir:
+            os.makedirs(parent_dir, exist_ok=True)
+        tmp_path = f"{target_path}.tmp.{os.getpid()}.{threading.get_ident()}"
+        with open(tmp_path, "w", encoding="utf-8") as f:
+            json.dump(snapshot, f, ensure_ascii=False)
+        for attempt in range(5):
+            try:
+                os.replace(tmp_path, target_path)
+                break
+            except PermissionError:
+                if attempt == 4:
+                    raise
+                time.sleep(0.05)
+        return True
+    except Exception:
+        return False
+
 
 def is_warp_archive_url(url):
     """Drop 150: 国立国会図書館 WARP 凍結アーカイブURLであるかを判定する"""
@@ -1390,11 +1541,12 @@ def _normalize_waf_host(url_or_host):
 
 
 def reset_waf_blocked_ministries():
-    """クロール開始時に WAF CHALLENGE BLOCKED による省庁・ホスト遮断状態を初期化する"""
+    """クロール開始時に WAF CHALLENGE BLOCKED による省庁・ホスト遮断状態およびフェッチキャッシュを初期化する"""
     with _WAF_BLOCK_LOCK:
         _waf_blocked_ministries.clear()
         _waf_blocked_hosts.clear()
         _waf_host_consecutive_failures.clear()
+    reset_fetch_caches()
 
 
 def is_host_waf_blocked(url_or_host):
@@ -1583,7 +1735,7 @@ def _fetch_with_curl(url, timeout=12):
         safe_emit_log(f"  -> 🔴 [CURL FALLBACK ERROR] {url}: {e}")
     return None
 
-def fetch_url(url, timeout=12, max_retries=1, retry_count=0, ministry=None):
+def fetch_url(url, timeout=12, max_retries=1, retry_count=0, ministry=None, referer=None, use_cache=True):
     parsed_url = urllib.parse.urlparse(url)
     if parsed_url.scheme not in ("http", "https"):
         safe_emit_log(f"[ERROR] Invalid scheme: {url}")
@@ -1600,46 +1752,129 @@ def fetch_url(url, timeout=12, max_retries=1, retry_count=0, ministry=None):
         _thread_local.last_fetch_error = f"WAF Blocked Skip (Ministry {min_code}): {url}"
         return None
 
-    # CR-21, CR-26, CR-49: 同一ホストへの過密アクセス防止（スレッドセーフ動的レートリミット）
+    cache_key = _normalize_cache_url(url)
+    # 対策1: 同一巡回内のHTMLキャッシュ（#anchor フラグメントを除去した同一親URLを再フェッチしない）
+    if use_cache and retry_count == 0 and cache_key:
+        with _RUN_HTML_CACHE_LOCK:
+            cached_run_html = _RUN_HTML_CACHE.get(cache_key)
+        if cached_run_html is not None:
+            _thread_local.last_fetch_error = None
+            return cached_run_html
+
+    # CR-21, CR-26, CR-49: 同一ホストへの過密アクセス防止（ランダムジッター付きスレッドセーフ動的レートリミット）
     _rate_limit_host(host)
 
     headers = get_browser_headers()
+    headers["Connection"] = "keep-alive"
+
+    # 対策4: サブページ遷移時の自然な Referer / Sec-Fetch-Site 付与
+    if referer:
+        clean_ref = _normalize_cache_url(referer)
+        if clean_ref:
+            headers["Referer"] = clean_ref
+            try:
+                ref_parsed = urllib.parse.urlparse(clean_ref)
+                if (ref_parsed.scheme, ref_parsed.netloc.lower()) == (parsed_url.scheme, host):
+                    headers["Sec-Fetch-Site"] = "same-origin"
+                else:
+                    headers["Sec-Fetch-Site"] = "cross-site"
+            except Exception:
+                pass
+
+    # 対策2: 条件付き GET ヘッダー（If-None-Match / If-Modified-Since）の付与
+    if use_cache and cache_key:
+        with _HTTP_CONDITIONAL_CACHE_LOCK:
+            cond_entry = _HTTP_CONDITIONAL_CACHE.get(cache_key)
+        if cond_entry and cond_entry.get("html"):
+            if cond_entry.get("etag"):
+                headers["If-None-Match"] = cond_entry["etag"]
+            if cond_entry.get("last_modified"):
+                headers["If-Modified-Since"] = cond_entry["last_modified"]
+
     req = urllib.request.Request(url, headers=headers)
+    # 対策4: 同一ホスト内の Cookie セッション維持
+    cookie_jar = _get_host_cookie_jar(host) if host else None
+    if cookie_jar is not None:
+        with _HOST_COOKIE_LOCK:
+            try:
+                cookie_jar.add_cookie_header(req)
+            except Exception:
+                pass
+
     ctx = _get_ssl_context()
     try:
         with urllib.request.urlopen(req, timeout=timeout, context=ctx) as response:
-            content_type = response.headers.get('Content-Type', '')
+            if cookie_jar is not None:
+                with _HOST_COOKIE_LOCK:
+                    try:
+                        cookie_jar.extract_cookies(response, req)
+                    except Exception:
+                        pass
+            resp_headers = getattr(response, 'headers', None)
+            content_type = resp_headers.get('Content-Type', '') if resp_headers else ''
             raw_bytes = response.read()
             html = decode_html_bytes(raw_bytes, content_type)
-            if is_waf_challenge(html, response.status):
-                # CR-48, Drop 78: HTTP 202 チャレンジまたは一時スロットリング時はクールダウン待機してリトライ
-                if response.status == 202 and retry_count < max_retries:
-                    backoff_wait = 2.5 * (retry_count + 1)
-                    safe_emit_log(f"  -> ⚠️ [WAF 202 CHALLENGE] {url}: 一時スロットリング検知。待機({backoff_wait:.1f}s)後に自動リトライします...")
-                    time.sleep(backoff_wait)
-                    retry_res = fetch_url(url, timeout=timeout, max_retries=max_retries, retry_count=retry_count + 1, ministry=min_code)
-                    if retry_res:
-                        clear_host_waf_failures(host)
-                        _thread_local.last_fetch_error = None
-                        return retry_res
-                    if (host and is_host_waf_blocked(host)) or (min_code and is_ministry_waf_blocked(min_code)):
-                        return None
-                # Drop 78: WAF 202 チャレンジまたは JS チャレンジ画面検知時の curl フォールバック試行
+            resp_status = getattr(response, 'status', 200)
+            if is_waf_challenge(html, resp_status):
+                # 対策5: HTTP 202 (AWS WAF Challenge) 検知時は待機リトライ・curlフォールバックを行わず即時サーキットブレーカー停止
+                if resp_status == 202:
+                    safe_emit_log(
+                        f"  -> 🔴 [WAF 202 CIRCUIT BREAKER] {url}: HTTP 202 WAFチャレンジを検知したため即時停止し、"
+                        f"ホスト({host})への後続アクセスを遮断します"
+                    )
+                    _thread_local.last_fetch_error = f"WAF 202 Challenge: {url}"
+                    if host:
+                        record_host_waf_challenge(host, threshold=1)
+                    return None
+                # HTTP 202 以外の JS チャレンジ画面検知時の curl フォールバック試行
                 curl_html = _fetch_with_curl(url, timeout=timeout)
                 if curl_html:
                     safe_emit_log(f"  -> 🟢 [WAF CURL FALLBACK] {url}: curl.exe による WAF チャレンジ突破に成功しました")
                     clear_host_waf_failures(host)
                     _thread_local.last_fetch_error = None
+                    if use_cache and cache_key:
+                        _store_run_html_cache(cache_key, curl_html)
                     return curl_html
-                safe_emit_log(f"  -> 🔴 [WAF CHALLENGE BLOCKED] {url}: AWS/Cloudflare WAF challenge screen detected (Status: {response.status})")
-                _thread_local.last_fetch_error = f"WAF 202 Challenge: {url}" if response.status == 202 else f"WAF Challenge Blocked (Status {response.status}): {url}"
+                safe_emit_log(f"  -> 🔴 [WAF CHALLENGE BLOCKED] {url}: AWS/Cloudflare WAF challenge screen detected (Status: {resp_status})")
+                _thread_local.last_fetch_error = f"WAF Challenge Blocked (Status {resp_status}): {url}"
                 if host:
                     record_host_waf_challenge(host)
                 return None
+
             clear_host_waf_failures(host)
             _thread_local.last_fetch_error = None
+            if use_cache and cache_key and html:
+                _store_run_html_cache(cache_key, html)
+                etag, last_mod = _extract_valid_conditional_headers(resp_headers)
+                if etag or last_mod:
+                    with _HTTP_CONDITIONAL_CACHE_LOCK:
+                        _HTTP_CONDITIONAL_CACHE[cache_key] = {
+                            "etag": etag,
+                            "last_modified": last_mod,
+                            "html": html,
+                            "updated_at": time.time(),
+                        }
             return html
     except urllib.error.HTTPError as e:
+        # 対策2: HTTP 304 Not Modified の処理（キャッシュ済みHTMLを再利用）
+        if e.code == 304:
+            if use_cache and cache_key:
+                with _HTTP_CONDITIONAL_CACHE_LOCK:
+                    cond_entry = _HTTP_CONDITIONAL_CACHE.get(cache_key)
+                    cached_html = cond_entry.get("html") if cond_entry else None
+                    if cond_entry:
+                        cond_entry["updated_at"] = time.time()
+                if cached_html:
+                    _store_run_html_cache(cache_key, cached_html)
+                    clear_host_waf_failures(host)
+                    _thread_local.last_fetch_error = None
+                    return cached_html
+            if retry_count < max_retries:
+                return fetch_url(
+                    url, timeout=timeout, max_retries=max_retries, retry_count=retry_count + 1,
+                    ministry=min_code, referer=referer, use_cache=False
+                )
+
         err_body = b""
         try:
             err_body = e.read()
@@ -1656,7 +1891,10 @@ def fetch_url(url, timeout=12, max_retries=1, retry_count=0, ministry=None):
         if e.code in (403, 429) and retry_count < max_retries and ('.go.jp' in host):
             safe_emit_log(f"  -> ⚠️ [HTTP {e.code}] {url}: 一時遮断検知。待機(2.5s)後に自動リトライします...")
             time.sleep(2.5)
-            retry_res = fetch_url(url, timeout=timeout, max_retries=max_retries, retry_count=retry_count + 1)
+            retry_res = fetch_url(
+                url, timeout=timeout, max_retries=max_retries, retry_count=retry_count + 1,
+                ministry=min_code, referer=referer, use_cache=use_cache
+            )
             if retry_res:
                 _thread_local.last_fetch_error = None
                 return retry_res
@@ -1665,6 +1903,8 @@ def fetch_url(url, timeout=12, max_retries=1, retry_count=0, ministry=None):
             curl_html = _fetch_with_curl(url, timeout=timeout)
             if curl_html:
                 _thread_local.last_fetch_error = None
+                if use_cache and cache_key:
+                    _store_run_html_cache(cache_key, curl_html)
                 return curl_html
         safe_emit_log(f"  -> 🔴 [HTTP ERROR {e.code}] {url}: {e.reason}")
         _thread_local.last_fetch_error = f"HTTP {e.code} {e.reason}: {url}"
@@ -1675,14 +1915,42 @@ def fetch_url(url, timeout=12, max_retries=1, retry_count=0, ministry=None):
             try:
                 fb_ctx = _get_ssl_fallback_context()
                 with urllib.request.urlopen(req, timeout=timeout, context=fb_ctx) as response:
-                    content_type = response.headers.get('Content-Type', '')
+                    if cookie_jar is not None:
+                        with _HOST_COOKIE_LOCK:
+                            try:
+                                cookie_jar.extract_cookies(response, req)
+                            except Exception:
+                                pass
+                    resp_headers = getattr(response, 'headers', None)
+                    content_type = resp_headers.get('Content-Type', '') if resp_headers else ''
                     raw_bytes = response.read()
+                    html = decode_html_bytes(raw_bytes, content_type)
+                    resp_status = getattr(response, 'status', 200)
+                    if is_waf_challenge(html, resp_status):
+                        if resp_status == 202:
+                            safe_emit_log(
+                                f"  -> 🔴 [WAF 202 CIRCUIT BREAKER] {url}: HTTP 202 WAFチャレンジを検知したため即時停止し、"
+                                f"ホスト({host})への後続アクセスを遮断します"
+                            )
+                            _thread_local.last_fetch_error = f"WAF 202 Challenge: {url}"
+                            if host:
+                                record_host_waf_challenge(host, threshold=1)
+                            return None
+                        _thread_local.last_fetch_error = f"WAF Challenge Blocked (Status {resp_status}): {url}"
+                        if host:
+                            record_host_waf_challenge(host)
+                        return None
+                    clear_host_waf_failures(host)
                     _thread_local.last_fetch_error = None
-                    return decode_html_bytes(raw_bytes, content_type)
+                    if use_cache and cache_key and html:
+                        _store_run_html_cache(cache_key, html)
+                    return html
             except Exception as fb_e:
                 curl_html = _fetch_with_curl(url, timeout=timeout)
                 if curl_html:
                     _thread_local.last_fetch_error = None
+                    if use_cache and cache_key:
+                        _store_run_html_cache(cache_key, curl_html)
                     return curl_html
                 safe_emit_log(f"  -> 🔴 [FETCH ERROR (SSL FB)] {url}: {fb_e}")
                 _thread_local.last_fetch_error = f"FETCH ERROR (SSL FB): {fb_e}"
@@ -1690,6 +1958,8 @@ def fetch_url(url, timeout=12, max_retries=1, retry_count=0, ministry=None):
         curl_html = _fetch_with_curl(url, timeout=timeout)
         if curl_html:
             _thread_local.last_fetch_error = None
+            if use_cache and cache_key:
+                _store_run_html_cache(cache_key, curl_html)
             return curl_html
         safe_emit_log(f"  -> 🔴 [FETCH ERROR] {url}: {e}")
         _thread_local.last_fetch_error = f"FETCH ERROR: {e}"
@@ -1698,6 +1968,8 @@ def fetch_url(url, timeout=12, max_retries=1, retry_count=0, ministry=None):
         curl_html = _fetch_with_curl(url, timeout=timeout)
         if curl_html:
             _thread_local.last_fetch_error = None
+            if use_cache and cache_key:
+                _store_run_html_cache(cache_key, curl_html)
             return curl_html
         safe_emit_log(f"  -> 🔴 [FETCH ERROR] {url}: {e}")
         _thread_local.last_fetch_error = f"FETCH ERROR: {e}"
@@ -2446,7 +2718,7 @@ def _crawl_subpages(target_url, html, rule, quirk_note, pdf_pattern, existing_ur
                 continue
 
             # Drop 112: fetch_url() 内部の _rate_limit_host() に一元化（二重スリープ遅延を撤廃）
-            sub_html = fetch_url(sub_url)
+            sub_html = fetch_url(sub_url, referer=target_url)
             if sub_html:
                 sub_soup = BeautifulSoup(sub_html, 'html.parser')
                 sub_title = extract_page_title(sub_soup, rule, fallback_url=sub_url)
@@ -2477,7 +2749,7 @@ def _crawl_subpages(target_url, html, rule, quirk_note, pdf_pattern, existing_ur
                     
                     for comp_url in list(dict.fromkeys(companion_candidates))[:3]:
                         # Drop 112: fetch_url() 内部の _rate_limit_host() に一元化
-                        comp_html = fetch_url(comp_url)
+                        comp_html = fetch_url(comp_url, referer=sub_url)
                         if comp_html:
                             comp_mats = parse_materials_from_html(comp_html, comp_url, pdf_pattern)
                             comp_pdfs = [cm for cm in comp_mats if cm.get("type") == "PDF"]
@@ -2502,7 +2774,7 @@ def _crawl_subpages(target_url, html, rule, quirk_note, pdf_pattern, existing_ur
                     hm_name = hm.get('name', '')
                     if any(k in hm_name for k in ['会議資料', '配付資料', '配布資料', '資料一覧', '資料']) or re.search(r'\d+kai\.html$', hm_url):
                         time.sleep(0.35)
-                        hm_html = fetch_url(hm_url)
+                        hm_html = fetch_url(hm_url, referer=sub_url)
                         if hm_html:
                             expanded_mats = parse_materials_from_html(hm_html, hm_url, pdf_pattern)
                             for em in expanded_mats:
@@ -3244,7 +3516,7 @@ def extract_via_llm(target_url, html, target_name):
             for sub_url in subpage_urls:
                 if LLM_QUOTA_BLOCKED:
                     break
-                sub_html = fetch_url(sub_url)
+                sub_html = fetch_url(sub_url, referer=target_url)
                 if sub_html:
                     sub_materials, sub_dates = extract_via_llm_single(sub_url, sub_html, target_name)
                     all_materials.extend(sub_materials)
@@ -4518,6 +4790,7 @@ def run_meeting_crawler(
         save_data_json_with_backup(data)
 
         reset_waf_blocked_ministries()
+        load_http_conditional_cache()
         rules = load_scraping_rules()
         url_rule_index = build_url_rule_index(rules)
         results = []
@@ -4813,6 +5086,7 @@ def run_meeting_crawler(
         
         return stats
     finally:
+        save_http_conditional_cache()
         unregister_crawler_logfile(log_f)
         unregister_crawler_logfile(latest_f)
         if log_f:
@@ -5496,6 +5770,7 @@ def run_ministry_news_discovery(progress_callback=None, stop_event=None, ministr
             pass
 
         reset_waf_blocked_ministries()
+        load_http_conditional_cache()
         councils = data.get("councils", [])
         # Drop 133 / Drop 149: 省庁および Daily 対象会議体の最終走査日時を crawlerConfig から取得
         crawler_cfg = data.setdefault("crawlerConfig", {})
@@ -5601,7 +5876,7 @@ def run_ministry_news_discovery(progress_callback=None, stop_event=None, ministr
                                     }))
                             else:
                                 # 記事ページをフェッチして配付資料が含まれるか確認
-                                art_html = fetch_url(item_url, timeout=10, ministry=min_code)
+                                art_html = fetch_url(item_url, timeout=10, ministry=min_code, referer=rurl)
                                 if art_html:
                                     mats = parse_materials_from_html(art_html, item_url)
                                     art_soup = BeautifulSoup(art_html, "html.parser")
@@ -5770,6 +6045,7 @@ def run_ministry_news_discovery(progress_callback=None, stop_event=None, ministr
 
         return {"new_meetings": new_meetings_total, "log_file": log_filepath}
     finally:
+        save_http_conditional_cache()
         unregister_crawler_logfile(log_f)
         unregister_crawler_logfile(latest_f)
         if log_f:
